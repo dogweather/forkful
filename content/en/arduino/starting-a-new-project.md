@@ -1,47 +1,58 @@
 ---
 title:    "Arduino recipe: Starting a new project"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Are you ready to start a new project with Arduino? If so, you're about to embark on an exciting journey filled with endless possibilities and a chance to bring your ideas to life. With Arduino, you can create anything from basic LED circuits to complex robots and interactive systems. So why not dive in and challenge yourself to explore the world of Arduino programming?
+Starting a new project with Arduino can be an exciting and rewarding experience. Arduino is a versatile microcontroller platform that allows you to bring your ideas to life through coding and electronics. Whether you are a beginner or an experienced programmer, there is always something new to learn with Arduino projects.
 
 ## How To
 
-Before we dive into the coding examples, let's first make sure you have all the necessary tools and components to get started. You will need an Arduino board, a USB cable, and a computer with the Arduino software installed. Once you have everything set up, you can start writing your first program.
+To start a new project with Arduino, first, you will need to have an Arduino board and the Arduino IDE (Integrated Development Environment) software installed on your computer. Once you have these, you can follow these steps to get started:
+
+1. Connect your Arduino board to your computer using a USB cable.
+2. Open the Arduino IDE software.
+3. Write your code in the editor window. This can be a simple "Hello World" program or a more complex project.
+4. Verify your code by clicking on the Verify button (checkmark icon) on the top left corner of the IDE.
+5. Once the code is verified, upload it to your Arduino board by clicking on the Upload button (right arrow icon).
+6. Your code will be compiled and uploaded to the Arduino board. You can see the status in the bottom console of the IDE.
+7. If everything went well, your project should now be running on the Arduino board.
+
+Here is a simple example of a "Hello World" program in Arduino:
 
 ```Arduino
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600); // set baud rate to 9600
 }
 
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+  Serial.println("Hello World!"); // print the message to the serial monitor
+  delay(1000); // wait for 1 second
 }
 ```
 
-In this basic example, we are using the built-in LED on the Arduino board to blink on and off every second. This may seem simple, but it demonstrates the basic structure of an Arduino program. The `setup()` function is used to initialize the pin that controls the LED as an output, and the `loop()` function is where we specify the actions we want the program to continuously repeat.
-
-You can experiment with different delays and digital pin modes to see how it affects the LED's behavior. Once you feel comfortable with this basic example, you can move on to more complex projects.
+Once you upload this code to your Arduino board, you should see "Hello World!" being printed on the serial monitor every second.
 
 ## Deep Dive
 
-Starting a new project with Arduino can seem overwhelming at first, but there are plenty of resources available to help you along the way. The Arduino website has a vast library of tutorials, examples, and a active community forum where you can ask for help and share your projects with others. It's also a good idea to familiarize yourself with the different components and their functions, such as sensors, motors, and shields.
+Now that you know how to get started with your Arduino project, let's dive a bit deeper. Arduino boards come in different models and have different capabilities. It is essential to choose the right board for your project, depending on its requirements.
 
-One important aspect of starting a project is setting a clear goal. This will help guide your design, programming, and decision making throughout the process. It's also a good idea to break down your project into smaller tasks and tackle them one at a time. This can help prevent feeling overwhelmed and allow you to focus on each individual aspect of your project.
+You can also add different components, such as sensors, displays, and actuators to your Arduino board to expand its capabilities. These components can be connected to the board using specific pins and can be controlled through your code.
 
-And don't forget to have fun! Arduino is all about creativity and exploration, so don't be afraid to try new things and push the boundaries of what you can do.
+Additionally, there is a vast community of Arduino enthusiasts who share their projects, ideas, and code. You can find many tutorials, guides, and resources online to help you with your project.
+
+One crucial thing to keep in mind while starting a new project is to have a clear idea and plan. It is always helpful to break your project into smaller, manageable tasks and tackle them one by one. You can also make use of flowcharts and diagrams to visualize your project and its components.
 
 ## See Also
 
-- [Arduino tutorials](https://www.arduino.cc/en/Tutorial/HomePage)
+Here are some helpful links to get you started on your Arduino journey:
+
+- [Arduino official website](https://www.arduino.cc/)
+- [Getting started with Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-cb3e51)
 - [Arduino forum](https://forum.arduino.cc/)
-- [List of popular Arduino projects](https://create.arduino.cc/projecthub)
-- [Official Arduino website](https://www.arduino.cc/)
+- [Arduino project hub](https://create.arduino.cc/projecthub)
+- [Adafruit learning system](https://learn.adafruit.com/category/learn-arduino)

@@ -1,63 +1,48 @@
 ---
-title:    "C: 未来または過去の日付を計算する"
+title:    "C: 「未来や過去の日付の計算」"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ？
 
-日付を計算する必要がある理由はさまざまです。例えば、誕生日や記念日に特定の日付を計算するのに役立ちます。また、将来のイベントの日付を把握したい場合や、過去の出来事の日付を確認する必要がある場合にも役に立ちます。C言語を使用すると、日付を計算することは非常に簡単で効率的です。
+日々の生活では、未来や過去の日付を計算することが必要になることがあります。例えば、特定のイベントの日程を確認したり、予定を立てたりする際に、必要な日付を正確に計算することが重要です。そのため、C言語で日付を計算できるようになると、より効率的なプログラミングができるようになります。
 
 ## 使い方
 
-C言語を使用して日付の計算を行う方法はいくつかありますが、ここでは ```time.h``` ライブラリを使用した方法を紹介します。まず、必要なライブラリをインクルードします。
+日付の計算を行うには、C言語で提供されている標準ライブラリのtime.hを使用します。具体的なコード例を以下に示します。
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
+
+int main() {
+    time_t now = time(NULL);
+    struct tm *future_date;
+    future_date = localtime(&now);
+
+    // 10日後の日付を計算する
+    future_date->tm_mday += 10;
+
+    // 月末の場合は、月と年を調整する
+    mktime(future_date);
+
+    // 日付をフォーマットして出力する
+    printf("10日後の日付は%02d/%02d/%dです", future_date->tm_mon + 1, future_date->tm_mday, future_date->tm_year + 1900);
+
+    return 0;
+}
 ```
 
-次に、時間構造体を定義し、日付を入力します。
+上記のコードでは、time.hの構造体tmを使用して、現在の日付から10日後の日付を計算し、フォーマットして出力しています。また、月末の場合には月や年の調整も行っています。
 
-```
-struct tm input_date = {0};
+## 深く掘り下げる
 
-//入力したい日付を"年,月,日" の順番で入力します
-input_date.tm_year = 年 - 1900; 
-input_date.tm_mon = 月 - 1;
-input_date.tm_mday = 日;
-```
+C言語では、time.h以外にも日付計算を行うためのライブラリがいくつかあります。例えば、Julian Day（ユリウス日）を使用して日付を計算する手法や、外部ライブラリを使用して暦の種類に応じた日付計算を行う方法などがあります。また、日付計算を行う際には、タイムゾーンや夏時間などの影響も考慮する必要があります。
 
-日付を計算したい場合は、 ```timeval``` 構造体を使用します。例えば、1週間後の日付を計算するには次のようにします。
+# 参考リンク
 
-```
-struct timeval calculated_date;
-calculated_date.tv_sec = mktime(&input_date) + (7*24*60*60);
-```
-
-計算した日付を読みやすい形式で表示するために、```strftime``` 関数を使用します。
-
-```
-char date_str[100];
-strftime(date_str, 100, "%Y年%m月%d日", localtime(&calculated_date.tv_sec));
-printf("1週間後の日付は%sです。", date_str);
-```
-
-上記のコードを実行すると、以下のように表示されます。
-
-```
-1週間後の日付はXXXX年XX月XX日です。
-```
-
-## 詳細を深堀りする
-
-日付の計算にはさまざまなアプローチがあります。日付の加算や減算だけでなく、曜日の計算や特定の日付が含まれる月の数の計算なども行うことができます。また、柔軟性のある計算を行うためには、日付の表現方法を標準タイムゾーンで行う必要があります。
-
-さらに、C言語の日付計算には欠点もあります。例えば、サマータイムやうるう年の扱いなど、特別なケースを考慮する必要があります。そのため、より複雑な日付の計算を行う場合は、別の言語やライブラリを使用することも検討する必要があります。
-
-## 参考リンク
-
-- [C言語で日付を計算する方法](https://www.geeksforgeeks.org/date-after-adding-given-number-of-days-to-the-given-date/)
-- [strftime関数の使い方](https://man7.org/linux/man-pages/man3/strftime.3.html)
-- [時間や日付の計算に役立つC言語ライブラリ](https://linux.die.net/man/3/localtime)
+- [C言語の標準ライブラリを使って日付を扱う方法（別冊実践C言語）](https://developers.line.biz/ja/docs/messaging-api/technical-reference/#postback-action)
+- [C言語における時間管理と変換（それでも月日及び月日のためのグレゴリオ暦の場合）](https://docs.microsoft.com/ja-jp/windows/win32/sysinfo/converting-a-time-between-utc-and-local-time)

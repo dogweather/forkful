@@ -1,34 +1,38 @@
 ---
-title:    "Bash: 문자열의 대문자화"
+title:    "Bash: 문자열 대문자 변환"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 
-문자열의 대문자를 변경하는 작업은 프로그래밍에서 매우 흔한 작업입니다. 예를 들어, 사용자의 입력을 처리할 때 대문자로 입력된 경우를 모두 대문자로 바꾸어야 할 수도 있습니다. 대문자와 소문자를 일관성있게 사용하는 것은 코드의 가독성을 높이고 디버깅을 쉽게 만들어줍니다.
+# 왜 Capitalizing String In Bash를 쓸까요?
 
-## 어떻게
-자동화된 방법을 사용하여 문자열을 대문자로 변경하는 방법은 간단합니다. Bash에서는 'tr' 명령어를 사용하여 문자열을 대문자로 변환할 수 있습니다. 다음은 이 명령어를 사용하는 간단한 예제입니다.
+Bash 프로그래밍은 많은 사람들에게 친숙하지 않지만, 요즘 우리의 일상에서 자주 사용되는 언어 중 하나입니다. 하지만 어떤 경우에는 이 언어를 사용하면서도 조금 번거로운 일이 발생할 수 있습니다. 가령, 일반적인 텍스트 작업 중 문자열을 대문자로 변환하고 싶을 때가 있을 겁니다. 이때 Bash의 강력한 기능인 "Capitalizing String"을 사용하면 매우 편리합니다.
 
-```Bash
-echo "Hello World" | tr '[:lower:]' '[:upper:]'
-```
+# 사용 방법
 
-출력은 다음과 같이 나올 것입니다.
+간단한 예제를 통해 어떻게 Bash에서 "Capitalizing String"을 사용하는지 살펴보겠습니다.
 
 ```Bash
-HELLO WORLD
+# 문자열을 변수로 선언합니다.
+str="hello world"
+
+# 문자열을 대문자로 변환합니다.
+str=${str^^}
+
+# 변환된 문자열을 출력합니다.
+echo $str
 ```
 
-가장 먼저 'tr' 명령어를 사용하여 입력된 문자열을 모두 대문자로 변환합니다. 그런 다음 출력을 원하는 파일에 리디렉션하거나 다른 명령어로 처리할 수 있습니다.
+위 코드를 실행하면 "HELLO WORLD"라는 출력 결과를 볼 수 있습니다. 여기서 중요한 점은 문자열을 변환하는 법을 기억해두는 것입니다. 변수를 사용해야 하고, 변수를 한 번 더 사용하여 변환된 값으로 할당해야 합니다.
 
-## 딥 다이브
-'[:lower:]'와 '[:upper:]' 특수 문자는 각각 소문자와 대문자를 나타냅니다. 이를 사용하여 모든 문자를 원하는 대문자 또는 소문자로 변경할 수 있습니다.
+# 더 깊이 알아보기
 
-그러나 이 방법은 알파벳 문자만 대문자로 변환할 수 있다는 제한이 있습니다. 문자열에 알파벳 이외의 문자가 포함되어있는 경우, 이 방법은 원하는 결과를 제공하지 않습니다. 따라서 더 많은 다양한 문자열을 대문자로 변환해야 하는 경우에는 다른 방법을 고려해야 합니다.
+"Capitalizing String"은 Bash shell에서 문자열을 다루는 여러 가지 함수 중 하나입니다. 이 함수를 사용하면 문자열을 소문자나 대문자로 변환할 수 있습니다. "^^"를 사용하면 대문자로, "^^"를 사용하면 소문자로 변환됩니다.
 
-## 관련 자료
-- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/html_node/)
-- [Linux 스트링 제어](http://www.grymoire.com/Unix/Sed.html#uh-5)
-- [tr 명령어에 대한 자세한 알아보기](https://www.linuxtechi.com/tr-command-linux/)
+# See Also
+
+- https://wiki.bash-hackers.org/commands/builtin/uppercase
+- https://linuxhint.com/capitalize_string_bash/
+- https://linuxize.com/post/bash-string/

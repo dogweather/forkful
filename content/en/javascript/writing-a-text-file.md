@@ -1,48 +1,62 @@
 ---
 title:    "Javascript recipe: Writing a text file"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing a text file is an essential skill for every aspiring programmer. It allows you to store and manipulate data in a structured way, making it easier to process and analyze information. Whether you're a beginner or an experienced developer, understanding how to write a text file is a crucial aspect of programming.
+
+In the world of programming, there are many different tasks that developers may need to accomplish. One of these tasks is writing a text file. This may not seem like a particularly exciting or important task, but it is a fundamental skill that can come in handy in various situations.
+
+At its core, writing a text file involves creating a file that contains plain text, without any formatting or design elements. This makes it a versatile and straightforward way to store and share information. Whether you need to store user data, log application information, or simply create a report, knowing how to write a text file can be a useful skill to have.
 
 ## How To
-To write a text file in Javascript, you can use the built-in File System module. First, we need to require the module by using the 'require' keyword and assigning it to a variable like so:
+
+To start writing a text file using Javascript, you first need to create an instance of the `FileWriter` object. This can be done by using the `new` keyword and passing in the name of the file you want to create, along with the desired file mode (read, write, append, etc.).
 
 ```Javascript
-const fs = require('fs');
+let file = new FileWriter("myFile.txt", "write");
 ```
 
-Next, we can use the `fs.writeFile()` method to write a text file. This method takes in three parameters - the file name, the data to be written, and a callback function. Let's say we want to create a file called 'myFile.txt' with the text 'Hello World' written in it. We can do so using the following code:
+Next, you can use the `write()` method to add content to your file. This method takes in a string of text as its parameter and appends it to the file.
 
 ```Javascript
-fs.writeFile('myFile.txt', 'Hello World', (err) => {
-  if (err) throw err;
-  console.log('File created successfully!');
-});
+file.write("This is some text that will be written to my file.");
 ```
 
-If the file does not already exist, this code will create it. If it does exist, the content will be overwritten. Additionally, we can use the `fs.appendFile()` method to add content to an existing file without overwriting its previous content. 
+You can also use the `close()` method to close the file once you have finished writing to it. This is an important step as it ensures that all the content has been saved properly.
+
+```Javascript
+file.close();
+```
+
+Once you have closed the file, you can open it again in "read" mode to check the content that was written.
+
+```Javascript
+// Reopen file in "read" mode
+file = new FileWriter("myFile.txt", "read");
+
+// Read and log contents of file
+let contents = file.read();
+console.log(contents);
+```
+
+Running this code will output the contents of the file to the console, which in this case would be: "This is some text that will be written to my file."
 
 ## Deep Dive
-When writing a text file, it's important to understand the concept of encoding. Encoding refers to the process of converting characters into a specific format for storage or transmission. By default, the `fs.writeFile()` and `fs.appendFile()` methods use the 'utf-8' encoding, which supports most characters and is widely used.
 
-If you want to use a different encoding, you can specify it as a parameter in the write methods. For example, if you want to use the 'ascii' encoding, you can do so like this:
+While the steps listed above are the basic steps for writing a text file in Javascript, there are a few things to keep in mind while doing so.
 
-```Javascript
-fs.writeFile('myFile.txt', 'Hello World', 'ascii', (err) => {
-  if (err) throw err;
-  console.log('File created successfully with ascii encoding!');
-});
-```
+First and foremost, when writing to a text file, it is crucial to properly handle errors. This can be done by using try/catch blocks to catch any potential errors that may occur during the writing process.
 
-You can find a list of supported encodings in the [NodeJS documentation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback).
+Additionally, different file modes will have different results when writing to a file. For example, using the "write" mode will overwrite any existing content in the file, while using "append" mode will add the new content to the end of the existing content in the file.
+
+It is also essential to remember to close the file once you are finished writing to it. Not doing so can result in data loss or corrupt files.
 
 ## See Also
-- [NodeJS Documentation on File System](https://nodejs.org/api/fs.html)
-- [W3Schools Tutorial on Writing Files with NodeJS](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [MDN Web Docs on File Encoding](https://developer.mozilla.org/en-US/docs/Glossary/Encoding)
 
-By understanding the fundamentals of writing a text file in Javascript, you can now easily store and manipulate data in your programs. Make sure to explore different encoding options and try out some coding examples to solidify your understanding. Happy coding!
+- [Javascript Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [Working with Files in Javascript](https://www.tutorialspoint.com/javascript/javascript_files.htm)
+- [FileWriter API Reference](https://developer.mozilla.org/en-US/docs/Web/API/FileWriter)

@@ -1,42 +1,81 @@
 ---
 title:    "TypeScript: Å få gjeldende dato"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å forstå konseptet om å hente gjeldende dato kan være en nyttig ferdighet for enhver TypeScript-programmerer. Det gjør det mulig å vise riktig dato i applikasjoner og implementere ulike funksjoner som krever informasjon om tiden.
+
+Hvis du noen gang har jobbet med datoer og tidsstempel i programmering, har du mest sannsynlig også måttet få tak i dagens dato på et eller annet tidspunkt. Dette kan være for å vise brukere når noe ble opprettet, for å lagre en tidssensitiv transaksjon, eller rett og slett for å gi informasjon om når koden ble kjørt. I denne bloggposten skal vi se på hvordan vi kan hente dagens dato ved hjelp av TypeScript.
 
 ## Hvordan
-Det første trinnet for å få den gjeldende datoen i TypeScript er å opprette et Date-objekt ved å bruke `new Date()`-konstruktøren. Dette vil opprette et objekt med informasjon om gjeldende dato og tidspunkt. Deretter kan vi bruke ulike metoder for å hente ut ønsket informasjon fra dette objektet.
+
+For å få tak i dagens dato i TypeScript, kan vi bruke JavaScripts innebygde Date-objekt. Dette objektet inneholder en rekke nyttige metoder og egenskaper for å håndtere datoer og tid. La oss se på et eksempel:
 
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate); // Output: 2019-10-25T12:15:33.648Z
-
-// Hente ut dato, måned og år
-console.log(currentDate.getDate()); // Output: 25
-console.log(currentDate.getMonth()); // Output: 10 (månedene er indeksert fra 0)
-console.log(currentDate.getFullYear()); // Output: 2019
-
-// Hente ut klokkeslett
-console.log(currentDate.getHours()); // Output: 13 (1 på ettermiddagen)
-console.log(currentDate.getMinutes()); // Output: 15
-console.log(currentDate.getSeconds()); // Output: 33
+const now = new Date();
+console.log(now);
 ```
 
-Vi kan også formatere datoen basert på ønsket format ved å bruke `toLocaleDateString()`-metoden og sende inn parameter for ønsket språk. Dette vil returnere datoen som en lesbar streng.
+Dette vil gi følgende output i konsollen:
+
+```bash
+2021-07-20T13:54:25.446Z
+```
+
+Vi kan også formatere datoen etter våre egne preferanser ved hjelp av Date-objektet. For eksempel, hvis vi vil ha datoen i et mer leselig format, kan vi gjøre dette:
 
 ```TypeScript
-console.log(currentDate.toLocaleDateString("nb-NO")); // Output: 25.10.2019
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const today = new Date().toLocaleDateString('no-NO', options);
+console.log(today);
 ```
+
+Dette vil gi følgende output:
+
+```bash
+20. juli 2021
+```
+
+Som du kan se, kan vi enkelt formatere datoen ved å angi hvilke deler av datoen vi vil ha med og hvilket språk vi ønsker å bruke.
 
 ## Dypdykk
-Det er viktig å merke seg at JavaScript og TypeScript bruker den lokale datoen og tiden til enheten hvor koden blir kjørt. Dette kan føre til problemer hvis det er behov for å vise datoen i en spesifikk tidsone eller format. I slike tilfeller kan det være nødvendig å bruke biblioteker som Moment.js for å håndtere datoer og tider mer nøyaktig.
 
-Det er også viktig å merke seg at `new Date()`-konstruktøren vil bruke tidssonen til enheten når den opprettes, noe som kan føre til uventede resultater når koden blir kjørt i forskjellige tidssoner. Ved å spesifisere en tidssone som parameter til `new Date()`-konstruktøren, kan vi få den gjeldende datoen i ønsket tidssone.
+Hvis vi ønsker å hente ut spesifikke deler av datoen, som for eksempel året eller måneden, kan vi bruke de innebygde egenskapene til Date-objektet. Dette kan være nyttig for å filtrere eller sortere data basert på dato. La oss se på et eksempel:
+
+```TypeScript
+const year = new Date().getFullYear();
+console.log(year);
+```
+
+Dette vil gi følgende output:
+
+```bash
+2021
+```
+
+Vi kan også sammenligne datoer ved hjelp av innebygde metoder som `getTime()`. Dette kan være nyttig hvis vi for eksempel ønsker å sjekke om en dato er før eller etter en annen dato. Her er et eksempel på dette:
+
+```TypeScript
+const date1 = new Date('2021-01-01');
+const date2 = new Date('2021-07-01');
+
+if (date1.getTime() < date2.getTime()) {
+  console.log('date1 er før date2');
+} else {
+  console.log('date2 er før date1');
+}
+```
+
+Dette vil gi følgende output:
+
+```bash
+date1 er før date2
+```
 
 ## Se også
-- [Moment.js](https://momentjs.com/)
-- [Date Object - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+- [Date-objektet i JavaScript](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Formatere datoer i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)

@@ -1,60 +1,54 @@
 ---
 title:    "Fish Shell: Lendo argumentos da linha de comando"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que ler argumentos da linha de comando é importante em programação com Fish Shell?
+## Por que utilizar argumentos de linha de comando?
 
-Muitos programadores preferem trabalhar com a linha de comando ao invés de interfaces gráficas devido à sua eficiência e rapidez. Nesse sentido, compreender como ler e interpretar os argumentos passados ​​pela linha de comando é essencial para usar o Fish Shell de forma efetiva.
+Argumentos de linha de comando são uma forma eficiente e poderosa de interagir com o Fish Shell. Eles permitem que você passe informações e parâmetros para um programa diretamente da linha de comando, em vez de precisar interagir com uma interface gráfica ou editar um arquivo de configuração. Isso pode economizar tempo e agilizar tarefas repetitivas.
 
-## Como ler argumentos da linha de comando com Fish Shell
+## Como utilizar argumentos de linha de comando no Fish Shell
+Para utilizar argumentos de linha de comando no Fish Shell, você precisa seguir alguns passos simples:
 
-Para ler os argumentos da linha de comando com o Fish Shell, podemos usar a variável de ambiente $argv. Ela armazena uma lista dos argumentos passados e pode ser acessada através de um loop "for", como mostrado no exemplo abaixo:
+1. Abra o Fish Shell.
+2. Digite o comando desejado, seguido de seus argumentos separados por espaço.
+3. Pressione Enter para executar o comando.
+
+Por exemplo:
 
 ```Fish Shell
-for argument in $argv
-	echo "Argumento: $argument"
+mkdir pasta-teste
+```
+
+Neste exemplo, "mkdir" é o comando para criar uma nova pasta e "pasta-teste" é o argumento passado para o comando.
+
+Você também pode passar vários argumentos para um comando, como por exemplo:
+
+```Fish Shell
+cp arquivo.txt pasta-teste arquivo-copia.txt
+```
+
+Neste caso, o comando "cp" é utilizado para copiar o arquivo "arquivo.txt" para a pasta "pasta-teste" com o nome "arquivo-copia.txt".
+
+## Mergulho aprofundado em argumentos de linha de comando
+Ao utilizar argumentos de linha de comando, é importante entender como eles são interpretados pelo sistema operacional. Eles são básicamente uma forma de passar informações de entrada para um programa, assim como você faria ao clicar em botões em uma interface gráfica.
+
+Ao utilizar o Fish Shell, você pode utilizar comandos especiais para manipular os argumentos de linha de comando, como por exemplo "$argv", que retorna todos os argumentos passados para o comando atual. Você também pode utilizar "$argc", que retorna o número total de argumentos.
+
+Outra técnica útil é utilizar "for" loops para percorrer e manipular cada argumento individualmente. Por exemplo:
+
+```Fish Shell
+for arg in $argv
+    echo "O argumento $arg possui $(echo $arg | wc -c | cut -d ' ' -f 1) caracteres."
 end
 ```
 
-Ao executar o código acima com a linha de comando "fish teste.fish argumento1 argumento2", o output será:
+Neste exemplo, o loop for percorre cada argumento e utiliza comandos como "echo", "wc" e "cut" para contar o número de caracteres em cada um. Em um caso real, você poderia utilizar essas informações para validar ou processar os argumentos antes de utilizá-los em um comando.
 
-```
-Argumento: argumento1
-Argumento: argumento2
-```
-
-Podemos também usar diversos comandos, como "set", "count" e "contains", para manipular essa variável e obter informações específicas dos argumentos passados.
-
-## Aprofundando na leitura de argumentos da linha de comando
-
-Uma funcionalidade interessante do Fish Shell é a possibilidade de usar flags nos argumentos da linha de comando, o que permite passar informações adicionais para o programa. Para isso, podemos usar o comando "argparse" (similar ao utilizado em Python), que irá auxiliar na leitura dos argumentos e flags. Exemplo:
-
-```Fish Shell
-set parser (argparse description "Exemplo de leitura de argumentos da linha de comando")
-argparse.add_argument "--nome" "-n" option name
-argparse.add_argument "--idade" "-i" option age
-argparse.add_argument "--profissao" "-p" option occupation
-set --optn (argparse.parseArgStack $argv)
-echo "Nome: $optn[name]"
-echo "Idade: $optn[age]"
-echo "Profissao: $optn[occupation]"
-```
-
-Ao executar o código acima com a linha de comando "fish teste.fish -n Maria -i 30 -p Médica", o output será:
-
-```
-Nome: Maria
-Idade: 30
-Profissao: Médica
-```
-
-É importante notar que o Fish Shell também possui outras funcionalidades para lidar com a leitura de argumentos, como o "positional" e o "mandatory options". Para uma compreensão mais profunda sobre esses recursos, é recomendado ler a documentação e experimentar em projetos pessoais.
-
-# Veja também
-
-- Documentação oficial do Fish Shell sobre a leitura de argumentos da linha de comando: https://fishshell.com/docs/current/cmds/argparse.html
-- Tutorial em vídeo do canal "LearnCode.academy" sobre o uso de argparse no Fish Shell: https://www.youtube.com/watch?v=nYC3pYZBXac
-- Artigo do blog "DigitalOcean" sobre a utilização de flags na leitura de argumentos com o Fish Shell: https://www.digitalocean.com/community/tutorials/how-to-use-flag-arguments-in-your-bash-scripts-pt
+## Veja também
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial de argumentos de linha de comando no Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_arguments)
+- [Exemplos práticos de utilização de argumentos de linha de comando](https://www.linux.com/blog/15-examples-fish-command-line-fishshell/)

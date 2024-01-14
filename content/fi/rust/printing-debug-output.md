@@ -1,53 +1,57 @@
 ---
-title:    "Rust: Virheenjäljitystulosteen tulostaminen"
+title:    "Rust: Virheenkorjaustulosteen tulostaminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Tulostaa Debug-tulosteita?
+## Miksi
 
-Rust on moderni, tehokas ja turvallinen ohjelmointikieli, joka mahdollistaa monipuolisen ohjelmoinnin ja suorituskyvyn optimoinnin. Debug-tulosteiden tulostaminen on kätevä tapa tutkia ja seurata koodin suoritusta vaihe vaiheelta sekä tunnistaa mahdollisia virheitä. Se on myös hyödyllinen työkalu ohjelmiston kehittäjille, jotka haluavat ymmärtää paremmin ohjelmansa toimintaa.
+Rust on suosittu ohjelmointikieli sen nopeuden, muistinhallinnan ja monien muiden ominaisuuksien takia. Mutta miksi painaa debug-tulosteita, kun koodi jo toimii?
 
-## Kuinka Tulostaa Debug-tulosteita?
+Vastaus on yksinkertainen: luotettavuus. Debug-tulostukset ovat erinomainen tapa varmistaa, että koodisi toimii odotetulla tavalla ja havaita mahdolliset virheet ennen kuin ne aiheuttavat suurempia ongelmia.
 
-Debug-tulosteiden tulostaminen Rustissa on helppoa ja intuitiivista. Voit käyttää `println!` -makroa tai `eprintln!` -makroa tulostamaan viestin standardilähtöön tai virhelokiin. Voit myös käyttää `dbg!` -makroa tulostamaan muuttujan arvon ja sen arvon tyypin tarkemman tutkimuksen yhteydessä.
+## Kuinka tehdä
 
-```Rust
-let name = "Carl";
-println!("Hello, {}", name); // tulostaa "Hello, Carl" terminaaliin
-dbg!(name); // tulostaa "name = "Carl"" ja sen tyypin virhelokiin
-```
-
-Voit myös muotoilla tulosteita `format!` -makron avulla luomalla ensin viestin merkkijonon ja antamalla sitten muuttujien arvot halutuissa paikoissa.
+Rustissa, painaminen debug-tulosteita tapahtuu käyttämällä `println!` makroa. Se noudattaa muotoa `println!("tulostettava teksti", muuttujat);` Joten jos haluat painaa muuttujan arvon debug-tulosteena, sinun tarvitsee vain lisätä sen jälkeen pilkun.
 
 ```Rust
-let number = 42;
-let message = format!("The answer is {}!", number);
-println!("{}", message); // tulostaa "The answer is 42!"
+fn main() {
+  let x = 5;
+  println!("Muuttujan x arvo on {}", x);
+}
 ```
 
-## Syvemmälle Tulostamisen Saloihin
-
-Rustin debug-tulostusten avulla voit myös tutkia monimutkaisempia tietorakenteita, kuten vektoreita ja hajautustauluja. Voit käyttää `{:?}` -muotoilumerkintää tulostamaan tietorakenteen sisällön kaikilla tasoilla. Voit myös käyttää `{:?}` -merkintää yhdessä `dbg!` -makron kanssa saadaksesi tarkempia tietoja tietorakenteen sisällöstä.
+Tämä tulostaisi "Muuttujan x arvo on 5". Voit myös painaa useampia muuttujia lisäämällä lisää `{}` merkkejä ja lisäämällä vastaavat muuttujat pilkun jälkeen.
 
 ```Rust
-let numbers = vec![1, 2, 3];
-dbg!(numbers); // tulostaa "numbers = [1, 2, 3]" virhelokiin
-dbg!(format!("{:?}", numbers)); // tulostaa "numbers = [1, 2, 3]" virhelokiin
+fn main() {
+  let x = 5;
+  let y = 10;
+  println!("Muuttujien x ja y arvot ovat {} ja {}", x, y);
+}
 ```
 
-Voit myös muotoilla `println!`- ja `format!`-makrojen avulla merkkijonoja ennen niiden tulostamista, kuten käyttämällä uudelleenrivin merkintää `\n` ja tabulointia `\t`.
+Tämä tulostaisi "Muuttujien x ja y arvot ovat 5 ja 10". `println!` makro tukee myös muotoilumerkkejä, kuten `{:?}` joka tulostaa muuttujan `Debug`-ominaisuuden mukaisen arvon.
 
 ```Rust
-let name = "Carl";
-println!("Hello, {}\nWelcome to Rust!", name); // tulostaa "Hello, Carl" ja "Welcome to Rust!" kahdelle riville
-let number = 12345;
-println!("The number is {}\n\tand it has {} digits.", number, number.to_string().len()); // tulostaa "The number is 12345" ja "\tand it has 5 digits." kahdelle riville
+fn main() {
+  let x = 5;
+  println!("Muuttujan x arvo on {:?}", x);
+}
 ```
 
-## Katso Myös
+Tämä tulostaisi "Muuttujan x arvo on 5". Vaikka tämä saattaa vaikuttaa pieneltä erolta yksinkertaisesi `println!` käyttämiseen, se voi auttaa havaitsemaan virheitä ja ongelmia koodissasi.
 
-- [Rustin virallinen debug-tulosteiden dokumentaatio](https://doc.rust-lang.org/std/fmt/)
-- [Rust By Example -opas debug-tulosteiden tulostamiseen](https://doc.rust-lang.org/rust-by-example/hello/print.html)
-- [Debug-tulosteiden käyttö Michael Snoymanin blogissa](https://www.snoyman.com/blog/2018/04/introduction-debugging-rust)
+## Syvällinen tutkimus
+
+Rustissa, `println!` makron käyttö on osa `std` eli standardi kirjasto. Tämä on Rustin mukana tuleva kirjasto, joten sinun ei tarvitse asentaa tai tuoda sitä käyttöön. `println!` makron käyttö on myös yksinkertainen tapa lisätä loogisia tarkastuspisteitä koodiisi ja se on hyvä tapa tutustua uusiin muotoilumahdollisuuksiin.
+
+Voit myös käyttää `eprint!` ja `eprintln!` makroja, jotka tulostavat lineaarisesti virheviestejä `stderr`-virtaan, joka on kätevä tapa saada nopea tarkistus siitä mikä osa koodistasi saattaa aiheuttaa ongelmia.
+
+## Katso myös
+
+- [Rust Reference: Debug and Formatting](https://doc.rust-lang.org/reference/macros/print.html)
+- [The Rust Book: Basic Debugging](https://doc.rust-lang.org/book/ch05-00-structs.html#debugging-with-printing)
+- [A Gentle Introduction to Debugging in Rust](https://www.youtube.com/watch?v=9_GUKDXdp-c)

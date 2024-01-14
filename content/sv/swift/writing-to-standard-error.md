@@ -1,42 +1,40 @@
 ---
-title:    "Swift: Skriva till standard error"
+title:    "Swift: Skrivande till standardfel"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför skriva till standard error?
 
-Det finns många olika sätt att skriva ut information i Swift-programmering, men att skriva till standard error är särskilt användbart för felhantering och debugging. Genom att skriva till standard error får du en separat kanal för att skriva ut meddelanden som inte blandas med programkörningen eller normal utdata. Detta kan vara till stor hjälp när du letar efter fel och behöver spåra exakt var det uppstod.
+Att skriva till standard error i Swift är en vanlig del av programmeringsprocessen. Detta gör det möjligt för utvecklare att hantera fel och problem i sina program på ett effektivt sätt. Genom att skriva till standard error kan man få tydligare och mer specifik information om fel som uppstår, vilket underlättar felsökningen och gör det lättare att hitta och åtgärda problem.
 
 ## Så här gör du
 
-För att skriva till standard error i Swift, behöver du först importera Foundation framework. Sedan kan du använda funktionen "print" tillsammans med parametern "to:" för att specifiera att du vill skriva till standard error istället för standard utdata.
+Skrivningen till standard error i Swift är en enkel process. Först behöver du importera en del av Swifts standardbibliotek som heter "Glibc". Detta gör du genom att lägga till följande rad i din kod:
 
 ```Swift
-import Foundation
-
-print("Detta är ett meddelande till standard error", to: &.standardError))
+import Glibc
 ```
 
-Detta kommer att skriva ut meddelandet till standard error-kanalen och det kan enkelt skiljas från andra utskrifter genom att det följer "skalet" taggen. Om du till exempel kör detta i en terminal, kommer resultatet att se ut så här: 
+Därefter kan du använda funktionen "fputs" för att skriva till standard error. Funktionen tar två argument - en sträng som ska skrivas och ett "FILE" objekt som representerar standard error. Ett exempel på hur detta kan se ut i praktiken är:
 
-```bash
-$ ./program
-Detta är ett meddelande till standard error
-$
+```Swift
+let errorMessage = "Ett fel har uppstått."
+fputs(errorMessage, stderr)
 ```
 
-Som du kan se är meddelandet isolerat och lätt att hitta i mitten av skalet taggen. Detta är särskilt användbart när du kör stora och komplexa program med många utskrifter.
+När kodblocket körs kommer felmeddelandet att skrivas till standard error och visas för användaren. Det är viktigt att notera att skrivningar till standard error sker oberoende av skrivningar till standard output, vilket gör det möjligt att hantera fel separat från annan utdata i programmet.
 
 ## Djupdykning
 
-Standard error anses vara en av tre strömmar för att hantera informationsflöden i Swift-programmering, tillsammans med standard utdata (standard output) och standard indata (standard input). Det är en del av POSIX-standarderna och är också standarden för de flesta Unix-system. Det är en viktig del av felhantering och debugging processen och används ofta tillsammans med andra verktyg som till exempel Felsökaren (Debugger) och loggfiler.
+Att skriva till standard error är en viktig del av felsökningen i Swift, men det finns vissa saker som är värda att nämna för att få en bättre förståelse för konceptet. Till exempel har vissa versioner av Swift inte "Glibc" biblioteket som standard, vilket kan leda till kompileringsfel om det inte importeras korrekt.
 
-Du kan också använda standard error tillsammans med andra Swift-konstruktioner för att skriva ut mer information till felmeddelanden, som till exempel Stack Traces.
+Det är också viktigt att notera att skrivningen till standard error kan hämmas av vissa operativsystem, vilket kan vara till hjälp för att filtrera ut onödig information vid felsökning. Vidare är det viktigt att skrivningar till standard error inte bör användas för normal utdata, då det kan orsaka förvirring för användare och ändra programmets förväntade beteende.
 
 ## Se även
 
-- [Swift API dokumentation för print() funktionen](https://developer.apple.com/documentation/swift/1541053-print)
-- [Techotopia: Swift - Swift Error Handling](https://www.techotopia.com/index.php/Outputting_Information_to_the_Console_in_Swift#Swift_Error_Handling) 
-- [Ray Wenderlich: How to Work with File System in Swift](https://www.raywenderlich.com/661-foundation-framework-tutorial-how-to-work-with-file-systems-in-swift)
+- [Swift.org](https://swift.org/): Officiell hemsida för Swift med dokumentation och resurser.
+- [Apple Developer Documentation](https://developer.apple.com/documentation/swift): Omfattande dokumentation för Swift från Apple.
+- [Ray Wenderlich](https://www.raywenderlich.com/): En populär webbplats med artiklar, guider och kurser för Swift och iOS-utveckling.

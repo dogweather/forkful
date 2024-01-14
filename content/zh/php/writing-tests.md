@@ -1,68 +1,60 @@
 ---
-title:    "PHP: 撰写测试"
+title:    "PHP: 编写测试"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-<!--
+## 为什么会写测试
 
-为什么：为什么一个人会参与编写测试？
+如果你是一名PHP程序员，你可能会遇到这样的情况：你写了一堆代码，但是当你运行它们的时候，却发现有许多错误。这时候，你就需要一个有效的测试方法来验证你的代码是否正确。写测试可以帮助你更快地发现代码中的错误，并且在后期维护中也能节省时间和精力。因此，学习如何编写测试对于一名程序员来说非常重要。
 
-编写测试是软件开发中非常重要的一部分。它可以帮助我们验证代码的正确性，从而提高整体代码质量并降低错误率。同时，它也可以提供一个更容易理解的代码结构，使得代码更易于维护。
+## 如何编写测试
 
-如何进行：下面是一些使用PHP编写测试的示例和输出：
+下面是一个简单的PHP代码示例，展示了如何编写测试：
 
 ```PHP
 <?php
-// 做个基本的断言测试
-$sum = 2 + 2; 
-assert($sum === 4); 
-
-// 测试一个函数是否返回所需的结果
-function add($a, $b) {
-    return $a + $b;
-}
-assert(add(2, 3) === 5);
-
-// 测试一个类的方法是否正确运行
 class Calculator {
-    public function add($a, $b) {
-        return $a + $b;
-    }
+  function add($a, $b) {
+    return $a + $b;
+  }
 }
-// 创建一个 Calculator 实例
-$calculator = new Calculator();
-assert($calculator->add(2, 3) === 5);
+
+class CalculatorTest extends PHPUnit_Framework_TestCase
+{
+  public function testAdd()
+  {
+    $calculator = new Calculator();
+    $result = $calculator->add(2, 3);
+    $this->assertEquals(5, $result);
+  }
+}
 ```
 
-深入了解：编写测试的核心目的是为了验证代码的正确性。为了实现这一点，我们需要以下几点：
+在上面的例子中，我们创建了一个名为`Calculator`的类，里面有一个`add()`方法用于计算两个数的和。然后，在`CalculatorTest`类中，我们编写了一个`testAdd()`方法来测试`add()`方法是否返回正确的结果。最后，我们使用`assertEquals()`方法来比较实际结果和预期结果是否相等。
 
-1. 包含可以覆盖所有代码路径的测试用例。
-2. 使用断言函数来验证预期的返回结果。
-3. 使用设计良好的代码结构来使得测试更易于编写和维护。
+如果你运行上面的代码，你会得到一个成功的测试结果。但是，如果你在`Calculator`类的`add()`方法中改动一些代码，比如将`return $a + $b`改成`return $a * $b`，你会发现测试不通过，提示你代码有错。这就说明写测试的重要性，它可以帮助我们发现并纠正代码中的错误。
 
-编写测试的过程也可以让我们更加深入地了解代码的功能和逻辑。通过测试，我们可以发现并修复代码中的bug，提高整体代码质量。
+## 深入了解编写测试
 
-另外，编写测试也可以帮助团队成员更加容易地理解代码，从而提高协作效率，减少代码的维护成本。
+写测试的本质是什么？其实就是通过编写一些小的代码来测试我们写的大的代码，从而保证代码的质量和可靠性。在PHP中，我们可以使用PHPUnit来编写测试。PHPUnit是一个PHP测试框架，它允许我们通过编写测试用例来验证代码的正确性，并且提供了一些方法来帮助我们编写这些测试用例。此外，它还提供了丰富的文档和社区支持，可以帮助我们更轻松地学习和使用。
 
-参考链接：
+如果想要编写优质的测试，需要注意以下几点：
 
-[写测试的好处](https://www.cnblogs.com/vipstone/p/8676542.html)
-[如何使用PHP进行单元测试](https://www.liaoxuefeng.com/wiki/893692769725344/975966845352000)
-[PHP官方文档：断言函数](https://www.php.net/manual/zh/function.assert.php)
+1. 每个测试用例应该只测试一个特定的功能，保持测试的简洁性和可读性。
+2. 使用恰当的断言方法来验证代码的正确性，如`assertEquals()`、`assertTrue()`等。
+3. 使用高效的命名来表示测试用例的目的，如`testAdd()`、`testMultiply()`等。
+4. 充分考虑各种情况来验证代码的边界条件，如输入为空、超出范围等。
 
-## 也许您还感兴趣
+除了PHPUnit，还有许多其他的测试工具可以帮助我们编写测试，如PHPSpec、Codeception等。每个工具都有自己的特点，你可以根据自己的喜好来选择使用哪个工具。
 
-- [PHP单元测试简介](https://segmentfault.com/a/1190000038707089)
-- [PHP自动化测试的基础知识](https://www.runoob.com/w3cnote/php-automation-test.html)
-- [PHPUnit官方文档](https://phpunit.de/documentation.html)
+## 参考链接
 
-See Also
-
-[深入理解PHP的单元测试](https://www.jianshu.com/p/ad78af80ccd5)
-[UI测试与单元测试的区别](https://www.cnblogs.com/vincentC/p/8052867.html)
-[代码覆盖率的重要性](https://blog.csdn.net/cindariz/article/details/80579823)
-
-
--->
+- [PHPUnit官方文档](https://phpunit.readthedocs.io/en/latest/index.html)
+- [PHP官方测试教程](https://www.php.net/manual/en/book.testing.php)
+- [PHPUnit实践指南](https://phpunit.de/manual/current/zh_cn)
+- [PHP测试入门指南](https://codeception.com/for-beginners)
+- [PHPSpec官方网站](https://phpspec.net/)
+- [Codeception官方网站](https://codeception.com/)

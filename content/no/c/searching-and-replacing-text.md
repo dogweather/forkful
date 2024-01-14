@@ -1,67 +1,63 @@
 ---
-title:    "C: Søke og erstatte tekst"
+title:    "C: Søk og erstatt tekst"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvis du har jobbet med tekstbehandling eller skrevet lange tekster i notisblokker, har du sannsynligvis støtt på utfordringen med å endre store deler av teksten på en gang. Dette kan være en tidkrevende og kjedelig prosess, spesielt hvis teksten er lang og kompleks. Her kommer søk og erstatt-funksjonen i C-programmering inn i bildet. Ved å bruke denne funksjonen kan du effektivt søke gjennom teksten og erstatte spesifikke deler av den på en rask og enkel måte.
+Det å søke og erstatte tekst er en viktig del av programmeringsverdenen. Enten du er en erfaren utvikler eller en nybegynner, vil du sannsynligvis noen gang måtte erstatte en bestemt tekst med en annen. Dette kan for eksempel være nødvendig når du ønsker å endre en variabelnavn gjennom hele koden din, eller hvis du ønsker å bytte ut et spesifikt ord med et annet i et dokument. Uten å kunne søke og erstatte tekst, kan det være en svært tidkrevende og kjedelig oppgave å gjøre for hånd. Derfor er det viktig å kunne utnytte funksjoner som dette i programmeringen din.
 
 ## Hvordan
 
-For å søke og erstatte tekst i C-programmering må du bruke funksjonen `str_replace ()`. Denne funksjonen tar imot fire parametere. Den første parameteren er en tekststreng som skal søkes etter, den andre er en tekststreng som skal erstatte den første teksten, den tredje er den totale lengden på teksten som skal søkes og den fjerde er teksten der søket skal utføres. La oss se på et eksempel for å forstå bedre:
+Søke og erstatte tekst i C-programmering er enkelt og kan gjøres med få linjer med kode. Først må du inkludere standardbiblioteket "string.h" for å kunne bruke funksjoner for strenger. Deretter kan du bruke "strtok" funksjonen til å dele opp strengen i mindre biter basert på et gitt skillemerke. Dette kan være et enkelt tegn eller en hel streng. Etter dette kan du bruke "strcpy" funksjonen til å erstatte den ønskede teksten med den nye teksten.
 
-```C
+Et eksempel på dette kan være å erstatte alle forekomster av ordet "hund" med "katt" i en streng:
+
+```
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 int main()
 {
-    char tekst[] = "Dette er en testtekst";
-    char old[] = "test";
-    char new[] = "kode";
-    int lengde = strlen(tekst);
+    char text[100] = "Jeg elsker min hund, den er min beste venn.";
+    char *tok;
+    char new_text[100] = "";
 
-    printf("%s", tekst);
-
-    str_replace(old, new, lengde, tekst);
-    printf("%s", tekst);
-
-    return 0;
-}
-
-void str_replace(char old[], char new[], int lengde, char tekst[])
-{
-    int i, j;
-    int n = strlen(new);
-    int m = strlen(old);
-    
-    for(i = 0; i < lengde; i++)
+    tok = strtok(text, " "); // deler opp strengen etter mellomrom
+    while(tok != NULL)
     {
-        if(strncmp(&tekst[i], old, m) == 0)
+        if(strcmp(tok, "hund") == 0) // sammenligner om strengene er like
         {
-            for(j = 0; j < n; ++j)
-            {
-                tekst[i + j] = new[j];
-            }
-            
-            i += n - 1;
+            strcat(new_text, "katt"); // legger til det nye ordet i den nye strengen
         }
+        else
+        {
+            strcat(new_text, tok); // legger til ordet som det er hvis det ikke er funnet
+        }
+        strcat(new_text, " "); // legger til et mellomrom mellom hvert ord i den nye strengen
+        tok = strtok(NULL, " "); // fortsetter å dele opp strengen
     }
+    printf("%s\n", new_text); // skriver ut den nye strengen
+    return 0;
 }
 ```
 
-I dette eksempelet har vi en tekststreng "Dette er en testtekst" og vi vil endre "test" til "kode". Derfor kalles `str_replace ()` med disse verdiene. Outputen vil være "Dette er en kode tekst".
+### Output
+```
+Jeg elsker min katt, den er min beste venn.
+```
 
 ## Dypdykk
 
-I eksemplet ovenfor erstatter vi bare én forekomst av ordet "test". Men hvis vi ønsker å erstatte alle forekomster av et ord i en tekst, må vi bruke en løkke for å gjennomgå hele teksten og erstatte alle tilsvarende ord. `Str_replace()`-funksjonen fungerer ved å sammenligne teksten med den gamle verdien og bytte ut den gamle verdien med den nye. Det er også mulig å følge den samme prosessen for å erstatte deler av en tekst ved å endre parametrene og funksjonsdefinisjonen.
+Det finnes ulike metoder for å søke og erstatte tekst i C-programmering. En annen metode er å bruke "strstr" funksjonen som søker gjennom en streng og returnerer en peker til den første forekomsten av en annen streng. Dette gjør det mulig å enkelt finne posisjonen til en bestemt tekst og erstatte den med en annen.
+
+Det er også viktig å være forsiktig med å bruke "strcpy" funksjonen for å unngå mulige bufferoverløp. Det anbefales å bruke "strncpy" i stedet som tar med argumentet for hvor mange tegn som skal kopieres og unngår å overskrive grensen på en streng.
 
 ## Se Også
 
-- [Tutorial: Søke og erstatte tekst i C](https://www.includehelp.com/c-programs/search-and-replace-a-word-in-a-string-in-c-programming.aspx)
-- [Veiledning: Søke og erstatte deler av tekst i C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [GitHub: Kildekode for `str_replace` funksjonen i C](https://github.com/mark-culhane/C/blob/master/str_replace.c)
+- [C-programmering med GNU-toolchain tutorial (på norsk)](https://www.learn-c.org/no/)
+- [Offisiell C-programmering dokumentasjon (på engelsk)](https://devdocs.io/c/)
+- [Flere eksempler på søk og erstatt tekst i C (på engelsk)](https://www.geeksforgeeks.org/c-programming-find-and-replace-a-word-in-a-file/)

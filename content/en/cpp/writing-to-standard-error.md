@@ -1,60 +1,49 @@
 ---
 title:    "C++ recipe: Writing to standard error"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
+As a programmer, you may have come across the term "standard error" while debugging your code. But have you ever wondered why we engage in writing to standard error? In this blog post, we will explore the importance of writing to standard error and how it can be useful for developers.
 
-In C++ programming, writing to standard error is a common practice for displaying error messages and debugging code. It allows developers to easily track and handle any errors that may occur during program execution.
-
-## How To 
-
-To write to standard error in C++, you will first need to include the <iostream> header file. Then, use the "cerr" object to write the error message followed by the << operator. Here's an example code:
+## How To
+Writing to standard error in C++ is a standard way of displaying error messages or debugging information to the user. This is achieved by using the `std::cerr` object, which is specifically designed for error output. Let's take a look at an example:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-  int num = 5;
-  if(num < 10) {
-    cerr << "Error: Number is less than 10." << endl;
-  }
-  return 0;
+    int num = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+    
+    if (num % 2 == 0) {
+        std::cerr << "Even number entered!" << std::endl;
+    }
+    
+    return 0;
 }
 ```
 
-The output of this code will be: "Error: Number is less than 10." displayed in the console for the developer to see. It is important to use the "endl" operator at the end of the error message to ensure it is displayed properly on the next line.
+In this code, we are using `std::cerr` to output a message if the user enters an even number. This way, we can alert the user about any potential errors in our code. The output for this code would be:
 
-Another way to write to standard error is by using the "fprintf" function. This allows for more control over the formatting of the error message. Here's an example code using "fprintf":
-
-```C++
-#include <stdio.h>
-
-int main()
-{
-  int num = 5;
-  if(num < 10) {
-    fprintf(stderr, "Error: Number is less than 10. \n");
-  }
-  return 0;
-}
+```
+Enter a number: 4
+Even number entered!
 ```
 
-The output of this code will be the same as the previous example. However, in this case, the error message is formatted using the "fprintf" function.
+As you can see, the message was displayed on a separate line, indicating it was written to standard error. This is useful for distinguishing between regular output and error messages.
 
 ## Deep Dive
+So why do we use `std::cerr` instead of `std::cout`? The main difference between the two is that `std::cerr` is unbuffered while `std::cout` is buffered. This means that `std::cerr` immediately displays the output to the user, whereas `std::cout` may delay the display until a certain condition is met. In the case of error messages, we want them to be displayed immediately so that the user is aware of any issues with the program.
 
-While writing to standard error may seem like a simple task, it is important for developers to understand the differences between standard error and standard output (cout) in C++. Standard error should be used specifically for displaying error messages, while standard output is used for general program output. By using standard error, developers can differentiate between regular program output and error messages, making it easier to identify and handle errors.
-
-It is also important to mention that when writing to standard error, the error message will be displayed on the console regardless of whether output is redirected to a file. This can be useful for debugging purposes, as all error messages will still be shown to the developer.
+It's also important to note that `std::cerr` is not limited to just error messages. You can use it to output any kind of debugging information or progress updates to the user. This makes it a useful tool for developers to track the execution of their code and identify any potential issues.
 
 ## See Also
+- [C++ Standard Library](https://en.cppreference.com/w/cpp/header)
+- [Introduction to Standard Input and Output in C++](https://www.geeksforgeeks.org/introduction-input-output-header-files-c-cpp/)
 
-Here are some additional resources for writing to standard error in C++:
-
-- [C++ Tutorial: Standard Input and Output](https://www.programiz.com/cpp-programming/input-output)
-- [C++ Reference: cerr object](https://www.cplusplus.com/reference/iostream/cerr/)
-- [C++ Reference: fprintf function](https://www.cplusplus.com/reference/cstdio/fprintf/)
+Writing to standard error may seem like a simple concept, but it is an essential aspect of programming that can greatly improve the debugging process. So the next time you encounter an error in your code, remember the `std::cerr` object and use it to your advantage.

@@ -1,47 +1,49 @@
 ---
-title:    "Fish Shell: Slette tegn som matcher et mønster"
+title:    "Fish Shell: Fjerning av tegn som samsvarer med et mønster"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være flere grunner til å ville slette tegn som matcher et visst mønster. En mulig grunn kan være at man ønsker å rydde opp i en tekstfil eller å fjerne uønskede tegn fra en variabel i et skript.
+Hvorfor ville du engasjere deg i å slette tegn som matcher et mønster? Vel, det kan være flere forskjellige grunner til dette. Kanskje du har en tekststreng som inneholder et uønsket tegn og du ønsker å fjerne det for å forbedre lesbarheten. Eller kanskje du jobber med regelmessige uttrykk og trenger å fjerne bestemte tegn for å matche et mønster. Uansett hva grunnen din måtte være, kan Fish Shell gjøre denne prosessen enkel og effektiv.
 
 ## Hvordan
 
-For å slette tegn som matcher et mønster i Fish Shell, kan man bruke kommandoen `string replace` sammen med et regulært uttrykk. La oss si at vi har en tekstfil som inneholder ordet "Fish", men vi vil fjerne bokstaven "h" fra dette ordet. Vi kan bruke følgende kommando:
+For å slette tegn som matcher et mønster i Fish Shell, kan du bruke kommandoen `string replace`. Denne kommandoen sletter alle forekomster av et bestemt tegn eller tegnrekke i en tekststreng.
+
+For å bruke denne kommandoen, må du først skrive `string replace` etterfulgt av mønsteret du vil matche og hva du vil erstatte det med, separert med et mellomrom. For eksempel, hvis du ønsker å slette alle mellomrom i en tekststreng og erstatte dem med ingenting, kan du skrive `string replace " " ""` etterfulgt av tekststrengen du ønsker å endre. Her er et eksempel på hvordan dette kan se ut i Fish Shell:
 
 ```Fish Shell
-string replace -r 'h' '' < tekstfil.txt
+string replace " " "" Dette er en tekststreng
 ```
 
-Dette vil gi følgende output:
-
+Output:
+```Fish Shell
+Detteerentekststreng
 ```
-Fis
-```
 
-Vi kan også bruke denne kommandoen i et skript for å fjerne uønskede tegn fra en variabel. La oss si at vi har en variabel `$s` som inneholder teksten "12345678", men vi ønsker å fjerne alle tall som er større enn 5. Vi kan bruke følgende kommando:
+Her er et annet eksempel, hvor vi sletter alle tall fra en tekststreng:
 
 ```Fish Shell
-s = (string replace -r '[6-9]' '' $s)
+string replace [0-9] "" Dette er en tekst med tall 123
 ```
 
-Når vi skriver ut variabelen `$s` vil vi få følgende output:
-
+Output:
+```Fish Shell
+Dette er en tekst med tall
 ```
-12345
-```
-
-Dette er bare noen enkle eksempler på hvordan man kan bruke `string replace` i Fish Shell for å slette tegn som matcher et mønster.
 
 ## Dypdykk
 
-Det er verdt å merke seg at regulære uttrykk kan være ganske komplekse, og det kan være lurt å bruke et verktøy som [regex101](https://regex101.com/) for å teste og forstå uttrykkene man bruker. Det finnes også mange forskjellige flagg man kan bruke sammen med `string replace` for å få enda mer kontroll over søket, som for eksempel å ignorere store/små bokstaver og å kun søke på hele ord.
+Nå som du har lært hvordan du kan slette tegn som matcher et mønster i Fish Shell, la oss ta en dypere titt på hva som faktisk skjer når du bruker `string replace` kommandoen. Når du sletter forekomster av et mønster i en tekststreng, blir disse tegnene erstattet med ingenting, slik at teksten din blir kortere.
+
+Det er også verdt å merke seg at `string replace` kommandoen støtter bruk av regelmessige uttrykk. Dette betyr at du kan bruke mer komplekse mønstre for å matche og slette tegn i tekststrengen din.
 
 ## Se også
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/commands.html#string-replace)
-- [Regex101](https://regex101.com/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Regulære uttrykk i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_strings)
+- [Bruke `string replace` kommandoen](https://fishshell.com/docs/current/commands.html#string-replace)

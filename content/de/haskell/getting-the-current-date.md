@@ -1,61 +1,43 @@
 ---
 title:    "Haskell: Das aktuelle Datum erhalten"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das aktuelle Datum und die Uhrzeit sind wichtige Informationen in der Programmierung. Sie können verwendet werden, um in Anwendungen zeitbasierte Funktionen zu implementieren oder einfach nur, um den Benutzern das aktuelle Datum anzuzeigen. In diesem Blogpost zeige ich Ihnen, wie Sie mithilfe von Haskell das aktuelle Datum und die Uhrzeit abrufen können.
+Das Abrufen des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es kann nützlich sein, um bestimmte Funktionen abhängig vom Datum oder zur Erstellung von Zeitstempeln zu steuern.
 
-# Wie geht das?
+## Wie
 
-Zunächst müssen wir das `Data.Time` Modul in unser Programm importieren. Dann können wir die `getCurrentTime` Funktion verwenden, um das aktuelle Datum und die Uhrzeit zu erhalten. Hier ist ein Beispiel:
+Um das aktuelle Datum in Haskell abzurufen, müssen wir zunächst die `Data.Time` Bibliothek importieren. Dann können wir die `getCurrentTime` Funktion aufrufen, die uns ein `UTCTime` Objekt zurückgibt.
 
 ```Haskell
 import Data.Time
 
-main = do
-  now <- getCurrentTime
-  putStrLn $ "Das aktuelle Datum und die Uhrzeit sind: " ++ show now
+currentDate :: IO UTCTime
+currentDate = getCurrentTime
 ```
 
-Die `getCurrentTime` Funktion gibt ein Objekt vom Typ `UTCTime` zurück, das das Datum und die Uhrzeit im UTC-Format (koordinierte Weltzeit) enthält. Wenn wir diese Information in ein menschenlesbares Format umwandeln möchten, können wir die `formatTime` Funktion verwenden. Hier ist ein Beispiel, das das Datum und die Uhrzeit im Format "dd.mm.yyyy HH:MM" ausgibt:
+Dieses Objekt enthält das aktuelle Datum und die Uhrzeit in der koordinierten Weltzeit (UTC). Wenn wir das Datum in einem anderen Zeitformat anzeigen möchten, können wir die `formatTime` Funktion verwenden.
 
 ```Haskell
--- Wir nutzen die Funktion `formatTime` aus dem `Data.Time.Format` Modul
 import Data.Time.Format
 
--- Wir verwenden die `show` Funktion, um das `UTCTime` Objekt in einen String umzuwandeln
-main = do
-  now <- getCurrentTime
-  putStrLn $ "Das aktuelle Datum und die Uhrzeit sind: " ++ show (formatTime defaultTimeLocale "%d.%m.%Y %H:%M" now)
+dateString :: String
+dateString = formatTime defaultTimeLocale "%d.%m.%Y" currentDate
 ```
 
-Die Ausgabe dieses Beispiels wäre beispielsweise: "Das aktuelle Datum und die Uhrzeit sind: 09.08.2021 15:30".
+Dieser Code würde uns das Datum im Format "DD.MM.YYYY" als String zurückgeben. Wir können auch die `getCurrentTime` Funktion mit einem `TimeZone` Argument aufrufen, um das Datum in einer bestimmten Zeitzone zu erhalten.
 
-# Tiefere Einblicke
+## Tiefgehende Einblicke
 
-Möchten Sie das Datum und die Uhrzeit in einer bestimmten Zeitzone oder mit einem anderen Format erhalten? Das ist mit Haskell ebenfalls möglich. Hier ist ein Beispiel, das das Datum und die Uhrzeit in der Zeitzone "Europe/Berlin" sowie das Datum im Format "Wochentag, dd.mm.yyyy" ausgibt:
+Die `getCurrentTime` Funktion ruft tatsächlich die aktuelle Systemzeit vom Betriebssystem ab. Dies wird als "IO-Aktion" bezeichnet, da es eine Aktion im Eingabe/Ausgabe-System ist. Dies bedeutet, dass das Abrufen des aktuellen Datums immer eine geringe Wahrscheinlichkeit hat, dass es fehlschlägt oder sich verzögert, da es vom Betriebssystem abhängig ist. Es ist wichtig, dies bei der Verwendung des aktuellen Datums in kritischen Anwendungen zu berücksichtigen.
 
-```Haskell
-import Data.Time
-import Data.Time.Zone
+## Siehe auch
 
--- Wir erstellen eine Variable mit der gewünschten Zeitzone
-berlinTimeZone = hoursToTimeZone 2
-
-main = do
-  now <- getCurrentTime
-  -- Hier passen wir die `formatTime` Funktion an, um sowohl die Zeitzone als auch ein individuelles Format zu verwenden
-  putStrLn $ "Das aktuelle Datum und die Uhrzeit in Berlin sind: " ++ show (formatTime defaultTimeLocale "%d.%m.%Y" (utcToLocalTime berlinTimeZone now)) ++ " " ++ show (formatTime defaultTimeLocale "%A" now)
-```
-
-Die Ausgabe dieses Beispiels wäre beispielsweise: "Das aktuelle Datum und die Uhrzeit in Berlin sind: 09.08.2021 Montag".
-
-# Siehe auch
-
-- [Dokumentation für das `Data.Time` Modul](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Weiterführende Informationen zur Zeitberechnung in Haskell](https://wiki.haskell.org/Time_and_date)
-- [Eine Anleitung zum Umgang mit verschiedenen Zeitzonen in Haskell](https://alvinalexander.com/source-code/haskell/haskell-date-time-zone-how-to-get-current-time/)
+- Offizielle Dokumentation zu `Data.Time`: https://hackage.haskell.org/package/time/docs/Data-Time.html
+- Ein Tutorial zum Umgang mit Datum und Zeit in Haskell: https://wiki.haskell.org/Time_and_Date_Library
+- Weitere Ressourcen und Codebeispiele für die Arbeit mit Datum und Zeit: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/date-and-time

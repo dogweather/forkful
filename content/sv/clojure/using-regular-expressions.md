@@ -1,44 +1,41 @@
 ---
-title:    "Clojure: Användning av reguljära uttryck"
+title:    "Clojure: Att använda reguljära uttryck"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Reguljära uttryck, eller regular expressions på engelska, är ett kraftfullt verktyg inom Clojure-programmering. Med hjälp av reguljära uttryck kan du söka, ersätta och manipulera text på ett effektivt sätt. Det är ett oumbärligt verktyg när du arbetar med stora datamängder eller behöver göra avancerade sökningar i textfiler. Läs vidare för att lära dig hur du kan använda reguljära uttryck i dina Clojure-projekt.
+Regex, eller reguljära uttryck, är ett verktyg som hjälper till att söka och manipulera textsträngar. Det är särskilt användbart för att hitta och ersätta specifika mönster i stora mängder data. Genom att använda regex kan du effektivt filtrera och bearbeta text som passar dina behov.
 
-## Så här
+## Hur man använder regex i Clojure
 
-För att använda reguljära uttryck i Clojure behöver du importera biblioteket "java.util.regex". Sedan kan du använda funktionen "re-matches" för att hitta matchande delar i en sträng. Låt oss säga att du vill hitta alla ord som börjar med bokstaven "a" i en text. Du kan använda följande kod:
+För att använda reguljära uttryck i Clojure måste du importera biblioteket ```clojure.string```. Sedan kan du använda funktionen ```re-find``` eller ```re-seq``` för att hitta matchande mönster i en textsträng.
 
+Exempelvis kan du använda följande kod för att hitta alla förekomster av ordet "hund" i en textsträng:
 ```Clojure
-(import [java.util.regex Pattern])
-(def pattern (Pattern/compile "^a\\w+"))
-(re-matches pattern "apple is a fruit") ; => ["apple"]
+(require '[clojure.string :as str])
+
+(def text "Jag älskar hundar, speciellt golden retrievers.")
+
+(str/re-seq #"hund" text)
 ```
 
-För att göra en mer avancerad sökning kan du använda olika symboler för att specificera vad du letar efter. Till exempel kan du använda "\" för att söka efter en särskild karaktär, "+" för att hitta ett eller flera tillfällen av en karaktär, och "*" för att hitta noll eller flera tillfällen av en karaktär. Här är ett exempel på hur du kan hitta alla ord som innehåller bokstaven "a":
+Detta skulle producera en lista med en matchning för ordet "hund" i textsträngen.
 
-```Clojure
-(import [java.util.regex Pattern])
-(def pattern (Pattern/compile "\\w*a\\w*"))
-(re-matches pattern "apple is a fruit") ; => ["apple", "fruit"]
-```
+Du kan också använda regex för att ersätta delar av en textsträng med ett annat mönster. Detta kan göras med hjälp av funktionen ```re-pattern``` och ```str/replace-first``` eller ```str/replace``` beroende på om du vill ersätta den första matchningen eller alla matchningar.
 
 ## Djupdykning
 
-Det finns många olika symboler och mönster som du kan använda i reguljära uttryck för att fånga specifika delar av en sträng. Du kan till exempel använda parenteser för att gruppera olika delar av ett uttryck och sedan extrahera dem med hjälp av "re-groups" funktionen. Det är också möjligt att använda "re-matches" för att hitta flera matchningar i en sträng och "re-find" för att hitta den första matchningen.
+Det finns många olika metakaraktärer och specialtecken som du kan använda i reguljära uttryck för att uttrycka komplexa mönster. Till exempel kan du använda ```*``` för att matcha noll eller flera förekomster av en karaktär, ```+``` för att matcha en eller flera förekomster, och ```^``` för att matcha ett mönster i början av en textsträng.
 
-Det är viktigt att komma ihåg att reguljära uttryck är väldigt kraftfulla men också komplexa. Det kan ta lite tid att lära sig dem, men när du väl behärskar dem kan de spara dig mycket tid och arbete.
+Du kan också använda grupper med parenteser för att extrahera specifika delar av en matchning, och sedan använda dessa delar i ditt utbytet mönster.
+
+För att bli mer bekant med olika regex-mönster och deras användningsområden rekommenderas det att öva och experimentera med det.
 
 ## Se även
 
-Här är några användbara resurser för att lära dig mer om reguljära uttryck och hur du kan använda dem i dina Clojure-projekt:
-
-- [Clojure Regular Expressions Documentation](https://clojure.org/reference/regular_expressions)
-- [RegExr](https://regexr.com/) - ett verktyg för att testa reguljära uttryck online
-- [Learn Reagent Expressions](https://learn.reagentproject.org/docs/widgets/regex) - en interaktiv guide för att lära sig reguljära uttryck
-
-Lycka till med att använda reguljära uttryck i dina Clojure-projekt!
+- [Clojure.org - Regular Expressions](https://clojure.org/guides/regular_expressions)
+- [RegExr - Regex-tutorials och tester](https://regexr.com/)

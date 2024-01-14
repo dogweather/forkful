@@ -1,65 +1,50 @@
 ---
-title:    "C: Tarkistetaan, onko kansio olemassa"
+title:    "C: Tarkistetaan, onko hakemisto olemassa"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa hakemiston olemassaolo?
+## Miksi
+Usein ohjelmointiprojekteissa joudutaan tarkistamaan, onko tietty kansio olemassa. Tämä tarkistus on tärkeä, jotta ohjelman suoritus ei kaadu tai aiheuta virheitä, mikäli kyseistä kansioita ei löydy. Tässä blogikirjoituksessa käymme läpi kuinka tarkistus voidaan toteuttaa C-ohjelmointikielellä.
 
-Hakemistojen olemassaolon tarkistaminen on tärkeä osa C-ohjelmointia, sillä se varmistaa, että tiedostojen käsittely sujuu suunnitellusti. Kun tarkistat ensin, onko hakemisto olemassa, voit välttää mahdolliset virheet ohjelman suorituksessa ja optimoida suoritusaikaa.
+## Kuinka
+Tarkistaaksesi, onko kansio olemassa C-ohjelmassa, käytetään `opendir()` funktiota. Tämä funktio avaa halutun kansion ja palauttaa osoittimen `DIR`-tyyppiseen muuttujaan. Mikäli kansiota ei ole olemassa, palauttaa `opendir()`-funktio `NULL`-arvon. Alla on esimerkki siitä, kuinka tarkistus voidaan toteuttaa käytännössä:
 
-## Miten tarkistaa hakemiston olemassaolo
+```C
+#include <stdio.h> 
+#include <dirent.h> 
 
-Tarkistaaksesi, onko hakemisto olemassa C-kielellä, käytä funktiota ```opendir ()``` ja tarkista sen palauttaman arvon avulla. Jos palautusarvo on NULL, hakemistoa ei ole olemassa. Alla on esimerkki koodista, joka tarkistaa "testi" nimisen hakemiston olemassaolon:
+int main(void) 
+{ 
+    DIR* dir = opendir("polku/kansioon"); 
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <dirent.h>
+    if (dir) { 
+        printf("Kansio löytyi"); 
+        closedir(dir); 
+    } 
+    else if (ENOENT == errno) { 
+        printf("Kansiota ei löytynyt"); 
+    } 
+    else { 
+        printf("Virhe tarkistettaessa kansiota"); 
+    } 
 
-int main() {
-    
-    // Avataan hakemisto "testi" ja tarkistetaan sen olemassaolo
-    DIR *dir = opendir("testi");
-    if (dir == NULL)
-        printf("Hakemistoa ei löydy \n");
-    else
-        printf("Hakemisto löydetty \n");
-        
-    return 0;
+    return 0; 
 }
 ```
 
-Tulostus tältä koodilta olisi "Hakemistoa ei löydy", jos "testi" nimistä hakemistoa ei löydy, tai "Hakemisto löydetty", jos hakemisto on olemassa.
+Ylläolevassa koodissa `opendir()`-funktio avaa polussa määritetyn kansion. Mikäli kansiota ei löydy, siirtyy koodi `else if`-lauseeseen, jossa tarkistetaan `errno`-muuttujan arvo. `ENOENT` tarkoittaa "ei ole". Jos `errno`-muuttujan arvo on `ENOENT`, tulostetaan, että kansiota ei löytynyt.
 
-## Syventyminen hakemiston olemassaolon tarkistamiseen
+## Syväsyvennys
+`opendir()`-funktion lisäksi on olemassa myös muita funktioita, joilla voidaan tarkistaa, onko kansio olemassa. Näitä ovat esimerkiksi `stat()` ja `access()`-funktiot. `stat()`-funktio palauttaa tiedon tiedostosta tai kansioista, kun taas `access()`-funktio tarkistaa, onko käyttäjällä oikeudet kyseiseen kansioon.
 
-Tarkemmin sanottuna, ```opendir()``` funktio avaa hakemiston ja palauttaa sen osoittimen tai NULL, jos hakemistoa ei löydy. Jotta voisit käyttää muita hakemiston toimintoja, kuten ```readdir()```, sinun tulee ensin tarkistaa, onko hakemisto voimassa.
+On myös tärkeää huomata, että tarkistus kansioista voi vaihdella käyttöjärjestelmästä riippuen. Esimerkiksi Windows-käyttöjärjestelmässä `opendir()`-funktio käyttää käännöstä `FindNextFile()`.
 
-On myös hyvä huomata, että ```opendir()``` funktiolla on merkittävä vaikutus suoritusaikaan. Jos tarvitset vain tarkistaa hakemiston olemassaolon, on parempi käyttää ```access()``` funktiota, joka suorittaa paljon nopeammin. Tämä funktio tarkistaa, onko tietyllä polulla sijaitseva hakemisto voimassa. Alla on esimerkki:
-
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <dirent.h>
-
-int main() {
-    
-    // Tarkistetaan "testi" hakemisto by polku
-    if (access("testi", F_OK) != -1)
-        printf("Hakemisto löydetty \n");
-    else
-        printf("Hakemistoa ei löydy \n");
-        
-    return 0;
-}
-```
+Tarkistuksen lisäksi on myös hyvä huomioida, että kansio voi olla olemassa, mutta käyttäjällä ei ole oikeuksia kyseiseen kansioon. Näin ollen virheilmoituksen sijaan voisi olla hyvä ilmoittaa, että ohjelmalla ei ole oikeuksia kyseiseen kansioon.
 
 ## Katso myös
-
-- [Dirent.h - C-käyttöliittymä](https://www.tutorialspoint.com/c_standard_library/dirent_h.htm)
-- [DIR rakenne - C käyttöliittymä](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
-- [Access() funktio - C käyttöliittymä](https://www.tutorialspoint.com/c_standard_library/c_function_access.htm)
+- [C opendir() -funktio](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
+- [C access() -funktio](https://www.tutorialspoint.com/c_standard_library/c_function_access.htm)
+- [C stat() -funktio](https://www.tutorialspoint.com/c_standard_library/c_function_stat.htm)

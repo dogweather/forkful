@@ -1,43 +1,37 @@
 ---
-title:    "Rust: Schreiben für Standardfehler"
+title:    "Rust: Schreiben auf den Standardfehler"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
+In dieser Blogpost werden wir uns mit dem Schreiben in den Standardfehler beschäftigen und erfahren, warum es eine wichtige Fähigkeit im Rust-Programmieren ist.
 
-In der Welt des Programmierens gibt es viele verschiedene Möglichkeiten, wie man Fehlermeldungen und andere Informationen aus dem Code ausgeben kann. Eines der effektivsten und am häufigsten verwendeten Mittel ist das Schreiben auf den Standardfehler (Standard Error), auch bekannt als Stderr. Warum sollte man also die Mühe auf sich nehmen, Daten im Fehlerstrom zu schreiben?
-
-## Wie?
-
-In Rust ist das Schreiben auf den Standardfehler relativ einfach. Es gibt verschiedene Wege, dies zu erreichen, aber einer der gängigsten ist die Verwendung der `eprintln!`-Makrofunktion. Diese kann auf ähnliche Weise wie `println!` verwendet werden, aber anstatt auf den Standardausgabestrom (Stdout) zu schreiben, gibt sie die Daten auf den Standardfehlerstrom aus.
-
-Ein Beispiel könnte wie folgt aussehen:
+## Wie man in den Standardfehler schreibt
+Das Schreiben in den Standardfehler ist ein wichtiger Aspekt des Rust-Programmierens. Um in den Standardfehler zu schreiben, verwenden wir die Funktion `eprintln!`. Nehmen wir an, wir haben einen Fehler, der aus dem Code hervorgeht und wir diese Nachricht in der Standardfehlerausgabe ausgeben möchten. Hier ist ein Beispiel:
 
 ```Rust
 fn main() {
-    let error_message = "Eine Fehlermeldung.";
-    eprintln!("Fehler: {}", error_message);
+    let num1 = 10;
+    let num2 = 0;
+
+    let result = num1 / num2;
+    eprintln!("Der Fehler ist: {}", result);
 }
 ```
 
-Die Ausgabe wäre dann:
+Das obige Beispiel wird den Fehler `thread 'main' panicked at 'impossible division: 0'` in der Konsole ausgeben. So einfach ist es, in den Standardfehler zu schreiben!
 
-```
-Fehler: Eine Fehlermeldung. 
-```
+## Tiefgehender Einblick
+Jetzt, da wir wissen, wie man in den Standardfehler schreibt, lassen Sie uns einen tiefgehenden Einblick auf diesen Prozess werfen. Das Schreiben in den Standardfehler ist besonders nützlich, wenn wir Fehler in unserem Code finden. Es ermöglicht uns, wichtige Informationen über den Code zu erhalten, der ausgeführt wird, und hilft uns, diese Fehler schnell zu erkennen und zu beheben.
 
-Natürlich muss die Funktion `main()` nicht der einzige Ort sein, an dem Daten auf den Standardfehlerstrom geschrieben werden. Sie können überall in Ihrem Code verwendet werden, wo Sie Informationen ausgeben möchten.
-
-## Tiefere Einblicke
-
-Der Hauptvorteil des Schreibens auf den Standardfehlerstrom ist die Möglichkeit, Fehler und andere kritische Informationen zu protokollieren, selbst wenn der Standardausgabestrom nicht erreichbar ist. Zum Beispiel, wenn Sie eine Anwendung ausführen, die Daten auf eine Datei schreibt aber aufgrund eines Fehlers nicht auf die Datei zugreifen kann, können Sie immer noch wichtige Informationen im Fehlerstrom ausgeben, um zu verstehen, was schiefgelaufen ist.
-
-Ein weiterer Grund, standardisierte Ausgaben auf dem Fehlerstrom zu verwenden, ist die Fähigkeit, diese auszulesen und zu analysieren. Wenn Sie Informationen auf der Fehlerkonsole ausgeben, können Sie Skripte erstellen, die diese Informationen abrufen und automatisch Maßnahmen ergreifen, um Probleme zu beheben oder zu verhindern.
+Ein weiterer wichtiger Aspekt des Schreibens in den Standardfehler ist die Möglichkeit, benutzerdefinierte Fehlermeldungen auszugeben. Dies kann hilfreich sein, um unsere eigenen Fehler zu identifizieren und zu verstehen, wo genau sie auftreten.
 
 ## Siehe auch
+Hier sind einige nützliche Links, die Ihnen beim Erlernen des Schreibens in den Standardfehler in Rust helfen können:
 
-- [Rust-Dokumentation zu `eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Rust-Forum auf Stack Overflow](https://stackoverflow.com/questions/tagged/rust-lang)
-- [Offizieller Rust-Chat auf Discord](https://discord.gg/rust-lang)
+- [Rust-Dokumentation über eprintln! Funktion](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Tutorial: Wie man Fehlerbehandlung in Rust lernt](https://blog.logrocket.com/how-to-learn-error-handling-in-rust/)
+- [Artikel: Grundlegende Fehlerbehandlung in Rust](https://www.joshmcguigan.com/blog/basic-error-handling-rust/)

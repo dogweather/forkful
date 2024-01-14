@@ -1,34 +1,37 @@
 ---
-title:    "Gleam: Konwersja daty na ciąg znaków"
+title:    "Gleam: Konwertowanie daty na ciąg znaków"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest niezbędnym elementem w wielu projektach programistycznych. Dzięki niej możemy wyświetlać daty w czytelny sposób, a także łatwiej porównywać i sortować dane. W tym wpisie dowiesz się, jak w prosty sposób wykonać konwersję datek w języku Gleam.
+Konwersja daty na ciąg znaków może być niezbędnym krokiem przy pracy z danymi w wielu aplikacjach. Na przykład, gdy tworzymy raporty lub wyświetlamy daty na stronie internetowej, zwykle potrzebujemy, aby daty były w czytelnej formie dla użytkowników. W tym artykule dowiecie się, jak w prosty sposób wykonac konwersję w języku programowania Gleam.
 
 ## Jak to zrobić
 
-Aby dokonać konwersji daty na ciąg znaków w Gleam, musimy użyć wbudowanego modułu `Date` oraz funkcji `format`. Poniżej przedstawiamy przykładowy kod oraz jego wynik w formacie Markdown.
+Aby skonwertować datę na ciąg znaków w języku Gleam, możemy skorzystać z wbudowanych funkcji formatujących w bibliotece standardowej. Najpierw musimy zaimportować moduł `Time`, który umożliwi nam pracę z datami. Następnie możemy wykorzystać funkcję `format`, aby skonfigurować formatowanie dla naszej daty. Poniżej znajduje się przykładowy kod, który konwertuje datę na ciąg znaków w formacie rok-miesiąc-dzień.
 
 ```Gleam
-import Date
+import Time
 
-let date = Date.now()
-let formatted_date = Date.format(date, "%d/%m/%Y")
+let date = Time.now()
 
-assert formatted_date == "02/05/2021"
+let formatted_date = Time.format(date, "{year}-{month}-{day}")
+
+![](https://i.imgur.com/pPKUJRT.png)
 ```
 
-Jak widać powyżej, najpierw importujemy moduł `Date`, a następnie korzystając z funkcji `format`, przekazujemy do niej aktualną datę oraz format, w jakim chcemy ją wyświetlić. Pamiętaj, że format musi być zgodny z dokumentacją języka Gleam i mogą wystąpić różnice w stosunku do innych języków programowania.
+Jak widać powyżej, wynik konwersji jest przechowywany w zmiennej `formatted_date`. W ten sam sposób możemy wybrać inne formaty, np. miesiąc-dzień-rok lub dzień-miesiąc-rok. Jest to bardzo przydatne w przypadku tworzenia raportów lub etykiet z datami.
 
 ## Deep Dive
 
-Aby lepiej zrozumieć proces konwersji daty na ciąg znaków w języku Gleam, warto przejrzeć oficjalną dokumentację modułu `Date`. W nim znajdziesz pełną listę dostępnych formatów, a także dodatkowe funkcje, które mogą być przydatne w bardziej zaawansowanych przypadkach. Warto również pamiętać, że moduł ten jest ciągle rozwijany i możliwe, że w przyszłości pojawi się więcej opcji.
+W języku Gleam istnieje wiele innych funkcji, które umożliwiają bardziej zaawansowane formatowanie dat. Możemy na przykład dodać informacje o dniu tygodnia lub użyć innych symboli dla formatowania. Wszystkie dostępne opcje znajdują się w [dokumentacji](https://gleam.run/modules/time) modułu `Time`.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja modułu `Date`: https://gleam.run/modules/date
-- Przykładowe projekty w języku Gleam: https://github.com/search?q=language%3Agleam&type=Repositories
+- [Przewodnik po funkcjach biblioteki standardowej w języku Gleam](https://gleam.run/guides/stdlib.html)
+- [Oficjalna strona języka Gleam](https://gleam.run/)
+- [Przykładowe projekty w języku Gleam](https://github.com/gleam-lang)

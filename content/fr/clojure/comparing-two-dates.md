@@ -1,50 +1,58 @@
 ---
-title:    "Clojure: Comparaison de deux dates"
+title:    "Clojure: Comparer deux dates"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Lorsque vous travaillez sur un projet de développement Clojure, il peut arriver que vous ayez besoin de comparer deux dates. Cela peut sembler simple, mais il y a plusieurs façons d'approcher cette tâche et il est important de comprendre comment le faire correctement.
+La comparaison de deux dates est une tâche courante en programmation. Cela peut être utile pour vérifier si une date est antérieure, postérieure ou égale à une autre date, ou pour effectuer des calculs basés sur la différence entre deux dates. Dans cet article, nous allons explorer comment comparer deux dates en utilisant Clojure.
 
-## Comment faire
+# Comment Faire
 
-Pour comparer deux dates en Clojure, vous devrez utiliser la fonction `compare`. Cette fonction prend deux arguments de type `java.util.Date` et renvoie -1 si la première date est antérieure à la deuxième, 1 si elle est postérieure, ou 0 si les deux dates sont égales.
-
-```
-(def today (java.util.Date.))
-(def future (java.util.Date. 2021 1 1))
-
-(compare today future)
-```
-
-La sortie de cet exemple serait 1, car le premier argument (aujourd'hui) est postérieur au deuxième (1er janvier 2021). Si vous voulez comparer deux dates spécifiques plutôt que de créer des objets `Date` à la volée, vous pouvez utiliser la fonction `date` pour les formater à partir de valeurs numériques.
+Pour comparer deux dates en utilisant Clojure, nous allons utiliser la fonction `compare` de la bibliothèque `java.util.Date`. Cette fonction prend deux dates en argument et renvoie un entier qui indique si la première date est antérieure, égale ou postérieure à la seconde date.
 
 ```
-(def jan2021 (date 2021 1 1))
-(def dec2020 (date 2020 12 1))
+Clojure
+(let [date1 (java.util.Date. 2021 3 1)
+      date2 (java.util.Date. 2021 4 1)]
 
-(compare jan2021 dec2020)
+  (println (compare date1 date2)))
+
+;; Output: -1
 ```
 
-Dans cet exemple, la sortie serait également 1, car janvier 2021 est après décembre 2020.
+Dans cet exemple, nous déclarons deux variables `date1` et `date2` qui contiennent deux dates différentes. Ensuite, nous utilisons la fonction `compare` pour comparer ces deux dates et affichons le résultat, qui est -1 car la première date est antérieure à la seconde.
 
-## Deep Dive
-
-Lorsque vous utilisez la fonction `compare`, il est important de noter que si les deux dates ont également une valeur de temps (par exemple, 1er janvier 2021 à 12h) la fonction prendra également en compte cette information. Ainsi, si vous voulez simplement comparer les dates sans tenir compte du temps, il est conseillé de définir les valeurs de temps à 0 avant d'utiliser la fonction `compare`.
+Nous pouvons également utiliser la fonction `before?` ou `after?` pour vérifier si une date est respectivement antérieure ou postérieure à une autre date.
 
 ```
-(def today (date 2021 1 1 12 30 0))
-(def future (date 2021 1 1 0 0 0))
+Clojure
+(let [date1 (java.util.Date. 2021 3 1)
+      date2 (java.util.Date. 2021 4 1)]
 
-(compare today future)
+  (println (before? date1 date2)))
+
+;; Output: true
+
+(let [date1 (java.util.Date. 2021 3 1)
+      date2 (java.util.Date. 2021 4 1)]
+
+  (println (after? date1 date2)))
+
+;; Output: false
 ```
 
-Dans cet exemple, la sortie serait à nouveau 1, car le temps a été pris en compte. Mais si vous définissez les valeurs de temps à 0 pour les deux dates, la sortie serait maintenant 0, car les deux dates sont considérées comme égales.
+# Plongée Profonde
 
-## Voir aussi
+La compréhension du temps et des dates peut être un sujet complexe en programmation. En utilisant Clojure, nous pouvons également manipuler les dates en utilisant la bibliothèque `clj-time`. Cette bibliothèque offre des fonctions plus avancées pour travailler avec les dates, telles que la conversion de chaînes en date et la comparaison de dates avec une précision allant jusqu'à la minute.
 
-- La documentation officielle de Clojure sur la fonction `compare`: https://clojuredocs.org/clojure.core/compare
-- Un article intéressant sur les dates et le temps en Clojure: https://clojureverse.org/t/managing-dates-and-times-in-clojure/2702
+Il est également important de se rappeler que la comparaison de dates peut être sensible au fuseau horaire. Il est recommandé d'utiliser les fonctions de la bibliothèque `clj-time` pour gérer les fuseaux horaires de manière plus précise.
+
+# Voir Aussi
+
+- Documentation officielle de Clojure sur la fonction `compare`: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare
+- Documentation officielle de la bibliothèque `clj-time`: https://github.com/clj-time/clj-time
+- Tutoriel sur le travail avec les dates en Clojure avec `clj-time`: https://www.braveclojure.com/core-functions-in-depth/#clj-time

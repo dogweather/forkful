@@ -1,42 +1,57 @@
 ---
 title:    "Clojure: 编写测试"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-测试是软件开发过程中必不可少的一部分。它可以帮助我们确保代码的质量，并减少出错的可能性。写测试还可以帮助我们更好地组织代码，提升开发效率。
+在编写Clojure程序时，写测试十分重要。通过编写测试，可以确保代码的正确性，并且可以在后续维护和修改中避免出现意外的bug。
 
-## 如何进行测试
+# 如何做
 
+写测试需要使用Clojure内置的测试框架clojure.test。首先，在代码中引入clojure.test库：  
 ```Clojure
-(ns testing.examples
-  (:require [clojure.test :refer [deftest testing is]]))
+(require '[clojure.test :refer :all]) 
+```
+接下来，我们可以使用`deftest`宏来创建一个测试用例。例如，我们要测试一个简单的加法函数`add`，我们可以这样编写测试用例：  
+```Clojure
+(deftest test-addition
+  (testing "addition of two positive numbers"
+    (is (= 4 (add 2 2))))
+  (testing "addition of a negative and a positive number"
+    (is (= -3 (add -5 2))))
+  (testing "addition of two negative numbers"
+    (is (= -8 (add -4 -4)))))
+```
+上述代码中，我们使用`testing`宏来定义每个测试用例的名称，然后使用`is`宏来断言测试结果是否符合预期。当所有的测试用例都运行通过时，我们可以看到以下输出：  
+```Clojure
+Testing test-addition
 
-(deftest add-test
-  (is (= 10 (+ 4 6))))
-; 输出结果为{:type :test, :name add-test, :expected (= 10 10)}
+Ran 3 tests containing 3 assertions.
+0 failures, 0 errors.
 ```
 
-```Clojure
-(ns testing.examples
-  (:require [clojure.test :refer [deftest testing is]]))
+除了使用`is`宏外，我们也可以使用`isnt`宏来判断测试结果是否与预期不同。此外，clojure.test还提供了其他一些有用的断言宏，比如`are`用于多个值的断言，`throws?`用于断言是否抛出了异常等等。更多详细的使用方法，请参考[官方文档](https://clojure.github.io/clojure/clojure.test-api.html)。
 
-(deftest subtract-test
-  (is (= 5 (- 10 5))))
-; 输出结果为{:type :test, :name subtract-test, :expected (= 5 5)}
-```
+# 深入
 
-这里的例子展示了如何使用`clojure.test`来编写测试。首先，我们需要在命名空间中引入`clojure.test`的`deftest`、`testing`和`is`宏。然后，在每个`deftest`宏内，我们使用`is`来定义我们要测试的表达式，并用`=`来比较实际结果和预期结果。输出结果中，我们可以看到测试的类型、名称以及预期结果与实际结果的比较。
+写测试有助于提高代码质量和可维护性。通过编写多个测试用例覆盖各种情况，可以帮助发现潜在的bug。此外，测试也可以作为代码文档的一部分，可以帮助理解函数的输入输出预期。
 
-## 深入了解测试
+在编写测试时，还需要注意一些细节。比如，测试用例应该是独立的，不能依赖其他测试的结果。同时，测试也应该是可重复的，即多次运行测试结果始终一致。
 
-编写测试可以帮助我们发现代码中的潜在问题，从而提升代码的质量。同时，它也可以作为一种文档，帮助我们更好地理解代码的功能和目的。而且，编写测试还可以帮助我们更好地重构代码和改进性能，因为我们可以确保在修改代码的过程中不会引入新的问题。
+总的来说，写测试可以帮助提高代码质量和开发效率，建议在编写Clojure程序时多加使用。
 
-## 参考文章
+# 参考链接
 
-- [Clojure官方文档](https://clojure.org/guides/testing)
-- [Clojure测试库 - clojure.test](https://clojuredocs.org/clojure.test)
-- [Effective Testing with Clojure](https://www.braveclojure.com/effective-testing-with-clojure/)
+- [clojure.test官方文档](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Clojure程序员如何写出高质量的测试用例](https://mp.weixin.qq.com/s/8pnoMGt6bI7Ek9FyCp2JfA)
+- [测试驱动开发（TDD）简介及在Clojure中的实践](https://zhuanlan.zhihu.com/p/146797117)
+
+# 参见
+
+- [clojure.test官方文档](https://clojure.github.io/clojure/clojure.test-api.html)
+- [测试驱动开发（TDD）简介及实践指南](https://mp.weixin.qq.com/s/8pnoMGt6bI7Ek9FyCp2JfA)
+- [Clojure程序员如何写出高质量的测试用例](https://zhuanlan.zhihu.com/p/146797117)

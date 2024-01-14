@@ -1,38 +1,45 @@
 ---
 title:    "Elm: 打印调试输出"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-在编写代码时，有时候我们需要知道程序的执行过程中具体发生了什么，这就是为什么我们需要打印调试信息。通过打印调试信息，我们可以更好地了解程序的执行流程，从而帮助我们调试代码。
+在编程中，如果程序出现错误或者bug，打印调试信息是一种常见的解决方法。它可以帮助开发者定位问题并且更快地修复错误。在Elm编程中，打印调试信息也是一种重要的技巧，能够使我们更有效地调试程序。
 
-## 如何做
+## 如何
 
-打印调试信息在Elm中非常简单。我们可以使用 `Debug.log` 函数来打印任何类型的值。例如：
+当程序出现错误时，我们可以使用`debug`函数来打印调试信息。例如，我们有一个函数来检查一个数字是否为偶数：
 
 ```Elm
-import Debug
-
-main =
-    let
-        name = "Elm"
-        version = 0.19
-    in
-        Debug.log ("Version of " ++ name) (toString version)
+isEven : Int -> Bool
+isEven n =
+    if modBy 2 n == 0 then
+        True
+    else
+        False
 ```
+如果我们想要确认这个函数是否按照预期工作，我们可以在其中添加打印语句：
 
-这段代码会在控制台打印出 "Version of Elm: 0.19"，我们可以根据需要将任意类型的值打印出来。
+```Elm
+isEven : Int -> Bool
+isEven n =
+    if modBy 2 n == 0 then
+        True
+    else
+        (debug "Input:" n) False
+```
+这样，当我们调用这个函数时，会在控制台输出一条信息："Input: 5"。通过这个信息，我们可以确认函数的输入值是否正确，并且观察程序在哪里出现问题。
 
-## 深入探讨
+## 深入了解
 
-除了 `Debug.log` 函数之外，Elm还提供了其他一些方法来打印调试信息。例如，我们可以使用 `Debug.toString` 函数来将任意值转换成字符串并打印出来，或者使用 `Debug.todo` 函数来打印出一个待办事项的提示信息。
+除了打印简单的文本信息外，Elm 还提供了很多有用的调试函数。例如，`log`函数可以打印任何类型的值，`identity`函数可以返回任何输入值，`trace`函数可以在控制台打印当前函数或者值的信息。在实际开发中，我们可以根据具体情况使用不同的调试函数来帮助我们调试程序。
 
-值得注意的是，打印调试信息只是一种暂时的解决方案，我们不应该在正式发布的代码中保留这些调试信息。因此，在调试完成后，我们需要及时删除或注释掉这些打印语句。
+## 参考资料
 
-# 参考链接
-
-- [Elm官方文档：Debug模块](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm官方文档：基础语法](https://guide.elm-lang.org/core_language.html)
+- [Elm调试文档](https://guide.elm-lang.org/debugging/)
+- [更多关于Elm调试技巧](https://reactnative.cn/docs/debugging.html)
+- [实战中的Elm调试技巧](https://github.com/idkjs/debugger)

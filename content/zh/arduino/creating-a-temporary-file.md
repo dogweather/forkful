@@ -1,58 +1,74 @@
 ---
 title:    "Arduino: 创建临时文件"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-今天我们来谈一谈Arduino编程中的一个小技巧：创建临时文件。为什么会想要创建临时文件呢？通常来说，创建临时文件可以帮助我们在程序运行中临时存储数据，从而提高程序的效率和速度。这在处理大量数据或者需要频繁读写文件时非常有用。
+## 为什么
 
-## 为什么要创建临时文件？
+在Arduino编程中，创建临时文件可以帮助我们暂时储存数据或者执行某些特定的任务。这通常可以提高我们程序的效率和可读性。
 
-创建临时文件最常见的用途就是在程序需要暂时存储大量数据时。举例来说，如果你正在编写一个程序用来读取传感器数据并存储在SD卡中，那么你可能会每隔一段时间就将数据写入一个临时文件，最后再将整个临时文件一次性保存到SD卡中。这样做不仅可以减少SD卡的读写次数，还可以提高程序的效率。
+## 如何做
 
-## 如何创建临时文件？
-
-在Arduino中，创建临时文件可以通过使用标准库中的`File`类实现。首先，我们需要声明一个`File`类型的变量，并使用`open()`函数来创建一个新的文件。接下来，我们可以使用`print()`函数将数据写入文件，或者使用`read()`函数来读取文件中的数据。
+首先，我们需要在程序的开头引入SD卡库，并初始化一个文件对象。例如：
 
 ```Arduino
-File tempFile;
+#include <SD.h>
+
+File temporaryFile;
+```
+
+接着，在 ```setup()```函数里，我们可以使用 ```SD.begin()```来启动SD卡并检测是否成功。然后，通过 ```SD.open()```函数，我们可以创建一个临时文件并定义文件名和操作模式。例如，创建一个名为“tempFile.txt”的文件，以读写模式打开：
+
+```Arduino
+if (SD.begin(10)) {
+  temporaryFile = SD.open("tempFile.txt", FILE_WRITE);
+}
+```
+
+此外，我们也可以在创建临时文件的同时写入一些数据。例如：
+
+```Arduino
+if (SD.begin(10)) {
+  temporaryFile = SD.open("tempFile.txt", FILE_WRITE);
+  temporaryFile.println("This is a temporary file.");
+}
+```
+
+最后，在我们程序执行完毕后，我们需要关闭文件以释放内存。这也可以通过调用 ```temporaryFile.close();```来实现。完整的代码示例如下：
+
+```Arduino
+#include <SD.h>
+
+File temporaryFile;
 
 void setup() {
-  // 创建一个名为"temp.txt"的临时文件
-  tempFile = SD.open("temp.txt", FILE_WRITE);
-  // 将数据写入文件
-  tempFile.print("Hello World!");
-  // 关闭文件
-  tempFile.close();
+  if (SD.begin(10)) {
+    temporaryFile = SD.open("tempFile.txt", FILE_WRITE);
+    if (temporaryFile) {
+      temporaryFile.println("This is a temporary file.");
+      temporaryFile.close();
+    }
+  }
 }
 
 void loop() {
-  // 判断文件是否已经创建
-  if (tempFile) {
-    // 打开文件
-    tempFile = SD.open("temp.txt", FILE_READ);
-    // 读取文件中的数据并输出到串口
-    while (tempFile.available()) {
-      Serial.println(tempFile.read());
-    }
-    // 关闭文件
-    tempFile.close();
-  }
-  // 延时一段时间
-  delay(1000);
-}
 
+}
 ```
 
-上面的例子演示了如何使用`File`类来创建临时文件和读取文件中的数据，并通过串口输出到电脑上。
+## 深入了解
 
-## 深入了解临时文件的相关知识
+创建临时文件不仅可以用来储存数据，它还可以用来存储一些特定的额外信息。例如，在某些情况下，我们可能会创建一个文件来记录系统的运行状态或者错误信息。这样，在调试和故障排查时，我们可以通过读取这个文件来找出问题所在。
 
-除了在程序中临时存储大量数据外，创建临时文件还可以在处理网络请求或者需要频繁读写文件的情况下起到优化程序的作用。临时文件通常会被存储在电脑的临时文件夹中，所以在使用完毕后记得及时清除以节省空间。
+此外，我们还可以通过使用 ```SD.exists()```函数来检查文件是否存在，以及 ```SD.remove()```函数来删除文件。
 
-## 查看更多
+## 参考链接
 
-- [Arduino官方文档： SD库](https://www.arduino.cc/en/Reference/SD)
-- [知乎： Arduino如何创建文件？](https://www.zhihu.com/question/45116283)
-- [CSDN博客： arduino 临时存储模块，临时文件制作/删除](https://blog.csdn.net/waiweiziji/article/details/85232626)
+- [https://www.arduino.cc/en/Reference/SD](https://www.arduino.cc/en/Reference/SD)
+- [http://www.circuitstoday.com/interfacing-microcontrollers-with-sd-card](http://www.circuitstoday.com/interfacing-microcontrollers-with-sd-card)
+- [https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-library-use](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-library-use)
+
+## 参见

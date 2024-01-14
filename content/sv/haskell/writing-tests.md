@@ -1,49 +1,34 @@
 ---
 title:    "Haskell: Att skriva tester"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva tester är en viktig del av en utvecklares arbete för att upprätthålla kvaliteten på koden och minska risken för buggar i programmet.
 
-Att skriva tester är en viktig del av att utveckla mjukvara på ett effektivt och hållbart sätt. Genom att skriva tester kan man säkerställa att koden fungerar som den ska och undvika potentiella buggar och problem i framtiden.
-
-## Hur man gör
-
-För att skriva tester i Haskell använder man sig oftast av biblioteket HUnit. Det är ett lättanvänt verktyg som hjälper till att automatisera testprocessen. Nedan följer ett exempel på hur man kan skriva ett test för en funktion som beräknar summan av två tal:
+## Så här gör du
+Det första steget för att skriva tester är att importera testningsbiblioteket "HUnit" med att skriva ```Haskell import Test.HUnit``` i början av ditt program. Sedan definierar du enskilda enhetstester genom att använda funktionen "TestCase" och kallar sedan på testningarna med hjälp av "test" funktionen. Här är ett exempel på hur en test skulle kunna se ut:
 
 ```Haskell
-import Test.HUnit
+testAddition = TestCase (assertEqual "2 + 2 ska vara 4" 4 (2+2))
 
--- En funktion som beräknar summan av två tal
-summa :: Int -> Int -> Int
-summa a b = a + b
+testMultiplikation = TestCase (assertEqual "3 * 5 ska vara 15" 15 (3*5))
 
--- Tester för funktionen summa
-testSumma1 = TestCase (assertEqual "Ska bli 10" 10 (summa 3 7))
-testSumma2 = TestCase (assertEqual "Ska bli 0" 0 (summa (-3) 3))
-testSumma3 = TestCase (assertEqual "Ska bli 5" 5 (summa 2 3))
+allaTester = TestList [testAddition, testMultiplikation]
 
--- En lista med alla tester
-tests = TestList [testSumma1, testSumma2, testSumma3]
-
--- Kör alla tester och skriv ut resultatet
-main = runTestTT tests
+main = runTestTT allaTester
 ```
-
-Genom att köra detta test kommer du att få utskriften "OK, 3 testcases" om alla tester lyckas. Om något test misslyckas kommer du att få en mer detaljerad förklaring om vad som gick fel.
+Kör detta program och om alla tester passerar, kommer du se utskriften "Cases: 2  Tried: 2  Errors: 0  Failures: 0", vilket visar att dina tester var lyckade.
 
 ## Djupdykning
+Ett bra tillvägagångssätt för att skriva tester är att följa principen "Arrange, Act, Assert". Det innebär att förbereda testet genom att skapa förutsättningar (Arrange), utföra en handling (Act) och sedan verifiera resultatet (Assert). Ett annat viktigt koncept är "edge cases", det vill säga att testa extremvärden eller ogiltig input för att se hur programmet hanterar dem.
 
-Det finns många olika sätt att skriva tester på i Haskell, men det är viktigt att hålla sig till några grundläggande principer för att få ut mesta möjliga av sina tester. Här är några tips:
-
-- Skriv test för varje funktion och se till att testa så många olika fall som möjligt (inklusive felaktiga invärden).
-- Testa inte bara outputen av funktionen, utan också dess interna struktur. Detta kan hjälpa till att identifiera potentiella problem.
-- Använd sig av QuickCheck för att generera slumpmässiga tester och öka testtäckningen.
+En annan fördel med att skriva tester är att de bidrar till en bättre design av koden. Genom att tänka på testfall under utvecklingsprocessen kan du skapa en mer hållbar och lättunderhållen kod.
 
 ## Se även
-
-- [HUnit](https://hackage.haskell.org/package/HUnit) - Dokumentation för HUnit biblioteket.
-- [QuickCheck](https://hackage.haskell.org/package/QuickCheck) - Dokumentation för QuickCheck biblioteket.
-- [Test-Driven Development in Haskell: From Theory to Practice](https://www.codewars.com/books/test-driven-development-in-haskell-from-theory-to-practice) - En bok som fokuserar på TDD i Haskell och ger många bra exempel på hur man kan skriva tester.
+- [Hängiven¶alla-enhetstest](https://www.haskell.org/tutorial/unit2.html)
+- [HUnit-dokumentation](http://hackage.haskell.org/package/HUnit)
+- [Test-Driven Development med Haskell](https://www.fpcomplete.com/blog/2016/11/test-driven-development-in-haskell)

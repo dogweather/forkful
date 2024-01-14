@@ -1,52 +1,54 @@
 ---
-title:    "Python: Sattumanvaraisten lukujen luominen"
+title:    "Python: Satunnaisten numeroiden luominen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Satunnaisluvut ovat tehokas työkalu monissa eri ohjelmointitehtävissä. Ne voivat auttaa meitä luomaan monipuolisia ja toistettavia tuloksia, kokeilemaan erilaisia skenaarioita ja parantamaan ohjelmien suorituskykyä. Python tarjoaa useita tapoja luoda satunnaislukuja, ja tässä blogikirjoituksessa opimme, miten voit hyödyntää niitä omassa koodissasi.
+Satunnaisnumeroiden generointi on tärkeä taito monissa ohjelmointitehtävissä, kuten pelituotannossa, tilastotieteessä ja salausalgoritmeissa. Se antaa mahdollisuuden luoda ennustamattomuutta ja monipuolisuutta koodiin.
 
-## Kuinka
+## Miten
 
 ```Python
-import random 
+import random
 
-# Generoi ja tulosta yksi satunnainen kokonaisluku väliltä 0-100
-random_number = random.randint(0, 100)
-print(random_number)
+# Generoi satunnainen kokonaisluku välillä 1-10
+print(random.randint(1, 10))
 
-# Generoi ja tulosta lista, jossa on 5 satunnaista desimaalilukua väliltä 0-1
-random_list = [random.random() for i in range(5)]
-print(random_list)
+# Generoi satunnainen desimaaliluku välillä 0-1
+print(random.random())
 
-# Sekoita lista satunnaisesti ja tulosta uusi järjestys
-random.shuffle(random_list)
-print(random_list)
+# Generoi satunnainen kokonaisluku välillä 1-100 jokaisen loopin kierroksella
+for i in range(10):
+    print(random.randrange(1, 100))
 ```
 
-**Esimerkkilähtö:** 
+```
+Output:
+6
+0.7864535567
+76
+64
+12
+43
+89
+54
+97
+35
+24
+```
 
-47
+## Syvällinen sukellus
 
-[0.2848533746156446, 0.9118379979744344, 0.40169874016049505, 0.01175146335006017, 0.9861229718359766]
+Pythonin `random`-moduuli tarjoaa monipuoliset mahdollisuudet satunnaisnumeroiden generointiin. Moduulin sisältämien erilaisten funktioiden avulla voit muokata generoitujen numeroiden välisiä rajoja ja tarkkuutta. Lisäksi `random` mahdollistaa myös "semirandom" numeroiden generoinnin, eli numeroiden generoinnin tietyn kaavan mukaan.
 
-[0.9861229718359766, 0.2848533746156446, 0.40169874016049505, 0.9118379979744344, 0.01175146335006017]
-
-## Syvemmälle
-
-Pythonissa satunnaislukuja voidaan luoda käyttämällä sisäänrakennettua `random` -kirjastoa, joka tarjoaa hyödyllisiä toimintoja satunnaislukujen luomiseksi. Yksi suosituimmista on `randint`, joka palauttaa kokonaisluvun halutulta väliltä, mutta myös muita hyödyllisiä toimintoja on, kuten `random`, joka palauttaa float-tyyppisen luvun väliltä 0-1.
-
-Lisäksi on olemassa muita tapoja luoda satunnaislukuja, kuten `uniform`, joka palauttaa antamasi alueen sisältä yhtä todennäköisiä lukuja, tai `gauss`, joka tuottaa Gaussian-jakauman mukaisesti satunnaislukuja.
-
-Satunnaislukujen luominen voi myös olla kätevää, kun testaamme ohjelmia ja haluamme syöttää erilaisia arvoja jokaiselle suorituskerralle. Tai jos haluamme luoda pseudosatunnaisia lukuja, jotka ovat samat jokaisella kerralla ohjelma suoritetaan.
+On tärkeää huomata, että satunnaisilla numeroilla ei ole muistia, joten jokaisen kerran generoidut numerot ovat täysin arvaamattomia ja riippumattomia aiemmista generoinneista.
 
 ## Katso myös
 
-[Kattava opas Pythonin `random` -kirjastoon](https://www.geeksforgeeks.org/random-module-python/)
-
-[Hyödyllinen esimerkki satunnaislukujen käytöstä Pythonin ohjelmoinnissa](https://realpython.com/python-random/#simulation)
-
-[Muutamia vinkkejä satunnaislukujen käyttöön ja ongelmiin liittyen](https://towardsdatascience.com/mastering-python-random-with-9-simple-tips-448475efca03)
+- [Pythonin `random`-moduulin virallinen dokumentaatio](https://docs.python.org/3/library/random.html)
+- [Artikkeli: "Intro to Python Random Module"](https://realpython.com/python-random/)
+- [Ohjelmointitehtävä: "Guess the Number Game"](https://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html)

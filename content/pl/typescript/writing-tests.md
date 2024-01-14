@@ -1,44 +1,43 @@
 ---
 title:    "TypeScript: Pisanie testów"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne
+## Dlaczego
 
-Pisanie testów jest ważnym elementem każdego projektu programistycznego. Testy pozwalają zweryfikować poprawność naszego kodu oraz wykryć potencjalne błędy. W tym artykule opowiemy o tym, dlaczego warto pisać testy w języku TypeScript.
+Napisanie testów jest kluczowym elementem każdego projektu programistycznego. Testy pozwalają upewnić się, że nasz kod działa poprawnie i zgodnie z oczekiwaniami. Są również niezwykle przydatne w wykrywaniu błędów i zapobieganiu regresji w kodzie. W tym wpisie dowiesz się dlaczego warto pisać testy i jak w prosty sposób możesz to zrobić w języku TypeScript.
 
-## Jak pisać testy w języku TypeScript
+## Jak To Zrobić
 
-Pisanie testów w języku TypeScript jest bardzo proste. Wystarczy wykorzystać bibliotekę do testowania, na przykład Jest. W poniższym przykładzie użyjemy klasy Math, która zawiera dwie metody: `add` oraz `subtract`.
+Pisanie testów w TypeScript może wydawać się skomplikowane, jednak w rzeczywistości jest to dość proste. Najpierw musimy zainstalować odpowiednią bibliotekę testową za pomocą menedżera pakietów, na przykład npm lub Yarn. W przypadku TypeScript możemy korzystać z popularnej biblioteki o nazwie Jest.
+
+Po zainstalowaniu biblioteki, możemy przystąpić do tworzenia testów. Stwórzmy prosty plik o nazwie `Sum.test.ts` i dodajmy do niego kod:
 
 ```TypeScript
-import { Math } from "./math";
+import sum from '../src/sum';
 
-describe("Math", () => {
-  const math = new Math();
+test('correctly adds 2 numbers', () => {
+  expect(sum(2, 3)).toBe(5);
+});
 
-  it("should add two numbers", () => {
-    const result = math.add(2, 3);
-    expect(result).toBe(5);
-  });
-
-  it("should subtract two numbers", () => {
-    const result = math.subtract(5, 3);
-    expect(result).toBe(2);
-  });
+test('correctly adds a negative number', () => {
+  expect(sum(2, -5)).toBe(-3);
 });
 ```
 
-Jak widać powyżej, używamy funkcji `describe` do grupowania testów, a także funkcji `it` do opisywania poszczególnych przypadków testowych. Wewnątrz funkcji `it` wywołujemy nasze metody z klasy Math i wykorzystujemy asercje, aby sprawdzić oczekiwany wynik. Jest to bardzo prosta i czytelna forma testów.
+W powyższym przykładzie tworzymy dwa testy funkcji `sum()`, która oblicza sumę dwóch liczb. Wykorzystujemy tutaj funkcję `expect()` z biblioteki Jest, aby sprawdzić czy wynik jest zgodny z oczekiwaniami. Następnie uruchamiamy testy za pomocą polecenia `npm run test` lub `yarn run test` i powinniśmy otrzymać poprawny wynik.
 
-## Głębszy wgląd w pisanie testów
+## Deep Dive
 
-Pisanie testów nie tylko pozwala nam na wykrycie błędów, ale także pomaga w utrzymaniu naszego kodu w dobrej kondycji. Dzięki testom jesteśmy w stanie szybciej wykryć i poprawić problemy w naszym kodzie. Dodatkowo, pisanie testów wymusza na nas zadbanie o czystość i czytelność kodu, co przekłada się na łatwiejsze utrzymanie i rozwijanie naszej aplikacji.
+Pisanie testów może być bardziej zaawansowane niż pokazane w prostym przykładzie powyżej. W rzeczywistości możemy testować nie tylko małe funkcje, ale również interakcje z bazą danych, wywołania API czy interfejsy użytkownika. Jest to możliwe dzięki wykorzystaniu tzw. mocków, które pozwalają nam symulować różne scenariusze i sprawdzać czy nasz kod zachowuje się poprawnie w różnych warunkach.
 
-## Zobacz również
+Warto również wspomnieć o terminie TDD (ang. Test Driven Development), który jest popularną strategią wytwarzania oprogramowania. Polega ona na pisaniu testów przed napisaniem właściwego kodu, co pozwala na lepsze zrozumienie wymagań i zapobiega powstawaniu błędów.
 
-- [Dokumentacja biblioteki Jest](https://jestjs.io/docs/getting-started)
-- [Artykuł o tworzeniu testów w języku TypeScript](https://medium.com/javascript-scene/what-every-javascript-developer-should-know-about-testing-205ccd879b5e)
-- [Kurs o pisanie testów w języku TypeScript](https://egghead.io/courses/getting-started-with-typescript)
+## Zobacz też
+
+- [Dokumentacja biblioteki Jest](https://jestjs.io/)
+- [Wprowadzenie do testów w TypeScript](https://dev.to/maxpou/introduction-to-testing-typescript-with-jest-2nae)
+- [Poradnik TDD dla początkujących](https://www.freecodecamp.org/news/learn-test-driven-development-in-10-minutes-7920b2aa1ec4/)

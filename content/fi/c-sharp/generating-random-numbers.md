@@ -1,39 +1,52 @@
 ---
-title:    "C#: Sattumanvaraisten lukujen luominen"
+title:    "C#: Sattumanvaraisten numeroiden luominen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-On monia syitä, miksi haluat ehkä luoda satunnaisia numeroita ohjelmointisi aikana. Ehkä tarvitset niitä testauksia varten, luodaksesi erilaisia käyttäjätunnuksia tai salasanoja, tai ehkä haluat pelissä tai sovelluksessa käyttää satunnaisia elementtejä, kuten vihollisia tai kohteita.
+# Miksi: Satunnaislukujen generointi
 
-## Miten tehdä se
-Käytä C# -kielen Random-luokkaa luodaksesi satunnaisia numeroita. Voit alustaa Random-luokan eri tavoilla, esimerkiksi käyttää nykyistä kellonaikaa tai antaa sille tietyn siemenarvon. Tämän jälkeen voit käyttää sen Next() -metodia saadaksesi satunnaisen kokonaisluvun tai NextDouble() -metodia saadaksesi satunnaisen desimaaliluvun. Katso alla esimerkki, jossa luodaan 5 satunnaista kokonaislukua välillä 1-10:
+Miksi kukaan haluaisi generoida satunnaislukuja? Monissa ohjelmoinnin tehtävissä saattaa olla tarvetta käyttää satunnaislukuja, kuten pelilogiikassa, tietokantojen täyttämisessä ja tilastollisissa analyyseissa. Satunnaislukujen avulla voidaan tuottaa erilaisia tuloksia, jotka tekevät ohjelmasta monipuolisemman ja mielenkiintoisemman.
+
+# Kuinka tehdä: Esimerkkejä koodin ja tulosteen kanssa
 
 ```C#
+// Luodaan satunnaisluku generaattori
 Random random = new Random();
-for (int i = 0; i < 5; i++)
-{
-    int randomNumber = random.Next(1, 11);
-    Console.WriteLine(randomNumber);
-}
+
+// Generoidaan kokonaisluku väliltä 1-10
+int number = random.Next(1, 11);
+Console.WriteLine("Satunnainen luku väliltä 1-10: " + number);
+
+// Generoidaan desimaaliluku väliltä 0-1
+double decimalNumber = random.NextDouble();
+Console.WriteLine("Satunnainen desimaaliluku väliltä 0-1: " + decimalNumber);
+
+// Generoidaan satunnainen merkki
+char character = (char)random.Next('a', 'z' + 1);
+Console.WriteLine("Satunnainen merkki a-z väliltä: " + character);
 ```
-Esimerkki tulostaa seuraavan:
+
+Tulosteenä näemme seuraavaa:
 
 ```
-8
-3
-10
-5
-1
+Satunnainen luku väliltä 1-10: 7
+Satunnainen desimaaliluku väliltä 0-1: 0,456952182543
+Satunnainen merkki a-z väliltä: j
 ```
-Voit myös käyttää Random-luokan muita metodeja, kuten NextBytes() saadaksesi satunnaisen tavumäärän tai NextBytes() saadaksesi satunnaisen luvun tietyllä alueella.
 
-## Syvempi sukellus
-Random-luokka käyttää Mersenne Twister -algoritmia, joka on yksi parhaiten tutkituista ja tehokkaimmista satunnaisuusgeneraattoreista. Se pystyy tuottamaan suuria määriä satunnaisia lukuja nopeasti ilman toistuvuutta. Tämä tekee siitä ihanteellisen valinnan ohjelmointiprojekteihin, joissa tarvitaan satunnaisia lukuja.
+# Syvällisempää tietoa: Satunnaislukujen generoinnista
 
-## Katso myös
-- [Microsoftin virallinen dokumentaatio Random-luokasta](https://docs.microsoft.com/fi-fi/dotnet/api/system.random?view=net-5.0)
-- [Satunnaislukujen luominen C# -koodilla](https://www.c-sharpcorner.com/article/random-number-in-c-sharp/)
-- [Mersenne Twister -algoritmin selitys](https://en.wikipedia.org/wiki/Mersenne_Twister)
+Satunnaislukujen generointi perustuu satunnaisluku generaattorin käyttöön, joka tuottaa numeroita tietyn algoritmin avulla. C# tarjoaa kätevän tavan käyttää satunnaisluku generaattoria Random-luokan avulla. Luokalla on useita metodeja, kuten Next(), NextDouble() ja NextBytes(), joilla voidaan generoida erilaisia lukuja.
+
+Satunnaislukujen generoinnissa käytetään usein myös siemenlukua, joka määrittää satunnaislukujen sarjan. Tämä mahdollistaa saman sarjan toistamisen myöhemmin, kunhan käytetään samaa siemenlukua.
+
+Satunnaislukujen generoinnissa on hyvä ottaa huomioon myös niiden jakautuminen tasaisesti eri välillä sekä mahdollisuus toistaa saman arvon generoimista. C# Random-luokassa on joitakin vaihtoehtoja tämän säätämiseen, kuten Seed ja Lock.
+
+# Katso myös
+
+- C# Random-luokka: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0
+- Satunnaislukujen generointi pelilogiikassa: https://en.wikipedia.org/wiki/Random_number_generation_in_video_games
+- Satunnaislukujen käyttö tilastollisissa analyyseissä: https://en.wikipedia.org/wiki/Random_number_generation_in_statistics

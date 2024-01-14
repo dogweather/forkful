@@ -1,46 +1,30 @@
 ---
 title:    "PHP: 디렉토리가 존재하는지 확인하기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+디렉토리가 존재하는지 확인하는 것이 중요한 이유는 파일이나 폴더를 생성하기 전에 해당 디렉토리가 존재하는지 확인하여 오류를 방지할 수 있기 때문입니다.
 
-파일 시스템에는 디렉토리와 파일이 포함되어있습니다. 때때로 이들 디렉토리를 조작해야 할 때가 있을 겁니다. 그래서 디렉토리가 존재하는지 확인해야 합니다.
-
-## 어떻게
-
+## 방법
+다음은 PHP에서 디렉토리가 존재하는지 확인하는 방법입니다.
 ```PHP
-<?php
-$dir = './existing_directory';
-if (file_exists($dir) && is_dir($dir)) {
-    echo "디렉토리가 존재합니다.";
+if(file_exists($path)){ 
+    echo "디렉토리가 존재합니다."; 
 } else {
-    echo "디렉토리가 존재하지 않습니다.";
+    echo "디렉토리가 존재하지 않습니다."; 
 }
 ```
+위 코드는 `$path` 변수에 저장된 디렉토리가 존재할 경우 "디렉토리가 존재합니다."를 출력하고, 그렇지 않을 경우 "디렉토리가 존재하지 않습니다."를 출력합니다.
 
-```PHP
-<?php
-$dir = './non_existent_directory';
-if (file_exists($dir) && is_dir($dir)) {
-    echo "디렉토리가 존재합니다.";
-} else {
-    echo "디렉토리가 존재하지 않습니다.";
-}
-```
+## 더 깊이
+PHP에서 디렉토리가 존재하는지 확인하는 방법은 `file_exists()` 함수 외에도 `is_dir()` 함수를 사용할 수도 있습니다. 이 함수는 파일이 아닌 디렉토리인지를 체크하여 `true` 혹은 `false` 값을 반환합니다.
+또한, 디렉토리가 존재하지 않을 경우 디렉토리를 생성하는 방법도 함께 알아볼 수 있습니다. `mkdir()` 함수를 사용하여 새로운 디렉토리를 생성할 수 있으며, 이미 디렉토리가 존재하는 경우 `mkdir()` 함수는 `false` 값을 반환합니다.
 
-위 코드에서는 두 가지 함수를 사용하여 디렉토리의 존재를 확인합니다. `file_exists()`는 해당 경로의 파일이나 디렉토리가 존재하는지를 확인하는 함수이고, `is_dir()`은 해당 경로가 디렉토리인지를 확인하는 함수입니다. 이 두 가지 함수 모두 boolean 값을 반환합니다. 따라서 위 코드에서는 `if`문을 사용하여 두 함수의 결과를 조합하여 디렉토리가 존재하는지를 확인한 후 상황에 맞게 출력해줍니다.
-
-## 딥 다이브
-
-때로는 `file_exists()` 함수만으로 디렉토리의 존재를 확인하는 것이 부족할 수 있습니다. 이는 디렉토리가 존재하지 않는다고 판단되는 경우에도 디렉토리가 실제로 존재할 수 있기 때문입니다. 이 경우에는 `realpath()` 함수를 사용하여 확인할 수 있습니다. `realpath()` 함수는 `file_exists()` 함수와 달리 실제로 해당 경로에 파일이나 디렉토리가 존재하는지를 확인합니다.
-
-또한, 디렉토리가 존재하지 않는다는 것만으로는 문제를 해결하지 못할 수도 있습니다. 만약 디렉토리가 존재하지 않는다면 해당 디렉토리를 생성하는 코드를 추가해줘야 할 수도 있습니다. 따라서 디렉토리가 존재하는지를 확인할 때에는 상황에 따라 추가적인 처리가 필요할 수 있습니다.
-
-## 또 다른 참고 자료
-
-- [PHP 공식 문서 - file_exists() 함수](https://www.php.net/manual/ko/function.file-exists.php)
-- [PHP 공식 문서 - is_dir() 함수](https://www.php.net/manual/ko/function.is-dir.php)
-- [PHP 공식 문서 - realpath() 함수](https://www.php.net/manual/ko/function.realpath.php)
+## 더 보기
+- [PHP 공식 문서 - file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [PHP 공식 문서 - is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP 공식 문서 - mkdir()](https://www.php.net/manual/en/function.mkdir.php)

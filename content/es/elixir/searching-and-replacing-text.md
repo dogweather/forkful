@@ -1,47 +1,45 @@
 ---
 title:    "Elixir: Buscando y reemplazando texto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué usar Elixir para buscar y reemplazar texto?
+## Por qué
+Si eres un programador, es probable que alguna vez hayas tenido que realizar una búsqueda y reemplazo de texto en tu código. En lugar de hacerlo manualmente, Elixir ofrece una forma rápida y sencilla de hacerlo a través de su función `String.replace/3`. Aprender a utilizar esta función puede ahorrar tiempo y esfuerzo en tus proyectos de programación.
 
-Buscar y reemplazar texto es una tarea común en el desarrollo de software. Con Elixir, puedes hacerlo de manera eficiente y elegante gracias a su sintaxis sencilla y su poderoso motor de expresiones regulares. ¡Descubre por qué tantos desarrolladores confían en Elixir para esta tarea!
+## Cómo
+La función `String.replace/3` toma tres argumentos: el texto en el que deseas realizar la búsqueda y el reemplazo, la cadena a buscar y la cadena a reemplazar.
 
-## Cómo hacerlo en Elixir
-
-Para buscar y reemplazar texto en Elixir, podemos usar la función `String.replace/4`. Simplemente pasamos la cadena original, el patrón de búsqueda, el texto de reemplazo y las opciones como argumentos. Por ejemplo:
-
-```Elixir
-original = "¡Hola mundo!"
-pattern = "mundo"
-replacement = "universo"
-options = [:global]
-
-String.replace(original, pattern, replacement, options)
-```
-
-Esto devuelve la cadena "¡Hola universo!", ya que hemos reemplazado todas las ocurrencias de "mundo" con "universo" en la frase original. Otras opciones disponibles incluyen `:case_insensitive` para ignorar mayúsculas y minúsculas, y `:unicode` para manejar caracteres unicode en el patrón y el texto de reemplazo.
-
-Otro enfoque utilizando el módulo `Regex` es el uso de la función `Regex.replace/3`. Esta función requiere que primero creemos un patrón de expresión regular y luego lo pasemos junto con el texto original y el texto de reemplazo. Por ejemplo:
+Por ejemplo, si queremos reemplazar la palabra "mundo" por "universo" en la cadena de texto "Hola mundo", podemos escribir el siguiente código en Elixir:
 
 ```Elixir
-original = "¡Hola mundo!"
-pattern = ~r/mundo/
-replacement = "universo"
-
-Regex.replace(pattern, original, replacement)
+cadena = "Hola mundo"
+String.replace(cadena, "mundo", "universo")
 ```
 
-## Profundizando en la búsqueda y reemplazo de texto
+El resultado de este código sería la cadena de texto "Hola universo".
 
-Elixir también ofrece múltiples opciones y características para una búsqueda y reemplazo más avanzadas. Estas incluyen el uso de expresiones regulares en `String.replace/4`, la posibilidad de usar funciones de reemplazo personalizadas en `Regex.replace/3`, y la capacidad de hacer búsquedas y reemplazos en diferentes tipos de datos, como listas y mapas.
+Otra característica interesante de `String.replace/3` es que también se puede utilizar para reemplazar varias instancias de una cadena a la vez. Por ejemplo, si queremos reemplazar todos los caracteres "a" por "A" en la cadena de texto "hola amigo", podemos hacerlo de la siguiente manera:
 
-Además, Elixir proporciona herramientas para trabajar con cadenas en diferentes codificaciones, lo que permite una búsqueda y reemplazo precisa en cualquier tipo de texto.
+```Elixir
+cadena = "hola amigo"
+String.replace(cadena, "a", "A")
+```
+
+El resultado de este código sería la cadena de texto "holA Amigo".
+
+## Deep Dive
+Además de la función básica de `String.replace/3`, Elixir también ofrece otras funciones relacionadas que pueden ser útiles en diferentes escenarios.
+
+Por ejemplo, si queremos reemplazar una cadena ignorando mayúsculas y minúsculas, podemos utilizar la función `String.replace_trailing/4`. Esta función tiene los mismos argumentos que `String.replace/3`, pero también incluye un cuarto argumento para especificar si deseamos ignorar o no las mayúsculas y minúsculas.
+
+También existe `String.replace_first/4`, que funciona de manera similar a `String.replace/3`, pero solo reemplaza la primera instancia de la cadena buscada. Y para aquellos que deseen realizar reemplazos basados en expresiones regulares, Elixir ofrece la función `Regex.replace/4`.
+
+En resumen, aprender a utilizar estas funciones de búsqueda y reemplazo de texto en Elixir puede mejorar significativamente la eficiencia y productividad en tus proyectos de programación.
 
 ## Ver también
-
-- Documentación oficial de Elixir sobre `String.replace/4`: https://hexdocs.pm/elixir/String.html#replace/4
-- Ejemplos de uso de `Regex` en la documentación de Elixir: https://hexdocs.pm/elixir/Regex.html#content
-- Tutoriales y recursos sobre el uso de expresiones regulares en Elixir: https://dev.to/numbersandbetters/regular-expressions-in-elixir-scanner-and-regex-1fi1
+- [Documentación de Elixir sobre la función String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Ejemplos de búsqueda y reemplazo en el blog Learning Elixir](https://learningelixir.joekain.com/learn/article/elixir/search-and-replace-elixir-list-string)
+- [Tutorial de búsqueda y reemplazo en el sitio de Elixir School](https://elixirschool.com/es/lessons/specifics/more-enumerables/#string-replace)

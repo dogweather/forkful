@@ -1,49 +1,37 @@
 ---
 title:    "C#: Generazione di numeri casuali"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché generare numeri casuali in C#
+## Perché
+Ci sono molte ragioni per cui qualcuno potrebbe voler generare numeri casuali in un programma C#. Forse stai creando un programma di gioco che richiede elementi casuali, o forse vuoi aggiungere una funzionalità di sicurezza al tuo programma. In ogni caso, imparare come generare numeri casuali in C# può essere un'abilità utile da avere.
 
-Generare numeri casuali è un concetto fondamentale nella programmazione di giochi, simulazioni e altre applicazioni che richiedono una componente di casualità. La generazione di numeri casuali può anche essere utile per la creazione di password sicure o la criptazione di dati sensibili.
-
-## Come generare numeri casuali in C#
-
-Il linguaggio di programmazione C# ha una libreria incorporata per la generazione di numeri casuali. Per utilizzarla, è necessario importare il namespace `System`. A questo punto, è possibile utilizzare il metodo `Random` per inizializzare un'istanza della classe `Random`. Questo metodo accetta un parametro opzionale che può essere utilizzato per specificare un seme per la generazione dei numeri casuali. Ad esempio:
+## Come
+Ci sono vari modi per generare numeri casuali in C#. Uno dei modi più semplici è utilizzare la classe `Random` incorporata nella libreria standard di C#. Qui di seguito c'è un esempio di codice che genera un numero casuale compreso tra 1 e 10 e lo stampa in console:
 
 ```C#
-using System;
-
-// Inizializzazione di un'istanza Random
-Random rnd = new Random();
-
-// Generazione di un numero casual tramite il metodo Next()
-int numeroCasuale = rnd.Next();
-
-// Generazione di un numero compreso tra 1 e 100
-int numeroCompreso = rnd.Next(1, 101);
-
-// Generazione di un numero decimale compreso tra 0 e 1
-double numeroDecimale = rnd.NextDouble();
+Random rand = new Random();
+int numeroCasuale = rand.Next(1, 11);
+Console.WriteLine(numeroCasuale);
 ```
 
-L'esempio sopra mostra come utilizzare il metodo `Next()` per generare numeri casuali di diversi tipi. È importante notare che il metodo `Next()` restituisce sempre interi, quindi è necessario convertirli in altri tipi di dati, se necessario.
-
-## Approfondimento sulla generazione di numeri casuali
-
-La generazione di numeri casuali non è un processo completamente casuale, ma si basa su un algoritmo. Questo algoritmo utilizza un numero chiamato "seme" per calcolare i numeri casuali. Se il seme è lo stesso, l'algoritmo restituirà sempre gli stessi numeri casuali. È per questo che, nell'esempio precedente, si consiglia di passare un seme all'istanza di `Random` se si vuole ottenere una serie di numeri sempre diversa ad ogni esecuzione del programma.
-
-Per ottenere numeri casuali più "realistici", l'uso di un seme basato sull'orologio di sistema o su un numero pseudo-casuale può essere una buona pratica. Inoltre, è possibile specificare manualmente un seme per ottenere una serie di numeri completamente differente, ad esempio:
+Questo codice crea un'istanza della classe `Random` e utilizza il metodo `Next` per generare un numero casuale tra 1 e 10. Puoi anche utilizzare il metodo `Next` per generare numeri casuali in un range diverso di valori.
 
 ```C#
-Random rnd = new Random(12345); // Genera sempre gli stessi numeri casuali
+int numeroCasuale = rand.Next(20, 51);
 ```
 
-Un'altra opzione è utilizzare il metodo `NextBytes()` per generare un array di byte casuali invece di un singolo numero. Questo può essere utile per scopi di criptazione o creazione di salt per password sicure.
+In questo esempio, il numero casuale sarà compreso tra 20 e 50 inclusi.
 
-# Vedi anche
+## Approfondimento
+Se vuoi approfondire e imparare di più sui numeri casuali in C#, ci sono alcune cose importanti da tenere a mente. Innanzitutto, è importante sapere che i numeri generati dalla classe `Random` non sono veramente casuali, ma seguono un algoritmo predefinito. Quindi, se si digitano gli stessi parametri in un metodo `Next`, si otterrà sempre lo stesso numero.
 
-- Documentazione ufficiale di Microsoft sulla classe Random in C#: https://docs.microsoft.com/it-it/dotnet/api/system.random
-- Un approfondimento sull'algoritmo di generazione dei numeri casuali in C#: https://www.codeproject.com/Articles/25172/Simple-Random-Number-Generation
+Inoltre, la classe `Random` utilizza un valore chiamato "seed" per generare i numeri casuali. Questo valore può essere specificato in fase di creazione dell'istanza della classe o può essere generato automaticamente dal sistema operativo. Se vuoi ottenere numeri davvero casuali, puoi fornire un seed basato sul tempo di sistema utilizzando il metodo `Environment.TickCount`.
+
+## Vedi Anche
+- Documentazione ufficiale di Microsoft sulla classe `Random` in C# [https://docs.microsoft.com/it-it/dotnet/api/system.random](https://docs.microsoft.com/it-it/dotnet/api/system.random)
+- Guida su come generare numeri casuali in C# [https://www.c-sharpcorner.com/article/generating-random-numbers-in-C-Sharp/](https://www.c-sharpcorner.com/article/generating-random-numbers-in-C-Sharp/)
+- Esempi di codice per generare numeri casuali in C# [https://www.programiz.com/csharp-programming/examples/random-number](https://www.programiz.com/csharp-programming/examples/random-number)

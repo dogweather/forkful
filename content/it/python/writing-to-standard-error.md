@@ -1,36 +1,41 @@
 ---
-title:    "Python: Scrittura su standard error"
+title:    "Python: Scrivere su standard error"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error è fondamentale quando si vuole ottenere una migliore gestione degli errori nel nostro codice Python. Campi di applicazione comuni includono la scrittura di messaggi di errore personalizzati, la registrazione di eventi e la gestione dei problemi di runtime.
+Scrivere su standard error può essere un'utile pratica quando si vuole avere una maggiore visibilità sugli errori e sulle eccezioni che si verificano durante l'esecuzione di un programma Python.
 
 ## Come Fare
 
-Per scrivere su standard error in Python, è possibile utilizzare il modulo `sys` e il suo metodo `stderr`. Ecco un esempio di codice che stampa un messaggio di errore personalizzato:
+Per scrivere su standard error si può utilizzare il metodo `write()` fornito dall'oggetto `sys.stderr`. Di seguito un esempio di come utilizzarlo:
 
 ```Python
 import sys
 
-sys.stderr.write("Errore: Non è stato possibile aprire il file.")
+sys.stderr.write("Questo è un messaggio di errore.") 
 ```
 
-Questo produrrà il seguente output:
+Questo codice scriverà sullo standard error il messaggio "Questo è un messaggio di errore." Inoltre, è possibile utilizzare il metodo `flush()`per assicurarsi che il messaggio venga immediatamente visualizzato.
 
-```
-Errore: Non è stato possibile aprire il file.
+```Python
+import sys
+
+sys.stderr.write("Questo è un messaggio di errore.")
+sys.stderr.flush()
 ```
 
 ## Approfondimento
 
-In aggiunta alla scrittura di messaggi di errore personalizzati, la scrittura su standard error può essere utile anche per la registrazione di eventi o problemi di runtime nel nostro codice. Inoltre, possiamo anche utilizzare il modulo `logging` per una gestione ancora più avanzata degli errori, includendo informazioni sulle tracce di stack e livelli di severità.
+Scrivere su standard error è particolarmente utile quando si desidera monitorare gli errori e le eccezioni durante lo sviluppo di programmi più complessi. Inoltre, alcuni strumenti di debug e di logging possono utilizzare lo standard error per registrare messaggi importanti.
+
+Per ulteriori informazioni su come utilizzare lo standard error, si consiglia di consultare la documentazione ufficiale di Python.
 
 ## Vedi Anche
 
-- [Modulo sys della documentazione ufficiale di Python](https://docs.python.org/3/library/sys.html)
-- [Modulo logging della documentazione ufficiale di Python](https://docs.python.org/3/library/logging.html)
-- [Come gestire gli errori in Python](https://www.programiz.com/python-programming/exception-handling)
+- Documentazione ufficiale di Python: https://www.python.org/doc/
+- Tutorial su standard error: https://realpython.com/python-logging/#logging-to-stdout-and-stderr-with-logging-module

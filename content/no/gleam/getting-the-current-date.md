@@ -1,58 +1,69 @@
 ---
-title:    "Gleam: Å få dagens dato"
+title:    "Gleam: Å få gjeldende dato"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Dato og tid er en viktig del av enhver applikasjon eller nettside. Enten det er for å vise når noe ble opprettet, endret eller sendt, er det alltid nyttig å ha tilgang til den nåværende datoen. Med Gleam kan du enkelt få tilgang til den nåværende datoen og bruke den til å skape en bedre brukeropplevelse for din applikasjon. Les videre for å finne ut hvordan.
+Å få den nåværende datoen kan være nyttig i mange programmeringsscenarier, for eksempel når du vil vise datoen til brukeren, beregne alder eller registrere tidspunktet for en hendelse.
 
-## Slik gjør du det
+## Hvordan
 
-Det første du trenger å gjøre er å importere biblioteket "datetime" som vil tillate deg å manipulere datoer og tider. Deretter kan du bruke funksjonen "now" for å få tilgang til den nåværende datoen og tidspunktet. For å gjøre det mer brukervennlig, kan du deretter formatere datoen ved hjelp av modulen "format" og angir det ønskede formatet som et argument. Her er et eksempel på hvordan koden kan se ut:
-
-```Gleam
-import datetime
-
-let current_date = datetime.now()
-let formatted_date = format(current_date, "%d %B %Y")
-
-io.println("I dag er det ", formatted_date)
-```
-
-Kjører dette eksemplet vil gi følgende output:
-
-```
-I dag er det 23 desember 2020
-```
-
-Du kan også formatere datoen til å inkludere tidspunktet ved å bruke "%H:%M" i formatet. Dette vil da gi følgende output:
-
-```
-I dag er det 23 desember 2020, klokken 16:30
-```
-
-## Dypdykk
-
-For mer avanserte bruksområder, kan du også bruke Gleam til å manipulere datoer og tider. Dette inkluderer å legge til eller trekke fra et spesifikk antall dager, måneder eller år fra den nåværende datoen. Du kan også bruke funksjoner som "is_before" og "is_after" for å sammenligne datoer. Her er noen eksempler på hvordan dette kan gjøres:
+For å få den nåværende datoen i Gleam, kan du bruke det innebygde biblioteket `Time`.
 
 ```Gleam
-let ten_days_from_now = datetime.add_days(10, datetime.now())
+import Time
 
-let ten_days_ago = datetime.subtract_days(10, datetime.now())
-
-let one_year_ago = datetime.subtract_years(1, datetime.now())
-
-let is_before = datetime.is_before(ten_days_from_now, datetime.now())
-
-let is_after = datetime.is_after(ten_days_ago, one_year_ago)
+let current_date = Time.now()
 ```
 
-Dette er bare et lite utvalg av mulighetene når det kommer til å arbeide med datoer og tider i Gleam.
+Dette vil gi deg en `Time.Date`-struktur som inneholder informasjon om den nåværende datoen, inkludert dag, måned, år og dag i uken. Du kan også angi en bestemt tidssone ved å legge til et argument i `now()`-funksjonen.
+
+```Gleam
+let current_date = Time.now("Europe/Oslo")
+```
+
+Du kan deretter bruke disse verdiene som du vil i koden din. For å vise datoen til brukeren kan du for eksempel bruke string-interpolering.
+
+```Gleam
+let year = current_date.year
+let month = current_date.month
+let day = current_date.day
+
+let message = "Dagens dato er #{day}.#{month}.#{year}."
+
+IO.print(message)
+```
+
+Dette vil skrive ut følgende:
+
+```
+Dagens dato er 15.03.2021.
+```
+
+Du kan også bruke `Time.Date`-strukturen til å utføre beregninger, slik som å finne alderen til en person.
+
+```Gleam
+import Time.Date
+
+let birthday = Time.Date.new(1995, 11, 19)
+let current_date = Time.now()
+let age = Time.Date.years_between(current_date, birthday)
+
+IO.print("Min alder er #{age}.")
+```
+
+Dette vil skrive ut alderen din basert på den nåværende datoen.
+
+## Dype dykk
+
+Å få den nåværende datoen kan virke enkelt, men det er faktisk mange aspekter ved tid og dato som kan være kompliserte. For eksempel må man ta hensyn til forskjellige tidszoner, skuddår og dag-lyssparingstid. Det er viktig å forstå disse konseptene for å kunne jobbe med datoer og tider nøyaktig i programmering.
 
 ## Se også
 
-- Dokumentasjon for datetime-modulen: [https://gleam.run/modules/datetime.html](https://gleam.run/modules/datetime.html)
-- Eksempler på hvordan du kan bruke datoer i Gleam: [https://github.com/gleam-lang/gleam/blob/master/examples/](https://github.com/gleam-lang/gleam/blob/master/examples/)
+- [Official Gleam Documentation on Time Library](https://gleam.run/lib/time/)
+- [Gleam GitHub Repository](https://github.com/gleam-lang/gleam)
+- [Awesome Gleam - A curated list of resources for Gleam programming language](https://github.com/razum2um/awesome-gleam)

@@ -1,61 +1,63 @@
 ---
-title:    "C++: Beräkning av ett datum i framtiden eller förflutna"
+title:    "C++: Beräkna ett datum i framtiden eller förflutna"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna beräkna ett datum i framtiden eller förflutna kan vara en användbar funktion i många olika sammanhang, såsom att planera resor, hålla koll på födelsedagar eller förfallodatum för fakturor.
+Att kunna beräkna ett datum i framtiden eller i det förflutna är en vanlig uppgift inom programmering. Det kan vara användbart för att planera händelser eller för att hantera tidsbaserade data. I denna bloggpost kommer vi att titta på hur man kan göra detta i C++.
 
 ## Så här gör du
 
-För att kunna beräkna ett datum i framtiden eller förflutna i C++, behöver du först och främst ha en grundläggande förståelse för datum och tidshantering i språket. Det finns flera olika sätt att utföra denna beräkning och nedan följer två exempel som använder standardbiblioteket i C++ för att illustrera hur det kan göras:
+För att börja beräkna ett datum i C++, behöver vi först inkludera biblioteket `<ctime>`. Detta bibliotek innehåller funktioner för att hantera datum och tid i C++.
+
+För att beräkna ett datum i framtiden använder vi funktionen `mktime`, som tar in ett `tm`-strukturobjekt som innehåller information om det nuvarande datumet och tiden. För att beräkna ett datum i förflutna måste vi först konvertera det nuvarande datumet till en `tm`-strukturobjekt och sedan använda funktionen `mktime` tillsammans med önskat antal sekunder som ska läggas till eller subtraheras från datumet.
+
+Här är ett exempel på hur man kan beräkna ett datum i framtiden som är 10 dagar från det nuvarande datumet:
 
 ```C++
-// Exempel 1: Beräkna ett datum i framtiden
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
-int main() {
-    // Definiera ett aktuellt datum
-    auto now = std::chrono::system_clock::now();
-    // Lägg till 7 dagar till det aktuella datumet
-    auto future = now + std::chrono::hours(7*24);
-    // Konvertera till en sträng och skriv ut resultatet
-    auto futureString = std::chrono::system_clock::to_time_t(future);
-    std::cout << "Datum om 7 dagar: " << std::ctime(&futureString) << std::endl;
+using namespace std;
 
-    return 0;
-}
+int main(){
+  // Skapar ett tm-objekt med det nuvarande datumet och tiden
+  time_t now = time(0);
+  tm *date = localtime(&now);
 
-// Exempel 2: Beräkna ett datum i förflutna
-#include <iostream>
-#include <chrono>
+  // Lägger till 10 dagar till datumet
+  date->tm_mday += 10;
 
-int main() {
-    // Definiera ett aktuellt datum
-    auto now = std::chrono::system_clock::now();
-    // Dra av 30 dagar från det aktuella datumet
-    auto past = now - std::chrono::hours(30*24);
-    // Konvertera till en sträng och skriv ut resultatet
-    auto pastString = std::chrono::system_clock::to_time_t(past);
-    std::cout << "Datum för 30 dagar sedan: " << std::ctime(&pastString) << std::endl;
+  // Omvandlar datumen till sekunder och använder mktime för att beräkna det nya datumet
+  now = mktime(date);
 
-    return 0;
+  // Skriver ut det nya datumet
+  cout << "Datumet om 10 dagar kommer att vara: " << ctime(&now) << endl;
+
+  return 0;
 }
 ```
 
-Resultaten för dessa exempel kommer att vara i Unix-timestamp-format, men detta kan enkelt konverteras till ett mer läsbart format med hjälp av standardbiblioteket.
+Kör man detta program kommer det att ge följande utmatning:
 
-## På djupet
+```
+Datumet om 10 dagar kommer att vara: Sun Jul 19 02:32:21 2020
+```
 
-För den som är intresserad av att lära sig mer om datum och tidshantering i C++, finns det flera olika funktioner och metoder som kan vara användbara vid beräkning av datum i framtiden eller förflutna. Dessa inkluderar bland annat `std::chrono::hours`, `std::chrono::system_clock::now()` och `std::chrono::system_clock::to_time_t()`.
+För att beräkna ett datum i förflutna kan vi göra på samma sätt, men istället för att lägga till dagar använder vi `date->tm_mday -= 10;` för att subtrahera dagar.
 
-Det finns också flera olika bibliotek och ramverk tillgängliga för att underlätta hanteringen av datum och tid i C++, såsom Boost.Date_Time och Howard Hinnant's date library.
+## Djupdykning 
+
+Det finns flera viktiga saker att tänka på när man arbetar med datum i C++. Först och främst måste vi förstå att `mktime`-funktionen använder OS:ets tidszoninställningar för att beräkna datumet. Om tidszonen är felaktig kommer även det beräknade datumet att vara felaktigt.
+
+En annan sak att tänka på är att `tm`-strukturobjektet använder en 24-timmars klocka, vilket betyder att timmar är representerade från 0 till 23 istället för 1 till 12. Om man behöver arbeta med en 12-timmars klocka måste man göra vissa manuella konverteringar.
 
 ## Se även
 
-- [Boost.Date_Time](https://www.boost.org/doc/libs/1_67_0/doc/html/date_time.html)
-- [Howard Hinnant's date library](https://github.com/HowardHinnant/date)
+* [C++ datum och tidsfunktioner](https://www.programiz.com/cpp-programming/library-function/ctime)
+* [Dokumentation för <ctime> biblioteket](https://en.cppreference.com/w/cpp/chrono/c/time)
+* [Dagens datum i C++](https://www.geeksforgeeks.org/how-to-find-current-date-and-time-in-c/)

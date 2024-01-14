@@ -1,39 +1,40 @@
 ---
 title:    "Swift: Читання текстового файлу"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Зачем
+## Чому
 
-Читати текстовий файл може бути корисним для вивчення різних програмних мов та практикування їх використання. Також, це може допомогти позбутися від навантаженого графічного інтерфейсу та більше сконцентруватися на програмуванні.
+Програмісти часто потребують читати дані з текстових файлів для подальшої обробки та аналізу. Це може бути необхідно для роботи з великими обсягами даних або збереження інформації у структурованому форматі. Читання текстових файлів є важливою складовою будь-якої програми, яка працює зі збереженими даними, тому необхідно знати, як це зробити правильно.
 
-# Як
+## Як це зробити
 
-Для читання текстового файлу використовується метод `String(contentsOf: URL)`, що дозволяє прочитати вміст файлу за допомогою URL об'єкта. У наступному прикладі ми використаємо цей метод, щоб прочитати вміст файлу "text.txt" та вивести його в консоль:
+Найпростіший спосіб прочитати текстовий файл у Swift - використовувати клас `String`. Нижче показано приклад читання текстового файлу та виведення його вмісту:
 
 ```Swift
-if let fileURL = Bundle.main.url(forResource: "text", withExtension: "txt") {
+if let path = Bundle.main.path(forResource: "file", ofType: "txt") { // шлях до файлу
     do {
-        let fileContents = try String(contentsOf: fileURL)
-        print(fileContents)
+        let content = try String(contentsOfFile: path, encoding: .utf8)
+        print(content) // виводимо текстовий файл
     } catch {
-        print("Error reading file: \(error)")
+        print("Помилка читання файлу: \(error)")
     }
 }
 ```
 
-Результатом буде виведення вмісту файлу "text.txt" в консоль.
+В даному прикладі ми отримуємо шлях до файлу, використовуючи `Bundle` і метод `path(forResource:ofType:)`. Після цього за допомогою класу `String` ми зчитуємо вміст файлу та виводимо його в консоль. Не забудьте виправити назву файлу та його розширення у методі `path(forResource:ofType:)`.
 
-# Глибше вдивимося
+## Глибше вдивіться
 
-Крім `String(contentsOf: URL)`, існують й інші способи читання текстових файлів в Swift, наприклад використання `FileHandle` або укороченого синтаксису `try?` для простішого коду.
+Щоб краще зрозуміти процес читання текстового файлу у Swift, варто розглянути його внутрішню структуру. Клас `String` насправді є структурою, яка містить декілька варіантів ініціалізації для різних типів даних, включаючи дані з файлів. Вона також використовує метод `init(contentsOfFile:usedEncoding:)` для зчитування вмісту файлу та визначення його кодування автоматично.
 
-Для більшої ефективності, також можна використовувати `DispatchIO`, який дозволяє асинхронно читати великі файли та ефективно керувати пам'яттю.
+Крім того, на відміну від інших мов програмування, Swift використовує тип `Optional` для повернення результатів з виклику методу `String(contentsOfFile:usedEncoding:)` у випадку, якщо явно не зазначене кодування. Це дозволяє більш гнучко керувати роботою з файлами у мові Swift.
 
-# Дивіться також
+## Дивіться також
 
-- [Офіційна документація Swift для читання та запису файлів](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#writing-equality-operators-for-custom-types)
-- [Стаття "Робота з файлами в Swift"](https://medium.com/@sgcsharp/work-with-files-in-swift-24640bc7e44a) в блозі Medium
-- [Відеоурок "Читання та запис файлів в Swift"](https://www.youtube.com/watch?v=MElcVK1mIxo) на YouTube
+- [Робота з файлами та директоріями у Swift](https://swiftbook.ru/content/languageguide/files-and-directories/)
+- [Swift Programming Language](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
+- [Робота зі  стрічками у Swift](https://swiftbook.ru/content/languageguide/strings/)

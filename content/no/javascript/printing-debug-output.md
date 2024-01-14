@@ -1,41 +1,43 @@
 ---
 title:    "Javascript: Utskrift av feilsøkingsutdata"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Feilsøking er en viktig del av enhver programmeringsoppgave, spesielt når det kommer til større og mer komplekse prosjekter. Å skrive ut debug-utdata kan hjelpe deg med å identifisere feil og forstå hvordan koden din fungerer. Det kan også være nyttig for å verifisere at koden din gjør det du forventer den skal gjøre, spesielt når du implementerer nye funksjoner eller gjør endringer.
+Når man programmerer, er det viktig å kunne finne feil og problemer i koden raskt. Dette kan være spesielt vanskelig når man arbeider med større prosjekter og komplekse kodesnutter. Derfor er det nyttig å vite hvordan man printer ut debug output, eller feilutskrifter, for å kunne identifisere feil og finne løsninger på dem.
 
-## Hvordan du gjør det
+## Hvordan
 
-For å skrive ut debug-utdata i JavaScript, kan du bruke console.log()-funksjonen. Du kan skrive hva som helst i parantesen og det vil bli skrevet ut i konsollen. La oss ta en titt på et enkelt eksempel:
+I JavaScript kan man enkelt printe ut debug output ved å bruke funksjonen `console.log()`. Denne funksjonen tar inn en eller flere argumenter og skriver dem ut til konsollen. La oss si at vi vil printe ut verdien av en variabel ved navn `nummer`. Da kan vi gjøre det på følgende måte:
 
-```
-let tall = 5;
-console.log(tall); // skriver ut verdien av variabelen "tall" til konsollen
-```
-
-I dette eksempelet vil verdien av variabelen "tall" (5) bli skrevet ut i konsollen når programmet kjører. Dette kan være nyttig når du vil se på verdien av en variabel som endres gjennom koden din.
-
-Du kan også inkludere informasjon om hvor i koden din debug-utdataen kommer fra ved å bruke console.log() sammen med en streng:
-
-```
-console.log("Feilsøking av variabelen tall: ", tall);
+```Javascript
+console.log(nummer);
 ```
 
-Dette vil skrive ut "Feilsøking av variabelen tall: 5" i konsollen. Det gir deg mer kontekst rundt debug-utdataen og kan hjelpe deg med å forstå hva som skjer i koden din.
+Dette vil skrive ut verdien av variabelen til konsollen når koden blir kjørt. Om vi nå endrer verdien av `nummer`, vil konsollen skrive ut den nye verdien neste gang `console.log()` blir kjørt.
 
-## Dypdykk
+Man kan også printe ut tekst og variabler på samme tid ved å bruke såkalte "template literals". Dette gjøres ved å bruke backticks (`) istedenfor anførselstegn (") eller enkle anførselstegn (') i strengen. La oss se på et eksempel:
 
-Det finnes også andre metoder for å skrive ut debug-utdata, som console.error() og console.warn(), som hjelper deg med å identifisere forskjellige typer feil i koden din. Du kan også bruke console.table() for å skrive ut datastrukturer som objekter og arrayer på en mer organisert måte.
+```Javascript
+console.log(`Tallet er ${nummer}`);
+```
 
-Det er viktig å huske å fjerne eller kommentere ut alle debug-utdatat hvis du er ferdig med feilsøking, da det kan påvirke ytelsen til koden din.
+Her vil teksten "Tallet er" alltid være den samme, men verdien av `nummer` vil variere.
+
+## Deep Dive
+
+I tillegg til `console.log()` finnes det flere andre funksjoner man kan bruke for å printe debug output, som for eksempel `console.table()` eller `console.error()`. Det finnes også metoder for å formatere utskriften på ulike måter, som for eksempel `console.group()` og `console.count()`.
+
+Det er også mulig å bruke betingelser for å bare printe ut debug output hvis visse betingelser er oppfylt. Dette kan være nyttig for å redusere mengden av debug output som blir skrevet ut og for å unngå at konsollen blir overfylt med unødvendig informasjon.
+
+Det er også verdt å nevne at det finnes ulike debugging-verktøy og utvidelser som kan være nyttige for å feilsøke og inspisere koden på en mer detaljert måte.
 
 ## Se også
 
-- [JavaScript console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Debugging in JavaScript](https://www.w3schools.com/js/js_debugging.asp)
-- [Mastering the Developer Tools Console](https://medium.com/@nickytonline/mastering-the-developer-tools-console-dfb2e88084df)
+* [MDN Web Docs](https://developer.mozilla.org/no/docs/Web/JavaScript) - documentasjon for JavaScript
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - debugging-verktøy for Google Chrome
+* [VS Code](https://code.visualstudio.com/) - populær teksteditor med innebygd debugging-funksjonalitet

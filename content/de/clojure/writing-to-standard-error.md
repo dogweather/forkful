@@ -1,60 +1,53 @@
 ---
-title:    "Clojure: Schreiben auf Standardfehler"
+title:    "Clojure: Schreiben auf den Standardfehler"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Standard Error ist ein wichtiges Konzept in der Welt der Programmierung. Oftmals wird es verwendet, um Fehlermeldungen oder Debugging-Informationen auszugeben. In diesem Blog-Post werden wir uns genauer mit der Verwendung von Standard Error in Clojure auseinandersetzen und sehen, warum es eine nützliche Funktion ist.
+Das Schreiben von Standardfehlern (standard error) ist eine nützliche Technik beim Programmieren in Clojure. Es ermöglicht es Entwicklern, Fehler und Warnungen in ihren Programmen zu erkennen und zu beheben.
 
-# Wie es geht
+## Wie man es macht
 
-Um eine Nachricht an den Standard Error Stream zu senden, können wir die Funktion `eprint` verwenden. Hier ist ein einfaches Beispiel:
-
-```Clojure
-(eprint "Dies ist eine Fehlermeldung")
-```
-
-Dieser Codeblock wird zu folgendem Output führen:
-
-```
-Dies ist eine Fehlermeldung
-```
-
-Standard Error ist besonders nützlich, wenn wir während der Ausführung einer Funktion oder eines Programms Fehlermeldungen ausgeben möchten. Wir können das mit einer `try`/`catch`-Block-Struktur erreichen, wie im folgenden Beispiel:
+Um etwas in die standard error-Konsole zu schreiben, können wir die `System/err` Funktion verwenden. Zum Beispiel:
 
 ```Clojure
-(try
-  (/ 5 0)
-  (catch Exception e
-    (eprint "Es gab einen Fehler: " (.getMessage e))))
+(System/err "Dies ist eine Fehlermeldung!")
 ```
 
-Dieser Codeblock wird zu folgendem Output führen:
+Die Ausgabe sieht folgendermaßen aus:
 
 ```
-Es gab einen Fehler: Divison durch Null
+Dies ist eine Fehlermeldung!
 ```
 
-# Tiefgründig
-
-In der Standardbibliothek von Clojure gibt es mehrere Funktionen, die es uns ermöglichen, mit dem Standard Error Stream zu arbeiten. Ein Beispiel hierfür ist `set!`, mit dem wir den Stream umleiten können, um beispielsweise Debugging-Informationen in eine Datei zu schreiben. Hier ist ein Beispiel:
+Dies ist besonders hilfreich, wenn wir versuchen, Fehler in unserem Code zu finden und zu beheben, da sie in der Konsole sichtbar werden und uns dabei unterstützen. Wir können auch die `println` Funktion verwenden, um zusätzliche Informationen zu unserem Fehler auszugeben.
 
 ```Clojure
-(def error-file (java.io.BufferedWriter. (java.io.FileWriter. "debug.log")))
-(set! *err* error-file)
-(eprint "Debugging-Informationen")
-(.close error-file)
+(println "Fehler beim Ausführen des Codes!")
+(System/err "Dies ist eine Fehlermeldung!")
 ```
 
-Dieser Codeblock wird die Nachricht "Debugging-Informationen" in die Datei "debug.log" schreiben.
+Die Ausgabe sieht jetzt so aus:
 
-Ein weiteres nützliches Feature von Standard Error ist die Möglichkeit, Farbcodes in die Ausgabe zu integrieren, um wichtige Informationen hervorzuheben. Ein Beispiel für die Verwendung von Farbcodes im Standard Error Stream finden Sie in der Dokumentation von Clojure (`(doc *err*)`).
+```
+Fehler beim Ausführen des Codes!
+Dies ist eine Fehlermeldung!
+```
 
-# Siehe auch
+## Tiefergehende Informationen
 
-- [Clojure Dokumentation zu *err*](https://clojuredocs.org/clojure.core/*err*)
-- [Offizielle Clojure-Website](https://clojure.org/)
-- [Clojure-Forum auf Reddit](https://www.reddit.com/r/clojure/)
+In Clojure gibt es verschiedene Mittel, um mit Fehlern und Warnungen umzugehen. Eine davon ist das Verwenden von `clojure.main/repl` Funktion, um in einer interaktiven Umgebung mit unserem Code zu experimentieren. Hier können wir auch die `pst` Funktion verwenden, um das Stack-Trace unseres Fehlers zu sehen und zu analysieren.
+
+Eine weitere Möglichkeit ist das Verwenden von `try/catch` Blöcken, um mögliche Fehler in unserem Code abzufangen und damit umzugehen.
+
+Es ist auch wichtig zu beachten, dass das Schreiben von Nachrichten in die standard error-Konsole nicht immer die beste Option ist, da sie möglicherweise nicht in bestimmten Situationen sichtbar sind. In solchen Fällen kann das Verwenden von Protokollierungsfunktionen wie `log/error` besser sein.
+
+## Siehe auch
+
+- Dokumentation für die `System/err` Funktion: [https://clojuredocs.org/clojure.core/System/err](https://clojuredocs.org/clojure.core/System/err)
+- Dokumentation für `clojure.main/repl`: [https://clojuredocs.org/clojure.main-repl](https://clojuredocs.org/clojure.main-repl)
+- Informationen über Ausnahmebehandlung in Clojure: [https://clojure.org/guides/exceptions](https://clojure.org/guides/exceptions)

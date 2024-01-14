@@ -1,40 +1,37 @@
 ---
-title:    "Fish Shell: 「現在の日付を取得する」"
+title:    "Fish Shell: 「現在の日付の取得」"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-なぜ現在の日付を取得する必要があるのでしょうか？日付を取得することで、タスク管理やファイル命名など、日常のさまざまな作業に便利です。
+## なぜ？ 
 
-## How To
-まず、Fish Shellを開きます。以下のコマンドを入力し、現在の日付を取得することができます。
+現在の日付を取得するのには、プログラミングでよく使用されることがあります。例えば、ファイル名やログに日付を追加したい場合や、期限の設定など、様々なシナリオで日付情報が必要になるので、Fish Shellで現在の日付を取得する方法を学ぶことは重要です。 
+
+## 方法 
+
+Fish Shellでは、コマンド「`date`」を使用して簡単に現在の日付を取得することができます。下記のコード例を参考にしてください。 
 
 ```Fish Shell
 date
 ```
 
-これにより、現在の日付が表示されます。もし、特定の形式で日付を取得したい場合は、以下のようにコマンドを入力します。
+これにより、コマンドを実行した時点の日付が表示されます。また、より詳細な日付情報が必要な場合は、`date`コマンドに引数を追加することで、任意のフォーマットで日付を取得することもできます。下記の例を参考にしてください。 
 
 ```Fish Shell
-date "+%Y年%m月%d日"
+date "+%Y-%m-%d %H:%M:%S"
 ```
 
-これにより、例えば"2020年11月28日"のような形式で日付が表示されます。さらに、曜日や時間を追加したい場合は、以下のようにコマンドを入力します。
+この場合は、現在の年月日と時分秒の情報が表示されます。 
 
-```Fish Shell
-date "+%Y年%m月%d日 (%A) %H時%M分%S秒"
-```
+## 深堀り 
 
-これにより、"2020年11月28日 (土曜日) 12時13分45秒"のような形式で日付が表示されます。詳しい日付のフォーマットは、Fish Shellの公式ドキュメントを参照してください。
+`date`コマンドの引数にどのようなフォーマットを指定するかによって、表示される日付の情報が変わります。例えば、`%Y`は西暦での年、`%m`は月、`%d`は日を表します。また、`%H`は24時間表記の時、`%M`は分、`%S`は秒を表します。他にも様々なフォーマットが存在するので、調べてみると面白いかもしれません。 
 
-## Deep Dive
-現在の日付を取得するコマンドの背景には、Unixの基本的なコマンドである"date"が使用されています。このコマンドでは、コンピューター内部で保持されているタイムスタンプを解析し、人間が理解しやすい形式で日付を表示するようにしています。さらに、日付を取得するコマンドは、プログラミング言語やスクリプトで使用することもできます。
+## See Also 
 
-## See Also
-さらに日付を取得するためのコード例や詳しい情報を知りたい方は、以下のリンクを参考にしてください。
-
-- Official Fish Shell Documentation: https://fishshell.com/docs/current/cmds/date.html
-- Tutorialspoint article on getting current date in Fish Shell: https://www.tutorialspoint.com/fish-shell/fish_shell_date_command.htm
-- The Unix Timestamp Converter: https://www.unixtimestamp.com/
+- [Fish Shell公式サイト](https://fishshell.com)
+- [Fish Shellのドキュメンテーション](https://fishshell.com/docs/current/index.html)
+- [dateコマンドのマニュアルページ](https://manpages.debian.org/stretch/date/date.1.en.html)

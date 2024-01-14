@@ -1,46 +1,57 @@
 ---
-title:    "Elixir: Ohjelman debuggaustulostuksen tulostaminen"
+title:    "Elixir: Virheenkorjaustulosteen tulostaminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Debugger-utulostukseen kannattaa paneutua
 
-Debuggaus on olennainen osa ohjelmoinnin prosessia, ja debug outputin tulostaminen on yksi tapa helpottaa virheiden ja ongelmien havaitsemista ja korjaamista. Se on myös hyödyllinen työkalu oppimisessa ja koodin tehokkuuden parantamisessa.
+Ilman debugger-utulostusta ohjelmointi voi olla usein arvailua ja virheiden etsiminen voi olla hankalaa ja aikaa vievää. Elixirin avulla voit helposti tulostaa debuggausviestejä, jotka auttavat sinua ymmärtämään koodia ja selvittämään mahdollisia ongelmakohtia.
 
-## Miten
+## Miten tulostaa debug-tekstit Elixirissä
 
-Debug outputin tulostaminen Elixirillä on helppoa. Voit käyttää esimerkiksi `IO.puts()`-funktiota, joka tulostaa annetun arvon konsoliin. Voit myös käyttää `IO.inspect()`-funktiota, joka tulostaa annetun arvon lisäksi myös sen tietotyypin ja sijainnin muistissa.
+Aloitetaan yksinkertaisella esimerkillä, jossa luodaan funktio, joka lisää kaksi numeroa ja tulostaa virheviestin, jos lasku ei onnistu.
 
-```
-Elixir
-IO.puts("Tulosta tämä")
-# Tulosta tämä
-
-IO.inspect(5)
-# 5 (Integer)
-
-IO.inspect([1, 2, 3])
-# [1, 2, 3] (List)
+```Elixir
+def add(x, y) do
+  case x + y do
+    {:error, :bad_arguments} -> IO.puts("Virhe: Väärät argumentit") # !! Tämä rivi tulostaa debug-tekstin !!
+    result -> IO.puts("Tulos: #{result}")
+  end
+end
 ```
 
-Voit myös käyttää `Logger`-moduulia, joka tarjoaa enemmän vaihtoehtoja debug outputin tulostamiseen esimerkiksi tiedostoihin tai tietokantoihin.
+Kun kutsut funktiota `add` oikeilla argumenteilla, näet tuloksen `Tulos: <summa>`. Mutta jos käytät virheellisiä argumentteja, kuten esimerkiksi kirjaimia, saat debug-tekstin "Virhe: Väärät argumentit".
 
+Voit myös ohjata debugger-utulostukset suoraan konsoliin käyttämällä `IO.inspect` -funktiota. Tämä tulostaa koko tietueen tai listan kaikki tiedot konsoliin, mikä voi olla hyödyllistä monimutkaisemman koodin debuggaamisessa.
+
+```Elixir
+list = [1, 2, 3, 4]
+IO.inspect(list) # Tulostaa koko listan [1, 2, 3, 4]
 ```
-Elixir
-Logger.debug("Tulostetaan tämä viesti debug-tilassa")
+
+## Syvempi sukellus debugger-utulostukseen
+
+Elixirissä on myös mahdollista lisätä debugger-utulostuksia omiin moduuleihin ja funktioihin lisäämällä `@debug` -annotaation niiden alkuun. Tämä poistetaan tuotantotuotannosta, mutta tulostavat debuggaviestit auttavat kehittäjiäsi löytämään ja korjaamaan virheitä kehitysvaiheessa.
+
+```Elixir
+defmodule Calculator do
+  @debug true # Tämä lisää debugger-utulostukset tähän moduuliin
+  def add(x, y) do
+    @debug IO.puts("Debuggausviesti: Lasketaan #{x} + #{y}")
+    x + y
+  end
+end
+
+result = Calculator.add(1, 2) # Tulos: 3
 ```
 
-Vietetään myös huomiota siihen, että debug outputin tulostaminen voi vaikuttaa suorituskykyyn, joten sitä tulisi käyttää harkiten ja vain silloin kun sitä todella tarvitaan.
-
-## Syvemmälle
-
-Debug outputin tulostamisen käytännöt ja säännöt voivat vaihdella eri tilanteissa ja ohjelmointiprojekteissa. Joissakin tilanteissa voi olla hyödyllistä käyttää Elixirin hankinnan käsittelijöitä (`Procovers`), jotka mahdollistavat dynaamisen debug outputin tulostamisen tietyissä kohdissa koodia.
-
-On myös tärkeää muistaa, että debug outputin tulostamista ei tulisi käyttää ainoana tapana virheiden havaitsemiseen ja korjaamiseen. Hyvä ohjelmointikäytäntö on myös yksikkötestien kirjoittaminen ja virheiden hallinnan strategioiden luominen.
+Debugger-utulostukset eivät kuluta paljon resursseja, joten voit reilusti lisätä niitä koodiisi useampiin kohtiin helpottaaksesi koodisi ymmärtämistä ja debuggaamista.
 
 ## Katso myös
 
-- [Virheiden hallinta Elixirillä](https://elixir-lang.org/getting-started/try-catch-and-rescue.html)
-- [Yksikkötestaaminen Elixirillä](https://elixir-lang.org/getting-started/introduction-to-mix.html#automatically-generated-tests)
+- [Elixir Debugging -dokumentti](https://elixir-lang.org/getting-started/debugging.html)
+- [Elixir School - Arvot ja muuttujat](https://elixirschool.com/fi/lessons/basics/values-and-variables/)
+- [Elixir Tutorial - Kehitysympäristön asentaminen](https://elixir-lang.org/install.html)

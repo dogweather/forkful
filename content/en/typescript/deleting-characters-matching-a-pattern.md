@@ -1,50 +1,41 @@
 ---
 title:    "TypeScript recipe: Deleting characters matching a pattern"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever tried to clean up a string of text or code, only to realize that it contains unwanted characters that mess up your formatting? Maybe it's pesky newline characters or trailing spaces that you can't seem to get rid of. Well, fear not, because TypeScript has a simple solution for deleting characters matching a pattern.
+
+There are many reasons why someone may want to delete characters matching a specific pattern in their TypeScript code. It can improve the readability, maintainability, and performance of the code. Additionally, deleting unnecessary characters can reduce the overall file size, making the code easier to manage.
 
 ## How To
-To delete characters matching a pattern in TypeScript, we can use the `replace` method in conjunction with a regular expression. The syntax for this method is as follows:
+
+To delete characters matching a pattern in TypeScript, we can use the `replace()` method. This method takes in a regular expression as its first argument, and a replacement string as its second argument. The regular expression can be used to match the specific pattern of characters we want to delete, while the replacement string can be left empty to replace the matched characters with nothing.
+
+Let's take a look at an example where we want to delete all vowels from a string:
 
 ```TypeScript
-string.replace(regExp|substr, newSubStr|function)
+let str = "Hello World!";
+let newStr = str.replace(/[aeiou]/gi, "");
+console.log(newStr); // Output: Hll Wrld!
 ```
 
-We can specify the pattern we want to match as the first argument, and provide an empty string as the second argument to replace the matched characters with nothing. Let's say we have a string with some unwanted characters in it:
+In this code, we first declare a string variable `str` with the value "Hello World!". Then, we use the `replace()` method to replace all vowels (both lowercase and uppercase) with an empty string, effectively deleting them from the string. The `i` and `g` flags in the regular expression represent case-insensitive and global matching, respectively.
 
-```TypeScript
-const messyString = "Hello\nworld!"
-console.log(messyString.replace(/\n/g, ''))
-```
-
-In this example, we're using a regular expression to match any newline characters (`\n`) in the string and replacing them with an empty string, effectively deleting them. The output will be: `Helloworld!`
-
-We can also use this method to remove multiple unwanted characters or patterns at once. For example, to remove alltabs and line breaks from a string, we can use the following code:
-
-```TypeScript
-const messyString = "This is\t\t a\t\n\t\t\t\tmessy string\n\t\t"
-console.log(messyString.replace(/\t|\n/g, ''))
-```
-
-The output will be: `This is a messy string`
-
-It's important to note that the `replace` method does not mutate the original string, but rather returns a new string with the replaced characters. So if we want to save our cleaned string, we need to assign it to a variable like we did in the examples above.
+We can also use the `replace()` method to delete multiple patterns at once. For example, if we want to delete all numbers and special characters from a string, we can use the regular expression `/[0-9!@#$%^&*()]/g` as our first argument.
 
 ## Deep Dive
-Regular expressions offer a powerful and flexible way to specify patterns in strings. They use special characters and syntax to match patterns in a string, allowing for more complex pattern matching than simple string replacement.
 
-In our examples above, we used the `g` flag in our regular expressions to indicate that we want to match the pattern globally (i.e. not stop after the first match). We can also use other flags like `i` for case-insensitive matching or `m` for multiline matching.
+When using the `replace()` method in TypeScript, it's important to note that the original string is not modified. Instead, the method returns a new string with the replacements made. This means we need to assign the result to a new variable or the original variable if we want to use the modified string.
 
-Regular expressions can also be combined and nested to create more specific patterns. For example, we can use character classes like `[a-z]` to match any lowercase letter, or use quantifiers like `+` to match one or more occurrences of a pattern.
-
-A great resource for learning more about regular expressions is [RegexOne](https://regexone.com/), which offers interactive tutorials and exercises for beginners and advanced users alike.
+Another important thing to consider is that the `replace()` method only deletes characters matching the specified pattern. It will not remove any extra whitespace or formatting from the code. If we want to clean up our code further, we can also use the `trim()` method to remove any extra whitespace at the beginning and end of the string.
 
 ## See Also
-- [MDN Web Docs on string.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs on regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScript Handbook on strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+
+To learn more about the `replace()` method and regular expressions in TypeScript, check out these resources:
+
+- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript - Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)

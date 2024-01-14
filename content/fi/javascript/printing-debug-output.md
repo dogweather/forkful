@@ -1,33 +1,41 @@
 ---
-title:    "Javascript: Virheenkorjaustulosteen tulostus"
+title:    "Javascript: Tulostaminen virheenjäljityslähtöön"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Kun kehitämme ohjelmia, debuggaus on tärkeä osa prosessia. Se auttaa löytämään virheitä ja korjaamaan niitä. Tulostaminen debug-tietoa voi auttaa meitä ymmärtämään, mitä koodi tekee ja missä virheet ovat. 
 
-Jokaisella ohjelmointikielillä on mahdollista tulostaa debug-tekstiä, ja Javascript ei ole poikkeus. Debug-tekstin tulostaminen on hyödyllistä, kun haluat tarkastella ohjelmakoodin suorituksen vaiheita ja mahdollisesti löytää virheitä. 
-
-## Kuinka
-
-Debug-tekstin tulostaminen Javascriptissä on helppoa. Voit käyttää esimerkiksi `console.log()` -funktiota, joka tulostaa haluamasi tekstin konsoliin. Voit myös käyttää `console.error()` -funktiota, joka antaa virheilmoituksen konsoliin. Jos haluat tulostaa muuttujan arvon, voit käyttää `console.log("Muuttujan arvo: " + muuttuja);` -muotoa.
+## Miten
+JavaScriptissä voimme käyttää `console.log()` funktiota tulostamaan tietoa konsoliin. Tämä on hyödyllinen tapa tarkistaa, mitä ohjelma tekee tietyllä hetkellä. 
 
 ```Javascript
-console.log("Hei maailma!"); // tulostaa "Hei maailma!" konsoliin
-var num = 10;
-console.log("Muuttujan arvo: " + num); // tulostaa "Muuttujan arvo: 10" konsoliin
-console.error("Virhe!"); // antaa virheilmoituksen konsoliin
+// Esimerkki koodista
+let a = 5;
+let b = 10;
+let summa = a + b;
+console.log(summa);
 ```
 
-## Syvällisemmin
+Tulostus konsoliin olisi `15`, joka kertoo meille, että muuttujien `a` ja `b` arvojen summa tallennetaan muuttujaan `summa`.
 
-Kun ohjelmakoodisi kasvaa, virheiden löytäminen ja korjaaminen voi olla haastavaa. Tässä kohtaa debug-tekstin tulostaminen tulee tarpeen. Voit tulostaa tekstiä konsoliin eri kohdissa ohjelmakoodia, jolloin näet mitä tapahtuu kunkin rivin kohdalla. Näin voit havaita, missä vaiheessa jokin muuttuja muuttaa arvoaan tai missä kohtaa ohjelma kaatuu.
+Konsolin lisäksi voimme myös tulostaa tietoa suoraan verkkosivulle käyttäen HTML-elementtiä `div`.
 
-Debug-tekstin tulostaminen voi myös auttaa ymmärtämään paremmin ohjelman suoritusta ja löytämään mahdollisia tehostamispisteitä. Voit esimerkiksi tulostaa laskutoimitusten välissä aikamerkinnän ja verrata niitä eri koodipätkien välillä. Tällä tavalla voit huomata, mikä kohta koodissa vie eniten aikaa ja mahdollisesti optimoida sitä.
+```Javascript
+// Esimerkki koodista
+let teksti = "Tervetuloa!";
+document.getElementById("debug").innerHTML = teksti;
+```
+
+Tämä tulostaisi `<div>` elementin sisällä olevan tekstin "Tervetuloa!". 
+
+## Syventävä sukellus
+Debuggaus on kätevä tapa tarkistaa koodin toimivuutta ja löytää virheitä. Tulostamalla debug-tietoa voimme paikallistaa ongelmalliset kohdat koodissa ja korjata ne nopeasti. On kuitenkin tärkeää muistaa poistaa kaikki debug-tulostukset ennen ohjelman julkaisemista, jotta sivu ei näytä epäammattimaiselta käyttäjille.
 
 ## Katso myös
-
-- [Javascriptin `console` -objekti](https://developer.mozilla.org/fi/docs/Web/API/console)
-- [Debug-tekstin tulostaminen Visual Studio Codessa](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
-- [Debug-tekstin tulostaminen Reactin kanssa käyttäen React Developer Tools -lisäosaa](https://reactjs.org/blog/2016/09/15/new-react-developer-tools.html)
+- [MDN - Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Debugging JavaScript with Console Commands](https://www.digitalocean.com/community/tutorials/how-to-debug-javascript-within-the-browser-console#using-console-methods)
+- [JavaScript Debugging Tips and Tricks](https://blog.bitsrc.io/15-javascript-debugging-tips-and-tricks-that-will-make-you-a-better-developer-875a4146b119)

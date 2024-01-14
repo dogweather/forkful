@@ -1,41 +1,64 @@
 ---
 title:    "Javascript: Comparando duas datas"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que comparar duas datas em Javascript?
 
-A comparação de datas é um processo importante em qualquer linguagem de programação, incluindo Javascript. Ao comparar duas datas, podemos determinar a ordem cronológica entre elas e realizar ações com base nessa informação. Isso é especialmente útil ao lidar com dados temporais, como agendamentos de eventos ou validação de datas de entrada.
+Comparar dois valores de data é uma tarefa comum em programação, especialmente em projetos que envolvem agendamento, rastreamento de tempo ou cálculos baseados em durações. É importante entender como a linguagem Javascript trata e compara dados de data para garantir resultados precisos e consistentes em seu código.
 
-## Como comparar duas datas em Javascript
+## Como comparar datas em Javascript
 
-A comparação de datas em Javascript é feita usando o método `getTime()` dos objetos `Date`. Este método retorna o número de milissegundos desde 1º de janeiro de 1970, também conhecido como "época Unix". Podemos então comparar esses valores para determinar qual data é maior ou menor.
+Em Javascript, as datas são armazenadas como objetos do tipo "Date", que representam um ponto específico no tempo. Para comparar duas datas, podemos usar os operadores de comparação, como ">", "<", ">=" ou "<=".
 
-Veja um exemplo de código abaixo:
+Por exemplo, se quisermos verificar se uma data é anterior a outra, usamos o operador "<":
 
-```Javascript
-let data1 = new Date('2021-05-15');
-let data2 = new Date('2021-06-01');
+```
+var data1 = new Date("2021-01-01");
+var data2 = new Date("2021-06-01");
 
-if(data1.getTime() < data2.getTime()) {
-    console.log('A data 1 é anterior à data 2');
-} else {
-    console.log('A data 2 é anterior à data 1');
+if (data1 < data2) {
+  console.log("A primeira data é anterior à segunda data.");
 }
 ```
 
-No exemplo acima, criamos duas datas diferentes usando a sintaxe `new Date()` e as comparamos usando o método `getTime()`. A data 1 é anterior à data 2, então o primeiro `console.log` será exibido no console.
+O console irá imprimir a mensagem "A primeira data é anterior à segunda data." porque 01 de janeiro é uma data anterior a 01 de junho.
 
-## Mais detalhes sobre comparação de datas
+Também é possível comparar as datas utilizando o método "getTime()", que retorna o valor numérico da data em milissegundos. Com isso, podemos comparar as datas com mais precisão, considerando não apenas o dia, mas também a hora, minuto, segundo e milissegundo.
 
-Em Javascript, as datas também podem ser comparadas usando os operadores de comparação `>`, `<`, `>=` e `<=`. No entanto, é importante lembrar que esses operadores comparam as datas usando seus valores de string e não seus valores de tempo. Isso pode levar a resultados inesperados, portanto, é sempre recomendado usar o método `getTime()` para comparações precisas.
+```
+var data1 = new Date("2021-01-01");
+var data2 = new Date("2021-06-01");
 
-Também devemos ter cuidado ao comparar datas usando objetos `Date` diferentes. Isso ocorre porque, por padrão, os objetos `Date` são criados usando o fuso horário do sistema em que o código está sendo executado. Isso pode levar a uma diferença de alguns milissegundos entre as duas datas, o que pode afetar a ordem de comparação. Para evitar isso, podemos usar o método `setUTCHours()` para definir as horas em UTC antes da comparação.
+if (data1.getTime() < data2.getTime()) {
+  console.log("A primeira data é anterior à segunda data.");
+}
+```
+
+O exemplo acima também imprimirá a mesma mensagem no console, pois o valor numérico de 01 de janeiro é menor que o de 01 de junho.
+
+## Aprofundando na comparação de datas
+
+É importante lembrar que as datas são objetos em Javascript e, portanto, podem ter suas propriedades e métodos. Quando comparamos datas, na verdade estamos comparando seus valores ou propriedades, que podem ser acessados utilizando os métodos "get" da data (ex: "getDate()", "getMonth()", "getFullYear()").
+
+Além disso, quando comparamos datas com o operador "==" ou "!=", apenas os valores ou propriedades são comparados, não a referência do objeto. Portanto, duas datas com os mesmos valores, mas criadas com objetos diferentes, serão consideradas iguais.
+
+```
+var data1 = new Date("2021-01-01");
+var data2 = new Date("2021-01-01");
+
+if (data1 == data2) {
+  console.log("As datas são iguais.");
+}
+```
+
+O console imprimirá a mensagem "As datas são iguais." mesmo que as datas tenham sido criadas com objetos diferentes.
 
 ## Veja também
 
-- [Documentação oficial Javascript - Comparando Datas](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date#comparando_datas) 
-- [Manipulando datas com Javascript](https://www.linhadecodigo.com.br/artigo/3376/manipulando-datas-com-javascript.aspx)
-- [Comparação de datas em Javascript: Guia definitivo](https://codigofonte.com.br/artigos/comparar-datas-em-javascript)
+- [Documentação sobre objetos Date em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Como converter datas em diferentes formatos em Javascript](https://www.w3schools.com/js/js_date_formats.asp)
+- [Comparando valores com os operadores de comparação em Javascript](https://www.w3schools.com/js/js_comparisons.asp)

@@ -1,61 +1,62 @@
 ---
-title:    "PHP: Store bokstaver i en streng"
+title:    "PHP: Stor bokstav i en streng"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være mange grunner til å ønske å kapitalisere en streng i PHP. Kanskje du vil formatere tekst før du skriver den ut, eller kanskje du vil gjøre navn eller titler mer lesbare. Uansett hva årsaken er, vil denne funksjonen bidra til å gjøre koden din mer effektiv og profesjonell.
+Å endre bokstavene i en streng (eller tekst) til store bokstaver kan være nyttig når man for eksempel ønsker å lage titteltekst eller markere viktig informasjon.
 
 ## Hvordan
 
-For å kapitalisere en streng i PHP, kan du bruke funksjonen `strtoupper()`. Dette vil konvertere alle bokstavene i strengen til store bokstaver. For eksempel:
+Kapitalisering av en streng kan gjøres på flere måter i PHP. En metode er å bruke funksjonen "strtoupper", som gjør om alle bokstavene i en streng til store bokstaver. Se eksempel nedenfor:
 
 ```PHP
-$str = "hei verden";
-echo strtoupper($str);
+$input = "dette er en streng med små bokstaver";
+$uppercase = strtoupper($input);
+echo $uppercase; // Dette er en streng med små bokstaver
 ```
 
-Dette vil gi ut følgende resultat:
+En annen måte å kapitalisere en streng på er å bruke funksjonen "ucwords", som gjør om første bokstav i hvert ord til stor bokstav. Se eksempel nedenfor:
 
 ```PHP
-HEI VERDEN
+$input = "dette er en streng med små bokstaver";
+$capitalized = ucwords($input);
+echo $capitalized; // Dette Er En Streng Med Små Bokstaver
 ```
 
-Hvis du kun ønsker å kapitalisere den første bokstaven i strengen, kan du bruke funksjonen `ucfirst()`. Dette vil bare endre den første bokstaven til stor, mens resten av strengen forblir uendret. For eksempel:
+Man kan også lage sin egen funksjon for å kapitalisere en streng, som tar hensyn til unntaksord og andre spesifikke krav. Se eksempel nedenfor:
 
 ```PHP
-$str = "hallo";
-echo ucfirst($str);
+function capitalizeString(string $input) {
+    $exceptions = ["og", "i", "for", "av", "på"]; // legg til egne unntaksord her
+    $words = explode(" ", $input); // deler opp strengen i ord
+
+    foreach ($words as $key=>$word) {
+        if (!in_array($word, $exceptions)) { // sjekker om ordet er et unntaksord
+            $words[$key] = ucfirst($word); // gjør første bokstav til stor bokstav
+        }
+    }
+
+    return implode(" ", $words); // setter sammen ordene igjen til en streng
+}
+
+$input = "dette er en streng med små bokstaver";
+$customCapitalized = capitalizeString($input);
+echo $customCapitalized; // Dette er en Streng med Små Bokstaver
 ```
 
-Dette vil gi ut følgende resultat:
+## Deep Dive
 
-```PHP
-Hallo
-```
+Når man skal kapitalisere en streng, er det viktig å være klar over at bokstavene som skal endres må være i riktig format. Det vil si at de må være enten ASCII eller UTF-8 format. Dette kan påvirke resultatet hvis strengen inneholder spesialtegn eller bokstaver fra andre språk enn engelsk.
 
-## Dypdykk
-
-Hvis du ønsker å kapitalisere en streng som inneholder flere ord, kan du bruke funksjonen `ucwords()`. Denne vil konvertere den første bokstaven i hvert ord til stor, mens resten av strengen forblir uendret. For eksempel:
-
-```PHP
-$str = "hei verden";
-echo ucwords($str);
-```
-
-Dette vil gi ut følgende resultat:
-
-```PHP
-Hei Verden
-```
-
-Det er også muligheter for å kapitalisere spesifikke deler av en streng ved å bruke funksjoner som `strrpos()` og `substr()`, men dette kan være litt mer avansert og er utenfor omfanget av denne bloggposten.
+I tillegg er det også viktig å sjekke om det finnes allerede-eksisterende funksjoner som kan kapitalisere strenger på en bedre måte enn det man selv kan lage.
 
 ## Se Også
 
-- `strtoupper()` - PHP Manual (https://www.php.net/manual/en/function.strtoupper.php)
-- `ucfirst()` - PHP Manual (https://www.php.net/manual/en/function.ucfirst.php)
-- `ucwords()` - PHP Manual (https://www.php.net/manual/en/function.ucwords.php)
+- "PHP string functions" (https://www.w3schools.com/php/php_ref_string.asp)
+- "strtoupper PHP documentation" (https://www.php.net/manual/en/function.strtoupper.php)
+- "ucwords PHP documentation" (https://www.php.net/manual/en/function.ucwords.php)

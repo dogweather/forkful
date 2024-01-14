@@ -1,62 +1,41 @@
 ---
-title:    "Elm: パターンに一致する文字を削除する"
+title:    "Elm: パターンに一致する文字の削除"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-なぜ誰かが特定のパターンに一致する文字を削除するのかについて説明します。この作業を行うことで、より効率的で読みやすいコードを作成することができます。
+## なぜ
+
+「あるパターンにマッチする文字を削除する」という作業を行う理由は、テキストを処理する際に特定の文字を除外する必要があるからです。
 
 ## 方法
-まず、私たちは特定のパターンに一致する文字を削除するために、Elmの組み込み関数である`String.filter`を使用します。ここでは、削除したい文字を含まない新しい文字列を作成するように指示することができます。
+
+まず、Elmの文字列操作機能を利用して、与えられた文字列から特定の文字パターンを検索し、その文字を削除する関数を作成する必要があります。
+
+例えば、以下のようなコードを使用して特定の文字パターンを削除することができます。
 
 ```Elm
-let
-  newString =
-    String.filter (\character -> character /= "a") "abcdefg"
-in
-  newString
+deletePattern : String -> String -> String
+deletePattern pattern string =
+    String.replace pattern "" string
 ```
 
-このコードを実行すると、以下のような出力が得られます。
+そして、以下のように呼び出すことで、特定の文字パターンを削除した結果が得られます。
 
 ```Elm
-"bcdefg"
+deletePattern "a" "banana" -- => "bnana"
 ```
 
-さらに、正規表現を使用することで、特定のパターンに一致する文字を削除することもできます。
+## ディープダイブ
 
-```Elm
--- "a"または"b"または"c"に一致する文字を削除する
-let
-  newString =
-    Regex.replace Regex.All (Regex.regex "[abc]") "abcdefg" (always "")
-in
-  newString
-```
+文字列操作を行う際には、様々な文字パターンを検索して削除することができます。例えば、正規表現を使用することで、複雑なパターンにもマッチする文字を削除することができます。
 
-このコードを実行すると、以下のような出力が得られます。
+また、Stringモジュールには、さまざまなメソッドが用意されており、より効率的に文字列操作を行うことができます。詳細については、公式ドキュメントを参照してください。
 
-```Elm
-"defg"
-```
+## 参考リンク
 
-## 深堀り
-文字の削除についてさらに詳しく掘り下げると、削除操作は文字列の不変性を保つことに注意する必要があります。つまり、元の文字列を変更するのではなく、新しい文字列を作成する必要があります。
-
-また、パターンにマッチする文字の位置を特定することで、より正確な削除が可能となります。そのためには、`String.indexes`関数を使用することで、マッチした文字のインデックスをリストで取得することができます。
-
-```Elm
--- "a"または"b"に一致する文字のインデックスを表示する
-String.indexes [String.Index.fromInt 0] (Regex.regex "[ab]") "abcdefg"
-```
-
-このコードを実行すると、以下のようにインデックスのリストが返されます。
-
-```Elm
-[ String.Index.fromInt 0, String.Index.fromInt 1 ]
-```
-
-## 関連情報を参照
-- [Elm公式ドキュメ
+[Elm公式ドキュメント](https://guide.elm-lang.org/)  
+[正規表現を使用する場合の例](https://discourse.elm-lang.org/t/how-to-deleting-characters-matching-a-pattern/4633/2)  
+[stringモジュールの詳細](https://package.elm-lang.org/packages/elm/core/1.0.3/String)

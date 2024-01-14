@@ -1,38 +1,51 @@
 ---
-title:    "Arduino: Encontrando la longitud de una cadena"
+title:    "Arduino: Encontrar la longitud de una cadena"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por Qué
 
-¿Alguna vez te has preguntado cuántos caracteres tiene una cadena de texto? En proyectos de Arduino, esto es una pregunta común ya que a menudo necesitamos manipular cadenas para mostrar datos en una pantalla LCD o para comunicarnos con otros dispositivos. Saber cómo encontrar la longitud de una cadena puede ser muy útil en estos casos.
+En la programación de Arduino, es común trabajar con cadenas de caracteres o "strings". A menudo, es necesario conocer la longitud de una cadena para realizar diversas operaciones. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en Arduino y la importancia de esta habilidad.
 
-## Cómo hacerlo
+## Cómo
 
-Para encontrar la longitud de una cadena en Arduino, utilizaremos la función `strlen()` de la biblioteca de cadena de Arduino. Esta función toma una cadena como parámetro y devuelve la cantidad de caracteres en esa cadena. Vamos a ver un ejemplo:
+Para encontrar la longitud de una cadena en Arduino, podemos utilizar la función `strlen()`. Esta función toma una cadena como argumento y devuelve el número de caracteres en esa cadena. Veamos un ejemplo:
 
 ```Arduino
-char cadena[] = "¡Hola!";
+char myString[] = "¡Hola a todos!";
+int length = strlen(myString);
+Serial.println(length);
+```
+Este código imprimirá "14" en el monitor serie, ya que la cadena "¡Hola a todos!" tiene 14 caracteres.
 
-int longitud = strlen(cadena);
+Otra forma de encontrar la longitud de una cadena es utilizar un bucle `for` y la función `sizeof()`. Por ejemplo:
 
-Serial.println(longitud);
+```Arduino
+char myString[] = "¡Hola a todos!";
+int length = 0;
+
+for (int i = 0; i < sizeof(myString); i++) {
+  if (myString[i] == '\0') { // encuentra el caracter nulo
+    break;
+  }
+  length++;
+}
+
+Serial.println(length);
 ```
 
-En este ejemplo, tenemos una cadena con la palabra "¡Hola!" y utilizamos la función `strlen()` para encontrar su longitud. La variable `longitud` almacenará el valor de 6, ya que esa es la cantidad de caracteres en la cadena.
+Este código también imprimirá "14" en el monitor serie, ya que el bucle recorrerá la cadena hasta encontrar el caracter nulo y contará cada caracter en el proceso.
 
 ## Profundizando
 
-Para aquellos que quieren un conocimiento más profundo sobre cómo funciona `strlen()` en Arduino, aquí hay algunas cosas a tener en cuenta:
+Es importante tener en cuenta que las funciones `strlen()` y `sizeof()` tienen diferentes comportamientos y es importante elegir la más adecuada para cada situación. La función `strlen()` cuenta solo los caracteres hasta el caracter nulo, mientras que `sizeof()` cuenta todos los caracteres, incluido el caracter nulo. También es importante entender que el caracter nulo (`\0`) es el que indica el final de la cadena.
 
-- `strlen()` cuenta solo los caracteres visibles en una cadena, es decir, letras, números, símbolos, etc. No cuenta espacios en blanco, tabulaciones o caracteres de escape.
-- Si utilizas caracteres no ASCII en una cadena, como letras con acentos, la función `strlen()` puede no devolver el número correcto de caracteres. Esto se debe a que Arduino utiliza el juego de caracteres ASCII por defecto y algunos caracteres no están incluidos.
-- Al igual que con otras funciones de cadena, `strlen()` cuenta desde cero. Esto significa que el primer carácter en una cadena tiene un índice de 0, el segundo un índice de 1, y así sucesivamente.
-- Si no conoces el tamaño máximo de una cadena, es recomendable utilizar una variable de tipo `int` para almacenar el resultado de `strlen()`, ya que no se puede garantizar que la cadena esté dentro del rango de valores de un tipo `byte` o `char`.
+Otro tema importante a considerar es el uso de la memoria. En ocasiones, es posible que no sepamos la longitud exacta de una cadena y necesitemos reservar memoria dinámicamente. En estos casos, es recomendable utilizar la función `strlen()` para evitar asignar más memoria de la necesaria.
 
-## Ver también
+## Ver También
 
-- [Documentación de la función `strlen()` de la biblioteca de cadena de Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
-- [Tutorial de Programación de Arduino: Manipulación de Strings](https://www.arduino.cc/en/Tutorial/StringLengthTrim)
+- [Documentación de la función `strlen()` en la página de Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
+- [Tutorial sobre cadenas en Arduino en español](https://aprendiendoarduino.wordpress.com/2017/05/01/manejo-de-cadenas-de-caracteres-en-arduino/)

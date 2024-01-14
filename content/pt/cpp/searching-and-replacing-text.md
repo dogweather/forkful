@@ -1,63 +1,54 @@
 ---
 title:    "C++: Buscando e substituindo texto"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Se você é um programador, provavelmente já se deparou com a tarefa de procurar e substituir textos em seu código. Isso pode ser necessário para corrigir erros ortográficos, atualizar informações ou até mesmo fazer alterações em massa. Felizmente, a linguagem de programação C++ possui recursos integrados para facilitar essa tarefa.
+Se você já trabalhou com programação, provavelmente já se deparou com a necessidade de substituir um determinado trecho de texto por outro. Através da função "search and replace" é possível automatizar esse processo e poupar tempo e esforço na hora de editar seu código.
 
-## Como fazer?
+## Como fazer
 
-Para procurar e substituir texto em C++, você pode usar a função `find_and_replace()` da biblioteca `<algorithm>`. Veja um exemplo de código abaixo:
+Para realizar a substituição de texto em C++, é necessário utilizar a função "replace" da biblioteca <algorithm>. Essa função recebe três parâmetros, sendo o primeiro o início da string, o segundo o fim da string e o terceiro é o texto que será substituído.
 
 ```
 #include <iostream>
-#include <string>
 #include <algorithm>
 
 using namespace std;
 
-// Função para procurar e substituir texto
-void find_and_replace(string& texto, const string& buscar, const string& substituir) {
-    size_t pos = texto.find(buscar);
-    while (pos != string::npos) {
-        texto.replace(pos, buscar.length(), substituir);
-        pos = texto.find(buscar, pos + substituir.length());
-    }
-}
-
-int main() {
-    string texto = "Este é um exemplo de texto para substituir.";
-    cout << "Texto original: " << texto << endl;
-
-    // Chamando a função para substituir 'exemplo' por 'exemplo novo'
-    find_and_replace(texto, "exemplo", "exemplo novo");
-    cout << "Texto modificado: " << texto << endl;
-
+int main(){
+    
+    // Definindo a string original
+    string texto = "Hello, world!";
+    
+    // Realizando a substituição
+    replace(texto.begin(), texto.end(), 'o', 'a');
+    
+    // Imprimindo o resultado
+    cout << texto << endl;
+    
     return 0;
 }
 ```
 
 **Saída:**
 
-```
-Texto original: Este é um exemplo de texto para substituir.
-Texto modificado: Este é um exemplo novo de texto para substituir.
-```
+"Hella, warld!"
 
-Este exemplo usa a função `find_and_replace()` para procurar e substituir a palavra "exemplo" por "exemplo novo" no texto. A função atualiza a posição da palavra a cada substituição, permitindo que o texto seja percorrido completamente.
+Esse é apenas um exemplo básico de como realizar a substituição de texto em C++. É importante ter em mente que a função "replace" substitui todas as ocorrências do texto na string, portanto, se necessário, deve-se utilizar a função "find" para procurar a posição exata do trecho que será substituído.
 
-## Aprofundando
+## Mergulho profundo
 
-Além da função `find_and_replace()`, a biblioteca `<algorithm>` também possui outras funções úteis para manipular strings, como `find()`, `replace()`, `erase()`, entre outras. Você pode combiná-las para criar algoritmos mais complexos de busca e substituição.
+Além da função "replace", a biblioteca <algorithm> possui diversas outras funções que podem auxiliar na manipulação de strings, tais como "find", "find_if", "count" e "erase". É fundamental ter domínio dessas funções para realizar a substituição de texto de forma eficaz e sem erros.
 
-Além disso, vale ressaltar que é importante ter cuidado ao utilizar esses recursos, pois eles podem substituir não apenas as ocorrências desejadas, mas também outras que possam causar problemas no seu código. Por isso, sempre faça testes e verifique se a substituição foi realizada corretamente.
+É importante ressaltar que, apesar de ser uma funcionalidade simples, a substituição de texto é muito utilizada em programas mais complexos, como editores de texto e compiladores. Portanto, é crucial entender e dominar as técnicas de busca e substituição em C++.
 
 ## Veja também
 
-- [Documentação oficial da função `find_and_replace()`](https://en.cppreference.com/w/cpp/algorithm/find_and_replace)
-- [Guia completo sobre a manipulação de strings em C++](https://www.geeksforgeeks.org/strings-c-3/)
-- [Vídeo aula sobre busca e substituição em C++](https://www.youtube.com/watch?v=Oyc3ybWx268)
+- [Função "replace" na documentação da biblioteca <algorithm>](https://en.cppreference.com/w/cpp/algorithm/replace)
+- [Tutorial sobre manipulação de strings em C++](https://www.geeksforgeeks.org/string-manipulation-in-c-2/)
+- [Outras funções da biblioteca <algorithm>](https://en.cppreference.com/w/cpp/algorithm)

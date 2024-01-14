@@ -1,55 +1,57 @@
 ---
 title:    "Python: Escribiendo pruebas"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Python
+## Por qué
 
-Escribir pruebas es una parte esencial del proceso de programación en Python. Aunque puede llevar tiempo y esfuerzo adicional, es una práctica que trae muchos beneficios en el desarrollo de software. En este artículo, exploraremos por qué es importante escribir pruebas en Python y cómo hacerlo de manera efectiva.
+Escribir pruebas es una parte importante de la programación en Python. No solo ayuda a asegurar que nuestro código funcione correctamente, sino que también puede ahorrar tiempo en el largo plazo al detectar errores antes de que se conviertan en problemas mayores.
 
-## Cómo escribir pruebas en Python
+## Cómo hacerlo
 
-Antes de profundizar en la importancia de escribir pruebas en Python, es importante comprender cómo hacerlo. En Python, las pruebas se pueden escribir utilizando el módulo `unittest` incorporado en el lenguaje. Este módulo proporciona una estructura para escribir, organizar y ejecutar pruebas en un entorno controlado.
+Para escribir pruebas en Python, podemos utilizar el módulo incorporado de `unittest`. Este módulo proporciona herramientas para definir y ejecutar pruebas en nuestro código. Veamos un ejemplo simple para probar una función que suma dos números enteros:
 
-Para comenzar, importamos el módulo `unittest` y creamos una clase que herede de `unittest.TestCase`. En esta clase, podemos escribir diferentes métodos que ejecutarán nuestras pruebas. Por ejemplo:
-
-```
+```Python
 import unittest
 
-class PruebasCalculadora(unittest.TestCase):
+def sumar(num1, num2):
+    return num1 + num2
 
-    def test_suma(self):
-        resultado = 2 + 2
-        self.assertEqual(resultado, 4)
+class PruebasSuma(unittest.TestCase):
 
-    def test_resta(self):
-        resultado = 5 - 3
-        self.assertEqual(resultado, 2)
+    def test_suma_positivos(self):
+        resultado = sumar(2, 3)
+        self.assertEqual(resultado, 5) # verifica que el resultado sea igual a 5
 
-    def test_multiplicacion(self):
-        resultado = 3 * 4
-        self.assertEqual(resultado, 12)
+    def test_suma_negativos(self):
+        resultado = sumar(-2, -3)
+        self.assertEqual(resultado, -5)
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-En el ejemplo anterior, estamos escribiendo tres pruebas para verificar la funcionalidad de suma, resta y multiplicación de una calculadora. Utilizando el método `assertEqual()`, comparamos el resultado esperado con el resultado real de cada operación. Si las afirmaciones son verdaderas, significa que nuestras pruebas pasan con éxito.
+Aquí estamos importando el módulo `unittest` y definiendo una función `sumar` que simplemente suma dos números. Luego, creamos una clase `PruebasSuma` que hereda de `unittest.TestCase`, nuestra clase de pruebas.
 
-Para ejecutar estas pruebas, utilizamos el método `main()` del módulo `unittest`.
+Dentro de esta clase, definimos dos métodos de prueba, uno para sumar números positivos y otro para sumar números negativos. Utilizamos el método `assertEqual` para verificar si el resultado de la función `sumar` es igual al valor esperado. Finalmente, llamamos al método `unittest.main()` para ejecutar nuestras pruebas.
 
-## Profundizando en escribir pruebas
+Si ejecutamos este código, veremos que ambas pruebas pasan, ya que el resultado de la suma es igual al valor esperado. Este es solo un ejemplo simple, pero con `unittest` podemos escribir pruebas más complejas para probar diferentes escenarios y casos de uso.
 
-Ahora que sabemos cómo escribir pruebas en Python, profundicemos en la importancia de hacerlo. Las pruebas nos permiten verificar el correcto funcionamiento de nuestro código y detectar errores antes de que lleguen a producción. Esto ahorra tiempo y esfuerzo al encontrar y corregir errores en una etapa temprana del desarrollo.
+## Inmersión profunda
 
-Además, las pruebas nos ayudan a mantener una buena estructura de nuestro código. Al escribir pruebas, estamos obligados a dividir nuestro código en funciones más pequeñas y lógicas, lo que lo hace más legible y fácil de mantener.
+Además de `unittest`, también existen otras herramientas y librerías para escribir pruebas en Python, como `pytest` o `doctest`. Cada una tiene sus propias características y ventajas, por lo que es importante familiarizarse con ellas y elegir la que mejor se adapte a nuestras necesidades.
 
-Otro beneficio de escribir pruebas es que nos da confianza en nuestro código. Si escribimos pruebas exhaustivas y todas pasan con éxito, tenemos una mayor garantía de que nuestro código funciona como se espera.
+Al escribir pruebas, es importante tener en cuenta que no solo debemos probar el código que escribimos, sino también el código de otros. Podemos utilizar pruebas de integración para verificar que nuestras funciones y clases funcionen correctamente juntas.
+
+También es recomendable seguir buenas prácticas al escribir pruebas, como mantenerlas simples y en pequeñas piezas de código, y mantenerlas actualizadas a medida que nuestro código cambia.
 
 ## Ver también
 
-- [Documentación oficial de unittest en Python](https://docs.python.org/es/3/library/unittest.html)
-- [Guía de pruebas de software con TDD en Python](https://www.youtube.com/watch?v=w95NLx2nj6w)
-- [Tutorial de unittest en Python](https://realpython.com/python-testing/#writing-your-first-test)
+Enlaces útiles para aprender más sobre cómo escribir pruebas en Python:
+
+- Documentación oficial de `unittest`: https://docs.python.org/3/library/unittest.html
+- Tutorial de pruebas en Python: https://realpython.com/python-testing/
+- Artículo sobre las ventajas de escribir pruebas: https://www.codementor.io/blog/python-test-driven-development-benefits-du107obi9

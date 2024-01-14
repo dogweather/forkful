@@ -1,32 +1,53 @@
 ---
-title:    "Rust: 「パターンにマッチする文字を削除する」"
+title:    "Rust: パターンにマッチする文字を削除する"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+Rustプログラミングの初心者の皆さん、こんにちは！今日は文字のパターンにマッチする文字を削除する方法についてお話ししましょう。この方法を使うことで、プログラムの効率性を上げることができます。また、データ分析やデータ処理のようなタスクを行う際にも役立ちます。
 
-Rustプログラミングを学ぶと、より効率的で安全なコードを書くことができます。パターンに一致する文字を削除することは、コードをよりシンプルにするための有用な手段です。
+## 方法
+まずは、パターンにマッチする文字を削除する簡単な方法から説明します。例として、「こんにちは、Rustプログラミングを始めましょう！」という文字列から「Rust」を削除するコードを書いてみましょう。
 
-## 使い方
-
-```Rust
-fn main() {
-    let mut string = String::from("Hello, Rust!");
-    let pattern = "Rust"; // 削除するパターン
-
-    string.retain(|c| !pattern.contains(c)); // patternに一致しない文字を残す
-    println!("{}", string); // Hello, !
-}
+```
+Rust code
+let text = "こんにちは、Rustプログラミングを始めましょう！";
+let pattern = "Rust";
+let result = text.replace(pattern, "");
+println!("{}", result);
 ```
 
+上記のコードを実行すると、「こんにちは、プログラミングを始めましょう！」という文字列が出力されるはずです。`replace`関数を使うことで、パターンにマッチする文字を削除することができます。ただし、この方法だとパターンにマッチする文字が一つしかない場合にしか使えません。
+
+次に、パターンにマッチする文字を全て削除する方法を紹介します。これを行うには、`regex`ライブラリを使います。例として、文字列から英数字を全て削除するコードを書いてみましょう。
+
+```
+Rust code
+let text = "abc123@def456";
+let pattern = Regex::new(r"[A-Za-z0-9]+").unwrap();
+let result = pattern.replace_all(text, "");
+println!("{}", result);
+```
+
+上記のコードを実行すると、「@」だけを残した文字列が出力されるはずです。`Regex`構造体を使うことで、正規表現パターンを指定して文字を削除することができます。`unwrap`メソッドは、正規表現パターンにエラーがないことを保証するために使用します。
+
 ## 深堀り
+さらに詳しくパターンにマッチする文字を削除する方法について掘り下げてみましょう。この方法を使うことで、複雑なパターンにも対応することができます。
 
-Rustでは`String`のメソッド`retain()`を使用して、指定した条件に合致しない文字を削除することができます。このメソッドはクロージャを受け取り、文字列内の各文字に対してこのクロージャを実行します。上記の例では、`pattern`に指定した文字列に一致しない文字を残すように`retain()`メソッドを使用しています。
+例として、文字列から全ての日本語文字を削除するコードを書いてみましょう。このような場合、一文字だけを指定して削除するのは難しいため、正規表現パターンを使います。
 
-## 参考リンク
+```
+Rust code
+let text = "こんにちは、Rustプログラミングを始めましょう！";
+let pattern = Regex::new(r"[\p{Hiragana}\p{Katakana}ー　]+").unwrap();
+let result = pattern.replace_all(text, "");
+println!("{}", result);
+```
 
-- [The Rust Programming Language](https://www.rust-lang.org/ja)
-- [Rustでプログラミングする際の注意点](https://honadmin.in/os/rust_tips.html)
-- [Rust Advent Calendar 2019](https://qiita.com/advent-calendar/2019/rust)
+上記のコードを実行すると、「、Rustプログラミングを始めましょう！」という文字列が出力されるはずです。`Regex::new`の引数に`"[\p{Hiragana}\p{Katakana}ー　]+"`という正規表現パターンを指定することで、「ひらがな、カタカナ、長音記号、全角スペース」のいずれかにマッチする文字を削除することができます。
+
+## 関連記事
+- [Rustの正規表

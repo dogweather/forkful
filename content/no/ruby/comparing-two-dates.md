@@ -1,36 +1,57 @@
 ---
-title:    "Ruby: Sammenligning av to datoer"
+title:    "Ruby: Rolle på språkallThis is the title of an article on computer programming: Sammenligner to datoer."
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Har du noen gang vært i situasjonen der du trenger å sammenligne to datoer? Kanskje du lurer på om en bestemt dato er tidligere eller senere enn en annen dato, eller om de to datoene faller innenfor samme tidsperiode. Uansett årsaken, er det viktig å kunne sammenligne datoer i Ruby-programmering for å få nøyaktig informasjon. I denne bloggposten vil vi se på hvordan man kan sammenligne to datoer i Ruby og hvorfor det kan være nyttig.
 
-Å sammenligne to datoer er en viktig del av programmering, spesielt når man jobber med tidssensitive applikasjoner eller funksjoner. Det kan hjelpe deg å sortere og filtrere data, samt sjekke om en dato har passert eller ikke. Å forstå hvordan man sammenligner datoer kan gjøre programmeringen din mer effektiv og nøyaktig.
-
-## Slik gjør du det
-
-Å sammenligne to datoer i Ruby kan gjøres ved å bruke den innebygde `Date`-klassen. La oss si at vi har to variabler `date1` og `date2` som inneholder to forskjellige datoer. For å sjekke om `date1` kommer før `date2` kan vi bruke `date1 < date2` og for å sjekke om de er like, kan vi bruke `date1 == date2`.
+## Hvordan gjøre det
+Det første trinnet er å definere de to datoene som du ønsker å sammenligne. Dette kan gjøres ved å bruke Ruby Date-objekter. La oss si at vi har to datoer, 20. mai 2021 og 15. juni 2021. Vi vil sammenligne disse to datoene for å se hvilken som er tidligere.
 
 ```Ruby
-date1 = Date.new(2021, 6, 1)
-date2 = Date.new(2021, 7, 1)
+require 'date'
 
-puts date1 < date2 # Output: true
-puts date1 == date2 # Output: false
+date_one = Date.new(2021,5,20)
+date_two = Date.new(2021,6,15)
+
+if date_one > date_two
+    puts "Dato en kommer senere enn dato to."
+elsif date_one < date_two
+    puts "Dato en kommer før dato to."
+else
+    puts "Datoene er like."
+end
 ```
 
-Det er også mulig å bruke `Time`-klassen for å sammenligne datoer basert på klokkeslettet. For eksempel, hvis vi vil sjekke om `date1` og `date2` er samme dag, men `date1` er tidligere på dagen, kan vi bruke `date1.localtime < date2.localtime`.
+Output av dette vil bli "Dato en kommer før dato to." Dette skyldes at 15. juni kommer etter 20. mai.
+
+En annen nyttig funksjon er å se om to datoer faller innenfor samme tidsperiode. Dette kan gjøres ved å bruke "between?" metoden på Date-objekter.
+
+```Ruby
+require 'date'
+
+date_one = Date.new(2021,4,1)
+date_two = Date.new(2021,4,15)
+date_three = Date.new(2021,4,8)
+
+if date_three.between?(date_one, date_two)
+    puts "Dato tre er innenfor tidsperioden mellom dato en og dato to."
+end
+```
+
+Output av dette vil bli "Dato tre er innenfor tidsperioden mellom dato en og dato to."
 
 ## Dypdykk
+Når man sammenligner datoer, er det viktig å forstå at man også sammenligner tid og tidssoner. Dette kan føre til uventede resultater hvis man ikke er oppmerksom på dette. For eksempel, hvis du sammenligner datoer med forskjellige tidssoner, vil Ruby automatisk konvertere datoene til samme tidssone før sammenligningen skjer. Det er også viktig å merke seg at Ruby Date-objekter ikke inkluderer tid, bare datoer.
 
-Når du sammenligner datoer er det viktig å ha en god forståelse av hvordan Ruby håndterer datoer og klokkeslett. Det er også viktig å huske at datoer i Ruby er objekter og kan derfor brukes med metoder, som for eksempel `strftime` for å formatere datoen på en bestemt måte.
-
-Du kan også bruke metoden `between?` for å sjekke om en dato faller mellom to andre datoer. For eksempel, hvis vi har en variabel `date3` som inneholder datoen 15. juni 2021, kan vi bruke `date3.between?(date1, date2)` for å sjekke om datoen ligger mellom `date1` og `date2`.
+En annen ting å være oppmerksom på er at når man bruker "between?" metoden, vil den inkludere både startdatoen og sluttdatoen i tidsperioden man sammenligner med. Hvis du kun ønsker å sjekke om en dato faller mellom to datoer og ikke inkluderer start- og sluttdatoen, kan man bruke "cover?" metoden i stedet.
 
 ## Se også
+- [Ruby Date dokumentasjon](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Sammenligne datoer i Ruby](https://www.rubyguides.com/2018/08/ruby-date/)
 
-- [Ruby Date Class Documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby Time Class Documentation](https://ruby-doc.org/core-2.7.2/Time.html)
-- [Ruby Comparison Operators](https://medium.com/rx11/working-with-comparison-operators-in-ruby-b06d48f36058)
+Takk for at du leste denne bloggposten om hvordan man sammenligner datoer i Ruby! Vi håper den har vært nyttig for deg i din programmeringsreise. Ha det gøy med å eksperimentere med å sammenligne datoer i dine egne kodeprosjekter. Lykke til!

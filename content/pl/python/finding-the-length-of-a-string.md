@@ -1,43 +1,68 @@
 ---
 title:    "Python: Znajdowanie długości ciągu znaków"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Dlaczego
+## Dlaczego
 
-Ile razy zdarzyło Ci się dostać tekst od użytkownika i musieć sprawdzić jego długość? Czy wiesz, że istnieje prosty sposób, aby to zrobić w języku Python? Poznaj krótką i łatwą technikę znajdywania długości łańcucha znaków w Pythonie.
+Często w czasie programowania zdarza się, że musimy pracować z różnymi tekstami. W niektórych przypadkach może być istotne poznanie długości tych tekstów. Dlatego też warto poznać sposoby na znalezienie długości łańcucha znaków w języku Python.
 
-##Jak to zrobić?
+## Jak to zrobić
+
+Istnieje kilka sposobów na znalezienie długości łańcucha znaków w Pythonie.
+
+Możemy wykorzystać funkcję `len()`, która zwraca liczbę znaków w łańcuchu. Przykładowy kod wyglądałby następująco:
 
 ```Python
-# Stwórz zmienną 'tekst' z przykładowym łańcuchem znaków
-tekst = "To jest przykładowy tekst"
-
-# Wykorzystaj funkcję len(), aby znaleźć długość tego tekstu
-dlugosc = len(tekst)
-
-# Wyświetl długość tekstu na ekranie, używając metody print()
-print("Długość tekstu to:", dlugosc)
+string = "To jest przykładowy tekst"
+length = len(string)
+print("Długość tekstu to:", length)
 ```
 
 Output:
 ```
-Długość tekstu to: 23
+Długość tekstu to: 24
 ```
 
-Jak widać w przykładzie powyżej, sposób na znalezienie długości łańcucha znaków jest bardzo prosty. W tym przypadku, wykorzystaliśmy wbudowaną funkcję len(), która zwraca ilość elementów w danym obiekcie. W przypadku tekstu, zwraca ona ilość liter.
+Inną opcją jest użycie metody `count()`, która zlicza określony znak lub sekwencję znaków w łańcuchu. Przykładowy kod wyglądałby tak:
 
-##Pogłębione omówienie
+```Python
+string = "Przykładowy tekst"
+count = string.count("k")
+print("Liczba wystąpień k w tekście:", count)
+```
 
-Funkcja len() może nie tylko być użyta do znalezienia długości łańcucha znaków, ale także do innych typów danych, takich jak listy, krotki czy słowniki. W przypadku listy, zwraca ona ilość elementów w liście, zaś w słowniku - ilość par klucz-wartość.
+Output:
+```
+Liczba wystąpień k w tekście: 2
+```
 
-Warto zaznaczyć, że funkcja len() jest bardzo przydatna w przypadku pętli i iteracji po danym obiekcie. Można wtedy wykorzystać jej wynik jako warunek do zakończenia pętli.
+Możemy również wykorzystać pętlę `for` w połączeniu z metodą `range()` i sprawdzić każdy znak w łańcuchu:
 
-Dzięki temu prostemu sposobowi, można szybko i sprawnie sprawdzać długość różnych typów danych w Pythonie.
+```Python
+string = "Ala ma kota"
+count = 0
+for i in range(len(string)):
+    if string[i] == "a":
+        count += 1
+print("Liczba wystąpień a w tekście:", count)
+```
 
-##Zobacz również
+Output:
+```
+Liczba wystąpień a w tekście: 4
+```
 
-- [Dokumentacja Pythona o funkcji len()](https://docs.python.org/3/library/functions.html#len)
-- [Poradnik dla początkujących w Pythonie](https://realpython.com/python-beginner-tips/)
+## Deep Dive
+
+W języku Python łańcuchy znaków są traktowane jako sekwencje, co oznacza, że każdy znak w łańcuchu ma przypisaną swoją pozycję, czyli indeks. Pierwszy znak ma indeks 0, drugi 1, itd.
+
+Dzięki temu możemy wykorzystać wiedzę na temat sekwencji i korzystać z funkcji i metod dostępnych w języku Python.
+
+## Zobacz również
+
+- [Dokumentacja Python - struktury danych](https://docs.python.org/pl/3/tutorial/datastructures.html)
+- [Kurs Python na Codecademy](https://www.codecademy.com/learn/learn-python)

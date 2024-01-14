@@ -1,70 +1,45 @@
 ---
 title:    "Gleam: 正規表現を使用する"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか?
+Gleamプログラミングブログへようこそ！
 
-正規表現は、パターンをマッチングしてテキストを検索や置換をするために使用される便利なツールです。通常の文字列操作だけではできない処理を、簡潔に記述することができます。
+## Why
 
-## 使い方
+正規表現を使用する理由は何でしょうか？正規表現を使用すると、文字列内で特定のパターンを検索したり置換したりすることができます。これはプログラミングにおいて非常に便利であり、データの処理やバリデーションに役立ちます。
 
-まずはGleamの正規表現ライブラリであるRegexモジュールをインポートします。
+## How To
 
-```Gleam
-import gleam/regex
-```
-
-ここでは、簡単な文字列のマッチングの例を紹介します。下のコードは、与えられた文字列が"hello"とマッチするかどうかをチェックし、結果をコンソールに表示します。
+正規表現を使用するためには、まずは文字列を表す正規表現パターンを作成する必要があります。例えば、文字列内で特定の文字列を検索する場合は、その文字列を正規表現パターンとして指定します。
 
 ```Gleam
-let string = "Hello, world!"
-let pattern = regex.compile("\\/w+", Help.nil)
-
-let result = regex.match(pattern, string)
-
-case result {
-  Ok(just(pattern)) -> io.println("マッチしました")
-  _ -> io.println("マッチしませんでした")
-}
+let pattern = regex.new("hello")
 ```
 
-上記の例では、"hello"がパターンにマッチしないため、結果として"マッチしませんでした"と出力されます。
-
-さらに複雑なパターンを指定することもできます。例えば、メールアドレスの形式をチェックする場合は以下のようになります。
+次に、この正規表現パターンを実際の文字列と照合するために、`match`関数を使用します。例えば、文字列"hello world"に対して`match`関数を実行すると、この文字列に"hello"という部分が含まれているかどうかを判定することができます。
 
 ```Gleam
-let string = "example@example.com"
-let pattern = regex.compile("\\w+@\\w+\\.\\w+", Help.nil)
-
-let result = regex.match(pattern, string)
-
-case result {
-  Ok(just(pattern)) -> io.println("有効なメールアドレスです")
-  _ -> io.println("無効なメールアドレスです")
-}
+match("hello world", pattern) // true
 ```
 
-上記の例では、"example@example.com"が有効なメールアドレスの形式にマッチするため、結果として"有効なメールアドレスです"と出力されます。
+さらに、正規表現パターンを使用して文字列内のパターンを置換することもできます。例えば、"hello world"内の"hello"を"こんにちは"に置換する場合は、`replace`関数を使用します。
 
-## ディープダイブ
+```Gleam
+regex.replace("hello world", pattern, "こんにちは") // こんにちは world
+```
 
-正規表現は非常に柔軟で強力なツールですが、複雑なパターンを作成する際には注意が必要です。特定の言語やシステムでは、正規表現のエンジンが異なるため、同じパターンでも処理が異なることがあります。また、正規表現は文字列だけでなく、数字や特殊文字なども扱えるため、パターンを作成する際にはどのような入力データを想定するかを明確にすることが重要です。
+## Deep Dive
 
-さらに詳しく学習したい場合は、オンラインドキュメントやチュートリアル、書籍なども参考にすることをおすすめします。
+正規表現にはさまざまなオプションや特殊な記号があり、より詳細に制御してパターンを作成することができます。例えば、文字の一部のみを置換したり、大文字と小文字を区別しないようにしたりすることができます。
 
-## 詳細情報
+詳しくは、Gleamの公式ドキュメントや正規表現のチュートリアルを参照してください。
 
-正規表現についてもっと詳しく学びたい方は、以下のリンクを参考にしてください。
+## See Also
 
-- [GleamのRegexモジュールドキュメント](https://gleam.run/modules/regex)
-- [正規表現チュートリアル(w3schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [正規表現リファレンス(MDN)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
-
-## 関連リンク
-
-- [Gleam公式サイト](https://gleam.run/)
-- [Gleam公式ドキュメント](https://gleam.run/getting-started)
-- [Gleam公式GitHubリポジトリ](https://github.com/gleam-lang/gleam)
+- Gleam正規表現チュートリアル
+- Gleam公式ドキュメント
+- 正規表現の基礎知識を学ぶためのチュートリアル

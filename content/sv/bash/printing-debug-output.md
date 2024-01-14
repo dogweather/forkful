@@ -1,49 +1,57 @@
 ---
-title:    "Bash: Utskrift av felsökningsspårning"
+title:    "Bash: Utskrift av felsökningsutdata"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför##
+## Varför
 
-Att skriva kod kan vara en komplicerad process och ibland kan man behöva felsöka för att hitta och åtgärda problem. Ett sätt att göra detta är genom att printa ut debug output, vilket kan ge viktig information för att förstå vad som händer i koden. I den här artikeln kommer vi att gå igenom hur du kan använda Bash för att printa debug output och varför det är en användbar teknik.
+När man utvecklar programvara, stöter man ofta på problem som gör det svårt att förstå vad som händer i koden. I dessa situationer kan det vara till stor hjälp att lägga till debugutskrifter i ens skript för att få en bättre förståelse för hur programmet beter sig. Debugutskrifter kan också hjälpa till att identifiera eventuella fel och problem i koden.
 
-##Så här gör du## 
+## Hur man gör
 
-För att printa debug output i Bash, kan du använda kommandot "echo" som skriver ut text på skärmen. Detta är användbart när du vill se värdet på en variabel eller kontrollera om en viss del av koden körs. Se nedan för ett exempel: 
-
-```Bash
-#!/bin/bash 
-# En enkel kod som ökar värdet på variabeln "summa" med 1
-summa=1
-(( summa++ ))
-echo "Nya summan är:" $summa
-```
-
-I detta exempel, kommer "echo" kommandot att skriva ut "Nya summan är: 2" på skärmen, vilket hjälper oss att bekräfta att variabeln "summa" har ökats med 1. Du kan använda detta för att printa ut olika variabler, anropa funktioner och hitta felaktiga delar av koden.
-
-##Gräv djupare## 
-
-Förutom att använda "echo" för att printa ut debug output, kan du också lägga till flags för att göra det mer läsbart. En vanlig flagga som används för att printa debug output är "-e", vilket tolkar escape-tecken och gör det möjligt att formatera texten. Du kan också använda "-n" flaggan som förhindrar att en ny rad läggs till efter texten, vilket kan vara användbart när du vill printa flera rader av debug output utan att det blir rörigt. Se nedan för ett exempel:
+För att skriva debugutskrifter i Bash, kan man använda kommandot "echo". Detta kommando skriver ut en angiven sträng till terminalen. Här är ett enkelt exempel:
 
 ```Bash
-#!/bin/bash 
-# En kod som skriver ut en lista över frukter genom att loopa igenom en array
-frukter=("äpple" "banan" "kiwi" "apelsin")
-echo -e "Här är en lista över frukter:\n"
-for frukt in "${frukter[@]}"
-do
-  echo -n "- $frukt\n"
-done
+# Skriver ut "Hello World"
+echo "Hello World"
 ```
 
-I detta exempel, kommer "-e" flaggan att tolka new line escape-tecknet "\n" och skapa en ny rad efter texten "Här är en lista över frukter:". "-n" flaggan förhindrar också att en ny rad läggs till i for-loopen, vilket resulterar i en snyggt utformad lista över frukter på en enda rad.
+Man kan också använda variabler i utskrifterna för att visa värden som ändras under körningen. Till exempel:
 
-##Se även##
+```Bash
+# Deklarerar en variabel och tilldelar den ett värde
+name="John"
+# Skriver ut "Hej John"
+echo "Hej $name"
+```
 
-* [Officiell Bash-dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-* [Enkel guide till felsökning i Bash](https://linuxhint.com/bash_debug_mode)
-* [10 användbara Bash-kommandon](https://www.tecmint.com/useful-linux-commands-for-system-administrators/)
+Det är också möjligt att skriva ut hela variabler eller resultatet av kommandon. Detta görs genom att lägga till ett dollar-tecken ($). Till exempel:
 
-Felsökning är en viktig del av processen att skriva kod och printa debug output är ett verktyg som kan hjälpa dig att hitta och åtgärda problem snabbt och effektivt. Med hjälp av dessa kommandon och flags som vi gått igenom i den här artikeln, kan du enkelt lägga till debug output i din kod och förbättra din felsökningsprocess. Glöm inte att kolla in de länkar vi har delat för mer information om felsökning i Bash. Lycka till!
+```Bash
+# Skriver ut aktuell mapp där skriptet körs
+echo "Nuvarande mapp: $PWD"
+```
+
+Slutligen, om man vill att utskriften ska visas i en särskild färg för att enklare kunna särskilja den från andra utskrifter, kan man använda "printf" kommandot. Detta kommando ger mer kontroll över utskriften genom att man kan formatera den efter behov. Här är ett exempel:
+
+```Bash
+# Skriver ut "Hello" i röd text
+printf "\033[31m Hello \033[0m \n"
+```
+
+## Djupdykning
+
+Att använda debugutskrifter i Bash kan vara mycket användbart för att få en bättre förståelse för hur ens program beter sig. Det kan också hjälpa till att identifiera eventuella fel och problem i koden. Men det är viktigt att använda debugutskrifter på ett effektivt sätt för att undvika att överflödiga utskrifter förvirrar och överväldigar användaren.
+
+Ett tips är att använda villkorliga utskrifter med hjälp av "if" eller "case" kommandot för att bara visa utskrifter när ett visst villkor är uppfyllt. Detta minskar mängden utskrifter som visas och gör det enklare att hitta relevant information.
+
+Man kan också kombinera debugutskrifter med andra kommandon som "trap" för att få ännu mer information om ett visst programutförande. "Trap" kommandot används för att fånga och hantera signaler som skickas till skriptet. Genom att använda det tillsammans med en debugutskrift, kan man få en överblick av precis när och på vilket sätt signalen uppstår.
+
+## Se även 
+
+- [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Man Pages for echo](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Printing-a-Prompt)
+- [Bash Hackers Wiki on Debugging](http://wiki.bash-hackers.org/scripting/debuggingtips)

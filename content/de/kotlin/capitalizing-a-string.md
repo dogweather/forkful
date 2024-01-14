@@ -1,47 +1,56 @@
 ---
-title:    "Kotlin: String in Großbuchstaben umwandeln"
+title:    "Kotlin: Großschreibung eines Strings"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Übergeben von Strings an unsere Programme und Apps ist eine alltägliche Aufgabe, die wir alle tun müssen. Oftmals müssen wir diese Strings auf bestimmte Weise formatieren, um unsere Anforderungen zu erfüllen. Eines der häufigsten Formatierungsanforderungen ist das Großschreiben eines Strings.
+Es gibt viele verschiedene Gründe, warum Sie sich möglicherweise mit der Großschreibung von Strings beschäftigen wollen. Vielleicht müssen Sie Benutzereingaben standardisieren oder einen Titel in der richtigen Schreibweise anzeigen. Egal aus welchem Grund, das Kapitalisieren eines Strings ist eine nützliche Fähigkeit für jeden Programmierer.
 
-## Wie man Strings in Kotlin großschreibt
+## Wie man es macht
 
-Die Kotlin Standardbibliothek bietet eine nützliche Methode namens `toUpperCase()`, mit der wir einen String in Großbuchstaben umwandeln können. Hier ist ein Beispiel:
+Um einen String in Kotlin zu kapitalisieren, können Sie die `capitalize()`-Funktion verwenden. Sie akzeptiert keine Parameter und gibt den String in Großbuchstaben zurück.
 
-```Kotlin
-val string = "hallo welt"
-val capitalizedString = string.toUpperCase()
-println(capitalizedString)
-//Output: HALLO WELT
-```
+````Kotlin
+val name = "Max Mustermann"
+println(name.capitalize())
 
-Wir können auch einen Parameter an `toUpperCase()` übergeben, um die Großschreibung abhängig von der verwendeten Lokalisierung anzupassen. Zum Beispiel:
+// Output: Max mustermann
+````
 
-```Kotlin
-val string = "hallo welt"
-val locale = Locale("de", "DE")  //lokale für deutsch (Deutschland)
-val capitalizedString = string.toUpperCase(locale)
-println(capitalizedString)
-//Output: HALLO WELT
-```
+Sie können auch die `toUpperCase()`-Funktion verwenden, um alle Buchstaben in einem String in Großbuchstaben umzuwandeln.
 
-Wie Sie sehen, wurde der String entsprechend der deutschen Großschreiberegeln formatiert.
+````Kotlin
+val name = "Max Mustermann"
+println(name.toUpperCase())
 
-## Tiefere Einblicke in das Großschreiben von Strings
+// Output: MAX MUSTERMANN
+````
 
-Die `toUpperCase()` Methode verwendet die Unicode-Tabelle, um jeden Buchstaben im String in den entsprechenden Großbuchstaben umzuwandeln. Dies bedeutet, dass es internationalisierbare Ergebnisse liefert und nicht nur für die englische Sprache geeignet ist.
+Es ist auch möglich, nur den ersten Buchstaben eines Strings zu verändern und alle anderen Buchstaben in Kleinbuchstaben zu belassen. Hierfür können Sie die `capitalizeFirst()`-Funktion verwenden.
 
-Darüber hinaus arbeitet die Methode nicht-destruktiv, was bedeutet, dass sie den ursprünglichen String nicht verändert, sondern eine neue kopierte Version des Strings zurückgibt.
+````Kotlin
+val name = "max mustermann"
+println(name.capitalizeFirst())
 
-Ein wichtiger Punkt zu beachten ist, dass `toUpperCase()` nicht nur Buchstaben konvertiert, sondern auch Sonderzeichen, Zahlen und Leerzeichen unverändert lässt.
+// Output: Max mustermann
+````
+
+## Tiefere Einblicke
+
+Bei der Verwendung von `capitalize()` oder `toUpperCase()` ist es wichtig zu beachten, dass diese Funktionen nur ASCII-Zeichen umwandeln. Wenn Sie jedoch mit nicht-ASCII-Zeichen arbeiten möchten, sollten Sie die `toUpperCase(Locale)`-Funktion verwenden und eine bestimmte Sprachregion angeben, um eine korrekte Transformation zu gewährleisten.
+
+Sie können auch selbst eine Funktion schreiben, die jedes Wort in einem String kapitalisiert. Hier ist eine Beispielimplementierung:
+
+````Kotlin
+fun String.capitalizeWords(): String = split(" ").joinToString(" ") { it.capitalize() }
+````
 
 ## Siehe auch
 
-- [Kotlin-Dokumentation zu String-Methoden](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Tutorial zu Unicode und Strings in Kotlin](https://developer.android.com/codelabs/basic-android-kotlin-training-strings/index.html)
-- [Kotlin-Konvertierung eines Strings in Großbuchstaben](https://www.baeldung.com/java-string-to-uppercase)
+- [String capitalization in Kotlin](https://www.baeldung.com/kotlin/capitalize-string)
+- [Official Kotlin documentation on strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Working with strings in Kotlin](https://blog.mindorks.com/working-with-strings-in-kotlin)

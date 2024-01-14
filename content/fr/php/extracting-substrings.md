@@ -1,70 +1,51 @@
 ---
 title:    "PHP: Extraction de sous-chaînes"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'extraction de sous-chaînes est une méthode utile pour manipuler des chaînes de caractères dans un programme PHP. Que vous ayez besoin de récupérer une partie spécifique d'une chaîne ou de remplacer un ensemble de caractères, cette fonctionnalité vous sera très utile.
+L'extraction de sous-chaînes, aussi connue sous le nom de "substring", est une fonctionnalité importante en programmation PHP. Elle permet de sélectionner et d'extraire une partie spécifique d'une chaîne de caractères pour un traitement ultérieur. Cela peut être utile dans de nombreux cas, notamment pour manipuler des données ou pour générer des rapports.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne, utilisez la fonction `substr()` en lui passant en paramètres la chaîne originale, l'index de départ et la longueur de la sous-chaîne que vous souhaitez obtenir. Voici un exemple de code :
+Pour extraire une sous-chaîne dans PHP, vous pouvez utiliser la fonction ```substr()```. Voici un exemple de code :
 
 ```PHP
-<?php
-
-$chaine = "Bonjour tout le monde";
-
-$sous_chaine = substr($chaine, 8, 5);
-
-echo $sous_chaine;
-
-// Output: tout
+$string = "Bonjour World!";
+$substring = substr($string, 7); // Va extraire "World!" à partir du 7ème caractère de $string
+echo $substring; // Affiche "World!"
 ```
 
-Dans cet exemple, nous avons utilisé la fonction `substr()` pour extraire une sous-chaîne de la 8ème à la 12ème position (5 caractères) de la chaîne principale. Vous pouvez également utiliser des valeurs négatives pour les deux derniers paramètres afin d'extraire une sous-chaîne à partir de la fin de la chaîne.
-
-Vous pouvez également remplacer une partie d'une chaîne en utilisant la fonction `substr_replace()`. Voici un exemple :
+Vous pouvez également préciser un deuxième argument à la fonction ```substr()``` pour indiquer jusqu'où vous souhaitez extraire la sous-chaîne. Par exemple :
 
 ```PHP
-<?php
-
-$chaine = "Bonjour tout le monde";
-
-$nouvelle_chaine = substr_replace($chaine, "soir", 8, 4);
-
-echo $nouvelle_chaine;
-
-// Output: Bonsoir tout le monde
+$string = "Bonjour World!";
+$substring = substr($string, 2, 5); // Va extraire "njour" à partir du 2ème caractère de $string, sur une longueur de 5 caractères
+echo $substring; // Affiche "njour"
 ```
 
-Dans cet exemple, nous avons utilisé `substr_replace()` pour remplacer la sous-chaîne "tout" par "soir" à partir de la 8ème position de la chaîne principale.
-
-## Plongeons plus en profondeur
-
-L'extraction de sous-chaînes peut également être utilisée pour effectuer des opérations plus complexes, comme la recherche d'une sous-chaîne à l'aide d'une expression régulière. La fonction `preg_match()` peut être utilisée pour cela.
-
-Voici un exemple de code qui utilise `preg_match()` pour extraire toutes les occurrences de chiffres d'une chaîne :
+Il est également possible d'utiliser des valeurs négatives pour les arguments de la fonction ```substr()```. Dans ce cas, la sous-chaîne sera extraite à partir de la fin de la chaîne de caractères. Par exemple :
 
 ```PHP
-<?php
-
-$chaine = "J'ai 3 pommes et 5 bananes";
-
-preg_match_all('!\d+!', $chaine, $matches);
-
-print_r($matches[0]);
-
-// Output: Array ( [0] => 3 [1] => 5 )
+$string = "Bonjour World!";
+$substring = substr($string, -6); // Va extraire "World!" à partir du 6ème caractère en partant de la fin de $string
+echo $substring; // Affiche "World!"
 ```
 
-Comme vous pouvez le voir, la fonction `preg_match()` a retourné un tableau contenant toutes les occurrences de chiffres dans la chaîne.
+Cette fonctionnalité peut être très pratique pour manipuler des données complexes ou pour effectuer des opérations spécifiques sur une partie d'une chaîne de caractères.
+
+## Exploration approfondie
+
+Outre la fonction ```substr()```, PHP propose également d'autres fonctions pour extraire des sous-chaînes, telles que ```mb_substr()``` pour les chaînes multibyte ou encore ```strstr()``` pour trouver une sous-chaîne spécifique. Chacune de ces fonctions a ses propres spécificités et il peut être intéressant de prendre le temps de les explorer pour trouver celle qui correspond le mieux à vos besoins.
+
+Il est également important de noter que l'utilisation de fonctions d'extraction de sous-chaînes peut avoir un impact sur les performances de votre code, en particulier si vous manipulez de grandes quantités de données. Dans ce cas, il peut être judicieux de rechercher des alternatives plus optimisées.
 
 ## Voir aussi
 
-- [Documentation officielle de la fonction substr() en français](https://www.php.net/manual/fr/function.substr.php)
-- [Documentation officielle de la fonction substr_replace() en français](https://www.php.net/manual/fr/function.substr-replace.php)
-- [Documentation officielle de la fonction preg_match() en français](https://www.php.net/manual/fr/function.preg-match.php)
+- Documentation officielle sur la fonction ```substr()```: https://www.php.net/manual/fr/function.substr.php
+- Différences entre ```substr()``` et ```mb_substr()```: https://stackoverflow.com/questions/3171938/php-substr-vs-mb-substr
+- Optimisation des performances en utilisant ```preg_match()```: https://medium.com/@exesse/how-to-substring-like-a-boss-in-php-9dcb4f50fddc

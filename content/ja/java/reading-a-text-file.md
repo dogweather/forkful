@@ -1,75 +1,52 @@
 ---
-title:    "Java: テキストファイルの読み込み"
+title:    "Java: テキストファイルを読む"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+テキストファイルを読むことの利点についてご紹介します。読者は、この記事を読むことでテキストファイルの読み方を学ぶことができます。
 
-テキストファイルを読み取るのはなぜ必要なのでしょうか？テキストファイルはプログラミングにおいて非常に重要です。それを読み取ることにより、データを取得して処理することができるからです。
-
-## 方法
-
-テキストファイルを読み取るためには、Javaの標準ライブラリである `java.io` パッケージを使用します。まずは `FileReader` クラスをインスタンス化し、読み取りたいファイルのパスを指定します。その後、`BufferedReader` クラスを使用してファイルから1行ずつデータを読み取ります。以下のコードを参考にしてください。
+## こうやって
+テキストファイルを読むには、Javaの標準パッケージであるjava.ioパッケージを使用します。まず、ファイルを読み込むためのFileReaderオブジェクトを作成し、それをBufferedReaderに渡します。次に、BufferedReaderからreadLine()メソッドを使用してテキストを読み込み、それを出力することでテキストファイルを読むことができます。
 
 ```Java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+// ファイルを開く
+File file = new File("sample.txt");
 
-public class TextFileReader {
-    public static void main(String[] args) {
-        try {
-            // ファイルを開く
-            FileReader fileReader = new FileReader("sample.txt");
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+// FileReaderを作成し、BufferedReaderに渡す
+BufferedReader reader = new BufferedReader(new FileReader(file));
 
-            // ファイルから1行ずつ読み取り、コンソールに出力する
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-            }
-
-            // ファイルを閉じる
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+// readLine()メソッドを使用してテキストファイルを1行ずつ読み込む
+String line = reader.readLine();
+while (line != null) {
+    // 読み込んだテキストを出力する
+    System.out.println(line);
+    // 次の行を読み込む
+    line = reader.readLine();
 }
+
+// ファイルを閉じる
+reader.close();
 ```
 
-もし、読み取るファイルが単純な文字列の並びではなく、CSVやJSONなどの形式を持つ場合は、ファイルを読み取ってから必要な処理を行うことでデータを正しく取得することができます。
+### 出力例
+このコードを実行すると、sample.txtに記載されたテキストが1行ずつコンソールに出力されます。
 
-```Java
-// CSVファイルからデータを取得する例
-// ファイルの1行目にはカラム名が入っているとする
-String header = bufferedReader.readLine();
-String[] columnNames = header.split(","); // カラム名を配列に格納する
-
-// データを格納するためのリストを作成する
-List<Map<String, String>> dataList = new ArrayList<>();
-
-// ファイルから1行ずつデータを読み取り、カラム名に対応した値をマップに格納する
-String line = "";
-while ((line = bufferedReader.readLine()) != null) {
-    Map<String, String> data = new HashMap<>();
-    String[] values = line.split(",");
-    for (int i = 0; i < columnNames.length; i++) {
-        data.put(columnNames[i], values[i]);
-    }
-    dataList.add(data);
-}
+```
+こんにちは！
+私はテキストファイルです。
+どうぞよろしくお願いします！
 ```
 
-## 深堀り
+## 詳しく学ぶ
+この記事では、テキストファイルを読むための基本的な方法をご紹介しましたが、実際にはさまざまな方法があります。例えば、Scannerクラスを使用することで、ファイル内の特定のキーワードを検索することもできます。また、ファイルが大きすぎて一度に全て読み込めない場合は、BufferedReaderではなく、BufferedInputStreamを使用することもできます。
 
-テキストファイルを読み取る方法についてさらに詳しく見ていきましょう。例えば、それぞれ違うエンコーディング方式を使用したファイルを読み取る必要がある場合、`InputStreamReader` クラスを使用することでエンコーディングを指定することができます。
+さらに、テキストファイルのエンコーディングによっては読み込み方が異なる場合もあります。そのため、Javaでテキストファイルを読む際は、エンコーディングにも注意する必要があります。
 
-また、ファイルの内容をコンソールに出力するだけでなく、データベースに格納したり、別のファイルに書き出したりすることもできます。ファイルの読み取り方や処理方法は様々ありますので、自分のプロジェクトに適した方法を見つけてください。
-
-## See Also
-
-- [Java.ioパッケージのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/io/package-summary.html)
-- [JavaでCSVファイルを読み書きする方法](https://qiita.com/opengl-8080/items/6ab834a15f493a97bbb0)
+## それ以外も見てね
+- [Javaでファイルを読み書きする方法 (TechAcademy)](https://www.techacademy.jp/magazine/8233)
+- [BufferedReaderクラスの使い方 (Java Tutorials)](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [Java テキストファイルの読み書き (Javaドキュメント)](https://docs.oracle.com/javase/jp/17/docs/api/java.base/java/io/FileReader.html)

@@ -1,51 +1,39 @@
 ---
 title:    "Haskell: Criando um arquivo temporário"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque
+## Porque criar um arquivo temporário em Haskell
 
-Criar arquivos temporários pode ser muito útil em programação quando se trabalha com dados que não precisam ser armazenados permanentemente. Por exemplo, se você está escrevendo um programa para processar dados de um CSV, pode ser útil criar um arquivo temporário para armazenar esses dados durante o processamento.
+Criar arquivos temporários é uma prática comum na programação para armazenar dados temporários ou para fins de teste. Isso pode ser especialmente útil ao lidar com arquivos grandes que não podem ser armazenados na memória principal ou quando precisamos testar um código antes de implementá-lo definitivamente. Neste artigo, vamos explorar como criar e manipular arquivos temporários em Haskell.
 
-## Como Fazer
+## Como criar um arquivo temporário em Haskell
 
-A linguagem de programação Haskell tem uma maneira simples e elegante de criar arquivos temporários. Aqui está um exemplo de como fazer isso:
+Para criar um arquivo temporário em Haskell, usamos a função `withSystemTempFile` do módulo `System.IO.Temp`. Esta função recebe dois parâmetros: o padrão de nome do arquivo e uma função que manipula esse arquivo. A função passada deve ter dois parâmetros: o caminho para o arquivo temporário e o handle (identificador) do arquivo.
+
+Um exemplo de código para criar e escrever em um arquivo temporário seria o seguinte:
 
 ```Haskell
 import System.IO
-import System.Directory
+import System.IO.Temp
 
--- Cria um arquivo temporário chamado "tempFile.txt"
-createTempFile = do
-    tempDir <- getTemporaryDirectory 
-    (tempFilePath, tempHandle) <- openTempFile tempDir "tempFile.txt"
-    putStrLn $ "O caminho do arquivo temporário é: " ++ tempFilePath
-    hClose tempHandle
+main = withSystemTempFile "temp.txt" $ \tmpFilePath handle -> do
+  hPutStrLn handle "Hello World!"
+  hClose handle
 ```
 
-Este código primeiro importa as funções `getTemporaryDirectory` e `openTempFile` do módulo `System.IO`. Então, a função `createTempFile` é definida, que primeiro obtém o diretório temporário atual usando `getTemporaryDirectory`. Em seguida, `openTempFile` é usado para criar e abrir um arquivo temporário com o nome "tempFile.txt" no diretório temporário. O caminho do arquivo temporário é impresso na tela e, por fim, o arquivo é fechado.
+Neste exemplo, estamos criando um arquivo temporário com o nome "temp.txt" e escrevendo "Hello World!" nele. A função `withSystemTempFile` se encarregará de criar o arquivo e gerenciar seu fechamento após a execução da função passada.
 
-Se você executar este código, verá que um arquivo chamado "tempFile.txt" foi criado no diretório temporário especificado e o caminho desse arquivo será impresso na tela.
+## Aprofundando no uso de arquivos temporários em Haskell
 
-## Profundidade
+As operações de leitura e escrita em arquivos temporários podem ser realizadas usando as funções `hGetContents` e `hPutStr` do módulo `System.IO`. Além disso, podemos usar as funções `withSystemTempDirectory` e `withTempDirectory` para criar diretórios temporários em vez de arquivos.
 
-Se você quiser saber mais sobre como o Haskell lida com arquivos temporários, pode ser útil entender como a função `getTemporaryDirectory` é implementada. Aqui está uma versão simplificada da implementação dessa função:
+Também é importante lembrar de remover os arquivos temporários após seu uso para não ocupar espaço desnecessário no sistema. Para isso, podemos usar a função `removePathForcibly` do módulo `System.Directory`.
 
-```Haskell
-getTemporaryDirectory :: IO String
-getTemporaryDirectory = MaybeT (System.Environment.lookupEnv "TEMP") 
-    >>= \tempDir -> if isJust tempDir then return (fromJust tempDir) 
-        else MaybeT (System.Environment.lookupEnv "TMP") 
-            >>= \tmpDir -> if isJust tmpDir then return (fromJust tmpDir) 
-                else fail "Não foi possível encontrar um diretório temporário."
-```
+## Veja também
 
-Esta implementação usa monads para lidar com possíveis falhas. Primeiro, tenta obter o diretório temporário usando a variável de ambiente "TEMP". Se isso falhar, ele tentará obter usando a variável de ambiente "TMP". Se ambas as tentativas falharem, uma mensagem de erro será emitida.
-
-## Veja Também
-
-- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
-- [Tutorial de Haskell](https://wiki.haskell.org/Tutorial)
-- [Guia de sintaxe do Haskell](https://www.tutorialspoint.com/haskell/haskell_syntax.htm)
+- [Documentação oficial do módulo System.IO.Temp](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO-Temp.html)
+- [Tutorial sobre manipulação de arquivos em Haskell](https://github.com/Mikail-Eli/Manipulando-Arquivos-em-Haskell)

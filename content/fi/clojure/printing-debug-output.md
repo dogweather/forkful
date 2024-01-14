@@ -1,37 +1,33 @@
 ---
-title:    "Clojure: Tulostaminen virheenkorjauksellista lähtöä"
+title:    "Clojure: Tulostaminen virheenkorjauksessa"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi tulostuksen vianetsinnästä saattaisi olla hyötyä Clojure-ohjelman tekijöille? 
 
-Tämä artikkeli käsittelee debug-tulostuksen käyttöä Clojure-ohjelmoinnissa. Miksi sitten tarvitsisimme tulostaa debug-tietoja? Yksinkertaisesti sanottuna, debug-tulostus auttaa meitä selvittämään ohjelmassa esiintyviä virheitä ja löytämään mahdollisia bugeja. Tämä on erittäin hyödyllistä ohjelmia kehitettäessä ja vianetsinnässä.
+Vianetsintä on tärkeä osa ohjelmointia, ja tulostuksen avulla voimme tarkastella ohjelman kulkua ja mahdollisia virheitä.
 
-## Miten
-
+## Kuinka
 ```Clojure
-(defn add [x y]
-  (let [result (+ x y)]
-    (println "x: " x " y: " y " result: " result)
-    result))
-
-(add 5 3)
+(defn calculate [a b]
+  (+ a (inc b)))
+ 
+(def x 5)
+(def y 10)
+ 
+(println "Laskemme x:n ja y:n summan...")
+(println "Lopputulos: " (calculate x y))
 ```
-Tulostaa:
-```
-x: 5 y: 3 result: 8
-```
-
-Kun haluamme tulostaa debug-tietoja, voimme käyttää `println`-funktiota. Tämä tulostaa haluamamme muuttujat ja niiden arvot konsoliin. Huomaa, että tämä toimii vain komentorivillä, emmekä saa tulostusta näkyviin esimerkiksi graafisissa ohjelmissa.
+Tämä koodi näyttää yksinkertaisen esimerkin tulostuksen käytöstä ohjelman virheiden etsimisessä. Aloitamme määrittelemällä calculate-funktion, joka laskee kahden luvun summan. sitten luomme kaksi muuttujaa, x ja y, joiden arvot ovat 5 ja 10. Lopuksi tulostamme lasketun summan konsoliin. Näemme, että laskettu arvo on 16, mikä tarkoittaa, että kaava ei toimi odotetulla tavalla. Käyttämällä tulostusta voimme paikantaa virheen ja korjata koodin.
 
 ## Syvemmälle
-
-Debug-tulostus on hyvä työkalu, mutta sitä kannattaa käyttää harkiten. Jos ohjelma on suuri ja sisältää paljon debug-tulostuksia, se voi hidastaa ohjelman suoritusta tai aiheuttaa ylimääräistä melua konsolissa. Käytä siis debug-tulostusta vain, kun se on välttämätöntä.
-
-Voimme myös käyttää tarkempia tulostusfunktioita, kuten `println-str`, joka palauttaa tuloksen merkkijonona sen sijaan, että tulostaisi sen konsoliin. Tämä on hyödyllistä esimerkiksi, kun haluamme tallentaa debug-tiedot lokitiedostoon.
+Tulostuksen vianetsinnän hyödyt eivät rajoitu vain virheiden paikantamiseen. Voimme myös käyttää sitä tarkastellaksemme ohjelman suoritusjärjestystä ja varmistamaan, että laskemamme arvot ovat oikein. Lisäksi jos meillä on laajempi ohjelma, voimme käyttää eri tasoja tulostuksen avulla ja tarkastella tiettyjen osien suoritusta.
 
 ## Katso myös
-- [Clojure debug-tulostus dokumentaatio](https://clojuredocs.org/clojure.core/println)
-- [Debug-tulostusohjeet Clojure-yhteisön sivustolta](https://clojure.org/guides/getting_started)
+- [Tulostuksen käyttö Clojure-koodissa](https://web.archive.org/web/20110420124717/http://doing-fp-right.blogspot.com/2009/01/using-prinln-in-clojure-program.html)
+- [Debuggaus Clojurella](https://clojure.org/guides/debugging)
+- [Clojure-debuggaus Githubissa](https://github.com/clojure-goes-fast/clojure-debugging)

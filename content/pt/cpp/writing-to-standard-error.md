@@ -1,42 +1,44 @@
 ---
-title:    "C++: Escrevendo para o erro padrão"
+title:    "C++: Escrevendo para erro padrão"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que escrever para o erro padrão?
 
-Ao desenvolver um programa em C ++, é comum encontrar erros que precisam ser debugados. Ao escrever para o erro padrão, você pode criar mensagens de erro personalizadas que ajudam a identificar e corrigir esses problemas com mais facilidade.
+Escrever para o erro padrão, também conhecido como saída de erro, é uma ferramenta útil para os programadores. Quando ocorrem erros durante a execução do código, geralmente é mais fácil e conveniente visualizar essas informações na tela do que procurá-las em arquivos de log.
 
-## Como fazer?
+## Como fazer:
 
-Para escrever para o erro padrão em C ++, você precisa usar a função `cerr` junto com o operador de inserção `<<`. Aqui está um exemplo simples:
+Você pode escrever para o erro padrão usando a função prinft() da biblioteca padrão em C++. Por exemplo, o código abaixo irá imprimir a mensagem "Erro: Divisão por zero" caso o usuário digite um valor de 0 para o denominador:
 
 ```C++
-#include <iostream>
+int numerador = 10;
+int denominador;
 
-using namespace std;
+cin >> denominador;
 
-int main()
-{
-    //Exemplo de mensagem de erro personalizada
-    cerr << "Erro: O valor inserido é inválido." << endl;
+if(denominador == 0){
+    printf("Erro: Divisão por zero");
+}
+else{
+    int resultado = numerador / denominador;
+    printf("Resultado: %d", resultado);
 }
 ```
 
-A saída seria: `Erro: O valor inserido é inválido.` O operador `<<` pode ser usado para inserir variáveis, valores ou até mesmo expressões em sua mensagem de erro.
+No exemplo acima, a mensagem de erro será exibida na tela caso ocorra uma divisão por zero, enquanto que, caso não ocorra nenhum erro, o resultado da operação será impresso.
 
-## Profundidade do assunto
+## Aprofundando:
 
-A função `cerr` é uma função de saída de fluxo de erro que é automaticamente conectada ao erro padrão do sistema. Isso significa que quando você escreve para `cerr`, a mensagem é direcionada para o terminal ou console e não para a saída normal do programa.
+Além da função printf(), existem outras maneiras de escrever para o erro padrão em C++. Por exemplo, a função cerr, também da biblioteca padrão, é especialmente útil para imprimir erros ou mensagens de aviso. Ela funciona da mesma forma que a função printf(), mas imprime na saída de erro ao invés de na saída padrão.
 
-No entanto, é importante notar que `cerr` não interrompe a execução do programa. Isso significa que se houver vários erros, as mensagens serão impressas em ordem, mas o programa continuará sendo executado.
+Outro ponto importante a ser mencionado é que, ao utilizar a função printf(), é possível formatar a mensagem de erro de acordo com as especificações do programador, o que torna essa ferramenta ainda mais poderosa para identificar e corrigir erros no código.
 
-Além disso, `cerr` não tem nenhuma formatação específica. Isso significa que, se você quiser adicionar informações extras, como o número da linha onde ocorreu o erro, você precisará incluí-los manualmente em sua mensagem de erro.
+## Veja também:
 
-## Veja também
-
-- [Documentação da função cerr em C ++](https://www.cplusplus.com/reference/iostream/cerr/)
-- [Como depurar erros C ++ usando a função cerr](https://www.geeksforgeeks.org/using-cerr-instead-endl-debugging-c/)
-- [Diferença entre cout e cerr em C ++](https://stackoverflow.com/questions/1058747/what-is-the-difference-between-cout-and-cerr)
+- [Documentação oficial da função printf()](https://www.cplusplus.com/reference/cstdio/printf/)
+- [Tutorial sobre saída de erro em C++](https://www.learncpp.com/cpp-tutorial/more-debugging-output-using-stdcerr/)
+- [Artigo sobre lidando com erros em C++](https://www.techopedia.com/definition/15480/error-handling)

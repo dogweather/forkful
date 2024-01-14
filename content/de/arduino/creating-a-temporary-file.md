@@ -1,49 +1,70 @@
 ---
-title:    "Arduino: Erstellung einer temporären Datei"
+title:    "Arduino: Erstellen einer temporären Datei"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In diesem Beitrag werden wir uns damit beschäftigen, wie man in Arduino temporäre Dateien erstellt. Doch warum sollte man überhaupt temporäre Dateien erstellen? Temporäre Dateien dienen dazu, vorübergehend Daten zu speichern, die später nicht mehr benötigt werden. Das kann zum Beispiel sinnvoll sein, wenn man während eines Programmablaufs Zwischenergebnisse speichern und später wieder löschen möchte.
+Die Erstellung vorübergehender Dateien ist ein wichtiger Teil der Programmierung mit Arduino. Diese temporären Dateien werden verwendet, um Daten oder Variablen zwischenspeichern, die während der Ausführung eines Programms benötigt werden. Durch die Erstellung und Verwendung von temporären Dateien können wir effizienter und effektiver programmieren.
 
-# So funktioniert es
+## Wie erstelle ich eine temporäre Datei mit Arduino?
 
-Die Erstellung einer temporären Datei kann mit der `File`-Bibliothek von Arduino durchgeführt werden. Dazu müssen zunächst die entsprechenden Bibliotheken in den Sketch importiert werden.
-
-```Arduino
-#include <SD.h>
-#include <SPI.h>
-```
-
-Danach kann man mit der Funktion `SD.open()` eine temporäre Datei erstellen und ihr einen Namen sowie den Dateimodus zuweisen. Der Dateiname kann dabei frei gewählt werden und der Dateimodus wird mit `FILE_WRITE` festgelegt.
+Es gibt verschiedene Methoden, um eine temporäre Datei mit Arduino zu erstellen. Eine Möglichkeit ist die Verwendung der `File`-Bibliothek. Hier ist ein Beispielcode, der eine temporäre Datei mit dem Namen `temp_data.txt` erstellt und einige Daten in sie schreibt:
 
 ```Arduino
-File tempFile = SD.open("temp.txt", FILE_WRITE);
+#include <File.h>
+
+void setup() {
+
+  // Eine Datei namens "temp_data.txt" im Schreibmodus erstellen
+  File tempFile = SPIFFS.open("temp_data.txt", "w");
+
+  // Daten in die Datei schreiben
+  tempFile.print("Temperatur: ");
+  tempFile.println(25);
+  tempFile.print("Luftfeuchtigkeit: ");
+  tempFile.println(50);
+
+  // Datei schließen
+  tempFile.close();
+
+}
+
+void loop() {
+  // Programmablauf fortsetzen
+}
 ```
 
-Nun können Daten in die temporäre Datei geschrieben werden, zum Beispiel mit der `println()` Funktion.
+Die oben genannte Methode ist nützlich, wenn Sie temporäre Dateien erstellen möchten, die nur während der Ausführung des Programms benötigt werden. Wenn Sie jedoch eine temporäre Datei erstellen möchten, die auch nach dem Ausschalten des Arduino gespeichert bleibt, können Sie die `EEPROM`-Bibliothek verwenden. Hier ist ein Beispielcode, der eine temporäre Datei namens `temp_data.txt` in der EEPROM erstellt:
 
 ```Arduino
-tempFile.println("Dies ist ein Beispieltext.");
+#include <EEPROM.h>
+
+void setup() {
+  // Eine byte-Datenarray erstellen
+  byte tempData[10];
+  
+  // Daten in das Array schreiben
+  tempData[0] = 25;
+  tempData[1] = 50;
+
+  // Daten in der EEPROM speichern
+  EEPROM.put(0, tempData);
+}
+
+void loop() {
+  // Programmablauf fortsetzen
+}
 ```
 
-Zuletzt muss die Datei wieder geschlossen und die Verbindung zum Speichermedium getrennt werden.
+## Tiefer Einblick
 
-```Arduino
-tempFile.close();
-SD.end();
-```
+Die oben genannten Methoden sind nur zwei Beispiele von vielen Möglichkeiten, um temporäre Dateien in Ihren Arduino-Projekten zu verwenden. Wenn Sie einen tieferen Einblick in die Erstellung von temporären Dateien mit Arduino erhalten möchten, können Sie sich mit den verschiedenen Bibliotheken wie `SPIFFS`, `SD` oder `EEPROM` vertraut machen. Diese Bibliotheken bieten viele Funktionen und Methoden, die Ihnen helfen, Ihre temporären Dateien effizienter zu nutzen.
 
-# Tiefere Einblicke
+## Siehe auch
 
-Ein wichtiger Aspekt bei der Erstellung temporärer Dateien ist die Verwendung von eindeutigen Dateinamen. Es empfiehlt sich, eine Zufallszahl oder einen Zeitstempel in den Dateinamen mit einzubauen, um sicherzustellen, dass es keine Namenskonflikte gibt.
-
-Außerdem ist es wichtig, die temporären Dateien regelmäßig zu löschen, um Speicherplatz zu sparen. Dazu kann man zum Beispiel eine Schleife nutzen, die alle temporären Dateien durchgeht und löscht. Eine weitere Möglichkeit ist die Verwendung einer Funktion wie `SD.exists()`, um zu überprüfen, ob eine bestimmte temporäre Datei vorhanden ist, bevor sie gelöscht wird.
-
-# Siehe auch
-
-- Website über die `File`-Bibliothek von Arduino: https://www.arduino.cc/en/Reference/SD
-- Weitere Informationen zum Thema temporäre Dateien: https://de.wikipedia.org/wiki/Tempor%C3%A4re_Datei
+- [Arduino-Referenz für die Dateiverwaltung](https://www.arduino.cc/en/Reference/File)
+- [EEPROM-Bibliotheksdokumentation](https://www.arduino.cc/en/Reference/EEPROM)

@@ -1,42 +1,45 @@
 ---
-title:    "Rust: Säännöllisten lausekkeiden käyttö"
+title:    "Rust: Säännöllisten ilmaisujen käyttö"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Rust-ohjelmoinnissa?
+## Miksi käyttää säännöllisiä lausekkeita (regular expressions)?
 
-Säännölliset lausekkeet ovat tehokas työkalu tekstin käsittelyssä ja haun tekemisessä. Ne voivat auttaa sinua löytämään ja muokkaamaan tiettyjä merkkijonoja tai osia merkkijonoista. Rust-ohjelmoinnissa säännöllisiä lausekkeita voi käyttää esimerkiksi datan validoinnissa tai tietokantahakujen tekemisessä.
+Säännölliset lausekkeet ovat voimakas työkalu, joka mahdollistaa tietyn kaavan tai rakenteen löytämisen tekstimassasta. Niitä käytetään usein tiedonkäsittelyssä, kuten tiedostonmuokkauksessa tai tietokantojen kyselyissä. Säännöllisten lausekkeiden avulla pystyt käsittelemään suuria määriä dataa nopeasti ja tehokkaasti.
 
-## Kuinka käyttää säännöllisiä lausekkeita Rust-ohjelmoinnissa?
+## Näin käytät säännöllisiä lausekkeita Rustissa
 
-Ensimmäiseksi on tärkeää tuoda tarvittava liitännäinen `regex` käyttöön Rust-ohjelmassamme. Tämän jälkeen voimme käyttää `Regex`-tyyppiä säännöllisten lausekkeiden luomiseen ja hakuja niiden avulla. Koodiesimerkissä luomme säännöllisen lausekkeen, joka etsii kaikki numerot merkkijonosta ja tulostaa ne näytölle:
+Säännöllisten lausekkeiden käyttö Rustissa on helppoa. Sinun tulee ensin tuoda `regex`-kirjasto projektiisi. Tämän jälkeen voit käyttää `Regex`-luokkaa luomaan säännöllisiä lausekkeita ja suorittamaan hakuja tekstissä.
 
 ```Rust
+// Tuodaan regex-kirjasto käyttöön
 use regex::Regex;
 
-fn main() {
-    let re = Regex::new(r"\d+").unwrap();
-    let text = "Ostin 3 kiloa omenoita ja 5 kiloa banaaneita.";
-    for cap in re.captures_iter(text) {
-        println!("{}", &cap[0]);
-    }
-}
+// Luodaan uusi säännöllinen lauseke, joka etsii kaikki numerot tekstistä
+let re = Regex::new(r"\d+").unwrap();
 
-// Output:
-// 3
-// 5
+// Suoritetaan haku annetusta tekstistä
+let result = re.find("123 lorem ipsum").unwrap();
+
+// Tulostetaan löydetty tulos
+println!("Löydetty teksti: {}", result.as_str());
 ```
 
-Tässä esimerkissä haluamme löytää kaikki numerot merkkijonosta ja tulostaa ne näytölle. Ensimmäinen rivi luo uuden `Regex`-tyypin ilmentymän, joka sisältää säännöllisen lausekkeen `"\d+"`. Tämä säännöllinen lauseke tarkoittaa "etsi kaikki numerot". Toisessa rivissä määrittelemme merkkijonon, josta haluamme etsiä. Viimeisessä rivissä käytämme `captures_iter`-metodia, joka palauttaa iteratorin, jossa voimme käyttää `cap`-muuttujaa, joka sisältää ensimmäisen löydetyn osuman. Tässä tapauksessa tulostamme osuman itsensä `cap[0]`.
+Tässä esimerkissä säännöllinen lauseke etsii kaikki numerot annetusta tekstistä ja tulostaa löydetyn numeron.
 
-## Syväsukellus säännöllisiin lausekkeisiin
+## Syvempi sukellus säännöllisten lausekkeiden käyttöön
 
-Säännölliset lausekkeet ovat voimakas ja monipuolinen työkalu, jota voi käyttää moniin eri tarkoituksiin. On kuitenkin tärkeää tutustua tarkemmin säännöllisen lausekkeen syntaksiin ja eri mahdollisuuksiin sen käytössä. Joitain hyödyllisiä linkkejä säännöllisiin lausekkeisiin ja niiden käyttöön Rust-ohjelmoinnissa löydät alta.
+Säännölliset lausekkeet ovat tehokas työkalu tekstin käsittelyssä, mutta niiden käyttöön kannattaa tutustua huolellisesti. On tärkeää ymmärtää säännöllisten lausekkeiden syntaksi ja miten niitä voi hyödyntää erilaisissa tilanteissa.
+
+Rustissa `regex`-kirjasto tarjoaa laajan valikoiman erilaisia metodeja ja ominaisuuksia säännöllisten lausekkeiden käyttöön. Näihin kuuluu esimerkiksi `replace`-metodi, jolla voit korvata löydetyt tekstipätkät haluamallasi merkkijonolla. Voit myös antaa säännölliselle lausekkeelle erilaisia vaihtoehtoisia muotoiluja, jotka lisäävät sen tehokkuutta ja tarkkuutta.
 
 ## Katso myös
 
-- [Rustin regex-dokumentaatio](https://docs.rs/regex/1.5.4/regex/)
-- [Regex Coach - interaktiivinen säännöllisten lausekkeiden työkalu](https://weitz.de/regex-coach/)
-- [Regex101 - työkalu säännöllisten lausekkeiden testaamiseen ja luomiseen](https://regex101.com/)
+[Regex-dokumentaatio Rustille](https://docs.rs/regex/)
+
+[Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/fi/)
+
+[Säännöllisten lausekkeiden perusteet](https://www.regular-expressions.info/fi/index.html)

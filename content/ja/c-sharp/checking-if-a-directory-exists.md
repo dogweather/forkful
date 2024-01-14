@@ -1,57 +1,38 @@
 ---
-title:    "C#: ディレクトリが存在するか確認する"
+title:    "C#: ディレクトリが存在するかをチェックする"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why (なぜ):
 
-ディレクトリが存在するかどうかを確認することは、プログラマーにとって重要です。作業中にプログラムが期待通りに動作するかを確認するために、ディレクトリが存在するかどうかを確認する必要があります。また、ファイルを保存する前にディレクトリの存在をチェックすることで、エラーを防ぐことができます。
+ディレクトリが存在するかどうかを確認することは、プログラミングにおいて重要なタスクの一つです。特定のディレクトリが存在するかどうかを確認すると、プログラムの実行中に不意のエラーを防ぐことができるため、コードの安定性を確保することができます。
 
-## 使い方
+## How To (方法):
 
-```C#
-// ディレクトリが存在するかどうかを確認するプログラム例
-
-using System;
-using System.IO;
-
-class MainClass {
-  static void Main() {
-
-    // ディレクトリのパスを指定
-    string directoryPath = @"C:\Users\Username\Desktop\SampleDirectory";
-
-    // ディレクトリが存在するかどうかを確認
-    if(Directory.Exists(directoryPath)) {
-      Console.WriteLine("ディレクトリが存在します。");
-    }
-    else {
-      Console.WriteLine("ディレクトリが存在しません。");
-    }
-  }
-}
-```
-
-### 出力結果
+ディレクトリが存在するかどうかを確認するには、まずSystem.IO名前空間を使用する必要があります。次に、DirectoryクラスのExistsメソッドを使って、指定したディレクトリが存在するかどうかを確認します。
 
 ```
-ディレクトリが存在します。
+C# using System.IO;
+C# 
+C# string directoryPath = "C:/Users/User/Documents/";
+C# //ディレクトリが存在するかどうかを確認する
+C# if (Directory.Exists(directoryPath)) {
+C#     Console.WriteLine("ディレクトリが存在します。");
+C# }
+C# else {
+C#     Console.WriteLine("ディレクトリが存在しません。");
+C# }
 ```
+上記の例では、ディレクトリが存在する場合は"ディレクトリが存在します。"が、存在しない場合は"ディレクトリが存在しません。"が出力されます。
 
-## 深堀り
+## Deep Dive (詳細):
 
-ディレクトリが存在するかどうかを確認するには、`System.IO` 名前空間にある`Directory.Exists()`メソッドを使用します。このメソッドは、指定したパスが存在するかどうかをブール値で返します。このメソッドを使用する前に、パスの書式が正しいことを確認することも重要です。
+Directory.Existsメソッドは、指定したパスがディレクトリであるかどうかを確認し、存在する場合はtrueを、存在しない場合はfalseを返します。また、このメソッドでは、パスが空の文字列またはnullである場合もfalseを返します。さらに、指定したパスがネットワークドライブ上の共有ディレクトリである場合、存在しない場合もしくはアクセスできない場合は、Exceptionがスローされます。
 
-また、ディレクトリが存在しない場合は新しく作成する`Directory.CreateDirectory()`メソッドを組み合わせることで、プログラムでディレクトリを作成することもできます。
-
-## この記事へのリンク
-
-もしディレクトリが存在しない場合に、新しく作成する方法についてもっと知りたい方は、[こちらの記事](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-create-a-directory-in-net)をご覧ください。
-
-## 参考リンク
-
-- [C#のファイルとディレクトリを操作する方法](https://www.atmarkit.co.jp/ait/articles/1804/18/news024.html)
-- [C#言語でファイルやフォルダの存在を確認する方法](https://tech.medpeer.co.jp/entry/2017/09/19/145054)
-- [ディレクトリクラスのメソッドとプロパティ](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directory?view=netframework-4.8)
+See Also (関連リンク):
+- [Directory.Existsメソッドのドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [C#でディレクトリを作成する方法](https://www.sejuku.net/blog/8383)
+- [ディレクトリやフォルダを移動する方法](https://www.j-n.co.jp/column/p0249.html)

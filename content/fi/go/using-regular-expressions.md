@@ -1,45 +1,39 @@
 ---
 title:    "Go: Säännöllisten lausekkeiden käyttö"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Go-kielellä?
+## Miksi käyttää säännöllisiä lausekkeita Go-ohjelmointikielentäjässä?
 
-Säännölliset lausekkeet ovat erittäin kätevä työkalu tekstien käsittelyyn ja analysointiin Go-ohjelmoinnissa. Ne mahdollistavat monimutkaisten hakujen ja korvausten tekemisen helpommin ja nopeammin kuin perinteiset merkkijonofunktiot. Lisäksi ne ovat osa Go:n standardikirjastoa, joten niiden käyttöönotto on helppoa ja vaivatonta.
+Säännölliset lausekkeet ovat hyvin voimakas työkalu datan käsittelyyn ohjelmoinnissa, ja niillä on monia käyttötarkoituksia. Niiden avulla voit muun muassa suodattaa, hakea ja muokata tietoja tekstimuodossa olevista tiedostoista ja merkkijonoista. Säännöllisiä lausekkeita käyttämällä voit myös tehostaa ohjelmiesi suorituskykyä ja välttää lukuisia koodirivejä.
 
-## Kuinka käyttää säännöllisiä lausekkeita Go-kielellä?
+## Näin käytät säännöllisiä lausekkeita Go-ohjelmointikielentäjässä
 
-Säännöllisten lausekkeiden käyttö Go-kielellä tapahtuu regex-paketin avulla. Ennen kuin aloitat käyttämään säännöllisiä lausekkeita, sinun tulee tuoda regex-paketti ohjelmaasi `import "regexp"` -komennolla.
-
-Sitten voit aloittaa kirjoittamaan säännöllisiä lausekkeita käyttäen `regexp.MustCompile()` -funktiota ja siihen sisään annettua säännöllistä lauseketta. Esimerkiksi, jos haluat tarkistaa, onko merkkijonossa "Tervetuloa" sana "Terve", voit käyttää seuraavaa koodia:
+Go tarjoaa sisäänrakennetun paketin säännöllisten lausekkeiden käsittelyyn, joka löytyy `regexp`-nimisestä paketista. Aloittaaksesi säännöllisten lausekkeiden käytön, sinun tarvitsee vain tuoda tämä paketti import-lausekkeen avulla. Seuraavaksi voit käyttää `regexp.MustCompile()`-funktiota luomaan uuden regeksi-ilmaisun, annetun merkkijonon perusteella.
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "regexp"
-)
+import "regexp"
 
 func main() {
-    r, _ := regexp.Compile("Terve")
-    s := "Tervetuloa"
-    fmt.Println(r.MatchString(s))
+	re := regexp.MustCompile("a*b+c")
+	fmt.Println(re.MatchString("aaabbbc")) // Output: true
+	fmt.Println(re.MatchString("ac")) // Output: false
 }
 ```
 
-Yllä oleva koodi tulostaa "true", sillä merkkijono "Tervetuloa" sisältää sanan "Terve".
+Koodissa käytetään `re.MatchString(<Merkkijono>)`-funktiota tarkistamaan vastaako merkkijono annettua säännöllistä ilmaisua. Tässä tapauksessa tulosteena saadaan `true` ja `false`, mutta voit myös käyttää muita `regexp`-paketin tarjoamia metodeja, kuten `FindAllString()` ja `FindStringSubmatch()`, valittujen merkkijonojen löytämiseen ja palauttamiseen.
 
-## Syvempää tietoa säännöllisistä lausekkeista Go-kielellä
+## Syvempi sukellus säännöllisten lausekkeiden maailmaan
 
-Go:n säännölliset lausekkeet perustuvat POSIX-säännöllisiin lausekkeisiin, mutta niissä on myös joitain eroja. Täydellinen lista säännöllisistä lausekkeista löytyy Go:n virallisesta dokumentaatiosta.
+Säännöllisten lausekkeiden maailma on laaja ja monimuotoinen, mutta Go tarjoaa useita hyödyllisiä ominaisuuksia niiden käsittelemiseen. Voit esimerkiksi käyttää `\w`-merkintää vastaamaan mihin tahansa kirjaimelliseen tai numeeriseen merkkiin, ja `\d`-merkintää vastaamaan mihin tahansa numeromerkkiin. Voit myös käyttää `+`-merkintää ilmaisemaan, että edeltävää merkkiä tulee olla yhdestä useaan kappaletta.
 
-Säännöllisten lausekkeiden käytössä on hyvä huomioida, että niiden tehokkuus riippuu paljon annetusta lausekkeesta ja käsiteltävästä merkkijonosta. Perinteisten merkkijonofunktioiden käyttö voi olla parempi vaihtoehto yksinkertaisiin haku- ja korvaustoimintoihin.
+Toinen tärkeä asia säännöllisiin lausekkeisiin liittyen on tarvittaessa käyttää `()`-merkintöjä ryhmittelyyn, jolloin säännöllisen ilmaisun osia voidaan käsitellä erikseen ja yhdistellä tarvittaessa. Esimerkiksi `ab(cd)ef` vastaa merkkijonoja, joissa on kirjainjono "ab" ja sen jälkeen yksi tai useampi kirjain "cd" ennen loppuosaa "ef".
 
 ## Katso myös
 
-- [Go:n virallinen dokumentaatio säännöllisistä lausekkeista](https://golang.org/pkg/regexp/)
-- [Hyödyllisiä säännöllisiä lausekkeita esimerkkikoodien kanssa](https://regex101.com/library)
-- [Go-koodiesimerkkejä säännöllisten lausekkeiden käytöstä](https://gobyexample.com/regular-expressions)
+- Go-kielen virallinen dokumentaatio säännöllisistä lausekkeista: https://golang.org/pkg/regexp/
+- Regular Expressions in Go (säännölliset lausekkeet Go-kielessä), artikkeli O'Reillyn blogissa: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s04.html
+- O'Reilly School of Technology:n opas säännöllisiin lausekkeisiin Go-kielessä: http://www.ost.edu/pdf/courses/regexp_in_go.pdf

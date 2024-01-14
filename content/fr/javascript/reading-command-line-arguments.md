@@ -1,51 +1,52 @@
 ---
-title:    "Javascript: Lecture des arguments de ligne de commande"
+title:    "Javascript: Lecture des arguments de la ligne de commande"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La lecture des arguments de ligne de commande est une compétence importante pour tout développeur en Javascript. Que vous soyez un débutant ou un expert, comprendre comment utiliser les arguments de ligne de commande peut vous aider à améliorer vos compétences en programmation et à rendre vos scripts plus dynamiques et polyvalents.
+Si vous êtes un développeur Javascript intéressé par l'apprentissage de techniques avancées, alors la lecture des arguments de ligne de commande peut être une compétence très utile à acquérir. Cela peut vous permettre de créer des programmes plus flexibles et plus efficaces en utilisant les informations fournies par l'utilisateur à travers la ligne de commande.
 
-## Comment Faire
+## Comment faire
 
-Pour lire les arguments de ligne de commande en Javascript, vous pouvez utiliser l'objet process.argv. Cet objet contient un tableau de tous les arguments passés à votre programme, y compris le nom de fichier du script lui-même. Voici un exemple de code:
-
-```Javascript
-//Récupération du deuxième argument passé en ligne de commande
-let arg = process.argv[2];
-//Affichage du résultat dans la console
-console.log("L'argument passé est: " + arg);
-```
-
-Si vous exécutez le script avec `node script.js argument`, vous devriez voir la sortie suivante: `L'argument passé est: argument`.
-
-Vous pouvez également utiliser les arguments pour effectuer différentes actions en fonction de la valeur passée. Par exemple, vous pouvez utiliser une structure conditionnelle pour déclencher certaines fonctions en fonction de l'argument passé. Voici un exemple:
+Pour lire les arguments de ligne de commande en Javascript, vous pouvez utiliser l'objet `process` intégré à Node.js. Voici un exemple de code qui montre comment accéder à ces arguments:
 
 ```Javascript
-//Récupération du deuxième argument passé en ligne de commande
-let arg = process.argv[2];
-//Vérification de la valeur de l'argument
-if (arg === "print") {
-  console.log("Le script a été lancé avec l'argument 'print'");
-} else if (arg === "save") {
-  console.log("Le script a été lancé avec l'argument 'save'");
-} else {
-  console.log("L'argument n'est pas pris en charge");
-}
+// Récupérer les arguments de la ligne de commande
+const arguments = process.argv;
+
+// Parcourir chaque argument et l'afficher
+arguments.forEach((argument, index) => console.log(`Argument ${index}: ${argument}`));
 ```
 
-Si vous exécutez le script avec `node script.js print`, vous devriez voir la sortie suivante: `Le script a été lancé avec l'argument 'print'`.
+Supposons que vous ayez enregistré ce code dans un fichier appelé `arguments.js`. Vous pouvez alors l'exécuter en utilisant la commande suivante dans votre terminal:
 
-## Plongée Profonde
+```
+node arguments.js arg1 arg2 arg3
+```
 
-Si vous avez besoin d'une compréhension plus approfondie des arguments de ligne de commande, vous pouvez également consulter la documentation officielle de Node.js sur l'objet process.argv. Vous y trouverez plus d'informations sur les différentes méthodes et propriétés de cet objet, ainsi que des exemples plus avancés.
+Cela donnera la sortie suivante:
 
-Vous pouvez également consulter des bibliothèques comme yargs qui facilitent la gestion des arguments de ligne de commande dans vos scripts. Ces bibliothèques offrent des fonctionnalités supplémentaires telles que la validation des arguments et la création de commandes et d'options de manière plus structurée.
+```
+Argument 0: /usr/local/bin/node
+Argument 1: /Users/votre-nom/fichier/arguments.js
+Argument 2: arg1
+Argument 3: arg2
+Argument 4: arg3
+```
 
-## Voir Aussi
+Comme vous pouvez le constater, le premier argument est le chemin vers l'exécutable Node.js et le deuxième est le chemin vers votre fichier. Les arguments définis par vous sont affichés après cela.
 
-- [Documentation officielle de Node.js sur l'objet process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [Bibliothèque yargs pour la gestion des arguments de ligne de commande en Javascript](http://yargs.js.org/)
+## Plongée en profondeur
+
+Vous pouvez également accéder aux arguments directement en utilisant l'index, par exemple `process.argv[2]` pour récupérer le premier argument. De plus, il existe des packages tels que `yargs` qui peuvent vous aider à gérer les arguments de manière plus structurée et à créer des interfaces utilisateur en ligne de commande plus avancées.
+
+Il est également important de noter que les arguments de ligne de commande peuvent être très utiles pour automatiser des tâches répétitives ou pour exécuter plusieurs versions de votre code en utilisant des combinaisons d'arguments différentes.
+
+## Voir aussi
+
+- [Documentation officielle de Node.js sur les arguments de ligne de commande](https://nodejs.org/api/process.html#process_process_argv)
+- [Documentation de `yargs` pour la gestion facile des arguments en ligne de commande](https://github.com/yargs/yargs)

@@ -1,41 +1,51 @@
 ---
-title:    "Elixir: Wyciąganie podciągów"
+title:    "Elixir: Ekstrakcja podłańcuchów"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-W dzisiejszych czasach, wiele aplikacji i stron internetowych wymaga działania na napisach lub znakach. Jednym ze sposobów manipulacji napisami jest wyodrębnienie podciągów, czyli fragmentów tekstu. W tym artykule dowiecie się, dlaczego warto poznać podstawy wyodrębniania podciągów w języku Elixir.
+Wyodrębnianie podłańcuchów jest ważnym narzędziem w programowaniu Elixir. Pozwala ono na pracę z konkretnymi częściami ciągów znaków, co jest szczególnie przydatne przy przetwarzaniu danych. W tym artykule opiszemy, dlaczego warto nauczyć się wyodrębniać podłańcuchy i jak to zrobić.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W języku Elixir, do wyodrębniania podciągów można użyć funkcji `String.slice/3`. Przyjmuje ona trzy argumenty: napis, początkowy indeks oraz końcowy indeks. Dzięki temu możemy w łatwy sposób wyciągnąć interesujące nas fragmenty tekstu.
+Wyodrębnianie podłańcuchów jest proste i intuicyjne w Elixirze. Możemy użyć funkcji `String.slice/3` wraz z indeksami początkowym i końcowym, aby wyodrębnić podłańcuch z danego ciągu znaków. Spójrzmy na przykładowy kod:
 
 ```Elixir
-string = "Witaj, Polsko!"
+string = "Programowanie jest super zabawne"
 
-# Wyodrębnienie podciągu zawierającego słowo "Polsko"
-String.slice(string, 7, 12)
-# Output: "Polsko"
+slice = String.slice(string, 0, 11)
 
-# Możemy też użyć indeksów ujemnych
-String.slice(string, -1, -5)
-# Output: "ola"
+IO.puts("Wyodrębniony podłańcuch: #{slice}")
 
-# Aby wyodrębnić podciąg bez podania końcowego indeksu, użyjemy `String.slice/2`
-String.slice(string, 0)
-# Output: "Witaj, Polsko!"
 ```
 
-## Głębsze zagadnienia
+Powyższe polecenie wyświetli "Wyodrębniony podłańcuch: Programowanie".
 
-Język Elixir oferuje również inne metody wyodrębniania podciągów, takie jak `String.split/2` czy `String.split_at/2`. Ponadto, możemy również wykorzystać wyrażenia regularne do bardziej złożonych operacji na napisach. Warto również pamiętać o używaniu `String.downcase/1` lub `String.upcase/1` przy manipulowaniu tekstem.
+Możemy również wyodrębniać podłańcuchy na podstawie znaków zamiast indeksów. W tym celu możemy użyć funkcji `String.split/2`, która dzieli ciąg znaków na mniejsze podłańcuchy na podstawie określonego znaku lub wyrażenia regularnego. Na przykład:
 
-## Zobacz także
+```Elixir
+string = "Mam jutro egzamin z Elixira"
 
-Jeśli chcesz dowiedzieć się więcej o manipulowaniu napisami w języku Elixir, zapoznaj się z poniższymi artykułami:
+words = String.split(string, " ")
 
-- [Manipulowanie napisami w języku Elixir](https://medium.com/@kamilgrabowski/manipulowanie-tekstem-w-elixirze-7031d7323f97)
-- [Podstawy wyrażeń regularnych w Elixir](https://medium.com/@lucasmaia/elixir-regular-expressions-a-quick-introduction-bb6b4c401444)
+IO.inspect(words)
+
+```
+
+Powyższe polecenie wyświetli listę słów: ["Mam", "jutro", "egzamin", "z", "Elixira"].
+
+## Deep Dive
+
+W Elixirze istnieją również inne funkcje, które pozwalają na wyodrębnianie podłańcuchów, takie jak `String.joins/2`, `String.replace/3` czy `String.trim/2`. Możemy również użyć wyrażeń regularnych, aby dopasować i wyodrębnić określone wzorce z ciągu znaków.
+
+Ważne jest również zwrócenie uwagi na wydajność operacji wyodrębniania podłańcuchów. Ze względu na to, że w Elixirze ciągi znaków są niemodyfikowalne, każda operacja wyodrębniania podłańcuchu tworzy nowy ciąg, co może być kosztowne dla dużej ilości danych.
+
+## Zobacz też
+
+- [Dokumentacja Elixir do funkcji String](https://hexdocs.pm/elixir/String.html)
+- [Poradnik programowania w Elixirze](https://www.tutorialspoint.com/elixir/index.htm)
+- [Github - przykładowe projekty w Elixirze](https://github.com/h4cc/awesome-elixir)

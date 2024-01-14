@@ -1,56 +1,41 @@
 ---
 title:    "TypeScript: Créer un fichier temporaire"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi créer un fichier temporaire en TypeScript ?
+## Pourquoi créer un fichier temporaire en TypeScript
 
-Lors de la programmation en TypeScript, il peut être utile de créer des fichiers temporaires pour stocker des données temporaires ou pour simplifier la gestion de fichiers. Créer un fichier temporaire peut également être une étape nécessaire lors de l'utilisation de certaines bibliothèques ou modules. Dans cet article, nous allons voir comment créer un fichier temporaire en TypeScript et plonger plus en profondeur dans cette fonctionnalité.
+Lors de la programmation en TypeScript, il peut être utile de créer des fichiers temporaires. Ces fichiers sont créés pour stocker temporairement des données ou des informations et sont supprimés une fois qu'ils ne sont plus nécessaires. Dans cet article, nous allons explorer pourquoi il peut être nécessaire de créer un fichier temporaire en TypeScript et comment le faire.
 
-## Comment le faire en TypeScript
-
-La création d'un fichier temporaire en TypeScript est assez simple grâce à la fonction intégrée `tmpFile()`. Prenons par exemple le code suivant qui utilise cette fonction :
+## Comment créer un fichier temporaire en TypeScript
+Pour créer un fichier temporaire en TypeScript, nous utiliserons la bibliothèque "fs" de Node.js. Cette bibliothèque fournit des fonctions pour gérer les fichiers et les dossiers. Nous utiliserons la fonction "mkdtempSync()" pour créer un dossier temporaire et la fonction "writeFileSync()" pour écrire nos données dans ce dossier.
 
 ```TypeScript
-const fs = require('fs');
-const tmp = require('tmp-promise');
+import * as fs from 'fs';
 
-(async () => {
-    // Créer un fichier temporaire
-    const tmpFile = await tmp.file();
-    console.log(tmpFile.path);
+// Création du dossier temporaire
+const tempDir = fs.mkdtempSync('/tmp/');
 
-    // Écrire du contenu dans le fichier temporaire
-    const content = "Bonjour le monde !";
-    fs.writeFileSync(tmpFile.path, content);
+// Écriture des données dans le dossier temporaire
+fs.writeFileSync(`${tempDir}/exemple.txt`, 'Ceci est un exemple de données à stocker dans un fichier temporaire.');
 
-    // Lire le contenu du fichier temporaire
-    const data = fs.readFileSync(tmpFile.path, 'utf-8');
-    console.log(data);
-})();
+// Récupération des données du fichier temporaire
+const data = fs.readFileSync(`${tempDir}/exemple.txt`);
+
+// Affichage des données
+console.log(data.toString()); // Sortie: "Ceci est un exemple de données à stocker dans un fichier temporaire."
 ```
 
-Ce code crée un fichier temporaire en utilisant la fonction `tmpFile()` et y écrit puis lit du contenu. La sortie du code sera similaire à ceci :
+## Approfondissement sur la création de fichiers temporaires en TypeScript
+Dans l'exemple précédent, nous avons utilisé deux fonctions de la bibliothèque "fs". La fonction "mkdtempSync()" prend en paramètres un préfixe pour le nom du dossier temporaire et renvoie le chemin du dossier créé. La fonction "writeFileSync()" prend en paramètres le chemin du fichier à écrire et les données à y inscrire.
 
-```
-/tmp/tmp-1234567/tmpFile
-Bonjour le monde !
-```
+Il est également possible de spécifier des options pour le dossier temporaire dans la fonction "mkdtempSync()". Par exemple, nous pouvons spécifier un codage pour les noms de fichiers générés ou encore une extension pour les fichiers créés.
 
-Comme vous pouvez le voir, créer et utiliser un fichier temporaire en TypeScript est assez simple. Il est également possible de spécifier un préfixe ou une extension pour le fichier temporaire en utilisant les options de la fonction `tmpFile()`.
-
-## Plongeons plus en profondeur
-
-Maintenant que nous savons comment créer un fichier temporaire en TypeScript, jetons un coup d'œil à certains des détails techniques derrière cette fonctionnalité. Lorsqu'un fichier temporaire est créé en utilisant `tmpFile()`, il est automatiquement enregistré dans le système de fichiers temporaire de l'ordinateur. Cela signifie que le fichier sera automatiquement supprimé lorsque le processus se termine, à moins que vous ne spécifiiez une option pour le conserver.
-
-De plus, la fonction `tmpFile()` utilise en interne la bibliothèque `tmp-promise` pour gérer la création du fichier temporaire. Cela signifie que certaines options supplémentaires peuvent être spécifiées en utilisant les options de cette bibliothèque.
+Il est important de noter qu'il est conseillé de supprimer manuellement le dossier temporaire une fois que vous avez fini d'utiliser le fichier temporaire. Cela peut être fait en utilisant la fonction "unlinkSync()" de la bibliothèque "fs".
 
 ## Voir aussi
-
-Pour en savoir plus sur la création de fichiers temporaires en TypeScript, voici quelques liens supplémentaires qui pourraient vous être utiles :
-
-- [La documentation officielle de TypeScript sur la fonction `tmpFile()`](https://www.typescriptlang.org/docs/handbook/utilities.html#tmpfile)
-- [La documentation de `tmp-promise`](https://www.npmjs.com/package/tmp-promise)
-- [Un tutoriel sur la création de fichiers temporaires en TypeScript](https://lourd.io/blog/guide-create-temporary-files-typescript)
+- [Documentation de la bibliothèque fs de Node.js](https://nodejs.org/api/fs.html)
+- [Tutoriel sur les fichiers temporaires en Node.js](https://www.digitalocean.com/community/tutorials/how-to-use-the-tmp-folder-in-node-js)

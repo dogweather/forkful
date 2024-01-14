@@ -1,45 +1,36 @@
 ---
-title:    "Elm: 標準エラーに書き込む"
+title:    "Elm: 「標準エラーへの書き込み」"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-エラーを正確に把握することは、プログラミングの世界では非常に重要です。そのため、Elmで標準エラーを書き込むことは、デバッグやコードの改善にとって非常に有益な方法です。
+エラーメッセージは、コンピュータープログラムを作成する際に不可欠です。プログラムの実行中にエラーが発生した場合、その詳細を特定して修正するためにエラーメッセージを使用します。 Elmでは、標準エラー出力を使用して、プログラム内で発生したエラーを特定し、解決することができます。 
 
 ## 方法
 
-まずは、```Platform```モジュールからエラーに関する関数を読み込む必要があります。
+標準エラー出力に書き込むには、 ```Elm.io.stderr``` モジュールを使用します。以下のコードブロックに例を示します。 
 
 ```Elm
-import Platform
+import IO
 
+main =
+  IO.stderr "エラーが発生しました。"
 ```
 
-次に、```Platform.send```関数を使用してエラーメッセージを送信します。
-```Elm
-send : String -> Cmd msg
-send msg =
-  Platform.send
-    (Platform.error
-      { error = msg
-      , location = StackTrace.top
-      })
-```
-
-最後に、```send```関数を呼び出すだけで、標準エラーにメッセージを書き込むことができます。
-
-```
-send "エラーメッセージ"
-```
+上記の例では、```IO.stderr```関数を使用して、エラーメッセージを標準エラー出力に書き込んでいます。これにより、実行中にエラーが発生した場合、それを特定することができます。 
 
 ## 深堀り
 
-標準エラーを書き込む際、注意すべきことがいくつかあります。まず、```Debug.todo```や```Basics.never```などの関数を使用して、意図的にエラーを起こさないようにすることが重要です。また、エラーを書き込む際には、必ずメッセージを明確にするようにしてください。これにより、後からエラーを追跡する際に役立ちます。
+標準エラー出力を使用することで、プログラム内で発生したエラーを特定できるだけでなく、エラーメッセージをカスタマイズすることもできます。例えば、エラーメッセージにファイル名や行数を追加することで、特定の箇所で発生したエラーをすばやく特定することができます。また、複数のエラーメッセージを書き込むこともでき、それらを区別することができます。詳細は、公式ドキュメントを参照してください。 
 
-## 他にも見るべきもの
+## それでは参考に
 
-- [Elmのドキュメンテーション](https://guide.elm-lang.jp/error_handling/)
-- [エラーメッセージの効果的な利用方法について](https://medium.com/@obozaxyz/elm-error-messages-c8553f9c1311)
+- [Elm 公式ドキュメント](https://guide.elm-lang.jp/error_handling/standard_error_output.html)
+- [「標準エラー出力を使用してエラーメッセージをカスタマイズする」](https://teratail.com/questions/234646)
+- [「標準エラー出力を使用する方法」](https://medium.com/@nenu7/using-standard-error-output-in-elm-a5c95189cc60)
+
+# 参考リンク

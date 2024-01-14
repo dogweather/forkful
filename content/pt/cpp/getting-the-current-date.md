@@ -1,55 +1,65 @@
 ---
 title:    "C++: Obtendo a data atual"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+# Por que Obter a Data Atual em C++
 
-Existem muitas razões pelas quais você pode precisar obter a data atual em seu programa C++. Pode ser para fins de registro, para apresentar informações precisas para o usuário ou para realizar cálculos baseados na data. Independentemente da finalidade, ter a capacidade de obter a data atual é uma habilidade básica importante que todo programador deve dominar.
+Se você é um programador iniciante ou experiente, é provável que em algum momento precise obter a data atual em seu código. Isso pode ser útil para realizar cálculos com datas, registrar eventos ou para qualquer outra tarefa que envolva o gerenciamento de tempo. Felizmente, obter a data atual em C++ é relativamente simples e neste artigo vou mostrar como fazer isso.
 
-## Como obter a data atual
+## Como Fazer
 
-Em C++, existem várias maneiras de obter a data atual. A seguir está um exemplo simples de como fazer isso usando a biblioteca `ctime`:
+Para obter a data atual em C++, primeiro precisamos incluir a biblioteca "ctime". Esta biblioteca contém a função "time", que nos permite obter a data atual em segundos a partir de uma data de referência, conhecida como epoch. Nós podemos então converter esses segundos em uma estrutura de dados chamada "tm", que contém informações como dia, mês, ano, hora, minuto e segundo. Finalmente, podemos usar essa estrutura para imprimir a data de maneira formatada.
+
+Aqui está um exemplo de código que mostra como obter e formatar a data atual em C++:
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-using namespace std;
+int main(){
+    // Obtém a data atual em segundos
+    time_t now = time(0);
 
-int main() {
-    // Obter a data atual
-    time_t currentTime = time(0);
+    // Converte em uma estrutura de dados "tm"
+    tm *current = localtime(&now);
 
-    // Converter a data para uma string legível
-    char* currentDate = ctime(&currentTime);
-
-    // Imprimir a data atual
-    cout << "A data atual é: " << currentDate << endl;
+    // Imprime a data formatada
+    std::cout << "Data atual: " << current->tm_mday << "/" << current->tm_mon + 1 << "/" << current->tm_year + 1900;
 
     return 0;
 }
 ```
 
-Saída:
+A saída deste código seria algo parecido com isso:
 
 ```
-A data atual é: Sat Feb 27 11:07:09 2021
+Data atual: 13/01/2022
 ```
 
-Este é apenas um exemplo simples, mas você também pode formatar a data usando a função `strftime()` e personalizá-la de acordo com suas necessidades. Certifique-se de consultar a documentação da biblioteca `ctime` para obter mais informações sobre todas as funções disponíveis para trabalhar com datas e horas.
+## Mergulho Profundo
 
-## Mergulho mais profundo
+Agora que já sabemos como obter a data atual em C++, vamos entender um pouco mais sobre a função "time" e a estrutura "tm". A função "time" retorna o número de segundos passados desde 1 de janeiro de 1970, também conhecido como epoch. Isso é conhecido como um timestamp e é uma maneira comum de armazenar e manipular datas em programação.
 
-Há muitos detalhes interessantes sobre como o C++ obtém a data e hora atuais. Internamente, a biblioteca `ctime` usa uma função chamada `gettimeofday()` para obter a data atual a partir do sistema operacional. Esta função retorna um valor de tempo que é o número de segundos passados desde 1 de janeiro de 1970, também conhecido como "tempo Unix". Essa medida é comumente usada em sistemas operacionais baseados em Unix, incluindo Linux e macOS. No entanto, se você estiver trabalhando em um sistema operacional diferente, pode ser usado um método diferente para obter a data atual.
+A estrutura "tm" é usada para armazenar informações de data e hora em C++. Ela contém os seguintes campos:
 
-Existem também outras bibliotecas, como `chrono` e `boost`, que fornecem maneiras mais avançadas de trabalhar com datas e horas em C++.
+- tm_sec (segundo)
+- tm_min (minuto)
+- tm_hour (hora)
+- tm_mday (dia do mês)
+- tm_mon (mês)
+- tm_year (ano)
+- tm_wday (dia da semana)
+- tm_yday (dia do ano)
+- tm_isdst (horário de verão)
 
-## Veja também
+Vale ressaltar que os campos "tm_mon" e "tm_year" começam em 0, portanto, é necessário adicionar 1 a eles ao imprimi-los ou usá-los em cálculos.
 
-- [Documentação da biblioteca ctime](https://www.cplusplus.com/reference/ctime/)
-- [Exemplos de formatação de data em C++](https://www.w3schools.com/cpp/cpp_date.asp)
-- [Como usar a biblioteca chrono em C++](https://www.learncpp.com/cpp-tutorial/8-12-stdchrono/)
-- [Biblioteca boost para manipulação de datas e horas em C++](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+## Veja Também
+
+- [Documentação da biblioteca ctime em C++](https://www.cplusplus.com/reference/ctime/)
+- [Função "time" na documentação da biblioteca ctime](https://www.cplusplus.com/reference/ctime/time/)
+- [Informações sobre a estrutura "tm" em C++](https://www.cplusplus.com/reference/ctime/tm/)

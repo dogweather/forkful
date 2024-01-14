@@ -1,43 +1,63 @@
 ---
 title:    "Clojure recipe: Writing tests"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing tests in any programming language is an important aspect of software development. It helps ensure that the code is functioning as expected and can catch any potential errors early on in the development process. For Clojure specifically, writing tests can also aid in maintaining the immutability and purity principles that the language is known for.
 
-## How To 
-Writing tests in Clojure follows a similar process to writing tests in other languages. First, you will need to define a namespace and import the necessary libraries. For example:
+Writing tests is an essential part of developing any software project, whether it's a small personal project or a large scale application. It allows developers to ensure that their code is functioning as expected, catching any bugs or errors before they reach production. Writing tests also helps with maintaining code quality, allowing for easier identification of any issues that may arise in the future.
 
-```Clojure
-(ns example.test
-  (:require [clojure.test :refer :all]
-            [example.core :refer :all]))
-```
+## How To
 
-Next, you can define a test using the `deftest` macro, followed by the name of the test and the code that you want to test. For instance:
+To write tests in Clojure, we will be using the built-in testing framework, Clojure.test. This framework provides functions to create tests, run them, and report the results. Let's walk through an example of writing a simple test for a function that adds two numbers.
 
 ```Clojure
-(deftest test-addition
-  (is (= (+ 1 2) 3)))
+;; Define the function to be tested
+(defn add [x y]
+  (+ x y))
+
+;; Import the testing library
+(use 'clojure.test)
+
+;; Define a test case
+(deftest test-add
+  (testing "add two positive numbers"
+    (is (= (add 3 4) 7))))
+
+;; Run the tests
+(run-tests)
 ```
 
-This will create a test called `test-addition` that checks if adding 1 and 2 equals 3. The `is` macro is used to assert the expected result. To run the tests, you can use the `run-tests` function, which will output the results in the terminal.
+If the test passes, we will see the following output:
 
 ```
-----------------------------------
-   Clojure tests (0.016s)  
+Testing user
 Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.    
+0 failures, 0 errors.
+```
+
+If the test fails, we will see a message indicating which assertion failed and expected vs. actual values.
+
+```
+Testing user
+Ran 1 tests containing 1 assertions.
+1 failures, 0 errors.
+----Testing for add----
+expected: (= (add 3 2) 5)
+  actual: (not (= 5 5))
 ```
 
 ## Deep Dive
-Clojure offers a robust testing library called `clojure.test` that provides various useful functions and macros for testing. Some of these include `is` for asserting equality, `are` for testing multiple values at once, and `throws?` for checking if a specific function throws an exception. Additionally, integration with tools like Leiningen or Boot make it easy to run tests in different environments.
 
-It's also worth noting that writing tests in Clojure can further reinforce functional programming practices. Since the tests themselves are immutable data structures, they can be composed and manipulated just like any other data in Clojure.
+When writing tests, it's essential to cover all possible scenarios to ensure thorough testing. Clojure provides several functions for testing, including `is`, `are`, and `are-not`. These functions take two arguments, the expected value and the actual value, and compare them. Other functions, such as `pass?` and `fail?`, can be useful for more complex tests that require custom logic.
+
+It's also important to note that tests should be written to be independent of one another, meaning they should not rely on any previous tests for their expected outcome. This ensures that each test can run independently of the others, providing more accurate results.
 
 ## See Also
-- [Official Clojure Testing Documentation](https://clojure.org/guides/testing)
-- [Clojure Syntax Cheat Sheet](https://clojure.org/api/cheatsheet)
+
+* Official Clojure documentation for testing: https://clojure.org/guides/testing
+* Clojure.test API reference: https://clojure.github.io/clojure/clojure.test-api.html
+* Blog post on why writing tests is important: https://blog.cleancoder.com/uncle-bob/2017/04/05/BadTesting.html

@@ -1,50 +1,38 @@
 ---
-title:    "Rust: Skriva till standardfel"
+title:    "Rust: Skrivning till standardfel"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva till standarderror, eller stderr, är ett viktigt verktyg för alla som programmerar i Rust. Det är ett sätt att få information om eventuella fel eller varningar som kan uppstå i koden och hjälper till att felsöka problem på ett strukturerat sätt.
+Att skriva till standard error i Rust kan hjälpa dig att identifiera och hantera fel i ditt program. Genom att skriva felmeddelanden till standard error, istället för standard output, kan du enklare felsöka och förstå vad som går fel i ditt program.
 
 ## Hur man gör det
 
-För att skriva till stderr i Rust, måste du först importera standardbiblioteket io::Write. Sedan kan du använda write! makron för att skriva önskat meddelande till stderr. Exempelvis:
+För att skriva till standard error i Rust, behöver du först importera standardbiblioteket "std" och sedan använda funktionen "eprint!" eller "eprintln!" beroende på om du vill skriva på samma rad eller på en ny rad.
 
 ```Rust
-use std::io::Write;
-
-fn main() {
-    let message = "Detta är ett meddelande till stderr";
-    write!(std::io::stderr(), "{}", message).unwrap();
-}
+use std::io::{self, Write};
+// använd "eprint!" för att skriva på samma rad
+eprint!("Ett fel har inträffat");
+io::stdout().flush().unwrap();
+// använd "eprintln!" för att skriva på en ny rad
+eprintln!("Ett fel har inträffat");
 ```
 
-Output: `Detta är ett meddelande till stderr`
-
-Här använder vi unwrap() för att avsluta makronet. Det finns också andra sätt att hantera potentiella fel, som att använda en match-sats eller en ? operator. Det är viktigt att hantera fel på ett korrekt sätt för att undvika kraschar och oväntat beteende i koden.
+När du skriver till standard error, är det också viktigt att se till att den ordinarie output också skickas till standard error. Om du använder en print-funktion eller en loggningssamling såsom "log" måste du se till att även ditt felsökningsmeddelande skickas till standard error.
 
 ## Djupdykning
 
-När du använder write! makronet för att skriva till stderr, kan du också ange färg och formatering för meddelandet. Detta kan vara användbart för att skilja mellan olika typer av meddelanden och lättare kunna läsa dem. Exempelvis kan du skriva:
+Att skriva till standard error kan vara särskilt användbart när du utvecklar större system med flera olika komponenter. Genom att skriva till standard error, kan du få en tydligare bild av vilka moduler och funktioner som är inblandade i felaktig kod, vilket gör felsökningen mer effektiv.
 
-```Rust
-use std::io::Write;
-
-fn main() {
-    let message = "Detta är ett meddelande till stderr";
-    write!(std::io::stderr().paint("ERROR:"), "{}", message).unwrap();
-}
-```
-
-Output:  ERROR: Detta är ett meddelande till stderr
-
-Du kan också använda andra formatmallar som färg, bakgrundsfärg, fetstil och understrykning för att anpassa dina meddelanden.
+En annan fördel med att skriva till standard error är att det är en standardiserad metod för att hantera felmeddelanden. Det gör det enkelt för andra utvecklare att förstå källan till ett fel och hjälper till att skapa en bättre kodstruktur i ett projekt.
 
 ## Se också
 
-- Rust's official documentation för standardbiblioteket för att läsa mer om io::Write
-- Rust By Example för fler exempel på hur man skriver till stderr med olika formatteringar
-- Dokumentation för fylogenetik biblioteket för ett praktiskt exempel på användningen av stderr i ett större projekt
+- [Rust dokumentation om standardbiblioteket](https://doc.rust-lang.org/std/io/index.html)
+- [Exempel på hur man skriver till standard error i Rust](https://stackoverflow.com/questions/53460024/how-to-write-to-stderr-in-rust)
+- ["10 praktiska tips för att hantera fel i Rust"](https://blog.logrocket.com/10-practical-tips-for-handling-errors-in-rust/)

@@ -1,45 +1,61 @@
 ---
 title:    "Bash: Escribiendo pruebas"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Bash?
+## Por Qué
 
-Es común que los programadores dediquen mucho tiempo al desarrollo del código en sí, sin prestar suficiente atención a la escritura de pruebas. Sin embargo, escribir pruebas es una práctica crucial en el proceso de desarrollo de software ya que ayuda a garantizar que el código funcione correctamente y evita errores en producción. Además, puede ahorrar tiempo a largo plazo al facilitar la detección y solución de errores.
+Escribir pruebas en Bash puede parecer un paso adicional y tedioso al principio, pero en realidad es una parte esencial del proceso de programación. Las pruebas nos permiten validar rápidamente nuestro código y detectar posibles errores antes de que se conviertan en problemas mayores en producción. Además, escribir pruebas nos ayuda a garantizar que nuestro código sea robusto y confiable.
 
-## Cómo hacerlo
+## Cómo Hacerlo
 
-Para escribir pruebas en Bash, podemos utilizar el comando `assert` que nos permite comparar valores esperados con los resultados obtenidos. Por ejemplo:
+Para escribir pruebas en Bash, utilizamos el comando `test` que nos permite evaluar expresiones y tomar decisiones basadas en el resultado. Veamos un ejemplo sencillo de una prueba que comprueba si un número es mayor que 10:
 
 ```Bash
-# Definir una función que devuelva el doble de un número
-function doble {
-    echo $(($1 * 2))
-}
-
-# Prueba utilizando el comando assert
-assert "doble 5" 10 "La función debe devolver el doble de un número"
+#!/bin/bash
+# Definimos una variable con un número
+num=15
+# Utilizamos el comando `test` para evaluar la expresión
+if test $num -gt 10; then
+    echo "El número es mayor que 10"
+fi
 ```
 
-En este ejemplo, definimos una función llamada `doble` que devuelve el doble del número pasado como argumento. Luego, usamos el comando `assert` para comparar el resultado de llamar a la función con el número 5, con el valor esperado de 10. Si la prueba falla, se mostrará un mensaje indicando que la función no está devolviendo el valor esperado.
+En este caso, utilizamos la opción `-gt` que significa "greater than" (mayor que), pero también podemos utilizar otras opciones como `-lt` (menor que), `-eq` (igual a), entre otras.
 
-Además de usar el comando `assert`, también podemos hacer uso de la sentencia `if` en nuestro código para realizar diferentes acciones dependiendo de si una prueba es exitosa o falla.
+También podemos utilizar el comando `test` para comparar cadenas de texto. Por ejemplo, si queremos comprobar si una variable contiene el nombre "Maria", podemos hacerlo de la siguiente manera:
 
-## Profundizando en las pruebas
+```Bash
+#!/bin/bash
+# Definimos una variable con un nombre
+nombre="Maria"
+# Utilizamos el comando `test` y la opción `-z` para comprobar si la cadena está vacía
+if test -z $nombre; then
+    echo "La variable está vacía"
+else
+    echo "Hola $nombre"
+fi
+```
 
-Al escribir pruebas en Bash, es importante tener en cuenta algunos consejos para asegurarnos de que sean efectivas:
+En este caso, utilizamos la opción `-z` que significa "zero" (cero) y nos permite comprobar si la cadena está vacía.
 
-- Sigue un estándar de nomenclatura claro y consistente para tus pruebas.
-- Asegúrate de incluir pruebas para todos los posibles casos en tu código.
-- Utiliza un marco de pruebas como `shUnit2` para estructurar mejor tus pruebas.
-- No subestimes la importancia de las pruebas unitarias y de integración.
+## Profundizando
 
-En resumen, escribir pruebas en Bash es crucial para garantizar la calidad de nuestro código y evitar errores costosos en producción. Con el uso de herramientas y buenas prácticas, podemos hacer que nuestro proceso de desarrollo sea más eficiente y confiable.
+Aunque hemos visto ejemplos sencillos, hay muchas otras opciones y casos de uso para escribir pruebas en Bash. Además de las opciones que ya hemos visto, también podemos utilizar operadores lógicos como `&&` (and) y `||` (or) para combinar diferentes expresiones en una sola prueba.
+
+También podemos utilizar el comando `test` junto con otras herramientas de Bash como `grep` y `sed` para realizar pruebas más complejas. De hecho, existen diferentes librerías y frameworks como [bats](https://github.com/sstephenson/bats) que nos permiten escribir pruebas más estructuradas y completas en Bash.
+
+Otra ventaja de escribir pruebas en Bash es que podemos integrarlas en herramientas de integración continua (CI) como [Travis CI](https://travis-ci.com/) para que se ejecuten automáticamente cada vez que hacemos cambios en nuestro código.
 
 ## Ver también
 
-- [Documentación del comando `assert`](https://www.gnu.org/software/shellutils/manual/html_node/Bourne-Shell-Builtins.html)
-- [Tutorial de shUnit2](https://www.neotitans.net/shunit2-sencillo-y-eficaz-framework-unit-testing-bash.html)
-- [Bash Unit - herramienta para escribir pruebas en Bash](https://github.com/rlancaste/bash_unit)
+- [La Biblia de Bash: Incluye Ejemplos Prácticos y Un Ejemplo de Script Mojo de Sistema](https://www.bashbible.com/)
+- [Introducción a los Test Unitarios en Bash](https://medium.com/@pablormier/testing-unitario-en-bash-66c9a959aa31)
+- [Cómo Escribir Test Unitarios en Shell Script](https://dev.to/thiht/shell-scripts-testing-made-easy-2h7g)
+
+---
+
+¡Espero que este artículo te haya sido útil para aprender cómo escribir pruebas en Bash! ¡Recuerda siempre incluir pruebas en tu proceso de programación para garantizar un código más sólido y confiable!

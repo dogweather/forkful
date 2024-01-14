@@ -1,37 +1,45 @@
 ---
-title:    "Haskell: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Haskell: Löschen von Zeichen mit entsprechendem Muster"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Löschung von Zeichen, die einem bestimmten Muster entsprechen, kann für Programmiererinnen und Programmierer nützlich sein, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen oder bestimmte Datenstrukturen zu filtern.
+In der Programmierung gibt es oft die Notwendigkeit, bestimmte Zeichen in einem Text zu löschen, die einem bestimmten Muster entsprechen. Dies kann hilfreich sein, um unerwünschte Zeichen oder Leerzeichen zu entfernen oder um bestimmte Formate einzuhalten.
 
-## So geht's
+## Wie Funktioniert es
 
-In Haskell gibt es mehrere Methoden, um Zeichen in einer Zeichenkette basierend auf einem bestimmten Muster zu löschen. Hier sind zwei Beispiele, die das Löschen von Bindestrichen aus einer Telefonnummer demonstrieren:
+Die grundlegende Funktion, die wir verwenden werden, ist die `filter` Funktion, die in Haskell bereits vordefiniert ist. Diese Funktion ermöglicht es uns, eine Liste zu durchlaufen und Elemente basierend auf einer angegebenen Bedingung zu filtern.
 
-```Haskell
--- Verwenden von `filter` Funktion
-deleteHyphens :: String -> String
-deleteHyphens str = filter (\x -> x /= '-') str
-deleteHyphens "555-123-4567" -- "5551234567"
+Eine beispielhafte Verwendung dieser Funktion, um Zeichen aus einem String zu löschen, könnte folgendermaßen aussehen:
 
--- Verwenden von `map` und `concat` Funktionen
-deleteHyphens' :: String -> String
-deleteHyphens' str = concat $ map (\x -> if x == '-' then "" else [x]) str
-deleteHyphens' "555-123-4567" -- "5551234567"
+```haskell
+deleteCharacters :: Char -> [Char] -> [Char]
+deleteCharacters char = filter (/=char)
 ```
 
-Das erste Beispiel verwendet die `filter` Funktion, um alle Bindestriche in der Zeichenkette zu entfernen. Das zweite Beispiel verwendet die `map` Funktion, um jedes Zeichen in der Zeichenkette zu überprüfen und wenn es ein Bindestrich ist, wird es durch einen leeren String ersetzt.
+Wir können diese Funktion dann auf einen beliebigen String anwenden, zum Beispiel auf "Hallo Welt!" und bestimmen, welche Zeichen wir löschen möchten.
 
-## Tiefergehende Analyse
+```haskell
+deleteCharacters 'l' "Hallo Welt!"
+```
 
-Beim Löschen von Zeichen basierend auf einem Muster ist es wichtig zu beachten, dass String in Haskell eine Liste von Buchstaben ist. Daher können dieselben Funktionen, die auf Listen angewendet werden, auch auf Zeichenketten angewendet werden. Beim Löschen von Zeichen müssen wir jedoch überprüfen, ob das zu löschende Zeichen mit dem gegebenen Muster übereinstimmt. Hier wird die anonyme Funktion `\x -> x /= '-'` verwendet, um zu überprüfen, ob das aktuelle Zeichen nicht mit einem Bindestrich übereinstimmt.
+Dies würde `"Hao Wett!"` ausgeben, da alle Vorkommen des Zeichens "l" aus dem String gelöscht werden.
+
+## Tiefer Einblick
+
+Um das Problem der Löschung von Zeichen noch weiter zu erläutern, möchten wir uns ein spezifischeres Beispiel anschauen. Angenommen, wir haben einen String mit Zahlen, die durch Leerzeichen getrennt sind, und möchten alle Leerzeichen löschen, um eine Datei ohne Leerzeichen zu erstellen.
+
+```haskell
+deleteCharacters ' ' "1 2 3 4 5"
+```
+
+Die Ausgabe dieses Codes würde dann `"12345"` ergeben, da alle Leerzeichen gelöscht wurden. Hierbei wird also die `filter` Funktion verwendet, um alle Leerzeichen aus der Liste zu entfernen.
 
 ## Siehe auch
 
-- Dokumentation zu `filter`: https://hackage.haskell.org/package/base/docs/Data-List.html#v:filter
-- Dokumentation zu `map`: https://hackage.haskell.org/package/base/docs/Prelude.html#v:map
+- [Haskell Dokumentation über filter Funktion](https://www.haskell.org/tutorial/arrays.html#sect13.3)
+- [Tutorial zu Zeichen und Zeichenreihen in Haskell](https://wiki.haskell.org/Character_and_string_explorations)

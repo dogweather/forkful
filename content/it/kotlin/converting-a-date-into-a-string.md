@@ -1,64 +1,55 @@
 ---
 title:    "Kotlin: Convertire una data in una stringa"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molte volte, quando si lavora con le date in un programma Kotlin, è necessario convertire una data in una stringa. Questo può essere utile per mostrare la data in un formato specifico o per utilizzarla in un database. In questo articolo, vedremo come convertire una data in una stringa utilizzando Kotlin.
+La conversione di una data in una stringa è una pratica comune nella programmazione Kotlin, poiché ci consente di rappresentare la data in un formato leggibile per gli utenti. Inoltre, ci permette di manipolare e gestire le date in modo più flessibile all'interno del nostro codice.
 
-## Come
+## Come Fare
 
-Per convertire una data in una stringa, si può utilizzare il metodo `format()` della classe `DateTimeFormatter` di Kotlin. Questo metodo accetta come parametro un oggetto di tipo `LocalDate` o `LocalDateTime`, che rappresenta rispettivamente una data o una data e un'ora.
+Per convertire una data in una stringa in Kotlin, possiamo utilizzare il metodo `format` della classe `DateTimeFormatter`.
 
+```
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-// Creazione di un oggetto LocalDate con la data desiderata
-val data: LocalDate = LocalDate.of(2021, 5, 18)
-
-// Creazione di un oggetto DateTimeFormatter per specificare il formato della data
-val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-
-// Utilizzo del metodo format() per convertire la data in una stringa nel formato specificato
-val dataString: String = formatter.format(data)
-
-println(dataString) // Output: 18/05/2021
+val date = LocalDate.now()
+val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+val dateString = date.format(formatter)
+println(dateString) // output: 20/10/2021
+```
 ```
 
-Si può anche utilizzare il metodo `parse()` della classe `DateTimeFormatter` per convertire una stringa in un oggetto `LocalDate` o `LocalDateTime`.
+Possiamo specificare il formato della stringa utilizzando le lettere corrispondenti ai diversi componenti della data, come ad esempio `dd` per il giorno, `MM` per il mese o `yyyy` per l'anno.
 
+Possiamo anche utilizzare questa stessa logica per convertire un oggetto `Date` in una stringa:
+
+```
 ```Kotlin
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.text.SimpleDateFormat
 
-// Creazione di un oggetto DateTimeFormatter per specificare il formato della data
-val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-
-// Creazione di una stringa con una data nel formato specificato
-val dataString: String = "28/09/2021"
-
-// Utilizzo del metodo parse() per convertire la stringa in un oggetto LocalDate
-val data: LocalDate = LocalDate.parse(dataString, formatter)
-
-println(data) // Output: 2021-09-28
+val date = Date()
+val formatter = SimpleDateFormat("dd/MM/yyyy")
+val dateString = formatter.format(date)
+println(dateString) // output: 20/10/2021
+```
 ```
 
-## Deep Dive
+## Approfondimento
 
-Oltre al metodo `format()` e `parse()`, la classe `DateTimeFormatter` offre molti altri metodi utili per la manipolazione delle date. Alcuni di questi metodi sono:
+La classe `DateTimeFormatter` in Kotlin offre molte opzioni per formattare le date in modo personalizzato. Oltre ai caratteri utilizzati nell'esempio precedente, possiamo anche utilizzare `hh` per le ore, `mm` per i minuti e `ss` per i secondi.
 
-- `getAvailableDateTimeFormats()`: restituisce una lista di tutti i formati disponibili per la formattazione delle date.
-- `getLocalizedDateTimePattern()`: restituisce il formato della data localizzato in base alla lingua e alle impostazioni regionali del sistema operativo.
-- `formatTo()` e `parseToTemporalAccessor()`: metodi utili per la formattazione e la conversione di una data in oggetti di tipo `TemporalAccessor`.
+Inoltre, possiamo sfruttare il metodo `ofLocalizedDate` per ottenere una stringa formattata in base alle impostazioni regionali del nostro sistema.
 
-Oltre alla classe `DateTimeFormatter`, Kotlin offre altre classi come `SimpleDateTimeFormatter` e `DateTimeFormatterBuilder` per la gestione delle date.
+## Vedi Anche
 
-## Vedi anche
-
-- [Documentazione ufficiale di Kotlin sulla manipolazione delle date](https://kotlinlang.org/docs/datetime.html)
-- [Tutorial su come utilizzare le classi di manipolazione delle date in Kotlin](https://www.geeksforgeeks.org/date-and-time-manipulation-using-kotlin/) 
-- [Esempi pratici di conversione di date in stringhe con Kotlin](https://levelup.gitconnected.com/dates-and-time-in-kotlin-a0ecb86c6e3b)
+- Documentazione di Kotlin su la conversione di date: https://kotlinlang.org/docs/datetime.html
+- Tutorial su formattazione delle date in Kotlin: https://www.baeldung.com/kotlin-format-date-time
+- Domande frequenti sui formati di `DateTimeFormatter`: https://stackoverflow.com/questions/tagged/datetimeformatter?sort=faq

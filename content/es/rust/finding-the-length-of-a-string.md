@@ -1,50 +1,49 @@
 ---
 title:    "Rust: Encontrando la longitud de una cadena"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En Rust, encontrar la longitud de una cadena de texto es una habilidad fundamental que puede ayudarte a comprender mejor cómo funcionan los datos en un programa y cómo manipularlos de manera efectiva. Además, esta es una tarea frecuente en la programación, por lo que es importante comprender cómo hacerlo en Rust.
+En la programación, a menudo necesitamos conocer la longitud de una cadena de caracteres. Ya sea para validar una entrada de usuario o para realizar operaciones específicas en una cadena, es una tarea común en muchos programas. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en Rust y algunas cosas interesantes a tener en cuenta durante el proceso.
 
 ## Cómo hacerlo
 
-Para encontrar la longitud de una cadena de texto en Rust, puedes utilizar el método `.len()`. Este método devuelve la cantidad de bytes en una cadena, lo que es equivalente a su longitud. Aquí hay un ejemplo de cómo usarlo:
+Para encontrar la longitud de una cadena en Rust, podemos utilizar el método `len()` disponible para cualquier tipo de dato `String`. Veamos un ejemplo:
 
 ```Rust
-let cadena = "¡Hola mundo!";
-let longitud = cadena.len();
-println!("La longitud de la cadena es: {}", longitud);
+let mi_cadena = "¡Hola mundo!";
+let longitud = mi_cadena.len();
+
+println!("La longitud de la cadena es {}", longitud);
+
+// Output: La longitud de la cadena es 12
 ```
-**Salida:** La longitud de la cadena es: 12
+
+Como se puede ver, el método `len()` devuelve un valor de tipo `usize`, que representa el número de bytes en la cadena. Si queremos obtener la longitud en caracteres, podemos utilizar el método `chars()` y luego contar la cantidad de elementos en el iterador resultante. Por ejemplo:
+
+```Rust
+let mi_cadena = "¡Hola mundo!";
+let cantidad = mi_cadena.chars().count();
+
+println!("La cantidad de caracteres en la cadena es {}", cantidad);
+
+// Output: La cantidad de caracteres en la cadena es 11
+```
+
+Aquí es importante tener en cuenta que el método `count()` devuelve un `usize` también, por lo que es importante tener en cuenta las limitaciones de este tipo de datos al trabajar con cadenas de longitud extrema.
 
 ## Profundizando
 
-Es importante mencionar que `.len()` cuenta el número de bytes en una cadena y no el número de caracteres. Esto puede ser confuso si estás trabajando con cadenas multibyte. Para contar el número de caracteres en una cadena, puedes utilizar el método `.chars().count()` de la siguiente manera:
+Es importante tener en cuenta que en Rust, las cadenas son representadas internamente como slices (`&str`) y no como arrays de caracteres (`[char]`). Esto significa que cuando trabajamos con cadenas, en realidad estamos trabajando con referencias a una secuencia de caracteres y no con los caracteres en sí mismos. Por lo tanto, al encontrar la longitud de una cadena, en realidad estamos encontrando la longitud de la referencia a esa cadena.
 
-```Rust
-let cadena = "¡Hola mundo!";
-let caracteres = cadena.chars().count();
-println!("La cantidad de caracteres en la cadena es: {}", caracteres);
-```
-**Salida:** La cantidad de caracteres en la cadena es: 11
-
-Otra forma de encontrar la longitud de una cadena de texto es utilizando un bucle `for`. Esto es especialmente útil si necesitas hacer algún otro procesamiento en cada carácter de la cadena. Aquí hay un ejemplo de cómo se vería:
-
-```Rust
-let cadena = "¡Hola mundo!";
-let mut contador = 0;
-for _ in cadena.chars() {
-    contador += 1
-}
-println!("La longitud de la cadena es: {}", contador);
-```
-**Salida:** La longitud de la cadena es: 11
+También es importante mencionar que debido a que las cadenas en Rust son inmutables, no podemos modificar su contenido directamente. Por lo tanto, al trabajar con cadenas mutables, es recomendable convertirlas a tipo `String` antes de realizar cualquier operación de modificación, como por ejemplo, encontrar la longitud.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre el tipo de datos `str`](https://doc.rust-lang.org/std/primitive.str.html)
-- [Tutorial de Rust en español](https://diegorbaquero.github.io)[
-- [Rust en 5 minutos](https://www.rust-lang.org/es-ES/)
+- [Documentación oficial de Rust sobre el tipo `String`](https://doc.rust-lang.org/std/string/index.html)
+- [Tutorial de Rust en español](https://www.rust-lang.org/es-ES/learn/get-started)
+- [Ejemplos de código de Rust en GitHub](https://github.com/rust-lang/rust-by-example)

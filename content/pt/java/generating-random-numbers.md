@@ -1,56 +1,65 @@
 ---
 title:    "Java: Gerando números aleatórios"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que gerar números aleatórios pode ser útil
 
-Gerar números aleatórios é uma tarefa importante em programação para diversos propósitos, desde jogos até simulações de Monte Carlo. Com poucas linhas de código, podemos adicionar elementos de aleatoriedade aos nossos programas e torná-los mais dinâmicos e interessantes.
+Gerar números aleatórios é uma tarefa comum em programação Java, e pode ser útil em diversas situações. Pode ser utilizado para criar senhas ou códigos de verificação, simular situações em jogos ou em testes de software, entre outras possibilidades.
 
-## Como Fazer
+## Como gerar números aleatórios em Java
+
+Para gerar números aleatórios em Java, podemos utilizar a classe `Random` presente na biblioteca padrão da linguagem. Vamos ver um exemplo de como utilizar essa classe para gerar 10 números aleatórios entre 1 e 100:
 
 ```Java
-// Importando a classe Random
 import java.util.Random;
 
-// Criando um objeto da classe Random
-Random rand = new Random();
+public class RandomExample {
 
-// Gerando um número inteiro aleatório entre 0 e 10
-int num = rand.nextInt(11);
-System.out.println("Número aleatório: " + num);
+    public static void main(String[] args) {
 
-// Gerando um número real aleatório entre 0 e 1
-double num2 = rand.nextDouble();
-System.out.println("Número aleatório: " + num2);
+        // Criando uma instância da classe Random
+        Random random = new Random();
 
-// Gerando um número longo aleatório entre 0 e 100
-long num3 = rand.nextLong(101);
-System.out.println("Número aleatório: " + num3);
+        // Gerando e imprimindo 10 números aleatórios entre 1 e 100
+        for (int i = 0; i < 10; i++) {
+            int randomNumber = random.nextInt(100) + 1; // range de 1 a 100
+            System.out.println(randomNumber);
+        }
+    }
+}
 ```
 
-**Saída:**
+A saída desse código pode ser algo como:
 
 ```
-Número aleatório: 7
-Número aleatório: 0.562453
-Número aleatório: 92
+57
+12
+89
+33
+45
+77
+98
+6
+24
+50
 ```
 
-A classe `Random` em Java nos permite gerar diferentes tipos de números aleatórios utilizando seus métodos `nextInt()`, `nextDouble()` e `nextLong()`. Podemos especificar o intervalo de números que desejamos gerar passando-o como parâmetro para esses métodos.
+Além disso, a classe `Random` possui diversos outros métodos que permitem gerar números aleatórios em diferentes formatos, tais como `nextDouble()` para números decimais e `nextBoolean()` para valores booleanos.
 
-## Mergulho Profundo
+## Mergulho profundo: como os números aleatórios são gerados
 
-Quando criamos um objeto da classe `Random`, ele utiliza um valor chamado de "seed" (semente) para gerar os números aleatórios. Por padrão, esse valor é baseado no horário atual do sistema, mas também podemos especificar uma semente específica ao criar o objeto.
+A geração de números aleatórios em Java se baseia em algoritmos matemáticos que utilizam uma "semente" (um número inicial) e operações matemáticas para gerar uma sequência aparentemente aleatória de números. No entanto, essa sequência não é realmente aleatória, pois pode ser reproduzida se soubermos a semente utilizada e o algoritmo utilizado.
 
-Além disso, podemos utilizar a classe `Math` em conjunto com a classe `Random` para gerar números aleatórios com diferentes distribuições, como por exemplo a distribuição normal ou a distribuição uniforme.
+Para evitar esse problema, a classe `Random` utiliza um gerador de números pseudoaleatórios (PRNG) que combina a semente com diferentes fatores, como o tempo do sistema e os valores anteriores gerados. Isso torna a sequência mais imprevisível e difícil de ser reproduzida.
 
-Também é importante lembrar que os números gerados pela classe `Random` não são realmente aleatórios, mas sim pseudoaleatórios, pois seguem um algoritmo previsível. Por isso, é importante utilizar outras técnicas para aumentar a complexidade da geração de números e torná-los mais próximos da aleatoriedade.
+É importante ressaltar que a sequência de números gerada por um PRNG não é realmente aleatória, mas sim "aparentemente" aleatória. Portanto, não deve ser utilizada em situações onde se requer alta segurança ou precisão.
 
-## Veja Também
+## Veja também
 
-- [Java Random Class](https://www.geeksforgeeks.org/java-random-class-examples/)
-- [Java Math Class](https://www.tutorialspoint.com/java/lang/math_random.htm)
-- [How Random Number Generators Work in Java](https://dzone.com/articles/how-random-number-generators-work-in-java)
+- [Java Random Class Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
+- [Random number generation in Java](https://www.geeksforgeeks.org/random-number-generation-in-java/)
+- [Understanding Random Numbers in Java](https://www.baeldung.com/java-random)

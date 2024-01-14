@@ -1,57 +1,50 @@
 ---
 title:    "Bash: Merkkijonojen yhdistäminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Ennen kuin aloitamme puhumaan merkkijonojen yhdistämisestä Bash-ohjelmoinnissa, on tärkeää ymmärtää, miksi se on hyödyllistä. Merkkijonot ovat perustavanlaatuinen osa ohjelmointia ja ne ovat tärkeitä muun muassa tietojen käsittelyssä ja tiedostojen hallinnassa. Yhdistämällä merkkijonoja voimme helposti luoda uusia sanallisia ilmauksia ja tehdä monimutkaisia muutoksia olemassa oleviin merkkijonoihin.
+Miksi joku haluaisi yhdistää merkkijonoja ohjelmointia tehdessään? Yhdistäminen tai konkatenointi on tärkeä osa ohjelmointia, sillä se mahdollistaa monimutkaisempien merkkijonojen luomisen yksinkertaisista paloista.
 
-## Miten?
+## Kuinka
 
-Merkkijonojen yhdistäminen Bash-ohjelmoinnissa on helppoa. Voimme käyttää joko pisteoperaattoria tai liitännäisoperaattoria (+). Pisteoperaattori yhdistää kaksi merkkijonoa yhdeksi, kun taas liitännäisoperaattori lisää merkkijonon perään toisen merkkijonon.
+Yhdistäminen tapahtuu Bashissa käyttämällä oikea- ja vasenpuolista lainausmerkkiä merkkijonojen ympärillä ja plussamerkkiä niiden välissä. Esimerkiksi:
 
 ```Bash
-#Pisteoperaattori
 string1="Hei"
 string2="maailma"
-echo $string1$string2 #Tulostaa "Heimaailma"
-
-#Liitännäisoperaattori
-string="Tervetuloa"
-greeting="!"
-echo $string$greeting #Tulostaa "Tervetuloa!"
+echo $string1$string2 #tulostaa "Heimaailma"
 ```
 
-## Syvemmälle
-
-Bashilla on myös mahdollista yhdistää merkkijonoja muuttujien kanssa. Tämä on hyödyllistä, kun haluamme luoda joustavia ja muokattavia merkkijonoja. Voimme käyttää muuttujia pisteoperaattorin tai liitännäisoperaattorin kanssa tai käyttää muotoiltua tulostusta.
+Voit myös yhdistää useita merkkijonoja käyttämällä lisäksi toista plussamerkkiä. Esimerkiksi:
 
 ```Bash
-#Pisteoperaattori muuttujan kanssa
-user="John"
-greeting="Hei"
-echo $greeting $user #Tulostaa "Hei John"
-
-#Liitännäisoperaattori muuttujan kanssa
-name="Maria"
-age="25"
-echo "Minun nimeni on $name ja olen $age vuotta vanha." #Tulostaa "Minun nimeni on Maria ja olen 25 vuotta vanha."
-
-#Muotoiltu tulostus
-country="Suomi"
-capital="Helsinki"
-printf "Maan nimi on %s ja pääkaupunki on %s." $country $capital #Tulostaa "Maan nimi on Suomi ja pääkaupunki on Helsinki."
+string1="Tämä on "
+string2="hyödyllinen "
+string3="artikkeli"
+echo $string1$string2$string3 #tulostaa "Tämä on hyödyllinen artikkeli"
 ```
+
+## Syvässä luotaamisessa
+
+Bashissa yhdistäminen ei rajoitu vain muuttujien väliseen yhdistämiseen. Voit myös yhdistää merkkijonoja funktion palauttamiin arvoihin. Esimerkiksi:
+
+```Bash
+function tervehdi() {
+  echo "Hei!"
+}
+tervehdi=" " #huomaa välilyönti
+echo $(tervehdi)maailma #tulostaa "Hei maailma"
+```
+
+Lisäksi voit käyttää erilaisia erikoismerkkejä, kuten \n uuden rivin luomiseen yhdistettäessä merkkijonoja.
 
 ## Katso myös
 
-Tässä artikkelissa käsiteltiin perusteita merkkijonojen yhdistämisestä Bash-ohjelmoinnissa. Jatkamalla opiskelua näistä peruselementeistä, voit luoda monimutkaisia ohjelmia, jotka käsittelevät merkkijonoja ja tiedostoja. Lisätietoa Bash-ohjelmoinnista ja sen käyttämistä merkkijonojen käsittelyssä voit löytää seuraavista resursseista:
-
-[Merkkijonojen käsittely Bashissa (Linux Hint)](https://linuxhint.com/processing-strings-bash/)
-
-[Muuttujat ja muotoiltu tulostus Bashissa (The Linux Documentation Project)](https://tldp.org/LDP/abs/html/varsubn.html)
-
-[Bash-ohjelmoinnin perusteet (The Linux Documentation Project)](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Bashin virallinen opas merkkijonojen käsittelystä](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Opi Bashin perusteet](https://flaviocopes.com/bash-scripting/)
+- [Merkkijonojen konkatenointiohjeet eri ohjelmointikielissä](https://www.computerhope.com/issues/ch001721.htm)

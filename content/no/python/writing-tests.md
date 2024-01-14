@@ -1,44 +1,55 @@
 ---
-title:    "Python: Skrive tester"
+title:    "Python: Skriver tester"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å skrive tester er en viktig del av å være en effektiv programmerer. Ved å skrive tester, kan du sikre at koden din fungerer som den skal og redusere sjansene for feil og bugs. I tillegg kan det hjelpe deg å forstå koden din bedre og gjøre den mer modulær og vedlikeholdbar.
 
-## Hvordan du gjør det
-Å skrive tester i Python er en enkel prosess som kan gjøres ved hjelp av innebygde moduler som `unittest` og `pytest`. La oss si at vi har følgende funksjon som skal legge sammen to tall:
+Når man skriver kode, kan det være fristende å hoppe over testingen og bare fokusere på å få programmet til å kjøre. Men å skrive tester er en essensiell del av en god utviklingsprosess, og kan spare deg for mye tid og frustrasjon på sikt.
+
+## Slik gjør du det
+
+Det finnes flere ulike tester du kan skrive for å forsikre deg om at koden din fungerer som den skal. La oss se på et enkelt eksempel med en funksjon som adderer to tall:
 
 ```Python
-def add(x, y):
-    return x + y
+def adder(a, b):
+    return a + b
+
+assert adder(2, 3) == 5
+assert adder(5, 5) == 10
 ```
 
-For å teste denne funksjonen, kan vi skrive følgende kode:
+Her har vi skrevet to assert-statements som sjekker funksjonen vår med ulike input. Hvis testene feiler vil vi få en AssertionError, og vi kan da gå tilbake og rette opp feilen. På denne måten kan vi raskt finne og fikse feil i koden vår før vi publiserer den til produksjon.
+
+Et annet viktig aspekt ved testing er å sørge for at koden vår fungerer med ulike scenarier og input. For eksempel kan vi bruke en innebygd modul i Python som heter unittest, og skrive mer omfattende tester for vår adder-funksjon:
 
 ```Python
 import unittest
 
-class TestAddFunction(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(2, 2), 4)
-        self.assertEqual(add(5, 10), 15)
+class TestAdder(unittest.TestCase):
+
+    def test_adder(self):
+        self.assertEqual(adder(3, 4), 7)
+        self.assertEqual(adder(-5, 5), 0)
+        self.assertNotEqual(adder(2, 2), 6)
+        self.assertRaises(TypeError, adder, 2, 'string')
+
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Her bruker vi `unittest`-modulen til å opprette en testklasse og en testfunksjon som sjekker om `add`-funksjonen returnerer forventede resultater med forskjellige input. Du kan kjøre denne testen ved å kjøre følgende kommando i terminalen:
-
-`python -m unittest test_file.py`
-
-Dette vil kjøre testen og gi deg en melding om alt gikk bra eller om det var noen feil.
+Her har vi brukt testmetoder fra unittest-modulen for å sammenligne forventet output med det faktiske outputet fra funksjonen vår. Vi kan også teste for spesifikke feil, som for eksempel når vi gir inn en string som input i stedet for tall. Ved å strukturere testkoden vår på denne måten kan vi enkelt legge til flere tester etterhvert som koden vår blir mer kompleks.
 
 ## Dypdykk
-Det finnes mange mer avanserte metoder og teknikker når det kommer til å skrive tester. Du kan for eksempel bruke forskjellige assert-metoder for å sjekke for forskjellige typer input og output. I tillegg kan du utføre såkalte "edge case testing" der du tester for uvanlige eller ekstreme situasjoner som kan føre til feil i koden din.
 
-Det er også verdt å nevne at en god test bør være uavhengig av andre tester og samtidig gi deg informasjon om hvor og hvorfor en test eventuelt feiler. Dette kan hjelpe deg med å finne og fikse feil i koden din mer effektivt.
+Det finnes flere ulike former for testing, som for eksempel enhetstesting, integrasjonstesting og end-to-end testing. Det kan også være lurt å kombinere manuell testing med automatiserte tester for å få et mer helhetlig bilde av koden vår.
+
+En annen viktig del av testing er å sørge for at testene våre er pålitelige og gir oss riktig informasjon. Det kan være lurt å ha en balanse mellom å skrive for mange og for få tester, og å sørge for at testene våre dekker alle mulige utfall av koden vår.
 
 ## Se også
-- [unittest-dokumentasjon](https://docs.python.org/3/library/unittest.html)
-- [pytest-dokumentasjon](https://docs.pytest.org/en/stable/)
-- [Writing Effective Tests in Python (engelsk)](https://realpython.com/python-testing/)
+
+- [Pytest documentation](https://docs.pytest.org/)
+- [Unit testi

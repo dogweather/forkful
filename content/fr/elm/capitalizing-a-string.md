@@ -1,34 +1,38 @@
 ---
-title:    "Elm: Capitaliser une chaîne de caractères"
+title:    "Elm: Mettre en majuscule une chaîne de caractères"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles vous pourriez vouloir utiliser la fonction `String.capitalize` en Elm. Peut-être que vous avez besoin de mettre en majuscule le premier caractère d'une chaîne de caractères pour des raisons de présentation ou peut-être avez-vous besoin de capitaliser un nom dans un formulaire. Quelle que soit la raison, la fonction `String.capitalize` est un outil utile à avoir dans votre boîte à outils de programmation Elm.
+La capitalisation des chaînes de caractères est une tâche courante en programmation, surtout lorsqu'il s'agit de manipuler du texte. Heureusement, en utilisant Elm, cette tâche peut être facilement accomplie grâce à une fonction intégrée.
 
-## Comment faire 
+## Comment procéder
 
-La fonction `String.capitalize` est extrêmement simple à utiliser. Il suffit de lui passer une chaîne de caractères en tant que paramètre et elle renverra cette même chaîne avec le premier caractère en majuscule. Par exemple :
+Pour capitaliser une chaîne de caractères en Elm, il suffit d'utiliser la fonction `String.toUpper` et de lui donner la chaîne de caractères que vous souhaitez capitaliser en tant qu'argument. Voici un exemple de code pour une chaîne de caractères en minuscules :
 
-```Elm 
-String.capitalize "elm" 
+```Elm
+string = "bonjour"
+String.toUpper string
 ```
 
-Résultat : "Elm"
+Lorsque vous exécutez ce code, la sortie sera :
 
-Il est important de noter que la fonction `String.capitalize` ne modifie pas la chaîne de caractères d'origine, elle renvoie simplement une nouvelle chaîne avec le premier caractère en majuscule. Cela peut être utile si vous avez besoin de garder la chaîne d'origine pour une utilisation ultérieure.
+```Elm
+"BONJOUR"
+```
 
-## Plongée en profondeur 
+Si vous souhaitez capitaliser seulement la première lettre d'une chaîne de caractères, vous pouvez utiliser la fonction `String.capitalize` au lieu de `String.toUpper`.
 
-La fonction `String.capitalize` utilise la méthode `String.toUpper` pour capitaliser le premier caractère de la chaîne. Cela signifie qu'elle peut être utilisée pour capitaliser non seulement les lettres de l'alphabet, mais aussi les caractères spéciaux tels que les accents et les caractères Unicode.
+## Plongeon en profondeur
 
-De plus, si la chaîne de caractères comporte déjà des caractères en majuscule, la fonction `String.capitalize` ne les changera pas et se contentera de capitaliser le premier caractère non majuscule.
+Il est important de noter que la fonction `String.toUpper` et la fonction `String.capitalize` ne modifient pas directement la chaîne de caractères d'origine, mais renvoient plutôt une nouvelle chaîne de caractères avec les modifications souhaitées. Cela permet de conserver l'intégrité de la chaîne d'origine et d'éviter des erreurs inattendues dans votre code.
 
-## Voir aussi 
+De plus, ces fonctions ne fonctionnent que pour les caractères alphabétiques. Les chiffres, les symboles ou les espaces blancs ne seront pas affectés par ces fonctions.
 
-- Documentation officielle de la fonction `String.capitalize` : https://package.elm-lang.org/packages/elm/core/latest/String#capitalize 
-- Tutoriel Elm pour débutants : https://elmprogramming.com/ 
-- Communauté Elm France : https://elm-france.org/
+## Voir aussi
+- Documentation sur la fonction `String.toUpper` : https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
+- Documentation sur la fonction `String.capitalize` : https://package.elm-lang.org/packages/elm/core/latest/String#capitalize

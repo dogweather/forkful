@@ -1,78 +1,73 @@
 ---
 title:    "C++: Verificando se um diretório existe"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que: Verificando se um diretório existe
+## Por que 
 
-Verificar se um diretório existe pode ser uma tarefa essencial em vários projetos de programação C++. Saber se um diretório existe antes de tentar acessá-lo ou manipular seus arquivos pode evitar erros e bugs em seu código.
+Verificar se um diretório existe é uma tarefa importante em programação, pois garante que o programa possa acessar os arquivos e pastas necessários para sua execução. Além disso, essa verificação também pode ajudar a evitar erros e bugs no código.
 
-# Como fazer: Exemplos de código para verificar um diretório existente
+## Como fazer
 
-Para verificar se um diretório existe em seu código C++, você pode usar a função "opendir()" da biblioteca <dirent.h>. Vamos dar uma olhada em um exemplo básico:
+Para verificar se um diretório existe em C++, podemos usar a função `opendir()` da biblioteca `<dirent.h>`, que abre um diretório e retorna um ponteiro para ele. Em seguida, podemos usar a função `closedir()` para fechá-lo. Veja um exemplo de código abaixo:
 
 ```C++
 #include <iostream>
 #include <dirent.h>
 
-using namespace std;
+int main() {
+    // diretório a ser verificado
+    const char* path = "/home/user/Downloads";
 
-int main()
-{
-    dirent *directory;
-    DIR *folder = opendir("caminho/para/o/diretório"); //Substitua pelo caminho do diretório que deseja verificar
-    
-    if (folder)
-    {
-        while ((directory = readdir(folder)) != NULL) // Loop para percorrer todos os arquivos do diretório
-        {
-           cout << directory->d_name << endl; //Imprime o nome dos arquivos 
-        }
-        
-        closedir(folder); //Fecha o diretório
+    // abrindo o diretório
+    DIR* dir = opendir(path);
+
+    if (dir) {
+        std::cout << "Diretório existe.";
+        closedir(dir);
+    } else {
+        std::cout << "Diretório não existe.";
     }
 
     return 0;
 }
 ```
-Ao executar este código, se o diretório existir, você verá uma lista com os nomes de todos os arquivos presentes no diretório. Caso contrário, não haverá saída, indicando que o diretório não existe.
 
-Outra forma de verificar a existência de um diretório é usando a função "std::filesystem::is_directory()" da biblioteca <filesystem> do C++17. Vamos dar uma olhada em um exemplo com esta função:
+Neste exemplo, usamos a função `opendir()` para abrir o diretório "/home/user/Downloads" e armazenamos o seu ponteiro em `dir`. Em seguida, verificamos se esse ponteiro é válido, indicando que o diretório existe. Caso contrário, o diretório não existe. Por fim, usamos a função `closedir()` para fechar o diretório.
+
+A saída deste código seria: "Diretório existe", caso o diretório exista, ou "Diretório não existe", caso contrário.
+
+## Mergulho profundo
+
+Uma maneira de verificar se um diretório existe em um nível mais profundo seria usar a função `stat()` da biblioteca `<sys/stat.h>`. Esta função retorna informações sobre um determinado arquivo ou diretório, como seu tamanho, permissão e data de modificação. Veja um exemplo de código usando esta função:
 
 ```C++
 #include <iostream>
-#include <filesystem>
+#include <sys/stat.h>
 
-using namespace std;
+int main() {
+    // diretório a ser verificado
+    const char* path = "/home/user/Downloads";
 
-int main()
-{
-    string path = "caminho/para/o/diretório"; //Substitua pelo caminho do diretório que deseja verificar
-    
-    if (filesystem::is_directory(path))
-    {
-        cout << "O diretório existe!" << endl;
-    }
-    else
-    {
-        cout << "O diretório não existe." << endl;
+    // verificando informações sobre o diretório
+    struct stat info;
+    if (stat(path, &info) == 0 && S_ISDIR(info.st_mode)) {
+        std::cout << "Diretório existe.";
+    } else {
+        std::cout << "Diretório não existe.";
     }
 
     return 0;
 }
 ```
-Neste exemplo, a função "is_directory()" retorna um valor booleano, indicando se o diretório existe ou não. Se o diretório existir, a mensagem "O diretório existe!" será impressa no console. Se não existir, a mensagem "O diretório não existe." será impressa.
 
-# Mergulho profundo: Mais informações sobre a verificação de diretórios
+No código acima, usamos a função `stat()` para obter informações sobre o diretório "/home/user/Downloads" e armazená-las na estrutura `info`. Em seguida, verificamos se o modo de arquivo (`st_mode`) é um diretório (`S_ISDIR`) antes de imprimir a mensagem adequada.
 
-Em ambos os exemplos acima, é importante notar que os caminhos para os diretórios devem ser passados corretamente para que a verificação funcione corretamente. Além disso, é importante lembrar que a função "opendir()" só funciona com diretórios no sistema de arquivos atual, enquanto a função "is_directory()" pode ser usada com caminhos de rede.
+## Veja também
 
-Além disso, também é possível verificar a existência de um diretório usando a função "access()" da biblioteca <unistd.h>. No entanto, esta função só funciona no sistema operacional Unix e pode ser menos eficiente do que as outras opções.
-
-# Ver também
-
-- Documentação da função "opendir()" - https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/opendir.htm
-- Documentação da função "is_directory()" - https://en.cppreference.com/w/cpp/filesystem/is_directory
-- Documentação da função "access()" - https://www.gnu.org/software/libc/manual/html_node/Testing-File-Access.html
+- [Documentação da função opendir()](https://www.man7.org/linux/man-pages/man3/opendir.3.html)
+- [Documentação da função closedir()](https://www.man7.org/linux/man-pages/man3/closedir.3.html)
+- [Documentação da função stat()](https://www.man7.org/linux/man-pages/man2/stat.2.html)

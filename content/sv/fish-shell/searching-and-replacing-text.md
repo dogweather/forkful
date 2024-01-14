@@ -1,46 +1,52 @@
 ---
-title:    "Fish Shell: Söka och ersätta text"
+title:    "Fish Shell: Sökning och ersättning av text"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en vanlig uppgift för många programmerare. Det kan vara till nytta när man behöver ändra flera förekomster av ett visst ord eller när man vill rensa bort viss information från en fil. Med hjälp av Fish Shell kan man göra denna process snabbare och enklare.
+Att söka och ersätta text är en vanlig uppgift inom programmering, särskilt om man arbetar med stora mängder data eller repetitiva uppgifter. Med hjälp av Fish Shell kan du enkelt automatisera dessa uppgifter och spara tid och energi.
 
 ## Hur man gör
 
-Fisk Shell har ett inbyggt kommando som heter `sed` som står för "stream editor". Detta kommando kan användas för att söka och ersätta text i en fil eller en ström av data. Det går till på följande sätt:
+För att söka och ersätta text i Fish Shell kan du använda kommandot `sed`. Detta kommando tar två argument - söksträngen och ersättningssträngen - och tillämpar det på en given fil eller input. Här är ett exempel på hur det kan se ut:
 
 ```
-Fish Shell 1.0.0
-$ echo "Hello World!" > test.txt
-$ sed 's/World/Fish/g' test.txt
-Hello Fish!
+Fish Shell > sed 's/Hej/Hello/' textfil.txt
 ```
 
-I detta exempel använder vi `sed` för att ersätta ordet "World" med "Fish" i vår fil `test.txt`. Vi gör detta genom att använda kommandot `s/World/Fish/g`. Detta betyder att vi vill söka efter "World" och ersätta med "Fish" globalt, det vill säga i hela filen.
-
-Man kan även använda regex eller reguljära uttryck för mer avancerade sökningar. Till exempel om man vill söka och ersätta alla siffror i en fil kan man göra följande:
+I detta exempel kommer alla instanser av "Hej" i textfilen att ersättas med "Hello". Om du istället vill göra en global sökning och ersättning i hela filen, kan du lägga till flaggan `g` för globalt:
 
 ```
-Fish Shell 1.0.0
-$ echo "I have 100 apples!" > test.txt
-$ sed 's/[0-9]/X/g' test.txt
-I have XXX apples!
+Fish Shell > sed 's/Hej/Hello/g' textfil.txt
 ```
 
-I detta fall använder vi uttrycket `[0-9]` för att söka efter alla siffror och ersätta dem med bokstaven X.
+Du kan också använda regelbundna uttryck för att söka och ersätta text. Till exempel, om du vill ersätta alla siffror i en fil med "X", kan du använda följande kommando:
+
+```
+Fish Shell > sed 's/[0-9]/X/' textfil.txt
+```
 
 ## Djupdykning
 
-När man använder `sed` i Fish Shell finns det några olika flaggor man kan använda för att anpassa sök- och ersättningsprocessen. Några vanliga flaggor är `-i` som gör ändringarna direkt i den ursprungliga filen, `-e` som låter dig använda flera sök- och ersättningsuttryck och `-r` som möjliggör användningen av regex utan att behöva använda `[]` runt uttrycken.
+En viktig sak att notera är att `sed` inte ändrar den ursprungliga filen, utan skriver ut den ändrade versionen till standardoutput. Om du vill spara de ändrade resultaten i en ny fil, kan du använda operatören `>`:
 
-Det går också att kombinera `sed` med andra kommandon i Fish Shell för att göra mer avancerade sök- och ersättningsoperationer. Man kan till exempel använda `grep` för att söka efter en viss text i en fil och sedan använda `sed` för att ersätta den hittade texten.
+```
+Fish Shell > sed 's/Hej/Hello/' textfil.txt > ny_textfil.txt
+```
+
+Det finns också flera användbara flaggor som du kan använda med `sed` för att kontrollera utdata och andra inställningar. En av de mer användbara är flaggan `-i` som låter dig ändra den ursprungliga filen. Till exempel, om du vill ändra "Hej" till "Hello" i `textfil.txt` kan du skriva:
+
+```
+Fish Shell > sed -i 's/Hej/Hello/' textfil.txt
+```
+
+Detta kommer att ändra filen direkt utan att skriva ut någon output. Notera dock att denna flagga inte finns tillgänglig på alla system.
 
 ## Se även
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
-- [sed manual](https://www.gnu.org/software/sed/manual/sed.html)
-- [RegEx-tutorial för nybörjare](https://regexone.com/)
+- [Fish Shell dokumentation för `sed`](https://fishshell.com/docs/current/commands.html#sed)
+- [En djupdykning i regelbundna uttryck](https://www.regular-expressions.info/)

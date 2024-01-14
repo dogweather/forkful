@@ -1,55 +1,49 @@
 ---
 title:    "Elm: 获取当前日期"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要获取当前日期？
+## 为什么
 
-在编写程序时，经常需要获取当前的日期。无论是用于记录日志、生成报告还是其他用途，获取当前日期都是非常有用的。在 Elm 中，有几种方法可以获取当前日期，让我们来看看如何实现。
+获取当前日期是编程中一个常见的需求，它可以帮助我们记录事件、创建日历或者进行数据分析。在这篇文章中，我们将学习如何使用Elm编程语言来获取当前日期。
 
-## 如何获取当前日期？
+## 如何做
 
-在 Elm 中，我们可以通过 `Time.now` 函数来获取当前日期。让我们来看看下面的代码示例：
-
-```Elm
-import Time
-
-currentTime : Time.Posix
-currentTime = Time.now
-
-main : Html msg
-main =
-  text (toString currentTime)
-```
-
-上面的代码将输出类似于 `1562819723` 的时间戳，代表当前的日期和时间。我们也可以使用 `Time.millisToUtc` 函数来将这个时间戳转换为人类可读的日期。
+获取当前日期在Elm中非常简单。我们只需要使用Elm的内置Date模块中的now函数，它将返回一个表示当前日期的Date数据类型。以下是一个简单的例子：
 
 ```Elm
-import Time
+import Date exposing (now)
 
-currentTime : Time.Posix
-currentTime = Time.now
-
-utcTime : Time.Posix
-utcTime = Time.millisToUtc currentTime
-
-main : Html msg
-main =
-  text (Time.toUtcString utcTime)
+date = now
 ```
 
-上面的代码将输出类似于 `2019-07-11T16:35:23Z` 的日期和时间字符串，这是 UTC 格式的时间。我们还可以使用 `Time.toLocalString` 来将时间戳转换为本地时间格式。
+运行以上代码，你将得到类似于下面这样的输出：
 
-## 深入了解获取当前日期
+```Elm
+Js.Date.fromTime 159870190536
+```
 
-在 Elm 中，`Time.now` 函数返回的是一个 `Time.Posix` 类型的值，它表示从 1970 年 1 月 1 日至今经过的秒数。我们可以使用 `Time.fromMillis` 函数来将时间戳转换为 `Time.Posix` 类型。
+这个结果是一个Js.Date类型的值，它包含了当前日期和时间的信息。
 
-另外，我们也可以使用 `Time.toYearMonthDay` 函数来提取具体的年、月、日等信息。`Time` 模块还提供了许多其他方便的函数来处理日期和时间，建议在需要时仔细阅读文档。
+## 深入探讨
+
+让我们来深入了解一下获取当前日期的原理。首先，我们需要知道的是，Js.Date类型是一个表示Unix时间戳的值。Unix时间戳是从1970年1月1日起经过的秒数，它被广泛用于记录时间和日期。
+
+在Date模块中，now函数会调用Date.fromTime函数来获取当前时间并将其转换为Unix时间戳。因此，我们可以通过手动调用fromTime函数来实现相同的效果。以下是一个示例代码：
+
+```Elm
+import Date exposing (fromTime)
+
+now = fromTime (Time.millisToPosix 0)
+```
+
+这里使用了一个名为Time的内置模块，它提供了一些有用的函数来处理时间和日期相关的操作。我们将Unix时间戳0转换为Posix时间，然后传递给fromTime函数。Posix时间是指从1970年1月1日起经过的毫秒数。
 
 ## 参考链接
 
-- Elm 官方文档：https://guide.elm-lang.org/
-- Elm 中文社区：https://elm-china.org/
-- `Time` 模块文档：https://package.elm-lang.org/packages/elm/time/latest/
+- Elm官方文档：https://elm-lang.org/docs
+- Elm中的时间和日期：https://elmprogramming.com/time-and-date.html
+- 时间和日期的Unix时间戳：https://www.unixtimestamp.com/

@@ -1,38 +1,39 @@
 ---
-title:    "Go: Muunna päivämäärä merkkijonoksi"
+title:    "Go: Muuntaa päivämäärä merkkijonoksi"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monissa ohjelmointiprojekteissa saattaa olla tarve muuntaa päivämäärä merkkijonoksi. Tässä blogikirjoituksessa tarkastelemme miten tämä voidaan tehdä Go-ohjelmointikielellä.
+
+Go-ohjelmointikielen yksi kätevä ominaisuus on kyky muuntaa päivämäärä tekstiksi. Tämä voi olla hyödyllistä esimerkiksi käyttäjien nähdessä päivämäärän selkeässä muodossa tai tiedot tallennettaessa tietokantaan.
 
 ## Miten
-Go-ohjelmointikielessä on olemassa valmiita funktioita päivämäärän muuntamiseen merkkijonoksi. Käytetään esimerkiksi aikaa 17.10.2021.
 
-```Go
-package main
+Ei ole yksinkertaista tapaa muuntaa Go-ohjelmassa päivämäärää merkkijonoksi, vaan se vaatii muutaman vaiheen suorittamista. Ensimmäinen askel on määritellä päivämäärämuuttuja ja sitten käyttää aikaisempaa pakettia Go-ohjelmassa, joka sisältää ylimääräisiä työkaluja ja toimintoja. Käytämme time-pakettia tähän esimerkkiin.
 
-import (
-    "fmt"
-    "time"
-)
+```
+Go func main() {
+    // Määritä päivämäärämuuttuja
+    date := time.Date(2021, time.June, 4, 12, 30, 0, 0, time.UTC)
 
-func main() {
-    t := time.Date(2021, time.October, 17, 0, 0, 0, 0, time.UTC)
-    // t muutetaan merkkijonoksi halutun muodon mukaan
-    s := t.Format("02.01.2006")
-    fmt.Println(s) // Tulostaa 17.10.2021
-    // Voidaan myös käyttää muita muotoja, esimerkiksi:
-    s2 := t.Format("Mon. Jan 2 2006")
-    fmt.Println(s2) // Tulostaa Sun. Oct 17 2021
+    // Käytä format-metodia muuntaaksesi päivämäärä merkkijonoksi
+    fmt.Println(date.Format("Mon January 2, 2006"))
 }
 ```
 
-## Syvemmälle
-Go:ssa päivämäärän muuntaminen merkkijonoksi perustuu "layout"-merkkijonoon, jossa määritellään haluttu muoto. Esimerkiksi "02.01.2006" vastaa muotoa päivä.kuukausi.vuosi. Voit tarkastella kaikkia mahdollisia "layout"-merkkijonoja Go:n aikapakettiin dokumentoinnista. On myös mahdollista määrittää omia päivämäärän muotoja.
+Tämä yksinkertainen esimerkki tulostaa "Fri June 4, 2021". Huomaa, että käytämme tiettyä formaattia "Mon January 2, 2006", joka vastaa tarkalleen päivämäärän näyttämistä. Voit vaihtaa tämän haluamasi formaattia vastaavaksi, kun valitset haluamasi tiedot.
+
+## Syvällinen sukellus
+
+Aikaisempi esimerkki on melko yksinkertainen, mutta Go tarjoaa myös muita käyttökelpoisia toimintoja päivämäärän muuntamiseen. Voit esimerkiksi muuttaa päivämäärän UNIX-aikaleimaksi käyttämällä Unix-metodia ja annettu päivämäärä muunnetaan desimaaliluvuksi, joka edustaa sekunteina kuluneita aikoja UNIX-ajan alusta.
+
+Voit myös muuttaa päivämäärän eri aikavyöhykkeelle time-paketissa olevien toimintojen avulla. Tämä on erityisen hyödyllistä, jos työskentelet kansainvälisten käyttäjien kanssa tai haluat muuntaa ajan paikalliseen aikavyöhykkeeseen ennen tallennusta.
 
 ## Katso myös
+
 - [Go:n aikapaketin dokumentaatio](https://pkg.go.dev/time)
-- [Go:n aikapaketin esimerkkejä](https://golang.org/pkg/time/#pkg-examples)
+- [Unix-aikaleima Google Developer](https://developers.google.com/analytics/devguides/reporting/realtime/v3/reference/data/realtime/get#examples)
+- [Aikavyöhykkeen muuttaminen Go-ohjelmassa TutorialEdge] (https://tutorialedge.net/golang/manipulating-dates-go/)

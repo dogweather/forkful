@@ -1,69 +1,56 @@
 ---
 title:    "Java: 检查目录是否存在"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要检查目录是否存在
+# 为什么
 
-在Java编程中，有时候我们需要检查一个特定的目录是否存在。这可能是因为我们需要在该目录下创建新文件，或者读取已存在的文件。检查一个目录是否存在可以帮助我们避免程序出现错误，同时也可以提升程序的健壮性。
+程序员们常常需要检查一个文件夹是否存在，这是因为有时候他们需要在代码中创建新的文件夹或者处理现有的文件夹。如果一个文件夹不存在，那么相应的代码就会出现错误。
 
-## 如何检查目录是否存在
+# 如何
 
-检查目录是否存在可以使用Java的File类中的exists()方法。下面是一个简单的例子：
+在Java中，要检查一个文件夹是否存在，我们使用File类的exists()方法。让我们来看一个简单的例子：
 
 ```Java
 import java.io.File;
 
-public class CheckDirectory {
+public class CheckDirectoryExists {
     public static void main(String[] args) {
-        // 定义一个目录路径
-        String directoryName = "C:\\Users\\User\\Documents\\myDirectory";
 
-        // 创建一个File对象
-        File file = new File(directoryName);
+        // 创建一个File对象，指向想要检查的文件夹
+        File directory = new File("C:/Users/User/Documents");
 
-        // 使用exists()方法检查目录是否存在
-        if (file.exists()) {
-            System.out.println("目录存在。");
+        // 使用exists()方法来检查文件夹是否存在
+        if (directory.exists()) {
+            System.out.println("文件夹存在");
         } else {
-            System.out.println("目录不存在。");
+            System.out.println("文件夹不存在");
         }
     }
 }
 ```
 
-运行以上代码，输出结果为 "目录不存在。" 如果该目录存在，则会输出 "目录存在。"
+输出结果：
 
-## 深入了解检查目录是否存在
-
-除了使用exists()方法，我们也可以使用isDirectory()方法来检查一个目录是否存在。这个方法会检查给定路径是否为一个目录，如果是则返回true，否则返回false。下面是一个使用isDirectory()方法的例子：
-
-```Java
-import java.io.File;
-
-public class CheckDirectory {
-    public static void main(String[] args) {
-        // 定义一个目录路径
-        String directoryName = "C:\\Users\\User\\Documents\\myDirectory";
-
-        // 创建一个File对象
-        File file = new File(directoryName);
-
-        // 使用isDirectory()方法检查目录是否存在
-        if (file.isDirectory()) {
-            System.out.println("该路径是一个目录。");
-        } else {
-            System.out.println("该路径不是一个目录。");
-        }
-    }
-}
+``` 
+文件夹存在
 ```
 
-运行以上代码，输出结果为 "该路径是一个目录。"
+# 深入学习
+exists()方法是通过检查给定路径是否存在来判断文件夹是否存在的。它可以用来检查任何类型的文件，包括文件夹和文本文件。如果文件夹不存在，exists()方法会返回false。
 
-## 参考链接
+除了exists()方法，Java中还有其他一些方法可以用来检查文件夹是否存在，比如isDirectory()方法和isFile()方法。这些方法都在File类中定义。
 
-- [Java文档：File类](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [运行例子的实时演示](https://repl.it/@mandarintest/Java-check-directory-exists)
+另外，如果需要创建新的文件夹，我们可以使用mkdir()方法或者mkdirs()方法。mkdir()方法用来创建单层文件夹，mkdirs()方法用来创建多层文件夹。
+
+# 查看也许
+
+- [Java File类文档](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [How to check if a directory exists in Java](https://attacomsian.com/blog/check-if-directory-exists-java)
+
+# 总结
+
+通过使用exists()方法和其他相关方法，我们可以轻松地检查一个文件夹是否存在，并在需要时创建新的文件夹。这对于编写Java代码来处理文件非常重要。希望这篇文章对您有所帮助！

@@ -1,44 +1,41 @@
 ---
-title:    "Haskell: Extraction de sous-chaînes"
+title:    "Haskell: Extraction de sous-chaînes."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous êtes un programmeur Haskell, vous savez probablement déjà que le langage offre de puissants outils pour gérer les chaînes de caractères. Cependant, il peut parfois être utile d'extraire une partie spécifique d'une chaîne pour des raisons telles que le traitement de données ou la manipulation de texte. Dans cet article, nous allons plonger dans la façon d'extraire des sous-chaînes en Haskell et voir pourquoi cela peut être utile.
+## Pourquoi 
 
-## Comment faire
-Pour extraire une sous-chaîne en Haskell, nous utilisons la fonction ```take``` et ```drop```. Voici un exemple de code qui utilise ces fonctions pour extraire une sous-chaîne de la chaîne "Bonjour Monde" :
+Extraction de sous-chaînes en Haskell : pourquoi est-ce utile ? 
 
-```Haskell
-let str = "Bonjour Monde"
-let subs = take 7 (drop 2 str)
-print subs
+Extraction de sous-chaînes est une fonctionnalité importante en programmation, en particulier lorsqu'il s'agit de traiter des chaînes de caractères complexes. En Haskell, il existe plusieurs méthodes pour extraire des sous-chaînes, chacune offrant ses propres avantages et possibilités. Dans cet article, nous allons vous montrer pourquoi la manipulation de sous-chaînes est utile et comment le faire en Haskell de manière efficace. 
+
+## Comment faire 
+
+La fonction `drop` est souvent utilisée pour extraire une sous-chaîne à partir d'une chaîne de caractères en Haskell. Cette fonction prend en compte un nombre spécifique de caractères à supprimer à partir du début de la chaîne. Par exemple, si vous souhaitez extraire une sous-chaîne à partir du troisième caractère d'une chaîne, vous pouvez utiliser la fonction ainsi : 
+
+```Haskell 
+myString = "Bonjour le monde" 
+extractedSubstring = drop 2 myString 
 ```
 
-La sortie de ce code serait ```jour Mo```, car nous avons ignoré les deux premiers caractères et pris les sept caractères suivants. Nous pouvons également utiliser la fonction ```dropEnd``` pour ignorer les caractères à la fin de la chaîne. Par exemple :
+La sortie de ce code serait `njour le monde`, car le troisième caractère est `j` et nous avons utilisé `drop 2` pour sauter les deux premiers caractères `B` et `o`. 
 
-```Haskell
-let str = "Sous-chaîne"
-let subs = take 9 (dropEnd 4 str)
-print subs
-```
+Il existe également d'autres fonctions utiles pour extraire des sous-chaînes en Haskell, telles que `take` qui prend un nombre spécifique de caractères à partir du début de la chaîne, `splitAt` qui sépare une chaîne en deux parties à un index donné, et `substring` qui permet de spécifier un index de début et de fin pour extraire la sous-chaîne souhaitée. 
 
-La sortie serait "Sous-ch", car nous avons ignoré les quatre derniers caractères et pris les neuf premiers. Nous pouvons également utiliser la fonction ```takeWhile``` pour extraire une sous-chaîne jusqu'à ce qu'une certaine condition soit remplie. Par exemple :
+## Plongée en profondeur 
 
-```Haskell
-let str = "98765abcd"
-let subs = takeWhile isDigit str
-print subs
-```
+En Haskell, les sous-chaînes sont représentées par le type de données `String`, qui est en fait un synonyme de ` [Char]` (liste de caractères). Cela signifie que les fonctions de manipulation de listes peuvent également être utilisées pour manipuler des sous-chaînes. Par exemple, la fonction `reverse` peut être utilisée pour inverser une sous-chaîne ou la fonction `map` pour appliquer une fonction à chaque caractère de la sous-chaîne. 
 
-La sortie serait "98765", car nous avons pris tous les caractères tant qu'ils sont des chiffres. En outre, nous pouvons également utiliser des conditions plus complexes avec la fonction ```dropWhile```.
+Il est également important de noter que les sous-chaînes en Haskell sont des valeurs immuables, ce qui signifie qu'elles ne peuvent pas être modifiées après leur création. Cela peut sembler contre-intuitif pour certains programmeurs, mais cela correspond au fonctionnement général de la programmation fonctionnelle en Haskell. 
 
-## Plongée en profondeur
-En plus des fonctions mentionnées ci-dessus, Haskell offre également des outils tels que ```splitAt``` pour séparer une chaîne en deux parties à un certain index, et ```break``` pour séparer une chaîne jusqu'à ce qu'un certain caractère soit rencontré. De plus, pour ceux qui ont besoin de gérer des chaînes multilingues, il existe des fonctions spéciales telles que ```takeText``` et ```takeWhile1``` qui prennent en compte les différences de caractères entre les langues.
+## Voir aussi 
 
-## Voir aussi
-- [Documentation Haskell sur les chaînes de caractères](https://www.haskell.org/tutorial/string.html)
-- [Tutoriel vidéo sur l'utilisation des chaînes de caractères en Haskell](https://www.youtube.com/watch?v=mzM7170XJEE)
-- [Discussion sur la manipulation de chaînes en Haskell](https://stackoverflow.com/questions/20995945/substring-in-haskell)
+Pour en savoir plus sur l'extraction de sous-chaînes en Haskell, vous pouvez consulter les ressources suivantes : 
+
+- [Documentation officielle pour la fonction `drop`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:drop) 
+- [Tutoriel vidéo sur la manipulation de listes en Haskell](https://www.youtube.com/watch?v=92S4zgXN17o) 
+
+Maintenant que vous savez comment extraire des sous-chaînes en Haskell, vous pouvez les utiliser dans vos propres projets pour manipuler efficacement des chaînes de caractères. N'hésitez pas à explorer d'autres fonctions et méthodes pour trouver celle qui conviendra le mieux à votre cas d'utilisation. Bonne programmation !

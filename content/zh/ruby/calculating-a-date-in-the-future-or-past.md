@@ -1,56 +1,44 @@
 ---
 title:    "Ruby: 计算未来或过去的日期"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-
-有时候，我们需要计算未来或过去的日期，这可能是因为做年度计算或制作时间表。在Ruby中，我们可以轻松地使用内置的Date类来进行日期计算，让我们来看看如何做到这一点吧！
+为什么我们要计算未来或过去的日期呢？这可能是因为我们需要在一个特定的日期做出决定，或者我们需要知道某个事件发生的具体日期。不管原因如何，计算日期的功能对于编程来说是非常有用的。
 
 ## 怎么做
+要在Ruby中计算未来或过去的日期，我们需要使用Date类和它的相关方法。下面是一个简单的代码示例，我们将以当前日期为基础，计算一周后的日期，并将结果打印出来：
 
-首先，我们需要导入Date类，然后使用`.today`方法来获取当前日期。现在，让我们来看一个例子，假设我们需要计算未来7天的日期，可以这样做：
-
-```
+```Ruby
 require 'date'
-
 today = Date.today
 future_date = today + 7
-
-puts "The date in 7 days will be: #{future_date}"
+puts future_date
 ```
 
-输出将会是：
+运行上面的程序，你将得到类似这样的输出：2019-02-18。我们也可以使用上面的代码来计算过去的日期，只需要改变“+”符号为“-”符号即可。
 
-```
-The date in 7 days will be: 2021-05-04
-```
+## 深入探讨
+在计算日期时，我们需要考虑闰年、月份的天数等因素。例如，如果我们想要计算未来某个月的最后一天，我们可以使用下面的代码：
 
-同理，我们也可以计算过去的日期，比如计算7天前的日期，只需要改变一下操作符即可：
-
-```
+```Ruby
 require 'date'
-
 today = Date.today
-past_date = today - 7
-
-puts "The date 7 days ago was: #{past_date}"
+future_date = today + 1.month
+last_day = future_date.end_of_month
+puts last_day
 ```
 
-输出将会是：
+这里的end_of_month方法会自动计算指定月份的最后一天，无论这个月份有多少天。
 
-```
-The date 7 days ago was: 2021-04-20
-```
+## 参考资料
+- [Ruby日期计算教程](https://www.rubyguides.com/2015/03/ruby-date-time-tutorial/)
+- [Date类文档](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html)
+- [Ruby on Rails中的日期计算](https://guides.rubyonrails.org/active_support_core_extensions.html#time-and-date-calculations)
 
-## 深入了解
-
-除了简单的加减操作之外，我们还可以使用`.next`和`.prev`方法来计算下一个或上一个日期。另外，Date类还提供了其他有用的方法，比如`.strftime`可以根据指定的格式将日期转换为字符串。如果想要了解更多关于Date类的信息，可以参考[Ruby官方文档](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)。
-
-## 参考链接
-
-- [Ruby官方文档](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby Date类的使用方法](https://www.rubyguides.com/2019/10/ruby-date/)
-- [如何在Ruby中计算未来和过去的日期](https://www.geeksforgeeks.org/how-to-calculate-future-and-past-date-using-ruby/)
+## 参见
+- [Markdown教程](https://www.markdownguide.org/basic-syntax/)
+- [Markdown语法指南](https://ruby-china.org/wiki/markdown-syntax)（中文版）

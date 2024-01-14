@@ -1,54 +1,54 @@
 ---
 title:    "Ruby: Iniciando um novo projeto"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto?
+# Por que iniciar um novo projeto em Ruby?
 
-Começar um novo projeto pode parecer assustador no início, mas é uma ótima maneira de colocar em prática suas habilidades de programação e aprender coisas novas. Além disso, pode ser uma oportunidade de criar algo útil ou divertido que pode ser compartilhado com outras pessoas.
+Iniciar um novo projeto em Ruby pode ser uma ótima escolha para aqueles que estão procurando uma linguagem de programação flexível e fácil de aprender. Além disso, a comunidade de desenvolvedores Ruby é bastante ativa e há uma abundância de recursos disponíveis para ajudá-lo em sua jornada de aprendizado.
 
-## Como iniciar um novo projeto
+# Como começar
 
-Começar um novo projeto em Ruby é simples. Basta seguir os passos abaixo:
+Para começar um novo projeto em Ruby, você precisará primeiro ter o Ruby instalado em seu computador. Em seguida, siga as etapas abaixo para configurar seu ambiente de desenvolvimento:
 
-```Ruby 
-# 1. Crie uma nova pasta para o seu projeto
-mkdir novo_projeto
+```ruby
+# Instalar o Ruby através de um gerenciador de pacotes ou diretamente do site oficial (https://www.ruby-lang.org/pt/)
 
-# 2. Navegue para a pasta do projeto
-cd novo_projeto
+# Verificar se a instalação foi bem-sucedida com o comando abaixo:
+ruby -v
 
-# 3. Inicie um novo arquivo Ruby
-touch main.rb
+# Instalar o bundler, uma ferramenta útil para gerenciar as dependências de seu projeto:
+gem install bundler
 
-# 4. Abra o arquivo no editor de sua escolha
-code main.rb
+# Criar um diretório para o seu projeto:
+mkdir meu_projeto
 
-# 5. Escreva seu código no arquivo e salve
-puts "Olá, mundo!"
+# Acessar o diretório criado:
+cd meu_projeto
 
-# 6. Execute o código
-ruby main.rb
-
-# Output: Olá, mundo!
+# Inicializar um arquivo Gemfile:
+bundle init
 ```
 
-Com esses passos simples, você já terá iniciado seu novo projeto em Ruby!
+Com o ambiente devidamente configurado, agora é hora de codificar seu projeto em Ruby!
 
-## Aprofundando-se no assunto
+# Mergulhando mais fundo
 
-Iniciar um novo projeto também pode envolver alguns outros fatores, como escolher a melhor estrutura de pastas para o seu projeto e decidir quais bibliotecas ou frameworks usar. Além disso, pode ser útil pesquisar e seguir boas práticas de programação para garantir um código de qualidade.
+Ao iniciar um novo projeto em Ruby, é importante entender a estrutura de um projeto típico em Ruby. A maioria dos projetos seguirá uma estrutura semelhante à abaixo:
 
-Outro aspecto importante é determinar o objetivo do seu projeto. Você está criando um aplicativo web? Uma ferramenta de linha de comando? Um jogo? Ter uma ideia clara do que você deseja alcançar com seu projeto pode ajudá-lo a tomar decisões durante o processo de desenvolvimento.
+- Pasta `lib`: essa é a pasta onde você colocará todo o código Ruby que você escrever para seu projeto.
+- Pasta `spec`: aqui é onde você escreverá seus testes para garantir que seu código está funcionando corretamente.
+- Arquivo `Gemfile`: este arquivo irá listar todas as dependências de seu projeto.
+- Arquivo `Rakefile`: este arquivo contém ações que podem ser executadas em seu projeto, como executar testes ou criar documentação.
 
-## Veja também
+Você também pode querer considerar o uso de algumas gems populares em seu projeto, como o framework de desenvolvimento web Ruby on Rails ou o framework de testes RSpec.
 
-Aqui estão alguns links úteis para quem está começando um novo projeto em Ruby:
+# Veja também
 
-- [Tutorial de Ruby para iniciantes](https://www.rubyguides.com/2015/02/ruby-programming-tutorial/)
-- [Documentação oficial do Ruby](https://ruby-doc.org/)
-- [Best practices em Ruby](https://github.com/uohzxela/ruby-best-practices)
-
-Espero que este artigo tenha ajudado a esclarecer por que e como iniciar um novo projeto em Ruby. Agora é hora de colocar suas habilidades em prática e criar algo incrível! Boa sorte!
+- [Instalando o Ruby](https://www.ruby-lang.org/pt/documentation/installation/)
+- [Documentação do Ruby](https://ruby-doc.org/)
+- [Ruby on Rails](https://rubyonrails.org/)
+- [RSpec](https://rspec.info/)

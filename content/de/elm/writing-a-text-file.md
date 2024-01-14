@@ -1,50 +1,33 @@
 ---
-title:    "Elm: Das Schreiben einer Textdatei"
+title:    "Elm: Schreiben einer Textdatei"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben einer Textdatei ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte. Es ermöglicht uns, Daten in einem einfachen und lesbaren Format zu speichern, das auch von anderen Programmen leicht gelesen werden kann. In dieser Anleitung werden wir uns anschauen, wie man mit Elm Textdateien erstellt und bearbeitet.
+Das Schreiben von Textdateien ist eine wichtige Fähigkeit für jeden Programmierer. Mit Elm, einer funktionalen Programmiersprache, ist es einfach und effizient, Textdateien zu erstellen. In diesem Blog-Beitrag werden wir uns ansehen, warum das Schreiben von Textdateien in Elm wichtig ist und wie man es am besten macht.
 
-## Wie geht das?
+## Wie geht es
 
-Um eine neue Textdatei in Elm zu erstellen, können wir die Funktion `Text.toFile` verwenden. Diese erhält zwei Argumente: den Dateipfad, an dem die Datei gespeichert werden soll, und den Inhalt der Datei. Sehen wir uns ein Beispiel an:
+Um eine Textdatei in Elm zu schreiben, verwenden wir die Funktion `File.write`. In diesem Codebeispiel erstellen wir eine Datei mit dem Namen "HalloWelt.txt" und schreiben den Text "Hallo Welt!" hinein.
 
-```Elm
-import Text
-
-main =
-  let
-    myFile = Text.toFile "meineDatei.txt" "Dies ist der Inhalt meiner Datei."
-  in
-  Text.write myFile
+```
+Elm File.write "HalloWelt.txt" "Hallo Welt!"
 ```
 
-Nach Ausführung dieses Programms wird eine neue Datei namens "meineDatei.txt" mit dem angegebenen Inhalt erstellt. Wenn wir `myFile` in der Konsole ausgeben, erhalten wir den Dateipfad, unter dem die Datei gespeichert wurde.
+Die Ausgabe dieses Codes wird in der Datei "HalloWelt.txt" gespeichert und der Inhalt wird "Hallo Welt!" sein.
 
-Um eine bereits existierende Datei zu bearbeiten, können wir die `Text.fromFile` Funktion verwenden. Diese liest den Inhalt einer Datei und speichert ihn in einer `Text` Variable, die wir dann bearbeiten können. Hier ist ein Beispiel:
+## Tiefer eintauchen
 
-```Elm
-import Text
+Es gibt viele weitere Möglichkeiten, Textdateien mit Elm zu schreiben. Wir können zum Beispiel die Funktion `File.append` verwenden, um Text an eine bereits bestehende Datei anzuhängen. Wir können auch die Funktionen `File.read` und `File.readLines` verwenden, um den Inhalt einer Textdatei in unser Programm einzulesen. Mit diesen Funktionen können wir Dateien effizient verarbeiten und nutzen.
 
-main =
-  let
-    readFile = Text.fromFile "meineDatei.txt"
-    writeFile = Text.toFile "meineDatei.txt" ("Geänderter Inhalt: " ++ readFile)
-  in
-  Text.write writeFile
-```
-
-In diesem Beispiel lesen wir den Inhalt der Datei "meineDatei.txt" aus und fügen ihm die Zeichenkette "Geänderter Inhalt: " hinzu. Dann speichern wir den neuen Inhalt wieder in derselben Datei.
-
-## Tiefergehender Einblick
-
-Das Erstellen und Bearbeiten von Textdateien ist in Elm relativ einfach, da diese Sprache standardmäßig eine implementierte Unterstützung für Textverarbeitung bietet. Man sollte jedoch beachten, dass diese Funktionen asynchron arbeiten, was bedeutet, dass potenziell viele Dateien gleichzeitig geöffnet und bearbeitet werden können. Deshalb sollten wir immer darauf achten, Dateien zu schließen, nachdem wir sie bearbeitet haben, um sicherzustellen, dass keine Ressourcen verschwendet werden.
+Weitere Informationen zur Arbeit mit Textdateien in Elm finden Sie in der offiziellen Elm-Dokumentation.
 
 ## Siehe auch
 
-- Elm Dokumentation: [Text.toFile](https://package.elm-lang.org/packages/elm/core/latest/Text#toFile)
-- Elm Dokumentation: [Text.fromFile](https://package.elm-lang.org/packages/elm/core/latest/Text#fromFile)
+- [Elm Documentation on File I/O](https://guide.elm-lang.org/io/files.html)
+- [Elm-Lang Nutzerforum](https://discourse.elm-lang.org/)
+- [Elm Blog](https://elm-lang.org/blog)

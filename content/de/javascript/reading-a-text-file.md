@@ -1,37 +1,51 @@
 ---
 title:    "Javascript: Eine Textdatei lesen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Textdateien sind eine häufige Art von Dateien, die in der Programmierung verwendet werden. Sie enthalten oft wichtige Informationen wie Konfigurationen, Daten oder Textinhalte. Das Lesen von Textdateien ist daher ein wichtiger Teil der Entwicklung von Javascript-Programmen, da es ermöglicht, diese Informationen zu erhalten und zu nutzen.
+# Warum
 
-## Wie man Textdateien liest
-Das Lesen einer Textdatei in Javascript kann mit der `readFile` Funktion aus der Node.js-Bibliothek erreicht werden. Diese Funktion akzeptiert zwei Parameter: den Pfad zur Datei und eine Callback-Funktion. Die Callback-Funktion erhält zwei Parameter: einen möglichen Fehler und die Daten aus der Datei.
+Das Lesen einer Textdatei ist ein grundlegendes Konzept in der Programmierung und ein wichtiger Schritt bei der Verarbeitung von Daten. Es ermöglicht uns, Informationen aus einer Datei zu extrahieren und in unserem Code zu manipulieren.
 
-```
+# Wie Geht Das
+
+In Javascript gibt es verschiedene Methoden, um eine Textdatei zu lesen. Eine Möglichkeit ist die Verwendung der `readFileSync()` Funktion aus dem `fs` Modul.
+
+In unserem Beispiel haben wir eine Datei namens "liste.txt" mit einer Liste von Zahlen, jeweils in einer neuen Zeile. Unser Ziel ist es, diese Zahlen in ein Array zu speichern und sie dann in der Konsole auszugeben.
+
 ```Javascript
 const fs = require('fs');
-fs.readFile('./textdatei.txt', 'utf8', (error, data) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(data);
-  }
+
+// Lese die Textdatei und speichere den Inhalt in einer Variable
+const text = fs.readFileSync('liste.txt', 'utf-8');
+
+// Trenne den Inhalt an jeder neuen Zeile und speichere es in einem Array
+const array = text.split('\n');
+
+// Gib jedes Element des Arrays in der Konsole aus
+array.forEach(element => {
+    console.log(element);
 });
+
+// Ausgabe:
+// 1
+// 2
+// 3
+// 4
+// 5
 ```
 
-Die `readFile` Funktion gibt den Inhalt der Datei als String zurück. Um diesen Inhalt weiterzuverarbeiten, können string-Manipulationsfunktionen wie `split` oder `replace` verwendet werden.
+# Tief Tauchen
 
-## Tiefere Einblicke
-Es ist wichtig zu beachten, dass die `readFile` Funktion asynchron ist, was bedeutet, dass sie im Hintergrund ausgeführt wird und die Ausführung des restlichen Codes nicht blockiert. Daher wird die Verwendung einer Callback-Funktion empfohlen, um auf die Daten aus der Datei zuzugreifen, sobald diese verfügbar sind.
+Neben der `readFileSync()` Funktion gibt es noch andere Möglichkeiten, eine Textdatei zu lesen, wie z.B. die Verwendung von `readFile()` oder `createReadStream()` Funktionen. Diese bieten zusätzliche Funktionen und Flexibilität beim Lesen von Dateien.
 
-Ein weiterer wichtiger Punkt ist die Verwendung von `utf8` als zweitem Parameter, um sicherzustellen, dass die Daten als Zeichenkette anstelle von Binärdaten zurückgegeben werden. Wenn keine Kodierung angegeben wird, gibt die Funktion eine Buffer-Instanz zurück, die spezielle Methoden zum Lesen der Daten erfordert.
+Es ist auch wichtig zu beachten, dass beim Lesen einer Datei möglicherweise Fehler auftreten können. Deshalb ist es ratsam, immer eine Fehlerbehandlung in den Code einzubauen, um sicherzustellen, dass unser Programm ordnungsgemäß ausgeführt wird.
 
-## Siehe auch
-Weitere Informationen zum Lesen von Textdateien in Javascript:
-- [Node.js Dokumentation zur readFile Funktion](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [Tutorial zum Lesen von Textdateien in Javascript](https://www.geeksforgeeks.org/javascript-tutorial-read-and-write-to-text-file/)
-- [Blogbeitrag zum Lesen und Manipulieren von Textdateien in Javascript](https://codingexplained.com/coding/javascript/manipulating-text-files-javascript)
+# Siehe Auch
+
+- [Node.js Dokumentation - File System Modul](https://nodejs.org/api/fs.html)
+- [W3Schools - Reading files with Node.js](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Tutorialspoint - Node.js File System](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)

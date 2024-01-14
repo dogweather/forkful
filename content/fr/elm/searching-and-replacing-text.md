@@ -1,50 +1,31 @@
 ---
 title:    "Elm: Recherche et remplacement de texte"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous êtes-vous déjà retrouvé dans la situation où vous deviez remplacer du texte à plusieurs endroits dans votre code ? Cela peut être fastidieux et prendre beaucoup de temps, surtout si vous devez le faire manuellement. Heureusement, avec Elm, il existe une solution simple et efficace pour effectuer ces modifications rapidement et en toute simplicité.
+La recherche et le remplacement de texte sont des tâches courantes en programmation, notamment lors de la manipulation de grandes quantités de données ou de la création de scripts automatisés. En utilisant Elm, un langage de programmation fonctionnel, ces tâches peuvent être réalisées de manière efficace et élégante.
 
-# Comment Faire
+## Comment Faire
 
-Pour rechercher et remplacer du texte dans votre code Elm, il suffit d'utiliser la fonction `String.replace` avec une chaîne de caractères à remplacer et une chaîne de caractères de remplacement. Par exemple, si vous souhaitez remplacer toutes les occurrences de "Hello" par "Bonjour", vous pouvez utiliser la fonction de la manière suivante :
+Pour effectuer une recherche et un remplacement de texte en Elm, il suffit d'utiliser la fonction `String.replace` en spécifiant la chaîne de caractères à rechercher et la nouvelle valeur à insérer. Par exemple, si nous voulons remplacer "Bonjour" par "Salut" dans la chaîne de caractères "Bonjour tout le monde !", voici à quoi ressemblerait le code :
 
-```Elm 
-String.replace "Hello" "Bonjour" "Hello world!"
+```Elm
+String.replace "Bonjour" "Salut" "Bonjour tout le monde !" -- renverra "Salut tout le monde !"
 ```
 
-Cela renverra la chaîne de caractères "Bonjour world!" en remplaçant toutes les occurrences de "Hello" par "Bonjour". Vous pouvez également utiliser cette fonction pour remplacer du texte dans une variable, comme ceci :
+Il est également possible de spécifier le nombre de fois que la chaîne de caractères doit être remplacée en utilisant un troisième argument. Par exemple, si nous voulons remplacer uniquement la première occurrence de "Bonjour" par "Salut", nous pouvons utiliser `String.replace "Bonjour" "Salut" "Bonjour tout le monde !" 1`.
 
-```Elm 
-let 
-    variable = "Hello world!" 
-in 
-String.replace "Hello" "Bonjour" variable 
-```
+## Plongée en Profondeur
 
-Cela remplacera également toutes les occurrences de "Hello" par "Bonjour" dans la variable. Vous pouvez également utiliser une chaîne de caractères de remplacement vide si vous souhaitez supprimer simplement le texte spécifié. Par exemple, si vous souhaitez supprimer toutes les occurrences de "Bonjour" dans une chaîne de caractères, vous pouvez utiliser la fonction avec une chaîne de caractères de remplacement vide : 
+La fonction `String.replace` utilise des expressions régulières pour effectuer la recherche et le remplacement de texte. Cela signifie que vous pouvez utiliser des caractères spéciaux pour cibler des motifs spécifiques dans une chaîne de caractères, comme par exemple `String.replace "H[eé]llo" "Bonjour" "Hello, World !"` remplacera à la fois "Hello" et "Héllo" par "Bonjour". Vous pouvez également utiliser des groupes de capture pour récupérer des parties spécifiques de la chaîne de caractères d'origine et les utiliser dans le texte de remplacement.
 
-```Elm 
-String.replace "Bonjour" "" "Bonjour à tous !"
-```
+## Voir Aussi
 
-Cela renverra simplement la chaîne de caractères vide, supprimant ainsi toutes les occurrences de "Bonjour".
-
-# Plongée Approfondie 
-
-La fonction `String.replace` est utile pour effectuer des modifications de base, mais elle peut également prendre en charge des schémas de recherche plus complexes. Par exemple, vous pouvez utiliser une expression régulière et une fonction de remplacement pour remplacer du texte. Voici un exemple :
-
-```Elm 
-String.replace (Regex.regex "Hello(.)?") (\_ -> "Bonjour") "Hello world!"
-```
-
-Cela utilise une expression régulière pour capturer le caractère suivant "Hello" et le remplace par "Bonjour". Dans cet exemple, cela remplacera "Hell" par "Bonjour".
-
-# Voir Aussi
-
-- [Documentation officielle pour la fonction `String.replace` dans Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Tutoriel sur les expressions régulières en Elm](https://www.elm-tutorial.org/en/05-regexes/)
+- Documentation officielle sur la fonction `String.replace` en Elm : https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- Tutoriel sur les expressions régulières en Elm : https://elmprogramming.com/regular-expressions.html
+- Exemples pratiques de recherche et de remplacement de texte en Elm : https://github.com/elm-explorations/regex#examples

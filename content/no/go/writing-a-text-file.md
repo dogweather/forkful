@@ -1,19 +1,18 @@
 ---
-title:    "Go: Skrive en tekstdokument"
+title:    "Go: Skrive en tekstfil"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Skal du lære å programmere i Go? Hvis du er interessert i å utvikle raske og effektive applikasjoner, er Go et utmerket valg. I tillegg er det et enkelt å lære språk, som gjør det ideelt for både nybegynnere og erfarne utviklere.
+Å skrive en tekstfil er en essensiell del av programmering, spesielt når man jobber med å lagre og hente data. Det gir deg muligheten til å lagre informasjon permanent og gjøre den tilgjengelig for senere bruk. Tekstfiler kan også være nyttige for å lagre konfigurasjoner eller loggfiler for et program.
 
-Å skrive og lagre tekstfiler er en viktig del av programmering. Enten det er å lagre brukerinput eller å generere rapporter, er det viktig å kunne håndtere tekstfiler i Go.
+## Slik gjør du det
 
-## Hvordan
-
-For å skrive en tekstfil i Go, bruker du "os" pakken og dens "OpenFile" funksjon. Deretter kan du bruke "WriteString" eller "Write" funksjoner for å skrive teksten du vil lagre i filen. Her er et enkelt eksempel:
+For å skrive en tekstfil i Go, trenger du først å åpne en fil med navnet du ønsker å bruke og en skriveinnstilling. Deretter kan du bruke io-pakken til å skrive innhold til filen. Se eksempelet nedenfor:
 
 ```Go
 package main
@@ -21,32 +20,64 @@ package main
 import (
     "fmt"
     "os"
+    "io"
 )
 
 func main() {
-    fil, err := os.OpenFile("minFil.txt", os.O_CREATE | os.O_WRONLY, 0644)
-    defer fil.Close()
+    // Åpner filen "tekstfil.txt" for skriving
+    fil, err := os.Create("tekstfil.txt")
     if err != nil {
-        fmt.Println("Kunne ikke åpne filen.")
-        return
+        fmt.Println(err)
     }
+    defer fil.Close()
 
-    tekst := "Hei, dette er en testfil."
-    fil.WriteString(tekst)
+    // Skriver innhold til filen
+    tekst := "Dette er en tekst som vil bli lagret i filen."
+    _, err = io.WriteString(fil, tekst)
+    if err != nil {
+        fmt.Println(err)
+    }
 }
 ```
 
-Når du kjører dette programmet, vil det opprette en ny fil med navnet "minFil.txt" og skrive teksten "Hei, dette er en testfil." til den.
+Etter å ha kjørt programmet vil det bli opprettet en tekstfil med navnet "tekstfil.txt" og teksten vil bli lagt til i filen.
 
-## Dypdykk
+## Dykk dypere
 
-I linker-seksjonen nedenfor finner du flere ressurser for å lære mer om å skrive tekstfiler i Go. Det er også mulig å formatere teksten du skriver til filen ved å bruke "fmt" pakken i Go. Du kan lese mer om dette i dokumentasjonen.
+For å skrive mer avanserte tekstfiler, kan du bruke bufio-pakken til å lese og skrive linje for linje. Dette er spesielt nyttig når du jobber med store filer eller når du trenger å kontrollere skriveprosessen mer nøyaktig. Se eksempelet nedenfor:
 
-I tillegg er det viktig å sørge for at filen lukkes etter at den er brukt. Dette er derfor vi bruker "defer" i eksempelet ovenfor. Dette sikrer at filen blir lukket selv om det oppstår en feil under skriving. Å ikke lukke filer kan føre til minnelekkasjer og andre problemer.
+```Go
+package main
+
+import (
+    "fmt"
+    "os"
+    "bufio"
+)
+
+func main() {
+    // Åpner filen "tekstfil.txt" for skriving
+    fil, err := os.Create("tekstfil.txt")
+    if err != nil {
+        fmt.Println(err)
+    }
+    defer fil.Close()
+
+    // Skriver innhold til filen linje for linje
+    skriver := bufio.NewWriter(fil)
+    tekst := "Dette er en tekst som vil bli lagret i filen."
+    _, err = skriver.WriteString(tekst)
+    if err != nil {
+        fmt.Println(err)
+    }
+    skriver.Flush()
+}
+```
+
+Denne metoden gir deg mer kontroll over skriveprosessen og kan være nyttig i ulike situasjoner.
 
 ## Se også
 
-- [The Go Programming Language Official Documentation](https://golang.org/doc/)
-- [Writing Files in Go](https://www.golangprograms.com/how-to-create-file-write-string-append-csv-reading-files-examples.html)
-- [Formatted Output in Go](https://golangr.com/format-output-go/)
-- [Closing Files in Go](https://stackoverflow.com/questions/42732059/best-practice-for-closing-files-in-golang)
+- [Offisiell Go dokumentasjon om å skrive filer](https://golang.org/pkg/os/#File)
+- [En mer detaljert guide om å skrive tekstfiler i Go](https://medium.com/wesionary-team/text-file-operations-with-golang-675e1f3c254e)
+- [Golang for nybegynnere](https://www.golang-book.com/books/intro)

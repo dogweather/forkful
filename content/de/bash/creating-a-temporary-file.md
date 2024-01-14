@@ -1,50 +1,47 @@
 ---
 title:    "Bash: Erstellen einer temporären Datei"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
+Das Erstellen von temporären Dateien ist ein häufig verwendeter Vorgang in der Bash-Programmierung. Es ermöglicht Programmierern, schnell und effizient temporäre Dateien oder Verzeichnisse zu erstellen, die für spezifische Aufgaben oder Prozesse benötigt werden. Das Verwenden temporärer Dateien hilft auch dabei, die Systemressourcen effektiv zu verwalten und vor unerwünschten Speicherlecks zu schützen.
 
-In der Welt der Programmierung tauchen oft Konzepte oder Techniken auf, die auf den ersten Blick überflüssig erscheinen. Aber manchmal gibt es gute Gründe, bestimmte Dinge zu tun. Ein gutes Beispiel dafür ist die Erstellung von temporären Dateien in Bash-Skripten. Obwohl es auf den ersten Blick vielleicht nicht sinnvoll erscheint, eine temporäre Datei zu erstellen, kann dies in vielen Fällen die beste Lösung sein. In diesem Blog-Beitrag werden wir uns damit beschäftigen, warum man eine temporäre Datei in einem Bash-Skript erstellen sollte und wie man es am besten macht.
-
-## Wie geht das
-
-Um eine temporäre Datei in Bash zu erstellen, gibt es verschiedene Möglichkeiten. Die einfachste Methode ist die Verwendung des `mktemp` Befehls, der speziell dafür entwickelt wurde, temporäre Dateien zu erstellen. Hier ist ein einfaches Beispiel:
+# How To
+Das Erstellen einer temporären Datei in Bash ist relativ einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, in dem wir eine temporäre Datei erstellen und einen Text darin speichern:
 
 ```Bash
 #!/bin/bash
-tempfile=$(mktemp)
-echo "Dies ist eine Testdatei" > $tempfile
-cat $tempfile
+
+# Erstellen einer temporären Datei mit dem Namen "temp"
+temp=$(mktemp)
+
+# Schreibgeschützte Datei zum Speichern des Textes
+readonly text="Hallo, dies ist ein Beispieltext."
+
+# Schreibt den Text in die temporäre Datei
+echo "$text" > "$temp"
+
+# Zeigt den Inhalt der temporären Datei an
+cat "$temp"
 ```
 
-Der `mktemp` Befehl erstellt eine temporäre Datei mit einem eindeutigen Namen und speichert diesen Namen in der Variablen `tempfile`. Dann wird in die erstellte Datei geschrieben und schließlich mit dem `cat` Befehl der Inhalt der Datei angezeigt.
+Die Ausgabe für diesen Code wird folgendermaßen aussehen:
 
-Eine andere Möglichkeit ist die Verwendung des `trap` Befehls, um die temporäre Datei automatisch zu löschen, sobald das Skript beendet wird:
-
-```Bash
-#!/bin/bash
-tempfile=$(mktemp)
-trap "rm -f $tempfile" EXIT
-echo "Dies ist eine Testdatei" > $tempfile
-cat $tempfile
+```
+Hallo, dies ist ein Beispieltext.
 ```
 
-## Tiefer Einblick
+In diesem Beispiel verwenden wir die Befehle "mktemp" und "echo", um die temporäre Datei zu erstellen und Text darin zu speichern. Es ist wichtig, dass wir beim Erstellen einer temporären Datei auch die richtigen Berechtigungen setzen, um sicherzustellen, dass sie nur vom aktuellen Benutzer gelesen, geschrieben oder ausgeführt werden kann. Durch das Verwenden von "readonly" stellen wir sicher, dass die Datei nur im Lesezugriff ist und nicht versehentlich überschrieben werden kann.
 
-Jetzt fragst du dich vielleicht, warum man überhaupt eine temporäre Datei erstellen sollte, wenn man doch einfach eine normale Datei verwenden kann. Es gibt jedoch einige Vorteile bei der Verwendung von temporären Dateien in Bash-Skripten:
+# Deep Dive
+Der Befehl "mktemp" dient dazu, eine temporäre Datei oder ein Verzeichnis zu erstellen und dabei die vordefinierten Mustern wie "XXX" oder "XXXXXX" zu verwenden. Diese Muster werden dann durch eine zufällige Zeichenfolge ersetzt, um eine eindeutige Datei oder ein Verzeichnis zu erstellen. Durch das Hinzufügen eines Präfixes oder Suffixes in den Mustern können Sie auch den Namen der temporären Datei anpassen.
 
-- Sicherheit: Temporäre Dateien werden oft in Situationen verwendet, in denen es wichtig ist, die Privatsphäre oder Integrität von Daten zu schützen. Durch die Verwendung von `mktemp` wird sichergestellt, dass die erstellte Datei eindeutig ist und nur für den Zeitraum des Skripts existiert.
-
-- Flexibilität: Temporäre Dateien können an beliebigen Orten erstellt werden, beispielsweise in einem temporären Ordner oder im aktuellen Arbeitsverzeichnis.
-
-- Performance: Durch die Verwendung von `mktemp` statt des `touch` Befehls wird vermieden, dass mehrere Skripte gleichzeitig versuchen, die gleiche Datei zu erstellen.
-
-In der Regel sollten temporäre Dateien nach der Verwendung gelöscht werden, um Speicherplatz zu sparen. Wenn jedoch aus irgendeinem Grund die Datei nicht gelöscht wird (z.B. bei einem Absturz des Skripts), ist es wichtig, darauf zu achten, dass dies keine Auswirkungen auf andere Skripte oder das System hat.
+Es ist auch wichtig zu beachten, dass beim Erstellen einer temporären Datei oder eines Verzeichnisses Speicherplatz auf der Festplatte verwendet wird. Dies ist besonders kritisch bei der Verwendung von Skripten, die häufig temporäre Dateien erstellen, da dies möglicherweise zu einem Engpass beim verfügbaren Speicherplatz führen kann. Daher ist es wichtig, sicherzustellen, dass alle temporären Dateien am Ende des Skripts gelöscht werden, um Ressourcen freizugeben.
 
 # Siehe auch
-
-- [Linux Bash Temporary File Usage and Security](https://blog.famzah.net/2010/12/06/temporary-files-in-shell-scripts/)
-- [Creating Temporary Files in Bash](https://www.linuxjournal.com/content/creating-temporary-files-bash)
+- [Manpage für mktemp](https://www.man7.org/linux/man-pages/man1/mktemp.1.html)
+- [Bash-Skript-Tutorial](https://www.lifewire.com/write-simple-bash-shell-script-2200573)
+- [Speicherleck in Skripten vermeiden](https://www.linux.com/topic/desktop/linux-finds-and-fixes-a-major-bash-shell-security-hole/)

@@ -1,64 +1,43 @@
 ---
-title:    "PHP: Lendo um arquivo de texto."
+title:    "PHP: Lendo um arquivo de texto"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em PHP?
+## Por que ler arquivos de texto em PHP?
 
-Ler arquivos de texto é uma tarefa comum em muitos projetos de programação em PHP. Isso pode ser necessário para obter dados de um arquivo externo, como um arquivo de configuração, ou para processar informações de um arquivo gerado dinamicamente. Neste artigo, vamos explorar como podemos ler arquivos de texto em PHP de forma eficiente e eficaz.
+Ler arquivos de texto em PHP é uma habilidade fundamental para qualquer programador que deseja manipular dados armazenados em arquivos. Isso permite que você acesse informações importantes e as utilize em seus códigos.
 
-## Como Fazer
+## Como fazer?
 
-Para ler um arquivo de texto em PHP, podemos usar a função `file()` que retorna um array contendo cada linha do arquivo de texto como um elemento. Vamos dar uma olhada em um exemplo de código:
-
-```
-<?php
-// Abre o arquivo de texto
-$file = fopen("exemplo.txt", "r");
-
-// Lê o arquivo
-$lines = file("exemplo.txt");
-
-// Imprime o array com o conteúdo do arquivo
-print_r($lines);
-
-// Fecha o arquivo
-fclose($file);
-```
-
-Neste exemplo, usamos a função `fopen()` para abrir o arquivo em modo de leitura e em seguida, usamos a função `file()` para ler as linhas do arquivo e armazená-las em um array chamado `$lines`. Por fim, usamos a função `fclose()` para fechar o arquivo.
-
-Podemos também usar a função `fread()` para ler um arquivo de texto em pedaços específicos, em vez de ler todas as linhas de uma vez. Veja o exemplo abaixo:
+Ler arquivos de texto em PHP é bastante simples. Você pode usar a função `fopen()` para abrir o arquivo e `fgets()` para ler cada linha do arquivo até chegar ao final. Em seguida, você pode usar a função `echo` para imprimir as informações na tela do usuário.
 
 ```
 <?php
-// Abre o arquivo de texto
-$file = fopen("exemplo.txt", "r");
-
-// Lê o arquivo em pedaços de 1024 bytes
-$chunk = fread($file, 1024);
-
-// Imprime o conteúdo do pedaço lido
-echo $chunk;
-
-// Fecha o arquivo
-fclose($file);
+$handle = fopen("arquivo.txt", "r"); // abre o arquivo para leitura
+if ($handle) {
+  while (($line = fgets($handle)) !== false) {
+    echo $line; // imprime cada linha do arquivo
+  }
+  fclose($handle); // fecha o arquivo
+} else {
+  echo "Não foi possível abrir o arquivo.";
+}
+?>
 ```
 
-Com a função `fread()`, podemos controlar o tamanho do pedaço que queremos ler, o que pode ser útil para processar grandes arquivos de texto de forma mais eficiente.
+O código acima abre o arquivo de texto "arquivo.txt" e lê cada linha até o final, imprimindo-as na tela. Você pode adaptar esse código para realizar outras tarefas, como armazenar o conteúdo do arquivo em uma variável ou manipular os dados de alguma forma.
 
 ## Aprofundando-se
 
-Para trabalhar com arquivos de texto em PHP, é importante considerar alguns detalhes importantes. Por exemplo, é necessário garantir que o arquivo exista antes de tentar lê-lo. Também é importante lembrar de sempre fechar o arquivo após a leitura, para que os recursos sejam liberados.
+Além das funções `fopen()` e `fgets()`, existem outras funções úteis para leitura de arquivos de texto em PHP, como `fgetcsv()` para ler arquivos CSV e `file_get_contents()` para ler um arquivo inteiro de uma só vez. Você também pode usar parâmetros adicionais em `fopen()` para definir o modo de leitura do arquivo, como apenas leitura, leitura e escrita, ou escrita apenas.
 
-Outro detalhe importante é que a função `file()` lê todo o conteúdo do arquivo para a memória, o que pode ser um problema para arquivos muito grandes. Nesses casos, é mais recomendado usar a função `fread()` em pedaços menores, como mostrado no exemplo anterior.
+Ler arquivos de texto em PHP também pode ser útil para a criação de sistemas de login e registro, onde os dados do usuário são armazenados em um arquivo de texto e, em seguida, são lidos para autenticação.
 
-É importante ressaltar também que é possível ler arquivos de texto de outros idiomas, basta especificar a codificação correta ao usar as funções `fopen()` e `fread()`.
+## Veja também
 
-## Veja Também
-
-- [Documentação oficial do PHP sobre leitura de arquivos de texto](https://www.php.net/manual/en/function.file.php)
-- [Artigo sobre diferenças entre as funções `file()` e `fopen()`](https://www.php.net/manual/en/function.file.php#123084)
-- [Exemplo de leitura de arquivo de texto linha por linha](https://www.php.net/manual/en/function.fgets.php#setlocale)
+- [Documentação oficial do PHP para leitura de arquivos de texto](https://www.php.net/manual/en/function.fgets.php)
+- [Tutorial sobre leitura de arquivos de texto em PHP](https://www.w3schools.com/php/func_filesystem_fgets.asp)
+- [Diferenças entre `fopen()` e `file_get_contents()` para leitura de arquivos de texto](https://stackoverflow.com/questions/15933070/what-is-the-difference-between-file-get-contents-and-fopen-in-php)

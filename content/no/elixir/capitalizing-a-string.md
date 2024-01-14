@@ -1,56 +1,41 @@
 ---
-title:    "Elixir: Store bokstaver i en streng"
+title:    "Elixir: Konvertere en streng til stor bokstav"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kunne endre små og store bokstaver i en tekststreng er en vanlig prosess innen programmering. Det kan være for å lage en overskrift, formatere en liste eller bare for å gjøre teksten mer lesbar. I denne bloggposten vil vi fokusere på hvordan du kan gjøre dette i Elixir.
+I Elixir-programmering er det ofte nødvendig å manipulere strenger, enten det er for å formatere utdata eller behandle input fra en bruker. En vanlig operasjon som man ofte støter på, er å gjøre den første bokstaven i en streng stor. Denne enkle handlingen kan hjelpe med å gjøre koden mer lesbar og ryddig. I denne bloggposten skal vi se på hvordan man kan gjøre dette i Elixir.
 
 ## Hvordan
 
-For å kunne kapitalisere en tekststreng i Elixir, må du bruke funksjonen `String.capitalize/1` som tar inn en tekststreng som argument. La oss ta en titt på et eksempel:
+For å gjøre den første bokstaven i en streng stor, kan man bruke funksjonen `String.capitalize/1` som tar inn en streng som argument. La oss se på et eksempel:
 
 ```Elixir
-iex> String.capitalize("hei, verden!")
-"Hei, verden!"
+iex> String.capitalize("heisann")
+"Heisann"
 ```
-Her ser vi at funksjonen har endret den første bokstaven i strengen til en stor bokstav.
 
-Vi kan også bruke mer avanserte funksjoner som `String.upcase/1` og `String.downcase/1` for å gjøre hele tekststrengen til hhv. store eller små bokstaver.
+Som du kan se, blir den første bokstaven i strengen "heisann" gjort stor. Dette gjelder også for strenger som allerede er formater med store bokstaver:
 
 ```Elixir
-iex> String.upcase("Dette er en tekststreng")
-"DETTE ER EN TEKSTSTRENG"
-
-iex> String.downcase("Dette er en tekststreng")
-"dette er en tekststreng"
+iex> String.capitalize("HEISANN")
+"Heisann"
 ```
 
-Det kan også være lurt å fjerne eventuelle hvite mellomrom før eller etter teksten ved å bruke funksjonen `String.trim/1`.
+Det er verdt å merke seg at denne funksjonen bare endrer den første bokstaven i en streng, og ikke resten av strengen.
 
-```Elixir
-iex> String.trim("   Hei, verden!  ")
-"Hei, verden!"
-```
+## Deep Dive
 
-## Dykk dypere
+Dette høres kanskje veldig enkelt ut, men det er faktisk mer komplekst bak kulissene. Funksjonen `String.capitalize/1` tar i bruk Unicode-karakterer og støtter derfor også internasjonale språk. Det betyr at den også kan behandle tegn som aksenter og andre diakritiske tegn på riktig måte.
 
-Det er viktig å merke seg at disse funksjonene kun endrer første bokstav i teksten. Dersom du ønsker å endre første bokstav i hvert ord, kan du bruke `String.capitalize_every/1` eller `String.upcase_words/1` for å endre første bokstav til store bokstaver i hvert ord.
+Det er også verdt å merke seg at denne funksjonen ikke endrer originale strengen, men returnerer en ny streng med den samme verdien, men med den første bokstaven gjort stor. Dette er i tråd med Elixir sin filosofi om å være en funksjonell programmeringsspråk.
 
-```Elixir
-iex> String.capitalize_every("dette er første bokstav i hvert ord")
-"Dette Er Første Bokstav I Hvert Ord"
+## Se Også
 
-iex> String.upcase_words("dette er store bokstaver i hvert ord")
-"DETTE ER STORE BOKSTAVER I HVERT ORD"
-```
-
-Du kan også kombinere disse funksjonene med regex for å gjøre mer avanserte endringer i en tekststreng.
-
-## Se også
-- [Elixir Docs: String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir School: String basics](https://elixirschool.com/en/lessons/basics/string/)
-- [Elixir Tutorial: Manipulating Strings](https://elixir-lang.org/getting-started/string.html)
+- [Elixir Docs for String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/basics/#strings)
+- [Elixir Forum - Capitalize First Letter in String](https://elixirforum.com/t/capitalize-first-letter-in-string/1014)

@@ -1,65 +1,57 @@
 ---
 title:    "Haskell: Concaténation de chaînes"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Il arrive souvent qu'en programmation, nous devons combiner plusieurs chaînes de caractères pour créer une seule chaîne. Cela peut être utile pour afficher des messages d'erreur avec des variables, créer des noms de fichiers dynamiquement, ou simplement pour construire des phrases complètes. Dans cet article, nous allons voir comment concaténer des chaînes de caractères en Haskell.
+
+Dans la programmation en Haskell, il est fréquent d'avoir à concaténer des chaînes de caractères, c'est-à-dire de les combiner en une seule chaîne. Cette opération est très utile dans de nombreux cas, comme par exemple lors de la création de messages ou de rapports.
 
 ## Comment faire
-Pour concaténer des chaînes de caractères en Haskell, nous utilisons l'opérateur "++". Voici un exemple de code:
+
+La concaténation de chaînes de caractères en Haskell est très simple grâce à la fonction `++`. Lorsque vous concaténez deux chaînes, la première sera placée avant la seconde. Voici un exemple de code :
 
 ```Haskell
-string1 = "Bonjour"
-string2 = "tout le monde"
-concatenatedString = string1 ++ " " ++ string2
+concatenate :: String -> String -> String
+concatenate str1 str2 = str1 ++ str2
+
+-- Output : "Bonjour le monde!"
+concatenate "Bonjour" " le monde!"
 ```
 
-L'opérateur "++" combine les deux chaînes de caractères avec un espace entre elles pour créer une nouvelle chaîne "Bonjour tout le monde". Nous pouvons également concaténer plus de deux chaînes en utilisant plusieurs "++", comme ceci:
+Vous pouvez également concaténer plusieurs chaînes en une seule en utilisant la fonction `concat`. Celle-ci prend en argument une liste de chaînes et les combine en une seule. Voici un autre exemple de code :
 
 ```Haskell
-string1 = "Bonjour"
-string2 = "à"
-string3 = "toi"
-concatenatedString = string1 ++ " " ++ string2 ++ " " ++ string3
+multipleConcat :: [String] -> String
+multipleConcat strings = concat strings
+
+-- Output : "Je suis un programmeur en Haskell"
+multipleConcat ["Je ", "suis ", "un ", "programmeur ", "en ", "Haskell"]
 ```
-
-Cette fois, nous obtenons la chaîne "Bonjour à toi".
-
-Il est également possible de concaténer des chaînes avec des variables, comme ceci:
-
-```Haskell
-name = "Marie"
-greeting = "Bonjour"
-fullName = greeting ++ " " ++ name
-```
-
-Maintenant, notre chaîne finale sera "Bonjour Marie".
 
 ## Plongée en profondeur
-En Haskell, les chaînes de caractères sont en fait des listes de caractères. Cela signifie que nous pouvons utiliser toutes les fonctions de liste pour manipuler des chaînes. Par exemple, nous pouvons utiliser la fonction "head" pour obtenir le premier caractère d'une chaîne, ou la fonction "tail" pour obtenir tous les caractères sauf le premier. Voici un exemple:
+
+En Haskell, les chaînes de caractères sont en fait des listes de caractères. La fonction `++` fonctionne en prenant la première liste et en y ajoutant la seconde à la fin. Cela signifie que si vous concaténez une chaîne avec un seul caractère, celui-ci sera également ajouté à la fin. Par exemple :
 
 ```Haskell
-string = "Bonjour"
-firstChar = head string
-remainingString = tail string
+-- Output : "Hello world!"
+concatenate "Hello " "w" ++ "orld!"
 ```
 
-Maintenant, "firstChar" sera égal à "B" et "remainingString" sera égal à "onjour".
-
-Nous pouvons également utiliser la fonction "length" pour obtenir la longueur d'une chaîne de caractères, ou la fonction "reverse" pour inverser l'ordre des caractères. Par exemple:
+Il est également possible de concaténer des chaînes non alphabétiques, comme des nombres. Cependant, il est important de noter que la fonction `concat` fonctionne uniquement avec des listes de chaînes, il faut donc convertir les nombres en chaînes avant de les concaténer. Par exemple :
 
 ```Haskell
-string = "Bonjour"
-stringLength = length string
-reversedString = reverse string
+-- Output : "Le résultat est : 8"
+concatenate "Le résultat est : " (show (6+2))
 ```
 
-Maintenant, "stringLength" sera égal à 7 et "reversedString" sera égal à "ruojnoB".
+Enfin, il existe d'autres fonctions utiles pour manipuler les chaînes de caractères en Haskell, comme `unwords` qui concatène une liste de mots en une seule chaîne avec des espaces entre chacun, ou encore `lines` qui sépare une chaîne en plusieurs lignes en fonction des retours à la ligne. Ces fonctions peuvent être très pratiques pour manipuler des données ou des fichiers textes.
 
 ## Voir aussi
-- [Documentation sur les strings en Haskell](https://www.haskell.org/tutorial/strings.html)
-- [Guide de référence sur les opérateurs en Haskell](https://www.tutorialspoint.com/haskell/haskell_basic_operators.htm)
-- [Tutoriel sur les listes en Haskell](https://www.tutorialspoint.com/haskell/haskell_lists.htm)
+
+- [Documentation officielle de la concaténation en Haskell](https://www.haskell.org/tutorial/strings.html#function-)
+- [Tutoriel sur les chaînes de caractères en Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Exemple de manipulation de chaînes de caractères en Haskell](https://wiki.haskell.org/More_about_lists#Strings)

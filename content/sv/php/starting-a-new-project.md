@@ -1,45 +1,39 @@
 ---
-title:    "PHP: Att starta ett nytt projekt"
+title:    "PHP: Att påbörja ett nytt projekt"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför börja ett nytt projekt?
+## Varför
 
-Att börja ett nytt projekt kan kännas både spännande och skrämmande för en programmerare. Det kan vara för att utforska ett nytt område eller för att utmana dig själv och dina kunskaper. Oavsett anledning finns det alltid en chans att lära sig något nytt och utvecklas som programmerare.
+Att starta ett nytt programmeringsprojekt kan vara en spännande och utmanande process. Det ger dig möjlighet att utforska nya tekniker och skapa något som är unikt för dig. Genom att skapa en ny webbapplikation eller ett program kan du utveckla dina kunskaper och förbättra din programmeringsförmåga.
 
-## Hur man komma igång
+## Hur man gör
 
-För att komma igång med ett nytt projekt, behöver du en bra idé och en tydlig målbild. Sedan är det dags att öppna din favoritkodredigerare och börja koda! Nedanför finns ett exempel på hur du kan skapa en enkel "Hello World!"-applikation i PHP.
+Att skapa ett nytt projekt i PHP är relativt enkelt. Först och främst behöver du ha tillgång till en server med PHP och en databasinstallering. När du har det på plats kan du följa dessa steg:
 
 ```PHP
 <?php
-echo "Hello World!";
+$variabel = "Hej världen!";
+echo $variabel;
 ?>
 ```
+Output: "Hej världen!"
 
-Efter att du har skrivit koden och sparad filen, kan du öppna den i din webbläsare för att se resultatet. I detta fallet kommer du att se texten "Hello World!" på din skärm.
+Här ser vi ett enkelt exempel på en PHP-kod som skapar en variabel och sedan skriver ut dess innehåll. Genom att använda "echo" funktionen kan du enkelt generera utmatningar på din webbplats.
 
 ## Djupdykning
 
-Att starta ett nytt projekt handlar inte bara om att skriva kod. Det handlar också om att planera och organisera projektet på ett effektivt sätt. Här är några tips som kan hjälpa dig att sätta upp ditt projekt på rätt spår:
+Att starta ett nytt projekt kan vara överväldigande, men det finns några viktiga saker att tänka på för att göra processen mer hanterbar. Först och främst bör du planera och skissa ditt projekt noggrant innan du börjar koda. Detta hjälper till att undvika komplikationer längs vägen och se till att du har en bra grund att bygga på.
 
-- Ha en tydlig målbild och målsättning för projektet.
-- Använd versionshanteringssystem som Git för att hålla koll på ändringar och arbeta i team.
-- Följ bästa praxis och använd säkra kodningstekniker.
-- Testa och felsök din kod regelbundet för att undvika potentiella problem.
-- Dokumentera din kod för att göra det lättare för andra att bidra till projektet.
+Nästa steg är att välja de bästa verktygen för ditt projekt. Det finns många olika ramverk, mallar och plugins som kan hjälpa till att förenkla ditt arbete och förbättra funktionaliteten i din applikation. Tänk på vilken typ av projekt du skapar och välj verktyg som passar dina behov.
 
-Att följa dessa tips kan hjälpa dig att skapa ett välfungerande projekt som håller både tid och kvalitet.
+Slutligen, se till att du följer bästa praxis för säkerhet och kvalitetssäkring när du utvecklar din kod. Detta inkluderar att undvika sårbarheter, kommentera din kod, testa och felsöka regelbundet och använda bra kodningsmetoder.
 
 ## Se även
 
-Här är några användbara länkar som kan hjälpa dig att komma igång med ditt nya projekt:
-
-- [PHP Manual](https://www.php.net/manual/en/)
-- [GitHub](https://github.com/)
-- [Codecademy](https://www.codecademy.com/)
-- [W3Schools](https://www.w3schools.com/php/)
-
-Lycka till med ditt nya projekt!
+- [PHP-dokumentation](https://www.php.net/manual/sv/)
+- [Viktiga PHP-ramverk](https://codeburst.io/top-10-php-frameworks-for-web-projects-7f6b352cb70e)
+- [Säkrare PHP-kodning](https://www.techrepublic.com/article/tips-for-writing-secure-php-code/)

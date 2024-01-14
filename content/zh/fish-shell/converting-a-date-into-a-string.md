@@ -1,36 +1,56 @@
 ---
 title:    "Fish Shell: 将日期转换为字符串"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-在程序设计中，我们经常需要将日期和时间转换成字符串格式，以便更容易地处理和展示。使用Fish Shell编程语言中的内置函数，可以轻松地将日期转换为字符串，让程序更加灵活和实用。
+# 为什么
 
-## 如何做
-```Fish Shell
-# 获取当前日期和时间
-set today (date +%Y-%m-%d %H:%M:%S)
+在我们的日常程序开发中，经常会遇到需要将日期转换成字符串的需求。Fish Shell的内置功能可以轻松地实现这一操作，让我们来看看如何使用它吧！
 
-# 将日期和时间转换为字符串
-set string_date (string replace -r -a '\-' $today '')
+## 如何
 
-# 输出结果
-echo $string_date
+在Fish Shell中，我们可以使用`date`命令来获取当前的日期和时间，如下所示：
 
-# 输出：20210519102941
+```
+Fish Shell> date
+2021年3月31日 星期三 15:00:00 CST
+```
+如果我们想要将日期转换成特定的格式，可以使用`--format`参数，并指定对应的格式，比如将日期转换成年-月-日的形式，可以这样操作：
+
+```
+Fish Shell> date --format %Y-%m-%d
+2021-03-31
 ```
 
-## 深入探究
-要将日期转换为字符串，我们首先需要获取当前日期和时间，这可以使用`date`命令来完成。接着，使用`string replace`函数可以将日期中的`-`符号替换为空，从而得到一个纯数字的日期字符串。最后，使用`echo`命令输出结果即可。当然，还有其他的方法可以实现日期转换为字符串，比如使用`set -l`命令，可以将日期和时间存储为变量，再将变量拼接成字符串。总之，使用Fish Shell编程语言，可以轻松地完成日期和时间的转换。
+我们也可以结合使用不同的参数来获取更多的信息，比如获取当前的月份和分钟数，可以这样写：
 
-## 参考链接
-[Fish Shell官方文档](https://fishshell.com/docs/current/cmds/set.html) \
-[日期格式化使用指南](https://date.biashara.io/) \
-[日期格式转换器工具](https://www.epochconverter.com/) 
+```
+Fish Shell> date --format %m:%M
+03:00
+```
 
-## 参见
-[Fish Shell编程简介](https://blog.csdn.net/ncstk/article/details/52467306) \
-[使用Fish Shell编程提高工作效率](https://zhuanlan.zhihu.com/p/116755600) \
-[Fish Shell入门指南](https://zhuanlan.zhihu.com/p/85842760)
+## 深入了解
+
+除了上述常用的日期转换格式外，Fish Shell还提供了多种选项，让我们可以根据自己的需求来转换日期。下面是一些常用的选项和对应的输出格式：
+
+- `%b`: 缩写的月份，比如`Mar`
+- `%B`: 完整的月份名称，比如`March`
+- `%d`: 日，比如`31`
+- `%Y`: 年，比如`2021`
+- `%H`: 24小时制的小时数，比如`15`
+- `%I`: 12小时制的小时数，比如`03`
+
+更多可用的选项可以通过`man date`命令查看帮助文档。
+
+# 参考链接
+
+- [Fish Shell 官方文档 - date命令](https://fishshell.com/docs/current/commands.html#date)
+- [使用 Fish Shell 处理日期和时间](https://www.digitalocean.com/community/tutorials/how-to-use-fish-as-a-bash-alias-and-for-loop-replacement#step-4-%E4%BD%BF%E7%94%A8-fish-%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E5%92%8C%E5%BA%8F%E5%88%97)
+- [Linux 命令 - date](https://www.runoob.com/linux/linux-comm-date.html)
+
+# 参见
+
+- [Fish Shell Date命令实例](https://tutorialforlinux.com/2019/01/06/fish-shell-date-command-examples/)

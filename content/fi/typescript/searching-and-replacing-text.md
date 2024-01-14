@@ -1,40 +1,47 @@
 ---
-title:    "TypeScript: Tekstin hakeminen ja korvaaminen"
+title:    "TypeScript: Tekstin etsiminen ja korvaaminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi 
 
-Joskus ohjelmoinnissa, haluat korvata tietyt merkkijonot tai ilmaisut toisilla. Tämä voi olla tarpeellista esimerkiksi silloin, kun haluat muuttaa vanhoja koodinpätkiä uuden standardin mukaiseksi tai korjata kirjoitusvirheet. Tämän vuoksi on tärkeää tietää, miten tekstiä voi etsiä ja korvata TypeScriptiä käyttäen.
+On monia syitä miksi ohjelmoijat saattavat joutua suorittamaan tekstin etsimistä ja korvaamista omassa koodissaan. Se voi olla tarpeellista, jos tiettyä tietoa on kirjoitettu useisiin kohtiin ja sitä halutaan muuttaa kaikista samalla kertaa. Tämä auttaa myös välttämään manuaalista työtä, kun kyseessä on suuri kooditietokanta.
 
 ## Kuinka
 
-Käytössäsi on useita tapoja etsiä ja korvata merkkijonoja TypeScriptissä. Yksinkertaisin tapa on käyttää sisäänrakennettua metodia ```replace```. Tämä metodi ottaa kaksi parametria: ensimmäinen on merkkijono, jota haluat etsiä ja toinen on merkkijono, jolla haluat korvata löydetyt merkkijonot. Alla esimerkki koodinpätkästä ja sen tulosteen:
+Etsimisen ja korvaamisen toteuttaminen TypeScript-ohjelmointikielellä on helppoa. Voit käyttää String-tyypin replace-metodia ja tarvittaessa antaa sille RegExp-parametrin, joka määrittää etsittävän merkkijonon. Esimerkiksi, jos haluat korvata kaikki "Hello" merkkijonot "Hei" merkkijonoilla, voit käyttää seuraavaa koodia:
 
 ```TypeScript
-let text = "Tervetuloa maailmaan!";
-let newText = text.replace("Tervetuloa", "Hei");
-console.log(newText); // "Hei maailmaan!"
+let newText = "Hello world!".replace(/Hello/g, "Hei");
+console.log(newText); // Output: "Hei world!"
 ```
 
-Jos haluat etsiä ja korvata useita merkkijonoja, voit käyttää Regexiä eli säännöllisiä lausekkeita. Käyttämällä Regexiä, voit huomioida esimerkiksi kirjainkoosta riippumatta löytyvät merkkijonot. Alla esimerkki koodinpätkästä ja sen tulosteen:
+RegExp-parametri "g" tarkoittaa kaikkia esiintymisiä ja siksi se korvaa kaikki "Hello" merkkijonot.
+
+##Syvä sukellus
+
+Regular expressions ovat erittäin hyödyllisiä tekstin etsimiseen ja korvaamiseen. Voit käyttää niitä tarkemmin määrittelemään etsittävän merkkijonon. Esimerkiksi, jos haluat korvata kaikki "Hello" merkkijonot, jotka ovat sanojen ja sulkumerkkien välissä, voit käyttää seuraavaa koodia:
 
 ```TypeScript
-let text = "Tervetuloa maailmaan!";
-let newText = text.replace(/maailmaan/gi, "tulevaisuuteen");
-console.log(newText); // "Tervetuloa tulevaisuuteen!"
+let newText = "Hello world! (Hello there)".replace(/\(Hello\)/g, "(Hei)");
+console.log(newText); // Output: "Hello world! (Hei there)"
 ```
 
-## Syvärämaan syövereissä
+Esimerkissä käytetty RegExp-parametri tarkoittaa "Hello" sanaa sulkumerkkien välissä ja korvaa vain sen "Hei" sanalla.
 
-Erilaisia tapoja etsiä ja korvata tekstiä on useita, ja ne kaikki tarjoavat erilaisia mahdollisuuksia ja ominaisuuksia. Voit esimerkiksi käyttää ```split```- ja ```join```-metodeja yhdessä, jotta voit muokata tekstiä ennen kuin korvaat sen. Voit myös käyttää Regexin lisäksi muita sisäänrakennettuja metodeja, kuten ```search```, joka palauttaa merkkijonon indeksin, jos se löytyy tekstistä.
+[JavaScript RegExp-opas] (https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
 
-On myös hyvä muistaa, että hakutulosten mukana ei välttämättä tule tietoa siitä, kuinka monta kertaa merkkijono löytyi ja korvattiin. Siksi on tärkeää hyödyntää erilaisia metodeja ja työkaluja, jotta voit varmistaa, että korvaat kaikki haluamasi merkkijonot.
+[RegExp Validator] (https://regex101.com/)
+
+[TypeScript Stringin replace-metodi] (https://www.typescriptlang.org/docs/handbook/strings.html#the-replace-method)
 
 ## Katso myös
 
-- [MDN web docs: String replace method (englanniksi)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN web docs: Regular Expressions (englanniksi)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [StackOverflow: How to replace all occurrences of a string in JavaScript (englanniksi)](https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript)
+[TypeScriptin viralliset verkkosivut] (https://www.typescriptlang.org/)
+
+[TypeScript-opetusohjelma] (https://www.tutorialspoint.com/typescript/index.htm)
+
+[TypeScriptin GitHub-sivu] (https://github.com/Microsoft/TypeScript)

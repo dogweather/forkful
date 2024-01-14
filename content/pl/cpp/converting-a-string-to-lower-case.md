@@ -1,60 +1,75 @@
 ---
-title:    "C++: Konwertowanie ciągu znaków na małe litery"
+title:    "C++: Konwertowanie ciągu znaków na małe litery."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego konwertowanie ciągu znaków na małe litery jest przydatne?
+## Dlaczego
 
-Konwertowanie ciągu znaków na małe litery jest przydatne, ponieważ pomaga w ujednoliceniu danych i ułatwia porównywanie tekstu. Ponadto, wiele funkcji i algorytmów wymaga danych w małych literach, więc konwertowanie może usprawnić pracę programisty.
+C++ jest jednym z najbardziej popularnych języków programowania, wykorzystywanym w wielu dziedzinach, takich jak tworzenie gier, aplikacji desktopowych i systemów wbudowanych. Jedną z podstawowych operacji, które możemy wykonać na ciągach znaków (stringach) w C++, jest konwersja ich do małych liter. W tym wpisie pokażemy dlaczego warto nauczyć się tej operacji oraz jak ją wykonać.
 
 ## Jak to zrobić
 
+Konwersja ciągu znaków do małych liter może być przydatna w wielu sytuacjach, na przykład gdy użytkownik wprowadza dane do programu i nie chcemy mieć problemów ze znakami wielkich liter. W celu zmniejszenia ryzyka błędów i uproszczenia operacji na ciągach znaków, możemy skorzystać z wbudowanej funkcji C++ - `tolower()`. Poniżej przedstawione są dwa przykłady użycia tej funkcji:
+
 ```C++
-// Przykładowy kod w C++ konwertujący ciąg znaków na małe litery
+// Przykład 1 - Konwersja całego ciągu znaków do małych liter
 #include <iostream>
-#include <cstdlib>
 #include <string>
-#include <algorithm>
+
 using namespace std;
 
-// Funkcja konwertująca ciąg znaków na małe litery
-string toLowerCase(string str) {
-    // iterujemy po każdym znaku w ciągu i konwertujemy go na małą literę
-    // używając funkcji `tolower` z biblioteki `algorithm`
-    for_each(str.begin(), str.end(), [](unsigned char &c) {
-        c = tolower(c);
-    });
-    return str;
+int main() {
+    string tekst = "PRZYKŁADOWY TEKST";
+    cout << "Oryginalny tekst: " << tekst << endl;
+    
+    for (int i = 0; i < tekst.size(); i++) {
+        tekst[i] = tolower(tekst[i]);
+    }
+    
+    cout << "Tekst po konwersji: " << tekst << endl;
+    return 0;
 }
 
+// Przykład 2 - Konwersja konkretnego znaku w ciągu do małej litery
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 int main() {
-    // przykładowy ciąg znaków
-    string myString = "ABCDE";
-    // wyświetlamy oryginalny ciąg
-    cout << "Oryginalny ciąg: " << myString << endl;
-    // wywołujemy funkcję do konwertowania na małe litery
-    myString = toLowerCase(myString);
-    // wyświetlamy zkonwertowany ciąg
-    cout << "Ciąg po konwersji: " << myString << endl;
+    string tekst = "Inny przykład";
+    cout << "Oryginalny tekst: " << tekst << endl;
+    
+    // Konwersja drugiego znaku w ciągu
+    tekst[1] = tolower(tekst[1]);
+    
+    cout << "Tekst po konwersji: " << tekst << endl;
     return 0;
 }
 ```
 
-Przykładowy output:
+Po uruchomieniu tych przykładów, na ekranie pojawi się następujący wynik:
 
 ```
-Oryginalny ciąg: ABCDE
-Ciąg po konwersji: abcde
+Przykład 1:
+Oryginalny tekst: PRZYKŁADOWY TEKST
+Tekst po konwersji: przykładowy tekst
+
+Przykład 2:
+Oryginalny tekst: Inny przykład
+Tekst po konwersji: inny przykład
 ```
 
-## Wnikliwiej o konwertowaniu ciągu znaków na małe litery
+W pierwszym przykładzie dokonujemy konwersji całego ciągu znaków, używając pętli `for` i funkcji `tolower()`, która jest dostępna w bibliotece `string`. W drugim przykładzie, konwertujemy tylko jeden konkretny znak w ciągu. Pamiętajmy, że numerowanie znaków w ciągu zaczyna się od zera.
 
-Konwertowanie ciągu znaków na małe litery może się wydawać prostym zadaniem, ale wymaga pewnej wiedzy dotyczącej typów danych oraz działania funkcji `tolower` z biblioteki `algorithm`. Ważne jest również pamiętanie o uwzględnieniu języka używanego w projekcie, ponieważ niektóre litery mogą być różnie konwertowane w zależności od alfabetu.
+## Głębsze spojrzenie
 
-## Zobacz również
+Operacja konwersji małych liter jest bardzo prosta i łatwa do zrozumienia, ale może być przydatna w wielu przypadkach, szczególnie przy pracy z użytkownikami i danymi wejściowymi. Pamiętajmy, że funkcja `tolower()` jest częścią biblioteki standardowej języka C++, co oznacza że jest dostępna dla wszystkich programistów C++. Warto także zwrócić uwagę, że w przypadku niektórych alfabetów, konwersja do małych liter może spowodować zmianę znaczenia danego słowa, dlatego należy zachować ostrożność przy jej wykorzystaniu.
 
-- [Dokumentacja funkcji `tolower` z biblioteki `algorithm` w języku C++](https://www.cplusplus.com/reference/cctype/tolower/)
-- [Porównywanie tekstu w języku C++](https://www.geeksforgeeks.org/application-compare-two-strings/)
-- [Właściwości i operacje na ciągach znaków w języku C++](https://www.tutorialspoint.com/cpp/cpp_strings.htm)
+## Zobacz także
+
+- Dokumentacja C++ o funkcji `tolower()` - https://www.cplusplus.com/reference/cctype/tolower/ 
+- Przykładowy kod z konwersją ciągu do małych liter - https://www.tutorialspoint.com/cplusplus-program-to-convert-a-string-to-lowercase

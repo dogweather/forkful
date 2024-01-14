@@ -1,76 +1,48 @@
 ---
-title:    "C++: Å lese kommandolinje-argumenter"
+title:    "C++: Lesing av kommandolinjeargumenter"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Lesing av kommandolinjeargumenter er en veldig nyttig ferdighet som kan hjelpe deg å lage mer interaktive og tilpasningsdyktige programmer. Det er også en viktig del av å forstå hvordan datamaskiner fungerer, og kan være nyttig i løpet av din programmeringskarriere.
+Å lese kommandolinjeargumenter er en viktig ferdighet for enhver programmerer. Det lar deg skrive programmer som er mer fleksible og interaktive, og som kan ta imot forskjellige input fra brukeren.
 
 ## Hvordan
-
-For å lese kommandolinjeargumenter i C++, må du bruke `main` funksjonen og inkludere `argc` og `argv` som parametere. `argc` representerer antall argumenter som kommer etter programnavnet, mens `argv` er en matrise som inneholder selve argumentene. La oss se på et eksempel:
-
-```C++
-#include <iostream>
-
-int main(int argc, char* argv[]) {
-    // Skriv ut antall argumenter
-    std::cout << "Antall kommandolinjeargumenter: " << argc << std::endl;
-
-    // Gå gjennom argumentene og skriv dem ut
-    for (int i = 0; i < argc; i++) {
-        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
-    }
-    
-    return 0;
-}
-```
-
-Kompilering og kjøring av dette programmet vil gi følgende output:
-
-```
-$ ./programnavn 123 hello world
-Antall kommandolinjeargumenter: 4
-Argument 0: ./programnavn
-Argument 1: 123
-Argument 2: hello
-Argument 3: world
-```
-
-Du kan også bruke `std::string` til å håndtere argumentene på en mer fleksibel måte. For eksempel:
+For å lese kommandolinjeargumenter i C++, må du inkludere `#include <iostream>` i koden din. Deretter kan du bruke funksjonen `int main(int argc, char* argv[])` for å lese argumentene. Et eksempel på en enkel implementering kan se slik ut:
 
 ```C++
 #include <iostream>
-#include <string>
+using namespace std;
 
-int main(int argc, char* argv[]) {
-    // Sjekk om det er nok argumenter
-    if (argc < 2) {
-        std::cout << "Vennligst angi navnet ditt som argument." << std::endl;
-        return 1;
-    }
-
-    // Bruk det første argumentet som navn
-    std::string navn = argv[1];
-
-    // Skriv ut en personlig hilsen
-    std::cout << "Hei " << navn << ", velkommen til programmet!" << std::endl;
-
-    return 0;
+int main(int argc, char* argv[]){
+  for (int i = 0; i < argc; i++){
+    cout << "Argument #" << i << ": " << argv[i] << endl;
+  }
+  return 0;
 }
 ```
 
-Her sjekker vi om det er nok argumenter, og hvis ikke, gir vi en feilmelding og avslutter programmet. Hvis det er nok argumenter, bruker vi det første argumentet som navn og skriver ut en personlig hilsen. Kompiler og kjør programmet, og du vil kunne skrive inn navnet ditt som argument og få en personlig hilsen.
+I dette eksempelet bruker vi en løkke for å skrive ut alle kommandolinjeargumentene som ble gitt til programmet. For eksempel, hvis vi kjørte programmet med kommandolinjeargumentene `argument1 argument2 argument3`, så ville outputen vært:
+```
+Argument #0: programnavn.exe
+Argument #1: argument1
+Argument #2: argument2
+Argument #3: argument3
+```
+Vær oppmerksom på at kommandolinjeargumentene alltid begynner med `argv[1]`, da `argv[0]` alltid inneholder navnet på programmet.
 
-## Dykk dypere
+## Deep Dive
+Hvis du vil gå dypere inn i lesing av kommandolinjeargumenter, er det viktig å forstå at `argc` representerer antall argumenter gitt, og `argv` er et array som inneholder alle argumentene. Du kan også bruke `string` datatypeen istedenfor `char*` for en mer fleksibel implementering.
 
-Nå som du vet hvordan du leser kommandolinjeargumenter i C++, kan du også lære å analysere argumentene og utføre ulike handlinger basert på dem. Du kan også bruke `getopt()` funksjonen for å behandle mer komplekse argumenter, som for eksempel flagg og verdier.
+Det er også mulig å sjekke om et bestemt argument ble gitt eller ikke, ved å bruke en `if`-setning. For eksempel, hvis vi ønsker å sjekke om brukeren ga `argument2` som et argument, kan vi bruke følgende kode inne i `for`-løkken vår:
+```C++
+if (string(argv[i]) == "argument2"){
+  cout << "Brukeren ga argument2 som argument!" << endl;
+}
+```
 
-Se også:
-
-- [https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [https://www.learncpp.com/cpp-tutorial/command-line-arguments/](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
-- [https://en.cppreference.com/w/cpp/utility/getopt](https://en.cppreference.com/w/cpp/utility/getopt)
+## Se også
+- [C++ Kommandolinjeargumenter - cplusplus.com](https://www.cplusplus.com/articles/DEN36Up4/)
+- [C Strings og `string` konvertering - cplusplus.com](https://www.cplusplus.com/articles/D9j2Nwbp/)

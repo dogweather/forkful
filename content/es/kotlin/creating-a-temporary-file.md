@@ -1,57 +1,55 @@
 ---
 title:    "Kotlin: Creando un archivo temporal"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué crear un archivo temporal en Kotlin
+## Por qué crear un archivo temporal en Kotlin?
 
-En la programación, a veces necesitamos crear archivos temporales que se eliminen después de su uso. Esto puede ser útil para almacenar datos temporales o para realizar pruebas. En este artículo, aprenderemos cómo crear un archivo temporal en Kotlin y por qué sería beneficioso hacerlo.
+A veces, cuando programamos, necesitamos almacenar información temporalmente en nuestro código. Crear un archivo temporal en Kotlin puede ser útil para llevar a cabo ciertas tareas, como almacenar datos intermedios o generar archivos que se eliminan después de su uso. ¡Sigue leyendo para aprender cómo hacerlo!
 
 ## Cómo crear un archivo temporal en Kotlin
 
-Para crear un archivo temporal en Kotlin, podemos utilizar la clase `File` y su método `createTempFile`. Primero, importamos la clase `File`:
+Crear un archivo temporal en Kotlin es bastante sencillo utilizando la biblioteca estándar `kotlin.io`. Primero, necesitamos importar las funciones necesarias en nuestro archivo:
 
 ```Kotlin
+import kotlin.io.*
 import java.io.File
 ```
 
-Luego, podemos utilizar el método `createTempFile` para crear un archivo temporal en la ubicación especificada:
+A continuación, utilizamos la función `createTempFile` para crear el archivo temporal. Esta función toma tres parámetros: el prefijo del nombre del archivo, el sufijo y el directorio donde se almacenará el archivo temporal.
 
 ```Kotlin
-val tempFile = File("ruta/de/ubicación", "nombreDeArchivo.extension").createTempFile()
+val tempFile = createTempFile("temp", ".txt", File("./tempFiles/"))
 ```
 
-Este método creará un archivo en la ubicación especificada y le asignará un nombre aleatorio para evitar conflictos con otros archivos temporales.
+El código anterior creará un archivo temporal con el nombre "temp" como prefijo, ".txt" como sufijo y se almacenará en el directorio "./tempFiles/". Ahora podemos escribir datos en el archivo utilizando la función `writeText`, por ejemplo:
 
-Podemos utilizar la variable `tempFile` para realizar operaciones de lectura y escritura en el archivo temporal. Una vez que hayamos terminado de utilizarlo, podemos eliminarlo utilizando el método `delete()`:
+```Kotlin
+tempFile.writeText("Este es un archivo temporal.")
+```
+
+Por último, debemos asegurarnos de eliminar el archivo temporal después de su uso. Esto se puede hacer utilizando la función `delete`:
 
 ```Kotlin
 tempFile.delete()
 ```
 
-El archivo temporal también se eliminará automáticamente cuando el programa termine de ejecutarse.
+¡Y eso es todo! Ahora hemos creado y almacenado datos en un archivo temporal en Kotlin.
 
-## Deep Dive
+## Un vistazo más profundo a la creación de archivos temporales en Kotlin
 
-La clase `File` también nos permite personalizar nuestro archivo temporal. Podemos especificar el prefijo y sufijo del nombre del archivo, así como el directorio en el que se creará.
+Además de la función `createTempFile`, Kotlin también proporciona la función `createTempDirectory` para crear un directorio temporal en lugar de un archivo. Además, nuestras funciones anteriores también aceptan un cuarto parámetro opcional para especificar el prefijo de nombre del archivo. Ambas funciones también tienen una versión sobrecargada que toma un objeto `Path` en lugar de una `String` como parámetro de directorio.
 
-```Kotlin
-val tempFile = File("ruta/de/ubicación", "prefijo", "sufijo").createTempFile("nombreDeArchivo", ".extension")
-```
+Otra característica útil de la biblioteca `kotlin.io` es la función `bufferedReader` que nos permite leer datos de un archivo de manera eficiente y sencilla.
 
-También podemos especificar el directorio donde se eliminará el archivo temporal utilizando el método `deleteOnExit()`:
-
-```Kotlin
-tempFile.deleteOnExit()
-```
-
-Esto garantizará que el archivo se elimine una vez que finalice el programa.
+¡No dudes en experimentar con diferentes parámetros y funciones para crear archivos y directorios temporales en Kotlin!
 
 ## Ver también
 
-- [Documentación de la clase File en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Cómo utilizar archivos y directorios en Kotlin](https://kotlinlang.org/docs/reference/java-interop.html#files-and-directories)
+- Documentación oficial de Kotlin sobre la creación de archivos temporales: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/create-temp-file.html
+- Ejemplos de uso de la biblioteca `kotlin.io`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/
 
-¡Ahora estás listo para crear y utilizar archivos temporales en tus proyectos de Kotlin! Esperamos que este artículo te haya sido útil. ¡Hasta la próxima!
+¡Espero que este artículo te haya sido útil para aprender cómo crear archivos temporales en Kotlin! No dudes en compartir tus experiencias y preguntas en los comentarios. ¡Hasta la próxima!

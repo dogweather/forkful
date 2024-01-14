@@ -1,29 +1,52 @@
 ---
 title:    "Fish Shell: Lendo um arquivo de texto"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Os arquivos de texto são uma parte essencial da programação. Eles armazenam informações e são frequentemente usados para armazenar grandes quantidades de dados. Ao aprender a ler arquivos de texto usando o Fish Shell, você pode facilmente acessar e manipular esses dados para criar scripts e automatizar tarefas.
+## Por que ler um arquivo de texto com o Fish Shell?
 
-## Como Fazer
-Para ler um arquivo de texto usando o Fish Shell, primeiro você precisa abrir o terminal e navegar até o diretório onde seu arquivo está localizado. Em seguida, use o comando `fish` seguido por `leia <nome_do_arquivo>` para abrir e ler o conteúdo do arquivo. 
+Se você é um programador(a) que trabalha com o Fish Shell, provavelmente já se deparou com a necessidade de ler um arquivo de texto em algum momento. Isso pode ser útil para obter informações de configuração, dados de entrada ou até mesmo para manipular arquivos de log. Neste artigo, vamos aprender como ler um arquivo de texto com o Fish Shell e explorar algumas possibilidades mais avançadas.
 
-`` `Fish Shell
-fish
-leia texto.txt
-`` `
+## Como ler um arquivo de texto com o Fish Shell
 
-Se o arquivo for grande, você pode usar o comando `cat` ao invés de `leia` para visualizar o conteúdo em partes. Por exemplo, `cat texto.txt | leia` irá exibir o conteúdo página por página, permitindo uma leitura mais fácil em arquivos maiores.
+A leitura de um arquivo de texto com o Fish Shell é bastante simples e pode ser feita utilizando o comando ```read```. Veja um exemplo básico:
 
-## Mergulho Profundo
-Ao ler um arquivo usando o Fish Shell, você pode especificar quais linhas ou seções do arquivo deseja ler. Por exemplo, `leia texto.txt | sed '5,10!d'` irá ler apenas as linhas 5 a 10 do arquivo. Você também pode usar comandos como `grep` e `awk` para filtrar o conteúdo do arquivo e ler apenas as linhas que correspondem a certos padrões ou critérios.
+```Fish Shell
+set arquivo (cat arquivo.txt)
+```
 
-Você também pode usar a leitura de arquivos de texto para criar scripts que automatizam tarefas. Por exemplo, você pode ler um arquivo com nomes de usuários e usar esses nomes para criar contas de usuário ou enviar e-mails personalizados.
+O comando ```cat``` aqui vai imprimir todo o conteúdo do arquivo e o redirecionamento para a variável ```arquivo``` através do ```set``` permite que esse conteúdo seja armazenado para uso posterior. Agora, podemos acessar esse conteúdo através da variável ```arquivo``` usando o comando ```echo```:
 
-## Veja Também
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de leitura de arquivos de texto com Fish Shell](https://medium.com/@se7enkings/read-lines-of-a-text-file-quick-and-easy-in-fish-shell-c40a4aa6b363)
-- [Artigo sobre automação com Fish Shell](https://jvns.ca/blog/2018/09/23/fish--a-friendly-user-interface-for-your-shell/)
+```Fish Shell
+echo $arquivo
+```
+
+Isso imprimirá o conteúdo do arquivo na tela. Mas e se quisermos ler apenas uma linha específica do arquivo? Podemos usar o comando ```head``` para isso:
+
+```Fish Shell
+set linha (head -n 1 arquivo.txt)
+echo $linha
+```
+
+Neste exemplo, estamos lendo apenas a primeira linha do arquivo e armazenando na variável ```linha```, que é então impressa na tela. Existem também outros comandos úteis para ler arquivos de texto, como ```tail``` para ler as últimas linhas do arquivo e ```grep``` para procurar por padrões específicos dentro do conteúdo.
+
+## Mergulhando mais fundo
+
+Além dos comandos básicos, o Fish Shell também possui recursos mais avançados para lidar com a leitura de arquivos de texto. Podemos usar o comando ```while``` em conjunto com o ```read``` para percorrer todo o conteúdo de um arquivo linha por linha. Veja um exemplo:
+
+```Fish Shell
+while read linha
+    echo $linha
+end < arquivo.txt
+```
+
+Esse código imprimirá todas as linhas do arquivo na tela. Também é possível utilizar loops e estruturas condicionais para processar o conteúdo do arquivo de forma mais complexa.
+
+## Veja também
+
+- Documentação oficial do Fish Shell sobre o comando ```read```: https://fishshell.com/docs/current/commands.html#read
+- Tutorial sobre a leitura de arquivos de texto com o Fish Shell: https://devhints.io/fish-shell
+- Artigo sobre manipulação de arquivos com o Fish Shell: https://scotch.io/tutorials/how-to-use-fish-shell-to-manipulate-files

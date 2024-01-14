@@ -1,40 +1,50 @@
 ---
-title:    "Haskell: Uzyskiwanie aktualnej daty"
+title:    "Haskell: Pobieranie aktualnej daty"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-W dzisiejszych czasach programowanie staje się jedną z najważniejszych umiejętności, a jednym z najpopularniejszych języków programowania jest Haskell. Dzięki swojej prostocie i funkcjonalnemu podejściu, Haskell stał się wyborem wielu programistów. Jednym z podstawowych elementów programowania jest praca z datami, dlatego też w tym artykule dowiesz się, jak w prosty sposób uzyskać bieżącą datę w Haskell.
 
-## Jak To Zrobić
-Aby uzyskać bieżącą datę w Haskell, wystarczy wykorzystać funkcję `getCurrentTime` z modułu `Data.Time`. Oto przykładowy kod:
+Często podczas pisania programów, potrzebujemy informacji o aktualnej dacie. Może to być do celów diagnostycznych, obliczeń czasu lub po prostu wyświetlania bieżącej daty dla użytkownika. W tym artykule dowiesz się, jak uzyskać aktualną datę w języku Haskell.
 
-```Haskell
+## Jak to zrobić
+
+Aby uzyskać aktualną datę w Haskellu, musimy najpierw zaimportować moduł ```Data.Time```. W nim znajduje się funkcja ```getCurrentTime```, która zwraca bieżącą datę wraz z czasem.
+
+```haskell
 import Data.Time
 
-main = do
-  currentTime <- getCurrentTime
-  putStrLn $ "Bieżąca data i czas: " ++ show currentTime
+getCurrentTime
 ```
 
-W powyższym kodzie, najpierw importujemy moduł `Data.Time`, aby móc użyć funkcji `getCurrentTime`. Następnie, korzystając z konstrukcji `do` wewnątrz funkcji `main`, przypisujemy bieżącą datę do zmiennej `currentTime` i wypisujemy ją na ekranie za pomocą funkcji `putStrLn`. Wykonanie tego kodu powinno dać nam poniższy wynik:
+Wywołanie funkcji ```getCurrentTime``` zwróci wartość typu ```UTCTime``` zawierającą datę i czas. Dzięki temu możemy wykorzystać funkcje z modułu ```Data.Time.Format```, aby sformatować datę do odpowiedniego formatu.
 
-```Haskell
-Bieżąca data i czas: 2021-03-29 15:00:00 UTC
+```haskell
+import Data.Time
+import Data.Time.Format
+
+getCurrentTime >>= return . formatTime defaultTimeLocale "%d.%m.%Y"
 ```
 
-Możemy również wyświetlić tylko datę lub czas korzystając z funkcji `utctDay` i `utctDayTime`:
+Powyższy kod najpierw wywołuje funkcję ```getCurrentTime```, a następnie wykorzystuje operator ```>>=```, aby przekazać wynik do funkcji ```formatTime```. Używa też funkcji ```return```, aby wynik był typu ```IO String```, dzięki czemu możemy go wyświetlić w konsoli za pomocą funkcji ```putStrLn```.
 
-```Haskell
-putStrLn $ "Bieżąca data: " ++ show (utctDay currentTime)
-putStrLn $ "Bieżący czas: " ++ show (utctDayTime currentTime)
+Po uruchomieniu, otrzymamy bieżącą datę w formacie ```DD.MM.YYYY```.
+
+```console
+01.02.2021
 ```
 
 ## Deep Dive
-Funkcja `getCurrentTime` pobiera bieżącą datę z systemu operacyjnego w formacie `UTCTime`, co oznacza Universal Time Coordinated. Jest to w zasadzie to samo co Greenwich Mean Time, ale bez uwzględniania przestawek czasowych. Dokładne działanie tej funkcji może się różnić w zależności od systemu operacyjnego, dlatego warto zwrócić uwagę na to, czy wynik jest zgodny z oczekiwaniami.
 
-## Zobacz też
-- Dokumentacja modułu `Data.Time`: https://hackage.haskell.org/package/time/docs/Data-Time.html
-- Inne przydatne funkcje związane z datami w Haskell: https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html
+Podczas pracy z datami w Haskellu, ważne jest aby zawsze używać typów specjalnych takich jak ```UTCTime``` lub ```Day```. Typ ```UTCTime``` jest używany do przechowywania daty i czasu w strefie czasowej UTC, natomiast typ ```Day``` tylko dla dat bez uwzględnienia czasu.
+
+Ciekawym aspektem pracy z datami w Haskellu jest możliwość tworzenia instancji własnych typów, które będą reprezentować daty lub interwały czasowe. Wymaga to jednak trochę więcej wiedzy na temat pisania własnych typów i instancji. Więcej informacji na ten temat można znaleźć w oficjalnej dokumentacji języka Haskell.
+
+## Zobacz także
+
+- [Oficjalna dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Moduł Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Moduł Data.Time.Format](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)

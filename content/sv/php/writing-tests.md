@@ -1,47 +1,42 @@
 ---
 title:    "PHP: Skriva tester"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av att vara en effektiv och framgångsrik PHP-utvecklare. Genom att testa din kod kan du upptäcka och åtgärda fel tidigt i utvecklingsprocessen, vilket i slutändan sparar tid och minimerar risken för buggar i din produktionskod. Det är också ett sätt att visa dina färdigheter som utvecklare och säkerställa att din kod är av hög kvalitet.
+Att skriva tester är en viktig del i utvecklingsprocessen för alla programvaror. Tester hjälper till att säkerställa att koden fungerar som den ska och minskar risken för buggar och felaktigheter. Det kan också bidra till att öka kvaliteten på koden och underlätta underhållning av programvaran på lång sikt.
 
 ## Hur man gör det
 
-För att skriva tester i PHP, behöver du ett ramverk för enhetstester som PHPUnit. Detta är en populär lösning för att skapa och köra tester som kan testa specifika funktioner och klasser i din kod. Här är ett enkelt exempel på hur du kan skapa ett test i PHPUnit:
+För att skriva tester i PHP, behöver du använda ett testramverk som till exempel PHPUnit. Med dessa ramverk kan du skapa tester för din kod genom att definiera olika förväntade resultat och jämföra dem mot det faktiska resultatet. Här nedanför finns ett enkelt exempel på hur man skriver en testmetod för att kontrollera om en given array innehåller ett specifikt värde:
 
 ```PHP
-<?php
+function testContainsValue() {
+  $array = [1, 2, 3, 4, 5];
+  $value = 3;
 
-// Importera klassen som ska testas
-require_once 'Calculator.php';
-
-class CalculatorTest extends PHPUnit_Framework_TestCase {
-
-  // Skapa en funktion för att testa additionen
-  public function testAddition() {
-    // Instansiera klassen som ska testas
-    $calc = new Calculator();
-
-    // Anropa funktionen som ska testas
-    $result = $calc->add(2, 3);
-
-    // Kontrollera om resultatet är korrekt
-    $this->assertEquals(5, $result);
-  }
+  $this->assertContains($value, $array);
 }
 ```
-I detta exempel har vi skapat en klass kallad "Calculator" som har en funktion för addition. I vårt test har vi importerat klassen och skapat en funktion för att testa additonen. Vi skapar sedan en instans av klassen och anropar funktionen med två tal för att se om resultatet stämmer överens med vår förväntade summa. Om testet lyckas kommer vi att få ett grönt ljus, men om det misslyckas kommer vi att få ett rött ljus och behöver åtgärda eventuella fel.
 
-## Djupgående
+I detta exempel använder vi funktionen `assertContains`, som är en del av PHPUnit-ramverket. Den jämför värdet som förväntas finnas i arrayen mot det faktiska resultatet.
 
-Det finns olika typer av tester som du kan skriva i PHP, som enhetstester, integrationstester och funktionalitetstester. Det är viktigt att välja rätt typ av test för din kod och att se till att dina tester täcker alla delar av koden. Det är också viktigt att göra tester till en del av din utvecklingsprocess och att regelbundet uppdatera och förbättra dina tester när din kod utvecklas.
+## Djupdykning
+
+Att skriva tester handlar om mer än bara att kontrollera att koden fungerar som den ska. Genom att använda olika typer av tester kan du också förbättra designen och strukturen hos din kod. Till exempel kan enhetstester hjälpa till att hålla koden modulär och lättare att förstå och ändra.
+
+En annan fördel med att skriva tester är att det underlättar vid buggfixar och uppdateringar av koden. Om något skulle gå fel i din programvara, kan du snabbt isolera problemet genom att köra tester och hitta den specifika delen av koden som behöver åtgärdas.
 
 ## Se även
 
-- [PHPUnit](https://phpunit.de/)
-- [En guide till enhetstestning i PHP](https://blog.codinghorror.com/a-pragmatic-guide-to-unit-testing-in-php/) 
-- [Att skriva enhetstester i Laravel](https://laravel.com/docs/5.8/testing)
+För mer information om att skriva tester i PHP, se följande länkar:
+
+- [PHPUnit dokumentation](https://phpunit.de/documentation.html)
+- [Enhetstester vs integrations- och funktions tester](https://medium.com/@mknudsen01/unit-tests-vs-integration-tests-vs-functional-tests-22f738bf8b21)
+- [Enkelheten i enhetstester](https://www.toptal.com/qa/how-i-learned-to-write-unit-tests-in-php)
+
+Lycka till med att integrera tester i din utvecklingsprocess!

@@ -1,40 +1,46 @@
 ---
 title:    "TypeScript recipe: Creating a temporary file"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Creating temporary files is a common practice in programming, especially in languages like TypeScript. These files can be useful for storing data or performing certain operations temporarily, without cluttering up the main project files. It can also be useful in scenarios where you need to manipulate data in a file without permanently altering the original file.
+When writing programs or scripts, temporary files can be useful for storing data or information that is only needed for a short amount of time. These files can also be used for caching or as a way to quickly save and retrieve data.
 
 ## How To
-To create a temporary file in TypeScript, we can use the built-in `fs` module. Here is a simple example of how to create a temporary file and write some data to it:
-
+Creating a temporary file in TypeScript is a simple process. First, we need to import the `fs` (file system) module:
 ```TypeScript
 import fs from 'fs';
-
-// Create a temporary file
-fs.mkdtemp('prefix-', (err, folder) => {
-    if (err) throw err;
-    
-    // Write data to the file
-    fs.writeFile(`${folder}/temp_file.txt`, 'This is a temporary file.', (err) => {
-        if (err) throw err;
-        console.log('File successfully created and data written.');
-    });
-});
 ```
-
-Running this code will create a temporary folder with a randomly generated name, prefixed with 'prefix-'. Within that folder, a file named `temp_file.txt` will be created with the text "This is a temporary file." written to it.
+Next, we can use the `fs` module's `mkdtempSync()` function to create a temporary directory and return its path:
+```TypeScript
+const tempDir = fs.mkdtempSync('/tmp/');
+```
+We can then use the `fs` module's `writeFileSync()` function to write data to our temporary file, specifying the filename as well as the data to be written:
+```TypeScript
+fs.writeFileSync(`${tempDir}/tempfile.txt`, 'This is a temporary file!');
+```
+To retrieve the data from our temporary file, we can use the `fs` module's `readFileSync()` function:
+```TypeScript
+const data = fs.readFileSync(`${tempDir}/tempfile.txt`, 'utf8');
+console.log(data);
+// Output: 'This is a temporary file!'
+```
+Lastly, we can delete the temporary file by using the `fs` module's `unlinkSync()` function:
+```TypeScript
+fs.unlinkSync(`${tempDir}/tempfile.txt`);
+```
+And that's it! We have successfully created, written to, read from, and deleted a temporary file in our TypeScript code.
 
 ## Deep Dive
-Creating a temporary file involves two main steps: creating the temporary folder and then creating the actual file within that folder. In the above example, we used the `mkdtemp()` method from the `fs` module to create a temporary folder. This method takes two parameters - a prefix for the folder name and a callback function that will receive an error (if any) and the path of the created folder. 
+Under the hood, the `fs` module's `mkdtempSync()` function uses the operating system's default temporary directory to create the temporary file. This can usually be found at `/tmp` on UNIX systems and `C:\Windows\Temp` on Windows systems.
 
-Once the folder is created, we then use the `writeFile()` method to create the temporary file within that folder. This method takes three parameters - the file name, the data to be written to the file, and a callback function to handle any errors.
+By default, the created temporary directory will have a random directory name prefix. This is to ensure unique paths and prevent any potential conflicts with existing files or directories. However, we can also specify our own prefix by passing it in as the first argument to the `mkdtempSync()` function.
 
-Other methods that can be used to create temporary files in TypeScript include `mkstemp()` and `mktemp()`. It is important to note that temporary files are generally deleted automatically when the program terminates, but it is good practice to explicitly delete them using the `unlink()` method.
+In addition to the `mkdtempSync()` function, the `fs` module also provides `mkdtemp()` which is an asynchronous version of the function and allows for more flexibility in handling errors and callbacks.
 
 ## See Also
-- Node.js `fs` module documentation: https://nodejs.org/api/fs.html
-- Creating temporary files in Node.js: https://blog.bloomca.me/2018/08/23/javascript-temp-files.html
+- [Node.js `fs` Module Documentation](https://nodejs.org/api/fs.html)
+- [Creating and Deleting Temporary Files in TypeScript](https://www.cloudfuze.com/creating-deleting-temporar

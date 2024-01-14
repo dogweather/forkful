@@ -1,70 +1,56 @@
 ---
 title:    "Arduino recipe: Generating random numbers"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Have you ever wanted to add an element of randomness to your Arduino projects? Maybe you're making a game or a simulation and you want to generate random numbers to keep things interesting. Or perhaps you just want to add some unpredictability to your LED light patterns. Whatever your reason may be, generating random numbers in an Arduino program can open up a whole new world of possibilities.
+## Why 
+Generating random numbers is a crucial aspect of programming and can be useful in a variety of projects. Whether you need random inputs for a game or want to produce unique IDs, knowing how to generate random numbers using Arduino can come in handy.
 
 ## How To
-
-Generating random numbers in an Arduino program is actually quite simple. The first thing you need to do is declare a variable to store the random number. This can be an integer or float, depending on your needs. Then, you can use the `random()` function to generate a random number within a specified range.
-
-For example, if you want to generate a random number between 0 and 100, your code would look like this:
+Using Arduino, generating random numbers is a relatively simple process. First, we need to include the `random()` function from the Arduino library. This function generates a random number between 0 and 4294967295 (the maximum value that can be represented with a 32-bit unsigned integer).
 
 ```Arduino
-int randomNumber = random(0, 100); // generates a random number between 0 and 99
-```
+#include <Arduino.h>
 
-You can also use the `random()` function to generate a random number within a specific data type range. For example, if you want to generate a random ASCII character, you can use the `random()` function with the `char()` function, like this:
+void setup() {
+  // initialize serial communication
+  Serial.begin(9600);
+  // generate random number
+  unsigned long randomNum = random();
+  // print the result
+  Serial.print("The random number is: ");
+  Serial.println(randomNum);
+}
 
-```Arduino
-char randomChar = char(random(33, 126)); // generates a random ASCII character between ! and ~
-```
-
-You can also generate a series of random numbers by using a for loop. This is useful if you need to generate a larger set of random numbers for a game or simulation. Here's an example:
-
-```Arduino
-for(int i = 0; i < 10; i++) { // will generate 10 random numbers
-  int randomNumber = random(1, 10); // generates a random number between 1 and 9
-  Serial.println(randomNumber); // prints the random number to the Serial Monitor
+void loop() {
+  // do nothing
 }
 ```
+Once we upload this code to our Arduino board, we should see a different random number printed in the Serial Monitor each time we run the code.
 
-The output of this code would be something like this:
+We can also specify a range in which we want to generate random numbers. For example, if we want a random number between 1 and 10, we can use the `random(min, max)` function.
 
+```Arduino
+// generate random number between 1 and 10
+unsigned int randomNum = random(1, 11);
 ```
-4
-9
-2
-6
-1
-7
-8
-3
-5
-10
+
+In addition to integers, the `random()` function can also generate random floating-point numbers. To do this, we use the `random(min, max)` function and specify the data type as `float`.
+
+```Arduino
+// generate random floating-point number between 0.0 and 1.0
+float randomFloat = random(0.0, 1.0);
 ```
 
 ## Deep Dive
+The `random()` function uses a mathematical algorithm called the Linear Congruential Generator (LCG) to create the randomness. This algorithm works by taking a starting value (known as the seed) and applying a series of mathematical operations to it. The seed value is typically based on the current time, which ensures that the sequence of numbers produced is different each time the code runs.
 
-So how does the `random()` function actually work? The Arduino uses a algorithm called the linear congruential generator to generate random numbers. This algorithm uses a simple mathematical formula to generate a series of seemingly random numbers. The formula is:
+While the `random()` function is sufficient for most applications, for more complex and secure random number generation, Arduino also provides the `randomSeed()` function. This function allows us to set a custom seed value, which can be useful in cryptography applications where a non-predictable seed is necessary.
 
-```
-Xn+1 = (a * Xn + c) % m
-```
-
-Where `Xn+1` is the next random number, `a` is a multiplier, `c` is an increment, and `m` is a modulus. The values of these parameters are determined by the Arduino library, but you can also customize them if you'd like. However, it's important to note that the linear congruential generator is not a truly random algorithm and the numbers it generates may not be completely unpredictable.
-
-## See Also
-
-For more information on generating random numbers in Arduino, check out the following resources:
-
-- [Arduino random() function documentation](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Tutorial on random number generation in Arduino](https://www.arduino.cc/en/tutorial/random)
-- [Random number generator library for Arduino](https://github.com/mathur1712/Random_arduino)
-
-Now that you know how to generate random numbers in Arduino, go ahead and add some unpredictability to your projects!
+## See Also 
+- [Arduino Reference - Random](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Arduino Random Numbers: What Are They and How Do They Work?](https://www.makerspaces.com/arduino-random-numbers/)
+- [Generating Random Numbers with Arduino](https://allaboutarduino.com/generate-random-number-arduino/)

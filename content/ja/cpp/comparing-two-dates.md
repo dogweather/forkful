@@ -1,46 +1,55 @@
 ---
-title:    "C++: 「二つの日付を比較する」"
+title:    "C++: 「日付を比較する」"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付の比較をするのか
+## なぜ
+日付の比較をする理由について説明します。日付の比較は、プログラミングで頻繁に行われるタスクの1つであり、特定の日付が前の日付よりも早いか遅いかを判断したり、2つの日付が同じかどうかを確認するために使用されます。
 
-プログラミングでは、よく日付を比較する必要があります。例えば、ある日付が過去の日付かどうかを確認したり、期限が切れているかどうかを判断するためです。
+## 方法
+日付の比較を行うための具体的な方法を説明します。下記のコードブロックは、日付を比較するために使用できる簡単なC++の例を示しています。この例では、2つの日付の差を求める方法を示しています。
 
-## 日付の比較方法
-
-日付を比較するには、次のような方法があります。
 ```C++
-//日付を表す変数を宣言
-int date1 = 5;
-int date2 = 10;
+#include <iostream>
+#include <ctime>
 
-//日付が等しいかどうかを比較
-if(date1 == date2){
-    cout << "日付が等しいです" << endl;
-}
+using namespace std;
 
-//日付が過去の日付かどうかを比較
-if(date1 < date2){
-    cout << "date1は過去の日付です" << endl;
+int main() {
+
+  // 2つの日付を設定
+  struct tm date1 = {0, 0, 0, 1, 1, 2020}; // 2020年1月1日
+  struct tm date2 = {0, 0, 0, 12, 12, 2020}; // 2020年12月12日
+
+  // 日付を秒数に変換
+  time_t time1 = mktime(&date1);
+  time_t time2 = mktime(&date2);
+
+  // 日付の差を計算
+  int difference = difftime(time2, time1); // 秒数での差を求める
+
+  // 結果を出力
+  cout << "日付の差は " << difference / (24 * 60 * 60) << " 日です。" << endl;
+
+  return 0;
 }
 ```
 
-上記の例では、日付を表す変数を宣言し、比較演算子を使用して日付を比較しています。このように、日付は数値として扱うことができます。また、日付を表す変数には年月日や曜日など、様々な情報を含めることもできます。
+上記のコードを実行すると、日付の差が計算され、結果として「日付の差は 345 日です。」という出力が得られます。このように、日付を秒数に変換し差を求めることで、日付の比較を行うことができます。
 
-## 日付の比較の詳細
+## 詳細を深く掘り下げる
+日付の比較には様々な方法がありますが、最も一般的な方法は日付を秒数に変換し、その差を計算する方法です。しかし、この方法にはいくつかの注意点があります。
 
-日付の比較には、プログラムの実行環境や地域によって異なる方法があります。また、うるう年や時差など、日付に関する様々なルールが存在します。これらを理解することで、より正確な日付の比較が可能になります。
+例えば、うるう年の影響を受ける場合や、タイムゾーンの違いによって日付の差が正しく計算されないことがあります。また、特定の日付形式やロケールによっても差の計算方法が異なる場合があります。
+
+以上のような問題を解決するために、日付の比較を行う場合はライブラリなどの既存のツールを使用することが推奨されます。例えば、BoostライブラリやChronoライブラリなどがあり、日付の比較を行う際に便利な関数やクラスを提供しています。
 
 ## 参考リンク
+- [Boost.Date_Time library](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [C++ Primer第5版 日付と時刻に対する操作](https://www.amazon.co.jp/dp/4048678135)
+- [日付と時刻処理の国際化](https://www.ykaku.com/gengo/time_date_and_locale.html)
 
-- [C++で日付を比較する方法 (Qiita)](https://qiita.com/_mogaming/items/6e7976f01674dacd827c)
-- [日付と時刻の比較 (【Yohei-min】)](https://yohei-mini.com/c/date-time-comparison/)
-- [日付操作ライブラリBoost.Date(Time) (TATSUROmemo)](https://tatsuro-memo.blogspot.com/2017/01/cboostdatetime.html)
-
-## 関連リンク
-
-- [C++で日付を扱う方法 (Qiita)](https://qiita.com/merrymew/items/c794755baed0e1dd1aa5)
-- [C++で年月日を扱う (helloworld.kurushiun.net)](https://helloworld.kurushiun.net/2008/03/01/cpp-date.html)
+## 関連記事を見る

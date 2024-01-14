@@ -1,60 +1,34 @@
 ---
-title:    "C#: स्ट्रिंग को सर्वाधिकृत करना"
+title:    "C#: एक स्ट्रिंग को मजबूत बनाना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों?
+## क्यों
+कोई भी व्यक्ति अपने स्ट्रिंग को capitalizing करने में आकर्षित क्यों होगा? यह काम अपने स्ट्रिंग को सबसे पहले छोटे अक्षरों से बड़े अक्षरों में परिवर्तित करने का एक आसान तरीका है! यह अपने कोड को और स्पष्ट और सुनिश्चित बनाने में मदद कर सकता है।
 
-आपने कभी सोचा है कि स्ट्रिंग को capitalize कैसे किया जाता है? अक्सर हमें कोडिंग करते समय इस तरह की स्ट्रिंग्स का उपयोग करने की जरूरत पड़ती है। इस ब्लॉग पोस्ट में हम इस तरह की एक्टिविटी के बारे में बात करेंगे और सीखेंगे कि इसे कैसे किया जाता है।
-
-## कैसे करें?
-
-```C#
-string text = "hello world";
-string capitalizedText = text.ToUpper();
-Console.WriteLine(capitalizedText);
-```
-
-एक simple technique स्ट्रिंग को capitalize करने के लिए `ToUpper()` function है। यह function स्ट्रिंग को uppercase में बदल देता है और उसे रिटर्न करता है। इस code का output नीचे दिया गया है।
+## कैसे करे
+आप C# में अपने स्ट्रिंग को capitalizing करने के लिए बहुत सारे तरीके हो सकते हैं। एक मेथड ठीक तरीके से दिखाने के लिए हम तीन अलग-अलग method यूज़ करेंगे।
 
 ```C#
-HELLO WORLD
-```
+string str = "hello world"; // स्ट्रिंग बनाएं
+string capitalizedStr = str.ToUpper(); //पूर्ण स्ट्रिंग को capitalizedStr में बदलें
 
-परंतु यदि आप एक समूह या फ्रेंड्स के नाम्स को capitalize करना चाहते हैं तो आपको एक अलग technique आवश्यक होगा। आप `FirstLetterToUpper()` फंक्शन का भी प्रयोग कर सकते हैं जो पहले शब्द के पहले अक्षर को uppercase में बदल देता है।
+Console.WriteLine(capitalizedStr); // आपको "HELLO WORLD" मिलेगा
 
-```C#
-string name = "jane doe";
-string capitalizedName = FirstLetterToUpper(name);
+string firstLetter = str.Substring(0, 1).ToUpper(); // पहले अक्षर को capitalized एक string में बदलें
+string restOfStr = str.Substring(1); // बाकी सभी अक्षरों को अलग string में स्टोर करें
 
-static string FirstLetterToUpper(string name)
-{
-    if(string.IsNullOrEmpty(name))
-    {
-        return string.Empty;
-    }
-    char[] letters = name.ToCharArray();
-    letters[0] = char.ToUpper(letters[0]);
-    return new string(letters);
-}
-```
-
-इस code का output नीचे दिया गया है।
-
-```C#
-Jane doe
+Console.WriteLine(firstLetter + restOfStr); // "Hello world" मिलेगा
 ```
 
 ## गहराई में जाएं
+स्ट्रिंग capitalize करना बहुत अधिक समय और memory का खपाई कर सकता है, इसलिए बेहतर होगा कि आप उसमें अपनी स्ट्रिंग को modify कर दें। आप अपनी स्ट्रिंग को char array में convert कर सकते हैं और उसे modify करके दोबारा स्ट्रिंग में convert कर सकते हैं। यह आपके कोड के लिए अधिक भरोसेमंद और उचित हो सकता है।
 
-स्ट्रिंग को capitalize करना थोड़ा complex हो सकता है यदि आप थोड़ा सा advanced code करना चाहते हैं। आप स्ट्रिंग के मूल्य को split कर और उसे समूहों में विभाजित कर सकते हैं। उदाहरण के लिए, यदि आप एक नाम को कैपिटलाइज करना चाहते हैं जैसे "john doe", तो आप इसे निम्न code से capitalize कर सकते हैं।
-
-```C#
-string name = "john doe";
-string[] splittedName = name.split(' ');
-name = FirstLetterToUpper(splittedName[0]) + " " + FirstLetterToUpper(splittedName[1]);
-```
-
-इस code का output नीचे दिया
+## देखिए भी
+"देखिए भी" (See Also):
+- [C# char data type](https://www.tutorialspoint.com/csharp/csharp_char.htm)
+- [String manipulation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#manipulating-strings)
+- [Difference between ToUpper and ToUpperInvariant in C#](https://www.codeproject.com/Tips/136811/To-Upper-vs-To-UpperInvariant-are-we-always-suppos)

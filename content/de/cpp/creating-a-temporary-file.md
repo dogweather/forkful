@@ -1,44 +1,82 @@
 ---
 title:    "C++: Erstellen einer temporären Datei"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Gründe, warum jemand temporäre Dateien erstellen möchte. Eine der Hauptgründe ist, um Daten zwischen verschiedenen Prozessen oder Programmen auszutauschen. Temporäre Dateien können auch verwendet werden, um Zwischenergebnisse zu speichern oder um bestimmte Funktionen in einem Programm zu implementieren, die eine physische Datei erfordern.
 
-## So geht's
-Die Erstellung einer temporären Datei in C++ erfordert nur wenige Zeilen Code. Zunächst müssen wir die Header-Datei `fstream` einbinden, um Zugriff auf Dateien zu haben. Dann können wir die Funktion `tmpnam()` verwenden, um einen temporären Dateinamen zu generieren. Anschließend können wir diesen Namen verwenden, um eine Datei mit der Funktion `fopen()` zu erstellen. Hier ist ein Beispiel:
+Das Erstellen von temporären Dateien ist eine nützliche Programmiertechnik, um vorübergehend Daten zu speichern, die nur für einen begrenzten Zeitraum benötigt werden. Dies kann hilfreich sein, um die Leistung und Effizienz von Programmen zu verbessern, indem Speicherplatz und Ressourcen eingespart werden.
+
+## Wie man ein temporäres File erstellt
+
+Um ein temporäres File in C++ zu erstellen, müssen wir zunächst die Standardbibliothek "fstream" einbinden. Dann können wir mit der Funktion "tmpnam()" einen eindeutigen Dateinamen generieren und eine Datei mit diesem Namen erstellen. Hier ist ein Beispielcode, der dies demonstriert:
 
 ```C++
 #include <iostream>
 #include <fstream>
+using namespace std;
 
 int main() {
-   char* temp_name = tmpnam(NULL);
-   FILE* temp_file = fopen(temp_name, "w+");
-   
-   if(temp_file == NULL) {
-     std::cout << "Fehler beim Erstellen der temporären Datei!" << std::end;
-   } else {
-     std::cout << "Temporäre Datei erfolgreich erstellt: " << temp_name << std::endl;
-     // Weitere Operationen auf der temporären Datei können hier durchgeführt werden
-   }
-   return 0;
+    // Eindeutigen Dateinamen erstellen
+    char tempName[L_tmpnam];
+    tmpnam(tempName);
+    
+    // Datei mit dem erstellten Namen erstellen
+    ofstream tempFile(tempName);
+    
+    // Daten in die temporäre Datei schreiben
+    tempFile << "Das ist ein Beispieltext.";
+    
+    // Datei schließen
+    tempFile.close();
+    
+    // Ausgabe des Dateinamens
+    cout << "Der erstellte Dateiname lautet: " << tempName << endl;
+    
+    return 0;
 }
 ```
 
-Die Funktion `tmpnam()` generiert einen eindeutigen Dateinamen und gibt diesen als Zeichenkette zurück. Das `NULL`-Argument gibt an, dass wir keinen zusätzlichen Präfix für den Dateinamen haben möchten. Die Funktion `fopen()` erstellt dann eine Datei mit dem generierten Namen und dem angegebenen Modus. In diesem Beispiel wird die Datei im Lese- und Schreibmodus geöffnet (`w+`).
+Die Ausgabe dieses Codes könnte zum Beispiel "Der erstellte Dateiname lautet: /tmp/tmp-file.tmp" lauten.
 
-## Tiefere Einblicke
-Die Funktion `tmpnam()` ist Teil der C-Bibliothek und wurde in der neuen Version von C++ (C++11) durch die Funktion `tmpfile()` ersetzt. Diese Funktion erstellt nicht nur einen eindeutigen Dateinamen, sondern auch einen Dateizeiger (FILE object), der verwendet werden kann, um direkt auf die temporäre Datei zuzugreifen.
+## Tiefergehende Informationen
 
-Außerdem gibt es mit der Funktion `mkstemp()` eine weitere Möglichkeit, um temporäre Dateien zu erstellen. Diese Funktion erstellt eine temporäre Datei und gibt ihren Dateideskriptor als Ganzzahl zurück, was eine einfachere Alternative zur Verwendung von `fopen()` sein kann.
+Das oben gezeigte Beispiel verwendet die Funktion "tmpnam()", um einen eindeutigen Dateinamen zu generieren. Eine alternative Möglichkeit ist die Verwendung der Funktion "tmpfile()", die automatisch eine Datei mit einem eindeutigen Namen erstellt und ein File-Handle zurückgibt. Dieses Handle kann dann verwendet werden, um auf die Datei zuzugreifen.
 
-Es ist auch wichtig zu beachten, dass temporäre Dateien automatisch gelöscht werden, wenn das Programm beendet wird oder wenn die Funktion `fclose()` aufgerufen wird.
+Eine andere wichtige Sache, die beim Erstellen von temporären Dateien zu beachten ist, ist die Sicherheit. Da temporäre Dateien oft für kurze Zeit verwendet werden und nicht dauerhaft gespeichert werden, ist es wichtig sicherzustellen, dass sie nach der Verwendung gelöscht werden. Hier ist ein Beispielcode, der dies demonstriert:
+
+```C++
+#include <iostream>
+#include <fstream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    // Eindeutigen Dateinamen erstellen
+    char tempName[L_tmpnam];
+    tmpnam(tempName);
+    
+    // Datei mit dem erstellten Namen erstellen
+    ofstream tempFile(tempName);
+    
+    // Daten in die temporäre Datei schreiben
+    tempFile << "Das ist ein Beispieltext.";
+    
+    // Datei schließen
+    tempFile.close();
+    
+    // Datei löschen
+    remove(tempName);
+    
+    return 0;
+}
+```
 
 ## Siehe auch
-- [C++ Referenz für die Funktion `tmpnam()` (auf Englisch)](https://www.cplusplus.com/reference/cstdio/tmpnam/)
-- [C++ Referenz für die Funktion `tmpfile()` (auf Englisch)](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [C++ Referenz für die Funktion `mkstemp()` (auf Englisch)](https://www.cplusplus.com/reference/cstdio/mkstemp/)
+
+- Weitere Informationen zum Erstellen und Löschen von temporären Dateien in C++: https://www.geeksforgeeks.org/temporary-file-generation-in-c-programming/
+- Eine Diskussion über die verschiedenen Methoden zum Erstellen temporärer Dateien: https://stackoverflow.com/questions/1682913/creating-a-temporary-file-in-c
+- Ein Beispielprogramm zum Erstellen von temporären Dateien in C++: https://www.programiz.com/cpp-programming/examples/temporary-file

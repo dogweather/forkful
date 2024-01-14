@@ -1,48 +1,54 @@
 ---
 title:    "Kotlin: Rozpoczynanie nowego projektu"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Jeśli jesteś programistą lub planujesz zacząć przygodę z programowaniem, prawdopodobnie wiesz, jak ważne jest posiadanie projektów w swoim portfolio. Tworzenie nowych projektów jest nie tylko wspaniałym sposobem na ćwiczenie swoich umiejętności, ale także pozwala na eksperymentowanie z nowymi technologiami i rozwijanie swojej kreatywności. W tym artykule przyjrzymy się, jak zacząć nowy projekt w języku Kotlin i dlaczego warto to zrobić.
+Jednym z głównych powodów, dla których warto zacząć nowy projekt w języku Kotlin, jest to, że jest on szczególnie przyjazny dla programistów. Umożliwia on szybkie i efektywne pisanie aplikacji, co sprawia, że jest popularnym wyborem wśród programistów na całym świecie.
 
-# Jak zacząć
+## Jak to zrobić
 
-Jeśli jeszcze nie masz środowiska do pracy z językiem Kotlin, musisz je najpierw zainstalować. Możesz wybrać jedną z wielu dostępnych opcji, takich jak Android Studio, IntelliJ IDEA lub Eclipse z wtyczką Kotlin. Następnie utwórz nowy projekt i wybierz język Kotlin jako główny język programowania.
+Dla osób zaznajomionych z językiem Java, przystosowanie się do programowania w Kotlinie powinno być wyjątkowo łatwe. Najlepszym sposobem na zapoznanie się z tym językiem jest zapisanie kilku prostych przykładów kodu. Oto przykładowy kod, który wyświetli napis "Witaj świecie!" w konsoli:
 
-Aby zacząć kodowanie, musimy najpierw poznać podstawy składni języka Kotlin. Poniżej znajduje się przykładowy kod, który wypisze powitanie w konsoli:
+```Kotlin fun main(args: Array<String>) { println("Witaj świecie!") } ```
 
-```Kotlin
-fun main() {
-    val name = "Jan"
-    println("Witaj, $name!")
-}
+Uruchomienie tego kodu powinno spowodować wyświetlenie następującego wyniku:
+
+`Witaj świecie!`
+
+Kotlin jest również wyposażony w wiele funkcji, które są bardzo przydatne dla programistów. Na przykład można wykorzystać funkcję `when` do wykonywania różnych działań w zależności od wartości zmiennej:
+
+```Kotlin 
+fun main(args: Array<String>) { 
+    var ocena = 5 
+    
+    when (ocena) { 
+        1 -> println("Niedostateczny") 
+        2 -> println("Dopuszczający") 
+        3 -> println("Dostateczny") 
+        4 -> println("Dobry") 
+        5 -> println("Bardzo dobry") 
+        6 -> println("Celujący") 
+    } 
+} 
 ```
 
-W tym kodzie definiujemy funkcję `main()`, w której tworzymy zmienną `name` i przypisujemy jej wartość "Jan". Następnie wykorzystujemy funkcję `println()` do wypisania powitania w konsoli wraz ze zmienną `name`. Aby uruchomić ten kod, kliknij przycisk "Run" lub naciśnij klawisz `Ctrl + Shift + F10`.
+Wynikiem tego kodu będzie:
 
-Teraz możesz zacząć eksperymentować z różnymi funkcjami i strukturami języka Kotlin, takimi jak pętle, instrukcje warunkowe czy kolekcje. Poniżej znajduje się przykładowy kod, który wykorzystuje pętlę `for` do wypisania liczb od 1 do 10:
+`Bardzo dobry`
 
-```Kotlin
-fun main() {
-    for (i in 1..10) {
-        println(i)
-    }
-}
-```
+## Deep Dive
 
-# Głębsze zanurzenie
+Kotlin jest językiem wieloplatformowym, co oznacza, że ​​może być używany do tworzenia aplikacji na różne platformy, takie jak Android, iOS, Windows czy Linux. Ponadto, język ten jest w pełni kompatybilny z językiem Java, dzięki czemu można w prosty sposób łączyć istniejący kod napisany w Javie z nowymi projektami w Kotlinie.
 
-Początkowo nauka języka Kotlin może wydawać się trudna, ale nie martw się, nawet najbardziej doświadczeni programiści musieli kiedyś zacząć. Dlatego ważne jest, aby wybrać projekt, który jest dla Ciebie interesujący i wyzwala Twoją kreatywność. To pomoże Ci bardziej zaangażować się w projekt i badać różne możliwości, jakie oferuje język Kotlin.
+Istnieje również wiele rozszerzeń i bibliotek, które uczynią programowanie w Kotlinie jeszcze prostszym i przyjemniejszym. Na przykład, popularna biblioteka Anko oferuje wiele gotowych rozwiązań dla często powtarzających się zadań, jak na przykład tworzenie interfejsów użytkownika w aplikacjach Android.
 
-Podczas pracy nad projektem warto także korzystać z dokumentacji języka Kotlin lub poszukiwać rozwiązań na forach i w społeczności programistów. Programowanie jest nie tylko o kodowaniu, ale także o dzieleniu się wiedzą i uczeniu się od innych.
-
-# Zobacz także
+## Zobacz także
 
 - Oficjalna strona języka Kotlin (https://kotlinlang.org/)
-- Dokumentacja języka Kotlin (https://kotlinlang.org/docs/home.html)
-- Forum programistów Kotlin (https://discuss.kotlinlang.org/)
-- Kursy i materiały edukacyjne z języka Kotlin (https://kotlinlang.org/docs/learn.html)
+- Dokumentacja języka Kotlin (https://kotlinlang.org/docs/)
+- Przewodnik po języku Kotlin dla początkujących (https://kotlinlang.org/docs/tutorials/getting-started.html)

@@ -1,36 +1,47 @@
 ---
-title:    "PHP: Iniciando um novo projeto"
+title:    "PHP: Começando um novo projeto"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que iniciar um novo projeto?
+## Por que iniciar um novo projeto?
 
-Existem muitas razões pelas quais alguém pode querer iniciar um novo projeto de programação em PHP. Pode ser um desejo de aprender uma nova tecnologia, resolver um problema específico, criar um produto ou serviço útil para os usuários ou até mesmo um hobby divertido. Independentemente da motivação, iniciar um novo projeto pode ser uma aventura emocionante e gratificante.
+Iniciar um novo projeto em programação PHP pode trazer vários benefícios, como adquirir novas habilidades, expandir seu portfólio, ou até mesmo criar uma solução que resolva um problema específico para você ou para outras pessoas. Além disso, é uma oportunidade de se manter atualizado com as tendências e tecnologias mais recentes do mercado.
 
-Como começar?
+## Como fazer:
 
-Para começar um novo projeto de programação em PHP, primeiro certifique-se de ter um ambiente de desenvolvimento adequado configurado. Isso pode incluir um servidor web e um banco de dados, se necessário. Então, é importante ter um editor de código confiável para escrever e testar o código PHP.
+Para começar um novo projeto em PHP, siga estes passos simples:
 
-```PHP
+1. Instale um ambiente de desenvolvimento local como XAMPP ou WAMP.
+2. Crie uma pasta para seu projeto e inicie um novo arquivo PHP.
+3. Utilize as melhores práticas de organização e estruturação de código.
+4. Faça uso de bibliotecas e frameworks para facilitar o desenvolvimento.
+5. Teste e depure seu código regularmente para evitar erros no futuro.
+
+Aqui está um exemplo de código PHP básico para imprimir "Olá mundo" na tela:
+
+``` PHP
 <?php
-echo "Olá, mundo!";
+echo "Olá mundo";
 ?>
 ```
 
-Este simples exemplo de código PHP mostra como escrever e imprimir uma mensagem básica na tela. É uma boa prática começar com um código simples como este para se familiarizar com a sintaxe da linguagem e garantir que todas as configurações estejam corretas antes de continuar para projetos mais complexos.
+A saída deste código seria:
 
-Mergulho Profundo
+```
+Olá mundo
+```
 
-Ao iniciar um novo projeto em PHP, é importante ter em mente alguns pontos para garantir um desenvolvimento bem-sucedido. Primeiro, é importante planejar e definir os objetivos e requisitos do projeto antes de começar a codificar. Também é importante seguir as melhores práticas de programação, como usar nomes de variáveis e funções significativos, evitar códigos redundantes e documentar adequadamente o código.
+## Aprofundando:
 
-Outro aspecto importante é a segurança, especialmente quando se trata de aplicações web. É crucial proteger o código contra vulnerabilidades comuns, como injeção de SQL e cross-site scripting, usando técnicas de prevenção, como validação de entrada e escape de saída.
+Antes de começar seu novo projeto, é importante ter um planejamento adequado. Defina seus objetivos, requisitos e prazos para garantir que o projeto seja bem-sucedido. Além disso, escolha a melhor arquitetura e design para sua aplicação, levando em consideração fatores como escalabilidade e segurança.
 
-Veja também
+Lembre-se também de seguir as boas práticas de programação, como utilizar comentários descritivos em seu código, fazer uso de versionamento com Git e documentar adequadamente seu projeto. Isso facilitará a manutenção e colaboração com outros desenvolvedores no futuro.
 
-Para mais informações sobre como iniciar um novo projeto de programação em PHP, confira os links abaixo:
+## Veja também:
 
-- [Tutorial inicial de PHP para iniciantes](https://www.php.net/manual/pt_BR/tutorial.php)
-- [Curso gratuito de introdução ao PHP](https://www.cursoemvideo.com/course/php-para-iniciantes/)
-- [Documentação oficial do PHP](https://www.php.net/manual/pt_BR/index.php)
+- [Blog de PHP do Programador PHP](https://programadorphp.com.br/blog/)
+- [Documentação oficial do PHP](https://www.php.net/manual/pt_BR/)
+- [Curso de PHP gratuito](https://www.cursoemvideo.com/course/curso-de-php/)

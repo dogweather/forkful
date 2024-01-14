@@ -1,33 +1,18 @@
 ---
 title:    "Clojure: 检查目录是否存在"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么要检查是否存在目录？
 
-在进行编程时，经常会遇到需要检查某个文件夹是否存在的情况。这样可以确保程序能够顺利运行，避免出现错误。
+检查一个目录是否存在是在编程过程中很常见的一个操作。当我们想要在特定的位置创建文件或者读取某个目录下的文件时，我们需要先确认该目录是否存在。这是一种防范措施，避免程序出错。
 
-# 如何做到
+# 如何检查一个目录是否存在？
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(defn dir-exists? [path]
-  (.exists (io/file path)))
-
-(println (dir-exists? "/Users/username/Documents"))
-```
-
-运行以上代码，将会输出 `true` 或者 `false`，取决于您指定的文件夹是否存在。
-
-# 深入了解
-
-通过使用 `java.io.File` 类中的 `.exists` 方法，我们可以检查指定路径是否存在。但是，请注意，这种方法只能检查路径是否存在，无法判断文件夹是否为空或者可写，因此在使用时还需结合其他方法来完成更详细的判断。
-
-# 参考资料
-
-## [clojure.java.io API文档](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io.file)
-
-## [Java中的文件操作](https://www.w3cschool.cn/java/java-files.html)
+(defn check-dir-exists [dir]
+  "Checks if the given directory exists"
+  (if (ex

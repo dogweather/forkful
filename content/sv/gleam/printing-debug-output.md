@@ -1,70 +1,58 @@
 ---
 title:    "Gleam: Utskrift av felsökningsutdata"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När vi kodar, stöter vi ofta på buggar eller felaktigt beteende. Att använda "console.log" är ett vanligt sätt att felsöka, men i Gleam finns det en mer robust lösning - utskrift av debug-output. Detta ger oss en mer strukturerad och läsbar utdata, vilket kan underlätta felsökningen av våra program.
+Att skriva kod är som att lösa ett pussel. Ibland kan det vara svårt att förstå varför bitarna inte hamnar på rätt plats. Att använda print-satser för att få ut felmeddelanden eller värden från variabler kan vara otroligt hjälpsamt för att lösa problemet och få en bättre förståelse för koden.
 
 ## Hur man gör
 
-För att skriva ut debug-output i Gleam, använder vi funktionen "gleam/diagnostics/print". Denna funktion tar en parameter som är det värde vi vill skriva ut. Vi kan också använda "file_print" från "gleam/diagnostics/file" för att skriva ut till en specifik fil istället för konsolen.
-
-```Gleam
-import gleam/diagnostics
-
-let name = "John"
-
-gleam/diagnostics/print(name)
-```
-
-Detta kommer att skriva ut värdet av variabeln "name" i konsolen:
+Det finns olika sätt att skriva ut debug information i Gleam. Ett sätt är att använda funktionen `debug.print/1`, som tar emot ett argument och skriver ut det i konsolen. Här är ett exempel:
 
 ```
-"John"
+Gleam debug.print("Hello world!")
 ```
 
-Vi kan också skriva ut flera värden samtidigt genom att använda funktionen "print_list":
+Detta kommer att skriva ut "Hello world!" i konsolen när koden körs.
 
-```Gleam
-import gleam/diagnostics
-
-let name = "John"
-let age = 30
-
-gleam/diagnostics/print_list([name, age])
-```
-
-Detta kommer att skriva ut både namnet och åldern i konsolen:
+Om du vill skriva ut flera värden eller variabler kan du använda funktionen `debug.fmt/1`, som tar emot en lista av argument och formaterar dem för utskrift. Här är ett exempel på hur man kan använda den:
 
 ```
-"John"
-30
+Gleam let
+    name = "John"
+    age = 30
+in
+    debug.fmt(["Name: {}", name])
+    debug.fmt(["Age: {}", age])
 ```
 
-För att skriva ut till en fil, behöver vi också ange filnamnet:
+Detta kommer att skriva ut följande i konsolen:
 
-```Gleam
-import gleam/diagnostics
-import gleam/diagnostics/file as file
-
-let name = "John"
-
-file_file.write(name, "person.txt")
 ```
-
-Detta kommer att skriva ut namnet till en fil som heter "person.txt".
+Name: John
+Age: 30
+```
 
 ## Djupdykning
 
-Att använda debug-output kan vara till stor hjälp när vi behöver felsöka våra program eller förstå hur våra funktioner och variabler interagerar. Det ger oss möjlighet att se värdena på våra variabler och därmed förstå varför ett visst beteende uppstår. Det är också användbart när vi behöver testa en del av koden för att se om det fungerar som förväntat.
+I Gleam finns det också möjlighet att använda makron för att skriva ut debug-information. Detta kan vara användbart om du bara vill att din debug-kod ska köras i ett visst byggsteg eller miljö. Du kan också använda string interpolation för att enkelt formatera dina utskrifter. Här är ett exempel på hur man kan använda detta:
 
-Det finns också olika nivåer på debug-output som kan hjälpa oss att fokusera på specifika delar av vårt program. Vi kan använda "debug_print" för att skriva ut information om en viss del av koden, eller "trace_print" för att följa koden genom dess exekvering.
+```
+Gleam // #conditional(Prod, debug, {log/2})
+        print_me = "I'm being printed!"
+        // #string()
+        debug ~ "Debugging: {print_me}"
+```
+
+I det här exemplet kommer koden att skriva ut värdet av variabeln `print_me` bara om du bygger koden i ett icke-produktionsläge.
 
 ## Se även
 
-- [Gleam Diagnostics modulen](https://gleam.run/modules/gleam/gleam/diagnostics)
-- [Gleam File modulen](https://gleam.run/modules/gleam/gleam/diagnostics/file)
+- [Gleam dokumentation: Debugging](https://gleam.run/book/tour/debugging.html)
+- [Gleam dokumentation: Macro Debugging](https://gleam.run/book/tour/macros.html#debugging)
+- [Gleam Discord community](https://discord.gg/vWVWBzmMdy)

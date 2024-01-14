@@ -1,46 +1,43 @@
 ---
 title:    "Arduino: Alimerkkijonojen erottaminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-## Miksi haluat oppia tuottamaan alimerkkijonoja koodiasi varten? Alimerkkijonojen haku voi olla hyödyllistä, jos sinun täytyy käsitellä suurta määrää dataa ja haluat eristää tietyt osat siitä tai jos haluat muokata olemassa olevia merkkijonoja tietyllä tavalla.
+Miksi haluaisit erottaa osamerkkijonoja? Joskus on tarpeen käsitellä tekstiä osa kerrallaan ja tällöin osamerkkijonojen erottaminen on tarpeen. Tämä on erityisen hyödyllistä, jos haluat manipuloida tietyillä merkkijonoilla, kuten etsiä tiettyjä sanoja tai numeroita.
 
-## Kuinka tehdä
+## Ohjeet
 
-Alimerkkijonojen hakeminen Arduino-koodissa on suhteellisen helppoa, mutta vaatii hieman ymmärrystä string ja character tyyppisistä muuttujista. Seuraavassa koodiesimerkissä näytämme, kuinka voit hakea alimerkkijonon merkkijonosta ja tulostaa sen sarjaliikenteen kautta.
+Kätevä tapa erottaa osamerkkijonoja Arduino-ohjelmointiympäristössä on käyttää string-luokan substring()-funktiota. Tämä funktio ottaa kaksi parametria: aloitusindeksin ja lopetusindeksin. Näiden avulla voit määrittää, mikä osamerkkijono sinua kiinnostaa. Esimerkissä käytämme string-muuttujaa, mutta voit käyttää myös char-muuttujia. Huomaa myös, että indeksit alkavat nollasta.
 
-```arduino
-String merkkijono = "Tervetuloa Arduino-maailmaan!";
-Serial.begin(9600);
-Serial.println(merkkijono.substring(11, 19));
-```
-Tämä koodi tulostaisi "Arduino" sarjaliikenteen näytölle, koska se hakee alimerkkijonon väliltä 11 ja 19 ja tulostaa sen.
-
-Voit myös tallentaa alimerkkijonon uuteen muuttujaan ja käyttää sitä haluamallasi tavalla. Esimerkiksi:
-
-```arduino
-String nimi = "Matti Meikäläinen";
-String sukunimi = nimi.substring(6, 17);
-Serial.begin(9600);
-Serial.println(sukunimi);
+```Arduino
+String teksti = "Tämä on esimerkkilause.";
+String osa = teksti.substring(5, 9);
 ```
 
-Tämä koodi tulostaisi "Meikäläinen" sarjaliikenteen näytölle, koska se tallentaa alimerkkijonon väliltä 6 ja 17 uuteen muuttujaan ja tulostaa sen.
+Yllä olevassa koodissa etsimme osamerkkijonon "on" tekstin "esimerkkilause" sisältä ja tallennamme sen muuttujaan "osa". Voit myös käyttää negatiivisia indeksejä, jolloin tekstiä lasketaan takaa päin.
 
-## Syvempi sukellus
+```Arduino
+String teksti = "Tämä on esimerkkilause.";
+String osa = teksti.substring(-9, -5);
+```
 
-Alimerkkijonojen hakeminen perustuu kahteen tärkeään funktioon: "substring" ja "charAt". "Substring" palauttaa alimerkkijonon valitusta indeksistä toiseen ja "charAt" palauttaa merkin tietystä indeksistä.
+## Syväsukellus
 
-On tärkeää huomata, että indeksit alkavat aina nollasta ja että substring-funktiota käytettäessä toinen indeksi on poissuljettu. Esimerkiksi jos haluat hakea alimerkkijonon väliltä 3 ja 8, sinun tulisi käyttää substring(3, 9).
+Voit myös käyttää substring()-funktiota saadaksesi käyttöösi vain tietyn määrän merkkejä ilman, että sinun tarvitsee tietää indeksejä. Tässä käytämme funktiota, joka ottaa parametreiksi aloitusindeksin ja halutun merkkimäärän.
 
-Voit myös käyttää erilaisia ehtolauseita ja looppeja alimerkkijonojen hakemiseen ja käsittelyyn. Esimerkiksi voit käyttää "if" lausetta tarkistaaksesi, sisältääkö merkkijono tietyn alimerkkijonon. Voit myös käyttää for-looppeja käymään läpi merkkijonon merkkejä ja käyttää niitä haluamallasi tavalla.
+```Arduino
+String teksti = "Tämä on esimerkkilause.";
+String osa = teksti.substring(5, 2);
+```
+
+Tämä palauttaa merkkijonon "on", koska aloitusindeksistä alkaen otetaan kaksi merkkiä.
 
 ## Katso myös
 
-- [Arduino-string reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [C++ string documentation](https://www.cplusplus.com/reference/string/string/)
-- [String manipulation functions in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- Arduino string-luokan dokumentaatio: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Ohjeita merkkijonojen käsittelyyn Arduinolla: https://www.arduino.cc/en/Tutorial/StringIndexOf

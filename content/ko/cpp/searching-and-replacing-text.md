@@ -1,51 +1,42 @@
 ---
 title:    "C++: 텍스트 검색 및 대체"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜?
 
-문자열 내의 특정 문자를 찾고 대체하는 작업을 하는 이유는 코드의 유지 및 관리를 위해서입니다. 이 작업은 특정 문자를 일일이 찾아서 바꾸는 대신에 효율적으로 이루어지기 때문에 시간과 노력을 절약할 수 있습니다.
+텍스트를 검색하고 바꾸는 것에 참여하는 이유는 무엇일까요? 그것은 매우 유용한 도구입니다. 그것은 코드 작성을 효율적으로 만들고, 시간과 노력을 절약해줍니다. 특히 큰 프로젝트에서는 많은 양의 코드를 검색하고 바꾸는 것이 필수적이기 때문에 이 작업을 자동화하는 것은 더 중요합니다.
 
-# 방법
+## 방법
 
-C++에서는 string 클래스의 replace() 함수를 사용하여 문자열 내의 특정 문자를 찾고 대체할 수 있습니다. 아래는 이 함수의 예시 코드입니다.
+검색과 바꾸기는 다양한 프로그래밍 언어에서 지원되는 기능입니다. 여기서는 C++을 예로 들겠습니다.
+
+먼저, `string`이라는 클래스를 사용하여 텍스트를 저장해야 합니다. 예를 들어, "Hello, world!"라는 문자열을 저장하려면 다음과 같이 할 수 있습니다.
 
 ```C++
-#include <iostream>
-#include <string>
-
-int main() {
-    std::string str = "안녕하세요, 여러분!";
-    std::cout << "변경 전 문자열: " << str << "\n";
-
-    // "안녕하세요"를 "Hello"로 대체
-    str.replace(0, 5, "Hello");
-    std::cout << "변경 후 문자열: " << str << "\n";
-
-    return 0;
-}
+string text = "Hello, world!";
 ```
 
-위 코드의 출력은 다음과 같을 것입니다.
+그런 다음 `find()`와 `replace()` 메소드를 사용하여 원하는 문자열을 검색하고 바꾸는 작업을 수행할 수 있습니다. 예를 들어, 위에서 만든 `text` 문자열에서 "world"라는 단어를 "universe"로 바꾸기를 원한다면 다음과 같이 할 수 있습니다.
 
+```C++
+text.replace(text.find("world"), 5, "universe");
 ```
-변경 전 문자열: 안녕하세요, 여러분!
-변경 후 문자열: Hello, 여러분!
-```
+위 코드에서 `find()` 메소드는 "world" 문자열이 시작되는 인덱스를 반환하고, 그 값을 `replace()` 메소드의 첫 번째 매개변수로 전달합니다. 두 번째 매개변수는 바꾸고자 하는 문자열의 길이를 나타내며, 세 번째 매개변수는 바꿀 문자열을 지정합니다.
 
-위 예시에서는 replace() 함수를 사용하여 문자열의 맨 앞 5개의 문자를 "Hello"로 대체하였습니다. 하지만 더 복잡한 대체 작업을 위해서는 추가적인 매개변수를 사용해야 합니다. 이에 대한 내용은 아래에서 더 자세히 다뤄보겠습니다.
+위 코드를 실행하면 `text` 변수의 값은 "Hello, universe!"로 바뀔 것입니다.
 
-# 깊게 파고들기
+## 깊게 들어가기
 
-문자열의 replace() 함수는 세 가지 매개변수를 가지고 있습니다. 첫 번째 매개변수는 대체를 시작할 인덱스이고 두 번째 매개변수는 대체할 문자의 수입니다. 세 번째 매개변수는 대체할 새로운 문자열입니다. 대체할 문자의 수를 지정하지 않으면 대체할 문자열의 길이만큼 모두 대체하게 됩니다. 또한 string 클래스의 find() 함수를 사용하여 찾을 문자열의 인덱스를 먼저 찾은 후에 replace() 함수를 사용할 수도 있습니다.
+검색과 바꾸기 작업은 단순한 예제로서 소개되었지만, 더 복잡한 경우에는 정규 표현식을 사용하여 패턴을 찾을 수도 있습니다. 또한 다중 파일에서 검색과 바꾸기 작업을 수행할 수도 있습니다.
 
-더 자세한 내용은 아래 레퍼런스를 참고하시기 바랍니다.
+또한, C++에서는 `ifstream`와 `ofstream` 클래스를 사용하여 파일에서 텍스트를 읽어오고 수정된 텍스트를 다시 저장할 수 있습니다. 이를 활용하면 대용량의 텍스트 파일에서도 효율적으로 검색과 바꾸기 작업을 수행할 수 있습니다.
 
-# 관련 링크
+## 참고
 
-- C++ string 클래스 레퍼런스 (http://www.cplusplus.com/reference/string/string/)
-- string 클래스 replace() 함수 레퍼런스 (http://www.cplusplus.com/reference/string/string/replace/)
-- string 클래스 find() 함수 레퍼런스 (http://www.cplusplus.com/reference/string/string/find/)
+- [C++ string 클래스 문서](http://www.cplusplus.com/reference/string/string/)
+- [C++ file I/O 문서](http://www.cplusplus.com/doc/tutorial/files/) 
+- [정규 표현식 튜토리얼](https://www.regular-expressions.info/tutorial.html)

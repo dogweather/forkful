@@ -1,41 +1,39 @@
 ---
 title:    "Haskell: ディレクトリが存在するかどうかを確認する"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-＃＃＃なぜ
-ディレクトリの存在を確認する必要があるのかを説明します。
+## なぜ
 
-ディレクトリが存在するかどうかをチェックする理由はさまざまです。たとえば、プログラムが特定のディレクトリ内のファイルを操作する必要がある場合、そのディレクトリが存在しない場合には、エラーを防ぐために事前に存在をチェックする必要があります。
+ディレクトリが存在するかどうかを確認することについて学ぶのは、プログラムをより柔軟にするためです。
 
-＃＃＃ハウトゥ
-ディレクトリの存在をチェックする方法を説明します。
+## 方法
+
+ディレクトリが存在するかどうかを確認するには、Haskellのソースコード内に以下のコードを追加します。
 
 ```Haskell
 import System.Directory
 
 main = do
-  -- チェックするディレクトリのパスを定義する
-  let directory = "絶対パス/チェックするディレクトリ"
-  -- exists関数を使ってディレクトリが存在するかどうかを確認する
-  exists <- doesDirectoryExist directory
-  -- ディレクトリが存在した場合には"存在します"と出力する
-  if exists
-    then putStrLn "存在します"
-    -- ディレクトリが存在しなかった場合には"存在しません"と出力する
-    else putStrLn "存在しません"
+    dirExists <- doesDirectoryExist "myDirectory"
+    if dirExists
+        then putStrLn "myDirectory exists!"
+        else putStrLn "myDirectory does not exist."
 ```
 
-上記のコードでは、System.DirectoryモジュールのdoesDirectoryExist関数を使用して、指定したディレクトリが存在するかどうかを確認しています。ディレクトリが存在する場合にはTrue、存在しない場合にはFalseを返します。また、結果に応じて適切なメッセージを出力するように設定しています。
+上記のコードでは、System.DirectoryモジュールからdoesDirectoryExist関数を使って、指定したディレクトリが存在するかどうかを確認しています。存在すればTrue、存在しなければFalseを返します。そしてif文を使って、その結果に応じてメッセージを出力しています。これで指定したディレクトリが存在するかどうかを簡単に確認することができます。
 
-＃＃＃ディープダイブ
-ディレクトリの存在をチェックするためのさまざまな方法について、さらに詳しく説明します。
+## 深層ダイブ
 
-ハスケルでは、System.Directoryモジュールの他にもSystem.Posix.Filesモジュールを使用することで、ディレクトリの存在をチェックすることができます。また、例外処理を使用することでより詳細なエラーハンドリングを実装することも可能です。
+もし、指定したディレクトリが存在しない場合、どのようにエラーをハンドリングするかについて考えることができます。System.Directoryモジュールには、ディレクトリが存在しない場合のエラーメッセージをカスタマイズできる関数もあります。
 
-＃＃＃参照
-こちらのリンクを参考にしてください。  
-- [Hackageドキュメント (System.Directory)](https://hackage.haskell.org/package/directory-1.3.4.1/docs/System-Directory.html)
-- [Hackageドキュメント (System.Posix.Files)](https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html)
+また、他のプログラミング言語でも同じようにディレクトリが存在するかどうかを確認する方法がありますが、Haskellのように型安全な言語を使うことで、より信頼性の高いプログラムを作りやすくなります。
+
+## 関連情報
+
+* [HaskellのSystem.Directoryモジュールのドキュメント](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+* [ディレクトリを扱う上で覚えておきたいHaskellの基礎知識](https://qiita.com/yuroyoro/items/4effdbf7a769c50f674a)
+* [Haskellでファイル操作する方法](https://qiita.com/uchiko/items/38a6d847b17f3b0a9861)

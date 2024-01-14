@@ -1,50 +1,40 @@
 ---
-title:    "Elixir: Kapitalisering av en sträng"
+title:    "Elixir: Kapitalisera en sträng"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att forma en sträng med stora bokstäver kan vara en vanlig uppgift i många programmeringsprojekt, särskilt när du hanterar textdata. Det kan vara användbart för att skapa enhetliga strängar, filtrera och sortera data eller bara för att förbättra läsbarheten av utdata. I denna bloggpost ska vi titta på hur du kan göra detta enkelt i Elixir.
+Varför skulle du vilja konvertera en sträng till versaler? Det finns flera användbara tillämpningar för detta, till exempel om du vill jämföra texter som ska vara oberoende av versaler och gemener, eller om du vill göra en text mer läsbar genom att konvertera den till en större textstorlek.
 
 ## Så här gör du
-
-För att börja, låt oss definiera en variabel med en sträng som vi vill kapitalisera:
-
-```Elixir
-sträng = "detta är en sträng som ska kapitaliseras"
-```
-
-För enkel kapitalisering finns det en inbyggd funktion i Elixir som heter `String.capitalize/1` som kan användas på följande sätt:
+För att konvertera en sträng till versaler i Elixir, kan du använda funktionen `String.upcase/1`. Detta är en inbyggd funktion som tar en sträng som argument och returnerar en ny sträng med alla bokstäver i versaler. Här är ett exempel på hur du kan använda den:
 
 ```Elixir
-String.capitalize(sträng)
+iex> String.upcase("hej") 
+"HEJ"
 ```
 
-Detta skulle ge resultatet "Detta är en sträng som ska kapitaliseras". Observera att denna funktion bara kapitaliserar första bokstaven i varje ord och ignorera alla andra bokstäver. Om vi vill att alla bokstäver ska vara stora kan vi använda funktionen `String.upcase/1`:
+Som du kan se, har vår sträng "hej" blivit konverterad till "HEJ". Det är viktigt att notera att `String.upcase/1` inte modifierar den ursprungliga strängen, utan returnerar bara en ny sträng med de ändrade bokstäverna.
+
+Om du vill konvertera en sträng till gemener kan du istället använda funktionen `String.downcase/1`. Du kan också använda funktionen `String.capitalize/1` för att konvertera den första bokstaven i en sträng till en versal och resten till gemener.
 
 ```Elixir
-String.upcase(sträng)
+iex> String.downcase("HEJ") 
+"hej"
+
+iex> String.capitalize("hej, det här är min sträng") 
+"Hej, det här är min sträng"
 ```
-
-Detta skulle ge utdatan "DETTA ÄR EN STRÄNG SOM SKA KAPITALISERAS". Om vi bara vill att den första bokstaven ska vara stor och resten små, kan vi använda funktionen `String.normalize/1`:
-
-```Elixir
-String.capitalize(sträng)
-```
-
-Utmatningen skulle vara "Detta är en sträng som ska kapitaliseras". Det finns också möjligheter att kapitalisera en sträng baserat på andra kriterier, som till exempel omvänd ordning, första och sista bokstaven i en mening etc. Det finns också specifika funktioner för Unicode-strängar som kan vara användbara för olika språk.
 
 ## Djupdykning
+Det finns flera saker att tänka på när du ska konvertera en sträng till versaler. En är att det finns skillnader mellan hur olika språk hanterar versaler och gemener. Till exempel, i de flesta västerländska språk är det enkelt att konvertera till versaler eftersom de flesta bokstäver har en motsvarande versalform. Men i vissa språk, som till exempel turkiska, så finns det bokstäver som saknar motsvarande versaler, vilket kan leda till felaktig konvertering.
 
-Elixir har olika typer av strängar, som binära, som har fördelar som är lämpliga för vissa användningsområden. Det finns också många inbyggda funktioner som du kan använda för att manipulera strängar på olika sätt. Vissa av dem har redan nämnts ovan, men det finns också funktioner som `String.split/2` för att dela upp en sträng baserat på ett visst tecken eller `String.replace/4` för att ersätta en del av en sträng med en annan. Det är också möjligt att använda reguljära uttryck när du bearbetar strängar i Elixir.
-
-Utforska gärna Elixirs dokumentation för att hitta fler användbara funktioner för att hantera strängar.
+Det är också viktigt att tänka på att inte alltid anta att versalformen av en bokstav är bara en större version av gemener. Till exempel i tyska så har bokstaven "ß" (ess-tsett) ingen versalform, utan ska istället bytas ut mot "SS" i versaler.
 
 ## Se även
-
-- Elixir Dokumentation om [string manipulation](https://elixir-lang.org/getting-started/strings.html)
-- [Elixir School](https://elixirschool.com/) - en interaktiv plattform för att lära sig Elixir
-- [Elixir Forum](https://elixirforum.com/) - en gemenskapsdriven plats för att ställa frågor och få hjälp med Elixir-programmering
+- [String.upcase/1 i Elixir Docs](https://hexdocs.pm/elixir/String.html#upcase/1)
+- [Turkiska och versaler](https://en.wikipedia.org/wiki/Turkish_alphabet#Case)
+- [Versaler och tyska språket](https://en.wikipedia.org/wiki/Capital_%C3%9F)

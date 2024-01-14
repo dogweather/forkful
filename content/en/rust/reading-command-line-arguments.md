@@ -1,58 +1,61 @@
 ---
 title:    "Rust recipe: Reading command line arguments"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Do you ever find yourself needing to run a program with custom user input from the command line? This is a common situation for many software developers, and understanding how to read command line arguments is a crucial skill for any programmer. In this blog post, we will explore how to read command line arguments in Rust and why it is an important concept to know.
+Command line arguments are an essential part of any command line program. They allow users to provide input to the program without the need for a graphical user interface. In this blog post, we will explore how to read command line arguments in Rust.
 
 ## How To
 
-To read command line arguments in Rust, we can use the standard library's `args()` function. This function returns an iterator over the command line arguments passed to the program.
+Reading command line arguments in Rust is quite straightforward. We can use the `std::env` module to access the list of arguments passed to our program.
 
-Here is a simple example of how to use `args()` in a Rust program:
+Let's say we have a program called `my_program` and we want to read two arguments, `name` and `age`. Here's how we can do it in Rust:
 
-```Rust
-use std::env; // Import the standard library's environment module
+````Rust
+use std::env;
 
 fn main() {
-    // Get the iterator over the command line arguments
-    let mut args = env::args();
-
-    // Skip the first argument, which is the name of the program
-    args.next();
-
-    // Iterate over the remaining arguments and print them out
-    for arg in args {
-        println!("{}", arg);
+    // access the arguments passed to our program
+    let args: Vec<String> = env::args().collect();
+    
+    // check if the arguments are present
+    if args.len() < 3 {
+        // if not, print an error message and exit
+        println!("Please provide a name and an age as arguments.");
+        return;
     }
+    
+    // assign the values to variables
+    let name = &args[1];
+    let age = &args[2];
+    
+    // print out the name and age
+    println!("Hello, {}! You are {} years old.", name, age);
 }
-```
+````
 
-If we compile and run this program with the command `rustc main.rs` followed by `./main hello world`, the output will be:
+If we run `my_program` with the arguments `John 30`, the output will be:
 
 ```
-hello
-world
+Hello, John! You are 30 years old.
 ```
-
-We can also access specific arguments by index using the `nth()` method. For example, if we want to access the second argument, we can use `args.nth(1)`.
 
 ## Deep Dive
 
-Command line arguments are a way for users to pass input to a program at runtime. They are useful for providing custom configurations or data without the need to recompile the program. 
+So, how does the `env::args()` function work? It returns an iterator of type `Args`, which we then collect into a `Vec<String>`. This vector contains the name of our program as the first element and all the arguments passed to the program as subsequent elements.
 
-In Rust, the `args()` function returns an iterator over `String` values. This means that each argument is stored as a `String` type, which can be manipulated and processed like any other `String` in Rust.
+We then check the length of the vector to ensure that the correct number of arguments were provided. If not, we print an error message and exit the program.
 
-One important thing to note is that the `nth()` method returns an `Option<String>` type, meaning it can either contain a `String` value or be `None`. This is because the index may not exist if the user does not provide enough arguments. It is important to handle this possibility in our code to avoid errors.
+Next, we use indexing to assign the value of the arguments to variables. It's important to note that the first element of the vector is the name of our program, so we need to start our indexing at 1.
 
 ## See Also
 
-Here are some links to learn more about reading command line arguments in Rust:
+- [Rust Documentation for std::env::args](https://doc.rust-lang.org/stable/std/env/fn.args.html)
+- [The Rust Book - Command Line Programs](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
 
-- [Rust Standard Library Documentation on `std::env`](https://doc.rust-lang.org/std/env/index.html)
-- [The Rust Programming Language book - Command Line Arguments](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html#command-line-arguments)
-- [Command Line Interfaces in Rust - YouTube tutorial](https://www.youtube.com/watch?v=QgZGj_DbdHg)
+Now that you know how to read command line arguments in Rust, you can start creating powerful command line programs!

@@ -1,35 +1,37 @@
 ---
-title:    "C#: भविष्य या अतीत में तारीख की गणना"
+title:    "C#: भविष्य या अतीत में एक दिन की गणना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Kyun"
+## क्यों
 
-Aaj kal hamare paas bahut saare technology aur gadgets hai jo humare zindagi ko aasan banate hai. Inme se ek hai programming languages, jisme se C# ek popular language hai jo bahut saari fields mein use kiya jaata hai. Aaj hum baat karenge date ko calculate karne ki, future ya past mein, aur usse kyun engage hona chahiye.
+डेटा को भविष्य के लिए या भूतकाल के लिए हस्ताक्षर करने के लिए, जैसे कि एक वर्ष पहले और दस वर्ष बाद की तारीखों का पता लगाने के लिए, यह बहुत महत्वपूर्ण हो सकता है।
 
-"## Kaise Kare"
+## कैसे करें
 
-Yadi aap date ke saath kaam karte hai, jaise ki kisi project ya task ki deadline set karna, toh aapko date ko aage ya peeche calculate karne ki zarurat pad sakti hai. C# mein iske liye aapko DateTime class ka istemaal karna hota hai.
+अगर आपको C# में डेटा को भविष्य या भूतकाल में हस्ताक्षर करने की जरूरत होती है, तो आप निम्नलिखित स्टेप्स का पालन कर सकते हैं:
 
-Ek simple example ke liye, hum ek date ko 7 din aage calculate karenge. Iske liye hum pehle DateTime object banayenge aur usse current date se initialise karenge. Fir hum usme 7 din add kar denge.
+1. `DateTime` और `TimeSpan` क्लासेस का इस्तेमाल करके तारीख को कंप्यूट करें।
+2. `Add` और `Subtract` मेथड का उपयोग करके दिए गए दिनों या वर्षों को तारीख से जोड़ें या घटाएँ।
+3. नतीजों की जांच करने के लिए कोड को दोहराएँ और सही तारीखों के साथ उन्हें प्रिंट करें।
+
+इस प्रकार से आप C# में डेटा को भविष्य या भूतकाल में हस्ताक्षर कर सकते हैं। नीचे दिए गए कोड ब्लॉक में आपको एक संबंधित उदाहरण मिलेगा:
 
 ```C#
-DateTime currentDate = DateTime.Today;
-DateTime futureDate = currentDate.AddDays(7);
+// हस्ताक्षर की तारीख की गणना
+DateTime futureDate = new DateTime(2022, 10, 31);
+DateTime pastDate = new DateTime(2015, 03, 12);
+
+// भविष्य और भूतकाल के बीच अंतर की जांच करें
+TimeSpan timeDifference = futureDate.Subtract(pastDate);
+Console.WriteLine($"भविष्य और भूतकाल के बीच अंतर है: {timeDifference.Days} दिन");
 ```
 
-Is code se humne current date liya aur usme 7 din add karke future date calculate ki. Is tarah se aap future ya past mein bhi date ko manipulate kar sakte hai. Iske alawa hum time zones aur leap years ko bhi consider kar sakte hai.
+उपरोक्त कोड नतीजों को प्रिंट करेगा: "भविष्य और भूतकाल के बीच अंतर है: 2733 दिन"।
 
-"## Gahre Khayal"
+## गहराई से जानें
 
-DateTime class ke saath kaam karte hue, aapko kuch important points ko dhyaan rakhna hoga. Jaise ki aapko time zones ko handle karna hoga, kyunki date aur time ki values alag-alag time zones mein different ho sakti hai. Iske alawa DateTime object immutable hota hai, iska matlab hai ki aap usse modify nahi kar sakte hai, lekin aap naye objects bana sakte hai jinse aap date ko manipulate kar sakte hai. Aur leap years ko handle karne ke liye bhi aapko careful hona hoga.
-
-"## Dekhiye Bhi"
-
-Yadi aapko date ko calculate karne mein aur bhi details chahiye, toh aap in links ko refer kar sakte hai:
-
-- Microsoft Docs: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0
-- Tutorialspoint: https://www.tutorialspoint.com/csharp/csharp_date_time.htm
-- C# Corner: https://www.c-sharpcorner.com/blogs/manipulation-of-datetime-typed-value-in-net2
+जब हम C# में डेटा को भविष्य या भूतकाल में हस्ताक्षर करते हैं, तो हम वास्तव मध्य पट्टी क

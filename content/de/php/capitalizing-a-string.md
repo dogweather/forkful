@@ -1,50 +1,49 @@
 ---
 title:    "PHP: Großschreibung eines Strings"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+In der Programmierung gibt es oft die Notwendigkeit, bestimmte Zeichenfolgen zu formatieren, um sie lesbarer oder ästhetisch ansprechender zu machen. Eine häufige Formatierung ist die Großschreibung von Strings. In diesem Blogbeitrag erfahren Sie, warum diese Formatierung nützlich sein kann.
 
-Das Großschreiben eines Strings kann in der Programmierung oft notwendig sein, um die Lesbarkeit von Texten zu verbessern oder bestimmte Anforderungen zu erfüllen. In diesem Blogbeitrag erfahren Sie, wie Sie Strings in PHP einfach und effizient großschreiben können.
-
-## How To
-
-Die grundlegende Methode, um einen String in PHP zu verändern, ist die Funktion `strtoupper()`. Diese Funktion wandelt alle Buchstaben in Großbuchstaben um und gibt den geänderten String zurück.
-
-Ein Beispiel für die Anwendung der `strtoupper()` Funktion:
+## Wie geht's
+Um einen String in PHP zu Großbuchstaben zu konvertieren, können wir die Funktion `strtoupper()` verwenden. Dies ist besonders hilfreich, wenn wir Benutzereingaben normalisieren möchten, um beispielsweise sicherzustellen, dass alle Suchanfragen in Großbuchstaben vorliegen. Im Folgenden ein Beispielcode:
 
 ```PHP
-$string = "hallo welt";
+$string = "Hallo, wie geht es dir?";
 echo strtoupper($string);
 ```
 
-Die Ausgabe dieses Codes wäre: "HALLO WELT". 
-
-Es ist auch möglich, nur den ersten Buchstaben eines Strings großzuschreiben, indem die Funktion `ucfirst()` verwendet wird. Hierbei müssen jedoch einige Besonderheiten beachtet werden, da die Funktion möglicherweise nicht für alle Sprachen ohne Weiteres funktioniert. Eine Alternative ist die Verwendung von `mb_convert_case()`.
-
-Ein Beispiel für die Anwendung von `ucfirst()` und `mb_convert_case()`:
+Die Ausgabe sieht wie folgt aus:
 
 ```PHP
-$string = "guten tag";
-echo ucfirst($string); // Ausgabe: "Guten tag"
-echo mb_convert_case($string, MB_CASE_TITLE, "UTF-8"); // Ausgabe: "Guten Tag"
+HALLO, WIE GEHT ES DIR?
 ```
 
-Weitere Möglichkeiten, Strings zu manipulieren und großzuschreiben, sind die Verwendung von regulären Ausdrücken und die Nutzung der PHP-Standardfunktionen `str_replace()` und `preg_replace()`.
+Wir können auch `ucwords()` verwenden, um jeden Anfangsbuchstaben in einem String zu groß zu schreiben. Schauen wir uns ein weiteres Beispiel an:
 
-## Deep Dive
+```PHP
+$string = "hello world";
+echo ucwords($string);
+```
 
-Bei der Verwendung von `strtoupper()` und `ucfirst()` ist zu beachten, dass die Funktionen nur mit lateinischen Buchstaben funktionieren. Für andere Sprachen müssen möglicherweise andere Methoden verwendet werden, um Strings zu großschreiben.
+Die Ausgabe sieht folgendermaßen aus:
 
-Zudem kann die Manipulation von Strings in bestimmten Fällen Auswirkungen auf die Performance des Codes haben. Daher ist es wichtig, die geeignetste Methode für den jeweiligen Anwendungsfall zu wählen.
+```PHP
+Hello World
+```
+
+Diese Funktionen können auch nützlich sein, wenn wir Datenbankabfragen ausführen und sicherstellen müssen, dass bestimmte Felder immer in Großbuchstaben vorliegen.
+
+## Tiefere Einblicke
+Während die Großschreibung eines Strings ein einfacher Schritt in der Programmierung sein mag, ist es immer wichtig, die Auswirkungen auf die Performance zu beachten. In PHP werden Strings intern als Arrays behandelt, daher kann die Verwendung von `strtoupper()` oder `ucwords()` auf sehr langen Strings zusätzliche Ressourcen erfordern.
+
+Eine alternative Möglichkeit, Strings in Großbuchstaben zu konvertieren, besteht darin, die Sprachfunktion `mb_convert_case()` zu verwenden. Diese Funktion ermöglicht es uns, den gewünschten Ausgabe- und Eingabezeichensatz zu definieren, was besonders hilfreich sein kann, wenn wir mit Nicht-ASCII-Strings oder mehrsprachigen Anwendungen arbeiten.
 
 ## Siehe auch
-
-- [PHP Dokumentation zu strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
-- [PHP Dokumentation zu ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP Dokumentation zu mb_convert_case()](https://www.php.net/manual/en/function.mb-convert-case.php)
-- [Reguläre Ausdrücke in PHP](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
-- [PHP Dokumentation zu str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP Dokumentation zu preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [Die offizielle PHP-Dokumentation zu strtoupper()](https://www.php.net/manual/de/function.strtoupper.php)
+- [Die offizielle PHP-Dokumentation zu ucwords()](https://www.php.net/manual/de/function.ucwords.php)
+- [Die offizielle PHP-Dokumentation zu mb_convert_case()](https://www.php.net/manual/de/function.mb-convert-case.php)

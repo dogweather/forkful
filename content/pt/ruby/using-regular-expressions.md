@@ -1,37 +1,58 @@
 ---
-title:    "Ruby: Usando Expressões Regulares"
+title:    "Ruby: Utilizando expressões regulares"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar expressões regulares em Ruby?
+## Por que usar Expressões Regulares
 
-Expressões regulares são uma ferramenta poderosa de processamento de texto que podem facilitar e agilizar muito o seu código Ruby. Com elas, você pode procurar por padrões específicos em strings e manipulá-los de acordo com suas necessidades. Além disso, uma vez que se torna familiar com as sintaxes das expressões regulares, elas podem ser aplicadas em outras linguagens de programação também.
+Expressões Regulares são uma ferramenta útil para realizar busca e manipulação de texto em scripts Ruby. Elas permitem que os programadores encontrem e substituam padrões específicos de texto rapidamente e com precisão. É uma habilidade valiosa a se ter para quem trabalha com processamento de texto ou dados.
 
-## Como utilizar expressões regulares em Ruby
+## Como usar Expressões Regulares
 
-Para utilizar expressões regulares em Ruby, você deve utilizar a classe `Regexp` e seu construtor `new`, fornecendo a expressão regular desejada entre duas barras `/`. Vamos ver um exemplo prático:
+Para usar Expressões Regulares em Ruby, é necessário utilizar o método `.match` e um objeto de Regexp. Por exemplo:
 
 ```Ruby
-str = "Olá, eu sou um blog post escrito em Ruby"
-regex = /blog post/
-
-str =~ regex
-# Retorna a posição inicial da primeira ocorrência da expressão regular na string (8 neste caso)
-
-str[regex]
-# Retorna a string que corresponde à expressão regular ("blog post" neste caso)
+texto = "Olá, eu sou um texto"
+padrao = /Olá/
+resultado = texto.match(padrao)
 ```
 
-Você também pode utilizar métodos como `match` e `scan` para encontrar todas as ocorrências da sua expressão regular na string, e utilizar as opções `i` (ignore case) e `m` (multiline) para fazer sua busca ser mais flexível. Além disso, é possível utilizar quantificadores como `*` e `+` para indicar respectivamente a presença de 0 ou mais repetições de um padrão e a presença de pelo menos uma repetição de um padrão.
+Neste exemplo, estamos procurando o padrão "Olá" no texto e armazenando o resultado na variável `resultado`. Podemos então utilizar métodos como `.to_s` para converter o resultado em uma string e imprimir na tela.
 
-## Uma análise mais aprofundada das expressões regulares em Ruby
+```Ruby
+puts resultado.to_s
+# Output => "Olá"
+```
 
-Além das funcionalidades mais comuns das expressões regulares, Ruby oferece algumas características extras que tornam seu uso ainda mais poderoso. Por exemplo, você pode utilizar expressões regulares para substituir trechos de strings de acordo com o padrão especificado. Para isso, basta utilizar o método `gsub` e fornecer o novo trecho desejado como segundo argumento. Além disso, é possível nomear grupos de captura em suas expressões regulares para facilitar o processo de manipulação de dados capturados.
+Desta forma, podemos facilmente identificar e extrair partes específicas de um texto usando Regexp.
+
+## Aprofundando nas Expressões Regulares
+
+Além do básico, existem muitos conceitos e funcionalidades avançadas em Expressões Regulares. Por exemplo, é possível utilizar caracteres especiais como `?` e `*` para representar padrões opcionais ou repetidos. Também é possível utilizar classes de caracteres, como `[0-9]`, para encontrar dígitos específicos no texto.
+
+Outra funcionalidade útil é o uso de "grupos de captura", que permitem que apenas parte de um padrão seja extraído do texto. Por exemplo:
+
+```Ruby
+data = "Hoje é 28 de Setembro"
+padrao = /é (\d{1,2}) de ([a-zA-Z]+)/
+resultado = data.match(padrao)
+```
+
+Neste caso, ao utilizar o método `[]` em `resultado`, podemos acessar apenas o dia e o mês da data digitada.
+
+```Ruby
+puts resultado[1]
+# Output => "28"
+puts resultado[2]
+# Output => "Setembro"
+```
+
+Essas são apenas algumas das muitas funcionalidades que podem ser exploradas em Expressões Regulares. É uma ferramenta poderosa e flexível para manipulação de texto em Ruby.
 
 ## Veja também
-
-- [Documentação da classe Regexp em Ruby](https://docs.ruby-lang.org/en/2.7.0/Regexp.html)
-- [Tutorial de expressões regulares em Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-- [Guia rápido de expressões regulares em Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Documentação oficial de Expressões Regulares em Ruby](https://ruby-doc.org/core-3.0.1/Regexp.html)
+- [Tutorial de Expressões Regulares em Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Livro "Mastering Regular Expressions" (em inglês)](https://www.amazon.com/Mastering-Regular-Expressions-Friedl-3rd/dp/0596528124)

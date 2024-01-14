@@ -1,59 +1,60 @@
 ---
-title:    "Clojure: 디버그 출력 출력하기"
+title:    "Clojure: 디버그 출력 출력"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-디버그 출력을 사용해야할까요? 일반적으로 디버그 출력은 코드를 디버그하고 오류를 찾는 데 도움이됩니다.
 
-## 어떻게 하나요?
-디버그 출력을 사용하려면 `println` 함수를 사용합니다.
+디버그 출력을 프린팅하는 이유는 문제가 발생한 코드를 이해하고 디버깅하는 것에 도움을 줄 수 있기 때문입니다.
+
+## 어떻게
+
+디버그 출력을 프린팅하려면 `println` 함수를 사용하면 됩니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
+
 ```Clojure
-(println "Hello, World!")
+(defn calculate-sum
+    "두 숫자의 합을 계산하는 함수"
+    [num1 num2]
+    (println "num1의 값은" num1)
+    (println "num2의 값은" num2)
+    (+ num1 num2))
+
+(calculate-sum 5 3)
 ```
 
-출력:
-```
-Hello, World!
-```
+위 코드는 `calculate-sum` 함수를 정의하고 그 안에서 `println` 함수를 사용하여 디버그 출력을 프린팅하는 예시입니다. 아래는 해당 코드의 출력결과입니다.
 
-## 깊이 빠져보기
-디버그 출력은 주로 코드에서 변수의 값을 확인하거나 코드의 흐름을 따르는 데 사용됩니다. 이를 통해 오류가 발생하는 위치를 찾을 수 있고, 코드를 수정할 때 문제를 파악하는 데 도움이 됩니다.
-
-또한, `prn` 함수를 사용하면 디버그 출력을 더 깔끔하게 나타낼 수 있습니다. 예를 들어, `prn` 함수는 자동으로 따옴표를 삽입해주기 때문에 변수의 값을 따로 처리할 필요가 없습니다.
 ```Clojure
-(def num 10)
-(prn "The value of num is" num)
+num1의 값은 5
+num2의 값은 3
 ```
 
-출력:
-```
-"The value of num is" 10
-```
+## 딥 다이브
 
-## 또 다른 예
-디버그 출력을 사용하는 다른 예는 함수의 입력값과 출력값을 확인하는 것입니다. 예를 들어, 아래의 `square` 함수는 주어진 숫자를 제곱한 값을 반환합니다. 디버그 출력을 사용하여 함수의 입력값과 출력값을 확인할 수 있습니다.
+디버그 출력은 코드를 디버깅하는 과정에서 매우 유용합니다. `println` 함수를 사용하여 변수의 값이나 코드의 실행 흐름을 확인할 수 있습니다. 또한, `pr` 함수를 사용하여 인자를 더 자세하게 출력할 수도 있습니다. 예를 들어, `pr` 함수는 스트링이 아닌 자료형을 출력할 때 더 적합한 포맷으로 출력해줍니다.
+
 ```Clojure
-(defn square [num]
-  (prn "Input:" num)
-  (let [result (* num num)]
-    (prn "Output:" result)
-    result))
-    
-(square 4)
+(defn calculate-product
+    "두 숫자의 곱을 계산하는 함수"
+    [num1 num2]
+    (pr "num1의 값은" num1)
+    (pr "num2의 값은" num2)
+    (* num1 num2))
+
+(calculate-product 2 4)
 ```
 
-출력:
-```
-"Input:" 4
-"Output:" 16
-16
+위 코드는 `pr` 함수를 사용하여 변수의 값과 계산식을 더 세부적으로 출력하는 예시입니다. 아래는 해당 코드의 출력결과입니다.
+
+```Clojure
+num1의 값은2
+num2의 값은4
 ```
 
-## 참고할 만한 링크들
-- [Clojure 디버깅 가이드](https://www.braveclojure.com/debugging/)
-- [Clojure 소개](https://clojure.org/about/introduction)
-- [Clojure REPL (Read-Eval-Print-Loop) 사용하기](https://lispcast.com/clojure-repl/)
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+## 관련 정보
+
+- [Clojure 공식 문서 - 입출력](https://clojure.org/guides/io)
+- [Clojure 공식 문서 - Debugging](https://clojure.org/guides/debugging)

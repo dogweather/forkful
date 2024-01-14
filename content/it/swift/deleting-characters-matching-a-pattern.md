@@ -1,48 +1,47 @@
 ---
-title:    "Swift: Eliminazione di caratteri corrispondenti a uno schema"
+title:    "Swift: Eliminazione di caratteri corrispondenti a un modello"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-Ci sono molte ragioni per cui potresti voler cancellare dei caratteri che corrispondono ad un determinato modello in Swift. Forse vuoi pulire i dati di input da caratteri speciali o vuoi rimuovere le emoticon da un testo. Qualunque sia il motivo, imparare come farlo può semplificare il tuo codice e rendere il tuo programma più efficiente.
+Eliminare i caratteri corrispondenti a un determinato modello può essere utile quando si vuole filtrare o modificare una stringa, ad esempio per rimuovere spazi vuoti o simboli di punteggiatura.
 
-## Come
+## Come fare
 
-Per cancellare i caratteri che corrispondono ad un modello in Swift, utilizzeremo la funzione `filter` che accetta una chiusura (closure) come parametro. La chiusura viene eseguita per ogni carattere nella stringa e determina se il carattere deve essere incluso o meno nel risultato finale.
-
-Ecco un esempio di codice in Swift che rimuove tutte le lettere minuscole da una stringa:
+È possibile utilizzare il metodo `replacingOccurrences(of:with:)` sulla stringa di cui si desidera eliminare i caratteri. Ad esempio, se si vuole rimuovere tutti gli spazi vuoti dalla stringa `hello world`, si può scrivere:
 
 ```Swift
-let input = "H3ll0 W0rld! 🌎"
-let output = input.filter { character in
-    return !character.isLowercase
-}
-
-print(output) // Output: H3! 🌎
+let stringa = "hello world"
+let nuovaStringa = stringa.replacingOccurrences(of: " ", with: "")
+print(nuovaStringa)
 ```
 
-Nell'esempio sopra, abbiamo usato la funzione `isLowercase` per determinare se il carattere è una lettera minuscola o meno. Se il carattere è una lettera minuscola, viene escluso dal risultato finale. Possiamo anche utilizzare altri metodi come `isUppercase` o `isNumber` per filtrare caratteri diversi.
+Output:
+`helloworld`
 
-## Deep Dive
+## Approfondimento
 
-Per coloro che vogliono approfondire, esiste un'alternativa alla funzione `filter` per cancellare i caratteri che corrispondono a un modello in Swift. Possiamo utilizzare la funzione `replacingOccurrences` che sostituisce una stringa con un'altra stringa specificata.
+Esistono diversi metodi per eliminare caratteri in Swift, come utilizzare l'operatore `!`, utilizzare la funzione globale `replace(_:with:options:range:)` o utilizzare espressioni regolari con il framework `Foundation`.
 
-Ecco un esempio di codice che utilizza la funzione `replacingOccurrences` per rimuovere tutti i caratteri non numerici da una stringa:
+Un'altro modo per eliminare caratteri da una stringa è utilizzare il metodo `filter()` sulle sue caratteristiche:
 
 ```Swift
-let input = "H3ll0 W0rld! 🌎"
-let output = input.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-
-print(output) // Output: 30
+let stringa = "This is a sentence."
+let caratteriDaRimuovere = "aeiou"
+let nuovaStringa = stringa.filter { !caratteriDaRimuovere.contains($0) }
+print(nuovaStringa)
 ```
 
-In questo caso, stiamo utilizzando l'espressione regolare `[^0-9]` che corrisponde a tutti i caratteri che non sono numerici. Utilizzando la funzione `replacingOccurrences`, sostituiamo questi caratteri con una stringa vuota, ottenendo così una stringa solo con numeri.
+Output:
+`Ths s sntnc.`
 
-## Vedi anche
+# Vedi anche
 
-- [La documentazione ufficiale di Swift sulla funzione `filter`](https://developer.apple.com/documentation/swift/array/1688939-filter)
-- [La documentazione ufficiale di Swift sulla funzione `replacingOccurrences`](https://developer.apple.com/documentation/foundation/nsstring/1415564-replacingoccurrences)
-- [Un tutorial dettagliato sull'uso delle espressioni regolari in Swift](https://www.raywenderlich.com/576-ios-regexp)
+- [metodo `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1417296-replacingoccurrences)
+- [funzione globale `replace(_:with:options:range:)`](https://developer.apple.com/documentation/swift/string/1641127-replace)
+- [framework `Foundation`](https://developer.apple.com/documentation/foundation)
+- [metodo `filter()`](https://developer.apple.com/documentation/swift/array/2945498-filter)

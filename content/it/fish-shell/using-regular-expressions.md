@@ -1,31 +1,45 @@
 ---
-title:    "Fish Shell: Utilizzare le espressioni regolari"
+title:    "Fish Shell: Utilizzando le espressioni regolari"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Se sei un programmatore o un appassionato di tecnologia, sicuramente avrai sentito parlare di espressioni regolari (o regex). Questi sono strumenti potenti per manipolare e cercare stringhe di testo in modo preciso e veloce. Se vuoi imparare a utilizzare le espressioni regolari nel tuo codice Fish Shell, continuate a leggere!
+## Perché Utilizzare le Espressioni Regolari nel Fish Shell
 
-## Come fare
-La prima cosa da fare è assicurarsi di avere Fish Shell installato sul tuo computer. Puoi trovare le istruzioni di installazione su <https://fishshell.com>. Una volta installato, puoi utilizzare il comando `grep` per cercare un pattern specifico in un file di testo. Ad esempio, se vuoi cercare tutte le parole che iniziano con la lettera "a" in un file di testo, puoi utilizzare il seguente comando:
+Le espressioni regolari sono una potente strumento utilizzato per riconoscere e manipolare testi secondo uno schema specifico. Nel Fish Shell, possono essere utilizzate per automazioni di compiti ripetitivi, ricerca di file e molte altre funzioni utili. Continua a leggere per scoprire come utilizzarle nel tuo codice.
 
-```Fish Shell
-grep -w "a" file.txt
+## Come Utilizzare le Espressioni Regolari nel Fish Shell
+
+Per utilizzare le espressioni regolari nel Fish Shell, è necessario utilizzare il comando "string match". Ad esempio, se vogliamo cercare la parola "pesce" all'interno di una stringa, possiamo utilizzare il seguente codice:
+
+```
+Fish Shell stringmatch 'pesce' 'Mi piace il pesce'
 ```
 
-Questa riga di codice cercherà tutte le parole che iniziano con "a" nel file.txt e le stamperà sullo schermo. Puoi anche utilizzare espressioni regolari più complesse come `[A-Z]+` per cercare tutte le parole che iniziano con una lettera maiuscola. Ci sono molte altre opzioni e caratteri speciali che puoi utilizzare nelle espressioni regolari, quindi assicurati di consultare la documentazione ufficiale di Fish Shell per saperne di più.
+Questo comando restituirà "1" se la parola "pesce" è presente nella stringa e "0" se non è presente. Possiamo anche utilizzare espressioni regolari più complesse, come nel seguente esempio che cerca una parola con una "h" alla fine:
 
-## Approfondimento
-Le espressioni regolari possono sembrare complesse all'inizio, ma possono essere estremamente utili nel manipolare e cercare grandi quantità di testo. Uno dei trucchi più utili è l'utilizzo dei gruppi di cattura `()` per estrarre parti specifiche di una stringa di testo. Ad esempio, se vuoi trovare tutti gli indirizzi email in un testo, puoi utilizzare il seguente comando:
-
-```Fish Shell
-grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" file.txt
 ```
-Questo comando utilizzerà una espressione regolare più complessa per trovare e stampare tutti gli indirizzi email presenti nel file.txt. Puoi anche combinare le espressioni regolari con altri comandi di Fish Shell come `sed` o `awk` per ottenere risultati ancora più personalizzati.
+Fish Shell string match '*h' 'Pesche'
+```
+
+In questo caso, il risultato sarà sempre "1" poiché la parola "Pesche" termina con una "h". Possiamo anche utilizzare gli operator con le espressioni regolari, come nel seguente esempio che cerca una stringa che inizia con "p" e termina con "h":
+
+```
+Fish Shell string match 'p*h' 'Pesce'
+```
+
+Questo comando restituirà "1" poiché la stringa "Pesce" rispetta la regola specificata.
+
+## Approfondimenti sull'utilizzo delle Espressioni Regolari
+
+Oltre agli esempi sopra riportati, esistono molte altre funzioni e operatori che possono essere utilizzati con le espressioni regolari nel Fish Shell. Ad esempio, è possibile utilizzare l'operatore "not" per cercare una stringa che non corrisponde a una determinata espressione regolare.
+
+Per ulteriori informazioni su come utilizzare le espressioni regolari nel Fish Shell, consulta la documentazione ufficiale su [Fish shell manuale](https://fishshell.com/docs/current/cmds/string.html#string-match) o il [Fish Shell Cookbook](https://fishshell.com/docs/current/cookbook.html#Regexes). Questi risorse ti aiuteranno a sfruttare appieno questa potente funzionalità del Fish Shell.
 
 ## Vedi anche
-- <https://fishshell.com/docs/current/index.html#regular-expressions>
-- <https://regexr.com>
-- <https://www.regular-expressions.info/fish.html>
+
+- [How to Use Regular Expressions in Bash](https://www.linode.com/docs/development/bash/use-regexes-in-bash/)
+- [Using Regular Expressions in Python](https://realpython.com/regex-python/)
+- [An Introduction to Regular Expressions](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)

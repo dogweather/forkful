@@ -1,36 +1,52 @@
 ---
-title:    "Kotlin: Søking og erstattning av tekst"
+title:    "Kotlin: Søke og erstatte tekst"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger når du jobber med programmering, må du bytte ut deler av teksten din for å gjøre koden mer effektiv og lesbar. Det kan være en kjedelig og tidkrevende oppgave å gjøre dette manuelt. Derfor kommer verktøy som "søk og erstatt" godt med for å hjelpe i slike situasjoner.
 
-## Hvordan gjøre det
-Det er flere måter man kan erstatte tekst i Kotlin. Det mest vanlige er å bruke String-klassen sin innebygde `replace()`-metode. For eksempel, hvis du har en String med teksten "Hello World" og ønsker å erstatte "World" med "Kotlin", kan du gjøre følgende:
+Å søke og erstatte tekst i kode er en viktig ferdighet for enhver programmerer. Det lar deg raskt gjøre endringer i store mengder kode, noe som sparer tid og reduserer risikoen for feil.
 
-```Kotlin
-var tekst = "Hello World"
-tekst = tekst.replace("World", "Kotlin")
-println(tekst)
-```
+## Hvordan
 
-Dette vil gi følgende output: "Hello Kotlin". Du kan også bruke `replace()`-metoden sammen med regular expressions for en mer avansert søk og erstatting.
+Det første du må gjøre er å identifisere teksten du ønsker å erstatte. Dette kan være et enkelt ord eller en hel setning. Deretter kan du bruke Kotlin`s innebygde funksjon `replace()` for å erstatte teksten med det du ønsker.
 
 ```Kotlin
-val regex = "[aeiou]".toRegex()
-var tekst = "Hello World"
-tekst = tekst.replace(regex, "o")
-println(tekst)
+val originalTekst = "Hei, welcome to my blog!"
+val nyTekst = originalTekst.replace("welcome", "velkommen")
+println(nyTekst)
+
+// output: "Hei, velkommen to my blog!"
 ```
 
-Output vil da bli: "Hollo World", hvor alle vokaler i teksten er erstattet med bokstaven "o".
+I noen tilfeller vil du kanskje også ønske å gjøre et bredere søk ved hjelp av regulære uttrykk. Dette kan gjøres ved å bruke `replace()` med et regex-uttrykk som første parameter.
+
+```Kotlin
+val originalTekst = "I love coding in Kotlin and Java"
+val nyTekst = originalTekst.replaceRegex("[Kotlin]+".toRegex(), "Swift")
+println(nyTekst)
+
+// output: "I love coding in Swift and Java"
+```
 
 ## Dypdykk
-Det er mange flere måter å søke og erstatte tekst i Kotlin på, avhengig av hvilken type oppgave du har. Du kan for eksempel søke etter en spesifikk del av teksten ved å bruke `indexOf()`-metoden og deretter erstatte den delen med `replaceRange()`-metoden. Det er også mulig å gjøre flere erstatninger samtidig ved å bruke `replace()`-metoden sammen med en `Map`. Det er viktig å være oppmerksom på at Kotlin er case-sensitive, så hvis du gjør en søk og erstatting med en String som har en annen casing enn det du søker etter, vil det ikke fungere som forventet.
+
+Det er viktig å være klar over at `replace()`-funksjonen vil erstatte alle forekomster av teksten du søker etter. Hvis du ønsker å begrense erstatningen til en spesifikk del av teksten, kan du bruke den valgfrie parameteren `limit` som begrenser antall erstatninger.
+
+```Kotlin
+val originalTekst = "code code code code"
+val nyTekst = originalTekst.replace("code", "Kotlin", limit = 2)
+println(nyTekst)
+
+// output: "Kotlin Kotlin code code"
+```
+
+Det finnes også forskjellige versjoner av `replace()`-funksjonen, for eksempel `replaceFirst()` og `replaceLast()`, som gir deg større kontroll over erstatningen.
 
 ## Se også
-- Kotlin Offisiell Dokumentasjon: https://kotlinlang.org/api/latest/jvm/stdlib/
-- Søk og Erstatt i Kotlin: https://www.baeldung.com/kotlin/string-replace
+
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Regex i Kotlin](https://kotlinlang.org/docs/reference/regular-expressions.html)

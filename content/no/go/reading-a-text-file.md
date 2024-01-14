@@ -1,61 +1,71 @@
 ---
-title:    "Go: Leser en tekstfil"
+title:    "Go: Lesing av tekstfil"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Lesing av tekstfiler er en vanlig oppgave i programmering, og det er viktig å ha en god forståelse for hvordan dette gjøres. I denne bloggposten vil vi se på hvordan du kan lese en tekstfil ved hjelp av Go-programmeringsspråket, og hvorfor det er nyttig å kunne dette.
+Lesing av tekstfiler er en vanlig oppgave for mange utviklere, enten det er for å behandle og analysere store datamengder, eller bare for å lese innholdet i en konfigurasjonsfil. Uansett grunn er det viktig å kunne lese tekstfiler effektivt for å kunne lage robuste og funksjonelle programmer. I denne bloggposten vil jeg forklare hvordan du kan lese tekstfiler ved hjelp av Go-programmeringsspråket. 
 
-## Slik gjør du det
-
-For å lese en tekstfil i Go, kan du bruke funksjonen "Open" fra "os" pakken. Funksjonen tar inn filnavnet som parameter og returnerer en *File* type variabel som representerer åpnet fil. Deretter kan du bruke en *Scanner* type variabel fra "bufio" pakken til å lese filen linje for linje ved hjelp av "Scan" eller "Scanln" funksjoner. Her er et eksempel på hvordan dette kan gjøres:
+## Hvordan 
+For å lese en tekstfil i Go, må du først åpne filen ved hjelp av `os.Open()`-funksjonen som tar inn filbanen som parameter. Deretter bruker vi `bufio.NewScanner()`-funksjonen for å skanne gjennom filen linje for linje. I dette eksempelet vil vi lese en tekstfil og skrive ut hvert linjeinnhold til konsollen. 
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
-    "bufio"
+	"bufio"
+	"fmt"
+	"log"
+	"os"
 )
 
 func main() {
-    file, err := os.Open("tekstfil.txt") 
-    // Sjekker om det er en error
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    // Lukker filen når du er ferdig med å arbeide med den
-    defer file.Close()
+	// Åpner tekstfilen
+	file, err := os.Open("tekstfil.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
-    // Bruker en scanner for å lese filen linje for linje
-    scanner := bufio.NewScanner(file)
+	// Skanner gjennom filen
+	scanner := bufio.NewScanner(file)
 
-    // Går gjennom hver linje og printer den ut
-    for scanner.Scan() {
-        fmt.Println(scanner.Text())
-    }
+	// Itererer over hver linje i tekstfilen
+	for scanner.Scan() {
+		// Skriver ut linjeinnholdet
+		fmt.Println(scanner.Text())
+	}
 
-    // Sjekker for error etter at skanningen er ferdig
-    if err = scanner.Err(); err != nil {
-        fmt.Println(err)
-        return
-    }
+	// Sjekker om det var noen feil under lesing av filen
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 }
 ```
 
-For å kjøre dette eksempelet, må du sørge for at du har en tekstfil kalt "tekstfil.txt" i samme mappe som programmet ditt. Dersom alt går som det skal, vil programmet skrive ut innholdet i tekstfilen linje for linje.
+### Eksempel tekstfil (`tekstfil.txt`):
 
-## Dypdykk
+```
+Dette er en tekstfil.
+Her kan du se eksempeltekst.
+```
 
-Når du leser en tekstfil ved hjelp av Go, er det viktig å være oppmerksom på hvordan du behandler eventuelle feil. I eksempelet over brukte vi *defer* for å sørge for at filen blir lukket etter at vi er ferdige med å arbeide med den, uansett om det oppstår en feil eller ikke. Det er også viktig å huske på at *Scan* og *Scanln* funksjonene vil lese filen til slutten på hver linje, så dersom du vil ha hele innholdet i filen, må du kanskje bruke en løkke for å lese hver linje og lagre den i en variabel.
+### Eksempel output:
+```
+Dette er en tekstfil.
+Her kan du se eksempeltekst.
+```
 
-## Se også
+## Dypdykk 
+Det finnes flere måter å lese og behandle tekstfiler i Go på, som å bruke `ioutil.ReadFile()`-funksjonen eller `os.ReadFile()`-funksjonen. Det er også mulig å spesifisere en spesifikk del av tekstfilen du vil lese ved hjelp av `io.ReadSeeker`-grensesnittet. Videre kan du også behandle tekstfiler ved å bruke `strings.Split()`-funksjonen for å dele opp tekstfilen i mindre biter basert på en spesifikk separator, for eksempel komma eller tabulator. 
 
-* [Go-programmeringsspråkets offisielle nettside](https://golang.org/)
-* [Dokumentasjon for "os" pakken](https://golang.org/pkg/os/)
-* [Dokumentasjon for "bufio" pakken](https://golang.org/pkg/bufio/)
+## Se også 
+- https://golang.org/pkg/bufio/#Scanner
+- https://golang.org/pkg/os/#File
+- https://golang.org/pkg/io/#Copy 
+- https://pkg.go.dev/io#ReadSeeker
+- https://pkg.go.dev/strings#Split

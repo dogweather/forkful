@@ -1,42 +1,45 @@
 ---
-title:    "Gleam: Ekstrahering av deltekster"
+title:    "Gleam: Utenpåhogging av substringer"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å ekstrahere substringer i programmering kan være nyttig når du trenger å manipulere tekstrenger på en spesifikk måte. For eksempel, hvis du ønsker å hente ut et bestemt ord fra en setning, eller begrense lengden på en tekst, så kan du bruke substrings for å oppnå dette.
 
-## Slik Gjør Du
-For å ekstrahere en substring i Gleam, kan du bruke funksjonen `slice` sammen med ønsket tekststreng og start- og sluttindekser. For eksempel:
+Å trekke ut delstrenger er ofte en viktig del av programmering, spesielt når man arbeider med tekstbehandling og parsing av data. Det kan være nødvendig å isolere bestemte deler av en streng for å kunne utføre operasjoner eller sammenligne data. I Gleam, et funktionelt programmeringsspråk for moderne utviklere, er det en enkel måte å trekke ut delstrenger på, som vil bli forklart i denne bloggposten.
 
-```Gleam
-let tekst = "Hei, mitt navn er Ole"
-let navn = slice(tekst, 13, 16)
-```
+## Hvordan
 
-I dette tilfellet vil verdien av `navn` være `Ole`, da vi har satt startindeksen til å være 13 (inkludert) og sluttindeksen til å være 16 (ikke inkludert).
-
-Du kan også begrense lengden på substringen ved å bruke funksjonen `slice_with_length`, som tar inn en startindeks, lengde og en tekststreng. For eksempel:
+For å trekke ut en delstreng i Gleam, bruker man funksjonen `string.split_at()` sammen med indekseringsoperatøren (`[]`). Denne funksjonen tar to argumenter: en streng og en indeks, og returnerer to delstrenger - en som viser strengen fra starten frem til indeksen, og en som viser strengen fra indeksen og ut. La oss bruke et eksempel for å forklare bedre.
 
 ```Gleam
-let telefonnummer = "1234567890"
-let begrenset_nummer = slice_with_length(telefonnummer, 3, 4)
+let streng = "Husky Valper"
+let (første_ord, siste_ord) = string.split_at(streng, 5)
+
+// Første ord blir "Husky" og siste ord blir "Valper"
 ```
 
-I dette eksempelet vil verdien av `begrenset_nummer` være `123`, da vi har satt startindeksen til å være 3 og lengden til å være 4.
+Som du kan se, var `første_ord` og `siste_ord` de to delstrengene som ble returnert fra funksjonen `string.split_at()`.
 
-## Dykk Dypere
-Når du ekstraherer substringer, er det viktig å være klar over at indeksene teller fra 0. Dette betyr at for eksempel at første bokstav i en tekststreng har indeks 0, andre bokstav har indeks 1, osv. Det kan også være nyttig å vite at du kan bruke negative indekser for å hente ut substringer fra slutten av tekststrengene. For eksempel:
+## Dypdykk
+
+Det er også mulig å trekke ut flere delstrenger ved å bruke `string.split_at()` flere ganger. La oss se på et annet eksempel:
 
 ```Gleam
-let navn = "Mari"
-let siste_bokstav = slice(navn, -1, 1)
+let streng = "1-2-3-4-5"
+let (første_tall, resten) = string.split_at(streng, 1)
+
+let (andre_tall, endelig) = string.split_at(resten, 1)
+
+// Første tall blir "1", andre tall blir "2" og endelig blir "3-4-5"
 ```
 
-I dette tilfellet vil verdien av `siste_bokstav` være `i`, da vi har satt startindeksen til å være -1 og lengden til å være 1.
+Som du kan se, brukte vi `string.split_at()` to ganger for å isolere de tre tallene fra strengen. Først delte vi strengen ved tegnet "-" for å få den første delen, og deretter delte vi resten av strengen ved samme tegn for å få de to siste tallene.
 
-## Se Også
-- [Gleam dokumentasjon om substrings](https://gleam.run/book/std/substring.html)
-- [En annen artikkel om å ekstrahere substringer i Gleam (engelsk)](https://dev.to/lportmann/extracting-substrings-in-gleam-4n6g)
+## Se også
+
+- [Offisiell Gleam dokumentasjon om strengebehandling](https://gleam.run/documentation/#strings)
+- [Gleam sin offisielle nettside](https://gleam.run/)
+- [Andre nyttige ressurser og eksempler på Gleam-prosjekter](https://github.com/gleam-lang/awesome-gleam)

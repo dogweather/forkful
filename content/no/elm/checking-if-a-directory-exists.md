@@ -1,47 +1,36 @@
 ---
-title:    "Elm: Sjekke om en mappe eksisterer"
+title:    "Elm: Sjekker om en mappe eksisterer"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
 
-Å sjekke om en mappe eksisterer kan være en viktig del av programmeringen din. Det kan hjelpe deg med å sikre at du ikke prøver å åpne en mappe som ikke finnes, og å håndtere eventuelle feil som kan oppstå.
+Å sjekke om en mappe eksisterer kan være viktig når du jobber med filbehandling i Elm. Dette kan bidra til å sikre at koden din fungerer som den skal og unngå eventuelle feil.
 
-# Hvordan Du Gjør Det
+## Slik gjør du det
 
-For å sjekke om en mappe eksisterer i Elm, kan du bruke funksjonen `File.directoryExists` og gi den en `Path` som argument. Denne funksjonen vil returnere en `Task Bool` som indikerer om mappen eksisterer eller ikke.
+For å sjekke om en mappe eksisterer i Elm, kan du bruke funksjonen `Dir.doesDirectoryExist`, som tar inn en streng som representerer banen til mappen du ønsker å sjekke. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```Elm
-import File exposing (directoryExists)
-import Task
+import Dir exposing (doesDirectoryExist)
 
-path = "/stier/minmappe"
-
-task = directoryExists path
-
-Task.onComplete (\result -> 
-    case result of 
-        Ok exists -> 
-            if exists then
-                "Mappen eksisterer!"
-            else
-                "Mappen eksisterer ikke :("
-        Err _ -> 
-            "Noe gikk galt"
-    ) task
+checkDirectoryExists : String -> Bool
+checkDirectoryExists path =
+    doesDirectoryExist path
 ```
 
-I eksempelet over bruker vi `File.directoryExists` for å sjekke om mappen med stien `/stier/minmappe` eksisterer. Deretter bruker vi `Task.onComplete` for å behandle resultatet av oppgaven og gi en passende melding basert på om mappen eksisterer eller ikke.
+Som du kan se, tar funksjonen `doesDirectoryExist` inn en streng og returnerer en boolsk verdi, som vil være `True` hvis mappen eksisterer og `False` hvis den ikke gjør det.
 
-# Dykk Dypere
+## Dykk ned i det
 
-Det er viktig å merke seg at funksjonen `File.directoryExists` ikke bare sjekker om mappen eksisterer, men også om du har tilgang til å lese den. Hvis du ikke har tilgang til mappen, vil funksjonen returnere `Ok False`. Derfor kan det være lurt å også bruke `File.fileExists` for å være sikker på at du har tilgang til mappen.
+Det kan være nyttig å vite at funksjonen `doesDirectoryExist` sjekker både eksistensen og tilgangen til mappen. Det vil si at selv om mappen eksisterer, men du ikke har tilgang til den, vil funksjonen returnere `False`.
 
-En annen ting å merke seg er at Elm ikke støtter åpning og skriving til mapper direkte. Du må bruke `File.open`-funksjonen for å få tilgang til filene i mappen.
+Det er også verdt å merke seg at denne funksjonen bare fungerer for mapper, ikke filer. Hvis du vil sjekke om en fil eksisterer, kan du bruke funksjonen `File.isFile`.
 
-# Se Også
+## Se også
 
-- [Elm File dokumentasjon](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm File eksempelkode](https://elm-lang.org/examples/files)
+- [Offisiell dokumentasjon for Dir-modulen](https://package.elm-lang.org/packages/elm/core/latest/Dir)
+- [Eksempelkode for å sjekke fil- og mapeksistens i Elm](https://github.com/elm/file/blob/master/tests/FileSystem.elm)

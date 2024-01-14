@@ -1,50 +1,54 @@
 ---
 title:    "Python recipe: Writing to standard error"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing to standard error, also known as stderr, is an important tool in Python programming. It allows developers to debug and troubleshoot their code by printing error messages to the terminal. This can help identify and fix issues in the code, making it an essential skill for any Python programmer.
+In Python programming, there are many different ways to print information for debugging and troubleshooting purposes. One common method is printing to standard error, which can provide more detailed and specific information than just using the standard print function. In this blog post, we will explore why and how to use standard error in your Python code.
 
 ## How To
 
-Writing to standard error in Python is a simple process. All you need to do is import the `sys` library and use the `write()` function to print the error message. Here's an example:
+To write to standard error in Python, you can use the `sys` module which contains the `stderr` object. Here's an example:
 
 ```Python
 import sys
 
-sys.stderr.write("Oops, something went wrong!")
+sys.stderr.write("There was an error!")
 ```
 
-Running this code will display the error message "Oops, something went wrong!" in the terminal. It's important to note that these error messages do not stop the execution of the code, so you can continue to run and test your code.
-
-Another useful feature of writing to stderr is that it allows you to customize your error messages. You can include information such as the line number or variable name where the error occurred, making it easier to locate and fix the issue. Here's an example of a customized error message:
+This will print the message "There was an error!" to the standard error output. You can also use the `>>` operator to redirect the output to standard error, like this:
 
 ```Python
-import sys
+print("This will print to standard output")
+print("This will also print to standard output")
 
-x = 10
-y = 0
-
-try:
-  result = x / y
-except Exception as e:
-  sys.stderr.write(f"Error: {type(e).__name__} - {e} on line 6")
+print("This will print to standard error", file=sys.stderr)
 ```
 
-The output of this code will be "Error: ZeroDivisionError - division by zero on line 6", providing valuable information about the error.
+The above code will produce the following output:
+
+```
+This will print to standard output
+This will also print to standard output
+This will print to standard error
+```
+
+You can see that the message "This will print to standard error" was printed on a separate line and in a different color, indicating that it was written to standard error.
 
 ## Deep Dive
 
-Writing to standard error uses the `stderr` file descriptor, which allows you to write to the terminal separately from the `stdout` file descriptor, which is used for regular output. This is why error messages can be displayed even if the `stdout` is redirected to a file.
+When you use the `print` function in Python, by default it will write to standard output (also referred to as `sys.stdout`). This is useful for displaying the results of your code to the user, but it may not always be the best option for debugging. That's where using standard error comes in handy. Writing to standard error ensures that your debugging messages are not mixed in with the output of the program, making it easier to identify and track down errors.
 
-It's important to note that the `stderr` stream is unbuffered, which means that error messages are printed immediately without waiting for other output to be displayed. This is useful when debugging because it ensures that the error message is shown as soon as it occurs.
+You can also use standard error in conjunction with the `logging` module in Python. This can give you even more control over the format and level of your debugging messages. By using the `logging` module, you can also write to log files instead of just printing to the console.
 
 ## See Also
 
-- [Python sys library documentation](https://docs.python.org/3/library/sys.html)
-- [Writing to standard error in Python](https://cmdlinetips.com/2014/03/how-to-write-to-stderr/)
-- [Understanding stderr, stdout, and stdin in Python](https://stackabuse.com/understanding-stderr-stdout-and-stdin-in-python/)
+Here are some additional resources for learning more about writing to standard error in Python:
+
+- [Official Python Documentation on sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
+- [Python Logging Tutorial](https://realpython.com/python-logging/)
+- [Understanding Standard Input, Output, and Error Streams](https://www.linuxjournal.com/content/understanding-streams-linux)

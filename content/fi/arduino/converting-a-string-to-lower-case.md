@@ -1,40 +1,36 @@
 ---
-title:    "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi."
+title:    "Arduino: Merkkijonon muuttaminen pienaakkosiksi"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Ehkä olet törmännyt tilanteeseen, jossa haluat muuttaa jonkin syötteeksi saamasi merkkijonon pieniksi kirjaimiksi. Tämä voi olla hyödyllistä esimerkiksi vertaillessasi syötteitä tai tulostettaessa tietoa näytölle. Tässä blogikirjoituksessa opimme, miten tehdä tämä Arduino-ohjelmoinnissa.
+Joskus Arduino-ohjelmoinnissa tarvitaan muuttaa käyttäjän syöttämästä merkkijonosta kaikki kirjaimet pieniksi kirjaimiksi. Tähän voi esimerkiksi olla tarvetta, jos halutaan vertailla käyttäjän syöttämää merkkijonoa johonkin tiettyyn arvoon ja on helpompi käsitellä kaikki pienillä kirjaimilla varustettuja merkkijonoja.
 
-## Miten
+## Miten tehdä se
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi on mahdollista Arduino-ohjelmassamme käyttämällä C++-kielen funktioita. Esimerkiksi voimme käyttää `toLowerCase()`-funktiota, joka muuttaa kaikki merkkijonon kirjaimet pieniksi kirjaimiksi.
+Käytännöllisesti katsottuna merkkijonon muuttaminen pieniksi kirjaimiksi Arduino-ohjelmalla on varsin yksinkertaista. Seuraava esimerkki näyttää, miten se tehdään:
 
 ```Arduino
-String s = "HELLO WORLD";
-s = s.toLowerCase();
-Serial.println(s);
-
-// Output:
-// hello world
+String syote = "HeLLo WorlD";
+syote.toLowerCase();
+Serial.println(syote);
 ```
 
-Tässä esimerkissä olemme ensin luoneet merkkijonomuuttujan `s`, joka sisältää tekstin "HELLO WORLD". Sitten käytämme `toLowerCase()`-funktiota muuttamaan muuttujan `s` sisältämät kirjaimet pieniksi kirjaimiksi. Lopuksi tulostamme muuttujan `s` sisällön sarjaporttiin.
+Tämä esimerkki aluksi luo merkkijonon "HeLLo WorlD" ja tallentaa sen muuttujaan "syote". Sitten käytetään "toLowerCase()" -metodia muuttujan arvon muuttamiseksi pieniksi kirjaimiksi. Lopuksi käyttämällä "Serial.println(syote)", tulostuu Sarjaporttiin "hello world".
 
-On myös huomattava, että `toLowerCase()`-funktio muuttaa vain kirjaimet, jotka ovat kirjaimiksi tunnistettavia ASCII-koodinumeroita. Esimerkiksi merkkiä "!" ei muuteta, koska se ei ole kirjain.
+## Syvällisempi sukellus
 
-## Syvempi sukellus
+Arduinoa ohjelmoidessa on tärkeää muistaa, että se käyttää C++ -kieltä, joten kaikki C++ -kielen metodit ovat käytettävissä myös Arduino-koodissa. Tästä syystä Arduino tukee myös "toLowerCase()" -metodia pienien kirjainten muuttamiseksi.
 
-Olemme juuri oppineet, miten käyttää `toLowerCase()`-funktiota pieniksi kirjaimiksi muuttamiseen, mutta miten tämä toimii taustalla? C++:ssa jokaisella merkillä on vastaava ASCII-koodinumero, ja `toLowerCase()`-funktio tarkistaa, onko kunkin merkin koodinumero välillä 65-90 (suuret kirjaimet). Jos se on, se vähentää 32 koodinumerosta ja muuttaa kirjaimen pieneksi kirjaimeksi.
-
-Voit myös kirjoittaa oman funktion, joka muuttaa merkkijonon pieniksi kirjaimiksi iteroiden jokaisen merkin yli ja suorittamalla muutoksen manuaalisesti. Tämä voi olla hyödyllistä opetella, mutta `toLowerCase()`-funktion käyttö on yksinkertaisempi ja tehokkaampi vaihtoehto.
-
-Nyt olet valmis aloittamaan merkkijonojen muuntamisen pieniksi kirjaimiksi Arduino-ohjelmoinnissa!
+On myös syytä huomata, että merkkijonon muuttaminen pieniksi kirjaimiksi ei muuta merkkijonon sisältöä, vaan luo uuden muuttujan, jolla on pienet kirjaimet. Alkuperäinen muuttuja muuttumattomana.
 
 ## Katso myös
 
-- [ASCII-taulukko](https://fi.wikipedia.org/wiki/ASCII)
-- [C++ kirjastot Arduino-ohjelmoinnissa](https://www.arduino.cc/reference/en/#libraries)
+- [Arduino Programming Language Reference](https://www.arduino.cc/reference/en/)
+- [C++ String toLowerCase() -metodin dokumentaatio](https://www.cplusplus.com/reference/string/string/tolower/)
+
+Kiitos lukemisesta ja onnea Arduino-ohjelmoinnin kanssa! 🚀

@@ -1,68 +1,57 @@
 ---
-title:    "Ruby: Strings verknüpfen"
+title:    "Ruby: Zusammenfügen von Zeichenketten"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Programmierung müssen wir oft verschiedene Strings miteinander verbinden, um eine bestimmte Ausgabe zu erhalten. Dabei ist die Verkettung von Strings eine grundlegende Fähigkeit, die jeder Entwickler beherrschen sollte. In diesem Blog-Beitrag werden wir uns ansehen, warum es wichtig ist, Strings zu verbinden und wie man es in Ruby macht.
+Stellen Sie sich vor, Sie wollen einen kurzen Text in Ihrem Programm erstellen, der aus mehreren einzelnen Wörtern oder Sätzen besteht. Anstatt jede einzelne Zeile zu schreiben, können Sie diese einfach miteinander verbinden. Das nennt man auch "String-Konkatenation". 
 
-## Wie es geht
+## Wie geht's
 
-In Ruby gibt es verschiedene Möglichkeiten, Strings zu verbinden. Die einfachste Methode ist die Verwendung des `+` Operators. Sehen wir uns ein Beispiel an:
-
-```Ruby
-first_name = "Anna"
-last_name = "Müller"
-puts first_name + " " + last_name
-```
-Die Ausgabe wird `Anna Müller` sein, da die drei Strings miteinander verbunden und mit Leerzeichen getrennt werden.
-
-Eine weitere Möglichkeit ist die Verwendung der `<<` Methode. Diese fügt den zweiten String an den ersten an. Sehen wir uns auch hierzu ein Beispiel an:
+Es gibt verschiedene Möglichkeiten, Strings in Ruby zu konkatenieren. Die einfachste Methode ist die Verwendung des `+` Operators:
 
 ```Ruby
-first_name = "Max"
-last_name = "Schmidt"
-first_name << " " << last_name
+"Hello" + " " + "World" 
 ```
-Die Ausgabe wird ebenfalls `Max Schmidt` sein. Dabei wird jedoch der erste String verändert, da der zweite String direkt daran angehängt wird.
 
-Eine dritte Methode ist die Verwendung von String Interpolation. Hierbei setzen wir den zu verbindenden String in `#{}` innerhalb eines anderen Strings ein. Beispiel:
+Das Ergebnis dieser Zeile wäre "Hello World". Sie können auch den `concat` Befehl verwenden:
 
 ```Ruby
-first_name = "Sara"
-last_name = "Wagner"
-puts "Mein Name ist #{first_name} #{last_name}"
+"Hello".concat(" ").concat("World") 
 ```
-Die Ausgabe wird `Mein Name ist Sara Wagner` sein.
+Die Ausgabe wäre ebenfalls "Hello World".
 
-## Deep Dive
-
-Wenn wir uns die Implementierung von Strings in Ruby genauer anschauen, werden wir feststellen, dass sie eigentlich ein Objekt mit vielen Methoden sind. Die `+` und `<<` Methoden, die wir oben verwendet haben, sind nur zwei davon. Auch die String Interpolation ist eine Methode, die unter der Haube verwendet wird.
-
-Eine nützliche Methode für die Verkettung von Strings ist `concat`. Diese fügt den gegebenen String an den ursprünglichen String an und gibt anschließend den ursprünglichen String zurück. Beispiel:
+Eine weitere Möglichkeit ist die Verwendung des `<<` Operators, um Strings zu einer bestehenden Variable hinzuzufügen:
 
 ```Ruby
-first_name = "Lisa"
-last_name = "Schneider"
-puts first_name.concat(" ").concat(last_name)
+word = "World"
+"Hello" << " " << word
 ```
-Die Ausgabe wird `Lisa Schneider` sein.
 
-Es ist auch möglich, eine beliebige Anzahl von Strings miteinander zu verbinden, indem wir die `+` Methode mehrmals hintereinander aufrufen. Beispiel:
+Die Ausgabe wäre auch hier "Hello World".
+
+## Tiefer Einblick
+
+Wichtig ist, dass bei der String-Konkatenation die Reihenfolge der Wörter oder Sätze beachtet wird. Wenn Sie beispielsweise ein Leerzeichen am Anfang oder Ende vergessen, wird dies nicht automatisch hinzugefügt. Hier müssen Sie manuell darauf achten.
+
+Außerdem können Sie auch Variablen und andere Datentypen in die Konkatenation einbeziehen. Zum Beispiel:
 
 ```Ruby
-first_name = "Tom"
-last_name = "Müller"
-puts first_name + ", " + last_name + " " + "hat gerade das Spiel gewonnen!"
+name = "Max"
+age = 25
+"Hello, my name is " + name + " and I am " + age.to_s + " years old."
 ```
-Die Ausgabe wird `Tom, Müller hat gerade das Spiel gewonnen!` sein.
 
-Einige weitere Methoden, die bei der Verkettung von Strings hilfreich sein können, sind `insert`, `prepend` und `replace`. Es gibt also viele Möglichkeiten und Techniken, um Strings zu verbinden.
+Die Ausgabe wäre dann "Hello, my name is Max and I am 25 years old." Wie Sie sehen, müssen wir die Zahl `age` mit `.to_s` in einen String umwandeln, damit sie mit den anderen Strings konkateniert werden kann.
 
 ## Siehe auch
 
-* [Ruby String Klasse Dokumentation](https://ruby-doc.org/core/String.html)
-* [Das offizielle Ruby Tutorial zu Strings](https://ruby-doc.org/docs/Tutorial/part_02/control_structures.html#strings)
+Hier sind einige hilfreiche Links, die Sie bei der weiteren Lernphase unterstützen können:
+
+- [Offizielle Ruby-Dokumentation zur String-Konkatenation](https://ruby-doc.org/core-3.0.2/String.html#method-i-2B)
+- [Tutorial zur Ruby-Syntax](https://www.ruby-lang.org/de/documentation/quickstart/)
+- [Beispiele für String-Konkatenation in Ruby](https://www.rubyguides.com/2019/03/ruby-string-concatenation/)

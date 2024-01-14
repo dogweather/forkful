@@ -1,48 +1,34 @@
 ---
-title:    "Clojure: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:    "Clojure: Eine beliebige Zukunft oder Vergangenheitsdatum berechnen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Jeder muss manchmal ein Datum in der Zukunft oder Vergangenheit berechnen, sei es für eine Bewerbungsfrist oder ein wichtiges Ereignis. Mit Clojure können wir diesen Prozess einfacher und effizienter gestalten.
 
-Das Berechnen von zukünftigen oder vergangenen Daten ist eine häufige Aufgabe beim Programmieren. Es kann hilfreich sein, um beispielsweise Geburtstage, Fälligkeitsdaten oder Ereignisse in einem Kalender zu verwalten.
+# Wie gehts
+Wir verwenden die Funktion `java.util.Calendar` zusammen mit den Funktionen `add` und `get` um ein Datum in der Zukunft oder Vergangenheit zu berechnen.
 
-## Wie man es macht
-
-Die Clojure-Bibliothek `clj-time` bietet eine einfache Möglichkeit, zukünftige oder vergangene Daten zu berechnen. Zunächst muss die Bibliothek importiert werden:
-
-```Clojure
-(require '[clj-time.core :as t])
+```
+;; Berechnung eines zukünftigen Datums: 14 Tage in Zukunft
+(def today (java.util.Calendar/getInstance))
+(.add today java.util.Calendar/DATE 14)
+(print (str "Das Datum in 14 Tagen ist: " (.get today java.util.Calendar/DAY_OF_MONTH) "." (.get today java.util.Calendar/MONTH) "." (.get today java.util.Calendar/YEAR)))
 ```
 
-Um eine zukünftige oder vergangene Datumseinheit zu berechnen, muss `t/plus` und ein Zeitintervall wie `t/days`, `t/weeks`, `t/months` oder `t/years` zusammen mit einem Startdatum verwendet werden. Hier ist ein Beispiel, das das Datum 10 Tage in der Zukunft berechnet:
-
-```Clojure
-(t/plus (t/today) 10 t/days)
+```
+;; Berechnung eines vergangenen Datums: vor 3 Jahren
+(def today (java.util.Calendar/getInstance))
+(.add today java.util.Calendar/YEAR -3)
+(print (str "Das Datum vor 3 Jahren war: " (.get today java.util.Calendar/DAY_OF_MONTH) "." (.get today java.util.Calendar/MONTH) "." (.get today java.util.Calendar/YEAR)))
 ```
 
-Das `t/today` wird durch das heutige Datum ersetzt und die Ausgabe ist ein Date-Objekt 10 Tage in der Zukunft. Ebenso kann das Datum in der Vergangenheit berechnet werden, indem das Zeitintervall negativ ist. Zum Beispiel berechnet das folgende Beispiel das Datum 2 Monate in der Vergangenheit:
+## Deep Dive
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst eine Instanz von `java.util.Calendar` erstellen. Dann können wir die Funktion `add` verwenden, um eine bestimmte Zeiteinheit (z.B. Tage, Monate oder Jahre) zum aktuellen Datum hinzuzufügen oder davon abziehen. Abschließend können wir die Funktion `get` verwenden, um das gewünschte Datum aus dem Kalenderobjekt zu extrahieren.
 
-```Clojure
-(t/plus (t/today) -2 t/months)
-```
-
-## Tiefer Einblick
-
-Mit der `clj-time`-Bibliothek können auch komplexere Berechnungen durchgeführt werden. Zum Beispiel kann `t/plus` auch ein Datum mit einem `DateTimeField`-Objekt verwenden, um spezifische Teile des Datums zu manipulieren. Hier ist ein Beispiel, das das Datum auf den nächsten Montag ab dem heutigen Datum setzt:
-
-```Clojure
-(t/plus (t/today) 1 (t/next-monday (t/show (t/today) :day-of-week)))
-```
-
-Dies geschieht, indem der `next-monday`-Funktion mit dem heutigen Datum und dem `show`-Funktion mit dem `:day-of-week`-Argument aufgerufen wird, um den Wochentag als Zahl zu erhalten.
-
-Es gibt auch andere nützliche Funktionen in der `clj-time`-Bibliothek, wie `t/compare` zum Vergleichen von Daten und `t/seconds-between` zum Berechnen der Anzahl der Sekunden zwischen zwei Daten.
-
-## Siehe auch
-
-- [Clojure-Docs: clj-time](https://clojuredocs.org/clojure.java-time)
-- [Clojure-Wiki: clj-time](https://github.com/clj-time/clj-time/wiki) 
-- [Clojure-Backend: Zeitrechnung in Clojure Tutorial](https://clojurebackend.com/articles/zeitrechnung-in-clojure)
+# Siehe Auch
+- [Offizielle Clojure Dokumentation für Date-Berechnungen](https://clojure.org/api/java.util.Calendar)
+- [Youtube-Tutorial: Clojure für Anfänger](https://www.youtube.com/watch?v=TurbraO_Js0)

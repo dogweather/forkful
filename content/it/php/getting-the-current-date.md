@@ -1,44 +1,51 @@
 ---
-title:    "PHP: Ottenere la data corrente"
+title:    "PHP: Ottenere la data attuale"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-A volte può sembrare banale, ma la capacità di ottenere la data corrente è un'abilità fondamentale nella programmazione. Conoscere la data e l'ora può essere utile in molte situazioni, come ad esempio nel calcolo di scadenze, nella registrazione di eventi e nell'organizzazione di dati all'interno del tuo programma.
+La data è un elemento fondamentale in quasi ogni applicazione. Con il PHP, è possibile ottenere facilmente la data corrente utilizzando alcune semplici funzioni.
 
-## Come Fare
+## Come fare
 
-Per ottenere la data corrente in PHP, è possibile utilizzare la funzione `date()` che restituisce la data attuale formattata secondo le specifiche fornite. Ad esempio, per ottenere la data completa è possibile utilizzare il seguente codice:
+Per ottenere la data corrente con PHP, è possibile utilizzare la funzione `date()`. Questa funzione accetta due parametri: il formato della data desiderato e la marca temporale opzionale. Ecco un esempio di come utilizzare questa funzione per ottenere la data odierna:
 
-```PHP
-$today = date("d/m/Y");
-echo $today;
+```
+<?php
+$data_corrente = date("d/m/Y");
+echo "Oggi è il $data_corrente";
 ```
 
-Questo produrrà un output come "06/01/2022". È possibile utilizzare diversi parametri nella funzione `date()` per ottenere la data in formati diversi.
+Il codice sopra dovrebbe produrre un output simile a questo:
 
-Per ottenere l'ora attuale, è possibile utilizzare la funzione `time()` che restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Questo è utile se si desidera utilizzare la data per calcolare scadenze o per registrare eventi con precisione.
-
-Per convertire il timestamp restituito dalla funzione `time()` in una data leggibile, è possibile utilizzare la funzione `date()` insieme al parametro `timestamp`:
-
-```PHP
-$timestamp = time();
-$current_date = date("d/m/Y", $timestamp);
-echo $current_date;
+```
+Oggi è il 08/09/2021
 ```
 
-Questo produrrà lo stesso output del codice precedente.
+Se si vuole ottenere la data corrente con la marca temporale, è possibile utilizzare la funzione `time()` insieme alla funzione `date()`, come mostrato nell'esempio seguente:
+
+```
+<?php
+$marca_temporale = time();
+$data_corrente = date("d/m/Y", $marca_temporale);
+echo "La data corrente in marca temporale è $marca_temporale e nel formato desiderato è $data_corrente";
+```
+
+L'output dovrebbe essere simile a questo:
+
+```
+La data corrente in marca temporale è 1631088686 e nel formato desiderato è 08/09/2021
+```
 
 ## Approfondimento
 
-Per controllare la data corrente, PHP utilizza una combinazione di impostazioni del server e della libreria C standard. La funzione `date()` utilizza l'impostazione del fuso orario server per determinare l'ora corrente. Se si desidera utilizzare un fuso orario diverso, è possibile impostarlo utilizzando la funzione `date_default_timezone_set()`.
+Se si vuole saperne di più su come funzionano le funzioni `date()` e `time()` in PHP, è possibile approfondire la documentazione ufficiale sul sito di PHP. Inoltre, esistono altre funzioni che permettono di manipolare le date e il tempo in PHP, come ad esempio `strtotime()` per convertire una stringa in una marca temporale.
 
-Inoltre, è possibile utilizzare la classe `DateTime` per ottenere la data corrente in modo più flessibile. Questa classe fornisce più opzioni per la formattazione e la manipolazione della data e dell'ora.
-
-## Vedi Anche
-- [Documentazione ufficiale di PHP sulla funzione `date()`](https://www.php.net/manual/en/function.date.php)
-- [Informazioni sui fusi orari in PHP](https://www.php.net/manual/en/timezones.php)
-- [Documentazione ufficiale di PHP sulla classe `DateTime`](https://www.php.net/manual/en/class.datetime.php)
+## Vedi anche
+- [Documentazione ufficiale su date e tempo in PHP](https://www.php.net/manual/en/function.date.php)
+- [Funzione strtotime() in PHP](https://www.php.net/manual/en/function.strtotime.php)
+- [Altri esempi e approfondimenti su date e tempo in PHP](https://www.w3schools.com/php/php_dates.asp)

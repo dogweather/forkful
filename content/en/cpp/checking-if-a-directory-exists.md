@@ -1,61 +1,48 @@
 ---
 title:    "C++ recipe: Checking if a directory exists"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
+Checking if a directory exists is an essential task in C++ programming. It ensures that your applications can handle different scenarios and prevent potential errors.
 
-When working on a C++ program, it is essential to ensure that it can handle all possible scenarios, including checking if a directory exists. This can prevent unexpected errors and ensure the smooth execution of the program.
+## How To
+To check if a directory exists in C++, you can use the `std::filesystem::exists()` function from the `<filesystem>` library. Here is an example code:
 
-## How To 
-
-To check if a directory exists in C++, we can use the `std::filesystem` library. This library was introduced in C++17 to handle file and directory operations. To use this library, we need to first include it in our code:
-
-```C++
-#include <filesystem>
 ```
-
-Next, we can use the `std::filesystem::exists()` function to check if a directory exists. This function takes in the path of the directory as its argument and returns a boolean value indicating whether the directory exists or not. Let's look at an example:
-
-```C++
 #include <iostream>
 #include <filesystem>
-namespace fs = std::filesystem;
+
 int main() {
-    // Specifying the directory path
-    fs::path dir_path("my_directory");
-    // Checking if the directory exists
-    if (fs::exists(dir_path)) {
-        std::cout << "Directory exists!" << std::endl;
-    } else {
-        std::cout << "Directory does not exist!" << std::endl;
-    }
-    return 0;
+  // Define the directory path
+  std::string path = "C:/Users/User/Documents";
+
+  // Check if the path exists
+  if (std::filesystem::exists(path)) {
+    std::cout << "The directory exists.";
+  } else {
+    std::cout << "The directory does not exist or access is denied.";
+  }
+
+  return 0;
 }
 ```
 
-Running this code will give us the following output:
+The `std::filesystem::exists()` function returns a `bool` value, `true` if the directory exists and `false` if it does not. You can also use `std::filesystem::is_directory()` function to check if the given path is a directory or not.
 
-```
-Directory exists!
-```
+## Deep Dive
+The `std::filesystem` library was introduced in C++17, making directory and file operations much easier and more efficient. The `exists()` function uses OS-specific APIs to check the existence of a directory and returns the result. It also allows us to check for file existence and other directory operations such as creating, renaming, and removing directories.
 
-If we change the directory path to a non-existing one, we will get the following output:
+Some important things to note while using `std::filesystem` library:
+- The `path` parameter in the functions can be of type `std::string`, `const char*` or `std::string_view`.
+- The library is portable, meaning it can be used on different OS platforms without any modifications.
+- To check if a given path exists, the program needs permission to execute that operation.
+- You can also use `std::filesystem::current_path()` to get the current working directory.
 
-```
-Directory does not exist!
-```
-
-## Deep Dive 
-
-Under the hood, the `std::filesystem::exists()` function uses the `stat()` system call to check for the existence of the directory. This function returns a `struct` storing information about the file or directory, including its existence. The `std::filesystem` library also provides several other functions for file and directory operations, such as creating, removing, and iterating through directories.
-
-It is worth noting that the `std::filesystem` library is based on the Boost.Filesystem library, which has been a part of C++ for a long time. This means that if you are not using C++17, you can still use the Boost.Filesystem library to perform similar tasks.
-
-## See Also 
-
+## See Also
 - [std::filesystem reference](https://en.cppreference.com/w/cpp/filesystem)
-- [Boost.Filesystem reference](https://www.boost.org/doc/libs/1_76_0/libs/filesystem/doc/reference.html) 
-- [C++17 filesystem library overview](https://devblogs.microsoft.com/cppblog/beginning-with-the-c17-filesystem-library/)
+- [C++17 - std::filesystem](https://docs.microsoft.com/en-us/cpp/standard-library/filesystem?view=msvc-160)
+- [Checking if a File or Directory Exists using C++17](https://thispointer.com/check-if-a-file-or-directory-exists-using-c17-filesystem-library/)

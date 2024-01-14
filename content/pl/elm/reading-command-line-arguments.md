@@ -1,42 +1,64 @@
 ---
-title:    "Elm: Wczytywanie argumentów wiersza poleceń"
+title:    "Elm: Odczytywanie argumentów linii poleceń"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zastanawiałeś się kiedyś, jak można przekazać zmienne do swojego programu w Elm z linii poleceń? Może chcesz, aby użytkownik mógł wprowadzić własne ustawienia lub opcje? W tym blogu dowiesz się, jak to zrobić!
+Jeśli jesteś programistą Elm i chcesz rozszerzyć swoje umiejętności, czytanie argumentów wiersza poleceń jest ważnym narzędziem w twojej skrzynce narzędziowej. Dzięki temu możesz interaktywnie przekazywać dane do swojego programu podczas uruchamiania, co jest niezwykle przydatne przy debugowaniu i testowaniu.
 
 ## Jak to zrobić
 
-Aby czytać argumenty z linii poleceń w Elm, musimy użyć wbudowanej biblioteki `Platform`. Najpierw musimy zaimportować tę bibliotekę:
+W Elm istnieje wiele sposobów na odczytywanie argumentów wiersza poleceń, ale najprostszym i najbardziej powszechnym jest użycie modułu `Platform.Cmd`. Przykładowy kod wykorzystujący ten moduł wygląda następująco:
 
 ```Elm
-import Platform exposing (..)
+import Json.Decode exposing (Decoder, string)
+import Platform.Cmd exposing (Args, call)
+
+type alias User =
+    { name : String
+    , age : Int
+    }
+
+program : Args -> Decoder User -> Cmd User
+program args decoder =
+    let
+        userDecoder =
+            string "name" User.name
+                |> string "age" User.age
+
+        readCmd =
+            call decoder "user" args
+                |> Cmd.map (Result.withDefault { name = "", age = 0 })
+    in
+    readCmd
+
+-- użyj polecenia `program` w twoim glownym pliku lub w module `Main`:
+main : Program Never Model Msg
+main =
+    program
+        !Platform.program
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = subscriptions
+        }
+
 ```
 
-Następnie użyjemy funkcji `getArgs()` aby uzyskać listę argumentów:
+Kod ten korzysta z dekodera, który definiuje żądane parametry, a następnie wywołuje polecenie `call` z nazwą i listą argumentów. Ostatecznie mapuje wynik na wartość domyślną w przypadku błędu.
 
-```Elm
-getArgs() 
-```
+## Głębszy wgląd
 
-Jeśli chcesz, aby użytkownik mógł przekazać zmienne z opcjami, możesz użyć funkcji`getOptions()`, która zwróci listę par klucz-wartość:
+Ponadto, istnieje również możliwość korzystania z innego modułu `Platform.Cmd.Extra`, który oferuje dodatkowe funkcje do obsługi argumentów wiersza poleceń. Na przykład, można odczytać argumenty jako listę z wartościami typu `String`, a następnie przekonwertować je na dowolny inny typ danych.
 
-```Elm
-getOptions()
-```
-
-Teraz możemy przetworzyć te argumenty i opcje używając funkcji `List.map` lub `Dict.get` w zależności od tego, jak chcemy je wykorzystać w naszym programie.
-
-## Deep Dive
-
-Bardziej zaawansowaną techniką jest parsowanie argumentów z użyciem biblioteki `Elm Parser` lub `elm-arg-parser`. Pozwala to na dokładniejsze określenie struktury argumentów i tworzenie bardziej elastycznego kodu. Możliwości są praktycznie nieograniczone, więc warto zdecydować się na ten krok, gdy masz już pewną wiedzę na temat Elm i jego bibliotek.
+Dodatkowo, można również użyć argumentów do sterowania uruchamianiem programu, np. wybierając różne konfiguracje lub tryby działania.
 
 ## Zobacz także
 
-- [Dokumentacja Platformy](https://package.elm-lang.org/packages/elm/core/latest/Platform)
-- [Biblioteka Parsera ELm](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [Biblioteka Elm Arg Parser](https://package.elm-lang.org/packages/mpizenberg/elm-argv/latest/)
+- Przykładowe użycie w oficjalnej dokumentacji Elm: [Working with Command Line Args](https://guide.elm-lang.org/interop/command_line.html)
+- [Moduł Platform.Cmd](https://package.elm-lang.org/packages/elm-lang/core/latest/Platform-Cmd)
+- [Moduł Platform.Cmd.Extra](https://package.elm-lang.org/packages/elm-lang/core/latest/Platform-Cmd-Extra)

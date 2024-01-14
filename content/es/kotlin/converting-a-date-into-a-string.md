@@ -1,73 +1,56 @@
 ---
 title:    "Kotlin: Convirtiendo una fecha en una cadena"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Una de las tareas más comunes en programación es trabajar con fechas y horas. A menudo, es necesario convertir una fecha en un formato legible para el usuario, como una cadena de texto. En esta publicación, exploraremos cómo hacer esto en Kotlin.
+Convertir una fecha en una cadena de texto es una práctica común en la programación, especialmente al mostrar fechas en un formato legible para el usuario final. También puede ser útil para almacenar fechas en bases de datos o comunicarse con servicios web. En este artículo, aprenderemos cómo convertir una fecha en una cadena de texto utilizando Kotlin.
 
 ## Cómo hacerlo
 
-Para convertir una fecha en una cadena en Kotlin, utilizaremos la función `format()` de la clase `LocalDateTime`. Primero, crearemos un objeto `LocalDateTime` con una fecha y hora específicas:
+Para convertir una fecha en una cadena de texto en Kotlin, utilizaremos la función `format` de la clase `DateTimeFormatter` de la librería de Java. Primero, debemos importar la librería con la siguiente línea de código:
 
 ```Kotlin
-val fecha = LocalDateTime.of(2021, 10, 15, 18, 30)
+import java.time.format.DateTimeFormatter
 ```
 
-Luego, utilizando la función `format()`, especificaremos el formato deseado. Por ejemplo, si queremos que la fecha se muestre en formato "dd/MM/yyyy HH:mm", usaremos:
+Luego, creamos un objeto `DateTimeFormatter` con el formato deseado. Por ejemplo, si queremos mostrar la fecha en el formato 'dd/MM/yyyy', utilizaremos el siguiente código:
 
 ```Kotlin
-val fechaCadena = fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))
+val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 ```
 
-Al imprimir `fechaCadena`, veremos el siguiente resultado:
+Después, podemos utilizar la función `format` para convertir una fecha en una cadena de texto utilizando nuestro objeto `DateTimeFormatter`. Por ejemplo, si queremos convertir la fecha actual, podemos utilizar el objeto `LocalDate` de la librería `java.time` y la función `now()`:
 
 ```Kotlin
-15/10/2021 18:30
+val fecha = LocalDate.now()
+val fechaCadena = formatter.format(fecha)
 ```
 
-También podemos aprovechar las funciones de extensión de la clase `LocalDateTime` para obtener resultados similares. Por ejemplo, para mostrar solo la hora y los minutos, podemos usar lo siguiente:
+La variable `fechaCadena` ahora contiene la fecha actual en el formato especificado. Si queremos imprimir esta cadena en la consola, podemos utilizar la función `println`:
 
 ```Kotlin
-val hora = fecha.format(DateTimeFormatter.ofPattern("HH:mm"))
+println(fechaCadena)
 ```
 
-Y obtendremos:
-
-```Kotlin
-18:30
-```
+El resultado de este código sería algo como '21/08/2021'.
 
 ## Profundizando
 
-La función `format()` también acepta un objeto `DateTimeFormatter`. Podemos utilizar este objeto para personalizar aún más el formato de nuestra fecha. Por ejemplo, podemos especificar el idioma y el estilo de fecha deseado, como en el siguiente código:
+Además del formato utilizado en el objeto `DateTimeFormatter`, también podemos personalizar otras propiedades de nuestra cadena de texto, como añadir el día de la semana o la hora. Por ejemplo, si queremos mostrar el día de la semana junto con la fecha, podemos añadir 'EEEE, dd/MM/yyyy' en nuestro arreglo de formato. La letra 'E' representa el día de la semana en una abreviación de tres letras. Podemos utilizar más de una 'E' para mostrar el día de la semana completo ('EEEE') o solo la primera letra ('E').
+
+Otra propiedad interesante que podemos utilizar es la 'zona horaria'. Si queremos mostrar la fecha en una zona horaria específica, podemos utilizar la función `withZone` en nuestro objeto `DateTimeFormatter` y especificar la zona horaria deseada. Por ejemplo, si queremos mostrar la fecha en 'New York', podemos utilizar la siguiente línea de código:
 
 ```Kotlin
-val fecha = LocalDateTime.of(2021, 10, 15, 18, 30)
-val fechaCadena = fecha.format(
-    DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(Locale("es", "ES"))
-)
+val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy").withZone(ZoneId.of("America/New_York"))
 ```
-
-Esto nos devolverá la fecha en formato "viernes 15 de octubre de 2021", en español.
-
-También podemos utilizar la función `format()` para convertir una fecha en una cadena en formato ISO. Por ejemplo:
-
-```Kotlin
-val fecha = LocalDateTime.of(2021, 10, 15, 18, 30)
-val fechaISO = fecha.format(DateTimeFormatter.ISO_DATE_TIME)
-```
-
-Esto nos dará la fecha en formato "2021-10-15T18:30:00".
 
 ## Ver también
 
-Para obtener más información sobre cómo trabajar con fechas y horas en Kotlin, te recomendamos revisar estos recursos:
-
-- [Documentación oficial de Java sobre fechas y horas](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Tutorial de Codecademy sobre fechas y horas en Kotlin](https://www.codecademy.com/learn/learn-kotlin/modules/learn-kotlin-date-and-time)
-
-¡Esperamos que esta publicación te haya sido útil para convertir fechas en cadenas en Kotlin! ¡Nos vemos en la próxima!
+- [Documentación oficial de Kotlin sobre el objeto DateTimeFormatter] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-date-time/-date-time-formatter/)
+- [Tutorial de Javatpoint sobre cómo convertir una fecha en una cadena de texto en Java] (https://www.javatpoint.com/java-date-to-string)
+- [Stack Overflow question sobre cómo mostrar diferentes formatos de fechas en Kotlin] (https://stackoverflow.com/questions/25703336/kotlin-formatting-java-date)

@@ -1,81 +1,59 @@
 ---
 title:    "PHP: Läsning av kommandoradsargument"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa in kommandoradsargument kan vara användbart för att skapa mer dynamiska och flexibla PHP-program. Genom att läsa in argument från kommandoraden kan du få din kod att anpassa sig beroende på användarens inmatning, vilket kan göra dina program mer användarvänliga.
+Att kunna läsa kommandoradsargument är en viktig färdighet för programmerare, särskilt i PHP. Genom att kunna läsa användarens inmatning från kommandoraden kan man skapa mer interaktiva och dynamiska program som kan anpassa sig efter användarens behov.
 
-## Hur man gör
+## Hur man gör det
 
-För att läsa in kommandoradsargument i PHP, används funktionen `getopt()`. Detta gör det möjligt att läsa in både korta och långa argument och till och med specificera vilka argument som krävs eller är valfria.
+Läsning av kommandoradsargument i PHP görs med hjälp av en inbyggd funktion kallad `getopt()`. Denna funktion tar emot två parametrar - en sträng med de giltiga argumenten och en array som förvarar de lästa argumenten.
 
-### Exempel
+```php
+// Enkelt exempel
+// Kör "php script.php -u username -p password" från kommandoraden
+$options = getopt("u:p:");
 
-```PHP
-// Skapa en array med argument som behövs eller kan användas
-$argument = array(
-    'f:' => 'first_name:',
-    'l:' => 'last_name:',
-    'u' => 'username'
-);
-
-// Använd getopt() för att läsa in kommandoradsargumenten
-$options = getopt(null, $argument);
-
-// Skriv ut resultatet
-print_r($options);
+// $options array innehåller nu:
+// [
+//     "u" => "username",
+//     "p" => "password"
+// ]
 ```
 
-### Output
+Det finns också möjlighet att ange en tredje parameter för att läsa in enskilda valfria argument. Dessutom kan man använda sig av `getopt()` för att läsa in olika typer av argument, som booleska och numeriska.
 
-- Om du kör scriptet med `php script.php -f John -l Doe` kommer resultatet att bli:
+```php
+// Exempel med flera argument, inklusive valfria och numeriska
+// Kör "php script.php -u username -p password --color red -n 5" från kommandoraden
+$options = getopt("u:p:", ["color:", "number:"]);
 
+// $options array innehåller nu:
+// [
+//     "u" => "username",
+//     "p" => "password",
+//     "color" => "red",
+//     "number" => 5
+// ]
 ```
-Array
-(
-    [first_name] => John
-    [last_name] => Doe
-)
-```
-
-- Om du kör scriptet med `php script.php -u -f John -l Doe` kommer resultatet att bli:
-
-```
-Array
-(
-    [username] =>
-    [first_name] => John
-    [last_name] => Doe
-)
-```
-
-### Valida argument
-
-För att specificera vilka argument som är obligatoriska eller valfria, använd `:` eller `::` efter argumentet.
-
-- En dubbelkolon `::` betyder att argumentet är obligatoriskt och måste ha ett värde.
-- En kolon `:` betyder att argumentet är valfritt men om det används måste det ha ett värde.
-
-Det är också möjligt att specificera default-värden för valfria argument.
-
-```PHP
-$argument = array(
-    'f:' => 'first_name:',
-    'l::' => 'last_name::Test',
-);
-```
-
-Dessa argument skulle läsa in `first_name` som obligatoriskt och `last_name` som valfritt med default-värdet "Test".
 
 ## Djupdykning
 
-För mer avancerade användningsområden av kommandoradsargument läs dokumentationen för `getopt()`. Det finns också möjlighet att använda en annan funktion, `getarg()`, för att läsa in argument från HTML-formulär istället för kommandoraden.
+I det föregående avsnittet talade vi om att ange en sträng med de giltiga argumenten som första parameter till `getopt()`. Denna sträng kan innehålla både korta och långa argument, och man kan också ange att ett argument kräver ett värde eller inte. Till exempel:
+
+- `u` kräver ett värde (t.ex. `username`)
+- `p` kräver inte ett värde
+- `color:` kräver ett värde (t.ex. `red`)
+- `number::` kräver inte ett värde om man endast vill veta om argumentet finns med, men om ett värde anges så läses det in.
+
+`getopt()` kommer också återge felmeddelanden om användaren matar in ogiltiga argument eller saknar krävda argument. Om man till exempel endast har angett strängen `u:p:`, men användaren matar in `--color red`, så kommer felmeddelandet `unknown option: color` att retuneras.
 
 ## Se även
 
-- Dokumentation för `getopt()`: [https://www.php.net/manual/en/function.getopt.php](https://www.php.net/manual/en/function.getopt.php)
-- Dokumentation för `getarg()`: [https://www.php.net/manual/en/function.getarg.php](https://www.php.net/manual/en/function.getarg.php)
+- PHP manual om [getopt()](https://www.php.net/manual/en/function.getopt.php)
+- [PHP Getopt library](https://github.com/ics-software-engineering/php-getopt) för mer komplexa fall av att läsa kommandoradsargument

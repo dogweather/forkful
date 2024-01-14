@@ -1,36 +1,49 @@
 ---
-title:    "C#: Écrire sur l'erreur standard"
+title:    "C#: Écrire vers l'erreur standard"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Ecrire sur la sortie d'erreur standard est une pratique courante dans le développement logiciel en C#. Cela permet aux programmeurs de mieux comprendre les erreurs et les bugs dans leur code, ce qui les aide à les résoudre plus rapidement et efficacement. 
+Si vous êtes un programmeur en C#, il est très probable que vous ayez rencontré la syntaxe `Console.Error.WriteLine()` lors de l'écriture de votre code. Mais pourquoi écrire à la sortie d'erreur standard en premier lieu? Dans cet article, nous allons explorer l'utilisation de la sortie d'erreur standard et pourquoi elle peut être utile dans votre programmation en C#.
 
-## Comment faire 
+## Comment Faire
 
-Voici un exemple de code en C# montrant comment écrire sur la sortie d'erreur standard : 
+Commençons par un exemple simple pour voir comment utiliser `Console.Error.WriteLine()` dans un code C#. Supposons que nous avons le code suivant:
 
-```C#
-Console.Error.WriteLine("Une erreur s'est produite : Erreur X");
-``` 
+```
+using System;
 
-Ceci affichera le message "Une erreur s'est produite : Erreur X" sur la sortie d'erreur standard. Vous pouvez également utiliser la méthode `Console.Error.WriteLineFormat()` pour formater votre message avec des variables : 
-
-```C#
-int erreurCode = 404;
-Console.Error.WriteLineFormat("Une erreur s'est produite : Erreur {0}", erreurCode);
+class Program
+{
+    static void Main()
+    {
+        int num = 10;
+        if (num < 0)
+        {
+            Console.Error.WriteLine("Le nombre est inférieur à 0.");
+        }
+    }
+}
 ```
 
-Cela affichera "Une erreur s'est produite : Erreur 404" sur la sortie d'erreur standard. 
+Si nous exécutons ce code et que `num` est effectivement inférieur à 0, nous verrons le message "Le nombre est inférieur à 0." imprimé sur la sortie d'erreur standard plutôt que la sortie standard normale.
 
-## Plongée en profondeur 
+Mais pourquoi est-ce utile? Eh bien, cela peut être particulièrement utile en débogage. En écrivant à la sortie d'erreur standard, nous sommes en mesure de distinguer facilement les messages d'erreur et les messages normaux, ce qui peut être très utile pour trouver et corriger les erreurs dans notre code.
 
-Il est important de noter que la sortie d'erreur standard affiche uniquement les messages d'erreur et non les captures d'exception. Pour cela, vous devrez utiliser `Console.Error.WriteLine()` dans un bloc `try-catch` pour attraper l'exception. Vous pouvez également rediriger la sortie d'erreur standard vers un autre flux à l'aide de la propriété `Console.SetError()`. De plus, la sortie d'erreur standard peut être utilisée pour afficher des messages d'avertissement ou d'informations en utilisant `Console.Error.WriteLine()`. 
+En outre, il peut être utile de rediriger la sortie d'erreur standard vers un fichier plutôt que de laisser les messages s'afficher dans la console. Cela peut être fait en utilisant la commande `2>` en ligne de commande ou en utilisant la classe `StreamWriter` en C#.
 
-## Voir aussi 
+## Plongée Profonde
 
-- [Documentation Microsoft sur la sortie d'erreur standard en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.console.error)
-- [Tutoriel sur la gestion des exceptions en C#](https://www.c-sharpcorner.com/article/exception-handling-in-C-Sharp/)
+En plus de simplement imprimer des messages d'erreur, la sortie d'erreur standard peut également être utilisée pour renvoyer des codes d'erreur spécifiques à votre programme. Par exemple, vous pouvez utiliser `Console.Error.WriteLine()` pour imprimer un message d'erreur et ensuite utiliser `Environment.Exit()` pour renvoyer un code d'erreur spécifique au système d'exploitation.
+
+De plus, vous pouvez également personnaliser complètement l'apparence de votre message d'erreur en utilisant des couleurs et en ajoutant votre propre formatage. Cela peut rendre vos messages d'erreur plus visuellement attrayants et faciles à comprendre pour les utilisateurs.
+
+## Voir Aussi
+
+- [Documentation officielle de Microsoft sur la sortie d'erreur standard en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.console.error)
+- [Article StackOverflow sur la redirection des messages d'erreur en C#](https://stackoverflow.com/questions/724712/redirection-of-console-in-net)
+- [Tutoriel YouTube sur l'utilisation de couleurs pour la sortie d'erreur standard en C#](https://www.youtube.com/watch?v=_jXxXUQ4bL8)

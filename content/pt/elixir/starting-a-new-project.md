@@ -1,48 +1,46 @@
 ---
 title:    "Elixir: Iniciando um novo projeto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que escolher Elixir para o seu próximo projeto
+## Por que usar Elixir para iniciar um novo projeto?
 
-Se você está considerando começar um novo projeto de programação, o Elixir pode ser uma ótima escolha. Esta linguagem de programação funcional possui uma sintaxe simples e elegante, além de uma comunidade ativa e suporte robusto. Além disso, o Elixir é executado na máquina virtual Erlang, que é altamente escalonável e tolerante a falhas.
+Elixir é uma linguagem de programação funcional, concorrente e escalável, que tem ganhado cada vez mais popularidade na comunidade de desenvolvedores. Com uma sintaxe clara e elegante, recursos poderosos, como concorrência e tolerância a falhas, e uma comunidade ativa e acolhedora, Elixir é uma ótima escolha para iniciar um novo projeto.
 
-##Como usar o Elixir para o seu projeto
+## Como começar um projeto em Elixir
 
-Para começar, você precisará instalar o Elixir em seu computador. Você pode encontrar instruções úteis e o download do Elixir em seu site oficial.
+Para começar um projeto em Elixir, siga os seguintes passos:
 
-Agora que o Elixir está instalado, você pode criar um novo projeto usando o comando `mix new nome_do_projeto`. Isso criará uma estrutura básica do projeto, com pastas e arquivos necessários para começar a codificar.
+1. Instale o Elixir em seu computador.
+2. Crie um novo diretório para o seu projeto.
+3. Inicialize um projeto Elixir no diretório usando o comando `mix new nome-do-projeto`.
+4. Navegue até o diretório do seu projeto e abra o arquivo `mix.exs` para adicionar dependências e configurar seu aplicativo.
+5. Crie seus módulos e funções em arquivos `.ex` no diretório `lib` do seu projeto.
+6. Para compilar e executar o seu projeto, use o comando `mix compile` e `mix run`.
 
-Para escrever seu código, você pode usar qualquer editor de texto de sua preferência, como o Atom ou Visual Studio Code. Para executar e testar seu código, você pode usar o comando `mix run` seguido do nome do arquivo que deseja executar.
-
-Aqui está um exemplo simples de um programa que imprime uma saudação usando o Elixir:
+Aqui está um exemplo de uma função simples em Elixir para adicionar dois números e retornar o resultado:
 
 ```elixir
-defmodule Saudacao do
-  def imprimir_saudacao(nome) do
-    IO.puts "Olá #{nome}!"
+defmodule Soma do
+  def somar(a, b) do
+    a + b
   end
 end
 
-Saudacao.imprimir_saudacao("mundo")
+Soma.somar(1, 2) # Saída: 3
 ```
 
-A saída do programa será:
+## Mergulho profundo em iniciar um projeto Elixir
 
-`Olá mundo!`
+Iniciar um projeto em Elixir pode ser intimidante para aqueles que não estão familiarizados com a linguagem. No entanto, com a documentação abrangente do Elixir, incluindo o livro "Programming Elixir" de Dave Thomas, e a comunidade ativa no Discord e Reddit, você sempre terá recursos e suporte para ajudá-lo a começar.
 
-##Mergulhando mais fundo no Elixir para o seu projeto
+Para tornar o processo de início ainda mais fácil, você também pode usar uma ferramenta chamada Phoenix para criar aplicativos web em Elixir de forma rápida e eficiente.
 
-Além de sua sintaxe simples e amigável, o Elixir também possui alguns recursos incríveis que podem ser úteis em seu projeto. Por exemplo, ele suporta concorrência por meio de atores, permitindo que você crie sistemas altamente escalonáveis e tolerantes a falhas. Além disso, o Elixir possui um poderoso framework web chamado Phoenix, que pode ser uma ótima escolha para construir aplicativos web robustos e de alto desempenho.
+## Veja também
 
-No entanto, antes de começar a utilizar esses recursos avançados, é importante primeiro se familiarizar com os conceitos básicos do Elixir, como pattern matching, funções anônimas e listas. É recomendável também explorar a documentação oficial do Elixir e participar de comunidades online para obter ajuda e aprender com outros desenvolvedores.
-
-##Veja também
-
-- [Site oficial do Elixir](https://elixir-lang.org/)
+- [Elixir School](https://elixirschool.com/pt/)
 - [Documentação do Elixir](https://elixir-lang.org/getting-started/introduction.html)
 - [Phoenix Framework](https://www.phoenixframework.org/)
-- [Comunidade Elixir no Reddit](https://www.reddit.com/r/elixir/)
-- [Grupo Elixir no Telegram](https://t.me/elixirlang)

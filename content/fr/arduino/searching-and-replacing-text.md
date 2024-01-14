@@ -1,70 +1,49 @@
 ---
 title:    "Arduino: Recherche et remplacement de texte"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Vous êtes-vous déjà retrouvé(e) à devoir remplacer du texte dans votre code Arduino ? Peut-être que vous voulez changer un mot ou une variable qui se répète plusieurs fois. Au lieu de faire ces modifications manuellement et risquer de faire des erreurs, il est plus efficace de faire une recherche et un remplacement de texte. Cela vous permettra de gagner du temps et d'éviter les erreurs dans votre code.
+Si vous êtes un programmeur expérimenté ou si vous êtes nouveau dans le monde de l'Arduino, vous savez probablement que la recherche et le remplacement de texte peuvent être des tâches fastidieuses et répétitives. Pourquoi passer du temps à modifier manuellement chaque occurrence de texte lorsque vous pouvez utiliser une méthode plus efficace et rapide?
 
 ## Comment faire
+La programmation d'Arduino offre une fonctionnalité appelée "Rechercher et remplacer" qui vous permet de rechercher un certain texte dans votre code et de le remplacer par un autre texte. Voici un exemple de code qui illustre comment utiliser cette fonctionnalité:
 
-Pour effectuer une recherche et un remplacement de texte dans votre code Arduino, il suffit de suivre ces étapes :
-
-1. Dans l'IDE Arduino, ouvrez le fichier contenant le texte que vous souhaitez remplacer.
-2. Dans la barre de menu, cliquez sur "Edition" et sélectionnez "Rechercher et remplacer" (ou utilisez le raccourci clavier "Ctrl + H").
-3. Dans la fenêtre de recherche et de remplacement, entrez le texte que vous souhaitez rechercher et le texte de remplacement correspondant.
-4. Cliquez sur "Remplacer tout" pour effectuer les modifications dans tout le fichier.
-
-Voici un exemple de code Arduino avec une portion de texte à remplacer :
-
-```
-void setup() {
-  Serial.begin(9600);
-  int ledPin = 13;
-  pinMode(ledPin, OUTPUT);
-}
-
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-}
+```Arduino
+// Rechercher et remplacer un texte dans une chaîne
+String texte = "Bonjour tout le monde!";
+texte.replace("Bonjour", "Salut");
+Serial.println(texte); // Résultat: Salut tout le monde!
 ```
 
-Supposons que nous voulons remplacer "ledPin" par "ledNum" dans tout notre code. Voici ce que nous devrions entrer dans la fenêtre de recherche et de remplacement :
+Comme vous pouvez le voir, en utilisant la fonction "replace", nous pouvons trouver et remplacer le mot "Bonjour" par "Salut" dans notre chaîne de texte. Vous pouvez également utiliser cette méthode pour remplacer du texte dans une variable, par exemple:
 
-Rechercher : ledPin
-Remplacer par : ledNum
-
-Résultat :
-
+```Arduino
+// Rechercher et remplacer dans une variable
+int nombre = 24;
+String variable = "Le nombre est: " + String(nombre);
+variable.replace("24", "36");
+Serial.println(variable); // Résultat: Le nombre est: 36
 ```
-void setup() {
-  Serial.begin(9600);
-  int ledNum = 13;
-  pinMode(ledNum, OUTPUT);
-}
 
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-}
+La fonction "replace" peut également être utilisée pour remplacer plusieurs occurrences d'un mot dans une chaîne de texte. Il suffit d'ajouter un troisième paramètre spécifiant le nombre maximum de remplacements souhaités, par exemple:
+
+```Arduino
+// Remplacer plusieurs occurrences d'un mot
+String texte = "La pluie en Espagne tombe essentiellement sur la plaine.";
+texte.replace("pluie", "soleil", 2);
+Serial.println(texte); // Résultat: La soleil en Espagne tombe essentiellement sur la plaine.
 ```
 
 ## Plongée en profondeur
+En plus de remplacer du texte dans des chaînes de caractères et des variables, vous pouvez également utiliser la fonction "replace" pour remplacer du texte dans des tableaux. Vous pouvez même utiliser des expressions régulières pour rechercher et remplacer des motifs spécifiques dans votre code.
 
-Il est important de noter que lors de la recherche et du remplacement de texte, l'ordre des caractères est strictement respecté. Cela signifie que si vous recherchez "a" et le remplacez par "b", cela ne modifiera que la première occurrence de "a" dans votre code. Si vous voulez remplacer toutes les occurrences, vous devriez utiliser l'option "Remplacer tout".
-
-De plus, si vous ne voulez pas remplacer toutes les occurrences d'un texte, vous pouvez utiliser l'option "Remplacer" pour passer à la prochaine occurrence et décider de la remplacer ou non.
+Il est important de noter que la fonction "replace" modifie la chaîne d'origine, il n'y a donc pas besoin de stocker le résultat dans une nouvelle variable. De plus, si le texte recherché n'est pas trouvé dans la chaîne, aucune modification ne sera apportée.
 
 ## Voir aussi
-
-- [Documentation officielle Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Tutoriel sur la recherche et le remplacement de texte dans l'IDE Arduino](https://www.arduino.cc/en/Tutorial/SearchAndReplaceText)
-- [Tutoriel vidéo sur la recherche et le remplacement de texte dans l'IDE Arduino](https://www.youtube.com/watch?v=F9jDpK5qNtE)
+- [Documentation officielle Arduino](https://www.arduino.cc/reference/en/language/structure/strings/functions/replace/)
+- [Tutoriel sur la recherche et le remplacement de texte en Arduino](https://create.arduino.cc/projecthub/microchef/arduino-replaceall-tutorial-c6bb1e)
+- [Blog sur la manipulation de chaînes de caractères en Arduino](https://www.teachmemicro.com/arduino-string-manipulation/)

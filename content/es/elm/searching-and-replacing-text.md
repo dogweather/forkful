@@ -1,47 +1,83 @@
 ---
 title:    "Elm: Buscando y reemplazando texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Una de las tareas comunes al programar es buscar y reemplazar texto en nuestro código. Esto puede ser útil para corregir errores, actualizar nombres de variables u otras acciones similares. Aprender cómo realizar esta tarea en Elm nos permitirá ser más eficientes y precisos en nuestro desarrollo.
+¿Te has preguntado alguna vez por qué es necesario realizar búsquedas y reemplazos en tus textos de programación? La respuesta es simple: para ahorrar tiempo y evitar errores. Con la función de búsqueda y reemplazo, puedes modificar rápidamente una parte del código en lugar de tener que hacer cambios manualmente en cada línea. Sigue leyendo para aprender cómo hacerlo en Elm.
 
 ## Cómo hacerlo
 
-Para buscar y reemplazar texto en Elm, podemos utilizar la función `String.replace` que toma tres argumentos: la cadena original, el texto a buscar y el texto de reemplazo. Por ejemplo, si queremos reemplazar la palabra "perro" con "gato" en la cadena "Tengo un perro", podemos escribir el siguiente código:
+La sintaxis para realizar una búsqueda y reemplazo en Elm es la siguiente:
 
-```elm
-String.replace "Tengo un perro" "perro" "gato"
+```Elm
+Text.replace oldText newText texto
 ```
 
-Esto nos daría como resultado la cadena "Tengo un gato". También podemos almacenar el resultado en una variable para utilizarlo más adelante de la siguiente manera:
+Donde "oldText" es la parte del texto que quieres buscar y "newText" es la parte con la que quieres reemplazarlo. El último parámetro "texto" es el texto en el que se realizará la búsqueda y reemplazo.
 
-```elm
-miCadena = String.replace "Tengo un perro" "perro" "gato"
+Veamos un ejemplo concreto. Si queremos reemplazar la palabra "hola" por "adios" en el siguiente texto:
+
+```Elm
+"Hola, ¿cómo estás?"
 ```
 
-Otra opción es utilizar la función `String.replaceRegex` que nos permite buscar y reemplazar texto utilizando expresiones regulares. Esta función toma cuatro argumentos: la cadena original, la expresión regular, el texto de reemplazo y un booleano que indica si queremos realizar el reemplazo en todas las coincidencias o solo en la primera. Por ejemplo, si queremos reemplazar todas las vocales en minúscula por la letra "a" en la cadena "Hola mundo", podemos escribir el siguiente código:
+El código que usaríamos sería:
 
-```elm
-String.replaceRegex "Hola mundo" "[aeiou]" "a" True
+```Elm
+Text.replace "hola" "adios" "Hola, ¿cómo estás?"
 ```
 
-Esto nos daría como resultado la cadena "Hala manga".
+Y el resultado sería:
 
-## Inmersión profunda
-
-Además de buscar y reemplazar texto simple, también podemos utilizar esta función para realizar acciones más complejas en nuestras cadenas. Por ejemplo, si queremos reemplazar una palabra en un texto manteniendo su formato original, podemos utilizar `String.replace` junto con la función `String.toCase` que convierte una cadena en el mismo formato que otra. Por ejemplo, si queremos reemplazar la palabra "hola" por "adiós" en el texto "Hola, cómo estás?", podemos escribir el siguiente código:
-
-```elm
-String.replace "Hola, cómo estás?" "hola" (String.toCase "Hola" "adiós")
+```Elm
+"Adios, ¿cómo estás?"
 ```
 
-Esto nos daría como resultado la cadena "Adiós, cómo estás?". Además de esto, podemos utilizar funciones como `String.split` y `String.join` para reemplazar únicamente ciertas partes de una cadena.
+También se pueden realizar búsquedas y reemplazos en listas de textos. Por ejemplo, si tenemos la siguiente lista:
+
+```Elm
+["Hello", "Hola", "Bonjour"]
+```
+
+Y queremos reemplazar la palabra "Hola" por "Salut", podemos utilizar la función "map" junto con "Text.replace":
+
+```Elm
+List.map (Text.replace "Hola" "Salut") ["Hello", "Hola", "Bonjour"]
+```
+
+Y el resultado sería:
+
+```Elm
+["Hello", "Salut", "Bonjour"]
+```
+
+## Profundizando
+
+En Elm, la función "Text.replace" utiliza expresiones regulares para realizar la búsqueda y reemplazo. Esto significa que puedes utilizar patrones o caracteres especiales para realizar búsquedas más complejas. Por ejemplo, si queremos reemplazar cualquier vocal con "x" en el siguiente texto:
+
+```Elm
+"¡Hola Mundo!"
+```
+
+Podríamos utilizar el siguiente código:
+
+```Elm
+Text.regexReplace (Regex.regex "[aeiou]") ((\_ -> "x")) "¡Hola Mundo!"
+```
+
+Y el resultado sería:
+
+```Elm
+"¡Hxlx Mxndx!"
+```
 
 ## Ver también
 
-- La documentación oficial de Elm sobre la función `String.replace`: https://package.elm-lang.org/packages/elm/core/latest/String#replace
-- Ejemplos de uso de `String.replace` y `String.replaceRegex`: https://elmprogramming.com/replace-in-elm.html
+- Documentación oficial de la función Text.replace en Elm: https://package.elm-lang.org/packages/elm/core/latest/Text#replace
+- Ejemplos y explicación sobre expresiones regulares en Elm: https://elmprogramming.com/regex-in-elm.html
+- Otras funciones de manipulación de textos en Elm: https://www.brianthicks.com/guide/elm/strings.html

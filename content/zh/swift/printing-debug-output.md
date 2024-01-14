@@ -1,69 +1,35 @@
 ---
 title:    "Swift: 打印调试输出"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：打印调试输出是一个程序员在开发过程中必备的技巧。通过打印输出，我们可以追踪程序的执行流程，检查变量的值，并及时发现问题所在。
+为什么：为什么要使用打印调试信息？这是在编程中一个非常有效的调试工具，可以帮助开发人员快速定位代码中的错误和问题。
 
-如何：在Swift中，我们可以使用```Swift print() ```函数来打印调试输出。下面是一个简单的示例：
+## 为什么
 
-```Swift
-let name = "小明"
-print("Hello \(name)!") //输出：Hello 小明!
+在编写代码时，难免会遇到各种各样的问题，有时候我们可能会感到困惑，不知道问题出在哪里。通过打印调试信息，我们可以在代码运行过程中查看变量的值，帮助我们更轻松地分析代码的逻辑，从而快速定位问题所在。
+
+## 如何使用
+
+在Swift中，可以使用print()函数来打印调试信息。例如：
+
+```
+var num = 5
+print("当前变量num的值为：\(num)")
 ```
 
-对于多行输出，我们可以使用```Swift debugPrint() ```函数，并结合使用```Swift #file ```和```Swift #line ```来输出文件名和代码行数。例如：
+运行后，控制台将会输出：当前变量num的值为：5
 
-```Swift
-let number = 123
-debugPrint("The number is: \(number)", #file, #line)
-//输出：
-//The number is: 123
-//文件名：main.swift
-//代码行数：3
-```
+通过在print函数中使用占位符，我们可以方便地在输出中插入变量的值，更加直观地查看数据。
 
-深入了解：除了使用普通的```Swift print() ```和```Swift debugPrint() ```函数外，我们还可以使用自定义打印函数来控制输出格式。例如，我们可以打印出不同颜色的文本：
+## 深入了解
 
-```Swift
-//定义颜色枚举
-enum TextColor: String {
-    case red = "\u{001B}[0;31m"
-    case green = "\u{001B}[0;32m"
-    case blue = "\u{001B}[0;34m"
-}
+除了使用print()函数，还可以使用其他方法来打印调试信息，如使用断言来判断代码的执行路径是否符合预期。这些方法可以帮助我们更加全面地了解代码的运行情况，从而帮助我们更快地解决问题。
 
-//定义自定义打印函数
-func customPrint(_ text: String, color: TextColor) {
-    print(color.rawValue + text)
-}
+## 参考链接
 
-//使用自定义打印函数
-customPrint("这是红色的文本", color: .red)
-customPrint("这是绿色的文本", color: .green)
-customPrint("这是蓝色的文本", color: .blue)
-//输出：
-//这是红色的文本
-//这是绿色的文本
-//这是蓝色的文本
-```
-
-另外，我们还可以通过设置```Swift #if ```条件来在调试时输出内容，而在发布时不输出，这样可以避免将调试信息暴露给用户。例如：
-
-```Swift
-#if DEBUG
-print("这是调试信息")
-#endif
-```
-
-总的来说，打印调试输出可以帮助我们更有效地调试程序，并及时发现问题。通过掌握不同的打印技巧，我们可以更加灵活地使用调试输出来提升开发效率。
-
-参考链接：
-- [Swift文档：print()函数](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#print)
-- [Swift文档：debugPrint()函数](https://developer.apple.com/documentation/swift/1677063-debugprint)
-- [博客文章：Swift调试输出技巧](https://medium.com/@ethanhuang13/swift-printing-debug-output-tips-5e1bf462e11) 
-
-参见：
-- 阅读更多关于Swift语言的文章 [See Also](http://www.example.com/swift)
+- [Apple官方文档：Print function](https://developer.apple.com/documentation/swift/1541053-print)
+- [Swift博客中的调试技巧](https://www.swiftbysundell.com/articles/debugging-in-swift-tips-and-tricks/)

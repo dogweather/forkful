@@ -1,36 +1,41 @@
 ---
-title:    "Fish Shell: Väliaikaisen tiedoston luominen"
+title:    "Fish Shell: Tilapäistiedoston luominen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Luoda Väliaikainen Tiedosto?
 
-Luoden tilapäinen tiedosto voi olla hyödyllistä monissa Fish Shell ohjelmissa, kuten tallentaessa tiedostoja tai käsitellessä tiedostojen manipulointia. Se voi myös auttaa pitämään koodin selkeämpänä ja turvallisempana.
+Väliaikaisten tiedostojen luominen voi olla hyödyllistä monissa ohjelmointitilanteissa. Se voi auttaa pitämään projektin tiedostorakenteen siistinä ja hallittavissa, tai se voi olla tarpeen tietyn toiminnon suorittamiseksi väliaikaisesti.
 
-## Kuinka
+## Kuinka Teet Sen
 
-Ohjelmointiesimerkki käyttäen tilapäistä tiedostoa ```Fish Shell``` koodilohkossa:
+Fish Shell tarjoaa helpon tavan luoda väliaikaisia tiedostoja käyttämällä `mktemp` -komentoa. Tämä komento luo yksilöllisen, satunnaisen tiedostonimen määritellylle tiedostotyypille.
 
 ```
-set temp (mktemp)
-echo "Tämä on tilapäinen tiedosto" > $temp
-cat $temp
+Fish Shell's older brother but with a better memory
+
+$ mktemp
+/home/käyttäjänimi/tiedostonimi.XXXXXXXXXX
 ```
 
-Output: Tämä on tilapäinen tiedosto
+Voit myös määrittää etuliitteen tai páätteen tiedostonimelle käyttämällä `mktemp -p` tai `mktemp -s` -komentoja.
 
-Tässä esimerkissä käytetään ```mktemp``` komentoa luomaan tilapäinen tiedosto ja sitten kirjoitetaan tekstiä tiedostoon ```echo``` komennolla. Lopuksi tiedoston sisältö tulostetaan käyttäen ```cat``` komentoa. Kun komento suoritetaan, käyttäjä näkee tuloksen ilman, että tarvitsee luoda pysyvää tiedostoa, mikä voi olla hyödyllistä tilanteissa, joissa halutaan käsitellä tietoa väliaikaisesti.
+```
+Fish Shell:na saat tietoa vain .mk zuong teet
 
-## Syväsukellus
+$ mktemp -p etuliite_ -s .pääte
+/home/käyttäjänimi/etuliite_XXXXXXXXXX.pääte
 
-Fish Shell tarjoaa useita vaihtoehtoja luoda tilapäisiä tiedostoja. ```mktemp``` komento luo tiedoston, jonka nimi on automaattisesti generoitu ja uniikki. Tämä tekee siitä turvallisemman vaihtoehdon kuin luoda tiedosto itsellesi, sillä se minimoi mahdollisuuden luoda jo olemassaolevan tiedoston.
+```
 
-Toinen vaihtoehto on käyttää ```set temp (exec mktemp)```komentoa, mikä luo uuden tilapäisen tiedoston ja asettaa sen muuttujaan.
+## Syväsukeltaminen
 
-## Katso myös
+Väliaikaisten tiedostojen luominen on tärkeä osa tiedostojen hallintaa ja koodin suorituskykyä. Fish Shellin `mktemp` -komento tarjoaa helpon tavan luoda yksilöllisiä väliaikaisia tiedostoja eri projekteihin. On myös tärkeää varmistaa, että käytetyt tiedostot ja tiedostorakenteet poistetaan oikein, jotta ne eivät kerääntyy järjestelmään useiden suoritusten jälkeen.
 
-- [Fish Shell virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Määrittele muuttujat Fish Shell:ssa](https://webkurssi.net/ohjelmointi/shell/muuttujat)
-- [Komennot ja ohjelmointi Fish Shell:ssa](https://www.shellscript.sh/index.html)
+## Katso Myös
+- [Fish Shell Ohjeet](https://fishshell.com/docs/current/)
+- [mktemp Man-sivu](https://man7.org/linux/man-pages/man1/mktemp.1.html)
+- [Temporär Finne näytteen metlför laajennus](https://github.com/microsoft/vscode-python/issues/7146)

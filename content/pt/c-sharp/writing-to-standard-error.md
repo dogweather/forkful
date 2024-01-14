@@ -1,45 +1,35 @@
 ---
-title:    "C#: Escrevendo no erro padrão"
+title:    "C#: Escrevendo para o erro padrão"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em C#
+## Por que escrever para erro padrão?
 
-Escrever para o erro padrão em C# pode parecer uma tarefa desnecessária para iniciantes na linguagem, mas na verdade é uma prática muito importante. Ao escrever para o erro padrão, você pode detectar e corrigir problemas em seu código de forma eficiente.
+Escrever para o erro padrão, ou standard error, é uma técnica importante na programação. Permite que os erros e mensagens de debug sejam exibidos de forma clara para o desenvolvedor, facilitando a identificação e correção de problemas no código.
 
 ## Como fazer
 
-Para escrever para o erro padrão em C#, você precisará utilizar a classe `Console`. Veja um exemplo abaixo:
+Para escrever para o erro padrão em C#, podemos utilizar o método `Console.Error.WriteLine()`, que envia uma mensagem para a saída de erro. Veja um exemplo abaixo:
 
 ```C#
-Console.WriteLine("Mensagem de erro");
+Console.Error.WriteLine("Erro: não foi possível conectar ao banco de dados.");
 ```
 
-Neste exemplo, a mensagem "Mensagem de erro" será escrita no erro padrão, que por padrão é a tela do computador. Mas também é possível redirecionar o erro padrão para um arquivo ou outro dispositivo de saída, como mostrado abaixo:
+Isso irá exibir no console a mensagem "Erro: não foi possível conectar ao banco de dados" na cor vermelha, indicando que é uma mensagem de erro.
 
-```C#
-Console.Error.WriteLine("Mensagem de erro");
-```
+Outra forma de escrever para o erro padrão é utilizando o `Console.SetError()` para redirecionar a saída para um arquivo de log, por exemplo. Isso pode ser útil em casos onde é necessário salvar o log de erros para análise posteriormente.
 
-Com isso, a mensagem será redirecionada para o dispositivo de saída especificado, que no caso é o erro padrão. Além disso, você também pode utilizar o método `Console.SetError()` para especificar o dispositivo de saída para o erro padrão.
+## Uma análise mais profunda
 
-## Mergulho profundo
+É importante mencionar que, ao escrever para o erro padrão, estamos lidando com saída de texto sem formatação. Isso significa que é responsabilidade do desenvolvedor garantir que as mensagens sejam claras e fáceis de entender.
 
-A escrita para o erro padrão é especialmente útil durante o processo de depuração de código. Ao inserir mensagens de erro em seu código, você pode identificar exatamente em qual parte do código está ocorrendo um problema e corrigi-lo mais facilmente.
-
-Também é possível customizar a formatação da mensagem de erro, utilizando placeholder como mostrado abaixo:
-
-```C#
-int idade = 18;
-Console.Error.WriteLine($"Erro: idade inválida! Idade atual: {idade}");
-```
-
-Neste caso, ao utilizar o placeholder `{idade}`, a idade atual será incluída na mensagem de erro, facilitando a identificação do problema.
+Além disso, é importante lembrar que a saída de erro é diferente da saída padrão `Console.WriteLine()`. Enquanto a saída padrão envia mensagens para o console de forma geral, a saída de erro é destinada apenas para mensagens de erro e debug.
 
 ## Veja também
 
-- [Documentação oficial do C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
-- [Tutorial sobre escrita para o erro padrão em C#](https://www.tutorialspoint.com/csharp/csharp_errors.htm)
-- [Vídeo explicativo sobre escrita para o erro padrão em C#](https://www.youtube.com/watch?v=muFh2v1qCtY)
+- [Documentação oficial da Microsoft sobre o método Console.Error.WriteLine()](https://docs.microsoft.com/pt-br/dotnet/api/system.console.error.writeline)
+- [Artigo da DevMedia sobre a saída de erro em C#](https://www.devmedia.com.br/utilizando-a-saida-de-erro-no-c/22108)
+- [Vídeo tutorial sobre a saída de erro no canal Programação Dinâmica](https://www.youtube.com/watch?v=xS7NBQvyQys)

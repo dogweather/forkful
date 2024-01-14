@@ -1,48 +1,37 @@
 ---
 title:    "Go: Söka och ersätta text"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att söka och ersätta text är en viktig del av programmering, oavsett om du är nybörjare eller erfaren utvecklare. Det är ett sätt att effektivt ändra eller uppdatera stora mängder kod på en gång, vilket sparar tid och minimerar risken för fel. I denna bloggpost kommer vi att gå igenom hur man söker och ersätter text i Go-programmeringsspråket.
 
-Att söka och ersätta text i en kodbas är en vanligt förekommande uppgift för programmerare. Det kan bero på att variabelnamn behöver ändras för att bättre spegla det data som de håller, eller att en viktig funktion har blivit föråldrad och behöver ersättas med en modernare lösning. I denna blogginlägg kommer vi att titta på hur söka och ersätta text i Go-programmeringsspråket.
-
-## Hur man gör det
-
-För att söka och ersätta text i Go, använder vi oss av standardpaketeringen "strings" som innehåller funktioner för att hantera strängar. Den mest användbara funktionen för detta ändamål är "ReplaceAll", som tar tre argument: en sträng, ett sökord och ett ersättande ord. Enkelt uttryckt, så söker denna funktion igenom en given sträng och ersätter alla förekomster av det sökta ordet med det nya ordet.
-
-Låt oss titta på ett exempel:
+## Så här gör du
+Att söka och ersätta text i Go är väldigt enkelt och görs med hjälp av den inbyggda "strings" paketet. Låt oss säga att vi har en variabel "text" som innehåller en sträng och vi vill ersätta alla förekomster av ordet "hej" med "tjena". Vi skulle då kunna använda följande kod:
 
 ```Go
 package main
 
-import (
-    "fmt"
-    "strings"
-)
+import "fmt"
+import "strings"
 
 func main() {
-    text := "Hej på dig!"
-    newText := strings.ReplaceAll(text, "Hej", "Hallå")
-
-    fmt.Println(newText) // Output: Hallå på dig!
+    text := "Hej världen! Jag heter David och jag älskar att koda."
+    newText := strings.Replace(text, "hej", "tjena", -1)
+    fmt.Println(newText)
 }
 ```
 
-I detta exempel så skapar vi en variabel med strängen "Hej på dig!" och sedan använder vi ReplaceAll-funktionen för att ersätta "Hej" med "Hallå". Det nya värdet av variabeln skrivs ut och output blir då "Hallå på dig!".
+Output: "Tjena världen! Jag heter David och jag älskar att koda."
 
-Denna funktion kan också användas på mer komplicerade sökord, som reguljära uttryck. Genom att använda funktionen "ReplaceAllString" istället för "ReplaceAll", kan vi söka igenom texten med hjälp av reguljära uttryck och göra mer avancerade ersättningar.
+I koden ovan använder vi Replace-funktionen som finns i "strings" paketet. Den tar tre argument: en sträng, den sträng vi vill ersätta, och den nya strängen som ska ersätta den ursprungliga. Det fjärde argumentet är valet av antal gånger som strängen ska ersättas (-1 innebär att alla förekomster ska ersättas). Sedan skriver vi ut den nya strängen och får som resultat "Tjena världen! Jag heter David och jag älskar att koda."
 
-## Djupdykning
-
-För dig som vill lära dig mer om söka och ersätta text i Go, rekommenderar vi att titta närmare på "regexp" paketeringen. Denna paketering ger oss möjlighet att använda reguljära uttryck för att söka igenom och manipulera text på ett mer avancerat sätt.
-
-Som en kuriositet, så introducerades stöd för reguljära uttryck i Go-språket redan vid version 1.0, vilket gör det till ett av de tidigaste språken att inkludera detta stöd.
+## Fördjupning
+Utöver Replace-funktionen finns det många andra sätt att söka och ersätta text i Go. Till exempel kan man använda Regular Expressions för mer avancerad matchning och ersättning. Det finns också olika alternativ för att specificera vilken del av strängen som ska ersättas, till exempel genom att ange start- och slutpositioner.
 
 ## Se även
-
-- [Go's official strings package](https://golang.org/pkg/strings/)
-- [Go's official regexp package](https://golang.org/pkg/regexp/)
-- [A practical guide to regular expressions in Go](https://www.calhoun.io/using-regexp-and-regular-expressions-in-go/)
+- [Go strings package documentation](https://golang.org/pkg/strings/)
+- [Mastering Regular Expressions in Go](https://www.masteringgolang.com/functional/regular-expressions/)

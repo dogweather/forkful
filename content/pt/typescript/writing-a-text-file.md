@@ -1,42 +1,45 @@
 ---
 title:    "TypeScript: Escrevendo um arquivo de texto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em TypeScript?
+## Por que escrever um arquivo de texto?
 
-Escrever um arquivo de texto é uma tarefa comum para muitos programadores, independentemente da linguagem de programação que estão usando. No entanto, para quem está começando a trabalhar com TypeScript, pode surgir a dúvida sobre como escrever um arquivo de texto usando essa linguagem. Neste artigo, iremos explorar como escrever um arquivo de texto em TypeScript e os motivos pelos quais você pode querer fazê-lo.
+Escrever um arquivo de texto é uma tarefa fundamental para programadores em TypeScript e é essencial para realizar tarefas como armazenar informações, criar uma lista de dados ou simplesmente salvar dados temporariamente para uso futuro.
 
 ## Como fazer
 
-Escrever um arquivo de texto em TypeScript é bem simples e envolve apenas algumas etapas. Primeiro, será necessário importar o módulo `fs` do Node.js. Em seguida, podemos utilizar o método `writeFileSync` para escrever um arquivo de texto sincronamente. Veja um exemplo de código abaixo:
+Escrever um arquivo de texto em TypeScript é uma tarefa relativamente simples. Primeiro, precisamos importar o módulo 'fs' do Node.js, responsável por manipular arquivos. Podemos fazer isso usando o comando:
 
 ```TypeScript
 import * as fs from 'fs';
-
-fs.writeFileSync('arquivo.txt', 'Este é um exemplo de texto');
 ```
 
-Neste exemplo, estamos importando o módulo `fs` e em seguida, utilizando o método `writeFileSync` para escrever um arquivo de texto chamado "arquivo.txt" com o texto "Este é um exemplo de texto".
-
-Após executar este código, um arquivo de texto será criado na mesma pasta do arquivo TypeScript que criamos. O conteúdo do arquivo será "Este é um exemplo de texto".
-
-## Mergulho profundo
-
-Agora que já sabemos como escrever um arquivo de texto em TypeScript, podemos nos aprofundar um pouco mais no assunto. Uma característica muito útil do método `writeFileSync` é que ele também aceita um parâmetro de codificação opcional. Isso significa que podemos especificar qual o tipo de codificação desejamos para o nosso arquivo de texto. Veja um exemplo abaixo:
+Em seguida, podemos usar a função 'writeFileSync' fornecida pelo módulo 'fs' para escrever nosso arquivo de texto. Esta função recebe dois argumentos: o nome do arquivo que vamos criar e o conteúdo que queremos escrever. Por exemplo:
 
 ```TypeScript
-import * as fs from 'fs';
-
-fs.writeFileSync('arquivo.txt', 'Este é um exemplo de texto', 'utf8');
+fs.writeFileSync("arquivo.txt", "Este é um exemplo de conteúdo para o arquivo de texto");
 ```
 
-Neste exemplo, adicionamos o parâmetro `utf8` ao método `writeFileSync`. Isso significa que o nosso arquivo de texto será codificado em UTF-8. Esta é apenas uma das muitas opções de codificação disponíveis, portanto, certifique-se de verificar quais são as opções suportadas pela linguagem que você está utilizando.
+Por fim, podemos verificar se nosso arquivo de texto foi criado corretamente, lendo o seu conteúdo e imprimindo no console. Para isso, utilizamos a função 'readFileSync' e o comando 'console.log' da seguinte maneira:
+
+```TypeScript
+console.log(fs.readFileSync("arquivo.txt", "utf-8"));
+```
+
+O output esperado será: "Este é um exemplo de conteúdo para o arquivo de texto". É importante ressaltar que o segundo argumento da função 'readFileSync' deve ser o mesmo passado na função 'writeFileSync'.
+
+## Deep Dive
+
+Além do método 'writeFileSync', o módulo 'fs' do Node.js também fornece o método 'writeFile', que é assíncrono e permite que outras operações sejam executadas ao mesmo tempo. Além disso, podemos especificar opções adicionais, como a codificação do arquivo ou umcallback para lidar com erros ou sucesso da operação.
+
+Também é possível escrever em arquivos de texto que já existem, utilizando o método 'appendFileSync' para adicionar conteúdo ao final do arquivo. Isso pode ser útil para criar um log de informações ou salvar dados incrementalmente.
 
 ## Veja também
 
-- [Documentação oficial do Node.js sobre o módulo fs](https://nodejs.org/api/fs.html)
-- [Tutorial do TypeScript para iniciantes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Pacote npm node-fs-extra](https://www.npmjs.com/package/fs-extra)
+- [Documentação do módulo fs do Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [Tutorial para escrever arquivos de texto em TypeScript](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-typescript)
+- [Vídeo tutorial sobre escrita de arquivos de texto com Node.js e TypeScript](https://www.youtube.com/watch?v=BnirQFP8mYo)

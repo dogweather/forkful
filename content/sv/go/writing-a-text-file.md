@@ -1,54 +1,58 @@
 ---
-title:    "Go: Att skriva en textfil."
+title:    "Go: Att skriva en textfil"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att skriva en textfil är en viktig del av att programmera i de flesta språk, inklusive Go. Det är ett enkelt sätt att spara och dela data, och används ofta för att skapa och mata in konfigurationsfiler.
+Att kunna skriva textfiler är en viktig färdighet för alla som arbetar med Go-programmering. Det tillåter dig att spara data på ett enkelt och effektivt sätt. Om du inte redan vet hur man gör det, så är det enkelt och här kommer vi att titta på hur man skriver en textfil med Go.
 
-##Hur man gör
+## Hur man gör
 
-Att skriva en textfil i Go är ganska enkelt. Först måste vi skapa en fil att spara vår text i. Det kan vi göra genom att använda funktionen "Create" från "os" paketet. Sen kan vi använda funktionen "WriteString" för att skriva vår text till filen.
+För att skriva en textfil med Go behöver du först importera "os" paketet, som ger tillgång till operativsystemsfunktioner. Sedan använder du funktionen `OpenFile` för att öppna eller skapa en fil. Filen måste också stängas när du är färdig för att spara ändringarna. Här är ett kodexempel:
 
-```
-Go
+```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    f, err := os.Create("minfil.txt")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer f.Close()
-    _, err2 := f.WriteString("Det här är en text som sparas i filen.")
-    if err2 != nil {
-        fmt.Println(err2)
-        return
-    }
+	// Skapa eller öppna en fil för skrivning
+	file, err := os.OpenFile("textfil.txt", os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	
+	// Skriv till filen
+	_, err = file.WriteString("Det här är en textfil skriven i Go!")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("Textfilen har blivit skapad och innehållet har skrivits!")
 }
 ```
 
-Det här enkla exemplet skapar en textfil med namnet "minfil.txt" och sparar texten "Det här är en text som sparas i filen." i filen. Genom att använda "defer" funktionen kan vi se till att filen stängs när programmet är klart, vilket undviker eventuella problem med att läsa eller ändra filen senare.
+När du kör detta program kommer en textfil med namnet "textfil.txt" att skapas i den aktuella mappen och den angivna texten kommer att skrivas till filen.
 
-##Djupdykning
+## Deep Dive
 
-Att skriva till en textfil i Go är ganska enkelt, men det finns mer vi kan göra för att kontrollera hur vår data sparas. Vi kan till exempel använda "bufio" paketet för att skriva vår text med en buffrad skrivare, vilket kan göra det snabbare och mer effektivt.
+Det finns flera parametrar som kan användas för att anpassa hur en textfil skrivs med Go. En av dessa är flaggan `os.O_APPEND` som tillåter dig att lägga till text till slutet av en befintlig fil. Du kan också använda `file.WriteString` flera gånger för att skriva flera rader till filen.
 
-Vi kan också använda "ioutil" paketet för att läsa eller skriva till en textfil med bara en rad kod, istället för att behöva använda flera funktioner från "os" paketet.
+För att lära dig mer om hur du skriver textfiler med Go, rekommenderar vi att du tittar på dokumentationen för "os" paketet och experimenterar med olika parametrar och funktioner.
 
-Det finns också många andra aspekter av att skriva textfiler i Go att utforska, som hur man kontrollerar rättigheter och behörigheter till filen, eller hur man lägger till metadata till filen.
+## Se även
 
-##Se även
+Här är några användbara länkar för att hjälpa dig att utforska ämnet ytterligare:
 
-- [Official GoOS documentation](https://golang.org/pkg/os/)
-- [Official Go bufio documentation](https://golang.org/pkg/bufio/)
-- [Official Go ioutil documentation](https://golang.org/pkg/io/ioutil/)
+- [Officiell dokumentation för "os" paketet (på svenska)](https://golang.org/pkg/os/)
+- [Go-skolan: Filhantering (på svenska)](https://golang.org/doc/tutorial/files)
+- [Go-boken: Skriva och läsa textfiler (på svenska)](https://www.golang-book.com/books/intro/10)

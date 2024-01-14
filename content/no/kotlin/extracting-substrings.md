@@ -1,47 +1,38 @@
 ---
-title:    "Kotlin: Ekstrahering av delstrenger"
+title:    "Kotlin: Uthenting av delstrenger"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når vi jobber med strenger i Kotlin, kan det ofte være nyttig å kunne hente ut deler av en streng, også kalt en substrings. Dette kan være nyttig når vi for eksempel trenger å behandle data eller informasjon som er lagret i en bestemt format, og som vi ønsker å hente ut enkeltdeler av.
+Noen ganger i programmering er det nødvendig å hente ut deler av en tekststreng for å kunne jobbe videre med den. Dette kalles for å ekstrahere substrings. Dette kan være nyttig når man for eksempel trenger å finne et bestemt ord eller en del av et ord i en større tekst. 
 
 ## Slik gjør du det
 
-Vi kan enkelt ekstrahere substrings ved å bruke en innebygd funksjon i Kotlin kalt `substring()`. Denne funksjonen tar to parametere: startindeksen og sluttindeksen for den delen av strengen vi ønsker å hente ut. La oss se på et eksempel:
+For å ekstrahere substrings i Kotlin kan man bruke funksjonen "substring" som tar inn to parametere: start og sluttindeks. Eksempelvis kan vi gjøre følgende:
 
 ```Kotlin
-val navn = "Ole"
-val fletterennavn = navn.substring(0, 1) // henter ut første bokstav
-println(fletterennavn) // vil skrive ut "O"
+val tekst = "Dette er en tekststreng"
+val substring = tekst.substring(5,8)
+println(substring) // output: er
 ```
+I dette eksempelet har vi en tekststreng og ønsker å ekstrahere ordet "er". Siden "e" er på indeks 5 i strengen og "r" er på indeks 8, gir vi disse verdien som parametere til "substring" funksjonen. Vi printer så ut den ekstraherte substringen og får som ønsket resultatet "er". 
 
-Vi kan også bruke negative tall som indekser, hvor `-1` tilsvarer den siste bokstaven i strengen og `-2` betyr den nest siste bokstaven, og så videre. Her er et eksempel på hvordan vi kan bruke dette i praksis:
-
-```Kotlin
-val setning = "Hei, mitt navn er Lise"
-val mellomnavn = setning.substring(15, -6) // henter ut mellomnavn
-println(mellomnavn) // vil skrive ut "Lise"
-```
-
-Vi kan også bruke en variant av `substring()` som bare tar en startindeks som parameter, i tilfelle vi ønsker å hente ut en del av strengen fra og med startindeksen og helt til slutten av strengen. Her er et eksempel på hvordan vi kan bruke dette:
-
-```Kotlin
-val setning = "Vi elsker Kotlin"
-val elsker = setning.substring(3) // henter ut alt fra og med indeks 3
-println(elsker) // vil skrive ut "elsker Kotlin"
-```
+Dersom man ønsker å ekstrahere en del av et ord, kan man bruke funksjonen "indexOf" for å finne indeksene til start og slutt av den delen man vil ekstrahere. En annen måte å gjøre dette på er å bruke regulære uttrykk. For eksempel kan man bruke funksjonen "regex" og metoden "find" for å finne et bestemt ord i en tekststreng. 
 
 ## Dykk dypere
 
-Når vi bruker `substring()` i Kotlin, må vi være oppmerksomme på at denne funksjonen tar med seg mellomrom og spesialtegn som en del av substringen. Dette kan føre til uventet oppførsel hvis vi ikke har dette i tankene når vi lager programmene våre. Det kan derfor være lurt å kombinere `substring()` med en annen funksjon kalt `trim()` for å fjerne eventuelle mellomrom eller spesialtegn før vi lagrer substringen i en variabel.
+Det finnes flere metoder for å ekstrahere substrings i Kotlin, som for eksempel "substringBefore" og "substringAfter". Disse kan være nyttige dersom man ønsker å ekstrahere en del av en tekst før eller etter et spesifikt tegn eller ord.
 
-Vi kan også bruke `substring()` til å hente ut deler av en streng basert på et mønster ved hjelp av regex-uttrykk. Dette kan være nyttig når vi for eksempel ønsker å hente ut tall eller bokstaver fra en streng. Det finnes mange ressurser på nettet som kan hjelpe oss med å lære mer om regex og hvordan vi kan bruke det i sammenheng med `substring()`.
+En annen viktig ting å huske på er at indeksering i Kotlin starter på 0, altså at det første tegnet i en tekststreng har indeks 0. Dette kan være forvirrende for de som er vant til å jobbe med programmeringsspråk som starter indeksering på 1.
+
+Det kan også være lurt å vurdere effektiviteten til substring funksjonen i forhold til minnebruk og ytelse, spesielt når man jobber med store tekststrenger.
 
 ## Se også
 
-- [String Substring i Kotlin Docs](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
-- [Kotlin Regex Tutorial](https://www.programiz.com/kotlin-programming/regex)
+- [Kotlin documentation](https://kotlinlang.org/docs/reference/functions.html#substring) 
+- [Tutorial: An Introduction to Kotlin Substring](https://www.baeldung.com/kotlin/substring) 
+- [Kotlin String Cheat Sheet](https://programmingwithmosh.com/wp-content/uploads/2020/03/KotlinCheatSheet.pdf)

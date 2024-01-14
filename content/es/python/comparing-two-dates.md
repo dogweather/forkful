@@ -1,59 +1,53 @@
 ---
 title:    "Python: Comparando dos fechas"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-¿Por qué comparar dos fechas en Python?
+<html>
+<img src="https://image.freepik.com/vector-gratis/simbolo-python-concepto-programacion-isometrica_39422-204.jpg" height="200" width="500">
 
-Las comparaciones de fechas son una parte importante de la programación en Python, ya que nos permiten realizar acciones basadas en la relación entre dos fechas. Esto puede ser útil para determinar si una fecha es anterior o posterior a otra, o para calcular la diferencia entre dos fechas. En este artículo, exploraremos cómo comparar dos fechas en Python y cómo utilizar esta habilidad en tu propio código.
+
+## Por qué
+
+Comparar fechas es una tarea común en la programación, especialmente cuando se trabaja con datos que incluyen una marca de tiempo o cuando se desea realizar una funcionalidad basada en cierta fecha. En este artículo, aprenderás cómo realizar comparaciones de fechas en Python de forma efectiva.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en Python, primero necesitamos importar el módulo `datetime` que nos permite trabajar con fechas y tiempos. Luego, podemos utilizar el método `date` para crear dos objetos de fecha que queremos comparar. Por ejemplo:
+En Python, existen varias formas de comparar fechas. La forma más sencilla es utilizando los operadores de comparación, como el igual (==), el diferente (!=), el menor que (<) y el mayor que (>).
 
-```Python
-import datetime
-
-# Crear fecha 1
-date1 = datetime.date(2021, 6, 1)
-
-# Crear fecha 2
-date2 = datetime.date(2021, 6, 15)
+Veamos un ejemplo en código de Python:
 ```
-
-Una vez que tenemos nuestras dos fechas, podemos utilizar los operadores de comparación `==` (igual), `>` (mayor que), `<` (menor que), `>=` (mayor o igual) y `<=` (menor o igual) para compararlas. Por ejemplo:
-
-```Python
-# Comprobar si date1 es igual a date2
-print(date1 == date2)  # Output: False
-
-# Comprobar si date1 es mayor que date2
-print(date1 > date2)  # Output: False
-
-# Comprobar si date1 es menor que date2
-print(date1 < date2)  # Output: True
+fecha1 = "2021-10-10"
+fecha2 = "2021-11-15"
+if fecha1 < fecha2:
+    print("La fecha 1 es anterior a la fecha 2")
+elif fecha1 == fecha2:
+    print("Las fechas son iguales")
+else:
+    print("La fecha 2 es anterior a la fecha 1")
 ```
-
-También podemos utilizar el método `timedelta` para calcular la diferencia entre dos fechas en días, semanas o meses. Por ejemplo, para calcular la diferencia de días entre nuestras dos fechas:
-
-```Python
-# Calcular la diferencia de días entre date1 y date2
-difference = date2 - date1
-
-# Imprimir resultado
-print(difference.days)  # Output: 14
-```
+En este ejemplo, declaramos dos variables de tipo string que contienen fechas. Luego, utilizamos el operador de comparación "<" para verificar si la fecha1 es anterior a fecha2. Si la condición es verdadera, se imprimirá en pantalla "La fecha 1 es anterior a la fecha 2". Si la condición no se cumple, pasa al siguiente bloque de código y verifica si las fechas son iguales utilizando el operador "==". Si ambas fechas son iguales, se imprime en pantalla "Las fechas son iguales". Y finalmente, si ninguna de las condiciones anteriores se cumple, se imprime en pantalla "La fecha 2 es anterior a la fecha 1".
 
 ## Profundizando
 
-Si quieres utilizar comparaciones de fechas más avanzadas en tu código, puedes explorar el módulo `dateutil` de Python. Este módulo nos permite trabajar con fechas y tiempos de una manera más flexible y precisa. Por ejemplo, permite comparar fechas con diferentes formatos o incluso fechas con zonas horarias.
+Una forma más avanzada de comparar fechas en Python es utilizando el módulo "datetime". Este módulo nos permite trabajar con objetos de tipo fecha y realizar operaciones con ellos. Veamos un ejemplo:
+```
+from datetime import datetime
+fecha1 = datetime(2021, 10, 10)
+fecha2 = datetime(2021, 11, 15)
+if fecha1 > fecha2:
+    print("La fecha 1 es después de la fecha 2")
+else:
+    print("La fecha 2 es después de la fecha 1")
+```
+En este ejemplo, utilizamos el módulo "datetime" para crear dos objetos de tipo fecha. Luego, comparamos las fechas utilizando el operador ">" y se imprime en pantalla el resultado según la condición evaluada.
 
-También puedes explorar el módulo `calendar` de Python, que te permite trabajar con calendarios y realizar operaciones como obtener el día de la semana en una fecha específica o cambiar el formato de fechas.
+Además de los operadores de comparación, el módulo "datetime" también nos proporciona métodos para realizar operaciones más específicas con fechas, como obtener el día de la semana, el mes o el año de una fecha determinada.
 
 ## Ver también
 
-- [Documentación oficial de Python sobre comparar objetos de fecha](https://docs.python.org/3/library/datetime.html#datetime.date)
-- [Tutorial sobre el módulo `dateutil`](https://dateutil.readthedocs.io/en/stable/)
-- [Tutorial sobre el módulo `calendar`](https://www.programiz.com/python-programming/datetime/calendar)
+- Documentación oficial de Python sobre el módulo "datetime" [https://docs.python.org/es/3/library/datetime.html]
+- Ejemplos de código para comparar fechas en Python [https://www.geeksforgeeks.org/comparing-dates-python/]

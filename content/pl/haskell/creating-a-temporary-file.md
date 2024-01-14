@@ -1,40 +1,40 @@
 ---
-title:    "Haskell: Tworzenie pliku tymczasowego"
+title:    "Haskell: Tworzenie pliku tymczasowego."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Tworzenie tymczasowych plików jest nieuniknionym aspektem programowania. Czasem niezbędne jest tymczasowe przechowywanie danych lub dokumentów. W programowaniu w języku Haskell tworzenie tymczasowych plików może być szczególnie przydatne przy pracach na dużych i złożonych projektach.
+Tworzenie plików tymczasowych jest nieodłączną częścią programowania w Haskellu. Czy jesteś programistą, który chce nauczyć się tworzyć tymczasowe pliki w swoim kodzie? Ten artykuł przeznaczony jest specjalnie dla Ciebie!
 
 ## Jak to zrobić
 
-Aby stworzyć tymczasowy plik w Haskellu, możesz skorzystać z funkcji `withSystemTempFile`. Poniżej przedstawiam przykładowy kod z wykorzystaniem tej funkcji oraz wypisaniem zawartości pliku:
+Tworzenie tymczasowych plików w Haskellu jest bardzo proste i możesz to zrobić za pomocą kilku prostych funkcji. Najpierw musimy zaimportować moduł `System.IO`:
 
 ```Haskell
 import System.IO
-import System.IO.Temp
-
-main = withSystemTempFile "sample.txt" $ \tmpFilePath tmpFileHandle -> do
-  hPutStrLn tmpFileHandle "To jest przykładowy tekst."
-  hSeek tmpFileHandle AbsoluteSeek 0
-  contents <- hGetContents tmpFileHandle
-  putStrLn contents
 ```
 
-Po uruchomieniu tego kodu, w katalogu tymczasowym zostanie utworzony plik "sample.txt" zawierający tekst "To jest przykładowy tekst." Następnie program wypisze tę treść na ekranie. 
+Następnie możemy użyć funkcji `withSystemTempFile`, która przyjmuje dwa argumenty: prefix (początkowa część nazwy tymczasowego pliku) i funkcję, która zostanie wywołana z dwoma argumentami - ścieżką pliku i uchwytem do jego manipulacji:
 
-## Głębsze spojrzenie
+```Haskell
+withSystemTempFile "plik_temp" $ \path handle -> do
+  -- tutaj możemy wykonać operacje na pliku używając uchwytu do jego manipulacji
+  -- na przykład, możemy zapisać do pliku tekstowy:
+  hPutStrLn handle "To jest przykładowy tekst"
+```
 
-Funkcja `withSystemTempFile` przyjmuje dwa argumenty: nazwę pliku oraz funkcję działającą na ścieżce do tymczasowego pliku oraz uchwycie do niego. Funkcja ta automatycznie usuwa plik po jej wykonaniu.
+Po wykonaniu wszystkich operacji na pliku, zamknięcie i usunięcie go jest automatycznie wykonane przez funkcję `withSystemTempFile`. Warto również wspomnieć o funkcji `withTempDirectory`, która działa podobnie, ale tworzy tymczasowy katalog zamiast pliku.
 
-Poza funkcją `withSystemTempFile`, w Haskellu istnieje również funkcja `writeSystemTempFile`, która tworzy tymczasowy plik i zapisuje w nim podany tekst.
+## Głębsza analiza
 
-Tworzenie tymczasowych plików jest niezwykle przydatne, ale pamiętaj, że są one usuwane automatycznie po wykonaniu programu. Jeśli potrzebujesz przechowywać dane dłużej, należy zapisać je w stałym pliku.
+Podczas wywoływania funkcji `withSystemTempFile` lub `withTempDirectory`, funkcja `getTemporaryDirectory` jest wywoływana w celu pobrania ścieżki do katalogu tymczasowego. W przypadku systemu Linux lub MacOS, jest to `/temp`, a w przypadku Windows, funkcja ta zwraca wartość zmiennej środowiskowej `TMPDIR` lub `TEMP`. Warto również wspomnieć, że te funkcje korzystają z modułu `hslogger` do zapisywania informacji o tworzonych plikach tymczasowych.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja Haskella dotycząca tworzenia i przechowywania plików](https://www.haskell.org/documentation/)
-- [Przydatne funkcje dla pracy z plikami w Haskellu](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_FileIO)
+1. [Dokumentacja modułu System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+2. [Poradnik tworzenia i używania plików tymczasowych w Haskellu](https://nix-tips.github.io/tips/snippets/2015/03/11/temporary-file-directory-haskell.html)
+3. [Przykładowy kod wykorzystujący funkcje do tworzenia plików tymczasowych](https://github.com/foulane/eskerek-arbolt/blob/master/lambda/Utilities/File.hs)

@@ -1,79 +1,73 @@
 ---
 title:    "Bash recipe: Starting a new project"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Start a New Bash Project?
+## Why
 
-Bash programming is a powerful tool for automating tasks, managing files, and performing system administration tasks. Starting a new Bash project allows you to customize and streamline your workflow, making your job easier and more efficient.
+Starting a new project can seem like a daunting task, but the payoff is worth it. By creating something from scratch, you have the opportunity to improve your coding skills, learn new techniques, and potentially even contribute to the open-source community.
 
-## How To Start a New Bash Project
+## How To
 
-To start a new Bash project, follow these simple steps:
+To begin a new project in bash, follow these steps:
 
-1. Choose a project name and create a new directory for it.
+1. Create a new directory for your project: 
+```Bash 
+mkdir my_project
+```
 
-2. Create a new Bash script file with the `.sh` extension.
+2. Change into the newly created directory:
+```Bash
+cd my_project
+```
 
-3. Add the necessary shebang line at the top of the file, `#!/bin/bash`, to specify that this file will be executed with Bash.
+3. Initialize a git repository:
+```Bash
+git init
+```
 
-4. Start writing your code within the `main` function.
+4. Create a new bash file:
+```Bash
+touch my_script.sh
+```
 
-5. Use the `echo` command to output text to the terminal.
+5. Open the file in a text editor such as Vim or Nano:
+```Bash
+vim my_script.sh  # or nano my_script.sh
+```
 
-6. Save your changes and make the file executable using the `chmod +x <filename>` command.
+6. Start coding! Use basic bash syntax to write your script, and don't forget to add comments to explain your code.
 
-7. Test your code by executing the script in the terminal with `./<filename>`.
-
-8. Keep adding and testing code until your project is complete.
-
-Here's an example of a simple Bash script that greets the user:
-
+Here's an example of a simple bash script that counts the number of files in a directory and prints the result:
 ```Bash
 #!/bin/bash
 
-# Define the main function
-main() {
-  # Prompt for user's name
-  read -p "Enter your name: " name
-  # Output greeting message to the terminal
-  echo "Hello, $name! Welcome to my Bash project."
-}
+# This script counts the number of files in the current directory
 
-# Call the main function
-main
+count=$(ls | wc -l)
+echo "There are $count files in this directory."
 ```
 
-Running this script would output the following:
+## Deep Dive
 
-```Bash
-Enter your name: John
-Hello, John! Welcome to my Bash project.
-```
+When starting a new project, it's important to have a clear understanding of your goals and requirements. This will help guide your coding decisions and make the project more manageable.
 
-## Deep Dive into Starting a New Bash Project
+Some tips to consider when starting a bash project:
 
-Creating a new Bash project is not just about writing a simple script; it requires proper planning and organization. Here are some tips for starting a successful Bash project:
+- Plan out your script's functionality before writing any code.
+- Use variables to store data and make your code more dynamic.
+- Utilize control structures like loops and conditional statements for more complex scripts.
+- Research and utilize existing bash commands and functions to make your script more efficient.
 
-- Use meaningful and descriptive variable names to make your code more readable.
-
-- Break down your code into smaller functions to increase modularity and improve reusability.
-
-- Use comments to document your code and make it easier for others to understand.
-
-- Take advantage of built-in Bash commands and external tools to increase the efficiency of your project.
-
-- Use conditional statements and loops to handle different scenarios in your project.
-
-- Regularly test and debug your code to catch any errors or bugs early on.
-
-Starting a new Bash project can seem daunting, but with the right approach, it can be a rewarding and valuable experience.
+Remember to also regularly test and debug your code as you work on your project.
 
 ## See Also
 
-- [Official Bash Guide](https://www.gnu.org/software/bash/manual/)
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+For more resources on Bash scripting, check out these helpful links:
 
-Now that you know how to start a new Bash project, go ahead and put your skills into practice. Happy coding!
+- [Bash scripting cheat sheet](https://devhints.io/bash)
+- [Bash Beginner's Guide](https://www.tldp.org/LDP/abs/html/)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)

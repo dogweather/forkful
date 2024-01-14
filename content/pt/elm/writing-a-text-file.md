@@ -1,51 +1,41 @@
 ---
 title:    "Elm: Escrevendo um arquivo de texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto com Elm?
+## Por que escrever um arquivo de texto em Elm?
 
-Escrever um arquivo de texto pode ser uma tarefa simples e aparentemente sem importância, mas é uma habilidade fundamental para qualquer programador. Ao usar Elm, essa tarefa pode se tornar ainda mais fácil e eficiente. Neste artigo, vamos explorar o porquê de escrever um arquivo de texto com Elm e como fazê-lo.
+Escrever um arquivo de texto em Elm pode ser útil para armazenar informações, configurações ou dados que precisem ser acessados e modificados no futuro. Além disso, a escrita de arquivos de texto pode ser usada para gerar documentos ou relatórios em formato de texto simples.
 
-## Como escrever um arquivo de texto com Elm
+## Como fazer?
 
-Para escrever um arquivo de texto com Elm, precisamos primeiro entender a estrutura básica da linguagem. Elm é uma linguagem funcional pura, o que significa que todas as funções são imutáveis e não possuem efeitos colaterais. Isso torna a manipulação de arquivos de texto simples e segura.
+Para começar, precisaremos importar o módulo `File` do pacote `elm/file`.
 
-Abaixo está um exemplo de código Elm para escrever um arquivo de texto:
-
+```Elm
+import File
 ```
-Elm.text
 
-arquivo : String
-arquivo = "Olá Mundo!"
+Em seguida, vamos utilizar a função `File.writeString` para escrever em um arquivo de texto.
 
-texto : Text.Text
-texto = Text.fromString arquivo
-
+```Elm
 main =
-  let
-    saida = Text.lines texto
-  in
-    Html.pre [] saida
-    |> toHtml
-    |> file.export "hello.txt"
+  File.writeString "meu_arquivo.txt" "Este é um texto de exemplo."
 ```
 
-Neste exemplo, primeiro declaramos uma string com o conteúdo que desejamos escrever no arquivo. Em seguida, usamos a função `Text.fromString` para converter a string em um tipo `Text.Text` que é compatível com Elm. Depois, usamos a função `file.export` para exportar o texto para um arquivo chamado "hello.txt".
+O primeiro argumento de `File.writeString` é o nome do arquivo que desejamos criar ou modificar. O segundo argumento é o conteúdo que queremos escrever no arquivo.
 
-## Aprofundando no assunto
+Após executar o código acima, um novo arquivo chamado "meu_arquivo.txt" será criado e o texto `"Este é um texto de exemplo."` será escrito dentro dele.
 
-Um aspecto importante a se considerar ao escrever um arquivo de texto com Elm é que, por padrão, a função `file.export` adiciona um cabeçalho ao arquivo contendo informações sobre o tipo MIME. Isso pode ser útil em alguns casos, mas se você precisar escrever um arquivo sem esse cabeçalho, pode usar a função `file.exportRaw`.
+## Aprofundando-se
 
-Além disso, vale destacar que o Elm possui algumas bibliotecas externas, como a `elm/file` e `elm/file-extra`, que oferecem mais recursos e opções para lidar com arquivos de texto. Você pode explorá-las para encontrar a melhor solução para o seu projeto.
+Além da função `File.writeString`, o módulo `File` possui outras funções úteis para trabalhar com arquivos de texto, como `File.read`, que retorna o conteúdo de um arquivo, e `File.append`, que adiciona conteúdo a um arquivo preexistente.
+
+É importante lembrar que o pacote `elm/file` só pode ser utilizado em aplicações compiladas (não funciona no Elm REPL ou no navegador), e que os arquivos escritos por um programa Elm só podem ser acessados pelo próprio programa.
 
 ## Veja também
 
-Para saber mais sobre como lidar com arquivos de texto em Elm, confira os links abaixo:
-
-- [Documentação oficial do Elm sobre manipulação de arquivos](https://guide.elm-lang.org/io/files.html)
-- [Exemplos de código com Elm para escrever arquivos de texto](https://github.com/gdotdesign/elm-file/tree/master/examples)
-- [Biblioteca `elm/file`](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Biblioteca `elm/file-extra`](https://package.elm-lang.org/packages/justinmimbs/elm-file-extra/)
+- Documentação do módulo `File`: https://package.elm-lang.org/packages/elm/file/latest/File
+- Tutorial sobre I/O em Elm: https://www.elm-tutorial.org/en/09-persistence/01-intro.html

@@ -1,65 +1,94 @@
 ---
 title:    "Go recipe: Writing a text file"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing a text file is a common task in programming, particularly in Go. Text files are used for storing data, creating logs, and many other purposes. In this blog post, we will explore the basics of writing a text file in Go and dive deeper into the technical aspects of this process.
+Many programming languages, including Go, allow users to create and manipulate text files. These files can contain various types of information, such as text, numbers, and symbols. In Go, writing a text file can be a useful skill for managing data and creating reports or documents.
 
 ## How To
 
-To write a text file in Go, we first need to create a file object using the `Create()` function from the `os` package. This function takes a file name as its parameter and returns a pointer to the newly created file object. 
+To start writing a text file in Go, we first need to import the `os` and `fmt` packages. The `os` package allows us to create, open, and manipulate files, while the `fmt` package allows us to format and print data.
 
-```
-f, err := os.Create("output.txt")
+Next, we need to use the `os.Create()` function to create a new file. This function takes in the file name as a string and returns a `File` object, which we can use to write to the file.
+
+```Go
+file, err := os.Create("my_file.txt")
 if err != nil {
-    log.Fatal(err)
+    fmt.Println(err)
 }
 ```
 
-Next, we can use the `WriteString()` method from the `File` struct to write a string to our text file. This method takes a string as its parameter and writes it to the file. 
+After creating the file, we can use the `File` object's `WriteString()` method to write data to the file. This method takes in a string as a parameter, and we can use the `fmt.Sprintf()` function to format our data into a string.
 
-```
-_, err := f.WriteString("This is a sample line.")
+```Go
+data := fmt.Sprintf("This is some data to be written to the file!")
+_, err = file.WriteString(data)
 if err != nil {
-    log.Fatal(err)
+    fmt.Println(err)
 }
 ```
 
-We can also use the `Write()` method to write a byte slice to the file. This method takes a byte slice as its parameter and writes it to the file. 
+Once we have finished writing to the file, we need to close it using the `Close()` method to ensure that all data is saved properly.
 
-```
-_, err := f.Write([]byte("This is another sample line."))
+```Go
+err = file.Close()
 if err != nil {
-    log.Fatal(err)
+    fmt.Println(err)
 }
 ```
 
-Once we have finished writing to the file, we need to close it using the `Close()` method. This will ensure that all the data has been written to the file and any resources used for writing are properly released.
+To check if our file has been created and written to successfully, we can use the `cat` command in our terminal to view the contents of the file.
 
 ```
-err := f.Close()
-if err != nil {
-    log.Fatal(err)
-}
+cat my_file.txt
 ```
 
-Running this code will create a new text file named "output.txt" with the two sample lines written to it.
+The output should be: `This is some data to be written to the file!`.
 
 ## Deep Dive
 
-When writing a text file, there are a few things to keep in mind. Firstly, it's important to handle errors properly when creating, writing, and closing the file. Errors can occur if, for example, the file already exists or there are permission issues.
+Now that we have learned the basics of writing a text file in Go, let's take a deeper look at some additional features and considerations.
 
-Additionally, we can add more advanced features to our code, such as writing to a specific line in a text file, appending to an existing text file, or using a `BufferedWriter` to improve performance when writing large amounts of data.
+### Writing Multiple Lines
 
-We can also customize the content and formatting of our text file by using string interpolation and formatting options. This can help make our output more readable and organized.
+To write multiple lines to a text file, we can use the `WriteString()` method multiple times, each time with a different string. Alternatively, we can use the `fprintf()` or `fmt.Fprintf()` functions to write formatted data directly to the file.
+
+```Go
+data := fmt.Sprintf("First line \n")
+data += fmt.Sprintf("Second line")
+_, err = file.WriteString(data)
+if err != nil {
+    fmt.Println(err)
+}
+```
+
+### Appending to an Existing File
+
+To append data to an existing file, we can use the `os.OpenFile()` function and pass in the file name and the `os.O_APPEND` flag. This will allow us to open an existing file for writing while preserving its contents.
+
+```Go
+existingFile, err := os.OpenFile("my_file.txt", os.O_APPEND, 0644)
+if err != nil {
+    fmt.Println(err)
+}
+```
+
+We can then use the same methods mentioned above (`WriteString()`, `fprintf()`, `fmt.Fprintf()`) to append data to the file.
+
+### Error Handling
+
+When writing to a file, it is important to handle errors properly. In our examples, we use the `if err != nil` condition to check for and handle any errors that may occur. It is also recommended to use the `defer` statement when handling files to ensure that the file is always closed, even in the case of an error.
+
+```Go
+defer file.Close()
+```
 
 ## See Also
 
-- ["How to Read and Write Files in Go" by Tutorialspoint](https://www.tutorialspoint.com/go/go_files_io.htm)
-- ["Text File Handling in Go" by The Go Programming Language](https://golang.org/pkg/text/template/)
-
-Writing a text file in Go is a useful skill to have as a programmer. Understanding the basics and learning how to customize and optimize your code can help you efficiently handle text files in your projects. For further reading and learning, be sure to check out the resources listed above. Happy coding!
+- [Go File I/O](https://golang.org/pkg/os/#Create)
+- [Go Formatting with fmt](https://golang.org/pkg/fmt/)

@@ -1,53 +1,43 @@
 ---
 title:    "Java: Ausgabe von Debugging-Informationen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
-Wenn Sie sich jemals gefragt haben, warum Entwickler Debug-Ausgaben in ihren Java-Programmen verwenden, dann sind Sie hier genau richtig! Debug-Ausgaben sind ein wichtiges Hilfsmittel für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. In diesem Artikel erfahren Sie, warum es wichtig ist, Debug-Ausgaben zu erstellen.
 
-# Wie geht das?
-Die Erstellung von Debug-Ausgaben ist in Java sehr einfach und erfordert nur wenige Zeilen Code. Im Folgenden zeigen wir Ihnen anhand von Beispielen, wie Sie Debug-Ausgaben richtig einsetzen können.
+Beim Programmieren gibt es Zeiten, in denen man unsicher ist, was genau im Code passiert. Das ist normal, denn das Debuggen ist ein wichtiger Teil des Entwicklungsprozesses. Um besser zu verstehen, was im Code passiert, kann es hilfreich sein, Debug-Ausgaben zu drucken. In diesem Blog-Beitrag werde ich erklären, warum und wie man Debug-Ausgaben im Java-Code verwenden kann.
+
+## Wie man Debug-Ausgaben druckt
+
+Um Debug-Ausgaben in Java zu drucken, gibt es verschiedene Methoden, aber die einfachste ist die Verwendung der Klasse `System.out`. Diese Klasse hat eine Methode namens `println()`, die eine Zeichenkette (String) auf der Konsole ausgibt. Man kann diese Methode nutzen, um Nachrichten über den Codefluss zu drucken, beispielsweise bei Schleifen oder bedingten Anweisungen. Hier ist ein Beispielcode:
 
 ```Java
-// Einfache Debug-Ausgabe
-System.out.println("Dies ist eine Debug-Ausgabe");
-
-// Ausgabe von Variablenwerten
-String name = "Max Mustermann";
-System.out.println("Name: " + name);
-
-// Ausgabe in verschiedenen Datentypen
-int num = 123;
-double rate = 3.14;
-char letter = 'a';
-boolean status = true;
-
-System.out.println("Nummer: " + num);
-System.out.println("Rate: " + rate);
-System.out.println("Buchstabe: " + letter);
-System.out.println("Status: " + status);
+int x = 10;
+System.out.println("Der Wert von x ist: " + x);
 ```
 
-Die Ausgabe dieser Codeschnipsel würde wie folgt aussehen:
+Die oben genannte Methode gibt die Zeichenkette "Der Wert von x ist: 10" auf der Konsole aus. Man kann auch Variablenwerte direkt in die Methode `println()` einfügen, indem man das Pluszeichen (`+`) verwendet, um die Werte mit der Zeichenkette zu verbinden.
 
+Es gibt auch die Methode `print()`, die ähnlich wie `println()` funktioniert, aber keine neue Zeile nach der Ausgabe hinzufügt. Das kann hilfreich sein, wenn man mehrere Debug-Ausgaben in derselben Zeile haben möchte. Hier ist ein Beispiel:
+
+```Java
+int x = 10;
+System.out.print("Der Wert von x ist: " + x + ". ");
+System.out.print("Das ist ein Debug-Ausgabe.");
 ```
-Dies ist eine Debug-Ausgabe
-Name: Max Mustermann
-Nummer: 123
-Rate: 3.14
-Buchstabe: a
-Status: true
-```
 
-# Tiefer eintauchen
-Debug-Ausgaben sind nicht nur hilfreich, um schnell Fehler zu finden, sondern sie können auch bei der Analyse und Optimierung Ihres Codes nützlich sein. Indem Sie gezielt Debug-Ausgaben in bestimmten Codeabschnitten platzieren, können Sie das Verhalten Ihres Programms besser verstehen und ineffiziente Stellen identifizieren.
+Dies würde folgende Ausgabe auf der Konsole erzeugen: "Der Wert von x ist: 10. Das ist ein Debug-Ausgabe."
 
-Sie können auch unterschiedliche Arten von Debug-Ausgaben verwenden, wie zum Beispiel die `System.err` Methode, um Fehlermeldungen zu drucken oder die `Logger` Klasse für genauere Kontrolle und Protokollierung von Ausgaben.
+## Tiefergehende Informationen
 
-# Siehe auch
-- [Java Dokumentation: Debugging](https://docs.oracle.com/javase/8/docs/technotes/guides/debugger/index.html)
-- [Tutorial: Handling Debugging in Java](https://stackify.com/java-debugging-tips/)
-- [10 Tipps für effektives Debugging in Java](https://dzone.com/articles/top-10-java-debugging-tricks-with-eclipse)
+Während das Drucken von Debug-Ausgaben eine gute Möglichkeit ist, den Codefluss zu verstehen, sollte man darauf achten, dass man nicht zu viele Ausgaben druckt, da dies die Leistung des Programms beeinträchtigen kann. Es ist auch sinnvoll, aussagekräftige Nachrichten zu drucken und nicht einfach nur den Code oder Variablennamen, da dies nicht immer klar ist. Eine gute Praxis ist auch, Debug-Ausgaben in Produktionsumgebungen zu deaktivieren, um die Leistung nicht zu beeinträchtigen.
+
+Eine weitere Möglichkeit, Debug-Ausgaben zu drucken, ist die Verwendung von Logging-Frameworks wie log4j oder slf4j. Diese bieten mehr Kontrolle über die Ausgaben und ermöglichen es, sie in verschiedene Dateien oder mit verschiedenen Ebenen von Detail zu leiten. Sie sind auch nützlich, um Produktions-Logs zu überwachen und Fehler zu finden.
+
+## See Also
+
+- [Java Debugging Tutorial (auf Deutsch)](https://www.tutorials.de/threads/java-fuer-anfaenger-teil-4-debuggen.276054/)
+- [Einführung in log4j (auf Deutsch)](https://www.tutorials.de/threads/einf%C3%BChrung-in-log4j.15663/)

@@ -1,46 +1,39 @@
 ---
 title:    "Haskell: 텍스트 파일 읽기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-텍스트 파일을 읽는 것이 왜 중요한지를 이해하는 것은 프로그래밍에서 매우 중요합니다. 텍스트 파일은 데이터를 저장하고 공유하는 데 매우 유용하며 읽기 쉽고 수정하기도 쉽습니다. 하스켈을 사용하여 텍스트 파일을 읽는 방법에 대해 알아봅시다.
+텍스트 파일을 읽는 것에 대해 관심이 있는 이유는 프로그래밍을 할 때 자주 사용되기 때문입니다. 우리는 텍스트 파일을 읽는 것을 통해 데이터를 가져오고, 처리하고, 결과를 출력할 수 있습니다.
 
-## 어떻게
+## 사용 방법
 
-우리의 첫 번째 예제는 매우 간단합니다. 아래 코드는 "test.txt" 파일의 내용을 읽고, 콘솔에 한 줄씩 출력하는 코드입니다.
+이제 Haskell을 사용하여 텍스트 파일을 읽고, 데이터를 처리하고, 결과를 출력해보겠습니다. 먼저 파일을 열고, 파일 내용을 모두 읽은 뒤에는 닫아주어야 합니다. 이를 위해 `withFile` 함수를 사용합니다. 
 
-```Haskell
+그 다음에는 `hGetLine` 함수를 사용하여 파일 내의 한 줄씩 읽어올 수 있습니다. 이를 응용하여 파일 내의 모든 데이터를 불러오는 코드를 작성해보겠습니다.
+
+\```Haskell
+import System.IO
+
+main :: IO ()
 main = do
-  contents <- readFile "test.txt"
-  let linesOfFile = lines contents
-  mapM_ putStrLn linesOfFile
-```
+  withFile "sample.txt" ReadMode $ \handle -> do
+    contents <- hGetContents handle
+    putStrLn contents
+\```
 
-위 코드를 실행하여 "test.txt" 파일의 모든 내용이 콘솔에 출력되는 것을 볼 수 있습니다.
+위 코드를 실행하면 `sample.txt` 파일 내의 모든 내용이 출력됩니다.
 
-## 깊게 파헤치기
+## 깊게 파고들기
 
-하지만 이것만으로는 충분하지 않습니다. 텍스트 파일의 내용을 즉시 콘솔에 출력하는 것보다 더 유용한 방법이 있습니다. 이는 두 단계로 나눠서 처리할 수 있습니다. 첫째, 파일의 내용을 읽어서 리스트로 저장합니다. 둘째, 리스트를 순회하면서 각 줄을 처리합니다. 아래 코드는 파일의 내용을 읽어서 앞뒤 공백을 제거하고 길이가 10 이상인 줄을 콘솔에 출력하는 코드입니다.
+실제로 텍스트 파일을 읽으면서 사용할 수 있는 다양한 함수들이 있습니다. 예를 들어, 파일 내의 특정 패턴을 검색하는 `hSearch` 함수나 파일 내의 특정 위치로 이동하는 `hSeek` 함수 등이 있습니다. 자세한 정보는 공식 문서를 참고하기를 권장합니다.
 
-```Haskell
-main = do
-  contents <- readFile "test.txt"
-  let linesOfFile = map (trim . strip) (lines contents)
-  let longLines = filter (\line -> length line > 10) linesOfFile
-  mapM_ putStrLn longLines
-  where
-    trim = reverse . dropWhile isSpace . reverse . dropWhile isSpace
-    strip = filter (/= '\r')
-```
+## 봐도 좋아요
 
-위 코드를 실행하면 파일의 내용 중에서 길이가 10 이상인 줄만 콘솔에 출력되는 것을 볼 수 있습니다.
-
-# 관련 사이트
-
-- [하스켈 공식 홈페이지](https://www.haskell.org/)
-- [하스켈 문서](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html)
-- [하스켈 커뮤니티 포럼](https://discourse.haskell.org/)
+- [Haskell 공식 문서](https://www.haskell.org/documentation/) 
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)

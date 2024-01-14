@@ -1,43 +1,41 @@
 ---
-title:    "Elm: 文字列の先頭を大文字にする"
+title:    "Elm: 文字列を大文字にする"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラミング言語のElmにおいて、文字列を大文字にすることのメリットは何でしょうか？実際にどのような状況で役立つのでしょうか？
+プログラミングを行う上で、文字列を大文字に変換する必要がある場面があります。そのような状況では、効率的に文字列を大文字に変換する方法を知ることが重要です。
 
 ## 方法
 
-以下のようなコードを使用することで、文字列を大文字に変換することができます。
+コンピューターの世界では、文字列を大文字に変換するのは非常に簡単です。Elmでは、文字列を大文字にするには `String.toUpper` メソッドを使用します。例えば、以下のようにコードを記述することで、文字列を大文字に変換することができます。
 
 ```elm
-import String exposing (toUpper)
-
-inputString = "hello, world!"
-
-outputString = toUpper inputString
-
-main = 
-    text outputString
-
--- 出力: "HELLO, WORLD!"
+String.toUpper "hello" -- Output: "HELLO"
 ```
 
-## 深堀り
+また、必要に応じて、文字列を小文字に変換する方法もあります。`String.toLower` メソッドを使用することで、以下のようにコードを記述することで、文字列を小文字に変換することができます。
 
-文字列を大文字にすることは、データの整形のために非常に便利です。例えば、入力文字列がユーザー入力のために大小文字が混ざってしまっている場合、大文字に変換することでより見やすくなります。また、比較処理をする際に大文字・小文字を区別しない場合にも役立ちます。
+```elm
+String.toLower "HELLO" -- Output: "hello"
+```
 
-## もっと詳しく知りたい方へ
+## 深く掘り下げる
 
-- [ElmのStringモジュールについて](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [文字列操作の基礎知識](https://qiita.com/takl/items/fd2b81f1b371685feeb4)
-- [Elmで文字列を操作する方法](https://qiita.com/uehaj/items/4536da13a25b8e57701b)
+Elmでは、文字列を大文字や小文字に変換するメソッドの他にも、様々な文字列操作に役立つメソッドが存在します。例えば、文字列の長さを取得する `String.length` や、指定した文字列が含まれるかどうかを判定する `String.contains` メソッドが代表的です。これらのメソッドも活用することで、より柔軟に文字列を操作できるようになります。
 
-## 他に参考になる記事
+## 参考リンク
 
-- [Elmにおける文字列操作のチートシート](https://qiita.com/vmouta/items/5b8374e9f251e97ecf34)
-- [ElmのStringモジュールで遊んでみる](https://qiita.com/_rhizome/items/07a206381f033cbeafd3)
-- [文字列を処理するための便利なモジュール](https://guide.elm-lang.jp/appendix/standard-libraries.html#%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%87%A6%E7%90%86%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AA%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB)
+- [Elm公式ドキュメント](https://guide.elm-lang.org)
+- [Elmで文字列操作をする方法](https://qiita.com/shinnoki/items/5d260b1d9961c8c1c7c2)
+- [Elmで文字列を処理する方法](https://qiita.com/matsubo/items/5677c4605bf1338d9cc7)
+
+## 関連リンク
+
+- [Elmを使ってWebアプリを作ろう！](https://www.udemy.com/elm-webapp/) (Udemy)
+- [Elmを学ぶためのガイド](https://dev.to/lucamug/learn-elm-from-scratch-2019-4eh5) (Dev.to)
+- [Elm入門コース](https://egghead.io/browse/frameworks/elm) (Egghead)

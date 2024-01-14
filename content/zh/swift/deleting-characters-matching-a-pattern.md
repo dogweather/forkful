@@ -1,40 +1,35 @@
 ---
-title:    "Swift: 删除匹配模式的字符。"
+title:    "Swift: 删除匹配模式的字符"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么删除匹配模式的字符
 
-删除匹配某种模式的字符在编程中是一项常见的操作。它可以帮助我们轻松清理字符串中的冗余内容或符号，使得数据更加规范化和可读性更强。无论是在文字处理还是数据分析中，这项技能都非常有用。
+在Swift编程中，有时候我们会遇到需要删除符合特定模式的字符的情况。这可能是因为我们想要清理输入数据，或者需要对字符串进行分析和处理。无论何种原因，了解如何删除匹配模式的字符是非常重要的。
 
-## 怎么做
+## 如何操作
+
+要删除匹配模式的字符，我们可以使用Swift中内置的字符串方法来实现。首先，我们需要定义一个包含字符串的变量。然后，我们可以使用`.replacingOccurrences(of:with:)`方法，同时指定需要替换的字符和要用来替换的字符。让我们来看一个例子：
 
 ```Swift
-// 首先，创建一个需要处理的字符串
-let str = "This is a test string containing some numbers like 123"
-
-// 定义一个模式，这里我们希望删除所有数字
-let pattern = "[0-9]"
-
-// 利用正则表达式的替换方法，将匹配到的数字替换为空字符串
-let cleanStr = str.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
-
-// 输出处理后的字符串
-print(cleanStr) // "This is a test string containing some numbers like"
+let str = "This is a sample string."
+let newString = str.replacingOccurrences(of: "s", with: "")
+print(newString)
 ```
 
-在上面的例子中，我们首先创建了一个包含数字的测试字符串，然后使用正则表达式的替换方法将所有数字替换为空字符串。最后我们输出处理后的字符串，可以看到已经删除成功了。
+上面的代码将会输出 `Thi i a ample tring.`，因为所有的`s`都被删除了。
 
-## 深入了解
+## 深入探讨
 
-删除匹配某种模式的字符实际上也是利用了正则表达式来完成的。正则表达式是一种强大的模式匹配工具，它可以帮助我们更加灵活地处理字符串中的内容。如果你想进一步了解正则表达式，可以查看这些链接：
-
-- [Swifter - 利用正则表达式来过滤数据](https://link.zhihu.com/?target=https%3A//github.com/SwifterSwift/SwifterSwift%23regular-expression) 
-- [简书 - 正则表达式入门教程](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/456d006f09c4)
+在Swift中，我们可以使用更多的方法来删除匹配模式的字符。例如，我们可以通过使用正则表达式来实现更复杂的替换操作。此外，我们也可以结合使用字符串的其他方法，如`.range(of:options:range:locale:)`来更精确地控制替换操作。当然，掌握字符串的这些方法将会在我们的编程旅程中受益无穷。
 
 ## 查看更多
 
-- [Swift编程指南](https://link.zhihu.com/?target=https%3A//developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
-- [Swift中文文档](https://link.zhihu.com/?target=http%3A//www.swift51.com/swift4.0/%23%25E6%25AD%25A3%25E5%2588%2599%25E8%25A1%25A8%25E8%25BE%2581%25E5%25BC%258F_1%25E4%25BB%25A3.html)
+- [Swift字符串文档](https://developer.apple.com/documentation/swift/string)
+- [使用正则表达式处理字符串](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+- [Swift字符串函数示例](https://www.tutorialspoint.com/swift/swift_string_replacingoccurrences.htm)
+
+# 在示例中尝试删除匹配模式的字符，并探索其他有用的Swift字符串操作！

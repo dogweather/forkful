@@ -1,39 +1,66 @@
 ---
 title:    "Kotlin: Transformer une chaîne de caractères en minuscules"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi convertir une chaîne en minuscules?
+## Pourquoi
 
-Il est courant de rencontrer des situations où vous avez besoin de traiter une chaîne de caractères en minuscules. Cela peut être utile dans des cas tels que la validation de données ou la comparaison de chaînes. Dans cet article, nous allons explorer comment convertir une chaîne en minuscules en utilisant Kotlin.
+Avant de plonger dans le sujet de la conversion d'une chaîne de caractères en minuscules en Kotlin, il est important de comprendre pourquoi cela peut être utile dans votre code. En convertissant une chaîne en minuscules, vous pouvez uniformiser le format des données et faciliter leur comparaison. Cela peut également être utile lorsque vous travaillez avec des données sensibles à la casse, comme des mots de passe.
+
+Maintenant que vous avez une idée de l'utilité de cette opération, passons à la partie pratique.
 
 ## Comment faire
 
-Pour convertir une chaîne en minuscules en utilisant Kotlin, vous pouvez utiliser la méthode `toLowerCase()` comme suit:
+La conversion d'une chaîne de caractères en minuscules en Kotlin est très simple grâce à la fonction intégrée "toLowerCase()". Voyons un exemple de code pour mieux comprendre :
 
 ```Kotlin
-var str = "HELLO WORLD"
-var lowerCase = str.toLowerCase()
-println(lowerCase)
+val phrase = "Bonjour à TOUS les développeurs!"
+val lowercasePhrase = phrase.toLowerCase()
+println(lowercasePhrase)
 ```
-Output: hello world
 
-Comme vous pouvez le voir, en utilisant la méthode `toLowerCase()`, nous avons pu convertir la chaîne "HELLO WORLD" en "hello world". Cette méthode est très utile car elle nous permet de manipuler facilement une chaîne de caractères en minuscules.
+Output : bonjour à tous les développeurs!
 
-Il est également possible de spécifier la locale souhaitée lors de la conversion en minuscules. Par exemple, si nous voulons convertir une chaîne en minuscules en utilisant la locale française, nous pouvons utiliser la méthode `toLowerCase(Locale.FRENCH)`.
+Comme vous pouvez le voir, la méthode "toLowerCase()" a été appliquée à la variable "phrase" et sa valeur a été affectée à la variable "lowercasePhrase". Le résultat est alors affiché en minuscules grâce à la fonction "println".
+
+Vous pouvez également utiliser cette méthode directement sur une chaîne de caractères sans avoir à utiliser une variable supplémentaire :
+
+```Kotlin
+println("HELLO World!".toLowerCase())
+```
+
+Output : hello world!
+
+Vous pouvez également utiliser cette méthode pour comparer deux chaînes de caractères sans vous soucier de la casse :
+
+```Kotlin
+val password = "MotDePasse"
+val userInput = "motdepasse"
+val lowercasePassword = password.toLowerCase()
+if (lowercasePassword == userInput.toLowerCase()) {
+    println("Mot de passe valide")
+} else {
+    println("Mot de passe invalide")
+}
+```
+
+Output : Mot de passe valide
+
+Cependant, il est important de noter que la méthode "toLowerCase()" ne fonctionne qu'avec les caractères ASCII. Si vous travaillez avec des caractères Unicode, vous devrez utiliser la fonction "CaseFormat" de la bibliothèque Google Guava.
 
 ## Plongée en profondeur
 
-En utilisant la méthode `toLowerCase()`, il est important de noter que cela ne modifie pas la chaîne d'origine, mais plutôt qu'elle renvoie une nouvelle chaîne avec des caractères en minuscules. Cela signifie que si vous souhaitez mettre à jour la chaîne d'origine, vous devriez le faire manuellement en la remplaçant par la nouvelle chaîne retournée par la méthode `toLowerCase()`.
+La méthode "toLowerCase()" en Kotlin fonctionne en transformant les caractères de la chaîne en minuscules, en fonction de leur valeur numérique de caractère Unicode. En d'autres termes, chaque caractère est converti en utilisant le tableau ASCII.
 
-Il est également possible de spécifier un convertisseur de cas personnalisé en utilisant la méthode `map()` et en utilisant la fonction `toLoweCase()` pour chaque caractère de la chaîne d'origine.
+Par exemple, le caractère "A" (code ASCII 65) sera converti en "a" (code ASCII 97). De même, le caractère "Z" (code ASCII 90) sera converti en "z" (code ASCII 122).
+
+Cependant, il est important de noter que cette méthode ne fonctionne pas pour les caractères multibytes ou les caractères accentués. Ces caractères peuvent avoir une valeur de caractère Unicode différente et ne seront pas convertis correctement en minuscules.
 
 ## Voir aussi
 
-- [Documentation officielle Kotlin](https://kotlinlang.org/docs/reference/)
-- [Guide de démarrage rapide pour Kotlin](https://kotlinlang.org/docs/tutorials/getting-started.html)
-- [Conversions de chaînes en Kotlin](https://www.baeldung.com/kotlin-convert-string-to-int)
-
-Merci d'avoir lu cet article sur la conversion d'une chaîne en minuscules en utilisant Kotlin. En utilisant la méthode `toLowerCase()`, vous pouvez facilement manipuler des chaînes en minuscules dans vos projets. N'hésitez pas à explorer plus de fonctionnalités de Kotlin pour améliorer votre codage.
+- La documentation officielle de Kotlin sur les chaînes de caractères : https://kotlinlang.org/docs/strings.html#using-string-transformation-functions
+- La documentation officielle de la bibliothèque Google Guava : https://github.com/google/guava
+- Un article sur la comparaison de chaînes en Kotlin : https://blog.kotlin-academy.com/string-comparison-in-kotlin-a133bdf790e3

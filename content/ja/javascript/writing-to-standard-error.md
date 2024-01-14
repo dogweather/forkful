@@ -1,55 +1,35 @@
 ---
-title:    "Javascript: 「標準エラーに書き込む」"
+title:    "Javascript: 標準エラーに書き込むこと"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ標準エラー出力を書くのか
-プログラミングをする際には、バグを修正したり問題を解決したりするためにデバッグ情報が必要になることがあります。その際に、標準エラー出力を利用することでエラーをより詳細に把握し、プログラムの開発をスムーズに行うことができます。
+## なぜ
+プログラムを書く際、標準エラー出力に書き込む理由は何でしょうか？ 
+
+プログラムで何かが間違ったり、バグが発生した場合、エラーメッセージを標準エラー出力に書き込むことでユーザーに正しい情報を提供できます。また、標準出力と標準エラー出力を区別することでデバッグやログ出力が容易になります。 
 
 ## 方法
-標準エラー出力を書く方法は簡単です。まずは```console.error()```を使用して、エラーメッセージを出力します。次に、```console.trace()```を使用してどの部分でエラーが発生したかを特定することができます。最後に、コンソールに出力された内容を確認して、必要に応じて修正ができます。
-
-例えば、以下のコードを見てみましょう。
+標準エラー出力に書き込む方法は、プログラミング言語によって異なりますが、大多数の言語で以下のように記述できます。 
 
 ```Javascript
-let num1 = 5;
-let num2 = 'TWO';
-
-if(typeof num1 === 'string'){
-  console.error('num1 is not a number');
-}
-
-if(!Number.isNaN(num2)){
-  console.trace('num2 is not a number');
-}
+console.error("エラーメッセージ");
 ```
 
-上記のコードでは、```console.error()```と```console.trace()```を使用して、それぞれの変数のデータ型が数値であるかを確認しています。実行すると、コンソールに以下のような結果が出力されます。
+上記の例では、JavaScriptでコンソールにエラーメッセージを出力する方法を示しています。実際にプログラムを実行してみると、以下のような出力が得られます。 
 
 ```Javascript
-num1 is not a number
-Trace
-    at Object.<anonymous> (filename:line:col)
-    at Module._compile (module.js:678:30)
-    at Object.Module._extensions..js (module.js:690:10)
-    at Module.load (module.js:589:32)
-    at tryModuleLoad (module.js:528:12)
-    at Function.Module._load (module.js:520:3)
-    at Function.Module.runMain (module.js:703:10)
-    at startup (bootstrap_node.js:193:16)
-    at bootstrap_node.js:618:3
+>> console.error("エラーメッセージ");
+エラーメッセージ
 ```
 
-このように、エラーメッセージとその内容の詳細が表示され、バグや問題の特定がしやすくなります。
+## ディープダイブ
+標準エラー出力に書き込む際の注意点として、エラーメッセージを標準エラー出力に書き込む際には適切なエスケープ処理を行う必要があります。これにより、プログラムが正しく動作しない場合でも意図せずセキュリティ上の問題を引き起こすことがなくなります。 
 
-## 詳細解説
-より深く標準エラー出力について学ぶには、以下のリンクを参考にしてみてください。
+また、標準エラー出力は通常画面に出力されず、ログファイルなどに書き込まれるため、デバッグやバグ修正を行う際には重要な情報源となります。適切なエラーメッセージを書き込むことで、バグの原因を特定するのに役立ちます。 
 
-- [Node.js Documentation: Console](https://nodejs.org/api/console.html)
-- [JavaScript.info: Console](https://javascript.info/console)
-
-## 参考リンク
-- [Error Handling in JavaScript: A Beginner's Guide](https://stackify.com/error-handling-in-javascript/)
-- [Debugging JavaScript: Advanced Techniques](https://www.telerik.com/blogs/advanced-javascript-debugging-techniques#:~:text=Lets%20Define%20the%20Debugger!,-Debugger%20is%20a)
+## See Also
+- [console.error() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/Console/error)
+- [標準エラー出力 - Wikipedia](https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%82%A8%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B)

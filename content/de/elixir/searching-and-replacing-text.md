@@ -1,52 +1,38 @@
 ---
 title:    "Elixir: Suchen und Ersetzen von Text"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Durchsuchen und Ersetzen von Text ist eine grundlegende Aufgabe für Programmiererinnen und Programmierer. Es ermöglicht uns, schnell und effizient bestimmte Muster oder Wörter in unserem Code zu ändern oder zu ersetzen. In diesem Blog-Beitrag werden wir uns ansehen, wie wir diese Aufgabe in Elixir lösen können.
+Es gibt viele Situationen in der Programmierung, in denen wir uns mit der Notwendigkeit konfrontiert sehen, Text zu suchen und zu ersetzen. Dies kann zum Beispiel bei der Überprüfung von Benutzereingaben oder beim Durchsuchen von Dateien sein. In solchen Fällen kann die Verwendung von regulären Ausdrücken sehr hilfreich sein, um die gewünschten Textfragmente zu finden und zu ändern.
 
-## How To
+## Wie geht das?
 
-Elixir bietet mehrere Möglichkeiten, um Text zu durchsuchen und zu ersetzen. Hier sind einige Beispiele:
-
-### Suchen und Ersetzen von Text mit `String.replace/4`
-
-Wir können die Funktion `String.replace/4` verwenden, um einen bestimmten Text in einer Zeichenkette zu suchen und durch einen anderen Text zu ersetzen. Hier ist ein Beispiel:
+In Elixir gibt es verschiedene Methoden, um Text zu durchsuchen und zu ersetzen. Eine davon ist die Verwendung der Funktion `String.replace/4`. Diese Funktion erwartet vier Argumente: den zu durchsuchenden Text, das zu suchende Muster, das zu ersetzende Muster und optional noch ein Flag, um die Suchanfrage zu beeinflussen. Hier ist ein Beispiel, wie man damit einen einfachen Such- und Ersatzvorgang durchführen kann:
 
 ```Elixir
-iex> String.replace("Hallo Welt", "Welt", "Elixir")
-"Hallo Elixir"
+text = "Hallo, Welt!"
+new_text = String.replace(text, "Hallo", "Hi")
+IO.puts new_text  # Ausgabe: Hi, Welt!
 ```
 
-Diese Funktion akzeptiert vier Argumente: Die ursprüngliche Zeichenkette, den zu ersetzenden Text, den Ersatztext und eine Option `count`, die die maximale Anzahl der Vorkommen des zu ersetzenden Textes angibt.
-
-### Verwenden von regulären Ausdrücken mit `Regex.replace/3`
-
-Wir können auch reguläre Ausdrücke verwenden, um komplexe Muster zu durchsuchen und zu ersetzen. Die Funktion `Regex.replace/3` nimmt eine reguläre Ausdruckszeichenkette, den zu ersetzenden Text und den Ersatztext als Argumente. Hier ist ein Beispiel, wie wir alle Vorkommen von Zahlen in einer Zeichenkette ersetzen können:
+Zusätzlich zur Verwendung von Zeichenketten können in Elixir auch reguläre Ausdrücke verwendet werden. Hierfür steht die Funktion `Regex.replace/4` zur Verfügung. Sie funktioniert ähnlich wie `String.replace/4`, erwartet aber als zweites Argument einen regulären Ausdruck anstelle einer Zeichenkette. Hier ist ein Beispiel:
 
 ```Elixir
-iex> Regex.replace("Das Buch hat 100 Seiten", ~r/[0-9]+/, "drei")
-"Das Buch hat drei Seiten"
+text = "Der Himmel ist blau!"
+new_text = Regex.replace(text, ~r/blau/, "rot")
+IO.puts new_text  # Ausgabe: Der Himmel ist rot!
 ```
 
-### Verwendung von Mustern mit `String.replace_pattern/3`
+## Tiefergehende Informationen
 
-Für noch komplexere Muster können wir auch die Funktion `String.replace_pattern/3` verwenden, die ähnlich wie `Regex.replace/3` arbeitet, aber anstelle eines regulären Ausdrucks ein Muster verwendet. Hier ist ein Beispiel, um alle Wörter zu ersetzen, die mit "E" beginnen:
-
-```Elixir
-iex> String.replace_pattern("Elixir ist eine großartige Sprache", "E[a-z]+", "Ruby")
-"Ruby ist eine großartige Sprache"
-```
-
-## Deep Dive
-
-Elixir bietet noch mehr Funktionen zum Durchsuchen und Ersetzen von Text, wie z.B. `String.split/2`, `String.replace_leading/3` und `String.replace_trailing/3`. Wir empfehlen Ihnen, die offizielle Dokumentation von Elixir für mehr Informationen zu diesen Funktionen zu lesen.
+In beiden obigen Beispielen wurde nur der erste Treffer innerhalb des Textes ersetzt. Wenn man alle Vorkommnisse ersetzen möchte, gibt es verschiedene Möglichkeiten, dies zu erreichen. Zum Beispiel kann das Flag `global: true` verwendet werden, um die Suche auf den gesamten Text auszuweiten. Oder man kann die Funktion `Regex.replace_all/4` verwenden. Es gibt auch noch viele weitere Funktionen und Optionen, um die Suche und den Ersatz von Texten in Elixir zu manipulieren. Es empfiehlt sich, die offizielle Elixir-Dokumentation zu diesem Thema zu konsultieren, um mehr darüber zu erfahren.
 
 ## Siehe auch
 
-* Offizielle Elixir Dokumentation: https://hexdocs.pm/elixir/String.html#replace/4
-* Reguläre Ausdrücke in Elixir: https://hexdocs.pm/elixir/Regex.html
+- [String-Modul in der Elixir-Dokumentation](https://hexdocs.pm/elixir/String.html)
+- [Reguläre Ausdrücke in der Elixir-Dokumentation](https://hexdocs.pm/elixir/Regex.html)

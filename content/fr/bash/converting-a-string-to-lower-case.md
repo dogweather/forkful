@@ -1,46 +1,47 @@
 ---
-title:    "Bash: Convertir une chaîne en minuscules"
+title:    "Bash: Conversion d'une chaîne de caractères en minuscules"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est souvent utile de convertir une chaîne de caractères en minuscules en programmation pour pouvoir comparer ou manipuler plus facilement les données. Cela peut également aider à normaliser les entrées de l'utilisateur pour une meilleure expérience utilisateur.
+Si vous êtes un programmeur Bash, vous savez peut-être déjà que les chaînes de caractères peuvent parfois être source de confusion. Les différentes majuscules et minuscules peuvent rendre votre code inefficace et difficile à lire. Heureusement, il existe un moyen simple de résoudre ce problème : la conversion d'une chaîne en minuscules. Dans cet article, nous allons expliquer pourquoi et comment vous devriez le faire.
 
 ## Comment faire
 
-Pour convertir une chaîne en minuscules en Bash, il suffit d'utiliser la commande `tr` avec l'option `-s` et l'argument `[:upper:]` pour spécifier les caractères en majuscule à remplacer par les caractères en minuscule. Voici un exemple de code avec un commentaire expliquant chaque étape :
+La conversion d'une chaîne en minuscules est assez simple en Bash. Tout d'abord, vous devez utiliser la commande `tr` suivie des options `[:upper:]` et `[:lower:]` pour spécifier les caractères à convertir. Ensuite, vous devez rediriger la chaîne à convertir vers la commande `tr` avec `echo`. Enfin, vous pouvez stocker le résultat dans une variable ou l'imprimer directement à l'écran. Voici un exemple de code :
 
-```
-# Déclaration d'une variable avec une chaîne de caractères en majuscules
-ma_variable="BONJOUR TOUT LE MONDE"
-
-# Utilisation de la commande tr pour convertir la chaîne en minuscules
-tr -s '[:upper:]' '[:lower:]' <<< $ma_variable
+```bash
+str="PROGRAMMATION BASH"
+echo "$str" | tr '[:upper:]' '[:lower:]'
 ```
 
-La sortie de ce code sera `bonjour tout le monde`.
+Lorsque vous exécutez ce code, la chaîne sera convertie en minuscules et le résultat sera affiché à l'écran :
+
+```
+programmation bash
+```
+
+Vous pouvez également stocker le résultat dans une variable :
+
+```bash
+lowercase_str=$(echo "$str" | tr '[:upper:]' '[:lower:]')
+echo "$lowercase_str"
+```
 
 ## Plongée en profondeur
 
-La commande `tr` utilise des cartes de correspondance pour convertir des caractères en fonction de leurs positions dans l'alphabet. Grâce à l'option `-s`, on peut spécifier de remplacer une série de caractères par une autre série. Dans le cas de la conversion en minuscules, on utilise la carte `[:upper:]` pour les caractères en majuscule et `[:lower:]` pour les caractères en minuscule.
+Maintenant que vous savez comment convertir une chaîne en minuscules en Bash, vous pouvez vous demander quels sont les autres avantages de cette technique. Eh bien, en plus de rendre votre code plus lisible, la conversion en minuscules peut également être utile pour la comparaison de chaînes. Dans de nombreux cas, il est plus facile de comparer des chaînes lorsqu'elles sont toutes en minuscules, car les majuscules et les minuscules seront alors ignorées. Cela peut être particulièrement utile lors de l'écriture de scripts de recherche ou de tri de données.
 
-Une alternative à la commande `tr` pour convertir une chaîne en minuscules est d'utiliser la commande `sed` avec une expression régulière pour remplacer les caractères en majuscules par les caractères en minuscule. Voici un exemple de code avec `sed` :
-
-```
-# Déclaration d'une variable avec une chaîne de caractères en majuscules
-ma_variable="BONJOUR TOUT LE MONDE"
-
-# Utilisation de la commande sed pour convertir la chaîne en minuscules
-sed 's/[:upper:]/[:lower:]/g' <<< $ma_variable
-```
-
-La sortie sera également `bonjour tout le monde`.
+De plus, la conversion en minuscules peut également éviter certains bogues ou erreurs dans votre code. En effet, en Bash, les variables ne sont pas sensibles à la casse, ce qui signifie que `$str` et `$STR` seront considérés comme la même variable. Cela peut entraîner des imprécisions ou des problèmes lors de l'utilisation de variables dans des expressions ou des conditions. En convertissant systématiquement vos chaînes en minuscules, vous pouvez éviter ce type de problèmes.
 
 ## Voir aussi
 
-- [La documentation officielle de Bash](https://www.gnu.org/software/bash/)
-- [Une introduction à la programmation en Bash](https://www.maketecheasier.com/getting-started-bash-programming/)
-- [Un tutoriel sur Tutsplus pour apprendre les bases de Bash](https://code.tutsplus.com/fr/tutorials/the-basics-of-bash-for-beginners--cms-21086)
+Pour plus d'informations sur la conversion de chaînes en minuscules en Bash, vous pouvez consulter les ressources suivantes :
+
+- La documentation officielle de la commande `tr` : https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+- Un tutoriel vidéo sur la conversion de chaînes en minuscules en Bash : https://www.youtube.com/watch?v=VHNpFHUGfyU
+- Un forum de discussion sur l'utilisation de `tr` pour convertir des chaînes : https://stackoverflow.com/questions/2264428/convert-string-to-lowercase-in-bash

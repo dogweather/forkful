@@ -1,53 +1,45 @@
 ---
-title:    "Bash: Die Länge eines Strings ermitteln"
+title:    "Bash: Die Länge einer Zeichenkette bestimmen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Finden der Länge einer Zeichenkette ist eine grundlegende Fähigkeit in der Bash-Programmierung. Es ermöglicht Ihnen, die Größe und Struktur von Texten zu überprüfen und effektiv mit ihnen zu arbeiten. In diesem Blog-Beitrag werden wir uns ansehen, wie man die Länge einer Zeichenkette in Bash finden kann.
+Das Finden der Länge eines Strings ist eine grundlegende Aufgabe in der Bash-Programmierung. Es ermöglicht uns, die Größe eines Strings zu bestimmen, was nützlich sein kann, um bestimmte Aktionen auszuführen, wie zum Beispiel das Aufteilen eines Strings in einzelne Zeichen oder das Erstellen von Schleifen, die aufgrund der Länge eines Strings ausgeführt werden sollen.
 
 ## Wie geht's
 
-Um die Länge einer Zeichenkette in Bash zu finden, können wir den Befehl `expr length` verwenden. Hier ist ein Beispiel, wie man es benutzt:
+Um die Länge eines Strings in Bash zu finden, können wir den Befehl `echo` in Kombination mit der Parametererweiterung `${#string}` verwenden. Schauen wir uns ein Beispiel an:
 
 ```Bash
 string="Hallo Welt"
-echo "Die Länge der Zeichenkette ist: $(expr length $string)"
+echo "${#string}"
 ```
-
-Die Ausgabe dieses Codes wird folgendermaßen aussehen:
-
-```
-Die Länge der Zeichenkette ist: 10
-```
-
-Der Befehl `expr length` gibt die Anzahl der Buchstaben in der Zeichenkette aus, einschließlich Leerzeichen und Sonderzeichen. Sie können ihn auch mit Variablen oder Benutzereingaben verwenden. Hier ist ein weiteres Beispiel:
+Dieser Code wird die Ausgabe `11` erzeugen, da der String "Hallo Welt" insgesamt 11 Zeichen hat, einschließlich Leerzeichen. Wir können auch Variablen verwenden, um die Länge eines Strings innerhalb eines Skripts zu speichern oder sie in Bedingungen zu überprüfen:
 
 ```Bash
-read -p "Geben Sie eine Zeichenkette ein: " string
-echo "Die Länge der Zeichenkette ist: $(expr length $string)"
-```
+name="Max"
+length=${#name}
 
-Dies wird den Benutzer auffordern, eine Zeichenkette einzugeben und dann die Länge der eingegebenen Zeichenkette ausgeben.
+if [ $length -gt 3 ]
+then
+    echo "Dein Name hat mehr als 3 Buchstaben."
+else
+    echo "Dein Name hat 3 oder weniger Buchstaben."
+fi
+```
+In diesem Beispiel wird die Länge des Strings "Max" ermittelt und in der Variable `length` gespeichert. Die Bedingung überprüft nun, ob die Länge größer ist als 3 und gibt je nach Ergebnis entsprechende Nachrichten aus.
 
 ## Tiefer Einblick
 
-Es gibt auch eine andere Möglichkeit, die Länge einer Zeichenkette in Bash zu finden, indem man die `#`-Operator verwendet. Hier ist ein Beispiel:
+In der Bash-Programmierung gibt es verschiedene Techniken, um die Länge eines Strings zu ermitteln. Eine davon ist, den Befehl `wc` zusammen mit der Option `-c` zu verwenden, um die Anzahl der Zeichen in einem String zu zählen. Allerdings kann dies zu Problemen führen, wenn der String Leerzeichen oder Sonderzeichen enthält. Daher ist die Verwendung der Parametererweiterung `${#string}` eine sicherere Methode, um die Länge eines Strings zu finden.
 
-```Bash
-string="Hallo Welt"
-echo "Die Länge der Zeichenkette ist: ${#string}"
-```
-
-Dieses wird die gleiche Ausgabe wie das vorherige Beispiel erzeugen. Der `#`-Operator gibt die Anzahl der Zeichen in der Zeichenkette aus, ohne Leerzeichen zu berücksichtigen.
-
-Beachten Sie, dass die Länge einer Zeichenkette in Bash immer in ganzen Zahlen angegeben wird, unabhängig von der tatsächlichen Größe der Zeichenkette. Dies kann dazu führen, dass die Ausgabe länger oder kürzer aussieht als erwartet.
+Eine weitere wichtige Sache zu beachten ist, dass die Länge eines Strings auch davon abhängen kann, welches Zeichensatz verwendet wird. In der Bash-Programmierung wird standardmäßig der Zeichensatz ASCII verwendet, bei dem jedes Zeichen ein Byte entspricht. Wenn jedoch ein anderer Zeichensatz verwendet wird, wie zum Beispiel UTF-8, kann die Länge eines Strings in Bytes unterschiedlich sein.
 
 ## Siehe auch
 
-- [Bash-Referenzhandbuch für Zeichenketten](https://www.gnu.org/software/bash/manual/html_node/String-Operationen.html)
-- [Offizielle Dokumentation für den `expr` Befehl](https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html)
-- [Eine Einführung in die Bash-Programmierung](https://www.linuxjournal.com/content/introduction-bash-programming)
+- [Bash Parametererweiterungen](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Übersicht über ASCII-Codes](https://ascii.cl/)

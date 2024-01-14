@@ -1,63 +1,46 @@
 ---
-title:    "C#: Att få den aktuella datumen"
+title:    "C#: Att hämta aktuellt datum"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att både förstå och kunna hantera datum är en grundläggande del av programmering, oavsett vilket språk man använder sig av. Att kunna skapa, manipulera och hantera datum är viktigt för många olika applikationer och projekt. I den här bloggposten ska vi titta på hur man enkelt kan få fram dagens datum i C#.
+Att kunna hämta den aktuella datumet är en vanlig funktion i många program. Det används ofta för att visa när en viss händelse inträffade, eller för att skapa dynamiska datumstämplar. I denna guide kommer vi att gå igenom hur man kan hämta det aktuella datumet i C#.
 
-## Såhär gör du
+## Hur man gör
 
-För att få fram dagens datum i C# behöver man bara några få rader kod. Vi kommer att använda ett inbyggt objekt i .NET frameworket, DateTime, för att få fram dagens datum. Här är ett exempel på hur koden kan se ut:
+För att hämta det aktuella datumet i C# kan du använda klassen `DateTime`. Detta objekt har en mängd olika metoder och egenskaper som gör det enkelt att arbeta med datum och tid.
 
-```C#
-// Skapa ett DateTime objekt som representerar dagens datum
-DateTime idag = DateTime.Now;
+Först måste du inkludera `System` namespace i början av ditt program för att kunna använda `DateTime`. Sedan kan du hämta det aktuella datumet genom att skapa ett nytt instans av `DateTime` klassen:
 
-// Skriv ut dagens datum i konsolen
-Console.WriteLine("Idag är det: " + idag.ToString("d"));
-
-// Skriv ut dagens veckodag i konsolen
-Console.WriteLine("Veckodag: " + idag.DayOfWeek.ToString());
+``` C#
+DateTime nu = DateTime.Now;
 ```
 
-Om vi kör den här koden så får vi följande utskrift i konsolen:
+Metoden `Now` returnerar ett DateTime-objekt som representerar det aktuella datumet och tiden.
 
-```
-Idag är det: 2021-06-23
-Veckodag: Wednesday
-```
+För att visa det aktuella datumet på ett visuellt sätt, kan du använda metoden `ToString()` tillsammans med en formateringssträng. Till exempel kan följande kod användas för att skriva ut det aktuella datumet i formatet "år-månad-dag":
 
-Som du kan se så är resultatet formaterat enligt det svenska datumformatet, "ÅÅÅÅ-MM-DD", och veckodagen är också på svenska.
-
-Det finns också möjlighet att använda andra format för att skriva ut datumet. Till exempel kan du använda "D" för att skriva ut dagens datum på ett annat sätt. Här är ett exempel på hur koden kan se ut med det formatet:
-
-```C#
-// Skriv ut dagens datum i konsolen med annat format
-Console.WriteLine("Idag är det: " + idag.ToString("D"));
+``` C#
+DateTime nu = DateTime.Now;
+Console.WriteLine(nu.ToString("yyyy-MM-dd"));
 ```
 
-Om vi kör koden igen så får vi följande utskrift:
-
-```
-Idag är det: onsdag den 23 juni 2021
-```
-
-Det finns också möjlighet att få ut mer detaljerad information om dagens datum, som till exempel vilken vecka på året det är eller om det är en skottår. För att få fram den här informationen så kan man använda sig av olika metoder och egenskaper på DateTime objektet. Det finns också möjlighet att göra beräkningar på datum, som att räkna ut antal dagar mellan två datum. De flesta av dessa funktioner finns i .NET frameworket och är lättillgängliga.
+Detta kommer att skriva ut "2021-04-15" om det är den 15 april 2021.
 
 ## Djupdykning
 
-Att arbeta med datum i C# kan vara både enkelt och avancerat. Det finns många inbyggda funktioner och metoder som kan underlätta arbetet med datum. Det är också viktigt att förstå skillnaden mellan olika tidzoner och hur man kan hantera dessa i C#.
+`DateTime` klassen innehåller även många andra metoder och egenskaper för att hantera datum och tid. Till exempel kan du använda `AddDays()` metoden för att lägga till ett visst antal dagar till ett datum, eller `Subtract()` metoden för att subtrahera en viss tidsperiod från ett datum.
 
-Det finns också möjlighet att använda externa bibliotek och paket för att göra arbetet med datum ännu smidigare. Det finns till exempel bibliotek som låter dig enkelt beräkna olika tidsintervall, som månader eller år, mellan två datum.
+Du kan också använda `DateTime.TryParse()` metoden för att försöka konvertera en sträng till ett DateTime-objekt. Om konverteringen lyckas, kommer resultet att lagras i ett DateTime-objekt, annars kommer den att returnera `false`.
 
-Att ha en god förståelse för hur man kan arbeta med datum i C# är viktigt för att kunna bygga stabila och pålitliga applikationer. Det är också en del av den grundläggande kunskapen inom programmering och något som är värt att ha koll på oavsett vilken typ av projekt du arbetar med.
+Det finns också flera olika formateringssträngar som du kan använda med `ToString()` metoden för att visa datumet på olika sätt. Du kan hitta en lista över dessa formateringssträngar [här](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings).
 
 ## Se även
 
-- [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Standard och anpassade datum- och tidformat i .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
-- [NodaTime – ett populärt paket för att hantera datum och tider i .NET](https://nodatime.org/)
+- [DateTime-klass](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [DateTime-metoder och egenskaper](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0#methods)
+- [Formatsträngar för datum och tid](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

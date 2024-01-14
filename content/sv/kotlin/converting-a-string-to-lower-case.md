@@ -1,40 +1,40 @@
 ---
-title:    "Kotlin: Omvandla en sträng till små bokstäver"
+title:    "Kotlin: Omvandla en sträng till gemener"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna konvertera en sträng till gemener är en nyttig och användbar kunskap inom Kotlin programmering. Detta låter dig behandla och manipulera text på ett mer flexibelt sätt och gör det enklare att jämföra och sortera strängar.
 
-Att konvertera en sträng till små bokstäver kan vara användbart i många olika situationer. Det kan till exempel vara till hjälp när man vill jämföra textsträngar, eller när man vill göra en sökning på en sträng utan att skilja mellan stora och små bokstäver.
-
-## Så här gör du
-
-För att konvertera en sträng till små bokstäver kan du använda dig av `toLowerCase()` funktionen i Kotlin. Här är ett enkelt exempel:
+## Hur man gör det
+För att konvertera en sträng till gemener i Kotlin, kan du använda stringens inbyggda funktion `toLowerCase()`. Detta tar bort eventuella stora bokstäver i strängen och ersätter dem med motsvarande gemener.
 
 ```Kotlin
-val sträng = "DEtTA Är EN StRÄNg"
-val nySträng = sträng.toLowerCase()
-println(nySträng)
+val str = "HEJ ALLA KOTLIN-PROGRAMMERARE"
+println(str.toLowerCase())
+```
+Output:
+`hej alla kotlin-programmerare`
+
+Det är viktigt att notera att funktionen `toLowerCase()` returnerar en ny sträng och påverkar inte den ursprungliga strängen. Om du vill ändra den ursprungliga strängen permanent, måste du tilldela det nya värdet till den variabel som innehåller strängen.
+
+```Kotlin
+var str = "HEJ ALLA KOTLIN-PROGRAMMERARE"
+str = str.toLowerCase()
+println(str)
 ```
 
 Output:
-```Kotlin
-detta är en sträng
-```
-
-Som du kan se i exemplet så använde vi oss av `toLowerCase()` funktionen på vår ursprungliga sträng och tilldelade sedan resultatet till en ny variabel. Detta är bara ett enkelt exempel, men funktionen fungerar på samma sätt oavsett vilken sträng du använder den på.
+`hej alla kotlin-programmerare`
 
 ## Djupdykning
+Konverteringen från stora bokstäver till gemener beror på vilket språk som används i din miljö. Standardbiblioteket i Kotlin använder sig av Unicode-standard som anger hur stora och små bokstäver i ett språk förhåller sig till varandra. Detta betyder att konverteringen kan variera beroende på vilket språk som är inställt i ditt system.
 
-I bakgrunden använder `toLowerCase()` funktionen sig av unicode-tecken för att konvertera strängen till små bokstäver. Detta innebär att även specialtecken och bokstäver från andra språk kommer att bli konverterade till små bokstäver.
+Det är också viktigt att notera att konverteringen till gemener inte bara gäller för bokstäver utan även för andra tecken som till exempel accenter och skiljetecken. I vissa fall kan detta leda till att tecken försvinner eller förändras, därför är det alltid bäst att testa konverteringen på din specifika sträng för att se till att resultatet blir det önskade.
 
-Det är viktigt att notera att `toLowerCase()` funktionen inte ändrar på den ursprungliga strängen, utan returnerar en ny sträng med små bokstäver. Därför måste du spara resultatet i en variabel för att använda det senare i koden.
-
-## Se också
-
-Här är några relaterade länkar för att lära dig mer om Kotlin och strängar:
-
-- [Kotlin Dokumentation: Basic Syntax](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [GeeksForGeeks: Kotlin String toLowerCase() Methods](https://www.geeksforgeeks.org/kotlin-string-tolowercase-methods/)
+## Se även
+- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
+- [Unicode Standard](https://www.unicode.org/standard/index.html)

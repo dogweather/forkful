@@ -1,35 +1,45 @@
 ---
-title:    "Rust: Merkkijonojen yhdistäminen"
+title:    "Rust: Stringien yhdistäminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi käyttää Rustia merkkijonojen yhdistämiseen?
 
-On monia syitä, miksi voit haluta yhdistää merkkijonoja Rust-ohjelmoinnissa. Se voi olla hyödyllistä kun luodaan käyttäjälle loppukäyttäjälle näkyvä käyttöliittymä tai tallennetaan tietoja tietokantaan.
+Merkkijonot ovat oleellinen osa ohjelmointia, ja niitä tarvitaan usein yhdistämään tekstejä tai muuttujien arvoja. Rust on suosittu ohjelmointikieli, joka tarjoaa tehokkaan ja turvallisen tavan käsitellä merkkijonoja, mukaan lukien niiden yhdistäminen. Joten jos haluat kirjoittaa turvallista ja vakaata koodia, kannattaa harkita Rustin käyttöä merkkijonojen yhdistämiseen.
 
-## Kuinka tehdä
+# Miten yhdistää merkkijonoja Rustilla?
 
-Rustissa, merkkijonojen yhdistäminen käyttäen `+` operaattoria on yksinkertaista. Voit yhdistää kaksi merkkijonoa yksinkertaisesti kirjoittamalla ne peräkkäin. Esimerkiksi:
+Rustissa merkkijonojen yhdistäminen tapahtuu ```+``` -operaattorin avulla. Tämä operaattori yhdistää kaksi merkkijonoa ja palauttaa uuden yhdistetyn merkkijonon. Katsotaan esimerkkiä:
 
-```Rust
-let etunimi = "Matti";
-let sukunimi = "Meikäläinen";
-
-let kokonimi = etunimi + sukunimi;
-
-println!("{}", kokonimi);
+```rust
+let s1 = "Tervetuloa";
+let s2 = "Rust-ohjelmointimaailmaan!";
+let result = s1 + " " + s2;
 ```
 
-Tämä tulostaisi `Matti Meikäläinen`. On myös tärkeää huomata, että yhdistäminen luo kokonaan uuden merkkijonon, eikä muuta olemassaolevia.
+Tässä esimerkissä luodaan kaksi merkkijonoa ```s1``` ja ```s2``` ja yhdistetään ne ```result``` -muuttujaan. Lopputuloksena tulisi olla uusi merkkijono ```Tervetuloa Rust-ohjelmointimaailmaan!```
 
-## Syvällinen kuvaus
+# Syvällisempi tarkastelu Rustin merkkijonojen yhdistämisestä
 
-Rustissa, merkkijonat ovat itse asiassa siirrettäviä osia muistista, mikä tarkoittaa, että ne voivat olla hieman monimutkaisempia käsitellä ja yhdistää kuin muut datatyypit. Kuitenkin, käyttämällä `+` operaattoria yhdistäessä, Rust käyttää automaattisesti muistinhallintaa varmistaakseen että merkkijonat pysyvät eheinä ja oikein muodostettuina.
+Rustissa merkkijonot ovat osa String-tietotyyppiä, joka on muokattavissa oleva ja omistettu merkkijono. Tämä tarkoittaa, että kun yhdistät merkkijonoja, alun perin määriteltyä merkkijonoa ei muuteta vaan luodaan uusi merkkijono. Tämä on erityisen tärkeää turvallisuuden kannalta, sillä se estää muistiongelmien syntymistä.
 
-## Katso myös
+Lisäksi, Rustissa on myös ```format!``` -makro, joka tarjoaa toisen tavan yhdistää merkkijonoja. Tämä makro ottaa vastaan muuttujia ja tekstipätkiä ja palauttaa yhdistetyn merkkijonon. Esimerkiksi:
 
-- [Rustin opas merkkijonojen käsittelyyn](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/fi/)
-- [Rustin muistinhallintamalleista](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+```rust
+let nimi = "Matti";
+let ikä = 30;
+let info = format!("Nimeni on {} ja olen {} vuotta vanha.", nimi, ikä);
+```
+
+Tämä tuottaisi tuloksen ```Nimeni on Matti ja olen 30 vuotta vanha.```
+
+# Katso myös
+
+- [Rust-ohjelmointikielen virallinen verkkosivusto] (https://www.rust-lang.org/)
+- [Rustin dokumentaatio merkkijonoista] (https://doc.rust-lang.org/stable/std/string/index.html)
+- [Rust-ohjelmointimaailman suomenkielinen yhteisö] (https://rust-suomi.github.io/)
+
+Kiitos lukemisesta ja onnea Rustin oppimisen kanssa!

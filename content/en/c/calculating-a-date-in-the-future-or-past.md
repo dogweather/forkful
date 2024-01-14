@@ -1,64 +1,63 @@
 ---
 title:    "C recipe: Calculating a date in the future or past"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why
 
-Have you ever needed to calculate a date in the future or past? Maybe you're working on a project that requires generating a schedule, or you just want to know when your next birthday will fall on a weekend. Regardless of the reason, knowing how to calculate a date in the future or past can be a useful skill to have in your coding arsenal.
+Have you ever needed to calculate a date in the future or past? Maybe you're trying to determine when a project will be completed, or when a bill is due. Whatever the reason may be, understanding how to calculate a date in the future or past can be a valuable skill in many programming projects. In this blog post, we will explore the basics of calculating dates in C.
 
-## How To
+# How To
 
-To calculate a date in the future or past, we first need to understand how dates are represented in programming. In C, dates are stored as a number representing the number of seconds elapsed since January 1, 1970. This value is commonly known as "unix time."
+To calculate a date in the future or past, we need to first understand how dates are represented in C. Dates are typically represented as a structure, with members for year, month, and day. We can use the `<time.h>` header file to work with dates in our C program.
 
-To calculate a date, we need to first convert our desired date into unix time. This can be done using the `mktime()` function. Let's say we want to calculate a date 5 days in the future from today. We can use the following code:
+Let's say we want to calculate a date 30 days from today. We can use the `time()` function to get the current date and time, and then use the `localtime()` function to convert the current time to a structure. Here's an example code:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // get current time
-    time_t now = time(NULL);
-
-    // define a struct to hold the desired date
-    struct tm future;
-
-    // add 5 days to current time
-    future = *localtime(&now);
-    future.tm_mday += 5;
-
-    // convert struct to unix time
-    time_t future_time = mktime(&future);
-
-    // print the date
-    printf("The date 5 days from now will be: %s", ctime(&future_time));
+int main()
+{
+    time_t currentTime;
+    struct tm *myDate;
+    time(&currentTime);
+    myDate = localtime(&currentTime);
+    
+    printf("Today's date is: %d/%d/%d\n", myDate->tm_mon + 1, myDate->tm_mday, myDate->tm_year + 1900);
+    
+    // Adding 30 days to the current date
+    myDate->tm_mday += 30;
+    mktime(myDate); // Re-normalize date
+    
+    printf("Date 30 days from today is: %d/%d/%d\n", myDate->tm_mon + 1, myDate->tm_mday, myDate->tm_year + 1900);
 
     return 0;
 }
 ```
 
-This code first gets the current time and then uses the `localtime()` function to convert it into a `struct tm` object. We then add 5 days to the `tm_mday` field, which represents the day of the month, and use the `mktime()` function to convert the struct back into unix time. Finally, we print out the calculated date using the `ctime()` function.
+Output:
 
-Running this code will give us the following output:
-
-```C
-The date 5 days from now will be: Wed Oct 20 12:34:56 2021
+```
+Today's date is: 12/3/2019
+Date 30 days from today is: 1/2/2020
 ```
 
-Similarly, we can also calculate a date in the past by subtracting days from the current date.
+In this example, we use the `time()` function to get the current time in seconds since January 1, 1970. We then use the `localtime()` function to convert this time into a structure, which we can then manipulate. After adding 30 days to the `tm_mday` member, we use the `mktime()` function to re-normalize the date. This ensures our date is represented correctly, taking into account things like leap years.
 
-## Deep Dive
+We can also calculate dates in the past by subtracting days instead of adding them. Additionally, we can manipulate the `tm_mon` and `tm_year` members to calculate dates in different months and years.
 
-While the above example is a simple way to calculate a date, it's important to note that it does not take into account things like leap years or different time zones. To handle these cases, we can use the `gmtime()` and `localtime()` functions, which handle time zones differently.
+# Deep Dive
 
-For a more comprehensive way to handle dates, we can use the `strptime()` function, which allows us to specify a date in a particular format and retrieve the unix time for that date. This gives us more control over how we calculate dates and can be especially useful when working with dates in different formats.
+Behind the scenes, C uses the Julian Day Number (JDN) system to represent dates. This is a continuous count of days from January 1, 4713 BC. By converting our desired date to a JDN, we can use simple arithmetic to calculate dates in the future or past.
 
-## See Also
+The `mktime()` function also does much of the heavy lifting for us when re-normalizing a date. It takes into account things like daylight saving time and leap years, ensuring our date calculations are accurate.
 
+# See Also
+
+- [C Programming Language - Dates and Times](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+- [Julian Day Number](https://en.wikipedia.org/wiki/Julian_day)
 - [mktime() function](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
-- [gmtime() function](https://www.tutorialspoint.com/c_standard_library/c_function_gmtime.htm)
-- [localtime() function](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [strptime() function](https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm)

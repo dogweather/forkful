@@ -1,56 +1,51 @@
 ---
-title:    "Javascript: Umwandlung eines Datums in eine Zeichenfolge"
+title:    "Javascript: Ein Datum in einen String umwandeln"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Konvertieren von einem Datum in einen String ist eine grundlegende Funktion in der Javascript Programmierung, die oft im Alltag vorkommt. Es ermöglicht uns, ein Datum in einem für Menschen lesbaren Format darzustellen und ist daher eine wichtige Fähigkeit für jeden Javascript Entwickler.
+Das Konvertieren von Datumsangaben in Zeichenfolgen ist ein häufiger Schritt beim Programmieren von Webanwendungen. Es ist wichtig zu verstehen, wie man dies richtig macht, um effizient und fehlerfrei zu arbeiten.
 
-## Wie es gemacht wird
+# Wie man es macht
 
-Um ein Datum in einen String umzuwandeln, gibt es mehrere Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der `Date()` Funktion, die ein Datum-Objekt zurückgibt. Dieses Objekt kann dann mithilfe von Methoden wie `getFullYear()` und `getMonth()` in ein lesbares Format umgewandelt werden.
+Die Javascript-Methode `toString()` ermöglicht es uns, ein Datum in einen lesbareren String umzuwandeln. In der folgenden Code-Beispiellinie sehen wir, wie dies gemacht wird:
 
-```javascript
-let date = new Date();
-let year = date.getFullYear();
-let month = date.getMonth() + 1; // Hinweis: Monate in Javascript beginnen bei 0, daher müssen wir 1 addieren
-let day = date.getDate();
-
-// Ausgabe: 02.11.2021
-console.log(`${day < 10 ? "0" + day : day}.${month < 10 ? "0" + month : month}.${year}`);
+```Javascript
+const date = new Date(2020, 11, 25);
+const dateString = date.toString();
+console.log(dateString); // Output: Fri Dec 25 2020 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)
 ```
 
-Eine weitere Möglichkeit ist die Verwendung der `toLocaleDateString()` Methode, die es uns ermöglicht, das Datum in einem bestimmten Landesformat darzustellen. Zum Beispiel:
+Wie Sie sehen können, gibt `toString()` das Datum in einem vordefinierten Format aus. Allerdings ist dies eventuell nicht immer die gewünschte Darstellung der Datumsangabe. Glücklicherweise bietet Javascript auch die Möglichkeit, das gewünschte Format anzupassen. Hier ist ein Beispiel, das das Datum in dem sehr gebräuchlichen Format `TT.MM.JJJJ` ausgibt:
 
-```javascript
-let date = new Date();
-let options = { year: "numeric", month: "long", day: "numeric" };
-
-// Ausgabe für Deutschland: 2. November 2021
-console.log(date.toLocaleDateString("de-DE", options));
+```Javascript
+const date = new Date(2020, 11, 25);
+const options = {day: "numeric", month: "2-digit", year: "numeric"};
+const dateString = date.toLocaleDateString("de-DE", options);
+console.log(dateString); // Output: 25.12.2020
 ```
 
-## Tiefergehende Informationen
+Hier verwenden wir die Methode `toLocaleDateString()` mit dem Parameter `"de-DE"`, um sicherzustellen, dass das Datum im deutschen Format ausgegeben wird. Die Optionen ermöglichen uns, das Format des Datums festzulegen, indem wir angeben, welche Teile des Datums (`day`, `month` und `year`) und in welchem Format (hier `numeric` für Zahlen und `2-digit` für zweistellige Zahlen) angezeigt werden sollen.
 
-Es gibt verschiedene Aspekte, die bei der Konvertierung eines Datums in einen String zu beachten sind. Zum Beispiel die Formatierungsoptionen, die von der `toLocaleDateString()` Methode unterstützt werden, oder die Berücksichtigung von Zeitzone und Sprache bei der `Date()` Funktion. Es ist wichtig, diese Aspekte zu verstehen, um genaue und konsistente Ergebnisse zu erhalten.
+# Tiefere Einblicke
 
-Eine weitere wichtige Sache ist, dass Javascript standardmäßig die lokale Zeitzone des Benutzers verwendet. Wenn du ein Datum in einer bestimmten Zeitzone darstellen möchtest, musst du dies explizit angeben. Zum Beispiel:
+Javascript bietet uns auch die Möglichkeit, benutzerdefinierte Datumsformate zu erstellen. Dazu verwenden wir die `strftime()`-Methode des `strftime`-Moduls. Hier ist ein Beispiel, das das Datum als deutschen Text mit dem Monat als Abkürzung ausgibt:
 
-```javascript
-let date = new Date();
-let options = { timeZone: "Europe/Berlin" };
-
-// Ausgabe: 02.11.2021, 10:00 Uhr (abhängig von deiner aktuellen Zeit)
-console.log(date.toLocaleDateString("de-DE", options));
+```Javascript
+const date = new Date(2020, 11, 25);
+const dateFormat = '%d. %b %Y';
+const strftime = require('strftime');
+const dateString = strftime(dateFormat, date);
+console.log(dateString); // Output: 25. Dez 2020
 ```
 
-## Siehe auch
+Hier definieren wir zuerst unser gewünschtes Format `dateFormat` und importieren dann das `strftime`-Modul, das die Methode `strftime()` enthält. Wir geben diese Methode dann mit dem gewünschten Format und dem Datum als Parameter aus. Es gibt viele verschiedene Platzhalter, die verwendet werden können, um benutzerdefinierte Formate zu erstellen, und sie können in offiziellen Dokumentationen nachgelesen werden.
 
-- [MDN Dokumentation über das Konvertieren von Datum in String](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-- [Die `Date()` Funktion in der offiziellen Javascript Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Leitfaden zur Verwendung von Zeit und Datum in Javascript](https://flaviocopes.com/javascript-dates/)
+# Siehe auch
 
-Vielen Dank fürs Lesen und viel Spaß beim Konvertieren von Datum in String in deinen Javascript Projekten!
+- [Javascript Date Referenz](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [strftime Modul Dokumentation](https://github.com/samsonjs/strftime)

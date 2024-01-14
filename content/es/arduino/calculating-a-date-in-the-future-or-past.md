@@ -1,32 +1,76 @@
 ---
 title:    "Arduino: Calculando una fecha en el futuro o pasado"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Por qué calcular una fecha en el futuro o pasado?
 
-Calcular una fecha en el futuro o pasado puede ser útil en muchos proyectos de Arduino, como sistemas de control de tiempo o alarmas. También puede ser una habilidad valiosa para aprender en la programación en general.
+Calcular una fecha en el futuro o pasado puede ser útil en proyectos de Arduino que requieran una programación de eventos en una fecha específica. Por ejemplo, puede ser necesario activar una alarma en cierta fecha o programar que un dispositivo se encienda en una fecha determinada. En estos casos, es necesario utilizar el reloj interno de Arduino y hacer cálculos para determinar la fecha deseada.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para calcular una fecha en el futuro o pasado en Arduino, puedes seguir los siguientes pasos:
+Para calcular una fecha en el futuro o pasado en Arduino, es necesario seguir algunos pasos. Primero, se debe asegurar que el reloj interno de Arduino esté configurado correctamente, lo cual se puede hacer utilizando la librería "Time" que viene incluida en el IDE de Arduino. Luego, se deben utilizar las funciones de la librería para obtener la fecha y hora actual. A continuación, se pueden realizar cálculos matemáticos para sumar o restar días, meses o años a la fecha actual y obtener la fecha deseada. Por último, se puede imprimir la fecha calculada en el monitor serial o utilizarla en otras partes del código.
 
-1. Definir la fecha de inicio: primero, debes establecer la fecha de inicio a partir de la cual comenzarás a calcular. Esto se puede hacer utilizando la función ```setTime ()``` de la librería ```Time```. Por ejemplo: ```setTime (12, 0, 0, 1, 1, 2021)``` establece la fecha y hora en enero 1, 2021 a las 12:00:00 PM.
+A continuación, se muestra un ejemplo de código para calcular la fecha en 2 días en el futuro:
 
-2. Establecer una variable para almacenar la fecha del futuro o pasado: puedes usar la estructura ```tmElements_t``` de la librería ```Time``` para crear una variable que almacene la fecha en el futuro o pasado que deseas calcular.
+```
+Arduino ...
+#include <Time.h>
 
-3. Calcula la diferencia de tiempo: para calcular la fecha en el futuro o pasado, debes obtener la diferencia de tiempo entre la fecha de inicio y la fecha deseada. En Arduino, la función ```makeTime ()``` de la librería ```Time``` puede ayudarte a hacer esto. Por ejemplo: ```makeTime (0, 0, 0, 15, 2, 2021)``` creará una variable con la diferencia de tiempo de 15 días, 0 horas y 0 minutos, estableciéndola en febrero 15, 2021.
+void setup() {
+  Serial.begin(9600);
 
-4. Sumar o restar la diferencia de tiempo a la fecha de inicio: finalmente, usa la función ```adjustTime ()``` de la librería ```Time``` para agregar o restar la diferencia de tiempo a la fecha de inicio establecida en el primer paso. Esto actualizará la variable que almacena la fecha en el futuro o pasado.
+  // Configurar el reloj interno
+  setTime(10, 0, 0, 1, 1, 2019); // HH, MM, SS, DD, MM, YYYY
 
-## Profundizando:
+  // Obtener la fecha y hora actual
+  int dia = day();
+  int mes = month();
+  int año = year();
 
-Calcular una fecha en el futuro o pasado requiere una comprensión de cómo se almacenan y representan las fechas y el tiempo en Arduino utilizando la librería ```Time```. Si quieres profundizar más en el tema, puedes investigar sobre la estructura ```tmElements_t``` y cómo se usa para almacenar fechas y tiempos en Arduino.
+  // Sumar 2 días a la fecha actual
+  dia += 2;
 
-## Ver también:
+  // Verificar si la fecha calculada es válida
+  if (dia <= 31) {
+    // Imprimir la fecha
+    Serial.print("La fecha en 2 días será: ");
+    Serial.print(dia);
+    Serial.print("/");
+    Serial.print(mes);
+    Serial.print("/");
+    Serial.println(año);
+  }
+  else {
+    // Si la fecha no es válida, se reiniciará el día a 1 y se sumará 1 al mes
+    dia = 1;
+    mes += 1;
+    // Imprimir la fecha
+    Serial.print("La fecha en 2 días será: ");
+    Serial.print(dia);
+    Serial.print("/");
+    Serial.print(mes);
+    Serial.print("/");
+    Serial.println(año);
+  }
+}
 
-- [Tutorial de códigos básicos de Arduino](https://www.arduino.cc/en/Tutorial/Code)
-- [Guía oficial de la librería de tiempo de Arduino](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [Ejemplos prácticos de uso de la librería de tiempo de Arduino](https://lastminuteengineers.com/arduino-rtc-ds3231-tutorial/)
+void loop() {
+  // No es necesario utilizar el loop para este ejemplo
+}
+```
+
+## Profundizando en el cálculo de fechas
+
+Calcular la fecha en el futuro o pasado puede parecer sencillo, pero es importante tener en cuenta algunos detalles. Por ejemplo, es necesario tener en cuenta los meses que tienen 30 o 31 días, así como también el mes de febrero que puede tener 28 o 29 días en caso de ser bisiesto. También es importante considerar el formato de la fecha que se necesita, ya que puede variar dependiendo del país o región.
+
+Otro detalle a tener en cuenta es el uso de la función "setTime()" para configurar el reloj interno de Arduino. Esta función requiere que se le especifiquen los parámetros en el siguiente orden: hora, minuto, segundo, día, mes, año. Por lo tanto, es importante seguir este orden al utilizarla.
+
+## Mira también
+
+- [Librería "Time" de Arduino](https://www.arduino.cc/en/reference/time)
+- [Cómo utilizar el reloj interno de Arduino](https://www.arduino.cc/en/Tutorial/TimeRTC)
+- [Ejemplos de cálculos de fechas en Arduino](https://gist.github.com/firesofmay/f7b46588bdba165ec65e85e0b9053196)

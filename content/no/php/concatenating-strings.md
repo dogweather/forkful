@@ -1,59 +1,52 @@
 ---
-title:    "PHP: Sammenslåing av strenger"
+title:    "PHP: Sammenføyning av strenger"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konkatenerere strenger, eller å kombinere flere strenger til én, er et viktig konsept i PHP-programmering. Dette gjør det mulig å dynamisk bygge setninger eller tekststrenger som inneholder variabel informasjon. Det kan være nyttig for å generere dynamisk innhold på en nettside, for eksempel å vise en personlig velkomsthilsen eller en kundes navn i en faktura.
+Når du jobber med PHP-programmering, vil det ofte være nødvendig å kombinere eller legge sammen forskjellige tekststrenger. Dette kan være for å lage en komplett setning eller for å formatere data på en bestemt måte. Uansett årsaken, er kunnskap om hvordan man konkatinerer strenger viktig for å skrive effektiv og funksjonell kode.
 
 ## Hvordan
 
-For å konkatenerere strenger i PHP, bruker vi en enkel operator kalt "dot" (.). Denne operatoren kombinerer to strenger og returnerer en ny streng som er sammensatt av begge de opprinnelige strengene.
-
-Vi kan se et eksempel på dette i kodeblokken nedenfor hvor vi kombinerer en tekststreng med en variabel som inneholder et navn:
+En måte å konkatinere strenger i PHP er gjennom bruken av operatøren "." (punktsymbolet). Dette symbolet brukes til å legge sammen to strenger, og resultatet vil være en ny streng som inneholder den kombinerte teksten. La oss se på et enkelt eksempel:
 
 ```PHP
-<?php
-$navn = "Kristine";
-$hilsen = "Hei, " . $navn . "! Velkommen til nettsiden vår!";
-echo $hilsen;
+$navn = "Maria";
+$beskjed = "Hei, mitt navn er " . $navn . "og jeg er fra Norge.";
+echo $beskjed;
 ```
 
-Det viktigste å merke seg her er at vi bruker punktumoperatoren (. ) for å kombinere de tre delene av strengen. Output vil være: "Hei, Kristine! Velkommen til nettsiden vår!"
+Dette vil gi følgende utskrift:
 
-Vi kan også konkatenerere flere strenger sammen ved å bruke flere punktumoperatorer, som vist i eksempelet nedenfor:
+Hei, mitt navn er Maria og jeg er fra Norge.
+
+I dette tilfellet ble variablene $navn og $beskjed sammenføyd ved hjelp av parten ".". Merk at mellomrom må være inkludert for å unngå å få sammenflettede ord.
+
+En annen måte å kombinere strenger på er gjennom bruken av PHP-funksjonen "sprintf()". Denne funksjonen tar imot en tekststreng og variabler som skal settes inn i strengen på spesifiserte plasseringer. La oss se på et eksempel:
 
 ```PHP
-<?php
-$fornavn = "Kristine";
-$etternavn = "Hansen";
-echo $fornavn . " " . $etternavn;
+$navn = "Tobias";
+$trope = "Hawaier";
+$beskjed = sprintf("Hei, mitt navn er %s og jeg drømmer om å bli en ekte %s.", $navn, $trope);
+echo $beskjed;
 ```
 
-Output vil være: "Kristine Hansen".
+Dette vil gi følgende utskrift:
 
-Vi kan også kombinere flere variabler ved hjelp av punktumoperatoren, ikke bare tekststrenger som i eksempelet over.
+Hei, mitt navn er Tobias og jeg drømmer om å bli en ekte Hawaier.
+
+I dette tilfellet brukes "%s" som plassholdere for variablene $navn og $trope. Dette gjør det enklere å sette inn variabler i en tekststreng uten å måtte bekymre seg for å legge til ekstra mellomrom eller andre tegn.
 
 ## Dypdykk
 
-Det er viktig å merke seg at når vi konkatenerer tall og strenger, vil PHP automatisk konvertere tallene til en streng før de blir kombinert. Dette kan føre til uventede resultater hvis vi ikke er oppmerksomme. For eksempel, hvis vi prøver å konkatenerere et tall og en streng, som i eksempelet nedenfor:
+Det finnes også andre måter å konkatinere strenger i PHP, som for eksempel gjennom bruken av "strcat()" eller "str_replace()" funksjonene. Disse har sine egne spesifikke bruksområder og kan være nyttige i ulike situasjoner. Det viktigste er å forstå grunnleggende om hvordan å koble sammen strenger, og deretter forstå og bruke de forskjellige metodene som passer best for ditt spesifikke kodebehov.
 
-```PHP
-<?php
-$tall = 5;
-$tekst = " stjerner";
-echo "Denne filmen fikk " . $tall . $tekst;
-```
+## Se Også
 
-Output vil være: "Denne filmen fikk 5 stjerner". PHP konverterer automatisk tallet $tall til en streng og kombinerer den med resten av stringen, i stedet for å utføre et matematisk uttrykk.
-
-Det er også viktig å være oppmerksom på at det er en forskjell mellom en enkeltkolon (:) i PHP og punktumoperatoren (. ). Enkeltkolon blir brukt til å sette av variabelnavn i en tekststreng, mens punktumoperatoren brukes til å konkatenerere strenger.
-
-## Se også
-
-- [Offisiell PHP-dokumentasjon om konkatenering](https://www.php.net/manual/en/language.operators.string.php)
-- [Enkel guide til strenger i PHP](https://www.w3schools.com/php/php_string.asp)
-- [Interaktiv tutorial for å lære å konkatenerere strenger i PHP](https://www.codecademy.com/learn/learn-php/modules/php-strings/cheatsheet)
+1. [PHP funksjoner for strenger](https://www.php.net/manual/en/ref.strings.php)
+2. [W3Schools - PHP konkatinering](https://www.w3schools.com/php/php_operators.asp)
+3. [Stack Overflow - Sammenføyning av strenger i PHP](https://stackoverflow.com/questions/368657/string-concatenation-in-php)

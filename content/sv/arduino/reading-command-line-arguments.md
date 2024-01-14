@@ -1,45 +1,40 @@
 ---
 title:    "Arduino: Läsning av kommandoradsargument"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför du borde läsa kommandoradsargument
+# Varför
 
-Att kunna läsa kommandoradsargument är en användbar förmåga när du arbetar med Arduino programmering. Det ger dig möjlighet att skicka och ta emot specifika instruktioner från din Arduino via datorn.
+Om du är en nybörjare inom Arduino-programmering, kan det kännas överväldigande att lära sig alla kommandon och metoder. Men en av de viktigaste delarna av programmering är att kunna läsa kommandoradsargument. Detta kan hjälpa dig att skriva mer flexibla och effektiva program. Så om du vill ta dina Arduino-programmeringsfärdigheter till nästa nivå, så är det dags att dyka djupare in i hur man läser kommandoradsargument.
 
-## Så här gör du
+# Hur man gör
 
-För att kunna läsa kommandoradsargument behöver du först och främst förstå syntaxen. Det finns tre huvudsakliga delar som är viktiga att känna till:
+För att läsa kommandoradsargument i Arduino, behöver du först skapa en instans av Serial-klassen. Sedan använder du funktionen `Serial.readString()` för att läsa in kommandot i en strängvariabel. Här är ett exempel på hur man gör det:
 
-1. Det första argumentet är alltid programmets namn (i detta fall "Arduino").
-2. Det andra argumentet är vilken port som används för kommunikation.
-3. Eventuella efterföljande argument är de faktiska kommandona som önskas skickas till Arduino.
+```Arduino
+Serial.readString();
 
-För att läsa kommandoradsargument i din Arduino kod använder du funktionen ```main()```. Här är ett enkelt exempel som skriver ut det andra argumentet (portskilt) på seriell monitor:
-
-```
-#include <stdio.h>
-
-int main(int argc, char *argv[]) {
-  Serial.begin(9600);
-  
-  Serial.println(argv[2]);
-
-  while (1) { }
-  return 0;
+if (Serial.available() > 0) {
+  String inputString = Serial.readString();
+  Serial.println(inputString);
 }
 ```
 
-När du nu kör programmet via kommandoraden: ```Arduino COM5 Hello``` kommer "Hello" att skrivas ut på seriell monitor.
+I detta exempel kommer du att skapa en variabel som heter `inputString`, som kommer att innehålla kommandot som läses in från seriell monitor. Sedan kan du använda `inputString` för att utföra olika uppgifter i ditt program.
 
-## Djupdykning
+# Dyk djupare
 
-När du väl behärskar läsning av kommandoradsargument finns det många användbara saker du kan göra med det. Du kan till exempel använda det för fjärrstyrning av din Arduino eller för att skicka data från sensormoduler via kommandoraden. Det kan också underlätta felsökning genom att du kan testa kommandon utan att behöva rensa och ladda om din kod.
+Det finns flera saker att tänka på när du arbetar med kommandoradsargument. Till exempel kan du använda en uppsättning olika funktioner för att hantera önskad användarinput, såsom `Serial.parseInt()` för att läsa in numeriska värden och `Serial.parseFloat()` för att läsa in flyttal. Det är också viktigt att ta hänsyn till olika typer av felaktig användarinput och hantera dem på ett korrekt sätt.
 
-## Se även
+En annan sak att komma ihåg är att läsa kommandoradsargument är mer användbart när du bygger mer komplexa program. Om du bara behöver läsa in ett enda kommando, kan det vara enklare att göra detta via seriell monitor istället.
 
-- [Arduino Command Line Interface](https://www.arduino.cc/en/Guide/CLIDrivers)
-- [Arduino Serial communication](https://www.arduino.cc/en/Reference/Serial)
-- [Arduino command line arguments tutorial video](https://www.youtube.com/watch?v=u9evJiB-3Mg)
+# Se även
+
+Här är några användbara länkar för att lära dig mer om att läsa kommandoradsargument i Arduino:
+
+- [Officiell Arduino-dokumentation om Serial-klassen] (https://www.arduino.cc/en/Reference/Serial)
+- [En guide till att använda kommandoradsargument i Arduino] (https://roboticsbackend.com/arduino-command-line-arguments/)
+- [En video som visar hur man läser in kommandoradsargument i Arduino] (https://www.youtube.com/watch?v=1t0cAcwqz1I)

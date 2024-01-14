@@ -1,65 +1,43 @@
 ---
 title:    "C++: Å skrive tester"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å skrive tester for koden din kan virke som en ekstra byrde i utviklingsprosessen, men det er en utrolig viktig og nyttig praksis. Ved å skrive tester, kan du sikre at koden din fungerer som den skal og fange eventuelle feil tidlig i utviklingsprosessen. Dette kan bidra til å spare tid og ressurser på lengre sikt.
+Når man skriver C++ programmer er det viktig å sikre at koden fungerer som den skal. En måte å oppnå dette på er å skrive tester for å sjekke om koden gir ønsket resultat. Tester kan også hjelpe til å fange feil og gjøre det enklere å identifisere og fikse dem.
 
 ## Hvordan
 
-For å skrive tester i C++, kan du bruke et testrammeverk som for eksempel Google Test eller CppUnit. La oss se på et eksempel på hvordan du kan skrive en enkel test med Google Test:
+For å skrive tester i C++, kan man bruke et test-rammeverk som for eksempel Boost.Test eller Google Test. Disse rammeverkene gjør det enkelt å skrive og kjøre tester.
+
+La oss se på et eksempel på hvordan man kan skrive en test med Boost.Test:
 
 ```C++
-#include <gtest/gtest.h>
+#include <boost/test/unit_test.hpp>
 
-TEST(AdditionTest, PositiveNumbers) {
-  // Arrange
-  int a = 5, b = 10;
-
-  // Act
-  int result = a + b;
-
-  // Assert
-  EXPECT_EQ(result, 15);
-}
-
-int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+BOOST_AUTO_TEST_CASE(test_addition) {
+    int result = 2 + 3;
+    BOOST_CHECK_EQUAL(result, 5);
 }
 ```
 
-I dette eksempelet har vi definert en test for addisjon av positive tall. Vi starter med å inkludere Google Test-biblioteket, og deretter definerer vi testen vår ved hjelp av `TEST()`-makroen. Inne i testen har vi tre steg: `Arrange`, `Act` og `Assert`. Først setter vi opp starttilstanden for testen, deretter utfører vi den faktiske koden vi vil teste, og til slutt sjekker vi om resultatet er som forventet ved hjelp av `EXPECT_EQ()`-makroen. Til slutt initialiserer vi Google Test og kjører alle testene ved hjelp av `RUN_ALL_TESTS()`.
+Her skriver vi en test som sjekker om 2+3 er lik 5. Hvis koden vår fungerer som den skal, vil denne testen passere. Hvis det skulle oppstå en feil, vil testen feile og gi beskjed om hva som gikk galt. Dette gjør det enklere å finne og fikse feil i koden.
 
-Når vi kjører dette eksempelet, vil vi få følgende output:
-
-```
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from AdditionTest
-[ RUN      ] AdditionTest.PositiveNumbers
-[       OK ] AdditionTest.PositiveNumbers (0 ms)
-[----------] 1 test from AdditionTest (0 ms total)
-
-[----------] Global test environment tear-down.
-[==========] 1 test from 1 test suite ran. (4 ms total)
-```
-
-Som du kan se, blir testen vår kjørt og består uten problemer.
+Det er også mulig å sette opp flere tester og kjøre dem samtidig for å sikre at alle deler av koden fungerer som de skal.
 
 ## Dypdykk
 
-Det er mange forskjellige tilnærminger for å skrive tester i C++, og det finnes også flere forskjellige testrammeverk å velge mellom. Det er viktig å ta deg tid til å undersøke og velge den tilnærmingen og rammeverket som passer best for deg og ditt prosjekt. Det er også viktig å ha en god balanse mellom å skrive nok tester for å sikre kvaliteten på koden, men samtidig ikke bli overveldet av for mye testing.
+Når man skriver tester er det viktig å huske å teste ulike scenarioer og grensetilfeller. Det kan være fristende å kun teste de vanlige situasjonene, men det er like viktig å teste for uventede verdier og input.
 
-En annen viktig ting å huske på er at det å skrive gode tester også handler om å skrive testbare og modulære koder. Dette vil gjøre det enklere å sette opp testing og fange eventuelle feil. Det kan også være lurt å integrere testing som en del av din kontinuerlige integrasjonsprosess, slik at du alltid har en pålitelig database med tester.
+Det kan også være lurt å skrive tester før man implementerer koden, for å sikre at man får de ønskede resultatene og unngå å måtte gjøre store endringer senere.
 
-## Se Også
+Å skrive tester kan også bidra til å lage en mer strukturert og modulær kode, da man må tenke på hvordan man skal teste hver del av koden. Dette gjør det lettere å vedlikeholde og forstå koden i fremtiden.
 
+## Se også
+
+- [Boost.Test](https://www.boost.org/doc/libs/1_77_0/libs/test/doc/html/index.html)
 - [Google Test](https://github.com/google/googletest)
-- [CppUnit](https://sourceforge.net/projects/cppunit/)
-- [En guide til å skrive gode tester i C++](https://devblogs.microsoft.com/cppblog/unit-testing-in-cpp/)
-- [Kontinuerlig integrasjon i C++-prosjekter](https://www.thoughtworks.com/continuous-integration-cpp)

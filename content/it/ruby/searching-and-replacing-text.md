@@ -1,41 +1,43 @@
 ---
-title:    "Ruby: Ricerca e sostituzione di testo"
+title:    "Ruby: Cercare e sostituire il testo"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-La ricerca e la sostituzione di testo sono fondamentali per gestire e manipolare i dati in un programma Ruby. Ciò può aiutare a risparmiare tempo ed evitare errori manuali durante l'editing del codice. Imparare come utilizzare questa funzionalità ti consentirà di diventare un programmatore Ruby più efficiente e produttivo.
+La ricerca e la sostituzione del testo sono due operazioni comuni che possono essere utilizzate per fare modifiche rapide e precise a un file di testo. Nella programmazione, questo può essere particolarmente utile quando si lavora con grandi quantità di codice o quando si desidera apportare modifiche uniformi a righe di testo simili.
 
 ## Come Fare
-
-Per eseguire una ricerca e sostituzione di testo in Ruby, puoi utilizzare il metodo `.gsub()`. Questo metodo accetta due argomenti: il primo è la stringa di ricerca e il secondo è la stringa di sostituzione. Ecco un esempio:
-
-```Ruby
-stringa = "Ciao a tutti!"
-stringa.gsub("Ciao", "Salve")
-```
-
-In questo esempio, il metodo `.gsub()` sostituirà ogni occorrenza della stringa "Ciao" con la stringa "Salve", producendo il seguente output: "Salve a tutti!".
-
-Puoi anche utilizzare espressioni regolari per eseguire ricerche e sostituzioni più complesse. Ad esempio, se vuoi sostituire tutti i numeri in una stringa con il carattere "*":
+Per eseguire una ricerca e sostituzione di testo in Ruby, è possibile utilizzare il metodo `gsub` sulle stringhe. Questo metodo accetta due argomenti: il testo da cercare e il testo da sostituire. Ad esempio, se si desidera sostituire tutte le occorrenze della parola "cane" con la parola "gatto" in una stringa, è possibile utilizzare il seguente codice:
 
 ```Ruby
-stringa = "123 ciao 456"
-stringa.gsub(/\d+/, "*")
-```
+stringa = "Il mio cane è il mio migliore amico."
+stringa.gsub!("cane", "gatto")
 
-Questo produrrà un output del genere: "* ciao *".
+puts stringa
+```
+Output: "Il mio gatto è il mio migliore amico."
+
+Facciamo un altro esempio utilizzando un blocco nei metodi `gsub`. Utilizzando `%r{}` per includere espressioni regolari all'interno della nostra ricerca, possiamo sostituire l'anno in una stringa con una stringa vuota:
+
+```Ruby
+stringa = "Amo il codice! È il 2019."
+stringa.gsub!(%r{ \d{4} }, "")
+
+puts stringa
+```
+Output: "Amo il codice! È il ."
 
 ## Approfondimento
+Oltre al semplice utilizzo del metodo `gsub`, Ruby offre anche altre utili funzioni per la ricerca e la sostituzione del testo, come `scan` e `match`. Inoltre, è possibile utilizzare espressioni regolari per una maggiore flessibilità nei criteri di ricerca e sostituzione del testo.
 
-Il metodo `.gsub()` è solo una delle molte funzionalità di ricerca e sostituzione disponibili in Ruby. Puoi anche utilizzare il metodo `.sub()` per sostituire solo la prima occorrenza della stringa di ricerca, o il metodo `.gsub!()` per modificare direttamente la stringa originale. Inoltre, puoi utilizzare le opzioni dei metodi di sostituzione per specificare l'uso di letterali al posto di spazi vuoti o modificare la modalità di confronto delle stringhe.
+Ad esempio, se si desidera cercare una parola che inizia con una lettera maiuscola in una stringa, è possibile utilizzare l'espressione regolare `/\b[A-Z][a-zA-Z]*\b/`. Questo corrisponderà a qualsiasi parola che inizia con una lettera maiuscola. 
 
-Inoltre, puoi utilizzare espressioni regolari avanzate per eseguire ricerche e sostituzioni più sofisticate, come la ricerca di parole specifiche o la sostituzione basata su uno schema determinato. Ci sono anche molti pacchetti e gemme disponibili per semplificare e potenziare le tue capacità di ricerca e sostituzione.
+Per maggiori informazioni su espressioni regolari e sulle funzioni Ruby per la ricerca e la sostituzione del testo, è possibile consultare la documentazione ufficiale di Ruby o seguire i link nella sezione "Vedi Anche" di questo articolo.
 
 ## Vedi Anche
-
-- [Documentazione ufficiale di Ruby](https://www.ruby-lang.org/it/documentation/)
-- [Un'approfondita guida alla ricerca e sostituzione in Ruby](https://www.rubyguides.com/2019/05/ruby-regex/)
+- [Documentazione Ruby - Metodo gsub](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
+- [Documentazione Ruby - Modulo String](https://ruby-doc.org/core-2.6.3/String.html)
+- [Tutorial espressioni regolari Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)

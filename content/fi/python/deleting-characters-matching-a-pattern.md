@@ -1,41 +1,39 @@
 ---
-title:    "Python: Painikemustien poistaminen"
+title:    "Python: Merkkien poistaminen kaavan mukaisesti"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia erilaisia ​​tilanteita, joissa ohjelmoijat voivat poistaa merkkejä vastaavan kuvion, kuten tietojen käsittelyssä tai tekstinmuokkauksessa. Tämä toimenpide auttaa puhdistamaan tarpeettomia tai virheellisiä merkkejä ja varmistamaan, että tiedot pysyvät yhtenäisinä ja järjestettyinä.
+Usein ohjelmoinnissa on tarpeen poistaa merkkejä, jotka vastaavat tiettyä kuviota. Tämä voi olla hyödyllistä esimerkiksi tekstikäsittelyssä tai datan käsittelyssä.
 
-## Kuinka tehdä se
+## Kuinka tehdä
 
-Ohjelmointiympäristöstä riippuen on käytettävissä useita työkaluja merkkien poistamisen helpottamiseksi. Esimerkiksi Pythonissa voimme käyttää `.replace()` -funktiota poistaaksesi halutut merkit tietyistä merkkijonoista.
-
-```Python 
-string = "Tervetuloa Python-opas! #o on poistettu"
-new_string = string.replace("#o", "")
-print(new_string)
-```
-
-Tämä tulostaa "Tervetulaa Pytn-pas!". Voimme myös käyttää säännöllisiä lausekkeita `re` -moduulin avulla saadaksemme tarkempaa kontrollia merkkien poistamiseen. 
+Poistaaksesi merkkejä, jotka vastaavat tiettyä kuviota, voit käyttää Pythonin `re`-moduulia. Se mahdollistaa säännöllisten lausekkeiden käytön merkkijonojen käsittelyssä.
 
 ```Python
 import re
-string = "Tervetuloa Python-opas! #o on poistettu"
-new_string = re.sub("#.", "", string)
-print(new_string)
+
+teksti = "Tämä on esimerkkiteksti, jonka haluat muokata."
+uusi_teksti = re.sub(r'e', '', teksti)
+
+print(uusi_teksti)
+
+# Output:
+# Tämä on smrkksityksii, jonka haluat muokata.
 ```
 
-Tämä tulostaa saman tuloksen kuin ensimmäinen esimerkki. Ensimmäinen esimerkki käyttää `.replace()` -funktiota poistaakseen vain "#o" -merkin, kun taas toinen esimerkki käyttää `re.sub()` -funktiota poistaakseen kaikki merkit, jotka vastaavat "#." -saraketta.
+Kuten näet, `re.sub()`-funktio poistaa kaikki merkit, jotka vastaavat ensimmäistä parametria, tässä tapauksessa kirjainta "e". Voit muokata tätä parametria vastaamaan haluamaasi kuviota.
 
-## Syvennys
+## Syvempi sukellus
 
-On tärkeää ymmärtää säännöllisiä lausekkeita ja niiden käyttöä poistamalla merkkejä vastaava kuvio. Säännöllisillä lausekkeilla voimme käyttää erilaisia ​​metakaraktereja ja määrityksiä poistamaan tiettyjä merkkejä, kuten numerot tai välimerkit. Voimme myös käyttää säännöllisiä lausekkeita validointiin ja muuhun tekstinkäsittelyyn.
+Mikäli haluat ymmärtää tarkemmin, miten säännölliset lausekkeet toimivat ja mitä muita mahdollisuuksia `re`-moduulilla on tarjota, voit tutustua sen [dokumentaatioon](https://docs.python.org/3/library/re.html). Sieltä löydät myös lisätietoa erilaisista parametreista ja vaihtoehdoista, joita voit käyttää `re.sub()`-funktiossa.
 
 ## Katso myös
 
-- [Pythonin Säännölliset Lausekkeet (Regular Expressions)](https://docs.python.org/3/library/re.html)
-- [Artikkeli "Merkkien poistaminen säännöllisten lausekkeiden avulla"](https://stackabuse.com/python-remove-characters-from-string/) 
-- [Pythonin merkkijonon `.replace()` -funktion dokumentaatio](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Dokumentaatio: re-moduuli](https://docs.python.org/3/library/re.html)
+- [Säännöllisten lausekkeiden opas](https://www.regular-expressions.info/)
+- [Python Tutoriaali: Merkkijonojen käsittely](https://www.python.org/dev/peps/pep-0272/)

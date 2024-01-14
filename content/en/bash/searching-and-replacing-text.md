@@ -1,56 +1,48 @@
 ---
 title:    "Bash recipe: Searching and replacing text"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever found yourself in a situation where you need to make a small but repetitive change in a large text file? Maybe you need to change a company name, or a product description, or even just fix a typo. In these situations, manually making the changes can be tedious and error-prone. This is where searching and replacing text using Bash programming can come in handy.
+Searching and replacing text is a common task in any programming language, including Bash. This simple yet powerful operation allows us to quickly and efficiently make changes to text files, making it an essential tool for any programmer.
 
 ## How To
-
-To search and replace text in Bash, we will be using the `sed` command. This command allows us to search for a specific pattern within a text file and replace it with another pattern. Let's see an example:
-
+To search and replace text in Bash, we use the `sed` command. This command stands for "stream editor" and is used to perform operations on text files. Here's an example of how to use `sed` to replace all occurrences of the word "hello" with "hi" in a file named `example.txt`:
+```Bash
+sed -i 's/hello/hi/g' example.txt
 ```
-Bash
+Let's break down this command:
+- The `-i` flag stands for "in-place", meaning the changes will be made directly in the file instead of printing the result to the terminal.
+- The `s` command indicates that we want to substitute something in the file.
+- The first "hello" is the text we want to search for.
+- The second "hi" is the text we want to replace with.
+- The `/g` at the end stands for "globally", which means it will replace all occurrences of "hello" in the file.
 
-$ sed 's/old_pattern/new_pattern/g' input_file.txt > output_file.txt
+If we have a file with the following content:
 ```
-
-In this command, the `s` tells `sed` that we want to perform a substitution, while the `/g` flag stands for global, meaning that all occurrences of the old pattern will be replaced. We also specify the input and output files, separated by the `>` symbol.
-
-Let's say we have the following text in our input file:
-
+Hello world
+Hello everyone
 ```
-This is a blog post about Bash programming. Bash is a popular scripting language used for automation and system administration.
+After running the `sed` command, the file will now look like this:
 ```
-
-And we want to replace all instances of "Bash" with "Python". Our sed command would look like this:
-
+Hi world
+Hi everyone
 ```
-Bash
-
-$ sed 's/Bash/Python/g' input_file.txt > output_file.txt
-```
-
-The output file would then contain the following text:
-
-```
-This is a blog post about Python programming. Python is a popular scripting language used for automation and system administration.
-```
+As you can see, all instances of "hello" were replaced with "hi". You can use this command to replace single words, phrases, or even regular expressions.
 
 ## Deep Dive
+There are many options you can use with the `sed` command to perform different types of search and replace operations. Here are a few that you may find useful:
+- To replace only the first occurrence of a string, use the `s` command without the `/g` flag.
+- To replace only on a specific line, add the line number before the `s` command.
+- You can use the `i` flag to ignore case sensitivity, meaning "hello" and "Hello" will be treated as the same word.
+- To replace text in multiple files, you can use wildcards. For example, `sed -i 's/hello/hi/g' *.txt` will replace all instances of "hello" with "hi" in all `.txt` files in the current directory.
 
-The `sed` command offers more control over the replacement process through additional flags. For example, we can use the `i` flag to ignore case, meaning that "Bash" and "bash" would both be replaced with "Python". We can also use the `w` flag to write the changes to the input file instead of creating a new output file. Furthermore, we can use regular expressions to specify more complex patterns for the search and replace process.
-
-Another powerful tool for searching and replacing text in Bash is the `grep` command. This command allows us to search for a specific pattern and print only the matching lines. We can also combine `grep` with `sed` to make changes only to those matching lines.
+For a more detailed explanation of the `sed` command and its options, you can refer to the official documentation or check out some online tutorials.
 
 ## See Also
-
-Here are some helpful resources for further learning and practice:
-
-- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Sed Command Examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [Grep Commands Cheat Sheet](https://www.educative.io/blog/grep-commands-cheat-sheet)
+- [Official `sed` documentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [A Beginner's Guide to `sed`](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+- [`sed` tutorial by Linuxize](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/)

@@ -1,80 +1,53 @@
 ---
 title:    "C: Capitaliser une chaîne de caractères"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Il peut y avoir plusieurs raisons pour lesquelles un programmeur souhaiterait capitaliser une chaîne de caractères. Cela peut être utile pour formater correctement une entrée utilisateur, rendre un texte plus lisible ou simplement pour des raisons esthétiques.
 
-## Comment faire
-Il existe plusieurs façons de capitaliser une chaîne de caractères en programmation C. Voici deux exemples:
+Dans la programmation C, il peut être utile de capitaliser une chaîne de caractères pour des raisons esthétiques ou de manipulation de données. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant des outils de programmation C.
 
-#### 1. Utilisation de la fonction toupper()
-La bibliothèque standard de C fournit une fonction appelée toupper() qui convertit un caractère en majuscule. Nous pouvons utiliser cette fonction dans une boucle pour capitaliser chaque caractère de notre chaîne.
+## Comment Faire
+
+La première étape pour capitaliser une chaîne de caractères en C est de créer une fonction. Voici un exemple de code pour une telle fonction :
 
 ```C
-#include <stdio.h>
-#include <ctype.h>
-
-int main() {
-    char str[] = "bonjour";
-
-    printf("Avant la capitalisation : %s\n", str);
-    
-    for (int i = 0; str[i] != '\0'; i++) {
-        str[i] = toupper(str[i]);
+void capitalize(char* str){
+  // boucle à travers chaque caractère de la chaîne
+  for(int i = 0; str[i] != '\0'; i++){
+    // si le caractère est une lettre minuscule
+    if(str[i] >= 'a' && str[i] <= 'z'){
+      // convertir en majuscule
+      str[i] = str[i] - 32;
     }
-    
-    printf("Après la capitalisation : %s\n", str);
-    
-    return 0;
+  }
+}
+
+int main(){
+  char myString[] = "bonjour";
+  // appel de la fonction pour capitaliser la chaîne
+  capitalize(myString);
+  // affichage du résultat
+  printf("%s", myString); // affiche "BONJOUR"
+  return 0;
 }
 ```
 
-Output:
-```
-Avant la capitalisation : bonjour
-Après la capitalisation : BONJOUR
-```
+Dans cet exemple, la fonction `capitalize` prend une chaîne de caractères en tant que paramètre et modifie la chaîne en convertissant toutes les lettres minuscules en majuscules. La boucle `for` parcourt chaque caractère de la chaîne et utilise une comparaison `if` pour vérifier si le caractère est une lettre minuscule, puis utilise une simple opération mathématique pour convertir le caractère en majuscule.
 
-#### 2. Utilisation de l'arithmétique de pointeur
-Une autre méthode couramment utilisée pour capitaliser une chaîne de caractères est d'utiliser l'arithmétique de pointeur et la différence entre les valeurs ASCII des caractères en majuscule et en minuscule.
+Il est important de noter que ce n'est qu'un exemple simplifié et qu'il existe de nombreuses façons de capitaliser une chaîne de caractères en C. Vous pouvez également utiliser des fonctions de la bibliothèque standard telles que `toupper()` ou même créer une fonction plus complexe pour gérer des cas spécifiques tels que la capitalisation des mots.
 
-```C
-#include <stdio.h>
+## Plongée en Profondeur
 
-int main() {
-    char str[] = "bonjour";
+Il y a plusieurs choses à prendre en compte lors de la capitalisation d'une chaîne de caractères en C. Tout d'abord, il est important de comprendre la différence entre les caractères majuscules et minuscules en utilisant le système de codage ASCII. Ensuite, vous pouvez également envisager de gérer des caractères spéciaux ou des caractères avec des accents lors de la capitalisation.
 
-    printf("Avant la capitalisation : %s\n", str);
+De plus, il peut être utile d'ajouter des fonctionnalités supplémentaires à votre fonction de capitalisation, telles que la possibilité de capitaliser uniquement la première lettre d'un mot ou de traiter les abréviations qui doivent toujours être en majuscules.
 
-    char *ptr = str;
-    while(*ptr != '\0') {
-        if (*ptr >= 'a' && *ptr <= 'z') {
-            *ptr = *ptr - 32;
-        }
-        ptr++;
-    }
+## Voir Aussi
 
-    printf("Après la capitalisation : %s\n", str);
-
-    return 0;
-}
-```
-
-Output:
-```
-Avant la capitalisation : bonjour
-Après la capitalisation : BONJOUR
-```
-
-## Plongeons plus profondément
-Il est important de noter que dans ces exemples, nous avons supposé que la chaîne de caractères ne contenait que des lettres minuscules. Si la chaîne contient déjà des majuscules, la méthode utilisant toupper() ne fera que convertir les lettres minuscules en majuscules sans distinction. Cela peut être gênant dans certains cas.
-
-En outre, ces méthodes ne fonctionnent que pour les caractères de l'alphabet anglais. Si vous travaillez avec des caractères d'autres langues, vous devrez utiliser d'autres méthodes pour capitaliser correctement la chaîne.
-
-## Voir aussi
-- [How to capitalize the first letter of a string in C](https://www.programiz.com/c-programming/examples/capitalize-first-letter-string)
-- [String functions in C](https://www.tutorialspoint.com/cprogramming/c_string_functions.htm)
+- [Documentation officielle sur les chaînes de caractères en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Manipulation de chaînes de caractères en C](https://www.programiz.com/c-programming/c-strings)
+- [Table ASCII complète](https://www.ionos.fr/digitalguide/sites-internet/developpement-web/code-ascii/)

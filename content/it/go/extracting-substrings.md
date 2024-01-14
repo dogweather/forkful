@@ -1,45 +1,55 @@
 ---
-title:    "Go: Estrazione di sottostringhe"
+title:    "Go: Estrazione di sottostringhe."
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-L'estrazione di sottostringhe è un'operazione molto utile nella programmazione in Go. Può essere utilizzata per ottenere parti specifiche di una stringa o svolgere operazioni di manipolazione sui dati.
+Se sei un programmatore Go, è probabile che tu abbia familiarità con il concetto di stringhe. Le stringhe sono una parte importante di molti programmi, e talvolta è necessario estrarre una sottostringa da una stringa più grande. In questo articolo parleremo di come e perché estrarre substrings in Go.
 
 ## Come fare
-
-Per estrarre una sottostringa, è possibile utilizzare il metodo `Substring` della libreria `strings`. Ad esempio, se si vuole estrarre la terza e la quarta lettera di una stringa, si può utilizzare il seguente codice:
-
+Per estrarre una sottostringa in Go, dobbiamo utilizzare la funzione "substring" della libreria "strings". Possiamo specificare l'indice di inizio e di fine della sottostringa che vogliamo estrarre, come mostrato nell'esempio qui sotto:
 ```Go
-s := "Ciao!"
-fmt.Println(s[2:4]) // output: ao
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Questo è un esempio di stringa."
+	substr := strings.Substring(str, 7, 19)
+
+	fmt.Println(substr)
+}
 ```
+L'output di questo codice sarà "è un esempio".
 
-Il primo numero indica l'indice del carattere da cui iniziare l'estrazione, mentre il secondo indica l'indice del carattere successivo a quello finale. È anche possibile specificare solo il primo valore, in quel caso verranno estratti tutti i caratteri a partire dall'indice specificato fino alla fine della stringa.
+## Deep Dive
+La funzione "substring" di Go utilizza l'indice di inizio e di fine per determinare quale parte della stringa originale verrà estratta. L'indice di inizio è l'indice del primo carattere della sottostringa che vogliamo, mentre l'indice di fine è l'indice del primo carattere dopo la fine della sottostringa. Inoltre, se l'indice di fine è superiore alla lunghezza della stringa, la sottostringa verrà estratta fino alla fine della stringa originale.
 
+Un'altra opzione per estrarre substrings in Go è utilizzare la funzione "split" della libreria "strings". Questa funzione divide una stringa in base a un carattere o una sequenza di caratteri specificata e restituisce una slice contenente le sottostringhe ottenute. Ad esempio, se volessimo dividere una stringa per ogni spazio tra le parole, potremmo utilizzare il seguente codice:
 ```Go
-s := "Buongiorno"
-fmt.Println(s[4:]) // output: giorno
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Questo è un esempio di stringa."
+	substr := strings.Split(str, " ")
+
+	fmt.Println(substr)
+}
 ```
-
-## Approfondimento
-
-L'estrazione di sottostringhe può anche essere utilizzata per ottenere parti specifiche di una stringa in base a determinati criteri, come ad esempio tramite la funzione `Index` della libreria `strings`. Questa funzione restituisce l'indice del primo carattere corrispondente alla sottostringa specificata.
-
-Ad esempio, se vogliamo ottenere il cognome da una stringa contenente anche il nome, possiamo utilizzare il seguente codice:
-
-```Go
-s := "Mario Rossi"
-fmt.Println(s[strings.Index(s, " ") + 1:]) // output: Rossi
-```
-
-In questo caso, viene utilizzato l'indice della prima occorrenza di uno spazio all'interno della stringa e viene estratto tutto ciò che viene dopo.
+L'output di questo codice sarà "[Questo è un esempio di stringa.]".
 
 ## Vedi anche
-
-- Documentazione ufficiale sulla libreria `strings` in Go: https://golang.org/pkg/strings/
-- L'estrazione di sottostringhe in altri linguaggi di programmazione: https://www.geeksforgeeks.org/substring-in-golang
-- Esempi pratici di utilizzo delle sottostringhe in Go: https://golangdocs.com/string-functions-in-golang#9_Extract_a_Substring
+- [La libreria strings di Go](https://golang.org/pkg/strings/)
+- [Documentazione sulla funzione substring di Go](https://golang.org/pkg/strings/#Substring)
+- [Documentazione sulla funzione split di Go](https://golang.org/pkg/strings/#Split)

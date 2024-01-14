@@ -1,66 +1,58 @@
 ---
 title:    "C recipe: Deleting characters matching a pattern"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to delete certain characters from a string in your C program? Maybe you want to remove all punctuation or spaces to clean up user input. Whatever the reason, deleting characters that match a specific pattern can be a useful tool in your C programming arsenal.
+Deleting characters matching a specific pattern is a common task in many C programming scenarios. Whether it's to manipulate user input or remove unnecessary elements from a string, understanding how to delete these characters can greatly improve the efficiency of your code.
 
 ## How To
 
-To delete characters matching a pattern, we can use the `strchr()` function from the standard C library. This function searches for the first occurrence of a given character in a string and returns a pointer to that position.
+To delete characters matching a pattern in C, we can use the `strchr()` function from the standard library. This function takes in two arguments - a string and a character to search for - and returns a pointer to the first occurrence of that character in the string.
 
-We can use this function in a loop to iterate through the string and delete all characters that match our desired pattern. Here's an example of how this might look in code:
+Using `strchr()`, we can loop through the string and delete any characters that match our desired pattern. Let's take a look at an example:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main()
+{
+    char str[] = "Hello, World!";
+    char pattern = 'l';
 
-  char str[] = "hello world!";
-  char pattern = 'l';
-  char *ptr;
+    while (strchr(str, pattern) != NULL) // Continue looping as long as there is a match
+    {
+        char *ptr = strchr(str, pattern); // Get the pointer to the first occurrence of pattern
+        strcpy(ptr, ptr + 1); // Delete the character by copying the rest of the string over it
+    }
 
-  // loop through string until no more matches are found
-  while ((ptr = strchr(str, pattern)) != NULL) {
-    // replace matched character with null terminator
-    *ptr = '\0';
-    // move to next character in string
-    ptr++;
-  }
-
-  printf("New string: %s\n", str);
-
-  return 0;
+    printf("%s", str); // Output: Heo, Word!
+    return 0;
 }
 ```
 
-This code first declares a string and a character variable for our pattern. In the loop, we use `strchr()` to find the first occurrence of the pattern in the string. We then replace that character with a null terminator and move the pointer to the next character in the string. This process continues until no more matches are found.
+In this example, we are deleting all the occurrences of the letter 'l' in the string "Hello, World!". We do this by continuously looping until `strchr()` no longer returns a pointer to 'l', and then using `strcpy()` to delete the character.
 
-The output of this code would be:
-
-```
-New string: heo word!
-```
-
-This is just one example of how we can use the `strchr()` function to delete characters matching a pattern. Depending on the specific needs of your program, there may be other ways to achieve this task. It's always a good idea to research and experiment with different solutions to find the one that works best for your situation.
+You can also modify this code to delete entire words or phrases by using `strstr()` instead of `strchr()`.
 
 ## Deep Dive
 
-The `strchr()` function uses a linear search algorithm to find the desired character in the string. This means that it starts from the beginning of the string and checks each character one by one until a match is found. This can be time-consuming for longer strings and could affect the performance of your program.
+While understanding how to use functions like `strchr()` and `strcpy()` is crucial for deleting characters matching a pattern, it's also important to understand the underlying concept of pointers in C.
 
-If you need to delete characters matching a pattern in a large string, another approach could be to use a more efficient search algorithm, such as binary search. However, keep in mind that this may require sorting the string first, which could also impact performance.
+When we use `strchr()` to find the first occurrence of a character, it returns a pointer to that character in memory. By using `strcpy()` to copy the rest of the string over that character, we are essentially moving all the characters in the string one step to the left, effectively "deleting" the character.
 
-It's also important to consider the limitations of the `strchr()` function. For example, it can only search for a single character, so if you need to delete a string of characters that match a specific pattern, you may need to use another function like `strstr()`.
+It's also worth noting that `strchr()` and `strstr()` are case-sensitive, so make sure to take that into account when implementing these functions in your code.
 
 ## See Also
 
-- [String manipulation in C](https://www.geeksforgeeks.org/string-manipulations-in-c-with-examples/)
-- [C string manipulation functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Linear vs. binary search](https://www.geeksforgeeks.org/linear-search-vs-binary-search/)
+- [C documentation on strchr()](https://www.cplusplus.com/reference/cstring/strchr/)
+- [C documentation on strcpy()](https://www.cplusplus.com/reference/cstring/strcpy/)
+- [GeeksforGeeks article on Deleting character(s) from a string in C](https://www.geeksforgeeks.org/delete-characters-string-matching-given-string/)
+- [Programiz tutorial on Strings in C](https://www.programiz.com/c-programming/c-strings)
 
-Now that you know how to delete characters matching a pattern in your C program, have fun experimenting and finding ways to make your code more efficient and effective. Happy coding!
+By understanding the fundamentals of pointers and these useful string manipulation functions, you can easily delete characters matching a pattern in your C programs and make them more efficient. Happy coding!

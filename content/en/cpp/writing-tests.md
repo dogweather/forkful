@@ -1,73 +1,78 @@
 ---
 title:    "C++ recipe: Writing tests"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Writing Tests is Important in C++
 
-Writing tests may not seem like the most exciting part of coding, but it is an essential aspect of ensuring the quality and functionality of your code. By writing tests, you can catch and fix bugs early on, save time and resources in the long run, and have more confidence in your code.
+Writing code is just one aspect of creating a robust and reliable software. However, ensuring that the code functions as expected under different scenarios is equally important. And that's where writing tests comes into play.
 
-## How To
+Writing tests allows developers to catch bugs and errors early on in the development process, reducing the chances of releasing a flawed product. It also helps in maintaining and enhancing the codebase, making it easier to identify and fix issues as the codebase grows.
 
-To write tests in C++, you will need to use a testing framework such as Google Test or Catch2. These frameworks provide a set of macros and functions that allow you to write and run tests easily. Let's take a look at a simple example using Google Test:
+## How To Write Tests in C++
+
+In C++, the most common testing framework used is Google Test. It provides a simple and intuitive way to write tests.
+
+To get started with writing tests in C++, you first need to include the Google Test framework in your project. Once that is done, you can write your test cases using `TEST()` macro. Here's an example of a simple test case:
 
 ```C++
 #include <gtest/gtest.h>
 
-// The function we want to test
-int square(int num) {
-    return num * num;
-}
-
-// A test case that checks if the square function returns the correct result for a given input
-TEST(SquareTest, PositiveNumber) {
-    // Arrange
-    int num = 5;
-    int expected = 25;
-
-    // Act
-    int result = square(num);
-
-    // Assert
-    EXPECT_EQ(expected, result);
-}
-
-// Run all the tests defined
-int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST(SampleTest, Addition) {
+    int result = 1 + 2;
+    ASSERT_EQ(result, 3);
 }
 ```
 
-In this example, we have defined a test case using the `TEST` macro, which takes two parameters: the name of the test case (in this case, "SquareTest") and the name of the test (in this case, "PositiveNumber"). Within the test case, we have arranged our input, calling the function we want to test, and asserting that the result is equal to our expected output using the `EXPECT_EQ` macro. Finally, in our `main` function, we initialize the testing framework and run all the tests defined.
+In the above example, we have defined a test case named "SampleTest" which checks the addition of two numbers.
 
-When running this code, we should see the following output:
+To run the tests, you need to compile and execute the test file. Google Test will then provide you with the output of the test cases, indicating whether they passed or failed.
 
+## Deep Dive into Writing Tests
+
+Tests can also be divided into test fixtures and test suites. A test fixture is a piece of code that sets up the environment for multiple test cases, and a test suite is a collection of test cases.
+
+Google Test provides support for test fixtures and suites using `TEST_F()` and `TEST_SUITE()` macros, respectively. Here's an example of how they can be used:
+
+```C++
+#include <gtest/gtest.h>
+
+// Defining a test fixture
+class SampleTestFixture : public testing::Test {
+protected:
+    int x = 5;
+    int y = 10;
+};
+
+// Defining a test suite with multiple test cases
+TEST_F(SampleTestFixture, Addition) {
+    int result = x + y;
+    ASSERT_EQ(result, 15);
+}
+
+TEST_F(SampleTestFixture, Subtraction) {
+    int result = y - x;
+    ASSERT_EQ(result, 5);
+}
+
+// Defining multiple test suites
+TEST_SUITE(AnotherTestSuite);
+
+TEST(AnotherTestSuite, Multiplication) {
+    int result = x * y;
+    ASSERT_EQ(result, 50);
+}
 ```
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from SquareTest
-[ RUN      ] SquareTest.PositiveNumber
-[       OK ] SquareTest.PositiveNumber (0 ms total)
-[----------] 1 test from SquareTest (0 ms total)
 
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4 ms total)
-[  PASSED  ] 1 test.
-```
-
-## Deep Dive
-
-Now, let's dive a bit deeper into the benefits of writing tests. As mentioned earlier, tests help catch and fix bugs early on, which can save a lot of time and resources. Imagine if you had written a complex function without any tests and later discovered that it had a bug. It could potentially take hours or even days to figure out and fix the issue, while a simple test could have caught it in a matter of minutes.
-
-Moreover, writing tests also allows for easier code refactoring. When making changes to your code, you can run your tests to ensure that the functionality hasn't been affected. If any tests fail, you know that something in your code needs to be fixed. This helps prevent unexpected bugs from popping up in the future.
-
-Additionally, writing tests forces you to think about the functionality of your code and the potential edge cases. By covering these cases in your tests, you are ultimately improving the overall quality of your code.
+Apart from these, there are various other features that Google Test offers, such as parameterized tests, death tests, and type-parameterized tests. It's worth exploring these features for more sophisticated testing.
 
 ## See Also
 
-- [Google Test Documentation](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
-- [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+- Google Test [documentation](https://github.com/google/googletest)
+- C++Unit [framework](https://github.com/cppunit/cppunit)
+- Test Driven Development [guide](https://www.agilealliance.org/glossary/test-driven-development/)
+
+By writing tests, you not only improve the quality of your code but also gain confidence in its functionality. With testing, you can catch issues early on and ensure that your code performs as expected. So, next time you write code in C++, don't forget to write tests for it!

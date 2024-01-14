@@ -1,65 +1,37 @@
 ---
 title:    "Javascript: Leyendo un archivo de texto"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porqué
+## Por qué
 
-Leer y entender archivos de texto es una habilidad esencial para cualquier programador de JavaScript. Esto permite acceder y manipular grandes cantidades de información en formato de texto, lo que a su vez puede ser utilizado para una amplia variedad de proyectos y aplicaciones. En este artículo, exploraremos cómo leer un archivo de texto utilizando JavaScript y por qué es una habilidad valiosa para cualquier desarrollador.
+Para muchos programadores, leer un archivo de texto puede parecer una tarea sencilla y aburrida, pero en realidad es una habilidad valiosa que puede ahorrar tiempo y mejorar la eficiencia en el desarrollo de software. Leer un archivo de texto permite acceder a información almacenada externamente, como datos de configuración o texto para un programa, lo que lo convierte en una herramienta esencial para cualquier desarrollador.
 
-## Como Hacerlo
+## Cómo hacerlo
 
-Para leer un archivo de texto en JavaScript, se requieren algunos pasos sencillos. Primero, necesitarás tener un documento HTML donde puedas escribir tu código JavaScript. Luego, puedes utilizar la función `XMLHttpRequest` para cargar el archivo de texto. Una vez que se ha cargado el archivo, se puede acceder a su contenido utilizando la propiedad `responseText` y guardarlo en una variable. A continuación, se puede utilizar el método `split` para separar el contenido del archivo en un array, dividido por líneas. Finalmente, puedes recorrer el array e imprimir cada línea en la consola, o realizar cualquier otra operación que desees con el contenido del archivo.
-
-Un ejemplo de código sería el siguiente:
+Para leer un archivo de texto en Javascript, se utiliza la función `readFileSync` del módulo `fs`. Esta función toma dos argumentos: el nombre del archivo que se va a leer y el formato en el que se desea leerlo. Por ejemplo:
 
 ```Javascript
-let xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let fileContent = this.responseText;
-        let lines = fileContent.split('\n');
-        for (let i = 0; i < lines.length; i++) {
-            console.log(lines[i]);
-        }
-    }
-};
-xhttp.open("GET", "archivo.txt", true);
-xhttp.send();
+const fs = require('fs');
+
+// Leer archivo de texto en formato UTF-8
+const texto = fs.readFileSync('miarchivo.txt', 'utf-8');
+console.log(texto);
 ```
 
-Si se tiene un archivo de texto con el siguiente contenido:
-
-```
-¡Hola Mundo!
-Soy un archivo de texto
-en formato de líneas
-```
-
-La salida en la consola sería:
-
-```
-¡Hola Mundo!
-Soy un archivo de texto
-en formato de líneas
-```
-
+En este ejemplo, utilizamos el módulo `fs` y su método `readFileSync` para leer el archivo `miarchivo.txt` en formato UTF-8. Luego, imprimimos el contenido del archivo en la consola. Es importante tener en cuenta que si el archivo no se encuentra en la misma carpeta que el archivo de Javascript, se debe proporcionar la ruta completa del archivo.
 
 ## Profundizando
 
-Existen varias formas de leer un archivo de texto en JavaScript, además del método mostrado anteriormente. Una alternativa es utilizar la función `fetch`, que es una forma moderna de realizar solicitudes de recursos HTTP. Esta función utiliza promesas para manejar la respuesta del servidor y simplifica el proceso de lectura de un archivo de texto.
+Además de la función `readFileSync`, también existe la función `readFile` del mismo módulo. La diferencia entre ambas es que `readFile` es asíncrona, lo que significa que no bloqueará la ejecución del programa mientras se lee el archivo. Esto puede ser útil para archivos más grandes, pero requiere el uso de callbacks o promesas para manejar el resultado de la operación.
 
-Otra opción es utilizar librerías o frameworks externos como `Node.js` o `jQuery` que tienen funciones específicas para trabajar con archivos de texto.
+Además, es importante recordar que al leer un archivo de texto, se obtiene una cadena de texto que luego se puede manipular y utilizar en el programa. Es posible, por ejemplo, utilizar la función `split` para dividir la cadena en diferentes partes si el archivo contiene información estructurada.
 
-También es importante mencionar que no solo se puede leer el contenido de un archivo de texto, sino que también se pueden realizar otras operaciones como escribir en el archivo o buscar información específica en él.
+## Ver también
 
-En resumen, leer y comprender archivos de texto es una habilidad importante para cualquier programador de JavaScript. Con los pasos mencionados anteriormente y con práctica, podrás dominar esta habilidad y utilizarla en tus proyectos de forma efectiva.
-
-## Ver También
-
-- [XMLHttpRequest en w3schools](https://www.w3schools.com/xml/xml_http.asp)
-- [Función fetch en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
-- [Documentación de Node.js](https://nodejs.org/es/docs/)
-- [Documentación de jQuery](https://api.jquery.com/)
+- Documentación de Node.js sobre el módulo `fs`: https://nodejs.org/api/fs.html
+- Ejemplos de uso de `readFileSync`: https://www.geeksforgeeks.org/node-js-fs-readfilesync-method/
+- Uso de `readFile` y callbacks: https://www.digitalocean.com/community/tutorials/nodejs-reading-files

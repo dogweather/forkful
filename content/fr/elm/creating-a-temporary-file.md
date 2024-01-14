@@ -1,30 +1,47 @@
 ---
-title:    "Elm: Créer un fichier temporaire"
+title:    "Elm: Création d'un fichier temporaire"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La création d'un fichier temporaire peut être utile pour stocker des données temporaires ou pour effectuer des opérations de manipulation de fichiers à court terme. Cela peut également être utilisé pour créer une sauvegarde de fichiers avant une mise à jour ou une modification importante.
+Dans cet article, nous allons explorer comment créer des fichiers temporaires en Elm. Les fichiers temporaires peuvent être utiles pour stocker des données temporaires ou pour effectuer des tâches de manipulation de fichiers. Nous allons voir pourquoi cela peut être utile, comment le faire et plonger plus en profondeur dans cette technique.
 
 ## Comment faire
 
-Pour créer un fichier temporaire en Elm, nous pouvons utiliser la fonction `File.create`. Cette fonction prend en paramètre le nom du fichier et renvoie un `Cmd Msg` qui peut être exécuté pour créer le fichier. Par exemple :
+Pour créer un fichier temporaire, nous allons utiliser la fonction `File.Temp.file` du package `elm/file`. Voici un exemple de code :
 
 ```Elm
-File.create "mon_fichier.txt"
-    |> Task.perform createFile
+import File.Temp
+
+main =
+    File.Temp.file "test.txt" "Hello, world!"
+        |> Task.attempt handleResult
+
+handleResult result =
+    case result of
+        Ok path ->
+            Debug.log "The path to the temporary file is:" path
+            -- Output: The path to the temporary file is: /var/folders/23/stcmfnbp4dx_ey9r1m4hpkrm0000gn/T/elm-temp-9t9gN4k/test.txt
+
+        Err error ->
+            Debug.log "Error creating temporary file:" error
+
 ```
 
-Ici, nous créons un fichier appelé "mon_fichier.txt" et exécutons ensuite la fonction `createFile` pour traiter le résultat. Vous pouvez également spécifier d'autres options telles que le chemin du fichier, les autorisations et les données à écrire dans le fichier.
+Dans cet exemple, nous créons un fichier temporaire nommé "test.txt" avec le contenu "Hello, world!". Nous utilisons `Task.attempt` pour gérer le résultat de la création du fichier, qui peut être soit un `Ok` avec le chemin du fichier temporaire, soit une `Err` avec une erreur.
 
 ## Plongée en profondeur
 
-En utilisant la fonction `File.create`, nous pouvons également spécifier le format de données à écrire dans le fichier temporaire. Par exemple, si nous avons besoin d'écrire un fichier CSV, nous pouvons utiliser la fonction `File.createWith` qui prend en paramètre le nom du fichier ainsi qu'une fonction de formatage. Cette fonction de formatage peut être utilisée pour convertir nos données en une chaîne de caractères au format CSV avant de l'écrire dans le fichier.
+Il est important de noter que la fonction `File.Temp.file` crée un fichier temporaire qui sera automatiquement supprimé lorsque l'application Elm se termine. Cela signifie que le fichier temporaire ne persistera pas entre les exécutions de l'application. De plus, en utilisant `Task.attempt`, nous pouvons gérer les erreurs lors de la création du fichier temporaire, par exemple si l'utilisateur n'a pas les permissions nécessaires pour créer des fichiers.
+
+Pour plus d'informations sur les fichiers temporaires en Elm, vous pouvez consulter la documentation du package `elm/file` <https://package.elm-lang.org/packages/elm/file/latest/>. Vous pouvez également explorer d'autres fonctions utiles telles que `File.Temp.directory`, qui crée un répertoire temporaire, ou `File.Temp.with`, qui nous permet de faire une opération avec un fichier temporaire et de le supprimer automatiquement après.
 
 ## Voir aussi
 
-- [Documentation officielle Elm pour la création de fichiers](https://package.elm-lang.org/packages/elm/file/latest/File#create)
-- [Article sur la manipulation de fichiers en Elm](https://dev.to/kristianpedersen/working-with-files-in-elm-48f9)
+- Documentation du package `elm/file` <https://package.elm-lang.org/packages/elm/file/latest/>
+- Tutoriel sur les fichiers en Elm <https://elmprogramming.com/working-with-files-in-elm.html>
+- Exemples de code pour la manipulation de fichiers en Elm <https://github.com/elm-community/elm-file/tree/master/examples>

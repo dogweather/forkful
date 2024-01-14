@@ -1,54 +1,66 @@
 ---
 title:    "Elm recipe: Reading a text file"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-If you're new to Elm, you may be wondering why you would even want to read a text file in your programming. There are a few reasons why you may want to do this, such as:
-
-- Storing data for your application in a human-readable format
-- Reading configuration files for your program
-- Parsing data from an API response
-
-In this blog post, we will explore how you can easily read a text file in your Elm applications.
+Text files are an essential part of programming and are often used to store data or configuration settings. Learning how to read a text file in Elm can be incredibly useful for any developer looking to manipulate data stored in a text format. It can also help in automating tasks such as data parsing or file generation.
 
 ## How To
 
-Reading a text file in Elm involves a few steps:
+Reading a text file in Elm is a straightforward process. First, we need to import the package "elm/file", which provides the necessary functions to work with text files. Next, we need to use the "File.System" library to access the file system. The following code snippet shows how to open a file and read its contents:
 
-1. First, we will need to import the `File` module from the `elm/file` package.
-2. Then, we will use the `file` function to create a `File` object from a given file name. This function takes two arguments- the file name and the file's contents.
-3. Next, we will use the `contents` function to extract the contents of the file as a `String`.
-4. We can then use the `Debug.log` function to print the contents of the file to the console for debugging purposes.
+```Elm 
+import File exposing (readAsString)
+import File.System exposing (file)
+
+file : String -> File.System.Flags
+file path =
+    { path = path
+    , options =
+        { useBuffer = False
+        , chunSize = Nothing
+        }
+    }
+
+readFile : String -> Cmd (String, File.Error String)
+readFile path =
+    readAsString (file path)
+
+```
+This code will return a "Cmd" which, once executed, will return a tuple containing the file content as a string and any potential errors. Now, let's test it with a simple text file named "sample.txt" containing the words "Hello, Elm!".
 
 ```Elm
-import File
-import Debug
+import Platform.Cmd as Cmd exposing (Cmd)
 
-file : File
-file = File.file "myFile.txt" "This is some text inside the file."
+readFile "sample.txt"
+    |> Cmd.map (\result ->
+        case result of
+            (content, Nothing) ->
+                content
 
-contents : String
-contents = File.contents file
-
-main : Program ()
-main = 
-  Debug.log "File contents:" contents
+            (error, Just fileError) ->
+                error
+        )
 ```
 
-The above code will print "This is some text inside the file." to the console.
+Once executed, the above code will return the string "Hello, Elm!". If an error occurs, it will display the appropriate error message.
 
 ## Deep Dive
 
-Behind the scenes, the `File.file` function creates an object with information about the file, such as its name and contents. This object follows the `File` type defined in the `elm/file` package. The `File.contents` function then looks for this `File` object and extracts its contents to be used in our program.
+There are some nuances to keep in mind when reading text files in Elm. Here are a few essential points to consider:
 
-One thing to note is that reading files in Elm is limited to the browser environment, as it involves using the `File` and `FileReader` APIs provided by browsers. This means that we cannot read files on the server side.
+- When using "readAsString", the whole file content is loaded as a single string, which means that it may have performance implications on large files.
+- Elm does not support direct access to the file system. Instead, it provides access through commands, which makes reading text files an asynchronous operation.
+- The "File.Error" type can contain various errors, such as "NotFound", "IsDirectory", or "PermissionDenied", which can help handle different scenarios gracefully.
+
+It is also worth mentioning that the "elm/file" package supports working with files in other formats, such as JSON or CSV. For more information about these functionalities, check out the package documentation.
 
 ## See Also
 
-- Official `elm/file` package documentation: https://package.elm-lang.org/packages/elm/file/latest/
-- Helpful tutorial on reading files in Elm: https://elmprogramming.com/reading-data-files-in-elm.html
-- Discussion on reading files in Elm on Reddit: https://www.reddit.com/r/elm/comments/hhd2kr/reading_data_from_text_file/
+- elm/file package documentation: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm guide on commands and ports: https://guide.elm-lang.org/interop/cmd.html

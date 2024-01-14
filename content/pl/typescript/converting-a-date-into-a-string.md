@@ -1,53 +1,42 @@
 ---
-title:    "TypeScript: Przekształcenie daty w łańcuch znaków"
+title:    "TypeScript: Konwersja daty na ciąg znaków"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty do formatu tekstowego jest częstym wyzwaniem podczas programowania z wykorzystaniem języka TypeScript. Jest to ważna umiejętność, ponieważ często musimy wyświetlać daty w formacie zrozumiałym dla użytkownika. W tym blogu dowiesz się, dlaczego warto umieć konwertować datę na string oraz jak to zrobić w języku TypeScript.
+Konwersja daty na łańcuch znaków jest niezbędnym elementem w wielu projektach TypeScript. Pozwala na wyświetlenie daty w czytelny sposób lub na przechowywanie jej w bazie danych. Dowiedz się, jak łatwo przeprowadzić tę konwersję w TypeScript!
 
 ## Jak to zrobić
 
-Aby skonwertować datę na string w języku TypeScript, możemy skorzystać z funkcji `toString()` lub `toLocaleDateString()`. Poniżej przedstawiamy przykładowy kod oraz jego wynik w dwóch różnych formatach daty:
-
 ```TypeScript
-// Przykładowa data
-const date = new Date("2021-04-15");
-
-// Skonwertowanie daty na string przy użyciu metody toString()
-const dateString1 = date.toString();
-console.log(dateString1); // Output: Thu Apr 15 2021 00:00:00 GMT+0200 (Central European Summer Time)
-
-// Skonwertowanie daty na string przy użyciu metody toLocaleDateString()
-const dateString2 = date.toLocaleDateString();
-console.log(dateString2); // Output: 15.04.2021
+const currentDate = new Date(); // tworzy obiekt daty z aktualną datą i czasem
+const stringDate = currentDate.toDateString(); // konwertuje datę na łańcuch znaków w postaci pełnej daty
+console.log(stringDate); // wyświetla "Wed Oct 13 2021"
 ```
 
-W powyższym przykładzie zobaczymy, że dla metody `toString()` domyślnym formatem jest format ISO, natomiast metoda `toLocaleDateString()` wyświetla datę w lokalnym formacie ustawionym na naszym komputerze.
+Innym sposobem na konwersję daty na łańcuch znaków jest użycie funkcji `toLocaleString()` wraz z odpowiednimi opcjami. Na przykład:
+
+```TypeScript
+const currentDate = new Date(); // tworzy obiekt daty z aktualną datą i czasem
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; // ustawia opcje wyświetlania daty
+const stringDate = currentDate.toLocaleString('pl-PL', options); // konwertuje datę na łańcuch znaków w postaci pełnej daty w polskim formacie
+console.log(stringDate); // wyświetla "środa, 13 października 2021"
+```
 
 ## Deep Dive
 
-Jednym z najważniejszych elementów konwertowania daty na string jest wybór odpowiedniego formatu. W języku TypeScript możemy skorzystać z funkcji `toLocaleDateString()` z dodatkowym parametrem `options`, w którym możemy precyzyjnie określić, jaki format daty nas interesuje.
+Przyjrzyjmy się bliżej funkcjom `toDateString()` i `toLocaleString()` używanym w powyższych przykładach:
 
-```TypeScript
-// Przykładowa data
-const date = new Date("2021-04-15");
+- `toDateString()` zwraca łańcuch znaków w formacie według normy ISO 8601, czyli "RRRR-MM-DD".
+- `toLocaleString()` można dostosować do różnych języków i regionów dzięki opcji `locale`. Opcja `options` pozwala na wybór formatu wyświetlania daty oraz czasu, w zależności od preferencji.
 
-// Określenie formatu daty w parametrze options
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-
-// Konwersja daty na string z określonym formatem
-const dateString3 = date.toLocaleDateString(undefined, options);
-console.log(dateString3); // Output: 15 kwietnia 2021
-```
-
-W powyższym przykładzie użyliśmy parametru `options` do ustalenia formatu daty w formacie miesiąca jako słowa i rok jako liczby. Dzięki temu mamy większą kontrolę nad wyświetlaną datą i możemy dostosować ją do naszych potrzeb.
+Na przykład, używając funkcji `toLocaleString()` z opcją `locale` równą "en-US", otrzymamy datę w formacie amerykańskim, czyli "MM/DD/RRRR".
 
 ## Zobacz także
 
-- Dokumentacja języka TypeScript: https://www.typescriptlang.org/docs/
-- Przewodnik po funkcjach daty i czasu w języku JavaScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date
-- Jak konwertować daty w języku TypeScript: https://www.educba.com/typescript-date-to-string/
+- [Dokumentacja Date w TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
+- [Instrukcja łańcuchów znaków w TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)

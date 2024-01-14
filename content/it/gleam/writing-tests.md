@@ -1,49 +1,38 @@
 ---
 title:    "Gleam: Scrivere test"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché scrivere test con Gleam?
+##Perché scrivere test in Gleam?
 
-Scrivere test è un'importante parte del processo di sviluppo di software. Con Gleam, è possibile testare il proprio codice in modo semplice ed efficace.
+Scrivere test è un'attività critica per assicurare che il nostro codice funzioni correttamente e senza errori. Inoltre, i test possono aiutarci a identificare problemi potenziali e a prevenirli prima che si manifestino in produzione. In sintesi, scrivere test è importante per garantire la qualità del nostro codice e il corretto funzionamento delle nostre applicazioni.
 
-# Come scrivere test con Gleam
+##Come scrivere test in Gleam
 
-Per scrivere test con Gleam, è necessario utilizzare la libreria di test integrata nel linguaggio. Di seguito è riportato un esempio di test di una funzione che trova il massimo numero in una lista:
+Per scrivere test in Gleam, utilizzeremo il modulo `gleam/test` che ci offre una serie di funzioni utili per la creazione e l'esecuzione di test. Utilizzeremo la sintassi `assert()` per verificare che il nostro codice produca esattamente ciò che ci aspettiamo. Ecco un esempio di come possiamo utilizzare `gleam/test` per testare una semplice funzione che calcola la somma tra due numeri:
 
 ```Gleam
-import gleam/test/assert
+import gleam/test
 
-fn find_max(numbers) {
-  List.fold(numbers, 0, fn(n, max) ->
-    if n > max {
-      n
-    } else {
-      max
-    }
-  )
+fn add(x, y) {
+    x + y
 }
 
-test "find_max with empty list" {
-  assert.equal(find_max([]), 0)
-}
-
-test "find_max with list of numbers" {
-  assert.equal(find_max([1, 5, 3, 2, 4]), 5)
-}
+assert(gleam/test.contains(add(2, 3), 5))
 ```
 
-L'esempio utilizza la funzione `assert.equal` per confrontare il valore ottenuto dalla funzione `find_max` con il valore atteso.
+In questo esempio, stiamo testando la funzione `add()` verificando che la somma tra 2 e 3 sia uguale a 5. Utilizzando la funzione `contains()`, possiamo verificare se il risultato della nostra funzione è uguale al valore desiderato.
 
-# Approfondimento sui test
+##Approfondimenti sulla scrittura di test
 
-Scrivere test ha diversi vantaggi, tra cui la possibilità di individuare eventuali bug nel codice e di garantire il corretto funzionamento delle funzioni. Inoltre, i test possono essere eseguiti automaticamente durante il processo di sviluppo, fornendo un feedback immediato sullo stato del codice.
+Il modulo `gleam/test` ci offre molte altre funzioni utili per la scrittura di test, come ad esempio `assert_equal()` per verificare che due valori siano uguali o `assert_error()` per verificare che una determinata operazione sollevi un errore. Inoltre, possiamo utilizzare la funzione `describe()` per raggruppare i nostri test in categorie e rendere più leggibili i nostri report.
 
-Gleam fornisce molti altri strumenti utili per scrivere test, come la possibilità di creare mock per testare funzioni complesse e la capacità di eseguire test in parallelo per una maggiore efficienza.
+Inoltre, possiamo utilizzare il modulo `gleam/expect` per scrivere test in maniera ancora più espressiva e leggibile. Questo modulo ci permette di utilizzare la sintassi `expect().toEqual()` che rende i nostri test ancora più comprensibili.
 
-# Vedi anche
+##Vedi anche
 
-- Documentazione ufficiale di Gleam sui test: https://gleam.run/book/testing
-- Video tutorial su Gleam e i test: https://www.youtube.com/watch?v=VpnJbjOVk4c
+-  Documentazione ufficiale di Gleam sulla scrittura dei test: https://gleam.run/book/testing.html
+- Esempi di test in Gleam: https://github.com/gleam-lang/gleam/blob/main/tests/gleam_test_basic.gleam.

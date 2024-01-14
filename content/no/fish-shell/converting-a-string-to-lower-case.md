@@ -1,43 +1,48 @@
 ---
-title:    "Fish Shell: Konvertere en streng til små bokstaver"
+title:    "Fish Shell: Konvertering av en streng til små bokstaver"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å konvertere en streng til små bokstaver er en vanlig oppgave i programmering. Det kan være nyttig for å sikre konsistens i data, filtrere og søke gjennom tekst, eller generelt sett forbedre lesbarheten og estetikken i koden din.
+Mange programmerere ønsker å konvertere en streng til små bokstaver av flere grunner. Det kan for eksempel være for å sammenligne tekst uten å tenke på store og små bokstaver, eller for å følge gitte konvensjoner i programmeringsspråket de bruker. Uansett grunn, kan Fish Shell gjøre dette enkelt og effektivt.
 
-## Hvordan
+##Hvordan gjøre det
 
-For å konvertere en streng til små bokstaver i Fish Shell bruker du kommandoen `string tolower (streng)`. Her er et enkelt eksempel:
+Fish Shell har en innebygd funksjon som heter `lowercase` som gjør akkurat det navnet antyder - den konverterer en streng til små bokstaver. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-```
-Fish Shell:
-string tolower "HELLO WORLD"
-```
-
-Dette vil gi følgende utdata:
-
-```
-hello world
+```Fish Shell
+set my_str "FISH SHELL"
+echo "$my_str"
+echo (lowercase "$my_str")
 ```
 
-Du kan også bruke `string tolower` på variabler eller output fra andre kommandoer. For eksempel, hvis du ønsker å konvertere output fra kommandoen `echo` til små bokstaver, kan du skrive:
+Dette vil gi følgende utoutput:
 
+```Fish Shell
+FISH SHELL
+fish shell
 ```
-Fish Shell:
-string tolower (echo "HELLO WORLD")
+
+Som du kan se, konverterte `lowercase`-funksjonen strengen `FISH SHELL` til små bokstaver. Det er viktig å merke seg at denne funksjonen ikke endrer den originale variabelen, men heller returnerer en ny verdi.
+
+Hvis du vil konvertere en hel fil til små bokstaver, kan du bruke `tr`-kommandoen i kombinasjon med `lowercase`-funksjonen. For eksempel:
+
+```Fish Shell
+cat my_file.txt | tr '[:upper:]' '[:lower:]'
 ```
 
-Dette vil også gi utdataen `hello world`.
+Dette vil skrive ut innholdet av filen `my_file.txt` med alle bokstaver konvertert til små bokstaver.
 
-## Dypdykk
+##Dykk dypere
 
-Det er viktig å være oppmerksom på at `string tolower` kun fungerer på ASCII-tegn. Dette betyr at noen spesielle tegn i andre språk kan bli påvirket på uventede måter. En måte å unngå dette på er å bruke Unicode-baserte funksjoner som `string lower` og `string normal`. Disse funksjonene tar hensyn til språkspesifikke regler for å konvertere bokstaver til små bokstaver.
+Hvis du er interessert i å lære mer om hvordan Fish Shell konverterer en streng til små bokstaver, kan du ta en titt på kildekoden. Du vil se at selve funksjonen er ganske enkel og kun bruker et enkelt `for`-løkke for å gjøre konverteringen. Dette er en flott måte å dykke dypere inn i Fish Shells funksjonalitet og forstå hvordan ting fungerer under overflaten.
 
-## Se også
+##Se også
 
-- [Fish Shell dokumentasjon for string manipulation](https://fishshell.com/docs/current/index.html#string-manipulation)
-- [Unicode Table](https://unicode-table.com/) for å se forskjellen mellom ASCII og Unicode-tegn.
+- Fish Shell sin offisielle dokumentasjon om `lowercase`-funksjonen: https://fishshell.com/docs/current/cmds/lowercase.html
+- En bloggpost om å konvertere store og små bokstaver med `tr`-kommandoen: https://www.howtogeek.com/196653/how-to-use-the-tr-command-on-linux/
+- En artikkel om grunnleggende bruk av Fish Shell: https://medium.com/@michaelburri/fish-shell-a-beginners-guide-79a9b0df1c3e

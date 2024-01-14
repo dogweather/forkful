@@ -1,46 +1,59 @@
 ---
-title:    "C: Sammanslagning av strängar"
+title:    "C: Sammanslående strängar"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konkatinera strängar är en vanlig uppgift inom programmering, särskilt inom C-programmering. Genom att kombinera två eller flera strängar kan du skapa en längre sträng som innehåller mer information. Det kan vara användbart i många olika program och funktioner.
 
-## Hur man gör det
-För att konkatinera strängar i C-programmering, behöver du först deklarera två eller flera strängar som du vill kombinera. Sedan kan du använda den inbyggda funktionen `strcat()` för att lägga till en sträng till en annan. Se nedan för ett enkelt exempel:
+Att kunna kombinera, eller concatenera, strängar är en väsentlig färdighet i C-programmering. Genom att lära sig detta kan du skapa dynamiska och flexibla program som kan hantera variabel längd på inmatade textsträngar. Detta är särskilt användbart när du arbetar med användargränssnitt eller textfiler.
 
-```C
-#include <stdio.h>
-#include <string.h>
+## Så här gör du
 
-int main() {
-   char str1[] = "Hej";
-   char str2[] = "på dig!";
-   strcat(str1, str2);
-   printf("Resultatet är: %s\n", str1);
-   return 0;
-}
+### Skapa en ny sträng
+
+För att concatenating av strängar måste du först skapa en ny sträng som har tillräckligt med utrymme för att rymma det slutgiltiga resultatet. Detta gör du med hjälp av `malloc()` funktionen som allokerar minne dynamiskt.
+
 ```
-Output:
-```
-Resultatet är: Hej på dig!
+char *nySträng = (char*)malloc(100*sizeof(char));
 ```
 
-Obs: Det är viktigt att den första strängen som du skickar till `strcat()` redan har tillräckligt med utrymme för att rymma även den andra strängen.
+I detta exempel allokerar vi utrymme för en sträng med längden 100 tecken. Du kan anpassa storleken efter dina behov.
 
-## Djupdykning
-Många kanske undrar varför man inte bara kan använda operatören `+` för att konkatinera strängar i C-programmering. En anledning är att C inte har en inbyggd strängtyp, så det är inte möjligt att använda operatorn `+` på samma sätt som i andra programmeringsspråk. Istället använder C nulltecken (`\0`) för att markera slutet på en sträng och `strcat()`-funktionen utnyttjar detta för att lägga till en sträng till en annan.
+### Kopiera strängar
 
-En annan anledning är att konkatinera strängar med hjälp av `strcat()` faktiskt är mer effektivt än att använda operatorn `+`. Detta beror på att `strcat()` inte skapar en ny sträng i minnet, utan ändrar bara den befintliga strängen. Detta sparar på resurser och är därför en fördelaktig metod för att kombinera strängar i C-programmering.
+Nästa steg är att kopiera de strängar som du vill concatenera in i den nya strängen. Du kan använda `strcpy()` funktionen för att göra detta.
+
+```
+char *sträng1 = "Hej";
+char *sträng2 = "världen";
+
+strcpy(nySträng, sträng1);
+strcpy(nySträng, sträng2);
+```
+
+Efter denna operation kommer `nySträng` att innehålla "Hej världen".
+
+### Lägga till ytterligare strängar
+
+Om du vill concatenating fler strängar kan du använda `strcat()` funktionen istället för `strcpy()`. Detta tillåter dig att lägga till en sträng till slutet av en befintlig sträng istället för att ersätta den.
+
+```
+strcat(nySträng, "!");
+```
+
+I detta exempel kommer utdata att bli "Hej världen!". Du kan fortsätta att lägga till fler strängar på samma sätt.
+
+## Deep Dive
+
+Förutom `strcpy()` och `strcat()` finns det ytterligare funktioner som du kan använda för att concatenera strängar. Dessa inkluderar `strncpy()`, `sprintf()`, och `strncat()`. Var noga med att läsa dokumentationen för varje funktion för att förstå hur de fungerar och vilka begränsningar de har.
+
+Det kan också vara användbart att känna till att C har en inbyggd operator för concatenating strängar, som är `+`. Du kan använda den på samma sätt som du skulle göra med numeriska värden.
 
 ## Se också
-* [C-programmering för nybörjare](https://www.learn-c.org/)
-* [Professor Moniters programmeringsblogg](https://profmonitersblogg.com/c-programmering/)
-* [Officiell C-dokumentation](https://devdocs.io/c/start)
 
-## Se också
-* [C-programmering för nybörjare](https://www.learn-c.org/)
-* [Professor Moniters programmeringsblogg](https://profmonitersblogg.com/c-programmering/)
-* [Officiell C-dokumentation](https://devdocs.io/c/start)
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Dynamic Memory Allocation in C](https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/)
+- [C String Concatenation](https://www.programiz.com/c-programming/library-function/string.h/strncat)

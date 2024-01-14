@@ -1,42 +1,41 @@
 ---
 title:    "TypeScript: חישוב תאריך בעתיד או בעבר"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-שימוש בתכנות TypeScript עבור חישוב תאריך בעתיד או בעבר נעשה על מנת ליצור קוד גמיש ומאורגן, שניתן להשתמש בו עבור בתי עסק מגוונים ופרויקטים. חישוב תאריך יכול להיות מועיל לשם תחזוקת תאריכים עסקיים או אישיים, יצירת יומנים או יצירת תאריכים לטלפונים ניידים.
+חישוב תאריך בעתיד או בעבר הוא כלי חשוב בתכנות בטיפוסקריפט. זה מאפשר לנו להגדיר תאריך מסוים ולפעמים אנו רוצים לחשב את התאריך שמתקיים למעבר מספר ימים או רבעות בעבר או בעתיד. ועם כלי זה, אנחנו יכולים למצוא תאריך נתון במקום להזין ידנית כל פעם.
 
-## איך לעשות זאת
+## איך לעשות
 
-במקרה הכללי, לחישוב תאריך בעתיד או בעבר ניתן להשתמש בטכניקות פשוטות כמו חיבור וכפל של מספרים. לדוגמה, ננסה להוסיף 5 ימים לתאריך הנוכחי:
-
-```TypeScript
-let currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 5);
-
-console.log(currentDate.toDateString()); // תוצאה: Thu Aug 05 2021
-```
-
-ניתן גם להשתמש בספרייה שליצרה גוגל, moment.js, המציעה פונקציות מתקדמות יותר לתאריכים ושעות. ניתן להתקין את הספרייה דרך פקד npm ולהשתמש בה כדי לחשב תאריכים יותר מדויקים ומיוחדים.
+תחילה עלינו להגדיר את התאריך הנוכחי בטיפוסקריפט על ידי השמתו למשתנה `currentDate`. נשתמש באובייקט `Date` כדי ליצור את התאריך הנוכחי:
 
 ```TypeScript
-import * as moment from 'moment';
-
-let dateToCalculate = moment().add(5, 'days').format('MMMM Do YYYY');
-
-console.log(dateToCalculate); // תוצאה: August 5th 2021
+let currentDate: Date = new Date();
 ```
 
-כמו כן, ניתן להשתמש בפונקציות ייחודיות כמו חישוב תאריך היום הראשון של חודש מסוים בעתיד או בעבר.
-
+עכשיו, נרצה לחשב תאריך שבו נמצא אחרי מספר ימים מהתאריך הנוכחי. נוסיף פרמטר כמספר ימים לפונקציה `getDate()` ונחשב את התאריך החדש על ידי הוספת המספר של ימים לתאריך הנוכחי:
 ```TypeScript
-let firstDayOfMonth = moment().startOf('month').add(1, 'days').format('DD/MM/YYYY');
-console.log(firstDayOfMonth); // תוצאה:  02/08/2021 שניים באוגוסט 2021
+function getDate(days: number): Date {
+    let newDate: Date = new Date();
+    newDate.setDate(currentDate.getDate() + days);
+    return newDate;
+}
+let futureDate: Date = getDate(10);
+console.log(futureDate);
 ```
 
-## עיון מעמיק
+יצא:
+`Mon Jun 22 2020 20:33:53 GMT+0300 (Israel Daylight Time)`
 
-כאשר מתארים ומחשבים תאריכים בשפת TypeScript, חשוב לקחת בחשבון הפעמים כמו פעמים מעורפלים, המוני יחידה זיכרון וקוד דפוק בסיסי בזמן ריצת הקוד. קריאת התיעוד של תכנון הספריות,
+עם הפונקציה הזאת, אנחנו יכולים לחשב תאריך מסוים בעתיד או בעבר בהתאם למספר הימים שנמצא מהתאריך הנוכחי.
+
+## Deep Dive
+
+כשנמצא שעברנו מספר ימים לתאריך מסוים, הרבה פעמים נרצה להדפיס את התאריך בפורמט נכון. ניתן לעשות זאת על ידי שימוש בפונקציות מובנות ב- `Date` כמו `toISOString()`, `toLocaleDateString()` ועוד.
+
+בנוסף, ישנם כלים נוספים בטיפוסקריפט שמאפשרים חישוב תאריכים וזמנים ועיבוד מידע באופן יעיל יותר, כגון התוסף הפופולרי [Moment.js](https://momentjs.com/

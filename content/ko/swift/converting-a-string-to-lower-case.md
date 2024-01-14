@@ -1,37 +1,32 @@
 ---
-title:    "Swift: 잉분 용자 졍샛 낮쫒"
+title:    "Swift: 문자열을 소문자로 변환하기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+문자열을 소문자로 변환하는 것에 참여하는 이유는 단순합니다. 일반적으로 다른 문자열 작업을 수행할 때 필요할 수 있습니다.
 
-문자열을 소문자로 변환하는것에 대해 1-2 문장만으로 왜 이 작업을 해야하는지 설명합니다.
-
-문자열을 소문자로 변환하는것은 자주 사용되는 프로그래밍 작업입니다. 대소문자를 무시하는 검색이나 비교를 할 때 유용하며, 특정 언어나 규칙에 따라 대문자를 사용해야 할 때 유용합니다. 또한, 사용자 입력을 정제하거나 출력 결과를 일관성있게 유지하는 데에도 도움이 됩니다.
-
-## 어떻게
-
-`lowercased()` 메서드를 사용하여 Swift에서 문자열을 소문자로 변환하는 방법은 다음과 같이 간단합니다.
-
+## 하는 방법
 ```Swift
-let greeting = "Hello World!"
-let lowercaseGreeting = greeting.lowercased()
-print(lowercaseGreeting)
-// 출력 결과: hello world!
+let str = "Hello World"
+let lowercasedStr = str.lowercased()
+
+print(lowercasedStr) // Output: hello world
 ```
 
-위의 예제는 `lowercased()` 메서드를 변수 `greeting`에 사용하여 `lowercaseGreeting` 변수에 저장하고, 이를 `print` 함수를 사용하여 콘솔에 출력하는 간단한 코드입니다.
+위의 예제에서는 문자열 "Hello World"를 선언하고, `lowercased()` 메소드를 사용하여 해당 문자열을 소문자로 변환하고, 결과를 출력하는 방법을 보여줍니다.
 
-## 깊이 파고들기
+## 심층 탐구
+문자열을 소문자로 변환하는 방법은 여러 가지가 있습니다. 하지만 가장 간단하고 빠른 방법은 `lowercased()` 메소드를 사용하는 것입니다. 이 메소드는 문자열을 소문자로 변환하여 새로운 문자열을 반환합니다. 또 다른 방법으로는 `NSString` 클래스의 `lowercased()` 메소드를 사용하는 것도 있습니다. 하지만 이 방법은 `NSString` 객체에만 적용할 수 있기 때문에, 일반적으로 `lowercased()` 메소드를 사용하는 것이 좋습니다.
 
-Swift의 `lowercased()` 메서드는 내부에서 내장 C 함수인 `tolower()`를 호출하여 소문자로 변환합니다. 이 함수는 UTF-16 인코딩을 사용하여 문자열의 모든 문자를 소문자로 변환합니다. 따라서, 문자가 아닌 기호나 숫자는 유지되며 모든 하위 문자가 소문자로 변환됩니다.
+## 더 많은 정보
+문자열을 소문자로 변환하는 것은 간단한 작업이지만, 실제로는 문자열을 조작하는 데 필수적입니다. 이 작업을 할 때는 대소문자를 구분하거나 비교하기 전에 먼저 소문자로 변환하는 것이 좋습니다.
 
-따라서, `lowercased()` 메서드를 호출할 때 주의할 점은 원래의 문자열이 어떤 인코딩으로 되어있는지 확인하는 것입니다. 만약 UTF-8 인코딩을 사용하고 있다면 이 메서드는 맞는 결과를 반환하지 않을 수 있습니다. 이럴 경우에는 `precomposedStringWithCanonicalMapping` 메서드를 사용하여 정규화된 문자열을 생성한 뒤, 이를 `lowercased()` 메서드를 사용하여 소문자로 변환할 수 있습니다.
-
-## 관련 자료
-
-- [Apple Developer Documentation - Character](https://developer.apple.com/documentation/swift/character)
-- [Apple Developer Documentation - String](https://developer.apple.com/documentation/swift/string)
-- [String metamorphosis - Lowercase letters](https://medium.com/bochs-projects/string-metamorphosis-26734f03a2e3)
+## 관련 링크
+- [Swift strings 영문 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Apple Developer 문자열 관련 영문 문서](https://developer.apple.com/documentation/swift/string)
+- [Swift 문자열 리터럴 관련 영문 문서](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#grammar_string-literal)
+- [Swift 문자 처리 관련 영문 문서](https://docs.swift.org/swift-book/LanguageGuide/Unicode.html#//apple_ref/doc/uid/TP40014097-CH32-ID917)

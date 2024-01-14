@@ -1,54 +1,54 @@
 ---
 title:    "C: Obtenir la date actuelle"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-La date est un élément essentiel dans la vie quotidienne et dans le développement de logiciels. Il est donc important pour les programmeurs de savoir comment obtenir la date actuelle dans leurs programmes en C. Cet article expliquera comment obtenir la date actuelle en utilisant des fonctions disponibles dans la bibliothèque de temps en langage C.
+Lors de la création d'un programme en C, il est souvent nécessaire de connaître la date actuelle. Cela peut être utile pour diverses tâches, telles que la gestion de fichiers, la journalisation ou encore la création de rappels automatiques. Dans cet article, nous allons voir comment obtenir la date actuelle en langage C.
 
-## Comment faire
+# Comment faire
 
-Pour obtenir la date actuelle en langage C, nous utiliserons la fonction `time.h`. Cette fonction renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 (également connue sous le nom de "epoch time"). Nous pouvons ensuite utiliser la fonction `localtime()` pour convertir ce nombre de secondes en une structure de date et heure locale.
+Pour obtenir la date actuelle en langage C, nous allons utiliser la fonction `time` de la bibliothèque standard `time.h`. Cette fonction renvoie le temps écoulé en secondes depuis le 1er janvier 1970 à minuit (également appelé timestamp). Voici un exemple de code pour obtenir le timestamp actuel :
 
-Voici un exemple de code pour obtenir la date actuelle et l'afficher sous un format lisible par l'utilisateur :
-
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // Obtenir le temps actuel
-    time_t timestamp = time(NULL);
-
-    // Convertir en structure de date et heure locale
-    struct tm *date_time = localtime(&timestamp);
-
-    // Afficher la date et l'heure actuelles
-    printf("La date actuelle est : %02d/%02d/%d\n", date_time->tm_mday, date_time->tm_mon + 1, date_time->tm_year + 1900);
-    printf("L'heure actuelle est : %02d:%02d:%02d\n", date_time->tm_hour, date_time->tm_min, date_time->tm_sec);
-
+int main(void) {
+    time_t now = time(NULL);
+    printf("Timestamp actuel : %ld\n", now);
     return 0;
 }
 ```
 
-La sortie de ce code sera similaire à ceci :
+En utilisant la fonction `localtime`, nous pouvons convertir le timestamp en une structure `tm` contenant des informations sur la date actuelle. Voici un exemple de code pour obtenir la date actuelle au format jour/mois/année :
 
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main(void) {
+    time_t now = time(NULL);
+    struct tm *date = localtime(&now);
+    printf("Date actuelle : %02d/%02d/%04d\n", date->tm_mday, date->tm_mon + 1, date->tm_year + 1900);
+    return 0;
+}
 ```
-La date actuelle est : 20/11/2021
-L'heure actuelle est : 14:45:00
-```
 
-## Profonde plongée
+Le code ci-dessus utilise les valeurs des membres de la structure `tm` pour afficher la date au format souhaité. La fonction `localtime` prend en paramètre l'adresse du timestamp, ce qui explique l'utilisation de `&now`.
 
-En utilisant la fonction `localtime()`, nous pouvons également accéder aux différentes parties de la structure de date et heure locale. Par exemple, `tm_mday` représente le jour du mois, `tm_mon` représente le mois (en commençant par 0 pour janvier) et `tm_year` représente l'année depuis 1900. Vous pouvez trouver la liste complète des membres de la structure `tm` en consultant la documentation de la bibliothèque de temps en langage C.
+# Plongée en profondeur
 
-Il est également possible de modifier la structure de date et heure locale pour afficher la date et l'heure dans un format différent. Par exemple, vous pouvez utiliser la fonction `strftime()` pour formater la date et l'heure selon vos préférences.
+Si vous souhaitez aller plus loin dans la gestion de la date en langage C, il existe d'autres fonctions et structures disponibles dans la bibliothèque `time.h`. Par exemple, la fonction `strftime` permet de formater la date et l'heure selon un modèle spécifique. La structure `timeval` peut être utilisée pour stocker des valeurs de temps plus précises, en incluant les microsecondes.
 
-## Voir aussi
+Il est également important de noter que le temps écoulé depuis le 1er janvier 1970 à minuit peut être différent selon les systèmes d'exploitation. Cela peut entraîner des différences de quelques secondes en fonction du système utilisé.
 
-- [Documentation de la bibliothèque de temps en langage C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Guide de référence pour la fonction `localtime()` en langage C](https://www.cplusplus.com/reference/ctime/localtime/)
-- [Exemple de code pour formater la date en langage C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+# Voir aussi
+
+- [Documentation de la bibliothèque time.h en français](https://www.cprogramming.com/tutorial/time.h.html)
+- [Fonctions de gestion de date en langage C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Article sur les timestamps et la conversion en date en langage C](https://www.guru99.com/c-date-time.html)

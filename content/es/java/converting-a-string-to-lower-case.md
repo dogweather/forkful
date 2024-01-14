@@ -1,40 +1,52 @@
 ---
-title:    "Java: Convirtiendo una cadena en minúsculas"
+title:    "Java: Convirtiendo una cadena a minúsculas"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué:
 
-La conversión de una cadena de texto a minúsculas es una tarea común en la programación Java. Esta operación puede ser útil para comparar cadenas de texto de manera más eficiente o para estandarizar la entrada de datos del usuario.
+Convertir una cadena de caracteres a minúsculas es una habilidad importante en el mundo de la programación Java. A menudo, es necesario manipular y comparar cadenas de caracteres en un formato uniforme, lo que hace que la conversión a minúsculas sea útil para asegurar consistencia en los datos.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-La clase String de Java proporciona un método llamado "toLowerCase()" que permite convertir una cadena a minúsculas. Este método devuelve una nueva cadena con todos los caracteres en minúsculas, dejando intacta la cadena original. Veamos un ejemplo:
+En Java, hay varias formas de convertir una cadena de caracteres a minúsculas. Una opción es utilizar el método `toLowerCase()` de la clase `String`. Este método devuelve una nueva cadena de caracteres con todas las letras convertidas a minúsculas.
 
-```Java
-String nombre = "JUAN";
-String nombreMinuscula = nombre.toLowerCase();
-System.out.println(nombreMinuscula); // salida: juan
+```
+public class ConvertirAMinusculas{
+    public static void main(String[] args) {
+        String cadena = "ESTE ES UNA CADENA EN MAYÚSCULAS";
+        String cadenaMinusculas = cadena.toLowerCase();
+        System.out.println(cadenaMinusculas);
+    }
+}
 ```
 
-También es posible utilizar el método "toLowerCase(Locale locale)" para especificar el idioma en el que se realizará la conversión. Por ejemplo, si queremos que la cadena se convierta a minúsculas en español, podemos usar la siguiente sintaxis:
+La salida del código anterior sería "este es una cadena en mayúsculas". Este método también es útil para comparar dos cadenas de caracteres de manera no sensible a mayúsculas y minúsculas, utilizando el método `equalsIgnoreCase()` también de la clase `String`.
 
-```Java
-String palabra = "HOLA";
-String palabraMinuscula = palabra.toLowerCase(new Locale("es"));
-System.out.println(palabraMinuscula); // salida: hola
+Otra opción para convertir a minúsculas es utilizar la clase `Locale` y el método `toLowercase()`. Esta clase nos permite especificar un idioma para la conversión, lo que puede ser útil en situaciones en las que se manejan diferentes idiomas o caracteres específicos.
+
+```
+public class ConvertirAMinusculas{
+    public static void main(String[] args) {
+        String cadena = "ESTE ES UNA CADENA EN MAYÚSCULAS";
+        String cadenaMinusculas = cadena.toLowerCase(Locale.ENGLISH);
+        System.out.println(cadenaMinusculas);
+    }
+}
 ```
 
-## Profundizando
+La salida del código anterior sería la misma que en el primer ejemplo. Sin embargo, si especificamos un idioma diferente, la salida podría ser diferente dependiendo de la estructura y uso de mayúsculas y minúsculas en ese idioma.
 
-Es importante tener en cuenta que al convertir una cadena a minúsculas, se tomará en cuenta la configuración regional del sistema en el que se esté ejecutando el programa. Esto significa que si la configuración regional es diferente al español, el resultado de la conversión puede variar.
+## Profundizando:
 
-Además, la conversión a minúsculas no solo aplica a las letras, sino también a todos los caracteres que tengan una equivalente en minúsculas. Por ejemplo, la letra "Á" se convertirá a "á" y la letra "Ü" se convertirá a "ü".
+La conversión de una cadena de caracteres a minúsculas puede parecer un proceso sencillo, pero es importante comprender cómo funcionan los diferentes métodos de conversión y en qué situaciones pueden ser más útiles. También es importante tener en cuenta que la conversión a minúsculas puede verse afectada por diferentes idiomas y caracteres especiales, por lo que es necesario tener cuidado al usarla en estos casos.
 
-## Ver también
+## Ver también:
 
-- Documentación oficial de Java para el método "toLowerCase()": https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--
-- Documentación oficial de Java para la clase Locale: https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html
-- Ejemplos de conversión a minúsculas en diferentes idiomas: https://www.geeksforgeeks.org/java-string-tolowercase-locale-methods-with-examples/
+- [Método toLowerCase () de la clase String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
+- [Método equalsIgnoreCase () de la clase String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#equalsIgnoreCase(java.lang.String))
+- [Clase Locale en Java](https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html)
+- [Método toLowerCase () de la clase Locale](https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html#toLowerCase())

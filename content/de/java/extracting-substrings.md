@@ -1,53 +1,55 @@
 ---
-title:    "Java: Extrahieren von Teilzeichenketten"
+title:    "Java: Unterstrings extrahieren"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum?
+Viele Menschen stehen vor der Herausforderung, Teilstrings aus längeren Texten oder Strings extrahieren zu müssen. Dies kann aus verschiedenen Gründen nützlich sein, wie zum Beispiel die Analyse von Daten oder die Extraktion von Informationen aus Benutzereingaben. In dieser Blogpost werden wir uns mit verschiedenen Techniken für das Extrahieren von Substrings in Java befassen.
 
-Das Extrahieren von Unterzeichenketten ist eine wichtige Fähigkeit beim Programmieren in Java. Es ermöglicht uns, Teile von Zeichenketten zu isolieren und auf sie zuzugreifen, was für verschiedene Anwendungen nützlich sein kann. In diesem Blog-Beitrag werden wir uns genauer ansehen, warum es wichtig ist, Unterzeichenketten zu extrahieren und wie wir dies in Java tun können.
+## Wie geht man vor?
+Um Teilstrings aus einem längeren String zu extrahieren, gibt es in Java verschiedene Methoden und Techniken. Wir werden uns die häufigsten und nützlichsten davon ansehen, um Ihnen einen Einstieg in das Extrahieren von Substrings zu geben.
 
-# Wie geht das?
-
-Um Substrings in Java zu extrahieren, verwenden wir die `substring()`-Methode. Diese Methode nimmt zwei Parameter an, den Startindex und den Endindex, und gibt den entsprechenden Teil der Zeichenkette zurück. Zum Beispiel:
-
-```Java
-String switzerland = "Schweizerische Eidgenossenschaft";
-String ausgabe = switzerland.substring(12, 23);
-System.out.println(ausgabe);
-```
-Die Ausgabe wäre `Eidgenossenschaft`, da wir die Unterzeichenkette von Index 12 bis Index 23 extrahiert haben.
-
-Alternativ können wir auch die `substring()`-Methode mit nur einem Parameter verwenden, der den Startindex angibt. In diesem Fall wird die restliche Zeichenkette ab diesem Index bis zum Ende zurückgegeben. Zum Beispiel:
+### Substring-Methode
+Die einfachste Methode zum Extrahieren von Teilstrings in Java ist die Verwendung der `substring()`-Methode. Diese Methode ermöglicht es uns, einen Teilstring basierend auf einem Start- und Endindex aus einem längeren String zu extrahieren. Hier ist ein Beispielcode, der dies verdeutlicht:
 
 ```Java
-String italy = "Repubblica Italiana";
-String ausgabe = italy.substring(10);
-System.out.println(ausgabe);
+String text = "Hallo Welt";
+String sub = text.substring(2, 5);
+System.out.println(sub);
 ```
-Die Ausgabe wäre `Italiana`, da wir die Unterzeichenkette ab Index 10 extrahiert haben.
 
-Wir können auch herausfinden, an welcher Position sich ein bestimmtes Zeichen in einer Zeichenkette befindet, indem wir die `indexOf()`-Methode verwenden. Diese Methode gibt den Index des ersten Vorkommens des angegebenen Zeichens zurück. Zum Beispiel:
+Ausgegeben wird dabei "llo" sein, da die Zählung der Indizes bei 0 beginnt und der Teilstring vom dritten (Index 2) bis zum fünften Index (exklusiv) extrahiert wird.
+
+### String-Tokenizer-Klasse
+Eine andere Möglichkeit, Teilstrings zu extrahieren, ist die Verwendung der `StringTokenizer`-Klasse. Diese ermöglicht es uns, einen String basierend auf einem bestimmten Trennzeichen in mehrere Teilstrings aufzuteilen. Hier ist ein Beispielcode:
 
 ```Java
-String germany = "Bundesrepublik Deutschland";
-int position = germany.indexOf('r');
-System.out.println(position);
+String text = "Dies, ist, ein, Beispiel";
+StringTokenizer st = new StringTokenizer(text, ",");
+while (st.hasMoreTokens()) {
+    String token = st.nextToken();
+    System.out.println(token);
+}
 ```
-Die Ausgabe wäre `9`, da das erste Vorkommen des Buchstabens "r" an Index 9 ist.
 
-# Tiefer eintauchen
+Die Ausgabe wäre dabei:
 
-Die `substring()`-Methode ist in Java sehr vielseitig und kann auf verschiedene Arten verwendet werden, um Zeichenketten zu manipulieren. Wir können zum Beispiel auch negative Parameter angeben, um die Unterzeichenkette von hinten zu extrahieren. Wenn wir `-3` als Startindex angeben, wird die letzten drei Zeichen der Zeichenkette zurückgegeben. Wenn wir jedoch `-3` als Endindex angeben, wird die Unterzeichenkette ab dem dritten Zeichen von hinten bis zum Ende zurückgegeben.
+- Dies
+- ist
+- ein
+- Beispiel
 
-Wir können auch die `indexOf()`-Methode in Kombination mit `substring()` verwenden, um bestimmte Teile einer Zeichenkette zu finden und zu extrahieren. Zum Beispiel könnten wir den Anfang einer Email-Adresse extrahieren, indem wir den Index des "@"-Zeichens finden und dann `substring()` verwenden, um alle Zeichen davor zurückzugeben.
+## Tiefentauchen
+Zusätzlich zu den oben genannten Methoden gibt es auch noch andere Techniken für das Extrahieren von Teilstrings in Java. Zum Beispiel können Sie die `indexOf()`-Methode verwenden, um das Auftreten eines bestimmten Zeichens oder einer Zeichenfolge in einem String zu finden, und anschließend die `substring()`-Methode verwenden, um den Teilstring zu extrahieren.
 
-Es ist wichtig, dass wir bei der Verwendung von `substring()` und `indexOf()` darauf achten, dass wir die richtigen Indizes angeben, da sonst unerwartete Ergebnisse auftreten können. Es könnte auch hilfreich sein, die Dokumentation sorgfältig durchzulesen oder einige Übungen durchzuführen, um das Extrahieren von Unterzeichenketten besser zu verstehen.
+Es ist auch wichtig zu beachten, dass die `substring()`-Methode immer eine neue String-Instanz zurückgibt und nicht den ursprünglichen String ändert. Wenn Sie also den ursprünglichen String ändern möchten, können Sie die `replace()`-Methode verwenden. Weitere Informationen zu diesen Techniken finden Sie in der offiziellen Java-Dokumentation.
 
-# Siehe auch
+## Siehe auch
+- [Java Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Tutorialspoint-Artikel über das Extrahieren von Substrings in Java](https://www.tutorialspoint.com/java/java_string_substring.htm)
+- [GeeksforGeeks-Artikel über die String-Tokenizer-Klasse](https://www.geeksforgeeks.org/java-stringtokenizer-class-java/)
 
-- [Java String API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Substring Tutorial](https://www.w3schools.com/java/java_ref_string.asp)
-- [Index Of Tutorial](https://www.javatpoint.com/java-string-indexof)
+Vielen Dank fürs Lesen und viel Spaß beim Extrahieren von Substrings in Java!

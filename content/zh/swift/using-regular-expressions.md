@@ -1,49 +1,53 @@
 ---
-title:    "Swift: 使用正則表達式"
+title:    "Swift: 使用正则表达式"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么使用正则表达式？
+# 为什么要使用正则表达式
 
-正则表达式是一种强大的文本匹配工具，它可以帮助我们快速、准确地在字符串中搜索和替换特定的内容。它可以在很多编程语言中使用，包括Swift，而且在处理复杂的字符串操作时非常有用。
+随着编程语言的不断发展，我们可以使用各种各样的工具来处理字符串。而正则表达式是其中最强大的工具之一。它可以帮助我们快速有效地处理字符串，让编程变得更加高效和便捷。
 
-## 如何使用正则表达式
+# 如何使用正则表达式
 
-首先，我们需要导入Foundation框架，因为正则表达式是Swift中的一个内置功能。然后，我们可以使用NSRegularExpression类来创建一个正则表达式对象，并传入我们想要匹配的模式。
+首先，我们需要在代码中导入正则表达式的模块。在Swift中，我们可以使用`import Foundation`来导入。然后，我们可以使用`NSRegularExpression`来创建正则表达式的实例。
 
+```Swift
+import Foundation 
+
+// 创建正则表达式实例
+let regex = try NSRegularExpression(pattern: "^[a-zA-Z]{5}$", options: [])
 ```
-import Foundation
 
-let text = "Hello, my name is John. I am 25 years old."
+接下来，我们需要使用正则表达式的`matches(in:string:options:range:)`方法来匹配字符串，并通过遍历结果来获取匹配到的内容。
 
-do {
-    let regex = try NSRegularExpression(pattern: "[A-Za-z]+", options: [])
-    let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-    for match in matches {
-        let matchStr = (text as NSString).substring(with: match.range)
-        print(matchStr)
-    }
-} catch {
-    print("Invalid regular expression: \(error.localizedDescription)")
+```Swift
+let testString = "Hello"
+let results = regex.matches(in: testString, options: [], range: NSRange(location: 0, length: testString.utf16.count))
+
+// 遍历匹配结果
+for result in results {
+    // 获取匹配到的内容
+    let match = testString[Range(result.range, in: testString)!]
+    print(match)
 }
 ```
 
-上面的代码将输出"Hello", "my", "name", "is", "John", "I", "am", "years", "old"，这些都是与我们定义的模式匹配的单词。
+以上代码将会打印出字符串中匹配到的内容，即"Hello"。
 
-## 深入了解正则表达式
+# 深入了解正则表达式
 
-正则表达式有很多特殊的符号和语法，可以用来匹配不同类型的字符，如数字、字母、空白字符等。它还可以利用分组来提取特定的信息，或者使用替换来修改字符串。
+除了简单的匹配外，正则表达式还可以使用特殊字符、量词和分组来更加精确地匹配字符串。例如：
 
-如果想要深入了解正则表达式的使用方法和技巧，可以查看以下链接：
+- 使用`|`来匹配多个可选项：`H(i|ello)`可以匹配"I"或"Hello"。
+- 使用`+`和`*`来匹配多个相同字符：`e+xample`可以匹配"example"、"eeexample"等。
+- 使用小括号来创建分组，并使用`()`来捕获匹配到的内容。
 
-- [苹果官方文档：NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
-- [菜鸟教程：正则表达式](https://www.runoob.com/regexp/regexp-tutorial.html)
+若想深入学习更多关于正则表达式的知识，可以查阅相关文档或教程。
 
-## 看看这些链接
+# 参考文献
 
-- [苹果官方文档：String和Character](https://developer.apple.com/documentation/swift/string)
-- [Swift编程入门教程](https://www.runoob.com/swift/swift-tutorial.html)
-- [常用正则表达式大全](https://github.com/gskudlarick/RegEx-Patterns/blob/master/zh_cn.md)
+- [Swift.org官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [NSRegularExpression类参考文档](https://developer.apple.com/documentation/foundation/nsregularexpression)

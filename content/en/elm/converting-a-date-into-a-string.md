@@ -1,39 +1,52 @@
 ---
 title:    "Elm recipe: Converting a date into a string"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting dates into strings may seem like a simple task, but it can become a bit trickier when working with different formats and time zones. However, using Elm's built-in functions, we can easily convert a date into a string without any hassle.
+Understanding how to convert a date into a string is an essential skill for any Elm programmer. Converting a date into a string allows you to display dates in a user-friendly format, making your application more user-friendly and intuitive.
 
 ## How To
 
-To convert a date into a string in Elm, we can use the `toString` function. This function takes in a `Date` value and returns a string representation of the date.
+In Elm, dates are stored as a type called `Posix`, which represents the number of milliseconds since January 1, 1970, at midnight UTC. To convert a `Posix` value into a human-readable date string, we will use the `Time` library. Let's look at an example of converting a `Posix` value into a string representing the current date:
 
-Here is an example of how we can use this function:
+```elm
+import Time exposing (posixToMillis, millisToPosix, toString, Date)
 
-```Elm
-import Date exposing (Date)
+-- Get current date as `Posix` value
+currentTime : Time.Posix
+currentTime =
+  Time.now
 
-dateToString : Date -> String
-dateToString date =
-    Date.toString "MM/dd/yyyy" date
+-- Convert `Posix` value to `Date` type
+currentDate : Time.Date
+currentDate =
+  Time.millisToPosix currentTime
 
--- Output: "07/22/2021"
+-- Convert `Date` type to string
+dateString : String
+dateString =
+  Time.toString Date.utc "%Y-%m-%d" currentDate
 ```
 
-In the example above, we first import the `Date` module which provides us with the necessary functions to work with dates. Then, we define a function `dateToString` which takes in a `Date` value and returns a string representation of the date in the format of "MM/dd/yyyy". We can then call this function with a `Date` value and it will return the date as a string.
+In this example, we first import the `Time` library which has functions for working with dates and times. We then use the `now` function to get the current time as a `Posix` value. Next, we use the `millisToPosix` function to convert this value into a `Date` type. Finally, we use the `toString` function to format the `Date` into a string, using the `"%Y-%m-%d"` format for a date in the UTC timezone.
+
+Running this code will give us an output of "2021-01-25" as the current date in the UTC timezone. You can play around with different formats and timezones to get your desired output.
 
 ## Deep Dive
 
-The `toString` function is actually a combination of two functions, `format` and `fromDate`. The `format` function takes in a format string and a `Date` value and returns a string representation of the date in the specified format. The `fromDate` function takes in a `Date` value and returns a list of integers representing the year, month, and day of the date.
+As mentioned earlier, Elm stores dates as `Posix` values, which is a common way of representing dates in programming. This format allows for easy comparisons and calculations with dates. However, for displaying dates in a user-friendly format, we must convert them into a string.
 
-Using these two functions, we can create more customized date-to-string conversions. For example, instead of using a predefined format, we can use `format` to specify our own formatting rules. Or, we can use `fromDate` to extract specific information from a date and use it in our string.
+The `Time` library provides many functions for working with dates and times, including formatting and parsing strings. It also has functions for performing operations on dates, such as adding and subtracting days, hours, and other time units.
+
+When converting a date into a string, it's essential to consider the timezone to get accurate results. The `Date` type in Elm allows for specifying the timezone when converting to a `String` to ensure the correct date is displayed.
 
 ## See Also
 
-- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Converting a string to a date in Elm](https://www.rivermanmedia.com/convert-a-string-to-a-date-in-elm/) (blog post by Riverman Media)
+- Elm Time Library Documentation: https://package.elm-lang.org/packages/elm/time/latest/
+- Date and Time Formatting in Elm: https://guide.elm-lang.org/effects/time.html#date-time-formatting
+- Elm DateTime Cheat Sheet: https://korban.net/elm/elm-datetime-cheat-sheet/

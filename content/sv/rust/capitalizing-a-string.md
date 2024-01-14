@@ -1,61 +1,49 @@
 ---
-title:    "Rust: Kapitalisering av en sträng"
+title:    "Rust: Konvertera en sträng till versaler"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att dela upp denna kodpost i tre delar med fokus på kapitalisering av strängar i Rust, är för att ge läsarna en djupare förståelse för hur och varför man bör använda sig av denna funktion i sitt programmeringsarbete. Det kan vara ett användbart verktyg för att förbättra användbarheten och läsbarheten i dina program.
+Att kunna konvertera en sträng till versaler är en viktig funktion inom programmering. Till exempel kan det vara användbart när man vill jämföra två strängar utan att bry sig om storleken på bokstäverna. I den här bloggposten kommer vi att lära oss hur man kapitaliserar en sträng i programmeringsspråket Rust.
 
-## Hur man gör det
+## Hur man gör
 
-För att börja använda funktionen för att kapitalisera strängar i Rust, behöver du först importera detta bibliotek i ditt program:
-
-```Rust
-use std::string::String;
-```
-
-Sedan kan du använda den inbyggda metoden `.to_uppercase()` för att kapitalisera en sträng:
+För att kapitalisera en sträng i Rust finns det ett par olika sätt att göra det på. Ett enkelt sätt är att använda standardbiblioteket och dess `to_uppercase()`-funktion. Se nedan för ett exempel:
 
 ```Rust
-let my_string = "hej hej".to_uppercase();
-println!("{}", my_string);
+let str = "hej!";
+let capitalized_str = str.to_uppercase();
+
+println!("{}", capitalized_str); // HEJ!
 ```
 
-Output:
+En annan metod är att använda `String`-typen i Rust och funktionen `chars()` för att iterera över varje tecken i strängen och konvertera dem individuellt till versaler. Se nedan för ett annat exempel:
 
 ```Rust
-HEJ HEJ 
+let str = "hej!";
+let mut capitalized_str = String::new();
+
+for c in str.chars() {
+    capitalized_str.push(c.to_uppercase().next().unwrap());
+}
+
+println!("{}", capitalized_str); // HEJ!
 ```
 
-Den här metoden kan också användas på variabler, såsom i följande exempel:
-
-```Rust
-let initial = "jag gillar rust";
-let changed = initial.to_uppercase();
-println!("{} men jag älskar att programmera!", changed);
-```
-
-Output:
-
-```Rust
-JAG GILLAR RUST men jag älskar att programmera!
-```
+Det finns också möjlighet att använda en tredje parts bibliotek, till exempel `strum` eller `regex`, för att få mer avancerade möjligheter för att konvertera strängar till versaler.
 
 ## Djupdykning
 
-Att förstå hur man kapitaliserar strängar i Rust är en viktig del av att arbeta med strängar. Denna funktion kan vara särskilt användbar vid att inkludera användarinput i dina program, där det är viktigt att formatera och visa data på ett lättläst sätt.
+Att konvertera en sträng till versaler kan verka som en enkel uppgift, men det finns faktiskt en hel del logik bakom det. Till exempel måste man ta hänsyn till specialtecken och diakritiska tecken. Dessutom kan skillnaden mellan ASCII och Unicode påverka hur konverteringen görs. Därför är det viktigt att förstå de olika metoderna och deras begränsningar när man jobbar med strängar i Rust.
 
-Det är också värt att notera att `to_uppercase()` är en icke-destruktiv metod, vilket betyder att den inte ändrar på den ursprungliga strängen, utan returnerar en ny kapitaliserad version av den.
+## Se även
 
-## Se också
+För mer information om strängoperationer i Rust, se nedan för några användbara länkar:
 
-Här är några länkar för vidare läsning om strängmanipulering i Rust:
-
-- [Officiell dokumentation för strängar i Rust](https://doc.rust-lang.org/std/string/index.html)
-- [En guide till hur man arbetar med strängar i Rust](https://stevedonovan.github.io/rust-gentle-intro/2-strings.html)
-- [Fler exempel på inbyggda strängfunktioner i Rust](https://www.geeksforgeeks.org/rust-string/)
-
-Tack för att du läste!
+- [Rust Standardbiblioteket - Strängar](https://doc.rust-lang.org/std/string/)
+- [Rust Dokumentation - strum](https://docs.rs/strum/0.18.0/strum/)
+- [Regex Modulen i Rust](https://docs.rs/regex/1.4.2/regex/)

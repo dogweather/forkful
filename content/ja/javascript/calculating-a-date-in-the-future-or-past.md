@@ -1,41 +1,45 @@
 ---
-title:    "Javascript: 未来や過去の日付を計算する"
+title:    "Javascript: 「未来や過去の日付を計算する」"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を計算するのにどのようなメリットがありますか？
-これは、将来や過去の特定の日付を計算する必要がある場合に便利です。例えば、何日後の誕生日を知りたい場合や、日付間の期間を計算したい場合などに役立ちます。
+未来や過去の日付を計算することが重要なのか、わずか1〜2文で説明します。
 
-## 使い方
+## 方法
 
-日付を計算するには、JavascriptのネイティブなDateオブジェクトを使用します。このオブジェクトには、指定した日付や時間を表すプロパティやメソッドが用意されています。
+日付を未来や過去に移動するためのコードの例と、 ```Javascript ... ```のコードブロック内のサンプル出力を提供します。
 
-例えば、今日から1ヶ月後の日付を計算する場合、以下のようにコードを書くことができます。
+例えば、『2021年5月25日から2日後の日付を計算する』には、以下のようなコードが使用されます。
 
-```Javascript
-let today = new Date(); // 現在の日付を取得
-let future = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate()); // 今日の日付から1ヶ月後の日付を計算
-console.log(future); // 結果： "2020-04-11T00:00:00.000Z"
+```Javascript 
+const today = new Date();
+const futureDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
+console.log(futureDate);
 ```
 
-このように、Dateオブジェクトを使用することで簡単に日付の計算ができます。他にも、さまざまな式を組み合わせることで、複雑な日付の計算も可能です。
+出力：
 
-## 詳細について
+``` Javascript
+Wed Jun 09 2021 00:00:00 GMT+0900 (日本標準時)
+```
 
-Dateオブジェクトには、日付や時間を操作するためのメソッドが用意されています。例えば、`getDate()`メソッドを使用すると、現在の日付から何日後の日付を取得することができます。
+## ディープダイブ
 
-また、`setDate()`メソッドを使うと、特定の日付や時間を設定することもできます。これらのメソッドを組み合わせることで、さまざまな日付の計算や操作が可能になります。
+日付の計算は、時差や夏時間など、さまざまな要因によって影響を受けることがあります。未来や過去の日付を正確に計算するためには、それらの要因を考慮に入れる必要があります。また、JavascriptのDateオブジェクトには便利なメソッドがいくつかあり、それらを活用することで簡単に日付を計算することができます。
 
-さらに、Moment.jsなどの外部のライブラリを使用することで、より高度な日付の操作が可能になります。これらのライブラリには、異なるタイムゾーンや多言語に対応する機能も備わっています。
+## 詳しくは
 
-## 参考
+「JavascriptのDateオブジェクトを使用した日付の計算方法」: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[Dateオブジェクト | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+「夏時間を考慮した日付の計算方法」: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
 
-[Moment.js](https://momentjs.com/)
+## 関連記事
 
-[日付計算を行う | Qiita](https://qiita.com/hmsk/items/fc6cf4976e0beae8f328)
+## もっと詳しく知りたい方は、以下の記事も参考にしてみてください。
+
+「Javascriptの日付処理について知る」: https://qiita.com/k-ikegami/items/786b48f20bcd09c86441

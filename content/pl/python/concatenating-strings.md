@@ -1,39 +1,75 @@
 ---
 title:    "Python: Łączenie ciągów znaków"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Jedną z podstawowych operacji w programowaniu jest łączenie lub konkatenacja (ang. concatenation) ciągów znaków. Jest to niezbędne do tworzenia skomplikowanych wyrażeń lub wyświetlania czy zapisywania danych użytkownikowi. Bez łączenia ciągów znaków trudno sobie wyobrazić pisanie nawet najprostszych programów. 
+Ciągłe rozszerzanie możliwości języka Python jest jednym z głównych powodów, dla których warto uczyć się tego języka programowania. Jedną z najważniejszych umiejętności, które są niezbędne do rozwoju w programowaniu, jest umiejętność łączenia ze sobą ciągów znaków, również znane jako konkatenacja. W tym artykule pokażę Ci, dlaczego warto nauczyć się tej umiejętności oraz jak w prosty sposób jej używać w Pythonie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W Pythonie istnieje kilka sposobów na łączenie ciągów znaków. Możemy wykorzystać operator "+" lub metodę "join()". Poniżej przedstawimy kilka przykładów:
+Aby dokonać konkatenacji dwóch ciągów znaków w Pythonie, użyj operatora "+" lub metody "join()". Operator "+" umożliwia łączenie tylko dwóch ciągów, natomiast metoda "join()" może być użyta do łączenia wielu ciągów. Przykładowy kod wyglądałby tak:
 
-```python
-# łączenie dwóch ciągów znaków za pomocą operatora "+"
-imie = "Anna"
-nazwisko = "Nowak"
-pelne_imie = imie + " " + nazwisko
-print(pelne_imie) # wyświetli "Anna Nowak"
-
-# łączenie elementów listy za pomocą metody "join()"
-liczby = [1, 2, 3, 4, 5]
-tekst = "-".join(str(liczba) for liczba in liczby)
-print(tekst) # wyświetli "1-2-3-4-5"
+```Python
+string1 = "Witaj"
+string2 = "w świecie"
+result = string1 + string2
+print(result)
+```
+Output:
+```Python
+Witaj w świecie
 ```
 
-Możemy również wykorzystać formatowanie stringów do łączenia danych w jednym ciągu. Przykłady takiego użycia można znaleźć w dokumentacji Pythona lub na stronach tutoriali.
+Jeśli chcesz użyć metody "join()", musisz określić separator, który będzie rozdzielał łączone ciągi. Przykładowy kod:
 
-## Głębszy zanurzenie
+```Python
+lista = ["Dzień", "dobry", "w", "Pythonie"]
+result = " ".join(lista)
+print(result)
+```
 
-Podczas łączenia ciągów znaków warto pamiętać o kilku rzeczach. Po pierwsze, operacja ta jest wykonywana częściej niż się wydaje, dlatego ważne jest, aby zawsze używać skutecznej i zoptymalizowanej metody. Po drugie, należy pamiętać o poprawnej strukturze danych, aby uniknąć błędów i nieoczekiwanych zachowań programu. W końcu, warto zapoznać się z bibliotekami Pythona, które oferują rozszerzone funkcje łączenia ciągów znaków, np. "fstring" lub "string.Template".
+Output:
+```Python
+Dzień dobry w Pythonie
+```
+
+## Głębsze zagadnienia
+
+W Pythonie istnieje również możliwość formatowania łańcuchów znaków przy użyciu metody "format()". Jest to przydatne w przypadku, gdy chcesz wstawiać zmienne do już istniejących ciągów znaków. Przykładowy kod:
+
+```Python
+name = "Kasia"
+age = 22
+message = "Cześć, mam na imię {} i mam {} lata".format(name, age)
+print(message)
+```
+
+Output:
+```Python
+Cześć, mam na imię Kasia i mam 22 lata
+```
+
+Innym ciekawym aspektem jest możliwość łączenia nie tylko ciągów znaków, ale także innych typów danych, takich jak liczby. Jest to możliwe dzięki funkcji "str()", która konwertuje wartość na ciąg znaków. Przykładowy kod:
+
+```Python
+num1 = "5"
+num2 = 10
+result = int(num1) + num2
+print(result)
+```
+
+Output:
+```Python
+15
+```
 
 ## Zobacz również
 
-- [Dokumentacja Pythona](https://docs.python.org/pl/3/tutorial/introduction.html)
-- [Tutorial Pythona na stronie RealPython](https://realpython.com/python-beginner-tips/)
-- [Inne metody łączenia ciągów znaków w Pythonie](https://realpython.com/python-string-formatting/)
+- [Python String Concatenation](https://www.w3schools.com/python/gloss_python_string_concatenation.asp)
+- [The Ultimate Guide to Python Strings and String Manipulation](https://realpython.com/python-strings/)
+- [Working with Strings in Python](https://www.geeksforgeeks.org/working-with-strings-in-python/)

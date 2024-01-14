@@ -1,34 +1,40 @@
 ---
-title:    "Bash: Skriva en textfil"
+title:    "Bash: Att skriva en textfil"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva textfiler är en vanlig och användbar aktivitet inom Bash-programmering. Genom att skriva en textfil kan du enkelt spara information och instruktioner som du kan återanvända senare. Detta är ett effektivt sätt att organisera din kod och göra den lättare att förstå och redigera.
+Att kunna skriva och redigera textfiler är en grundläggande färdighet för alla som arbetar med Bash-programmering. Genom att kunna skapa och manipulera textfiler kan du skapa mer avancerade och dynamiska skript och applikationer.
 
-## Så här gör du
+## Hur man skriver en textfil i Bash
 
-För att skapa en textfil i Bash, öppna ett nytt terminalfönster och navigera till den plats där du vill skapa filen. Skriv sedan kommandot `touch filnamn.txt` och tryck Enter. Detta skapar en tom textfil med det angivna namnet.
+Det första steget för att skriva en textfil är att öppna ett terminalfönster och navigera till den mapp där du vill spara filen. Sedan kan du använda kommandot `touch` för att skapa en ny tom fil, till exempel:
 
-För att lägga till innehåll i filen kan du använda kommandot `echo`. Till exempel, om du skriver `echo "Detta är en textfil" > filnamn.txt`, kommer texten att skrivas till filen istället för att visas på skärmen. Du kan också använda "> >" för att lägga till nytt innehåll längst ner i filen.
+```Bash
+touch min_textfil.txt
+```
 
-För att öppna och redigera en textfil i terminalen kan du använda kommandot `nano filnamn.txt` eller `vi filnamn.txt`. Till exempel, med `nano` kan du skriva och redigera texten direkt i terminalen med hjälp av tangentbordet.
+Du kan också använda en textredigerare som Nano eller Vi för att skapa och redigera filen. För att öppna filen i Nano, använd kommandot:
 
-När du är klar med att redigera filen, tryck på "Ctrl + X" för att spara ändringarna och avsluta.
+```Bash
+nano min_textfil.txt
+```
+
+Nu kan du skriva in din text i filen och spara den genom att trycka på `Ctrl + X`, sedan välja att spara filen och bekräfta med Enter.
 
 ## Djupdykning
 
-När du skriver en textfil är det viktigt att upprätthålla en korrekt formatering. Detta innebär att använda korrekta mellanslag och radbrytningar för att göra din kod lätt att läsa och förstå.
+När du skriver en textfil i Bash finns det några viktiga aspekter att tänka på. Först och främst måste du se till att använda korrekta teckenkoder för din textfil. Annars kan du stöta på problem när du öppnar filen i en annan applikation eller på en annan dator.
 
-En annan viktig aspekt av att skriva textfiler i Bash är att använda variabler. Variabler gör det möjligt att lagra och återanvända information i din kod. Du kan använda `echo` kommandot tillsammans med variabler för att skriva variabelinnehållet till en textfil.
+En annan viktig aspekt är att använda lämpliga tool för att manipulera och redigera din textfil. Till exempel kan du använda `grep` för att söka efter specifika strängar i filen eller `sed` för att göra ändringar i textinnehållet.
 
-Det finns också många andra kommandon och tekniker som du kan använda när du skriver textfiler i Bash, såsom att läsa och skriva från andra filer, använda villkor och loopar och skapa tabeller och listor.
+## Se också
 
-## Se även
-
-* [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
-* [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-* [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
+- [Bash Guide for Beginners (på svenska)](http://mywiki.wooledge.org/BashGuide/Svenska)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Nano user guide](https://www.nano-editor.org/docs.php)
+- [Vi cheat sheet](https://www.linux.com/training-tutorials/vi-and-vim-cheat-sheet/)

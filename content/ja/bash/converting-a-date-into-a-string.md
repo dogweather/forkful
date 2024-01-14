@@ -1,42 +1,43 @@
 ---
 title:    "Bash: 日付を文字列に変換する"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
 
-日付を文字列に変換することについて、なぜ誰もがそれに取り組むのかを説明します。
+Bashプログラミングの中で日付を文字列に変換する必要性は、コンピューターは日付情報を数字の形式で扱うため、人間が理解しやすい形式に変換するためです。
 
-## 方法
+##方法
 
-日付を文字列に変換するには、Bashの`$date`コマンドを使用します。
-
+まずは、今日の日付を文字列に変換してみましょう。```Bash
+date +"今日は %Y年%m月%d日です。"
+``` 
+出力結果は以下のようになります。
+```
+今日は 2021年08月31日です。
+```
+次に、特定の日付を指定して、その日の日付を文字列に変換してみましょう。
 ```Bash
-date -d "2020-05-23" '+%Y年%m月%d日'
+date -d "2021-10-25" +"%Aは、%B %d, %Yです。"
+```
+出力結果は以下のようになります。
+```
+月曜日は、10月 25, 2021です。
 ```
 
-出力: 2020年05月23日
+##深く掘り下げる
 
-## 詳細について
+日付を文字列に変換する際には、特定の変換指定子を使用する必要があります。例として、```%Y```は年を4桁、```%y```は年を下2桁、```%m```は月を2桁、```%d```は日を2桁で表すことができます。また、より詳細な日付や時刻を表示したい場合には、変換指定子の前に```-```を付けることで指定することができます。
 
-日付を文字列に変換する際、`%Y`や`%m`などの特殊な文字を使用します。これらの文字は、日付の年、月、日を表します。Bashでは`date`コマンドで使うことができます。
+さらに詳しく知りたい方は、Bashのマニュアルページを参照することで、さまざまな変換指定子やオプションを学ぶことができます。
 
-例えば、`%Y`は4桁の年を表し、`%m`は2桁の月を表します。また、`%d`は2桁の日を表します。これらの特殊文字を使うことで、日付を任意の形式で表示することができます。
+##関連リンク
 
-## 参考
+[Bashのマニュアルページ](https://www.gnu.org/software/bash/manual/bash.html)
 
-同様のコマンドや日付の書式設定については以下のリンクを参考にしてください。
+[Dateコマンドのマニュアルページ](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
-- [Bash `date`コマンドの使い方](https://www.atmarkit.co.jp/ait/articles/1901/14/news011.html)
-- [日付を文字列に変換する方法 (英語)](https://bash.cyberciti.biz/guide/Converting_a_String_To_a_Date)
-- [特殊文字の詳細について (英語)](https://www.tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html#ss5.2) 
-
-## 参考
-
-[Bash `date`コマンドの使い方](https://www.atmarkit.co.jp/ait/articles/1901/14/news011.html)
-
-[日付を文字列に変換する方法 (英語)](https://bash.cyberciti.biz/guide/Converting_a_String_To_a_Date)
-
-[特殊文字の詳細について (英語)](https://www.tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html#ss5.2)
+[日付の変換指定子一覧](https://wiki.bash-hackers.org/commands/builtin/date)

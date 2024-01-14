@@ -1,36 +1,42 @@
 ---
-title:    "Ruby: Eliminare i caratteri corrispondenti a un modello"
+title:    "Ruby: Cancellazione di caratteri corrispondenti a un modello"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Perché: Ci sono molte ragioni per cui potresti dover eliminare caratteri corrispondenti a un determinato modello in Ruby. Ad esempio, potresti voler pulire una stringa di input per utilizzarla successivamente in un'altra parte del tuo codice, o potresti voler rimuovere caratteri inutili o indesiderati da un testo.
+## Perché
 
-Come fare: Esistono diverse opzioni per eliminare caratteri corrispondenti a un pattern in Ruby. Uno dei modi più semplici è utilizzando il metodo `gsub`, che sostituisce tutti i caratteri corrispondenti con una stringa vuota. Ad esempio, se volessimo eliminare tutte le vocali da una stringa, potremmo utilizzare il seguente codice:
+Molte volte, durante la scrittura di codice Ruby, può essere necessario eliminare determinati caratteri da una stringa o un array. Questo può essere fatto utilizzando il metodo `delete`, che ci permette di specificare un pattern da seguire per eliminare i caratteri corrispondenti.
 
-```Ruby
-stringa = "Ciao a tutti!"
-stringa.gsub!(/[aeiou]/, "")
-puts stringa #=> "C tt!"
+## Come fare
+
+Per utilizzare il metodo `delete` in Ruby, basta seguire questi semplici passaggi:
+
+1. Definire una stringa o un array su cui vogliamo lavorare.
+2. Utilizzare il metodo `delete` seguito dal pattern tra parentesi.
+3. Assegnare il risultato a una nuova variabile o stamparlo direttamente.
+
+Ecco un esempio di codice che elimina tutti i numeri dall'array:
+
+```ruby
+array_numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+nuovo_array = array_numeri.delete(1..10)
+puts nuovo_array
 ```
+Output: `[]` 
 
-In questo esempio, utilizziamo una regex (espressione regolare) per indicare al metodo `gsub` quali caratteri vogliamo eliminare. La parte `[aeiou]` della regex indica tutti i caratteri vocalici, che vengono sostituiti con una stringa vuota, ovvero eliminati dalla stringa originale. 
+Nel codice sopra, abbiamo creato un array contenente i numeri da 1 a 10 e poi abbiamo utilizzato il metodo `delete` per specificare il range di numeri da eliminare. Il nuovo array ottenuto è vuoto, perché tutti i numeri sono stati eliminati.
 
-Esistono anche altre opzioni per eliminare caratteri corrispondenti a un pattern, come ad esempio il metodo `delete` o l'utilizzo di regex più avanzate. È importante studiare e comprendere le diverse opzioni per scegliere quella più adatta alla tua specifica esigenza.
+## Approfondimento
 
-Approfondimento: Oltre al semplice utilizzo dei metodi sopra menzionati, è possibile anche sfruttare i blocchi di codice per gestire in modo più avanzato l'eliminazione dei caratteri corrispondenti a un determinato pattern. Ad esempio, potresti voler sostituire un carattere con un altro, o eseguire altre operazioni sulla stringa originale. Ecco un esempio di codice che utilizza un blocco per eliminare tutti i caratteri di punteggiatura da una stringa:
+Il metodo `delete` può essere particolarmente utile quando si lavora con stringhe e si vuole eliminare caratteri speciali o spazi bianchi. Inoltre, può essere combinato con altri metodi di manipolazione delle stringhe come `gsub` per eseguire sostituzioni più complesse.
 
-```Ruby
-stringa = "Ciao, come stai?"
-stringa.gsub!(/[[:punct:]]/) { |punct| "" }
-puts stringa #=> "Ciao come stai"
-```
+Un'altra caratteristica interessante è che il metodo `delete` può anche essere chiamato su una stringa senza specificare un pattern, in questo caso eliminerà tutti i caratteri duplicati.
 
-In questo caso, utilizziamo un blocco all'interno del metodo `gsub` per sostituire ogni carattere di punteggiatura con una stringa vuota. Il blocco ci permette di eseguire un'operazione personalizzata su ogni carattere corrispondente, invece di sostituirlo direttamente con una stringa fissa.
+## Vedi anche
 
-Vedi anche: Per saperne di più sulla gestione di stringhe e l'utilizzo di regex in Ruby, puoi consultare i seguenti link:
-
-- [Guida alla sintassi delle Regex in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Documentazione ufficiale sui metodi di stringa in Ruby](https://ruby-doc.org/core-3.0.0/String.html)
-- [Esercitazioni interattive su regex in Ruby](https://rubular.com/)
+- [Ruby String Class Docs](https://ruby-doc.org/core-2.6.3/String.html)
+- [Guide to Ruby Methods](https://www.rubyguides.com/ruby-methods/)
+- [Ruby Regular Expressions](https://www.rubyguides.com/2015/06/ruby-regex/)

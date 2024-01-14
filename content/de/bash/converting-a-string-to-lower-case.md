@@ -1,46 +1,43 @@
 ---
-title:    "Bash: Umwandlung einer Zeichenkette in Kleinbuchstaben"
+title:    "Bash: Umwandlung eines Strings in Kleinbuchstaben"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum man in der Bash-Programmierung eine Zeichenkette in Kleinbuchstaben umwandeln würde. Manchmal ist es notwendig, um Vergleiche durchzuführen oder die Einheitlichkeit in einem Text zu gewährleisten. Egal aus welchem Grund, das Umwandeln von Strings in Kleinbuchstaben ist eine wichtige Fähigkeit, die jeder Bash-Programmierer haben sollte.
+Als Programmiererinnen und Programmierer werden wir oft vor Herausforderungen gestellt, die es zu lösen gilt. Eine solche Herausforderung kann das Konvertieren einer Zeichenfolge (String) in Kleinbuchstaben sein. Aber warum sollten wir das tun?
 
-## Anleitung
+Oftmals ist es im Kontext von Datenverarbeitung oder Textmanipulation notwendig, Strings in ein einheitliches Format zu bringen, um korrekte Ergebnisse zu erzielen. Daher ist es wichtig zu wissen, wie man Strings in Kleinbuchstaben umwandelt.
 
-Es gibt verschiedene Möglichkeiten, um eine Zeichenkette in Bash in Kleinbuchstaben umzuwandeln. Eine Möglichkeit ist die Verwendung des eingebauten Befehls `tr`, der Transliteration ermöglicht. Hier ist ein Beispiel, wie man den Befehl verwenden würde:
+## So geht's
 
-```bash
-echo "HALLO WELT" | tr '[:upper:]' '[:lower:]'
+Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, können wir die `tr` Befehl verwenden:
+
+```Bash
+echo "HEllo WoRLd" | tr [A-Z] [a-z]
 ```
 
-Die Ausgabe dieses Befehls würde "hallo welt" sein. Der erste Teil des Befehls `echo "HALLO WELT"` gibt die ursprüngliche Zeichenkette aus, die in Kleinbuchstaben umgewandelt werden soll. Der Befehl `tr` gibt dann die umgewandelte Zeichenkette aus. Der erste Teil `'[:upper:]'` gibt an, dass die Zeichen in der ursprünglichen Zeichenkette in Großbuchstaben sind und der zweite Teil `'[:lower:]'` gibt an, dass sie in Kleinbuchstaben umgewandelt werden sollen.
+Dies wird die Ausgabe "hello world" produzieren. Hier sehen wir, dass wir die Zeichen von A bis Z durch die Zeichen von a bis z ersetzen. Dies ist eine einfache und effektive Methode, um jede beliebige Zeichenfolge in Kleinbuchstaben umzuwandeln.
 
-Es gibt auch andere Möglichkeiten, um einen String in Kleinbuchstaben umzuwandeln, wie zum Beispiel die Verwendung des Befehls `sed`, der Textmanipulation ermöglicht. Ein Beispiel für die Verwendung von `sed` wäre:
+Alternativ können wir auch die `awk` Methode verwenden:
 
-```bash
-echo "Hallo Welt" | sed 's/.*/\L&/'
+```Bash
+echo "HEllo WoRLd" | awk '{print tolower($0)}'
 ```
 
-Die Ausgabe wäre auch hier "hallo welt". Der Unterschied hier ist, dass die gesamte Zeichenkette in Kleinbuchstaben umgewandelt wird, während bei der Verwendung von `tr` nur die Großbuchstaben umgewandelt werden.
+Auch hier wird die Ausgabe "hello world" sein. Wir nutzen die `tolower` Funktion von `awk` um die Zeichenfolge in Kleinbuchstaben umzuwandeln.
 
-## Tiefergehende Analyse
+## Tiefergehende Informationen
 
-Das Umwandeln einer Zeichenkette in Kleinbuchstaben scheint auf den ersten Blick vielleicht einfach, aber es gibt einige Dinge zu beachten. Zum Beispiel gibt es in verschiedenen Sprachen auch verschiedene Arten von Kleinbuchstaben. In der deutschen Sprache gibt es zum Beispiel die sogenannten Umlaute, die nicht in allen Sprachen vorkommen und daher auch in Kleinbuchstaben anders aussehen können. Es ist wichtig, beim Umwandeln von Strings in Kleinbuchstaben darauf zu achten, dass die gewünschte Schreibweise beibehalten wird.
+Beim Konvertieren von Strings in Kleinbuchstaben sollten wir berücksichtigen, dass dies nur für Alphabete funktioniert. Falls die Zeichenfolge Sonderzeichen oder Zahlen enthält, werden diese nicht in Kleinbuchstaben umgewandelt. In diesem Fall sollten wir zusätzliche Schritte hinzufügen, um auch diese Zeichenfolgen in das einheitliche Format zu bringen.
 
-### Der Befehl `tr`
-
-Der Befehl `tr` ist ein sehr nützliches Werkzeug, um Zeichenketten in der Bash zu manipulieren. Neben der Umwandlung in Groß- oder Kleinbuchstaben kann er auch zum Entfernen oder Ersetzen von bestimmten Zeichen verwendet werden. Es ist wichtig zu beachten, dass `tr` zeilenweise arbeitet und daher möglicherweise nicht für alle Anwendungsfälle geeignet ist.
-
-### Der Befehl `sed`
-
-Im Gegensatz zu `tr` arbeitet der Befehl `sed` zeichenweise und ist daher besser geeignet, um komplexere Textmanipulationen durchzuführen. Er kann auch für globalere Änderungen verwendet werden, wie zum Beispiel das Ersetzen von Wörtern in einer Zeichenkette.
+Es gibt auch verschiedene andere Methoden in der Bash Programmierung, um Strings in Kleinbuchstaben umzuwandeln. Zum Beispiel können wir auch die `sed` oder `perl` Befehle verwenden. Es ist wichtig, die verschiedenen Methoden zu kennen und die am besten geeignete für den spezifischen Anwendungsfall auszuwählen.
 
 ## Siehe auch
 
-* [Bash-Programmierung auf Deutsch lernen](https://wiki.ubuntuusers.de/Bash/)
-* [Befehl tr in der Bash-Dokumentation](https://www.gnu.org/software/sed/manual/)
-* [Befehl sed in der Bash-Dokumentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [10 Ways to Manipulate Strings in Bash](https://linuxhandbook.com/bash-strings/)
+- [Converting Strings to Lowercase in Bash](https://www.baeldung.com/linux/convert-string-lowercase-bash)
+- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)

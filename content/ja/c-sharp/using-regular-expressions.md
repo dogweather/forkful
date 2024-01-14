@@ -1,51 +1,44 @@
 ---
-title:    "C#: 正規表現を使う"
+title:    "C#: 正規表現の使用"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-正規表現を使用する理由は、文字のパターンマッチングやバリデーションを行うためです。これにより、文字列に対するより柔軟な操作が可能になり、プログラミングの効率が向上します。
+正規表現を使うメリットについて説明します。正規表現を使用することで、文字列のパターンを簡単にマッチングしたり、検索したりすることができます。また、コードをより簡潔に記述できるので、作業効率も向上します。
 
 ## 使い方
 
-```C#
-// 文字列がメールアドレス形式であるかをチェックする
-string email = "example@example.com";
-if (Regex.IsMatch(email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
+"```C#
+using System;
+using System.Text.RegularExpressions;
+
+class Program
 {
-    Console.WriteLine("有効なメールアドレスです。");
-} 
-else
-{
-    Console.WriteLine("無効なメールアドレスです。");
+    static void Main()
+    {
+        string text = "今日はいい天気です。";
+        string pattern = "今日";
+
+        // 正規表現を使ってパターンのマッチングを行う
+        Match match = Regex.Match(text, pattern);
+
+        // マッチング結果を出力する
+        Console.WriteLine("マッチングした文字列は " + match.Value + " です。");
+    }
 }
-
-// 文字列から数字のみを抽出する
-string sentence = "今日は20日です。明日は21日です。";
-MatchCollection matches = Regex.Matches(sentence, @"\d+");
-foreach (Match match in matches)
-{
-    Console.WriteLine(match.Value);
-}
 ```
+出力: マッチングした文字列は 今日 です。
 
-**出力**
+## ディープダイブ
 
-```
-有効なメールアドレスです。
-20
-21
-```
+正規表現のパターンの書き方や特殊文字の意味など、詳細について説明します。また、正規表現のグループ化やマッチング条件の指定など、より高度な使い方も紹介します。正規表現をマスターすることで、より効率的に検索や置換ができるようになります。
 
-## 深堀り
+## さらに見る
 
-正規表現は非常に強力なツールであり、複雑な文字列操作を行うことができます。しかし、パターンの書き方やメタ文字の使い方など、正規表現の文法を学ぶことは少し時間がかかるかもしれません。しかし、コーディングの効率を向上させるために正規表現をマスターすることは非常に価値のあることです。
-
-##  関連リンク
-
-- [C#で正規表現を使って文字列操作する方法](https://www.slideshare.net/gihyodocojp/c-1)
-- [正規表現の基礎知識](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [正規表現のテストツール](https://regex101.com/)
+- [C#での正規表現の使い方 | Microsoft Docs](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [正規表現チュートリアル | W3Schools](https://www.w3schools.com/js/js_regex.asp)
+- [C#正規表現の基礎知識 | codezine](https://codezine.jp/article/detail/1941)

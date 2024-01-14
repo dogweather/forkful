@@ -1,72 +1,69 @@
 ---
 title:    "Python: Porównanie dwóch dat"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Porównywanie dat jest częstym zadaniem w programowaniu. Może to być przydatne, gdy chcemy wyświetlić najnowsze wydarzenia lub sortować informacje chronologicznie. W tym artykule dowiesz się, jak porównywać daty w języku Python i jakie funkcje można wykorzystać do tego celu.
 
-W dzisiejszych czasach programowanie stało się jedną z najważniejszych umiejętności. Jednym z aspektów tego obszaru jest porównywanie dat, które jest nieodłącznym elementem wielu aplikacji. W tym artykule dowiesz się dlaczego takie porównywanie jest ważne i jak to zrobić w języku Python.
+## Jak
+Aby porównać dwie daty w Pythonie, musimy najpierw utworzyć obiekty daty za pomocą funkcji `date()` z modułu `datetime`. Możemy przekazać jej rok, miesiąc i dzień, np. `date(2021, 2, 14)` dla daty 14 lutego 2021 roku. Następnie, aby porównać te daty, możemy użyć operatora porównania `>` lub `<` wraz z utworzonymi obiektami daty.
 
-## Jak to zrobić
-
-Porównywanie dat w języku Python jest bardzo proste i wymaga użycia specjalnego modułu o nazwie "datetime". Najpierw należy zaimportować ten moduł poleceniem:
-
+Przykład:
 ```Python
-import datetime
-```
+from datetime import date
 
-Następnie, aby utworzyć datę, musimy użyć klasy "date" z tego modułu. Poniżej znajduje się przykład kodu, który tworzy datę 1 stycznia 2021 roku:
+# Utworzenie obiektów daty
+data_1 = date(2021, 2, 14)
+data_2 = date(2021, 3, 1)
 
-```Python
-data1 = datetime.date(2021, 1, 1)
-```
-
-Aby porównać dwie daty, użyjemy operatorów porównania, takich jak ">" (większe niż) lub "<" (mniejsze niż). Poniższy kod porównuje datę "data1" z aktualną datą:
-
-```Python
-if data1 < datetime.date.today():
-    print("Data jest z przeszłości.")
+# Porównanie dat
+if data_1 < data_2:
+    print("Data 1 jest wcześniejsza niż data 2")
+elif data_2 > data_1:
+    print("Data 2 jest późniejsza niż data 1")
 else:
-    print("Data jest z przyszłości.")
+    print("Obie daty są takie same")
+```
+#### Wynik:
+```
+Data 1 jest wcześniejsza niż data 2
 ```
 
-Wynik tego kodu będzie zależny od aktualnej daty. Jeśli jest to data wcześniejsza niż 1 stycznia 2021 roku, to pojawi się komunikat "Data jest z przeszłości". W przeciwnym razie, pojawi się komunikat "Data jest z przyszłości".
+Możemy również wykorzystać funkcję `today()` do utworzenia obiektu daty z aktualną datą i porównać go z wcześniej utworzonymi obiektami.
 
-Możemy również dodawać lub odejmować dni, miesiące i lata do naszej daty, używając metody "replace" oraz klasy "timedelta". Przykładowo:
-
+Przykład:
 ```Python
-data2 = data1.replace(year=2022) #zmiana roku daty "data1"
-data3 = data2 + datetime.timedelta(days=30) #dodanie 30 dni do daty "data2"
-```
+from datetime import date
 
-W tym przykładzie, data "data3" będzie równa 30 dni po dacie "data2".
+# Utworzenie obiektów daty
+data_1 = date(2021, 2, 14)
+data_2 = date(2021, 3, 1)
+
+# Porównanie dat
+dzisiaj = date.today()
+if dzisiaj > data_1:
+    print("Dzisiaj jest później niż data 1")
+elif dzisiaj < data_1:
+    print("Dzisiaj jest wcześniej niż data 1")
+else:
+    print("Data 1 jest dzisiaj")
+```
+#### Wynik:
+```
+Dzisiaj jest później niż data 1
+```
 
 ## Deep Dive
+Istnieje wiele funkcji, które mogą być użyteczne podczas porównywania dat w Pythonie. Jedną z nich jest `timedelta()`, która pozwala na przesunięcie daty o określoną liczbę dni lub innych jednostek. Możemy wykorzystać tę funkcję do stworzenia zakresu dat i przeiterować przez nie porównując je z innymi datami.
 
-Porównywanie dat może być bardziej skomplikowane, jeśli uwzględnimy również informacje o godzinie, minucie i sekundzie. W takim przypadku, należy użyć klasy "datetime" zamiast "date". Poniżej znajduje się przykładowy kod porównujący dwie daty wraz z godzinami:
-
-```Python
-czas1 = datetime.datetime(2021, 1, 1, 12, 30, 0) #12:30:00 1 stycznia 2021
-czas2 = datetime.datetime(2020, 12, 31, 12, 0, 0) #12:00:00 31 grudnia 2020
-if czas1 > czas2:
-    print("Czas pierwszy jest późniejszy.")
-elif czas1 < czas2:
-    print("Czas drugi jest późniejszy.")
-else:
-    print("Oba czasy są równe.")
-```
-
-Wynik tego kodu będzie zależny od porównywanego czasu. W tym przypadku, wypisze się, że "Czas pierwszy jest późniejszy", ponieważ jest to 12:30 1 stycznia 2021 w porównaniu do 12:00 31 grudnia 2020.
+Kolejną przydatną funkcją jest `strftime()`, która pozwala na formatowanie daty w różnych formatach. Na przykład, `data.strftime("%d/%m/%Y")` zwróci datę w formacie "14/02/2021". Możemy wykorzystać tę funkcję do wyświetlania dat w bardziej czytelny sposób.
 
 ## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej na temat porównywania dat w języku Python, warto zapoznać się z oficjalną dokumentacją modułu "datetime", a także z innymi artykułami na ten temat:
-
-- https://docs.python.org/3/library/datetime.html
-- https://www.w3schools.com/python/python_datetime.asp
-- https://realpython.com/python-datetime/
-- https://www.programiz.com/python-programming/datetime
-
-Dzięki temu będziesz miał pełniejszy obraz na ten temat
+- Dokumentacja modułu datetime w języku Python: https://docs.python.org/3/library/datetime.html
+- Szybki tutorial o pracy z datami w Pythonie: https://www.programiz.com/python-programming/datetime
+- Porównywanie dat i utworzenie zakresu dat w Pythonie: https://www.geeksforgeeks.org/python-combining-two-different-datetime-datetime-objects-using-datetime-timedelta/
+- Inne przydatne funkcje z modułu datetime: https://www.programiz.com/python-programming/datetime#functions

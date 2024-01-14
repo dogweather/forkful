@@ -1,52 +1,58 @@
 ---
 title:    "C++: Trouver la longueur d'une chaîne de caractères"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Le calcul de la longueur d'une chaîne de caractères est une tâche courante en programmation qui peut être utile dans de nombreuses situations. Cela vous permet de connaître le nombre exact de caractères dans une chaîne, ce qui vous permettra de manipuler et de traiter les données plus efficacement. Cela peut également être utile pour vérifier si une chaîne est vide ou si elle dépasse une longueur maximale définie.
+
+Trouver la longueur d'une chaîne de caractères est une tâche courante dans le développement d'applications C++. Cela peut être utile pour la validation des entrées utilisateur, la manipulation de données et bien d'autres utilisations.
 
 ## Comment faire
-Le calcul de la longueur d'une chaîne est assez simple en C++. Il suffit d'utiliser la fonction intégrée `length()` ou `size()` en utilisant la notation pointée (`->`) pour accéder à la longueur de la chaîne. Voici un exemple de code :
+
+Pour trouver la longueur d'une chaîne de caractères en C++, vous pouvez utiliser la fonction `strlen()` de la bibliothèque standard. Voici un exemple de code :
+
 ```C++
-#include <iostream> 
+#include <iostream>
+#include <cstring>
 
-int main() { 
-    std::string chaine = "Bonjour le monde !"; 
-    int longueur = chaine.length(); 
-    std::cout << "La longueur de la chaîne est de " << longueur << " caractères." << std::endl; 
+// Fonction qui prend une chaîne de caractères comme argument
+// et renvoie sa longueur
+int trouverLongueur(string chaine) {
+  // Utilisez la fonction strlen() pour trouver la longueur de la chaîne
+  int longueur = strlen(chaine);
 
-    return 0; 
+  // Renvoie la longueur
+  return longueur;
+}
+
+int main() {
+  // Déclarez une chaîne de caractères
+  string chaine = "Bonjour tout le monde !";
+
+  // Appelez la fonction pour trouver la longueur de la chaîne
+  int longueur = trouverLongueur(chaine);
+
+  // Affichez la longueur de la chaîne
+  cout << "La longueur de la chaîne est : " << longueur << endl;
+
+  return 0;
 }
 ```
-Output : La longueur de la chaîne est de 18 caractères.
 
-On peut également utiliser la boucle `for` pour parcourir une chaîne de caractères et compter le nombre de caractères un à un. Voici un exemple de code :
-```C++
-#include <iostream> 
+Output :
 
-int main() { 
-    std::string chaine = "Bonjour le monde !"; 
-    int longueur = 0; 
+    La longueur de la chaîne est : 22
 
-    for(int i = 0; chaine[i] != '\0'; ++i) {
-        longueur++; 
-    }
+## Plongez plus en profondeur
 
-    std::cout << "La longueur de la chaîne est de " << longueur << " caractères." << std::endl; 
+La fonction `strlen()` utilise une boucle pour parcourir chaque caractère de la chaîne et renvoie le nombre total de caractères. Il est important de noter que cette fonction ne compte que les caractères jusqu'au premier caractère nul (`\0`). Si la chaîne se termine par un caractère nul, celui-ci ne sera pas compté.
 
-    return 0; 
-}
-```
-Output : La longueur de la chaîne est de 18 caractères.
-
-## Plongée en profondeur
-En C++, chaque chaîne de caractères est terminée par un caractère nul (`\0`), qui est automatiquement ajouté à la fin lors de l'initialisation ou de la concaténation de chaînes de caractères. Cela signifie que pour compter exactement le nombre de caractères dans une chaîne, il suffit de parcourir la chaîne et de s'arrêter lorsque le caractère nul est rencontré.
-
-Il est également important de noter que la fonction `length()` renvoie un `size_t`, qui peut être différent d'un entier régulier (`int`). Il est donc préférable d'utiliser `size_t` pour déclarer la variable de longueur de la chaîne.
+De plus, en utilisant la bibliothèque `<cstring>`, vous pouvez également utiliser la fonction `strnlen()`, qui prend un deuxième argument spécifiant le nombre maximum de caractères à parcourir. Cela peut être utile pour éviter les dépassements de mémoire et les erreurs de segmentation.
 
 ## Voir aussi
-- [Documentation sur la fonction `length()` en C++](https://www.cplusplus.com/reference/string/string/length/)
-- [Documentation sur la fonction `size()` en C++](https://www.cplusplus.com/reference/string/string/size/)
+
+- [Documentation sur `strlen()`](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Documentation sur `strnlen()`](https://www.cplusplus.com/reference/cstring/strnlen/)

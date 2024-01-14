@@ -1,86 +1,66 @@
 ---
 title:    "C++ recipe: Searching and replacing text"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-As a programmer, one of the most common tasks is to search and replace text in a codebase. This could be for various reasons such as correcting typos, updating variables, or refactoring code. Manual searching and replacing can be time-consuming and error-prone, which makes it important to know how to do it efficiently using code. 
+## Why 
+There are many reasons why someone would need to search and replace text in their code. Some common examples include fixing errors, standardizing variable names, or implementing new features. Searching and replacing text can save time and effort when making large scale changes to code.
 
 ## How To
-
-There are various ways to search and replace text in C++. One method is by using the `std::string` class and its `find()` and `replace()` functions. Here's a sample code snippet that demonstrates this approach:
-
-```C++
-#include <iostream> 
-#include <string> 
-  
-int main() 
-{ 
-    // Define string 
-    std::string str = "Hello World!"; 
-  
-    // Print original string
-    std::cout << "Original String: " << str << std::endl;
-
-    // Find and replace "World" with "Universe" 
-    str.replace(str.find("World"), 5, "Universe"); 
-
-    // Print modified string 
-    std::cout << "Modified String: " << str << std::endl;
-  
-    return 0; 
-} 
-```
-
-*Output:*
+Searching and replacing text can be done in any text editor or IDE. Most editors have a built-in find and replace function, but this can also be done through a simple C++ program. Let's take a look at an example using the C++ string library:
 
 ```
-Original String: Hello World!
-Modified String: Hello Universe!
-```
-
-In this code, we use the `find()` function to locate the position of the first occurrence of "World" in the string, and then use the `replace()` function to replace it with "Universe". This method is useful for simple text replacements, but may not be ideal for more complex searching patterns.
-
-Another approach is using regular expressions with the `std::regex` class. Regular expressions are powerful tools for searching and manipulating strings. Here's an example of how to use them for searching and replacing:
-
-```C++
 #include <iostream>
-#include <regex>
 #include <string>
 
-int main()
-{
-    // Define string
-    std::string str = "Today is 01/01/2022";
+int main() {
+    //Initialize string
+    std::string sentence = "Hello world!";
 
-    // Define regex pattern
-    std::regex date_pattern("\\d\\d/\\d\\d/\\d\\d\\d\\d");
+    //Replace "world" with "universe"
+    sentence.replace(sentence.find("world"), 5, "universe");
 
-    // Replace all dates with "TBD"
-    std::cout << std::regex_replace(str, date_pattern, "TBD") << std::endl;
+    //Output the updated string
+    std::cout << sentence << std::endl;
 
     return 0;
 }
 ```
+Output: Hello universe!
 
-*Output:*
+As you can see, the string's "find" function is used to locate the position of the word "world" and the "replace" function is used to replace it with "universe". This can be done for multiple instances of the word as well.
+
+Another approach is to use regular expressions. This allows for more advanced searching and replacing with specific patterns. Here's an example using the C++ regex library:
 
 ```
-Today is TBD
-```
+#include <iostream>
+#include <regex>
 
-In this code, we define a regular expression pattern that matches dates in the format "mm/dd/yyyy". We then use the `regex_replace()` function to replace all occurrences of this pattern with "TBD". Regular expressions are incredibly powerful and have a wide range of use cases, making them a valuable tool for searching and replacing text in your code.
+int main() {
+    //Initialize string
+    std::string sentence = "The quick brown fox jumps over the lazy dog.";
+
+    //Replace all vowels with the letter "a"
+    sentence = std::regex_replace(sentence, std::regex("[aeiou]"), "a");
+
+    //Output the updated string
+    std::cout << sentence << std::endl;
+
+    return 0;
+}
+```
+Output: Tha qaack braan fax jamps avar tha lazy dag.
 
 ## Deep Dive
+Searching and replacing text can also be done using command line tools like sed or using scripting languages like Python or Perl. It's important to carefully consider the text you are searching for and the text you want to replace it with, as well as using caution when using regular expressions.
 
-While these are just two examples of how to search and replace text in C++, there are many other methods and tools available, such as using libraries like Boost or using third-party text editors with built-in find and replace features. It's important to understand the specific requirements of your task and choose the best method for efficient and accurate results. Additionally, it's always good to familiarize yourself with the specific functions or tools you are using, as this can help optimize your code and avoid any unexpected errors.
+It's also helpful to use version control when making large scale changes to code, as it allows for easy reverting in case of any errors.
 
 ## See Also
-
-- [std::string documentation](https://en.cppreference.com/w/cpp/string/basic_string)
-- [std::regex documentation](https://en.cppreference.com/w/cpp/regex)
-- [Boost library](https://www.boost.org/)
-- [Third-party text editors](https://stackoverflow.com/questions/40584978/regex-search-and-replace-in-c-files-using-ultraedit)
+- [C++ string library documentation](https://www.cplusplus.com/reference/string/)
+- [C++ regex library documentation](https://www.cplusplus.com/reference/regex/)
+- [Sed tutorial](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [Python string methods](https://www.w3schools.com/python/python_strings.asp)

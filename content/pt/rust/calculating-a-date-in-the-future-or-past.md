@@ -1,41 +1,42 @@
 ---
 title:    "Rust: Calculando uma data no futuro ou passado"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
+Calculando datas no futuro e no passado é uma habilidade importante para qualquer programador. Saber como calcular datas precisas pode facilitar muito a criação de aplicações e lidar com lógica de tempo.
 
-Se você é um programador em busca de uma linguagem moderna e eficiente para desenvolver suas aplicações, então pode ser que você já tenha ouvido falar sobre Rust. Essa linguagem de programação está ganhando cada vez mais popularidade devido ao seu desempenho e segurança. E uma das funcionalidades interessantes do Rust é a possibilidade de calcular datas no futuro ou passado.
+## Como Fazer
+A linguagem de programação Rust possui uma ótima biblioteca integrada para lidar com datas. Vamos dar uma olhada em como calcular datas no futuro e no passado usando Rust.
 
-## Como fazer
+```Rust
+use chrono::{NaiveDate, Duration};
 
-Para calcular uma data no futuro ou passado em Rust, podemos usar a biblioteca `chrono`. Essa biblioteca oferece diversas funções e estruturas para trabalhar com datas e horas de forma simples e eficiente. Vamos ver um exemplo de como calcular a data de amanhã utilizando `chrono`:
+// Calculando 10 dias a partir de hoje
+let today = NaiveDate::today();
+let future = today + Duration::days(10);
+println!("10 dias a partir de hoje: {:?}", future);
 
+// Calculando 1 ano atrás a partir de hoje
+let past = today - Duration::days(365);
+println!("1 ano atrás a partir de hoje: {:?}", past);
 ```
-use chrono::{Utc, Duration};
 
-fn main() {
-    let today = Utc::today(); // obtém a data atual no timezone UTC
-    let one_day = Duration::days(1); // cria um intervalo de 1 dia
-    let tomorrow = today + one_day; // soma o intervalo à data atual
-    println!("{}", tomorrow); // imprime a data de amanhã no formato padrão
-}
+Output:
+```
+10 dias a partir de hoje: 2019-08-24
+1 ano atrás a partir de hoje: 2018-08-25
 ```
 
-Ao executar esse código, teremos o seguinte resultado:
+## Mergulho Profundo
+Além de adicionar e subtrair dias, a biblioteca Chrono também permite manipular datas de outras formas, como meses, horas e minutos. Além disso, é possível comparar datas e verificar se uma é anterior, posterior ou igual a outra.
 
-`2021-01-17`
-
-## Aprofundando-se
-
-Além de calcular datas no futuro ou passado, a biblioteca `chrono` também permite realizar outras operações interessantes, como extrair informações específicas de uma data, converter para diferentes formatos ou timezones, entre outras. Vale a pena explorar a documentação oficial para descobrir mais funcionalidades dessa biblioteca.
-
-Outro ponto importante é lembrar que datas e horas podem ser um tanto complexas, com diferentes calendários, fusos horários e noções de tempo. Por isso, o uso de uma biblioteca como `chrono` pode facilitar muito o trabalho de lidar com esses conceitos.
+Outra coisa interessante é que a biblioteca também lida com fusos horários e horário de verão, o que facilita bastante na hora de trabalhar com diferentes regiões do mundo.
 
 ## Veja também
-
-- Documentação oficial da biblioteca `chrono`: https://docs.rs/chrono/
-- Exemplos de cálculo de datas com `chrono`: https://www.educative.io/blog/tutorial-rust-date-strings
-- Rust Brasil - Comunidade brasileira de Rust: https://rust-br.org/
+- Documentação da biblioteca Chrono: https://docs.rs/chrono/
+- Tutorial sobre como manipular datas em Rust: https://blog.wearewizards.io/manipulating-dates-with-chrono-and-rust
+- Repositório de exemplos com datas em Rust: https://github.com/shepmaster/dates-in-rust

@@ -1,42 +1,63 @@
 ---
-title:    "Bash: Päivämäärän haku"
+title:    "Bash: Päivämäärän hankkiminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi on tärkeää selvittää nykyinen päivämäärä?
+## Miksi
+Tervetuloa lukemaan uutta blogipostausta Bash-ohjelmoinnista! Tässä artikkelissa käsitellään kuinka saat nykyisen päivämäärän Bash-skriptin avulla ja miksi tämä taito on hyödyllinen.
 
-Monissa Bash-skripteissä on tarpeen saada nykyinen päivämäärä ja aika, jotta skripti voi suorittaa halutun toiminnon oikeaan aikaan. Esimerkiksi tiedostojen varmuuskopiointi- tai loki-skriptiä voi haluta ajaa joka päivä ja tallentaa varmuuskopio tai loki tiedostonimeen, johon sisältyy nykyinen päivämäärä. Tämä tekee tiedostojen järjestelyn helpommaksi ja auttaa selvittämään, milloin mikäkin toiminto on suoritettu.
+## Kuinka
+Bash-ohjelmointi on tärkeä osa monia IT-alan tehtäviä, ja usein haluamme käyttää skriptejä tehdäksemme päivittäisiä tehtäviämme helpommiksi. Yksi näistä tehtävistä voi olla nykyisen päivämäärän hakeminen. Voit tehdä tämän näppärästi Bash-skriptien avulla.
 
-## Kuinka: Kuinka saada nykyinen päivämäärä Bash-skriptissä?
-
-Bashilla on useita erilaisia komentoja, joilla voit saada päivämäärä ja aika muodossa, joka sopii skriptisi tarpeisiin. Yksi yksinkertainen tapa on käyttää `date` komentoa ja muotoilla päivämäärä haluamallasi tavalla.
-
-Esimerkiksi voit käyttää tätä komentoa saadaksesi nykyisen päivämäärän muodossa "pv.kk.vvvv":
+Aloitetaan esittelyllä eräästä Bash-ohjelmoinnin perustyökalusta, nimeltään `date`. Tämä komento näyttää nykyisen päivämäärän ja ajan seuraavassa muodossa:
 
 ```Bash
-date +"%d.%m.%Y"
+Wed Sep 1 16:53:22 UTC 2021
 ```
 
-Tämän komennon tuloste voisi näyttää esimerkiksi tältä:
+Mutta mitä jos haluat muuttaa päivämäärän esitysmuotoa tai tulostaa vain tietyn osan päivämäärästä? Tässä muutamia esimerkkejä, kuinka se voidaan tehdä käyttämällä `date` komentoa:
+
+Haluatko nähdä vain nykyisen kuukauden numeron?
 
 ```Bash
-24.03.2021
+date +%m
 ```
 
-Voit myös käyttää muita komennon vaihtoehtoja muotoillessasi päivämäärää, kuten lisätä kellonajan tai aikavyöhykkeen. Kannattaa tutkia `date` komennon manuaalisivua lisätietojen saamiseksi.
+Tämä komento tulostaa pelkästään numeron, joka vastaa nykyistä kuukautta. Esimerkiksi tällä hetkellä se näyttäisi "09".
 
-## Syvempi sukellus: Päivämäärän hankkiminen Bash-skriptissä
+Entä jos tarvitset vuoden kahdella viimeisellä numerolla?
 
-Bash on Linux-komentotulkin mukana tuleva ohjelmointikieli, joka tekee siitä helpon ja monipuolisen tavan hankkia päivämäärä ja aika skriptin suorituksen aikana.
+```Bash
+date +%y
+```
 
-Voit käyttää myös `date` komennon lisäksi muita Bashin sisäänrakennettuja muuttujia, kuten `$DATE`, joka sisältää nykyisen päivämäärän, tai `$TIME`, joka sisältää nykyisen ajan. Näiden muuttujien sisältöä voi muokata tai käyttää osana tiedostonimeä tai muuta toimintoa.
+Tämä näyttää nykyisen vuoden kahdella viimeisellä numerolla, esimerkiksi "21".
 
-Lisäksi voit suorittaa Bash-skriptit automaattisesti tiettyinä päivinä tai aikoina käyttämällä `crontab` -ohjelmaa. `crontab` mahdollistaa toistuvien tehtävien suorittamisen määritetyssä aikataulussa, joten voit esimerkiksi luoda skriptin, joka suorittaa varmuuskopioinnin joka ilta.
+Voit myös tulostaa nykyisen päivämäärän tiettynä muodossa. Tässä muutamia esimerkkejä:
 
-# Katso myös:
+```Bash
+date +%d/%m/%Y
+```
 
-- `date` manuaalisivu
-- Bash scripting tutorial (englanniksi)
-- crontab Wikipedia-artikkeli (englanniksi)
+Tämä tulostaa päivämäärän muodossa päivä/kuukausi/vuosi. Esimerkiksi "01/09/2021".
+
+```Bash
+date "+Today is %A, %B %d, %Y"
+```
+
+Tämä tulostaa lauseen "Tänään on viikonpäivä, kuukausi päivä, vuosi". Esimerkiksi "Today is Wednesday, September 1, 2021".
+
+Voit myös yhdistää näitä erilaisia formaatteja saadaksesi juuri haluamasi tuloksen. Kokeile rohkeasti erilaisia vaihtoehtoja ja löydä paras ratkaisu juuri sinun tarpeisiisi.
+
+## Syvempi sukellus
+Nyt kun olet saanut pienen maistiaisen kuinka `date` toimii Bash-skripteissä, voit halutessasi oppia lisää tästä komennosta. Voit aloittaa lukemalla sen manuaalisivun komentolla `man date` tai käyttämällä verkkoresursseja kuten tämän [linkin](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html).
+
+Yksi hyödyllinen lisäominaisuus `date` komennossa on ajankohdan muutos. Voit esimerkiksi käyttää komentoa `date -d'30 days ago'`, joka näyttää päivämäärän, joka on 30 päivää aikaisemmin nykyisestä päivästä. Tutustu tarkemmin eri vaihtoehtoihin ja löydät varmasti auttavan ratkaisun juuri sinulle.
+
+## Katso myös 
+Halutessasi opiskella lisää Bash-ohjelmoinnista tai muista vastaavista aiheista, suosittelemme seuraavia resursseja:
+
+- [Bash-suomen

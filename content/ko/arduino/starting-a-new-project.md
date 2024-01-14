@@ -1,48 +1,45 @@
 ---
-title:    "Arduino: 새 프로젝트 시작하기"
+title:    "Arduino: 새로운 프로젝트 시작하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 시작하는가?
+### 왜
+새로운 프로젝트를 시작하는 이유는 여러 가지가 있습니다. 아두이노는 컴퓨터이지만 코딩이 쉽고 저렴하기 때문에 많은 사람들이 처음으로 프로그래밍을 시작하는 도구로 사용하고 있습니다.
 
-아두이노 프로젝트를 시작하게 될 수 있는 여러 가지 이유가 있습니다. 몇 가지 예를 들어보자면, 새로운 기술을 배우고 싶다거나, 간단한 하드웨어와 소프트웨어를 사용하여 자신의 창의성을 발휘하고 싶은 분들이 있을 것입니다. 또는 재미있는 취미 활동을 찾는 분들에게도 아두이노 프로젝트는 좋은 선택이 될 수 있습니다.
+### 사용 방법
+아두이노 프로그래밍을 시작하는 가장 기본적인 방법은 먼저 아두이노 IDE를 설치하는 것입니다. 이후에는 간단한 하드웨어 연결과 코드 작성을 통해 첫 프로젝트를 만들 수 있습니다. 아래는 LED를 제어하는 예제 코드입니다.
 
-## 어떻게 시작할까?
+```Arduino
+int LED = 13; // LED가 연결된 핀 번호 설정
 
-아두이노 프로젝트를 시작하기 위해서는 몇 가지 단계를 거쳐야 합니다. 우선 아두이노 보드와 필요한 주변장치를 준비해야 합니다. 그리고 아래와 같은 코드를 사용하여 기본 LED 제어 프로그램을 작성해보세요.
-
-```arduino
-int led = 13; // LED가 연결된 핀 번호
 void setup() {
-  pinMode(led, OUTPUT); // LED를 출력으로 설정
+    pinMode(LED, OUTPUT); // LED 핀을 출력으로 설정
 }
+
 void loop() {
-  digitalWrite(led, HIGH); // LED 켜기
-  delay(1000); // 1초 대기
-  digitalWrite(led, LOW); // LED 끄기
-  delay(1000); // 1초 대기
+    digitalWrite(LED, HIGH); // LED 켜기
+    delay(1000); // 1초 기다리기
+    digitalWrite(LED, LOW); // LED 끄기
+    delay(1000); // 1초 기다리기
 }
 ```
 
-위 코드를 작성하고 업로드한 후, LED가 1초 간격으로 켜졌다가 꺼지는 것을 볼 수 있을 것입니다. 이와 같이 간단한 예제를 통해 아두이노 프로그래밍에 익숙해질 수 있습니다.
+위 코드를 실행하면 LED가 1초 간격으로 켜졌다가 꺼지는 것을 볼 수 있습니다.
 
-## 딥 다이브
+### 심층 분석
+새로운 아두이노 프로젝트를 시작할 때 가장 중요한 것은 문제 해결 능력입니다. 어떤 문제를 해결하고 싶은지 명확하게 정의하고, 그에 맞는 하드웨어와 적절한 코드를 선택해야 합니다. 또한 잘 정리된 코드를 작성하는 것도 중요합니다. 긴 프로그램을 작성할 경우 적절한 주석을 달고 코드를 함수로 나누는 것이 좋습니다. 이를 통해 코드를 이해하기 쉽고 유지보수하기 쉽게 할 수 있습니다.
 
-새로운 아두이노 프로젝트를 시작할 때, 중요한 것은 아두이노 보드와 다양한 주변기기들과의 연결 방법을 익히는 것입니다. 보통 대부분의 아두이노 보드는 GND, 5V, 그리고 입력/출력 핀을 지원하며, 이를 활용하여 다양한 기능을 구현할 수 있습니다. 또한 아두이노를 활용하여 미니 게임을 만들어보거나, 센서를 이용하여 자동화 시스템을 구축해볼 수도 있습니다.
+### 더 알아보기
+아두이노 프로그래밍을 배우는 가장 좋은 방법은 예제 코드를 따라해 보고 이해하는 것입니다. 아래 링크를 통해 다양한 예제 코드를 확인하고 프로젝트에 응용해 보세요.
 
-## 참고 자료
+- [아두이노 공식 홈페이지](https://www.arduino.cc/)
+- [아두이노 공식 예제 코드](https://www.arduino.cc/en/Tutorial/HomePage)
+- [마이크로소프트 메이크코드 아두이노 확장팩](https://makercurrent.com/2446)
+- [실시간 아두이노 온라인 시뮬레이터](https://www.tinkercad.com/)
 
-아두이노 프로젝트를 시작하게 된다면 아래의 링크들을 참고해보세요.
-
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 예제 코드 모음](https://www.arduino.cc/en/Tutorial/HomePage)
-- [아두이노 커뮤니티 포럼](https://forum.arduino.cc/index.php)
-
----
-## 참고 자료
-
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 예제 코드 모음](https://www.arduino.cc/en/Tutorial/HomePage)
-- [아두이노 커뮤니티 포럼](https://forum.arduino.cc/index.php)
+### 참고 자료
+- [아두이노 프로그래밍 강좌](https://www.youtube.com/playlist?list=PLSvCYhYoKAn7WYc0xHJKastXUcxIZaObQ)
+- [아두이노 프로그래밍 가이드](https://www.makerlab.or.kr/?p=10174)

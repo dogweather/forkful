@@ -1,44 +1,70 @@
 ---
 title:    "Haskell: Tworzenie pliku tekstowego"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać pliki tekstowe?
+## Dlaczego
 
-Pisanie plików tekstowych jest nieodłączną częścią wielu zadań programistycznych. Warto nauczyć się podstaw, aby później móc zastosować je w większych projektach lub pracy zawodowej.
+Pisanie plików tekstowych jest nieodłączną częścią programowania w Haskell. Dzięki temu, możemy przechowywać dane w czytelnej formie i wykorzystywać je w naszych aplikacjach. Pisanie plików tekstowych jest również ważne w celu komunikacji z innymi programami.
 
-## Jak to zrobić?
+## Jak to zrobić
+
+Używając funkcji `writeFile`, możemy łatwo zapisać dane do pliku tekstowego. Przykładem może być zapisanie listy liczb do pliku tekstowego "numery.txt":
 
 ```Haskell
--- Tworzenie nowego pliku tekstowego
-file <- openFile "plik.txt" WriteMode
--- Zapisanie tekstu do pliku
-hPutStrLn file "Witaj, świecie!"
--- Zamykanie pliku
-hClose file
+let numery = [1,2,3,4,5]
+writeFile "numery.txt" $ unlines $ map show numery
 ```
 
-Powyższy kod tworzy nowy plik tekstowy o nazwie "plik.txt" i zapisuje w nim tekst "Witaj, świecie!". Pamiętaj, że plik musi być zamknięty po zakończeniu zapisywania do niego danych.
+Powyższy kod najpierw tworzy listę liczb, a następnie przy pomocy funkcji `writeFile` zapisuje je do pliku "numery.txt". Funkcja `unlines` oznacza, że każdy element listy zostanie zapisany w osobnym wierszu, a funkcja `map` przekształci każdą liczbę na ciąg znaków przy pomocy funkcji `show`.
+
+Po uruchomieniu tego kodu, w pliku "numery.txt" pojawi się następująca zawartość:
+
+```
+1
+2
+3
+4
+5
+```
 
 ## Głębszy zanurzenie
 
-Pisanie plików tekstowych w Haskellu jest łatwe i intuicyjne. Można również użyć funkcji "withFile", która automatycznie zamyka plik po zakończeniu działania kodu, zapewniając wygodną obsługę.
+Wykorzystując funkcję `writeFile`, możemy także pisać bardziej skomplikowane pliki tekstowe, np. z wykorzystaniem CSV lub JSON. W przypadku CSV, możemy użyć funkcji `intersperse` z pakietu `Data.List`, aby dodać przecinki między elementami listy:
 
-``` Haskell
--- Tworzenie nowego pliku tekstowego i zapisanie danych do niego
-withFile "plik.txt" WriteMode (\file -> do
-  hPutStrLn file "Cześć, tu jestem!"
-  hPutStrLn file "Mam nadzieję, że Twój dzień jest wspaniały!"
-  -- Zamykanie pliku automatycznie
-  )
+```Haskell
+import Data.List (intersperse)
+
+let nazwiska = ["Kowalski", "Nowak", "Jankowski"]
+writeFile "nazwiska.csv" $ intercalate "," $ map show przecinki
 ```
 
-Pamiętaj, że funkcja "withFile" wymaga podania dodatkowej akcji do wykonania na otwartym pliku w postaci funkcji anonimowej lub nazwanej.
+Po uruchomieniu tego kodu, plik "nazwiska.csv" będzie miał następującą zawartość:
+
+```
+Kowalski,Nowak,Jankowski
+```
+
+W przypadku formatu JSON, możemy użyć funkcji `encode` z pakietu `Data.Aeson` do przekształcenia danych na postać JSON:
+
+```Haskell
+import Data.Aeson (encode)
+
+let osoba = [("imie","Jan"),("nazwisko","Kowalski"),("wiek",45)]
+writeFile "osoba.json" $ encode osoba
+```
+
+Po uruchomieniu tego kodu, plik "osoba.json" będzie zawierał następującą zawartość:
+
+```
+[{"imie":"Jan","nazwisko":"Kowalski","wiek":45}]
+```
 
 ## Zobacz również
 
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Haskell dla początkujących](https://stackoverflow.com/questions/1012573/getting-started-with-haskell)
-- [Oficjalna strona języka Haskell](https://www.haskell.org/)
+- [Funkcja `writeFile` w dokumentacji Hackage](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:writeFile)
+- [Pakiet Data.List w dokumentacji Hackage](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Pakiet Data.Aeson w dokumentacji Hackage](https://hackage.haskell.org/package/aeson)

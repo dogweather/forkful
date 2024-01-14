@@ -1,51 +1,52 @@
 ---
-title:    "PHP: Aloittamassa uutta projektia"
+title:    "PHP: Uuden projektin aloittaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Miksi aloittaisit uuden PHP-projektin?
 
-Monet ihmiset aloittavat uusia projekteja PHP-ohjelmointikielen avulla, koska se on helppokäyttöinen ja laajasti käytetty ohjelmointikieli. Se tarjoaa myös monipuoliset mahdollisuudet erilaisten verkkosovellusten kehittämiseen.
+PHP on yksi suosituimmista ohjelmointikielistä maailmassa ja sitä käytetään laajalti web-sovellusten kehittämisessä. Uuden PHP-projektin aloittaminen voi olla hyödyllistä, jos haluat luoda oman verkkosivuston tai sovelluksen, joka on räätälöity juuri sinun tarpeisiisi.
 
-## Kuinka aloittaa
+**Kuinka aloittaa uusi PHP-projekti?**
 
-PHP-koodin kirjoittaminen on helppoa ja nopeaa. Alla on muutamia esimerkkejä, joiden avulla voit päästä alkuun uuden projektin aloittamisessa:
+Ensin sinun täytyy varmistaa, että sinulla on PHP-elinympäristö asennettuna tietokoneellesi. Voit ladata sen ilmaiseksi PHP:n virallisilta verkkosivuilta. Kun PHP on asennettu, voit alkaa kirjoittamaan koodia.
+
+Tässä on yksinkertainen esimerkki koodista, joka tulostaa tekstin "Tervetuloa PHP:hen!" selaimelle:
 
 ```PHP
-// Tulostaa "Hei maailma!"
 <?php
-    echo "Hei maailma!";
+echo "Tervetuloa PHP:hen!";
 ?>
 ```
 
-```PHP
-// Laskee kahden luvun summan ja tulostaa sen
-<?php 
-    $numero1 = 10;
-    $numero2 = 5;
-    $summa = $numero1 + $numero2;
-    echo "Kahden luvun summa on " . $summa;
-?>
-```
+Tämä koodi tulostaa "Tervetuloa PHP:hen!" sivulle, kun se avataan selaimessa.
 
-```PHP
-// Luo taulukon ja tulostaa sen sisällön
-<?php
-    $opiskelijat = array("Anna", "Matti", "Liisa");
-    print_r($opiskelijat);
-?>
-```
+Voit myös käyttää PHP:ta luomaan dynaamisia sivustoja, jotka muuttuvat käyttäjän toimien mukaan. Se tekee PHP:sta erittäin tehokkaan työkalun web-sovellusten kehittämiseen.
 
-## Syvempää tietoa uuden projektin aloittamisesta
+**Syvennä tietoasi uuden projektin aloittamisesta**
 
-Ennen uuden projektin aloittamista on tärkeää määrittää selkeät tavoitteet ja suunnitella projektin rakenne. PHP:n avulla voit luoda käyttäjäystävällisiä verkkosovelluksia ja liittää niihin esimerkiksi tietokantoja ja käyttäjän syötteitä.
+Ennen kuin aloitat koodaamisen, on tärkeää määrittää projektisi tavoitteet ja vaatimukset. Tämä auttaa sinua valitsemaan oikeat työkalut ja lähestymistavan projektin rakentamiseen.
 
-Tarkka dokumentointi ja koodin hyvä kommentointi ovat myös tärkeitä käytänteitä uuden projektin aloittamisessa. Näin projektin kehitystyö ja ylläpito on helpompaa jatkossa.
+Voit myös harkita käyttäjänhallinnan ja tietokantayhteyksien lisäämistä projektiisi, jotta voit luoda monimutkaisempia ja toiminnallisempia sovelluksia.
 
-## Katso myös
+Lisäksi, hyvä käytäntö on jakaa koodisi pienempiin osiin ja kommentoida sitä selkeyden vuoksi. Näin voit helpommin arvioida ja muokata koodiasi myöhemmin.
 
-- [PHP:n virallinen dokumentaatio](https://www.php.net/manual/en/)
-- [W3Schools - PHP-opetusohjelmat](https://www.w3schools.com/php/)
-- [PHP: The Right Way - hyvät käytännöt PHP-ohjelmointiin](https://phptherightway.com/)
+**Katso myös**
+
+- [PHP:n viralliset verkkosivut](https://secure.php.net/)
+- [PHP-opas aloittelijoille](https://www.php.net/manual/en/tutorial.php)
+- [PHP Coding Standards - Suositellut käytännöt koodille](https://www.php-fig.org/psr/psr-1/)
+- [PHP The Right Way - Hyödyllisiä vinkkejä ja oppaita PHP-koodaukseen](https://phptherightway.com/)
+
+Kiitos että luit tämän blogikirjoituksen. Toivottavasti se auttoi sinua aloittamaan uuden PHP-projektin. Onnea ohjelmointiin! 
+
+**Katso myös**
+
+Haluatko oppia lisää PHP:sta? Tutustu näihin linkkeihin:
+
+- [PHP:sta hyödyntämään web-teknologioita](https://www.php.net/manual/en/getting-started.php)
+- [PHP-esimerkkejä ja oppaita](https://www.w3schools.com/php/)
+- [PHP-yhteisö ja keskustelufoorumi](https://stackoverflow.com/questions/tagged/php)

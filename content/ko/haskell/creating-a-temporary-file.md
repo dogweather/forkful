@@ -1,43 +1,42 @@
 ---
 title:    "Haskell: 임시 파일 만들기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-임시 파일을 만드는 이유는 여러 가지가 있습니다. 예를 들어, 프로그램 실행 중에 데이터를 일시적으로 저장하거나, 다른 프로그램과의 통신을 위해 임시 파일을 사용할 수 있습니다. 또는 파일 시스템에 영구적으로 저장하기 전에 임시 파일을 사용하여 데이터의 유효성을 테스트할 수도 있습니다. 
+임시 파일을 만드는 것에 참여하는 이유는 여러 가지가 있을 수 있습니다. 대부분의 경우, 우리는 임시적으로 파일을 만들어서 우리가 원하지 않는 데이터 또는 특정 상황에서만 필요한 데이터를 저장하기 위해 사용합니다.
 
-## 만드는 방법 
+## 방법
 
-임시 파일을 만드는 가장 간단한 방법은 `System.IO` 모듈의 `withSystemTempFile` 함수를 사용하는 것입니다. `withSystemTempFile` 함수는 임시 파일의 이름과 핸들러를 매개변수로 받아 해당 임시 파일을 사용하는 작업을 수행합니다. 예제 코드는 다음과 같습니다.
+임시 파일을 만드는 것은 Haskell에서 매우 간단합니다. 단지 몇 줄의 코드를 작성하면 됩니다. 아래는 예제 코드와 해당 코드의 출력입니다.
 
 ```Haskell
-import System.IO (withSystemTempFile)
+import System.Directory (createTempFile)
 
-main = withSystemTempFile "temp.txt" $ \tempHandle tempName -> do
-    putStrLn ("작업할 임시 파일 이름: " ++ tempName)
-    hPutStrLn tempHandle "임시 파일에 작성할 내용입니다."
+main = do
+    let contents = "임시 파일에 저장할 데이터"
+    (filename, handle) <- createTempFile "." "temp"
+    writeFile filename contents
+    print handle
 ```
 
-위 코드를 실행하면 지정한 임시 파일 `temp.txt`가 생성되고, 해당 파일에 문자열 "임시 파일에 작성할 내용입니다."가 저장됩니다. 파일 처리 작업이 완료되면 `withSystemTempFile` 함수는 자동으로 임시 파일을 삭제하므로 별도의 삭제 코드를 작성할 필요가 없습니다.
-
-## 깊게 파헤치기 
-
-`withSystemTempFile` 함수는 자동으로 임시 파일을 생성하고 삭제하기 때문에 편리하지만, 임시 파일의 생성 방식에 대해 더 자세히 알아보고 싶을 수도 있습니다. `withSystemTempFile`의 정의를 살펴보면 다음과 같은 형식으로 되어 있습니다.
+출력:
 
 ```
-withSystemTempFile :: String -> (FilePath -> Handle -> IO a) -> IO a
+C:\Users\temp252.txt
 ```
 
-첫 번째 매개변수는 임시 파일의 이름으로, 두 번째 매개변수는 임시 파일의 이름과 핸들을 매개변수로 받는 함수입니다. 이 함수를 통해 실제로 임시 파일을 사용하고자 하는 작업을 수행할 수 있습니다. 임시 파일을 생성한 뒤, 해당 파일을 사용하는 작업을 수행하고, 작업이 완료되면 임시 파일을 삭제하는 것입니다.
+위 코드에서는 `createTempFile` 함수를 사용하여 현재 디렉토리에서 "temp"라는 이름의 임시 파일을 생성합니다. 그리고 파일에 `contents` 변수의 내용을 쓰고, 생성된 파일의 핸들을 출력합니다.
 
-보다 자세한 내용은 [Haskell 공식 문서](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:withSystemTempFile)를 참고하세요.
+## 깊게 파보기
 
-## 관련 링크 
+`createTempFile` 함수는 실제로 시스템에서 임시 파일을 만드는 데 매우 신중하게 처리됩니다. 이 함수는 사전에 정의된 임시 디렉토리에서 파일 이름을 생성하여 사용하며, 실제 파일과 같은 속성을 갖도록 적절히 설정됩니다. 이렇게 함으로써 시스템 안정성이 향상되고, 오류가 발생할 가능성이 줄어듭니다.
 
-- [Haskell의 임시 파일 처리](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/guide-to-the-haskell-acks/exception-safe-file-management)
-- [IO 모나드에 대한 심도있는 이해](https://www.youtube.com/watch?v=pbnzQTMvRlU)
-- [Haskell로 파일 처리하기](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/11_IO)
-- [Haskell 공식 문서](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+## 생각해보기 목록
+
+- [Haskell documentation on `createTempFile`](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html#v:createTempFile)
+- [A beginner's guide to Haskell](https://wiki.haskell.org/Introduction)

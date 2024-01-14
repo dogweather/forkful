@@ -1,43 +1,50 @@
 ---
-title:    "Haskell: Écriture sur le flux d'erreur standard"
+title:    "Haskell: Écrire vers l'erreur standard"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi Écrire au Flot d'Erreur en Haskell 
+## Pourquoi
 
-L'écriture au flot d'erreur (standard error) est une pratique courante en programmation Haskell. Elle nous permet d'afficher des erreurs et des informations de débogage directement dans notre terminal, ce qui peut grandement faciliter le processus de débogage d'un programme. Dans cet article, nous allons explorer ce qu'est le flot d'erreur, pourquoi il est utile et comment l'utiliser dans nos programmes Haskell.
+Ecrire dans la sortie d'erreur standard (standard error) est un moyen utile de signaler des erreurs et des avertissements lors de l'exécution d'un programme Haskell. Cela permet aux développeurs de comprendre rapidement ce qui s'est mal passé et d'apporter des corrections rapides.
 
-## Comment Faire 
+## Comment Faire
 
-Pour écrire au flot d'erreur en Haskell, nous pouvons utiliser la fonction `hPutStrLn` du module `System.IO`. Cette fonction prend en paramètre un objet `Handle` et une chaîne de caractères, et écrit cette chaîne dans le flot d'erreur associé à ce `Handle`. 
+Ci-dessous se trouve un exemple de code Haskell montrant comment écrire dans la sortie d'erreur standard :
 
-Voici un exemple de code qui écrit un message d'erreur dans le flot d'erreur et termine immédiatement le programme :
+```Haskell
+-- Importer le module System.IO pour utiliser la fonction hPutStr
+import System.IO
+
+-- La fonction main qui contiendra notre code
+main = do
+    -- Ecrire une chaîne de caractères dans la sortie d'erreur standard
+    hPutStr stderr "Une erreur s'est produite !"
+
+    -- Utiliser la fonction error pour générer une erreur
+    error "Une autre erreur est survenue."
+```
+
+En exécutant ce code, vous obtiendrez une sortie qui ressemble à ceci :
 
 ```
-hPutStrLn stderr "Erreur : Liste vide."
+Une erreur s'est produite !*** Exception: Une autre erreur est survenue.
 ```
 
-Si nous exécutons ce code dans notre terminal, nous verrons le message d'erreur s'afficher, et le programme s'arrêtera. Nous pouvons également utiliser cette fonction pour afficher des informations de débogage :
+Comme vous pouvez le voir, la chaîne de caractères que nous avons écrite via la fonction hPutStr a été imprimée avant que l'erreur ne soit générée. Cela peut être très utile pour identifier la source d'une erreur.
 
-```
-let x = 10
-hPutStrLn stderr $ "La valeur de x est : " ++ show x
-```
+## Plongée en profondeur
 
-Ce code écrit dans le flot d'erreur : "La valeur de x est : 10". Nous pouvons ainsi afficher des valeurs de variables ou des messages de débogage pour nous aider à comprendre le comportement de notre programme.
+Il est important de noter que la sortie d'erreur standard n'est pas la même chose que la sortie standard (standard output). Alors que la sortie standard est généralement utilisée pour l'affichage de résultats ou informations utiles, la sortie d'erreur standard est spécifiquement destinée à signaler des erreurs et des avertissements.
 
-## Plongée en Profondeur 
+En utilisant la fonction hPutStr pour écrire dans la sortie d'erreur standard, vous pouvez également spécifier un fichier de sortie en plus de la sortie par défaut sur la console. Cela peut être utile pour enregistrer les erreurs et les avertissements dans un fichier pour les consulter ultérieurement.
 
-Le flot d'erreur en Haskell est associé à un `Handle` spécifique, `stderr`, qui représente le flot d'erreur standard du système. Il existe également un autre `Handle` appelé `stdout`, qui représente le flot de sortie standard.
+## Voir aussi
 
-Il est important de noter que les messages écrits dans le flot d'erreur ne sont pas redirigés avec les autres sorties standards lorsqu'on les redirige vers un fichier. Cela signifie que si nous écrivons `myProgram > output.txt`, les messages écrits dans le flot d'erreur ne seront pas inclus dans le fichier `output.txt`.
+Pour en savoir plus sur la gestion des erreurs en Haskell, consultez ces liens utiles :
 
-Il est également possible de rediriger le flot d'erreur vers un autre `Handle` en utilisant la fonction `hDup2`. Cela peut être utile si nous voulons gérer les erreurs de différentes manières selon le contexte de notre programme.
-
-## Voir Aussi 
-
-- [La documentation officielle de Haskell sur les entrées/sorties](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [Un article sur le flot d'erreur en Haskell](https://wiki.haskell.org/Introduction_to_IO#Standard_And_Error_IO) 
-- [Un tutoriel complet sur les entrées/sorties en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples#appendix-io)
+- Documentation officielle de Haskell sur la gestion des erreurs : https://www.haskell.org/documentation/99.0.1/libraries/base/Control.Exception.html
+- Tutoriel sur la manipulation des erreurs en Haskell : https://wiki.haskell.org/Error_handling
+- Exemples pratiques de gestion des erreurs en Haskell : https://www.codewars.com/kata/haskell-error-handling-practices

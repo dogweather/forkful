@@ -1,32 +1,29 @@
 ---
-title:    "Gleam: Kaavan mukaisten merkkien poistaminen"
+title:    "Gleam: Mallien mukaan vastaavien merkkien poistaminen."
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia tilanteita, joissa haluat poistaa tietyt merkit kokonaisuudessaan. Ilman Gleamia tämä saattaisi olla työlästä, mutta onneksi Gleamilla on helppo tapa poistaa merkkejä, jotka vastaavat tiettyä kaavaa.
+Miksi poistaisit merkkejä, jotka vastaavat tiettyä mallia? Tämä voi olla hyödyllistä, jos haluat puhdistaa tekstistä pois tarpeettomia merkkejä, kuten symbolit tai välimerkit. Se voi myös auttaa sinua muotoilemaan tiettyä tietoa haluamallasi tavalla.
 
-## Kuinka tehdä se
+## Miten
 
 ```Gleam
-// Luo merkkijono, josta poistat merkit
-let syote = "Tämä on esimerkki merkkijonosta!"
-// Määritä kaava, joka poistaa "on" kohdassa 5 olevat merkit
-let kaava = "on"
-// Käytä Gleamin sisäänrakennettua replace-funktiota poistaaksesi merkit
-let tulos = replace(syote, kaava, "")
-// Tulostaa: "Tämä esimerkki merkkijosta!"
-io.println(tulos)
+my_string = "Tervetuloa Gleam blogiin!"
+print(my_string |> String.replace(@regex("[A-Z]"), ""))
 ```
+Tämä koodi poistaa kaikki kirjaimet @regex([A-Z]), jättäen jäljelle vain pienet kirjaimet ja tulostaa "ervetuloa lei blogiin!". Tämä koodinpätkä käyttää Gleamin built-in String.replace() -funktiota, ja voit käyttää myös muita regex-sääntöjä määrittämään, mitä merkkejä poistat tekstistä.
 
-## Syventyvä tieto
+## Syväsukellus
 
-Tutkimme syvemmin Gleamin replace-funktion toimintaa poistettaessa merkkejä vastaavan kaavan avulla. Tämä funktio hyödyntää syntaksinkäsittelyä ja säännöllisiä lausekkeita tarjotakseen tehokkaan ja käyttäjäystävällisen tavan poistaa merkkejä.
+Regex eli regular expression on tapa ilmaista tiettyjä merkkijonon malleja. Gleam tukee regexin käyttöä String-moduulissa sen sisäänrakennetulla @regex-makrolla. Mikä tekee Gleamista erityisen hyvän vapaamuotoisiin Regular Expressionien käyttöön verrattuna, on Gleamin kyky muuntaa säännöt puhtaaksi merkkijonoksi, mikä vähentää mahdollisia virheitä syntaktisen analyysin aikana.
 
 ## Katso myös
 
-- Gleamin dokumentaatio: https://gleam.run/
-- Esimerkkejä Gleamin replace-funktion käytöstä: https://github.com/gleam-lang/gleam/blob/master/examples/strings.gleam
+- [Gleamin virallinen dokumentaatio regexeihin](https://gleam.run/core/Regex.html)
+- [Säännölliset lausekkeet: 10 asiaa, jotka sinun pitäisi tietää](https://opensource.com/article/19/1/regular-expressions-cheat-sheet)
+- [Gleamin Slack-kanava, jossa voit kysyä lisäkysymyksiä regexeihin liittyen](https://gleam-lang.slack.com/)

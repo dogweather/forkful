@@ -1,59 +1,53 @@
 ---
 title:    "PHP recipe: Concatenating strings"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Concatenating strings, or combining multiple strings into one, is a fundamental concept in PHP programming. It allows us to create dynamic and versatile outputs, making our code more efficient and readable.
+One of the most fundamental tasks in programming is manipulating strings. Whether it's combining multiple strings together or extracting specific characters from a string, it's important to have a good understanding of string manipulation in order to write effective code. One particular aspect of string manipulation is concatenation, which involves combining two or more strings together to create a new string. In this blog post, we will explore the concept of concatenation in PHP and how it can be useful in various scenarios.
 
 ## How To
 
-To concatenate strings in PHP, we use the `.` operator. Let's look at an example:
+Concatenating strings in PHP is a simple and straightforward process. The concatenate operator in PHP is a period symbol (.) which is used to join two strings together. Let's take a look at some examples:
 
 ```PHP
-$name = "John";
-$greeting = "Hello, ".$name;
+$string1 = "Hello";
+$string2 = "World";
 
-echo $greeting;
+// Concatenating two strings and storing the result in a new variable
+$result = $string1 . $string2; 
+
+// Output: HelloWorld
+echo $result;
+
+// Concatenating three strings and directly printing the result
+echo $string1 . " " . $string2 . "!"; 
+
+// Output: Hello World!
 ```
 
-In this example, we declared two variables - `$name` and `$greeting`. We then used the `.` operator to concatenate the string "Hello, " with the value stored in the `$name` variable. This results in the output: **Hello, John**.
-
-We can also use the `.` operator to concatenate more than two strings:
-
-```PHP
-$first_name = "Jane";
-$last_name = "Smith";
-$full_name = $first_name." ".$last_name;
-
-echo $full_name;
-```
-
-The output for this code would be **Jane Smith**, as we have combined the values stored in the `$first_name` and `$last_name` variables.
+As you can see, the period operator allows us to easily combine strings of different lengths and add additional characters or space between them. This is particularly useful when constructing sentences or outputting dynamic data.
 
 ## Deep Dive
 
-It's important to note that we can only concatenate strings in PHP using the `.` operator. If we try to use this operator on other data types, such as integers or booleans, PHP will automatically convert them into strings before concatenating.
-
-In addition, we can use the shorthand `.= `operator to concatenate strings with an assigned variable. Let's look at an example:
+In PHP, concatenation can also be performed using the concatenation assignment operator (.=). This operator assigns the concatenated result back to the variable on the left side. Let's look at an example:
 
 ```PHP
-$message = "Welcome, ";
-$name = "Emily";
+$name = "John";
+$name .= " Doe";
 
-$message .= $name;
-// Equivalent to $message = $message.$name;
-
-echo $message;
+// Output: John Doe
+echo $name;
 ```
 
-The output of this code would be **Welcome, Emily**. The `.= `operator concatenates the string "Welcome, " with the value of the `$name` variable and assigns it to the `$message` variable.
+In the above example, the string "Doe" is concatenated to the existing string stored in the variable $name, thus creating a new concatenated string "John Doe". This is especially useful when you need to keep appending strings to an existing one, without having to create a new variable each time.
 
 ## See Also
 
 - [PHP String Operators](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP String Manipulation](https://www.w3schools.com/php/php_string.asp)
-- [PHP Concatenation Assignment Operator](https://www.php.net/manual/en/language.operators.assignment.php#language.operators.assignment.concat)
+- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [PHP Concatenate vs Concatenate Assignment](https://www.php.net/manual/en/language.operators.assignment.php)

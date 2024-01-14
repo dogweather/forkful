@@ -1,30 +1,48 @@
 ---
 title:    "Swift: Comparando dos fechas"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Comparar fechas es una parte esencial de la programación en Swift. Puede ser útil para determinar si una fecha es anterior, posterior o igual a otra. Esta habilidad es especialmente importante en aplicaciones que manejan calendarios, horarios o recordatorios.
+¿Te has preguntado alguna vez cómo comparar dos fechas en Swift? En esta publicación te explicaremos por qué a veces necesitas comparar fechas en tus programas y cómo hacerlo de manera sencilla.
 
 ## Cómo hacerlo
-
-La comparación de fechas en Swift es sencilla y se puede hacer de diversas maneras. Una forma de hacerlo es utilizando el operador de comparación ```<```, ```>``` o ```==```. Por ejemplo, si queremos comparar dos fechas y ver si la primera es anterior a la segunda, podemos escribir:
+Para comparar dos fechas en Swift, podemos usar el operador `>` (mayor que), `<` (menor que) o `==` (igual que). Veamos algunos ejemplos:
 
 ```
 let fecha1 = Date()
-let fecha2 = Date(timeIntervalSinceNow: 86400) // fecha2 es un día después de fecha1
+let fecha2 = Date(timeIntervalSinceNow: 86400)
 
-if fecha1 < fecha2 {
-  print("fecha1 es anterior a fecha2")
+if fecha1 > fecha2 {
+    print("La fecha1 es mayor que la fecha2")
+} else if fecha1 < fecha2 {
+    print("La fecha1 es menor que la fecha2")
+} else {
+    print("Las fechas son iguales")
+}
+
+// Output: La fecha1 es menor que la fecha2
+```
+
+También podemos comparar solo las componentes de la fecha que nos interesen, como el día, el mes o el año. Por ejemplo:
+
+```
+let fecha1 = Date()
+let fecha2 = Date(timeIntervalSinceNow: 86400)
+
+let dia1 = Calendar.current.component(.day, from: fecha1)
+let dia2 = Calendar.current.component(.day, from: fecha2)
+
+if dia1 == dia2 {
+    print("Ambas fechas son del mismo día")
 }
 ```
 
-En este ejemplo, utilizamos la función ```Date()``` para obtener la fecha actual y la función ```Date(timeIntervalSinceNow:)``` para obtener una fecha un día después. Después, utilizamos el operador de comparación ```<``` para comparar ambas fechas y mostrar un mensaje en caso de que la primera sea anterior a la segunda.
-
-Otra forma de comparar fechas es utilizando el método ```compare(_:)``` de la clase ```NSDate```, que devuelve un valor del tipo ```ComparisonResult``` que puede ser ```orderedAscending```, ```orderedDescending``` o ```orderedSame```. Por ejemplo:
+## Deep Dive
+Para comparar fechas de manera más precisa, podemos utilizar el método `compare` de la clase `Date`. Este método nos devuelve un objeto `ComparisonResult` que podemos utilizar en nuestras comparaciones. Por ejemplo:
 
 ```
 let fecha1 = Date()
@@ -32,25 +50,22 @@ let fecha2 = Date(timeIntervalSinceNow: 86400)
 
 let resultado = fecha1.compare(fecha2)
 
-switch resultado {
-case .orderedAscending:
-  print("fecha1 es anterior a fecha2")
-case .orderedDescending:
-  print("fecha1 es posterior a fecha2")
-case .orderedSame:
-  print("fecha1 es igual a fecha2")
+if resultado == .orderedDescending {
+    print("La fecha1 es posterior a la fecha2")
+} else if resultado == .orderedAscending {
+    print("La fecha1 es anterior a la fecha2")
+} else {
+    print("Las fechas son iguales")
 }
+
+// Output: La fecha1 es anterior a la fecha2
 ```
-En este caso, utilizamos el método ```compare(_:)``` para obtener el resultado de la comparación y luego utilizamos un switch para mostrar un mensaje dependiendo del resultado.
 
-## Profundizando
-
-La comparación de fechas puede ser más compleja si se tienen en cuenta diferentes zonas horarias, formatos de fecha y localizaciones. En esos casos, es importante utilizar formateadores de fecha como ```DateFormatter``` para garantizar que las fechas se comparen correctamente.
-
-También es importante tener en cuenta la precisión de las fechas, ya que si estamos trabajando con horas, minutos y segundos, una pequeña diferencia en alguno de ellos puede afectar el resultado de la comparación.
+Además, también existe la opción de utilizar la librería `Foundation` para comparar fechas con mayor precisión, teniendo en cuenta incluso variables como la zona horaria o la presencia de años bisiestos.
 
 ## Ver también
+- [Documentación oficial de Swift sobre la clase Date](https://developer.apple.com/documentation/foundation/date)
+- [Blog post sobre cómo utilizar la librería Foundation en Swift](https://www.raywenderlich.com/515-nsdate-tutorial-for-swift-how-to-work-with-dates-in-swift)
+- [Ejemplos de comparaciones de fechas en Swift](https://www.hackingwithswift.com/example-code/language/how-to-compare-dates-in-swift)
 
-- Documentación oficial de Swift sobre el manejo de fechas y horas (https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html)
-- Tutorial de Ray Wenderlich sobre cómo trabajar con fechas en Swift (https://www.raywenderlich.com/767-swift-4-0-cheat-sheet-and-quick-reference)
-- Tutorial de AppCoda sobre cómo utilizar formateadores de fecha en Swift (https://www.appcoda.com/nsdateformatter/)
+*¡Esperamos que esta publicación te haya sido útil para comparar fechas en tus proyectos de Swift! ¡Hasta la próxima!*

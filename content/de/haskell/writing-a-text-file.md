@@ -1,52 +1,35 @@
 ---
 title:    "Haskell: Eine Textdatei schreiben"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Haskell ist eine funktionale Programmiersprache, die auf dezidierte Typisierung und starke statische Typen setzt. Diese Eigenschaften machen Haskell zu einer robusten und sicheren Wahl für die Erstellung von Textdateien.
 
-## Anleitung
-Um eine Textdatei in Haskell zu schreiben, benötigen wir zunächst eine Importanweisung für das Modul "System.IO". Danach können wir die Funktion "writeFile" verwenden, die uns die Möglichkeit gibt, einen Dateinamen und den Inhalt der Datei anzugeben.
+Das Verfassen von Textdateien ist ein grundlegender Bestandteil der Programmierung. Es ermöglicht uns, Informationen auf einfache und strukturierte Weise zu speichern und zu verarbeiten.
 
-```Haskell
-import System.IO
-main = do 
-    let filename = "meine-datei.txt" 
-    let content = "Dies ist eine Beispieltextdatei." 
-    writeFile filename content 
+## Wie man eine Textdatei schreibt
+
+Das Erstellen einer Textdatei in Haskell ist einfach. Wir verwenden die Funktion "writeFile", um eine neue Textdatei zu erstellen oder eine bestehende Textdatei zu überschreiben.
+
+```
+Haskell
+writeFile :: FilePath -> String -> IO ()
+writeFile "mein_dateiname.txt" "Dies ist ein Beispieltext"
 ```
 
-Dieser Code erstellt eine Datei namens "meine-datei.txt" im aktuellen Verzeichnis und schreibt den Inhalt "Dies ist eine Beispieltextdatei." hinein.
+Dieser Code erstellt eine Datei mit dem Namen "mein_dateiname.txt" und schreibt den Text "Dies ist ein Beispieltext" in die Datei. Wenn die Datei bereits besteht, wird sie überschrieben.
 
-## Tiefere Einblicke
-Neben der "writeFile" Funktion gibt es auch andere Möglichkeiten, um Textdateien in Haskell zu schreiben. Beispielsweise können wir die Funktion "appendFile" verwenden, um Inhalt an eine bereits bestehende Datei anzuhängen.
+## Tiefergehende Infos über das Schreiben von Textdateien
 
-```Haskell
-import System.IO
-main = do 
-    let filename = "meine-datei.txt" 
-    let content = "Dies ist weiterer Text, der angehängt wird." 
-    appendFile filename content
-```
+In Haskell können wir auch weitere Funktionen wie "appendFile" verwenden, um Text an eine bereits bestehende Datei anzuhängen. Wir können auch "readFile" verwenden, um den Inhalt einer Textdatei auszulesen und in einer Haskell-Funktion zu verwenden.
 
-Wir können auch angeben, welchen Modus wir für das Öffnen der Datei verwenden möchten, z.B. Schreiben, Anhängen oder Lesen. Dies kann mit der Funktion "openFile" erreicht werden.
+Es ist auch wichtig zu beachten, dass die Dateipfade in Haskell mit "/" statt "\" definiert werden müssen, um Fehler zu vermeiden.
 
-```Haskell
-import System.IO
-main = do 
-    let filename = "meine-datei.txt" 
-    let mode = WriteMode 
-    let content = "Dies ist eine Beispieltextdatei." 
-    file <- openFile filename mode
-    hPutStrLn file content 
-    hClose file
-```
+## Siehe auch
 
-In diesem Beispiel verwenden wir den Modus "WriteMode", um die Datei zu öffnen und den Inhalt mit der Funktion "hPutStrLn" hineinzuschreiben. Am Ende müssen wir die Datei mit "hClose" schließen.
-
-## Siehe auch 
-- Offizielle Haskell-Dokumentation zum Schreiben von Dateien: https://www.haskell.org/documentation #write-ands-read-files
-- Ein Tutorial zum Schreiben von Textdateien in Haskell: https://dev.to/ben/beginner-s-guide-to-the-io-monad-in-haskell-4k8n
+- Offizielle Haskell Dokumentation: https://www.haskell.org/documentation
+- Tutorial: Textdateien in Haskell schreiben: https://www.tutorialspoint.com/haskell/haskell_files_io.htm
+- Thomas auch Haskell Blog: https://thomas.io/textfiles-in-haskell

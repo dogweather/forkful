@@ -1,34 +1,41 @@
 ---
 title:    "Javascript: Tests schreiben"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-In der Webentwicklung ist es unerlässlich, qualitativ hochwertigen Code zu schreiben, der zuverlässig funktioniert. Eine Möglichkeit, dies sicherzustellen, ist durch die Implementierung von Tests. In diesem Blog-Beitrag werden wir uns genauer mit dem Schreiben von Tests in Javascript auseinandersetzen und warum es wichtig ist, dies in unseren Projekten zu tun.
+## Warum
 
-# Wie geht man vor
-Um mit dem Schreiben von Tests in Javascript zu beginnen, müssen wir zunächst eine Test-Bibliothek wie z.B. Jest oder Mocha installieren. Anschließend können wir unser erstes Testskript erstellen.
+Es gibt viele Gründe, warum es sinnvoll ist, Tests beim Programmieren zu schreiben. Einer der wichtigsten Gründe ist, dass Tests sicherstellen, dass der Code ordnungsgemäß funktioniert und keine unerwarteten Fehler auftreten. Dadurch wird die Code-Qualität verbessert und die Entwicklungszeit verkürzt.
+
+## Wie man Tests schreibt
+Um Tests zu schreiben, müssen wir zuerst sicherstellen, dass wir eine Testumgebung haben, die unsere Tests ausführen kann. In der Regel wird dafür ein Test-Framework wie Mocha oder Jasmine verwendet.
+
+Als nächsten Schritt müssen wir unsere Tests in separate Dateien schreiben und sicherstellen, dass unser Code in einzelne Funktionen unterteilt wird, die leichter getestet werden können. Hier ist ein Beispiel für einen Test in Mocha:
 
 ```Javascript
-const add = (num1, num2) => {
-  return num1 + num2;
-};
-
-test('Adds two numbers correctly', () => {
-  expect(add(2, 3)).toBe(5);
-});
+describe('sum function', function() {
+    it('should return the sum of two numbers', function() {
+        expect(sum(1,2)).toEqual(3);
+    })
+})
 ```
-In diesem Beispiel haben wir eine Funktion `add` definiert, die zwei Zahlen addiert. Im nächsten Abschnitt erstellen wir einen Test, um sicherzustellen, dass die Funktion wie erwartet funktioniert. Wir verwenden die `test`-Methode, um unseren Test zu benennen und die `expect`-Methode, um das erwartete Ergebnis von `add(2,3)` festzulegen. In diesem Fall sollte das Ergebnis 5 sein. Wenn unser Test erfolgreich ist, wird in der Konsole "Test passed" angezeigt. Andernfalls erhalten wir eine Fehlermeldung, die uns auf die Ursache des Fehlers hinweist.
 
-# Tiefere Einblicke
-Tests ermöglichen es uns, Codezeilen zu überprüfen und sicherzustellen, dass sie wie erwartet funktionieren. Sie dienen nicht nur als einfache Kontrolle, sondern auch als Dokumentation für unsere Funktionen. Wenn wir Tests schreiben, können wir auch Edge-Cases abdecken, die möglicherweise in der normalen Verwendung unserer Funktion auftreten können. Auf lange Sicht sparen uns gut geschriebene Tests viel Zeit und Mühe bei der Fehlersuche.
+In diesem Beispiel testen wir die Summenfunktion, indem wir überprüfen, ob sie die korrekte Summe von 1 und 2 zurückgibt.
 
-Eine weitere wichtige Sache beim Schreiben von Tests ist, dass sie uns helfen, sicherzustellen, dass bei zukünftigen Änderungen an unserem Code nichts zerbrochen wird. Wir können einfach unsere Tests erneut ausführen, um sicherzustellen, dass alles noch wie beabsichtigt funktioniert.
+Nachdem wir unsere Tests geschrieben haben, können wir sie ausführen, indem wir die Befehle "npm test" oder "mocha" in der Kommandozeile eingeben.
 
-# Sieh auch
-- https://jestjs.io/
-- https://mochajs.org/
-- https://www.chaijs.com/
-- https://www.w3schools.com/js/js_unit_testing.asp
+## Tiefer Einblick
+Beim Schreiben von Tests ist es wichtig, alle möglichen Szenarien abzudecken, einschließlich der Kantenfälle. Durch das Schreiben von umfassenden Tests können wir sicherstellen, dass unser Code robust und fehlerfrei ist.
+
+Eine wichtige Technik beim Testen ist das "Test-driven Development" (TDD), bei dem Tests vor der eigentlichen Entwicklung geschrieben werden. Dadurch wird sichergestellt, dass der Code von vornherein gut getestet ist und die Entwickler sich auf das Schreiben funktionierenden Codes konzentrieren können.
+
+Eine weitere wichtige Facette des Testens ist das "Mocking". Durch das Mocking von Objekten oder Funktionen können wir Tests auf unabhängige Teile unseres Codes beschränken und so die Effizienz und Genauigkeit unserer Tests erhöhen.
+
+## Siehe auch
+- [Mocha](https://mochajs.org/)
+- [Jasmine](https://jasmine.github.io/)
+- [Test-driven Development](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)
+- [Mocking](https://en.wikipedia.org/wiki/Mock_object)

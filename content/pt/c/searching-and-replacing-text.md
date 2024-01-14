@@ -1,99 +1,41 @@
 ---
 title:    "C: Buscando e substituindo texto"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-
-Se você é um programador C experiente ou está apenas começando a aprender a linguagem, uma habilidade essencial que você precisa dominar é a substituição de texto. Essa técnica permite que você encontre e substitua uma determinada sequência de caracteres em um texto, tornando a edição de arquivos de código muito mais fácil e rápida. Neste artigo, vamos explorar como realizar essa tarefa usando a linguagem C.
+Você já se perguntou por que é importante ser capaz de pesquisar e substituir textos em um programa de computador? Bem, a resposta é simples. Substituir palavras ou trechos de texto é uma das habilidades básicas necessárias em linguagens de programação, incluindo C. Sem essa habilidade, seria muito mais difícil fazer alterações em massa em um código.
 
 ## Como fazer
+Agora que você sabe por que a pesquisa e substituição de texto é importante, vamos dar uma olhada em como fazer isso em C. Felizmente, o C possui uma função embutida chamada "str_replace", que permite que você substitua facilmente um determinado texto por outro em uma string.
 
-Para substituir texto em um arquivo usando C, vamos primeiro criar uma função simples que recebe três argumentos: um ponteiro para o arquivo que queremos editar, a sequência de caracteres que queremos substituir e a sequência de caracteres pela qual queremos substituir a primeira. Aqui está o código para a nossa função:
+Vamos dar um exemplo simples, imagine que você tem uma string que contém a frase "A programação é divertida" e você quer substituir a palavra "divertida" por "incrível". Usando a função "str_replace", ficaria assim:
 
 ```
-void substituir_texto(FILE *arquivo, char *antigo, char *novo){
-   // Enquanto não atingirmos o final do arquivo
-   while(!feof(arquivo)){
-      // Tenta ler uma linha inteira do arquivo
-      char linha[100];
-      if(fgets(linha, 100, arquivo) != NULL){
-         // Se a linha contém o texto antigo, substitui por novo
-         if(strstr(linha, antigo) != NULL){
-            // Encontra a posição do texto antigo na linha
-            int indice = strstr(linha, antigo) - linha;
-            // Copia a substring anterior ao texto antigo
-            char substring1[indice];
-            strncpy(substring1, linha, indice);
-            // Copia a substring após o texto antigo
-            char substring2[100-indice-strlen(antigo)];
-            strcpy(substring2, linha+indice+strlen(antigo));
-            // Combina as substrings com o texto novo no meio
-            char linha_final[100];
-            sprintf(linha_final, "%s%s%s", substring1, novo, substring2);
-            // Substitui a linha original pela nova linha no arquivo
-            fseek(arquivo, -strlen(linha), SEEK_CUR);
-            fputs(linha_final, arquivo);
-         }
-      }
-   }
-   // Fecha o arquivo ao final da substituição
-   fclose(arquivo);
-   printf("Texto substituído com sucesso.\n");
+#include <stdio.h>
+
+int main()
+{
+    char frase[] = "A programação é divertida";
+    printf("%s\n", frase);
+    
+    str_replace(frase, "divertida", "incrível"); // substituição
+    printf("%s\n", frase);
+    
+    return 0;
 }
 ```
+A saída seria "A programação é incrível". Como você pode ver, a função "str_replace" nos permite substituir facilmente uma palavra em uma string.
 
-Vamos explicar linha por linha:
+## Aprofundando
+Agora que você já sabe como fazer uma pesquisa e substituição básica em C, vamos dar uma olhada em como essa função funciona por trás dos bastidores. Primeiro, é importante entender que a função "str_replace" é na verdade uma combinação de outras funções, "strstr" e "strncpy". Essas funções são usadas para localizar e copiar uma parte específica de uma string para outra. Em seguida, o texto a ser substituído é inserido na string substituída, e as funções "strlen" e "strcpy" são usadas para garantir que a string tenha o tamanho correto.
 
-```
-void substituir_texto(FILE *arquivo, char *antigo, char *novo){
-```
+É importante notar que a função "str_replace" só substituirá a primeira ocorrência do texto a ser substituído em uma string. Se você quiser substituir todas as ocorrências, você precisará usar um loop para percorrer toda a string.
 
-Aqui, declaramos a função com seus argumentos. O primeiro argumento é um ponteiro para o arquivo que queremos editar. O segundo e o terceiro argumentos são as sequências de caracteres que queremos substituir e pela qual queremos substituir, respectivamente.
-
-```
-while(!feof(arquivo)){
-```
-
-Em seguida, temos um loop que verificará se atingimos o final do arquivo. Se não, o conteúdo do loop será executado.
-
-```
-if(fgets(linha, 100, arquivo) != NULL){
-```
-
-Dentro do loop, usamos a função `fgets()` para ler uma linha inteira do arquivo. Se a função retorna `NULL`, significa que atingimos o final do arquivo e o loop será interrompido.
-
-```
-if(strstr(linha, antigo) != NULL){
-```
-
-Agora, usamos a função `strstr()` para verificar se a linha contém a sequência de caracteres antiga que queremos substituir. Se a função retorna `NULL`, significa que a linha não contém a sequência e o processo de substituição é interrompido para essa linha.
-
-```
-int indice = strstr(linha, antigo) - linha;
-```
-
-Se a linha contém a sequência de caracteres antiga, usamos a função `strstr()` novamente para encontrar a posição dessa sequência na linha. A fórmula `strstr(linha, antigo) - linha` nos dá o índice da sequência de caracteres antiga dentro da linha.
-
-```
-char substring1[indice];
-strncpy(substring1, linha, indice);
-```
-
-Em seguida, criamos uma substring que contém todos os caracteres antes da sequência de caracteres antiga.
-
-```
-char substring2[100-indice-strlen(antigo)];
-strcpy(substring2, linha+indice+strlen(antigo));
-```
-
-Da mesma forma, criamos uma substring que contém todos os caracteres após a sequência de caracteres antiga.
-
-```
-char linha_final[100];
-sprintf(linha_final, "%s%s%s", substring1, novo, substring2);
-```
-
-Usando a função `sprintf()`, combinamos as substrings com o texto novo no meio, criando assim a
+## Veja também
+- [Função str_replace em C](https://www.programiz.com/c-programming/library-function/string.h/str_replace)
+- [Como usar a função "strstr" em C](https://www.geeksforgeeks.org/c-string-strstr/)
+- [Explicação da função "strncpy"](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)

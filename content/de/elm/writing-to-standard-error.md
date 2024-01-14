@@ -1,40 +1,54 @@
 ---
-title:    "Elm: Schreiben nach Standard-Fehler"
+title:    "Elm: Schreiben nach Standardfehler"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Warum sollte man überhaupt versuchen, etwas auf die Standardfehlerausgabe zu schreiben? Die Antwort ist einfach: Es ist ein wichtiges Instrument beim Programmieren, um Fehlermeldungen und Warnungen zu erfassen und zu untersuchen.
+Das Schreiben auf den Standardfehler (standard error) ist eine wichtige Fähigkeit beim Programmieren in Elm. Es ermöglicht es uns, Fehlermeldungen und andere wichtige Informationen auf der Konsole auszugeben, um unseren Code zu debuggen.
 
-## Wie geht man vor?
+# Wie geht das?
 
-Um etwas auf die Standardfehlerausgabe zu schreiben, gibt es verschiedene Methoden, je nachdem welche Art von Programm man schreibt. Hier ist ein Beispiel in Elm:
+Das Schreiben auf den Standardfehler in Elm ist einfach und erfordert nur einige Zeilen Code. Wir nutzen dafür die eingebaute `Debug` Bibliothek und die `log` Funktion. Schauen wir uns ein Beispiel an:
 
 ```Elm
-import Debug exposing (crash)
- 
-crash "Es ist ein Fehler aufgetreten!"
+import Debug
+
+-- Eine Zahl eingeben
+zahl = 5
+
+-- Ausgabe der Zahl auf dem Standardfehler
+Debug.log "Die Zahl ist:" zahl
 ```
 
-Die Ausgabe würde dann folgendermaßen aussehen:
+Wenn wir dieses Programm ausführen, sehen wir die Ausgabe `Die Zahl ist: 5` auf unserer Konsole. Wie Sie sehen, haben wir die Funktion `Debug.log` genutzt, um einen Wert auf den Standardfehler zu schreiben. Diese Funktion erwartet zwei Argumente: einen String mit einer Beschreibung und den Wert, den wir ausgeben möchten.
 
-```Shell
-Error: Es ist ein Fehler aufgetreten!
+# Tiefergehende Informationen
+
+Manchmal wollen wir nicht nur einfache Werte, sondern komplexere Datenstrukturen auf den Standardfehler ausgeben. Dafür gibt es die Funktion `Debug.toString`, die ein beliebiges Elm-Objekt in einen String umwandelt. Wir können sie mit `Debug.log` kombinieren, um eine detailliertere Ausgabe zu erhalten:
+
+```Elm
+import Debug
+
+-- Ein Datensatz definieren
+type alias Person =
+    { name : String
+    , alter : Int
+    }
+
+-- Eine Person erstellen
+person = Person "Max" 25
+
+-- Ausgabe der Person auf dem Standardfehler
+Debug.log "Die Person ist:" (Debug.toString person)
 ```
 
-Natürlich kann man auch andere Methoden verwenden, je nachdem welche Art von Programmierumgebung oder Situation man hat.
+Die Ausgabe sieht nun folgendermaßen aus: `Die Person ist: { name = "Max", alter = 25 }`. Auf diese Weise können wir komplexere Datenstrukturen untersuchen, um Fehler in unserem Code zu finden.
 
-## Tiefergehende Informationen
+# Siehe auch
 
-Es gibt viele Gründe, warum man standardmäßig auf die Standardfehlerausgabe schreiben sollte. Zum einen kann es helfen, bei der Fehlersuche oder der Überwachung der Anwendung zu helfen. Außerdem ist es auch eine gute Möglichkeit, um Informationen über den internen Zustand des Programms zu erhalten.
-
-Das Schreiben auf die Standardfehlerausgabe kann auch bei der Entwicklung und Verbesserung der Anwendung helfen, da es eine einfache Möglichkeit ist, um Daten oder Variablenwerte zu überprüfen.
-
-## Siehe auch
-
-- [Elm Fehlerbehandlung](https://guide.elm-lang.org/error_handling/)
-- [Debugging Elm Code](https://elmprogramming.com/debugging-elm-code.html)
-- [Einfacheres Debuggen in Elm mit TeaSpoon](https://cronokirby.com/posts/elm/2016-11-28-intro-teaspoon.html)
+- Offizielle Elm Debugging-Dokumentation: https://guide.elm-lang.org/debugging/debugging.html
+- Mehr über die `Debug` Bibliothek erfahren: https://package.elm-lang.org/packages/elm/core/latest/Debug

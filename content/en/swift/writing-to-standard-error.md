@@ -1,58 +1,58 @@
 ---
 title:    "Swift recipe: Writing to standard error"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-In the world of Swift programming, it's important to be able to effectively communicate with the user during runtime. One way to do this is through writing to standard error, which allows for messages and errors to be displayed in a command line interface.
+There are many reasons why a programmer may want to write to standard error in their Swift code. One common reason is to log error messages or debugging information to help troubleshoot issues during development. Another reason may be to display specific feedback or warnings to the user, such as in a command line application.
 
-##How To
+## How To
 
-Writing to standard error is a simple process that involves using the "write" method from the "FileHandle" class. First, we need to import "Foundation" and "FileHandle":
+Writing to standard error in Swift is a simple process. First, you need to import the Foundation framework in your code:
 
-```
+```Swift
 import Foundation
-import FileHandle
 ```
 
-Next, we can create a constant called "errorOutput" which represents the standard error output stream:
+Next, you can use the function `NSLog` to print a string to standard error. For example:
 
-```
-let errorOutput = FileHandle.standardError
-```
-
-Now, we can use the "write" method to send a message to the standard error output stream. Let's say we want to display an error message:
-
-```
-let errorMessage = "Something went wrong"
-errorOutput.write(errorMessage.data(using: .utf8)!)
+```Swift
+NSLog("An error occurred during the execution of this function.")
 ```
 
-In the above code, we are converting our error message to data using UTF-8 encoding and then sending it to the standard error output stream using the "write" method. This will display the message in the command line.
-
-We can also write to standard error using a file handler. Here's an example:
+The output of this code would be:
 
 ```
-let fileURL = URL(fileURLWithPath: "error.log")
-let fileHandler = try! FileHandle(forWritingTo: fileURL)
-fileHandler.write(errorMessage.data(using: .utf8)!)
+An error occurred during the execution of this function.
 ```
 
-This will write the error message to a file called "error.log".
+You can also include variables or other data in the string by using the `%@` placeholder. For example:
 
-##Deep Dive
+```Swift
+let message = "This is a debug message."
+NSLog("Debug message: %@", message)
+```
 
-Standard error is typically used for displaying error messages and other important information that the user needs to know during runtime. Unlike standard output, any messages written to standard error will not be redirected by default. This allows for more efficient debugging and troubleshooting.
+The output would be:
 
-It's also important to note that there is a difference between standard error and standard output. Standard error is generally used for displaying errors, while standard output is used for displaying regular output messages.
+```
+Debug message: This is a debug message.
+```
 
-Some common use cases for writing to standard error include handling exceptions, displaying error messages during system calls, and providing feedback to users about failed processes.
+## Deep Dive
 
-##See Also
+Behind the scenes, the `NSLog` function uses the `stderr` stream to write to standard error. This ensures that the output is directed to the correct location, separate from the standard output.
 
-- [The Swift Programming Language](https://docs.swift.org/swift-book/)
-- [FileHandle Class Reference](https://developer.apple.com/documentation/foundation/filehandle)
-- [Error Handling in Swift](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+One important thing to note is that the `NSLog` function includes a timestamp and the process ID in the output. This can be helpful when trying to track down specific errors or issues.
+
+## See Also
+
+For more information on writing to standard error in Swift, check out these resources:
+
+- [Apple's documentation on NSLog](https://developer.apple.com/documentation/foundation/nslog)
+- [NSHipster's article on Error Handling in Swift](https://nshipster.com/error-handling-in-swift/)
+- [Stack Overflow thread on NSLog alternatives](https://stackoverflow.com/questions/9245716/nslog-alternative-in-swift)

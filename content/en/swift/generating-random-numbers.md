@@ -1,38 +1,48 @@
 ---
 title:    "Swift recipe: Generating random numbers"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Generating random numbers is a crucial feature in many applications, whether it's for generating random passwords or creating randomized gameplay experiences. In Swift, there are various methods to generate random numbers that are both efficient and easy to implement.
+Generating random numbers is a crucial aspect of programming, especially in game development, cryptography, and simulations. Random numbers help in introducing unpredictability and variety into our code, making it more versatile and realistic.
 
 ## How To
 
-To generate a random number in Swift, we can use the `arc4random_uniform()` function. This function takes in an upper limit and returns a random number between 0 and that limit (not including the limit itself). For example, if we want to generate a random number between 1 and 10, we would write the following code:
+To generate random numbers in Swift, we use the `arc4random_uniform()` function. This function takes in an upper limit and produces a random number between 0 (inclusive) and the upper limit (exclusive). 
 
-```Swift
-let randomNumber = Int(arc4random_uniform(10)) + 1
-print(randomNumber)
+```Swift 
+let number = arc4random_uniform(100) 
+print("Random number between 0 and 99: \(number)") 
 ```
 
-This would print a random number between 1 and 10.
+We can also generate random numbers within a specific range by using the `arc4random()` function and the `%` modulo operator. The `arc4random()` function produces a random number between 0 and `UInt32.max` (the maximum value for an unsigned 32-bit integer). The `%` operator then helps us to limit the range to our desired values.
 
-We can also generate random numbers within a specific range using the `arc4random()` function. This function takes in a range and returns a random number within that range. For example, if we want to generate a random number between 50 and 100, we would write the following code:
-
-```Swift
-let randomNumber = Int(arc4random() % 51) + 50
-print(randomNumber)
+```Swift 
+let number = arc4random() % 50 + 10 
+print("Random number between 10 and 59: \(number)") 
 ```
 
-## Deep Dive
+Another way to generate random numbers in Swift is by using the `random()` method. This method is part of the `RandomNumberGenerator` protocol and provides more flexibility in generating random numbers. 
 
-The `arc4random()` function is a pseudo-random number generator, meaning that it uses a mathematical algorithm to generate seemingly random numbers. However, since it's based on an algorithm, the sequence of numbers it produces can be predicted if the initial state of the algorithm is known. To mitigate this issue, it's best to use cryptographic random number generators in sensitive applications.
+```Swift 
+import Foundation 
 
-Swift provides the `arc4random_buf()` function, which uses the `/dev/random` device on macOS and the `/dev/urandom` device on Linux to generate cryptographically secure random numbers.
+let number = Int.random(in: 1...10) 
+print("Random number between 1 and 10: \(number)") 
+```
 
-## See Also
-- [Apple Developer Documentation on Randomization](https://developer.apple.com/documentation/swift/random-numbers)
-- [Stack Overflow post on Generating Random Numbers in Swift](https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language)
+## Deep Dive 
+
+Random numbers are not truly random but rather pseudo-random. This means that they appear to be random, but are actually generated based on a specific algorithm and a seed value. In Swift, the `arc4random()` function uses the Xoroshiro128+ algorithm to generate pseudo-random numbers. This algorithm is known for its speed and quality of randomness.
+
+It is important to note that for security and cryptographic purposes, we should use the `arc4random_buf()` function instead of `arc4random()` as it uses a more secure algorithm.
+
+## See Also 
+
+- [Swift Documentation on Random Numbers](https://developer.apple.com/documentation/swift/random) 
+- [NSHipster Article on arc4random](https://nshipster.com/arc4random/) 
+- [Ray Wenderlich Tutorial on Random Number Generation in Swift](https://www.raywenderlich.com/3293-random-numbers-in-swift)

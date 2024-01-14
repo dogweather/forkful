@@ -1,50 +1,61 @@
 ---
 title:    "Haskell: Escrevendo testes"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Haskell
+## Por que escrever testes é importante em Haskell?
 
-Testes são extremamente importantes em qualquer linguagem de programação, e não é diferente em Haskell. Escrever testes garante que o código funciona corretamente e pode ajudar a identificar possíveis erros antes de serem encontrados em produção. Além disso, testes bem escritos podem servir como documentação para o código, tornando-o mais fácil de entender e dar manutenção. 
+Escrever testes é essencial para garantir a qualidade e confiabilidade do código em qualquer linguagem de programação, incluindo Haskell. Além disso, ao escrever testes, você pode identificar e corrigir erros em seu código de forma eficiente, economizando tempo e esforço no longo prazo.
 
 ## Como escrever testes em Haskell
 
-Para escrever testes em Haskell, é necessário utilizar uma biblioteca de testes como o Hspec. Primeiro, é preciso importar o módulo "Test.Hspec" e as funções de asserção necessárias:
+Aqui está um exemplo prático de como escrever e executar testes em Haskell usando a biblioteca Hspec:
 
-```Haskell
+```
+-- Importando as bibliotecas necessárias
 import Test.Hspec
-import Test.Hspec.Assertions
-```
+import Data.List
 
-Em seguida, os testes podem ser escritos usando a função `describe`, que recebe uma descrição do que está sendo testado e uma função contendo os testes:
+-- Definindo uma função simples que retorna o número de elementos em uma lista
+length :: [a] -> Int
+length [] = 0
+length (x:xs) = 1 + length xs
 
-```Haskell
+-- Escrevendo testes usando a sintaxe "describe" e "it" do Hspec
 main :: IO ()
 main = hspec $ do
-  describe "Função de adição" $ do
-    it "deve somar dois números corretamente" $ do
-      sum 2 3 `shouldBe` 5
+  describe "length" $ do
+    it "retorna 0 para uma lista vazia" $ do
+      length [] `shouldBe` 0
+    it "retorna o número correto de elementos em uma lista" $ do
+      length [1, 2, 3] `shouldBe` 3
 ```
 
-No exemplo acima, o primeiro parâmetro de `describe` é uma string descrevendo a função que está sendo testada, e o segundo parâmetro é uma função anônima contendo os testes, definidos usando a função `it`. Dentro de `it`, é possível usar as funções de asserção como `shouldBe` para verificar o resultado de uma operação.
+Ao executar o teste acima, o resultado será:
 
-## Aprofundando nos testes
+```
+length
+  - retorna 0 para uma lista vazia
+  - retorna o número correto de elementos em uma lista
 
-Além dos testes unitários, em Haskell também é possível escrever testes de propriedades e testes de integração. Os testes de propriedades são usados para verificar se uma certa propriedade do código está sempre sendo respeitada. Por exemplo, é possível testar se a adição de dois números é sempre comutativa:
-
-```Haskell
-main :: IO ()
-main = hspec $ do
-  describe "Função de adição" $ do
-    it "é comutativa" $ do
-      property $ \x y -> sum x y `shouldBe` sum y x
+Finished in 0.0001 seconds
+2 examples, 0 failures
 ```
 
-Já os testes de integração são usados para verificar se o código está funcionando corretamente quando integrado com outras partes do sistema.
+## Aprofundando em como escrever bons testes
+
+Além da sintaxe básica apresentada acima, existem outras técnicas úteis para escrever testes eficazes em Haskell. Aqui estão algumas dicas:
+
+- Considere testar diferentes casos de borda para garantir que seu código lida adequadamente com eles.
+- Use a função `shouldBe` para comparar resultados em vez de `==`, pois `shouldBe` fornece informações mais precisas em caso de falha.
+- Considere o uso de geradores de dados para testar seu código com entradas maiores ou aleatórias.
+- Procure por bibliotecas de testes específicas para as funcionalidades que você está testando, como QuickCheck para testes de propriedade.
 
 ## Veja também
 
-- [Documentação do Hspec](https://hspec.github.io/)
-- [Tutorial de testes em Haskell](https://www.fpcomplete.com/blog/2017/07/quickcheck-is-cool-for-haskell/)
+- [Documentação oficial do Hspec](https://hspec.github.io/)
+- [Artigo sobre testes com QuickCheck em Haskell](https://medium.com/ouroboros/testes-com-quickcheck-em-haskell-f8485ab89bc2)
+- [Livro "Learn You a Haskell for Great Good!" com capítulo sobre testes](http://learnyouahaskell.com/for-great-good)

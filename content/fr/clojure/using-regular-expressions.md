@@ -1,47 +1,45 @@
 ---
 title:    "Clojure: Utiliser des expressions régulières"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les expressions régulières sont très utiles lorsqu'il s'agit de trouver des correspondances ou de filtrer des données dans du texte. Elles permettent une recherche précise et rapide, ainsi qu'une manipulation efficace des chaînes de caractères. Dans le domaine de la programmation, les expressions régulières sont un outil puissant pour traiter et analyser des données.
+Les expressions régulières sont un outil puissant pour rechercher et manipuler des motifs de texte. Elles peuvent être utiles pour filtrer des données, valider des saisies utilisateur et bien d'autres tâches liées à la manipulation de chaînes de caractères.
 
 ## Comment faire
 
-Pour utiliser les expressions régulières en Clojure, il faut d'abord importer la bibliothèque `clojure.string` qui contient les fonctions nécessaires. Ensuite, on peut utiliser la fonction `re-find` pour trouver des correspondances dans une chaîne de caractères en utilisant une expression régulière.
+Les expressions régulières sont disponibles en tant que bibliothèque standard dans Clojure, donc pas besoin d'installer quoi que ce soit de supplémentaire. Voici un exemple simple pour rechercher une séquence de chiffres dans une chaîne de caractères :
 
-```
-(ns mon-projet.core
-  (:require [clojure.string :as str]))
-
-(str/re-find #"a.b" "abc") ;; renvoie "abc"
-(str/re-find #"a\\sb" "a b") ;; renvoie "a b"
-(str/re-find #"a\.b" "a.b") ;; renvoie "a.b"
-(str/re-find #"a.*b" "abcdefg") ;; renvoie "abcdefg"
+```Clojure
+(re-find #"[0-9]+" "Il y a 23 chats dans le jardin.")
 ```
 
-Dans l'exemple ci-dessus, le `#` indique qu'il s'agit d'une expression régulière, puis on met l'expression entre guillemets `""`. Les `.` et `*` sont des opérateurs spéciaux qui permettent de trouver toutes les correspondances possibles. De plus, on peut utiliser certains caractères spéciaux tels que `\s` pour représenter des espaces et `\\` pour échapper un caractère spécial.
+Cela renverra "23" comme résultat, car c'est la première séquence de chiffres trouvée dans la chaîne de caractères. Voici quelques autres opérations courantes avec les expressions régulières :
+
+- Rechercher un motif précis : ```Clojure (re-find #"chat" "Il y a 23 chats dans le jardin.") ```
+- Remplacer un motif par un autre : ```Clojure (re-seq #"chat" "Il y a 23 chats dans le jardin.") ```
+- Valider une adresse email : ```Clojure
+(re-matches #"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}" "example@email.com")
+```
+
+Il existe également des fonctions plus avancées pour la manipulation de chaînes de caractères avec des expressions régulières, telles que re-find-all et re-groups. Pour plus d'informations sur l'utilisation des expressions régulières en Clojure, consultez la documentation officielle.
 
 ## Plongée en profondeur
 
-Les expressions régulières peuvent être utilisées pour une multitude de cas d'utilisation, tels que la validation de formulaires, la manipulation de données, ou encore la recherche et le remplacement de texte. On peut également utiliser des "groupes" dans les expressions régulières pour capturer une partie spécifique du texte.
+Les expressions régulières peuvent sembler intimidantes au début, avec leurs motifs complexes et cryptiques. Mais une fois que vous en aurez compris les bases, elles deviendront un outil précieux dans votre arsenal de programmation.
 
-```
-(ns mon-projet.core
-  (:require [clojure.string :as str]))
+Voici quelques conseils pour vous aider à maîtriser les expressions régulières en Clojure :
 
-(def texte "Bonjour à tous !")
-
-(str/re-find #"Bonjour à (\w+) !" texte) ;; renvoie ["Bonjour à tous !" "tous"]
-```
-
-Dans cet exemple, le `(\w+)` permet de capturer le "groupe" entre les parenthèses et ainsi récupérer uniquement le mot "tous". Cela peut être utile pour effectuer des opérations spécifiques sur une partie du texte.
+- Utilisez des sites comme Regex101 pour tester vos expressions régulières en temps réel et comprendre comment elles fonctionnent.
+- Utilisez des quantificateurs tels que + et * pour rechercher des motifs plus flexibles dans vos chaînes de caractères.
+- Explorez les opérations avancées telles que la capture de groupes et la rétro-références pour des fonctions de manipulation de chaînes plus puissantes.
 
 ## Voir aussi
 
-- [Documentation officielle de Clojure sur les expressions régulières](https://clojure.org/reference/regular_expressions)
-- [Tutoriel sur le site Exercism pour pratiquer les expressions régulières en Clojure](https://exercism.io/tracks/clojure/exercises/regex/custom-set)
-- [Référence complète des opérateurs et des caractères spéciaux en expressions régulières](https://www.regular-expressions.info/reference.html)
+- [Documentation officielle Clojure sur les expressions régulières](https://clojure.org/reference/regular_expressions)
+- [Exemples d'utilisation des expressions régulières avec Clojure](https://blog.mycator.com/2017/09/using-regular-expressions-in-clojure.html)
+- [Tutoriel vidéo sur les expressions régulières en Clojure](https://www.youtube.com/watch?v=F3g5EE5Goxc)

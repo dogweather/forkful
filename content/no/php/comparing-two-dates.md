@@ -1,51 +1,67 @@
 ---
-title:    "PHP: Sammenligning av to datoer"
+title:    "PHP: Sammenligne to datoer"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å sammenligne to datoer kan være en viktig del av å utvikle en pålitelig og funksjonell nettside eller applikasjon. Dette kan hjelpe deg med å filtrere og sortere data etter dato i en database, lage kalendere eller tidsplaner, og mye mer.
+Noen ganger, i programmering, må vi sammenligne to datoer for å se om de er like eller om en kommer før eller etter den andre. Dette kan være nyttig for å sortere data eller for å sjekke for utløpsdatoer. I dette blogginnlegget vil vi se på hvordan du kan sammenligne to datoer i PHP-kode.
 
-## Slik gjør du det
+## Hvordan
 
-For å sammenligne to datoer i PHP, kan du bruke funksjonen `strtotime ()`, som tar en dato som streng og konverterer den til et tall i sekunder siden 01.01.1970. Deretter kan du bruke dette tallet til å sammenligne to datoer og få ønsket resultat.
+For å sammenligne to datoer i PHP, bruker vi funksjonen "strtotime" for å konvertere datoen til en tidssstempel og deretter sammenligner vi de to tidstemplene.
 
 ```PHP
-$dato_en = "10. mai 2020";
-$timestamp_en = strtotime($dato_en);
+$dato1 = "2021-06-01";
+$dato2 = "2021-06-10";
 
-$dato_to = "15. mai 2020";
-$timestamp_to = strtotime($dato_to);
+$tid1 = strtotime($dato1);
+$tid2 = strtotime($dato2);
 
-if ($timestamp_to > $timestamp_en) {
-    echo "$dato_to er senere enn $dato_en";
-} elseif ($timestamp_to < $timestamp_en) {
-    echo "$dato_to er tidligere enn $dato_en";
-} else {
-    echo "$dato_to og dato_en er like";
+if($tid1 < $tid2){
+    echo "Dato 1 er før Dato 2";
+} elseif($tid1 > $tid2){
+    echo "Dato 1 er etter Dato 2";
+} else{
+    echo "Dato 1 og Dato 2 er like";
+}
+```
+**Output:**
+
+*Dato 1 er før Dato 2*
+
+Vi kan også bruke operatorer som "<", ">", eller "==" direkte på datoene, men dette kan føre til uforutsette resultater, spesielt hvis datoene er på forskjellige formater. Derfor anbefales det å bruke tidstempel sammenligning som beskrevet over.
+
+## Dykk dypere
+
+Å sammenligne to datoer kan være mer komplekst enn det vi har sett på i eksemplet over. Dette skyldes forskjellige datoformater, tidszoner og skuddår. For å håndtere dette, anbefales det å bruke PHPs "DateTime" objekt.
+
+```PHP
+$dato1 = new DateTime("2021-06-01");
+$dato2 = new DateTime("2021-06-10");
+
+if($dato1 < $dato2){
+    echo "Dato 1 er før Dato 2";
+} elseif($dato1 > $dato2){
+    echo "Dato 1 er etter Dato 2";
+} else{
+    echo "Dato 1 og Dato 2 er like";
 }
 ```
 
-Dette eksemplet vil gi følgende output:
+**Output:**
 
-```
-15. mai 2020 er senere enn 10. mai 2020
-```
+*Dato 1 er før Dato 2*
 
-Du kan også bruke `date ()` funksjonen til å få en mer leselig form av datoene, noe som kan være nyttig for presentasjonen av data til brukere.
-
-## Dykker dypere
-
-Når man sammenligner datoer, er det viktig å være klar over eventuelle tidsforskjeller eller formater som kan påvirke resultatet. For eksempel kan en dato som er lagret i en database som UTC, bli konvertert til en annen tidssone når den blir hentet og deretter sammenlignet. Det er også viktig å være oppmerksom på skuddår og forskjellige måter å skrive datoer på, som for eksempel 05/10/2020 i stedet for 10. mai 2020.
-
-For å unngå disse utfordringene, kan det være lurt å bruke en standard datoformat og konvertere alle datoer til dette formatet før du sammenligner dem. Du kan også bruke PHPs innebygde funksjoner som `date_create ()` og `date_diff ()` for å gjøre mer avanserte sammenligninger av datoer.
+Med "DateTime" objektet trenger vi ikke å bekymre oss for forskjellige formater og tidszoner, da dette blir håndtert automatisk.
 
 ## Se også
 
-- [PHP Manual: strtotime () funksjonen](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP Manual: date () funksjonen](https://www.php.net/manual/en/function.date.php)
-- [PHP Manual: date_create () funksjonen](https://www.php.net/manual/en/function.date-create.php)
-- [PHP Manual: date_diff () funksjonen](https://www.php.net/manual/en/function.date-diff.php)
+- [PHP.net - DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [W3Schools - PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
+- [Stack Overflow - How to compare two dates in PHP](https://stackoverflow.com/questions/56177234/how-to-compare-two-dates-and-time-in-php)
+
+Takk for at du leste dette blogginnlegget om å sammenligne to datoer i PHP. Vi håper det har vært nyttig og at det vil hjelpe deg i dine fremtidige programmeringsoppgaver. Lykke til!

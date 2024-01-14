@@ -1,41 +1,41 @@
 ---
-title:    "C: Ausgabe von Debugging Informationen"
+title:    "C: Fehlerausgabe drucken"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Debug-Ausgaben sind ein entscheidendes Werkzeug beim Entwickeln von Software. Sie ermöglichen es Entwicklern, den Programmablauf zu überwachen und potenzielle Fehler zu identifizieren. Durch das Drucken von Debug-Ausgaben können wir den genauen Zustand einer Variable oder anderen Datenstrukturen zu einem bestimmten Zeitpunkt im Programmfluss überprüfen. Dies kann uns helfen, Fehler zu lokalisieren und zu beheben.
+Debug-Ausgaben sind ein wichtiges Werkzeug beim Programmieren in C. Sie helfen dabei, Fehler zu identifizieren und zu beheben, indem sie Informationen über den aktuellen Zustand des Programms liefern. Das kann insbesondere bei komplexen Programmen sehr hilfreich sein.
 
-## Wie man Debug-Ausgaben druckt
+## Wie man Debug-Ausgaben macht
 
-Um Debug-Ausgaben in C zu drucken, können wir die Funktion `printf()` aus der Standardbibliothek verwenden. Diese Funktion akzeptiert einen Format-String und eine variable Anzahl an Argumenten, die wir ausdrucken möchten. Der Format-String definiert die Struktur und das Ausgabeformat der Debug-Ausgabe.
-
-Das folgende Beispiel zeigt, wie wir die `printf()` Funktion verwenden können, um eine Debug-Ausgabe zu erstellen, die den Wert einer Variablen `x` ausdruckt:
+Um Debug-Ausgaben in C zu erstellen, können wir die Funktion `printf()` verwenden. Diese Funktion erlaubt es uns, eine Nachricht auszugeben, die wir im Programm ausgewählt haben. Die Syntax ist ähnlich wie bei `printf()` in anderen Programmiersprachen, aber es gibt einige wichtige Unterschiede.
 
 ```C
-int x = 5;
-printf("Der Wert von x ist %d\n", x);
+printf("Debug-Ausgabe: %s\n", "Hier ist meine Nachricht");
 ```
 
-Die Ausgabe dieses Codes würde folgendermaßen aussehen:
+Das erste Argument in `printf()` ist ein sogenanntes "Formatierungs-String", der bestimmt, wie die Ausgabe formatiert werden soll. In unserem Beispiel oben verwenden wir `%s`, um einen String-Wert anzuzeigen. Anstelle von `%s` können wir auch andere Formatierungsoptionen wie `%d` für Ganzzahlen oder `%f` für Fließkommazahlen verwenden. Das zweite Argument in `printf()` ist der Wert, der anstelle des Formatierungs-Strings angezeigt werden soll.
 
+## Tiefere Einblicke
+
+Es gibt auch Möglichkeiten, `printf()` für Debug-Ausgaben noch effizienter zu nutzen. Wir können zum Beispiel den Präprozessor-Befehl `#define` verwenden, um einen Makro-Namen für unsere Debug-Ausgabe zu definieren. Dies erleichtert das Schreiben von Debug-Ausgaben, da wir anstelle des langen `printf()`-Aufrufs einfach das definierte Makro verwenden können.
+
+```C
+#define DEBUG(msg) printf("Debug-Ausgabe: %s\n", msg);
+
+// ...
+int zahl = 7;
+DEBUG("Die Zahl ist: %d", zahl);
 ```
-Der Wert von x ist 5
-```
 
-Wir können auch verschiedene Formatierungsoptionen verwenden, um die Ausgabe an unsere Bedürfnisse anzupassen. Zum Beispiel können wir die Anzahl der angezeigten Nachkommastellen einer Gleitkommazahl mit `%.<Anzahl>` angeben oder eine bestimmte Breite für eine Variable mit `%<Breite>s` definieren.
-
-## Tiefer tauchen
-
-In der Regel möchten wir nicht alle Debug-Ausgaben in unserem Code belassen, die wir während der Entwicklung verwendet haben. Eine Möglichkeit, dies zu verhindern, ist die Verwendung von Bedingungen, um zu bestimmen, wann Debug-Ausgaben ausgeführt werden sollen. Zum Beispiel können wir eine Präprozessor-Direktive wie `#ifdef DEBUG_PRINT` verwenden, um Debug-Ausgaben nur auszuführen, wenn die Variable `DEBUG_PRINT` definiert ist. Dadurch können wir unseren Code aufgeräumter gestalten und Debug-Ausgaben nur dann aktivieren, wenn wir sie benötigen.
-
-Ein weiterer Tipp ist die Verwendung von Farben in unseren Debug-Ausgaben, um sie von anderen Ausgaben im Terminal zu unterscheiden. Dazu können wir spezielle Escape-Sequenzen wie `\033[<Code>m` verwenden, um die Farbe der Ausgabe zu ändern. Eine Liste der verfügbaren Farbcodes und ihre Bedeutungen finden Sie unter [diesem Link](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors).
+Eine andere nützliche Technik ist das Hinzufügen von Bedingungen zu unseren Debug-Ausgaben. Wir können `if`-Anweisungen verwenden, um zu überprüfen, ob bestimmte Variablen oder Zustände erfüllt sind, bevor wir eine Debug-Ausgabe ausführen. Dadurch können wir wählen, welche Debug-Ausgaben wir im Programm sehen möchten, abhängig von bestimmten Bedingungen.
 
 ## Siehe auch
 
-- [Die `printf()` Funktion in der C-Referenz](https://en.cppreference.com/w/c/io/fprintf)
-- [Eine detaillierte Anleitung zur Verwendung von Debug-Ausgaben in C](https://www.cprogramming.com/debugging/debugging-output.html)
-- [Beispielcode für die Verwendung von Escape-Sequenzen zur Farbgebung von Ausgaben](https://stackoverflow.com/questions/3585846/color-text-in-terminal-applications-in-unix)
+- [C Debugging Tutorial](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+- [Using printf() for debugging in C](https://www.geeksforgeeks.org/using-printf-debugging-c/)
+- [Debugging C Programs with printf](https://www.codesdope.com/blog/article/debugging-c-programs-with-printf/)

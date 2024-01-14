@@ -1,42 +1,41 @@
 ---
-title:    "Javascript: Skriva till standardfel"
+title:    "Javascript: Skrivning till standardfel"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Vad är det som gör skrivning till standard error så viktigt för utvecklare? Svaret är enkelt: för att det är ett kraftfullt verktyg som gör det möjligt för oss att sömlöst felsöka och hantera fel i vårt JavaScript-program på ett effektivt sätt. Genom att skriva till standard error, kan vi enkelt få information om våra fel direkt i vår konsol och därmed kan vi snabbt hitta och åtgärda eventuella problem.
+Att skriva till standard error är en viktig del av felsökning i programvara. Genom att skicka felmeddelanden till standard error istället för standard out, kan utvecklare enkelt identifiera och åtgärda problem i koden.
 
 ## Hur man gör
 
-Att skriva till standard error är enkelt och kan göras på olika sätt i JavaScript. Ett sätt är att använda inbyggda metoder som "console.error ()" för att skriva ut ett felmeddelande till standard error. Till exempel:
+Det är enkelt att skriva till standard error i Javascript. Man kan använda metoden `console.error()` för att skriva ut felmeddelanden till standard error streamen. Här är ett exempel:
 
 ```Javascript
-console.error("Ett fel inträffade!");
+try {
+  // Kod som kan orsaka fel
+  throw "Ett fel har uppstått";
+} catch (error) {
+  // Skriver ut felmeddelandet till standard error
+  console.error(error);
+}
 ```
 
-Detta kommer att skriva ut "Ett fel inträffade!" i standard error-konsolen. En annan approach är att använda "process.stderr.write ()" för att skriva direkt till standard error-strömmen. Detta kan vara fördelaktigt om vi vill skriva till standard error från en fil eller när vi vill skriva till standard error utan att använda en konsol. Till exempel:
-
-```Javascript
-var fs = require('fs');
-var errorStream = fs.createWriteStream('error.log');
-errorStream.write("Ett fel loggades!");
-```
-
-Detta kommer att skriva "Ett fel loggades!" till filen "error.log" och visas därmed i standard error.
+Detta kommer att skriva ut "Ett fel har uppstått" till standard error streamen och hjälpa dig att identifiera var felet uppstod.
 
 ## Djupdykning
 
-Att skriva till standard error är en viktig del av felsökning i JavaScript och det finns många användbara funktioner och metoder som man kan använda sig av. Till exempel, "console.trace ()" kommer att skriva ut en stackträckningsinformation som hjälper till att identifiera var felmeddelandet genererades från. Det finns också möjlighet att inkludera variabler i felmeddelandet för att få mer specifik information om problemet.
+Skriva till standard error är också bra för att skilja mellan olika typer av utdata i en process. Genom att använda standard error för felmeddelanden och standard out för normal utdata, blir det lättare att automatiskt hantera eventuella fel som kan uppstå.
 
-En annan intressant aspekt är att man kan skriva till standard error från både synkrona och asynkrona funktioner i JavaScript. Detta kan vara användbart när vi behöver hantera fel i både klient- och serversidan kod.
+Det är också viktigt att notera att standard error inte bara är till för felmeddelanden, utan kan också användas för att logga viktig information som kan hjälpa till med felsökning och förbättring av koden.
 
 ## Se också
 
-Här är några användbara länkar för att lära dig mer om skrivning till standard error i JavaScript:
+Här är några länkar där du kan läsa mer om att skriva till standard error i Javascript:
 
-- [Node.js Console Documentation](https://nodejs.org/api/console.html)
-- [Understanding and using Node.js streams](https://nodejs.org/en/docs/guides/backpressuring-in-streams/)
-- [Error Handling in Asynchronous Code with Node.js](https://www.twilio.com/blog/2018/10/asynchronous-error-handling-in-javascript.html)
+- [Node.js Dokumentation: Standard Streams](https://nodejs.org/api/process.html#process_process_stdin)
+- [Mastering Node.js: Understanding Standard Streams](https://medium.com/@purjus/understanding-standard-streams-in-node-js-b9f03f746123)
+- [Stack Overflow: Difference between console.log and console.error](https://stackoverflow.com/questions/51250783/difference-between-console-log-and-console-error)

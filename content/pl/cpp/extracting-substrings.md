@@ -1,41 +1,42 @@
 ---
-title:    "C++: Wyciąganie podciągów"
+title:    "C++: Wyodrębnianie podciągów"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto uczyć się wydzielania podciągów w języku C++?
 
-Wyodrębnianie podciągów jest powszechną operacją w programowaniu, która pozwala na wyodrębnienie określonej części tekstu lub ciągu z danego łańcucha znaków. Jest to bardzo przydatne narzędzie w wielu dziedzinach informatyki, takich jak przetwarzanie tekstu, analiza danych czy tworzenie aplikacji internetowych.
+W dzisiejszym świecie programowania, coraz większym wyzwaniem staje się efektywne korzystanie z ogromnych ilości danych. W wielu przypadkach nie potrzebujemy całego tekstu, a jedynie jego fragmentów. Tymczasem wydzielanie podciągów w języku C++ może okazać się niezwykle przydatne w codziennej pracy, a nauka tej umiejętności może przynieść wiele korzyści.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wyodrębnić podciąg za pomocą języka C++, należy użyć wbudowanej funkcji `substr()`. Przykładowy kod wykorzystujący tę funkcję wyglądałby następująco:
+Aby wydobyć podciągi z tekstu w języku C++, można posłużyć się funkcją `substr`. Przyjmujemy, że mamy zmienną przechowującą tekst oraz dwie zmienne przechowujące początkowy i końcowy indeks podciągu, który chcemy wydobyć. W takim przypadku, kod może wyglądać następująco:
 
 ```C++
-#include <iostream>
-#include <string>
+// deklaracja zmiennej przechowującej tekst
+string tekst = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
-int main() {
-    std::string str = "Przykładowy tekst";
-    std::string substr = str.substr(11, 5);
+// deklaracja zmiennych przechowujących indeks początkowy i końcowy podciągu
+int poczatkowy_indeks = 6; // indeks zaczynający się od 0
+int koncowy_indeks = 11;
 
-    std::cout << substr; // wynik: tekst
-}
+// wydobycie podciągu z tekstu
+string podciag = tekst.substr(poczatkowy_indeks, koncowy_indeks - poczatkowy_indeks + 1);
+
+// wypisanie wydobytego podciągu
+cout << podciag << endl;
+
+// output: ipsum
 ```
 
-W powyższym kodzie wyodrębniamy podciąg z łańcucha `str` od indeksu 11 (licząc od zera) i o długości 5 znaków. W rezultacie otrzymujemy podciąg "tekst". Możemy również wyodrębniać podciągi z określoną długością kończące się na danym indeksie, np. `str.substr(0, 7)` zwróci "Przykła".
+## Deep Dive
 
-## Dogłębna analiza
+Funkcja `substr` działa na obiekcie typu `string` i jako argumenty przyjmuje indeks początkowy oraz liczbę znaków do wydobycia. W przypadku podania błędnego indeksu lub liczby większej niż długość tekstu, funkcja zwróci pusty string. Oprócz funkcji `substr`, w języku C++ istnieje również możliwość wydobycia podciągu za pomocą metody `find` oraz operatora `[]`. Warto poznać wszystkie te sposoby, aby móc wybrać najbardziej efektywny w danym przypadku.
 
-Funkcja `substr()` jest dostępna w bibliotece standardowej języka C++ i służy do wyodrębniania podciągów z łańcucha znaków. Jej sygnatura wygląda następująco: `string substr (size_t pos, size_t len)`, gdzie `pos` to indeks, od którego ma się zacząć wyodrębnianie, a `len` to długość wyodrębnionego podciągu.
+# Zobacz również
 
-Jedną z zalet funkcji `substr()` jest to, że nie zmienia oryginalnego łańcucha, tylko zwraca nowy obiekt typu `string`, zawierający wyodrębniony fragment. Dzięki temu mamy pewność, że oryginalne dane nie zostaną utracone.
-
-Należy także pamiętać, że indeksy w łańcuchach znaków są numerowane od zera, więc pierwszy znak ma indeks 0, drugi 1, itd. Dlatego też jeśli chcemy wyodrębnić pierwszy znak, powinniśmy użyć indeksu 0, a nie 1.
-
-## Zobacz także
-- [Dokumentacja funkcji `substr()`](https://www.cplusplus.com/reference/string/string/substr/)
-- [Poradnik o wyodrębnianiu podciągów w C++](https://www.geeksforgeeks.org/substring-in-cpp/)
-- [Przykłady użycia funkcji `substr()`](https://www.programiz.com/cpp-programming/library-function/string/substr)
+- Dokumentacja funkcji `substr` w języku C++: https://www.cplusplus.com/reference/string/string/substr/
+- Inne sposoby na wydzielanie podciągów w języku C++: https://thispointer.com/how-to-extract-substring-from-a-string-in-c/
+- Przykładowe zastosowania wydzielania podciągów: https://www.geeksforgeeks.org/interesting-facts-about-string-find-and-substr-in-c/

@@ -1,36 +1,45 @@
 ---
 title:    "Gleam: Convertendo uma data em uma string"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que converter uma data em uma string?
 
-Conversão de data em string é uma tarefa comum em programação, pois permite que dados sejam armazenados e exibidos em um formato legível para o usuário. Neste post, vamos discutir como fazer isso em Gleam, uma linguagem de programação funcional e estática.
+Converter dados em diferentes tipos de formato é uma tarefa comum na programação, especialmente ao lidar com diferentes ferramentas e sistemas. Neste caso, converter uma data em uma string pode ser útil para armazenamento, transmissão ou exibição de informações de data em formato legível para humanos.
 
 ## Como fazer
 
-Para converter uma data em string em Gleam, podemos usar a função `format` do módulo `gleam/time`. Por exemplo, se quisermos exibir a data atual no formato "dd/mm/aaaa", podemos fazer o seguinte:
+A conversão de uma data em uma string é uma tarefa relativamente simples em Gleam, graças à função `format_date()` da biblioteca padrão `gleam/time`. Veja um exemplo abaixo:
 
-```gleam
+```Gleam
 import gleam/time
+import gleam/io.{stdout}
 
-let today = time.now()
-let formatted_date = time.format(today, "{DD}/{MM}/{YYYY}")
+let data = 2021-05-07
+let data_str = time.format_date(data, "%d/%m/%Y")
+
+stdout.print("Data formatada em string: {}".format(data_str))
 ```
 
-Aqui, estamos importando o módulo `gleam/time` e usando a função `now()` para obter a data e hora atuais. Em seguida, usamos o formato desejado dentro do segundo argumento da função `format()`, onde `{DD}` representa o dia, `{MM}` o mês e `{YYYY}` o ano.
+Output:
+```
+Data formatada em string: 07/05/2021
+```
 
-Podemos até mesmo alterar o idioma da data usando o argumento opcional `locale`, como `{DD} de {MM} de {YYYY}`, que exibirá a data no formato "dd de mm de aaaa" (por exemplo, 17 de agosto de 2021).
+Com a função `format_date()`, podemos especificar o formato da data que queremos obter como string, usando códigos de formato especiais. No exemplo acima, usamos `%d` para o dia, `%m` para o mês e `%Y` para o ano.
 
-## Mergulho Profundo
+Além disso, também podemos adicionar informações adicionais, como horário e fuso horário, ao especificar um formato mais detalhado. Para mais informações sobre os códigos de formato disponíveis e suas opções, consulte a documentação da biblioteca `gleam/time`.
 
-A função `format()` aceita diversos formatos para a data e hora, como `{HH}:{MM}:{SS}` para horas, minutos e segundos, `{hh}:{mm}:{ss} {a}` para horas no formato de 12 horas com "am" ou "pm", entre outros. Também é possível adicionar outros argumentos, como `{DDD}` para o dia da semana abreviado em inglês (por exemplo, "Mon", "Tue", etc.).
+## Análise detalhada
 
-Além disso, podemos converter uma data em timestamp usando a função `timestamp()`, e depois convertê-lo em uma string usando a função `format()`.
+Por trás das cenas, a função `format_date()` usa a biblioteca `strftime` do Erlang para a conversão de data em string. O Erlang é uma linguagem de programação funcional conhecida por sua capacidade de manipular efetivamente dados estruturados, como datas e horas.
+
+Uma das vantagens de usar a função `format_date()` é que ela lida automaticamente com diferentes formatos de data, ajustando-se de acordo com o idioma e as configurações locais do sistema. Isso é particularmente útil para aplicativos e sistemas internacionais, onde podem haver diferentes convenções de data.
 
 ## Veja também
-
-- Documentação oficial do módulo `gleam/time`: https://gleam.run/modules/gleam_stdlib/time.html
-- Tutorial sobre conversão de data em string em Gleam: https://medium.com/@rubysmith/converting-dates-to-strings-in-gleam-5c5c8824fe04
+- Documentação da biblioteca `gleam/time`: https://gleam.run/packages/gleam/time/
+- Lista de códigos de formato disponíveis: https://gleam.run/packages/gleam/time/#codes
+- Documentação da biblioteca `strftime` do Erlang: http://erlang.org/doc/man/strftime.html

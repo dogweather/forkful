@@ -1,43 +1,31 @@
 ---
 title:    "Gleam: 날짜를 문자열로 변환하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜: 날짜를 문자열로 변환하는 이유
-날짜를 문자열로 변환하는 것은 날짜 정보를 다루기 쉽고 가독성 좋게 표현하기 위해서입니다.
+## 왜
 
-## 방법: "```Gleam ... ```" 코드 블록에 코딩 예제와 출력 결과
+날짜를 문자열로 변환하는 이유는 때때로 프로그래밍에서 필요한 작업입니다. 예를 들어, 사용자가 생일을 입력했을 때, 이를 보기 좋은 형식으로 출력하거나 파일 이름에 날짜를 포함하여 정렬하는 등의 경우에 필요할 수 있습니다.
 
-날짜를 문자열로 변환하는 방법은 다양합니다. 우선 `Date` 모듈을 임포트해야 합니다. 그리고 `date_to_string` 함수를 사용하여 날짜를 문자열로 변환할 수 있습니다.
+## 어떻게
 
 ```Gleam
-import Date
-
-let date = Date.new(year: 2021, month: 8, day: 15)
-
-let date_string = Date.date_to_string(date, format: "%Y-%m-%d")
+import gleam/date
+date |> date.to_string() // Sample Output: "2021-08-18T23:59:59Z"
 ```
 
-위의 예제에서는 `%Y-%m-%d` 형식으로 날짜를 문자열로 변환하였습니다. 이 코드를 실행하면 다음과 같은 출력 결과가 나옵니다.
+날짜를 문자열로 변환하기 위해서는 먼저 Gleam의 date 모듈을 import해야 합니다. 그리고 date.to_string() 메서드를 사용하여 원하는 날짜를 문자열로 변환할 수 있습니다. 위 예시에서는 현재 날짜와 시간이 "yyyy-mm-ddThh:mm:ssZ" 형식으로 출력되는 것을 볼 수 있습니다.
 
-```
-"2021-08-15"
-```
+## 깊이 분석
 
-또 다른 형식인 `%B %d, %Y`을 사용하면 년-월-일이 아닌 월일년으로 표현할 수 있습니다. 이 외에도 다양한 형식을 사용할 수 있으며, `date_to_string` 함수의 두 번째 매개변수인 `format`으로 원하는 형식을 지정할 수 있습니다.
+날짜를 문자열로 변환하는 과정에서는 다양한 포맷 옵션이 존재합니다. Gleam의 date 모듈에는 여러가지 미리 정의된 포맷이 있으며, 추가적으로 사용자가 직접 포맷을 지정할 수도 있습니다. 예를 들어, ```date.to_string("{YYYY}.{MM}.{DD}")```과 같이 사용하여 "yyyy.mm.dd" 형식으로 출력할 수 있습니다.
 
-## 깊이 들어가기: 날짜를 문자열로 변환하는 과정
+또한 날짜와 관련된 다른 유용한 모듈들도 있습니다. 예를 들어, 날짜 간의 차이나 날짜를 기반으로 새로운 날짜를 계산하는 등의 작업을 할 수 있는 Date.Comparison, Date.Arithmetic 모듈이 있습니다.
 
-`Date` 모듈에서는 `date_to_string` 함수를 사용하여 날짜를 문자열로 변환합니다. 이 함수는 `format` 매개변수를 받아서 그 형식대로 날짜를 문자열로 변환해줍니다. 만약 형식이 지정되지 않으면 기본적인 `%m/%d/%Y` 형식으로 변환됩니다.
+## 참고자료
 
-또한 `format` 매개변수에 `%F`를 사용하면 `%Y-%m-%d` 형식과 동일한 결과를 얻을 수 있습니다. 이는 `%Y-%m-%d` 형식을 축약하여 표현한 것입니다.
-
-이 외에도 `Date` 모듈에는 날짜를 다양한 형식으로 표현하는 함수들이 있습니다. 이러한 함수들을 활용하면 날짜를 원하는 형식으로 변환할 수 있습니다.
-
-## See Also (관련 링크)
-
-- Gleam 공식 문서(https://gleam.run/documentation/)
-- Gleam 커뮤니티 포럼(https://forum.gleam.run/)
-- 날짜/시간 다루기 관련 기사(https://gleam.run/documentation/tutorials/dates-and-times/)
+- Gleam 공식 문서: https://gleam.run/
+- Gleam에서 날짜 다루기: https://gleam.run/documentation/standard-libraries/date

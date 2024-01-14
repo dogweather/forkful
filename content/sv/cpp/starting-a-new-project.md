@@ -1,43 +1,42 @@
 ---
 title:    "C++: Att börja ett nytt projekt"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att starta ett nytt programmeringsprojekt är en spännande och kreativ uppgift som ger möjlighet att utveckla nya färdigheter och skapa något unikt. Det är också ett bra sätt att lära sig mer om programmering och utmana sig själv.
+Att starta ett nytt programmeringsprojekt kan verka skrämmande, men det finns många anledningar till att engagera sig i det. Det kan vara ett sätt att lära sig nya kodningstekniker, skapa något som du behöver eller till och med bara ha kul.
 
-## Så här gör du
+## Hur man gör
 
-För att starta ett nytt C++-projekt behöver du först välja din utvecklingsmiljö. Det finns många alternativ att välja mellan, till exempel Visual Studio, Eclipse, eller enkla textredigerare som Sublime Text. Du behöver också se till att ha en C++-kompilator installerad på din dator.
+För att starta ett nytt programmingsprojekt i C++ kan du använda följande steg:
 
-Nästa steg är att skapa en grundläggande struktur för ditt projekt. Detta kan inkludera filer för källkod, resurser, och eventuella externa bibliotek som du behöver använda. Det är också viktigt att lägga till en fil för att kompilera ditt program, som till exempel en Makefile eller en CMakeLists.txt.
-
-Sedan är det dags att börja koda! Nedan följer ett enkelt exempel på hur du kan skapa och skriva ut en enkel "Hello, world!"-applikation i C++:
-
-```C++
+1. Börja med att skapa en ny mapp för ditt projekt.
+2. Öppna en texteditor och skapa en ny fil med förlängningen ".cpp".
+3. Skriv din kod inom följande kodblock: ```C++
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cout << "Hej världen!" << std::endl;
-    return 0;
+  //Här kan du skriva din kod
+  return 0;
 }
 ```
-
-När du har skrivit din kod är det dags att kompilera den och köra den för att se resultatet. I terminalen, navigera till din projektmapp och använd kommandot `make` (om du använder en Makefile) eller `cmake` (om du använder en CMakeLists.txt). Sedan kan du köra ditt program med kommandot `./programnamn`.
+4. Kompilera och köra programmet för att se dess utmatning. För att göra detta kan du använda ett kompilatorprogram som GNU C++ eller Visual Studio.
 
 ## Djupdykning
 
-Att starta ett nytt projekt kan verka överväldigande, men det finns några saker som du kan göra för att göra processen enklare. En viktig del av att skriva bra kod är att vara organiserad och dokumenterad. Skapa kommentarer i din kod för att förklara vad olika delar gör och för att hjälpa till med felsökning i framtiden.
+När du börjar ett nytt projekt i C++, finns det några saker som du bör tänka på för att få en smidig utvecklingsupplevelse:
 
-Det är också viktigt att testa din kod regelbundet under utvecklingsprocessen. Detta hjälper dig att identifiera eventuella problem tidigt och undvika stora problem senare.
-
-Slutligen, var inte rädd för att söka hjälp och råd. Det finns många community och forum för C++-programmerare som kan hjälpa dig om du fastnar eller behöver råd om bästa praxis.
+- Planera din kod: Innan du börjar koda, ta dig tid att planera hur ditt projekt ska se ut. Detta inkluderar att bestämma vilka funktioner som behövs, hur variabler ska namnges och hur koden ska organiseras.
+- Använd lämpliga verktyg: Se till att du använder ett bra textredigeringsprogram, en effektiv kompilator och andra användbara verktyg som kan hjälpa dig i din utveckling.
+- Testa ofta: Det är viktigt att testa din kod regelbundet för att fånga eventuella fel eller buggar. Detta sparar tid och frustration längre fram i utvecklingsprocessen.
 
 ## Se även
 
-- [Guide för att välja en C++-kompilator](https://www.cs.odu.edu/~zeil/cs250PreTest/latest/Public/choosingCompiler/index.html)
-- [Visual Studio C++ Guide](https://docs.microsoft.com/en-us/cpp/?view=msvc-160)
-- [CMake dokumentation](https://cmake.org/documentation/)
+- [C++ Tutorials](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [C++ Reference](https://www.cplusplus.com/)
+- [Visual Studio C++](https://visualstudio.microsoft.com/vs/features/cplusplus/)

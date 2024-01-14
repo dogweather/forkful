@@ -1,41 +1,59 @@
 ---
 title:    "Swift: Sjekke om en mappe eksisterer"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å sjekke om en mappe eksisterer er en viktig del av Swift-programmering. Dette vil tillate deg å utføre handlinger basert på om en mappe allerede er opprettet eller ikke. I denne bloggposten vil vi gå gjennom hvorfor og hvordan du sjekker om en mappe eksisterer i Swift-programmering.
+Å sjekke om en mappe eksisterer er en viktig del av Swift-programmering. Dette er spesielt nyttig når du prøver å lese eller lagre filer på en bestemt sti i mappen.
 
-## Hvordan
+##Slik Gjør Du Det
 
-Det første du må gjøre er å importere FileManager i koden din. Dette gjøres ved å legge til `import Foundation` øverst i Swift-filen din.
-
-Deretter vil vi bruke FileManager for å sjekke om en mappe eksisterer eller ikke. Dette gjøres ved å bruke metoden `fileExists(atPath:)`, som tar inn en sti til mappen du ønsker å sjekke. Her er et eksempel på hvordan dette kan gjøres:
+For å sjekke om en mappe eksisterer i Swift, kan du bruke FileManager-klassen. Her er en enkel kode for å sjekke om mappen "Dokumenter" eksisterer:
 
 ```Swift
+// Sjekker om Dokumenter-mappen eksisterer
 let fileManager = FileManager.default
-let path = "/Users/brukernavn/Documents/minMappe"
-
-if fileManager.fileExists(atPath: path) {
-    print("Mappen eksisterer allerede")
+if fileManager.fileExists(atPath: "/Users/brukernavn/Documents") {
+    print("Dokumenter-mappen eksisterer.")
 } else {
-    print("Mappen finnes ikke")
+    print("Dokumenter-mappen eksisterer ikke.")
 }
 ```
 
-I dette eksempelet først definerer vi en `fileManager`-variabel som bruker standard filbehandleren. Deretter definerer vi en `path`-variabel som representerer stien til mappen vår. Til slutt sjekker vi om mappen eksisterer ved å bruke `fileExists(atPath:)`-metoden og skriver ut en passende melding.
+Output:
+```Swift
+Dokumenter-mappen eksisterer.
+```
 
-## Deep Dive
+Det er også mulig å sjekke om en mappe eksisterer ved å bruke URL istedenfor bane. Her er en kode for å sjekke om mappen "Bilder" eksisterer på skrivebordet:
 
-Nå som vi har sett på hvordan du kan sjekke om en mappe eksisterer, la oss ta en dypere titt på dette konseptet. Det er viktig å merke seg at `fileExists(atPath:)`-metoden bare sjekker om en mappe eksisterer på den gitte stien, og ikke om det er en mappe eller fil med det navnet. Det kan også hende at metoden returnerer `false` selv om mappen faktisk eksisterer, på grunn av tillatelser eller andre faktorer.
+```Swift
+let desktop = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+let picturesFolder = desktop.appendingPathComponent("Bilder")
+if fileManager.fileExists(atPath: picturesFolder.path) {
+    print("Bilder-mappen eksisterer.")
+} else {
+    print("Bilder-mappen eksisterer ikke.")
+}
+```
 
-En annen viktig ting å merke seg er at `fileExists(atPath:)`-metoden bare sjekker eksistensen av en mappe på et eksakt sti-nivå. Det betyr at hvis du for eksempel sjekker om en mappe eksisterer på stien `/Users/brukernavn/Documents/minMappe`, vil den returnere `true` selv om det er en mappe med samme navn på en annen sti, som for eksempel `/Users/brukernavn/Documents/minMappe/undermappe`.
+Output:
+```Swift
+Bilder-mappen eksisterer ikke.
+```
 
-## Se også
+##Dypdykk
 
-- [Apple Dokumentasjon om FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [How to Check If a File or Folder Exists in Swift](https://www.zerotoappstore.com/how-to-check-if-a-file-folder-exists-in-swift/)
-- [FileManager Tutorial: How to Check If a File Exists in Swift](https://www.iosapptemplates.com/blog/swift-tutorials/filemanager-check-file-exists-swift)
+Når du sjekker om en mappe eksisterer, er det viktig å merke seg at det bare sjekker om selve mappen eksisterer, ikke om den har noen filer eller undermapper i seg. En annen ting å merke seg er at det kan være forskjellige måter å skrive banen til mappen på avhengig av systemet ditt.
+
+For å sikre at koden din fungerer på alle plattformer, kan du bruke FileManager.default.urls-metoden som vist i eksemplene ovenfor.
+
+##Se Også
+
+- [FileManager dokumentsasjon](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift - Finne stier og baner](https://www.hackingwithswift.com/example-code/strings/how-to-find-the-paths-between-two-directories)
+- [Swift - How to check if file exists](https://www.codementor.io/@winnieliang/file-handling-in-swift-part-1-working-with-files-and-directories-2zqkzp85s)

@@ -1,52 +1,48 @@
 ---
 title:    "TypeScript: Écrire des tests"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Ecrire des tests est un aspect essentiel de la programmation en TypeScript. Cela permet de s'assurer que notre code fonctionne correctement et de détecter rapidement d'éventuels bugs. De plus, cela facilite la collaboration avec d'autres développeurs en fournissant une documentation claire et précise du fonctionnement du code.
+Ecrire des tests peut sembler fastidieux pour certains développeurs, mais c'est une étape importante dans le processus de développement logiciel. Les tests permettent de détecter les erreurs et les bugs plus tôt dans le processus de développement, ce qui permet d'économiser du temps et de l'argent à long terme.
 
-## Comment faire
+## Comment Faire
 
-Pour commencer, il est important de comprendre la syntaxe de base pour écrire des tests en TypeScript. Voici un exemple de test simple qui vérifie qu'une fonction ajoute correctement deux nombres:
+Pour écrire des tests en TypeScript, il est important de comprendre les concepts de base tels que les fonctions, les variables et les tableaux. Voici un exemple de code pour tester si une fonction renvoie le bon résultat :
 
-```TypeScript
-function addition(a: number, b: number): number {
-  return a + b;
+```Typescript
+// fonction à tester
+function multiply(x: number, y: number): number {
+  return x * y;
 }
 
-test("addition", () => {
-  expect(addition(2, 3)).toBe(5);
-});
+// test
+let result = multiply(2, 3);
+console.log(result); //Output: 6
 ```
 
-Dans cet exemple, nous utilisons la fonction `test` fournie par la librairie de tests `jest` pour définir notre test. Nous passons en paramètre le nom du test ainsi qu'une fonction qui exécute notre code et vérifie si le résultat est conforme à nos attentes en utilisant la fonction `expect` également fournie par `jest`.
+Dans cet exemple, nous avons créé une fonction qui multiplie deux nombres et nous l'avons testée avec différentes valeurs pour nous assurer qu'elle renvoie le bon résultat. En utilisant des tests comme celui-ci, nous pouvons détecter des erreurs dans notre code plus rapidement.
 
-Nous pouvons également utiliser l'opérateur `toBe` pour vérifier l'égalité stricte entre deux valeurs.
+## Plongée Profonde
 
-```TypeScript
-test("addition avec nombre négatif", () => {
-  expect(addition(-2, 5)).toBe(3);
-});
-```
+Il existe différentes techniques et pratiques pour écrire des tests de manière efficace en TypeScript. Voici quelques-unes d'entre elles :
 
-N'oubliez pas d'installer les librairies nécessaires en utilisant `npm` ou `yarn`, et d'importer les fonctions correspondantes dans votre fichier de test en utilisant `import` ou `require`.
+- Utiliser des assertations pour vérifier si le résultat du test est correct.
+- Utiliser des mocks pour simuler des données ou des dépendances dans les tests.
+- Créer des tests unitaires pour chaque fonction ou méthode afin de les tester individuellement.
 
-## Deep Dive
+Il est également important de garder à l'esprit que les tests sont une partie intégrante du processus de développement et qu'ils doivent être maintenus et mis à jour en même temps que le code de l'application.
 
-Maintenant que nous avons vu un exemple simple, explorons un peu plus en profondeur les tests en TypeScript. Il existe plusieurs librairies de tests disponibles, mais `jest` est l'une des plus populaires et elle offre de nombreuses fonctionnalités utiles telles que la possibilité de mocker des fonctions et des modules pour faciliter les tests unitaires.
+## Voir Aussi
 
-De plus, `jest` prend en charge l'utilisation de TypeScript en utilisant un fichier de configuration `jest.config.js` pour définir quelle version de TypeScript utiliser et comment compiler nos fichiers de test.
+Pour en savoir plus sur l'écriture de tests en TypeScript, voici quelques ressources intéressantes :
 
-Pour des tests plus complexes, nous pouvons également utiliser des outils tels que `cypress` pour effectuer des tests end-to-end en simulant des interactions avec notre application.
+- [Guide de l'utilisateur TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Documentation sur les tests unitaires en TypeScript](https://www.typescriptlang.org/docs/handbook/testing.html)
+- [Vidéo tutorielle pour écrire des tests en TypeScript](https://www.youtube.com/watch?v=zwrd6mR-N5k)
 
-N'oubliez pas qu'écrire des tests efficaces nécessite une bonne compréhension de votre code et un certain effort, mais les avantages en valent la peine à long terme!
-
-## Voir aussi
-
-- [Documentation de Jest](https://jestjs.io/docs/en/getting-started)
-- [Guide de testing en TypeScript](https://www.typescriptlang.org/docs/handbook/intro-to-testing.html)
-- [Documentation de Cypress](https://docs.cypress.io/guides/overview/why-cypress.html)
+N'oubliez pas que les tests sont un outil précieux pour améliorer la qualité de votre code et garantir un fonctionnement sans bugs de votre application. Alors n'hésitez pas à les utiliser dans votre prochain projet en TypeScript !

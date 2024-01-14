@@ -1,56 +1,43 @@
 ---
 title:    "Bash: Tworzenie pliku tekstowego"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać plik tekstowy?
 
-Cześć czytelniku! Jeśli jesteś tutaj, prawdopodobnie interesujesz się programowaniem w Bash lub po prostu chcesz dowiedzieć się więcej na ten temat. Dzisiejszy post będzie dotyczył tworzenia plików tekstowych za pomocą języka Bash. Poniżej dowiesz się dlaczego warto poznać tę umiejętność.
+Pisanie plików tekstowych jest nieodłączną częścią programowania w Bash. Jest to podstawowa umiejętność, którą każdy programista powinien posiadać, ponieważ pozwala na tworzenie, edycję i wyświetlanie tekstowych danych w systemie operacyjnym. Pliki tekstowe są również jednym z najprostszych sposobów na przechowywanie informacji i dzielenie się nimi z innymi programistami. Dlatego też warto poznać podstawy pisania plików tekstowych w Bash.
 
-Tworzenie plików tekstowych za pomocą Bash jest bardzo użytecznym i praktycznym narzędziem dla programistów, a także dla osób, które chcą nauczyć się podstaw programowania. Jest to szybki i prosty sposób na zapisywanie informacji i różnych danych w jednym miejscu. Pliki tekstowe są również łatwo czytelne przez inne aplikacje, co czyni je uniwersalnym formatem przechowywania danych.
+## Jak pisać plik tekstowy?
 
-## Jak to zrobić
-
-Teraz przejdziemy do praktyki. Najpierw otworzymy terminal i utworzymy nowy plik tekstowy za pomocą polecenia `touch`. Następnie użyjemy polecenia `echo` aby wpisać nasz tekst do pliku. Przykładowy kod wyglądałby tak:
+Aby utworzyć nowy plik tekstowy w Bash, wystarczy użyć polecenia "touch" i podać nazwę nowego pliku. Na przykład:
 
 ```Bash
-touch tekstowy_plik.txt    # utworzenie nowego pliku
-echo "To jest nasz przykładowy tekstowy plik" > tekstowy_plik.txt   # wpisanie tekstu do pliku
+touch nowy_plik.txt
 ```
 
-Jeśli chcemy dodać więcej tekstu do pliku, możemy użyć operatora `>>` zamiast `>` w poleceniu `echo`:
+W ten sposób utworzony zostanie nowy pusty plik o nazwie "nowy_plik.txt". Możemy również użyć polecenia "echo" aby zapisać treść wewnątrz pliku. Na przykład:
 
 ```Bash
-echo "Ten tekst zostanie dodany do istniejącego pliku" >> tekstowy_plik.txt
+echo "To jest tekst zapisany w pliku" > nowy_plik.txt
 ```
 
-Aby wyświetlić zawartość pliku w terminalu, możemy użyć polecenia `cat`:
+W ten sposób plik "nowy_plik.txt" będzie zawierał tekst "To jest tekst zapisany w pliku". Możemy również użyć polecenia "cat" aby wyświetlić zawartość pliku w terminalu. Na przykład:
 
 ```Bash
-cat tekstowy_plik.txt
+cat nowy_plik.txt
 ```
 
-Bash umożliwia również czytanie danych z pliku i przypisanie ich do zmiennych. Służy do tego polecenie `read`, przykładowy kod wyglądałby tak:
+W ten sposób zostanie wyświetlona zawartość pliku "nowy_plik.txt" w terminalu.
 
-```Bash
-read tekst < tekstowy_plik.txt    # przypisanie zawartości pliku do zmiennej tekst
-echo $tekst   # wyświetlenie zawartości zmiennej
-```
+##Głębszy wgląd w pisanie plików tekstowych
 
-## Deep Dive
+Podstawy pisania plików tekstowych w Bash to tylko wierzchołek góry lodowej. Istnieje wiele różnych poleceń i opcji, które można wykorzystać w celu modyfikacji i zarządzania plikami tekstowymi. Na przykład, można użyć polecenia "cp" aby skopiować istniejący plik tekstowy, lub "rm" aby go usunąć. Można również wykorzystać polecenie "cat" w połączeniu z opcją ">" aby dopisywać tekst do istniejącego pliku tekstowego. Warto także zapoznać się z kolejnymi poziomami trudności, takimi jak praca z plikami CSV lub JSON, lub używanie różnych narzędzi do generowania i analizowania danych tekstowych.
 
-Jeśli jesteś trochę bardziej zaawansowany w programowaniu w Bash, możesz wykorzystać polecenie `printf` do formatowania tekstu w pliku. Przykładowy kod wyglądałby tak:
+## Zobacz też
 
-```Bash
-printf "Ilość to %d, a nazwa to %s" 10 plik.txt    # sformatowanie tekstu i wpisanie do pliku
-```
-
-Możliwości związane z tworzeniem plików tekstowych w Bash są bardzo szerokie i mogą być wykorzystywane w różnych celach. Przydatnego narzędzia do tworzenia plików tekstowych z wykorzystaniem Bash możesz również używać do przetwarzania dużej ilości danych i automatyzacji swoich zadań.
-
-## Zobacz również
-
-- [10 przydatnych poleceń w Bash](https://linuxconfig.org/10-useful-bash-commands)
-- [Bash Tutorial dla początkujących](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- https://www.shellscript.sh/ 
+- https://www.tutorialspoint.com/unix/unix-regular-expressions.htm 
+- https://www.udemy.com/course/linux-command-line-bash-shell-scripting-dds/?referralCode=7C0E047CB048BDCBDB3C

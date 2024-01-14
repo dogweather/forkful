@@ -1,58 +1,59 @@
 ---
 title:    "Gleam: Erstellen einer temporären Datei"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Erstellen einer temporären Datei ist ein nützliches Werkzeug für Gleam-Entwickler. Es ermöglicht das vorübergehende Speichern von Daten während der Ausführung eines Programms und hilft bei der Vermeidung von Konflikten mit bereits bestehenden Dateien.
+Die Erstellung temporärer Dateien ist oft eine notwendige Aufgabe beim Programmieren. Hier erfährst du, warum diese Funktion so wichtig ist und wie du sie in Gleam implementieren kannst.
 
-## Wie man eine temporäre Datei erstellt
+## Wie geht das?
 
-Das Erstellen einer temporären Datei in Gleam ist einfach und erfordert nur wenige Zeilen Code. Verwenden Sie die Standardbibliotheksfunktion `File.Temporary.create/0`, um eine temporäre Datei zu erstellen. Schauen wir uns ein Beispiel an:
-
-```Gleam
-temp_file = File.Temporary.create()
-
-# Ausgabe:
-Temporäre Datei erstellt: /tmp/glgK7z8nQq
+Die Erstellung einer temporären Datei in Gleam ist ganz einfach. Zuerst müssen wir das `os` Modul importieren, welches uns Zugriff auf Betriebssystem-Funktionen gibt.
 
 ```
+Gleam module TempFile {
 
-Wie Sie sehen können, gibt die Funktion `File.Temporary.create/0` einen `TempFile` zurück, der den Pfad und den Dateinamen der erstellten temporären Datei enthält.
+    import os
 
-Sie können auch optional einen benutzerdefinierten Namenspräfix angeben, der vor dem Dateinamen platziert wird:
-
-```Gleam
-temp_file = File.Temporary.create(prefix: "gleam")
-
-# Ausgabe:
-Temporäre Datei erstellt: /tmp/gleamK7z8nQq
-```
-
-Die temporäre Datei wird automatisch gelöscht, wenn das Programm beendet wird oder wenn der `TempFile` Wert zerstört wird. Sie müssen sich also keine Sorgen über das Aufräumen der temporären Datei machen.
-
-## Tiefer Einblick
-
-Um genau zu verstehen, wie das Erstellen einer temporären Datei in Gleam funktioniert, werfen wir einen Blick auf die zugrunde liegende Implementierung. Die `File.Temporary.create/0` Funktion verwendet die Standardbibliotheksfunktion `File.new/1`, um eine neue Datei zu erstellen. Dann wird die Funktion `System.mkstemp/0` aus dem Modul `System.Temporary` verwendet, um den Dateinamen und den Pfad der temporären Datei zu erstellen.
-
-Bei der Verwendung der `TempFile` Struktur empfehle ich, das `pattern_matching` zu verwenden, um auf den Dateinamen und den Pfad zuzugreifen:
-
-```Gleam
-temp_file = File.Temporary.create()
-
-# Mustermatching
-case temp_file {
-   TempFile(path, name) -> IO.print("Temporäre Datei erstellt: $(path)/$(name)")
+    fn create_temp_file() {
+        let filename = os.tmp()
+        // Hier können wir dann die Datei manipulieren
+    }
 }
 ```
 
-Dies ist vorteilhaft, da es die Berechnung der Werte `path` und `name` auf einen einzigen Aufruf von `File.Temporary.create/0` reduziert.
+Die Funktion `os.tmp()` gibt uns einen String zurück, welcher der Pfad und Name der temporären Datei ist. Wir können dann diesen String verwenden, um die Datei zu erstellen und zu bearbeiten.
+
+## Tiefer Einblick
+
+Manchmal möchtest du vielleicht mehr Kontrolle über deine temporären Dateien haben, zum Beispiel indem du bestimmte Berechtigungen festlegst oder einen benutzerdefinierten Dateinamen verwendest. In Gleam gibt es die Funktion `os.tmp_with_options()`, die uns die Möglichkeit gibt, diese Parameter selbst anzugeben.
+
+```
+Gleam module TempFile {
+
+    import os
+
+    type FileOptions {
+        permissions: Int,
+        prefix: String,
+        suffix: String
+    }
+
+    pub fn create_temp_file(options: FileOptions) {
+        let filename = os.tmp_with_options(options)
+        // Hier können wir dann die Datei manipulieren
+    }
+}
+```
+
+Wir definieren eine eigene Datentyp `FileOptions`, der die entsprechenden Parameter enthält, und übergeben diese dann an die `os.tmp_with_options()` Funktion. Dies gibt uns noch mehr Flexibilität bei der Erstellung von temporären Dateien.
 
 ## Siehe auch
 
-- `File.Temporary.create/0` offizielle Dokumentation: https://gleam.run/documentation/stdlib/file/#temporary-create-0
-- `System.mkstemp/0` offizielle Dokumentation: https://gleam.run/documentation/stdlib/system/temporary/#mkstemp-0
-- Offizielle Gleam-Website: https://gleam.run/de/
+- [Gleam Dokumentation - os Modul](https://gleam.run/modules/standard-libraries/os/)
+- [Gleam Greeter Tutorial](https://github.com/gleam-lang/gleam/blob/main/docs/getting-started/greeter.md) (Deutsch)
+- [Einführung in Gleam](https://dev.to/m1garand/getting-started-with-gleam-dm7) (Deutsch)

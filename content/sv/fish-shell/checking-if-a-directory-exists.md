@@ -1,46 +1,32 @@
 ---
-title:    "Fish Shell: Kontrollera om en mapp finns"
+title:    "Fish Shell: Kontrollera om en katalog finns."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Ibland när du gör din Fish Shell-script, kanske du behöver kontrollera om en mapp finns innan du fortsätter med resten av koden. Att veta om en mapp finns kan hjälpa till att förhindra fel och göra koden mer robust.
+Att kontrollera om en mapp existerar är ett viktigt steg i programmering, särskilt vid skriptning av uppgifter som kräver åtkomst till specifika mappar. Det är också ett användbart sätt att undvika felaktig inmatning eller felaktig hantering av filstrukturer.
 
-## Så här gör man
+## Så här gör du 
 
-För att kontrollera om en mapp finns i Fish Shell, kan du använda kommandot "test -d". Detta kommer att returnera true om mappen finns och false om den inte gör det. Här är ett exempel på hur du kan använda detta kommando:
-
-```Fish Shell
-if test -d "mappnamn"
-  echo "Mappen finns!"
-else
-  echo "Mappen finns inte."
-end
+```Fish Shell 
+if test -d /sökväg/till/mapp
+echo "Mappen existerar"
+else 
+echo "Mappen finns inte"
 ```
 
-I detta exempel använder vi "if" och "else" för att skriva ut ett meddelande beroende på resultatet av "test -d" -kommandot.
+Detta enkla kodexempel visar hur man kan använda testkommandot i Fish Shell för att kontrollera om en mapp existerar. Om mappen finns kommer meddelandet "Mappen existerar" att skrivas ut, annars kommer "Mappen finns inte" att visas. Detta kan naturligtvis anpassas för att passa till olika behov, till exempel kan du ange en annan åtgärd att utföra om mappen inte existerar.
 
-## Djupdykning
+## Utforska Mer 
 
-Det finns flera olika sätt att kontrollera om en mapp finns i Fish Shell. En annan metod är att använda kommandot "contains" tillsammans med "test -d". Här är ett exempel på detta:
-
-```Fish Shell
-if contains "mappnamn" (ls)
-  echo "Mappen finns!"
-else
-  echo "Mappen finns inte."
-end
-```
-
-I detta exempel använder vi "ls" för att lista alla filer och mappar i nuvarande mapp, och sedan kollar vi om "mappnamn" finns med hjälp av "contains". Om den finns kommer vi att skriva ut "Mappen finns!".
-
-Det finns också andra kommandon som du kan använda för att kontrollera om en mapp finns, till exempel "status" och "find". Utforska gärna dessa för att hitta det som fungerar bäst för ditt specifika användningsfall.
+Kontroll av mappars existens kan också uppnås med andra metoder såsom att kontrollera returvärdet från find-kommandot eller använda en loop för att gå igenom listan över tillgängliga mappar. Det kan också vara användbart att lära sig om flaggor som -d, -e och -f som kan användas med testkommandot för att kontrollera mappars och filers olika egenskaper. 
 
 ## Se även
 
-- [Fish Shell dokumentation för kommandot "test"](https://fishshell.com/docs/current/cmds/test.html)
-- [En guide för Fish Shell-programmering](https://fishshell.com/docs/current/index.html)
-- [En fullständig lista över Fish Shell-kommandon](https://fishshell.com/docs/current/commands.html)
+- [Fish Shell dokumentation] (https://fishshell.com/docs/current/commands.html?highlight=test)
+- [Linux-testkommando] (https://www.computerhope.com/unix/utest.htm)
+- [GeeksForGeeks-tutorial om kontroll av mappars existens i Fish Shell] (https://www.geeksforgeeks.org/check-if-a-directory-exists-in-fish-shell/)

@@ -1,52 +1,37 @@
 ---
-title:    "Javascript: Hente den nåværende datoen."
+title:    "Javascript: Å få nåværende dato"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
+I de fleste programmeringsspråk er det en innebygd funksjon for å hente ut dagens dato og klokkeslett. Dette er nyttig fordi det lar oss spesifisere nøyaktig når et program skal kjøre eller når en hendelse skal skje. I denne bloggposten vil vi se nærmere på hvordan man kan bruke Javascript for å få tak i den nåværende datoen.
 
-Når vi programmerer, er det ofte nødvendig å få tilgang til nåværende dato og klokkeslett. Dette kan være nyttig for å vise tidspunktet for en hendelse, beregne alder eller planlegge en fremtidig handling. Uansett årsak, er det viktig å vite hvordan man kan få tak i denne informasjonen i Javascript.
-
-# Hvordan få tak i nåværende dato
-
-For å få tak i nåværende dato i Javascript, kan vi bruke et innebygd objekt kalt "Date". Dette objektet har en rekke nyttige metoder og egenskaper for å håndtere datofunksjonalitet.
-
-Vi kan først opprette en ny forekomst av Dato-objektet ved å kalle `new Date()`. Dette vil referere til nåværende dato og klokkeslett.
-
+##Hvordan bruke
+For å få den nåværende datoen i Javascript, kan du bruke Date-objektet. Dette objektet inneholder en rekke metoder for å få tak i dato og klokkeslett. Her er et eksempel på hvordan du kan hente ut den nåværende datoen og formatere den til en lesbar form:
 ```Javascript
-let nåværendeDato = new Date();
-console.log(nåværendeDato);
-// Output: 2021-03-27T14:12:03.210Z
+let today = new Date();
+let day = today.getDate();
+let month = today.getMonth()+1;
+let year = today.getFullYear();
+
+console.log(`Dagens dato er ${day}.${month}.${year}.`);
+// Output: Dagens dato er 5.10.2021.
 ```
+Her bruker vi metoder som `getDate()`, `getMonth()` og `getFullYear()` for å få tak i den nødvendige informasjonen. Vi legger også til 1 til `getMonth()` siden det returnerer en verdi fra 0-11, der 0 er januar.
 
-Vi kan også spesifisere en bestemt dato og klokkeslett ved å gi argumenter til Date-konstruktøren. Dette gjøres på følgende måte: `new Date(år, måned, dag, time, minutt, sekund)`.
+##Dypdykk
+Det finnes flere metoder for å formatere datoen og klokkeslettet i Javascript. Her er noen eksempler:
+- `getDay()`: returnerer en verdi fra 0-6, der 0 er søndag og 6 er lørdag.
+- `getHours()`: returnerer timen i 24-timers format.
+- `getMinutes()`: returnerer antall minutter.
+- `getSeconds()`: returnerer antall sekunder.
+- `getMilliseconds()`: returnerer antall millisekunder.
 
-```Javascript
-let dato = new Date(2021, 2, 27, 12, 30, 0);
-console.log(dato);
-// Output: 2021-02-27T11:30:00.000Z
-```
+Det finnes også en rekke metoder for å sette en spesifikk dato eller klokkeslett ved hjelp av `set()`-metodene. Du kan utforske disse nærmere i dokumentasjonen for Javascript.
 
-Vi kan også få tilgang til ulike deler av datoen ved å bruke de ulike metodene på Dato-objektet. For eksempel kan vi få tak i måneden ved å bruke `dato.getMonth()`, som vil returnere verdien 2 siden måneder i Javascript starter på 0.
-
-```Javascript
-let måned = dato.getMonth();
-console.log(måned);
-// Output: 2
-```
-
-# Dykke dypere
-
-Selv om dette bare er noen få eksempler på hvordan man kan få tak i nåværende dato i Javascript, har Date-objektet mye mer funksjonalitet som kan utforskes.
-
-For eksempel kan det være nyttig å vite at verdien som blir returnert av `dato.getMonth()` er basert på din lokale tidssone og ikke på UTC-tidssonen som den vises som i konsollen.
-
-Det er også verdt å merke seg at Dato-objektet ikke bare kan håndtere nåværende dato og klokkeslett, men også tidligere og fremtidige datoer og tider.
-
-# Se også
-
-- Date-objektet (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Tidssoner og Dato-objektet (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Time_zone)
-- Generering av tilfeldige datoer i Javascript (https://www.freecodecamp.org/news/javascript-generate-random-dates/)
+##Se også
+- [Date-objektet i Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [MDN Dokumentasjon for Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

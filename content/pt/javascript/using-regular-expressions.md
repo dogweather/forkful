@@ -1,52 +1,60 @@
 ---
 title:    "Javascript: Utilizando expressões regulares"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar Expressões Regulares em Javascript?
+## Por que usar expressões regulares em programação?
 
-As Expressões Regulares, também conhecidas como regex, são uma poderosa ferramenta para manipular e pesquisar textos em Javascript. Ao utilizá-las, é possível realizar tarefas como validação de dados, substituição de texto e extração de informações específicas de uma string. Se você quer economizar tempo e tornar seu código mais eficiente, as regex são uma ótima opção.
+As expressões regulares são uma poderosa ferramenta para trabalhar com strings em programação. Elas permitem encontrar padrões específicos em textos, facilitando a manipulação e validação de dados. Usar expressões regulares pode economizar tempo e facilitar o desenvolvimento de aplicações.
 
-## Como utilizar Expressões Regulares em Javascript
+## Como usar expressões regulares em Javascript
 
-Para utilizar Expressões Regulares em Javascript, primeiro é necessário criar um objeto Regex utilizando a sintaxe ```javascript /padrão/a```, onde "padrão" é a expressão que você deseja procurar. Em seguida, é possível utilizar métodos como ```test()```, que retorna true se o padrão for encontrado na string, ou ```exec()```, que retorna informações sobre a ocorrência do padrão.
+Para utilizar expressões regulares em Javascript, é necessário utilizar o objeto `RegExp`. É possível criar uma expressão regular literalmente, envolvendo-a com barras ("/") e passando-a como parâmetro para o construtor `RegExp`. Por exemplo:
 
-Por exemplo, se quisermos verificar se uma string possui apenas números, podemos utilizar o seguinte código:
-
-```javascript
-let regex = /[0-9]+/; // regex para encontrar números
-let str = "123abc";
-let result = regex.test(str); // retorna true
+``` Javascript
+let regex = /hello/g; // cria uma expressão regular para encontrar a palavra "hello" em uma string
 ```
 
-## Aprofundando em Expressões Regulares
+Também é possível criar uma expressão regular utilizando o construtor `RegExp`, passando como parâmetro a expressão regular e as flags desejadas entre aspas. Por exemplo:
 
-Existem várias opções de modificadores e caracteres especiais que podem ser utilizados para tornar as Expressões Regulares mais precisas e flexíveis. Alguns deles são:
+``` Javascript
+let regex = new RegExp("hello", "g"); // cria a mesma expressão regular do exemplo anterior
+```
 
-- **i**: torna a busca case-insensitive, ou seja, não diferencia maiúsculas de minúsculas. Ex: ```/[A-Z]+/i``` encontra tanto "ABC" quanto "AbC";
+Para usar a expressão regular em uma string, pode-se utilizar o método `test()` para verificar se a expressão é encontrada na string, ou o método `exec()` para retornar informações sobre o primeiro match da expressão na string. Por exemplo:
 
-- **g**: faz com que a busca retorne todas as ocorrências do padrão na string, não apenas a primeira. Ex: ```/abc/g``` encontra todas as ocorrências de "abc" em uma string;
+``` Javascript
+let string = "Hello world!";
+regex.test(string); // retorna true
+regex.exec(string); // retorna ["Hello"]
+```
 
-- **^**: indica que o padrão deve ser encontrado no início da string;
+Também é possível utilizar os métodos `replace()` e `match()` para substituir ou extrair partes da string, respectivamente. Por exemplo:
 
-- **$**: indica que o padrão deve ser encontrado no final da string;
+``` Javascript
+string.replace(regex, "bye"); // retorna "bye world!"
+string.match(regex); // retorna ["Hello"]
+```
 
-- **.**: representa qualquer caractere;
+## Aprofundando nas expressões regulares
 
-- **[]**: define um conjunto de caracteres possíveis para o padrão. Por exemplo, ```/[aeiou]/``` encontra todas as vogais em uma string.
+As expressões regulares possuem uma sintaxe própria, com diversas metacaracteres e construções que permitem encontrar padrões mais complexos. Além disso, é possível utilizar as flags `i` (case insensitive) e `m` (multiline) para definir como a expressão deve ser interpretada.
 
-Esses são apenas alguns exemplos, mas é possível utilizar muitos outros modificadores e caracteres especiais para criar expressões regulares ainda mais complexas e precisas.
+Um recurso muito útil nas expressões regulares é o uso de grupos, delimitados por parênteses, que permitem capturar partes específicas da string. Por exemplo:
+
+``` Javascript
+let regex = /Name: (.*) Age: (.*)/;
+let string = "Name: John Age: 30";
+let match = string.match(regex); // retorna ["Name: John Age: 30", "John", "30"]
+```
+
+Além disso, existem outras construções que permitem definir quantidades (como `?`, `+` e `*`) e classes de caracteres (como `[]` e `.`) para tornar as expressões mais precisas.
 
 ## Veja também
 
-Aqui estão alguns links úteis para aprofundar seus conhecimentos em Expressões Regulares em Javascript:
-
-[MDN - Expressões Regulares](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-
-[Tutorial - Expressões Regulares em Javascript](https://www.ramosdainformatica.com.br/criando-expressoes-regulares-em-javascript/)
-
-[Livro - Expressões Regulares: Uma abordagem divertida](https://www.casadocodigo.com.br/products/livro-regex)
-
-Agora que você já sabe como utilizar estas poderosas ferramentas em seu código Javascript, experimente e veja como elas podem facilitar sua vida como programador. Boa sorte!
+- [Documentação oficial do JavaScript para expressões regulares](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Expressões regulares no YouTube](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [Exercícios práticos de expressões regulares em Javascript](https://regexone.com/)

@@ -1,57 +1,48 @@
 ---
 title:    "Go: Creando un archivo temporal"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué crear un archivo temporal en Go
 
-La creación de archivos temporales es una práctica común en la programación, especialmente en entornos de prueba y desarrollo. Estos archivos proporcionan un espacio de trabajo temporal para almacenar datos, sin afectar los datos existentes en el sistema.
+Crear un archivo temporal puede ser necesario en diferentes situaciones de programación en Go. Por ejemplo, si necesitas guardar datos de manera temporal en la memoria para luego ser eliminados, o para hacer pruebas con datos que no quieres guardar permanentemente.
 
-##Cómo
+## Cómo crear un archivo temporal en Go
 
-La creación de un archivo temporal en Go es muy sencilla gracias al paquete "io/ioutil". A continuación, se muestra un ejemplo de código que crea un archivo temporal y escribe datos en él:
-
-```Go
-archivoTemp, err := ioutil.TempFile("", "ejemplo")
-if err != nil {
-    fmt.Println(err)
-}
-defer archivoTemp.Close()
-contenido := []byte("Ejemplo de datos")
-_, err := archivoTemp.Write(contenido)
-if err != nil {
-    fmt.Println(err)
-}
-fmt.Println("Archivo temporal creado:", archivoTemp.Name())
-```
-
-El código anterior utiliza la función `TempFile` del paquete `ioutil` para crear un archivo temporal con el prefijo "ejemplo". Luego, el archivo se cierra y se escriben datos en él utilizando la función `Write`. Finalmente, se imprime el nombre del archivo temporal creado.
-
-La salida del código anterior sería:
-
-```
-Archivo temporal creado: /tmp/ejemplo659395958
-```
-
-##Profundizando
-
-Ahora que sabemos cómo crear un archivo temporal en Go, podemos explorar un poco más sobre este tema. Por ejemplo, es importante recordar que los archivos temporales deben eliminarse después de su uso, de lo contrario, pueden acumularse y ocupar espacio en el sistema.
-
-Para eliminar un archivo temporal en Go, podemos utilizar la función `Remove` del paquete `os`. A continuación, se muestra un ejemplo de cómo eliminar un archivo temporal creado anteriormente:
+Para crear un archivo temporal en Go, se puede utilizar la función `TempFile` del paquete `io/ioutil`. Esta función toma dos argumentos: la ruta donde quieres crear el archivo temporal y un prefijo para el nombre del archivo. A continuación, se muestra un ejemplo de código utilizando esta función:
 
 ```Go
-err := os.Remove(archivoTemp.Name())
+file, err := ioutil.TempFile("ruta", "prefijo")
 if err != nil {
-    fmt.Println(err)
-} else {
-    fmt.Println("Archivo temporal eliminado:", archivoTemp.Name())
+  log.Fatal(err)
 }
+defer os.Remove(file.Name())
+
+fmt.Println("Se ha creado un archivo temporal en ", file.Name())
 ```
 
-##Consulte también
+El código anterior creará un archivo temporal en la ruta especificada con un nombre que comience con el prefijo especificado. También se utiliza la función `defer` para asegurarse de que el archivo se elimine automáticamente después de finalizar el proceso.
 
-- Documentación oficial de Go sobre el paquete `ioutil`: https://golang.org/pkg/io/ioutil/
-- Tutorial de creación de archivos temporales en Go: https://tutorialedge.net/golang/create-temporary-file-go/
-- Ejemplo de uso de archivos temporales en pruebas unitarias en Go: https://dev.to/moficodes/testing-files-in-go-ioutil-tempfile-example-1gnh
+## Profundizando en la creación de archivos temporales
+
+Al crear un archivo temporal en Go, también puedes especificar una extensión para el archivo utilizando la función `TempFile`. Por ejemplo:
+
+```Go
+file, err := ioutil.TempFile("ruta", "prefijo.*.txt")
+if err != nil {
+  log.Fatal(err)
+}
+defer os.Remove(file.Name())
+
+fmt.Println("Se ha creado un archivo temporal en ", file.Name())
+```
+
+Además, puedes utilizar la función `TempDir` del paquete `ioutil` para crear un directorio temporal en lugar de un archivo. Esta función también toma dos argumentos: una ruta donde quieres crear el directorio temporal y un prefijo para el nombre del directorio.
+
+## Ver también
+
+- [Documentación de la función TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
+- [Documentación de la función TempDir](https://golang.org/pkg/io/ioutil/#TempDir)

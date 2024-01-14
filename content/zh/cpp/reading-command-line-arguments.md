@@ -1,93 +1,111 @@
 ---
 title:    "C++: 读取命令行参数"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
-为什么要阅读命令行参数？这是一个很常见的问题，特别是对于那些刚开始学习编程的人。通过阅读命令行参数，你可以更好地控制和定制你的程序，让它变得更加灵活和实用。
+# 为什么要读取命令行参数
 
-# 如何
-想要学习如何读取命令行参数吗？那么你来对地方了！下面我将通过几个 C++ 语言的例子来帮助你学习如何读取命令行参数。首先，让我们来创建一个简单的程序，通过命令行参数来输出对应的问候语。
+读取命令行参数是一项在C++编程中非常有用的技能。通过读取命令行参数，我们可以在运行程序时向程序传递一些额外的信息，从而使程序可以根据不同的参数执行不同的操作。这样可以让程序更加灵活和智能，节省开发时间。
 
-```C++
-#include <iostream>
+# 如何读取命令行参数
 
-using namespace std;
-
-int main(int argc, char* argv[]) 
-{
-    if (argc < 2) 
-    {
-        cout << "请输入你的名字作为命令行参数！" << endl;
-        return 0;
-    }
-
-    cout << "你好，" << argv[1] << "！欢迎来到我的博客！" << endl;
-    return 0;
-}
-```
-
-现在我们来运行一下这个程序，输入你的名字作为命令行参数，看看会发生什么吧！
-
-```
-输入：./hello_world Frank
-输出：你好，Frank！欢迎来到我的博客！
-```
-
-除了输入参数外，我们也可以通过命令行参数来决定程序的行为。比如，我们可以让程序通过命令行参数来决定输出的语言。下面是一个示例代码：
+在C++中，我们可以通过使用main函数的参数argc和argv来读取命令行参数。argc是一个表示参数个数的整数，而argv是一个指针数组，它存储了每个参数的值。让我们来看一个简单的例子：
 
 ```C++
 #include <iostream>
 
-using namespace std;
+int main(int argc, char* argv[]) {
+    // 打印参数个数
+    std::cout << "参数个数：" << argc << std::endl;
 
-int main(int argc, char* argv[]) 
-{
-    if (argc < 2) 
-    {
-        cout << "请输入语言选择（en/cn）作为命令行参数！" << endl;
-        return 0;
-    }
-
-    if (argv[1][0] == 'e' && argv[1][1] == 'n') 
-    {
-        cout << "Hello World!" << endl;
-    } 
-    else if (argv[1][0] == 'c' && argv[1][1] == 'n') 
-    {
-        cout << "你好，世界！" << endl;
-    } 
-    else 
-    {
-        cout << "请输入正确的语言选择（en/cn）！" << endl;
+    // 打印每个参数的值
+    for (int i = 0; i < argc; i++) {
+        std::cout << "参数" << i << "：" << argv[i] << std::endl;
     }
 
     return 0;
 }
 ```
 
-让我们来运行一下这个程序，输入语言选择作为命令行参数吧！
+假设我们将上述代码保存为"args.cpp"，然后在命令行中输入以下命令：
 
-```
-输入：./hello_world en
-输出：Hello World!
-```
-
-```
-输入：./hello_world cn
-输出：你好，世界！
+```bash
+g++ args.cpp -o args # 编译程序
+./args param1 param2 param3 # 运行程序并传入三个参数
 ```
 
-# 深入了解
-想要更深入地了解命令行参数的使用吗？实际上，上面的两个例子只是命令行参数的冰山一角。通过更多的学习和实践，你可以掌握更多高级的命令行参数操作，比如处理不同类型的参数、使用命令行选项等。只要保持继续学习，你就能发现命令行参数的无穷魅力！
+程序的输出将会是：
 
-# 参考文献
-- [C++ 命令行参数的使用](https://www.runoob.com/cplusplus/cpp-command-line-arguments.html)
-- [C++命令行参数详解](https://www.jb51.net/article/77727.htm)
-- [C++命令行选项解析库 getopt](https://www.cnblogs.com/haippy/p/3293633.html)
+```
+参数个数：4
+参数0：./args
+参数1：param1
+参数2：param2
+参数3：param3
+```
 
-# 另请参阅
-- [Markdown入门教程](https://www.runoob.com/markdown/md-tutorial.html)
-- [GitHub上的Markdown使用说明](https://docs.github.com/cn/github/writing-on-github/basic-writing-and-formatting-syntax)
+这里我们可以看到，argc的值为4，其中包括程序本身的名称和传入的三个参数的值。
+
+# 深入了解命令行参数
+
+除了使用argc和argv读取命令行参数外，C++标准库中也提供了getopt函数来帮助我们处理命令行参数。getopt函数可以解析命令行参数并将其存储在一个结构体中，从而方便我们读取和使用。让我们来看一个例子：
+
+```C++
+#include <iostream>
+#include <unistd.h> // 包含getopt头文件
+
+int main(int argc, char* argv[]) {
+    // 传入的参数格式：-a value -b value2
+    int opt;
+    // 定义一个保存参数值的变量
+    int a, b;
+
+    // 循环调用getopt函数来解析参数
+    while ((opt = getopt(argc, argv, "a:b:")) != -1) {
+        switch(opt) {
+            case 'a':
+                // 使用atoi函数将参数值转换为整数
+                a = atoi(optarg);
+                break;
+            case 'b':
+                // 使用atoi函数将参数值转换为整数
+                b = atoi(optarg);
+                break;
+            default:
+                // 如果命令行参数不符合指定的格式，输出提示信息并退出程序
+                std::cout << "命令行参数格式不正确！" << std::endl;
+                return 1;
+        }
+    }
+
+    // 打印参数值
+    std::cout << "参数a的值为：" << a << std::endl;
+    std::cout << "参数b的值为：" << b << std::endl;
+
+    return 0;
+}
+```
+
+同样假设我们将上述代码保存为"getopt.cpp"，然后在命令行中输入以下命令：
+
+```bash
+g++ getopt.cpp -o getopt # 编译程序
+./getopt -a 10 -b 20 # 运行程序并传入参数
+```
+
+程序的输出将会是：
+
+```
+参数a的值为：10
+参数b的值为：20
+```
+
+通过使用getopt函数，我们可以指定命令行参数的格式，从而更加灵活地处理参数。
+
+# 参考链接
+
+- [C++命令行参数详解](https://www.jianshu.com/p/096c3f9e0f07)
+- [Using getopt in C/C++](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)

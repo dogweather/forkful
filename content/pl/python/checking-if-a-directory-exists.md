@@ -1,41 +1,55 @@
 ---
-title:    "Python: Sprawdzanie czy istnieje katalog."
+title:    "Python: Sprawdzanie istnienia katalogu"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Jeśli jesteś programistą Pythona, zapewne wielokrotnie korzystałeś z różnych modułów i funkcji wbudowanych w ten język. Jedną z nich jest funkcja `os.path.exists()`, która służy do sprawdzania czy dany katalog istnieje. W tym artykule dowiesz się, dlaczego powinieneś wiedzieć, jak sprawdzić istnienie katalogu w swoim kodzie.
+Często w trakcie programowania, potrzebujemy sprawdzić, czy dany folder istnieje w naszym systemie plików. Może to być potrzebne do wykonania konkretnej manipulacji na plikach lub po prostu w celu upewnienia się, że nasz program nie będzie próbował działać na nieistniejącym folderze. W tym artykule dowiesz się, jak przeprowadzić takie sprawdzenie.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Zacznijmy od tego, co otrzymujemy, używając funkcji `os.path.exists()`. Zwraca ona wartość logiczną `True` lub `False` w zależności od tego, czy dany katalog faktycznie istnieje. Sprawdźmy to przykładem:
+Sprawdzenie, czy dany folder istnieje w naszym systemie plików, jest prostym procesem w języku Python. Możemy użyć wbudowanego modułu `os` oraz funkcji `path.exists()`, aby sprawdzić istnienie danego folderu. Przykładowy kod wyglądałby następująco:
 
 ```Python
 import os
 
-path = 'C:/Users/Username/Documents'
-
-if os.path.exists(path):
-    print("Katalog istnieje.")
+if os.path.exists("nazwa_folderu"):
+    print("Folder istnieje.")
 else:
-    print("Katalog nie istnieje.")
+    print("Folder nie istnieje.")
 ```
 
-W powyższym przykładzie za pomocą funkcji `os.path.exists()` sprawdzamy, czy istnieje katalog "Documents" na danej ścieżce. Jeśli tak, wyświetlamy odpowiednie komunikaty. Pamiętaj, że warto podać poprawną ścieżkę do katalogu, który chcesz sprawdzić.
+Jeśli folder o nazwie "nazwa_folderu" istnieje w obecnej lokalizacji, to na ekranie zostanie wyświetlony komunikat "Folder istnieje.", w przeciwnym wypadku zostanie wyświetlony komunikat "Folder nie istnieje.".
 
-# Głębsza analiza
+Możemy także użyć funkcji `path.isdir()` lub `path.isfile()` do sprawdzenia, czy dany folder lub plik istnieją. Przykładowy kod wykorzystujący te funkcje wyglądałby następująco:
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak działa funkcja `os.path.exists()`, warto spojrzeć na jej definicję. Zgodnie z dokumentacją Pythona, funkcja ta sprawdza, czy dany podany string jest istniejącą ścieżką systemu plików. Oznacza to, że możemy jej użyć nie tylko do sprawdzania katalogów, ale także plików. Możemy też wykorzystać ją w pętlach `for` lub `while` do sprawdzania wielu katalogów na raz.
+```Python
+import os
 
-Również istnieje wiele innych funkcji, które mogą być przydatne w kontekście sprawdzania istnienia katalogów. Przykładowo, funkcja `os.path.isdir()` sprawdza, czy dana ścieżka jest katalogiem, a `os.path.isfile()` służy do sprawdzania, czy ścieżka wskazuje na plik.
+if os.path.isdir("nazwa_folderu"):
+    print("To jest folder.")
+elif os.path.isfile("nazwa_folderu"):
+    print("To jest plik.")
+else:
+    print("Nie ma takiego folderu ani pliku.")
+```
 
-# Zobacz również
+W powyższym przykładzie najpierw sprawdzamy, czy dany element jest folderem, jeśli nie jest, to sprawdzamy, czy jest plikiem, a jeśli nie jest ani jednym, ani drugim, wyświetlamy odpowiedni komunikat.
 
-- [Dokumentacja Pythona](https://docs.python.org/3/library/os.path.html)
-- [Przykłady użycia funkcji os.path w Pythonie](https://www.tutorialspoint.com/python/os_path.htm)
-- [Inne przydatne funkcje w module os.path](https://www.geeksforgeeks.org/python-os-path-exists-method/)
+## Deep Dive
 
-Mam nadzieję, że ten artykuł przybliżył Ci temat sprawdzania istnienia katalogów w Pythonie. Pamiętaj, że funkcje `os.path` mogą być bardzo przydatne w wielu różnych projektach, więc warto je poznać i wykorzystywać w swoim kodzie.
+Podczas wykonywania powyższych przykładów, możemy zauważyć, że funkcja `path.exists()` sprawdza zarówno istnienie folderu, jak i pliku. Innymi słowy, jeśli w podanej lokalizacji znajduje się zarówno folder o nazwie "nazwa_folderu", jak i plik o tej samej nazwie, to funkcja zwróci wartość True.
+
+Warto także zwrócić uwagę, że w powyższych przykładach używamy względnej ścieżki do folderu. Oznacza to, że folder "nazwa_folderu" znajduje się w obecnej lokalizacji, w której znajduje się nasz skrypt. Jeśli chcemy przeszukać system plików od głównego katalogu, musimy podać pełną ścieżkę, na przykład `os.path.exists("/home/użytkownik/nazwa_folderu")`.
+
+Możemy także używać operatora `not` do odwrócenia warunku, na przykład `if not os.path.exists("nazwa_folderu")`, aby sprawdzić, czy dany folder nie istnieje.
+
+## Zobacz też
+
+- Oficjalna dokumentacja języka Python: [https://docs.python.org/pl/3/library/os.path.html](https://docs.python.org/pl/3/library/os.path.html)
+- Przewodnik po modułach wbudowanych w języku Python: [https://docs.python.org/pl/3/tutorial/modules.html](https://docs.python.org/pl/3/tutorial/modules.html)
+- Poradnik na stronie Real Python o manipulacji plikami i folderami: [https://realpython.com/working-with-files-in-python/](https://realpython.com/working-with-files-in-python/)

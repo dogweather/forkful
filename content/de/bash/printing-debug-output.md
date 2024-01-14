@@ -1,55 +1,54 @@
 ---
-title:    "Bash: Ausgabe von Fehlerbehebung ausdrucken"
+title:    "Bash: Debug-Ausgabe drucken"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Debug-Ausgaben sind ein wesentlicher Bestandteil der Entwicklung von Bash-Skripten. Sie ermöglichen es uns, Fehler zu identifizieren und zu beheben, indem sie uns Einblicke in die Ausführung unseres Codes geben. Ohne Debug-Ausgaben wäre es viel schwieriger, den Grund für einen Fehler zu erkennen und zu beheben.
 
-Debugging, or identifying and fixing errors in code, is an important part of programming. One useful tool in the debugging process is printing debug output. This allows us to see the value of variables and other important information while our code is running, helping us to track down and fix any issues. So why should we engage in printing debug output?
-
-## Wie man das macht
-
-Die Verwendung von Debug-Ausgaben in Bash ist recht einfach. Wir können dies mit dem Befehl `echo` tun. Zum Beispiel, wenn wir den Wert einer Variablen `name` überprüfen wollen, können wir `echo $name` verwenden, um den Wert der Variablen auf dem Bildschirm ausgeben zu lassen.
+## Wie geht das?
+Das Hinzufügen von Debug-Ausgaben in unser Bash-Skript ist einfach und hilfreich. Wir können das Befehl `echo` verwenden, um gezielte Nachrichten auszugeben, während das Skript ausgeführt wird. Beispiel:
 
 ```Bash
-name="John Doe"
-echo $name
+#!/bin/bash
+echo "Das Skript wird jetzt ausgeführt."
+n=$1
+echo "Der Wert von n ist $n."
+if [ $n -gt 10 ]
+then
+  echo "Der Wert von n ist größer als 10."
+else
+  echo "Der Wert von n ist kleiner oder gleich 10."
+fi
 ```
 
-Dies wird "John Doe" als Ausgabe auf dem Bildschirm anzeigen. Wir können auch weitere Informationen hinzufügen, wie zum Beispiel einen Hinweis oder eine Kurzbeschreibung der Ausgabe. Zum Beispiel:
+Dieses einfache Skript gibt Ausgaben aus, die uns helfen, die Ausführung besser zu verstehen. Indem wir den Wert von `n` ausgeben, können wir sicherstellen, dass er korrekt eingelesen wurde. Außerdem gibt die Ausgabe innerhalb der `if`-Bedingung uns die Gewissheit, dass die richtige Anweisung ausgeführt wurde.
+
+## Deep Dive
+Debug-Ausgaben sollten strategisch platziert werden, um die Effizienz zu maximieren. Zu viele Ausgaben können den Code unübersichtlich machen und zu Verwirrung führen. Aus diesem Grund sollten wir sorgfältig überlegen, welche Variablen und Nachrichten wir ausgeben möchten.
+
+Eine weitere hilfreiche Methode ist die Verwendung des `set -x`-Befehls am Anfang des Skripts. Dadurch werden alle Befehle und Variablenausgaben angezeigt, während das Skript ausgeführt wird. Beispiel:
 
 ```Bash
-name="John Doe"
-echo "The name is: $name"
+#!/bin/bash
+set -x
+echo "Das Skript wird jetzt ausgeführt."
+n=$1
+echo "Der Wert von n ist $n."
+if [ $n -gt 10 ]
+then
+  echo "Der Wert von n ist größer als 10."
+else
+  echo "Der Wert von n ist kleiner oder gleich 10."
+fi
 ```
 
-Dies würde die Ausgabe "The name is: John Doe" anzeigen. Wir können auch mehrere Variablen oder Ausdrücke in einer Debug-Ausgabe zusammenführen, indem wir sie mit Leerzeichen trennen. Zum Beispiel:
-
-```Bash
-name="John"
-age=25
-echo "Name: $name | Alter: $age"
-```
-
-Dies würde die Ausgabe "Name: John | Alter: 25" anzeigen. Es gibt auch die Möglichkeit, Debug-Ausgaben in Dateien umzuleiten, indem wir den Befehl `>>` verwenden. Zum Beispiel:
-
-```Bash
-name="John"
-echo "Name: $name" >> debug.txt
-```
-
-Dies würde die Ausgabe in der Datei "debug.txt" speichern, anstatt sie auf dem Bildschirm anzuzeigen.
-
-## Tiefergehende Informationen
-
-Es gibt verschiedene Gründe, warum wir Debug-Ausgaben in Bash verwenden können. Zum Beispiel können wir damit überprüfen, ob unsere Variablen die erwarteten Werte haben, ob unsere Bedingungen richtig sind, oder wir können Stück für Stück durch unser Programm "steppen", um zu sehen, wo genau ein Fehler auftritt. Auch wenn wir komplexe oder verschachtelte Befehle schreiben, können Debug-Ausgaben helfen, den Überblick darüber zu behalten, was in jedem Schritt passiert.
-
-Es ist jedoch wichtig zu beachten, dass Debug-Ausgaben nicht unbedingt für die Produktion geeignet sind. Sie sollten nur verwendet werden, um Probleme zu identifizieren und zu beheben, und dann aus dem Code entfernt werden, bevor er live geht.
+Die Ausgabe dieses Skripts zeigt uns alle von Bash ausgeführten Befehle sowie die zugewiesenen Werte an.
 
 ## Siehe auch
-
-- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/)
-- [Debugging mit Bash: Ein Praxistutorial](https://medium.com/deep-systems/debugging-with-bash-a-practical-tutorial-9ce03ff41cbf)
-- [Shell Script Debugging Techniques](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
+- [Bash-Befehle echo und read](https://www.linux-praxis.de/lpi/d-bash-kommandozeile.php)
+- [Debugging mit Bash](https://wiki.ubuntuusers.de/Bash/Debugger/)
+- [Einführung in die Shell-Programmierung mit Bash](https://openbook.rheinwerk-verlag.de/shell_programmierung/shell_007_000.htm)

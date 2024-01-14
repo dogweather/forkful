@@ -1,52 +1,37 @@
 ---
-title:    "Javascript: Merkkijonon suurkirjainten muuttaminen"
+title:    "Javascript: Sana-aineiston suureksi kirjoittaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Joskus on tarpeen muuttaa jonkin tekstin ensimmäinen kirjain isoksi ja muut kirjaimet pieniksi. Tämä voi olla esimerkiksi silloin kun halutaan pukea yllä oleva teksti kauniimmin.
 
-Oletko koskaan miettinyt, miksi ja milloin pitäisi käyttää tekstin muotoilua ohjelmointikielessä? Yksi yleinen syy voi olla esimerkiksi, kun halutaan muuttaa tekstin ulkoasua tai esittää se selkeämmin lukijalle. Tässä blogikirjoituksessa keskitymme erityisesti tekstin muutokseen, eli miten voit muuttaa tekstin kirjainten kokoa ohjelmointikielessä.
-
-## Kuinka
-
-JavaScript-pohjassa on useita tapoja muuttaa tekstin kirjainten kokoa, mutta tässä keskitymme yhteen yleisimmistä – suurien kirjainten muuttamiseen pieniksi ja päinvastoin. Tässä esimerkissä käytämme `toUpperCase()` ja `toLowerCase()` -funktioita, jotka ovat käytännössä vastakkaisia toisilleen. Katso alla olevaa koodia ja sen tulosteita:
+## Miten tehdä
+Sokerina pohjalla, tässä on muutama esimerkki miten kirjoittaa koodi, joka muuttaa tekstin ensimmäisen kirjaimen isoksi ja muut kirjaimet pieniksi. Koodiesimerkit käyttävät Javascript-ohjelmointikieltä ja oletetaan että haluttu teksti on tallennettu muuttujaan nimeltään "teksti".
 
 ```Javascript
-var teksti = "tervetuloa suomeen!"
-console.log(teksti.toUpperCase());
-// TULOSTUS: TERVETULOA SUOMEEN!
+// Käytä built-in-metodia slice() ja toUpperCase()
+let muokattuTeksti = teksti.charAt(0).toUpperCase() + teksti.slice(1).toLowerCase();
 
-console.log(teksti.toLowerCase());
-//TULOSTUS: tervetuloa suomeen!
+console.log(muokattuTeksti); // Tulostuu "Tämä on teksti jossa ensimmäinen kirjain on isolla"
+
+// Käytä regular expressionia ja replace-metodia
+let muokattuTeksti = teksti.replace(/\b\w/g, l => l.toUpperCase()).toLowerCase();
+
+console.log(muokattuTeksti); // Tulostuu "Tämä on teksti jossa ensimmäinen kirjain on isolla"
 ```
 
-Tässä yksinkertaisessa esimerkissä muutamme tekstissä kaikki kirjaimet joko isoiksi tai pieniksi. Käytännössä voit käyttää näitä funktioita missä tahansa tilanteessa, jossa haluat muuttaa tekstin kirjainten kokoa.
+## Syvällisempi sukellus
+Kirjoittamisen hyviä käytäntöjä on aina muuttaa tekstin ensimmäinen kirjain isoksi ja muut kirjaimet pieniksi esimerkiksi otsikoissa ja nimilistan tapauksessa. Tämä tekee tekstistä helpommin luettavan ja visuaalisesti miellyttävän.
 
-## Syvempi sukellus
-
-Entä jos haluat muuttaa vain tietyt kirjaimet pieniksi tai isoiksi? Tällöin voit käyttää `charAt()` -funktiota, joka ottaa parametrina kirjaimen sijainnin tekstissä ja palauttaa sen arvon. Yhdistämällä tämän funktioon `toUpperCase()` tai `toLowerCase()` voit muuttaa vain haluamasi kirjaimet.
-
-```Javascript
-var teksti = "tervetuloa suomeen!"
-var uusiTeksti = "";
-
-for (var i = 0; i < teksti.length; i++){
-    if (i % 2 == 0){
-        uusiTeksti += teksti.charAt(i).toUpperCase();
-    } else {
-        uusiTeksti += teksti.charAt(i).toLowerCase();
-    }
-}
-console.log(uusiTeksti);
-// TULOSTUS: TeRvEtUlOa SuOmEeN!
-```
-
-Tässä esimerkissä käytämme for-loopia ja `charAt()` -funktiota luodaksemme uuden tekstin, jossa joka toinen kirjain on suuri ja joka toinen pieni. Tämä osoittaa, kuinka voit käyttää tekstin muotoilua joustavasti riippuen omista tarpeistasi.
+InnerHTML ja innerText ovat Javascriptin sisäänrakennettuja funktioita, jotka mahdollistavat tekstin lisäämisen HTML-elementteihin. InnerHTML näyttää tekstin HTML-tunnisteina, kun taas innerText näyttää tekstin ilman HTML-tageja. On tärkeää muistaa, että jos käytät innerHTML:ää muuttaaksesi tekstin ensimmäisen kirjaimen isoksi, kaikki HTML-tunnisteet tekstin sisällä katoavat. Tämä johtuu siitä, että innerHTML-metodi tulkitsee tekstin HTML-tunnuksiksi ja korvaa kaiken muun tekstin kanssa, joten se ei toimi tekstin muuttamiseen.
 
 ## Katso myös
-
-- [MDN web docs: String prototyypit](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [W3Schools: JavaScript string methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [FreeCodeCamp: How to convert strings to lowercase, uppercase, or title case in JavaScript](https://www.freecodecamp.org/news/how-to-convert-strings-to-lowercase-uppercase-or-title-case-in-javascript/)
+- [MDN web docs: slice() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN web docs: toUpperCase() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [MDN web docs: replace() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools: innerHTML Property](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+- [W3Schools: innerText Property](https://www.w3schools.com/jsref/prop_node_innerText.asp)

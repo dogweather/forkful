@@ -1,46 +1,39 @@
 ---
 title:    "TypeScript: Comenzando un nuevo proyecto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué iniciar un nuevo proyecto en TypeScript?
+## Por qué comenzar un nuevo proyecto
 
-Si estás buscando un lenguaje de programación para tu próximo proyecto, definitivamente deberías considerar TypeScript. Este lenguaje de programación de código abierto desarrollado por Microsoft ha ganado mucha popularidad en los últimos años por su capacidad de crear aplicaciones escalables y robustas. En este artículo, exploraremos por qué deberías elegir TypeScript para iniciar tu próximo proyecto.
+Comenzar un nuevo proyecto es una oportunidad emocionante para expandir tus habilidades de programación y crear algo nuevo y único. También puede ser una forma efectiva de resolver un problema o necesidad específica en tu trabajo o vida personal.
 
-## Cómo empezar un nuevo proyecto en TypeScript
+## Cómo hacerlo
 
-Antes de empezar a escribir código en TypeScript, primero necesitamos instalarlo en nuestro entorno de desarrollo. Aunque existen varias opciones, una de las más sencillas es a través de NPM. Simplemente ejecuta el siguiente comando en tu terminal:
+Para comenzar, lo primero que debes hacer es asegurarte de tener TypeScript instalado en tu computadora. Puedes hacerlo usando una herramienta de gestión de paquetes como npm o yarn.
 
-```TypeScript
-npm install -g typescript
-```
+Una vez que tengas TypeScript instalado, puedes crear un nuevo proyecto usando el comando ```tsc --init``` en tu terminal. Esto creará un archivo de configuración de TypeScript llamado "tsconfig.json" en el directorio actual.
 
-Una vez instalado, puedes crear un nuevo proyecto ejecutando el siguiente comando:
+A continuación, puedes crear un archivo de TypeScript con la extensión ".ts" y comenzar a escribir tu código. Por ejemplo, si quieres imprimir un mensaje en la consola, puedes usar el siguiente código:
 
 ```TypeScript
-tsc --init
+console.log("Hola mundo");
 ```
 
-Esto creará un archivo de configuración `tsconfig.json` en el que puedes modificar diferentes opciones según tus necesidades. Ahora estás listo para empezar a escribir tu código en TypeScript.
+Una vez que hayas terminado de escribir tu código, puedes compilarlo usando el comando ```tsc <nombre del archivo>``` en tu terminal. Esto creará un archivo JavaScript en el mismo directorio, que será el resultado de tu código TypeScript.
 
-## Profundizando en el inicio de un nuevo proyecto
+Puedes seguir explorando y aprendiendo más sobre TypeScript y cómo utilizarlo en tus proyectos mediante la documentación oficial y tutoriales en línea.
 
-Una de las principales razones para elegir TypeScript es su capacidad de proporcionar tipado estático en el código JavaScript. Esto significa que puedes especificar el tipo de datos que cada variable o función espera recibir, lo que ayuda a prevenir errores antes de que ocurran en tiempo de ejecución.
+## Profundizando
 
-Además, TypeScript también ofrece otros beneficios, como el soporte para clases, interfaces y módulos, lo que facilita la creación de aplicaciones bien estructuradas y mantenibles a largo plazo.
+Si quieres profundizar más en el mundo de TypeScript, es importante que tengas una buena comprensión de los conceptos básicos de JavaScript, ya que TypeScript es un superconjunto de JavaScript.
 
-Otro aspecto importante es su integración con herramientas de desarrollo como Visual Studio y VSCode, que proporcionan sugerencias de código y auto completado en tiempo real para ayudarte a escribir un código más rápido y sin errores.
-
-En general, empezar un nuevo proyecto en TypeScript requiere un poco más de tiempo de configuración al principio, pero a medida que avanza el proyecto, disfrutarás de una mejor calidad de código y un proceso de desarrollo más eficiente.
+También es importante investigar y familiarizarse con las características y ventajas de TypeScript, como el tipado estático y las interfaces. Puedes encontrar mucha información y recursos en línea, así como también en la documentación oficial de TypeScript.
 
 ## Ver también
 
-Si quieres profundizar más en TypeScript, estos son algunos recursos útiles que pueden ayudarte en tu aprendizaje:
-
-- [La documentación oficial de TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Tutorial de TypeScript en español](https://www.tutorialspoint.com/typescript/index.htm)
-- [Listado de proyectos de código abierto escritos en TypeScript](https://github.com/uraimo/awesome-typescript)
-
-¡Esperamos haberte convencido para empezar tu próximo proyecto en TypeScript! ¡No te arrepentirás de haberlo elegido!
+- [Documentación oficial de TypeScript](https://www.typescriptlang.org/docs/)
+- [Tutorial de TypeScript para principiantes](https://www.digitalocean.com/community/tutorials/typescript-tutorial-for-beginners)
+- [Ejemplos de código en TypeScript](https://www.typescriptlang.org/samples/index.html)

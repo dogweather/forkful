@@ -1,50 +1,43 @@
 ---
 title:    "TypeScript recipe: Capitalizing a string"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As developers, we often need to manipulate strings in our code. One common task is capitalizing a string, which means making the first letter uppercase. This can be useful in many situations, such as formatting user input or displaying titles.
+Capitalizing a string is a common task in programming, especially when dealing with user input or manipulating data. By capitalizing a string, we are able to ensure consistency and readability in our code.
 
 ## How To
-In TypeScript, there are a few different ways to capitalize a string. Let's take a look at some examples and their output:
+To capitalize a string in TypeScript, we can use the handy `toUpperCase()` method. This method converts all characters in a string to uppercase, making it perfect for our purpose.
 
-```
-const str1: string = "hello world";
-console.log(str1.charAt(0).toUpperCase() + str1.slice(1));
-// Output: Hello World
+Let's see an example:
 
-const str2: string = "javascript";
-console.log(str2.replace(/^\w/, (c) => c.toUpperCase()));
-// Output: JavaScript
+```TypeScript
+const name = "john";
+const capitalized = name.toUpperCase();
+console.log(capitalized); // Output: JOHN
 ```
 
-In the first example, we are using the `charAt()` and `slice()` methods to extract the first letter and then concatenate it with the rest of the string. In the second example, we are using the `replace()` method with a regular expression and a callback function to replace the first letter with its uppercase version.
+In this example, we first declare a variable named `name` and assign it the value of "john". Then, we use the `toUpperCase()` method on the `name` variable and store the result in a new variable called `capitalized`. Finally, we log the value of `capitalized` to the console, which will output "JOHN" in uppercase.
 
-There are also built-in TypeScript functions that can help with capitalizing a string. For instance, the `toUpperCase()` function will make all letters in the string uppercase, not just the first one. So, if we only want to capitalize the first letter, we can use the `slice()` method to get the rest of the string and concatenate it with the first letter.
+We can also use the `toUpperCase()` method directly on the string we want to capitalize, without the need for a separate variable:
 
-```
-const str3: string = "typescript";
-console.log(str3.toUpperCase().charAt(0) + str3.slice(1));
-// Output: TypeScript
+```TypeScript
+console.log("mary".toUpperCase()); // Output: MARY
 ```
 
-Another useful function for capitalizing strings is `split()`, which splits a string into an array of substrings. We can use this in combination with the `map()` and `join()` methods to capitalize each word in a sentence.
-
-```
-const str4: string = "hello to the world";
-console.log(str4.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" "));
-// Output: Hello To The World
-```
+This second example does the same thing as the first one, but in a more streamlined way.
 
 ## Deep Dive
-As you can see from the examples, there are a few different approaches to capitalizing a string in TypeScript. However, it's worth noting that these methods only work if the string contains only letters. If the string contains other characters, such as numbers or symbols, the results may not be as expected.
+It's important to note that the `toUpperCase()` method only works for ASCII characters. That means it will only convert letters from the English alphabet to uppercase, and won't work for special characters or non-English languages. In those cases, we can use libraries or custom functions to achieve the same result.
 
-There are also other considerations to keep in mind when capitalizing strings, such as locale-specific rules and special cases for certain words. For more complex scenarios, you may need to use a library or create a custom function to handle all cases properly.
+Another thing to keep in mind is that the `toUpperCase()` method doesn't change the original string it is called on. Instead, it returns a new string with the uppercase characters. This is useful because it allows us to preserve the original string and use it later if needed.
 
 ## See Also
-- [MDN Web Docs: toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Web Docs: map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [MDN Web Docs: join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+Here are some useful resources to learn more about strings and string manipulation in TypeScript:
+
+- [Official TypeScript Documentation on Strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [W3Schools Guide on Working with Strings in JavaScript](https://www.w3schools.com/js/js_string_methods.asp)
+- [StackOverflow Discussion on Capitalizing Strings in TypeScript](https://stackoverflow.com/questions/37445975/capitalize-first-letter-of-the-string-in-typescript)

@@ -1,61 +1,54 @@
 ---
-title:    "Bash: 두 날짜 비교하기"
+title:    "Bash: 두 날짜 비교하기."
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-두 날짜를 비교하는 것을 해야 하는 이유는 무엇일까요?
-날짜를 비교하는 것은 자주 사용되는 프로그래밍 작업 중 하나입니다. 예를 들어, 우리는 특정 날짜에 어떤 일이 발생했는지 확인하거나 날짜 간의 차이를 계산하고 싶을 때 사용합니다.
+
+날짜 비교를 하는 이유는 무엇일까요? 날짜는 우리 일상에서 매우 중요한 역할을 합니다. 우리는 날짜를 통해 언제 어떤 일이 발생했는지 알 수 있고, 계획을 세울 때에도 날짜를 중요한 요소로 고려합니다. 따라서 날짜를 비교하는 것은 우리가 일상에서 자주 다루게 되는 일입니다.
 
 ## 어떻게
-날짜를 비교하는 가장 간단한 방법은 `>`와 `<`를 사용하는 것입니다. 이러한 기호를 사용하여 두 날짜를 비교하면 해당 날짜가 이후에 있는지 또는 이전에 있는지를 알 수 있습니다. 예를 들어, 2020년 10월 1일과 2020년 11월 1일을 비교하면 `>` 기호를 사용하여 첫 번째 날짜가 더 이전인지 확인할 수 있습니다.
 
-```
-Bash
-if [ "2020-10-01" > "2020-11-01" ]
+날짜를 비교하는 방법에 대해 알아보겠습니다. Bash 프로그래밍을 이용하여 두 날짜를 비교하는 방법을 간단한 예제와 함께 살펴보겠습니다.
+
+```Bash
+#!/bin/bash
+
+# 첫 번째 날짜 지정
+date1=2021-01-01
+
+# 두 번째 날짜 지정
+date2=2020-12-31
+
+# 날짜 비교
+if [[ "$date1" > "$date2" ]]
 then
-    echo "첫 번째 날짜가 더 이전입니다."
+  echo "첫 번째 날짜가 더 큽니다."
+elif [[ "$date1" < "$date2" ]]
+then
+  echo "두 번째 날짜가 더 큽니다."
+else
+  echo "두 날짜가 같습니다."
 fi
 ```
 
-이 외에도 여러 가지 방법으로 날짜를 비교할 수 있습니다. 예를 들어, `date` 명령어를 사용하여 날짜와 시간을 비교할 수 있습니다. 또한 `test`나 `if` 문을 사용하여 조건문을 작성할 수도 있습니다.
+위 예제를 실행하면 "첫 번째 날짜가 더 큽니다."라는 메시지가 출력됩니다. 이처럼 Bash는 비교 연산자를 이용하여 간단하게 날짜를 비교할 수 있습니다.
 
-```
-Bash
-if date -d "$START_DATE" > "$END_DATE"
-then
-    echo "시작 날짜가 더 이전입니다."
-fi
-```
+## 깊이있게 살펴보기
 
-## 깊이 파헤치기
-날짜를 비교할 때 주의해야 할 몇 가지 사항이 있습니다. 첫 번째로, 날짜 형식이 지켜져야 합니다. 예를 들어, `YYYY-MM-DD` 형식이어야만 올바른 비교가 가능합니다. 또한, 두 날짜의 시간대가 같아야만 정확한 결과를 얻을 수 있습니다. 이를 위해 `date` 명령어의 `-d` 옵션을 사용하여 날짜를 동일한 시간대로 변환할 수 있습니다.
+날짜 비교를 좀 더 깊이있게 살펴보겠습니다. 날짜를 비교할 때에는 몇 가지 주의해야할 사항이 있습니다. 첫째, 날짜 형식이 일치해야합니다. 위 예제에서는 날짜를 "YYYY-MM-DD" 형식으로 지정했지만, 다른 형식을 사용할 경우 비교 연산이 정상적으로 이루어지지 않을 수 있습니다. 둘째, 날짜가 유효한 범위 내에 있는지 체크해야합니다. 만약 유효하지 않은 날짜를 비교하는 경우 오류가 발생할 수 있습니다. 따라서 날짜를 비교하는 경우에는 이러한 사항들을 고려하여 적절한 에러 처리를 해주는 것이 좋습니다.
 
-```
-Bash
-if date -d "$START_DATE" -d "${END_DATE}T00:00:00UTC"
-then
-    echo "시작 날짜와 종료 날짜의 시간대가 같습니다."
-fi
-```
+## 이어보기
 
-또한, 여러 날짜를 동시에 비교해야 할 경우 배열을 사용하면 편리합니다. 이를 통해 보다 유연하게 날짜를 비교할 수 있습니다.
+날짜 비교에 대해 더 알아보고 싶다면 아래 링크들을 참고하세요.
 
-```
-Bash
-DATES=(2019-01-01 2020-01-01 2021-01-01)
-for date in "${DATES[@]}"
-do
-    if [ "$date" < "2020-01-01" ]
-    then
-        echo "$date는 2020년 이전입니다."
-    fi
-done
-```
+[GNU Bash](https://www.gnu.org/software/bash/)  
+[Comparison Operators in Bash](https://www.tldp.org/LDP/abs/html/comparison-ops.html)  
+[Validating Dates in Bash](https://www.linuxjournal.com/content/validating-dates-bash-script)
 
-## 참고 자료
-- [Bash programming cheat sheet](https://devhints.io/bash)
-- [GNU Bash manual](https://www.gnu.org/software/bash/manual/)
-- [Comparing dates in Bash](https://www.beyondlinux.com/2018/06/22/comparing-dates-in-bash/)
+## 참고
+
+[날짜를 비교하는 방법](https://www.youtube.com/watch?v=b5ywuMWujvg)

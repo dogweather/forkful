@@ -1,32 +1,42 @@
 ---
-title:    "Elm: Pisanie do standardowego błędu"
+title:    "Elm: Pisanie do standardowego wyjścia błędu"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w Elmie?
+## Dlaczego pisać do standardowego błędu w Elm?
 
-Pisanie do standardowego błędu może być przydatne w wielu sytuacjach podczas programowania w Elmie. Może pomóc nam zrozumieć, dlaczego nasz kod nie działa poprawnie lub dlaczego występują błędy. Może również ułatwić nam debugowanie naszych programów i znalezienie ewentualnych problemów.
+Pisanie do standardowego błędu może pomóc w wykrywaniu i debugowaniu błędów w twoim kodzie. Jest to szczególnie przydatne, gdy pracujesz z większymi projektami i chcesz znaleźć dokładne miejsce, w którym występuje problem. W tym blogu omówimy dlaczego pisanie do standardowego błędu jest przydatne i jak to zrobić w języku Elm.
 
 ## Jak to zrobić?
 
-Aby pisać do standardowego błędu w Elmie, musimy użyć funkcji `Debug.log` i podać jej dwa argumenty: napis i wartość, którą chcemy wyświetlić. Na przykład:
+ Jest kilka sposobów na pisanie do standardowego błędu w Elm. Pierwszym jest użycie funkcji `Debug.log`, która wyświetli wartość wyrażenia zawartego w funkcji w konsoli. Na przykład:
+```Elm
+import Debug exposing (log)
+
+log "Hello from standard error"
 
 ```
-Elm.debug "Zmienna x" x
+Powyższy kod wyświetli w konsoli "Hello from standard error" oraz zwróci wartość "()" (pusty krotka).
+
+Możesz również użyć funkcji `Debug.crash()` do wyświetlenia błędu w konsoli. Na przykład:
+```Elm
+import Debug exposing (crash)
+
+crash "Error occurred!"
 ```
+Ten kod wyświetli w konsoli komunikat "Error occurred!" oraz zakończy działanie programu z błędem.
 
-Ta funkcja spowoduje wyświetlenie napisu "Zmienna x" oraz wartości zmiennej x w konsoli. Jest to prosta i przydatna metoda, aby monitorować wartości zmiennych w trakcie wykonywania naszego programu.
+## Deep Dive
 
-## Wnikliwe studium
+W języku Elm istnieje również możliwość łapania i obsługi błędów za pomocą biblioteki `Result`. Jest to przydatne w przypadku, gdy chcesz mieć kontrolę nad wyjątkami i obsłużyć je w wybrany przez siebie sposób. Możesz też użyć biblioteki `elm/error` do tworzenia niestandardowych błędów i zarządzania nimi.
 
-Pisanie do standardowego błędu może być również wykorzystane do głębszego zrozumienia działania naszego kodu. Możemy umieszczać różne wywołania funkcji `Debug.log` w różnych miejscach naszego kodu, aby zobaczyć, jakie wartości są przekazywane między nimi. Jest to idealne narzędzie do analizy i odkrywania powiązań w naszym kodzie.
+Możesz także skonfigurować pisanie do standardowego błędu w ustawieniach kompilatora, aby wyświetlał on błędy w konsoli lub zapisywał je do pliku.
 
-Pamiętaj jednak, że nie powinno się używać pisanie do standardowego błędu jako metody do obsługi błędów. Jest to tylko narzędzie diagnostyczne i nie powinno być wykorzystywane w produkcji.
+## Zobacz też
 
-## Zobacz również
-
-- [Dokumentacja Elm: Debug](https://guide.elm-lang.org/debugging/) 
-- [Poradnik dla początkujących w Elm](https://medium.com/@szalansky/elm-tutorial-in-polish-22a00d665417) 
-- [Polskie społeczność Elm](http://elm.polski-slownik.pl/)
+- Dokumentacja Elm: https://elm-lang.org/docs
+- Poradnik poziomu zaawansowanego: https://guide.elm-lang.org/advanced/index.html
+- Tworzenie obsługi błędów w języku Elm: https://dev.to/vatsimister/error-handling-in-elm-3e8h

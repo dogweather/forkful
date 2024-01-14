@@ -1,42 +1,51 @@
 ---
 title:    "Python: Å skrive en tekstfil"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tekstfiler er en viktig del av å kunne programmere i Python. Det gir muligheten til å lagre data og resultater fra koden din på en måte som er enkel å gjenbruke og dele med andre. I tillegg kan tekstfiler brukes til å skrive logger og readme-filer for å dokumentere koden din.
+Å skrive en tekstfil er en vanlig oppgave i programmering, og det er nyttig å vite hvordan man gjør det for å kunne lagre og behandle data. Dette kan også være nyttig når man jobber med større programmer der man ønsker å lagre informasjon i separate filer.
 
 ## Hvordan
 
-For å skrive en tekstfil i Python må du følge disse trinnene:
+For å skrive en tekstfil i Python, kan man bruke den innebygde funksjonen `open()`. Denne funksjonen tar to argumenter, filnavnet og modusen hvor man sier at man ønsker å skrive til filen (i dette tilfellet "w" for "write").
 
-1. Åpne en fil med `open()`-funksjonen og spesifiser filnavn og hva du vil gjøre med filen (f.eks. "w" for å skrive til filen).
-2. Skriv inn dataen du ønsker å lagre i tekstfilen, ved hjelp av `write()`-funksjonen.
-3. Lukk filen ved å bruke `close()`-funksjonen.
+```python
+f = open("tekstfil.txt", "w")
+```
+Man kan da skrive til filen ved å bruke `write()`-metoden, og passere inn teksten man vil skrive.
 
-Et eksempel på koden ville være:
+```python
+f.write("Dette er en tekst som blir skrevet til filen.")
+```
 
-```Python
-f = open("minfil.txt", "w")
-f.write("Dette er en tekstfil.")
+Til slutt må man huske å lukke filen ved å bruke `close()`-metoden, ellers vil endringene ikke bli lagret.
+
+```python
 f.close()
 ```
 
-Dette vil opprette en tekstfil med navnet "minfil.txt" og skrive teksten "Dette er en tekstfil." inn i den.
+Hvis man ønsker å skrive flere linjer til filen, må man passe på å legge til en linjeskift `\n` etter hver linje.
+
+```python
+f.write("Dette er linje 1.\n")
+f.write("Dette er linje 2.")
+```
 
 ## Dypdykk
 
-I tillegg til å bruke `write()`-funksjonen kan du også bruke `writelines()`-funksjonen til å skrive flere linjer med tekst på en gang, ved å sende en liste eller et annet itererbar objekt som argument.
+Det finnes flere forskjellige moduser man kan velge når man åpner en fil med `open()`, for eksempel "a" for "append" som legger til tekst i slutten av filen uten å overskrive eksisterende data. Man kan også lese og skrive til samme fil ved å bruke "r+" eller "w+" som moduser.
 
-Du kan også bruke `with`-uttrykket for å automatisk lukke filen når du er ferdig med å bruke den. Dette sikrer at filen alltid blir korrekt lukket og frigjør eventuelle ressurser som blir brukt av filen.
+Når man skriver til en fil, blir teksten lagret som en sekvens av bytes. For å lese teksten som vanlig tekst, kan man bruke `encoding`-parameteret og sette det til den ønskede kodingen (for eksempel "utf-8").
 
-Sist men ikke minst er det viktig å huske på å håndtere eventuelle feil som kan oppstå ved å bruke tekstfiler, for eksempel ved å bruke `try`-`except`-blokker.
+Det er også viktig å merke seg at hvis man åpner en fil med "w" eller "w+" som modus, vil eventuelle eksisterende data i filen bli slettet uten advarsel. Derfor er det viktig å være forsiktig når man bruker disse modusene.
 
 ## Se også
 
-- [Python Filbehandling](https://www.w3schools.com/python/python_file_handling.asp)
-- [Python Dokumentasjon - Tekstfiler](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [The Python Tutorial](https://docs.python.org/3/tutorial/index.html)
+- [Python dokumentasjon](https://docs.python.org/no/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [W3Schools Python file handling tutorial (engelsk)](https://www.w3schools.com/python/python_file_handling.asp)
+- [Real Python tutorial on writing and reading files (engelsk)](https://realpython.com/read-write-files-python/)

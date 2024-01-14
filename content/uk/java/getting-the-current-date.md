@@ -1,65 +1,72 @@
 ---
 title:    "Java: Отримання поточної дати"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Отримання поточної дати є важливою частиною багатьох програм, оскільки ця інформація може бути використана для різних цілей, таких як логування, планування подій і створення звітів.
+Отримання поточної дати є важливою задачею для багатьох програмістів, особливо якщо вони працюють з Java. Іноді нам потрібно використовувати поточну дату для логування подій або для розрахунків часу, а іноді просто для відображення поточної дати на екрані. Безумовно, отримання поточної дати є важливою і корисною функцією для багатьох програм.
 
-## Як отримати поточну дату
+## Як
 
-Найпростіший спосіб отримати поточну дату в Java - використовувати клас `Date` і його метод `getDate()`. Нижче наведені приклади коду і виводу:
-
-```Java
-import java.util.Date;
-
-public class CurrentDate {
-    public static void main(String[] args) {
-        Date currentDate = new Date();
-        System.out.println(currentDate.getDate());
-    }
-}
-```
-
-Вивід: `25`
-
-Також можна отримати повну поточну дату і час, використовуючи клас `LocalDateTime` з пакету `java.time`:
+Отримання поточної дати в Java дуже просте. Для цього ми можемо використовувати клас `LocalDate` з пакету `java.time`. Далі показано приклад коду та його вивід:
 
 ```Java
-import java.time.LocalDateTime;
+// імпортуємо клас LocalDate
+import java.time.LocalDate;
 
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(now);
-    }
+// метод для отримання поточної дати
+public static void getCurrentDate() {
+    // отримуємо поточну дату з класу LocalDate
+    LocalDate currentDate = LocalDate.now();
+
+    // виводимо поточну дату на екран
+    System.out.println("Поточна дата: " + currentDate);
 }
+
+// викликаємо метод для отримання поточної дати
+getCurrentDate();
 ```
 
-Вивід: `2021-09-25T15:13:06.573777`
+Вивід:
 
-## Глибше занурення
+```
+Поточна дата: 2021-11-19
+```
 
-Якщо ви хочете отримати більш точну часову мітку або використовувати дату для додаткової обробки, ви можете використовувати клас `Instant` з пакету `java.time`. Цей клас представляє момент в часі з точністю до наносекунд. Нижче наведений приклад, який виводить поточний час у мілісекундах:
+Отримання поточної дати можливе також за допомогою класу `Calendar` з пакету `java.util`. Для цього потрібно використовувати метод `getInstance()` та методи `get()` для визначення поточної дати, місяця та року. Далі наведено приклад коду та його вивід:
 
 ```Java
-import java.time.Instant;
+// імпортуємо клас Calendar
+import java.util.Calendar;
 
-public class CurrentTime {
-    public static void main(String[] args) {
-        Instant now = Instant.now();
-        System.out.println(now.toEpochMilli());
-    }
+// метод для отримання поточної дати
+public static void getCurrentDate() {
+    // отримуємо поточну дату з класу Calendar
+    Calendar currentDate = Calendar.getInstance();
+
+    // визначаємо поточну дату, місяць та рік
+    int day = currentDate.get(Calendar.DAY_OF_MONTH);
+    int month = currentDate.get(Calendar.MONTH) + 1; // + 1, тому що значення місяця починаються з 0
+    int year = currentDate.get(Calendar.YEAR);
+
+    // виводимо поточну дату на екран
+    System.out.println("Поточна дата: " + day + "." + month + "." + year);
 }
+
+// викликаємо метод для отримання поточної дати
+getCurrentDate();
 ```
 
-Вивід: `1632585213783`
+Вивід:
 
-## Дивись також
+```
+Поточна дата: 19.11.2021
+```
 
-- [Документація Java по класу Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Документація Java по класу LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Документація Java по класу Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)
+## Deep Dive
+
+У Java є багато різних методів та класів для отримання поточної дати. Найпоширенішими з них є `LocalDate` та `Calendar` які були розглянуті вище. Також є інші методи, такі як `SimpleDateFormat` та `DateTimeFormatter` для форматування дати. Більше інформації щодо отримання та роботи з поточною датою можна знайти у [документації Java](https

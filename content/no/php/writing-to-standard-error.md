@@ -1,32 +1,63 @@
 ---
-title:    "PHP: Skriving til standardfeil"
+title:    "PHP: Skriver til standardfeil"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-I denne bloggposten skal vi snakke om en viktig del av PHP-programmering - å skrive til standardfeil. Dette er en viktig ferdighet for alle som ønsker å bli en dyktig PHP-utvikler, så i dag skal vi se på hvorfor dette er viktig og hvordan man kan gjøre det riktig.
 
-## Hvordan gjøre det
-For å skrive til standardfeil i PHP, kan du bruke den innebygde funksjonen `error_log()`. Denne funksjonen tar inn en beskjed som skal skrives til standardfeil, og i tillegg kan du spesifisere hvor beskjeden skal skrives. La oss se på et enkelt eksempel:
+Hvorfor skrive til standardfeil? Dette er et vanlig spørsmål blant PHP-programmerere. Svaret er enkelt: det er en viktig måte å håndtere feil og feilsøke problemer i koden din.
+
+Når du skriver til standardfeil, vil eventuelle feil eller advarsler som oppstår under kjøring av programmet ditt bli skrevet til en egen fil i stedet for å bli vist på skjermen. Dette gjør det enklere å finne og løse feil, spesielt hvis programmet ditt har mye utskrift og du ikke vil ha feilmeldinger blandet inn.
+
+## Slik gjør du det
+
+For å skrive til standardfeil, kan vi bruke funksjonen `fwrite` sammen med `STDERR`-konstanten. Her er et eksempel på hvordan koden vår kan se ut:
 
 ```PHP
-<?php
-$error_message = "Noe gikk galt i koden!";
-error_log($error_message);
+$filename = "feillog.txt";
+
+if (!is_writable($filename)) {
+    die("Kan ikke skrive til filen: $filename");
+}
+
+$handle = fopen($filename, "a");
+if (!$handle) {
+    die("Kunne ikke åpne filen for skriving");
+}
+
+// Lager en testfeil
+$error = "Dette er en testfeil.";
+// Skriver feilen til standardfeil
+fwrite(STDERR, $error);
+
+fclose($handle);
 ```
 
-I dette eksemplet har vi definert en beskjed og brukt funksjonen `error_log()` til å skrive den til standardfeil. I output vil vi se denne beskjeden sammen med annen informasjon som dato og tidspunkt for feilen. Dette er spesielt nyttig når du jobber med større prosjekter og må finne ut hvor en feil oppstår.
+Koden vår sjekker først om filen vi vil skrive til er skrivbar. Deretter åpner vi filen og skriver feilen vår til `STDERR`. Til slutt lukker vi filen igjen.
 
-En annen nyttig funksjon i PHP er `ini_set()`. Med denne funksjonen kan du endre feilrapporteringsinnstillingene for PHP midlertidig. For eksempel kan du bruke denne funksjonen til å deaktivere PHP-feilrapportering mens du tester eller utvikler en del av koden din. Etter at du er ferdig med testingen, bør du huske å sette innstillingene tilbake til standarden.
+Nå kan vi se på innholdet i filen vår `feillog.txt`. Der vil vi finne meldingen vår: "Dette er en testfeil"!
 
-## Dykk dypere
-Selv om det er viktig å kunne skrive til standardfeil i PHP, er det også viktig å forstå hvordan feilbehandling fungerer i språket. PHP har ulike typer feil, som advarsler, notiser og fatalfeil. Disse behandles forskjellig av koden og kan ha ulike konsekvenser for programmet ditt.
+```
+Feillog: Dette er en testfeil.
+```
 
-En annen viktig aspekt er feillogging og hvordan beskjeder blir behandlet. Det er viktig å lagre feilmeldinger på en pålitelig måte, spesielt når flere personer jobber på samme kodebase. Dette gjør det mye enklere å finne og rette feil når de oppstår.
+Dette er bare et eksempel, du kan selvfølgelig utvide dette konseptet til å håndtere flere typer feil og logge dem til forskjellige filer.
+
+## Dypdykk
+
+Nå som vi vet hvordan vi kan skrive til standardfeil, kan vi se på noen fordeler og ulemper ved denne tilnærmingen.
+
+En av de største fordelene er at det gjør det enklere å feilsøke problemer i et større, komplekst program. Med standardfeil kan du logge feil til en dedikert fil og lettere finne og analysere dem.
+
+En ulempe er at dette ikke er en standard måte å håndtere feil på i PHP. Det kan føre til at andre utviklere som jobber med koden din, blir forvirret hvis de ikke er vant til denne tilnærmingen.
+
+En annen ulempe er at det kan bli vanskeligere å finne feilmeldingene hvis de blir skrevet til en fil i stedet for å vises på skjermen. Du må kanskje lete gjennom flere filer for å finne feilen, noe som kan være tidkrevende.
 
 ## Se også
-- [PHP manual for error_log()](https://www.php.net/manual/en/function.error-log.php)
-- [PHP manual for ini_set()](https://www.php.net/manual/en/function.ini-set.php)
-- [PHP manual for error handling](https://www.php.net/manual/en/language.errors.php)
+
+- [Håndtering av feil i PHP](https://www.php.net/manual/en/book.errorfunc.php)
+- [Logge feil til fil i PHP](https://www.php.net/manual/en/function.error-log.php)
+- [Feilsøking i PHP](https://www.php.net/manual/en/ref.errorfunc.php)

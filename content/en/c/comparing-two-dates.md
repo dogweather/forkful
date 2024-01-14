@@ -1,39 +1,68 @@
 ---
 title:    "C recipe: Comparing two dates"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with dates in C programming, it may be necessary to compare two dates in order to determine the order or duration between them. This can be useful for tasks such as scheduling events, calculating interest rates, or sorting data.
+In the realm of programming, we often find ourselves dealing with dates. Whether it's calculating an event's date or comparing two dates, it's crucial to have a solid understanding of date operations in order to create efficient and accurate programs. In this blog post, we will explore how to compare two dates in the C programming language.
 
 ## How To
 
-To compare two dates in C, you can use the `difftime()` function from the `time.h` header file. This function takes in two `time_t` variables, which represent the number of seconds since January 1, 1970, and calculates the difference between them in seconds. The syntax for using the `difftime()` function is as follows:
+The first step in comparing two dates in C is to convert both dates into a numerical format that can be easily compared. This can be achieved by using the `mktime()` function, which converts a structure containing date and time information into a time_t data type.
 
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    // defining first date
+    struct tm first_date = { .tm_year=2020, .tm_mon=9, .tm_mday=10 };
+    
+    // converting first date to time_t data type
+    time_t first_time = mktime(&first_date);
+    
+    // defining second date
+    struct tm second_date = { .tm_year=2020, .tm_mon=9, .tm_mday=15 };
+    
+    // converting second date to time_t data type
+    time_t second_time = mktime(&second_date);
+    
+    // comparing dates and printing output
+    if (first_time < second_time) {
+        printf("The first date is earlier than the second date.\n");
+    }
+    else if (first_time > second_time) {
+        printf("The second date is earlier than the first date.\n");
+    }
+    else {
+        printf("Both dates are the same.\n");
+    }
+    
+    return 0;
+}
 ```
-time_t date1, date2;
-double difference;
 
-difference = difftime(date1, date2);
-
-printf("The difference between date1 and date2 is %f seconds\n", difference);
+Output:
+```C
+The first date is earlier than the second date.
 ```
-
-The output from this code will be the difference in seconds between the two dates. Keep in mind that both `date1` and `date2` must be valid `time_t` variables obtained from functions like `time()` or `localtime()`. Additionally, the `difftime()` function also works for comparing dates in the past or future.
 
 ## Deep Dive
 
-The `difftime()` function uses the `time_t` variable type, which represents the number of seconds since the Unix Epoch. This value is calculated by subtracting the starting date (January 1, 1970) from the given date. This means that the `difftime()` function is not limited to comparing dates within the same year. It can handle dates from any year, as long as they are valid `time_t` values.
+In the above example, we used the `mktime()` function to convert the dates into time_t data types, which are essentially the number of seconds elapsed since January 1st, 1970. This format allows for easy comparison between two dates, as we can simply use comparison operators such as `<` or `>` to determine which date is earlier.
 
-Furthermore, the `difftime()` function also takes into account leap years and daylight saving time. This ensures that the result of the comparison is accurate, even when dealing with dates that fall during these time transitions.
+It's important to note that the `mktime()` function also takes into account the local time and timezone settings, so it's crucial to have these set correctly before using the function.
 
 ## See Also
 
-For more information on working with dates in C, check out these resources:
+For more information about date and time functions in C, please refer to the following resources:
 
-- [time.h - C Reference](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Date and Time Programming in C](https://www.geeksforgeeks.org/date-time-programming-c/)
-- [The function `difftime()` in C](https://www.techiedelight.com/difftime-function-c/)
+- [time.h - C library reference](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [mktime() function in C](https://www.geeksforgeeks.org/time-h-mktime-function-in-c/)
+- [Date and Time - C tutorial](https://www.programiz.com/c-programming/c-date-time)
+
+Happy coding!

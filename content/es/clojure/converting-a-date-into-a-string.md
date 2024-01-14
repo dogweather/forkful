@@ -1,50 +1,47 @@
 ---
 title:    "Clojure: Convirtiendo una fecha en una cadena"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué
 
-Converting a date into a string is a fundamental task in many programming languages, including Clojure. It allows us to represent dates in a human-readable format and use them in various operations, such as sorting and comparing. In this blog post, we will explore how to easily convert a date into a string using Clojure.
+La conversión de una fecha a una cadena de caracteres es una parte importante del desarrollo de aplicaciones. Al hacerlo, nos permite mostrar la información de la fecha de forma legible para el usuario final y realizar operaciones con ella en nuestro código de manera más fácil y eficiente.
 
-# Cómo hacerlo
-
-En Clojure, podemos utilizar la función `str` para convertir una fecha en una cadena. Esta función toma un parámetro opcional que permite especificar un formato de fecha. Si no se proporciona un formato, por defecto se utilizará el formato `YYYY-MM-DD`.
+## Cómo hacerlo
 
 ```Clojure
-(str "2021-09-15")
-```
-Output: "2021-09-15"
+;; Creamos una fecha utilizando la función `date`, especificando año, mes y día
+(def fecha (java.util.Date. 2020 10 14))
 
-Si queremos especificar un formato diferente, podemos usar la función `clj-time.format/unparse`, que está incluida en la biblioteca `clj-time`.
+;; Utilizamos la función `format` para convertir la fecha en una cadena con formato predefinido
+;; En este caso, convertimos la fecha en una cadena con el formato "yyyy-MM-dd"
+(format fecha "yyyy-MM-dd")
+```
+
+El resultado de la ejecución de este código será: "2020-10-14".
+Podemos cambiar el formato de la cadena resultante cambiando los parámetros de la función `format`. Por ejemplo, si quisiéramos mostrar la fecha con el nombre del mes en vez del número, utilizaríamos el formato "yyyy-MMMM-dd" y el resultado sería: "2020-October-14".
 
 ```Clojure
-(require '[clj-time.format :as time-format])
-(time-format/unparse (time-format/formatters :date) (time "2021-09-15"))
+;; Con la función `t` podemos obtener el objeto de tiempo correspondiente a la fecha
+(def tiempo (t fecha))
+
+;; Podemos utilizar la función `formatters` para obtener una lista con diferentes formatos disponibles
+(formatters tiempo)
 ```
-Output: "Sep/15/2021"
 
-Además, podemos convertir una fecha a una cadena con un formato personalizado utilizando la función `java.time.format.DateTimeFormatter` incorporada en Java.
+El resultado de la ejecución de este código será una lista con todos los formatos disponibles para la fecha y hora especificadas. Podemos utilizar esta lista para personalizar aún más la salida de la fecha en nuestra aplicación.
 
-```Clojure
-(import '[java.time.format DateTimeFormatter])
-(def formatter (DateTimeFormatter/ofPattern "dd/MM/YYYY"))
-(.format (java.time.LocalDateTime/now) formatter)
-```
-Output: "15/09/2021"
+## Profundizando en la conversión de fechas a cadenas
 
-# Inmersión profunda
+Cuando hacemos uso de la función `format` para convertir una fecha a una cadena, en realidad estamos utilizando un formateador de fechas interno de Java llamado "SimpleDateFormat". Este formateador nos permite utilizar diferentes patrones para especificar el formato que queremos para nuestra cadena de fecha.
 
-Cuando convertimos una fecha en una cadena, es importante tener en cuenta que el resultado dependerá del formato utilizado y de la configuración regional del sistema.
+Además, también podemos utilizar la función `print-simple-date-format` para obtener más información sobre cómo se muestra una fecha específica en diferentes idiomas y para personalizar aún más los patrones de formato.
 
-Por ejemplo, si nuestro sistema está configurado en español, la fecha se mostrará en el formato DD/MM/YYYY por defecto, mientras que en un sistema configurado en inglés se mostrará en el formato MM/DD/YYYY.
+## Ver también
 
-Por otro lado, también podemos especificar opciones adicionales en el formato, como mostrar el día de la semana o la zona horaria. Para obtener más información sobre las opciones de formato disponibles, podemos consultar la documentación de la biblioteca `clj-time`.
-
-# Ver también
-
-- [Documentación de la función `str` en Clojure](https://clojuredocs.org/clojure.core/str)
-- [Documentación de la biblioteca `clj-time`](https://clojure.github.io/clj-time/)
-- [Documentación de `java.time.format.DateTimeFormatter` en Java](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Java SimpleDateFormat Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Clojure Time Library Documentation](https://clj-time.github.io/clj-time/0.13.0/api/clj-time.format.html)
+- [Java Date and Time Tutorials](https://docs.oracle.com/javase/tutorial/datetime/index.html)

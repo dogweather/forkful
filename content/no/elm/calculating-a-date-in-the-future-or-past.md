@@ -1,47 +1,48 @@
 ---
-title:    "Elm: Beregning av datoer i fremtiden eller fortiden"
+title:    "Elm: Kalkulering av dato i fremtiden eller fortiden"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-#Hvorfor
+## Hvorfor
+Hvorfor beregne en dato i fremtiden eller fortiden? Dette er en viktig funksjon i mange programmeringsspråk, inkludert Elm, fordi det lar oss håndtere datoer og tider på en enkel og nøyaktig måte. Enten du lager en kalenderapp, en bookingside eller en vaksineplanlegger, kan du bruke funksjoner for å beregne datoer for å gjøre programmene dine mer fleksible og nyttige.
 
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller for å holde oversikt over datoer. Med Elm kan du enkelt lage en funksjon som kan utføre dette på en enkel og pålitelig måte.
-
-#Slik gjør du det
-
-For å beregne en dato i fremtiden eller fortiden, kan du bruke Elm-pakken "jasonmorgan/date-extra". Denne pakken inneholder funksjoner som gjør det enkelt å manipulere datoer. La oss se på et eksempel:
+## Hvordan
+For å beregne en dato i fremtiden eller fortiden i Elm, kan du bruke den innebygde funksjonen `Date.fomNow` eller `Date.fromYMD`. Først må du importere `Date`-modulen ved å skrive `import Date` øverst i filen din. Deretter kan du bruke en av disse funksjonene til å opprette en dato- eller tidstype som du kan jobbe med.
 
 ```
-Elm
-import Date.Extra
-import Time
+Elm 0.19.1
 
-Date.Extra.daysSince Today (Time.millisToPosix 1644097200000)
+import Date
 
--- Output: 11555
+Date.fromNow 8 Days
+-- Oppretter en `Date`-type med datoen 8 dager fra nå
+
+Date.fromYMD 2021 12 25
+-- Oppretter en `Date`-type med datoen 25. desember 2021
 ```
 
-I dette eksempelet bruker vi funksjonen "daysSince" som tar inn to datoer som argumenter. I dette tilfellet bruker vi "Today" som den første datoen og en posixtid for 15. februar 2022 som den andre datoen. Som output får vi antall dager siden 15. februar 2022.
-
-#Dykk dypere
-
-En nyttig funksjon i "date-extra" pakken er "add". Denne funksjonen lar deg legge til et gitt antall dager, måneder eller år til en gitt dato. La oss se på et eksempel hvor vi legger til 3 måneder til dagens dato:
+For å få en utskrift av datoen, kan du bruke `Date.format`-funksjonen og spesifisere hvilket format du ønsker å bruke.
 
 ```
-Elm
-import Date.Extra
-import Time
+Elm 0.19.1
 
-Date.Extra.add Date.Extra.Month 3 Today
+import Date
 
--- Output: 2019-11-19
+date = Date.fromNow 8 Days
+-- Oppretter en `Date`-type med datoen 8 dager fra nå
+
+Date.format "%Y %m %d" date
+-- Returnerer "2021 08 30"
 ```
 
-Som du kan se, returnerer funksjonen en ny dato som er 3 måneder senere enn dagens dato. Dette er nyttig for å planlegge fremtidige hendelser eller for å holde oversikt over datoer.
+Du kan også bruke andre funksjoner som `Date.add`, `Date.sub` og `Date.compare` for å manipulere og sammenligne datoer.
 
-#Se også
+## Dypdykk
+Når det gjelder å beregne datoer, er det viktig å huske på at Elm bruker UTC-tid og at datoer bare kan være gyldige ifølge ISO-8601-standarden. Dette betyr at du må være nøyaktig når du oppretter datotyper og være forsiktig når du manipulerer dem. Du kan også bruke `Date.fromCalendarDate`-funksjonen for å håndtere ulike kalenderformater.
 
-- [Elm dokumentasjon om datoer](https://package.elm-lang.org/packages/elm/time/latest/)
-- [jasonmorgan/date-extra pakken](https://package.elm-lang.org/packages/jasonmorgan/date-extra/latest/)
+## Se Også
+- Offisiell Elm dokumentasjon for `Date`-modulen: https://package.elm-lang.org/packages/elm/core/latest/Date
+- Informasjon om ISO-8601-standarden: https://en.wikipedia.org/wiki/ISO_8601

@@ -1,44 +1,38 @@
 ---
-title:    "Javascript: Saamalla nykyinen päivämäärä"
+title:    "Javascript: Päivämäärän hakeminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Javascript on yksi suosituimmista ohjelmointikielistä tänä päivänä. Se on dynaaminen ja monipuolinen kieli, jota käytetään monissa erilaisissa verkkosivustoissa ja sovelluksissa. Yksi Javascriptin vahvuuksista on sen kyky hakea ja käsitellä ajankohtaista tietoa, kuten nykyinen päivämäärä. Tässä blogikirjoituksessa opit, miksi ja miten saada nykyinen päivämäärä Javascriptillä.
+Tervetuloa lukemaan tämän blogikirjoituksen, jossa puhumme Javascriptin päivämäärän hankinnasta. Monet ihmiset saattavat kysyä, miksi tarvitsemme päivämäärän hankintaa koodissa. Yksinkertaisesti sanottuna, päivämäärä on tärkeä tieto monissa ohjelmoinnin sovelluksissa, kuten laskupäivän määrittämisessä tai tapahtumien järjestämisessä aikajanalla. Joten, jos haluat oppia kuinka hakea ja käyttää nykyistä päivämäärää koodissa, jatka lukemista!
 
-## Miten
+## Kuinka
 
-Nykyisen päivämäärän hakeminen Javascriptillä on helppoa. Voit käyttää Date-objektia ja sen sisäänrakennettuja metodeja saadaksesi palautettua haluamasi tiedot. Alla on muutamia esimerkkejä käyttäen eri metodeja.
-
+Päivämäärän hankinta Javascript-ohjelmointikielellä on melko helppoa. Ensinnäkin, meidän on käytettävä Date-oliota, joka sisältää päivämäärän ja ajan tiedot. Voimme luoda uuden Date-olion seuraavasti:
 ```Javascript
-// Hae nykyinen päivämäärä
-let currentDate = new Date();
+let date = new Date();
+```
+Tämä luo uuden Date-olion, joka sisältää nykyisen päivämäärän ja ajan. Voimme sitten käyttää erilaisia Date-olion metodeja saadaksemme tietoa siitä, kuten päivämäärän, kuukauden ja vuoden. Esimerkiksi saadaksemme nykyisen päivämäärän, voimme käyttää seuraavaa komentoa:
+```Javascript
+let day = date.getDate();
+```
+Tämä tallentaa nykyisen päivämäärän numeron muuttujaan 'day'. Voimme myös hakea kuukauden numeron käyttämällä ```getMonth()``` -metodia ja vuoden käyttämällä ```getFullYear()``` -metodia.
 
-// Hae nykyinen vuosi
-let currentYear = currentDate.getFullYear();
-
-// Hae nykyinen kuukausi
-let currentMonth = currentDate.getMonth() + 1; // Lisää 1 koska kuukaudet alkavat numerosta 0
-
-// Hae nykyinen päivä
-let currentDay = currentDate.getDate();
-
-// Hae nykyinen viikonpäivä
-let currentWeekday = currentDate.getDay(); // Antaa numeron 0-6 (0 = sunnuntai, 6 = lauantai)
+Voit myös muokata ja tulostaa päivämäärän haluamassasi muodossa käyttämällä erilaisia metodeja. Esimerkiksi voit näyttää päivämäärän kirjoilleen seuraavasti:
+```Javascript
+console.log(`${day}. ${date.getMonth() + 1}. ${date.getFullYear()}`);
 ```
 
-Kuten esimerkeistä näet, Date-objektilla on monia hyödyllisiä metodeja, joilla voit hakea erilaisia päivämäärään liittyviä tietoja. Voit myös yhdistellä näitä metodeja luodaksesi haluamasi formaatin, esimerkiksi "dd.mm.yyyy".
+## Syväsukellus
 
-## Syvempi sukellus
-
-Vaikka Date-objekti on helppo tapa hakea nykyinen päivämäärä Javascriptillä, on tärkeää muistaa, että se voi myös olla haastava osa koodia. Ajan ja päivämäärien käsittely voi aiheuttaa virheitä, jos ei olla tarkkana. On myös tärkeää huomata, että nykyinen päivämäärä voi vaihdella eri päätelaitteilla ja eri aikavyöhykkeillä. Siksi on tärkeää tarkistaa, että käytetään oikeaa aikavyöhykettä, jos tarvitset tarkkoja päivämääriä.
-
-Suosittelemme myös käyttämään Javascriptin kirjastoa, kuten Moment.js, joka tekee päivämäärien ja aikojen käsittelystä helpompaa ja luotettavampaa. Se tarjoaa valmiita toimintoja eri aikavyöhykkeiden ja formaattien käsittelemiseksi.
+Date-oliossa on myös muita hyödyllisiä metodeja päivämäärän, kuten viikonpäivän ja kellonajan, hankkimiseksi. Voit myös luoda Date-olion tietystä päivämäärästä ja ajasta, mikä tekee siitä erittäin joustavan ja hyödyllisen työkalun. Muista kuitenkin, että Date-olion metodit käyttävät paikallista aikavyöhykettä. Tämä voi aiheuttaa ongelmia, jos sovelluksesi on tarkoitettu maailmanlaajuiseen käyttöön. Tähän ongelmaan voi ratkaisuja meillä on artikkeli "Syväsukellus Date-olioon" (englanniksi).
 
 ## Katso myös
-- [MDN - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [Date-fns](https://date-fns.org/)
+
+- [MDN-ohjeet Date-olion käytöstä](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools-opetusohjelma Date-olion käytöstä](https://www.w3schools.com/js/js_dates.asp)
+- [Syväsukellus Date-olioon (englanniksi)](https://medium.com/javascript-in-plain-english/deep-dive-into-the-javascript-date-object-f971d3a40bf5)

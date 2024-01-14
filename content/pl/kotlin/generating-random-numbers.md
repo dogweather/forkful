@@ -1,43 +1,39 @@
 ---
-title:    "Kotlin: Tworzenie losowych liczb"
+title:    "Kotlin: Generowanie losowych liczb"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego?
+# Dlaczego generowanie losowych liczb jest ważne
 
-Generowanie liczb losowych jest ważnym aspektem programowania, ponieważ pozwala na tworzenie różnorodnych i nieliniowych danych, co jest szczególnie przydatne w przypadku testowania algorytmów i aplikacji. Ponadto, generowanie liczb losowych jest również składnikiem kluczowym w grach i symulacjach.
+Generowanie losowych liczb jest nieodłączną częścią programowania w różnych językach, w tym także w Kotlinie. Może się wydawać, że generowanie losowych liczb jest tylko potrzebne w grach czy symulacjach, jednak jest to też kluczowa funkcjonalność w wielu innych zastosowaniach. W tym artykule dowiesz się, jak w prosty sposób generować losowe liczby w Kotlinie i jakie są jej główne zastosowania.
 
-# Jak to zrobić?
+## Jak to zrobić
 
-W języku Kotlin istnieje wiele sposobów na generowanie liczb losowych. Jednym z najprostszych sposobów jest użycie funkcji `random()` z pakietu `kotlin.math`. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
+Aby wygenerować losowe liczby w Kotlinie, musimy skorzystać z wbudowanej funkcji `Random().nextInt()` oraz ustalić zakres, w którym chcemy wygenerować liczbę. Poniżej przedstawiam przykładowy kod, który wygeneruje liczbę całkowitą z przedziału od 0 do 10:
+
 ```Kotlin
-import kotlin.math.random
-
-fun main() {
-    val randomNumber = random()
-    println("Wygenerowana losowa liczba: $randomNumber")
-}
+val rand = Random().nextInt(11) // wygeneruj liczbę całkowitą od 0 do 10
+println("Wylosowana liczba to $rand") // wyświetl wygenerowaną liczbę
 ```
-Wywołanie funkcji `random()` zwróci liczbę zmiennoprzecinkową z zakresu od 0.0 do 1.0. Jeśli chcemy wygenerować liczbę całkowitą z konkretnego przedziału, możemy użyć funkcji `nextInt()` z pakietu `kotlin.random`. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
+
+Jeśli chcemy wygenerować liczbę z przedziału innych niż całkowite, możemy skorzystać z funkcji `Random().nextDouble()` lub `Random().nextFloat()`. Przykładowy kod generujący liczbę z zakresu od 0 do 1, z dokładnością do dwóch miejsc po przecinku, wyglądałby następująco:
+
 ```Kotlin
-import kotlin.random.Random
-
-fun main() {
-    val randomNumber = Random.nextInt(1, 100)
-    println("Wygenerowana losowa liczba całkowita: $randomNumber")
-}
+val rand = Random().nextDouble()  // wygeneruj liczbę z zakresu od 0 do 1
+println("Wylosowana liczba to %.2f".format(rand)) // wyświetl wygenerowaną liczbę z dwoma miejscami po przecinku
 ```
-W powyższym przykładzie wygenerujemy liczbę całkowitą z przedziału od 1 do 100.
 
-# Deep Dive
+## Pogłębione omówienie
 
-Generowanie liczb losowych opiera się na wykorzystaniu generatorów liczb pseudolosowych. W języku Kotlin, funkcje `random()` i `nextInt()` korzystają z generatora liczb pseudolosowych typu Mersenne Twister, który jest uważany za jeden z najbardziej nieprzewidywalnych i szybkich generatorów liczb pseudolosowych.
+W przypadku generowania losowych liczb, ważną kwestią jest ustawianie ziarna (seed) generatora, który ma wpływ na wygenerowane liczby. W Kotlinie możemy to zrobić za pomocą funkcji `Random(seed)`. Ustawienie tego samego ziarna spowoduje wygenerowanie tych samych liczb przy każdym uruchomieniu aplikacji. Jeśli chcesz uzyskać różne liczby przy każdym uruchomieniu, warto użyć urządzenia zewnętrznego, takiego jak czas komputera, jako ziarna.
 
-Jeśli potrzebujemy większej kontroli nad sposobem generowania liczb losowych, możemy utworzyć własną klasę implementującą interfejs `Random`. Możemy wtedy zdefiniować własny algorytm generujący liczby pseudolosowe.
+Kolejną ważną kwestią jest wybór odpowiedniej metody generowania liczb losowych. W Kotlinie możemy skorzystać z trzech głównych metod: `Random.nextInt()`, `Random.nextDouble()` oraz `Random.nextBytes()`. Wybór odpowiedniej metody zależy od potrzeby danego projektu.
 
-# Zobacz również
+## Zobacz też
 
-- Dokumentacja języka Kotlin na temat generowania liczb losowych: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/
-- Przykładowe wykorzystanie generowania liczb losowych w grze w języku Kotlin: https://github.com/libgdx/libgdx/wiki/Random-number-generator
+- Dokumentacja Kotlina na temat generowania losowych liczb: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html
+- Wideo "Kotlin Basics: Random Numbers": https://www.youtube.com/watch?v=s6SH72uAn3Q
+- Przykładowy projekt wykorzystujący generowanie losowych liczb w Kotlinie: https://github.com/KotlinBy/Android-Kotlin-Examples/tree/master/RandomNumbers

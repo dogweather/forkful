@@ -1,45 +1,44 @@
 ---
-title:    "Go: Redacción de pruebas"
+title:    "Go: Escribiendo pruebas"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué escribir pruebas en Go
+## Por qué
 
-Las pruebas son esenciales para garantizar la calidad y el funcionamiento correcto de nuestro código en Go. Además, las pruebas nos proporcionan una forma de verificar que nuestro programa trabaja como se espera y nos permiten detectar errores antes de que lleguen a producción.
+Escribir pruebas es una parte esencial del proceso de desarrollo de software en Go. Las pruebas aseguran que nuestro código funcione correctamente y nos permiten realizar cambios de manera segura sin preocuparnos por posibles errores. Además, las pruebas nos ayudan a documentar nuestro código y a comprender mejor su funcionamiento.
 
 ## Cómo hacerlo
 
-Para escribir pruebas efectivas en Go, debemos seguir algunos pasos clave. Primero, debemos asegurarnos de utilizar el paquete "testing" de Go para crear nuestra suite de pruebas. Luego, debemos escribir funciones de prueba que verifiquen aspectos específicos de nuestro código utilizando la función "t.Errorf()" para indicar un fallo si es necesario. Finalmente, podemos utilizar el comando "go test" para ejecutar nuestras pruebas y verificar si nuestro código pasa todos los casos de prueba.
+Para escribir pruebas en Go, utilizamos el paquete de pruebas estándar "testing". Primero, creamos un archivo de prueba con una función de prueba y luego la ejecutamos utilizando el comando "go test". Por ejemplo:
 
 ```Go
 package main
 
 import "testing"
 
-func Add(x, y int) int {
-    return x + y
-}
-
-func TestAdd(t *testing.T) {
-    result := Add(2, 3)
-    if result != 5 {
-        t.Errorf("La suma de 2 y 3 debería ser 5, pero recibimos %d", result)
-    }
+func TestSum(t *testing.T) {
+	result := sum(5, 10)
+	if result != 15 {
+		t.Errorf("La suma fue incorrecta, se esperaba 15 pero se obtuvo %d", result)
+	}
 }
 ```
 
-Al correr nuestras pruebas con el comando "go test", podemos ver que pasan exitosamente, lo que indica que nuestra función "Add" funciona correctamente. Si hacemos un cambio en nuestro código que afecte el resultado de la suma, nuestras pruebas también fallarán, lo que nos alerta sobre posibles errores en nuestro código.
+Al ejecutar el comando "go test" en la terminal, debería mostrarse la salida: "PASS: TestSum" indicando que la prueba fue exitosa. Si el resultado de la prueba no es el esperado, se mostrará un mensaje de error indicando la diferencia.
 
-## Profundizando
+También podemos utilizar la función "log" del paquete "testing" para imprimir mensajes de depuración durante la ejecución de la prueba. Esto es muy útil para entender qué está sucediendo en nuestro código y solucionar posibles errores.
 
-Escribir pruebas en Go no se trata solo de verificar que nuestro código produce el resultado correcto. También podemos utilizar las pruebas para medir la cobertura de nuestro código y asegurarnos de que todas las posibles rutas de ejecución están siendo cubiertas. Además, podemos escribir pruebas de benchmarking para medir la eficiencia de nuestro código y comparar diferentes implementaciones para mejorar el rendimiento.
+## Profundizando en las pruebas
 
-El paquete "testing" de Go también ofrece otras funciones útiles, como "t.Helper()" para marcar una función de prueba como auxiliar y "t.Skip()" para saltar una prueba en particular. Conocer todas estas funciones nos permitirá escribir pruebas más robustas y efectivas.
+Existen diferentes tipos de pruebas en Go, como las pruebas unitarias, de integración y de aceptación. Cada una tiene un propósito y alcance diferentes, por lo que es importante comprender cuál es la mejor opción para nuestro caso en particular.
 
-# Ver también
+Las pruebas también pueden ayudarnos a seguir buenas prácticas de programación como escribir código modular y utilizando el principio de "una sola responsabilidad". Al escribir pruebas, nos forzamos a pensar en cómo nuestro código puede ser más fácil de probar y cómo hacerlo más robusto.
 
-- Documentación oficial de Go sobre pruebas: https://golang.org/pkg/testing/
-- Tutorial de Go sobre pruebas: https://golang.org/doc/code.html#Testing
-- Ejemplos de código de pruebas en Go: https://github.com/golang/go/wiki/LearnTesting
+## Ver también
+
+- Documentación oficial de pruebas en Go: https://golang.org/pkg/testing/
+- Artículo sobre cómo escribir pruebas en Go: https://blog.golang.org/examples
+- Ejemplos de código con pruebas en Go: https://github.com/golang/go/tree/master/src/testing

@@ -1,64 +1,32 @@
 ---
-title:    "Fish Shell: Generering av tilfeldige tall"
+title:    "Fish Shell: Generere tilfeldige tall"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å generere tilfeldige tall er en nyttig ferdighet i mange programmeringsprosjekter. Det kan brukes til å simulere ulike situasjoner, teste funksjonaliteten til koden din, og til og med lage tilfeldige passord eller krypteringsnøkler. Med Fish Shell kan du enkelt generere tilfeldige tall direkte i kommandolinjen.
 
-## Slik gjør du det
-For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `random`. Her er et eksempel på hvordan du kan bruke denne kommandoen til å generere 5 tilfeldige tall mellom 1 og 10:
+Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver, enten det er for å lage løkker, utføre skytebaner, eller til og med å simulere tilfeldige hendelser. Med Fish Shell, kan du enkelt generere tilfeldige tall for å få programmene dine til å fungere enda bedre.
+
+## Hvordan
+
+For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `seq` sammen med flagget `-r` for å indikere at tallene skal være tilfeldige. Her er et eksempel på hvordan du kan bruke dette i en løkke:
 
 ```Fish Shell
-set i 0
-while [ $i -lt 5 ]
-    set r (random 1 10)
-    echo $r
-    set i (math $i + 1)
+for tall in (seq -r 1 10)
+	echo $tall
 end
 ```
 
-Dette kodeeksempelet vil produsere følgende output:
-
-```
-7
-2
-10
-5
-9
-```
-
-Her bruker vi `set` til å definere en variabel `i` og sette den til å starte på 0. Deretter bruker vi en `while`-løkke for å kjøre kommandoen `random` og lagre resultatet i variabelen `r`. Vi bruker også `echo` for å skrive ut verdien av `r` til terminalen. Til slutt bruker vi `math` til å øke verdien av `i` med 1 for hver runde i løkken. Dette sikrer at vi bare får 5 tilfeldige tall.
+Dette vil skrive ut 10 tilfeldige tall mellom 1 og 10, som f.eks. kan være 3, 8, 4, 10, 1, 5, 7, 2, 6 og 9.
 
 ## Dypdykk
-Hvis du ønsker å generere tilfeldige tall basert på et seed-nummer, kan du bruke kommandoen `rnd` i stedet for `random`. Seed-nummeret spesifiseres ved å bruke flagget `-s`.
 
-For eksempel, hvis vi vil generere 5 tilfeldige tall basert på et seed-nummer på 123, kan vi bruke følgende kode:
+For å generere tilfeldige tall, bruker Fish Shell en algoritme kalt Mersenne Twister, som er en av de mest brukte tilfeldighetsgeneratorene i verden. Denne algoritmen genererer sekvenser av tall som ser ut til å være tilfeldige, men faktisk følger et bestemt mønster. Derfor kan ikke sekvensene av tall betraktes som virkelig tilfeldige, men de anses som god nok for de fleste programmeringsformål.
 
-```Fish Shell
-set i 0
-while [ $i -lt 5 ]
-    set r (rnd -s 123 1 10)
-    echo $r
-    set i (math $i + 1)
-end
-```
+## Se Også
 
-Dette vil gi følgende output:
-
-```
-7
-2
-1
-3
-9
-```
-
-Ved å bruke et seed-nummer kan du sikre at de samme tilfeldige tallene blir generert hver gang du kjører koden. Dette kan være nyttig for å gjenskape et spesifikt scenario i et program.
-
-## Se også
-- [Fish Shell dokumentasjon for `random` og `rnd` kommandoene](https://fishshell.com/docs/current/cmds/random.html)
-- [En liste over ulike måter å generere tilfeldige tall i Fish Shell](https://aquariusescape.github.io/fish-random/)
-- [En veiledning for å generere tilfeldige tall i andre programmeringsspråk](https://www.freecodecamp.org/news/how-to-generate-random-numbers-in-java/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/commands.html#seq)
+- [Mersenne Twister algoritme](https://en.wikipedia.org/wiki/Mersenne_Twister)

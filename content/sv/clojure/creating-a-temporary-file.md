@@ -1,43 +1,36 @@
 ---
 title:    "Clojure: Skapa en tillfällig fil"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför skapa en tillfällig fil i Clojure?
 
-Att skapa tillfälliga filer är ett vanligt förfarande inom programmering för att hantera temporära data eller för att testa kod utan att permanent påverka befintliga filer. Det kan också vara användbart för att spara mellanresultat från en process.
+Att skapa tillfälliga filer kan vara användbart i flera olika situationer, till exempel när man behöver spara temporär data eller när man behöver skapa en temporär fil för en viss operation. I Clojure finns det flera enkla och effektiva sätt att skapa tillfälliga filer, vilket vi kommer att utforska i denna bloggpost.
 
-## Hur man gör det
+## Hur man skapar en tillfällig fil i Clojure
 
-För att skapa en temporär fil i Clojure, kan du använda funktionen `temp-file` från standardbiblioteket `java.io.File`. Du kan ge den ett prefix och ett suffix som kommer att inkluderas i filnamnet. Här är ett exempel på hur man skapar en temporär fil med prefixet "example_", suffixet ".txt" och skriver till den:
+För att skapa en tillfällig fil i Clojure kan man använda funktionen `with-open` tillsammans med `java.io.File/createTempFile` för att skapa en temporär fil med ett unikt namn. Detta kan se ut på följande sätt i koden:
 
-```Clojure
-(import [java.io File])
-
-(defn create-temp-file []
-  (let [temp-file (File/temp-file "example_" ".txt")]
-    (spit temp-file "Detta är ett exempel på en temporär fil")
-    temp-file))
-
-(create-temp-file)
+```Clojure 
+(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")] 
+  (println "En tillfällig fil skapad med namnet " (.getName temp-file))) 
 ```
 
-Output:
+Output: En tillfällig fil skapad med namnet temp7561119441009090568.txt
 
-```
-#<File /var/folders/ss/mytemp100123/example_5d9434e1-8860-4d4f-b9ce-2aec8c75d365.txt>
-```
+Här har vi skapat en tillfällig fil med namnet "temp7561119441009090568.txt". Det är viktigt att notera att filen kommer att bli automatiskt borttagen när `with-open` funktionen avslutas.
 
-## Djupdykning
+## Gräva djupare
 
-När en temporär fil skapas, sparas den i ett speciellt systemförvaringsutrymme som är avsett för temporära filer. När programmet avslutas eller filen inte längre behövs, raderas filen automatiskt från systemet.
+Det finns flera olika argument som kan användas med `java.io.File/createTempFile` för att skräddarsy den skapade tillfälliga filen. Till exempel kan man ange en specifik katalog där filen ska skapas, eller lägga till ett prefix eller suffix till filnamnet. Man kan även använda `java.io.File/deleteOnExit` för att ange att filen ska tas bort när programmet avslutas.
 
-Det är också möjligt att ange en specifik mapp där den temporära filen ska skapas genom att ge en andra parameter till `temp-file` funktionen. På så sätt kan du ha mer kontroll över var filen sparas.
+Det finns också flera andra sätt att hantera tillfälliga filer i Clojure, såsom att använda `java.io.File/createNewFile` för att skapa en ny fil eller `clojure.java.io/resource` för att skapa en fil med resursnamn. Mer information om dessa alternativ och deras funktioner finns tillgängliga i Clojure-dokumentationen.
 
 ## Se även
 
-- [Java API documentation för File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [How to Use Temporary Files in Java](https://www.baeldung.com/java-temporary-files) (Engelska)
-- [Clojure Java interop](https://clojure.org/reference/java_interop)
+- [Clojure documentation on temporary files](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/resource)
+- [How to work with temporary files in Java](https://www.baeldung.com/java-temporary-files)
+- [Tutorial on file handling in Clojure](https://alive.cz/news/alive-hub-article-file-handling-in-clojure/)

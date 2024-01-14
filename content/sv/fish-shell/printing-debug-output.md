@@ -1,41 +1,29 @@
 ---
 title:    "Fish Shell: Utskrift av felsökningsutdata"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+Det är viktigt att kunna skriva ut debuggmeddelanden när man programmerar för att enklare kunna felsöka kod och hitta eventuella problem. Fish Shell har enkla och effektiva sätt att skriva ut debuggmeddelanden som kan hjälpa dig att hitta och lösa problemen i din kod.
 
-Att skriva ut debug-utmatning kan vara en användbar metod för att felsöka problem i din Fish Shell-kod. Det kan hjälpa dig att förstå hur din kod fungerar och hitta eventuella fel eller buggar. 
-
-## Så här gör du
-
-För att skriva ut debug-utmatning i Fish Shell, använd kommandot `echo`. Du kan skriva ut variabler, textsträngar eller resultatet av en kommandokörning. Här är ett exempel på hur du skriver ut värdet av variabeln `name`:
+##Så här gör du
+För att skriva ut ett debuggmeddelande i Fish Shell kan du använda kommandot `echo` tillsammans med variabeln `$status` för att skriva ut eventuella felmeddelanden som kan uppstå i din kod. Se nedan för ett exempel:
 
 ```Fish Shell
-echo $name
+echo "Debuggmeddelande: statusen är $status"
 ```
 
-Du kan också använda flaggan `-v` för att skriva ut variablers namn och värden:
+Detta kommer att skriva ut meddelandet "Debuggmeddelande: statusen är" följt av värdet på variabeln `$status`. På så sätt kan du enkelt se om något fel har uppstått och vad det eventuellt kan bero på.
 
-```Fish Shell
-echo -v name
-```
+##Djupdykning
+Det finns flera olika sätt att skriva ut debuggmeddelanden i Fish Shell, beroende på vad du vill uppnå. Du kan till exempel använda kommandot `set -x` för att få Fish Shell att visa varje kommando som körs och dess resultat. Detta kan vara särskilt användbart om du försöker hitta en specifik bugg eller fel i din kod.
 
-För att skriva ut en textsträng, använd citattecken runt strängen:
+För mer avancerade debugginsatser kan du även använda Fish Shells inbyggda debuggverktyg såsom `stacktrace` för att få en detaljerad översikt över varje kommando och dess resultat i din kod.
 
-```Fish Shell
-echo "Detta är en textsträng."
-```
-
-Slutligen kan du använda kommandot `set -x` för att aktivera debug-mode i Fish Shell. Detta kommer att skriva ut alla körda kommandon och resultatet av dem. Glöm inte att stänga av debug-läget när du är klar genom att köra `set -x off`.
-
-## Djupdykning
-
-Att skriva ut debug-utmatning är särskilt användbart när du har komplexa skript eller när du arbetar med flera variabler och vill se hur de ändras under körning. Det kan också vara användbart att använda verktyg som `less` för att enklare navigera genom stora utskrifter. Du kan använda `| less` efter ditt `echo`-kommando för att se utmatningen i mindre delar.
-
-## Se även
-
-- [Fish Shell-dokumentation](https://fishshell.com/docs/current/)
-- [En introduktion till Fish Shell](https://dev.to/rstacruz/an-introduction-to-fish-shell-3m8n)
+##Se även
+[Fish Shell - dokumentation](https://fishshell.com/docs/current/index.html)
+[Fish Shell - felsökning](https://fishshell.com/docs/current/faq.html#debugging)
+[Fish Shell - inbyggda verktyg](https://fishshell.com/docs/current/tutorial.html#using-fish-for-scripts-and-programs)

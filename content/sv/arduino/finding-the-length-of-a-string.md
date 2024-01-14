@@ -1,41 +1,34 @@
 ---
-title:    "Arduino: Hitta längden av en sträng"
+title:    "Arduino: Hitta längden på en sträng"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att hitta längden på en sträng är en viktig del av programmering, särskilt när man arbetar med textbaserad data. Det kan användas för att kontrollera att en sträng är inom en viss längd, dela upp en sträng i mindre delar eller jämföra två strängar.
+Att kunna bestämma längden på en sträng är en viktig grundläggande kunskap inom Arduino-programmering. Det möjliggör för oss att hantera och manipulera text på ett effektivt sätt, vilket är särskilt användbart i projekt som involverar kommunikation med externa enheter eller användarinteraktion.
 
-## Hur man gör det
+## Så här gör du
 
-Att hitta längden på en sträng på Arduino är enkelt med hjälp av funktionen `strlen()`. Detta är en inbyggd funktion som kan användas för att beräkna längden på en sträng. Här är ett exempel på hur man kan använda `strlen()` för att hitta längden på en sträng som heter "Hej Arduino":
+Att hitta längden på en sträng i Arduino är en enkel process som kan utföras med hjälp av en inbyggd funktion, `strlen ()`. Denna funktion beräknar och returnerar längden på en given sträng.
 
 ```Arduino
-char str[] = "Hej Arduino";
-int längd = strlen(str);
+char str[] = "Hej världen!";
+int length = strlen(str);
+Serial.println(length); // Output: 13
 ```
 
-I detta exempel tilldelas variabeln `längd` längden på strängen "Hej Arduino". Detta värde kommer att vara 11, eftersom det är antalet tecken i strängen.
-
-Det är viktigt att notera att `strlen()` fungerar endast för "c-stringar", vilket innebär att den endast fungererar med null-terminerade strängar. Null-terminerade strängar har en specialtecken ('\0') i slutet för att indikera slutet på strängen. Om du använder en vanlig sträng (ex. String-objekt) kommer `strlen()` inte att fungera. I så fall kan du använda `str.length()` för att hitta längden på en vanlig sträng.
+Som ni kan se i exemplet ovan, deklarerar vi först en variabel `str` som innehåller vår sträng. Sedan använder vi `strlen ()` för att beräkna längden på strängen och tilldelar det till variabeln `length`. Till slut skriver vi ut längden på strängen till seriell monitor.
 
 ## Djupdykning
 
-För en mer avancerad förståelse av hur `strlen()` fungerar, måste du förstå hur data lagras i minnet på en Arduino. Minnet på en Arduino kan delas upp i "bytes", som är 8-bitars block av data. En char-variabel tar upp en byte i minnet och kan lagra ett tecken.
+`strlen ()` är en standard C-funktion som finns tillgänglig i Arduino-miljön. Detta innebär att den inte bara kan användas för att hitta längden på en statisk sträng, som vi visade ovan, utan också för en dynamisk sträng som har tilldelats med `malloc ()` eller `new`.
 
-När en sträng lagras i minnet, lagras alla tecken i följd och ett sista null-tecken läggs till i slutet. När `strlen()` körs, räknar den antalet tecken tills den når det sista null-tecknet och returnerar sedan det värdet.
-
-Det finns också andra metoder för att hitta längden på en sträng, som att räkna antalet loopar som krävs för att nå null-tecknet eller att använda en variabel för att hålla reda på längden medan man loopar igenom strängen. Men `strlen()` är den enklaste och mest effektiva metoden för att hitta längden på en sträng.
+En annan viktig aspekt att notera är att `strlen ()` räknar endast de faktiska tecken som finns i strängen, och inte inkluderar avslutande nollbyte. Detta är viktigt att ha i åtanke när man arbetar med textsträngar i olika manipulationer.
 
 ## Se även
 
-Här är några användbara länkar för att hjälpa dig förstå mer om hur man hittar längden på en sträng:
-
-- [strlen() referens](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
-- [Fördjupningsguide för funktioner med strängar](https://www.arduino.cc/en/Tutorial/StringLengthOperator)
-- [Skillnaden mellan null-terminerade strängar och vanliga strängar](https://hackaday.com/2018/01/24/running-functional-string-tests-with-both-standard-and-null-terminated-strings/)
-
-Lycka till med att utforska hur man hittar längden på en sträng på Arduino!
+- [Arduino Official Reference - strlen()](https://www.arduino.cc/reference/en/language/functions/string/functions/strlen/)
+- [GeeksforGeeks - C String Functions](https://www.geeksforgeeks.org/c-string-functions-strlen-strcpy-strrev-/)

@@ -1,35 +1,35 @@
 ---
 title:    "TypeScript: 文字列を小文字に変換する"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を小文字に変換する必要がある理由は、データの整理や比較をする際に必要であり、より正確な結果を得るために使用されることがあります。
+プログラミングで文字列を小文字に変換することの意義は、データの整合性を保つために欠かせません。例えば、入力フォームでユーザーの名前を受け取る際、大文字や小文字が混在していると同じ人物のデータと見做されず、誤った処理が行われてしまう可能性があります。そのため、文字列を小文字に統一することで、正確なデータ処理ができるようになります。
 
 ## 方法
 
+TypeScriptで文字列を小文字に変換する方法は簡単です。以下のようなコードを使用します。
+
 ```TypeScript
-let str: string = "Hello World";
-
-// 文字列を小文字に変換する
-let lowerStr = str.toLowerCase();
-
-console.log(lowerStr); // output: hello world
+let str: string = "HELLO WORLD";
+let lowerCaseStr: string = str.toLowerCase();
+console.log(lowerCaseStr);
 ```
 
-上記の例では、`toLowerCase()`メソッドを使用して文字列を小文字に変換する方法を示しています。このメソッドを使用することで、大文字と小文字を区別せずに文字列を比較することができます。
+上記のコードを実行すると、出力結果は「hello world」となります。このように、`toLowerCase()`メソッドを使用することで、文字列を小文字に変換することができます。
 
 ## 深堀り
 
-文字列を小文字に変換するには、実際には英字の文字コードを変換する処理が行われます。英字の大文字は小文字よりも大きな文字コードを持っており、`toLowerCase()`メソッドはこの差を考慮して文字コードを変換することで小文字に変換します。
+では、実際に`toLowerCase()`メソッドはどのように文字列を小文字に変換しているのでしょうか？内部的には、文字列を文字の配列として扱い、それぞれの文字に対して`toLowerCase()`を適用して小文字に変換しています。
 
-また、`toLowerCase()`メソッドは非ASCII文字にも対応しており、特定の言語で使用される特殊文字を小文字に変換することができます。
+一般的に、大文字と小文字の間にはUnicodeで異なる数値が割り当てられています。そのため、`toLowerCase()`メソッドはこの数値を変換し、小文字の数値を返します。しかし、ごく稀に特殊な文字の変換がうまくいかないことがあります。その場合は、文字列そのものが返されることになります。
 
-## See Also
+## もっと詳しく知るには
 
-- [JavaScriptで文字列を小文字に変換する方法](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [TypeScriptのデータ型](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [文字列の比較について](https://qiita.com/benit/items/6834d6ff381a2bcbd48c)
+[`toLowerCase()`メソッドの仕様書（英語）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+
+[`toUpperCase()`メソッドとの違い（英語）](https://www.geeksforgeeks.org/difference-between-tolowercase-and-touppercase-function-in-javascript/)

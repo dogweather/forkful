@@ -1,50 +1,59 @@
 ---
-title:    "C#: 「部分文字列の抽出」"
+title:    "C#: 文字列の抽出"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Substringを抽出する必要があるのか、簡単に説明します。サブストリングとは、文字列から指定の部分を切り出すことを言います。例えば、「Hello World」の「World」の部分を切り出すことができます。この機能を使うことで、より効率的なコーディングが可能になります。
+文字列を抽出する理由はさまざまです。多くの場合、より大きな文字列から必要な情報を取り出したいときに使われます。例えば、電話番号やメールアドレスなど、特定の形式で表される情報を見つけるために、文字列を抽出することができます。
 
-## 抽出方法
+## 方法
 
-まず、抽出したい文字列を`string`型変数に定義します。その後、C#の`Substring`メソッドを使って、切り出したい部分のインデックス、つまり始まりと終わりの位置を指定します。
-
-例えば、以下のようなコードを書くことで、「Hello World」の「World」を切り出すことができます。
+C#では、文字列を抽出するためにSubstring()メソッドを使用することができます。まず、抽出したい部分の開始位置と終了位置を指定して、Substring()メソッドを呼び出します。例えば、以下のコードは、文字列の一部を抽出する方法を示しています。
 
 ```C#
-string str = "Hello World";
-string substr = str.Substring(6, 5);
-Console.WriteLine(substr);
+// 元の文字列
+string str = "こんにちは、私の名前は山田太郎です。";
+
+// 先頭から7文字目以降を抽出
+string substr1 = str.Substring(7);
+Console.WriteLine(substr1);
+// 出力: 私の名前は山田太郎です。
+
+// 4文字目から9文字目を抽出
+string substr2 = str.Substring(3, 5);
+Console.WriteLine(substr2);
+// 出力: 一の名前
+
 ```
 
-出力結果は以下の通りになります。
+## 深堀り
 
-```
-World
-```
+Substring()メソッドは、最初の引数に開始位置を指定し、第二引数に文字数を指定することで、任意の部分文字列を抽出することができます。また、EndsWith()メソッドやContains()メソッドと組み合わせることで、特定の文字列を含む部分文字列を抽出することもできます。
 
-ここで、`str.Substring(6, 5)`の部分では、`6`が始まりの位置を表し、「World」の最初の文字「W」が位置`0`となるので、そこから数えて`6`番目に当たります。そして、`5`が終わりの位置を表し、そこで文字列の切り出しを終えます。
-
-もしくは、`Substring`メソッドに終わりの位置を指定しない場合、終了位置は文字列の最後までとされます。例えば、以下のようなコードを書くことで、「World」以降の部分を切り出すことができます。
+例えば、以下のコードは、電話番号を抽出する例です。
 
 ```C#
-string substr = str.Substring(6);
+// 元の文字列
+string str = "私の電話番号は080-1234-5678です。";
+
+// 電話番号を抽出
+int start = str.IndexOf("私の電話番号は") + 6;
+int end = str.IndexOf("です。");
+string number = str.Substring(start, end - start);
+Console.WriteLine(number);
+// 出力: 080-1234-5678
 ```
 
-## 抽出の詳細
+## その他
 
-`Substring`メソッドでは、バイト単位での文字列の抽出が行われます。また、インデックスの指定は`0`から始まることに注意してください。また、文字列の長さを超える位置を指定した場合、`ArgumentOutOfRangeException`例外が発生します。そのため、事前に文字列の長さを確認し、適切な位置を指定するようにしましょう。
+抽出した文字列を加工する場合は、StringBuilderクラスを使用すると、パフォーマンスを改善することができます。また、正規表現を使うことで、より柔軟に文字列を抽出することができます。
 
-## もっと詳しい情報が欲しい方は
+## 参考リンク
 
-抽出した部分を利用したい場合には、C#の`Replace`メソッドを使うことで、特定の文字列を別の文字列に置き換えることが可能です。また、文字列の操作をより高度に行いたい場合には、正規表現を利用することもおすすめです。
-
-## 詳しくはこちらを参考にしてください
-
-- [C#のSubstringメソッドの使い方 | Techacademyマガジン](https://techacademy.jp/magazine/19554)
-- [C#で文字列を置換するReplaceメソッドについて | CDT](https://www.cdtpjp.com/2019/04/13/c-string-replace/)
-- [C#の文字列操作入門 | Qiita](https://qiita.com/shoutan382/items/b4952bab661e24b6e9db)
+- [MSDN: Substring メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.substring)
+- [TechAcademy Magazine: C# における正規表現入門](https://techacademy.jp/magazine/18491)
+- [学習サイトドットネット: StringBuilderクラスの使い方](https://p-site.net/c-sharp/s-stringbuilder-class.html)

@@ -1,56 +1,40 @@
 ---
 title:    "C#: 문자열 연결하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
-
-문자열 연결(concatenation)은 프로그래밍에서 매우 중요한 개념입니다. 다른 문자열들을 하나로 합치는 것은 정보를보다 쉽고 간편하게 표현할 수 있도록 해줍니다.
+## 왜
+문자열을 연결하는 것이 중요한 이유는 문자열을 조합하여 더 많은 정보를 표시할 수 있기 때문입니다. 예를 들어, 사용자 이름과 성씨를 합쳐서 전체 이름을 나타내는 등의 경우에 매우 유용합니다.
 
 ## 방법
-
-아래와 같이 사용할 수 있습니다:
-
 ```C#
-string firstName = "John";
-string lastName = "Doe";
+string firstName = "이름";
+string lastName = "성씨";
+
+// 문자열을 연결하는 방법 1: + 연산자 사용
 string fullName = firstName + " " + lastName;
-
 Console.WriteLine(fullName);
+// 결과: 이름 성씨
 
-// Output: John Doe
-```
-
-문자열을 합치기위해 `+` 연산자를 사용하는 것이 매우 간단하고 직관적입니다. 또는 `string.Format()` 함수를 사용해도 동일한 결과를 얻을 수 있습니다.
-
-```C#
-string firstName = "John";
-string lastName = "Doe";
+// 문자열을 연결하는 방법 2: string.Format() 메소드 사용
 string fullName = string.Format("{0} {1}", firstName, lastName);
-
 Console.WriteLine(fullName);
+// 결과: 이름 성씨
 
-// Output: John Doe
+// 문자열을 연결하는 방법 3: $ 표시 사용 (C# 6 이상)
+string fullName = $"{firstName} {lastName}";
+Console.WriteLine(fullName);
+// 결과: 이름 성씨
 ```
 
-## 깊이 파고들기
+## 깊게 파헤치기
+문자열을 연결할 때 주의할 점은 메모리 관리입니다. 예를 들어, 문자열을 연결할 때마다 새로운 객체가 생성되므로, 많은 수의 문자열을 연결하는 작업을 수행할 경우 메모리 부족 문제가 발생할 수 있습니다. 따라서 큰 문자열을 처리할 때는 StringBuilder 클래스를 사용하여 메모리 관리를 최적화하는 것이 좋습니다.
 
-문자열 연결의 더 깊은 개념을 알고 싶다면, `StringBuilder` 클래스를 사용하는 것이 좋습니다. `StringBuilder` 클래스는 문자열을 합치는 과정에서 메모리를 더 효율적으로 사용할 수 있도록 해줍니다.
-
-```C#
-StringBuilder sb = new StringBuilder();
-sb.Append("Hello").Append(" ").Append("World");
-
-Console.WriteLine(sb.ToString());
-
-// Output: Hello World
-```
-
-그러나 문장이 복잡해지고, 문자열이 많아질 경우에만 `StringBuilder` 클래스를 사용하는 것이 좋습니다. 간단한 문자열을 합치는 경우에는 `+` 연산자를 사용하는 것이 더 효율적일 수 있습니다.
-
-## 또 다른 방법들을 알고 싶다면 아래 링크들을 확인하세요:
-- [String.Concat Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=netframework-4.8)
-- [StringBuilder Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8)
-- [How StringBuilder Works (C# Corner)](https://www.c-sharpcorner.com/UploadFile/4d9083/how-stringbuilder-works-behind-the-scene-in-C-Sharp/)
+## 참고 자료
+- [C# 문자열 연결 방법](https://docs.microsoft.com/ko-kr/dotnet/csharp/how-to/concatenate-multiple-strings)
+- [C# 문자열 포맷팅](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/formatting-strings)
+- [C# StringBuilder 클래스](https://docs.microsoft.com/ko-kr/dotnet/api/system.text.stringbuilder)
+- [메모리 관리에 대한 고려사항](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/memory-considerations)

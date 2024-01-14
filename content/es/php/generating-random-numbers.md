@@ -1,52 +1,61 @@
 ---
 title:    "PHP: Generando números aleatorios"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios en programación
+## Por qué Generar Números Aleatorios es Importante en Programación PHP
 
-Generar números aleatorios es una habilidad básica en programación que puede tener varias aplicaciones. Desde juegos hasta simulaciones, pasando por pruebas de algoritmos, la generación de números aleatorios es esencial para crear programas dinámicos y variados.
+Los números aleatorios son una herramienta indispensable en la programación PHP ya que permiten crear aplicaciones dinámicas e interactivas. Además, son útiles para realizar pruebas de rendimiento y generar datos de prueba.
 
-## Cómo generar números aleatorios en PHP
+## Cómo Generar Números Aleatorios en PHP
 
-En PHP, podemos generar números aleatorios utilizando la función `rand()`, que acepta dos parámetros opcionales: el número más bajo y el más alto que queremos que se incluyan en la generación de números aleatorios. Aquí hay un ejemplo de cómo generar 10 números aleatorios entre 1 y 100:
+Para generar números aleatorios en PHP, se puede utilizar la función `rand()` que devuelve un número entero aleatorio entre un valor mínimo y máximo especificado. Por ejemplo:
 
 ```PHP
-<?php
-for ($i = 0; $i < 10; $i++) {
-  $random_number = rand(1, 100);
-  echo $random_number . "\n";
-}
+$numero = rand(1, 10);
+echo "El número aleatorio generado es: " . $numero;
+
+// Output: El número aleatorio generado es: 7
 ```
 
-Resultado:
+También se puede utilizar la función `mt_rand()` que utiliza un algoritmo de mejor calidad y por lo tanto, genera números más aleatorios. Esta función también devuelve un número entero aleatorio entre un valor mínimo y máximo especificado. Por ejemplo:
 
-```
-37
-83
-12
-55
-94
-26
-68
-100
-49
-1
+```PHP
+$numero = mt_rand(100, 1000);
+echo "El número aleatorio generado es: " . $numero;
+
+// Output: El número aleatorio generado es: 513
 ```
 
-También podemos utilizar la función `mt_rand()` para generar números aleatorios de forma más eficiente y con mayor precisión. Mientras que `rand()` utiliza el generador de números aleatorios estándar de PHP, `mt_rand()` utiliza el generador de números aleatorios Mersenne Twister, que es más rápido y produce números más uniformemente distribuidos.
+Otra opción es generar números aleatorios flotantes utilizando la función `lcg_value()`, que devuelve un número aleatorio entre 0 y 1. Por ejemplo:
 
-## Profundizando en la generación de números aleatorios
+```PHP
+$numero = lcg_value();
+echo "El número aleatorio generado es: " . $numero;
 
-Las secuencias de números aleatorios generadas por las funciones anteriores no son realmente aleatorias, sino que siguen un patrón predecible. Para crear secuencias verdaderamente aleatorias, necesitaremos utilizar semillas, que son valores iniciales que alimentamos al generador de números aleatorios. En PHP, podemos proporcionar una semilla a través de la función `srand()`, que debe ser llamada antes de utilizar `rand()` o `mt_rand()`.
+// Output: El número aleatorio generado es: 0.54226893411816
+```
 
-Otra forma de generar números aleatorios es utilizando la función `shuffle()`, que mezcla los elementos de una matriz de forma aleatoria. Esta función es útil para casos en los que necesitamos generar una lista ordenada de elementos en un orden aleatorio, como en un juego de cartas.
+## Profundizando en la Generación de Números Aleatorios en PHP
+
+Aunque las funciones mencionadas anteriormente son las más utilizadas para generar números aleatorios en PHP, también existe la función `random_int()` que permite generar números criptográficamente seguros. Esto significa que los números generados son impredecibles y no pueden ser adivinados fácilmente por alguien con intenciones maliciosas.
+
+Otra técnica para generar números aleatorios en PHP es utilizando la función `str_shuffle()` para mezclar una cadena de caracteres y luego obtener un número entero a partir de esa cadena. Por ejemplo:
+
+```PHP
+$numero = (int) str_shuffle("1234567890");
+echo "El número aleatorio generado es: " . $numero;
+
+// Output: El número aleatorio generado es: 8435167920
+```
 
 ## Ver también
 
-- [Documentación oficial de PHP sobre la generación de números aleatorios](https://www.php.net/manual/es/function.rand.php)
-- [Mersenne Twister en Wikipedia](https://es.wikipedia.org/wiki/Mersenne_Twister)
-- [Función srand() en PHP](https://www.php.net/manual/es/function.srand.php)
-- [Función shuffle() en PHP](https://www.php.net/manual/es/function.shuffle.php)
+- [Documentación oficial de PHP sobre la función rand()](https://www.php.net/manual/es/function.rand.php)
+- [Documentación oficial de PHP sobre la función mt_rand()](https://www.php.net/manual/es/function.mt-rand.php)
+- [Documentación oficial de PHP sobre la función lcg_value()](https://www.php.net/manual/es/function.lcg-value.php)
+- [Documentación oficial de PHP sobre la función random_int()](https://www.php.net/manual/es/function.random-int.php)
+- [Documentación oficial de PHP sobre la función str_shuffle()](https://www.php.net/manual/es/function.str-shuffle.php)

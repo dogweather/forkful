@@ -1,56 +1,61 @@
 ---
 title:    "Fish Shell recipe: Using regular expressions"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-Regular expressions are a powerful tool in programming that allow you to search, manipulate, and validate text data. They provide a concise and efficient way to match patterns within a string, making tasks such as data cleaning and text parsing much easier. By learning how to use regular expressions, you can greatly improve your coding productivity and enhance the functionality of your scripts.
+Regular expressions, also known as regex, are powerful tools used in text manipulation and search operations. They allow for more efficient and targeted manipulation of text, making it a useful skill for programmers and data analysts.
 
-##How To
+## How To
 
-Coding with regular expressions in Fish Shell is made easy with the built-in `string` commands. Let’s take a look at a few examples of how to use these commands to search for patterns within a string.
+Using regular expressions in the Fish Shell is very straightforward. Here's an example of how to search for a specific pattern in a text file and output the results:
 
-First, we’ll create a variable `my_string` with a string of text that we want to search through.
-
-```
-set my_string "I love programming with regular expressions!"
+```Fish Shell
+grep 'apple' fruits.txt
 ```
 
-Now, let’s use the `string match` command to search for the word “regular” within our string.
+This code block uses the `grep` command, which stands for "global regular expression print". It searches the file `fruits.txt` for the pattern "apple" and prints out all the lines that contain that pattern. 
 
-```
-string match -rq "regular" $my_string
-```
+Regular expressions also allow for more complex searches using special characters and modifiers. Here's an example of searching for all words that start with the letter "a":
 
-The `-r` flag enables regular expression matching and the `-q` flag tells Fish Shell to only output a boolean value. So, our command will return `1` if the word “regular” is found and `0` if it is not.
-
-We can also use regular expressions for more complex matches. Let’s say we want to extract all the numbers from a string.
-
-```
-set my_string "I have 10 fingers and 2 eyes"
-string replace -q ".* (\d+).*" '$1' $my_string
+```Fish Shell
+grep -w '\<a\w*' words.txt
 ```
 
-The `string replace` command allows us to replace matched patterns with a specified value. In this case, we are using the regular expression `.* (\d+).*` to match any string followed by a space and one or more digits, and then replacing the entire string with just the number. The output of this command will be `10 2`.
+The `-w` option ensures that only whole words starting with "a" are returned and the `\<` symbol marks the beginning of a word. This example also uses the wildcard character `*` to signify any number of characters following the letter "a". 
 
-##Deep Dive
+Additionally, regular expressions can be used for replacing text using the `sed` command. Here's an example of replacing all instances of "cat" with "dog" in a file called `animals.txt`:
 
-Regular expressions consist of special characters and symbols that represent a specific pattern to match within a string. Some common special characters and their meanings include:
+```Fish Shell
+sed 's/cat/dog/g' animals.txt
+```
 
-- `.` : Matches any single character
-- `*` : Matches the preceding pattern zero or more times
-- `+` : Matches the preceding pattern one or more times
-- `?` : Makes the preceding pattern optional
-- `[]` : Matches any single character within the brackets
-- `()` : Creates a matching group for use in replacement
+The `s/` indicates the substitution operation, and the `g` modifier means to replace all instances, not just the first one.
 
-To learn more about the different characters and symbols used in regular expressions, check out the Fish Shell documentation or various online resources.
+## Deep Dive
 
-##See Also
+Regular expressions have a rich syntax that allows for even more specific and complex pattern matching. Here are some commonly used symbols and modifiers:
 
-- [Fish Shell Official Documentation](https://fishshell.com/docs/current/commands.html#string)
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Online Regular Expression Tester](https://regex101.com/)
+- `^` - signifies the beginning of a line
+- `$` - signifies the end of a line
+- `.` - matches any single character
+- `[a-z]` - matches any lowercase letter between "a" and "z"
+- `+` - matches one or more occurrences of the preceding expression
+- `?` - matches zero or one occurrence of the preceding expression 
+- `()` - used for grouping and capturing specific parts of a pattern
+
+It's important to note that different programming languages may have slightly different syntax for regular expressions, so it's always a good idea to double check the documentation for the specific language you're using.
+
+## See Also
+
+Here are some resources for further reading on regular expressions:
+
+- [Fish Shell's Regex Reference](https://fishshell.com/docs/current/commands.html#set-builtin-regex)
+- [Regular Expressions 101](https://regex101.com/)
+- [Regex Cheatsheet](https://www.rexegg.com/regex-quickstart.html)
+
+Happy pattern matching!

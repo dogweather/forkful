@@ -1,51 +1,73 @@
 ---
 title:    "Rust: Kirjoittaminen standardivirheeseen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi kirjoittaa virherajoitin
 
-Kirjoittaminen standardivirheeseen (standard error) on tärkeä osa ohjelmointia Rust-kielellä. Se on tapa ilmoittaa virheistä ja muista tärkeistä tiedoista käyttäjälle tai ohjelman kehittäjälle. Tämä tieto näytetään komentorivillä, eikä se sekoitu ohjelman tuottamaan tavalliseen ulostuloon.
+Monet ohjelmointikielet tarjoavat mahdollisuuden tulostaa virheitä standardivyörajaan, joka on teksti, joka näkyy ohjelman lokitiedostossa tai komentorivin tulosteessa. Tämä on erittäin hyödyllinen työkalu ohjelmointivirheiden tunnistamiseen ja korjaamiseen.
 
-## Näin teet sen
+## Kuinka tehdä se
 
-Seuraa näitä ohjeita kirjoittaaksesi standardivirheeseen käyttäen Rustia:
+Rust-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan kirjoittaa virheilmoituksia standardiulostuloon. Tämä voidaan tehdä käyttämällä `eprintln!` -makroa, joka toimii samalla tavalla kuin `println!` mutta tulostaa virheitä standardivirheeseen.
 
-```
-Rust fn main() {
-    eprintln!("Tämä on virheilmoitus standardivirheeseen.");
+Esimerkki:
+
+```Rust
+use std::io;
+
+fn main() {
+    let input = io::stdin().read_line().unwrap();
+    if input.parse::<i32>().is_err() {
+        eprintln!("Virheellinen syöte. Syötä kokonaisluku.");
+    } else {
+        println!("Syöte oli oikein.");
+    }
 }
 ```
 
-Kun suoritat tämän koodin, näet seuraavan tulosteen standardivirheessä:
+Tämä koodi lukee käyttäjän syötettä ja tarkistaa, onko se kokonaisluku. Jos sitä ei voida muuttaa kokonaisluvuksi, virheilmoitus tulostetaan standardivirheeseen. Muussa tapauksessa tulostetaan ilmoitus, joka osoittaa, että syöte oli oikein.
+
+Tuloste:
 
 ```
-Tämä on virheilmoitus standardivirheeseen.
+$ cargo run
+123abc
+Virheellinen syöte. Syötä kokonaisluku.
 ```
 
-Voit myös lisätä muita tietoja tai muuttujia virheilmoitukseen:
+## Syvällinen tarkastelu
 
-```
-Rust fn main() {
-    let virheilmoitus = "Tämä on virheilmoitus standardivirheeseen.";
-    eprintln!("{} - Tärkeä huomautus!", virheilmoitus);
+Rustin `eprintln!`-makro on enemmän kuin vain ominaisuus mukava virheilmoitusten tulostamiseen. Se myös tarjoaa mahdollisuuden lisätä dynaamisia arvoja virheilmoituksiin, mikä tekee virheilmoituksista hyödyllisempiä korjata. Esimerkiksi, jos haluamme näyttää tarkemman syyn virheeseen, voimme käyttää `eprintln!`-makron kanssa muuttujia:
+
+```Rust
+use std::io;
+
+fn main() {
+    let input = io::stdin().read_line().unwrap();
+    if input.parse::<i32>().is_err() {
+        eprintln!("Virheellinen syöte {}. Syötä kokonaisluku.", input.trim());
+    } else {
+        println!("Syöte oli oikein.");
+    }
 }
 ```
 
-Tulostus:
+Tuloste:
 
 ```
-Tämä on virheilmoitus standardivirheeseen. - Tärkeä huomautus!
+$ cargo run
+123abc
+Virheellinen syöte 123abc. Syötä kokonaisluku.
 ```
 
-## Syvemmälle
-
-Kirjoittaminen standardivirheeseen on hyödyllinen tapa ohjelman kehittäjälle tai käyttäjälle saada tietoa ohjelman suorituksen aikana tapahtuvista virheistä ja muista tärkeistä tiedoista. On tärkeää käyttää `eprintln!` -makron sijaan `println!` -makroa, jotta nämä tiedot eivät sekoitu tavallisen ulostulon kanssa. Voit myös käyttää `panic!` -makroa tulostamaan virheilmoituksen ja lopettamaan ohjelman suorituksen, jos tarpeellista.
+Käyttämällä `eprintln!`-makron kanssa muuttujia, voimme paremmin paikantaa ja korjata virheitä.
 
 ## Katso myös
 
-- [Rust-in-kissat: Kirjoittaminen standardivirheeseen](https://rust-in-kissat.com/standard-virheet)
-- [Rust-ohjelmointikielen virallinen sivusto](https://www.rust-lang.org)
-- [Rust-viljelmät: Virheiden käsittely](https://rust-viljelmat.org/virheiden-käsittely.html)
+- [Rust-kielen virallinen dokumentaatio](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Virherajoittimen käyttö C++:ssa](https://stackoverflow.com/questions/13944258/how-to-print-to-stderr-in-c)
+- [Vinkkejä ohjelmointivirheiden hallitsemiseen](https://www.pluralsight.com/guides/how-to-handle-errors-in-your-rust-application)

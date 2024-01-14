@@ -1,56 +1,35 @@
 ---
-title:    "Java: कार्यकारी फ़ाइल बनाना"
+title:    "Java: एक अस्थायी फ़ाइल बनाना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-हम् क्यों: अस्थायी फ़ाइल बनाने में संलग्नता किसी को लोग केंद्रित करना चाहिए।
+## क्यों
 
-"अस्थायी फ़ाइलों को उसकी पहली भुगतान करने में आवश्यकता होती है जो वे बनाने के बाद हटा दिया जाते हैं। इसका प्रयोजन सीमित समय के आवश्यकताओं जैसे कि डाटा बांक, अप्लीकेशन टेस्टिंग और सुरक्षा उद्देश्यों के लिए हो सकता है।"
+कोडिंग में प्रोग्रामिंग करने का एक महत्वपूर्ण हिस्सा है अस्थायी फाइलों का उपयोग करना। अस्थायी फ़ाइलें कोड कंपाइल होने के दौरान रूपांतरण और डेटा भंडारण के लिए प्रयोग की जाती हैं। इससे कोड को स्वचालित और सुगम बनाया जा सकता है।
 
-कैसे करें:
+## कैसे करें 
 
 ```Java
-import java.io.File;
-import java.io.IOException;
+// अस्थायी फाइल बनाएं
+File tempFile = File.createTempFile("फाइल का नाम", ".txt"); 
 
-public class TemporaryFile {
+// अस्थायी फाइल का पथ प्राप्त करें
+System.out.println(tempFile.getAbsolutePath()); 
 
-    public static void main(String[] args) {
-        try {
-            // Create a temp file with prefix and suffix
-            File tempFile = File.createTempFile("data", ".txt");
-
-            // Output the absolute path of the temp file
-            System.out.println("Temp file created: " + tempFile.getAbsolutePath());
-
-            // Write data to the temp file
-            // ...
-
-            // Delete the temp file after its purpose
-            tempFile.delete();
-
-            System.out.println("Temp file deleted successfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-आउटपुट:
+// अस्थायी फाइल डिलीट करें
+tempFile.delete();
 
 ```
-Temp file created: C:\Users\Username\AppData\Local\Temp\data8603296756616120871.txt
-Temp file deleted successfully!
-```
 
-गहराई में जाएँ:
+उपरोक्त कोड में, हमने अस्थायी फाइल निर्माण करने, पथ प्राप्त करने और फाइल को हटाने के टिप्स दिए हैं। आप फाइल के नाम और विस्तार का तरीका अपनी पसंद के अनुसार बदल सकते हैं।
 
-अस्थायी फ़ाइल बनाने के लिए `File.createTempFile()` मेथड का उपयोग किया जाता है जो दो पैरामीटर लेता है - एक प्रीफिक्स और दूसरा सफिक्स। इन पैरामीटरों के साथ ऊपर दिए गए उदाहरण में `data` और `.txt` का उपयोग किया गया है। अस्थायी फ़ाइल में डेटा लिखने के बाद, हम `delete()` मेथड का उपयोग करके उसे हटा सकते हैं।
+## गहराई में जाओ
 
-See Also:
-- [https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String)](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String))
-- [https://www.journaldev.com/861/java-temporary-file-example](https://www.journaldev.com/861/java-temporary-file-example)
-- [https://www.geeksforgeeks.org/file-createfile-method-in-java-with-examples/](https://www.geeksforgeeks.org/file-createfile-method-in-java-with-examples/)
+अस्थायी फाइलें बनाने के लिए जावा आपने `createTempFile()` फ़ंक्शन का उपयोग किया है। इस फ़ंक्शन में आप दो पैरामीटर पास करते हैं - पहला होता है फाइल का नाम और दूसरा होता है फ़ाइल का विस्तार। आप फाइल का नाम अपने पसंद के अनुसार दे सकते हैं और फाइल का विस्तार आपको सिस्टम द्वारा प्रदान किया जाता है। आप भी `createTempFile()` फ़ंक्शन के तीसरे पैरामीटर में फॉल्डर का पथ भी पास कर सकते हैं, इससे आप अस्थायी फाइल को किसी भी दिए गए फ़ोल्डर में स्थानांतरित कर सकते हैं।
+
+## देखें भी
+
+[जावा में फाइल पढ़ने और लिखने के

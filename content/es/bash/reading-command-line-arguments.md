@@ -1,45 +1,53 @@
 ---
 title:    "Bash: Leyendo argumentos de línea de comandos"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Si eres programador o estás aprendiendo a programar, seguramente hayas escuchado hablar de los argumentos de línea de comandos. Pero, ¿por qué son importantes y qué beneficios pueden aportar a tus programas? En esta publicación, exploraremos por qué es crucial aprender a leer los argumentos de la línea de comandos y cómo pueden simplificar tu flujo de trabajo.
+Antes de sumergirnos en cómo leer argumentos de línea de comando en Bash, es importante entender por qué es una habilidad importante para cualquier programador. Al utilizar argumentos de línea de comando, podemos aumentar la eficiencia y flexibilidad de nuestros programas al permitir que los usuarios personalicen su funcionamiento a través de la entrada de comandos específicos. Además, el uso de argumentos de línea de comando también puede facilitar la automatización de tareas y procesos en nuestro flujo de trabajo.
 
 ## Cómo hacerlo
 
-¿Te has preguntado cómo los programas como Git o Node.js funcionan con diferentes comandos que se escriben en la terminal? La respuesta está en los argumentos de línea de comandos. Estos son valores o cadenas de texto que se pasan junto con el comando al ejecutar un programa. Aquí hay un ejemplo simple de cómo leer argumentos de la línea de comandos en bash:
+Para leer argumentos de línea de comando en Bash, podemos utilizar el built-in variable `$@` en nuestro código. Esta variable contiene una lista de todos los argumentos ingresados por el usuario al ejecutar el programa. A continuación, podemos utilizar la estructura de control `for` para iterar a través de los argumentos y realizar acciones basadas en ellos. Veamos un ejemplo:
 
-```bash
-#!/bin/bash
-echo "Argumentos: $@"
+```Bash
+for arg in "$@"
+do
+    case $arg in
+        -h|--help)
+            echo "Este es un mensaje de ayuda."
+            ;;
+        -v|--version)
+            echo "La versión del programa es 1.0."
+            ;;
+        *)
+            echo "Argumento desconocido: $arg. Utilice -h o --help para ver las opciones disponibles."
+            exit 1
+            ;;
+    esac
+done
 ```
 
-El símbolo ```$@``` representa todos los argumentos pasados ​​a la hora de ejecutar el script. Si ejecutamos el script con los argumentos "hola mundo", la salida sería "Argumentos: hola mundo".
-
-También podemos acceder a argumentos específicos utilizando ```$1```, ```$2```, etc. que representan el primer, segundo, etc. argumento pasado.
-
-```bash
-#!/bin/bash
-echo "Primer argumento: $1"
-echo "Segundo argumento: $2"
-```
-
-Ahora, si ejecutamos el script con los mismos argumentos "hola mundo", la salida sería "Primer argumento: hola" y "Segundo argumento: mundo". Esto puede ser útil para realizar diferentes acciones según los argumentos proporcionados.
+En este ejemplo, estamos utilizando la estructura de control `case` para realizar diferentes acciones según el argumento ingresado por el usuario. Si se proporciona el argumento `-h` o `--help`, se imprimirá un mensaje de ayuda. Si se ingresa `-v` o `--version`, se mostrará la versión del programa. Y si se proporciona cualquier otro argumento, se imprimirá un mensaje de error y el programa se terminará.
 
 ## Profundizando
 
-Además de leer los argumentos simplemente, también podemos procesarlos y validarlos de diferentes maneras. La variable ```$#``` nos da el número total de argumentos pasados, lo que puede ser útil para asegurarse de que se proporcionen todos los argumentos necesarios. También podemos usar ```shift``` para eliminar el primer argumento y, por lo tanto, acceder a los siguientes de manera incremental.
+Además de la estructura de control `for`, también podemos utilizar la variable `$#` para obtener el número total de argumentos ingresados. Además, podemos acceder a cada argumento individualmente utilizando `$1`, `$2`, `$3`, etc. Esto puede ser útil cuando necesitamos trabajar con argumentos específicos en nuestro código. También podemos utilizar la estructura de control `if` para realizar acciones basadas en la presencia o ausencia de ciertos argumentos. Por ejemplo:
 
-Podemos incluso combinar argumentos en una sola cadena utilizando ```getopts``` y establecer diferentes opciones para manejar diferentes acciones. Esto es útil para crear programas interactivos con múltiples opciones.
+```Bash
+if [ $# -lt 2 ]; then
+    echo "Se requieren al menos dos argumentos para ejecutar este programa."
+    exit 1
+fi
+```
+
+En este caso, estamos utilizando un condicional para verificar si se han ingresado al menos dos argumentos. Si no es así, se imprimirá un mensaje de error y el programa se terminará.
 
 ## Ver también
 
-- [Bash: Scripting de línea de comandos](https://www.gnu.org/software/bash/manual/html_node/Bash-Scripts.html)
-- [Documentación de Node.js sobre procesamiento de argumentos de línea de comandos](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Cómo usar argumentos de línea de comandos en Git](https://git-scm.com/book/tr/v2/Git-Tools-Revision-Selection#_commit_ranges_and_history)
-
-¡Ahora que conoces los fundamentos de los argumentos de línea de comandos en bash, puedes mejorar tus habilidades de programación y hacer que tus programas sean más versátiles y eficientes! ¡Sigue aprendiendo y experimentando con ellos!
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutorial de argumentos de línea de comando en Bash](https://linuxize.com/post/how-to-use-getopts-to-parse-a-script-options/)

@@ -1,36 +1,32 @@
 ---
 title:    "Kotlin: Перетворення дати у рядок"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
-Конвертація дати в рядок є важливою технікою, оскільки часто необхідно вивести дату у зрозумілому для користувача форматі, наприклад, для відображення на інтерфейсі або для збереження у базі даних.
+
+Багато програми, які працюють з даними, потребують конвертування дати у рядок для відображення користувачам. Наприклад, коли ви створюєте звіт за певний період часу, ви, ймовірно, захочете, щоб дата була відображена у форматі, зрозумілому для людей.
 
 ## Як
-Для перетворення дати в рядок у Kotlin існує декілька способів. Нижче наведені приклади коду та вихідний результат для кожного з них.
+
+Існує декілька способів перетворення дати в рядок у мові Kotlin. Один з них - використання функції "format" з класу Date. Наприклад, якщо ви маєте дату 1 січня 2022 року, ви можете скористатися наступним кодом:
 
 ```Kotlin
-// Створення об'єкту з поточною датою
-val currentDate = LocalDate.now()
-
-// Виведення дати у форматі "день-місяць-рік"
-val formattedDate = currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-println(formattedDate) // Виведе: 23-09-2021
-
-// Виведення дати у форматі "рік-місяць-день"
-val formattedDate2 = currentDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-println(formattedDate2) // Виведе: 2021-09-23
-
-// Виведення дати у форматі "місяць-рік-день"
-val formattedDate3 = currentDate.format(DateTimeFormatter.ofPattern("MM-yyyy-dd"))
-println(formattedDate3) // Виведе: 09-2021-23
+val date = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse("01/01/2022")
+println(date?.format("dd MMM yyyy"))
 ```
 
-## Deep Dive
-Для конвертації дати в рядок у Kotlin використовується об'єкт DateTimeFormatter. Він дозволяє задати необхідний формат виведення дати за допомогою шаблонів. Наприклад "dd" - день, "MM" - місяць, "yyyy" - рік. Також можна задати розширені налаштування, наприклад, використовувати 12 чи 24-годинний формат часу.
+Ви отримаєте вивід "01 січ 2022", оскільки ми вказали форматування для дня, місяця та року. Також можна використовувати різні функції для отримання окремих частин дати, наприклад "day", "month", "year" та інші.
 
-## See Also
-- [Kotlin Date and Time](https://kotlinlang.org/docs/datetime.html)
-- [DateTimeFormatter Class](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+## Deep Dive
+
+Більш детально про перетворення дати в рядок можна дізнатися з документації по мові Kotlin. Для більшої гнучкості і контролю, можна використовувати клас Calendar для роботи з датами. Також існує багато бібліотек, які допоможуть вам в перетворенні дати у рядок з використанням різних форматів.
+
+## Дивись також
+
+- [Документація з мови Kotlin](https://kotlinlang.org/docs/datetime.html)
+- [Порівняння різних способів перетворення дати в рядок](https://www.baeldung.com/kotlin-convert-date-to-string)
+- [Клас Calendar у мові Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-calendar/)

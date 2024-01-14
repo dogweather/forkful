@@ -1,66 +1,63 @@
 ---
-title:    "C: 정규 표현식 사용하기"
+title:    "C: 정규식을 사용하는 법"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 정규식을 사용해야 할까요?
 
-정규 표현식을 사용하는 이유는 매우 다양합니다. 하지만 가장 큰 이유는 문자열에서 패턴을 찾는 것입니다. 예를 들어, 이메일 주소나 전화번호, 혹은 특정 단어들을 찾아내는 등 다양한 용도로 사용할 수 있습니다.
+C 프로그래밍에서 정규식은 매우 유용한 도구입니다. 정규식을 사용하면 검색 및 대체 기능을 포함하여 문자열을 처리하는 데 매우 유용합니다. 이것은 특히 데이터를 다루거나 패턴을 추출해야 할 때 유용합니다.
 
 ## 사용 방법
 
-정규 표현식을 C 프로그래밍에서 사용하려면 `<regex.h>` 헤더 파일을 포함해야 합니다. 그리고 `regex_t` 구조체를 사용해 정규 표현식을 컴파일하고 `regexec` 함수를 사용해 해당 패턴을 찾습니다. 아래는 이 과정을 보여주는 간단한 예제 코드입니다.
+정규식을 사용하기 위해 여러분은 <regex.h> 헤더 파일을 인클루드해야 합니다. 그리고 다음과 같은 코드를 사용하여 정규식을 컴파일하고 문자열과 비교할 수 있습니다.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
-    // 정규 표현식패턴과 일치하는 문자열을 찾을 때 사용할 변수
+    // 정규식을 컴파일합니다.
     regex_t regex;
-    // 컴파일된 정규 표현식이 저장될 변수
-    int ret;
-    // 패턴과 일치하는 문자열의 최대 길이는 100으로 가정
-    char input[100];
-    // 정규 표현식 컴파일
-    ret = regcomp(&regex, "hello", 0);
+    int ret = regcomp(&regex, "Hello [Ww]orld", 0);
     if (ret != 0) {
-        printf("정규 표현식 컴파일 오류\n");
+        // 정규식 컴파일 중 오류가 발생했습니다.
+        printf("정규식 컴파일 오류!\n");
         return 1;
     }
-    // 찾을 문자열 입력
-    printf("문자열을 입력하세요: ");
-    scanf("%s", input);
-    // 입력한 문자열이 정규 표현식과 일치하는지 검사
-    ret = regexec(&regex, input, 0, NULL, 0);
+
+    // 문자열을 검색합니다.
+    char* text = "Hello World";
+    ret = regexec(&regex, text, 0, NULL, 0);
     if (ret == 0) {
-        printf("입력한 문자열과 정규 표현식 일치\n");
-    } else if (ret == REG_NOMATCH) {
-        printf("입력한 문자열과 정규 표현식 일치하지 않음\n");
+        printf("'%s'는 정규식과 일치합니다.\n", text);
+    } else {
+        printf("'%s'는 정규식과 일치하지 않습니다.\n", text);
     }
-    // 메모리 해제
+
+    // 정규식 객체를 해제합니다.
     regfree(&regex);
+
     return 0;
 }
 ```
 
-위 예제 코드를 실행하면 사용자에게 문자열을 입력받고, 해당 문자열이 "hello"라는 정규 표현식과 일치하는지 검사하는 간단한 프로그램입니다. 아래는 예제 코드 실행 시의 출력 결과입니다.
+위 코드의 결과는 다음과 같습니다.
 
 ```
-문자열을 입력하세요: hello
-입력한 문자열과 정규 표현식 일치
+'Hello World'는 정규식과 일치합니다.
 ```
 
-## 깊게 들어가기
+위에서 사용된 정규식은 "Hello World"라는 문자열과 일치하므로 출력 결과가 "정규식과 일치합니다."가 됩니다.
 
-정규 표현식은 문자열에서 패턴을 찾아내는 강력한 도구입니다. 이를 위해 다양한 메타 문자와 옵션을 사용할 수 있고, 패턴 매칭 결과를 그룹으로 나눠서 사용할 수도 있습니다. 그리고 정규 표현식을 더욱 효율적으로 사용하기 위해 반복문, 조건문 등 다른 C 프로그래밍 요소와 함께 사용할 수도 있습니다.
+## 깊이 들어가기
 
-즉, 정규 표현식을 알고 있다면 문자열 처리에 대한 다양한 상황에 유연하게 대처할 수 있습니다.
+정규식을 사용하는 데에는 많은 내용이 있지만 여기서는 단순히 기본적인 사용 방법만을 다뤄보았습니다. 정규식은 패턴 매칭, 대체 및 추출에 유용하지만 패턴을 작성하는 것은 쉽지 않을 수 있습니다. 따라서 정규식을 배울 때에는 많은 연습과 이해가 필요합니다.
 
 ## 참고 자료
 
-- [C 프로그래밍으로 정규 표현식 활용하기](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/ch04s03.html) - O'Reilly에서 제공하는 정규 표현식에 대한 고급 가이드입니다.
-- [정규 표현식 검증기](https://regex101.com/) - 정규 표현식 작성 및 검증을 쉽게 할 수 있는 온라인 도구입니다.
-- [정규 표현식 튜토리얼](https://www.rexegg
+- [GladysKnight/cse320-midterm-lecture8-regex.c](https://github.com/GladysKnight/cse320-midterm-lecture8-regex.c): C 언어로 정규식을 사용하는 예제 코드입니다.
+- [GeeksforGeeks: Regular Expressions in C](https://www.geeksforgeeks.org/regular-expressions-in-c/): C 언어에서 정규식을 사용하는 방법에 대한 자세한 설명을 제공합니다.
+- [CReference: <regex.h> - Regular expression handling](https://en.cppreference.com/w/c/regex): C 언어에서 정규식을 다루는 데 필요한 헤더 파일 <regex.h>에 대한 참고 문서입니다.

@@ -1,45 +1,38 @@
 ---
-title:    "Gleam: Zmiana wielkości liter w ciągu znaków"
+title:    "Gleam: Zmiana na wielkie litery ciągu znaków"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego Warto Dużyć Ciąg Tekstu w Języku Gleam?
+## Dlaczego
 
-Dużyć ciąg tekstu jest powszechnie stosowaną czynnością w wielu programach, szczególnie jeśli pracujemy z danymi wejściowymi podanymi przez użytkownika lub ze zmiennymi przechowywanymi w kodzie. W tym blogu opowiemy o tym, jak wykorzystać język Gleam do dużyenia ciągów tekstowych oraz jakie korzyści to przyniesie.
+Chcesz nauczyć się większego wykorzystywania języka Gleam? A może po prostu potrzebujesz sposobu na przetwarzanie tekstów w swoim kodzie? Niezależnie od powodu, kapitalizowanie stringów jest przydatną funkcją, którą warto poznać.
 
-## Jak Dużyć Ciąg Tekstu w Języku Gleam?
+## Jak to zrobić
 
-Działanie dużyenia ciągu tekstu jest bardzo proste - polega ono na zamianie pierwszej litery w danym wyrazie na dużą. W języku Gleam można to osiągnąć za pomocą funkcji `String.capitalize()`. Spróbujmy to zobrazować na przykładowym kodzie:
-
-```Gleam
-let name = "marek"
-let name_capitalized = String.capitalize(name)
-
-// Wynik: "Marek"
-```
-
-W powyższym przykładzie zmienna `name_capitalized` będzie przechowywać wartość "Marek", ponieważ funkcja `String.capitalize()` zmieniła pierwszą literę w wyrazie "marek" na dużą.
-
-Jeśli chcemy dużyć nie tylko pierwszą literę, ale wszystkie litery w ciągu tekstu, można skorzystać z funkcji `String.capitalize_all()`. Poniższy przykład pokaże, jak to działa:
+Kapitalizowanie stringów w języku Gleam jest bardzo proste. Wystarczy użyć wbudowanej funckji `String.capitalize()`! Poniżej znajdziesz przykładowy kod oraz oczekiwany wynik.
 
 ```Gleam
-let sentence = "czesc wszystkim"
-let sentence_capitalized = String.capitalize_all(sentence)
+import String
 
-// Wynik: "Czesc Wszystkim"
+let str = "witaj świecie"
+let result = String.capitalize(str)
+
+## Witaj świecie
 ```
 
-Warto również zauważyć, że można dużyć nie tylko pojedyncze wyrazy, ale całe zdania bądź nawet akapity tekstu.
+Jest to bardzo przydatna funkcja, szczególnie przy przetwarzaniu danych wejściowych od użytkownika lub generowaniu wyjścia w odpowiednim formacie.
 
-## Zagłębienie w Funkcjonalność Dużyenia Ciągu Tekstu
+## Głębsze zanurzenie
 
-Dużyenie ciągów tekstowych jest tylko jedną z wielu przydatnych funkcji, które oferuje język Gleam. Pozwala on na wygodną i szybką manipulację tekstami w naszych programach. Warto pamiętać, że język Gleam jest statycznie typowany, co oznacza, że zmienne przekazane do funkcji dużyenia muszą być typu `String`.
+Kapitalizowanie stringów w języku Gleam opiera się na funkcji `String.to_title_case()`, która jest częścią biblioteki standardowej języka. Funkcja ta przetwarza podany string i zwraca kopię z wszystkimi wyrazami zaczynającymi się wielką literą, a pozostałe litery małymi. Jest to wygodny i niezawodny sposób na zmianę formatu tekstu.
 
-Innym istotnym aspektem jest to, że funkcje dużyenia są bardzo wydajne. Oznacza to, że mogą być wykorzystywane w programach, w których wydajność jest kluczowa, np. w aplikacjach internetowych czy grach.
+Poza tym, istnieje również funkcja `String.to_upper_case()` i `String.to_lower_case()`, które pozwalają na konwersję całego stringa do wielkich lub małych liter, odpowiednio.
 
-# Zobacz również
+## Zobacz też
 
-- Dokumentacja języka Gleam na stronie https://gleam.run/
-- Przykładowe projekty wykorzystujące funkcję dużyenia ciągów tekstu w języku Gleam: https://github.com/search?l=Gleam&q=string+capitalize&type=Code
+- [Dokumentacja Gleam - String](https://gleam.run/documentation/standard-libraries/#string)
+- [Oficjalna strona języka Gleam](https://gleam.run/)
+- [Przewodnik po języku Gleam](https://gleam.run/book/introduction.html)

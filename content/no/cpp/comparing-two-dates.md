@@ -1,79 +1,53 @@
 ---
 title:    "C++: Sammenligning av to datoer"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å sammenligne to datoer kan være en nyttig ferdighet å ha når du jobber med C++-programmering. Dette kan hjelpe deg med å ordne og sortere datoer, og gjøre det enklere å håndtere ulike tidsrelaterte oppgaver. Det kan også være nyttig å sammenligne datoer når du for eksempel skal analysere data over en bestemt periode. I denne bloggposten vil vi gå gjennom hvordan du kan sammenligne to datoer ved hjelp av C++.
+Sammenligning av to data kan være en viktig del av programmeringsoppgaver, spesielt når man jobber med datoer og tidspunkter. Dette kan være nyttig for å finne ut om en hendelse har skjedd før eller etter en annen hendelse, eller for å sortere og filtrere data basert på datoer. I denne bloggposten skal vi se på hvordan man kan sammenligne to datoer ved hjelp av C++.
 
 ## Hvordan
+Sammenligning av to datoer kan gjøres ved hjelp av noen enkle operasjoner i C++. Først må vi opprette to variabler som inneholder datoene vi ønsker å sammenligne. Dette kan gjøres på flere måter, men et enkelt eksempel kan være å bruke struct-typen `tm` fra `<ctime>` biblioteket. Denne typen lar deg definere datoer ved hjelp av år, måned, dag og klokkeslett.
 
-For å sammenligne to datoer i C++, må du først definere de to datoene som variabler. Dette kan gjøres ved å bruke datatypen `time_t`, som representerer tiden som antall sekunder siden 1. januar 1970. Deretter kan du bruke funksjonen `difftime()` til å sammenligne de to datoene.
-
-```C++
-#include <iostream>
-#include <ctime>
-
-int main()
-{
-    // Definerer to datoer som variabler
-    time_t dato1 = 1500000000; // 12. juli 2017
-    time_t dato2 = 1600000000; // 13. september 2020
-    
-    // Beregner differansen mellom de to datoene
-    double differanse = difftime(dato2, dato1);
-
-    // Skriver ut resultatet
-    std::cout << "Differansen mellom de to datoene er " << differanse << " sekunder." << std::endl;
-
-    return 0;
-}
-```
-
-Eksempeloutput:
-
-```
-Differansen mellom de to datoene er 100000000 sekunder.
-```
-
-I dette tilfellet er differansen mellom datoene gitt i sekunder. Hvis du ønsker å få differansen i for eksempel dager eller måneder, kan du bruke enkle matematiske beregninger for å konvertere tiden.
-
-## Deep Dive
-
-C++ har også flere innebygde funksjoner som kan hjelpe deg med å sammenligne datoer på en mer nøyaktig måte. For eksempel kan du bruke funksjonen `localtime()` til å få en mer lesbar representasjon av dato og tid basert på variabelen `time_t`.
+Vi bruker deretter funksjonen `mktime()` til å konvertere disse verdiene til en `time_t`-verdi, som er et tidsstempel som representerer antall sekunder siden 1. januar 1970. Ved å konvertere datoene til `time_t`-verdier, kan vi enkelt sammenligne dem ved hjelp av enkle matematiske operasjoner.
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main()
-{
-    // Definerer en dato som variabel
-    time_t dato = time(0); // Nåværende dato og tid
+int main() {
+    // Oppretter to variabler som inneholder datoene vi vil sammenligne
+    tm date1 = {2021, 9, 25, 0, 0, 0}; 
+    tm date2 = {2021, 9, 30, 0, 0, 0};
     
-    // Konverterer datoen til en lesbar form
-    struct tm *dagens_dato = localtime(&dato);
-
-    // Skriver ut resultatet
-    std::cout << "Dagens dato er " << dagens_dato->tm_mday << "/" << (dagens_dato->tm_mon + 1) << "/" << (dagens_dato->tm_year + 1900) << std::endl;
-
+    // Konverterer datoene til time_t-verdier
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+    
+    // Sammenligner datoene og printer ut resultatet
+    if (difftime(time1, time2) < 0) {
+      std::cout << "Date 1 er tidligere enn date 2" << std::endl;
+    } else if (difftime(time1, time2) == 0) {
+      std::cout << "Date 1 og date 2 er like" << std::endl;
+    } else {
+      std::cout << "Date 1 er senere enn date 2" << std::endl;
+    }
+    
     return 0;
 }
 ```
 
-Eksempeloutput:
+Dette eksempelet bruker funksjonen `difftime()` til å sammenligne to `time_t`-verdier og returnere differansen mellom dem i sekunder. Om differansen er mindre enn 0, betyr det at `time1` er tidligere enn `time2`, om den er 0, betyr det at datoene er like, og om den er større enn 0, betyr det at `time1` er senere enn `time2`.
 
-```
-Dagens dato er 1/10/2021
-```
+I eksempelet over brukte vi kun datoer, men samme metode kan også brukes for å sammenligne klokkeslett.
 
-I tillegg til dette har C++ også andre funksjoner som kan hjelpe deg med å håndtere og sammenligne datoer og tider, som for eksempel `mktime()` og `strftime()`. Det kan være nyttig å utforske disse funksjonene nærmere for å lære mer om hvordan du kan håndtere datoer i C++.
+## Dykk dypere
+Det finnes flere metoder for å sammenligne datoer i C++, som for eksempel å bruke `<chrono>` biblioteket eller å bruke funksjoner for å konvertere datoer til ulike formater som kan sammenlignes. Det er også viktig å være klar over hvordan datoer blir representert i ulike tidssoner og hvordan dette kan påvirke sammenligningen. Det er alltid lurt å grundig teste sammenligningsmetoden din for å sikre nøyaktighet.
 
 ## Se også
-
-- [C++ time.h referanse](https://www.cplusplus.com/reference/ctime/)
-- [C++ datetime bibliotek](https://github.com/HowardHinnant/date)
-- [En guide til C++ dato og tid biblioteker](https://cpptruths.blogspot.com/2014/11/a-guide-to-c-datetime-libraries.html)
+- [C++ referanse - <ctime> biblioteket](https://www.cplusplus.com/reference/ctime/)
+- [C++ referanse - <chrono> biblioteket](https://www.cplusplus.com/reference/chrono/)
+- [Stack Overflow - How to compare two dates in C++](https://stackoverflow.com/questions/14457370/how-to-compare-two-dates-in-c)

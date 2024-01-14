@@ -1,34 +1,37 @@
 ---
-title:    "PHP: Usuwanie znaków odpowiadających wzorcowi"
+title:    "PHP: Usuwanie znaków pasujących do wzorca."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Czemu
+## Dlaczego
 
-Czasami, jako programiści, musimy przeprowadzać operacje na danych, aby je uporządkować lub dostosować do naszych potrzeb. Jedną z takich operacji jest usuwanie znaków zgodnych z pewnym wzorcem. Może to być potrzebne, gdy chcemy usunąć znaki specjalne z tekstu lub pozbyć się niepożądanych fragmentów.
+Czy kiedykolwiek zdarzyło Ci się, że potrzebowałeś usunąć określone znaki z tekstu? Na przykład, gdy musiałeś usunąć wszystkie numery telefonów z dłuższego ciągu tekstu. Właśnie, dlatego należy wiedzieć, jak usunąć znaki odpowiadające określonemu wzorcowi w języku PHP. W tym artykule pokażemy Ci, dlaczego i jak to zrobić.
 
 ## Jak to zrobić
 
-Aby usunąć znaki zgodne z pewnym wzorcem w PHP, możemy użyć funkcji `preg_replace()`. Przyjmuje ona trzy argumenty - wzorzec, który chcemy znaleźć i usunąć, tekst, na którym chcemy przeprowadzić operację oraz tekst zastępujący usunięte znaki. Na przykład, jeśli chcemy usunąć wszystkie liczby z tekstu, możemy użyć następującego kodu:
-
 ```PHP
-$text = "23 czerwca 2020 roku";
-$text_bez_liczb = preg_replace("/[0-9]/", "", $text);
-echo $text_bez_liczb;
+$text = 'Ten tekst zawiera różne znaki, takie jak #, %, ?, a także numery telefonów: 123-456-789 i 987-654-321. Potrzebujemy usunąć wszystkie numery telefonów z tego tekstu.';
+$pattern = '/\d{3}-\d{3}-\d{3}/'; // wzorzec odpowiadający numerom telefonów
+
+$clean_text = preg_replace($pattern, '', $text); // używając funkcji preg_replace, usuwamy wszystkie znalezione dopasowania wzorca
+echo $clean_text;
 ```
 
-Output: " czerwca rok"
+```PHP
+Oto oczekiwany wynik:
 
-Możemy również użyć tego sposobu do usuwania znaków specjalnych, jak np. spacja lub znaki końca linii. W takim przypadku wystarczy dodać odpowiednie znaki do wzorca.
+Ten tekst zawiera różne znaki, takie jak #, %, ?, a także numery telefonów:  i . Potrzebujemy usunąć wszystkie numery telefonów z tego tekstu.
+```
 
-## Głębszy zanurzenie
+## Deep Dive
 
-Aby lepiej zrozumieć i wykorzystać funkcję `preg_replace()` w PHP, warto zapoznać się z wyrażeniami regularnymi i ich zastosowaniem w programowaniu. Wyrażenia regularne pozwalają nam określić wzorce, których szukamy w tekście, a funkcja `preg_replace()` pozwala nam wykorzystać te wzorce do przeprowadzania operacji na tekście.
+Funkcja `preg_replace` jest użytecznym narzędziem w języku PHP do usuwania znaków odpowiadających danemu wzorcowi. Pozwala nam na szybkie i sprawnie usunięcie niepożądanych znaków z tekstu. W naszym przykładzie użyliśmy prostego wzorca `/ \d{3}-\d{3}-\d{3} /` odpowiadającego numerom telefonów w formacie XXX-XXX-XXX. Jednakże, `preg_replace` może również przyjmować bardziej złożone wzorce, co daje nam większe możliwości w usuwaniu znaków z tekstu.
 
-See Also:
+## Zobacz także
 
-- [Dokumentacja PHP - funkcja preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [Podstawy wyrażeń regularnych w PHP](https://www.w3schools.com/php/php_regex.asp)
-- [Przewodnik po wyrażeniach regularnych w PHP](https://www.regular-expressions.info/php.html)
+- [Dokumentacja PHP: funkcja `preg_replace`](https://www.php.net/manual/en/function.preg-replace.php)
+- [Wyrażenia regularne w języku PHP](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
+- [Tutorial wideo: Usuwanie znaków z tekstu w języku PHP](https://www.youtube.com/watch?v=BC5NcqhUUbc)

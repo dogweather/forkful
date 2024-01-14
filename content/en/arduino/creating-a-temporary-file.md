@@ -1,52 +1,64 @@
 ---
 title:    "Arduino recipe: Creating a temporary file"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-If you're an Arduino enthusiast, you may have come across the need to create a temporary file in your programming. This could be for a variety of reasons such as storing temporary data, organizing files, or creating a backup. Whatever your reason may be, understanding how to create a temporary file in your Arduino code can be a useful skill to have. In this blog post, we'll explore the reasons why you may need to create a temporary file and how to do it in an Arduino sketch.
+Creating temporary files may seem like a trivial task, but it can actually be very useful in certain situations. For example, if you are working on a project that requires writing and reading data from a file, creating a temporary file can serve as a temporary storage space for your data before it is permanently saved in another file. This allows for easier manipulation and management of data without risking the integrity of your original file.
 
 ## How To
 
-To create a temporary file in Arduino, we will be using the `File` class and its `createTempFile()` function. This function takes two arguments: the prefix and the suffix for the file name. The prefix is the starting text of the file name while the suffix is the file extension. Let's take a look at an example code:
+Creating a temporary file in Arduino is a simple process. First, you need to include the avr/io.h library by adding the following line to your code:
 
 ```Arduino
-#include <SD.h> // Include the SD library
-
-File tempFile; // Create a File object
-
-void setup() {
-  // Initialize SD card
-  SD.begin(4);
-  // Create a new temporary file with the prefix "temp" and suffix ".txt"
-  tempFile = SD.open("temp", FILE_WRITE);
-  // Write data to the file
-  tempFile.println("This is a temporary file");
-}
-
-void loop() {
-  // Do something with the temporary file
-}
-
+#include <avr/io.h>
 ```
 
-In the above code, we first include the `SD` library, which is necessary for working with files on an SD card. We then create a `File` object named `tempFile`. In the `setup()` function, we initialize the SD card and use the `open()` function to create a new temporary file with the prefix "temp" and suffix ".txt". We then use the `println()` function to write some data to the file. In the `loop()` function, you can perform any necessary operations on the temporary file.
+Next, you will need to declare a temporary file variable using the "FILE" data type and specify the directory where you want the temporary file to be created. For this example, we will create a temporary file on the SD card, so we will use the "SD.open()" function to specify the directory:
 
-When you run the above code, it will create a temporary file called "temp.txt" on your SD card which contains the line "This is a temporary file". You can modify the prefix and suffix arguments to suit your needs and create different types of temporary files.
+```Arduino
+FILE tempFile = SD.open("temp.txt", FILE_WRITE);
+```
+
+Now, you can write data to your temporary file using the "fprintf()" function. In the following example, we will write the string "Hello World!" to our temporary file:
+
+```Arduino
+fprintf(tempFile, "Hello World!");
+```
+
+Once you are finished writing to the temporary file, you can close it using the "fclose()" function:
+
+```Arduino
+fclose(tempFile);
+```
+
+To read data from the temporary file, you can use the "fscanf()" function. For example, if you wanted to read the data written in the previous step, you could use the following code:
+
+```Arduino
+char data[13]; // create an array to store the data
+fscanf(tempFile, "%s", data); // read data from the file and store it in the array
+```
+
+The code above will store "Hello World!" in the "data" array. You can now use and manipulate this data as needed.
 
 ## Deep Dive
 
-The `createTempFile()` function in Arduino uses the standard C function `tempnam()` to generate a unique filename. This function creates a file in the temporary directory (usually `/tmp`) with a unique name and returns the path to that file. In Arduino, this file is then created on the SD card using the specified prefix and suffix.
+Creating a temporary file involves several steps, including specifying the file directory, opening the file, writing data, and closing the file. However, it is important to note that the temporary file will only be created in the specified directory when the file is opened using the "SD.open()" function. If the directory does not exist, the file will not be created.
 
-It's important to note that these temporary files are not automatically deleted after use. It is the responsibility of the programmer to delete these files when they are no longer needed. This can be done using the `File` class's `remove()` function. Additionally, if a temporary file is not closed properly, it may corrupt data on the SD card.
+Also, it is good practice to delete the temporary file once it is no longer needed. This can be done using the "SD.remove()" function:
+
+```Arduino
+SD.remove("temp.txt"); // deletes the temporary file from the specified directory
+```
+
+Furthermore, if you want to create a temporary file on your computer instead of on an SD card, you can use the same steps but replace "SD." with "FILE." in the code.
 
 ## See Also
 
-If you're interested in learning more about working with files and the SD card on Arduino, check out these useful resources:
-
-- [Arduino - File](https://www.arduino.cc/reference/en/libraries/sd/file/)
-- [Writing Data to Files on an SD Card](https://learn.adafruit.com/adafruit-guide-excellent-sd/how-to-create-file-system)
-- [SD Library Example Sketches](https://www.arduino.cc/en/Reference/SD)
+- [SD card library documentation - Arduino](https://www.arduino.cc/en/Reference/SD)
+- [File handling in C - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [Temporary files in programming - GeeksforGeeks](https://www.geeksforgeeks.org/temporary-files-in-programming/)

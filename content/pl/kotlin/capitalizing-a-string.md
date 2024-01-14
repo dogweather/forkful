@@ -1,41 +1,58 @@
 ---
-title:    "Kotlin: Zapisywanie tekstu wielką literą"
+title:    "Kotlin: Konwertowanie ciągu na wielkie litery"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu konieczne jest zmienianie określonych wartości w stringach, takich jak nazwy użytkowników czy tytuły wpisów. Jedną z takich operacji jest zamiana pierwszych liter w każdym słowie na wielkie litery. W tym blogu dowiesz się, jak wykonać tę operację w kodzie Kotlin.
+Jednym z często wykorzystywanych zadań w programowaniu jest konieczność zmiany wielkości liter w ciągu znaków. Dotyczy to szczególnie języków, gdzie obsługa polskich znaków jest istotna dla poprawnego wyświetlania tekstu. Dlatego warto poznać możliwości języka Kotlin w kwestii zmiany wielkości liter w ciągach znaków.
 
 ## Jak to zrobić
 
-Wykorzystując wbudowaną funkcję <code>capitalize()</code> w obiekcie String, bardzo łatwo można zmienić pierwszą literę w stringu na wielką. Wystarczy tylko wprowadzić swoją zmienną typu String używając symbolu `.` oraz funkcji <code>capitalize()</code>. Poniżej znajduje się przykładowy kod w języku Kotlin oraz efekt działania:
+W języku Kotlin istnieje kilka sposobów na konwertowanie ciągu znaków do dużych lub małych liter. Można wykorzystać metody dostępne w klasie String, a także skorzystać z funkcji zdefiniowanych w rozszerzeniach (ang. extensions). Poniżej przedstawione są przykłady kodów wraz z oczekiwanym wyjściem.
 
 ```Kotlin
-val name = "jan kowalski"
-println(name.capitalize())
+// wykorzystanie metody toUpperCase()
+
+val text = "kotlin jest Fajny!"
+println(text.toUpperCase())
+
+// wyjście: KOTLIN JEST FAJNY!
 ```
-Output: Jan kowalski
-
-Możesz również wykorzystać pętlę <code>for</code> i funkcję <code>replaceFirstChar</code> w celu zmiany pierwszej litery w każdym słowie na wielką, jak w poniższym przykładzie:
 
 ```Kotlin
-val title = "mój pierwszy post"
-var newTitle = ""
-for (word in title.split(" ")) {
-    newTitle += word.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-    newTitle += " "
+// wykorzystanie metody toLowerCase()
+
+val text = "TaK właśnie widczasz!"
+println(text.toLowerCase())
+
+// wyjście: tak właśnie widczasz!
+```
+
+```Kotlin
+// wykorzystanie funkcji extenstion toTitleCase()
+
+fun String.toTitleCase(): String {
+    return this.split(" ").joinToString(" ") { it.toLowerCase().capitalize() }
 }
-println(newTitle.trim())
+
+val text = "kotlin jest naprawdę super!"
+println(text.toTitleCase())
+
+// wyjście: Kotlin Jest Naprawdę Super!
 ```
-Output: Mój Pierwszy Post
 
-## Deep Dive
+## Dogłębna analiza
 
-Metoda <code>capitalize()</code> jest przydatnym narzędziem w zamianie pierwszej litery na wielką w danym stringu. Oprócz tego, można również wykorzystać funkcje takie jak <code>lowercase()</code> i <code>uppercase()</code> do zmiany wszystkich liter w stringu na małe lub wielkie. Funkcje te są wyjątkowo przydatne podczas walidacji danych wejściowych czy porównywania wartości.
+Powyższe przykłady pokazują podstawowe sposoby na zmianę wielkości liter w ciągu znaków. Istnieją jednak dodatkowe możliwości, na przykład wykorzystanie metody replace() w połączeniu z wyrażeniami regularnymi. Warto także pamiętać o uwzględnieniu polskich znaków i wykorzystywaniu odpowiednich kodowań.
 
-## Zobacz również
-- [Dokumentacja Kotlin - String.capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Funkcje String w języku Kotlin](https://www.marcinkossowski.pl/funkcje-string-w-jezyku-kotlin/)
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w języku Kotlin, warto sprawdzić poniższe linki:
+
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/strings.html
+- Blog o programowaniu w języku Kotlin: https://blog.jetbrains.com/kotlin/
+- Tutorial o manipulacji ciągami znaków w Kotlin: https://www.baeldung.com/kotlin-string-manipulation

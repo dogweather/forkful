@@ -1,60 +1,45 @@
 ---
-title:    "Python: 「テストの作成」"
+title:    "Python: テストの書き方"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜテストを書くか
 
-テストを書くことによって、コードの信頼性と品質を向上させることができます。テストはバグを見つけるだけでなく、コードの変更によって意図しない副作用が起きていないかをチェックすることもできます。また、テストを書くことで複雑なコードを理解しやすくなることもあります。
+プログラミングにおけるテストは非常に重要なものです。テストを書くことで、コードの安定性や品質を担保することができます。また、テストを通してプログラミングの練習もできるので、プログラミングスキルを向上させることにもつながります。
 
-## テストを書く方法
+## テストの書き方
 
-テストを書く際の基本的な手順は以下の通りです。
-
-- `unittest`をインポートする
-- テスト用のクラスを作成する（`class TestClass(unittest.TestCase):`）
-- `setUp()`メソッド内でテスト用のデータを準備する
-- テスト用のメソッドを作成する（`test_something()`）
-- `assert`文を使って実際の結果と期待する結果が一致するかを確認する
-- `tearDown()`メソッド内でテスト用のデータをクリーンアップする
-
-下記の例では、`Calculator`クラスの`add()`メソッドをテストしています。実際にコードを実行して、アサーションエラーが起きないことを確認してください。
+テストを書くためには、Pythonの標準ライブラリである`unittest`モジュールを使用します。それぞれのテストは、`unittest.TestCase`クラスを継承して定義します。以下は、簡単な加算関数のテスト例です。
 
 ```Python
 import unittest
 
-class Calculator:
-    def add(self, a, b):
-        return a + b
+def add(x, y):
+    return x + y
 
-class TestCalculator(unittest.TestCase):
-    def setUp(self):
-        self.calculator = Calculator()
+class AddFunctionTest(unittest.TestCase):
+    def test_add_positive_numbers(self):
+        result = add(2, 3)
+        self.assertEqual(result, 5)
 
-    def test_add(self):
-        result = self.calculator.add(5, 10)
-        self.assertEqual(result, 15)
+    def test_add_negative_numbers(self):
+        result = add(-2, -3)
+        self.assertEqual(result, -5)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
 ```
+`unittest.TestCase`クラスのメソッドを使用することで、テストを実行し、コードの正しさを確認することができます。上記の例では、`assertEqual()`メソッドを使用して、関数の返り値が期待する値と一致するかどうかを検証しています。
 
-## テストを深堀りする
+## テストの詳細
 
-テストについてはさまざまなトピックがありますが、ここでは3つの重要なポイントを紹介します。
+テストを書く際に注意するべき点として、テストケースを網羅的に作成することが挙げられます。すべてのケースをカバーすることで、コードのバグを見つけることができます。また、テストを自動化することで、テストの実行を簡単に行うことができます。さらに、テストコードは可読性の高いものにすることで、他の人がコードを理解しやすくなります。
 
-- テストカバレッジを意識することで、コードのあらゆる部分をカバーするテストを書くことができます。
-- リファクタリングを行った際に、テストが通ることを保証することで、コードの改善を安全に行うことができます。
-- テストダブル（モックやスタブなど）を使うことで、外部リソースに依存する場合でもテストを実行することができます。
+## 関連リンク
 
-以上がテストを書く上で重要なポイントですが、より詳細な情報を得るためには、さらに学習する必要があります。
-
-## さらに見る
-
-テストについてはまだまだ語り尽くせるほどの情報があります。以下のリンクを参考に、さらに深く学習してみてください。
-
-- [unittestモジュール公式ドキュメント (英語)](https://docs.python.org/ja/3/library/unittest.html)
-- [Pythonにおけるテストカバレッジの重要性 (日本語)](https://codezine.jp/article/detail/10773)
-- [リファクタリング中のテスト駆動開発 (英語)](https://medium.com/@webprolific/getting-started-with-tdd-in-python-2579ef4450e3)
+- [unittestモジュールのドキュメント](https://docs.python.org/ja/3/library/unittest.html)
+- [モックを使用した単体テストのパターン](https://docs.python.org/ja/3/library/unittest.mock.html)
+- [pytestという素晴らしいテストフレームワーク](https://docs.pytest.org/en/stable/)

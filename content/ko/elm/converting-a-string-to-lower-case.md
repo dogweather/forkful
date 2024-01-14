@@ -1,41 +1,42 @@
 ---
 title:    "Elm: 문자열을 소문자로 변환하기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
-문자열을 소문자로 변환하는 것에 참여하는 이유는 간단합니다. 데이터의 일관성을 유지하기 위해서입니다. 일관된 형식으로 문자열을 다루는 것은 더 나은 코드를 작성하는데 도움이 될 수 있습니다.
 
-## 어떻게
-```elm
-toLower : String -> String
-toLower "HELLO" --> "hello"
+변수를 전부 소문자로 변환하는 것이 왜 유용한지를 알고 싶으신가요? 그럼 계속 읽어보세요!
+
+## 어떻게 해야 할까요
+
+문자열을 소문자로 변환하는 것은 간단합니다. Elm의 `String` 모듈에 이미 내장된 `toLower` 함수를 사용하면 됩니다. 아래는 이 함수를 사용한 예시 코드입니다.
+
+```Elm
+import String
+
+lowercaseString = String.toLower "ELM PROGRAMMING"
 ```
 
-우선, 우리는 Elm의 `toLower` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 이 함수는 문자열을 새로운 소문자로 변환된 문자열로 바꾸어주는 것입니다. 이렇게 하면 데이터의 일관성이 유지되며 작업 중 발생할 수 있는 오류를 방지할 수 있습니다.
+위 코드의 실행 결과는 다음과 같습니다.
 
-```elm
-String.toLower "WORLD" --> "world"
+```Elm
+"elm programming"
 ```
 
-또 다른 방법은 `String.toLower` 함수를 사용하는 것입니다. 이 함수는 문자열을 소문자로 변환하여 새로운 문자열로 반환합니다. 위의 예제와 같이 사용할 수 있습니다. 어떤 방법을 사용하더라도 원하는 결과를 얻을 수 있습니다.
+## 깊이 들어가기
 
-## 딥 다이브
-`toLower` 함수와 `String.toLower` 함수는 문자열을 소문자로 변환하는 데 옵션을 제공합니다. 예를 들어, 아티클 제목에 사용되는 단어의 첫 글자를 대문자로 변환하고 싶은 경우, `toLower` 함수를 사용하여 전체 문자열을 소문자로 변환한 다음 `String.capitalize` 함수를 사용하여 첫 글자를 대문자로 변환할 수 있습니다.
+문자열을 소문자로 변환하는 이유는 여러 가지가 있습니다. 첫 번째로는 일관성을 유지하기 위해서입니다. 대부분의 프로그래밍 언어는 대/소문자를 구분하므로, 변수명이나 함수명을 정할 때 일관성을 유지하는 것이 중요합니다. 또한 문자열 내용을 비교할 때도 대소문자를 구분하기 때문에, 문자열을 소문자로 변환하면 비교가 더 쉬워집니다.
 
-```elm
-String.capitalize (toLower "HELLO WORLD") --> "Hello world"
-```
+그렇다면 문자열을 대문자로 변환하는 방법은 없을까요? Elm의 `String` 모듈에는 `toUpper` 함수도 있는데, 이는 `toLower` 함수와 사용법이 같습니다.
 
-또한, Elm의 `String` 모듈에는 문자열의 특정 부분을 소문자로 변환하는 함수도 있습니다. 특정 시작 인덱스와 끝 인덱스를 지정하여 부분 문자열을 소문자로 변환할 수 있습니다.
+# 더 알아보기
 
-```elm
-String.toLowerRange 5 8 "Hello WORLD" --> "Hello world"
-```
+문자열을 소문자로 변환하는 것 외에도 여러 가지 유용한 기능이 있는 Elm의 `String` 모듈에 대해 더 알고 싶다면 아래 링크를 참고해보세요.
 
-문자열을 소문자로 변환하는 방법은 다양합니다. 우리는 문자열을 다룰 때 이러한 함수들을 사용하여 일관성 있는 데이터를 유지할 수 있습니다.
+## 함께 보기
 
-# 참고
-[Elm 공식 문서](https://guide.elm-lang.org/strings/)에서 문자열을 다루는 다양한 함수를 알아볼 수 있습니다. 또한 Elm에서 사용 가능한 [기타 문자열 관련 라이브러리](https://package.elm-lang.org/packages/elm/core/latest/String)도 살펴볼 수 있습니다.
+- [Elm String 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm 공식 홈페이지](https://elm-lang.org/)

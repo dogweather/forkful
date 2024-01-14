@@ -1,37 +1,44 @@
 ---
 title:    "Fish Shell recipe: Deleting characters matching a pattern"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself with a text document containing unnecessary or unwanted characters? Perhaps a file filled with unneeded white spaces, or a string with random symbols scattered throughout. These characters can cause errors when running programs or create confusion when trying to read through the document. But fear not, there is a simple solution – deleting characters matching a pattern. 
+Deleting characters matching a pattern is a common task in programming. This simple yet powerful action can help you clean up data, manipulate text, or remove unwanted characters from a string. With the help of Fish Shell, this process can be completed efficiently and effectively.
 
 ## How To
 
-To delete characters matching a pattern in Fish Shell, we will be using the `string` command. This command allows us to manipulate strings and is perfect for removing unwanted characters. Let's take a look at an example code below:
+To delete characters matching a pattern in Fish Shell, we will use the `sed` command. This command allows us to perform text transformations based on a specified pattern. Here is an example of how to use `sed` to delete all occurrences of the letter "a" in a string:
 
 ```
-set my_string "This is a sample string with random symbols like # and %"
-string replace -r "#|%|" $my_string ""
+Fish Shell> echo "apple, banana, carrot" | sed 's/a//g'
+pple, bn, crt
 ```
 
-In the first line, we set the variable `my_string` to our sample string. Then, using the `string replace` command, we specify the `-r` flag to indicate that we want to use a pattern. The pattern we provide is "#|%|" which tells the command to look for any characters that match either the pound sign, percent sign, or pipe symbol. Finally, we provide an empty string as the replacement text, deleting the matched characters from our original string.
+In this command, we use the `echo` command to output a string, then pipe it (`|`) to the `sed` command. Inside the `sed` command, we specify the pattern we want to delete (`a`) and the replacement (`/g`). This tells `sed` to find all occurrences of "a" and replace them with nothing, effectively deleting them.
 
-The output of this code would be: "This is a sample string with random symbols like  and"
+We can also use regular expressions to specify a more complex pattern to delete. For example, we can delete all vowels in a string using the pattern `[aeiou]`:
+
+```
+Fish Shell> echo "hello world" | sed 's/[aeiou]//g'
+hll wrld
+```
+
+This command will delete all vowels from the string "hello world" and output "hll wrld".
 
 ## Deep Dive
 
-The `string replace` command follows a basic syntax of `string replace [options] [pattern] [replacement] [string]`. The `-r` flag we used earlier stands for "regex" and allows us to use regular expressions as our pattern. Regular expressions, or regex, is a powerful tool for matching patterns in text documents. It uses a specific syntax to match characters, numbers, or any other types of characters.
+In the previous examples, we used the global (`g`) flag to delete all occurrences of the pattern in a string. However, we can also specify a specific occurrence or range using the `sed` command's address range feature.
 
-For example, the pattern `[0-9]` would match any numbers in the string, and the pattern `[a-z]` would match any lowercase alphabetic letters. By using these patterns, we can easily target specific types of characters to delete.
+For example, `sed '1,3s/[aeiou]//g'` will only delete vowels in the first three lines of a file, while `sed '2,4s/a/1/g'` will replace all "a" in lines 2, 3, and 4 with "1". This allows for more precise control over which characters are deleted and where.
 
-It is also important to note that the `string replace` command does not modify the original string, but instead returns a new string. Therefore, if you want to save the changes to the original string, you will need to assign the output of the command to a new or existing variable.
+In addition to the `sed` command, Fish Shell also has a built-in `string` command that allows for more complex string manipulation. We can use the `string` command in combination with `sed` to perform even more powerful operations on our strings, such as deleting a specific word or character at a specific position.
 
 ## See Also
 
-- [Fish Shell documentation on string command](https://fishshell.com/docs/current/cmds/string.html)
-- [Regular Expressions tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Mastering Regular Expressions book](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- Fish Shell documentation on `sed`: https://fishshell.com/docs/current/cmds/sed.html
+- Fish Shell documentation on `string`: https://fishshell.com/docs/current/cmds/string.html

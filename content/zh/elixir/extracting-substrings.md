@@ -1,39 +1,58 @@
 ---
-title:    "Elixir: 提取字串"
+title:    "Elixir: 提取子字符串"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么： 我们在编程过程中经常会遇到需要从字符串中提取子字符串的情况。这可以是为了搜索特定的文本模式，或者只是为了从一大段文字中截取想要的部分。不管是什么原因，我们都需要学习如何提取子字符串来帮助我们更有效地处理文本数据。
+## 为什么
 
-如何提取子字符串： 使用Elixir的 String.slice/2 函数，我们可以很简单地提取子字符串。假设我们有一个包含一段话的字符串，我们想要提取其中的第一个单词，我们可以这样写：
+很多时候，在编程中，我们需要从一个字符串中提取一部分内容。这种情况经常发生，比如我们需要从用户输入的字符串中提取一个特定的单词，或者我们想要从一个长文本中提取出一句话。在Elixir中，我们可以使用一些简单的方法来提取子字符串。
 
-```Elixir
-str = "我喜欢学习Elixir编程语言"
-String.slice(str, 0, 1) # 输出："我"
-```
+## 如何实现
 
-我们可以使用第二个参数来指定我们想要提取的子字符串的开始位置，同时使用第三个参数来指定子字符串的长度。如果我们想要提取一段话的最后四个字，我们可以这样写：
+首先，我们需要一个原始字符串来提取子字符串。假设我们有一个包含名字和姓氏的字符串，比如"张三李四". 我们可以使用Elixir的String模块中的`slice`方法来提取姓氏：
 
 ```Elixir
-String.slice(str, -4, 4) # 输出："编程语言"
+str = "张三李四"
+String.slice(str, 2..3)
 ```
 
-深入讨论：要理解更多关于提取子字符串的知识，我们需要理解字符串的内部结构。在Elixir中，字符串本质上是一个字符列表（list of characters）。这意味着我们可以使用Enum模块中的函数来操作字符串。例如，我们可以使用Enum.map/2函数来对字符串中的每个字符进行替换操作，从而快速地进行批量处理。了解字符串的内部结构可以帮助我们更灵活地处理文本数据。
+这将返回一个新字符串 "李四" 。我们也可以使用`match`方法来从字符串中提取出特定的部分，比如提取出 "张三"：
 
-另外，要注意提取子字符串的时候，我们需要考虑到字符编码的问题。在某些情况下，一个字符可能由多个字节组成，因此我们需要使用String.codepoints/2函数来确保我们提取的是正确的字符。
+```Elixir
+"张三李四" |> String.match(~r/张三/) |> hd
+```
 
-总结：在学习如何提取子字符串的过程中，我们不仅学会了如何使用Elixir内置函数，还加深了对字符串的理解，从而帮助我们更有效地处理文本数据。
+上面的代码使用了正则表达式来匹配字符串中的 "张三"，然后通过管道操作符将匹配到的结果传递给`hd`方法来获取第一个匹配项 "张三"。
 
-参考链接：
+另一种常用的方法是使用字符串的索引来提取子字符串。比如我们可以使用`String.codepoints`来将字符串拆分为单个字符的列表，然后通过索引来提取出需要的部分。比如提取出第一个字 "张"：
 
-- Elixir官方文档：https://hexdocs.pm/elixir/String.html#slice/2
-- Elixir Enum模块官方文档：https://hexdocs.pm/elixir/Enum.html
-- 字符串编码及其影响：https://www.w3.org/International/questions/qa-strings-encoding.zh-cn.html
+```Elixir
+"张三李四" |> String.codepoints |> Enum.at(0)
+```
+
+这将返回 "张"。
+
+## 深入了解
+
+在Elixir中，字符串是不可变的，因此所有提取子字符串的方法都会返回一个新的字符串。同时，Elixir中的字符串也是二进制数据，因此提取出的子字符串也仍然保留着二进制的属性，可以通过`binary_id`方法来验证。
+
+另外，除了上面提到的方法，我们还可以使用`String.split`来将字符串根据某个分隔符拆分为列表，然后再提取出需要的部分。比如我们可以使用空格作为分隔符，提取出名字 "张三"：
+
+```Elixir
+"张三 李四" |> String.split(" ") |> Enum.at(0)
+```
 
 ## 参考链接
 
-- Elixir官方文档：https://hexdocs.pm/elixir/String.html#slice/2
-- Elixir Enum模块官方文档：https://hexdocs.pm/elixir/Enum.html
-- 字符串编码及其影响：https://www.w3.org/International/questions/qa-strings-encoding.zh-cn.html
+- [Elixir官方文档-String模块](https://hexdocs.pm/elixir/String.html)
+- [正则表达式教程](https://www.runoob.com/regexp/regexp-syntax.html)
+- [Elixir字符串方法总结](https://www.jianshu.com/p/d59efb21a1b5)
+
+---
+## 参见
+
+- [正则表达式入门指南](https://www.jianshu.com/p/35c223795edb)
+- [Elixir字符串操作指南](https://elixirschool.com/zh-cn/lessons/basics/binary-and-strings/)

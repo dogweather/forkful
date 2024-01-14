@@ -1,57 +1,74 @@
 ---
-title:    "Swift: テストの書き方"
+title:    "Swift: テストを書く"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-テストを書くことによって、コードの品質を向上させ、将来のバグを予防することができます。
+## なぜテストを書くのか
 
-## How To
-テストを書くための基本的な手順を以下に示します。
+テストを書く理由はたくさんありますが、最も重要な理由はプログラムの信頼性を高めることです。テストをすることで、プログラムのバグやエラーを事前に発見し、品質の高いコードを作成することができます。
 
-1. テストしたい関数やプロパティを定義する。
+## テストの書き方
 
+このブログでは、Swift言語でのテストの書き方について説明します。まずはテストコードを書く前に、以下のコマンドを実行し、テスト用のファイルを作成しましょう。
+
+```Swift
+touch ExampleTests.swift
 ```
-Swift func addNumbers(_ a: Int, _ b: Int) -> Int {
+
+次に、テストする対象のコードを用意し、その下にテストコードを書きます。例えば、以下のようなコードがあったとします。
+
+```Swift
+func add(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
 ```
 
-2. テストを行うためのテストケースを作成する。
+このコードをテストするために、ExampleTests.swiftにテストコードを書きます。
 
-```
-Swift class TestingNumbers: XCTestCase {
+```Swift
+import XCTest
+@testable import Example
 
-    func testFunctions() {
-        let sum = addNumbers(3, 4)
-        XCTAssertEqual(sum, 7)
+class ExampleTests: XCTestCase {
+    func testAdd() {
+        // テストしたいコードを呼び出し、その結果を変数に格納する
+        let result = add(3, 5)
+        // 期待する結果と実際の結果が一致するかどうかを判定する
+        XCTAssertEqual(result, 8)
     }
-}
+ }
 ```
 
-3. テストを実行するためのボタンを押すか、コマンドを実行する。
+これでテストコードの書き方は完了です。以下のコマンドを実行すると、テストが実行されます。
 
-```
-Swift Command: xcodebuild test
-```
-
-4. テストの結果が表示されるので、テストが成功したかどうかを確認する。
-
-```
-Swift Testing started...
-Test "TestingNumbers.testFunctions" passed.
+```Swift
+xcodebuild test -scheme Example -destination 'platform=iOS Simulator,OS=latest,name=iPhone X'
 ```
 
-## Deep Dive
-テストを書く上で、より詳細な情報を以下にまとめました。
+テストが成功した場合は、以下のような結果が表示されます。
 
-- テストのコードはプロダクトコードと同様、メンテナンスやリファクタリングが必要です。
-- テストを書くことで、コードの不具合を早期に発見し、修正することができます。
-- テストを書くことで、コードの仕様を明確に定義することができ、他の開発者がコードを理解しやすくなります。
+```
+Test Suite 'ExampleTests' passed at <日付と時刻>. <実行時間> seconds
+```
+
+## テストの詳細
+
+テストの書き方がわかったところで、さらに詳しくテストについて学んでみましょう。
+
+### テストの種類
+
+テストには大きく分けて２つの種類があります。ひとつは単体テストで、個々のコードが正しく動作するかを確かめるものです。もうひとつは結合テストで、複数のコードやコンポーネントが協調して動作するかを確かめるものです。
+
+### テストカバレッジ
+
+テストカバレッジはテストの範囲を示す指標です。プログラムの全行数に対してテストした行数の割合を表します。テストカバレッジは高いほど、プログラムの全体のテストに対する信頼性が高くなります。
 
 ## See Also
-- [The Basics of XCTest in Swift](https://medium.com/@rolandleth/the-basics-of-xctest-in-swift-17c87c92c96d)
-- [Unit Testing in Swift: A Quick Start Guide](https://learnappmaking.com/unit-testing-swift-how-to/)
-- [Writing Testable Code in Swift](https://agostini.tech/2018/04/15/writing-testable-code-in-swift/)
+
+- [Swiftの公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)
+- [Xcodeのテストガイド](https://help.apple.com/xcode/mac/current/#/devc3a1cb1cb)
+- [単体テストと結合テストの違い](https://www.ibm.com/docs/ja/i/7.4?topic=test-func-apptestunit_vs_integration)
+- [テストカバレッジの計算方法](https://www.tricentis.com/resources/what-is-test-coverage/)

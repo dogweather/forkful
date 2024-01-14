@@ -1,62 +1,47 @@
 ---
-title:    "C: Die Länge eines Strings finden"
+title:    "C: Die Länge eines Strings finden."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Der Grund, warum man die Länge einer Zeichenkette (String) in C finden möchte, ist oft, um die Größe des Speicherbereichs zu bestimmen, den die Zeichenkette benötigt. Dies ist besonders wichtig bei der Arbeit mit dynamischen Zeichenketten, die während der Programmausführung wachsen können.
 
-## Wie geht's
-Es gibt verschiedene Möglichkeiten, die Länge einer Zeichenkette in C zu finden. Die einfachste Methode besteht darin, die Standardbibliotheksfunktion `strlen()` zu verwenden. Diese Funktion gibt die Anzahl der Zeichen in der Zeichenkette zurück, ohne das Null-Terminierungszeichen mitzuzählen.
+Die Länge einer Zeichenkette zu finden ist eine grundlegende Fähigkeit in der Programmierung. Es ermöglicht uns, Texte zu verarbeiten und zu manipulieren, was besonders in der Entwicklung von Programmen und Anwendungen sehr nützlich ist.
+
+## Wie man es macht
+
+Die Länge einer Zeichenkette in C zu finden ist relativ einfach. Dazu gibt es eine Funktion namens `strlen` (string length), die Teil der Standard-C-Bibliothek ist. Hier ist ein Beispielcode, der die Funktion `strlen` verwendet:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-   char str[50] ="Hallo Welt";
-   int length = strlen(str);
+int main() {
+    char str[] = "Hallo Welt";
+    int length = strlen(str);
 
-   printf("Länge des Strings: %d", length);
-   
-   return 0;
+    printf("Die Länge der Zeichenkette ist %d", length);
+    return 0;
 }
 ```
-Output:
-```C
-Länge des Strings: 10
+
+Das oben genannte Programm definiert eine Zeichenkette mit dem Wert "Hallo Welt" und verwendet dann die `strlen` Funktion, um ihre Länge zu finden. Die Funktion gibt eine ganze Zahl zurück, die die Anzahl der Zeichen in der Zeichenkette repräsentiert. In diesem Fall ist die Länge der Zeichenkette 10.
+
+Hier ist die Ausgabe des obigen Codes:
+
+```
+Die Länge der Zeichenkette ist 10
 ```
 
-Eine andere Möglichkeit ist, eine Schleife zu verwenden, um jeden Buchstaben in der Zeichenkette zu zählen, bis das Null-Terminierungszeichen erreicht ist.
+## Tiefergehende Analyse
 
-```C
-#include <stdio.h>
+Technisch gesehen arbeitet die `strlen` Funktion, indem sie jedes einzelne Zeichen der Zeichenkette durchläuft und zählt, wie viele es insgesamt gibt. Dies macht es zu einer effizienten Methode, um die Länge einer Zeichenkette zu finden, da sie unabhängig von der tatsächlichen Länge der Zeichenkette immer dieselbe Anzahl von Operationen durchführt.
 
-int main(){
-   char str[50] ="Hallo Welt";
-   int length = 0;
-
-   while (str[length] != '\0')
-       length++;
-
-   printf("Länge des Strings: %d", length);
-   
-   return 0;
-}
-```
-Output:
-```C
-Länge des Strings: 10
-```
-
-## Tiefergehende Informationen
-Es ist wichtig zu beachten, dass es bei der Länge einer Zeichenkette um die Anzahl der Zeichen geht, nicht um die Anzahl der Bytes, die sie belegt. Eine Zeichenkette kann unterschiedliche Anzahlen von Bytes belegen, abhängig von der verwendeten Zeichencodierung. Zum Beispiel benötigt ein einzelnes Zeichen in UTF-8 möglicherweise mehr als ein Byte, während es in ASCII nur ein Byte benötigt.
-
-Wenn Sie eine genauere Kontrolle über die Speichergröße Ihrer Zeichenkette benötigen, müssen Sie möglicherweise die Anzahl der Bytes der Zeichenkette über die Funktion `sizeof()` bestimmen. Diese Funktion gibt die Gesamtgröße eines Datentyps (einschließlich Null-Terminierungszeichen) zurück.
+Es gibt auch andere Möglichkeiten, um die Länge einer Zeichenkette zu finden, wie zum Beispiel mit einer Schleife und einer Zählervariable. Diese Methode ist jedoch nicht so effizient wie die Verwendung der `strlen` Funktion.
 
 ## Siehe auch
-- [C-Strings](https://www.programiz.com/c-programming/c-strings)
-- [The strlen() function in C](https://www.geeksforgeeks.org/strlen-function-in-c/)
-- [The sizeof() operator in C](https://www.tutorialspoint.com/cprogramming/c_sizeof_operator.htm)
+
+- [Die offizielle Dokumentation zur `strlen` Funktion](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
+- [Ein Tutorial über das Verarbeiten von Zeichenketten in C](https://www.programiz.com/c-programming/c-strings)

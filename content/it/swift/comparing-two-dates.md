@@ -1,45 +1,65 @@
 ---
 title:    "Swift: Confrontare due date"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Comparare due date è un'attività comune nella programmazione, soprattutto quando si lavora con dati temporali come ad esempio date di scadenza o di creazione. Imparare a confrontare due date può aiutare a organizzare e analizzare meglio i dati, rendendo il codice più efficiente e accurato.
 
-La comparazione di due date è fondamentale per molte applicazioni, come ad esempio per monitorare eventi o per gestire le prenotazioni. Imparare a confrontare due date in Swift può essere utile per creare un software più robusto e performante.
-
-## Come fare
-
-Per comparare due date in Swift, dobbiamo utilizzare il metodo `compare` dell'oggetto `Date`. Questo metodo restituisce un `ComparisonResult` che può assumere tre valori: `.orderedDescending` se la prima data è successiva alla seconda, `.orderedAscending` se la seconda data è successiva alla prima, e `.orderedSame` se le due date sono uguali.
-Ecco un esempio di codice per confrontare due date:
+## Come Fare
+Per confrontare due date in Swift, è necessario utilizzare l'operatore "==" che controlla se due date sono uguali. Per esempio, se si vuole confrontare due date di tipo Date:
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
+let firstDate = Date()
+let secondDate = Date()
 
-let primaData = dateFormatter.date(from: "01/01/2020")!
-let secondaData = dateFormatter.date(from: "15/01/2020")!
-
-let risultato = primaData.compare(secondaData)
-
-switch risultato {
-    case .orderedDescending:
-        print("La prima data è successiva alla seconda")
-    case .orderedAscending:
-        print("La seconda data è successiva alla prima")
-    case .orderedSame:
-        print("Le due date sono uguali")
+if firstDate == secondDate {
+    print("Le date sono uguali!")
+} else {
+    print("Le date sono diverse.")
 }
 ```
+Output: Le date sono uguali!
 
-L'output di questo codice sarà "La seconda data è successiva alla prima".
+Possiamo anche utilizzare l'operatore ">" o "<" per confrontare due date e determinare quale è successiva o precedente. Per esempio:
+
+```Swift
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 3600)
+
+if date1 > date2 {
+    print("La prima data è successiva alla seconda.")
+} else if date1 < date2 {
+    print("La prima data è precedente alla seconda.")
+} else {
+    print("Le date sono uguali.")
+}
+```
+Output: La prima data è precedente alla seconda.
 
 ## Approfondimento
+Se si vuole confrontare due date più in dettaglio, è possibile utilizzare il metodo "compare()" che restituisce una enum con tre possibili valori: OrderedAscending, OrderedSame, OrderedDescending. Grazie a questa enum, si può facilmente determinare quale data è successiva o precedente all'altra. Per esempio:
 
-Per una comparazione più precisa delle date, è possibile specificare un `Calendar` nel metodo `compare`. Inoltre, è importante tenere presente che le date possono essere influenzate da fusi orari diversi, quindi è necessario considerare questa possibilità nel nostro codice. Per ulteriori informazioni su come gestire i fusi orari e le date in Swift, consulta la documentazione ufficiale.
+```Swift
+let date3 = Date()
+let date4 = Date(timeIntervalSinceNow: 7200)
 
-## Vedi anche
-- [Documentation - Comparing Dates in Swift](https://developer.apple.com/documentation/foundation/date/1407748-compare)
-- [Ray Wenderlich - Working with Date and Time in Swift](https://www.raywenderlich.com/3058154-working-with-date-and-time-in-swift)
+let comparison = date3.compare(date4)
+switch comparison {
+case .orderedAscending:
+    print("La prima data è successiva alla seconda.")
+case .orderedSame:
+    print("Le date sono uguali.")
+case .orderedDescending:
+    print("La prima data è precedente alla seconda.")
+}
+```
+Output: La prima data è precedente alla seconda.
+
+## Vedi Anche
+- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
 - [Hacking with Swift - How to compare dates](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)
+- [Swift by Sundell - Comparing dates in Swift](https://www.swiftbysundell.com/articles/comparing-dates-in-swift/)

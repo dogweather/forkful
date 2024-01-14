@@ -1,58 +1,49 @@
 ---
-title:    "C++: दो दिनांकों का तुलना करना"
+title:    "C++: दो दिनांकों की तुलना करना"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+"## Kyun: Do tareekhon ko tulna karne mein kyun samay bitana chahiye?"
 
-किसी भी प्रोग्राम में दो दिनांकों की तुलना करने के लिए अक्सर आवश्यकता होती है। इसके माध्यम से हम पता लगा सकते हैं कि किस दिनांक में प्रोग्राम के कुछ विशेष घटनाओं या समारोहों को शामिल किया गया था।
+Do tareekhon ko tulna karne mein samay bitana aam baat hai, aur yeh desh mein chalne wale har vyakti ke liye zaroori ho sakta hai. Date comparison, humein do tareekhon ke beech mein antar ka pata lagane mein madad karta hai, jaise bharat sarkar dvaara jaari kiye gaye praman patron ko samajhne mein. Iske alawa, date comparison humein kisi bhi samay ke baare mein jaankari pradaan karta hai, jaise ki kitne din, mahine ya saal pahle koi ghatna ghatit hui thi. Isliye, do tareekhon ko tulna karne ke liye ek vyakti ko programming mein samay bitana bahut zaroori hai.
 
-## कैसे
-
-गाहक दो दिनांकों को तुलना करने के लिए इस्तेमाल होने वाले कुछ साधारण तरीके हैं। नीचे दिए गए कोड ब्लॉक में हम सी ++ का उपयोग करके दो दिनांकों को तुलना करना सीखेंगे।
+"## Kaise Kare: C++ mein do tareekhon ko tulna kaise karein?"
 
 ```C++
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 int main() {
-  // तुलना करने के लिए दो दिनांकों को आधार मानते हुए पहले अपने वैल्यू को भरें
-  int date1 = 10, month1 = 5, year1 = 2020;
-  int date2 = 5, month2 = 5, year2 = 2021;
+    // Pahle tareekh ko decide karein
+    time_t t1 = time(0); 
 
-  // दोनों दिनांकों को compare करें
-  if (year1 > year2) {
-    cout << "पहला दिनांक पहले हो गया था";
-  } else if (year1 < year2) {
-    cout << "दूसरा दिनांक पहले हो गया है";
-  } else {
-    if (month1 > month2) {
-      cout << "पहले का महीना पहले हो गया था";
-    } else if (month1 < month2) {
-      cout << "दूसरे का महीना पहले हो गया था";
-    } else {
-      if (date1 > date2) {
-        cout << "पहला दिन पहले हो गया था";
-      } else if (date1 < date2) {
-        cout << "दूसरा दिन पहले हो गया था";
-      } else {
-        cout << "दोनों दिनांक समान हैं";
-      }
-    }
-  }
+    // Dusra tareekh ko decide karein
+    struct tm * now = localtime( & t1 ); 
+    int year = now -> tm_year + 1900;
+    int month = now -> tm_mon + 1;
+    int day = now -> tm_mday;
 
-  return 0;
+    // Tareekhon ko tulna karein
+    t2 = mktime( & now);
+
+    // Calculated antar ko pradaan karein
+    cout << "Antar: " << difftime(t2, t1) << " seconds." << endl;
+
+    return 0;
 }
 ```
 
-आउटपुट:
+"## Gehri Jhanjhavat: Do tareekhon ko tulna karne ki aur gehri jankari"
 
-```
-दूसरा दिनांक पहले हो गया है
-```
+Do tareekhon ko tulna karna koi mushkil kaam nahi hai, lekin usmein kuch zaroori baaton ka dhyan rakhna hai. Pahle, humein tareekhon ko sahi format mein store karna zaroori hai. Doosre, hume pata hona chahiye ki nirdharit tareekh kis time zone mein hai. Tisra, pata karna hai ki computer ka default time zone kya hai, kyunki date comparison time zone ke hisab se hota hai. Aur aakhir mein, sahi function ka istemaal karna zaroori hai tareekhon ko tulna karne ke liye.
 
-## गहराई में जाइए
+"## Dekhiye Bhi:"
 
-जब हम दो दिनांकों को तुलना करते हैं तो हमारे पास कई परिणाम हो सकते हैं। कोड में हमने सभी स्थितियों को शामिल किया है और उन्हें ठीक से हैंड
+- https://www.geeksforgeeks.org/how-to-find-difference-between-two-dates-in-c-programming-language/
+- https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
+- https://www.programiz.com/cpp-programming/library-function/ctime/time

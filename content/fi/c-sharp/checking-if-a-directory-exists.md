@@ -1,59 +1,41 @@
 ---
-title:    "C#: Tarkistetaan, onko hakemisto olemassa"
+title:    "C#: Tarkistetaan, onko hakemistoa olemassa"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä miksi sinun kannattaa tarkistaa, onko kansio olemassa C# -ohjelmoinnissa. Voit esimerkiksi haluta varmistaa, että tietty kansio on olemassa ennen kuin tallennat tiedostoja siihen tai haluat ehkä luoda uuden kansion, jos sitä ei vielä ole olemassa.
+On monia syitä, miksi haluat tarkistaa, onko hakemisto olemassa. Yleisimpiä ovat työnkulun automatisointi ja virheiden välttäminen, kun yrität päästä käsiksi tiettyyn hakemistoon.
 
 ## Miten
 
-Tämä toiminto on melko yksinkertainen C# -ohjelmoinnissa ja voidaan suorittaa käyttämällä Directory.Exists () -metodia.
+Tarkistamalla, onko hakemisto olemassa, voit välttää virheitä ja käsitellä niitä tarvittaessa. Voit tehdä tämän helposti C#-kielellä käyttämällä Directory.Exists()-metodia.
 
-```C#
-using System;
-using System.IO; //Sisällytä IO Namespacet
+```
+C#
+string hakemistoPolku = "C:\\Users\\Kayttaja\\Tallennetut tiedostot";
 
-namespace TarkistaKansio
+if (Directory.Exists(hakemistoPolku))
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Luodaan uusi kansiotie
-            string kansiotie = @"C:\Kansio";
-
-            //Tarkistetaan, onko kansio olemassa
-            if (Directory.Exists(kansiotie))
-            {
-                // Tulostetaan viesti, jos kansio löytyy
-                Console.WriteLine("Kansio on jo olemassa.");
-            }
-            else
-            {
-                // Luo uusi kansiotie
-                Directory.CreateDirectory(kansiotie);
-                // Tulostetaan viesti uuden kansion luomisesta
-                Console.WriteLine("Uusi kansio luotu.");
-            }
-        }
-    }
+    Console.WriteLine("Hakemisto on olemassa.");
+}
+else
+{
+    Console.WriteLine("Hakemistoa ei löytynyt.");
 }
 ```
 
-Tämän koodin tuloste riippuu siitä, onko kansio olemassa vai ei. Jos kansio on jo olemassa, tulosteena näkyy "Kansio on jo olemassa.", kun taas jos kansio luodaan, tulosteena näkyy "Uusi kansio luotu."
+Tämä koodi tarkistaa, onko "Tallennetut tiedostot" -hakemisto olemassa käyttäjän "Kayttaja" kotihakemistossa. Jos hakemisto löytyy, tulostetaan "Hakemisto on olemassa.". Muussa tapauksessa tulostetaan "Hakemistoa ei löytynyt.". Tämä yksinkertainen tarkistus auttaa sinua välttämään virheitä ja parantamaan koodisi suorituskykyä.
 
-## Syventävä tarkastelu
+## Syvällinen katsaus
 
-Tarkistettaessa kansion olemassaoloa C# -ohjelmoinnissa on tärkeää muistaa, että Directory.Exists () -metodi ei tarkista kansiorakennetta. Jos siis tarkistat olemassaoloa esimerkiksi kansiotiellä "C:\Kansio\Alakansio", metodi palauttaa false, vaikka kansio "C:\Kansio" olisi olemassa.
-
-Lisäksi on hyvä pitää mielessä, että Directory.Exists () -metodia voidaan käyttää tarkistamaan vain olemassaolevia kansioita, ei tiedostoja.
+Jos haluat tietää tarkemmin, miten Directory.Exists()-metodi toimii, voit tutkia sen toimintaa syvällisemmin. Teknisesti ottaen metodi tarkistaa, onko annetun polun tai hakemiston kansio olemassa. Se palauttaa boolean-arvon, joka kertoo, onko hakemisto olemassa vai ei. Tätä tietoa voit käyttää esimerkiksi päätöksentekoon tai virheiden käsittelyyn.
 
 ## Katso myös
 
-- Microsoftin dokumentaatio Directory.Exists () -metodista: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netframework-4.8
-- Infinitec:n opas tiedostojen ja kansioiden käsittelyyn C# -ohjelmoinnissa: https://www.infinitec.de/post/2011/03/29/File-System-Access-with-CSharp-Basics.aspx
-- Suomenkielinen C# -ohjelmointisanasto: https://repl.it/talk/learn/C-OHJELMOINTISANASTO/37138
+- [Tietoja hakemistojen tarkistamisesta C#-kielellä](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [Hakemistojen käsitteleminen C#-kielellä](https://www.tutorialspoint.com/csharp/csharp_directory_class.htm)
+- [Vianjäljitysvinkkejä hakemistojen tarkistamiseen C#-kielellä](https://www.fluxbytes.com/csharp/check-if-a-directory-exists-using-csharp/)

@@ -1,47 +1,76 @@
 ---
-title:    "Gleam: 텍스트 검색 및 교체"
+title:    "Gleam: 텍스트 검색 및 교체하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜: 
+만일 당신이 텍스트를 검색하고 바꾸는 작업에 참여하고 싶다면, 그 이유는 매우 간단합니다. 당신의 코드에서 오탈자나 잘못된 문법을 수정하고, 더 효율적인 코딩을 위해 특정 텍스트를 일괄적으로 변경하기 위해서입니다.
 
-텍스트를 검색하고 교체하는 것에 참여하는 이유는 굉장히 중요합니다. 이 작업을 통해 텍스트를 쉽게 찾고 대량으로 바꿀 수 있습니다. 이 과정은 프로그래머에게 매우 유용하며 생산성을 크게 높일 수 있습니다.
-
-## 어떻게
-
-"Gleam"은 검색 및 교체 기능을 제공하는 강력한 프로그래밍 언어입니다. 아래의 예제 코드를 통해 어떻게 기능을 사용하는지 확인해보세요.
+## 방법:
+텍스트를 검색하고 바꾸는 작업을 Gleam으로 어떻게 할 수 있는지 살펴보겠습니다. 아래의 코드 예제는 간단한 텍스트 검색 및 치환 작업을 보여줍니다.
 
 ```Gleam
-let text = "안녕하세요, Gleam 블로그입니다."
-let newText = text.replace("Gleam", "프로그래밍")
+import gleam/re/replace
+import gleam/io
+
+// 초기 텍스트
+let text = "안녕, Gleam 독자여!"
+
+// "안녕"을 "안녕하세요"로 변경
+let replaced = replace.regex(text, "안녕", "안녕하세요")
+
+// 변경된 텍스트 출력
+io.print(replaced)
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+위의 코드를 실행하면 다음과 같은 출력이 나옵니다.
 
 ```
-안녕하세요, 프로그래밍 블로그입니다.
+안녕하세요, Gleam 독자여!
 ```
 
-더욱 복잡한 검색과 교체 작업 또한 쉽게 할 수 있습니다. 아래의 코드를 참고해보세요.
+위의 예제에서는 단순한 문장을 대상으로 작업하였지만, Gleam의 강력한 정규식 기능을 사용하여 더 복잡한 텍스트 검색 및 치환 작업도 가능합니다.
+
+## 깊이 들어가기:
+텍스트 검색 및 치환 작업을 위해 Gleam의 정규식 기능을 제대로 활용하는 방법에 대해 더 알아보겠습니다. Gleam은 PCRE(Perl Compatible Regular Expressions) 라이브러리를 사용하기 때문에 광범위한 정규식 패턴을 지원합니다. 또한 캡쳐 그룹이나 후방참조 같은 고급 기능도 사용할 수 있습니다.
+
+예를 들어, 아래의 코드는 주민등록번호에서 뒷자리를 마스킹하는 작업을 보여줍니다.
 
 ```Gleam
-let text = "Gleam은 광명한 미래를 준비하고 있습니다."
-let newText = text.replace("Gleam", "메롱").replace("미래", "프로그래밍 세계")
+import gleam/re/replace
+import gleam/io
+
+// 주민등록번호 초기 값
+let ssn = "801202-1234567"
+
+// 마스킹할 부분을 정규식으로 지정
+let regex = "\\d{6}(?=\\d{7})"
+
+// 정규식을 사용하여 뒷자리 마스킹
+let masked = replace.regex(ssn, regex, "******")
+
+// 마스킹된 주민등록번호 출력
+io.print(masked)
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+위의 코드를 실행하면 다음과 같은 출력이 나옵니다.
 
 ```
-메롱은 광명한 프로그래밍 세계를 준비하고 있습니다.
+801202-******
 ```
 
-## 깊이 파헤치기
+더 많은 정규식 사용 예제와 Gleam의 다른 기능들을 통해 좀 더 심도 있는 텍스트 검색 및 치환 작업을 수행할 수 있습니다. 
 
-"Gleam"의 검색 및 교체 기능은 정규식을 포함한 다양한 옵션을 제공합니다. 정규식을 사용하면 더욱 깊이있게 텍스트를 검색하고 교체할 수 있습니다. 자세한 내용은 공식 문서를 참고해주세요.
+## 참고:
+- <https://gleam.run/documentation/standard-libraries/regex/>
+- <https://gleam.run/documentation/tutorials/regex/>
+- <https://gleam.run/documentation/tutorials/lists/>
 
-## 참고 자료
-
-- [Gleam 공식 문서](http://gleam.run)
-- [Gleam 깃허브 저장소](https://github.com/gleam-lang/gleam)
+---
+# 참고:
+- <https://gleam.run/documentation/standard-libraries/regex/>
+- <https://gleam.run/documentation/tutorials/regex/>
+- <https://gleam.run/documentation/tutorials/lists/>

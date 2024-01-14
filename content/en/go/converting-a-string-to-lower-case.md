@@ -1,51 +1,44 @@
 ---
 title:    "Go recipe: Converting a string to lower case"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting strings to lower case is a common task in many programming languages. It allows for consistency and easier string comparisons, making it an important function in many applications. In this post, we will explore how to convert strings to lower case in Go.
+Converting a string to lower case is a common task in many programming languages, including Go. This is useful for making strings case-insensitive when performing comparisons or for cleaning up user input.
 
 ## How To
 
-To convert a string to lower case in Go, we can use the `strings.ToLower()` function. Let's see a simple example:
+To convert a string to lower case in Go, we can use the `strings.ToLower()` function. Let's look at an example:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	myString := "HELLO WORLD"
-	fmt.Println(strings.ToLower(myString))
-}
+input := "Hello World"
+lowerCase := strings.ToLower(input)
+fmt.Println(lowerCase)
 ```
 
-In this example, we import the `strings` package which provides a variety of string manipulation functions in Go. Then, we create a string variable `myString` with the value "HELLO WORLD". Finally, we use the `ToLower()` function on the `myString` variable and print the result, which is "hello world".
+The output of this code will be `hello world`. We can see that the original string has been converted to all lower case.
 
-We can also use this function on a single character or a slice of a string, as shown below:
+We can also use this function to convert individual characters to lower case. Let's see how this works:
 
 ```Go
-fmt.Println(strings.ToLower("G")) // prints g
-fmt.Println(strings.ToLower("GoLang")) // prints golang
+input := 'G'
+lowerCase := strings.ToLower(string(input))
+fmt.Println(lowerCase)
 ```
+
+The output of this code will be `g`. We first convert the character `G` to a string using `string(input)` and then use `strings.ToLower()` to convert it to lower case.
 
 ## Deep Dive
 
-The `ToLower()` function in Go uses the Unicode LowerCase mapping, which means it will convert any non-letter runes to their lower case representation. This is useful when dealing with non-English characters or symbols.
+Under the hood, the `strings.ToLower()` function uses the Unicode mapping for case conversion. This means that it will handle different alphabets and special characters correctly. It also takes into account any language-specific rules for case conversion.
 
-Another thing to note is that the `ToLower()` function is case-insensitive, meaning it will convert both upper and lower case letters to their lower case equivalent. This allows for consistent string comparisons, regardless of the original case.
+One important thing to note is that the `strings.ToLower()` function returns a new string instead of modifying the original string. This is because strings in Go are immutable, meaning they cannot be changed. Therefore, we must assign the result to a new variable as shown in the examples above.
 
 ## See Also
 
-- [The Go Programming Language Specification - Strings](https://golang.org/ref/spec#String_types)
-- [Go By Example - String Functions](https://gobyexample.com/string-functions)
-- [Go Lang Org - String Functions](https://golang.org/pkg/strings/#ToLower)
-
-Converting strings to lower case may seem like a simple task, but it is an important function for maintaining consistency and making string comparisons easier. With the `ToLower()` function in Go, we have a simple and effective way to achieve this. I hope this post has helped you understand and use this function in your own Go programs.
+- [The strings package documentation](https://golang.org/pkg/strings/)
+- [Unicode case mappings](https://unicode.org/copyright.html)

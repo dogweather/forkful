@@ -1,56 +1,38 @@
 ---
 title:    "C#: Imprimindo saída de depuração"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que imprimir saída de depuração é importante
 
-Muitas vezes, ao escrever código em C#, pode ser necessário imprimir valores específicos durante a execução do programa para entender melhor o que está acontecendo. Esse processo é conhecido como "debugging" (depuração) e é essencial para encontrar e corrigir erros em seu código. A impressão de saída de depuração pode ser uma ferramenta útil para facilitar esse processo.
+Imprimir saída de depuração ou "debug output" é uma ferramenta fundamental para qualquer programador. Essa técnica permite visualizar informações sobre o comportamento do programa enquanto ele está sendo executado, o que é extremamente útil para detectar e corrigir erros no código. Além disso, também pode ser útil para entender melhor como o programa funciona e identificar possíveis melhorias.
 
-## Como Fazer
+## Como fazer
 
-Para imprimir valores de depuração em C#, você pode usar a função `Console.WriteLine()`. Esta função aceita como parâmetro uma string e irá imprimi-la no console durante a execução do programa.
-
-```C#
-// Exemplo simples de impressão de depuração
-int idade = 25;
-Console.WriteLine("A idade é: " + idade); // Saída: A idade é: 25
-```
-
-Você também pode usar placeholders para imprimir variáveis em uma string. Isso pode ser útil se você precisar imprimir valores com diferentes tipos de dados.
+Para imprimir saída de depuração em C#, você pode usar a função "Console.WriteLine()". Essa função exige um parâmetro entre parênteses, que é a informação que será exibida no console. Por exemplo:
 
 ```C#
-// Exemplo de impressão de depuração usando placeholders
-string nome = "João";
-int idade = 25;
-Console.WriteLine("O nome é: {0} e a idade é: {1}", nome, idade); // Saída: O nome é: João e a idade é: 25
+Console.WriteLine("Aqui está um exemplo de saída de depuração.");
 ```
 
-Outra opção é usar a função `Debug.WriteLine()`, que é específica para saídas de depuração. Esta opção é útil quando você está usando um ambiente de desenvolvimento integrado (IDE) como o Visual Studio. A vantagem de usar esta função é que você pode habilitar ou desabilitar a impressão de saída de depuração, o que pode ser útil quando você está lidando com grandes quantidades de dados.
+Isso imprimirá a frase "Aqui está um exemplo de saída de depuração." no console do terminal. Você também pode usar a função "Console.Write()" para imprimir sem pular uma linha.
 
-```C#
-// Exemplo de uso da função Debug.WriteLine()
-int idade = 25;
-Debug.WriteLine("A idade é: " + idade); // Saída: A idade é: 25
-```
+Outra opção é usar a classe "Debug" do namespace "System.Diagnostics". Esta classe oferece métodos úteis para imprimir informações de depuração, como "Debug.WriteLine()" e "Debug.Assert()". Você pode encontrar mais informações sobre a classe "Debug" na documentação oficial da Microsoft.
 
-## Profundidade
+## Mergulho Profundo
 
-Além disso, é possível alterar o nível de detalhamento da saída de depuração, utilizando a função `Debug.Indent()` antes da impressão da saída e `Debug.Unindent()` depois. Isso pode ser útil para organizar a saída e torná-la mais legível.
+Há várias maneiras de personalizar a saída de depuração em C#. Por exemplo, você pode usar o símbolo de escape "\n" para pular uma linha na saída. Além disso, você pode usar a classe "Trace" para criar uma saída de depuração mais detalhada e também usar a classe "Debugger" para adicionar breakpoints ao seu código e parar a execução para visualizar os valores das variáveis.
 
-Além disso, você pode usar a diretiva `#if DEBUG` para condicionar a impressão da saída de depuração apenas quando o programa é executado em modo de depuração.
+Outra técnica interessante é usar o recurso de "Conditional Debugging", que permite imprimir a saída de depuração apenas quando uma condição específica é atendida. Isso pode economizar tempo e evitar a impressão desnecessária de informações de depuração.
 
-```
-// Exemplo de uso da diretiva #if DEBUG
-#if DEBUG
-Debug.WriteLine("Este trecho será impresso apenas em modo de depuração.");
-#endif
-```
+Em suma, imprimir saída de depuração não é apenas útil, mas também pode ajudar a melhorar a qualidade do seu código e facilitar a identificação e correção de erros.
 
-## Veja Também
+## Veja também
 
-- .NET Debugging for Beginners: https://docs.microsoft.com/pt-br/dotnet/standard/debugging-for-beginners/
-- How to Debug C# Code: https://docs.microsoft.com/pt-br/visualstudio/debugger/debugging-c-sharp?view=vs-2019
-- Visual Studio Debugging Tips and Tricks: https://docs.microsoft.com/pt-br/visualstudio/debugger/debug-features-in-visual-studio?view=vs-2019
+- [Documentação oficial do C# Debugging](https://docs.microsoft.com/pt-br/dotnet/core/tutorials/debugging-with-visual-studio)
+- [Exibindo informações de depuração em C#](https://www.c-sharpcorner.com/UploadFile/011993/how-to-display-debugging-information-in-console-in-C-Sharp/)
+- [Usando a classe "Trace" em C#](https://www.tutorialsteacher.com/articles/how-to-use-trace-for-debugging-in-csharp)
+- [Usando a classe "Debugger" em C#](https://www.tutorialsteacher.com/articles/how-to-debug-csharp-code-in-visual-studio)

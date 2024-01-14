@@ -1,50 +1,43 @@
 ---
-title:    "Javascript: Å lese en tekstfil"
+title:    "Javascript: Lesing av en tekstfil"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvis du noen gang har programmert i Javascript, har du sannsynligvis støtt på situasjoner der du trenger å lese innholdet fra en tekstfil. Dette kan være nyttig for å hente data, konfigurasjonsinnstillinger eller annen informasjon til programmene dine. I denne blogginnlegget vil jeg forklare hvorfor det er viktig å kunne lese tekstfiler, og hvordan du enkelt kan gjøre det med Javascript.
 
-## Hvordan
-For å lese en tekstfil med Javascript, trenger du en metode som heter `readFile()` fra `fs` biblioteket. Først må du importere biblioteket ved å bruke `require` kommandoen:
+Å lese en tekstfil kan være en nyttig ferdighet for alle som er interessert i å lære å kode. Det å kunne lese og håndtere ulike typer filer er en viktig del av programmering, og tekstfiler er en av de vanligste filtypene som brukes.
+
+## Slik gjør du det
+
+For å lese en tekstfil i Javascript, kan du bruke inbygde funksjoner som fs.readFileSync() eller fs.readFile(). Du må først importere "fs" modulen i koden din for å bruke disse funksjonene.
 
 ```Javascript
 const fs = require('fs');
+
+// Leser en tekstfil synchronously
+let data = fs.readFileSync('tekstfil.txt', 'utf8');
+console.log(data); // Skriver ut innholdet i konsollen
+
+// Leser en tekstfil asynchronously
+fs.readFile('tekstfil.txt', 'utf8', (err, data) => {
+  if (err) console.error(err); // Håndterer eventuelle feil
+  console.log(data); // Skriver ut innholdet i konsollen
+})
 ```
 
-Deretter kan du bruke `readFile()` metoden på følgende måte:
-
-```Javascript
-fs.readFile('tekstfil.txt', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-```
-
-Her bruker jeg `tekstfil.txt` som eksempel på navnet til tekstfilen jeg ønsker å lese. Du kan selvfølgelig bytte ut dette med hva som helst annet filnavn du ønsker å lese. Dataen som blir returnert fra `readFile()` er i binær format, så vi må konvertere den til en lesbar streng ved hjelp av `toString()` metoden:
-
-```Javascript
-fs.readFile('tekstfil.txt', (err, data) => {
-  if (err) throw err;
-  console.log(data.toString());
-});
-```
-
-Dette vil skrive ut innholdet fra tekstfilen i terminalen eller konsollen. Hvis du ønsker å lagre dataen fra filen i en variabel, kan du gjøre det på følgende måte:
-
-```Javascript
-let data = fs.readFileSync('tekstfil.txt').toString();
-```
-
-Du kan deretter bruke variabelen `data` til å manipulere og bruke innholdet fra tekstfilen i programmet ditt.
+I dette eksempelet bruker vi en tekstfil kalt "tekstfil.txt", men du kan selvfølgelig bruke navnet på din egen fil i koden. Vær også oppmerksom på at readFile() funksjonen tar imot en callback-funksjon som vil bli eksekvert når fillesingen er ferdig.
 
 ## Dypdykk
-Nå som vi har sett på hvordan du kan lese en tekstfil med Javascript, kan vi også utforske noen av de andre mulighetene for å arbeide med tekstfiler. I tillegg til å lese filer, kan du også skrive til filer ved hjelp av `writeFile()` metoden fra `fs` biblioteket. Du kan også bruke `appendFile()` metoden for å legge til innhold til slutten av en allerede eksisterende fil. Pass på å lese dokumentasjonen for å lære mer om disse metodene og deres muligheter.
+
+Nå som vi har sett på hvordan man leser en tekstfil, la oss ta en dypere titt på hva som faktisk skjer bak kulissene. Først og fremst, en tekstfil består av en rekke byter, og hver byte har en tilsvarende karakterkoding. Den mest vanlige karakterkodingen for tekstfiler er UTF-8. Når vi leser en tekstfil i Javascript, vil filen bli konvertert til UTF-8 formatet for å kunne leses riktig.
+
+En annen ting å være klar over er at når vi bruker readFile() funksjonen, vil filen bli lest asynkront, noe som betyr at resten av koden vil fortsette å kjøre mens filen blir lest i bakgrunnen. Derfor bruker vi en callback-funksjon for å sikre at vi får tilgang til filens innhold når det er ferdig å lese.
 
 ## Se også
-- [Node.js FS Modul](https://nodejs.org/api/fs.html)
-- [W3Schools Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [MDN Web Docs File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API)
+
+* [fs modulen i Node.js docs] (https://nodejs.org/api/fs.html)
+* [Eksempelkode for å lese en tekstfil] (https://www.digitalocean.com/community/tutorials/how-to-read-a-file-with-node-js)
+* [Intro til filbehandling i Javascript] (https://www.w3schools.com/js/js_file_handling.asp)

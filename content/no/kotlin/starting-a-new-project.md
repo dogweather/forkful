@@ -1,48 +1,55 @@
 ---
 title:    "Kotlin: Å starte et nytt prosjekt"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor starte et nytt prosjekt i Kotlin?
 
-Å starte et nytt programmeringsprosjekt kan virke skremmende for noen, men det kan også føre til utrolig spennende resultater. Enten det er for å lære en ny språk eller for å lage en ny applikasjon, er det å starte et nytt prosjekt en flott måte å utfordre seg selv og utvide sine ferdigheter på.
+Å starte et nytt prosjekt kan være en spennende og utfordrende opplevelse. Hvorfor skal man velge Kotlin som programmeringsspråk? Kotlin er et moderne, kraftig og populært språk som blir stadig mer utbredt blant utviklere. Det er et godt valg for både nybegynnere og erfarne utviklere.
 
-# Hvordan
+# Hvordan starte et nytt prosjekt i Kotlin?
 
-For å starte et nytt prosjekt i Kotlin trenger du kun å følge noen få enkle trinn.
+Når du oppretter et nytt prosjekt i Kotlin, trenger du ikke å gjøre mye ekstra arbeid for å sette opp et grunnleggende prosjekt. Her er noen enkle kodestumper for å hjelpe deg i gang:
 
-1. Først må du installere Kotlin på din datamaskin. Dette kan gjøres gjennom Kotlin nettsted eller ved hjelp av et integrert utviklingsmiljø (IDE) som f.eks. IntelliJ IDEA.
-```Kotlin
-fun main() {
-    println("Hei verden!")
+```kotlin
+// Skriv ut en enkel melding til konsollen
+println("Hei, Kotlin!")
+
+// Definer en variabel og skriv ut verdien
+val navn = "Per"
+println("Hei, " + navn + "!")
+
+// Lag en funksjon for å legge sammen to tall og skriv ut resultatet
+fun adder(tall1: Int, tall2: Int): Int {
+    return tall1 + tall2
 }
+val sum = adder(4, 8)
+println("Summen av 4 og 8 er " + sum)
 ```
-2. Deretter kan du opprette et nytt prosjekt ved å klikke på "Create New Project" og velge Kotlin som språk.
-```Kotlin
-fun main() {
-    var navn = "Lars"
-    println("Hei, mitt navn er $navn!")
-}
-Output: Hei, mitt navn er Lars!
+
+Eksempel på utskrift:
+
 ```
-3. Når prosjektet er opprettet, kan du begynne å kode! Bruk gjerne Kotlin sine offisielle dokumentasjon eller andre online ressurser for å lære mer om språket og komme i gang med å skrive kode.
+Hei, Kotlin!
+Hei, Per!
+Summen av 4 og 8 er 12
+```
 
-# Dypdykk
+Dette er bare noen få eksempler på hva du kan gjøre med Kotlin. Det finnes mange ressurser og veiledninger tilgjengelig på nettet for å lære mer om språket og dets funksjoner.
 
-Når du starter et nytt prosjekt, er det viktig å tenke på følgende punkter:
+# Dypdykk i å starte et nytt prosjekt i Kotlin
 
-- Planlegg prosjektet ditt nøye: Hvordan skal koden organiseres og hvordan skal den struktureres? Å ha en god plan vil gjøre det enklere og mer effektivt å utvikle prosjektet.
+Ved å bruke Kotlin, kan du bygge applikasjoner som kjører på både Android og på Java Virtual Machine (JVM). Språket har også muligheten til å bruke interaktive uttrykk, noe som kan hjelpe deg med å teste og finpusse koden din. I tillegg har Kotlin enkle syntaksregler og et omfattende bibliotek av funksjoner, noe som gjør det enkelt å lage robuste og effektive programmer.
 
-- Bruk versjonskontroll: Det å bruke et verktøy som Git kan være svært nyttig når man jobber med et prosjekt. Det lar deg holde styr på endringer og sikre at koden din er sikker og tilgjengelig for andre å bidra til.
-
-- Test koden din: Det er alltid viktig å teste koden din for å sikre at den fungerer som forventet og for å unngå unødvendige feil.
-
-- Ta pauser: Selv om det kan være fristende å jobbe sammenhengende på et prosjekt, er det viktig å ta pauser for å unngå å bli utbrent og for å få et nytt perspektiv på koden din.
+Når du skal starte et nytt prosjekt i Kotlin, kan det være lurt å bruke et integrert utviklingsmiljø (IDE) som for eksempel IntelliJ eller Android Studio. Disse programmene har innebygd støtte for Kotlin og vil hjelpe deg å sette opp prosjektet ditt på en enkel måte.
 
 # Se også
 
-- Kotlin hjemmesiden: https://kotlinlang.org/
-- Kotlin offisiell dokumentasjon: https://kotlinlang.org/docs/home.html
-- IntelliJ IDEA: https://www.jetbrains.com/idea/
+- [Kotlin offisiell nettside] (https://kotlinlang.org/)
+- [Kotlin dokumentasjon] (https://kotlinlang.org/docs/home.html)
+- [Kotlin på GitHub] (https://github.com/JetBrains/kotlin)
+- [IntelliJ IDE] (https://www.jetbrains.com/idea/)
+- [Android Studio] (https://developer.android.com/studio)

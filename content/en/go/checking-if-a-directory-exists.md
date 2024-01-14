@@ -1,75 +1,48 @@
 ---
 title:    "Go recipe: Checking if a directory exists"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why 
 
-Checking if a directory exists may seem like a simple task, but it plays an important role in many programs. It allows us to ensure that our code runs smoothly and avoids errors, which saves us time and frustration in the long run. In this blog post, we will explore how to check if a directory exists in Go and why it is crucial for our programming needs. 
+Do you ever find yourself in a situation where you need to check if a directory exists in your Go program? Perhaps you want to make sure a certain folder exists before trying to access or create files within it. Or maybe you want to verify that a user-provided directory path is valid before proceeding with further operations. Whatever the case may be, knowing how to check for the existence of a directory in Go can come in handy and save you from any potential errors or crashes in your code. 
 
 ## How To 
 
-In Go, we can use the built-in `os.Stat()` function to check if a directory exists. Let's take a look at a simple code example: 
+To check if a directory exists in Go, we will be using the standard library's `os` package. Within this package, there is a function called `Stat()` that we can use to retrieve information about a file or directory. We will also be using the `IsNotExist()` function from the same package to check whether the directory does not exist. Let's take a look at an example: 
 
-```Go
-package main 
+```Go 
+// Checks if a directory exists at the given path 
+func directoryExists(path string) bool { 
+    // Check if directory path exists, returns error if it doesn't 
+    if _, err := os.Stat(path); os.IsNotExist(err) { 
+        return false 
+    } 
+    return true 
+} 
 
-import (
-	"fmt"
-	"os"
-)
+func main() { 
+    // Example usage 
+    fmt.Println(directoryExists("/Users/john/Desktop")) 
+    // Output: true 
+    fmt.Println(directoryExists("/Users/john/Documents")) 
+    // Output: false 
+} 
+``` 
 
-func main() {
-	// check if directory exists
-	dir := "my_directory"
-	if _, err := os.Stat(dir); !os.IsNotExist(err) {
-		fmt.Println(dir, "exists!")
-	} else {
-		fmt.Println(dir, "does not exist!")
-	}
-}
-```
-
-In this example, we use the `os.Stat()` function to check if the directory "my_directory" exists. The function returns an `os.FileInfo` struct, which contains information about the file or directory. We then use the `os.IsNotExist()` function to check if the error returned is due to the directory not existing. If it does not exist, we print out a message indicating that it does not exist. 
-
-We can also use the `os.Mkdir()` function to create a directory if it does not already exist. Let's take a look at another code example: 
-
-```Go
-package main 
-
-import (
-	"fmt"
-	"os"
-)
-
-func main() {
-	// create directory if it does not exist
-	dir := "new_directory"
-	if _, err := os.Stat(dir); os.IsNotExist(err) {
-		err := os.Mkdir(dir, 0755)
-		if err != nil {
-			fmt.Println("Error creating directory!")
-		} else {
-			fmt.Println("Directory created successfully!")
-		}
-	} else {
-		fmt.Println(dir, "already exists!")
-	}
-}
-```
-
-In this code, we use the same `os.Stat()` function to check if the directory "new_directory" exists. If it does not, we use the `os.Mkdir()` function to create it with the appropriate permissions. By checking if a directory exists before creating it, we avoid overwriting existing directories and ensure our code runs smoothly. 
+In this example, we define a function `directoryExists()` that takes in a directory path as a parameter and returns a boolean value indicating whether the directory exists or not. Within the function, we use `os.Stat()` to retrieve information about the directory at the given path. If the directory does not exist, this function will return an error and we can use `os.IsNotExist()` to check if the error is a "not exist" error. If so, we return false, indicating that the directory does not exist. Otherwise, we return true, indicating that the directory does exist. 
 
 ## Deep Dive 
 
-Under the hood, the `os.Stat()` function uses system calls to retrieve information about a file or directory. It returns an `os.FileInfo` struct which contains information about the size, permissions, and modification time of the file or directory. In the case of a directory, the `os.FileInfo` struct will also contain information about any subdirectories or files within that directory. 
+The `os.Stat()` function not only checks for the existence of a directory but also returns additional information about the directory, such as its size, permissions, and modification time. This can be useful if you need to access this information for further operations in your program. Additionally, instead of using `os.IsNotExist()`, you can also use `os.IsExist()` to check if a directory already exists and `os.IsPermission()` to check if there are any permission errors in accessing the directory. 
 
-It is also worth mentioning that the `os.Stat()` function will follow symbolic links, so if a link points to a valid directory, it will return true even if the symlink itself does not exist. 
+It's also important to note that `os.Stat()` and `os.IsNotExist()` will also work with file paths, not just directories. So if you need to check for the existence of a file, you can use the same approach as above. 
 
 ## See Also 
 
-- [os.Stat() Go documentation](https://pkg.go.dev/os#Stat)
-- [os.Mkdir() Go documentation](https://pkg.go.dev/os#Mkdir)
-- [Understanding file permissions in Go](https://www.digitalocean.com/community/tutorials/understanding-file-permissions-in-go)
+- [Go Documentation - os package](https://golang.org/pkg/os/) 
+- [A Tour of Go - File Stat](https://tour.golang.org/basics/11) 
+- [Checking if a file exists in Go](https://www.calhoun.io/how-to-check-if-a-file-or-directory-exists-in-go/)

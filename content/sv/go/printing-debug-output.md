@@ -1,62 +1,50 @@
 ---
-title:    "Go: Utskrift av felsökningsutdata"
+title:    "Go: Utskrift av felsökningsresultat"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva kod är en process som ofta går hand i hand med att hitta och åtgärda fel. Ibland kan det vara svårt att förstå vad som egentligen händer i koden när ett fel uppstår. Här kommer printing av debug output till undsättning. Genom att skriva ut information om variabler och steg i processen kan du enklare förstå vad som händer i din kod och därmed effektivare lösa problemen.
+Att skriva ett program kan vara roligt, men ibland kan det också vara frustrerande när du stöter på fel eller buggar. Och det är där utskrift av felsökningsinformation kommer in i bilden. Genom att skriva ut debug-utmatning får du bättre förståelse för vad som händer i ditt program och kan effektivt hitta och lösa problem.
 
 ## Hur man gör
 
-För att skriva ut debug output i Go kan du använda dig av funktionen `fmt.Println()`. Låt oss säga att du har en variabel `x` som innehåller värdet 5 och du vill skriva ut värdet för att kontrollera att det är korrekt. I så fall kan du skriva följande kod:
-
-```Go
-x := 5
-fmt.Println(x)
-```
-
-I konsolen kommer då följande output att visas:
+För att skriva ut debug-utmatning i Go kan du använda sig av funktionen "fmt.Printf()" eller "fmt.Println()". Dessa funktioner gör det möjligt för dig att skriva ut värden för olika variabler i ditt program. Låt oss ta ett exempel:
 
 ```
-5
+package main
+
+import "fmt"
+
+func main() {
+    nummer := 10
+    namn := "Johan"
+
+    fmt.Printf("Värdet av variabeln nummer är: %d\n", nummer)
+    fmt.Println("Namnet på användaren är: ", namn)
+}
 ```
 
-Du kan även printa ut flera variabler och kombinera olika datatyper. Till exempel:
-
-```Go
-a := "Hej"
-b := 10
-fmt.Println(a, "världen!", b)
-```
-
-Detta skulle ge output:
+I detta exempel skriver vi ut värdet av variabeln "nummer" genom att använda funktionen "fmt.Printf()" och vi skriver ut värdet av variabeln "namn" genom att använda funktionen "fmt.Println()". Utmatningen för detta program kommer att vara:
 
 ```
-Hej världen! 10
+Värdet av variabeln nummer är: 10
+Namnet på användaren är: Johan
 ```
 
-## Djupdykning
+Notera att vi har använt "%d" för att representera värdet av "nummer" och inte "%s" som är den vanliga sträng-ersättaren. Det är viktigt att förstå skillnaden mellan de olika ersättarna för att kunna skriva ut korrekt information.
 
-Utöver att bara printa ut variabler kan du även använda dig av printfunktioner för att fördjupa ditt debuggande. Med `fmt.Printf()` kan du specificera formatet på det du vill printa, till exempel vad det ska vara för datatyp. Du kan också använda `%v` för att printa ut en variabels värde och `%T` för att printa ut datatypen.
+## Deep Dive
 
-Exempel:
+Som du kanske har märkt kan du använda dig av flera "fmt" funktioner för att skriva ut variabler i ditt program. Några andra användbara funktioner är "fmt.Sprintf()" som gör det möjligt för dig att formatera en sträng och spara den i en variabel och "fmt.Fprintf()" som skriver ut till en IO-strömm eller fil istället för till standardutmatningen.
 
-```Go
-x := 5
-fmt.Printf("Värdet på x är %v och datatypen är %T", x, x)
-```
-
-Output:
-
-```
-Värdet på x är 5 och datatypen är int
-```
+En viktig aspekt att tänka på när du skriver ut debug-utmatning är att ta hänsyn till prestanda. Om ditt program är mycket stort och du skriver ut massor av information till din terminal eller fil kan det påverka prestandan negativt. Det är därför viktigt att endast skriva ut den information som behövs och att ta bort utskrifterna när de inte längre behövs.
 
 ## Se även
 
-- [Officiell Go dokumentation för fmt paketet](https://golang.org/pkg/fmt/)
-- [Debugging i Go: Bra praktiker och verktyg](https://blog.golang.org/debugging-go-code)
-- [En guide till debugging med printf](https://www.calhoun.io/intro-to-go-interfaces-debugging-with-printf/)
+* [Officiell dokumentation för fmt-paketet på Go's webbplats](https://golang.org/pkg/fmt/)
+* [Detaljerad guide om debug-utmatning i Go](https://www.digitalocean.com/community/tutorials/how-to-debug-go-code)
+* [Go's community forum för support och diskussioner](https://forum.golangbridge.org/)

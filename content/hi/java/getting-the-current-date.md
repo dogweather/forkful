@@ -1,37 +1,45 @@
 ---
-title:    "Java: वर्तमान तारीख प्राप्त करना"
+title:    "Java: वर्तमान तिथि प्राप्त करना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kyun
 
-क्या आप कभी सोचा है कि कैसे हम अपने दैनिक कामों को समय पर कर पाते हैं? या आपने कभी सोचा है कि आपने अपने कैलेंडर में दिनांक और समय को सही ढंग से कैसे प्रबंधित किया है? यदि हमें वर्तमान दिनांक और समय का पता नहीं होता तो हम अपनी दैनिक यात्राओं, समयप्रबंधन और और भी कई कार्यों में असफल हो सकते हैं। इसलिए, वर्तमान दिनांक का पता लगाना बहुत महत्वपूर्ण है।
+* Yadi aap ek Java programmer hai aur aapko apne code mein current date ka use karna hai, to aapko current date ko kaise obtain karna hai sikhna bahut zaroori hai. Yeh aapke code ko advanced aur accurate banayega.
 
-## कैसे
+# Kaise Karein
 
-वर्तमान दिनांक को पता करने के लिए Java में कुछ आसान कोडिंग के साथ हम इस तकनीक का उपयोग कर सकते हैं। चलिए देखते हैं कि इसको कैसे किया जाता है।
+```Java
+// Java mein current date ko obtain karna bahut hi aasaan hai. Hum SimpleDateFormat class ka use karke isey kar sakte hain.
+// Sabse pehle hum SimpleDateFormat class ka object create karenge.
+SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-```java
-import java.util.Date; // Date ककईसे import करे
- 
-public class GetDate { 
-    public static void main(String[] args) { // main method
-        Date date = new Date(); // Date object को बनाये
-        System.out.println(date); // दिनांक को प्रिंट करें
-    } 
-} 
+// Phir hum current date ko obtain karenge.
+Date currentDate = new Date();
+
+// Ab hum SimpleDateFormat class ke format method se current date ko humare desired format mein convert karenge.
+String formattedDate = dateFormat.format(currentDate);
+
+// Aur aakhri mein, hum yeh formatted date print kar sakte hain.
+System.out.println(formattedDate);
 ```
 
-**Output:**
+**Output: 27/11/2021**
 
-```java
-Mon Sep 20 15:57:11 UTC 2021 // आपके स्क्रीन पर ये दिखेगा
-```
+# Gahrai Mein Jaayein
 
-ऊपर दिए गए कोड से हम आसानी से वर्तमान दिनांक को प्राप्त कर सकते हैं। लेकिन इस तरह से हम बस एक साधारण दिनांक को प्राप्त कर सकते हैं। अगर हम अपनी सुविधा के अनुसार दिनांक के स्टाइल को बदलना चाहते हैं तो क्या करें?
+Java mein current date ko obtain karna kaafi simple hai, lekin iskey peeche ka logic samajhna bhi zaroori hai. Yeh understanding aapko future mein apne code ko customize aur improve karne mein madad karegi.
 
-## गहराई में जाएं
+Sabse pehle, hum SimpleDateFormat class ka use karte hain kyunki yeh date ko humare desired format mein convert karne ka functionality provide karta hai. Is class mein humein ek pattern specify karna hota hai, jiske according yeh date ko format karta hai.
 
-Java में वर्तमान दिनांक को प्राप्त करने के लिए हम अलग-अलग तरीके से दिनांक को प्राप्त कर सकते हैं। जैसे कि अगर हम अपनी मौजूदा समय को GMT के साथ देखना चाहते हैं तो हम `getGMTDate()` का उपयोग कर स
+Phir hum Date class ka use karke actual current date ko obtain karte hain. Yeh class humein current system date aur time ko return karta hai.
+
+Aur aakhri mein, hum SimpleDateFormat class ka format method use karke current date ko humare desired format mein convert karte hain. Yeh formatted date string ko return karta hai.
+
+# Dekhein Bhi
+
+* [Java SimpleDateFormat Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+* [Java Date Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)

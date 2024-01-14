@@ -1,43 +1,46 @@
 ---
-title:    "Java: Konwertowanie daty na ciąg znaków"
+title:    "Java: Konwersja daty na ciąg znaków"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie daty na ciąg znaków jest niezwykle przydatnym zadaniem w programowaniu, ponieważ pozwala na wyświetlanie dat w czytelny sposób dla użytkowników lub zapisywanie ich w bazie danych. Jest to także integralna część wielu złożonych aplikacji, ponieważ pozwala na przetwarzanie i manipulację danymi o czasie.
+Istnieje wiele powodów, dla których konwersja daty na ciąg znaków może być niezbędna w programowaniu. Na przykład, może być konieczna do wyświetlenia daty w łatwo czytelnym formacie dla użytkownika, lub do zapisania daty w bazie danych.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na ciąg znaków w języku Java, należy użyć klasy SimpleDateFormat. Najpierw należy utworzyć obiekt tej klasy, podając jako argument wybrany format, w którym chcemy wyświetlić datę. Następnie używając metody format, przekazujemy jako argument obiekt klasy Date, który chcemy przekonwertować. Oto prosty przykład:
+Konwersja daty na ciąg znaków jest stosunkowo prosta w języku Java. Pierwszym krokiem jest utworzenie obiektu klasy Date, który przechowuje informacje o dacie. Następnie używamy metody SimpleDateFormat, aby sformatować datę zgodnie z naszymi wymaganiami. Przykładowy kod wyglądałby następująco:
 
-```Java
-// Importowanie potrzebnej klasy
-import java.text.SimpleDateFormat;
-
-// Utworzenie obiektu klasy SimpleDateFormat z wybranym formatem
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-
-// Utworzenie obiektu klasy Date
-Date today = new Date();
-
-// Przekonwertowanie daty na ciąg znaków
-String dateString = dateFormat.format(today);
-
-// Wyświetlenie rezultatu
-System.out.println(dateString); // Wynik: 15-04-2021
+```java
+Date data = new Date();
+SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+System.out.println(format.format(data));
 ```
 
-W powyższym przykładzie użyliśmy formatu "dd-MM-yyyy", ale istnieje wiele innych dostępnych formatów, takich jak "yyyy-MM-dd", "E, dd.MM.yyyy" czy "MMM dd, yyyy". Szczegółowe informacje na temat różnych formatów można znaleźć w dokumentacji klasy SimpleDateFormat.
+W powyższym przykładzie użyto formatu "dd-MM-yyyy", który wyświetla datę w formacie dzień-miesiąc-rok. Istnieje wiele innych formatów, które możemy wybrać w zależności od potrzeb. Pełna lista dostępnych formatów znajduje się w dokumentacji klasy SimpleDateFormat.
 
-## Głębsze zagadnienia
+Poniżej przedstawione są przykładowe wyniki dla różnych formatów daty:
 
-Warto mieć na uwadze, że konwersja daty na ciąg znaków jest dwukierunkowym procesem. Oznacza to, że nie tylko można przekonwertować obiekt klasy Date na ciąg znaków, ale również można odwrócić ten proces, przekonwertowując ciąg znaków z powrotem na obiekt Date. W tym celu można użyć metody parse klasy SimpleDateFormat, podając jako argument ciąg znaków i format, który został użyty do konwersji.
+- "dd.MM.yyyy" -> 12.10.2021
+- "MM/dd/yyyy" -> 10/12/2021
+- "EEEE, dd MMMM yyyy" -> Tuesday, 12 October 2021
 
-## Zobacz także
+Możemy również zastosować metodę parse(), aby przekonwertować ciąg znaków na obiekt Date. Przykładowy kod wyglądałby następująco:
 
-- Dokumentacja klasy SimpleDateFormat: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-- Przykładowe formaty daty: https://www.tutorialspoint.com/java/java_date_time.htm
-- Tutorial o konwersji daty na ciąg znaków i vice versa: https://www.baeldung.com/java-date-conversion
+```java
+String stringData = "2021-10-12";
+DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+Date data = format.parse(stringData);
+```
+
+## Głębsza analiza
+
+Podczas konwersji daty na ciąg znaków, ważne jest, aby zachować odpowiedni format daty, ponieważ niektóre formaty mogą interpretować datę różnie. Na przykład, jeśli użyjemy jednocyfrowego formatu miesiąca ("d-M-yyyy"), to dla daty 12-10-2021 otrzymalibyśmy wynik 12-10-2021, ale dla daty 2-10-2021 otrzymalibyśmy wynik 2-10-2021. To może spowodować problemy w późniejszej pracy z datami. Dlatego ważne jest, aby wybrać odpowiedni format dla swoich potrzeb.
+
+## Zobacz również
+
+- [Dokumentacja klasy SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [Poradnik konwersji daty na ciąg znaków w języku Java](https://www.baeldung.com/java-date-to-string-conversion)

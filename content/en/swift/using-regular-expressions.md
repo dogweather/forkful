@@ -1,66 +1,73 @@
 ---
 title:    "Swift recipe: Using regular expressions"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+### Why Regular Expressions Can Make Your Swift Programming Easier
 
-Regular expressions are a powerful tool in every programmer's toolkit. This text-based pattern matching technique allows for efficient and flexible searching, replacing, and validation of strings. By mastering the use of regular expressions, developers can save time and effort in their projects, as well as improve the accuracy of their code.
+Regular expressions may seem intimidating at first, but incorporating them into your Swift programming can make your life a whole lot easier. They allow you to search for specific patterns within a string, making tasks like input validation, data extraction, and text manipulation more efficient and less time-consuming. Plus, once you get the hang of using regular expressions, you'll wonder how you ever managed without them.
 
-## How To
+### How To Use Regular Expressions in Swift
 
-To use regular expressions in Swift, first import the `Foundation` framework and then use the `NSRegularExpression` class. Let's say we want to extract all numbers from a string. We can achieve this with a regular expression pattern by using the `matches(in:options:range:)` method and passing in the appropriate parameters:
+To use regular expressions in Swift, we first need to import the `Foundation` framework. Then, we can create a `NSRegularExpression` object with a pattern and options. Let's say we want to check if a string contains three consecutive digits. We can do this with the following code:
 
 ```Swift
 import Foundation
 
-let string = "I have 5 apples, 2 oranges, and 3 bananas."
-let pattern = #"\d+"# // this represents any digit
-let regex = try! NSRegularExpression(pattern: pattern)
-let matches = regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
+let pattern = "[0-9]{3}" // pattern for 3 consecutive digits
+let string = "abc321def"
 
-for match in matches {
-    print(String(string[Range(match.range, in: string)!]))
+do {
+    let regex = try NSRegularExpression(pattern: pattern, options: [])
+    let range = NSRange(location: 0, length: string.utf16.count)
+    let matches = regex.matches(in: string, range: range)
+    print(matches.count) // output: 1 match found
+} catch {
+    print("Invalid pattern: \(error)")
 }
-
-// Output:
-// 5
-// 2
-// 3
 ```
 
-In the above example, we used the `matches(in:options:range:)` method to find all occurrences of the regular expression pattern in the given string. We then loop through the matches and print the extracted numbers. The `NSRange` and `Range` classes are used to specify the range within the string where the regular expression should be applied.
+This code creates a regular expression that matches three consecutive digits and uses it to search for matches within the string "abc321def". In this case, we get an output of 1 match found.
 
-You can also use regular expressions for string replacement. Let's update our previous example to replace all numbers with the word "number":
+We can also use regular expressions to replace parts of a string. Let's say we want to replace all occurrences of "swift" with "Swift Programming". We can do this with the following code:
 
 ```Swift
-for match in matches {
-    let range = Range(match.range, in: string)!
-    string.replaceSubrange(range, with: "number")
+let pattern = "swift"
+let string = "I love swift programming, it's so fun!"
+
+do {
+    let regex = try NSRegularExpression(pattern: pattern, options: [])
+    let range = NSRange(location: 0, length: string.utf16.count)
+    let newString = regex.stringByReplacingMatches(in: string, range: range, withTemplate: "Swift Programming")
+    print(newString) // output: "I love Swift Programming programming, it's so fun!"
+} catch {
+    print("Invalid pattern: \(error)")
 }
-
-print(string)
-
-// Output:
-// I have number apples, number oranges, and number bananas.
 ```
 
-## Deep Dive
+These are just a few simple examples, but regular expressions can be used for much more complex tasks as well.
 
-Regular expressions can be complex and have their own syntax, but the basics are not difficult to grasp. The `#"` and `"#` delimiters are used to mark the start and end of a regular expression pattern. Inside these delimiters, we can use special characters and sequences to describe the desired search pattern. For instance, `d` is a special character that represents any digit. Other commonly used special characters include `w` (any word character), `s` (any whitespace character), and `.` (any character).
+### Deep Dive into Regular Expressions in Swift
 
-In addition to special characters, we can use quantifiers to specify the number of repetitions of a pattern. For example, `*` means zero or more, `+` means one or more, and `?` means zero or one. We can also use parentheses to group patterns and use the `|` symbol to indicate alternatives.
+Regular expressions in Swift follow the same rules as regular expressions in other programming languages. Some common metacharacters and their meanings are:
 
-Regular expressions can be used for more complex tasks such as email validation, URL parsing, and data extraction. With practice, developers can become fluent in using this powerful tool and greatly enhance their coding skills.
+- `^` - matches the beginning of a string
+- `$` - matches the end of a string
+- `.` - matches any single character
+- `*` - matches zero or more occurrences of the previous character
+- `?` - matches zero or one occurrence of the previous character
+- `+` - matches one or more occurrences of the previous character
+- `[ ]` - matches any character within the brackets
+- `[^ ]` - matches any character not within the brackets
+- `()` - groups characters together
 
-## See Also
+It's also important to note that regular expressions are case-sensitive by default, but this can be changed with options like `NSRegularExpression.Options.caseInsensitive`.
 
-Here are some helpful resources for learning more about regular expressions in Swift:
+See Also
 
-- [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Regex in Swift: Complete Tutorial with Examples](https://www.appcoda.com/swift-regular-expressions/)
-- [Regular Expressions Cheat Sheet](https://regexr.com)
-
-Now that you have an understanding of the basics, it's time to start incorporating regular expressions into your Swift projects. Happy coding!
+- [NSRegularExpression Class Reference](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [How to Use Regular Expressions in Swift](https://www.raywenderlich.com/5765-how-to-use-regular-expressions-in-swift)
+- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

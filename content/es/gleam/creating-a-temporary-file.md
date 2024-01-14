@@ -1,38 +1,33 @@
 ---
 title:    "Gleam: Creando un archivo temporal"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal en Gleam?
+#¿Por qué crear un archivo temporal en Gleam?
 
-A veces, al escribir código en Gleam, es necesario crear un archivo temporal para almacenar información temporalmente. Ya sea para realizar una operación compleja o para manejar datos que no se guardarán permanentemente, crear un archivo temporal es una práctica común en la programación. A continuación, te mostraremos cómo crear un archivo temporal en Gleam.
+Crear un archivo temporal es una práctica común en la programación, especialmente cuando se trabaja con datos o procesos que requieren un espacio de almacenamiento temporal. En Gleam, esto se puede lograr fácilmente con la función ```Gleam.file.temp()```, que crea un archivo temporal y devuelve su ruta.
 
-## Cómo crear un archivo temporal
+## Cómo crear un archivo temporal en Gleam
 
-Utilizando la librería estándar de Gleam, `gleam/os`, podemos utilizar la función `io::file::tempdir()` para crear un directorio temporal en el sistema de archivos. Luego, podemos utilizar `TempDir::create()` para crear un archivo dentro del directorio temporal. Veamos un ejemplo:
+Para crear un archivo temporal en Gleam, simplemente utilizamos la función mencionada anteriormente y le pasamos como argumento el nombre que queremos darle al archivo. Por ejemplo:
 
 ```Gleam
-import gleam/os
-import gleam/tempdir
+import Gleam.File
 
-fn create_temp_file() {
-  let temp_dir = io::file::tempdir("my-temp-dir") // Creamos un directorio temporal
-  let temp_file = TempDir::create(temp_dir, "my-file.txt") // Creamos un archivo dentro del directorio temporal
-  temp_file
-}
-
-create_temp_file() // Se devuelve una ruta al archivo creado
+file_path = Gleam.File.temp("datos.temp")
 ```
 
-Este código creará un directorio temporal llamado "my-temp-dir" y un archivo dentro de él llamado "my-file.txt". Podemos utilizar la ruta devuelta por la función `create_temp_file()` para escribir y leer datos en este archivo como lo hacemos con cualquier otro archivo.
+Este código creará un archivo temporal llamado "datos.temp" y guardará su ruta en la variable ```file_path```.
 
 ## Profundizando en la creación de archivos temporales
 
-Cuando creamos un archivo temporal en Gleam, también podemos especificar el prefijo y sufijo del nombre del archivo utilizando la función `TempDir::create/3`. Además, podemos especificar que el archivo debe ser eliminado al finalizar el proceso utilizando la función `TempDir::create_cleanup/3`. Asimismo, si necesitamos un directorio temporal para almacenar varios archivos, podemos usar la función `io::file::tempdir_cleanup/2` para crear un directorio temporal que será eliminado junto con todos los archivos en él al finalizar el proceso.
+Cuando se crea un archivo temporal en Gleam, se puede especificar opcionalmente la ruta donde se desea que se guarde el archivo. Si no se proporciona una ruta, el archivo se creará en el directorio de trabajo actual.
 
-## Ver también
+Además, es importante tener en cuenta que los archivos temporales creados con la función ```Gleam.File.temp()``` se eliminarán automáticamente cuando el programa termine de ejecutarse. Esto es útil para evitar la acumulación de archivos temporales innecesarios y para mantener un buen uso de los recursos.
 
-- Documentación de la función `io::file::tempdir` en la documentación oficial de Gleam: https://gleam.run/documentation/stdlib/io#file-tempdir
-- Ejemplos de uso de archivos temporales en Gleam: https://github.com/gleam-lang/stdlib/blob/master/io.coffee#L328-L353
+# Ver también
+- Documentación oficial sobre la función ```Gleam.File.temp()``` (https://gleam.run/modules/gleam/file.html#temp)
+- Ejemplos prácticos de uso de archivos temporales en Gleam (https://gleam.run/examples.html)

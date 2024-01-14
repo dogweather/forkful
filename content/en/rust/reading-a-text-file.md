@@ -1,88 +1,58 @@
 ---
 title:    "Rust recipe: Reading a text file"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Reading and manipulating text files is a common task in many programming languages, including Rust. Whether it's for data processing, file management, or parsing information from a website, knowing how to handle text files is a valuable skill for any Rust programmer.
+
+Are you looking to learn a new programming language that combines the power and performance of languages like C and C++ with the safety and ease of use of modern languages? If so, then Rust is the perfect choice for you! In this blog post, we'll be discussing how to read a text file in Rust.
 
 ## How To
-To read a text file in Rust, we first need to open the file and store it in a `File` object. We can do this using the `std::fs::File` module and the `File::open()` method. We also need to specify the file path and open mode, which can be `ReadOnly` or `ReadWrite` depending on our needs.
 
-```
-Rust
-let file = match File::open("sample.txt", OpenOptions::new().read(true)) {
-    Ok(f) => f,
-    Err(e) => panic!("Error: {}", e),
-};
+Reading a text file in Rust is quite simple. We'll first need to import the necessary libraries using the `use` keyword. Since we'll be dealing with files, we'll need to use the `std::fs` library.
+
+```Rust
+use std::fs::File;
+use std::io::prelude::*;
 ```
 
-Once we have opened the file, we can use the `std::io::BufReader` module to read its contents into a buffer. This allows for more efficient reading, especially for large files. We also need to specify the buffer size, which in this case is set to 1024 bytes.
+Next, we'll create a mutable variable to store our file in using the `File::open()` function. This function takes in the name of the file as a parameter and returns a `Result` enum with either a file handle or an error.
 
-```
-Rust
-let mut reader = BufReader::with_capacity(1024, file);
-let mut buffer = String::new();
+```Rust
+let mut file = File::open("example.txt").expect("Failed to open file.");
 ```
 
-We can then use the `std::io::Read` trait to read from the buffer and store the contents in a string variable. The `read_to_string()` method reads the entire buffer until the end of the file is reached.
+Now, we can use the `read_to_string()` method on our file variable to read the contents of the file into a string.
 
-```
-Rust
-reader.read_to_string(&mut buffer).unwrap();
-```
-
-Finally, we can print the contents of the file to the console using the `println!()` macro.
-
-```
-Rust
-println!("File contents:\n{}", buffer);
+```Rust
+let mut file_contents = String::new();
+file.read_to_string(&mut file_contents).expect("Failed to read file.");
 ```
 
-Running this code will output the contents of the file, making it easy to see if our file has been read correctly.
+We can then print out the contents of the file to verify that it was read successfully.
+
+```Rust
+println!("File contents:\n{}", file_contents);
+```
+
+Running this code will output the contents of the text file, giving us a glimpse into the world of text file reading in Rust.
 
 ## Deep Dive
-Now, let's dive a bit deeper into reading text files in Rust. In the above example, we read the entire file into memory before printing it to the console. This approach may not be suitable for large files, as it can cause our program to consume a lot of memory.
 
-To avoid this issue, we can use the `lines()` method from the `std::io::BufRead` trait to read the file line by line. This way, we can process each line individually without storing the entire contents of the file in memory.
+Now that we've seen how to read a text file in Rust, let's take a deeper look at what's actually happening behind the scenes. First, we use the `File::open()` function to attempt to open the file. This function returns a `Result` enum, which helps us handle any potential errors that may occur while opening the file.
 
-```
-Rust
-for line in reader.lines() {
-    println!("{}", line.unwrap());
-}
-```
-
-We can also use the `read_line()` method to read a file line by line and store each line in a vector. This allows for more advanced manipulation of the file's contents.
-
-```
-Rust
-let mut lines = Vec::new();
-for line in reader.lines() {
-    lines.push(line.unwrap());
-}
-```
-
-Additionally, Rust provides error handling functionalities to deal with potential issues while reading a file. We can use the `std::io::Error` module to handle errors that may occur during file operations.
-
-```
-Rust
-use std::io::Error;
-match reader.read_to_string(&mut buffer) {
-    Ok(_) => println!("File read successfully"),
-    Err(e) => match e.kind() {
-        ErrorKind::PermissionDenied => println!("You do not have the necessary permissions"),
-        ErrorKind::NotFound => println!("File not found"),
-        _ => println!("Error: {:?}", e)
-    }
-}
-```
-
-Remember to always check for errors when reading files to prevent unexpected behavior in our programs.
+Next, we use the `read_to_string()` method to read the contents of the file into a mutable string. This method takes in a mutable reference to our `file_contents` variable and reads the contents of the file into it. We use a mutable reference because the `read_to_string()` method needs to modify the string object in order to add the file contents to it.
 
 ## See Also
-- The Rust Standard Library documentation on file operations: https://doc.rust-lang.org/std/fs/index.html
-- Useful tips and best practices for handling files in Rust: https://doc.rust-lang.org/rust-by-example/std_misc/file.html
-- A comprehensive tutorial on reading and writing files in Rust: https://www.tutorialspoint.com/rust/rust_file_io.htm
+
+Now that you know how to read a text file in Rust, you can continue to explore the Rust documentation and learn more about the language. Check out the following links for more information and tutorials:
+
+- [The Rust Programming Language](https://doc.rust-lang.org/book/index.html)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html)
+- [Rust Crash Course](https://learnxinyminutes.com/docs/rust/)
+- [Official Rust Website](https://www.rust-lang.org/)
+
+Happy coding in Rust!

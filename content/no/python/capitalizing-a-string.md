@@ -1,37 +1,31 @@
 ---
-title:    "Python: Å FORVELTE EN STRENG"
+title:    "Python: Store bokstaver i en streng"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke store bokstaver i en streng?
+## Hvorfor
 
-Å gjøre en streng til store bokstaver kan være nyttig for å gjøre den mer lesbar eller for å matche eksisterende data. For eksempel kan det være nyttig å gjøre en brukers input til store bokstaver for å unngå problemer med sammenligning senere.
+Når man programmerer, er det ofte nødvendig å manipulere og behandle tekststrenger på ulike måter. En vanlig oppgave er å endre bokstavene i en tekststreng slik at de blir enten store eller små. Dette kan være særlig nyttig hvis man for eksempel ønsker å formatere tekst eller utføre en søkefunksjon.
 
-## Slik gjør du det i Python
+## Hvordan
+
+For å gjøre dette i Python, kan du bruke innebygde funksjoner som 'upper()' og 'lower()'. Men hvis du vil bare vil endre den første bokstaven i hver ord i en tekststreng, kan du bruke 'capitalize()' funksjonen. Se eksempelet nedenfor:
 
 ```Python
-# Definerer en variabel med en liten streng
-streng = "dette er en liten streng"
-
-# Gjør strengen til store bokstaver og lagrer den som en ny variabel
-streng_med_store_bokstaver = streng.upper()
-
-# Skriver ut resultatet
-print(streng_med_store_bokstaver)
-
-# Output: DETTE ER EN LITEN STRENG
+my_string = "dette er en tekststreng"
+print(my_string.capitalize())
 ```
 
-## Dykk dypere ned i store bokstaver
+Dette vil resultere i outputen "Dette er en tekststreng". Som du kan se, er bare den første bokstaven i hvert ord endret til store bokstaver.
 
-Når man bruker ```upper()``` metoden i Python, vil den kun gjøre de små bokstavene i den originale strengen om til store. Andre tegn som tall eller spesialtegn forblir uendret. Du kan også bruke ```capitalize()``` for å gjøre første bokstav i strengen til stor bokstav og resten til små bokstaver.
+## Dypdykk
 
-Det finnes også andre måter å gjøre en streng til store bokstaver på, som å bruke ```str.title()``` for å gjøre hver første bokstav i hvert ord til stor bokstav. Det er viktig å merke seg at disse metodene ikke endrer den originale strengen, men heller returnerer en kopi med de ønskede endringene.
+Det er viktig å merke seg at 'capitalize()' funksjonen kun endrer den første bokstaven i en tekststreng og ingen andre bokstaver. Derfor kan det være lurt å kombinere denne funksjonen med andre for å oppnå ønsket resultat. For eksempel kan du bruke 'replace()' funksjonen til å erstatte en bestemt bokstav eller ord i tekstrengen før du bruker 'capitalize()' for å gjøre den første bokstaven stor.
 
 ## Se også
 
-- [Python dokumentasjon for strengmetoder](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Enkel veiledning til strings i Python](https://realpython.com/python-strings/)
-- [En video om ulike strengmanipulasjoner i Python](https://www.youtube.com/watch?v=k9TUPpGqYTo)
+- [Dokumentasjon for 'capitalize()' funksjonen](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Mer informasjon om strenger i Python](https://realpython.com/python-strings/)

@@ -1,48 +1,44 @@
 ---
 title:    "TypeScript: 获取当前日期"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要获取当前日期
+## 为什么要获取当前日期？
 
-不管是在日常生活还是在编程中，获取当前日期都是一项常见的任务。在日常生活中，人们可能会想知道今天是星期几或者日期是几号，而在编程中，获取当前日期也是一项基础的操作。通过获取当前日期，我们可以实现一些与日期有关的功能，比如创建日历、计算日期差值等。接下来，我们将用 TypeScript 来讲解如何获取当前日期。
+在软件开发过程中，获取当前日期是一个十分常见的需求。它可以用于记录数据的时间戳、计算时间差、以及其他与日期相关的功能。同时，获取当前日期也可以帮助我们更好地掌握时间，规划工作安排。
 
-## 如何实现
+## 如何通过TypeScript获取当前日期？
 
-要获取当前日期，我们可以使用 TypeScript 内置的 `Date` 对象。`Date` 对象可以创建一个包含当前日期和时间的实例。我们可以通过创建一个新的 Date 对象来获取当前日期的相关信息，如下所示：
-
-```TypeScript
-const currentDate = new Date();
-console.log(currentDate);
-```
-
-上面的代码会输出一个包含当前日期和时间的 `Date` 对象。但是，如果我们只想获取日期部分，我们可以使用 `getDate()`、`getMonth()`、`getFullYear()` 和 `getDay()` 方法来分别获取日期的日、月、年和星期几。
+获取当前日期的方法在不同的编程语言中会有所不同，而在TypeScript中，我们可以通过内置的Date类来实现。下面是一个代码示例：
 
 ```TypeScript
+// 创建一个Date对象，获取当前时间
 const currentDate = new Date();
-const day = currentDate.getDate(); // 获取当天日期
-const month = currentDate.getMonth() + 1; // 月份从 0 开始，所以需要加 1
-const year = currentDate.getFullYear(); // 获取完整年份
-const weekDay = currentDate.getDay(); // 获取星期几，0代表星期日，1代表星期一，以此类推
 
-console.log(`今天是${month}月${day}日，星期${weekDay}，${year}年。`);
+// 获取年份
+const currentYear = currentDate.getFullYear();
+// 获取月份
+const currentMonth = currentDate.getMonth() + 1; // 注意月份是从0开始计数，所以需要加1
+// 获取日期
+const currentDay = currentDate.getDate();
+
+// 将日期输出为字符串
+console.log(`今天是${currentYear}年${currentMonth}月${currentDay}日。`);
 ```
 
-以上代码会输出类似于 `今天是10月29日，星期四，2020年。` 的结果。
+运行以上代码，你将会得到类似于`今天是2021年8月17日。`的输出结果。
 
-## 深入了解
+## 深入了解：获取当前日期的更多方法
 
-除了获取当前日期外，`Date` 对象还可以实现一些其他的日期操作，如设置日期、计算日期差值等。我们可以通过 `setDate()`、`setMonth()`、`setFullYear()` 等方法来设置日期，通过 `getTime()` 方法来获取距离 1970 年 1 月 1 日之间的毫秒数，从而可以方便地计算日期差值。有关 `Date` 对象的更多信息，可以查看官方文档进行深入了解。
+除了使用内置的Date类之外，我们还可以使用第三方库momentjs来更加灵活地获取当前日期。同时，我们也可以通过各种方法来格式化日期的输出，例如增加时区、调整日期格式等等。值得一提的是，在Node.js环境下，我们可以直接使用`new Date()`来获取当前日期，无需额外的设置。
 
-## 参考链接
+## 看看这些链接！
 
-- [TypeScript 官方文档- Date](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [JavaScript中的Date对象详解](https://juejin.im/post/5a2012c6f265da431a42b468)
-- [深入了解 JavaScript 的Date对象](https://juejin.im/post/5ba93314f265da0ab7191103)
+如果你想了解更多关于获取当前日期的方法，可以参考以下链接：
 
-## 参见
-
-- [TypeScript 官方文档](https://www.typescriptlang.org/docs/)
-- [TypeScript 入门教程](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [TypeScript手册中的Date类介绍](https://www.typescriptlang.org/docs/handbook/2/classes.html#the-date-class)
+- [Moment.js官方文档](https://momentjs.com/docs/)
+- [在Node.js中获取当前日期的方法](https://stackoverflow.com/questions/17144252/getting-the-current-date-time-in-node-js/17143678)

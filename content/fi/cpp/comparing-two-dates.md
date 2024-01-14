@@ -1,69 +1,59 @@
 ---
-title:    "C++: Vertaillaan kahta päivämäärää"
+title:    "C++: Kahden päivämäärän vertailu"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi vertailla kahta päivämäärää?
 
-Vertailemalla kahta päivämäärää, voit tarkistaa niiden välisen eron tai selvittää, kumpi päivämäärä on aikaisempi toiseen nähden. Tämä voi olla erityisen hyödyllistä esimerkiksi tapauksissa, joissa haluat laskea kuinka monta päivää on kulunut tai laskea laskut päivämäärän perusteella.
+Päivämäärien vertailu on tärkeä osa ohjelmointia, sillä se mahdollistaa tiettyjen toimintojen suorittamisen tiettyinä päivinä tai aikaväleinä. Esimerkiksi verkkosivuilla saatetaan näyttää erilaisia tarjouksia tiettynä päivämääränä tai sovelluksessa saatetaan lähettää muistutus tärkeästä tapahtumasta tiettynä päivänä. Siksi on tärkeää tietää, miten kahta päivämäärää voidaan vertailla ja tarkistaa niiden välisiä eroja.
 
-## Kuinka vertailla päivämääriä C++:ssa?
+## Miten vertailla kahta päivämäärää?
 
-Vertaillaaksesi kahta päivämäärää C++:ssa, sinun täytyy käyttää aikakirjastoa, joka tarjoaa tarvittavia toimintoja päivämäärien käsittelyyn. Esimerkiksi `chrono`-kirjasto tarjoaa `time_point`-tyypin, jota voidaan käyttää päivämäärien vertailuun.
+Päivämäärien vertailemiseen on monia erilaisia tapoja, mutta yksi tehokkaimmista tavoista on käyttää valmiita aikaluokkia, kuten C++:n *tm* rakennetta tai *chrono* kirjastoa. Näillä työkaluilla on valmiita funktioita, jotka mahdollistavat päivämäärien vertailun helposti ja tarkasti.
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <ctime>
+
 using namespace std;
 
 int main() {
-    // Luo kaksi päivämäärää
-    chrono::system_clock::time_point date1 = chrono::system_clock::now();
-    chrono::system_clock::time_point date2 = date1 - chrono::hours(24);
+    // Alustetaan kaksi päivämäärää
+    tm date1 = { 0, 0, 0, 1, 3, 2020 }; // 1. maaliskuuta 2020
+    tm date2 = { 0, 0, 0, 1, 6, 2020 }; // 1. kesäkuuta 2020
 
-    // Vertaa päivämääriä
-    if (date1 > date2) {
-        cout << "Päivämäärä 1 on myöhempi kuin päivämäärä 2" << endl;
-    } else if(date1 < date2) {
-        cout << "Päivämäärä 1 on aikaisempi kuin päivämäärä 2" << endl;
+    // Muunnetaan päivämäärät sekunneiksi
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+
+    // Vertaillaan päivämääriä ja tulostetaan ero
+    if (time1 < time2) {
+        cout << "Ensimmäisen päivämäärän ja toisen päivämäärän ero on " 
+            << difftime(time2, time1) / (24 * 60 * 60) << " päivää." << endl;
     } else {
-        cout << "Päivämäärät ovat samat" << endl;
+        cout << "Toisen päivämäärän ja ensimmäisen päivämäärän ero on " 
+            << difftime(time1, time2) / (24 * 60 * 60) << " päivää." << endl;
     }
 
     return 0;
 }
 ```
 
-**Tulostus:**
+*Esimerkkitulostus:*
 
-*Päivämäärä 1 on myöhempi kuin päivämäärä 2*
+```
+Ensimmäisen päivämäärän ja toisen päivämäärän ero on 92 päivää.
+```
 
 ## Syvempi sukellus päivämäärien vertailuun
 
-Päivämäärien vertailu perustuu niiden kokonaislukuesityksiin (engl. integer representation). Tämä tarkoittaa, että jokainen päivämäärä ilmaistaan numeroina, jotka lasketaan tietystä päivästä lähtien. C++:n `chrono`-kirjastossa tämä päivä on **1. tammikuuta 1970**, jota kutsutaan myös vuosisadan alkuajaksi (engl. epoch). Tämän päivän numero on **0** ja sen jälkeen jokaiselle päivälle lasketaan oma numero.
-
-Esimerkiksi, jos haluat vertailla 1. lokakuuta 2021 ja 1. lokakuuta 2020 päivämääriä, voit laskea niiden päivien numerot vuosisadan alkuajasta lähtien:
-
-`1. lokakuuta 2021` = (365 * 51 + 9) = **18728**
-
-`1. lokakuuta 2020` = (365 * 50 + 9) = **18393**
-
-Koska nykyiset päivämäärät tallennetaan 64-bittisiksi luvuiksi C++:ssa, voimme myös vahvistaa tämän laskennan suorittamalla seuraavan komennon:
-
-```C++
-chrono::system_clock::now().time_since_epoch().count();
-```
-
-**Tulostus:**
-
-*1633050229942346605*
-
-Kuten näemme, tämä luku vastaa laskettua päivämäärän numeroa.
+Päivämäärien vertailussa tärkeintä on ymmärtää, mitä eri aikaluokat, kuten *tm* rakenne ja *chrono* kirjasto, tekevät taustalla. Nämä työkalut mahdollistavat päivämäärien käsittelyn eri muodoissa ja tarjoavat valmiita funktioita helpottamaan vertailua. On myös tärkeää huomata, että päivämäärien vertailuun vaikuttavat myös alueelliset asetukset, kuten aikavyöhykkeet, joten oikeiden tulosten saamiseksi on tärkeää olla tietoinen näistä asetuksista ja huolehtia niiden oikeasta määrittämisestä.
 
 ## Katso myös
 
-- https://en.cppreference.com/w/cpp/chrono
-- https://www.geeksforgeeks.org/chrono-in-c/
-- https://www.learncpp.com/cpp-tutorial/measure-time-in-c/
+- [C++ *tm* rakenne](https://en.cppreference.com/w/cpp/chrono/c/tm)
+- [C++ *chrono* kirjasto](https://en.cppreference.com/w/cpp/chrono)
+- [Päivämäärien vertailu eri aikavyöhykkeillä](https://www.learncpp.com/cpp-tutorial/using-time-and-clocks-in-c/)

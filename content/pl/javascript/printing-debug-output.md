@@ -1,56 +1,69 @@
 ---
-title:    "Javascript: Wydrukowanie wyników debugowania"
+title:    "Javascript: Drumienie wyników debugowania"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często, podczas pisania kodu w Javascripcie, możemy napotkać różne błędy i problemy. Jednym z najprostszych sposobów ich zdiagnozowania jest użycie wyjścia debugowania. Wyświetlanie informacji o stanie zmiennych, wartości parametrów czy wywołanych funkcji pozwala nam zrozumieć, jak nasz kod działa i gdzie ewentualnie popełniamy błędy. Dlatego warto znać podstawy drukowania wyjścia debugowania, aby szybko i skutecznie rozwiązywać problemy z naszym kodem.
+Podczas programowania często spotykamy się z błędami i problemami, które utrudniają nam działanie naszych programów. Czasami jednak trudno jest zlokalizować przyczynę tych problemów. Właśnie dlatego warto zacząć stosować w swoim kodzie wypisywanie informacji diagnostycznych, zwanych także "debug output". Pozwala to nam na śledzenie przebiegu programu, analizowanie zawartości zmiennych i łatwiejsze znalezienie źródła problemów. W tym artykule dowiesz się, dlaczego warto stosować wypisywanie debug output oraz jak to zrobić w języku Javascript, na przykładach kodu.
 
 ## Jak to zrobić
 
-Aby wyświetlić debug output w Javascripcie, możemy skorzystać z kilku sposobów. Pierwszym z nich jest użycie funkcji `console.log()`, która wyświetli informacje w konsoli przeglądarki. Przykładowe użycie tej funkcji może wyglądać następująco:
+Aby wypisywać debug output w języku Javascript, wystarczy skorzystać z metody ```console.log()```, która pozwala nam wypisać podaną jako argument zawartość. Możemy w ten sposób wypisać tekst, wartości zmiennych, a nawet obiekty i tablice. Przykład:
 
 ```Javascript
-let name = "John";
-console.log("Hello " + name);
+const name = "Adam";
+const age = 24;
+
+console.log("Witaj, nazywam się " + name + " i mam " + age + " lata.");
+
+// Wynik:
+// Witaj, nazywam się Adam i mam 24 lata.
 ```
 
-W konsoli zostanie wyświetlona informacja "Hello John", co pozwala nam sprawdzić wartość zmiennej `name` i upewnić się, że jest poprawna.
-
-Innym sposobem jest użycie funkcji `alert()`, która wyświetli komunikat w oknie przeglądarki. Przykładowe użycie:
+Możemy także wypisać więcej niż jeden argument, oddzielać je przecinkami lub używać wyrażeń szablonowych (template literals). Przykład z użyciem wyrażeń szablonowych:
 
 ```Javascript
-let age = 25;
-alert("I am " + age + " years old.");
+const fruits = ["jabłko", "gruszka", "ananas"];
+const count = 3;
+
+console.log(`Liczba owoców: ${count}. Owocami są: ${fruits.join(", ")}.`);
+
+// Wynik:
+// Liczba owoców: 3. Owocami są: jabłko, gruszka, ananas.
 ```
 
-W oknie przeglądarki zostanie wyświetlony komunikat "I am 25 years old.", co również pozwala nam sprawdzić poprawność wartości zmiennej `age`.
+Możemy także sprawdzić zawartość obiektów lub tablic, wyświetlając całą ich strukturę. Przykład:
+
+```Javascript
+const person = {
+  name: "Kasia",
+  age: 33,
+  hobbies: ["programowanie", "joga", "podróże"]
+};
+
+console.log(person);
+
+// Wynik:
+// {
+//   name: "Kasia",
+//   age: 33,
+//   hobbies: ["programowanie", "joga", "podróże"]
+// }
+```
+
+Dzięki wypisywaniu debug output w wybranych miejscach w naszym kodzie, możemy łatwiej śledzić jego przebieg, analizować wartości zmiennych w poszczególnych punktach i łatwiej znajdować błędy.
 
 ## Deep Dive
 
-Drukowanie wyjścia debugowania może być również bardzo pomocne przy analizowaniu złożonych funkcji i algorytmów. Możemy wykorzystać funkcję `console.clear()` do wyczyszczenia konsoli i wypisywania dodatkowych informacji po każdym kroku w naszej funkcji. Przykładowy kod wyglądałby tak:
+Wypisywanie debug output jest szczególnie przydatne podczas pisania bardziej skomplikowanych aplikacji lub rozwiązywania problemów w istniejącym kodzie. Dzięki temu możemy szybciej zlokalizować błędy i znacznie skrócić czas debugowania. Możemy także wypisywać informacje diagnostyczne w zależności od tego, w jakich warunkach wykonuje się nasz kod, co pozwala nam na lepsze zrozumienie jego działania.
 
-```Javascript
-function calculateSum(numbers) {
-  let sum = 0;
-  console.clear();
-  console.log("Starting calculation...");
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-    console.log("Current sum: " + sum);
-  }
-  console.log("Total sum: " + sum);
-  return sum;
-}
-```
+Pamiętaj jednak, żeby nie zostawiać wypisywania debug output w swoim kodzie na stałe. Służy ono jedynie jako narzędzie do pomocy w debugowaniu, a nie powinno być częścią finalnego produktu. Warto więc ustawić sobie flagę (np. o wartości "true" lub "false"), dzięki której w łatwy sposób możemy włączać i wyłączać wypisywanie debug output w naszym kodzie.
 
-Dzięki użyciu funkcji `console.clear()` i wyświetlaniu aktualnej sumy po każdym kroku pętli, możemy dokładnie prześledzić działanie naszej funkcji i znaleźć ewentualne błędy.
+## Zobacz też
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o drukowaniu wyjścia debugowania w Javascripcie, polecamy przeczytać artykuł "Debugging JavaScript" na stronie [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger). Możesz także zapoznać się z narzędziami do debugowania dostępnymi w różnych przeglądarkach, takimi jak [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) czy [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools).
-
-Mamy nadzieję, że ten artykuł pomógł Ci zrozumieć, dlaczego warto drukować wyjście debugowania i jak to zrobić w Javascripcie. Dzięki temu narzędziu będziesz mógł szybko i skutecznie rozwiązywać błędy w swoim kodzie. Powodzenia!
+- [Dlaczego warto stosować debug output (ang. Why You Should Use Debug Outputs)](https://codeburst.io/why-you-should-use-debug-outputs-ab85862a1b5e)
+- [Funkcja console.log() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/API

@@ -1,60 +1,45 @@
 ---
 title:    "Ruby: Buscando e substituindo texto"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Se você é um programador em Ruby, provavelmente já encontrou a necessidade de procurar e substituir trechos de texto em seus códigos. Talvez para corrigir um erro ortográfico, ou até mesmo para refatorar uma longa lista de variáveis com nomes sem sentido. Independente do motivo, procurar e substituir é uma tarefa bastante comum na programação e pode economizar muito tempo e esforço.
+A busca e substituição de texto é uma habilidade fundamental para qualquer programador Ruby. Ela permite que você encontre e altere rapidamente partes específicas de um texto, tornando seu código mais eficiente e fácil de gerenciar. Se você quer ser um programador eficiente em Ruby, dominar a busca e substituição de texto é essencial.
 
 ## Como Fazer
 
-A busca e substituição de texto no Ruby é simples e pode ser realizada usando o método `gsub` (substituir globalmente) de uma string. Veja um exemplo abaixo mostrando como substituir a palavra "vermelho" por "azul" em uma lista de cores:
+Para realizar a busca e substituição de texto em Ruby, você precisa usar a função `gsub()`. Esta função permite que você especifique o texto a ser encontrado e substituído, bem como o texto de substituição. Veja um exemplo simples:
 
 ```Ruby
-cores = "vermelho, verde, amarelo, vermelho, laranja"
-puts cores.gsub("vermelho", "azul")
+text = "Este é um texto de exemplo."
+puts text.gsub("exemplo", "exercício")
 ```
+Saída: Este é um texto de exercício.
 
-O resultado será: `azul, verde, amarelo, azul, laranja`
-
-Você também pode usar expressões regulares em conjunto com o método `gsub` para fazer substituições mais específicas. Por exemplo, suponha que você tenha uma lista de nomes separados por vírgulas e deseja substituir apenas os nomes que começam com a letra "A" por "Ana". Veja como isso pode ser feito:
+Você também pode usar regex (expressões regulares) para tornar suas substituições de texto mais flexíveis. Por exemplo, se quiser substituir todas as letras maiúsculas por minúsculas em uma string, você pode usar o seguinte código:
 
 ```Ruby
-nomes = "Alice, Bruno, Carolina, Amanda, Renato"
-puts nomes.gsub(/^A/, "Ana")
+text = "Ruby é incrível."
+puts text.gsub(/[A-Z]/, &:downcase)
 ```
+Saída: ruby é incrível.
 
-O resultado será: `Ana, Bruno, Carolina, Ana, Renato`
-
-Note que usamos a expressão regular `^A` para encontrar apenas os nomes que começam com "A" e substituí-los por "Ana".
+Além disso, você pode usar a função `gsub!()` para substituir diretamente o texto na string original, em vez de criar uma nova string.
 
 ## Profundidade
 
-Agora que você já sabe como fazer busca e substituição em seus códigos Ruby, vamos mergulhar um pouco mais nesse assunto. O método `gsub` é uma abreviação para "global substitution", o que significa que ele substitui todas as ocorrências do padrão especificado em uma string. No entanto, se você quiser substituir apenas a primeira ocorrência, pode usar o método `sub` (substituir). Veja um exemplo abaixo:
+As expressões regulares (regex) são uma parte importante da busca e substituição de texto em Ruby. Elas permitem que você encontre padrões específicos em um texto e substitua-os dinamicamente. Por exemplo, se você quiser substituir todos os números em uma string por ponto e vírgula, você pode usar esta expressão regular: `\d+`, que corresponde a qualquer número de dígitos. Você também pode adicionar modificadores à expressão regular, como `i` para torná-la insensível a maiúsculas e minúsculas e `g` para que ela substitua todas as ocorrências em vez de apenas a primeira.
 
-```Ruby
-frase = "O gato sempre olha para o céu"
-puts frase.sub("para", "pela")
-```
+Outro recurso útil para busca e substituição de texto em Ruby é a função `scan()`, que permite que você encontre todas as ocorrências de um determinado padrão em uma string e as armazene em uma matriz para manipulação posterior.
 
-O resultado será: `O gato sempre olha pela céu`
+Certifique-se de dedicar tempo para aprender mais sobre as expressões regulares e suas capacidades. Elas podem ser extremamente poderosas em suas habilidades de busca e substituição de texto.
 
-Outra coisa importante a saber é que você pode usar variáveis ou blocos em seus substitutos. Isso permite que você faça substituições mais dinâmicas e até mesmo use lógica em suas substituições. Por exemplo:
+## Veja também
 
-```Ruby
-cachorro = "labrador"
-puts cachorro.gsub("labrador", "golden retriever") { |c| "O cachorro é um #{c}" }
-```
-
-O resultado será: `O cachorro é um golden retriever`
-
-Aqui, usamos o bloco para adicionar a frase "O cachorro é um" antes da substituição, deixando a frase mais completa.
-
-## Veja Também
-
-- [Documentação do método gsub no RubyDocs](https://ruby-doc.org/core-2.6/String.html#method-i-gsub)
-- [Guia de expressões regulares no Ruby](https://www.regular-expressions.info/ruby.html)
-- [Canal do YouTube "The Net Ninja" com tutoriais sobre Ruby](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
+- [Documentação oficial do Ruby para a função `gsub()`] (https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Ruby: Expressões regulares para iniciantes] (https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Tutorial prático de expressões regulares em Ruby] (https://www.rubyguides.com/2015/06/ruby-regex/)

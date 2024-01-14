@@ -1,46 +1,38 @@
 ---
-title:    "Kotlin: Kaavan mukainen merkkien poistaminen"
+title:    "Kotlin: Kaavamaisen kuvion poistaminen merkeistä"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tietytä kaavaa?
+## Miksi
 
-Poistaminen merkkejä, jotka vastaavat tietyt kaavaa, voi olla hyödyllistä, kun käsitellään tekstiä, jossa on ylimääräisiä merkkejä tai halutaan poistaa tiettyä tietotyyppiä, kuten numeroita tai erikoismerkkejä.
+Kun työskentelet Kotlinin parissa, saatat joutua poistamaan merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi tulla vastaan esimerkiksi datan käsittelyssä tai tekstien muokkaamisessa. Tässä blogipostissa käymme läpi, miksi tällainen toimenpide voi olla tarpeellinen ja miten se tehdään Kotlinilla.
 
-## Miten tehdä: 
+## Miten
+
+Poistaaksesi merkkejä, jotka vastaavat määrättyä kaavaa, voit käyttää `replace()` metodia `Regex` luokassa. Tässä esimerkissä poistamme kaikki numero-merkit merkkijonosta:
 
 ```Kotlin
-// Alustetaan teksti muutettavaksi
-var teksti = "Tervetuloa tähän ohjelmointiblogiin! Täällä jaamme vinkkejä ja neuvoja erilaisista koodaukseen liittyvistä aiheista. 123#%&."
-println(teksti) // Tulostetaan alkuperäinen teksti
-
-// Poistetaan numerot
-teksti = teksti.replace(Regex("[0-9]"), "")
-println(teksti) // Tulostetaan uusi teksti ilman numeroita
-
-// Poistetaan erikoismerkit
-teksti = teksti.replace(Regex("[^A-Za-z ]"), "")
-println(teksti) // Tulostetaan uusi teksti ilman erikoismerkkejä
+val merkkijono = "Kotlin on paras ohjelmointikieli 2021!"
+val uusiMerkkijono = merkkijono.replace(Regex("\\d"), "")
+println(uusiMerkkijono) //Tulostaa: "Kotlin on paras ohjelmointikieli !"
 ```
 
-Tuloste:
+Kuten näemme, `replace()` metodi ottaa ensimmäisen parametrinä vastaan halutun kaavan `Regex` tyypin muodossa ja toisena parametrinä uuden merkki- tai merkkijonon, joka korvaa kaavan vastaavat merkit. Voit myös käyttää `replace()` metodia vain poistaaksesi merkkejä ilman korvaamista, kuten teimme edellisessä esimerkissä.
 
-```
-Tervetuloa tähän ohjelmointiblogiin! Täällä jaamme vinkkejä ja neuvoja erilaisista koodaukseen liittyvistä aiheista. 123#%&.
-Tervetuloa tähän ohjelmointiblogiin! Täällä jaamme vinkkejä ja neuvoja erilaisista koodaukseen liittyvistä aiheista. 
-Tervetuloa tähän ohjelmointiblogiin Täällä jaamme vinkkejä ja neuvoja erilaisista koodaukseen liittyvistä aiheista 
-```
+## Syväsukellus
 
-## Syvemmälle: Poistamisen mekanismi
+Voit käyttää `Regex` luokkaa poistaaksesi monenlaisia merkkejä riippuen kaavasta, jonka määrität. Voit myös käyttää `Regex` luokkaa suorittaaksesi erilaisia käsittelytoimenpiteitä, kuten merkkijonojen jakamista tai uusien merkkijonojen muodostamista.
 
-Kotlinissa `replace()`-funktio ottaa ensimmäisenä parametrinaan `Regex`-tyyppisen muuttujan, joka määrittää poistettavan kaavan. `Regex` voidaan luoda käyttämällä `Regex(pattern)` -konstruktoria, jossa "pattern" on kaava merkkijonona.
+Toinen hyödyllinen metodi `Regex` luokassa on `replaceFirst()` metodi, joka poistaa vain ensimmäisen kaavan vastaavan merkin. Tämä on kätevä, jos haluat säilyttää osan merkkijonosta, mutta poistaa vain tietyn merkin tai merkkiluokan.
 
-Kaavassa voidaan käyttää erilaisia merkintöjä, esimerkiksi `[A-Z]` vastaa kaikkia isoja kirjaimia ja `[^0-9]` vastaa kaikkia, paitsi numeroita. `^` merkki tarkoittaa "ei" tai "not" ja tällä tavalla siihen voidaan määrittää pois poistettavat merkinnät.
+Kun käytät `Regex` luokkaa, muista ottaa huomioon myös erikoismerkkien, kuten kauttalainojen ja kenoviivojen, käyttö. Voit lukea lisää `Regex` luokasta Kotlinin virallisesta dokumentaatiosta.
 
-## Katso myös:
+## Katso myös
 
-- [Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [String Kotlin Docs](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+Lue lisää `Regex` luokasta ja sen käytöstä Kotlinissa:
+- Kotlinin virallinen dokumentaatio: https://kotlinlang.org/docs/regex.html
+- Regex tyypin käyttö esimerkkien kanssa: https://www.baeldung.com/kotlin-regexp
+- Regex käytännön esimerkkejä: https://www.infoworld.com/article/3634503/regex-hints-and-tips-for-programmers.html

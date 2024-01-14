@@ -1,52 +1,52 @@
 ---
-title:    "Java: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:    "Java: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tiedät varmasti, kuinka paljon voit säästää aikaa, kun tiedät tarkalleen, milloin jotain tapahtuu. Automaattisesti laskemalla tulevan tai menneen päivän tärkeät siirtymät voit suunnitella ja rakentaa sovelluksesi välttämättömiä ominaisuuksia ja logiikkaa. Joten, jos rakastat ohjelmointia, tämä on oikea artikkeli sinulle. Tässä opimme, kuinka voit laskea päivämäärän tulevaisuudessa tai menneisyydessä Java-ohjelmoinnin avulla.
 
-## Kuinka
-```Java
-// Tämä on yksinkertainen Java-koodi, joka laskee päivämäärän tulevaisuudessa käyttäen Java Calendar -luokkaa
-import java.util.Calendar; 
+Tulevaisuuden tai menneen päivämäärän laskeminen voi olla tarpeellista esimerkiksi erilaisten tapahtumien ja juhlapäivien suunnittelussa tai tärkeiden muistopäivien selvittämisessä.
 
-// Luo uusi Calendar-instanssi
-Calendar tulevaPaiva = Calendar.getInstance(); 
+## Miten
 
-// Aseta tuleva päivämäärä
-tulevaPaiva.set(Calendar.YEAR, 2021);
-tulevaPaiva.set(Calendar.MONTH, Calendar.DECEMBER); // Huomaa, että Java-luokka käyttää kuukaudet indeksoituina, eli joulukuu on 11.
-tulevaPaiva.set(Calendar.DAY_OF_MONTH, 31);
-
-// Tulosta tuleva päivämäärä
-System.out.println("Tuleva päivämäärä on: " + tulevaPaiva.getTime()); // Tulostaa: Tuleva päivämäärä on: Fri Dec 31 00:00:00 EET 2021
-```
-
-Ja tässä on koodi, joka laskee päivämäärän menneisyydessä:
+Joskus on tarpeellista laskea tulevaisuuden tai menneen päivämäärän välillä kuluneiden päivien tai kuukausien määrä. Tätä varten Java-ohjelmointikielessä on valmiiksi sisäänrakennettu luokka nimeltä "Calendar". Alla olevassa esimerkissä luodaan kaksi eri päivämäärää ja lasketaan niiden välillä kuluneiden päivien määrä.
 
 ```Java
-// Luo uusi Calendar-instanssi
-Calendar menneinenPaiva = Calendar.getInstance(); 
+import java.util.Calendar;
 
-// Aseta menneinen päivämäärä
-menneinenPaiva.set(Calendar.YEAR, 1995);
-menneinenPaiva.set(Calendar.MONTH, Calendar.AUGUST); // Elokuu on 7.
-menneinenPaiva.set(Calendar.DAY_OF_MONTH, 17);
+public class DateCalculator {
 
-// Tulosta menneinen päivämäärä
-System.out.println("Menneinen päivämäärä oli: " + menneinenPaiva.getTime()); // Tulostaa: Menneinen päivämäärä oli: Thu Aug 17 00:00:00 EEST 1995
+  public static void main(String[] args) {
+
+    // Luodaan kaksi päivämäärää kalenteri-oliona
+    Calendar tulevaisuus = Calendar.getInstance();
+    tulevaisuus.set(2022, Calendar.JULY, 1); // 1.7.2022
+    Calendar menneisyys = Calendar.getInstance();
+    menneisyys.set(2021, Calendar.JULY, 1); // 1.7.2021
+
+    // Lasketaan välissä kuluneiden päivien määrä
+    long paivat = ((tulevaisuus.getTimeInMillis() - menneisyys.getTimeInMillis()) / (1000 * 60 * 60 * 24));
+
+    // Tulostetaan tulos
+    System.out.println("Välissä on kulunut " + paivat + " päivää.");
+  }
+}
 ```
 
-Kuten näet, Java Calendar -luokka tarjoaa kätevät metodit päivämäärän manipulointiin. Voit myös laskea tulevan tai menneen ajanjakson ottamalla huomioon nykyisen päivämäärän käyttämällä `add` -metodia.
+Tämän ohjelman tulostukseksi saadaan: "Välissä on kulunut 365 päivää." Huomaa, että ajankohtien välissä kuluneiden päivien laskeminen vaatii hieman matemaattista laskentaa ja aikayksiköiden muuntelua.
 
-## Syväsukellus
-Java-ohjelmoinnissa päivämäärän laskeminen on tärkeää useissa erilaisissa sovelluksissa, kuten kalenterisovelluksissa, laskutussovelluksissa ja varausjärjestelmissä. Java Calendar -luokka tarjoaa monipuoliset toiminnot päivämäärän manipulointiin, kuten tulevan tai menneen päivämäärän laskemisen, päivämäärän asettamisen ja päivämäärän lisäämisen tai vähentämisen tietyn ajanjakson verran.
+## Syvemmälle
 
-On myös tärkeää huomata, että Java 8 sisältää uuden `LocalDate` -luokan, joka tarjoaa modernimman tavan käsitellä päiviä, kuukausia ja vuosia. `LocalDate` -luokka toimii helpommin ja suorituskykyisemmin kuin `Calendar` -luokka, joten sitä suositellaan käytettäväksi uusissa sovelluksissa.
+Java-ohjelmoinnissa päivämäärien laskemiseen on muitakin vaihtoehtoja, kuten "Date" ja "LocalDate" -luokat. Näitä voi hyödyntää myös päivämäärien vertailussa ja erilaisten aikavyöhykkeiden huomioimisessa.
+
+Toinen hyödyllinen toiminto on päivämäärämuotoilu, joka mahdollistaa päivämäärän esittämisen halutussa muodossa. Esimerkiksi "SimpleDateFormat" -luokka tarjoaa erilaisia vaihtoehtoja päivämäärän ja ajan esittämiseen.
 
 ## Katso myös
-- [Java Calendar -luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java 8 LocalDate -luokan dokumentaatio](https://docs.oracle.com/javase/8
+
+- [Java Calendar-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Java Date-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java LocalDate-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java SimpleDateFormat-luokka](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

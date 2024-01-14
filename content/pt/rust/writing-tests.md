@@ -1,37 +1,42 @@
 ---
 title:    "Rust: Escrevendo testes"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante na programação Rust?
+## Por que escrever testes em Rust é importante
 
-Escrever testes é uma prática importante na programação em qualquer linguagem, mas é especialmente crucial no Rust. Com o Rust, você pode escrever testes que garantem que seu código seja seguro e livre de erros, ajudando a evitar problemas e falhas no futuro.
+Escrever testes é uma parte essencial do processo de desenvolvimento de software. Além de ajudar a identificar e corrigir bugs, os testes também garantem que o nosso código funcione corretamente em diferentes situações e cenários. Em Rust, os testes são especialmente importantes porque a linguagem possui um sistema de tipos fortes e enfatiza a segurança e a previsibilidade.
 
 ## Como escrever testes em Rust
 
-Escrever testes em Rust é uma tarefa bastante simples. Você pode usar a macro `assert!` para verificar se uma determinada condição é verdadeira. Por exemplo, se você quiser testar se a função `soma` retorna a soma correta de dois números, você pode escrever um teste dessa forma:
+Para escrever testes em Rust, utilizamos a macro `assert!` que verifica se uma expressão é verdadeira. Vamos supor que queremos testar uma função `soma` que recebe dois números e retorna a soma deles. Nosso teste ficaria assim:
 
 ```Rust
+fn soma(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[test]
-fn teste_soma() {
-    assert!(soma(2, 2) == 4);
+fn test_soma() {
+    assert!(soma(1, 2) == 3);
 }
 ```
 
-Este teste irá passar se a condição dentro da macro `assert!` for verdadeira, caso contrário, o teste falhará. É uma boa prática ter vários testes para cada função, verificando diferentes cenários e possíveis resultados.
+Ao rodar o teste com o comando `cargo test`, o resultado esperado será "ok", indicando que a expressão é verdadeira. Caso contrário, se houver um erro, o resultado será "fail" e uma mensagem de erro será exibida.
 
-Além disso, o Rust possui uma ferramenta integrada chamada `cargo` que facilita a execução e gerenciamento de testes. Basta executar o comando `cargo test` no diretório do seu projeto para executar todos os testes presentes no código.
+## Mergulho profundo em escrever testes em Rust
 
-## Aprofundando em escrever testes em Rust
+Na verdade, o exemplo anterior é bastante simples e talvez não reflita a complexidade dos testes em um projeto real. Em Rust, podemos escrever testes mais elaborados utilizando a macro `assert_eq!` que verifica se dois valores são iguais e também a macro `assert_ne!` que verifica se dois valores são diferentes.
 
-Há diversas outras técnicas e funcionalidades no Rust que podem ser usadas para escrever testes de forma mais eficiente e abrangente. Por exemplo, o Rust permite a criação e utilização de testes unitários e testes de integração, que podem ser executados separadamente.
+Além disso, em Rust é possível escrever testes modulares, organizando-os em módulos separados e importando-os no arquivo `main.rs`. Também podemos utilizar as annotations `#[ignore]` e `#[should_panic]` para ignorar ou forçar a ocorrência de um pânico durante o teste, respectivamente.
 
-Além disso, é possível utilizar a biblioteca `assert_eq!` para verificar se dois valores são iguais, ao invés de apenas verificar se uma condição é verdadeira. Isso é particularmente útil para testar funções que retornam valores complexos, como estruturas de dados.
+Existem muitas outras funcionalidades e ferramentas disponíveis para testes em Rust, então é importante continuar pesquisando e explorando essas possibilidades para garantir que estamos escrevendo testes eficientes e completos em nossos projetos.
 
 ## Veja também
 
-- Documentação oficial do Rust sobre testes: https://doc.rust-lang.org/book/ch11-00-testing.html
-- Artigo sobre testes em Rust: https://www.oreilly.com/library/view/rust-programming-by/9781788390637/ch07s02.html
-- Tutorial de testes em Rust: https://dev.to/darkasura114/unit-testing-in-rust-3a8a
+- Documentação oficial sobre testes em Rust: [https://doc.rust-lang.org/rust-by-example/testing.html#unit-tests](https://doc.rust-lang.org/rust-by-example/testing.html#unit-tests)
+- Tutorial sobre testes em Rust do site Rustaceans: [https://rustaceans.org/](https://rustaceans.org/)
+- Vídeo tutorial sobre testes em Rust do canal Fireship: [https://www.youtube.com/watch?v=bzA5aETuIAE](https://www.youtube.com/watch?v=bzA5aETuIAE)

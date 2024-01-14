@@ -1,42 +1,35 @@
 ---
-title:    "Clojure: 현재 날짜 가져오기"
+title:    "Clojure: 현재 날짜 받아오기"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-현재 날짜를 구하는 작업에 참여하는 이유는 무엇일까요? 매일 날짜를 알아야 할 필요가 있을 때, 또는 특정 날짜 계산을 해야 할 때 마다, 현재 날짜를 얻는 것은 중요합니다. Clojure를 사용한다면 간단한 코드 몇 줄만으로 현재 날짜를 가져올 수 있습니다.
+# 왜
+현재 날짜를 얻는 것을 왜 해야할까요?
 
-## 방법
-Clojure에서 현재 날짜를 가져오는 방법은 매우 간단합니다. `java.time` 라이브러리를 이용하여 `now()` 함수를 호출하면 현재 날짜를 가져올 수 있습니다. 아래의 예제를 참고해보세요.
+현재 날짜를 얻는 것은 우리가 다양한 프로그램에서 사용하는 중요한 기능입니다. 예를 들면, 만료일 계산, 날짜별 이벤트 제어, 그리고 보고서 작성 등 다양한 목적에 사용될 수 있습니다. 따라서 현재 날짜를 얻는 것은 매우 유용한 프로그래밍 기술입니다.
 
+# 어떻게
 ```Clojure
-(require '[java.time :as time])
-(time/now)
+(require '[clojure.java-time :as time])
+
+(time/local-date)
+;=> #object[java.time.LocalDate 0x2b86173c "2020-09-20"]
+
+(time/local-date-time)
+;=> #object[java.time.LocalDateTime 0x2f4233f2 "2020-09-20T10:34:54.620"]
+
+(time/current-time)
+;=> #object[java.time.LocalTime 0x42b49c13 "10:34:54.620"]
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+Clojure에서 현재 날짜를 얻는 가장 쉬운 방법은 `clojure.java-time` 라이브러리를 통해 `local-date`, `local-date-time`, `current-time` 함수를 사용하는 것입니다. 이러한 함수는 각각 현재 날짜, 현재 날짜와 시간, 현재 시간 객체를 반환하여 우리가 다양한 목적에 활용할 수 있도록 합니다.
 
-```
-#object[java.time.LocalDateTime 0x44949e13 "2021-09-22T16:35:37.346"]
-```
+# 깊게 파고들기
+Clojure에서 현재 날짜를 가져오는 함수들은 Java의 `java.time` 라이브러리를 기반으로 작성되었습니다. 이 라이브러리는 날짜와 시간을 다루는 다양한 기능을 제공하며, Clojure에서도 자유롭게 사용할 수 있습니다. `clojure.java-time` 라이브러리의 많은 기능을 자세히 알고 싶다면 [공식 문서](https://cljdoc.org/d/java-time/java-time/1.0.1/doc/readme)를 살펴보세요.
 
-문자열 형태로 날짜를 출력하기 위해서는 `format()` 함수를 사용하면 됩니다. 예를 들어, "YYYY-MM-dd" 형식으로 출력하는 코드는 다음과 같습니다.
-
-```Clojure
-(time/format (time/now) "YYYY-MM-dd")
-```
-
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
-
-```
-"2021-09-22"
-```
-
-## 깊게 파기
-Clojure에서 날짜와 관련된 작업을 할 때에는 `java.time` 라이브러리를 사용할 수 있습니다. 이 라이브러리는 Java에서 제공하는 `java.time` 패키지를 Clojure에 사용할 수 있도록 감싸주는 역할을 합니다. 따라서 Java에서 사용하는 날짜 관련 클래스와 메소드를 그대로 사용할 수 있습니다. 자세한 내용은 아래의 링크를 참고해보세요.
-
-See Also:
-- [Clojure `java.time` documentation](https://clojure.org/reference/java_interop#_java_time)
-- [Java `java.time` documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+# 관련 링크
+- [Java `java.time` 라이브러리](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Clojure `clojure.java-time` 라이브러리 공식 문서](https://cljdoc.org/d/java-time/java-time/1.0.1/doc/readme)

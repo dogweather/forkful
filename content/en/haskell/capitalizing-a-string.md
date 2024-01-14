@@ -1,49 +1,59 @@
 ---
 title:    "Haskell recipe: Capitalizing a string"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Capitalizing a string may seem like a simple task, but it can be incredibly useful in programming. By capitalizing words in a string, we can make our code more readable and easier to understand.
+Capitalizing strings may seem like a simple task, but it is a common problem that programmers encounter. Whether you are working on a text editing program or parsing user input, string capitalization is often required. Thankfully, Haskell offers an elegant solution to this problem that is both efficient and easy to implement.
 
 ## How To
+To capitalize a string in Haskell, we can use the `toUpper` function from the `Data.Char` module. This function takes a single character as an argument and returns its uppercase equivalent. We can use this function in combination with the `map` function to apply it to every character in our string.
 
-To begin, we first need to import the `Data.Char` library in order to use the `toUpper` function. This function takes a character as input and returns the uppercase version of that character. For example:
-
+Here is an example of a simple function that takes in a string and capitalizes it using the `toUpper` function:
 ```Haskell
-import Data.Char
+import Data.Char (toUpper)
 
-toUpper 'h' -- returns 'H'
-```
-
-Now that we have the `toUpper` function, we can use it to capitalize a string. We can do this by first splitting the string into a list of individual characters using the `words` function. Then, we map the `toUpper` function onto each character in the list. Finally, we use the `unwords` function to join the capitalized characters back into a string.
-
-```Haskell
 capitalize :: String -> String
-capitalize str = unwords (map toUpper (words str))
-
-capitalize "hello world" -- returns "HELLO WORLD"
+capitalize str = map toUpper str
 ```
 
-We can also choose to only capitalize the first letter of the string by using the `head` and `tail` functions. We can then combine the first capitalized letter with the rest of the string using the `++` operator.
-
+Let's try using our `capitalize` function on a string and see what the output looks like:
 ```Haskell
-capitalizeFirst :: String -> String
-capitalizeFirst str = toUpper (head str) ++ tail str
-
-capitalizeFirst "hello world" -- returns "Hello world"
+main = do
+  let str = "hello world"
+  let result = capitalize str
+  print result
 ```
+Output: `HELLO WORLD`
+
+As we can see, our function successfully capitalized every letter in the string. However, if we want to capitalize only the first letter of the string, we can modify our function to use the `toUpper` function on only the first character. Here is an example:
+```Haskell
+import Data.Char (toUpper)
+
+capitalizeFirst :: String -> String
+capitalizeFirst str = toUpper (head str) : tail str
+```
+
+Let's test our new `capitalizeFirst` function and see the output:
+```Haskell
+main = do
+  let str = "hello world"
+  let result = capitalizeFirst str
+  print result
+```
+Output: `Hello world`
+
+We can see that our function successfully capitalized the first letter while leaving the rest intact.
 
 ## Deep Dive
+In Haskell, strings are represented as lists of characters. This is why we were able to use the `map` function to apply `toUpper` to every character in our string. The `toUpper` function works by converting the character to its ASCII value and then subtracting 32 from it to obtain the uppercase equivalent. This ASCII manipulation is what makes the `toUpper` function more efficient than simply checking for lowercase and returning the uppercase equivalent.
 
-Now that we have seen how to capitalize a string, let's take a deeper look at the `words` and `unwords` functions that we used. The `words` function splits a string into a list of words, while the `unwords` function joins a list of words back into a string. These functions are useful for manipulating strings in various ways, not just for capitalization.
-
-Additionally, we can also use the `toUpper` function with other data types, such as characters, integers, and even lists. This shows the versatility and power of Haskell's built-in functions.
+Another important point to note is that the `toUpper` function only works for characters that have an uppercase equivalent. This means if we try to use it on a special character or a number, it will return an error. Therefore, it is important to handle edge cases when implementing string capitalization in your code.
 
 ## See Also
-
-- [Haskell String Functions](https://www.tutorialspoint.com/haskell/haskell_string_functions.htm)
-- [Data.Char Library documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- Learn You a Haskell for Great Good: [String functions](http://learnyouahaskell.com/starting-out#strings)
+- Real World Haskell: [Strings and Characters](http://book.realworldhaskell.org/read/strings-and-characters.html)
+- Haskell Documentation: [Data.Char module](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)

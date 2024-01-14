@@ -1,58 +1,65 @@
 ---
-title:    "Elixir: 将字符串转换为大写"
+title:    "Elixir: 将字符串大写化"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-在这篇博文中，我们将探讨在Elixir编程中如何将字符串大写。字符串大写是一种很常见的操作，它可以使得字符串中的所有字母变成大写形式。接下来，我们将探讨为什么有时候我们会需要这样做，以及如何在Elixir中实现字符串大写的操作。
-
 ## 为什么
 
-在编写程序的过程中，我们经常会遇到需要将字符串大写的需求。这可能是为了统一字符串的格式，或者为了方便后续的比较和操作。使用Elixir的字符串大写功能可以节省我们手动修改字符串的时间和精力。
+当我们需要对字符串进行大小写转换时，使用Elixir的capitalize功能是非常方便和高效的。
 
-## 如何
+## 如何使用
 
-在Elixir中，我们可以通过使用`String.upcase/1`函数来实现字符串大写的功能。此函数接受一个字符串作为参数，并将其所有字母改为大写形式。
-
-```Elixir
-String.upcase("hello world")
-```
-
-输出结果为:
+我们可以使用String.capitalize函数来实现字符串的首字母大写。
 
 ```Elixir
-"HELLO WORLD"
+String.capitalize("hello world")
 ```
 
-我们还可以使用管道操作符`|>`来使代码更加简洁。例如：
+输出：
+
+```
+"Hello world"
+```
+
+我们也可以指定第二个参数来指定字符串中的某些单词需要大写。
 
 ```Elixir
-"hello world" |> String.upcase()
+String.capitalize("hello world", [:words])
 ```
 
-输出结果为:
+输出：
+
+```
+"Hello World"
+```
+
+我们还可以使用String.capitalize!/1来直接修改原始字符串。
 
 ```Elixir
-"HELLO WORLD"
+str = "hello world"
+String.capitalize!(str)
 ```
 
-需要注意的是，`String.upcase/1`函数只能修改ASCII字符，其他字符不会改变大小写。如果需要针对Unicode字符进行大写操作，可以使用`String.upcase/2`函数，并指定特定的语言。
+输出：
 
-## 深入探讨
+```
+"Hello world"
+```
 
-在Elixir中，字符串是不可变的，也就是说，当我们使用`String.upcase/1`函数时，它不会改变原始字符串的值，而是返回一个新的大写字符串。这种不可变性有助于避免在程序中出现意外的副作用。
+## 深入了解
 
-此外，Elixir中的字符串大写功能也支持多种编码格式，如UTF-8、Latin-1等。这让我们可以在不同编码格式的字符串上使用同样的操作，而不用担心出现错误。
+String.capitalize函数实际上是调用了String.capitalize/2函数来完成字符串的转换。它会把字符串分割成单词列表，然后针对每个单词使用String.capitalize_word/1函数来进行转换。如果我们想要自定义 capitalize 的行为，可以使用 String.capitalize_word/2 函数来指定一个转换规则。
 
 ## 参考链接
 
-- [Elixir字符串文档](https://hexdocs.pm/elixir/String.html)
-- [Elixir字符串函数](https://elixirschool.com/lessons/basics/string-functions/)
-- [Elixir管道操作符](https://elixirschool.com/lessons/basics/pipe-operator/)
-- [Unicode字符串和Elixir](https://www.culttt.com/2014/08/18/working-unicode-elixir/)
+- [Elixir官方文档 - String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
+- [Elixir官方文档 - String.capitalize_word/1](https://hexdocs.pm/elixir/String.html#capitalize_word/1)
+- [Elixir官方文档 - String.capitalize_word/2](https://hexdocs.pm/elixir/String.html#capitalize_word/2)
 
-## 参见
+## 另请参阅
 
-- [Elixir函数使用指南](https://elixirschool.com/lessons/basics/functions/)
-- [Elixir模式匹配](https://elixirschool.com/lessons/basics/pattern-matching/)
+- [Elixir中字符串的处理函数总结](https://www.jianshu.com/p/02c06b09f77e)
+- [Elixir String.capitalize速度解析](https://www.jianshu.com/p/88b3795ab5e8)

@@ -1,49 +1,37 @@
 ---
-title:    "Clojure: Capire Concatenazione di Stringhe"
+title:    "Clojure: Concatenazione di stringhe"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
+In questo articolo parleremo di una funzionalità fondamentale della programmazione Clojure, ovvero la concatenazione di stringhe. Con questa operazione, è possibile unire una o più stringhe per creare un'unica stringa, utile in molti contesti della programmazione. Scopriremo insieme come utilizzare questa funzionalità e approfondiremo alcuni aspetti tecnici.
 
-La concatenazione di stringhe è un'operazione molto comune in tutti i linguaggi di programmazione, inclusa Clojure. Combina più stringhe in una singola stringa più lunga e può essere utile in diverse situazioni, come la creazione di output per l'utente o la costruzione di URL dinamici per richieste HTTP.
-
-## Come fare
-
-Per concatenare stringhe in Clojure, possiamo utilizzare la funzione `str`, che accetta uno o più argomenti di tipo stringa. Esempio:
+## Come fare 
+Per concatenare stringhe in Clojure, possiamo utilizzare la funzione `str`. Questa funzione, dato un numero variabile di input, unisce tutte le stringhe in un'unica stringa. Vediamo un esempio di utilizzo:
 
 ```Clojure
-(str "Ciao" " " "Mondo") 
-
-;; Output: "Ciao Mondo"
+(str "Ciao" "a" "tutti") ;output: "Ciaoa tutti"
+(str "Il mio numero preferito è" 7) ;output: "Il mio numero preferito è 7"
 ```
 
-Possiamo anche utilizzare l'operatore di concatenazione `str` o il metodo `concat` dalla libreria di base di Clojure:
+Come possiamo notare, la funzione `str` consente di unire diverse tipologie di dati, non solo stringhe. Inoltre, se uno dei dati di input è vuoto o una lista vuota, questo verrà ignorato senza causare errori.
+
+## Approfondimenti 
+Se vogliamo concatenare una grande quantità di stringhe, potremmo pensare di utilizzare il classico operatore `+`. Tuttavia, in Clojure è sconsigliato utilizzare questo operatore per motivi di efficienza. Infatti, `+` è pensato principalmente per l'addizione di numeri, mentre `str` è ottimizzato per la concatenazione di stringhe.
+
+Un'altra funzione interessante per la concatenazione di stringhe è `join`. Questa funzione consente di unire una lista di stringhe utilizzando un separatore specificato. Vediamo un esempio:
 
 ```Clojure
-"Hello" str "World"
-(concat "Hello" "World")
-
-;; Output: "Hello World"
+(join ", " ["Pizza" "Pasta" "Parmigiana"]) ;output: "Pizza, Pasta, Parmigiana"
+(join " - " ["Mozzarella" "Pomodoro" "Basilico"]) ;output: "Mozzarella - Pomodoro - Basilico"
 ```
 
-Inoltre, possiamo utilizzare la funzione `format` per concatenare stringhe con formattazione e argomenti. Esempio:
+Infine, è importante ricordare che Clojure utilizza delle sequenze immutabili, quindi quando concateniamo stringhe, in realtà stiamo creando nuove stringhe senza modificare quelle esistenti. Questo aspetto è importante da considerare quando lavoriamo con grandi quantità di dati per evitare problemi di memoria.
 
-```Clojure
-(format "Ciao %s, hai %d anni" "Mario" 35)
-
-;; Output: "Ciao Mario, hai 35 anni"
-```
-
-## Approfondimento
-
-Clojure utilizza l'implementazione `java.lang.StringBuilder` per gestire la concatenazione di stringhe, che rende più efficiente l'operazione rispetto ad altri linguaggi che creano nuove stringhe ogni volta che viene eseguita la concatenazione.
-
-Inoltre, è importante ricordare che le stringhe in Clojure sono immutabili, il che significa che ogni nuova operazione di concatenazione crea una nuova stringa, quindi è consigliabile evitarne l'uso in situazioni in cui è richiesta un'alta performance.
-
-## Vedi anche
-
-- [String Functions in Clojure](https://clojuredocs.org/clojure.string)
-- [Clojure Cheatsheet: Strings](https://clojure.org/api/cheatsheet)
-- [Java StringBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+## Vedi anche 
+- [Documentazione ufficiale di Clojure sulla funzione str](https://clojure.org/reference/data_structures#_clojure_string_conversion_functions)
+- [Guida alla concatenazione di stringhe in Clojure](https://www.baeldung.com/clojure/string-concatenation-join)
+- [Ulteriori nozioni sulla gestione delle sequenze in Clojure](https://en.wikibooks.org/wiki/Clojure_Programming/Basic_Scala_Datatype_Refresher#Sequences)

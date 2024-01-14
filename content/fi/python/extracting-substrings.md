@@ -1,66 +1,45 @@
 ---
-title:    "Python: Alimerkkien erottaminen"
+title:    "Python: Alimerkkijonojen erottelu"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit erottaa osamerkkijonoja Python-ohjelmoinnissa? Substringien erottaminen on hyödyllistä, kun tarvitset tiettyä tietoa merkkijonosta, kuten tietyistä kirjaimista tai numeromerkeistä. Tämä voi auttaa sinua muokkaamaan tai analysoimaan tietoja helpommin.
+Monet Python-ohjelmoijat etsivät tapoja työskennellä merkkijonojen kanssa. Yksi tärkeä työkalu tätä varten on mahdollisuus poimia alimerkkijonoja tai pieniä osia merkkijonoista. Tässä blogikirjoituksessa opit syvemmin siitä, miksi ja kuinka poimia alimerkkijonoja Pythonissa.
 
-## Miten
+## Kuinka
 
-Pythonissa voit erottaa osamerkkijonon käyttämällä hakasulkumerkintää [alku:loppu]. Tämä tarkoittaa, että haluat erottaa merkkijonon tiettyyn kohtaan alkamisesta ja loppuvasta asemaan. Esimerkiksi, jos haluaisit erottaa vain ensimmäiset viisi merkkiä merkkijonosta "Tervetuloa", käyttäisit [0:5]. Alla on esimerkki koodista ja tulosteesta:
-
-```Python
-# Määritellään merkkijono
-sana = "Tervetuloa"
-
-# Erota osamerkkijono
-osamerkki = sana[0:5]
-
-# Tulostus
-print(osamerkki)
-```
-
-Tämän koodin tuloste olisi "Terve".
-
-## Syvällisempi sukellus
-
-Pythonissa voit myös käyttää negatiivisia indeksejä erottaessasi osamerkkijonoja. Tämä tarkoittaa, että aloitat erottamisen merkkijonon lopusta. Esimerkiksi, jos haluaisit erottaa viimeiset kolme merkkiä merkkijonosta "Tervetuloa", käyttäisit [-3:]. Tässä on esimerkki koodista ja tulosteesta:
+<img src="https://i.imgur.com/7d9tOnv.png" width="200" align="right">
+Poimi alimerkkijonoja Pythonin `substring` -toiminnolla. Alla on esimerkki **koodiblokeineen**:
 
 ```Python
-# Määritellään merkkijono
-sana = "Tervetuloa"
+# Luo merkkijono
+merkkijono = "Tämä on esimerkki merkkijonosta"
 
-# Erota osamerkkijono
-osamerkki = sana[-3:]
+# Poimi tarvittava alimerkkijono
+alimerkkijono = merkkijono[8:15]
 
-# Tulostus
-print(osamerkki)
+# Tulosta alimerkkijono
+print(alimerkkijono)
+
 ```
+**Tulos**: "esimerk"
 
-Tämän koodin tuloste olisi "loa".
+Voit myös määrittää alueen jättämättä toisen luvun tyhjäksi, jolloin alimerkkijono loppuu merkkijonon loppuun asti. Esimerkiksi: `merkkijono[8:]` palauttaa "esimerkijonosta".
 
-Voit myös käyttää askelarvoa erottaessasi osamerkkijonoja. Tämä tarkoittaa, että voit määrittää, kuinka monta merkkiä haluat ohittaa erottaessasi. Esimerkiksi, jos haluaisit erottaa joka toisen merkin merkkijonosta "Tervetuloa", käyttäisit [::2]. Tässä on esimerkki koodista ja tulosteesta:
+## Syvempi sukellus
 
-```Python
-# Määritellään merkkijono
-sana = "Tervetuloa"
+Miksi alimerkkijonojen poimiminen on tärkeää? Se antaa meille mahdollisuuden manipuloida ja käsitellä merkkijonoja paremmin. Se on erityisen hyödyllinen, kun työskentelemme suurten datamäärien kanssa ja haluamme etsiä tiettyjä sanoja tai lauseita merkkijonosta.
 
-# Erota osamerkkijono
-osamerkki = sana[::2]
+Voit myös käyttää muita sarakemerkintöjä alimerkkijonon poimimiseen. Esimerkiksi negatiiviset luvut aloittavat laskemisen merkkijonon lopusta päin. Joten `merkkijono[-7:]` antaisi saman tuloksen kuin `merkkijono[24:]` (sama sana "merkkijonosta").
 
-# Tulostus
-print(osamerkki)
-```
-
-Tämän koodin tuloste olisi "Trvtua".
-
-Erottamista voi myös soveltaa muihin merkkijonon operaatioihin, kuten yhteenlaskuun ja kertolaskuun. Voit myös käyttää sisäkkäisiä hakasulkumerkintöjä erottaaksesi monimutkaisempia osamerkkijonoja.
+Voit myös käyttää askelväliä määrittääksesi, kuinka monta merkkiä hyppäät jokaisen poimitun merkin välillä. Esimerkiksi `merkkijono[::2]` palauttaa jokaisen toisen merkin merkkijonosta ("Tä + n" + "ni napr + "mnkno" + "cta ämikjs" + "'stä").
 
 ## Katso myös
 
-- [Pythonin merkkijonot](https://www.w3schools.com/python/python_strings.asp)
-- [Oficiallilä Python dokumentaatio substringeista](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Pythonin merkkijonojen manipulointi](https://www.w3schools.com/python/python_strings.asp)
+- [Pätkäjonojen poimiminen Pythonissa](https://www.geeksforgeeks.org/python-get-a-list-of-slice-from-given-string/)
+- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/library/stdtypes.html#string-methods) koskien merkkijonotoimintoja.

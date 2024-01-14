@@ -1,67 +1,58 @@
 ---
-title:    "Elixir: Sammanslagning av textsträngar"
+title:    "Elixir: Sammanfogning av strängar"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Elixir är ett kraftfullt programmeringsspråk som erbjuder många funktioner för att hantera data och processer. En av dessa funktioner är möjligheten att konkatinera strängar, vilket är användbart i många olika situationer.
 
-## Hur man konkatinerar strängar
-Konkatenering är helt enkelt processen att sammanfoga två eller flera strängar till en enda sträng. Detta kan göras på flera olika sätt i Elixir, men det enklaste sättet är att använda operatorn `<>`.
+Att sammanslå strängar (concatenation) är en vanlig uppgift vid programmering. Det kan användas för att skapa dynamisk text, formulär eller presentera data på ett lättbegripligt sätt. I Elixir är det väldigt enkelt att sammanslå strängar och i denna bloggpost kommer vi att titta närmare på hur man gör det.
 
-```Elixir
-sträng1 = "Hej"
-sträng2 = "världen!"
-sträng1 <> sträng2
-```
-Output:
-```Elixir
-"Hej världen!"
-```
+## Hur man gör
 
-Det är också möjligt att använda funktionen `String.concat/1` för att konkatinera flera strängar på en gång.
+I Elixir finns det ett antal olika sätt att sammanslå strängar på. Det enklaste sättet är att använda operatorn `<>`. Detta operatorn tar två strängar och sätter ihop dem till en enda sträng.
 
 ```Elixir
-lista = ["Hej", "till", "alla"]
-String.concat(lista)
-```
-Output:
-```Elixir
-"Hej till alla"
+"Hello" <> " world!" 
 ```
 
-Elixir erbjuder också funktionen `String.Chars.to_string/1` för att konvertera andra datatyper till en sträng innan de konkatineras.
+Detta kommer att ge oss resultatet `Hello world!`.
+
+En annan metod är att använda Elixirs modul `String`. Denna modul har en funktion `concat` som tar in en lista av strängar och sätter ihop dem.
 
 ```Elixir
-tal = 123
-sträng = "Det här är ett tal: "
-sträng <> String.Chars.to_string(tal)
-```
-Output:
-```Elixir
-"Det här är ett tal: 123"
+String.concat(["Hello", " ", "world!"])
 ```
 
-## Fördjupning i konkatinering av strängar
-När det kommer till konkatinering av strängar i Elixir finns det några saker att tänka på. Först och främst är det viktigt att hålla koll på vilken datatyp som används, eftersom vissa funktioner kräver att datatypen är en sträng.
+Detta kommer också att ge oss samma resultat `Hello world!`.
 
-Det är också möjligt att använda sig av placeholders istället för att skriva ut värdena direkt. Detta görs genom att använda `%`, följt av en siffra som representerar vilket index värdet har i listan.
+Vi kan också använda interpolering genom att sätta in variabler direkt i strängen med `#{}`.
 
 ```Elixir
-tal1 = 10
-tal2 = 5
-"Summan av %1 och %2 är %3." <> String.Chars.to_string(tal1) <> String.Chars.to_string(tal2) <> String.Chars.to_string(tal1 + tal2)
+name = "John"
+"Hello, #{name}!"
 ```
-Output:
+
+Detta kommer att ge oss `Hello, John!`.
+
+En annan viktig del av att sammanslå strängar är att hantera specialtecken och formattering. I Elixir kan vi använda `|>` (pipeline operator) tillsammans med `String.replace` för att hantera detta.
+
 ```Elixir
-"Summan av 10 och 5 är 15."
+"Hello, world!" |> String.replace("o", "0")
 ```
 
-En annan viktig sak att notera är att Elixir erbjuder effektiva funktioner för att hantera stora mängder data, vilket är viktigt när man arbetar med konkatinering av strängar.
+Detta kommer att ge oss resultatet `Hell0, w0rld!`.
 
-## Se även
-- [Elixir's String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir's String.Chars module](https://hexdocs.pm/elixir/String.Chars.html)
-- [Elixir's String.concat/1 function](https://hexdocs.pm/elixir/String.html#concatenation-and-interpolation)
+## Djupdykning
+
+Det är viktigt att notera att sammanslående strängar i Elixir skapar en ny kopia av strängen varje gång. Detta innebär att om en sträng behöver sammanslås många gånger, kan det vara mer effektivt att använda `IOLists` i Elixir som minimerar antalet kopior som skapas.
+
+För att undvika problem med minnesallokering kan det också vara användbart att använda `<<>>` syntax istället för `<>`.
+
+## Se också
+
+- [Elixir String Modul](https://hexdocs.pm/elixir/String.html)
+- [Elixir IOLists](https://elixirschool.com/sv/lessons/advanced/io-lists/)
+- [Elixir Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html)

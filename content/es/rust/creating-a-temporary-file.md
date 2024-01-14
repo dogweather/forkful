@@ -1,76 +1,46 @@
 ---
 title:    "Rust: Creando un archivo temporal"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué crear un archivo temporal en Rust
+## Por qué
 
-Rust es un lenguaje de programación moderno que está ganando popularidad rápidamente. Una de las características más interesantes de Rust es su capacidad para trabajar de manera confiable con archivos, incluidos los archivos temporales.
+La creación de archivos temporales es una práctica común en la programación para almacenar información de forma temporal durante la ejecución de un programa. Esto puede ser útil para realizar pruebas, guardar datos intermedios o simplemente para manejar datos que no son necesarios una vez que el programa ha finalizado su ejecución.
 
-Crear un archivo temporal puede ser útil en muchas situaciones, como por ejemplo, cuando necesitas almacenar datos temporales en el disco, o cuando quieres realizar pruebas en un entorno aislado sin afectar a otros archivos importantes. En este artículo, exploraremos cómo crear un archivo temporal en Rust y cómo usarlo en nuestras aplicaciones.
+## Cómo hacerlo
 
-## Cómo crear un archivo temporal en Rust
-
-En Rust, podemos crear un archivo temporal utilizando el módulo `std::fs::File` y la función `create`. Esta función toma como argumento el nombre del archivo temporal que queremos crear, generalmente en una ruta específica. Podemos usar la macro `tempfile!` para generar automáticamente un nombre de archivo único.
+En Rust, podemos utilizar la función `std::fs::File::create` para crear un archivo vacío y luego escribir datos en él. Para crear un archivo temporal, podemos utilizar la función `tempfile::tempfile` de la biblioteca `tempfile`. Veamos un ejemplo básico de cómo crear y escribir en un archivo temporal en Rust:
 
 ```Rust
-// Importamos el módulo 'std::fs' y la macro 'tempfile!'
 use std::fs::File;
+use std::io::prelude::*;
 use tempfile::tempfile;
 
-// Creamos un archivo temporal llamado 'temp_file'
-// en el directorio actual
-let temp_file = tempfile!("temp_file");
+fn main() {
+    // Crear un archivo temporal
+    let mut file = tempfile().expect("No se pudo crear el archivo temporal");
 
-// Podemos usar el archivo temporal como cualquier otro archivo
-let mut file = File::create(temp_file).expect("No se pudo crear el archivo");
+    // Escribir datos en el archivo
+    file.write_all(b"Hola, esto es un ejemplo de archivo temporal").expect("No se pudo escribir en el archivo");
 
-// Escribimos algo en el archivo
-file.write_all(b"Hola, este es un archivo temporal creado en Rust")
-    .expect("No se pudo escribir en el archivo");
+    // Leer el archivo temporal
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("No se pudo leer el archivo");
+    println!("{}", contents); // Imprime "Hola, esto es un ejemplo de archivo temporal"
+}
 ```
 
-¡Y eso es todo! Ahora tenemos un archivo temporal creado y listo para ser utilizado en nuestra aplicación. Una vez que hayamos terminado de usarlo, podemos eliminar el archivo y liberar su espacio utilizando la función `File::remove`.
+En este ejemplo, estamos utilizando la biblioteca estándar `std::fs` para crear un archivo temporal y la biblioteca `tempfile` para hacer que la creación del archivo sea más sencilla. Luego, escribimos datos en el archivo utilizando el método `write_all` y leemos su contenido utilizando el método `read_to_string`.
 
-```Rust
-// Eliminamos el archivo temporal
-File::remove(temp_file).expect("No se pudo eliminar el archivo");
-```
+## Profundizando
 
-## Deep Dive: Creando un archivo temporal con políticas de seguridad
+Si queremos tener un mayor control sobre la creación de archivos temporales, podemos utilizar la función `tempfile::Builder::new`. Con esta función, podemos especificar la ubicación de la carpeta en la que se creará el archivo, el nombre y la extensión del archivo, entre otras opciones. Además, podemos utilizar la función `tempfile::NamedTempFile::create` para crear un archivo temporal con un nombre determinado. Estas opciones pueden ser útiles para casos específicos en los que necesitamos tener un mayor control sobre la creación de archivos temporales.
 
-En algunos casos, podemos querer crear un archivo temporal con ciertas políticas de seguridad, como por ejemplo, limitar su tamaño máximo o establecer permisos específicos. En Rust, podemos lograr esto utilizando la función `Builder` del módulo `tempfile`.
+## Véase también
 
-```Rust
-use std::fs::File;
-use tempfile::Builder;
-
-// Usamos la función Builder para especificar nuestras políticas de seguridad
-// en este caso, limitamos el tamaño del archivo a 10 KB
-let temp_file = Builder::new()
-    .prefix("temp_file")
-    .suffix(".txt")
-    .rand_bytes(10)
-    .tempfile_in("/tmp")
-    .expect("No se pudo crear el archivo");
-
-// Podemos abrir el archivo utilizando la función open
-let mut file = temp_file.open().expect("No se pudo abrir el archivo");
-
-// Escribimos en el archivo
-file.write_all(b"Hola, este es un archivo temporal creado con política de seguridad")
-    .expect("No se pudo escribir en el archivo");
-
-// Eliminamos el archivo temporal
-temp_file.close().expect("No se pudo eliminar el archivo");
-```
-
-## Vea también
-
-- [Documentación oficial de Rust sobre archivos](https://doc.rust-lang.org/std/fs/index.html)
-- [tempfile crate en crates.io](https://crates.io/crates/tempfile)
-- [Ejemplo de uso de archivos temporales en Rust](https://github.com/alexcambose/rust-temp-file-example)
-
-¡Con esto hemos aprendido cómo crear archivos temporales en Rust y usarlos en nuestras aplicaciones de manera segura y eficiente! ¡Ahora es tu turno de probar y experimentar con ellos en tus proyectos!
+- Documentación oficial de Rust sobre la creación de archivos (`std::fs::File`): https://doc.rust-lang.org/std/fs/struct.File.html
+- Biblioteca `tempfile` utilizada en este artículo: https://docs.rs/crate/tempfile/3.2.0
+- Ejemplos de uso de `tempfile::Builder::new`: https://docs.rs/tempfile/3.2.0/tempfile/struct.Builder.html

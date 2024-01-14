@@ -1,33 +1,41 @@
 ---
 title:    "Swift: 文字列の連結"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-### なぜ？
+## なぜ
 
-文字列の連結を行う理由は、プログラムで複数の文字列を結合してより長い文字列を作成する必要があるからです。たとえば、ユーザー名とパスワードを組み合わせてログイン認証を行う場合などに使用されます。
+今回の記事では、Swiftで文字列を連結する方法について説明します。文字列を連結すると、プログラムの柔軟性を高め、より読みやすいコードを書くことができます。
 
-### 方法
+## 方法
+
+文字列を連結するには、以下のように`+`演算子を使用します。
 
 ```Swift
-let userName = "Emily"
-let password = "p@ssw0rd"
-let loginMessage = "Welcome, " + userName + "! Your password is " + password
-print(loginMessage)
+let string1 = "こんにちは"
+let string2 = "世界"
+let result = string1 + string2
+print(result)
 ```
 
+このコードを実行すると、`こんにちは世界`という出力が得られます。また、文字列の中に他の変数の値を挿入することもできます。
+
+```Swift
+let name = "太郎"
+let greeting = "こんにちは、\(name)さん"
+print(greeting)
 ```
-出力：Welcome, Emily! Your password is p@ssw0rd
-```
 
-### 詳細を調べる
+この場合、出力は`こんにちは、太郎さん`となります。
 
-文字列の連結には、`+`や`+=`などの演算子を使用する方法以外にも、`String`クラスの`append()`や`join()`などのメソッドを使用する方法もあります。また、文字列のフォーマットに応じて、`String`クラスの`format()`メソッドを使用することもできます。
+## 詳しい情報
 
-### See Also
+文字列を連結するには、`+`演算子以外にも`append()`メソッドや`concat()`関数などがあります。また、文字列の中に数字や複数の変数を挿入する際には、フォーマット指定子を使用することもできます。詳しくは公式ドキュメントをご覧ください。
 
-[Swiftの基礎](https://developer.apple.com/jp/swift/blog/articles/introducing-swift/)  \
-[Stringクラスのドキュメント](https://developer.apple.com/documentation/swift/string) \
-[Stringのフォーマット方法について](https://learnappmaking.com/swift-string-formatting-how-to/#concatenatingstrings)
+## See Also
+
+- [Swift 公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [文字列を連結する方法](https://www.tutorialspoint.com/swift/swift_concatenation.htm)

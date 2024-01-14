@@ -1,49 +1,57 @@
 ---
-title:    "Haskell: 랜덤 숫자 생성하기"
+title:    "Haskell: 랜덤 숫자 생성"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-난수를 생성하는 것에 대해 관심을 가지는 이유는 다양할 수 있습니다. 일단, 난수 생성은 암호학에서 중요한 역할을 합니다. 또한 게임이나 시뮬레이션 등에서 쉽고 빠르게 무작위 값을 생성하는 것이 필요할 때가 있을 수 있습니다. 그리고 심지어는 무엇을 먹을지 정하는 데에도 난수를 사용할 수 있습니다!
+랜덤한 숫자를 생성하는 일에 참여할 이유를 설명합니다.
+
+Generating random numbers can be useful in many situations, such as creating randomized test data or adding an element of unpredictability to a program.
 
 ## 사용 방법
 
-Haskell에서 난수를 생성하려면, `random` 패키지를 사용해야 합니다. 우선 패키지를 import해야 합니다:
+다음은 Haskell로 랜덤한 숫자를 생성하는 간단한 코드 예제입니다.
 
 ```Haskell
 import System.Random
+
+main = do
+  gen <- getStdGen
+  let (randNum, newGen) = randomR (1, 10) gen :: (Int, StdGen)
+  print randNum
 ```
 
-그런 다음, `StdGen` 객체를 생성하는 함수인 `mkStdGen`을 사용합니다. 이 객체는 난수 생성기의 상태를 나타내며, 이를 기반으로 난수 값을 생성할 수 있습니다. 예를 들어, `mkStdGen 123`을 실행하면 매번 같은 순서로 난수를 생성할 수 있습니다.
+위 코드는 `randomR` 함수를 사용해 1부터 10 사이의 랜덤한 정수를 생성합니다. `getStdGen` 함수로 랜덤 생성기를 가져오고, 그 생성기를 이용해 랜덤한 숫자를 생성합니다. 결과는 `randNum` 변수에 저장되고, `print` 함수로 출력됩니다.
 
-다음은 `getRandom` 함수를 사용하여 `Int` 형의 난수 값을 생성한 후 출력하는 예시입니다:
+다른 방식으로는 `random` 함수를 사용하는 방법이 있습니다.
 
 ```Haskell
-let gen = mkStdGen 123
-let (value, newGen) = random gen :: (Int, StdGen)
-print value
--- 출력 결과: -3762966853418755567
+import System.Random
+
+main = do
+  gen <- getStdGen
+  let (randNum, newGen) = random gen :: (Double, StdGen)
+  print randNum
 ```
 
-또 다른 예시로, `randomR` 함수를 사용하여 원하는 범위 내에서 난수 값을 생성하는 방법도 있습니다. 다음은 1부터 10 사이의 난수 값을 생성하는 예시입니다:
+여기서는 `random` 함수를 사용하여 0부터 1 사이의 랜덤한 실수를 생성합니다. 위 코드는 정수를 생성하는 예제와 동일하게 `print` 함수를 이용해 결과를 출력합니다.
 
-```Haskell
-let gen = mkStdGen 123
-let (value, newGen) = randomR (1, 10) gen :: (Int, StdGen)
-print value
--- 출력 결과: 6
-```
+`random`과 `randomR`이 아닌 더 많은 랜덤 생성 함수가 있으며, 사용 방법은 Haskell 공식 문서를 참고하시면 됩니다.
 
-## 깊이 들어가기
+## 깊이 파고들기
 
-난수 생성의 원리는 매우 복잡하지만, 우리는 이를 단순하게 생각할 수 있습니다. Haskell의 `random` 패키지는 매우 높은 수준의 알고리즘을 사용하여 난수 값을 생성합니다. 이는 암호학적으로 안전하고 균일한 분포를 가진 난수를 생성할 수 있도록 보장합니다. 또한 `StdGen` 객체를 업데이트하여 매번 다른 난수 값을 생성할 수 있도록 합니다.
+Haskell에서는 랜덤 숫자를 생성하기 위해 랜덤 생성기를 사용합니다. 랜덤 생성기는 상태를 갖고 있어 다음에 생성될 랜덤한 수를 계산할 수 있습니다. `getStdGen` 함수로 기본적으로 제공되는 랜덤 생성기를 사용할 수 있지만, 사용자가 직접 랜덤 생성기를 생성해서 사용할 수도 있습니다.
 
-조금 더 깊이 들어가보면, `StdGen`은 초기화된 seed 값을 내부 상태로 가지고 있으며, 이를 기반으로 난수 값을 생성합니다. 따라서 매번 같은 seed 값이 주어지면 항상 같은 난수 값이 생성됩니다. 이것이 난수의 핵심적인 특징 중 하나입니다.
+또한 Haskell에서는 랜덤 숫자를 생성하고 관리하기 위한 `Random` 라이브러리가 있습니다. 이 라이브러리를 이용하면 여러 종류의 데이터 타입에 대해 랜덤 숫자를 생성할 수 있으며, 생성된 랜덤 숫자를 다른 타입으로 변환할 수도 있습니다.
 
-## 관련 자료
+더 자세한 내용은 Haskell 공식 문서나 책을 참고하시면 됩니다.
 
-- [Haskell 공식 문서 - 난수 생성](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
-- [블로그 - Haskell에서 난수를 생성하고 게임 만들기](https://www.schoolofhaskell.com/user/bssullivan/using-haskell-from-c-interop/randoms)
+## 그밖에 알아볼만한 자료들
+
+- [Haskell 공식 문서 - 랜덤 모듈](https://hackage.haskell.org/package/random)
+- [Real World Haskell - 랜덤 수 생성하기](http://book.realworldhaskell.org/read/programming-with-monads.html#monads.random)
+- [Haskell Wiki - 랜덤 수 생성하기](https://wiki.haskell.org/Random_number_generation)

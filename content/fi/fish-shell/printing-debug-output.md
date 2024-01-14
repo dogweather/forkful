@@ -1,51 +1,37 @@
 ---
-title:    "Fish Shell: Virheenkorjaustulosteen tulostus"
+title:    "Fish Shell: Tulostaminen virheenjäljitystiedostoon"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?: Miksi tulostaa debug-tekstilähtö?
+Tulostamalla debug-tekstilähtöä voit tarkkailla ohjelmasi toimintaa ja selvittää mahdollisia virheitä tai ongelmakohtia helpommin.
 
-Monet ohjelmoijat käyttävät vianetsintään ja ohjelmien toiminnan tarkistamiseen debug outputia. Tämä mahdollistaa helpomman ja nopeamman kehityksen ja auttaa löytämään virheitä ja parantamaan koodin suorituskykyä.
-
-## Miten
-
-Fish Shellilla voit tulostaa debug outputia käyttäen komentoa `echo`. Voit lisätä haluamasi tiedon tai muuttujan `echo` komennon perään ja se tulostuu terminaalin konsoliin.
+## Kuinka aloittaa:
+Debug-tekstilähdön tulostaminen on helppoa Fish Shell -ohjelmointikielessä. Yksinkertaisesti käytä ```echo``` -komentoa tulostaaksesi haluamasi tekstin. Voit myös käyttää ```printf``` -komentoa, joka antaa enemmän muotoiluvaihtoehtoja.
 
 ```Fish Shell
-echo "Debug output on kätevä tapa tarkistaa koodin suorituskykyä"
+echo "Tämä on debug-tekstilähtö."
 ```
 
-```
-Debug output on kätevä tapa tarkistaa koodin suorituskykyä
-```
-
-## Syvemmälle
-
-Jos haluat nähdä lisätietoja debug outputista, voit käyttää komentoa `set -x`. Tämä lisää debug outputin kunkin komennon eteen.
+Tämä tulostaa "Tämä on debug-tekstilähtö" terminaaliin.
 
 ```Fish Shell
-set -x
-echo "Tämä on debug output"
+printf "Virhe ilmestyi numerossa %d." 50
 ```
 
-```
-+ echo "Tämä on debug output"
-Tämä on debug output
-```
+Tämä tulostaa "Virhe ilmestyi numerossa 50." terminaliin.
 
-Voit myös käyttää `printf` komentoa, joka vastaa `echo` komentoa, mutta antaa enemmän mahdollisuuksia muotoiluun ja vaihtoehtoisiin tietoihin.
+Voit myös käyttää ```set -x``` komentoa, joka tulostaa automaattisesti jokaisen Fish Shell komennon ja sen sisältämät argumentit.
 
-```Fish Shell
-printf "Luku %d ja merkkijono %s" 123 "Fish Shell"
-```
+## Syvä sukellus:
+Debug-tekstilähdön tulostaminen voi auttaa sinua selvittämään oletusten oikeellisuutta sekä löytämään virheitä tai ongelmakohtia koodistasi. Voit tulostaa esimerkiksi tiettyjen muuttujien arvoja tarkistaaksesi, ovatko ne haluamasi arvoisia tai seuraatko haluttua logiikkaa.
 
-```
-Luku 123 ja merkkijono Fish Shell
-```
+Voit myös käyttää erilaisia ​​tulostusmuotoja, kuten värejä tai lihavointia, jotta debug-tekstilähdöstä tulee helposti erottuva ja luettava.
 
-## Katso myös
-
-- [Fish Shellin viralliset dokumentaatiot](https://fishshell.com/docs/current/)
-- [Vianetsintä Fish Shellilla](https://fishshell.com/docs/current/tutorial.html#debugging-your-functions)
+## Katso myös:
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/)
+- [Debugging in Fish Shell](https://medium.com/@brunostripoli/debugging-in-fish-shell-4cde63d18866)
+- [Fish Shell: A Comprehensive Guide](https://wezfurlong.org/wezterm/2019/01/using-fishshell.html)

@@ -1,60 +1,38 @@
 ---
-title:    "Bash: Encontrar la longitud de una cadena"
+title:    "Bash: Encontrando la longitud de una cadena"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
-
-Uno de los aspectos fundamentales de la programación es trabajar con cadenas de texto o strings. Sin embargo, a menudo surge la necesidad de saber cuántos caracteres componen una cadena en particular. Ya sea para realizar validaciones, manipular datos o simplemente por curiosidad, encontrar la longitud de una cadena es una habilidad importante para cualquier programador.
+## Por qué
+Algunas veces, al programar en Bash, necesitamos encontrar la longitud de una cadena de texto. Esta información puede ser útil para manipular o validar datos de entrada. En este post, te mostraremos cómo hacerlo de manera sencilla.
 
 ## Cómo hacerlo
-
-En Bash, la forma más sencilla de encontrar la longitud de una cadena es utilizando el comando `expr length`. Veamos un ejemplo:
-
-```Bash
-cadena="¡Hola, mundo!"
-echo "La longitud de la cadena es: $(expr length $cadena)"
-```
-
-La salida de este código será:
+Afortunadamente, Bash cuenta con una función integrada para encontrar la longitud de una cadena de texto. Se trata de `expr length`, seguido de la cadena entre comillas.
 
 ```
-La longitud de la cadena es: 14
+Bash
+cadena="Hola mundo"
+longitud=`expr length $cadena`
+echo $longitud
 ```
-
-En este caso, el comando `expr length` toma como parámetro la variable `cadena` y nos devuelve el número de caracteres que contiene.
-
-También es posible utilizar el operador de sustitución de comandos para almacenar el valor de la longitud en una variable, como se muestra a continuación:
-
-```Bash
-cadena="¡Hola, mundo!"
-longitud=$(expr length $cadena)
-echo "La longitud de la cadena es: $longitud"
-```
-
-La salida será la misma que en el ejemplo anterior.
-
-Otra forma de encontrar la longitud de una cadena es utilizando el comando `wc`, que cuenta el número de líneas, palabras y caracteres en un archivo o una cadena. Para obtener solo el número de caracteres, utilizamos la opción `-m`, que especifica que solo queremos contar caracteres. Por ejemplo:
-
-```Bash
-cadena="¡Hola, mundo!"
-echo "La longitud de la cadena es: $(echo $cadena | wc -m)"
-```
-
-La salida será de nuevo 14, ya que la cadena solo tiene una línea y una palabra.
+El código anterior nos regresará el valor de 11, ya que la cadena "Hola mundo" cuenta con 11 caracteres.
 
 ## Profundizando
+Si quieres profundizar un poco más en cómo funciona `expr length`, es importante entender que esta función cuenta espacios en blanco y caracteres especiales como parte de la longitud de la cadena. Si deseas contar únicamente los caracteres alfanuméricos, puedes combinar la función con `tr -d`, que elimina cualquier carácter que no sea alfanumérico.
 
-Es importante tener en cuenta que los espacios y otros caracteres especiales también se cuentan como parte de la longitud de una cadena. Además, si se utiliza una cadena multilínea, el comando `expr length` solo contará los caracteres de la primera línea.
+```
+Bash
+cadena="¡Hola mundo!"
+longitud=`expr length $cadena | tr -d '[:punct:]'`
+echo $longitud
+```
 
-Si deseamos encontrar la longitud de una cadena en un archivo de texto, podemos utilizar el comando `wc` con la opción `-c`. Esto nos dará la longitud en bytes del archivo.
-
-Hay otras formas más avanzadas de encontrar la longitud de una cadena, como utilizando expresiones regulares o funciones de Bash. Sin embargo, para la mayoría de los casos, el uso de los comandos `expr length` y `wc` es suficiente.
+En este caso, el resultado será de 10, ya que hemos eliminado el signo de exclamación de nuestra cadena antes de contar la longitud.
 
 ## Ver también
-
-- [Documentación de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial de expressiones regulares en Bash](https://www.thegeekstuff.com/2011/07/bash-extract-data-from-file/)
-- [Tutorial de funciones en Bash](https://linuxhint.com/bash_functions/)
+- [Documentación de Bash: expr](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
+- [Documentación de Bash: tr](https://www.gnu.org/software/bash/manual/html_node/Bash-Text-Manipulation.html#Bash-Text-Manipulation)
+- [Tutorial de Bash para principiantes](https://www.tecmint.com/bash-if-statement-examples/)

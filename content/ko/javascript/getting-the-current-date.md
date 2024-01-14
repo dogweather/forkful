@@ -1,36 +1,52 @@
 ---
 title:    "Javascript: 현재 날짜 가져오기"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 날짜를 알아야 하는가?
+## 왜
 
-컴퓨터 프로그래밍을 하는 사람이라면 지금이 몇 월 몇 일 몇 시며 몇 분인지 알 필요가 있습니다. 특히 웹 개발을 할 때, 쇼핑몰에서 어떤 상품이 판매되는지, 게시판에서 어떤 게시물이 올라오는지 등 기간이나 시간이 중요한 정보를 다루게 됩니다. 이러한 일들은 컴퓨터가 현재 시각을 알도록 프로그래밍하는 데에 있어서 중요한 부분이며, 오늘은 자바스크립트를 사용해 날짜 정보를 다루는 법에 대해 알아보도록 하겠습니다.
+날짜와 시간은 우리 일상에서 매우 중요합니다. 우리는 시간을 추적하고 일정을 관리하며 생일과 기념일을 기억합니다. 이러한 이유로 인해, 프로그래밍에서도 현재 날짜를 얻는 것이 중요합니다. 현재 날짜를 얻는 작업은 많은 프로그램에서 사용되며 다양한 목적으로 활용될 수 있습니다. 그러므로 현재 날짜를 얻는 방법을 배우는 것은 매우 유용합니다.
 
-# 어떻게 날짜를 다루는가?
+## 어떻게
 
-Date 객체를 사용하여 자바스크립트에서 현재 날짜를 불러올 수 있습니다. Date 객체는 현재 날짜와 시간에 관련된 다양한 정보를 제공해줍니다. 아래 코드를 참고하여 현재 날짜를 출력해보세요.
+자바스크립트에서 현재 날짜를 얻는 방법은 매우 간단합니다. Date 객체를 사용하여 간단한 코드로 현재 날짜를 얻을 수 있습니다. 다음은 이 작업을 수행하는 간단한 예제 코드입니다.
 
 ```Javascript
-let date = new Date(); // 현재 날짜와 시간을 가져옴
-let year = date.getFullYear(); // 년도 정보를 가져옴
-let month = date.getMonth() + 1; // 월 정보를 가져오며, 0부터 시작하므로 1을 더해줌
-let day = date.getDate(); // 일 정보를 가져옴
-let hour = date.getHours(); // 시간 정보를 가져옴
-let minute = date.getMinutes(); // 분 정보를 가져옴
+let today = new Date();
+console.log(today);
+```
+출력 결과는 다음과 같을 것입니다.
 
-console.log("오늘은 " + year + "년 " + month + "월 " + day + "일 " + hour + "시 " + minute + "분입니다."); // 출력 결과: 오늘은 2021년 10월 31일 11시 30분입니다.
+```Javascript
+Thu Oct 07 2021 14:41:56 GMT+0900 (Korean Standard Time)
 ```
 
-# 깊이 들어가보기
+Date 객체에는 다양한 메소드가 있으며, 이를 사용하여 원하는 형식으로 날짜를 출력할 수도 있습니다. 예를 들어, 원하는 형식으로 날짜를 출력하는 코드는 다음과 같을 수 있습니다.
 
-Date 객체는 현재 날짜와 시간을 제공하는 기능 이외에도 다양한 메소드를 지원합니다. 예를 들어, `getDay()` 메소드는 요일에 대한 정보를 숫자로 반환해줍니다. 일요일부터 토요일까지 각각 0부터 6까지의 값을 가집니다. 또한, `toLocaleString()` 메소드를 사용하면 지역 설정에 따라 날짜와 시간이 출력되는 방식을 조정할 수 있습니다. 자세한 내용은 아래 링크를 참고해주세요.
+```Javascript
+let today = new Date();
+let day = today.getDate();
+let month = today.getMonth() + 1;
+let year = today.getFullYear();
+console.log(`${year}-${month}-${day}`);
+```
+출력 결과는 다음과 같을 것입니다.
 
-# 참고자료
+```Javascript
+2021-10-7
+```
 
-- [MDN - Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [나무위키 - Date 객체](https://namu.wiki/w/Date%20%EA%B0%9D%EC%B2%B4)
-- [Github Gist - Javascript Date 객체 예제](https://gist.github.com/joyrexus/9238467#the-date-object)
-- [생활코딩 - Date 객체로 현재 시각 출력하기](https://opentutorials.org/module/3256/19547)
+이와 같이 Date 객체를 활용하여 얻은 현재 날짜는 다양한 프로그램에서 사용될 수 있습니다.
+
+## 딥 다이브
+
+Date 객체의 메소드들은 더욱 다양한 형태의 출력을 지원합니다. 이 중에서도 가장 널리 사용되는 메소드는 getTime() 메소드입니다. 이 메소드는 1970년 1월 1일부터 현재까지 경과한 밀리초를 반환합니다. 이 밀리초 값은 다양한 계산에 활용될 수 있습니다. 또한, Date 객체는 날짜뿐만 아니라 시간도 가져올 수 있습니다. Date 객체에서 시간을 가져오는 메소드 중 가장 널리 사용되는 것은 getHours(), getMinutes(), getSeconds() 메소드입니다.
+
+## 더 보기
+
+- [MDN Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JS Date 객체에 대한 재미있는 사실들](https://www.w3schools.com/js/js_date_fun.asp)
+- [다양한 Date 객체 활용 예시](https://blog.bitsrc.io/7-javascript-date-snippets-you-should-know-361861df287f)

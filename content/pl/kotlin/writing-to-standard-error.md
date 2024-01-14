@@ -1,44 +1,41 @@
 ---
 title:    "Kotlin: Pisanie do standardowego błędu"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu (standard error) jest niezwykle ważną umiejętnością dla programisty. Jest to często używane w celu zapisania informacji o błędach i problemach podczas wykonywania programu. Pozwala to na szybkie i skuteczne diagnozowanie problemów w kodzie.
+Pisanie do standardowego błędu (standard error) często jest wykorzystywane w programowaniu w celu wyświetlania błędów lub ostrzeżeń. Umożliwia to programiście szybkie zlokalizowanie potencjalnych problemów w kodzie i szybką naprawę błędów.
 
 ## Jak to zrobić
 
-Aby napisać do standardowego błędu w języku Kotlin, wystarczy użyć metody `System.err.println()`. Przykłady można znaleźć poniżej:
+Pisanie do standardowego błędu w języku Kotlin jest bardzo proste. Wystarczy użyć funkcji "println()" i przekazać jej jako argument obiekt typu "PrintStream", który będzie reprezentował standardowy błąd. Przykład kodu wyglądałby tak:
 
 ```Kotlin
-val a = 5
-val b = 0
-
-try {
-    val result = a / b
-    System.out.println(result)
-} catch (e: ArithmeticException) {
-    System.err.println("Dzielenie przez 0 nie jest dozwolone.")
-}
-
+println(System.err, "To jest wiadomość błędu.")
 ```
 
-Output:
+W wyniku powyższego kodu, na konsoli zostanie wyświetlona wiadomość "To jest wiadomość błędu." z oznaczniem, że pochodzi ona ze standardowego błędu.
+
+Możemy również przekazać do funkcji "println()" dowolny obiekt jako argument, a zostanie on automatycznie przekonwertowany do ciągu znaków. Przykład:
+
+```Kotlin
+val x = 5
+println(System.err, "Wartość x to: " + x) // Automatyczna konwersja do ciągu znaków
 ```
-Dzielenie przez 0 nie jest dozwolone.
-```
-W powyższym przykładzie, kiedy wartość zmiennej `b` jest równa 0, wywołane zostanie wyjątkowe zdarzenie (ArithmeticException) i komunikat o błędzie zostanie zapisany do standardowego błędu.
+
+Wynik powyższego kodu będzie identyczny jak w poprzednim przykładzie.
 
 ## Deep Dive
 
-Aby dogłębniej zrozumieć pisanie do standardowego błędu, warto wiedzieć, że jest to część standardowego strumienia wyjścia w systemie operacyjnym. Jest to niezwykle ważne, ponieważ pozwala na wyodrębnienie informacji o błędach od innych danych wyjściowych, takich jak standardowy strumień wyjścia (standard output). 
+Pisanie do standardowego błędu jest bardzo przydatne w przypadku, gdy chcemy wyświetlić błędy lub ostrzeżenia nie tylko na konsoli, ale również w dziennikach (logach) lub na innych wynikach wyjściowych. Standardowy błąd jest również wykorzystywany w bibliotekach i innych frameworkach, więc warto znać tę funkcję programowania.
 
-Dodatkowo, istnieje możliwość przekierowania informacji zapisanych do standardowego błędu do pliku lub innego strumienia wyjścia. Dzięki temu można dokładnie monitorować i analizować błędy w programie.
+Dzięki wykorzystaniu funkcji "println()", programista może kontrolować wyświetlany komunikat błędu lub ostrzeżenia, co jest bardzo ważne w przypadku tworzenia aplikacji, które będą wykorzystywane przez użytkowników.
 
-## Zobacz również
-- [Dokumentacja języka Kotlin - Pisanie do standardowego strumienia błędów](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-output-stream/-system-out/err.html)
-- [Poradnik programisty - Pisanie do standardowego błędu w języku Java](https://www.baeldung.com/java-write-to-system-error)
-- [Blog o programowaniu - Jak przekierować standardowy błąd do pliku w systemie Linux](https://www.linuxjournal.com/content/redirecting-output-bash)
+## Zobacz także
+
+- Dokumentacja języka Kotlin dotycząca pisania do standardowego błędu: https://kotlinlang.org/docs/reference/standard-library.html#printing-to-the-standard-error-stream
+- Informacje na temat obsługi wyjątków w języku Kotlin: https://kotlinlang.org/docs/reference/exceptions.html

@@ -1,50 +1,73 @@
 ---
-title:    "Python: Lesing av kommandolinjeargumenter"
+title:    "Python: Lese kommandolinjeargumenter"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å lese kommandolinje-argumenter er en viktig del av å skrive effektiv Python-kode. Det gjør det mulig å gi brukeren mer kontroll og fleksibilitet når de bruker programmet ditt, og det kan også gjøre det enklere å automatisere deler av koden din.
+
+Hvorfor bry seg om å lese kommandolinje-argumenter? Vel, det å kunne håndtere disse argumentene i koden din kan gjøre programmet ditt mer fleksibelt og tilpasningsdyktig. Ved å lese argumenter fra kommandolinjen kan du endre oppførselen til programmet ditt uten å måtte endre selve koden. Dette kan være nyttig når du ønsker å kjøre programmet ditt med forskjellige innstillinger eller behandle forskjellige datasett.
 
 ## Hvordan
-For å lese kommandolinje-argumenter i Python, bruker du et innebygd bibliotek kalt "argparse". Først må du importere dette biblioteket i koden din:
+
+For å lese kommandolinje-argumenter i Python, kan du bruke `sys`-modulen. Denne modulen gir tilgang til kommandolinje-argumentene som er gitt når programmet blir kjørt. La oss se på et eksempel:
 
 ```Python
-import argparse
+import sys
+
+# Les inn kommandolinje-argumenter
+args = sys.argv[1:]
+
+# Skriv ut alle argumentene
+print("Kommandolinje-argumenter:")
+for arg in args:
+    print(arg)
+
 ```
 
-Deretter kan du definere hvilke kommandolinje-argumenter du vil lese inn ved hjelp av ArgumentParser-objektet:
+Hvis du for eksempel kjører dette programmet med følgende kommandolinje `python program.py arg1 arg2 arg3`, vil output være:
+
+```
+Kommandolinje-argumenter:
+arg1
+arg2
+arg3
+```
+
+Som du kan se, så blir kommandolinje-argumentene lagret i listen `args`. Deretter kan du behandle argumentene videre akkurat som du ville gjort med hvilken som helst annen liste i Python.
+
+## Dypdykk
+
+Vi kan også spesifisere argumenter med forskjellige flagg og argumentverdier. Dette kan være nyttig når du ønsker å angi bestemte innstillinger for programmet ditt. La oss ta en titt på et eksempel på hvordan du kan lese disse argumentene:
 
 ```Python
-parser = argparse.ArgumentParser()
-parser.add_argument("--navn", help="Navnet ditt")
-parser.add_argument("--alder", type=int, help="Alderen din")
-args = parser.parse_args()
+import sys
+
+# Les inn kommandolinje-argumenter
+# Første argument er flagget "-f" og dens verdi
+# Andre argument er flagget "-n" og dens verdi
+args = sys.argv[1:]
+
+# Skriv ut filnavnet og antall linjer
+print("Filnavn:", args[0])
+print("Antall linjer:", args[1])
+
 ```
 
-I dette eksempelet definerer vi to kommandolinje-argumenter: "--navn" og "--alder". Vi setter også et "help" -argument som vil bli brukt til å gi en beskrivelse av argumentet når brukeren spør om det.
+Hvis du nå kjører programmet med følgende kommandolinje `python program.py -f fil.txt -n 10`, vil output være:
 
-Når du har definert argumentene dine, kan du bruke dem i koden din som variabler:
-
-```Python
-print("Hei " + args.navn + ", du er " + str(args.alder) + " år gammel.")
+```
+Filnavn: fil.txt
+Antall linjer: 10
 ```
 
-Når du kjører koden din fra kommandolinjen og gir med argumentene "--navn" og "--alder", vil du få følgende output:
-
-```bash
-$ python min_kode.py --navn Jonas --alder 25
-Hei Jonas, du er 25 år gammel.
-```
-
-## Deep Dive
-For å lese enda mer kompliserte kommandolinje-argumenter, kan du bruke "nargs" -argumentet til ArgumentParser-objektet. Dette lar deg definere antall verdier som kan leses fra ett enkelt argument. Du kan også bruke "choices" -argumentet til å begrense mulige verdier for et argument.
-
-Det finnes også mange flere funksjoner og metoder i "argparse" -biblioteket som kan hjelpe deg med å håndtere kommandolinje-argumenter på en mer avansert måte. Utforsk dokumentasjonen for å lære mer om disse.
+Som du kan se, er det viktig å holde styr på rekkefølgen til argumentene når du leser dem. Du kan også spesifisere flere flagg og verdier for å tilpasse programmet ditt enda mer.
 
 ## Se også
-- [Dokumentasjon for "argparse" biblioteket](https://docs.python.org/3/library/argparse.html)
-- [En grundig tutorial om å lese og behandle kommandolinje-argumenter i Python](https://realpython.com/command-line-interfaces-python-argparse/)
-- [En praktisk bruk av "argparse" for å bygge et kommandolinje-verktøy](https://scotch.io/tutorials/build-a-command-line-application-with-python)
+
+- [Python dokumentasjon om sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Artikkel om lesing av kommandolinje-argumenter i Python](https://realpython.com/command-line-interfaces-python-argparse/)
+
+Med disse tipsene kan du enkelt lese og håndtere kommandolinje-argumenter i dine Python-programmer. Lykke til med kodingen!

@@ -1,36 +1,63 @@
 ---
-title:    "TypeScript: Uuden projektin aloittaminen"
+title:    "TypeScript: Aloittamassa uutta projektia"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projekti?
+## Miksi
 
-On monia syitä, miksi kannattaa aloittaa uusi TypeScript-projekti. Jotkut saattavat olla innokkaita kokeilemaan uusia teknologioita ja päivittämään taitojaan, kun taas toisilla voi olla tarve luoda tehokkaampi ja ylläpidettävämpi ohjelmisto. Yksi suurimmista eduista on TypeScriptin tarjoama tyyppiturva, joka auttaa vähentämään virheitä ja parantamaan koodin laatua.
+Aloittaessasi uuden projektin TypeScriptilla, pystyt helpommin kirjoittamaan ja ylläpitämään suurta tietokoodipohjaa. TypeScript tarjoaa parempaa kirjoitus- ja virheenkorjaustyökaluja verrattuna perinteisiin Javascript-kieleen.
 
-## Kuinka aloittaa TypeScript-projekti?
+## Kuinka aloittaa
 
-### Asenna TypeScript
+Aloita asentamalla TypeScript-compiler NPM:n kautta. Seurauksen koodinpaloista näet miten TypeScript-koodi näyttää tavallisesti. 
 
-Ensimmäinen askel on asentaa TypeScript-kielen komentorivityökalut ohjeiden mukaan. Voit tehdä tämän komennolla ```npm install -g typescript```. Tämän jälkeen voit tarkistaa asennuksen onnistumisen komennolla ```tsc -v```, joka tulisi näyttää asennetun TypeScript-version.
+```TypeScript
+npm install -g typescript
+```
 
-### Luo TypeScript-projekti
+Seuraavaksi voit luoda uuden TypeScript-projektin nimeltä "example".
 
-Seuraavaksi sinun täytyy luoda uusi kansio projektillesi ja siirtyä siihen komentokehotteessa. Voit sitten luoda ```package.json``` -tiedoston komennolla ```npm init```. Tämän jälkeen voit asentaa tarvittavat riippuvuudet komennolla ```npm install --save-dev typescript @types/node```, joka asentaa TypeScriptin ja tarvittavat tyypit Node.js:lle.
+```TypeScript
+mkdir example
+cd example
+```
 
-### Kirjoita koodia
+Luo uusi TypeScript-tiedosto nimeltä "app.ts".
 
-Nyt olet valmis kirjoittamaan TypeScript-koodia! Luo uusi tiedosto ```.ts``` -päätteellä ja kirjoita haluamasi koodi. Muista käyttää tyyppien annotointia hyödyntääksesi TypeScriptin tarjoamia etuja. Kun olet valmis, voit suorittaa koodisi komennolla ```tsc tiedostonimi.ts```, joka muuntaa koodisi JavaScriptiksi.
+```TypeScript
+touch app.ts
+```
 
-## Syvällisempi sukellus uuden projektin aloittamiseen
+Kirjoita koodisi "app.ts" tiedostossasi.
 
-Kun olet luonut uuden TypeScript-projektin, on tärkeää muistaa muutamia asioita sen ylläpidon helpottamiseksi. Ensinnäkin, hyödynnä tyyppien annotointia niin paljon kuin mahdollista - se auttaa vähentämään virheitä ja tekee koodista helpommin ylläpidettävän. Lisäksi, kannattaa määrittää ```tsconfig.json``` -tiedosto, joka määrittelee TypeScript-projektisi asetukset, kuten sallitut kääntämisen osajoukot ja kohdekansioiden määritykset.
+```TypeScript
+function greeting(name: string) {
+  console.log("Hei " + name + ", tervetuloa TypeScript-maailmaan!");
+}
 
-Tärkein asia, jonka muistaa aloittaessa uutta projektia TypeScriptillä, on pitää avoin mieli ja olla valmis oppimaan uutta. Vaikka TypeScript voi vaikuttaa alussa vaikealta, sen tarjoamat edut tekevät siitä varteenotettavan vaihtoehdon JavaScriptille.
+let name = "Finnish readers";
+greeting(name);
+```
 
-# Katso myös
+Käännä koodisi TypeScriptista Javascriptiksi suorittamalla komento `tsc app.ts`. Tämä generoi uuden Javascript-tiedoston nimeltä "app.js".
 
-- [TypeScript-projektin aloituksen opas](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [TypeScriptin asentaminen](https://www.typescriptlang.org/download)
-- [TypeScript ja Node.js -projektin alustus](https://dev.to/aurelkurtula/getting-started-with-typescript-in-nodejs-1kbb)
+Voit nyt ajaa Javascript-tiedostosi komentoriviltä käyttämällä komentoa `node app.js`. Näet seuraavanlaisen tulosteen:
+
+```TypeScript
+Hei Finnish readers, tervetuloa TypeScript-maailmaan!
+```
+
+## Syväsukellus
+
+Jos haluat aloittaa suuremman TypeScript-projektin, voit harkita Typescriptin käyttämistä yhdessä monien suosittujen kehitysympäristöjen kanssa, kuten Visual Studio Code, WebStorm, Atom tai Sublime Text. Nämä kehitysympäristöt tarjoavat lisäominaisuuksia, kuten automaattisen koodin korjaamisen ja debuggerin, jotka voivat helpottaa koodin kirjoittamista ja virheenkorjausta.
+
+Voit myös lisätä muita paketteja ja kirjastoja TypeScript-projektiisi käyttämällä NPM-pakettienhallintaa ja `package.json` -tiedostoa.
+
+## Katso myös
+
+- TypeScriptin virallinen sivusto: https://www.typescriptlang.org/
+- NPM-pakettienhallinta: https://www.npmjs.com/
+- Visual Studio Code: https://code.visualstudio.com/

@@ -1,37 +1,35 @@
 ---
 title:    "Gleam: 文字列の長さを見つける"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why (なぜ): 
-文字列の長さを求める作業には、多くの理由があります。たとえば、プログラミングの中で、文字列を取り扱う必要がある場合や、文字列を処理する際には、その長さを知る必要があります。また、文字列の長さを求めることによって、プログラムの実行速度を最適化することもできます。Gleamを使うと、文字列の長さを簡単に求めることができます。
+## なぜ: 文字列の長さを調べることに興味を持つ理由
 
-## How To (方法):
-まずは、Gleamで文字列を定義してみましょう。以下のコードブロックを使うと、"Hello, World!"という文字列を定義できます。 
+文字列の長さを調べることは、プログラミング学習の基礎となる重要なスキルです。文字列の長さを計算することで、より複雑なコードを書くことができるようになります。
 
-```Gleam
-let string = "Hello, World!"
-```
+## 方法: Gleamで文字列の長さを調べる方法
 
-次に、`String.length()`関数を使って、指定した文字列の長さを調べることができます。例えば、上で定義した"Hello, World!"の長さは12ですので、以下のようにコードを書くことができます。
+文字列の長さを調べるには、まずGleamで文字列を作成する必要があります。それから、組み込みの`length`関数を使用して文字列の長さを求めることができます。下記のコード例を参考にしてください。
 
 ```Gleam
-let length = String.length(string)
+let string = "こんにちは！"
+let string_length = length(string)
 ```
+上記の例では、`string`変数に"こんにちは！"という文字列を代入し、`length`関数を使ってその長さを`string_length`変数に代入しています。実行すると、`string_length`の値は`6`になります。
 
-出力結果は、`length`変数に格納されていますので、以下のように表示することができます。
+## 詳細: 文字列の長さを調べる際の注意点
 
-```Gleam
-IO.println("Length of string is #{length}")
-```
+文字列の長さを調べる際に注意するべきポイントがあります。例えば、日本語のようにマルチバイト文字を含む文字列の場合、単純に文字数を数えることだけでは正確な長さが得られないことがあります。その場合は、Gleamの組み込みの`string.utf8_count()`関数を使用することでバイト数を取得することができます。
 
-実行結果は、"Length of string is 12"と表示されます。
+また、Gleamでは文字列はimmutable（不変）なので、文字列の一部を変更することはできません。つまり、文字列の長さを変更することもできません。
 
-## Deep Dive (詳細):
-Gleamでは、文字列の長さを求めるのに`String.length()`関数を使いますが、実際にどのように働いているのか知りたい方もいるかもしれません。この関数は、文字列が持つ`size`というメソッドを呼び出しています。このメソッドは、文字列のバイト数を返します。つまり、文字列の長さは、含まれている文字の数とバイト数が一致するわけではありません。例えば、日本語の文字はUTF-8エンコーディングが使われるため、1文字あたり3バイトとなります。
+## 関連情報を見る
 
-## See Also ( 関連リンク ):
-- [Gleamの公式ドキュメント](https://gleam.run/documentation/)
-- [GleamのGithubリポジトリ](https://github.com/gleam-lang/gleam)
+- [Gleamドキュメント：文字列の長さを調べる](https://gleam.run/documentation/#strings)
+- [Gleamドキュメント：文字列の操作](https://gleam.run/documentation/#strings)
+- [Gleam公式サイト](https://gleam.run/)
+
+感謝します！

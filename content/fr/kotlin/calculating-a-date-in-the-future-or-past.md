@@ -1,63 +1,64 @@
 ---
 title:    "Kotlin: Calculer une date dans le futur ou le passé"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Calculer une date dans le futur ou dans le passé peut être utile dans de nombreux cas, que ce soit pour programmer des rappels, planifier des événements ou simplement pour connaître une date précise à l'avance. Cela permet également d'automatiser certaines tâches et de gagner du temps.
+La capacité à calculer une date dans le futur ou dans le passé peut être utile pour de nombreuses raisons, telles que planifier un événement ou calculer des délais de livraison. En utilisant Kotlin, nous pouvons facilement réaliser ces calculs pour nous, plutôt que de les faire manuellement.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en Kotlin, vous pouvez utiliser la classe ```LocalDate``` de la bibliothèque standard Java.time. Voici un exemple de code qui affiche la date dans 30 jours à partir d'aujourd'hui:
+Voici un exemple de code en Kotlin pour calculer une date dans le futur ou dans le passé :
 
-```Kotlin
-val today = LocalDate.now()
-val futureDate = today.plusDays(30)
-println(futureDate)
+```
+// Calculer la date dans le futur en utilisant l'opérateur "plus" du type "LocalDate"
+val jourFutur = LocalDate.now().plus(2, ChronoUnit.DAYS)
+println(jourFutur)
+
+// Calculer la date dans le passé en utilisant l'opérateur "minus" du type "LocalDate"
+val jourPasse = LocalDate.now().minus(2, ChronoUnit.MONTHS)
+println(jourPasse)
 ```
 
-Cela produira la sortie suivante: `2021-10-14` (si aujourd'hui est le 14 septembre 2021).
-
-Pour calculer une date dans le passé, vous pouvez utiliser la méthode `minus` au lieu de `plus`, en indiquant le nombre de jours à soustraire. Par exemple:
-
-```Kotlin
-val today = LocalDate.now()
-val pastDate = today.minusDays(7)
-println(pastDate)
+Output :
+```
+2020-09-23 (pour "jourFutur")
+2020-05-23 (pour "jourPasse")
 ```
 
-Cela affichera `2021-09-07` (si aujourd'hui est le 14 septembre 2021).
+Il est également possible de calculer une date à partir d'une date existante :
 
-## Plongée profonde
+```
+// Utilisation d'une date existante
+val date = LocalDate.of(2020, Month.JULY, 15)
 
-Il est important de noter que les méthodes `plusDays` et `minusDays` renvoient une nouvelle instance de la classe `LocalDate` plutôt que de modifier l'objet existant. Cela garantit l'immutabilité et la stabilité du code.
+// Calculer la date 1 mois plus tard et l'imprimer
+val futur = date.plusMonths(1)
+println(futur)
 
-De plus, il est possible d'ajouter ou de soustraire d'autres unités de temps que les jours, telles que les mois et les années. Par exemple:
-
-```Kotlin
-val today = LocalDate.now()
-val futureDate = today.plusMonths(6).plusYears(2)
-println(futureDate)
+// Calculer la date 2 semaines plus tôt et l'imprimer
+val passe = date.minusWeeks(2)
+println(passe)
 ```
 
-Cela affichera `2023-03-14` (si aujourd'hui est le 14 septembre 2021).
-
-Enfin, pour afficher la date dans un format différent, vous pouvez utiliser la méthode `format` en spécifiant le format souhaité. Par exemple:
-
-```Kotlin
-val today = LocalDate.now()
-val futureDate = today.plusDays(30)
-val formattedDate = futureDate.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"))
-println(formattedDate)
+Output :
+```
+2020-08-15 (pour "futur")
+2020-07-01 (pour "passe")
 ```
 
-Cela affichera `14 octobre 2021` (si aujourd'hui est le 14 septembre 2021).
+## Plongée en profondeur
 
-# Voir aussi
+En utilisant la classe "LocalDate" de Kotlin, nous pouvons facilement manipuler des dates en ajoutant ou en soustrayant des unités de temps telles que des jours, des mois ou des années. Il est également possible de calculer des dates en utilisant des unités de temps personnalisées telles que des semaines ou des heures en utilisant la classe "ChronoUnit".
 
-- [Documentation de Kotlin sur la classe LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
-- [Documentation de Java sur la classe LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutoriel sur les dates et heures en Kotlin](https://www.baeldung.com/kotlin/java-time-dates)
+De plus, Kotlin offre également la possibilité de formater les dates selon différents modèles tels que "dd-MM-yyyy" ou "MM/dd/yyyy" en utilisant la méthode "format".
+
+## Voir aussi
+
+- Documentation officielle de Kotlin pour les classes "LocalDate" et "ChronoUnit" : [Accessing and Modifying Dates](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-date-time/index.html)
+
+- Tutoriel sur la manipulation des dates en Kotlin : [Working with Dates in Kotlin](https://www.raywenderlich.com/2732191-working-with-dates-in-kotlin)

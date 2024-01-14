@@ -1,45 +1,35 @@
 ---
-title:    "Javascript: Generering av slumpmässiga nummer"
+title:    "Javascript: Generering av slumpmässiga tal"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skapa slumpmässiga nummer är en viktig del av många programmeringsprojekt. Oavsett om du behöver ett slumpmässigt lösenord, skapar ett spel eller testar algoritmer, kan generering av slumpmässiga nummer vara en användbar funktion i ditt program.
 
-## Hur man gör
-För att generera slumpmässiga nummer i Javascript använder man sig av funktionen Math.random(). Detta ger ett flyktigt värde mellan 0 och 1. För att få ett heltal kan man sedan använda sig av Math.floor() eller Math.ceil() för att avrunda nedåt respektive uppåt till närmaste heltal.
+Att generera slumpmässiga nummer är en vanlig funktion inom programmering. Det används för att skapa variation och inte låta resultatet bli förutsägbart. Det kan också användas för att simulera verkliga scenarier eller som en del av krypteringsalgoritmer.
 
-```Javascript
-// Generera ett slumpmässigt tal mellan 1 och 10
-let randomNum = Math.floor(Math.random() * 10) + 1;
-console.log(randomNum); // Output: Slumpmässigt tal mellan 1 och 10
-```
+## Så här gör du
 
-Om du vill ha ett slumpmässigt tal mellan två specifika värden, till exempel mellan 20 och 50, kan du använda samma metod men lägga till det nedre värdet som en konstant i uträkningen.
+Generering av slumpmässiga nummer är ganska enkelt i JavaScript. Här är ett exempel på hur man kan skapa ett slumpmässigt heltal mellan 1 och 10:
 
 ```Javascript
-// Generera ett slumpmässigt tal mellan 20 och 50
-let randomNum = 20 + Math.floor(Math.random() * 31);
-console.log(randomNum); // Output: Slumpmässigt tal mellan 20 och 50
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber);
 ```
 
-Om du vill ha en lista med slumpmässiga värden kan du använda en loop för att generera flera tal.
+Koden ovan använder sig av Math-objektet som finns inbyggt i JavaScript. Genom att använda sig av `Math.random()` funktionen kan vi skapa ett decimaltal mellan 0 och 1. Genom att sedan multiplicera med 10 och avrunda nedåt med `Math.floor()` får vi ett heltal mellan 0 och 9. Genom att sedan lägga till 1 får vi ett heltal mellan 1 och 10.
 
-```Javascript
-// Generera en lista med 10 slumpmässiga tal mellan 1 och 100
-let randomList = [];
-for (let i = 0; i < 10; i++) {
-  randomList.push(Math.floor(Math.random() * 100) + 1);
-}
-console.log(randomList); // Output: Lista med 10 slumpmässiga tal mellan 1 och 100
-```
+Det finns också andra metoder för att generera slumpmässiga nummer i JavaScript, till exempel `Math.round()` och `Math.ceil()`. Det är viktigt att tänka på att dessa metoder inte genererar helt slumpmässiga nummer utan använder sig av förutbestämda algoritmer. För att få mer slumpmässiga nummer kan man använda sig av externa bibliotek eller API:er.
 
 ## Djupdykning
-Det finns flera faktorer som kan påverka hur slumpmässiga de genererade talen faktiskt är. Eftersom Math.random() använder sig av ett flyktigt värde, kan det påverkas av timestampen som används av datorn för att beräkna det. Detta kan i vissa fall leda till att uträkningen blir mindre slumpmässig. Det finns dock olika tekniker som kan användas för att förbättra slumpmässigheten, såsom att blanda olika algoritmer eller använda andra värden, som användarens muspekare, vid uträkningsprocessen.
+
+JavaScript använder sig av en vanlig algoritm för att generera slumpmässiga nummer, kallad "Linear Congruential Algorithm". Det är en relativt enkel metod för att generera nummer men det finns vissa begränsningar. Till exempel är det svårt att garantera att alla tal blir slumpmässiga och att det inte uppstår mönster i följderna av nummer.
+
+Det finns också andra faktorer som kan påverka resultatet av slumpmässiga nummer, till exempel användning av samma frö (seed) eller vilken webbläsare som används. Därför är det viktigt att förstå begränsningarna och användningsområdena för slumpmässiga nummer i JavaScript.
 
 ## Se även
-- [Math Objektet i Javascript](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [Användarnas muspekare för att förbättra slumpmässighet](https://medium.com/@madsborup/random-with-mouse-position-edfd309ca5a4)
-- [Slumpmässighet i datorprogram](https://en.wikipedia.org/wiki/Random_number_generation)
+
+- [Math-objektet i JavaScript](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [Slumpmässiga nummer i Javascript](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Math/random)

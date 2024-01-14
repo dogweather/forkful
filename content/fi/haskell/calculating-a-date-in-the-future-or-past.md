@@ -1,43 +1,43 @@
 ---
-title:    "Haskell: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:    "Haskell: Päivämäärän laskeminen tulevaisuudessa tai menneessä"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi ihminen haluaisi laskea päivämäärää tulevaisuudessa tai menneisyydessä? Tähän on useita syitä, kuten esimerkiksi suunnitelmien tekeminen, ajanhallinta tai historiallisten tapahtumien tutkiminen.
+Miksi joku haluaisi laskea päivämäärän tulevaisuutta tai menneisyyttä?
 
-## Miten tehdä
+Monissa ohjelmoinnin projekteissa tarvitaan kykyä laskea päivämäärät tulevaisuudessa tai menneisyydessä. Tämä voi olla hyödyllistä esimerkiksi laskutusjärjestelmässä, jossa tarvitaan tieto tulevista maksupäivistä. Tällaisia laskelmia voi myös tarvita vaikkapa varausjärjestelmässä tai tapahtumahallinnassa.
 
-```Haskell
-päivämääräTulevaisuudessa :: Integer -> Integer -> Integer -> [Char]
-päivämääräTulevaisuudessa vuosi kuukausi päivä
-    | kuukausi == 12 && päivä > 31 = tulevaisuudenPäivämäärä 1 1 (vuosi + 1)
-    | kuukausi == 12 && päivä == 31 = show päivä ++ "." ++ show kuukausi ++ "." ++ show vuosi
-    | päivä > kuukaudenPituus kuukausi = tulevaisuudenPäivämäärä vuosi (kuukausi + 1) 1
-    | otherwise = show päivä ++ "." ++ show kuukausi ++ "." ++ show vuosi
+## Miten
 
-kuukaudenPituus :: Integer -> Integer
-kuukaudenPituus kuukausi
-    | kuukausi == 2 = 28
-    | kuukausi == 4 || kuukausi == 6 || kuukausi == 9 || kuukausi == 11 = 30
-    | otherwise = 31
-```
+Onneksi Haskellissa on helppo laskea päivämääriä tulevaisuudessa tai menneisyydessä. Tämä onnistuu käyttämällä `Data.Time`-kirjastoa ja sen `addDays`-funktiota.
 
-Esimerkki käytöstä:
+Esimerkiksi, jos haluat laskea päivämäärän 10 päivää tulevaisuuteen, voit käyttää seuraavaa koodia:
 
 ```Haskell
-> päivämääräTulevaisuudessa 2021 3 26
-"26.3.2021"
+import Data.Time
+
+tanaan <- getCurrentTime
+tulevaisuus <- return $ addDays 10 tanaan
+print tulevaisuus
 ```
 
-## Syvempää pohdintaa
+Tämä koodi ensin hakee nykyisen päivämäärän ja tallentaa sen muuttujaan `tanaan`. Sitten se laskee 10 päivää nykyisestä päivämäärästä eteenpäin käyttäen `addDays`-funktiota ja tallentaa tulevan päivämäärän muuttujaan `tulevaisuus`. Lopuksi se tulostaa tulevan päivämäärän konsoliin.
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä vaatii tarkkaa osaamista Haskell-ohjelmoinnista. Täytyy ottaa huomioon muun muassa vuoden vaihtuminen ja kuukauden eri pituudet. Hyödyllisiä taitoja tämän tehtävän ratkaisemiseksi ovat ehdollisen lauseen käyttö, rekursion ymmärtäminen ja funktioiden rakentaminen.
+Tämän esimerkin tuloste voisi olla esimerkiksi `2021-11-20 00:00:00 +0200`, riippuen siitä, mihin päivään sitä ajetaan.
+
+## Syvähdyssukellus
+
+`Data.Time`-kirjastossa on muitakin hyödyllisiä funktioita päivämäärien laskemiseen. Yksi tällainen funktio on `addGregorianMonthsClip`, joka laskee päivämääriä kuukausien tai vuosien päähän. Tämä funktio kuitenkin klippaa päivämäärän, eli jos laskettu päivämäärä ei ole oikea päivämäärä kyseisessä kuukaudessa (esim. helmikuussa ei ole 31. päivää), se asettaa sen automaattisesti viimeiseksi päivämääräksi kyseisessä kuukaudessa.
+
+Toinen hyödyllinen funktio on `diffDays`, jolla voi laskea päivien välisen eron kahden päivämäärän välillä. Tämän avulla voi esimerkiksi laskea, kuinka monta päivää on seuraavaan laskutuspäivään tai kuinka monta päivää on syntymäpäivääsi.
 
 ## Katso myös
 
-- [Haskell-ohjelmoinnin aloittaminen](https://fi.wikipedia.org/wiki/Haskell)
-- [Haskellin opiskelumateriaalit](https://www.haskell.org/documentation/)
+- [Haskellin virallinen dokumentaatio `Data.Time`-kirjastosta](https://www.stackage.org/haddock/lts-17.19/time-1.9.3/Data-Time.html)
+- [Ohjelmoijan päivämäärän laskeminen tulevaisuudessa tai menneisyydessä käyttäen JavaScriptiä](https://x-team.com/blog/future-and-past-date-calculation-in-javascript/) (englanniksi)
+- [Päivien laskeminen Excelissä](https://support.microsoft.com/en-us/office/calculate-the-difference-between-two-dates-8235e7c9-b430-44ca-9425-46100a162f38) (englanniksi)

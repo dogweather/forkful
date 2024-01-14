@@ -1,54 +1,56 @@
 ---
 title:    "TypeScript: Einen Textdatei lesen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn du Textdateien in einem TypeScript-Programm lesen musst, gibt es verschiedene Gründe, warum du dich in diesem Artikel damit beschäftigen solltest. Du könntest zum Beispiel eine Konfigurationsdatei lesen, Benutzereingaben parsen oder Daten aus einer externen Quelle importieren. Lesen von Textdateien ist eine häufige Aufgabe in der Programmierung und in diesem Artikel erfährst du, wie du dies in TypeScript realisieren kannst.
+Textdateien sind eines der grundlegenden Dateiformate in der Programmierung. Durch das Lesen von Textdateien können wir wichtige Informationen wie Konfigurationsdaten oder Benutzereingaben verarbeiten. In diesem Blog-Beitrag werden wir uns ansehen, wie man Textdateien mit TypeScript liest.
 
-## Wie es geht
-Um eine Textdatei in TypeScript zu lesen, kannst du das `fs`-Modul verwenden, das bereits in Node.js integriert ist. Das folgende Beispiel zeigt, wie du eine Datei namens "beispiel.txt" im selben Verzeichnis wie dein TypeScript-Code liest und deren Inhalt auf der Konsole ausgibst:
+## Wie man Textdateien mit TypeScript liest
+Zunächst erstellen wir eine Beispieltextdatei mit dem Namen "beispiel.txt" mit folgendem Inhalt:
 
-```TypeScript
-import fs from 'fs';
-
-const datei = fs.readFileSync('beispiel.txt', 'utf-8');
-console.log(datei);
+```
+Dies ist eine Beispieltextdatei.
+Wir verwenden sie, um das Lesen von Textdateien in TypeScript zu demonstrieren.
 ```
 
-Dieses Beispiel verwendet die `readFileSync`-Funktion des `fs`-Moduls, um synchron auf die Datei "beispiel.txt" zuzugreifen. Die erste Argument ist der Dateipfad und das zweite Argument gibt das Zeichenkodierungsschema an. In diesem Fall verwenden wir "utf-8", was für die meisten gängigen Textdateien funktioniert. Wenn die Datei erfolgreich gelesen wird, wird ihr Inhalt als Zeichenkette zurückgegeben und in der Konsole ausgegeben.
-
-Es ist auch möglich, eine Datei asynchron mit dem `fs`-Modul zu lesen. Das folgende Beispiel zeigt, wie dies mit der `readFile`-Funktion gemacht werden kann:
+Nun können wir mit dem Lesen der Datei in unserer TypeScript-Datei beginnen:
 
 ```TypeScript
 import fs from 'fs';
 
-fs.readFile('beispiel.txt', 'utf-8', (error, datei) => {
-  if (error) {
-    console.error(`Fehler beim Lesen der Datei: ${error}`);
-    return;
-  }
-  console.log(datei);
+// Pfad zur Textdatei
+const pfad = 'beispiel.txt';
+
+// Asynchrones Lesen der Datei
+fs.readFile(pfad, (fehler, daten) => {
+    if (fehler) {
+      // Fehlerbehandlung
+      console.log(fehler);
+    }
+    // Konvertieren des Datentyps zu String
+    const text = daten.toString();
+    // Ausgabe des Dateiinhalts
+    console.log(text);
 });
 ```
 
-Die `readFile`-Funktion verwendet eine Callback-Funktion, die aufgerufen wird, wenn die Datei erfolgreich gelesen wurde oder ein Fehler aufgetreten ist. Das zweite Argument der Callback-Funktion gibt den Inhalt der Datei zurück, falls sie erfolgreich gelesen wurde. Ansonsten wird der Fehler ausgegeben.
+Wenn wir diese TypeScript-Datei ausführen, erhalten wir als Ausgabe den Inhalt der Textdatei:
 
-## Tief einsteigen
-Jetzt, da du weißt, wie du eine Textdatei in TypeScript lesen kannst, gibt es noch ein paar zusätzliche Dinge zu beachten. Zum einen solltest du immer überprüfen, ob die Datei existiert, bevor du versuchst, sie zu lesen. Dies kann mit der Funktion `existsSync` des `fs`-Moduls gemacht werden.
-
-Ein weiterer wichtiger Punkt ist die Behandlung von Zeilenumbrüchen (Line Breaks). In Windows-Betriebssystemen wird normalerweise der Zeilenumbruch mit dem Zeichenkette "\r\n" dargestellt, während in Unix-Systemen nur "\n" verwendet wird. Um sicherzustellen, dass du die richtige Zeilenunterbrechung verwendest, kannst du die `os`-Module von Node.js und die `EOL`-Konstante verwenden.
-
-```TypeScript
-import os from 'os';
-
-// EOL = End of Line = Zeilenumbruch
-const zeilenunterbrechung = os.EOL;
+```
+Dies ist eine Beispieltextdatei.
+Wir verwenden sie, um das Lesen von Textdateien in TypeScript zu demonstrieren.
 ```
 
+## Tiefer Einblick
+Bei der Verwendung von `fs.readFile` müssen wir immer auf den asynchronen Rückgabewert warten, daher wird eine Callback-Funktion ausgeführt, sobald der Dateiinhalt verfügbar ist. In der Callback-Funktion können wir dann den Dateiinhalt als Binärdaten erhalten und müssen ihn noch in einen String konvertieren, um ihn lesbar zu machen.
+
+Es gibt auch die Möglichkeit, Textdateien synchron mit `fs.readFileSync` zu lesen, aber dies blockiert den Ausführungsprozess, bis die Datei vollständig gelesen wurde. Daher ist es empfehlenswert, die asynchrone Methode zu verwenden.
+
 ## Siehe auch
-- [Node.js `fs`-Modul Dokumentation](https://nodejs.org/api/fs.html)
-- [Node.js `os`-Modul Dokumentation](https://nodejs.org/api/os.html)
-- [EOL-Konstante in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#newline-characters-in-strings-corrected)
+- [Node.js Dokumentation zu fs.readFile](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- [Tutorial zu TypeScript von der offiziellen Website](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Weitere Beispiele zu fs.readFile mit TypeScript](https://www.digitalocean.com/community/tutorials/nodejs-reading-files-with-fsjs)

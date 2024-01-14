@@ -1,51 +1,46 @@
 ---
 title:    "TypeScript: Calcolare una data nel futuro o nel passato"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La programmazione è una forma di arte in cui si creano istruzioni per il computer da seguire. Calcolare una data nel futuro o nel passato può essere utile per creare applicazioni in cui è necessario pianificare eventi o eseguire azioni in base a una data specifica.
+Calcolare una data nel passato o nel futuro è un'attività comune nella programmazione, utile per gestire appuntamenti, scadenze e varie operazioni temporali. In TypeScript, è possibile utilizzare alcune funzioni built-in per effettuare questi calcoli in modo facile e preciso.
 
-## Come fare
+## Come
 
-Per calcolare una data in TypeScript, possiamo utilizzare la libreria `Date` di JavaScript. Innanzitutto, dobbiamo importare questa libreria nel nostro codice.
+Per prima cosa, è necessario importare la classe `Date` dalle librerie standard di TypeScript. Con questa classe, è possibile creare un nuovo oggetto `Date` che rappresenta la data corrente. Ad esempio:
 
-```
-TypeScript
-import * as Date from 'Date';
-```
-
-Una volta importata, possiamo utilizzare il costruttore `Date` per creare una nuova istanza della data corrente.
-
-```
-TypeScript
-const currentDate = new Date();
+```TypeScript
+const today = new Date();
 ```
 
-Per calcolare una data nel futuro, possiamo utilizzare il metodo `setDate()` per impostare il numero di giorni desiderato oltre la data corrente.
+Per calcolare una data nel futuro, basta utilizzare il metodo `setDate()` dell'oggetto `Date` passando come parametro il numero di giorni desiderati. Per esempio, se vogliamo ottenere la data di 30 giorni dopo quella di oggi, possiamo fare così:
 
-```
-TypeScript
-currentDate.setDate(currentDate.getDate() + 30); // Imposta la data 30 giorni nel futuro
-```
-
-Allo stesso modo, per calcolare una data nel passato, possiamo utilizzare il metodo `setDate()` e impostare un numero negativo di giorni.
-
-```
-TypeScript
-currentDate.setDate(currentDate.getDate() - 7); // Imposta la data 7 giorni nel passato
+```TypeScript
+const futureDate = new Date();
+futureDate.setDate(today.getDate() + 30);
 ```
 
-Possiamo anche utilizzare altre funzioni della libreria `Date`, come ad esempio `setMonth()` per impostare il mese desiderato e `setFullYear()` per impostare l'anno desiderato.
+Per calcolare una data nel passato, invece, basta utilizzare lo stesso metodo `setDate()` ma passando come parametro un valore negativo. Ad esempio, se vogliamo ottenere la data di 30 giorni prima quella di oggi, possiamo fare così:
 
-## Approfondimenti
+```TypeScript
+const pastDate = new Date();
+pastDate.setDate(today.getDate() - 30);
+```
 
-Calcolare una data può essere più complicato di quanto sembri. Altri fattori da considerare includono il fuso orario e i giorni di passaggio dall'ora legale all'ora solare. Inoltre, la precisione delle date dipende dal tipo di calendario utilizzato. Ad esempio, il calendario gregoriano è il più comune e prevede di aggiungere un giorno bisestile ogni 4 anni, ma alcuni altri calendari, come il calendario giuliano, prevedono un giorno bisestile ogni 3 anni.
+Inoltre, è possibile effettuare calcoli più precisi utilizzando i metodi `setFullYear()`, `setMonth()` e `setFullYear()` per impostare rispettivamente l'anno, il mese e il giorno della data.
+
+## Deep Dive
+
+La classe `Date` offre molti altri metodi utili, come ad esempio `getDate()` per ottenere il giorno del mese, `getMonth()` per ottenere il mese (inizia da zero) e `getFullYear()` per ottenere l'anno. Inoltre, è possibile combinare questi metodi con le funzioni di confronto `===` per controllare se una data è maggiore, minore o uguale ad un'altra.
+
+Un'alternativa più avanzata per gestire le date è utilizzare la libreria `moment.js`, che offre una moltitudine di funzioni per effettuare operazioni sulle date in modo ancora più preciso e flessibile.
 
 ## Vedi anche
-- [Documentazione sulle date in TypeScript](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
-- [Tutorial su come utilizzare la libreria Date in TypeScript](https://www.tutorialspoint.com/typescript/typescript_date_object.htm)
-- [Calendario gregoriano vs calendario giuliano](https://diffen.com/difference/Julian_Calendar_vs_Gregorian_Calendar)
+
+- [Documentazione ufficiale di TypeScript sulla classe Date](https://www.typescriptlang.org/docs/handbook/standard-library.html#working-with-dates)
+- [Libreria moment.js](https://momentjs.com/)

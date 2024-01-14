@@ -1,37 +1,58 @@
 ---
-title:    "Go: टेक्स्ट फाइल लिखना"
+title:    "Go: एक टेक्स्ट फाइल लिखना"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-टेक्स्ट फ़ाइल लिखने में शामिल होने के लिए कोई *क्यों* करेगा? अक्सर हमें अपनी डेटा को किसी स्थायी स्थान में सहेजने की आवश्यकता होती है, जैसे कि अपने प्रोग्राम की सेटिंग्स, लॉग फ़ाइल्स या शॉर्टकट्स. टेक्स्ट फ़ाइल लिखना यह सुनिश्चित करता है कि हमारा डेटा सुरक्षित होता है और उसे आसानी से एक जगह से दूसरी जगह ले जाया जा सकता है.
 
-## कैसे करें
-टेक्स्ट फ़ाइल लिखने के लिए, हम `os` और `io` पैकेज का उपयोग कर सकते हैं. सबसे पहले, हमें फ़ाइल को खोलने की आवश्यकता होती है, जिसे `os.Create()` के साथ किया जा सकता है. फ़ाइल को खोलने के बाद, हम `io.WriteString()` का उपयोग कर सकते हैं जिससे हमें फ़ाइल में लिखने के लिए एक स्ट्रीम मिलता है. अंत में, हम फ़ाइल को बंद करने के लिए `file.Close()` का उपयोग कर सकते हैं.
+Kya aapne kabhi socha hai ki kisi text file ko likhna kyun zaruri hai? Agar aap ek Go programmer hai, toh text files aapke liye bahut important hai. Text files ke through hum apne data ko store kar sakte hai aur badhne wale samay mein usse access bhi kar sakte hai. Is blog post mein hum dekhenge ki kaise aap Go programming language mein text files ko likh sakte hai.
+
+## कैसे
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "io"
-    "os"
-)
-
 func main() {
-    file, err := os.Create("my_file.txt")
+    // File create karne ke liye
+    file, err := os.Create("sample.txt")
     if err != nil {
-        fmt.Println("Error:", err)
+        fmt.Println(err)
         return
     }
-    defer file.Close() // To close the file after writing
-    io.WriteString(file, "This is my first text file.") // Write to the file
+    defer file.Close()
+
+    // Text file mein data likhne ke liye
+    data := "Ye ek sample text file hai."
+    fmt.Fprintln(file, data)
+
+    // Text file ko read karne ke liye
+    b, err := ioutil.ReadFile("sample.txt")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    // Output print kare
+    fmt.Println(string(b))
 }
 ```
 
-उपरोक्त कोड को कम्पाइल करने के बाद, हमारे फ़ॉल्डर में `my_file.txt` नाम की फ़ाइल बन जाएगी और उसमें हमारा संदेश लिखा होगा.
+```
+Output:
+Ye ek sample text file hai.
+```
 
-## गहराई तक
-टेक्स्ट फ़ाइल लिखने के लिए यह केवल एक आसान उदाहरण है, हालांकि आप अपनी फ़ाइल में सामग्री को अधिक गहराई तक प्रतिस्थापित कर सकते हैं, उदाहरण के लिए, अन
+Is code example se aap dekh sakte hai ki hum kaise ek text file create kar sakte hai, usme data likh sakte hai aur phir use padh sakte hai. `io/ioutil` library hume file ko padhne aur likhne mein madad karta hai.
+
+## गहराई में झाँक
+
+Text file likhna asan hai, lekin isme kuch gahrai hai jise jaanne ke zarurat hai. Text file ke andar data ko store karne ke alawa, hume file ko open aur close karna bhi zaruri hota hai. Sahi jagah par file ko close na karne se humare program mein memory leaks ho sakte hai. Isliye, `defer` keyword ka istemal karke hume file ko automatically close karna chahiye. Iske alawa, hume error handling bhi dhyan rakhna chahiye taki program beech mein crash na ho. 
+
+Text file mein data likhna aur padhna asan hai, lekin file ka table of contents (TOC) banaana aur use update karna thoda difficult ho sakta hai. Iske liye hume `bufio` library ka istemal karna chahiye.
+
+## देखें भी
+
+- [Go documentation on file handling](https://golang.org/pkg/os)
+- [More examples of file handling in Go](https://www.golangprograms.com/go-language/file-handling.html)
+- [Using bufio library for reading and writing files](https://tutorialedge.net/golang/reading-console-input-golang)

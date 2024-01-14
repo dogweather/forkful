@@ -1,40 +1,53 @@
 ---
-title:    "Haskell: Skrivning till standardfel"
+title:    "Haskell: Att skriva till standard error"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standard error i Haskell är ett enkelt sätt att hantera felmeddelanden i dina program. Genom att skriva till standard error kan du tydligt separera dina felmeddelanden från annan utdata.
+Att skriva till standard error är en viktig del av att skriva Haskell-program. Det låter dig kommunicera med användaren på ett effektivt sätt och felsöka ditt program.
 
-## Så här gör man
-För att skriva till standard error i Haskell behöver du importera modulen `System.IO` och använda funktionen `hPutStrLn` som tar två argument - ett Handle och en sträng.
-
-```Haskell
-import System.IO
-
-hPutStrLn stderr "Det här är ett felmeddelande!"
-```
-
-Kör du detta program kommer du att se "Det här är ett felmeddelande!" på din standard error utdata.
+## Så här gör du
+För att skriva till standard error i Haskell, behöver du använda funktionen `hPutStrLn` från modulen `System.IO`. Det här är en standardfunktion som tar en sträng som argument och skriver ut den till standard error.
 
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-    hPutStrLn stderr "Det här är ett felmeddelande!"
-    putStrLn "Inte ett felmeddelande!"
+    hPutStrLn stderr "Hej, världen!"
 ```
 
-I detta exempel ser vi hur standard error och standard output kan skiljas åt genom att använda `hPutStrLn` på respektive Handle.
+Output:
+```
+Hej, världen!
+```
+
+Du kan också använda `putStrLn`-funktionen för att skriva till standard output, men det rekommenderas att använda `hPutStrLn` för att se till att meddelandet skrivs ut på rätt ställe.
 
 ## Djupdykning
-När ett program körs är det oftast bra att använda sig av `putStrLn` för att skriva till standard output, eftersom det är där all vanlig utdata sker. Men om du vill ha en tydlig separering av felmeddelanden är det bra att använda `hPutStrLn` på standard error.
+Standard error är en viktig del av felsökning i Haskell-program eftersom det låter dig skriva ut felmeddelanden och annan information till konsolen. Om du till exempel fångar ett fel med `catch`, kan du använda standard error för att skriva ut ett mer detaljerat felmeddelande.
 
-Det är också möjligt att byta ut standard error Handle mot en egen Handle, till exempel en fil. På så sätt kan du skriva felmeddelanden till en specifik fil för senare referens.
+```Haskell
+import System.IO
+import Control.Exception
+
+main :: IO ()
+main = do
+    catch (do
+        putStrLn "Skriv in ett heltal: "
+        input <- getLine
+        let num = read input :: Int
+        putStrLn ("Ditt tal är: " ++ show num)
+    ) (\e -> do 
+        hPutStrLn stderr ("Ogiltigt inmatat värde: " ++ show (e :: SomeException))
+    )
+```
+
+Om användaren matar in ett ogiltigt värde (t.ex. en bokstav istället för ett heltal) kommer det att skrivas ut ett mer tydligt felmeddelande på standard error.
 
 ## Se även
-- [Haskells dokumentation för System.IO](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [En tutorial för att skriva till standard error i Haskell](https://www.fpcomplete.com/blog/2011/07/fun-with-seha-fun-io-api-functions#putchar-and-puts)
-- [Dagens blogginlägg i lite samma anda, fast för JavaScript](https://dev.to/godcrampy/using-the-console-error-method-in-javascript-2en0)
+- [Haskell IO-dokumentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [En introduktion till felhantering i Haskell](https://dev.to/mattjbray/introduction-to-error-handling-in-haskell-3dmd)

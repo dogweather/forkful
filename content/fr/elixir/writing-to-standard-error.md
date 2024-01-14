@@ -1,48 +1,47 @@
 ---
-title:    "Elixir: Écrire sur l'erreur standard"
+title:    "Elixir: Écriture vers l'erreur standard"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire sur la sortie d'erreur standard peut sembler être une tâche banale pour certains, mais c'est en fait une pratique utile pour déboguer et trouver des erreurs dans votre code. Dans cet article, nous verrons pourquoi il est important d'écrire sur la sortie d'erreur standard en tant que développeur Elixir.
+L'écriture au flux d'erreur standard, également appelée stderr, est une tâche importante dans la programmation Elixir. Cela permet de recevoir des messages d'erreur ou de débogage lorsqu'un programme est en cours d'exécution. Sans cette pratique, il peut être plus difficile de comprendre et de résoudre les problèmes dans votre code.
 
 ## Comment faire
 
-L'écriture sur la sortie d'erreur standard en Elixir est assez simple. Il suffit d'utiliser la fonction `IO.puts/2` en passant en premier argument `:stderr` pour spécifier la sortie d'erreur standard. Voici un exemple de code qui écrit "Hello World" sur la sortie d'erreur standard :
+Voici un exemple simple de la syntaxe pour écrire au flux d'erreur standard en Elixir :
 
 ```Elixir
-IO.puts(:stderr, "Hello World")
+IO.puts("Ceci est un message de débogage") |> IO.puts(:stderr)
 ```
 
-Lorsque vous exécutez ce code, vous devriez obtenir un résultat comme ceci :
+Cela affichera le message "Ceci est un message de débogage" dans le flux d'erreur standard. Vous pouvez également utiliser des variables dans la fonction `IO.puts` pour afficher des informations spécifiques, comme ceci :
 
 ```Elixir
-Hello World
+age = 30
+IO.puts("Votre âge est #{age}") |> IO.puts(:stderr)
 ```
 
-Cela peut sembler contre-intuitif d'écrire sur la sortie d'erreur standard pour afficher des messages, mais en réalité, cela peut s'avérer très utile lors de la recherche de bugs dans votre code ou simplement pour afficher des informations importantes pendant l'exécution du programme.
+Cela affichera "Votre âge est 30" dans le flux d'erreur standard. En utilisant cette méthode, vous pouvez facilement suivre le déroulement de votre code pour détecter et résoudre les erreurs.
 
-## Exploration en profondeur
+## Plongée en profondeur
 
-L'écriture sur la sortie d'erreur standard peut être encore plus utile si vous ajoutez des informations supplémentaires aux messages. Vous pouvez utiliser la fonction `Kernel.inspect/2` pour afficher des valeurs dans un format lisible par l'homme. Voici un exemple de code qui affiche le contenu d'une liste sur la sortie d'erreur standard :
+En écrivant au flux d'erreur standard, il faut également prendre en compte le niveau de gravité des messages. Par défaut, Elixir utilise trois niveaux : `:debug`, `:info`, et `:error`. Selon le niveau que vous choisissez, le message sera affiché avec une couleur et un format différents. Par exemple, si vous utilisez `IO.inspect` pour afficher un message de débogage, il sera affiché en vert avec le niveau `:debug`.
+
+Vous pouvez également personnaliser le niveau de gravité en utilisant le module `Logger` :
 
 ```Elixir
-IO.puts(:stderr, "La liste contient : #{inspect([1, 2, 3])}")
+Logger.debug("Message de débogage personnalisé") # Affiche en vert
+Logger.error("Erreur personnalisée") # Affiche en rouge
 ```
 
-Lors de l'exécution de ce code, vous devriez voir quelque chose comme ceci :
-
-```Elixir
-La liste contient : [1, 2, 3]
-```
-
-Cela peut vous aider à trouver des erreurs dans votre code en affichant les valeurs de variables à des endroits stratégiques de votre programme.
+Il est important de choisir le bon niveau de gravité pour vos messages afin de faciliter le processus de débogage.
 
 ## Voir aussi
 
-- [Documentation officielle sur la sortie d'erreur standard en Elixir](https://hexdocs.pm/elixir/Kernel.html#puts/2)
-- [Article sur la lecture et l'écriture en Elixir](https://medium.com/@ockhrors/reading-and-writing-in-elixir-a-simple-approach-6966a7b9d2b4)
-- [Vidéo explicative sur l'écriture sur la sortie d'erreur standard en Elixir](https://www.youtube.com/watch?v=RWzXK5B7WDE)
+- [Documentation Elixir : IO.puts](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Documentation Elixir : Logger](https://hexdocs.pm/logger/Logger.html)
+- [Utiliser Elixir pour le débogage](https://learnxinyminutes.com/docs/elixir-fr/)

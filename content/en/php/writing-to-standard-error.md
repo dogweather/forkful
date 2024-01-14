@@ -1,45 +1,41 @@
 ---
 title:    "PHP recipe: Writing to standard error"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Writing to Standard Error is Useful
 
-Writing to standard error is an essential part of PHP programming because it allows for the proper handling of errors and debugging of code. By writing error messages to standard error, developers can easily identify and fix issues in their code, making for more efficient and reliable programs.
+As a programmer, it's important to have a way to communicate important information or errors to the user. This is where writing to standard error comes in. It allows for the output of error messages or debugging information separate from the regular output, making it easier for the user to identify and address any issues. 
 
-## How To
+## How To Write to Standard Error in PHP
 
-Writing to standard error in PHP is a simple task that can be accomplished using the `fwrite()` function. This function takes two parameters: the file pointer to standard error (`STDERR`) and the error message that needs to be written. Let's take a look at an example:
+Writing to standard error in PHP is a simple process that can be done in just a couple of lines of code. First, we need to open the stderr stream using the `fopen()` function with the mode "w" for writing. Next, we can use the `fwrite()` function to write whatever message or information we want to output. Finally, we need to close the stream using the `fclose()` function. 
+
+Let's take a look at an example:
 
 ```PHP
-<?php
-//open standard error file pointer
-$stderr = fopen('php://stderr', 'w');
-
-//error message to be written
-$error = "An error has occurred: Invalid input\n";
-
-//write error message to standard error
-fwrite($stderr, $error);
-
-//close file pointer
+$stderr = fopen('php://stderr','w');
+fwrite($stderr, "This is an error message.");
 fclose($stderr);
 ```
 
-The code above opens the standard error file pointer, writes the error message to it, and then closes the file pointer. When executed, the error message will be displayed in the standard error output, which is usually the terminal window.
+Running this code will output "This is an error message" to the standard error stream, which can be viewed in the terminal or error log.
 
-## Deep Dive
+## Deep Dive into Writing to Standard Error
 
-The `fwrite()` function is just one way to write to standard error in PHP. If you want to write multiple lines to standard error, you can use `file_put_contents()` instead, which will automatically open, write, and close the file pointer. Another option is to use the `error_log()` function, which allows you to specify the type of error (such as warning, notice, or fatal) and will automatically log the error to the server's error log file.
+While writing to standard error may seem like a simple concept, there are a few things to keep in mind when using it in your code. 
 
-It's also worth noting that writing to standard error is different from writing to standard output. Standard error is used for error messages, while standard output is used for regular program output. Therefore, it's important to use the appropriate function depending on what you want to display.
+One important consideration is the difference between standard error and standard output. Standard output, known as `stdout`, is used for regular output of information, while standard error, known as `stderr`, is used for error messages or debugging information. It's important to use the correct stream to avoid confusion for the user.
+
+Another thing to keep in mind is that writing to standard error will not stop the execution of the code. This means that even if there is an error or message written to standard error, the code will continue to run unless specific checks are put in place.
+
+In some cases, you may also want to redirect the standard error output to a file instead of the terminal. This can be done by using the `php -d display_errors=stderr script.php > error.log` command, which will redirect any errors to the "error.log" file instead of displaying them in the terminal.
 
 ## See Also
 
-To learn more about handling errors and debugging in PHP, check out the following resources:
-
-- [PHP Error Handling](https://www.php.net/manual/en/book.errorfunc.php)
-- [PHP Debugging Tools](https://www.ionos.com/digitalguide/websites/web-development/debugging-tools-in-php/)
-- [PHP Exception Handling](https://www.w3schools.com/php/php_exception.asp)
+- [PHP Error Handling - Writing to Standard Error](https://www.php.net/manual/en/ref.errorfunc.php)
+- [PHP Streams - Writing to Standard Error](https://www.php.net/manual/en/wrappers.php)
+- [Tutorial: PHP Error Logging](https://www.w3schools.com/php/php_error.asp)

@@ -1,33 +1,36 @@
 ---
-title:    "Elixir: 정규 표현식을 사용하기"
+title:    "Elixir: 정규식 사용하기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-정규 표현식을 사용하는 이유는 무엇일까요? 정규 표현식은 문자열 내에서 패턴을 검색하거나 대체하는 등 다양한 작업을 할 수 있기 때문에 효율적이고 빠른 방법입니다.
+# 왜?
 
-## 하우 투
-아래의 예제 코드와 함께 정규 표현식을 사용하는 방법을 살펴봅시다.
+정규 표현식은 코드에서 특정한 패턴을 찾고, 추출하거나 변경하는 데 아주 유용합니다. 이를 통해 코드를 더 간결하고 효율적으로 작성할 수 있으며, 데이터 처리 작업을 더 빠르고 쉽게 수행할 수 있습니다.
 
-```elixir
-# 문자열 내에서 패턴 검색
-Regex.scan(~r/world/, "Hello world") #=> ["world"]
+## 어떻게 하나요?
 
-# 패턴 대체
-Regex.replace(~r/world/, "Hello world", "Hi") #=> "Hello Hi"
+정규 표현식을 사용하려면 Elixir에서 `Regex` 모듈을 import해야 합니다. 그리고 `~r` 키워드를 사용하여 정규 표현식을 만들 수 있습니다. 예를 들어, 다음과 같은 코드로 이메일 주소에서 사용자 이름을 추출할 수 있습니다.
 
-# 패턴 매칭 외에도 여러 유용한 메소드를 제공합니다.
-Regex.split(~r/,/, "1,2,3,4") #=> ["1", "2", "3", "4"]
+```Elixir
+import Regex
+
+email_address = "john.doe@example.com"
+regex = ~r/[a-z]+\.([a-z]+)@[a-z]+\.[a-z]+/
+match = Regex.run(regex, email_address)
+IO.puts match[1] # output: "john"
 ```
 
-## 딥 다이브
-정규 표현식은 강력한 도구이지만 파싱 규칙을 작성하는 것은 어려운 작업일 수 있습니다. 그래서 Elixir에서는 정규 표현식 대신 [구문 분석기](https://hexdocs.pm/elixir/master/task.html)를 사용하는 것도 고려해볼 만한 방법입니다.
+## 깊은 공부
 
-## 더 알아보기
-정규 표현식에 대해 더 자세히 알아보려면 아래 링크들을 참고해보세요.
+정규 표현식에서 사용되는 패턴과 메타 문자의 의미를 정확히 알아야 합니다. 그리고 직접 표현식을 작성하면서 연습하는 것이 가장 중요합니다. 또한 Elixir에서는 부분 일치를 지원하는 메서드들도 있으므로 사용 가능성도 살펴볼 필요가 있습니다.
+
+아래는 자주 사용되는 정규 표현식 패턴과 관련된 링크들입니다.
+
+# 관련 자료
 
 - [Elixir 정규 표현식 문서](https://hexdocs.pm/elixir/Regex.html)
-- [정규 표현식을 사용한 문자열 검증](https://www.regular-expressions.info/elixir.html)
-- [정규 표현식 연습 사이트](https://regexr.com/)
+- [정규 표현식 테스트 사이트](https://regex101.com/)
+- [정규 표현식 치트시트](https://www.rexegg.com/regex-quickstart.html)

@@ -1,34 +1,45 @@
 ---
 title:    "C#: 日付を文字列に変換する"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## なぜ
 
-日付を文字列に変換する理由は何でしょうか？日付を処理する際、時には文字列として扱う必要があります。たとえば、データベース内の日付を文字列として表示したり、ファイル名として日付を使用したりする場合です。C＃では、日付を文字列に変換するための簡単で効率的な方法が提供されています。
+日付を文字列に変換する理由について、皆さん考えたことはありますか？日付を文字列に変換することで、プログラム内で日付をより簡単に操作することができるようになります。具体的にどのようにして日付を文字列に変換するか、ご紹介します。
 
-## How To
+## 方法
 
-C＃で日付を文字列に変換するには、まずDateTimeオブジェクトを作成する必要があります。次に、ToStringメソッドを使用して日付を文字列に変換します。このメソッドには、文字列として表示する形式を指定することができます。例えば、次のコードを使用すると、"yyyy年MM月dd日"という形式で日付を表示することができます。
+日付を文字列に変換するためには、一番簡単な方法は文字列フォーマットを使用することです。下記のコード例を参考にしてみてください。
 
-```C# 
-DateTime date = new DateTime(2020, 12, 31);
-string dateString = date.ToString("yyyy年MM月dd日");
-Console.WriteLine(dateString);
+```C#
+var date = DateTime.Today;
+string dateString = date.ToString("MM/dd/yyyy"); // "07/16/2021"という文字列が生成されます
 ```
 
-このコードの出力は、"2020年12月31日"となります。また、ToStringメソッドには、カルチャー情報を指定するオーバーロードもあります。これにより、異なる地域の日付表記に対応することができます。例えば、英語圏のコンピューターでは"MM/dd/yyyy"という形式が一般的ですが、日本語圏のコンピューターでは"yyyy/MM/dd"という形式が一般的です。
+このように、DateTimeオブジェクトをToStringメソッドによって文字列に変換することができます。もちろん、文字列フォーマットは様々な形式を指定することができます。例えば、"yyyy-MM-dd"のようにすると"2021-07-16"というように年月日の順番に並び替えることができます。
 
-## Deep Dive
+また、もし日付を特定の言語に変換したい場合は、CultureInfoクラスを使用することで可能です。下記のコード例を参考にしてみてください。
 
-日付を文字列に変換する際、一定のルールに従う必要があります。これには、時間、曜日、月の数値・名前など、特定の表現方法が決められています。C＃では、カスタムフォーマット指定子を使用して、日付を任意の形式で表示することも可能です。また、.NET Frameworkでは、String.Formatメソッドを使用することで、日付を文字列に変換することができます。
+```C#
+var date = DateTime.Now;
+string dateString = date.ToString("M", new CultureInfo("ja-JP")); // 日本語の月を表現する文字列に変換します
+```
 
-日付を文字列に変換する際、重要なのは日付と文字列の相互変換を正しく行うことです。また、日付がフォーマット指定子に準拠しない場合、例外が発生することもあります。このため、厳密なエラー処理や例外処理が必要になることもあります。
+## ディープダイブ
 
-## See Also
+日付を文字列に変換する際に、もう少し詳しく説明します。まずDateTimeオブジェクトはToStringメソッドによって文字列に変換される前に、DateType構造体によって日付と時刻の値が保持されています。ToStringメソッドは指定された書式に従って、必要な値を抽出して文字列として返します。そのため、どのように書式指定を行うかによって、最終的な文字列の形式が決まります。
 
-- [DateTime.ToString メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.tostring?view=net-5.0#System_DateTime_ToString_System_String_)
-- [String.Format メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.format?view=net-5.0)
-- [カルチャー指定子を使用した日付と時刻の表現方法](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings#culture-specifiers)
+さらに、DateTimeオブジェクトは様々なメソッドを持っており、日付や時刻の計算なども可能です。状況に応じてDateTimeオブジェクトをうまく活用して、日付を正しく操作できるようにしましょう。
+
+## その他の参考リンク
+
+- [DateTime.ToString メソッド (System) | Microsoft Docs](https://docs.microsoft.com/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [DateTime構造体 (System) | Microsoft Docs](https://docs.microsoft.com/dotnet/api/system.datetime?view=net-5.0)
+- [CultureInfoクラス (System.Globalization) | Microsoft Docs](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+
+## そのほかの記事
+
+[date-time-conversion.md](https://github.com/exampleuser/date-time-conversion)

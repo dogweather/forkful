@@ -1,41 +1,37 @@
 ---
 title:    "PHP: 写入标准错误"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么要写标准错误
+## 为什么
 
-标准错误是用于记录程序中出现错误或异常的重要工具。通过将错误信息写入标准错误流，程序员可以更轻松地跟踪和调试问题，并及时修复代码中的错误。因此，写入标准错误是一种有效的调试技术，可以帮助程序员提高代码质量。
+在编程中，有时候我们需要将一些重要的信息发送到标准错误流，这对于调试程序或者处理异常情况非常有用。因此，了解如何将信息写入到标准错误是一个必不可少的技能。
 
-##如何写入标准错误
+## 如何进行操作
 
-要将错误信息写入标准错误流，我们可以使用PHP中的"```PHP error_log() ```"函数。下面是一个简单的示例，演示如何使用此函数将错误信息写入标准错误：
-
-```PHP
-<?php
-$error_message = "An error occurred!";
-error_log($error_message);
-?>
-```
-
-运行此代码后，错误信息将被写入标准错误流，并且可以在适当的地方被显示出来。下面是一个示例输出：
+为了写入标准错误流，我们可以使用PHP中的fwrite()函数。下面是一个简单的例子，展示如何将一段文本写入到标准错误流：
 
 ```PHP
-[Mon Aug 23 16:03:15 2021] [error] [client 127.0.0.1] An error occurred!
+fwrite(STDERR, "这是一个测试错误信息");
 ```
 
-通过这种方式，我们可以在程序中任何需要的地方将错误信息写入标准错误流，并通过查看输出来定位问题所在。
+运行这段代码后，我们将在标准错误中看到类似于以下的输出：
 
-##深入了解写入标准错误
+```
+这是一个测试错误信息
+```
 
-除了使用"```PHP error_log() ```"函数外，我们还可以使用其他方法来写入标准错误。例如，我们可以将错误信息输出到屏幕而不是标准错误流，以便可视化查看。我们还可以设置标准错误的格式，并将其写入日志文件中，以便更长久地保存错误信息。
+## 深入了解
 
-此外，使用标准错误写入还可以帮助我们调试正在运行的程序，而不必停止并重新编写或调试代码。这在开发过程中非常有用，可以节省大量的时间和精力。
+除了fwrite()函数之外，我们也可以使用其他的方式来写入到标准错误流。例如，可以使用PHP的error_log()函数来记录特定的错误信息，或者使用trigger_error()函数来手动触发一个错误并将其写入到标准错误流中。
 
-##另请参阅
+此外，我们也可以通过重定向标准错误流来将错误信息输出到指定的日志文件中。这样做可以让我们更方便地查看和管理错误信息。
 
-- [PHP error_log() 函数文档](https://www.php.net/manual/zh/function.error-log.php)
-- [PHP 错误处理](https://www.php.net/manual/zh/book.errorfunc.php)
-- [PHP 调试技巧](https://www.php.net/manual/zh/debugger.php)
+## 参考链接
+
+- PHP官方文档：<https://www.php.net/manual/zh/function.fwrite.php>
+- fwrite()函数的使用方法：<https://www.w3schools.com/php/func_filesystem_fwrite.asp>
+- 使用error_log()函数记录错误信息：<https://www.php.net/manual/zh/function.error-log.php>## 参见

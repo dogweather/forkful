@@ -1,54 +1,41 @@
 ---
 title:    "Elixir: Obteniendo la fecha actual"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Hay varias razones por las que alguien podría querer obtener la fecha actual en un programa de Elixir. Para algunos, puede ser necesario para fines de registro o seguimiento de tiempo, mientras que para otros puede ser útil para mostrar la fecha en una interfaz de usuario. Sea cual sea el motivo, en este artículo aprenderás cómo obtener la fecha actual en tu código de Elixir.
+¿Alguna vez te has preguntado por qué es importante conocer la fecha actual al programar en Elixir? La respuesta es sencilla: la fecha y hora son elementos fundamentales en muchas aplicaciones, desde registrar eventos hasta realizar cálculos basados en el tiempo. En este artículo, aprenderás cómo obtener la fecha actual en tus proyectos de Elixir.
 
-## Cómo
+## Cómo hacerlo
 
-Obtener la fecha actual en Elixir es sorprendentemente simple gracias al módulo `DateTime`. Para comenzar, primero debemos importar el módulo y luego usar la función `utc_now/0` para obtener la fecha y hora actual en formato UTC.
-
-```Elixir
-import DateTime
-current_date = utc_now()
-```
-
-Si queremos obtener la fecha y hora local, podemos usar la función `local_now/0` en su lugar. Además, podemos especificar el formato en el que queremos que se muestre la fecha utilizando el módulo `Calendar`.
+Obtener la fecha actual en Elixir es muy sencillo gracias a la función `DateTime.utc_now()`. Esta función devolverá un objeto `DateTime` con la fecha y hora actuales en formato UTC. También puedes especificar una zona horaria específica utilizando la función `DateTime.now(zone)`, donde `zone` es un átomo que representa la zona horaria deseada, como `:utc` o `:local`.
 
 ```Elixir
-import DateTime
-import Calendar
+current_date = DateTime.utc_now()
+IO.inspect(current_date)
 
-current_date = utc_now()
-formatted_date = Calendar.format!("{}/{}/{}", current_date.day, current_date.month, current_date.year)
+# Salida:
+# %DateTime{calendar: Calendar.ISO, day: 15,
+# hour: 22, microsecond: {18558, 3}, minute: 32, month: 9,
+# second: 59, std_offset: 0, time_zone: "Etc/UTC",
+# utc_offset: 0, year: 2021, zone_abbr: "UTC"}
 ```
 
-Esto imprimiría la fecha en formato `DD/MM/AAAA`. También podemos obtener valores específicos de la fecha, como el día, el mes y el año, utilizando las funciones `day/1`, `month/1` y `year/1` respectivamente. Por ejemplo:
-
-```Elixir
-import DateTime
-
-current_date = utc_now()
-day = day(current_date)
-month = month(current_date)
-year = year(current_date)
-
-IO.puts("Hoy es el día #{day} del mes #{month} del año #{year}")
-```
+También puedes obtener la fecha actual en un formato más legible utilizando la función `DateTime.to_iso8601(date)`. Esta función devolverá un string en formato ISO 8601, como `"2021-09-15T22:32:59.018558Z"`.
 
 ## Profundizando
 
-Ahora que sabemos cómo obtener la fecha actual en Elixir, es importante entender cómo se representa internamente en el lenguaje. En realidad, una fecha es sólo un `DateTime` en Elixir, que es una estructura compuesta de varios campos como año, mes, día, hora, minuto, etc. Estos campos se pueden acceder utilizando las funciones mencionadas anteriormente.
+La función `DateTime.utc_now()` puede parecer mágica, pero en realidad utiliza funciones básicas de Erlang para obtener la fecha y hora del sistema en el que se está ejecutando el código. Esto significa que es importante asegurarse de que la hora del sistema esté configurada correctamente para obtener resultados precisos.
 
-Además, el módulo `DateTime` tiene funciones para realizar operaciones cómo sumar o restar días, meses o años a una fecha. También es posible comparar fechas y obtener la diferencia entre ellas.
+También puedes personalizar el formato de salida utilizando la función `DateTime.to_string(date, format)`, donde `format` es una cadena de formato Erlang (no es necesario conocer el lenguaje para utilizar esta función). Por ejemplo, si quieres obtener la fecha actual en el formato "15/09/2021 22:32", puedes hacerlo utilizando `DateTime.to_string(current_date, "%d/%m/%Y %H:%M")`.
 
 ## Ver también
 
-- [Documentación del módulo DateTime en Elixir](https://hexdocs.pm/elixir/DateTime.html)
-- [Tutorial de Elixir para principiantes](https://www.freecodecamp.org/news/a-gentle-introduction-to-elixir-for-rubyists/) 
-- [Ejemplos de código de Elixir](https://github.com/elixir-lang/elixir)
+- [Documentación de DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Formato de fecha y hora en Elixir](https://elixirschool.com/es/lessons/specifics/date-time/)
+- [Guía de formatos de fecha y hora de Erlang](http://erlang.org/doc/man/erlang.html#strftime-3)
+- [Repositorio de Elixir en GitHub](https://github.com/elixir-lang/elixir)

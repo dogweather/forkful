@@ -1,19 +1,20 @@
 ---
-title:    "Go: Å gjøre en streng stor bokstav"
+title:    "Go: Store bokstaver i en streng"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når vi utvikler programmer, kommer vi ofte over situasjoner der vi trenger å manipulere tekststrenger på forskjellige måter. En av disse manipulasjonene kan være å endre strengens første bokstav til stor bokstav. Dette er spesielt nyttig når vi jobber med brukerinput, for å sikre at teksten er riktig formatert. I denne bloggposten vil vi se på hvordan vi kan kapitalisere en streng ved hjelp av Go-programmeringsspråket.
+Å kode i Go kan være både givende og utfordrende. Noen ganger er det de enkleste funksjonene som kan være de mest nyttige, som for eksempel å kapitalisere en tekststreng. Ved å gjøre dette kan du få en mer lesbar og strukturert utskrift, noe som kan være spesielt nyttig når du jobber med store mengder data. 
 
 ## Hvordan
 
-For å kapitalisere en streng i Go, kan vi bruke funksjonen "strings.Title()" fra standardbiblioteket. La oss ta en titt på et eksempel nedenfor:
+For å kapitalisere en tekststreng i Go, kan du bruke funksjonen "strings.ToUpper" fra standardbiblioteket. Denne funksjonen tar inn en tekststreng som argument og returnerer en versjon av teksten med bare store bokstaver. La oss se på et eksempel:
 
-```Go
+```Go 
 package main
 
 import (
@@ -22,31 +23,25 @@ import (
 )
 
 func main() {
-    str := "dette er en setning"
-
-    // Kapitaliser første bokstav i strengen
-    kapitalisertStr := strings.Title(str)
-    
-    fmt.Println(kapitalisertStr) // Output: Dette Er En Setning
+    tekst := "dette er en test"
+    fmt.Println("Original tekst:", tekst)
+    fmt.Println("Kapitalisert tekst:", strings.ToUpper(tekst))
 }
 ```
-
-Som du kan se, bruker vi funksjonen "strings.Title()" på den opprinnelige strengen, og den returnerer en ny streng med den første bokstaven kapitalisert. Det er også viktig å merke seg at denne funksjonen bare kapitaliserer den første bokstaven, og ikke resten av strengen.
+Dette vil gi følgende utskrift: 
+```
+Original tekst: dette er en test
+Kapitalisert tekst: DETTE ER EN TEST
+```
+Som du kan se, har teksten blitt konvertert fra små til store bokstaver.
 
 ## Dypdykk
 
-Hvis du er interessert i å lære mer om hvordan funksjonen "strings.Title()" fungerer, kan vi se litt nærmere på kildekoden til denne funksjonen. Dette vil gi oss en dypere forståelse av hvordan strengmanipulering fungerer i Go. Her er kildekoden for funksjonen fra standardbiblioteket:
+En interessant ting å merke seg er at funksjonen "strings.ToUpper" bruker unicode-tabellen for å bestemme hvilke bokstaver som skal konverteres til store bokstaver. Dette betyr at det også vil fungere for bokstaver fra andre alfabet, som for eksempel det norske alfabetet med æ, ø og å. 
 
-```Go
-func Title(s string) string {
-    return Fprintf(&b, "%s", s)
-}
-```
-
-Som du kan se, bruker funksjonen "Fprintf()" til å kapitalisere den første bokstaven i strengen. Hvis du vil utforske kildekoden for "Fprintf()", kan du gjøre det ved å følge lenken nedenfor.
+Det er også verdt å nevne at Go inneholder flere innebygde funksjoner for manipulering av tekst, som for eksempel "strings.ToLower" for å konvertere til små bokstaver, og "strings.Title" for å gjøre første bokstav i hvert ord stor. Utforsk disse og andre funksjoner for å få enda mer ut av tekstbehandlingen i Go. 
 
 ## Se også
 
-- "strings" pakken i Go standardbiblioteket: https://golang.org/pkg/strings/
-- Kildekoden for "strings.Title()" funksjonen: https://golang.org/src/strings/strings.go?s=11858:11908#L426
-- Kildekoden for "Fprintf()" funksjonen: https://golang.org/src/fmt/print.go?s=21603:21645#L685
+- Offisiell dokumentasjon for "strings.ToUpper": https://golang.org/pkg/strings/#ToUpper
+- Ekstra funksjoner for tekstbehandling i Go: https://golang.org/pkg/strings/

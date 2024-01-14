@@ -1,45 +1,39 @@
 ---
-title:    "Ruby: तिथि को स्ट्रिंग में रूपांतरित करना"
+title:    "Ruby: एक तारीख को स्ट्रिंग में रूपांतरण करना"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun: 
-Date ko string mein convert karne ka ek sabse aam karan hai ki hum isko humare code mein display karna chahte hai. Yeh humare liye date-time formatting mein kaafi aasan aur flexible tarike hai.
+## क्यूँ
 
-## Kaise Karein:
+दिनांक को स्ट्रिंग में रूपांतरित करने का काम करने का केवल 1-2 सेंटेंस का समझाना है।
+
+## कैसे किया जाता है
+
+```Ruby
+date = Date.new(2021, 9, 5)
+puts date.to_s
 ```
-Ruby aasan tarike se date ko string mein convert karne ki permission deta hai. Kuch simple examples neeche diye gaye hain:
+आउटपुट: "2021-09-05"
 
-### Convert current date into string:
+```Ruby
+date = Date.new(2021, 9, 5)
+puts date.strftime("%d/%m/%Y")
 ```
-Time.now.strftime("%d-%m-%Y")
-=> "23-07-2021"
+आउटपुट: "05/09/2021"
 
-### Convert specific date into string:
-```
-Date.new(2021, 10, 25).strftime("%Y-%m-%d")
-=> "2021-10-25"
+## गहराई तक जानें
 
-### Convert date with time into string:
-```
-DateTime.now.strftime("%d/%m/%Y %H:%M:%S")
-=> "23/07/2021 14:36:25"
+दिनांक को स्ट्रिंग में रूपांतरित करना बहुत ही उपयोगी हो सकता है। आप अपनी आवश्यकतानुसार स्वयं निर्णय कर सकते हैं कि आप किस फॉर्मेट में अपनी दिनांक को प्रस्तुत करना चाहते हैं। बहुत सारे स्ट्रॉकोड्स उपलब्ध हैं जो आप उपयोग कर सकते हैं जिनमें धीरे-धीरे ही आपको हवा आ जाएगी। अपने को संशोधित करने के बाद अपने स्क्रिप्ट को सुदेश बनाएं कि कैसे आप इसे अपने आवश्यकतानुसार रख सकते हैं।
 
-## Deep Dive:
-Ruby mein date ko string mein convert karne ke liye `strftime` method ka use kiya jaata hai. Yeh method date-time ke specific components ka use karke hume required output format generate karta hai. Iske liye hum `%` character ke baad format specifier ka use karte hai. Kuch common format specifier hain:
-- `%Y` - Year (YYYY) 
-- `%m` - Month (MM)
-- `%d` - Day of the month (DD)
-- `%H` - Hour (24-hour format)
-- `%M` - Minute
-- `%S` - Second 
+## अधिक जानकारी के लिए
 
-## Dekhiye bhi:
-Inn links se aap aur bhi detail mein date ko string mein convert karne ke methods aur options explore kar sakte hain:
-- https://www.rubyguides.com/2015/10/ruby-strftime/
-- https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html#method-i-strftime
-- https://www.freecodecamp.org/news/easily-format-date-and-time-in-ruby-79a79ebffa0/ 
+[डाक्यूमेंटेशन के साथ रुबी आवश्यकताओं के तहत दिनांक ऑब्जेक्ट लेखक](https://www.rubyguides.com/2015/02/ruby-date-time/)
 
-Yeh tha date ko string mein convert karne ke baare mein ek chota sa tutorial. Agar aapko aur kisi topic pe Ruby programming se related koi post chahiye, toh humein zaroor bataiye! Happy coding!
+[Ruby दिनांक स्ट्रोक्यों से इंटरएक्ट](https://www.rubyinside.com/working-with-date-and-time-in-ruby-part-3-custom-formats-6720.html)
+
+## देखें भी
+
+[कैसे करें रुबी स्ट्रिंग्स का लेकारण](https://www.rubyguides.com/2018/08/ruby-loops-explained/)

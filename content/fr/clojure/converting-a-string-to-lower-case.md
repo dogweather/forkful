@@ -1,45 +1,55 @@
 ---
-title:    "Clojure: Passage d'une chaîne de caractères en minuscules"
+title:    "Clojure: Conversion d'une chaîne en minuscules"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La conversion d'une chaîne de caractères en minuscules peut être très utile dans diverses situations en programmation Clojure. Cela peut faciliter la recherche et la comparaison de chaînes de caractères, ainsi que la manipulation de données saisies par les utilisateurs.
+Bien que cela puisse sembler simple, convertir une chaîne de caractères en minuscules est une tâche courante dans de nombreux projets de développement. Cela peut être utile pour normaliser les chaînes de caractères et les rendre plus facilement comparables ou pour les manipuler de différentes manières. Dans cet article, nous allons explorer comment le faire en utilisant Clojure.
 
 ## Comment faire
 
-```Clojure
-(let [texte "Ceci est un TEXTE en majuscules."]
-  (clojure.string/lower-case texte))
-```
-```Clojure
-Résultat: "ceci est un texte en majuscules."
-```
-
-Dans cet exemple, nous créons une variable contenant une chaîne de caractères en majuscules, puis nous appelons la fonction `lower-case` du module `clojure.string` pour la convertir en minuscules. Cette fonction prend en paramètre la chaîne de caractères à convertir et renvoie une nouvelle chaîne en minuscules.
-
-Il est également possible d'utiliser la fonction `str/lower-case` du module standard `clojure.core` pour convertir une chaîne de caractères en minuscules. La différence est que cette fonction peut prendre en paramètre plusieurs chaînes de caractères à convertir en une seule fois.
+Pour convertir une chaîne de caractères en minuscules en Clojure, nous pouvons utiliser la fonction `clojure.string/lower-case`. Voici un exemple de code avec une chaîne de caractères en entrée et la chaîne de caractères en minuscules en sortie :
 
 ```Clojure
-(str/lower-case "Ceci est" "un TEXTE" "en majuscules.")
+(def s "HELLO")
+(clojure.string/lower-case s)
+;; output: "hello"
 ```
+
+Nous pouvons également utiliser la même fonction avec des chaînes de caractères plus longues :
+
 ```Clojure
-Résultat: "ceci est un texte en majuscules."
+(def s "THIS IS A LONG STRING TO BE CONVERTED TO LOWER CASE")
+(clojure.string/lower-case s)
+;; output: "this is a long string to be converted to lower case"
 ```
 
-## Plongeon en profondeur
+Il est important de noter que cette fonction est sensible à la casse et ne convertira que les lettres majuscules en minuscules. Les caractères spéciaux, les chiffres et les espaces ne seront pas modifiés.
 
-La conversion d'une chaîne de caractères en minuscules peut sembler simple, mais il est important de comprendre la différence entre majuscules et minuscules, notamment en ce qui concerne les caractères accentués.
+```Clojure
+(def s "HeLlO, 123!")
+(clojure.string/lower-case s)
+;; output: "hello, 123!"
+```
 
-En programmation Clojure, les caractères accentués sont représentés par des séquences Unicode appelées "combining characters". Lors de la conversion en minuscules, ces séquences sont traitées de manière différente selon les différentes fonctions utilisées. Par exemple, `lower-case` ignore ces séquences, tandis que `str/lower-case` les convertit en une seule fois.
+## Plongée en profondeur
 
-Il est donc important de choisir la fonction de conversion en minuscules en fonction de vos besoins et de comprendre comment elle gère ces caractères.
+Maintenant que nous avons vu comment utiliser la fonction `clojure.string/lower-case`, il est intéressant de savoir comment elle fonctionne sous le capot. Cette fonction utilise la norme Unicode pour convertir les caractères en minuscules. Cela signifie que les caractères spéciaux et les lettres accentuées seront également convertis correctement.
+
+Par exemple, la lettre "Ê" sera convertie en "ê" et la lettre "Ñ" sera convertie en "ñ". Cela peut être utile lorsque nous travaillons avec du texte dans différentes langues.
+
+De plus, il est possible de spécifier un paramètre `locale` pour la fonction `lower-case`, qui peut être utilisé pour convertir les caractères selon les règles spécifiques à une langue ou une région.
+
+Enfin, il est important de noter que la fonction `lower-case` est préférable à l'utilisation de la fonction `string/lower-case` directement sur une chaîne de caractères. Cela est dû au fait que `clojure.string/lower-case` gère les chaînes de caractères de manière plus efficace en utilisant des calculs de codepoints plutôt que de caractères individuels.
 
 ## Voir aussi
 
-- Documentation officielle sur `clojure.string/lower-case` : https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case
-- Documentation officielle sur `clojure.core/str/lower-case` : https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str
-- Article sur la différence entre `lower-case` et `str/lower-case` : https://clojureverse.org/t/difference-between-lower-case-and-clojure-string-lower-case/1241
+- Documentation officielle de la fonction `clojure.string/lower-case` : https://clojuredocs.org/clojure.string/lower-case
+- Utilisation des locales en Clojure : https://gist.github.com/jinjor/1562134
+- Guide complet sur la manipulation des chaînes de caractères en Clojure : https://clojuredocs.org/clojure.string
+
+Merci d'avoir lu cet article sur la conversion de chaînes de caractères en minuscules en Clojure ! J'espère que vous avez trouvé cela utile et que cela vous aidera dans vos projets de développement. N'hésitez pas à explorer davantage les fonctions de manipulation de chaînes de caractères en Clojure pour améliorer vos compétences en programmation.

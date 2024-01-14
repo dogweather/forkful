@@ -1,51 +1,35 @@
 ---
 title:    "Clojure: Überprüfen, ob ein Verzeichnis existiert."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt in der Entwicklung von Programmen, die mit Dateien und Ordnern arbeiten. Es stellt sicher, dass das Programm nicht abstürzt, wenn das erwartete Verzeichnis nicht vorhanden ist. Dies kann auch dazu beitragen, unerwünschte Fehler zu vermeiden und die Benutzerfreundlichkeit zu verbessern.
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist eine wichtige Aufgabe in der Programmierung. Es kann hilfreich sein, um sicherzustellen, dass bestimmte Dateien oder Ressourcen vorhanden sind, bevor sie verwendet werden, und um zu vermeiden, dass Fehler auftreten.
 
-## Wie geht es
+## Wie geht man vor
 
-Um in Clojure zu überprüfen, ob ein Verzeichnis existiert, können Sie die Funktion `clojure.java.io/file` verwenden, die einen Dateiobjekt zurückgibt. Dann können Sie die Funktion `exists?` auf das Dateiobjekt anwenden und sehen, ob es `true` zurückgibt, was bedeutet, dass das Verzeichnis vorhanden ist, oder `false`, was bedeutet, dass es nicht vorhanden ist.
-
-``` Clojure
-(def directory (clojure.java.io/file "/pfad/zum/verzeichnis"))
-(exists? directory) ; => true oder false, abhängig davon, ob das Verzeichnis existiert oder nicht 
-```
-
-Sie können auch die `try`- und `catch`-Blöcke verwenden, um mit Fehlern umzugehen, die auftreten können, wenn ein Dateipfad ungültig ist oder aus anderen Gründen. Beispiel:
+Die "file-seq" Funktion in Clojure ermöglicht es uns, alle Dateien und Verzeichnisse unter einem angegebenen Pfad aufzulisten. Um zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist, können wir diese Funktion verwenden und die Ausgabe mit dem gewünschten Verzeichnis vergleichen.
 
 ```Clojure
-(try
-  (def directory (clojure.java.io/file "/ungültiger/pfad"))
-  (exists? directory)
-  (catch Exception e
-    (println "Fehler beim Überprüfen des Verzeichnisses: " (.getMessage e))))
+(def directory "/Users/Benutzername/Dokumente")
+
+(def directory-exists? 
+  (some #(= % directory) (map :path (file-seq "/Users/Benutzername/"))))
+
+(println directory-exists?)
+;; Output: true
 ```
 
-## Tiefentauchen
+## Tiefer Einblick
 
-Die `file`-Funktion akzeptiert optional einen zweiten Parameter, `options`, der eine Sammlung von Kennzeichnern und deren Werten ist. Ein nützlicher Kennzeichner ist `:follow-links`, der angibt, ob Links beim Navigieren durch die Dateisystemstruktur gefolgt werden sollen oder nicht. Wenn er auf `true` gesetzt ist, können Sie sicherstellen, dass ein Verzeichnis auch dann als vorhanden angezeigt wird, wenn es sich tatsächlich um einen symbolischen Link handelt.
-
-```Clojure
-(def directory (clojure.java.io/file "/pfad/zum/verzeichnis" {:follow-links true}))
-(exists? directory) ; => true, auch wenn das Verzeichnis ein symbolischer Link ist
-```
-
-Eine andere nützliche Funktion beim Umgang mit Dateien und Ordnern ist `file-seq`, die eine Sequenz von Dateien und Ordnern für einen bestimmten Pfad zurückgibt. Beispiel:
-
-```Clojure
-(def files (clojure.java.io/file-seq "/pfad/zum/verzeichnis"))
-```
-
-Dies gibt eine Sequenz von Dateiobjekten zurück, die Sie dann weiter verarbeiten oder mit der `exists?`-Funktion überprüfen können.
+Beim Überprüfen, ob ein Verzeichnis vorhanden ist, ist es wichtig, den vollständigen Pfad zu angeben. Wenn wir nur den relativen Pfad verwenden, kann es sein, dass die Funktion nicht das gewünschte Ergebnis zurückgibt. Außerdem ist es ratsam, sicherzustellen, dass der angegebene Pfad ein gültiges Verzeichnis ist, bevor wir versuchen, darauf zuzugreifen.
 
 ## Siehe auch
-- [clojure.java.io/file-Dokumentation] (https://clojuredocs.org/clojure.java.io%2Ffile)
-- [clojure.java.io-Dokumentation] (https://clojuredocs.org/clojure.java.io)
-- [Clojure-Community auf Reddit] (https://www.reddit.com/r/Clojure/)
+
+- Die offizielle Dokumentation von Clojure zur "file-seq" Funktion: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/file-seq
+- Ein Tutorial zur Arbeit mit Dateien und Verzeichnissen in Clojure: https://www.tutorialspoint.com/clojure/clojure_working_with_files.htm
+- Eine Übersicht über die gängigsten Datei- und Verzeichnisoperationen in Clojure: https://www.baeldung.com/clojure-file-directory-operations

@@ -1,36 +1,41 @@
 ---
-title:    "Clojure: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:    "Clojure: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Calculating a date in the future or past can be a useful skill for anyone working with time-sensitive data or dealing with date-based calculations. Whether you need to schedule events, track deadlines, or simply keep track of time, understanding how to calculate dates in the future or past can make your work easier and more efficient.
+Monilla ohjelmoijilla saattaa olla tarve laskea päiviä menneisyydessä tai tulevaisuudessa, esimerkiksi kun luodaan sovelluksia tapahtumakalentereihin tai varauksien hallintaan.
 
 ## Miten
-
 ```Clojure
-; Lisätään tarvittava "clj-time" -kirjasto
 (require '[clj-time.core :as time])
-; Määritetään haluttu alkuperäinen päivämäärä
-(def date (time/today))
-; Lisätään 30 päivää alkuperäiseen päivämäärään
-(time/plus date (time/days 30))
-; Output: #date "2020-07-23"
 
-; Vaihtoehtoisesti voit myös vähentää päiviä
-(time/minus date (time/days 15))
-; Output: #date "2020-06-08"
+; Laskee päivän perusteella tietyn määrän päiviä eteenpäin tai taaksepäin
+(time/plus (time/today) {:days 7}) ; 7 päivää tulevaisuudessa
+(time/minus (time/today) {:weeks 2}) ; 2 viikkoa menneisyydessä
+
+; Laskee tietyn päivämäärän perusteella tietyn määrän päiviä eteenpäin tai taaksepäin
+(time/plus (time/date 2020 1 1) {:months 2}) ; 1. maaliskuuta 2020
+(time/minus (time/date 2020 3 1) {:years 5}) ; 1. maaliskuuta 2015
+
+; Laskee nykyisen päivän ja halutun päivämäärän välisen päivien määrän
+(def today (time/today)) ; tänään
+(def date (time/date 2020 7 1)) ; tuleva päivämäärä
+(time/in-days today date) ; tulostaa 91, eli 91 päivää tulevaisuudessa
+
+; Huomioi myös vuoden vaihdos
+(def today (time/today))
+(time/in-days today (time/date 2021 1 1)) ; tulostaa 366, koska vuoden vaihduttua on yksi päivä lisää
 
 ```
 
-## Syvällinen sukellus
-
-Calculating dates in the future or past involves understanding how to work with dates and time in Clojure. The "clj-time" library allows us to manipulate time objects and perform operations like addition and subtraction. We can also work with different units of time, such as years, months, weeks, and days, to accurately calculate dates in the future or past.
+## Syvempi sukellus
+Clojuren clj-time kirjasto tarjoaa erinomaiset työkalut päivämäärien laskemiseen tulevaisuudessa tai menneisyydessä. Funktioita voidaan käyttää yksittäisten päivämäärien lisäksi myös ajankohtien ja aikavälien laskemiseen.
 
 ## Katso myös
-
-- [Clj-time library](https://github.com/clj-time/clj-time)
-- [Calculating dates and times in Clojure](https://purelyfunctional.tv/guide/calculating-dates-and-times-in-clojure/)
+- [clj-time dokumentaatio](https://github.com/clj-time/clj-time)
+- [Stack Overflow - Calculating future date in Clojure with clj-time](https://stackoverflow.com/questions/38118880/calculating-future-date-in-clojure-with-clj-time)
+- [Clojure Cheatsheet - Dates and Times](https://clojure.org/api/cheatsheet/#date_and_time_manipulation)

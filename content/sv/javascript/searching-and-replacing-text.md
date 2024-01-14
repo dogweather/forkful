@@ -1,44 +1,43 @@
 ---
 title:    "Javascript: Sökning och ersättning av text"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
+javascriptÄr du trött på att manuellt byta ut ord eller fraser i din kod? Eller kanske letar du efter ett smidigt sätt att byta ut alla återkommande variabelnamn i ett projekt? Då kan sökning och ersättning vara en användbar teknik för dig. Genom att använda denna funktion kan du enkelt söka efter specifika ord eller fraser och ersätta dem med det som passar bättre för din kod.
+
 ## Varför
 
-I programmeringsvärlden är sökning och ersättning av text en vanlig uppgift som kan hjälpa dig att effektivisera ditt arbete och spara tid. Oavsett om du vill byta ut ett visst ord i en hel fil eller korrigera stavfel, är denna funktion användbar för alla nivåer av utvecklare.
+Söka och ersätta är en användbar metod för att spara tid och minska risken för mänskliga fel. Istället för att manuellt leta igenom din kod efter varje instans av ett visst ord eller uttryck, kan du enkelt genomföra en sökning och ersättning för att snabbt uppdatera alla förekomster.
 
 ## Hur man gör
 
-För att söka och ersätta text i Javascript finns det flera inbyggda metoder och funktioner som du kan använda dig av. En av de vanligaste metoderna är string-funktionen `replace()`, som kommer att ersätta en del av en sträng med en annan.
+För att genomföra en sökning och ersättning i Javascript, börja med att öppna din kod i en textredigerare eller integrerad utvecklingsmiljö (IDE). Sedan kan du använda inbyggda funktioner eller regex (regular expressions) för att söka efter en specifik sträng och ersätta den med en annan.
+
+Här är ett exempel på hur du kan byta ut alla instanser av "hej" med "hallå" i en sträng:
 
 ```Javascript
-let text = "Hej alla vänner!";
-text = text.replace("Hej", "Hallå");
-console.log(text); // Output: Hallå alla vänner!
+let text = "Hej världen! Jag är en textsträng.";
+let nyText = text.replace(/hej/g, "hallå");
+console.log(nyText);
 ```
 
-Som du kan se i exemplet ovan använder vi `replace()`-metoden för att byta ut ordet "Hej" till "Hallå" i variabeln `text`. Metoden tar två parametrar - den första är det ord du vill ersätta och den andra är det nya ordet du vill använda. Senare i koden lagrar vi den nya strängen i variabeln `text` och skriver sedan ut den i konsolen.
-
-Du kan också använda en så kallad *regular expression* (eller reguljärt uttryck) för att söka och ersätta text i Javascript. Ett reguljärt uttryck är en typ av strängmönster som används för att identifiera och manipulera text. I följande exempel använder vi `replace()`-metoden tillsammans med en reguljär expression för att ersätta alla siffror i en sträng med asterisk (*):
-
+Output:
 ```Javascript
-let text = "Jag äger 12345 bilar.";
-text = text.replace(/\d/g, "*");
-console.log(text); // Output: Jag äger ***** bilar.
+"Hallå världen! Jag är en textsträng."
 ```
 
-Här använder vi modifieraren `g` för att söka igenom hela strängen efter siffror och ersätta dem med asterisker.
+## Fördjupa dig
 
-## Djupdykning
+När du behärskar grundläggande sökning och ersättning i Javascript, kan du börja experimentera med regex för mer komplexa sökningar. Du kan också utforska olika IDE:er och tillägg som erbjuder avancerade sök- och ersättningsfunktioner.
 
-Det finns många olika sätt att utföra sökning och ersättning av text i Javascript, beroende på ditt specifika behov. Om du vill lära dig mer om de olika metoderna och funktionerna som finns tillgängliga, kan du läsa dokumentationen för Javascript på nätet eller följa med i online-communityn för utvecklare.
-
-Ett annat tips för att effektivisera din sökning och ersättning av text är att använda olika IDE:s (Integrated Development Environment) eller textredigerare som erbjuder inbyggda funktioner för denna uppgift. Du kan också utföra sökning och ersättning i hela projektet istället för endast en fil, vilket kan spara ännu mer tid.
+Se till att vara noggrann och försiktig när du genomför sökningar och ersättningar i din kod, speciellt när det gäller variabelnamn. En felaktig sökning eller ersättning kan leda till buggar och fel i din kod.
 
 ## Se även
 
-- [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Regular Expressions in Javascript: A Beginner's Guide](https://blog.bitsrc.io/understanding-regular-expressions-in-javascript-a-beginners-guide-bb0f1d1dbd49)
-- [The Top 5 IDEs for Javascript Development](https://levelup.gitconnected.com/the-top-5-ides-for-javascript-development-d42157ba0d3e)
+- [Regular Expressions Cheat Sheet](https://www.regexbuddy.com/regex.html)
+- [IDE-Tips för effektiv kodredigering](https://www.developersfeed.com/basta-code-editors-for-frontend-developers/)
+
+Tack för läsningen, lycka till med dina sökningar och ersättningar i din Javascript-kod!

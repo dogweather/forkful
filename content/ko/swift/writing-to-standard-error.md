@@ -1,41 +1,41 @@
 ---
-title:    "Swift: 표준 오류에 쓰는 것"
+title:    "Swift: 표준 오류에 작성하기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-오류를 기록하는 것이 중요한 이유는 디버깅을 도와준다는 것입니다.
+# 왜 
+표준 오류에 써야하는 이유는 시스템 디버깅에서 특정 프로그램의 문제를 찾는 데 도움이 되는 경로입니다.
 
-# 하는 법
-기본 개념
-기본적으로 코드 작성 중에 오류가 발생하면 콘솔 로그에 오류 메시지가 출력되는데, 이를 stderr에 출력하도록 변경해주어야 합니다. 이는 디버깅을 더욱 효과적으로 도와줄 수 있습니다.
+## 사용 방법 
+표준 오류를 쓰는 방법을 살펴보겠습니다. 먼저, 코드 내에서 `write(_:)` 함수를 사용하여 표준 오류에 메시지를 쓸 수 있습니다. 예를 들어:
 
 ```Swift
-
-import Foundation
-import Darwin
-
-// 글을 stderr에 출력하는 함수
-func writeError(_ message: String) {
-    fputs(message, stderr)
-}
-
-// 함수 실행
-writeError("에러가 발생했습니다.")
-
+print("표준 오류에 메시지를 쓰는 간단한 예제입니다.", to: &.standardError)
 ```
 
-출력 결과는 다음과 같을 것입니다.
+그리고 이 코드를 실행하면 표준 오류에 "표준 오류에 메시지를 쓰는 간단한 예제입니다."라는 메시지가 기록됩니다. 이를 통해 프로그램 내부에서 발생한 에러를 추적하거나 다른 개발자와 협업할 때 디버깅을 도와줍니다.
 
-`에러가 발생했습니다.`
+## 깊이 파고들기 
+표준 오류에 대한 깊은 이해를 위해, 스위프트에서 에러 핸들링을 우회하는 다른 방법을 알아보겠습니다. `write(_:)` 함수의 파라미터로 넘겨줄 수 있는 `FileDescriptor` 타입을 활용하여 오류를 쓸 수 있습니다. 예를 들어:
 
-# 딥 다이브
-Glibc, CLLibc 및 다른 표준 라이브러리는 대부분 경고 및 오류에 대해서는 stderr에 출력하도록 설정되어 있습니다. 그러나 사용자 커스텀 라이브러리에서는 이를 직접 설정해주어야 합니다. 배열에 존재하지 않는 index에 접근하여 코드를 실행하게 되면서 오류가 발생한다고 가정해봅시다. 이 경우에도 오류 메시지가 stdout에 출력되지 않고 stderr에 출력되도록 설정해야 합니다.
+```Swift
+let fileDescriptor = FileDescriptor.standardError
+let message = "에러 메시지"
+let bytesWritten = try? write(fileDescriptor.fileDescriptor, message: message)
+```
 
-# 더 알아보기
-[Swift 공식 문서 - 파일에 쓰기](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID520)
+또 다른 방법으로, `write(_:)` 함수 대신 `FileHandle`을 사용하여 표준 오류에 메시지를 쓸 수도 있습니다. 이 방법의 장점은 `FileHandle` 객체를 닫을 수 있다는 것입니다. 예를 들어:
 
-# 참고
-[Swift-Korea - 디버깅에 대한 이해](https://swift-korea.github.io/2016/09/22/debugging-in-swift.html)
+```Swift
+let fileHandle = FileHandle.standardError
+let message = "에러 메시지"
+fileHandle.write(message.data(using: .utf8)!)
+fileHandle.closeFile()
+```
+
+## 같이 보기 
+- [스위프트 공식 문서 - Standard Error](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html#ID522)
+- [메인스웨프트 - 스위프트 표준 오류 처리](https://main.swift.or.kr/docs/swift-error-handling#%ED%91%9C%EC%A4%80-%EC%98%A4%EB%A5%98-%EC%B2%98%EB%A6%AC)

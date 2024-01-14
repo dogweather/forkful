@@ -1,93 +1,47 @@
 ---
-title:    "Bash: Leitura de argumentos de linha de comando"
+title:    "Bash: Lendo argumentos da linha de comando"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos de linha de comando?
+## Por que ler argumentos da linha de comando?
 
-Se você deseja automatizar tarefas em seu computador, entender como ler argumentos de linha de comando pode ser muito útil. Além disso, muitos programas e scripts usam argumentos de linha de comando para personalizar a execução e o comportamento do programa.
+Se você é um programador iniciante, pode se perguntar por que precisa se preocupar com a leitura de argumentos da linha de comando em programas Bash. A resposta é simples: isso permite que o usuário forneça informações ao programa e personalize sua execução de acordo com suas necessidades específicas. A habilidade de ler argumentos da linha de comando é um importante aspecto da programação em Bash e é essencial para a criação de programas mais interativos e versáteis.
 
-## Como fazer
+## Como ler argumentos da linha de comando
 
-É muito simples ler argumentos de linha de comando em um script Bash. Basta seguir os passos abaixo:
+A leitura de argumentos da linha de comando é feita por meio do uso de parâmetros especiais que são passados ​​para o programa quando ele é executado. Esses parâmetros são acessados ​​usando a variável especial `$n`, onde `n` é o número do argumento desejado. Por exemplo, se você deseja acessar o primeiro argumento passado para o seu programa, use `$1`. Você também pode usar `shift` para percorrer os argumentos um por um.
 
-* Primeiro, use a variável especial `$#` para obter o número total de argumentos passados na linha de comando.
+Aqui está um exemplo de código que lê os argumentos da linha de comando e imprime seu valor:
 
-  ```Bash
-  #!/bin/bash
-  
-  echo "Foram passados $# argumentos na linha de comando"
-  ```
+​```Bash
+#!/bin/bash
+echo "O primeiro argumento é: $1"
+echo "O segundo argumento é: $2"
+echo "O terceiro argumento é: $3"
+```
 
-* Em seguida, use a variável especial `$@` para obter uma lista de todos os argumentos passados, cada um em uma linha separada.
+**Exemplo de saída:**
 
-  ```Bash
-  #!/bin/bash
-  
-  for argumento in "$@"
-  do
-      echo "Argumento: $argumento"
-  done
-  ```
+```
+$ ./programa.sh primeiro segundo terceiro
+O primeiro argumento é: primeiro
+O segundo argumento é: segundo
+O terceiro argumento é: terceiro
+```
 
-* Por fim, use a variável especial `$1`, `$2`, etc. para acessar argumentos específicos por sua posição na linha de comando.
+## Mergulho Profundo
 
-  ```Bash
-  #!/bin/bash
-  
-  echo "O primeiro argumento é $1"
-  echo "O segundo argumento é $2"
-  ```
+A leitura de argumentos da linha de comando pode ser um pouco mais complicada do que parece à primeira vista. Além de usar o `shift` para percorrer os argumentos um por um, você também pode optar por usar um loop `while` para percorrer todos os argumentos.
 
-## Mergulho profundo
-
-Além do básico, podemos fazer mais coisas interessantes com argumentos de linha de comando. Aqui estão algumas dicas e truques:
-
-* Podemos usar a estrutura `case` para verificar argumentos específicos e executar diferentes ações com base nisso.
-
-  ```Bash
-  #!/bin/bash
-  
-  case $1 in
-      start) echo "Iniciando o programa...";;
-      stop) echo "Parando o programa...";;
-      *) echo "Comando inválido. Use 'start' ou 'stop'.";;
-  esac
-  ```
-
-* Podemos usar a opção `-h` para adicionar um texto de ajuda ao script, tornando-o mais amigável para o usuário.
-
-  ```Bash
-  #!/bin/bash
-  
-  while getopts ":h" opcao; do
-      case ${opcao} in
-          h) echo "Uso: $0 [-h]";;
-          *) echo "Opção inválida. Use '-h' para ajuda.";;
-      esac
-  done
-  ```
-
-* Podemos até mesmo permitir que o usuário insira argumentos personalizados através da opção `-a`.
-
-  ```Bash
-  #!/bin/bash
-  
-  parametro="padrão"
-  
-  while getopts ":a:" opcao; do
-      case ${opcao} in
-          a) parametro=$OPTARG;;
-          *) echo "Opção inválida. Use '-a valor'.";;
-      esac
-  done
-  
-  echo "O valor do parâmetro é $parametro"
-  ```
+Além disso, você também pode usar as opções `getopts` para lidar com argumentos opcionais e argumentos com valores. Isso permite que você crie programas mais robustos e completos que podem processar uma variedade maior de argumentos da linha de comando.
 
 ## Veja também
 
-- [Guia de linha de comando do Bash](https://www.devmedia.com.br/guia-de-sintaxe-do-bash/28525)
-- [Como utilizar argumentos de linha de comando no Bash](https://www.linuxtechi.com/bash-scripting-using-command-line-arguments/)
+Aqui estão alguns links úteis para mais informações sobre como ler argumentos da linha de comando em Bash:
+
+- [Guia rápido sobre argumentos da linha de comando no Linux](https://www.linode.com/docs/tools-reference/linux-command-line/arguments)
+- [Documentação oficial do Bash sobre argumentos da linha de comando](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#Bash-Variables)
+- [Guia de uso de opções `getopts` em programas Bash](https://stackoverflow.com/questions/16483119/an-unofficial-bash-internal-getopts-tutorial)

@@ -1,40 +1,39 @@
 ---
-title:    "Kotlin: Записуючи рядок"
+title:    "Kotlin: Капіталізація рядка"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+## Для чого
 
-Капіталізація рядка є важливою частиною програмування, оскільки вона дозволяє налагоджувати й легко розуміти дані, які виводяться на екран.
+Уперше у програмуванні може здатися, що перетворення тексту на великі літери - це пересічна задача, і навіщо взагалі ним займатися? Однак, цілком логічним є бажання, наприклад, виводити користувачу назви програм або веб-сторінки у вигляді заголовків з великих літер. Не забуваємо про чистоту коду, і в цьому випадку правильне форматування тексту також важливе!
 
-## Як
+## Як те зробити
 
-Для капіталізації рядка використовується функція `capitalize()`, яка приймає на вхід рядок та повертає копію цього рядка з першою літерою великими буквами.
-
-```Kotlin
-val str = "ukraine"
-println(str.capitalize())
-
-// Output: Ukraine
-```
-
-Також можна використовувати функцію `toUpperCase()`, яка перетворює всі літери рядка великими.
+Потрібно лише використати вбудовану функцію `capitalize()`, яку надає мова Kotlin. Нижче наведено приклад коду, який перетворює рядок `hello world` на `Hello world`:
 
 ```Kotlin
-val str = "kyiv"
-println(str.toUpperCase())
-
-// Output: KYIV
+val text = "hello world"
+println(text.capitalize())
 ```
 
-## Глибокий занурення
+Результатом буде виведення `Hello world`. Якщо вам потрібно перетворити на великі літери кожне слово в рядку, використовуйте функцію `capitalizeWords()`, яка розділює рядок на окремі слова та перетворює їх:
 
-Коли ми використовуємо методи капіталізації, ми створюємо новий рядок, а не змінюємо оригінальний. Також, важливо пам'ятати, що методи капіталізації не впливають на роздільники та не перетворюють їх на великі літери.
+```Kotlin
+val text = "hello world"
+println(text.capitalizeWords())
+```
 
-## Дивитися також
+Результатом буде виведення `Hello World`.
 
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Java String capitalize vs toUpperCase](https://stackoverflow.com/questions/3055639/java-string-capitalize-vs-touppercase)
-- [Kotlin Standard Functions](https://kotlinlang.org/docs/reference/scope-functions.html)
+## Глибока розкриття
+
+Функції `capitalize()` та `capitalizeWords()` базуються на стандартній бібліотеці мови Kotlin та використовують метод `toUpperCase()` для перетворення рядків великі літери. Якщо ви хочете самостійно реалізувати подібний функціонал, можете скористатися цим методом і додати додаткові дії зі зміною форматування рядка.
+
+## Дивіться також
+
+- [Документація Kotlin про `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Документація Kotlin про `capitalizeWords()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize-words.html)
+- [Документація Kotlin про `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)

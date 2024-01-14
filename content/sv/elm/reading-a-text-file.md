@@ -1,60 +1,74 @@
 ---
 title:    "Elm: Läsa en textfil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att läsa in textfiler är en viktig färdighet i många programmeringsspråk, inklusive Elm. Genom att läsa in en textfil kan du enkelt behandla och använda informationen som den innehåller. Om du är nybörjare i Elm kan den här färdigheten hjälpa dig att bli mer bekant med språkets syntax och funktionalitet.
+Att läsa och hantera textfiler är en viktig del av många programmerares arbete, oavsett om det är att läsa in data från en fil eller att skapa en rapport eller loggfil. I denna bloggpost kommer vi att titta närmare på hur man kan göra detta i Elm-programmeringsspråket.
 
-##Hur man gör
+## Så här gör du
 
-Det första steget är att använda "File" modulen, som tillhandahåller funktioner för att läsa in en textfil. Du kan importera modulen genom att lägga till följande i toppen av ditt Elm skript:
+För att läsa en textfil i Elm använder vi modulen `Text.File`, som ger oss funktioner för att hantera in- och utläsning av filer. Vi börjar med att importera modulen och sedan öppna filen som vi vill läsa:
 
-```Elm
-import File exposing (..)
+```elm
+import Text.File exposing (readFile)
+
+main =
+    readFile "textfil.txt"
 ```
 
-Vi ska nu läsa in en textfil med hjälp av File.read funktionen. Vi behöver först en filväg för textfilen som vi vill läsa in. Detta kan göras genom att lägga till filvägen som en sträng i read funktionens parameter. Till exempel:
+Detta ger oss tillgång till filinnehållet som en `Task`, som vi kan kedja till en `Cmd`-funktion för att utföra handlingar baserat på filens innehåll:
 
-```Elm
-File.read "textfil.txt"
+```elm
+import Text.File exposing (readFile)
+
+main =
+    readFile "textfil.txt"
+        |> Task.map doSomething
+        |> Task.attempt HandleResult
+ 
+doSomething : String -> String
+doSomething content =
+    -- här kan vi utföra önskade handlingar baserat på innehållet i filen
+    "Det här är vad som står i filen: " ++ content
+ 
+type Msg
+    = HandleResult (Result String String)
+ 
+update msg model =
+    case msg of
+        HandleResult (Ok result) ->
+            -- gör något med resultatet från filen
+            model
+ 
+        HandleResult (Err error) ->
+            -- hantera eventuella fel som kan ha inträffat
+            model
 ```
 
-Om filen finns i samma katalog som ditt Elm skript kan du bara skriva filnamnet. Annars måste du ange hela filvägen.
+## Djupdykning
 
-För att sedan behandla informationen som lästs in från filen kan du använda en "case" sats. Till exempel:
+För att fördjupa oss lite mer i ämnet kan det också vara intressant att veta hur man läser specifika delar av en textfil. I Elm kan vi använda funktionen `slice` från modulen `String` för att läsa ett visst antal tecken, rader eller ord från en textsträng. Till exempel:
 
-```Elm
-case File.read "textfil.txt" of
-    Err error ->
-        -- behandla eventuella fel
+```elm
+content =
+    "Detta är en textfil som innehåller några rader med text."
 
-    Ok text ->
-        -- behandla innehållet i textfilen
+String.slice 0 10 content -- ger "Detta är e"
+String.slice 0 1 content -- ger "D"
+String.words (String.slice 0 21 content) -- ger ["Detta", "är", "en"]
 ```
 
-##Djupdykning
-
-Det är också möjligt att läsa in en fil asynkront, vilket innebär att din kod inte behöver vänta på att filen ska läsas innan den fortsätter att köra. Detta är användbart för att undvika potentiella fördröjningar i din programkod. Det kan uppnås genom att använda funktionen File.asyncRead istället för File.read. Till exempel:
-
-```Elm
-File.asyncRead "textfil.txt" (\result ->
-    case result of
-        Err error ->
-            -- behandla eventuella fel
-
-        Ok text ->
-            -- behandla innehållet i textfilen
-    )
-```
-
-För mer information om både synkrona och asynkrona metoder för att läsa in textfiler, se "File" modulens dokumentation på Elm hemsidan.
+Vi kan också använda funktionen `lines` från samma modul för att dela upp en textfil i rader och sedan göra mer specifika manipulationer baserat på dessa.
 
 ## Se även
 
-- [File modulens dokumentation](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Officiell Elm hemsida](https://elm-lang.org/)
-- [Elm för nybörjare - En introduktion till Elm](https://elmprogramming.com/)
+- Officiell dokumentation för Text.File-modulen: https://package.elm-lang.org/packages/elm/file/latest/Text-File
+
+- Elm-exempel på hantering av textfiler: https://github.com/rofrol/elm-text-file-example
+
+- En annan bra guide för att läsa textfiler i Elm: https://www.elmbark.com/2017/11/13/reading-writing-files-in-elm/

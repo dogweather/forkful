@@ -1,51 +1,59 @@
 ---
-title:    "Go: La lecture des arguments de ligne de commande"
+title:    "Go: La lecture des arguments en ligne de commande"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les arguments de ligne de commande sont un aspect essentiel du développement en programmation. Ils permettent aux utilisateurs d'interagir avec votre programme en fournissant des inputs spécifiques lors de son exécution. Dans cet article, nous allons voir comment lire ces arguments en utilisant le langage de programmation Go.
+Lorsque vous créez des programmes en Go, il est important de pouvoir les exécuter avec différentes options et paramètres. Cela peut être utile lors du développement ou pour une utilisation en production. Dans cet article, nous allons vous montrer comment lire les arguments de ligne de commande en utilisant Go.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Go, nous avons besoin d'utiliser le package "os". Ce package fournit des fonctions pour interagir avec le système d'exploitation, y compris pour récupérer les arguments de ligne de commande. Voici un exemple de code qui affiche les arguments fournis par l'utilisateur :
+Pour lire les arguments de ligne de commande en Go, nous allons utiliser la fonction `os.Args`. Cette fonction nous permet de récupérer une liste de toutes les valeurs saisies après le nom du programme lors de son exécution.
+
+Voici un exemple de code pour lire les arguments de ligne de commande et les afficher :
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    // os.Args est un tableau qui contient tous les arguments de la ligne de commande
-    args := os.Args
-    // Pour chaque argument, nous l'imprimons sur une nouvelle ligne
-    for _, arg := range args {
-        fmt.Println(arg)
-    }
+for index, arg := range os.Args {
+	fmt.Printf("Argument %d : %s\n", index, arg)
 }
 ```
 
-Si vous exécutez ce code avec les arguments "go" et "programmation", vous obtiendrez en sortie :
+Lorsque vous exécutez ce code en saisissant `go run main.go hello world` dans votre terminal, vous obtiendrez la sortie suivante :
 
 ```
-go
-programmation
+Argument 0 : main.go
+Argument 1 : hello
+Argument 2 : world
 ```
 
-## Approfondissement
+Comme vous pouvez le voir, la liste d'arguments contient le nom du programme en premier, suivi de chaque argument séparé par un espace. Vous pouvez ensuite utiliser ces valeurs pour effectuer différentes actions en fonction de vos besoins.
 
-Maintenant que nous savons comment récupérer les arguments de ligne de commande, voyons ce que nous pouvons en faire. Nous pouvons utiliser ces arguments pour personnaliser le comportement de notre programme en fonction des inputs fournis par l'utilisateur. Par exemple, si notre programme est un convertisseur de devises, l'utilisateur peut spécifier les montants et les taux de change en utilisant les arguments.
+## Plongée en profondeur
 
-Nous pouvons également utiliser des packages tels que "flag" pour créer des options de ligne de commande plus avancées, comme les drapeaux de type booléen ou les valeurs par défaut.
+En plus de la fonction `os.Args`, Go offre également d'autres options pour lire les arguments de ligne de commande de manière plus détaillée. Par exemple, vous pouvez utiliser le package `flag` pour définir des options spécifiques et leurs valeurs associées.
+
+Voici un exemple de code pour définir une option `-name` avec une valeur par défaut et utiliser cette option pour afficher un message personnalisé :
+
+```Go
+name := flag.String("name", "World", "Specify a name for a personalized message.")
+flag.Parse()
+
+fmt.Printf("Hello %s!", *name)
+```
+
+En exécutant ce code en ajoutant `-name John` en tant qu'argument lors de son exécution, vous obtiendrez la sortie suivante :
+
+```
+Hello John!
+```
+
+Il existe de nombreuses autres options et packages en Go pour lire les arguments de ligne de commande en fonction de vos besoins. N'hésitez pas à explorer et à expérimenter pour trouver ce qui convient le mieux à votre projet.
 
 ## Voir aussi
 
-- [Documentation officielle de Go sur os package](https://golang.org/pkg/os/)
-- [Tutoriel sur les arguments de ligne de commande en Go](https://gobyexample.com/command-line-arguments)
-- [Package flag pour une utilisation plus avancée des arguments de ligne de commande en Go](https://golang.org/pkg/flag/)
+- La documentation officielle sur la fonction `os.Args` : https://golang.org/pkg/os/#Args
+- La documentation officielle sur le package `flag` : https://golang.org/pkg/flag/

@@ -1,56 +1,82 @@
 ---
-title:    "Elixir: Lesing av kommandolinjeargumenter"
+title:    "Elixir: Lesing av kommandolinje-argumenter"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Bloggposten vår i dag vil handle om å lese kommandolinjeargumenter i Elixir. Å forstå og kunne håndtere kommandolinjeargumenter er avgjørende for å skrive fleksible og nyttige programmer, så dette er et viktig konsept å lære for alle som ønsker å utvikle seg som Elixir-programmere.
 
-## Slik gjør du det
-For å starte, la oss se på et enkelt eksempel på å lese et enkelt kommandolinjeargument og skrive ut det til konsollen:
+Å lese kommandolinjeargumenter er en nyttig ferdighet for enhver Elixir-programmerer. Det gir deg muligheten til å lage programmer som tar imot brukerinndata fra terminalen og gir mer fleksibilitet til applikasjonen din.
 
-```Elixir
-args = System.argv()
-IO.puts("Det første argumentet er: #{args[0]}")
-```
+## Hvordan gjøre det
 
-I dette tilfellet bruker vi `System.argv/0`-funksjonen for å hente alle kommandolinjeargumentene som en liste. Vi kan deretter bruke indeksering for å få tilgang til spesifikke argumenter, og i dette tilfellet skrive ut det første argumentet ved hjelp av `IO.puts/1`-funksjonen.
-
-La oss nå se på et mer komplekst eksempel som tar imot flere argumenter og håndterer dem med en `case`-konstruksjon:
+For å lese kommandolinjeargumenter i Elixir, bruker vi funksjonen `System.argv()`. Denne funksjonen returnerer en liste av argumenter som ble gitt da programmet ble kjørt. La oss se på et eksempel:
 
 ```Elixir
-args = System.argv()
-case args[0] do
-  "hello" ->
-    IO.puts("Hei!")
-  "goodbye" ->
-    IO.puts("Ha det!")
-  _ ->
-    IO.puts("Jeg forstår ikke hva du mener.")
+defmodule ArgumentReader do
+  def read do
+    args = System.argv()
+    IO.inspect args
+  end
 end
+
+ArgumentReader.read()
 ```
 
-Her bruker vi `case`-konstruksjonen for å håndtere ulike kommandolinjeargumenter og skrive ut forskjellige meldinger basert på hva argumentet er. Den siste `case`-grenen med ` _ ` som matcher all hvilken verdien returnerer en generisk melding.
+Hvis vi kjører dette programmet med kommandoen `elixir reader.exs first second third`, vil konsollen vise følgende output:
 
-## Dykk dypere
-Nå som vi har sett på noen enkle eksempler, la oss se på noen flere detaljer om kommandolinjeargumenter i Elixir. Det første er at `System.argv/0`-funksjonen returnerer en liste med argumenter, og ikke inkluderer navnet på selve programmet. Dette betyr at første element i listen vil være det første faktiske argumentet som brukes i programmet ditt.
+```bash
+["first", "second", "third"]
+```
 
-En annen nyttig funksjon er `System.get_env/2` som lar deg få tilgang til miljøvariabler fra kommandolinjen. For eksempel, hvis du vil sjekke om et argument ble passert inn til programmet ditt, kan du gjøre noe som dette:
+I tillegg til å lese argumenter som er gitt ved kjøring, kan vi også ta imot brukerinput fra terminalen etter at programmet har startet. Dette gjøres ved å bruke funksjonen `IO.gets()`. La oss se på et eksempel:
 
 ```Elixir
-case System.get_env("MY_FLAG") do
-  "true" ->
-    IO.puts("My flag is set!")
-  _ ->
-    IO.puts("My flag is not set.")
+defmodule TerminalInput do
+  def prompt do
+    IO.puts "Skriv inn navnet ditt: "
+    name = IO.gets() # venter på brukerinndata
+    IO.puts "Hei, #{name}!"
+  end
 end
+
+TerminalInput.prompt()
 ```
 
-Med denne koden, hvis du kjører programmet ditt med et kommandolinjeargument `MY_FLAG=true`, vil du få utskriften "My flag is set!", ellers vil du få "My flag is not set." Dette kan være veldig nyttig for testing og konfigurering av programmer.
+Når vi kjører dette programmet, vil terminalen be oss om å skrive inn navnet vårt. Når vi har gjort det, vil programmet skrive ut en personlig hilsen med navnet vi har skrevet inn.
+
+```bash
+Skriv inn navnet ditt:
+Elixir
+Hei, Elixir!
+```
+
+## Dypdykk
+
+I tillegg til å lese argumenter og ta imot brukerinndata, kan vi også håndtere ulike situasjoner som kan oppstå. For eksempel, hvis ingen argumenter blir gitt ved kjøring, vil funksjonen `System.argv()` returnere en tom liste `[]`. Dette kan føre til feil i koden vår, så det er viktig å håndtere dette tilfellet ved å sjekke om `args`-listen er tom og håndtere det deretter.
+
+Vi kan også bruke funksjonene `List.first()` og `List.last()` for å hente ut den første og siste verdien i en liste. Dette kan være nyttig hvis vi for eksempel bare ønsker å lese den første argumenten og ignorere resten.
+
+```Elixir
+defmodule FirstArgumentReader do
+  def read do
+    args = System.argv()
+    first_arg = List.first(args)
+
+    IO.puts "Den første argumentet er: #{first_arg}"
+  end
+end
+
+FirstArgumentReader.read()
+```
+
+I tillegg til de nevnte funksjonene, er det mange flere måter å håndtere kommandolinjeargumenter på i Elixir. Det kan være nyttig å utforske dokumentasjonen og prøve ut ulike løsninger for å finne den som passer best for ditt spesifikke brukstilfelle.
 
 ## Se også
-- [Command Line Interfaces in Elixir](https://elixir-lang.org/getting-started/command-line.html)
-- [Elixir System module documentation](https://hexdocs.pm/elixir/System.html)
-- [Tutorial: Command Line Arguments in Elixir](https://yurisubach.com/articles/command-line-arguments-elixir-examples/)
+
+- [Elixir Dokumentasjon: System](https://hexdocs.pm/elixir/System.html)
+- [Elixir Dokumentasjon: IO](https://hexdocs.pm/elixir/IO.html)
+- [Elixir Dokumentasjon: List](https://hexdocs.pm/elixir/List.html)
+- [Elixir Dokumentasjon: Kernel](https://hexdocs.pm/elixir/Kernel.html)

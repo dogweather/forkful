@@ -1,36 +1,41 @@
 ---
-title:    "Kotlin: Tiedon kirjoittaminen vakiovirheeseen"
+title:    "Kotlin: Standard errorin kirjoittaminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Standardiovirheeseen Kirjoittaminen On Hyödyllistä
+## Miksi Kirjoittaa Tavallista Virheenkorjausta
 
-On monia tilanteita, joissa haluamme tulostaa ohjelmamme virheilmoituksia suoraan terminaaliin. Tämä säästää aikaa ja vaivaa, kun virheiden etsiminen ja korjaaminen on välttämätöntä. Standardiovirheeseen kirjoittaminen onkin hyödyllinen tapa parantaa ohjelmamme virheenkäsittelyä ja helpottaa vianjäljitystä.
+Kirjoittaminen tavalliseen virheenkorjaustilaan (standard error) on tärkeä osa ohjelmointia, ja se auttaa löytämään virheitä tai poikkeuksia, jotka voivat estää ohjelman oikean toiminnan. Se myös auttaa kehittäjiä löytämään ja korjaamaan ongelmia nopeammin, mikä säästää aikaa ja vaivaa.
 
-## Miten Kirjoitat Standardiovirheeseen Kotlinilla
+## Miten Kirjoittaa Tavalliseen Virheenkorjaustilaan
 
-Kotlinilla on yksinkertainen tapa kirjoittaa virheilmoituksia standardiovirheeseen. Käytä ensin `System.err.println()` -metodia ja anna sitten virheilmoituksesi sisällöstä parametriksi. Voit käyttää myös `err` -nimistä muuttujaa, joka viittaa standardiovirheeseen ja käyttää sen `println()`-metodia.
+Kotlin-kielen avulla voit helposti kirjoittaa tavalliseen virheenkorjaustilaan käyttämällä funktiota `System.err.println()`.
 
-```Kotlin
-System.err.println("Virhe: nimi ei voi olla tyhjä")
-```
-
-Tämä koodi tulostaa virheilmoituksen terminaaliin esimerkkinä virheestä, joka tapahtuu, jos käyttäjä syöttää tyhjän nimen.
+Käytännön esimerkki:
 
 ```
-Virhe: nimi ei voi olla tyhjä
+Kotlin funktio:
+fun testiFun() {
+    System.err.println("Tämä on virheilmoitus")
+}
+
+Output:
+Tämä on virheilmoitus
 ```
 
-## Syvempää Tutkimusta Standardiovirheisiin Kirjoittamisesta
+Tässä esimerkissä olemme luoneet yksinkertaisen testifunktion, joka tulostaa virheilmoituksen tavalliseen virheenkorjaustilaan.
 
-Standardiovirheeseen kirjoittamisessa on tärkeää huomata, että virheilmoituksia ei yleensä haluta näkyvän käyttäjälle, vaan ne ovat tarkoitettu lähinnä ohjelmoijan käyttöön. Siksi on tärkeää käyttää `System.err` -luokkaa eikä `System.out` -luokkaa, joka tulostaa asioita standarditulostusvirtaan (terminaliin). Myös muista, että virheilmoitus tulee aina tulostaa ennen koodin suorittamista kyseisen virheen aiheuttaneelle riville.
+## Syvällisempi Katsaus Kirjoittamiseen Tavalliseen Virheenkorjaustilaan
 
-Voit myös käyttää `java.util.logging` -pakettia kirjoittaaksesi tarkemman ja jäsennellymmän virheilmoituksen standardiovirheeseen. Tämä on erityisen hyödyllistä isommissa projekteissa, joissa on useampia ohjelmoijia tai haluat tallentaa virheilmoitukset esimerkiksi lokitiedostoihin.
+Kotlin tarjoaa useita työkaluja, jotka auttavat kirjoittamaan tavalliseen virheenkorjaustilaan. Voit esimerkiksi käyttää `System.err.println()` lisäksi myös `System.out.printX` -metodeja, joilla voit tulostaa erilaisia tietotyyppejä tavalliseen virheenkorjaustilaan.
+
+Lisäksi sinun pitäisi aina pyrkiä kirjoittamaan selkeä ja informatiivinen virheilmoitus, joka auttaa löytämään ja korjaamaan ongelman. Voit myös käyttää `try-catch` rakennetta, jolla voit käsitellä ja tulostaa poikkeuksia tavalliseen virheenkorjaustilaan.
 
 ## Katso Myös
 
-- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Tarkempi opas virheiden käsittelemiseen Kotlinilla](https://www.baeldung.com/java-throw-custom-exception)
-- [Java.util.logging-paketin opas](https://www.baeldung.com/java-logging-exceptions)
+- [Virheenkorjaus Kotlin-kielellä](https://kotlinlang.org/docs/exceptions.html)
+- [Tietoja System.err.println() -metodista](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- [Kotlin-oppitunti poikkeusten käsittelystä](https://kotlinlang.org/docs/tutorials/exceptions.html)

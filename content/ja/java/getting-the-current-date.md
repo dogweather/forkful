@@ -1,72 +1,76 @@
 ---
-title:    "Java: 現在の日付の取得"
+title:    "Java: 「現在の日付を取得する」"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ日付を取得するのか
 
-現在の日付を取得することに興味を持つ理由はさまざまです。例えば、プロジェクトの期限を管理するために日付を取得したり、特定の日付に関連するデータを処理する必要がある場合に、取得する必要があります。
+日付を取得することは、多くのプログラミング言語において非常に一般的な作業です。日付に関するデータや情報を扱う場合、通常は最新の情報を使いたいと思うでしょう。そのため、プログラムで現在の日付を取得する必要が生じる場面がしばしばあります。Javaでは、現在の日付を取得する方法がさまざまな方法で用意されています。ここでは、Javaで現在の日付を取得する方法について詳しく見ていきましょう。
 
-## 方法
+## 取得方法
 
-Javaでは、現在の日付を取得する方法がいくつかあります。最も一般的な方法は、`LocalDate.now()`を使用することです。これは、コンピューターのシステム時計を使用して現在の日付を取得します。以下のコードブロックに、`LocalDate.now()`を使用した例を示します。
+Javaには、あらかじめ用意されたクラスライブラリを介して現在の日付を取得する方法があります。例えば、`LocalDate`クラスを使用することで現在の日付を取得することができます。下のコードブロックでは、`LocalDate`クラスを使用して現在の日付を取得する方法を示します。
 
-```Java
-import java.time.LocalDate;
+```java
+// 現在の日付を取得する
+LocalDate date = LocalDate.now();
 
-public class GetCurrentDate {
-  public static void main(String[] args) {
-    // LocalDate.now()を使用して、現在の日付を取得する
-    LocalDate currentDate = LocalDate.now();
-    
-    // 取得した日付を出力する
-    System.out.println("現在の日付は" + currentDate + "です");
-  }
-}
+// 現在の日付を出力する
+System.out.println("現在の日付は：" + date);
 ```
 
-このコードを実行すると、以下のような出力が得られます。
+出力結果は以下のようになります。
 
 ```
-現在の日付は2021-09-16です
+現在の日付は：2021-12-09
 ```
 
-また、特定のタイムゾーンに基づいて現在の日付を取得したい場合は、`ZonedDateTime.now(zoneId)`を使用します。以下のコードブロックに、アメリカ東部標準時に基づいて現在の日付を取得する例を示します。
+また、より詳細な情報を取得するには、`LocalDate`クラスのメソッドを使用することもできます。例えば、`getYear()`や`getMonth()`、`getDayOfMonth()`メソッドを使用することで、年や月、日の情報を個別に取得できます。
 
-```Java
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+```java
+// 年を取得する
+int year = date.getYear();
 
-public class GetCurrentDate {
-  public static void main(String[] args) {
-    // アメリカ東部標準時のタイムゾーンを設定する
-    ZoneId zoneId = ZoneId.of("America/New_York");
-    
-    // ZonedDateTime.now(zoneId)を使用して、現在の日付を取得する
-    ZonedDateTime currentDate = ZonedDateTime.now(zoneId);
-    
-    // 取得した日付を出力する
-    System.out.println("現在の日付は" + currentDate + "です");
-  }
-}
+// 月を取得する
+Month month = date.getMonth();
+
+// 日を取得する
+int day = date.getDayOfMonth();
+
+// 年月日を出力する
+System.out.println("今日は" + year + "年" + month + "月" + day + "日です。");
 ```
 
-このコードを実行すると、以下のような出力が得られます。
+出力結果は以下のようになります。
 
 ```
-現在の日付は2021-09-16T06:00-04:00[America/New_York]です
+今日は2021年12月9日です。
 ```
+
+他にも`LocalDateTime`クラスや`Calendar`クラスを使用して日付を取得することができます。しかし、この記事では詳細には触れませんので、興味があればそれぞれのクラスについて調べてみてください。
 
 ## 深堀り
 
-現在の日付を取得する方法にはさまざまなオプションがあります。例えば、`LocalDate.now()`や`ZonedDateTime.now(zoneId)`以外にも、`LocalDateTime.now()`や`OffsetDateTime.now(offset)`などがあります。また、取得した日付をより詳細に扱うためには、`LocalDate`や`ZonedDateTime`などのメソッドを使用することもできます。
+Javaには、単に現在の日付を取得するだけではなく、さまざまな方法で日付を操作することができる機能も用意されています。例えば、`LocalDate`クラスには、指定した日付の前後の日付を取得する`plusDays()`や`minusDays()`メソッドがあります。
 
-詳細な情報やより高度な操作については、Javaの公式ドキュメントを参照することをお勧めします。また、日付と時刻を一緒に扱う場合には、`java.time`パッケージを使用することが推奨されています。
+```java
+// 明日の日付を取得する
+LocalDate tomorrow = date.plusDays(1);
 
-## 参考リンク
+// 明後日の日付を取得する
+LocalDate dayAfterTomorrow = date.plusDays(2);
 
-- [Javaの公式ドキュメント (日付と時刻)](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
-- [Javaで日付や時間を処理する方法](https://www.javadrive.jp/start/date/index1.html)
-- [初めてのJava8日付と時刻API](https://www.baeldung.com/java-8-date-time-intro)
+// 昨日の日付を取得する
+LocalDate yesterday = date.minusDays(1);
+```
+
+他にも、指定した日付が何曜日かを取得したり、指定した日付が何週目かを取得するメソッドもあります。詳しくは公式ドキュメントを参考にしてください。
+
+## See Also
+
+- [LocalDateクラス | Javaドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDate.html)
+- [LocalDateTimeクラス | Javaドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDateTime.html)
+-

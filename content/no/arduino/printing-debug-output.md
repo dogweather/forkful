@@ -1,45 +1,42 @@
 ---
-title:    "Arduino: Utskrift av feilsøkingsutdata"
+title:    "Arduino: Utskrift av feilsøkingsresultater"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvorfor er det viktig å skrive ut feilsøkingsutdata i Arduino-programmering? Debugging er en viktig del av enhver programmeringsprosess, og å skrive ut utdata kan hjelpe deg med å finne og fikse eventuelle feil eller problemer i koden din.
+Å skrive koden din for Arduino kan være en givende og spennende opplevelse, men det kan også være utfordrende når det kommer til å finne og fikse feil. En måte å gjøre denne prosessen enklere er å skrive ut debug-informasjon under utviklingen. Dette gir deg muligheten til å se nøyaktig hva som skjer i programmet ditt, og hvor problemet ligger.
 
-## Hvordan
+# Hvordan gjøre det
 
-En enkel måte å skrive ut feilsøkingsutdata i Arduino er å bruke funksjonen `Serial.println()`. Denne funksjonen tar et argument, for eksempel en variabel eller en tekststreng, og skriver ut det til serieporten på Arduinoen. La oss se på et eksempel:
+For å skrive ut debug-informasjon i Arduino, bruker du funksjonen "Serial.print()". Dette vil skrive ut informasjonen du angir i parentesene, til det serielle monitoren i Arduino-programvaren. La oss si at du har en variabel kalt "sensorverdi" som inneholder en verdi du vil skrive ut. Koden din kan da se slik ut:
 
-```Arduino
-int temperatur = 25; // Definerer en variabel med verdien 25
-
-Serial.println("Temperatur: "); // Skriver ut "Temperatur: " til serieporten
-Serial.println(temperatur); // Skriver ut verdien av temperaturvariabelen til serieporten
+```arduino
+int sensorverdi = 10;
+Serial.print("Sensoren leser: ");
+Serial.println(sensorverdi);
 ```
 
-Når du åpner serieporten i Arduino IDE (verktøyet du bruker for å programmere Arduinoen din), vil utdataen se slik ut:
+Når du nå åpner den serielle monitoren i Arduino-programvaren, vil du se følgende utskrift:
 
 ```
-Temperatur: 25
+Sensoren leser: 10
 ```
 
-Dette kan hjelpe deg med å verifisere at verdien av variabelen din er riktig, eller å identifisere hvor feilen kan være hvis den ikke stemmer overens med forventet verdi. Du kan også legge til flere linjer med utdata for å få mer detaljert informasjon om koden din.
+Dette gjør at du enkelt kan se verdien til variabelen din, og om den endrer seg som forventet.
 
-## Dypdykk
+# Dykk dypere
 
-I tillegg til å bruke `Serial.println()` kan du også utnytte andre funksjoner som `Serial.print()` og `Serial.write()`, avhengig av hva du vil at utdataen skal se ut som. Du kan også bruke debug-biblioteker som `SerialDebug` for å få enda mer avanserte muligheter til å skrive ut feilsøkingsutdata.
+I noen tilfeller kan problemet ditt være mer komplekst enn å bare se på verdien til en variabel. I slike tilfeller kan du bruke flere Serial-kommandoer for å få mer detaljert informasjon. For eksempel kan du bruke "Serial.write()" for å skrive ut bokstavene i en tekststreng individuelt, eller "Serial.print()" for å skrive ut binære tall. Du kan også bruke "Serial.begin()" for å bestemme hastigheten på seriell kommunikasjon.
 
-Det er også viktig å vite at utskrift av feilsøkingsutdata kan påvirke ytelsen til programmet ditt, spesielt hvis du skriver ut mye data til serieporten. Derfor bør du unngå å bruke feilsøkingsutdata i produksjonskoden din, og heller bare bruke den når du trenger å finne feil eller problemer.
+Det er også viktig å huske på at å skrive ut for mye informasjon kan føre til at Arduino henger seg opp. Derfor kan det være lurt å begrense debug-utskriftene dine eller å deaktivere dem når du er ferdig med utviklingen.
 
-## Se også
+# Se også
 
-Her er noen ressurser for å lære mer om utskrift av feilsøkingsutdata i Arduino-programmering:
-
-- [Arduino dokumentasjon om seriel utgang](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Instructables tutorial om debugging i Arduino](https://www.instructables.com/Debugging-Arduino-Code/)
-- [Med Arduino Debug biblioteket](https://github.com/JoaoLopesF/arduino-debug)
-
-Takk for at du leste denne bloggposten om å skrive ut feilsøkingsutdata i Arduino-programmering. Vi håper den vil hjelpe deg med å utvikle og feilsøke koden din mer effektivt! Lykke til med dine fremtidige prosjekter.
+- [Arduino Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+- [Serial Communication in Arduino](https://www.arduino.cc/en/Tutorial/Serial)
+- [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting)

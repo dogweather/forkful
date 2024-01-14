@@ -1,69 +1,53 @@
 ---
 title:    "Kotlin: Extrayendo subcadenas"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué extraer subcadenas en Kotlin?
 
-Extraer subcadenas es una tarea común en la programación, ya sea para procesar datos o manipular cadenas de texto en aplicaciones. Este artículo explorará cómo extraer subcadenas en Kotlin y proporcionará ejemplos de código para ayudarte a entender mejor este concepto.
+Extraer subcadenas es una herramienta útil para aquellos que trabajan con cadenas de texto en Kotlin. Esto les permite obtener una parte específica de una cadena más grande, lo que puede ser útil para el procesamiento de datos y la manipulación de texto. Además, al dominar el concepto de extracción de subcadenas, se puede mejorar la eficiencia y la precisión del código.
 
-## Cómo hacerlo
+## Cómo extraer subcadenas en Kotlin
 
-En Kotlin, hay diferentes formas de extraer subcadenas, dependiendo de tus necesidades. Una de las formas más comunes es utilizando el método `substring()` de la clase `String`. Este método toma dos parámetros: el índice inicial y el índice final de la subcadena que deseas extraer. Veamos un ejemplo:
+La extracción de subcadenas en Kotlin se realiza utilizando el método `substring()` en una cadena de texto existente. Este método requiere dos parámetros: el índice de inicio y el índice de fin de la subcadena que desea extraer.
 
-```Kotlin
-val texto = "Hola mundo"
-val subcadena = texto.substring(5, 10)
-print(subcadena) //output: mundo
-```
-
-En este ejemplo, hemos creado una variable `texto` que contiene una cadena y luego hemos utilizado el método `substring()` para extraer la subcadena "mundo" comenzando desde el índice 5 hasta el 10.
-
-Si no especificamos el índice final, el método `substring()` tomará todo el texto desde el índice inicial hasta el final. Por ejemplo:
+Por ejemplo, para extraer la subcadena "mundo" de la cadena "Hola mundo", se puede utilizar el siguiente código:
 
 ```Kotlin
-val subcadena = texto.substring(5)
-print(subcadena) //output: mundo
+val cadena = "Hola mundo"
+val subcadena = cadena.substring(5,10)
+println(subcadena) // Salida: mundo
 ```
 
-Otra forma de extraer subcadenas es utilizando el operador de rango `..`. Este operador nos permite especificar un rango de índices en lugar de los valores exactos. Por ejemplo:
+También es posible especificar solo el índice de inicio, lo que extraerá la subcadena desde ese punto hasta el final de la cadena. Por ejemplo:
 
 ```Kotlin
-val subcadena = texto[5..10]
-print(subcadena) //output: mundo
+val cadena = "Hola mundo"
+val subcadena = cadena.substring(2)
+println(subcadena) // Salida: la mundo
 ```
 
-En este caso, también obtenemos la subcadena "mundo" comenzando desde el índice 5 hasta el 10.
-
-También podemos utilizar `substringAfter()` o `substringBefore()` para extraer una subcadena después o antes de un determinado carácter. Por ejemplo:
+También se pueden utilizar índices negativos para referirse a la posición de la cadena desde el final en lugar del principio. Por ejemplo, para extraer la subcadena "mundo" de la cadena "Hola mundo", se podría usar el siguiente código:
 
 ```Kotlin
-val correo = "usuario@dominio.com"
-val usuario = correo.substringBefore("@")
-print(usuario) //output: usuario
+val cadena = "Hola mundo"
+val subcadena = cadena.substring(5,-1)
+println(subcadena) // Salida: mundo
 ```
 
-## Inmersión profunda
+También hay métodos alternativos disponibles para extraer subcadenas, como `subSequence()` y `slice()`, que ofrecen más opciones y flexibilidad.
 
-Además de las formas básicas de extraer subcadenas que hemos visto, en Kotlin también podemos utilizar expresiones regulares para formatear y manipular cadenas de texto. Las expresiones regulares son patrones que nos permiten buscar y reemplazar partes específicas de una cadena.
+## Profundizando en la extracción de subcadenas
 
-Por ejemplo, si tenemos una cadena que contiene una dirección de correo electrónico, podemos utilizar una expresión regular para extraer el nombre de usuario antes del "@" y el dominio después del "@".
+La extracción de subcadenas en Kotlin es más que simplemente utilizar algunos métodos de cadena. También es importante entender cómo funcionan los índices en las cadenas y cómo manejar los casos de error, como los índices fuera de rango.
 
-```Kotlin
-val correo = "usuario@dominio.com"
-val usuarioRegex = Regex("(.+)@(.+)")
-val usuarioMatch = usuarioRegex.find(correo)
-val usuario = usuarioMatch?.groupValues?.get(1)
-val dominio = usuarioMatch?.groupValues?.get(2)
-print("Usuario: $usuario, Dominio: $dominio") //output: Usuario: usuario, Dominio: dominio.com
-```
-
-En este caso, hemos utilizado una expresión regular para buscar un patrón en la cadena `correo`. Luego, utilizamos el método `find()` para obtener los resultados y el método `groupValues` para acceder a los valores de los grupos capturados por la expresión regular.
+Además, al dominar esta técnica, puede aprovechar al máximo sus habilidades de codificación para manipular y transformar cadenas de manera eficiente y precisa.
 
 ## Ver también
 
-- [Documentación de Kotlin sobre String.substring()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
-- [Ejemplos de uso de expresiones regulares en Kotlin](https://www.baeldung.com/kotlin/regex-matchers)
-- [Tutorial de Kotlin: Trabajando con cadenas de texto](https://www.vogella.com/tutorials/KotlinStrings/article.html)
+- [Documentación oficial de Kotlin sobre la extracción de subcadenas](https://kotlinlang.org/docs/reference/basic-types.html#substring)
+- [Tutorial de extracción de subcadenas en Kotlin](https://www.geeksforgeeks.org/extract-substring-kotlin/)
+- [Vídeo tutorial de extracción de subcadenas en Kotlin](https://www.youtube.com/watch?v=h6-S9BUqaVE&t=125s)

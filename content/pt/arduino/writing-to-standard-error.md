@@ -1,43 +1,66 @@
 ---
-title:    "Arduino: Escrevendo em erro padrão"
+title:    "Arduino: Escrevendo para o erro padrão"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão no Arduino?
+# Por que escrever para o erro padrão no Arduino
 
-Escrever para o erro padrão no Arduino pode ajudar a identificar e corrigir problemas no seu código. Quando um programa encontra um erro, ele geralmente o imprime no "erro padrão", que é uma área de memória que armazena mensagens de erro. Ao escrever para o erro padrão, você pode visualizar essas mensagens e descobrir onde o problema está ocorrendo.
+Escrever para o erro padrão, também conhecido como standard error, pode ser uma ferramenta útil para desenvolvedores que desejam analisar e depurar seus códigos no Arduino. Ao imprimir mensagens de erro ou informações de status no erro padrão, é possível identificar problemas e acompanhar o processo de execução do código.
 
-## Como fazer:
+# Como fazer
 
-Para escrever para o erro padrão no Arduino, você precisará usar a função `Serial.print()` ou `Serial.println()`. Essas funções enviam dados para o monitor serial, que é uma ferramenta útil para visualizar as mensagens de erro.
+Para escrever no erro padrão no Arduino, é necessário utilizar a função `Serial.println()` para imprimir os dados desejados. É importante lembrar de iniciar a comunicação serial no setup do código, utilizando a função `Serial.begin()`. Veja um exemplo abaixo:
 
+```arduino
+// Iniciar a comunicação serial com baud rate de 9600
+Serial.begin(9600);
+
+// Imprimir mensagem no erro padrão
+Serial.println("Este é um exemplo de mensagem de erro");
 ```
-Arduino pinMode(13, OUTPUT);
 
-digitalWrite(13, HIGH);
+O código acima irá imprimir a mensagem "Este é um exemplo de mensagem de erro" no monitor serial do Arduino. É possível também utilizar a função `Serial.print()` para imprimir dados sem pular para uma nova linha.
 
-if (digitalRead(13) != HIGH) {
-  Serial.println("Houve um erro ao configurar o pino 13 como saída.");
+# Mergulho profundo
+
+Além de imprimir mensagens de erro, é possível utilizar a escrita no erro padrão para fins de debug ou monitoramento de variáveis durante a execução do código. Por exemplo, é possível imprimir o valor de uma variável em um determinado ponto do código para verificar se está sendo atribuída corretamente.
+
+```arduino
+int ledPin = 13;
+int buttonPin = 2;
+
+void setup() {
+  // Iniciar a comunicação serial com baud rate de 9600
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Ler o estado do botão
+  int buttonState = digitalRead(buttonPin);
+
+  // Imprimir o estado do botão no erro padrão
+  Serial.println(buttonState);
+
+  if (buttonState == HIGH) {
+    // Acender o LED
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // Apagar o LED
+    digitalWrite(ledPin, LOW);
   }
+
+  // Aguardar 500ms
+  delay(500);
+}
 ```
 
-Neste exemplo, o código tenta definir o pino 13 como saída, mas verifica se o pino realmente foi alterado para o estado HIGH. Se a verificação falhar, uma mensagem de erro será escrita para o erro padrão usando `Serial.println()`.
+No exemplo acima, a cada ciclo do loop, o estado do botão é impresso no erro padrão. Isso permite verificar se o botão está sendo lido corretamente e auxiliar no debugging do código.
 
-Você também pode escrever variáveis ​​para o erro padrão para monitorar o valor delas durante a execução do código. Isso pode ser útil para identificar problemas de lógica no seu código.
+# Veja também
 
-## Mergulho mais profundo:
-
-Existem várias maneiras de visualizar as mensagens de erro do erro padrão. A forma mais comum é usar o monitor serial no ambiente de desenvolvimento Arduino (IDE). Você pode acessá-lo clicando em "Ferramentas" e em "Monitor serial" no menu.
-
-Outra opção é usar um módulo de display LCD para exibir mensagens de erro diretamente no seu circuito. Existem bibliotecas disponíveis para ajudar a simplificar o processo de comunicação entre o Arduino e o LCD.
-
-Além disso, é possível salvar as mensagens de erro em um cartão SD para visualizá-las posteriormente ou enviar as mensagens para um aplicativo de monitoramento no seu computador.
-
-## Veja também:
-
-- [Documentação oficial do Arduino para escrever para o erro padrão](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Tutorial do Arduino sobre como usar o monitor serial](https://www.arduino.cc/en/Tutorial/SerialMonitor)
-- [Biblioteca LiquidCrystal para usar com displays LCD](https://www.arduino.cc/en/Reference/LiquidCrystal)
-- [Tutorial sobre como usar um módulo de cartão SD no Arduino](https://www.arduino.cc/en/Tutorial/Datalogger)
+- [Documentação oficial do Arduino sobre a comunicação serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Tutorial sobre o uso do erro padrão no Arduino](https://create.arduino.cc/projecthub/Aritro/implementing-error-handling-into-an-arduino-sketch-5001a2)
+- [Vídeo explicativo sobre a comunicação serial no Arduino](https://www.youtube.com/watch?v=kpvbOzVWoug)

@@ -1,37 +1,48 @@
 ---
 title:    "Gleam: Wydobywanie podciągów"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jesteś nowy w języku programowania Gleam i zastanawiasz się po co służy ekstrakcja podciągów w programowaniu? Nie ma się czego bać, jest to przydatna technika w wielu sytuacjach. Pozwala na wydobycie określonych fragmentów tekstu z większej całości, co ułatwia pracę z danymi w kodzie. W tym artykule dowiesz się, jak wykorzystać ekstrakcję podciągów w Gleam do swoich celów.
+W tym wpisie opowiemy o tym, jak wykorzystać funkcję w języku Gleam do ekstrakcji podciągów. Poznamy również dlaczego jest to przydatne narzędzie w programowaniu.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Kodowanie w Gleam może wydawać się trudne na pierwszy rzut oka, ale z ekstrakcją podciągów nie jest tak strasznie. Wystarczy skorzystać z metod `slice` lub `subslice`, które pozwalają na wyciągnięcie odpowiedniej części tekstu według podanych parametrów.
+Ekstrakcja podciągów to proces wyodrębniania części tekstu z zadanego ciągu znaków. W języku Gleam, możemy tego dokonać za pomocą funkcji ```extract_substring```  która przyjmuje jako argumenty dwa indeksy określające pozycje początkową i końcową podciągu.
 
-Poniższy przykład kodu demonstruje użycie metody `subslice`, aby wyodrębnić fragment tekstu o indeksach od 3 do 7 (włącznie) ze zmiennej `text`:
+Przykładowo, chcąc wyodrębnić podciąg "program" ze zdania "Lubię pisać programy w języku Gleam." użylibyśmy następującego kodu:
 
 ```Gleam
-let text = "To jest przykładowy tekst"
-let substring = text.subslice(3, 7)
-
-gleam_assert_eq(substring, "jest")
+let zdanie = "Lubię pisać programy w języku Gleam."
+let podciag = extract_substring(zdanie, 10, 16)
 ```
 
-Jako rezultat otrzymujemy wyodrębniony fragment tekstu "jest". Takie proste wykorzystanie pozwala na dostosowanie naszego kodu do własnych potrzeb.
+Po wykonaniu tej funkcji, wartość zmiennej ```podciag``` zostanie ustawiona na "program", co można zweryfikować za pomocą funkcji ```show()```:
 
-## Dogłębna analiza
+```Gleam
+show(podciag)
+```
 
-Możliwość ekstrakcji podciągów jest jedną z wielu użytecznych funkcji języka Gleam. Wystarczy jedna linia kodu, by wydobyć odpowiedni fragment tekstu i wykorzystać go w swoim programie. Metody `slice` i `subslice` również pozwalają na ustawienie dodatkowych parametrów, takich jak krok lub indeks początkowy, co daje nam większą kontrolę nad ekstrakcją.
+Powyższy kod wyświetli "program" w konsoli. Możemy również wyświetlić zadany podciąg wraz z pozostałymi fragmentami zdania, używając operatora konkatenacji (+) :
 
-Ekstrakcja podciągów jest szczególnie przydatna, gdy mamy do czynienia z danymi w formie tekstu, np. plikami CSV czy JSON. Dzięki niej możemy w prosty sposób wyodrębnić potrzebne nam informacje z tych plików i wykorzystać je w dalszej części programu.
+```Gleam
+show("Język " + podciag + "ingi w " + zdanie)
+```
 
-## Zobacz także
+Co wyświetli "Lubię pisać programingi w języku Gleam." w konsoli.
 
-- [Dokumentacja Gleam o metodzie `slice`](https://gleam.run/documentation/0.10.0/std/string.html#slice)
-- [Dokumentacja Gleam o metodzie `subslice`](https://gleam.run/documentation/0.10.0/std/string.html#subslice)
-- [Gleam - oficjalna strona języka](https://gleam.run/)
+## Deep Dive
+
+Funkcja ```extract_substring``` jest bardzo przydatna przy manipulacji tekstem w języku Gleam. Możemy wykorzystać ją na wiele sposobów, np. do filtrowania lub modyfikowania danych tekstowych.
+
+Ponadto, możemy także określić ujemne wartości indeksów, co pozwala na wyodrębnienie podciągów od końca ciągu znaków. Przykładowo, użycie indeksów -5 i -1 w wyżej podanym kodzie spowoduje wyodrębnienie podciągu "Gleam" z oryginalnego zdania.
+
+## Zobacz też
+
+1. Dokumentacja języka Gleam: https://gleam.run/
+2. Wideo-tutorial o ekstrakcji podciągów w języku Gleam: https://www.youtube.com/watch?v=09uRDfL1NK4
+3. Przykładowe zadania wykorzystujące funkcję ```extract_substring```: https://github.com/gleam-lang/gleam/issues/1298

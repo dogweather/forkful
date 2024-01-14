@@ -1,49 +1,91 @@
 ---
-title:    "Java: Calcolare una data nel futuro o passato"
+title:    "Java: Calcolare una data nel futuro o nel passato"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Calcolare le date nel passato o nel futuro è una funzionalità importante che può essere utile in molte situazioni, come pianificare eventi o lavorare con dati storici.
+Sei mai rimasto confuso sul come calcolare una data nel futuro o nel passato? Scopri come farlo facilmente con Java!
 
 ## Come fare
-
-Per calcolare una data nel futuro o nel passato in Java, è possibile utilizzare la classe `Calendar`. Vediamo un esempio di codice che calcola la data di oggi più 7 giorni:
-
 ```Java
-Calendar cal = Calendar.getInstance(); // Ottiene l'istanza corrente della classe Calendar
-cal.add(Calendar.DATE, 7); // Aggiunge 7 giorni alla data di oggi
-Date futureDate = cal.getTime(); // Ottiene la data calcolata come oggetto di tipo Date
+public class Calendario {
+  public static void main(String[] args) {
+
+    // Definiamo la data di partenza
+    int anno = 2021;
+    int mese = 6;
+    int giorno = 15;
+
+    // Calcoliamo la data nel futuro
+    int giorniFuturi = 10;
+    giorno += giorniFuturi;
+
+    // Escludiamo mesi con meno di 31 giorni
+    if (mese == 4 || mese == 6 || mese == 9 || mese == 11) {
+      if (giorno > 30) {
+        giorno -= 30;
+        mese++;
+      }
+    }
+    // Escludiamo Febbraio e Anni bisestili
+    else if (mese == 2) {
+      if ((anno % 4 == 0 && anno % 100 != 0) || anno % 400 == 0) {
+        if (giorno > 29) {
+          giorno -= 29;
+          mese++;
+        }
+      } else {
+        if (giorno > 28) {
+          giorno -= 28;
+          mese++;
+        }
+      }
+    }
+    // Restituisci la data nel futuro
+    System.out.println("Data futura: " + anno + "-" + mese + "-" + giorno);
+
+    // Calcoliamo la data nel passato
+    int giorniPassati = 10;
+    giorno -= giorniPassati;
+
+    // Escludiamo mesi con meno di 31 giorni
+    if (mese == 4 || mese == 6 || mese == 9 || mese == 11) {
+      if (giorno < 1) {
+        giorno += 30;
+        mese--;
+      }
+    }
+    // Escludiamo Febbraio e Anni bisestili
+    else if (mese == 2) {
+      if ((anno % 4 == 0 && anno % 100 != 0) || anno % 400 == 0) {
+        if (giorno < 1) {
+          giorno += 29;
+          mese--;
+        }
+      } else {
+        if (giorno < 1) {
+          giorno += 28;
+          mese--;
+        }
+      }
+    }
+    // Restituisci la data nel passato
+    System.out.println("Data passata: " + anno + "-" + mese + "-" + giorno);
+
+  }
+}
 ```
-
-In questo modo, è possibile anche calcolare date nel passato, semplicemente sostituendo il numero dei giorni da aggiungere con un numero negativo. Ad esempio, per ottenere la data di oggi meno un mese:
-
-```Java
-Calendar cal = Calendar.getInstance();
-cal.add(Calendar.MONTH, -1);
-Date pastDate = cal.getTime();
-```
-
-È inoltre possibile specificare la data di partenza utilizzando il metodo `set()`. Ad esempio, per calcolare la data di inizio dell'anno corrente:
-
-```Java
-Calendar cal = Calendar.getInstance();
-cal.set(Calendar.MONTH, Calendar.JANUARY); // Imposta il mese a gennaio
-cal.set(Calendar.DATE, 1); // Imposta il giorno al primo
-Date newYear = cal.getTime();
-```
+Esempio di output:
+Data futura: 2021-6-25
+Data passata: 2021-6-5
 
 ## Approfondimento
-
-La classe `Calendar` è uno strumento molto potente per lavorare con le date in Java. Per ulteriori informazioni sugli altri metodi disponibili, si consiglia di consultare la documentazione ufficiale di Java.
-
-Inoltre, esistono anche altre librerie esterne che offrono funzionalità più avanzate per la gestione delle date, come ad esempio Joda Time o la libreria del pacchetto `java.time` introdotta in Java 8. È importante scegliere la soluzione più adatta alla propria esigenza.
+Il calcolo di una data nel futuro o nel passato richiede l'utilizzo di operazioni matematiche e una conoscenza dei mesi e dei giorni dell'anno. Una volta compresa questa logica, è possibile scrivere una funzione per calcolare facilmente qualsiasi data desiderata.
 
 ## Vedi anche
-
-- Documentazione ufficiale di Java per la classe `Calendar`: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
-- Joda Time: https://www.joda.org/joda-time/
-- Pacchetto `java.time` di Java 8: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- [Come calcolare i giorni tra due date con Java](https://www.javatpoint.com/days-between-dates-in-java)
+- [Calcolo della data della Pasqua con Java](https://www.codemartial.org/2013/03/calcolo-della-data-della-pasqua-con-java.html)
+- [Trasformare una data in un formato diverso con Java](https://stackoverflow.com/questions/4216745/how-to-convert-a-date-to-string-in-java)

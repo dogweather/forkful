@@ -1,43 +1,35 @@
 ---
-title:    "Java: Å beregne en dato i fremtiden eller fortiden"
+title:    "Java: Beregning av en dato i fremtiden eller fortiden"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge og organisere hendelser eller for å spore viktige datoer. Det kan også være nyttig for å foreta timing av oppgaver eller for å analysere datahistorikk.
+
+Å kunne beregne en dato i fremtiden eller fortiden er en nyttig ferdighet som kan komme godt med i mange Java-programmer. For eksempel kan det være nødvendig å beregne leveringstiden for en bestilling, eller å finne ut når en betalingsfrist utløper. Å kunne beregne datoer i Java gjør det mulig å automatisere slike oppgaver og spare tid og ressurser.
 
 ## Hvordan
-Det finnes flere måter å beregne datoer i Java på, men en enkel metode er å bruke "Calendar" klassen. Først må vi opprette et "Calendar" objekt og deretter bruke metoder som "add()" eller "set()" for å justere datoen etter våre behov. Her er et eksempel på hvordan man kan beregne datoen for 30 dager frem i tid:
+
+For å kunne beregne en dato i Java kan du bruke klassen `LocalDate` fra `java.time` pakken. Denne klassen lar deg manipulere datoer ved hjelp av enkle metoder. Her er et eksempel på hvordan du kan beregne datoen 7 dager fra i dag:
 
 ```Java
-// Oppretter et "Calendar" objekt for nåværende dato
-Calendar cal = Calendar.getInstance();
-
-// Legger til 30 dager til nåværende dato
-cal.add(Calendar.DAY_OF_MONTH, 30);
-
-// Henter ut datoen som et "Date" objekt
-Date futureDate = cal.getTime();
-
-// Skriver ut datoen i ønsket format
-System.out.println("Datoen 30 dager frem i tid er: " + futureDate);
+LocalDate today = LocalDate.now();
+LocalDate futureDate = today.plusDays(7);
+System.out.println("Datoen 7 dager fra i dag er: " + futureDate);
 ```
 
-Dette eksempelet vil gi følgende output: 
-*Datoen 30 dager frem i tid er: Sat, Aug 08 2020*
+Dette vil gi følgende utskrift: `Datoen 7 dager fra i dag er: <Datoen 7 dager frem i tid>`
+
+Du kan også bruke andre metoder som `plusMonths()` eller `minusYears()` for å beregne datoer i fremtiden eller fortiden basert på måneder og år.
 
 ## Dypdykk
-Noen av de nyttige metodene for å beregne datoer med "Calendar" klassen inkluderer:
-- "add()" for å legge til en viss verdi til en spesifikk del av datoen (f.eks. 30 dager til måneden).
-- "set()" for å sette en spesifikk verdi til en del av datoen (f.eks. å sette datoen til en bestemt dag).
-- "getTime()" for å hente ut datoen som et "Date" objekt.
-- "get()" for å hente ut en spesifikk del av datoen (f.eks. måneden eller året).
 
-Det er også verdt å merke seg at "Calendar" klassen følger det gregorianske kalendersystemet, og at det finnes ulike metoder for å håndtere tidssoner og lokale tider. Det kan være lurt å lese gjennom dokumentasjonen for å få et bedre innblikk i alle mulighetene denne klassen har å tilby.
+Hvis du ønsker å forstå mer om hvordan datoer beregnes i Java, kan du se nærmere på klassen `LocalDate`. Denne klassen bruker en logisk metode kalt "flyttende dag" som gjør at datoer kan beregnes korrekt, selv når det er skuddår eller sommertid. Det er også viktig å være bevisst på hvilken tidssone du arbeider med når du bruker `LocalDate` klassen.
 
 ## Se også
-- [Java Calendar Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java Date and Time Tutorials](https://www.baeldung.com/java-8-date-time-intro)
-- [Java Date Format Eksempler](https://www.javatpoint.com/java-date-format)
+
+- [Oracle Java API dokumentasjon for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial om java.time pakken](https://www.baeldung.com/java-8-date-time-intro)
+- [Artikkel om å beregne datoer i Java](https://www.techbeamers.com/java-8-date-time-api/)

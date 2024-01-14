@@ -1,49 +1,81 @@
 ---
-title:    "Ruby: Escribiendo en el error estándar"
+title:    "Ruby: Escribiendo a la salida de error estándar"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en el estándar de error?
+## Por qué escribir en el error estándar
 
-Escribir en el estándar de error puede ser útil para solucionar problemas de depuración en tus programas de Ruby. Con esta técnica, puedes imprimir mensajes de error específicos para evaluar y corregir cualquier problema en tu código.
+Escribir en el error estándar es una parte fundamental de la programación en Ruby. Al imprimir mensajes en el error estándar, podemos obtener información sobre los posibles errores en nuestro código y así poder corregirlos de manera efectiva.
 
 ## Cómo hacerlo
 
-Para escribir en el estándar de error en Ruby, puedes utilizar el método `warn` o el operador `STDERR.puts`.
+Para escribir en el error estándar en Ruby, utilizamos el método `warn`. Este método toma una cadena como argumento y la imprime en el error estándar. Veamos un ejemplo:
 
-````Ruby
-# Ejemplo utilizando el método `warn`:
-warn "¡Este es un mensaje de error!"
+```Ruby
+def dividir(a, b)
+    if b == 0
+        warn "No se puede dividir entre 0"
+        return nil
+    else
+        return a / b
+    end
+end
 
-# Ejemplo utilizando el operador `STDERR.puts`:
-STDERR.puts "¡Este es un mensaje de error!"
-````
+puts dividir(8, 2)
+# Output => 4
 
-Ambos métodos imprimirán el mensaje de error en la salida de error estándar, que a menudo se muestra en rojo en tu terminal.
+puts dividir(5, 0)
+# Output => nil
+# "No se puede dividir entre 0" se imprimirá en el error estándar
+```
 
-````bash
-$ ruby ejemplo.rb
-¡Este es un mensaje de error!
-````
+En el ejemplo anterior, estamos dividiendo dos números y en caso de que el segundo sea 0, imprimimos un mensaje de error en el error estándar.
 
-## Profundizando en el estándar de error
+También podemos utilizar el método `raise` para imprimir un mensaje de error en el error estándar y detener la ejecución del programa:
 
-¿Por qué utilizar el estándar de error en lugar de la salida estándar? A veces, tener mensajes de error separados puede hacer que sea más fácil capturar y depurar problemas específicos en el código. Además, es posible que desees filtrar o redirigir la salida estándar para otros propósitos, como escribir en un archivo de log.
+```Ruby
+def encontrar_indice(arr, num)
+    if arr.include? num
+        return arr.index(num)
+    else
+        warn "#{num} no se encuentra en el arreglo"
+        # Imprimimos el mensaje de error en el error estándar
+        raise "Elemento no encontrado en el array"
+        # Levantamos una excepción e interrumpimos la ejecución del programa
+    end
+end
 
-Si quieres personalizar aún más tus mensajes de error, también puedes utilizar el método `format` para formatear la salida como un string. De esta manera, puedes incluir información adicional, como la línea de código donde ocurrió el error.
+numeros = [1, 2, 3, 4, 5]
 
-````Ruby
-# Ejemplo con el método `format`:
-STDERR.puts format("Error en la línea %d: %s", __LINE__, "Este es un mensaje de error.")
+puts encontrar_indice(numeros, 6)
+# Output => nil
+# "6 no se encuentra en el arreglo" se imprimirá en el error estándar
+# Y el programa se detendrá al arrojar la excepción
+```
 
-# Output:
-Error en la línea 6: Este es un mensaje de error.
-````
+## Profundizando
+
+Ahora que sabemos cómo imprimir en el error estándar en Ruby, es importante tener en cuenta que también podemos redirigir el error estándar a un archivo de texto. Esto puede ser útil en caso de que necesitemos guardar los mensajes de error para futuras referencias o análisis.
+
+Para hacer esto, utilizamos el operador `>` seguido del nombre del archivo en el que queremos guardar los mensajes de error:
+
+```Ruby
+10 / 0 > "error.txt"
+# Se escribirá "división entre 0" en el archivo "error.txt"
+```
+
+También podemos utilizar el operador `>>` para añadir los mensajes de error a un archivo existente en lugar de sobrescribirlo:
+
+```Ruby
+5 / 0 >> "errores.log"
+# Se añadirá "división entre 0" al final del archivo "errores.log"
+```
 
 ## Ver también
 
-- [Documentación de Ruby sobre el estándar de error](https://ruby-doc.org/core-2.7.1/IO.html#method-c-warn)
-- [Artículo sobre cómo utilizar STDOUT y STDERR en Ruby](https://www.baeldung.com/ruby-stdout-stderr)
-- [Tutorial sobre depuración de errores en Ruby](https://www.rubyguides.com/2019/06/debugging-ruby/)
+- [Documentación de Ruby sobre el método `warn`](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-warn)
+- [Documentación de Ruby sobre el método `raise`](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-raise)
+- [Tutorial de Ruby: Manejo de excepciones](https://www.tutorialspoint.com/ruby/ruby_exceptions.htm)

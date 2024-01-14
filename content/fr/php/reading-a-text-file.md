@@ -1,69 +1,35 @@
 ---
-title:    "PHP: Lecture d'un fichier texte"
+title:    "PHP: La lecture d'un fichier texte"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est très courant dans la programmation PHP de devoir lire des fichiers texte, que ce soit pour récupérer des données ou pour les afficher à l'utilisateur. Dans cet article, nous allons explorer les différentes façons de lire un fichier texte en utilisant PHP.
+La lecture de fichiers texte est une compétence de base essentielle pour tout programmeur PHP. Que vous travailliez sur des projets personnels ou professionnels, savoir comment lire et manipuler des fichiers texte ouvrira un monde d'options et de possibilités pour vos applications. Dans cet article, nous allons explorer pourquoi cet aspect de la programmation est si important.
 
-## Comment faire
+## Comment Faire
 
-Pour lire un fichier texte en PHP, nous utiliserons la fonction `file_get_contents()` qui permet de récupérer le contenu d'un fichier sous forme d'une chaîne de caractères. Voici un exemple:
-
-```PHP
-<?php
-// Ouvre le fichier "texte.txt"
-$texte = file_get_contents("texte.txt");
-
-// Affiche le contenu du fichier
-echo $texte;
-```
-
-Si vous voulez récupérer chaque ligne du fichier, vous pouvez utiliser la fonction `file()` qui retourne un tableau contenant chaque ligne du fichier. Par exemple:
+La lecture d'un fichier texte en PHP peut sembler intimidante au début, mais c'est en réalité assez simple. Tout d'abord, vous devez ouvrir le fichier en utilisant la fonction `fopen()`, en spécifiant le nom du fichier et le mode de lecture (en lecture seule, en écriture, etc.). Ensuite, vous pouvez utiliser la fonction `fread()` pour lire le contenu du fichier en utilisant un pointeur de position pour parcourir le fichier. Par exemple :
 
 ```PHP
-<?php
-// Ouvre le fichier "texte.txt"
-$lignes = file("texte.txt");
-
-// Parcourt chaque ligne et affiche son contenu
-foreach($lignes as $ligne){
-    echo $ligne;
+$fichier = fopen("monfichier.txt", "r");
+while (!feof($fichier)) {
+  echo fgets($fichier) . "<br>";
 }
+fclose($fichier);
 ```
 
-Enfin, il est important de bien gérer les erreurs lors de la lecture d'un fichier. Pour cela, nous pouvons utiliser la fonction `file_exists()` pour vérifier si le fichier existe avant de le lire.
+Cela va ouvrir le fichier "monfichier.txt" et afficher toutes les lignes jusqu'à ce que la fin du fichier soit atteinte.
 
-Voici un exemple complet avec gestion des erreurs:
+## Plongée en Profondeur
 
-```PHP
-<?php
-// Vérifie si le fichier existe
-if(file_exists("texte.txt")){
-    // Ouvre le fichier
-    $lignes = file("texte.txt");
+Bien que la lecture de fichiers texte soit une tâche relativement simple en PHP, il est important de bien comprendre ce qui se passe sous le capot. Par exemple, la fonction `feof()` renvoie `true` lorsqu'elle atteint la fin du fichier. Mais cela signifie-t-il que toutes les données ont été lues ? Pas nécessairement. Certaines caractéristiques du système de fichiers peuvent entraîner des comportements inattendus lors de la lecture de fichiers. De plus, il est important de savoir comment manipuler les données lues pour les utiliser correctement dans votre code.
 
-    // Parcourt chaque ligne et affiche son contenu
-    foreach($lignes as $ligne){
-        echo $ligne;
-    }
-} else {
-    // Affiche un message d'erreur si le fichier n'existe pas
-    echo "Le fichier n'existe pas";
-}
-```
+## Voir Aussi
 
-## Exploration en profondeur
-
-Maintenant que nous savons comment lire un fichier texte en PHP, il est important de comprendre que différentes options peuvent être ajoutées à ces fonctions. Par exemple, il est possible de préciser le mode d'ouverture du fichier (`"r"` pour lecture seule, `"w"` pour écriture, etc.), d'ajouter des paramètres supplémentaires pour gérer les retours à la ligne (`FILE_IGNORE_NEW_LINES` par exemple), ou encore de préciser un délimiteur pour la fonction `file()`.
-
-En utilisant ces options, il est possible d'adapter la lecture du fichier en fonction de nos besoins et de mieux gérer les différentes données qu'il contient.
-
-## Voir aussi
-
-- [Documentation de PHP sur `file_get_contents()`](https://www.php.net/manual/fr/function.file-get-contents.php)
-- [Documentation de PHP sur `file()`](https://www.php.net/manual/fr/function.file.php)
-- [Documentation de PHP sur `file_exists()`](https://www.php.net/manual/fr/function.file-exists.php)
+- [Documentation officielle sur la lecture de fichiers en PHP](https://www.php.net/manual/fr/function.fopen.php)
+- [Tutoriel pour débutants sur la lecture de fichiers en PHP](https://www.tutorialspoint.com/php/php_file_reading.htm)
+- [Exemples pratiques de la lecture de fichiers en PHP](https://www.geeksforgeeks.org/php-file-handling/)

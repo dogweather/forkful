@@ -1,52 +1,56 @@
 ---
 title:    "Rust: Odczytywanie pliku tekstowego"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zdarzyło Ci się kiedykolwiek mieć do czynienia z dużym plikiem tekstowym i potrzebować wyciągnięcia z niego ważnych informacji? W tym wpisie opowiemy o tym, dlaczego warto poznać sposób czytania plików tekstowych w języku Rust.
+W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Nie tylko jest to niezwykle przydatna umiejętność, ale także może przynieść wiele satysfakcji i poczucia spełnienia. Jednym z najbardziej popularnych języków programowania jest Rust - nie tylko ze względu na jego prędkość i bezpieczeństwo, ale także ze względu na bogatą bibliotekę, która ułatwia wiele zadań. W tym artykule zajmiemy się czytaniem pliku tekstowego, co jest ważną umiejętnością w programowaniu. 
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Rust jest językiem programowania, który oferuje wysoką wydajność, bezpieczeństwo i wygodną składnię. Aby czytać pliki tekstowe w tym języku, wystarczy wykorzystać wbudowane biblioteki standardowe.
+W programowaniu istnieje wiele różnych sposobów na czytanie plików tekstowych, ale w tym artykule skupimy się na tym, jak to zrobić w języku Rust. Poniżej przedstawione są przykłady kodu z wyjaśnieniami, które pokażą Ci, jak można to zrobić. Nie zapomnij zaimportować biblioteki `std::fs`, która umożliwi nam pracę z plikami.
 
-Poniżej przedstawimy przykładowy kod, który otwiera plik tekstowy "example.txt" i wypisuje jego zawartość na ekranie:
+```
+use std::fs;
 
-```Rust
-use std::fs::File;
-use std::io::prelude::*;
+fn main() {
+    // Przykładowy plik tekstowy "dane.txt"
+    let data = fs::read_to_string("dane.txt")
+        .expect("Nie udało się odczytać pliku.");
 
-let mut file = File::open("example.txt").expect("Nie można otworzyć pliku.");
-
-let mut contents = String::new();
-file.read_to_string(&mut contents).expect("Nie można przeczytać pliku.");
-
-println!("{}", contents);
+    // Wyświetlenie zawartości pliku w konsoli
+    println!("ZAWARTOŚĆ PLIKU:\n{}", data);
+}
 ```
 
-W powyższym przykładzie użyliśmy funkcji `File::open()` do otwarcia pliku, a następnie metody `read_to_string()` do odczytania jego zawartości i przypisania jej do zmiennej `contents`. W rezultacie za pomocą funkcji `println!` wyświetlamy zawartość pliku na ekranie.
+Jeśli wszystko pójdzie dobrze, powinniśmy zobaczyć zawartość pliku tekstowego w konsoli. Proste, prawda? Ale co jeśli chcemy odczytać plik linia po linii lub przetworzyć jego zawartość w inny sposób? W ostatnim przykładzie użyjemy metody `lines()` do odczytania pliku linia po linii i wyświetlenia każdej z nich w osobnej linii konsoli.
 
-Możliwości przetwarzania i analizowania plików tekstowych w Rust są nieograniczone, dlatego warto poznać inne funkcje i metody z bibliotek standardowych.
+```
+use std::fs;
 
-## Głębsza Analiza
+fn main() {
+    let data = fs::read_to_string("dane.txt")
+        .expect("Nie udało się odczytać pliku.");
 
-Czytanie plików tekstowych może nie być zawsze tak proste, jak w naszym przykładzie. Może się zdarzyć, że plik będzie posiadał inny zestaw znaków lub w przypadku dużej ilości danych, konieczne będzie efektywne zarządzanie pamięcią.
+    // Iterowanie przez linie pliku i wyświetlanie ich w konsoli
+    for line in data.lines() {
+        println!("{}", line);
+    }
+}
+```
 
-W języku Rust mamy dostęp do zaawansowanych konstrukcji takich jak "iterator" czy "buffer". Pozwalają one na przetwarzanie i analizę danych w sposób bezpieczny i wydajny.
+## Głębszy zanurzenie
 
-Ponadto, język ten oferuje możliwość obsługi błędów w czytaniu plików, co jest bardzo ważne w realnych zastosowaniach. Dzięki mechanizmowi "Result" programista może kontrolować wyjątki i decydować, jakie działania podjąć w przypadku wystąpienia błędu.
-
-## Zobacz Również
-
-Chcielibyśmy polecić kilka linków, które mogą przydać się podczas pracy z plikami tekstowymi w języku Rust:
-
-- [Dokumentacja biblioteki standardowej Rust](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Przykłady czytania plików w Rust](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html)
-- [Poradnik szybkiego startu z językiem Rust](https://www.rust-lang.org/learn)
-
-Dziękujemy za przeczytanie naszego wpisu! Mamy nadzieję, że udało się przekonać Cię, dlaczego warto poznać sposób czytania plików tekstowych w języku Rust. Pozostajemy otwarci na pytania i uwagi w komentarzach poniżej. Do zobaczenia w kolejnych artykułach!
+Powyższe przykłady są tylko wstępem do tematu czytania plików tekstowych w języku Rust. Istnieje wiele innych metod i funkcji, które mogą być przydatne w zależności od naszych celów. Możesz także zapoznać się z bibliotekami takimi jak `serde` lub `csv` do przetwarzania plików tekstowych w bardziej zaawansowany sposób. Ważne jest również zwrócenie uwagi na wyjątki, które mogą być generowane podczas czytania pliku i ich obsługę w naszym kodzie. 
 
 ## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w języku Rust, polecamy zapoznać się z oficjalną dokumentacją języka oraz innych artykułów na ten temat:
+
+- [Dokumentacja języka Rust](https://doc.rust-lang.org/std/fs/fn.read_to_string.html)
+- [Poradnik na stronie Rust by Example](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html)
+- [Tutorial na stronie Rusz na przykładach](https://rsz.io/reading-and-parsing-a-csv-file.html)

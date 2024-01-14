@@ -1,75 +1,50 @@
 ---
-title:    "Ruby: Lage en midlertidig fil"
+title:    "Ruby: Oppretting av en midlertidig fil"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lage midlertidige filer kan være nødvendig når du jobber med programmering, spesielt når det kommer til å behandle store mengder data. Det kan også være nyttig når du ønsker å lagre midlertidig informasjon som ikke trenger å lagres permanent.
+I Ruby-programmering, kan det være nyttig å ha midlertidige filer som kan brukes i korte øyeblikk. Dette kan være for å lagre midlertidige data eller for å utføre en bestemt oppgave uten å endre eksisterende filer. Å opprette midlertidige filer er en enkel og nyttig måte å organisere og strukturere koden din på.
 
 ## Hvordan
 
-For å opprette en midlertidig fil i Ruby, kan du bruke det innebygde biblioteket "tempfile". Her er et eksempel:
+Det er to måter å opprette midlertidige filer i Ruby på. Den første er å bruke Ruby's standardbibliotek, "tempfile". Den andre er å bruke "File.open" og spesifisere "File::CREAT |  File::RDWR | File::EXCL" flagg for å sikre at filen er midlertidig og eksklusiv for din Ruby-prosess.
 
 ```Ruby
+# Å opprette en midlertidig fil med tempfile biblioteket
 require 'tempfile'
+tempfile = Tempfile.new('midlertidig_fil')
 
-# Opprett en midlertidig fil
-tmp_file = Tempfile.new('my_temp_file')
+# Å opprette en midlertidig fil med File.open
+tempfile = File.open('temp.rb', 'w+')
 
-# Skriv noen data til filen
-tmp_file.puts "Dette er midlertidig informasjon"
+# Å skrive til en midlertidig fil
+tempfile.puts "Dette er en midlertidig fil"
+tempfile.close
 
-# Lukk filen
-tmp_file.close
+# Å lese fra en midlertidig fil
+File.foreach("temp.rb") { |line| puts line }
 
-# Les data fra filen
-puts File.read(tmp_file.path)
 ```
 
-Du kan også bruke en blokk for å sikre at filen lukkes automatisk:
+Etter å ha utført koden over, vil du få følgende output:
 
-```Ruby
-require 'tempfile'
-
-# Opprett en midlertidig fil
-Tempfile.open('my_temp_file') do |tmp|
-  # Skriv data til filen
-  tmp.puts "Noe annet midlertidig informasjon"
-
-  # Les data fra filen
-  puts tmp.read
-
-  # Filen lukkes automatisk når blokken er ferdig
-end
+```
+Dette er en midlertidig fil
 ```
 
 ## Dypdykk
 
-Når du oppretter en midlertidig fil, vil den automatisk bli slettet når programmet ditt avsluttes. Filen vil også bli slettet om den ikke er lukket før programmet avsluttes.
+Når du oppretter en midlertidig fil i Ruby, vil filen bli slettet automatisk når den lukkes eller når programmet avsluttes. Dette er nyttig for å forhindre rot i filsystemet ditt med unødvendige filer. Du kan også spesifisere en mappe hvor midlertidige filer skal plasseres ved å bruke "tempfile.path" metoden.
 
-Du kan også spesifisere hvor filen skal bli opprettet og hva slags filtype den skal være:
-
-```Ruby
-require 'tempfile'
-
-# Opprett en midlertidig fil i en spesifisert mappe
-tmp_file = Tempfile.new('my_temp_file', './path/to/folder/')
-
-# Opprett en midlertidig fil med .txt filtype
-tmp_file = Tempfile.new(['my_temp_file', '.txt'])
-
-# Opprett en midlertidig fil i temp-mappen til systemet
-tmp_file = Tempfile.new
-
-# Skriv til og les fra filen som vanlig
-```
-
-Husk også å være oppmerksom på eventuelle sikkerhetsrisikoer når du jobber med midlertidige filer. Sørg for å slette filen når den ikke lenger er nødvendig for å unngå uautorisert tilgang til informasjonen.
+Det er også viktig å merke seg at du må slette midlertidige filer manuelt hvis du skal bruke dem igjen. Dette kan gjøres ved å bruke "tempfile.unlink" metoden.
 
 ## Se også
 
-- [Ruby-dokumentasjon for Tempfile](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
-- [Artikkel om å opprette midlertidige filer i Ruby](https://www.rubyguides.com/2016/09/ruby-tempfile/)
+- [Ruby's tempfile bibliotek](https://ruby-doc.org/stdlib/libdoc/tempfile/rdoc/Tempfile.html)
+- [Ruby's File klassedokumentasjon](https://ruby-doc.org/core-2.7.1/File.html)
+- [Offisiell Ruby-dokumentasjon](https://www.ruby-lang.org/no/documentation/)

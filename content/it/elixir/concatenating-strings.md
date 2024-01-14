@@ -1,33 +1,34 @@
 ---
-title:    "Elixir: Il concatenamento di stringhe"
+title:    "Elixir: Incatenando stringhe"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Concatenare le stringhe è una tecnica molto utile quando si lavora con dati di testo in Elixir. Può essere utilizzato per combinare più stringhe in una sola o per formattare una stringa con altre variabili o valori.
 
-## Come Fare
-Per concatenare le stringhe in Elixir, è possibile utilizzare l'operatore `<>` o la funzione `String.concat/1`. Vediamo un esempio di entrambi i modi:
+Concatenare stringhe è una tecnica fondamentale nella programmazione Elixir. È utile per combinare più stringhe in una sola, che può poi essere utilizzata per scopi come la stampa di un output o la creazione di URL. Ma perché esattamente dovresti imparare a concatenare stringhe? Semplicemente perché è uno strumento essenziale per gestire e manipolare i dati all'interno dei tuoi programmi.
 
+## Come fare
+
+Per concatenare stringhe in Elixir, utilizziamo l'operatore `<>` che unisce due stringhe in una sola. Vediamo un esempio di codice:
+
+```Elixir
+nome = "Marco"
+cognome = "Rossi"
+nome_completo = nome <> " " <> cognome
+IO.puts nome_completo
 ```
-# Utilizzando l'operatore <>
-"Il mio numero preferito è il " <> '42'
-# Output: Il mio numero preferito è il 42
 
-# Utilizzando la funzione String.concat/1
-String.concat(["Ciao", " ", "amici"])
-# Output: Ciao amici
-```
-
-Inoltre, è possibile concatenare qualsiasi tipo di dato, non solo stringhe. Quando viene utilizzato l'operatore `<>`, verrà convertito in una stringa prima della concatenazione.
+Nell'esempio precedente, abbiamo creato due stringhe con le variabili `nome` e `cognome`. Poi, abbiamo concatenato le due stringhe utilizzando l'operatore `<>` e salvato il risultato nella variabile `nome_completo`. Infine, abbiamo utilizzato la funzione `IO.puts` per stampare il nome completo sulla console. L'output di questo codice sarebbe "Marco Rossi".
 
 ## Approfondimento
-Concatenare le stringhe può sembrare un'operazione semplice, ma ci sono alcuni aspetti da considerare quando si lavora con dati di testo in Elixir. Ad esempio, quando si concatenano più stringhe usando l'operatore `<>`, verranno create più istanze della stessa stringa in memoria. Questo può essere inefficiente in termini di utilizzo della memoria. D'altra parte, utilizzando la funzione `String.concat/1`, verrà creata una sola stringa in memoria.
 
-Inoltre, Elixir dispone di una libreria di formattazione delle stringhe chiamata [String](https://hexdocs.pm/elixir/String.html) che offre diverse funzioni utili per manipolare e formattare le stringhe. Consiglio di dargli un'occhiata per approfondire ulteriormente l'utilizzo delle stringhe in Elixir.
+È importante notare che l'operatore `<>` non solo concatena due stringhe, ma converte anche tutti i valori in stringhe. Ad esempio, se provassimo ad utilizzare l'operatore con un numero e una stringa, il numero sarebbe convertito in una stringa prima della concatenazione. Inoltre, è possibile concatenare più di due stringhe in una sola volta, basta inserire l'operatore tra ciascuna di esse.
 
-## Vedi Anche
-- [Elixir string concatenation vs interpolation](https://cultofthepartyparrot.com/elilixir-string-concatenation-vs-interpolation/)
-- [Elixir String library](https://hexdocs.pm/elixir/String.html)
+## Vedi anche
+
+- [Documentazione ufficiale di Elixir](https://elixir-lang.org/docs.html)
+- [Tutorial di Elixir per principianti](https://www.tutorialspoint.com/elixir/index.htm)
+- [Articolo su come gestire le stringhe in Elixir](https://medium.com/@poeticoding/string-manipulation-in-elixir-ba03cb3c4cf3)

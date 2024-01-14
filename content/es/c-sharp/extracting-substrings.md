@@ -1,68 +1,43 @@
 ---
 title:    "C#: Extrayendo subcadenas"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué deberías extraer subcadenas? 
+## Por qué
 
-En el mundo de la programación, a menudo nos encontramos con la necesidad de trabajar con cadenas de texto en lugar de números. Y a veces, solo necesitamos una parte específica de esa cadena. La extracción de subcadenas nos permite obtener solo la parte que necesitamos de una cadena más grande, lo que ahorra tiempo y mejora la eficiencia de nuestro código.
+Extraer subcadenas es una habilidad importante en la programación de C#. Esto permite a los programadores manipular cadenas de texto de manera más específica y eficiente, lo que puede ser útil en una variedad de situaciones, como la validación de entradas de usuario o la manipulación de datos en una base de datos.
 
-## Cómo extraer subcadenas en C#
+## Cómo hacerlo
 
-```C#
-// Creamos una cadena de ejemplo
-string cadena = "Hola, este es un ejemplo de una cadena de texto";
+Primero, debemos entender qué es una subcadena. Una subcadena es simplemente un segmento de una cadena más larga, similar a cómo una palabra es un segmento de una oración. La sintaxis general para extraer una subcadena en C# es la siguiente:
 
-// Extraemos una subcadena a partir del índice 6
-string subcadena = cadena.Substring(6);
-
-// Imprimimos el resultado
-Console.WriteLine(subcadena);
-// Salida: "es es un ejemplo de una cadena de texto"
+```
+string subcadena = texto.Substring(inicio, longitud);
 ```
 
-En este ejemplo, utilizamos el método `Substring()` para extraer una subcadena de una cadena existente. Le proporcionamos un índice de punto de partida y la subcadena resultante incluirá todo lo que viene después de ese índice.
+Donde "texto" es la cadena de la que queremos extraer la subcadena, "inicio" es la posición inicial de la subcadena en la cadena original y "longitud" es la cantidad de caracteres que queremos extraer. Por ejemplo, si tenemos la cadena "Hola mundo" y queremos extraer la subcadena "mundo", usaríamos la siguiente línea de código:
 
-Pero, ¿qué pasa si solo queremos una parte específica de esa subcadena? Podemos proporcionar tanto un índice de punto de partida como un número de caracteres para limitar la subcadena resultante. Veamos otro ejemplo:
+```
+string subcadena = "Hola mundo".Substring(5, 5);
 
-```C#
-// Creamos otra cadena de ejemplo
-string cadena2 = "¡Hola a todos, bienvenidos al mundo de la programación!";
-
-// Extraemos una subcadena que comienza en el índice 15 y tiene 8 caracteres de largo
-string subcadena2 = cadena2.Substring(15, 8);
-
-// Imprimimos el resultado
-Console.WriteLine(subcadena2);
-// Salida: "bienveni"
+// subcadena = "mundo"
 ```
 
-En este caso, nuestra subcadena resultante será "bienveni", ya que comenzando en el índice 15, tomaremos en cuenta los siguientes 8 caracteres.
+También podemos usar métodos como "IndexOf" y "LastIndexOf" para encontrar la posición de una determinada subcadena o carácter en una cadena y luego usarlos junto con "Substring" para extraer la subcadena deseada.
 
-## Profundizando en la extracción de subcadenas
+## Un poco más profundo
 
-Además del método `Substring()`, también podemos utilizar el operador de acceso a través de corchetes (`[]`) para extraer subcadenas en C#. Por ejemplo:
+Es importante recordar que las cadenas de texto son inmutables en C#, lo que significa que no se pueden cambiar después de que se crean. Esto significa que cada vez que extraemos una subcadena, se crea una nueva cadena en la memoria, por lo que es importante tener esto en cuenta para no desperdiciar recursos.
 
-```C#
-// Creamos una tercera cadena de ejemplo
-string cadena3 = "¡Esta es otra forma de extraer subcadenas en C#!";
+Otra cosa a tener en cuenta es que las posiciones de las cadenas comienzan en 0 en C#, por lo que la primera posición de una cadena es la posición 0, la segunda es la posición 1 y así sucesivamente.
 
-// Extraemos una subcadena de 4 caracteres a partir del índice 9
-string subcadena3 = cadena3[9..13];
+## Ver también
 
-// Imprimimos el resultado
-Console.WriteLine(subcadena3);
-// Salida: "otra"
-```
+- [Documentación de Microsoft sobre el método Substring] (https://docs.microsoft.com/es-es/dotnet/api/system.string.substring?view=netcore-3.1)
+- [Cómo usar subcadenas en C#] (https://www.geeksforgeeks.org/c-sharp-extract-substring-from-a-specified-location-and-length-of-a-string/)
+- [Tutorial de subcadenas en C#] (https://www.codegrepper.com/code-examples/csharp/c%23+substring)
 
-Aquí, utilizamos el operador de acceso a través de corchetes y la sintaxis de alcance `[índiceInicio..índiceFinal]` para extraer la subcadena "otra" de nuestra cadena original.
-
-En resumen, la extracción de subcadenas puede ahorrarnos tiempo y esfuerzo en nuestro código al permitirnos trabajar con partes específicas de cadenas de texto en lugar de la cadena completa. Con los métodos `Substring()` y el operador de acceso a través de corchetes, tenemos varias opciones para lograr esto en C#.
-
-##Ver también
-
-- [Documentación de Microsoft sobre el método Substring en C#](https://docs.microsoft.com/es-es/dotnet/api/system.string.substring?view=netcore-3.1)
-- [Tutorial sobre la extracción de subcadenas en C#](https://www.c-sharpcorner.com/article/c-sharp-string-operations-using-substring/)
-- [Artículo sobre la manipulación de cadenas en C#](https://www.c-sharpcorner.com/article/working-with-strings-in-C-Sharp-part-1/)
+¡Ahora estás listo para empezar a usar subcadenas en tus proyectos de C#! Con estas habilidades, podrás manipular cadenas de texto de manera más eficiente y específica. ¡Buena suerte!

@@ -1,49 +1,51 @@
 ---
-title:    "Bash: 패턴과 일치하는 문자 삭제하기"
+title:    "Bash: 패턴과 일치하는 문자 제거"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+# 왜
 
-삭제하려는 패턴과 일치하는 문자를 삭제하는 프로그래밍을 왜 해야 하는지에 대한 간단한 이유입니다.
+이번 포스트에서 우리는 Bash 프로그래밍에서 중요한 작업 중 하나인 패턴과 일치하는 문자를 삭제하는 방법에 대해 알아볼 것입니다. 이 작업을 수행하는 이유는 사용자가 원하는 문자만을 남기고 나머지 문자를 제거해 정제된 데이터를 얻기 위해서입니다.
 
-이를테면, 많은 텍스트 데이터에서 특정한 형식이나 패턴을 다룰 때 유용하게 사용될 수 있습니다. 바쁜 일상 속에서 텍스트 데이터를 처리하는 것은 많은 시간과 노력을 요구하기 때문에, 이를 자동화할 수 있는 방법은 상당한 이점을 제공할 수 있습니다.
+## 방법
 
-## 어떻게 할까요? 
-
-예시와 함께 "```Bash ... ```" 코드 블록 안에서 코딩 예제와 샘플 출력을 제시합니다.
+우선, 삭제하고자 하는 문자가 포함된 문자열을 변수에 할당해야 합니다.
 
 ```Bash
-# 패턴과 일치하는 문자 삭제 예제 
-# "example.txt" 파일에서 "abc"를 포함하는 모든 라인 삭제하기
-
-# 원본 파일 출력
-cat example.txt
-# 출력 결과:
-# This is line 1, containing abc
-# This is line 2, containing def
-# This is line 3, containing abc
-
-# "abc"를 포함하는 모든 라인 삭제하기
-sed '/abc/d' example.txt > new_file.txt
-
-# 새로운 파일 출력
-cat new_file.txt
-# 출력 결과:
-# This is line 2, containing def
+str="Hello World!"
 ```
-위 예제에서는 `sed '/abc/d'`를 사용하여 "abc"를 포함하는 모든 라인을 삭제했습니다. 이와 같은 방법으로 원하는 패턴을 가진 문자를 삭제할 수 있습니다.
 
-## 깊숙한 곳으로 
+다음으로, `sed` 명령어를 사용하여 패턴과 일치하는 문자를 삭제합니다. 아래 예시에서는 공백 문자를 삭제하는 것을 보여드리겠습니다.
 
-문자 삭제 기능은 Unix 계열 운영체제에서 기본적으로 제공되는 유틸리티인 `sed`와 `tr` 등을 이용하여 구현할 수 있습니다. 또한 정규 표현식을 사용하여 삭제해야 할 문자 패턴을 더욱 정확하게 지정할 수도 있습니다.
+```Bash
+new_str=$(echo $str | sed 's/ //g')
+```
 
-이 외에도 문자 삭제의 유용한 활용 예시로는 텍스트 전처리 과정이나 데이터 마이닝 등이 있습니다. 이러한 작업에서 간단한 문자 삭제 기능을 적절히 활용하면 작업의 효율성을 높일 수 있습니다.
+위 코드의 결과는 `HelloWorld!`가 됩니다.
 
-## 서로 관련성 있는 것들 
+만약 패턴과 일치하는 문자가 여러 개라면 `sed` 명령어 뒤에 `g` 옵션을 추가해야 모든 매칭된 문자를 삭제할 수 있습니다.
 
-- [Bash scripting tutorial](https://www.learnshell.org/) 
-- [Unix sed command](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [Regular expressions tutorial](https://www.regular-expressions.info/tutorial.html)
+또 다른 방법으로는 `tr` 명령어를 사용하는 것입니다. `tr` 명령어는 전달된 문자를 다른 문자로 바꾸어주는 역할을 합니다. 따라서 아래 코드처럼 공백 문자를 빈 문자열로 바꾸어 문자를 삭제할 수 있습니다.
+
+```Bash
+new_str=$(echo $str | tr -d " ")
+```
+
+위 코드의 결과 역시 `HelloWorld!`가 됩니다.
+
+## 깊이 파고들기
+
+실제로는 더욱 복잡한 패턴을 다룰 수 있으며, `sed`와 `tr` 명령어 외에도 다양한 방법으로 패턴과 일치하는 문자를 삭제할 수 있습니다. 이를 위해 정규표현식이라는 강력한 도구를 사용할 수 있습니다. 정규표현식은 특정 패턴을 표현하는 문자열로, `grep` 명령어를 사용하여 문자열에서 정규표현식과 일치하는 부분을 찾을 수 있습니다. 그리고 이를 활용하여 패턴과 일치하는 문자를 삭제할 수 있습니다.
+
+## 참고자료
+
+- [The Linux Command Line: A Complete Introduction](https://linuxcommand.org/tlcl.php)
+- [Bash Hackers Wiki](http://wiki.bash-hackers.org/)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [The Power of sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Bash Manual: tr](https://www.gnu.org/software/bash/manual/html_node/The-tr-Builtin.html)
+
+# 참고자료

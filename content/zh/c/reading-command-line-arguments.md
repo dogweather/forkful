@@ -1,61 +1,102 @@
 ---
 title:    "C: 读取命令行参数"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-今年，世界上有超过十种不同的编程语言，但是C语言依然是最受欢迎的之一。无论您是刚开始学习C还是已经有一定经验的程序员，了解如何读取命令行参数都是非常重要的。在这篇博文中，我将向您介绍如何在C程序中读取命令行参数，并深入探讨其背后的原理和应用。让我们开始吧！
+# 为什么会读取命令行参数
 
-## 为什么
+在C编程中，读取命令行参数是一项非常有用的技能。它可以帮助程序员轻松地从终端接收输入数据，并且根据用户输入的不同来执行不同的代码。如果你想要创造一个交互式的程序，读取命令行参数就是必不可少的。
 
-读取命令行参数是C程序中的一个常见需求。通过命令行参数，我们可以在程序运行时向程序传递不同的输入，从而改变程序的行为。例如，我们可以通过命令行参数指定不同的输入文件来处理不同的数据，或者指定不同的参数来选择不同的操作。因此，理解如何读取命令行参数能够帮助我们更有效地处理不同的情况，提高程序的灵活性和可靠性。
+## 如何读取命令行参数
 
-## 如何做
+读取命令行参数的过程非常简单，只需要几行代码就可以搞定。让我们来看一个简单的例子：
 
-首先，我们需要包含`<stdio.h>`头文件来使用`printf`和`scanf`函数。然后，在`main`函数中，我们可以使用`argc`和`argv`这两个参数来读取命令行参数。其中，`argc`表示命令行参数的个数，而`argv`是一个字符串数组，存储了每个命令行参数的具体内容。下面是一个简单的示例代码：
+```
+#include <stdio.h> 
 
-```C
+int main(int argc, char* argv[]) 
+{ 
+    // 打印第一个参数 
+    printf("第一个参数是：%s\n", argv[1]); 
+      
+    return 0; 
+} 
+```
+
+在上面的代码中，我们使用了两个参数来声明main函数，即argc和argv。argc表示命令行参数的数量，而argv则是一个指向这些参数的指针。从这里可以看出，命令行参数是以字符串的形式传递给程序的。因此，我们可以通过访问argv来获取命令行参数的值。在上面的例子中，我们通过`printf()`函数来打印第一个参数。
+
+让我们来编译并运行这段代码，看看结果：
+
+```
+// 假设我们将这个程序命名为args
+./args Hello
+
+// 输出：
+第一个参数是：Hello
+```
+
+从上面的例子可以看出，我们通过在程序文件后面添加参数“Hello”，就可以在程序中获取并使用该参数。这样就实现了一个简单的交互式程序。
+
+## 深入学习读取命令行参数
+
+在实际的程序中，我们可能需要读取多个命令行参数，并根据这些参数来执行不同的逻辑。为此，我们可以使用一个for循环来遍历argv数组，并使用`strcpy()`函数来复制参数值。此外，我们还可以使用`atoi()`函数来转换字符串类型的参数为整型。
+
+让我们来看一个更复杂的例子：
+
+```
 #include <stdio.h>
+#include <string.h> // 包含了strcpy函数
+#include <stdlib.h> // 包含了atoi函数
 
-int main(int argc, char *argv[]) {
-    // 打印命令行参数的个数
-    printf("命令行参数的个数：%d\n", argc);
+int main(int argc, char* argv[])
+{
+    // 声明一个数组来存储参数值
+    char params[3][10];
 
-    // 遍历命令行参数并打印
-    for (int i = 0; i < argc; i++) {
-        printf("命令行参数 %d：%s\n", i, argv[i]);
+    // 使用for循环遍历argv数组
+    for (int i = 1; i < argc; i++)
+    {
+        // 使用strcpy函数复制参数值到params数组中
+        strcpy(params[i-1], argv[i]);
+    }
+
+    // 将字符串类型的第二个参数转换为整型
+    int num = atoi(params[1]);
+
+    // 根据参数执行不同的代码逻辑
+    if (strcmp(params[0], "add") == 0)
+    {
+        int result = num + atoi(params[2]);
+        printf("结果是：%d\n", result);
+    }
+    else if (strcmp(params[0], "subtract") == 0)
+    {
+        int result = num - atoi(params[2]);
+        printf("结果是：%d\n", result);
     }
 
     return 0;
 }
 ```
 
-假设我们将上述代码保存为`read_args.c`，并通过命令行编译和运行该程序：
+在上面的例子中，我们定义了一个char型二维数组来存储参数值，并使用for循环和`strcpy()`函数来获取参数值。然后，我们通过`strcmp()`函数来比较参数值，并根据不同的情况执行不同的代码逻辑。此外，我们还使用`atoi()`函数将字符串类型的参数转换为整型。
+
+让我们来编译并运行这段代码，看看结果：
 
 ```
-gcc read_args.c -o read_args
-./read_args arg1 arg2 "arg3 with space"
+// 假设我们将这个程序命名为math
+./math add 5 2
+
+// 输出：
+结果是：7
+
+./math subtract 10 3
+
+// 输出：
+结果是：7
 ```
 
-则会得到如下输出：
-
-```
-命令行参数的个数：4
-命令行参数 0：./read_args
-命令行参数 1：arg1
-命令行参数 2：arg2
-命令行参数 3：arg3 with space
-```
-
-可以看到，`argc`的值为4，即命令行参数的个数，而`argv`数组中存储了每个命令行参数的具体内容。
-
-## 深入探讨
-
-除了上述简单的示例，我们还可以使用一些函数来更灵活地处理命令行参数。例如，我们可以使用`malloc`函数来分配内存来存储命令行参数，或者使用`getopt`函数来解析命令行参数中的选项。此外，我们还可以通过修改程序中的参数来更改程序的行为。总的来说，读取命令行参数是C语言中一个非常基础也非常重要的功能，掌握它能够帮助我们写出更强大和更智能的程序。
-
-## 参考链接
-
-- [C程序读取命令行参数](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-- [使用`getopt`函数解析命令行参数](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)
-- [使用`argc`和`argv`进行参数处理](https://www.geeksforgeeks.org/c-program-command-line-arguments/)
+从上面的例子可以看出，通过读取命令行参数，我们可以在程序中实现一些复杂

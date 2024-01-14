@@ -1,51 +1,49 @@
 ---
 title:    "Arduino: Uuden projektin aloittaminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti Arduino-ohjelmoinnilla?
+## Miksi
 
-Arduino-ohjelmointi on helppo ja kustannustehokas tapa aloittaa uusi projekti, olipa kyseessä sitten leikkikalujen rakentelu, IoT-sovellukset tai kodin automatisointi. Arduino-mikrokontrollerit ovat edullisia ja helppokäyttöisiä, ja niiden avulla voit toteuttaa luovia ja innovatiivisia ideoita.
+Oletko koskaan katsellut Arduino-projekteja verkossa ja ajatellut, että haluat kokeilla tehdä jotain samanlaista? Ehkä sinulla on jo ideoita, mutta et tiedä mistä aloittaa. Tässä blogikirjoituksessa jaamme joitain perusohjeita siitä, miten aloitat uuden Arduino-projektin.
 
-## Näin aloitat Arduino-ohjelmoinnin
+## Kuinka aloittaa 
 
-Ensimmäinen askel Arduino-ohjelmoinnin aloittamisessa on hankkia Arduino-mikrokontrolleri ja asentaa siihen ohjelmointiin tarvittava kehitysympäristö. Tämän jälkeen voit aloittaa koodaamisen ja testaamisen omalla tietokoneellasi. Seuraavassa on esimerkki yksinkertaisesta ohjelmasta, joka välkkyy LED-valoa:
+Aloittaminen uuden Arduino-projektin kanssa voi tuntua hieman pelottavalta, mutta se on helpompaa kuin luuletkaan. Tässä on muutama askel, joita voit seurata saadaksesi projektisi alkuun: 
 
-```Arduino
-// Alustetaan muuttuja, johon tallennetaan LED-valon pinni
-int LED = 13;
-
-void setup() {
-  // Määritetään LED-valon pinni ulostuloksi
-  pinMode(LED, OUTPUT);
-}
-
-void loop() {
-  // Sytytetään LED-valo
-  digitalWrite(LED, HIGH);
-
-  // Odottaa 1 sekunnin
-  delay(1000);
-
-  // Sammutetaan LED-valo
-  digitalWrite(LED, LOW);
-
-  // Odottaa 1 sekunnin
-  delay(1000);
-}
+1. Ennen kuin aloitat projektin, tutustu Arduinon perusteisiin ja varmista, että sinulla on tarvittavat laitteet ja komponentit.
+2. Aloita asentamalla Arduino IDE tietokoneellesi. Tämä on ohjelmisto, jota käytetään Arduinon ohjelmointiin ja jolla voit ladata koodin Arduino-piirilevylle.
+3. Liitä Arduino-piirilevy tietokoneeseesi USB-kaapelilla ja avaa Arduino IDE.
+4. Valitse IDE:stä oikea asetus tietokoneesi ja Arduino-piirilevysi välillä.
+5. Kirjoita koodisi IDE:hen ```Arduino...``` -lohkoon. Esimerkiksi voit kokeilla seuraavaa yksinkertaista koodia, joka saa LED-valon vilkkumaan:
 
 ```
+Arduino void setup () {
+  pinMode (LED_BUILTIN, OUTPUT);
+}
 
-Kun koodi on kirjoitettu, voit ladata sen Arduino-mikrokontrolleriin ja tarkkailla LED-valon välkkymistä. Tämä on vain yksi esimerkki, ja ohjelmointimahdollisuudet ovat rajattomat.
+void loop () {
+  digitalWrite (LED_BUILTIN, HIGH);
+  delay (1000);
+  digitalWrite (LED_BUILTIN, LOW) ;
+  delay (1000);
+}
+```
 
-## Syventävää tietoa uuden projektin aloittamisesta
+6. Klikkaa "Upload" -painiketta ladataksesi koodin Arduino-piirilevyysi.
+7. Näet nyt, kuinka LED-valo vilkkuu yhteen tahtiin sekunnin välein.
 
-Ennen kuin aloitat uuden projektin Arduino-ohjelmoinnin parissa, on hyvä suunnitella ja tutkia valmiiksi tarvittavia komponentteja ja niiden toimintaa. Mikrokontrollerit, anturit ja muut elektroniikkakomponentit voivat vaatia erilaisia kytkentöjä ja ohjelmointiratkaisuja. On myös tärkeää suunnitella huolellisesti projektin rakenne ja toimintaperiaate ennen koodaamisen aloittamista.
+Tämä oli vain yksinkertainen esimerkki, mutta voit nyt alkaa kokeilla muita toimintoja ja komponentteja sekä kirjoittaa omaa koodia.
+
+## Syvemmälle aiheeseen
+
+Aloittaminen Arduinon kanssa on vain ensimmäinen askel. Kokeile rohkeasti erilaisia projekteja ja haasta itseäsi oppimaan uusia asioita. Muista myös, että internetistä löytyy runsaasti apua, jos takerrut johonkin ongelmaan. Arduinoyhteisö on suuri ja ystävällinen ja sieltä voi saada paljon neuvoja ja inspiraatiota uusiin projekteihin.
 
 ## Katso myös
 
-- Arduino-mikrokontrollerien viralliset verkkosivut: https://www.arduino.cc/
-- Arduino-yhteisön foorumi: https://forum.arduino.cc/
-- Arduino-ohjelmointikielen referenssi: https://www.arduino.cc/reference/
+- [Arduinon kotisivut](https://www.arduino.cc/) 
+- [Arduinon oppimateriaalit](https://www.arduino.cc/en/Tutorial/HomePage)
+- [Arduinoyhteisö](https://forum.arduino.cc/)

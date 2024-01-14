@@ -1,56 +1,47 @@
 ---
-title:    "C++: Tarkistetaan onko hakemistoa olemassa"
+title:    "C++: Kansion olemassaolon tarkistaminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Tervetuloa lukemaan blogiamme, joka käsittelee tiedostonhallintaa ja sen tärkeintä osaa: tiedostokansioiden olemassaoloa. Usein ohjelmointiprojekteissa tarvitsee tarkistaa, löytyykö halutusta polusta kansioita, ja tämän oppaan avulla opit, kuinka tämä tehdään C++:lla. 
+On monia eri syitä, miksi henkilö saattaisi haluta tarkistaa, onko hakemisto olemassa. Yksi yleisimmistä syistä on ohjelman suorittamisen yhteydessä, jolloin on hyödyllistä tietää, onko tietty hakemisto olemassa ennen kuin yritetään suorittaa toimintoja sen kanssa.
 
-## Kuinka?
+## Miten
+
+Onneksi C++:ssa on helppo tarkistaa, onko hakemisto olemassa. Käytämme tähän tarkoitukseen std::filesystem-kirjastoa.
 
 ```C++
 #include <iostream>
 #include <filesystem>
-namespace fs = std::filesystem;
+using namespace std::filesystem;
 
 int main() {
-    // Alustetaan polku
-    fs::path myPath = "polku/tutkittavaan/kansioon";
-
-    // Tarkistetaan, löytyykö polku
-    if (fs::exists(myPath)) {
-        std::cout << "Kansio löytyi!" << std::endl;
-    } else {
-        std::cout << "Valitettavasti kansiota ei löytynyt." << std::endl;
-    }
-
-    return 0;
+  // Tarkistetaan, onko hakemisto "esimerkki" olemassa
+  if (exists("esimerkki")) {
+    std::cout << "Hakemisto on olemassa!" << std::endl;
+  }
+  else {
+    std::cout << "Hakemistoa ei löydy." << std::endl;
+  }
 }
 ```
 
-Esimerkkiin sisältyy `iostream` ja `filesystem` kirjastojen käyttöönottoja, joita tarvitaan polun tarkistamiseen. `namespace fs = std::filesystem;` määrittää lyhyemmän nimen käytettäväksi `std::filesystem`-kirjastolle.
+**Lähtö**: "Hakemisto on olemassa!"
 
-```C++
-if (fs::exists(myPath)) {
-    // Do something if the path exists
-} else {
-    // Do something else if the path doesn't exist
-}
-```
+Tässä esimerkissä käytämme exists-funktiota, joka tarkistaa, onko annettu tiedosto tai hakemisto olemassa. Jos haluamme tarkistaa tietyn hakemiston olemassaolon, voimme antaa funktion parametrina hakemiston nimen. Funktio palauttaa totuusarvon, joten voimme käyttää sitä if-lausekkeessa tarkistamaan, toimiiko ehto vai ei.
 
-Tämän jälkeen tarkistetaan, löytyykö haluttu polku kansioista. Jos löytyy, tulostetaan "Kansio löytyi!" ja jos ei löydy, tulostetaan "Valitettavasti kansiota ei löytynyt." Tällä tavalla voit helposti käsitellä kansioiden olemassaoloa ohjelmissasi.
+## Syvällinen tarkastelu
 
-## Syväsukellus
+On tärkeää huomata, että exists-funktio ei tarkista pelkästään annettua polkua, vaan se voi myös tarkistaa, onko hakemiston alihakemistoja olemassa. Esimerkiksi, jos käytämme exists-funktiota tarkistamaan, onko hakemisto "esimerkki" olemassa, se voi myös tarkistaa, onko alihakemistoja, kuten "esimerkki/ala", olemassa.
 
-`std::filesystem` kirjastoa tarvitaan voidaksesi tarkistaa tiedostojen ja kansioiden olemassaoloa käyttöjärjestelmästä riippumatta. Kirjasto sisältää `exists()` funktion lisäksi muita hyödyllisiä toimintoja, kuten `is_directory()` ja `is_regular_file()`, jotka voit löytää dokumentaatiosta. 
+On myös hyvä huomata, että jos käytämme exists-funktiota tarkistamaan, onko tiedosto olemassa, se voi myös tarkistaa, onko kyseinen tiedosto hakemiston alihakemistossa. Esimerkiksi, jos käytämme exists-funktiota tarkistamaan, onko tiedosto "esimerkki.txt" olemassa, se voi myös tarkistaa, löytyykö se hakemiston "esimerkki" alihakemistosta.
 
 ## Katso myös
 
-- [std::filesystem reference](https://en.cppreference.com/w/cpp/filesystem)
-- [C++:n opetusohjelmat ja resurssit](https://www.learncpp.com/) 
-- [Kansiohandlerin vertailu käyttöjärjestelmien välillä](https://en.wikipedia.org/wiki/Comparison_of_file_managers)
-
-Kiitos, että luit blogiamme. Toivottavasti tämä opas auttaa sinua tarkistamaan kansioiden olemassaolon C++:lla. Muista tarkistaa lisää artikkeleita tiedostonhallinnasta ja päivittää osaamistasi C++:ssa. Nähdään taas seuraavassa blogissamme!
+- [std::filesystem-dokumentaatio (cppreference.com)](https://en.cppreference.com/w/cpp/filesystem)
+- [Filesystem-ohje (cplusplus.com)](https://www.cplusplus.com/reference/filesystem/)
+- [C++:n perustoiminnan opas (opiskele.pdf)](https://www.pdf.investintech.com/preview/84a50422-c211-11e9-89bf-f8bc123048bf/index.html)

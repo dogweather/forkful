@@ -1,17 +1,18 @@
 ---
-title:    "Go: Rechercher et remplacer du texte"
+title:    "Go: Recherche et remplacement de texte"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La recherche et le remplacement de texte sont des tâches courantes dans la programmation, en particulier lors de la manipulation de grandes quantités de données. En utilisant le langage de programmation Go, vous pouvez facilement automatiser ce processus et économiser du temps et des efforts lors de la manipulation de vos données.
+La recherche et le remplacement de texte sont des tâches courantes lors de la programmation en Go. En utilisant les bonnes méthodes, vous pouvez économiser du temps et automatiser une partie de votre travail.
 
-# Comment faire
+## Comment faire
 
-Pour réaliser une recherche et un remplacement de texte en utilisant Go, vous pouvez utiliser les fonctions de la bibliothèque strings. Par exemple, si vous voulez remplacer toutes les occurrences d'un mot dans une chaîne de caractères, vous pouvez utiliser la fonction `ReplaceAll` de la manière suivante :
+Voici un exemple de code en Go qui montre comment rechercher et remplacer du texte dans une chaîne de caractères :
 
 ```Go
 package main
@@ -22,46 +23,25 @@ import (
 )
 
 func main() {
-    str := "Bonjour tout le monde, comment ça va ?"
+    str := "Bonjour tout le monde"
 
-    // Recherche et remplace "bonjour" par "salut"
-    newStr := strings.ReplaceAll(str, "bonjour", "salut")
+    // Recherche du texte "tout" et remplacement par "tous"
+    newStr := strings.Replace(str, "tout", "tous", 1)
 
-    fmt.Println(newStr)
+    fmt.Println(newStr) // Affiche "Bonjour tous le monde"
 }
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez comme sortie : "Salut tout le monde, comment ça va ?". Vous pouvez également utiliser d'autres fonctions de la bibliothèque strings pour effectuer des recherches et des remplacements plus avancés, tels que `Replace`, `ReplaceAllFunc` ou `ReplaceFirst`.
+Vous pouvez également rechercher et remplacer du texte dans un fichier en utilisant les fonctions du package `strings` ainsi que les fonctions du package `io` pour lire et écrire dans un fichier.
 
-# Plongée en profondeur
+## Plongée en profondeur
 
-En plus de la bibliothèque strings, Go offre également une bibliothèque regexp (expressions régulières), qui vous permet d'effectuer des recherches et des remplacements basés sur des modèles spécifiques. Par exemple, si vous voulez remplacer toutes les lettres minuscules par des majuscules dans une chaîne, vous pouvez utiliser le code suivant :
+La méthode `Replace` du package `strings` utilise des expressions régulières pour effectuer la recherche et le remplacement de texte. Vous pouvez également utiliser la méthode `Regexp` pour une recherche plus avancée.
 
-```Go
-package main
+Il est également important de noter que la méthode `Replace` retourne une nouvelle chaîne de caractères avec les modifications effectuées, et ne modifie pas la chaîne originale.
 
-import (
-    "fmt"
-    "regexp"
-)
+## Voir aussi
 
-func main() {
-    str := "Hello world!"
-
-    // Remplace toutes les lettres minuscules par des majuscules
-    re := regexp.MustCompile("[a-z]")
-    newStr := re.ReplaceAllStringFunc(str, func(s string) string {
-        return strings.ToUpper(s)
-    })
-
-    fmt.Println(newStr)
-}
-```
-
-La sortie sera : "HELLO WORLD!". Vous pouvez explorer les nombreuses possibilités offertes par la bibliothèque regexp pour effectuer des recherches et des remplacements complexes en utilisant des expressions régulières.
-
-# Voir aussi
-
-- [La bibliothèque strings en Go](https://golang.org/pkg/strings/)
-- [La bibliothèque regexp en Go](https://golang.org/pkg/regexp/)
-- [Un guide complet sur les expressions régulières en Go](https://www.rexegg.com/regex-go.html)
+- Documentation officielle de Go sur les fonctions de remplacement de texte : [https://golang.org/pkg/strings/#Replace](https://golang.org/pkg/strings/#Replace)
+- Tutorial sur les expressions régulières en Go : [https://gobyexample.com/regular-expressions](https://gobyexample.com/regular-expressions)
+- Plus d'informations sur les méthodes du package `strings` en Go : [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)

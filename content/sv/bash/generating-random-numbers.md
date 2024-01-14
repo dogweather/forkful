@@ -1,40 +1,41 @@
 ---
-title:    "Bash: Generering av slumpmässiga tal"
+title:    "Bash: Generera slumpmässiga tal"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att generera slumpmässiga tal är en vanlig uppgift inom programmering, och det kan ha många olika användningsområden. Det kan till exempel vara användbart vid simuleringar, för att skapa slumpmässig data för testning eller för att skapa unika identifierare.
+# Varför använda slumpmässiga tal i Bash-programmering
 
-## Så här gör du
-För att generera slumpmässiga tal i Bash, kan du använda inbyggda funktionen "RANDOM". Detta kommer att returnera ett heltal mellan 0 och 32767.
+Slumpmässiga tal är viktiga i många aspekter av programmering, inklusive Bash-programmering. Genom att generera slumpmässiga tal kan du skapa variation och osäkerhet i dina program, vilket gör dem mer användbara och mångsidiga. Att använda slumpmässiga tal kan också vara ett sätt att lösa problem på ett kreativt sätt och testa gränserna för dina kunskaper inom Bash-programmering.
 
-```Bash
-echo $RANDOM
-```
+# Hur man genererar slumpmässiga tal i Bash
 
-Om du vill begränsa intervallet för de slumpmässiga talen, kan du använda modulusoperatorn "%" för att få ett tal inom ett visst intervall. I exemplet nedan kommer det slumpmässiga talet att vara mellan 1 och 10.
+För att generera slumpmässiga tal i Bash finns det flera metoder som kan användas. En enkel metod är att använda kommandot "shuf", som väljer slumpmässiga rader från en given fil eller input. Till exempel:
 
 ```Bash
-echo $((RANDOM % 10 + 1))
+shuf -i 1-10
 ```
 
-Du kan också använda "shuf" -kommandot för att generera en lista med slumpmässiga tal. Detta är särskilt användbart om du vill ha flera slumpmässiga tal utan att behöva skriva en loop.
+Detta kommer att generera ett slumpmässigt tal mellan 1 och 10. Du kan också använda variabeln "$RANDOM" i kombination med matematiska uttryck för att generera slumpmässiga tal. Till exempel:
 
 ```Bash
-shuf -i 1-10 -n 5
+echo $(($RANDOM % 10 + 1))
 ```
 
-Ovanstående exempel kommer att skriva ut 5 slumpmässiga tal mellan 1 och 10.
+Detta kommer att generera ett tal mellan 1 och 10. Det finns också andra avancerade metoder som använder "dd" kommandot eller slumpmässiga filer för att generera slumpmässiga tal - det är upp till dig att utforska och hitta den metod som passar dig bäst.
 
-## Djupdykning
-Bash innehåller enkla funktioner för att generera slumpmässiga tal, men det kan också vara användbart att förstå hur dessa tal faktiskt genereras. Bakom kulisserna använder "RANDOM" -funktionen en teknik som kallas för pseudo-slumpmässig algoritm, vilket innebär att det inte är helt slumpmässigt utan baseras på en seed som bestämmer vilka tal som genereras. Om du till exempel använder samma seed kommer "RANDOM" att generera samma serie av slumpmässiga tal varje gång.
+# Djupgående om att generera slumpmässiga tal
 
-För att förbättra slumpmässigheten när du använder "shuf", kan du ange en annan seed eller en annan slumpmässig faktor genom att använda "-r" flaggan. Detta kommer att ge ett mer varierat resultat varje gång du kör kommandot.
+Att generera slumpmässiga tal i Bash är en process som involverar flera steg. Först måste du förstå hur slumpmässiga tal egentligen fungerar - de är inte helt slumpmässiga eftersom de genereras av datorns programvara. Därför bör du tänka på säkerheten när du använder slumpmässiga tal, särskilt i krypterings- eller säkerhetsrelaterade program.
 
-## Se även
-- [Generera slumpmässiga tal i Bash](https://www.linuxjournal.com/content/generating-random-numbers-bash)
-- [shuf dokumentation](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [RANDOM dokumentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-RANDOM)
+Det är också viktigt att välja rätt metod för att generera slumpmässiga tal beroende på dina behov. Vissa metoder är snabbare och enklare att använda, men kan vara mindre slumpmässiga. Andra metoder kan vara mer komplicerade men ger en högre grad av slumpmässighet.
+
+Sist men inte minst är det viktigt att vara medveten om att genererade slumpmässiga tal kan upprepas. Om du till exempel försöker generera 10 slumpmässiga tal mellan 1 och 10 kan du få många upprepade tal, beroende på den metod du använder. Detta är värt att tänka på när du använder slumpmässiga tal i dina Bash-program.
+
+# Se även
+
+- [BashGuide - Randomization](http://mywiki.wooledge.org/BashGuide/Randomization)
+- [HowToRandom - Wiki](https://wiki.bash-hackers.org/howto/random)
+- [Bash - Shuf man-sida](https://linux.die.net/man/1/shuf)

@@ -1,46 +1,59 @@
 ---
-title:    "PHP: Comparaison de deux dates"
+title:    "PHP: Comparer deux dates"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi comparer deux dates en PHP ?
 
-La comparaison de deux dates est un concept essentiel en programmation PHP. Elle permet de vérifier si une date est antérieure, postérieure ou égale à une autre et peut être utile pour de nombreuses applications, notamment pour les sites web ou les applications utilisant des données temporelles.
+Comparer deux dates en PHP est une tâche courante pour de nombreux développeurs. Que ce soit pour vérifier si une date est antérieure ou postérieure à une autre, ou pour afficher des données sur une période spécifique, cela peut être très utile dans de nombreux projets.
 
-## Comment faire
+# Comment faire pour comparer deux dates en PHP ?
 
-Voici un exemple de code qui compare deux dates en utilisant la fonction `strtotime` pour les convertir en timestamp et la fonction `date` pour afficher le résultat :
+Pour comparer deux dates en PHP, il existe plusieurs fonctions prédéfinies telles que "strtotime" et "date_diff". La première permet de convertir une chaîne de caractères en timestamp, tandis que la seconde permet de calculer la différence entre deux dates et de l'afficher de manière lisible.
+
+Voici un exemple de code en utilisant ces fonctions :
 
 ```PHP
-$premiere_date = "10-12-2021";
-$deuxieme_date = "15-12-2021";
-if (strtotime($premiere_date) > strtotime($deuxieme_date)) {
-    echo date("d-m-Y", strtotime($premiere_date)) . " est postérieure à " . date("d-m-Y", strtotime($deuxieme_date));
-} elseif (strtotime($premiere_date) < strtotime($deuxieme_date)) {
-    echo date("d-m-Y", strtotime($premiere_date)) . " est antérieure à " . date("d-m-Y", strtotime($deuxieme_date));
-} else {
-    echo date("d-m-Y", strtotime($premiere_date)) . " est égale à " . date("d-m-Y", strtotime($deuxieme_date));
+$date1 = strtotime("2020-01-01"); // conversion de la chaîne en timestamp
+$date2 = strtotime("2020-12-31");
+
+$diff = date_diff($date1, $date2); // calcul de la différence entre les deux dates
+echo $diff->format("Il reste %m mois et %d jours avant la fin de l'année."); // affichage du résultat
+// output : Il reste 11 mois et 30 jours avant la fin de l'année.
+```
+
+En utilisant ces fonctions, vous pouvez effectuer des comparaisons de dates plus complexes en utilisant des opérateurs logiques tels que ">", "<" ou "==". Par exemple :
+
+```PHP
+$date1 = strtotime("2020-01-01");
+$date2 = strtotime("+1 week"); // ajout d'une semaine à la date1
+
+if ($date2 > $date1) { // comparaison des deux dates
+    echo "La date 2 est postérieure à la date 1.";
 }
+// output : La date 2 est postérieure à la date 1.
 ```
 
-Cela produira la sortie suivante :
+# Plongée en profondeur dans la comparaison de dates en PHP
 
+En PHP, les dates sont généralement représentées sous forme de timestamp, qui correspond au nombre de secondes écoulées depuis le 1er janvier 1970 à minuit UTC. Cela permet une meilleure précision dans les calculs de dates, notamment lorsque l'on doit prendre en compte les années bissextiles.
+
+En utilisant les fonctions "date" et "strtotime", vous pouvez également formater et modifier les dates selon vos besoins. Par exemple, pour obtenir la date du lendemain à partir d'une date donnée :
+
+```PHP
+$date = strtotime("today"); // aujourd'hui
+$tomorrow = strtotime("+1 day", $date); // ajout d'un jour à la date
+echo date("Y-m-d", $tomorrow); // formatage de la date au format YYYY-mm-dd
+// output : 2020-07-19
 ```
-10-12-2021 est antérieure à 15-12-2021
-```
 
-Les opérateurs de comparaison `<`, `>` et `==` peuvent également être utilisés dans une condition pour comparer directement les dates sans les convertir en timestamp.
+Il est également important de prendre en compte les fuseaux horaires lors de la comparaison de dates, surtout si vous travaillez sur un projet international.
 
-## Plongée en profondeur
+# Voir aussi
 
-Comme mentionné précédemment, la fonction `strtotime` est couramment utilisée pour convertir les dates en timestamp. Cependant, il est important de noter que cette fonction est sensible au format de la date. Par exemple, `strtotime("01-02-2021")` et `strtotime("2021-01-02")` donneront des résultats différents car ils sont en format jour-mois-année et année-mois-jour respectivement.
-
-De plus, la fonction `strtotime` peut également être utilisée avec des chaînes telles que "next week" ou "last day of last month" pour obtenir les timestamps correspondants. Cette fonction peut être très pratique pour effectuer des opérations complexes sur les dates.
-
-## Voir aussi
-
-- [Documentation officielle de PHP sur la comparaison de dates](https://www.php.net/manual/fr/datetime.diff.php)
-- [Tutoriel pour comparer les dates en PHP](https://www.php.net/manual/fr/datetime.diff.php)
-- [Autre méthode pour comparer les dates en utilisant la classe DateTime](https://www.php.net/manual/fr/class.datetime.php)
+- [Fonctions prédéfinies pour les dates en PHP](https://www.php.net/manual/fr/ref.datetime.php)
+- [Documentation sur les fonctions de manipulation des dates en PHP](https://www.php.net/manual/fr/datetime.formats.relative.php)
+- [Article sur la gestion des fuseaux horaires en PHP](https://www.php.net/manual/fr/datetime.settimezone.php)

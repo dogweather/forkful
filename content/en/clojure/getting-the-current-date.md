@@ -1,57 +1,46 @@
 ---
 title:    "Clojure recipe: Getting the current date"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-
-In today's digital world, the accurate and current date is an essential piece of information for many programming tasks. Whether it's for timestamping data, scheduling tasks, or creating time-based logic, being able to easily access the current date is a crucial skill for any Clojure programmer.
+## Why
+As a programmer, there are many scenarios in which you may need to include the current date into your code. This could be for timestamping logs, scheduling tasks, or simply displaying the date in a user interface. Whatever the reason may be, being able to get the current date using Clojure can come in handy.
 
 ## How To
 
-To get the current date in Clojure, we can use the `clojure.java-time` library, specifically the `java.time.LocalDate` class. Let's take a look at a simple example:
+In Clojure, there are multiple ways to get the current date depending on your needs. The most straightforward way is to use the `java.util.Date` class and the `new` function to create a new instance. This can then be printed out using the `println` function to display the current date and time.
 
-```
-(ns blog.core
-  (:require [clojure.java-time :as t]))
-
-(t/local-date)
+```Clojure
+(def current-date (java.util.Date.))
+(println current-date)
 ```
 
-The `t/local-date` function returns an instance of `java.time.LocalDate` representing today's date. We can also specify a time zone if needed, for example:
+Output: 
+`Tue Mar 23 13:15:28 GMT 2021`
 
-```
-(t/local-date t/-zone-id ise-eastern)
-```
+Additionally, if you want the date in a specific format, you can use the `clj-time` library which provides various functions for manipulating dates and times. The `now` function returns the current date and time in a `DateTime` object which can be formatted using the `format` function.
 
-This will give us the current date in the Eastern Time Zone. Now, let's say we want to format the date in a specific way, such as "MM/dd/yyyy". We can accomplish this using the `t/format` function:
+```Clojure
+(require '[clj-time.core :as time])
 
-```
-(t/format (t/local-date) "MM/dd/yyyy")
-=> "05/21/2020"
-```
-
-We can also extract specific information from the current date using the `with` function. For example, if we want to get the day of the week:
-
-```
-(t/with (t/day-of-week (t/local-date)) t/translated-name)
-=> "Thursday"
+(def current-date-time (time/now))
+(println (time/format "dd MMM yyyy HH:mm:ss" current-date-time))
 ```
 
-## Deep Dive 
+Output:
+`23 Mar 2021 13:15:58`
 
-The `clojure.java-time` library is built on top of Java's `java.time` API, which provides extensive functionality for working with dates and times. This means that you can use all the features and methods available in Java's API while working with dates in Clojure.
+## Deep Dive
+As mentioned, the `clj-time` library offers more functionality for working with dates and times in Clojure. It has functions for converting between time zones, calculating durations, and comparing dates. The library also supports parsing and formatting dates based on user-defined patterns.
 
-Additionally, the `java.time` API is designed to be immutable and thread-safe, making it easy to work with in a functional language like Clojure. This also means that there are no hidden side-effects when working with dates, making debugging and testing much easier.
+Clojure also has the `java.time` API introduced in Java 8, which can be used for more advanced date and time operations. This offers a modern and more intuitive way of working with dates and times in Clojure. However, it requires Java 8 or higher to be installed.
 
-It's worth mentioning that the `clojure.java-time` library is not the only option for working with dates in Clojure. There are other libraries, such as `clj-time` and `tick`, that also provide date and time functionality. It's always a good idea to research and compare different options before deciding on which library to use in your project.
+## See Also
+- [JavaDocs for java.util.Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Documentation for clj-time library](https://cljdoc.org/d/clj-time/clj-time/0.15.2)
+- [Explanation of Java 8's java.time API](https://docs.oracle.com/javase/tutorial/datetime/iso/)
 
-## See Also 
-
-- [The official clojure.java-time documentation](https://clojuredocs.org/clojure.java-time)
-- [Java's java.time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [An in-depth tutorial on working with dates in Clojure](https://lambdaisland.com/guides/clojure-dates)
-
-By using `clojure.java-time`, we can easily access and manipulate the current date in our Clojure projects. With a wide range of features and flexibility, this library is a valuable tool for any Clojure programmer.
+No conclusion needed, you now have the knowledge to easily get the current date in Clojure for your coding tasks. Happy coding!

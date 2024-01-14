@@ -1,66 +1,63 @@
 ---
-title:    "C++: Beregning av en dato i fremtiden eller fortiden"
+title:    "C++: Beregning av dato i fremtiden eller fortiden."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+#Hvorfor
 
-Det er mange situasjoner der man må beregne en dato i fremtiden eller fortiden, enten det er for å planlegge et arrangement, for å holde oversikt over viktige hendelser, eller for å enkelt kunne angi datoer i programvareprosjekter. Derfor kan det være nyttig å ha en forståelse for hvordan man utfører slike beregninger i C++.
+Det er mange grunner til at noen ville være interessert i å beregne en dato i fremtiden eller fortiden. Kanskje du trenger å planlegge en ferie, eller kanskje du ønsker å finne ut nøyaktig hvor mange dager du har vært i jobb. Uansett årsak, er det nyttig å kunne dataprogrammer for å gjøre disse beregningene for deg.
 
-# Hvordan
+#Hvordan
 
-For å beregne en dato i fremtiden eller fortiden i C++, trenger vi å bruke noen av de innebygde funksjonene og datastrukturene i språket. Etter å ha definert variabler for dag, måned og år, kan vi bruke funksjonen `tm` fra `time.h`-biblioteket til å opprette en datostruktur. Deretter kan vi bruke funksjoner som `mktime` og `localtime` til å justere denne datoen basert på det ønskede antallet dager.
+En måte å beregne en dato i fremtiden eller fortiden er å bruke C++'s `chrono` bibliotek. Først må du inkludere biblioteket i koden din:
 
 ```C++
 #include <iostream>
-#include <time.h>
-
-int main() {
-  // Definere variabler for dag, måned og år
-  int dag = 15;
-  int måned = 8;
-  int år = 2021;
-
-  // Opprett en datostruktur
-  struct tm dato = {0};
-
-  // Sett verdier for dag, måned og år
-  dato.tm_year = år - 1900;
-  dato.tm_mon = måned - 1;
-  dato.tm_mday = dag;
-
-  // Beregn datoen for 30 dager frem i tid
-  dato.tm_mday += 30;
-
-  // Justere datoen basert på det aktuelle måneden og året
-  mktime(&dato);
-  // Konvertere datoen til en lokal tidssone
-  char* datostr = asctime(localtime(&dato));
-
-  // Skrive ut resultatet
-  std::cout << "Datoen er: " << datostr << std::endl;
-
-  return 0;
-}
+#include <chrono>
 ```
 
-**Output:**
+Deretter kan du bruke funksjonen `system_clock::now()` for å få gjeldende tidspunkt og beregne en dato i fremtiden eller fortiden. For å beregne en dato i fremtiden, må du legge til et visst antall dager til gjeldende tidspunkt, for eksempel:
 
+```C++
+auto now = std::chrono::system_clock::now();
+
+// legge til 30 dager
+auto future_date = now + std::chrono::hours(30 * 24);
 ```
-Datoen er: Thu Sep  14 00:00:00 2021
+
+For å beregne en dato i fortiden, må du trekke fra et visst antall dager fra gjeldende tidspunkt, for eksempel:
+
+```C++
+auto now = std::chrono::system_clock::now();
+
+// trekke fra 30 dager
+auto past_date = now - std::chrono::hours(30 * 24);
 ```
 
-# Dypdykk
+Du kan deretter bruke funksjonen `time_point_cast` for å konvertere datoen til et spesifikt format, for eksempel et `time_t` objekt som representerer antall sekunder siden starten av Unix-epoken:
 
-I tillegg til å beregne en dato i fremtiden eller fortiden, kan det være nyttig å vite hvordan man kan hente ut og manipulere spesifikke deler av datoen. For eksempel kan man bruke funksjoner som `gettm` til å hente ut verdier for dag, måned og år separat. Man kan også bruke funksjoner som `difftime` til å beregne differansen mellom to datoer.
+```C++
+auto now = std::chrono::system_clock::now();
 
-Et annet nyttig bibliotek for å arbeide med datoer og tider i C++ er `ctime`, som gir funksjoner for å formatere, konvertere og presentere datoer på ulike måter.
+// konvertere til `time_t` objekt
+auto future_date = std::chrono::time_point_cast<std::chrono::seconds>(now);
+auto past_date = std::chrono::time_point_cast<std::chrono::seconds>(now);
 
-Det kan også være lurt å håndtere ulike datatyper og formater for datoer i ulike operativsystemer, og å være oppmerksom på forskjellene mellom lokal tidssone og UTC-tid.
+// få antall sekunder siden starten av Unix-epoken
+std::time_t future_seconds = future_date.time_since_epoch().count();
+std::time_t past_seconds = past_date.time_since_epoch().count();
+```
 
-# Se også
+#Dypdykk
 
-- [cppreference.com - Dato og tid library](https://en.cppreference.com/w/cpp/chrono)
-- [cplussedu.com - Dato og tid operasjoner i C++](https://www.cplusplus.com/doc/oldtutorial/date_and_time/)
+Når du beregner en dato i fremtiden eller fortiden, er det viktig å være klar over at det ikke alltid er like enkelt som å legge til eller trekke fra et visst antall dager. Datoer kan være avhengig av ulike faktorer, som for eksempel skuddår, forskjellige antall dager i måneden og ulike tids soner.
+
+Det er derfor viktig å være nøye med å validere og justere datoen din etter disse faktorene for å sikre nøyaktigheten av beregningen. Du kan også vurdere å bruke C++'s `chrono` bibliotek for å håndtere disse utregningene på en mer presis og robust måte.
+
+#Se Også
+
+- [C++ `chrono` biblioteket](https://www.cplusplus.com/reference/chrono/)
+- [Beregning av datoer og tider i C++ med `chrono`](https://www.learncpp.com/cpp-tutorial/basier-chrontimepoints-and-durations/)

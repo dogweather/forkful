@@ -1,51 +1,42 @@
 ---
-title:    "Ruby: Alistringien erottaminen"
+title:    "Ruby: Alituksen erottaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi  joku haluaisi erottaa osajonoja
 
-Saatat ihmetellä, miksi haluaisit ikinä käyttää aikaa etsien ja erottamalla merkkijonoja koodauksen aikana. Kuitenkin, jos olet rakentamassa sovellusta, joka käsittelee käyttäjän syötteitä tai käsittelee tekstejä, substringsien erotteleminen on välttämätöntä. Substringsit ovat tietyn mittaisia merkkijonoja, jotka on erotettu isommasta merkkijonosta. Tämä taito on hyödyllinen monessa eri käyttötapauksessa ja on ehdottomasti kannattava opetella.
+Substringien erottaminen on tärkeä osa Ruby-ohjelmoinnissa, koska se mahdollistaa tekstien ja merkkijonojen tehokkaan käsittelyn. Se voi myös auttaa parantamaan koodin suorituskykyä ja lisäämään toiminnallisuutta.
 
-## Miten tehdä
-
-Jotta voit erotella substringsit Rubyssa, voit käyttää hyväksesi String-luokan eri metodeja. Esimerkiksi, voit käyttää "slice" -metodia, joka palauttaa halutun osan merkkijonosta. Käytännön esimerkki näyttää tältä:
+## Miten tehdä se: Koodin esimerkkejä ja tulosteita käyttäen "```Ruby ... ```" koodilohkoja.
 
 ```Ruby
-# Luo merkkijono
-sana = "Meri on sininen."
+# Luo muuttuja, jossa on merkkijono
+teksti = "Tervetuloa Rubyyn!"
 
-# Erottele merkkijonon ensimmäinen osa
-sana.slice(0,4) #=> "Meri"
+# Etsi ja tulosta tekstistä alkuosasta merkkijono
+puts teksti[0,7] # Tulostaa "Tervetu"
+puts teksti[8,2] # Tulostaa "lo"
 
-# Erottele merkkijonon toinen osa
-sana.slice(5,2) #=> "on"
+# Etsi ja tulosta tekstistä loppuosasta merkkijono
+puts teksti[-6,5] # Tulostaa "Ruby"
+puts teksti[-4,4] # Tulostaa "yn!"
+
+# Voit myös yhdistää merkkijonoja ja tulostaa ne samalla koodirivillä
+puts teksti[8,2] + teksti[-4,4] # Tulostaa "loyn!"
+
+# Käytä replace-metodia korvaamaan merkkijonoja
+puts teksti.replace("Tervehdys maailmalle!") # Tulostaa "Tervehdys maailmalle!"
 ```
 
-Kuten näet, "slice" -metodi hyväksyy kaksi argumenttia: ensimmäisenä substringin aloituskohdan ja toisena substringin pituuden. Voit myös käyttää muita metodeja, kuten "sub" ja "gsub", etsimään ja korvaamaan merkkijonosta tietyt osat.
+## Syvemmältä tutkien
 
-## Syväsukellus
+Rubyssa substringeja voi erottaa käyttämällä indeksejä merkkijonon alusta tai lopusta. Voit määrittää indeksin käyttämällä hakasuluja merkkijonon perässä, ja määrittää halutun merkkijonon pituuden käyttämällä pilkkua. Jos haluat käyttää kokonaista merkkijonoa, voit käyttää "..." sijasta ".." määrittäessäsi sijainnin.
 
-Voit myös käyttää säännöllisiä lausekkeita (regex) erottamaan substringsit merkkijonosta. Tämä on erittäin hyödyllistä, jos haluat etsiä tiettyjä kuvioita merkkijonosta. Esimerkiksi, voit käyttää säännöllistä lauseketta etsimään kaikki numerot merkkijonosta.
-
-```Ruby
-# Luo merkkijono
-lause = "Tänään on 17. huhtikuuta."
-
-# Etsi ja erottele numerot
-lause.scan(/\d+/) #=> ["17"]
-```
-
-Säännölliset lausekkeet voivat tuntua aluksi haastavilta, mutta ne ovat erittäin hyödyllisiä ja tarpeellisia työkaluja koodarille. Suosittelen tutustumaan niihin tarkemmin ja kokeilemaan niiden käyttöä substringien erottelussa.
+Substringien erottaminen voi myös auttaa suorituskyvyn parantamisessa, koska merkkijonan alku- tai loppuosa voidaan vaihtaa nopeammin kuin koko merkkijono. Se voi myös auttaa lisäämään toiminnallisuutta, koska voit käyttää replace-metodia korvaamaan merkkijonoja haluamillasi teksteillä.
 
 ## Katso myös
-
-Kuten huomaat, substringsien erottelu Rubyssa on suhteellisen yksinkertaista. Voit oppia lisää aiheesta tutkimalla String-luokan eri metodeja ja kokeilemalla niitä käytännössä. Tutustu myös säännöllisiin lausekkeisiin ja niiden käyttöön substringien erottelussa.
-
-Lisäresursseja:
-
-- [Ruby String-luokan dokumentaatio](https://ruby-doc.org/core-3.0.0/String.html)
-- [Säännöllisten lausekkeiden opas Rubyssa](https://www.regular-expressions.info/)
-- [Ruby Learning Center](https://ruby-doc.com/docs/ProgrammingRuby/)
+- Ruby:n viralliset dokumentaatiot substringeista: https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D
+- Selitys merkki-indeksistä Rubyssa: https://www.tutorialspoint.com/ruby/ruby_strings.htm

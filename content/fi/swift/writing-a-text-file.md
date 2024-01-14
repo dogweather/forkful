@@ -1,47 +1,39 @@
 ---
 title:    "Swift: Tiedoston kirjoittaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Kirjoittaa Tekstitiedosto
 
-Kirjoittaa tekstitiedosto on tärkeä osa ohjelmointia, erityisesti kun käsitellään suuria määriä tietoa tai halutaan tallentaa tietoja pitkäaikaiseen säilytykseen.
+Monet ohjelmoijat löytävät itsensä kirjoittamassa tekstitiedostoja, jotka sisältävät koodia, muistiinpanoja tai muita tärkeitä tietoja. Tekstitiedostot ovat hyödyllisiä, koska ne ovat yksinkertaisia, helppoja luoda ja helppoja jakaa muiden kanssa. Lisäksi ne ovat hyödyllisiä, kun haluat tallentaa tietoja, jotka eivät vaadi monimutkaisia ​​tietorakenteita.
 
-## Kuinka tehdä
+## Kuinka kirjoittaa tekstitiedosto
 
-Voit luoda uuden tekstitiedoston käyttämällä Swiftin `FileManager` luokkaa. Alla olevassa koodilohkossa näet esimerkin, jossa luodaan uusi tekstitiedosto nimeltä "uusi_tiedosto.txt" ja luetaan siihen tallennettu teksti.
+Kirjoittaaksesi tekstitiedoston Swiftillä, sinun on ensin luotava uusi tiedosto ja annettava sille tiedostopääte ".txt". Tämän jälkeen voit käyttää ```Swift NSString ``` -luokkaa luomaan merkkijono, joka sisältää haluamasi tiedot. Sitten voit käyttää ```Swift FileManager ``` -luokkaa tallentamaan tiedoston haluamaasi sijaintiin.
 
-```Swift
-let tiedostonimi = "uusi_tiedosto.txt"
-let tekstinpätkä = "Tämä on uusi tiedosto!"
+```
+let text = "Tämä on esimerkki tekstitiedoston kirjoittamisesta Swiftillä."
+let fileManager = FileManager.default
+let filePath = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("example.txt")
 do {
-    let tiedostonpolku = try FileManager.default.url(for: .documentDirectory,
-                                                    in: .userDomainMask,
-                                                    appropriateFor: nil,
-                                                    create: false)
-            .appendingPathComponent(tiedostonimi)
-    
-    try tekstinpätkä.write(to: tiedostonpolku, atomically: true,
-                           encoding: String.Encoding.utf8)
-    
-    let ladattutiedosto = try String(contentsOf: tiedostonpolku,
-                                    encoding: String.Encoding.utf8)
-    print(ladattutiedosto)
+   try text.write(to: filePath, atomically: false, encoding: .utf8)
 } catch {
-    print("Tiedoston luominen epäonnistui: \(error)")
+   print("Virhe tallennettaessa tiedostoa.")
 }
 ```
+Kaikki mitä tarvitsit tehdäksesi, oli luoda merkkijono ja tallentaa se haluamaasi tiedostoon. Voit muuttaa merkkijonoa, lisätä uusia rivejä ja tallentaa muutoksia uudelleen.
 
-Tämä koodilohko luo uuden tiedoston ja lukee siihen tallennetun tekstin. Voit muokata koodia tarpeen mukaan ja tallentaa haluamasi tiedot tekstitiedostoon.
+## Syvemmälle tekstitiedoston kirjoittamiseen
 
-## Syvällinen sukellus
+Tekstitiedostojen kirjoittaminen Swiftissä on yksinkertaista, mutta sinulla on myös mahdollisuus lisätä tiedostonhallintaa ja tarkistaa, onko tiedosto jo olemassa ennen tallentamista. Voit myös käyttää muita tietokäsittelijäluokkia, kuten ```Swift Data ``` -luokkaa, jos haluat tallentaa binääridataa.
 
-Tekstitiedostot ovat yksi tärkeä osa Swiftin FileManagerin toimintoja. Voit käyttää myös muita metodeja, kuten `fileExists(atPath: )`, `copyItem(at: to: )` ja `moveItem(at: to: )` jne. Näiden avulla voit hallita tiedostoja ja kansioita ohjelmassasi.
+On myös tärkeää muistaa, että tekstitiedoston luominen ei rajoitu vain Swiftiin. Voit käyttää samaa menetelmää myös muihin ohjelmointikieliin, kuten Javaan tai Pythoniin.
 
 ## Katso myös
 
-- [Swiftin dokumentaatio FileManagerin käytöstä](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swiftille iOS:ään -tutoriaali tekstitiedoston luomisesta](https://www.raywenderlich.com/110458/nsfilemanager-swift-tutorial)
-- [Kuinka lukea ja kirjoittaa tekstitiedostoja Swiftissä -opas](https://learnappmaking.com/reading-writing-files-swift-how-to/)
+- [Swiftin virallinen dokumentaatio tekstitiedostojen kirjoittamisesta](https://docs.swift.org/swift-book/LanguageGuide/PhrasesAndStatements.html#ID541)
+- [Ohjelmointiopas tekstitiedostojen käsittelyyn Swiftissä](https://www.raywenderlich.com/23892657-writing-files-using-the-filemanager-class-in-swift)
+- [GitHub-projekti, joka esittelee tekstitiedoston kirjoittamisen Swiftillä](https://github.com/meici/codeLab/tree/master/FileWriting)

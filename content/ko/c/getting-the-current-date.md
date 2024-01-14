@@ -1,53 +1,96 @@
 ---
-title:    "C: 오늘 날짜 가져오기"
+title:    "C: 현재 날짜 가져오기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-현재 날짜를 가져오는 것은 프로그래밍에서 매우 유용한 작업입니다. 예를 들어, 사용자가 앱이나 웹사이트를 사용할 때 현재 날짜를 표시하는 것은 사용자의 경험을 향상시키는 데 도움이 될 수 있습니다. 또는 특정 일자를 입력받아 이를 처리하는 프로그램을 만들 경우에도 현재 날짜를 가져오는 것은 필수적입니다.
+현재 날짜를 가져오기 위해 누군가가 관심을 가질 수 있는 이유는 다양합니다. 예를 들어, 파일에 저장하거나 프로그램의 로그를 기록하는 등의 목적으로 현재 날짜를 사용할 수 있습니다. 또는 특정 이벤트나 기능을 수행하기 위해 시간 체크가 필요할 수 있습니다. 어떤 이유든지 간에, 현재 날짜를 가져오는 것은 프로그래밍에서 매우 유용합니다.
 
-## 방법
+## 어떻게?
 
-현재 날짜를 가져오는 가장 간단한 방법은 C 프로그래밍 언어의 time 라이브러리를 사용하는 것입니다. 아래는 time 라이브러리를 활용하여 현재 날짜를 출력하는 예제 코드입니다.
+C 프로그래밍에서 현재 날짜를 가져오려면, <time.h> 헤더 파일을 포함해야 합니다. 이후에는 `time()` 함수를 통해 현재 시간의 숫자 값을 얻을 수 있습니다. 아래의 예제 코드와 출력 결과를 통해 확인해봅시다.
 
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
-int main(){
-    // 현재 시간을 가져오는 time 함수의 파라미터는 NULL로 설정하면 됩니다.
-    time_t currentTime = time(NULL); 
+int main() {
+    // 현재 시간의 숫자 값을 저장할 변수 선언
+    time_t now;
 
-    // 받아온 시간을 struct tm 구조체로 변환하여 저장합니다.
-    struct tm *date = localtime(&currentTime);
+    // 현재 시간 구하기
+    time(&now);
 
-    // 변환된 시간 중에서 원하는 값을 printf 함수를 이용해 출력합니다.
-    printf("현재 날짜: %d/%d/%d", date->tm_year + 1900, date->tm_mon + 1, date->tm_mday);
+    // 현재 날짜와 시간을 문자열 형태로 변환
+    char* current_time = ctime(&now);
+
+    // 출력
+    printf("현재 날짜와 시간: %s", current_time);
 
     return 0;
 }
 ```
 
-위 코드의 결과는 다음과 같습니다.
+출력 결과:
 
 ```
-현재 날짜: 2021/5/7
+현재 날짜와 시간: Fri Jun 18 20:09:42 2021
 ```
 
-## 깊이 파헤치기
+## 딥 다이브
 
-time 라이브러리를 사용하여 현재 날짜를 가져오는 과정은 다음과 같습니다.
+현재 날짜를 가져오는 `time()` 함수는 Unix 시간을 초 단위로 반환합니다. Unix 시간은 1970년 1월 1일 0시 0분 0초를 기준으로한 지난 시간의 초 단위로 표현된 값입니다. 따라서 이 값을 이용하여 다양한 날짜와 시간 정보를 얻을 수 있습니다.
 
-1. 먼저 time 함수를 사용하여 현재 시간을 초(second) 단위로 저장합니다. 이때 파라미터로 넘기는 값은 NULL로 설정합니다.
-2. 초 단위로 저장된 현재 시간을 localtime 함수를 통해 사람이 읽을 수 있는 형식이 된 시간대로 변환합니다. 이때 변환된 시간은 struct tm 구조체에 저장됩니다.
-3. 변환된 시간 중에서 원하는 값을 printf 함수를 이용해 출력합니다. 시간 관련 정보는 각각 tm_year, tm_mon, tm_mday 등의 변수에 담겨 있습니다.
-4. 출력 결과는 현재 시스템의 설정에 따라 다양한 형식으로 표시될 수 있습니다. 예를 들어, 운영체제나 컴파일러의 설정에 따라 날짜가 "년/월/일"이 아니라 "월/일/년"으로 표시될 수 있습니다. 따라서 위 예제 코드는 참고용으로만 사용하시고 실제 프로젝트에서는 현재 시스템의 설정을 확인하여 적절한 출력 코드를 작성해야 합니다.
+또한, `localtime()` 함수를 사용하면 시스템의 현재 지역 시간을 구할 수 있습니다. 이 함수는 구조체를 반환하며, `tm` 구조체에는 날짜와 시간 정보가 저장되어 있습니다. 아래의 예제 코드를 통해 확인해봅시다.
 
-## 또 다른 내용
+```C
+#include <stdio.h>
+#include <time.h>
 
-- [time 라이브러리 관련 문서](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [struct tm 구조체 관련 문서](https://www.tutorialspoint.com/c_standard_library/ctime.htm)
-- [C 프로그래밍 관련 블로그](https://velog.io/@manusimple/series/C-Tutorial)
+int main() {
+    // 현재 시간의 숫자 값을 저장할 변수 선언
+    time_t now;
+
+    // 현재 시간 구하기
+    time(&now);
+
+    // 현재 지역 시간 구하기
+    struct tm* current_time = localtime(&now);
+
+    // 현재 날짜 및 시간 출력
+    printf("현재 년도: %d\n", current_time->tm_year + 1900);
+    printf("현재 달: %d\n", current_time->tm_mon + 1);
+    printf("현재 일: %d\n", current_time->tm_mday);
+    printf("현재 시간: %d\n", current_time->tm_hour);
+    printf("현재 분: %d\n", current_time->tm_min);
+    printf("현재 초: %d\n", current_time->tm_sec);
+
+    return 0;
+}
+```
+
+출력 결과:
+
+```
+현재 년도: 2021
+현재 달: 6
+현재 일: 18
+현재 시간: 20
+현재 분: 9
+현재 초: 42
+```
+
+## 참고 자료
+
+- [The C Programming Language Documentation: Time Functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Unix Time - Wikipedia](https://en.wikipedia.org/wiki/Unix_time)
+- [ctime() vs. localtime() in C](https://stackoverflow.com/questions/3459150/ctime-vs-localtime-in-c)
+
+## 참고 자료(en)
+
+- [The C Programming Language Documentation: Time Functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Unix Time - Wikipedia](https://en.wikipedia

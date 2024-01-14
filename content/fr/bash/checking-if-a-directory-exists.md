@@ -1,66 +1,75 @@
 ---
-title:    "Bash: Vérifier si un répertoire existe"
+title:    "Bash: Vérification de l'existence d'un dossier"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur Bash, il est important de savoir comment vérifier si un répertoire existe avant d'effectuer une tâche ou une commande. Cela peut vous faire économiser du temps et des efforts en évitant les erreurs dues à l'absence d'un répertoire requis.
+Si vous êtes un programmeur débutant ou même expérimenté, il peut être utile de savoir si un répertoire existe avant de l'utiliser dans votre code. Cela peut vous éviter des erreurs et des bugs ennuyeux. Dans cet article, nous allons explorer différentes façons de vérifier si un répertoire existe dans un script Bash.
 
 ## Comment faire
 
-Pour vérifier si un répertoire existe en utilisant Bash, vous pouvez utiliser la commande `test` avec l'option `-d` pour spécifier que vous recherchez un répertoire. Par exemple:
+Il existe plusieurs méthodes pour vérifier l'existence d'un répertoire en Bash, mais nous allons en couvrir trois dans cet article. Tout d'abord, vous pouvez utiliser la commande `if [-d [répertoire]]` pour voir si un répertoire existe ou non. Par exemple:
 
 ```Bash
-if test -d "/chemin/vers/mon/repertoire"; then
-echo "Le répertoire existe!"
+if [ -d "/chemin/vers/repertoire" ]; then
+    echo "Le répertoire existe!"
 else
-echo "Le répertoire n'existe pas."
+    echo "Le répertoire n'existe pas!"
 fi
 ```
 
-Cette commande vérifiera si le répertoire spécifié existe. Si c'est le cas, vous verrez l'annonce "Le répertoire existe!". Sinon, vous verrez "Le répertoire n'existe pas."
-
-Vous pouvez également utiliser la commande `[[ ... ]]` pour la même tâche, en utilisant l'opérateur `-d` pour vérifier si un répertoire existe. Voici un exemple:
+Nous utilisons ici la condition `if [-d [répertoire]]` pour vérifier si le répertoire existe. Si c'est le cas, nous affichons un message indiquant que le répertoire existe. Sinon, nous affichons un autre message indiquant que le répertoire n'existe pas. Vous pouvez également utiliser la commande `test` pour la même vérification:
 
 ```Bash
-if [[ -d "/chemin/vers/mon/repertoire" ]]; then
-echo "Le répertoire existe!"
+if test -d "/chemin/vers/repertoire"; then
+    echo "Le répertoire existe!"
 else
-echo "Le répertoire n'existe pas."
+    echo "Le répertoire n'existe pas!"
 fi
 ```
 
-Vous pouvez également personnaliser votre message en utilisant la commande `printf`. Par exemple:
+La deuxième méthode consiste à utiliser l'opérateur de négation `!` devant la commande `test` ou `[-d [répertoire]]` pour vérifier si le répertoire n'existe PAS. Par exemple:
 
 ```Bash
-if test -d "/chemin/vers/mon/repertoire"; then
-printf "Le répertoire %s existe!\n" "/chemin/vers/mon/repertoire"
+if ! test -d "/chemin/vers/repertoire"; then
+    echo "Le répertoire n'existe pas!"
 else
-printf "Le répertoire %s n'existe pas.\n" "/chemin/vers/mon/repertoire"
+    echo "Le répertoire existe!"
 fi
 ```
 
-## Plongée en profondeur
-
-Saviez-vous qu'il y a plusieurs autres options que vous pouvez utiliser avec la commande `test` pour vérifier si un répertoire existe? En plus de `-d`, vous pouvez également utiliser les options `-e` pour vérifier si un fichier ou un lien symbolique existe, `-f` pour vérifier si un fichier régulier existe, ou `-x` pour vérifier si un fichier est exécutable.
-
-De plus, vous pouvez également vérifier si un répertoire existe en utilisant la commande `ls`. Par exemple:
+Enfin, vous pouvez utiliser la commande `[[ ... ]]` qui est principalement utilisée dans les scripts Bash modernes pour la vérification de fichiers et de répertoires. Par exemple:
 
 ```Bash
-if ls "/chemin/vers/mon/repertoire" >/dev/null 2>&1; then
-echo "Le répertoire existe!"
+if [[ -d "/chemin/vers/repertoire" ]]; then
+    echo "Le répertoire existe!"
 else
-echo "Le répertoire n'existe pas."
+    echo "Le répertoire n'existe pas!"
 fi
 ```
 
-Cette commande vérifie si la liste du contenu du répertoire spécifié réussit ou échoue. Si elle réussit, cela signifie que le répertoire existe. Sinon, cela signifie qu'il n'existe pas.
+Celles-ci sont les méthodes les plus couramment utilisées pour vérifier si un répertoire existe en Bash. Vous pouvez choisir celle qui vous convient le mieux en fonction de votre code et de vos préférences personnelles.
+
+## Profondeur
+
+Dans cette section, nous allons plonger un peu plus profondément dans la vérification de l'existence d'un répertoire en Bash. La commande `test` utilisée pour vérifier l'existence d'un répertoire peut être utilisée pour d'autres opérations telles que la vérification de l'existence d'un fichier, la vérification de l'écriture ou de la lecture d'un fichier, etc. Vous pouvez également utiliser l'option `-f` pour vérifier si le chemin donné est un fichier ordinaire, `-e` pour vérifier si le chemin existe, `-r` pour vérifier la lecture, `-w` pour vérifier l'écriture et ainsi de suite.
+
+Vous pouvez également utiliser la commande `mkdir` pour créer un répertoire s'il n'existe pas déjà. Si vous souhaitez créer des répertoires imbriqués, vous pouvez utiliser l'option `-p`. Voici un exemple:
+
+```Bash
+mkdir -p /chemin/vers/repertoires/imbriques
+```
+
+Cela créera le répertoire `chemin/vers/repertoires/imbriques` s'il n'existe pas déjà, ainsi que tous les répertoires parents nécessaires. Cela peut être utile si vous devez créer un répertoire pour stocker des fichiers ou des données dans votre script.
 
 ## Voir aussi
 
-- [Bash scripting for beginners](https://www.linux.com/training-tutorials/writing-simple-bash-script/)
-- [Le guide avancé de Bash](https://tldp.org/LDP/abs/html/)
-- [Guide de référence de Bash](https://www.gnu.org/software/bash/manual/html_node/index.html)
+Pour plus d'informations sur la vérification de l'existence de répertoires en Bash, vous pouvez consulter les ressources suivantes:
+
+- [Utilisation de la commande if en Bash](https://www.linode.com/docs/guides/using-the-if-command-in-bash/)
+- [Explication de la commande test en Bash](https://www.golinuxcloud.com/bee/linux-tutorial/test-expressions-operators-in-linux-shell-script-bash/)
+- [Création de répertoires en Bash avec mkdir](https://www.tutorialspoint.com/un

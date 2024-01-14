@@ -1,40 +1,36 @@
 ---
 title:    "C#: Die Länge eines Strings finden"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+Warum: Das Finden der Länge einer Zeichenfolge ist eine grundlegende Aufgabe beim Programmieren. Es ermöglicht uns, die Größe eines Textes zu bestimmen und ihn entsprechend zu verarbeiten.
 
-Das Finden der Länge eines Strings ist eine grundlegende Fähigkeit, die jeder C#-Programmierer beherrschen sollte. Es ermöglicht uns, die Größe von Texten zu bestimmen, was in vielen Anwendungsfällen nützlich ist.
+Wie: Die Länge einer Zeichenfolge kann in C# auf verschiedene Arten gefunden werden. Eine Möglichkeit ist die Verwendung der integrierten Methode `Length`, die uns die Anzahl der Zeichen in der Zeichenfolge zurückgibt. Beispielcode:
 
-## Wie
+ ```C#
+ string text = "Hallo Welt!";
+ int length = text.Length;
+ Console.WriteLine(length); // Gibt 11 aus
+```
 
-Das Finden der Länge eines Strings ist in C# sehr einfach. Wir können die Methode `Length` verwenden, die als Eigenschaft für jeden String verfügbar ist. Hier ist ein Beispiel:
+Eine andere Möglichkeit ist die Verwendung der Methode `ToCharArray`, die uns ein Array mit allen Zeichen der Zeichenfolge zurückgibt. Wir können dann einfach die Länge des Arrays bestimmen, um die Länge der Zeichenfolge zu erhalten. Beispielcode:
 
 ```C#
-string text = "Hallo, Welt!";
-int length = text.Length;
-Console.WriteLine("Die Länge des Strings beträgt: " + length);
+ string text = "Hallo Welt!";
+ char[] charArray = text.ToCharArray();
+ int length = charArray.Length;
+ Console.WriteLine(length); // Gibt 11 aus
 ```
-Die Ausgabe dieses Codes wird folgendermaßen aussehen:
 
-`Die Länge des Strings beträgt: 12`
+Tipp: Beachten Sie, dass bei der Verwendung von `Length` die Leerzeichen und Sonderzeichen in der Zeichenfolge ebenfalls gezählt werden, während bei der Verwendung von `ToCharArray` diese als separate Zeichen betrachtet werden.
 
-Wie Sie sehen können, gibt es nicht viel zu tun, um die Länge eines Strings zu finden. Wir müssen nur die `Length`-Methode nutzen und das Ergebnis in einer Variable speichern oder direkt ausgeben.
+Tiefergehende Informationen: Um die Länge einer Zeichenfolge besser zu verstehen, ist es hilfreich, zu verstehen, wie Zeichen in C# gespeichert werden. In C# werden Zeichen als Unicode-Codepoints gespeichert, was bedeutet, dass nicht jedes Zeichen die gleiche Größe hat und daher die Länge einer Zeichenfolge variieren kann. Zum Beispiel haben einige Sonderzeichen zwei Codepoints, was bedeutet, dass sie als zwei separate Zeichen gezählt werden.
 
-Es ist wichtig zu beachten, dass die `Length`-Methode die Anzahl der Unicode-Zeichen in einem String zählt, nicht die Anzahl der Bytes. Dies kann bei der Verwendung von Sonderzeichen oder nicht-ASCII-Zeichen relevant werden.
+Siehe auch:
 
-## Deep Dive
-
-Wenn wir einen genaueren Blick auf die `Length`-Methode werfen, werden wir feststellen, dass sie tatsächlich ein Attribut ist und keine Methode. Das bedeutet, dass sie keine Parameter annimmt und keine Berechnungen ausführt - sie gibt einfach die Anzahl der Zeichen im String zurück.
-
-Es ist auch erwähnenswert, dass die `Length`-Methode eine der Eigenschaften der Basisklasse `Object` ist, was bedeutet, dass sie für alle C#-Objekte verfügbar ist.
-
-Wir können auch die `Length`-Eigenschaft verwenden, um den Wert eines leeren Strings abzurufen, der in C# durch `""` dargestellt wird. In diesem Fall wird die `Length` auf 0 gesetzt.
-
-## Siehe auch
-
-- [Microsoft Dokumentation über die `Length`-Eigenschaft](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=netcore-3.1)
-- [C# Strings und Zeichen](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/strings-and-characters/)
+- [MSDN-Dokumentation zu `Length`](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.8)
+- [MSDN-Dokumentation zu `ToCharArray`](https://docs.microsoft.com/en-us/dotnet/api/system.string.tochararray?view=netframework-4.8)
+- [Unicode-Codepoints in C#](https://docs.microsoft.com/en-us/dotnet/api/system.char?view=netframework-4.8)

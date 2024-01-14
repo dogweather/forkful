@@ -1,54 +1,51 @@
 ---
 title:    "Elixir: Sammenligning av to datoer"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Når man jobber med datoer i et programmeringsspråk, er det ofte nødvendig å sammenligne to datoer. Dette kan være for å finne ut hvilken dato som er tidligere eller senere, eller for å sjekke om de to datoene er like. Uansett hva årsaken er, vil det å kunne sammenligne datoer være en nyttig ferdighet å ha.
+
+Når du jobber med Elixir programmering, kan det være nyttig å kunne sammenligne to datoer. Dette kan hjelpe deg med å organisere og sortere data på en effektiv måte. I denne bloggposten skal vi gå gjennom hvordan du kan sammenligne to datoer i Elixir.
 
 ## Hvordan
-For å sammenligne to datoer i Elixir, kan man bruke funksjonene `Date.compare/2` og `DateTime.compare/2`. Disse funksjonene sammenligner to datoer og returnerer et heltall basert på forholdet mellom dem. Et positivt tall betyr at den første datoen er senere enn den andre, et negativt tall betyr at den første datoen er tidligere enn den andre, og 0 betyr at de to datoene er like.
+
+Det finnes flere forskjellige måter å sammenligne datoer på i Elixir, avhengig av hva du prøver å oppnå. La oss gå gjennom noen eksempler og se på resultatene.
 
 ```Elixir
-iex> Date.compare(~D[2020-05-01], ~D[2020-05-02])
-1
-iex> DateTime.compare(~U[2020-05-01 12:00:00], ~U[2020-04-30 12:00:00])
-1
-iex> Date.compare(~D[2020-01-01], ~D[2020-01-01])
-0
+date1 = ~D[2021-01-01]
+date2 = ~D[2020-01-01]
+date3 = ~D[2021-01-01]
+
+date1 > date2 # true
+date1 < date3 # false
 ```
 
-En annen nyttig funksjon for å sammenligne datoer er `Date.before?/2`. Denne funksjonen returnerer `true` hvis den første datoen er tidligere enn den andre.
+Her ser vi hvordan vi kan bruke operatørene ">", "<" og "=" for å sammenligne datoer. Det er viktig å merke seg at datoene må være i form av ElixirDate structs, som vi har definert ved hjelp av "~D" syntaksen. 
+
+En annen måte å sammenligne datoer på er ved bruk av funksjonen `DateTime.compare/2`. Denne funksjonen returnerer en numerisk verdi som indikerer forholdet mellom to datoer. 
 
 ```Elixir
-iex> Date.before?(~D[2020-01-01], ~D[2020-01-02])
-true
-iex> Date.before?(~D[2020-01-03], ~D[2020-01-02])
-false
+date1 = ~D[2021-01-01]
+date2 = ~D[2020-01-01]
+date3 = ~D[2021-01-01]
+
+DateTime.compare(date1, date2) # 1
+DateTime.compare(date1, date3) # 0
 ```
+
+I dette tilfellet vil `DateTime.compare` returnere en verdi på 1 hvis `date1` er senere enn `date2`, 0 hvis de to datoene er like, og -1 hvis `date1` er tidligere enn `date2`.
 
 ## Dypdykk
-Når man sammenligner datoer i Elixir, må man være oppmerksom på at det finnes forskjellige typer datoer: date, time og datetime. Dette kan påvirke resultatet av sammenligningen. For eksempel, hvis man prøver å sammenligne en date og en datetime, vil resultatet alltid være at datetime er senere, uansett hva klokkeslettet er.
 
-```Elixir
-iex> Date.compare(~D[2020-01-01], ~U[2020-01-01 12:00:00])
--1
-iex> DateTime.compare(~D[2020-01-01], ~D[2020-01-01])
-1
-```
+Når du sammenligner to datoer, er det viktig å være oppmerksom på hvordan datoene blir lagret og behandlet. I Elixir er datoer basert på "Gregorian Calendar", som er den mest brukte kalenderen internasjonalt. Dette betyr at datoene blir konvertert og behandlet i henhold til denne kalenderen, uavhengig av hvilken kalender som brukes i ditt land.
 
-Det er også viktig å merke seg at sammenligning av datoer også tar hensyn til år, måned og dag. Dette betyr at selv om to datoer har samme klokkeslett, men forskjellig år, vil de bli ansett som ulike datoer.
-
-```Elixir
-iex> Date.compare(~D[2020-01-01], ~D[2021-01-01])
--1
-iex> DateTime.compare(~U[2020-01-01 12:00:00], ~U[2021-01-01 12:00:00])
--1
-```
+Det er også viktig å merke seg at datoer er immutable i Elixir. Dette betyr at når en dato er opprettet, kan den ikke endres. Dette betyr at alle sammenligninger du gjør med datoer ikke vil endre de opprinnelige datoene, men heller returnere en ny verdi.
 
 ## Se også
-- [Elixir Date module](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime module](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Datetime tutorial](https://www.tutorialspoint.com/elixir/elixir_datetime_module.htm)
+
+- Offisiell Elixir dokumentasjon: https://hexdocs.pm/elixir/Date.html
+- Sammenligning av datoer i Elixir forumt innlegg: https://elixirforum.com/t/date-compare/2491
+- Elixir forumt tråd om variasjoner i datoer: https://elixirforum.com/t/different-date-conversions/4850/5

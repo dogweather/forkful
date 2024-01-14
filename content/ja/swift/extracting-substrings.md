@@ -1,36 +1,34 @@
 ---
-title:    "Swift: サブストリングの抽出"
+title:    "Swift: 字句の抽出"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を抽出する作業をする理由はさまざまです。例えば、与えられた文字列の一部分だけが必要な場合や、特定の文字列に基づいて検索や置換を行う場合に利用されます。Swiftでは、簡単な関数を使って文字列を抽出することができます。
+文字列からサブストリングを抽出することに関心を持つのはなぜでしょうか？実際には、アプリケーションのユーザーが入力した文字列から特定の部分を取得したい場合があります。例えば、メールアドレスを入力させるフォームがあるとします。その場合、入力された文字列からドメインを抽出したいと考えるかもしれません。サブストリングを抽出することで、特定の部分を簡単に取得することができます。
 
-## 抽出する方法
+## 技術的手順
 
-文字列を抽出するには、最初に抽出する範囲の開始位置と終了位置を指定する必要があります。次に、`String`クラスの`substring`メソッドを使用し、抽出したい部分の範囲を指定します。例を見てみましょう。
+サブストリングを抽出するための基本的な手順を紹介します。まず、抽出したい文字列を取得します。次に、`substring`メソッドを使用し、開始位置と終了位置を指定してサブストリングを抽出します。最後に、抽出したサブストリングを使って任意の処理を行います。
 
 ```Swift
-let name = "こんにちは、私は太郎です。"
-let greeting = name.substring(from: 5, to: 10)
-print(greeting) // "私は太郎です"
+// サブストリングを抽出するための例
+let text = "Hello Swift"
+let start = text.index(text.startIndex, offsetBy: 6)
+let end = text.index(text.endIndex, offsetBy: -6)
+let result = text.substring(with: start..<end) // "Swift"
 ```
 
-このコードでは、`substring`メソッドを使用して、名前から「太郎」の部分を抽出しています。もちろん、開始位置や終了位置を変更することで、さまざまな部分の文字列を抽出することができます。
+## 深堀り
 
-## 抽出の詳細
+サブストリングを抽出する際に注意すべき点があります。それは、文字列のインデックスの扱いです。`startIndex`は常に文字列の先頭を指し、`endIndex`は常に文字列の末尾の1つ後ろを指します。しかし、`index`メソッドを使用する場合は注意が必要です。`index`メソッドの第2引数に指定するオフセットは、文字の数ではなくインデックスの数を表します。つまり、`Hello Swift`という文字列の最後の文字を指定するためには、`6`ではなく`5`(文字列の先頭から数えて6番目の文字は`S`ではなく`f`)を指定する必要があります。
 
-Swiftでは、単純な文字列の抽出に加えて、正規表現を使用して複雑なパターンに基づいて文字列を抽出することもできます。また、文字列の末尾からも抽出することができます。さらに、Swift 4以降では、サブスクリプト記法を使用しても文字列の抽出が可能になりました。
+## さらに参考にする
 
-## その他のリソース
+この記事で紹介したサブストリングの抽出方法は、Swiftの基本的な機能に限定したものです。Swiftには多数の文字列操作に関する高度なメソッドやプロパティが用意されています。詳しくは以下のリンクを参考にしてください。
 
-- [Swift言語リファレンス - Substring](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290)
-- [String-subscript](https://developer.apple.com/documentation/swift/string/2894562-subscript) 
-- [正規表現とString](https://swiftcafe.io/2017/11/13/regular-expression)
-
-## もっと詳しく学びたい方へ
-
-抽出する方法については、まだまだ詳しく学ぶことができます。ぜひ、上記のリソースを参考にして、さらに深くSwiftで文字列を抽出する方法を学んでみてください。
+- [Swift Strings and Characters - Apple Developer Documentation](https://developer.apple.com/documentation/swift/strings_and_characters)
+- [Working with Strings in Swift 4 - Hacking with Swift](https://www.hackingwithswift.com/example-code/strings/working-with-strings-in-swift)

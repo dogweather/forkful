@@ -1,45 +1,65 @@
 ---
 title:    "Java: קריאת קובץ טקסט"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כדי לנסח את המטרה של Razzle תוכלו לקרוא לתוכה שנמצאית בקובץ טקסט. כלומר, תוכלו לעשות שימוש בקובץ טקסט כדי לאתר מידע רלוונטי, לא רק בעצמו יעבוד את נתונים לכוונתכם.
+נקרא קובץ טקסט הוא משימה נפוצה וחשובה בתחום התכנות. זה יכול לסייע בפיתוח תוכניות שמשתמשות בנתונים מקוריים על ידי קריאת קובץ טקסט. כמו כן, זה עשוי לשמש ככלי לקריאת מידע מקבצי טקסט שמבטיחים חומרה עצמית של נתוני משעור שכל
 
-בדיוק מניע שתתי את האפשרות Razzle על ידי הרשומה של נתחים באמצעות קובץ טקסט, כדי שתוכלו לעשות שימוש בנתונים השמגיעים מקובץ טקסט.
+## כיצד
 
-## איך לעשות
+ראשית, ניצור קובץ טקסט פשוט בשם "input.txt". בתוכו נרשום כמה שורות טקסט כדוגמא עבור הקוד שנכתוב:
 
-```Java
-// קריאת קובץ טקסט באמצעות FileReader
-FileReader fr = new FileReader("file.txt");
+```
+Hello World!
+This is a sample text file.
+We will read this file using Java.
+```
 
-// יצירת תוכנית לקריאת קובץ טקסט
-int i;
-while ((i = fr.read()) != -1) {
-    System.out.print((char) i);
+כעת ניצור בתוכו תוכנית בשפת ג'אווה כדי לקרוא את הקובץ הנ"ל ולהדפיס את הטקסט שבתוכו:
+
+```
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ReadFileExample {
+
+    public static void main(String[] args) {
+        try {
+            // Create a File object for the text file
+            File file = new File("input.txt");
+            // Create a Scanner object to read the file
+            Scanner scanner = new Scanner(file);
+            // Use a while loop to read each line in the file
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                // Print the line to the console
+                System.out.println(line);
+            }
+            // Close the Scanner object to release resources
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        }
+    }
 }
-fr.close();
 ```
 
-פלט:
+הפלט של תוכנית זו יהיה:
 
 ```
-טקסט שנכתב בקובץ
+Hello World!
+This is a sample text file.
+We will read this file using Java.
 ```
 
-חשוב לזכור כי על מנת לקרוא קובץ טקסט עלינו להגדיר את הנתיב המלא לקובץ באמצעות פרמטרים, וכן לסגור את המתודה "close" כדי להתנתק מהקובץ ולשחרר משאבים מיותרים.
+כפי שניתן לראות, הקוד משתמש בטכניקות קריאת קבצים בשפת ג'אווה כדי לקרוא כל שורה בקובץ ולהדפיס אותה.
 
-## Deep Dive
+## מעמקים נמשך
 
-כאשר מסתמכים על קבצי טקסט כדי להוציא מידע ממקור מסוים, חשוב לזכור שקבצי טקסט נקראים בתור "שרשורים" של תווים. זאת אומרת שכל תו בקובץ מיוצג על ידי קוד ASCII.
-
-בנוסף, ישנם כמה דרכים לקרוא קובץ טקסט בשפת ג'אווה. כדאי לבחור בדרך שמתאימה לצרכים שלכם ולהתאים אותה לסוג הקובץ המסוים שאתם עובדים איתו.
-
-## ראו גם
-
-- [מדריך רשמי על כתיבת קבצי טקסט בג'אווה](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [פוסט בבלוג על קריאת קבצי טקס
+קריאת קובץ טקסט היא רק פעולה בסיסית שבעזרתה ניתן לקרוא מידע מקובץ כלשהו. בנוסף, ניתן להשתמש בטכניקות נוספות כגון כתיבת נתונים לקובץ טקסט, יצירת קובץ טקסט ועוד. כמו כן, ניתן להשתמש במחלקות נוספות בג'אווה כדי לקרוא קבצים

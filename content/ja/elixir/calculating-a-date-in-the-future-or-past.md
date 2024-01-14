@@ -1,48 +1,45 @@
 ---
-title:    "Elixir: 未来または過去の日付を計算する"
+title:    "Elixir: 未来または過去の日付の計算"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ
 
-日付を計算する理由について説明しましょう。将来や過去の日付を計算することは、アプリケーションやプログラムで重要な機能の1つです。例えば、ユーザーが特定の日付までにタスクを完了しなければいけない場合や、特定の日付を基準にデータをフィルタリングする場合などが挙げられます。
+日付を未来や過去に計算することは、Elixirプログラミングでよく行われるタスクの一つです。例えば、日付を操作してイベントのスケジュールを作成したり、休日を計算したりすることができます。
 
-##方法
+## 方法
 
-Elixirで将来や過去の日付を計算する方法を示します。まずは```Date```モジュールを使用して、日付を表すオブジェクトを作成します。
+日付を未来や過去に計算するために、Elixirには2つの主要な関数があります。一つは `Date.add/2` で、もう一つは `Date.subtract/2` です。この記事では、それぞれの関数の使い方をコード例と共に示します。
 
-```
-```
-iex> date = Date.from_iso8601("2020-05-01")
-~D[2020-05-01]
+```Elixir
+# 今日から10日後の日付を計算する
+today = Date.today()
+future_date = Date.add(today, 10)
+IO.puts "10日後の日付は #{future_date} です。"
+# Output: 10日後の日付は 2021-10-27 です。
 
-```
-
-次に、```Date```モジュールの```add```関数を使用して、日付に指定した時間を加算することができます。
-
-```
-```
-iex> Date.add(date, 7, :days)
-~D[2020-05-08]
-```
-
-また、```Date```モジュールの```subtract```関数を使用すると、日付から指定した時間を減算することもできます。
-
-```
-```
-iex>Date.subtract(date, 1, :week)
-~D[2020-04-24]
+# 昨日から1ヶ月前の日付を計算する
+yesterday = Date.today()
+past_date = Date.subtract(yesterday, 30, :day)
+IO.puts "1ヶ月前の日付は #{past_date} です。"
+# Output: 1ヶ月前の日付は 2021-09-29 です。
 ```
 
-```Date```モジュールにはさまざまな関数が用意されており、日付を加算や減算するだけでなく、曜日や月の日数なども取得することができます。詳しくは公式ドキュメントを参照しましょう。
+## ディープダイブ
 
-##深堀り
+日付を未来や過去に計算する際に注意すべき点があります。まず、 `Date.add/2` と `Date.subtract/2` は第二引数で指定した単位に日付を加えたり引いたりするため、単位を指定することが重要です。また、日付を操作する際にはタイムゾーンにも気を配る必要があります。
 
-Elixirの日付計算は、内部的にはErlangの```calendar```モジュールを使用しています。そのため、Elixirで使える関数はErlangの関数と同じです。しかし、Elixirの```Date```モジュールでは、より使いやすく柔軟なAPIを提供しています。また、Elixirは異なるタイムゾーンの日付を扱うこともできるので、国際的なアプリケーション開発でも役立ちます。
+さらに、Elixirでは日付を扱うために `Date` モジュールの他に、 `DateTime` モジュールや `NaiveDateTime` モジュールなども利用することができます。それぞれのモジュールには異なるメソッドがあり、日付操作のニーズに合わせて使い分けることができます。
 
-##参考
+## 参考リンク
 
-- [Elixir Dateモジュールドキュメント](https://hexdocs.pm/elixir/Date.html)
-- [Erlang Calendarモジュールドキュメント](https://erlang.org/doc/man/calendar.html)
+- [Elixir公式ドキュメント - Elixir.DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir公式ドキュメント - Elixir.Date](https://hexdocs.pm/elixir/Date.html)
+- [Elixir公式ドキュメント - Elixir.NaiveDateTime](https://hexdocs.pm/elixir/NaiveDateTime.html)
+
+## 関連リンク
+
+- [Elixirプログラミング入門記事一覧](https://www.example.com/elixir-programming)

@@ -1,50 +1,61 @@
 ---
 title:    "Gleam: Rozpoczęcie nowego projektu"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto zacząć nowy projekt z Gleam?
 
-Czasami, jako programista, potrzebujemy nowego wyzwania. Nowy projekt może być doskonałym sposobem na poszerzenie swoich umiejętności i naukę nowego języka programowania. Gleam jest językiem opartym na Erlangu i zapewnia bezpieczne i wydajne rozwiązania, co sprawia, że jest idealnym wyborem dla nowego projektu.
+Gleam jest nowoczesnym językiem programowania, który pozwala na pisanie bezpiecznych i wydajnych aplikacji. Przez swoją unikalną składnię i wbudowane narzędzia, jest idealnym wyborem dla osób pragnących budować skalowalne i niezawodne systemy. 
 
-## Jak zacząć
+## Jak to zrobić?
 
-Gleam jest łatwy do zainstalowania i używania. Aby rozpocząć nowy projekt, wystarczy wykonać kilka prostych kroków:
+Gleam jest językiem funkcyjnym, co oznacza, że kod pisany w nim jest modułowy i łatwy w utrzymaniu. Poniżej przedstawiamy przykłady kodu wraz z wyjściem, które będą pomocne w zrozumieniu Gleam oraz jego podstawowych funkcji.
 
-1. Pobierz i zainstaluj Gleam na swoim komputerze.
-2. Stwórz nowy folder dla swojego projektu i przejdź do niego w terminalu.
-3. W terminalu, wpisz komendę `gleam new nazwa_projektu` aby utworzyć nowy projekt.
-4. Przejdź do folderu swojego projektu i otwórz plik `src/main.gleam`.
+```Gleam
+let person = {
+  name: "Kasia",
+  age: 28
+} 
 
-Teraz jesteś gotowy, aby zacząć pisać kod w Gleam! Poniżej znajdziesz przykładowy kod wraz z jego wynikiem:
-
-```gleam
-// Definicja funkcji, która zwraca przywitanie
-fn hello(name) {
-  "Witaj " ++ name ++ "!"
+fun print_person(person) {
+  IO.print("Cześć, nazywam się {person.name} i mam {person.age} lat!")
 }
 
-// Wywołanie funkcji
-let result = hello("Czytelniku")
-
-// Wyświetlenie wyniku zapewniającego wprowadzającym mechaniczne kodowanie typu doskonałe
-io.println(result)
+print_person(person) 
+```
+Output:
+```
+Cześć, nazywam się Kasia i mam 28 lat!
 ```
 
+```Gleam
+fun calculate_average(numbers) {
+  let sum = List.fold_left(numbers, 0, fn(x, acc) {
+    x + acc
+  })
+  sum / List.length(numbers)
+}
+
+let scores = [86, 92, 78, 100, 95]
+let average = calculate_average(scores)
+IO.print("Srednia z ocen to {average}") 
 ```
-Witaj Czytelniku!
+Output:
+```
+Średnia z ocen to 90.2
 ```
 
-## Głębszy wgląd
+## Głębszy wgląd w rozpoczęcie nowego projektu
 
-Gleam jest kompilowany do kodu Erlanga i dziedziczy jego wydajność oraz możliwości skalowania. Ma również silny system typów, co pozwala na pisanie bezpieczniejszego kodu i unikanie błędów już na etapie kompilacji. Ponadto, Gleam ma dynamiczne moduły, które pozwalają na łatwe dzielenie kodu i ponowne wykorzystanie go w różnych projektach.
+Aby zacząć nowy projekt z Gleam, należy najpierw zainstalować jego kompilator i narzędzia do zarządzania zależnościami. Następnie można tworzyć moduły kodu, korzystając z wbudowanych typów danych i funkcji. Bardzo ważne jest również testowanie kodu za pomocą frameworka gleam_test, który pozwala na sprawdzenie poprawności działania każdej funkcji.
 
-Warto również wspomnieć, że Gleam posiada rozbudowaną dokumentację oraz aktywną społeczność, która służy wsparciem i dzieli się swoją wiedzą. Istnieje również wiele użytecznych bibliotek, które ułatwiają pracę z Gleam.
+W przypadku pytań lub problemów związanych z Gleam, warto zajrzeć na oficjalną stronę dokumentacji lub dołączyć do społeczności na Discordzie, gdzie można uzyskać pomoc od innych programistów.
 
-## Zobacz także
+## Zobacz również
 
-- [Oficjalna strona Gleam](https://gleam.run/)
-- [Dokumentacja Gleam](https://gleam.run/documentation/)
-- [Repozytorium GitHub Gleam](https://github.com/gleam-lang/gleam)
+- Oficjalna strona Gleam: https://gleam.run/
+- Dokumentacja Gleam: https://gleam.run/documentation/
+- Discord Gleam: https://discord.gg/Nn8WCzJ

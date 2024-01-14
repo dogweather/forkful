@@ -1,34 +1,66 @@
 ---
-title:    "Ruby: Kontrollere om en mappe eksisterer"
+title:    "Ruby: Sjekke om en mappe eksisterer."
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å sjekke om en mappe eksisterer er en viktig del av programmering, spesielt når man skal håndtere filer og strukturere data. Det kan også være nødvendig når man vil sikre at man ikke overskriver eksisterende data eller for å sørge for at programmet fungerer som forventet.
+
+Det er viktig for en Ruby-programmerer å vite hvordan man sjekker om en mappe eksisterer. Denne kunnskapen kan hjelpe deg med å lage en mer pålitelig og robust programvare og unngå eventuelle feil som kan oppstå når mappen ikke eksisterer. Derfor er det viktig å ha denne ferdigheten i verktøykassen din.
 
 ## Hvordan
-For å sjekke om en mappe eksisterer, kan man bruke `File.exist?` metoden i Ruby. Her er et enkelt eksempel:
 
-```ruby
-if File.exist?("mappe_navn")
-  puts "Mappen eksisterer"
+Det er flere måter å sjekke om en mappe eksisterer i Ruby-programmering. En måte er å bruke `Dir.exist?` metoden, som vil returnere `true` hvis mappen eksisterer og `false` hvis den ikke gjør det.
+
+```Ruby
+if Dir.exist?("mappe_navn")
+  puts "Mappen eksisterer."
 else
-  puts "Mappen eksisterer ikke"
+  puts "Mappen eksisterer ikke."
 end
 ```
 
-Dette vil sjekke om mappen med navnet "mappe_navn" eksisterer i det nåværende arbeidsområdet. Hvis mappen finnes, vil konsollen skrive ut "Mappen eksisterer", ellers skrives det ut "Mappen eksisterer ikke". 
+En annen måte å sjekke på er å bruke `File.directory?` metoden, som også vil returnere `true` eller `false` basert på om mappen eksisterer eller ikke.
 
-Man kan også inkludere en absolutt sti til mappen, for eksempel `"/brukere/john/mappe_navn"` i stedet for bare mappenavnet.
+```Ruby
+if File.directory?("mappe_navn")
+  puts "Mappen eksisterer."
+else
+  puts "Mappen eksisterer ikke."
+end
+```
+
+En tredje måte å gjøre dette på er ved å bruke `Dir.glob` metoden, som vil returnere en liste med filer og mapper som matcher angitt mønster. Hvis mappen eksisterer, vil mønsteret være lik mappens navn, og dermed vil det returnere et element i listen. Hvis mappen ikke eksisterer, vil listen være tom.
+
+```Ruby
+mappenavn = "mappe_navn"
+
+if Dir.glob(mappenavn) == [mappenavn]
+  puts "Mappen eksisterer."
+else
+  puts "Mappen eksisterer ikke."
+end
+```
+
+I alle disse eksemplene kan du også angi den absolutte banen til mappen i stedet for bare navnet, hvis det er nødvendig.
 
 ## Dypdykk
-Når man bruker `File.exist?` metoden, returneres det en boolean verdi, enten 'true' hvis mappen eksisterer eller 'false' hvis den ikke gjør det. Dette kan være nyttig for å kontrollere og styre programflyten basert på om en mappe eksisterer eller ikke.
 
-Det finnes også andre metoder i Ruby for å jobbe med mapper, for eksempel `File.directory?` som returnerer 'true' hvis en gitt sti er en mappe, og `Dir.exists?` som sjekker om en mappe eksisterer.
+Hvis du vil unngå å få en feilmelding når du prøver å få tilgang til en mappe som ikke eksisterer, kan du også bruke `Dir.mkdir` metoden til å opprette mappen hvis den ikke eksisterer. Hvis mappen allerede eksisterer, vil metoden bare returnere `nil`.
 
-## Se Også
-- [Ruby dokumentasjon for File-klassen](https://ruby-doc.org/core-2.5.1/File.html)
-- [Stack Overflow svar på hvordan sjekke om en mappe eksisterer i Ruby](https://stackoverflow.com/a/2677486)
-- [Tutorial på å håndtere mapper i Ruby](https://www.rubyguides.com/2015/02/ruby-file/)
+```Ruby
+mappenavn = "mappe_navn"
+
+Dir.mkdir(mappenavn) unless File.directory?(mappenavn) 
+# hvis mappenavn allerede eksisterer, vil den ikke bli opprettet igjen
+```
+
+Det kan også være nyttig å sjekke om en mappe eksisterer før du prøver å skrive filer til den, for å unngå feil og sikre at filskrivingen er vellykket.
+
+## Se også
+
+- [Ruby dokumentasjon for Dir-klassen](https://ruby-doc.org/core/Dir.html)
+- [Ruby dokumentasjon for File-klassen](https://ruby-doc.org/core/File.html)
+- [Ruby globbing tutorial](https://www.rubyguides.com/2018/10/ruby-glob/)

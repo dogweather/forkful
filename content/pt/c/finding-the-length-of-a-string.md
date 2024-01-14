@@ -1,66 +1,71 @@
 ---
 title:    "C: Encontrando o comprimento de uma string"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+# Por que encontrar o comprimento de uma string?
 
-Encontrar o comprimento de uma string é uma tarefa comum e importante na programação em C. Isso permite que você saiba quantos caracteres uma string possui, o que é útil para várias aplicações, como validação de entrada do usuário ou manipulação de texto.
+Ao trabalhar com strings em C, às vezes é necessário encontrar o comprimento da mesma. Isso pode ser útil em situações como validação de entrada do usuário ou alocação dinâmica de memória. Encontrar o comprimento de uma string é uma tarefa comum em programação C e é importante entender como fazê-lo corretamente.
 
-## Como Fazer
+## Como fazer
 
-Para encontrar o comprimento de uma string em C, você pode usar a função `strlen()` da biblioteca `string.h`. Esta função leva uma string como parâmetro e retorna a quantidade de caracteres presentes nela. Veja um exemplo de código abaixo:
+Existem algumas maneiras de encontrar o comprimento de uma string em C. A primeira é usando a função `strlen`, que retorna o comprimento de uma string passada como argumento. Vejamos um exemplo:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char minha_string[] = "Olá, mundo!";
-    int comprimento = strlen(minha_string);
-    
-    printf("A string possui %d caracteres.", comprimento);
+    char str[20] = "Olá mundo!";
+    int comprimento = strlen(str);
+    printf("O comprimento da string '%s' é %d.", str, comprimento);
     return 0;
 }
-```
-
-A saída deste código será:
 
 ```
-A string possui 12 caracteres.
+
+**Saída:**
+
+``` 
+O comprimento da string 'Olá mundo!' é 10.
 ```
 
-Você também pode encontrar o comprimento de uma string manualmente, iterando sobre cada caractere até encontrar o caractere nulo (`\0`), que indica o final da string. Confira o exemplo abaixo:
+Além disso, é possível encontrar o comprimento de uma string usando um loop até que o caractere nulo (`\0`) seja encontrado, indicando o final da string. Vejamos um exemplo:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    char minha_string[] = "Olá, mundo!";
+    char str[20] = "Olá mundo!";
     int comprimento = 0;
-    
-    // Itera sobre a string até encontrar o caractere nulo
-    while(minha_string[comprimento] != '\0') {
+    int i = 0;
+    while (str[i] != '\0') {
         comprimento++;
+        i++;
     }
-    
-    printf("A string possui %d caracteres.", comprimento);
+    printf("O comprimento da string '%s' é %d.", str, comprimento);
     return 0;
 }
+
 ```
 
-A saída será a mesma que a do primeiro exemplo.
+**Saída:**
+
+``` 
+O comprimento da string 'Olá mundo!' é 10.
+```
 
 ## Deep Dive
 
-A função `strlen()` na verdade conta a quantidade de caracteres até o caractere nulo, por isso ela não contabiliza o próprio caractere nulo, mas apenas os caracteres que o precedem. Além disso, é importante ressaltar que essa função não conta apenas letras, mas sim qualquer caractere presente na string, incluindo espaços em branco e caracteres especiais.
+Ao trabalhar com strings em C, é importante lembrar que o caractere nulo (`\0`) é usado para indicar o final de uma string. Ele é adicionado automaticamente no final das strings, portanto, quando usamos a função `strlen`, ela não inclui o caractere nulo no comprimento total da string. Isso significa que o comprimento retornado por `strlen` é o número de caracteres reais na string, excluindo o caractere nulo.
 
-Outra coisa a ser considerada é que o tipo de dado utilizado para armazenar o comprimento da string é o `int`, portanto, a quantidade de caracteres que uma string pode ter é limitada pelo tamanho máximo de um `int`. Se a sua string for maior que isso, ela será cortada e o comprimento retornado será um valor incorreto.
+Além disso, é importante lembrar que as strings em C são arrays de caracteres, portanto, o tamanho máximo de uma string será determinado pelo tamanho máximo de um array. Se você tentar criar uma string que exceda esse tamanho, poderá ocorrer um erro na execução do programa.
 
-## Veja Também
+## Veja também
 
-- [Como usar strings em C](https://www.programiz.com/c-programming/c-strings)
-- [Função `strlen()` da biblioteca `string.h`](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Tutorial completo de C](https://www.cprogramming.com/tutorial/c-tutorial.html)
+- [Referência da função `strlen` na documentação da biblioteca C](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_72/rtref/strlen.htm)
+- [Guia completo sobre strings em C](https://www.studytonight.com/c/string-in-c.php)
+- [Tutorial de alocação dinâmica de memória em C](https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/)

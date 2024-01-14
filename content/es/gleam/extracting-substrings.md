@@ -1,34 +1,45 @@
 ---
 title:    "Gleam: Extrayendo subcadenas"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Extraer subcadenas es una habilidad esencial para cualquier programador, ya que permite manipular y trabajar con cadenas de texto de manera más eficiente. Con Gleam, esta tarea se vuelve aún más sencilla gracias a su sintaxis intuitiva y herramientas específicamente diseñadas para trabajar con cadenas.
+ Extraer subcadenas o subconjuntos de una cadena de texto es una tarea común en la programación. Puede ser útil para separar información específica de una cadena o para manipular datos de manera más eficiente. En este artículo, exploraremos cómo podemos hacer esto utilizando la programación en Gleam. 
 
 ## Cómo hacerlo
+En Gleam, podemos usar la función `String.substr` para extraer subcadenas de una cadena de texto. Esta función toma dos parámetros: el índice de inicio y el índice de fin de la subcadena que queremos extraer. Veamos un ejemplo de cómo extraer la palabra "Gleam" de una cadena de texto:
 
-Para extraer una subcadena en Gleam, utilizamos la función `slice()` que toma como argumentos la cadena original, la posición inicial y la posición final de la subcadena que queremos extraer. Por ejemplo, si queremos extraer los caracteres de la posición 2 a la 7 de la cadena "Gleam es increíble", escribimos lo siguiente:
-
-```Gleam
-slice("Gleam es increíble", 2, 7)
+``` Gleam
+let texto = "¡Hola desde Gleam!"
+let subcadena = String.substr(texto, 11, 16)
 ```
 
-El resultado sería la subcadena "eam es".
+En este ejemplo, el parámetro `11` es el índice de inicio y el `16` es el índice de fin, que corresponden a la posición de los caracteres "G" y "m" en la cadena original. La variable `subcadena` ahora contendrá la subcadena "Gleam". 
 
-Además, con Gleam también podemos utilizar patrones y expresiones regulares para extraer subcadenas específicas de una cadena. Por ejemplo, si queremos extraer todas las palabras de una cadena que empiecen con la letra "h", podemos utilizar el patrón `r"h\w+"`, lo que nos devolvería una lista con todas las palabras que cumplan con ese patrón.
+También podemos usar la función `String.slice` para extraer subcadenas de forma similar, pasando el índice de inicio y el número de caracteres que queremos extraer. Veamos otro ejemplo:
+
+``` Gleam
+let texto = "Este artículo es de Gleam"
+let subcadena = String.slice(texto, 19, 5)
+```
+
+En este caso, la subcadena resultante sería "Gleam" nuevamente. 
 
 ## Profundizando
+Si queremos ser más específicos al extraer subcadenas, podemos usar expresiones regulares en lugar de índices de inicio y fin. Por ejemplo:
 
-Existen varios métodos y funciones en Gleam que nos permiten trabajar con subcadenas de manera aún más detallada. Por ejemplo, la función `contains()` nos permite verificar si una cadena contiene una subcadena específica, mientras que `split()` nos permite dividir una cadena en subcadenas más pequeñas utilizando un delimitador.
+``` Gleam
+let texto = "El número de teléfono es +123-456-789"
+let regex = regex.new("\\+[0-9]-[0-9]{3}-[0-9]{3}-[0-9]{3}")
+let subcadena = regex.match(texto) |> regex.captures |> List.get(0)
+```
 
-Otra funcionalidad interesante es la posibilidad de utilizar índices negativos en la función `slice()`, lo que nos permite extraer subcadenas desde el final de la cadena hacia el principio.
+En este ejemplo, hemos creado una expresión regular para encontrar el número de teléfono en el formato especificado. Luego, usamos el método `match` para encontrar la primera coincidencia en la cadena `texto`. Finalmente, usamos el método `captures` para obtener la lista de subcadenas coincidentes y la función `List.get` para obtener la primera subcadena (que en este caso sería el número de teléfono). 
 
 ## Ver también
-
-- Documentación oficial de Gleam para trabajar con cadenas: https://gleam.run/book/stdlib.html#string-manipulation
-- Ejemplos de código para extraer subcadenas en Gleam: https://github.com/gleam-lang/gleam/blob/master/.workspace/source/examples/Slice.gleam
-- Tutorial en español sobre cómo trabajar con cadenas en Gleam: https://dev.to/suricatala/como-trabajar-con-cadenas-de-texto-en-gleam-1dgo
+- [Documentación de la función `String.substr` en la web de Gleam](https://gleam.run/std/string.html#substr)
+- [Documentación de la función `String.slice` en la web de Gleam](https://gleam.run/std/string.html#slice)
+- [Documentación de expresiones regulares en Gleam](https://gleam.run/book/standard-library.html#regular-expressions)

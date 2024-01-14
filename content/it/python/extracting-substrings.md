@@ -1,52 +1,42 @@
 ---
 title:    "Python: Estrazione di sottostringhe"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-L'estrazione di sottostringhe è una delle funzionalità più utili di Python. Ti permette di ottenere parti specifiche di una stringa, come ad esempio le prime tre lettere o gli ultimi cinque caratteri. Questa abilità può essere utile in varie situazioni, come ad esempio la manipolazione di dati o la creazione di output personalizzato.
+L'estrazione di sottostringhe può essere una tecnica utile da utilizzare in molti casi di programmazione in Python. Ad esempio, potresti voler estrarre una parte specifica di una stringa più lunga o effettuare ricerche più precise all'interno di una stringa.
 
 ## Come fare
 
-Per estrarre una sottostringa, utilizza il seguente codice:
+Per estrarre una sottostringa in Python, puoi utilizzare il metodo `slice()` sull'oggetto stringa desiderato. Questo metodo accetta due argomenti: l'indice di inizio e l'indice di fine della sottostringa desiderata.
 
-```Python
-stringa = "Ciao a tutti!"
-sottostringa = stringa[5:9]
-print(sottostringa)
+```
+Python
+test_string = "Questo è un esempio di stringa."
+print(test_string[6:15])
+
+# Output: è un ese
 ```
 
-Questo codice stamperà "a tu" come output. Nella prima riga, abbiamo definito una stringa di testo. Quindi, nella seconda riga, abbiamo utilizzato la notazione degli indici per estrarre i caratteri dalla posizione 5 alla 9 (l'ultimo carattere non è incluso) e assegnarli alla variabile "sottostringa". Infine, nella terza riga, abbiamo stampato il valore della sottostringa.
+Puoi anche utilizzare il metodo `find()` per trovare una sottostringa all'interno di un'altra stringa e restituire l'indice iniziale della sottostringa desiderata.
 
-Puoi anche utilizzare questa notazione per estrarre i caratteri da una posizione specifica fino alla fine della stringa, come nell'esempio seguente:
-
-```Python
-stringa = "Buonanotte"
-sottostringa = stringa[4:]
-print(sottostringa)
 ```
+Python
+test_string = "Questo è un esempio di stringa."
+print(test_string.find("esempio"))
 
-Questo codice stamperà "anotte" come output.
+# Output: 10
+```
 
 ## Approfondimento
 
-La notazione degli indici per estrarre le sottostringhe è abbastanza versatile e ti consente di manipolare in modo creativo le tue stringhe. Inoltre, è possibile utilizzare valori negativi per estrarre i caratteri dalla fine della stringa, come mostrato nell'esempio seguente:
-
-```Python
-stringa = "Ciao a tutti!"
-sottostringa = stringa[-6:-1]
-print(sottostringa)
-```
-
-Questo codice stamperà "e tutti" come output. Sì, è possibile estrarre più di un carattere alla volta, semplicemente aumentando l'intervallo di indici.
+L'estrazione di sottostringhe può essere un'operazione molto utile quando si lavora con dati di testo. Ad esempio, puoi utilizzarla per manipolare URL, per ricerca di parole chiave o per filtrare dati.
 
 ## Vedi anche
 
-Ecco alcuni link utili per approfondire l'estrazione di sottostringhe in Python:
-
-- [La documentazione ufficiale di Python sugli indici per le stringhe](https://docs.python.org/3/library/stdtypes.html#sequencetypes)
-- [Un tutorial su come estrarre le sottostringhe in Python](https://www.programiz.com/python-programming/methods/string/slice)
-- [Un esempio di utilizzo delle sottostringhe in un problema di programmazione su HackerRank](https://www.hackerrank.com/challenges/python-string-slicing/problem)
+- Tutorial su come utilizzare la funzione `slice()` in Python: https://www.programiz.com/python-programming/methods/built-in/slice
+- Guida pratica su come utilizzare il metodo `find()` in Python: https://www.geeksforgeeks.org/python-string-find/

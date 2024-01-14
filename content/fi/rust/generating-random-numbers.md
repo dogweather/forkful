@@ -1,38 +1,53 @@
 ---
-title:    "Rust: Satunnaislukujen luominen"
+title:    "Rust: Satunnaislukujen generointi"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi käyttää satunnaislukugeneraattoria Rust-ohjelmoinnissa?
+## Miksi
 
-Satunnaislukugeneraattorit ovat hyödyllisiä monissa erilaisissa sovelluksissa, kuten pelikehityksessä, tietoturvan ylläpidossa ja satunnaisten testidata-aineistojen luomisessa. Rust tarjoaa tehokkaan ja turvallisen tavan toteuttaa satunnaislukugeneraattori.
+Miksi haluaisit luoda satunnaisia numeroita? Monille tämä saattaa kuulostaa turhalta tehtävältä, mutta satunnaisilla numeroilla on monia käyttötarkoituksia ohjelmoinnissa. Niitä voidaan käyttää esimerkiksi simulaatioissa, peleissä, salausavaimissa ja satunnaislukutesteissä.
 
-## Kuinka käyttää satunnaislukugeneraattoria Rust-ohjelmoinnissa?
+## Miten
 
-Rustissa satunnaislukugeneraattorin luominen tapahtuu käyttämällä ```rand```-kirjastoa. Se tarjoaa useita erilaisia satunnaislukugeneraattoreita erilaisiin käyttötarkoituksiin. Alla on esimerkki satunnaislukugeneraattorin luomisesta ja satunnaisen numeron generoinnista välillä 1-10.
+Rust-ohjelmointikieli tarjoaa sisäänrakennetun crate-ominaisuuden, joka mahdollistaa satunnaislukujen generoinnin helposti ja luotettavasti. Crate on Rustin pakettimanageri, ja sen avulla voidaan ladata ja hallinnoida ulkopuolisia kirjastoja ja toiminnallisuuksia.
+
+Aloitetaan luomalla uusi Rust-projekti ja lisäämällä crate-ominaisuus `rand` tiedostoon `Cargo.toml`:
 
 ```Rust
-use rand::{Rng, thread_rng};
+[dependencies]
+rand = "0.8.3"
+```
+
+Tämän jälkeen voimme generoida satunnaisia numeroita koodissa seuraavasti:
+
+```Rust
+use rand::prelude::*;
 
 fn main() {
-    let mut rng = thread_rng();
-    let random_number = rng.gen_range(1, 11);
-    println!("Satunnainen luku välillä 1-10: {}", random_number);
+    // Generoi satunnaisluku väliltä 1-100
+    let random_number = rand::thread_rng().gen_range(1, 101);
+    println!("Satunnaisluku: {}", random_number);
 }
 ```
 
-Tässä esimerkissä käytettiin ```gen_range```-metodia, joka luo satunnaisen numeron annetulla välillä. Voit myös käyttää muita metodeja, kuten ```gen``` joka palauttaa satunnaisen numeron koko unsigned integer-valikoimasta.
+Suoritettaessa koodi tulostaa esimerkiksi seuraavanlaisen tuloksen:
 
-## Syventävä tietopaketti: Satunnaislukugeneraattorit Rustissa
+```
+Satunnaisluku: 42
+```
 
-Rustin ```rand```-kirjasto sisältää useita erilaisia satunnaislukugeneraattoreita, kuten ```thread_rng```, ```StdRng```, ```OsRng``` ja ```EntropyRng```. Jokaisella näistä generaattoreista on omat vahvuutensa ja heikkoutensa erityyppisiin käyttötarkoituksiin.
+Kuten näkyy, crate-ominaisuuden avulla satunnaislukujen generointi on hyvin yksinkertaista Rustissa.
 
-Lisäksi Rustin ```rand```-kirjasto tarjoaa myös mahdollisuuden luoda omia satunnaislukugeneraattoreita. Tämä antaa sinulle täydellisen hallinnan generoinnin prosessista ja mahdollistaa räätälöityjen generaattoreiden luomisen tarpeisiisi.
+## Syvällisempi sukellus
 
-# Katso myös
+Rustin `rand` crate tarjoaa monipuolisia mahdollisuuksia satunnaislukujen generointiin. Esimerkiksi voimme generoida tietyn tyyppisiä numeroita, kuten liukulukuja tai booleeniarvoja. Lisäksi voimme määrittää oman seed-arvon, joka vaikuttaa satunnaislukujen järjestykseen.
 
-- [Rustin virallinen opas satunnaislukugeneraattoreiden käyttöön](https://doc.rust-lang.org/rand/rand/index.html)
-- [Rustin yhteisön ylläpitämä lista rand-kirjaston käyttämiseen liittyvästä tiedosta ja materiaalista](https://github.com/rust-random/rand/wiki)
-- [Esimerkki Rust-projekti käyttämällä satunnaislukugeneraattoria](https://github.com/raytran/rust-random)
+Crate sisältää myös erilaisia algoritmeja satunnaislukujen generointiin, jotka eroavat toisistaan esimerkiksi nopeuden tai satunnaisuuden suhteen. Tämän avulla voimme valita sopivan algoritmin riippuen siitä, mikä on tarkoituksenamme generoida.
+
+## Katso myös
+
+- [Rustin virallinen dokumentaatio satunnaislukujen generoinnista](https://doc.rust-lang.org/std/rand/index.html)
+- [`rand` crate GitHubissa](https://github.com/rust-random/rand)

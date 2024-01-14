@@ -1,72 +1,38 @@
 ---
-title:    "Swift: 새로운 프로젝트 시작하기"
+title:    "Swift: 새 프로젝트 시작하기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-다른 언어에서 Swift로 개발을 시작하는 이유, 시작하는 프로젝트에 참여하는 방법을 제공하고 해당 프로젝트에 대한 깊은 정보를 제공합니다.
+# 왜
 
-## 왜 Swift로 시작해야 할까? 
+새로운 프로젝트를 시작하는 이유가 있을까요? 프로그래밍은 늘 새로운 것을 배우고 동시에 무한한 가능성을 가지고 있어요. 새로운 프로젝트를 시작하는 것으로 여러분은 새로운 개념을 습득하고 창의력을 발휘할 수 있어요.
 
-Swift는 깨끗하고 직관적인 문법으로 개발자들에게 범용 프로그래밍 언어의 매력을 제공합니다. 또한, Apple의 주력 언어이기 때문에 iOS 및 macOS 앱 개발에 가장 적합한 언어입니다. 새로운 프로젝트를 시작하기에 적합한 언어로써, Swift를 배우는 것은 미래를 위한 투자라고 할 수 있습니다.
+## 시작하는 방법
 
-## Swift 개발하기
+첫 번째 단계는 Swift를 사용하여 새 프로젝트를 만드는 것입니다. 먼저 터미널에서 `swift`를 입력합니다. 그런 다음 `Welcome to Swift`라는 메시지가 표시되면 `>`라고 표시되는 새 줄이 표시됩니다. 이 줄에 여러분이 작성한 명령이 표시됩니다.
 
-아래 예제를 통해 Swift로 간단한 계산기 앱을 만들어보겠습니다. 코드 블록은 모두 "```Swift ... ```"으로 표시되며, 실제 코드를 작성할 때는 "```" 부분은 제외하고 입력해야 합니다.
-
-```Swift
-// 숫자를 입력받을 변수 선언
-var firstNumber: Int = 0
-var secondNumber: Int = 0
-// 사칙연산을 입력받을 변수 선언
-var operator: String = ""
-// 두 숫자 입력받기
-print("첫번째 숫자를 입력하세요:")
-if let input1 = readLine() {
-    if let number1 = Int(input1) {
-        firstNumber = number1
-    }
-}
-print("두번째 숫자를 입력하세요:")
-if let input2 = readLine() {
-    if let number2 = Int(input2) {
-        secondNumber = number2
-    }
-}
-// 연산자 입력받기
-print("사칙연산 중 하나를 입력하세요 (+, -, *, /):")
-if let inputOperator = readLine() {
-    if let op = inputOperator {
-        operator = op
-    }
-}
-// 사칙연산
-switch operator {
-case "+":
-    print("결과: \(firstNumber+secondNumber)")
-case "-":
-    print("결과: \(firstNumber-secondNumber)")
-case "*":
-    print("결과: \(firstNumber*secondNumber)")
-case "/":
-    if secondNumber != 0 {
-        print("결과: \(firstNumber/secondNumber)")
-    } else {
-        print("0으로 나눌 수 없습니다.")
-    }
-default:
-    print("잘못된 연산자를 입력하셨습니다.")
-}
+```
+Swift newProject.swift
 ```
 
-위와 같이 간단한 코드를 작성하면 숫자 두 개와 사칙연산을 입력받고, 해당 연산을 수행하여 결과를 출력하는 계산기 앱을 만들 수 있습니다. 이처럼 Swift는 간편한 문법을 통해 빠르고 효율적으로 앱을 개발할 수 있도록 도와줍니다.
+위 명령어를 입력해보세요. 그러면 `newProject.swift`라는 새 파일이 생성되고 편집기가 열릴 거예요. 이 파일에서 여러분의 코드를 입력하세요.
 
-## 깊이 들어가기
+```swift
+let greeting = "안녕하세요!"
+print(greeting)
+```
 
-새로운 프로젝트를 시작하려면 코드를 작성하는 것 외에도 프로젝트를 관리하는 방법을 알아야 합니다. Swift에서는 Xcode라는 개발 환경을 제공하며, 이를 통해 코드 작성과 디버깅, 앱 배포 등을 간편하게 할 수 있습니다. 또한, Swift의 큰 장점 중 하나인 강력한 타입 추론 기능을 활용하여 코드 작성에 있어서의 효율성을 높일 수 있습니다. 새로운 프로젝트를 시작할 때는 이러한 기능을 적극적으로 활용하여 프로젝트를 관리하는 것이 좋습니다.
+위와 같이 입력하고 저장한 다음 터미널에서 `swift run newProject.swift`를 입력하세요. 그러면 `Hello, World!`라는 출력값을 볼 수 있어요. 축하합니다! 여러분은 새로운 프로젝트를 성공적으로 시작했습니다.
 
-## 이어서 보기
+## 깊이 빠져보기
+
+새로운 프로젝트를 시작하는 것은 여러분의 창의력을 펼칠 수 있는 기회입니다. 여러분의 아이디어를 코드로 구현하여 실제로 작동하는 앱을 만들어보세요. Swift의 다양한 기능을 활용하고 세부적인 기능도 알아보세요. 여러분의 프로젝트가 성장하면서 당면한 문제들을 해결하는 방법을 배우고 더 많은 것을 배우게 될 거예요.
+
+# 또 다른 정보
 
 - [Swift 공식 홈페이지](https://swift.org/)
-- [Swift 튜토리얼](https://docs.swift.org/swift-book/GuidedTour/GuidedTour
+- [Swift 문서](https://docs.swift.org/swift-book/)
+- [프로그래밍 초보자를 위한 Swift 강좌](https://www.youtube.com/watch?v=scPJAnuS3Zk)

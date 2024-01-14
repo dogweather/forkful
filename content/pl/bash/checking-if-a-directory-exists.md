@@ -1,59 +1,47 @@
 ---
-title:    "Bash: Sprawdzanie istnienia katalogu"
+title:    "Bash: Sprawdzanie, czy istnieje katalog"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Każdy programista wie, że ważną częścią wykonywania zadań jest upewnienie się, czy dany katalog istnieje. Nie tylko zabezpiecza to nas przed błędami w kodzie, ale także pomaga w zarządzaniu plikami i folderami. W tym artykule dowiesz się, jak sprawdzić istnienie katalogu w Bashu.
+Często zdarza się, że przy pisaniu skryptów w Bash potrzebujemy sprawdzić, czy dany katalog istnieje czy też nie. Może to być konieczne do przeprowadzenia odpowiednich operacji lub wyboru odpowiedniego ścieżki. Dlatego warto poznać sposób na sprawdzenie istnienia katalogu w języku Bash.
 
 ## Jak to zrobić
 
-Aby sprawdzić, czy katalog istnieje w Bashu, użyjemy polecenia `test` z opcją `-d`, która sprawdza, czy dany argument jest katalogiem. Spójrzmy na przykładowy kod:
+Sprawdzenie, czy dany katalog istnieje, jest bardzo proste w Bash. Wystarczy użyć polecenia `test` lub skrótu `[` i przekazać jako argument `d`, co oznacza katalog (directory), oraz ścieżkę do katalogu, który chcemy sprawdzić. Na przykład:
 
-```Bash
-#!/bin/bash
-
-if test -d "folder"; then
-    echo "Katalog istnieje"
+```bash
+if [ -d ~/Documents ]; then
+  echo "Katalog ~/Documents istnieje."
 else
-    echo "Katalog nie istnieje"
+  echo "Katalog ~/Documents nie istnieje."
 fi
 ```
 
-W powyższym przykładzie, jeśli katalog `"folder"` istnieje, zostanie wydrukowany napis "Katalog istnieje". W przeciwnym razie, wydrukowany zostanie napis "Katalog nie istnieje".
+Powyższy przykład sprawdza, czy katalog "Documents" znajdujący się w katalogu domowym użytkownika istnieje. Jeśli istnieje, wyświetla odpowiedni komunikat, w przeciwnym razie wyświetla inny. Możemy również użyć polecenia `mkdir` w celu utworzenia katalogu, jeśli ten nie istnieje, na przykład:
 
-Możemy także użyć skróconego zapisu z opcją `-d` polecenia `test`:
-
-```Bash
-#!/bin/bash
-
-if [ -d "folder" ]; then
-    echo "Katalog istnieje"
+```bash
+if [ ! -d ~/Documents/NewFolder ]; then
+  mkdir ~/Documents/NewFolder
 else
-    echo "Katalog nie istnieje"
+  echo "Katalog ~/Documents/NewFolder już istnieje."
 fi
 ```
 
-Możemy również wykorzystać tę wiedzę w bardziej skomplikowanych skryptach, np. aby kopiować pliki tylko wtedy, gdy dany katalog istnieje:
+W powyższym przykładzie, jeśli katalog "NewFolder" nie istnieje, zostanie on utworzony. W przeciwnym razie wyświetli się odpowiedni komunikat.
 
-```Bash
-#!/bin/bash
+## Wnikliwa analiza
 
-if [ -d "folder" ]; then
-    cp file.txt folder 
-    echo "Plik został skopiowany"
-else
-    echo "Katalog nie istnieje, nie można skopiować pliku"
-fi
-```
+W języku Bash istnieje wiele innych warunkowych poleceń, które można użyć do sprawdzania istnienia katalogu, na przykład `if [ -e ~/Documents ]`, które sprawdza, czy dany plik lub katalog istnieje, lub `if [ -r ~/Documents ]`, które sprawdza, czy dany plik lub katalog jest dostępny do odczytu. Dzięki temu, że sama składnia języka Bash jest dość prosta i intuicyjna, możemy w błyskawiczny sposób sprawdzić wiele różnych warunków i podjąć odpowiednie działania.
 
-## Deep Dive
-
-W Bashu istnieje również wiele innych opcji polecenia `test` do sprawdzania różnych warunków, w tym m.in. czy plik istnieje (`-e`), czy jest pusty (`-s`) czy czytelny (`-r`). W przykładach powyżej skupiliśmy się jedynie na opcji `-d` do sprawdzania istnienia katalogu.
+Ważne jest również, aby pamiętać, że skrypt w Bash wykonywany jest w określonym katalogu, więc ścieżki do katalogów mogą być względne lub bezwzględne, co może mieć wpływ na wynik wykonywanych operacji. Dlatego zawsze warto sprawdzać i upewniać się, w jakim katalogu jesteśmy w danym momencie.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o poleceniu `test` i różnych opcjach, możesz zapoznać się z oficjalną dokumentacją [Basha](https://www.gnu.org/software/bash/manual/bash.html). Jeśli interesują Cię inne sposoby sprawdzania istnienia katalogu w Bashu, warto zajrzeć na [Stack Overflow](https://stackoverflow.com/), gdzie można znaleźć wiele przydatnych porad od innych programistów.
+- [Programowanie w Bash - samouczek od podstaw](https://www.rytmy.pl/bash/wprowadzenie-do-programowania-w-bash/)
+- [Oficjalna dokumentacja języka Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Kurs Bash w Codecademy](https://www.codecademy.com/learn/learn-the-command-line)

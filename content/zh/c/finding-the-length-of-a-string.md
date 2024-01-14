@@ -1,45 +1,86 @@
 ---
-title:    "C: 计算字符串的长度"
+title:    "C: 查找字符串长度"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-为了让计算机更好地处理文本数据，我们经常需要计算字符串的长度。这样做可以让我们更容易地操作和分析文本数据，例如检查是否有足够的空间来存储字符串，或者在字符串中搜索特定的字符。
 
-## 如何
-在C语言中，我们可以通过使用 `strlen()` 函数来计算字符串的长度。这个函数位于 `string.h` 头文件中，因此我们需要先包含它。
+在编程过程中，我们经常需要操作字符串。而要对字符串进行操作，了解字符串的长度是非常重要的。因此，了解如何找到字符串的长度在编程中是非常有用的。
+
+## 怎么做
+
+常用的方法是使用C语言中的内置函数`strlen()`来找到字符串的长度。下面是一个基本的例子：
 
 ```C
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<string.h>
 
-int main()
-{
-    char str[] = "你好，世界！"; // 要计算长度的字符串
-    int len = strlen(str); // 使用strlen()函数来计算长度
-    printf("字符串的长度是：%d\n", len); // 打印输出结果
-    return 0;
+int main(void) {
+  char str[] = "Hello World";
+
+  // 使用strlen()函数找到字符串的长度
+  int len = strlen(str);
+
+  // 输出字符串的长度
+  printf("字符串的长度为: %d\n", len);
+
+  return 0;
 }
 ```
 
-输出：
+输出结果：
 
 ```
-字符串的长度是：7
+字符串的长度为: 11
 ```
 
-## 深入了解
-在C语言中，字符串以 `\0` 结尾作为结束符，因此 `strlen()` 函数会在遇到 `\0` 时停止计算字符串的长度。这也意味着，如果我们在字符串中手动添加了 `\0`，那么 `strlen()` 函数会将其作为字符串的一部分，导致计算结果出现错误。
+除了使用`strlen()`函数，我们也可以利用循环来遍历字符串的每个字符，直到遇到字符串的末尾`\0`，来计算字符串的长度。下面是一个使用循环的例子：
 
-另外，`strlen()` 函数的返回值类型是 `size_t`，这是一种无符号整数类型，它的取值范围是整型数的一半，因此可以存储更大的数值。这在处理较长的字符串时特别有用。
+```C
+#include<stdio.h>
 
-## 参考链接
-- [strlen函数 | 菜鸟教程](https://www.runoob.com/cprogramming/c-function-strlen.html)
-- [size_t类型 | 菜鸟教程](https://www.runoob.com/cprogramming/c-data-types.html)
-- [C语言字符串函数 | 菜鸟教程](https://www.runoob.com/cprogramming/c-function-string.html)
+int main(void) {
+  char str[] = "Hello World";
+
+  // 声明变量用来计数字符串的长度
+  int len = 0;
+
+  // 使用循环遍历每个字符，直到遇到字符串的末尾
+  while(str[len] != '\0') {
+    // 计数加一
+    len++;
+  }
+
+  // 输出字符串的长度
+  printf("字符串的长度为: %d\n", len);
+
+  return 0;
+}
+```
+
+输出结果：
+
+```
+字符串的长度为: 11
+```
+
+## 深入探讨
+
+在C语言中，字符串实际上是一个字符数组，以`\0`结尾。因此，我们可以利用数组中每个元素的下标来访问字符串中的每个字符。`strlen()`函数就是利用这个原理来计算字符串的长度，它会从字符串的第一个字符开始遍历，直到遇到`\0`为止，并返回遍历的次数作为字符串的长度。
+
+另外，由于`strlen()`函数会遍历整个字符串，因此它的时间复杂度是`O(N)`，其中N为字符串的长度。因此，如果字符串太长，使用循环来计算字符串的长度可能更有效率。
+
+## 参考资料
+
+- [C语言教程-字符串的处理](https://www.runoob.com/cprogramming/c-string.html)
+- [string.h——字符串中各种函数的使用方法](https://blog.csdn.net/peng19921125/article/details/50458482)
+- [The C Library Reference Guide - strlen](https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.10.html)
 
 ## 参见
-- [C语言中的字符串 | 维基百科](https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2)
-- [C语言字符串处理 | 百度百科](https://baike.baidu.com/item/C%E8%AF%AD%E8%A8%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/2299598)
+
+- [C语言中的字符数组和字符串](https://www.jianshu.com/p/a8026f96b3c5)
+- [C语言中的循环结构](https://www.runoob.com/cprogramming/c-for-loop.html)
+- [C语言中的函数](https://www.runoob.com/cprogramming/c-functions.html)

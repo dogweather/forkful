@@ -1,66 +1,48 @@
 ---
-title:    "Haskell: テキストファイルを読む"
+title:    "Haskell: テキストファイルの読み込み"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを読み込むことは、Haskellプログラミングで非常に役立ちます。例えば、大量のデータを処理する際に読み込むことで、簡単に情報を取得することができます。また、テキストファイルを読み込むと、ファイル内のデータを変更することができるため、柔軟性の高いプログラミングが可能になります。
+テキストファイルを読むことの利点は、コンピューターから情報を取得する最も基本的で効率的な方法です。また、テキストファイルは読みやすく、他のプログラミング言語にも簡単に移植できるため、Haskellプログラマーにとって非常に便利です。
 
 ## 方法
 
-Haskellでテキストファイルを読み込むには、コードブロック内に ```Haskell ... ``` を使用します。以下に例を示します。
+以下のコードブロックには、Haskellでテキストファイルを読み取る方法の例が記載されています。コードの下には、実際の出力が表示されます。
 
 ```Haskell
-main = do
-  -- ファイルを読み込む
-  file <- readFile "sample.txt"
+import System.IO
 
-  -- ファイルの内容を出力する
-  putStr file
+main = do
+    handle <- openFile "sample.txt" ReadMode  -- ファイルを開く
+    contents <- hGetContents handle  -- ファイルの内容を取得する
+    putStr contents  -- 内容を表示する
+    hClose handle  -- ファイルを閉じる
 ```
 
-上記のコードでは、```sample.txt```というファイルを読み込み、その内容を出力しています。これで実行すると、ターミナルにファイルの内容が表示されるでしょう。
+実際の出力:
+
+```
+This is a sample text file.
+It contains some sample text.
+```
 
 ## 深堀り
 
-ここでは、より深くテキストファイルを読み込む方法について説明します。まずは、ファイルの内容を1行ずつ読み込む方法です。
-
-```Haskell
-main = do
-  -- ファイルを読み込む
-  file <- readFile "sample.txt"
-
-  -- ファイルの内容を1行ずつ表示する
-  let linesOfFile = lines file
-  mapM_ putStrLn linesOfFile
-```
-
-上記のコードでは、```lines```関数を使用してファイルの内容を1行ずつ取得し、```putStrLn```関数を使用して出力しています。
-
-次に、特定の文字列を含む行のみを取得する方法です。
-
-```Haskell
-main = do
-  -- ファイルを読み込む
-  file <- readFile "sample.txt"
-
-  -- 特定の文字列を含む行のみを抽出する
-  let filteredLines = filter ("haskell" `isInfixOf`) (lines file)
-  mapM_ putStrLn filteredLines
-```
-
-上記のコードでは、```filter```関数を使用して、「haskell」という文字列を含む行のみを抽出し、```putStrLn```関数を使用して出力しています。
+テキストファイルを読み取る際に、いくつかの注意点があります。まず、ファイルを開く際には`openFile`関数を使用し、第二引数には読み取りモードを指定する必要があります。また、ファイルを閉じる際には`hClose`関数を使用することで、プログラムの最後にファイルが閉じられないように注意する必要があります。
 
 ## 参考リンク
 
-- [Haskellでテキストファイルを扱う方法](https://www.haskell.org/haskellwiki/Handling_text_files)
-- [Haskellの基本的な文法](https://qiita.com/but-honestly/items/100e48aac1ff4a778445)
-- [Haskellでのリスト操作](https://qiita.com/satosystems/items/107dd6eaf63032fa0ddb)
-- [HaskellでのIO操作](https://qiita.com/CHT4U/items/1e22d0a51aa59504a936)
+- [Haskell: テキストファイルを読み込む方法](https://techacademy.jp/magazine/20893)
+- [Haskellの典型的なIOプログラム](https://qiita.com/nwtgck/items/217e3896709e0a683cbc)
+- [Haskellのファイル入出力について](https://qiita.com/yamamotoj/items/9c0b234737180b64ab97)
 
-## ご参考
+## 関連リンク
 
-- [Haskell Markdownの使い方](https://qiita.com/naoya@github/items/6d4931b14c4a65d61f7c)
+- [Markdownとは？メリットや書き方の基礎を解説](https://www.sejuku.net/blog/26114)
+- [Markdown記法チートシート](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)
+- [Markdownの使い方～基本文法～](https://qiita.com/tbpgr/items/989c6badefff69377da7)

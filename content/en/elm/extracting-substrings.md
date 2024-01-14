@@ -1,51 +1,62 @@
 ---
 title:    "Elm recipe: Extracting substrings"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with strings in any programming language, it is often necessary to extract a specific portion of the string. This could be to extract a name from an email address, to retrieve a date from a larger string, or to simply break down a string into smaller, more manageable parts. In Elm, there are built-in functions that allow for easy extraction of substrings, making it a useful tool for any programmer.
+Have you ever found yourself needing to extract a specific part of a string in your Elm program? Maybe you need to get the first few characters, or isolate a word in the middle. The ability to extract substrings can come in handy in many different scenarios.
 
 ## How To
 
-In order to extract a substring in Elm, the `String` module offers two main functions: `slice` and `dropLeft`. The first function, `slice`, takes in a starting index and an ending index, and returns the substring between those two points. On the other hand, `dropLeft` takes an integer representing the number of characters you want to skip and returns the remaining substring.
+Extracting substrings in Elm is quite simple. Let's say we have the following string: 
 
-```
-Elm String.slice example:
-
-import String
-
-email = "johnsmith@example.com"
-
-firstName = String.slice 0 4 email
--- Output: john
-
-lastName = String.slice 5 (String.length email) email
--- Output: smith
+```Elm
+let str = "Hello, world!"
 ```
 
-```
-Elm String.dropLeft example:
+To get the first five characters, we can use the `String.left` function:
 
-import String
-
-sentence = "I love programming in Elm."
-
-firstWord = String.dropLeft 2 sentence
--- Output: love programming in Elm.
+```Elm
+String.left 5 str
 ```
 
-As shown in these examples, the index used for slicing starts at 0 and is non-inclusive, meaning the character at the ending index will not be included in the substring.
+This would output "Hello". Similarly, to get the last four characters, we can use `String.right`:
+
+```Elm
+String.right 4 str
+```
+
+This would output "ld!". We can also extract a specific range of characters using `String.slice`, which takes in a starting index and an ending index:
+
+```Elm
+String.slice 7 11 str
+```
+
+This would output "worl".
 
 ## Deep Dive
 
-While the two built-in functions provide enough functionality for most substring needs, it is important to note that they both have some limitations. The `slice` function only works with strings, meaning it cannot be used for extracting substrings from other types such as lists or tuples. Additionally, both `slice` and `dropLeft` do not handle negative indexes, so it is necessary to manipulate the input string if the desired starting point is at the end of the string.
+Behind the scenes, Elm's string functions use the underlying JavaScript methods, which means they adhere to the Unicode standard. This ensures that string operations are consistent and reliable, regardless of the characters used in the string. It's important to note that the starting index of a string in Elm is always 0, unlike some other languages where it may be 1.
+
+Another useful function for extracting substrings is `String.fromInt`, which can be used to convert an integer value to a string:
+
+```Elm
+String.fromInt 1234
+```
+
+This would output "1234". You can even add optional padding to the string if needed:
+
+```Elm
+String.fromInt (String.padLeft 6 '0' 123)
+```
+
+This would output "000123".
 
 ## See Also
 
-- Elm String Documentation: https://package.elm-lang.org/packages/elm/core/latest/String
-- Substring in JavaScript: https://www.w3schools.com/jsref/jsref_substring.asp
-- Manipulate strings with String indices in Python: https://docs.python.org/3/library/stdtypes.html#string-methods
+- [Elm String documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [JavaScript String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

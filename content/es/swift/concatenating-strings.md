@@ -1,56 +1,61 @@
 ---
-title:    "Swift: Concatenando cadenas."
+title:    "Swift: Concatenando cadenas"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-La concatenación de cadenas es una técnica muy útil en programación Swift. Esta permite unir varias cadenas de texto en una sola, facilitando la tarea de mostrar información al usuario. En esta publicación, te mostraremos cómo puedes utilizar la concatenación de cadenas en tus proyectos de forma sencilla y efectiva.
+La concatenación de cadenas es una técnica fundamental en la programación que permite combinar dos o más cadenas de texto para formar una sola. Esta habilidad es esencial para poder crear aplicaciones y programas que muestren información de manera legible y coherente.
 
 ## Cómo hacerlo
 
-En Swift, la concatenación de cadenas se realiza utilizando el operador `+`. Por ejemplo:
+Hay varias formas de concatenar cadenas en Swift. Una de ellas es utilizando el operador `+`, que une dos cadenas para formar una nueva. Por ejemplo:
 
 ```Swift
-let nombre = "María"
-let saludo = "¡Hola, " + nombre + "!"
-print(saludo)
-
-// Output: ¡Hola, María!
+let nombre = "Carlos"
+let apellido = "García"
+let nombreCompleto = nombre + " " + apellido
+print(nombreCompleto)
 ```
 
-También puedes utilizar el operador `+=` para modificar una cadena existente:
+Este código producirá la salida "Carlos García" en la consola. También puedes utilizar el método `append()` para agregar una cadena al final de otra:
 
 ```Swift
-var saludos = "¡Hola!"
-saludos += " ¿Cómo estás?"
-print(saludos)
-
-// Output: ¡Hola! ¿Cómo estás?
+var mensaje = "Hola"
+mensaje.append(", ¿cómo estás?")
+print(mensaje)
 ```
 
-Además, puedes combinar diferentes tipos de datos utilizando la concatenación de cadenas. Por ejemplo:
+La salida será "Hola, ¿cómo estás?". Otro método útil es `joined(separator:)`, que te permite unir múltiples cadenas con un separador específico:
 
 ```Swift
-let edad = 26
-let descripcion = "Tengo " + String(edad) + " años."
-print(descripcion)
-
-// Output: Tengo 26 años.
+let palabras = ["Hola", "amigos", "!", "Bienvenidos"]
+let mensaje = palabras.joined(separator: " ")
+print(mensaje)
 ```
+
+Esta vez, la salida será "Hola amigos ! Bienvenidos".
 
 ## Profundizando
 
-Hay algunos detalles importantes que debes tener en cuenta al utilizar la concatenación de cadenas en Swift. Por ejemplo, si quieres concatenar un texto con un número, es necesario convertir el número a una cadena de texto utilizando `String()`. De lo contrario, obtendrás un error.
+Además de estas formas básicas de concatenar cadenas, también puedes utilizar el método `format()` para incluir variables dentro de una cadena. Este método utiliza marcadores de posición para indicar dónde se deben insertar las variables. Por ejemplo:
 
-Otra cosa a tener en cuenta es que los operadores `+` y `+=` solo funcionan con cadenas de texto y no con otros tipos de datos, como por ejemplo enteros o decimales.
+```Swift
+let nombre = "Ana"
+let edad = 24
+let mensaje = "Hola, mi nombre es \(nombre) y tengo \(edad) años."
+print(mensaje)
+```
 
-También puedes utilizar la interpolación de cadenas para insertar valores de variables en una cadena de texto. Esta técnica es muy útil y puedes ver cómo se utiliza en nuestro [tutorial sobre la interpolación de cadenas en Swift](https://www.misitioweb.com/tutorial-interpolacion-cadenas-swift).
+La salida será "Hola, mi nombre es Ana y tengo 24 años."
+
+Puedes utilizar diferentes tipos de datos para rellenar los marcadores de posición, como números enteros, decimales y booleans. También puedes formatear el resultado final utilizando patrones de formato.
 
 ## Ver también
 
-- [Tutorial sobre la interpolación de cadenas en Swift](https://www.misitioweb.com/tutorial-interpolacion-cadenas-swift)
-- [Documentación oficial de Swift sobre la concatenación de cadenas](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID523)
-- [Ejemplos de concatenación de cadenas en Swift](https://www.avanderlee.com/swift/string-interpolation-swift-5/)
+- Documentación oficial de Swift sobre concatenación de cadenas: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Tutorial sobre concatenación de cadenas en Swift: https://www.hackingwithswift.com/syntax/2-string-basics
+- Ejemplos de concatenación de cadenas en diferentes escenarios: https://codewithchris.com/how-to-concatenate-strings-in-swift/

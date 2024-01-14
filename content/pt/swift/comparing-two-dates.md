@@ -1,86 +1,38 @@
 ---
 title:    "Swift: Comparando duas datas"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que comparar duas datas em Swift?
+## Por que comparar duas datas em Swift?
 
-Ao desenvolver um aplicativo ou projeto em Swift, é comum a necessidade de comparar datas para determinar a lógica do programa ou simplesmente para exibir informações relevantes para o usuário. Portanto, entender como comparar duas datas de forma eficiente é uma habilidade importante para qualquer programador Swift.
+Comparar duas datas é uma tarefa comum na programação, principalmente em aplicativos que lidam com eventos, agendamentos e prazos. Ao comparar duas datas, é possível determinar qual delas é mais recente ou se elas são iguais, o que pode ser útil em diversas situações.
 
-# Como comparar duas datas em Swift?
+## Como comparar duas datas em Swift
 
-Para comparar datas em Swift, podemos utilizar o tipo `Date` e seus métodos e propriedades. Vamos ver um exemplo prático de como comparar duas datas simples:
+Comparar duas datas em Swift é relativamente simples, pois a linguagem possui uma classe chamada `Date` que permite a manipulação de datas. Vamos ver um exemplo de como comparar duas datas usando a biblioteca padrão do Swift:
 
 ```
-let date1 = Date()
-let date2 = date1.addingTimeInterval(86400) // adiciona um dia (86400 segundos) a partir da data atual
-
-if date1 < date2 { // compara se date1 é anterior a date2
-    print("Date1 é anterior a date2")
-} else if date1 > date2 { // compara se date1 é posterior a date2
-    print("Date1 é posterior a date2")
-} else { // caso nenhuma das opções anteriores seja verdadeira, significa que as datas são iguais
-    print("Date1 e date2 são iguais")
+let data1 = Date() // Data atual
+let data2 = Date(timeIntervalSinceNow: 86400) // Data com um dia de diferença
+if data1 < data2 {
+  print("data1 é mais antiga que data2")
+} else if data2 < data1 {
+  print("data2 é mais antiga que data1")
+} else {
+  print("as datas são iguais")
 }
-
-// saída: Date1 é anterior a date2
 ```
 
-Também podemos utilizar o método `compare()` para uma comparação mais detalhada, que retorna um enum `ComparisonResult` com os seguintes valores:
+Nesse exemplo, criamos duas datas: `data1`, que é a data atual, e `data2`, que é a data de amanhã. Usando o operador de comparação `<`, podemos verificar qual das duas datas é mais antiga. Se a condição for verdadeira, imprimimos uma mensagem indicando isso. Caso contrário, verificamos se `data2` é mais antiga que `data1` e imprimimos a mensagem correspondente. Se nenhuma das condições for verdadeira, quer dizer que as datas são iguais e imprimimos uma mensagem informando isso.
 
-- `.orderedAscending`: quando o valor à esquerda é menor que o valor à direita
-- `.orderedDescending`: quando o valor à esquerda é maior que o valor à direita
-- `.orderedSame`: quando os valores são iguais
+## Mergulho Profundo
 
-```
-let result = date1.compare(date2)
+Além do operador de comparação `<`, a classe `Date` possui outros métodos que podem ser úteis para comparação de datas, como `isEqual(to:)` e `compare(to:)`. Além disso, é possível especificar com mais detalhes o tempo que está sendo comparado, como somente a data ou somente a hora. É importante lembrar também que datas são representadas em formato UTC no Swift, o que pode causar algumas diferenças em relação ao fuso horário local.
 
-switch result {
-case .orderedAscending:
-    print("Date1 é anterior a date2")
-case .orderedDescending:
-    print("Date1 é posterior a date2")
-case .orderedSame:
-    print("Date1 e date2 são iguais")
-}
+## Veja também
 
-// saída: Date1 é anterior a date2
-```
-
-# Deep Dive: Comparando datas com precisão
-
-Na seção anterior, utilizamos o método `compare()` para comparar duas datas em Swift. No entanto, esse método leva em consideração a precisão das datas apenas até o segundo. Se quisermos uma comparação mais precisa, podemos utilizar o método `compare(_:toGranularity:)`.
-
-Este método leva em consideração a precisão especificada ao comparar as datas, levando em consideração variáveis como ano, mês, dia, hora, minuto e segundo. Podemos especificar a precisão desejada através da constante `Calendar.Component`, como por exemplo:
-
-- `.year`: para comparar apenas o ano
-- `.month`: para comparar ano e mês
-- `.day`: para comparar ano, mês e dia
-- `.hour`: para comparar ano, mês, dia e hora
-- `.minute`: para comparar ano, mês, dia, hora e minuto
-- `.second`: para comparar ano, mês, dia, hora, minuto e segundo
-
-```
-let date1 = Date()
-let date2 = Date().addingTimeInterval(86400) // adiciona um dia (86400 segundos) a partir da data atual
-
-let result = Calendar.current.compare(date1, to: date2, toGranularity: .day)
-
-switch result {
-case .orderedAscending:
-    print("Date1 é anterior a date2")
-case .orderedDescending:
-    print("Date1 é posterior a date2")
-case .orderedSame:
-    print("Date1 e date2 são iguais")
-}
-
-// saída: Date1 é anterior a date2
-```
-
-# Veja também
-
-- [Documentação oficial do Swift sobre o tipo `Date`](https://developer.apple.com/documentation/foundation/date)
-- [Guia de estudo oficial do Swift](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
+- [Documentação oficial do Swift sobre data e tempo](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial de como trabalhar com datas em Swift](https://www.ralfebert.de/snippets/ios/swift-dates/)

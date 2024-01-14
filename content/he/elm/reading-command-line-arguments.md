@@ -1,59 +1,79 @@
 ---
-title:    "Elm: קריאת פרמטרים שורת פקודה"
+title:    "Elm: קריאת ארגומנטים משורת הפקודה"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
 
-קריאת ארגומנטי פקודת שורת הפקודה היא כלי חיוני בכתיבת תוכניות במחשב. קריאת ארגומנטים מאפשרת לתוכנית לקבל מידע חיצוני ולהתאים את הריצה שלה בהתאם. כדי להיות מפתח תוכנה אפקטיבי, חשוב לדעת כיצד לקרוא ולהשתמש בארגומנטי פקודת שורת הפקודה.
+פיצ'ר קריאת ארגומנטי שורת פקודה באלם הוא חלק חשוב מהתכנן והעיבוד של קוד. הוא מאפשר לנו לקבל מידע מהמשתמש שמריץ את התוכנית שלנו. זה מאפשר לנו ליצור בעיות יעילות יותר ולהתאים את התוכנית לצרכיו של המשתמש.
 
-## איך לעשות:
+## איך לעבוד עם פקודות שורת פקודה באלם
 
-נתחיל עם דוגמת קוד של Elm לקריאת ארגומנטי פקודת שורת הפקודה:
+כדי לקרוא ארגומנטי שורת הפקודה באלם, נצטרך להשתמש בפונקציה מובנית שנקראת "command". ניתן להשתמש בפונקציה זו כדי לקבל את הארגומנטים כפרמטרים לתוכנית שלנו. לדוגמה:
 
 ```Elm
-import Html exposing (text)
+module Main exposing (main)
+
 import Platform exposing (command)
 
+
+-- הקבלת הארגומנטים כפרמטרים לתוכנית
+main : Program Flags
 main =
-  Platform.worker {init = init, update = update, subscriptions = always Sub.none}
+    Platform.worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
 
+
+-- האתחול
+init : () -> (Model, Cmd Msg)
+init _ =
+    ({ text = "" }, Cmd.none)
+
+
+-- עדכון המודל
 type Msg
-  = GotArguments (List String)
-  | NoArguments
-
-type alias Model =
-  { arguments : List String
-  , output : String
-  }
-
-init : (Model, Cmd Msg)
-init =
-  ( { arguments = []
-    , output = ""
-    }
-  , command NoArguments
-  )
+    = ReadCommand String
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
-  case msg of
-    GotArguments arguments ->
-      ( { model | arguments = arguments, output = "Got arguments: " ++ String.join ", " arguments }
-      , Cmd.none
-      )
-    NoArguments ->
-      ( model, Cmd.execute GotArguments (List.fromArray argList) )
+    case msg of
+        ReadCommand command ->
+            ({ model | text = command }, Cmd.none)
+
+
+-- כפתורים לשליחת פקודות מהקליינט
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.batch
+        [ command ReadCommand
+        ]
+        
+        
+-- הצגת המודל
+type alias Flags =
+    { init : () }
+
+type alias Model =
+    { text : String }
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ div [] [ text "שורת הפקודה:" ]
+        , div [] [ input [ onInput ReadCommand ] [] ]
+        , div [] [ text ("הארגומנטים שקלטת: " ++ model.text) ]
+        ]
 ```
 
-בדוגמה זו, אנחנו משתמשים בפונקציה המובנית command להפעלת פקודת sh באמצעות ארגומנטים שתוכננו מראש.
+ריצה ופלט: כאשר נכניס פקודה לתיבת הקלט ונלחץ על "Enter", נוכל לראות את הארגומנטים שנקלטו בתיבת התוכן שלנו.
 
-כאשר התוכנית שלנו תיפעל, היא תיקח את הארגומנטים מפקודת השורת הפקודה ותעדכן את המודל עם הארגומנטים החדשים ותציג אתם על האתר. הקוד בלשון אלמן מאפשר לנו לנהל את הארגומנטים החיצוניים ולהתאים את התוכנית שלנו בהתאם.
+## העמקה נוספת
 
-## העמקה:
-
-לקרוא ולהשתמש בארגומנטי פקודת שורת הפקודה מאפשר לנו לבנות תוכניות יישומיות פורצות דרך ועקביות. בנוסף, זה גם מאפשר לנו ליצור תוכניות שקלות לתחזק ולאפשר שיתוף קבצים ותמונות חיצוניים מבלי להפחית את ביצועי התוכנית.
-
-אנחנו
+פקודה של תוכנית אלם מכילה כל מיני ארגומנטים נוספים, כגון ארגומנטים נוספים להפעלת תוכניות. ניתן למצוא את כל הפקודות הללו בקובץ README ש

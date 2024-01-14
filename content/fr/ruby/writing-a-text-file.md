@@ -1,46 +1,42 @@
 ---
-title:    "Ruby: Écriture d'un fichier texte"
+title:    "Ruby: Écrire un fichier texte"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Il y a de nombreuses raisons pour lesquelles quelqu'un pourrait vouloir écrire un fichier texte en programmation Ruby. Cela peut être utile pour stocker des données, créer des fichiers de configuration, ou même pour générer des rapports.
+Écrire un fichier texte est une tâche courante en programmation, que ce soit pour stocker des données, générer un rapport ou créer une interface utilisateur simple. Dans cet article, nous allons explorer comment écrire un fichier texte en utilisant le langage de programmation Ruby.
 
 ## Comment faire
 
-Pour écrire un fichier texte en Ruby, il faut d'abord ouvrir un flux de données en utilisant la méthode `File.open()`. Ensuite, on peut écrire du contenu dans le fichier en utilisant la méthode `puts` tout en prenant soin de spécifier le flux de données sur lequel on veut écrire. Enfin, il faut fermer le fichier en utilisant la méthode `close`.
-
-Voici un exemple de code :
+Il y a plusieurs façons d'écrire un fichier texte en Ruby, mais la méthode la plus simple consiste à utiliser la méthode `File.open`. Voici un exemple de code :
 
 ```Ruby
-# Ouvre un fichier en mode écriture
-fichier = File.open("mon_fichier.txt", "w")
-
-# Ecrit un message dans le fichier
-fichier.puts "Bonjour à tous ! Je suis en train d'écrire un fichier texte."
-
-# Ferme le fichier
-fichier.close
+File.open("nouveau_fichier.txt", "w") do |fichier|
+  fichier.puts "Ce texte sera écrit dans le fichier."
+  fichier.puts "Vous pouvez également ajouter autant de lignes que vous le souhaitez."
+end
 ```
 
-Et voici le contenu du fichier "mon_fichier.txt" après l'exécution du code ci-dessus :
+Ce code crée un nouveau fichier appelé "nouveau_fichier.txt" et y écrit deux lignes de texte. La première ligne utilise la méthode `puts` pour ajouter le texte au fichier, tandis que la seconde ligne utilise la même méthode mais avec une syntaxe plus courte.
 
-```
-Bonjour à tous ! Je suis en train d'écrire un fichier texte.
-```
+Une fois que vous avez exécuté ce code, vous devriez voir un nouveau fichier texte dans le même dossier que votre code Ruby, qui contient les deux lignes de texte que vous avez ajoutées. 
 
 ## Plongée en profondeur
 
-Il y a plusieurs choses à prendre en compte lors de l'écriture d'un fichier texte en Ruby. Tout d'abord, il est important de spécifier le mode d'écriture du fichier, qui peut être "w" pour écriture, "a" pour ajout, ou "r+" pour lecture et écriture.
+Si vous souhaitez ajouter du contenu à un fichier existant plutôt que d'en créer un nouveau, vous pouvez utiliser la méthode `File.write`. Cette méthode prend deux arguments : le nom du fichier et le contenu à écrire. Voici un exemple de code :
 
-Il est également possible de spécifier un encodage pour le fichier en utilisant la méthode `File.open()` avec l'option `:encoding`. Cela peut être utile lorsque l'on travaille avec des caractères spéciaux.
+```Ruby
+File.write("mon_fichier.txt", "Ceci ajoute du contenu à mon fichier.")
+```
 
-Il est également possible de gérer les erreurs lors de l'écriture du fichier en utilisant des blocs `begin`, `rescue` et `ensure`. Cela permet de s'assurer que le fichier sera fermé même en cas d'erreur lors de l'écriture.
+Cette méthode écrira "Ceci ajoute du contenu à mon fichier." à la fin du contenu existant dans le fichier "mon_fichier.txt". Si vous voulez remplacer tout le contenu du fichier, vous pouvez utiliser la méthode `File.write` seule, sans spécifier le contenu existant.
 
 ## Voir aussi
 
-- La documentation officielle sur l'écriture de fichiers en Ruby : https://ruby-doc.org/core-2.7.2/File.html
-- Un tutoriel sur l'écriture de fichiers en Ruby : https://www.learnrubyonline.org/en/lessons/13
+- [La documentation Ruby](https://www.ruby-lang.org/fr/documentation/) 
+- [Un tutoriel sur l'écriture de fichiers en Ruby](https://www.rubyguides.com/2018/08/writing-files-in-ruby/)
+- [La page "File" de Ruby-Doc](https://ruby-doc.org/core-2.6.3/File.html)

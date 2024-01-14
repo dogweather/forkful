@@ -1,85 +1,51 @@
 ---
 title:    "Elm: Lendo argumentos da linha de comando"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que ler argumentos da linha de comando em Elm?
 
-Ler argumentos da linha de comando é uma habilidade importante para qualquer programador Elm, pois isso permite que o seu programa interaja com o usuário de maneira mais dinâmica e personalizada. Além disso, entender como trabalhar com argumentos da linha de comando pode ser útil para a construção de aplicativos de linha de comando e integração com outras ferramentas.
+Ler argumentos da linha de comando pode ser útil para diversos projetos em Elm, como a criação de ferramentas de linha de comando ou a comunicação com outras linguagens. Além disso, compreender essa funcionalidade pode expandir suas habilidades como programador Elm.
 
-## Como fazer isso em Elm
+## Como fazer:
 
-Em primeiro lugar, precisamos importar o módulo `Platform.Cmd` para lidar com comandos da linha de comando. Em seguida, utilizamos a função `Cmd.get` para obter os argumentos passados pela linha de comando. Por exemplo, se quisermos imprimir o primeiro argumento passado, podemos fazer da seguinte maneira:
+Para ler argumentos da linha de comando em Elm, vamos utilizar a função `Platform.worker`, que permite a comunicação entre o código em Elm e o JavaScript. Dentro dessa função, acessamos os argumentos através da propriedade `worker.args` e podemos manipulá-los de acordo com nossas necessidades.
 
-```Elm
-module Main exposing (main)
+```
+Elm.worker
+  { init = init
+  , update = update
+  , subscriptions = subscriptions
+  , view = view
+  }
 
-import Platform.Cmd exposing (Cmd, CmdMsg)
-import Platform.Sub exposing (Sub)
-import Process
-import Html exposing (text)
+port args : String -> Cmd msg
+-- Porta de entrada para receber os argumentos
 
-
-type alias Model =
-    { argumento : String }
-
-
-type Msg
-    = AtualizarArgumento String
-    | Cmd Falha
-    | AtualizarCmdMsg CmdMsg
-
-
-main : Program () Model Msg
+main : Program Never Model
 main =
-    Platform.program
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
-
-
--- Inicializa o modelo com o primeiro argumento ao executar o programa
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( Model "", Cmd.none )
-
-
--- Lida com as mensagens recebidas pelo programa
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        AtualizarArgumento argumento ->
-            ( { model | argumento = argumento }, Cmd.none )
-
-        Cmd Falha ->
-            ( model, Cmd.none )
-
-        AtualizarCmdMsg cmdMsg ->
-            case cmdMsg of
-                CmdMsg -> model |> Process.spawn (AtualizarArgumento <| Process.Arg0 cmdMsg) |> (,) model
-
--- Define as subscrições do programa
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.batch []
-
--- Define como o modelo deve ser exibido
-view : Model -> Html Msg
-view model =
-    text model.argumento
+  Platform.worker
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
+    , view = view
+    , args = Decode.string
+          |> Task.perform (\_ -> Error "Sem argumentos") Success
+          |> Command.map String.trim
+    }
 ```
 
-Ao executar o programa com o argumento `Hello`, a saída será `Hello` na tela.
+O código acima define uma função `port`, que será utilizada como porta de entrada para receber os argumentos em formato de `String`. Em seguida, no `main`, utilizamos a função `Decode.string` para decodificar os argumentos recebidos e realizar operações com eles. Vale notar que, se nenhum argumento for passado, será retornado um resultado de erro.
 
-## Mergulho profundo
+## Aprofundando:
 
-Ao trabalhar com argumentos da linha de comando em Elm, vale ressaltar que o módulo `Platform.Cmd` também possui outras funções úteis para lidar com comandos, como `Cmd.map` e `Cmd.batch`. Além disso, é possível acessar argumentos específicos utilizando as funções `Process.ArgN`, onde "N" representa o número do argumento desejado. Também é importante lembrar que, ao utilizar comandos como `Msg` em sua aplicação, deve-se lidar com possíveis falhas utilizando a mensagem `Cmd Falha`.
+Para entender melhor o processo de leitura de argumentos da linha de comando em Elm, é importante conhecer as funções relacionadas a essa tarefa. Além da `Platform.worker`, que mencionamos anteriormente, existe também a função `Platform.programWithFlags`, que facilita o envio de argumentos durante a inicialização do programa. Outra função útil é a `Platform.command`, que permite a execução de comandos por parte do usuário. É possível encontrar mais informações sobre essas funções na documentação oficial do Elm.
 
-## Veja também
+## Veja também:
 
-- [Documentação do módulo Platform.Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- [Documentação do módulo Process](https://package.elm-lang.org/packages/elm/core/latest/Process)
+- Documentação oficial do Elm sobre `Platform.worker`: https://package.elm-lang.org/packages/elm/core/latest/Platform#worker
+- Artigo sobre como ler argumentos da linha de comando em Elm: https://medium.com/@theabhishekpanwar/reading-command-line-arguments-in-elm-f4271748c43f
+- Tutorial passo a passo para criar uma ferramenta de linha de comando em Elm: https://medium.com/@dannman/cross-platform-command-line-tool-in-elm-part-1-eb6b81012d28

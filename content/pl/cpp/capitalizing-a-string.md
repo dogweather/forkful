@@ -1,43 +1,54 @@
 ---
-title:    "C++: Zapisywanie ciągu znaków wielkimi literami"
+title:    "C++: Zmiana wielkości litery w ciągu znaków"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Niejednokrotnie przy tworzeniu aplikacji czy gier, chcemy aby wyświetlane teksty były czytelne dla użytkownika. Jednym ze sposobów na to jest poprawne wykorzystanie wielkich liter w tekście. W tym artykule opiszemy jak w prosty sposób przekształcić tekst tak, aby zawierał tylko wielkie litery.
+Niedawno pewnie spotkaliście się z sytuacją, gdy musieliście zmienić napis na dużą literę w C++. Może to być nazwa użytkownika, tytuł artykułu lub dowolny inny ciąg znaków, który trzeba nagle "zabolować". Dlaczego warto poznać sposób na kapitalizację napisu w C++? Sprawia to, że nasze programy mają bardziej profesjonalny wygląd i są bardziej przyjemne dla oka.
 
-## Jak To Zrobić
+## Jak to zrobić
+
+W celu kapitalizacji napisu w C++, musimy użyć funkcji `toupper()` z biblioteki `<cctype>`. Poniżej znajduje się przykładowy kod, który pokazuje, jak to zrobić:
 
 ```C++
 #include <iostream>
 #include <string>
 #include <cctype>
 
-std::string capitalize(std::string str) {
-  for (int i = 0; i < str.length(); i++) {
-    str[i] = toupper(str[i]);
-  }
-  return str;
-}
-
 int main() {
-  std::string text = "wyraz do kapitalizacji";
-  std::cout << capitalize(text) << std::endl;
-  // Output: WYRAZ DO KAPITALIZACJI
+  std::string napis = "witaj świecie";
+
+  // Kapitalizacja pierwszej litery
+  napis[0] = toupper(napis[0]);
+  std::cout << napis << std::endl;
+
+  // Kapitalizacja całego napisu
+  for (int i = 0; i < napis.length(); i++) {
+    napis[i] = toupper(napis[i]);
+  }
+  std::cout << napis << std::endl;
+
   return 0;
 }
 ```
 
-Kod powyżej wykorzystuje funkcję `toupper()` z biblioteki `cctype`, która zamienia pojedynczą literę na jej odpowiednik z wielką literą. Funkcja `capitalize()` iteruje po każdej literze w tekście i przekazuje ją do `toupper()`, a następnie zwraca przekształcony tekst.
+**Output**:
+```
+Witaj świecie
+WITAJ ŚWIECIE
+```
 
-## Deep Dive
+Jako wynik otrzymujemy kapitalizację pierwszej litery lub całego napisu, w zależności od naszych potrzeb.
 
-Wielkość liter w tekście jest określana przez standard Unicode. W przypadku języka angielskiego, funkcja `toupper()` działa poprawnie i zamienia litery na ich odpowiedniki z wielką literą. Jednakże w innych językach, jak na przykład polski, funkcja ta może nie działać prawidłowo. W takim przypadku, zaleca się użycie funkcji `std::locale` w celu ustalenia poprawnego kodowania znaków.
+## Głębszy wgląd
 
-## Zobacz również
+Co dzieje się wewnątrz funkcji `toupper()`? Głównym zadaniem tej funkcji jest zmiana podanej litery na jej odpowiednik z dużej litery. Jeśli jednak nasz napis zawiera polskie znaki, warto pamiętać o tym, że funkcja ta działa tylko na literach angielskiego alfabetu. Dlatego warto upewnić się, że nasz napis nie zawiera polskich znaków przed użyciem funkcji `toupper()`.
 
-- [Dokumentacja `toupper()` w języku C++](https://en.cppreference.com/w/cpp/string/byte/toupper)
-- [Dokumentacja klasy `std::locale`](https://en.cppreference.com/w/cpp/locale/locale)
+## Zobacz też
+
+- Dokumentacja do funkcji `toupper()` w bibliotece `<cctype>`: https://www.cplusplus.com/reference/cctype/toupper/
+- Przykłady zastosowań kapitalizacji w C++: https://www.programiz.com/cpp-programming/library-function/cctype/toupper

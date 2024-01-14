@@ -1,62 +1,50 @@
 ---
-title:    "C: Löschen von Zeichen, die einem Muster entsprechen."
+title:    "C: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Das Löschen von Zeichen basierend auf einem bestimmten Muster ist eine häufig vorkommende Aufgabe in der Programmierung. Es kann helfen, Daten zu filtern und zu bereinigen oder auch das Erscheinungsbild von Texten oder Benutzereingaben zu verbessern. Daher ist es wichtig zu verstehen, wie man dieses Problem effektiv in C lösen kann.
+## Warum
 
-## How To
-Eine gängige Methode, um Zeichen nach einem bestimmten Muster zu löschen, ist die Verwendung von Schleifen und bedingten Anweisungen. Im Folgenden ist ein Beispielcode dargestellt, der alle Ziffern aus einer Zeichenkette entfernt:
+Manchmal muss man spezifische Zeichen aus einer Zeichenfolge löschen, sei es aus Gründen der Formatierung oder zur Datenbereinigung. In der Programmierung kann man dieses Problem mit dem Löschen von Zeichen entsprechend einem Muster lösen.
+
+## Wie
+
+Die gängige Methode zum Löschen von Zeichen basiert auf der Verwendung von Schleifen und bedingter Anweisungen. Wir durchlaufen die Zeichenfolge und überprüfen jedes Zeichen auf Übereinstimmung mit dem Muster. Wenn das Zeichen dem Muster entspricht, wird es aus der Zeichenfolge entfernt. Hier ist ein Beispiel in C-Code:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-int main() {
-    char eingabe[100];
-    printf("Geben Sie eine Zeichenkette ein: ");
-    scanf("%s", eingabe);
-
-    int laenge = strlen(eingabe);
-
-    // Schleife, die alle Zeichen durchläuft
-    for (int i = 0; i < laenge; i++) {
-
-        // Bedingung, um zu prüfen, ob es sich um eine Ziffer handelt
-        if (eingabe[i] >= '0' && eingabe[i] <= '9') {
-
-            // Verschiebe alle nachfolgenden Zeichen einen Platz nach vorne
-            for (int j = i; j < laenge; j++) {
-                eingabe[j] = eingabe[j + 1];
+void deleteChar(char *str, char pattern){
+    int i, j;
+    for(i = 0; str[i] != '\0'; i++){
+        if(str[i] == pattern){
+            for(j = i; str[j] != '\0'; j++){
+                str[j] = str[j+1];
             }
-            // Reduziere die Länge der Zeichenkette um eins,
-            // da ein Zeichen entfernt wurde
-            laenge--;
-            // Stelle sicher, dass das aktuelle Zeichen nochmal überprüft wird
             i--;
         }
     }
-    printf("Ergebnis: %s\n", eingabe);
+}
+
+int main(){
+    char string[] = "Hallo Welt!";
+    deleteChar(string, 'l');
+    printf("%s", string);
     return 0;
 }
 ```
-**Ausgabe:**
 
-Geben Sie eine Zeichenkette ein: Hallo1234Welt
-Ergebnis: HalloWelt
-
-In diesem Beispiel wird die Zeichenkette eingelesen und anschließend mit einer Schleife vollständig durchlaufen. Wenn ein Zeichen eine Ziffer ist, wird es verschoben und die Länge der Zeichenkette um eins reduziert. Dadurch wird das entsprechende Zeichen gelöscht. Am Ende wird das Ergebnis ausgegeben.
+Das obige Beispiel zeigt eine Funktion, die einzelne Zeichen aus einer Zeichenfolge entfernt, basierend auf einem übergebenen Muster. In diesem Fall wird jedes 'l' aus der Zeichenfolge "Hallo Welt!" entfernt. Die Funktion durchläuft die Zeichenfolge und entfernt jedes gefundene Zeichen, indem sie die folgenden Zeichen einen Index nach vorne verschiebt. Das Ergebnis wird dann auf der Konsole ausgegeben und "Hao Wett!" angezeigt.
 
 ## Deep Dive
-Man kann auch die Funktion `memmove()` aus der Standardbibliothek `string.h` verwenden, um eine Zeichenkette zu manipulieren. Diese Funktion ist jedoch etwas komplizierter zu verwenden, da sie nicht nur einen Teil der Zeichenkette, sondern die gesamte Zeichenkette verschieben kann. Daher ist es wichtig, sorgfältig mit den Argumenten umzugehen.
 
-Ein weiterer wichtiger Aspekt ist das Verständnis von Zeigerarithmetik. Um die Verschiebung von Zeichenkette zu Zeichenkette zu ermöglichen, werden Zeiger verwendet, die auf den Anfang und das Ende der Zeichenkette verweisen. Durch die Verwendung von Zeigerarithmetik kann man dann einzelne Zeichen aus der Zeichenkette auswählen und manipulieren.
-
-Die Verwendung von Funktionen aus der Standardbibliothek ist in der Regel effizienter und einfacher zu implementieren als manuelle Lösungen. Allerdings ist es wichtig, sich mit den Funktionen und Konzepten vertraut zu machen, um sie erfolgreich anwenden zu können.
+Es gibt jedoch noch weitere Möglichkeiten, Zeichen entsprechend einem Muster zu löschen, wie zum Beispiel die Verwendung von Zeichenkettenmanipulationsfunktionen wie `strtok()` oder `strchr()`. Diese Funktionen können auch verwendet werden, um mehrere Zeichen in einer Zeichenfolge zu entfernen. Es ist wichtig, auf die genaue Verwendung der jeweiligen Funktion zu achten, um unerwünschte Ergebnisse zu vermeiden.
 
 ## Siehe auch
-- [Offizielle Dokumentation für die Funktion `memmove()` (auf Englisch)](https://www.man7.org/linux/man-pages/man3/memmove.3.html)
-- [Beispielcode für den Einsatz von `memmove()` in C (auf Englisch)](https://www.programiz.com/c-programming/library-function/string.h/memmove)
+
+- [C-Referenz: String-Operationen](https://www.programiz.com/c-programming/string-handling-functions)
+- [Tutorial: Einführung in die Zeichenkettenmanipulation in C](https://www.guru99.com/c-strings.html)
+- [C-Programmierbeispiele für die Zeichenkettenmanipulation](https://www.geeksforgeeks.org/c-programming-language)

@@ -1,38 +1,58 @@
 ---
 title:    "Elixir: 文字列の連結"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-日本語のElixirプログラミングのブログ投稿
-
 ## なぜ
-文字列を連結することの利点を1〜2文で説明します。
 
-文字列を連結することは、複数の文字列を結合して1つの文字列にすることです。これにより、テキストデータを効率的に操作することができます。例えば、データベースのクエリを作成したり、Webアプリケーションのレスポンスを生成したりする際に、文字列の連結を使用することができます。
+文字列を連結することの理由は何でしょうか？文字列連結を行う理由について説明します。
 
-## 使い方
-```elixir
-string1 = "こんにちは"
-string2 = "Elixir"
-string3 = "の世界へようこそ"
- 
-concatenated = string1 <> string2 <> string3
-IO.puts(concatenated)
+文字列を連結することは、複数の文字列を一つの文字列にまとめることができるため、プログラミングでは非常に重要です。これにより、簡潔で効率的なコードを作成することができます。
+
+## 手順
+
+文字列を連結する方法はいくつかありますが、ここではElixirプログラミング言語を使用したコーディング例を紹介します。以下のコードブロック内にあるように、2つの文字列を連結する方法を示します。
+
+```Elixir
+str1 = "こんにちは、"
+str2 = " Elixirを学びましょう！"
+IO.puts str1 <> str2
 ```
 
-出力: 「こんにちはElixirの世界へようこそ」
+上記のコードを実行すると、以下のような出力が得られます。
 
-上記のように、```<>```演算子を使用して文字列を連結することができます。また、複数の変数を組み合わせて連結することもできます。
+```
+こんにちは、Elixirを学びましょう！
+```
+
+また、複数の文字列を同時に連結することもできます。
+
+```Elixir
+str1 = "私は"
+str2 = " Elixirを"
+str3 = "学びます！"
+IO.puts "#{str1}#{str2}#{str3}"
+```
+
+上記のコードを実行すると、以下のような出力が得られます。
+
+```
+私はElixirを学びます！
+```
 
 ## 深堀り
-文字列を連結することは非常に便利ですが、注意点もあります。例えば、大きな文字列を連結する際には、非常に多くのメモリを消費する可能性があります。また、連結する文字列の数が多いほど、処理時間も長くなる可能性があります。そのため、大量の文字列を連結する際には、代わりにリストを使用することが推奨されます。
 
-リストを使用すると、各文字列を別の要素として持つことができます。そして、最後に```List.join```関数を使用してリスト内の文字列を連結することができます。これにより、メモリ使用量や処理時間を削減することができます。
+文字列を連結する方法についてもう少し詳しく見てみましょう。文字列を連結する場合、様々な方法がありますが、いずれも基本的には同じことを行っています。つまり、複数の文字列を一つの文字列にまとめるということです。
+
+また、Elixirでは単純な文字列だけでなく、変数や式も連結することができます。今回紹介した方法以外にも、`String.concat/2`や`List.to_string/1`などの便利な関数が用意されているため、必要に応じて活用することができます。
 
 ## 参考リンク
 
-- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#string-concatenation)
-- [プログラミング言語Elixir入門](https://www.tweaktown.com/esports/6726:understanding-the-elixir-programming-language-is-important-for-esports-bettors/index.html)
-- [ElixirによるWebアプリケーション開発](https://docs.google.com/document/d/1gxe3Br0LYlb7KmYwZi28qiAJSIPFWcAVauo2fuUT7Qk/edit)
+ここでは文字列の連結について簡単に紹介しましたが、Elixirプログラミング言語についてもっと知りたい方は、以下のリンクを参考にしてください。
+
+- [Elixir公式サイト](https://elixir-lang.org/)
+- [Elixir School](https://elixirschool.com/ja/)
+- [Elixir入門](https://hiroki1117.github.io/elixir-book/)

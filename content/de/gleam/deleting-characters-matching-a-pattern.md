@@ -1,41 +1,43 @@
 ---
-title:    "Gleam: Löschen von Zeichen, die einem Muster entsprechen."
+title:    "Gleam: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-**## Warum**
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Methode, um bestimmte Daten aus einer Zeichenkette zu entfernen. Zum Beispiel kann es verwendet werden, um bestimmte Sonderzeichen oder Buchstaben aus einem Text zu entfernen, um ihn sauberer oder besser lesbar zu machen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann ein nützliches Werkzeug beim Programmieren sein, um unerwünschte oder überflüssige Daten zu entfernen. Es kann auch dazu beitragen, den Code übersichtlicher und besser lesbar zu machen. In diesem Blog-Beitrag zeigen wir Ihnen, wie Sie dies mit der Programmiersprache Gleam erreichen können.
 
-**## Wie geht es**
+## So geht's
 
-Um Zeichen in Gleam zu löschen, können Sie die Funktion `String.delete/2` verwenden. Sie erwartet zwei Argumente: die Zeichenkette, aus der die Zeichen gelöscht werden sollen, und das Muster, nach dem sie suchen soll.
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können Sie die Funktion `String.replace` verwenden. Diese Funktion nimmt zwei Argumente an, das zu durchsuchende String und das Muster, das Sie finden und ersetzen möchten. Wenn Sie nur Zeichen löschen möchten, können Sie das zweite Argument, das den Ersatzstring enthält, einfach leer lassen.
 
-```
-Gleam>String.delete("Hallo Welt", "l")
-"Hao Wett"
-```
-
-In diesem Beispiel werden alle Buchstaben "l" aus der Zeichenkette "Hallo Welt" gelöscht, was zu "Hao Wett" führt.
-
-Alternativ können Sie ein reguläres Ausdrucksmuster verwenden, um bestimmte Zeichen zu löschen.
-
-```
-Gleam>String.delete("Hallo Welt!", "[ ,!]")
-"HalloWelt"
+```Gleam
+my_string = "Hello World!"
+new_string = String.replace(my_string, "o", "")
 ```
 
-Hier werden alle Leerzeichen, Kommata und Ausrufezeichen aus der Zeichenkette entfernt.
+Das obige Beispiel würde alle Vorkommen des Buchstabens "o" in dem String "Hello World!" löschen und den Ergebnisstring "Hell Wrld!" zurückgeben.
 
-**## Tiefer eintauchen**
+Es ist auch möglich, mehrere Muster gleichzeitig zu löschen, indem Sie das zweite Argument als Liste anstelle einer einzelnen Zeichenkette übergeben. Zum Beispiel können Sie alle Vorkommen von "e" und "o" in einem String mit folgendem Code entfernen:
 
-Um tiefer in das Löschen von Zeichen in Gleam einzutauchen, sollten Sie das Modul `Gleam.String` genauer unter die Lupe nehmen. Hier finden Sie weitere nützliche Funktionen, um das Entfernen von Zeichen zu erleichtern, wie zum Beispiel `String.delete_all/2`, `String.replace/3` und `String.filter/2`.
+```Gleam
+my_string = "Hello World!"
+new_string = String.replace(my_string, ["e", "o"], "")
+```
 
-Es kann auch hilfreich sein, sich mit regulären Ausdrücken und deren Syntax vertraut zu machen, um noch präzisere Muster zum Löschen von Zeichen zu erstellen. Es gibt viele Ressourcen online, die dabei helfen können, wie z.B. [Regular-Expressions.info](https://www.regular-expressions.info/).
+Das Ergebnis wäre dann "Hll Wrld!".
 
-**## Siehe auch**
+## Tiefere Einblicke
 
-- [Gleam.String-Dokumentation](https://hexdocs.pm/gleam/gleam.String.html)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
+Wenn Sie mehr über die `String.replace`-Funktion erfahren möchten, können Sie in der offiziellen Gleam-Dokumentation nachlesen. Dort finden Sie weitere Informationen über die verschiedenen Möglichkeiten, die diese Funktion bietet, und Beispiele für deren Verwendung.
+
+Sie sollten auch beachten, dass die `String.replace`-Funktion immer eine neue Zeichenkette zurückgibt und den ursprünglichen String unverändert lässt. Wenn Sie also sicherstellen möchten, dass die Änderungen am neu erstellten String übernommen werden, müssen Sie diesen in einer neuen Variablen speichern oder den ursprünglichen String durch den neuen ersetzen.
+
+## Siehe auch
+
+- [Gleam-Dokumentation zur `String.replace`-Funktion](https://gleam.run/documentation/#string.replace)
+- [Offizielle Gleam-Website](https://gleam.run/)
+- [Gleam-Community auf Reddit](https://www.reddit.com/r/gleamlang/)

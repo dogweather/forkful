@@ -1,43 +1,54 @@
 ---
-title:    "Bash: Escrevendo testes"
+title:    "Bash: Escrevendo testes."
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes?
+## Por que escrever testes no Bash é importante?
 
-Escrever testes é uma parte essencial do desenvolvimento de software. Com testes bem escritos, podemos garantir que nosso código esteja funcionando corretamente e prevenir possíveis bugs. Além disso, testes também ajudam a documentar o comportamento esperado de nossas funções e tornam o processo de depuração mais fácil.
+Escrever testes é uma prática essencial para qualquer programador. No Bash, não é diferente. Testes garantem que o código está funcionando como esperado, evita erros e facilita a manutenção do código no futuro.
 
-## Como escrever testes em Bash
+## Como escrever testes no Bash?
 
-Escrever testes em Bash é simples e envolve o uso de comando `test` para verificar se uma determinada condição é verdadeira ou falsa. Aqui está um exemplo de como testar se uma variável é igual a um determinado valor:
+Existem diferentes formas de escrever testes no Bash, mas aqui vão duas opções comuns:
 
-```Bash
+1. Usando o comando `test`:
+
+```
 #!/bin/bash
-
-# Definindo variável
-nome="Pedro"
-
-# Testando se a variável é igual a "Pedro"
-if [ $nome = "Pedro" ]; then
-    echo "Variável 'nome' é igual a Pedro"
+# Teste com o comando test
+test -e arquivo.txt # Verifica se o arquivo existe
+if [ $? -eq 0 ]; then # Checa se o código de saída foi 0 (verdadeiro)
+  echo "Arquivo encontrado!"
+else
+  echo "Arquivo não encontrado."
 fi
 ```
 
-No código acima, usamos o operador de igualdade `=` dentro do comando `test` para verificar se a variável `nome` é igual a "Pedro". Caso a condição seja verdadeira, o código dentro do `if` será executado e a mensagem será impressa na tela.
+2. Usando o comando `[[`:
 
-Além disso, também podemos usar outras opções, como `-n` para verificar se uma variável não está vazia ou `-e` para verificar se um arquivo existe. Consulte a documentação do `test` para obter mais informações sobre os operadores e opções disponíveis.
+```
+#!/bin/bash
+# Teste com o comando [[
+if [[ -e arquivo.txt ]]; then # Verifica se o arquivo existe
+  echo "Arquivo encontrado!"
+else
+  echo "Arquivo não encontrado."
+fi
+```
 
-## Aprofundando em escrever testes
+É importante notar que no Bash, espaços e sinais de pontuação são significativos, então certifique-se de seguir a sintaxe correta para que seus testes funcionem corretamente.
 
-Uma boa prática ao escrever testes em Bash é usar o comando `set -e` no início do seu script. Isso garantirá que o script pare imediatamente caso algum comando falhe, o que ajuda a detectar e corrigir erros de forma mais rápida.
+## Profundidade: Escrevendo bons testes no Bash
 
-Além disso, também é possível usar a estrutura `if/else` para testar diferentes cenários e garantir que nosso código esteja lidando com situações imprevistas de forma adequada.
+Para escrever testes efetivos, é importante ter uma boa cobertura de código. Isso significa que seus testes devem abranger todas as possíveis situações e caminhos do seu código. Além disso, é importante manter seus testes atualizados conforme o seu código é alterado.
 
-Não se esqueça de também testar seu código manualmente antes de implementar os testes automatizados e sempre atualize os testes quando fizer alterações no seu código.
+Outra dica é nomear seus testes adequadamente para facilitar a identificação dos problemas em caso de falha. Além disso, é interessante utilizar ferramentas de cobertura de código para verificar quais partes do seu código não estão sendo testadas e, assim, garantir uma cobertura completa.
 
 ## Veja também
 
-- Documentação do comando `test`: https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html
-- Tutorial sobre testes em Bash: https://www.baeldung.com/linux/bash-test-equivalent
+- [Guia de referência do Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Documentação do comando test](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Test Driven Development (TDD) no Bash](https://technology.riotgames.com/news/test-driven-development-bash-scripting)

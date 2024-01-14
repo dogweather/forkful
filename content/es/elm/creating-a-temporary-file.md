@@ -1,34 +1,49 @@
 ---
-title:    "Elm: Creando un archivo temporal."
+title:    "Elm: Creando un archivo temporal"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué crear un archivo temporal en Elm
 
-Crear un archivo temporal puede ser útil en situaciones en las que se necesita almacenar datos temporalmente sin sobrescribir o afectar el archivo original. También puede ayudar a optimizar la gestión de memoria y mejorar el rendimiento del código.
+Crear archivos temporales puede ser una herramienta útil en la programación de Elm. Ya sea para trabajar con datos sensibles o para realizar una tarea específica, los archivos temporales pueden ser una solución efectiva. A continuación, te explicaremos cómo crear un archivo temporal en Elm.
 
-## Cómo hacerlo
+## Cómo crear un archivo temporal en Elm
 
-Crear un archivo temporal en Elm es sencillo utilizando la biblioteca *justgook/temporary*. Solo se necesita importar el módulo y utilizar la función `Temporary.file` para crear el archivo temporal:
+Crear un archivo temporal en Elm es bastante simple. Todo lo que necesitas es importar el módulo `File` y utilizar la función `tempFile`.
 
 ```Elm
-import Temporary exposing (file)
+import File exposing (tempFile)
 
-myTempFile = 
-  Temporary.file "myTempFile.txt" -- nombre del archivo temporal
-  (Temporary.WithContents "Hola mundo") -- contenido del archivo temporal
+tempFile : String -> Cmd msg
 ```
 
-## Profundizando
+La función `tempFile` toma como argumento una cadena de texto que será el nombre del archivo temporal a crear. También puedes proporcionar un segundo argumento opcional que especifica la ubicación del archivo. Si no se proporciona este argumento, el archivo se creará en la misma ubicación donde se ejecuta la aplicación Elm.
 
-La función `Temporary.file` toma dos argumentos: un *nombre* para el archivo temporal y una *acción* que especifica qué hacer con el archivo. En el ejemplo anterior, utilizamos la acción `Temporary.WithContents` para especificar que el contenido del archivo sea "Hola mundo". Sin embargo, también se pueden utilizar otras acciones, como `Temporary.Empty` para crear un archivo vacío o `Temporary.FromFile` para crear un archivo a partir de otro archivo.
+Ahora que sabes cómo llamar a la función `tempFile`, aquí hay un ejemplo de cómo usarla:
 
-Además, existe la opción de especificar un *directorio* en el cual se creará el archivo temporal utilizando la función `Temporary.fileInDirectory`. Esto puede ser útil cuando se desea tener mayor control sobre la ubicación del archivo temporal.
+```Elm
+import File exposing (tempFile)
+import Html
 
-## Ver también
+main =
+    Html.div []
+        [ Html.text "Creando archivo temporal..."
+        , tempFile "datos_sensibles.txt"
+        ]
+```
 
-- [Documentación de la biblioteca de Elm Temporary](https://package.elm-lang.org/packages/justgook/temporary/latest/)
-- [Tutorial de programación funcional con Elm](https://www.freecodecamp.org/news/learn-functional-elm-in-10-minutes-fc3aad6a2269/)
-- [Ejemplo práctico de creación de archivos temporales en Elm](https://github.com/elm/compiler/blob/master/Temporary.elm)
+El código anterior creará un archivo temporal llamado "datos_sensibles.txt" en la misma ubicación donde se ejecuta la aplicación Elm. Si deseas especificar una ubicación diferente, puedes usar el segundo argumento de la función `tempFile` como se mencionó anteriormente.
+
+## Profundizando en la creación de archivos temporales
+
+Para aquellos que quieran conocer más, aquí hay algunos detalles sobre cómo se crean los archivos temporales en Elm. La función `tempFile` utiliza una combinación de números aleatorios y la hora actual para generar un nombre único para el archivo temporal. Además, también se encarga de eliminar el archivo una vez que se cierra la aplicación o cuando se elimina manualmente mediante la función `File.delete` del módulo `File`.
+
+Una cosa importante a tener en cuenta es que los archivos temporales no son persistentes y se eliminan cada vez que se cierra la aplicación. Si necesitas que los datos contenidos en el archivo persistan, deberás guardarlos en una ubicación diferente.
+
+# Ver también
+- [Documentación de Elm sobre creación de archivos temporales](https://package.elm-lang.org/packages/elm/file/latest/File#tempFile)
+- [Tutorial de Elm: Trabajar con archivos](https://www.elm-tutorial.org/en/08-creating-projects/02-working-with-files.html)
+- [Ejemplo de creación de archivos temporales en Elm](https://gist.github.com/tusharmath/0b482601f8433d06ff2a7b4c4674f0a6)

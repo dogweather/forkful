@@ -1,55 +1,43 @@
 ---
-title:    "C++: Escribir pruebas"
+title:    "C++: Escribiendo pruebas"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas de código es importante
+## ¿Por qué escribir pruebas en C++?
 
-Escribir pruebas de código puede parecer una tarea tediosa y a menudo es una de las partes menos populares del proceso de desarrollo de software. Sin embargo, es una práctica esencial para asegurar la calidad de su código y garantizar que su software funcione como se espera.
+Escribir pruebas en C++ es una de las mejores prácticas en desarrollo de software. Permite a los programadores verificar el correcto funcionamiento de su código y asegurarse de que no hay errores no deseados. Además, proporciona una forma de control de calidad para garantizar que el código sea estable y confiable.
 
-## Cómo escribir pruebas de código en C++
+## Cómo escribir pruebas en C++
 
-Hoy en día, existen numerosas herramientas y frameworks para escribir pruebas de código en C++. Uno de los más populares es Google Test, una biblioteca de código abierto que facilita la escritura y ejecución de pruebas automatizadas. A continuación, se muestra un ejemplo de cómo escribir una prueba básica en Google Test:
+Para comenzar a escribir pruebas en C++, necesitará un marco de prueba. Uno de los marcos más populares es Google Test, que proporciona una estructura clara y organizada para escribir pruebas eficientes. Primero, debe definir una función de prueba utilizando la macro `TEST()` y luego utilizar las macros `ASSERT` dentro de ella para probar diferentes partes de su código. A continuación, se muestra un ejemplo de cómo se vería una prueba utilizando Google Test:
 
 ```C++
-#include <gtest/gtest.h> // incluir la biblioteca
-#include "calculator.h" // incluir la clase a probar
-
-// Definir una prueba con la sintaxis TEST(NombreSuite, NombrePrueba)
-TEST(CalculatorTest, SumTest) {
-    // Instanciar un objeto de la clase a probar
-    Calculator testCalculator;
-    // Definir los valores de entrada
-    int num1 = 5;
-    int num2 = 10;
-    // Llamar al método a probar y almacenar el resultado en una variable
-    int result = testCalculator.sum(num1, num2);
-    // Definir el valor esperado
-    int expected = 15;
-    // Verificar que el resultado esperado y el resultado actual son iguales
-    EXPECT_EQ(expected, result);
+TEST(Calculadora, Suma) {
+  // Setup
+  int a = 3;
+  int b = 5;
+  
+  // Operación
+  int resultado = sumar(a, b);
+  
+  // Verificación
+  ASSERT_EQ(resultado, 8);
 }
 ```
 
-La salida de esta prueba sería:
+En este ejemplo, se está probando una función `sumar` que toma dos números y devuelve su suma. Primero, se configuran los valores de prueba, luego se realiza la operación y finalmente se verifica que el resultado sea el esperado utilizando la macro `ASSERT_EQ()`. Puede agregar tantas pruebas como sean necesarias y ejecutarlas todas juntas para obtener un informe de resultados.
 
-```
-[ RUN      ] CalculatorTest.SumTest
-[       OK ] CalculatorTest.SumTest (0 ms)
-```
+## Profundizando en las pruebas
 
-Esto indica que la prueba se ejecutó correctamente y que el resultado esperado y el resultado actual son iguales.
+Además de las pruebas unitarias como la que se muestra en el ejemplo anterior, también es importante realizar pruebas de integración y pruebas de sistema. Las pruebas de integración garantizan que las diferentes partes de su código se integren correctamente entre sí, mientras que las pruebas de sistema evalúan el comportamiento general del software.
 
-## Profundizando en la escritura de pruebas de código
+Es importante tener en cuenta que las pruebas deben ser automáticas y repetibles para que puedan ejecutarse todas las veces que sea necesario para detectar cualquier problema en el código. Además, se recomienda realizar pruebas continuamente a medida que se va desarrollando el código para evitar acumular errores que puedan ser difíciles de rastrear y corregir más adelante.
 
-Las pruebas de código también pueden ayudar a identificar y resolver errores en el código antes de que lleguen al usuario final. Además, escribir pruebas de unidad puede servir como documentación para el código y facilitar el proceso de depuración.
+## Ver también
 
-Es importante tener en cuenta que las pruebas de unidad deben ser independientes y no depender de otras pruebas o del entorno en el que se ejecutan. También es crucial probar todos los escenarios posibles para garantizar que el código sea robusto y maneje de manera adecuada entradas inesperadas.
-
-## Vea también
-
-- [Documentación de Google Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
-- [Tutorial de escritura de pruebas de unidad en C++](https://www.geeksforgeeks.org/c-unit-testing-framework/)
-- [10 razones por las que deberías escribir pruebas de código](https://codeutopia.net/blog/2015/03/01/why-you-should-write-tests-for-your-code-and-when-you-should-not/)
+- [Documentación de Google Test](https://github.com/google/googletest) 
+- [Escribiendo pruebas unitarias en C++ con Google Test](https://www.freecodecamp.org/news/writing-tight-reliable-c-tests-with-googletest-part-i-a-simple-example-86e637db97d3/) 
+- [Tutorial de C++ en Codeacademy](https://www.codecademy.com/learn/learn-c-plus-plus)

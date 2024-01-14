@@ -1,45 +1,53 @@
 ---
-title:    "Arduino: Omvandla en sträng till små bokstäver"
+title:    "Arduino: Omvandla en sträng till gemener"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna konvertera en sträng till små bokstäver är en viktig funktion i många Arduino-projekt, särskilt om man arbetar med användarinput eller data från sensorer. Det kan också vara användbart om man vill jämföra strängar eller skriva ut text på en display.
+##Varför
 
-## Hur man gör
-För att konvertera en sträng till små bokstäver i Arduino, används funktionen `toLowerCase()`. Det är viktigt att notera att denna funktion endast fungerar med ASCII-tecken och inte med utökade/utländska tecken.
+Att konvertera en sträng till gemener kan vara användbart i vissa situationer. Det kan till exempel underlätta vid jämförelse av strängar och förbättra användarupplevelsen i en applikation.
+
+##Hur man gör
+
+Att konvertera en sträng till gemener i Arduino är en relativt enkel process. Vi behöver bara använda en inbyggd funktion som heter “toLowerCase()”. Nedan visas ett kodexempel där vi tar en användarinput och konverterar den till gemener:
 
 ```Arduino
-String str = "Hej världen";
-String lowerStr = str.toLowerCase();
-Serial.println(lowerStr); // output: hej världen
+String input = "HEJ";
+input.toLowerCase();  //Input blir nu "hej"
+Serial.println(input); //Output: hej
 ```
 
-Om man vill undvika att skapa en ny sträng varje gång, kan man istället använda `.toLowerCase()` på en redan existerande sträng.
+Detta är det mest grundläggande exemplet, men det fungerar också med andra datatyper som char och byte.
+
+##Djupdykning
+
+När vi använder funktionen “toLowerCase()” så konverteras varje bokstav i strängen till sin gemena motsvarighet. Men vad händer om vi har en specialtecken eller ett åäö? Som standard kommer de inte att konverteras, utan de kommer fortfarande att vara stora bokstäver. För att lösa detta måste vi använda oss av en “map” som innehåller alla specialtecken och deras gemena motsvarigheter.
+
+Vi kan definiera vår egen map genom att använda en array med tecken och sedan matcha dessa med motsvarande gemena bokstäver i en annan array. Här är ett exempel där vi lägger till åäö i vår map:
 
 ```Arduino
-String str = "Hej världen";
-str.toLowerCase();
-Serial.println(str); // output: hej världen
-```
-
-Om man arbetar med tecken arrayer istället för strängar, kan man använda en for-loop och funktionen `tolower()` för att konvertera varje tecken till ett litet tecken. Här är ett exempel på hur man kan göra detta:
-
-```Arduino
-char str[] = "Hej världen";
-for (int i = 0; str[i] != '\0'; i++) {
-  str[i] = tolower(str[i]);
+String input = "ÅÄÖ";
+char specialChars[] = {'Å', 'Ä', 'Ö'};
+char lowerChars[] = {'å', 'ä', 'ö'};
+for (int i = 0; i < 3; i++) {
+  input.replace(specialChars[i], lowerChars[i]);
 }
-Serial.println(str); // output: hej världen
+Serial.println(input); //Output: åäö
 ```
 
-## Djupdykning
-När man konverterar en sträng till små bokstäver genom att använda `toLowerCase()` funktionen, ändras endast bokstäverna i strängen. Andra tecken, som siffror och specialtecken, påverkas inte. Detta är viktigt att ha i åtanke när man jämför strängar.
+Nu kommer vår sträng att konverteras på rätt sätt och output blir “åäö”. Vi kan också utöka vår map med fler speciella tecken om vi behöver det.
 
-Dessutom måste man välja rätt teckenkodning för att kunna konvertera strängar till små bokstäver. Om man exempelvis arbetar med en Unicode-teckenkodning, behöver man en annan funktion för att konvertera strängar till små bokstäver.
+##Se även
 
-## Se även
-* [referens för `toLowerCase()` funktionen](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-* [ASCII-teckenkodning](https://www.ascii-code.com/)
+Om du vill lära dig mer om strängmanipulering i Arduino så kan du titta på följande resurser:
+
+- [String Functions in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+
+- [Convert String to Lower Case in Arduino](https://arduino.stackexchange.com/questions/50/convert-string-to-lower-case)
+
+- [Tutorial: String operations in Arduino](https://circuitdigest.com/microcontroller-projects/arduino-string-functions-examples)
+
+Genom att behärska denna funktion kan du öppna upp nya möjligheter och förbättra dina Arduino projekt. Lycka till!

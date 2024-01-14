@@ -1,56 +1,65 @@
 ---
 title:    "Fish Shell: 连接字符串"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要连接字符串
 
-字符串连接是编程中常见的操作，它可以将多个字符串组合成一个长的字符串。这在处理文本信息时非常有用，比如在生成报告或者显示用户输入时。在Mandarin中，我们可以使用Fish Shell来实现这一功能。
+在编程中，连接字符串是一种常见的操作。它允许我们将两个或多个字符串连接在一起，从而创建一个新的字符串。这在处理文本数据或创建动态消息时非常有用。使用Fish Shell可以轻松地对字符串进行连接，让我们来看看如何实现。
 
-## 如何操作
+## 如何实现
 
-使用Fish Shell中的`string join`命令可以轻松地连接字符串。比如我们想要将"Hello"和"world"连接成一个字符串，可以使用以下代码：
-
-```Fish Shell
-string join "Hello" "world"
-```
-
-运行结果会显示"Hello world"。如果想要在两个字符串之间添加特定的分隔符，比如逗号，可以在命令中添加`-s`参数，如下所示：
+Fish Shell提供了一个方便的内置函数`string join`来连接字符串。以下是一个简单的例子，在命令行中使用Fish Shell来连接三个字符串：
 
 ```Fish Shell
-string join -s "," "Hello" "world"
+string join "Hello" "," "world"
 ```
 
-运行结果会显示"Hello,world"。除了连接单个字符串，我们也可以通过`string concat`命令连接多个字符串，如下所示：
+输出将是：`Hello,world`。
+
+我们还可以使用循环和变量来动态地连接字符串。下面是一个例子，使用Fish Shell来连接一个数字列表中的所有字符串：
 
 ```Fish Shell
-string concat "Hello" " " "world"
+set numbers 1 2 3
+set result ""
+for num in $numbers
+    set result (string join $result "," (string $num))
+end
+echo $result
 ```
 
-运行结果同样会显示"Hello world"。另外，我们也可以使用变量来连接字符串，如下所示：
-
-```Fish Shell
-set greeting "Hello"
-set name "world"
-string join $greeting $name
-```
-
-运行结果同样会显示"Hello world"。
+输出将是：`1,2,3`。
 
 ## 深入了解
 
-在Fish Shell中，字符串连接其实是通过`string join`和`string concat`命令来实现的。`string join`命令将多个字符串连接起来，中间可以添加分隔符。`string concat`命令则直接将多个字符串连接在一起，不添加任何分隔符。Fish Shell也提供了其他一些字符串操作命令，如`string split`和`string replace`等，可以根据需要灵活运用。
+除了基本的连接功能之外，Fish Shell的`string join`函数还允许我们指定一个分隔符。默认情况下，分隔符是一个空格，但我们可以通过指定第二个参数来更改它。例如，我们可以使用冒号作为分隔符来连接两个字符串：
 
-## 参考资料
+```Fish Shell
+string join ":" "Hello" "world"
+```
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell教程](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell语法指南](https://fishshell.com/docs/current/guide.html)
+输出将是：`Hello:world`。
 
-## 参见
+另外，如果我们想要连接一个字符串列表，而不只是两个或三个字符串，我们可以使用`string join`函数的剩余参数来实现。这样，我们就不需要使用`for`循环来动态连接字符串了。
 
-- [Fish Shell中的变量使用](https://www.xiangqiang.site/blog/2018/how-to-use-variables-in-fish-shell/)
-- [Fish Shell中的流程控制](https://juejin.cn/post/6844904003366740488)
-- [Fish Shell中的命令别名设置](https://www.xiangqiang.site/blog/2018/how-to-create-command-alias-in-fish-shell/)
+```Fish Shell
+string join ":" "Hello" "fish" "shell" "world"
+```
+
+输出将是：`Hello:fish:shell:world`。
+
+## 参考链接
+
+- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
+- [Fish Shell论坛](https://github.com/fish-shell/fish-shell/issues)
+- [Fish Shell用户指南](https://fishshell.com/docs/current/tutorial.html)
+
+## 参阅
+
+- [Fish Shell中的字符串操作](https://fishshell.com/docs/current/tutorial.html#tutorial-strings)
+- [在Fish Shell中使用for循环](https://fishshell.com/docs/current/tutorial.html#tutorial-loops)
+- [Fish Shell中的字符串变量](https://fishshell.com/docs/current/index.html#string)

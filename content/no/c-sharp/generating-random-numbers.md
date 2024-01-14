@@ -1,50 +1,43 @@
 ---
-title:    "C#: Å generere tilfeldige tall"
+title:    "C#: Generering av tilfeldige tall"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Dette kan være for å simulere virkelige situasjoner, lage unike nøkler eller for å sikre tilfeldighet i spillet eller lotteriet.
 
-## Slik gjør du det
-Det finnes flere måter å generere tilfeldige tall i C# på. En enkel måte er å bruke Random-klassen som finnes i .NET-rammeverket. Her er et eksempel på hvordan dette kan gjøres:
+Hvis du noensinne har spilt et dataspill som krever en tilfeldig hendelse eller trenger å lage et tilfeldig sett med data, vet du hvor viktig det er å kunne generere tilfeldige tall. Tilfeldige tall er nøkkelen til å lage interessante og varierte erfaringer i programmering, og kan være avgjørende for å skape realistiske simuleringer. Derfor er det viktig å vite hvordan man kan generere disse tallene på en effektiv og nøyaktig måte.
 
-```C#
-// Opprett en ny instans av Random-klassen
-Random rng = new Random();
-
-// Generer et tilfeldig tall mellom 1 og 100
-int randomNumber = rng.Next(1, 101);
-
-// Skriv ut resultatet
-Console.WriteLine("Det tilfeldige tallet er: " + randomNumber);
-```
-
-En annen måte å generere tilfeldige tall på er å bruke den kryptografisk sikre RandomNumberGenerator-klassen. Denne klassen genererer tall basert på en kryptografisk sikker algoritme og er derfor mer egnet til bruk i sikkerhetskritiske applikasjoner.
+## Hvordan Generere Tilfeldige Tall i C#
 
 ```C#
-// Opprett en ny instans av RandomNumberGenerator-klassen
-RandomNumberGenerator rng = RandomNumberGenerator.Create();
+// Eksempel på å generere et tilfeldig heltall mellom 0 og 100
+Random random = new Random();
+int number = random.Next(0, 101); // 101 er ekskludert fra mulige verdier
+Console.WriteLine(number); // resultat kan være 0, 1, 2, ..., 99, 100
 
-// Opprett et byte-array for å lagre det tilfeldige tallet
-byte[] randomNumber = new byte[4];
+// Eksempel på å generere et tilfeldig desimaltall mellom 0 og 1
+double decimalNumber = random.NextDouble();
+Console.WriteLine(decimalNumber); // resultat kan være 0, 0.1, 0.2, ..., 0.9, 1
 
-// Fyll arrayen med tilfeldige bytes
-rng.GetBytes(randomNumber);
-
-// Konverter bytes til et heltall og begrens verdien mellom 1 og 100
-int randomNumberInt = Math.Abs(BitConverter.ToInt32(randomNumber, 0)) % 100 + 1;
-
-// Skriv ut resultatet
-Console.WriteLine("Det tilfeldige tallet er: " + randomNumberInt);
+// Eksempel på å generere et tilfeldig element fra en liste
+List<string> fruits = new List<string>() { "eple", "banan", "jordbær", "melon" };
+string fruit = fruits[random.Next(fruits.Count)];
+Console.WriteLine(fruit); // resultat kan være eple, banan, jordbær eller melon
 ```
 
-## Dypdykk
-Det å generere tilfeldige tall kan virke enkelt, men det er viktig å være klar over at alle algoritmer for å generere tilfeldige tall ikke er like sikre. Noen metoder kan være sårbare for såkalt "bias", hvor visse tall har større sjanse for å bli valgt fremfor andre. Derfor er det viktig å bruke riktige klasser og metoder for å sikre tilfeldighet og unngå sikkerhetsrisiko.
+Kodeeksemplene viser hvordan du kan bruke Random-klassen i C# for å generere tilfeldige tall. For å generere et tilfeldig heltall, bruker vi metoden `Next()` og spesifiserer det minste og største tallet vi ønsker å få som resultat. For å generere et desimaltall, bruker vi `NextDouble()` som returnerer et tall mellom 0 og 1.
 
-## Se også
-- [Random-klassen i .NET](https://docs.microsoft.com/en-us/dotnet/api/system.random)
-- [RandomNumberGenerator-klassen i .NET](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator)
-- [Hvordan generere tilfeldige tall i Java](https://blog.opstalent.com/how-to-generate-random-numbers-in-java/)
+For å generere et tilfeldig element fra en liste, bruker vi også `Next()` metoden, men denne gangen bruker vi lengden på listen som argument. Dette vil gi oss et tilfeldig heltall mellom 0 og antall elementer i listen, som vi deretter kan bruke som indeks for å få et tilfeldig element fra listen.
+
+## Dypdykk i Generering av Tilfeldige Tall
+
+Det finnes flere måter å generere tilfeldige tall i C#, som for eksempel `Random.NextBytes()`, som genererer et tilfeldig tallrekke av byte-er. Men uavhengig av hvilken metode du bruker, er det viktig å ha en kilde som er tilstrekkelig tilfeldig for å få nøyaktige resultater. En vanlig måte å gjøre dette på er å bruke systemets klokke som kilde for tilfeldighet ved å bruke `DateTime.Now.Ticks` for å initialisere `Random`-klassen. Det finnes også andre metoder for å generere tilfeldige tall som ikke er basert på systemets tid, som for eksempel ved hjelp av en tilfeldig tallgenerator.
+
+En annen ting å være oppmerksom på er at selv om tallene som genereres virker tilfeldige, er de egentlig pseudotilfeldige. Det betyr at de følger en bestemt algoritme, men med en veldig stor og tilsynelatende tilfeldig startverdi. Dette betyr at hvis du kjører koden flere ganger med samme seed-verdi (den initielle verdien som brukes for å begynne å generere tall), vil du få samme sekvens av "tilfeldige" tall hver gang.
+
+## Se Også
+- [Microsoft Docs: Random-klassen](https://docs.microsoft.com/nb-no/dotnet/api/system.random?view=netcore-3.1)
+- [Programmering: Generering av tilfeldige tall i C#](https://www.programmering.no/2016/11/25/generering-av-tilfeldige-tall-i-csharp/)

@@ -1,39 +1,53 @@
 ---
-title:    "C++: Generering av slumpmässiga tal"
+title:    "C++: Generera slumpmässiga nummer"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att generera slumpmässiga tal är en vanlig uppgift inom programmering. Det kan vara användbart för spel, simuleringar, och många andra applikationer som kräver ett element av slumpmässighet. I den här blogginlägget kommer vi att utforska hur man kan använda C++ för att skapa slumpmässiga tal.
 
-## Hur man gör det
-För att generera slumpmässiga tal använder vi oss av biblioteket `<random>` i C++. Det finns olika sätt att generera slumpmässiga tal beroende på våra behov, men det grundläggande konceptet är detsamma. Här är ett enkelt exempel på hur man kan skapa ett slumpmässigt tal inom ett visst intervall med hjälp av `std::uniform_int_distribution`:
+Att generera slumpmässiga nummer är en vanlig uppgift inom programmering, och kan vara användbart i en mängd olika scenarion. Oavsett om du behöver skapa en slumpmässig spelplan, ett lösenord eller någon annan sorts variation så kan slumpmässiga nummer hjälpa dig med detta.
+
+## Så här
+
+För att generera slumpmässiga nummer i C++ används funktionen `rand()`. För att använda denna funktion behöver du inkludera `cstdlib` i din kod. Sedan kan du använda `rand()` för att skapa ett slumpmässigt nummer. Se nedan för ett kodexempel:
 
 ```C++
 #include <iostream>
-#include <random>
+#include <cstdlib>
+using namespace std;
 
-int main()
-{
-    std::random_device rd; // skapar en lågkvalitativ slumpmässig seed
-    std::mt19937 gen(rd()); // skapar en mer kvalitativ seed med hjälp av rd
-    std::uniform_int_distribution<> dist(1, 10); // skapar en distribution från 1 till 10
+int main() {
+    // Genererar ett slumpmässigt heltal mellan 1 och 100
+    int random = rand() % 100 + 1;
 
-    // genererar och skriver ut ett slumpmässigt tal
-    std::cout << "Slumpmässigt tal: " << dist(gen) << std::endl;
+    // Skriver ut det slumpmässiga numret
+    cout << "Det slumpmässiga numret är: " << random << endl;
+
     return 0;
 }
 ```
 
-Resultatet kan variera varje gång vi exekverar programmet, vilket är en indikator på att vårt slumpmässiga tal har genererats framgångsrikt.
+Exempeloutput:
+
+```
+Det slumpmässiga numret är: 57
+```
+
+Det är viktigt att komma ihåg att `rand()` inte genererar helt slumpmässiga nummer utan använder en algoritm för att skapa en sekvens av siffror som kan se slumpmässiga ut. Därför behöver du även inkludera `time.h` och använda funktionen `srand()` för att säkerställa att varje gång programmet körs så genereras en ny sekvens av nummer. Detta kan göras genom att använda tiden som en seed för `srand()`.
 
 ## Djupdykning
-Biblioteket `<random>` erbjuder även andra distributionsfunktioner som `std::uniform_real_distribution` för att generera slumpmässiga decimaltal och `std::normal_distribution` för att skapa tal baserade på en normalfördelning. Dessutom kan vi ändra seed-värdet för att få en annan sekvens av slumpmässiga tal.
 
-Det finns också andra sätt att generera slumpmässiga tal utan att använda bibliotek. Till exempel kan vi använda oss av `rand()` funktionen som finns i standardbiblioteket `<cstdlib>` för enkla slumpmässiga tal. Men det är viktigt att notera att `rand()` inte är lika pålitlig som biblioteket `<random>` när det gäller att skapa slumpmässiga tal.
+Som nämnts tidigare så genererar `rand()` inte helt slumpmässiga nummer. Istället används en algoritm som genererar en viss sekvens av nummer baserat på vilken seed som används. Detta kan ha vissa konsekvenser om du inte väljer en lämplig seed. Om samma seed används varje gång programmet körs så kommer samma sekvens av nummer att genereras varje gång.
+
+En annan sak att tänka på är att `rand()` genererar heltal, vilket kan vara ett problem om du behöver generera decimaltal. För att göra detta kan du använda `static_cast<double>()` för att konvertera det slumpmässiga heltalet till ett decimaltal.
+
+För att läsa mer om `rand()` och använda den på mer avancerade sätt så rekommenderas det att utforska dokumentationen för C++ eller titta på olika guider och exempel online.
 
 ## Se även
-- [Förstå random-funktionen i C++](https://www.tutorialspoint.com/cplusplus/cpp_random_function.htm)
-- [Slumpmässiga tal i C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/#:~:text=rand()%20is%20used%20to%20generate%20a%20random%20number%20everytime.,seed%20value%20using%20srand()%20function.)
+
+- [C++ Dokumentation - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [C++ Dokumentation - srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
+- [YouTube Tutorial - Slumpmässiga Nummer i C++](https://www.youtube.com/watch?v=8o9mV04BjLg)

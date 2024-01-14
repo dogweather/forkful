@@ -1,46 +1,37 @@
 ---
-title:    "Clojure: Utilizzare le espressioni regolari"
+title:    "Clojure: Utilizzando le espressioni regolari"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Le espressioni regolari sono una potente tecnica di programmazione che permettono di cercare e manipolare testo in modo efficiente. Usare le espressioni regolari può semplificare il codice e risparmiare tempo nella gestione del testo.
 
-## Come Utilizzarle
-Le espressioni regolari sono implementate nel linguaggio di programmazione Clojure attraverso la libreria java.util.regex. Per utilizzarle, è necessario importare questa libreria all'inizio del file:
+Le espressioni regolari sono uno strumento potente per manipolare, controllare e analizzare i dati all'interno di un programma Clojure. Con l'aiuto delle espressioni regolari, è possibile trovare corrispondenze o modelli specifici all'interno di una stringa di testo e utilizzare queste informazioni per eseguire determinate operazioni o trasformazioni. Ciò rende le espressioni regolari utili per molti aspetti della programmazione, come la ricerca e la sostituzione di testo, la convalida di input utente e la formattazione di stringhe.
 
-```Clojure
-(import ['java.util.regex Pattern Matcher])
-```
+## Come fare
 
-Una volta importata la libreria, possiamo creare espressioni regolari come oggetti di tipo Pattern e utilizzarle con il metodo "matcher" per trovare corrispondenze all'interno di una stringa.
+Per utilizzare le espressioni regolari in Clojure, è necessario importare il modulo regex inizialmente. Ci sono diverse funzioni nel modulo regex che possono essere utili per l'utilizzo delle espressioni regolari, come `re-matches`, `re-seq` e `re-find`. Ad esempio, possiamo utilizzare `re-matches` per trovare corrispondenze tra una stringa di input e un'espressione regolare fornita:
 
 ```Clojure
-(def regex (Pattern/compile "abc+"))
-(def matcher (.matcher regex "abcccc"))
-(.find matcher) ; => true
-(.find matcher) ; => true (continua la ricerca della prossima corrispondenza)
+(require '[clojure.string :as str])
+(require '[clojure.java.io :as io])
+(use '[clojure.java.io :only (reader)])
+
+(def input-string "123 456 789")
+(def regex #"\d+") ;; corrisponde a qualsiasi numero nella stringa
+(str/join "," (re-matches regex input-string)) ;; output: "123,456,789"
 ```
 
-Il metodo "find" restituirà true se trova una corrispondenza all'interno della stringa, altrimenti restituirà false.
+Questo è solo un semplice esempio, ma con un po' di pratica e comprensione delle espressioni regolari, è possibile effettuare molte altre operazioni utilizzando il modulo regex e le funzioni che offre.
 
-## Approfondimento
-Le espressioni regolari sono composte da una serie di caratteri speciali che permettono di definirne il comportamento. Alcuni dei più comuni sono:
+## Approfondimenti
 
-- `.`: rappresenta qualsiasi carattere singolo
-- `*`: indica la ripetizione di zero o più volte
-- `+`: indica la ripetizione di uno o più volte
-- `?`: indica la ripetizione di zero o una volta
-- `^`: indica l'inizio della stringa
-- `$`: indica la fine della stringa
+Le espressioni regolari sono basate su un linguaggio a sé stante, con una sintassi specifica per la creazione dei modelli di ricerca. Ci sono molti siti e risorse online che possono aiutare a imparare l'uso delle espressioni regolari, come regex101.com o regexone.com. Inoltre, c'è una vasta comunità di programmatori che utilizzano regolarmente le espressioni regolari, quindi non esitate a chiedere aiuto o cercare consigli su forum e community di programmazione.
 
-È possibile utilizzare anche gli operatori `|`, `[]` e `[a-z]` per definire insiemi di caratteri specifici.
+## Vedi anche
 
-Per una guida completa alle espressioni regolari in Clojure, si consiglia di consultare la documentazione ufficiale su [clojuredocs.org](https://clojuredocs.org/clojure.core/re-pattern).
-
-## Vedi Anche
-- [RegExr](https://regexr.com/) - Un tool online per testare ed esplorare espressioni regolari.
-- [Mastering Regular Expressions](https://www.amazon.it/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124) di Jeffrey E.F. Friedl - Un libro completo per imparare le espressioni regolari in dettaglio.
-- [Clojure Cookbook](https://www.amazon.it/Clojure-Cookbook-Luke-VanderHart/dp/1449366171) di Luke VanderHart e Ryan Neufeld - Un libro di riferimento per apprendere Clojure e le sue librerie, inclusa java.util.regex.
+- [Clojure Regex Reference Guide](https://clojure.org/reference/regular_expressions)
+- [Regular Expressions Cookbook in Clojure](https://github.com/javagony/regex-cookbook-clojure)
+- [Tutorial sulle espressioni regolari in Clojure](https://www.vividcortex.com/blog/2015/08/19/clojure-regex-tutorial)

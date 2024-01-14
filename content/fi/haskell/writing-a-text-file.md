@@ -1,40 +1,43 @@
 ---
 title:    "Haskell: Tekstitiedoston kirjoittaminen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tekstin kirjoittaminen on tärkeä osa Haskell-ohjelmointia. Se mahdollistaa tiedon tallentamisen ja jakamisen helposti ohjelman käytön aikana.
+Haluan aloittaa tämän blogipostauksen kysymällä: Miksi kirjoittaisit tekstitiedoston Haskell-ohjelmointikieltä käyttäen? Vaikka tekstitiedostot voivat vaikuttaa vanhanaikaisilta, niillä on edelleen monia käyttötarkoituksia, kuten tallentaa ja jakaa dataa tai luoda yksinkertaisia tiedostoja. Haskellin avulla voit tehdä tämän nopeasti ja helposti, ja tässä blogipostauksessa opit miten.
 
-## Miten
+## Kuinka tehdä
 
-Tekstin kirjoittaminen on yksinkertaista Haskellissa. Alla on esimerkki, miten luodaan tekstiä ja tallennetaan se tiedostoon:
+Aloitetaan luomalla yksinkertainen tekstitiedosto käyttämällä Haskellia. Voit aloittaa luomalla uuden tiedoston nimeltä ```tekstitiedosto.hs```. Sitten voit lisätä seuraavan koodin tiedostoon:
 
 ```Haskell
-kirjoitaTeksti :: String -> IO ()
-kirjoitaTeksti teksti = writeFile "tekstifile.txt" teksti
+main = do
+  writeFile "tekstitiedosto.txt" "Tämä on esimerkki tekstitiedostosta, luotu Haskellilla."
 ```
 
-Koodin selitys:
+Tämä koodi käyttää Haskellin ```writeFile``` -funktiota luodakseen uuden tekstitiedoston nimeltä ```tekstitiedosto.txt``` ja kirjoittaa siihen annetun tekstin. Voit ajaa tämän tiedoston komentoriviltä tai Haskellin REPL-näkymästä.
 
-- `kirjoitaTeksti` on funktio, joka ottaa vastaan `String`-muuttujan ja palauttaa `IO`-toiminnon.
-- `writeFile` on valmiiksi olemassa oleva funktio, joka ottaa vastaan tiedoston nimen ja tekstiä ja tallentaa tekstin annettuun tiedostoon.
-- `"tekstifile.txt"` on tiedoston nimi, johon teksti tallennetaan.
-- `teksti` on annettu teksti, joka tallennetaan tiedostoon.
+Voit myös lukea olemassa olevan tekstitiedoston käyttämällä ```readFile``` -funktiota, esimerkiksi:
 
-Kun funktio on määritelty, se voidaan suorittaa komennolla `kirjoitaTeksti "Hei, maailma!"`. Tämän jälkeen tiedostoon `tekstifile.txt` tallentuu teksti "Hei, maailma!".
+```Haskell
+main = do
+  sisalto <- readFile "tekstitiedosto.txt"
+  print sisalto
+```
 
-## Syvä sukellus
+Tämä koodi tulostaa kyseisen tekstitiedoston sisällön. Voit myös muokata tiedostoa luomalla uuden ```String``` -muuttujan ja käyttämällä ```writeFile``` -funktiota uuden sisällön kirjoittamiseen.
 
-Tekstin kirjoittaminen on yksi monista IO-toiminnoista Haskellissa. IO-toiminnot ovat hieman erityyppisiä verrattuna muihin Haskellin funktioihin, sillä ne voivat vaikuttaa ohjelman tilaan ja ympäristöön. Tästä syystä IO-toiminnot tulee suorittaa `main`-funktion sisällä. Eli jos haluat tallentaa tekstin tiedostoon, se tulee tehdä `main`-funktion sisällä.
+## Syvä Sukellus
 
-Lisäksi on hyvä tiedostaa tiedoston olemassaolo osoitteessa, johon teksti tallennetaan. Jos tiedostoa ei ole olemassa, `writeFile` luo sen automaattisesti.
+Haskellin tiedostojen käsittely perustuu IO (Input/Output) -monadiin, joka mahdollistaa sen, että funktiot voivat toimia IO-toimintona. Näin funktiot, kuten ```writeFile``` ja ```readFile```, voivat muuttaa tiedostoa joko kirjoittamalla siihen tai lukemalla siitä.
+
+On myös tärkeää muistaa, että tiedoston käsittelyntulisi olla osa laajempaa käsiteltävänä olevaa IO-toimintaa, jotta tiedoston muutoksia voidaan hallita ja varmistaa, että tiedosto sulkeutuu oikein. Samoin, kun luot uuden tiedoston, voit sisällyttää sen omaan IO-toimintoonsa ja suorittaa sen järjestelmän IO-monadissa.
 
 ## Katso myös
 
-- [Haskell-kielto](https://fi.wikipedia.org/wiki/Haskell)
-- [Haskell-tutoriaali](https://learnxinyminutes.com/docs/fi-fi/haskell-fi/)
-- [Haskell IO](https://www.haskell.org/tutorial/io.html)
+- [Haskellin virallinen dokumentaatio tiedoston käsittelystä](https://www.haskell.org/tutorial/io.html)
+- [Lyhyt opas Haskellin IO-monadiin](https://wiki.haskell.org/All_About_Monads#The_IO_monad)

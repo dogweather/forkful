@@ -1,47 +1,44 @@
 ---
 title:    "Bash: Generando números aleatorios"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué generar números aleatorios en Bash
 
-Generar números aleatorios es una habilidad esencial en la programación de Bash. Puede ser utilizado en diversos escenarios, desde juegos hasta pruebas de rendimiento de software. También es útil para crear datos de ejemplo y realizar experimentos. En esta entrada del blog, aprenderemos cómo generar números aleatorios en Bash y profundizaremos en cómo funciona este proceso.
+El uso de números aleatorios puede ser útil en programación para simular situaciones aleatorias, como en juegos o pruebas de rendimiento. También puede ser una herramienta útil en la generación de contraseñas o en la selección aleatoria de elementos de una lista. En Bash, podemos utilizar la función "shuf" para generar números aleatorios.
 
-## Cómo hacerlo
+## Cómo generar números aleatorios en Bash
 
-Para generar números aleatorios en Bash, utilizaremos el comando `shuf`. Este comando se utiliza para generar una secuencia aleatoria de números o cadenas de texto. Podemos especificar el rango de números con el argumento `-i` y la cantidad de números a generar con `-n`. Veamos un ejemplo:
-
-```Bash
-# Generar 5 números aleatorios entre 1 y 10
-shuf -i 1-10 -n 5
-```
-El resultado podría ser el siguiente:
-```
-4
-8
-2
-1
-9
-```
-También podemos usar `shuf` para generar secuencias aleatorias de caracteres. Por ejemplo, para generar una contraseña aleatoria de 8 caracteres, podemos usar:
+Para generar un solo número aleatorio en Bash, podemos utilizar el siguiente comando:
 
 ```Bash
-# Generar una contraseña aleatoria de 8 caracteres
-shuf -n 8 -e {a..z}
+echo $RANDOM
 ```
 
-El resultado podría ser una contraseña como: `rpkwczal`.
+El comando "echo" nos permite imprimir el valor de la variable "$RANDOM", que contiene un número aleatorio generado por el sistema.
 
-## Inmersión profunda
+Si queremos generar varios números aleatorios, podemos utilizar un bucle "for" y la función "shuf" de la siguiente manera:
 
-Ahora sabemos cómo generar números y cadenas aleatorios en Bash, pero ¿cómo funciona en realidad? El comando `shuf` utiliza el generador de números aleatorios de Linux, llamado `/dev/urandom`. Este dispositivo se alimenta con entropía del sistema, como la actividad del mouse, la entrada del teclado y otros datos aleatorios. Esto garantiza que la secuencia generada sea verdaderamente aleatoria.
+```Bash
+for i in {1..5}
+do
+    shuf -i 1-10 -n 1
+done
+```
 
-Sin embargo, es importante tener en cuenta que, si bien `/dev/urandom` es adecuado para la mayoría de los casos, no se recomienda para fines criptográficos. Para esos casos, se debe utilizar el generador de números aleatorios `/dev/random`, que utiliza una fuente de entropía más segura, aunque puede ser más lenta.
+En este ejemplo, el bucle se repetirá 5 veces, y en cada iteración utilizará la función "shuf" para obtener un número aleatorio entre 1 y 10.
+
+## Profundizando en la generación de números aleatorios
+
+En Bash, la función "shuf" utiliza el algoritmo de Fisher-Yates para generar una permutación aleatoria de los números en una lista determinada. Esto significa que cada número en la lista tiene la misma probabilidad de ser seleccionado, lo que garantiza una verdadera aleatoriedad.
+
+Además de generar números aleatorios, también podemos utilizar la función "shuf" para mezclar los elementos de una lista en un orden aleatorio, simplemente agregando la opción "-n" y especificando la cantidad de elementos que queremos mezclar.
 
 ## Ver también
 
-- Documentación oficial de `shuf`: https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html
-- Uso de `/dev/random` y `/dev/urandom`: https://jameshfisher.com/2019/01/31/dev-random/
-- Generador de claves seguras de Bash: https://www.shellhacks.com/generate-random-passwords/
+- [Documentación de GNU Bash sobre la función "shuf"](https://www.gnu.org/software/bash/manual/html_node/The-shuf-Built_002din.html)
+- [Ejemplos de bucles en Bash](https://www.linuxjournal.com/content/bash-loops)
+- [Más información sobre el algoritmo de Fisher-Yates](https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/)

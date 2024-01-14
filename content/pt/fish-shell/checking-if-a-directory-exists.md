@@ -1,45 +1,43 @@
 ---
-title:    "Fish Shell: Verificando a existência de um diretório"
+title:    "Fish Shell: Verificando se um diretório existe"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar a existência de um diretório?
-
-Ao trabalhar com Fish Shell, muitas vezes é necessário verificar se um diretório existe antes de fazer qualquer operação com ele. Isso pode ser útil para garantir que o diretório esteja presente antes de tentar acessá-lo ou para evitar erros no código ao tentar interagir com um diretório inexistente. Neste artigo, vamos explorar como fazer isso de forma simples e eficiente.
+## Por que
+Você já se deparou com a situação de precisar verificar se um diretório existe antes de executar um comando ou script em seu terminal? Se sim, você já sabe o quão útil essa tarefa pode ser para garantir que seus comandos funcionem corretamente. Neste artigo, vamos mostrar como você pode facilmente verificar a existência de um diretório usando o Fish Shell.
 
 ## Como fazer
+Para verificar se um diretório existe em seu sistema, podemos usar o comando `test -d` e fornecer o caminho do diretório que queremos verificar. Por exemplo, se queremos verificar se existe um diretório chamado "imagens" dentro da nossa pasta de usuário, podemos usar o seguinte comando:
 
-Para verificar se um diretório existe usando o Fish Shell, podemos usar o comando `test -d`. Este comando retorna verdadeiro (ou seja, 0) se o diretório fornecido existir e falso (ou seja, um valor diferente de 0) se o diretório não existir. Vamos dar uma olhada em um exemplo:
-
-```Fish Shell
-test -d ~/Documents
-echo $status
+```
+test -d ~/imagens
 ```
 
-O comando `test -d` é usado para verificar se o diretório `~/Documents` existe. Se existir, o status será 0 e o comando `echo` imprimirá esse status no console. Caso contrário, o status será diferente de 0 e nada será impresso no console.
+Se o diretório existir, o comando retornará verdadeiro e nada será impresso no terminal. Caso contrário, ele retornará falso e você verá uma mensagem de erro informando que o diretório não pode ser acessado. 
 
-Outra forma de realizar essa verificação é usando as estruturas de controle `if` e `else`. Vamos ver como isso pode ser feito:
+Além disso, podemos usar a opção `-q` para tornar o comando "silencioso", o que significa que ele não imprimirá nada no terminal, mesmo se o diretório existir. Isso pode ser útil quando queremos usar essa verificação em um script e não queremos que o terminal seja poluído por mensagens desnecessárias.
 
-```Fish Shell
-if test -d ~/Documents
-	echo "O diretório existe!"
+Um exemplo completo de como verificar se um diretório existe e exibir uma mensagem apropriada pode ser:
+
+```
+if test -d ~/imagens -q
+    echo "O diretório de imagens existe!"
 else
-	echo "O diretório não existe!"
+    echo "O diretório de imagens não existe."
 end
 ```
 
-Neste exemplo, usamos o comando `test -d` dentro de uma estrutura de controle `if`. Se o diretório existir, o comando `echo` será executado e "O diretório existe!" será impresso. Caso contrário, o comando `echo` dentro da estrutura `else` será executado e "O diretório não existe!" será impresso.
+## Análise mais detalhada
+Agora vamos fazer uma análise mais profunda sobre como o comando `test -d` funciona. O `test` é um comando embutido no Fish Shell que é usado para avaliar uma expressão ou condição e retornar verdadeiro ou falso. Já o `-d` é a opção específica para verificar a existência de um diretório. Ele pode ser combinado com outras opções, como `-e` para verificar a existência de um arquivo ou `-s` para verificar se o arquivo ou diretório não está vazio.
 
-## Mergulho profundo
+Em termos de retorno, o comando `test -d` retornará 0 (verdadeiro) se o diretório existir e 1 (falso) se ele não existir ou se houver algum problema ao tentar acessá-lo. Além disso, o comando também respeita as permissões do diretório e só retornará verdadeiro se o usuário atual tiver permissão para acessá-lo.
 
-Você pode estar se perguntando: por que usar o comando `test -d` em vez de simplesmente tentar acessar o diretório e verificar se ocorreu um erro? A resposta é que isso pode economizar tempo e processamento. Ao usar o `test -d`, o Fish Shell realiza apenas uma verificação rápida e retorna um status que indica a existência ou não do diretório. Se tentarmos acessar o diretório e ele não existir, isso resultará em uma falha e mais tempo de processamento será perdido.
-
-Além disso, você também pode usar outras opções com o comando `test -d`, como `test -w` para verificar se o diretório é gravável ou `test -r` para verificar se o diretório é legível.
+Portanto, se você quiser garantir que um diretório exista antes de executar um comando, certifique-se de usar o comando `test -d` e verificar o retorno antes de prosseguir com sua execução.
 
 ## Veja também
-
-- Documentação do Fish Shell sobre o comando `test`: https://fishshell.com/docs/current/cmds/test.html
-- Mais informações sobre estruturas de controle no Fish Shell: https://fishshell.com/docs/current/scripting.html#introscripting
-- Exemplos de uso do `test` em scripts: https://stackoverflow.com/questions/8803360/test-d-what-does-it-do
+- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/cmds/test.html
+- Tutoriais sobre uso de variáveis no Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_variables
+- Mais dicas e truques de uso do Fish Shell: https://fishshell.com/docs/current/tutorial.html#moretutorials

@@ -1,39 +1,79 @@
 ---
-title:    "Java: 「日付を文字列に変換する」"
+title:    "Java: 日付を文字列に変換する"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-日付を文字列に変換する理由を説明します。日付を文字列に変換することで、ある形式の日付を別の形式に変換することができます。例えば、データベースから取得した日付をユーザーが理解しやすい形式に変換することができます。
+# なぜ日付を文字列に変換するのか
+
+日付を文字列に変換する必要がある理由はさまざまです。例えば、データベースのクエリを実行する際に日付を文字列に変換することで、より柔軟な検索が可能になります。また、日付を文字列として表示することで、ユーザーが理解しやすくなります。
 
 ## 方法
-日付を文字列に変換するには、Javaの組み込みのクラスである `SimpleDateFormat` を使用します。以下のコードを使用して、日付を指定した形式の文字列に変換することができます。
+
+日付を文字列に変換するには、JavaのDateクラスやLocalDateTimeクラスを使用します。下記に例を示します。
 
 ```Java
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// 日付の形式を指定する
-SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+public class DateToStringExample {
 
-// 今日の日付を取得する
-Date date = new Date();
+    public static void main(String[] args) {
+        // 日付を取得
+        Date date = new Date();
+        System.out.println("日付: " + date);
 
-// 日付を指定した形式の文字列に変換する
-String dateString = format.format(date);
+        // フォーマットを指定して文字列に変換
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String dateString = sdf.format(date);
+        System.out.println("文字列: " + dateString);
+    }
+}
+```
+上記のコードを実行すると、以下のような出力が得られます。
 
-// 結果を出力する
-System.out.println(dateString); // 出力結果: 2021/05/31
+```
+日付: Fri Jan 22 12:00:00 JST 2021
+文字列: 2021/01/22
 ```
 
-日付を指定した形式の文字列に変換するために、 `SimpleDateFormat` のコンストラクタに渡す形式を指定する必要があります。上の例では、 `yyyy/MM/dd` という形式で日付を指定していますが、任意の形式を指定することができます。また、日付だけでなく、時刻を含めることもできます。
+さらに、日付を指定した形式で文字列に変換する方法もあります。例えば、月や曜日を表す英語の表記を日本語の表記に変換することができます。下記にコード例を示します。
 
-## 深堀り
-`SimpleDateFormat` を使用して日付を文字列に変換する際、注意する必要がある点があります。例えば、日付のフォーマット指定に使用する文字列が間違っていると、日付が正しく変換されない可能性があります。また、特定のロケールやタイムゾーンに対応するために、 `SimpleDateFormat` のコンストラクタに引数を渡すこともできます。詳細な情報はJavaのドキュメンテーションを参照してください。
+```Java
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-## 参考
-- [Javaの公式ドキュメント - SimpleDateFormatクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/text/SimpleDateFormat.html)
-- [Javaの日付と時刻のフォーマット指定文字列](https://www.mlab.im.dendai.ac.jp/~ichikawa/lecture/2011/Java/markup/DateTimeFormat.html)
-- [Javaで日付を操作する方法](https://techacademy.jp/magazine/21016)
+public class DateToStringExample {
+
+    public static void main(String[] args) {
+        // 日付を取得
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println("日付: " + dateTime);
+
+        // パターンを指定して文字列に変換
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd (E) a h:mm", Locale.JAPANESE);
+        String dateString = dateTime.format(formatter);
+        System.out.println("文字列: " + dateString);
+    }
+}
+```
+
+上記のコードを実行すると、以下のような出力が得られます。
+
+```
+日付: 2021-01-22T12:00:00
+文字列: 2021/01/22 (金) 午後 12:00
+```
+
+## 詳細情報
+
+日付を文字列に変換する方法はさまざまありますが、基本的な考え方は同じです。日付を取得し、指定したフォーマットに従って文字列に変換するのです。また、Java 8以降では、日付を取得するにはLocalDateTimeクラスを使用することが推奨されています。
+
+# 参考リンク
+
+- [Java: 日付を文字列に変換する方法](https://www.sejuku.net/blog/57510)
+- [Java8で現在日時を扱う – LocalDateTimeクラスの使い方](https://teratail.com/questions/73246)
+- [DateTimeFormatter Class in Java 8](https://www.javatpoint.com/java-8-datetimeformatter)

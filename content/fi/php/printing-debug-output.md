@@ -1,52 +1,49 @@
 ---
-title:    "PHP: Ladonta virheenkorjaustulostetta"
+title:    "PHP: Tulostaminen virheenjäljitysplitööjä"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jos olet PHP-ohjelmoija, saatat törmätä tilanteisiin, joissa sinun täytyy tarkastella koodiasi lähemmin virheiden selvittämiseksi. Tässä tilanteessa debug-tulosteen tulostaminen voi olla erittäin hyödyllistä.
+Miksi haluat käyttää debuggaus tulosteita ohjelmoidessa PHP:llä? Debuggaus tulosteilla voit helposti tarkistaa koodin suorituksen ja tunnistaa mahdolliset virheet. Ne myös auttavat ymmärtämään miten koodi toimii ja mihin kohtaan se mahdollisesti kaatuu.
 
-## Miten tehdä
+## Miten
 
-Debug-tulosteen tulostaminen PHP:ssä on helppoa. Voit käyttää sisäänrakennettua "echo" -toimintoa, joka tulostaa haluamasi tiedon web-sivulle. Esimerkiksi:
-
-```PHP
-echo "Hello world!";
-```
-
-tulostaa tekstin "Hello world!" näytölle.
-
-Voit myös tulostaa muuttujien arvoja nähdäksesi, miten ne muuttuvat koodin suorituksen aikana. Esimerkiksi:
+Debuggaus tulosteita voidaan luoda helposti käyttämällä PHP:n "echo" tai "print_r" -toimintoja. Näitä toimintoja käytetään tulostamaan muuttujien, taulukoiden ja muiden arvojen sisältö terminaaliin tai nettisivulle. Seuraavassa esimerkissä näytämme, miten "echo" -toimintoa voidaan käyttää tulostamaan muuttujan arvo:
 
 ```PHP
-$teksti = "Tämä on tekstiä";
-echo $teksti;
+$numero = 42;
+echo "Muuttujan arvo on: " . $numero;
 ```
 
-tulostaa tekstin "Tämä on tekstiä" näytölle.
+Tämän koodin suorituksen jälkeen terminaaliin tulostuu: "Muuttujan arvo on: 42".
 
-Debug-tulosteen avulla voit myös tarkistaa ehtolauseiden ja silmukoiden suorituksen. Esimerkiksi:
+Jos haluat tarkastella taulukoiden sisältöä, voit käyttää "print_r" -toimintoa seuraavasti:
 
 ```PHP
-$i = 1;
-while ($i < 10) {
-    echo $i;
-    $i++;
-}
+$taulukko = array("omena", "banaani", "mansikka");
+print_r($taulukko);
 ```
 
-tulostaa luvut 1-9 näytölle.
+Tämän koodin suorituksen jälkeen terminaaliin tulostuu taulukon sisältö:
 
-## Syvempi sukellus
+Array
+(
+    [0] => omena
+    [1] => banaani
+    [2] => mansikka
+)
 
-Debug-tulosteen tulostaminen ei ole vain hyödyllistä virheiden selvittämiseksi, vaan se voi myös auttaa sinua ymmärtämään koodisi suorituksen kulkua. Voit käyttää sitä apuna löytääksesi tehokkaampia ratkaisuja ja välttääksesi turhia virheitä tulevaisuudessa.
+## Syväsukellus
 
-On myös hyvä muistaa, että debug-tulosteet ovat vain väliaikaisia. Ne eivät kuulu lopulliseen koodiin, joten muista poistaa ne ennen julkaisua.
+Debuggaus tulosteet eivät ole pelkästään hyödyllisiä virheiden tunnistamisessa, vaan ne voivat myös auttaa ymmärtämään koodin suoritusta ja löytämään mahdollisia pullonkauloja. Voit käyttää niitä esimerkiksi silloin, kun haluat tarkistaa tietokannasta haettujen tietojen sisältöä tai selvittää, miksi tietty lohko koodista ei toimi odotetusti.
+
+On myös hyvä muistaa, että debuggaus tulosteet tulisi poistaa koodista ennen kuin se siirretään tuotantoon. Ne eivät vain hidasta koodin suoritusta, mutta voivat myös paljastaa arkaluonteisia tietoja, kuten tietokannan käyttäjänimiä ja salasanoja.
 
 ## Katso myös
 
-- [PHP:n viralliset dokumentaatiot debug-tulosteista](https://www.php.net/manual/en/function.echo.php)
-- [Debug-tulosteen käyttö blogikirjoituksen kuvina](https://www.sean.co.uk/a/webdesign/debugging-output.shtml)
+- [PHP:n virallinen dokumentaatio debuggaus tulosteista](https://www.php.net/manual/en/function.echo.php)
+- [Debuggaus tulosteiden käyttö WordPressissä](https://developer.wordpress.org/plugins/debugging/debugging-output/)

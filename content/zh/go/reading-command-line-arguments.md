@@ -1,17 +1,18 @@
 ---
 title:    "Go: 读取命令行参数"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么阅读命令行参数？
+#为什么：
 
-在 Go 编程中，命令行参数是非常重要的一个部分。它们可以让你的程序动态地接收输入，从而实现更多的功能。因此，了解如何读取命令行参数对于编写高效的程序来说非常重要。
+当你在编写Go程序时，有时候你想让程序能够接收用户输入的一些参数。这些参数可以通过命令行来传递。通过学习如何读取命令行参数，你可以让你的程序更加灵活和可定制。
 
-## 如何读取命令行参数？
+##如何做：
 
-首先，你需要使用 `os` 包中的 `Args` 函数来接收命令行参数的列表。然后，你可以使用 `len` 函数来判断程序接收到多少个参数。最后，使用 `os.Args[index]` 来访问具体的参数值，其中 `index` 为参数的索引值。下面是一个简单的示例代码：
+在Go语言中，你可以使用内置的`os`包来读取命令行参数。首先，你需要使用`os.Args`函数来获取所有传递给程序的参数。然后，你可以使用索引来访问每个参数，索引从0开始，包括程序本身的名称。下面是一个简单的示例：
 
 ```Go
 package main
@@ -23,40 +24,59 @@ import (
 
 func main() {
   args := os.Args
-  fmt.Println("Number of arguments:", len(args))
-
-  fmt.Println("Argument 1:", args[1])
-  fmt.Println("Argument 2:", args[2])
+  fmt.Println("程序名称：", args[0])
+  fmt.Println("参数数量：", len(args)-1)
+  fmt.Println("参数列表：", args[1:])
 }
 ```
 
-假设你的程序名为 `go-program`，当你在终端输入 `go-program hello world`，那么程序的输出将是：
+运行结果（假设程序名称为`program.go`）：
 
+```bash
+$ go run program.go 1 2 3
+程序名称： program.go
+参数数量： 3
+参数列表： [1 2 3]
 ```
-Number of arguments: 3
-Argument 1: hello
-Argument 2: world
+
+##深入了解：
+
+除了使用索引，你也可以使用`flag`包来读取命令行参数。`flag`包提供了更加直观和可定制的方法来读取参数。下面是一个使用`flag`包的例子：
+
+```Go
+package main
+
+import (
+  "flag"
+  "fmt"
+)
+
+func main() {
+  // 定义一个参数，名称为lang，默认值为"en"
+  lang := flag.String("lang", "en", "语言选择")
+  
+  // 解析命令行参数
+  flag.Parse()
+  
+  fmt.Println("你选择的语言是：", *lang)
+}
 ```
 
-## 深入了解命令行参数
+运行结果（假设程序名称为`program.go`）：
 
-除了以上的基本用法，还有一些其他的技巧可以帮助你更好地利用命令行参数。例如，你可以使用 `flag` 包来定义和解析命令行标志，从而使得接收输入变得更加方便和灵活。另外，你也可以使用 `os.Args[0]` 来获取程序的名称，或者使用 `strings.Join(args, " ")` 将参数列表转换为一个字符串。
+```bash
+$ go run program.go -lang cn
+你选择的语言是： cn
+```
 
-## 参考链接
+你也可以使用`flag`包来定义更多的参数，比如整型参数、布尔型参数等。详细的说明可以参考官方文档。
 
-- [Go语言标准库 - os包](https://books.studygolang.com/The-Golang-Standard-Library-by-Example/chapter05/05.1.html)
-- [Go语言标准库 - flag包](https://books.studygolang.com/The-Golang-Standard-Library-by-Example/chapter05/05.2.html)
-- [如何优雅地处理命令行参数](https://zhuanlan.zhihu.com/p/37467079)
-- [Effective Go - Flags](https://golang.org/doc/effective_go.html#flags)
-- [A Tour of Go - Command-line arguments](https://tour.golang.org/basics/15)
-- [Learning Go by examples - Command line flags](https://dev.to/dishoooon/command-line-flags-in-go-1gn0)
-- [如何获取程序的名称](https://stackoverflow.com/questions/42228053/how-to-get-the-name-of-executable-go-file)
+#参考链接：
 
-## 看看这些
+- [Go语言标准库-os包](https://studygolang.com/pkgdoc)
+- [Go语言标准库-flag包](https://studygolang.com/pkgdoc)
+- [Learning Go 第三版（中文版）-命令行参数](https://books.studygolang.com/Go-study-index/ch01s03.html#cli)
 
-如果你想继续学习有关命令行参数的更多内容，可以看看以下链接：
+#更多阅读：
 
-- [Go语言官方文档 - os包](https://golang.org/pkg/os/)
-- [Go语言官方文档 - flag包](https://golang.org/pkg/flag/)
-- [Go语言官方文档 - strings包](https://golang.org/pkg/strings/)
-- [Go语言标准教程 - 命令行参数](https://books.studygolang.com/gopl-zh/ch1/ch1-03.html)
+如果你想深入了解Go语言的命令行参数读取原理，可以查看`flag`包的源码。另外，你也可以尝试使用其他第三方库来读取命令行参数，比如`Go-flags`和`Kingpin`等。

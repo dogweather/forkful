@@ -1,40 +1,36 @@
 ---
-title:    "Gleam: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+title:    "Gleam: ''컴퓨터 프로그래밍에서 명령 줄 인수 읽기''"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-커맨드 라인 인자를 읽는 것이 중요한 이유는, 프로그래머가 사용자가 입력한 정보를 프로그램에 적용할 수 있기 때문입니다.
+## 왜
 
-# 방법
-아래 코드 블록에서는 Gleam 언어를 사용하여 커맨드 라인 인자를 읽는 방법을 보여줍니다. 각 코드 블록의 아래에는 예상되는 출력이 나와 있습니다.
+이 기사를 읽는 이유는 단순합니다. 글림(Gleam) 프로그래밍 언어를 사용하여 커맨드 라인 인수를 읽는 방법을 배우고 싶기 때문입니다. 커맨드 라인 인수를 읽는 것은 프로그래머에게 유용한 기술이며 프로그램에 유연성을 제공할 수 있습니다.
+
+## 어떻게
+
+커맨드 라인 인수를 읽는 방법을 배우는 것은 간단합니다. 먼저 구글에서 Gleam을 다운로드하여 설치해야 합니다. 그런 다음 다음과 같이 코드를 작성합니다:
 
 ```Gleam
-import gleam/io
-
-fn main() {
-    // 커맨드 라인에서 두 개의 인자를 읽어옵니다
-    let argument1 = io.args()[0]
-    let argument2 = io.args()[1]
-
-    // 읽어온 인자를 화면에 출력합니다
-    io.println("첫 번째 인자: {}", [argument1])
-    io.println("두 번째 인자: {}", [argument2])
+import gleam/arg
+main(args) {
+    greeting := arg.get(args, 0, "Hello")
+    name := arg.get(args, 1, "World")
+    print(greeting + ",", name + "!")
 }
 ```
 
-예상 출력:
-```
-> gleam run read_args.gleam argument1 argument2
-첫 번째 인자: argument1
-두 번째 인자: argument2
-```
+위의 코드를 실행하면 예를 들어 "Hello, World!"라는 출력을 볼 수 있습니다.
 
-# 깊이 들어가기
-커맨드 라인 인자를 읽는 것은 프로그래밍의 한 가지 기본적인 기술입니다. 커맨드 라인 인자는 프로그램을 실행하는 데 필요한 정보를 제공하는 데 사용될 수 있습니다.그럼에도 불구하고, 커맨드 라인 인자를 정확하게 읽는 것은 때로 복잡할 수 있습니다. 만약 인자가 공백을 포함하거나 정수형으로 지정되어있다면 어떻게 해야 할까요? 프로그래머는 이러한 상황을 고려하여 적절한 처리 방법을 구현해야 합니다.
+## 심층적으로 탐구하기
 
-# 참고
-[Gleam 문서: 커맨드 라인 인자](https://gleam.run/documentation/cmdline_arguments)
-[일반적인 커맨드 라인 인자 처리 패턴](https://wiki.python.org/moin/HandlingExceptions)
+커맨드 라인 인수를 읽는 다른 방법도 있습니다. 예를 들어, `get_flag` 함수를 사용하여 특정 플래그를 읽을 수도 있습니다. 또는 `get_opt` 함수를 사용하여 선택적 인수를 읽을 수도 있습니다. 더 많은 정보는 [Gleam 공식 문서](https://gleam.run/book/stdlib.html#arg)에서 확인할 수 있습니다.
+
+## 또 보기
+
+- [Gleam 공식 웹사이트](https://gleam.run)
+- [Gleam 공식 문서](https://gleam.run/book/)
+- [Gleam의 커뮤니티 드라이브](https://community.gleam.run/)

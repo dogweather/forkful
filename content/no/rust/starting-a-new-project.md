@@ -1,34 +1,43 @@
 ---
 title:    "Rust: Å starte et nytt prosjekt"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor skulle noen engasjere seg i å starte et nytt prosjekt? En av de viktigste grunnene er at Rust er et spennende og kraftig programmeringsspråk som kombinerer ytelse og sikkerhet. Med sine moderne funksjoner og verktøy er Rust en flott plattform for å utvikle nye og innovative prosjekter.
+Rust er et kraftig programmeringsspråk som er kjent for sin stabilitet, sikkerhet og gode ytelse. Det er et ideelt valg for å utvikle pålitelige og effektive applikasjoner. Hvis du ønsker å starte et nytt programmeringsprosjekt, bør du definitivt vurdere å bruke Rust.
 
-## Hvordan du kommer i gang med Rust
-Ved å følge disse enkle trinnene kan du komme i gang med å lage ditt første Rust-prosjekt:
+## Hvordan
+La oss se på et enkelt eksempel på hvordan du kan bruke Rust til å lage en funksjon som legger sammen to tall og returnerer summen:
 
 ```Rust
-// Klargjør et nytt prosjekt
-cargo new mitt_prosjekt
+fn legg_til(tall1: i32, tall2: i32) -> i32 {
+    return tall1 + tall2;
+}
 
-// Gå til prosjekt-mappen
-cd mitt_prosjekt 
+// Kjør funksjonen med tallene 5 og 10
+let sum = legg_til(5, 10);
 
-// Kjør programmet
-cargo run
-
+println!("Summen av 5 og 10 er {}", sum);
 ```
 
-Etter å ha kjørt disse tre kommandoene, vil du ha et grunnleggende Rust-prosjekt som er klart til å bli utviklet videre. Du kan også bruke verktøyet *rustup* for å installere og administrere forskjellige versjoner av Rust og utvide funksjonaliteten til ditt prosjekt.
+Dette vil produsere følgende output:
+
+```
+Summen av 5 og 10 er 15
+```
+
+Som du kan se, er syntaksen i Rust ganske enkel og lesbar. Du definerer funksjoner med nøkkelordet `fn`, og angir hvilke parametere som skal tas i mot. Du må også spesifisere hvilken type verdi som skal returneres.
 
 ## Dypdykk
-For å dykke dypere ned i å utvikle med Rust, bør du utforske dokumentasjonen og lære om de forskjellige funksjonene og konseptene som språket tilbyr. Du kan også sjekke ut de mange flotte bibliotekene og rammeverkene som er tilgjengelige for Rust, som kan bidra til å gjøre utviklingen din enklere og mer effektiv. Husk også å dra nytte av Rusts aktive samfunn og delta i diskusjoner og få hjelp fra erfarne utviklere.
+Når du starter et nytt prosjekt i Rust, er det viktig å sette opp riktig miljø og verktøy. Det er flere ulike IDE-er som støtter Rust-utvikling, som for eksempel Visual Studio Code, IntelliJ og Atom. Du kan også installere Rust og Rust-verktøyene direkte på datamaskinen din. Det kan også være lurt å lære om konseptet med Rusts packagemanager, cargo, og hvordan man bruker den til å håndtere avhengigheter og bygge prosjektet ditt.
+
+Når du har etablert et godt grunnlag, kan du begynne å utforske ulike biblioteker og rammerverk som finnes for Rust. Disse kan hjelpe deg med å bygge mer komplekse og funksjonsrike applikasjoner. Fordi Rust er et relativt nytt språk, kan det være lurt å søke etter dokumentasjon og eksempler for å hjelpe deg i gang.
 
 ## Se også
-* [Offisiell Rust Documentation](https://doc.rust-lang.org)
-* [Rust Programmeringsspråk](https://www.rust-lang.org/no)
-* [Rust Reddit](https://www.reddit.com/r/rust/)
+- [Rust offisiell nettside](https://www.rust-lang.org/no)
+- [Rust dokumentasjon](https://doc.rust-lang.org/book/)
+- [Rust pakkehåndterer (cargo)](https://doc.rust-lang.org/cargo/)
+- [Minimal Rust IDE (rust-analyzer)](https://rust-analyzer.github.io/)

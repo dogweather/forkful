@@ -1,42 +1,39 @@
 ---
-title:    "Rust: テキストの検索と置き換え"
+title:    "Rust: テキストの検索と置換"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-テキストを検索して置換する作業に取り組む理由は、プログラミングの世界ではよくあることです。例えば、大規模なプログラムで特定の変数名を一括で変更する必要がある場合や、テキスト内の特定の単語を一括で修正したい場合などがあります。Rustはこのような作業にも非常に優れたツールとなり得ます。
+テキストの検索と置換を行いたいと思う理由は、コンピュータやプログラミングにおいて、効率的に作業を行うためには欠かせないからです。正確なテキストの検索と置換を行うことで、作業のスピードや精度が向上し、プログラミングの生産性が高まります。
 
 ## 方法
-Rustを使ったテキストの検索と置換は、簡単に実現できます。まずは「regex」ライブラリを使用するために、プロジェクトのCrates.tomlファイルに次の行を追加しましょう。
+まずはRustコンパイラをインストールし、以下のコードをコピーしてコンパイルしてください。その後、検索対象のテキストファイルのパスを指定し、検索したい単語や置換後の単語を入力してください。
 
-```
-regex = "1.3.9"
-```
+```Rust
+use std::fs;
+use std::io::Write;
 
-次に、`src/main.rs`ファイルに次のようなコードを追加します。
+fn main() {
+    let input_path = "テキストファイルのパス";
+    let output_path = "出力ファイルのパス";
 
-```rust
-use regex::Regex
-```
+    let text = fs::read_to_string(input_path).expect("ファイルが見つかりません");
+    let replaced_text = text.replace("検索したい単語", "置換後の単語");
 
-そして、`main()`関数内に次のコードを記述します。
-
-```rust
-let regex = Regex::new(r"Hello").unwrap();
-let replaced_text = regex.replace_all("Hello, world!", "こんにちは");
-println!("{}", replaced_text);
+    let mut output = fs::File::create(output_path).expect("出力ファイルが見つかりません");
+    output.write(replaced_text.as_bytes()).expect("書き込みに失敗しました");
+}
 ```
 
-コンパイルして実行すると、"こんにちは, world!"というテキストに置換されていることがわかります。
+コンパイルが成功したら、指定した出力ファイルに検索と置換が行われたテキストが書き込まれます。
 
 ## ディープダイブ
-さらに、検索パターンや置換文字列には正規表現を使用することもできます。例えば、`[A-z]`というパターンを使うことで、アルファベットの大文字と小文字を一括して置換することができます。
+テキストの検索と置換を行う際に、正規表現を使用することでより柔軟な検索が可能になります。Rustでは、regexライブラリを使用することで正規表現をサポートしています。また、検索と置換をより複雑な操作に拡張することもできます。
 
-また、置換後のテキストにはグループを指定することもできます。例えば、`regex.replace_all("Hello, world!", "$1!")`というコードを記述することで、「Hello, world!」が「Hello!」というテキストに置換されます。
-
-## その他の参考リンク
-[Rust regexライブラリドキュメント](https://docs.rs/regex/1.3.9/regex/)
-[Rustプログラミング言語公式サイト](https://www.rust-lang.org/ja/)
-[Rust日本ユーザーグループ](https://rust-jp.rs/)
+## 他に見る
+- [Rustコンパイラのインストールガイド](https://www.rust-lang.org/tools/install)
+- [正規表現の基礎知識](https://www.atmarkit.co.jp/ait/articles/1708/01/news021.html)
+- [regexライブラリのドキュメンテーション](https://docs.rs/regex/1.4.3/regex/)

@@ -1,17 +1,18 @@
 ---
-title:    "Go: 新しいプロジェクトを開始する"
+title:    "Go: 新しいプロジェクトの開始"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜGoプログラミングを始めるのか
+# なぜ
 
-Goプログラミングを学ぶことで、高速なウェブアプリケーションやマイクロサービスを開発することができます。また、クロスプラットフォーム対応や軽量な実行ファイルの作成が可能なため、多くのプログラマーに選ばれています。
+新しいプロジェクトを始める魅力的な理由があります。この記事では、Go言語でのプロジェクト開発のメリットを紹介します。
 
-## Goを始める方法
+## How To
 
-まず、Goの公式サイトからインストール用のバイナリファイルをダウンロードし、インストールします。その後、コードエディターを選択し、Hello Worldプログラムを作成し、実行することでGoの基本的な構文を学ぶことができます。
+プロジェクトの始め方について、実際のコード例と出力を紹介します。Go言語の特徴や基本的な文法についても説明します。
 
 ```Go
 package main
@@ -19,42 +20,20 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello World!")
+  // プログラムの処理を記述する
+  fmt.Println("Hello, 世界!")
 }
 ```
 
-実行結果:
+出力結果：`Hello, 世界!`
 
-```Go
-Hello World!
-```
+## ディープダイブ
 
-次に、変数、関数、制御構造などの基本的な概念を学び、実践的なプログラムを作成することでGoの力を体感することができます。
+新しいプロジェクトを始める際に考えるべきことや、実際の開発フローについて深く掘り下げます。Gitの使い方やテストコードの書き方など、より実践的な内容を紹介します。
 
-## プロジェクトを始めるための詳細情報
+## See Also
 
-Goプログラミングを始める際には、以下のようなリソースを参考にすることがおすすめです。
-
-- Goプログラミング言語の公式ドキュメント: https://golang.org/
-- オンラインコースや動画チュートリアル: Udemy、Courseraなどのオンラインプラットフォームで提供されています。
-- オープンソースのGoプロジェクト: GitHubやGitLabなどのリポジトリを閲覧し、プロジェクトのコードを読んで学ぶことができます。
-
-また、プロジェクトを始める前には、何を作りたいのか、どのような機能が必要なのかを明確にし、計画を立てることが重要です。また、コードを書く前に自分のスキルやプロジェクトの規模に合ったツールやフレームワークを選択することも大切です。
-
-# 参考になるリソース
-
-**公式ドキュメント**
-
-- Goプログラミング言語の公式ドキュメント: https://golang.org/
-- Goチュートリアル: https://tour.golang.org/
-
-**オンラインコース**
-
-- Udemyの「プログラミング言語Go: サイドバイサイド比較」: https://www.udemy.com/course/go-comp/
-- Courseraの「GoogleからのGo研修」: https://www.coursera.org/specializations/google-golang
-
-**オープンソースのプロジェクト**
-
-- Gin: https://github.com/gin-gonic/gin
-- Hugo: https://github.com/gohugoio/hugo
-- Docker: https://github.com/moby/moby
+- [Go言語公式サイト](https://golang.org/)
+- [Effective Go](https://golang.org/doc/effective_go.html)
+- [Goプロジェクトを効率的に進めるためのTips](https://speakerdeck.com/kemsakurai/gomi-yahuafalsejian-yi-haiburimachinextepin)
+- [Go言語で始めるWebプログラミング](https://www.udemy.com/course/go-programming)

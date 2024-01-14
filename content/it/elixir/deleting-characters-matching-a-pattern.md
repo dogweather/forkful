@@ -1,59 +1,34 @@
 ---
-title:    "Elixir: Cancellazione dei caratteri che corrispondono a un modello"
+title:    "Elixir: Cancellando caratteri che corrispondono a un modello."
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ci sono molteplici motivi per cui si potrebbe voler eliminare caratteri che corrispondono ad un certo pattern in Elixir. Ad esempio, si potrebbe voler pulire una stringa prima di elaborarla ulteriormente o rimuovere caratteri speciali che potrebbero causare problemi in un'applicazione.
+Quando si lavora con il linguaggio di programmazione Elixir, potresti trovarti nella situazione in cui devi eliminare dei caratteri che corrispondono ad un certo pattern all'interno di una stringa. Ci possono essere diversi motivi per farlo, come ad esempio la pulizia dei dati prima di elaborarli o la rimozione di caratteri speciali. In questo articolo, spiegheremo come eseguire questa operazione utilizzando Elixir.
 
-## Come Fare
+## Come fare
 
-Per eliminare i caratteri che corrispondono ad un certo pattern, possiamo utilizzare il metodo `String.replace/4`. Prenderemo come esempio una stringa contenente numeri di telefono con diversi formati, come ad esempio "(555) 123-4567", "555-123-4567" o "5551234567".
+Per eliminare i caratteri corrispondenti ad un pattern in Elixir, possiamo utilizzare il metodo `String.replace/3` che prende in input la stringa da modificare, il pattern da cercare e la stringa di sostituzione. Vediamo un esempio pratico:
 
-Iniziamo definendo una funzione che prende in input una stringa e un pattern da cercare all'interno di essa:
-
-```elixir
-def clean_string(input_string, pattern) do
-  String.replace(input_string, pattern, "")
-end
+```Elixir
+stringa = "Questa è una frase con caratteri speciali!!!"
+String.replace(stringa, ~r/[^a-zA-Z\s]/, "")
 ```
 
-Dopo di ciò, possiamo chiamare la funzione utilizzando diversi pattern, come ad esempio `"[^0-9]"` per eliminare tutti i caratteri diversi dai numeri:
-
-```elixir
-clean_string("(555) 123-4567", "[^0-9]") #=> "5551234567"
-clean_string("555-123-4567", "[^0-9]") #=> "5551234567"
-clean_string("5551234567", "[^0-9]") #=> "5551234567"
-```
-
-Possiamo anche utilizzare espressioni regolari per eliminare solo alcuni caratteri specifici. Ad esempio, se volessimo eliminare solo le parentesi e il trattino dalla stringa, useremmo il pattern `"[()-]"`:
-
-```elixir
-clean_string("(555) 123-4567", "[()-]") #=> "555 1234567"
-clean_string("555-123-4567", "[()-]") #=> "555 1234567"
-```
-
-Come si può notare, il metodo `String.replace/4` ci permette di rimuovere facilmente i caratteri che non ci interessano dalla nostra stringa, lasciandoci solo con i numeri.
+In questo esempio stiamo eliminando tutti i caratteri che non sono lettere o spazi all'interno della stringa, ottenendo come risultato "Questa una frase con caratteri speciali". Possiamo anche utilizzare espressioni regolari più complesse per cercare caratteri specifici e sostituirli con un altro carattere.
 
 ## Approfondimento
 
-Nell'esempio sopra, abbiamo utilizzato il metodo `String.replace/4` passandogli due parametri e ottenendo una nuova stringa come risultato. Tuttavia, questo metodo ci permette anche di eseguire operazioni più complesse grazie al quarto parametro, ovvero una funzione che viene eseguita su ogni corrispondenza del pattern.
+Oltre al metodo `String.replace/3`, esistono altre funzioni utili per la manipolazione delle stringhe in Elixir. Ad esempio, la funzione `String.trim/2` rimuove gli spazi all'inizio e alla fine della stringa, mentre `String.downcase/1` converte tutti i caratteri della stringa in minuscolo. È importante ricordare che, a differenza di altri linguaggi di programmazione, le stringhe in Elixir sono immutabili, quindi tutte queste funzioni restituiscono una nuova stringa senza modificare quella originale.
 
-Per esempio, se volessimo trasformare tutti i numeri della stringa in lettere, potremmo utilizzare la seguente funzione e passarla come quarto parametro al metodo `String.replace`:
+Se vuoi saperne di più sulla gestione delle stringhe in Elixir, ti consigliamo di consultare la documentazione ufficiale e di esplorare le diverse funzioni messe a disposizione dal linguaggio.
 
-```elixir
-def numbers_to_letters(match) do
-  String.to_charlist(String.to_integer(match) + 64)
-end
-```
+## Vedi anche
 
-La funzione prende in input la corrispondenza del pattern (in questo caso, un numero) e lo trasforma in una lettera corrispondente (ad esempio, '3' in 'C'). Chiamando la funzione `clean_string` precedentemente definita con questa funzione come quarto parametro, otterremo una nuova stringa con tutte le lettere al posto dei numeri.
-
-## Vedi Anche
-
-- [Documentazione su String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Espressioni regolari in Elixir](https://elixir-lang.org/getting-started/regex.html)
-- [Metodi della libreria standard di Elixir](https://hexdocs.pm/elixir/Kernel.html)
+- Documentazione ufficiale di Elixir sui tipi di dati delle stringhe: https://hexdocs.pm/elixir/String.html
+- Tutorial su come utilizzare le espressioni regolari in Elixir: https://weblog.jamisbuck.org/2015/9/12/elixir-regexes-in-depth.html
+- Video tutorial su come manipolare le stringhe in Elixir: https://www.youtube.com/watch?v=lW9VBp4uESo

@@ -1,44 +1,40 @@
 ---
 title:    "C++: स्ट्रिंग्स को जोड़ना"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-विपरीत स्थिति हो सकती है जहां हमें अलग-अलग स्ट्रिंग्स को एक साथ जोड़ने की जरूरत पड़ सकती है, जैसे कि एक संख्या को फोर्मेट करने के लिए उसको दिन, महीना और साल से अलग करना। इसलिए, स्ट्रिंग को जोड़ना बहुत उपयोगी और आसान हो सकता है।
+
+C++ में स्ट्रिंग्स को जोड़ना एक बहुत उपयोगी कौशल है। यह बहुत से प्रोग्रामिंग सिनारियों में काम आ सकता है, जैसे प्रिंटिंग स्ट्रिंग्स, फ़ाइल संग्रहण और यूआई तर्कों को अपडेट करना। यह बहुत सरल होता है और आपको बहुत समय बचाता है जब आप अनुक्रमित स्ट्रिंग्स को काम करना चाहते हैं।
 
 ## कैसे
+
 ```C++
+// स्ट्रिंग्स को जोड़ना
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-  // पहले स्ट्रिंग्स बनाएं
-  string firstName = "जॉन";
-  string lastName = "डो";
-  
-  // स्ट्रिंग को जोड़ें और उसे प्रिंट करें
-  string fullName = firstName + " " + lastName;
-  cout << fullName << endl;
-
+int main()
+{
+  string s1 = "मेरा";
+  string s2 = "नाम";
+  string s3 = s1 + " " + s2; // स्ट्रिंग्स को जोड़ें
+  cout << s3 << endl; // मेरा नाम
   return 0;
 }
 ```
 
-आउटपुट:
-```
-जॉन डो
-```
+## गहराई में जाएं
 
-## गहराई मेज़बानी
-स्ट्रिंग को जोड़ने के बहुत से तरीके हो सकते हैं, जैसे कि ```+=``` ऑपरेटर का इस्तेमाल करना और स्ट्रिंग्स को सीधे प्रिंट करना। भी सीखने के लिए इन लिंक्स पर जाएँ:
-
-- [C++ स्ट्रिंग्ज़: जोड़ना](https://www.tutorialspoint.com/cplusplus/cpp_strings_concatenate.htm)
-- [स्ट्रिंग में += ऑपरेटर का उपयोग](https://www.geeksforgeeks.org/c-string-class-operators-2/)
-- [C++ में स्ट्रिंग फंक्शन्स](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+स्ट्रिंग्स को जोड़ने के लिए, C++ एक बहुत सरल कौशल बनाता है। स्ट्रिंग्स को `+` अपरेटर के माध्यम से जोड़ना ही रूचिकर होता है। आप अनेक स्ट्रिंग्स को एक बार में भी जोड़ सकते हैं, जैसे `s1 + " " + s2` उदाहरण में देखा गया है।
 
 ## देखें भी
-- [C++ स्ट्रिंग प्रोसेसिंग के उपयोगी तरीके](https://www.codespeedy.com/cpp-string-processing-tricks/)
-- [C++ में स्ट्रिंग्स का अनुक्रमणिका उपयोग कैसे करें](https://www.umlindiabuzz.com/cpp-indexing-of-strings/)
-- [C++ स्ट्रिंग्स के साथ खेलना कैसा हो सकता है](https://www.techiedelight.com/string-manipulation-techniques-cpp/)
+
+- [C++ एक समान गुणक का उपयोग करने के लिए उत्कृष्ट तरीके](https://www.javatpoint.com/cpp-string-equal-operator-overloading)
+- [C++ स्ट्रिंग्स समीकरण और जोड़ना](https://www.geeksforgeeks.org/cpp-program-to-find-concatenation-of-two-strings/)
+- [C++ स्ट्रिंग्स के साथ काम करना](https://www.geeksforgeeks.org/cpp-programming-working-with-strings/)

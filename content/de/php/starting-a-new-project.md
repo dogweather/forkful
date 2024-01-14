@@ -1,48 +1,52 @@
 ---
-title:    "PHP: Eine neue Projekt beginnen"
+title:    "PHP: Ein neues Projekt starten"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Erstellen eines neuen PHP-Projekts kann eine aufregende und lohnende Herausforderung sein. Es ermöglicht Ihnen, Ihre Fähigkeiten als Programmierer zu verbessern und etwas Neues zu schaffen. Es kann auch eine gute Möglichkeit sein, Ihre Kreativität auszudrücken und Ihre Ideen umzusetzen.
 
-Es gibt viele Gründe, warum jemand ein neues PHP-Projekt starten möchte. Vielleicht hat man eine innovative Idee, die man in die Tat umsetzen möchte, oder man möchte sich mit der Programmiersprache vertraut machen. Oder vielleicht möchte man einfach nur ein bestehendes Projekt verbessern oder erweitern. Ganz gleich, was der Grund ist, ein neues Projekt zu starten, PHP bietet eine großartige Plattform für die Entwicklung von dynamischen Webanwendungen.
+## So geht's
+Wenn Sie ein neues PHP-Projekt beginnen möchten, gibt es ein paar wichtige Schritte, die Sie befolgen sollten. Zunächst müssen Sie eine IDE (Integrated Development Environment) installieren, die es Ihnen ermöglicht, PHP-Code zu schreiben und zu testen. Eine gute Option ist Visual Studio Code, das kostenlos und einfach zu bedienen ist.
 
-## Wie geht das?
+Als nächstes müssen Sie eine Datenbank einrichten, um Ihre Daten zu speichern. In diesem Beispiel verwenden wir MySQL. Sie können einen lokalen Server wie XAMPP oder MAMP verwenden, um Ihre Datenbank zu hosten.
 
-Das Erstellen eines neuen PHP-Projekts ist relativ einfach und unkompliziert. Zunächst benötigt man einen Webserver, auf dem PHP läuft, und eine integrierte Entwicklungsumgebung (IDE) wie beispielsweise PhpStorm oder NetBeans. Dann kann man einfach einen neuen Ordner für das Projekt anlegen und darin eine neue PHP-Datei erstellen.
-
-Um anzufangen, muss man die Basisstruktur eines PHP-Dokuments erstellen. Dazu gehören üblicherweise eine HTML-Sektion mit dem Titel, der Beschreibung und dem Stylesheet sowie ein PHP-Tag mit einer "ECHO"-Anweisung, die eine Begrüßungsnachricht ausgibt. Insgesamt könnte das so aussehen:
+Sobald Sie Ihre Tools eingerichtet haben, können Sie mit dem eigentlichen Codieren beginnen. Hier ist ein Beispiel für eine einfache PHP-Funktion, die eine Begrüßungsnachricht ausgibt:
 
 ```PHP
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Mein neues Projekt</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 <?php
-echo "Willkommen zu meinem neuen Projekt!";
-?>
-</body>
-</html>
+function sayHello($name) {
+  echo "Hallo " . $name . "!";
+}
 ```
 
-Nachdem man die Datei gespeichert hat, kann man sie im Webbrowser aufrufen und sollte die Begrüßungsnachricht sehen können. Jetzt steht einem die Tür offen, um noch weitere PHP-Funktionen und -Funktionen hinzuzufügen und das Projekt weiter auszubauen.
+Wenn Sie nun `sayHello("Max")` aufrufen, wird die Nachricht "Hallo Max!" ausgegeben. Diese Funktion ist jedoch noch nicht sehr flexibel, da sie immer denselben Text ausgibt. Wir können sie verbessern, indem wir Parameter hinzufügen, die es uns ermöglichen, die Nachricht anzupassen. Zum Beispiel:
 
-## Tiefer Einblick
+```PHP
+<?php
+function sayHello($name, $language) {
+  if ($language === "de") {
+    echo "Hallo " . $name . "!";
+  } else if ($language === "en") {
+    echo "Hello " . $name . "!";
+  }
+}
+```
 
-Bevor man ein neues PHP-Projekt startet, sollte man sich einige grundlegende Dinge im Klaren sein. Zum Beispiel sollte man über grundlegende Programmierkenntnisse und die Syntax von PHP verfügen. Auch sollten wichtige Konzepte wie Variablen, Schleifen, Funktionen und Datentypen geläufig sein.
+Dies gibt je nach ausgewählter Sprache die Begrüßungsnachricht auf Deutsch oder Englisch aus. Sie können auch weitere Sprachen hinzufügen, um die Funktion noch vielseitiger zu gestalten.
 
-Es ist auch wichtig, sich über den Zweck des Projekts im Klaren zu sein und eine klare Struktur und Planung zu haben. Dies kann dazu beitragen, unnötige Fehler und Probleme zu vermeiden und das Projekt effizienter zu gestalten.
+## Tiefgehende Erläuterung
+Bevor Sie mit der Entwicklung eines neuen Projekts beginnen, ist es wichtig, sich Zeit zu nehmen, um Ihre Ideen zu planen und zu strukturieren. Stellen Sie sicher, dass Sie klare Ziele und Anforderungen haben, um Ihr Projekt zielgerichtet zu gestalten.
 
-Ein wichtiger Aspekt beim Erstellen eines neuen PHP-Projekts ist auch die Verwendung von Best Practices und Sicherheitsmaßnahmen. Dazu gehört beispielsweise die Verwendung von validem und sauberem Code, um Sicherheitsrisiken zu minimieren.
+Außerdem sollten Sie sich mit bewährten Prinzipien und Techniken vertraut machen, um sauberen und effizienten Code zu schreiben. Eine gute Dokumentation ist auch unerlässlich, um sicherzustellen, dass Ihr Code auch in Zukunft noch verständlich und wartbar bleibt.
+
+Schließlich ist es auch wichtig, sich nicht entmutigen zu lassen, wenn Sie auf Probleme oder Herausforderungen stoßen. Das Erlernen einer neuen Programmiersprache erfordert Geduld und Ausdauer, aber mit der Zeit werden Sie Ihre Fähigkeiten verbessern und zu einem besseren Entwickler werden.
 
 ## Siehe auch
-
-- [PHP-Grundlagen für Anfänger](https://www.php-einfach.de/)
-- [Offizielle PHP-Dokumentation](https://www.php.net/manual/de/)
-- [Best Practices für PHP-Entwicklung](https://phpbestpractices.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [XAMPP](https://www.apachefriends.org/index.html)
+- [MAMP](https://www.mamp.info/de/)
+- [Offizielle PHP-Dokumentation](https://www.php.net/manual/de/index.php)

@@ -1,66 +1,40 @@
 ---
 title:    "Python: Generering av tilfeldige tall"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Generering av tilfeldige tall kan være svært nyttig i programmering. Det kan hjelpe deg med å teste ut ulike scenarier og lage varierte datasett.
 
-Mange ganger i programmering, trenger vi å generere tilfeldige tall. Dette kan være for å simulere ulike situasjoner eller for å lage tilfeldige verdier for tester. Uansett årsak, kan det å ha kunnskap om hvordan man genererer tilfeldige tall være svært nyttig for en programmerer.
-
-## Slik gjør du det
-
-Det er flere måter å generere tilfeldige tall i Python, men den mest vanlige metoden er å bruke "random" biblioteket. For å bruke dette biblioteket, må du først importere det i koden din ved å skrive:
+## Hvordan
+For å generere tilfeldige tall i Python, kan du bruke "random" biblioteket. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 og skrive det ut:
 
 ```Python
 import random
+print(random.randint(1,10))
 ```
 
-Deretter kan du bruke funksjonen "random.randint(a, b)" for å generere et tilfeldig heltall mellom a og b, inkludert a og b. For eksempel, hvis du ønsker å generere et tilfeldig heltall mellom 1 og 10, kan du skrive:
+Dette vil skrive ut et tilfeldig tall hver gang koden kjøres, for eksempel: 7, 3, 9 osv.
 
-```Python
-random.randint(1, 10)
-```
-
-Hvis du ønsker å generere et tilfeldig desimaltall mellom 0 og 1, kan du bruke "random.random()" funksjonen. Denne funksjonen vil generere et desimaltall mellom 0 og 1, ikke inkludert 1.
-
-```Python
-random.random()
-```
-
-Det er også mulig å bruke "random.uniform(a, b)" funksjonen for å generere et tilfeldig desimaltall mellom a og b, inkludert a og b.
-
-For å se hvordan tilfeldige tall kan genereres, kan du prøve å kjøre følgende kode:
+Du kan også generere tilfeldige tall fra en liste ved hjelp av "choice" funksjonen. Her er et eksempel på hvordan du kan generere et tilfeldig navn fra en liste og skrive det ut:
 
 ```Python
 import random
-
-# Generer et tilfeldig heltall mellom 1 og 100
-random.randint(1, 100)
-
-# Generer et tilfeldig desimaltall mellom 0 og 1
-random.random()
-
-# Generer et tilfeldig desimaltall mellom 5 og 10
-random.uniform(5, 10)
+names = ["Ella", "Olav", "Sofia", "William", "Mia"]
+print(random.choice(names))
 ```
 
-Outputet av denne koden kan se slik ut:
-
-```
->>> 56
->>> 0.7895310639626686
->>> 7.193560328242549
-```
+Dette vil skrive ut et tilfeldig navn fra listen hver gang koden kjøres, for eksempel: Olav, William, Mia osv.
 
 ## Dypdykk
+Python har flere funksjoner som kan hjelpe deg med å generere tilfeldige tall på ulike måter. "random.uniform()" kan for eksempel generere tilfeldige desimaltall mellom et gitt intervall. "random.sample()" kan generere en liste med tilfeldige tall eller elementer fra en eksisterende liste uten å duplisere dem. 
 
-Mens det å bruke "random" biblioteket er den vanligste måten å generere tilfeldige tall på, er det også andre måter å gjøre det på. For eksempel, om du ønsker å generere tilfeldige tall fra en bestemt distribusjon, kan du bruke NumPy biblioteket. Dette biblioteket tilbyr en rekke funksjoner for å generere tilfeldige tall fra ulike distribusjoner som normalfordeling og eksponentialfordeling.
-
-En annen viktig ting å vite er at "random" biblioteket egentlig ikke genererer helt tilfeldige tall, men heller "pseudo-tilfeldige" tall. Dette betyr at tallene er generert ut fra en algoritme og en startverdi, og vil følge et forutsigbart mønster. Dette kan være nyttig å vite om du ønsker å generere de samme tallene flere ganger.
+Det er også mulig å sette en startverdi, kalt en "seed", for å få de samme tilfeldige tallene hver gang koden kjøres. Dette kan gjøres ved å bruke funksjonen "random.seed()". Dette kan være nyttig hvis du trenger å kunne gjenskape resultatene dine.
 
 ## Se også
-
-- [Dokumentasjon for "random" biblioteket i Python](https://docs.python.org/3/library/random.html)
-- [NumPy dokumentasjon for å generere tilfeldige tall](https://numpy.org/doc/stable/reference/random/index.html)
+- [Dokumentasjon for random modulen i Python](https://docs.python.org/3/library/random.html)
+- [Generere tilfeldige tall med numpy biblioteket](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html)
+- [Hvordan generere tilfeldige tall i andre programmeringsspråk](https://www.geeksforgeeks.org/generating-random-number-list-in-python/)

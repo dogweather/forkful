@@ -1,45 +1,39 @@
 ---
 title:    "Gleam: 두 날짜 비교하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+Gleam 프로그래밍 블로그 게시물 - 두 날짜 비교하기
 
-컴퓨터 코딩을 하는 사람들에게 날짜를 비교하는 것이 왜 필요한지 궁금할 수 있습니다. 날짜를 비교하는 것은 시간을 추적하고 분석하는 데 매우 유용합니다. 예를 들어, 어떤 일이 발생한 날짜와 비즈니스 활동의 성장을 분석하는 데 사용된 날짜를 비교할 수 있습니다.
+## 왜 하나요?
+두 날짜를 비교하려면 어떻게 해야 할까요? 파이썬에서는 날짜 2개를 비교하는 까다로운 작업입니다. 그래서 Gleam에서는 이 과정을 더 간단하게 만들어줍니다. 이 블로그 게시물에서는 왜 두 날짜를 비교해야 하는지 알려드리고, Gleam을 사용해서 어떻게 간단하게 비교할 수 있는지 알려드리겠습니다.
 
-# 어떻게
-
-날짜를 비교하는 가장 쉬운 방법은 Gleam의 `DateTime` 모듈을 사용하는 것입니다. 먼저 두 날짜를 비교할 때 연도, 월, 일 등의 모든 요소가 일치하는지 확인해야 합니다. 그리고 `is_before` 또는 `is_after`를 사용하여 두 날짜 중 어느 것이 더 빠른지 확인할 수 있습니다. 아래의 코드 예제는 2020년 8월 14일을 나타내는 `my_date`와 오늘 날짜를 비교하는 예제입니다.
+## 어떻게 하나요?
+Gleam에서는 두 날짜를 비교하는 `Date.compare` 함수를 제공합니다. 이 함수는 첫 번째 인자에는 비교할 날짜를, 두 번째 인자에는 기준 날짜를 넣어주면 됩니다. 두 날짜가 서로 같은지, 앞서는지 혹은 뒤에 있는지 비교할 수 있습니다.
 
 ```Gleam
-import gleam/datetime
-
-my_date = DateTime.create(2020, 8, 14)
-today = DateTime.now()
-
-if (DateTime.is_before(my_date, today)) {
-  println("my_date는 오늘보다 과거에 있습니다.")
-} else if (DateTime.is_after(my_date, today)) {
-  println("my_date는 오늘보다 미래에 있습니다.")
-} else {
-  println("my_date와 오늘은 같은 날짜입니다.")
-}
+let result = Date.compare(#time(2021, 10, 10), #time(2021, 10, 11))
 ```
 
-위의 코드를 실행하면 오늘과 비교되는 `my_date`가 어느 쪽에 위치하는지 알 수 있습니다.
+위 코드의 결과는 `-1`이 나올 것입니다. 이는 첫 번째 인자인 `#time(2021, 10, 10)`이 기준 날짜 `#time(2021, 10, 11)`보다 앞서 있음을 나타냅니다.
 
-# 깊게 들어가기
+또 다른 예시를 살펴볼까요?
 
-날짜 비교는 `DateTime` 모듈의 여러 함수를 잘 활용하는 것이 중요합니다. 이 모듈을 사용하면 두 날짜를 비교하는 것뿐만 아니라 날짜 사이의 차이를 계산하거나, 특정 날짜의 다음 날짜를 계산하는 등 다양한 작업을 수행할 수 있습니다.
+```Gleam
+let result = Date.compare(#time(2021, 10, 11), #time(2021, 10, 10))
+```
 
-또한 `DateTime` 모듈은 국제 날짜와 시간을 처리할 수 있는 기능도 제공합니다. `DateTime.zone` 함수를 사용하여 특정 시간대를 설정하고, `DateTime.shift` 함수를 사용하여 다른 시간대로 변환할 수 있습니다.
+이번에는 `1`이 나올 것입니다. 첫 번째 인자인 `#time(2021, 10, 11)`이 기준 날짜 `#time(2021, 10, 10)`보다 뒤에 있음을 나타내죠.
 
-더 많은 정보는 [Gleam 공식 문서](https://gleam.run/language/modules/datetime.html)를 참고하세요.
+위와 같은 방법으로 두 날짜를 비교할 수 있습니다. 이렇게 간단하게 두 날짜를 비교할 수 있다는 것은 많은 시간과 노력을 아낄 수 있다는 점에서 매우 유용합니다.
 
-# 참고
+## 딥 다이브
+Gleam에서는 `Date.compare` 함수를 뿐만 아니라 다양한 날짜 관련 함수를 제공합니다. 이 함수들을 잘 활용하면 복잡한 날짜 연산도 손쉽게 처리할 수 있습니다. 자세한 내용은 공식 문서를 참고해주세요.
 
-- [Gleam 공식 사이트](https://gleam.run/)
-- [Gleam 공식 문서](https://gleam.run/language/index.html)
-- [Gleam 레퍼런스 문서](https://gleam.run/reference/index.html)
+## 관련 자료
+[Gleam 공식 문서](https://gleam.run/)  
+[Gleam GitHub 저장소](https://github.com/gleam-lang)  
+[파이썬으로 두 날짜 비교하기](http://blog.naver.com/example)

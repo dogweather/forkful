@@ -1,33 +1,40 @@
 ---
 title:    "Clojure: Creando un archivo temporal"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué crear un archivo temporal con Clojure
+## Por qué
 
-La creación de archivos temporales es una tarea común en la programación, especialmente cuando se trabaja con grandes cantidades de datos o se necesitan archivos temporales para realizar pruebas y prototipos. En Clojure, crear un archivo temporal es una tarea sencilla que nos permite manejar de manera eficiente estos archivos que solo necesitamos temporalmente.
+Muchas veces en programación, es necesario crear un archivo temporal para almacenar datos o realizar operaciones temporales. Estos archivos sirven como una herramienta útil para mantener la organización en nuestro código y asegurar que no se pierdan datos importantes.
 
-## Cómo crear un archivo temporal en Clojure
+## Cómo hacerlo
 
-Para crear un archivo temporal en Clojure, utilizaremos la función `with-open`, que nos permite abrir un recurso y asegurar su cierre una vez que hayamos terminado de utilizarlo. En este caso, utilizaremos `with-open` para crear un archivo temporal y asegurar su eliminación una vez que hayamos terminado.
+En Clojure, podemos crear un archivo temporal utilizando la función `with-open` y el macro `temporary-file`. Podemos especificar el nombre del archivo y su extensión, así como su ubicación en el sistema.
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "archivo-temp" ".txt")]
-   (println "Archivo temporal creado en:" (.getPath temp-file)))
+(with-open [file (temporary-file "foo" ".txt")]
+  (println "Se ha creado el archivo" (.getName file)))
 ```
 
-En el ejemplo anterior, hemos utilizado la función `java.io.File/createTempFile` para crear el archivo temporal en la ubicación especificada. También podemos utilizar la función `java.io.File/createTempFile` sin proporcionar una ubicación, en cuyo caso el archivo temporal se creará en el directorio temporal del sistema de archivos.
+Este código creará un archivo temporal llamado "foo.txt" en la ubicación predeterminada del sistema. También podemos especificar una ubicación específica para el archivo temporal utilizando la función `with-open`.
 
-## Profundizando en la creación de archivos temporales
+```Clojure
+(with-open [file (temporary-file "bar" ".csv" "/Users/John/Desktop")]
+  (println "Se ha creado el archivo" (.getAbsolutePath file)))
+```
 
-La función `java.io.File/createTempFile` acepta dos argumentos: el prefijo del nombre del archivo temporal y el sufijo del nombre del archivo temporal. Esto nos permite personalizar el nombre del archivo temporal para que sea más significativo y fácil de identificar.
+Este código creará un archivo temporal llamado "bar.csv" en el escritorio de John.
 
-Además, también podemos utilizar la función `java.io.File/setReadable` para cambiar los permisos del archivo temporal y permitir su lectura. Esto puede ser útil si necesitamos compartir el archivo temporal con otros procesos o usuarios.
+## Profundizando
 
-## Ver también
+Hay algunas cosas importantes a tener en cuenta al crear un archivo temporal en Clojure. Primero, estos archivos se eliminarán automáticamente cuando el bloque `with-open` en el que se crearon se cierre. Además, podemos acceder al objeto `File` del archivo temporal y utilizarlo para realizar operaciones como escribir o leer datos.
 
-- [Documentación de Clojure para la función `with-open`](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/with-open)
-- [Ejemplos de creación de archivos temporales en Clojure](https://www.geeksforgeeks.org/create-temporary-file-in-clojure/)
-- [Guía de prácticas recomendadas en Clojure](https://clojure.org/guides/faq#creating_temporary_files)
+Es importante recordar que estos archivos son solo temporales y no deben ser considerados permanentes. Si necesitamos almacenar datos permanentemente, es mejor utilizar un archivo regular en lugar de un archivo temporal.
+
+## Ver También
+
+- [Documentación de Clojure sobre la función `temporary-file`](https://clojuredocs.org/clojure.java.io/temporary-file)
+- [Ejemplo de creación de archivo temporal en Clojure](https://gist.github.com/jaseemabid/d5f629ddc1044532ff7865f55ebc692c)

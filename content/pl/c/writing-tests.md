@@ -1,55 +1,48 @@
 ---
-title:    "C: Only comment with the translated titlePisanie testów"
+title:    "C: Pisanie testów"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisanie testów jest ważne w programowaniu?
 
-Napisanie testów jest nieodłączną częścią programowania w C, ponieważ pozwala nam zapewnić, że nasz kod działa zgodnie z oczekiwaniami. Testowanie również pomaga nam w wykrywaniu błędów i ułatwia późniejsze poprawki w kodzie. Dzięki temu możemy mieć pewność, że nasz program będzie działał poprawnie i nie spowoduje problemów w przyszłości.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Pozwala ono upewnić się, że nasz kod działa prawidłowo oraz zapewnia stabilność i niezawodność aplikacji. Testy są kluczowe dla utrzymania wysokiej jakości kodu i ułatwiają jego późniejsze modyfikacje. Dowiedzmy się więc, dlaczego warto brać pod uwagę pisanie testów podczas tworzenia programów w języku C.
 
-## Jak
+## Jak pisać testy w języku C?
 
-Aby zapisać testy w języku C, najpierw musimy mieć dobrą znajomość podstawowych struktur tego języka, takich jak pętle, funkcje i zmienne. Następnie, przy użyciu biblioteki do testowania, możemy tworzyć testy dla poszczególnych funkcji naszego programu. Przykładowy kod poniżej ilustruje prosty test funkcji dodawania, który wykorzystuje bibliotekę Unity:
+Pisanie testów w języku C może wydawać się trudne na początku, ale tak naprawdę wymaga tylko kilku prostych kroków. Najpierw musimy zdefiniować funkcję testową, która będzie weryfikować poprawność działania naszego kodu. Następnie należy przygotować dane wejściowe oraz oczekiwane rezultaty. W końcu, za pomocą odpowiednich asercji, możemy sprawdzić czy otrzymane wyniki są zgodne z oczekiwaniami.
+
+Przyjrzyjmy się przykładowej funkcji, która sprawdza czy suma dwóch liczb jest prawidłowa:
 
 ```C
-#include <stdio.h>
-#include "unity.h"
-#include "implementation.h"
-
-void test_addition(void) {
-  TEST_ASSERT_EQUAL(5, addition(2, 3));
-  TEST_ASSERT_EQUAL(10, addition(5, 5));
-}
-
-int main(void) {
-  UNITY_BEGIN();
-  RUN_TEST(test_addition);
-  return UNITY_END();
+int suma(int a, int b) {
+  return a + b;
 }
 ```
 
-Wynikiem działania takiego testu będzie:
+Teraz możemy napisać test, który sprawdza czy funkcja działa poprawnie dla konkretnych danych wejściowych:
 
+```C
+void test_sumy() {
+  int wynik = suma(3, 5);
+  assert(wynik == 8);
+}
 ```
---------------------
-TEST SUMMARY
---------------------
-test_addition : PASS
-```
 
-Mamy również możliwość dodania bardziej zaawansowanych asercji, które pozwalają na sprawdzenie konkretnych warunków i porównanie oczekiwanego zwracanego wyniku przez funkcję. Więcej informacji na temat biblioteki Unity oraz pełna dokumentacja jest dostępna na oficjalnej stronie projektu.
+Po uruchomieniu naszego testu, jeśli wszystko działa prawidłowo, nie zauważymy żadnego wyjścia w konsoli. W przypadku błędu, otrzymamy informację o niepowodzeniu testu, co pozwoli nam na szybką diagnozę problemu.
 
-## Deep Dive
+## Głębszy zanurzenie w pisanie testów
 
-Pisanie testów jest ważne, ponieważ pomaga nam w utrzymaniu wysokiej jakości kodu. Dzięki testom możemy wykryć błędy wcześniej i szybciej je naprawić, co przyspiesza proces wytwarzania oprogramowania. Testy są również przydatne w przypadku dużych projektów, gdzie jedna zmiana może wpłynąć na wiele innych części kodu. Dzięki nim mamy pewność, że wszystkie funkcje w naszym programie działają poprawnie po wprowadzeniu zmian.
+Istnieje wiele różnych technik i narzędzi do pisania testów w języku C. Jednym z popularniejszych jest framework Unity, który pozwala na łatwe tworzenie różnych typów testów oraz raportowanie wyników. Dzięki niemu możemy jeszcze bardziej zoptymalizować proces tworzenia i wykonywania testów.
 
-Ważne jest również pisanie testów jednostkowych, które sprawdzają pojedyncze funkcje lub moduły, oraz testów integracyjnych, które testują cały program wraz z jego zależnościami. Dzięki różnym poziomom testów możemy zapewnić kompleksowe sprawdzenie naszego kodu.
+Kolejną ważną rzeczą do zapamiętania jest pisane testów jednostkowych - czyli testów kontrolujących odpowiednie funkcje lub moduły. Dzięki temu łatwiej jest znaleźć ewentualne błędy i je naprawić.
 
-Jednym z przykładów popularnego narzędzia do testowania w języku C jest CUnit, które oferuje wiele różnych funkcjonalności i pozwala na pisanie zaawansowanych testów. Jest ono wykorzystywane w wielu projektach open-source i jest na bieżąco rozwijane przez społeczność.
+Pamiętajmy również, że pisanie testów nie zastępuje dokładnego sprawdzania kodu oraz przeprowadzania testów manualnych. Jest to jednak ważny krok w kierunku utrzymania stabilności i jakości naszej aplikacji.
 
 ## Zobacz także
 
-- [Dokumentacja biblioteki Unity](https://github.com/ThrowTheSwitch/Unity)
-- [Przykład użycia CUnit](https://github.com/ingenieria-en-software/PruebaHerramientas/wiki/CUnit)
+- [Dokumentacja frameworka Unity](https://github.com/ThrowTheSwitch/Unity)
+- [Przykład testowania funkcji w języku C](https://codeforwin.org/2016/08/unit-testing-c-program-code.html)
+- [Artykuł o pisaniu testów w języku C](https://www.includehelp.com/c/unit-testing-in-c-for-function-returning-value.aspx)

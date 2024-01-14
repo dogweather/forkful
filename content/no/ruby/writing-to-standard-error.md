@@ -1,38 +1,37 @@
 ---
-title:    "Ruby: Skriver til standard feil"
+title:    "Ruby: Skriving til standardfeil"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man skriver programmer, er det viktig å være klar over eventuelle feil som kan oppstå. Dette er derfor hvorfor det er viktig å kunne skrive til standardfeil, eller "standard error" på engelsk, i Ruby-kode.
+Å skrive til standarderror, også kjent som STDERR, er en viktig del av Ruby programmering. Det lar oss feilsøke og håndtere unntak i våre programmer, noe som kan føre til en bedre og mer pålitelig kode.
 
-## Hvordan du gjør det
+## Hvordan å skrive til standarderror
 
-Det er enkelt å skrive til standardfeil i Ruby ved hjelp av `puts` og `STDERR`. La oss se på et eksempel:
+Det er enkelt å skrive til standarderror i Ruby. Alt du trenger å gjøre er å bruke metoden `warn` og plassere meldingen din innenfor parentesene. Her er et eksempel på hvordan du kan bruke `warn` for å skrive en feilmelding til standarderror:
 
-```ruby
-def divide(x, y)
-  return x / y
-rescue ZeroDivisionError => e
-  STDERR.puts "Kan ikke dele på null!"
-end
-
-puts divide(8, 0) # Dette vil skrive ut "Kan ikke dele på null!" til standardfeil
+```Ruby
+warn("Dette er en feilmelding til standarderror.")
 ```
 
-Her definerer vi en funksjon som deler to tall, men hvis det andre tallet er null, vil programmet kaste en `ZeroDivisionError` og skrive ut en feilmelding til standardfeil ved hjelp av `STDERR.puts`.
+Når du kjører denne koden, vil du se følgende output i terminalen:
 
-## Dypdykk
+`Dette er en feilmelding til standarderror.`
 
-Standardfeil er en av flere "standard streams" i Ruby, sammen med standard inngang (`STDIN`) og standard utgang (`STDOUT`). Standardfeil brukes vanligvis til å skrive ut feilmeldinger og andre viktige meldinger som brukeren må se, men som ikke passer i standard utgang.
+Som du kan se, er det enkelt å skrive til standarderror. Du kan også bruke `STDERR.puts` og `STDERR.print` metoder for å skrive til standarderror, men `warn` er den mest vanlige måten å gjøre det på.
 
-En interessant ting å merke seg er at `puts`metoden faktisk skriver til standard utgang (`STDOUT`), men ved å bruke `STDERR.puts`, kan man være sikker på at meldingen vises selv om standard utgang er omdirigert.
+## Dykk dypere
+
+Nå som du vet hvordan du skriver til standarderror, la oss se nærmere på hva som faktisk skjer når du gjør det. Når du bruker `warn` metoden, sender Ruby meldingen din til standarderror strømmen. Hvis du ikke har definert en standarderror strøm, vil den bli sendt til standard output strømmen istedenfor.
+
+I tillegg kan du også bruke `rescue` stategi for å håndtere unntak og skrive feilmeldinger til standarderror. Dette kan hjelpe deg med å diagnostisere og feilsøke problemene i koden din.
 
 ## Se også
 
-- [Ruby dokumentasjon om standard streams](https://ruby-doc.org/core-2.7.0/IO.html#class-IO-label-Standard+Streams)
-- [Artikkel om standard streams i Ruby](https://www.rubyguides.com/2019/10/ruby-standard-streams/)
-- [Eksempler på standard error i Ruby](https://www.geeksforgeeks.org/ruby-error-handling-with-raise-rescue-and-catch/)
+* [Ruby Dokumentasjon om Standarderror](https://ruby-doc.org/core-2.7.1/StandardError.html)
+* [Feilsøking i Ruby](https://medium.com/@jbodah/ruby-debugging-101-a66417af196b)
+* [Ruby Unntakshåndtering](https://www.rubyguides.com/2019/09/ruby-exception-handling/)

@@ -1,52 +1,38 @@
 ---
-title:    "Swift: בדיקת קיום תיקייה"
+title:    "Swift: בדיקת קיום תיקייה במחשב"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-אם אתם מתכנתים ב-Swift או חוקרים את השפה הזו, כנראה תיתקלו במצב בו תצטרכו לבדוק אם תיקייה קיימת. החשיבה הראשונה שעולה על הראש היא לדעת אם התיקייה קיימת כדי להוסיף או לעדכן קבצים בתוכה. כמו כן, ייתכן שתיקייות מסוימות נדרשות לתפקוד מסוים של האפליקציה שלכם, וכדי לוודא שהן קיימות תצטרכו לבדוק את קיומן.
+בתוכנות המחשב, לפעמים נצטרך לוודא כמה פרטים על תיקיות שונות במערכת הקבצים. יתכן כי נרצה לוודא אם תיקייה קיימת או לא, כדי לבצע פעולות מתאימות בהתאם. לדוגמה, ניתן להשתמש בזה כדי לבדוק אם תיקיית ההורדות שלנו קיימת לפני שאנו מנסים להוריד קובץ לתוכה.
 
-## איך לעשות זאת
+## איך לבדוק אם תיקייה קיימת
 
-כדי לבדוק אם תיקייה קיימת באמצעות קוד Swift, ניתן להשתמש בפונקציה `fileExists(atPath:)` של המחלקה `FileManager`. התחביר הוא פשוט וקל לשימוש:
+לבדיקת קיומה של תיקייה, ניתן להשתמש בפונקציה `fileExists(atPath:)` שמקבלת כפרמטר את הנתיב של התיקייה שרוצים לבדוק. בפונקציה זו, יש להחזיר `true` אם התיקייה קיימת ו-`false` אם לא. ניתן גם להשתמש בפונקציה `fileExists(atPath: isDirectory:)` שמחזירה כמו כן בעל תיקייה או לא.
 
 ```Swift
 let fileManager = FileManager.default
-let path = "/Users/username/Documents"
-
-// בדיקה אם התיקייה קיימת
-if fileManager.fileExists(atPath: path) {
-    print("התיקייה מסומנת כ-YES")
-} else {
-    print("התיקייה מסומנת כ-NO")
-}
+let downloadsPath = NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true)[0]
+let downloadsFolderExists = fileManager.fileExists(atPath: downloadsPath)
+print("תיקיית הורדות קיימת: \(downloadsFolderExists)")
+// תעודת הורדות קיימת: true
 ```
 
-כדי לבדוק אם תיקייה נמצאת בתוך תיקיית אב, ניתן להוסיף את שם התיקייה המבוקשת לאחר הנתיב:
-
 ```Swift
 let fileManager = FileManager.default
-let path = "/Users/username/Documents/FolderName"
-
-// בדיקה אם התיקייה נמצאת בתוך תיקיית המסמך
-if fileManager.fileExists(atPath: path) {
-    print("התיקייה מסומנת כ-YES")
-} else {
-    print("התיקייה מסומנת כ-NO")
-}
+let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+var isDirectory: ObjCBool = false
+let documentsFolderExists = fileManager.fileExists(atPath: documentsPath, isDirectory: &isDirectory)
+print("תיקיית מסמכים קיימת: \(documentsFolderExists)")
+print("האם תיקיית מסמכים הוא תיקייה? \(isDirectory.boolValue)")
+// תיקיית מסמכים קיימת: true
+// האם תיקיית מסמכים הוא תיקייה? true
 ```
 
-אם התיקייה מכילה קבצי טקסט או תמונות ואתם רוצים להוסיף אותם לתיקייה הזו, ניתן לעבור על כל הקבצים ולנסות להוסיף אותם באמצעות הפונקציה `contentsOfDirectory(atPath:)`:
+## העמקה נוספת
 
-```Swift
-let fileManager = FileManager.default
-let path = "/Users/username/Documents"
-
-// בדיקה אם יש קבצים נמצאים בתוך התיקייה והוספתם לתיקייה המבוקשת
-if let files = fileManager.enumerator(atPath: path) {
-    for file in files {
-        if let filePath = file as? String {
-            // הוספת הק
+לבדיקת קיומה של תיקייה ניתן גם להשתמש בפונקציה `fileExists()` שמקבלת כפרמטר את הנתיב של התיקייה ומוסיפה גם פרמטרים נוספים שמתארים מה התיקייה היא (עבור `isDirectory`) ועבור מי היא (עבור `withIntermediateDirectories`). ניתן למצוא עוד מידע על הפונקציה הזו ו

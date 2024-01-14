@@ -1,53 +1,43 @@
 ---
-title:    "Elixir: Uniendo cadenas de texto"
+title:    "Elixir: Concatenando cadenas"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué concatenar cadenas en Elixir?
+## Por qué
 
-Concatenar cadenas en Elixir puede ser útil cuando se están manipulando datos y se necesita combinarlos en una sola cadena. Por ejemplo, se puede utilizar para mostrar información al usuario, crear nombres de archivo dinámicos, o incluso para construir consultas de base de datos.
+La concatenación de cadenas es una técnica esencial en la programación que permite combinar múltiples cadenas de texto en una sola. Esta habilidad es importante para construir mensajes, imprimir resultados y manipular datos de manera más eficiente en Elixir.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para concatenar cadenas en Elixir, se puede utilizar el operador `<>` o la función `String.concat/2`.
-
-```Elixir
-# Utilizando el operador <>
-"Puedo " <> "concatenar " <> "cadenas"
-
-# Utilizando la función String.concat/2
-String.concat(["Puedo ", "concatenar ", "cadenas"])
-```
-
-**Salida:**
-"Puedo concatenar cadenas"
-
-También se puede utilizar la función `<>` para concatenar cadenas múltiples en una sola línea:
+Para concatenar cadenas en Elixir, se puede utilizar el operador `<>` que une dos cadenas juntas. Por ejemplo:
 
 ```Elixir
-"Puedo " <> "concatenar " <> "más " <> "de " <> "dos " <> "cadenas" 
+"¡Hola" <> " mundo!" # output: ¡Hola mundo!
 ```
 
-**Salida:**
-"Puedo concatenar más de dos cadenas"
-
-## Profundizando en la concatenación de cadenas:
-
-Cuando se concatenan cadenas en Elixir, es importante recordar que se está creando una nueva cadena y no se está modificando la cadena original. Además, Elixir no tiene un operador de concatenación `+=` como en otros lenguajes de programación.
-
-También es importante tener en cuenta que se pueden concatenar diferentes tipos de datos, no solo cadenas. Por ejemplo:
+También es posible utilizar la función `String.concat/2` que puede concatenar cualquier número de cadenas. Aquí hay un ejemplo:
 
 ```Elixir
-"Puedo " <> 123 <> "concatenar " <> true <> "cadenas con otros tipos de datos"
+String.concat(["Esta", " ", "es", " ", "una", " ", "frase"]) # output: Esta es una frase
 ```
 
-**Salida:**
-"Puedo 123 concatenar true cadenas con otros tipos de datos"
+Un aspecto importante a tener en cuenta es que la concatenación de cadenas en Elixir siempre crea una nueva cadena en lugar de modificar las existentes.
 
-## Ver también:
+## Profundizando
 
-- [La documentación de Elixir para la función `String.concat/2`](https://hexdocs.pm/elixir/String.html#concat/2)
-- [Un tutorial sobre manipulación de cadenas en Elixir](https://www.learnelixir.tv/blog/2016/01/03/elixir-string-manipulation)
-- [Un artículo sobre tipos de datos y funciones en Elixir](https://medium.com/@dennis_richardt/introduction-to-elixir-types-and-functions-ddbe83fbdf40)
+Cuando se utilizan cadenas muy largas o muchas de ellas, es más eficiente utilizar la función `IO.iodata_to_binary/1` para concatenarlas. Esta función convierte una lista de cadenas en una sola cadena binaria, lo que puede ser útil para optimizar el rendimiento.
+
+Otro método a tener en cuenta es el uso de la función `<<>>` para construir una cadena binaria utilizando binarios existentes. Por ejemplo:
+
+```Elixir
+<< "¡Hola", " mundo!" >> # output: ¡Hola mundo!
+```
+
+## Ver también
+
+- [Documentación oficial sobre la concatenación de cadenas en Elixir](https://hexdocs.pm/elixir/String.html#concat/1)
+- [Artículo sobre la eficiencia de la concatenación de cadenas en Elixir](https://medium.com/@peter_29798/how-efficient-is-concatenating-strings-in-elixir-f8f7bb576093)
+- [Ejemplos de uso de IO.iodata_to_binary/1](https://hexdocs.pm/elixir/IO.html#iodata_to_binary/1)

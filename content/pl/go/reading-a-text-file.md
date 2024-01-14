@@ -1,54 +1,81 @@
 ---
-title:    "Go: Odczytywanie pliku tekstowego"
+title:    "Go: Odczyt pliku tekstowego"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli piszesz w języku Go lub uczysz się programować w tym języku, na pewno często musisz się spotkać z możliwością odczytu plików tekstowych. Dlatego w tym artykule chciałbym przedstawić Wam prosty sposób na odczyt plików tekstowych w Go, który może pomóc oszczędzić czas i wysiłek.
+Zastanowiłeś się kiedyś, dlaczego w programowaniu ważne jest umiejętność czytania plików tekstowych? Poznaj powody w tym artykule!
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Do odczytywania plików tekstowych w Go możemy użyć wbudowanej funkcji `ioutil.ReadFile()` oraz pakietu `fmt`, który pozwala na wyświetlanie wartości zmiennych i tekstu na ekranie.
+Zaczniemy od prostego przykładu, w którym wyświetlimy zawartość pliku tekstowego za pomocą języka Go. W poniższym kodzie wykorzystamy pakiet 'io/ioutil', który pozwala na wygodne czytanie plików.
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "io/ioutil"
+	"fmt"
+	"io/ioutil"
 )
 
 func main() {
-    // Otwieramy plik za pomocą funkcji ReadFile() i przypisujemy go do zmiennej data
-    data, err := ioutil.ReadFile("plik.txt")
-    // Sprawdzamy czy nie wystąpił błąd
-    if err != nil {
-        fmt.Println("Nie udało się odczytać pliku!")
-    }
-    // Wyświetlamy zawartość pliku na ekranie
-    fmt.Println(string(data))
+	file, err := ioutil.ReadFile("plik.txt") // otwarcie pliku tekstowego
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(file)) // wyświetlenie zawartości pliku
 }
 ```
-
-Przed uruchomieniem tego kodu pamiętaj, aby utworzyć plik tekstowy o nazwie `plik.txt` w tym samym folderze, w którym znajduje się Twój plik z kodem Go. Możesz również zmienić nazwę pliku w funkcji `ReadFile()` i podać ścieżkę do innej lokalizacji.
-
-### Output
-
+Output:
 ```
-To jest przykładowa zawartość pliku.
-Znajdziesz tutaj kilka linii tekstu, które będą wyświetlone na ekranie.
-Ten tekst możesz dowolnie zmienić lub dodać własne linijki.
+To jest przykładowy plik tekstowy.
+Każda linijka jest oddzielona znakiem nowej linii.
+Czytanie plików tekstowych może być przydatne w wielu sytuacjach.
 ```
 
-## Wnikliwe zagłębienie
+Teraz spróbujmy nieco bardziej zaawansowanego podejścia - chcemy odczytać tylko wybrane linijki z pliku tekstowego. W tym celu wykorzystamy funkcję 'ReadString' z pakietu 'bufio'.
 
-W powyższym przykładzie korzystamy z funkcji `ioutil.ReadFile()`, która automatycznie otwiera i odczytuje plik tekstowy. Jest to wygodny sposób na szybkie odczytywanie plików, jednak w przypadku dużych plików może to spowodować problemy z wydajnością. W takim przypadku lepiej byłoby korzystać z funkcji `os.Open()` oraz `bufio.Scanner`, co pozwoli na wygodne odczytywanie pliku za pomocą iteracji linijka po linijce.
+```Go
+package main
 
-## Zobacz też
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-- [Dokumentacja Go: Pakiet `ioutil`](https://golang.org/pkg/io/ioutil/)
-- [Dokumentacja Go: Pakiet `bufio`](https://golang.org/pkg/bufio/)
-- [Szkolenia programowania w języku Go od "Kursy dla programistów"](https://kursydlaprogramistow.pl/go-online/)
+func main() {
+	file, err := os.Open("plik.txt") // otwarcie pliku
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file) // utworzenie skanera
+	for scanner.Scan() {
+		if scanner.Text() == "Każda linijka jest oddzielona znakiem nowej linii." || scanner.Text() == "To jest przykładowy plik tekstowy." {
+			fmt.Println(scanner.Text()) // wyświetlenie wybranych linijek
+		}
+	}
+}
+```
+Output:
+```
+To jest przykładowy plik tekstowy.
+Każda linijka jest oddzielona znakiem nowej linii.
+```
+
+## Głębsza Analiza
+
+Czytanie plików tekstowych jest jedną z podstawowych czynności w programowaniu, ponieważ pozwala nam na przetwarzanie dużej ilości danych w łatwy sposób. W języku Go występują różne metody odczytywania plików, jak widać w przedstawionych przykładach. Istnieje także możliwość ręcznego przetwarzania danych znak po znaku, jednakże wykorzystanie pakietów 'io/ioutil' lub 'bufio' jest zdecydowanie wygodniejsze i efektywniejsze.
+
+## Zobacz Również
+
+- [Dokumentacja pakietu 'io/ioutil'](https://golang.org/pkg/io/ioutil/)
+- [Dokumentacja pakietu 'bufio'](https://golang.org/pkg/bufio/)
+- [Przykłady kodu dla czytania plików tekstowych w języku Go](https://gobyexample.com/reading-files)

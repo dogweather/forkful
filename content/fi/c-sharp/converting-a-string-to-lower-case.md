@@ -1,50 +1,33 @@
 ---
-title:    "C#: Muuntamassa merkkijonoa pieniksi kirjaimiksi"
+title:    "C#: Merkkijonon muuttaminen pieniksi kirjaimiksi"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Merkkijonon muuntaminen pieniksi kirjaimiksi
+# Miksi
+Joskus ohjelmoinnin yhteydessä saattaa olla tarpeellista muuttaa merkkijono pieniksi kirjaimiksi. Tämä voi olla hyödyllistä esimerkiksi vertaillessa merkkijonoja tai tietokantaoperaatioita suoritettaessa. Tässä blogikirjoituksessa kerron, miten tämä voidaan tehdä C# -kielellä.
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi on hyödyllinen taito, jota tarvitaan usein ohjelmoinnissa. Pienet kirjaimet voivat olla tärkeitä esimerkiksi merkkijonojen vertailussa tai tietokannan hakutoiminnoissa. Se voi myös tehdä koodista helpommin luettavaa ja yhtenäistä.
-
-## Kuinka tehdä se: Koodiesimerkkejä ja tulosteita
-
+# Kuinka
 ```C#
-string s = "MOllaMOlla";
+string s = "TÄMÄ ON ESIMERKKI";
 string lowerCase = s.ToLower();
 Console.WriteLine(lowerCase);
-// Output: mollamolla
 ```
+Tämän yksinkertaisen koodiesimerkin avulla voit muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä ToLower-metodia. Tässä esimerkissä tulostuu "tämä on esimerkki".
 
-Tässä esimerkissä käytetään C# -kielen sisäistä ToLower() -metodia. Se luo uuden merkkijonon, jossa kaikki alkuperäisen merkkijonon kirjaimet ovat pieniä. Tämä toimii myös kirjainmerkkijonojen ja luvuista muodostuvien merkkijonojen kanssa.
+# Syväsukellus
+ToLower-metodi käyttää kohdekielelle määritettyä kielimuunninta muuttaakseen merkkijonon alkuperäisenä olevan referenssin s ja palauttaa uuden merkkijonon pienellä kirjaimella. Tämän avulla varmistetaan, ettei alkuperäinen merkkijono muutu.
 
-```C#
-string s = "HUUTO!!";
-string lowerCase = s.ToLower();
-Console.WriteLine(lowerCase);
-// Output: huuto!!
-```
+ToLower-metodin käyttö on myös nopeampaa kuin koko merkkijonon kirjain kerrallaan käymiseen tarvittava algoritmi. Tämä johtuu siitä, että käytettävä kielimuunnin on optimoitu tehtävänsä suorittamiseen ja voi hyödyntää kohdekielelle määritettyjä tietorakenteita.
 
-Toinen vaihtoehtoinen tapa on käyttää LINQ -metodia Select(). Se tarvitsee pääsyä System.Linq -kirjastoon. Tämä metodi antaa mahdollisuuden käsitellä jokaista merkkiä erikseen. Tässä esimerkissä käytämme Char.ToLower() -metodia, joka määrittää merkin alakirjaimeksi.
+# Katso myös
+- [C#-kielen virallinen dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.tolower?view=netcore-3.1#System_String_ToLower)
+- [Kielimuunnin - Wikipedia]()
+- [Kuinka käyttää kielimuunninta tehokkaasti? - Stack Overflow](https://stackoverflow.com/questions/2658033/how-to-use-a-locale-specific-sorteddictionaryefficiently)
 
-```C#
-string s = "TÄÄ ON KIRJOITETTU ISOILLA KIRJAIMILLA";
-string lowerCase = new string(s.Select(c => Char.ToLower(c)).ToArray());
-Console.WriteLine(lowerCase);
-// Output: tää on kirjoitettu isoilla kirjaimilla
-```
+---
+Jos sinulla on lisäkysymyksiä tai haluat jakaa kokemuksiasi, jätä kommentti alle! Kiitos lukemisesta. Nähdään seuraavassa blogikirjoituksessani!
 
-## Syvällisempi sukellus
-
-Merkkijonon muuttaminen pieniksi kirjaimiksi on käsitteenä melko yksinkertainen, mutta siihen liittyy muutamia tärkeitä asioita, jotka on hyvä pitää mielessä:
-
-- Pienet ja isot kirjaimet eivät aina vastaa toisiaan. Esimerkiksi ä ja a eivät ole aina samoja merkkejä, vaikka ne voivat näyttää samalta.
-- Joissain kielissä (kuten suomi) on myös lisämerkkejä, jotka eivät ole pieniä tai isoja. Nämä pitää käsitellä erikseen.
-- Jos haluat muuntaa merkkijonon takaisin isoiksi kirjaimiksi, voit käyttää metodia ToUpper() samalla tavalla kuin ToLower(). 
-
-## Katso myös
-
-- [Documentation for ToLower() method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [Documentation for Select() method in LINQ](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.select)
+# Katso myös

@@ -1,40 +1,63 @@
 ---
 title:    "Clojure: Capitalizando una cadena"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué 
+## Por qué
 
-Capitalizar una cadena de caracteres es una tarea común en la programación, especialmente en el procesamiento de datos y en la creación de interfaces de usuario. A menudo es necesario para mejorar la legibilidad y presentación de la información al usuario final.
+Capitalizar una cadena de texto es una tarea común en la programación. A menudo, necesitamos mostrar títulos o nombres en mayúscula y saber cómo hacerlo en Clojure puede ahorrar tiempo y evitar errores.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena de caracteres en Clojure, podemos utilizar la función `clojure.string/capitalize`. Esta función toma una cadena de caracteres como argumento y devuelve una nueva cadena con la primera letra en mayúsculas y el resto en minúsculas. Veamos un ejemplo de cómo usarla:
+Para capitalizar una cadena en Clojure, podemos utilizar la función `clojure.string/capitalize` que tomará una cadena como argumento y devolverá una nueva cadena con la primera letra en mayúscula.
 
 ```Clojure
-(clojure.string/capitalize "hola mundo") ;; salida: "Hola mundo"
-(clojure.string/capitalize "CLOJURE") ;; salida: "Clojure"
-(clojure.string/capitalize "eL nUmErO 42 eS eL mÁs gRaNde") ;; salida: "El número 42 es el más grande"
+(clojure.string/capitalize "hola mundo")
+;; Output: "Hola mundo"
+
+(clojure.string/capitalize "el coche rojo")
+;; Output: "El coche rojo"
 ```
 
-También podemos utilizar la función `upper-case` para capitalizar una cadena completa:
+Si necesitamos convertir toda la cadena a mayúsculas, podemos usar `clojure.string/upper-case`.
 
 ```Clojure
-(upper-case "java es una isla") ;; salida: "JAVA ES UNA ISLA"
+(clojure.string/upper-case "hola mundo")
+;; Output: "HOLA MUNDO"
+
+(clojure.string/upper-case "el coche rojo")
+;; Output: "EL COCHE ROJO"
+```
+
+Finalmente, si queremos convertir toda la cadena a minúsculas, usamos `clojure.string/lower-case`.
+
+```Clojure
+(clojure.string/lower-case "HOLA MUNDO")
+;; Output: "hola mundo"
+
+(clojure.string/lower-case "EL COCHE ROJO")
+;; Output: "el coche rojo"
 ```
 
 ## Profundizando
 
-Detrás de las funciones `clojure.string/capitalize` y `upper-case` se encuentra el concepto de "case conversion" o conversión de mayúsculas y minúsculas. En Clojure, los caracteres tienen un valor numérico llamado código de carácter, que representa su posición en la tabla ASCII. Los caracteres en mayúsculas tienen códigos numéricos más bajos que los caracteres en minúsculas. 
+En realidad, la función `clojure.string/capitalize` no solo convierte la primera letra de la cadena a mayúscula, sino que también convierte el resto de la cadena a minúsculas. Por ejemplo:
 
-Cuando utilizamos la función `clojure.string/capitalize`, lo que realmente está sucediendo es que se toma el primer caracter de la cadena y se le agrega la constante numérica 32, convirtiéndolo así en su equivalente en minúsculas. Por lo tanto, para cada letra en mayúsculas, su código ASCII se transforma en el código ASCII correspondiente en minúsculas y viceversa.
+```Clojure
+(clojure.string/capitalize "hOlA mUnDo")
+;; Output: "Hola mundo"
+```
 
-Esto también explica por qué, al capitalizar una cadena con números o símbolos, estos no se ven afectados, ya que no tienen códigos ASCII asociados con las mayúsculas o minúsculas.
+Esto significa que no podemos usar esta función para capitalizar cadenas que ya contienen mayúsculas y minúsculas de forma específica. En este caso, debemos escribir nuestra propia función personalizada que solo convierta la primera letra a mayúscula sin afectar al resto de la cadena.
 
-## Ver también
+Otra consideración importante es que la función `clojure.string/capitalize` solo funciona para cadenas con caracteres ASCII. Si necesitamos capitalizar cadenas con caracteres no ASCII, podemos usar la biblioteca `java.text.Normalizer` y su método `java.text.Normalizer/normalize`.
 
-- [ClojureDocs: clojure.string](https://clojuredocs.org/clojure.string)
-- [Ejercicios de programación en Clojure](https://www.4clojure.com/problems)
-- [Introducción a programación funcional en Clojure](https://clojure.org/guides/getting_started)
+## Ver También
+
+- [Documentación oficial de Clojure para la función `clojure.string/capitalize`](https://clojuredocs.org/clojure.string/capitalize)
+- [Tutorial de Clojure de Codecademy que cubre la función `clojure.string/capitalize`](https://www.codecademy.com/learn/learn-clojure/modules/learn-clojure-functions/cheatsheet)
+- [Otra forma de capitalizar cadenas en Clojure usando la biblioteca `java.lang.String`](https://stackoverflow.com/questions/15119307/capitalizing-the-first-letter-of-every-word-in-a-string-using-clojure)
+- [Documentación oficial de Java para la clase `java.text.Normalizer`](https://docs.oracle.com/javase/7/docs/api/java/text/Normalizer.html)

@@ -1,42 +1,52 @@
 ---
-title:    "Elm: Porównywanie dwóch dat"
+title:    "Elm: Porównanie dwóch dat"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego 
 
-Porównywanie dwóch dat może być przydatne w wielu przypadkach programowania. Może pomóc w sprawdzaniu, czy data jest przed lub po określonej dacie, porównaniu bieżącej daty z zapisaną w bazie danych lub weryfikacji poprawności wprowadzonej przez użytkownika daty. W tym poście dowiesz się, jak porównać dwie daty w języku Elm i jak wykorzystać tę funkcję w swoim kodzie.
+Często przy tworzeniu aplikacji internetowych lub mobilnych, musimy porównywać różne daty między sobą. Niezależnie od tego czy są to daty ważnych wydarzeń, daty ważności czy też daty urodzenia, niezawodnie musimy umieć porównywać je ze sobą. Wstęp do porównywania dat w języku Elm jest niezbędny dla każdego programisty, który tworzy aplikacje z wykorzystaniem tego języka.
 
-## Jak to zrobić?
+## Jak to zrobić 
 
-Aby porównać dwie daty w Elm, musimy użyć modułu `Date` dostępnego w standardowej bibliotece. W tym przykładzie użyjemy funkcji `compare`, która przyjmuje dwa argumenty typu `Date` i zwraca wartość `LT` (mniejsza), `EQ` (równa) lub `GT` (większa) w zależności od wyniku porównania.
+Aby porównywać daty w języku Elm, musimy skorzystać z modułu `Time`. Ten moduł został stworzony specjalnie do obsługi formatowania i operacji na datach. Poniżej przedstawione są przykładowe kody, które pokazują jak porównywać daty:
 
 ```Elm
-import Date exposing (Date, compare)
+-- Zaimportowanie modułu `Time` jest wymagane
 
-date1 : Date
-date1 = Date.fromString "2021-01-01"
+import Time exposing (..)
 
-date2 : Date
-date2 = Date.fromString "2021-05-23"
+-- Porównanie dwóch dat
 
-result : Date.Order
-result = compare date1 date2
+compareDates : Time.Posix -> Time.Posix -> Order
+compareDates date1 date2 =
+  if date1 > date2 then
+    GT
+  else if date1 < date2 then
+    LT
+  else
+    EQ
 
--- Output: GT
+-- Formatowanie daty
+
+formatDate : Time.Posix -> String
+formatDate date =
+  format "%d/%m/%Y" date
 ```
 
-W powyższym przykładzie porównujemy dwie daty z użyciem funkcji `compare` i przypisujemy wynik do zmiennej `result`. Następnie, wyświetlamy tę zmienną, aby zobaczyć wynik porównania. Możemy również porównać daty za pomocą operatorów logicznych `==` (równe) i `/=` (różne).
+Użycie funkcji `compareDates` pozwala na porównywanie dwóch dat, a jej wynikiem jest wartość `Order`, która wskazuje, która data jest większa. Natomiast funkcja `formatDate` pozwala na sformatowanie daty w wybranym przez nas formacie.
 
-## Głębszy zanurzenie
+## Głębszy wgląd 
 
-Aby lepiej zrozumieć jak działa porównywanie dat w Elm, warto wiedzieć jak wartości są przechowywane i porównywane w tym języku. W Elm, daty są reprezentowane przez typ `Date`, który składa się z wartości numerycznych dla roku, miesiąca i dnia. Kiedy porównujemy dwie daty, porównywane są te wartości numeryczne w kolejności od najważniejszej (rok) do najmniej ważnej (dzień).
+Podczas porównywania dat, należy pamiętać o tym, że odpowiednie formatowanie jest kluczowe. W języku Elm, daty są przechowywane w formacie `Time.Posix`, ale można je również przekształcić do innych formatów, takich jak `Time.Year`, `Time.Month`, `Time.Day`, itp. W przypadku porównywania dat nie liczy się jedynie porównanie wartości, ale również odpowiednie formatowanie. Warto również pamiętać, że operacje na dużych liczbach mogą być czasochłonne, dlatego dobrze jest upewnić się, że porównujemy odpowiednie daty przed przystąpieniem do samych operacji porównania.
 
-Ponadto, warto pamiętać, że porównanie dat jest dokładne tylko do dnia. Oznacza to, że jeśli porównujemy daty z różnymi godzinami, minutami lub sekundami, wynik może być nieprzewidywalny.
+## Zobacz również 
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w języku Elm, polecamy zapoznać się z dokumentacją modułu `Time` oraz przeglądnąć poniższe linki:
 
-* Dokumentacja modułu `Date` w języku Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
-* Inne przydatne funkcje związańne z datami w Elm: https://dev.to/jkachuck/working-with-dates-in-elm-5jio
+- [Dokumentacja modułu Time w języku Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Strona główna języka Elm](https://elm-lang.org/)
+- [Porównywanie dat w języku Elm - poradnik programisty](https://medium.com/coding-secrets/comparing-dates-in-elm-eba1d9e3a6ed)

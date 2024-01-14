@@ -1,58 +1,53 @@
 ---
 title:    "Java: Tests schreiben"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie regelmäßig Java-Programme schreiben, haben Sie vielleicht schon von Tests gehört. Aber wussten Sie, dass das Schreiben von Tests nicht nur ein mühsamer Schritt ist, sondern auch viele Vorteile bietet? Lesen Sie weiter, um mehr darüber zu erfahren, warum Sie Ihre Programme mit Tests absichern sollten.
+Das Schreiben von Tests ist ein wichtiger Bestandteil jeder guten Softwareentwicklungspraxis. Durch das Schreiben von Tests kann die Funktionalität und Fehlerfreiheit von Code sichergestellt und gleichzeitig die Wartbarkeit des Codes verbessert werden.
 
-## Wie Geht's
+# Wie man Tests schreibt
 
-Das Schreiben von Tests in Java kann auf den ersten Blick überwältigend erscheinen, aber es ist eigentlich ganz einfach. Schauen wir uns ein einfaches Beispiel an:
-
-```Java
-// Diese Funktion berechnet die Summe von zwei Zahlen
-public int add(int a, int b) {
-    return a + b;
-}
-```
-
-Um diese Funktion zu testen, können wir eine JUnit-Testklasse erstellen:
+Um Tests in Java zu schreiben, gibt es verschiedene Frameworks wie JUnit, TestNG oder Mockito. Hier ist ein Beispiel, wie man mit JUnit eine einfache Methode zum Addieren von zwei Zahlen testen kann:
 
 ```Java
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class UnitTest {
-    // Wir testen die add() Funktion
+public class CalculatorTest {
+
     @Test
-    public void testAdd() {
-        // Erwartete Ausgabe
-        int expected = 10;
+    public void addNumbersTest() {
+        // Arrange
+        Calculator calc = new Calculator();
+        
+        // Act
+        int result = calc.add(2, 3);
+        
+        // Assert
+        assertEquals(5, result);
+    }
+}
 
-        // Tatsächliche Ausgabe
-        int actual = add(6, 4);
-
-        // Vergleichen der erwarteten und tatsächlichen Ausgabe
-        assertEquals(expected, actual);
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
     }
 }
 ```
 
-In diesem Beispiel erstellen wir einen Testfall, der sicherstellt, dass die add() Funktion tatsächlich die korrekte Summe zurückgibt. Wir können nun diesen Test ausführen und unsere Funktion überprüfen. Wenn die Tests erfolgreich sind, wissen wir, dass unsere Funktion zuverlässig ist.
+Das `@Test`-Annotation weist JUnit an, diese Methode als Test auszuführen. Innerhalb der Methode wird der `Calculator` initialisiert und die Methode `add` aufgerufen. Anschließend wird mit der `assertEquals`-Methode überprüft, ob das erwartete Ergebnis (5) zurückgegeben wird.
 
-## Tiefer Einblick
+# Tiefeneintauchen
 
-Das Schreiben von Tests hat nicht nur den Vorteil, dass wir überprüfen können, ob unsere Funktionen wie erwartet funktionieren, sondern es hilft uns auch dabei, unseren Code zu verbessern. Durch das Schreiben von Tests müssen wir uns Gedanken darüber machen, wie wir unsere Funktionen entwerfen und wie sie zusammenarbeiten. Es kann auch helfen, potenzielle Fehlerquellen zu identifizieren und zu beheben, bevor wir unser Programm ausführen.
+Es gibt verschiedene Arten von Tests, die in der Java-Entwicklung verwendet werden können, wie z.B. Unit-Tests, Integrationstests oder End-to-End-Tests. Unit-Tests konzentrieren sich auf das Testen einer spezifischen Komponente oder Klasse, während Integrationstests die Interaktion zwischen verschiedenen Komponenten testen. End-to-End-Tests simulieren das Verhalten des Nutzers und testen die gesamte Anwendung.
 
-Ein weiterer Vorteil von Tests ist, dass sie uns ermöglichen, unser Programm schneller und sicherer zu entwickeln. Mit regelmäßigen Tests können wir sicherstellen, dass Änderungen an unserem Code keine unerwarteten Konsequenzen haben und dass unser Programm stabil bleibt.
+Ein weiterer wichtiger Aspekt beim Schreiben von Tests ist die Testabdeckung. Diese gibt an, wie viel Prozent des Codes durch Tests abgedeckt sind. Eine hohe Testabdeckung bedeutet, dass der Code gründlich getestet wurde und somit weniger Fehler enthalten sollte.
 
-Insgesamt kann das Schreiben von Tests zwar etwas mehr Zeit in Anspruch nehmen, aber es lohnt sich, um die Qualität und Zuverlässigkeit unserer Codebasis zu verbessern.
+# Siehe auch
 
-## Siehe Auch
-
-- [JUnit Dokumentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Tutorial: Einsteigerleitfaden für JUnit](https://www.baeldung.com/junit-5)
-- [Warum das Schreiben von Tests wichtig ist](https://www.freecodecamp.org/news/why-writing-tests-is-important-2daff321fb02/)
+- [JUnit Dokumentation](https://junit.org/junit5/docs/current/user-guide

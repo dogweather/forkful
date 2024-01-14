@@ -1,73 +1,87 @@
 ---
 title:    "Rust: 读取命令行参数"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
+在编程世界中，命令行参数是一个不可或缺的组成部分。它们允许我们以不同的方式从命令行运行程序，并提供程序所需的信息。Rust编程语言提供了一种简单、清晰和高效的方法来读取命令行参数，并且本文将向你展示如何做到这一点。
 
-命令行参数是Rust编程中常见的概念，它允许用户在运行程序时通过命令行传递参数，从而改变程序的行为。通过学习如何读取命令行参数，你可以更有效地控制程序，为用户提供更多的选项，以及增加程序的灵活性。因此，了解如何读取命令行参数是成为一名Rust程序员的重要一步。
-
-## 如何进行
-
-要读取命令行参数，首先需要引入标准库中的`std::env`模块。然后，在`main`函数的参数中添加一个名为`args`的变量，它将存储所有的命令行参数。
-
+## 如何操作
+首先，让我们来看一个简单的代码示例，来读取并打印出命令行参数：
 ```rust
 use std::env;
-
 fn main() {
+    // 获取命令行参数
     let args: Vec<String> = env::args().collect();
-}
-```
-
-现在，你可以通过`args`变量来读取命令行参数，比如打印出所有的参数。
-
-```rust
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
+    // 遍历并打印出每个参数
     for arg in args.iter() {
-        println!("{:?}", arg);
+        println!("{}", arg);
     }
 }
 ```
-
-假设你在命令行中输入`cargo run hello world`，则程序会打印出：
-
+假设我们的程序叫做"args"，那么从命令行运行它，并传入参数"hello world"，将输出：
 ```
-"target/debug/program"
-"hello"
-"world"
+args
+hello
+world
 ```
-
-除了常规的参数外，你还可以读取特殊的参数，比如程序名称或命令行参数的数量。下面是一个获取程序名称并打印出命令行参数数量的示例：
-
+这很简单，我们使用了Rust标准库中的环境模块来获取命令行参数，然后使用迭代器来遍历并打印出每个参数。但是，通常我们可能只需要获取特定位置的参数，比如第一个和第二个参数。让我们来改进一下我们的代码：
 ```rust
 use std::env;
-
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    // 获取程序名称
-    let program_name = &args[0];
-
-    // 打印出命令行参数的数量
-    println!("Program Name: {}", program_name);
-    println!("Number of arguments: {}", args.len() - 1);
+    // 获取第一个和第二个参数
+    let first_arg = env::args().nth(1).unwrap();
+    let second_arg = env::args().nth(2).unwrap();
+    // 打印出它们
+    println!("First argument: {}", first_arg);
+    println!("Second argument: {}", second_arg);
 }
 ```
+现在，我们只获取了第一个和第二个参数，并打印出它们。值得注意的是，为了获取特定位置的参数，我们使用了迭代器的`nth()`方法，并使用`unwrap()`来解包可能的空值。如果想要获取其他位置的参数，只需要调用相应的索引即可。
 
-## 深入探讨
+## 深入探究
+除了获取特定位置的参数，Rust还提供了一种更灵活的方法来读取命令行参数，即使用`getopts`库。这个库允许我们定义命令行选项，将参数以键值对的形式保存，并提供帮助信息和错误处理。让我们来看一个例子：
+```rust
+extern crate getopts; // 添加依赖
 
-除了上述示例中提到的方法，你还可以通过`std::env::args_os()`和`std::env::current_dir()`来读取命令行参数和当前工作目录。此外，你还可以使用诸如`getopts`、`clap`等第三方库来更灵活地解析和处理命令行参数。
+use getopts::Options;
+use std::env;
+fn main() {
+    // 定义程序的帮助信息
+    let program = "args";
+    let brief = format!("Usage: {} [options]", program);
+    
+    // 定义命令行选项
+    let mut opts = Options::new();
+    opts.optflag("h", "help", "Display this help message");
+    opts.optflag("v", "verbose", "Enable verbosity");
+    
+    // 获取命令行参数
+    let args: Vec<String> = env::args().collect();
+    let matches = opts.parse(&args[1..]).unwrap();
+    
+    // 判断是否有帮助选项，并打印出帮助信息
+    if matches.opt_present("h") {
+        println!("{}", opts.usage(&brief));
+        return;
+    }
+    
+    // 判断是否启用了 verbosity
+    if matches.opt_present("v") {
+        println!("Enabled verbosity");
+    }
+    
+    // 打印出其他参数
+    for arg in matches.free {
+        println!("{}", arg);
+    }
+}
+```
+现在，我们的程序可以接受两个命令行选项，即`-h`和`-v`，并打印出对应的信息。如果想要了解更多关于`getopts`库的用法，可以参考它的[文档](https://docs.rs/getopts/)。
 
-## 参考链接
-
-- Rust官方文档：https://doc.rust-lang.org/std/env/index.html
-- Rust Cookbook：https://rust-lang-nursery.github.io/rust-cookbook/cli/arguments.html
-- getopts库文档：https://docs.rs/getopts/0.2.21/getopts/
-- clap库文档：https://docs.rs/clap/2.33.0/clap/
-- Rust命令行程序实例：https://github.com/bcmyers/Command-Line-Examples-Rust
+# 参考链接
+- [Rust官方文档](https://www.rust-lang.org/zh-CN/)
+- [Rust标准库文档](https://doc.r

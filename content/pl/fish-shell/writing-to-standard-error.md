@@ -1,38 +1,34 @@
 ---
 title:    "Fish Shell: Pisanie do standardowego błędu"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu (standard error) jest często używaną techniką w programowaniu w języku Fish Shell. Jest to przydatne w celu przekazywania informacji o błędach lub ostrzeżeń w trakcie wykonywania skryptów.
+Pisanie do standardowego błędu (standard error) jest ważnym narzędziem w programowaniu w Fish Shell. Pomimo tego, że może brzmieć nieco skomplikowanie, pozwala ono na wyświetlanie komunikatów o błędach lub ostrzeżeniach, co jest niezbędne do prawidłowego debugowania kodu.
 
-## Jak
+## Jak to zrobić
 
-Aby napisać do standardowego błędu w języku Fish Shell, używamy polecenia `echo` wraz z przekierowaniem wyjścia do `stderr` za pomocą symbolu `>`.
+Jest kilka sposobów na napisanie do standardowego błędu w Fish Shell. Jednym z nich jest użycie polecenia "fprintf", które działa podobnie jak w innych językach programowania. Przykładowe użycie wyglądałoby następująco:
 
-```Fish Shell
-echo "To jest błąd" > stderr
+```
+Fish Shell ...
+fprintf stderr "To jest komunikat błędu!"
 ```
 
-Jeśli chcemy przekazać więcej niż jedną linijkę tekstu, możemy użyć operatora `&` oraz wartości `endl`, co spowoduje przeniesienie kursora do nowej linii po każdej wypisanej linii.
-
-```Fish Shell
-echo "To jest ostrzeżenie" endl "Jest coś nie tak" > stderr
-```
-
-Rezultatem powyższych poleceń będzie wypisanie tekstu do standardowego błędu, który można następnie wykorzystać w dalszej części skryptu.
+W powyższym kodzie, "fprintf" określa, do którego strumienia ma zostać wysłana wiadomość, a później podajemy sam komunikat, który ma zostać wyświetlony. Należy również pamiętać o użyciu "2>" przed komendami, aby przekierować je do standardowego błędu.
 
 ## Deep Dive
 
-Pisanie do standardowego błędu jest przydatne, ponieważ pozwala nam na przekazywanie informacji o błędach lub ostrzeżeń w trakcie wykonywania skryptów. Jest to ważne, ponieważ w ten sposób możemy szybko zidentyfikować i rozwiązać potencjalne problemy w naszych skryptach.
+Głębsze zanurzenie w temacie pisania do standardowego błędu wymaga zrozumienia różnic między standardowym wejściem (standard input), standardowym wyjściem (standard output) oraz standardowym błędem (standard error). Standardowe wejście służy do przekazania danych do programu, standardowe wyjście do wypisywania wyników, a standardowy błąd do komunikatów o błędach i ostrzeżeń.
 
-Ponadto, pisanie do standardowego błędu jest często wykorzystywane w procesie debugowania kodu. Dzięki temu możemy śledzić wartości zmiennych lub wyjścia funkcji w trakcie wykonywania skryptu, co ułatwia znalezienie przyczyny błędu.
+Pisanie do standardowego błędu jest przydatne w przypadkach, gdy chcemy odróżnić informacje o błędach od standardowego wyjścia. Możemy również przekierować standardowy błąd do pliku, aby odebrać komunikaty o błędach w łatwiejszy sposób.
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja języka Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Dokumentacja polecenia `echo`](https://fishshell.com/docs/current/cmds/echo.html)
-- [Poradnik dla początkujących w języku Fish Shell](https://dev.to/dahamstaft/fish-shell-a-beginner-s-guide-3l0l)
+- Wprowadzenie do standardowych strumieni w Fish Shell: [link](https://fishshell.com/docs/current/tutorial.html#tut_streams)
+- Dokumentacja Fish Shell na temat strumieni: [link](https://fishshell.com/docs/current/index.html#stderr)
+- Poradnik o przekierowywaniu strumieni: [link](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)

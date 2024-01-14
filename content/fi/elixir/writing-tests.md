@@ -1,41 +1,47 @@
 ---
 title:    "Elixir: Testien kirjoittaminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Kirjoitamme testejä?
 
-Testien kirjoittaminen on tärkeä osa Elixir-ohjelmoinnin prosessia, sillä se auttaa varmistamaan koodin laadun ja toimivuuden. Testien avulla voit myös varmistaa, että muutokset eivät aiheuta regressioita koodiisi.
+Kirjoittaminen testejä on tärkeä osa Elixir-ohjelmointia, sillä se auttaa varmistamaan, että koodimme toimii halutulla tavalla ja välttämään virheitä. Testien avulla voimme myös helpommin muokata ja parantaa koodia, koska tiedämme miten muutokset vaikuttavat jo olemassa olevaan koodiin.
 
-## Kuinka kirjoittaa testeja Elixirissä
+## Kuinka: Esimerkkejä ja koodilohkoja
 
-Testien kirjoittaminen Elixirissä on helppoa ja suoraviivaista. Voit aloittaa määrittelemällä testin tiedoston yläreunassa olevan moduulin nimen ja käyttämällä `ExUnit.Case` -moduulia. Testit voivat olla joko funktioita tai makroja, mutta makrojen käyttö on suositeltavaa, sillä niiden avulla voit hyödyntää Elixirin hahmontunnistusta.
+Testien kirjoittaminen Elixirissä on helppoa käyttämällä sisäänrakennettua ExUnit-testikehystä. Alla on esimerkki yksinkertaisesta testitapauksesta, jossa haluamme tarkistaa, että yhteenlasku toimii oikein.
 
 ```Elixir
-defmodule Testi do
+defmodule Laskin do
+  def summa(a, b) do
+    a + b
+  end
+end
+
+defmodule LaskinTesti do
   use ExUnit.Case
   
-  test "summaa kaksi lukua" do
-    summa = 2 + 2
-    assert summa == 4
+  test "summa palauttaa oikean tuloksen" do
+    assert Laskin.summa(2, 3) == 5
   end
 end
 ```
 
-Testin voit suorittaa ajamalla `mix test` -komennon terminaalissa. Jos kaikki testit suoritettiin onnistuneesti, näet viestin `All 1 tests passed` ja jos jokin testi epäonnistuu, näet tarkemman virheviestin ja rivinumeron, josta virhe löytyi.
+Yllä olevassa esimerkissä luomme moduulin nimeltä "Laskin", jossa on toiminto summa, joka laskee kahden numeron summan. Sitten testaamme tätä toimintoa luomalla LaskinTesti-moduulin ja kirjoittamalla yhden testitapauksen, jossa odotamme, että toiminto palauttaa oikean tuloksen. Käyttämällä assert-komentoa voimme tarkistaa, että toiminto palauttaa odotetun tuloksen. 
 
-## Syvällisempi opas testien kirjoittamiseen
+Kun ajamme testit käyttämällä "mix test" komentoa, tulisi saada viesti "1 test, 0 virhettä".
 
-Testien kirjoittaminen Elixirissä perustuu erilaisiin asserointeihin. Yleisimpiä asserointeja ovat `assert` ja `refute`, jotka tarkistavat, että annettu väite on tosi tai epätosi. Voit myös käyttää muita asserointikomentoja, kuten `assert_equal`, `refute_in_delta` ja `assert_raise`.
+## Syvempää tietoa testeistä
 
-Lisäksi voit määrittää ennen ja jälkeen jokaisen testin suorittamisen erityisesti määritellyt funktiot käyttämällä `setup` ja `teardown` -makroja. Näiden avulla voit esimerkiksi alustaa tarvittavat muuttujat ennen testin suorittamista tai siivota testin jälkeen.
+Testien kirjoittaminen Elixirissä vaatii hieman tutustumista ExUnit-testikehykseen ja sen käyttöön, mutta se on ehdottomasti vaivan arvoista. Hyviä käytäntöjä testien kirjoittamisessa ovat esimerkiksi testikattavuuden tarkistaminen ja testaustölkkipakan käyttö monimutkaisempien testien kirjoittamiseen.
 
-Kun kirjoitat testejä, on myös tärkeää ottaa huomioon testien järjestys. Testit suoritetaan aina aakkosjärjestyksessä, joten muutokset koodissa voivat vaikuttaa muiden testien suoritukseen. Siksi on tärkeää kirjoittaa testit siten, että ne ovat riippumattomia toisistaan.
+On myös tärkeää muistaa, että testien kirjoittaminen on jatkuva prosessi ja niitä tulisi muokata ja parantaa koodin muuttuessa.
 
 ## Katso myös
 
-- ExUnit - Elixirin testikehys: https://hexdocs.pm/ex_unit/
-- Testien kirjoittaminen Elixirissä: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#unit-tests
-- Elixirin hahmontunnistus: https://elixir-lang.org/getting-started/pattern-matching.html
+- [ExUnit-testikehyksen dokumentaatio](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Testikattavuuden tarkistaminen Elixirissä](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html#code-coverage)
+- [Testaustölkkipakan käyttö Elixirissä](https://github.com/lpil/elixir-test-tube)

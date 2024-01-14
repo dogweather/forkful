@@ -1,49 +1,38 @@
 ---
-title:    "TypeScript: Zufallszahlen generieren"
+title:    "TypeScript: Erzeugung von Zufallszahlen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist eine grundlegende Fähigkeit, die in der Programmierung häufig benötigt wird. Mit TypeScript können wir einfach und schnell Zufallszahlen erstellen, die in verschiedenen Szenarien nützlich sein können.
+Das Erzeugen von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung, um Variation und Unberechenbarkeit in Algorithmen zu ermöglichen. Es ist besonders nützlich für Simulationen, Spieleentwicklung und Verschlüsselung.
 
-## Wie man es macht
+## Wie geht das?
 
-Um in TypeScript Zufallszahlen zu generieren, müssen wir zunächst die `Math.random()` -Methode verwenden. Diese Methode gibt eine zufällige Zahl zwischen 0 (inklusive) und 1 (exklusive) zurück. Wir können dann diese Zahl mit einer einfachen Formel skalieren, um einen gewünschten Zahlenbereich zu erhalten.
-
-```TypeScript
-// Eine Zufallszahl zwischen 1 und 10 generieren
-let randomNumber = Math.random() * 10 + 1; 
-console.log(randomNumber); // Beispiel Ausgabe: 7.874553028327906
-```
-
-Wir können auch die `Math.floor()` -Methode verwenden, um die Nachkommastellen abzuschneiden und eine ganze Zufallszahl zu erhalten.
+Eine der einfachsten Methoden, um in TypeScript Zufallszahlen zu generieren, ist die Verwendung der integrierten `Math.random()` Funktion. Diese Funktion gibt eine Zufallszahl zwischen 0 (inklusive) und 1 (ausschließlich) zurück.
 
 ```TypeScript
-// Eine ganze Zufallszahl zwischen 1 und 10 generieren
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber); // Beispiel Ausgabe: 7
+// Generieren einer Zufallszahl zwischen 0 und 1
+let randomNum = Math.random();
 ```
 
-Darüber hinaus kann die `Math.random()` -Methode als Grundlage für komplexere Zufallszahlengeneratoren verwendet werden, die spezifischen Anforderungen entsprechen.
-
-## Tiefere Einblicke
-
-Bei der Verwendung von `Math.random()` in TypeScript ist es wichtig, sich bewusst zu sein, dass die generierten Zahlen nicht wirklich zufällig sind. Sie folgen einem Algorithmus und können reproduziert werden, wenn das gleiche Seed (oder Saatgut) verwendet wird. Ein Seed kann als Startpunkt für den Algorithmus betrachtet werden und bestimmt, welche Zahlen generiert werden. Standardmäßig wird bei der Verwendung von `Math.random()` der aktuelle Zeitstempel als Seed verwendet.
-
-Sie können auch einen benutzerdefinierten Seed verwenden, indem Sie eine Zahl in die `Math.random()` -Methode einfügen.
+Um eine Zufallszahl in einem bestimmten Bereich zu erhalten, kann man `Math.random()` mit einfachen mathematischen Operationen kombinieren.
 
 ```TypeScript
-// Verwendung eines benutzerdefinierten Seeds
-Math.random(seed); 
+// Generieren einer Zufallszahl zwischen 1 und 10
+let randomNum = Math.random() * 10 + 1;
 ```
 
-Es ist auch möglich, einen Seed während der Entwicklung zu setzen, um konsistente Ergebnisse zu erhalten, indem Sie den Seed manuell ändern oder einen vordefinierten Seed verwenden.
+## Tiefer Einblick
+
+Es gibt viele verschiedene Methoden, um Zufallszahlen in TypeScript zu generieren. Eine der bekanntesten ist die sogenannte "Mersenne-Twister" Methode, die eine pseudozufällige Sequenz von Zahlen erzeugt. Diese Methode ist effizient und wird oft in wissenschaftlichen Anwendungen verwendet.
+
+Es ist auch wichtig zu beachten, dass der generierte Zufallswert auf unterschiedlichen Plattformen nicht unbedingt gleich ist, da jeder Computer andere Methoden zur Generierung von Zufallszahlen verwendet. Um eine konsistente Zufallszahl zu erhalten, kann man einen sogenannten "Seed-Wert" verwenden, der als Startpunkt für die Zufallszahlengenerierung dient.
 
 ## Siehe auch
 
-- [Offizielle TypeScript Dokumentation zu Math.random()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#typed-math-random)
-- [MDN Dokumentation zu Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Blog-Post: "Wie man Zufallszahlen in TypeScript generiert"](https://blog.logrocket.com/generating-random-numbers-in-typescript/)
+- [JavaScript Zufallszahlengenerator](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Implementierung des Mersenne-Twister Algorithmus in TypeScript](https://www.npmjs.com/package/mersenne-twister)

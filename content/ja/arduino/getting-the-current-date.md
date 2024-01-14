@@ -1,58 +1,78 @@
 ---
-title:    "Arduino: 「現在の日付の取得」"
+title:    "Arduino: 現在の日付の取得"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付と時刻の情報をコーディングに組み込むことは、多くのArduinoプロジェクトで重要です。例えば、温度や湿度のセンサーを使用して、特定の日時に応じて異なるアクションを起動させることができます。日付を取得することで、より精度の高いプログラムを作成することができます。
+現在の日付を取得する意義や、それを行う理由については、私たちが普段生活している上でとても重要な役割を果たしています。例えば、私たちは予定を立てたり、期限を守るために日付を把握する必要があります。また、セキュリティやデータの記録など、様々な場面において日付は重要な情報となっています。Arduinoを使って日付を取得することで、これらの重要な情報を簡単かつ正確に取得できるようになります。
 
-## 使い方
+## 方法
 
-日付を取得するには、`RTClib`ライブラリを使用します。まず最初に、ライブラリをインストールする必要があります。Arduino IDEを開き、メニューバーから「スケッチ」を選択し、「ライブラリをインクルード」をクリックします。その後、「ライブラリを管理」を選択し、検索バーに「RTClib」と入力します。表示されたライブラリを選択して「インストール」をクリックします。
-
-次に、`RTClib`を使用するためのコードを書きます。下のコードを参考にしてください。
+まず、今回のプログラムで使用するライブラリをインポートします。次のコードを書き込みます。
 
 ```Arduino
-#include <Wire.h> // 配線用
-#include "RTClib.h" // RTClibライブラリを使用する
+#include <RTClib.h>
+```
 
-RTC_DS1307 rtc; // RTC_DS1307をオブジェクトとして定義
+次に、日時を取得するためのRTCオブジェクトを作成します。以下のコードを実行してください。
 
-void setup() {
-  rtc.begin(); // RTCを初期化
-  if (!rtc.isrunning()) { // RTCが正しく動作していない場合
-    Serial.println("RTC is NOT running!"); // シリアルモニターにメッセージを表示
-  }
-}
+```Arduino
+RTC_DS1307 rtc;
+```
 
+そして、取得した日付を表示するための変数を作成します。今回は、文字列として表示するための変数を作成します。次のコードを記述してください。
+
+```Arduino
+String currentDate;
+```
+
+日付を取得するためのプログラムを書くためには、`setup()`関数が必要です。まず、RTCを初期化するためのコマンドを書きます。
+
+```Arduino
+rtc.begin();
+```
+
+次に、セットされている日時をRTCから取得します。
+
+```Arduino
+DateTime now = rtc.now();
+```
+
+取得した日時は、多くの情報を含んでいます。そのため、必要な情報を抽出するためには、さらにコードを書く必要があります。例えば、今回は「年月日」という形式にしたいので、以下のコードを追加します。
+
+```Arduino
+int year = now.year();
+int month = now.month();
+int day = now.day();
+```
+
+それぞれの情報を統合し、文字列として表示するための`currentDate`変数に代入します。
+
+```Arduino
+currentDate = String(year) + "/" + String(month) + "/" + String(day);
+```
+
+最後に、取得した日付を表示するために`loop()`関数を書きます。
+
+```Arduino
 void loop() {
-  DateTime now = rtc.now(); // 現在の日付と時刻を取得
-  Serial.print("Today is: "); // 「Today is:」というメッセージを表示
-  Serial.print(now.month(), DEC); // メッセージに現在の月を表示
-  Serial.print('/'); // 「/」を表示
-  Serial.print(now.day(), DEC); // メッセージに現在の日を表示
-  Serial.print('/'); // 「/」を表示
-  Serial.println(now.year(), DEC); // メッセージに現在の年を表示
-
-  Serial.print("Current time is: "); // 「Current time is:」というメッセージを表示
-  Serial.print(now.hour(), DEC); // メッセージに現在の時を表示
-  Serial.print(':'); // 「:」を表示
-  Serial.print(now.minute(), DEC); // メッセージに現在の分を表示
-  Serial.print(':'); // 「:」を表示
-  Serial.print(now.second(), DEC); // メッセージに現在の秒を表示
-  Serial.println(" (Japan Time)"); // メッセージに「 (Japan Time)」という文言を表示
-
-  delay(1000); // 1秒待機
+  Serial.println(currentDate);
+  delay(1000);
 }
 ```
 
-上記のコードは、RTCを初期化し、現在の日付と時刻を取得し、シリアルモニターに表示するものです。必要に応じて、`now`オブジェクトからさまざまな情報を抽出して使用することができます。
+以上でプログラムの記述が完了しました。Arduinoとパソコンを接続し、シリアルモニターを開いて実行すると、現在の日付が1秒ごとに表示されるはずです。
 
 ## ディープダイブ
 
-`RTClib`では、さまざまなメソッドを使用して日付と時刻の情報を取得することができます。例えば、`year()`、`month()`、`day()`は、それぞれ現在の年、月、日を返します。また、`hour()`、`minute()`、`second()`はそれぞれ現在の時、分、秒を返します。さらに、`weekday()`は現在の曜日を返します。
+日付を取得するコードの詳細について、さらに深く掘り下げてみましょう。まず、RTCのオブジェクトを作成した際に使用した`RTC_DS1307`は、使われるRTCの種類を指定しています。今回使用したのはDS1307という型のRTCですが、他にも様々なRTCが存在します。そのため、使用するRTCに合わせてオブジェクトの名前を変える必要があります。
 
-また、RTCの時刻を設定することもできます。`adjust()`メソッ
+また、今回のコードではRTCから取得した日時をUnix時間と呼ばれる形式で取得しています。これは、1970年1月1日からの経過秒数を表すものです。そのため、より詳細な日付表示をする場合は、Unix時間を使用する必要があります。詳しくはそれぞれのRTCのドキュメントを参考にしてください。
+
+## 関連リンク
+
+- [DateTime

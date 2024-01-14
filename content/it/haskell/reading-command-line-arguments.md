@@ -1,57 +1,46 @@
 ---
-title:    "Haskell: Lettura degli argomenti della riga di comando"
+title:    "Haskell: Leggere gli argomenti della riga di comando"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-I comandi della linea di comando sono uno strumento essenziale per qualsiasi programmatore di Haskell. Con la loro potenza e flessibilità, consentono di interagire con il tuo programma in modo più dinamico e personalizzato. In questo articolo, esploreremo come leggere i comandi della linea di comando in Haskell e come possono essere utilizzati per migliorare il tuo codice.
+Leggere gli argomenti della riga di comando è un'abilità fondamentale per qualsiasi programmatore Haskell. Con questa conoscenza, è possibile rendere i tuoi programmi più flessibili e interattivi.
 
 ## Come
 
-La lettura dei comandi della linea di comando in Haskell è semplice e può essere fatta utilizzando la funzione `getArgs` del pacchetto `System.Environment`. Ecco un esempio di codice che legge il primo argomento della linea di comando e lo stampa a schermo:
+Per leggere gli argomenti della riga di comando in Haskell, useremo la funzione `getArgs` dal modulo `System.Environment`. Questa funzione restituisce una lista di stringhe contenenti gli argomenti forniti al programma nella riga di comando.
+
+Ad esempio, se eseguiamo il seguente programma:
 
 ```Haskell
-import System.Environment (getArgs)
+import System.Environment
 
+main :: IO ()
 main = do
     args <- getArgs
-    let firstArg = head args
-    putStrLn ("Il primo argomento è: " ++ firstArg)
+    print args
 ```
 
-La funzione `getArgs` restituisce una lista di stringhe corrispondenti agli argomenti passati sulla linea di comando. Nel nostro esempio, utilizziamo la funzione `head` per ottenere il primo elemento della lista e lo stampiamo a schermo utilizzando la funzione `putStrLn`.
+Con il comando `runhaskell myprogram.hs arg1 arg2`, otterremo il seguente output:
 
-Ecco un esempio di come questo codice potrebbe essere eseguito e il suo output:
-
-Input da linea di comando: `haskell reads_args_example.hs ciao mondo`
-
+```Haskell
+["arg1","arg2"]
 ```
-Il primo argomento è: ciao
-```
+
+In questo caso, la lista contiene due stringhe: `"arg1"` e `"arg2"`, che corrispondono agli argomenti della riga di comando forniti al programma.
 
 ## Deep Dive
 
-Oltre alla funzione `getArgs` che abbiamo visto nell'esempio precedente, esiste anche la funzione `withArgs` che consente di eseguire una funzione specifica con gli argomenti forniti senza doverli passare nuovamente alla funzione `getArgs`. Ecco un esempio di codice che utilizza `withArgs` per ottenere l'ultimo argomento dalla linea di comando:
+Oltre alla funzione `getArgs`, esistono altre opzioni per leggere gli argomenti della riga di comando in Haskell. Per esempio, possiamo utilizzare la funzione `withArgs` dal modulo `System.Console.GetOpt` per analizzare gli argomenti e gestire eventuali errori.
 
-```Haskell
-import System.Environment (getArgs, withArgs)
+Inoltre, è possibile specificare opzioni e argomenti opzionali nella riga di comando utilizzando la libreria `optparse-applicative`. Questo rende il processo di lettura degli argomenti più strutturato e facilmente gestibile.
 
-main = do
-    let lastArg = withArgs ["ciao", "mondo"] getArgs
-    putStrLn ("L'ultimo argomento è: " ++ lastArg)
-```
+## See Also
 
-L'output di questo codice sarà:
-
-```
-L'ultimo argomento è: mondo
-```
-
-## Vedi anche
-
-- [Documentazione sulla funzione `getArgs`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs)
-- [Documentazione sulla funzione `withArgs`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:withArgs)
-- [Tutorial su come leggere e gestire i comandi della linea di comando in Haskell](https://wiki.haskell.org/Command_line_option_parsing)
+- Documentazione ufficiale di `System.Environment`: https://hackage.haskell.org/package/base/docs/System-Environment.html
+- Documentazione ufficiale di `System.Console.GetOpt`: https://hackage.haskell.org/package/base/docs/System-Console-GetOpt.html
+- Documentazione ufficiale di `optparse-applicative`: https://hackage.haskell.org/package/optparse-applicative

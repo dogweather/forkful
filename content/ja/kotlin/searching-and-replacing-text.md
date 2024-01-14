@@ -1,43 +1,34 @@
 ---
-title:    "Kotlin: テキストの検索と置換"
+title:    "Kotlin: テキストを検索して置換する"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-あなたが今、この記事を読んでいるのは、おそらくテキストを検索＆置換する方法を学びたいと思っているからです。テキストの検索と置換は、プログラミングにおいて非常に一般的なタスクであり、あなたのコードをより効率的かつ簡単にできるようになります。
+こんにちは、Kotlinプログラマーの皆さん！今日はテキストの検索と置換についてお話ししましょう。テキストの検索と置換は非常に便利な機能で、大量のテキストファイルを素早く変更したい場合などに役立ちます。
 
-## 方法
-Kotlinでテキストを検索＆置換するには、`replace()`関数を使用します。例えば、次のように書くことができます。
+## Why
+テキストの検索と置換は、大量のテキストを手作業で変更するのは非常に時間がかかるため、プログラマーにとってはとても重要な機能と言えます。また、特定のテキストを一括で置換することで、コードの修正やデータの整形などの作業を効率的に行うことができます。
 
-```Kotlin
-val string = "Hello, world!"
-val newString = string.replace("world", "universe")
-println(newString)    // Output: Hello, universe!
-```
-
-このコードでは、`replace()`関数を使用して`world`を`universe`に置換しています。もし、元の`string`に`world`が複数回含まれていた場合、すべて置換されます。
-
-また、正規表現を使用してテキストを検索＆置換することもできます。例えば、次のように書くことができます。
+## How To
+Kotlinでは、`replaceAll()`メソッドを使用してテキストの検索と置換を行うことができます。例えば、次のように使用します。
 
 ```Kotlin
-val string = "Kotlin is a great programming language!"
-val newString = string.replace(Regex("[aei]"), "o")
-println(newString)    // Output: Kotolon os o groat progrommong longuoge!
+val str = "Hello world!"
+val newStr = str.replaceAll("world", "Kotlin")
+println(newStr)
 ```
 
-このコードでは、`replace()`関数を使用して、文字列内の`a`、`e`、`i`をすべて`o`で置換しています。また、`Regex()`メソッドを使用して正規表現パターンを定義し、`replace()`関数の引数として渡しています。
+この場合、"Hello world!"の"world"が"Kotlin"に置換され、"Hello Kotlin!"という出力が得られるでしょう。
 
-## ディープダイブ
-テキストの検索＆置換には、さまざまなオプションがあります。例えば、`replace()`関数には第三引数として置換の最大回数を指定することができます。また、他のプログラミング言語と同様に、Kotlinでもモジュールやライブラリを使用してテキストの検索＆置換機能を拡張することができます。
+## Deep Dive
+文字列の置換には、正規表現を使用することもできます。例えば、`replaceAll()`メソッドの第一引数には正規表現を指定することができ、さらに第二引数には置換する文字列を指定することもできます。
 
-さらに詳しい情報を知りたい方は、公式ドキュメントを確認してください。
+また、文字列の一部のみを置換する場合は、`replaceFirst()`メソッドを使用することができます。
 
-## 参考リンク
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/)
-- [Kotlinで文字列を操作する方法](https://www.geeksforgeeks.org/string-manipulations-in-kotlin/)
-- [Kotlin正規表現チートシート](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
+## See Also
+- [Kotlin: Strings Overview](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [JavaDocs: String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
 
-## さらに読む
-テキストの検索＆置換は、プログラムの中で頻繁に行われるタスクの一つです。そのため、Kotlinの他にもさまざまなプログラミング言語で同様の機能を提供する方法があります。例えば、Pythonの`replace()`メソッドやJavaScriptの`replace()`関数などがあります。ぜひ、他の言語でもテキストの検索＆置換を試してみてください。
+今回は簡単な例を紹介しましたが、テキストの検索と置換については様々なパターンがありますので、是非試してみてください。また、上記のリンクからさらに詳細な情報を入手することもできます。これからもKotlinプログラマーとして、効率的なコーディングを心がけましょう。

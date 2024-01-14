@@ -1,41 +1,47 @@
 ---
 title:    "Clojure: Erstellen einer temporären Datei"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum temporäre Dateien in Clojure erstellen?
+## Warum
 
-Das Erstellen von temporären Dateien kann hilfreich sein, wenn du temporäre Daten speichern möchtest, die nur für eine bestimmte Zeit benötigt werden - z.B. beim Bearbeiten von Dateien oder beim Testen von Code. Temporäre Dateien werden automatisch gelöscht, wenn sie nicht mehr benötigt werden. In diesem Blogbeitrag werden wir uns ansehen, wie man in Clojure temporäre Dateien erstellen kann und was dabei zu beachten ist.
+Das Erstellen temporärer Dateien ist eine häufige Aufgabe in der Softwareentwicklung. Oft muss man Daten vorübergehend speichern oder verarbeiten, bevor sie an ihren endgültigen Speicherort übertragen werden können. In diesem Blogbeitrag werden wir uns ansehen, wie man in Clojure temporäre Dateien erstellen kann.
 
-## Wie man temporäre Dateien in Clojure erstellt
+## Wie man temporäre Dateien in Clojure erstellt
 
-Zuerst müssen wir das *java.io.File* Paket importieren, welches die Funktionalität bietet, temporäre Dateien zu erstellen. Dann können wir mit der Funktion *createTempFile* eine temporäre Datei erzeugen. Hier ist ein Beispielcode, der eine temporäre Datei erstellt und ihren Pfad ausgibt:
+Das Erstellen temporärer Dateien in Clojure ist relativ einfach. Wir werden das `clojure.java.io`-Paket verwenden, um die Datei zu erstellen. Hier ist ein Beispielcode, der eine temporäre Datei erstellt:
 
 ```Clojure
-(import '[java.io File])
+(require '[clojure.java.io :as io])
 
-(def tmp-file (File/createTempFile "my-temp-" ".txt"))
-(println (.getAbsolutePath tmp-file))
-```
-Die Ausgabe dieses Codes wird folgendermaßen aussehen:
-
-```bash
-/var/folders/6s/2ht4gfsj3sjf1/text1474639558782.txt
+(with-open [temp-file (io/file "temp" (str (rand-int 10000) ".txt"))]
+  (println "Temporäre Datei erstellt: " (.getPath temp-file)))
 ```
 
-Wie du sehen kannst, wurde eine temporäre Datei mit einem Dateinamen, der mit "my-temp-" beginnt und ".txt" endet. Es ist wichtig bei dem Erstellen von temporären Dateien, dass du ein praefix und ein suffix an die *createTempFile* Funktion angibst, da diese beim Löschen der Datei verwendet werden. 
+In diesem Beispiel verwenden wir zunächst die `require`-Funktion, um das `clojure.java.io`-Paket zu importieren, das wir verwenden werden. Dann verwenden wir die `with-open`-Makro, um sicherzustellen, dass die Datei automatisch geschlossen wird, sobald der Code innerhalb der Klammern beendet ist. Innerhalb des `with-open`-Blocks erstellen wir eine temporäre Datei mit dem Namen "temp" und einer zufälligen Nummer als Dateinamen. Als nächstes verwenden wir `println`, um den Pfad der erstellten temporären Datei auszugeben.
 
-## Tiefere Einblicke in das Erstellen von temporären Dateien
+Wenn wir diesen Code ausführen, erhalten wir folgende Ausgabe:
 
-Es ist wichtig zu beachten, dass die *createTempFile* Funktion standardmäßig die erstellte Datei im Standard-Temporärverzeichnis des Betriebssystems speichert. In Linux-Systemen ist dies normalerweise "/temp", in Windows "/Windows/Temp". Wenn du möchtest, dass die temporäre Datei in einem bestimmten Verzeichnis erstellt wird, kannst du das Verzeichnis als dritten Parameter an die Funktion übergeben.
+```
+Temporäre Datei erstellt: /var/folders/8q/mb8yks4x3qzfbr0f5lqmqbj00000gn/T/temp4260.txt
+```
 
-Eine weitere wichtige Sache zu beachten ist, dass bei der Erstellung der temporären Datei, der Löschvorgang beim Beenden des Programms registriert wird. Dies bedeutet, dass selbst wenn das Programm unerwartet beendet wird, die erstellte temporäre Datei automatisch gelöscht wird.
+Wie Sie sehen können, haben wir erfolgreich eine temporäre Datei mit einem zufälligen Namen in unserem temporären Ordner erstellt.
 
-Darüber hinaus gibt es auch eine Funktion *deleteOnExit*, mit der man eine manuelle Löschung beim Beenden des Programms verhindern kann. Sie kann insbesondere dann hilfreich sein, wenn du die temporäre Datei in einem bestimmten Verzeichnis erstellt hast und möchtest, dass sie auch nach dem Programmende erhalten bleibt.
+## Tiefer gehende Informationen
 
-# Siehe auch
-* Clojure Java Interoperabilität - https://clojure.org/reference/java_interop
-* Java File Dokumentation - https://docs.oracle.com/javase/7/docs/api/java/io/File.html
-* Java 8 Tutorial - Erstellen von temporären Dateien - https://docs.oracle.com/javase/tutorial/essential/io/tmpfile.html
+Das `with-open`-Makro ist sehr nützlich, da es sicherstellt, dass die erstellte Datei automatisch geschlossen wird, um Speicherlecks zu vermeiden. Wenn Sie jedoch mehr Kontrolle über die erstellte Datei benötigen, gibt es noch andere Funktionen, die Sie verwenden können.
+
+Eine Möglichkeit ist die Verwendung der `temp-file`-Funktion, die nur eine temporäre Datei erstellt, aber nicht automatisch geschlossen wird. Dies kann nützlich sein, wenn Sie die Datei in einem späteren Zeitpunkt in Ihrer Codebasis verwenden müssen.
+
+Eine weitere Möglichkeit besteht darin, die `delete-on-exit`-Funktion zu verwenden, die dafür sorgt, dass die temporäre Datei automatisch gelöscht wird, wenn das Programm beendet wird. Dies hilft, den temporären Ordner sauber zu halten und Speicherplatz zu sparen.
+
+Insgesamt ist das Erstellen temporärer Dateien in Clojure eine einfache, aber wichtige Aufgabe, die in vielen Anwendungen benötigt wird.
+
+## Siehe auch
+
+- [Offizielle Dokumentation zu `clojure.java.io`](https://clojuredocs.org/clojure.java.io/file)
+- [Weitere Informationen über das Erstellen temporärer Dateien in Clojure](https://www.braveclojure.com/core-functions-file/)

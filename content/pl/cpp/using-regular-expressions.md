@@ -1,51 +1,46 @@
 ---
-title:    "C++: Korzystanie z wyrażeń regularnych"
+title:    "C++: Używanie wyrażeń regularnych"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Regular expressions są jednym z najważniejszych narzędzi w języku C++, ponieważ pozwalają na efektywne przetwarzanie i manipulację tekstem. Używanie wyrażeń regularnych ułatwia tworzenie skomplikowanych wzorców i przeprowadzanie precyzyjnych wyszukiwań, co jest niezwykle przydatne w wielu projektach programistycznych.
+Regularne wyrażenia są niezbędnym narzędziem dla każdego programisty, który chce manipulować i przetwarzać tekst w swoim kodzie. Pozwalają one na szybkie i skuteczne wyszukanie i manipulację tekstową, co jest szczególnie przydatne przy obsłudze większych zbiorów danych.
 
 ## Jak to zrobić
 
-Aby korzystać z wyrażeń regularnych w C++, musimy najpierw zaimportować odpowiednią bibliotekę - ```<regex>```. Następnie możemy używać funkcji i klas z tej biblioteki do wykonywania różnych operacji na łańcuchach znaków.
+Aby użyć regularnych wyrażeń w języku C++, należy najpierw zaimportować bibliotekę wyrażeń regularnych (```#include <regex>```). Następnie należy utworzyć obiekt typu ```regex``` zawierający wyrażenie, którego poszukujemy, oraz wywołać funkcję ```regex_search()``` na przeszukiwanym tekście. Przykładowy kod wyglądać może tak:
 
-Przykładowo, jeśli chcielibyśmy znaleźć wszystkie liczby całkowite w danym tekście, możemy użyć konstrukcji ```regex_search```, która przeszukiwać będzie dany tekst pod kątem odpowiedniego wzorca. Poniżej znajduje się kod, który wyświetla wszystkie znalezione liczby całkowite i ich pozycje w tekście:
 ```C++
 #include <iostream>
 #include <regex>
+
 using namespace std;
 
 int main() {
-    string text = "Witaj 123 na świecie 456!";
-    regex pattern("\\d+"); // szukaj ciągu składającego się z jednej lub więcej cyfr
-    smatch matches; // przechowuje informacje o dopasowaniach
-    while(regex_search(text, matches, pattern)) {
-        cout << "Znaleziono " << matches.str() << " od indeksu " << matches.position() << endl;
-        text = matches.suffix().str(); // tekst począwszy od końca ostatniego dopasowania
+    string text = "Przykładowy tekst do przeszukania.";
+    regex expression("tekst");
+
+    if (regex_search(text, expression)) {
+        cout << "Wyrażenie zostało znalezione w tekście." << endl;
+    } else {
+        cout << "Wyrażenie nie zostało znalezione w tekście." << endl;
     }
+
     return 0;
 }
 ```
 
-W powyższym przykładzie użyliśmy wyrażenia regularnego ```\\d+```, aby znaleźć wszystkie ciągi składające się z jednej lub więcej cyfr. Zauważmy również, że funkcja ```regex_search``` zwraca informację o dopasowaniu w postaci obiektu ```smatch```, który zawiera m.in. metodę ```str()``` pozwalającą na pobranie dopasowanego tekstu oraz metodę ```position()``` zwracającą pozycję dopasowania w tekście.
+Dla powyższego kodu, oczekiwanym wyjściem jest "Wyrażenie zostało znalezione w tekście." Warto zauważyć, że regularne wyrażenia są bardzo elastyczne i umożliwiają zastosowanie wielu zaawansowanych funkcji, takich jak grupowanie i wyrażenia warunkowe.
 
-Powyższy kod wyświetli następujące wyniki:
-```
-Znaleziono 123 od indeksu 6
-Znaleziono 456 od indeksu 19
-```
+## Głębszy wgląd
 
-## Głębszy zanurzenie
+Regularne wyrażenia są wykorzystywane nie tylko w języku C++, ale również w innych językach programowania oraz narzędziach do przetwarzania tekstu. Dzięki temu, nauka ich jest nie tylko przydatna dla programistów, ale również osób pracujących z dużymi zbiorami danych, takich jak analitycy.
 
-Dużą zaletą wyrażeń regularnych jest możliwość tworzenia skomplikowanych wzorców, które pozwalają na precyzyjne wyszukiwanie i manipulację tekstem. Oprócz podstawowej składni, w której używamy znaków specjalnych do tworzenia wzorców, istnieje również możliwość korzystania z klasy ```regex```, która pozwala na tworzenie bardziej zaawansowanych wyrażeń regularnych.
+## Zobacz także
 
-Korzystanie z wyrażeń regularnych może być nieco skomplikowane dla początkujących programistów, ale po pewnym czasie nauki stanie się niezwykle przydatnym narzędziem w codziennej pracy. Warto poświęcić trochę czasu na zgłębienie tematu i zapoznanie się z różnymi możliwościami, jakie oferują wyrażenia regularne w języku C++.
-
-## Zobacz też
-
-- [Dokumentacja biblioteki <regex>](https://www.cplusplus.com/reference/regex/)
-- [Wyrażenia regularne w C++ dla początkujących](https://www.cprogramming.com/tutorial/regular-expressions-c++.html)
+- [Dokumentacja biblioteki wyrażeń regularnych w języku C++](https://en.cppreference.com/w/cpp/regex)
+- [Poradnik o regularnych wyrażeniach w języku C++](https://www.regular-expressions.info/cpp.html)

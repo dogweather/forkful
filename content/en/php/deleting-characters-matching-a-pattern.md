@@ -1,64 +1,49 @@
 ---
 title:    "PHP recipe: Deleting characters matching a pattern"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever encountered a situation where you needed to remove certain characters from a string in your PHP code? Whether it's unwanted whitespace, special characters, or specific patterns, it can be quite a hassle to manually delete them one by one. This is where the power of PHP programming comes in handy, as you can easily automate this task with just a few lines of code. In this blog post, we'll explore the "str_replace" function in PHP and how it can help you efficiently delete characters matching a given pattern.
+Deleting characters is a common task in programming, but what about deleting characters that match a specific pattern? This technique can be useful for data cleaning, removing unwanted characters from user inputs, or even creating custom filters for text-based data. In this blog post, we will explore how to delete characters matching a pattern in PHP.
 
 ## How To
 
-To begin, we'll start by setting up a simple string with some unwanted characters:
+Before diving into the code, let's define what we mean by "characters matching a pattern". In PHP, a pattern can be defined using regular expressions, also known as regex. Regex allows us to specify a set of characters to match in a string.
 
-```
-$myString = "Hello, *world*!";
-```
+Now, let's see how we can use regex to delete characters matching a certain pattern in PHP:
 
-In this example, we want to remove the asterisks surrounding the word "world". To do this, we can use the "str_replace" function in the following way:
+```PHP
+// Create a string with unwanted characters
+$input = "Hello! How are you?";
 
-```
-$newString = str_replace("*", "", $myString);
-```
+// Use preg_replace() function to remove non-alphanumeric characters
+$output = preg_replace("/[^a-zA-Z0-9 ]/i", "", $input); 
 
-By passing in the character we want to replace (in this case, the asterisk) and replacing it with an empty string, we effectively remove it from our original string. Let's take a look at the output of our new string:
-
-```
-Hello, world!
+// Output: Hello How are you
+echo $output;
 ```
 
-Success! The asterisks have been deleted from our string. But what if we want to remove multiple characters or patterns at once? We can do that too with the "str_replace" function. Let's take a look at another example:
+In the example above, we used the `preg_replace()` function with a regular expression pattern to remove all non-alphanumeric characters (such as `!` and `?`) from the string. The `i` at the end of the pattern means case-insensitive, so both uppercase and lowercase characters will be matched.
 
-```
-$myString = "Welcome to ***my*** blog!";
-```
-
-In this case, we want to remove all instances of three asterisks from our string. We can achieve this by passing in an array of characters to our "str_replace" function, like so:
-
-```
-$newString = str_replace(["*", "*", "*"], "", $myString);
-```
-
-This will replace all occurrences of three asterisks with an empty string, effectively deleting them from our original string. Let's check the output:
-
-```
-Welcome to my blog!
-```
-
-As you can see, all the asterisks have been removed, leaving us with a clean string. The "str_replace" function also has the ability to replace multiple characters with a single character, giving you even more flexibility in your string manipulation.
+You can customize the pattern to fit your specific needs. For instance, if you only want to remove numbers, the pattern would be `"/[0-9]/"`. Or, if you want to remove all special characters, the pattern would be `"/[^a-zA-Z0-9]/i"`.
 
 ## Deep Dive
 
-Now that we've seen how to use the "str_replace" function in practical scenarios, let's take a deeper look into how it works. This function takes in three parameters: the string or array of strings to be replaced, the string or array of strings to replace them with, and the string to be modified. It then goes through the string and replaces each instance of the given characters or patterns with the replacement string. This process continues until all occurrences have been replaced.
+Now that we know how to use regex to delete characters matching a pattern, let's take a closer look at the `preg_replace()` function. It takes three parameters: the pattern, the replacement, and the input string.
 
-It's important to note that the "str_replace" function is case-sensitive, meaning that it will only replace characters or patterns that match exactly. However, you can use the "str_ireplace" function if you want to perform a case-insensitive replacement.
+The first parameter, pattern, is where we specify the characters we want to match using regex. The second parameter, replacement, is what we want to replace the matched characters with. In our previous example, we left the replacement parameter empty, so the matched characters were simply deleted.
+
+The third parameter, input, is the string we want to search and modify. This can be a variable or a string literal.
+
+Apart from the `preg_replace()` function, PHP also has other built-in functions for pattern matching and string replacement, such as `preg_match()` and `str_replace()`. These functions may have different syntaxes, but the underlying concept is the same - using patterns to match and manipulate strings.
 
 ## See Also
 
-- [PHP str_replace documentation](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP str_ireplace documentation](https://www.php.net/manual/en/function.str-ireplace.php)
-- [PHP string functions](https://www.w3schools.com/php/php_ref_string.asp)
+1. PHP manual on regular expressions: <https://www.php.net/manual/en/book.regex.php>
+2. Regex tutorials and cheat sheets: <https://www.regular-expressions.info/>, <https://www.rexegg.com/regex-quickstart.html>
 
-And there you have it – a quick overview of how to delete characters matching a pattern in PHP using the "str_replace" function. With its simple syntax and powerful functionality, this function can save you time and effort when working with strings in your PHP code. Give it a try in your next project and see the magic for yourself!
+Deleting characters matching a pattern can be a useful skill to have in your PHP programming toolbox. Armed with the knowledge of regex, you can manipulate strings in more advanced and efficient ways. Try it out in your next project and see how it can improve your code!

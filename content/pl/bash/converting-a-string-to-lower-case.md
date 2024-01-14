@@ -1,37 +1,31 @@
 ---
-title:    "Bash: Konwertowanie tekstu na małe litery"
+title:    "Bash: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego ludzie decydują się na konwersję ciągu znaków na małe litery w programowaniu? Istnieje wiele powodów, dlaczego taka operacja może być potrzebna. Może chcesz porównać dwa ciągi znaków bez uwzględniania wielkości liter, lub może chcesz upewnić się, że wszystkie wprowadzone dane są w jednym formacie, niezależnie od tego, jak użytkownik je wprowadził. Bez względu na powód, przejście na małe litery jest przydatne i łatwe do zrobienia w języku Bash.
+ Konwersja ciągu znaków na małe litery jest niezbędnym krokiem podczas programowania w Bash. Umożliwia to porównywanie i przetwarzanie tekstu w jednolitym formacie.
 
-## Jak to zrobić
+## Jak
 
-Aby przekonwertować ciąg znaków na małe litery w Bash, możemy użyć wbudowanej funkcji `tr`, która służy do przetwarzania i filtrowania tekstu. Użyjemy jej w połączeniu z opcją `-s`, która usuwa powtarzające się znaki i zamienia je na jeden znak. W ten sposób zachowujemy tylko znaki, które chcemy przekonwertować. Następnie wykorzystamy opcję `[:upper:]` i `[:lower:]`, które określają duże i małe litery. Na koniec podajemy nasz ciąg znaków jako argument i zwracamy wynik.
-
-```Bash
-echo "PRzykład TekSTU" | tr -s '[:upper:]' '[:lower:]'
-```
-
-Przykład ten zwróci "przykład tekstu" jako wynik. Możemy także przypisać wynik do zmiennej i wykorzystać go w naszym kodzie. 
+Aby przekonwertować ciąg znaków na małe litery w Bash, użyj funkcji "tr". Należy podać dwie listy znaków, pierwsza zawiera znaki, które zostaną zamienione, a druga zawiera znaki, na które zostaną zastąpione. Następnie przekaż ciąg znaków do funkcji. Na przykład:
 
 ```Bash
-input="PRzykład TekSTU"
-output=$(echo $input | tr -s '[:upper:]' '[:lower:]')
-echo $output
+echo "Słowo" | tr 'A-Z' 'a-z'
 ```
 
-W tym przypadku otrzymamy ten sam wynik, ale możemy łatwo wykorzystać go w innych częściach naszego skryptu. Pamiętaj, że ta metoda nie będzie działać z polskimi znakami diakrytycznymi, więc jeśli chcesz zachować duże litery z polskimi znakami, możesz wykorzystać opcję `tr -d '[:upper:]'`.
+Ten kod wyświetli słowo "słowo" w konsoli.
 
-## Głębszy wgląd
+## Deep Dive
 
-Funkcja `tr` jest bardzo użyteczną i wszechstronną funkcją w Bashu, ale może zająć trochę czasu, aby oswoić się z jej różnymi opcjami. Przekonwertowanie ciągu znaków na małe litery przydatne jest również, gdy chcemy przeszukiwać duże ilości danych, ponieważ pomaga nam w filtrowaniu i sortowaniu tekstów. Ponadto, jeśli chcesz poznać więcej przydatnych opcji funkcji `tr`, zachęcam do zbadania dokumentacji lub innych artykułów na ten temat.
+Istnieje wiele innych sposobów na konwersję ciągu znaków na małe litery w Bash. Można również użyć funkcji "awk", "sed" lub "bash". Ważne jest, aby wybrać odpowiednią metodę w zależności od potrzeb i kontekstu.
+
+Inną istotną rzeczą do zauważenia jest to, że konwersja na małe litery zależy od ustawień języka i lokalizacji systemu. W wielu językach istnieją znaki, które w ogóle nie mają odpowiednika w alfabecie łacińskim, dlatego nie zostaną one uwzględnione w konwersji.
 
 ## Zobacz także
-
-- [Oficjalna dokumentacja funkcji `tr`](https://www.gnu.org/software/sed/manual/html_node/The-_0022tr_0022-Command.html)
-- [Przykładowe użycie funkcji `tr` w praktyce](https://www.linuxjournal.com/article/3764)
+- [Dokumentacja Bash na temat funkcji "tr"](https://www.gnu.org/software/bash/manual/html_node/Bash-Programmable-Completion.html#Bash-Programmable-Completion)
+- [Inne przydatne polecenia Bash](https://devhints.io/bash)

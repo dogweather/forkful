@@ -1,42 +1,47 @@
 ---
-title:    "Fish Shell: 编写文本文件"
+title:    "Fish Shell: 写文本文件"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-为什么要学习Fish Shell编程？编写Fish Shell文本文件是一种高效的方式来自动化常见的计算机任务。它使用简单的命令和脚本，可以大大减少手动操作，并提高你的生产力。
+编写文本文件是使用Fish Shell的一个重要部分。它允许您轻松地编写脚本和程序，并将它们保存到文本文件中，以便在以后进行使用和修改。
 
-# 如何
+## 如何
 
-要开始编写Fish Shell文本文件，首先你需要安装Fish Shell。接下来，你就可以使用下面的代码块来创建和编辑一个文本文件：
-
-```Fish Shell
+首先，您需要打开Fish Shell终端。然后，在终端中，使用以下命令创建一个新的文本文件：
+```
+fish
 touch my_file.txt
 ```
+这将在当前目录下创建一个名为“my_file.txt”的空文本文件。
 
-这将创建一个名为“my_file.txt”的空文本文件。接下来，你可以使用任意文本编辑器来编辑这个文件，如vim或nano。
+接下来，您可以使用文本编辑器（如Vim或Nano）打开该文件，并编写您想要的代码。例如，您可以编写一个简单的脚本来问候世界：
+```
+echo "Hello world!"
+```
+然后，您可以使用Fish Shell的“source”命令来运行您的文件：
+```
+source my_file.txt
+```
+这将在终端中输出“Hello world!”。这是因为您刚刚编写的代码被执行并输出了“Hello world!”。
 
-要在文本文件中添加内容，可以使用下面的命令：
+## 深入了解
 
-```Fish Shell
-echo "Hello world!" >> my_file.txt
+文本文件可以包含任何类型的Fish Shell命令，甚至可以包含多行代码。您还可以使用Fish Shell的变量和条件来编写更复杂的程序。通过将命令保存到文本文件中，您可以将它们组织起来，并轻松地在以后使用。
+
+另外，您也可以通过使用“chmod u+x”命令来为您的文本文件添加执行权限，从而使您可以直接运行它，而不必使用“source”命令。例如：
+```
+chmod u+x my_file.txt
+./my_file.txt
 ```
 
-这将在文本文件的末尾添加“Hello world!”这段文字。你也可以使用其他命令来编辑文本文件，具体取决于你想实现什么功能。
+## 参考链接
 
-# 深入了解
-
-编写Fish Shell文本文件还有很多其他技巧和用法。例如，你可以使用重定向来重定向命令的输出，或者使用管道来将一个命令的输出作为另一个命令的输入。
-
-你也可以使用变量来存储和使用数据，以及使用条件语句来实现更复杂的逻辑。还有更多的命令和方法可以探索，让你的文本文件编写更加灵活和高效。
-
-# 参考链接
-
-- Fish Shell官方网站：https://fishshell.com/
-- Fish Shell Github仓库：https://github.com/fish-shell/fish-shell
-- Fish Shell文档：https://fishshell.com/docs/current/index.html
-
-## 参见
+- [Fish Shell官方网站](https://fishshell.com/)
+- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
+- [Vim编辑器官方网站](https://www.vim.org/)
+- [Nano编辑器官方网站](https://www.nano-editor.org/)

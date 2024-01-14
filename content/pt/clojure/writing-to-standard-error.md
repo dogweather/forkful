@@ -1,44 +1,83 @@
 ---
 title:    "Clojure: Escrevendo para o erro padrão"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar a escrita para o erro padrão?
+Porque escrever para o erro padrão em Clojure é importante?
 
-A escrita para o erro padrão é um recurso importante para programadores que desejam identificar erros e solucioná-los de maneira eficiente em suas aplicações. Ao escrever para o erro padrão, é possível obter informações detalhadas sobre os erros que ocorrem durante a execução do código, facilitando a identificação e resolução de problemas.
+Quando estamos desenvolvendo em Clojure, é essencial que tenhamos uma forma de monitorar e diagnosticar possíveis erros que podem ocorrer durante a execução do programa. Escrever para o erro padrão nos permite acessar essas informações e entender melhor o que está acontecendo no nosso código.
 
-# Como fazer:
-
-Para escrever para o erro padrão em Clojure, é necessário importar a biblioteca "clojure.pprint". Em seguida, utilizando a função "pprint", é possível escrever mensagens de erro formatadas de maneira clara e legível para o usuário. Veja abaixo um exemplo de código e a saída gerada:
+Como fazer:
 
 ```Clojure
-(require '[clojure.pprint :refer [pprint]])
-
-(defn divide [x y]
-  (if (= y 0)
-    (throw (ex-info "Não é possível dividir por zero!" {}))
-    (println "O resultado da divisão é:" (/ x y))))
-
-(try
-  (divide 10 0)
-  (catch Exception e
-    (pprint e)))
-
+(defn erro-exemplo []
+    (println "Executando função de exemplo")
+    (throw (Exception. "Isso é um erro de exemplo")))
 ```
 
+Ao executar a função acima, teremos o seguinte resultado no erro padrão:
+
 ```
-Não é possível dividir por zero!
-{:cause "Divide by zero", :via [{:type java.lang.ArithmeticException, :message "Divide by zero", :at [clojure.lang.Numbers divide "Numbers.java" 188]}], :trace [[clojure.lang.Numbers divide "Numbers.java" 188] [user$divide__1644 invokeStatic "NO_SOURCE_FILE" 16] [user$divide__1644 invoke "NO_SOURCE_FILE" 16] [clojure.lang.Compiler eval "Compiler.java" 7177] [clojure.lang.Compiler eval "Compiler.java" 7167] [clojure.core$eval__10164 invokeStatic "core.clj" 3172] [clojure.core$eval__10164 invoke "core.clj" 3172] [clojure.main$repl$read_eval_print__9112$fn__9115 invoke "main.clj" 437] [clojure.main$repl$read_eval_print__9112 invoke "main.clj" 436] [clojure.main$repl$fn__9121 invoke "main.clj" 455] [clojure.main$repl invokeStatic "main.clj" 455] [clojure.main$repl doInvoke "main.clj" 317] [clojure.lang.RestFn invoke "RestFn.java" 1523] [clojure.tools.nrepl.middleware.interruptible_eval$evaluate$fn__826 invoke "interruptible_eval.clj" 87] [clojure.tools.nrepl.middleware.interruptible_eval$evaluate invokeStatic "interruptible_eval.clj" 87] [clojure.tools.nrepl.middleware.interruptible_eval$evaluate invoke "interruptible_eval.clj" 72] [clojure.tools.nrepl.middleware.interruptible_eval$interruptible_eval$fn__847$fn__850 invoke "interruptible_eval.clj" 222] [clojure.core$comp$fn__5849 invoke "core.clj" 2569] [clojure.tools.nrepl.middleware.interruptible_eval$run_next$fn__841 invoke "interruptible_eval.clj" 190] [clojure.lang.AFn run "AFn.java" 22] [java.util.concurrent.ThreadPoolExecutor runWorker "ThreadPoolExecutor.java" 1142] [java.util.concurrent.ThreadPoolExecutor$Worker run "ThreadPoolExecutor.java" 617] [java.lang.Thread run "Thread.java" 745]]}
+Executando função de exemplo
+Exception: Isso é um erro de exemplo
 ```
 
-# Mergulho Profundo:
+Podemos também gravar o erro padrão em um arquivo para utilizá-lo posteriormente para debug:
 
-Além da função "pprint", também é possível utilizar a função "println" para escrever para o erro padrão. No entanto, é importante notar que esta função não formata as mensagens de erro, tornando-as mais difíceis de interpretar. Além disso, é possível utilizar a macro "doto" para escrever vários valores para o erro padrão em uma única linha de código.
+```Clojure
+(defn erro-arquivo []
+    (with-open [writer (io/writer "erros.txt")]
+        (binding [*out* writer]
+            (println "Escrevendo erro no arquivo!")
+            (throw (Exception. "Isso é um erro simulado")))))
+```
 
-# Veja também:
+Desta forma, o erro será gravado no arquivo "erros.txt" e poderemos acessá-lo para análise.
 
-- [Documentação Clojure para a função pprint](https://clojuredocs.org/clojure.pprint/pprint)
-- [Tutorial sobre como lidar com erros em Clojure](https://lispcast.com/clojure-error-handling/)
-- [Guia completo de referência para Clojure](https://clojuredocs.org/)
+Deep Dive:
+
+Caso queiramos uma forma mais personalizada de lidar com os erros e suas informações, podemos utilizar a função `prn` para imprimir uma estrutura de dados no erro padrão, ao invés de exibir apenas a mensagem de erro:
+
+```Clojure
+(defn erro-estrutura []
+    (prn {:mensagem "Erro personalizado" :numero 404 :função "Erro estruturado"}))
+```
+
+Isso irá produzir a seguinte saída no erro padrão:
+
+```
+{:mensagem "Erro personalizado" :numero 404 :função "Erro estruturado"}
+```
+
+Podemos até mesmo utilizar `prn` dentro de um `try/catch` para capturar e tratar o erro de forma mais controlada:
+
+```Clojure
+(defn erro-tratado []
+    (try
+        (throw (Exception. "Erro simulado"))
+        (catch Exception e
+            (prn {:mensagem "Erro tratado!" :erro e}))))
+```
+
+Neste caso, a saída no erro padrão será:
+
+```
+{:mensagem "Erro tratado!" :erro #object[java.lang.Exception 0x4b739ae4 "Erro simulado"]}
+```
+
+Isso nos permite ter um controle mais preciso sobre os erros que ocorrem em nosso código.
+
+Veja também:
+
+- [Visão geral da função `println` em Clojure](https://clojure.org/guides/io)
+- [Documentação oficial de `prn` em Clojure](https://clojuredocs.org/clojure.core/prn)
+- [Artigo sobre tratamento de erros em Clojure](https://hackernoon.com/exception-handling-in-clojure-4a8911e93a3d)
+
+## Veja também:
+
+- [Documentação oficial de `io/writer` em Clojure](https://clojuredocs.org/clojure.java.io/writer)
+- [Explicação mais detalhada sobre a função `throw` em Clojure](https://clojuredocs.org/clojure.core/throw)
+- [Exemplos de código para lidar com erros em Clojure](https://medium.com/@haiderkhantcs/handling-errors-in-clojure-8e1867f7b083)

@@ -1,51 +1,61 @@
 ---
-title:    "Kotlin: Verketten von Zeichenfolgen"
+title:    "Kotlin: Zeichenketten verbinden"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Strings zu concatenieren, also zu verketten, ist eine häufige Aufgabe in der Programmierung. Dies ist besonders nützlich, um Daten zu kombinieren oder benutzerdefinierte Ausgaben zu erstellen.
+Das Zusammenfügen von Strings ist eine wichtige Funktion in vielen Programmiersprachen, einschließlich Kotlin. Es ermöglicht uns, unterschiedliche Zeichenketten miteinander zu verbinden, um längere und sinnvollere Nachrichten oder Ausgaben zu erstellen. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie wir Strings in Kotlin kombinieren können.
 
-## Wie geht's
+## How To
 
-Zum Verketten von Strings verwenden wir den Operator "+" oder die Funktion "plus()". Betrachten wir das folgende Beispiel:
+Um Strings in Kotlin zu kombinieren, können Sie die `+`-Operator verwenden oder die `plus()`-Funktion aufrufen. Schauen wir uns ein Beispiel an:
 
-```Kotlin
-val name = "Max"
-val greeting = "Hallo "
-
-val combinedString = greeting + name
-println(combinedString) // Ausgabe: Hallo Max
-
-val combinedString2 = greeting.plus(name)
-println(combinedString2) // Ausgabe: Hallo Max
-```
-
-Hier kreieren wir zwei Variablen, jeweils mit einem String. Mit dem "+" Operator oder "plus()" Funktion können wir die beiden Strings miteinander verketten, indem wir sie einfach hintereinander schreiben. Wir können auch mehr als zwei Strings zusammenfügen, indem wir weiterhin "+" oder "plus()" verwenden.
-
-Eine Alternative ist die Verwendung von String-Interpolation mit dem "$" Symbol. Betrachten wir das folgende Beispiel:
-
-```Kotlin
-val name = "Lisa"
+```kotlin
+val name = "Anna"
 val age = 25
-
-val info = "Ich heiße $name und bin $age Jahre alt."
-println(info) // Ausgabe: Ich heiße Lisa und bin 25 Jahre alt.
+val greeting = "Hallo, mein Name ist " + name + " und ich bin " + age + " Jahre alt."
 ```
 
-Hier verwenden wir die Variablen innerhalb des Strings und umschließen sie mit "$". Dadurch können wir sie direkt in den String einfügen, ohne "+" oder "plus()" verwenden zu müssen.
+In diesem Beispiel erstellen wir eine neue Variable `greeting`, die aus mehreren Strings zusammengesetzt ist, darunter der Name und das Alter einer Person. Beachten Sie, dass wir die Variablen `name` und `age` in die String-Zusammenstellung einfügen, indem wir sie mit `+` zusammenfügen.
+
+Alternativ können wir auch die `plus()`-Funktion verwenden, um Strings zu kombinieren:
+
+```kotlin
+val name = "Anna"
+val age = 25
+val greeting = "Hallo, mein Name ist ".plus(name).plus(" und ich bin ").plus(age).plus(" Jahre alt.")
+```
+
+Beide Methoden liefern das gleiche Ergebnis. Der `+`-Operator ist jedoch einfacher und lesbarer zu schreiben.
 
 ## Deep Dive
 
-Beim Verketten von Strings gibt es einige wichtige Dinge zu beachten. Zum Beispiel sollten wir immer darauf achten, dass alle verwendeten Strings vom gleichen Typ sind. Eine Kombination von Strings und Zahlen kann unerwartete Ergebnisse liefern. Außerdem kann die Verwendung von "+" bei größeren Strings zu Performance-Problemen führen. In solchen Fällen ist es besser, die "StringBuilder" Klasse zu verwenden.
+Bei der Verwendung der `+`-Operator oder der `plus()`-Funktion zum Zusammenfügen von Strings müssen wir darauf achten, dass alle Werte vom Typ `String` oder `CharSequence` sind. Andernfalls können wir den Operator oder die Funktion nicht verwenden und einen Fehler erhalten. Zum Beispiel:
 
-Eine weitere wichtige Sache ist, dass Strings in Kotlin unveränderlich (immutable) sind. Das bedeutet, dass jeder Versuch, einen String zu bearbeiten, tatsächlich einen neuen String erstellt und den ursprünglichen unverändert lässt. Es ist daher wichtig, dies bei der Verwendung von Verkettung zu berücksichtigen, um unnötigen Speicherverbrauch zu vermeiden.
+```kotlin
+val name = "Anna"
+val age = 25
+val greeting = name + age // Fehler: Unresolved reference: plus
+```
+
+In diesem Beispiel ist `age` vom Typ `Int` und kann daher nicht direkt an einen String angehängt werden. Um dieses Problem zu lösen, müssen wir entweder `.toString()` auf das Alter anwenden oder eine String-Interpolation verwenden:
+
+```kotlin
+val name = "Anna"
+val age = 25
+val greeting = "Hallo, mein Name ist $name und ich bin $age Jahre alt."
+```
+
+Hier verwenden wir die `$`-Zeichen, um die Werte der Variablen `name` und `age` direkt in einen String einzubinden.
+
+Zusätzlich zu `+` und `plus()` gibt es noch andere Kotlin-Funktionen zum Zusammenfügen von Strings, wie `concat()` und `joinToString()`. Diese Funktionen bieten zusätzliche Möglichkeiten und Parameter, um Strings auf verschiedene Weise zusammenzuführen. Wir empfehlen Ihnen, sich mit diesen Funktionen vertraut zu machen, um Ihre String-Kombinationsfähigkeiten zu erweitern.
 
 ## Siehe auch
 
-- [Kotlin String Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin Basics: Strings](https://kotlinlang.org/docs/basic-syntax.html#strings)
-- [Understanding String Pool in Java and its importance in memory management](https://www.baeldung.com/java-string-pool)
+- [Offizielle Dokumentation zu Strings in Kotlin](https://kotlinlang.org/docs/strings.html)
+- [Tolle Kotlin-Tipps und Tricks](https://kotlinlang.org/docs/tutorials/kotlin-for-py/extra-features.html#awesome-style-with-concat-strings)
+- [Interaktive Übungsbeispiele zum Kombinieren von Strings](https://play.kotlinlang.org/byExample/01_introduction/04_String_Templates)

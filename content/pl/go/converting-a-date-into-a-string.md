@@ -1,43 +1,54 @@
 ---
-title:    "Go: Konwertowanie daty do ciągu znaków"
+title:    "Go: Konwertowanie daty na ciąg znaków."
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # Dlaczego
 
-Konwersja daty na ciąg znaków jest częstą operacją w programowaniu, szczególnie w przypadku tworzenia aplikacji internetowych. W ten sposób można wyświetlić datę w czytelny sposób dla użytkowników lub przetwarzać ją w celu wykorzystania w innych operacjach. W tym artykule pokażemy, jak w łatwy sposób przeprowadzić konwersję daty na ciąg znaków w języku Go.
+Konwersja daty na ciąg znaków jest ważnym procesem przy programowaniu w języku Go. Pozwala ona na wyświetlenie daty w czytelnej dla człowieka formie, co jest szczególnie przydatne w aplikacjach, gdzie wyświetlanie daty jest częścią interfejsu użytkownika.
 
 # Jak to zrobić
 
-Aby przekonwertować datę na ciąg znaków w języku Go, należy użyć funkcji `Format()` z pakietu `time`. Najpierw musimy utworzyć zmienną typu `time.Time`, która będzie przechowywać datę, którą chcemy przekonwertować. Następnie za pomocą funkcji `Format()` możemy ustalić żądany format daty. Na przykład:
+Aby skonwertować datę na ciąg znaków w języku Go, wystarczy wykorzystać funkcję `Format()` z pakietu `time`. Przykładowy kod wyglądałby następująco:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    // Utworzenie obiektu typu Time z aktualną datą i czasem
+    t := time.Now()
+
+    // Konwersja na ciąg znaków z wykorzystaniem odpowiedniego formatu
+    result := t.Format("02-01-2006")
+
+    // Wyświetlenie wyniku
+    fmt.Println(result)
+}
+```
+
+W powyższym przykładzie, użyliśmy formatu `02-01-2006`, który oznacza, że wyświetlona zostanie data w formacie `dzień-miesiąc-rok`. Jednak istnieje wiele innych formatów, które można wykorzystać w zależności od potrzeb. Pełną listę formatów można znaleźć w dokumentacji języka Go.
+
+Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
 
 ```
-Go czas := czas.NowaData(2021, czas.Kwiecień, 15)
-data := czas.Format("02.01.2006")
-fmt.Println(data) //Wyjście: 15.04.2021
+15-04-2019
 ```
 
-W powyższym przykładzie użyliśmy formatu "02.01.2006", który oznacza, że chcemy wyświetlić datę w formacie dzień.miesiąc.rok (w amerykańskim systemie zapisu daty). Istnieje wiele różnych symboli, które można użyć w funkcji `Format()` aby ustalić pożądany format. Przykładowe symbole to:
+# Głębokie zanurzenie
 
-- `02`: dwa miejsca na dzień (wiodąca 0 jest dodawana dla jednocyfrowych dni)
-- `01`: dwa miejsca na miesiąc (wiodąca 0 jest dodawana dla jednocyfrowych miesięcy)
-- `2006`: cztery miejsca na rok (wiodące zera są dodawane dla dwu- i jednocyfrowych lat)
-- `15`: dwie cyfry na godzinę (wiodąca 0 jest dodawana dla jednocyfrowych godzin)
-- `04`: dwie cyfry na minutę (wiodąca 0 jest dodawana dla jednocyfrowych minut)
-- `05`: dwie cyfry na sekundę (wiodąca 0 jest dodawana dla jednocyfrowych sekund)
+Aby lepiej zrozumieć proces konwertowania daty w Go, warto wiedzieć, że funkcja `Format()` korzysta z metody `String()` zaimplementowanej w structurze `Time` w pakiecie `time`. Metoda ta wykorzystuje formatowanie typu tekstowego oparte na wyrażeniach regularnych.
 
-Aby poznać więcej możliwych symboli, można zajrzeć do dokumentacji pakietu `time` w języku Go.
-
-# Pogłębione zagadnienia
-
-Powyższy przykład jest tylko jednym ze sposobów na przekonwertowanie daty na ciąg znaków w języku Go. Istnieją również inne funkcje, takie jak `Unix()` czy `LongSuit()` które pozwalają na ustawienie własnych formatów i wyświetlenie dodatkowych informacji, takich jak strefa czasowa czy dzień tygodnia.
-
-Warto również pamiętać o istnieniu różnych metod parsowania daty z ciągu znaków w języku Go. Jest to przydatne, gdy przetwarzamy dane, które otrzymujemy z zewnętrznych źródeł, które mogą mieć inny format daty niż oczekujemy.
+Funkcja `Format()` zawiera również wbudowane formaty, takie jak: `ANSIC`, `UnixDate`, `RubyDate` etc, które mogą być wykorzystane bezpośrednio bez konieczności deklarowania oddzielnego formatu.
 
 # Zobacz również
 
-- Dokumentacja pakietu `time` w języku Go: https://golang.org/pkg/time/
-- Przewodnik po formatowaniu daty w języku Go: https://gobyexample.com/time-formatting-parsing
-- Poradnik na temat konwersji daty i czasu w języku Go: https://www.calhoun.io/working-with-dates-and-times-in-go/
+1. [Dokumentacja języka Go na temat konwersji daty](https://golang.org/pkg/time/#Time.Format)
+2. [Kurs języka Go w języku polskim](https://www.golang.cafe/)

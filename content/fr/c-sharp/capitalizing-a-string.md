@@ -1,55 +1,40 @@
 ---
-title:    "C#: Capitaliser une chaîne de caractères"
+title:    "C#: La mise en majuscule d'une chaîne"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi: Il arrive souvent que l'on veuille mettre en majuscule une chaîne de caractères en programmation. Cela peut être nécessaire pour des raisons de lisibilité ou pour répondre à une exigence spécifique du projet. Dans cet article, nous allons apprendre comment capitaliser facilement une chaîne de caractères en C#.
+## Pourquoi
 
-Comment faire: Il existe plusieurs façons de capitaliser une chaîne de caractères en C#. Nous allons ici en explorer trois: en utilisant la méthode ToUpper(), en utilisant la méthode Substring() et en utilisant une boucle for pour parcourir la chaîne caractère par caractère.
+La capitalisation d'une chaîne de caractères peut sembler être une tâche simple et insignifiante. Cependant, cela peut être très utile dans certaines situations, comme lors de la manipulation de données ou lors de l'affichage de texte à l'utilisateur. Dans cet article, nous allons expliquer pourquoi il est important de savoir comment capitaliser une chaîne en utilisant le langage de programmation C#.
+
+## Comment Faire
+
+À l'aide de quelques exemples codés en C#, nous allons expliquer comment capitaliser une chaîne de caractères. Tout d'abord, il est important de savoir que la méthode .ToUpper() permet de mettre tous les caractères d'une chaîne en majuscules. Nous pouvons l'utiliser de la manière suivante :
 
 ```C#
-// Utiliser la méthode ToUpper()
-string message = "bonjour tout le monde";
-string capitalizedMessage = message.ToUpper();
-
-Console.WriteLine(capitalizedMessage); // Affiche "BONJOUR TOUT LE MONDE"
-
-// Utiliser la méthode Substring()
-string message = "bonjour tout le monde";
-string firstLetter = message.Substring(0, 1).ToUpper();
-string capitalizedMessage = firstLetter + message.Substring(1);
-
-Console.WriteLine(capitalizedMessage); // Affiche "Bonjour tout le monde"
-
-// Utiliser une boucle for
-string message = "bonjour tout le monde";
-string capitalizedMessage = "";
-
-for (int i = 0; i < message.Length; i++)
-{
-    if (i == 0)
-    {
-        capitalizedMessage += Char.ToUpper(message[i]);
-    }
-    else
-    {
-        capitalizedMessage += message[i];
-    }
-}
-
-Console.WriteLine(capitalizedMessage); // Affiche "Bonjour tout le monde"
+string message = "bonjour";
+Console.WriteLine(message.ToUpper());
 ```
 
-Comme on peut le voir dans ces exemples, il est possible de capitaliser une chaîne de caractères de différentes manières en C#. Il suffit de trouver celle qui convient le mieux à votre code et à vos besoins.
+Cela produira une sortie de "BONJOUR". De même, la méthode .ToLower() mettra tous les caractères en minuscules. Jetons maintenant un coup d'œil à la méthode .ToTitleCase(), qui met en majuscule la première lettre de chaque mot dans la chaîne.
 
-Plongée en profondeur: Bien que capitaliser une chaîne de caractères puisse sembler simple, il y a en réalité beaucoup de choses à prendre en compte. Par exemple, si la chaîne contient des caractères spéciaux ou accentués, il peut y avoir des problèmes lors de la capitalisation. Il est donc important d'utiliser des méthodes spécifiques, comme ToLower() et ToUpperInvariant(), qui prennent en compte ces cas particuliers.
+```C#
+string phrase = "je suis un programmeur";
+TextInfo myTI = new CultureInfo("fr-FR", false).TextInfo;
+Console.WriteLine(myTI.ToTitleCase(phrase));
+```
 
-En outre, il peut également être utile de créer une méthode spécifique pour capitaliser une chaîne de caractères et l'utiliser à plusieurs reprises dans votre code, plutôt que de répéter les mêmes lignes de code à chaque fois.
+Cela produira une sortie de "Je Suis Un Programmeur". Notez que nous avons utilisé une nouvelle instance de la classe TextInfo, qui nous permet d'utiliser les règles de capitalisation spécifiques à la culture française.
 
-Voir aussi: Si vous souhaitez en savoir plus sur la manipulation de chaînes de caractères en C#, voici quelques liens utiles:
+## Plongée en Profondeur
 
-- [Documentation officielle sur les chaînes de caractères en C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [Tutoriel sur les opérations de base sur les chaînes en C#](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
-- [Vidéo explicative sur les méthodes de capitalisation en C#](https://www.youtube.com/watch?v=xeUIBjdDkcA)
+Maintenant que nous avons vu comment utiliser ces méthodes pour capitaliser une chaîne, il est important de comprendre comment elles fonctionnent en profondeur. La méthode .ToUpper() utilise la table de code ASCII pour convertir les caractères en majuscules en utilisant une simple addition de 32 à la valeur numérique de chaque caractère en minuscule. La méthode .ToLower() utilise une soustraction de 32 pour réaliser l'opération inverse. Pour la méthode .ToTitleCase(), elle utilise les règles de capitalisation spécifiques à chaque culture, qui peuvent être vues en utilisant l'utilitaire de ligne de commande "Character Map" sous Windows.
+
+## Voir Aussi
+
+- [Documentation officielle C# pour les méthodes de capitalisation de chaînes](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.totitlecase?view=netcore-3.1)
+- [Table de code ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
+- [Utilitaire de ligne de commande "Character Map" sous Windows](https://support.microsoft.com/fr-fr/help/17424/windows-change-keyboard-layout)

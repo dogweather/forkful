@@ -1,63 +1,51 @@
 ---
 title:    "Ruby: 读取命令行参数"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-搞清楚指令行參數的重要性
+## 为什么？
 
-指令行參數是一種讓開發人員與用戶交互的重要方式，在Ruby編程中也是不可或缺的一部分。通過閱讀本文，您可以了解如何有效地使用指令行參數，進而提升您的Ruby編程技能。
+在编程中，我们经常需要从终端运行程序并传递一些参数。通过阅读命令行参数，我们可以轻松地修改程序的行为，从而节省时间和精力，并更有效地完成任务。因此，学习如何读取命令行参数是非常重要的。
 
-## 為什麼要閱讀指令行參數？
+## 如何？
 
-閱讀指令行參數可以讓您的程序具有更強大的靈活性，因為它可以讓用戶在執行程序時提供不同的參數。例如，如果您的程序需要獲取用戶的姓名或年齡，您可以通過閱讀指令行參數來獲取這些信息，而不是在程序中硬編碼這些值。這不僅可以讓您的程序更加動態，也可以節省您的編程時間。
-
-## 如何閱讀指令行參數？
-
-閱讀指令行參數的過程非常簡單，只需要使用`ARGV`變量即可。這個變量是一個包含用戶在執行程序時提供的所有參數的數組。讓我們看一個簡單的例子：
+首先，让我们看一个简单的例子。假设我们有一个Ruby程序，现在我们想要从命令行传入两个参数，分别是姓名和年龄。我们可以这样写：
 
 ```ruby
-puts "Hello, #{ARGV[0]}!"
+name = ARGV[0]
+age = ARGV[1]
+puts "你好，#{name}。您的年龄是#{age}岁。"
 ```
 
-假設我們將上述代碼保存為`greet.rb`，並在命令行執行`ruby greet.rb Ruby`，那麼輸出將是`Hello, Ruby!`。這裡的`ARGV[0]`就代表用戶在執行程序時提供的第一個參數，即`Ruby`。
+在终端中运行程序时，我们需要在程序文件名后添加参数，如下所示：
 
-您也可以使用多個參數，例如：
-
-```ruby
-puts "Hello, #{ARGV[0]} and #{ARGV[1]}!"
+```bash
+ruby hello.rb John 25
 ```
 
-同樣，假設我們執行`ruby greet.rb Ruby Python`，那麼輸出將是`Hello, Ruby and Python!`。
-
-## 深入探討指令行參數
-
-除了讀取參數的值外，還可以進一步處理這些參數，例如獲取參數的個數和打印所有參數。讓我們看一個例子：
-
-```ruby
-puts "Number of arguments: #{ARGV.length}"
- 
-ARGV.each do |arg|
-  puts "Argument: #{arg}"
-end
-```
-
-這段代碼將打印出用戶提供的所有參數以及參數的個數。執行`ruby arguments.rb Ruby Python`將得到如下輸出：
+运行结果将是：
 
 ```
-Number of arguments: 2
-Argument: Ruby
-Argument: Python
+你好，John。您的年龄是25岁。
 ```
 
-## 參考資料
+在这个例子中，我们使用了一个内置的Ruby变量ARGV来读取命令行参数。这个变量是一个数组，存储了所有传入的参数。通过指定索引，我们可以轻松地获取所需的参数。
 
-- [Ruby語言文檔：ARGV](https://ruby-doc.org/core-2.7.1/doc/globals_rdoc.html#label-ARGV) 
-- [如何使用ARGV讀取命令行參數](https://medium.com/@ski-ranger/reading-command-line-arguments-in-ruby-simplified-18d91726a9a8)
+除了使用ARGV变量之外，还有其他的方法来读取命令行参数。例如，我们可以使用OptionParser库来定义一个更复杂的参数列表，并获取用户输入的值。这里有一些参考链接供您学习更多。
 
-## 參見
+## 深入探讨
 
-- [如何在Ruby中處理用戶輸入](https://example.com)
-- [從命令行執行Ruby腳本](https://example.com)
-- [如何在Ruby中使用數組](https://example.com)
+阅读命令行参数的能力是一项非常有用的技能，它可以帮助我们更好地控制和优化我们的程序。一旦我们掌握了基本的方法，我们就可以找到更多的方法来利用命令行参数，并根据我们的需求进行调整。同时，学习如何处理命令行参数也是成为一名优秀软件工程师的基本技能之一。
+
+## 参考资料
+
+- [ruby-doc.org: Command Line Arguments](https://ruby-doc.org/core-2.6.3/ARGF.html)
+- [Ruby Guides: Command Line Arguments](https://www.rubyguides.com/2018/10/ruby-command-line-arguments/)
+- [OptionParser Library](https://ruby-doc.org/stdlib-2.6.3/libdoc/optparse/rdoc/OptionParser.html)
+
+## 同时查看
+
+- [命令行选项的参数处理方法](https://www.cnblogs.com/stephen-liu74/archive/2011/10/07/2236715.html)

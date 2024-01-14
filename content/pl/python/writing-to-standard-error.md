@@ -1,37 +1,63 @@
 ---
 title:    "Python: Pisanie do standardowego błędu"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego wyjścia błędu?
+## Dlaczego standardowe wyjście jest ważne?
 
-Pisanie do standardowego wyjścia błędu jest ważną częścią procesu pisania kodu w języku Python. Jest to przydatne narzędzie, które pozwala na szybkie i skuteczne wykrywanie oraz rozwiązywanie problemów związanych z działaniem programu. Dlatego warto poznać tę funkcjonalność w celu poprawy jakości naszych projektów.
+ W programowaniu w języku Python istnieje kilka metod wypisywania komunikatów dla użytkownika. Jedną z nich jest standardowe wyjście, czyli po prostu wyświetlenie tekstu w konsoli. Ale co w przypadku błędów? Dlaczego warto wypisywać je do standardowego wyjścia błędów? Czy to nie lepiej utworzyć osobny plik z logami? W tym artykule postaram się odpowiedzieć na te pytania i pokazać przykłady użycia standardowego wyjścia błędów.
 
-## Jak zapisać do standardowego wyjścia błędu?
+## Jak to zrobić?
 
-W języku Python możemy użyć funkcji print(), aby przekazać nasze komunikaty do standardowego wyjścia błędu. W ten sposób będziemy widzieć informacje o ewentualnych błędach w naszym kodzie. Przykładowe użycie wygląda następująco:
-
-```Python
-print("Błąd: nie można odnaleźć pliku")
-```
-
-Gdy uruchomimy ten kod, zobaczymy w konsoli komunikat "Błąd: nie można odnaleźć pliku" oznaczający, że program napotkał problem z odczytaniem pliku.
-
-## Głębszy wgląd do pisania do standardowego wyjścia błędu
-
-W języku Python, standardowe wyjście błędu jest przedstawione jako obiekt sys.stderr. Możemy z niego korzystać w celu ręcznego wyświetlania błędów w naszym kodzie. Przykładowo, możemy użyć funkcji write() na obiekcie sys.stderr w celu przekazania komunikatu o błędzie do standardowego wyjścia błędu.
+Aby wypisać komunikat do standardowego wyjścia błędów w Pythonie, używamy funkcji `print()` z parametrem `file=sys.stderr`. Przykładowo:
 
 ```Python
 import sys
-sys.stderr.write("Nie można utworzyć połączenia z serwerem")
+print("To jest błąd", file=sys.stderr)
 ```
 
-Dzięki temu możemy kontrolować, co zostanie wyświetlone w standardowym wyjściu błędu i w jaki sposób. Jest to szczególnie przydatne w większych projektach, gdzie mamy wiele komponentów i chcemy wiedzieć dokładnie, z którym z nich występuje problem.
+Ten komunikat zostanie wypisany do konsoli jako błąd, a nie jako zwykły tekst. Możemy również wykorzystać ten sam sposób do obsługi wyjątków:
 
-## Zobacz też
+```Python
+try:
+    x = 5/0
+except ZeroDivisionError as e:
+    print("Nastąpiło dzielenie przez zero!", file=sys.stderr)
+    print("Komunikat błędu:", e, file=sys.stderr)
+```
 
-- [Dokumentacja Pythona o standardowym wyjściu błędu](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [Komendy `sys.stderr` do debugowania błędów w Pythonie](https://www.simplifiedpython.net/sys-stderr-in-python/)
-- [Inne sposoby obsługi błędów w języku Python](https://realpython.com/python-exceptions/)
+W powyższym przykładzie, komunikat o błędzie zostanie wyświetlony wraz z informacją o rodzaju błędu.
+
+W przypadku pisania większych projektów, przydatne może być również zapisywanie błędów do pliku logów, aby móc je później przeanalizować. Wtedy można wykorzystać moduł `logging` i ustawić go, aby zapisywał błędy do pliku. Przykładowo:
+
+```Python
+import logging
+logging.basicConfig(level=logging.ERROR,
+                    filename='error.log',
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+try:
+    x = 5/0
+except ZeroDivisionError as e:
+    logging.error("Nastąpiło dzielenie przez zero!", exc_info=True)
+```
+
+W tym przypadku, błąd zostanie zapisany do pliku `error.log` wraz z datą, poziomem i treścią. Możemy również ustawić inny poziom logowania, w zależności od potrzeb.
+
+## Głębsza analiza
+
+Wypisywanie błędów do standardowego wyjścia pozwala nam na szybkie zauważenie problematycznych miejsc w kodzie. Pomaga również w debugowaniu aplikacji, ponieważ wszelkie błędy zostaną od razu wyświetlone. Natomiast zapisywanie ich do pliku logów daje nam możliwość późniejszej analizy i znalezienia przyczyn błędów.
+
+Warto również pamiętać o ustawianiu odpowiednich poziomów logowania w zależności od rodzaju błędu. Dzięki temu można skutecznie filtrować informacje i szybciej znaleźć właściwe miejsce w kodzie.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o obsłudze błędów i logowaniu w Pythonie, polecam zapoznać się z poniższymi artykułami:
+
+- [Obsługa błędów w Pythonie](https://www.python.org/dev/peps/pep-3109/)
+- [Dokumentacja modułu `logging` w Pythonie](https://docs.python.org/3/library/logging.html)
+
+Dzięki tym materiałom będziesz mógł jeszcze lepiej wykorzystać możliwości standardowego wyjścia błędów i zwiększyć jakość swojego kodu.

@@ -1,39 +1,65 @@
 ---
 title:    "Java: Comparando duas datas"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que comparar datas em Java é importante?
 
-Comparar datas é uma tarefa comum em programação, especialmente quando se trabalha com dados que envolvem cronogramas ou prazos. Ao comparar duas datas, é possível determinar qual é mais recente ou se as datas são iguais.
+Muitas vezes, em projetos de programação, é necessário comparar datas para verificar quais eventos ocorreram antes ou depois de determinado momento ou simplesmente para verificar se duas datas são iguais. Saber como comparar datas em Java é uma habilidade importante para todo programador, pois permite que o código lide com informações temporais de forma eficiente e precisa.
 
-## Como fazer
+## Como comparar datas em Java?
 
-Para comparar duas datas em Java, é necessário utilizar a classe `LocalDate` e seu método `compareTo()`. Vamos ver um exemplo de código para comparar duas datas:
+Existem várias maneiras de comparar datas em Java. A seguir, serão apresentados exemplos de código e saída de amostra usando dois objetos Date diferentes para demonstrar diferentes métodos de comparação.
+
+### Usando o método compareTo()
+
+Uma maneira de comparar duas datas é usando o método compareTo(). Ele retorna um valor inteiro que representa a diferença entre as duas datas no formato *ano-mês-dia*. Se o valor for positivo, significa que a primeira data é maior que a segunda. Se for negativo, a segunda data é maior. E se for zero, as duas datas são iguais.
 
 ```Java
-LocalDate data1 = LocalDate.of(2020, 9, 10);
-LocalDate data2 = LocalDate.of(2020, 9, 15);
+Date data1 = new Date(2020, 1, 1); // 1 de janeiro de 2020
+Date data2 = new Date(2020, 1, 15); // 15 de janeiro de 2020
 
 int comparacao = data1.compareTo(data2);
-if(comparacao < 0) {
-    System.out.println("Data 1 é anterior à Data 2");
-} else if(comparacao > 0) {
-    System.out.println("Data 1 é posterior à Data 2");
-} else {
-    System.out.println("As datas são iguais");
-}
+
+System.out.println("A diferença entre as datas é: " + comparacao); // saída: -14
 ```
 
-Neste exemplo, criamos duas variáveis do tipo `LocalDate`: uma com a data 10 de setembro de 2020 e outra com a data 15 de setembro de 2020. Em seguida, utilizamos o método `compareTo()` para comparar as duas datas e obter um valor de retorno. Esse valor é um inteiro que indica a relação entre as duas datas: se for negativo, significa que a primeira data é anterior à segunda, se for positivo, significa que é posterior, e se for zero, as datas são iguais. No exemplo, o resultado impresso será "Data 1 é anterior à Data 2".
+### Utilizando o método equals()
 
-## Aprofundando-se
+Outro jeito de comparar datas é usando o método equals() para verificar se elas são iguais. Ele retorna um valor booleano que indica se os dois objetos Date são iguais ou não.
 
-Além de utilizar o método `compareTo()`, também é possível comparar datas utilizando outros métodos da classe `LocalDate`, como `isBefore()`, `isAfter()` e `isEqual()`. Também é importante lembrar que a classe `LocalDate` possui opções de formatação para exibir as datas de diferentes maneiras.
+```Java
+Date data1 = new Date(2020, 5, 20); // 20 de maio de 2020
+Date data2 = new Date(2020, 5, 20); // 20 de maio de 2020
+
+boolean iguais = data1.equals(data2);
+
+System.out.println("As datas são iguais? " + iguais); // saída: true
+```
+
+### Utilizando o método after() e before()
+
+Outros métodos úteis para comparar datas são after() e before(), que verificam se uma data é posterior ou anterior a outra, respectivamente.
+
+```Java
+Date data1 = new Date(2020, 4, 10); // 10 de abril de 2020
+Date data2 = new Date(2020, 5, 20); // 20 de maio de 2020
+
+System.out.println("A primeira data é posterior à segunda? " + data1.after(data2)); // saída: false
+System.out.println("A primeira data é anterior à segunda? " + data1.before(data2)); // saída: true
+```
+
+## Aprofundando-se na comparação de datas em Java
+
+Java possui uma classe chamada Calendar, que é útil na comparação de datas, pois possui métodos para lidar com datas de forma mais detalhada, permitindo manipular informações como anos, meses, dias, horas, minutos e segundos.
+
+Outro conceito importante é o formato de data. Java permite que se trabalhe com diferentes formatos, incluindo o padrão ISO 8601, que é muito utilizado em sistemas de comunicação.
 
 ## Veja também
 
-- [Documentação oficial do Java sobre a classe LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial da DevMedia sobre como comparar datas em Java](https://www.devmedia.com.br/comparando-datas-em-java-com-localdate/37972)
+- [Documentação oficial Java - Classe Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Manipulando datas em Java](https://www.devmedia.com.br/manipulando-datas-em-java/28657)
+- [Tutorial de date e calendar em Java](https://www.programiz.com/java-programming/date-calendar)

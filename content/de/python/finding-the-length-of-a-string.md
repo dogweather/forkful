@@ -1,51 +1,32 @@
 ---
-title:    "Python: Die Länge eines Strings bestimmen"
+title:    "Python: Die Länge eines Strings finden."
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Finden der Länge eines Strings ist eine häufige Aufgabe in der Programmierung. Es kann hilfreich sein, um zu überprüfen, ob ein Eingabetext eine bestimmte Mindestlänge hat oder um Teile eines Strings zu extrahieren. Mit Python ist es sehr einfach, die Länge eines Strings zu ermitteln.
+Das Finden der Länge eines Strings kann eine nützliche Fähigkeit in der Programmierung sein. Es ermöglicht es uns, die Anzahl der Zeichen in einem String zu ermitteln, was uns bei verschiedenen Aufgaben helfen kann, wie zum Beispiel bei der Validierung von Benutzereingaben oder der Manipulation von Texten.
 
-# Wie geht's
+## Wie
 
-```Python
-name = "Max"
-print(len(name))
-```
-
-Die Funktion "len()" gibt die Anzahl der Zeichen in einem String zurück. In diesem Beispiel wird die Länge des Strings "Max" ausgegeben, die 3 beträgt. Dieser Wert wird direkt an die print()-Funktion übergeben, um ihn auf dem Bildschirm auszugeben.
-
-Um die Länge eines Strings dynamisch zu ermitteln, kann ein Benutzerinput verwendet werden:
+Die Länge eines Strings in Python kann ganz einfach mit der eingebauten Funktion `len()` gefunden werden. Schauen wir uns ein Beispiel an:
 
 ```Python
-text = input("Gib einen Text hier ein: ")
-print("Die Länge des eingegebenen Textes beträgt " + str(len(text)) + " Zeichen.")
+text = "Hallo Welt!"
+print(len(text))
 ```
 
-Der Benutzer wird aufgefordert, einen Text einzugeben, der dann mit der len()-Funktion analysiert wird. Da die Funktion eine Ganzzahl zurückgibt, muss sie für die Ausgabe zu einem String umgewandelt werden.
+In diesem Beispiel erstellen wir eine Variable `text` mit dem Wert "Hallo Welt!" und verwenden dann die `len()` Funktion, um die Länge des Strings zu finden. Das Ergebnis wird dann mit `print` ausgegeben. Das Ergebnis dieses Codes wird 11 sein, da der String 11 Zeichen lang ist.
 
-# Tiefer Einblick
+## Tiefer Einblick
 
-Die len()-Funktion kann nicht nur auf Strings angewendet werden, sondern auch auf Listen, Tupel und Dictionaries. Sie gibt in diesen Fällen die Anzahl der Elemente zurück. Auch bei Strings berücksichtigt sie alle Zeichen, einschließlich Leerzeichen und Sonderzeichen.
+In Python ist ein String im Grunde genommen eine Sequenz von Zeichen, die in Anführungszeichen gesetzt werden. Die `len()` Funktion zählt also einfach die Anzahl der Elemente in dieser Sequenz und gibt sie als Ergebnis zurück. Es ist wichtig zu beachten, dass Leerzeichen und Sonderzeichen auch in die Länge des Strings einbezogen werden.
 
-Es ist auch möglich, eine Funktion zu erstellen, die die Länge eines Strings ermittelt:
+## Siehe auch
 
-```Python
-def length(text):
-    count = 0
-    for character in text:
-        count += 1
-    return count
-
-print(length("Hallo, Welt!")) # Ausgabe: 12
-```
-
-In diesem Beispiel wird eine Schleife verwendet, um jeden einzelnen Buchstaben des Strings zu durchlaufen und eine Zählervariable zu erhöhen. Am Ende gibt die Funktion den Wert der Zählervariable zurück, der der Länge des Strings entspricht.
-
-# Siehe auch
-
-- Offizielle Python-Dokumentation zu len(): https://docs.python.org/de/3/library/functions.html#len
-- "Python Programmieren für Anfänger" von Jason Cannon: https://www.udemy.com/course/python-programmieren-fuer-anfaenger/
+- Offizielle Python-Dokumentation: https://docs.python.org/3/library/functions.html#len
+- Stack Overflow-Beitrag zum Finden der Länge eines Strings: https://stackoverflow.com/a/6684386
+- Codecademy-Lektion zum Arbeiten mit Strings in Python: https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-strings/cheatsheet

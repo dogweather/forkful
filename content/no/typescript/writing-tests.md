@@ -1,43 +1,65 @@
 ---
 title:    "TypeScript: Å skrive tester"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Hvorfor teste kode i TypeScript?
+## Hvorfor
 
-Å skrive tester er en viktig del av programmeringsprosessen og kan hjelpe til med å sikre at koden vår fungerer som den skal. Selv om det kan føles tidkrevende å skrive tester, kan det spare mye tid og frustrasjon i det lange løp.
+Å skrive tester er en viktig del av enhver programmerers arbeidsflyt. Det hjelper til med å sikre at koden din fungerer som den skal, og identifiserer eventuelle potensielle feil før de når produksjonsfasen.
 
-## Hvordan teste kode i TypeScript
+## Hvordan
 
-For å skrive tester i TypeScript, kan vi bruke et testrammeverk som Jest. La oss ta en nærmere titt på et eksempel:
+For å skrive tester i TypeScript, følg disse enkle trinnene:
 
+1. Installer et testbibliotek, for eksempel Jasmine eller Jest, ved hjelp av npm-kommandoen:
 ```TypeScript
-//importerer funksjonen vi skal teste
-import {addNumbers} from './utils';
-
-//tester funksjonen addNumbers()
-test('should add two numbers', () => {
-  //forventet resultat
-  const expected = 6;
-  //faktiske resultater
-  const result = addNumbers(2, 4);
-  //sjekker om resultatet er det samme som forventet
-  expect(result).toEqual(expected);
-});
+npm install jasmine --save-dev
+```
+2. Lag en ny TypeScript-fil for testene dine, for eksempel "calculator.spec.ts".
+3. Importer testbiblioteket i testfilen din:
+```TypeScript
+import jasmine from 'jasmine';
+```
+4. Lag en test-suit for å gruppere lignende tester sammen:
+```TypeScript
+describe('Kalkulator', () => {
+    // Tester vil gå her
+})
+```
+5. Opprett en test for hver funksjon du vil teste ved hjelp av "it" -funksjonen:
+```TypeScript
+it('Skal returnere riktig sum når to tall legges sammen', () => {
+    // Lag en instans av kalkulatoren din og kall på funksjonen for å legge sammen to tall
+    const kalkulator = new Kalkulator();
+    const sum = kalkulator.leggTil(3, 5);
+    // Sjekk at summen er riktig
+    expect(sum).toBe(8);
+})
+```
+6. Kjør testene ved å kjøre kommandoen:
+```TypeScript
+jasmine
 ```
 
-I dette eksemplet har vi en funksjon som legger sammen to tall, og vi tester om den gir riktig resultat. Vi importerer funksjonen vi vil teste og bruker testrammeverket Jest for å kjøre testen. Ved å kjøre testen får vi et resultat som indikerer om testen passerte eller feilet.
+Forventet utdata:
+```bash
+Kalkulator
+    ✓ Skal returnere riktig sum når to tall legges sammen
 
-## Dykk dypere inn i testing
+1 spec, 0 failures 
+```
 
-Det er viktig å forstå konseptet bak testing, slik at vi kan skrive effektive og pålitelige tester. Noen viktige begreper å være kjent med er enhetstesting, integrasjonstesting og end-to-end-testing. Enhetsstesting fokuserer på å teste en liten del av koden isolert, mens integrasjonstesting tester hvordan forskjellige deler av koden fungerer sammen. End-to-end-testing tester hele applikasjonen, inkludert grensesnittet.
+## Dypdykk
 
-En annen viktig del av testing er å dekke så mye kode som mulig. Dette kan gjøres ved å bruke kodeanalyseverktøy som Istanbul for å se hvilke deler av koden som ikke er testet, og deretter skrive flere tester for å dekke disse områdene.
+Når du skriver tester, er det viktig å tenke på hvilke områder av koden din som er mest sannsynlig å feile, og å skrive tester for å dekke disse områdene. Det er også viktig å opprettholde og oppdatere testene dine etter hvert som koden din endres.
 
-## Se også
+I tillegg kan det være nyttig å implementere testdrevet utvikling (TDD), der du først skriver tester og deretter koden som oppfyller disse testene. Dette kan bidra til å sikre at koden din er godt testet og fungerer som den skal.
 
-- [Jest - Documentation](https://jestjs.io/docs/getting-started)
-- [Istanbul - Code Coverage Tool](https://istanbul.js.org/)
-- [TypeScript - Unit Testing Basics with Jest](https://www.hackdoor.io/articles/e86DaVAA/unit-testing-basics-with-jest)
+## Se Også
+
+- [Jasmine dokumentasjon](https://jasmine.github.io/)
+- [Jest dokumentasjon](https://jestjs.io/)
+- [TypeScript offisiell dokumentasjon](https://www.typescriptlang.org/docs/)

@@ -1,64 +1,49 @@
 ---
-title:    "Clojure: Unterstrings extrahieren"
+title:    "Clojure: Substrings extrahieren"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Substrings zu extrahieren kann in vielen Situationen nützlich sein, besonders wenn man mit Texten arbeitet. Zum Beispiel könnte man bestimmte Wörter oder Buchstaben aus einem längeren Text herausfiltern oder Teilstrings vergleichen.
+Das Extrahieren von Teilstringen ist eine nützliche Funktion in der Programmierung. Es ermöglicht uns, bestimmte Teile von Strings zu isolieren und sie in verschiedenen Anwendungen zu verwenden.
 
-## Wie man es macht
+## Wie man Teilstringe extrahiert
 
-Um Substrings in Clojure zu extrahieren, gibt es verschiedene Funktionen, die wir nutzen können. Eine davon ist `subs`, welche es uns erlaubt, einen Teil eines Strings anhand von Start- und Endpositionen zu extrahieren.
-
-```Clojure
-(def text "Hallo Welt!")
-
-(subs text 0 5)
-;; Output: Hallo
-```
-
-In diesem Beispiel nutzen wir die `subs` Funktion, um die ersten fünf Buchstaben des Strings auszugeben. Die erste Positionsangabe ist dabei inklusiv, während die zweite exklusiv ist.
-
-Eine andere nützliche Funktion ist `substring`, welche es uns erlaubt, anhand von Indexpositionen zu extrahieren. Dies ist besonders hilfreich, wenn man die Länge des Strings nicht genau kennt.
+Um Teilstringe in Clojure zu extrahieren, können wir die Funktion `subs` verwenden. Sie akzeptiert zwei Argumente: den zu extrahierenden String und die Start- und Endpositionen des Teilstrings.
 
 ```Clojure
-(def text "Guten Abend!")
-
-(substring text 6)
-;; Output: Abend!
+(def string "Hallo Welt!")
+(subs string 0 5)
 ```
 
-In diesem Fall geben wir einen Startindex an, ab dem der Substring extrahiert werden soll. Alle Zeichen ab diesem Index bis zum Ende werden dann ausgegeben.
+Dieser Code extrahiert den Teilstring "Hallo" aus dem Originalstring "Hallo Welt!".
 
-## Tiefer Einblick
-
-Beim Extrahieren von Substrings gibt es noch einige Details zu beachten. Zum Beispiel können wir auch negative Indexpositionen angeben, um von hinten zu zählen.
+Eine andere Möglichkeit Teilstringe zu extrahieren, ist die Verwendung von regulären Ausdrücken mit der Funktion `re-find`.
 
 ```Clojure
-(def text "Mein Name ist Bob.")
-
-(subs text -4)
-;; Output: Bob.
+(def name "Max Mustermann")
+(re-find #"Max" name)
 ```
 
-In diesem Beispiel geben wir einen negativen Index an, was bedeutet, dass der vierte Buchstabe von hinten gezählt wird. Dadurch wird der letzte Teil des Strings extrahiert.
+Dieser Code extrahiert den Teilstring "Max" aus dem Namen "Max Mustermann".
 
-Außerdem können wir auch mit regulären Ausdrücken arbeiten, um bestimmte Muster in einem String zu finden und zu extrahieren.
+## Tiefergehende Informationen
+
+Um bestimmte Muster in einem String zu finden und zu extrahieren, können wir die Funktion `re-seq` verwenden. Diese Funktion akzeptiert einen regulären Ausdruck und einen String und gibt eine Sequenz aller Teilstrings zurück, die dem regulären Ausdruck entsprechen.
 
 ```Clojure
-(def text "Solar System: Mercury, Venus, Earth")
-
-(re-seq #"[A-Z][a-z]+" text)
-;; Output: ("Solar" "System" "Mercury" "Venus" "Earth")
+(def email "max.mustermann@example.com")
+(re-seq #"@(.*)" email)
 ```
 
-In diesem Beispiel nutzen wir die `re-seq` Funktion, um alle Wörter im String zu extrahieren, die mit einem Großbuchstaben beginnen und dann einen oder mehrere Kleinbuchstaben enthalten.
+Dieser Code extrahiert die Domain aus der E-Mail-Adresse "max.mustermann@example.com" und gibt "example.com" zurück.
+
+Es gibt auch Möglichkeiten, Teilstringe in mehreren Zeilen von Text zu extrahieren, indem `\n` im regulären Ausdruck verwendet wird, um einen Zeilenumbruch anzugeben.
 
 ## Siehe auch
-
-- Offizielle Dokumentation zu `subs`: https://clojuredocs.org/clojure.core/subs
-- Offizielle Dokumentation zu `substring`: https://clojuredocs.org/clojure.core/substring
-- Offizielle Dokumentation zu regulären Ausdrücken: https://clojuredocs.org/clojure.core/re-pattern
+- [Clojure Dokumentation für `subs`](https://clojuredocs.org/clojure.core/subs)
+- [Clojure Dokumentation für `re-find`](https://clojuredocs.org/clojure.core/re-find)
+- [Clojure Cheat Sheet für reguläre Ausdrücke](https://clojure.org/api/cheatsheet#fn-regex)

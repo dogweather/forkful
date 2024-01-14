@@ -1,52 +1,52 @@
 ---
-title:    "Kotlin: Tekstin etsiminen ja korvaaminen."
+title:    "Kotlin: Etsi ja korvaa teksti"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Etsi ja Korvaa Teksti
+# Miksi tekstin etsiminen ja korvaaminen on tärkeää
 
-Tervetuloa takaisin blogiin, joka on omistettu Kotlin-ohjelmointikieleen! Tänään puhumme etsinnästä ja korvaamisesta tekstissä. Jos olet koskaan halunnut nopeasti muuttaa useita kohtia tekstissäsi, tämä on juuri sinulle. Jatka lukemista, niin näytämme sinulle, kuinka voit käyttää Kotlinia etsiäksesi ja korvataksesi tekstiä helposti.
+Joskus ohjelmointiprojektit voivat olla hyvin suuria ja monimutkaisia, ja saattaa olla vaikeaa löytää tiettyä koodinpätkää tai muuttaa sitä. Tekstin etsiminen ja korvaaminen on tärkeä taito, joka auttaa säästämään aikaa ja vaivaa ohjelmoinnissa.
 
-## Kuinka Tehdä: Esimerkkejä koodiblokeissa
+# Kuinka tehdä tekstinhaku ja korvaaminen Kotlinilla
 
-Kotlinilla on jo valmiiksi sisäänrakennettu toiminto tekstihaulle ja korvaamiselle, mikä tekee työstä paljon helpompaa. Voit käyttää `replace`-funktiota ja antaa sille haluamasi etsittävän ja korvaavan tekstin. Esimerkiksi, jos haluat korvata kaikki sanan "kissa" sanoilla "koira", seuraava koodi voisi auttaa:
+Tekstin etsiminen ja korvaaminen Kotlinilla on helppoa, sillä siinä on valmiina kätevä toiminto tähän tarkoitukseen. Voit käyttää tätä toimintoa String-luokassa ja se koostuu kahdesta osasta: etsimisestä ja korvaamisesta. 
 
-```Kotlin
-val teksti = "Minulla on kaksi kissaa."
-val korvattuTeksti = teksti.replace("kissa", "koira")
-
-println(korvattuTeksti)
-```
-
-Tulostus: "Minulla on kaksi koiraa."
-
-Voit myös käyttää regex-symboleja laajentamaan toiminnallisuutta, kuten korvaamalla kaikki numerot tekstissä tyhjällä merkillä:
+Tässä esimerkissä haemme tekstistä sanaa "tärkeää" ja korvaamme sen sanalla "arvokasta":
 
 ```Kotlin
-val teksti = "Minun puhelinnumeroni on 555-123-4567."
-val korvattuTeksti = teksti.replace("\\d".toRegex(), "")
-
-println(korvattuTeksti)
+val teksti = "Tekstin etsiminen ja korvaaminen on tärkeää"
+println(teksti.replace("tärkeää", "arvokasta"))
 ```
 
-Tulostus: "Minun puhelinnumeroni on --."
+Tulostus:
 
-## Syvemmälle: Etsinnän ja Korvaamisen Tarkemmat Tiedot
+```Kotlin
+Tekstin etsiminen ja korvaaminen on arvokasta
+```
 
-Nyt kun olet nähnyt joitain esimerkkejä, saatat ihmetellä, mitä muuta voit tehdä etsiessä ja korvatessa tekstiä Kotlinilla. Tässä muutama esimerkki lisäominaisuuksista, jotka saattavat tulla hyödyllisiksi:
+Voit myös käyttää Regex-luokkaa (Regular Expressions) tarkempiin haku- ja korvaustoimintoihin. Tässä esimerkissä muutamme kaikki sanat "työ" sanaksi "projekti" käyttäen Regexiä:
 
-- Voit käyttää `contains`-funktiota tarkistaaksesi, sisältääkö tekstisi tietyn merkkijonon.
-- Voit lisätä toisen argumentin `replace`-funktioon, joka määrittää, kuinka monta kertaa haluat korvata tekstin. Esimerkiksi, vain ensimmäinen esiintyminen korvataan, kun käytät `replace("a", "b", 1)`.
-- Voit myös käyttää `replaceFirst` tai `replaceLast` vaihtaaksesi vain ensimmäisen tai viimeisen esiintymän.
-- Jos haluat vaihtaa vain osan tekstistä, voit käyttää regex-sanoja, kuten `\\b` merkkaamaan sanan rajan.
+```Kotlin
+val teksti = "Työskentelen suuressa ohjelmointiprojektissa"
+println(teksti.replace(Regex("työ"), "projekti"))
+```
 
-Kuten aina, suosittelemme tutustumista viralliseen dokumentaatioon lisätietoja varten.
+Tulostus:
 
-## Katso Myös
+```Kotlin
+Projektilen suuressa ohjelmointiprojektissa
+```
 
-- [Kotlinin tekstinkäsittelyopas](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Regex-pikakurssi](https://regexone.com/)
+# Syvempi sukellus tekstinhakuun ja korvaamiseen
 
-Kiitos kun luit tämän blogipostauksen! Toivottavasti tämä auttoi sinua ymmärtämään etsintää ja korvaamista Kotlinissa. Nähdään seuraavassa blogipostauksessamme, joka on omistettu yhtä tärkeälle aiheelle.
+Kotlinin String- ja Regex-luokat tarjoavat paljon erilaisia toimintoja ja vaihtoehtoja tekstinhakuun ja korvaamiseen. Voit esimerkiksi määrittää hakutulokselle erilaisia kohteita, kuten suur- ja pienikirjaimia. Lisäksi voit käyttää monimutkaisempia regexeja, jotka auttavat tarkempien hakujen tekemisessä.
+
+On myös tärkeää huomata, että tekstinhaku ja korvaaminen voivat olla tehokkaita työkaluja myös datan käsittelyssä. Esimerkiksi tekstitiedoston käsittelyssä voit käyttää näitä toimintoja helposti löytääksesi ja korvataksesi tiettyjä sanoja tai fraaseja.
+
+# Katso myös
+
+- [Kotlinin String-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+- [Kotlinin Regex-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)

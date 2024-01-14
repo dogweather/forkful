@@ -1,46 +1,68 @@
 ---
-title:    "Go: Generación de números aleatorios"
+title:    "Go: Generando números aleatorios"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Por qué generar números aleatorios en Go?
 
-La generación de números aleatorios es una técnica fundamental en la programación, ya que permite simular situaciones de incertidumbre y tomar decisiones de manera aleatoria. En Go, existen varias formas de generar números aleatorios, lo que ofrece una gran versatilidad a la hora de trabajar con este tipo de datos.
+Generar números aleatorios es una función esencial en muchas aplicaciones y juegos. En Go, podemos utilizar esta funcionalidad para crear pruebas aleatorias, seleccionar elementos al azar de una lista o incluso crear juegos de azar. Aprender cómo generar números aleatorios en Go puede ser útil en una amplia variedad de proyectos.
 
-## Cómo hacerlo en Go
+## Cómo hacerlo
 
-Hay dos maneras principales de generar números aleatorios en Go: utilizando el paquete `math/rand` y utilizando el paquete `crypto/rand`.
-
-Con `math/rand`, podemos utilizar la función `Intn(n)` para generar un número aleatorio entre 0 y n-1. Por ejemplo, si queremos generar un número aleatorio entre 0 y 100, podemos utilizar `rand.Intn(100)`. Asimismo, para generar un número aleatorio en un rango específico, podemos utilizar la función `RandInt(min, max)`, donde min es el número mínimo y max es el número máximo del rango.
-
-Por otro lado, con `crypto/rand` podemos generar números criptográficamente seguros utilizando la función `Read(b []byte)`. Esta función lee bytes aleatorios del generador criptográfico del sistema y los almacena en un slice de bytes pasado como argumento.
-
-A continuación, se muestran ejemplos de ambas opciones:
+Para generar números aleatorios en Go, primero debemos importar el paquete "math/rand". Luego, utilizaremos la función "rand.Intn()" para generar un número aleatorio entre 0 y el número especificado (no incluido). Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, utilizaremos:
 
 ```Go
-// Generar un número aleatorio entre 0 y 100
-fmt.Println(rand.Intn(100))
-
-// Generar un número aleatorio entre 10 y 20
-fmt.Println(rand.Intn(11) + 10)
-
-// Generar un número criptográficamente seguro entre 0 y 255
-b := make([]byte, 1)
-rand.Read(b)
-fmt.Println(int(b[0]))
+rand.Intn(10) + 1
 ```
 
-## Profundizando en la generación de números aleatorios en Go
+También podemos generar números aleatorios de punto flotante utilizando la función "rand.Float64()". Esta función generará un número aleatorio entre 0.0 (incluido) y 1.0 (no incluido). Podemos especificar un rango personalizado multiplicando el resultado por un número y sumando un valor. Por ejemplo, si queremos generar un número aleatorio entre 0.0 y 10.0, utilizaremos:
 
-En Go, el paquete `math/rand` utiliza un generador lineal congruencial (LCG) para generar números aleatorios. Este tipo de generador funciona al tomar un valor inicial, llamado semilla, y aplicar una serie de operaciones matemáticas para obtener el siguiente número aleatorio en una serie. Por lo tanto, si utilizamos la misma semilla, obtendremos la misma secuencia de números aleatorios.
+```Go
+rand.Float64() * 10.0
+```
 
-Es importante tener en cuenta que el generador LCG de `math/rand` no es criptográficamente seguro, ya que es posible predecir los números generados si se conoce la semilla inicial. Por lo tanto, si se requieren números aleatorios para fines criptográficos, es recomendable utilizar el paquete `crypto/rand`.
+Aquí hay un ejemplo completo de cómo generar 10 números aleatorios entre 1 y 100:
 
-En resumen, la generación de números aleatorios en Go es una tarea sencilla que ofrece una gran flexibilidad y opciones. Sin embargo, es importante elegir el método adecuado según nuestras necesidades y considerar la seguridad en todo momento.
+```Go
+package main
+
+import (
+    "fmt"
+    "math/rand"
+)
+
+func main() {
+    for i := 0; i < 10; i++ {
+        fmt.Println(rand.Intn(100) + 1)
+    }
+}
+```
+
+Este código imprimirá 10 números aleatorios entre 1 y 100. Ejemplo de salida:
+
+```
+67
+29
+83
+4
+96
+51
+14
+99
+6
+52
+```
+
+## Un análisis más profundo
+
+En Go, los números aleatorios generados por la función "rand.Intn()" son pseudoaleatorios, lo que significa que no son completamente aleatorios y siguen un patrón predecible. El generador de números aleatorios se inicializa con una semilla (seed) que determina la secuencia de números que se generarán. La semilla por defecto es 1, pero podemos especificar una semilla personalizada utilizando la función "rand.Seed()".
+
+Es importante tener en cuenta que, por defecto, el generador de números aleatorios en Go no es seguro para concurrencia. Esto significa que no se debe utilizar en aplicaciones concurrentes sin tomar las precauciones adecuadas. Para obtener más información sobre cómo utilizar números aleatorios de manera segura en aplicaciones concurrentes, consulte la documentación de Go.
 
 ## Ver también
 
-- Documentación del paquete `math/rand`: https://golang.org/pkg/math/rand/
-- Documentación del paquete `crypto/rand`: https://golang.org/pkg/crypto/rand/
+- Documentación de Go sobre el paquete "math/rand": https://golang.org/pkg/math/rand/
+- Documentación de Go sobre cómo utilizar números aleatorios de manera segura en aplicaciones concurrentes: https://golang.org/pkg/math/rand/#Intro

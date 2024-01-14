@@ -1,52 +1,63 @@
 ---
 title:    "Swift: Estrazione di sottostringhe"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Esistono situazioni in cui è necessario estrarre una parte di una stringa più grande. Questo può essere utile quando si deve manipolare una stringa in modo specifico o quando si desidera semplicemente visualizzare solo una parte di essa. In Swift, esistono molte opzioni per estrarre una sottostringa da una stringa principale. Vediamo come farlo nella sezione successiva.
+Estrarre sottostringhe è un'operazione fondamentale nella programmazione Swift che può aiutare a manipolare e gestire efficacemente le stringhe. Con questo articolo, scopriremo come estrarre facilmente le sottostringhe utilizzando esempi di codice.
 
-## Come fare
+## Come
 
-Per estrarre una sottostringa in Swift, utilizziamo il metodo `substring` disponibile su un tipo di dato `String`. In questo metodo, dobbiamo fornire l'indice di inizio e la lunghezza della sottostringa che vogliamo estrarre. Ad esempio:
+Per estrarre una sottostringa da una stringa, possiamo utilizzare il metodo `prefix` o `suffix` di Swift. Ecco un esempio di codice utilizzando il metodo `prefix` per estrarre le prime tre lettere di una parola:
 
-```Swift
-let stringa = "Ciao a tutti!"
-let sottostringa = stringa.substring(from: 2, length: 5)
-print(sottostringa) // output: 'o a t'
+```
+let parola = "ciao"
+let sottostringa = parola.prefix(3)
+print(sottostringa)
 ```
 
-In questo esempio, abbiamo estratto una sottostringa a partire dall'indice 2 (cioè il terzo carattere) della stringa principale e con una lunghezza di 5 caratteri.
+Questo codice produrrà l'output "cia" poiché il metodo `prefix` restituisce i primi tre caratteri della stringa originale.
 
-Possiamo anche utilizzare l'indice di fine invece della lunghezza per estrarre una sottostringa. In questo caso, il metodo `substring` calcolerà automaticamente la lunghezza della sottostringa. Ad esempio:
+Possiamo anche specificare un indice come argomento del metodo `prefix` per estrarre una sottostringa dall'inizio fino a quel determinato indice. Ad esempio:
 
-```Swift
-let nuovaSottostringa = stringa.substring(from: 6, to: 10)
-print(nuovaSottostringa) // output: 'tut!'
+```
+let parola = "Swift Programming"
+let sottostringa = parola.prefix(5)
+print(sottostringa)
 ```
 
-In questo esempio, stiamo estraendo una sottostringa dall'indice 6 al carattere 10 (escluso) della stringa principale.
+Questo codice produrrà l'output "Swift".
 
-È anche possibile utilizzare il metodo `prefix` per estrarre una sottostringa dalle prime lettere della stringa principale o il metodo `suffix` per estrarre una sottostringa dalle ultime lettere. Ecco un esempio che utilizza entrambi i metodi:
+Analogamente, possiamo utilizzare il metodo `suffix` per estrarre una sottostringa dalla fine di una stringa. Ad esempio:
 
-```Swift
-let prefisso = stringa.prefix(4)
-print(prefisso) // output: 'Ciao'
-
-let suffisso = stringa.suffix(6)
-print(suffisso) // output: 'tutti!'
+```
+let parola = "ciao"
+let sottostringa = parola.suffix(2)
+print(sottostringa)
 ```
 
-## Deep Dive
+Questo codice produrrà l'output "ao".
 
-Oltre ai metodi menzionati sopra, esistono anche altre opzioni per estrarre stringhe in Swift, come il metodo `substring(with:)` che utilizza un intervallo di indici come parametro o il metodo `components(separatedBy:)` che suddivide una stringa in una matrice di sottostringhe utilizzando un delimitatore specificato.
+## Approfondimento
 
-È importante notare che, a partire da Swift 4, il tipo `String` ha subito alcune modifiche significative e quindi, se si sta utilizzando una versione precedente di Swift, può essere necessario utilizzare un approccio leggermente diverso per estrarre sottostringhe.
+I metodi `prefix` e `suffix` sono solo due dei molti modi per estrarre sottostringhe in Swift. Possiamo anche utilizzare il metodo `substring` o l'operatore di slicing `[]` per ottenere sottostringhe da una stringa. Inoltre, possiamo utilizzare gli indici degli elementi per estrarre sottostringhe in modo più preciso. Ad esempio:
+
+```
+let parola = "ciao"
+let index = parola.index(parola.startIndex, offsetBy: 2)
+let sottostringa = parola.prefix(upTo: index)
+print(sottostringa)
+```
+
+Questo codice produrrà l'output "ci" poiché stiamo estraendo i primi due caratteri, utilizzando l'indice dell'elemento "o".
+
+Utilizzando questi metodi e approcci, possiamo facilmente manipolare e gestire le stringhe in Swift.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Swift su estrazione delle stringhe](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
-- [Tutorial su estrazione delle stringhe in Swift](https://www.hackingwithswift.com/articles/141/how-to-use-strings-in-swift)
+- Documentazione Swift sulle sottostringhe: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID283
+- Tutorial di Ray Wenderlich su come gestire le stringhe in Swift: https://www.raywenderlich.com/3571-swift-tutorial-part-2-strings-characters-and-arrays-in-swift

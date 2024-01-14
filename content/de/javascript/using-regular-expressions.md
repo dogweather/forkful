@@ -1,59 +1,47 @@
 ---
-title:    "Javascript: Die Verwendung von regulären Ausdrücken"
+title:    "Javascript: Verwendung von regulären Ausdrücken"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Regular Expressions sind ein extrem nützliches Werkzeug in der Javascript-Programmierung. Sie ermöglichen es uns, komplexe Muster in Strings zu suchen und zu manipulieren. Mit regulären Ausdrücken können wir Texte validieren, Filter anwenden und vieles mehr. Sie sparen uns viel Zeit und machen unsere Programme effizienter.
+Wenn du JavaScript programmierst, bist du wahrscheinlich schon auf Situationen gestoßen, in denen du Texte auf bestimmte Muster oder Formate überprüfen musstest. Hier kommen reguläre Ausdrücke ins Spiel! Als mächtiges Werkzeug ermöglichen sie es dir, solche Textmuster mithilfe weniger Zeichen und Befehle zu definieren und zu durchsuchen. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man reguläre Ausdrücke in JavaScript verwenden kann.
 
-## Wie man reguläre Ausdrücke in Javascript verwendet
+## Wie es geht
 
-Um reguläre Ausdrücke in Javascript zu verwenden, müssen wir sie zuerst erstellen. Wir können dies einfach tun, indem wir den `RegExp` Konstruktor verwenden und ein Muster und eine Option als Argumente übergeben. Zum Beispiel, um eine Email-Adresse zu validieren, könnten wir folgenden regulären Ausdruck verwenden:
+Reguläre Ausdrücke werden in JavaScript durch den `RegExp`-Konstruktor oder durch Literale, die mit `/` begrenzt sind, dargestellt. Es gibt mehrere nützliche Methoden und Eigenschaften, die mit regulären Ausdrücken verwendet werden können, um Texte zu durchsuchen und zu manipulieren.
 
-```Javascript
-const emailRegex = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}", "i");
+```javascript
+// Erstelle einen regulären Ausdruck, der nach allen Dateien mit der Endung `.js` sucht
+const regex = new RegExp(/\.js$/);
+
+// Alternativ können reguläre Ausdrücke auch als Literale geschrieben werden
+const regex = /\.js$/;
+
+// Verwende die `test`-Methode, um zu überprüfen, ob ein String mit dem regulären Ausdruck übereinstimmt
+const string = "mein-script.js";
+regex.test(string); // gibt true zurück
+
+// Verwende die `exec`-Methode, um eine Übereinstimmung in einem String zu finden
+const string = "Heute ist der 01.01.2021";
+const dateRegex = /\d{2}\.\d{2}\.\d{4}/;
+dateRegex.exec(string); //gibt ["01.01.2021"] zurück
 ```
 
-In diesem Beispiel haben wir ein Muster erstellt, das eine Kombination aus Buchstaben, Zahlen und Sonderzeichen auf der linken Seite des @-Symbols erwartet, gefolgt von einem Punkt und einer Domain wie `.com` oder `.de` auf der rechten Seite. Die Option `i` steht für "ignore case", was bedeutet, dass die Groß- und Kleinschreibung nicht berücksichtigt wird.
+## Tiefer Einblick
 
-Um zu überprüfen, ob ein String zu diesem Muster passt, können wir die `test()` Methode verwenden:
+Reguläre Ausdrücke bieten viele fortgeschrittene Funktionen, die es dir ermöglichen, sehr komplexe Muster zu definieren. Hier sind einige weitere wichtige Konzepte:
 
-```Javascript
-console.log(emailRegex.test("haus@gmail.com")); // Output: true
-console.log(emailRegex.test("test@123456789.com")); // Output: true
-console.log(emailRegex.test("123gmail.com")); // Output: false
-```
-
-Mit regulären Ausdrücken können wir auch Teile eines Strings extrahieren, indem wir sogenannte "Capturing Groups" verwenden. In unserem vorherigen Beispiel könnten wir die E-Mail-Domain extrahieren, indem wir Klammern um den Teil des Ausdrucks legen, den wir zurückgeben möchten:
-
-```Javascript
-const regex = new RegExp("[a-z0-9._%+-]+@([a-z0-9.-]+\.[a-z]{2,3})", "i");
-const email = "hello@blogpost.de";
-
-const domain = email.match(regex)[1];
-console.log(domain); // Output: blogpost.de
-```
-
-Es gibt viele weitere Methoden und Möglichkeiten, reguläre Ausdrücke in Javascript zu verwenden. Es wird empfohlen, sich ausführlich darüber zu informieren, bevor man sie in Projekten einsetzt.
-
-## Tiefergehende Einblicke in reguläre Ausdrücke
-
-Reguläre Ausdrücke sind sehr nützlich, aber auch komplex und können schwierig zu lesen und zu verstehen sein. Ein guter Weg, um ihre Funktionsweise zu verstehen, ist es, sich mit den verschiedenen Metazeichen vertraut zu machen, die verwendet werden, um Muster zu erstellen. Einige der wichtigsten sind:
-
-- `*` bedeutet "beliebig viele" und wird verwendet, um eine Wiederholung des vorhergehenden Zeichens oder Musters anzuzeigen
-- `+` bedeutet "mindestens einmal"
-- `?` bedeutet "null oder einmal"
-- `.` steht für jedes Zeichen außer einem Zeilenumbruch
-- `[]` werden verwendet, um eine Menge von Zeichen zu definieren, die an dieser Position im Muster erwartet werden
-- `()` wird verwendet, um Capturing Groups zu erstellen
-
-Es gibt noch viele weitere Metazeichen und Funktionen, die reguläre Ausdrücke in Javascript bieten. Es lohnt sich also, sich tiefer in dieses Thema einzuarbeiten.
+- Quantifiers: Durch die Verwendung von Quantifiers wie `*` (null oder mehr), `+` (ein oder mehr) oder `?` (null oder eins) kannst du angeben, wie oft ein Teil des Musters wiederholt werden soll.
+- Character classes: Mit Character classes wie `[a-z]` (alle kleinen Buchstaben) oder `[0-9]` (alle Zahlen) kannst du bestimmte Zeichengruppen definieren, die in einem Textmuster vorkommen können.
+- Capturing groups: Mit Klammern `()` kannst du angeben, welche Teile eines Musters du extrahieren möchtest.
+- Flags: Flags wie `i` (ignoriere Groß- und Kleinschreibung) oder `g` (global) können verwendet werden, um das Verhalten eines regulären Ausdrucks zu ändern.
 
 ## Siehe auch
 
-- [Reguläre Ausdrücke in Javascript - MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Reguläre Ausdrücke Cheat Sheet - JavaScript.info](https://javascript.info/regular-expressions-cheatsheet)
-- [RegExr - interaktiver Regulärer Ausdruck Tester](https://regexr.com/)
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools: JavaScript RegExp](https://www.w3schools.com/js/js_regexp.asp)
+- [regex101: Online RegEx Tester und Debugger](https://regex101.com/)

@@ -1,53 +1,31 @@
 ---
 title:    "Haskell: Commencer un nouveau projet"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La programmation en Haskell est de plus en plus populaire parmi les développeurs. Cela est dû à sa syntaxe expressive et élégante ainsi qu'à sa capacité à garantir la sécurité et la fiabilité du code. Si vous cherchez à démarrer un nouveau projet, il est donc judicieux de considérer Haskell comme un choix de langage.
+Si vous êtes un programmeur en herbe ou un passionné de programmation, vous savez peut-être à quel point Haskell est un langage de programmation unique et incroyablement puissant. Sa syntaxe fonctionnelle et son système de types solide en font un choix populaire pour un large éventail de projets informatiques. Dans cet article, nous allons nous plonger dans les détails de la création d'un nouveau projet en Haskell et pourquoi vous devriez envisager de le faire.
 
-## Comment faire
+## Comment le faire
 
-Commençons par créer un fichier `exemples.hs` dans lequel nous allons écrire notre code Haskell. Ensuite, ouvrez votre terminal et exécutez la commande `ghci` pour lancer l'interpréteur Haskell. Nous pouvons alors utiliser la fonction `:l` pour charger notre fichier `exemples.hs`, comme ceci :
+Avant de commencer un projet Haskell, il est important de bien comprendre la syntaxe et les concepts de base du langage. Une fois que vous avez une bonne compréhension de ces éléments, il est temps de plonger dans le processus de création de projet.
 
-```Haskell
-Prelude> :l exemples.hs
-```
+Tout d'abord, vous devez vous assurer que vous avez installé le compilateur GHC et le gestionnaire de paquets Cabal sur votre ordinateur. Vous pouvez ensuite créer un nouveau projet en utilisant la commande ```haskell cabal init```, qui générera un template de projet avec une structure de fichiers de base.
 
-Maintenant, nous pouvons écrire du code Haskell dans notre fichier `exemples.hs` et le tester en utilisant l'interpréteur. Par exemple, nous pouvons définir une fonction pour calculer la somme des carrés de deux nombres :
-
-```Haskell
-sommeCarres x y = x^2 + y^2
-```
-
-Nous pouvons alors appeler cette fonction avec des paramètres numériques :
-
-```Haskell
-Prelude> sommeCarres 3 4
-25
-```
-
-Nous pouvons également utiliser Haskell pour créer des structures de données telles que des listes et des tuples. Par exemple, nous pouvons définir une liste de nombres et utiliser la fonction `head` pour obtenir le premier élément :
-
-```Haskell
-nombres = [1, 2, 3, 4, 5]
-Prelude> head nombres
-1
-```
-
-Il existe de nombreuses autres fonctionnalités intéressantes en Haskell, telles que les types de données algébriques, les fonctions d'ordre supérieur et la programmation fonctionnelle pure. Nous vous encourageons à explorer ces concepts plus en profondeur pour découvrir toute la puissance du langage.
+Une fois que vous avez votre projet initialisé, il est temps d'écrire votre code. Vous pouvez utiliser des commandes telles que ```haskell cabal build``` et ```haskell cabal run``` pour compiler et exécuter votre code respectivement. N'hésitez pas à explorer les nombreuses bibliothèques et fonctionnalités disponibles pour enrichir votre projet.
 
 ## Plongée en profondeur
 
-Avant de commencer un nouveau projet en Haskell, il est important de se familiariser avec certaines conventions de codage et bonnes pratiques. Par exemple, il est recommandé d'utiliser des types de données fortement typés et de minimiser l'utilisation des variables mutables. De plus, il est important d'écrire des fonctions pures sans effets de bord pour une meilleure maintenabilité et testabilité du code.
+L'une des principales forces de Haskell est son système de types puissant. Il est donc important de comprendre comment définir et utiliser correctement les types dans votre code. Vous pouvez également utiliser des concepts tels que la programmation fonctionnelle pure, les fonctions d'ordre supérieur et la récursivité pour rendre votre code plus élégant et facile à comprendre.
 
-En ce qui concerne la gestion des dépendances, Haskell dispose d'un système de gestion de paquets appelé Cabal qui vous permet d'installer et de gérer les bibliothèques dont vous avez besoin pour votre projet. De plus, il existe un outil appelé Stack qui facilite la création et la gestion de projets Haskell.
+Il est également important de noter que Haskell a une communauté active et soutenue avec de nombreuses ressources disponibles pour vous aider dans votre parcours de programmation. N'hésitez pas à rejoindre des groupes de discussion en ligne ou à regarder des tutoriels pour vous inspirer et vous aider dans votre projet.
 
 ## Voir aussi
 
-- [Haskell.org](https://www.haskell.org/): le site officiel de Haskell
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/): un excellent tutoriel pour les débutants sur Haskell
-- [Real World Haskell](http://book.realworldhaskell.org/read/): un livre sur l'utilisation pratique de Haskell dans des projets réels
+- [Tutoriel Haskell pour débutants](https://www.haskell.org/tutorial/)
+- [Documentation officielle de Haskell](https://www.haskell.org/documentation/)
+- [Communauté Haskell en ligne](https://www.haskell.org/community/)

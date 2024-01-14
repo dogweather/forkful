@@ -1,54 +1,48 @@
 ---
-title:    "C++: Skriver til standardfeil"
+title:    "C++: Skriving til standardfeil."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive til standard error (stderr) er en viktig del av feilretting og feilhåndtering i C++. Når et program kjører, kan det oppstå feil som må håndteres, og ved å skrive til stderr kan utviklere få mer innsikt i hva som gikk galt og hvorfor.
+Å skrive til standard error i C++ kan virke som en unødvendig prosess, men det kan være svært nyttig når du skal finne og rette feil i koden din. Ved å utskrive feilmeldinger til standard error i stedet for standard output, kan du enkelt skille mellom regulær utskrift og feilmeldinger.
 
-# Hvordan
+## Slik gjør du det
 
-For å skrive til stderr i C++, bruker vi funksjonen `std::cerr`. Dette er en del av standardbiblioteket i C++, så vi trenger ikke å importere noe ekstra for å bruke den. La oss se på et enkelt eksempel:
+Det er enkelt å skrive til standard error i C++. Du trenger bare å inkludere biblioteket "iostream" og deretter bruke kommandoen "std::cerr << "Feilmelding" << std::endl;" for å skrive til standard error. Du kan også bruke "std::cerr" flere ganger i koden din for å skrive ut flere feilmeldinger.
 
-```C++ 
+```C++
 #include <iostream>
+using namespace std;
 
 int main() {
-  int x = 10;
-  int y = 0;
-
-  // Skriver til standard error hvis y er lik 0
-  if (y == 0) {
-    std::cerr << "Feil: Kan ikke dividere med 0" << std::endl;
-    return 1;
-  }
-
-  // Hvis ingen feil oppstod, skriver vi resultatet til standard output
-  std::cout << "Resultatet er: " << x / y << std::endl;
-  return 0;
+    // En feilmelding som skal skrives til standard error
+    std::cerr << "Dette er en feilmelding!" << std::endl;
+    
+    // Annen kode og utskrift som skal skrives til standard output
+    std::cout << "Dette er en vanlig utskrift." << std::endl;
+ 
+    return 0;
 }
 ```
 
-Her sjekker vi om `y` er lik 0, og hvis det er tilfellet, skriver vi en feilmelding til stderr ved hjelp av `std::cerr`. Deretter returnerer vi en ikke-null verdi for å indikere at programmet avsluttet med en feil. Hvis ingen feil oppstod, skriver vi resultatet til standard output ved hjelp av `std::cout`.
-
-Når vi kjører dette programmet, vil vi få følgende output:
-
+Output:
 ```
-Feil: Kan ikke dividere med 0
+Dette er en feilmelding!
+Dette er en vanlig utskrift.
 ```
 
-Dette viser at meldingen ble skrevet til stderr og ikke forstyrret standard output som viser resultatet vårt.
+## Dypdykk
 
-# Dypdykk
+Når vi bruker standard error til å skrive ut feilmeldinger, er det viktig å huske på at dette kun er nyttig når programmet kjøres i en terminal eller kommandolinje. Hvis du kjører programmet ditt fra et grafisk brukergrensesnitt, vil feilmeldingene bli skjult og du vil ikke kunne se dem.
 
-Det er viktig å merke seg at `std::cerr` er en strøm (stream), akkurat som `std::cout`. Dette betyr at vi kan bruke alle de samme formateringsfunksjonene som vi bruker med `std::cout`, som for eksempel `<<` operator og `endl`.
+En annen viktig ting å huske på er at standard error også kan kobles til en fil, slik at du kan lagre feilmeldingene dine og se dem senere. Dette kan være nyttig når du jobber med større prosjekter og trenger å undersøke feil på et senere tidspunkt.
 
-En annen viktig funksjon av `std::cerr` er at den ikke er buffret, noe som betyr at meldingene vi skriver til stderr vil bli skrevet umiddelbart uten å vente på at buffere skal tømmes. Dette er spesielt nyttig i situasjoner der programmet vårt krasjer og vi trenger å vite hva som var siste melding som ble skrevet før programmet stoppet.
+## Se også
 
-# Se også
-
-* [C++ Standard Library: iostream](https://en.cppreference.com/w/cpp/header/iostream)
-* [C++ Standard Library: cerr](https://en.cppreference.com/w/cpp/io/cerr)
+- [C++ iostream bibliotek dokumentasjon](http://www.cplusplus.com/reference/iostream/)
+- [Hvordan løse C++ feilmedlinger](https://www.cplusplus.com/articles/yU6vU7Lw/)
+- [Hva er forskjellen mellom standard output og standard error?](https://stackoverflow.com/questions/8355844/what-is-the-difference-between-stdcout-stdcerr-and-stdclog)

@@ -1,66 +1,63 @@
 ---
 title:    "Go: Skapa en tillfällig fil"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skapa temporära filer i Go?
 
-När du utvecklar program i Go, kanske du ibland behöver skapa temporära filer. Dessa filer kan användas för att tillfälligt lagra data eller hantera temporära processer. I denna bloggpost kommer vi att utforska varför och hur du kan skapa temporära filer i Go.
+En temporär fil är en fil som endast behövs för en kort stund och sedan kan tas bort. Skapandet av en temporär fil kan vara användbart når man behöver skriva data som endast behövs tillfälligt, till exempel för mellanlagring eller för att hantera temporära tillfälliga filer för ett program. I denna bloggpost kommer jag att visa dig hur du skapar en temporär fil i Go och möjliga användningsområden.
 
-## Hur Man Gör
+## Så här gör du
 
-För att skapa en temporär fil i Go behöver vi importera paketet "os". Sedan kan vi använda funktionen TempFile() för att skapa en fil och få åtkomst till dess namn.
-
-```Go
-import "os"
-
-tempFile, err := os.TempFile("", "temp")
-if err != nil {
-	fmt.Println("Error creating temporary file:", err)
-	return
-}
-defer tempFile.Close()
-
-fmt.Println("Temporary file name:", tempFile.Name())
-```
-
-I det här exemplet använder vi en tom sträng som första argument eftersom vi inte behöver en specifik mapp för vår temporära fil. Det andra argumentet "temp" är prefixet som läggs till filnamnet, vilket kan vara användbart för att identifiera filen senare.
-
-När vi har skapat filen måste vi se till att stänga den igen när vi är klara med den, därför använder vi "defer" för att funktionen Close() ska köras efter att resten av koden har exekverats.
-
-För att skriva data till filen kan vi använda funktionen WriteString() på vår temporära fil.
+För att skapa en temporär fil i Go, behöver du använda "ioutil" paketet tillsammans med funktionen "TempFile". "TempFile" tar två parametrar, sökvägen där filen ska skapas samt ett prefix för filnamnet.
 
 ```Go
-_, err = tempFile.WriteString("Hello world!")
-if err != nil {
-	fmt.Println("Error writing to temporary file:", err)
-	return
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+)
+
+func main() {
+    // Skapa temporär fil i samma mapp som programmet och prefixet "temp"
+    tempFile, err := ioutil.TempFile(".", "temp")
+
+    if err != nil {
+        fmt.Println("Kunde inte skapa temporär fil: ", err)
+        return
+    }
+
+    // Skriv data till filen
+    data := []byte("Detta är en temporär fil skapad av Go")
+    _, err = tempFile.Write(data)
+
+    if err != nil {
+        fmt.Println("Kunde inte skriva till filen: ", err)
+        return
+    }
+
+    // Stäng filen när vi är klara
+    defer tempFile.Close()
+    
+    // Skriv ut filnamnet för den skapade temporära filen
+    fmt.Println("Skapade en temporär fil med namn:", tempFile.Name())
 }
 ```
 
-Och för att läsa data från filen kan vi använda funktionen ReadFile() från paketet "ioutil".
+När du kör detta program så kommer en temporär fil med prefixet "temp" att skapas i samma mapp som ditt program. Den skapade filen kommer att innehålla texten "Detta är en temporär fil skapad av Go". Notera att du även stänger filen när du är klar med hjälp av "defer" funktionen.
 
-```Go
-data, err := ioutil.ReadFile(tempFile.Name())
-if err != nil {
-	fmt.Println("Error reading from temporary file:", err)
-	return
-}
-fmt.Println("File data:", string(data))
-```
+## Deep Dive
 
-## Djupdykning
+Det finns flera användbara funktioner som du kan använda tillsammans med "TempFile" i Go. Till exempel kan du ange ett postfix för filnamnet eller ange den mapp där filen ska skapas. Du kan även använda funktionen "TempDir" för att skapa en temporär mapp istället för en fil.
 
-När vi skapar en temporär fil i Go, skapas den faktiska filen på hårddisken. Den tilldelas också ett unikt namn som genereras av operativsystemet. Det här namnet kan användas för att komma åt filen och läsa/skriva data till den.
+Det är också viktigt att notera att "TempFile" funktionen returnerar en "File" typ, vilket du kan använda för att utföra olika operationer på den skapade filen som t.ex. att läsa eller skriva till den.
 
-När vi stänger filen, raderas den automatiskt från hårddisken. Detta är en avgörande skillnad mellan en temporär fil och en vanlig fil. Om vi behöver behålla filen efter att vårt program har avslutats, måste vi flytta den till en annan plats eller byta namn på den.
+# Se även
 
-Vi kan också ange en specifik mapp där vi vill att vår temporära fil ska skapas. Detta kan göras genom att ange den mappen som det första argumentet till funktionen TempFile(). Om mappen inte finns, kommer Go att skapa den åt oss.
-
-## Se Också
-
-- [Officiell dokumentation för paketet "os"](https://golang.org/pkg/os/)
-- [Officiell dokumentation för paketet "ioutil"](https://golang.org/pkg/io/ioutil/)
-- [Go Design Patterns: Temporary Files](https://www.ardanlabs.com/blog/2013/11/using-temporary-files-in-go-programming.html)
+- [ioutil paketet i Go](https://golang.org/pkg/io/ioutil/)
+- [Go dokumentation för TempFile funktionen](https://golang.org/pkg/io/ioutil/#TempFile)
+- [En guide för hur man skapar temporära filer i Go](https://www.calhoun.io/creating-a-temporary-file-in-go/)

@@ -1,51 +1,59 @@
 ---
-title:    "PHP: 「文字列の連結」"
+title:    "PHP: 文字列の連結"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を連結することによって、より多くの情報を使いやすくまとめることができます。
+## Why
 
-## 方法
-文字列を連結するには、PHP内で「.」を使います。例えば、以下のコードを使ってみましょう。
+文字列を連結することの意義は、プログラミングにおいて必須のスキルです。文字列を連結することにより、より複雑な文字列データを扱うことができます。また、Web開発やデータ処理など、さまざまな場面で活用できます。
 
-```PHP
-$greeting = "こんにちは、";
-$name = "太郎さん";
-$full_greeting = $greeting . $name;
+## How To
 
-echo $full_greeting;
+文字列連結は、PHPで非常に簡単に実現することができます。基本的な構文は以下のようになります。
+
+```
+<?php
+$string1 = "Hello";
+$string2 = "World";
+
+// using the "." operator
+$output1 = $string1 . $string2;
+echo $output1; // output: HelloWorld
+
+// using the concatenation assignment operator (".=")
+$string3 = "こんにちは";
+$output2 = $string3 .= "世界";
+echo $output2; // output: こんにちは世界
+?>
 ```
 
-上記のコードで、「こんにちは、太郎さん」という出力が得られます。
+## Deep Dive
 
-## 深堀り
-文字列を連結する際には、注意すべきポイントがいくつかあります。まず、連結する際には必ず間に「.」を入れる必要があります。また、文中にも文字列連結を使用することができます。例えば、以下のコードを見てみましょう。
+文字列連結を実現するには、`.`演算子または文字列連結代入演算子(`.=`)を使用します。`.`演算子は、2つの文字列を連結する際に使用し、`.=`演算子は、左辺の文字列に右辺の文字列を連結する際に使用します。
 
-```PHP
-$message = "今日の天気は";
-$weather = "晴れです。";
+また、配列や変数を連結することも可能です。以下のように「{}」を使用することで、変数や配列を展開することができます。
 
-echo $message . $weather;
+```
+<?php
+$name = "太郎";
+$age = 20;
+$interest = array("プログラミング", "旅行", "スポーツ");
+
+// concatenating variables and strings
+$output = "私の名前は{$name}です。年齢は{$age}歳です。";
+echo $output; // output: 私の名前は太郎です。年齢は20歳です。
+
+// concatenating arrays
+$output = "私の趣味は{$interest[0]}、{$interest[1]}、{$interest[2]}です。";
+echo $output; // output: 私の趣味はプログラミング、旅行、スポーツです。
+?>
 ```
 
-上記のコードでは、「今日の天気は晴れです。」という出力が得られます。また、変数内に特殊な文字を含む場合は、クォートで囲むこともできます。例えば、以下のコードを見てみましょう。
+## See Also
 
-```PHP
-$greeting = "こんにちは、";
-$name = "太郎さん";
-
-echo $greeting . "$nameさん。"; 
-```
-
-上記のコードでは、「こんにちは、太郎さん。」という出力が得られます。
-
-## さらに見る
-- [PHP Tutorial: Writing Your First PHP Script - Strings and Concatenation](https://www.learn-php.org/en/String_Functions_II#Concatenation)
-- [Concatenation in PHP](https://www.w3schools.com/php/php_concatenation.asp)
-- [The Dot Operator in PHP - Learn Two Ways to Combine Strings](https://www.lifewire.com/concatenation-dot-operator-818422) 
-
-## その他
-We hope this blog post was helpful in understanding how to concatenate strings in PHP. Happy coding!
+- [PHPの文字列連結方法 (トラハック)](https://torajirohacks.com/2020/04/11/phpconcat/)
+- [PHP について学ぶ (日本語リファレンス)](https://php.net/manual/ja/)
+- [文字列の連結方法 (W3Schools 日本語版)](https://www.w3schools.com/php/php_string_concat.asp)

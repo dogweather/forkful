@@ -1,62 +1,35 @@
 ---
-title:    "Swift: 현재 날짜 받기"
+title:    "Swift: 현재 날짜 가져오기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 날짜를 얻는 걸까?
+# 왜 오늘 날짜를 얻는 것이 중요한가요?
 
-날짜는 프로그래밍에서 매우 중요한 개념입니다. 예를 들어, 어떤 응용 프로그램은 오늘의 날짜를 표시하거나 날짜에 따라서 어떤 동작을 수행하는 경우가 있습니다. 따라서 현재 날짜를 얻는 것은 매우 유용하며 많은 프로그래머가 필요로 합니다.
+오늘 날짜를 얻는 것은 프로그래밍에서 매우 중요합니다. 왜냐하면 많은 애플리케이션에서 현재 날짜를 사용하여 작업을 처리하기 때문입니다. 예를 들어, 예약 시스템이나 일정 관리 앱에서는 현재 날짜를 사용해 다가오는 예약이나 일정을 확인할 수 있습니다.
 
-## 어떻게 구할 수 있을까?
-
-아래 예제 코드를 참고하여 현재 날짜를 구하는 방법을 알아보겠습니다.
+# 어떻게 현재 날짜를 얻을 수 있나요?
 
 ```Swift
-let currentDate = Date()
+let now = Date()
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+let currentDate = formatter.string(from: now)
 print(currentDate)
 ```
 
-위 코드를 실행하면 현재 시간과 날짜가 출력됩니다.
+위의 코드는 Swift에서 현재 날짜를 얻는 간단한 예시입니다. Date()를 호출하여 현재 시간을 가져오고, DateFormatter를 사용하여 원하는 날짜 형식으로 포맷팅한 후 string(from:) 메소드를 호출하여 문자열로 변환합니다. 여기서는 "yyyy-MM-dd" 형식으로 변환하고, 출력 결과는 "2021-08-04"와 같이 나타납니다.
 
-```Swift
-// 현재 날짜와 시간 출력
-2021-09-25 15:23:45 +0000
-```
+# 더 깊이 파헤쳐보기
 
-만약 날짜를 다른 포맷으로 출력하고 싶다면 `DateFormatter`를 사용하면 됩니다. 예를 들어, `yyyy-MM-dd` 포맷으로 날짜를 출력하려면 아래와 같이 코드를 작성하면 됩니다.
+Swift에서는 Date 객체를 사용하여 다양한 시간과 날짜 정보를 가져올 수 있습니다. 예를 들어, Date 객체의 components 메소드를 사용하면 년, 월, 일, 시간 등의 세부 정보를 가져올 수 있습니다. 또한 추가적인 날짜 계산을 위해 Calendar 클래스를 사용할 수 있습니다. 자세한 내용은 [Apple 공식 문서](https://developer.apple.com/documentation/foundation/date)를 참고하시기 바랍니다.
 
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let formattedDate = dateFormatter.string(from: currentDate)
-print(formattedDate)
-```
+# 더 많은 학습 자료
 
-```Swift
-// yyyy-MM-dd 포맷으로 날짜 출력
-2021-09-25
-```
+[날짜와 시간을 다루는 방법에 대한 더 자세한 내용](https://cocoacasts.com/how-to-work-with-dates-and-times-in-swift)을 알고 싶다면 여기를 클릭해주세요. 또한 [Swift Dev Center](https://developer.apple.com/swift/)에서 Swift 프로그래밍에 대한 다양한 학습 자료를 찾아볼 수 있습니다.
 
-## 더 깊게 알아보기
+# 더 찾아보기
 
-`Date()`는 기본적으로 현재 시간과 날짜를 가져옵니다. 하지만, 옵션 파라미터를 사용하여 원하는 날짜와 시간을 가져올 수도 있습니다. 예를 들면 아래와 같은 방법입니다.
-
-```Swift
-// 현재 시간에 30초를 더하여 출력하기
-let currentDate = Date()
-let futureDate = Calendar.current.date(byAdding: .second, value: 30, to: currentDate)
-print(futureDate)
-```
-
-```Swift
-// 30초 뒤의 날짜 출력
-2021-09-25 15:24:15 +0000
-```
-
-Swift에서는 `Date()`을 사용하여 현재 날짜와 시간을 가져오는 것이 매우 간단하고 쉽습니다. 하지만, 날짜와 시간을 다루는 방법에 대해서는 더욱 많은 옵션과 기능이 있으니 관심이 있다면 더 깊이 공부해보시기 바랍니다.
-
-## 더 알아보기
-
-[날짜와 시간 다루기](https://kr.includehelp.com/objective-c/how-to-get-current-date-and-time-in-objective-c.aspx) <br> [Swift Date, Calendar, DateComponents 사용해보기](https://valley1985.tistory.com/32) <br> [날짜와 시간 다루기 레퍼런스 문서](https://developer.apple.com/documentation/foundation/dates)
+[Swift Foundation 프레임워크](https://developer.apple.com/documentation/foundation)를 통해 날짜와 시간을 다루는 방법뿐만 아니라 많은 다른 유용한 기능을 찾아볼 수 있습니다. [Swift Language Guide](https://docs.swift.org/swift-book/)에서도 더 많은 내용을 학습할 수 있습니다.

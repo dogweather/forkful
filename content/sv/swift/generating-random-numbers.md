@@ -1,68 +1,47 @@
 ---
 title:    "Swift: Generering av slumpmässiga nummer"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att generera slumpmässiga nummer är en viktig del av många program och spel, det kan ge variation och utmaning till användare. Med hjälp av Swift kan du enkelt skapa och hantera slumpmässiga nummer för att ge ditt program en extra dimension av spänning och dynamik.
+Att generera slumpmässiga nummer är ett viktigt verktyg inom programmering. Det gör det möjligt att skapa spel, simuleringar och andra program där slumpmässighet är önskvärd.
 
-## Så här gör du
+## Hur man gör det
 
-För att generera slumpmässiga nummer i Swift använder vi oss av random() funktionen. Vi kan ange ett intervall för vårt slumpmässiga nummer genom att använda closed range operator (t.ex. 1...10 för ett nummer mellan 1 och 10). Här är ett exempel på hur vi kan använda funktionen för att generera tre slumpmässiga nummer och skriva ut dem i konsolen:
-
-```Swift
-let randomNum1 = Int.random(in: 1...10)
-let randomNum2 = Int.random(in: 1...10)
-let randomNum3 = Int.random(in: 1...10)
-
-print("Slumpmässiga nummer:", randomNum1, randomNum2, randomNum3)
-```
-
-Output:
-```
-Slumpmässiga nummer: 4 8 2
-```
-
-Om vi istället vill generera en decimaltal mellan 0 och 1, kan vi använda random() funktionen utan något intervall:
+Att generera slumpmässiga nummer i Swift är enkelt. Först måste du importera Foundation-frameworket. Sedan kan du använda funktionen `arc4random_uniform()` för att generera ett slumpmässigt heltal inom ett givet intervall. Här är ett exempel på kod:
 
 ```Swift
-let randomDouble = Double.random(in: 0...1)
-
-print("Slumpmässigt decimaltal:", randomDouble)
+import Foundation
+// Genererar ett slumpmässigt heltal mellan 1 och 10
+let randomInt = arc4random_uniform(10) + 1
+print(randomInt) // Skriver ut det slumpmässiga talet
 ```
 
-Output:
-```
-Slumpmässigt decimaltal: 0.593455
-```
+Output: 8
 
-Vi kan också använda random() funktionen för att generera slumpmässiga strängar från en lista av alternativ:
+Du kan också använda funktionen `random()` för att generera ett slumpmässigt flyttal mellan 0 och 1. Här är ett exempel:
 
 ```Swift
-let names = ["Anna", "Erik", "Maria", "Anders"]
-let randomName = names.randomElement()
-
-print("Slumpmässigt namn:", randomName)
+let randomFloat = Float.random(in: 0..<1)
+print(randomFloat)
 ```
 
-Output:
-```
-Slumpmässigt namn: Anna
-```
+Output: 0.76901865
+
+Det finns också andra sätt att generera slumpmässiga nummer, till exempel genom att använda UUID() för att generera unika ID-nummer.
 
 ## Djupdykning
 
-Random() funktionen i Swift använder sig av Mersenne Twister algoritmen för att generera slumpmässiga nummer. Detta är en av de mest populära algoritmerna inom datorvetenskap och ger hög kvalitet på de slumpmässiga nummer som genereras.
+I Swift används en algoritm som kallas Mersenne Twister för att generera slumpmässiga nummer. Detta är en avancerad algoritm som är väldigt effektiv och ger en hög grad av slumpmässighet. Det finns också olika sätt att generera mer specialiserade slumpmässiga värden, till exempel slumpmässiga bokstäver eller bitar.
 
-För att förhindra att samma sekvens av slumpmässiga nummer genereras varje gång programmet körs, används en seed (frö) som startvärde för algoritmen. I Swift genereras detta seed automatiskt, men vi kan också ange en egen seed för att få en specifik sekvens av slumpmässiga nummer.
-
-Det finns också andra funktioner inom Swift som kan användas för att generera slumpmässiga nummer, som till exempel arc4random_uniform() och drand48().
+Slumpmässighet är också en viktig del av kryptografi och måste därför implementeras på ett säkert sätt för att undvika möjliga säkerhetshot.
 
 ## Se även
 
-- [Apple Dokumentation för Randomization](https://developer.apple.com/documentation/swift/Randomization)
-- [Swift Randomizer paket](https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/Foundation/Randomizer.swift)
-- [Slumpmässiga nummer i Swift Playgrounds](https://www.raywenderlich.com/158106/random-numbers-in-swift-3-tutorial-for-ios)
+- [Foundation framework](https://developer.apple.com/documentation/foundation)
+- [UUID()](https://developer.apple.com/documentation/swift/uuid) - för generering av unika ID-nummer
+- [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister) - för djupare förståelse av den algoritm som används i Swift.

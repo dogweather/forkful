@@ -1,51 +1,39 @@
 ---
-title:    "Clojure: כתיבה לשגיאה סטנדרטית"
+title:    "Clojure: כתיבה לשגיאת סטנדרט"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-הכתיבה לפלט שגיאות תקף רק בהתחלה. לכן, כתיבה לפלט היא תהליך חשוב בתכנות של הקוד השלם כדי להבין על מה לשפר ולתקן.
+כתיבה לפלט שגיאות היא חלק חשוב מתהליך התכנות. היא מסייעת לנו למצוא ולתקן בעיות בקוד במהירות וביעילות רבה יותר. בכתיבה זו נראה כיצד ניתן להשתמש בשפת Clojure כדי לכתוב לפלט שגיאות בצורה נכונה ויעילה.
 
-## איך לכתוב לפלט
+## איך לעשות זאת
 
-מתוך העשרות של שגיאות ותכנים חדשים כל יום, לא תמיד ניתן להבין מה יוצר את השגיאה. עם תכנות לפלט הפונקציות צריכות להיות בקרה מתוך קוד כדי לזהות בדיוק איזה חלק מהקוד יוצר את הבעיה.
+לפני שנדבר על כיצד לכתוב לפלט שגיאות בשפת Clojure, נצטרך כמה כלים על מנת לבדוק את הקוד שלנו. האינסטרומנטות היא כלי שימושי שיעזור לנו למצוא באופן יעיל את השגיאות שלנו. הנה דוגמה של קוד בשפת Clojure עם שגיאת מגבלה בזמן ריצה שנכתבה לפלט השגיאה:
 
-```Clojure
-(defn divide-by-zero [x y]
-  (if (= y 0)
-    (print "Numerator cannot be zero") ; הודעת שגיאה
-    (/ x y)))
+ ```Clojure
+(defn my-function [x]
+  (if (zero? x)
+    (throw (Exception. "x cannot be zero"))
+    (+ x 2)))
+
+(my-function 0)
 ```
 
-פלט:
+Output:
 
 ```
-Numerator cannot be zero
+Exception in thread "main" java.lang.Exception: x cannot be zero
+ at user/my-function (form-init1887379627502286802.clj:2)
+ at user/eval20 (form-init1887379627502286802.clj:10)
+ at user/run! (form-init1887379627502286802.clj:14)
+ at user/run- (form-init1887379627502286802.clj:29)
+ at user/run (form-init1887379627502286802.clj:31)
+ at user/main (form-init1887379627502286802.clj:36)
+ at user/main (form-init1887379627502286802.clj:36)
 ```
 
-## חקירה מעמיקה
-
-הודעות שגיאה מציגות מידע רב יותר מאשר רק את השגיאה עצמה. הן יכולות לכוון לחלק מן הקוד הגורם לבעיה על ידי מזהים את המדוע לשגיאה. כמו כן, ניתן גם לדעת על תנאים מיוחדים אשר גרמו לשגיאה לכדי הבעיה.
-
-לדוגמה, אם אנחנו משתמשים במתודת `try...catch` כדי להתמודד עם שגיאות, ניתן להדפיס את השגיאה המקורית כך שנוכל לבחון את הנתונים הפנימיים שלה.
-
-```Clojure
-(try
- (/ x y)
-  (catch Exception e (println "Original error:" (.getMessage e))))
-```
-
-פלט:
-
-```
-Original error: ArithmeticException Divide by zero (divide-by-zero 12 0)
-```
-
-## ראו גם
-
-- הסבר נוסף על כתיבה לפלט ניתן למצוא במדריך הרשמי של קלז'ור [Writing to Standard Error](https://clojure.org/guides/debugging#error_handling).
-- כיצד להתמודד עם שגיאות בקוד קלז'ור במאמר [Error Handling in Clojure](https://www.baeldung.com/clojure-error-handling).
-- הסבר על שימוש ב `try...catch` בשפת קלז'ור ניתן למצוא במדריך הרשמי של קלז'ור [Handling Exceptions](https://clojure.org/reference/exceptions).
+כאן אנו משתמשים בתנאי `if` כדי לבדוק אם המספר `x` הוא 0. אם זהו המקרה, אנו משתמשים בפונקציה `throw` כדי להפוך את הערך `Exception` למספר. הפונקציה `defn` מגדירה פונקציה חדשה בשם `my-function` שמקבלת פרמטר `x`. סופסות הפעולה של הפונקציה היא להוסיף 2 למספר `x` הנתון. כמו ברוב שפות התכנות, ניתן לשנות את הטקסט של השגיאה ע"י שימוש בפונקציית `format`, ולא יהיה דבר מפתיע אם נרצה להוסיף מספר שגיאות כאלה לפ

@@ -1,53 +1,32 @@
 ---
-title:    "Rust: 把日期转换成字符串"
+title:    "Rust: 将日期转换为字符串。"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+日期转化成字符串是编程中一个常用的操作，它可以让计算机理解和处理日期数据，使其更易于读取和保存。
 
-日期和字符串是编程中经常会遇到的数据类型。将日期转换成字符串可以让我们更容易地在代码中处理和展示日期信息。在这篇文章中，我将会介绍如何使用Rust语言将日期转换成字符串。
-
-## 如何进行
-
-在Rust中，我们可以使用标准库中的 `format!` 宏来将日期转换成字符串。我们只需传入日期和想要的格式，就可以得到一个字符串。下面是一个例子：
-
+## 怎么做
 ```Rust
-use chrono::{Utc, NaiveDate}; 
+use chrono::{DateTime, Local, Utc};
 
-let birthday = NaiveDate::from_ymd(1990, 1, 1); 
-let formatted_date = format!("{:?}", birthday); 
+let now: DateTime<Utc> = Utc::now();
+println!("当前时间: {}", now);
 
-println!("{}", formatted_date); 
+let date_str = now.to_string();
+println!("转化后的时间字符串: {}", date_str);
+
 ```
 
-输出将会是 `1990-01-01`。我们也可以指定自己想要的日期格式，比如将日期转换成 `YYYY/MM/DD` 的格式：
+上面的代码演示了如何使用 Rust 中的 `chrono` 库来将 `DateTime` 类型的日期转化为字符串，并将其输出到控制台。使用此方法，您可以轻松地将日期数据转换为其他格式，以适合不同的需求。
 
-```Rust
-use chrono::{Utc, NaiveDate, Datelike}; 
-
-let today = Utc::today().naive_utc(); 
-let formatted_date = format!("{}/{}/{}", today.year(), today.month(), today.day()); 
-
-println!("{}", formatted_date); 
-```
-
-输出将会是 `2021/07/26`。
-
-## 深入探讨
-
-在上面的例子中，我们使用了 `format!` 宏来进行日期格式化，这个宏底层其实是使用了 `to_string` 方法来将日期类型转换成字符串类型。`to_string` 方法是 `ToString` trait 的一部分，这个 trait 定义了如何将一个类型转换成字符串。在 Rust 中，实现了 `ToString` trait 的类型可以通过 `to_string` 方法来将自身转换成字符串。
-
-除了使用 `format!` 宏，我们也可以直接使用 `to_string` 方法来进行日期转换。但需要注意的是，`to_string` 方法返回的是一个 `Result<String, _>` 类型，所以我们也需要处理可能发生的错误。
+## 深入了解
+日期转化为字符串的过程实际上涉及多个步骤。首先，计算机需要将日期数据解析为特定的格式，例如 ISO 8601 标准。然后，它会根据指定的格式将数据转换为字符串。最后，程序将使用所选的编码来编码字符串，使其可读性更强。
 
 ## 参考链接
-
-- [Rust中的日期和时间](https://rust-lang-nursery.github.io/rust-cookbook/datetime/datetime.html)
-- [Rust标准库中的日期和时间](https://doc.rust-lang.org/std/time/)
-- [Rust标准库中的`ToString` trait](https://doc.rust-lang.org/std/string/trait.ToString.html)
-
-## 参见
-
-- [Rust文档](https://www.rust-lang.org/zh-CN/)
-- [Rust中文](https://rustlang-cn.org/)
+- [Rust Documentation - chrono](https://docs.rs/chrono/latest/chrono/)
+- [Rust Basic Date and Time](https://drgarcia1986.gitbooks.io/rust_code_camp/content/Chapter_4_Basic_Date_and_Time.html)
+- [Rust Cookbook - Format DateTime as String](https://rust-lang-nursery.github.io/rust-cookbook/datetime/format.html)

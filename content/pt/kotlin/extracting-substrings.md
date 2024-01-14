@@ -1,81 +1,65 @@
 ---
-title:    "Kotlin: Extraindo subcadeias"
+title:    "Kotlin: Extraindo subtrings"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Kotlin?
+# Por que utilizar extração de substrings em Kotlin?
 
-Ao trabalhar com strings em Kotlin, muitas vezes é necessário extrair uma parte específica de uma string maior para obter informações úteis. Isso pode ser feito através da extração de substrings. Este processo pode ser especialmente útil na manipulação de dados ou na implementação de algoritmos de busca e filtragem.
+Extrair substrings é uma técnica muito útil e comum em programação para obter partes específicas de uma string. Ao dominar essa técnica, você poderá manipular suas strings de forma mais eficiente e criar soluções mais complexas em suas aplicações. Além disso, é uma habilidade fundamental para quem deseja aprender a linguagem Kotlin.
 
-## Como extrair substrings em Kotlin
+## Como fazer isso em Kotlin
 
-Extrair substrings em Kotlin é bastante simples, basta seguir o seguinte formato:
-
-```Kotlin
-val string = "Exemplo de string"
-val substring = string.substring(beginIndex, endIndex)
-```
-Onde o `beginIndex` é o índice inicial da substring que você deseja extrair e o `endIndex` é o índice final (não incluso) da substring.
-
-Por exemplo, se quisermos extrair a palavra "Exemplo" da string acima, usaríamos o seguinte código:
+Para extrair substrings em Kotlin, basta utilizar a função `subSequence()` em uma string, passando os índices inicial e final da substring desejada. Veja um exemplo abaixo:
 
 ```Kotlin
-val string = "Exemplo de string"
-val substring = string.substring(0, 7)
-println(substring)
+val frase = "Extraindo substrings é tão fácil quanto isso"
+val substring = frase.subSequence(10, 19)
+println(substring) // "substrings"
 ```
 
-Isso resultará na saída: `Exemplo`
-
-Existem também outras formas de extrair substrings em Kotlin, como utilizando `subSequence()` ou `take()`.
-
-### Função `subSequence()`
-
-Esta função também permite a extração de substrings, porém utiliza um formato um pouco diferente:
+Você também pode utilizar a função `substring()` para obter a mesma saída:
 
 ```Kotlin
-val string = "Exemplo de string"
-val substring = string.subSequence(beginIndex, endIndex)
+val frase = "Extraindo substrings é tão fácil quanto isso"
+val substring = frase.substring(10, 19)
+println(substring) // "substrings"
 ```
 
-Neste caso, o `beginIndex` e o `endIndex` estão inclusos no resultado final, diferente da função `substring()`. Ou seja, para extrair a mesma palavra "Exemplo", utilizaríamos o seguinte código:
+## Mergulho profundo na extração de substrings
+
+Ao utilizar a função `substring()` em Kotlin, é importante ter em mente que o índice final não é incluído na substring resultante. Ou seja, no exemplo acima, a substring "substring" tem os índices 10 e 18, excluindo o último índice que seria 19.
+
+Além disso, é possível passar apenas um índice para a função `substring()`, indicando o início da substring até o final da string original. Por exemplo:
 
 ```Kotlin
-val string = "Exemplo de string"
-val substring = string.subSequence(0, 7)
-println(substring)
+val frase = "Extraindo substrings é tão fácil quanto isso"
+val substring = frase.substring(10)
+println(substring) // "substrings é tão fácil quanto isso"
 ```
 
-Isso resultará na saída: `Exemplo ` (com um espaço após a palavra).
-
-### Função `take()`
-
-Outra forma de extrair substrings em Kotlin é utilizando a função `take()`, que funciona da seguinte forma:
+Outra opção é utilizar o operador `..` para indicar o intervalo de índices desejado, como mostrado no exemplo abaixo:
 
 ```Kotlin
-val string = "Exemplo de string"
-val substring = string.take(num)
+val frase = "Extraindo substrings é tão fácil quanto isso"
+val substring = frase[10..18] // utiliza o caractere [10] até [18]
+println(substring) // "substrings"
 ```
 
-Onde `num` é o número de caracteres que serão extraídos da string, a partir do início da mesma. No nosso exemplo, extrairíamos a palavra "Exemplo" com o seguinte código:
+Essa técnica também pode ser utilizada para obter substrings de dentro de um loop, por exemplo:
 
 ```Kotlin
-val string = "Exemplo de string"
-val substring = string.take(7)
-println(substring)
+val nome = "Pedro"
+for (i in 1 until nome.length) {
+    val substring = nome[i..nome.length - 1]
+    println(substring) // "edro", "dro", "ro", "o"
+}
 ```
 
-Isso resultará na saída: `Exemplo`
+# Veja também
 
-## Uma olhada mais profunda na extração de substrings
-
-Agora que sabemos como extrair substrings em Kotlin, podemos nos aprofundar um pouco mais no assunto. A extração de substrings é feita através da manipulação dos índices da string original. O `beginIndex` representa o índice do primeiro caractere da substring, enquanto o `endIndex` representa o índice do último caractere (não incluso). Isso significa que ao utilizar a função `substring()`, se o `endIndex` for maior que o `beginIndex`, a substring será extraída do `beginIndex` até o `endIndex` - 1.
-
-Além disso, as funções `substring()` e `subSequence()` também podem receber apenas um parâmetro, que representa o `beginIndex`, e neste caso a substring será extraída a partir do `beginIndex` até o final da string.
-
-## Veja também
-
-- [Documentação oficial de Kotlin - Extração de Substrings](https://kotlinlang.org/docs/reference/basic-types.html#substrings)
-- [Exemplo prático de extração de substrings em Kotlin](https://devtut.com/tutoriais/extrair-substring-em-kotlin.m945)
+- Documentação oficial de strings em Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
+- Tutorial de Kotlin sobre manipulação de strings: https://codelabs.developers.google.com/codelabs/kotlin-android-training-text/#1
+- Video tutorial sobre extração de substrings em Kotlin: https://www.youtube.com/watch?v=l5mupVdlTjI

@@ -1,42 +1,55 @@
 ---
 title:    "Bash: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości może być niezbędne w wielu różnych sytuacjach. Może pomóc w zaplanowaniu ważnych wydarzeń, takich jak urodziny czy wakacje, ale także w prowadzeniu biznesu lub innych działań. Dzięki temu narzędziu możesz uniknąć nieprzyjemnych niespodzianek i lepiej zorganizować swoje życie.
+Czasem w życiu potrzebujemy uwzględnić daty w przyszłości lub w przeszłości, zwłaszcza w kontekście programowania. Na przykład, potrzebujemy wyliczyć datę ważności ważnego dokumentu lub zaplanować zadania do wykonania w przyszłych dniach. Warto więc wiedzieć, jak obliczać daty w Bashu.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości w Bashu, możesz skorzystać z wbudowanych funkcji lub zewnętrznych narzędzi. Jeśli chcesz wyświetlić datę w przyszłości, użyj polecenia `date` wraz z opcją `+%Y-%m-%d`, która pozwoli Ci wprowadzić jedynie rok, miesiąc i dzień. Na przykład:
+Aby obliczyć datę w przyszłości lub w przeszłości w Bashu, użyjemy komendy `date`. Składnia jest następująca:
 
 ```Bash
-date -d "5 years" +%Y-%m-%d
+date -d "DATA OPERACJA LICZBOWA I JEDNOSTKA CZASU"
 ```
 
-W ten sposób wyświetlisz datę 5 lat od dziś. Jeśli chcesz wyświetlić datę w przeszłości, wystarczy dodać znak minus przed liczbą lat.
+Gdzie:
+- "DATA" to data odniesienia, czyli punkt, względem którego będziemy wyliczać datę.
+- "OPERACJA LICZBOWA" to liczba dni, miesięcy lub lat, którą chcemy dodać lub odjąć od daty odniesienia.
+- "JEDNOSTKA CZASU" to jednostka, w której wyrażona jest liczba (d - dni, m - miesiące, y - lata).
+
+Przykłady:
+
+Obliczanie daty w przyszłości:
 
 ```Bash
-date -d "-3 months" +%Y-%m-%d
+date -d "now 5 days"
+```
+Output: Thu Aug 12 22:24:22 CEST 2021
+
+Obliczanie daty w przeszłości:
+
+```Bash
+date -d "2021-08-01 2 months 4 days"
 ```
 
-Powyższe polecenie wyświetli datę sprzed 3 miesięcy.
+Output: Fri Jun 11 22:26:34 CEST 2021
+
+Kod jest prosty i intuicyjny, warto jednak przetestować i zapoznać się z dokumentacją komendy `date`, aby poznać więcej opcji i możliwości.
 
 ## Głębsza analiza
 
-Obliczanie daty w przyszłości lub przeszłości może być trudne, jeśli chcesz uwzględnić np. dni tygodnia lub święta. Dlatego warto zastosować bardziej zaawansowane narzędzia, takie jak biblioteka `dateutils` lub polecenie `cal`. Przykładowo, możesz wykorzystać polecenie `cal` do wyświetlenia kalendarza danego miesiąca:
+Komenda `date` jest częścią gnu coreutils, czyli zestawu narzędzi systemowych w systemach GNU/Linux. Oznacza to, że jest ona dostępna na wielu systemach operacyjnych i jest zgodna z ogólnie przyjętym standardem. Ponadto, komenda ta posiada wiele opcji, pozwalających na wyświetlanie daty w różnych formatach oraz dokładne wyliczenia czasu pomiędzy datami.
 
-```Bash
-cal 12 2020
-```
+Warto również wspomnieć, że Bash jest jednym z najpopularniejszych języków skryptowych, używanym przede wszystkim w systemach Linux i Unix. Poznanie jego możliwości z pewnością przyspieszy i ułatwi pracę z tymi systemami.
 
-Możesz także użyć funkcji `dateutils` do dodawania lub odejmowania dni od daty, a także uwzględnić okresy świąteczne czy dni wolne od pracy. Dzięki tym narzędziom możliwości obliczania daty w przyszłości lub przeszłości są nieograniczone.
+## Zobacz też
 
-## Zobacz także
-
-- [Dokumentacja polecenia `date` w Bashu](https://www.gnu.org/software/coreutils/date)
-- [Dokumentacja biblioteki `dateutils`](https://www.fresse.org/dateutils/)
-- [Opis polecenia `cal`](https://man7.org/linux/man-pages/man1/cal.1.html)
+- Dokumentacja komendy `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Lista jednostek czasu w komendzie `date`: https://www.gnu.org/software/coreutils/manual/html_node/Time-conversion-specifiers.html
+- Przykłady użycia komendy `date`: https://www.cyberciti.biz/faq/linux-unix-get-yesterdays-tomorrows-date/

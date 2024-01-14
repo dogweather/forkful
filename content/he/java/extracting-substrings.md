@@ -1,35 +1,49 @@
 ---
-title:    "Java: חילוץ מחרוזות מתוך מחשבות"
+title:    "Java: חילוץ חתיכות מחרוזת"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-ניתן לחשוב ששרשורים הם סוג של מחרוזת גדולה, אבל לעיתים קרובות נדרש לפענח את המחרוזת לחלקים קטנים יותר. לדוגמה, אולי נרצה לחלץ את המילה הראשונה משם מלא או לפענח את התאריך המלא מתוך מחרוזת ממוצעת. לפתור את הסוג הזה של בעיות, נשתמש בפעולת "חיתוך" של מחרוזת, המאפשרת לנו לחלץ חלק תת-מחרוזת בהתאם לתבנית ספציפית.
+למה כדאי לדוברי העברית ללמוד כיצד לחלץ תת-מחרוזות ב-Java? כי חלץ תת-מחרוזות הוא כלי חשוב בשפת תכנות זו ומאפשר לנו לטפל במחרוזות מסובכות בצורה יעילה ויצירתית.
 
-## איך לעשות זאת
+## כיצד
 
-כדי לחלץ תת-מחרוזות בקוד ג'אווה, נשתמש בפעולת `substring()` שמקבלת מספרי פרמטרים. הפרמטר הראשון הוא המיקום של התקן הראשון של התת-מחרוזת שנרצה לחלץ, והפרמטר השני הוא המיקום של התקן האחרון של התת-מחרוזת (או התקן האחרון + 1). דוגמאות לזהו:
-
-```Java
-String fullName = "Yoni Cohen";
-String firstName = fullName.substring(0, 4); // firstName יתאם ל "Yoni"
-String lastName = fullName.substring(5); // lastName יתאם ל "Cohen"
-```
-
-כמו כן, ניתן להשתמש בפעולת `indexOf()` כדי למצוא את המיקום של סמך מסויים במחרוזת ולהשתמש בו בפעולת `substring()`:
+תחילה, נגדיר מחרוזת עיקרית עם השם "str". לאחר מכן, נשתמש בפקודות המתאימות כדי לחלץ תת-מחרוזות מ-"str". לדוגמה, אם נרצה לחלץ את התת-מחרוזת "Java" מהמחרוזת העיקרית "Welcome to Java programming", נשתמש בפקודה str.substring(11, 15). המספרים 11 ו-15 מציינים את המיקום של התווים במחרוזת העיקרית מהם נרצה לחלץ את התת-מחרוזת.
 
 ```Java
-String date = "20210315";
-String year = date.substring(0, 4); // year יתאם ל "2021"
-String month = date.substring(4, 6); // month יתאם ל "03"
-String day = date.substring(6); // day יתאם ל "15"
+String str = "Welcome to Java programming";
+System.out.println(str.substring(11, 15));
+// Output: Java
 ```
 
-כדי להעביר תרגילים נוספים לתרגול, ניתן להמר את המחרוזת ללוח אותיות ולאחר מכן לנתח אותו באמצעות `substring()` כדי לחלץ תת-מחרוזות נוספות.
+בנוסף, ניתן להשתמש בפקודת str.indexOf("Java") כדי למצוא את המיקום הראשון של המחרוזת "Java" במחרוזת העיקרית ולשים אותו כמוצא לפקודת str.substring().
 
-## שוקלים עומק
+```Java
+String str = "Welcome to Java programming";
+int start = str.indexOf("Java");
+System.out.println(str.substring(start, start+4));
+// Output: Java
+```
 
-פעולת `substring()` איננה יעילה כמו בניין תת-מחרוזות ישירות מתוך רכיבי מחרוזת, כמו `StringBuilder` או `StringBuffer`. בעזרת `substring()` , המחרוזת המקורית תתעתק ות
+לנוחיותכם, ניתן לכתוב פקודת חלץ תת-מחרוזת כמתודה ולהשתמש בה כמקור עבור יותר מחרוזת אחת.
+
+```Java
+public static String substring(String mainStr, String subStr) {
+    int start = mainStr.indexOf(subStr);
+    int end = start + subStr.length();
+    return mainStr.substring(start, end);
+}
+
+String str = "Welcome to Java programming";
+String subStr = "Java";
+System.out.println(substring(str, subStr));
+// Output: Java
+```
+
+## חפירה עמוקה
+
+חלץ תת-מחרוזת הוא פעולה חשובה בעיבוד מחרוזות בשפת תכנות Java. המאמר הזה הסביר כיצד לממש את פקודת החלץ בצורה פשוטה וברורה, אך חשוב להיזהר מאיזושהי בעיות אפשריות. לדוגמה, אם התיחסות למיקום התת-מחרוזת במקור העיקרי תיעשה ללא עיוותים, כדי ל

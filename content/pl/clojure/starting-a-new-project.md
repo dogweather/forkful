@@ -1,27 +1,40 @@
 ---
 title:    "Clojure: Rozpoczynanie nowego projektu"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Dlaczego
 
-Tworzenie nowego projektu w programowaniu jest często jednym z najbardziej ekscytujących wyzwań. Poświęcasz swój czas i wiedzę, aby stworzyć coś nowego i użytecznego dla innych. Możliwości programowania są nieskończone, a stworzenie nowej aplikacji może być zarówno satysfakcjonujące, jak i przydatne.
+Tworzenie nowego projektu w Clojure może być świetną opcją dla programistów, którzy chcą pracować w funkcyjnym języku programowania o bogatych możliwościach. Clojure jest prosty w nauce i pozwala na szybkie tworzenie skalowalnych aplikacji. 
 
-## Jak zacząć
+##Jak zacząć
 
-Aby rozpocząć nowy projekt w Clojure, najpierw musisz zainstalować język i jego narzędzia. Następnie możesz utworzyć nowy projekt przy użyciu polecenia ```lein new app nazwaprojektu``` w swoim terminalu. Będzie to utworzyć szkielet projektu, który możesz edytować i dostosować do swoich potrzeb. Po zakończeniu edycji projektu, możesz uruchomić go poprzez polecenie ```lein run``` w swoim terminalu.
+Aby rozpocząć nowy projekt w Clojure, najpierw musisz pobrać i zainstalować Clojure na swoim komputerze. Następnie możesz użyć narzędzia Leiningen, aby utworzyć nowy projekt z domyślną strukturą.
 
-## Głębsze zagłębienie
+```Clojure
+lein new nazwa-projektu
+```
 
-Tworzenie nowego projektu w Clojure jest znacznie prostsze i szybsze dzięki narzędziu Leiningen. Możesz również skorzystać z biblioteki Clojars, aby dodawać zewnętrzne zależności do swojego projektu. Potrzebujesz również umiejętności w języku Clojure, aby móc tworzyć funkcje i struktury danych, które będą wykorzystywane w Twoim projekcie.
+Wygeneruje to katalog projektu z plikami źródłowymi, również w Clojure, już gotowymi do edycji. Następnie możesz uruchomić projekt, przechodząc do katalogu projektu i wywołując polecenie `lein run`. 
 
-Możesz także rozważyć użycie frameworka, takiego jak Luminus, aby szybko i łatwo stworzyć aplikację webową w Clojure. Istnieją również organizacje i społeczności dla programistów Clojure, które mogą pomóc Ci w rozpoczęciu nowego projektu.
+```Clojure
+cd nazwa-projektu
+lein run
+```
 
-## Zobacz również
+Po uruchomieniu projektu, powinieneś zobaczyć wyjście, które zostanie zdefiniowane w funkcji `main` w pliku źródłowym `core.clj`. 
 
-- [Clojure Dokumentacja](https://clojure.org/)
-- [Leiningen](https://leiningen.org/)
-- [Clojars](https://clojars.org/)
-- [Luminus](https://luminusweb.com/)
+##Głębsza analiza
+
+Kiedy już zaczniesz pracę nad swoim projektem, ważne jest, aby pamiętać o kilku rzeczach. Po pierwsze, Clojure promuje programowanie funkcyjne, co oznacza, że powinieneś unikać mutacji danych i stosować operacje na niezmienialnych danych. Po drugie, warto korzystać z biblioteki standardowej Clojure, która zawiera wiele przydatnych funkcji do manipulacji danymi.
+
+Możesz również rozważyć użycie narzędzia CIDER, które jest popularnym środowiskiem programowania Clojure dla edytora kodu Emacs. Umożliwia to wygodne debugowanie i testowanie Twojego kodu.
+
+##Zobacz również
+
+- [Oficjalna strona Clojure](https://clojure.org/)
+- [Dokumentacja Leiningen](https://leiningen.org/)
+- [Strona CIDER](https://cider.readthedocs.io/en/latest/)

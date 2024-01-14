@@ -1,46 +1,61 @@
 ---
-title:    "Elm: Få dagens dato"
+title:    "Elm: Å få gjeldende dato"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å få den nåværende datoen er en vanlig oppgave i Elm-programmering. Det kan være nyttig for å vise brukeren når informasjonen ble oppdatert eller for å planlegge når noe skal vises eller skje. 
 
-## Slik gjør du det
-For å få den nåværende datoen i Elm, kan du bruke funksjonen `currentDate` fra `Time` biblioteket. Først må du importere dette biblioteket ved å legge til følgende linje øverst i koden din:
+Det kan ofte være nødvendig å hente ut dagens dato i et programmeringsprosjekt. Dette kan være for å vise brukere når noe ble opprettet eller oppdatert, eller for å sammenligne datoer og utføre ulike operasjoner basert på det. I denne bloggposten skal vi se på hvordan man kan få ut dagens dato i Elm-programmering.
 
-```Elm
-import Time
-```
+## Hvordan
 
-Deretter kan du bruke `currentDate` funksjonen som følger:
+For å få ut dagens dato i Elm bruker vi den innebygde funksjonen `Date.today`. Denne kan kalles på følgende måte:
 
 ```Elm
-Time.currentDate
+Date.today
 ```
 
-Dette vil gi deg et `Date` objekt som inneholder informasjon om den nåværende datoen, inkludert dag, måned, år, timer, minutter og sekunder. Du kan også spesifisere en tidssone som parameter til `currentDate` funksjonen for å få datoen i en bestemt tidssone.
+Funksjonen vil returnere en `Date` type som inneholder dagens dato. For å gjøre dette mer visuelt formatert, kan vi bruke funksjonen `toString` for å konvertere datoen til en lesbar streng:
 
 ```Elm
-Time.currentDate Time.utc
+import Date
+
+Date.today
+    |> Date.toString
 ```
 
-Kjører denne koden vil returnere den nåværende datoen i UTC-tidssone. 
+Dette vil returnere en streng på formatet "YYYY-MM-DD". Vi kan også få ut deler av datoen ved å bruke funksjoner som `year`, `month` og `day`:
+
+```Elm
+Date.today
+    |> Date.year
+    |> toString
+```
+
+```Elm
+Date.today
+    |> Date.month
+    |> toString
+```
+
+```Elm
+Date.today
+    |> Date.day
+    |> toString
+```
+
+Kombiner gjerne disse funksjonene for å få ut ønsket format.
 
 ## Dypdykk
-Å få den nåværende datoen i Elm er enkelt, men det er viktig å være klar over hvordan Elm håndterer datoer. Elm har en innebygd `Date` type som er satt sammen av dag, måned, år, timer, minutter og sekunder. Denne typen er immutable, noe som betyr at den ikke kan endres. Dette sikrer at datoverdier alltid er konsistente og unngår mulige feil.
 
-For å bruke datoen i et brukergrensesnitt, kan du bruke funksjonen `Date.toYearMonthDay` fra `Time` biblioteket til å hente ut år, måned og dag fra `Date` objektet. Dette gjør det lettere å vise datoen på ønsket format. 
+I tillegg til `Date.today` finnes det andre nyttige funksjoner for å håndtere datoer i Elm. `Date.fromParts` lar deg lage en `Date` type ved å gi den et år, en måned og en dag. `Date.fromString` lar deg lage en `Date` type ved å gi den en streng på formatet "YYYY-MM-DD".
 
-```Elm
-Date.toYearMonthDay myDate
-```
-
-Hvis du trenger å sammenligne datoer, kan du bruke funksjonen `Date.compare` fra `Time` biblioteket. Denne funksjonen sammenligner to `Date` objekter og returnerer en `LT` hvis den første datoen er mindre enn den andre, `EQ` hvis de er like, og `GT` hvis den første datoen er større enn den andre. Dette kan være nyttig for å sortere datoer eller for å sjekke om en dato kommer før eller etter en annen.
+Det finnes også funksjoner for å utføre operasjoner på datoer, som for eksempel å legge til eller trekke fra dager, måneder eller år.
 
 ## Se også
-- [Offisiell Elm dokumentasjon for Time biblioteket](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Weekly nyhetsbrev om håndtering av datoer i Elm](https://elmweekly.nl/articles/handling-dates-in-elm)
-- [Elm Slides om Time biblioteket](https://slides.com/kevinemu/to-time-in-elm#/)
+
+- [Offisiell Elm dokumentasjon for Date modulen](https://package.elm-lang.org/packages/elm/core/latest/Date)
+- [Elm-repl for å teste ut forskjellige dato-operasjoner](https://elm-lang.org/try)

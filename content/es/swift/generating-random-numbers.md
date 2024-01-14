@@ -1,38 +1,41 @@
 ---
-title:    "Swift: Generando números aleatorios"
+title:    "Swift: Generación de números aleatorios"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios en Swift?
+## Por qué
 
-Generar números aleatorios es una habilidad esencial para cualquier programador, ya que permite crear aplicaciones más dinámicas e interactivas. Además, en Swift, hay varias maneras de generar números aleatorios, lo que lo convierte en una tarea fácil y divertida de aprender.
+Generar números aleatorios es una parte fundamental de la programación para crear juegos, aplicaciones de azar, y realizar pruebas de software. También puede ser útil en situaciones donde se desee simular o generar datos de manera aleatoria.
 
-## Cómo hacerlo en Swift
+## Cómo hacerlo
 
-Para generar números aleatorios en Swift, hay dos formas principales de hacerlo: utilizando el método `randomElement()` de la clase `Array` o el método `random()` de la clase `Int` o `Double`.
+Para generar un número aleatorio en Swift, se puede utilizar la función `random()` en conjunto con la clase `Int`. Por ejemplo, si queremos generar un número aleatorio entre 1 y 100, podemos usar el siguiente código:
 
-- Utilizando `randomElement()`:
-```Swift
-let array = [1, 2, 3, 4, 5] 
-let randomElement = array.randomElement() // Obtener un elemento aleatorio del array
-print(randomElement) // Salida: un número aleatorio del array, por ejemplo: 3
+```
+let randomNumber = Int.random(in: 1...100)
+print(randomNumber)
 ```
 
-- Utilizando `random()`:
-```Swift
-let randomNumber = Int.random(in: 1...10) // Generar un número entero aleatorio entre 1 y 10
-print(randomNumber) // Salida: un número aleatorio entre 1 y 10, por ejemplo: 7
+Este código crea una constante llamada `randomNumber` que contiene un número entero aleatorio entre 1 y 100 y luego lo imprime en la consola. Otra forma de generar un número aleatorio es utilizando la función `arc4random_uniform()`, que devuelve un número entero entre 0 y el número que se le pasa como parámetro menos uno. Por ejemplo:
+
+```
+let randomNumber = Int(arc4random_uniform(100))
+print(randomNumber)
 ```
 
-## Profundizando en la generación de números aleatorios en Swift
+Con este código, se generará un número aleatorio entre 0 y 99 y se imprimirá en la consola.
 
-Para una mayor personalización, en Swift también podemos especificar el rango de números aleatorios que queremos generar, utilizando el método `random(in:)`. Además, también es posible utilizar `shuffle()` para mezclar los elementos de un array de manera aleatoria.
+## Profundizando
 
-Otra opción interesante es utilizar `randomSource` de la clase `Generator` para crear una fuente personalizada de números aleatorios, lo que nos permite un mayor control sobre la generación de estos números.
+La generación de números aleatorios en programación no es en realidad aleatoria, sino que se basa en un algoritmo que calcula una secuencia de números que parecen ser aleatorios. En Swift, se utiliza el algoritmo Mersenne Twister, que es uno de los algoritmos más confiables y ampliamente utilizados para generar números aleatorios.
+
+Además, es importante tener en cuenta que en programación, los números aleatorios se generan a partir de una semilla, que es básicamente un punto de inicio para el algoritmo. Si se utiliza la misma semilla, se generará la misma secuencia de números. Por esta razón, es recomendable utilizar una semilla diferente cada vez que se desee generar una secuencia de números aleatorios.
 
 ## Ver también
 
-- [Documentación oficial de Swift sobre generación de números aleatorios](https://developer.apple.com/documentation/swift/).
-- [Tutorial en español sobre generación de números aleatorios en Swift](https://www.appstudio.dev/tutorial/generar-numeros-aleatorios-en-swift/).
+- [Documentación oficial de Swift sobre generación de números aleatorios](https://developer.apple.com/documentation/swift/double/random)
+- [Artículo sobre la importancia de utilizar semillas diferentes en la generación de números aleatorios](https://www.calculatorsoup.com/calculators/math/randomseed.php)
+- [Más información sobre el algoritmo Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)

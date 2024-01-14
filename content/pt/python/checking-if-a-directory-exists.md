@@ -1,37 +1,51 @@
 ---
 title:    "Python: Verificando se um diretório existe"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificamos se um diretório existe?
+## Por que checar se um diretório existe no Python?
 
-Frequentemente, ao escrever um programa em Python, pode ser necessário verificar se um determinado diretório existe antes de tentar trabalhar com ele. Isso pode ser útil para garantir que o programa não tente acessar um diretório inexistente e cause erros. Também pode ser útil para garantir que um diretório exista antes de criar um novo arquivo dentro dele.
+Se você é um programador Python, provavelmente já se deparou com a necessidade de verificar se um diretório existe antes de inserir ou manipular arquivos dentro dele. Isso é importante para evitar erros e garantir que seu código esteja funcionando corretamente. Neste artigo, explicaremos como fazer isso de forma simples e eficaz.
 
 ## Como fazer
 
-Para verificar se um diretório existe em Python, podemos usar a função `path.exists()` do módulo `os`. Vamos ver um exemplo de código:
+Para verificar se um diretório existe no Python, podemos usar o módulo `os` e a função `path.exists()`. Primeiro, importamos o módulo `os` em nosso código:
 
 ```Python
 import os
-
-diretorio = "documentos"
-
-if os.path.exists(diretorio):
-  print("O diretório existe!")
-else:
-  print("O diretório não existe.")
 ```
 
-Este código primeiro importa o módulo `os`, que contém funções relacionadas a sistemas operacionais. Em seguida, definimos a variável `diretorio` com o nome do diretório que queremos verificar. Então, usamos a função `path.exists()` para verificar se o diretório existe. Se existir, o programa imprimirá "O diretório existe!". Caso contrário, imprimirá "O diretório não existe.".
+Em seguida, usamos a função `path.exists()` para verificar se o diretório existe (neste exemplo, estamos verificando se o diretório "docs" existe):
 
-## Deep Dive
+```Python
+if os.path.exists("docs"):
+    print("O diretório 'docs' existe.")
+else:
+    print("O diretório 'docs' não existe.")
+```
 
-A função `path.exists()` verifica se um determinado caminho existe no sistema de arquivos atual. Portanto, pode ser usado para verificar não apenas a existência de diretórios, mas também de arquivos. É importante notar que essa função só retornará `True` se o caminho especificado for um diretório ou arquivo real, e não apenas um caminho válido. Isso significa que, mesmo que o caminho seja válido, se não houver um diretório ou arquivo correspondente, a função sempre retornará `False`.
+Se o diretório existir, a mensagem "O diretório 'docs' existe." será impressa. Caso contrário, a mensagem "O diretório 'docs' não existe." será exibida. É importante lembrar que a função `path.exists()` retorna `True` se o caminho existir e `False` se não existir.
+
+Podemos até mesmo usar a função `path.isdir()` para verificar se o caminho especificado é um diretório:
+
+```Python
+if os.path.isdir("docs"):
+    print("O caminho especificado é um diretório.")
+else:
+    print("O caminho especificado não é um diretório.")
+```
+
+## Mergulho profundo
+
+A função `path.exists()` faz parte do módulo `os.path`, que possui outras funções úteis para trabalhar com caminhos de diretório, como verificar se é um arquivo ou diretório, listar arquivos e diretórios em um determinado caminho, entre outras funcionalidades.
+
+Além disso, é importante ressaltar que a função `path.exists()` também pode ser usada para verificar se um arquivo existe. Nesse caso, ela retornará `True` se o arquivo existir e `False` se não existir.
 
 ## Veja também
 
-- Documentação oficial do módulo `os`: https://docs.python.org/3/library/os.html
-- Tutorial sobre como trabalhar com diretórios em Python: https://www.geeksforgeeks.org/python-os-path-module/
-- Exemplo de código para criar um novo diretório em Python: https://www.programiz.com/python-programming/directory
+- Documentação oficial do módulo `os.path`: https://docs.python.org/3/library/os.path.html#module-os.path
+- Como criar um diretório no Python: https://www.alura.com.br/artigos/como-criar-um-diretorio-no-python
+- Como listar arquivos e diretórios com Python: https://www.devmedia.com.br/listando-arquivos-e-diretorios-com-python/38050

@@ -1,77 +1,55 @@
 ---
 title:    "Rust recipe: Checking if a directory exists"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Rust is a newer programming language that has gained popularity for its focus on memory safety and high performance. When working with file and directory manipulation in Rust, it is important to ensure that the code is robust and can handle any potential errors. One common task in file manipulation is checking if a directory exists before proceeding with any operations. In this blog post, we will explore how to do this in Rust.
+Have you ever encountered a situation in your Rust programming where you need to check if a directory exists? Many developers may wonder why this is necessary, especially if they are used to other languages where directory creation is automatically handled. However, in Rust, checking if a directory exists is important for ensuring proper file handling and preventing errors in your code. In this blog post, we will explore how to check if a directory exists in Rust and why it is beneficial to do so.
 
 ## How To
 
-To check if a directory exists in Rust, we can use the `metadata` method from the `std::fs` module. This method returns a `Result` type which can either be `Ok(metadata)` if the directory exists or `Err(error)` if it does not. Let's see an example of how this works:
+Let's dive right into some coding examples to see how we can check if a directory exists in Rust.
 
 ```Rust
 use std::fs;
 
-fn main() {
-    let path = "./test_directory";
-
-    // Check if directory exists
-    let result = fs::metadata(path);
-    match result {
-        Ok(metadata) => println!("{} exists", path),
-        Err(_) => println!("{} does not exist", path),
-    }
+let directory = "/my_directory";
+if fs::metadata(directory).is_ok() {
+    println!("The directory exists!");
+} else {
+    println!("The directory does not exist.");
 }
 ```
 
-In this example, we first import the `std::fs` module which contains the necessary functions for file and directory manipulation. Then, we declare a variable `path` which holds the path to the directory we want to check. The `fs::metadata` method is used to check if the directory exists and returns a `Result` type. We can use the `match` statement to handle both possible outcomes - `Ok` or `Err`. In the `Ok` case, we print a message indicating that the directory exists, and in the `Err` case, we print a message indicating that it does not exist.
+In this example, we first import the `fs` module from the standard library in order to use the `metadata` function. Next, we provide the path of the directory we want to check. This path is then passed as an argument to the `metadata` function, which returns a `Result` type. We can then use the `is_ok` method to check if the directory exists or not, and print an appropriate message to the user.
 
-Let's run this code and see the output:
-
-```sh
-$ cargo run
-./test_directory exists
-```
-
-We can also use the `is_dir` method from the `std::fs::Metadata` struct to check if the path is a directory. This method returns a `bool` value of `true` if it is a directory, or `false` if it is not. Here's an example of how to use it:
+We can also use the `Path` struct from the `std::path` module to do the same check:
 
 ```Rust
-use std::fs;
+use std::path::Path;
 
-fn main() {
-    let path = "./test_file.txt";
-
-    // Check if path is a directory
-    let metadata = fs::metadata(path).unwrap();
-    if metadata.is_dir() {
-        println!("{} is a directory", path);
-    } else {
-        println!("{} is not a directory", path);
-    }
+let directory = Path::new("/my_directory");
+if directory.exists() {
+    println!("The directory exists!");
+} else {
+    println!("The directory does not exist.");
 }
 ```
 
-In this example, we use the `unwrap` method on the `Result` returned by `fs::metadata` because we are sure that the path given is for a file (not a directory) and we don't need to handle the `Err` case. Then, we use an `if` statement to check if the `metadata` returned is a directory or not. We print the appropriate message based on the result.
-
-Let's run this code and see the output:
-
-```sh
-$ cargo run
-./test_file.txt is not a directory
-```
+Using the `exists` method on a `Path` object will also return a `bool` value depending on the existence of the directory.
 
 ## Deep Dive
 
-Under the hood, the `fs::metadata` method uses the `stat` system call to get the metadata of the given path. This includes information such as the file's size, permissions, and timestamps. If the given path exists, the `fs::metadata` method will return `Ok` with the metadata. However, if the given path does not exist, it will return `Err` with a `NotFound` error, indicating that the file or directory does not exist.
+Now, let's take a deeper look into what happens when we perform a check for a directory's existence in Rust. Behind the scenes, the `metadata` function calls the operating system's metadata system call to retrieve information about the directory. If the call returns an error, it means that the directory does not exist or there was some other issue with accessing it. This is why the `metadata` function returns a `Result` type, as there can be different types of errors that could occur.
 
-It is also worth noting that the `fs::metadata` method can be used to check for other types of paths as well, such as files, symbolic links, and even special devices. So, it is a versatile method for checking any type of path.
+Using the `Path` struct's `exists` method also calls the same system call and returns the same `Result` type, but it is handled internally, giving a cleaner and more straightforward code.
 
 ## See Also
 
-- [Rust Documentation: fs::metadata](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Rust Cookbook: Check If a Path Is a Directory](https://rust-lang-nursery.github.io/rust-cookbook/file/dir.html#check-if-a-path-is-a-directory)
-- [Rust by Example: Error Handling](https://doc.rust-lang.org/stable/rust-by-example/error/multiple_error_types/try.html)
+- Rust Standard Library Documentation for `fs` module: [https://doc.rust-lang.org/std/fs/](https://doc.rust-lang.org/std/fs/)
+- Rust Standard Library Documentation for `std::path` module: [https://doc.rust-lang.org/std/path/](https://doc.rust-lang.org/std/path/)
+- Rust Book - Working with Files: [https://doc.rust-lang.org/book/working-with-files.html](https://doc.rust-lang.org/book/working-with-files.html)

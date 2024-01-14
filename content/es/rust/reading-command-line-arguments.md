@@ -1,57 +1,60 @@
 ---
 title:    "Rust: Leyendo argumentos de línea de comandos"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+A la hora de escribir un programa, muchas veces se desea recibir información del usuario directamente desde la línea de comandos. En este post, aprenderemos cómo leer argumentos de línea de comandos en Rust para poder realizar acciones personalizadas en nuestros programas.
 
-El manejo de argumentos de línea de comando es una habilidad esencial para cualquier programador de Rust. Esta técnica te permitirá crear aplicaciones más versátiles y personalizables, y también te ayudará a mejorar tu comprensión de Rust.
+## Cómo Hacerlo
+La lectura de argumentos de línea de comandos en Rust es muy sencilla gracias a la librería estándar `std::env`. Para utilizarla, simplemente debemos importarla al principio de nuestro programa:
 
-## Cómo hacerlo
-
-Para leer los argumentos de línea de comando en Rust, se utiliza el módulo "std::env". Primero, se importa el módulo con la siguiente línea de código: 
-
-```Rust 
-use std::env; 
+```Rust
+use std::env;
 ```
 
-Luego, se utiliza la función "args" del módulo para obtener un iterator que contiene los argumentos ingresados en la línea de comando. Por ejemplo, si el usuario ingresa "cargo run [argumento1] [argumento2]", se obtendrá un iterator con los argumentos [argumento1] y [argumento2]. 
+Luego, podemos utilizar la función `args()` para obtener una lista de los argumentos pasados por línea de comandos:
 
-Para acceder a estos argumentos, se utiliza el método "next" en el iterator. En cada llamada, este método devuelve un "Option" que puede ser "Some" si hay un argumento presente, o "None" si ya se han leído todos los argumentos. Por lo tanto, se utiliza un "match" para procesar los argumentos de forma adecuada. 
+```Rust
+let args: Vec<String> = env::args().collect();
+```
 
-A continuación, se muestra un ejemplo de código que lee dos argumentos de línea de comando e imprime su valor en la consola:
+Ahora, si ejecutamos nuestro programa desde la línea de comandos con algunos argumentos, por ejemplo:
 
-```Rust 
-use std::env;
+```bash
+./mi_programa arg1 arg2 arg3
+```
 
-fn main() {
-    let mut args = env::args();
-    args.next(); // Se descarta el primer argumento que es el nombre del programa
-    // Se leen los dos argumentos ingresados en la línea de comando
-    let arg1 = args.next().unwrap();
-    let arg2 = args.next().unwrap();
-    
-    println!("El primer argumento es: {}", arg1);
-    println!("El segundo argumento es: {}", arg2);
+La variable `args` tendrá una lista con los mismos argumentos en el mismo orden. Podemos acceder a ellos utilizando su índice, por ejemplo:
+
+```Rust
+let primer_arg = &args[1];
+let tercer_arg = &args[3];
+```
+
+También podemos utilizar la función `len()` para obtener la cantidad de argumentos recibidos, y el bucle `for` para recorrerlos todos:
+
+```Rust
+for argumento in args.iter() {
+    println!("{}", argumento);
 }
 ```
 
-El resultado de ejecutar este programa con los argumentos "Hola" y "Mundo" sería:
+De esta forma, podemos utilizar los argumentos de línea de comandos para modificar el comportamiento de nuestro programa.
 
+## Inmersión Profunda
+Además de los argumentos que el usuario pasa a través de la línea de comandos, también es posible obtener información del entorno en el que se está ejecutando el programa. Esto se puede hacer utilizando la función `var()` de la librería `std::env`, que nos permite obtener el valor de una variable de entorno específica.
+
+Por ejemplo, si queremos obtener el nombre de usuario del usuario que está ejecutando nuestro programa, podemos utilizar la variable de entorno `USER`:
+
+```Rust
+let usuario = env::var("USER").unwrap();
+println!("El usuario actual es {}", usuario);
 ```
-El primer argumento es: Hola
-El segundo argumento es: Mundo
-```
-## Profundizando más
 
-Además de leer los argumentos de línea de comando básicos, Rust ofrece otras funcionalidades que pueden ser de utilidad. Una de ellas es la posibilidad de especificar opciones y parámetros en los argumentos. Esto se logra utilizando el módulo "clap", que ofrece una sintaxis más amigable y un manejo más avanzado de los argumentos. 
-
-También es posible manejar errores al leer los argumentos utilizando el módulo "std::env::ArgsOs", que devuelve un iterator que contiene objetos tipo "OsString" en lugar de "String". Esto permite manejar de forma segura los argumentos que contienen caracteres unicode o con espacios en blanco.
-
-## Ver también
-
-- Documentación oficial de Rust sobre el módulo "std::env": https://doc.rust-lang.org/std/env/index.html
-- Ejemplos de uso del módulo "std::env": https://github.com/rust-lang/rust-by-example/blob/master/flow_control/command_line_arguments.md
-- Documentación del módulo "clap": https://docs.rs/clap/2.33.0/clap/
+## Ver También
+- [Documentación de `std::env` - Rust](https://doc.rust-lang.org/std/env/index.html)
+- [Tutorial: Argumentos de línea de comandos en Rust](https://www.rust-lang.org/learn/cli-arguments)

@@ -1,66 +1,42 @@
 ---
-title:    "Javascript: Att använda regelbundna uttryck"
+title:    "Javascript: Användning av reguljära uttryck"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Regular expressions (eller regex) är ett kraftfullt verktyg inom JavaScript som används för att utföra sökningar och manipulationer på textsträngar. Genom att använda regex kan du på ett effektivt sätt hitta specifika mönster i text och sedan ersätta eller bearbeta dem enligt dina behov. Detta gör det till en mycket användbar funktion för många olika programmeringsuppgifter.
 
-Regular expressions är ett kraftfullt verktyg inom Javascript-programmering. Genom att använda sig av reguljära uttryck kan man effektivt söka, ersätta och manipulera textmönster i sina program. Detta kan spara mycket tid och göra koden mer lättläst.
-
-## Hur man använder reguljära uttryck i Javascript
-
-För att använda reguljära uttryck i Javascript behöver man först skapa ett reguljärt uttryck objekt med hjälp av följande syntax:
+## Hur man använder sig av Regex
+För att använda regex i JavaScript behöver du använda dig av ett fördefinierat objekt som heter RegExp, vilket står för Regular Expression. Den här objekttypen innehåller metoder för att utföra sökningar och ersättningar på textsträngar. Du kan definiera ett regex-uttryck genom att använda RegExp-konstruktorn eller genom att använda en literal notation. Till exempel:
 
 ```Javascript
-let re = /mönster/gi;
+// Använda RegExp-konstruktorn
+let regex = new RegExp('test');
+
+// Använda literal notation
+let regex = /test/;
 ```
 
-Detta skapar ett reguljärt uttryck som söker efter ett visst mönster, i det här fallet "mönster", i en sträng. Den "g" som kommer efter "/" indikerar att uttrycket ska vara globalt, det vill säga leta efter alla förekomster av mönstret och inte bara den första. Den "i" som kommer efter "g" gör att uttrycket ska vara skiftlägesokänsligt, det vill säga att det inte spelar roll om bokstäverna är stora eller små.
-
-För att söka efter mönstret i en sträng använder man sig av metoden "test()":
+När regex är definierat, kan du sedan använda olika metoder som "test()" och "exec()" för att utföra en sökning på en textsträng. Till exempel:
 
 ```Javascript
-let text = "Detta är en text med mönstret som ska matchas.";
-
-console.log(re.test(text));
+let text = 'Detta är en testtext';
+let regex = /test/;
+regex.test(text); // Returnerar true om det finns en match
+regex.exec(text); // Returnerar den matchande texten som en array
 ```
 
-I detta fall kommer uttrycket att returnera "true" eftersom mönstret finns i strängen "text".
+Det finns också olika sökmodifikatorer som till exempel "i" för att ignorera stor- och småbokstäver eller "g" för att hitta alla matchningar istället för den första bara. Du kan använda en kombination av dessa för att få mer precisa sökresultat.
 
-Man kan även använda reguljära uttryck för att söka efter meddelanden direkt i en sträng med hjälp av metoden "match()":
+## Djupdykning
+Regex är väldigt kraftfullt, men det kan också vara ganska komplicerat att förstå till en början. Det är viktigt att ha en bra förståelse för de olika metoder och modifikatorer som finns tillgängliga för att använda regex på ett effektivt sätt. Det finns många olika online-resurser där du kan lära dig mer om regex, inklusive tutorial-videor, interaktiva övningar och referensguider.
 
-```Javascript
-let text = "Här är en text med flera förekomster av mönstret.";
-
-console.log(text.match(re));
-```
-
-Denna kod kommer att returnera en array med alla förekomster av mönstret i texten.
-
-## En djupdykning i reguljära uttryck
-
-Reguljära uttryck är inte bara användbara för att söka efter mönster, utan kan även användas för att manipulera och ersätta text i en sträng. Genom att använda sig av speciella symboler och uttryck kan man enkelt skapa mer avancerade reguljära uttryck.
-
-Till exempel kan man använda sig av "()" för att gruppera delar av uttrycken och "$" för att referera till dessa grupper senare:
-
-```Javascript
-let re = /([A-Za-z]+)\s([A-Za-z]+)/;
-
-let name = "John Doe";
-
-let newName = name.replace(re, "$2, $1");
-
-console.log(newName);
-```
-
-Denna kod kommer att ta bort mellanslaget i "John Doe" och byta plats på för- och efternamn, vilket resulterar i "Doe, John".
-
-Det finns många fler användbara symboler och uttryck som kan hjälpa till att skapa mer avancerade och effektiva reguljära uttryck. En bra resurs för att lära sig mer är "RegExr" som kan hittas i "See Also"-avsnittet nedan.
+Ett annat viktigt koncept att förstå är att regex använder sig av "metatecken", som är symboler som har speciella betydelser. Till exempel, "." står för ett valfritt tecken och "*" står för noll eller flera förekomster av det föregående tecknet. Detta kan vara ganska förvirrande i början, men genom att öva och experimentera med olika uttryck blir det snart en andra natur att utforma regex-uttryck.
 
 ## Se även
-
-- [En interaktiv guide till reguljära uttryck](https://regexr.com/)
-- [W3Schools guide till reguljära uttryck](https://www.w3schools.com/js/js_regexp.asp)
-- [MDN web docs om reguljära uttryck i Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [MDN: RegExp objektet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Regex tutorial för nybörjare](https://www.regular-expressions.info/tutorial.html)
+- [Regex testare](https://regexr.com/) - En praktisk online-verktyg för att testa dina regex-uttryck.

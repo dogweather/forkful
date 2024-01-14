@@ -1,61 +1,41 @@
 ---
 title:    "TypeScript: Buscando y reemplazando texto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Reemplazar texto es una tarea común en programación. Ya sea que esté cambiando nombres de variables o corrigiendo errores de ortografía, la capacidad de buscar y reemplazar texto de manera eficiente es esencial para un flujo de trabajo eficaz en TypeScript.
+¿Alguna vez te has encontrado en la situación de tener que cambiar todas las instancias de una palabra o frase en un archivo de código? Puede ser una tarea tediosa y propensa a errores si se hace manualmente. Afortunadamente, TypeScript tiene una función incorporada que facilita la búsqueda y reemplazo de texto en tus archivos de código.
 
 ## Cómo hacerlo
-La sintaxis básica para buscar y reemplazar texto en TypeScript es la siguiente:
+Para realizar una búsqueda y reemplazo de texto en TypeScript, puedes usar el método `replace()` aplicado a una cadena de texto. Aquí hay un ejemplo de cómo podrías usarlo:
 
 ```TypeScript
-texto.replace(valorBuscado, valorReemplazado);
+let texto = "Hola, soy un texto de ejemplo";
+console.log(texto.replace("hola", "adiós"));
 ```
+**Salida:** Adiós, soy un texto de ejemplo
 
-Este método toma dos parámetros: el valor que desea buscar y el valor con el que desea reemplazarlo. Por ejemplo, si desea reemplazar la palabra "gato" con "perro" en el siguiente texto:
+En este ejemplo, utilizamos el método `replace()` para buscar y reemplazar la palabra "hola" por "adiós" en la cadena de texto. Puedes usar esta función para reemplazar una palabra o varias palabras en una cadena.
 
-```TypeScript
-let texto = "Me encanta mi gato doméstico";
-
-texto = texto.replace("gato", "perro");
-
-console.log(texto);
-
-// Output: Me encanta mi perro doméstico
-``` 
-
-También puede usar expresiones regulares para realizar búsquedas más complejas y reemplazos utilizando las siguientes sintaxis:
+También puedes utilizar expresiones regulares en el método `replace()` para hacer búsquedas más avanzadas. Por ejemplo, si quisieras reemplazar todas las letras mayúsculas en una cadena por minúsculas, puedes hacer lo siguiente en tu código TypeScript:
 
 ```TypeScript
-texto.replace(/expresiónRegular/g, valorReemplazado);
+let texto = "Hola, Soy UN TEXTO De Ejemplo";
+console.log(texto.replace(/[A-Z]/g, (letra) => letra.toLowerCase()));
 ```
+**Salida:** hola, soy un texto de ejemplo
 
-Por ejemplo, si desea reemplazar todas las apariciones de la palabra "es" con "son" en el siguiente texto:
-
-```TypeScript
-let texto = "Ellos son muy simpáticos";
-
-texto = texto.replace(/es/g, "son");
-
-console.log(texto);
-
-// Output: Ellos son muy simpáticos
-```  
+Usamos una expresión regular para buscar todas las letras mayúsculas (indicada por `[A-Z]`) y luego las reemplazamos con su equivalente en minúsculas utilizando la función de flecha en el método `replace()`. Este es solo un ejemplo simple de cómo puedes utilizar expresiones regulares para realizar búsquedas y reemplazos más avanzados.
 
 ## Profundizando
-Finalmente, es importante destacar algunas cosas a tener en cuenta al buscar y reemplazar texto en TypeScript:
+En TypeScript, también puedes usar la función `replaceAll()` para reemplazar todas las instancias de una cadena por otra. Esta función está disponible en TypeScript 4.1 o superior, por lo que asegúrate de tener la versión correcta antes de usarla.
 
-- El método `replace` no modifica el valor original de la variable. Debe asignar el resultado a una nueva variable o reemplazarla en la misma variable, como se mostró en los ejemplos anteriores.
-
-- Si desea reemplazar todas las apariciones de un valor, debe usar una expresión regular con la bandera `g` para que se realice una búsqueda global. De lo contrario, solo se reemplazará la primera aparición del valor.
-
-- El método `replace` es sensible a mayúsculas y minúsculas. Si desea realizar un reemplazo insensible a mayúsculas y minúsculas, puede usar la bandera `i` en la expresión regular.
+Otra forma de realizar búsquedas y reemplazos es utilizando la librería externa `regex-replace` que te permite realizar búsquedas y reemplazos utilizando expresiones regulares de una manera más intuitiva.
 
 ## Ver también
-Aquí hay algunos recursos adicionales para aprender más sobre cómo buscar y reemplazar texto en TypeScript:
-
-- [Documentación oficial de TypeScript sobre el método `replace`](https://www.typescriptlang.org/docs/handbook/enums.html)
-- [Tutorial de W3Schools sobre expresiones regulares en JavaScript](https://www.w3schools.com/js/js_regexp.asp)
+- [Documentación oficial de TypeScript sobre el método replace()](https://www.typescriptlang.org/docs/handbook/strings.html#search-and-replace)
+- [Guía de expresiones regulares en TypeScript](https://www.regular-expressions.info/typescript.html)
+- [Librería regex-replace](https://www.npmjs.com/package/regex-replace)

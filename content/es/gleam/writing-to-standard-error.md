@@ -1,74 +1,47 @@
 ---
-title:    "Gleam: Escribir en el error estándar"
+title:    "Gleam: Redacción en el error estándar"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Hola a todos! ¿Alguna vez han encontrado un error en su programa de Gleam y no saben cómo solucionarlo? Bueno, en este blog post te enseñaré cómo escribir a la salida de error estándar en Gleam. ¡Comencemos!
+## Por qué escribir a la salida de error estándar en Gleam
 
-## ¿Por qué?
+Cuando estamos codificando en Gleam, es importante tener formas eficientes de manejar posibles errores o excepciones en nuestro código. Una forma de hacerlo es a través de la función `io.standard_error/1`. Esto nos permite escribir mensajes personalizados a la salida de error estándar, lo que puede ayudarnos a entender y solucionar problemas en nuestro código.
 
-Primero, es importante entender por qué escribir a la salida de error estándar podría ser útil. Cuando escribimos a esta salida, estamos indicando que algo ha ido mal en nuestro código y que necesitamos corregirlo. Esto nos ayuda a identificar y solucionar errores en nuestro programa de manera más eficiente.
+## Cómo hacerlo en Gleam
+```Gleam
+fn escribir_a_error(valor) {
+  case valor {
+    Ok -> "¡Todo bien!"
+    Error(error) -> io.standard_error("¡Error encontrado: $(error)")
+  }
+}
+```
+En este ejemplo, usamos la función `io.standard_error/1` para escribir un mensaje personalizado si ocurre un error al ejecutar la función `escribir_a_error`. Al llamar a la función `escribir_a_error`, podemos ver que su resultado se envía a la salida de error estándar utilizando la sintaxis de la cadena de interpolación `$(...)`.
 
-## ¿Cómo hacerlo?
-
-Es muy sencillo escribir a la salida de error estándar en Gleam. Simplemente usamos la función `stderr.write` seguida del mensaje que queremos imprimir. Veamos un ejemplo:
+La salida de error estándar también se puede utilizar para mostrar información de depuración en tiempo de ejecución. Por ejemplo, si queremos ver los valores de algunas variables en un punto específico de nuestro código, podemos usar la función `io.println/1` dentro de un bloque `if` y así obtener esta información en la salida de error estándar.
 
 ```Gleam
-use gleam/io
+let nombre = "Juan"
+let ciudad = "Madrid"
 
-fn print_error() {
-  stderr.write("¡Oops, parece que hay un error!")
+if nombre == "Juan" {
+  io.standard_error("El nombre es correcto: $(nombre)")
 }
 
-print_error()
+io.println("Mi ciudad es: $(ciudad)")
 ```
 
-El resultado sería el siguiente en la terminal:
+En este caso, solo el nombre "Juan" coincidirá con la condición del `if`, por lo que tendremos "El nombre es correcto: Juan" impreso en la salida de error estándar. Además, todas las veces que se llama a `io.println/1` se imprimirá un mensaje en la salida estándar. Con esto, podemos monitorear y depurar nuestro código de manera más efectiva.
 
-```
-¡Oops, parece que hay un error!
-```
+## Profundizando en la escritura a la salida de error estándar
+La función `io.standard_error/1` es parte del módulo `io`, que nos brinda funciones para leer y escribir en diferentes streams. Esta función en particular toma un argumento de tipo `String` y lo escribe en la salida de error estándar. También podemos pasar un segundo argumento opcional de tipo `Number` para especificar el código de error, lo que puede ser útil cuando necesitamos manejar errores específicos en nuestras aplicaciones.
 
-## Profundizando
-
-Ahora que ya sabemos cómo escribir a la salida de error estándar, podemos profundizar un poco más en el tema. Podemos usar la función `stderr.write` para imprimir cualquier tipo de dato, ya sea una cadena de texto, un número o incluso una lista. Además, también podemos utilizar la función `stderr.writeln` para imprimir una cadena de texto seguida de un salto de línea. Veamos un ejemplo de ambos casos:
-
-```Gleam
-use gleam/io
-use gleam/str
-
-fn print_error() {
-  // Imprime una cadena de texto
-  stderr.write("¡Oops, parece que tenemos un error!")
-
-  // Imprime un número
-  stderr.write(str.to_int(42))
-
-  // Imprime una lista
-  stderr.write(str.to_list("Esto también es un error"))
-
-  // Imprime una cadena de texto seguida de un salto de línea
-  stderr.writeln("Todos cometemos errores, ¡pero también aprendemos de ellos!")
-}
-
-print_error()
-```
-
-El resultado sería el siguiente en la terminal:
-
-```
-¡Oops, parece que tenemos un error!
-42
-[69, 115, 116, 111, 32, 116, 97, 109, 98, 105, 233, 110, 32, 101, 115, 32, 117, 110, 32, 101, 114, 114, 111, 114]
-Todos cometemos errores, ¡pero también aprendemos de ellos!
-```
-
-Con esto, ya sabes todo lo necesario para escribir a la salida de error estándar en Gleam. ¡Espero que este blog post te sea de ayuda!
+Además de la función `io.standard_error/1`, también podemos utilizar `io.print/1` y `io.println/1` para escribir a la salida de error estándar, aunque estas son más adecuadas para la salida estándar. También podemos utilizar la macro `log!` del módulo `gleam.log`, que es una abstracción de la función `io.standard_error/2` y nos permite escribir mensajes de manera más fácil utilizando la sintaxis de la cadena de interpolación.
 
 ## Ver también
-
-- Documentación oficial de Gleam para la función `stderr.write`: [https://gleam.run/documentation/stdlib/io#write](https://gleam.run/documentation/stdlib/io#write)
-- Documentación oficial de Gleam para la función `stderr.writeln`: [https://gleam.run/documentation/stdlib/io#writeln](https://gleam.run/documentation/stdlib/io#writeln)
-- Artículo sobre manejo de errores en Gleam: [https://sheharyar.me/blog/error-handling-gleam/](https://sheharyar.me/blog/error-handling-gleam/)
+- Documentación oficial de Gleam sobre el módulo `io`: https://gleam.run/s/gbfhm9xj5w.pdf
+- Ejemplos prácticos de uso de la salida de error estándar en Gleam: https://gleam.run/s/gwdvvqC3rO
+- Entrada de blog de Gleam sobre el manejo de errores en Gleam: https://gleam.run/blog/error-handling-in-gleam.html

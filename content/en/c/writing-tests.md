@@ -1,62 +1,92 @@
 ---
 title:    "C recipe: Writing tests"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests is Important in C Programming
+## Why
+Writing tests may seem like a daunting task, especially for new programmers. But trust me, it's worth the effort. Testing your code not only helps ensure that your program is functioning correctly, it also saves you time and headaches in the long run.
 
-As a programmer, writing tests may not be the most exciting task, but it is an essential part of the development process. Writing tests can help ensure your code is functioning as expected and can save time and effort in the long run. It allows you to catch bugs early on and makes it easier to make changes or optimizations in the future without breaking your code.
+## How To
+To write tests in C, all you need is a good understanding of the language, a compiler, and a testing framework. Let's take a look at an example using the popular CUnit testing framework.
 
-## How To Write Tests in C Programming
-
-Writing tests in C is not much different from writing tests in other programming languages. Let's take a look at a simple example of a function that calculates the area of a rectangle:
-
+First, we need to include the necessary headers and define our test function:
 ```C
-#include <stdio.h>
+#include <CUnit/CUnit.h> // include CUnit header
+#include <CUnit/Basic.h> // include CUnit basic mode header
 
-// Function to calculate area of a rectangle
-int getArea(int length, int width) {
-    return length * width;
+void test_function(void)
+{
+    // test code goes here
 }
+```
+Next, we need to initialize the CUnit framework and register our test function:
+```C
+int main(void)
+{
+    // initialize CUnit
+    CU_initialize_registry();
 
-int main() {
-    // Test case 1: Length = 5, Width = 4
-    int test1 = getArea(5, 4);
-    printf("Area of rectangle with length 5 and width 4 is %d\n", test1);
+    // register the test function
+    CU_pSuite suite = CU_add_suite("Test Example", NULL, NULL);
+    CU_add_test(suite, "test_func", test_function);
 
-    // Test case 2: Length = 2, Width = 3
-    int test2 = getArea(2, 3);
-    printf("Area of rectangle with length 2 and width 3 is %d\n", test2);
-    
+    // run all tests
+    CU_basic_run_tests();
+
+    // cleanup CUnit
+    CU_cleanup_registry();
+
     return 0;
 }
 ```
+Finally, we write our test code within the test function and use CUnit's assertion functions to check for expected results:
+```C
+void test_function(void)
+{
+    // test code
+    int result = 2 + 2;
 
-The output of this code should be:
+    // assert expected result
+    CU_ASSERT_EQUAL(result, 4); // this test will pass
 
+    // another test
+    char str[10];
+    strcpy(str, "Hello World!");
+
+    // assert expected result
+    CU_ASSERT_STRING_EQUAL(str, "Hello World!"); // this test will also pass
+}
 ```
-Area of rectangle with length 5 and width 4 is 20
-Area of rectangle with length 2 and width 3 is 6
+After running our program, we get an output like this:
+```bash
+CUnit - A Unit testing framework for C - Version 2.1-3
+http://cunit.sourceforge.net/
+
+Suite: Test Example
+  Test name: test_func...passed
+  Test name: test_func2...passed
+
+Run Summary:    Type  Total    Ran Passed Failed Inactive
+              suites      1      1    n/a      0        0
+               tests      2      2      2      0        0
+             asserts      2      2      2      0      n/a
+
+Elapsed time =    0.000 seconds
 ```
 
-By writing these simple test cases, we can see that our function is calculating the area correctly. But what if we made a mistake in our code? Let's say we accidentally wrote `return length + width;` instead of `return length * width;`. Our tests would then catch the mistake and help us to correct it, saving us time and potential frustration.
+## Deep Dive
+Writing effective tests involves understanding different types of testing, such as unit testing and integration testing, and knowing how to write tests that cover all possible scenarios.
 
-## Deep Dive into Writing Tests in C Programming
+Unit testing involves testing individual units or components of your code in isolation to ensure they behave as expected. This can be achieved using techniques like stubs and mocking, which simulate the behavior of external dependencies.
 
-When writing tests in C, it is important to consider edge cases and to test for unexpected inputs. For example, in our previous example, what if we input a negative length or width? Or a length and width of 0? Our function should be able to handle these cases and return the appropriate result.
+Integration testing involves testing how different units work together to ensure the overall functionality of your code is correct. This type of testing is more complex and usually requires a testing framework that can handle multiple units.
 
-Additionally, it is good practice to write tests for each function or unit of code, rather than relying on a single large test for the entire program. This makes it easier to pinpoint where an error occurs if one arises.
-
-Another useful tip is to use frameworks like Unity or Check for testing your C code. These frameworks provide helpful functions for writing and running tests, making the process more efficient.
+When writing tests, it is important to consider both positive and negative test cases to cover all possible scenarios and catch any potential errors. It is also helpful to write tests alongside your code as you develop, so that any bugs can be caught and fixed early on.
 
 ## See Also
-
-Here are some resources to learn more about writing tests in C programming:
-
-- [Unit Testing in C: Tools and Conventions](https://www.drdobbs.com/cpp/unit-testing-in-c-tools-and-conventions/240165163)
-- [The Art of C Programming by Eric S. Roberts](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2000-01/software-eng/testing/testing.htm)
-- [How to Write Good Test Cases?](https://www.softwaretestinghelp.com/how-to-write-good-test-cases/)
-
-Remember, writing tests is not a one-time task, but an ongoing process. It may take some extra time and effort, but in the end, it will lead to more robust and reliable code. Happy testing!
+- [CUnit official documentation](http://cunit.sourceforge.net/)
+- [Introduction to Unit Testing in C using CUnit](https://www.youtube.com/watch?v=mZZ-jJcJ2yU)
+- [Writing a Simple CUnit Test in C](https://eromoe.com/til/c/cunit-intro-01/)

@@ -1,45 +1,34 @@
 ---
 title:    "Elm: Utiliser les expressions régulières"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Les expressions régulières sont un outil puissant et polyvalent pour manipuler et rechercher du texte dans vos programmes Elm. Ils vous permettent de trouver et de manipuler des motifs spécifiques dans une chaîne de caractères, ce qui est particulièrement utile lors de la validation de données ou de la recherche d'informations dans des fichiers.
+
+Les expressions régulières sont un outil essentiel pour tous les développeurs, car elles permettent de rechercher et de manipuler rapidement des chaînes de caractères dans du code ou du texte. En utilisant des expressions régulières, vous pouvez écrire des règles pour trouver des motifs spécifiques dans une grande quantité de données, ce qui peut simplifier considérablement la tâche de traitement et de manipulation des données.
 
 ## Comment faire
-Pour utiliser les expressions régulières en Elm, vous devez d'abord importer le module Regex. Ensuite, vous pouvez créer un modèle en utilisant la fonction `regex` suivie du motif que vous souhaitez chercher. Par exemple, si vous voulez trouver tous les nombres dans une chaîne de caractères, vous pouvez utiliser le modèle `regex "\\d+"`.
 
-Une fois que vous avez créé votre modèle, vous pouvez l'utiliser pour effectuer différentes opérations telles que la validation de données ou la recherche de motifs dans une chaîne de caractères. Voici un exemple de code Elm montrant comment utiliser une expression régulière pour valider un numéro de téléphone :
+Pour utiliser des expressions régulières en Elm, il vous suffit d'importer le module Regex dans votre fichier. Ensuite, vous pouvez utiliser la fonction `Regex.find` pour rechercher un motif spécifique dans une chaîne de caractères donnée. Par exemple, si vous souhaitez trouver tous les mots qui commencent par "elm" dans une chaîne de caractères, vous pouvez utiliser la règle `elm[a-z]*` pour trouver tous les mots correspondants.
 
-```Elm
+```
 import Regex
 
--- Définition du modèle pour un numéro de téléphone au format (XXX) XXX-XXXX
-let phoneRegex = Regex.regex "\\(\\d{3}\\) \\d{3}-\\d{4}"
+myString = "J'aime programmer en Elm car c'est un langage élégant et efficace."
 
--- Fonction pour valider un numéro de téléphone en utilisant le modèle
-let validatePhone number =
-  Regex.contains phoneRegex number
-
--- Tests
-validatePhone "(123) 456-7890"  -- renvoie True
-validatePhone "123-456-7890"    -- renvoie False
+Regex.find (Regex.regex "elm[a-z]*") myString
+-- Output: Just "elmener" (unmatched: "elon")
 ```
 
-Dans l'exemple ci-dessus, nous utilisons le modèle `phoneRegex` pour vérifier si un numéro de téléphone est au bon format. Vous pouvez également utiliser les expressions régulières pour extraire des données d'une chaîne de caractères en associant le motif à une partie de la chaîne à l'aide de la fonction `Regex.find` ou `Regex.replace`.
-
 ## Plongée en profondeur
-Les expressions régulières sont un outil flexible et puissant, mais elles peuvent être délicates à comprendre au début. Il existe de nombreux motifs et opérateurs différents que vous pouvez utiliser pour correspondre à des motifs spécifiques. Certains patrons courants incluent `\d` pour correspondre à n'importe quel chiffre, `\w` pour correspondre à n'importe quel caractère alphanumérique et `[a-z]` pour correspondre à n'importe quel caractère de la plage donnée.
 
-Pour en savoir plus sur les expressions régulières en Elm, vous pouvez consulter les ressources suivantes :
-
-- Documentation officielle Elm : [Module Regex]()https://package.elm-lang.org/packages/elm/regex/latest/)
-- Tutoriel vidéo sur les expressions régulières en Elm : [Expressions régulières en Elm avec Kris Jenkins](https://www.youtube.com/watch?v=UNRuQ3zNaeE)
-- Tutoriel écrit sur les expressions régulières en Elm : [Utiliser des expressions régulières en Elm](https://www.andrewgharrington.com/why-you-should-use-regular-expressions-in-elm/)
+Les expressions régulières peuvent sembler intimidantes au début, avec toutes les règles et les caractères spéciaux, mais une fois que vous avez compris les bases, elles peuvent être incroyablement utiles. Vous pouvez utiliser des groupes de capture pour extraire des parties spécifiques d'une chaîne de caractères, ou encore utiliser des opérateurs logiques pour créer des règles plus complexes. De plus, vous pouvez utiliser le débogage en temps réel avec l'outil Regex101 pour tester et affiner vos expressions régulières.
 
 ## Voir aussi
-- [Expressions régulières en Elm sur la documentation officielle](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Vidéo YouTube sur les expressions régulières en Elm](https://www.youtube.com/watch?v=UNRuQ3zNaeE)
-- [Tutoriel écrit sur les expressions régulières en Elm](https://www.andrewgharrington.com/why-you-should-use-regular-expressions-in-elm/)
+
+- [Documentation Elm pour le module Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Tutoriel Regex en français](https://regex101.com/)
+- [Exemples pratiques pour apprendre les expressions régulières](https://www.regular-expressions.info/examples.html)

@@ -1,48 +1,64 @@
 ---
-title:    "PHP: Juntando cadeias de caracteres"
+title:    "PHP: Unindo strings"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque
+##Por que
 
-A concatenação de strings é uma técnica muito útil na programação PHP para combinar duas ou mais strings em uma única string. Isso pode ser útil para criar mensagens, gerar saídas de dados ou manipular informações em seu código. É uma maneira eficiente de tornar seu código mais dinâmico e flexível.
+Muitas vezes, em programação, é necessário combinar várias strings em uma única string. Isso pode ser feito por uma variedade de razões, como formatar um texto, criar uma URL ou construir uma consulta de banco de dados. Em PHP, a concatenação de strings é uma técnica importante e útil que você deve conhecer.
 
-## Como fazer
+##Como Fazer
 
-Para concatenar strings em PHP, é necessário usar o operador `.` (ponto). Veja um exemplo de como fazer isso abaixo:
+Em PHP, a concatenação de strings é realizada usando o operador "." (ponto). Isso permite que você combine duas ou mais strings em uma única string. Veja o exemplo abaixo:
 
 ```PHP
-<?php
-$primeiro_nome = "João";
+$nome = "João";
 $sobrenome = "Silva";
-$nome_completo = $primeiro_nome . " " . $sobrenome;
+//concatenando as strings
+$nome_completo = $nome . " " . $sobrenome;
 echo $nome_completo;
+//saída: João Silva
 ```
 
-Neste exemplo, declaramos duas variáveis contendo o primeiro nome e sobrenome de uma pessoa. Em seguida, usamos o operador `.` para concatená-las em uma única string, adicionando também um espaço entre elas. Por fim, usamos o comando `echo` para imprimir o resultado na tela, que seria "João Silva".
-
-Além disso, também é possível usar a função `sprintf()` para concatenar strings. Esta função permite que você substitua marcadores de posição (%s) para as variáveis desejadas. Veja um exemplo:
+Você também pode usar a função `concat()` para realizar a concatenação:
 
 ```PHP
-<?php
-$primeiro_nome = "Maria";
-$sobrenome = "Gomes";
-$nome_completo = sprintf("Olá, meu nome é %s %s", $primeiro_nome, $sobrenome);
+$nome = "Maria";
+$sobrenome = "Santos";
+//concatenando as strings
+$nome_completo = concat($nome, " ", $sobrenome);
 echo $nome_completo;
+//saída: Maria Santos
 ```
 
-Neste caso, o valor da variável `$primeiro_nome` substituirá o primeiro marcador de posição (%s) e o valor da variável `$sobrenome` substituirá o segundo marcador de posição (%s), resultando na saída "Olá, meu nome é Maria Gomes".
+Além disso, é possível usar o operador de atribuição composto `.=` para acrescentar uma string a outra já existente:
 
-## Profundidade
+```PHP
+$frase = "Eu amo ";
+$lugar = "Portugal";
+//concatenando as strings
+$frase .= $lugar;
+echo $frase;
+//saída: Eu amo Portugal
+```
 
-A concatenação de strings podem ser feitas de diversas maneiras e é importante entender quando usar cada uma delas. Além disso, também é importante estar ciente de que a concatenação de strings pode ser um pouco mais lenta do que outras formas de manipulação de strings. Portanto, é sempre bom testar e encontrar a melhor opção para o seu código.
+Lembrando que a concatenação também pode ser feita com variáveis que contêm números ou outros tipos de dados, não apenas com strings.
 
-Outra dica importante é sempre ter cuidado com a formatação da string concatenada, pois erros podem ocorrer se não houver espaços ou símbolos de concatenação corretamente. Além disso, tome cuidado para não exceder o limite de memória ao manipular grandes quantidades de strings.
+##Mergulho Profundo
 
-## Veja também
+No PHP, a concatenação de strings é um processo relativamente eficiente, mas é importante se atentar a alguns detalhes para evitar erros:
 
-- [Documentação oficial do PHP sobre concatenação de strings](https://www.php.net/manual/en/language.operators.string.php)
-- [Tutorial sobre concatenação de strings no PHP](https://www.tutorialrepublic.com/php-tutorial/php-string-concatenation.php)
-- [Dicas para otimizar a concatenação de strings em PHP](https://www.slimframework.com/docs/v3/cookbook/fast-strings.html)
+- Verifique se as variáveis que serão concatenadas existem e estão definidas corretamente antes de realizar a concatenação.
+- Use aspas simples (`'`) em vez de aspas duplas (`"`) quando possível, pois isso é mais rápido e só avaliará a string literal, em vez de qualquer variável dentro da string.
+- Use o operador de concatenação somente se não for possível combinar as strings usando a função `printf()` ou as concatenando com a vírgula (`,`).
+
+Seguindo essas dicas, você estará apto a concatenar strings eficientemente e sem problemas.
+
+##Veja Também
+
+- [Documentação do PHP para Concatenação de Strings](https://www.php.net/manual/pt_BR/language.operators.string.php)
+- [Vídeo Tutorial: Concatenação de Strings em PHP](https://www.youtube.com/watch?v=8kqS5YWnA1A)
+- [Guia de Referência para PHP: Função Concat()](https://www.php.net/manual/pt_BR/function.concat.php)

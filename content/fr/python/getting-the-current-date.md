@@ -1,72 +1,64 @@
 ---
 title:    "Python: Obtenir la date actuelle"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi obtenir la date actuelle est important en programmation Python?
+## Pourquoi
 
-Lorsque vous travaillez sur des projets de programmation avec Python, vous devrez souvent utiliser la date actuelle dans votre code. Cela peut sembler trivial, mais connaître la date actuelle peut être utile dans de nombreuses situations, telles que la gestion du temps, les tâches planifiées et les enregistrements de données.
+La date est un élément fondamental de notre vie quotidienne, et les ordinateurs n'échappent pas à cette règle. Avec Python, il est possible d'obtenir la date actuelle de différentes manières, ce qui peut s'avérer utile pour de nombreuses tâches de programmation.
 
-## Comment obtenir la date actuelle avec Python
+## Comment faire
 
-Il existe plusieurs façons d'obtenir la date actuelle en utilisant Python. Voici un exemple de code simple utilisant le module `datetime` pour imprimer la date actuelle :
-
-```Python
-import datetime
-
-now = datetime.datetime.now()
-print(now)
-```
-
-Lorsque vous exécutez ce code, vous obtiendrez l'heure et la date actuelles au format `année-mois-jour heure:minute:seconde.microseconde`. Mais vous pouvez également formater la sortie pour afficher la date d'une manière plus lisible, voici un exemple :
+La méthode la plus simple pour obtenir la date actuelle en Python est d'utiliser le module `datetime`. Il suffit d'importer ce module dans votre code et d'utiliser la fonction `date.today()` pour obtenir la date actuelle au format `année-mois-jour`. Voici un exemple de code :
 
 ```Python
 import datetime
 
-now = datetime.datetime.now()
-print(now.strftime("%d/%m/%Y, %H:%M:%S"))
+aujourd'hui = datetime.date.today()
+
+print(aujourd'hui)
 ```
 
-Cela affichera la date et l'heure actuelles au format `jour/mois/année, heure:minute:seconde`. Vous pouvez également utiliser le module `time` pour obtenir la date actuelle sous forme d'une estampille de temps (timestamp) en secondes depuis l'époque :
+Lorsque vous exécutez ce code, vous devriez obtenir une sortie similaire à ceci : `2020-11-24`. Cette méthode est rapide et efficace pour obtenir la date actuelle, mais elle ne permet pas de personnaliser le format de la date.
 
-```Python
-import time
-
-now = time.time()
-print(now)
-```
-
-## Deep Dive
-
-En utilisant le module `datetime`, il est possible d'obtenir plus de détails sur la date actuelle, tels que le jour de la semaine, le mois et l'année. Voici un exemple de code qui utilise ces informations pour imprimer un message de salutation personnalisé en fonction du jour de la semaine :
+Si vous souhaitez avoir un meilleur contrôle sur le format de la date, vous pouvez utiliser la fonction `strftime()` du module `datetime`. Cette fonction permet de convertir la date en une chaîne de caractères personnalisée en utilisant des codes spécifiques. Voici un exemple de code :
 
 ```Python
 import datetime
 
-now = datetime.datetime.now()
-day = now.strftime("%A")
+aujourd'hui = datetime.date.today()
 
-if day == "Monday":
-  print("Bonjour, c'est le début d'une nouvelle semaine !")
-elif day == "Friday":
-  print("Bonjour, c'est bientôt le week-end !")
-else:
-  print("Bonjour, c'est un jour ordinaire.")
+format = "%d/%m/%Y"
+
+date_formattee = aujourd'hui.strftime(format)
+
+print(date_formattee)
 ```
 
-Vous pouvez également utiliser le module `calendar` pour obtenir une vue du calendrier du mois en cours :
+La sortie sera alors sous la forme `24/11/2020`, selon le format choisi. Vous pouvez trouver la liste complète des codes de formatage sur la documentation officielle de Python.
+
+## Plongez un peu plus profond
+
+Si vous souhaitez aller plus loin dans la manipulation des dates en Python, vous pouvez également utiliser le module `calendar`. Ce module propose des fonctions pour créer des calendriers personnalisés, calculer le jour de la semaine pour une date donnée, ou encore vérifier si une année est bissextile. Voici un exemple de code pour calculer le nombre de jours dans un mois spécifique :
 
 ```Python
 import calendar
 
-month = calendar.month(datetime.datetime.now().year, datetime.datetime.now().month)
-print(month)
+mois = 11 # novembre
+annee = 2020
+
+nombre_jours = calendar.monthrange(annee, mois)[1]
+
+print(nombre_jours)
 ```
+
+La sortie sera `30`, car novembre a 30 jours en 2020. Vous pouvez également utiliser le module `time` pour obtenir l'heure actuelle et la convertir en différentes unités de temps (secondes, minutes, heures) pour une utilisation dans vos programmes.
 
 ## Voir aussi
 
-- [Documentation officielle de Python pour le module `datetime`](https://docs.python.org/fr/3/library/datetime.html)
-- [Tutorialspoint - Python Date & Time](https://www.tutorialspoint.com/python/python_date_time.htm)
-- [Real Python - Working with Dates and Times Using the datetime Module](https://realpython.com/python-datetime/)
+- Documentation officielle de Python : https://docs.python.org/fr/3/library/datetime.html
+- Tutoriel sur les dates en Python : https://realpython.com/python-date-time/
+- Tutoriel sur le module `calendar` : https://www.programiz.com/python-programming/datetime/calendar

@@ -1,13 +1,16 @@
 ---
-title:    "Go: Omvandla en sträng till gemener"
+title:    "Go: Omvandla en sträng till små bokstäver"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-**Varför:** Att konvertera en sträng till små bokstäver är en vanlig uppgift inom programmering och kan vara användbart när man till exempel vill matcha användarinmatning oberoende av stor- och små bokstäver.
+## Varför
 
-**Hur man gör det:** Det finns flera sätt att konvertera en sträng till små bokstäver i Go, men en av de mest effektiva är att använda inbyggda funktionen `ToLower()` från paketet `strings`. Här är ett exempel på hur man kan implementera det:
+Att konvertera en sträng till gemener kan vara användbart när man behöver söka och jämföra text på ett icke-skillnadskänsligt sätt.
+
+## Hur man gör
 
 ```Go
 package main
@@ -18,19 +21,29 @@ import (
 )
 
 func main() {
-	str := "HELLO WORLD"
+	str := "Hej på dig!"
 	fmt.Println(strings.ToLower(str))
 }
 
-// Output: hello world
 ```
 
-I detta exempel använder vi `strings.ToLower()` för att konvertera vår sträng till små bokstäver och sedan skriver ut resultatet med `fmt.Println()`.
+Output:
+```shell
+hej på dig!
+```
 
-**Djupdykning:** När man konverterar en sträng till små bokstäver är det viktigt att förstå hur det fungerar bakom kulisserna. Go använder Unicode-formatet för att representera tecken, vilket innebär att varje tecken har en unik nummerkod. När man konverterar en sträng till små bokstäver, jämförs varje tecken mot sin nummerkod för att avgöra om det behöver konverteras eller inte.
+## Djupdykning
 
-**Se även:** 
-- [Go strings package](https://pkg.go.dev/strings)
-- [Unicode and UTF-8 in Go](https://blog.golang.org/strings)
+Konvertering av strängar till gemener är en vanlig uppgift inom programmering. För att uppnå detta kan man använda funktionen `ToLower` från paketet `strings`. Denna funktion omvandlar alla bokstäver i en sträng till gemener och returnerar sedan en ny sträng.
 
-Förhoppningsvis har denna artikel gett dig en grundläggande förståelse för hur man konverterar en sträng till små bokstäver i Go. Var inte rädd för att experimentera och hitta den metod som fungerar bäst för ditt specifika fall. Lycka till med din Go-programmering!
+Det finns dock några viktiga saker att tänka på vid denna konvertering. Beroende på språk och skrivstil kan resultaten variera. Det är därför viktigt att förstå vilka tecken som kan påverkas av konverteringen och att hantera dessa korrekt.
+
+Ett annat vanligt problem är skillnaden mellan Unicode och ASCII-tecken. Om din sträng innehåller Unicode-tecken är det viktigt att använda rätt funktion för att konvertera till gemener, till exempel `ToLowerSpecial` som hanterar alla Unicode-tecken korrekt.
+
+Med förståelse för dessa saker kan du enkelt och korrekt konvertera strängar till gemener i ditt Go-program.
+
+## Se även
+
+- [Go Dokumentation om string package](https://golang.org/pkg/strings/)
+- [Go Dokumentation om Unicode](https://blog.golang.org/strings)
+- [Go Dokumentation om Rune](https://golang.org/pkg/unicode/utf8/)

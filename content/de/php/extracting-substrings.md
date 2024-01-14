@@ -1,42 +1,40 @@
 ---
-title:    "PHP: Teilstrings extrahieren"
+title:    "PHP: Extrahieren von Teilen einer Zeichenkette"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum Extracting Substrings in der PHP-Programmierung wichtig ist
+## Warum
 
-Das Extrahieren von Teilzeichenketten oder auch Substrings genannt, ist ein essentieller Prozess in der PHP-Programmierung. Dabei werden bestimmte Teile einer Zeichenkette ausgelesen und weiterverwendet. Dies kann zum Beispiel bei der Verarbeitung von Benutzereingaben oder der Manipulation von Datenbankwerten nützlich sein. In diesem Blogbeitrag werden wir uns genauer mit diesem Thema befassen und Ihnen zeigen, wie Sie Substrings in PHP extrahieren können.
+Die Extraktion von Teilstrings ist eine häufige Aufgabe bei der Programmierung in PHP. Sie ermöglicht es uns, bestimmte Teile von Zeichenketten (Strings) zu isolieren und damit besser manipulieren und verarbeiten zu können. In diesem Blogbeitrag werde ich erklären, warum es wichtig ist, die Funktionen zur Extraktion von Teilstrings zu beherrschen und wie man sie in der Praxis anwenden kann.
 
-## Wie man Substrings in PHP extrahiert
+## Wie
 
-Um Substrings in PHP zu extrahieren, gibt es verschiedene Funktionen. Eine der gängigsten ist die `substr()` Funktion. Diese Funktion benötigt zwei Parameter, die Zeichenkette selbst und die gewünschte Anzahl an Zeichen, die extrahiert werden sollen. Schauen wir uns dazu ein Beispiel an:
+Um Teilstrings aus einer Zeichenkette zu extrahieren, können wir in PHP die Funktion `substr()` verwenden. Diese Funktion erwartet als ersten Parameter die Zeichenkette, aus der der Teilstring extrahiert werden soll, und als zweiten Parameter eine Startposition, ab der der Teilstring beginnen soll. Optional kann noch ein dritter Parameter angegeben werden, der die Länge des Teilstrings festlegt. Hier ein Beispiel:
 
 ```PHP
-$string = "Dies ist ein Beispieltext.";
-
-// Extrahiert die ersten 4 Zeichen
-$subString = substr($string, 0, 4);
-echo $subString;
-
-// Output: Dies
+$string = "Hello World!";
+$subString1 = substr($string, 0, 5); // Ausgabe: "Hello"
+$subString2 = substr($string, 6); // Ausgabe: "World!"
 ```
 
-Wie Sie sehen, gibt die `substr()` Funktion den Substring "Dies" aus, da wir die ersten 4 Zeichen extrahiert haben. Hier können Sie auch die Position angeben, ab der der Substring extrahiert werden soll, zum Beispiel `substr($string, 5, 4)` für die Zeichen ab Position 5.
+Wenn kein dritter Parameter angegeben wird, wird die Funktion alle Zeichen ab der angegebenen Startposition bis zum Ende der Zeichenkette zurückgeben. Die Funktion `mb_substr()` kann verwendet werden, um Mehrbyte-Zeichen zu verarbeiten.
 
-Eine weitere nützliche Funktion ist `mb_substr()`, die speziell für die Verarbeitung von mehrbyte-Zeichenketten, wie zum Beispiel Umlaute, entwickelt wurde. Hier funktioniert die Verwendung genauso wie bei `substr()`.
+## Deep Dive
 
-## Tiefergehende Informationen über das Extrahieren von Substrings
+Um noch tiefer in das Thema einzutauchen, schauen wir uns die UTF-8-Kodierung genauer an. Diese Kodierung ist in PHP standardmäßig eingestellt und kann Auswirkungen auf die Extraktion von Teilstrings haben. Wenn wir beispielsweise einen Teilstring aus einem mehrbyte-Zeichen extrahieren möchten, müssen wir die Position des Zeichens berücksichtigen. Hier ist ein Beispiel:
 
-Es ist wichtig zu wissen, dass die `substr()` Funktion nicht immer die beste Wahl ist, um Substrings zu extrahieren. Dies liegt daran, dass die Funktion nicht zwischen einzelnen Buchstaben, sondern zwischen einzelnen Bytes unterscheidet. Bei der Verwendung von mehrbyte-Zeichenketten kann dies zu Problemen führen.
+```PHP
+$string = "Füße";
+$subString = substr($string, 0, 2); // Ausgabe: "Fü"
+$subString = mb_substr($string, 0, 5); // Ausgabe: "Füße"
+```
 
-Für eine genauere Methode gibt es die `mb_substr()` Funktion, die für mehrbyte-Zeichenketten geeignet ist. Sie benötigt zusätzlich noch einen Parameter für die Zeichenkodierung.
-
-Eine weitere Möglichkeit ist die `preg_match()` Funktion, die reguläre Ausdrücke verwendet, um Substrings zu extrahieren. Mit dieser Funktion können Sie zum Beispiel nach bestimmten Mustern suchen und diese extrahieren.
+Wie wir sehen, müssen wir bei der Verwendung von `substr()` die Startposition basierend auf der Anzahl der Bytes des Zeichens auswählen, während `mb_substr()` die Anzahl der Zeichen erwartet.
 
 ## Siehe auch
 
-- [Offizielle PHP Dokumentation für substr()](https://www.php.net/manual/en/function.substr.php)
-- [Offizielle PHP Dokumentation für mb_substr()](https://www.php.net/manual/en/function.mb-substr.php)
-- [Offizielle PHP Dokumentation für preg_match()](https://www.php.net/manual/en/function.preg-match.php)
+- PHP Dokumentation zu substr(): https://www.php.net/manual/de/function.substr.php
+- PHP Dokumentation zu mb_substr(): https://www.php.net/manual/de/function.mb-substr.php

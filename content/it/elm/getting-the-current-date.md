@@ -1,57 +1,70 @@
 ---
 title:    "Elm: Ottenere la data corrente"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ottenere la data corrente è una funzionalità molto comune in programmazione e può essere utile in molte situazioni diverse. Ad esempio, è utile per mostrare la data in una pagina web, per generare report giornalieri o per calcolare l'età di una persona.
+Molte volte, quando stiamo scrivendo codice in Elm, abbiamo bisogno di visualizzare la data corrente. Ci può essere una funzionalità che deve essere attivata solo in una determinata data o semplicemente vogliamo aggiungere la data ai nostri log di debug. In questo articolo vedremo come ottenere la data corrente in Elm.
 
 ## Come fare
 
-Per ottenere la data corrente in Elm, possiamo utilizzare la funzione predefinita `Time.now`. Questa funzione restituisce la data e l'ora attuali come un record contenente le informazioni sul fuso orario e l'offset rispetto all'ora di Greenwich.
+Per ottenere la data corrente in Elm, possiamo utilizzare la funzione `Date.now`, che ci darà un valore di tipo `Date` rappresentante il momento in cui viene chiamata.
 
-````Elm
-import Time exposing (now)
+Un'importante cosa da notare è che la funzione `Date.now` è dipendente dal tempo di sistema del dispositivo che esegue il programma. Se il dispositivo ha una data o un orario errato, questo influenzerà anche il valore restituito da `Date.now`.
 
-main = 
-  now
-  |> Debug.log "Data corrente"
-````
-
-Output:
-
-````
-Data corrente: { millis = 1607379235123, posix = Time.Posix 1607379235 123000, zone = Time.Zone.utc, offset = 0 }
-````
-
-Possiamo anche ottenere la data corrente con una formattazione specifica utilizzando la funzione `Time.format`. Ad esempio, se vogliamo ottenere solo il giorno, il mese e l'anno nella forma "gg/mm/aaaa", possiamo fare così:
-
-````Elm
-import Time exposing (now, format, Date)
+```Elm
+import Date exposing (Date, now)
 
 main =
-  now
-  |> format "%d/%m/%Y"
-  |> Debug.log "Data corrente formattata"
-````
+    let
+        currentDate =
+            now
+    in
+    currentDate
+```
 
-Output:
+Questo esempio semplicemente salva il valore restituito dalla funzione `now` in una variabile chiamata `currentDate` e successivamente lo restituisce come model dell'app. Nota che la data corrisponderà all'orario di sistema del dispositivo al momento dell'esecuzione del programma.
 
-````
-Data corrente formattata: 08/12/2020
-````
+Possiamo anche utilizzare la funzione `Date.fromDateParts` per creare una data specifica impostando l'anno, il mese e il giorno.
+
+```Elm
+import Date exposing (Date, fromDateTime)
+
+main =
+    let
+        specificDate =
+            Date.fromDateParts 2020 10 31
+    in
+    specificDate
+```
+
+Questo esempio restituisce una data rappresentante il 31 ottobre 2020. È utile per creare date specifiche per scopi di testing o per impostare una data di inizio di un progetto.
 
 ## Approfondimento
 
-Per ottenere una maggiore precisione nella data, possiamo utilizzare la libreria `elm/time` che ci permette di lavorare con date, tempi e fusi orari in maniera più dettagliata.
+Se vogliamo ottenere informazioni più precise sulla data corrente, possiamo utilizzare le funzioni di manipolazione delle date offerte dal modulo `Date`. Ad esempio, per ottenere il giorno della settimana corrente possiamo utilizzare la funzione `Date.dayOfWeek`.
 
-Inoltre, possiamo utilizzare la funzione `Time.fromIso` per convertire una stringa ISO 8601 in un oggetto `Time`. Questo può essere utile se vogliamo ottenere la data da una fonte esterna come un database o un API.
+```Elm
+import Date exposing (Date, dayOfWeek, now)
+
+main =
+    let
+        currentDate =
+            now
+
+        dayOfWeek =
+            Date.dayOfWeek currentDate
+    in
+    dayOfWeek
+```
+
+Il valore restituito sarà un intero da 1 a 7, corrispondente ai giorni della settimana (1 per domenica, 7 per sabato).
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Elm sul modulo Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [ISO 8601 su Wikipedia](https://it.wikipedia.org/wiki/ISO_8601)
-- [Libreria Moment.js per gestire date e fusi orari in JavaScript](https://momentjs.com/)
+- Documentazione del modulo Date in Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Articolo su come gestire le date in Elm: https://dev.to/andrewmacmurray/handling-dates-in-elm-1hkc

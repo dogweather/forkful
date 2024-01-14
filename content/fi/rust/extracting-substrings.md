@@ -1,53 +1,40 @@
 ---
-title:    "Rust: Alimerkkien erottaminen"
+title:    "Rust: Alimerkkijonojen erottaminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit hajauttaa alimalleja Rust-ohjelmoinnissa? Substringien ottaminen merkkijonoista on yleinen tehtävä, jota tarvitaan usein esimerkiksi tekstianalyysissä tai tekstinpätkien manipuloinnissa. Rust tarjoaa tehokkaita ja turvallisia tapoja suorittaa tämä tehtävä ja tässä blogikirjoituksessa tutustumme tarkemmin niihin.
+Substringien erottaminen on tärkeä osa ohjelmointia, koska se mahdollistaa merkkijonojen käsittelyn ja analysoinnin tarkemmin. Rustin sisäänrakennetulla substring-toiminnolla on myös monia hyödyllisiä sovelluksia, kuten tekstin hakeminen ja muotoileminen.
 
-## Käytännössä
+## Miten
 
-Rustissa on useita tapoja purkaa alimerkkejä merkkijonoista. Yksi vaihtoehto on käyttää `substring` -luokkaa, joka mahdollistaa merkkijonon jakamisen haluttuihin osiin. Esimerkiksi alla olevassa koodiesimerkissämme jaamme merkkijonon "Tervetuloa!" kahteen osaan sen perusteella, mihin haluamme sen jakaa.
-
-```Rust
-let tervehdys = "Tervetuloa!";
-let (terve, nimi) = tervehdys.split_at(6);
-
-println!("{} {} kaikki!", terve, nimi);
-```
-
-Tulostus:
+Rustissa on sisäänrakennettu `substring`-funktio, joka pystyy erottamaan halutun osan merkkijonosta. Tätä funktiota kutsutaan seuraavasti:
 
 ```Rust
-Tervetuloa! kaikki!
+let str = "Tämä on esimerkkiteksti";
+let substring = &str[5..11];
+println!("{}", substring); // tulostaa "on esi"
 ```
 
-Voimme myös käyttää `substring` -luokkaa luomaan uuden merkkijonon osista toisesta merkkijonosta. Seuraavassa esimerkissä otamme ensimmäisen osan merkkijonosta, johon liitämme siihen loppuosan toisesta merkkijonosta.
+Ensimmäisessä rivissä määritellään muuttuja `str`, joka sisältää halutun merkkijonon. Toisessa rivissä luodaan uusi muuttuja `substring`, joka saa arvoksi vanhan merkkijonon tietyn osan käyttäen `substring`-funktiota. Kolmannessa rivissä tulostetaan uusi merkkijono `substring` käyttäen `println`-funktiota.
 
-```Rust
-let etunimi = "John";
-let sukunimi = "Smith";
+## Syvällisempi sukellus
 
-let koko_nimi = etunimi.to_string() + sukunimi;
+Rustin `substring`-toiminnolla on paljon muunnostyökaluja, jotka mahdollistavat tarkemman substringien erottamisen. Esimerkiksi voit määrittää `substring`-toiminnolle hakusanan, jonka avulla voit erottaa tietyn osan merkkijonosta. Voit myös käyttää `range`-operaattoria erottaaksesi merkkijonosta haluamasi osan indeksien avulla.
 
-println!("Nimeni on {}", koko_nimi);
+```
+let str = "Tämä on esimerkkiteksti";
+let substring = &str["on".."mi"];
+println!("{}", substring); // tulostaa "on esi"
 ```
 
-Tulostus:
-
-```Rust
-Nimeni on JohnSmith
-```
-
-## Syväsukellus
-
-Rustissa on myös muita tapoja käsitellä alimainoksia, kuten `slice` -tyyppi, joka perustuu viittausten käsitteeseen. Tämä mahdollistaa alimainosten käsittelyn ilman tarvetta luoda uusia merkkijonoja. Voit lukea lisää tästä ominaisuudesta Rustin virallisesta dokumentaatiosta.
+Voit myös käyttää `substring`-toiminnon suodattimia, kuten `matches`, joka mahdollistaa tietyn merkkijonon löytämisen ja erottamisen. Kaikkia `substring`-toiminnon ominaisuuksia voit tutkia Rustin virallisesta dokumentaatiosta.
 
 ## Katso myös
-
-- Rustin virallinen dokumentaatio substringien käsittelystä: https://doc.rust-lang.org/std/primitive.str.html#method.split_at
-- Rustin virallinen dokumentaatio `slice` -tyypistä: https://doc.rust-lang.org/std/str/struct.Substr.html
+- [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
+- [Rustin substring-toiminnon opas](https://www.javaer101.com/en/article/14993447.html)
+- [Substringien käyttö esimerkiksi tekstin käsittelyssä](https://techmikael.com/2016/09/substrings-string-manipulation-in-rust/)

@@ -1,46 +1,39 @@
 ---
-title:    "Javascript: Lendo um arquivo de texto"
+title:    "Javascript: Lendo um arquivo de texto."
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto é importante
+## Por que ler um arquivo de texto em Javascript?
 
-Se você é um programador Javascript, ler e manipular arquivos de texto é uma habilidade que você definitivamente deve ter. Isso permitirá que você trabalhe com dados externos, o que é crucial em muitos projetos de desenvolvimento web. Mas mais especificamente, ler um arquivo de texto é uma tarefa fundamental para lidar com dados estruturados e armazenamento de informações.
+Ler arquivos de texto é uma tarefa comum para programadores, especialmente em linguagens como Javascript, que têm uma variedade de funções e métodos que permitem manipular e extrair informações de arquivos de texto. Neste artigo, discutiremos a importância de ser capaz de ler arquivos de texto em Javascript e como fazê-lo.
 
-## Como fazer a leitura de um arquivo de texto em Javascript
+## Como ler um arquivo de texto em Javascript
 
-Para ler um arquivo de texto em Javascript, precisamos usar o objeto `FileReader` que nos permite ler e exibir o conteúdo de um arquivo. Primeiro, precisamos de um elemento HTML chamado `<input type="file">` para permitir que o usuário selecione o arquivo que desejamos ler. Em seguida, usaremos o evento `onload` para carregar o conteúdo do arquivo selecionado. Dentro desse evento, usaremos o método `readAsText()` para ler o arquivo e, finalmente, exibiremos o conteúdo usando `console.log()`.
+Para ler um arquivo de texto em Javascript, precisamos primeiro acessar o conteúdo do arquivo e, em seguida, manipulá-lo de acordo com nossas necessidades. Para isso, usaremos o objeto File do Javascript, que nos permite acessar e manipular arquivos.
 
-```
-<input type="file" onchange="processFile(this.files[0])">
+Primeiramente, precisamos criar um objeto File, que pode ser feito usando o método `new File()`. Em seguida, podemos usar o método `readAsText()` para ler o conteúdo do arquivo como uma string.
 
-<script>
-function processFile(file) {
-  let reader = new FileReader();
+Veja um exemplo de código abaixo:
 
-  reader.onload = function(e) {
-    let content = e.target.result;
-    console.log(content);
-  };
-
-  reader.readAsText(file);
-}
-</script>
+```Javascript
+const file = new File("meuarquivo.txt", "r");
+const conteudo = file.readAsText();
+console.log(conteudo);
 ```
 
-Ao executar este código, podemos ver no console do navegador o conteúdo do arquivo de texto que selecionamos.
+No exemplo acima, criamos um objeto File chamado "file" que lerá o arquivo "meuarquivo.txt". Em seguida, usamos o método `readAsText()` para ler o conteúdo do arquivo e armazená-lo em uma variável chamada "conteudo". Finalmente, usamos o `console.log()` para imprimir o conteúdo do arquivo no console.
 
 ## Aprofundando na leitura de arquivos de texto em Javascript
 
-Existem muitas outras maneiras de ler arquivos de texto em Javascript, incluindo o uso de bibliotecas externas como o `node.js` ou o `fs`, que oferecem mais recursos e flexibilidade na leitura e manipulação de arquivos. Além disso, é importante lembrar de sempre manipular os erros que podem ocorrer ao ler um arquivo, como arquivos inexistentes ou com permissão de leitura negada.
+Para manipular arquivos de texto em Javascript, existem diversas funções e métodos disponíveis, como `readAsArrayBuffer()`, `readAsDataURL()` e `readAsBinaryString()`. Cada um desses métodos tem sua própria finalidade e pode ser útil dependendo do conteúdo do arquivo que está sendo lido.
 
-Com a leitura de arquivos de texto, também é possível realizar diferentes operações, como a leitura de arquivos em diferentes formatos (JSON, CSV, etc.), a escrita de dados em um arquivo e até mesmo a extração de informações específicas de um arquivo.
-
-Esperamos que este artigo tenha sido útil para você entender a importância e como fazer a leitura de um arquivo de texto em Javascript. Pratique e experimente diferentes métodos e bibliotecas para se familiarizar com as diferentes opções disponíveis.
+Além disso, é importante mencionar que a leitura de arquivos em Javascript só é possível em navegadores modernos que suportam a API File, como Google Chrome e Firefox. Essas funções não são suportadas em Internet Explorer e outros navegadores mais antigos.
 
 ## Veja também
-- [Documentação oficial do FileReader](https://developer.mozilla.org/pt-BR/docs/Web/API/FileReader)
-- [Manipulando arquivos com node.js](https://www.codementor.io/@moyosore/a-beginner-s-introduction-to-reading-files-in-node-js-1xmkon8xb6)
-- [Manipulando arquivos de texto com fs em node.js](https://medium.com/@olayinkaraheem/reading-writnig-files-with-fswith-node-js-43f1dbd4e742)
+
+- [Documentação oficial do Javascript para leitura de arquivos](https://developer.mozilla.org/pt-BR/docs/Web/API/File)
+- [Exemplos práticos de leitura de arquivos em Javascript](https://www.w3schools.com/jsref/met_file_readastext.asp)
+- [Tutorial de leitura de arquivos em Javascript](https://www.digitalocean.com/community/tutorials/reading-files-with-node-js)

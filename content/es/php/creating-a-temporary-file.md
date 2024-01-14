@@ -1,33 +1,47 @@
 ---
 title:    "PHP: Creando un archivo temporal"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué crear un archivo temporal en programación PHP
+## Por qué
 
-Crear un archivo temporal en programación PHP puede ser muy útil en diversas situaciones. Por ejemplo, puede ser necesario almacenar datos mientras se ejecuta un script, o se puede utilizar para realizar pruebas y experimentos sin alterar el código principal. Además, los archivos temporales se eliminan automáticamente una vez que ya no son necesarios, lo que ayuda a mantener una estructura limpia y organizada en el proyecto.
+Crear un archivo temporal es una práctica común en la programación PHP. Se utiliza para almacenar datos de forma temporal, como variables o resultados de una consulta, y luego se borra una vez que ya no son necesarios. Esto ayuda a mantener la organización y eficiencia de un programa.
 
-## Cómo crear un archivo temporal en programación PHP
+## Cómo hacerlo
 
-Crear un archivo temporal en programación PHP es bastante sencillo. Solo se necesita utilizar la función `tmpfile()` y asignar el resultado a una variable. A continuación, se puede escribir en el archivo temporal utilizando la función `fwrite()` y leer su contenido con `fread()`. Al finalizar, solo se debe cerrar el archivo temporal con `fclose()` y este se eliminará automáticamente.
+Hay varias formas de crear un archivo temporal en PHP, pero una de las más sencillas es utilizando la función `tmpfile()`. Esta función crea un archivo temporal con permisos de escritura y lectura, y devuelve un puntero al mismo. A continuación, se pueden utilizar otras funciones como `fwrite()` para escribir datos en el archivo y `fread()` para leerlos.
 
-```PHP
+```
 <?php
+// Crear un archivo temporal
 $archivo_temporal = tmpfile();
-fwrite($archivo_temporal, "¡Hola mundo!");
-rewind($archivo_temporal);
-echo fread($archivo_temporal, 9); // Salida: ¡Hola mundo!
-fclose($archivo_temporal); // El archivo temporal se eliminará automáticamente
+
+// Escribir datos en el archivo
+fwrite($archivo_temporal, "Este es un archivo temporal.");
+
+// Leer datos del archivo
+echo fread($archivo_temporal, filesize($archivo_temporal));
+
+// Cerrar y borrar el archivo temporal
+fclose($archivo_temporal);
 ?>
 ```
 
-## Profundizando en la creación de archivos temporales en programación PHP
+El resultado de este código sería "Este es un archivo temporal." Además de `tmpfile()`, también se puede utilizar `tempnam()` para crear un archivo temporal con un nombre específico, o simplemente crear un archivo con la extensión `.tmp` en el directorio temporal del sistema.
 
-Es importante tener en cuenta que los archivos temporales solo existen en la memoria hasta que se cierren con `fclose()`. Si se desea crear un archivo temporal en el disco duro, se puede utilizar la función `tempnam()` para generar un nombre de archivo único y luego utilizar `fopen()` para escribir en él. También es posible establecer una duración de vida para los archivos temporales utilizando la función `stream_set_timeout()`, lo que permite eliminarlos si no se utilizan después de un determinado tiempo.
+## Inmersión profunda
+
+Además de las funciones mencionadas anteriormente, PHP también cuenta con la clase `SplFileObject` que proporciona una interfaz orientada a objetos para trabajar con archivos temporales. Esta clase también permite establecer diferentes opciones para el archivo, como su ubicación y permisos.
+
+Otra cosa importante a tener en cuenta al trabajar con archivos temporales es asegurarse de borrarlos una vez que ya no se necesiten. Esto puede hacerse manualmente usando `unlink()` o de forma automática estableciendo la opción `auto_track` en `false` en la función `tmpfile()` o `tempnam()`.
+
+En resumen, crear archivos temporales en PHP es una práctica muy útil para mantener el orden y la eficiencia de un programa, y hay diversas opciones para hacerlo según las necesidades de cada proyecto.
 
 ## Ver también
-- [La función tmpfile() en la documentación de PHP](https://www.php.net/manual/es/function.tmpfile.php)
-- [Cómo utilizar archivos temporales en programación PHP](https://blog.aulaformativa.com/archivos-temporales-en-programacion-php/)
-- [Cómo trabajar con archivos en PHP](https://www.w3schools.com/php/php_ref_filesystem.asp)
+
+- Documentación oficial de PHP sobre archivos temporales: https://www.php.net/manual/es/book.filesystem.php
+- Tutorial de W3Schools sobre archivos temporales en PHP: https://www.w3schools.com/php/php_file_create.asp
+- Artículo de SitePoint sobre cómo trabajar con archivos temporales en PHP: https://www.sitepoint.com/php-tmp-file-tips-tricks/

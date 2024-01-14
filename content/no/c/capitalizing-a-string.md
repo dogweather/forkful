@@ -1,53 +1,57 @@
 ---
-title:    "C: Å gjøre en streng stor bokstav"
+title:    "C: Stor bokstavering av en streng"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Du har sannsynligvis sett mange programmer som tar en tekststreng og returnerer den samme strengen, men med de første bokstavene store (store bokstaver som vanligvis finnes i starten av en setning eller i navn). Men hvorfor ville noen egentlig ville gjøre dette? På overflaten kan det virke som en liten og ubetydelig funksjon, men det er faktisk et viktig konsept i programmering.
 
-Å kunne øke forståeligheten til teksten din ved å kapitalisere en streng er en viktig ferdighet i C-programmering. Det kan gjøre koden din mer lesbar og forståelig for andre utviklere, og bidra til å unngå feil og misforståelser.
-
-## Hvordan
-
-For å kapitalisere en streng i C, må du først definere en variabel som inneholder strengen du vil bruke. Deretter bruker du en for-løkke til å iterere gjennom hver bokstav i strengen. Inne i løkken kan du bruke standard C-funksjoner som toupper() eller en tilpasset funksjon for å endre hvert tegn til en stor bokstav. Til slutt skriver du ut den kapitaliserte strengen ved hjelp av printf()-funksjonen.
-
-Et eksempel på hvordan koden kan se ut:
+## Hvordan gjøre det
+En metode for å gjøre dette i C-programmering er ved å bruke en løkke for å iterere gjennom den opprinnelige strengen og endre store bokstaver til små bokstaver, mens bokstavene rundt (gitt at de er små bokstaver) blir endret til store bokstaver.
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
-    char string[] = "dette er en streng";
-    int lengde = strlen(string);
-    int i;
+// Funksjonen for å gjøre bokstaver store
+void gjør_bokstaver_store(char *streng) {
+    int i = 0;
 
-    for (i = 0; i < lengde; i++) {
-        string[i] = toupper(string[i]); //kapitalisering av bokstav
+    // Gå gjennom strengen til enden
+    while (streng[i] != '\0') {
+        // Hvis bokstaven er en liten bokstav
+        if (streng[i] >= 'a' && streng[i] <= 'z') {
+            // Endre til å være en stor bokstav
+            streng[i] = streng[i] - 32;
+        }
+        i++;
     }
+    // Skriv ut den endrede strengen
+    printf("Den nye strengen er: %s\n", streng);
+}
 
-    printf("%s", string); //utskrift av den kapitaliserte strengen
-
+int main() {
+    // Definer en streng
+    char tekst[] = "dette er en testtekst";
+    // Kall funksjonen for å gjøre bokstaver store
+    gjør_bokstaver_store(tekst);
     return 0;
 }
 ```
 
-Sample output:
-Dette er en streng
+Dette vil gi følgende utskrift:
+
+```
+Den nye strengen er: DETTE ER EN TESTTEKST
+```
 
 ## Dypdykk
+En ting å merke seg er at denne metoden kun fungerer på engelske bokstaver, da det kun endrer bokstaver mellom 'a' og 'z'. I tillegg, dette er kun en måte å gjøre bokstaver store på, det finnes flere måter å oppnå samme resultat på. For eksempel kan man bruke innebygde funksjoner som `toupper()` og `tolower()` i `ctype.h` biblioteket for å konvertere bokstaver.
 
-I C finnes det flere måter å kapitalisere en streng på, avhengig av hva som skal gjøres med strengen etterpå. For eksempel kan du bruke en egen funksjon for å kopiere den kapitaliserte strengen til en ny variabel, slik at den originale strengen forblir uendret.
+En annen ting er at det finnes en forskjell mellom å endre strengen og å bare skrive ut den endrede strengen. I eksempelet ovenfor endrer vi den opprinnelige strengen, men man kan også lage en funksjon som lager en kopi av den opprinnelige strengen og endrer kopien mens den opprinnelige forblir uendret.
 
-Det er også viktig å merke seg at C er et språk som skiller mellom små og store bokstaver, så du må være nøye med å bruke riktig funksjon for å endre bokstavene til store.
-
-Det finnes også biblioteker og tredjepartsmoduler som kan bidra til å forenkle prosessen med å kapitalisere strenger, og som kan være nyttige å utforske.
-
-## Se Også
-
-- [Offisiell C-documentasjon for toupper() og andre funksjoner](https://www.cprogramming.com/reference/cctype/toupper.html)
-- [Eksempel på en C-funksjon for å kapitalisere strenger](https://www.geeksforgeeks.org/program-uppercase-string/)
-- [Biblioteker og moduler for å behandle tekster i C](https://www.tecmint.com/9-essential-string-manipulation-tools-in-c/)
+## Se også
+- [Konvertering av bokstaver i C](https://www.programiz.com/c-programming/library-function/ctype.h/toupper)
+- [Strenger i C](https://www.programiz.com/c-programming/c-strings)

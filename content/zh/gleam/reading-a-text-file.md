@@ -1,29 +1,56 @@
 ---
 title:    "Gleam: 读取文本文件"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要阅读文本文件？
-阅读文本文件是编程过程中必不可少的一部分。文本文件通常包含重要的数据，提供了编写代码所需的信息。通过阅读文本文件，您可以更有效地处理数据并运行代码。
+Why (为什么）：
 
-## 如何进行文本文件读取
-要读取文本文件，您可以使用Gleam编程语言中的内置函数。以下是一个例子：
+在编程中，读取文本文件是一个非常常见的任务。它允许你从文件中提取数据并将其用于你的程序中。读取文本文件可以帮助你更轻松地处理数据，并使你的程序更具灵活性。 
+
+How To（如何）：
+
+```Gleam
+import gleam/file
+
+// 打开一个文本文件并将其存储为一个变量
+file := file.open("example.txt")
+
+// 使用read_all函数读取整个文件的内容
+content := file.read_all()
+
+// 使用split_lines函数将文本按行拆分为一个字符串列表
+lines := content.split_lines()
+
+// 使用for循环遍历所有行并打印每一行的内容
+for line in lines {
+  println(line)
+}
 ```
-Gleam.from_file("data.txt") 
-|> List.map(fn (line) -> 
-    String.split(line, ",") 
-  end) 
-|> Ok 
+例子输入：
+
+文本文件内容为：
+
 ```
-这段代码将从名为" data.txt"的文本文件中读取内容，并将每一行分割成以逗号为分隔符的字符串列表。最后，它将返回一个包含所有行的列表作为结果。
+Hello
+World
+```
 
-## 深入了解文本文件读取
-文本文件的读取涉及处理各种编码类型，如UTF-8和ASCII。Gleam编程语言为您处理了这些细节，因此您不必担心编码的问题。您只需按照正确的格式读取文件，并将其转换为您需要的任何格式。
+例子输出：
 
-## 参考链接
-以下是一些有用的链接，让您深入了解Gleam编程语言中的文本文件读取功能：
-- 官方文档：https://gleam.run/documentation/
-- Gleam编程语言：https://gleam.run/
-- 文本文件I/O：https://gleam.run/modules/io-text/
+```
+Hello
+World
+```
+
+Deep Dive（深入研究）：
+
+除了使用read_all和split_lines函数，Gleam还提供了其他功能来读取文本文件。比如，你可以使用file.read_line函数来逐行读取文本，并使用file.read_bytes函数来读取文件的指定字节数。此外，Gleam还提供了一些处理Unicode文本的功能，如file.read_utf8和file.read_utf16。通过深入学习这些函数，你可以更有效地处理文本文件。
+
+See Also（相关阅读）：
+
+- Gleam文档：https://gleam.run/core/file.html
+- 了解更多Gleam编程语言：https://gleam.run/
+- 学习如何使用Gleam处理文件： https://gleam.run/tutorials/file-handling.html

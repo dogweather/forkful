@@ -1,47 +1,78 @@
 ---
-title:    "Elm: Tworzenie tymczasowego pliku"
+title:    "Elm: Tworzenie pliku tymczasowego"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto tworzyć pliki tymczasowe w Elm?
 
-Tworzenie plików tymczasowych jest często niezbędnym krokiem w procesie programowania. Pliki tymczasowe służą do przechowywania danych, które są potrzebne tylko w określonym czasie lub do tymczasowej pracy z danymi. W Elm jest to również ważna czynność, której warto się nauczyć.
+Pisanie skryptów w Elm może być czasem nieuniknionym zadaniem, szczególnie jeśli aplikacja wymaga interakcji z systemem plików. Jedną z przydatnych umiejętności jest tworzenie plików tymczasowych, które są potrzebne do wykonania określonych operacji. W tym artykule omówimy dlaczego warto tworzyć pliki tymczasowe w Elm oraz jak to zrobić.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby utworzyć plik tymczasowy w Elm, możemy użyć wbudowanej funkcji `File.tempFilePath` w pakiecie `elm/file`. Poniżej znajduje się przykładowy kod, który tworzy pliki tymczasowe z datą i godziną wygenerowaną automatycznie w nazwie pliku.
+Do tworzenia plików tymczasowych w Elm wykorzystujemy wbudowany moduł `Task` oraz zewnętrzną bibliotekę `elm/file`. Poniżej przedstawimy prosty przykład kodu, który tworzy plik tymczasowy i zapisuje w nim dane o nazwie, której użytkownik podaje przy uruchomieniu skryptu.
 
 ```elm
+module Main exposing (main)
+
 import File
-import Random
-import Time
+import Task
+import Task exposing (Task)
+import File.Name as Name
 
-tempFilePath : String
-tempFilePath =
-    case Time.now of
-        Time.Posix posix ->
-            File.tempFilePath posix
-                |> Result.withDefault ""
+type Msg
+    = CreateFile
+    | FileCreated (Result File.Error ())
+    | SaveToTempFile String
 
-filePath : String
-filePath =
-    Random.generate
-        (\random ->
-            tempFilePath ++ "_" ++ toString random
-        )
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( ()
+    , Task.perform FileCreated CreateFile
+    )
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        CreateFile ->
+            ( model, Task.perform FileCreated (File.file Name.random []) )
+
+        FileCreated (Ok ()) ->
+            ( model, Task.succeed (SaveToTempFile "Example") )
+
+        FileCreated (Err err) ->
+            ( model
+            , Task.fail
+                "Nie udało się utworzyć pliku tymczasowego. Sprawdź uprawnienia do zapisu w wybranym folderze."
+            )
+
+view : Model -> Html Msg
+view _ =
+    text "W stworzonym pliku tymczasowym znajdują się dane o nazwie 'Example'"
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
+
+main : Program () Model Msg
+main =
+    Platform.program
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
 ```
 
-Po wywołaniu funkcji `tempFilePath` otrzymamy string z losowo wygenerowanym numerem w nazwie pliku. Następnie możemy wykorzystać tę ścieżkę do tworzenia lub zapisywania pliku tymczasowego w naszym programie.
+Po uruchomieniu skryptu, w wybranym folderze pojawi się plik tymczasowy o unikalnej nazwie. W przypadku błędu, użytkownik otrzyma odpowiedni komunikat.
 
-## Głębokie pogrążenie się
+## Głębsze spojrzenie
 
-W Elm tworzenie plików tymczasowych jest również ważne w kontekście testów jednostkowych. Dzięki możliwości tworzenia tymczasowych plików, możemy symulować różne sytuacje, co jest niezwykle przydatne w trakcie pisania testów.
+Tworzenie plików tymczasowych jest również przydatne w sytuacjach, gdy musimy przetwarzać dużą ilość danych i nie chcemy obciążać pamięci podręcznej przeglądarki. Wówczas możemy zapisywać dane tymczasowo w pliku, a po zakończeniu operacji usunąć go. Jest to szczególnie ważne przy tworzeniu aplikacji internetowych, gdzie każdy bajt pamięci ma znaczenie.
 
-Ponadto, warto pamiętać o późniejszym usunięciu pliku tymczasowego po jego użyciu, aby nie pozostawić niepotrzebnych śmieci w naszym systemie.
+# Zobacz także
 
-## Zobacz również
-
-- Dokumentacja pakietu `elm/file`: [https://package.elm-lang.org/packages/elm/file/latest/](https://package.elm-lang.org/packages/elm/file/latest/)
-- Inne sposoby na tworzenie plików tymczasowych w Elm: [https://stackoverflow.com/questions/30520734/create-a-temporary-file-in-elm](https://stackoverflow.com/questions/30520734/create-a-temporary-file-in-elm)
+- Dokumentacja modułu `Task` w Elm: https://package.elm-lang.org/packages/elm/core/latest/Task
+- Dokumentacja biblioteki `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/

@@ -1,43 +1,34 @@
 ---
-title:    "Elm: Afficher la sortie de débogage"
+title:    "Elm: Affichage des données de débogage"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'impression de sortie de débogage est un excellent moyen de voir les données que votre code produit à chaque étape de son exécution. Cela peut vous aider à comprendre et à résoudre les erreurs et les bugs dans votre programme.
+L'impression de sortie de débogage peut sembler être une tâche ennuyeuse et fastidieuse, mais elle peut en fait être très utile dans le processus de développement de votre application Elm. Elle peut vous aider à comprendre le fonctionnement de votre code et à résoudre des problèmes plus rapidement.
 
 ## Comment faire
 
-Dans Elm, l'impression de sortie de débogage est facile à mettre en œuvre grâce à la fonction `Debug.log`. Cette fonction prend deux paramètres : une chaîne de caractères pour indiquer le nom de la sortie et une valeur à imprimer.
-
-Voici un exemple simple d'utilisation de `Debug.log` pour imprimer un message de débogage et la valeur d'une variable :
-
-```Elm
-age : Int
-age = 25
-
-Debug.log "Âge actuel :" age
-```
-
-En exécutant ce code, vous verrez la sortie suivante dans la console :
+Pour imprimer la sortie de débogage dans votre code Elm, vous pouvez utiliser la fonction `Debug.log` en lui passant deux arguments : une chaîne de caractères pour décrire l'information que vous voulez imprimer et la valeur de l'expression à imprimer. Par exemple :
 
 ```
-Âge actuel : 25
+Elm.debug
+    "Le nombre d'utilisateurs est : "
+    (List.length utilisateurs)
 ```
 
-Vous pouvez également utiliser `Debug.log` pour imprimer des valeurs plus complexes telles que des listes, des enregistrements ou des fonctions. Il suffit de les inclure en tant que deuxième paramètre de la fonction.
+Cela imprimera la phrase "Le nombre d'utilisateurs est : 10" si votre liste `utilisateurs` comprend 10 éléments.
 
-## Plongée profonde
+## Plongée en profondeur
 
-L'impression de sortie de débogage peut être très utile pour comprendre le flux de données dans votre programme. Cependant, il est important de noter qu'il ne doit pas être utilisé en production, car cela pourrait révéler des informations sensibles et ralentir considérablement l'exécution de votre programme.
+Il existe différents niveaux de débogage que vous pouvez utiliser : `Debug.log`, `Debug.log2`, `Debug.log3`, etc. Chaque niveau correspond à un nombre spécifique d'arguments que vous pouvez lui passer. Par exemple, `Debug.log2` accepte deux arguments, `Debug.log3` en accepte trois, et ainsi de suite.
 
-Il est également important de noter que les appels à `Debug.log` sont ignorés lorsque vous compilez en mode production. Cela signifie que vous n'aurez pas à vous soucier de supprimer ces appels avant de publier votre code.
+De plus, vous pouvez également utiliser la fonction `Debug.todo` pour imprimer un message dans la console de débogage sans quitter votre application. Cela peut être utile lorsque vous voulez laisser un rappel à vous-même ou à vos coéquipiers pour implémenter une fonctionnalité manquante plus tard.
 
 ## Voir aussi
 
-- [La documentation officielle d'Elm pour la fonction Debug.log](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug#log)
-- [Un tutoriel plus complet sur l'utilisation de l'impression de sortie de débogage en Elm](https://medium.com/@jgrenat/improve-your-elm-development-with-debug-print-statements-bf85e5389954)
-- [Des conseils pour éviter la surutilisation de l'impression de sortie de débogage en Elm](https://medium.com/@zhengyi_goh/elm-debug-print-with-a-purpose-2f3282e098b5)
+- Documentation officielle d'Elm sur le débogage : https://guide.elm-lang.org/debugging/
+- Tutoriel vidéo sur l'utilisation du débogage dans Elm : https://www.youtube.com/watch?v=0DE5WaQOWtg

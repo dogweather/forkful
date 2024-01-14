@@ -1,49 +1,35 @@
 ---
 title:    "Bash: Verwendung von regulären Ausdrücken"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum Verwenden wir Reguläre Ausdrücke?
+## Warum
 
-Reguläre Ausdrücke sind ein mächtiges Werkzeug für das Programmieren in Bash. Sie ermöglichen es uns, komplexe Muster in Texten zu finden und zu manipulieren, was uns viel Zeit und Mühe sparen kann. Wenn du also ein fortgeschrittener Bash-Programmierer werden möchtest, ist es wichtig, dass du die Verwendung von regulären Ausdrücken verstehst.
+Für viele Programmierer ist die Verwendung von regulären Ausdrücken ein unverzichtbares Werkzeug. Mit ihrer Hilfe können Textmuster effizient gefunden, überprüft und bearbeitet werden. Ob bei der Datenverarbeitung, der Textanalyse oder der Erstellung von Suchfunktionen - reguläre Ausdrücke sind ein leistungsstarkes Instrument für viele Anwendungsfälle.
 
-## Wie man Reguläre Ausdrücke verwendet
+## Wie es funktioniert
 
-Um reguläre Ausdrücke in Bash zu verwenden, musst du zuerst das `grep` Kommando kennen. Dieses Kommando sucht nach Mustern in Textdateien und gibt die gefundenen Zeilen aus. Du kannst `grep` verwenden, um mit regulären Ausdrücken zu suchen, indem du den `-E` Parameter verwendest, der dem Kommando mitteilt, dass du reguläre Ausdrücke verwenden möchtest.
-
-Hier ist ein kleines Beispiel, wie du `grep` mit regulären Ausdrücken verwenden kannst:
+Um reguläre Ausdrücke in Bash zu verwenden, müssen wir zuerst das Programm `grep` aufrufen. Wir können dann einen regulären Ausdruck innerhalb von Anführungszeichen nach `grep ` eingeben. Hier ist ein einfaches Beispiel, um alle Wörter in einer Datei zu finden, die mit einem Großbuchstaben beginnen:
 
 ```Bash
-$ cat mein_text.txt
-Hallo, dies ist ein Beispieltext.
-
-$ grep -E 'beispieltext' mein_text.txt
-Hallo, dies ist ein Beispieltext.
+grep "^[A-Z]" datei.txt
 ```
 
-Wie du sehen kannst, gibt `grep` die Zeile aus, die das Muster `beispieltext` enthält. Beachte auch, dass reguläre Ausdrücke standardmäßig case-sensitive sind. Wenn du jedoch case-insensitive suchen möchtest, kannst du den `-i` Parameter verwenden.
+Dieser Code verwendet den regulären Ausdruck `^[A-Z]`, um nach allen Wörtern zu suchen, die mit einem Großbuchstaben beginnen. Der `^` am Anfang des Ausdrucks gibt an, dass der Ausdruck am Anfang jeder Zeile auftreten muss. Der `[A-Z]` Teil des Ausdrucks beschränkt die Suche auf alle Großbuchstaben.
 
-## Tiefergehende Informationen über Reguläre Ausdrücke
+Die Ausgabe dieses Befehls wird alle passenden Wörter aus der Datei `datei.txt` ausgeben. Wie Sie sehen können, können reguläre Ausdrücke sehr präzise verwendet werden, um bestimmte Muster in Texten zu finden.
 
-Reguläre Ausdrücke können sehr komplex und verwirrend sein, aber sie können auch sehr mächtig sein, wenn man die verschiedenen Symbole und Operatoren versteht.
+## Tiefergehende Informationen
 
-Einige der häufig verwendeten Symbole und Operatoren sind:
+Die Verwendung von regulären Ausdrücken erfordert etwas Übung und Erfahrung, aber es gibt auch viele hilfreiche Tools, die Ihnen dabei helfen können. Zum Beispiel können Sie mit `egrep` einen erweiterten regulären Ausdruck verwenden, der zusätzliche Metazeichen und Funktionen bietet.
 
-- `.` : Steht für ein beliebiges Zeichen
-- `^` : Steht für den Anfang einer Zeile
-- `$` : Steht für das Ende einer Zeile
-- `*` : Steht für null oder mehr Vorkommen des vorhergehenden Zeichens
-- `+` : Steht für ein oder mehr Vorkommen des vorhergehenden Zeichens
-- `[]` : Steht für eine Zeichenklasse, zum Beispiel [a-z] für alle Kleinbuchstaben
-- `()` : Stehen für Gruppierungen von Zeichen
-- `|` : Steht für eine logische ODER-Verknüpfung
-
-Es gibt noch viele weitere Symbole und Operatoren, die du bei Bedarf recherchieren kannst. Eine gute Ressource hierfür ist [die offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching)
+Es gibt auch viele Online-Ressourcen und Tutorials, die Ihnen helfen können, die Verwendung von regulären Ausdrücken zu erlernen. Es kann zwar etwas Zeit in Anspruch nehmen, aber es lohnt sich definitiv, sich in dieses leistungsstarke Konzept einzuarbeiten.
 
 ## Siehe auch
 
-- [Reguläre Ausdrücke Tutorial auf Deutsch](https://ryanstutorials.net/bash-scripting-tutorial/bash-regular-expressions.php)
-- [Reguläre Ausdrücke Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [RegExr - Eine interaktive Plattform zum Testen und Lernen von Regulären Ausdrücken](https://regexr.com/)
+- [Bash Regular Expressions](https://www.gnu.org/software/grep/manual/grep.html#Regular-Expressions)
+- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Bash Regex Cheat Sheet](https://gist.github.com/davica/ba3d6051f06e4f780c5f32482b708399)

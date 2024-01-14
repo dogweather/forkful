@@ -1,40 +1,42 @@
 ---
 title:    "Elm: Estrazione di sottostringhe"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-L'estrazione di sottostringhe è un'operazione comune quando si lavora con stringhe in Elm. Questo può essere utile per analizzare e manipolare grandi quantità di dati o per creare espressioni specifiche da utilizzare nelle nostre applicazioni.
 
-## Come Fare
-Per estrarre una sottostringa da una stringa esistente in Elm, possiamo utilizzare la funzione `String.slice` passandole tre parametri: la stringa originale, l'indice iniziale della sottostringa e l'indice finale.
+Se sei un programmatore di Elm o sei solo curioso di imparare questo linguaggio funzionale, probabilmente hai incontrato la necessità di estrarre porzioni di una stringa. Questo può essere utile per manipolare i dati e creare output personalizzati. In questo articolo, ti mostrerò come effettuare l'estrazione di substring in Elm.
 
-```Elm
-nomeCompleto = "Giorgio Rossi"
-cognome = String.slice nomeCompleto 8 13
+## Come fare
 
--- Output: "Rossi"
-```
-
-In questo esempio, abbiamo estratto la sottostringa del cognome dall'originale "Giorgio Rossi" utilizzando gli indici 8 e 13, che corrispondono rispettivamente alla posizione del primo e ultimo carattere. È importante notare che gli indici includono anche lo spazio, quindi l'ultimo carattere specificato non verrà incluso nella sottostringa finale.
-
-Possiamo anche utilizzare segnaposto come `String.length` per ottenere l'indice finale senza doverlo calcolare manualmente. Ad esempio, per estrarre il nome dalla stessa stringa originale, possiamo usare il codice seguente:
+Per estrarre una sottostringa in Elm, puoi utilizzare la funzione `String.slice start end string`. Questa funzione prende come argomenti l'indice di inizio, l'indice di fine e la stringa dalla quale estrarre la sottostringa. Ad esempio:
 
 ```Elm
-nome = String.slice nomeCompleto 0 (String.length nomeCompleto - 6)
-
--- Output: "Giorgio"
+String.slice 0 3 "ciao mondo" -- output: "cia"
 ```
 
-In questo caso, abbiamo utilizzato `String.length` per ottenere la lunghezza totale della stringa e quindi abbiamo sottratto 6 per escludere l'indice finale del cognome.
+Puoi anche utilizzare un solo argomento per specificare l'indice di inizio e la sottostringa verrà estratta fino alla fine. Ad esempio:
+
+```Elm
+String.slice 3 "ciao mondo" -- output: "o mondo"
+```
+
+Puoi anche utilizzare valori negativi per gli indici di inizio e fine, che conta all'indietro dalla fine della stringa. Ad esempio:
+
+```Elm
+String.slice -3 -1 "ciao mondo" -- output: "ndo"
+```
+
+Inoltre, puoi utilizzare la funzione `String.left n string` per estrarre i primi `n` caratteri di una stringa e `String.right n string` per estrarre gli ultimi `n` caratteri.
 
 ## Approfondimento
-Oltre alla funzione `String.slice`, Elm offre anche altre funzioni utili per l'estrazione di sottostringhe come `String.left` e `String.right`, che ci consentono di estrarre rispettivamente una sottostringa dai primi o ultimi caratteri di una stringa.
 
-Inoltre, possiamo utilizzare la funzione `String.split` per separare una stringa in diverse sottostringhe basate su un carattere specifico, ottenendo un elenco di sottostringhe come risultato.
+Estrarre sottostringhe è utile non solo per manipolare i dati, ma anche per validare input da parte degli utenti. Ad esempio, puoi utilizzare la funzione `String.slice` per verificare che una password abbia una lunghezza specifica o che un codice fiscale abbia la giusta struttura. Inoltre, puoi combinare le funzioni `String.slice` e `String.contains` per estrarre e verificare una sottostringa contemporaneamente.
 
-## Vedi Anche
-- Documentazione ufficiale di Elm su funzioni di stringhe: [https://elm-lang.org/docs/strings](https://elm-lang.org/docs/strings)
-- Esempi di utilizzo di funzioni di stringhe in Elm: [https://github.com/giuseppeg/elm-strings](https://github.com/giuseppeg/elm-strings)
+## Vedi anche
+
+- Documentazione ufficiale sulle funzioni di manipolazione delle stringhe in Elm: https://package.elm-lang.org/packages/elm/core/latest/String
+- Blog post su come utilizzare le funzioni di manipolazione delle stringhe in Elm: https://dev.to/kdow/elm-string-and-strings-4ani

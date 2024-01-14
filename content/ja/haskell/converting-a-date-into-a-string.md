@@ -1,46 +1,48 @@
 ---
 title:    "Haskell: 日付を文字列に変換する"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を文字列に変換することの意義を説明します。
-
-プログラミングでは、日付を異なる形式で表示したり、保存したりする必要があります。また、データベースやAPIの要求に応じて、日付を適切な形式で変換する必要があります。
+日付を文字列に変換するのは、プログラマーがデータをより読みやすく、効率的に処理するために役立ちます。例えば、データベースから取得した日付をユーザーに表示する場合、文字列に変換することで読みやすくなります。
 
 ## 方法
 
-この記事では、Haskellで日付を文字列に変換する方法を説明します。以下の例は、日付を一部だけ変更する例です。Haskellのガード構文を使い、5つのパターンマッチングを作成しました。
+Haskellでは、date型を文字列に変換するために`formatTime`関数を使います。以下のようなコードを書くことで、日付を特定のフォーマットで表示することができます。
 
 ```Haskell
-dateToString :: Day -> String
-dateToString date
-  | day == 1 = "1st"
-  | day == 2 = "2nd"
-  | day == 3 = "3rd"
-  | otherwise = show day ++ "th"
-    where day = day date
-```
+import Data.Time.Format
+import Data.Time.LocalTime
 
-これにより、任意の日付を文字列に変換することができます。例えば、「2021年11月30日」は「30th」という文字列に変換されます。
+timestamp :: LocalTime -> String
+timestamp date = formatTime defaultTimeLocale "%Y年%m月%d日 %H時%M分%S秒" date
+
+main :: IO ()
+main = do
+    let date = LocalTime { localDay = fromGregorian 2021 10 25
+                         , localTimeOfDay = TimeOfDay 14 30 0
+                         }
+    putStrLn $ timestamp date
+```
+上記の例では、2021年10月25日 14時30分00秒というフォーマットで日付を表示しています。`defaultTimeLocale`を変えることで、異なるロケールの日付表記を行うこともできます。
 
 ## ディープダイブ
 
-日付を文字列に変換する方法はさまざまありますが、この記事ではガード構文を使用しました。他の方法としては、パターンマッチングやライブラリの使用などがあります。また、国や地域によって日付の表記方法が異なるため、留意する必要があります。さらに、時差や時間帯の影響もあるため、必要に応じて変換方法を調整する必要があります。
+Haskellには日付型として、`UTCTime`や`ZonedTime`などがあります。これらの型は、タイムゾーンや夏時間の情報を持っているため、正しい日付を取得することができます。
+
+また、`Data.Time.Format`モジュール内には、さまざまな関数があります。例えば、`parseTimeM`関数を使うことで、文字列を日付型に変換することができます。
 
 ## 参考リンク
 
-- [Haskellのガード構文について](https://www.tohoho-web.com/ex/flow_and_guards.html)
-- [Data.Timeパッケージの使用法](https://hackage.haskell.org/package/time)
-- [異なる国や地域での日付表記方法について](https://ethan.tiraecius.com/articles/international-date-formats/)
-- [日付と時間に関する重要な考慮事項](https://www.techopedia.com/2/28096/operating-systems/difference-between-time-zones-vs-time-standards) 
+- [Haskellで今日の日付を取得する方法](https://qiita.com/kuroeqs/items/070eb3a6c419c76efa4a)
+- [Haskell Data.Timeモジュールの使い方](http://saito-tsutomu.hatenablog.com/entry/20120406/1333704261)
+- [Hackage: Data.Time.Format](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
 
-## その他の参考資料
+## 関連リンク
 
-- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
-- [Haskellプログラミングガイド](https://wiki.haskell.org/Haskell_programming_guidelines)
-- [Haskellアプリケーションの構築方法](https://www.yesodweb.com/book/) - Yesodのチュートリアル
-- [Haskell入門](https://en.wikibooks.org/wiki/Haskell/Intro_to_Haskell) - Wikibooksで公開されているHaskellの入門書
+- [Haskellの基礎を学ぶ入門記事一覧](https://qiita.com/tags/haskell)
+- [日付操作のための便利なHaskellライブラリ一覧](https://qiita.com/criztiani/items/15625a57c790f691f4ad)

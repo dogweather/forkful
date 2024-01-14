@@ -1,42 +1,49 @@
 ---
-title:    "Javascript: כתיבת ראשי בתוכנות מחשב"
+title:    "Javascript: כתיב ראשי למחרוזת"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-מתי נדרש לכתוב קוד שיכול להפוך את מחרוזת לתווית ראשות?
+היי חברים, בכתבה הזאת אני רוצה לדבר איתכם על התהליך שבו אנחנו משתמשים בג'אווהסקריפט כדי למיין את האותיות שבמחרוזת. למה זה חשוב לנו? כי יש רבים מאיתנו שצריכים לבצע תהליך זה כדי לעבוד עם מאגרי נתונים מורכבים או ליצירת פונקציות ולוגיקה שונות באתרים ואפליקציות.
 
-## כיצד לעשות זאת
+## כיצד לבצע תהליך זה
 
-הנה דוגמאות קוד ופלט כדי ללמוד איך לכתוב קוד בפעולת רישום תווית במחרוזת. ניתן להשתמש בקוד המופיע עם [לולאה "for"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for), [תורת החלוקה `.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) ומאחרי זה לתחום את ראש הרישום תווית עם [תורת ההפיכה `.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase).
+כדי לבצע את התהליך הזה בג'אווהסקריפט, אנחנו נשתמש בפונקציה שנקראת "toUpperCase". זו פונקציה המאפשרת לנו להמיר את האותיות במחרוזת לכתיב גדול (CAPITAL LETTERS). אם ננסה לדוגמה פירוק למחרוזת בעזרת פונקציה זו נקבל את הכתובת הבאה:
 
- ```Javascript
-// דוגמאות קוד כדי להפוך מחרוזת לרשות ראשון בעזרת לולאה for והפיכת תווית לאותיות ראשון גדולות
-let stringToCapitalize = "מחרוזת להפוך לאותיות ראשונות גדולות";
-let stringArray = stringToCapitalize.split(" ");
-let capitalizedString = "";
+```Javascript
+const str = "שלום חברים";
+const newStr = str.toUpperCase();
 
-for (let i = 0; i < stringArray.length; i++) {
-  let capitalizedWord = stringArray[i][0].toUpperCase() + stringArray[i].slice(1);
-  capitalizedString += capitalizedWord + " ";
-}
-
-console.log(capitalizedString); //פלט: "מחרוזת להפוך לאותיות ראשונות גדולות"
+console.log(newStr);
 ```
 
-## עקרונות ראשונים עמוקים
+**Output:** "שלום חברים"
 
-רישום תווית הוא הפעולה של עבודת התרגום ממחרוזת, או מסדרת תווים, למחרוזת אחרת עם ראשון תווית באותיות ראשונות גדולות. הפעולה זו נדרשת בעיקר כאשר אנחנו עובדים עם תוכנה המוצגת מידע כמו בתוך אבאלוני הבלוגים, בעקבות מונגווזי DB ועוד. דוגמאות להמחרוזת כוללת:
+כפי שאתם רואים, המחרוזת עדיין מופיעה ככתיב קטן. כדי לפתור את זה, אנחנו נשתמש בפונקציה נוספת שנקראת "charAt". פונקציה זו מאפשרת לנו להחליף לאותיות במחרוזת לכתיב גדול. כך נראה הקוד:
 
-- כותרת של כתבות להצגה
-- משובים מלקוחות במאגרי מידע
-- ותוכן אחר
+```Javascript
+const str = "שלום חברים";
+let newStr = "";
 
-## ראה גם
+for (let i = 0; i < str.length; i++) {
+  if (str.charAt(i) === str.charAt(i).toLowerCase()) {
+    newStr += str.charAt(i).toUpperCase();
+  } else {
+    newStr += str.charAt(i);
+  }
+}
 
-- [תורת ההפיכה `toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [תורת החלוקה `.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [לולאה "for"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+console.log(newStr);
+```
+
+**Output:** "שלום חברים"
+
+כפי שאתם רואים, המחרוזת כעת מופיעה בכתיב גדול. ניתן להרחיב על הפונקציה הזו עוד יותר כדי להתאים אותה לצרכים שלנו, למשל להתאים את האותיות הקטנות והגדולות או להפוך את המחרוזת לכתיב צדק (title case).
+
+## עימוד עמוק
+
+כעת שה

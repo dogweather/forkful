@@ -1,66 +1,48 @@
 ---
 title:    "Java: Видобування підрядків"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Якщо ви працюєте з рядками в Java, шанси є, що ви матимете потребу вибирати підрядки зі своїх рядків. Це корисна техніка для роботи зі словниками, регулярними виразами і багатьма іншими проблемами. Таким чином, вивчення того, як витягти підрядки в Java, може бути цінною навичкою для будь-якого програміста.
+Виникла потреба розбити рядок на частини? Ви можете використовувати вбудовані методи Java, щоб витягнути підрядки зі свого рядка і використати їх у своїй програмі.
 
 ## Як це зробити
 
-Для початку, вам потрібно обрати рядок, з якого ви хочете витягти підрядок. Для цього ви можете використовувати метод `substring()` і передати йому початковий та кінцевий індекси вашого підрядка. Наприклад:
+Ваш рядок може бути дуже довгим та складатися з багатьох слів та символів. Інколи вам може знадобитися витягнути певну частину рядка для подальшого використання. В Java існує кілька методів, які допоможуть вам виконати це завдання. Один з них - ```substring ()```, який дозволяє вам виділити певну частину рядка за допомогою індексів. Давайте подивимося на приклад коду та вихідний результат:
 
 ```Java
-String str = "Привіт, Україно!";
-String substring = str.substring(7, 15);
+String greeting = "Привіт усім!";
+String substring = greeting.substring(7);
 System.out.println(substring);
 ```
 
-Вивід буде: `Україно!`
+Вихідний результат: "усім!"
 
-Крім того, ви можете використовувати метод `substring()` з одним параметром, щоб витягти підрядок з початкового індексу до кінця рядка:
+У цьому прикладі ми витягнули частину рядка, починаючи з сьомого символу (індекс 7) до кінця рядка. Ви також можете використовувати другий параметр, щоб вказати кінець виділення, наприклад: ```greeting.substring(3, 8)```, це поверне "іт усі".
 
-```Java
-String str = "Привіт, Україно!";
-String substring = str.substring(7);
-System.out.println(substring);
-```
-
-Вивід буде: `Україно!`
-
-Також, ви можете використовувати метод `indexOf()` для пошуку індексу певного символу у рядку і передати його як початковий або кінцевий індекс у метод `substring()`. Наприклад, ви можете витягти підрядок між двома комами наступним чином:
+Інший корисний метод - ```split ()```, який дозволяє вам розбити рядок на частини за допомогою певного розділювача. Давайте подивимося на цей приклад:
 
 ```Java
-String str = "Привіт, Україно!";
-int firstCommaIndex = str.indexOf(",");
-int secondCommaIndex = str.indexOf(",", firstCommaIndex + 1);
-String substring = str.substring(firstCommaIndex + 2, secondCommaIndex);
-System.out.println(substring);
+String fullName = "Іван Іванович Петренко";
+String[] parts = fullName.split(" ");
+System.out.println(parts[0]); // Виведе "Іван"
+System.out.println(parts[1]); // Виведе "Іванович"
+System.out.println(parts[2]); // Виведе "Петренко"
 ```
 
-Вивід буде: `Україно`
+У цьому прикладі ми використали пробіл як розділювач, щоб розбити рядок на три частини та зберегти їх у масиві. Ви можете використовувати будь-який інший розділювач за необхідністю, наприклад кому або крапку.
 
-## Глибокий занурення
+## Поглиблене вивчення
 
-Крім вищезазначених базових методів, в Java є також клас `StringTokenizer`, який дозволяє вам швидше і зручніше витягти підрядок з рядка за допомогою роздільника. Ось приклад використання цього класу:
-
-```Java
-String str = "Привіт, Україно!";
-StringTokenizer st = new StringTokenizer(str, ",");
-String substring = "";
-while(st.hasMoreTokens()) {
-  substring = st.nextToken();
-}
-System.out.println(substring);
-```
-
-Вивід буде: `Україно!`
+Щоб більш детально дізнатися про роботу зі строками в Java та інші методи для знаходження та редагування підрядків, рекомендуємо ознайомитися з офіційною документацією Java, а також з його різноманітними курсами та практичними завданнями.
 
 ## Дивіться також
 
-- [Документація Java String `substring()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Документація Java String `indexOf()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#indexOf-java.lang.String-)
-- [Документація Java `StringTokenizer`](https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html)
+- [Документація Java про методи строк](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+- [Java SE 11 Документація API про строкові методи](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Java substring() vs split()](https://stackoverflow.com/questions/3639595/java-substring-vs-split)
+-

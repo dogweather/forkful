@@ -1,35 +1,48 @@
 ---
-title:    "Clojure: Skriva tester"
+title:    "Clojure: Att skriva tester"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av utveckling av hållbar och robust kod. Genom att skriva tester kan du upptäcka och förhindra felaktigheter i din kod samt försäkra dig om att den fungerar som den ska. Det är också ett sätt att dokumentera din kod och göra den mer lättförståelig för andra utvecklare.
+Att skriva tester är en viktig del av att skriva bra kod. De hjälper till att hitta buggar och säkerställa att koden fungerar som den ska. I denna bloggpost kommer jag att visa hur man skriver tester i Clojure och varför det är en viktig del av utvecklingsprocessen.
 
-## Hur man gör det
+## Hur man skriver tester i Clojure
 
-För att skriva tester i Clojure används ofta ett ramverk som kallas "Clojure.test". Det ger dig möjlighet att definiera tester genom att använda funktioner som börjar med "deftest" och "is". Här är ett exempel på hur du skulle skriva en enkel test för en funktion som multiplicerar två tal:
+För att skriva tester i Clojure behöver du ett testramverk som heter "clojure.test". Det är en del av Clojure standardbibliotek och är enkelt att använda. För att börja skriva tester behöver du bara importera "clojure.test" biblioteket och definiera en funktion med namnet "test" och sedan skriva dina tester inuti den.
 
 ```Clojure
-(deftest multiply-test
-  (is (= 10 (multiply 5 2))))
+(ns test-projekt
+  (:require [clojure.test :refer [deftest is]])
+
+(deftest min-funktion-test
+  (is (= 5 (+ 2 3)))
+  (is (not= 1 2))))
 ```
 
-I detta exempel definierar vi testet "multiply-test" och använder sedan funktionen "is" för att verifiera att resultatet av att multiplicera 5 och 2 är 10. Om du kör detta test och multipliceringsfunktionen är korrekt implementerad, kommer testet att passera.
+Som du kan se i exemplet ovan så använder vi funktionen "deftest" för att definiera våra tester och vi använder funktionen "is" för att kolla om ett uttryck evaluerar till sant. Om testet misslyckas så får du ett tydligt felmeddelande med information om var testet misslyckades.
 
 ## Djupdykning
 
-Att skriva tester handlar inte bara om att validera funktioner, det handlar också om att designa din kod på ett sätt som gör den lättare att testa. Detta inkluderar att använda funktioner med tydliga gränssnitt och minimera beroenden mellan olika delar av koden.
+När du skriver tester är det viktigt att täcka så många fall som möjligt för att få tillförlitliga tester. Du kan använda "is" funktionen för att kontrollera om ett uttryck är sant men det finns även andra funktioner som du kan använda beroende på vilken typ av data du förväntar dig.
 
-En annan viktig aspekt är testavdeckning, vilket innebär att du ska testa så många olika fall och vägar genom din kod som möjligt för att upptäcka eventuella buggar och oönskade beteenden.
+```Clojure
+(is (= 5 (+ 2 3))) ; jämför om två värden är lika
+(is (not= 1 2)) ; jämför om två värden är olika
+(is (<= 5 6)) ; kollar om ett värde är mindre än eller lika med ett annat
+(is (> 10 5)) ; kollar om ett värde är större än ett annat
+(is (contains? {:a 1 :b 2} :a)) ; kollar om en nyckel finns i en map
+```
 
-Slutligen är det viktigt att notera att tester inte är en garanti för perfekt kod, men de är ett kraftfullt verktyg som hjälper dig att skapa mer tillförlitliga program.
+Du kan även använda "is" för att kontrollera exceptioner och asynkron kod vilket är viktigt för att säkerställa att din kod fungerar som den ska i alla situationer.
 
 ## Se även
 
-- [Officiell dokumentation för Clojure.test](https://clojuredocs.org/clojure.test)
-- [En guide till testning i Clojure](https://clojure.org/guides/testing)
-- [Bästa praxis för att skriva tester i Clojure](https://www.braveclojure.com/testing/)
+Här är några användbara länkar för att lära dig mer om att skriva tester i Clojure:
+
+- [Officiell dokumenation för clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Tutorial om att skriva tester i Clojure](https://vlaaad.github.io/clojure/test/tdd/2015/11/03/clojurescript-intro#toc9)
+- [En djupgående guide om att skriva tester i Clojure](https://yogthos.net/posts/2014-08-15-Testing-in-Clojure.html)

@@ -1,40 +1,44 @@
 ---
-title:    "Java: Capitalizando uma string"
+title:    "Java: Transformando uma string em maiúsculo"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em Java?
-
-A capitalização de uma string é um processo fundamental para a qualidade e legibilidade do código em Java. Ao capitalizar uma string, garantimos que as informações apresentadas ao usuário estejam uniformes e corretas.
+## Por que capitalizar uma string é importante
+Capitalizar uma string é uma ação simples e essencial para garantir que as palavras sejam apresentadas corretamente. Ao capitalizar uma string, você garante que as primeiras letras de cada palavra estejam em maiúsculo, o que facilita a leitura e a compreensão de um texto.
 
 ## Como capitalizar uma string em Java
-
-Para capitalizar uma string em Java, temos duas opções: usando o método `toUpperCase()` ou aproveitando a biblioteca `StringUtils` do Apache Commons Lang.
+Aqui estão alguns exemplos em Java de como capitalizar uma string:
 
 ```Java
-// Exemplo usando o método toUpperCase()
+String texto = "aprendendo programação";
+String textoCapitalizado = texto.substring(0, 1).toUpperCase() + texto.substring(1);
+System.out.println(textoCapitalizado);
 
-String nome = "carlos";
-String nomeCapitalizado = nome.toUpperCase();
-System.out.println(nomeCapitalizado); // Saída: CARLOS
-
-// Exemplo usando a biblioteca StringUtils
-
-String nome = "ana";
-String nomeCapitalizado = StringUtils.capitalize(nome);
-System.out.println(nomeCapitalizado); // Saída: Ana
+// Saída: Aprendendo programação
 ```
 
-## Profundidade no Capitalization
+Neste exemplo, usamos o método `substring()` para obter a primeira letra da string original e convertê-la em maiúscula, e depois concatenamos com o restante da string.
 
-Capitalizar uma string requer um conhecimento mais profundo sobre a forma como as strings são armazenadas e manipuladas em memória no Java. Isso nos permite entender o impacto de diferentes técnicas de capitalização na performance do nosso código.
+Outra opção é usar a classe `java.util.Locale` para capitalizar a string, conforme mostrado no exemplo a seguir:
 
-Além disso, é importante estar ciente de que diferentes idiomas possuem suas próprias regras de capitalização, e é fundamental respeitar essas regras para garantir a corretude e a fluência do texto apresentado ao usuário.
+```Java
+String texto = "programando em Java";
+String textoCapitalizado = texto.toUpperCase(Locale.getDefault());
+System.out.println(textoCapitalizado);
+
+// Saída: PROGRAMANDO EM JAVA
+```
+
+## Profundidade do processo de capitalização
+Existem diferentes formas de capitalizar uma string, e as duas mostradas acima são apenas algumas delas. O importante é entender as diferentes opções e escolher a mais adequada para cada situação.
+
+Além disso, é importante lembrar que a capitalização de strings também depende da linguagem utilizada. Em alguns idiomas, como o alemão, existem regras específicas para a capitalização de palavras.
+
+Portanto, é fundamental que os desenvolvedores tenham conhecimento sobre as particularidades linguísticas e as melhores práticas ao lidar com strings em seus projetos.
 
 ## Veja também
-
-- [Documentação oficial da classe String em Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Documentação da biblioteca Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)
-- [Dicas para melhorar a performance em Java](https://www.devmedia.com.br/dez-dicas-para-melhorar-a-performance-em-java/25642)
+- [Documentação oficial do Java sobre o método toUpperCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Tutorial sobre como capitalizar strings em Java](https://www.baeldung.com/java-capitalize-string)

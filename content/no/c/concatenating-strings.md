@@ -1,48 +1,35 @@
 ---
-title:    "C: Sammenstilling av strenger"
+title:    "C: Sammenføyning av strenger"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-C-programmering for nybegynnere
+## Hvorfor?
+String-konkatenering er en viktig del av programmering, spesielt når man jobber med å manipulere tekststrenger. Det lar deg kombinere flere strenger til en enkelt streng, som er nyttig for å lage komplekse utdata eller manipulere inputdata. Så hvis du jobber med tekstbehandling, er det viktig å vite hvordan man konkatenerer strenger i C.
 
-## Hvorfor
+## Hvordan?
+Kodingseksempler viser den enkleste måten å konkatenerer strenger i C, ved å bruke funksjonen `strcat()`. Denne funksjonen tar to argumenter: strengen som skal utvides, og strengen som skal legges til.
 
-Å kombinere to tekststrenger er en viktig del av C-programmering. Dette gjør det mulig å lage mer komplekse tekststrenger som kan brukes til å presentere informasjon til brukeren. Dette er spesielt nyttig når du jobber med input-output-operasjoner eller når du trenger å generere dynamiske tekster.
-
-## Hvordan
-
-Det første du må gjøre er å definere to tekstvariable som du ønsker å kombinere. Dette kan gjøres ved å bruke datatype "char". Deretter kan du bruke "strcat" funksjonen til å kombinere de to stringene. For eksempel:
+Et eksempel på bruk av `strcat()` ville være:
 
 ```C
-char navn1[20] = "John";
-char navn2[20] = "Doe";
-strcat(navn1, navn2);
-printf("%s", navn1);
+char string1[] = "Hei, ";
+char string2[] = "verden!";
+strcat(string1, string2);
 ```
 
-Dette vil kombinere "John" og "Doe" til en string og skrive ut "JohnDoe" til skjermen. Det er også viktig å merke seg at "strcat" funksjonen endrer verdien til den første stringen, så det er viktig å sørge for at den første stringen har nok plass til å inkludere den andre stringen.
+Dette vil føre til at `string2` blir lagt til i `string1`, og resultatet vil være `Hei, verden!` Når disse to strengene blir konkateneret, vil det skape en ny string med alle tegnene fra begge strengene.
 
-Du kan også kombinere flere stringer ved å bruke flere "strcat" funksjoner. For eksempel:
-
-```C
-char adjektiv[20] = "stilig";
-strcat(adjektiv, navn1);
-strcat(adjektiv, "!"); 
-printf("Du ser veldig %s ut, %s", adjektiv, navn2);
-```
-
-Dette vil kombinere "stilig", "John" og "!" og skrive ut "Du ser veldig stilig ut, John!" til skjermen.
+Dette er bare en enkel måte å konkatenerer strenger i C på. Det finnes også flere andre funksjoner, som `sprintf()` og `strncpy()`, som kan bli brukt til å konkatenerer strenger på forskjellige måter.
 
 ## Dypdykk
+Når du konkatenerer strenger, er det viktig å sørge for at strengene har riktig størrelse og at det finnes nok plass til å kombinere dem. Hvis ikke, kan det føre til feil i programmet eller til og med krasj.
 
-I tillegg til "strcat" funksjonen, er det også en rekke andre funksjoner som kan brukes til å kombinere tekststrenger, for eksempel "strcpy" og "sprintf". Disse funksjonene har forskjellige bruksområder og kan være nyttige i ulike situasjoner.
+En annen viktig ting å huske på er at du må være forsiktig når du konkatenerer brukergenerert input, for å unngå potensielle sikkerhetsrisikoer som bufferoverflow. Det er derfor viktig å alltid validere og filtrere brukerinput før det konkateneres til andre strenger.
 
-Det er også viktig å være oppmerksom på at ASCII-karakteren for null, "\0", er avgjørende for å kombinere stringer riktig. Dette er fordi C bruker denne karakteren for å markere slutten på en string. Derfor må du sørge for at den første stringen har en null-karakter på slutten før du bruker "strcat" funksjonen.
-
-## Se Også
-
-- [https://www.programiz.com/c-programming/library-function/string.h/strcat](https://www.programiz.com/c-programming/library-function/string.h/strcat)
-- [https://www.geeksforgeeks.org/strcat-in-ccpp/](https://www.geeksforgeeks.org/strcat-in-ccpp/)
-- [https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+## Se også
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [How to concatenate two strings in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
+- [Secure coding in C](https://www.securecoding.cert.org/confluence/display/c/Secure+Coding+Standards)

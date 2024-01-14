@@ -1,40 +1,49 @@
 ---
-title:    "Bash: Verifica dell'esistenza di una directory"
+title:    "Bash: Verificare se esiste una directory"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché controllare se una directory esiste?
+## Perché
 
-Controllare se una directory esiste è un'operazione comune nella programmazione Bash. Può essere utile per verificare se una certa cartella è presente prima di eseguire un'operazione su di essa, come ad esempio creare un nuovo file o copiare dei file al suo interno. Inoltre, può aiutare a gestire gli errori nel caso in cui una directory non esista.
+Quando si scrive uno script Bash, può capitare di dover verificare se una determinata directory esiste prima di effettuare una determinata operazione. Questo è importante perché, nel caso in cui la directory non esista, lo script potrebbe generare errori o comportamenti indesiderati.
 
-## Come fare?
+## Come Fare
 
-Per controllare se una directory esiste in Bash, è possibile utilizzare il comando `test` seguito dall'opzione `-d`, che indica che si sta verificando un elemento di tipo directory. Inoltre, è necessario specificare il percorso completo della directory che si desidera controllare.
-
-Ecco un esempio di codice che verifica se la directory "Documenti" esiste nella home directory dell'utente corrente:
+Per verificare se una directory esiste, possiamo utilizzare il comando `test` seguito dall'opzione `-d`, che controlla se un determinato percorso corrisponde a una directory. Ecco un esempio:
 
 ```Bash
-if test -d ~/Documenti; then
-    echo "La directory Documenti esiste."
+test -d /percorso/directory/esistente
+```
+
+Il comando restituirà 0 (successo) se la directory esiste, mentre restituirà un valore diverso da 0 (errore) se la directory non esiste. Possiamo utilizzare questo risultato all'interno di uno statement `if` per gestire diversi scenari.
+
+```Bash
+if test -d /percorso/directory/esistente
+then
+    echo "La directory esiste"
 else
-    echo "La directory Documenti non esiste."
+    echo "La directory non esiste"
 fi
 ```
 
-In questo caso, il comando `test` restituirà un valore vero se la directory esiste e un valore falso se non esiste. Utilizzando un semplice condizionale `if`, è possibile determinare se la directory esiste o meno e quindi eseguire le azioni appropriate.
+In questo esempio, se il comando `test` restituisce 0, lo statement `then` eseguirà il codice per indicare che la directory esiste, altrimenti il codice nell'`else` verrà eseguito per indicare che la directory non esiste.
 
 ## Approfondimento
 
-Esistono altre opzioni del comando `test` che possono essere utili per il controllo delle directory. Ad esempio, l'opzione `-e` può essere utilizzata per controllare l'esistenza di qualsiasi tipo di file o directory, mentre l'opzione `-f` controlla specificamente se si tratta di un file regolare.
+È importante notare che il comando `test` può anche essere scritto in modo abbreviato utilizzando le parentesi tonde `( )` anziché gli statement `if` e `else`.
 
-Inoltre, è importante notare che il comando `test` utilizza la sintassi a doppio colchetto `[[ ]]` invece della sintassi a singolo colchetto `[ ]` quando viene utilizzato con le opzioni `-d`, `-e` e `-f`.
+```Bash
+test -d /percorso/directory/esistente && echo "La directory esiste"
+```
 
-## Vedi anche
+In questo caso, se la directory esiste, verrà eseguito il comando `echo` per indicare che la directory esiste. In caso contrario, il comando verrà ignorato.
 
-Se vuoi saperne di più sulla gestione dei file e delle directory in Bash, puoi consultare questi utili link:
+Una nota importante è che il comando `test` può anche essere utilizzato per verificare se un file esiste, utilizzando l'opzione `-f` invece di `-d`.
 
-- [La Guida Pratica Bash: Debian](https://www.debian.org/doc/manuals/debian-reference/ch01.en.html#_basics_of_file_operations)
-- [Tutorial su Shell Scripting Bash](https://www.shellscript.sh/index.html)
-- [Come verificare se un file esiste nel Bash Scripting](https://linuxize.com/post/bash-check-if-file-exists/)
+## Vedi Anche
+
+- [Comando test su Linux Manpages](https://linux.die.net/man/1/test)
+- [Tutorial su Bash scripting su Linuxize](https://linuxize.com/post/bash-scripting-tutorial/)

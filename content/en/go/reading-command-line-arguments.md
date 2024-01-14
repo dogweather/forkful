@@ -1,17 +1,20 @@
 ---
 title:    "Go recipe: Reading command line arguments"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Reading command line arguments is an essential skill for any Go programmer. It allows you to pass parameters or options to your program at runtime, making it more versatile and customizable. Plus, understanding how to read command line arguments can greatly improve your overall programming knowledge.
+Command line arguments are an essential part of many programs, enabling users to provide inputs and customize their experience. Learning how to read command line arguments can greatly enhance your Go programming skills and make your programs more versatile.
 
 ## How To
 
-To read command line arguments in Go, you can use the `os.Args` variable, which is automatically populated with the arguments passed to your program. Let's take a look at a simple example:
+Reading command line arguments in Go is a straightforward process. First, we need to import the `os` package, which provides functions for interacting with the operating system. Then, we can use the `os.Args` variable to access the command line arguments.
+
+To demonstrate this, let's create a simple program that takes in two arguments and outputs them. We can start by creating a new file `args.go` and adding the following code:
 
 ```Go
 package main
@@ -22,63 +25,49 @@ import (
 )
 
 func main() {
-    args := os.Args[1:] // exclude the program name itself
-    fmt.Printf("Arguments: %v", args)
+    // os.Args[0] is the name of the program
+    // os.Args[1:] contains all the arguments
+    fmt.Println("First argument:", os.Args[1])
+    fmt.Println("Second argument:", os.Args[2])
 }
 ```
 
-If you were to run this program with the command `go run main.go hello world`, the output would be:
+Now, we can compile and run our program using the following commands:
 
 ```
-Arguments: [hello world]
+go build args.go
+./args hello world
 ```
 
-As you can see, the `os.Args` variable is a slice of strings, where each element represents an argument passed to the program. By using indexing, you can access individual arguments.
+The output should look like this:
 
-But what if you want to pass options to your program, along with the arguments? For that, we can use flags. The standard library `flag` package makes it easy to define and parse flag options. Let's modify our previous example to include a flag:
+```
+First argument: hello
+Second argument: world
+```
+
+We can also use a `for` loop to access each argument individually, like this:
 
 ```Go
-package main
-
-import (
-    "flag"
-    "fmt"
-    "os"
-)
-
-func main() {
-    // define a flag named "name" with a default value of "World" and short description
-    name := flag.String("name", "World", "a name to greet")
-    
-    // make sure to parse the flags before using them
-    flag.Parse()
-    
-    // get the arguments
-    args := os.Args[1:]
-    
-    // print the greeting with the name and arguments
-    fmt.Printf("Hello, %s! Arguments: %v", *name, args)
+for i := 0; i < len(os.Args); i++ {
+    fmt.Printf("Argument %d: %s\n", i, os.Args[i])
 }
 ```
 
-Now, if you run `go run main.go -name Alice hello world`, the output would be:
-
-```
-Hello, Alice! Arguments: [hello world]
-```
-
-Flags can greatly enhance the functionality of your program, so make sure to use them whenever necessary.
+Try running this program with different arguments and see how it behaves.
 
 ## Deep Dive
 
-Reading command line arguments may seem simple, but there are a few important concepts to keep in mind. Firstly, it's worth noting that `os.Args` is a slice that includes the program name as the first element. However, we often want to exclude the program name itself from our arguments. That's why we used the slice expression `[1:]` to exclude the first element in our examples.
+Now, let's take a deeper look at how the `os.Args` variable works. It is a slice of strings, which means that we can use all the functions and methods available for manipulating slices. For example, we can use the `len()` function to get the number of arguments, and the `append()` function to add more arguments to the slice.
 
-Another thing to keep in mind is that arguments are always passed as strings. So if you need to convert them to other types, like integers or booleans, you'll need to use type conversion.
-
-And finally, it's worth mentioning that the `flag` package also allows you to define required flags, set custom usage messages, and even create subcommands. For more details, make sure to check out the links in the "See Also" section below.
+We can also use the `flag` package to parse command line arguments more efficiently. This package provides functions for defining flags and getting their values easily. You can explore the `flag` package further on your own to see how it can improve your command line argument handling.
 
 ## See Also
 
-- [Command Line Arguments in Go](https://gobyexample.com/command-line-arguments)
-- [Using Flags in Go](https://golang.org/pkg/flag/)
-- [Parsing Command Line Flags in Go](https://blog.rapid7.com/2016/08/04/parsing-command-line-flags-in-go/)
+For more information on the `os` and `flag` packages, check out the following links:
+
+- [os package documentation](https://golang.org/pkg/os/)
+- [flag package documentation](https://golang.org/pkg/flag/)
+- [Go by Example: Command-Line Arguments](https://gobyexample.com/command-line-arguments)
+
+Happy coding!

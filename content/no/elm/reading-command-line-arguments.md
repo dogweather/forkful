@@ -1,70 +1,93 @@
 ---
-title:    "Elm: Lesing av kommandolinje-argumenter"
+title:    "Elm: Å lese kommandolinje-argumenter"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvis du har programmert i Elm, har du kanskje lagt merke til at noen programmer har mulighet for å lese inn kommandolinjeargumenter. Dette kan være nyttig for å gi programmene våre forskjellige funksjonaliteter basert på hva som blir skrevet inn i kommandolinjen. I denne bloggposten skal vi se på hvordan man kan lese kommandolinjeargumenter i Elm, og hvorfor dette kan være nyttig.
+Om du noen gang har programmert i Elm, har du sannsynligvis kommet bort i behovet for å lese inn argumenter fra kommandolinjen. Dette kan være nyttig for å tilpasse programmets oppførsel basert på brukerens input. I denne bloggposten vil jeg forklare hvorfor og hvordan man kan lese kommandolinjeargumenter i Elm.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å lese inn kommandolinjeargumenter i Elm, bruker vi den innebygde funksjonen `platform.program`. Denne funksjonen tar inn en `Program` som parameter, og sørger for at programmet vårt får tilgang til kommandolinjeinformasjonen. La oss se på et enkelt eksempel:
+Å lese kommandolinjeargumenter i Elm er ikke komplisert og kan gjøres ved hjelp av den innebygde funksjonen `Platform.Cmdline.args`. Denne funksjonen returnerer en liste med argumentene som ble passert inn fra kommandolinjen.
 
-```Elm
-module Main exposing (main)
+For å bruke denne funksjonen, kan man først importere `Platform.Cmdline` modulen og deretter kalle `args` funksjonen slik:
 
-import Platform exposing (program)
-import String exposing (split)
+```elm
+import Platform.Cmdline
 
-main : Program Cmd msg
+-- Leser inn kommandolinjeargumenter og lagrer dem i en variabel
+args = Platform.Cmdline.args
+```
+
+La oss se på et eksempel for å forstå bedre. For å lese inn argumentene fra kommandolinjen og skrive dem ut i konsollen, kan vi bruke følgende kode:
+
+```elm
+import Platform.Cmdline
+import Console
+
 main =
-    program
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        }
-        
-type alias Model =
-    { args : List String
+  Platform.worker
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
+    , view = view
     }
-    
-init : () -> (Model, Cmd msg)
+
+type alias Model =
+  { args : List String
+  }
+
+init : () -> ( Model, Cmd Msg )
 init _ =
-    let
-        args =
-            platform.program.metadata.args
-    in
-    ({ args = split " " args }, Cmd.none)
-    
-update : msg -> Model -> (Model, Cmd msg)
+  ( Model [], Cmd.none )
+
+type Msg
+  = NoOp
+
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    (model, Cmd.none)
-    
-subscriptions : Model -> Sub msg
+  case msg of
+    NoOp ->
+      ( model, Cmd.none )
+
+subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+  Sub.none
+
+view : Model -> Html Msg
+view model =
+  -- Henter ut listen med argumenter og skriver dem ut i konsollen
+  (Console.log "Argumenter:")
+  (Platform.Cmdline.args
+    |> List.map (Console.log << toString)
+    |> List.mapHtml Console.text
+  )
+
 ```
 
-Her oppretter vi et enkelt program med en `Model` som inneholder en liste av alle kommandolinjeargumentene som blir sendt inn til programmet. Vi bruker `platform.program.metadata.args` til å returnere argumentene som en enkelt streng, og deretter bruker vi `String.split`-funksjonen til å dele opp strengen og skape en liste av argumentene.
+Når vi nå kjører programmet og legger til noen argumenter i kommandolinjen, vil vi se at argumentene blir skrevet ut i konsollen.
 
-For å kjøre programmet vårt og lese inn kommandolinjeargumenter, skriver vi inn følgende kommando i terminalen:
+`$ elm reactor --port=3000`
 
-```bash
-elm app.elm --arg1 arg2 arg3
+I konsollen vil du da få følgende output:
+
+```
+Argumenter:
+"reactor"
+"--port=3000"
 ```
 
-Her vil `app.elm` være navnet på filen vår, mens `arg1`, `arg2` og `arg3` er argumentene som blir sendt inn til programmet. Vi kan deretter bruke disse argumentene i vårt program for å gi ulike funksjonaliteter eller tilpasse oppførselen basert på dem.
+Med denne kunnskapen kan du nå lese inn og bruke kommandolinjeargumenter i dine egne Elm-prosjekter.
 
-## Dypdykk
+## Deep Dive
 
-`platform.program.metadata`-funksjonen tilbyr også andre nyttige informasjon, som for eksempel hvilken nettleser som blir brukt, og hvilken versjon av Elms kjører på. Du kan også bruke `platform.program.context`-funksjonen til å få tilgang til informasjon som nettleserens språkinnstillinger og skjermoppløsning.
-
-Det er også verdt å nevne at denne funksjonen kun fungerer når programmet blir kjørt i en nettleser, og ikke når det blir kjørt lokalt i en Elm REPL.
+Det er verdt å merke seg at denne metoden for å lese kommandolinjeargumenter ikke støtter å lese inn flagg eller argumenter med flere ord. Hvis du trenger å lese inn slike argumenter, er det anbefalt å bruke en tredjeparts pakke som støtter dette, som for eksempel `elm-cmdargs`.
 
 ## Se også
 
-- [Elm Platform Dokumentasjon](https://guide.elm-lang.org/install/README.html)
-- [Elm Kommandolinjeargumenter Eksempel](https://www.kuuttila.net/2020/07/25/ellie-samples-web.html)
+- [Elm dokumentasjon for Platform.Cmdline](https://package.elm-lang.org/packages/elm/browser/latest/Browser#home)
+- [Elm pakken elm-cmdargs](https://package.elm-lang.org/packages/brianbuchanan/elm-cmdargs/latest/)

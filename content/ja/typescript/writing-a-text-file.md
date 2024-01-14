@@ -1,43 +1,60 @@
 ---
 title:    "TypeScript: テキストファイルの作成"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ書く必要があるのか
+# なぜテキストファイルを書きたいのか
 
-テキストファイルを書く必要がある理由はたくさんあります。テキストファイルは、プログラムを実行するために必要な情報を保存することができるため、多くのプログラマーや開発者にとって重要な道具となっています。
+テキストファイルを書くことは、プログラマーにとって非常に重要なスキルです。テキストファイルには、コードやデータを保存するために使用することができます。また、ドキュメントやメモを記録するためにも使われます。テキストファイルを書くことで、プログラマーは効率的に作業を行うことができます。
 
-## 書き方の簡単な説明
+## 書き方
 
-テキストファイルを書くには、TypeScriptを使うことができます。下の例を参考にしてください。
+まずは、TypeScriptの `fs`モジュールを使用して、ファイルを開いて書き込む方法を見ていきましょう。
 
-```TypeScript
-// テキストファイルを書く
+```
+TypeScript
+import * as fs from 'fs';
 
-// ファイルを開く
-let fs = require("fs");
-let textFile = fs.createWriteStream("textFile.txt");
-
-// 書き込む内容
-let text = "こんにちは、世界！";
-
-// ファイルに書き込む
-textFile.write(text);
-
-// ファイルを閉じる
-textFile.end();
+// 書き込むファイルを作成
+fs.writeFile('hello.txt', 'こんにちは、世界！', (err) => {
+  if (err) throw err;
+});
 ```
 
-上記のコードを実行すると、"textFile.txt"という名前のテキストファイルが作成され、"こんにちは、世界！"という文字が書き込まれます。
+上記のコードを実行すると、ファイルが作成され、中には「こんにちは、世界！」というテキストが書き込まれます。
 
-## 深く掘り下げる
+次に、既存のテキストファイルに追記する方法を見てみましょう。
 
-テキストファイルを書く際には、フォーマットやエンコーディングなどを決める必要があります。また、ファイルを書き込む方法には複数のオプションがあります。詳細は公式ドキュメントやオンラインリソースを参考にしてください。
+```
+TypeScript
+import * as fs from 'fs';
 
-## 参考リンク
+// ファイルを開く
+fs.open('hello.txt', 'a', (err, fd) => {
+  if (err) throw err;
 
-- [Node.jsを使ったファイルの書き込みの仕方](https://techacademy.jp/magazine/18803)
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [テキストファイルのフォーマットについての記事](https://ja.wikipedia.org/wiki/テキストファイル)
+  // ファイルに追記
+  fs.appendFile(fd, '追記されたテキスト', (err) => {
+    fs.close(fd, (err) => {
+      if (err) throw err;
+    });
+  });
+});
+```
+
+上記のコードを実行すると、既存の「hello.txt」ファイルに「追記されたテキスト」という文字列が追加されます。
+
+## ディープダイブ
+
+テキストファイルに書き込む際には、複数のファイルを扱うこともあります。その際には、読み込みや書き込みの順序に注意する必要があります。また、ファイル操作を行う前には、ファイルが存在するかどうかを確認することも重要です。
+
+上記の例では、エラーハンドリングを行っていませんが、実際のアプリケーションではエラー処理をしっかり行うようにしましょう。
+
+# 参考リンク
+
+- [Node.jsのfsモジュールドキュメント](https://nodejs.org/api/fs.html)
+- [TypeScriptの型安全なファイルストリーム操作について](https://blog.shnewto.com/typescript-typed-file-stream/)
+- [あなたもTypeScriptでテキストファイルを書いてみよう！](https://qiita.com/babie/items/a6c7338f070c8976a297)

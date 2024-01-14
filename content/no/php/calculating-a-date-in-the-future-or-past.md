@@ -1,50 +1,49 @@
 ---
 title:    "PHP: Beregning av en dato i fremtiden eller fortiden"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det er mange grunner til å ville beregne en dato i fremtiden eller fortiden i PHP-programmering. Kanskje du ønsker å lage et dynamisk nettsted som viser ulike datoer basert på brukerens input, eller kanskje du ønsker å lage en applikasjon som sender påminnelser om kommende hendelser. Uansett årsak, er å kunne beregne datoer en viktig ferdighet for enhver PHP-utvikler.
+Det kan være mange grunner til å ville beregne en dato i fremtiden eller fortiden. Kanskje du trenger å planlegge en hendelse eller ønsker å lage en alderskalkulator. Uansett årsak, er PHP et flott språk å bruke for å utføre slike beregninger.
 
-## How To
+## Hvordan gjøre det
 
-Den enkleste måten å beregne en dato i PHP er ved å bruke funksjonen `date()`. Denne funksjonen tar to parametere: en formateringsstreng og en valgfri tidstempel-verdi. Formateringsstreng bestemmer hvordan datoen vil bli presentert, for eksempel 'd.m.Y' for å vise datoen som dag, måned og år. Tidstempel-verdien kan brukes til å beregne en dato basert på et spesifikt tidspunkt, for eksempel ved å legge til 10 dager til dagens dato.
+Beregning av en dato i fremtiden eller fortiden innebærer å legge til eller trekke fra et visst antall dager til en eksisterende dato. Det kan gjøres ved bruk av PHPs innebygde funksjoner `strtotime()` og `date()`.
 
-```PHP
-<?php
-// Beregning av dato 10 dager frem i tid
-$future_date = date('d.m.Y', strtotime('+10 days'));
-echo $future_date; // Output: 07.07.2021
-
-// Beregning av dato 5 år tilbake i tid
-$past_date = date('d.m.Y', strtotime('-5 years'));
-echo $past_date; // Output: 04.07.2016
-?>
-```
-
-Det finnes også flere innebygde funksjoner i PHP for å beregne datoer, som for eksempel `strtotime()` og `strtotime()` som kan brukes til å konvertere en dato til et tidstempel og omvendt.
-
-## Deep Dive
-
-For å forstå mer om hvordan beregning av datoer fungerer i PHP, er det viktig å ha kjennskap til Unix-tid eller tidstempel. Dette er et tall som representerer antall sekunder som har gått siden 1. januar 1970 kl. 00:00:00 UTC. Dette brukes som en standard for å beregne datoer og tidsintervaller.
-
-I tillegg til å bruke `date()` funksjonen, kan du også benytte deg av PHPs innebygde DateTime-klasse. Denne klassen har en rekke nyttige metoder for å beregne, formatere og manipulere datoer. Her er et eksempel på hvordan du kan beregne en dato ved å bruke DateTime-klasse og legge til et antall dager:
+Først må du bestemme deg for hvilken dato du vil utføre beregningen på, og deretter bestemme hvor mange dager du vil legge til eller trekke fra. For eksempel, hvis du ønsker å beregne datoen 2 måneder og 10 dager fra nå, vil vi bruke `date()` til å først hente den nåværende datoen, og deretter bruke `strtotime()` for å legge til 2 måneder og 10 dager.
 
 ```PHP
-<?php
-$date = new DateTime();
-$date->modify('+10 days');
-echo $date->format('d.m.Y'); // Output: 07.07.2021
-?>
+$todays_date = date("d-m-Y"); // henter nåværende dato
+$future_date = date("d-m-Y", strtotime("+2 months +10 days")); // legger til 2 måneder og 10 dager
+echo "Datoen 2 måneder og 10 dager fra nå vil være: $future_date";
 ```
 
-Det finnes også mange tredjepartsbiblioteker for å hjelpe med beregning av datoer i PHP, som for eksempel Carbon eller Datetime.
+Dette vil gi oss følgende utdata i nettleseren:
 
-## Se også
+*Datoen 2 måneder og 10 dager fra nå vil være: 02-08-2020*
 
-- [PHP.net: Date and time functions](https://www.php.net/manual/en/ref.datetime.php)
-- [PHP.net: DateTime class](https://www.php.net/manual/en/class.datetime.php)
-- [Carbon: A simple PHP API extension for DateTime](http://carbon.nesbot.com/)
+Vi kan også beregne en dato i fortiden ved å bruke `strtotime()` med en negativ verdi. For eksempel, hvis vi ønsker å finne ut datoen 3 uker tilbake i tid, vil vi bruke følgende kode:
+
+```PHP
+$past_date = date("d-m-Y", strtotime("-3 weeks")); // trekker fra 3 uker
+echo "Datoen 3 uker tilbake i tid var: $past_date";
+```
+
+Som et resultat vil vi få følgende utdata:
+
+*Datoen 3 uker tilbake i tid var: 03-04-2020*
+
+## Dypdykk
+
+Å utføre beregninger av datoer i fremtiden eller fortiden kan virke enkelt, men det er viktig å være klar over noen ting før du implementerer det i ditt eget prosjekt. For det første kan `strtotime()` bare beregne datoen fra og med 1. januar 1970. For det andre, må du være forsiktig med datoen som returneres hvis du bruker `date()` med forskjellige formater.
+
+Det er også verdt å merke seg at du kan bruke andre enheter enn dager i `strtotime()`, for eksempel måneder eller år. Du kan også kombinere enheter, for eksempel "+5 months -3 days".
+
+## Se Også
+
+- [PHP `strtotime()` funksjon](https://www.php.net/manual/en/function.strtotime.php)
+- [PHP `date()` funksjon](https://www.php.net/manual/en/function.date.php)

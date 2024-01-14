@@ -1,51 +1,61 @@
 ---
-title:    "Java: 정규식 사용하기"
+title:    "Java: 정규 표현식 사용하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 정규식을 사용해야 할까?
+#왜 정규식을 사용해야 하는가?
+정규식은 문자열에서 원하는 패턴을 찾아내기 위해 사용되는 강력한 도구입니다. 예를 들어, 이메일 주소를 찾거나 특정 문자열을 바꾸는 등의 작업을 할 때 정규식은 매우 유용합니다. 또한 정규식은 문자열 처리에 있어서 더욱 효율적이며 유연하게 사용할 수 있습니다.
 
-정규식(Regular Expressions)은 문자열을 다루는 강력한 도구로, 텍스트 데이터를 효율적으로 처리할 수 있도록 도와줍니다. 여러분이 문자열을 검색하거나 대체하고자 할 때 정규식은 빠르고 정확한 해결책이 될 수 있습니다. 게다가 Java 프로그래밍에서 정규식을 활용하면 코드의 간결성과 유지 보수성을 높일 수 있습니다.
+#어떻게 사용하나요?
+정규식을 사용하기 위해서는 먼저 패턴을 작성해야 합니다. 이 패턴에는 원하는 문자 또는 패턴을 나타내는 특수 문자들이 포함될 수 있습니다. 그리고 해당 패턴을 적용할 문자열도 필요합니다. 예를 들어, 다음은 이메일 주소를 찾는 정규식의 예제 코드입니다.
 
-# 정규식을 사용하는 방법
-
-정규식을 사용하기 위해서는 먼저 java.util.regex 패키지를 import해야 합니다. 그리고 해당 패키지에 포함된 Pattern 클래스를 사용하여 정규식을 컴파일하고, Matcher 클래스를 사용하여 패턴과 매칭되는 문자열을 찾는 작업을 수행할 수 있습니다.
-
-다음은 "abc" 문자열이 포함된 문자열을 찾는 예제 코드입니다.
 ```Java
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+String pattern = "[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-z]{2,3}";
+String input = "example@email.com";
 
-public class RegularExpressions {
-    public static void main(String[] args) {
-        String text = "apple abc banana";
-        String pattern = "abc";
-        Pattern p = Pattern.compile(pattern);
-        Matcher m = p.matcher(text);
-        while (m.find()) {
-            System.out.println("Matched: " + m.group());
-        }
-    }
+Pattern regex = Pattern.compile(pattern);
+Matcher matcher = regex.matcher(input);
+
+if(matcher.find()) {
+    System.out.println("Matches found: " + matcher.group());
 }
 ```
 
-출력 결과는 다음과 같습니다.
+위 코드에서는 정규식 패턴으로 이메일 주소에 해당하는 문자열을 찾습니다. 이때, "group" 메소드를 사용하여 해당 문자열을 출력합니다. 실행 결과는 다음과 같이 나타납니다.
+
 ```
-Matched: abc
+Matches found: example@email.com
 ```
 
-위 예제에서 사용된 Pattern 클래스의 compile() 메서드는 정규식을 컴파일하여 패턴을 생성합니다. Matcher 클래스의 find() 메서드는 주어진 문자열에서 패턴과 일치하는 부분을 찾아내며, 일치하는 부분을 group() 메서드로 반환합니다. 이를 활용하여 코드 내에서 원하는 작업을 수행할 수 있습니다.
+또 다른 예제로는 주민등록번호 형식의 문자열에서 숫자 부분만 추출하는 정규식을 살펴보겠습니다.
 
-# 정규식 깊게 파헤치기
+```Java
+String pattern = "\\d{6}-\\d{7}";
+String input = "960101-1234567";
 
-정규식 패턴은 기본적으로 정규 표현 언어(Regular Expression Language)에 의해 구성됩니다. 이 언어는 여러가지 메타 문자와 특수 기호를 사용하여 패턴을 표현하며, 각각의 의미는 다양합니다. 따라서 정규식을 작성할 때는 사용할 수 있는 메타 문자와 기호, 그리고 그 의미를 잘 이해하는 것이 중요합니다.
+Pattern regex = Pattern.compile(pattern);
+Matcher matcher = regex.matcher(input);
 
-또한 정규식 내에서는 그룹, 양보기, 역참조 등의 기능을 활용할 수 있습니다. 이를 통해 정교한 문자열 처리를 수행할 수 있습니다.
+if(matcher.find()) {
+    System.out.println("Number: " + matcher.group().replaceAll("-", ""));
+}
+```
 
-# 관련 자료
+위 코드에서는 정규식 패턴으로 "6자리 숫자-7자리 숫자" 형식을 찾아 숫자 부분만 출력하는 예제입니다. 실행 결과는 다음과 같습니다.
 
-* [Java Regular Expressions Tutorial](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-* [Java 정규식 레퍼런스 문서](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-* [정규식 테스트 사이트](https://regex101.com/)
+```
+Number: 9601011234567
+```
+
+#더 깊이 들어가기
+정규식은 강력한 도구이지만, 그만큼 복잡하고 이해하기 어려울 수 있습니다. 따라서, 정규식을 사용하기 전에 충분히 공부하고 연습하는 것이 중요합니다. 또한 정규식 패턴을 작성할 때에는 자주 사용되는 특수 문자들의 의미를 잘 알고 적절한 패턴을 사용하는 것이 중요합니다. 그리고 정규식을 잘 활용하기 위해서는 텍스트 처리에 관련된 다른 기술들을 함께 사용하는 것이 좋습니다. 예를 들어, 문자열을 가공하고 검색하며 정규식을 이용하여 비슷한 패턴을 한 번에 처리하는 등의 다양한 기술들을 함께 사용할 수 있습니다.
+
+#관련 링크들
+- [정규식 테스트 사이트](https://regexr.com)
+- [정규식 패턴 빌더](https://www.regexbuilder.org)
+- [정규식 연습 사이트](https://regexone.com)
+- [정규식 문법 가이드](https://www.regular-expressions.info)
+- [자주 사용되는 정규식 특수 문자들](https://www.regular-expressions.info/quickstart.html#chars)

@@ -1,32 +1,41 @@
 ---
-title:    "PHP: Konvertera en datum till en sträng"
+title:    "PHP: Omvandling en datum till en sträng"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna konvertera ett datum till en sträng är en viktig del av PHP-programmering. Detta möjliggör för användare att enkelt hantera datum och tid i sina projekt.
 
-## Hur Man Gör
-Att konvertera ett datum till en sträng i PHP är en relativt enkel process. Först behöver vi definiera ett datum i det format vi vill ha det i. Till exempel, om vi vill få datumet i formatet "DD/MM/ÅÅÅÅ", skulle vi skriva ```$datum = date("d/m/Y");```. Sedan kan vi lätt konvertera det till en sträng med hjälp av ```strval()```-funktionen. Ett exempel på hur man gör detta visas nedan:
+Att kunna konvertera ett datum till en sträng är en viktig funktion inom PHP-programmering. Det gör det möjligt för användare att visa datum i ett läsbart format och använda det i olika typer av applikationer. Det är också en fördel när det gäller att sortera datum och utföra sökningar baserat på datum. 
+
+## Så här gör du
+
+För att konvertera ett datum till en sträng i PHP, använder du funktionen `date()`. Detta låter dig ange ett datumformat och sedan returneras datumet i den angivna strängformatet. Du kan också använda andra parametrar som låter dig manipulera datumet som du vill. Här är ett enkelt exempel:
 
 ```PHP
-$datum = date("d/m/Y");
-$datum_str = strval($datum);
-echo $datum_str;
-
-``` 
-Detta kommer att producera följande output:
-
-``` 
-26/03/2021
+echo date("j F Y"); 
 ```
-I detta exempel konverterades det aktuella datumet till en sträng och sedan skrevs strängen ut på skärmen.
+
+Detta kodblock kommer att returnera dagens datum i formatet "dag månad år". Resultatet kan se ut så här: 25 januari 2022. Det finns också flera andra formatalternativ som du kan använda, som "m/d/Y" för att få datumet som månad/dag/år. Du kan hitta en listning av alla tillgängliga format på PHPs officiella dokumentationssida. 
+
+När du vill konvertera ett specifikt datum, är det bra att använda funktionen `strtotime()`. Detta låter dig ange ett datum som en sträng och sedan konvertera det till en timestamp som kan användas med `date()`-funktionen. Här är ett exempel:
+
+```PHP
+echo date("j F Y", strtotime("25 januari 2022"));
+```
+
+Detta kommer att returnera samma resultat som tidigare exempel. 
 
 ## Djupdykning
-En viktig aspekt att tänka på när man konverterar ett datum till en sträng är olika datumformat. Som vi såg i exemplet ovan, använder vi ```date()```-funktionen för att definiera det önskade formatet på datumet. Detta gör det enkelt för oss att konvertera datumet till en sträng. Man bör dock vara medveten om att olika länder och språk kan ha olika sätt att skriva datum och tid på. Därför är det viktigt att ha bra kunskap om det önskade datumformatet för att undvika felaktigheter i vår kod.
 
-## Se Även
-- [Date and Time Functions in PHP](https://www.php.net/manual/en/ref.datetime.php)
-- [Convert Date/Time to String in PHP](https://www.w3schools.com/php/php_date.asp)
+När du använder funktionen `date()` för att konvertera ett datum till en sträng, finns det också möjlighet att använda den för att manipulera datum och tider. Till exempel kan du addera eller subtrahera antal dagar, veckor, månader eller år från ett datum. Du kan också få ut enskilda element från datumet som år, månad eller timmar. Det finns en mängd olika sätt att manipulera datum med hjälp av denna funktion, så det kan vara värt att experimentera med. 
+
+## Se även
+
+Här är några användbara länkar till PHP-dokumentationen som du kan använda för att lära dig mer om konvertering av datum till strängar:
+
+- [PHP date() funktion](https://www.php.net/manual/en/function.date.php)
+- [PHP strtotime() funktion](https://www.php.net/manual/en/function.strtotime.php)
+- [Lista över giltiga datumformat](https://www.php.net/manual/en/function.date.php)

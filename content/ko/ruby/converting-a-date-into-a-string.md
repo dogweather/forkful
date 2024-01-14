@@ -1,33 +1,63 @@
 ---
 title:    "Ruby: 날짜를 문자열로 변환하기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-날짜를 문자열로 변환하는 일에 참여하는 이유는 여러 가지이다. 많은 프로그램에서 날짜는 중요한 정보이기 때문에 사용자에게 보여주거나 다른 형식으로 저장하는 등의 용도로 변환해야 할 필요가 있다. 따라서 날짜를 문자열로 변환하는 방법은 Ruby 프로그래머들에게 유용한 기술이다.
 
-## 사용 방법
-날짜를 문자열로 변환하는 가장 간단한 방법은 `strftime` 메소드를 사용하는 것이다. 이 메소드는 날짜를 지정된 형식으로 변환하여 문자열로 반환한다. 예를 들어, 다음 코드는 현재 날짜를 "월/일/년도" 형식의 문자열로 변환한다.
+누군가 날짜를 문자열로 변환하는 데 참여하는 이유는 무엇입니까? 문자열을 다루고 편한 형식으로 날짜를 표현하기 위해서입니다.
+
+## 어떻게
+
+다음은 Ruby를 사용하여 날짜를 문자열로 변환하는 방법을 보여주는 예제입니다. 먼저, `Date` 및 `strftime` 메소드를 사용하여 현재 날짜를 다음 형식으로 문자열로 변환할 수 있습니다.
 
 ```Ruby
-current_date = Time.now
-puts current_date.strftime("%m/%d/%Y")
+require 'date'
+
+date = Date.today.strftime("%Y-%m-%d")
+
+puts date
+# 결과: 2021-03-05
 ```
 
-출력 결과는 "09/28/2021"과 같다.
+또한 날짜 객체를 직접 문자열로 변환할 수도 있습니다. `to_s` 메소드를 사용하여 다음과 같이 형식을 지정할 수 있습니다.
 
-## 깊이 들어가기
-`strftime` 메소드를 사용할 때는 형식 지정자를 잘 알아야 한다. 형식 지정자는 날짜를 문자열로 변환할 때 사용되는 특수한 문자들을 말한다. 예를 들어, `%m`은 월을 `01`부터 `12`까지 두 자리 숫자로 표시하고 `%d`는 일을 `01`부터 `31`까지 두 자리 숫자로 표시한다. 이 외에도 `%Y`는 년도를 `0000`부터 `9999`까지 네 자리 숫자로 표시하고, `%H`는 시간을 `00`부터 `23`까지 두 자리 숫자로 표시한다.
+```Ruby
+date = Date.today
 
-또한 `strftime` 메소드는 다양한 기능을 제공한다. 예를 들어, 요일을 `%a`와 `%A` 형식으로 표시하는 것도 가능하다. `%a`는 축약된 요일 이름 (e.g. Mon)를, `%A`는 전체 요일 이름 (e.g. Monday)를 반환한다.
+puts date.to_s("%B %d, %Y")
+# 결과: March 05, 2021
+```
 
-더 많은 형식 지정자와 기능은 Ruby 문서에서 확인할 수 있다.
+위 예제에서 `%B`는 월을 전체 이름으로, `%d`는 날짜를 0으로 패딩한 형식으로, `%Y`는 네 자리 연도로 표시합니다. `%m`은 두 자리로 월을 나타내는 것이므로 이를 사용하면 위에서 보인 예제와 동일한 결과를 얻을 수 있습니다.
+
+## 딥 다이브
+
+Ruby에서는 `strftime` 메소드를 통해 날짜를 다양한 형식으로 변환할 수 있습니다. 다양한 형식 지정자를 사용하여 원하는 형식으로 날짜를 표현할 수 있습니다. 주의해야 할 점은 형식 지정자가 대소문자에 따라 다르게 해석될 수 있다는 것입니다. 예를 들어, `%b`는 약어로 월을 표시하고 `%B`는 전체 이름으로 월을 표시합니다.
+
+날짜를 문자열로 변환할 때 주로 사용하는 형식 지정자 몇 가지를 살펴보겠습니다.
+
+- `%Y`: 네 자리 연도
+- `%m`: 두 자리로 월
+- `%d`: 두 자리로 날짜
+- `%H`: 두 자리로 24시간 표기법으로 시간 (00-23)
+- `%M`: 두 자리로 분
+- `%S`: 두 자리로 초
+- `%b`: 약어로 월
+- `%B`: 전체 이름으로 월
+- `%a`: 약어로 요일
+- `%A`: 전체 이름으로 요일
+
+`strftime` 메소드를 사용하는 것 외에도 `Date` 객체의 `to_s` 메소드를 사용하여 일부 표준 형식으로 날짜를 변환할 수 있습니다. 이는 위에서 언급한대로 `%B %d, %Y`와 같이 직접 형식을 지정하는 대신 표준 형식을 사용하는 것입니다.
+
+더 많은 형식 지정자와 예제는 Ruby 공식 문서에서 확인할 수 있습니다.
 
 ## 참고
-- [Ruby 문서 - strftime 메소드](https://ruby-doc.org/core-2.7.0/Time.html#method-i-strftime)
-- [Ruby Dates and Times Tutorial: Convert Dates and Times to Strings with strftime](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/DateTime.html#method-i-strftime)
 
-## 더 알아보기
-날짜를 문자열로 변환하는 방법은 Ruby 프로그래밍에서 자주 사용되는 기술이다. 따라서 여러 가지 형식 지정자와 기능을 익히고 응용할 수 있도록 노력해보자. 또한 `strftime` 메소드 외에도 `to_s` 메소드로도 날짜를 문자열로 변환할 수 있으니 찾아보고 비교해보는 것도 좋다.
+- [Ruby 공식문서 - Date 클래스](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
+- [Ruby 공식문서 - DateTime 클래스](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
+- [strftime 메소드 문서](https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime)
+- [날짜 관련 형식 지정자 목록](https://www.codecademy.com/articles/date-time-format

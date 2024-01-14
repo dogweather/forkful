@@ -1,67 +1,75 @@
 ---
 title:    "Python recipe: Capitalizing a string"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Have you ever wanted to make your strings stand out? Or maybe just wanted to follow proper capitalization rules? Enter the world of capitalizing strings in Python. In just a few simple steps, you can take your strings from lowercase to uppercase and everything in between.
+## Why 
+Capitalizing a string is a common task in programming, especially when dealing with user input or displaying data. By capitalizing a string, we ensure that the first letter of each word is in uppercase, making it easier to read and understand.
 
 ## How To
+To capitalize a string in Python, we can use the `capitalize()` method. This method capitalizes the first letter of a string, while leaving the rest of the letters as-is. Let's see how this works with a simple example:
 
-First, let's start with the most basic function for capitalization - `capitalize()`. This function will capitalize the first letter of a string while leaving the rest untouched.
-
-```
-Python
+```Python
+# creating a string variable
 my_string = "hello world"
-print(my_string.capitalize())
+
+# capitalizing the string
+capitalized_string = my_string.capitalize()
+
+# printing the result
+print(capitalized_string) # output: Hello world 
 ```
 
-This code will output "Hello world" as the first letter of the string has been capitalized. 
+We can also use the `title()` method to capitalize the first letter of each word in a string, not just the first letter of the entire string. Let's see how this looks:
 
-Next up is the `upper()` function. This function will convert all letters in a string to uppercase.
-
-```
-Python
+```Python
+# creating a string variable
 my_string = "hello world"
-print(my_string.upper())
+
+# capitalizing the string
+capitalized_string = my_string.title()
+
+# printing the result
+print(capitalized_string) # output: Hello World
 ```
 
-The output for this code would be "HELLO WORLD". 
+Both `capitalize()` and `title()` methods return a new string, leaving the original string unchanged. Alternatively, we can use the `upper()` method to capitalize all letters in a string:
 
-Finally, let's take a look at the `title()` function. This function will capitalize the first letter of every word in a string.
-
-```
-Python
+```Python
+# creating a string variable
 my_string = "hello world"
-print(my_string.title())
+
+# capitalizing the string
+capitalized_string = my_string.upper()
+
+# printing the result
+print(capitalized_string) # output: HELLO WORLD 
 ```
-
-The result for this code would be "Hello World". 
-
-It's also important to note that these functions do not permanently change the original string, but rather return a new string with the desired capitalization. If you want to save the changes, you will need to assign the capitalized string to a variable.
 
 ## Deep Dive
+It's important to note that the `capitalize()` method only capitalizes the first letter of a string if it is a lowercase letter. If the first letter is already in uppercase or is not a letter at all (e.g. a number or symbol), it will remain unchanged. For example:
 
-Now that we have covered the basic functions for capitalization, let's dive a bit deeper. Did you know that there is also a function for swapping the case of a string? The `swapcase()` function will convert all lowercase letters to uppercase and vice versa.
+```Python
+# creating a string variable
+my_string = "123hello world"
 
+# capitalizing the string
+capitalized_string = my_string.capitalize()
+
+# printing the result
+print(capitalized_string) # output: 123hello world
 ```
-Python
-my_string = "hElLo WoRlD"
-print(my_string.swapcase())
-```
 
-The output for this code would be "HeLlO wOrLd".
-
-It's also worth noting that these functions work not only with standard letters, but also with special characters and numbers. So don't be afraid to get creative with your strings!
+To overcome this limitation, we can use the `title()` method, which capitalizes the first letter of each word, regardless of its current case. However, this method may not be suitable for all cases, such as when dealing with acronyms or abbreviations.
 
 ## See Also
+For more information on string manipulation in Python, check out the following resources:
 
-To learn more about the functions and methods mentioned in this article, check out the official Python documentation:
+- Official Python documentation on string methods: https://docs.python.org/3/library/stdtypes.html#str.capitalize
+- Real Python blog on string manipulation: https://realpython.com/python-strings/
+- GeeksforGeeks article on string methods in Python: https://www.geeksforgeeks.org/python-string-methods-set-1-isdigit-isnumeric-decode-encode/
 
-- [capitalize()](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [upper()](https://docs.python.org/3/library/stdtypes.html#str.upper)
-- [title()](https://docs.python.org/3/library/stdtypes.html#str.title)
-- [swapcase()](https://docs.python.org/3/library/stdtypes.html#str.swapcase)
+Happy coding!

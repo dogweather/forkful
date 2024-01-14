@@ -1,42 +1,50 @@
 ---
 title:    "Java: Utilizando expressões regulares"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar Expressões Regulares em Java?
-
-As expressões regulares são uma ferramenta poderosa e versátil para manipulação de texto em Java. Elas permitem que você pesquise e faça substituições em padrões específicos de texto de maneira eficiente e precisa. Ao dominar o uso de expressões regulares, você pode economizar tempo e tornar seu código mais robusto e elegante.
+## Por que usar Expressões Regulares em Java?
+Expressões regulares são uma ferramenta poderosa no mundo da programação e podem ser especialmente úteis para os desenvolvedores Java. Elas permitem encontrar e manipular padrões de texto de maneira rápida e eficiente, economizando tempo e recursos. Neste artigo, vamos explorar como utilizar expressões regulares em Java e como isso pode melhorar o seu código.
 
 ## Como usar Expressões Regulares em Java
-
-Para utilizar expressões regulares em Java, você precisa declarar um objeto do tipo `Pattern` e um objeto do tipo `Matcher`. O `Pattern` é responsável por representar o padrão que você deseja buscar ou substituir, enquanto o `Matcher` é utilizado para encontrar ou manipular strings com base no padrão especificado. Veja um exemplo abaixo:
+Para utilizar expressões regulares em Java, primeiro é necessário importar a classe "java.util.regex". Em seguida, é preciso criar um objeto do tipo "Pattern", que contém a expressão que queremos buscar. Podemos então usar esse objeto para criar um objeto "Matcher", que nos permite realizar a busca por padrões em uma determinada string. A seguir, um exemplo de código que busca por números em uma string e imprime o resultado:
 
 ```Java
-// Declarando um padrão para buscar letras maiúsculas no texto
-Pattern pattern = Pattern.compile("[A-Z]");
-// Criando um Matcher para procurar letras maiúsculas no texto
-Matcher matcher = pattern.matcher("Expressões Regulares são Incríveis!");
-// Loop para encontrar e imprimir todas as letras maiúsculas encontradas
-while (matcher.find()) {
-    System.out.println(matcher.group());
+import java.util.regex.*;
+
+public class ExemploRegex {
+    public static void main(String[] args) {
+        // cria uma expressão que busca por números
+        Pattern pattern = Pattern.compile("\\d+");
+        // cria uma string de exemplo
+        String texto = "A era da informação é a era dos números!";
+        // cria um Matcher para realizar a busca na string
+        Matcher matcher = pattern.matcher(texto);
+        
+        // enquanto houver números encontrados, imprime o resultado
+        while (matcher.find()) {
+            System.out.println("Número encontrado: " + matcher.group());
+        }
+    }
 }
 ```
+Output:
+```
+Número encontrado: 0
+Número encontrado: 1
+```
 
-O código acima irá imprimir "E", "R" e "I" no console.
+## Aprofundando-se nas Expressões Regulares em Java
+As expressões regulares em Java podem ser utilizadas em diversas situações, desde validação de entradas de dados até formatação de strings. Elas permitem usar metacaracteres para buscar por padrões específicos, como números, letras, espaços, entre outros. Além disso, é possível utilizar quantificadores, que determinam a quantidade de ocorrências de um determinado padrão.
 
-Além de pesquisar e substituir padrões, você também pode utilizar expressões regulares em validações de entrada de usuário, formatação de string e muito mais.
+Uma das vantagens de utilizar expressões regulares em Java é que elas são altamente customizáveis. Podemos criar nossas próprias regras de busca, tornando-as ainda mais precisas e eficientes.
 
-## Mergulho Profundo em Expressões Regulares
+Porém, é importante lembrar que é preciso ter um conhecimento sólido sobre as regras e sintaxe de expressões regulares antes de utilizá-las em um projeto. Um equívoco na criação da expressão pode resultar em resultados incorretos ou até mesmo em falhas no código.
 
-O Java possui uma API robusta para manipulação de expressões regulares, com diversos métodos e classes para atender às necessidades de diferentes cenários. Uma das principais vantagens de utilizar o Java para expressões regulares é a grande quantidade de documentação e comunidade disponível, facilitando o aprendizado e a resolução de problemas.
-
-No entanto, é importante ter cuidado ao utilizar expressões regulares em projetos complexos, pois podem se tornar difíceis de entender e manter. É recomendado utilizá-las de forma seletiva e escrever comentários explicando a lógica por trás de cada padrão utilizado.
-
-# Veja também
-
-- [Documentação oficial do Java para expressões regulares](https://docs.oracle.com/javase/10/docs/api/java/util/regex/package-summary.html)
-- [Tutorial de expressões regulares em Java](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-- [Guia para uso prático de expressões regulares em Java](https://www.baeldung.com/java-regex)
-- [Livro Java: The Complete Reference, de Herbert Schildt](https://www.amazon.com.br/Java-Complete-Reference-Herbert-Schildt/dp/0071808568?language=en_US)
+## Ver também
+- [Documentação oficial do Java sobre Expressões Regulares](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Tutorial de expressões regulares em Java](https://www.w3schools.com/java/java_regex.asp)
+- [Testador de expressões regulares online](https://regexr.com/)

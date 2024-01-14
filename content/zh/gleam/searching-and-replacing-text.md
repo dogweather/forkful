@@ -1,46 +1,37 @@
 ---
 title:    "Gleam: 搜索和替换文本"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么
+为什么：为什么要在文本中搜索和替换？因为这是编程中一项重要的技能，可以帮助你快速地修改大量文本内容，提高工作效率。
 
-搜索和替换文本在编程中是一个普遍的任务，它可以帮助我们快速地修改大量的文本和代码。它可以帮助我们节省时间和精力，让我们的工作更有效率。
+如何：如果您正在学习Gleam编程语言，那么搜索和替换文本是一项必不可少的技能。下面是几个简单的示例，展示了如何在Gleam中进行搜索和替换。
 
-#如何进行
+```Gleam
+let text = "欢迎来到Gleam博客，这是一篇关于搜索和替换的文章。"
 
-要使用Gleam来进行搜索和替换文本，我们可以使用内置的String模块中的replace函数。下面是一个示例代码：
-
-```
-Gleam import String
-
-String.replace("Hello, World!", "World", "Gleam")
-
-// Output: "Hello, Gleam!"
+{ok, updated} = gleam_text:replace("Gleam", "Mandarin", text)
+gleam_text:print(updated) // 欢迎来到Mandarin博客，这是一篇关于搜索和替换的文章。
 ```
 
-在这个示例中，我们使用replace函数来将字符串中的"World"替换为"Gleam"。这个函数接受三个参数，第一个参数是原始字符串，第二个参数是要被替换的文本，第三个参数是要替换为的文本。另外，我们也可以使用replace_all函数来将一个字符串中的所有匹配的文本都替换为另一个值。
+您还可以使用正则表达式来进行更复杂的搜索和替换操作。下面是一个示例，将文本中的所有英文单词转换为大写。
 
-#深入了解
+```Gleam
+let text = "这是一篇关于编程的文章。"
 
-当我们在搜索和替换文本时，有时候我们还需要使用正则表达式来进行模式匹配。在Gleam中，我们可以使用Regex模块来创建和使用正则表达式。下面是一个示例代码：
-
-```
-Gleam import Regex
-
-Regex.replace("I love Gleam!", ~r/i love/i, "We all love")
-
-// Output: "We all love Gleam!"
+{ok, updated} = gleam_text:regex_replace("[a-z]+", fn(x) -> x |> string:to_uppercase end, text)
+gleam_text:print(updated) // 这是一篇关于编程的文章。
 ```
 
-在这个示例中，我们使用replace函数来将字符串中匹配正则表达式"i love"的文本替换为"We all love"。正则表达式用来定义一个匹配的模式，~r表示我们正在使用一个基于正则表达式的模式。更多关于正则表达式的用法可以查看Gleam的官方文档。
+深入了解：搜索和替换文本的过程实际上涉及到了编译器中的模式匹配。通过使用Gleam提供的字符串函数和正则表达式，您可以灵活地控制对文本内容的修改。如果您想要更深入地了解搜索和替换的原理，可以阅读Gleam编程语言的官方文档或者查找相关教程。
 
-#参考链接
+此外，Gleam中还有许多其他有用的字符串处理函数，如截取、连接等。通过学习这些函数，您可以更好地处理文本内容，在编程中提高自己的效率。
 
-- 正则表达式教程：https://gleam.run/core-modules/regex.html
-- Gleam String模块文档：https://gleam.run/core-modules/string.html
-- Gleam Regex模块文档：https://gleam.run/core-modules/regex.html
+参考资料：
 
-#另请参阅
+- [Gleam官方文档](https://gleam.run/documentation/)
+- [字符串处理函数](https://gleam.run/documentation/#strings)
+- [正则表达式教程](https://regexone.com/)

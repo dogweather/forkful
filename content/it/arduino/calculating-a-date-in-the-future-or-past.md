@@ -1,88 +1,60 @@
 ---
 title:    "Arduino: Calcolare una data nel futuro o nel passato"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Lo scopo di questo progetto è quello di calcolare una data nel futuro o nel passato utilizzando Arduino. Questa funzione potrebbe essere utile per qualsiasi progetto che richieda un timer o la previsione di eventi futuri.
+Calcolare una data futura o passata può essere utile in molti progetti di Arduino, come ad esempio per attivare sensori o eseguire operazioni in specifici momenti.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato, utilizzeremo la libreria "Time" di Arduino. Per prima cosa, dobbiamo impostare la data attuale utilizzando la funzione "now()":
+Per calcolare una data in futuro o passata, è necessario utilizzare due variabili: la prima conterrà la data attuale e la seconda conterrà il numero di giorni da aggiungere o sottrarre. Utilizzando la libreria Time di Arduino, è possibile ottenere la data attuale e salvarla nella variabile apposita. Successivamente, utilizzando la funzione timeAddsecond() o timeDecisecond(), è possibile aggiungere o sottrarre i giorni desiderati alla data attuale. Di seguito un esempio di codice:
 
-```Arduino
-#include <Time.h>
-
-void setup() {
-  time_t now = now(); //impostiamo la data attuale
-}
+```
+#include <Time.h> // includere la libreria Time
+const int numGiorni = 5; // variabile con il numero di giorni da aggiungere/sottrarre
+time_t myDate = time(null); // ottenere la data attuale
+myDate = timeAddsecond(myDate, (numGiorni * 86400)); // aggiungere il numero di secondi corrispondenti a numGiorni
+Serial.println(myDate); // stampare la data ottenuta
 ```
 
-Successivamente, definiamo una variabile che rappresenta la data in millisecondi che vogliamo aggiungere o sottrarre dalla data attuale. Ad esempio, se vogliamo calcolare la data tra due giorni, useremo "2 * 86400000" (poiché un giorno corrisponde a 86400000 millisecondi).
+L'output di questo codice sarà la data attuale più 5 giorni. Di seguito un esempio di output:
 
-```Arduino
-long millisecondsToAdd = 2 * 86400000; //calcoliamo il numero di millisecondi da aggiungere
-```
-
-Infine, utilizziamo la funzione "makeTime()" per calcolare la nuova data:
-
-```Arduino
-#include <Time.h>
-
-void setup() {
-  time_t now = now(); //impostiamo la data attuale
-  long millisecondsToAdd = 2 * 86400000; //calcoliamo il numero di millisecondi da aggiungere
-  time_t newTime = now + millisecondsToAdd; //calcoliamo la nuova data
-  setTime(newTime); //impostiamo la nuova data
-  Serial.println(year()); //stampa l'anno della nuova data
-  Serial.println(month()); //stampa il mese della nuova data
-  Serial.println(day()); //stampa il giorno della nuova data
-  Serial.println(hour()); //stampa l'ora della nuova data
-  Serial.println(minute()); //stampa i minuti della nuova data
-  Serial.println(second()); //stampa i secondi della nuova data
-}
-```
-
-L'output di questo esempio sarà:
-
-```Arduino
-2021 //anno della nuova data
-8 //mese della nuova data
-5 //giorno della nuova data
-14 //ora della nuova data
-30 //minuti della nuova data
-0 //secondi della nuova data
-```
+`1589437324`
 
 ## Approfondimento
 
-Il calcolo di una data nel futuro o nel passato può essere fatto anche utilizzando i timestamp Unix, ovvero i secondi trascorsi dal 1 gennaio 1970. Utilizzare i timestamp può risultare più preciso poiché tiene conto anche degli anni bisestili.
+Inoltre, è possibile anche utilizzare la libreria TimeAlarms di Arduino per impostare un timer per una data futura o passata. Utilizzando la funzione setAlarm() è possibile impostare una data e una funzione da eseguire in quel momento specifico. Di seguito un esempio di codice:
 
-Per calcolare una data utilizzando i timestamp, seguiamo lo stesso procedimento di prima, ma al posto di utilizzare la funzione "now()", useremo la funzione "now() + now()":
-
-```Arduino
+```
 #include <Time.h>
+#include <TimeAlarms.h> // includere la libreria TimeAlarms
 
 void setup() {
-  time_t now = now() + now(); //impostiamo la data attuale in formato timestamp
-  long secondsToAdd = 2 * 86400000; //calcoliamo il numero di secondi da aggiungere
-  time_t newTime = now + secondsToAdd; //calcoliamo la nuova data
-  setTime(newTime); //impostiamo la nuova data
-  Serial.println(year()); //stampa l'anno della nuova data
-  Serial.println(month()); //stampa il mese della nuova data
-  Serial.println(day()); //stampa il giorno della nuova data
-  Serial.println(hour()); //stampa l'ora della nuova data
-  Serial.println(minute()); //stampa i minuti della nuova data
-  Serial.println(second()); //stampa i secondi della nuova data
+    Serial.begin(9600);
+    
+    // impostare un alarm per il 17 maggio 2020 alle 18:30
+    Alarm.alarmRepeat(18, 30, 0, myFunction); 
+}
+
+void loop() {
+    // altre operazioni del codice
+}
+
+// funzione da eseguire quando scatta l'alarm
+void myFunction() {
+    Serial.println("Alarm attivato!");
 }
 ```
 
-L'output sarà lo stesso di prima, ma utilizzando i timestamp è possibile ottenere una maggiore precisione nella data calcolata.
+L'alarm verrà attivato ogni volta che la data e l'ora specificata vengono raggiunte, permettendo di eseguire delle operazioni in quel momento specifico. 
 
 ## Vedi anche
 
-- [Guida alla libreria "Time" di Arduino](https://www.arduino.cc/en/Reference/Time)
-- [Come funzionano i timestamp Unix](https://www.unixtimestamp.com/)
+- [Libreria Time di Arduino](https://github.com/PaulStoffregen/Time)
+- [Libreria TimeAlarms di Arduino](https://github.com/PaulStoffregen/TimeAlarms)
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/libraries/time/)

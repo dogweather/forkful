@@ -1,59 +1,63 @@
 ---
-title:    "Fish Shell: Programando pruebas"
+title:    "Fish Shell: Redacción de pruebas"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Fish Shell?
+## Por qué
 
-Escribir pruebas en Fish Shell puede ahorrar tiempo y evitar errores en el código. Al tener pruebas automatizadas, se pueden encontrar y corregir errores de forma más rápida y eficiente, garantizando un código más sólido y confiable.
+Escribir pruebas es una práctica esencial para cualquier programador. Al escribir pruebas, podemos verificar el funcionamiento de nuestro código y asegurarnos de que no haya errores antes de implementarlo en producción. Esto nos ahorra tiempo y esfuerzo en el futuro, ya que nos permite detectar y corregir problemas de manera temprana.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para escribir pruebas en Fish Shell, se pueden seguir los siguientes pasos:
+Para escribir pruebas en Fish Shell, podemos utilizar la herramienta `bass`. Esta herramienta nos permite ejecutar comandos de Bash dentro de nuestro script de Fish Shell, lo que nos permite aprovechar las utilidades de Bash para escribir nuestras pruebas.
 
-1. Primero, se debe crear un nuevo archivo con la extensión .fish y guardarlo en la misma carpeta que el código que se desea probar.
-2. Se debe importar la biblioteca de pruebas de Fish Shell utilizando el comando `source ./test.fish` al principio del archivo.
-3. Se pueden utilizar las funciones `test`, `match`, `contains`, entre otras, para realizar diferentes tipos de pruebas en el código.
-4. Finalmente, se debe utilizar la función `contains` para verificar que el código retorna el resultado esperado.
-
-Un ejemplo de código con pruebas sería el siguiente:
+Para empezar, debemos instalar `bass` usando el siguiente comando:
 
 ```Fish Shell
-source ./test.fish
-
-function suma -a num1 num2
-  if test "$num1" -eq 0
-    return 0
-  end
-
-  return (math "$num1" + "$num2")
-end
-
-function test_suma
-  match (suma 5 5) 10 "La suma de 5 y 5 debe ser 10"
-  match (suma 3 7) 11 "La suma de 3 y 7 debe ser 11"
-  match (suma 0 0) 0 "La suma de 0 y 0 debe ser 0"
-end
-
-test_suma
+brew install bass
 ```
 
-El código anterior define una función `suma` que recibe dos números y los suma, y una función `test_suma` que realiza pruebas utilizando la función `match` para comprobar que el resultado sea el esperado. Al ejecutar este archivo, si todas las pruebas pasan, no se mostrará ninguna salida. De lo contrario, se mostrarán errores en las pruebas que fallaron.
+Una vez instalado, podemos escribir nuestras pruebas en forma de funciones de Bash utilizando la sintaxis `bass: <<^…` seguida de nuestro código de prueba y `^…` para cerrar la función. Por ejemplo:
 
-## Profundizando en las pruebas:
+```Fish Shell
+function test_suma
+  bass: <<^ - 
+    
+    # Definir variables
+    a=10
+    b=5
 
-Escribir pruebas puede ser beneficioso para detectar errores en el código, además de ayudar a mejorar la calidad y mantener la integridad del código en un proyecto. Algunas recomendaciones para escribir pruebas en Fish Shell incluyen:
+    # Ejecutar suma
+    let "resultado = $a + $b"
 
-- Realizar pruebas para diferentes casos y situaciones, especialmente los casos límite que pueden ser más propensos a errores.
-- Utilizar variables significativas para los mensajes de error en las pruebas, para poder identificar fácilmente dónde ocurrió un error.
-- Probar funciones y comandos individuales antes de utilizarlos en pruebas más complejas.
+    # Salida esperada
+    if [ $resultado -eq 15 ] 
+    then 
+    echo "Test exitoso"
+    else 
+    echo "Test fallido"
+   fi
+  ^
+end
+```
 
-Con estas prácticas en mente, escribir pruebas en Fish Shell puede ser una herramienta valiosa para garantizar un código de mayor calidad.
+El código anterior define una función de prueba llamada `test_suma` que verifica si la suma de dos números es igual a 15 como se espera. Para ejecutar esta prueba, podemos simplemente llamar a la función `test_suma` en nuestro script de Fish Shell.
 
-## Ver también:
+## Deep Dive
 
-- [Documentación de tests en Fish Shell](https://fishshell.com/docs/current/commands.html#test)
-- [Ejemplos de pruebas en Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/test)
-- [Tutorial sobre pruebas en Fish Shell](https://jvns.ca/blog/2019/08/30/fish--the-test-command/)
+Al escribir pruebas, es importante tener en cuenta algunos aspectos importantes:
+
+- Asegurarnos de que nuestras pruebas sean independientes y no dependan de otras pruebas o variables fuera de la función de prueba.
+- Probar diferentes casos de borde para garantizar que nuestro código funcione correctamente en todas las situaciones.
+- Nombrar adecuadamente nuestras funciones de prueba para que sean fáciles de entender y ejecutar.
+
+No olvidemos que escribir pruebas no solo es para verificar el funcionamiento de nuestro código, sino también para facilitar el proceso de depuración y detección de errores en el futuro.
+
+## Ver Además
+
+- [Documentación oficial de `bass`](https://github.com/edc/bass)
+- [Tutorial de Fish Shell para principiantes](https://fishshell.com/docs/current/tutorial.html)
+- [Escribir pruebas en Bash](https://www.baeldung.com/linux/testing-bash-scripts)

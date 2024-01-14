@@ -1,40 +1,91 @@
 ---
 title:    "Ruby: Iniziare un nuovo progetto"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Iniziare un nuovo progetto di programmazione può sembrare intimidatorio, ma può anche essere un'esperienza incredibilmente gratificante. I progetti ci danno l'opportunità di esplorare nuove tecnologie, apprendere nuove abilità e creare qualcosa di unico e personale. Inoltre, possono essere un'ottima aggiunta al nostro portfolio professionale.
+Intraprendere un nuovo progetto di programmazione può sembrare intimidatorio, ma in realtà può portare a grandi opportunità di apprendimento e crescita personale. Non solo ti consentirà di approfondire la tua conoscenza di Ruby, ma anche di creare qualcosa di unico e soddisfacente. Inoltre, puoi condividere il tuo progetto con la comunità di programmatori e ricevere feedback e supporto.
 
 ## Come fare
 
-Per iniziare un nuovo progetto in Ruby, segui questi semplici passi:
+Iniziamo con il creare una classe in Ruby utilizzando la sintassi `class`:
 
-1. Assicurati di avere Ruby installato sul tuo computer.
-2. Crea una nuova cartella per il tuo progetto.
-3. Apri un terminale nella cartella appena creata e digita ```ruby -v``` per verificare la versione di Ruby che stai utilizzando.
-4. Inizia a scrivere il tuo codice in un editor di testo o IDE.
-5. Salva il tuo file con l'estensione .rb (es. ``mio_progetto.rb``).
-6. Esegui il tuo codice digitando ```ruby mio_progetto.rb``` nel terminale.
-7. Ammira il tuo primo progetto Ruby in funzione!
+```Ruby
+class Progetto
+end
+```
 
-Se hai bisogno di aiuto per iniziare, puoi consultare la documentazione ufficiale di Ruby o cercare online tutorial e guide su come iniziare con questo linguaggio di programmazione.
+Ora possiamo aggiungere alcuni attributi alla nostra classe utilizzando `attr_accessor`:
+
+```Ruby
+class Progetto
+  attr_accessor :nome, :linguaggio
+end
+```
+
+Successivamente, dobbiamo inizializzare la classe con dei valori specifici utilizzando il metodo `initialize`:
+
+```Ruby
+class Progetto
+  attr_accessor :nome, :linguaggio
+
+  def initialize(nome, linguaggio)
+    @nome = nome
+    @linguaggio = linguaggio
+  end
+end
+```
+
+Possiamo anche aggiungere un metodo per stampare le informazioni del nostro progetto utilizzando `puts`:
+
+```Ruby
+class Progetto
+  attr_accessor :nome, :linguaggio
+
+  def initialize(nome, linguaggio)
+    @nome = nome
+    @linguaggio = linguaggio
+  end
+
+  def stampa_info
+    puts "Il progetto #{nome} è stato creato utilizzando il linguaggio #{linguaggio}."
+  end
+end
+```
+
+Per creare un'istanza della nostra classe e utilizzarla, possiamo utilizzare il seguente codice:
+
+```Ruby
+mio_progetto = Progetto.new("Blog di Ruby", "Ruby")
+mio_progetto.stampa_info
+```
+
+L'output dovrebbe essere:
+
+```
+Il progetto Blog di Ruby è stato creato utilizzando il linguaggio Ruby.
+```
 
 ## Approfondimento
 
-Iniziare un nuovo progetto può sembrare semplice, ma ci sono alcune cose importanti da tenere a mente:
+Oltre ai concetti di base sopra descritti, ci sono molti altri aspetti da considerare quando si inizia un nuovo progetto in Ruby. Alcune cose da tenere a mente includono:
 
-- Scegli un'idea che ti appassiona e che ti stimoli a continuare a lavorare su di essa.
-- Assicurati di comprendere gli obiettivi e i requisiti del tuo progetto prima di iniziare a scrivere codice.
-- Utilizza strumenti di sviluppo come un sistema di versioning per tenere traccia delle modifiche al tuo codice.
-- Non aver paura di chiedere aiuto se sei bloccato o confuso su qualcosa. La comunità di Ruby è molto accogliente e disponibile!
+- Utilizzare una buona organizzazione del codice con un'architettura solida.
+- Utilizzare le gemme di Ruby disponibili per semplificare il tuo lavoro.
+- Scrivere codice pulito e facile da leggere per facilitare la manutenzione del progetto.
+- Essere attenti alle performance del codice per assicurarsi che il progetto funzioni in modo efficiente.
+- Collaborare con altri programmatori attraverso il versionamento del codice con GitHub.
+
+L'approfondimento di questi e altri aspetti ti aiuterà a sviluppare un progetto di successo e a migliorare le tue capacità di programmazione in Ruby.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Ruby](https://www.ruby-lang.org/it/documentation/)
-- [TutorialsPoint - Introduzione a Ruby](https://www.tutorialspoint.com/ruby/index.htm)
-- [Codeacademy - Impara Ruby](https://www.codecademy.com/learn/learn-ruby)
-- [GitHub - Git Basics](https://guides.github.com/introduction/git-handbook/)
+- [Guida per iniziare con Ruby](https://ruby-doc.org/core-2.6.5/doc/guides/gettingstarted.html)
+- [Come strutturare un progetto Ruby on Rails](https://guides.rubyonrails.org/v5.0/initialization.html)
+- [Le gemme di Ruby: Una guida rapida](https://www.sitepoint.com/a-quick-study-of-rubys-gems/)
+- [10 consigli per scrivere codice Ruby pulito e facile da leggere](https://medium.com/@sarahwhyse/10-tips-for-writing-clean-readable-code-in-ruby-f81147f3fd9a)
+- [Come migliorare le performance del tuo codice Ruby](https://www.sitepoint.com/improving-the-performance-of-your-ruby-code/)
+- [GitHub: Il tuo migliore amico nello sviluppo di progetti di programmazione](https://guides.github.com/introduction/git-handbook/)

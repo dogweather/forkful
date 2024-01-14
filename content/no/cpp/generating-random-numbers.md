@@ -1,57 +1,51 @@
 ---
 title:    "C++: Generering av tilfeldige tall"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Det kan brukes til å lage realistiske spill, teste algoritmer og mye mer. Les videre for å lære hvordan du kan generere tilfeldige tall med C++.
+Å generere tilfeldige tall kan være en nyttig funksjon i mange programmeringsprosjekter. Det kan være nyttig for å teste ulike scenarier, lage tilfeldige utvalg av data, eller for å legge til en tilfeldighetsfaktor i spill og simuleringer.
 
-## Hvordan
+## Hvordan man gjør det
+
+Genereringen av tilfeldige tall i C++ er enkelt med bruk av funksjoner fra standardbiblioteket `<random>`. Her er et eksempel på hvordan man kan generere et tilfeldig tall mellom 1 og 100:
 
 ```C++
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <random>
 
 int main() {
-    // Grunnleggende eksempel på generering av tilfeldig tall
-    int random_num = rand(); 
-    std::cout << "Det tilfeldige tallet er: " << random_num << std::endl;
-
-    // Generering av tilfeldige tall innenfor et bestemt intervall
-    // I dette eksempelet vil det tilfeldige tallet bli mellom 1 og 10
-    int random_range = rand() % 10 + 1;
-    std::cout << "Det tilfeldige tallet innenfor intervallet er: " << random_range << std::endl;
-
-    // Bruk av systemklokken for å generere et annet tall hver gang programmet kjøres
-    srand(time(0)); 
-    int random_time = rand() % 10 + 1; 
-    std::cout << "Det tilfeldige tallet ved hjelp av systemklokken er: " << random_time << std::endl;
-    return 0;
+    // Initialiserer en tilfeldigt tallgenerator med seed fra systemtiden
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    // Definerer et fordelingsområde på 1-100
+    std::uniform_int_distribution<> dis(1, 100);
+    // Genererer et tilfeldig tall
+    int random_num = dis(gen);
+    // Skriver ut tilfeldig tall til konsollen
+    std::cout << "Tilfeldig tall: " << random_num << std::endl;
 }
 ```
 
-Eksempelutgang:
+Eksempel utdata:
 
 ```
-Det tilfeldige tallet er: 23194
-Det tilfeldige tallet innenfor intervallet er: 7
-Det tilfeldige tallet ved hjelp av systemklokken er: 5
+Tilfeldig tall: 56
 ```
 
-## Dypdykk
+## Deep Dive
 
-C++ har mange funksjoner som kan brukes til å generere tilfeldige tall. En av de mest brukte er `rand()` funksjonen som returnerer et tilfeldig tall mellom 0 og `RAND_MAX`, som er en stor definert verdi. Ved å bruke modulo-operatør kan vi begrense dette tallet til et bestemt intervall.
+Det finnes flere ulike metoder for å generere tilfeldige tall i programmering. En vanlig metode er å bruke en pseudo-tilfeldig tallgenerator, som bruker en algoritme til å generere tall som tilsynelatende er tilfeldige. Det er viktig å huske at disse tallene ikke er helt tilfeldige, og at de kan følge en fordeling som kan forutsies.
 
-Noen programmerere foretrekker å bruke en mer avansert tilfeldig tall generator som `mt19937` fra `<random>` biblioteket. Denne genererer et mer tilfeldig utvalg av tall sammenlignet med `rand()`.
-
-Det er også verdt å merke seg at selv om tilfeldige tall kan virke "tilfeldige" for mennesker, er de faktisk generert gjennom bestemte algoritmer basert på et innsått "frø" tall. Dette frøet kan endres ved hjelp av `srand()` funksjonen for å få et annet sett med tilfeldige tall hver gang programmet kjøres.
+For å sikre større tilfeldighet, kan man bruke en ekte tilfeldig tallgenerator som henter tall fra eksterne kilder som støy i radiosignaler eller målinger av fysiske fenomener som atmosfærisk støy. Disse tallene vil være mer tilfeldige, men kan være mer krevende å implementere.
 
 ## Se også
 
-- [C++ Rand() funksjon](https://www.programiz.com/cpp-programming/library-function/cstdlib/rand)
-- [C++ `<random>` bibliotek](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
-- [Random number generation in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [C++ standardbibliotek: <random>](https://en.cppreference.com/w/cpp/numeric/random)
+- [Kilde til ekte tilfeldige tall: Random.org](https://www.random.org/)
+
+Takk for at du leste! For mer informasjon om programmering i C++, sjekk ut vår blogg for flere artikler på norsk.

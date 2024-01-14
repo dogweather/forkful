@@ -1,49 +1,38 @@
 ---
 title:    "Bash: Radera tecken som matchar ett mönster"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna radera tecken som matchar ett visst mönster kan vara en användbar färdighet i Bash-programmering. Det kan hjälpa till att rengöra data, formatera strängar eller söka efter specifika information i en fil. Det kan också vara användbart för att utföra olika typer av manipulation på textdata.
+Att ta bort tecken som matchar ett visst mönster kan vara användbart för att rensa upp data eller för att förbereda det för vidare bearbetning. Genom att använda Bash programming kan du enkelt skriva kod för att filtrera och ta bort oönskade tecken på ett enkelt sätt.
 
-## Hur man gör
+## Hur man gör det
 
-Att radera tecken som matchar ett visst mönster i Bash är enkelt med hjälp av inbyggda kommandon och verktyg. För att illustrera detta kommer vi att använda kommandot "tr", som står för "translate" och används för att ersätta eller ta bort tecken.
-
-För att radera alla mellanslag i en sträng kan du använda följande kommando:
+För att ta bort tecken som matchar ett visst mönster i Bash, kan du använda kommandot "sed". Detta kommando används för att manipulera textsträngar och kan användas för att ta bort tecken baserat på ett visst uttryck. Det finns olika sätt att använda "sed" för att ta bort tecken, men här är ett exempel som tar bort alla siffror från en textsträng:
 
 ```Bash
-tr -d " " <<< "Hej, det här är en text med mellanslag"
+sed 's/[0-9]//g' filnamn.txt
 ```
 
-Kommandot "tr" tar här bort alla mellanslag som matchar mönstret " " från den angivna strängen med hjälp av flaggan "-d". Resultatet blir "Hej,dethärenentextmedmellanslag".
+I det här exemplet används "s" för att ersätta och "[0-9]" för att matcha alla siffror. Den andra delen av uttrycket "g" betyder globalt, vilket innebär att alla matchande förekomster av siffror kommer att tas bort från textsträngen. Till sist anges namnet på filen som behandlas.
 
-Om du istället vill radera alla siffror kan du använda mönsteruttrycket [:digit:] och flaggan "-d" enligt följande:
-
-```Bash
-tr -d [:digit:] <<< "Hej, 123 det här är 456 en text med 789 siffror"
-```
-
-Resultatet blir då "Hej, det här är en text med siffror".
+När detta kommando körs, kommer alla siffror som finns i filen "filnamn.txt" att tas bort och resultatet kommer att skrivas ut i terminalen. Du kan också använda "sed" tillsammans med andra kommandon som "grep" eller "awk" för att ytterligare filtrera och manipulera din textsträng.
 
 ## Djupdykning
 
-För att radera tecken som matchar ett visst mönster kan vi även använda oss av andra kommandon, såsom "sed" eller "awk". Dessa verktyg erbjuder mer avancerade mönstermatchningsmöjligheter och gör det möjligt att utföra mer komplexa manipulationer på textdata.
+"sed" är ett kraftfullt verktyg med många möjligheter för att matcha och manipulera text. Du kan använda olika mönster för att matcha tecken som du vill ta bort och det finns också möjlighet att använda regelbundna uttryck för att utöka funktionaliteten.
 
-Till exempel kan du med hjälp av "awk" ta bort tecken som matchar både siffror och bokstäver med hjälp av följande kommando:
-
-```Bash
-awk '{gsub(/[a-zA-Z0-9]/,"")}1' <<< "Hej, 123 det här är en text med 456 siffror och bokstäver"
-```
-
-Resultatet blir "Hej, det här är en text med och". Här ersätter vi alla tecken som matchar mönstret /[a-zA-Z0-9]/ med ett tomt tecken, med hjälp av kommandot "gsub". Sedan används flaggan "1" för att skriva ut den modifierade strängen.
+Det finns också andra sätt att ta bort tecken från en textsträng i Bash, som att använda "tr" eller "cut" kommandon. Det är viktigt att välja rätt kommando och metod som passar ditt specifika tillämpningsfall.
 
 ## Se även
 
-- Bash-dokumentation: https://www.gnu.org/software/bash/manual/
-- Bash-cheatsheet: https://devhints.io/bash
-- Sed-dokumentation: https://www.gnu.org/software/sed/manual/
-- Awk-dokumentation: https://www.gnu.org/software/gawk/manual/
+Här nedan finns några användbara länkar för dig som vill lära dig mer om att ta bort tecken med hjälp av Bash programming:
+
+- https://www.gnu.org/software/sed/manual/html_node/sed-regular-expressions.html
+- https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+- https://www.tecmint.com/delete-certain-lines-of-a-file-in-linux-using-sed-command/
+- https://www.shellscript.sh/tips/dontdelete.html

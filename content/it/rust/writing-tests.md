@@ -1,39 +1,53 @@
 ---
 title:    "Rust: Scrivere test"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché scrivere test è importante in Rust
 
-Scrivere test è un elemento importante nel processo di sviluppo di un software stabile e affidabile. I test aiutano a garantire che il codice funzioni come previsto e a identificare eventuali errori o bug prima che il software sia rilasciato.
+Scrivere test è fondamentale per garantire che il codice che scriviamo funzioni correttamente e senza errori. In Rust, questa pratica è ancora più importante poiché il linguaggio è noto per la sua sicurezza e affidabilità. Scrivere test ci aiuta a individuare e correggere eventuali bug prima che possano causare problemi nel nostro programma.
 
-## Come Fare
+## Come scrivere test in Rust
 
-Scrivere test in Rust è semplice e intuitivo grazie alla sua sintassi concisa e al sistema di tipi forte. Di seguito viene mostrato un esempio di un test di una semplice funzione che calcola il quadrato di un numero:
+Per scrivere test in Rust, possiamo utilizzare il framework incorporato di test di Rust. Questo framework ci consente di scrivere e eseguire test unitari e di integrazione in modo semplice ed efficiente. Vediamo un esempio di come scrivere un test unitario per una funzione di calcolo del fattoriale:
 
 ```Rust
-// Definisce la funzione da testare
-fn quadrato(num: i32) -> i32 {
-    return num * num;
+// Importiamo il modulo dei test
+mod tests {
+    // Utilizziamo l'attributo `test` per indicare che questa è una funzione di test
+    #[test]
+    // Definiamo una funzione di test che verifica se il risultato della nostra funzione è corretto
+    fn test_fattoriale() {
+        // Chiamiamo la nostra funzione con un input noto
+        let result = calcolo_fattoriale(5);
+        // Utilizziamo il macro `assert_eq` per verificare se il risultato è uguale a quello atteso
+        assert_eq!(result, 120);
+    }
 }
 
-// Un semplice test
-#[test]
-fn test_quadrato_5() {
-    assert_eq!(quadrato(5), 25);
+// Definiamo la nostra funzione di calcolo del fattoriale
+fn calcolo_fattoriale(n: u32) -> u32 {
+    if n == 0 {
+        1
+    } else {
+        n * calcolo_fattoriale(n - 1)
+    }
 }
 ```
 
-Nell'esempio sopra, stiamo creando una funzione `quadrato` che accetta un parametro `num` di tipo `i32` e restituisce il suo quadrato. Il test definisce asserzioni usando la macro `assert_eq`, che verifica se il risultato ottenuto dalla chiamata alla funzione è uguale al valore atteso. Per eseguire il test, possiamo utilizzare il comando `cargo test` nella directory del nostro progetto.
+Una volta scritto il nostro test, possiamo eseguirlo utilizzando il comando `cargo test`. Se il test passa, vedremo un output positivo, altrimenti verrà segnalato un fallimento con un messaggio descrittivo.
 
-## Approfondimento
+## Approfondimento sui test in Rust
 
-Per scrivere test più complessi, è possibile utilizzare strutture di dati simulate, chiamate di funzioni esterne, o anche moduli completi. È anche possibile configurare il comportamento dei test in modo da eseguire solo alcuni test specifici o eseguirli in parallelo. Per ulteriori informazioni sulle opzioni avanzate per scrivere test in Rust, si consiglia di consultare la documentazione ufficiale.
+In aggiunta ai test unitari, possiamo scrivere anche test di integrazione per verificare il funzionamento corretto di più componenti del nostro programma. Inoltre, Rust ci offre anche la possibilità di scrivere test di proprietà, ovvero test che verificano che determinate proprietà del nostro codice siano rispettate.
 
-## Vedi Anche 
+In generale, è una buona pratica includere test nella nostra pipeline di sviluppo, eseguendoli automaticamente ogni volta che facciamo una modifica al codice. In questo modo possiamo individuare e risolvere bug in modo più efficiente e avere una maggiore fiducia nel nostro codice.
 
-- [Documentazione ufficiale di Rust sui test](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Articolo su come scrivere test di unità efficaci in Rust](https://medium.com/@ericdreichert/unit-testing-in-rust-25b90920f06f)
-- [Esempio di progetto su GitHub che mostra l'utilizzo dei test in Rust](https://github.com/andrewmcgivery/rodio_rust/tree/master/src)
+## Vedi anche
+
+- [Documentazione di test in Rust](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Esempio di test in Rust su GitHub](https://github.com/rust-lang/book/blob/master/src/fattoriale/tests/fattoriale.rs)
+- [Rustlings](https://github.com/rust-lang/rustlings) - Esercizi di Rust che includono anche la scrittura di test.

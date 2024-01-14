@@ -1,49 +1,94 @@
 ---
-title:    "C#: Verwendung von regulären Ausdrücken"
+title:    "C#: Verwenden von regulären Ausdrücken"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie regelmäßig mit Texten in Ihrer C#-Programmierung arbeiten, können reguläre Ausdrücke eine äußerst nützliche Funktion sein. Sie ermöglichen es Ihnen, Muster in Strings zu suchen und zu manipulieren, was Ihnen viel Zeit und Aufwand ersparen kann. In diesem Blog-Beitrag werfen wir einen Blick auf die Verwendung von regulären Ausdrücken in C# und wie sie Ihr Codierungsleben erleichtern können.
 
-## Wie geht man vor?
-Um reguläre Ausdrücke in C# zu verwenden, müssen Sie zunächst die System.Text.RegularExpressions Namespace importieren. Dann können Sie den regulären Ausdruck in einem regulären Ausdrucksmuster (Regex) Objekt speichern und die verschiedenen Funktionen dieses Objekts verwenden, um Textmuster zu finden oder zu ersetzen.
+Die Verwendung von regulären Ausdrücken ist eine effektive Möglichkeit, Textmuster innerhalb von Strings abzugleichen und zu manipulieren. Sie sind besonders nützlich für Entwickler, die die Arbeit mit einer großen Menge an Daten oder das Parsen von komplexen Texten vereinfachen möchten.
+
+## So geht's
+
+In diesem Beitrag werden wir lernen, wie man reguläre Ausdrücke in C# verwendet. Um zu beginnen, müssen wir zuerst die "System.Text.RegularExpressions" Namespace importieren. Anschließend können wir mit der Verwendung von regulären Ausdrücken beginnen.
+
+Um einen einfachen Abgleich zu erstellen, können wir die Methode "Matches()" verwenden, die auf einem regulären Ausdruck und einem Eingabestring aufgerufen wird. Diese Methode gibt eine Auflistung von Übereinstimmungen zurück.
 
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-// regulärer Ausdruck definieren
-Regex regex = new Regex(@"\d{4}-\d{2}-\d{2}");
+class Program
+{
+    static void Main()
+    {
+        // Zeichenkette erstellen
+        string text = "Hallo Welt";
 
-// Eingabetext durchsuchen
-Match match = regex.Match("Heute ist der 01-02-2021.");
+        // regulären Ausdruck definieren
+        Regex regex = new Regex("Welt");
 
-// Ausgabe der gefundenen Übereinstimmung
-Console.WriteLine(match.Value); // Output: "01-02-2021"
+        // Abgleich erstellen
+        MatchCollection matches = regex.Matches(text);
+
+        // Übereinstimmungen ausgeben
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
 ```
 
-Wie Sie sehen, können Sie mit regulären Ausdrücken spezifische Muster in einem String finden. Sie können auch durch Verwendung von Metazeichen wie dem Stern (*) und dem Plus (+) mehrere Wiederholungen eines bestimmten Musters finden. Zum Beispiel würde der reguläre Ausdruck ```[a-z]+``` alle Wörter in einem String finden.
+Ausgabe:
+```
+Welt
+```
 
-## Tiefergehende Einblicke
-Reguläre Ausdrücke können auch verwendet werden, um Strings zu manipulieren und anzupassen. Zum Beispiel können Sie mit der Funktion ```Regex.Replace()``` bestimmte Teile oder Muster in einem String ersetzen.
+Reguläre Ausdrücke bieten auch verschiedene Metazeichen und Quantoren, um bessere Abgleichmöglichkeiten zu schaffen. Zum Beispiel verwenden das "+"-Zeichen und das ""-Zeichen das vorherige Element 1 oder beliebig oft. Hier ist ein Beispiel, das alle Ziffern in einem Text erfasst:
 
 ```C#
-// Eingabetext formatieren
-string input = "Bitte geben Sie Ihre Telefonnummer ein: 123-456-7890.";
-Regex regex = new Regex(@"(\d{3})-(\d{3})-(\d{4})");
+using System;
+using System.Text.RegularExpressions;
 
-// neue Telefonnummer erstellen
-string newNumber = regex.Replace(input, "($1) $2-$3");
+class Program
+{
+    static void Main()
+    {
+        // Zeichenkette erstellen
+        string text = "abc123xyz";
 
-// Ausgabe des neuen Strings
-Console.WriteLine(newNumber); // Output: "Bitte geben Sie Ihre Telefonnummer ein: (123) 456-7890."
+        // regulären Ausdruck definieren
+        Regex regex = new Regex("[0-9]+");
+
+        // Abgleich erstellen
+        MatchCollection matches = regex.Matches(text);
+
+        // Übereinstimmungen ausgeben
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
 ```
 
-Dies ist nur ein Beispiel dafür, wie Sie reguläre Ausdrücke verwenden können, um Strings zu formatieren und anzupassen. Es gibt viele weitere Funktionen und Möglichkeiten, die Sie entdecken können, um Ihren Code effizienter zu gestalten.
+Ausgabe:
+```
+123
+```
+
+## Tiefentauchen
+
+Die Verwendung von regulären Ausdrücken erfordert ein Verständnis der verschiedenen Metazeichen und Quantoren, um effektive Abgleiche zu erstellen. Es gibt auch erweiterte Funktionen wie Gruppierungen, Capturing-Gruppen und Rückreferenzen, die es ermöglichen, bestimmte Teile eines Textes zu erfassen und zu manipulieren.
+
+Es ist wichtig zu beachten, dass reguläre Ausdrücke sehr leistungsfähig sind, aber auch sehr komplex werden können. Es ist daher empfehlenswert, sich eingehend mit den verschiedenen Funktionen und Möglichkeiten vertraut zu machen, um sicherzustellen, dass die gewünschten Ergebnisse erzielt werden.
 
 ## Siehe auch
-- [Microsoft Dokumentation zu regulären Ausdrücken in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [C# Tutorials auf Tutorialspoint](https://www.tutorialspoint.com/csharp)
-- [C# Kurs auf Codecademy](https://www.codecademy.com/learn/learn-c-sharp)
+
+- Offizielle Microsoft Dokumentation zu regulären Ausdrücken in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+- Artikel über die Verwendung von regulären Ausdrücken in C#: https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial
+
+Falls Sie Interesse an regulären Ausdrücken haben und ihre Möglichkeiten in C# weiter erkunden möchten, können Sie sich diese weiteren Ressourcen ansehen. Viel Spaß beim Entdecken!

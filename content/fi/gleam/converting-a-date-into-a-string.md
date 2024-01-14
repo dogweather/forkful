@@ -1,40 +1,38 @@
 ---
 title:    "Gleam: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Monissa ohjelmointitehtävissä päivämäärän muuttaminen merkkijonoksi on välttämätöntä, jotta voimme näyttää päivämäärän tietokannasta tai käyttäjältä saadusta syötteestä halutussa muodossa. Tämä on myös hyödyllistä esimerkiksi raportoinnissa tai verkkosovelluksissa, joissa on tarvetta näyttää päivämäärät suurelle yleisölle.
+Jokaisessa ohjelmointikielessä on tarpeen muuttaa päivämäärä tekstimuotoon tai päinvastoin. Gleamin avulla tämä tehtävä on helppo ja sujuva.
 
-## Miten tehdä
+# Kuinka tehdä se
 
-Aloittaaksemme päivämäärän muuttamisen merkkijonoksi Gleamissa, meidän täytyy ensin tuoda käyttöömme `Date`-moduuli. Tämän jälkeen voimme käyttää `format`-funktiota muuttaaksemme päivämäärän haluamaamme muotoon:
+Gleamin avulla päivämäärän muuttaminen tekstimuotoon on yksinkertaista ja suoraviivaista. Käytä vain `Date.format` -funktiota ja anna haluttu muoto parametrina.
 
 ```Gleam
-import Date
-
-let date = Date.build(2021, 12, 31)
-let formatted_date = Date.format(date, "%d.%m.%Y")
+let date = Date.from_ymd(2021, 11, 15)
+let formatted_date = Date.format(date, "dd.MM.yyyy")
+// Output: 15.11.2021
 ```
 
-Tässä esimerkissä me tuomme `Date`-moduulin, joka tarjoaa meille valmiin `build`-funktion luodaksemme uuden päivämäärä-olion. Sen jälkeen käytämme `format`-funktiota, joka ottaa ensimmäisenä parametrinaan päivämäärä-olion ja toisena parametrinaan merkkijonon, joka määrittelee halutun muodon. Tässä tapauksessa meidän muodoksemme tulee `"%d.%m.%Y"`, joka tarkoittaa päivä.kuukausi.vuosi.
+Voit myös muuttaa päivämäärän tekstimuotoon tietystä aikavyöhykkeestä riippumatta käyttämällä `Date.format_zone` -funktiota.
 
-Jos haluamme lisätä ajan tähän muotoon, voimme käyttää `"%d.%m.%Y %H.%M.%S"` muotoa, joka lisää tunnit, minuutit ja sekunnit. Lopputuloksena saamme merkkijonon "31.12.2021 00.00.00".
+```Gleam
+let date = Date.from_ymd(2021, 11, 15)
+let formatted_date = Date.format_zone(date, "dd.MM.yyyy", "Europe/Helsinki")
+// Output: 15.11.2021
+```
 
-## Syvemmälle pinnan alle
+# Syvällinen sukellus
 
-Gleamissa päivämäärät käsitellään `Date`-moduulin avulla, joka perustuu Elixirin `DateTime`-moduuliin. Tämä moduuli tarjoaa laajan valikoiman erilaisia muotoilutapoja, joita voimme käyttää `format`-funktion kanssa. Joitakin esimerkkejä ovat:
+Gleamin `Date` -moduuli sisältää useita muita hyödyllisiä funktioita päivämäärän käsittelyyn. Voit esimerkiksi muuttaa päivämäärän Unix-timestamppina käyttämällä `Date.to_unix` -funktiota ja päinvastoin `Date.from_unix` -funktiota. Voit myös lisätä tai vähentää päiviä tai aikoja yksinkertaisesti käyttämällä `Date.add_days`, `Date.add_months` tai `Date.add_years` -funktioita.
 
-- `"%Y-%m-%dT%H:%M:%S"` muotoilu, joka luo ISO 8601 yhteensopivan päivämäärän ja ajan muodon (esim. 2021-12-31T00:00:00)
-- `"%a, %d %b %Y %H:%M:%S %z"` muotoilu, joka luo päivämäärän englanninkielisen päivämäärän ja ajan muodon (esim. Fri, 31 Dec 2021 00:00:00 +0000)
-- `"%I:%M %p"` muotoilu, joka luo ajan muodon 12-tuntisessa muodossa (esim. 12:00 AM)
+# Katso myös
 
-On myös hyvä huomata, että Gleam tukee myös Unix-timestampeja `Time.build` ja `Time.format` -funktioiden avulla.
-
-## Katso myös
-
-- [Gleam Date-moduuli dokumentaatio](https://gleam.run/lib/date.html)
-- [Elixir DateTime-moduuli dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+- [Gleam - Date](https://gleam.run/modules/datetime)
+- [Gleamin päivämäärän muodonmuutosohjeet](https://gleam.run/getting-started/datetime)

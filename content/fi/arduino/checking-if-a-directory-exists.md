@@ -1,54 +1,60 @@
 ---
-title:    "Arduino: Tarkistetaan löytyykö hakemistoa"
+title:    "Arduino: Tarkistetaan, onko hakemisto olemassa"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Kun ohjelmoit Arduinoa, saatat joutua tarkistamaan, onko hakemistoa olemassa. Tämä on tärkeää, jotta voit varmistaa, että ohjelma toimii oikein ja käsittelee tiedostoja oikein.
+
+Tuntuuko joskus siltä, että rakentaessasi Arduino-projektia, joudut jatkuvasti tarkistamaan, onko tietty hakemisto olemassa? Kun tiedät, että hakemisto on olemassa, voit suunnitella koodisi sen mukaan. Tämä auttaa sinua estämään mahdollisia ongelmia ja vähentämään virhekoodin määrää.
 
 ## Miten
-Voit tarkistaa hakemiston olemassaolon käyttämällä "File" -kirjastoa ja "exists" -funktiota. Tässä on esimerkki koodista ja tulosteesta:
 
-```
-Arduino #include <File.h>
-File hakemisto = File("/tiedostot/kuvat");
-if (hakemisto.exists()) {
-  Serial.println("Hakemisto on olemassa!");
-} else {
-  Serial.println("Hakemistoa ei löytynyt.");
+```Arduino
+#include <SPI.h>
+#include <SD.h>
+
+File directory;
+
+void setup(){
+  Serial.begin(9600);
+
+  // Liitetään SD-kortti
+  if(!SD.begin(10)){
+    Serial.println("Error");
+  }
+
+  // Tarkistetaan hakemisto
+  if(SD.exists("/hakemisto")){
+    // Jos hakemisto on olemassa, luodaan uusi tiedosto hakemistoon
+    directory = SD.open("/hakemisto/uusi_tiedosto.txt", FILE_WRITE);
+    directory.println("Tämä on uusi tiedosto!");
+    directory.close();
+  }
+  else{
+    Serial.println("Hakemistoa ei löytynyt.");
+  }
+}
+
+void loop(){
+
 }
 ```
 
-Tuloste:
+### Selitys
 
-```
-Hakemisto on olemassa!
-```
+Yllä olevassa esimerkkikoodissa olemme liittäneet SD-kortin (10-pin porttiin) ja avanneet tiedostojärjestelmän. Ensimmäisessä if-lausekkeessa tarkistamme, onko hakemistoa nimeltä "hakemisto" olemassa. Jos se on, avataan uusi tiedosto nimeltä "uusi_tiedosto.txt" hakemistoon FILE_WRITE -tilassa ja kirjoitetaan siihen tekstirivi. Lopuksi tiedosto suljetaan.
 
-## Syvemmälle
-Tarkistamalla hakemiston olemassaoloa, voit myös käyttää muita "File" -kirjaston funktioita, kuten "isDirectory()". Tämä tarkistaa, onko kyseessä todellinen hakemisto vai vain tiedosto.
+Jos hakemistoa ei löydy, tulostetaan virheilmoitus sarjaväylään.
 
-```
-Arduino #include <File.h>
-File hakemisto = File("/tiedostot/kuvat");
-if (hakemisto.isDirectory()) {
-  Serial.println("Hakemisto löytyi!");
-} else {
-  Serial.println("Tämä ei ole hakemisto.");
-}
-```
+## Syväsukellus
 
-Tuloste:
-
-```
-Hakemisto löytyi!
-```
-
-On myös tärkeää huomata, että voit tarkistaa hakemiston olemassaolon myös ennen sen avaamista kirjoittamalla "File.isValid()" -funktion. Tämä auttaa varmistamaan, että ohjelma ei kaadu, jos hakemistoa ei löydy.
+Hakemiston tarkistamisella on myös muita käyttötarkoituksia. Voit esimerkiksi yksinkertaisesti tarkistaa, onko tiedosto olemassa ennen sen avaamista tai jopa poistamista. Voit myös käyttää tätä toimintoa luodaksesi uusia hakemistoja tai saadaksesi tietoa hakemiston sisällöstä.
 
 ## Katso myös
-- "File" -kirjaston dokumentaatio (https://www.arduino.cc/reference/en/libraries/filesystem/)
-- "exists" -funktion dokumentaatio (https://www.arduino.cc/reference/en/libraries/filesystem/exists/)
-- "isDirectory" -funktion dokumentaatio (https://www.arduino.cc/reference/en/libraries/filesystem/isdirectory/)
+
+- [SD-kortti kirjanpitäjänä](https://www.arduino.cc/en/Reference/SDbegin)
+- [SD-hakemiston tarkistaminen](https://www.arduino.cc/en/Reference/SDexists)
+- [SD-kortin kirjoittaminen](https://www.arduino.cc/en/Reference/SDopen)

@@ -1,36 +1,36 @@
 ---
-title:    "Python: 文字列の長さを見つける"
+title:    "Python: 「文字列の長さを見つける」"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+Pythonで文字列の長さを見つけるのはなぜ必要なのでしょうか？Pythonで文字列を扱う際に、その長さを把握することは非常に重要です。文字列の長さを知ることで、プログラムを効率的に作成し、問題を解決することができます。
 
-文字列の長さを知ることは、プログラミングのとても基本的なスキルです。文字列を扱う上で非常に便利なため、ほとんどのプログラムで必要になります。
+## なぜ？
 
-## 方法
+文字列の長さを知ることは、Pythonでプログラムを作成する際に非常に重要です。文字列の長さを把握することで、文字列を操作する際に必要な分だけ処理を行うことができます。例えば、特定の文字数を超えた場合に文字列をクリップするなど、文字列の長さを知ることでプログラムをより効率的に作成できます。
 
-文字列の長さを取得するには、Pythonの組み込み関数である`len()`を使用します。以下に具体的な例を示します。
+## 使い方
+
+文字列の長さを見つけるには、Pythonの`len()`関数を使います。例えば、次のようなコードを実行することで、文字列`Hello World!`の長さである12が出力されます。
 
 ```Python
-string = "こんにちは、世界!"
-print(len(string)) 
-
-# Output:
-# 8
+print(len("Hello World!"))
+```
+Output:
+```
+12
 ```
 
-このコードでは、`len()`関数を使用して文字列を渡し、その長さをプリントすることで、"こんにちは、世界!"という文字列の長さが8であることが分かります。
+Pythonでは、文字列以外にもリストやタプルなどのデータ型に対しても`len()`関数を使用することができます。また、`len()`関数は組み込み関数のため、追加のモジュールをインポートする必要はありません。
 
-## 詳細を掘り下げる
+## 詳しい解説
 
-`len()`関数は、文字列の他にもリストやタプルなどの様々なデータ型にも使用することができます。また、`len()`は内部的には`__len__()`メソッドを呼び出すことで長さを取得しています。
+文字列の長さを見つけるには、Pythonがどのように文字列を扱うかを理解することが重要です。Pythonでは、全ての文字列をリストのように扱います。そのため、文字列の長さを把握するには、文字列内の文字の数をカウントすることができれば良いことになります。`len()`関数は、そのようなカウントを行ってくれます。
 
-また、文字列の長さを取得するだけでなく、文字列の特定の文字の数や文字列内に特定の文字が含まれているかどうかを調べることも`len()`関数を使用して行うことができます。
+## 併せて読みたい
 
-## 参考
-
-- [Python Documentation: Built-in Functions - len()](https://docs.python.org/ja/3/library/functions.html#len)
-- [RealPython: Strings and .format()](https://realpython.com/python-strings/)
-- [Programiz: Python len()](https://www.programiz.com/python-programming/methods/built-in/len)
+- [Python で文字列を扱う際の基本的な操作方法](https://www.python.jp/pages/basic/string.html)
+- [Pythonの組み込み関数 - `len()`](https://docs.python.org/ja/3/library/functions.html#len)

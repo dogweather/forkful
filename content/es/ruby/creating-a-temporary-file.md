@@ -1,72 +1,47 @@
 ---
 title:    "Ruby: Creando un archivo temporal"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#Por qué
+## Por qué
 
-La creación de archivos temporales es una técnica común en Ruby para almacenar datos temporales o hacer copias de seguridad de archivos. Esta práctica es esencial para el desarrollo de aplicaciones web y otras aplicaciones en las que se necesita un almacenamiento temporal de datos.
+En programación, a menudo es necesario crear un archivo temporal para almacenar datos transitorios. Esto puede ser útil para realizar tareas como guardar información de usuarios que se está procesando o crear copias de seguridad de datos. En Ruby, es posible crear y manipular archivos temporales de manera sencilla, lo que agiliza la programación y la gestión de datos.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para crear un archivo temporal en Ruby, se puede utilizar la clase `Tempfile` incluida en la librería estándar de Ruby. Primero, se debe requerir la clase en el archivo Ruby:
+La creación de un archivo temporal en Ruby es muy sencilla. Primero, se debe requerir la librería "tempfile" utilizando el comando ```require 'tempfile'```. Luego, se puede utilizar el método "Tempfile.new" para crear un nuevo archivo temporal. Por ejemplo:
 
 ```Ruby
 require 'tempfile'
+
+temp_file = Tempfile.new('temp') # "temp" es el prefijo del nombre del archivo
 ```
 
-A continuación, se puede crear un archivo temporal usando el método `Tempfile.open`:
+Esto creará un archivo temporal en la misma ubicación del archivo Ruby actual. Si se desea especificar una ubicación diferente, se puede utilizar el método "Tempfile.new" con un parámetro para indicar la ruta deseada.
+
+Para escribir en el archivo temporal, se puede utilizar el método "write". Por ejemplo:
 
 ```Ruby
-tempfile = Tempfile.open('datos_temporales')
+temp_file.write("Esto es un archivo temporal")
 ```
 
-Se puede especificar un nombre para el archivo temporal como argumento del método. Este nombre también se usará como prefijo del archivo, ya que el nombre real del archivo será generado automáticamente.
-
-Una vez que se ha creado el archivo, se puede escribir en él usando el método `write`:
+Finalmente, se debe cerrar el archivo temporal utilizando el método "close" para guardar los cambios y liberar los recursos. Por ejemplo:
 
 ```Ruby
-tempfile.write("Este es un contenido temporal")
+temp_file.close
 ```
 
-El contenido escrito al archivo se almacenará en la memoria hasta que se llame al método `flush`, que escribirá permanentemente el contenido en el archivo.
+## Profundizando
 
-```Ruby
-tempfile.flush
-```
+La creación de un archivo temporal en Ruby también permite especificar ciertos parámetros para su creación. Por ejemplo, se puede usar el parámetro "tmpdir" para especificar una ubicación diferente al directorio temporal por defecto. Además, se puede utilizar el parámetro "encoding" para especificar un conjunto de caracteres diferente al por defecto del sistema.
 
-Por último, al terminar de utilizar el archivo temporal, se debe cerrar con el método `close`:
+También es posible utilizar el método "delete" para eliminar el archivo temporal después de su uso. Sin embargo, es importante asegurarse de cerrar el archivo antes de eliminarlo.
 
-```Ruby
-tempfile.close
-```
+## Ver También
 
-Esto eliminará el archivo temporal de la memoria.
-
-##Profundizando
-
-La clase `Tempfile` ofrece varias opciones adicionales para trabajar con archivos temporales. Por ejemplo, se puede especificar una carpeta de destino para el archivo temporal en lugar de dejar que se genere automáticamente.
-
-```Ruby
-tempfile = Tempfile.open('datos_temporales', '/tmp')
-```
-
-También hay un método `unlink` que elimina el archivo temporal, aunque el archivo aún esté abierto. Otra opción interesante es el uso de bloques, donde el archivo se eliminará automáticamente al salir del bloque. Esto también asegura que el archivo se cierre adecuadamente después de su uso.
-
-```Ruby
-Tempfile.open('datos_temporales') do |tempfile|
-  tempfile.write("Este es un contenido temporal")
-  tempfile.flush
-  
-  # Hacer algo con el archivo
-  
-end
-```
-
-#Ver también
-
-- [Documentación de la clase Tempfile de Ruby] (https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
-- [Tutorial sobre el uso de archivos temporales en Ruby] (https://www.rubyguides.com/2018/11/tempfile-ruby/)
-- [Ejemplos de código para crear y manejar archivos temporales en Ruby] (https://www.ruby-forum.com/t/creating-a-temporary-file-in-ruby-this-file-will-be-called-mytemp-csv-and-will-be-placed-into-/8581)
+- Documentación oficial de Ruby sobre la librería "tempfile": https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html
+- Tutorial sobre la creación de archivos temporales en Ruby: https://www.rubyguides.com/2015/04/working-with-files-ruby/
+- Ejemplos prácticos de uso de la librería "tempfile" en Ruby: https://www.sitepoint.com/working-with-temp-files-in-ruby/

@@ -1,43 +1,48 @@
 ---
 title:    "Arduino: デバッグ出力の印刷"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜデバッグ出力を行うのか
+# なぜ
 
-デバッグ出力とは、Arduinoプログラミングにおいて、コードの実行中に特定のデータや変数の値を表示することを指します。これにより、コードの動作を確認し、問題を特定することができます。デバッグ出力は、Arduinoプロジェクトの開発やトラブルシューティングにおいて非常に役立つツールです。
+デバッグ出力を行う理由は、コード内のエラーを特定し、修正するために非常に役立ちます。また、コードの動作を追跡することもできます。デバッグ出力は、Arduinoプログラミングにおいて非常に重要なツールです。
 
-## デバッグ出力の方法
+## ハウツー
 
-デバッグ出力は、Serialモニターを使用して行います。まず、最初にSerial.begin()関数を使用して、シリアル通信の速度を設定します。次に、Serial.println()関数を使用して、デバッグしたい変数や文字列をコンソールに出力します。以下のコードは、"Hello World"というメッセージをシリアルモニターに表示する例です。
+デバッグ出力を行うためには、Serialモニターを使用します。まず、```Serial.begin(baud rate);``` をsetup関数内に追加し、```Serial.println()``` を使用してデバッグ情報をSerialモニターに出力します。以下は、コーディング例です。
 
-```arduino
+```Arduino
+int sensorValue = 0;
+
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println("Hello World");
-  delay(1000);
+  sensorValue = analogRead(A0);
+  
+  // デバッグ情報を出力
+  Serial.println("Sensor Value: ");
+  Serial.println(sensorValue);
+  
+  // 2秒待機
+  delay(2000);
 }
 ```
 
-上記の例では、Serial.begin()関数でシリアル通信の速度を9600ビット/秒に設定し、Serial.println()関数でメッセージをシリアルモニターに表示しています。また、delay()関数を使用して、メッセージを1秒ごとに表示するようにしています。
+Serial.println() を使用することで、変数や文字列などのデータを出力することができます。Serialモニターには、コード内で出力したデバッグ情報が表示されます。
 
-## デバッグ出力の詳細
+## ディープダイブ
 
-デバッグ出力を使用する際には、以下の点に注意する必要があります。
+デバッグ出力は、Arduinoコードの動作を追跡し、エラーを特定するだけでなく、コードを最適化するためにも使用することができます。デバッグ出力の使用により、コード内の値の変化を確認し、不要な動作を排除することができます。
 
-- Serial.begin()関数の速度を、シリアルモニターの設定に合わせる必要があります。
-- Serial.println()関数を使用すると、データが改行されて表示されるため、Serial.print()関数を使用すると改行されずに連続して表示されます。
-- デバッグで使用する変数やメッセージは、必ずシリアルモニターに表示する前にSerial.println()関数で文字列に変換する必要があります。
+また、Serialモニターのボーレートを変更することで、デバッグ出力の速度を調整することができます。これは、コードのパフォーマンスを改善するために役立ちます。
 
-また、デバッグ出力を使用することで、シリアル通信の速度が遅くなり、プログラムの動作に影響を与えることがあります。そのため、不要なデバッグ出力はコメントアウトするか、実際の使用時にはSerial.begin()関数を削除することをおすすめします。
+# 参考リンク
 
-# See Also
-
-- [Arduino - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino - Serial Monitor](https://www.arduino.cc/en/Guide/ArduinoSerialMonitor/)
-- [Arduino - 基本的なコードの書き方](https://amgwellness.jp/arduino_basic_code/)
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [Arduino Serialモニターの使用方法](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Serial.println()の使用方法](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)

@@ -1,51 +1,58 @@
 ---
-title:    "C: Leyendo un archivo de texto"
+title:    "C: Leyendo un archivo de texto."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer un archivo de texto en C?
+## Por qué
 
-Leer y manipular archivos de texto es una habilidad esencial en la programación en C. Muchas veces, necesitamos trabajar con grandes cantidades de datos almacenados en archivos de texto, y saber cómo leerlos nos permite realizar tareas útiles como análisis de datos, creación de informes y mucho más.
+En muchas ocasiones como programadores, necesitamos leer y manipular archivos de texto en nuestro código. Esta habilidad es particularmente útil en la creación de aplicaciones de manejo de datos, análisis y muchas otras tareas. En este artículo, aprenderemos cómo leer un archivo de texto en C y cómo utilizar esta habilidad en nuestros proyectos.
 
 ## Cómo hacerlo
 
-Para leer un archivo de texto en C, primero debemos abrirlo utilizando la función `fopen()`. Esta función toma dos parámetros: el nombre del archivo y el modo de apertura. Por ejemplo, si queremos abrir un archivo llamado `datos.txt` en modo lectura, usaríamos `fopen("datos.txt", "r")`. Luego, podemos usar la función `fgets()` para leer línea por línea hasta que lleguemos al final del archivo.
+La lectura de un archivo de texto en C se puede hacer de varias maneras. Aquí presentamos un ejemplo simple utilizando la función `fopen()` y `fgetc()` para leer cada carácter del archivo y mostrarlo en la pantalla. Nota: Este ejemplo asume que el archivo de texto está en la misma carpeta que el código.
 
-```C
-FILE *archivo;
-char linea[100];
+```
+#include <stdio.h>
 
-archivo = fopen("datos.txt", "r");
+int main() {
 
-if (archivo == NULL) { // manejo de errores si el archivo no se puede abrir
-  printf("Error al abrir el archivo.");
-  exit(1);
+   FILE *archivo;
+   char caracter;
+
+   archivo = fopen("archivo.txt", "rt");
+
+   if (archivo == NULL) {
+      printf("No se pudo abrir el archivo.\n");
+      return 1;
+   }
+
+   while ((caracter = fgetc(archivo)) != EOF) {
+      printf("%c", caracter);
+   }
+
+   fclose(archivo);
+
+   return 0;
 }
-
-while (fgets(linea, 100, archivo)) { // repetir hasta el final del archivo
-  printf("%s", linea); // imprimir línea actual
-}
-
-fclose(archivo); // cerrar el archivo al finalizar
 ```
 
-### Salida del ejemplo:
-
-```
-Este es un ejemplo de lectura de un archivo de texto en C.
-La función `fgets()` nos permite leer línea por línea.
-```
+El resultado de este programa es la impresión del contenido del archivo de texto directamente en la pantalla.
 
 ## Profundizando
 
-Además de la función `fgets()`, también existen otras formas de leer archivos de texto en C, como `fgetc()`, `fread()` y `getchar()`. Cada una de estas funciones tiene sus propias ventajas y desventajas, y es importante conocerlas para decidir cuál es más adecuada para cada situación.
+Para aquellos que deseen profundizar en la lectura de archivos de texto en C, aquí hay algunas consideraciones adicionales:
 
-También es importante recordar cerrar el archivo después de terminar de leerlo, utilizando la función `fclose()`. De lo contrario, podemos correr el riesgo de perder datos.
+- La función `fopen()` puede recibir diferentes argumentos para especificar el modo de apertura del archivo (lectura, escritura, etc.)
+- También es posible utilizar la función `fgets()` para leer una línea completa del archivo en lugar de un solo carácter.
+- Es importante cerrar el archivo después de su uso mediante la función `fclose()`.
 
-## Vea también
+Con estas consideraciones y explorando más en la documentación de estas funciones, podrás empezar a utilizar la lectura de archivos de texto en C para tus necesidades específicas.
 
-- [Documentación oficial de C para la función `fopen()`](https://www.gnu.org/software/libc/manual/html_node/File-Open-Macro.html)
-- [Artículo sobre lectura y escritura de archivos en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Tutoriales de programación en C](https://www.programiz.com/c-programming)
+## Ver también
+
+- Más información sobre `fopen()`: https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm
+- Documentación detallada de `fgets()`: https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm
+- Cómo manejar errores en lectura de archivos: https://www.tutorialspoint.com/c_standard_library/c_function_ferror.htm

@@ -1,41 +1,44 @@
 ---
-title:    "Elm: Kaavan mukaisten merkkien poistaminen"
+title:    "Elm: Kuvion mukaisten merkkien poistaminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet koodaajat saattavat joutua poistamaan merkkejä, jotka täsmäävät tiettyyn kuvioon. Tämä voi olla esimerkiksi tarpeen, kun halutaan käsitellä syötteitä tai tekstejä tietyllä tavalla. Elm tarjoaa helpon tavan suorittaa tämä toiminto koodissa, mikä voi säästää aikaa ja vaivaa.
+Haluatko oppia kuinka poistaa merkkejä tietystä kuvioista Elm-ohjelmoinnissa? Tässä artikkelissa kerromme syyt miksi haluat ehkä tehdä niin ja kuinka se voi auttaa sinua kuvaamaan tiettyjä data-tyyppejä paremmin.
 
-## Miten se tehdään
+## Kuinka tehdä se
 
-Elmillä on käytössään sisäänrakennettu String-moduuli, joka tarjoaa erilaisia toimintoja merkkijonojen käsittelyyn. Yksi näistä toiminnoista on `filter`, joka poistaa halutun kuvion täsmäävät merkit merkkijonosta. Alla on yksinkertainen esimerkki tämän toiminnon käytöstä:
-
-```Elm
-inputString = "Hei, tässä on esimerkkiteksti!"
-filteredString = String.filter (\c -> c /= ',') inputString
-```
-Tämä koodi poistaa kaikki pilkut merkkijonosta ja tuloksena on: `"Hei tässä on esimerkkiteksti!"`.
-
-Voit myös käyttää regex-kirjastoa `elm/regex` suorittaaksesi tarkempaa kuvionmukaisen poiston. Tässä on esimerkki Regex-moduulin käytöstä:
+Poistaminen merkkejä tietyistä kuvioista on helppoa ja kätevää Elm-kielellä. Katso alla oleva koodiesimerkki lähemmin ymmärtääksesi kuinka se toteutetaan:
 
 ```Elm
-import Regex exposing (..)
+-- Luo esimerkkidata
+matriisi = [ "ABC", "DEF", "GHI" ]
 
-inputString = "123-456-789"
-pattern = Regex.regex "\\d"
-filteredString = Regex.replace pattern (\_ match -> "") inputString
+-- Määritä kuvio jota haluat poistaa, tässä tapauksessa "C"
+kuvio = "C"
+
+-- Käytä "filter" funktiota ja lambda-lauseketta poistaa kuvio
+uusi_matriisi = List.filter (\x -> not (String.contains kuvio x)) matriisi
+
+-- Tulostetaan uusi matriisi konsoliin
+Debug.toString uusi_matriisi
 ```
-Tämä koodi poistaa kaikki numerot merkkijonosta ja tuloksena on tyhjä merkkijono `""`.
+Yllä olevassa esimerkissä luomme listan "matriisi" joka sisältää kolme sanaa. Määrittelemme sitten poistettavan kuvion ja käytämme "filter" funktiota ja lambda-lauseketta poistaaksemme sen jokaisesta sanasta. Lopuksi tulostamme uuden matriisin konsoliin nähdäksemme tuloksen. Alla oleva tulos näyttää miten kuvio "C" on poistettu jokaisesta sanasta:
 
-## Syvällinen sukellus
+```
+["AB", "DEF", "GHI"]
+```
 
-`filter`-toiminto käyttää takaa päin rekursion käsitellessään merkkijonoa. Tämä tarkoittaa, että se aloittaa merkkijonon lopusta ja poistaa merkit, jotka täsmäävät kuvioon kunnes se saavuttaa merkkijonon alun. Tämä lähestymistapa voi olla hyödyllinen, jos haluat poistaa merkkejä monimutkaisemmista osista merkkijonoa. Voit myös käyttää `foldl`-funktiota suorittaaksesi tämän toiminnon itse, mutta tämä vaatii hieman enemmän koodia.
+## Syvempää tietoa
+
+Voit myös käyttää samaa tekniikkaa poistaaksesi merkkejä muista kuvioista, kuten esimerkiksi kokonaisia sanoja tai lauseita. Voit myös yhdistää "filter" funktion muihin Elm-ohjelmointikielen ominaisuuksiin, kuten "map" ja "fold", saadaksesi monimutkaisempia ja tehokkaampia ratkaisuja. Kokeile erilaisia vaihtoehtoja ja löydä sinulle sopivin tapa poistaa merkkejä tietystä kuvioista!
 
 ## Katso myös
 
-- Elm-käyttöohjeet: https://guide.elm-lang.org/
-- Regex-moduulin dokumentaatio: https://package.elm-lang.org/packages/elm/regex/latest/Regex
-- String-moduulin dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/String
+- [String-moduuli Elmissä](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+- [Stringin käsittely Elm-ohjelmoinnissa](https://elmprogramming.com/string-manipulation.html)
+- [Lambda-lausekkeet Elm-ohjelmoinnissa](https://elmprogramming.com/anonymous-functions.html)

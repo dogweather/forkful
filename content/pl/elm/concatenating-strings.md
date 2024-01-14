@@ -1,47 +1,43 @@
 ---
 title:    "Elm: Łączenie ciągów znaków"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W programowaniu czasem musimy łączyć różne elementy, takie jak słowa lub ciągi znaków. W języku Elm jest to nazywane konkatenacją stringów i może być przydatne w wielu sytuacjach. Sprawdźmy, dlaczego warto nauczyć się tej techniki.
+Czy kiedykolwiek zastanawiałeś się, dlaczego warto połączyć dwie lub więcej ciągów znaków w jedno? W programowaniu, jedną z najczęstszych operacji wykonanych na ciągach jest łączenie ich ze sobą. W tym artykule dowiesz się dlaczego jest to przydatne i jak to zrobić w języku Elm.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Konkatenacja stringów w Elm jest bardzo prosta i nie wymaga użycia specjalnych funkcji. Można to zrobić za pomocą operatora `++`, który pozwala połączyć dwa łańcuchy znaków w jeden. Można też użyć funkcji `String.concat`, która pozwala na łączenie większej liczby stringów. Przykłady poniżej pokażą, jak to działa:
+Aby połączyć dwa ciągi znaków w języku Elm, możesz użyć funkcji `++`. Przykładowy kod wyglądałby następująco:
 
-```elm
-"Hello" ++ "World" -- wyświetli "HelloWorld"
-String.concat ["I", "like", "Elm"] -- wyświetli "ILikeElm"
+```Elm
+"Hello, " ++ "world!"
 ```
 
-Możesz też użyć konkatenacji do łączenia wartości zmiennych, na przykład:
+Wyjściem z tej operacji będzie ciąg znaków "Hello, world!". Możesz również dokonać konkatenacji więcej niż dwóch ciągów:
 
-```elm
-let name = "John"
-let age = 30
-"Hi, my name is " ++ name ++ " and I am " ++ String.fromInt(age) ++ " years old." 
--- wyświetli "Hi, my name is John and I am 30 years old."
+```Elm
+"Programming " ++ "is " ++ "fun!"
 ```
 
-## Głębsza analiza
+Powyższy przykład daje wynik "Programming is fun!". Pamiętaj, aby używać tylko ciągów znaków do konkatenacji, inaczej możesz otrzymać błąd.
 
-W Elm konkatenacja stringów działa tylko dla wartości typu `String`. Nie można jej używać na innego rodzaju danych, nawet jeśli wyglądają jak stringi, na przykład:
+## Głębszy wgląd
 
-```elm
-"123" ++ "456" -- dozwolone
-12 ++ 34 -- niedozwolone
+W języku Elm znaki specjalne i liczby mogą być automatycznie przekształcone w ciągi znaków podczas konkatenacji. Na przykład:
+
+```Elm
+"Today is " ++ 25 ++ "th of October."
 ```
 
-Ważne jest również to, że konkatenacja nie zmienia wartości łańcuchów znaków, ale zwraca nowy łańcuch zawierający połączone wartości. Pamiętaj też, że niektóre operacje, takie jak porównywanie czy sprawdzanie długości, mogą być utrudnione, jeśli używasz konkatenacji zamiast zwykłych stringów.
+Powoduje to wyjście "Today is 25th of October." W przypadku, gdy oba argumenty `++` są ciągami znaków, operator ten po prostu łączy je ze sobą. Jednak jeśli jednym z argumentów jest liczba, Elm automatycznie zamienia ją na ciąg znaków.
 
-## Zobacz też
+## Zobacz również
 
-- [Dokumentacja Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm String.concat na Ellie](https://ellie-app.com/9yTR8QDdrnra1)
-- [Wprowadzenie do Elm String wideo](https://www.youtube.com/watch?v=whn7SGfQlxk&ab_channel=Let%27sCodeIt)
-
-Dzięki konkatenacji stringów w Elm możesz wygodnie łączyć słowa i ciągi znaków, co jest bardzo przydatne w wielu zastosowaniach. Pamiętaj jednak, żeby uważnie dobierać typy danych, aby uniknąć potencjalnych problemów.
+- [Dokumentacja Elm - konkatenacja ciągów znaków](https://guide.elm-lang.org/strings/concatenation.html)
+- [Wideo na temat konkatenacji w języku Elm przez Evan Czaplicki](https://www.youtube.com/watch?v=WmHXPsxEQZY)
+- [Artykuł o operacjach na ciągach znaków w języku Elm](https://dev.to/dillion/elm-string-operations-removing-characters-etc-479d)

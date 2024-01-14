@@ -1,73 +1,75 @@
 ---
 title:    "Ruby: Lecture des arguments de ligne de commande"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un développeur Ruby, vous connaissez probablement l'importance d'interagir avec les utilisateurs à travers une interface en ligne de commande. La capacité de lire les arguments de ligne de commande peut vous aider à rendre vos programmes plus dynamiques et interactifs. Dans cet article, nous allons vous montrer comment lire des arguments de ligne de commande en utilisant Ruby.
+Les arguments de ligne de commande sont un élément essentiel de la programmation Ruby. Ils permettent aux utilisateurs de passer des valeurs à un programme au moment de l'exécution, ce qui le rend plus flexible et personnalisable. Dans cet article, nous allons explorer comment lire ces arguments et les utiliser dans notre code Ruby.
 
 ## Comment faire
 
-Pour lire des arguments de ligne de commande en Ruby, vous devez utiliser la variable spéciale `$ARGV` qui stocke les arguments fournis lors de l'exécution du programme. Voici un exemple de code qui montre comment lire et utiliser les arguments de ligne de commande :
+Pour lire les arguments de ligne de commande en Ruby, nous utilisons l'objet `ARGV`. Il s'agit d'un tableau contenant tous les arguments passés au programme. Voyons un exemple simple:
 
 ```Ruby
-# Exemple de code pour lire des arguments de ligne de commande
-# ruby command_line_args.rb argument1 argument2
-
-# Stockage des arguments dans un tableau grâce à la variable $ARGV
-args = $ARGV
-
-# Récupération des arguments
-arg1 = args[0]
-arg2 = args[1]
-
-# Affichage des arguments
-puts "Argument 1 : #{arg1}"
-puts "Argument 2 : #{arg2}"
+# ex1.rb
+puts "Bonjour, #{ARGV[0]}!"
 ```
 
-Si nous exécutons ce programme en lui fournissant les arguments `argument1` et `argument2`, voici le résultat que nous obtenons :
+En exécutant ce programme avec `ruby ex1.rb Alice` depuis la ligne de commande, nous obtenons la sortie suivante:
 
 ```
-$ ruby command_line_args.rb argument1 argument2
-Argument 1 : argument1
-Argument 2 : argument2
+Bonjour, Alice!
 ```
 
-Comme vous pouvez le constater, nous avons facilement pu accéder et utiliser les arguments fournis en utilisant la variable `$ARGV`. Vous pouvez également faire des opérations plus avancées avec ces arguments, comme les convertir en entiers ou effectuer des validations.
+Comme vous pouvez le constater, nous avons utilisé la notation `#{}` pour inclure la valeur de `ARGV[0]` (qui correspond au premier argument passé) dans notre chaîne de caractères.
+
+Nous pouvons également utiliser une boucle `each` pour parcourir tous les arguments et les utiliser dans notre code. Prenons par exemple ce programme qui affiche les arguments passés en majuscules:
+
+```Ruby
+# ex2.rb
+ARGV.each do |arg|
+  puts arg.upcase
+end
+```
+
+En l'exécutant avec `ruby ex2.rb Hello world`, nous obtenons la sortie suivante:
+
+```
+HELLO
+WORLD
+```
+
+Vous pouvez également combiner les arguments de ligne de commande avec d'autres concepts de Ruby, comme les conditions et les boucles. L'imagination est la seule limite.
 
 ## Plongée en profondeur
 
-En plongeant un peu plus en profondeur dans la lecture des arguments de ligne de commande en Ruby, vous remarquerez que la variable `$ARGV` n'est pas la seule façon de les récupérer. Vous pouvez également utiliser la méthode `ARGV.getopts` qui vous permettra de spécifier des options pour vos arguments. Par exemple, si vous voulez que votre programme accepte les arguments `-a` et `-b`, vous pouvez le faire comme suit :
+Maintenant que nous avons vu comment utiliser les arguments de ligne de commande, explorons quelques concepts plus avancés.
+
+Tout d'abord, il est important de noter que tous les arguments de ligne de commande sont des chaînes de caractères. Si vous souhaitez utiliser des entiers ou des flottants, vous devrez les convertir en utilisant les méthodes `to_i` et `to_f` respectivement.
 
 ```Ruby
-# Exemple de code pour utiliser la méthode getopts
-# ruby command_line_args.rb -a argument1 -b argument2
-
-# Spécification des options à utiliser
-opt = { 'a' => 'arg1', 'b' => 'arg2' }
-
-# Utilisation de la méthode getopts pour récupérer les arguments
-ARGV.getopts(opt) do |opt, val|
-  if opt == 'a'
-    arg1 = val
-  elsif opt == 'b'
-    arg2 = val
-  end
+# ex3.rb
+sum = 0
+ARGV.each do |arg|
+  sum += arg.to_i
 end
-
-# Affichage des arguments
-puts "Argument 1 : #{arg1}"
-puts "Argument 2 : #{arg2}"
+puts "La somme est de #{sum}"
 ```
 
-En utilisant cette méthode, vous obtiendrez le même résultat que précédemment.
+En l'exécutant avec `ruby ex3.rb 5 10`, nous obtenons la sortie suivante:
+
+```
+La somme est de 15
+```
+
+Un autre concept important à comprendre est la différence entre les arguments de ligne de commande et les options de ligne de commande. Les arguments sont des valeurs passées au programme, tandis que les options sont des indicateurs qui modifient le comportement du programme. Par exemple, l'option `-h` est couramment utilisée pour afficher un message d'aide et quitter le programme sans l'exécuter.
 
 ## Voir aussi
 
-- Documentation officielle de Ruby sur la lecture des arguments de ligne de commande : https://ruby-doc.org/core-3.0.1/ARGF.html
-- Tutoriel complet sur la manipulation des arguments de ligne de commande en Ruby : https://www.rubyguides.com/2018/11/ruby-command-line-arguments/
-- Vidéo explicative sur les différentes façons de lire les arguments de ligne de commande en Ruby : https://www.youtube.com/watch?v=jVylMSdA6a0
+- [Documentation officielle sur les arguments de ligne de commande en Ruby](https://ruby-doc.org/core-2.7.3/ARGF.html)
+- [Un tutoriel interactif sur les arguments de ligne de commande](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-control-flow-u)
+- [Un article sur les différentes façons d'utiliser les arguments de ligne de commande en Ruby](https://blog.appsignal.com/2020/02/19/arguments-and-flags-via-command-line-in-ruby.html)

@@ -1,55 +1,63 @@
 ---
-title:    "Go: Extraindo Substrings"
+title:    "Go: Extraindo substrings"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Go?
+## Por que usar extração de substrings em Go?
 
-Extrair substrings de uma string maior pode ser útil em várias situações de programação. Por exemplo, pode ser necessário analisar um texto ou manipular um pequeno trecho de uma string. Em Go, podemos usar a função `Substr` para extrair facilmente substrings de uma string.
+A extração de substrings é uma técnica muito útil em programação, especialmente em linguagens como Go. Ela permite que você selecione apenas partes específicas de uma string, o que pode ser útil em várias situações, como formatação de texto ou análise de dados.
 
-## Como fazer:
+## Como fazer isso em Go
+
+A extração de substrings em Go é bastante simples. Primeiro, é preciso entender a estrutura básica para acessar uma substring em uma string. Ela segue o seguinte formato: ```string[índice inicial:índice final]```.
+
+Vamos ver um exemplo prático. Digamos que temos a seguinte string: ```"Olá, mundo!"```. Se quisermos extrair apenas a palavra "mundo" dessa string, podemos usar o seguinte código em Go:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    str := "Exemplo de uma string"
-    
-    // Extrai uma substring começando do índice 8 até o final
-    fmt.Println(str[8:])
-    
-    // Extrai uma substring do índice 3 até o 7 (exclusivo)
-    fmt.Println(str[3:7])
-    
-    // Extrai uma substring do índice 0 até o 2 (exclusivo)
-    fmt.Println(str[:2])
-}
+str := "Olá, mundo!"
+sub := str[5:10]
+fmt.Println(sub)
 ```
 
-**Saída:**
+Esse código vai imprimir "mundo" na tela, já que o índice inicial 5 corresponde à letra "m" e o índice final 10 corresponde à letra "o". Isso mostra como é simples extrair substrings em Go.
 
+Agora, se quisermos pegar apenas a palavra "Olá" da string, podemos usar o mesmo código, mudando apenas os índices:
+
+```Go
+str := "Olá, mundo!"
+sub := str[0:3]
+fmt.Println(sub)
 ```
-uma string
-emp
-Ex
+
+Esse código vai imprimir "Olá" na tela. Note que o índice final é 3, mas a letra "á" também é incluída na substring. Isso acontece porque o índice final não é considerado, apenas o índice inicial é incluído. Então, para extrair uma substring até o final da string, basta deixar o índice final em branco:
+
+```Go
+str := "Olá, mundo!"
+sub := str[5:]
+fmt.Println(sub)
 ```
 
-Podemos ver que, ao usar a função `Substr` em Go, precisamos especificar o índice de início e, opcionalmente, o índice de fim da substring que desejamos extrair. Se não especificarmos o índice de fim, a substring será extraída até o final da string original.
+Esse código vai imprimir "mundo!" na tela, já que não há o índice final especificado e, portanto, a substring vai até o final da string. Vale lembrar que os índices em Go começam em 0, então é preciso ter isso em mente ao selecionar as partes da string que se deseja extrair.
 
-## Mergulho profundo:
+## Mergulho profundo
 
-Ao trabalhar com strings em Go, é importante entender como o índice funciona. Em Go, os índices de uma string começam em 0 e vão até o comprimento da string - 1. Isso significa que, se tivermos uma string com o comprimento 10, o último índice seria 9.
+Agora que você já sabe como extrair substrings em Go, é importante entender algumas coisas adicionais sobre esse processo. Primeiro, é possível usar números negativos como índices. Isso significa que, se você quiser extrair a substring "Olá" da string "Olá, mundo!", também pode fazer dessa forma:
 
-Além disso, podemos usar índices negativos para extrair substrings a partir do final da string. Por exemplo, se usarmos o índice `-1`, estaremos acessando o último caractere da string, `-2` seria o penúltimo caractere e assim por diante.
+```Go
+str := "Olá, mundo!"
+sub := str[:3]
+fmt.Println(sub)
+```
 
-Outra função útil para extrair substrings em Go é `SubstrIndex`, que nos permite encontrar o primeiro ou último índice de uma determinada substring em uma string maior. Isso pode ser útil para casos em que não conhecemos o índice exato de onde queremos extrair a substring.
+O resultado será o mesmo: "Olá". Isso acontece porque o índice inicial -3 em Go refere-se a 3 espaços antes do último caractere da string.
 
-## Veja também:
+Além disso, vale lembrar que a extração de substrings não modifica a string original. Ela apenas retorna uma nova string com a parte selecionada. Então, se você quiser alterar a string original, é preciso atribuir a ela o valor da nova substring.
 
-- [Documentação oficial do pacote strings](https://golang.org/pkg/strings/)
-- [Guia de referência rápida do Go](https://github.com/a8m/go-lang-cheat-sheet/blob/master/calling_functions/channels/README.md#calling-functions)
-- [Tutorial de strings em Go](https://www.golang-book.com/books/intro/8#section4)
+## Veja também
+
+- [Documentação oficial do Go sobre extração de substrings](https://golang.org/ref/spec#Slice_expressions)
+- [Artigo sobre extração de substrings em Go (em inglês)](https://www.callicoder.com/extract-substring-from-string-golang/)  
+- [Tutorial completo sobre manipulação de strings em Go (em português)](https://aprendago.com/2019/04/23/manipulando-strings-em-go/)

@@ -1,44 +1,55 @@
 ---
 title:    "Arduino: Sammenligning av to datoer"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å sammenligne to datoer kan være nyttig i mange forskjellige Arduino-prosjekter. Dette kan hjelpe deg med å holde styr på tidssensitive hendelser, som for eksempel når et batteri ble byttet eller når et sensor ble aktivert.
 
-## Slik gjør du det
-Det er flere måter å sammenligne to datoer på, avhengig av hva du ønsker å oppnå. Her er et eksempel på hvordan du kan sammenligne årets dato (den nåværende datoen) med en bestemt dato:
+Har du noen gang lurt på hvordan du kan sammenligne to forskjellige datoer ved hjelp av Arduino? Det kan være nyttig for å lage tidsstyrte prosjekter eller for å måle tidsintervaller. I denne bloggposten vil vi gå gjennom hvordan du kan gjøre dette ved hjelp av Arduino-programmering.
+
+## Hvordan gjøre det
+
+Først må vi inkludere "Time" biblioteket i koden vår. Dette gir oss tilgang til funksjoner for å håndtere datoer og tid i Arduino.
 
 ```Arduino
-#include <Time.h> // inkluderer Time biblioteket
+#include <TimeLib.h> 
+```
 
-void setup() {
-  Serial.begin(9600); // Initiere seriell kommunikasjon med en baud rate på 9600
-  setTime(14, 0, 0, 1, 1, 2020); // Setter klokken til 14:00:00 1. januar 2020
-}
+Deretter kan vi bruke funksjonen "year()" for å få året fra en bestemt dato. For eksempel, hvis vi vil sammenligne to datoer og sjekke om de er fra samme år, kan vi skrive noe slik:
 
-void loop() {
-  time_t now = now(); // Lagrer den nåværende datoen og tiden
-  time_t compareDate = makeTime(0, 0, 0, 1, 1, year()); // Oppretter en time_t verdi for årets dato
-
-  if (now == compareDate) { // Sammenligner nåværende dato med årets dato
-    Serial.println("Godt nyttår!"); // Skriver ut en beskjed hvis de er like
-  }
+```Arduino
+if (year(dato1) == year(dato2)) {
+  // Koden din her
 }
 ```
 
-Denne koden vil skrive ut "Godt nyttår!" når datoen er 1. januar 2020 og klokken er 14:00.
+Du kan også bruke "month()", "day()" og "hour()" funksjonene på samme måte for å sammenligne andre deler av datoen som måned, dag og time.
 
-## Dypt dykk
-Å sammenligne to datoer kan også gjøres ved å bruke `time_t` variabler og funksjoner som `now()` og `makeTime()`. Du kan også bruke datofunksjonene som er tilgjengelige i Time biblioteket, som for eksempel `day()`, `month()` og `year()`.
+```Arduino
+if (month(dato1) == month(dato2)) {
+  // Koden din her
+}
+```
 
-Hvis du ønsker å sammenligne datoer i en løkke, kan du bruke et `for`-løkke som går gjennom hver dag og sjekker om de er like. Du kan også bruke `break`-kommandoen for å avslutte løkken når du finner en match.
+Du kan også sammenligne to datoer og få tiden mellom dem ved hjelp av "difference()" funksjonen, som vil gi deg en verdi i millisekunder.
 
-Å kunne sammenligne datoer kan også være nyttig når du skal implementere en alarm eller tidsbasserte handlinger i prosjektet ditt.
+```Arduino
+unsigned long forskjell = difference(dato1, dato2);
+```
+
+## Dypdykk
+
+Når du sammenligner to datoer, er det viktig å merke seg at det kan være avvik på grunn av ulike tidsformater eller tidssoner. Derfor anbefales det å konvertere datoer til samme format og tidssone før du sammenligner dem.
+
+En annen ting å huske på er at Arduino har en begrensning på datoen den kan håndtere. Den kan ikke håndtere datoer før 1. januar 1970 og etter 19. januar 2038.
 
 ## Se også
-- [Time biblioteket dokumentasjon](https://playground.arduino.cc/code/time/)
-- [Tutorial: Håndtering av dato og klokkeslett på Arduino](https://www.arduino.cc/en/tutorial/time/)
-- [Eksempler på dato og klokkeslett bruk med Arduino](https://www.arduino.cc/en/Tutorial/DateStrings)
+
+- [Time biblioteket dokumentasjon](https://www.arduino.cc/en/reference/time)
+- [Video tutorial om å sammenligne datoer på Arduino](https://www.youtube.com/watch?v=5S-QGgK-5oU)
+- [Mer avanserte funksjoner for å håndtere datoer i Arduino](https://www.arduinoplatform.com/arduino-date-time-functions/)
+
+Takk for at du leste denne bloggposten og håper den hjelper deg med å sammenligne datoer ved hjelp av Arduino! Lykke til med dine kommende prosjekter!

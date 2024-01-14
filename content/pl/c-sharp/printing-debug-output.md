@@ -1,48 +1,45 @@
 ---
-title:    "C#: Drukowanie wyników debugowania"
+title:    "C#: Drukowanie wyjścia debugowania"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu napotykamy problemy, których nie jesteśmy w stanie rozwiązać od razu. W takich sytuacjach, wyświetlanie informacji debuggowania może być nieocenionym narzędziem, pozwalającym na znalezienie błędu w aplikacji.
+Często przeprowadzam debugowanie i kolejny raz muszę to robić, bo zapomniałem dodać kilku wypisów debugujących. Dlatego postanowiłem napisać artykuł, aby wyjaśnić czym jest wypisywanie debugujące oraz dlaczego jest to ważne.
 
-## Jak
+## Jak To Zrobić
 
-Aby wyświetlać informacje debugowania w języku C#, możemy skorzystać z polecenia "Console.WriteLine()", które wypisze przekazaną mu wartość na standardowe wyjście konsoli. Możemy to wykorzystać na przykład do wyświetlenia wartości zmiennych w trakcie działania programu.
-
-```C#
-int liczba1 = 5;
-int liczba2 = 10;
-
-Console.WriteLine("Wartość zmiennej liczba1: " + liczba1); // wypisze: "Wartość zmiennej liczba1: 5"
-Console.WriteLine("Wartość zmiennej liczba2: " + liczba2); // wypisze: "Wartość zmiennej liczba2: 10"
-
-```
-
-Jeśli chcemy wypisać więcej informacji na temat stanu programu, możemy również wykorzystać metody takie jak "Console.Write()" lub "Debug.WriteLine()".
+Aby wypisywać debug w C#, musisz użyć metody `Console.WriteLine()`, która wypisze wartości zmiennych na konsoli. Możesz to zrobić dla pojedynczej zmiennej, jak i dla większej ilości zależnych od siebie zmiennych.
 
 ```C#
-string imie = "Anna";
-int wiek = 28;
+int liczba = 5;
+string napis = "To jest przykładowy napis.";
 
-Console.Write("Użytkownik: ");
-Console.WriteLine(imie); // wypisze: "Użytkownik: Anna"
-Debug.WriteLine("Wiek: " + wiek); // wypisze: "Wiek: 28"
+Console.WriteLine("Liczba: " + liczba);
+Console.WriteLine("Napis: " + napis);
 ```
 
-Dzięki wyświetlaniu informacji debugowania możemy śledzić, w jaki sposób zmienne zmieniają swoją wartość, lub zlokalizować miejsce, w którym program zwraca niepoprawne wyniki.
+Output:
+```
+Liczba: 5
+Napis: To jest przykładowy napis.
+```
+
+Pamiętaj, aby używać znaku `+` w miejscu, w którym chcesz dodać wartości zmiennych, a także używać znaku `;` na końcu każdej linii kodu.
 
 ## Deep Dive
 
-Istnieje także możliwość korzystania z różnych ustawień i opcji dla wyświetlania informacji debugowania. Na przykład w Visual Studio, możemy skorzystać z okna "Debugowanie", które pozwala na wyświetlenie zmiennych, stanu stosu, bądź wywołań dla aktualnie wykonywanej funkcji.
+Wypisywanie debugujące jest często używane podczas debugowania kodu, czyli procesu znajdowania i naprawiania błędów w programach. Pozwala ono na wyświetlanie aktualnych wartości zmiennych w celu monitorowania ich wartości i porównywania z oczekiwanymi. Dzięki temu możemy łatwiej zlokalizować błąd i naprawić go.
 
-Ponadto, możemy wykorzystać specjalną bibliotekę "System.Diagnostics" do bardziej zaawansowanego ustawiania i kontrolowania wyświetlanych informacji.
+Ponadto, wypisywanie debugujące może pomóc w zrozumieniu działania kodu, szczególnie dla początkujących programistów. Pozwala na śledzenie przepływu wartości i zmian w zmiennych, co może ułatwić zrozumienie działania programu.
 
-## Zobacz także
+## Zobacz Również
 
-- Microsoft Dokumentacja: https://docs.microsoft.com/pl-pl/visualstudio/debugger/getting-started-with-the-debugger?view=vs-2019
-- Wprowadzenie do wyświetlania informacji debugowania: https://www.c-sharpcorner.com/blogs/guide-to-viewing-debug-information-in-c-sharp-programming1
-- Debugowanie aplikacji w języku C#: https://www.c-sharpcorner.com/UploadFile/5c5641/5-steps-to-debug-an-application-in-C-Sharp/
+Jeśli chcesz dowiedzieć się więcej o wypisywaniu debugującym w C#, polecam zapoznać się z poniższymi linkami:
+
+- [Oficjalna dokumentacja C# o wypisywaniu debugującym](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/inside-a-program/using-the-console-class)
+- [Poradnik na temat wypisywania debugującego w C#](https://www.c-sharpcorner.com/article/debugging-in-C-Sharp/)
+- [Wideo tutorial o wypisywaniu debugującym w C#](https://www.youtube.com/watch?v=bOhtuU-AuZQ)

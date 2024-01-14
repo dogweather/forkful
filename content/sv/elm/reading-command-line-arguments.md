@@ -1,57 +1,42 @@
 ---
 title:    "Elm: Läsning av kommandoradsargument"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa kommandoradsargument är en viktig del av programmering då det ger möjlighet att interagera med en applikation på ett flexibelt sätt. Läs vidare för att lära dig hur du kan läsa och använda kommandoradsargument i dina Elm-program.
+Om du är en utvecklare som använder Elm för frontend-utveckling, har du kanske hört talas om att läsa kommandoradsargument. Att kunna läsa och använda kommandoradsargument kan hjälpa till att effektivisera din kod och ge dig mer kontroll över hur din applikation beter sig. I denna bloggpost kommer vi att utforska varför det är användbart och hur man gör det i Elm.
 
 ## Så här gör du
 
-För att läsa kommandoradsargument i Elm, använd funktionen `Platform.worker` tillsammans med `Platform.SendToApp` modulen. Se nedan för ett kodexempel:
+För att läsa kommandoradsargument, behöver du först importera "Elm-Kernel"-paketet:
 
-```Elm
-import Platform
-import Platform.SendToApp
-
-type Msg = ArgumentsReceived (List String)
-
-main : Program () Model Msg
-main =
-  Platform.worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-
-init : () -> ( Model, Cmd Msg )
-init _ =
-  ( Model, Platform.SendToApp.NoOp )
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    ArgumentsReceived arguments ->
-      ( { model | arguments = arguments }, Platform.SendToApp.NoOp )
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-  Platform.Sub.batch [ Platform.Sub.map ArgumentsReceived Platform.Sub.args ]
+``` Elm-Kernel.Command
+import
+  Kernel.Command exposing (args)
 ```
 
-I exemplet ovan används `Platform.Sub.args` för att läsa in argumenten och sedan skickas de tillbaka till applikationen via `Platform.SendToApp` modulen.
+Sedan kan du använda funktionen "args" för att läsa och hantera argumenten som skickas till din Elm-applikation via kommandoraden. Detta ger dig möjlighet att tilldela argumenten till variabler och använda dem i din kod. Här är ett enkelt exempel:
 
-## Djupdyk
+``` Elm
+printArguments : Cmd msg
+printArguments =
+    Cmd.map (\arguments -> Debug.log "Arguments: " arguments) Kernel.Command.args
+```
 
-När du läser kommandoradsargument i Elm måste du vara medveten om skillnader mellan olika operativsystem. Till exempel skiljer sig syntaxen för att öppna en fil mellan Windows och Unix-system. Det är också viktigt att hantera eventuella felaktiga eller saknade argument för att undvika att applikationen kraschar.
+När du kör denna kod och skickar in kommandoradsargument som "elm-make Main.elm --name=John", kommer du att se utskriften "Arguments: [("--name", "John")]" i din debuggare.
 
-## Se också
+## Djupdykning
 
-För mer information om kommandoradsargument i Elm, kolla in följande länkar:
+Förutom enkla argument som i exemplet ovan, kan du även läsa och hantera mer komplexa argument, som flaggor och värden med hjälp av "elm optparse-applicative"-paketet. Detta paket gör det enklare att läsa och tolka argument från kommandoraden.
 
-- [Elm dokumentation](https://elm-lang.org/docs)
-- [Läsning av filer i Elm](https://guide.elm-lang.org/interop/file_system.html)
-- [Elm paket för hantering av kommandoradsargument](https://package.elm-lang.org/packages/elm-command-line/1.1.0/)
+Det är också viktigt att notera att kommandoradsargument är föränderliga, vilket innebär att du kan läsa argument i ett tidigt skede av uppstarten och senare uppdatera deras värden baserat på andra händelser eller användarinmatning.
+
+## Se även
+
+- [Elm-Docs - Command Module](https://package.elm-lang.org/packages/elm/core/latest/Kernel-Command)
+- [Elm-Docs - elm optparse-applicative Package](https://package.elm-lang.org/packages/Skinney/elm-optparse-applicative/latest/)
+- [Elm-Sverige Forum - Diskussion om Kommandoradsargument](https://discourse.elm-sverige.nu/t/lasa-kommandoradsargument-i-elmdos-apps/537)

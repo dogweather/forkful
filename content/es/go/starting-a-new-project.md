@@ -1,43 +1,39 @@
 ---
 title:    "Go: Comenzando un nuevo proyecto"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+Iniciar un nuevo proyecto en Go puede ser una gran oportunidad para aprender un lenguaje de programación moderno y en constante crecimiento. Además, con su sintaxis simple y eficiente, Go permite desarrollar aplicaciones rápidamente y con un alto rendimiento.
 
-Comenzar un nuevo proyecto en Go puede ser una gran decisión para cualquier desarrollador. Esta poderosa herramienta de programación ofrece una sintaxis sencilla y concisa, así como una amplia biblioteca estándar que lo hace ideal para una amplia gama de proyectos y aplicaciones.
+## Cómo hacerlo
+Aquí te dejamos un ejemplo de cómo crear un servidor web básico en Go y ver su resultado en el navegador.
 
-## Cómo
-
-Para comenzar un proyecto en Go, primero necesitarás instalar el compilador y el lenguaje en tu sistema. Una vez hecho esto, puedes crear un archivo que contenga tu código. Aquí hay un ejemplo de un programa sencillo en Go:
-
-```Go 
+```Go
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "net/http"
+)
 
 func main() {
-    fmt.Println("¡Hola Mundo!")
+  http.HandleFunc("/", helloWorld)  // Define la ruta a nuestro manejador
+  http.ListenAndServe(":8080", nil) // Inicia el servidor en el puerto 8080
+}
+
+func helloWorld(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprint(w, "¡Hola mundo!") // Muestra "¡Hola mundo!" en la página web
 }
 ```
 
-Este programa imprimirá "¡Hola Mundo!" en la consola. También puedes utilizar Go para crear aplicaciones web, aplicaciones de bases de datos y mucho más. La documentación en línea de Go es muy completa y puedes encontrar muchos recursos y tutoriales en línea para comenzar con tu proyecto.
-
-## Profundizando
-
-Antes de comenzar un nuevo proyecto en Go, es importante entender bien los conceptos básicos del lenguaje. Esto incluye entender los tipos de datos, las estructuras de control y cómo funcionan las funciones. También es importante aprender a utilizar las bibliotecas estándar y cómo integrarlas en tu código.
-
-Otra consideración importante es entender el enfoque de Go en la concurrencia y la simultaneidad. Go tiene características integradas para manejar múltiples procesos y permitir que tu código se ejecute de forma eficiente en sistemas multiprocesador.
-
-Existen también herramientas útiles para los desarrolladores de Go, como el depurador integrado y el administrador de paquetes go modules. Familiarizarse con estas herramientas puede ayudarte a optimizar tu flujo de trabajo y hacer que tu código sea más eficiente.
+## Deep Dive
+Al iniciar un nuevo proyecto en Go, es importante tener en cuenta algunos aspectos fundamentales. Primero, familiarizarse con la sintaxis del lenguaje y sus características únicas, como la concurrencia y la recolección de basura. También es recomendable seguir las buenas prácticas de diseño de código y utilizar paquetes y librerías de la comunidad para optimizar el desarrollo.
 
 ## Ver también
-
 - [Documentación oficial de Go](https://golang.org/doc/)
-- [Go Tour](https://tour.golang.org/welcome/1)
-- [GoByExample](https://gobyexample.com/)
-- [Curso de Go en español](https://go-tour-spanish.appspot.com/#1)
-- [Go Packages](https://pkg.go.dev/)
-- [Awesome Go](https://awesome-go.com/)
+- [Tutorial de Go en español](https://www.tutorialesprogramacionya.com/goya/)
+- [Awesome Go](https://github.com/avelino/awesome-go) - una lista curada de recursos y herramientas para desarrollar en Go.

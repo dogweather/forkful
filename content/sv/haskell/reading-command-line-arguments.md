@@ -1,43 +1,41 @@
 ---
 title:    "Haskell: Läsning av kommandoradsargument"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa kommandoradsargument är en viktig del av att skriva effektiva Haskell-program. Genom att förstå hur man kan läsa dessa argument kan du göra dina program mer flexibla och anpassningsbara.
+Att läsa in kommandoradsargument är en viktig del av att förstå hur man kan interagera med ett Haskell-program från terminalen. Genom att lära sig detta kan man skapa programs som är mer flexibla och anpassningsbara.
 
 ## Hur man gör det
 
-Låt oss titta på ett enkelt exempel på hur man kan läsa kommandoradsargument i Haskell:
+Först och främst behöver man importera `System.Environment` biblioteket för att kunna använda dess funktioner för att läsa in kommandoradsargument. Här är ett exempel på en funktion som tar emot en lista av strängar (kommandoradsargumenten) och sedan returnerar en sträng med endast det första argumentet:
 
-```Haskell
+```haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn $ "Det första argumentet är: " ++ head args
+    let firstArg = head args
+    putStrLn ("Första argumentet är: " ++ firstArg)
 ```
 
-I detta exempel använder vi `System.Environment` modulen för att kunna använda funktionen `getArgs`, som hämtar en lista på alla kommandoradsargument som skickats till vårt program. Vi tilldelar denna lista till variabeln `args` och använder sedan `head` för att hämta det första argumentet. Därefter använder vi `putStrLn` för att skriva ut det på skärmen.
+Om man nu kör detta program från terminalen med `runhaskell namn_av_fil.hs första andra tredje` så kommer outputen att bli:
 
-Om vi kör detta program med kommandoradsargumentet "Haskell" kommer följande att skrivas ut:
-
-```
-Det första argumentet är: Haskell
+```bash
+Första argumentet är: första
 ```
 
 ## Djupdykning
 
-Det finns några saker att tänka på när man arbetar med kommandoradsargument i Haskell:
+För de som är intresserade av lite mer avancerade sätt att läsa in kommandoradsargument finns det också andra funktioner tillgängliga i `System.Environment` som kan vara användbara. Till exempel finns det `getProgName` för att få programmets namn, `getEnvironment` för att få en lista av miljövariabler, och `lookupEnv` för att leta efter en specifik miljövariabel.
 
-- `getArgs` returnerar alltid en lista, även om det inte finns några argument. För att undvika ett felmeddelande kan man använda `null` för att kontrollera om listan är tom.
-- När man jobbar med flera argument kan man använda `tail` för att hämta en lista på alla argument utom det första.
-- Det är också möjligt att använda `getProgName` för att hämta namnet på det exekverande programmet.
+För att lära dig mer om dessa och andra funktioner, se dokumentationen för `System.Environment` biblioteket.
 
 ## Se även
 
-- [Haskell Wikibook - Hantering av kommandoradsargument](https://en.wikibooks.org/wiki/Haskell/Handling_command-line_arguments)
-- [Haskell-dokumentation - System.Environment modulen](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
+- [System.Environment dokumentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
+- [En handledning för att arbeta med Haskell i terminalen](https://www.fpcomplete.com/blog/2017/07/the-power-of-haskell-in-the-shell/)

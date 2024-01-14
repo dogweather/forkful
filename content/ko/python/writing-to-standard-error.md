@@ -1,29 +1,41 @@
 ---
-title:    "Python: 표준 에러 쓰기"
+title:    "Python: 표준 오류에 쓰기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-표준 오류에 쓰는 것에 참여하는 이유는 무엇일까요? 프로그래밍을 하다 보면 코드 실행 중에 오류가 발생할 수 있습니다. 이를 확인하는 방법 중 하나가 표준 오류에 필요한 정보를 기록하는 것입니다. 이를 통해 프로그래머는 코드의 문제를 파악하고 해결할 수 있습니다.
+표준 오류에 쓰기를 할 이유는 무엇인가요? 간략히 설명하세요.
 
-## 하기 방법
+표준 오류에 쓰기는 프로그래밍에서 디버깅이나 에러 처리에 도움이 됩니다. 어떤 에러가 발생했는지 알려주고, 문제를 해결하는데 도움이 됩니다.
 
-"```Python
+## 어떻게 하나요
+
+이제 파이썬의 ```sys.stderr```를 사용하여 표준 오류에 쓰는 방법을 알아보겠습니다. 아래의 예제 코드를 확인해보세요.
+
+```Python
 import sys
 
-sys.stderr.write("에러가 발생했습니다.")
+# "This is an error message."를 표준 오류에 쓰는 예제 코드입니다.
+sys.stderr.write("This is an error message.")
 ```
-위와 같은 코드를 작성하고 실행하면 표준 오류에 "에러가 발생했습니다." 라는 메시지가 출력됩니다. 이렇게 표준 오류에 메시지를 쓰는 것은 매우 간단하며, 오류 메시지에 원하는 정보를 추가할 수 있습니다.
 
-## 딥 다이브
+위 코드를 실행하고 나면, 표준 오류에 "This is an error message."가 출력됩니다.
 
-표준 오류에 대한 추가적인 정보로는 예외 처리가 있습니다. 이를 통해 정확한 오류 메시지를 출력하고 오류를 제대로 처리할 수 있습니다. 또한, 파이썬의 trace모듈을 사용하면 프로그램이 실행되는 동안 발생한 오류를 추적할 수도 있습니다.
+## 깊이 파고들기
 
-# 관련 항목
+파이썬에서 표준 오류에 쓰기를 사용할 때, 몇 가지 유의할 점이 있습니다.
 
-- [Python 공식 문서 - sys 모듈](https://docs.python.org/3/library/sys.html)
-- [Pylint 사용하기](https://gusdnd852.tistory.com/42)
-- [오류 처리와 예외처리](https://dojang.io/mod/page/view.php?id=2405)
+- 표준 오류에 쓰는 메세지는 프로그램을 종료하지 않고 계속 실행됩니다.
+- 표준 출력(```sys.stdout```)과 달리, 표준 오류에 쓰는 메세지는 콘솔에서 보이지 않을 수 있습니다.
+- 보통은 프로그램이 에러를 처리할 때 표준 오류에 쓰는 것이 좋습니다.
+
+## 이어보기
+
+- [Python 공식 문서: sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
+- [Python 프로그래밍: 표준 입출력과 오류 처리](https://wikidocs.net/29)
+- [30가지 유용한 Python 코드 스니펫](https://www.datacamp.com/community/tutorials/30-python-language-tricks)
+- [파이썬 표준 라이브러리](https://github.com/Yeo0/Let-s-Python/blob/master/Basic-Library.md#sys-시스템-모듈)

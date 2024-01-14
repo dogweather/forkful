@@ -1,44 +1,41 @@
 ---
 title:    "Fish Shell: Scrivere su standard error"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error (stderr) è un modo per controllare e gestire gli errori all'interno dei nostri script di Fish Shell. È una pratica utile per assicurarci che i nostri codici funzionino correttamente e per identificare e risolvere eventuali errori.
+Scrivere su standard error è una pratica utile per visualizzare errori o avvisi specifici durante l'esecuzione di un programma. In questo modo, è possibile identificare e risolvere i problemi in modo tempestivo.
 
-## Come Fare
+## Come fare
 
-In Fish Shell, è possibile scrivere su stderr utilizzando il comando `echo` insieme al simbolo `&2`, che indica che vogliamo scrivere sul canale di errore anziché su standard output (stdout).
+Per scrivere su standard error utilizzando Fish Shell, è possibile utilizzare il comando `echo` seguito dalla stringa da visualizzare e il simbolo `>` per indicare l'output su stderr. Ad esempio:
 
-```
-Fish Shell Funziona? &2 
-```
-
-L'output di questo comando sarà "Funziona?" su stderr.
-
-Possiamo anche utilizzare il comando `printf` per scrivere su stderr.
-
-```
-Fish Shell printf "Errore: %s" "file non trovato" &2
+```Fish Shell
+echo "Errore: il file non è stato trovato" >&2
 ```
 
-L'output di questo comando sarà "Errore: file non trovato" su stderr.
+Questo produrrà un output simile al seguente:
 
-Questi sono solo due esempi di come scrivere su stderr in Fish Shell, ma ci sono molti altri modi per farlo. Inoltre, è importante notare che è possibile scrivere su stderr anche durante l'esecuzione di una pipe, aggiungendo semplicemente il simbolo `&2` al comando desiderato.
+```Fish Shell
+Errore: il file non è stato trovato
+```
 
-## Approfondimento
+## Approfondisci
 
-Scrivere su standard error è un'importante abilità per ogni programmatore, in quanto ci permette di tracciare e gestire gli errori nei nostri script. Inoltre, ci consente di identificare e risolvere eventuali problemi di esecuzione del codice.
+Scrivere su standard error è particolarmente utile quando si scrivono script o programmi più complessi, in quanto consente di visualizzare informazioni importanti che altrimenti potrebbero passare inosservate nell'output standard. Inoltre, utilizzando Fish Shell, è possibile anche eseguire il redirect dell'output di un comando specifico su stderr utilizzando `2>` seguito dall'output desiderato. Ad esempio:
 
-Un'ulteriore utilità di scrivere su stderr è che ci permette di distinguere tra gli output di un programma e gli errori che possono verificarsi durante l'esecuzione dello script. Inoltre, possiamo anche utilizzare lo standard error come modo per informare l'utente che qualcosa non è andato come previsto nel codice.
+```Fish Shell
+ls -l file_non_esistente 2> errore.txt
+```
 
-Inoltre, è importante notare che è possibile reindirizzare lo stderr in un file di log, in modo da poter controllare gli errori dopo l'esecuzione dello script.
+Questo comando produrrà un file "errore.txt" contenente eventuali errori generati dall'esecuzione del comando `ls` su un file inesistente. Ciò è particolarmente utile quando si desidera registrare gli errori per analisi future.
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial di Fish Shell su stderr](https://www.cyberciti.biz/faq/linux-unix-redirect-error-output-to-file/)
-- [Esempi di codice su stdout e stderr in Fish Shell](https://gist.github.com/kaushalmodi/1bbae01f05e1fb74b80b63fbb7c1396b)
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial di Fish Shell su Codementor](https://www.codementor.io/@ericowens/how-to-use-fish-shell-1vsz7dkzbd)
+- [Articolo su come scrivere a standard error su OMG! Ubuntu! (in italiano)](https://www.omgubuntu.co.uk/2020/02/write-to-stderr-linux)

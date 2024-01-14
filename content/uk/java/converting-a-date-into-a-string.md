@@ -1,33 +1,40 @@
 ---
-title:    "Java: Перетворення дати у рядок"
+title:    "Java: Перетворення дати у рядок."
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Чому
+## Чому
+Перетворення дати в рядок є корисною функцією для представлення дати у зрозумілому форматі для користувача. Вона також є важливою для оперування та порівняння дат у програмах.
 
-Конвертація дати в рядок є корисним навичкою для програмістів Java. Це дозволяє зручно відображати дату у вигляді, зручному для користувача, замість стандартного числового формату. Наприклад, можна використовувати цей метод для виведення дати на екран користувача або для збереження дати у файл.
-
-# Як це зробити
-
-Для початку, нам треба створити об'єкт типу `Date`, який містить дату, яку ми хочемо конвертувати. Потім можна використати метод `SimpleDateFormat` для зазначення формату, у який ми хочемо перетворити нашу дату. Наприклад, якщо ми хочемо отримати дату у форматі "день-місяць-рік", то можна використати шаблон "dd-MM-yyyy".
-
+## Як
 ```Java
-Date date = new Date();
-SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-String stringDate = format.format(date);
-System.out.println(stringDate); // Виведе 13-07-2021
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateToStringExample{
+    public static void main(String[] args) {
+        //створення об'єкту за допомогою поточної дати
+        Date currentDate = new Date();
+        //створення формату для перетворення
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        //перетворення дати в рядок
+        String stringDate = dateFormat.format(currentDate);
+        //виведення результату
+        System.out.println("Поточна дата у форматі рядка: " + stringDate);
+    }
+}
+```
+**Вихід:**
+```
+Поточна дата у форматі рядка: 2020/06/11
 ```
 
-Також можливо задати інші шаблони для отримання більш точного відображення дати. Наприклад, є шаблон для виведення дати з часом та зонами часу. Можна дізнатися про різні шаблони та їх використання в [документації Java](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html).
+## Глибокий аналіз
+У Java є ряд вбудованих класів для роботи з датами, включаючи **Date** та **SimpleDateFormat**. *Date* представляє поточну дату та час, а *SimpleDateFormat* дозволяє встановити необхідний формат для перетворення дати. Крім *yyyy/MM/dd*, існує також багато інших шаблонів для форматування дати, які можна використовувати залежно від потреби.
 
-# Глибоке занурення
-
-Конвертація дати в рядок є більш складним процесом, ніж здається на перший погляд. Вона вимагає враховувати різні рівні точності, форматування та зони часу. Додатково до використання шаблонів, можливо також налаштувати об'єкт `DateFormat` для відображення міжнародних символів форматування та взаємодії із локалізацією дати та часу.
-
-# Дивись також
-
-- [Java Date and Time](https://www.geeksforgeeks.org/java-util-date-class-java/)
-- [Java Simple Date Format Tutorial](https://www.baeldung.com/java-simpledateformat)
-- [Java Date Formats](https://www.journaldev.com/17899/java-date-formats)
+## Дивіться також
+- [Java Date у деталях](https://www.w3schools.com/java/java_date.asp)
+- [Приклади форматування дати у Java](https://www.javatpoint.com/java-simpledateformat)

@@ -1,58 +1,81 @@
 ---
-title:    "Haskell: Друк відладочного виведення"
+title:    "Haskell: Друк відлагоджувального виводу"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Використання виведення налагодження (debug output) є корисним інструментом для розробників для відстеження проблем у своєму коді. Вона допомагає легше знайти та виправити помилки та оптимізувати роботу програми.
+Виведення відлагоджувального виводу може бути корисним для виявлення та виправлення помилок у програмі.
 
 ## Як
 
-Для виведення налагодження в Хаскелі, використайте функцію `print` та рядок у подвійних лапках. Наприклад:
-
 ```Haskell
+factorial :: Int -> Int
+factorial 0 = 1
+factorial n = n * factorial (n-1)
+
+main :: IO ()
 main = do
-  print "Debug output приклад"
+  putStrLn "Введіть ціле число:"
+  n <- readLn
+  putStrLn ("Факторіал " ++ show n ++ " = " ++ show (factorial n))
 ```
 
-Цей код виведе `Debug output приклад` у консоль під час виконання програми. Ви також можете використовувати змінні та операції для виведення більш складної інформації.
+В цьому прикладі ми використовуємо функцію `putStrLn` для виведення рядку на консоль, а також функцію `show` для перетворення чисел у рядковий формат.
 
-```Haskell
-main = do
-  let x = 5
-  let y = 7
-  print ("Сума x та y дорівнює: " ++ show (x + y))
+#### Вивід:
+
+```
+Введіть ціле число:
+5
+Факторіал 5 = 120
 ```
 
-Цей код виведе `Сума x та y дорівнює: 12` у консоль.
+## Глибоке занурення
 
-## Глибокий розбір
-
-Крім `print`, ще існує функція `trace` з модуля `Debug.Trace`, яка дозволяє вивести налагодження під час обчислення виразу. Наприклад:
+Іноді для відладки коду потрібно виводити більше інформації, ніж просто значення змінних. У такому випадку можна використати функцію `trace` з модуля `Debug.Trace`:
 
 ```Haskell
-import Debug.Trace
+import Debug.Trace (trace)
 
+factorial :: Int -> Int
+factorial n = trace ("Obtaining factorial of " ++ show n) $
+             if n == 0 then 1 else n * factorial (n-1)
+
+main :: IO ()
 main = do
-  let x = 5
-  let y = 7
-  let z = trace "x + y було обчислено" (x + y)
-  print z
+  putStrLn "Введіть ціле число:"
+  n <- readLn
+  putStrLn ("Факторіал " ++ show n ++ " = " ++ show (factorial n))
 ```
 
-Цей код дозволить у виводі консолі побачити `x + y було обчислено` перед виведенням результату `12`. Це може бути корисно для відстеження проблем у складних функціях.
+#### Вивід:
 
-## Див назад
+```
+Введіть ціле число:
+5
+Обчислення факторіала 5
+Обчислення факторіала 4
+Обчислення факторіала 3
+Обчислення факторіала 2
+Обчислення факторіала 1
+Обчислення факторіала 0
+Факторіал 5 = 120
+```
 
-- [Haskell Debugging - Learn You a Haskell](https://learnyouahaskell.com/debugging)
-- [Learn Haskell - Debugging](https://www.learnhaskell.org/debugging/)
-- [Debugging Haskell in Visual Studio Code](https://medium.com/@dogwith1eye/debugging-haskell-in-visual-studio-code-ff8c6822f134)
+За допомогою функції `trace` можна виводити будь-яку інформацію, що допоможе відшукати та виправити помилки.
 
-## Дивіться також
+## Дивись також
 
-- [Haskell для початківців - Принципи програмування](https://learnhaskell.dev/#/principles)
-- [Haskell для початківців - Колекції та потоки даних](https://learnhaskell.dev/#/collections)
-- [Вчимося від Mindset: Як стати кращим програмістом](https://learnhaskell.dev/#/mindset)
+- [Офіційна документація з моніторингу та відлагодження в Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/using-warnings.html#using-trace)
+- [Відлагодження в Haskell з допомогою `Debug.Trace`](https://www.fpcomplete.com/blog/2017/01/debugging-haskell-with-debug-trace)
+- [Стаття про відлагодження в Haskell на DEV Community з прикладами коду](https://dev.to/hsdaily/debugging-in-haskell-7g3)
+
+## Подивитися також
+
+- [Офіційна документація з введення та виведення у Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/io.html)
+- [Туторіал з введення та виведення у Haskell на YouTube](https://www.youtube.com/watch?v=xDVC3wKjS64)
+- [Стаття про маніпулювання вводом та виводом у Haskell на DEV Community з прикладами коду](https://dev.to/hsdaily/working-with-input-and-output-in-haskell-136)

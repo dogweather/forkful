@@ -1,70 +1,31 @@
 ---
 title:    "Python: 新しいプロジェクトを始める"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Pythonプログラマーのみなさん！
+## なぜ
+なぜ新しいプロジェクトを始める必要があるのか？プログラミングをする理由は人それぞれですが、新しいプロジェクトを始めることによって、より技術を向上させたり、新しいアイデアを実現させたりすることができます。
 
-最近、新しいプロジェクトを始めようと考えている方も多いのではないでしょうか。新しいプロジェクトを立ち上げることは、プログラミングの世界では非常に重要なスキルです。今回は、新しいプロジェクトを始める際のヒントやコツをお教えします。
-
-## Why
-新しいプロジェクトを始める理由はさまざまです。例えば、新しいアイデアを実現するために、新しい言語やフレームワークを学ぶために、あるいは単に楽しみのためにも始めることができます。新しいプロジェクトを始めることで、自分のスキルを磨くことができますし、新しいことを学ぶことができます。
-
-## How To
-まず、新しいプロジェクトを始める前に、どんな目的や目標があるのかを明確にしましょう。そして、どんなプログラミング言語やツールを使うかを決めます。ここでは、Python言語を使用したプロジェクトを例に紹介します。
+## 始め方
+新しいプロジェクトを始めるには、Pythonを使用するのがお勧めです。Pythonは直感的で使いやすい言語であり、多くの機能を備えています。まず、Pythonのインストール方法を学びましょう。次に、エディターを設定し、コードを書く準備をします。最後に、以下のコード例を参考にして、自分のプロジェクトを作成してみましょう。
 
 ```Python
-# ニューラルネットワークを使用した画像分類プロジェクトの例
-# 必要なライブラリをインポート
-import tensorflow as tf
-import numpy as np
-import matplotlib.pyplot as plt
-
-# データセットを読み込む
-mnist = tf.keras.datasets.mnist
-(x_train, y_train),(x_test, y_test) = mnist.load_data()
-
-# データを前処理する
-x_train, x_test = x_train / 255.0, x_test / 255.0
-
-# モデルを定義する
-model = tf.keras.models.Sequential([
-  tf.keras.layers.Flatten(input_shape=(28, 28)),
-  tf.keras.layers.Dense(128, activation='relu'),
-  tf.keras.layers.Dropout(0.2),
-  tf.keras.layers.Dense(10, activation='softmax')
-])
-
-# モデルをコンパイルする
-model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
-              metrics=['accuracy'])
-
-# モデルを学習させる
-model.fit(x_train, y_train, epochs=5)
-
-# モデルを評価する
-model.evaluate(x_test, y_test)
-
-# 画像を予測する
-predictions = model.predict(x_test)
-
-# 予測結果を表示する
-print('Prediction:', np.argmax(predictions[0]))
-print('Actual label:', y_test[0])
-
-# 画像を表示する
-plt.imshow(x_test[0], cmap=plt.cm.binary)
-plt.show()
+#1から10までの数を表示する
+for i in range(1, 11):
+    print(i)
 ```
 
-## Deep Dive
-新しいプロジェクトを始める際に重要なポイントは、自分のスキルや知識を把握することです。プロジェクトのテーマや目的を明確にし、それに合わせて必要な技術や知識を学習することで、プロジェクトを成功させることができます。また、プロジェクトを始める前に、書籍やオンラインコース、チュートリアルなどを活用して、より深く学習することも大切です。
+このコードを実行すると、1から10までの数が順番に表示されます。これはPythonの基本的な構文を学ぶための良い例です。さらに、自分のアイデアを表現するために、このコードを変更してみてください。
 
-See Also
-- [Python公式ドキュメント](https://docs.python.org/ja/)
-- [TensorFlow公式ドキュメント](https://www.tensorflow.org/api_docs)
-- [CourseraのPython基礎コース](https://www.coursera.org/learn/python-basics?specialization=python)
-- [UdemyのPythonプログラミング入門コース](https
+## 深堀り
+新しいプロジェクトを始めるとき、最初に悩むことは「何を作るか？」ということです。そのためには、自分の興味や知識を活かすことが重要です。また、新しい技術やツールを学ぶことも大切です。プロジェクトを進める上で、ミニマルなことから始めて、少しずつ発展させることもお勧めします。そして、自分のアイデアを実現するために必要な知識やスキルを身につけながら、プロジェクトを進めていきましょう。
+
+## その他参考リンク
+- [Python公式サイト](https://www.python.org/)
+- [Pythonのインストール方法](https://www.python.jp/install/windows/index.html)
+- [Pythonエディターの比較](https://techacademy.jp/magazine/30891)
+- [Pythonの基本的な構文](https://qiita.com/w__i__/items/4124a402a7677e7de6a4)
+- [新しいプロジェクトを始めるための5つのステップ](https://techacademy.jp/magazine/6193)

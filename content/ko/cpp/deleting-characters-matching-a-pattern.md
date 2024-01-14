@@ -1,40 +1,57 @@
 ---
 title:    "C++: 패턴과 일치하는 문자 삭제하기"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
 
-컴퓨터 프로그래밍은 우리 일상생활에서 더이상 떼어놓을 수 없는 중요한 부분이 되었습니다. 그리고 그중에서도 C++은 많은 개발자들이 선택하는 언어 중 하나입니다. 하지만 때로는 특정한 상황에서 특정한 문자를 삭제해야 할 때가 있습니다. 이러한 상황에서 우리는 어떻게 하면 문자 패턴을 일치하는 문자를 삭제할 수 있을지에 대해 고민하게 됩니다.
+문자 패턴과 일치하는 문자를 삭제하는 것이 유용한 이유는 다양합니다. 예를 들어, 동일한 패턴의 문자가 반복적으로 나타나는 경우, 이를 일괄적으로 삭제하면 더 깔끔한 코드를 작성할 수 있습니다. 또한, 특정 데이터에서 불필요한 문자를 제거하여 데이터의 정확성을 높이는데 도움이 됩니다.
 
 # 어떻게
 
-우선, 우리는 ```string``` 클래스를 사용하여 문자열을 다룰 수 있습니다. 이 클래스는 C++에서 문자열을 보관하고 처리하는 데 가장 일반적으로 사용되는 방법 중 하나입니다. 우리는 문자열 속에서 원하는 패턴을 일치하는 문자를 찾고, 해당 문자를 삭제할 수 있습니다.
+문자를 삭제하는 방법은 간단합니다. 올바른 패턴을 지정하고 해당 패턴에 일치하는 문자를 삭제하면 됩니다. 아래 예제를 참고해 보세요.
 
+```C++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    // 입력 받은 문자열
+    string input = "안녕하세요! Hello! こんにちは！";
+    // 삭제할 문자 패턴
+    string pattern = "!";
+
+    // 입력 문자열을 순회하면서 패턴과 일치하는 문자 삭제
+    for (int i = 0; i < input.length(); i++) {
+        if (input.substr(i, 1) == pattern) {
+            input.erase(i, 1);
+            i--;
+        }
+    }
+
+    // 결과 출력
+    cout << input << endl;
+    // 출력 결과: 안녕하세요 Hello こんにちは
+    return 0;
+}
 ```
-string text = "우리는 *좋아하는* 언어는 C++입니다!";
-char pattern = '*';
-int index = text.find(pattern); // 패턴과 일치하는 첫 번째 문자의 인덱스를 찾습니다.
-text.erase(index, 1); // 찾은 인덱스부터 1개의 문자를 삭제합니다.
-cout << text << endl;
-```
 
-위의 예시 코드에서는 ```find()``` 함수를 사용하여 패턴과 일치하는 첫 번째 문자의 인덱스를 찾고, ```erase()``` 함수를 사용하여 해당 문자를 삭제하였습니다. 이를 실행하면 다음과 같은 출력이 나옵니다.
+### 샘플 출력
+입력 문자열: 안녕하세요! Hello! こんにちは！
+삭제할 패턴: !
 
-```
-우리는 좋아하는 언어는 C++입니다!
-```
+결과: 안녕하세요 Hello こんにちは
 
-이처럼 간단한 방법으로 특정한 패턴을 일치하는 문자를 삭제할 수 있습니다.
+# 딥 다이브
 
-# 깊게 들어가기
+문자를 삭제하는 방법은 다양합니다. 위 예제에서는 for 루프를 이용하여 일치하는 문자를 삭제했지만, 정규식을 사용하면 더 빠르고 간편하게 문자를 삭제할 수 있습니다. 또한, 여러 가지 문자 패턴을 동시에 삭제할 수도 있습니다. 더 자세한 내용은 다음 링크를 참고하세요.
 
-사실 C++에서는 문자 패턴을 일치하는 문자를 삭제하는 방법이 여러 가지 있습니다. 위에서 사용한 방법은 문자열을 다루는 가장 일반적인 방법 중 하나일 뿐이지만, 사용하는 상황에 따라 다른 방법을 선택할 수도 있습니다. 또한 패턴이 문자열 속에서 여러 번 반복되는 경우에는 추가적인 처리가 필요할 수도 있습니다. 따라서 해당 상황에 맞게 적절한 방법을 선택하는 것이 중요합니다.
+# 참고
 
-# 관련 링크
-
-- [문자열 처리에 대한 더 자세한 정보](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [다양한 문자열 처리 함수를 알아보는 동영상 강의](https://www.youtube.com/watch?v=9k-lvJaf08w)
-- [C++ 공식 문서에서 문자열 처리 함수와 예제 코드 확인하기](https://en.cppreference.com/w/cpp/string/basic_string/erase)
+- [C++ 문자열 삭제 예제](https://www.geeksforgeeks.org/erase-remove-idioms-c/)
+- [C++ 정규식 사용하기](http://www.cplusplus.com/reference/regex/)
+- [C++ string 클래스의 erase() 함수](http://www.cplusplus.com/reference/string/string/erase/)

@@ -1,89 +1,63 @@
 ---
-title:    "Python: Zusammenfügen von Zeichenfolgen"
+title:    "Python: Strings concatenieren"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Verketten von Zeichenketten ist ein wesentlicher Bestandteil der Programmierung in Python. Es ermöglicht das Zusammenfügen von Texten und Variablen, um dynamische Outputs zu erstellen. Dies ist besonders hilfreich bei der Erstellung von Strings für Benutzeroberflächen oder die Datenmanipulation.
 
-In der Welt der Programmierung ist es oft notwendig, verschiedene Zeichenfolgen oder Textstücke zu einer zusammenzufügen. Dieser Vorgang wird als "Concatenation" bezeichnet und ist ein wichtiges Konzept, das jeder Python-Entwickler wissen sollte.
+## Wie man es macht
+Die Verkettung von Zeichenketten in Python ist einfach und intuitiv. Dazu verwenden wir den `+` Operator, der als Concatenation Operator bekannt ist. Schauen wir uns ein Beispiel an:
 
-Es gibt viele Gründe, warum man Strings in Python kombinieren möchte. Zum Beispiel kann es verwendet werden, um lesbarere Ausgaben zu erzeugen, komplexe Nachrichten zu erstellen oder Daten aus verschiedenen Quellen zusammenzuführen.
+```Python
+# Definiere zwei Variablen mit Text
+name = "Lena"
+greeting = "Hallo"
 
-## Wie funktioniert es?
+# Verbinde die Variablen und einen zusätzlichen Text
+message = greeting + ", " + name + "!"
 
-In Python gibt es verschiedene Möglichkeiten, Strings zu concatenieren. Die einfachste Methode ist die Verwendung des Plus-Operators (+), der zwei oder mehr Strings zusammenfügt. Schauen wir uns ein Beispiel an:
-
-``` Python
-#Definiere zwei einzelne Strings
-string_1 = "Hallo"
-string_2 = "Welt"
-
-#Concateniere die Strings mit dem Plus-Operator
-gesamt_string = string_1 + string_2
-
-#Gib den Gesamtstring aus
-print(gesamt_string)
+# Gebe die Nachricht aus
+print(message)
 ```
 
-Dieses Beispiel wird folgende Ausgabe erzeugen:
+Die Ausgabe dieses Codes wäre `Hallo, Lena!`. Wie man sehen kann, können wir Strings und Variablen einfach mit dem `+` Operator verbinden, um eine längere Zeichenkette zu erstellen.
 
-```
-HalloWelt
-```
+Eine weitere Möglichkeit, Zeichenketten zu verketten, ist die Verwendung der `format()` Funktion. Diese erlaubt es uns, Variablen innerhalb eines Textes einzufügen und so komplexere Nachrichten zu erstellen. Hier ist ein Beispiel:
 
-Wir können auch die Methode `format` verwenden, um Strings zu concatenieren. Diese Methode ermöglicht es uns, Platzhalter in einem String zu definieren und sie mit entsprechenden Werten zu füllen. Schauen wir uns ein Beispiel an:
+```Python
+# Definiere eine Variable für das Alter
+age = 25
 
-``` Python
-#Definiere zwei einzelne Strings
-name = "Max"
-gruß = "Hallo, {}! Wie geht es dir?"
+# Verwende die `format()` Funktion, um die Variable in einen Text einzusetzen
+text = "Ich bin {} Jahre alt und liebe das Programmieren!"
 
-#Fülle den Platzhalter mit dem Wert von "name" aus
-gruß_string = gruß.format(name)
-
-#Gib den Gesamtstring aus
-print(gruß_string)
+# Gebe die Nachricht aus
+print(text.format(age))
 ```
 
-Dieses Beispiel wird folgende Ausgabe erzeugen:
+Die Ausgabe dieses Codes wäre `Ich bin 25 Jahre alt und liebe das Programmieren!`. Wie man sieht, können wir die `format()` Funktion verwenden, um Variablen innerhalb von Strings einzusetzen und so dynamische Nachrichten zu erstellen.
 
-```
-Hallo, Max! Wie geht es dir?
-```
+## Tiefergehende Einblicke
+Beim Verketten von Zeichenketten gibt es noch einige zusätzliche Funktionen in Python, die hilfreich sein können. Eine davon ist die `join()` Funktion, mit der wir eine Liste von Strings zu einer Zeichenkette verbinden können. Hier ist ein Beispiel:
 
-## Tiefer in die Materie einsteigen
+```Python
+# Definiere eine Liste mit Namen
+names = ["Anna", "Max", "Lisa"]
 
-Wenn wir uns genauer mit der Concatenation von Strings in Python auseinandersetzen, werden wir feststellen, dass die Verwendung von Plus-Operator und `format`-Methode nicht immer die beste Wahl ist. Besonders bei der Verarbeitung großer Datensätze kann dies zu Leistungsproblemen führen.
+# Verwende die `join()` Funktion, um die Namen zu verketten
+message = ", ".join(names)
 
-In solchen Fällen empfiehlt es sich, die `join`-Methode zu verwenden, die speziell für die Verkettung von Strings entwickelt wurde. Diese Methode ermöglicht es uns, eine beliebige Anzahl von Strings zu der join-Funktion hinzuzufügen, die dann zu einem einzelnen Gesamtstring zusammengefügt werden.
-
-Schauen wir uns ein Beispiel an:
-
-``` Python
-#Definiere eine Liste von Strings
-namen = ["Anna", "Max", "Sophia"]
-
-#Verwende die join-Methode, um die Namen mit Komma als Trennzeichen zu concatenieren
-namens_liste = ", ".join(namen)
-
-#Gib den Gesamtstring aus
-print(namens_liste)
+# Gebe die Nachricht aus
+print("Meine Freunde sind: " + message)
 ```
 
-Dieses Beispiel wird folgende Ausgabe erzeugen:
-
-```
-Anna, Max, Sophia
-```
+Die Ausgabe dieses Codes wäre `Meine Freunde sind: Anna, Max, Lisa`. Wie man sehen kann, können wir mit der `join()` Funktion eine Liste von Strings zu einer Zeichenkette verketten.
 
 ## Siehe auch
-
-Hier sind einige nützliche Ressourcen, um mehr über die Concatenation von Strings in Python zu erfahren:
-
-- [Offizielle Python Dokumentation zur String-Verkettung](https://docs.python.org/3/library/stdtypes.html#str.join)
-- [Ein kurzer Artikel über die verschiedenen Concatenation-Methoden in Python](https://realpython.com/python-string-concatenation/)
-- [Ein detaillierter Guide zur Optimierung von String-Operationen in Python](https://abigails.website/python-performance-concatenation/)
-
-Ich hoffe, dieser Artikel hat Ihnen geholfen, mehr über die Concatenation von Strings in Python zu erfahren. Happy coding!
+- [String Methods in Python](https://www.geeksforgeeks.org/python-string-methods-set-1-find-replace-split-count-etc/)
+- [Python String Concatenation](https://www.w3schools.com/python/gloss_python_string_concat.asp)
+- [An Introduction to Strings in Python](https://realpython.com/python-strings/)

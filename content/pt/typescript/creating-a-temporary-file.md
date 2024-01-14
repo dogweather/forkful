@@ -1,68 +1,40 @@
 ---
 title:    "TypeScript: Criando um arquivo temporário"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que criar um arquivo temporário em TypeScript?
 
-Criar um arquivo temporário é uma prática comum em muitas linguagens de programação, incluindo o TypeScript. Isso pode ser útil em várias situações, como quando você precisa armazenar dados temporariamente antes de salvar em um arquivo permanente ou quando está lidando com operações de arquivo e precisa de um local temporário para armazenar dados.
+Criar arquivos temporários é uma prática comum na programação em TypeScript. Isso pode ser útil quando estamos trabalhando com operações que requerem o uso de arquivos temporários, como a leitura e escrita de dados, depuração de código ou até mesmo para testar algumas funcionalidades. Neste artigo, vamos aprender como criar um arquivo temporário em TypeScript e explorar sua importância.
 
-## Como criar um arquivo temporário em TypeScript
+## Como criar um arquivo temporário em TypeScript?
 
-Para criar um arquivo temporário em TypeScript, você precisará usar a classe "fs" (file system) da biblioteca padrão. Primeiro, você deve importar essa biblioteca em seu projeto, usando o comando ```import * as fs from 'fs';```. Em seguida, use o método "writeFile" para criar o arquivo temporário, passando o nome do arquivo e os dados que você deseja armazenar como argumentos.
+Para criar um arquivo temporário em TypeScript, primeiro precisamos importar o módulo "fs" (filesystem). Em seguida, podemos usar a função "mkdtempSync()" para criar o arquivo temporário. Veja um exemplo abaixo: 
 
-Exemplo de código:
-
-```TypeScript
+```TypeScript 
 import * as fs from 'fs';
 
-fs.writeFile('temp.txt', 'Este é um arquivo temporário.', (err) => {
-    if (err) throw err;
-    console.log('Arquivo temporário criado com sucesso!');
-});
+const nomeArquivo = fs.mkdtempSync('arquivoTemporario');
+console.log(nomeArquivo); 
+``` 
+
+No exemplo acima, usamos a função "mkdtempSync()" para criar um arquivo temporário com o nome "arquivoTemporario". Em seguida, imprimimos o nome do arquivo temporário no console. Ao rodar o código, vamos obter um resultado como este: 
+
 ```
+C:\Users\Usuario\AppData\Local\Temp\arquivoTemporario.12345 
+``` 
 
-Ao executar este código, você verá o seguinte resultado:
+## Deep Dive - Explorando mais sobre a criação de arquivos temporários em TypeScript 
 
-```console
-Arquivo temporário criado com sucesso!
-```
+Ao criar um arquivo temporário, é importante lembrar que ele será removido automaticamente quando o programa terminar de executar. Isso é importante para evitar acúmulo de arquivos temporários desnecessários e otimizar o desempenho do programa. 
 
-## Aprofundando-se na criação de arquivos temporários em TypeScript
-
-Ao criar um arquivo temporário em TypeScript, você pode especificar diversas opções adicionais, como o formato de codificação e o modo de leitura/escrita.
-
-Por exemplo, para criar um arquivo temporário com codificação UTF-8 e permitir apenas a leitura, você pode adicionar um terceiro argumento no método "writeFile", como no exemplo abaixo:
-
-```TypeScript
-fs.writeFile('temp.txt', 'Este é um arquivo temporário.', {encoding: 'utf-8', mode: 'r'}, (err) => {
-    if (err) throw err;
-    console.log('Arquivo temporário criado com sucesso!');
-});
-```
-
-E se você quiser criar um arquivo temporário e especificar um caminho diferente para ele? Nesse caso, você pode usar o método "join" da classe "path" da biblioteca "fs" para criar o caminho completo do arquivo, como no exemplo abaixo:
-
-```TypeScript
-import * as fs from 'fs';
-import * as path from 'path';
-
-const dir = 'temp';
-const fileName = 'temp.txt';
-const tempPath = path.join(dir, fileName);
-
-fs.writeFile(tempPath, 'Este é um arquivo temporário.', (err) => {
-    if (err) throw err;
-    console.log('Arquivo temporário criado com sucesso!');
-});
-```
-
-Este exemplo utiliza o método "join" para criar o caminho completo do arquivo a partir da variável "dir" que armazena o nome do diretório e da variável "fileName" que armazena o nome do arquivo.
+Além disso, é possível passar um segundo parâmetro opcional para a função "mkdtempSync()" para definir a pasta onde o arquivo temporário será criado. Isso pode ser útil quando precisamos salvar o arquivo temporário em uma pasta específica. 
 
 ## Veja também
 
-- [Documentação oficial do Node.js sobre a classe "fs"](https://nodejs.org/api/fs.html)
-- [Tutorial sobre criação de arquivos temporários em TypeScript](https://www.digitalocean.com/community/tutorials/how-to-create-and-delete-temporary-files-in-node-js-pt)
-- [Exemplo de criação de um arquivo temporário em TypeScript](https://stackabuse.com/creating-temporary-files-in-node-js/)
+- [Documentação oficial do TypeScript](https://www.typescriptlang.org)
+- [Guia completo de criação de arquivos em TypeScript](https://www.digitalocean.com/community/tutorials/how-to-manage-files-with-node-js-and-typescript)
+- [Classe para criação de arquivos temporários em TypeScript](https://www.npmjs.com/package/tmp)

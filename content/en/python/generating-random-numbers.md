@@ -1,44 +1,38 @@
 ---
 title:    "Python recipe: Generating random numbers"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever played a game that involved rolling a dice or drawing a card at random? Did you know that the outcome of those random events can actually be simulated using Python? Generating random numbers is not only useful for creating games, but also for statistical analysis and cryptography.
+
+If you're new to programming, you might be wondering why someone would want to generate random numbers. Generating random numbers is a common task in many programming projects, ranging from games to statistical simulations. By adding an element of randomness, you can make your programs more unpredictable and interesting.
 
 ## How To
-To generate random numbers in Python, we first need to import the `random` module. Then, we can use the `randint()` function to generate a random integer between a specified range. For example:
+
+Generating random numbers in Python is a simple and straightforward process. The first step is to import the "random" module, which contains functions for generating random numbers. Then, you can use the "randint()" function to generate an integer between a given range. For example, to generate a random number between 1 and 10, we would use the following code:
 
 ```Python
 import random
 print(random.randint(1, 10))
 ```
 
-This code will print a random integer between 1 and 10, inclusive. We can also use the `random` module to generate a random floating-point number using the `uniform()` function. For instance:
+The output of this code could be any number between 1 and 10, such as 5, 9, or 2. You can also use the "uniform()" function to generate a decimal number between a given range, or the "random()" function to generate a floating-point number between 0 and 1.
 
-```Python
-import random
-print(random.uniform(0, 1))
-```
-
-This will print a random decimal number between 0 and 1. Additionally, we can use the `choice()` function to randomly select an element from a list. Check out the code snippet below:
-
-```Python
-import random
-fruits = ['apple', 'banana', 'orange', 'mango']
-print(random.choice(fruits))
-```
-
-This will print a random fruit from the list. As you can see, generating random numbers is quite easy in Python and can be done using just a few lines of code.
+Besides these basic functions, the "random" module also offers more advanced options for random number generation. For example, you can use the "shuffle()" function to randomly shuffle a list, or the "choice()" function to select a random item from a list. You can even use the "sample()" function to randomly select multiple items from a list without repeating them.
 
 ## Deep Dive
-Behind the scenes, the `random` module uses a pseudorandom number generator to produce a sequence of numbers that appear random. This sequence is not truly random, as it is based on a starting value known as the seed. If the same seed is used, the same sequence of numbers will be generated. This can be useful for debugging purposes, as it allows us to reproduce the same "random" results.
 
-If we want to generate truly random numbers in Python, we can use the `secrets` module. This module uses a cryptographically secure pseudorandom number generator, making the results much harder to predict. However, keep in mind that generating truly random numbers can be computationally expensive, so it should only be used when necessary.
+Behind the scenes, Python uses a pseudorandom number generator (PRNG) to generate random numbers. This means that the numbers are not truly random, but rather they are generated through a deterministic algorithm. In order to produce diverse and unpredictable results, the PRNG uses a seed value that can be set manually or generated automatically.
+
+It's important to note that the results of a PRNG can be replicated by setting the same seed value. This can be useful for testing purposes, but it can also be a security concern if the seed value is not kept confidential. To avoid this, you can use the "urandom" module to generate random numbers based on a cryptographically secure source of randomness.
 
 ## See Also
-- [Python random module documentation](https://docs.python.org/3/library/random.html)
-- [Real Python article on generating random numbers](https://realpython.com/python-random/)
-- [Randomness in Python: A Closer Look](https://towardsdatascience.com/randomness-in-python-a-closer-look-7c937495d831)
+
+Here are some resources for further reading about generating random numbers in Python:
+
+- [Official Python Documentation on Random](https://docs.python.org/3/library/random.html)
+- [Real Python's Tutorial on Random Numbers in Python](https://realpython.com/python-random/)
+- [GeeksforGeeks' Article on Generate Random Numbers in Python](https://www.geeksforgeeks.org/generating-random-number-list-in-python/)

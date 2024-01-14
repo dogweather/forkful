@@ -1,33 +1,47 @@
 ---
 title:    "Elm: Sammanslagning av strängar"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanslå strängar är en vanlig uppgift när man programmerar, oavsett vilket språk man använder. I Elm gör man detta genom att använda funktionen `String.append`. Det finns olika anledningar till varför man skulle vilja sammanslå strängar, till exempel för att skapa dynamiska meddelanden eller skriva ut data från en databas.
+Att sammanslå strängar (concatenating strings) är en viktig del av programmering eftersom det gör det möjligt att skapa dynamiska och anpassningsbara strängar som kan användas i olika sammanhang.
 
 ## Hur man gör det
 
-Att sammanslå strängar i Elm är enkelt. Man använder helt enkelt funktionen `String.append` och anger strängarna som ska sammanslås som argument. Om man till exempel vill sammanslå strängarna "Hej" och "världen" kan man göra det på följande sätt:
+Att sammanslå strängar i Elm är enkelt och används ofta i olika applikationer. För att sammanslå strängar i Elm använder man "+"-tecknet, vilket fungerar på samma sätt som i andra programmeringsspråk.
 
 ```Elm
-String.append "Hej" "världen"  -- Ger outputen "Hej världen"
+let greeting = "Hej"
+let name = "Anna"
+let message = greeting + " " + name
+
+message -- Resultatet blir "Hej Anna"
 ```
 
-Om man vill sammanslå fler än två strängar kan man använda funktionen flera gånger. Det är viktigt att notera att ordningen på argumenten påverkar outputen. Om man först anger strängen "världen" och sedan "Hej" kommer outputen att bli "världen Hej".
+I det här exemplet används "+"-tecknet för att sammanslå "Hej" och "Anna" till en ny sträng som innehåller både hälsning och namn.
 
-## Fördjupning
+## Djupdykning
 
-Det finns flera olika sätt att sammanslå strängar i Elm, beroende på vilka behov man har. Förutom funktionen `String.append` finns också `String.join`, som sammanslår en lista av strängar och lägger till ett valfritt tecken mellan varje sträng. Det finns också `String.concat`, som sammanslår en lista av strängar utan att lägga till något extra tecken.
+I Elm finns det också en funktion som heter "append", vilken också kan användas för att sammanslå strängar. Den här funktionen tar två strängar som argument och returnerar en ny sträng som innehåller båda.
 
-En annan intressant funktion är `String.concatMap`, som tar en funktion som argument och sammanslår strängar baserat på resultaten från denna funktion. Detta kan vara användbart om man vill manipulera strängarna på något sätt innan de sammanslås.
+```Elm
+let first = "Elm"
+let second = "programmering"
+let full = String.append first second
 
-Det är också möjligt att sammanslå andra datatyper, som nummer eller booleska värden, och konvertera dem till strängar innan de sammanslås.
+full -- Resultatet blir "Elm programmering"
+```
+
+En annan viktig sak att komma ihåg när det gäller sammanslagning av strängar är att vara uppmärksam på vilken ordning strängarna sätts ihop i. Om man byter ordning på strängarna kan resultatet bli helt annorlunda.
 
 ## Se även
 
-- [Elm dokumentation: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Sammanslå strängar i Elm](https://guide.elm-lang.org/error_handling/results.html#sammansla-obj/dict)
+Om du vill lära dig mer om hur man sammanslår strängar i Elm, kan du kolla in följande resurser:
+
+- Official Elm Syntax Guide: sammanslagning av strängar (https://guide.elm-lang.org/core_language.html#string-concatenation)
+- Elm Programming Language Youtube Channel: Working with Strings (https://www.youtube.com/watch?v=55piJKzKZUQ)
+- Elm Community - String Module (https://package.elm-lang.org/packages/elm/core/latest/String)

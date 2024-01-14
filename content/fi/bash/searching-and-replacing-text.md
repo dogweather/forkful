@@ -1,44 +1,30 @@
 ---
 title:    "Bash: Tekstin etsiminen ja korvaaminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joskus ohjelmointityössä joutuu tekemään suuria määriä tekstinhakuja ja -korvauksia tiedostoista tai dokumenteista. Näihin tilanteisiin on olemassa kätevä ratkaisu Bash-skriptien avulla, joka säästää aikaa ja vaivaa manuaaliseen tekstin muokkaamiseen.
+Tekstin etsiminen ja korvaaminen on tärkeä osa Bash-ohjelmointia, sillä se säästää aikaa ja vaivaa manuaalisesti muuttaessa tekstiä. Tekstin etsiminen ja korvaaminen on myös hyödyllinen taito käyttääkseen Bash-ohjelmointia laajemmassa kontekstissa.
 
-## Kuinka
+## Kuinka tehdä
 
-Bash-skriptin avulla voit tehdä tekstinhakuja ja -korvauksia käyttäen ```sed```-komennon ```s```-toimintoa. Tässä esimerkki, jossa etsitään sanaa "moi" ja korvataan se sanalla "hei":
-
-```Bash
-sed 's/moi/hei/g' tiedosto.txt
-```
-
-Tämä korvaa kaikki esiintymät sanasta "moi" tiedostossa "tiedosto.txt" sanalla "hei" ja tulostaa muokatun version suoraan terminaaliin.
-
-Voit myös korvata tekstiä vain tietyistä kohdista tiedostossa lisäämällä numeron ennen korvauskomennon ```g```-päätettä. Esimerkiksi, jos haluat korvata vain ensimmäisen esiintymän sanasta "moi", voit käyttää seuraavaa koodia:
+Bash tarjoaa useita eri työkaluja tekstin etsimiseen ja korvaamiseen. Yksinkertaisimpia ovat `grep` ja `sed`. Alla on esimerkki komennosta, joka etsii "tekstiä" tiedostosta "tiedosto.txt" ja korvaa sen "uudella tekstillä".
 
 ```Bash
-sed 's/moi/hei/1' tiedosto.txt
+grep -rl "tekstiä" tiedosto.txt | xargs sed -i 's/tekstiä/uusi teksti/g'
 ```
 
-## Syvempi sukellus
+Tässä ensin käytetään `grep`:ia etsimään kaikki rivit, jotka sisältävät "tekstiä" tiedostosta "tiedosto.txt". Tulokset syötetään sitten `xargs`:lle, joka puolestaan syöttää ne `sed`:lle. `sed` sitten korvaa kaikki "tekstiä" esiintymät "uudella tekstillä" käyttäen `-i`-valitsinta pysyvästi muuttaen alkuperäistä tiedostoa.
 
-Bash-skriptien avulla on mahdollista tehdä monimutkaisiakin hakuja ja korvauksia. Voit esimerkiksi korvata erityyppisiä merkkejä, muuttaa ryhmiä tai käyttää säännöllisiä lausekkeita tekstinhakuihin.
+## Syvällinen sukellus
 
-Lisäksi on hyvä huomioida, että ```sed```-komennon käytössä on tärkeää käyttää oikeita erikoismerkkejä, kuten kauttaviivoja (/) tai pistettä (.), jos niitä halutaan korvata.
-
-Lisätietoa Bash-skripteistä ja ```sed```-komennosta löydät esimerkiksi seuraavista linkeistä:
-
-- https://www.gnu.org/software/sed/
-- http://tldp.org/LDP/abs/html/textproc.html
-- https://www.tutorialspoint.com/sed/
+Tekstin etsiminen ja korvaaminen voi olla monimutkaista, kun joudutaan käsittelemään monimutkaisia säännöllisiä lausekkeita ja erityisiä muuttujia. `sed` tarjoaa kuitenkin monia vaihtoehtoisia ja edistyneitä käyttötapoja, kuten rajaavien merkkien käyttö, rivinumeroiden ja hakulausekkeiden käyttö sekä monen rivin käsittely. On tärkeää ottaa aikaa tutustua `sed`:n dokumentaatioon ja kokeilla erilaisia komentoja ja vaihtoehtoja löytääkseen tehokkaimman tavan ratkaista tietty ongelma.
 
 ## Katso myös
 
-- https://www.linuxjournal.com/content/global-find-and-replace-using-sed
-- https://www.viur.is/blog/bash-scripting-find-and-replace-text-files
-- http://www.robelle.com/tips/sed_syntax.html
+- Bashin virallinen dokumentaatio tekstin etsimisestä ja korvaamisesta: https://www.gnu.org/software/bash/manual/html_node/Searching-and-Replacing.html
+- Käytännön esimerkkejä tekstin etsimisestä ja korvaamisesta: https://linuxize.com/post/how-to-find-and-replace-text-string-in-files-in-linux/

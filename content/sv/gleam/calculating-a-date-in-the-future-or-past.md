@@ -1,35 +1,50 @@
 ---
-title:    "Gleam: Beräkna ett datum i framtiden eller det förflutna"
+title:    "Gleam: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Det finns många olika tillfällen då man kan behöva beräkna ett datum i framtiden eller i det förflutna. Kanske planerar du en resa och vill veta vilket datum du behöver återvända för att hinna med ett viktigt möte, eller kanske vill du veta när du fyller jämnt om några år. Oavsett anledningen, så kan Gleam hjälpa dig att enkelt beräkna detta datum.
+Att kunna beräkna ett datum i framtiden eller förflutna är en viktig del av många program som hanterar tidsbaserade uppgifter. Genom att använda Gleam programming language kan du enkelt implementera denna funktion och effektivt hantera datumberäkningar i din kod.
 
-## Hur man gör det
+## Hur man gör
 
-För att beräkna ett datum i framtiden eller förflutna i Gleam, använder man funktionen `Date.add` eller `Date.sub` tillsammans med ett antal dagar, veckor, månader eller år man vill gå framåt eller tillbaka från det datum man utgår ifrån.
+För att beräkna ett datum i framtiden eller förflutna behöver du först importera standardbiblioteket "time" genom att lägga till följande kod i din Gleam-fil:
 
-```Gleam
-let start_date = Date.new(2020, 07, 15)
-let future_date = Date.add(2, "years", start_date)
-// future_date kommer att vara den 15 juli 2022
-
-let past_date = Date.sub(6, "months", start_date)
-// past_date kommer att vara den 15 januari 2020
+``` Gleam
+import time
 ```
 
-Som du kan se i exemplen ovan, är det enkelt att beräkna ett datum i framtiden eller förflutna i Gleam. Du kan även göra beräkningar med veckor, månader eller år istället för enbart dagar. Gleam har också stöd för att beräkna skottår, så att du kan vara säker på att dina datumberäkningar är korrekta.
+Därefter kan du använda funktionen `add` för att lägga till en viss tidsperiod till ett angivet datum. Till exempel, om du vill beräkna datumet 30 dagar framåt från idag kan du använda följande kod:
+
+```Gleam
+let future_date = add(time.now(), {days = 30})
+```
+
+På samma sätt, om du vill beräkna datumet 6 månader tillbaka från dagens datum, kan du använda:
+
+```Gleam
+let past_date = add(time.now(), {months = -6})
+```
+
+Det är också möjligt att beräkna ett datum baserat på ett specifikt datum. Om du till exempel vill beräkna datumet 1 år framåt från 17 mars 2022, kan du använda:
+
+```Gleam
+let specific_date = add({year = 2022, month = 3, day = 17}, {years = 1})
+```
+
+Det är viktigt att notera att alla tidsperioder måste anges i förhållande till den nuvarande tiden. Till exempel, om du vill beräkna datumet 10 dagar framåt från den 1 januari 2022, måste du också ange året, månaden och dagen i `add` funktionen.
 
 ## Djupdykning
 
-För de som vill gå ännu djupare in i ämnet, så finns det en mängd olika variationer och specialfall som man kan hantera med Date-modulen i Gleam. Man kan till exempel bara beräkna arbetsdagar istället för kalenderdagar, eller ta hänsyn till olika tidszoner vid beräkningar. Det finns också möjlighet att formatera outputen på olika sätt, beroende på vilket format man behöver det i.
+I Gleam finns det möjlighet att använda modulen `Time` för att utföra mer avancerade tidsberäkningar. Modulen har flera funktioner som kan vara användbara för att manipulera datum och tider, till exempel `subtract` för att dra bort en viss tidsperiod från ett datum och `compare` för att jämföra två datum.
+
+Det är också möjligt att använda Gleams inbyggda typer `Time.Time` och `Time.Timezone` för att hantera tid och tidszoner på ett mer robust sätt.
 
 ## Se även
 
-- Officiell Gleam-hemsida: https://gleam.run/
-- Gleam-dokumentation: https://gleam.run/documentation/
-- Gleam Date-modul: https://gleam.run/modules/Date.html
+- [Gleam Dokumentation - Time](https://gleam.run/documentation/modules/time/)
+- [Gleam Blogginlägg - Handling Tid i Gleam](https://gleam.run/news/handling-time-in-gleam/)

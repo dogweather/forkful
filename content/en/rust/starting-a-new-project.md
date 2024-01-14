@@ -1,40 +1,49 @@
 ---
 title:    "Rust recipe: Starting a new project"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Rust is a modern programming language that combines the performance of a low-level language with the safety and ease of use of a high-level language. This makes it a great choice for any new project you may be looking to start.
+
+Starting a new project in Rust can be an exciting endeavor, especially for those who are new to the language. Rust is a modern, safe, and high-performance language that brings a unique approach to systems programming. By starting a new project in Rust, you can learn a valuable skill while also creating efficient and reliable software.
 
 ## How To
-To get started with Rust, you will need to first install it on your system. This can easily be done by following the installation instructions on the official Rust website. Once installed, you can begin writing your first Rust program.
 
+To start a new project in Rust, follow these simple steps:
+
+1. Install Rust: If you don't already have Rust installed, you can download and install it from the official Rust website. Rust also comes with a package manager called Cargo, which will be used to create and manage your project.
+
+2. Create a new project: Open your terminal and navigate to the directory where you want to create your project. Then, run the command `cargo new <project_name>`. This will create a new directory with the given project name and generate some starter code for you to work with.
+
+3. Write some code: Open the project directory in your preferred code editor and start coding. Rust uses the `.rs` file extension for its source code files. You can code in these files using the Rust syntax and conventions.
+
+4. Build and run your project: To build your project, run the command `cargo build` in your project directory. This will compile your code and generate an executable file. To run your project, use the command `cargo run`.
+
+Here is a simple "Hello, world!" program written in Rust:
 ```Rust
 fn main() {
-    println!("Hello world!");
+    println!("Hello, world!");
 }
 ```
-This simple program will print out the phrase "Hello world!" when run. As you can see, Rust uses a syntax that is similar to C and C++, making it easy for developers with experience in those languages to pick up.
 
-Unlike other programming languages, Rust has a strong focus on memory safety. This means that it prevents common errors such as null pointer dereferencing and dangling references, which can significantly reduce the number of bugs in your code.
-
-Furthermore, Rust allows for both functional and imperative programming paradigms, giving developers the flexibility to choose the approach that best suits their project. It also has a robust package manager called Cargo, which makes it easy to manage dependencies and build your project.
+Running it will output:
+```
+Hello, world!
+```
 
 ## Deep Dive
-When starting a new project in Rust, one important aspect to consider is choosing the right data structures and algorithms for your program. Rust's standard library provides a wide range of collections such as vectors, hash maps, and linked lists, as well as various algorithms for sorting, searching, and manipulating data.
 
-Additionally, Rust has a powerful type system that allows for the creation of custom data types, including enums and structs. This makes it easier to model your data and ensure type safety throughout your code.
+Starting a new project in Rust also involves understanding some important concepts such as ownership, borrowing, and lifetimes. Rust's strict ownership rules ensure memory safety and prevent common errors such as dangling pointers or data races.
 
-Another key aspect of starting a new project in Rust is error handling. Rust's error handling mechanism uses a combination of return values and the Result and Option enums to gracefully handle errors. This not only makes it easier to identify and handle errors but also helps to prevent them from occurring in the first place.
+Another key aspect of Rust is its package manager, Cargo. Cargo takes care of project dependencies, building, and testing, making it easy to manage complex projects.
+
+To learn more about these concepts and how they work in Rust, check out the references in the "See Also" section below.
 
 ## See Also
-To further enhance your knowledge of Rust and starting a new project, check out the following resources:
 
-- [Official Rust website](https://www.rust-lang.org/)
-- [Rust Book](https://doc.rust-lang.org/book/)
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
-- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
-
-Happy coding in Rust!
+- [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
+- [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Official Rust Website](https://www.rust-lang.org/)

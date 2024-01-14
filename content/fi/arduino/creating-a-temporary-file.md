@@ -1,70 +1,60 @@
 ---
 title:    "Arduino: Väliaikaisen tiedoston luominen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto Arduino-ohjelmoinnissa?
+Arduino-ohjelmointi: Tietoa väliaikaisten tiedostojen luomisesta
 
-Arduinon ohjelmointi on jännittävä harrastus, joka tarjoaa lukemattomia mahdollisuuksia luovalle ajattelulle ja projektien toteuttamiselle. Väliaikaisten tiedostojen luominen on yksi tapa, jolla voit hyödyntää Arduinoa luodessasi monimutkaisempia ohjelmia. 
+## Miksi
+ Miksi joku haluaisi luoda väliaikaisen tiedoston Arduino-ohjelmassa? Väliaikaisten tiedostojen luominen voi olla hyödyllistä silloin, kun haluat tallentaa väliaikaisesti tietoa, jota ei tarvita pysyvästi. Tämä voi olla hyödyllistä esimerkiksi tilanteissa, joissa tarvitset tallennustilaa, mutta et halua käyttää pysyvää muistia.
 
-## Kuinka luoda väliaikainen tiedosto Arduino-ohjelmassa?
+## Kuinka
+Luodaksesi väliaikaisen tiedoston Arduino-ohjelmassa, sinun on ensin varattava tarvittava muistialue ja määritettävä sen koko. Tämän jälkeen voit luoda tiedoston käyttämällä "create()"-toimintoa. Alla on esimerkki koodista ja siihen liittyvä tulostus:
 
-Luodaksesi väliaikaisen tiedoston Arduino-ohjelmassa, sinun täytyy käyttää SPIFFS-tiedostojärjestelmää. Tämä tiedostojärjestelmä antaa sinulle mahdollisuuden tallentaa tiedostot Arduinon sisäiselle Flash-muistille. Seuraa alla olevia vaiheita luodaksesi väliaikaisen tiedoston:
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 
-```
-ArduinoOTA.onError([](ota_error_t error) {
-  Serial.println(error);
-});
-```
+File tempFile; //määritetään muuttuja tiedostolle
 
-Ensinnäkin sinun täytyy alustaa SPIFFS-tiedostojärjestelmä alussa ```setup()```-funktiossa. Voit tehdä tämän seuraavasti: 
-
-```
 void setup() {
-  if(!SPIFFS.begin(true)) {
-    Serial.println("An error has occurred while mounting SPIFFS");
-    return;
+  Serial.begin(9600);
+  SD.begin();
+  tempFile = SD.open("temp.txt", FILE_WRITE); //luodaan tiedosto SD-kortille
+  if (tempFile) { //jos tiedosto löytyy
+    Serial.println("Väliaikainen tiedosto luotu!");
+  } else { //muussa tapauksessa
+    Serial.println("Tiedostoa ei voitu luoda.");
   }
 }
-```
 
-Seuraavaksi voit luoda uuden tiedoston avaamalla ```File```-objektin ja käyttämällä metodia ```open()```. Tämä metodi ottaa kaksi parametria: tiedoston nimen ja avauskoodin. 
-
-```
-File tempFile = SPIFFS.open("temp.txt", "w+");
-if(!tempFile) {
-  Serial.println("There was an error creating the temp file");
-  return;
+void loop() {
+  //tässä voit kirjoittaa tiedostoon tarvittavaa tietoa
+  tempFile.print("Tämä on väliaikainen tiedosto.");
+  tempFile.close(); //suljetaan tiedosto kun tallennus on valmis
+  Serial.println("Tiedot tallennettu.");
+  delay(1000); //viiveen vuoksi
 }
 ```
 
-Nyt voit kirjoittaa tiedostoon käyttämällä tiedostoon liitettyä ```print()```-metodia.
+Tulostus:
 
 ```
-tempFile.print("Hello world!");
+Väliaikainen tiedosto luotu!
+Tiedot tallennettu.
 ```
 
-Voit myös lukea tiedostosta käyttämällä ```read()```-metodia.
+## Syvällisempi tarkastelu
+Väliaikaisten tiedostojen luominen voi olla hyödyllistä erilaisissa projekteissa, joissa tarvitaan väliaikaista tallennustilaa. Tiedostoja voidaan luoda myös tietyn aikarajan jälkeen poistettavaksi, jolloin ne voidaan käyttää esimerkiksi laskennallisena apuna. On myös tärkeää huomata, että väliaikaisia tiedostoja ei tule käyttää pysyvänä tallennusmuotona, sillä ne poistuvat laitteesta käytön jälkeen.
 
-```
-String fileContent = tempFile.readString();
-Serial.println(fileContent);
-```
-
-Muista sulkea tiedosto käytön jälkeen käyttämällä ```close()```-metodia.
-
-```
-tempFile.close();
-```
-
-## Syvällisempi sukellus väliaikaisen tiedoston luomiseen
-
-Tiedostojen luominen ja hallitseminen on välttämätöntä monimutkaisempien Arduino-ohjelmien luomisessa. Luomalla väliaikainen tiedosto, voit helposti tallentaa ja käsitellä tietoja, joita tarvitset ohjelmassasi. Voit myös luoda useita väliaikaisia tiedostoja ja käyttää niitä eri tarkoituksiin. Tämä antaa sinulle enemmän hallintaa ohjelmasi suorituskyvyssä ja mahdollistaa monimutkaisempien toimintojen toteuttamisen.
+### Huomioitavia asioita:
+- Varmista, että sinulla on riittävästi muistia väliaikaisen tiedoston luomiseen.
+- Muista sulkea tiedosto kun tallennus on valmis, muuten siitä voi tulla vioittunut tai ylikirjoitettu.
+- Vältä käyttämästä väliaikaisia tiedostoja pysyvänä tallennusmuotona.
 
 ## Katso myös
-
-- [Arduino SPIFFS-tiedostojärjestelmän dokumentaatio](https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html)
-- [Väliaikaisten tiedostojen luominen C++:lla](https://www.programiz.com/cpp-programming/files)
-- [SPIFFS-tiedostojen lukeminen ja kirjoittaminen Arduino-ohjelmassa](https://randomnerdtutorials.com/esp32-publishing-dht11-dht22-readings-to-sqlite-database/)
+- ["SD.h" kirjasto (virallinen dokumentaatio)](https://www.arduino.cc/en/Reference/SD)
+- ["File" kirjasto (virallinen dokumentaatio)](https://www.arduino.cc/en/Reference/File)

@@ -1,63 +1,50 @@
 ---
-title:    "Go: 「二つの日付を比較する」"
+title:    "Go: 日付の比較"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-日付を比較することは、プログラミングにおいて非常に重要です。例えば、あるイベントが特定の日付よりも前に起こるかどうかを判断するために、日付の比較が必要になる場合があります。
+## なぜ
+Go言語において、日付を比較することは重要です。例えば、日付を使用したソートや、期限を設定した処理などにおいて、正しい日付の比較が必要となります。
 
 ## 方法
-日付を比較するには、次のような方法があります。
+Go言語には、日付を比較するための便利なパッケージがあります。以下のコードを使用することで、簡単に日付を比較することができます。
 
 ```Go
 package main
-
 import (
     "fmt"
     "time"
 )
-
 func main() {
-    // 比較したい日付をそれぞれの変数に格納する
-    date1 := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2020, 12, 31, 0, 0, 0, 0, time.UTC)
+    t1 := time.Date(2020, time.March, 15, 0, 0, 0, 0, time.UTC)
+    t2 := time.Date(2019, time.March, 20, 0, 0, 0, 0, time.UTC)
 
-    // Equalを使用して日付が一致するかどうかをチェックする
-    if date1.Equal(date2) {
-        fmt.Println("日付が一致します")
+    if t1.After(t2) {
+        fmt.Println("t1はt2よりも後の日付です")
     } else {
-        fmt.Println("日付が一致しません")
+        fmt.Println("t1はt2よりも前の日付です")
     }
 
-    // BeforeまたはAfterを使用して、どちらが先かを比較することができる
-    if date1.After(date2) {
-        fmt.Println("date1の方が後の日付です")
+    if t1.Equal(t2) {
+        fmt.Println("t1とt2は同じ日付です")
     } else {
-        fmt.Println("date2の方が後の日付です")
+        fmt.Println("t1とt2は異なる日付です")
     }
 }
 ```
-
-このコードを実行すると、次のような出力が得られます。
-
+出力: 
 ```
-日付が一致しません
-date1の方が後の日付です
+t1はt2よりも後の日付です
+t1とt2は異なる日付です
 ```
+このように、`time`パッケージの`After`や`Equal`メソッドを使用することで、簡単に日付を比較することができます。
 
 ## ディープダイブ
-Goでは、内部的に日付をUnix時間（1970年1月1日からの秒数）で表します。そのため、日付を比較する際には、実際の日付ではなくUnix時間を比較することになります。このことを考慮して、日付を比較する際には、同じタイムゾーンを使用することが重要です。
+Go言語には、日付を比較する際に使える便利な関数やインターフェースがあります。例えば、`Before`や`Between`などのメソッドを使うことで、より柔軟な日付の比較が可能となります。また、Go言語は他の言語とは違い、日付同士を直接比較することができるので、よりシンプルなコードを書くことができます。
 
-また、日付の比較には、`time.Time`型を使用する必要があります。この型には、日付に関連する様々なメソッドが用意されており、比較だけでなく日付のフォーマットや変換なども行うことができます。
-
-## 参考リンク
-- [Go言語公式ドキュメント - time](https://golang.org/pkg/time/)
-- [Go言語で日付を取得する方法](https://qiita.com/ogady/items/0dad00c255ce5288947d)
-- [日付と時刻を処理するためのGo言語のtimeパッケージ](https://www.atmarkit.co.jp/ait/articles/1905/31/news007.html)
-
-## 併せて読みたい
-- [Go言語で日時を取得し、指定した形式で出力する方法](https://www.sejuku.net/blog/91817)
-- [Go言語で日時を取得・変換する方法](https://blog.matsurisupu.com/entry/2014/01/22/go_get_date_time/)
-- [Go言語でデータ型を扱う（日付編）](https://web-camp.io/magazine/archives/4048)
+## ご参考
+[timeパッケージドキュメント](https://golang.org/pkg/time/) 
+[Go言語で日付の比較をする方法](https://geeksforgeeks.org/how-to-compare-date-in-golang/)

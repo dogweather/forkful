@@ -1,93 +1,54 @@
 ---
 title:    "C++: 比较两个日期"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要比较两个日期
 
-比较两个日期在编程中是一个常见的任务，它们可以用来判断时间顺序，计算时间间隔，或者作为条件来控制程序的流程。因此，了解如何比较两个日期在编程中是非常重要的。
+日期在计算机编程中经常被使用，它们可以帮助我们记录事件发生的顺序、计算时间间隔等。因此，比较两个日期也是非常常见的操作。通过比较两个日期，我们可以判断哪个日期在另一个日期之前或之后，从而帮助我们做出相应的处理。
 
-## 如何
+## 如何比较两个日期
 
-在C++中，比较两个日期可以使用标准库中的`std::chrono`和`std::time`。首先，我们需要包含头文件`<chrono>`和`<ctime>`。
+在C++中，比较两个日期可以通过使用`std::chrono`库中的`time_point`类来实现。首先需要包含`chrono`头文件，然后定义两个日期变量为`time_point`类型，并给它们赋予对应的值，例如：
 
 ```C++
 #include <chrono>
-#include <ctime>
+
+std::chrono::time_point<std::chrono::system_clock> date1 = std::chrono::system_clock::now();
+std::chrono::time_point<std::chrono::system_clock> date2 = std::chrono::system_clock::now();
 ```
 
-然后，我们可以定义两个日期变量，并使用`std::chrono::system_clock::now()`来获取当前日期。
+然后，我们可以使用`operator>`或`operator<`来比较两个日期的大小，例如：
 
 ```C++
-std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
-std::chrono::system_clock::time_point tomorrow = std::chrono::system_clock::now() + std::chrono::hours(24);
-```
-
-接下来，使用`std::chrono::duration`来计算两个日期的间隔，并将其转换为所需的时间单位。
-
-```C++
-std::chrono::duration<int, std::ratio<86400>> diff = tomorrow - today;
-int diff_days = diff.count();
-```
-
-最后，可以使用条件语句来比较两个日期的先后顺序。
-
-```C++
-if (tomorrow > today) {
-    std::cout << "明天比今天晚一天" << std::endl;
+if (date1 > date2) {
+    std::cout << "date1 is after date2";
+} else if (date2 > date1) {
+    std::cout << "date2 is after date1";
+} else {
+    std::cout << "date1 and date2 are the same";
 }
 ```
 
-以下是完整的示例代码和输出：
+输出结果将根据日期的大小而不同。除了比较两个日期之外，我们也可以使用`operator==`来检查两个日期是否相同。
 
-```C++
-#include <iostream>
-#include <chrono>
-#include <ctime>
+## 深入了解比较两个日期
 
-int main() {
-    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point tomorrow = std::chrono::system_clock::now() + std::chrono::hours(24);
+在C++中，`time_point`类实际上是一个模板类，它可以接收多种不同的参数类型。例如，在上面的例子中，我们使用的是`system_clock`类作为`time_point`的参数，表示以系统时钟为基准的日期和时间。除此之外，还有其他的类如`steady_clock`和`high_resolution_clock`，它们都可以用来创建`time_point`对象。不同的时钟类有不同的精度和使用范围，具体可以查看C++的官方文档来了解更多。
 
-    std::chrono::duration<int, std::ratio<86400>> diff = tomorrow - today;
-    int diff_days = diff.count();
+此外，在比较日期的过程中，可能会遇到时区的问题。在C++11之前，处理日期和时间时会跟操作系统的时区设置相关，可能会导致一些不一致性。但是在C++11之后，引入了`std::chrono::utc_clock`类，用来表示协调世界时（UTC）的日期和时间，可以有效解决跨时区的问题。
 
-    std::cout << "今天: " << std::ctime(&today) << std::endl;
-    std::cout << "明天: " << std::ctime(&tomorrow) << std::endl;
-    std::cout << "两个日期间隔: " << diff_days << "天" << std::endl;
+## 查看更多资料
 
-    if (tomorrow > today) {
-        std::cout << "明天比今天晚一天" << std::endl;
-    }
+- [C++标准库中关于chrono的文档](https://en.cppreference.com/w/cpp/chrono)
+- [C++11中的chrono库：一个真正的类型安全的日期和时间库](https://www.cnblogs.com/liangliang-dashen/p/13592470.html)
+- [深入理解C++的系统时间抽象](https://www.zhihu.com/people/xie-yu-jie-43)
+- [C++日期和时间操作技巧总结](https://www.jianshu.com/p/45945621cd5b)
 
-    return 0;
-}
-```
+## 参考链接
 
-输出：
-
-```
-今天: Mon Oct 18 14:36:08 2021
-明天: Tue Oct 19 14:36:08 2021
-两个日期间隔: 1天
-明天比今天晚一天
-```
-
-## 深入了解
-
-在C++中，日期和时间的处理有很多不同的方式，可以使用`<ctime>`中定义的`struct tm`结构体来表示时间，并使用`std::mktime()`函数将其转换为`std::time_t`类型。此外，C++20标准中还引入了`std::chrono::year_month_day`和`std::chrono::date`等新的日期相关类，可以更方便地进行日期操作。对于更复杂的日期比较需求，也可以使用第三方库如Boost或date库来提供更多功能和精确性。
-
-## 参考资料
-
-- [C++ reference - chrono](https://en.cppreference.com/w/cpp/chrono)
-- [C++ reference - time](https://en.cppreference.com/w/cpp/header/time)
-- [GeeksforGeeks - Date and Time in C++](https://www.geeksforgeeks.org/date-time-in-c/)
-- [cppreference.com - Format of ctime and asctime output](https://en.cppreference.com/w/c/chrono/strftime)
-
-## 查看更多
-
-- [C++中的日期和时间处理](https://www.ibm.com/developerworks/aix/library/au-datetimesupportcpp/)(英文)
-- [Boost日期时间库](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)(英文)
-- [date - C++20标准中的日期库](https://github.com/HowardHinnant/date)(英文)
+- [stackoverflow: Comparing two dates in C++](https://stackoverflow.com/questions/327365/compare-two-dates-in-c)
+- [C++ Reference: chrono](https://en.cppreference.com/w/cpp/chrono)

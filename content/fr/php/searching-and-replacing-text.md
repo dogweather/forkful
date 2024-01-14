@@ -1,34 +1,46 @@
 ---
-title:    "PHP: Recherche et remplacement de texte"
+title:    "PHP: Rechercher et remplacer du texte"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi: Il y a plusieurs raisons pour lesquelles on peut être amené à chercher et remplacer du texte. Peut-être que vous avez besoin de mettre à jour un grand nombre de données dans votre base de données, ou peut-être que vous voulez simplement remplacer des mots spécifiques dans un texte volumineux. Dans tous les cas, utiliser des fonctions de recherche et de remplacement en PHP peut vous faire gagner du temps et de l'énergie.
+## Pourquoi
 
-Comment faire: Pour effectuer une recherche et un remplacement de texte en PHP, vous pouvez utiliser la fonction prédéfinie "str_replace ()". Par exemple, si vous voulez remplacer toutes les occurrences de "chat" par "chien" dans une chaîne de caractères, vous pouvez utiliser le code suivant:
+La recherche et le remplacement de textes est une tâche très courante en programmation PHP. Cela peut être utile lorsque vous souhaitez modifier rapidement du contenu dans un grand nombre de fichiers, ou simplement pour mettre à jour des informations spécifiques dans votre code.
 
-```PHP
-$texte = "J\'ai un chat noir et un chat blanc."
-$nouveau_texte = str_replace("chat", "chien", $texte);
-echo $nouveau_texte;
-```
-Cela donnera le résultat suivant: "J'ai un chien noir et un chien blanc." Vous pouvez également utiliser des tableaux pour remplacer plusieurs mots à la fois. Par exemple:
+## Comment faire
+
+La recherche et le remplacement de textes peuvent être facilement réalisés en utilisant les fonctions intégrées de PHP, telles que `str_replace()` ou `preg_replace()`. Voici un exemple de code pour remplacer tous les "hello" par "bonjour" dans une chaîne de caractères :
 
 ```PHP
-$texte = "Je suis un programmeur PHP passionné."
-$mots_a_remplacer = array("programmeur", "passionné");
-$nouveaux_mots = array("développeur", "enthousiaste");
-$nouveau_texte = str_replace($mots_a_remplacer, $nouveaux_mots, $texte);
-echo $nouveau_texte;
+<?php
+$texte = "Hello, comment ça va?";
+$texte_modifié = str_replace("hello", "bonjour", $texte);
+echo $texte_modifié;
 ```
-Cela donnera le résultat suivant: "Je suis un développeur PHP enthousiaste."
 
-Plongée en profondeur: Outre "str_replace ()", il existe également d'autres fonctions utiles pour la recherche et le remplacement de texte en PHP, telles que "preg_replace ()" qui utilise des expressions régulières pour des recherches plus spécifiques, ou "str_ireplace ()" qui est insensible à la casse. Vous pouvez également utiliser des drapeaux pour spécifier des options de recherche, telles que "CASE_INSENSITIVE" ou "IGNORE_NEW_LINES". Pour en savoir plus sur ces fonctions et leurs différentes utilisations, n'hésitez pas à consulter la documentation PHP en ligne.
+Ceci donnera en sortie "Bonjour, comment ça va?".
 
-Voir aussi: Pour en savoir plus sur les fonctions de recherche et de remplacement de texte en PHP, vous pouvez consulter les liens suivants:
+Vous pouvez également utiliser des expressions régulières avec la fonction `preg_replace()` pour effectuer une recherche et un remplacement plus avancés. Par exemple, pour remplacer tous les nombres dans une chaîne de caractères par des astérisques, vous pouvez utiliser le code suivant :
 
-- La documentation PHP sur "str_replace ()": [lien vers la documentation officielle](https://www.php.net/manual/fr/function.str-replace.php)
-- Un tutoriel sur l'utilisation des expressions régulières en PHP: [lien vers le tutoriel](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-- Un article sur les différentes façons de gérer la sensibilité à la casse en PHP: [lien vers l'article](https://www.sitepoint.com/case-sensitivity-in-php/)
+```PHP
+<?php
+$texte = "Il y a 25 chats dans la maison";
+$texte_modifié = preg_replace("/\d+/", "***", $texte);
+echo $texte_modifié;
+```
+
+Cela produira en sortie "Il y a *** chats dans la maison".
+
+## Plongée en profondeur
+
+Lors de l'utilisation de l'expression régulière avec `preg_replace()`, il est important de comprendre certains des symboles couramment utilisés. Par exemple, le symbole "/" à la fois avant et après le motif indique que c'est une expression régulière. Les symboles "+" et "*" représentent respectivement une ou plusieurs occurrences et zéro ou plusieurs occurrences du motif. Vous pouvez en apprendre davantage sur les expressions régulières en consultant la documentation officielle de PHP.
+
+Il est également possible de combiner plusieurs fonctions, telles que `str_replace()` et `preg_replace()` pour effectuer des recherches et remplacements plus complexes et ciblés dans votre code.
+
+## Voir aussi
+
+- [Documentation officielle de PHP sur les expressions régulières](https://www.php.net/manual/fr/book.pcre.php)
+- [Article sur la recherche et le remplacement de textes en PHP](https://blog.phpexperts.pro/text-search-and-replace-in-php/)

@@ -1,48 +1,60 @@
 ---
 title:    "PHP: Lendo argumentos da linha de comando"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que ler argumentos da linha de comando?
 
-Ler argumentos da linha de comando é uma habilidade essencial para qualquer programador PHP, pois permite que você crie programas interativos que possam receber entradas do usuário em tempo real. Além disso, isso também ajuda a personalizar a execução do seu código de acordo com as necessidades específicas de cada usuário.
+Ler argumentos da linha de comando é uma habilidade essencial para programadores PHP. Com essa habilidade, é possível criar scripts mais dinâmicos e interativos, permitindo que seus programas recebam dados do usuário em tempo de execução. Neste artigo, exploraremos como ler argumentos da linha de comando em PHP e como isso pode melhorar seus projetos.
 
-## Como Fazer
+## Como Ler Argumentos da Linha de Comando em PHP
 
-Para ler argumentos da linha de comando em PHP, você pode utilizar a função `getopt()` que retorna os argumentos fornecidos na chamada do programa em um array associativo. Por exemplo:
-
-```PHP
-<?php
-$opcoes = getopt("a:b:"); //leitura dos argumentos -a e -b
-echo "Argumento de a: " . $opcoes['a'] . "\n";
-echo "Argumento de b: " . $opcoes['b'] . "\n";
-?>
-```
-
-Se executarmos este código com a seguinte entrada `php leitura_argumentos.php -a teste -b 123`, teremos o seguinte resultado:
-
-```
-Argumento de a: teste
-Argumento de b: 123
-```
-
-## Explorando mais a fundo
-
-Além de utilizar a função `getopt()`, você também pode acessar diretamente os argumentos da linha de comando através do array global `$argv`. Este array contém todos os argumentos fornecidos na chamada do programa, incluindo o próprio nome do arquivo PHP. Seguindo o exemplo anterior, podemos acessar os argumentos da seguinte forma:
+Ler argumentos da linha de comando em PHP é surpreendentemente simples. Tudo o que você precisa é da função `$_SERVER["argv"]`, que retorna um array contendo todos os argumentos fornecidos na linha de comando. Vamos dar uma olhada em um exemplo básico:
 
 ```PHP
 <?php
-echo "Argumento de a: " . $argv[1] . "\n";
-echo "Argumento de b: " . $argv[2] . "\n";
-?>
+
+// Lê o primeiro argumento fornecido na linha de comando
+$nome = $_SERVER["argv"][1];
+
+echo "Olá, " . $nome . "!";
+
+// $ php cumprimentar.php João
+// Saída: Olá, João!
 ```
 
-Ou seja, `$argv[1]` representa o primeiro argumento após o nome do arquivo e assim por diante.
+No exemplo acima, estamos usando o segundo elemento do array `$_SERVER["argv"]`, pois o primeiro é sempre o nome do script em si. Agora, vamos ver como podemos usar isso para criar um programa que calcula a média de vários números fornecidos pelo usuário:
 
-## Veja também
+```PHP
+<?php
 
-- [Documentação oficial do PHP sobre a função `getopt()`](https://www.php.net/manual/pt_BR/function.getopt.php)
-- [Documentação oficial do PHP sobre o array global `$argv`](https://www.php.net/manual/pt_BR/reserved.variables.argv.php)
-- [Vídeo tutorial sobre leitura de argumentos da linha de comando em PHP](https://www.youtube.com/watch?v=K-E_Y6JSUAA)
+// Remove o nome do script do array $_SERVER["argv"]
+$argumentos = array_slice($_SERVER["argv"], 1);
+
+// Converte todos os argumentos em números e calcula a média
+$media = array_sum($argumentos) / count($argumentos);
+
+echo "A média é: " . $media;
+
+// $ php media.php 5 10 15 20
+// Saída: A média é: 12.5
+```
+
+É importante notar que os argumentos fornecidos na linha de comando são sempre tratados como strings em PHP, portanto, é necessário convertê-los para o tipo de dados apropriado, como fizemos no exemplo acima.
+
+## Aprofundando nos Argumentos da Linha de Comando
+
+Agora que sabemos como ler argumentos da linha de comando e usá-los em nossos programas, é importante entender como isso funciona por trás dos bastidores. Quando você executa um script PHP na linha de comando, é criado um ambiente separado chamado "CLI", que é responsável por receber e processar esses argumentos. É por isso que podemos usar a função `$_SERVER["argv"]`, que é exclusiva para scripts executados na linha de comando.
+
+Além disso, é importante notar que os argumentos fornecidos na linha de comando são sempre separados por espaços em branco. Se você quiser usar argumentos que contenham espaços em branco, é necessário encapsulá-los entre aspas.
+
+## Veja Também
+
+Aqui estão alguns recursos adicionais para aprender mais sobre como ler argumentos da linha de comando em PHP:
+
+- [Documentação Oficial do PHP sobre argumentos da linha de comando](https://www.php.net/manual/pt_BR/features.commandline.arguments.php)
+- [Vídeo tutorial do canal PHP Academy](https://www.youtube.com/watch?v=M1WvfFdcVMk)
+- [Artigo do site PHPJabbers](https://www.phpjabbers.com/capture-command-line-arguments-in-a-php-script-php41)

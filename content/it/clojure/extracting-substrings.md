@@ -1,44 +1,35 @@
 ---
 title:    "Clojure: Estrazione di sottostringhe"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Estrarre sottostringhe è un'operazione fondamentale quando si lavora con stringhe in Clojure. Ciò consente di ottenere parti specifiche di una stringa e utilizzarle per scopi specifici, come la manipolazione o la ricerca di informazioni. In questo articolo, esploreremo come estrarre sottostringhe in modo efficiente utilizzando il linguaggio Clojure.
+L'estrazione di sottostringhe è un'operazione importante nella programmazione di Clojure perché può essere utilizzata per manipolare e gestire i dati in modo più efficiente. Può anche essere utile per la validazione e la pulizia dei dati.
 
-## Come Fare
+## Come fare
 
-Per estrarre una sottostringa in Clojure, è possibile utilizzare la funzione `substring` che prende in input la stringa di origine, la posizione di inizio e la posizione di fine della sottostringa desiderata. Ad esempio, se vogliamo estrarre la prima metà di una stringa, possiamo utilizzare il seguente codice:
+Ecco un esempio di come estrarre una sottostringa utilizzando Clojure:
 
-```Clojure
-(def parola "ciao")
-(substring parola 0 2)
+```
+(s 0 5 "Ciao amici")
 ```
 
-Questo ci restituirà la sottostringa "ci". Possiamo anche utilizzare numeri negativi per indicare le posizioni di fine count back dalla fine della stringa, come mostrato di seguito:
+Questo codice restituirà "Ciao", le prime 5 lettere della stringa "Ciao amici". È importante notare che l'indice inizia da 0 e che la sottostringa viene inclusa nell'output. In questo esempio, abbiamo una stringa "Ciao amici" ma è possibile utilizzare qualsiasi altra stringa al suo posto.
 
-```Clojure
-(def parola "mondo")
-(substring parola 0 -1)
-```
+## Approfondimento
 
-Questo ci restituirà la sottostringa "mond".
+L'estrazione di sottostringhe utilizza due argomenti principali: l'indice iniziale e l'indice finale. L'indice iniziale indica da quale carattere iniziare l'estrazione della sottostringa, mentre l'indice finale indica fino a quale carattere deve essere estratto. È possibile utilizzare anche altri argomenti, come l'indice di direzione e la regola di inclusione, per ottenere risultati più precisi.
 
-## Deep Dive
+Inoltre, la funzione di estrazione delle sottostringhe può essere utilizzata anche su altre strutture di dati come vettori, liste e mappe. Ciò la rende una funzione estremamente versatile e utile in molte situazioni.
 
-La funzione `substring` in Clojure restituisce una stringa nuova anziché modificare la stringa di origine, poiché le stringhe sono immutabili nel linguaggio. Inoltre, è possibile utilizzare la funzione `subs` per estrarre una sottostringa utilizzando un indice di inizio e una lunghezza anziché una posizione di fine. Ad esempio, se vogliamo estrarre gli ultimi due caratteri di una stringa, possiamo utilizzare il seguente codice:
+## Vedi anche
 
-```Clojure
-(def parola "casa")
-(subs parola (- (count parola) 2) (count parola))
-```
+- [Documentazione ufficiale di Clojure sull'estrazione delle sottostringhe] (https://clojuredocs.org/clojure.core/subs)
+- [Tutorial di estrazione delle sottostringhe in Clojure] (https://www.braveclojure.com/strings/)
+- [Esempi pratici di estrazione di sottostringhe in Clojure] (https://clojure-examples.herokuapp.com/string-substring)
 
-Questo ci restituirà la sottostringa "sa". È importante notare che, mentre `substring` utilizza indici inclusivi, `subs` utilizza indici esclusivi.
-
-## Vedi Anche
-- [Documentazione sulle stringhe Clojure](https://clojure.org/reference/strings)
-- [Estrarre sottostringhe in altri linguaggi di programmazione](https://www.tutorialspoint.com/finds-sub-strings-in-different-languages)
-- [Video tutorial su come estrarre sottostringhe in Clojure](https://www.youtube.com/watch?v=Lqr9GYfIhTQ)
+Grazie per aver letto questo articolo e speriamo che ti sia stato utile nell'imparare come estrarre sottostringhe in Clojure. Continua a esplorare questo potente linguaggio di programmazione e scopri tutte le sue funzionalità. Buona programmazione!

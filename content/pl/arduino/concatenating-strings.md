@@ -1,29 +1,40 @@
 ---
-title:    "Arduino: Konkatenacja ciągów"
+title:    "Arduino: Łączenie ciągów znaków"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Jeśli pracujesz z Arduino, mogłeś zetknąć się z sytuacją, w której potrzebowałeś połączyć kilka tekstów w jeden ciąg. Może to być przydatne, na przykład gdy chcesz wyświetlić na ekranie LCD wyrażenie zawierające wartości pomiarów z czujników. W takim przypadku wygodniej jest połączyć wszystkie te wartości w jedną linię, zamiast wyświetlać je osobno. W tej blogowej instrukcji dowiesz się, jak wykonać to zadanie za pomocą funkcji "concat()" w Arduino.
+
+Ciągłe łączenie ciągów tekstowych jest ważnym elementem wielu projektów w świecie Arduino. Dzięki temu można wyświetlać informacje na ekranach LCD, zapisywać dane w pamięci lub przesyłać je do innych urządzeń. Funkcja ta jest niezbędna dla zaawansowanych projektów, dlatego warto nauczyć się jej obsługi.
 
 ## Jak to zrobić
+
+W języku Arduino teksty są przechowywane w postaci tablicy znaków. Aby połączyć dwa lub więcej tekstów, musimy wykorzystać specjalną funkcję "strcat()" (skrót od angielskich słów "string concatenate"). Poniżej znajdują się przykładowe kody, które pokażą, jak użyć tej funkcji w praktyce.
+
 ```Arduino
-String tekst1 = "Cześć";
-String tekst2 = "Arduino!";
-String wynik = concat(tekst1, tekst2);
-Serial.println(wynik);
+char tekst1[] = "Witaj";
+char tekst2[] = " w świecie";
+char tekst3[] = " Arduino!";
+char wynik[100]; //zadeklarowanie tablicy na wynik
 ```
+```Arduino
+strcat(wynik, tekst1); //dodanie tekstu "Witaj" do tablicy wynik
+strcat(wynik, tekst2); //dodanie tekstu "w świecie" do tablicy wynik
+strcat(wynik, tekst3); //dodanie tekstu "Arduino!" do tablicy wynik
+```
+Podczas działania tego kodu, zmienna "wynik" będzie zawierać napis "Witaj w świecie Arduino!".
 
-Po wprowadzeniu powyższego kodu do swojego projektu, na monitorze szeregowym powinno pojawić się "Cześć Arduino!". W tym przykładzie zastosowaliśmy standardową bibliotekę String w celu stworzenia dwóch zmiennych typu String, zawierających odpowiednio "Cześć" i "Arduino!". Następnie wywołaliśmy funkcję "concat()", podając jako argumenty obie zmienne. Dzięki temu możemy połączyć je w jedną linię i przypisać do nowej zmiennej "wynik". Na koniec wystarczy tylko wydrukować tę zmienną za pomocą funkcji "println()" i gotowe!
+## Głębsze zagadnienia
 
-## Pogłębione badanie
-Funkcja "concat()" nie jest jedynym sposobem na łączenie stringów w Arduino. Można to również zrobić za pomocą operatora "+", na przykład: `String wynik = tekst1 + " " + tekst2;`. Jednak funkcja "concat()" może być przydatna, gdy zachodzi potrzeba łączenia większej liczby stringów lub gdy chcemy zachować czytelniejszy kod.
+Funkcja "strcat()" umożliwia również łączenie liczb i zmiennych z ciągami tekstowymi. W przypadku liczb, konieczne jest skonwertowanie ich na tekst za pomocą funkcji "itoa()", ponieważ funkcja "strcat()" działa tylko na danych typu "char". Dzięki temu możemy np. łatwo wyświetlić wynik zapisanej operacji na ekranie LCD.
 
-Warto również pamiętać, że w Arduino działają również inne funkcje związane z manipulacją stringami, takie jak "substring()" czy "charAt()", które mogą być przydatne przy bardziej zaawansowanych zastosowaniach.
+Warto również wiedzieć, że w przypadku dużych napisów, operacje łączenia mogą być czasochłonne i zużywać pamięć RAM. Dlatego ważne jest, aby pamiętać o optymalizacji swojego kodu i unikać niepotrzebnego łączenia długich ciągów tekstowych.
 
-## Zobacz również
-- [Dokumentacja funkcji "concat()" w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-- [Wprowadzenie do działania zmiennych typu String w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Przykłady wykorzystania manipulacji stringami w Arduino](https://www.instructables.com/Arduino-String-Manipulation/)
+## Zobacz także
+
+- [Oficjalna dokumentacja funkcji strcat() w języku Arduino](https://www.arduino.cc/reference/en/language/functions/string-datatype/strcat/)
+- [Przykłady użycia funkcji strcat() na stronie Arduino Forum](https://forum.arduino.cc/index.php?topic=36492.0)
+- [Poradnik optymalizacji kodu dla Arduino](https://blog.arduino.cc/2015/03/17/optimizing-your-arduino-code/)

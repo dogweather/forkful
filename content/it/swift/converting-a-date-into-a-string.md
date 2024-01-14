@@ -1,46 +1,40 @@
 ---
 title:    "Swift: Convertire una data in una stringa"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Sai mai quando hai bisogno di visualizzare una data in un formato diverso da quello predefinito? Forse stai creando un'app che richiede una formattazione personalizzata della data o semplicemente vuoi visualizzare la data in una lingua diversa. In entrambi i casi, dovrai convertire la data in una stringa. Ecco perché è importante sapere come farlo in Swift.
+Spesso, quando si lavora con date all'interno di un'applicazione Swift, si ha la necessità di convertire una data in una stringa per poterla visualizzare in modo leggibile per l'utente. In questo articolo, impareremo come eseguire questa operazione in modo semplice ed efficace.
 
-## Come fare
+## Come
 
-Per convertire una data in una stringa, puoi utilizzare il metodo `string(from:date:)` dell'oggetto `DateFormatter`. In questo metodo, devi specificare il formato della stringa in cui vuoi convertire la data. Ad esempio:
+Per convertire una data in una stringa in Swift, è possibile utilizzare il metodo `DateFormatter`, che è disponibile sulla classe `Date`. Vediamo un esempio pratico:
 
-```
+```Swift
+let date = Date()
+
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "dd/MM/yyyy"
-let date = Date()
-let stringDate = dateFormatter.string(from: date)
-print(stringDate)
+let dateString = dateFormatter.string(from: date)
 
-Output: 21/02/2021
+print(dateString)
+// Output: 04/08/2021
 ```
 
-In questo esempio, abbiamo creato un oggetto `DateFormatter` e abbiamo specificato il formato della data come "dd/MM/yyyy". Quindi abbiamo utilizzato il metodo `string(from:date:)` per convertire la data corrente in una stringa e visualizzarla sulla console.
+Nell'esempio sopra, abbiamo creato un'istanza di `DateFormatter` e abbiamo impostato il formato desiderato della stringa di output utilizzando il formato `dd/MM/yyyy`. Infine, abbiamo utilizzato il metodo `string(from:)` per convertire la data in una stringa e stamparla a schermo.
 
-Oltre a questo formato, ci sono molti altri formati disponibili che puoi utilizzare a seconda delle tue esigenze. Puoi anche impostare la lingua della stringa utilizzando il metodo `locale` dell'oggetto `DateFormatter`.
+## Deep Dive
 
-## Approfondimento
+Il metodo `DateFormatter` offre molte opzioni di formattazione per le date, ad esempio, è possibile modificare la posizione dei mesi e dei giorni della settimana, utilizzare abbreviazioni per le parole o aggiungere degli zeri iniziali per i numeri inferiori a 10. È possibile trovare la lista completa dei formati disponibili nella documentazione ufficiale di Apple.
 
-Se vuoi approfondire il concetto di conversione di una data in una stringa, ci sono alcune cose che devi sapere.
+Inoltre, è possibile utilizzare anche i `Locale` di sistema per ottenere la formattazione delle date in base alla lingua del dispositivo dell'utente. Ad esempio, se un utente italiano visualizzerà la data in italiano, mentre un utente inglese la vedrà in inglese.
 
-Innanzitutto, è importante considerare la localizzazione quando si converte una data in una stringa. Le date possono essere rappresentate in modi diversi a seconda della lingua e della regione. Quindi, se vuoi convertire una data in una stringa in un formato specifico, devi impostare correttamente la localizzazione.
+## See Also
 
-Inoltre, è importante scegliere il giusto formato per la tua stringa di data. Ciò dipenderà dallo scopo della tua app e dalle preferenze degli utenti. Ad esempio, se stai creando un'app per una regione specifica, potresti voler utilizzare il formato più comune utilizzato in quella regione.
-
-Infine, tieni presente che il formato della data può cambiare a seconda del sistema operativo e della versione di Swift che stai utilizzando. Ad esempio, alcuni formati di data potrebbero essere supportati solo a partire dalla versione più recente di Swift.
-
-## Vedi anche
-
-- Apple Developer Documentation su `DateFormatter`: https://developer.apple.com/documentation/foundation/dateformatter
-
-- Tutorial su come convertire una data in una stringa in Swift: https://www.hackingwithswift.com/example-code/system/how-to-convert-a-date-to-a-string-using-dateformatter
-
-- Un elenco di tutti i formati di data disponibili in Swift: https://nsdateformatter.com/
+- [Documentazione Apple su DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Tutorial su come formattare le date in Swift](https://www.raywenderlich.com/1520790-date-formatting-in-swift)
+- [Utilizzare i locale in Swift](https://www.swiftbysundell.com/articles/using-locale-in-swift/)

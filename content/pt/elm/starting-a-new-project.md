@@ -1,48 +1,36 @@
 ---
-title:    "Elm: Iniciando um novo projeto"
+title:    "Elm: Começando um novo projeto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que começar um novo projeto em Elm?
+## Por que começar um novo projeto em Elm?
 
-Se você está procurando por uma linguagem de programação funcional e altamente escalável para o seu próximo projeto, então Elm pode ser a escolha certa. Com uma sintaxe simples e uma forte ênfase em garantir a segurança do seu código, Elm é cada vez mais popular entre os desenvolvedores.
+Se você está buscando uma linguagem funcional moderna e robusta para o desenvolvimento de front-end, então o Elm é uma ótima escolha. Ele é conhecido por sua sintaxe simples e fácil de aprender, além de ter um sistema de tipos forte para garantir código mais seguro e menos erros. Além disso, a comunidade de desenvolvedores de Elm está crescendo e oferece uma ampla gama de recursos e ferramentas para suporte e colaboração.
 
-## Como fazer
+## Como começar um projeto em Elm
 
-Antes de começar a codificar em Elm, certifique-se de ter instalado o compilador através do Node.js. Em seguida, crie um novo projeto com o comando ```elm init```. Agora você está pronto para começar!
+Primeiramente, é necessário ter o Elm instalado em seu sistema. Em seguida, utilize o comando `elm init` para criar uma estrutura básica de projeto. Se estiver utilizando algum ambiente de desenvolvimento como o VS Code, é recomendável instalar a extensão Elm para uma melhor experiência de codificação. Agora, vamos criar um pequeno programa que irá imprimir "Hello World!" na tela:
 
-Um exemplo simples de código Elm seria criar uma lista de números pares até 10. Veja como isso pode ser realizado em Elm:
-
-```
+```Elm
 module Main exposing (main)
 
 import Html exposing (text)
 
--- Definir a função para gerar a lista
-listadePares : List Int
-listadePares =
-    List.range 2 10
-
 main =
-    -- Imprimir o resultado em uma tag HTML
-    text (toString listadePares)
+  text "Hello World!"
 ```
 
-A saída seria: [ 2, 4, 6, 8, 10 ]. Com apenas algumas linhas de código, você já está progredindo em sua jornada com Elm!
+Para executar o programa, basta digitar `elm reactor` no terminal e acessar `localhost:8000` em seu navegador. Você verá a mensagem "Hello World!" na tela.
 
-## Aprofundando-se
+## Mergulho profundo
 
-Uma das principais vantagens de usar Elm é sua forte tipagem estática. Isso significa que, durante a compilação, os erros e bugs em potencial são revelados antes mesmo de executar o código. Isso aumenta a segurança e eficiência do seu programa.
+Ao começar um novo projeto em Elm, é importante seguir as práticas recomendadas pela comunidade e utilizar ferramentas populares, como o Elm UI e o Elm CSS. Além disso, tenha como meta manter seu código limpo e bem organizado para evitar problemas futuros. Fazer testes regulares também é essencial para garantir a qualidade do código.
 
-Outra característica interessante do Elm é sua arquitetura de aplicativos (The Elm Architecture). Ela é baseada em três componentes principais: model (modelo), update (atualização) e view (visualização). Esses componentes trabalham juntos para criar uma estrutura clara e organizada que facilita a manutenção e expansão do seu código.
+## Veja também
 
-# Veja também
-
-Para mais informações sobre Elm e como começar a usá-lo, confira esses recursos úteis:
-
-- [Documentação oficial](https://guide.elm-lang.org/)
-- [Elm Brasil](https://elm-brasil.org/)
-- [Fórum Elm na Discuss](https://discourse.elm-lang.org/)
-- [Github Elm](https://github.com/elm/)
+- Documentação Oficial do Elm: https://guide.elm-lang.org/
+- Repositório do Elm UI: https://github.com/rtfeldman/elm-css
+- Comunidade Elm no Reddit: https://www.reddit.com/r/elm/

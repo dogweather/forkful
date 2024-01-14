@@ -1,41 +1,58 @@
 ---
-title:    "Swift: Lesing av en tekstfil"
+title:    "Swift: Lese en tekstfil"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å lese en tekstfil er en grunnleggende oppgave for mange programmer i dag, og er spesielt viktig for Swift-utviklere. Det kan være nødvendig å lese en tekstfil for å hente data eller vise tekst til brukeren. Uansett hva grunnen er, vil denne bloggposten hjelpe deg å lære hvordan du kan lese en tekstfil ved hjelp av Swift.
+I denne bloggposten skal vi se på hvordan man kan lese en tekstfil ved hjelp av Swift-programmeringsspråket. Å lese en tekstfil kan være nyttig for å hente inn data fra en ekstern kilde eller for å lese filer som er generert av andre programmer. Ved å lære hvordan man kan lese en tekstfil, vil du kunne utvide dine programmeringsferdigheter og få mer fleksibilitet i dine prosjekter.
 
-## Hvordan
+# Hvordan lese en tekstfil i Swift
 
-Det første trinnet for å lese en tekstfil er å få tilgang til filen. Dette kan gjøres ved å bruke `FileManager` -klassen og dens `contents(atPath:)` -metode. Her er et enkelt eksempel på hvordan du kan lese innholdet i en tekstfil og skrive det ut til konsollen:
+For å lese en tekstfil i Swift, trenger vi å først opprette en instans av klassen `FileHandle`. Denne klassen lar oss åpne og lese filer i vårt program. Deretter trenger vi å spesifisere banen til filen vi ønsker å lese ved hjelp av `URL`-strukturen.
 
 ```Swift
-if let fileURL = Bundle.main.url(forResource: "tekstfil", withExtension: "txt") {
-    do {
-        let contents = try String(contentsOf: fileURL)
-        print(contents)
-    } catch {
-        print("Feil ved lesing av fil: \(error)")
+if let fileURL = URL(string: "sti/til/filen.txt") {
+    let fileHandle = FileHandle(forReadingAtPath: fileURL.path)
+}
+```
+
+Nå har vi en instans av `FileHandle`-klassen som er koblet til filen vi ønsker å lese. Vi kan bruke denne instansen til å lese innholdet i filen i en `Data`-variabel. Vi kan også bruke `String`-klasseens init-metode for å konvertere `Data`-variabelen til en lesbar tekststreng.
+
+```Swift
+if let fileURL = URL(string: "sti/til/filen.txt") {
+    let fileHandle = FileHandle(forReadingAtPath: fileURL.path)
+    
+    if let data = fileHandle?.readData(ofLength: 128) {
+        let content = String(data: data, encoding: .utf8)
+        print(content)
     }
 }
 ```
 
-I dette eksemplet bruker vi `Bundle` -klassen for å hente filens URL og deretter bruker vi `String` -klassen for å konvertere filinnholdet til en streng som kan skrives ut til konsollen.
+I dette eksempelet leser vi de første 128 bytes av filen og skriver innholdet til konsollen. Det er også mulig å lese hele filen ved hjelp av `readDataToEndOfFile()`-metoden.
 
-Du kan også bruke `FileManager` -klassen til å lese filen linje for linje ved hjelp av `contentsOfDirectory(atPath:)` -metoden og en `while` -løkke. Dette er nyttig hvis du ønsker å behandle filen linje for linje istedenfor å lese hele innholdet på en gang.
+# Dypdykk i fil-lesing i Swift
 
-## Dypdykk
+Som nevnt tidligere, lar `FileHandle`-klassen oss ikke bare lese tekstfiler, men også åpne og lese andre typer filer som f.eks. bilder eller lydfiler. Vi kan også bruke metoder som `seek(toFileOffset:)` til å manuelt navigere i filen og lese fra en bestemt posisjon.
 
-Når du leser en tekstfil, er det viktig å være oppmerksom på filens tegnsett. Dette kan påvirke hvordan teksten blir tolket og kan føre til uønskede resultater. Standard tegnsettet for Swift er UTF-8, men du kan også endre tegnsettet ved å bruke `String (contentsOf: encoding:)` -metoden.
+I tillegg til å bruke `FileHandle`, kan vi også lese tekstfiler ved hjelp av `NSString`- og `NSStringEncoding`-klassene. Denne metoden er litt enklere og kan være nyttig hvis du kun trenger å hente en liten del av filen.
 
-Det er også viktig å håndtere eventuelle feil som kan oppstå når du leser en tekstfil. Dette kan være ting som feilfilnavn, utilgjengelige filer eller ugyldig filstruktur. I eksemplet over brukte vi en `try-catch` -blokk for å håndtere disse feilene.
+```Swift
+if let fileURL = URL(string: "sti/til/filen.txt") {
+    if let content = try? NSString(contentsOf: fileURL, encoding: String.Encoding.utf8.rawValue) {
+        print(content)
+    }
+}
+```
 
-## Se Også
+# Se også
 
-- [Apple Docs: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Apple Docs: String](https://developer.apple.com/documentation/swift/string)
-- [Swift Tutorial: Les en tekstfil](https://www.appcoda.com/reading-writing-files-swift/)
+- [Offisiell dokumentasjon for filbehandling i Swift](https://developer.apple.com/documentation/foundation/filehandle)
+- [Swift Playgrounds for å prøve ut fillesing](https://www.apple.com/swift/playgrounds/)
+- [Eksempler på prosjekter der fillesing kan være nyttig](https://www.raywenderlich.com/86135/read-write-file-swift)
+
+Takk for at du leste denne bloggposten om å lese tekstfiler i Swift. Vi håper du har fått en bedre forståelse for hvordan man kan lese filer i programmering og kan implementere dette i dine egne prosjekter. Lykke til!

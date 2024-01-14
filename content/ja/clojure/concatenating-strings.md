@@ -1,48 +1,39 @@
 ---
-title:    "Clojure: 文字列の連結"
+title:    "Clojure: 文字列の結合"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を連結することに取り組む必要があるのかを説明します。
+文字列を連結することによって、より長い文字列を作り出すことができます。これは、プログラミングでテキストを操作する際に非常に便利であり、より複雑な文字列を生成することができます。
 
-文字列を連結することは、データ処理やアプリケーション開発において非常に重要なタスクです。例えば、ユーザーからの入力を受け取ってそれを基に新しいメッセージを作成するなど、文字列を連結することは多くの場面で必要とされます。また、文字列を連結することによって、複数の変数やデータをひとつの文字列として扱うことができるため、データの整形や操作が簡単になります。
-
-## 方法
-
-Clojureで文字列を連結するには、まずは`str`関数を使用します。以下は`str`関数の基本的な使い方の例です。
+## やり方
 
 ```Clojure
-(str "Hello" " " "World") ; => "Hello World"
+;; 文字列を連結するには、str関数を使用します
+(str "こんにちは、" "皆さん。" "今日はいい天気ですね。") 
+;; => "こんにちは、皆さん。今日はいい天気ですね。"
+
+;; 文字列と変数を連結する場合、str関数と文字列補間を組み合わせることができます
+(def name "太郎")
+(str "こんにちは、私の名前は" name "です。") 
+;; => "こんにちは、私の名前は太郎です。"
 ```
 
-また、文字列の中に変数の値を埋め込むこともできます。例えば、以下のように`str`関数内で変数を利用することができます。
+## ディープダイブ
 
-```Clojure
-(def user "John")
-(str "Hello" " " user) ; => "Hello John"
-```
-
-さらに、`str`関数を使って複数の文字列を連結することも可能です。例えば、以下のように`str`関数に複数の文字列を渡すことで連結できます。
-
-```Clojure
-(str "Hello" " " "there," " " "how" " " "are" " " "you?") ; => "Hello there, how are you?"
-```
-
-## 深堀り
-
-Clojureでは、文字列を連結するための他にもさまざまな関数が用意されています。例えば、`concat`関数や`str-join`関数などがあります。これらの関数を使うことで、より柔軟に文字列を連結することができます。
-
-また、Clojureでは文字列を連結する際に、文字列の中に変数を埋め込むことによって可読性や保守性の高いコードを書くことができます。さらに、文字列のマルチバイト文字やUnicode文字にも対応しており、多言語の処理にも適しています。
-
-## 今後の学習
-
-Clojureで文字列を連結する方法を学んだら、次は他のデータ型との連結方法や、より高度な文字列操作について学ぶことができます。また、Clojureでよく使われる文字列ライブラリや、Webアプリケーションフレームワークの連結方法についても学ぶことができます。
+Clojureでは、文字列はイミュータブル（変更不可）なデータ構造であるため、文字列を連結する際には注意が必要です。連結された後の文字列が新しいオブジェクトとして生成されるため、大量の文字列を連結するとメモリ使用量が増加し、パフォーマンスの低下を引き起こす可能性があります。そのため、大量の文字列を連結する場合はStringBuilderを使用することを検討してください。
 
 ## 参考リンク
 
-- [Clojure の文字列操作について](https://clojure.or.jp/community/memo/2020/02/10/clojure%E3%81%AEd033310052a1/)
-- [Clojure Contribの文字列クロスレポジトリ](https://github.com/clojure/clojure-contrib/tree/master/modules/string)
+- [Official Clojure Documentation on Strings](https://clojure.org/reference/strings)
+- [Clojure Tutorial: Concatenating Strings](https://clojure.org/guides/learn/strings)
+- [Mastering Clojure Strings](https://purelyfunctional.tv/guide/clojure-strings/) 
+
+## 関連記事
+
+- [Clojure初心者向け：文字列を操作する方法](https://exampleblog.com/clojure-string-manipulation) 
+- [Clojureを使ったテキスト処理の基本](https://exampleblog.com/clojure-text-processing)

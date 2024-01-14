@@ -1,32 +1,38 @@
 ---
 title:    "Elixir: Skriva till standardfel"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva till standard error, eller stderr, är ett sätt att skicka ut felmeddelanden och andra viktiga meddelanden som är avsedda för programmeraren att se. Genom att använda detta verktyg kan du få värdefull information om din kod och identifiera eventuella problem.
+Att skriva till standardfel är en viktig del av Elixir-programmering eftersom det tillåter utvecklare att hantera eventuella fel i sina program. Genom att skicka felmeddelanden till standardfel kan utvecklare enkelt identifiera och åtgärda problem som uppstår i koden, vilket resulterar i en mer robust och pålitlig applikation.
 
 ## Hur man gör det
 
-För att skriva till stderr i Elixir, kan du använda funktionen `IO.puts/2` med `stderr` som det andra argumentet. Här är ett exempel på hur du skulle använda det:
+För att skriva till standardfel i Elixir, kan du använda funktionen `IO.write_error/2`. Det första argumentet är felmeddelandet som du vill skriva och det andra argumentet är IO-enheten som du vill skriva till, i vårt fall standardfel. Här är ett exempel:
 
 ```Elixir
-IO.puts("Detta är en viktig varning!", stderr)
+IO.write_error("Det här är ett felmeddelande.", :stderr)
 ```
 
-Detta kommer att skriva ut meddelandet till standard error istället för standard output. Det är också möjligt att använda `IO.puts/1` och bara skicka meddelandet till stderr som standard utan att behöva ange det som ett argument.
+När du kör denna kod kommer du att se följande utdata i terminalen:
+
+```shell
+Det här är ett felmeddelande.
+```
 
 ## Djupdykning
 
-När du skriver till stderr i Elixir, är det viktigt att notera att meddelandet också kommer att skickas till standard output. Detta kan vara användbart om du vill se meddelandet i terminalen, men om du bara vill ha det i stderr kan du använda `IO.puts/2` för att skriva till standard error endast.
+Skrivning till standardfel i Elixir är mycket likt att skriva till standardutgång, vilket är en annan funktion som är tillgänglig genom `IO`-modulen. Skillnaden är att standardfel alltid skrivs ut oavsett om standardutgången är omdirigerad eller inte. Detta gör det möjligt för utvecklare att fånga felmeddelanden även när programmet körs av en annan process eller när utdata inte är synlig.
 
-En annan viktig sak att komma ihåg är att stderr inte buffras. Det betyder att meddelandena skrivs ut direkt utan några fördröjningar. Detta gör stderr särskilt användbart när du felsöker din kod och behöver snabb återkoppling.
+Det är också värt att notera att Elixir tillåter flera IO-enheter att skrivas samtidigt, vilket gör det möjligt att skriva till både standardutgång och standardfel på samma gång. Detta kan vara särskilt användbart när du vill visa utdata för användaren men också logga eventuella fel till standardfel.
 
 ## Se även
 
-- [Elixir Dokumentation: IO.puts/2](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Elixir Dokumentation: IO.puts/1](https://hexdocs.pm/elixir/IO.html#puts/1)
-- [Elixir Dokumentation: stderr](https://hexdocs.pm/elixir/Kernel.html#stderr/0)
+- [IO-modulen i Elixir-dokumentationen](https://hexdocs.pm/elixir/IO.html)
+- [Learn Elixir - Felhantering](https://elixirschool.com/sv/lessons/basics/error-handling/)
+
+Tack för att du läste! Förhoppningsvis har du nu en bättre förståelse för varför och hur man skriver till standardfel i Elixir. Fortsätt lära dig och ha kul med programmering!

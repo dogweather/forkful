@@ -1,51 +1,46 @@
 ---
 title:    "C++: Concatenando strings"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que usar concatenação de strings?
 
-Concatenar strings é uma técnica importante em programação, pois permite a junção de múltiplas strings em uma única string. Isso é especialmente útil em casos onde é necessário formatar texto ou construir mensagens dinamicamente.
+Se você está familiarizado com programação em C++, provavelmente já se deparou com o conceito de concatenação de strings em algum momento. Mas por que exatamente alguém iria querer unir duas ou mais strings em uma única string? A resposta é simples: para criar uma nova string que combine as informações ou mensagens contidas nas strings originais. Isso pode ser útil em diferentes situações, como exibição de mensagens personalizadas ao usuário ou manipulação de dados em uma aplicação.
 
-## Como Fazer
+## Como fazer concatenação de strings em C++
 
-Para concatenar strings em C++, basta utilizar o operador de soma (+) entre as strings que deseja unir. Veja um exemplo abaixo:
+A concatenação de strings é uma tarefa relativamente simples em C++. Vamos supor que queremos unir as strings "Hello" e "world" para formar a frase "Hello world". Podemos fazer isso da seguinte maneira:
 
 ```C++
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main() {
-    string nome = "João";
-    string sobrenome = "Silva";
-    string nome_completo = nome + " " + sobrenome;
-    cout << "Seu nome é: " << nome_completo;
-    return 0;
+  // declaramos as duas strings que queremos unir
+  std::string str1 = "Hello";
+  std::string str2 = "world";
+  
+  // usamos o operador de adição (+) para concatenar as strings
+  std::string frase = str1 + " " + str2;
+  std::cout << frase << std::endl; // output: Hello world
+  
+  return 0;
 }
 ```
 
-Neste exemplo, as variáveis "nome" e "sobrenome" são concatenadas com o operador de soma e o resultado é armazenado na variável "nome_completo". Ao imprimir essa variável, obtemos a mensagem "Seu nome é: João Silva".
+No código acima, declaramos duas variáveis do tipo string - "str1" e "str2" - e atribuímos a elas os valores "Hello" e "world", respectivamente. Em seguida, usamos o operador de adição (+) para unir as duas strings, adicionando também um espaço em branco (" ") entre elas. Finalmente, imprimimos a nova string criada ("Hello world") na tela.
 
-Podemos também concatenar mais de duas strings ou incluir strings fixas na concatenação. Veja abaixo:
+## Profundidade na concatenação de strings
 
-```C++
-string frase = "Eu gosto de " + "programar em " + "C++.";
-```
+Embora a concatenação de strings seja uma tarefa simples, é importante ter cuidado ao utilizá-la em seu código. Por exemplo, é importante garantir que as strings que estão sendo unidas estejam no formato correto, pois uma pequena diferença pode resultar em uma saída inesperada. Além disso, é possível que ocorram problemas de desempenho caso a concatenação seja feita com um grande número de strings ou em loops repetitivos.
 
-Neste caso, a variável "frase" terá o valor "Eu gosto de programar em C++.".
+Outro ponto a ser destacado é que, em C++, as strings são imutáveis, ou seja, não é possível modificá-las diretamente após sua criação. Portanto, na verdade, a concatenação de strings cria uma nova string, e a original permanece inalterada.
 
-## Deep Dive
+## Veja também
 
-Em C++, a concatenação de strings é feita através do operador de soma (+), pois o compilador entende que, ao utilizar esse operador com strings, o objetivo é unir as mesmas.
-
-Para evitar erros de compilação, é importante garantir que as strings que serão concatenadas possuem o mesmo tipo. Por exemplo, não é possível concatenar uma string com uma variável do tipo inteiro.
-
-Além disso, é possível utilizar a função `concat` da biblioteca `string` para realizar a concatenação de forma mais explícita. Essa função recebe duas strings como parâmetro e retorna uma nova string com a união das duas.
-
-## Veja Também
-
-- [Tutorial de Strings em C++](https://www.cplusplus.com/doc/tutorial/strings/)
-- [Documentação oficial da função concat](http://www.cplusplus.com/reference/string/string/append/)
+- [Tutorial de strings em C++ (em inglês)](https://www.programiz.com/cpp-programming/strings)
+- [Documentação oficial do C++ (em inglês)](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Publicação sobre concatenação de strings em C++ (em português)](https://www.codepolitan.com/iniciando-com-cpp-concatenacao-de-strings-5b8faff7e9a22)

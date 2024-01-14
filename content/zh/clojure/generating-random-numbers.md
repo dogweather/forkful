@@ -1,65 +1,48 @@
 ---
 title:    "Clojure: 产生随机数"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
+在编程中，我们经常需要使用到随机数。它可以用来生成测试数据、创建游戏中的随机事件，甚至可以用来产生密码。Clojure提供了强大的功能来生成随机数，让我们一起来探究一下吧！
 
-在编程中，生成随机数是一个很常见的需求。它可以用来模拟现实世界的随机事件，如掷骰子或抽奖。同时，它也可以用来创建随机数据集，在测试和实验中很有用。
-
-# 如何
-
-生成随机数在Clojure中非常容易，只需使用内置的`rand`函数即可。下面是一个简单的例子，生成10个介于1和100之间的随机数。
+## 如何
+在Clojure中，我们可以使用 `rand` 函数来生成随机数。例如下面的代码会生成一个介于0和1之间的随机浮点数。
 
 ```Clojure
-(defn random-numbers []
-  (repeatedly 10 #(rand-int 100)))
+(rand)
+;; 输出：0.5174170965728857
 ```
 
-这个函数使用了`#()`语法，它是Clojure中的一种匿名函数表示方式。`rand-int`函数用来生成整数随机数，它需要传入一个范围参数。通过`repeatedly`函数，我们可以多次调用`rand-int`来生成一定数量的随机数。
-
-下面是函数的输出示例：
-
-```
-(56 2 88 43 14 97 23 1 30 76)
-```
-
-我们还可以使用`rand`函数来生成浮点数随机数，如下所示：
+如果我们想要生成一个指定范围内的随机数，我们可以使用 `rand-int` 函数并传入最小值和最大值。例如，下面的代码会生成一个介于1和10之间的随机整数。
 
 ```Clojure
-(defn random-decimals []
-  (repeatedly 10 #(rand)))
+(rand-int 1 10)
+;; 输出：5
 ```
 
-它的输出示例为：
-
-```
-(0.9737372459366309 0.8111409258934706 0.08179833094735727 0.34555154411179247 0.206107850250612 0.8378684213608807 0.19520188791278767 0.28988402730233207 0.6642024825242086 0.011941530956081086)
-```
-
-如果想要生成特定范围内的浮点数随机数，我们可以使用`rand-nth`函数来从一个范围列表中随机选择一个元素。
+除此之外，我们还可以使用 `shuffle` 函数来乱序一个列表中的元素。例如，下面的代码会将1到10的数字随机排列。
 
 ```Clojure
-(defn random-decimals []
-  (repeatedly 10 #(rand-nth [0.5 1.0 1.5 2.0])))
+(shuffle (range 1 11))
+;; 输出：(7 4 3 10 6 1 8 9 2 5)
 ```
 
-输出示例为：
+## 深入探究
+Clojure使用Mersenne Twister算法来生成随机数。这是一种高效的伪随机数生成算法，它的周期可以达到2^19937 - 1。
 
-```
-(2.0 1.0 1.0 1.5 0.5 1.0 1.5 0.5 0.5 2.0)
-```
+另外值得注意的是，Clojure的 `rand` 函数实际上是 `ThreadLocalRandom` 类的一个包装。这意味着当我们在多线程环境下使用 `rand` 函数时，每个线程都会有自己独立的种子，避免了线程安全的问题。
 
-# 深入探讨
+## 参考链接
+- [Clojure官方文档 - 随机数](https://clojure.org/reference/numbers#_random_numbers)
+- [Clojure Cookbook - 随机数](https://clojure-cookbook.com/numbers/random)
+- [Mersenne Twister算法 - 维基百科](https://zh.wikipedia.org/wiki/Mersenne_Twister)
+- [ThreadLocalRandom类 - Java官方文档](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)
 
-生成随机数的过程其实并不是完全随机的。它们实际上是由一个叫做“随机数生成器”的算法生成的。这个算法使用一个叫做“种子”的值来计算随机结果。如果种子值相同，那么生成的随机数也是相同的。因此，在使用`rand`函数时，如果不传入种子值，它会使用系统当前的时间作为种子值。这也是为什么每次运行程序都会得到不同的随机数。
-
-除了使用内置的`rand`函数，我们还可以使用Clojure的第三方库来生成随机数，例如[clojure.math.numeric-tower](https://github.com/clojure/math.numeric-tower)。这个库提供了更多的随机数生成函数，例如高斯分布随机数和泊松分布随机数。
-
-# 查看更多
-
-- [Clojure官方文档](https://clojure.org/) - 学习Clojure的最佳资源。
-- [Clojure从入门到放弃](https://github.com/unknownfounder/clojure-for-the-brave-and-true/tree/master/chapters) - 一本免费的Clojure教程，从基础知识到实战技巧。
-- [给Clojure新手的25个技巧](https://owensd.io/2017/11/25/clojure-tips-for-newbies.html) - 一篇有用的博客文章，提供了一些有用的提示和技巧。
+## 你可能还想知道
+- [Clojure官方文档](https://clojure.org/)
+- [Clojure中国社区](https://clojure-china.org/)
+- [Clojure学习资源汇总](https://github.com/zhuzilin/Clojure-Learning-Resources)

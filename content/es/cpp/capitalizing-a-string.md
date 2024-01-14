@@ -1,45 +1,97 @@
 ---
 title:    "C++: Capitalizando una cadena"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena de texto?
+## Por qué
 
-Al escribir código en C++, a menudo encontramos la necesidad de convertir una cadena de texto a mayúsculas para mejorar la legibilidad o para realizar comparaciones de cadenas. Afortunadamente, esto se puede lograr fácilmente con solo unas pocas líneas de código.
+La capitalización de una cadena de texto es una tarea común en la programación, especialmente cuando se trabaja con datos de entrada. Al capitalizar una cadena, se puede garantizar que la primera letra de cada palabra esté en mayúscula, lo que facilita la lectura y el procesamiento de la información.
 
-## Cómo capitalizar una cadena de texto en C++
+## Cómo hacerlo
 
-Para capitalizar una cadena de texto en C++, podemos usar la función `std::transform()` junto con la función `std::toupper()` de la biblioteca `cctype` de C++. Primero, necesitamos incluir la biblioteca en nuestro código con la siguiente línea:
+La manera más sencilla de capitalizar una cadena de texto en C++ es utilizando la función `toupper()` incluida en la librería `<cctype>`. Esta función toma un carácter como parámetro y devuelve su versión mayúscula. Combinando esta función con un ciclo `for` y un condicional `if`, podemos capitalizar cada letra de la cadena. Veamos un ejemplo:
 
-``` C++
+```C++
+#include <iostream>
+#include <cstring>
 #include <cctype>
+
+using namespace std;
+
+int main(){
+
+    //Definir una cadena de texto
+    char cadena[] = "hola mundo";
+    //Obtener la longitud de la cadena
+    int longitud = strlen(cadena);
+
+    //Ciclo para recorrer cada letra de la cadena
+    for(int i = 0; i < longitud; i++){
+        //Verificar si es un espacio en blanco
+        if(isspace(cadena[i])){
+            //Capitalizar la letra siguiente
+            cadena[i+1] = toupper(cadena[i+1]);
+        }
+        //Capitalizar la primera letra de la cadena
+        if(i == 0){
+            cadena[i] = toupper(cadena[i]);
+        }
+    }
+
+    //Mostrar la cadena capitalizada
+    cout << cadena << endl;
+
+    return 0;
+}
+
 ```
 
-Luego, podemos usar la función `std::transform()` para iterar a través de cada carácter de la cadena y aplicar la función `std::toupper()` para convertirlo en mayúscula. El siguiente ejemplo muestra cómo capitalizar una cadena llamada `myString` y luego imprimir el resultado en la consola:
+**Salida:**
 
-``` C++
-std::string myString = "hola mundo";
-std::transform(myString.begin(), myString.end(), myString.begin(), std::toupper);
-std::cout << myString << std::endl;
+```
+Hola Mundo
 ```
 
-La salida de este código sería:
+## Profundizando
 
-``` C++
+Una forma más eficiente de capitalizar una cadena de texto en C++ es utilizando la función `std::transform()` de la librería `<algorithm>`. Esta función toma tres parámetros: el inicio de la cadena, el final de la cadena y una función o lambda que especifica cómo se va a transformar cada carácter. Veamos un ejemplo:
+
+```C++
+
+#include <iostream>
+#include <cstring>
+#include <cctype>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+
+    //Definir una cadena de texto
+    string cadena = "hola mundo";
+    //Utilizar std::transform() para aplicar toupper() a cada carácter
+    transform(cadena.begin(), cadena.end(), cadena.begin(),::toupper);
+
+    //Mostrar la cadena capitalizada
+    cout << cadena << endl;
+
+    return 0;
+}
+
+```
+
+**Salida:**
+
+```
 HOLA MUNDO
 ```
 
-Podemos ver que la función `std::transform()` modificó cada carácter de la cadena `myString` a mayúscula, lo que nos permite capitalizar la cadena completa.
+Con este enfoque, no es necesario recorrer la cadena ni utilizar estructuras de control, lo que hace el código más eficiente y fácil de leer.
 
-## Profundizando en la capitalización de cadenas de texto
+## Ver también
 
-Cuando se trata de capitalizar cadenas de texto, debemos tener en cuenta que puede haber variantes de mayúsculas y minúsculas en diferentes idiomas. Por ejemplo, en español, la letra 'ñ' también se puede presentar en mayúscula como 'Ñ'. Por lo tanto, debemos asegurarnos de que nuestros programas manejen correctamente estos casos.
-
-Además, también debemos tener en cuenta que al capitalizar una cadena, estamos reemplazando los caracteres originales con caracteres en mayúscula, lo que podría afectar a cualquier lógica o verificaciones futuras que dependan de la cadena original.
-
-## Véase también
-
-- [Documentación de std::transform](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Documentación de std::toupper](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Documentación de la función toupper() en C++](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Documentación de la función transform() en C++](https://www.cplusplus.com/reference/algorithm/transform/)

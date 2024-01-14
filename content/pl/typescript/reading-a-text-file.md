@@ -1,66 +1,40 @@
 ---
 title:    "TypeScript: Odczytywanie pliku tekstowego"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zdarzyło Ci się przeglądać dokumenty tekstowe i szukać szczególnego fragmentu informacji? Czy często pracujesz z plikami tekstowymi w swoim projekcie? Jeśli tak, to warto poznać, jak w łatwy i skuteczny sposób można odczytać plik tekstowy w języku TypeScript. Ten artykuł pokaże Ci, jak wykorzystać ten język programowania do szybkiego i profesjonalnego odczytywania plików tekstowych.
+Czy kiedykolwiek chciałeś przeczytać plik tekstowy za pomocą TypeScript, ale nie wiedziałeś od czego zacząć? W tym wpisie dowiesz się, jak to zrobić w prosty sposób.
 
 ## Jak to zrobić
 
-### Przygotowanie
+Aby odczytać plik tekstowy za pomocą TypeScript, musimy wykonać kilka kroków:
 
-Zanim zaczniesz czytać plik tekstowy w TypeScript, musisz przygotować odpowiednie środowisko. Skorzystaj z edytora tekstu, takiego jak Visual Studio Code, aby napisać kod oraz zainstaluj najnowszą wersję TypeScript za pomocą Node Package Manager (NPM).
+1. Na początek, musimy zaimportować moduł `fs` używając słowa kluczowego `import`.
+2. Następnie, używając funkcji `readFileSync` z modułu `fs`, możemy odczytać zawartość pliku tekstowego i przypisać ją do zmiennej.
+3. Aby wyświetlić zawartość pliku tekstowego, wystarczy użyć funkcji `console.log` i przekazać jako argument odczytaną zmienną.
 
-### Komponent FileSystem
+```TypeScript
+import * as fs from 'fs';
 
-Dzięki modułowi FileSystem w języku TypeScript masz dostęp do funkcji potrzebnych do odczytywania plików tekstowych. Musisz najpierw zaimportować ten moduł, aby móc go użyć w swoim kodzie. Możesz to zrobić za pomocą poniższych poleceń:
-
-```
-import * as fs from "fs";
-```
-
-### Odczytywanie pliku
-
-Po zaimportowaniu modułu FileSystem możesz rozpocząć proces odczytywania pliku tekstowego. W tym celu utwórz zmienną z odpowiednią scieżką do pliku. Następnie wywołaj funkcję `readFileSync` i przekaż do niej utworzoną zmienną jako argument. Oto przykładowy kod:
-
-```
-let filePath: string = "./moj_plik.txt";
-let fileContents: string = fs.readFileSync(filePath, "utf-8");
+let fileContent = fs.readFileSync('plik.txt', 'utf-8');
+console.log(fileContent);
 ```
 
-Funkcja `readFileSync` zwróci zawartość pliku w formie tekstu, którą możesz wyświetlić za pomocą funkcji `console.log`.
+Gdy wykonamy ten kod, w konsoli pojawi się zawartość pliku tekstowego `plik.txt`. Proste, prawda?
 
-### Przykładowy wynik
+## Deep Dive
 
-Jeśli plik tekstowy zawiera następującą treść:
-
-```
-To jest mój plik tekstowy.
-Zawiera on kilka linijek tekstu.
-```
-
-To w wyniku otrzymasz następujący output:
-
-```
-To jest mój plik tekstowy.
-Zawiera on kilka linijek tekstu.
-```
-
-## Dogłębne studium
-
-Język TypeScript oferuje wiele kolejnych funkcji, które możesz wykorzystać do odczytywania plików tekstowych. Możesz na przykład użyć funkcji `readFile` zamiast `readFileSync` w celu asynchronicznego odczytu pliku. Możesz także wykorzystać funkcje `readStream` lub `createReadStream` do odczytywania dużych plików tekstowych w sposób bardziej efektywny.
-
-Powinieneś również pamiętać o poprawnym obsłużeniu błędów podczas odczytywania plików, na przykład błędów związanych z niepoprawną ścieżką lub brakiem dostępu do pliku. Możesz wykorzystać konstrukcję `try-catch` lub funkcję `on` dla obiektu `fs`.
+Jeśli chcesz się dokładniej przyjrzeć jak działa odczytywanie pliku tekstowego za pomocą TypeScript, dowiedz się więcej o funkcji `readFileSync` i jej możliwościach. Oprócz podstawowej funkcjonalności, możesz również zdefiniować opcjonalne parametry, takie jak kodowanie tekstu czy tryb odczytu pliku.
 
 ## Zobacz również
 
-Jeśli jesteś zainteresowany dalszym poznawaniem języka TypeScript, zobacz inne artykuły w naszej serii "Programowanie w TypeScript". Możesz także odwiedzić oficjalną dokumentację języka oraz skorzystać z dostępnych tutoriali.
+Sprawdź te przydatne linki, aby dowiedzieć się więcej o używaniu TypeScript:
 
-- Dokumentacja języka TypeScript: https://www.typescriptlang.org/docs/
-- Tutoriale o TypeScript: https://www.tutorialspoint.com/typescript/
-- Programowanie w TypeScript: Działanie z plikami JSON: https://www.freecodecamp.org/news/typescript-json-tutorial/
-- Poradnik dla początkujących w języku TypeScript: https://www.javacodegeeks.com/how-to-program-with-typescript
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs)
+- [Kurs TypeScript dla początkujących](https://www.udemy.com/course/typescript-kurs/)
+- [Kurs TypeScript w praktyce](https://www.udemy.com/course/typescript-w-praktyce/)

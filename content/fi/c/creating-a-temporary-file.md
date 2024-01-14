@@ -1,58 +1,46 @@
 ---
 title:    "C: Väliaikaisen tiedoston luominen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäistiedosto?
+## Miksi luoda tilapäinen tiedosto?
 
-Tilapäistiedostoja käytetään usein ohjelmoinnissa tietojen tallentamiseen lyhytaikaisesti. Tämä voi olla hyödyllistä esimerkiksi, kun halutaan pitää kirjaa käytössä olevista tiedostoista, muokata tietoa ennen sen tallentamista lopulliseen tiedostoon tai tallentaa väliaikaisesti tietoa, jota tarvitaan vain tietyn osan ohjelmasta aikana.
+Tilapäisten tiedostojen luominen on tärkeä osa monia ohjelmointitehtäviä. Ne tarjoavat lyhytaikaisen tallennustilan tietojen käsittelyyn ja välittämiseen. Tilapäisten tiedostojen käyttö voi myös olla hyödyllistä silloin, kun halutaan välttää pysyvien tiedostojen luomista.
 
-## Näin luot tilapäistiedoston C-ohjelmassa
+## Miten luoda tilapäinen tiedosto?
 
-```
-#include <stdio.h>
-#include <stdlib.h>
+Tilapäisen tiedoston luominen C-kielellä on hyvin yksinkertaista. Se vaatii vain muutaman rivin koodia, kuten esimerkiksi:
 
-int main() {
+```C
+// Avataan uusi tiedosto nimellä "temporary.txt" luomistilassa, joka mahdollistaa tiedoston kirjoittamisen ja lukemisen
+FILE *tempFile = fopen("temporary.txt", "w+");
 
-    // Luodaan tiedostonimi muuttuja, jossa on uniikki nimi
-    char* tiedostonimi = tmpnam(NULL);
-
-    // Avataan tiedosto
-    FILE* tiedosto = fopen(tiedostonimi, "w");
-
-    // Tarkistetaan, onko tiedosto avattu onnistuneesti
-    if (tiedosto == NULL) {
-        printf("Virhe: tiedoston avaaminen epäonnistui\n");
-    } else {
-
-        // Kirjoitetaan tietoa tiedostoon
-        fprintf(tiedosto, "Tämä on tilapäistiedosto\n");
-
-        // Suljetaan tiedosto
-        fclose(tiedosto);
-    }
-
-    // Poistetaan tilapäistiedosto
-    remove(tiedostonimi);
-
-    return 0;
+// Tarkistetaan, että tiedoston avaaminen onnistuu
+if (tempFile == NULL) {
+    // Jos ei onnistu, tulostetaan virheilmoitus ja lopetetaan ohjelma
+    printf("Tilapäistiedoston luominen epäonnistui.\n");
+    exit(1);
 }
+
+// Kirjoitetaan tiedostoon sisältöä
+fprintf(tempFile, "Tämä on esimerkkiteksti tilapäisessä tiedostossa.");
+
+// Suljetaan tiedosto
+fclose(tempFile);
 ```
-Tässä esimerkissä näet, miten voit luoda uniikin tiedostonimen `tmpnam()` -funktiolla ja avata tiedoston `fopen()` -funktiolla. Voit sitten käyttää tavallisia tiedoston käsittelyfunktioita tiedon tallentamiseen ja käsittelemiseen. Lopuksi voit poistaa tiedoston `remove()` -funktiolla.
 
-## Syvenny tarkemmin tilapäistiedostojen luomiseen
+Koodia suorittaessa voidaan huomata, että uusi tiedosto nimeltä "temporary.txt" on luotu ja siihen on kirjoitettu teksti. Tämän jälkeen tiedosto suljetaan ja poistetaan käytöstä.
 
-Tilapäistiedostojen luominen on tärkeä osa C-ohjelmointia, mutta se voi myös aiheuttaa haasteita. Tässä muutamia vinkkejä, joilla voit välttää yleisimmät ongelmat:
+## Syvällisempää tietoa tilapäisen tiedoston luomisesta
 
-- Käytä `tmpnam()` -funktiota uniikin tiedostonimen luomiseen sen sijaan, että luot itse tiedostonimen.
-- Varmista, että poistat tilapäistiedoston, kun se ei enää ole tarpeen. Näin voit välttää levytilan turhaa käyttöä.
-- Jos mahdollista, käytä `mkstemp()` -funktiota tilapäistiedoston luomiseen sen sijaan, että luotat `tmpnam()` tai `tmpfile()` -funktioihin. `mkstemp()` tarjoaa enemmän hallintaa tiedostonimen ja tiedostotilan suhteen.
+Tilapäisen tiedoston luominen tapahtuu usein kahdessa vaiheessa. Ensimmäisessä vaiheessa avataan uusi tiedosto ja varmistetaan, että tiedoston avaaminen onnistuu. Toisessa vaiheessa tiedostoon kirjoitetaan sisältöä ja suljetaan tiedosto. Tämän jälkeen tiedosto voidaan poistaa käytöstä.
+
+Tilapäisten tiedostojen käyttö on erityisen hyödyllistä silloin, kun ohjelmassa käsitellään suuria määriä dataa tai tarvitaan väliaikainen säilytyspaikka tiedon lähettämiseen ja vastaanottamiseen. Ne myös auttavat vähentämään pysyvien tiedostojen määrää, mikä voi olla hyödyllistä esimerkiksi turvallisuuden kannalta.
 
 ## Katso myös
 
-- [tmpnam](https://www.cplusplus.com/reference/cstdio/tmpnam/)
-- [fopen](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [remove](https://www.cplusplus.com/reference/cstdio/remove/)
+- [Tilapäisen tiedoston luominen C-kielellä](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [C-ohjelmoinnin perusteet](https://fi.wikibooks.org/wiki/C/_ohjelmoinnin_perusteet)

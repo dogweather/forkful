@@ -1,37 +1,49 @@
 ---
-title:    "PHP: Créer un fichier temporaire"
+title:    "PHP: Création d'un fichier temporaire"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi créer un fichier temporaire en PHP?
+## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles vous pourriez avoir besoin de créer un fichier temporaire lors de la programmation en PHP. Par exemple, cela peut être utile si vous devez stocker des données temporaires ou si vous souhaitez créer un système de cache pour améliorer les performances de votre application.
+La création de fichiers temporaires est une pratique courante en programmation PHP. Elle peut être utilisée dans de nombreux scénarios, tels que la gestion de fichiers temporaires lors de l'upload de fichiers ou la manipulation de données de grande taille. Les fichiers temporaires sont également utiles pour stocker des données sensibles et les supprimer après leur utilisation.
 
-## Comment créer un fichier temporaire en PHP?
+## Comment faire
 
-Il existe plusieurs façons de créer un fichier temporaire en utilisant PHP, mais l'une des méthodes les plus simples est d'utiliser la fonction `tmpfile()`. Voici un exemple de code pour créer et écrire dans un fichier temporaire:
+Pour créer un fichier temporaire en PHP, vous pouvez utiliser la fonction `tempnam()` qui génère un nom unique pour le fichier temporaire et crée le fichier vide. Voici un exemple de code qui utilise `tempnam()` pour créer un fichier temporaire et y écrire du contenu :
 
 ```PHP
-$fichier_temp = tmpfile();
-if ($fichier_temp) {
-   fwrite($fichier_temp, "Ceci est un exemple de données écrites dans le fichier temporaire.");
-   // Vous pouvez faire d'autres opérations sur le fichier ici
-   fclose($fichier_temp); // permet de supprimer le fichier temporaire après utilisation
-}
+<?php
+$filename = tempnam(sys_get_temp_dir(), 'prefix_');
+$file = fopen($filename, 'w');
+fwrite($file, 'Contenu du fichier temporaire');
+fclose($file);
 ```
 
-Lors de l'exécution de ce code, un nouveau fichier temporaire sera créé avec un nom et un emplacement aléatoires. Vous pouvez également spécifier un nom et un emplacement personnalisés si vous le souhaitez, en utilisant la fonction `tmpnam()`.
+Ce code génère un fichier temporaire dans le répertoire système temporaire avec un préfixe spécifié. Vous pouvez également spécifier un suffixe en passant un troisième paramètre optionnel à la fonction `tempnam()`. N'oubliez pas de fermer le fichier après avoir écrit son contenu.
 
-## Plongée en profondeur dans la création de fichiers temporaires
+Une autre façon de créer un fichier temporaire est d'utiliser la fonction `tmpfile()`. Cette fonction crée un fichier temporaire dans le répertoire système temporaire et retourne un gestionnaire de fichier pour y écrire du contenu. Voici un exemple d'utilisation :
 
-Lorsque vous utilisez la fonction `tmpfile()`, le fichier temporaire sera automatiquement supprimé lorsque votre script se termine ou lorsque vous utilisez la fonction `fclose()` pour le fermer. Cependant, si vous utilisez la fonction `tmpnam()`, le fichier temporaire ne sera pas automatiquement supprimé, il est donc de votre responsabilité de le faire.
+```PHP
+<?php
+$file = tmpfile();
+fwrite($file, 'Contenu du fichier temporaire');
+fclose($file);
+```
 
-Vous pouvez également utiliser la fonction `sys_get_temp_dir()` pour obtenir le chemin du répertoire temporaire par défaut de votre système d'exploitation, ce qui peut être utile si vous souhaitez stocker vos fichiers temporaires dans un endroit spécifique.
+Notez que `tmpfile()` gère la création et la suppression du fichier temporaire, vous n'avez donc pas besoin de spécifier un nom de fichier.
+
+## Découverte approfondie
+
+Il est important de noter que les fichiers temporaires créés avec `tempnam()` et `tmpfile()` sont automatiquement supprimés dès que la session PHP se termine. Si vous souhaitez supprimer manuellement le fichier temporaire, vous pouvez utiliser la fonction `unlink()` qui supprime un fichier du système de fichiers. Assurez-vous de vérifier si le fichier existe avant de le supprimer pour éviter toute erreur.
+
+De plus, vous pouvez également utiliser la fonction `sys_get_temp_dir()` pour obtenir le chemin du répertoire temporaire par défaut sur votre système. Cela peut être utile si vous souhaitez stocker vos fichiers temporaires dans un emplacement spécifique.
 
 ## Voir aussi
 
-- [Documentation officielle de PHP sur les fichiers temporaires](https://www.php.net/manual/en/function.tmpfile.php)
-- [Article sur les performances de l'utilisation des fichiers temporaires en PHP](https://www.phparch.com/2019/06/php-benchmark-series-part-3-files-and-databases/)
-- [Une alternative à la fonction `tmpfile()` en utilisant des fichiers mémoire](https://thisinterestsme.com/php-creating-temporary-files-memory/)
+- [Documentation PHP sur `tempnam()`](https://www.php.net/manual/fr/function.tempnam.php)
+- [Documentation PHP sur `sys_get_temp_dir()`](https://www.php.net/manual/fr/function.sys-get-temp-dir.php)
+- [Documentation PHP sur `unlink()`](https://www.php.net/manual/fr/function.unlink.php)
+- [Documentation PHP sur `tmpfile()`](https://www.php.net/manual/fr/function.tmpfile.php)

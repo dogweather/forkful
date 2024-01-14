@@ -1,39 +1,48 @@
 ---
 title:    "Javascript: 文字列の大文字化"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-今回のブログのトピックは、文字列中の文字を大文字に変換することです。このトピックについて深く掘り下げる前に、なぜ私たちは文字列を大文字に変換するのかを見てみましょう。
+## なぜ
 
-## なぜ？
+プログラミングにおいて、文字列の先頭を大文字にすることは非常に一般的なタスクです。これは、文章や名前を適切に表記するために必要な作業であり、より読みやすい文を作成するためにも重要です。
 
-文字列を大文字に変換する主な理由の1つは、データの整理や比較を簡単にするためです。例えば、データベース内のすべての名前を大文字で保存することで、データの整合性を保つことができます。また、ユーザーが入力した文字列を正規化するためにも使うことができます。
-
-## 方法
-
-Javascriptでは、文字列を大文字に変換するためにtoUppercase()メソッドを使用します。これを実際のコードで見てみましょう。
+## 手順
 
 ```Javascript
-let name = "john smith";
-name = name.toUpperCase();
-console.log(name); //出力結果: JOHN SMITH
+// サンプル文字列
+let str = "hello world";
+
+// 文字列を先頭の大文字に変換する関数
+function capitalizeString(string) {
+  // 文字列を配列に分割
+  let array = string.split(" ");
+  // 配列の各要素の先頭文字を大文字に変換
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1);
+  }
+  // 配列を文字列に結合して返す
+  return array.join(" ");
+}
+
+// 関数を利用して文字列を先頭の大文字に変換
+console.log(capitalizeString(str));
+
+// 出力結果： Hello World
 ```
 
-上記の例では、まず変数に小文字で名前を格納し、その後toUppercase()メソッドを使用して文字列を大文字に変換しています。そして、コンソールに出力することで変換された文字列を確認できます。
+このように、`capitalizeString`という関数を作成し、`split()`メソッドを使って文字列を単語ごとに配列に分割し、`charAt()`メソッドと`toUpperCase()`メソッドを使って各単語の先頭文字を大文字に変換し、`join()`メソッドを使って再び文字列に結合します。そして、`capitalizeString`関数を呼び出し、任意の文字列を引数として渡すことで、先頭の大文字に変換した文字列を返します。
 
-## 深く掘り下げる
+## 深堀り
 
-文字列の大文字変換には、英語の文字列にのみ適用することができるという制限があります。これは、文字列の大文字と小文字の区別が英語以外の言語には存在しないためです。また、大文字変換が常にユニークなものではないことも注目しておきましょう。例えば、トルコ語では文字列を大文字に変換すると元の文字の意味が変わってしまいます。
+`capitalizeString`関数では、`split()`メソッドと`join()`メソッドを使って文字列と配列を相互に変換することで、文字列を簡単に操作することができます。また、`charAt()`メソッドを使って文字列から特定の位置の文字を取得し、`toUpperCase()`メソッドを使って大文字に変換することで、文字列の操作がより柔軟になります。さらに、`for`ループを使うことで、配列の各要素に対して同じ処理を繰り返し行うことができます。
 
-## おわりに
+## 他にも見る
 
-今回のブログでは、文字列を大文字に変換する方法とその深い理由について紹介しました。文字列の大文字変換は、データ整理や正規化に役立つため、日常的に使われる機能の一つです。
-
-## 関連リンク
-
-- [Javascript toUppercase() メソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [トルコ語での大文字変換の制限](https://bugra.github.io/work/notes/2013-07-27/upper-case-conversion-in-turkish-and-other-complex-languages/)
-- [ASCIIとUnicodeにおける文字の大文字変換](https://www.w3.org/International/wiki/Case_folding)
-- [文字列操作に関するJavascriptチュートリアル](https://www.javascripttutorial.net/javascript-string/)
+- [Javascriptで文字列を大文字に変換する方法](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+- [String.prototype.split()の使い方](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [String.prototype.charAt()の使い方](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.toUpperCase()の使い方](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

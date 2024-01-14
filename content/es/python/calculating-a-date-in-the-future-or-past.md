@@ -1,48 +1,67 @@
 ---
-title:    "Python: Calculando una fecha en el futuro o pasado"
+title:    "Python: Calculando una fecha en el futuro o pasado."
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular una fecha en el futuro o pasado?
-
-Calcular fechas en el futuro o pasado es una habilidad importante en la programación ya que nos permite automatizar procesos y ahorrar tiempo. Además, es una herramienta útil para muchas aplicaciones, como calendarios, recordatorios y planificadores.
+## Por qué
+¿Alguna vez has necesitado saber la fecha en el futuro o en el pasado? ¿Quizás para planificar un viaje o para recordar una fecha importante? En este artículo, aprenderemos cómo calcular fechas en el futuro o en el pasado utilizando Python.
 
 ## Cómo hacerlo
+Utilizaremos la biblioteca datetime de Python para realizar el cálculo de fechas. Primero, importemos la biblioteca en nuestro código:
 
-Para calcular una fecha en el futuro o pasado en Python, podemos utilizar la biblioteca de tiempo integrada llamada "datetime". Primero, debemos importarla en nuestro código utilizando la siguiente línea de código:
-
-````Python
+```Python
 import datetime
-````
+```
 
-Luego, podemos utilizar la función "timedelta" para especificar el número de días, semanas, meses o años que queremos avanzar o retroceder en una fecha. Por ejemplo, si queremos calcular la fecha dentro de una semana a partir de hoy, podemos usar el siguiente código:
+Para calcular una fecha en el futuro, podemos utilizar el método `timedelta` de la biblioteca datetime. Este método nos permite agregar o restar una cantidad deseada de días a una fecha específica. Por ejemplo, si queremos saber la fecha dentro de dos semanas a partir de hoy, podemos hacer lo siguiente:
 
-````Python
-hoy = datetime.datetime.today()
-una_semana = datetime.timedelta(days=7)
-fecha_futura = hoy + una_semana
-print(fecha_futura)
-````
+```Python
+fecha_hoy = datetime.date.today()
+print("Hoy es:", fecha_hoy)
 
-Esto nos dará como resultado la fecha exacta dentro de una semana a partir de hoy. También podemos restar un "timedelta" de una fecha para obtener una fecha anterior. Por ejemplo, si queremos calcular la fecha hace un mes a partir de hoy, podemos usar el siguiente código:
+fecha_futura = fecha_hoy + datetime.timedelta(days=14)
+print("La fecha dentro de dos semanas será:", fecha_futura)
+```
+El resultado de este código será:
 
-````Python
-hoy = datetime.datetime.today()
-un_mes = datetime.timedelta(weeks=4)
-fecha_pasada = hoy - un_mes
-print(fecha_pasada)
-````
+```
+Hoy es: 2021-07-15
+La fecha dentro de dos semanas será: 2021-07-29
+```
 
-Esto nos dará la fecha exacta de hace un mes a partir de hoy.
+Para calcular una fecha en el pasado, podemos utilizar el mismo método `timedelta`, pero en lugar de sumar, restaremos una cantidad de días. Por ejemplo, si queremos saber la fecha de hace un mes a partir de hoy, podemos hacer lo siguiente:
 
-## Más información
+```Python
+fecha_pasada = fecha_hoy - datetime.timedelta(days=30)
+print("La fecha de hace un mes fue:", fecha_pasada)
+```
 
-Calcular fechas en el futuro o pasado en Python también nos permite manejar fechas en diferentes formatos, como horas, minutos y segundos. También podemos utilizar otros métodos de la biblioteca "datetime" para seleccionar fechas específicas e incluso comparar fechas. Es una herramienta muy versátil que puede ser utilizada en una variedad de proyectos y aplicaciones.
+El resultado de este código será:
+
+```
+La fecha de hace un mes fue: 2021-06-15
+```
+
+## Profundizando
+Además de los días, también podemos utilizar otros parámetros en el método `timedelta` como semanas, horas, minutos, segundos, entre otros. Esto nos da una gran flexibilidad para calcular fechas en el futuro o en el pasado de acuerdo a nuestras necesidades.
+
+También podemos utilizar el método `replace` para cambiar una parte específica de una fecha, como el año, el mes o el día. Por ejemplo, si queremos saber la fecha de nuestro cumpleaños en el año 2022, podemos hacer lo siguiente:
+
+```Python
+fecha_cumple = fecha_hoy.replace(year=2022)
+print("Mi cumpleaños será:", fecha_cumple)
+```
+
+El resultado de este código será:
+
+```
+Mi cumpleaños será: 2022-07-15
+```
 
 ## Ver también
-
-- Documentación oficial de la biblioteca "datetime" en Python: https://docs.python.org/es/3/library/datetime.html
-- Cálculo de fechas en Python utilizando "timedelta": https://www.geeksforgeeks.org/python-timedelta-function/
-- Tutoriales y ejemplos sobre fechas y tiempos en Python: https://www.programiz.com/python-programming/datetime
+- [Documentación oficial de la biblioteca datetime de Python](https://docs.python.org/es/3/library/datetime.html)
+- [Tutorial de Real Python sobre cálculos de fechas en Python](https://realpython.com/python-datetime/)
+- [Python para principiantes: manejo de fechas y horas](https://www.learnpython.org/es/Dates_and_Times)

@@ -1,40 +1,43 @@
 ---
-title:    "Haskell: Konvertering av en streng til små bokstaver"
+title:    "Haskell: Konvertere en streng til små bokstaver"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Skal vi virkelig diskutere hvorfor vi skulle ønske å konvertere en streng til små bokstaver? Vel, det kan være ulike årsaker til det, men det er vanligvis for å gjøre data mer konsistente og enklere å behandle. For eksempel, hvis du har en liste med navn og noen av dem er skrevet med store bokstaver, mens andre er i små bokstaver, kan det være ønskelig å konvertere alle navnene til samme format for å unngå forvirring. I tillegg kan ulike funksjoner og algoritmer ha ulike krav til hvordan input data skal være formatert, og derfor kan det være nyttig å konvertere strengen til et format som passer best for bruken.
+I denne bloggposten vil vi se på hvordan man kan konvertere en streng til små bokstaver i Haskell. Dette kan være nyttig for å gjøre tekstbehandling enklere, for eksempel når man skal sammenligne to tekster uten å måtte ta hensyn til store og små bokstaver.
 
-## Hvordan
+## Hvordan gjøre det
 
-Å konvertere en streng til små bokstaver i Haskell er enkelt, takket være den innebygde funksjonen "map". La oss se på en enkel implementering:
-
-```Haskell
-import Data.Char (toLower) -- importerer funksjonen "toLower" fra Data.Char-modulen
-
-konverterTilSmåBokstaver :: String -> String -- funksjon som tar inn en streng som input og returnerer en streng
-konverterTilSmåBokstaver = map toLower -- bruker funksjonen "map" og "toLower" på hver bokstav i strengen
-```
-
-La oss prøve det ut med noen eksempler og se hva som skjer:
+Å konvertere en streng til små bokstaver i Haskell er en enkel prosess. Vi kan bruke funksjonen `toLower` fra modulen `Data.Char` for å gjøre dette. La oss se på et eksempel:
 
 ```Haskell
-konverterTilSmåBokstaver "Hei på deg!" -- output: "hei på deg!"
-konverterTilSmåBokstaver "Even og Maria" -- output: "even og maria"
+import Data.Char
+
+konverterTekst :: String -> String
+konverterTekst tekst = map toLower tekst
+```
+Her bruker vi `map`-funksjonen til å bruke `toLower` på hver bokstav i teksten vår. Resultatet vil være en ny streng med alle bokstavene i små bokstaver.
+
+La oss prøve å kjøre koden med en tekst og se på resultatet:
+
+```Haskell
+*Main> konverterTekst "HeLLo Haskell"
+"hello haskell"
 ```
 
-Som vi kan se, blir alle bokstavene omgjort til små bokstaver, inkludert æ, ø og å.
+Som du kan se, blir alle bokstavene i teksten vår omgjort til små bokstaver, og vi kan bruke denne funksjonen på alle typer strenger.
 
-## Dypdykk
+## Dykk dypere
 
-Det er verdt å merke seg at funksjonen "toLower" kun konverterer engelske bokstaver til små bokstaver. For å konvertere andre språk sine bokstaver, må man bruke en annen funksjon som er spesifikk for det ønskede språket. I tillegg kan det være utfordrende å konvertere tegnsett som ikke er en del av det latinske alfabetet, og det kan være nødvendig å bruke eksterne biblioteker eller implementere egne funksjoner for å håndtere disse tilfellene.
+Som nevnt tidligere, bruker vi funksjonen `toLower` fra modulen `Data.Char` for å konvertere bokstavene til små bokstaver. Denne funksjonen tar inn en bokstav som et argument og returnerer tilsvarende bokstav i små bokstaver.
+
+Det som er spesielt med denne funksjonen er at den også konverterer bokstaver fra språk som bruker andre alfabet, som for eksempel det greske alfabetet. Dette betyr at uansett hvilket språk eller tegnsett teksten din er på, vil denne funksjonen fungere som den skal.
 
 ## Se også
 
-- [Haskell Data.Char-modulen](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
-- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)
-- [Enkel guide til Haskell](https://www.codementor.io/@jhanson701/haskell-functional-programming-git-getting-started-vyrg151ce)
+- [Haskell-dokumentasjon for Data.Char-modulen](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+- [Tutorial om strenger og teksthåndtering i Haskell](https://learnyouahaskell.com/starting-out#reading-and-writing-files)

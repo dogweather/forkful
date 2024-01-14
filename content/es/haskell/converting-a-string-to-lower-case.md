@@ -1,39 +1,62 @@
 ---
-title:    "Haskell: Convirtiendo una cadena a minúsculas"
+title:    "Haskell: Convertir una cadena en minúsculas"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Convertir una cadena de texto a minúsculas puede parecer algo trivial, pero en realidad es una tarea útil y necesaria al trabajar con datos de texto en Haskell. Al convertir las letras de una cadena a minúsculas, podemos facilitar la comparación de cadenas y realizar operaciones de búsqueda y ordenamiento con mayor precisión.
+En la programación, es común encontrarse con la necesidad de manipular strings de texto. Una tarea común es convertir un string a su versión en minúsculas. En este artículo, exploraremos cómo realizar esta tarea en Haskell.
 
 ## Cómo hacerlo
-
-En Haskell, convertir una cadena a minúsculas es muy sencillo gracias a la función `map`, que nos permite aplicar una operación a cada elemento de una lista. En este caso, utilizaremos la función `toLower` del módulo Data.Char para convertir cada carácter de la cadena a su equivalente en minúscula.
+Para convertir un string a minúsculas en Haskell, podemos usar la función `toLower` de la librería `Data.Char`. Esta función toma como argumento un `Char` y devuelve el mismo carácter en minúscula.
 
 ```Haskell
 import Data.Char (toLower)
 
-lowercaseString :: String -> String
-lowercaseString str = map toLower str
-
--- Ejemplo de entrada y salida
-lowercaseString "HOLA MUNDO" -- "hola mundo"
-lowercaseString "Coding in Haskell" -- "coding in haskell"
+-- Ejemplo de uso de la función toLower
+toLower 'H' -- Devuelve 'h'
+toLower 'E' -- Devuelve 'e'
 ```
 
-Con la función `lowercaseString` definida, podemos aplicarla a cualquier cadena de texto para obtener su equivalente en minúsculas.
+Sin embargo, para aplicarlo a un string completo, necesitamos usar la función `map` para aplicar `toLower` a cada carácter del string.
+
+```Haskell
+convertirAMin :: String -> String
+convertirAMin str = map toLower str
+
+-- Ejemplo de uso de la función convertirAMin
+convertirAMin "Haskell" -- Devuelve "haskell"
+convertirAMin "Proyecto" -- Devuelve "proyecto"
+```
+
+También podemos utilizar la función `map` en conjunto con la función `words` para convertir cada palabra de un string a minúsculas.
+
+```Haskell
+convertirPalabrasAMin :: String -> String
+convertirPalabrasAMin str = unwords $ map convertirAMin (words str)
+
+-- Ejemplo de uso de la función convertirPalabrasAMin
+convertirPalabrasAMin "Hola A Todos" -- Devuelve "hola a todos"
+convertirPalabrasAMin "Bienvenidos Al Mundo De Haskell" -- Devuelve "bienvenidos al mundo de haskell"
+```
 
 ## Profundizando
+La función `toLower` realiza la conversión a minúsculas basándose en la tabla de caracteres Unicode. Esto significa que no solo funciona para letras del alfabeto, sino también para caracteres especiales y acentos.
 
-Al analizar la función `lowercaseString`, podemos ver que se basa en el concepto de `map` y funciones de orden superior, lo que nos permite aplicar transformaciones a los elementos de una lista sin tener que recorrerla manualmente. También es importante mencionar que la función `lowercaseString` es pura, lo que significa que no tiene efectos secundarios y siempre producirá el mismo resultado dado el mismo argumento.
+Otra forma de convertir un string a minúsculas en Haskell sería utilizando la función `mapM`, que permite aplicar una acción monádica a cada elemento de una lista. En este caso, la acción monádica sería `putStrLn` para imprimir cada carácter en minúscula.
 
-Además de la función `toLower`, el módulo Data.Char también nos ofrece otras funciones útiles para trabajar con caracteres, como `isLower` para determinar si un carácter es una letra minúscula o `isAlpha` para determinar si un carácter es una letra del alfabeto.
+```Haskell
+convertirStringAMin :: String -> IO ()
+convertirStringAMin str = mapM (putStrLn . toLower) str
+
+-- Ejemplo de uso de la función convertirStringAMin
+convertirStringAMin "Haskell" -- Imprime "haskell"
+convertirStringAMin "¡Hola Mundo!" -- Imprime "¡hola mundo!"
+```
 
 ## Ver también
-
-- [Documentación de la función `map` en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-- [Tutorial de funciones de orden superior en Haskell](https://wiki.haskell.org/Higher_order_function)
-- [Documentación del módulo Data.Char en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [Documentación de la función toLower en Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
+- [Tutorial de Haskell en español](https://www.haskell-es.org/tutorial/)
+- [Ejemplos de código en Haskell en GitHub](https://github.com/Haskell-Es/Ejercicios)

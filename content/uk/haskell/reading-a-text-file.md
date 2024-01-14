@@ -1,57 +1,54 @@
 ---
 title:    "Haskell: Читання текстового файлу"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Why:
+# Чому
 
-Перерахування текстового файлу є важливим етапом в багатьох програмах, таких як обробка даних, інструменти пошуку і фільтрації, а також програми для аналізу тексту. Навчившись читати дані з текстового файлу у Haskell, ви зможете ефективно використовувати ці дані для своїх потреб.
+У цій статті ми дізнаємося, як читати текстовий файл у мові програмування Haskell та яку користь це може мати.
 
-## How To:
+# Як це зробити
 
-```Haskell
--- Читання текстового файлу
-main = do
-  -- Відкриття файлу для читання
-  inh <- openFile "file.txt" ReadMode
-  -- Прочитання всього файлу і збереження результату у змінну fileStr
-  fileStr <- hGetContents inh
-  -- Закриття файлу
-  hClose inh
-  -- Виведення вмісту файлу на екран
-  putStrLn fileStr
-```
-
-Output:
-```
-This is a sample text file that we will read using Haskell.
-З цим текстовим файлом ми будемо працювати у нашому прикладі.
-```
-
-## Deep Dive:
-
-При читанні текстового файлу у Haskell, важливо пам'ятати про те, що дані будуть читатись починаючи з поточної позиції в файлі. Це означає, що після першого ж функціонального виклику, позиція зміщується на кінець прочитаного рядка. Також важливо зазначити, що при зчитуванні даних, вони автоматично перетворюються в рядок (String).
-
-Для розбиття файла на окремі рядки, можна скористатись функцією ```lines```. Наприклад:
+Для того, щоб прочитати текстовий файл у Haskell, ми можемо використовувати стандартну бібліотеку `Text`. Для початку, необхідно імпортувати модуль `System.IO`, який містить необхідні функції для роботи з файлами.
 
 ```Haskell
-main = do
-  inh <- openFile "file.txt" ReadMode
-  -- Прочитання та розбиття файлу на окремі рядки
-  fileLines <- fmap lines (hGetContents inh)
-  hClose inh
-  -- Виведення розбитих рядків на екран
-  print fileLines
+import System.IO
 ```
 
-Output:
-```
-["This is a sample text file that we will read using Haskell.", "З цим текстовим файлом ми будемо працювати у нашому прикладі."]
+Далі необхідно відкрити файл за допомогою функції `openFile`, яка приймає два аргументи: шлях до файлу та режим відкриття.
+
+```Haskell
+fileHandle <- openFile "file.txt" ReadMode
 ```
 
-## See Also:
+Отриманий змінний `fileHandle` містить вказівник на відкритий файл. За допомогою функції `hGetContents` ми можемо прочитати вміст файлу у вигляді рядка.
 
-- [Oficijnyj sajt Haskell](http://www.haskell.org/)
-- [Komanda hGetContents u Haskell](https://hackage.haskell.org/package/base-4.11.1.0/docs/System-IO.html#v:hGetContents)
+```Haskell
+fileContents <- hGetContents fileHandle
+```
+
+І на останок, закриваємо файл за допомогою функції `hClose`.
+
+```Haskell
+hClose fileHandle
+```
+
+Тепер у змінній `fileContents` ми маємо рядок з вмістом текстового файлу, який можемо розбирати та обробляти.
+
+# Глибокий занурення
+
+Також важливо знати, що в мові Haskell є багато інструментів для роботи з текстовими файлами. Якщо вам потрібно прочитати вміст файлу построково, ви можете скористатися функцією `lines`, яка розбиває текст на рядки за символом переносу рядка.
+
+```Haskell
+fileLines <- fmap lines (readfile "file.txt")
+```
+
+Також можна обробляти текст за допомогою регулярних виразів за допомогою модуля `Text.Regex`. Тут детальніше про роботу з регулярними виразами у Haskell: [посилання](https://www.reddit.com/r/haskell/comments/84jo0h/beginners_guide_to_regexes_in_haskell/).
+
+# Дивись також
+
+- [Офіційна документація з роботи з файлами у Haskell](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
+- [Туторіал з роботи з файлами у Haskell](https://www.codewars.com/kata/51c8e184a9d15af5a8000055)

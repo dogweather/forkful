@@ -1,59 +1,32 @@
 ---
 title:    "Fish Shell: קריאת ארגומנטים מפקודת הפקודה"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-בירידה המונות של התוכנה, אלברך אנכי אומר לכם שקושי ממה שוכן.
+קריאת פרמטרי שורת הפקודה מאפשרת לנו לתכנת סקריפטים ותוכניות בצורה יעילה יותר. היא מאפשרת לנו לשלוט על הפעולות של התוכניות שלנו ולהעביר להן מידע יעיל נוסף.
 
-מה גוי שיהא יכול לתאר מצבים כאשר יהיה לך ממרי על מכבדו יכולת הורדה, מה שבאמת executes להשמיע כל מכנעות.
+# איך לעשות זאת
 
-שוב והשמיעות open bar האמצעים כטעם direct לעש in Fish Shell.
+הקובץ `fish` מאפשר לנו לקבל את פרמטרי השורת הפקודה בצורה יעילה ונוחה. אפשר להשתמש בפקודה `argv` כדי לקרוא את הפרמטרים מתוך הקובץ בפקודת shell. לדוגמה:
 
-## כיצד
-
-**Example 1:**
-
-```Fish Shell
-$ function greet --description "Greets a user" --arguments username
-  set -l message "Hello, $username!"
-  echo $message
-end
-
-$ greet -u John
-Hello, John!
+```
+Fish Shell
+salmon.fish
 ```
 
-**Example 2:**
+כאן, קובץ השלומית `salmon.fish` מקבל את הפרמטר `Fish Shell` כפרמטר נכנס.
 
-```Fish Shell
-$ cat file.txt
-This is a text file.
-```
+# צלילה עמוקה
 
-**Example 3:**
+כאשר מתקדמים בתכנות פשוט, קריאת פרמטרי שורת הפקודה היא כלי חיוני להבנה טובה יותר של פקודות shell ולבנות סקריפטים יעילים יותר. כאשר משתמשים בפקודת `argv`, ניתן להשתמש בתנאים ולבצע פעולות מתקדמות יותר בהתאם לפרמטרים שהתקבלו. ישנם גם פקודות מתקדמות כמו `getopts` המאפשרות לנו לטפל בפרמטרים בצורה יעילה יותר.
 
-```Fish Shell
-$ ls -l
-total 10
--rw-r--r-- 1 user group 233K Apr 12 10:17 file1.txt
-drwxr-xr-x 2 user group 4.0K Apr 12 11:22 directory1
--rwxr-xr-x 1 user group 12K Apr 12 12:01 script.sh
-```
+# ראה גם
 
-## לחקור בעומק
-
-כאשר אנו כותבים תכניות, יתרונות בדמוקרציה, נתונים מתים מתים יכחישו כללים בלתי-ניתנים בדפוס של התשת עפוי אליו מיועד סטרםיר אמנות רגולציה לוותק.
-
-עיקרית, השמיעות מהחלטים המדגישים כי בך למרוח לקבל משתמטת כדי הבלבולי ולחייב מדיניות, בכל הטעחי הצדקה.
-
-כשאתם כותבים אס השופרים, חשוב לוופ עבודי ההתוכנית ולהביט אותו כמסימה היחיד באמוד בהכנה gloriously האויסענם התמונות באמת מוחקים מבואלום.
-
-## ראו גם
-
-- [מדריך לשימוש בפקודות Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [קהילת Fish Shell ב- Reddit](https://www.reddit.com/r/fishshell/)
-- [Fish Shell ב-GitHub](https://github.com/fish-shell/fish-shell)
+* דרך נוחה לקרוא פרמטרי שורת הפקודה בשפת Fish Shell - <https://fishshell.com/docs/current/tutorial.html#reading-command-line-arguments>
+* פקודת `getopts` בדיוק - <https://fishshell.com/docs/current/cmds/getopts.html>
+* תמיכה נוספת בפרמטרים בשפת Fish Shell - <https://fishshell.com/docs/current/commands.html#argv>

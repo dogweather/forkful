@@ -1,46 +1,52 @@
 ---
-title:    "Gleam: Merkkijonon isojen kirjainten muotoilu"
+title:    "Gleam: Merkkijonon isojen kirjainten muuttaminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
+Miksi: Yksi jos kaksi lausetta selittämään *miksi* joku haluaa muuttaa merkkijonon isoihin kirjaimiin.
+
 ## Miksi
 
-Kapitalisointi on tärkeä osa ohjelmointia, ja se auttaa tekstin selkeyttämisessä ja yhtenäistämisessä. Se on hyödyllinen esimerkiksi kun halutaan muuttaa syötteen muotoa tai näyttää merkkijonoja käyttäjille. Gleam-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan suorittaa stringien kapitalisointia, mikä tekee siitä ihanteellisen vaihtoehdon tähän tarkoitukseen.
+Merkkijonon muuttaminen isoihin tai pieniin kirjaimiin on yksi yleisimpiä tehtäviä ohjelmoinnissa. Se on tärkeää esimerkiksi käyttäjän syötteiden käsittelyssä tai tekstin muotoilussa. Gleam tarjoaa yksinkertaisen, mutta tehokkaan tavan muuttaa merkkijonon isot tai pienet kirjaimet halutulla tavalla.
 
-## Kuinka tehdä
+## Miten
 
-Kapitalisointi Gleam-kielellä onnistuu helposti käyttämällä sisäänrakennettuja funktioita. Oletetaan, että meillä on muuttuja `teksti` joka sisältää merkkijonon "tämä on teksti". Voimme käyttää `String.capitalize` funktiota muuttaaksemme tekstin ensimmäisen kirjaimen isoiksi kirjaimiksi:
-
-```Gleam
-teksti
-|> String.capitalize
-```
-
-Tämä tuottaa tuloksen "Tämä on teksti". Voimme myös käyttää `String.to_uppercase` funktiota muuttaaksemme koko tekstin isoiksi kirjaimiksi:
+Gleamilla merkkijonon muokkaaminen isoiksi tai pieniksi kirjaimiksi on helppoa. Se käyttää sisäänrakennettuja funktioita, joten koodin luettavuus ja tehokkuus pysyvät hyvinä. Alla esimerkki koodista ja sen tuottamasta tulosteesta:
 
 ```Gleam
-teksti
-|> String.to_uppercase
+fn muuta_isoksi(merkkijono) {
+    return String.uppercase(merkkijono)
+}
+
+fn main() {
+    let syote = "Tervetuloa Gleam-harjoitteluun!"
+    let tulos = muuta_isoksi(syote)
+    IO.println(tulos)
+}
 ```
 
-Tämä tuottaa tuloksen "TÄMÄ ON TEKSTI". Näiden funktioiden lisäksi Gleam tarjoaa myös muita hyödyllisiä toimintoja stringien manipulointiin, kuten `String.to_lowercase` ja `String.to_titlecase`.
-
-## Syvemmälle
-
-Kapitalisointia käyttäessämme voimme myös tarvittaessa muuttaa tietyn osan merkkijonosta. Voimme käyttää `String.replace` funktiota vaihtaaksemme tietyn merkkijonon osan toiseen. Esimerkiksi, jos haluamme korvata "teksti" sanalla "koodi", voimme käyttää seuraavaa koodia:
-
-```Gleam
-teksti
-|> String.replace("teksti", "koodi")
-|> String.capitalize
+```
+TERVETULOA GLEAM-HARJOITTELUUN!
 ```
 
-Tämä tuottaa tuloksen "Tämä on koodi". Lisäksi voimme käyttää `String.contains` funktiota tarkistaaksemme, sisältääkö merkkijono tietyn osan. Tämä on erittäin hyödyllistä, kun haluamme tehdä kapitalisointiä vain tietynlaisissa tapauksissa.
+Kuten nähdään, merkkijonon muuttaminen isoiksi kirjaimiksi tapahtuu `String.uppercase()`-funktiolla. Tässä esimerkissä funktio ottaa parametrina merkkijonon, mutta sitä voidaan soveltaa myös muilla tietotyypeillä kuten listoilla ja tupleilla.
+
+## Syvällinen sukellus
+
+Gleamilta löytyy myös muita sisäänrakennettuja funktioita merkkijonojen muokkaamiseen. Esimerkiksi `String.capitalize()` muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja loput kirjaimet pieniksi. `String.titlecase()` puolestaan muuttaa jokaisen sanan ensimmäisen kirjaimen isoksi ja loput pieniksi.
+
+Lisäksi Gleamin standardikirjastosta löytyy moduuli `gleam/string/transform` jolla voi suorittaa monimutkaisempia muokkauksia merkkijonolle, kuten esimerkiksi merkkien kääntämisen, leikkaamisen ja yhdistämisen. Tutustu Gleamin dokumentaatioon saadaksesi lisätietoja ja esimerkkejä.
 
 ## Katso myös
 
-- [Gleam Ohjelmointikielen kotisivu](https://gleam.run/)
-- [Gleam Ohjelmointikielen oppaat](https://gleam.run/getting-started)
-- [Kapitalisoinnin dokumentaatio Gleamissa](https://gleam.run/core/String.html#functions)
+- [Gleam - virheetön ja staattisesti tyypitetty funktionaalinen ohjelmointikieli](https://gleam.run/)
+- [Gleam-dokumentaatio](https://gleam.run/documentation/)
+- [Gleam-standardikirjasto](https://github.com/gleam-lang/gleam_stdlib)
+
+Kiitos, että luit tämän blogikirjoituksen ja toivottavasti se auttoi sinua ymmärtämään merkkijonojen muokkaamista Gleamilla. Jatka Gleamista oppimista ja hyödynnä sen ominaisuuksia käyttäessäsi sitä tulevissa projekteissasi.
+
+*Kiitos lukuunpanosi tekohetkestäsi,*
+Isabella, Gleam Suomi

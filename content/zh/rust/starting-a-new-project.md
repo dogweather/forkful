@@ -1,47 +1,35 @@
 ---
 title:    "Rust: 开始一个新项目"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新的项目
+## 为什么选择Rust来开始一个新项目
 
-Rust是一门现代化的编程语言，它结合了高性能、并发性和内存安全性。如果您想要开发一个快速、可靠和安全的项目，那么Rust可能是您的最佳选择。
+如果你是一个有经验的程序员，估计你一定听说过Rust这门语言。它是一种高效、安全和现代的语言，为了解决C和C++存在的缺陷而设计。所以，如果你正在考虑开始一个新的项目，不妨考虑使用Rust来编写它。下面会为你提供如何使用Rust来开始一个新项目的方法，以及如何更深入地了解这门语言。
 
-## 如何开始
+## 如何开始一个新的Rust项目
 
-首先，您需要安装Rust编译器。您可以在Rust的官方网站上找到安装指南，并选择适合您操作系统的版本。安装完成后，您就可以开始编写您的第一个Rust程序了！
-
-让我们来编写一个简单的程序，输出“Hello World”：
+如果你已经安装了Rust工具链，只需要在命令行中输入`cargo new <项目名>`即可创建一个新的Rust项目。这条命令会生成一个包含了`src`文件夹和`Cargo.toml`文件的项目目录结构。`src`文件夹中的`main.rs`文件就是你的项目的入口文件，你可以在这里编写你的代码。下面是一个使用Rust打印"Hello, world!"的例子：
 
 ```Rust
 fn main() {
-  println!("Hello World");
+    println!("Hello, world!");
 }
 ```
 
-接下来，您可以编译并运行这段代码。在终端中输入以下命令：
+如果你想运行代码，可以使用`cargo run`命令。如果想编译代码而不运行它，可以使用`cargo build`命令。Rust还有一个非常方便的工具来测试代码，就是`cargo test`命令。当然，这只是Rust提供的一小部分功能，更多有关Rust的内容请移步下一节。
 
-```Rust
-rustc main.rs
-./main
-```
+## 深入了解如何开始一个新的Rust项目
 
-您将看到输出结果为“Hello World”。这是一个简单的Rust程序，但它展示了Rust的语法和结构。现在您可以尝试编写更复杂的程序了！
+如果你想了解Rust语言的更多细节，可以阅读官方文档或者看一些相关的视频教程。学习Rust的最佳方式就是尝试编写一些项目来实践你的知识。同时，Rust也有一个强大的社区，你可以参与其中，与其他Rust开发者交流经验。总的来说，学习Rust需要耐心和持久的精神，因为它不像其他语言那么容易学习，但一旦掌握了它的特性，你将会发现它的强大之处。
 
-## 深入探讨
+## 请参阅
 
-在深入探讨如何开始一个新的Rust项目之前，建议您先了解一些基础知识。Rust具有严格的所有权系统，因此您需要了解如何管理所有权和借用。此外，Rust也具有模式匹配和迭代器等高级特性，这些特性可以帮助您编写更优雅的代码。
+- [Rust官方文档](https://www.rust-lang.org/zh-CN/)
+- [Rust学习资源汇总](https://github.com/freedomofkeima/rust-learning/)
+- [Rust语言中文社区](https://rust.cc/)
 
-在开始一个新项目时，建议您先确定好项目的结构和规划好代码的架构。Rust提供了一些优秀的工具和框架，例如Cargo包管理器和Actix-Web框架，这些工具可以帮助您更有效地开发和管理项目。
-
-## 查看更多资料
-
-如果您对Rust语言还不太了解，可以参考下面的链接来学习更多：
-
-- Rust官方网站：https://www.rust-lang.org/zh-CN/
-- Rust编程语言书籍：https://doc.rust-lang.org/book/
-- Rust中文社区：https://rust.cc/
-- Rust标准库文档：https://doc.rust-lang.org/std/
-- Rust编程实战系列教程：https://github.com/rust-lang-cn/rust-cookbook
+感谢阅读这篇关于使用Rust来开始一个新项目的博文，希望对你有所帮助！

@@ -1,84 +1,46 @@
 ---
-title:    "Go: Borrando caracteres que coinciden con un patrón"
+title:    "Go: Borrando caracteres que coincidan con un patrón"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías eliminar caracteres que coinciden con un patrón?
+## Por qué
 
-Eliminar caracteres que coinciden con un patrón puede ser una tarea útil en programas de Go. Puede ayudar a limpiar cadenas de texto y buscar patrones específicos en ellas. En este artículo, aprenderemos cómo puedes realizar esta tarea de manera eficiente en tus programas de Go.
+Muchas veces en la programación, nos encontramos con la necesidad de eliminar ciertos caracteres que coinciden con un patrón específico en un texto. Ya sea para limpiar datos, validar entradas de usuario o realizar búsquedas en un archivo, esta tarea puede ser crucial para el buen funcionamiento de nuestro programa.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en un texto, primero necesitas importar la biblioteca "strings" de Go. Después de eso, puedes utilizar la función "ReplaceAll" de la biblioteca para reemplazar los caracteres que coinciden con tu patrón con una cadena vacía. Por ejemplo:
+En Go, podemos utilizar la función `Regexp.ReplaceAllString()` del paquete `regexp` para eliminar todos los caracteres que coinciden con un patrón en una cadena. Primero, debemos compilar una expresión regular con el patrón que deseamos buscar, utilizando la función `regexp.Compile()` y luego utilizar la función `ReplaceAllString()` pasando la cadena original y una cadena vacía como argumentos.
+
+En el siguiente ejemplo, eliminaremos todas las vocales de una palabra. Dentro de un bloque de código `Go`, se vería así:
 
 ```Go
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-
-	// Definir la cadena original
-	texto := "Esta es una cadena de ejemplo con algunos caracteres especiales :%#@"
-
-	// Eliminar caracteres especiales utilizando "ReplaceAll"
-	textoLimpio := strings.ReplaceAll(texto, ":%#@", "")
-
-	// Imprimir cadena original y cadena limpia
-	fmt.Println("Texto original:", texto)
-	fmt.Println("Texto limpio:", textoLimpio)
+	original := "hola mundo"
+	patron, _ := regexp.Compile("[aeiou]")
+	limpiado := patron.ReplaceAllString(original, "")
+	fmt.Println(limpiado) //h l mnd
 }
 ```
 
-El resultado de este programa sería:
-
-```
-Texto original: Esta es una cadena de ejemplo con algunos caracteres especiales :%#@
-Texto limpio: Esta es una cadena de ejemplo con algunos caracteres especiales 
-```
-
-En este ejemplo, hemos eliminado los caracteres ":%#@" que coinciden con el patrón en la cadena original.
+También podemos utilizar la función `Regexp.ReplaceAll()` para eliminar los caracteres que coinciden con un patrón en una cadena. En este caso, en lugar de pasar una cadena vacía como segundo argumento, podemos utilizar una función que reciba el subparte coincidente y devuelva la cadena vacía. Este enfoque puede ser útil si queremos realizar algún tipo de transformación en los caracteres coincidentes antes de eliminarlos.
 
 ## Profundizando
 
-La función "ReplaceAll" de la biblioteca "strings" en realidad utiliza la función "Replace" en un bucle interno para reemplazar todas las ocurrencias del patrón en la cadena original. Si quieres tener más control sobre este proceso, también puedes utilizar la función "Replace" directamente y especificar el número máximo de reemplazos que deseas hacer. Por ejemplo:
+El paquete `regexp` también nos ofrece diferentes opciones para trabajar con expresiones regulares. Por ejemplo, podemos utilizar `Regexp.FindAllString()` para encontrar todas las subpartes en una cadena que coinciden con un patrón. Y si necesitamos unir varios patrones en una sola expresión regular, podemos utilizar el operador `|` para separarlos.
 
-```Go
-package main
-
-import "fmt"
-import "strings"
-
-func main() {
-
-	// Definir la cadena original
-	texto := "Esta es una cadena de ejemplo con algunos caracteres especiales :%#@ y más :%#@"
-
-	// Eliminar caracteres específicos utilizando "Replace"
-	textoLimpio := strings.Replace(texto, ":%#@", "", 1)
-
-	// Imprimir cadena original y cadena limpia
-	fmt.Println("Texto original:", texto)
-	fmt.Println("Texto limpio:", textoLimpio)
-}
-```
-
-El resultado de este programa sería:
-
-```
-Texto original: Esta es una cadena de ejemplo con algunos caracteres especiales :%#@ y más :%#@
-Texto limpio: Esta es una cadena de ejemplo con algunos caracteres especiales y más :%#@
-```
-
-En este caso, hemos especificado que solo queremos reemplazar la primera ocurrencia del patrón en la cadena original.
+Además, también es posible utilizar expresiones regulares para validar entradas de usuario, como contraseñas o direcciones de correo electrónico, y garantizar que cumplan con ciertos criterios. En general, utilizar expresiones regulares puede ayudarnos a agilizar nuestro código y evitar la necesidad de utilizar largas y complejas cadenas de condicionales.
 
 ## Ver también
-
-- Documentación de la biblioteca "strings" en Go: https://golang.org/pkg/strings/
-- Ejemplos adicionales de eliminación de caracteres que coinciden con un patrón en Go: https://golangbyexample.com/go-delete-characters-from-string/
-- Tutorial de Go en español: https://blog.golang.org/es/
-
-Espero que este artículo te haya sido útil en tu aprendizaje de Go y te ayude a utilizar la eliminación de caracteres que coinciden con un patrón en tus programas de manera efectiva. ¡Feliz codificación!
+- Documentación oficial del paquete `regexp`: https://golang.org/pkg/regexp/
+- Tutorial interactivo sobre expresiones regulares en Go: https://regex-golang.appspot.com/
+- Ejemplos prácticos de cómo utilizar expresiones regulares en Go: https://gobyexample.com/regular-expressions

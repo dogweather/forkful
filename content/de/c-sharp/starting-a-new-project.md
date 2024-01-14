@@ -1,42 +1,56 @@
 ---
-title:    "C#: Eine neue Projekt starten"
+title:    "C#: Ein neues Projekt beginnen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Entscheidung, ein neues Projekt zu starten, kann aus verschiedenen Gründen getroffen werden. Vielleicht hast du eine neue Idee, die du verwirklichen möchtest, oder du möchtest deine Fähigkeiten in C# verbessern. Egal aus welchem Grund, das Schreiben von Code kann sowohl Spaß machen als auch herausfordernd sein.
+Wer C# lernt, erhält nicht nur eine mächtige Programmiersprache, sondern auch einen starken Partner für die Entwicklung eigener Projekte. Ob Sie ein Anfänger oder ein erfahrener Entwickler sind, es gibt viele gute Gründe, ein neues C# Projekt zu starten.
 
-## Wie geht man vor
+## Wie geht's?
 
-Um ein neues C# Projekt zu starten, musst du zuerst eine integrierte Entwicklungsumgebung (IDE) auswählen. Beliebte Optionen sind Visual Studio oder Visual Studio Code. Danach kannst du ein neues Projekt erstellen, indem du auf "Datei" und dann "Neues Projekt" klickst. Wähle anschließend "C#" als Programmiersprache und entscheide dich für eine Vorlage basierend auf deinem Projekttyp (z.B. Konsolenanwendung oder Webanwendung).
+Um ein neues C# Projekt zu starten, benötigen Sie zunächst eine Entwicklungsumgebung wie Visual Studio oder Visual Studio Code. Öffnen Sie dann die IDE und folgen Sie diesen Schritten:
 
-Hier ist ein Beispiel einer einfachen Konsolenanwendung in C#:
+1. Öffnen Sie das Menü "Datei" und wählen Sie "Neues Projekt".
+2. Wählen Sie unter "Vorlagen" die Option "Konsolenanwendung".
+3. Geben Sie einen Namen für Ihr Projekt ein und wählen Sie einen Speicherort aus.
+4. Klicken Sie auf "Erstellen" und die IDE erstellt eine leere C#-Konsolenanwendung für Sie.
+
+Nun können Sie mit dem Codieren beginnen! Hier ist ein Beispiel, wie Sie "Hello World!" in der Konsole ausgeben können:
 
 ```C#
 using System;
 
-class Program
+namespace MeineErsteAnwendung
 {
-  static void Main()
-  {
-    Console.WriteLine("Hallo, Welt!");
-  }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
 }
 ```
 
-Nachdem du deinen Code geschrieben hast, kannst du ihn ausführen, indem du auf die Schaltfläche "Start" in der IDE klickst. Das Ergebnis sollte die Ausgabe "Hallo, Welt!" in der Konsole sein.
+Beim Ausführen des Programms sollten Sie "Hello World!" in der Konsole sehen. Probieren Sie es selbst aus und experimentieren Sie mit verschiedenen Ausgaben.
 
-## Tiefere Einblicke
+## Tiefer graben
 
-Bevor du mit dem Schreiben von Code beginnst, ist es wichtig, eine klare Vision für dein Projekt zu haben. Definiere die Ziele, die du erreichen möchtest, und welchen Zweck dein Projekt erfüllen soll. Außerdem solltest du dir Gedanken über die Struktur deines Codes und die Verwendung von Kommentaren machen, um den Code für andere Entwickler oder dich selbst in der Zukunft verständlich zu gestalten.
+Wenn Sie tiefer in die Entwicklung von C# Projekten einsteigen wollen, gibt es viele Ressourcen im Internet, die Ihnen dabei helfen können. Hier sind einige beliebte Ressourcen, die Ihnen den Einstieg erleichtern können:
 
-Wenn du dich noch nicht sicher fühlst, gibt es viele Ressourcen online, um dir bei deinem Projekt zu helfen. Von Tutorials und Dokumentationen bis hin zu Foren und Communitys, in denen du deine Fragen stellen kannst, gibt es unendlich viele Möglichkeiten, um dich beim Schreiben von C# Code weiterzubilden.
+- [Microsoft Dokumentation zu C#] (https://docs.microsoft.com/de-de/dotnet/csharp/)
+- [C# Tutorials auf YouTube] (https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWoazjhXQzBKMrFuArxpW80)
+- [C#-Kurse auf Udemy] (https://www.udemy.com/topic/c-sharp/)
+- [C#-Community auf Reddit] (https://www.reddit.com/r/csharp/)
+
+Diese Ressourcen bieten Ihnen eine Fülle an Informationen zu C#, von Grundlagen bis hin zu fortgeschrittenen Konzepten. Nehmen Sie sich Zeit, um sie zu erkunden und Ihr Verständnis für die Programmiersprache zu vertiefen.
 
 ## Siehe auch
 
-- [Einführung in C# von Microsoft](https://docs.microsoft.com/de-de/dotnet/csharp/)
-- [The C# Programming Language von Anders Hejlsberg](https://www.amazon.de/C-Programming-Language-Anders-Hejlsberg/dp/0321760439)
-- [C# Tutorial von TutorialsPoint](https://www.tutorialspoint.com/csharp/index.htm)
+- [Warum C# eine großartige Programmiersprache für Anfänger ist] (https://www.freecodecamp.org/news/why-c-sharp-is-a-great-programming-language-for-beginners/)
+- [C# vs. Java - Welche Sprache sollten Sie lernen?] (https://www.toptal.com/java/vs-c-sharp)
+- [Die besten C#-Frameworks und Bibliotheken für die Entwicklung von Desktop-Anwendungen] (https://www.slant.co/topics/609//best-c-frameworks-for-building-windows-desktop-apps)

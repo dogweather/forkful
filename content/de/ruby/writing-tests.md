@@ -1,39 +1,37 @@
 ---
-title:    "Ruby: Tests schreiben"
+title:    "Ruby: Programmieren von Tests"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum Testen Wichtig Ist
+## Warum
 
-Sichere und zuverlässige Software zu schreiben ist eine der Hauptaufgaben von Programmierern. Das Testen des Codes ist ein wichtiger Schritt um sicherzustellen, dass die Anwendung wie beabsichtigt funktioniert. Durch das Schreiben von Tests können mögliche Fehler und Probleme frühzeitig erkannt und behoben werden, was die Qualität der Software verbessert und die Zeit für das Debugging reduziert.
+Warum sollte man sich die Mühe machen, Tests in Ruby zu schreiben? Nun, Tests sind ein entscheidender Bestandteil des Entwicklungsprozesses in Ruby. Sie helfen dabei, sicherzustellen, dass der Code korrekt funktioniert und verhindern Fehler und Bugs in der Zukunft. Außerdem ermöglichen sie es, den Code einfacher zu warten und zu erweitern.
 
-## So Geht's!
+## Wie man Tests schreibt
 
-Um Tests in Ruby zu schreiben, verwenden wir das Framework RSpec. Hier ist ein einfaches Beispiel, wie man einen einfachen "Hello World" Test schreibt:
+Um Tests in Ruby zu schreiben, gibt es einige grundlegende Schritte zu beachten. Zunächst müssen Sie ein Test-Framework wie RSpec oder MiniTest installieren. Dann erstellen Sie eine neue Datei mit der Endung ".rb" und fügen den folgenden Code ein:
 
 ```Ruby
-# Erstelle ein Beispiel-Gruppen-Objekt
-RSpec.describe "Greeting" do 
-  # Definiere eine "it" Methode mit einer Beschreibung
-  it "sagt Hallo Welt" do
-    # Schreibe den Code, den wir testen möchten
-    message = "Hallo Welt"
-    # Gib die erwartete Ausgabe an
-    expect(message).to eq("Hallo Welt")
+require "rspec/autorun" 
+
+describe "Beispieltest" do
+  it "sollte etwas tun" do
+    # Hier können Sie Ihren Code schreiben
   end
 end
 ```
 
-Die oben genannte Beispiel-Gruppe beschreibt die "Greeting" Klasse und testet, ob die Ausgabe der Variable "message" dem erwarteten String "Hallo Welt" entspricht. Um diese Tests auszuführen, müssen wir RSpec installieren und dann in der Konsole den Befehl `rspec example_spec.rb` ausführen. Bei erfolgreicher Ausführung erhalten wir die Meldung "1 Beispiel, 0 Fehler".
+In diesem Beispiel haben wir RSpec verwendet, um einen Test namens "Beispieltest" zu definieren, der etwas tun sollte. Sie können Ihren eigenen Code innerhalb der "it" -Anweisung schreiben und dann mit dem Befehl "rspec" in der Konsole ausführen, um Ihre Tests laufen zu lassen.
 
-## Tiefer Einblick
+## Tiefergehender Einblick
 
-Neben grundlegenden Tests wie dem Vergleichen von String-Werten kann RSpec auch für komplexe Anwendungen verwendet werden, wie zum Beispiel das Testen von Webanwendungen mit dem Framework Capybara. Es gibt auch verschiedene Arten von Testfällen, wie Unit-Tests, Integrations-Tests und Acceptance-Tests, die alle verschiedene Aspekte der Anwendung abdecken. Das Schreiben von Tests erfordert eine gewisse Übung und Erfahrung, um effektiv und effizient durchgeführt zu werden. Es ist auch wichtig, Tests regelmäßig auszuführen, um sicherzustellen, dass Änderungen im Code keine unerwünschten Auswirkungen auf die Funktionalität haben.
+Tests können viel mehr als nur den Code zu überprüfen. Sie können auch dazu beitragen, den Code zu refaktorisieren und die Lesbarkeit und Wartbarkeit zu verbessern. Indem Sie verschiedene Testfälle abdecken, können Sie sicherstellen, dass Ihr Code robust und fehlerfrei ist. Außerdem können Sie mit Mocking und Stubs komplexe Abhängigkeiten umgehen und sich auf Einzelteile des Codes konzentrieren.
 
-## Siehe Auch
+## Siehe auch
 
-- ["RSpec Ruby Tutorial: Writing Acceptance Tests"](https://www.rubyguides.com/2018/07/rspec-tutorial/)
-- ["Introduction to RSpec: Basic Syntax and Examples"](https://medium.com/the-andela-way/introduction-to-rspec-basic-syntax-and-examples-12c5c7ba1e6f)
-- ["Testing Ruby with RSpec: A Tutorial"](https://semaphoreci.com/community/tutorials/testing-ruby-with-rspec-a-tutorial)
+- [RSpec Dokumentation auf Deutsch](http://rspec.info/documentation/)
+- [MiniTest Dokumentation auf Deutsch](https://docs.seattlerb.org/minitest/)
+- [Einführung in Ruby-Tests](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-testing)

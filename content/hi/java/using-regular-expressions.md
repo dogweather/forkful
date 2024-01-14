@@ -1,33 +1,56 @@
 ---
-title:    "Java: नियमित अभिव्यक्ति का उपयोग करना"
+title:    "Java: उपयोग करके नियमित अभिव्यक्तियों का उपयोग"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-क्या आप कभी सोचा है कि आप अपने जावा प्रोग्राम को और अधिक शक्तिशाली और दुर्लभ बना सकते हैं? रेगुलर एक्सप्रेशन्स आपको अपने डेटा में बहुत से फॉर्मैटिंग और पैटर्न के साथ खेलने की अनुमति देते हैं। इससे आपको अपने कोड को अधिक सुगठित बनाने के साथ-साथ उसे अधिक रिलेवेंट बनाने का भी मौका मिलता है।
+Regular expressions उन users के लिए उपयोगी हो सकते हैं जो अपने टेक्स्ट स्ट्रिंग्स में निश्चित प्रकार की डेटा को ढूंढना चाहते हैं या उन्हें उन डेटा को manipulate करना होता है।
 
 ## कैसे करें
 
-आइए अब हम देखें कि हम अपनी जावा प्रोग्राम में रेगुलर एक्सप्रेशन्स का उपयोग कैसे कर सकते हैं। हम एक सरल उदाहरण के साथ शुरू करेंगे।
+### बुनियादी प्रकार का स्ट्रिंग मैच करना
 
 ```Java
-// दिए गए स्थानों से सही संख्या ढूंढें
-String text = "मेरे गाँव में ४५६ रहनेवाले हैं।";
-String pattern = "\\d+";
-Pattern r = Pattern.compile(pattern);
-Matcher m = r.matcher(text);
-if (m.find()) {
-	System.out.println("संख्या मिली है: " + m.group(0));
+String regex = "he..o";
+String input = "hello";
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(input);
+if (matcher.find()) {
+  System.out.println("String matched");
 } else {
-	System.out.println("संख्या नहीं मिली।");
+  System.out.println("String didn't match");
 }
 ```
 
-उपरोक्त नमूना कोड में हमने दिए गए स्थानों से कोई भी संख्या खोजने का प्रयास किया है और यदि कोई संख्या मिली है तो उसे मैचर के नियमों के अनुसार प्रिंट किया है। इस उदाहरण में हमने खुले आंकड़े का उपयोग किया है लेकिन आप अपनी जरूरत के अनुसार पैटर्न बदल सकते हैं।
+आउटपुट:
 
-## गहराई में जाएं
+`String matched`
 
-रेगुलर एक्सप्रेशन्स के साथ काम करने में कुछ दिक्कतें हो सकती हैं, लेकिन अगर आप उन्हें समझने और समाधान करने का सही तरीका जानते हैं तो वे आपके प्रोग्र
+### अंतर्जात्रिक कोड स्पैस निकालना
+
+```Java
+String input = "Language: जावा";
+String output = input.replaceAll("[^\\p{L}\\p{Nd}]+", "");
+System.out.println(output);
+```
+
+आउटपुट:
+
+`Languageजावा`
+
+## गहराई में जाने के लिए
+
+Regular expressions के बारे में अधिक जानने के लिए, आप इन लिंक्स को देख सकते हैं:
+
+- [Java Regular Expressions Tutorial](https://www.javatpoint.com/java-regex)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Regex Tester](https://regex101.com/)
+
+## अन्य लिंक्स
+
+- [जावा क्लास और ऑब्जेक्ट का अध्ययन करें](https://www.studytonight.com/java/class-and-object.php)
+- [जावा स्ट्रिंग क्लास चिजे पढ़ें](https://www.javatpoint.com/java-string)

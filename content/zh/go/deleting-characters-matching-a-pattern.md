@@ -1,17 +1,18 @@
 ---
-title:    "Go: 删除匹配模式的字符"
+title:    "Go: 删除与模式匹配的字符"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要删除符合模式的字符?
 
-删除字符串中匹配模式的字符是一种常见的操作，可以帮助我们处理文本数据中的特定内容，例如删除HTML标签，或者过滤敏感信息。使用Go语言处理这些任务非常简单，本文将介绍如何做到。
+Go语言提供了一种非常方便的方法来删除字符串中符合特定模式的字符。这对于需要对字符串做一些特殊处理的情况非常有用。
 
-## 如何做到
+## 如何做?
 
-首先，我们需要使用Go语言中的strings包，其中包含了一些有用的字符串处理函数。接下来，我们可以使用strings.Replace()函数来替换和删除字符串中的特定部分。下面是一个简单的例子：
+首先，我们需要导入`strings`包来使用字符串相关的函数。然后，我们可以使用`strings.ReplaceAll`函数来删除符合模式的字符。下面是一个简单的例子:
 
 ```Go
 package main
@@ -22,30 +23,56 @@ import (
 )
 
 func main() {
-    // 定义一个包含HTML标签的字符串
-    str := "<h1>Hello, <b>World</b></h1>"
-
-    // 使用空字符串替换所有HTML标签
-    cleanStr := strings.Replace(str, "<>", "", -1)
-
-    fmt.Println(cleanStr)
+    str := "Hello Go lovers!"
+    newStr := strings.ReplaceAll(str, "o", "")
+    fmt.Println(newStr)
 }
 ```
 
-运行以上代码，输出结果为：
+输出将会是 `Hell lovers!`，我们可以看到所有的`o`字符都被删除了。除了单个字符外，我们也可以删除指定的词语，只需要将第二个参数改为词语即可。
 
-```
-Hello, World
+```Go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "I love Go programming language!"
+    newStr := strings.ReplaceAll(str, "Go programming", "")
+    fmt.Println(newStr)
+}
 ```
 
-上面的例子中，我们使用空字符串来替换所有的HTML标签，实现了删除HTML标签的效果。字符串中的其他字符也可以用同样的方法删除，只需要将空字符串替换成想要删除的字符即可。
+输出则是 `I love language!`。除了`strings.ReplaceAll`函数外，我们也可以使用`strings.Replace`函数来指定替换次数。更多关于字符串操作的相关函数，请参考Go语言官方文档。
 
 ## 深入了解
 
-除了使用strings.Replace()函数外，Go语言还提供了许多其他函数来处理字符串，如strings.Contains()、strings.Split()等。每个函数都有不同的功能，可以根据实际需求选择。另外，Go语言也支持正则表达式来匹配字符串，可以更灵活地处理文本数据。
+除了使用`strings.ReplaceAll`函数外，我们也可以使用正则表达式来删除符合特定模式的字符串。Go语言提供了`regexp`包来支持正则表达式操作。下面是一个使用正则表达式删除字符串的例子:
 
-## 参考链接
+``` Go
+package main
 
-- [Go语言文档：strings包](https://golang.org/pkg/strings/)
-- [Go语言正则表达式教程](https://www.runoob.com/go/go-regular-expressions.html)
-- [Go语言中文网：字符串处理](https://studygolang.com/articles/3179)
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    str := "123abc456def789ghi"
+    pattern := "[0-9]+"
+    regex := regexp.MustCompile(pattern)
+    newStr := regex.ReplaceAllString(str, "")
+    fmt.Println(newStr)
+}
+```
+
+输出为 `abcdefghi`，我们可以看到所有的数字都被成功删除了。除了删除外，我们也可以使用正则表达式来进行替换等操作。更多关于`regexp`包的使用，请参考Go语言官方文档。
+
+## 同样值得一看
+
+- [Go语言官方文档](https://golang.org/doc/)
+- [Go语言中文网](https://studygolang.com/)
+- [深入理解Go语言](https://chai2010.cn/advanced-go-programming-book/)

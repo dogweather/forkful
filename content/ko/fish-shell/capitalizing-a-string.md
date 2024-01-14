@@ -1,39 +1,41 @@
 ---
-title:    "Fish Shell: 문자열 대문자 변환하기"
+title:    "Fish Shell: 문자열 대문자화하기"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 capitalizing a string을 할까요?
+# 왜
 
-문자열을 대문자로 변환하는 것은 언어나 프로그래밍에서 매우 일반적인 작업입니다. 이 작업을 수행하는 이유는 주로 사용자가 쉽게 읽을 수 있도록 문자열을 정리하고 일관된 형식으로 표시하기 위해서입니다. 또는 문자열을 다른 프로그램이나 함수로 전달할 때 이를 인식하기 쉽게 하기 위해서입니다.
+자바스크립트에서 소문자로 된 문자열을 대문자로 바꿔야 할 때가 있습니다. 예를 들어, 사용자의 이름을 받아서 화면에 출력할 때, 대문자로 보여주면 더 극락적입니다. 이런 변환을 도와주는 간단한 방법을 알아봅시다.
 
-# Capitalizing a string 하는 방법
+## 코딩하는 방법
 
-만약 Fish Shell을 사용한다면, 문자열을 대문자로 변환하기 위해 `string capitalize` 함수를 사용할 수 있습니다.
+먼저, Fish Shell에서 `string` 명령어를 이용하여 원하는 문자열을 입력합니다. 그 다음에는 `tr` 명령어를 사용하여 소문자를 대문자로 변환합니다. 예제 코드는 다음과 같습니다:
 
-```
-Fish Shell > string capitalize "hello world"
-Hello world
-```
-
-또는 문자열 변수를 먼저 만들어서 `string capitalize` 함수를 이용해 대문자로 변환할 수도 있습니다.
-
-```
-Fish Shell > set greeting "hello world"
-Fish Shell > string capitalize $greeting
-Hello world
+```Fish Shell
+string name = "john"
+echo $name | tr '[a-z]' '[A-Z]'
 ```
 
-# Deep Dive
+이 코드를 실행하면 `JOHN`이라는 출력값을 볼 수 있습니다.
 
-Fish Shell의 `string capitalize` 함수는 문자열의 첫 글자를 대문자로 만들고, 나머지 문자열은 소문자로 만듭니다. 만약 첫 글자가 정의되지 않은 문자(Rune)라면, 메시지 "Invalid character in string"을 출력합니다.
+## 더 깊이 들어가기
 
-이를 발생하지 않도록 하기 위해서는 먼저 문자열에 대해 검증 작업을 수행하고, 첫 글자가 무엇인지에 따라 대소문자를 구분해야 합니다.
+하지만 `tr` 명령어는 ASCII 문자만 변환해주는 것을 유의해야 합니다. 만약 한국어 문자열을 변환하려면, `tr` 명령어만으로는 충분하지 않습니다. 이럴 때는 `sed` 명령어를 사용하여 대체할 수 있습니다. 예를 들어, 한국어 이름인 "김치"를 대문자로 바꾸는 코드는 다음과 같습니다:
 
-# See Also
+```Fish Shell
+string name = "김치"
+echo $name | sed 's/\(.\)/\U\1/g'
+```
 
-- [Fish Shell 문자열 관련 함수](https://fishshell.com/docs/current/commands.html#string)
-- [Fish Shell 문자열 읽기](https://fishshell.com/docs/current/tutorial.html#reading-a-string)
-- [Fish Shell 문자열 다루기](https://fishshell.com/docs/current/tutorial.html#string-operations)
+출력값은 `김치`가 아닌 `김칠`로 나오게 됩니다. 이유는 `김칠`의 ASCII 코드가 `김치`보다 더 크기 때문입니다.
+
+## 더 많은 참고자료
+
+[`tr` 명령어 추가 정보](https://fishshell.com/docs/current/commands.html#tr)
+
+[`sed` 명령어 추가 정보](https://fishshell.com/docs/current/commands.html#sed)
+
+["Fish Shell을 사용해보세요" 블로그 포스트](https://sujinlee.me/fish-shell/)

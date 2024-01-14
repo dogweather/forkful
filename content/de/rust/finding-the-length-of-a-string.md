@@ -1,38 +1,43 @@
 ---
-title:    "Rust: Die Länge eines Strings finden."
+title:    "Rust: Die Länge eines Strings finden"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Finden der Länge eines Strings ist ein grundlegender Schritt beim Programmieren. Mit Rust können Sie dies auf effiziente und elegante Weise tun. Lesen Sie weiter, um herauszufinden, wie!
+Das Finden der Länge einer Zeichenkette ist eine grundlegende Aufgabe in der Programmierung. Oft ist es notwendig, die Länge einer Zeichenkette zu kennen, um bestimmte Funktionen auszuführen oder die Ausgabe eines Programms zu formatieren. In dieser Blog-Post werden wir uns ansehen, wie man dies in der Programmiersprache Rust erreichen kann.
 
-## How To
+## Wie es geht
 
-Um die Länge eines Strings in Rust zu finden, gibt es verschiedene Möglichkeiten. Hier sind zwei Beispiele mit entsprechenden Output:
+Um die Länge einer Zeichenkette in Rust zu finden, gibt es mehrere Möglichkeiten. Die einfachste ist die Verwendung der `len()` Methode, die in das `str`-Objekt integriert ist. Diese Methode kann auf jede Zeichenkette angewendet werden und gibt die Anzahl der Zeichen in der Zeichenkette zurück.
 
 ```Rust
-let string = String::from("Hallo Welt");
-
-// Verwenden Sie die Funktion .len() für die Anzahl der Bytes
-println!("Die Länge des Strings in Bytes ist: {}", string.len());
-// Ausgabe: Die Länge des Strings in Bytes ist: 11
-
-// Verwenden Sie die Funktion .chars() für die Anzahl der Zeichen
-println!("Die Länge des Strings in Zeichen ist: {}", string.chars().count());
-// Ausgabe: Die Länge des Strings in Zeichen ist: 10
+let text = "Hallo Welt!";
+let length = text.len();
+println!("Die Länge der Zeichenkette ist {}", length);
 ```
 
-## Deep Dive
+Die Ausgabe dieses Codeschnipsels wird `Die Länge der Zeichenkette ist 11` sein, da "Hallo Welt!" 11 Zeichen enthält.
 
-Es ist wichtig zu wissen, dass Strings in Rust UTF-8-encodierte Sequenzen von Bytes sind. Das bedeutet, dass die Länge eines Strings in der Anzahl der Bytes gemessen wird, nicht der Zeichen. Wenn Sie die Anzahl der Zeichen benötigen, können Sie die Funktion .chars() verwenden, wie im obigen Beispiel gezeigt.
+Eine andere Möglichkeit ist die Verwendung von Iteratoren, um die Länge einer Zeichenkette zu finden. Dies kann nützlich sein, wenn man bestimmte Bedingungen erfüllen oder Zeichenketten mit einer bestimmten Länge filtern möchte.
 
-Es gibt auch andere Funktionen wie .len_utf8() und .len_utf16(), die Ihnen helfen können, die Länge eines Strings in Bezug auf UTF-8 oder UTF-16 zu finden.
+```Rust
+let text = "Hallo Welt!";
+let length = text.chars().count();
+println!("Die Länge der Zeichenkette ist {}", length);
+```
 
-## Siehe Auch
+Die Methode `chars()` gibt eine Iteratorstruktur zurück, die jedes Zeichen in der Zeichenkette durchläuft. Die Methode `count()` gibt dann die Anzahl der Elemente zurück, die von diesem Iterator durchlaufen wurden. Die Ausgabe dieses Codeschnipsels ist ebenfalls `Die Länge der Zeichenkette ist 11`.
 
-- [Rust Dokumentation zu Strings](https://doc.rust-lang.org/std/string/)
-- [Offizielle Rust Webseite](https://www.rust-lang.org/)
-- [Rust Book](https://doc.rust-lang.org/stable/book/)
+## Tiefer Einblick
+
+Wenn man genauer betrachtet, wie Text in Rust gespeichert wird, wird es klarer, warum die beiden Methoden `len()` und `chars().count()` die gleiche Länge zurückgeben. In Rust werden Zeichenketten als UTF-8 codierte Bytes gespeichert, wobei jedes Zeichen unterschiedlich viele Bytes verwenden kann. Deshalb funktionieren die beiden oben genannten Methoden, aber es gibt auch eine dritte Methode, die `bytes().count()` genannt wird und die Anzahl der Bytes in der Zeichenkette zurückgibt, anstatt die Anzahl der Zeichen. In den meisten Fällen wird die Anzahl der Zeichen jedoch präferiert.
+
+## Siehe auch
+
+- Offizielle Rust Dokumentation: https://doc.rust-lang.org/book/ch08-02-strings.html
+- YouTube-Tutorial zu Zeichenketten in Rust: https://www.youtube.com/watch?v=sW6xlplPwH4&ab_channel=TraversyMedia
+- Beitrag zur UTF-8-Codierung in Rust: https://www.maururu.net/unicode-to-utf-8-in-rust/

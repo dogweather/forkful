@@ -1,49 +1,48 @@
 ---
 title:    "Go: 「パターンに一致する文字を削除する」"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ: 文字のパターンにマッチする文字を削除するのはなぜか
 
-プログラミングの世界には、様々な作業がありますが、その中でも特に重要なのがパターンマッチングです。パターンマッチングとは、指定したパターンに合致する文字列を検索することを指します。そして、その中でも特によく使われるのが、特定のパターンに合致する文字を削除する作業です。なぜなら、データの整形や処理の効率化など、様々な目的で活用されるからです。
+文字のパターンにマッチする文字を削除することは、データを整理したり、特定のテキスト処理を行ったりするために役立ちます。例えば、特定の文字列から特定の文字を取り除きたい場合や、ファイル名から特定の文字を削除したい場合に使うことができます。
 
-## ハウツー
+## ハウツー：Go言語で文字のパターンにマッチする文字を削除する方法
 
-まず、Go言語で特定のパターンに合致する文字を削除する方法をご紹介します。最も簡単な方法は、`strings.ReplaceAll()`関数を使うことです。例えば、`strings.ReplaceAll("Hello World", "l", "")`というコードを実行すると、"Hello World"から"l"をすべて削除した文字列が返されます。しかし、この方法では特定の文字を一括で削除することしかできません。もっと複雑なパターンに合致する文字を削除する場合は、正規表現を使うことが必要になります。正規表現は、`regexp`パッケージを使うことで実現できます。以下に、`regexp`パッケージを使ったコード例を示します。
+以下のコードは、文字のパターンにマッチする文字を削除する方法を示しています。例として、「abc123」という文字列から数字を取り除く方法を紹介します。
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	// 正規表現をコンパイルする
-	re := regexp.MustCompile(`[A-Z]`) 
-	// 文字列から正規表現にマッチする文字を削除する
-	result := re.ReplaceAllString("Hello World", "")
-	fmt.Println(result) // ello orld
+    str := "abc123"
+    re := regexp.MustCompile("[0-9]+") // 数字にマッチする正規表現パターン
+    result := re.ReplaceAllString(str, "") // 数字を削除
+    fmt.Println(result) // "abc"
 }
 ```
 
-以上のように、正規表現を使うことでより柔軟な文字の削除が可能になります。
+実行結果は、"abc"となります。このように、正規表現を使うと、文字のパターンにマッチする文字を簡単に削除することができます。
 
-## ディープダイブ
+## ディープダイブ：文字のパターンにマッチする文字を削除する方法の詳細
 
-さらに深く掘り下げると、Go言語では正規表現にマッチする部分を置換することもできます。先ほどのコード例では、正規表現にマッチした文字を空の文字列に置換しましたが、文字列を指定した文字列に置換することもできます。例えば、`re.ReplaceAllString("Hello World", "goodbye")`とすると、`Hello World`から正規表現にマッチする文字が全て`goodbye`に置換されます。また、正規表現を使わずに文字列を一括で置換したい場合は、`strings.ReplaceAll()`関数の方がより簡単に使えるかもしれません。どちらの方法を使うかは、目的に応じて選択すると良いでしょう。
+正規表現パターンを使って文字のパターンにマッチする文字を削除する方法は、非常に便利で強力な方法です。ただ、正規表現の書き方は慣れるまで少し難しいかもしれません。また、正規表現を使うことで、文字のパターンにマッチするだけでなく、置換や抽出も行うことができます。
 
 ## 参考リンク
 
-- [Go言語ドキュメント](https://golang.org/doc/) 
-- [正規表現チュートリアル](https://regexone.com/)
-- [Strings パッケージ](https://golang.org/pkg/strings/)
-- [Regexp パッケージ](https://golang.org/pkg/regexp/)
+- [Learn Go](https://golang.org/doc/)
+- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Go Regular Expression Library](https://golang.org/pkg/regexp/) 
 
-## 他に見る
+## 関連リンク
 
-- [よく使われるパターンの正規表現](https://www.geeksforgeeks.org/regular-expression-patterns/)
-- [Effictive Go (日本語訳)](https://www.baldanders.info/golang/2014/10/08/effective-go-japanese-dec-20.html)
+- [Go言語で文字列を扱う方法](https://www.yoichi.dev/posts/about-golang-string/)
+- [文字列処理における正規表現の活用方法](https://qiita.com/masato/items/9f33cd96d2a7ddbcd8be#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E3%81%AE%E6%8D%95%E3%81%89%E3%82%8B)

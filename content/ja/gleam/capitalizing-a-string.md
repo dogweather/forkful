@@ -1,30 +1,43 @@
 ---
-title:    "Gleam: 文字列のキャピタライズ"
+title:    "Gleam: 文字列の大文字化"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列の大文字化に関わる理由を説明する。
+文字列の先頭を大文字に変換することの重要性を説明するために、最初になぜcapitalizingを行うのかについて考えてみましょう。一般的な理由としては、文字列をより見やすくしたり、データの整形や正規化を行ったりするために使用することが挙げられます。
 
-文字列の大文字化は、テキストの整形や正規化に必要不可欠な操作です。例えば、データベースに格納されている文字列を統一的な形式にする場合や、ユーザーが入力したテキストを検索しやすくする場合などに使用されます。Gleamには、簡単に文字列の大文字化を行う方法がありますので、ぜひご活用ください。
+## 方法
 
-## How To
+GLEAMでは、文字列を大文字に変換するための便利な関数が用意されています。以下のコード例を参考に、どのように文字列を大文字に変換するかを学んでみましょう。
 
-以下は、Gleamで文字列を大文字化する簡単な方法です。例として、"hello world"という文字列を大文字化してみましょう。```Gleam
-let string = "hello world"
-let capitalized = String.uppercase(string)
-``` 
-このコードを実行すると、変数capitalizedには"HELLO WORLD"という大文字化された文字列が格納されます。また、他にもString.capitalize、String.uppercase_firstといった便利な関数が存在しますので、詳しくは公式ドキュメントをご確認ください。
+```Gleam
+let sentence = "hello world"
+let capitalized = String.capitalize(sentence)
+# 出力: "Hello world"
+```
 
-## Deep Dive
+上記の例では、まず変数`sentence`に文字列"hello world"を代入します。次に、`String.capitalize`関数を使用して、`sentence`を大文字に変換し、`capitalized`という新しい変数に代入しました。出力を確認すると、文字列の先頭が大文字になっていることが分かります。
 
-文字列の大文字化には、さまざまなユースケースがあります。例えば、マルチバイト文字列の場合は大文字化に注意が必要であり、Unicodeの規則に従って行われる必要があります。また、パフォーマンスの観点からも、大文字化には注意が必要です。Gleamでは、文字列の大文字化を行う際にこれらの観点を考慮して最適化された処理が行われるように設計されています。
+また、GLEAMでは文字列の一部だけを大文字に変換することもできます。例えば、次のようにすることで文字列の2文字目を大文字に変換できます。
 
-## See Also
+```Gleam
+let sentence = "hello world"
+let partial = String.partial_capitalize(sentence, 1..1)
+# 出力: "hEllo world"
+```
 
-- [Official Gleam documentation](https://gleam.run/documentation/)
-- [Unicode normalization in Gleam](https://gleam.run/blog/unicode-normalization)
-- [Performance considerations in Gleam](https://gleam.run/blog/performance-considerations)
+## ディープダイブ
+
+`String.capitalize`関数は内部でパターンマッチングを使用することで、より複雑な文字列の大文字変換がある文字列にも対応できるようになっています。また、`String.partial_capitalize`関数も同様にパターンマッチングを利用しています。
+
+さらに、GLEAMではUnicodeのサポートも含まれているため、英語以外の文字に対しても同じように大文字変換を行うことができます。
+
+## 参考リンク
+
+- GLEAMドキュメント (https://gleam.run/documentation/)
+- プログラミング言語GLEAMの基本 (https://qiita.com/hirokidaichi/items/e5c04fbad2ad531c3ca9)
+- Unicodeのサポートについて (https://gleam.run/documentation/introduction/text.html#unicode)

@@ -1,46 +1,55 @@
 ---
-title:    "Elm: Das aktuelle Datum erhalten"
+title:    "Elm: Das Abrufen des aktuellen Datums"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum Du das aktuelle Datum in Elm erhalten solltest
-Wenn du mit Elm programmierst, wirst du oft das aktuelle Datum benötigen, um deine Anwendung mit dynamischen Informationen zu versorgen. Zum Beispiel könntest du das aktuelle Datum verwenden, um den Nutzer über Änderungen in deiner App zu informieren oder um personalisierte Inhalte anzuzeigen. In diesem Beitrag werden wir uns anschauen, wie man das aktuelle Datum in Elm erhalten kann.
+## Warum
 
-## Wie Du das aktuelle Datum in Elm erhalten kannst
-Um das aktuelle Datum in Elm zu erhalten, können wir die `Time`-Bibliothek verwenden. Diese Bibliothek bietet uns Funktionen, um mit Datums- und Zeitangaben umzugehen. Wir werden uns hier auf die `now`-Funktion konzentrieren, die uns das aktuelle Datum als Tupel mit drei Werten zurückgibt: Jahr, Monat und Tag. Hier ist ein Beispielcode, wie man die `now`-Funktion verwenden kann:
+Warum sollte man sich überhaupt damit beschäftigen, das aktuelle Datum in Elm zu bekommen? Nun, das aktuelle Datum ist ein wichtiger Teil vieler Anwendungen, sei es in einem Kalender oder als Teil einer Berechnung. Mit Elm kannst du ganz einfach das aktuelle Datum abrufen und in deiner Anwendung verwenden.
 
-```Elm
-import Time exposing (..)
+## How To
 
-currentDate = now
-```
-
-Wenn wir nun `currentDate` ausführen, erhalten wir ein Tupel, das das aktuelle Datum enthält. Hier ist ein Beispiel für den Output:
+Um das aktuelle Datum in Elm zu bekommen, benötigst du das Modul `Time`. Dieses Modul bietet verschiedene Funktionen, um mit der Zeit in Elm zu arbeiten. Eine davon ist `now`, die das aktuelle Datum als Zeitstempel zurückgibt. Schauen wir uns ein Beispiel an:
 
 ```Elm
-(2021, 10, 25)
+import Time
+
+currentTime : Time.Posix.Time
+currentTime =
+    Time.now
 ```
 
-Um das aktuelle Datum in einer lesbaren Form auszugeben, können wir die `toIsoString`-Funktion verwenden. Diese Funktion gibt uns das Datum als String in ISO-Format zurück. Hier ist ein Beispielcode:
+In diesem Beispiel importieren wir das `Time` Modul und rufen dann `now` auf, um das aktuelle Datum zu bekommen. Es wird als ein Objekt vom Typ `Time.Posix.Time` zurückgegeben, das unter anderem den Tag, die Uhrzeit und den Wochentag enthält.
+
+Um das Datum in einem bestimmten Format ausgeben zu können, können wir die Funktion `Date.fromTime` verwenden. Diese Funktion nimmt einen Zeitstempel als Argument und gibt eine `Date` Struktur zurück. Schauen wir uns ein Beispiel an:
 
 ```Elm
-import Time exposing (..)
+currentTime : Time.Posix.Time
+currentTime =
+    Time.now
 
-currentDate = now |> toIsoString
+currentDate : Date.Date
+currentDate =
+    Date.fromTime currentTime
 ```
 
-Der Output wäre dann:
+Dieses Beispiel gibt das aktuelle Datum in einem standardmäßigen Format aus, zum Beispiel `2021-11-17`. Du kannst aber auch verschiedene Formatierungsfunktionen verwenden, um das Datum anders darzustellen.
 
 ```Elm
-"2021-10-25"
+Date.toString Date.DayNumberMonthDay currentdate
+-- gibt "November 17" aus
 ```
 
-Es gibt noch weitere Funktionen in der `Time`-Bibliothek, um das aktuelle Datum oder die aktuelle Zeit in verschiedenen Formaten zu erhalten. Eine vollständige Dokumentation findest du <a href="https://package.elm-lang.org/packages/elm/time/latest/">hier</a>.
+## Deep Dive
 
-## Tiefere Einblicke in die Erhaltung des aktuellen Datums
-Beim Einsatz von Elm für ein größeres Projekt kann es sinnvoll sein, das aktuelle Datum in ein eigenes Modul auszulagern. Auf diese Weise kannst du das Datum leicht aus dem gesamten Projekt abrufen, ohne es jedes Mal neu importieren zu müssen. Ein weiterer Vorteil ist, dass du dein eigenes Modul mit Zusatzfunktionen versehen und so anpassen kannst, wie du das aktuelle Datum darstellen und ausgeben möchtest.
+Es gibt noch viele weitere Funktionen und Möglichkeiten, um mit dem `Time` Modul in Elm zu arbeiten. Du kannst zum Beispiel auch bestimmte Zeiträume oder Zeitdifferenzen berechnen, indem du die Funktionen `add` und `subtract` verwendest. Außerdem gibt es auch das Modul `TimeZone`, mit dem du das Datum in verschiedenen Zeitzonen anzeigen lassen kannst.
+
+Wenn du tiefer in die Materie eintauchen möchtest, empfehle ich dir, die offizielle Elm Dokumentation zum `Time` und `TimeZone` Modul zu lesen. Dort findest du weitere Beispiele und Erklärungen.
 
 ## Siehe auch
-- <a href="https://package.elm-lang.org/packages/elm/time/latest/">Dokumentation zur Time-Bibliothek</a>
+
+- [Offizielle Elm Dokumentation zum Time Modul](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Offizielle Elm Dokumentation zum TimeZone Modul](https://package.elm-lang.org/packages/elm/time/latest/TimeZone)

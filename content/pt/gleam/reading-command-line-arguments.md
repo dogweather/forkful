@@ -1,38 +1,38 @@
 ---
 title:    "Gleam: Lendo argumentos da linha de comando"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos de linha de comando?
+## Por que ler argumentos da linha de comando?
 
-Ler argumentos de linha de comando é uma habilidade importante para qualquer programador, especialmente em Gleam. Com a capacidade de ler e interpretar os argumentos passados pelo usuário, você pode criar programas mais interativos e personalizáveis. Além disso, saber como lidar com argumentos de linha de comando pode facilitar a resolução de problemas e a depuração de erros em seu código.
+Ler argumentos da linha de comando é uma habilidade valiosa para qualquer programador, especialmente para aqueles que trabalham com a linguagem de programação Gleam. Ao compreender como ler e utilizar argumentos da linha de comando, você poderá criar programas que sejam mais interativos e flexíveis, tornando seu código ainda mais poderoso.
 
-## Como fazer
+## Como fazer isso:
 
-Para ler argumentos de linha de comando em Gleam, você pode usar a função `Os.args()`. Esta função retorna uma lista de strings contendo os argumentos passados pelo usuário. Abaixo está um exemplo de como ler e imprimir os argumentos de linha de comando em Gleam:
+A leitura de argumentos da linha de comando em Gleam pode ser feita facilmente usando a função `gleam.args.parse`. Confira o exemplo abaixo que mostra como ler um argumento da linha de comando contendo um nome e imprimir uma mensagem de saudação:
 
 ```Gleam
-import Os
-
-pub fn main() {
-    let args = Os.args()
-    for arg in args {
-        io.print(arg)
-    }
-}
+let
+  args = gleam.args.parse()
+  name = case args of
+    `Ok = [name] -> name
+    `Error = _ -> "Amigo"
+in
+  IO.println("Olá, " ++ name)
 ```
 
-Se você executar este código passando alguns argumentos de linha de comando, o resultado será a impressão desses argumentos na tela.
+A saída para esse código seria "Olá, Amigo" no caso de nenhum argumento ser fornecido, ou "Olá, [nome]" caso seja fornecido um argumento na linha de comando.
 
-## Mergulho Profundo
+## Mergulho profundo:
 
-Além de simplesmente ler e imprimir os argumentos de linha de comando, é possível realizar outras manipulações com eles. Você pode usar funções como `List.head()` e `List.tail()` para acessar argumentos individuais ou excluí-los da lista, respectivamente. Também é possível converter os argumentos para outros tipos de dados, como números ou booleanos, dependendo das suas necessidades.
+A função `gleam.args.parse` retorna um tipo de dados especial chamado de resultado (ou "result" em inglês), que é usado para lidar com erros em Gleam. O resultado pode ser "Ok", indicando que não houve erros, ou "Error", indicando que houve algum tipo de erro. Ao definir o nome como `case args of`, estamos tratando essas duas possibilidades. Se o resultado for "Ok", então significa que um argumento da linha de comando foi fornecido. Se for "Error", podemos usar um valor padrão para o nome, nesse caso "Amigo".
 
-## Veja também
+## Veja também:
 
-- [Documentação Gleam sobre argumentos de linha de comando](https://gleam.run/articles/command-line-arguments)
-- [Exemplos de código Gleam no GitHub](https://github.com/gleam-lang)
-
-Fique à vontade para explorar mais sobre argumentos de linha de comando em Gleam e aprimorar suas habilidades de programação!
+Para mais informações sobre argumentos da linha de comando em Gleam, consulte a documentação oficial: 
+- https://gleam.run/documentation/guides/interacting-with-the-command-line
+- https://gleam.run/documentation/core/args
+- https://gleam.run/documentation/reference/sources_stdlib#args

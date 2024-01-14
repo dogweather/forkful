@@ -1,49 +1,44 @@
 ---
-title:    "Rust: Konwersja ciągu znaków na małe litery"
+title:    "Rust: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie tekstu na małe litery może być bardzo przydatne, zwłaszcza jeśli jesteś programistą języka Rust. To pozwala na porównywanie tekstów bez uwzględniania wielkości liter, co ułatwia pracę z tekstem. Dowiedz się, jak to zrobić w sposób efektywny w języku Rust.
+Konwersja tekstu na małe litery może być bardzo przydatna podczas programowania w języku Rust. Dzięki temu możemy upewnić się, że porównywane teksty są równe, niezależnie od tego czy zawierają duże lub małe litery. Jest to także ważne w przypadku pracy z danymi użytkownika, ponieważ zapewnia spójne działanie niezależnie od tego jak wpisane zostaną dane.
 
 ## Jak to zrobić
 
-W języku Rust konwertowanie tekstu na małe litery jest łatwe dzięki wbudowanej funkcji `to_lowercase()`. Wystarczy wstawić tekst, który chcesz przekonwertować jako argument tej funkcji, a następnie przypisać wynik do zmiennej lub wyświetlić go bezpośrednio.
+Aby przekonwertować tekst na małe litery w Rust, możemy użyć metody `.to_lowercase()` na obiekcie typu `String`. Przykładowe użycie wyglądałoby następująco:
 
 ```Rust
-let text = "JP Programming";
-let lowercase_text = String::from(text).to_lowercase();
-println!("{}", lowercase_text);
+let name = "JAN KOWALSKI";
+let lowercase_name = name.to_lowercase();
+println!("Witaj, {}", lowercase_name); // Output: "Witaj, jan kowalski"
 ```
-**Output:**
-jp programming
 
-W powyższym przykładzie wykorzystujemy metodę `from()`, która konwertuje `&str` na `String`, co jest wymagane do użycia funkcji `to_lowercase()`. W przypadku, gdy chcesz przekonwertować bezpośrednio tekst, który już jest w formacie `String`, możesz po prostu wywołać funkcję `to_lowercase()` na tym tekście.
+W przypadku wartości zmiennoprzecinkowych, które nie mają metody `.to_lowercase()`, możemy użyć biblioteki `unicode-normalization` i funkcji `Chars()` aby przetworzyć każdy znak z osobna. Przykład:
 
 ```Rust
-let text = String::from("Rust is Fun");
-let lowercase_text = text.to_lowercase();
-println!("{}", lowercase_text);
+let float_num = 99.99;
+let lowercase_num = format!("{:?}", float_num)
+    .chars()
+    .flat_map(|ch| ch.to_lowercase())
+    .collect::<String>();
+println!("{}", lowercase_num); // Output: "99.99"
 ```
-
-**Output:**
-rust is fun
-
-Pamiętaj, że funkcja `to_lowercase()` nie zmienia oryginalnego tekstu, ale zwraca nowy `String` zawierający przekonwertowany tekst.
 
 ## Deep Dive
 
-Konwertowanie tekstu na małe litery może być nieco bardziej skomplikowane, niż się wydaje. Jedną z głównych przeszkód jest obsługa różnych języków i znaków specjalnych. W języku Rust, funkcja `to_lowercase()` obsługuje wszystkie typy znaków, dzięki czemu nie musisz martwić się o te problemy.
+W języku Rust istnieją także funkcje związane z konwersją tekstu na duże litery (`to_uppercase()`) oraz pierwszą literę każdego słowa na dużą (`to_titlecase()`). W przypadku kodowania ścieżek do plików, dostępna jest także funkcja `to_ascii_lowercase()` dla zachowania spójności z systemem plików.
 
-Natomiast jeśli chcesz mieć większą kontrolę nad konwersją, istnieje również funkcja `to_ascii_lowercase()`, która przekonwertuje tekst tylko na podstawie znaków ASCII. Jest to przydatne, gdy potrzebujesz prostego porównania tekstów bez uwzględniania wielkości liter.
+Podczas konwersji na małe litery, niektóre znaki mogą ulec zmianie, na przykład niemieckie litery `ß` i `ẞ` będą przekonwertowane na `ss` i `ẞ` odpowiednio. Jest to ważne do uwzględnienia podczas pracy z danymi zawierającymi specjalne znaki.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o konwertowaniu tekstu w języku Rust, warto przeczytać następujące artykuły:
-
-- [Rust String to Int Conversion](https://techalpine.com/rust-string-to-int-conversion/)
-- [How to Parse a CSV File in Rust](https://techalpine.com/how-to-parse-a-csv-file-in-rust/)
-- [Simple Error Handling in Rust](https://techalpine.com/simple-error-handling-in-rust/)
+- Dokumentacja języka Rust dotycząca metod `to_lowercase()`, `to_uppercase()` i `to_titlecase()`: https://doc.rust-lang.org/std/string/trait.ToString.html
+- Biblioteka `unicode-normalization` dla konwersji znaków: https://crates.io/crates/unicode-normalization
+- Przykładowe zastosowanie konwersji na małe litery: https://www.dotnetperls.com/to-lowercase-rust

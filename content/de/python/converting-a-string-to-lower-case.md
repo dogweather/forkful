@@ -1,40 +1,48 @@
 ---
-title:    "Python: String in Kleinbuchstaben umwandeln"
+title:    "Python: Umwandlung eines Strings in Kleinbuchstaben"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Konvertieren einer Zeichenkette in Kleinbuchstaben kann in vielen Situationen nützlich sein, zum Beispiel beim Vergleichen von Strings oder beim Formatieren von Benutzereingaben.
 
-## So geht's
-```Python
-# Beispiel einer Zeichenkette
-string = "HALLO, WELT!"
+Eine häufige Aufgabe in der Programmierung ist das Konvertieren eines Strings in Kleinbuchstaben. Dies kann aus verschiedenen Gründen nützlich sein, zum Beispiel um die Benutzerinteraktion zu vereinfachen oder um die String-Vergleiche zu erleichtern.
 
-# Konvertieren zu Kleinbuchstaben und Ausgabe des Ergebnisses
-print(string.lower())
-# Ausgabe: hallo, welt!
+## Wie man
+
+Das Konvertieren eines Strings in Kleinbuchstaben ist in Python sehr einfach. Hier ist ein Beispielcode:
+
+```python
+# Eingabe
+string = "HALLO WELT"
+
+# Konvertierung in Kleinbuchstaben
+lower_string = string.lower()
+
+# Ausgabe
+print(lower_string)
 ```
 
-Sie können auch die Methode `.casefold()` verwenden, um eine Zeichenkette in Kleinbuchstaben zu konvertieren. Diese Methode berücksichtigt auch Unicode-Zeichen und erzeugt somit ein einheitliches Ergebnis, unabhängig von der Sprache.
+Die Ausgabe dieses Codes ist "hallo welt".
 
-```Python
-# Beispiel einer Zeichenkette mit Unicode-Zeichen
-string = "İstanbul"
+In diesem Beispiel verwenden wir die `lower()` Methode, die auf einem String-Objekt aufgerufen wird und eine neue Version des Strings in Kleinbuchstaben zurückgibt. Es ist wichtig zu beachten, dass diese Methode den ursprünglichen String nicht verändert, sondern einen neuen zurückgibt. Wenn wir also den ursprünglichen String behalten wollen, müssen wir ihn in einer neuen Variablen speichern.
 
-# Konvertieren zu Kleinbuchstaben und Ausgabe des Ergebnisses
-print(string.casefold())
-# Ausgabe: i̇stanbul
-```
+## Tiefergehende Informationen
 
-## Tiefere Einblicke
-Die Verwendung von `.lower()` oder `.casefold()` kann bei der Vergleich von Zeichenketten entscheidend sein. Beispielsweise würde beim Vergleich von "Schule" und "schule" ohne die Konvertierung zu Kleinbuchstaben ein Ergebnis von `False` zurückgegeben werden.
+In Python gibt es verschiedene Funktionen und Methoden, um einen String in Kleinbuchstaben umzuwandeln. Die `lower()` Methode ist die einfachste und am häufigsten verwendete. Sie funktioniert auch mit Sonderzeichen und Umlauten, was für Deutsch besonders wichtig ist.
 
-Auch bei der Verarbeitung von Benutzereingaben ist es wichtig, die Eingaben auf Kleinbuchstaben zu konvertieren, da Benutzer möglicherweise nicht immer die richtige Groß- oder Kleinschreibung verwenden.
+Wenn Sie mehr Kontrolle über den Konvertierungsprozess wünschen, können Sie auch die `str.lower()` Funktion verwenden. Diese Funktion funktioniert ähnlich wie die `lower()` Methode, gibt jedoch immer einen String zurück, unabhängig davon, ob es sich um ein String-Objekt oder eine String-Variable handelt.
+
+Eine weitere nützliche Funktion ist `casefold()`, die ähnlich wie `lower()` funktioniert, aber zusätzliche Transformationen anwendet, um auch spezielle Unicode-Zeichen wie Griechisch und Kyrillisch in Kleinbuchstaben umzuwandeln.
+
+In einigen Fällen kann es auch sinnvoll sein, eine Konvertierung in Kleinbuchstaben auf Zeichen für Zeichen-Basis durchzuführen. Dies kann mit der `lower()` Funktion und einer Schleife um jeden Buchstaben des Strings erreicht werden.
+
+Es ist wichtig zu beachten, dass es in Python auch Funktionen gibt, um einen String in Großbuchstaben umzuwandeln, wie zum Beispiel `upper()` und `casefold()`, die sich auf dieselbe Weise verhalten wie die entsprechenden Funktionen zum Konvertieren in Kleinbuchstaben.
 
 ## Siehe auch
-- [Offizielle Python Dokumentation zur `.lower()` Methode](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Offizielle Python Dokumentation zur `.casefold()` Methode](https://docs.python.org/3/library/stdtypes.html#str.casefold)
-- [Webseite mit einer detaillierteren Erklärung zur Konvertierung von Zeichenketten](https://realpython.com/python-string-formatting/#string-case-conversion)
+
+- [Offizielle Python-Dokumentation zu `str.lower()`](https://docs.python.org/de/3/library/stdtypes.html#str.lower)
+- [Python String Formatting - A Tutorial](https://realpython.com/python-string-formatting/)
+- [10 Tips for Using Python String Methods](https://www.datacamp.com/community/tutorials/10-tricks-for-using-python-string-methods)

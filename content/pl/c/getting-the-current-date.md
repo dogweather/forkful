@@ -1,114 +1,54 @@
 ---
 title:    "C: Zdobycie aktualnej daty"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Każdy projekt komputerowy wymaga często korzystania z bieżącej daty. Może to być potrzebne do śledzenia okresów czasowych, generowania raportów czy też do funkcji końcowych. W tym blogu przyjrzymy się jak w prosty sposób uzyskać aktualną datę w języku C.
+Czy zastanawiałeś się kiedykolwiek, jak programy na Twoim komputerze potrafią wyświetlić aktualną datę? Programowanie jest sztuką tworzenia kodu, który wykonuje różne zadania - a jednym z takich zadań może być pobieranie aktualnej daty. W tym artykule dowiesz się, jak można łatwo uzyskać bieżącą datę w języku C.
 
 ## Jak to zrobić
 
-W języku C istnieją różne sposoby na uzyskanie aktualnej daty. Najbardziej popularnym jest użycie funkcji `time()` oraz struktury `struct tm` z biblioteki `time.h`.
+Aby uzyskać aktualną datę w języku C, możemy skorzystać z biblioteki "time.h". Ta biblioteka zawiera funkcję "time()", która zwraca bieżący czas w sekundach od 1 stycznia 1970 roku. Następnie możemy przetworzyć ten czas i przedstawić go w bardziej przyjaznym dla użytkownika formacie, za pomocą funkcji "localtime()".
+
+Oto przykładowy kod, który pokazuje, jak uzyskać bieżącą datę w formacie dzień-miesiąc-rok:
 
 ```C
-#include <stdio.h>
-#include <time.h>
+#include <stdio.h> 
+#include <time.h> 
 
-int main() {
-   // uzyskanie czasu w sekundach od początku epoki (01.01.1970 00:00:00)
-   time_t now;
+int main() 
+{ 
+    // pobranie bieżącego czasu
+    time_t now = time(NULL); 
 
-   // użycie funkcji time()
-   time(&now);
+    // przetworzenie czasu do lokalnej strefy czasowej
+    struct tm *local = localtime(&now); 
 
-   // konwersja do struktury tm
-   struct tm* local = localtime(&now);
+    // wyświetlenie bieżącej daty
+    printf("Bieżąca data: %02d-%02d-%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900); 
 
-   // wyświetlenie bieżącej daty
-   printf("Aktualna data: %d.%d.%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
-
-   return 0;
-}
+    return 0; 
+} 
 ```
 
-**Output:**
+Po uruchomieniu powyższego kodu, powinniśmy uzyskać wyjście:
 
 ```
-Aktualna data: 17.08.2021
-```
-
-Inną metodą jest użycie funkcji `ctime()`, która zwraca bieżącą datę w formie tekstu.
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-   // uzyskanie czasu w sekundach od początku epoki (01.01.1970 00:00:00)
-   time_t now;
-
-   // użycie funkcji time()
-   time(&now);
-
-   // wyświetlenie bieżącej daty
-   printf("Aktualna data: %s\n", ctime(&now));
-
-   return 0;
-}
-```
-
-**Output:**
-
-```
-Aktualna data: Tue Aug 17 12:01:27 2021
-```
-
-Można również wykorzystać funkcję `strftime()` w celu dostosowania formatu wyświetlanej daty.
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-   // uzyskanie czasu w sekundach od początku epoki (01.01.1970 00:00:00)
-   time_t now;
-
-   // użycie funkcji time()
-   time(&now);
-
-   // konwersja do struktury tm
-   struct tm* local = localtime(&now);
-
-   // deklaracja bufora
-   char buffer[50];
-
-   // użycie funkcji strftime()
-   strftime(buffer, 50, "%d/%m/%Y", local);
-
-   // wyświetlenie bieżącej daty
-   printf("Aktualna data: %s\n", buffer);
-
-   return 0;
-}
-```
-
-**Output:**
-
-```
-Aktualna data: 17/08/2021
+Bieżąca data: 27-10-2021
 ```
 
 ## Deep Dive
 
-Bieżąca data jest przechowywana w języku C jako liczba całkowita reprezentująca liczbę sekund od początku epoki. Jest to 32-bitowa liczba, co oznacza, że może przechowywać daty do 3 stycznia 2038 roku. Jednym ze sposobów na rozszerzenie tego zakresu jest użycie 64-bitowej liczby z biblioteki `inttypes.h`.
+Funkcje "time()" i "localtime()" wykorzystują wewnętrznie struktury czasu, aby przetworzyć bieżący czas. Struktura ta zawiera wiele pól, takich jak rok, miesiąc, dzień, godzina, minuta, sekunda, itp. Dzięki temu możemy uzyskać różne informacje o bieżącej dacie i godzinie.
 
-Innym ciekawym elementem jest fakt, że bieżąca data jest zależna od strefy czasowej. Funkcja `localtime()` konwertuje liczbę sekund na lokalną strefę czasową, dlatego może zwrócić inną wartość dla różnych miejsc na świecie.
+Możemy również zmienić strefę czasową, w której chcemy wyświetlić datę, poprzez ustawienie odpowiedniego pola struktury lokalnego czasu "tm_zone". Możemy również zmienić format wyjściowy używając innych funkcji z biblioteki "time.h", takich jak "strftime()".
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja funkcji time() w języku C (en)](https://en.cppreference.com/w/c/chrono/time)
-- [Informacje o strukturze struct tm (en)](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [Porównanie różnych sposobów uzyskania bieżącej daty w ję
+- [Dokumentacja funkcji time() i localtime() w języku C](https://www.cplusplus.com/reference/ctime/)
+- [Przewodnik po programowaniu w języku C](https://www.programuj.com/kursy/c/jak-zaczac-programowanie-w-c?gclid=CjwKCAjwiLGGBhAqEiwAgq3q_407TsylY816hDsRXGzif8_Q-tA28Eg0wPsPfAssmasfQjrGlpqVQRoCkkEQAvD_BwE)
+- [Książka "Język ANSI C" autorstwa B. W. Kernighan i D. M. Ritchie](https://helion.pl/ksiazki/jezyk-ansi-c-brian-w-kernighan-dennis-m-ritchie,jansc.htm#format/e)

@@ -1,75 +1,55 @@
 ---
-title:    "Kotlin: Eine Textdatei schreiben"
+title:    "Kotlin: Textdatei schreiben"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-### Warum
+# Warum
 
-Das Schreiben von Textdateien ist ein wichtiger Aspekt der Programmierung in Kotlin. Es ermöglicht es uns, Daten zu speichern, zu manipulieren und zu synchronisieren. Egal ob es sich um einfache Textdateien oder komplexe Datenbanken handelt, das Schreiben von Textdateien ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte.
+Das Schreiben einer Textdatei kann nützlich sein, wenn man Daten speichern oder übertragen möchte, ohne eine Datenbank zu verwenden. Es ist auch ein grundlegendes Konzept in der Programmierung, das es ermöglicht, Text in Dateien zu verarbeiten.
 
-### Wie geht das?
+# Wie geht man vor
 
-Um eine Textdatei in Kotlin zu schreiben, gibt es einige Schritte, die man befolgen muss:
+Um eine Textdatei in Kotlin zu schreiben, gibt es mehrere Schritte, die befolgt werden müssen.
 
-1. Erstelle eine neue Datei mit `.kt` Dateiendung.
-2. Importiere die erforderlichen Bibliotheken mit `import`.
-3. Definiere den Dateipfad und Dateinamen, wo die Textdatei gespeichert werden soll.
-4. Öffne eine  `FileOutputStream` Verbindung zu der Textdatei.
-5. Verwende die `write()` Methode, um den Text in die Datei zu schreiben.
-6. Schließe die Verbindung und speichere die Datei.
-
-Ein Beispielcode könnte wie folgt aussehen:
+1. Als erstes müssen wir die `File()` Funktion verwenden, um eine neue Datei zu erstellen. Dies erfordert den Pfad zur Datei sowie den Dateinamen, den wir verwenden möchten. Zum Beispiel:
 
 ```Kotlin
-import java.io.FileOutputStream
-
-fun main(args: Array<String>) {
-    val filePath = "/users/documents/"
-    val fileName = "myTextFile.txt"
-
-    val fileStream = FileOutputStream("$filePath$fileName")
-    fileStream.write("Dies ist ein Text in meiner Textdatei.".toByteArray())
-    fileStream.close()    
-}
+val file = File("C:/MeineDateien/beispiel.txt")
 ```
 
-Der Code erstellt eine Datei mit dem Namen "myTextFile.txt" im Verzeichnis "/users/documents/" und schreibt den gegebenen Text in die Datei.
-
-Um zu überprüfen, ob die Datei erfolgreich erstellt wurde, kann man den Inhalt der Datei mit einer einfachen `readText()` Methode ausgeben:
+2. Als nächstes öffnen wir die Datei zur Bearbeitung mit der Funktion `writer()`. Dies gibt uns einen `FileWriter`-Objekt zurück, das wir verwenden können, um Daten in die Datei zu schreiben.
 
 ```Kotlin
-import java.io.File
-
-fun main(args: Array<String>) {
-    val filePath = "/users/documents/"
-    val fileName = "myTextFile.txt"
-
-    val file = File("$filePath$fileName")
-    val text = file.readText()
-    println(text)
-}
+val writer = file.writer()
 ```
 
-Die Ausgabe sollte der folgenden Textdatei entsprechen:
+3. Jetzt können wir mithilfe der `write()` Funktion Daten in die Datei schreiben. Hier ist ein Beispiel für das Schreiben eines Strings:
 
+```Kotlin
+writer.write("Dies ist ein Beispieltext.")
 ```
-Dies ist ein Text in meiner Textdatei.
+
+4. Schließlich müssen wir die Datei schließen, um die Änderungen zu speichern. Dazu verwenden wir die `close()` Funktion auf unserem `FileWriter`-Objekt.
+
+```Kotlin
+writer.close()
 ```
 
-### Eine tiefergehende Erklärung
+# Tiefergehende Informationen
 
-Beim Schreiben von Textdateien in Kotlin gibt es einige wichtige Konzepte zu beachten. Zum einen werden alle Dateipfade und Dateinamen als Strings behandelt. Deshalb müssen wir den Dateipfad und Dateinamen als Strings definieren, bevor wir die Datei erstellen.
+Es gibt noch weitere Optionen und Funktionen, die beim Schreiben von Textdateien in Kotlin verwendet werden können. Zum Beispiel können wir den `append` Parameter bei der `writer()` Funktion verwenden, um Daten an eine bereits existierende Datei anzuhängen, anstatt sie zu überschreiben.
 
-Außerdem sollte man sicherstellen, dass man die richtigen Berechtigungen hat, um auf den gewünschten Speicherort zuzugreifen, bevor man versucht, eine Datei zu erstellen oder zu schreiben.
+```Kotlin
+val writer = file.writer(append = true)
+```
 
-Zusätzlich sollte man beim Schließen der Datei immer die Verbindung mit der `close()` Methode beenden, um sicherzustellen, dass alle nötigen Ressourcen freigegeben werden.
+Wir können auch mit dem `charset` Parameter verschiedene Zeichencodierungen für unsere Daten wählen, und mit der `println()` Funktion anstelle von `write()` können wir automatisch einen Zeilenumbruch am Ende jeder Zeile hinzufügen.
 
-### Siehe auch
+# Siehe auch
 
-Hier sind einige hilfreiche Links, die dir beim Schreiben von Textdateien in Kotlin weiterhelfen können:
-
-- ["Files" Dokumentation in der offiziellen Kotlin Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Ein Tutorial von Ray Wenderlich zum Schreiben von Dateien in Kotlin](https://www.raywenderlich.com/18741115-kotlin-io-file)
-- [Ein Blogbeitrag von Baeldung über das Erstellen von Dateien in Kotlin](https://www.baeldung.com/creating-files-kotlin)
+- [`File()` Funktion](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/file.html)
+- [`writer()` Funktion](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-writer/writer.html)
+- [Kotlin - Die offizielle Website](https://kotlinlang.org/)

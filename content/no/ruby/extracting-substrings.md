@@ -1,39 +1,45 @@
 ---
-title:    "Ruby: Utvinning av delstrenger"
+title:    "Ruby: Uthenting av delstrenger"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Å eksperimentere med å hente ut substrings fra en streng kan være en nyttig teknikk for å få tilgang til spesifikke deler av en tekst eller variabel. Dette kan være spesielt nyttig for tekstbehandling eller å søke gjennom store datasett.
+I Ruby programmering, er det ofte nødvendig å kunne hente ut en del av en tekststreng. Denne prosessen kalles "substring extraction" på engelsk, og det kan være nyttig å kunne for å manipulere tekststrenger eller hente ut spesifikke deler av en streng. I denne bloggartikkelen, vil jeg gå gjennom hvordan man kan utføre substring extraction i Ruby.
 
 ## Slik gjør du det
 
+For å hente ut en substring i Ruby, kan man bruke metoden `slice` eller `[]` med tekststrengen som man ønsker å hente ut en del av. La oss si at vi har en tekststreng som heter `tekststreng` og vi ønsker å hente ut de tre første bokstavene. Da kan vi bruke følgende kode:
+
 ```Ruby
-# Hent ut en substring basert på start- og sluttposisjon
-string = "Hei alle sammen!"
-puts string[4, 3] # Output: "alle"
-
-# Hent ut siste bokstav i en streng
-string = "Ruby er gøy!"
-puts string[-1] # Output: "!"
-
-# Hent ut en substring basert på en indeks
-string = "Dette er en tekst"
-puts string[6..9] # Output: "er e"
-
+tekststreng = "Dette er en tekststreng"
+puts tekststreng.slice(0,3) # Output: "Det"
 ```
 
-Disse eksemplene viser bare noen få måter å hente ut substrings på. Det finnes mange flere metoder og kombinasjoner som kan brukes for å få tilgang til ønsket tekst. Utforsk og prøv deg frem!
+I dette eksempelet har vi brukt `slice` metoden for å spesifisere at vi ønsker å hente ut karakterene fra indeks 0 til indeks 3. Dette betyr de første tre karakterene i tekststrengen. Vi kan også bruke `[]` metoden på samme måte:
+
+```Ruby
+tekststreng = "Dette er en tekststreng"
+puts tekststreng[0,3] # Output: "Det"
+```
+
+Det er viktig å merke seg at Ruby bruker null-indeks, som betyr at den første karakteren i tekststrengen har indeks 0.
 
 ## Dypdykk
 
-Å hente ut substrings kan også gjøres ved hjelp av ulike metoder og argumenter, som for eksempel `slice()` og `scan()`. Det er også mulig å bruke regulære uttrykk for å finne og eksakte deler av en streng basert på et mønster. Dette kan være nyttig for å behandle store datamengder og finne spesifikke mønstre.
+For å være mer presis, er `slice` metoden faktisk en alias for `[]`, så de gjør akkurat det samme. Man kan derfor bruke den ene eller den andre avhengig av personlige preferanser. Det som skiller disse to metodene fra hverandre er at `slice` kan ta et annet argument for å specificere lengden på substringen, i tillegg til startposisjonen. Dette er nyttig hvis man ønsker å hente ut en lengre del av en tekststreng. For eksempel:
+
+```Ruby
+tekststreng = "Dette er en tekststreng"
+puts tekststreng.slice(5,7) # Output: "er en t"
+```
+
+Her har vi spesifisert at vi ønsker å hente ut 7 karakterer fra indeks 5, som betyr de ordene som starter på 'er'. Dette er spesielt nyttig hvis man ønsker å hente ut en del av en tekststreng basert på ord istedenfor karakterer.
 
 ## Se også
 
-- [Ruby dokumentasjon for å hente ut substrings](https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D)
-- [Utbredte metoder for å håndtere tekst i Ruby](https://www.rubyguides.com/2015/06/ruby-strings/)
-- [Regulære uttrykk i Ruby](https://www.rubyguides.com/2017/02/regular-expressions-ruby/)
+- https://www.rubyguides.com/2015/09/ruby-string-methods/#Extracting-a-Range
+- https://learnruby.com/about-ruby-for-newbies/substrings/

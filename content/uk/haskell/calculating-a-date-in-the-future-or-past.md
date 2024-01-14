@@ -1,37 +1,55 @@
 ---
-title:    "Haskell: Obchyslennia daty v maibutnomu abo minulomu"
+title:    "Haskell: Обчислення дати у майбутньому або минулому"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Почему
-Хаскель - это мощный язык программирования, который позволяет легко и точно работать с датами, что может быть особенно полезно для людей, которые хотят вычислять даты в будущем или прошлом.
+## Чому
 
-## Как Реализовать
-Для вычисления даты в будущем или прошлом вам понадобится использовать модуль `Data.Time` в Хаскеле. Для примера, давайте вычислим дату, которая будет через 100 дней от сегодня:
+Урахування дати у майбутньому або минулому може бути корисним для багатьох програмних задач, наприклад, створення розкладу подій або обробка платіжних дат.
+
+## Як
 
 ```Haskell
 import Data.Time
 
+-- код для отримання дати за 1 день до поточної дати
+getYesterday :: IO Day
+getYesterday = do
+  today <- getCurrentTime
+  let yesterday = addDays (-1) (utctDay today)
+  return yesterday
+
+-- код для отримання дати через 1 рік від поточної дати
+getOneYearFromNow :: IO Day
+getOneYearFromNow = do
+  today <- getCurrentTime
+  let oneYearFromNow = addGregorianYearsClip 1 (utctDay today)
+  return oneYearFromNow
+
+-- приклад використання функцій
+main :: IO ()
 main = do
-  currentDay <- getCurrentDay
-  let futureDay = addDays 100 currentDay
-  putStrLn $ "Дата через 100 дней: " ++ show futureDay
+  yesterday <- getYesterday
+  oneYearFromNow <- getOneYearFromNow
+  print yesterday
+  print oneYearFromNow
 ```
 
-Результатом будет:
+Результат виконання програми буде виглядати так:
 
-```Haskell
-Дата через 100 дней: 2021-09-28
+```
+2021-10-05
+2022-10-04
 ```
 
-В примере выше мы использовали функцию `getCurrentDay` для получения текущей даты, а затем при помощи функции `addDays` добавили 100 дней к текущей дате. Конечно, вы можете изменить значение 100 на любое другое, в зависимости от того, какую дату вы хотите вычислить в будущем или прошлом.
+## Глибше поринемо
 
-## Глубокий Погружение
-Хотя мы использовали простой пример для вычисления даты в будущем, модуль `Data.Time` позволяет выполнять более сложные операции, такие как прибавление или вычитание месяцев, лет или даже секунд от текущей даты. Кроме того, есть много других функций, которые могут быть полезны при работе с датами, такие как `isLeapYear` для определения високосного года или `addLocalTime` для работы с различными часовыми поясами.
+В хаскелі існує багато корисних функцій для роботи з датами, таких як `addDays` для добавлення/віднімання днів, `addGregorianYearsClip` для добавлення/віднімання років в григоріанському календарі та багато інших. Також, для зручності, було створено бібліотеку `time`, яка містить багато корисних функцій для обробки дат. Рекомендується ознайомитись з документацією, щоб дізнатися більше про доступні функції та їх можливості.
 
-## Смотрите Также
-- [Официальная документация Хаскеля по работе с датами](https://www.haskell.org/hoogle/?hoogle=Data.Time)
-- [Статья "Изучаем Хаскель: работа с датами"](https://medium.com/@pauloedurezende/%D0%B8%D0%B7%D1%83%D1%87%D0%B0%D0%B5%D0%BC-haskell-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%D0%B8-4f0612fa25e3)
-- [Видео урок "Работа с датами в Хаскеле"](https://www.youtube.com/watch?v=0MOzHZuuwEs)
+## Дивись також
+
+- [Документація по бібліотеці `time`](https://hackage.haskell.org/package/time)
+- [Приклади використання функцій для обробки дат](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time)

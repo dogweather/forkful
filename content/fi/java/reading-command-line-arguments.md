@@ -1,47 +1,32 @@
 ---
 title:    "Java: Komentoriviparametrien lukeminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lukea komenoriviparametreja Java-ohjelmoinnissa?
+## Miksi
 
-Komenoriviparametrien lukeminen on tärkeä taito Java-ohjelmointia opetellessa, sillä se mahdollistaa interaktiivisemman käyttöliittymän ja monipuolisemman ohjelmoinnin. Lisäksi se on olennainen osa monia Java-ohjelmia, kuten käyttöjärjestelmätyökaluja ja verkkopalveluita. Siksi on tärkeää hallita tämä taito, jotta voi kehittää monipuolisempia ohjelmia ja ymmärtää jo olemassa olevia ohjelmia.
+Java-ohjelmoijien tulisi tuntea tapa lukea komentoriviargumentteja, koska se on olennainen osa ohjelmointia ja auttaa heitä kirjoittamaan tehokkaampaa ja monipuolisempaa koodia.
 
-## Kuinka lukea komenoriviparametreja Java-ohjelmassa?
+## Kuinka tehdä se
 
-Komenoriviparametrit luetaan ohjelmassa käyttämällä `args`-muuttujaa. Tämä muuttuja sisältää taulukon kaikista syötetyistä parametreistä, ja se voidaan iteroida läpi esimerkiksi `for`-silmukan avulla. Alla on esimerkki koodista, joka tulostaa kaikki syötteet ja niiden indeksin.
+Java-ohjelmoijat voivat lukea komentoriviargumentteja käyttämällä `main`-funktiota ja `args`-parametria. Tässä on yksinkertainen koodiesimerkki, joka tulostaa käyttäjän antaman komentoriviargumentin:
 
-```Java
-public class ArgsExample {
-  public static void main(String[] args) {
-    for (int i = 0; i < args.length; i++) {
-      System.out.println("Syöte " + i + ": " + args[i]);
-    }
-  }
+```java
+public static void main(String[] args) {
+    System.out.println("Komentoriviargumentti: " + args[0]);
 }
 ```
 
-Jos ajetaan ohjelma komentoriviltä esimerkiksi seuraavalla tavalla:
+Jos käyttäjä antaa komentoriviltä "java Ohjelma Hello", niin ohjelman tulostus on "Komentoriviargumentti: Hello".
 
-```
-java ArgsExample hello world
-```
+## Syvällinen selvitys
 
-Tulostuu seuraava tulos:
-
-```
-Syöte 0: hello
-Syöte 1: world
-```
-
-## Syvempi sukellus komenoriviparametreihin
-
-Komenoriviparametrien lukeminen on mahdollista myös erilaisilla kirjastoilla, kuten Apache Commons CLI:llä. Tämän avulla voi tarkemmin määritellä odotetut parametrit ja niiden muodon. Lisäksi komenoriviparametreilla voidaan myös ohjata ohjelman toimintaa, esimerkiksi määrittelemällä erilaisia vaihtoehtoja. Tämän vuoksi on hyvä tutustua erilaisiin ratkaisuihin ja valita niistä itselleen sopivin.
+Komentoriviargumenttien lukeminen antaa ohjelmoijille mahdollisuuden antaa tietoja ohjelmilleen käyttäessään niitä. Tämä on erityisen hyödyllistä, kun ohjelman halutaan ottaa vastaan erilaisia parametreja eri tilanteisiin. Komentoriviargumentit ovat myös käteviä, kun halutaan antaa tietoa tiettyjen toimintojen suorittamisesta, kuten tiedostojen luomisesta tai poistamisesta.
 
 ## Katso myös
 
-- [Java-varausavainsanat](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html)
-- [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)
-- [Komentoriviparametrien käyttö Java-ohjelmassa](https://www.baeldung.com/java-command-line-arguments)
+- [Java Tutorials – Reading Command-line Arguments](https://www.tutorialspoint.com/java_programming/java_command_line_arguments.htm)
+- [Oracle Java Documentation - Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)

@@ -1,36 +1,33 @@
 ---
-title:    "Kotlin: 문자열 대문자로 바꾸기"
+title:    "Kotlin: 문자열 대문자로 만드는 방법"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 대문자로 바꾸는 것에 참여하는 이유는 무엇일까요? 일단 웹 개발이나 데이터 처리와 같은 다양한 분야에서 사용되기 때문입니다.
+  
+문자열을 대문자로 바꾸는 것에 대해 왜 누군가가 참여할까요? 이 기능은 문자열을 가공하거나 데이터를 비교할 때 유용합니다.
 
-## 바꾸는 방법
-문자열을 대문자로 바꾸는 것은 코틀린에서 아주 간단합니다. 우선 문자열을 `toUpperCase()` 함수를 사용하여 대문자로 바꿀 수 있습니다.
+## 방법
 
-```
-Kotlin fun capitalizingString(input: String): String {
-    return input.toUpperCase()
-}
-```
+먼저, Kotlin에서 제공하는 `toUpperCase()` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 다음은 코드 예시와 함께 출력 결과입니다.
 
-아래는 결과 코드입니다.
-
-```
-capitalizingString("hello") #=> "HELLO"
-capitalizingString("world") #=> "WORLD"
+```Kotlin
+val name = "kotlin programming"
+val nameInCaps = name.toUpperCase()
+print(nameInCaps)
 ```
 
-이제 `toUpperCase()` 함수의 내부 코드를 살펴보겠습니다. `toUpperCase()` 함수는 문자열에서 각 문자를 순서대로 돌면서 대문자로 변환한 다음 최종 결과를 반환합니다. 이런 방식으로 우리는 한 줄의 간단한 코드로 문자열을 대문자로 바꿀 수 있습니다.
+출력 결과:
+KOTLIN PROGRAMMING
 
-## 깊게 파고들기
-문자열을 대문자로 바꾸는 작업은 프로그래밍에서 매우 일반적으로 사용되는 작업입니다. 다양한 데이터 처리 작업에서 문자열의 경우 대문자를 사용해야 할 때가 많습니다. 예를 들어, 사용자의 이름과 이메일 주소는 항상 대문자로 입력해야 할 수도 있습니다. 따라서 `toUpperCase()` 함수는 문자열을 변환하는 데 아주 유용합니다.
+## 심층 분석
 
-또한 문자열을 대문자로 변환하는 방법에는 여러 가지가 있습니다. 코틀린에서는 `toUpperCase()`의 대안으로 `toUpperCase(Locale.getDefault())`를 사용할 수 있습니다. 이렇게 하면 사용자의 디폴트 로케일에 맞게 문자열이 대문자로 변환됩니다.
+반복적으로 사용할 수 있는 대문자 변환 기능을 작성하는 과정에서 다양한 방식을 배울 수 있습니다. 예를 들어, 문자열을 순회하면서 각 문자를 대문자로 변환하는 방법이 있습니다. 또한, 유니코드에서 제공하는 `toUpperCase()` 함수를 사용하여 지원되지 않는 언어의 문자를 대문자로 변환하는 방법도 있습니다.
 
-## 참고자료
-- [코틀린 문자열 처리 가이드](https://kotlinlang.org/docs/strings.html)
-- [코틀린 표준 라이브러리 문서 - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html#capitalize)
+## 관련 링크
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/#functions)
+- [자바로 문자열 대문자로 변환하는 방법](https://www.javatpoint.com/uppercase-in-java)

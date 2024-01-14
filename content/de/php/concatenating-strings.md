@@ -1,47 +1,54 @@
 ---
-title:    "PHP: Zeichenketten verketten"
+title:    "PHP: Strings verketten"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Concatenating oder Verketten von Strings ist eine essentielle Fähigkeit in der PHP Programmierung. Durch das Verbinden mehrerer Textbausteine können dynamische Inhalte erstellt werden, die für den Nutzer personalisiert und ansprechender sind. Zudem wird der Code übersichtlicher und leichter zu lesen.
+Das Zusammenfügen von Strings (Zeichenketten) ist eine wichtige Grundfunktion in der Programmierung. Es ermöglicht es uns, mehrere Zeichenketten zu einer einzelnen Zeichenkette zu verbinden, was besonders nützlich ist, wenn wir dynamisch generierte Daten darstellen möchten.
 
-## Wie geht das?
+## Wie man String-Ketten in PHP zusammenfügt
 
-In PHP gibt es mehrere Möglichkeiten, Strings zu verketten. Eine davon ist die Verwendung des Punktes (".") als Verkettungsoperator. Schauen wir uns das anhand eines einfachen Beispiels an:
-
-```PHP
-$name = "Peter";
-$age = 26;
-$message = "Ich heiße " . $name . " und ich bin " . $age. " Jahre alt.";
-echo $message;
-```
-
-Die Ausgabe dieses Codes wäre: "Ich heiße Peter und ich bin 26 Jahre alt." Hier wurden die Variablen $name und $age mithilfe des Punktes in den String eingefügt.
-
-Es ist auch möglich, Verkettungen innerhalb von Strings mit geschweiften Klammern und dem Dollarzeichen zu realisieren. Das sieht dann so aus:
+Die einfachste Methode, um Strings in PHP zu kombinieren, ist die Verwendung des Konkatenationsoperators (".") oder der Verkettungsfunktion "concat()". Schauen wir uns ein Beispiel an:
 
 ```PHP
-$name = "Peter";
-$message = "Ich heiße {$name} und ich bin {$age} Jahre alt.";
-echo $message;
+$vorname = "Anna";
+$nachname = "Müller";
+$gruß = "Hallo, " . $vorname . " " . $nachname . "!";
+echo $gruß;
 ```
 
-Das Ergebnis wäre dasselbe wie beim vorherigen Beispiel.
+Die Ausgabe dieses Codes ist "Hallo, Anna Müller!". Wir haben erfolgreich die Variablen "$vorname" und "$nachname" zusammengefügt und in der Variablen "$gruß" gespeichert, die dann ausgegeben wurde.
 
-## Deep Dive
+Eine andere Möglichkeit, Strings zu verketten, ist die Verwendung von "sprintf()". Diese Funktion ermöglicht es uns, Platzhalter zu verwenden, um Variablen in einer Zeichenkette zu ersetzen. Ein Beispiel:
 
-Bei der Verkettung von Strings ist es wichtig zu beachten, dass der Ergebnis-String die richtige Syntax aufweist. So müssen beispielsweise Leerzeichen und Zeilenumbrüche manuell hinzugefügt werden. Auch sollte darauf geachtet werden, dass die entsprechenden Variablen vor der Verwendung auch tatsächlich initialisiert wurden.
+```PHP
+$anzahl = 5;
+$produkt = "Bücher";
+$preis = 10.99;
+$gesamt = sprintf("%d %s für %.2f Euro", $anzahl, $produkt, $preis);
+echo $gesamt;
+```
 
-Es ist auch möglich, mehr als zwei Strings miteinander zu verketten. Dazu können einfach weitere Punkte und Variablen hinzugefügt werden.
+Die Ausgabe dieses Codes ist "5 Bücher für 10,99 Euro". Wir haben die Variablen "$anzahl", "$produkt" und "$preis" in die Zeichenkette eingegeben und durch die Platzhalter ersetzt. Das Ergebnis ist eine gut formatierte Zeichenkette, die dann ausgegeben wird.
+
+## Tiefer Einblick
+
+Beim Zusammenführen von Strings in PHP müssen wir auf einige wichtige Dinge achten. Zum Beispiel können wir keine Strings mit Zahlen mit dem Konkatenationsoperator verketten, da PHP versuchen wird, den Zahlenwert als String zu interpretieren. In diesem Fall müssen wir die Funktion "strval()" verwenden, um die Zahl in einen String umzuwandeln. Ein Beispiel:
+
+```PHP
+$zahl = 25;
+$text = "Die Zahl ist " + $zahl; // Fehlermeldung!
+$text_correct = "Die Zahl ist " . strval($zahl); // Ausgabe: "Die Zahl ist 25"
+```
+
+Ein weiteres wichtiges Detail: Wenn wir Variablen innerhalb einer Zeichenkette durch Platzhalter ersetzen, müssen wir auf die richtige Schreibweise achten. Zum Beispiel muss %d für ganze Zahlen, %f für Gleitkommazahlen und %s für Strings verwendet werden. Eine vollständige Liste der Platzhalter und ihre Bedeutungen finden Sie in der offiziellen PHP-Dokumentation.
 
 ## Siehe auch
 
-- [PHP String Verkettung](https://www.php.net/manual/de/language.operators.string.php)
-- [PHP String Funktionen](https://www.php.net/manual/de/ref.strings.php)
-- [W3Schools - PHP String Verkettung](https://www.w3schools.com/php/php_operators.asp)
-
-Hoffentlich konnte dieser kleine Überblick dir helfen, besser zu verstehen, wie du Strings in PHP miteinander verkettet. Viel Spaß beim Programmieren!
+- [Offizielle PHP-Dokumentation über String-Konkatenation](https://www.php.net/manual/en/language.operators.string.php)
+- [Tutorial zu String-Konkatenation in PHP](https://www.w3schools.com/php/php_string_concat.asp)
+- [Video-Tutorial zu String-Konkatenation auf YouTube](https://www.youtube.com/watch?v=6it1x327rKU)

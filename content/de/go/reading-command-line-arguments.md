@@ -1,74 +1,79 @@
 ---
-title:    "Go: Lesen von Befehlszeilenargumenten"
+title:    "Go: Das Lesen von Befehlszeilen-Argumenten"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden Go-Programmierer. Es ermöglicht die Interaktion mit dem Programm über die Kommandozeile und erleichtert die Verwendung und Anpassung des Programms.
+Das Lesen von Befehlszeilenargumenten ist ein fundamental wichtiger Teil des Programmierens in Go, da es ermöglicht, Benutzereingaben zu verarbeiten und die Ausführung von Programmen zu steuern. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man Befehlszeilenargumente in Go liest und verarbeitet.
 
-# Wie man es macht
+## Wie geht das?
 
-Um Befehlszeilenargumente in Go zu lesen, verwenden wir die os.Args-Funktion. Diese Funktion gibt ein Array mit den Argumenten zurück, die beim Aufruf des Programms übergeben wurden.
-
-```Go
-func main() {
-    args := os.Args
-    fmt.Println("Argumente:", args)
-}
-```
-
-Die Ausgabe dieses Programms wäre folgende:
-
-```Shell
-$ ./programm arg1 arg2
-Argumente: ./programm arg1 arg2
-```
-
-Wie wir sehen können, enthält das Array auch den Namen des Programms als ersten Eintrag. Wir können nun über das Array iterieren und die Argumente verwenden, um unser Programm anzupassen oder zu steuern.
-
-# Tiefere Einblicke
-
-Um noch tiefer in das Thema einzusteigen, können wir uns die os.Args-Funktion genauer ansehen. Diese Funktion verwendet ein globales Array namens "osArgs" und fügt alle übergebenen Argumente als Elemente zu diesem Array hinzu.
-
-Wir können auch die Indexfunktion verwenden, um auf spezifische Argumente zuzugreifen:
+Um Befehlszeilenargumente in Go zu lesen, verwenden wir die eingebaute `os.Args` Funktion. Diese Funktion gibt ein Array von Strings zurück, das alle Befehlszeilenargumente enthält, die beim Ausführen des Programms angegeben wurden.
 
 ```Go
 func main() {
+
+    // Lesen der Befehlszeilenargumente
     args := os.Args
-    fmt.Println("Erstes Argument:", args[1])
-    fmt.Println("Zweites Argument:", args[2])
+
+    // Ausgabe des ersten Arguments
+    fmt.Println("Erstes Argument:", args[0])
+
+    // Ausgabe aller Argumente
+    fmt.Println("Alle Argumente:", args)
 }
 ```
 
-Die Ausgabe würde folgendermaßen aussehen:
+Wenn wir dieses Programm mit dem Befehl `go run main.go hello world` ausführen, wird folgende Ausgabe erzeugt:
 
-```Shell
-$ ./programm arg1 arg2
-Erstes Argument: arg1
-Zweites Argument: arg2
+```
+Erstes Argument: main.go
+Alle Argumente: [main.go hello world]
 ```
 
-Außerdem können wir die Länge des Arrays mit der len-Funktion überprüfen, um zu sehen, wie viele Argumente übergeben wurden:
+Wie man sehen kann, wird das erste Argument (der Dateiname) automatisch hinzugefügt, daher beginnt das Array bei Index 0. Die restlichen Befehlszeilenargumente folgen in der Reihenfolge, in der sie angegeben wurden.
+
+## Tiefer tauchen
+
+Neben der Verwendung der `os.Args` Funktion gibt es noch andere Möglichkeiten, Befehlszeilenargumente in Go zu lesen und zu verarbeiten. Eine davon ist die Verwendung des `flag` Paketes, das eine bequemere Art bietet, Befehlszeilenargumente zu definieren und zu lesen.
 
 ```Go
+// Importieren des "flag" Pakets
+import "flag"
+
 func main() {
-    args := os.Args
-    fmt.Println("Anzahl der Argumente:", len(args))
+
+    // Definieren von Befehlszeilenargumenten
+    name := flag.String("name", "", "Name des Benutzers")
+    age := flag.Int("age", 0, "Alter des Benutzers")
+
+    // Ausführen der Parsing-Funktion
+    flag.Parse()
+
+    // Ausgabe der Argumente
+    fmt.Println("Name:", *name)
+    fmt.Println("Alter:", *age)
 }
 ```
 
-Die Ausgabe würde folgendermaßen lauten:
+Wenn wir dieses Programm mit dem Befehl `go run main.go -name Max -age 25` ausführen, wird folgende Ausgabe erzeugt:
 
-```Shell
-$ ./programm arg1 arg2
-Anzahl der Argumente: 3
+```
+Name: Max
+Alter: 25
 ```
 
-# Siehe auch
+Das `flag` Paket bietet auch die Möglichkeit, Argumente als boolesche Werte oder Listen von Strings zu definieren und zu verarbeiten.
 
-- [Offizielle Dokumentation zu os.Args](https://golang.org/pkg/os/#Args)
-- [Videoanleitung zu os.Args](https://www.youtube.com/watch?v=F5FeWrkggdc)
-- [Weitere Informationen zu Kommandozeilenargumenten in Go](https://gobyexample.com/command-line-arguments)
+## Siehe auch
+
+Für weitere Informationen und Beispiele zur Verwendung von Befehlszeilenargumenten in Go empfehle ich folgende Links:
+
+- [Offizielle Dokumentation zu os.Args](https://golang.org/pkg/os/)
+- [Offizielle Dokumentation zum flag Paket](https://golang.org/pkg/flag/)
+- [Ein Tutorial zu Befehlszeilenargumenten in Go](https://gobyexample.com/command-line-arguments)
+- [Ein praktisches Beispiel zur Verwendung von flag in Go](https://golangbot.com/command-line-arguments/)

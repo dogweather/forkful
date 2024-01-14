@@ -1,52 +1,53 @@
 ---
 title:    "Haskell: Extraindo Substrings"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Haskell?
+## Por que
 
-Extrair substrings é uma habilidade útil para muitos programadores em Haskell. Isso pode ser útil para manipular e processar strings, criar algoritmos eficientes ou até mesmo para lidar com entradas do usuário. Saber como extrair substrings pode melhorar sua eficiência e funcionalidade em projetos de programação em Haskell.
+Se você é um programador Haskell, provavelmente já se deparou com situações em que precisava extrair uma parte específica de uma string. Talvez você queira obter apenas o nome de um arquivo sem sua extensão, ou talvez queira remover determinados caracteres especiais de uma string. Independentemente do motivo, saber como extrair substrings é uma habilidade importante para qualquer programador.
 
 ## Como fazer
 
-Para extrair uma substring em Haskell, usamos a função `take` e `drop`. Essas funções aceitam dois argumentos: a quantidade de caracteres que queremos extrair, e a string da qual queremos extrair os caracteres. Abaixo está um exemplo de como extrair uma substring de uma string:
+Extrair substrings em Haskell é muito simples. Existem algumas funções úteis que nos permitem fazer isso de forma eficaz. Por exemplo, a função `take` nos permite pegar os primeiros n caracteres de uma string:
 
 ```Haskell
--- define a string
-let string = "Olá, Haskell!"
-
--- extrai a substring "Haskell"
-let substring = take 7 (drop 5 string)
-
--- imprime a substring
-putStrLn substring 
--- output: "Haskell"
+take 4 "Hello World" 
+-- Output: "Hell"
 ```
 
-Também podemos usar a função `splitAt` para dividir uma string em duas partes, com base em um índice especificado. Por exemplo:
+Da mesma forma, a função `drop` nos permite eliminar os primeiros n caracteres de uma string:
 
 ```Haskell
--- define a string
-let string = "Hello, world!"
+drop 6 "Hello World"
+-- Output: "World"
+```
 
--- divide a string em "Hello" e "world!"
-let (part1, part2) = splitAt 5 string
+Podemos também usar a função `splitAt` para dividir uma string em duas partes, no índice selecionado:
 
--- imprime as partes da string
-putStrLn part1 
--- output: "Hello"
-putStrLn part2 
--- output: "world!"
+```Haskell
+splitAt 6 "Hello World"
+-- Output: ("Hello ", "World")
+```
+
+Além disso, existem outras funções mais genéricas, como `substring`, que nos permite extrair uma sequência específica de caracteres de uma string:
+
+```Haskell
+substring 6 5 "Hello World"
+-- Output: "World"
 ```
 
 ## Mergulho Profundo
 
-Existem muitas outras maneiras de extrair substrings em Haskell, incluindo o uso de expressões regulares, compreensão de listas e a função `takeWhile`. Além disso, existem bibliotecas externas que podem facilitar ainda mais a extração de substrings em Haskell. É importante explorar e experimentar diferentes métodos para encontrar o melhor para sua aplicação específica.
+Além das funções mencionadas acima, existem outras formas de extrair substrings em Haskell. Podemos usar expressões regulares para encontrar padrões específicos em uma string e, em seguida, extrair a parte desejada.
+
+Outra opção é usar o pacote `text`, que oferece uma ampla gama de funções para trabalhar com strings, incluindo a extração de substrings.
 
 ## Veja também
 
-- [Documentação oficial do Haskell sobre funções de strings](https://www.haskell.org/onlinereport/standard-prelude.html#ltyString)
-- [Como extrair uma substring em Haskell](https://www.geeksforgeeks.org/haskell-extracting-substring-functions/)
-- [Tutorial em vídeo sobre a manipulação de strings em Haskell](https://www.youtube.com/watch?v=fxBuH1jzoIw)
+- [Documentação do Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/text-1.2.3.0/Data-Text.html)
+- [Tutorial de expressões regulares em Haskell](https://alexcd.dev/blog/making-use-of-regular-expressions-in-haskell.html)
+- [Exemplos de uso do pacote 'text'](https://github.com/haskell/text/tree/master/examples)

@@ -1,45 +1,48 @@
 ---
 title:    "Python: 문자열을 소문자로 변환하기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 소문자로 바꾸는 것이 왜 중요한지 이유는 문자열을 비교하거나 검색할 때 대소문자를 무시하기 위해서입니다.
+문자열을 소문자로 변환하는 것에 참여하는 이유는 무엇인가요? 문자열은 대소문자를 구분하기 때문에 데이터를 정렬하거나 비교할 때 대소문자를 통일하는 것이 중요합니다. 소문자로 변환하면 데이터 처리가 더 쉬워지고 코드의 가독성이 향상될 수 있습니다.
 
-## 어떻게
+## 방법
 
-```python
-# 기본적인 문자열을 소문자로 바꾸는 방법
+파이썬에서 문자열을 소문자로 변환하는 방법은 매우 쉽습니다. 다음과 같이 간단한 코드를 작성할 수 있습니다.
+
+```Python
 string = "Hello World"
-lower_case = string.lower()
-print(lower_case)
-
-# 리스트 안에 있는 문자열들을 모두 소문자로 바꾸는 방법
-string_list = ["Apple", "Banana", "Orange"]
-lower_case_list = [x.lower() for x in string_list]
-print(lower_case_list)
-
+lower_string = string.lower()
+print(lower_string)
 ```
 
-출력:
+실행 결과는 "hello world"가 됩니다. 이처럼 `lower()` 메서드를 사용해 소문자로 변환할 수 있습니다. 
 
+만약 변수에 할당하지 않고 바로 변환된 결과를 출력하고 싶다면 다음과 같이 코드를 작성할 수 있습니다.
+
+```Python
+string = "Hello World"
+print(string.lower())
 ```
-hello world
-['apple', 'banana', 'orange']
-```
 
-## 깊이 파고들기
+## 깊이 파헤치기
 
-파이썬에서 문자열을 소문자로 바꾸는 방법은 `lower()` 함수를 사용하는 것입니다. 이 함수는 문자열 객체의 메서드이기 때문에 문자열에 바로 적용할 수 있습니다. 또한 `lower()` 함수는 문자열에 포함된 모든 문자를 소문자로 바꿔줍니다.
+파이썬에서 문자열을 소문자로 변환하는 방법을 좀 더 자세히 알아보겠습니다. 우선, 파이썬에서는 문자열을 다루는데 유용한 다양한 메서드를 제공하고 있습니다. `lower()` 메서드를 포함하여 `upper()`, `capitalize()`, `title()` 등의 메서드가 있습니다.
 
-그러나 주의해야 할 점이 있습니다. `lower()` 함수는 문자열 객체를 변경하지 않고 새로운 문자열 객체를 반환합니다. 따라서 원본 문자열을 바꾸고 싶으면 다시 변수에 할당해주어야 합니다.
+`lower()` 메서드는 문자열을 모두 소문자로 변환해주지만 `upper()` 메서드는 모두 대문자로 변환해줍니다. `capitalize()` 메서드는 문자열의 첫 글자만 대문자로 변환해주고 나머지는 소문자로 유지합니다. `title()` 메서드는 단어의 첫 글자를 대문자로 변환해주는데, 단어 구분은 스페이스나 특수 문자 등을 기준으로 합니다.
 
-또한 `lower()` 함수는 영어에만 적용되는 것이 아니라, 사용되는 언어의 규칙에 따라 적용되는 것이기 때문에 다른 언어의 경우에는 원하는 결과를 얻을 수 없을 수도 있습니다.
+또한, `lower()` 메서드는 원본 문자열을 변경하지 않고 새로운 문자열을 반환합니다. 따라서, 원본 문자열에는 변화가 없습니다.
 
-## 아래 링크들을 참고하세요
+## 참고자료
 
-[파이썬 문자열 관련 문서](https://docs.python.org/3/library/stdtypes.html#string-methods) 
-[다른 언어에서의 문자열 비교](https://stackoverflow.com/questions/319426/how-do-i-do-a-case-insensitive-string-comparison)
+[파이썬 문자열 메서드 공식 문서](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
+[파이썬 문자열 메서드 관련 블로그 포스트](https://realpython.com/python-strings/)
+
+[문자열 관련 유용한 팁과 트릭](https://www.datacamp.com/community/tutorials/python-string-tutorial)
+
+## 더 알아보기

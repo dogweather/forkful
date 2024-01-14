@@ -1,49 +1,52 @@
 ---
-title:    "C: Verkettung von Zeichenketten"
+title:    "C: Verkettung von Strings"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum sich mit dem Verketten von Strings beschäftigen?
+# Warum
 
-Das Verketten von Strings ist ein grundlegender Teil der Programmierung in C und kann in vielen Anwendungsfällen nützlich sein. Es ermöglicht es uns, mehrere Zeichenfolgen miteinander zu verbinden und so komplexe Ausgaben zu erzeugen. Obwohl es auf den ersten Blick einfach erscheinen mag, gibt es einige wichtige Konzepte zu beachten, um die besten Ergebnisse zu erzielen.
+Das Zusammenführen oder Verkettung von Zeichenketten, auch bekannt als String-Konkatenation, ist eine grundlegende Funktion in C-Programmierung. Es ermöglicht dem Benutzer, verschiedene Strings zu kombinieren, um einen größeren String zu erstellen. Diese Funktion ist besonders nützlich, wenn Sie Texte in Ihrem Programm dynamisch generieren müssen. 
 
-# Wie man Strings in C verketten kann
+# Wie man
 
-Um Strings in C zu verketten, können wir die Funktion "strcat" verwenden. Diese Funktion nimmt zwei Strings als Argumente und verbindet sie miteinander, wobei der zweite String an den ersten angehängt wird. Um es zu nutzen, müssen wir die Bibliothek "string.h" in unserem Code einbinden.
+Die Syntax für die Verkettung von Strings in C ist relativ einfach. Man muss nur `strcat()` verwenden, gefolgt vom Ziel- und Quellenstring. Hier ist ein Beispiel, um es besser zu verstehen:
 
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-  // Initialisieren der Strings
-  char str1[20] = "Hallo";
-  char str2[] = "Welt";
-
-  // Verketten der Strings
-  strcat(str1, str2);
-
-  // Ausgabe des Ergebnisses
-  printf("%s", str1);
-
-  return 0;
-}
+```c
+char destination[50] = "Hallo ";
+char source[] = "Welt";
+strcat(destination, source);
+printf("%s", destination);
 ```
 
-Die Ausgabe dieses Codeschnipsels wäre "HalloWelt".
+**Ausgabe:** Hallo Welt
 
-Neben der Funktion "strcat" gibt es auch noch andere Möglichkeiten, Strings zu verketten, wie zum Beispiel die Verwendung von Schleifen und Zeigern. Es ist wichtig, verschiedene Methoden zu erlernen und zu verstehen, um das Beste aus unseren Programmen herausholen zu können.
+Wie Sie sehen können, wird der Quellenstring "Welt" an das Ende des Zielstrings "Hallo" angehängt. Beachten Sie, dass der Zielstring groß genug sein muss, um die zusätzlichen Zeichen aufzunehmen, da sonst ein Pufferüberlauf auftreten könnte.
 
-# Tiefergehende Informationen über das Verketten von Strings
+# Tief eintauchen
 
-Bei der Verknüpfung von Strings müssen wir uns bewusst sein, dass der erste String groß genug sein muss, um den zweiten aufnehmen zu können. Andernfalls kann es zu unerwünschten Ergebnissen führen, wie zum Beispiel das Überschreiben von Speicherbereichen. Es ist auch wichtig zu beachten, dass String-Arrays immer mit einem Nullterminator enden müssen, damit sie als gültige C-Strings behandelt werden.
+Wenn man sich die zugrundeliegende Technik der Zeichenkettenverkettung ansieht, kann es etwas komplexer erscheinen. In Wirklichkeit verwendet die Funktion `strcat()` die Funktion `strlen()` (Stringlänge) und `strcpy()` (Zeichenkette kopieren), um die Zeichenketten zu verbinden. Hier ist ein Beispiel, das dies verdeutlicht:
 
-Es gibt auch Fälle, in denen wir mehrere Zeichenfolgen miteinander verbinden müssen, anstatt nur zwei. Für diesen Zweck können wir die Funktion "strcat" in einer Schleife verwenden, um nacheinander mehrere Strings zu verketten.
+```c
+char destination[50] = "Hallo ";
+char source[] = "Welt";
+strcat(destination, source);
+printf("%s\n", destination);
+printf("Die Länge des Zielstrings beträgt: %d\n", strlen(destination));
+printf("Die Länge des Quellstrings beträgt: %d\n", strlen(source));
+```
 
-# Siehe auch
+**Ausgabe:**
+Hallo Welt
+Die Länge des Zielstrings beträgt: 11
+Die Länge des Quellstrings beträgt: 5
 
-- [C-Programmierung für Anfänger](https://www.guru99.com/c-programming-for-beginners.html)
-- [Offizielle C-Dokumentation](https://devdocs.io/c/)
-- [Stringverarbeitung in C](https://www.studytonight.com/c/string-processing.php)
+Man kann sehen, dass die Länge des Zielstrings der Summe der Längen von Ziel- und Quellstrings entspricht. Die Funktion `strcpy()` kopiert den Inhalt des Quellstrings in den Zielstring und die Funktion `strlen()` zählt die Anzahl der Zeichen, um die Länge zu bestimmen.
+
+# Siehe auch 
+
+- [`strcat()` Dokumentation von cplusplus.com](http://www.cplusplus.com/reference/cstring/strcat/)
+- [`strcat()` Tutorial von tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Weitere Beispiele von String-Konkatenation](https://www.programiz.com/c-programming/examples/concatenate-string)

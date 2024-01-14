@@ -1,62 +1,53 @@
 ---
 title:    "Bash recipe: Deleting characters matching a pattern"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Bash programming is a popular choice for automating tasks on Linux systems. It is a powerful tool for performing various string manipulations, including deleting characters that match a specific pattern. So, if you're looking to streamline your coding process and make it more efficient, learning how to delete characters matching a pattern in Bash can be incredibly useful.
+Deleting characters matching a certain pattern in a Bash program can be a useful tool when editing or manipulating text. It allows for quick and efficient removal of specific characters, making tasks like data cleaning or formatting much easier.
 
-## How To
+## How To 
 
-First, let's take a look at the basic syntax for deleting characters that match a pattern in Bash.
+To delete characters matching a pattern, we will use the Bash command `sed`. This command is used for editing or manipulating text files. 
 
-```Bash
-${variable/pattern/string}
+We will first need to specify the pattern we want to match. This can be done by using regular expressions, which are a set of characters used to search and match specific patterns in strings. Regular expressions can be quite complex, but for this example, we will use a simple pattern of the letter "a".
+
+To delete all characters matching the letter "a" from a text file, we will use the following command:
+
+```
+sed 's/a//g' file.txt
 ```
 
-In this syntax, `variable` represents the string where the pattern will be searched, `pattern` refers to the regular expression that will be used to match the characters, and `string` is the replacement for the matched characters. 
+The `s` in this command stands for substitution, the first set of quotations after it specifies the pattern we want to match, and the second set of quotations is left empty to indicate that we want to replace the matched pattern with nothing. The `g` at the end of the command is used to indicate that we want to perform this substitution globally on the entire file.
 
-Now, let's see an example. Suppose we have a variable `name` with the value "John Doe". We want to remove all the lowercase alphabets from this string. We can do that using the following code:
+Let's say our text file contains the following line: "I love apples and bananas." After running the `sed` command, the line would be changed to "I love pples nd bnns."
 
-```Bash
-${name/[a-z]/}
+## Deep Dive 
+
+The `sed` command has many different options and modifiers, making it a powerful tool for text manipulation. 
+
+One useful modifier is the `-i` option, which allows us to directly edit the text file rather than just printing the changes to the terminal. This is helpful when we want to permanently delete the characters matching our pattern.
+
+We can also use regular expressions to match more complex patterns, such as entire words or phrases. For example, to delete all instances of the word "apple" in our text file, we can use the following command:
+
+```
+sed 's/apple//g' file.txt
 ```
 
-The above code will replace all the lowercase alphabets with an empty string, leaving us with "JD" as the output.
+Additionally, we can use flags such as `&` to include the matched pattern in the substitution. So if we wanted to replace the word "apple" with "juicy apple", we could use the following command:
 
-We can also use the `#` (hash) or `%` (percent) symbol to delete characters from the beginning or end of the string, respectively. For example, consider the string "Hello World". If we want to remove all the characters from the beginning up to the fourth character, we can use the `#` symbol, like this:
-
-```Bash
-${"Hello World"//#(Hello )/}
+```
+sed 's/apple/juicy &/g' file.txt
 ```
 
-The above code will output "World", as it deleted the first four characters (Hello ) from the string.
+This would result in the line "I love juicy apples and bananas." 
 
-## Deep Dive
+## See Also 
 
-As we can see, the syntax for deleting characters matching a pattern in Bash is straightforward and easy to understand. However, it is essential to understand the different types of regular expressions that can be used in the `pattern` section. Here are some examples:
-
-- **[a-z]**: Matches any lowercase alphabet
-- **[A-Z]**: Matches any uppercase alphabet
-- **[0-9]**: Matches any digit
-- **[[:space:]]**: Matches any whitespace character (space, tab, newline, etc.)
-- **[[:punct:]]**: Matches any punctuation character (., !, ?, etc.)
-- **[[:alnum:]]**: Matches any alphanumeric character (a-z, A-Z, 0-9)
-- **[[:alpha:]]**: Matches any alphabetic character (a-z, A-Z)
-
-It is also possible to use more complex regular expressions, such as using the `|` (pipe) symbol to specify multiple patterns. For example, if we want to remove all the lowercase vowels from a string, we can use the following code:
-
-```Bash
-${"Hello World"/[a|e|i|o|u]/}
-```
-
-This code will output "Hll Wrld", as it has removed all the lowercase vowels from the string "Hello World".
-
-## See Also
-
-- [Bash Guide for Beginners - Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/string-manipulation.html)
-- [Regular Expressions - Linux Documentation Project](https://www.grymoire.com/Unix/Regular.html)
-- [Bash Scripting Cheat Sheet - Devhints](https://devhints.io/bash)
+- [Regular Expressions 101](https://regex101.com/) 
+- [Bash Sed Command Examples](https://likegeeks.com/linux-sed-command/) 
+- [The Power of Regular Expressions in Bash](https://unix.stackexchange.com/questions/530783/power-of-regular-expression-in-bash)

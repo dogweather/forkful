@@ -1,49 +1,54 @@
 ---
-title:    "TypeScript: デバッグ出力の印刷"
+title:    "TypeScript: 「デバッグ出力の印刷」"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力をプリントするのか
+## なぜ
 
-コンピュータプログラムを書く際には、何かがうまく動かない場合があります。その原因を特定するには、デバッグが欠かせません。デバッグとは、プログラムの実行中に出力される情報を確認し、問題の箇所を見つける作業です。そこで、デバッグ出力をプリントすることで、プログラムの動作を確認し、問題の原因を特定することができます。
+デバッグのためにデバッグ出力をプリントする必要があるか簡単に説明します。
 
-## デバッグ出力のプリント方法
+デバッグ出力をプリントすると、コードが実行されるときに何が起こっているのかをより詳細に知ることができます。これにより、問題箇所を特定し、修正するのに役立ちます。
 
-TypeScriptでは、```console.log()```メソッドを使用してデバッグ出力を行うことができます。例えば、次のコードを実行すると、コンソールに文字列 ```"Hello World!"``` が出力されます。
+## やり方
 
-```TypeScript 
-console.log("Hello World!"); 
+```TypeScript
+console.log("こんにちは、世界！");
+
+// 出力: こんにちは、世界！
 ```
 
-また、変数の値を確認する際にも便利です。次のコードでは、変数 ```num``` の値をコンソールに出力しています。
+デバッグ出力をプリントするには、`console.log()`メソッドを使用します。これは、コンソールに任意の値を出力するために使用されます。上記の例では、文字列「こんにちは、世界！」がコンソールにプリントされます。
 
-```TypeScript 
-let num = 10; 
-console.log(num); // Output: 10 
+また、`console.log()`メソッドを使用して、変数の値や関数の戻り値を確認することもできます。
+
+```TypeScript
+let num = 10;
+console.log(num); 
+
+// 出力: 10
+
+function add(a: number, b: number) {
+  return a + b;
+}
+
+console.log(add(5, 3));
+
+// 出力: 8
 ```
 
-さらに、複数の値を出力することもできます。次のコードでは、変数 ```name``` と変数 ```age``` の値をコンソールに出力しています。
+## ディープダイブ
 
-```TypeScript 
-let name = "John"; 
-let age = 30; 
-console.log(name, age); // Output: John 30 
-```
+コンソールに出力される内容は、ブラウザの開発者ツールのコンソールタブに表示されます。ここには、コードを実行する際に生成されたエラーや警告も表示されます。また、`console.log()`メソッド以外にも、`console.error()`や`console.warn()`などのメソッドを使用して、より重要な情報を表示することもできます。
 
-## デバッグ出力の深堀り
+厳密なデータ型を使用している場合、デバッグ出力において重要な情報を失わないために、`console.log()`の代わりに`console.info()`メソッドを使用することもできます。
 
-デバッグ出力が与える情報は、問題の特定に役立ちます。しかし、多くの情報が出力される場合、その中から問題の原因を特定することは容易ではありません。そのため、適切なタイミングでデバッグ出力を行うことが重要です。また、コンソール以外にも、ブラウザのデバッガーツールや外部のログファイルに出力することもできます。
+さらに、`console.group()`と`console.groupEnd()`メソッドを使用して、出力をグループ化することができます。この機能は、複雑なコードのデバッグ時に特に役立ちます。
 
-## さらに参考になるリンク
+## 他に見るもの
 
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [デバッグの基本](https://qiita.com/shoyan/items/9d33f05783d797df6a9f)
-- [デバッグ方法の選択](https://www.sejuku.net/blog/66045)
-
-## 参考リンク
-
-- [Markdownガイド](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
-- [Thonny - デバッグの基本](https://thonny.org/ja/learning-basics/debugging.html)
-- [Visual Studio Code - デバッグの方法](https://code.visualstudio.com/docs/editor/debugging)
+- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/)
+- [TypeScript チュートリアル (日本語訳)](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [TypeScript ブログ](https://devblogs.microsoft.com/typescript/)

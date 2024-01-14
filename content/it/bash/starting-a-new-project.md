@@ -1,52 +1,43 @@
 ---
-title:    "Bash: Avvio di un nuovo progetto"
+title:    "Bash: Avviare un nuovo progetto"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Iniziare un Nuovo Progetto?
+## Perché
 
-Iniziare un nuovo progetto può sembrare una sfida, ma può portare a grandi risultati. Può essere un modo per imparare nuove abilità, risolvere un problema o semplicemente per divertirsi. Inoltre, può essere gratificante vedere il tuo progetto prendere vita e condividerlo con gli altri.
+In questo articolo parleremo di come avviare un nuovo progetto di programmazione in Bash. Questo linguaggio di scripting è uno dei più comuni e utilizzati nella programmazione di sistemi operativi Linux e MacOS. Avviare un nuovo progetto può sembrare scoraggiante, ma in realtà è un processo semplice e alla portata di tutti.
 
-## Come Iniziare un Nuovo Progetto in Bash
+## Come Fare
 
-Per iniziare un nuovo progetto in Bash, è necessario seguire alcuni semplici passaggi:
+Per iniziare, apriamo il terminale sul nostro sistema operativo e creiamo una nuova cartella per il nostro progetto. È importante scegliere un nome significativo per la nostra cartella e per il nostro progetto, in modo da poterlo identificare facilmente in seguito. Potremmo chiamare la nostra cartella "IlMioPrimoProgetto" ad esempio.
 
-1. Apri il tuo terminale e crea una nuova cartella per il tuo progetto utilizzando il comando `mkdir`.
-2. Spostati nella nuova cartella utilizzando il comando `cd`.
-3. Crea un nuovo file di script Bash utilizzando il comando `touch`.
-4. Apri il file di script utilizzando un editor di testo come `nano`, `vim` o `gedit`.
-5. Inizia a scrivere il tuo codice Bash all'interno del file.
-6. Salva il file e chiudilo.
-7. Esegui lo script utilizzando il comando `./nomedelfile`.
-
-Ecco un esempio di un semplice script Bash che stampa un messaggio di benvenuto:
-
+Una volta che abbiamo creato la cartella, ci spostiamo al suo interno utilizzando il comando ```cd``` seguito dal percorso della nostra cartella. Ad esempio: 
 ```Bash
-#!/bin/bash
-
-# Questo è un commento e verrà ignorato dallo script
-echo "Benvenuto nel tuo nuovo progetto in Bash!"
+cd /percorso/cartella
 ```
 
-E l'output sarà:
+Una volta che siamo all'interno della nostra cartella, possiamo iniziare a scrivere il codice per il nostro progetto. Utilizziamo un editor di testo come Nano o Vim per aprire un nuovo file all'interno della nostra cartella. Scriviamo il nostro codice seguendo la sintassi del Bash e salviamo il file con l'estensione ".sh".
 
-```
-Benvenuto nel tuo nuovo progetto in Bash!
+Una volta che abbiamo scritto il nostro codice, possiamo eseguirlo nel terminale utilizzando il comando ```./``` seguito dal nome del nostro file. Ad esempio: 
+```Bash
+./ilmioprimoprogetto.sh
 ```
 
-Ora sei pronto per iniziare a scrivere il tuo progetto in Bash.
+Se il codice è stato scritto correttamente, dovremmo vedere un output nel terminale.
+
+Ora abbiamo creato con successo il nostro primo progetto di programmazione in Bash!
 
 ## Approfondimento
 
-Ci sono molte risorse disponibili online per aiutarti a imparare Bash e iniziare a scrivere progetti. Puoi iniziare con gli esempi di script disponibili sul sito ufficiale di Bash o seguire tutorial su YouTube o corsi online. Inoltre, è utile consultare la documentazione ufficiale di Bash per avere maggiori informazioni sulle funzionalità e le opzioni di questo linguaggio di scripting.
+Per approfondire ulteriormente il nostro progetto, possiamo utilizzare le varie funzioni e comandi che Bash offre. Possiamo anche imparare a creare script più complessi e automatizzati per semplificare alcune attività ripetitive sul nostro sistema operativo.
 
-Inoltre, una volta che avrai una buona comprensione di Bash, potresti voler esplorare i diversi strumenti e librerie disponibili per aiutarti nello sviluppo dei tuoi progetti. Ci sono molte risorse di supporto come forum di discussione e gruppi di comunità che possono fornirti consigli e suggerimenti su come migliorare le tue abilità in Bash.
+È inoltre importante sottolineare che Bash è un linguaggio open-source e ci sono molte risorse disponibili online per aiutarci a imparare e progettare in modo più efficiente.
 
 ## Vedi Anche
 
-- [Sito Ufficiale di Bash](https://www.gnu.org/software/bash/)
-- [Tutorial di Bash su YouTube](https://www.youtube.com/playlist?list=PLRyu4ecIE9ttnhv7EvHhwuyHJbP7kiP0H)
-- [Documentazione di Bash](https://www.gnu.org/software/bash/manual/)
-- [Strumenti e Librerie di Bash](https://github.com/awesome-lists/awesome-bash)
+- [Guida completa al Bash scripting](https://www.lifewire.com/write-basic-shell-script-unix-commands-577073)
+- [TutorialsPoint: Bash - Introduzione](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [Documentazione ufficiale Bash](https://www.gnu.org/software/bash/manual/bash.html)

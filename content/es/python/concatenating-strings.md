@@ -1,65 +1,52 @@
 ---
-title:    "Python: Concatenando cadenas"
+title:    "Python: Uniendo cadenas de texto"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué deberías aprender a concatenar cadenas en Python?
 
-Las cadenas de texto son uno de los tipos de datos más comunes en la programación. Son secuencias de caracteres que pueden ser utilizadas para almacenar información o para ser mostradas en una interfaz de usuario. A veces, es necesario combinar varias cadenas en una sola. Esto se conoce como concatenación de cadenas y es una habilidad básica de programación que es esencial para muchos proyectos.
+Si eres un programador principiante en Python, probablemente te estés preguntando qué es la concatenación de cadenas y por qué es importante. La respuesta es simple: la concatenación de cadenas es una habilidad fundamental en la programación que te permitirá combinar y manipular cadenas de texto de manera efectiva. En este artículo, te explicaremos cómo hacerlo en Python y por qué es una habilidad valiosa para cualquier programador.
 
 ## Cómo hacerlo
 
-En Python, se puede concatenar una o más cadenas utilizando el operador `+`. Veamos un ejemplo:
+La concatenación de cadenas en Python es una tarea sencilla. Primero, debes comprender cómo se crean y manipulan las cadenas en Python. Una cadena es simplemente un conjunto de caracteres encerrados entre comillas simples o dobles.
 
-```python
-nombre = "Ana"
-apellido = "García"
-nombre_completo = nombre + " " + apellido
-print(nombre_completo)
+Para concatenar dos cadenas, simplemente las unes usando el operador `+`. Por ejemplo:
+
+```Python
+frase1 = "Hola"
+frase2 = "mundo"
+frase_unida = frase1 + " " + frase2
+
+print(frase_unida)
 ```
-La salida de este código sería: `Ana García`
 
-En este ejemplo, utilizamos el operador `+` para unir las variables `nombre` y `apellido` junto con un espacio en blanco para crear `nombre_completo`. También es posible concatenar cadenas con valores numéricos, como en el siguiente ejemplo:
+El resultado será "Hola mundo". En este ejemplo, hemos creado dos variables que contienen cadenas y luego las hemos concatenado con un espacio en blanco entre ellas.
 
-```python
-edad = 35
-mensaje = "Tengo " + str(edad) + " años."
-print(mensaje)
+También puedes utilizar el método `.join()` para concatenar varias cadenas. Este método toma una lista de cadenas como argumento y las une en una sola cadena. Por ejemplo:
+
+```Python
+frase = " ".join(["¡Hola", "mundo", "!"])
+
+print(frase)
 ```
-La salida de este código sería: `Tengo 35 años.`
 
-Aquí utilizamos la función `str()` para convertir el valor numérico de `edad` en una cadena antes de concatenarla con el resto del mensaje.
-
-También es posible concatenar más de dos cadenas utilizando el operador `+` varias veces, como en este ejemplo:
-
-```python
-saludo = "Hola "
-sujeto = "amigo"
-puntuacion = "!"
-print(saludo + sujeto + puntuacion)
-```
-La salida sería: `Hola amigo!`
+El resultado será "¡Hola mundo!". En este caso, creamos una lista con todas las palabras de la frase y luego utilizamos el método `.join()` para unirlas en una sola cadena.
 
 ## Profundizando
 
-Además del operador `+`, Python también ofrece otros métodos para concatenar cadenas de texto. Uno de ellos es utilizando el método `format()`. Este método permite insertar valores en una cadena utilizando marcadores de posición. Veamos un ejemplo:
+Además de los métodos mencionados anteriormente, hay algunas cosas más que debes saber sobre la concatenación de cadenas en Python:
 
-```python
-animal = "gato"
-color = "negro"
-caracteristicas = "Es un {} {}".format(color, animal)
-print(caracteristicas)
-```
-La salida sería: `Es un negro gato`
+- No puedes concatenar una cadena con un número. Antes de unirlos, debes convertir el número en una cadena utilizando la función `str()`.
+- Puedes utilizar el operador `*` para repetir una cadena un determinado número de veces. Por ejemplo, `"Hola" * 3` resultará en "HolaHolaHola".
+- Si estás trabajando con cadenas largas, puedes utilizar el triple comillas `"""` para incluir saltos de línea en la cadena, lo que facilitará la lectura del código.
 
-Aquí, los `{}` actúan como marcadores de posición para que los valores de `color` y `animal` se inserten en la cadena en ese orden.
-
-También es posible utilizar el método `format()` con variables y valores numéricos, lo que lo hace muy versátil. Puedes encontrar más información sobre este método en la documentación oficial de Python.
+En resumen, la concatenación de cadenas es una habilidad esencial en la programación y en Python es muy sencilla de realizar. ¡Ahora que sabes cómo hacerlo, puedes empezar a experimentar con diferentes métodos y crear cadenas cada vez más complejas!
 
 ## Ver también
 
-- [Documentación oficial de Python sobre cadenas de texto](https://docs.python.org/es/3/tutorial/introduction.html#strings)
-- [Tutorial de concatenación de cadenas en Python](https://realpython.com/python-string-formatting/)
-- [Ejercicios de concatenación de cadenas en Python](https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-1.php)
+- [Documentación oficial de Python sobre cadenas](https://docs.python.org/es/3/library/stdtypes.html#text-sequence-type-str)
+- [Tutorial de Programiz sobre concatenación de cadenas en Python](https://www.programiz.com/python-programming/string-concatenation)

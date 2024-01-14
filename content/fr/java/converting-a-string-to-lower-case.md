@@ -1,44 +1,37 @@
 ---
 title:    "Java: Convertir une chaîne en minuscules"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Il est important de connaître comment convertir une chaîne de caractères en lettres minuscules en Java car cela peut vous aider à manipuler et à comparer facilement les chaînes de caractères dans vos programmes.
+Pourquoi:
 
-# Comment faire
-Voici un exemple de code en Java pour convertir une chaîne de caractères en lettres minuscules : 
+La conversion d'une chaîne de caractères en minuscules est une tâche courante en programmation Java. Elle est utile pour le traitement de données telles que les noms d'utilisateurs ou les mots de passe, ainsi que pour la comparaison de chaînes dans les algorithmes de recherche et tri. Dans cet article, nous allons plonger dans les détails de cette opération.
 
-```Java
-String str = "Bonjour le Monde!";
-String lowercaseStr = str.toLowerCase(); 
-System.out.println(lowercaseStr);
+Comment faire:
+
+Pour convertir une chaîne de caractères en minuscules en Java, vous pouvez utiliser la méthode `toLowerCase()` de la classe `String`. Voici un exemple de code pour cela:
+
+```java
+String str = "Bonjour";
+String newStr = str.toLowerCase(); // newStr vaut maintenant "bonjour"
+System.out.println(newStr);
 ```
-**Sortie** : bonjour le monde!
 
-Dans cet exemple, nous utilisons la méthode `toLowerCase()` sur l'objet `str` pour convertir toutes les lettres en minuscules et stockons le résultat dans une nouvelle variable `lowercaseStr`. Ensuite, nous imprimons cette variable pour vérifier que la conversion a bien été effectuée.
+La méthode `toLowerCase()` renvoie une nouvelle chaîne avec tous les caractères en minuscules. Ainsi, si vous avez besoin de modifier la chaîne d'origine, vous devrez assigner la nouvelle chaîne à la variable d'origine. Si vous ne voulez pas créer une nouvelle chaîne, vous pouvez utiliser la méthode `StringBuffer` ou `StringBuilder` pour modifier la chaîne d'origine directement.
 
-Un autre moyen de convertir une chaîne en lettres minuscules est d'utiliser la méthode `toLowerCase(Locale)`. Cette méthode permet de spécifier une localisation pour la conversion. Voici un exemple de code utilisant cette méthode :
+Profondeur de plongée:
 
-```Java
-String str = "Bonjour le Monde!";
-String lowercaseStr = str.toLowerCase(Locale.FRENCH); 
-System.out.println(lowercaseStr);
-```
-**Sortie** : bonjour le monde!
+Sous le capot, la méthode `toLowerCase()` utilise le tableau de codage Unicode du caractère correspondant pour effectuer la conversion. Cela signifie que cette méthode peut gérer les caractères accentués et spéciaux en plus des lettres de l'alphabet.
 
-Dans cet exemple, nous avons spécifié la localisation française pour la conversion en utilisant la constante `Locale.FRENCH`.
+Cependant, il est important de noter que la conversion en minuscules dépend de la langue par défaut de votre système d'exploitation. Si vous utilisez des caractères accentués dans une langue différente, la conversion peut donner des résultats inattendus. Dans ce cas, il est préférable d'utiliser la méthode `toLowerCase(Locale)` en spécifiant la locale appropriée pour votre langue.
 
-# Plongée en profondeur
-La méthode `toLowerCase()` utilise la localisation par défaut de votre système lors de la conversion. Cela signifie que si votre système est configuré en anglais, la méthode convertira les lettres en minuscules selon les règles de la langue anglaise.
+Voir aussi:
 
-Cependant, il est possible de spécifier une localisation différente pour être plus précis dans la conversion. Par exemple, si vous voulez convertir des caractères avec des accents en lettres minuscules, il est recommandé d'utiliser la localisation appropriée pour cette langue.
+Voici quelques liens utiles pour en savoir plus sur la conversion d'une chaîne en minuscules en Java:
 
-Il est également important de noter que la méthode `toLowerCase()` ne change pas la valeur originale de la chaîne de caractères. Cela signifie que si vous avez besoin de la chaîne originale avec des lettres en minuscules, vous devrez l'assigner à une nouvelle variable comme nous l'avons fait dans les exemples précédents.
-
-# Voir également
-- [Documentation officielle de la classe String en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Tutoriel sur les chaînes de caractères en Java](https://www.w3schools.com/java/java_strings.asp)
-- [Localisations en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+- [Documentation officielle de la classe String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Tutoriel Java sur le traitement de texte](https://docs.oracle.com/javase/tutorial/i18n/text/intro.html)
+- [Liste des locales en Java](https://docs.oracle.com/javase/6/docs/api/java/util/Locale.html)

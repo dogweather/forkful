@@ -1,39 +1,53 @@
 ---
-title:    "Haskell: Ottenere sottostringhe."
+title:    "Haskell: Estrazione di sottostringhe."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-L'estrazione di sottostringhe è un'importante abilità nel linguaggio di programmazione Haskell che permette di lavorare con stringhe in modo più flessibile e preciso. Con l'estrazione di sottostringhe, è possibile ottenere una parte specifica di una stringa, come ad esempio una parola o una frase, e utilizzarla per compiere altre operazioni. Questa capacità può risultare molto utile in diverse situazioni e quindi vale la pena imparare come implementarla correttamente.
 
-## Come fare
-L'estrazione di sottostringhe in Haskell può essere realizzata utilizzando principalmente due funzioni: `take` e `drop`. La funzione `take` prende come argomenti una lunghezza e una lista e restituisce i primi elementi della lista pari alla lunghezza specificata. Ad esempio, se si vuole estrarre i primi 3 caratteri di una stringa, si può utilizzare `take 3 "Haskell"`, ottenendo così "Has". La funzione `drop`, invece, prende come argomenti una lunghezza e una lista e restituisce la lista senza i primi elementi della lunghezza specificata. Utilizzando gli stessi esempi di prima, `drop 3 "Haskell"` restituirà "kell".
+Estrarre sottostringhe è un'operazione fondamentale nella programmazione funzionale. È utile per manipolare stringhe o per accedere a parti specifiche di una stringa.
 
-Un altro metodo per estrarre una sottostringa è utilizzare la funzione `substring` del modulo `Data.List`. Questa funzione richiede come argomenti una posizione di inizio e una posizione di fine e restituisce la sottostringa compresa tra tali posizioni. Ad esempio, `substring 2 4 "Haskell"` restituirà "sk".
+## Come Fare
 
-Ecco un esempio pratico di come estrarre sottostringhe in Haskell:
+Per estrarre una sottostringa in Haskell, possiamo utilizzare la funzione `take` per prelevare i primi n caratteri di una stringa, oppure la funzione `drop` per rimuovere i primi n caratteri e ottenere il resto della stringa.
+
+Esempio:
 
 ```Haskell
-import Data.List  
+-- Estrarre i primi 3 caratteri della stringa "casa"
+take 3 "casa" 
+-- Output: "cas"
 
-sentence = "Il gatto è sul tappeto."
-
--- Utilizzando take e drop
-firstWord = take 2 sentence -- restituisce "Il"
-lastWord = drop 18 sentence -- restituisce "tappeto."
-
--- Utilizzando substring
-middleWord = substring 9 11 sentence -- restituisce "è"
+-- Rimuovere i primi 5 caratteri della stringa "ciao mondo"
+drop 5 "ciao mondo"
+-- Output: "mondo"
 ```
 
-## Approfondimento
-È possibile utilizzare altri metodi e funzioni per estrarre sottostringhe in Haskell. Ad esempio, la funzione `splitAt` del modulo `Data.List` permette di dividere una stringa in due parti separate in una posizione specifica. Inoltre, il modulo `Data.Text` offre opzioni più efficienti per la gestione di stringhe lunghe.
+Possiamo anche utilizzare la funzione `splitAt` per estrarre una porzione di una stringa data una posizione di indice.
 
-È importante tenere presente che l'estrazione di sottostringhe può essere un'operazione costosa, soprattutto su stringhe molto lunghe, poiché richiede la creazione di una nuova stringa. Pertanto, è consigliabile utilizzare layz evaluation quando possibile per evitare di elaborare stringhe inutili.
+Esempio:
 
-## Vedi anche
-- [Funzione `take` del modulo `Prelude`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:take)
-- [Funzione `drop` del modulo `Prelude`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:drop)
-- [Funzione `substring` del modulo `Data.List`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:substring)
+```Haskell
+-- Estrarre i primi 5 caratteri della stringa "haskell" e rimuovere il resto
+splitAt 5 "haskell"
+-- Output: ("haske", "ll")
+
+-- Estrarre il resto della stringa "mondo" dalla posizione di indice 3
+splitAt 3 "mondo"
+-- Output: ("mon", "do")
+```
+
+## Approfondimenti
+
+In Haskell, le stringhe sono elenchi di caratteri. Questo significa che possiamo utilizzare qualsiasi funzione che manipoli elenchi per manipolare stringhe.
+
+È anche importante notare che le stringhe in Haskell sono immutabili, il che significa che le operazioni di estrazione creano sempre una nuova stringa anziché modificarla direttamente.
+
+## Vedi Anche
+
+- [Documentazione su `take`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:take)
+- [Documentazione su `drop`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:drop)
+- [Documentazione su `splitAt`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:splitAt)

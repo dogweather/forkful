@@ -1,36 +1,38 @@
 ---
-title:    "Kotlin: Generering av tilfeldige tall"
+title:    "Kotlin: Å generere tilfeldige tall"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å generere tilfeldige tall er en viktig del av mange programmeringsprosjekter. Det kan være nyttig for simuleringer, spill, sikkerhetsinfrastruktur, og mye mer.
 
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Det kan være nyttig for å lage unike passord, simulere tilfeldige hendelser i et spill, eller generelt for å tilføre variasjon og uforutsigbarhet til et program. 
-
-## Slik gjør du det
-
-For å generere tilfeldige tall i Kotlin, kan du bruke funksjonen `random()`. Denne funksjonen returnerer et tilfeldig tall mellom 0 og 1. Det kan være lurt å bruke `Math.random()` for større tallområder. Se eksemplet nedenfor for å se hvordan dette kan implementeres:
+## Hvordan
+For å generere tilfeldige tall i Kotlin, kan vi bruke `Random()` funksjonen. Den vil generere et tall mellom 0 og 1 hver gang den blir kalt. For eksempel:
 
 ```Kotlin
-val tilfeldigTall = random()
-println(tilfeldigTall)
-
-val størreTall = (Math.random() * 100).toInt()
-println(størreTall)
+val tilfeldigTall = Random()
+println(tilfeldigTall.nextDouble())
+// Utgang: 0.5323199247497136 
 ```
 
-Dette vil gi forskjellige tilfeldige tall hver gang programmet kjøres. Du kan også legge til flere variabler og operasjoner for å få mer komplekse tilfeldige tall. 
+For å generere et tilfeldig heltall, kan vi bruke `nextInt()` funksjonen og gi den et argument for å spesifisere et øvre grense. For eksempel:
 
-## Dykk dypere
+```Kotlin 
+val tilfeldigHeltall = Random()
+println(tilfeldigHeltall.nextInt(10))
+// Utgang: 7 
+```
 
-Å generere tilfeldige tall kan virke enkelt, men det er viktig å være klar over noen begrensninger og fallgruver. For eksempel er ikke tallene som genereres ved hjelp av `random()` helt tilfeldige, siden de bygger på en algoritme. Det betyr at hvis du kjører en loop som kaller `random()` flere ganger, vil du få en serie av tall som følger et visst mønster. 
+For å generere flere tilfeldige tall, kan vi bruke en løkke og kalle `nextDouble()` eller `nextInt()` funksjonen hver gang.
 
-En annen ting å huske på er å kontrollere hva slags tallområde du vil ha. Ved hjelp av `Math.random()` og operasjoner som `toInt()` og `toDouble()` kan du justere hvor stor eller liten spennvidden skal være for dine tilfeldige tall. 
+## Dykk ned i detaljene
+Det er viktig å merke seg at `Random()` funksjonen ikke genererer ekte tilfeldige tall, men følger en algoritme for å produsere en sekvens av tall som ser ut som tilfeldige. Dette betyr at tallene den genererer kan følge et mønster og ikke være helt tilfeldige. For de fleste tilfeller er dette godt nok, men hvis det er behov for ekte tilfeldighet, bør man vurdere å bruke annen type ekstern tilfeldighetsgenerator.
+
+For å kontrollere hvilke tall `Random()` funksjonen genererer, kan vi spesifisere et såkalt "seed". Dette er et tall som brukes som utgangspunkt for algoritmen og vil resultere i samme sekvens av tall hver gang. For å gjøre dette, kan vi bruke `Random(seed)` konstruktøren i stedet for bare `Random()`.
 
 ## Se også
-
-- [Offisiell Kotlin-dokumentasjon for `random()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/random.html)
-- [Generering av tilfeldige tall i Kotlin](https://www.callicoder.com/kotlin-random-util-functions/)
-- [Les mer om tilfeldighet og algoritmer](https://betterexplained.com/articles/randomness/)
+- [Official Kotlin documentation for Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [Generating Random Numbers in Kotlin](https://kodejava.org/how-to-generate-random-numbers-in-kotlin/)

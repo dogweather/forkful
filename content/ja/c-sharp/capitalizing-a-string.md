@@ -1,55 +1,37 @@
 ---
-title:    "C#: 文字列の大文字にする"
+title:    "C#: 文字列の大文字化"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列を大文字にするのか
+## なぜ
 
-プログラミングで文字列を扱うとき、時には大文字にする必要があります。この投稿では、C#で文字列を大文字にする方法について説明します。
+何かをプログラミングするとき、時々文の頭文字を大文字にする必要があります。今回は、C#で文字列を大文字にする方法について説明します。
 
 ## 方法
 
-C#で文字列を大文字にする方法はいくつかあります。まずは、文字列を引数として渡す「ToUpper()」メソッドを使用する方法です。
+文の頭文字を大文字にするためには、 `ToUpper()` メソッドを使用します。以下のようにコードを書きます。
 
-```C#
-// 文字列を定義する
-string myString = "hello world";
+``` C#
+string str = "hello world";
+str = str.ToUpper();
 
-// ToUpper()メソッドを使用して文字列を大文字にする
-string uppercaseString = myString.ToUpper();
-
-// 結果を出力する
-Console.WriteLine(uppercaseString);
-
-// 出力結果: HELLO WORLD
+Console.WriteLine(str);
 ```
 
-次に、C#の文字列リテラルで含まれる「!」演算子を使用する方法があります。
+このコードを実行すると、 `HELLO WORLD` という出力が得られます。 `ToUpper()` メソッドは、与えられた文字列の文字をすべて大文字に変換します。
 
-```C#
-// 文字列を定義する
-string myString = "hello world";
+## ディープダイブ
 
-// !演算子を使用して文字列を大文字にする
-myString = !myString;
+`ToUpper()` メソッドは、すべての言語で使えるわけではありません。特定の言語やカルチャーによって、大文字小文字のルールが異なります。そのため、必ずしも入力した文字列が意図した通りに変換されるとは限りません。また、日本語のように、大文字や小文字の概念自体が存在しない言語もあります。
 
-// 結果を出力する
-Console.WriteLine(myString);
-
-// 出力結果: HELLO WORLD
-```
-
-## 深堀り
-
-文字列を大文字にする方法には、上記のほかにもいくつかあります。一つは「char.ToUpper()」メソッドを使用する方法です。このメソッドは、文字列ではなく個々の文字を大文字にすることができます。
-
-また、C#の「String.ToUpperInvariant()」メソッドを使用すると、英語以外の言語でも文字列を大文字にすることができます。
+さらに、C#では `ToLower()` メソッドも使用でき、文字列をすべて小文字に変換することもできます。 `ToUpper()` と `ToLower()` を組み合わせて使うことで、より複雑な文字列操作が可能になります。
 
 ## 参考リンク
 
-- [Microsoftドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.toupper?view=net-5.0)
-- [C# 8.0の新機能：文字列リテラルを大文字にできるようにする](https://devenvexe.com/csharp-8-string-literals-uppercases/)
-- [char.ToUpper()メソッドのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.char.toupper?view=net-5.0)
-- [String.ToUpperInvariant()メソッドのドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant?view=net-5.0)
+- [C# 公式ドキュメント - ToUpper メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.toupper)
+- [C# 公式ドキュメント - ToLower メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.tolower)
+- [C# String の大文字・小文字関連のメソッドまとめ](https://www.sejuku.net/blog/57559)
+- [C# 文字列演算子](https://csharp.keicode.com/lang/string.php)

@@ -1,60 +1,51 @@
 ---
 title:    "TypeScript: Convertendo uma data em uma string"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que converter uma data em uma string?
 
-Algumas vezes, em programação, precisamos exibir uma data em formato de texto. Isso pode ser necessário para fins de formatação, apresentação visual ou para armazenamento em um banco de dados. A conversão de uma data em uma string é uma tarefa comum em projetos TypeScript e entender como fazê-la pode ser muito útil.
+Ao trabalhar com programação TypeScript, pode haver situações em que precisamos converter uma data em uma string. Isso pode ser necessário para exibir a data em um formato mais amigável ao usuário ou para armazená-la em um banco de dados. Felizmente, há maneiras simples e eficientes de realizar essa tarefa. 
 
-## Como fazer
+## Como fazer:
 
-Aqui vamos explorar como converter uma data em uma string em TypeScript. Vamos supor que temos uma data no formato UTC e queremos exibi-la em um formato mais legível, como "dd/mm/aaaa". A sintaxe abaixo é o que usaremos para este exemplo:
+Usando o método `toLocaleString()` podemos facilmente converter uma data em uma string com o formato desejado. Vamos ver um exemplo simples:
 
-```TypeScript
-const data = new Date(); //cria um objeto data com a data atual
-const dia = data.getDate(); //retorna o dia do mês
-const mes = data.getMonth() + 1; //retorna o mês (0-11), por isso adicionamos 1
-const ano = data.getFullYear(); //retorna o ano com 4 dígitos
-
-//formata a data no formato desejado
-const dataFormatada = `${dia}/${mes}/${ano}`;
-
-console.log(dataFormatada); //saída: 27/08/2021
-```
-
-## Aprofundando-se
-
-Existem várias funções úteis para formatar datas em TypeScript. Além do `getDate()`, `getMonth()` e `getFullYear()` utilizados no exemplo acima, temos também:
-
-- `getDay()` - retorna o dia da semana (0-6).
-- `getHours()` - retorna a hora do dia (0-23).
-- `getMinutes()` - retorna os minutos (0-59).
-- `getSeconds()` - retorna os segundos (0-59).
-- `getMilliseconds()` - retorna os milissegundos (0-999).
-
-Podemos utilizar essas funções em conjunto para criar uma string com as informações completas da data. Por exemplo:
-
-```TypeScript
+````TypeScript
 const data = new Date();
-const dia = data.getDate();
-const mes = data.getMonth() + 1;
-const ano = data.getFullYear();
-const hora = data.getHours();
-const minutos = data.getMinutes();
-const segundos = data.getSeconds();
+const dataString = data.toLocaleString("pt-BR");
+console.log(dataString);
+````
+Output: "21/09/2021 15:30:00"
 
-//formata a data e a hora no formato desejado
-const dataFormatada = `${dia}/${mes}/${ano} às ${hora}:${minutos}:${segundos}`;
+No exemplo acima, criamos uma nova instância de `Date()` para a data atual e, em seguida, usamos o método `toLocaleString()` passando como parâmetro o código do idioma da formatação desejada. Isso resulta em uma string com o formato da data específico do idioma utilizado, no caso, o português do Brasil.
 
-console.log(dataFormatada); //saída: 27/08/2021 às 11:35:22
-```
+Se quisermos um controle maior sobre o formato da data, podemos usar o método `toLocaleDateString()`. Dessa forma, podemos especificar exatamente quais informações queremos incluir na string de data:
 
-Para mais informações sobre todas as funções disponíveis para manipulação de datas em TypeScript, consulte a documentação oficial.
+````TypeScript
+const data = new Date();
+const dataString = data.toLocaleDateString("pt-BR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+});
+console.log(dataString);
+````
+Output: "21 de setembro de 2021"
 
-## Veja também
+Neste exemplo, especificamos que queremos a data com o mês escrito por extenso e o ano no formato numérico.
 
-- Documentação oficial do TypeScript sobre manipulação de datas: https://www.typescriptlang.org/docs/handbook/datetime.html
-- Tutorial em vídeo sobre como converter datas em TypeScript: https://www.youtube.com/watch?v=SjM
+## Deep Dive:
+
+Ao usar o método `toLocaleString()` para converter datas, também podemos fornecer opções adicionais para personalizar o formato da string. Podemos especificar o estilo da hora (12 ou 24 horas), o uso ou não da hora/minutos/segundos, adicionar informações como o fuso horário, entre outros.
+
+Além disso, também é importante mencionar a importância de se definir corretamente o idioma ao usar esse método. Isso garante que a data será formatada de acordo com as convenções daquele idioma, incluindo o formato de data e a ordem dos campos.
+
+## Veja também:
+
+- [Guia de referência do método `toLocaleString()` no MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+- [Documentação oficial do TypeScript sobre uso de datas](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [Uma introdução ao TypeScript para iniciantes](https://medium.com/@pchambino/typescript-um-guia-r%C3%A1pido-para-iniciantes-428e5ab6e51)

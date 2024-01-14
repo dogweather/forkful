@@ -1,46 +1,63 @@
 ---
-title:    "Kotlin: コンピュータープログラミングにおけるタイトル「コマンドライン引数の読み込み」"
+title:    "Kotlin: コンピュータ・プログラミングの記事：コマンドライン引数の読み込み"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは！Kotlinプログラマーの皆さん、今日はコマンドライン引数の読み取り方法についてお話します。
+## なぜ読むのか
 
-## なぜ
+コマンドライン引数を読むことは、Kotlinでプログラミングをする上で非常に便利です。コマンドライン引数を読むことにより、プログラムをより柔軟に設計することができ、ユーザーからの入力を受け付けることができます。
 
-コマンドライン引数を読み取ることで、プログラムの動作を柔軟に制御できるようになります。例えば、ユーザーからの入力を受け付けるプログラムを作成する場合、コマンドライン引数を利用することで、プログラムを起動する際にさまざまな値を渡すことができます。
+## コマンドライン引数を読む方法
 
-## 使い方
+コマンドライン引数を読むには、プログラムの実行時に渡される引数を取得する必要があります。これには、`main()`関数の引数として`args: Array<String>`を使用します。
 
-コマンドライン引数を読み取るには、```args```という名前の配列を使用します。この配列には、プログラムを起動する際に渡された値が格納されています。例えば、次のプログラムは、コマンドライン引数の先頭の値を出力するものです。
+例えば、次のようなコードを使用して引数を読むことができます。
 
 ```Kotlin
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) {
-        println("コマンドライン引数の先頭の値は${args[0]}です。")
-    } else {
-        println("コマンドライン引数がありません。")
+    println("コマンドライン引数の数は ${args.size} 個です。")
+    args.forEachIndexed { index, arg ->
+        println("引数 $index は $arg です。")
     }
 }
 ```
 
-プログラムを起動する際に、次のように引数を渡すと、出力は```コマンドライン引数がありません。```になります。
+このコードを実行した場合、以下のような出力が得られます。
 
 ```
-kotlin-program argument1 argument2
+コマンドライン引数の数は 3 個です。
+引数 0 は arg1 です。
+引数 1 は arg2 です。
+引数 2 は arg3 です。
 ```
 
-また、コマンドライン引数が複数ある場合は、```args```配列の要素を順番に取り出すことで、すべての引数を利用することができます。
+また、コマンドライン引数にはオプションを付けることもできます。例えば、`--verbose`や`-d`などのオプションを指定することができます。オプションは`main()`関数の引数として渡される配列の先頭に位置します。
 
-## 詳細な解説
+```Kotlin
+fun main(args: Array<String>) {
+    val verbose = args[0] == "--verbose"
+    println("オプション --verbose は $verbose です。")
+}
+```
 
-コマンドライン引数を読み取る際には、入力値が文字列であることに注意してください。もし、数値や真偽値など、別の型の値を利用したい場合は、文字列から適切な型に変換する必要があります。
+このコードを実行した場合、以下のような出力が得られます。
 
-また、Kotlinでは、コマンドライン引数のパースに便利な機能が用意されています。例えば、```args```配列を```List```として扱うことで、より高度な処理を行うことができます。詳しくは公式ドキュメントを参照してください。
+```
+オプション --verbose は true です。
+```
 
-## 関連記事
+## コマンドライン引数の詳細
 
-- Kotlin公式ドキュメント: https://kotlinlang.org/docs/reference/command-line.html
-- Kotlinでコマンドライン引数を取得する方法: https://qiita.com/takamina0327/items/7912e1bca77578723e27
-- Kotlinでのコマンドライン引数処理: https://www.geeksforgeeks.org/command-line-arguments-in-kotlin/
+コマンドライン引数には、様々な用途で使用することができます。例えば、プログラムの実行時に渡されたファイル名などを取得することができます。また、複数の値を取得することができるので、プログラムの実行後に実行する処理を変更することも可能です。
+
+## 参考リンク
+
+- [Kotlinプログラムでコマンドライン引数を受け取る方法](https://www.zoftino.com/command-line-arguments-in-kotlin)
+- [Kotlinプログラムの実行時にコマンドライン引数を受け取る方法](https://www.tutorialkart.com/kotlin/kotlin-get-command-line-arguments/)
+- [Kotlinプログラムでコマンドライン引数を取得する方法](https://kodejava.org/how-do-i-get-command-line-arguments-in-kotlin/)
+- [Kotlinプログラムの実行時にオプション付きのコマンドライン引数を取得する方法](https://www.it-swarm-ja.tech/ja/kotlin/kotlin%E3%81%A7%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E5%BC%95%E6%95%B0%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/1004109579/)
+
+## 参考文

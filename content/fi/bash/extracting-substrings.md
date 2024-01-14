@@ -1,57 +1,65 @@
 ---
-title:    "Bash: Aloitteiden erottaminen"
+title:    "Bash: Alaryhmien erottaminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Sukkelan Stringin Outo Maailma
+## Miksi: Miksi haluat oppia kuinka eristetään osamerkkijonoja?
 
-Sano se vaikka ääneen: ohjelmointi voi olla hämmentävää ja ärsyttävää. Se voi tuntua siltä, että sinun täytyy ymmärtää kaikki pienet yksityiskohdat ja hienot ominaisuudet voidaksesi saavuttaa mitä tahansa. Mutta niin ei pitäisi olla!
+On monia syitä, miksi joku haluaisi hallita osamerkkijonoja Bash-ohjelmoinnissa. Yksi yleisimmistä syistä on käsitellä merkkijonoja, jotka sisältävät enemmän tietoa kuin mitä tarvitset tai tarvitset tietyn osan merkkijonosta tarkemman analyysin suorittamiseksi.
 
-Yksinkertainen tehtävä, kuten alimerkkijonon erottaminen merkkijonosta, voi olla suuri helpotus, kun opit tekemään sen oikein. Ja tässä blogikirjoituksessa näytän sinulle juuri sen.
+## Kuinka: Näin eristät osamerkkijonoja Bash-ohjelmoinnissa!
 
-## Kuinka Suorittaa Alimerkkijonon Erottaminen
-
-Oletetaan, että sinulla on merkkijono "Hei maailma!" ja haluat vain ottaa siitä "maailma"-osan. Tämä voi tuntua hankalalta, mutta Bash tarjoaa meille muutamia hyödyllisiä työkaluja, joilla tämä tehtävä voidaan tehdä helposti.
-
-Ensinnäkin, meillä on komento `cut`, joka leikkaa merkkijonon tietyistä osista. Voimme käyttää sitä seuraavasti:
+Bashilla on useita erilaisia tapoja eristää osamerkkijonoja. Yksi yleisimmistä tavoista on käyttää `grep` -komentoa.
 
 ```
-Bash $ merkkijono = "Hei maailma!"
-Bash $ echo $ {string | leikkaa -d, -f2}
+Bash on muotoiltu kieli, joka on hyödyllinen
 ```
 
-Tämä komento leikkaa merkkijonon pilkkujen välillä ja ottaa toisen sarakkeen, joka tässä tapauksessa on "maailma!".
-
-Voit myös käyttää komentoa `awk` samaan tarkoitukseen:
+Lähtö:
 
 ```
-Bash $ merkkijono = "Hei maailma!"
-Bash $ echo $ {string | awk -F "," '{print $ 2}'}
+muotoiltu kieli
 ```
 
-Tässä "awk" käyttää "," desimaalilukuna ja ottaa toisen osan, joka on "maailma!".
-
-Ja vielä yksi tapa on käyttää Bashin sisäänrakennettua `substring` -toimintoa:
+Voit myös käyttää `cut` -komentoa eristämään osamerkkijonoja tietyillä välimerkeillä.
 
 ```
-Bash $ merkkijono = "Hei maailma!"
-Bash $ echo $ {string: 4}
+Bash on hyödyllinen kieli, joka on muotoiltu
 ```
 
-Tämä ottaa merkkijonosta 4. merkistä eteenpäin, jättäen "maailma!" osan jäljelle.
+Lähtö:
 
-Kaikki nämä vaihtoehdot saavuttavat saman tuloksen, joten voit valita haluamasi tavan. Katso vain, mikä sopii parhaiten tiettyyn tilanteeseen.
+```
+kieli
+```
 
-## Syventävää Tietoa Alimerkkijonon Erottamisesta
+Lisäksi, Bashilla on myös mahdollista käyttää regex (Regular Expression) -lausekkeita osamerkkijonojen eristämiseen. Esimerkiksi jos haluat eristää kaikki numerot merkkijonosta, voit käyttää seuraavaa komentoa:
 
-Nyt kun olet oppinut helposti erottelemaan alimerkkijonoja Bashilla, on tärkeää ymmärtää, että yksittäisten merkkijonojen lisäksi voit myös käyttää näitä komentoja suurille merkkijonojoukoille. Esimerkiksi voit lukea merkkijonoja tiedostosta ja erotella ne siellä.
+```
+echo "123aBCd" | grep -o '[0-9]*'
+```
 
-Voit myös käyttää vaihtoehtoja, kuten `-s`, joka ohittaa tyhjät rivit tai `-n`, joka poistaa toisen sarakkeen ja jättää vain ensimmäisen.
+Lähtö:
 
-## Katso myös
+```
+123
+```
 
-- [Bash Scripting Tutorial](https://blogit.foi.fi/skongkpeli/bash-skriptauksen-perusteet/)
-- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Videotutoriaali "Bashin perusteet"](https://www.youtube.com/watch?v=TRvgJc_eY1E)
+Näitä ovat vain muutamia esimerkkejä siitä, kuinka osamerkkijonoja voidaan eristää Bashilla. Kokeile ja löydä menetelmä, joka toimii parhaiten sinulle ja tarpeisiisi.
+
+## Syvemmälle: Tietoa osamerkkijonojen eristämisestä Bashilla
+
+Kuten aiemmin mainittiin, Bashilla on mahdollista käyttää regex-lausekkeita osamerkkijonojen eristämiseen. Tämä avaa monia mahdollisuuksia tarkempaan ja monipuolisempaan merkkijonojen käsittelyyn.
+
+Regex-lausekkeet ovat sääntöjä, jotka kuvaavat, millaista tekstiä etsitään. Ne voivat sisältää erilaisia hakuehtoja ja erityisiä merkkijonoja, joilla määritellään haettavaa tekstiä.
+
+Bash tarjoaa myös muita hyödyllisiä komentoja, kuten `sed` ja `awk`, joita voidaan käyttää osamerkkijonojen käsittelyyn. Näitä komentoja voidaan yhdistää regex-lausekkeisiin, jotta erilaisia osia merkkijonosta voidaan eristää ja manipuloida.
+
+## Katso myös:
+- https://linuxhint.com/extract_substring_bash/
+- https://linuxize.com/post/bash-extract-substring-from-string/
+- https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+- https://www.computerhope.com/unix/bash/replacing.html

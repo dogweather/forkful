@@ -1,71 +1,50 @@
 ---
-title:    "Haskell: Utskrift av feilrettingsutdata"
+title:    "Haskell: Utskrift av feilsøkingsutdata"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Mange ganger når vi koder i Haskell, kan det være nyttig å ha utskrift av feilsøkingsinformasjon mens vi utvikler og tester koden vår. Dette kan hjelpe oss med å forstå hva som skjer i programmet vårt og identifisere eventuelle problemer.
+Det kan være frustrerende å feilsøke koden din og finne ut hva som egentlig skjer. Dette er spesielt viktig når man jobber med Haskell, et funksjonelt programmeringsspråk som kan være krevende å forstå. Å skrive ut feilmeldinger og annen debug-informasjon kan være en avgjørende hjelp for å løse problemer og forstå hvordan koden din fungerer i detalj.
 
-## Hvordan gjør man det
+# Hvordan
 
-For å få utskrift av feilsøkingsinformasjon i Haskell, kan vi bruke `Debug.Trace` -modulen. Denne modulen inneholder en funksjon som heter `trace`, som lar oss skrive ut en verdi og en tilhørende beskjed.
+Det å skrive ut debug-informasjon kan gjøres på flere forskjellige måter i Haskell. En av de enkleste måtene er å bruke funksjonen `print` som tar inn en verdi og skriver den ut til konsollen. Her er et eksempel på hvordan man kan skrive ut en liste med tall i Haskell:
+
+```Haskell
+main = do
+    let numbers = [1, 3, 5, 7, 9]
+    print numbers
+```
+
+Output vil da være:
+
+```
+[1, 3, 5, 7, 9]
+```
+
+En annen måte å skrive ut debug-informasjon på er å bruke funksjonen `trace` fra pakken `Debug.Trace`. Denne funksjonen tar inn en streng og en verdi, og skriver begge til konsollen. Et eksempel på hvordan dette kan brukes i praksis er:
 
 ```Haskell
 import Debug.Trace
 
--- Definerer en funksjon som legger sammen to tall og skriver ut en feilsøkingsmelding
-add :: Int -> Int -> Int
-add x y = trace ("Legger sammen " ++ show x ++ " og " ++ show y) (x + y)
-
--- Kaller på funksjonen og lagrer resultatet i en variabel
-resultat = add 5 7
-
--- Skriver ut resultatet
-print resultat
+calculateSum :: Int -> Int -> Int
+calculateSum x y = trace ("x + y is " ++ show (x + y)) (x + y)
 ```
 
-Dette vil gi oss utskriften:
+Nå vil funksjonen `calculateSum` skrive ut en melding til konsollen som viser hva summen av to tall er.
 
-```
-Legger sammen 5 og 7
-12
-```
+# Dypdykk
 
-Vi kan også bruke denne funksjonen til å skrive ut verdiene til variabler inne i en funksjon for å se hvordan de endrer seg. La oss se på et eksempel:
+Hvis du vil få mer detaljert debug-informasjon, kan du bruke funksjonen `Debug.Trace.traceShow` som tar inn en streng og en verdi, og skriver dem begge til konsollen sammen med informasjon om data-typen til verdien. Dette er spesielt nyttig når man jobber med komplekse datastrukturer, som for eksempel lister av lister eller trær.
 
-```Haskell
-import Debug.Trace
+En viktig ting å huske på når man bruker debug-informasjon er å fjerne eller kommentere ut denne koden før man leverer den endelige versjonen av programmet sitt. Ellers vil det bli skrevet ut mye unødvendig informasjon til konsollen som kan gjøre programmet ditt tregere.
 
--- Enkel funksjon som returnerer resultatet av å multiplisere to tall
-multiply :: Int -> Int -> Int
-multiply x y = trace ("Multipliserer " ++ show x ++ " og " ++ show y) (x * y)
+# Se også
 
--- Definerer en variabel og bruker funksjonen
-resultat = multiply 3 4
-
--- Skriver ut variabelen
-print resultat
-```
-
-Vi får da følgende utskrift:
-
-```
-Multipliserer 3 og 4
-12
-```
-
-Som du kan se, har vi fått en feilsøkingsmelding som forteller oss hva som skjer inne i funksjonen, og så får vi resultatet av utregningen.
-
-## Dykk dypere
-
-Det er viktig å merke seg at `trace`-funksjonen bare er ment for feilsøking og ikke skal brukes i faktisk produksjonskode. Det er fordi denne funksjonen faktisk endrer koden vår og legger til ekstra utskrift som ikke er nødvendig for å kjøre programmet. Derfor bør vi sørge for å fjerne alle `trace`-funksjoner før vi deployer koden vår.
-
-Vi kan også bruke `trace`-funksjonen sammen med typen `IO` for å skrive ut feilsøkingsmeldinger i IO-operasjoner. Dette kan være spesielt nyttig hvis vi har et program som leser eller skriver til filer eller gjør andre IO-relaterte operasjoner.
-
-## Se også
-
-- [GHCi user's guide for trace](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html#using-trace)
-- [Debugging Haskell code with trace and GHCi](https://blog.haskellforall.com/2016/04/27/debugging-haskell-code-with-trace-and-ghci/)
+- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation)
+- [Haskell for nybegynnere](https://medium.com/@noemiandor/haskell-for-beginners-9e8d06c0e5a8)
+- [Haskell-programmeringsspråket](https://no.wikipedia.org/wiki/Haskell_(programmeringsspr%C3%A5k))

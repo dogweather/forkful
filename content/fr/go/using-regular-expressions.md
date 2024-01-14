@@ -1,54 +1,20 @@
 ---
-title:    "Go: Utiliser des expressions régulières"
+title:    "Go: Utilisation des expressions régulières"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi utiliser des expressions régulières en Go ?
+## Pourquoi
 
-Les expressions régulières sont des outils puissants pour le traitement de chaînes de caractères en Go. Elles permettent de définir des motifs et de rechercher, extraire ou remplacer des données dans une chaîne. Si vous avez besoin de manipuler des données complexes ou de faire des recherches précises dans du texte, les expressions régulières peuvent être un moyen efficace d'y parvenir.
+Les expressions régulières, également connues sous le nom de regex, sont un outil puissant pour manipuler des chaînes de texte dans les programmes Go. Elles permettent de rechercher, de remplacer et de vérifier rapidement des modèles dans une chaîne de caractères. Si vous travaillez avec des données textuelles complexes, l'utilisation des expressions régulières peut grandement faciliter votre travail.
 
-## Comment utiliser des expressions régulières en Go ?
+## Comment faire
 
-Pour utiliser des expressions régulières en Go, vous devez importer le package `regexp`. Ensuite, vous pouvez créer une expression régulière en utilisant la fonction `Compile` et en lui passant le motif que vous souhaitez rechercher. Par exemple, pour trouver toutes les adresses e-mail dans une chaîne, vous pouvez utiliser l'expression régulière `([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})`. Ensuite, vous pouvez utiliser les méthodes `Match` ou `FindAllString` pour rechercher tous les résultats correspondants à l'expression régulière dans une chaîne de caractères. Voici un exemple de code:
+Pour utiliser les expressions régulières en Go, vous devez importer le package "regexp". Ensuite, vous pouvez utiliser les fonctions de ce package pour créer et manipuler des expressions régulières.
 
-```Go
-package main
-
-import (
-    "fmt"
-    "regexp"
-)
-
-func main() {
-
-    // Créer l'expression régulière 
-    re := regexp.MustCompile(`([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})`)
-
-    // Chaîne de caractères à rechercher
-    str := "Mon adresse e-mail est john.doe@example.com et j'utilise également jdoe98@gmail.com"
-
-    // Rechercher toutes les adresses e-mail correspondantes
-    matches := re.FindAllString(str, -1) // -1 pour trouver toutes les correspondances
-
-    // Afficher les résultats
-    for _, match := range matches {
-        fmt.Println(match)
-    }
-}
-```
-
-Le résultat de ce code sera:
-
-```Go
-john.doe@example.com
-jdoe98@gmail.com
-```
-
-## Plongée en profondeur dans l'utilisation des expressions régulières en Go
-
-En plus de rechercher des motifs dans du texte, les expressions régulières en Go offrent également la possibilité de capturer des parties spécifiques d'une chaîne. Pour cela, on peut utiliser des groupes de captures en utilisant les parenthèses dans l'expression régulière. Par exemple, si on souhaite capturer le nom d'utilisateur et le domaine d'une adresse e-mail, on peut modifier l'expression régulière précédente pour devenir `([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})`. En utilisant la méthode `FindStringSubmatch` au lieu de `FindAllString`, on obtiendra un tableau avec le nom d'utilisateur et le domaine en tant que sous-chaînes. Voici un exemple de code:
+Voici un exemple de code montrant comment rechercher une chaîne de caractères spécifique dans une autre chaîne :
 
 ```Go
 package main
@@ -59,33 +25,47 @@ import (
 )
 
 func main() {
-
-    // Créer l'expression régulière 
-    re := regexp.MustCompile(`([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})`)
-
-    // Chaîne de caractères à rechercher
-    str := "Mon adresse e-mail est john.doe@example.com et j'utilise également jdoe98@gmail.com"
-
-    // Rechercher toutes les adresses e-mail correspondantes avec les groupes de captures
-    matches := re.FindStringSubmatch(str)
-
-    // Afficher les résultats
-    for i, match := range matches {
-        fmt.Printf("Groupe %d: %s\n", i, match)
-    }
+    str := "Bonjour, je m'appelle Marie et j'ai 27 ans."
+    re := regexp.MustCompile("Marie")
+    match := re.MatchString(str)
+    fmt.Println(match) // affiche true
 }
 ```
 
-Le résultat de ce code sera:
+Dans cet exemple, la fonction "MatchString" recherche si la chaîne "str" contient le mot "Marie" en utilisant l'expression régulière définie dans "re". Si oui, la variable "match" sera définie sur "true".
+
+Vous pouvez également utiliser les expressions régulières pour remplacer des parties d'une chaîne par une autre valeur. Voici un exemple où nous remplaçons le mot "Marie" par "Jeanne" :
 
 ```Go
-Groupe 0: john.doe@example.com
-Groupe 1: john.doe
-Groupe 2: example.com
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    str := "Bonjour, je m'appelle Marie et j'ai 27 ans."
+    re := regexp.MustCompile("Marie")
+    res := re.ReplaceAllString(str, "Jeanne")
+    fmt.Println(res) // affiche "Bonjour, je m'appelle Jeanne et j'ai 27 ans."
+}
 ```
+
+Il existe de nombreuses autres fonctions utiles dans le package "regexp" pour manipuler des expressions régulières. N'hésitez pas à les explorer pour en savoir plus.
+
+## Plongée en profondeur
+
+Les expressions régulières peuvent sembler un peu déroutantes au début, surtout si vous n'avez jamais travaillé avec. Pour mieux comprendre leur fonctionnement, il est important de comprendre les différents caractères et symboles utilisés pour créer une expression régulière.
+
+Par exemple, le caractère ".*", également appelé "point-virgule étoilé", est utilisé pour représenter n'importe quel caractère, qu'il soit présent ou non. Ainsi, l'expression régulière "a.*b" recherchera toutes les chaînes de caractères commençant par "a" et se terminant par "b", quel que soit le nombre ou le type de caractères entre les deux.
+
+Il est également possible d'utiliser des "groupes" dans les expressions régulières, qui permettent de diviser une chaîne en sous-chaînes. Les groupes sont définis en utilisant des parenthèses dans l'expression régulière. Par exemple, l'expression "([A-Z]+) ([0-9]+)" permettra de rechercher une chaîne de caractères commençant par une ou plusieurs lettres majuscules, suivies d'un espace, puis de un ou plusieurs chiffres.
+
+Pour en savoir plus sur la syntaxe et les fonctions spécifiques des expressions régulières en Go, n'hésitez pas à consulter la documentation officielle.
 
 ## Voir aussi
 
-- [Documentation officielle de l'utilisation des expressions régulières en Go](https://golang.org/pkg/regexp/)
-- [Guide de référence pour les expressions régulières en Go](https://github.com/google/re2/wiki/Syntax)
-- [Tutorial interactif pour apprendre à utiliser les expressions régulières en Go](https://regex-golang-debugger.com/)
+- Guide de référence des expressions régulières en Go: https://golang.org/pkg/regexp/
+- Tutoriel sur les expressions régulières en Go: https://go.dev/play/match.go
+- Livre en ligne "Mastering Regular Expressions": https://regex.info/

@@ -1,50 +1,31 @@
 ---
-title:    "Rust: Lesen einer Textdatei"
+title:    "Rust: Ein Textfile lesen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Sie fragen sich vielleicht, warum Sie sich die Mühe machen sollten, einen Text zu lesen, der sich mit dem Lesen von Textdateien in Rust beschäftigt. Nun, in der Welt der Programmierung kann das Lesen von Textdateien eine grundlegende Fähigkeit sein, die Ihnen in vielen Projekten nützlich sein kann. Es kann Ihnen dabei helfen, Daten zu analysieren, Benutzereingaben zu verarbeiten oder sogar automatisierte Aktionen auszuführen. Deshalb ist es wichtig, die Grundlagen des Lesens von Textdateien in Rust zu verstehen.
 
-Wenn Sie neu in der Welt der Programmierung sind oder einfach nur ein neues Programmiersprachenlernern möchten, kann Rust eine großartige Wahl sein. Eine häufige Aufgabe in der Softwareentwicklung ist es, Daten aus externen Dateien zu lesen, wie zum Beispiel einer Textdatei. In diesem Beitrag werden wir besprechen, wie man eine Textdatei in Rust effizient lesen kann.
-
-## Wie Gehen Sie Vor
-
-Um Daten aus einer Textdatei in Rust zu lesen, müssen Sie zunächst die entsprechenden Bibliotheken importieren. Wir werden den `std::fs` und den `std::io` Namespace benötigen. Danach können wir die Datei öffnen mit Hilfe der `File::open()` Funktion:
+## Wie man Textdateien in Rust liest
+Das Lesen von Textdateien in Rust ist sehr einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir die "std::fs" Bibliothek importieren, um auf Dateioperationen zugreifen zu können. Dann können wir die "fs::read" Funktion verwenden, um den Inhalt der Datei in einen Vektor von Bytes zu lesen. Schließlich können wir den Vektor in eine Zeichenkette konvertieren und den Inhalt der Datei ausgeben. Hier ist ein Beispielcode:
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
+use std::fs;
 
-let mut file = File::open("textdatei.txt").expect("Konnte die Datei nicht öffnen");
+let file_content = fs::read("mein_dateipfad.txt").expect("Fehler beim Lesen der Datei.");
+let file_content = String::from_utf8(file_content).expect("Ungültige Zeichenkette.");
+println!("{}", file_content);
 ```
 
-Hier haben wir die `textdatei.txt` Datei geöffnet, die sich im selben Verzeichnis wie unser Programm befindet. Achten Sie darauf, dass der Pfad relativ zur Position des Programms angegeben wird. Wenn die Datei nicht vorhanden ist, wird das Programm eine Fehlermeldung ausgeben.
+Wenn wir diese Codezeilen ausführen, wird der gesamte Inhalt der Datei "mein_dateipfad.txt" in der Konsole ausgegeben. Wenn Sie mehrere Zeilen aus der Datei lesen möchten, können Sie die "fs::read_to_string" Funktion verwenden, die den gesamten Inhalt der Datei direkt in eine Zeichenkette liest.
 
-Als nächstes müssen wir die Daten aus der Datei lesen und in einen String speichern. Wir können dies mit der `read_to_string()` Funktion und einer `String` Variable machen:
+## Tieferes Eintauchen
+Jetzt, da wir wissen, wie man Textdateien in Rust liest, können wir tiefer in einige Aspekte dieses Prozesses eintauchen. Zum Beispiel ist es wichtig zu beachten, dass Standardbibliotheksfunktionen wie "fs::read" und "fs::read_to_string" sogenannte "Blocking"-Funktionen sind, was bedeutet, dass sie den Prozess des Lesens der Datei blockieren, bis die gesamte Datei eingelesen wurde. In manchen Fällen, insbesondere in der parallelen Programmierung, kann dies zu Leistungsproblemen führen. Glücklicherweise gibt es in Rust Bibliotheken wie "tokio" und "async-std", die asynchrone Dateioperationen ermöglichen und somit die Leistung verbessern können.
 
-```Rust
-let mut contents = String::new();
-
-// Inhalt aus der Datei in den String lesen
-file.read_to_string(&mut contents)
-	.expect("Konnte den Inhalt der Datei nicht lesen");
-```
-
-Nun enthält die `contents` Variable den gesamten Inhalt der Datei als String. Wir können diesen String nun weiterverarbeiten oder einfach ausgeben:
-
-```Rust
-println!("Der Inhalt der Datei ist: {}", contents);
-```
-
-## Tiefes Eintauchen
-
-Jetzt, da wir gelernt haben, wie man eine Textdatei in Rust liest, können wir uns ein wenig tiefer in die Details begeben. Zum Beispiel, was passiert, wenn die Datei sehr groß ist und unsere `String` Variable nicht genügend Speicher hat, um den gesamten Inhalt zu speichern? In solchen Fällen können wir die `std::io::BufReader` Klasse verwenden, die Daten in kleinere "Chunks" aufteilt und diese direkt aus der Datei liest, anstatt alles auf einmal zu versuchen. Wir können auch die `read_line()` Funktion verwenden, um Zeilenweise durch die Datei zu iterieren anstatt den gesamten Inhalt auf einmal zu lesen.
-
-Es gibt auch viele andere Optionen und Funktionen, die es ermöglichen, Textdateien in Rust effizienter und flexibler zu lesen. Es lohnt sich, sich damit auseinanderzusetzen, um Ihre Programmierkenntnisse zu verbessern.
-
-## Siehe Auch
-
-- Die offizielle Rust Dokumentation zum Thema "Reading and Writing Files": https://doc.rust-lang.org/book/ch12-00-an-io-project.html#reading-a-file
-- Eine Quora Antwort, die verschiedene Methoden und Techniken zum Lesen von Textdateien in Rust behandelt: https://www.quora.com/How-do-I-read-text-files-in-Rust
+## Siehe auch
+- Die offizielle Rust Dokumentation zum Lesen von Dateien: https://doc.rust-lang.org/std/fs/fn.read.html
+- Eine Einführung in die asynchrone Programmierung in Rust: https://blog.rust-lang.org/2016/09/29/Rust-1.12.html
+- Weitere Informationen zur Nutzung von Dateien in Rust: https://stevedonovan.github.io/rust-gentle-intro/6-files.html

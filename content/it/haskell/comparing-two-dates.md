@@ -1,48 +1,45 @@
 ---
-title:    "Haskell: Confronto di due date"
+title:    "Haskell: Confrontare due date"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
-Ci sono molte ragioni per voler confrontare due date in un programma Haskell. Ad esempio, potresti voler sapere se una data è precedente o successiva rispetto all'altra, o magari vuoi fare qualche calcolo basato sulla differenza tra le due date. In ogni caso, il confronto di date è una funzionalità molto utile che può aiutarti a gestire meglio i dati nel tuo programma.
+## Perché
 
-##Come fare
-Per confrontare due date in Haskell, puoi utilizzare la funzione `compare` del modulo `Data.Time`. Qui di seguito c'è un esempio di codice che confronta due date e restituisce un valore di confronto:
+Comparare due date può essere utile in molte situazioni, come ad esempio nel calcolo della differenza tra due date, nell'ordinamento di eventi cronologici o nella gestione di dati temporali. Inoltre, conoscere come comparare date in Haskell può aiutare a comprendere meglio il concetto di tipi di dati e di funzioni.
 
-```Haskell
-import Data.Time
+## Come
 
-confrontaDate :: Day -> Day -> Ordering
-confrontaDate data1 data2 = compare data1 data2
-```
-
-Nell'esempio sopra, la funzione `confrontaDate` riceve due valori di tipo `Day` (una data) e utilizza la funzione `compare` per confrontarli. Il risultato è del tipo `Ordering`, che può essere `LT` (per "meno di"), `GT` (per "più di") o `EQ` (per "uguale").
-
-Ecco un altro esempio che mostra come utilizzare il valore di confronto per fare un controllo condizionale:
+Per confrontare due date in Haskell, è necessario prima di tutto importare il modulo `Data.Time`, che fornisce funzioni per la gestione del tempo. Successivamente, definire le due date da confrontare utilizzando il tipo di dato `Day`.
 
 ```Haskell
 import Data.Time
 
-controllaData :: Day -> Day -> String
-controllaData data1 data2 =
-    case compare data1 data2 of
-        LT -> "La prima data è precedente alla seconda."
-        GT -> "La prima data è successiva alla seconda."
-        EQ -> "Le due date sono uguali."
+-- Definizione di due date
+data1 = fromGregorian 2020 10 5
+data2 = fromGregorian 2020 10 10
+
+-- Confronto delle due date
+compareDates data1 data2
 ```
 
-In questo esempio, la funzione `controllaData` riceve due valori di tipo `Day` e utilizza il valore di confronto per restituire una stringa che indica la relazione tra le due date.
+Il risultato del confronto sarà un valore di tipo `Ordering`, che può essere `LT` (lower than), `GT` (greater than) o `EQ` (equal). Per poter utilizzare direttamente il valore comparato, è possibile utilizzare la funzione `toEnum` per trasformarlo in un valore `Int`.
 
-##Approfondimento
-Se vuoi saperne di più sul confronto di date in Haskell, c'è un altro modulo molto utile che puoi utilizzare: `Data.Time.Calendar`. Questo modulo include diverse funzioni utili per lavorare con le date, come ad esempio `diffDays`, che calcola la differenza in giorni tra due date.
+## Deep Dive
 
-Ci sono anche altri moduli esterni che possono essere utili per il confronto di date, come ad esempio `Data.Ord` e `Data.Time.Format`.
+In Haskell, le date sono rappresentate come valori immutabili e sono gestite tramite funzioni specifiche del modulo `Data.Time`. È importante notare che il tipo di dato `Day` rappresenta solo una data e non un'ora specifica. Se si desidera confrontare date e orari, allora è necessario utilizzare il tipo di dato `UTCTime`.
 
-Inoltre, puoi creare le tue funzioni personalizzate per confrontare date in base alle tue esigenze. Ad esempio, puoi scrivere una funzione che confronta solo il mese o solo l'anno di due date.
+Un altro aspetto importante è la possibilità di formattare le date in diversi formati utilizzando la funzione `formatTime`, che richiede un formato di output e un valore di tipo `Day` come argomenti.
 
-##Vedi anche
-- [Documentazione ufficiale di Haskell sul modulo Data.Time](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/time-1.9.3/Data-Time.html)
-- [Tutorial su come gestire le date in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/guide-to-dates-tom-lokhorst)
-- [Libreria Data.Time.Calendar su Hackage](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
+```Haskell
+-- Formattazione di una data
+formattedDate = formatTime defaultTimeLocale "%d/%m/%Y" data1
+```
+
+## Vedi anche
+
+- [Documentazione di Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial su Data.Time](https://www.haskell.org/haskellwiki/Time)
+- [Guida sulle funzioni di confronto in Haskell](https://wiki.haskell.org/Comparison_functions)

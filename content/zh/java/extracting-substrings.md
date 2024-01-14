@@ -1,59 +1,44 @@
 ---
-title:    "Java: 选取子串"
+title:    "Java: 提取子字符串"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要提取子串
-字符串操作是Java编程中必不可少的部分。有时候，我们需要从一个字符串中抽取出一部分内容，这就是提取子串的用处。这对于处理大量文本数据或者字符串处理类的应用非常有用。
+## 为什么
 
-## 如何提取子串
-提取子串的基本方法是使用Java中的substring方法。该方法接受两个参数，第一个参数是起始索引，第二个参数是结束索引（不包括该索引对应的字符）。
+在编写Java程序时，有时候我们需要从一个字符串中提取出一部分内容。这可以帮助我们处理文本数据更加方便和灵活，例如搜索和替换特定的文本。因此，提取子字符串是Java编程中常用的基本操作。
+
+## 如何做
+
+为了提取子字符串，我们需要使用Java中的substring()方法。这个方法接受两个参数，分别是要开始提取的索引和要结束提取的索引。例如，如果我们想从一个字符串中提取出前5个字符，可以这样写：
 
 ```Java
 String str = "Hello World";
 String subStr = str.substring(0, 5);
-System.out.println(subStr);
-```
-输出：
-```Java
-Hello
+System.out.println(subStr); // Output: Hello
 ```
 
-我们也可以使用substring方法来提取字符串中的单个字符。只需将起始索引和结束索引设置为相同的值即可。例如：
+需要注意的是，Java中的索引是从0开始的，所以如果想要提取第一个字符，索引应该为0。另外，如果不指定结束索引，那么substring()方法会一直提取到字符串的末尾。
 
-```Java
-String str = "Hello World";
-char ch = str.substring(3, 4);
-System.out.println(ch);
-```
-输出：
-```Java
-l
-```
+我们还可以根据需要，使用substring()方法提取出多个子字符串，然后再进行处理和拼接。
 
-同时，我们还可以使用负数作为索引来提取子串。此时，索引的计算方式为从字符串的末尾开始，例如：
+## 深入了解
 
-```Java
-String str = "Hello World";
-String subStr = str.substring(-5, -1);
-System.out.println(subStr);
-```
-输出：
-```Java
-Worl
-```
+除了起始和结束索引，substring()方法还可以接受一个可选的第三个参数，用于指定每个提取的子字符串的长度。这样可以更灵活地提取出特定长度的子字符串，而不需要手动计算索引。
 
-## 深入了解提取子串
-除了基本的substring方法外，Java还提供了其他方法来提取子串。这些方法可以根据不同的需求提取子串，比如根据指定的字符或者正则表达式来提取子串。
+另外，需要特别注意的是，String类中的substring()方法会返回一个新的字符串对象，而不是修改原始的字符串。如果需要修改原始字符串，可以使用StringBuilder或StringBuffer类。
 
-另外，还有一些常用的字符串操作方法，比如trim去除字符串中的空格、toUpperCase和toLowerCase将字符串转换为大写或者小写、replace替换字符串中的指定字符等等。这些方法都可以在提取子串的基础上做更多的字符串处理。
+## 查看更多
 
-# 参考链接
-- [Java String类官方文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java substring方法详解](https://www.runoob.com/java/string-substring.html)
-- [Java正则表达式基础教程](https://www.runoob.com/java/java-regular-expressions.html)
+如果想要了解更多关于提取子字符串的知识，可以参考以下链接：
 
-# 参见
-- [Java字符串处理入门](https://github.com/username/java-string-processing)
+- [Java String类文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Java Substring方法教程](https://www.w3schools.com/java/java_ref_string.asp)
+- [Java String类视频教程](https://www.youtube.com/watch?v=V9UG5k1UjwA)
+
+## 参考链接
+
+- [在Java中提取子字符串的方法](https://www.codejava.net/coding/how-to-extract-a-substring-from-a-string-in-java)
+- [Java String类的substring()方法详解](https://blog.csdn.net/weixin_34327244/article/details/86769831)

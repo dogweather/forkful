@@ -1,31 +1,35 @@
 ---
 title:    "Java: Umwandlung eines Datums in einen String"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Das Konvertieren von einem Datum in einen String ist ein grundlegender Schritt in der Java Programmierung, der für die korrekte Darstellung von Datumswerten in verschiedenen Formaten unverzichtbar ist.
+Warum: In der Programmierung ist es oft notwendig, ein Datum in einen String (Zeichenkette) umzuwandeln. Dies kann zum Beispiel bei der Ausgabe von Daten in einem bestimmten Format oder bei der Speicherung von Daten in einer Datenbank nützlich sein.
 
-## Wie geht das?
-Die Konvertierung erfordert die Verwendung der `SimpleDateFormat` Klasse, die es uns ermöglicht, ein gewünschtes Datumsformat anzugeben. Im Folgenden ist ein Beispielcode dargestellt, der ein Datum in den String "dd.MM.yyyy" (Tag.Monat.Jahr) konvertiert:
+Wie geht es: Um ein Datum in einen String umzuwandeln, können wir in Java die Methode "format()" aus der Klasse "SimpleDateFormat" verwenden. Hier ist ein Beispielcode:
 
 ```Java
-SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+// Importieren der erforderlichen Klassen
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+// Definieren des Datums-Formats
+SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+
+// Erstellen eines Datums-Objekts
 Date date = new Date();
-String dateString = format.format(date);
-System.out.println(dateString);
+
+// Verwenden der "format()" Methode, um das Datum in einen String umzuwandeln
+String dateString = dateFormat.format(date);
+
+// Ausgabe des Ergebnisses
+System.out.println("Das aktuelle Datum ist: " + dateString);
+
+// Das aktuelle Datum ist: 20.03.2021
 ```
 
-Die Ausgabe dieses Codes wäre zum Beispiel "07.03.2021".
+Tief tauchen: Es gibt verschiedene Möglichkeiten, ein Datum in einen String umzuwandeln, je nachdem, welches Format und welche Locale (Sprache) wir benötigen. Die Klasse "SimpleDateFormat" bietet zahlreiche Methoden zur Formatierung von Daten und zur Verwendung von verschiedenen Locale-Einstellungen. Es ist auch wichtig zu beachten, dass die Verwendung von statischen Formatierern wie "DateTimeFormatter" in der Klasse "LocalDateTime" eine bessere Leistung bieten kann, insbesondere in multithreaded Umgebungen.
 
-## Tiefergehende Informationen
-Bei der Konvertierung von einem Datum in einen String gibt es einige wichtige Aspekte zu beachten. Zum Beispiel können bestimmte Buchstaben in der `SimpleDateFormat` Klasse verschiedene Bedeutungen haben, abhängig von der verwendeten Locale (Länder- oder Spracheinstellung). Es ist daher wichtig, das gewünschte Format sorgfältig zu prüfen, um unerwartete Ergebnisse zu vermeiden.
-
-Ein weiterer wichtiger Punkt ist, dass die `SimpleDateFormat` Klasse nicht threadsicher ist. Daher sollten Entwickler sicherstellen, dass mehrere Threads nicht gleichzeitig darauf zugreifen, da dies zu unerwarteten Fehlern führen kann.
-
-## Siehe auch
-- [Java Date and Time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Tutorial zu SimpleDateFormatter in Java](https://www.baeldung.com/java-simpledateformat)
-- [Java-Tipp: Erkenntnisse über Thread-Sicherheit](https://www.onjava.com/pub/a/onjava/2003/12/17/threads.html)
+Siehe auch: [Java - Date and Time](https://www.javatutorialhq.com/java/lang/dates-and-times-in-java/), [Java - SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html), [Java - DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

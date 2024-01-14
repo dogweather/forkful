@@ -1,54 +1,53 @@
 ---
-title:    "C++: 乱数を生成する"
+title:    "C++: 乱数の生成"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜランダムな数字を生成するのか
+## なぜ乱数を生成する必要があるのか
 
-ランダムな数字を生成することは、多くのプログラミング言語で重要な機能です。ランダムな数字を使用することで、ゲームやシミュレーションなどのプログラムをよりリアルにすることができます。また、ランダムな数字を使用することで、偏りのない公平な結果を得ることができます。
+プログラマーにとって、乱数を生成することは何かを模倣するだけでなく、ランダム性を与えることができる便利な方法です。例えば、ゲームを作る時に敵の行動を制御したり、データのサンプリングを行ったりする場合に有用です。
 
-## 生成方法
+## 乱数を生成する方法
 
-ランダムな数字を生成するには、C++の標準ライブラリである```<random>```を使用します。以下のコードは、0から99までのランダムな数字を生成し、その結果を表示する例です。
+C++で乱数を生成する方法を見ていきましょう。以下のようなコードを使用して、`rand()`関数を呼び出すことで乱数を生成することができます。
 
 ```C++
 #include <iostream>
-#include <random>
+#include <cstdlib>
+#include <ctime>
 
 int main() {
-  // 乱数生成器を初期化する
-  std::random_device rd;
-  std::mt19937 gen(rd());
+    // 現在の時刻を使用してシード値を設定する
+    srand(time(0));
 
-  // 0から99までの乱数を生成する
-  std::uniform_int_distribution<int> dist(0, 99);
-  int random_num = dist(gen);
+    // 0から10までの範囲で乱数を生成する
+    int randomNumber = rand() % 11;
 
-  // 結果を表示する
-  std::cout << "ランダムな数字: " << random_num << std::endl;
+    // 生成された乱数を出力する
+    std::cout << "Random Number: " << randomNumber << std::endl;
 
-  return 0;
+    return 0;
 }
 ```
 
-このコードの結果は、例えば「ランダムな数字: 58」となります。```<random>```ライブラリにはさまざまな乱数生成関数が用意されており、プログラムの目的や必要性に応じて使用する関数を選ぶことができます。
+実行結果は以下のようになります。
 
-## 詳細な説明
+```
+Random Number: 7
+```
 
-ランダムな数字を生成するには、擬似乱数生成器を使用します。擬似乱数生成器は、初期値(シード)を元に一定の計算を繰り返し、次々と乱数を生成します。そのため、同じ初期値を使うと同じ乱数が生成されます。そのため、プログラムの実行順や初期値を変えることによって異なる乱数列を生成することができます。
+## 乱数生成の深層
 
-また、本当のランダムではなく、計算で生成されるため、完全なランダムとは言えない場合があります。そのため、暗号学的なセキュリティを必要とする場合には、専用の擬似乱数生成器を使用します。
+乱数を生成する方法は多いですが、そのアルゴリズムの一つに「線形合同法（Linear Congruential Generator）」があります。この方法では、適切なシード値を設定することで準備された数値シーケンスを生成することができます。
 
-## さらに学ぼう
+また、乱数の分布にも重要な影響を与えることができます。例えば、一様分布を生成するためには、生成された数を最大値で割ることで実現できます。簡単ですが、このような細かな調整が乱数生成の精度を向上させることができます。
 
-まだランダムな数字生成について学びたい場合は、以下のリソースを参考にしてください。
+## 関連リンク
 
-- [C++の標準ライブラリにおける乱数生成](https://cpprefjp.github.io/reference/random.html)
-- [擬似乱数生成器について](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- [暗号学的なセキュリティを必要とする場合の擬似乱数生成器](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)
-
-See Also（参考情報）：
-- [C++の標準ライブラリについて学ぶ](https://www.cplusplus.com/reference/)
-- [C++における基本的な乱数生成方法についてのチュートリアル](https://www.geeksforgeeks.org/generating-random-number-cpp/)
+* [Generating Random Numbers (C++)](https://www.learncpp.com/cpp-tutorial/generating-random-numbers/)
+* [C++ Reference - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
+* [C++ Reference - srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
+* [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)

@@ -1,55 +1,74 @@
 ---
 title:    "PHP recipe: Reading command line arguments"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-If you're new to programming or just starting out with PHP, you may be wondering why you would need to learn about reading command line arguments. Well, the answer is simple - it's a fundamental skill that can greatly enhance your coding abilities. By understanding how to read command line arguments, you'll have the ability to build more versatile and powerful applications, making you a more efficient and confident programmer.
+In the world of programming, it's important to have the ability to manipulate your program based on different inputs from users or external sources. One way to achieve this is through the use of command line arguments. By reading these arguments, your program can take different paths and produce different outputs, increasing its versatility and usefulness.
 
 ## How To
 
-First things first, let's go over the basic syntax for reading command line arguments in PHP:
+To read command line arguments in PHP, we can use the `$_SERVER['argv']` variable. This variable contains an array of all the arguments passed in when executing the program. Let's look at an example:
 
 ```PHP
-$arguments = getopt("f:t:", ["file:", "type:"]);
+<?php
+// file: command_line_arguments.php
+$args = $_SERVER['argv'];
 
-// Sample output
-var_dump($arguments);
-
-// Output:
-array(2) {
-  ["f"]=>
-  string(10) "file1.txt"
-  ["t"]=>
-  string(4) "json"
+// print out all the arguments
+foreach ($args as $arg) {
+    echo $arg . "\n";
 }
 ```
 
-In this example, we use the `getopt()` function to retrieve the command line arguments. The first argument of the function is a string of short options, in this case “f” and “t”. These are followed by an array of long options, in this case "file:" and "type:". The function returns an associative array with the arguments as keys and their corresponding values.
+If we execute this file in the command line by typing `php command_line_arguments.php hello world`, the output will be:
 
-Next, let's look at an example of how to use this in a practical application. Let's say you want to write a script that converts a file from one type to another. With the knowledge of reading command line arguments, you can easily specify the input file and output file types in the command line:
-
-```PHP
-// Convert file from CSV to JSON
-php convert.php -f input.csv -t json
-
-// Convert file from XML to YAML
-php convert.php --file=input.xml --type=yaml
+```
+hello
+world
 ```
 
-By using this method, you can easily manipulate and manipulate command line arguments to suit your specific needs without having to modify your code every time.
+We can also access individual arguments by indexing the `$_SERVER['argv']` array. For example, if we want to print out only the second argument, we can use `$args[1]` since the first argument is at index 0.
+
+You can also use flags and options in command line arguments, which are preceded by a dash (`-`). These can be stored in a separate array called `$_SERVER['argv']`.
 
 ## Deep Dive
 
-Now that you understand the basics of reading command line arguments, let's dive deeper into how this function works. The `getopt()` function uses the `argv` array, which stores all the arguments passed to the script. This array can be accessed directly, but using the `getopt()` function makes it easier to handle and manipulate the arguments.
+In addition to the regular command line arguments, there are also special arguments that can be used. These include `--help`, which displays the program's instructions, and `-h`, a shortened version of `--help`.
 
-In addition, the `getopt()` function also offers various options for handling specific situations, such as handling required arguments or conflicting options. By exploring these options and using them in your code, you can create a more efficient and robust application.
+We can also use the `getopt()` function in PHP to handle command line options and flags. This function takes in the options and flags as well as any required arguments and returns them in an associative array. Let's look at an example:
+
+```PHP
+<?php
+// file: command_line_getopt.php
+$options = getopt("f:l:");
+
+// if the -f flag is used, print the file name
+if (isset($options['f'])) {
+    echo "File name: {$options['f']}\n";
+}
+
+// if the -l flag is used, print the last name
+if (isset($options['l'])) {
+    echo "Last name: {$options['l']}\n";
+}
+```
+
+If we execute this file in the command line by typing `php command_line_getopt.php -f index.php -l Smith`, the output will be:
+
+```
+File name: index.php
+Last name: Smith
+```
 
 ## See Also
 
-- [PHP.net - Command Line Options](https://www.php.net/manual/en/function.getopt.php)
-- [Stack Overflow - How to Read Command Line Arguments in PHP](https://stackoverflow.com/questions/29322634/how-to-read-command-line-arguments-in-php)
-- [Medium - Mastering Command Line Arguments in PHP](https://medium.com/@aequasi/php-tips-mastering-command-line-arguments-15d265d0930f)
+For more information on command line arguments in PHP, check out the following links:
+
+- [PHP Command Line Arguments](https://www.php.net/manual/en/reserved.variables.argv.php)
+- [getopt() Function](https://www.php.net/manual/en/function.getopt.php)
+- [Command Line Arguments in PHP](https://www.tutorialspoint.com/php/php_command_line.htm)

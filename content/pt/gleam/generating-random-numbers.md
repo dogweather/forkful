@@ -1,50 +1,57 @@
 ---
-title:    "Gleam: Gerando números aleatórios"
+title:    "Gleam: Gerando Números Aleatórios"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar geração de números aleatórios?
+## Por que gerar números aleatórios em Gleam?
 
-A geração de números aleatórios é uma ferramenta importante na programação, sendo utilizada para simulações, jogos e muitas outras aplicações que requerem elementos imprevisíveis. Em Gleam, é possível gerar números aleatórios usando a biblioteca padrão "random".
+Gerar números aleatórios é uma tarefa muito comum em programação. Isso pode ser útil em vários cenários, como jogos, testes, criptografia, entre outros. Em Gleam, é muito fácil e simples gerar números aleatórios, pois a linguagem possui uma biblioteca nativa para essa função.
 
-## Como fazer:
+## Como fazer isso?
 
-Para gerar um número aleatório em Gleam, é necessário importar a biblioteca "random" e chamar a função "int" ou "float", dependendo do tipo de número desejado. Veja abaixo um exemplo para gerar um número inteiro entre 1 e 100:
-
-```Gleam
-import random
-
-let numero = random.int(1, 100)
-
-// output: 42
-```
-
-Também é possível definir uma semente (seed) para controlar os números gerados. Isso pode ser útil para reproduzir os mesmos resultados em diferentes execuções do programa. Veja um exemplo:
+Para gerar números aleatórios em Gleam, primeiro devemos importar a biblioteca `random` usando a palavra-chave `import`. Em seguida, podemos usar a função `float` para gerar um número decimal aleatório entre 0 e 1:
 
 ```Gleam
 import random
 
-let seed = 1234
-
-// Gerar um número aleatório entre 1 e 100
-let numero1 = random.int(1, 100)
-
-// Gerar outro número aleatório usando a mesma semente
-let numero2 = random.int(1, 100)
-
-// output: 94 e 94 (os dois números são iguais)
+fn main() {
+  random_num = random.float(0..1)
+  // output: 0.465343167368
+}
 ```
 
-## Mergulho profundo:
+Se quisermos gerar um número inteiro aleatório, podemos usar a função `int` e especificar o intervalo em que os números devem estar:
 
-Além dos números inteiros e de ponto flutuante, a biblioteca "random" em Gleam também oferece funções para gerar strings, listas e até mesmo objetos aleatórios. Essas funções podem ser úteis para testes ou para criar dados de forma dinâmica. Você pode encontrar uma lista completa dessas funções na documentação oficial do Gleam.
+```Gleam
+import random
 
-Além disso, é importante lembrar que os números gerados por computadores nunca são realmente aleatórios, mas sim pseudoaleatórios, ou seja, seguem um algoritmo previsível. Por isso, é importante tomar cuidado ao utilizar números aleatórios em contextos sensíveis, como criptografia, por exemplo.
+fn main() {
+  random_int = random.int(1..10)
+  // output: 5
+}
+```
 
-## Veja também:
+Podemos também gerar uma lista de números aleatórios usando a função `list` e especificando o tamanho da lista e o intervalo de números:
 
-- [Documentação da biblioteca "random" em Gleam](https://gleam.run/modules/standard_library/random.html)
-- [Guia de programação em Gleam para iniciantes](https://intro-to-gleam.rs/)
-- [Fórum da comunidade Gleam](https://gleam.run/forums/)
+```Gleam
+import random
+
+fn main() {
+  random_list = random.list(5, 1..100)
+  // output: [64, 29, 92, 18, 87]
+}
+```
+
+## Aprofundando-se
+
+A geração de números aleatórios em Gleam é baseada no gerador de números pseudoaleatórios (PRNG) `Xoshiro128+`, que é considerado um dos melhores geradores de números aleatórios atualmente. O PRNG é inicializado com uma semente gerada aleatoriamente a partir do relógio do sistema e, em seguida, gera uma sequência de números aleatórios com base nesta semente.
+
+É importante ressaltar que os números aleatórios gerados pela função `float` são apenas uma aproximação de um número decimal, não sendo exatamente preciso. Caso precise de maior precisão, é recomendado utilizar a biblioteca `decimal` da linguagem.
+
+## Veja também
+
+- Documentação oficial de Gleam sobre a biblioteca random: https://gleam.run/modules/random.html
+- Documentação oficial de Gleam sobre a biblioteca decimal: https://gleam.run/modules/decimal.html

@@ -1,61 +1,59 @@
 ---
 title:    "Kotlin: Écrire des tests"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en programmation Kotlin?
+## Pourquoi
 
-Si vous êtes un développeur Kotlin et que vous n'écrivez pas encore de tests pour votre code, il est peut-être temps de commencer. Les tests permettent de vérifier la qualité et la stabilité de votre code, en s'assurant que les fonctionnalités fonctionnent correctement et en réduisant les risques de bugs. Dans cet article, nous allons voir comment écrire des tests dans vos projets Kotlin.
+Ecrire des tests est essentiel pour toute application en développement. Cela permet de vérifier que le code fonctionne correctement et de s'assurer que de nouvelles fonctionnalités ne cassent pas les existantes. Les tests aident également à repérer et résoudre les bugs plus rapidement, ce qui permet un développement plus efficace.
 
-## Comment écrire des tests en Kotlin
+## Comment Faire
 
-Les tests en Kotlin sont écrits en utilisant le framework de test JUnit, qui est également utilisé avec d'autres langages de programmation tels que Java. Pour commencer, nous devons ajouter la dépendance JUnit dans notre fichier `build.gradle` :
-
-```Kotlin
-testImplementation 'junit:junit:4.12'
-```
-
-Ensuite, nous allons créer une classe de test avec quelques fonctions pour illustrer comment écrire des tests en Kotlin :
+Voici comment écrire des tests en Kotlin:
 
 ```Kotlin
+// Importer la librairie de tests
+import org.junit.Test
+import org.junit.Assert.*
+
+// Déclarer une classe pour les tests
 class CalculatorTest {
 
+    // Déclarer la fonction de test
     @Test
     fun additionTest() {
-        val result = Calculator.add(2, 3)
-        assertEquals(5, result)
-    }
+        // Définir les entrées du test
+        val num1 = 5
+        val num2 = 10
 
-    @Test
-    fun subtractionTest() {
-        val result = Calculator.subtract(5, 3)
-        assertEquals(2, result)
+        // Appeler la fonction à tester
+        val result = Calculator.add(num1, num2)
+
+        // Vérifier l'égalité entre le résultat attendu et le résultat obtenu
+        assertEquals(15, result)
     }
 }
 
-object Calculator {
-    fun add(a: Int, b: Int): Int {
-        return a + b
-    }
-
-    fun subtract(a: Int, b: Int): Int {
-        return a - b
+// Déclarer la classe à tester
+class Calculator {
+    // Définir la fonction à tester
+    fun add(x: Int, y: Int) : Int {
+        return x + y
     }
 }
 ```
 
-Dans cet exemple, nous avons créé une classe de test appelée `CalculatorTest`, avec deux fonctions correspondant à des cas de test pour les fonctions d'addition et de soustraction de notre objet `Calculator`. Nous utilisons ensuite l'assertion `assertEquals` pour vérifier le résultat attendu avec le résultat réel.
+## Approfondissement
 
-## Plongée profonde
+Lorsque vous écrivez des tests, il est important de s'assurer de couvrir tous les cas possibles, y compris les cas d'erreur. Les tests doivent également être maintenus et mis à jour au fur et à mesure que le code évolue. Il est également utile d'écrire des tests automatisés pour s'assurer que le code fonctionne correctement en continu.
 
-Les tests peuvent être utilisés pour couvrir différents aspects de votre code, tels que les cas de bordure et les différentes branches d'exécution. Ils peuvent également être utilisés pour détecter les régressions lorsque vous apportez des modifications à votre code. Il existe également des outils de tests automatiques en Kotlin tels que Spek et KotlinTest, qui offrent des fonctionnalités avancées pour écrire des tests.
+Il existe de nombreuses librairies de tests en Kotlin, telles que JUnit et Spek, qui offrent différentes fonctionnalités et options de personnalisation pour écrire des tests efficaces. Il est important de choisir la librairie la mieux adaptée à votre projet et à vos besoins.
 
-Cependant, il est important de noter que les tests ne doivent pas être écrits à l'aveugle et doivent être maintenus et mis à jour avec le code. Il est également important de trouver un bon équilibre entre la couverture de test et la simplicité de votre code.
+## Voir Aussi
 
-## Voir aussi
-
-- [Documentation JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Spek framework de tests en Kotlin](https://spekframework.org/)
-- [KotlinTest framework de tests en Kotlin](https://github.com/kotlintest/kotlintest)
+- [Documentation officielle JUnit en français](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
+- [Tutoriel pour écrire des tests en Kotlin](https://medium.com/@adammaciaszek/automated-tests-in-kotlin-7b33c5e173b)
+- [Exemples de tests en Kotlin sur GitHub](https://github.com/dnw5/kotlin-test-examples)

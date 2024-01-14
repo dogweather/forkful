@@ -1,48 +1,62 @@
 ---
 title:    "TypeScript: 文字列の連結"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ ？
+## なぜ
 
-文字列を連結することは、プログラミングで頻繁に使用される基本的なタスクです。例えば、ウェブアプリケーションがデータベースから取得した情報を表示する際に、文字列を結合して希望の形式で表示する必要があります。TypeScriptでは、文字列の結合をより簡単に行うことができます。
+文字列の連結を行うことの妥当性を説明するための 1~2 文について。
 
-## 使い方
+コンピュータープログラムにおいて、文字列はよく利用されるデータ型です。文字列を連結することによって、複数の文字列を一つの大きな文字列として結合することができます。これにより、より複雑な処理を行うことが可能になります。
 
-「+」演算子を使用して、文字列を結合することができます。例えば、"Hello "という文字列と"World"という文字列を結合したい場合、以下のようにコードを書きます。
+## 連結の仕方
 
-```TypeScript
-let greeting: string = "Hello ";
-let name: string = "World";
-
-let message: string = greeting + name;
-console.log(message);
-```
-
-この場合、コンソールには"Hello World"という文字列が出力されます。
-
-また、テンプレート文字列を使用することもできます。テンプレート文字列を使用すると、変数を埋め込んで文字列を結合することができます。同じ例をテンプレート文字列を使用して書くと、以下のようになります。
+連結する際に使用する TypeScript のコード例と、それぞれの出力結果を下記のコードブロックで示します。
 
 ```TypeScript
-let greeting: string = "Hello ";
-let name: string = "World";
+// 文字列の宣言
+let firstName: string = "太郎";
+let lastName: string = "山田";
 
-let message: string = `${greeting}${name}`;
-console.log(message);
+// 連結
+let fullName: string = firstName + " " + lastName;
+
+// 出力
+console.log(fullName); // 太郎 山田
 ```
 
-## ディープダイブ
+ここでは、2つの文字列を `+` 演算子で結合し、新しい文字列を作成しています。また、空白を入れることによって、`太郎` と `山田` の間にスペースが入るようになっています。
 
-文字列の結合は、プログラミングの世界で非常によく使用される概念です。しかし、実際にはコードを実行する前に、TypeScriptでは文字列の結合をどのように処理しているのか、また文字列を結合する際のパフォーマンスについて知ることも重要です。
+## 深堀り
 
-TypeScriptでは、文字列の結合の際に、内部的にはStringBuilderというものを使用しています。これは、パフォーマンスの観点から最適化された方法で文字列を結合するための仕組みです。
+より詳細な連結の手法について深堀りを行います。TypeScript では、文字列を連結する他にも、`concat()` メソッドを使用することもできます。これは、文字列の配列を一つの文字列に結合することができるメソッドです。
 
-また、文字列の結合には+演算子の代わりにconcat()メソッドを使用することもできます。このメソッドは、複数の文字列を結合する際にも効率的に動作します。しかし、通常は+演算子を使用する方がコードがより読みやすくなります。
+```TypeScript
+// 文字列の配列の宣言
+let fruits: string[] = ["りんご", "バナナ", "みかん"];
 
-## おすすめのリンク
+// 連結
+let fruitsString: string = fruits.concat();
 
-[TypeScript公式サイト](https://www.typescriptlang.org/)<br>
-[MDN - テンプレート文字列](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/template_strings)<br>
-[理解できるTypeScript入門 - 文字列の結合](https://www.sejuku.net/blog/78583)
+// 出力
+console.log(fruitsString); // りんごバナナみかん
+```
+
+また、連結した文字列を変数に代入せずに、直接 `console.log()` する方法もあります。
+
+```TypeScript
+// 文字列の宣言
+let bearName: string = "ブラウン";
+let bearFriend: string = "サリー";
+
+// 連結と出力を同時に行う
+console.log("私たちのクマの友達は " + bearName + " と " + bearFriend + " です。"); // 私たちのクマの友達は ブラウン と サリー です。
+```
+
+## See Also
+
+- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN Web Docs - 文字列の連結](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/concat#k-pseudo-depth-connect-languages)

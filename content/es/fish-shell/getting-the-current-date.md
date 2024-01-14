@@ -1,48 +1,57 @@
 ---
 title:    "Fish Shell: Obteniendo la fecha actual"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual en Fish Shell?
+## Por qué
 
-Obtener la fecha actual puede ser útil en muchos escenarios de programación, ya sea para mostrar la fecha en la que se realizó una determinada acción o para realizar operaciones con fechas en tu código. En esta entrada, aprenderemos cómo obtener la fecha actual en Fish Shell utilizando comandos sencillos.
+Si tienes un programa o script que necesita saber la fecha actual, es esencial que puedas obtener esta información de manera rápida y eficiente. Afortunadamente, Fish Shell ofrece una manera sencilla y eficaz de obtener la fecha actual.
 
 ## Cómo hacerlo
 
-Fish Shell ofrece una variedad de comandos para obtener la fecha actual. El más común es el comando `date`, que muestra la fecha y hora en el formato especificado. Por ejemplo, si ejecutas el siguiente comando en tu terminal:
+Para obtener la fecha actual en Fish Shell, simplemente usa el comando `date` seguido de la opción `+%Y%m%d`. Esto devolverá la fecha en formato `año-mes-día`.
 
 ```Fish Shell
-date +%d/%m/%G
+date +%Y%m%d
 ```
 
-Obtendrás la fecha actual en formato día/mes/año, por ejemplo: 26/08/2021.
+La salida se verá así: `20201120` (siéntete libre de probarlo por ti mismo). Si prefieres el formato `día-mes-año`, simplemente cambia la opción a `+%d%m%Y`.
 
-También puedes utilizar el comando `cal` para obtener un calendario del mes actual. Si lo ejecutas sin ningún argumento, mostrará el calendario del mes en curso. Pero también puedes especificar un mes y año en particular para obtener su calendario. Por ejemplo:
+También puedes usar opciones adicionales para incluir la hora y la zona horaria, como `+%H%M%S` para la hora y `+%Z` para la zona horaria. Por ejemplo:
 
 ```Fish Shell
-cal 12 2021
+date +%Y%m%d%H%M%S%Z
 ```
 
-Este comando mostrará el calendario del mes de diciembre de 2021.
+La salida se verá así: `20201120125312EST`.
 
-Otra opción es utilizar el comando `ls -lT`, que muestra la fecha y hora de la última modificación de un archivo. Si lo ejecutas sin ningún argumento, mostrará la fecha y hora de la carpeta actual. Pero también puedes especificar un archivo en particular para obtener su información.
+## Profundizando
 
-## Profundizando en la obtención de la fecha actual
+El comando `date` utiliza la biblioteca del sistema para obtener la fecha y la hora actual. Puedes profundizar en esta biblioteca para obtener aún más información sobre la fecha actual, como el día de la semana o el número de semana del año.
 
-En realidad, el comando `date` es una abreviatura de `date "+FORMATO"`, lo que significa que puedes personalizar el formato en el que se muestra la fecha actual. Por ejemplo, puedes mostrar la fecha en formato largo utilizando el siguiente comando:
+Por ejemplo, para obtener el día de la semana en formato numérico (donde el domingo es `0` y el sábado es `6`), simplemente agrega la opción `+%u` al comando:
 
 ```Fish Shell
-date +"%A, %d de %B de %G"
+date +%u
 ```
 
-Esto mostrará la fecha actual en formato día de la semana, día del mes, mes y año en letras: jueves, 26 de agosto de 2021.
+La salida se verá así: `5` (refiriéndose al viernes, ya que hoy es viernes mientras escribo esto).
 
-Además, Fish Shell también ofrece una opción interactiva para obtener la fecha actual. Si escribes `alt + d` en tu terminal, se abrirá un pequeño menú donde puedes ver la fecha y hora actuales y elegir un formato para mostrarlos.
+Para obtener el número de semana del año en formato numérico, usa la opción `+%V`:
+
+```Fish Shell
+date +%V
+```
+
+La salida se verá así: `47`.
+
+Puedes explorar más estas opciones y encontrar la combinación que mejor se adapte a tus necesidades.
 
 ## Ver también
 
-- Página de manual de Fish Shell sobre el comando `date`: https://fishshell.com/docs/current/cmds/date.html
-- Página de manual de Fish Shell sobre el comando `cal`: https://fishshell.com/docs/current/cmds/cal.html
-- Página de manual de Fish Shell sobre el comando `ls`: https://fishshell.com/docs/current/cmds/ls.html
+- [Documentación de Fish Shell para el comando `date`](https://fishshell.com/docs/current/cmds/date.html)
+- [Artículo de Linux Handbook sobre cómo obtener la fecha actual en la terminal](https://linuxhandbook.com/get-current-date-time-shell-script/)
+- [Página de Wikipedia sobre el comando `date`](https://en.wikipedia.org/wiki/Date_(Unix))

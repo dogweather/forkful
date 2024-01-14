@@ -1,34 +1,53 @@
 ---
-title:    "Ruby: Konvertera ett datum till en sträng"
+title:    "Ruby: Konvertering av en datum till en sträng"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att konvertera ett datum till en sträng är en vanlig uppgift när man programmerar med Ruby. Det kan vara användbart för att visa datum på ett mer läsbart sätt eller för att hantera information från olika källor.
+Att konvertera ett datum till en sträng är en vanlig uppgift för många Ruby-programmerare. Detta gör det möjligt att visa datum i ett läsbart och förståeligt format för användare eller för att spara data till en databas eller fil.
 
-## Hur man gör det
+##Så här
 
-För att konvertera ett datum till en sträng i Ruby, kan man använda sig av metoden `strftime`. Det står för "stringfy time" och låter dig formatera en tid eller ett datum som en sträng. Här är ett exempel på hur man kan använda det:
+För att konvertera ett datum till en sträng kan du använda `strftime`-metoden. Den här metoden tar ett datumobjekt och en sträng med specifierare och returnerar en sträng med det önskade formatet.
+
+```Ruby
+date = Date.today
+date.strftime("%d-%m-%Y") # "01-09-2020"
+```
+
+Här är några vanliga specifierare som kan användas för att konfigurera det genererade datumet:
+
+- %d: Dag i månaden (1 till 31)
+- %m: Månad (1 till 12)
+- %Y: År med fyra siffror
+- %y: År med två siffror
+- %b: Kort månadsnamn (t.ex. "Jan")
+- %B: Fullständigt månadsnamn (t.ex. "Januari")
+- %a: Kort veckodagsnamn (t.ex. "Mån")
+- %A: Fullständigt veckodagsnamn (t.ex. "Måndag")
+
+Du kan också kombinera specifierarna för att skapa ett anpassat format. Till exempel, om du vill ha ett datum i formatet "YYYY-MM-DD", kan du använda `%Y-%m-%d`.
+
+Om du vill lägga till tider i din sträng kan du använda `%H` (timme), `%M` (minut) och `%S` (sekund) specifierare. Till exempel:
 
 ```Ruby
 date = Time.now
-date_string = date.strftime("%d %B %Y")
-puts date_string
+date.strftime("%H:%M:%S") # "15:43:21"
 ```
 
-Detta kommer att ge oss en sträng som ser ut så här: "07 juli 2021". Den första delen av metoden `strftime` är formatet du vill ha din sträng i, i vårt fall vill vi ha dag, månad och år. Det andra argumentet är det datum du vill konvertera till en sträng, i vårt fall använder vi `Time.now` som ger oss dagens datum.
+##Djupdykning
 
-## Djupdykning
+Bakom kulisserna använder Ruby-biblioteket `strftime`-metoden `strptime` för att konvertera datumet till en sträng. Den här metoden är förmågan att extrahera tider och datum från en sträng med hjälp av angivna specifierare. Detta kan vara särskilt användbart när du behöver konvertera en användarens inmatade sträng till ett datum.
 
-Som vi såg i det föregående exemplet, kan vi använda `strftime` för att formatera datumet på ett visst sätt. Men det finns också flera fördefinierade format som vi kan använda. Till exempel kan vi använda `%x` för att få en mer kortfattad version av datumet som "07/07/2021" eller `%A` för att få veckodagen som "onsdag".
+För att se en fullständig lista över specifierare och deras betydelser kan du kolla på Ruby-dokumentationen för Time-klassen.
 
-Det finns också andra metoder för att konvertera datum till strängar, som `to_s` och `to_formatted_s`. Det är viktigt att testa och jämföra olika metoder för att hitta den som passar bäst för ditt specifika projekt.
+##Se även
 
-## Se också
-
-* [Time Class (Ruby 3.0.2)](https://ruby-doc.org/core-3.0.2/Time.html)
-* [Ruby strftime documentation](https://ruby-doc.org/core-3.0.2/Time.html#method-i-strftime)
-* [Converting Between DateTime, Date, Time and ActiveSupport::TimeWithZone](https://blog.appsignal.com/2021/04/07/activerecord-datetime-date-time-activerecord-time-with-zone.html)
+- [Date and Time i Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
+- [Time-klassen dokumentation](https://ruby-doc.org/core-2.7.1/Time.html)
+- [Ruby strftime formatter](https://www.garethrees.co.uk/2013/05/04/time-strftime)
+- [Ruby Date & Time Programming Guide](https://www.rubyguides.com/2015/05/ruby-time/)

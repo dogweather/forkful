@@ -1,44 +1,66 @@
 ---
 title:    "PHP: Verwendung von regulären Ausdrücken"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug für die Verarbeitung von Zeichenketten in PHP. Sie ermöglichen es Entwicklern, komplexere Such- und Ersetzungsaufgaben effizienter auszuführen. Wenn Sie ein fortgeschrittener PHP-Entwickler werden wollen, sind reguläre Ausdrücke ein wichtiger Schlüssel.
+Das Verwenden von regulären Ausdrücken ist eine effiziente Möglichkeit, Muster in Strings zu finden und zu manipulieren. Es ist vor allem nützlich für Programmierer, die oft mit großen Mengen von Daten arbeiten und bestimmte Muster in diesen Daten finden müssen.
 
-## Wie man reguläre Ausdrücke in PHP verwendet
+##Wie geht es?
 
-Um reguläre Ausdrücke in PHP zu verwenden, müssen Sie zunächst das integrierte Funktion `preg_match()` aufrufen und den gewünschten regulären Ausdruck als erstes Argument übergeben. Lassen Sie uns beispielsweise einen einfachen regulären Ausdruck definieren, um nach Wörtern mit dem Buchstaben "a" in einem Text zu suchen:
+Um reguläre Ausdrücke in PHP zu verwenden, müssen Sie die integrierten Funktionen `preg_match()` oder `preg_replace()` verwenden. Diese Funktionen akzeptieren als Parameter sowohl den regulären Ausdruck als auch den zu durchsuchenden String.
+
+Ein Beispiel für die Verwendung von `preg_match()`:
 
 ```PHP
-$text = "Hallo Welt, das ist ein Beispiel";
-$regex = "/a/";
-preg_match($regex, $text, $matches);
-print_r($matches);
+$pattern = '/[0-9]{3}-[0-9]{2}-[0-9]{4}/'; // sucht nach US-amerikanischen Sozialversicherungsnummern
+$string = "Meine Sozialversicherungsnummer ist 123-45-6789.";
+if (preg_match($pattern, $string)) {
+  echo "Eine gültige Sozialversicherungsnummer wurde gefunden.";
+} else {
+  echo "Es wurde keine gültige Sozialversicherungsnummer gefunden.";
+}
 ```
 
 Die Ausgabe wäre:
 
-```PHP
-Array
-(
-    [0] => a
-)
+```
+Eine gültige Sozialversicherungsnummer wurde gefunden.
 ```
 
-Beachten Sie, dass `preg_match()` auch eine zusätzliche Variable `$matches` übergeben wird, die als Array dient, um die gefundenen Übereinstimmungen zu speichern. Dies kann dann bei Bedarf weiterverwendet werden.
+Ein weiteres Beispiel für die Verwendung von `preg_replace()`:
 
-Weitere hilfreiche Funktionen für die Verwendung von regulären Ausdrücken in PHP sind `preg_match_all()`, `preg_replace()` und `preg_split()`, die es Ihnen ermöglichen, verschiedene Such- und Ersetzungsaufgaben durchzuführen.
+```PHP
+$pattern = '/[aeiou]/'; // ersetzt alle Vokale durch den Buchstaben "x"
+$string = "Wie geht es dir?";
+$new_string = preg_replace($pattern, "x", $string);
+echo $new_string;
+```
 
-## Tiefere Einblicke
+Die Ausgabe wäre:
 
-Reguläre Ausdrücke bieten eine Vielzahl von Möglichkeiten und können sehr komplex werden. Es gibt verschiedene Modifikatoren, die verwendet werden können, um die Funktionalität zu erweitern, sowie spezielle Zeichen und Metazeichen, die verwendet werden können, um bestimmte Muster zu finden. Um mehr über die Verwendung von regulären Ausdrücken in PHP zu erfahren, empfehlen wir, sich mit der offiziellen Dokumentation vertraut zu machen und verschiedene Tutorials im Internet zu lesen.
+```
+Wx gxht xs dxr?
+```
 
-## Siehe auch
+##Deep Dive
 
-- Offizielle PHP-Dokumentation zu regulären Ausdrücken (https://www.php.net/manual/de/book.pcre.php)
-- PHP Regular Expression Tester (https://regex101.com/)
-- Einführung in reguläre Ausdrücke in PHP (https://www.tutorialspoint.com/php/php_regular_expression.htm)
+Reguläre Ausdrücke folgen bestimmten Syntaxregeln und können sehr komplex werden. Hier sind einige wichtige Konzepte, die Sie beim Schreiben von regulären Ausdrücken beachten sollten:
+
+- Verwenden Sie Zeichenklassen, um bestimmte Arten von Zeichen zu finden (z. B. Buchstaben, Zahlen, Leerzeichen).
+- Verwenden Sie Quantifizierer, um anzugeben, wie oft ein bestimmtes Zeichen oder eine Gruppe von Zeichen erscheinen soll (z. B. `{3}` für genau 3 Vorkommen).
+- Verwenden Sie spezielle Zeichen wie `?` (0 oder 1 Vorkommen) und `+` (1 oder mehr Vorkommen) für weitere Flexibilität.
+- Verwenden Sie Gruppierungsklammern `()` um Teilausdrücke zu definieren, die später referenziert werden können.
+- Verwenden Sie Anfangs- und Endanker `^` und `$` für genauere Übereinstimmungen am Anfang und Ende eines Strings.
+
+Eine umfassende Liste aller verfügbaren Befehle und Regeln für reguläre Ausdrücke in PHP finden Sie in der [offiziellen Dokumentation](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php).
+
+##Siehe auch
+
+- [Einführung in reguläre Ausdrücke in PHP](https://www.php.net/manual/en/book.pcre.php)
+- [Reguläre Ausdrücke Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [20 Beispiele für die Verwendung von regulären Ausdrücken in PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)

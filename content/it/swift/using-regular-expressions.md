@@ -1,48 +1,52 @@
 ---
-title:    "Swift: Utilizzando le espressioni regolari"
+title:    "Swift: L'utilizzo delle espressioni regolari"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-RegEx, abbreviazione di espressioni regolari, è uno strumento di programmazione potente per la ricerca e la manipolazione di testo. È utile per trovare corrispondenze di pattern in una stringa o per sostituire parti della stringa con un'altra. Se sei uno sviluppatore Swift, è importante avere familiarità con le espressioni regolari per semplificare e velocizzare le tue attività di programmazione.
+Le espressioni regolari sono uno strumento incredibilmente utile per il programmatore Swift. Con loro, è possibile effettuare ricerche e manipolazioni di testo in modo efficiente e preciso. Sebbene possano sembrare complesse all'inizio, una volta che si impara a usarle correttamente, possono risparmiare una quantità significativa di tempo e sforzo nella scrittura del codice.
 
-## Come Fare
+## Come fare
 
-In Swift, puoi utilizzare le espressioni regolari utilizzando l'API NSRegularExpression. Segui questi semplici passi per utilizzarlo nel tuo codice:
-
-1. Crea un'espressione regolare utilizzando il modello desiderato, ad esempio "123" per trovare tutti i numeri "123" in una stringa.
-2. Usa la funzione `NSRegularExpression()` per creare una nuova istanza di espressione regolare, passando il modello e le opzioni desiderate.
-3. Usa la funzione `matches(in:options:range:)` per ottenere un array di NSTextCheckingResult che contengono le corrispondenze trovate nella tua stringa.
-4. Accedi all'NSTextCheckingResult restituito per ottenere i dettagli della corrispondenza, come la posizione e la lunghezza della corrispondenza nella stringa originale.
-
-Di seguito è riportato un esempio pratico di come utilizzare le espressioni regolari per trovare tutte le parole con almeno 3 lettere in una stringa:
+Per utilizzare le espressioni regolari in Swift, è necessario importare il framework `Foundation`. Successivamente, è possibile creare un `NSRegularExpression` utilizzando il pattern desiderato, ad esempio:
 
 ```Swift
-let string = "Questo è un esempio di stringa con parole di varie lunghezze."
-let pattern = "[a-zA-Z]{3,}" // modello che trova parole con almeno 3 lettere
-let regex = try! NSRegularExpression(pattern: pattern, options: [])
-let matches = regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
+let regex = try NSRegularExpression(pattern: "[0-9]+")
+```
+
+Una volta creato, è possibile utilizzare il `NSRegularExpression` per cercare, sostituire o estrarre sezioni di testo in una stringa. Ad esempio, per trovare tutte le occorrenze di numeri in una stringa, si potrebbe utilizzare il metodo `matches(in:options:range:)` come segue:
+
+```Swift
+let matches = regex.matches(in: "Ho 5 mele e 3 banane", options: [], range: NSRange(location: 0, length: 20))
+
 for match in matches {
-    let wordRange = match.range
-    if let range = Range(wordRange, in: string) {
-        let word = string[range]
-        print(word) // output: Questo, esempio, stringa, con, parole, varie, lunghezze
-    }
+  let range = match.range
+  let string = (input as NSString).substring(with: range)
+  print("Ho trovato il numero \(string)!")
 }
 ```
 
+Questo codice produrrebbe l'output:
+
+```
+Ho trovato il numero 5!
+Ho trovato il numero 3!
+```
+
+Ci sono molte altre opzioni e metodi disponibili per le espressioni regolari in Swift, quindi assicurati di consultare la documentazione ufficiale per ulteriori dettagli.
+
 ## Approfondimento
 
-Le espressioni regolari offrono una vasta gamma di funzionalità, come i gruppi di cattura per ricavare parti specifiche della corrispondenza e le opzioni per controllare la sensibilità alle maiuscole e minuscole. Ci sono anche molte risorse online, come il sito regex101.com, che possono aiutarti a costruire e testare i tuoi modelli di espressioni regolari.
+Sebbene la sintassi delle espressioni regolari possa sembrare intimidatoria, vale la pena approfondire la loro conoscenza poiché possono essere estremamente utili in molte situazioni. Alcune cose da tenere a mente quando si lavora con espressioni regolari in Swift includono il fatto che sono case-sensitive e che è possibile utilizzare caratteri di escape per gestire caratteri speciali.
 
-Ricorda che le espressioni regolari possono essere abbastanza complesse e possono richiedere del tempo per padroneggiarle completamente, quindi non scoraggiarti se inizi a utilizzarle. Continua a praticare e scoprirai quanto possano essere potenti e utili nella tua programmazione.
+Inoltre, esistono diversi siti e tool online che possono aiutare nella creazione e nella verifica di espressioni regolari, come [RegExr](https://regexr.com/) e [Regex101](https://regex101.com/). Utilizzali per affinare le tue abilità e per testare le tue espressioni regolari prima di utilizzarle nel tuo codice Swift.
 
-## Vedi Anche
+## Vedi anche
 
-- [NSRegularExpression Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Regex101](https://regex101.com/)
-- [Regular Expressions in Swift: Part 1](https://www.raywenderlich.com/5766-regular-expressions-tutorial-getting-started)
-- [Regular Expressions in Swift: Part 2](https://www.raywenderlich.com/5772-regular-expressions-tutorial-advanced)
+- [Documentazione ufficiale di Apple su `NSRegularExpression`](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Tutorial sull'utilizzo di espressioni regolari in Swift](https://www.raywenderlich.com/5484335-regular-expressions-tutorial-getting-started)
+- [Esempi pratici di utilizzo di espressioni regolari in Swift](https://www.swiftbysundell.com/articles/a-deep-dive-into-regular-expressions-in-swift/)

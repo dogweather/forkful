@@ -1,71 +1,53 @@
 ---
 title:    "Java recipe: Writing a text file"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Text files are an essential part of programming and are commonly used for storing and accessing data. By knowing how to write a text file in Java, you can create and manipulate various types of data, making your programs more versatile and flexible.
-
-## How To
-
-Writing a text file in Java involves a few simple steps:
-
-1. Import the `java.io` package to access the necessary classes and methods for working with files.
-2. Create a `FileWriter` object and specify the file path and name.
-3. Use the `write()` method to add content to the file. This method takes in a string or char array as a parameter.
-4. Remember to use the `newLine()` method to add line breaks between each piece of content.
-5. Close the `FileWriter` object using the `close()` method to save and finalize the file.
-
-Let's take a look at an example of writing a text file called "sample.txt":
+## Why Text Files Are Important in Java Programming
+Text files are a crucial aspect of programming in Java, allowing us to store and manipulate data on our computer's filesystem. Being able to read and write text files is a fundamental skill for any Java programmer, as it allows for persistent storage of information and facilitates communication between different programs.
+ 
+## How To Write Text Files in Java
+To write a text file in Java, we first need to import the `java.io` package, which contains the necessary classes for file input and output. Then, we can use the `FileWriter` class to create a new file, specify the file path and name, and write data to it using the `write()` method. Here is a simple code example:
 
 ```Java
 import java.io.FileWriter;
-import java.io.IOException;
 
 public class TextFileWriter {
     public static void main(String[] args) {
-        // create a FileWriter object
-        FileWriter writer = null;
         try {
-            writer = new FileWriter("sample.txt");
+            // create a new file
+            FileWriter fileWriter = new FileWriter("mytextfile.txt");
 
-            // add content to file
-            writer.write("Hello");
-            writer.newLine();
-            writer.write("This is a sample text file");
-            writer.newLine();
-            writer.write("Written using Java");
+            // write data to the file
+            fileWriter.write("Hello there! This is a text file written in Java.");
 
-            // close FileWriter object
-            writer.close();
-            System.out.println("File created successfully.");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            // close the file
+            fileWriter.close();
+
+            System.out.println("Text file successfully written!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
 ```
+Running this code will create a file named `mytextfile.txt` in the same directory as the Java file, and the text "Hello there! This is a text file written in Java." will be written to it.
 
-If we run this code, a new text file named "sample.txt" will be created in the same directory as our Java file. The content we specified will be written to the file, with each piece of content on a new line. The console will also display a message confirming that the file was created successfully.
+## Deep Dive into Writing Text Files
+When writing text files, it's important to consider encoding. By default, Java uses the system's default character encoding, but this can cause issues if you need to read the file on a different system with a different encoding. To avoid this, we can specify the encoding when creating the `FileWriter` object, like this:
 
-## Deep Dive
+```Java
+FileWriter fileWriter = new FileWriter("mytextfile.txt", StandardCharsets.UTF_8);
+```
 
-When working with text files, it's important to handle potential errors that may occur. This is why we use the `try-catch` block in our code. The `IOException` in the `catch` statement handles any input/output errors, such as the file not being found or unable to be written to.
+It's also important to close the file after writing to it, as this will release any system resources used and ensure the file is saved properly. For this, we use the `close()` method, as shown in the code example above.
 
-It's also worth mentioning that using the `write()` method does not automatically add a new line. This is why we use the `newLine()` method to add line breaks between each piece of content.
-
-Furthermore, the `FileWriter` class also has a `append()` method that allows us to add new content to an existing file without overwriting it.
+Another useful class for writing text files is the `BufferedWriter` class, which allows for more efficient writing of large amounts of data to a file. By using `BufferedWriter`, the data will be saved to the file in larger chunks instead of one character at a time.
 
 ## See Also
-
-To learn more about working with text files in Java, check out the following resources:
-
-- [Reading and Writing Files in Java](https://www.baeldung.com/java-write-to-file)
-- [Java FileWriter class](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
-- [Handling Errors in Java](https://www.geeksforgeeks.org/try-catch-block-in-java/)
-
-Now that you know how to write a text file in Java, you can use this knowledge in your future projects to store and manipulate data. Happy coding!
+- JavaDocs for `java.io.FileWriter`: https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html
+- JavaDocs for `java.io.BufferedWriter`: https://docs.oracle.com/javase/7/docs/api/java/io/BufferedWriter.html
+- Tutorial on reading and writing text files in Java: https://www.baeldung.com/java-write-to-file

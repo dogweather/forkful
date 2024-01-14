@@ -1,51 +1,48 @@
 ---
-title:    "Javascript: Злиття рядків"
+title:    "Javascript: З'єднання рядків"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-У програмуванні на JavaScript часто потрібно злити дві або більше рядків у один. Цей процес називається конкатенацією рядків і є необхідним для багатьох завдань, таких як виведення повідомлень чи створення складних рядків для виведення на екран.
+Конкатенація рядків є важливою частиною програмування в Javascript і може бути корисною для об'єднання інформації з різних джерел в один рядок, роблячи код більш ефективним і зрозумілим.
 
-## Як це зробити
+## Як
 
-Для конкатенації рядків у JavaScript використовується оператор "+" або метод ".concat()". Наприклад:
+Для конкатенації рядків в Javascript потрібно використати оператор "+" або метод "concat()". Наприклад:
 
-```JavaScript
-let name = "Сергій";
-let greeting = "Привіт, ";
+```Javascript
+let firstName = "Анна";
+let lastName = "Іваненко";
 
-// Використання оператора "+"
-let message = greeting + name;
-console.log(message); // Виведе "Привіт, Сергій"
+let fullName = firstName + " " + lastName;
+// Результат: Анна Іваненко
 
-// Використання методу ".concat()"
-let upperName = name.toUpperCase();
-let result = greeting.concat(upperName);
-console.log(result); // Виведе "Привіт, СЕРГІЙ"
+let welcomeMessage = "Ласкаво просимо, ";
+welcomeMessage = welcomeMessage.concat(firstName, "!");
+// Результат: Ласкаво просимо, Анна!
 ```
 
-В обох випадках, ми отримали злитий рядок, який містить якість повідомлення та ім'я користувача.
+## Глибоке занурення
 
-## Глибше копання
+Оператор "+" може бути використаний для конкатенації рядків, чисел та інших типів даних, що автоматично перетворює типи. Крім того, додаткові пробіли можуть бути додані за допомогою методу "trim()". Наприклад:
 
-Оператор "+" також можна використовувати для конкатенації не тільки рядків, а й інших типів даних, таких як числа або булеві значення. В такому випадку, вони будуть перетворені у рядки перед об'єднанням.
+```Javascript
+let num1 = 10;
+let num2 = 5;
+let result = "Сума чисел " + num1 + " та " + num2 + " дорівнює " + (num1 + num2);
+// Результат: Сума чисел 10 та 5 дорівнює 15
 
-Також, можливо використовувати оператор "+=" для додавання нових значень до існуючого рядка.
-
-```JavaScript
-let number = 25;
-let message = "Раніше я вчився " + number + " годин на тиждень";
-console.log(message); // Виведе "Раніше я вчився 25 годин на тиждень"
+let sentence = "  Привіт, я рядок  ";
+sentence = sentence.trim();
+// Результат: Привіт, я рядок
 ```
 
-## Додатково
+## See Also
 
-Існують й інші способи конкатенації рядків у JavaScript, такі як шаблонні рядки, методи ".join()" і ".replace()", а також використання функцій з сторонніх бібліотек. Перевірте документацію для отримання додаткової інформації та практикуйте їх у своїх проектах.
-
-## Див. також
-
-- [MDN документація про конкатенацію рядків у JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Стаття про різні способи конкатенації рядків у JavaScript](https://www.freecodecamp.org/news/3-ways-to-concatenate-strings-in-javascript-6ae295f8e7f3/)
+- [Оператор "+" в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Operators/Concatenation)
+- [Метод "concat()" в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [Типи даних в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Data_structures)

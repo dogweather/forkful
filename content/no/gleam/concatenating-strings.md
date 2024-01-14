@@ -1,46 +1,43 @@
 ---
-title:    "Gleam: Sammenslåing av strenger"
+title:    "Gleam: Sammenstilling av strenger"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å kombinere strenger, eller å legge til flere strenger sammen, er en grunnleggende ferdighet i ethvert programmeringsspråk. Dette er nyttig for å lage mer komplekse utsetninger eller sette sammen data for å vise en fullstendig melding. Det er også en viktig del av å jobbe med datastrukturer og manipulere informasjon.
+# Hvorfor
 
-## Hvordan gjøre det
-For å kombinere strenger i Gleam, bruker vi operatøren `++`. Her er et eksempel på hvordan dette kan se ut i praksis:
+Vi har alle vært der - å prøve å slå sammen strenger i koden vår og slite med det. Men hvorfor bry seg med å konkatere strenger i det hele tatt? Det viser seg at det kan være en ganske nyttig funksjon!
 
-```Gleam
-let navn = "Siri"
-let alder = "26"
-let beskjed = "Hei, mitt navn er " ++ navn ++ " og jeg er " ++ alder ++ " år gammel."
-io.println(beskjed)
+# Hvordan
+
+La oss se på noen eksempler på hvordan vi kan konkatere strenger i Gleam:
+
+```gleam
+let navn = "Sara"
+let hilsen = "Hei " ++ navn
 ```
 
-Output:
-```
-Hei, mitt navn er Siri og jeg er 26 år gammel.
-```
+Her ser vi at vi har definert en variabel kalt "navn" og deretter brukt konkateneringsoperatøren "++" for å legge til innholdet i variabelen til en annen streng. Dette vil gi oss en ny variabel "hilsen" med verdien "Hei Sara".
 
-Vi kan også kombinere strenger med andre typer data, for eksempel tall:
-
-```Gleam
-let tall = 37
-let beskjed = "Mitt favorittall er " ++ show(tall) ++ "!"
-io.println(beskjed)
+```gleam
+let tall = 42
+let streng = "Tallet er " ++ to_string(tall)
 ```
 
-Output:
-```
-Mitt favorittall er 37!
-```
+I dette tilfellet ser vi også at vi kan konkatere strenger med tall. Vi bruker funksjonen "to_string" for å konvertere tallet til en streng før vi konkatenerer det med resten av teksten.
 
-## Dypere dykk
-En ting å være oppmerksom på når vi kombinerer strenger er at vi må sørge for at formatet på de ulike delene stemmer overens. For eksempel må vi konvertere tall til strenger før vi kan legge dem sammen, som vist i eksemplet over med `show()` funksjonen.
+# Dykk dypere
 
-Vi kan også bruke funksjoner og mønstre for å gjøre arbeidet med å kombinere strenger mer effektivt. Dette er spesielt nyttig hvis vi jobber med store mengder data og må legge sammen mange strenger.
+Det er viktig å merke seg at konkatenering er en langsommere operasjon enn å bruke formateringsstrenger. Dette skyldes at hver gang en konkateneringsoperasjon utføres, må det opprettes en ny streng og kopieres innholdet fra de to originale strengene. Dette kan føre til at koden vår blir tregere og mindre effektiv.
 
-## Se også
-- [Gleam dokumentasjon for strengoperasjoner](https://gleam.run/book/stdlib.html#strings)
-- [Mer om manipulering av data i Gleam](https://gleam.run/book/functional-programming.html#data-manipulation)
+Det er også verdt å merke seg at Gleam har en innebygd funksjon for å konkatere flere strenger på en mer effektiv måte - "String.concat". Denne funksjonen tar inn en liste med strenger og kombinerer dem til én streng.
+
+# Se også
+
+- [Gleam dokumentasjon for Strings](https://gleam.run/core/string.html)
+- [Video om strenger i Gleam](https://www.youtube.com/watch?v=6-km0Y8vPbg)
+- [Eksempelkode for å utforske konkatenering i Gleam](https://github.com/search?p=2&q=gleam+string&type=Code)
+
+*Takk for at du leste! Håper dette hjelper deg med å forstå konkatenering i Gleam.*

@@ -1,66 +1,53 @@
 ---
-title:    "Bash: 文字列を大文字にする"
+title:    "Bash: 文字列の先頭を大文字にする"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ 
-私たちが文字列の大文字化に取り組む理由は、特定の言語や処理系で大文字と小文字が区別されるためです。より正確に、文字列の大文字化は、大文字と小文字を混同するリスクを避けるために、プログラム内にある特定の文字列をすべて大文字にする必要があるときに頻繁に使用されます。
+## なぜ
+プログラミングにおいて、文字列を大文字に変換する必要がある場合があります。例えば、ユーザーが入力した文字列を大文字で表示したい場合や、データベースに保存する前に文字列を正規化する必要がある場合などがあります。
 
-## 使い方 
-文字列を大文字にする方法は、Bashプログラミング言語を使用したコード例を使用して説明します。
+## 方法
+文字列を大文字に変換するには、Bashの組み込みコマンドである`tr`を使用します。以下のように記述します。
 
-```Bash
-# 元の文字列を変数に保存 
-str="hello world"
+```
+Bash
+# 変数に文字列を格納
+str="hello, world"
 
-# 文字列を大文字に変換して出力 
-echo "${str^^}"
+# 大文字に変換
+str=$(echo $str | tr '[:lower:]' '[:upper:]')
 
-## 出力結果: HELLO WORLD
+# 結果を出力
+echo $str
 ```
 
-このコードでは、大文字に変換したい文字列を変数に保存し、変数名の後に`^^`を追加することで、文字列を大文字に変換することができます。
+上記のコードを実行すると、`HELLO, WORLD`という出力が得られます。`tr`コマンドは、第一引数の文字を第二引数の文字で置き換えることができるため、大文字に変換するために使用することができます。
 
-## ドミドールブ 
-文字列を大文字に変換する方法については、`tr`コマンドを使用することもできます。例えば、次のコードは`tr`コマンドを使用して文字列を大文字に変換する例です。
+## 深堀り
+文字列を大文字に変換する方法はいくつかありますが、`tr`コマンドは最も単純で効率的な方法です。また、`tr`コマンドは正規表現を使用することができるため、より柔軟に文字の置き換えが可能です。
 
-```Bash
-# 元の文字列を変数に保存 
-str="hello world"
+例えば、`tr`コマンドを使用して数字をローマ数字に変換することもできます。以下のように記述します。
 
-# 大文字に変換して出力 
-echo "$str" | tr '[:lower:]' '[:upper:]'
+```
+Bash
+# 変数に数字を格納
+num=123
 
-## 出力結果: HELLO WORLD
+# ローマ数字に変換
+roman=$(echo $num | tr '123' 'IXV')
+
+# 結果を出力
+echo $roman
 ```
 
-また、このコマンドでは、大文字に変換したい文字列を変数に保存せずに直接指定することもできます。
+実行すると、`IIXV`という出力が得られます。
 
-```Bash
-# 大文字に変換して出力 
-echo "hello world" | tr '[:lower:]' '[:upper:]'
+## その他
+もしも文字列に含まれる大文字をすべて小文字に変換したい場合は、`tr`コマンドではなく`tr [:upper:] [:lower:]`を使用します。また、`tr -d`コマンドを使用すると、特定の文字を削除することもできます。
 
-## 出力結果: HELLO WORLD
-```
-
-さらに、`sed`コマンドを使用することで、特定の文字列だけを大文字に変換することもできます。以下のコードは、`sed`コマンドを使用して両方の単語の最初の文字を大文字に変換する例です。
-
-```Bash
-# 元の文字列を変数に保存 
-str="hello world"
-
-# 最初の文字を大文字に変換して出力 
-echo "$str" | sed -e 's/\b\(.\)/\U\1/g'
-
-## 出力結果: Hello World
-```
-
-## 参考リンク 
-- [Bash Guide for Beginners: Commands for Manipulating Strings](https://bash.cyberciti.biz/guide/String_manipulation_in_Bash)
-- [Introduction to Bash Scripting](https://devhints.io/bash)
-- [Unix Tutorial: Learn Bash in 10 Minutes](https://www.unixtutorial.org/learn-bash-in-10-minutes) 
-
-## 参照 
-- Markdownシンタックスは[こちら](https://www.markdownguide.org/basic-syntax/)をご覧ください。
+See Also
+- [Bashの組み込みコマンド - tr](https://linux.die.net/man/1/tr)
+- [Bashの正規表現](https://www.gnu.org/software/bash/manual/html_node/Bash-Features.html#Bash-Features)

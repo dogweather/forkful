@@ -1,64 +1,44 @@
 ---
-title:    "Kotlin: 「未来または過去の日付を計算する」"
+title:    "Kotlin: 将来や過去の日付を計算する"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
+未来や過去の日付を計算することに取り組む理由は、特定の日付を基準に、期限や締め切り、イベントの日程などを確認したいためです。
 
-日付を計算することは、将来や過去の特定の日付を見つけるために非常に便利です。プロジェクトの納期を計画したり、締め切りを守るために必要な日付を把握したりするのに役立ちます。今回は、Kotlinを使って日付の計算をする方法をご紹介します。
-
-## 使い方
-
-日付を計算するには、まずはじめに`LocalDate`クラスを使います。これは、日付を表すためのクラスです。今回は、簡単な例として、今日の日付から5日後の日付を計算してみましょう。
-
+# 使い方
 ```Kotlin
-// LocalDateオブジェクトを作成
+// 今日の日付を取得
 val today = LocalDate.now()
 
-// 5日後の日付を計算
-val futureDate = today.plusDays(5)
+// 1年後の日付を計算して出力
+val oneYearFromNow = today.plusYears(1)
+println("1年後の日付: $oneYearFromNow")
 
-// 結果を出力
-println("5日後の日付は${futureDate}です。")
+// 1ヶ月前の日付を計算して出力
+val oneMonthAgo = today.minusMonths(1)
+println("1ヶ月前の日付: $oneMonthAgo")
 
+// 特定の日付からの経過日数を計算
+val christmas = LocalDate.of(2021, 12, 25)
+val daysUntilChristmas = today.until(christmas, ChronoUnit.DAYS)
+println("今日からクリスマスまであと$daysUntilChristmas日")
 ```
 
-実行すると、以下のように出力されます。
+# 詳細
+Kotlinの日付を扱うライブラリである"java.time"パッケージのクラスを使用することで、簡単に未来や過去の日付を計算することができます。
 
-```Kotlin
-5日後の日付は2021-10-11です。
-```
+例えば、"plusYears"や"minusMonths"などのメソッドを使用することで、指定した期間のずれた日付を計算することができます。また、"until"メソッドを使用することで、特定の日付と今日の日付の間に何日間あるかを取得することができます。
 
-また、過去の日付を計算する場合は、`minus`メソッドを使います。例えば、10日前の日付を計算するコードは以下のようになります。
+# 参考リンク
+[Java Time APIドキュメンテーション](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
 
-```Kotlin
-// LocalDateオブジェクトを作成
-val today = LocalDate.now()
+[kotlinx-datetimeドキュメンテーション](https://kotlinlang.org/docs/datetime.html)
 
-// 10日前の日付を計算
-val pastDate = today.minusDays(10)
+# 関連リンク
+[Java Time APIの使い方まとめ](https://techacademy.jp/magazine/24060)
 
-// 結果を出力
-println("10日前の日付は${pastDate}です。")
-```
-
-実行すると、以下のように出力されます。
-
-```Kotlin
-10日前の日付は2021-09-26です。
-```
-
-このように、`plus`メソッドと`minus`メソッドを使うことで、簡単に日付の計算ができます。
-
-## 深堀り
-
-日付の計算についてさらに詳しく知りたい方は、`LocalDate`クラスのドキュメントを参照してください。また、`plus`メソッドや`minus`メソッド以外にも、`LocalDate`クラスにはさまざまなメソッドがありますので、ぜひ調べてみてください。
-
-それでは、日付の計算を楽しんでください！
-
-## 関連リンク
-
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)
-- [Java LocalDateクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDate.html)
+[Kotlinで日付を扱う方法](https://qiita.com/nakaken0629/items/22107ce7c13b75efbc87)

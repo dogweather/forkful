@@ -1,38 +1,36 @@
 ---
 title:    "TypeScript: 새 프로젝트 시작하기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 시작하는가?
-새로운 프로젝트를 시작하는 이유는 다양합니다. 예를 들어, 프로그래머로서 새로운 기술을 배우고 싶은 욕구가 있거나, 개발하는 언어를 다양화하고 싶을 수도 있습니다. 또는 새로운 아이디어를 실현하고 싶은 열정이 있을 수도 있습니다. 이외에도 많은 이유가 있을 수 있지만, 중요한 점은 새로운 프로젝트를 시작하는 것은 항상 재미있고 흥미로운 일이라는 것입니다.
+## 왜
 
-## 시작하는 방법
-한번 새로운 프로젝트를 시작해볼까요? TypeScript는 강력한 프로그래밍 언어로서 많은 기능을 제공합니다. 아래 코드 블록을 통해 실제 예제와 출력을 확인해보세요.
+새 프로젝트를 시작하는 이유는 다양합니다. 새로운 기술을 익히고 자신의 스킬을 발전시키기 위해서일 수도 있고, 새로운 아이디어를 구현하고 이를 공유하기 위해서일 수도 있습니다. 어떤 이유로든 자신의 프로그래밍 능력을 발전시키고 싶다면 새 프로젝트를 시작하는 것을 추천합니다.
+
+## 어떻게 시작하나요?
+
+새 TypeScript 프로젝트를 시작하려면 Node.js와 npm이 설치된 컴퓨터가 필요합니다. 먼저 `npm init`을 사용하여 프로젝트 디렉토리를 초기화하고, `npm install -g typescript` 명령어를 사용하여 TypeScript를 전역으로 설치합니다. 그리고 나서 다음과 같이 아주 기초적인 예제 코드를 작성해보겠습니다.
 
 ```TypeScript
-// TypeScript로 Hello World 출력하기
-console.log("Hello World");
+// main.ts 파일
+const greeting: string = "안녕하세요!";
+console.log(greeting); // 출력: 안녕하세요!
 ```
 
-출력 결과:
+이제 `tsc main.ts` 명령어로 TypeScript 파일을 컴파일하고, `node main.js` 명령어를 사용하여 실행하면 "안녕하세요!"가 콘솔에 출력됩니다.
 
-``` bash
-$ tsc hello.ts
-$ node hello.js
-Hello World
-```
+## 깊게 보기
 
-이렇듯 간단하게 TypeScript를 이용해 Hello World를 출력할 수 있습니다. 이제 여러분은 TypeScript의 기본적인 문법을 익히고 새로운 프로젝트를 시작할 준비가 되었습니다.
+새로운 TypeScript 프로젝트를 시작하는 것은 자유롭게 발전시킬 수 있는 큰 가능성을 가지고 있습니다. 더 많은 기능을 추가하고 다양한 라이브러리를 사용해보고 싶다면 많은 문서를 참조하고 다른 개발자들의 코드를 참고하는 것이 좋습니다. 또한 자신의 프로젝트를 개선하기 위해 검색할 수 있는 다양한 도구들도 있으니 적극 활용해보세요.
 
-## 심층적인 탐구
-새로운 프로젝트를 시작할 때 가장 중요한 것은 계획입니다. 프로젝트의 목적, 범위, 우선순위 등을 정확하게 설정해야 합니다. 또한 프로젝트를 구현하는데 필요한 도구와 리소스도 고려해야 합니다.
+---
 
-또한 적절한 개발 방법론과 버전 관리 시스템을 선택하는 것도 중요합니다. 이를테면 Agile 방법론을 적용하거나 Git을 이용해 코드를 관리하는 등의 선택이 필요합니다. 이러한 결정들이 프로젝트의 성공을 좌우하는 중요한 요소가 될 수 있습니다.
+# 참고 자료
 
-## 관련 링크
-- [TypeScript - Official Website](https://www.typescriptlang.org/)
-- [Learn TypeScript in Y Minutes](https://learnxinyminutes.com/docs/typescript/)
-- [The Basics of Agile Methodology](https://www.scrumprep.com/agile-methodology/)
-- [Git Tutorial: A Comprehensive Guide](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
+- [타입스크립트 공식 문서](https://www.typescriptlang.org/docs/)
+- [MDN 웹 문서](https://developer.mozilla.org/ko/)
+- [TypeScript 기초 강의](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88) 
+- [TypeScript 코딩 스타일 가이드](https://basarat.gitbooks.io/typescript/docs/styleguide/styleguide.html)

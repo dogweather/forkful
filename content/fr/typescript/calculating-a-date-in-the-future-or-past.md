@@ -1,44 +1,47 @@
 ---
-title:    "TypeScript: Calculer une date dans le futur ou le passé"
+title:    "TypeScript: Calcul d'une date future ou passée"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est souvent utile de pouvoir calculer une date dans le passé ou dans le futur dans un logiciel. Cela peut être pour afficher des rappels pour les événements à venir ou pour calculer une date de livraison prévue pour une commande. Dans cet article, nous explorerons comment le faire en utilisant le langage de programmation TypeScript.
+Calculer une date dans le futur ou dans le passé peut être utile pour planifier des événements, gérer des données temporaires ou créer des rappels. Les programmes ayant besoin d'une compréhension du temps peuvent bénéficier de cette fonctionnalité.
 
 ## Comment faire
 
-Nous pouvons utiliser la bibliothèque standard JavaScript `Date` pour créer et manipuler des objets de date en TypeScript. Pour calculer une date dans le futur, nous pouvons utiliser la méthode `setDate()` pour définir une date et utiliser la méthode `getDate()` pour récupérer la date calculée. Par exemple:
+Pour calculer une date dans le futur ou dans le passé en TypeScript, il suffit d'utiliser la classe `Date` de JavaScript avec des opérations mathématiques pour ajouter ou soustraire une période de temps.
 
-```
-TypeScript
-const currentDate: Date = new Date();
-const futureDate: Date = currentDate.setDate(currentDate.getDate() + 7);  // ajouter 7 jours à la date actuelle
-console.log(futureDate);  // affiche la date calculée dans 7 jours
-```
+```TypeScript
+// Calculer une date dans le futur
+let date = new Date();
+date.setDate(date.getDate() + 7);
+console.log(`La date dans une semaine sera: ${date.toDateString()}`);
 
-De même, pour calculer une date dans le passé, nous pouvons utiliser la méthode `setDate()` en passant un nombre négatif pour soustraire des jours à la date actuelle. Par exemple:
-
+// Calculer une date dans le passé
+date = new Date();
+date.setFullYear(date.getFullYear() - 2);
+console.log(`La date d'il y a deux ans était: ${date.toDateString()}`);
 ```
-TypeScript
-const currentDate: Date = new Date();
-const pastDate: Date = currentDate.setDate(currentDate.getDate() - 3);  // soustraire 3 jours à la date actuelle
-console.log(pastDate);  // affiche la date calculée il y a 3 jours
-```
+### Sortie:
 
-Nous pouvons également utiliser d'autres méthodes pour ajuster le temps, comme `setMonth()` pour définir un mois ou `setFullYear()` pour définir une année. En combinant ces méthodes avec `getDate()`, nous pouvons calculer des dates dans le futur ou dans le passé avec précision.
+> La date dans une semaine sera: Sun Oct 03 2021
+>
+> La date d'il y a deux ans était: Fri Oct 02 2019
+
+En utilisant `setDate()` et `setFullYear()` avec les opérateurs d'addition ou de soustraction, il est possible de calculer une date dans le futur ou dans le passé. Il est également possible de manipuler d'autres unités de temps telles que les heures, les minutes et les secondes en utilisant les méthodes `setHours()`, `setMinutes()` et `setSeconds()`.
 
 ## Plongée en profondeur
 
-Il est important de noter que la classe `Date` en JavaScript commence à compter les mois à partir de 0, donc le mois de janvier est représenté par 0 et le mois de décembre par 11. Cela peut causer des erreurs lors du calcul des dates dans le futur ou dans le passé, donc il est important de garder cela à l'esprit lors de l'utilisation de cette méthode.
+En plus de la classe `Date`, TypeScript offre également des fonctionnalités de types stricts pour gérer les dates et les temps. Cela peut éviter les erreurs courantes telles que l'ajout ou la soustraction de nombres à une date.
 
-En outre, la méthode `setDate()` modifiera réellement l'objet `Date` d'origine, donc si vous avez besoin de la date d'origine pour d'autres calculs, assurez-vous de créer une nouvelle instance de `Date` plutôt que de travailler directement sur celle d'origine.
+Par exemple, si l'on essaie d'utiliser la méthode `setDate()` avec un nombre négatif, TypeScript renverra une erreur de compilation en indiquant que ce n'est pas une valeur autorisée pour cette méthode.
+
+Il est également possible d'utiliser des bibliothèques externes telles que `moment.js` pour des fonctionnalités plus avancées de manipulation des dates et des temps.
 
 ## Voir aussi
 
-- [Documentation JavaScript Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
-- [Introduction à TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Syntaxe de base de TypeScript](https://www.tutorialspoint.com/typescript/typescript_syntax.htm)
+- [Documentation de la classe Date en TypeScript](https://www.typescriptlang.org/docs/handbook/classes.html#instance-side)
+- [Documentation de la bibliothèque moment.js](https://momentjs.com/docs/)

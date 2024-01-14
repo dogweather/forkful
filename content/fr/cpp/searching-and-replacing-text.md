@@ -1,17 +1,18 @@
 ---
-title:    "C++: Recherche et remplacement de texte"
+title:    "C++: Recherche et remplacement de texte."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi 
+## Pourquoi
 
-De nos jours, la programmation est devenue une compétence essentielle dans de nombreux domaines. Cela inclut non seulement le développement de logiciels, mais aussi la gestion des données et même l'automatisation des tâches courantes. L'une des tâches courantes les plus importantes en programmation est la recherche et le remplacement de texte. Cela peut sembler simple, mais cela peut vous faire gagner beaucoup de temps et d'efforts, en particulier lors de la manipulation de grands fichiers de données.
+La recherche et le remplacement de texte sont des opérations courantes en programmation, qui permettent de modifier rapidement et efficacement du code ou du texte. Cela peut être utile lors de la correction d'erreurs ou lors de l'optimisation de votre code.
 
-# Comment faire 
+## Comment faire
 
-Il existe plusieurs façons d'effectuer une recherche et un remplacement de texte en utilisant le langage de programmation C++. L'une des méthodes les plus courantes est l'utilisation de la fonction `find()` et `replace()` de la bibliothèque standard. Voici un exemple de code pour rechercher et remplacer une chaîne de caractères dans une autre chaîne :
+La recherche et le remplacement de texte peuvent être réalisés en utilisant la fonction `replace()` de la bibliothèque standard de C++. Voici un exemple de code en utilisant cette fonction :
 
 ```C++
 #include <iostream>
@@ -20,57 +21,31 @@ Il existe plusieurs façons d'effectuer une recherche et un remplacement de text
 using namespace std;
 
 int main() {
-    string str = "Bonjour le monde!";
-    cout << "Chaîne originale : " << str << endl;
-
-    // Recherche et remplacement de la chaîne "monde" par "univers"
-    size_t found = str.find("monde");
-    if (found != string::npos) { // Vérifie si la chaîne a été trouvée
-        str.replace(found, 5, "univers"); // Remplace 5 caractères à partir du point trouvé
-        cout << "Nouvelle chaîne : " << str << endl;
-    } else {
-        cout << "Chaîne non trouvée." << endl;
-    }
-
+    string texte = "Bonjour le monde !";
+    cout << "Texte initial : " << texte << endl;
+    texte.replace(8, 2, "soir");
+    cout << "Texte modifié : " << texte << endl;
     return 0;
 }
-
-// Output : Chaîne originale : Bonjour le monde!
-//          Nouvelle chaîne : Bonjour le univers!
 ```
 
-Vous pouvez également utiliser des expressions régulières pour effectuer une recherche et un remplacement de texte plus avancés. La bibliothèque standard de C++ dispose de la classe `regex` qui vous permet de créer des expressions régulières et de les utiliser pour rechercher et remplacer du texte dans une chaîne. Voici un exemple de code utilisant `regex` :
+Cet exemple va remplacer les deux caractères à partir de la 8ème position dans la chaîne de caractères `texte` par le mot "soir". Le résultat de l'exécution de ce code sera le texte suivant :
 
-```C++
-#include <iostream>
-#include <string>
-#include <regex>
-
-using namespace std;
-
-int main() {
-    string str = "C++ est un langage de programmation populaire.";
-    cout << "Chaîne originale : " << str << endl;
-
-    // Crée une expression régulière pour trouver toutes les occurrences de "langage"
-    regex reg("langage");
-    // Remplace toutes les occurrences de "langage" par "outil"
-    string newStr = regex_replace(str, reg, "outil");
-    cout << "Nouvelle chaîne : " << newStr << endl;
-
-    return 0;
-}
-
-// Output : Chaîne originale : C++ est un langage de programmation populaire.
-//          Nouvelle chaîne : C++ est un outil de programmation populaire.
+```
+Texte initial : Bonjour le monde !
+Texte modifié : Bonsoir le monde !
 ```
 
-# Profondeur de la plongée 
+Il est important de noter que la fonction `replace()` modifie directement la chaîne de caractères initiale, elle ne renvoie pas une nouvelle chaîne. Ainsi, si vous voulez conserver la chaîne originale, vous devrez la copier dans une autre variable avant d'appliquer la fonction `replace()`.
 
-La recherche et le remplacement de texte peuvent sembler simples, mais il existe de nombreuses fonctions et classes utiles disponibles dans la bibliothèque standard de C++ pour vous aider à effectuer ces tâches plus efficacement. Il est également important de comprendre les concepts tels que les indices, les pointeurs et les tableaux pour manipuler correctement les chaînes de caractères en C++. En apprenant à utiliser ces outils, vous pouvez non seulement gagner du temps, mais aussi améliorer la robustesse et la fiabilité de votre code.
+## Plongée en profondeur
 
-# Voir aussi 
+En plus de la fonction `replace()`, la bibliothèque standard de C++ offre d'autres possibilités pour effectuer une recherche et un remplacement de texte. Par exemple, vous pouvez utiliser les fonctions `find()` et `substr()` pour localiser et extraire une partie d'une chaîne de caractères, puis la remplacer avec `replace()`. Il existe également des bibliothèques et des outils externes qui peuvent vous aider à effectuer des recherches et des remplacements plus complexes, comme l'expression régulière de la bibliothèque `<regex>`.
 
-- [Bibliothèque standard de C++](https://en.cppreference.com/w/)
-- [Expressions régulières dans C++](https://www.regular-expressions.info/cplusplus.html)
-- [Guide complet pour la manipulation des chaînes de caractères en C++](http://www.cplusplus.com/reference/string/)
+N'hésitez pas à explorer et à expérimenter avec ces différentes options pour trouver celle qui est la plus adaptée à vos besoins.
+
+## Voir aussi
+
+- Documentation de la fonction `replace()` de la bibliothèque standard de C++ : [https://en.cppreference.com/w/cpp/string/basic_string/replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+- Tutoriel sur les expressions régulières en C++ : [https://www.regular-expressions.info/cpp.html](https://www.regular-expressions.info/cpp.html)
+- Tutoriel sur la manipulation de chaînes de caractères en C++ : [https://www.tutorialspoint.com/cplusplus/cpp_strings.htm](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

@@ -1,66 +1,49 @@
 ---
-title:    "C: Vergleich von zwei Daten"
+title:    "C: Vergleich von zwei Datumsangaben"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum 
+## Warum
 
-Vergleich von zwei Daten ist ein häufiges Problem in der Programmierung, vor allem, wenn es um das Überprüfen der Gültigkeit von Eingaben oder das Sortieren von Daten geht. Mit dem richtigen Code können Sie sicherstellen, dass Ihre Anwendung korrekte Ergebnisse liefert und effizient arbeitet.
+Das Vergleichen von zwei Datumswerten ist eine häufige Aufgabe in der Programmierung. Es ermöglicht uns, festzustellen, ob ein bestimmtes Ereignis vor oder nach einem anderen stattgefunden hat. In diesem Blog-Post werden wir uns damit beschäftigen, wie man in der Programmiersprache C zwei Daten vergleichen kann.
 
-## Wie man es macht 
+## Wie
 
-Um zwei Daten zu vergleichen, können Sie die Funktion `difftime()` verwenden. Hier ist ein Beispiel, das das aktuelle Datum mit einem bestimmten Datum vergleicht:
+Um zwei Daten in C zu vergleichen, können wir den Operator "==" verwenden. Dieser Operator vergleicht die Werte links und rechts von ihm und gibt true zurück, wenn sie gleich sind, und false, wenn sie unterschiedlich sind.
 
 ```C
 #include <stdio.h>
-#include <time.h>
 
 int main() {
-  time_t now = time(NULL); // aktuelles Datum
-  struct tm date = { .tm_year = 2020, .tm_mon = 12, .tm_mday = 31 }; // bestimmtes Datum
-  
-  double diff = difftime(now, mktime(&date)); // Differenz in Sekunden
-  
-  if (diff > 0) {
-    printf("Das bestimmte Datum liegt in der Vergangenheit.\n");
-  } else if (diff < 0) {
-    printf("Das bestimmte Datum liegt in der Zukunft.\n");
-  } else {
-    printf("Das bestimmte Datum ist heute.\n");
-  }
-  
-  return 0;
+    // Datumswerte, die verglichen werden sollen
+    int datum1 = 20200101;
+    int datum2 = 20210101;
+
+    // Vergleich mit dem "==" Operator
+    if (datum1 == datum2) {
+        printf("Die beiden Daten sind gleich.\n");
+    } else {
+        printf("Die beiden Daten sind unterschiedlich.\n");
+    }
+
+    return 0;
 }
+
 ```
 
-**Ausgabe:** Das bestimmte Datum liegt in der Zukunft.
+Dieses Beispiel vergleicht zwei Datenwerte und gibt entsprechend eine Nachricht aus. In diesem Fall sind die Daten unterschiedlich, daher wird die Meldung "Die beiden Daten sind unterschiedlich." ausgegeben.
 
-Sie können auch eine benutzerfreundliche Ausgabe für die Differenz in Tagen, Stunden oder Minuten erstellen:
+## Deep Dive
 
-```C
-// Umrechnung in Tage
-int days = diff / (24 * 60 * 60);
+Es gibt jedoch einige wichtige Dinge zu beachten, wenn man Daten in C vergleicht. Zum einen müssen beide Werte vom gleichen Typ sein, sonst kann es zu unerwarteten Ergebnissen kommen. Zum anderen ist der "==" Operator in C nicht genau genug für einige Anwendungsfälle, wie zum Beispiel das Vergleichen von Uhrzeiten. In diesen Fällen muss man auf spezielle Funktionen zurückgreifen, die in der C-Bibliothek zur Verfügung stehen.
 
-// Umrechnung in Stunden
-int hours = (diff - (days * 24 * 60 * 60)) / (60 * 60);
+## Siehe auch
 
-// Umrechnung in Minuten
-int minutes = (diff - (days * 24 * 60 * 60) - (hours * 60 * 60)) / 60;
+Hier sind einige hilfreiche Ressourcen, die weitere Informationen zum Vergleichen von Daten in C bieten:
 
-printf("Die Differenz beträgt %d Tage, %d Stunden und %d Minuten.\n", days, hours, minutes);
-```
-
-**Ausgabe:** Die Differenz beträgt 365 Tage, 0 Stunden und 0 Minuten.
-
-## Tiefer Einblick 
-
-Die Funktion `difftime()` gibt die Differenz zwischen zwei Daten als Wert vom Typ `double` zurück. Um sicherzustellen, dass die Ausgabe korrekt ist, müssen Sie die Daten in den Typ `time_t` konvertieren. Dies kann mit der Funktion `mktime()` und einer `struct tm`-Variablen erfolgen, die Jahr, Monat, Tag, Stunde, Minute und Sekunde enthält.
-
-Es ist auch wichtig zu beachten, dass die Funktion nur die Differenz zwischen zwei Daten in Sekunden berechnen kann und keine anderen Zeiteinheiten. Um also die Differenz in Tagen, Stunden oder Minuten zu erhalten, müssen Sie diese von der Sekundendifferenz abziehen.
-
-## Siehe auch 
-
-- <https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm>
-- <https://www.geeksforgeeks.org/c-program-to-print-last-digit-of-given-value/>
+- [C-Programmierung Tutorial](https://www.learn-c.org/)
+- [C-Dokumentation](https://devdocs.io/c/)
+- [Vergleichen von Daten in C - GeeksforGeeks](https://www.geeksforgeeks.org/time-complexity-comparisons-of-c-different-methods-to-check-two-strings-are-anagram-or-not/)

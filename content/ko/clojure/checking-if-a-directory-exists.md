@@ -1,43 +1,48 @@
 ---
-title:    "Clojure: 디렉토리가 존재하는지 확인하기"
+title:    "Clojure: 디렉토리 존재 여부 확인"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-폴더가 존재하는지 확인하는 것이 왜 필요한지 궁금하십니까? 이 글에서는 그 이유를 소개하고 코딩 예제를 통해 어떻게 확인할 수 있는지 자세히 알아보겠습니다.
+디렉토리가 존재하는지 확인하는 것이 왜 중요한지 궁금하지 않으신가요? 프로그래밍을 할 때 디렉토리가 존재하는지 확인하는 것은 코드를 안전하고 효율적으로 작성할 수 있도록 도와줍니다.
 
-## 왜 폴더가 존재하는지 확인해야 하는가?
+## 방법
 
-폴더가 존재하는지 확인하는 것은 파일 시스템과 관련된 작업에서 매우 중요합니다. 예를 들어, 파일을 읽거나 쓰기 전에 폴더가 존재하는지 확인하고, 없는 경우에는 생성하거나 다른 작업을 수행할 수도 있습니다. 또는 특정 폴더에 이미 파일이 있는지 확인하고, 존재하지 않는 경우 다른 폴더를 사용하여 작업하는 등의 상황에서 사용할 수 있습니다.
+아래 예제 코드를 살펴보세요!
 
-## 어떻게 확인할 수 있나요?
+```Clojure
+(require '[clojure.java.io :as io])
 
-```clojure
-(ns example.core
-  (:require [clojure.java.io :as io]))
+;; 디렉토리가 존재하는지 확인합니다.
+(.isDirectory (io/file "sample-directory")) ;=> true
 
-(defn folder-exists? [folder]
-  (.exists (io/file folder)))
-
-; 폴더가 존재하는 경우
-(folder-exists? "/Users/Username/Documents")
-; => true
-
-; 폴더가 존재하지 않는 경우
-(folder-exists? "/Users/Username/Desktop")
-; => false
+;; 디렉토리가 존재하지 않는 경우 false를 반환합니다.
+(.isDirectory (io/file "non-existing-directory")) ;=> false
 ```
 
-위 예제에서는 `clojure.java.io` 네임스페이스를 사용하여 폴더가 존재하는지를 확인하고 있습니다. 먼저 `require` 문을 통해 네임스페이스를 가져오고, `defn`을 사용하여 `folder-exists?`라는 함수를 정의하고 있습니다. 이 함수는 `io/file`을 통해 해당 폴더의 파일 객체를 생성한 후 `.exists` 메서드를 이용하여 폴더가 존재하는지를 확인하고 있습니다.
+위 코드에서는 `clojure.java.io` 라이브러리의 `file`과 `isDirectory` 함수를 사용하여 디렉토리를 체크하고, 존재 여부에 따라 `true` 또는 `false`를 반환합니다.
 
-## 깊게 들어가기
+## 깊이 드라이브
 
-파일을 다루는 작업을 할 때 폴더가 존재하는지 확인하는 것은 중요하지만, 이보다 더 중요한 것은 다루는 파일의 권한을 확인하는 것입니다. `(.exists ...)` 메서드는 폴더 뿐만 아니라 파일의 존재 여부도 확인할 수 있고, `(.canRead ...)`과 `(.canWrite ...)` 메서드를 통해 해당 파일의 읽기와 쓰기 권한 여부를 확인할 수 있습니다. 이를 조합하여 폴더가 존재하지만 읽고 쓰기가 불가능한 경우에도 처리할 수 있습니다.
+하지만 디렉토리의 존재 여부를 확인하는 것만으로는 부족합니다. 때로는 디렉토리를 생성하거나 삭제하는 작업도 필요할 수 있습니다. 이를 위해 `clojure.java.io` 라이브러리에는 `make-directory`와 `delete-directory` 함수도 제공합니다.
 
-# 참고
+```Clojure
+;; 새로운 디렉토리를 생성합니다.
+(mkdir "new-directory") ;=> nil
 
-- [Clojure Documentation: IO](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Clojure by Example: File I/O](https://kimh.github.io/clojure-by-example/#file-io)
+;; 디렉토리를 삭제합니다.
+(delete-directory "new-directory") ;=> true
+```
+
+또한, `java.nio.file` 라이브러리를 사용하여 디렉토리를 생성하거나 삭제할 수도 있습니다. 자세한 내용은 [여기](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)에서 확인할 수 있습니다.
+
+## 함께 보기
+
+- [Clojure 공식 문서](https://clojure.org/)
+- [Clojure 공식 가이드](https://clojure.org/guides/learn/syntax)
+- [clojure.java.io 라이브러리 문서](https://clojure.github.io/java.io/)
+- [java.nio.file 라이브러리 문서](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)

@@ -1,41 +1,51 @@
 ---
-title:    "Arduino: Att få den aktuella datumen"
+title:    "Arduino: Att få den aktuella datumet"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att få den nuvarande datumet är en viktig funktion för många projekt som involverar en realtidsklocka. Oavsett om du vill övervaka en tidsintervall, spåra när ett visst evenemang inträffade eller bara hålla koll på vilken dag det är, kan du enkelt få tillgång till den aktuella datumen med hjälp av Arduino. I denna blogginlägg kommer vi att utforska hur du kan göra det och människors olika tillämpningar för att få den nuvarande datumet.
+Att kunna få ut den aktuella datumet kan vara användbart för många olika projekt som rör sig kring tidshantering. Genom att använda sig av Arduino och dess inbyggda RTC (real time clock) modul, kan vi enkelt få ut den nuvarande datumet direkt från vår kod. Det är även en grundläggande funktion för många olika applikationer som involverar tidgivning, så det är en bra funktion att ha kunskap om.
 
-# Hur
+## Så här gör du
 
-För att få den nuvarande datumet i Arduino kan vi använda oss av den inbyggda funktionen "now ()" från Time biblioteket. Detta ger oss en Unix-tidsstämpel som vi sedan kan omvandla till ett mer förståeligt datum-format.
+För att få ut den aktuella datumet i Arduino, behöver vi först ansluta en RTC-modul till vår Arduino. Detta gör vi genom att ansluta VCC till 5V, GND till jord och SDA/SCL till motsvarande pinnar på Arduino. Sedan behöver vi installera biblioteket "DS3231.h" för att kunna använda oss av RTC-funktionerna.
+
+För att få ut datumet, använder vi oss av "RTC_DS3231" objektet och "now()" funktionen. Sedan kan vi använda följande kod:
 
 ```Arduino
-#include <Time.h> // Lägg till Time biblioteket
+#include <DS3231.h>
+
+RTC_DS3231 rtc;
 
 void setup() {
-  Serial.begin(9600); // Anslut till seriel överföring
-  setTime(10, 8, 0, 1, 1, 2021); // Ange ett arbiträrt tid och datum
+  Serial.begin(9600);
+  rtc.begin();
 }
 
 void loop() {
-  time_t t = now(); // Spara Unix-tidsstämpeln i en variabel
-  Serial.println(date(t)); // Skriv ut den nuvarande datumet i formatet "dag/månad/år"
-  delay(1000); // Vänta en sekund
+  DateTime now = rtc.now();
+
+  Serial.print(now.day(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.year(), DEC);
+
+  Serial.println();
 }
 ```
 
-I det här exemplet har vi angett ett arbiträrt tid och datum för att se hur funktionen fungerar. Men du kan ansluta en realtidsklocka till ditt Arduino-board för att få den riktiga tiden och datumet.
+Detta kommer att ge oss utskriften "DD/MM/YYYY" i seriell monitor. Vi kan även använda oss av funktioner som "now.hour()", "now.minute()" och "now.second()" för att få ut tidigare information.
 
-# Djupdykning
+## Djupdykning
 
-Den nuvarande datumet är baserad på en Unix-tidsstämpel, vilket är antalet sekunder som har gått sedan 1 januari 1970. Denna tidsstämpel används ofta i programmering för att beräkna datum och tid. Genom att omvandla Unix-tidsstämpeln till ett datum-format kan vi lätt läsa och använda den aktuella datumen i våra projekt. Detta är särskilt användbart om du behöver övervaka flera dagar eller år.
+Datumet som hämtas från RTC-modulen är i decimalformat, vilket betyder att en siffra som t.ex. "31" egentligen representerar det hexadecimala värdet "1F". Om du vill ha ut informationen som en "0"-fylld sträng, så finns det funktioner tillgängliga för detta. För att ta reda på vad de hexadecimala värdena betyder, kan du använda dig av hexadecimala kalkylatorer eller utför ett omvandlingsprogram.
 
-# Se även
+## Se även
 
-- Time library documentation: https://www.arduino.cc/en/Tutorial/Time
-- Tutorial on using a real-time clock with Arduino: https://www.instructables.com/Arduino-and-RTC-With-DS3231/
-- Useful tips for working with dates in Arduino: https://randomnerdtutorials.com/working-with-time-and-dates-in-arduino/
+- DS3231 biblioteket: https://github.com/jarzebski/Arduino-DS3231
+- Ytterligare resurser för att använda RTC på Arduino: https://www.instructables.com/id/Arduino-Real-time-clock-with-clock-sentence-outpu/

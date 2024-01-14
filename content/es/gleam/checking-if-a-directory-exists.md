@@ -1,40 +1,39 @@
 ---
 title:    "Gleam: Comprobando si existe un directorio"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué comprobar si un directorio existe en Gleam?
 
-A menudo, en la programación, necesitamos verificar si un directorio existe antes de realizar ciertas acciones sobre él. Esto puede ser útil cuando queremos asegurarnos de que el directorio exista antes de crear nuevos archivos o mover archivos a ese directorio. En este artículo, exploraremos cómo podemos verificar de manera eficiente si un directorio existe en Gleam.
+La verificación de la existencia de un directorio es una tarea común en la programación, especialmente en el desarrollo de aplicaciones que manejan archivos y directorios. En Gleam, esta tarea es especialmente importante debido a su enfoque en el rendimiento y la seguridad, lo que significa que siempre es recomendable verificar la existencia de un directorio antes de realizar cualquier operación en él.
 
 ## Cómo hacerlo
 
-Para verificar si un directorio existe en Gleam, podemos utilizar la función `File.exists?` del módulo `Gleam.IO.File` y pasarle el path del directorio que queremos verificar como argumento. Si el directorio existe, esta función devolverá `true`, de lo contrario, devolverá `false`.
-
-Veamos un ejemplo de cómo podemos utilizar esta función:
+Para comprobar si un directorio existe en Gleam, podemos utilizar la función `os.path.exists()` de la biblioteca estándar de Gleam. Esta función toma como argumento una cadena que representa la ruta del directorio que deseamos verificar y devuelve un valor booleano que indica si el directorio existe o no. Veamos un ejemplo:
 
 ```Gleam
-pub fn main() {
-  let dir = "/Users/mi_usuario/Documentos/mi_directorio"
-  if File.exists?(dir) {
-    println!("El directorio existe")
-  } else {
-    println!("El directorio no existe")
-  }
+import os
+
+exists := os.path.exists("/ruta/del/directorio")
+
+if exists {
+  io.println("El directorio existe.")
+} else {
+  io.println("El directorio no existe.")
 }
 ```
 
-En este ejemplo, estamos verificando si el directorio `mi_directorio` existe en la ruta especificada. Dependiendo del resultado, imprimirá un mensaje en la consola.
+La salida de este código variará dependiendo de si el directorio existe o no en la ruta especificada. Si el directorio existe, obtendremos el mensaje "El directorio existe", de lo contrario, obtendremos el mensaje "El directorio no existe".
 
-## Profundizando
+## Profundizando en la verificación de la existencia de un directorio
 
-Recuerda que `File.exists?` solo verifica si el directorio existe o no. Si queremos realizar acciones más complejas, como crear el directorio si no existe o verificar si hay permisos de escritura en el directorio, podemos utilizar otras funciones del módulo `Gleam.IO.File`.
-
-Por ejemplo, podemos utilizar la función `File.stat` para obtener información detallada sobre el directorio, como los permisos, el tamaño y la fecha de creación. También podemos utilizar la función `File.mkdir` para crear el directorio si no existe.
+Además de la función `os.path.exists()`, Gleam también proporciona una variedad de funciones y tipos para trabajar con archivos y directorios, como `os.path.is_dir()` para verificar si un camino dado es un directorio o `os.path.list_dir()` para obtener una lista de archivos y subdirectorios en un directorio. Estas herramientas pueden ser útiles en situaciones más complejas que requieran una inspección más profunda de los directorios.
 
 ## Ver también
 
-- Documentación oficial de Gleam sobre el módulo `Gleam.IO.File`: https://gleam.run/modules/gleam_io_file.html
-- Ejemplos de código para trabajar con directorios en Gleam: https://gist.github.com/gleam-lang/c2d1c7c0953e9c862150a56716f6f3f5
+- Documentación oficial de la biblioteca estándar de Gleam sobre archivos y directorios: [https://gleam.run/modules/io.os.path.html](https://gleam.run/modules/io.os.path.html)
+- Ejemplos de uso de funciones relacionadas en Gleam Cookbook: [https://github.com/gleam-lang/gleam_cookbook/tree/master/01.%20File%20system](https://github.com/gleam-lang/gleam_cookbook/tree/master/01.%20File%20system) 
+- Tutorial sobre el manejo de archivos y directorios en Gleam: [https://gleam.run/book/tour/file-system.html](https://gleam.run/book/tour/file-system.html)

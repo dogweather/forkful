@@ -1,33 +1,73 @@
 ---
-title:    "TypeScript: Tworzenie pliku tymczasowego"
+title:    "TypeScript: Tworzenie tymczasowego pliku"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto tworzyć pliki tymczasowe w TypeScript?
+## Dlaczego
 
-Tworzenie plików tymczasowych może być bardzo przydatne w wielu różnych sytuacjach. Przede wszystkim, pozwala to na tymczasowe przechowywanie danych, które są potrzebne tylko przez krótki okres czasu. Może to być szczególnie przydatne w przypadku przetwarzania dużych ilości informacji lub w przypadku testowania aplikacji. Dodatkowo, tworzenie plików tymczasowych może pomóc w uniknięciu nadmiernego zapełniania pamięci, co może wpłynąć na wydajność aplikacji.
+Tworzenie pliku tymczasowego może być kluczową częścią procesu programowania w TypeScript. Jest to przydatna technika, która pozwala programistom na tymczasowe przechowywanie danych, aby móc je później przetwarzać lub wykorzystywać w swoich programach. To szczególnie przydatne, gdy potrzebne są tymczasowe dane, których nie chcemy trwale zapisać na dysku. W tym artykule dowiesz się, jak w prosty sposób tworzyć pliki tymczasowe w TypeScript i wykorzystywać je w swoim kodzie.
 
-## Jak to zrobić w TypeScript?
+## Jak
 
-Aby stworzyć plik tymczasowy w TypeScript, można skorzystać z modułu 'fs', który jest dostępny w bibliotece standardowej języka. Następnie należy użyć funkcji `mkstempSync()`, która tworzy plik tymczasowy w wybranym miejscu na dysku. Poniższy kod pokazuje przykład tworzenia pliku tymczasowego o rozszerzeniu `.tmp`:
+Aby utworzyć plik tymczasowy w TypeScript, użyjemy wbudowanego modułu "fs". Ten moduł zawiera wiele funkcji, które umożliwiają nam operacje na plikach i folderach. Najpierw musimy zaimportować ten moduł do naszego kodu, używając polecenia "require":
 
 ```TypeScript
-import * as fs from 'fs';
-
-const tempFile = fs.mkstempSync('/temp/tempFile-XXXXXX.tmp');
+const fs = require('fs');
 ```
 
-Powyższy kod stworzy plik tymczasowy o losowo wygenerowanej nazwie, która będzie zawierać ciąg znaków "XXXXXX". Po stworzeniu pliku, możemy go użyć do zapisania danych, a następnie usunąć go po zakończeniu działania naszej aplikacji. Możliwe jest również użycie funkcji `mkdtempSync()`, aby stworzyć tymczasowy katalog zamiast pliku.
+Następnie możemy użyć funkcji "fs.mkdtemp()" do utworzenia tymczasowego folderu, w którym będzie znajdował się nasz plik tymczasowy. W tym przykładzie użyjemy prefiksu "temp-" w nazwie naszego folderu, ale można go zmienić na dowolny inny prefiks.
 
-## Deep Dive: Tworzenie plików tymczasowych
+```TypeScript
+let folder = fs.mkdtempSync('temp-');
+```
 
-Podczas tworzenia pliku tymczasowego, moduł 'fs' używa funkcji systemowej `mkstemp()` lub `mkdtemp()` na poziomie systemowym. Te funkcje służą do bezpiecznego tworzenia plików tymczasowych z losowo wygenerowaną nazwą, aby uniknąć kolizji z innymi plikami. Ponadto, moduł 'fs' oferuje również funkcje asynchroniczne, takie jak `mkstemp()` i `mkdtemp()`, które mogą być użyte w przypadku, gdy chcemy uniknąć blokowania wykonywania kodu.
+Teraz, gdy mamy nasz tymczasowy folder, możemy stworzyć w nim plik używając funkcji "fs.writeFile()". Będziemy musieli określić nazwę pliku oraz treść, którą chcemy w nim zapisać.
 
-Pamiętaj, że tworzenie plików tymczasowych nie jest odpowiednie do przechowywania ważnych danych, ponieważ pliki te są usuwane po zakończeniu aplikacji. Należy również pamiętać, aby nie przechowywać wrażliwych informacji w plikach tymczasowych, ponieważ mogą być one potencjalnie dostępne dla innych użytkowników lub procesów.
+```TypeScript
+let fileName = folder + '/example.txt';
+fs.writeFile(fileName, 'To jest przykładowa treść naszego pliku tymczasowego', (err) => {
+    if (err) throw err;
+    console.log('Plik tymczasowy został utworzony pomyślnie!');
+});
+```
 
-# Zobacz również
+Teraz można przetwarzać nasze tymczasowe dane z pliku, a po zakończeniu pracy usuń tymczasowy folder i plik z dysku. Aby to zrobić, użyjemy funkcji "fs.unlink()" i "fs.rmdir()".
 
-- [Oficjalna dokumentacja Node.js dla modułu 'fs'](https://nodejs.org/api/fs.html)
-- [Artykuł na temat tworzenia plików tymczasowych w Java](https://www.baeldung.com/java-temporary-files)
+```TypeScript
+// usuwamy plik tymczasowy
+fs.unlink(fileName, (err) => {
+    if (err) throw err;
+    console.log('Plik tymczasowy został usunięty pomyślnie!');
+});
+
+// usuwamy tymczasowy folder
+fs.rmdir(folder, (err) => {
+    if (err) throw err;
+    console.log('Tymczasowy folder został usunięty pomyślnie!');
+});
+```
+
+Jako wynik otrzymamy w konsoli komunikaty potwierdzające utworzenie, a następnie usunięcie pliku tymczasowego.
+
+## Deep Dive
+
+Podczas tworzenia pliku tymczasowego można dostosować niektóre z jego parametrów, takie jak nazwa, lokalizacja czy rozszerzenie. Można to zrobić poprzez ustawienie odpowiednich opcji w funkcji "fs.mkdtemp()". Na przykład, aby ustawić lokalizację dla naszego tymczasowego folderu, możemy użyć opcji "encoding":
+
+```TypeScript
+let options = { encoding: 'utf8', dir: 'tmp/' };
+let folder = fs.mkdtempSync('temp-', options);
+```
+
+Możemy również wygenerować losowe numery lub litery do nazw plików tymczasowych, używając opcji "prefix" oraz "postfix". Jest to przydatne, gdy chcemy tworzyć wiele plików tymczasowych naraz.
+
+```TypeScript
+let options = { prefix: 'temp-', postfix: '.txt' };
+let fileName = fs.mkdtempSync('example', options);
+```
+
+Dodatkowo, można skonfigurować uprawnienia dla plików tymczasowych, dzięki czemu można ustalić, kto ma dostęp do tych danych. Jest to szczególnie ważne, gdy pracujemy z poufnymi informacjami.
+
+```TypeScript

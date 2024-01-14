@@ -1,58 +1,37 @@
 ---
 title:    "Go: 寻找字符串的长度"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么 ##
+在编程中，字符串是一种非常常用的数据类型。我们经常需要确定字符串的长度，特别是在处理用户输入或者文件操作时。因此，学习如何找到字符串的长度是很有必要的，这样我们就可以更好地操作和处理字符串。
 
-有时候，在编程中我们需要知道一个字符串的长度。这有助于我们在处理字符串时更清晰地了解它的大小和结构。在Go语言中，找到字符串的长度非常简单，下面让我们一起来学习如何做到这一点吧！
-
-## 如何
-
+## 如何做 ##
+在Go语言中，我们可以使用 `len()`函数来找到字符串的长度。以下是一个例子：
 ```Go
-func main() {
-    // 定义一个字符串
-    str := "你好，世界！"
-    // 使用len方法获取字符串的长度
-    length := len(str)
-    // 打印输出
-    fmt.Println("字符串的长度为：", length) 
-}
+// 定义一个字符串
+str := "你好，世界！"
 
-// 输出结果：
-// 字符串的长度为： 8
+// 使用len()函数找到字符串的长度
+length := len(str)
+
+// 打印结果
+fmt.Println("字符串的长度为：", length)
+
+// 输出：字符串的长度为： 7
 ```
 
-上面的代码中，我们首先定义了一个字符串变量 `str`，然后使用 `len` 方法获取字符串的长度，并将结果赋值给 `length` 变量。最后，我们打印输出字符串的长度，运行后会输出 `8`，因为“你好，世界！”一共有8个字符。
+从上面的例子中，我们可以看到使用`len()`函数是非常简单的。我们只需要在函数中传入字符串，函数就会返回字符串的长度。同时，我们还可以使用`fmt`包来打印结果，方便我们查看。
 
-除了使用 `len` 方法，Go语言还提供了一个 `RuneCountInString` 方法来获取字符串中的Unicode字符数量。代码如下：
+## 深入了解 ##
+在Go语言中，字符串的长度指的是字符串包含的字节数。因此，如果我们的字符串中包含非ASCII字符（比如中文），那么每个字符会被转换成多个字节，从而影响字符串的长度。比如，上面的例子中，虽然字符串`"你好，世界！"`中有7个字符，但是由于每个中文字符占3个字节，所以字符串的长度为7*3=21个字节。
 
-```Go
-func main() {
-    // 定义一个字符串
-    str := "你好，世界！"
-    // 使用RuneCountInString方法获取字符串中的Unicode字符数量
-    length := utf8.RuneCountInString(str)
-    // 打印输出
-    fmt.Println("字符串的长度为：", length) 
-}
+如果我们想要获取字符串中真正的字符数，可以使用`utf8.RuneCountInString()`函数。这个函数会计算字符串中的Unicode字符数量，比如上述例子中，`utf8.RuneCountInString()`函数会返回7，而不是21。
 
-// 输出结果：
-// 字符串的长度为： 5
-```
-
-这里的输出结果为 `5` 是因为“你好，世界！”中有5个Unicode字符，即“你”、“好”、“，”、“世”、“界”。
-
-## 深入探讨
-
-那么，为什么要使用 `RuneCountInString` 方法呢？因为在Go语言中，一个字符并不一定就是一个字节，有些字符可能占用多个字节，如中文字符。而 `len` 方法只能统计字节的数量，无法准确地统计字符的数量。所以，如果需要统计Unicode字符数量，最好使用 `RuneCountInString` 方法。
-
-此外，还有一个 `strings` 包提供了一些实用的方法来操作字符串，如 `strings.Count` 方法可以统计字符串中指定子串出现的次数，`strings.Contains` 方法可以判断一个字符串是否包含另一个子字符串，`strings.HasPrefix` 和 `strings.HasSuffix` 方法可以判断一个字符串是否以指定前缀或后缀开头或结尾。更多用法，可以查阅官方文档。
-
-# 参考链接
-
-- [Go语言文档-字符串类型](https://go-zh.org/doc/code.html#string)
-- [Go语言文档-strings包](https://go-zh.org/pkg/strings/)
-- [Go语言文档-utf8包](https://go-zh.org/pkg/utf8/)
+## 查看相关文章 ##
+- [Go语言官方文档-字符串](https://golang.org/ref/spec#String_types)
+- [Go语言标准库文档-utf8包](https://golang.org/pkg/utf8/)
+- [Go语言中文网教程-字符串与字符](https://studygolang.com/articles/2968)

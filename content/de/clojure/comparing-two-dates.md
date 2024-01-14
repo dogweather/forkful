@@ -1,40 +1,59 @@
 ---
-title:    "Clojure: Vergleich von zwei Daten"
+title:    "Clojure: Zwei Daten vergleichen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Das Vergleichen von zwei Daten ist eine wichtige Fähigkeit beim Programmieren, um beispielsweise Zeitdifferenzen zu berechnen oder bestimmte Aktionen basierend auf dem Datum auszuführen.
+# Warum
 
-## Wie geht das?
-Um zwei Daten in Clojure zu vergleichen, kann die Funktion `compare` verwendet werden. Diese nimmt zwei Argumente entgegen und gibt einen Wert zurück, der angibt, ob das erste Datum kleiner, größer oder gleich dem zweiten Datum ist. Hier sind einige Beispiele:
+Eine häufige Aufgabe beim Programmieren ist es, zwei Daten miteinander zu vergleichen. Dies kann nützlich sein, um zum Beispiel zu überprüfen, ob ein Benutzer seit seinem letzten Besuch auf deiner Webseite irgendwelche Änderungen vorgenommen hat. In Clojure gibt es verschiedene Möglichkeiten, um dies zu tun, und in diesem Artikel werden wir uns genauer damit beschäftigen.
+
+# Wie geht das?
+
+Es gibt zwei grundlegende Wege, um zwei Daten in Clojure zu vergleichen: mit `=` und `compare`.
 
 ```Clojure
-;; Vergleich von Datumsobjekten
-(compare (java.util.Date. 2020 3 15) (java.util.Date. 2020 3 10))
-;; Output: 1 (das erste Datum ist größer)
-(compare (java.util.Date. 2020 3 10) (java.util.Date. 2020 3 15))
-;; Output: -1 (das erste Datum ist kleiner)
-(compare (java.util.Date. 2020 3 15) (java.util.Date. 2020 3 15))
-;; Output: 0 (die Daten sind gleich)
-
-;; Vergleich von Strings mit Datumsformat 'yyyy-MM-dd'
-(compare "2020-03-15" "2020-03-10")
-;; Output: 1 (das erste Datum ist größer)
-(compare "2020-03-10" "2020-03-15")
-;; Output: -1 (das erste Datum ist kleiner)
-(compare "2020-03-15" "2020-03-15")
-;; Output: 0 (die Daten sind gleich)
+(= "Hallo" "Hallo") ; => true
+(= 4 4) ; => true
+(= 5 3) ; => false
+(= "Clojure" "Java") ; => false
 ```
 
-Es ist wichtig zu beachten, dass die Funktion `compare` nur für Objekte verwendet werden kann, die das Protokoll `Comparable` implementieren, wie z.B. `java.util.Date` oder `java.time.LocalDate`.
+Der Operator `=` vergleicht die Werte der beiden Argumente und gibt `true` zurück, wenn sie gleich sind, und `false` wenn nicht. Beachte, dass `=` nicht zwischen verschiedenen Datentypen unterscheidet, so dass sowohl 4 als auch "4" als gleich betrachtet werden.
 
-## Tiefere Einblicke
-Die Funktion `compare` nutzt intern die Funktionen `compare-numbers` oder `compare-strings`, abhängig vom Datentyp der übergebenen Argumente. Diese Funktionen vergleichen die einzelnen Komponenten eines Datums (Jahre, Monate, Tage) in aufsteigender Reihenfolge und geben den ersten Unterschied zurück. Falls alle Komponenten gleich sind, wird die Länge der Argumente verglichen. In der Clojure-Dokumentation können weitere Details zu diesen Funktionen gefunden werden.
+```Clojure
+(compare 5 6) ; => -1
+(compare "Katze" "Hund") ; => -1
+(compare "Fisch" "Fisch") ; => 0
+(compare 10 5) ; => 1
+(compare 4 4) ; => 0
+```
 
-## Siehe auch
-- [Clojure-Dokumentation zu `compare`](https://clojuredocs.org/clojure.core/compare)
-- [Clojurescript-Referenz zu Protokollen und Erweiterungen](https://clojurescript.org/reference/protocols#_comparable)
-- [Clojure-Wiki zu `compare`](https://clojure.org/reference/datatypes#_comparable_data_types)
+Die `compare` Funktion vergleicht die Argumente in einer bestimmten Ordnung und gibt eine negative Zahl zurück, wenn das erste Argument kleiner ist, eine positive Zahl, wenn es größer ist und 0, wenn sie gleich sind. Diese Funktion ist nützlich, wenn du die relative Reihenfolge von Daten bestimmen möchtest.
+
+# Tiefergehende Informationen
+
+Clojure hat auch die `time` Bibliothek, die verschiedene hilfreiche Funktionen für das Arbeiten mit Datum und Uhrzeit bietet. Eine davon ist `before?`, die prüft, ob ein Datum vor einem anderen liegt.
+
+```Clojure
+(require '[clojure.java-time :as t])
+
+(t/before? (t/local-date "2020-01-01") (t/local-date "2020-05-01")) ; => true
+(t/before? (t/local-date "2020-05-01") (t/local-date "2020-01-01")) ; => false
+```
+
+Du kannst auch die `between` Funktion verwenden, um herauszufinden, wie viele Tage, Monate oder Jahre zwischen zwei Daten liegen.
+
+```Clojure
+(t/between (t/local-date "2019-01-01") (t/local-date "2020-01-01") :days) ; => 365
+(t/between (t/local-date "2019-01-01") (t/local-date "2020-01-01") :months) ; => 12
+(t/between (t/local-date "2019-01-01") (t/local-date "2020-01-01") :years) ; => 1
+```
+
+# Siehe auch
+
+- [Clojure Java Time Library Documentation](https://cljdoc.org/d/java-time/java-time/0.3.2/doc/readme)
+- [Offizielle Clojure Dokumentation](https://clojure.org/documentation)
+- [Learn X in Y minutes - Clojure](https://learnxinyminutes.com/docs/clojure/)

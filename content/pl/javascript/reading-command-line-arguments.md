@@ -1,57 +1,73 @@
 ---
 title:    "Javascript: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś programistą JavaScript lub stawiasz pierwsze kroki w nauce tego języka, zapewne słyszałeś o możliwości czytania argumentów wiersza poleceń. W tym artykule dowiesz się dlaczego jest to ważna umiejętność, a także jak ją wykorzystać w swoim kodzie.
+Programowanie w języku Javascript jest bardzo popularne, a znajomość tej umiejętności może otworzyć przed nami wiele możliwości zawodowych. Jednym z ważnych aspektów programowania jest umiejętność czytania argumentów linii poleceń. Pozwala to na dostosowanie zachowania programu w zależności od wprowadzonych parametrów. W tym artykule dowiecie się jak to zrobić!
 
 ## Jak to zrobić
 
-Czytanie argumentów wiersza poleceń może być bardzo przydatne, gdy chcesz umożliwić użytkownikom wprowadzanie zmiennych lub opcji do swojego programu. W JavaScript możesz to zrobić za pomocą obiektu `process.argv`, który zawiera tablicę z argumentami podanymi w wierszu poleceń. Poniżej przedstawiam prosty przykład, który wypisuje wszystkie argumenty w konsoli:
-
+Czytanie argumentów linii poleceń w języku Javascript jest bardzo proste. Wystarczy wykorzystać wbudowane obiekty process.argv, które przechowują wprowadzone przez użytkownika parametry. Poniżej znajduje się przykładowy kod pokazujący jak wygląda to w praktyce:
 ```Javascript
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
+const args = process.argv;
+
+console.log("Pierwszy argument: ", args[2]);
+console.log("Drugi argument: ", args[3]);
 ```
 
-Jeśli uruchomisz ten kod z dwoma argumentami (np. `node index.js hello world`), w konsoli zostanie wyświetlona następująca informacja:
+Przykładowe wywołanie: `node program.js argument1 argument2`
+
+Przykładowy output:
 ```
-0: /usr/local/bin/node
-1: /path/to/index.js
-2: hello
-3: world
+Pierwszy argument: argument1
+Drugi argument: argument2
 ```
+Jak widać, argumenty linii poleceń są przechowywane w tablicy args, a dostęp do nich odbywa się przez indeksy. Pamiętajcie, że pierwsze dwa argumenty to ścieżka do pliku i nazwa programu, dlatego najpierw pobieramy wartość args[2].
 
-Jak widać, pierwsze dwa argumenty dotyczą samego uruchomienia programu, a kolejne wyświetlają zmienne przekazane przez użytkownika.
+## Deep Dive
 
-## Głębszy krok
-
-Jeśli chcesz jeszcze bardziej dokładnie zarządzać przekazywanymi argumentami, możesz wykorzystać moduł `commander`. Pozwala on na definiowanie własnych opcji i argumentów, a także wyświetlanie informacji o poprawnym używaniu programu. W poniższym przykładzie sprawdzamy, czy użytkownik wprowadził flagę `-m` z argumentem, a następnie wyświetlamy ten argument w konsoli:
-
+Teraz przejdźmy do większego wyzwania - jak czytać argumenty linii poleceń w bardziej złożonym przypadku, gdzie mamy wiele parametrów. W takiej sytuacji przydatne może być wykorzystanie biblioteki yargs, która ułatwia parsowanie argumentów linii poleceń. Poniżej znajduje się przykładowy kod, który pokazuje jak to zrobić:
 ```Javascript
-const program = require('commander');
+const yargs = require('yargs');
 
-program
-  .option('-m, --message <value>', 'Specify a custom message')
-  .parse(process.argv);
+const argv = yargs
+    .options({
+        'first': {
+            alias: 'f',
+            demandOption: true,
+            describe: "Pierwszy argument",
+            type: 'string'
+        },
+        'second': {
+            alias: 's',
+            demandOption: true,
+            describe: "Drugi argument",
+            type: 'string'
+        }
+    })
+    .argv;
 
-if (program.message) {
-  console.log('Your message is:', program.message);
-} else {
-  console.log('Please specify a message with the -m flag');
-}
+console.log("Pierwszy argument: ", argv.first);
+console.log("Drugi argument: ", argv.second);
+
 ```
 
-Teraz, jeśli uruchomisz ten kod z argumentem `-m hello`, na ekranie pojawi się informacja `Your message is: hello`.
+Przykładowe wywołanie: `node program.js -f argument1 -s argument2`
+
+Przykładowy output:
+```
+Pierwszy argument: argument1
+Drugi argument: argument2
+```
+
+Warto zwrócić uwagę na to, że biblioteka yargs pozwala na bardziej zaawansowane konfiguracje, jak na przykład wykorzystanie aliasów, wymuszenie obecności parametru czy też sprawdzenie jego typu.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o czytaniu argumentów wiersza poleceń w JavaScript, możesz zapoznać się z poniższymi artykułami:
-
-- [Dokumentacja procesu w Node.js](https://nodejs.org/api/process.html#process_process_argv)
-- [Poradnik programisty - argumenty wiersza poleceń w JavaScript](https://www.digitalocean.com/community/tutorials/nodejs-command-line-options-with-commander-js)
+- Dokumentacja wbudowanego obiektu process w języku Javascript: https://nodejs.org/dist/latest-v14.x/docs/api/process.html
+- Oficjalna strona biblioteki yargs: https://yargs.js.org/

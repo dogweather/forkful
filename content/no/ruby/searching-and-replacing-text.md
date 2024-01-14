@@ -1,39 +1,52 @@
 ---
-title:    "Ruby: Søking og erstattning av tekst"
+title:    "Ruby: Søke og erstatte tekst"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en av de mest grunnleggende og viktige funksjonene i programmering. Det lar deg enkelt manipulere og endre store mengder tekst på en effektiv måte. Enten du skal arbeide med tekstfiler, nettsider eller databaser, er det nesten uunngåelig å ikke trenge å søke og erstatte tekst.
+Å søke og erstatte tekst er en viktig ferdighet å ha som programmerer. Det tillater oss å gjøre endringer i store mengder av tekst med bare noen få kommandoer, noe som sparer oss for tid og manuell arbeid. Uansett om du arbeider med et stort prosjekt eller bare trenger å endre noen få ord, vil du lære å søke og erstatte være en svært verdifull ferdighet.
 
-## Hvordan
+## Slik gjør du det
 
-Søke og erstatte tekst i Ruby er enkelt med hjelp av innebygde funksjoner og metoder. La oss ta en titt på et eksempel:
-
-```Ruby
-original_text = "Hei, verden!"
-modifisert_text = original_text.gsub("Hei", "Hallo")
-puts modifisert_text
+Søking og erstatting av tekst i Ruby kan gjøres enkelt ved hjelp av innebygde metoder. Her er en rask guide til å søke og erstatte i en enkelt streng:
 ```
-
-I dette eksempelet erstatter vi "Hei" med "Hallo" og printer det modifiserte resultatet. Output vil være "Hallo, verden!". Du kan også bruke regulære uttrykk for mer avanserte søk og erstatning. Her er et eksempel på å bytte ut alle forekomster av tall med bokstaven "X":
-
-```Ruby
-original_tekst = "123456789"
-modifisert_tekst = original_tekst.gsub(/\d/, "X")
-puts modifisert_tekst
+str = "Hei, dette er en tekst som skal endres."
+puts str.gsub("endres", "byttes ut")
 ```
+Output: "Hei, dette er en tekst som skal byttes ut."
 
-Output vil være "XXXXXXXXX". Dette er bare noen få eksempler, men mulighetene er nesten uendelige.
+Hvis du ønsker å søke og erstatte i flere strenger, kan du bruke en løkke:
+```
+tekster = ["Første tekst", "Andre tekst", "Tredje tekst"]
 
-## Dykk dypere
+tekster.each do |tekst|
+    puts tekst.gsub("tekst", "ord")
+end
+```
+Output:
+"Første ord"
+"Andre ord"
+"Tredje ord"
 
-For å få full forståelse av søke og erstatte tekst i Ruby, er det viktig å lære om Regular Expressions og deres syntaks. Regular Expressions lar deg lage mønstre og søke etter tekst som passer disse mønstrene. I tillegg til "gsub" metoden, har Ruby også "sub" og "gsub!" metoder som gir deg enda flere muligheter for å søke og erstatte tekst. Det kan også være nyttig å se på dokumentasjonen for å lære mer om alle de forskjellige alternativene du kan bruke når du søker og erstatter tekst.
+For mer komplekse søk og erstattinger, kan du bruke regulære uttrykk. I dette eksempelet erstatter vi alle tall med "X":
+```
+str = "12345, 67890"
+puts str.gsub(/\d/, "X")
+```
+Output: "XXXXX, XXXXX"
+
+## Dypdykk
+
+Når du utfører søk og erstatting i store tekstmengder, er det viktig å være bevisst på hvilke deler av teksten du endrer. Hvis du bare ønsker å endre en del av teksten, kan du bruke regulære uttrykk og spesifikke søkeord for å sikre at du ikke gjør utilsiktede endringer.
+
+Det er også mulig å kombinere flere søk og erstattinger på en enkelt linje ved hjelp av metoden `gsub!` som gjør endringene direkte i den opprinnelige variabelen.
 
 ## Se også
-- [Ruby dokumentasjon](https://www.ruby-lang.org/no/documentation/)
-- [En grundig guide til Regular Expressions](https://www.regular-expressions.info/)
-- [Gode Ruby øvingsoppgaver for å lære søk og erstatte tekst](https://www.rubyguides.com/2015/06/ruby-string-methods-cheat-sheet/)
+
+- [Ruby dokumentasjon: `gsub` og `gsub!` metoder](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Regulære uttrykk guide for Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Søk og erstatte i tekst med Ruby video tutorial](https://www.youtube.com/watch?v=QHQ2DEOUMe8)

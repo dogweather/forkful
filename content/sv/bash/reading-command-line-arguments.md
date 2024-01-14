@@ -1,57 +1,56 @@
 ---
-title:    "Bash: Läsa kommando rad argument"
+title:    "Bash: Läsning av kommandoradsargument"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Om du är ny till programmering eller bara vill lära dig ett nytt språk, finns det många olika programmeringsspråk att utforska. Men ibland kan det vara bra att börja med ett enkelt och användbart språk, som till exempel Bash. Ett av de viktigaste koncepten i Bash-programmering är hantering av kommandoradsargument. Genom att kunna läsa och använda kommandoradsargument kan du göra dina Bash-skript mer interaktiva och anpassningsbara. I den här bloggposten kommer vi att gå igenom varför det är viktigt att kunna läsa kommandoradsargument och hur du kan göra det.
 
-Många program, speciellt skript, behöver kunna ta emot olika argument från användaren för att kunna fungera på olika sätt. Genom att lära sig hur man läser in kommandoradsargument kan du skapa mer robusta och anpassningsbara skript.
+## Så här gör du
+För att kunna läsa kommandoradsargument i Bash, måste vi först förstå hur de fungerar. När du kör ett Bash-skript från kommandoraden, kan du skicka med kommandoradsargument som parametrar till skriptet. Dessa argument kan sedan användas inuti skriptet för att manipulera eller visa olika resultat. 
 
-## Hur man läser in kommandoradsargument
-
-För att läsa in kommandoradsargument i Bash använder man variabeln $1, som representerar det första argumentet som matas in av användaren. $2, $3 och så vidare används för respektive tillhörande argument. Nedan följer ett enkelt exempel där vi läser in två argument och sedan skriver ut dem i terminalen:
-
+En enkel kodexempel kan se ut så här:
 ```Bash
-echo "Det första kommandoradsargumentet är $1"
-echo "Det andra kommandoradsargumentet är $2"
+#!/bin/bash
+
+echo "Hej $1! Välkommen till min blogg!" 
 ```
+I det här exemplet kommer vi att hälsa användaren välkommen genom att använda det första kommandoradsargumentet som skickas in i skriptet. Om vi till exempel skriver ```bash script.sh Alice``` i kommandoraden, kommer skriptet att skriva ut "Hej Alice! Välkommen till min blogg!". 
 
-Om vi kör detta skript med kommandot "bash minskript.sh hej hejdå" kommer terminalen att visa:
+Om du vill ta emot flera kommandoradsargument, kan du använda variabeln $2, $3, osv. beroende på hur många argument du vill ta emot. Du kan också använda variabeln $@ för att få en lista över alla kommandoradsargument som skickats in. 
 
+## Utforska Djupare 
+Det är också möjligt att läsa kommandoradsargument i en översättningsprocessning, där skriptet tar in flera flaggor och värden från kommandoraden. Detta kan vara speciellt användbart för skript som kräver olika inställningar beroende på vad användaren vill uppnå. En avancerad kodexempel kan se ut så här:
 ```Bash
-Det första kommandoradsargumentet är hej
-Det andra kommandoradsargumentet är hejdå
-```
+#!/bin/bash
 
-Om du vill läsa in ett okänt antal kommandoradsargument kan du använda en loop och variabeln $# som representerar det totala antalet argument som matats in av användaren. Till exempel:
-
-```Bash
-for ((i=1; i<=$#; i++)); do
-   argument=$i
-   echo "Argument $i: ${!argument}"
+while getopts ":f:n:r:" option; do
+  case ${option} in
+    f ) file=$OPTARG;;
+    n ) name=$OPTARG;;
+    r ) remove=$OPTARG;;
+    \? ) echo "Felaktig flagga: $OPTARG" 1>&2; exit 1;;
+    : ) echo "Flaggan $OPTARG kräver ett argument." >&2; exit 1;;
+  esac
 done
-```
 
-Detta kommer att skriva ut alla kommandoradsargument som matas in, oberoende av hur många det är.
+echo "$name, välkommen till vår blogg!"
+echo "Vi kommer att arbeta med filen $file."
 
-## Djupdykning
-
-Det finns flera sätt att läsa in kommandoradsargument på, beroende på vad du vill göra med dem. Du kan till exempel använda ett switch-case statement för att utföra olika åtgärder baserat på vilket argument som matas in. Du kan även använda flaggor för att ange specifika alternativ när du kör skriptet, till exempel "-a" för att göra en viss åtgärd och "-b" för en annan.
-
-Det är också viktigt att hantera felaktiga eller otillräckliga argument som kan skapas av användaren. Ett sätt att göra detta är genom att använda en if-sats och kontrollera antalet arguments som matas in. Om du till exempel behöver minst två argument för att ditt skript ska fungera korrekt, kan du göra följande:
-
-```Bash
-if [[ $# -lt 2 ]]; then
-    echo "Du behöver ange minst två kommandoradsargument"
+if [ $remove -eq 1 ]; then
+  echo "Filen $file kommer att rensas."
+  # logik för att rensa filen
+else 
+  echo "Inga ändringar kommer att göras till filen."
 fi
 ```
 
-Genom att hantera kommandoradsargument på ett korrekt sätt kan du skapa mer funktionella och användbara skript.
+Här använder vi getopts för att ta emot flaggor och värden från kommandoraden och sedan utnyttja dessa för att göra olika åtgärder. I det här exemplet kan användaren välja att ange ett filnamn (-f), ett namn för hälsningsmeddelandet (-n) och en flagga för att rensa filen (-r). 
 
-## Se också
-
-- [Kommandoradsargument i Bash](https://www.geeksforgeeks.org/command-line-arguments-in-bash-scripting/)
-- [Looping genom kommandoradsargument](https://linuxize.com/post/bash-for-loop/)
-- [Hantera felaktiga kommandoradsargument](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_02.html)
+## Se även
+- [En kort guide till Bash programmering](https://www.tecmint.com/beginners-guide-to-writing-bash-scripts/)
+- [En introduktion till kommandoradsargument i Bash](https://opensource.com/article/19/11/bash-command-line-arguments)
+- [Officiell dokumentation för Bash](https://www.gnu.org/software/bash/manual/)

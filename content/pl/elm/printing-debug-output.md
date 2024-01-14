@@ -1,37 +1,44 @@
 ---
-title:    "Elm: Wydruki z informacjami diagnostycznymi"
+title:    "Elm: Drukowanie wyjścia debugowania"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wyświetlanie danych debugowania jest niezbędnym narzędziem dla każdego programisty Elm. Pozwala nam na lepsze zrozumienie działania naszego kodu, a także ułatwia nam znalezienie i naprawienie błędów. W tym artykule dowiesz się, dlaczego warto używać wyświetlacza danych debugowania w swoich projektach.
+Jeśli jesteś programistą pracującym w Elm, pewnie zastanawiasz się, po co drukować wyjścia debugowania. Jednym z najważniejszych powodów jest to, że pomaga to zrozumieć, jak działają Twoje funkcje i moduły. Może się to także przydać w przypadku napotkania błędów lub problemów w kodzie.
 
-## Jak
+## Jak to zrobić
 
-Aby wyświetlić dane debugowania w Elm, możemy użyć funkcji `Debug.log`. Ta funkcja przyjmuje dwa argumenty: nazwę i wartość, którą chcemy wyświetlić. Przykładowy kod można znaleźć poniżej:
+W Elm istnieje wbudowana funkcja `Debug.log`, która służy do wyświetlania wyjścia debugowania. Najprostszy sposób jej użycia wygląda następująco:
 
-```Elm
-import Debug exposing (log)
-
-myFunction : Int -> Int
-myFunction x =
-  let
-    result = x * 2
-  in
-    Debug.log "Wynik" result
+```
+Elm.debug "Twoje wyjście debugowania"
 ```
 
-Kiedy wywołamy tę funkcję na przykład z wartością 5, w konsoli deweloperskiej zobaczymy następujący tekst: `Wynik: 10`. Możemy również wyświetlać dowolne inne wartości, takie jak napisy, listy czy nawet struktury danych.
+Możesz również wyświetlić wartości zmiennych lub wyrażeń, wpisując je po przecinku w nawiasach:
 
-## Przyjrzenie się bliżej
+```
+Elm.debug (x, y + z)
+```
 
-Choć wyświetlanie danych debugowania jest bardzo przydatne, nie powinno być używane w kodzie produkcyjnym. Aby je wyłączyć, wystarczy po prostu usunąć wywołania funkcji `Debug.log`. Warto również pamiętać, że `Debug.log` jest funkcją czysto pomocniczą i nie ma wpływu na działanie naszego programu.
+Pamiętaj, że `Debug.log` jest funkcją czysto debugującą i nie powinna być używana w kodzie produkcyjnym.
 
-## Zobacz również
+## Głębsze zagłębienie
 
-- [Dokumentacja Elm - Debugging](https://guide.elm-lang.org/debugging/)
-- [Artykuł na temat debugowania w języku Elm](https://medium.com/@joelgrus/elm-vs-the-universe-or-a-framework-reconsidered-3a55a5f9b512)
-- [Poradnik dotyczący wyłączania funkcji debugowania w kodzie produkcyjnym](https://medium.com/@y434n/elm-debug-to-the-rescue-a4a1b0c7ea69)
+Poza prostym wyświetlaniem tekstu, `Debug.log` ma wiele zastosowań, dlatego warto poznać dokładniej jego możliwości.
+
+Możesz np. wyświetlić informacje o typach danych, co jest szczególnie przydatne podczas pracy z Elm Debuggerem. Można to zrobić w ten sposób:
+
+```
+Elm.debug (typeof model, typeof msg)
+```
+
+Warto również wiedzieć, że `Debug.log` może być zagnieżdżona w innych funkcjach lub wyrażeniach warunkowych. Po prostu umieść ją wewnątrz nawiasów, tak jakbyś używał jej poza nimi.
+
+## Zobacz także
+
+- [Dokumentacja Elm do funkcji `Debug.log`](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
+- [Elm Debugger - narzędzie do debugowania w przeglądarce](https://debug.elm-lang.org)

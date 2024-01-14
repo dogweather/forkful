@@ -1,41 +1,37 @@
 ---
 title:    "Rust: 문자열 대문자로 변환하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 문자열 대문자로 변경하는가?
+## 왜
 
-최근 프로그래밍 언어로서 인기를 얻고 있는 러스트(Rust)는 높은 성능과 안정성으로 유명하다. 그런데 여러분은 이미 존재하는 문자열을 대문자로 변경하는 방법이 궁금할 수 있다. 이번 글에서는 러스트를 사용하여 문자열을 쉽게 대문자로 변경하는 방법을 알려드리겠다.
+문자열을 대문자로 변환하는 것이 중요한 이유는 다른 프로그래밍 언어보다 더 안전하고 효율적인 방식으로 문자열을 다루기 때문입니다. 러스트의 강력한 타입 시스템을 활용하여 문자열을 대문자로 변환함으로써 버그와 에러를 방지할 수 있습니다.
 
-## 방법
-
-문자열을 대문자로 변경하는 가장 간단한 방법은 `to_uppercase()` 메서드를 사용하는 것이다. 이 메서드는 `String` 타입에서 사용 가능하며, 문자열을 대문자로 변경한 결과를 새로운 `String` 타입으로 리턴한다.
+## 어떻게
 
 ```Rust
-let s = "hello";
-let result = s.to_uppercase();
+fn capitalize(s: &str) -> String {
+    s.to_uppercase()
+}
 
-println!("{}", result); // 출력 결과: HELLO
+fn main() {
+    let name = "john";
+    let result = capitalize(name);
+    println!("{}", result);
+}
 ```
 
-`let result = s.to_uppercase();` 코드를 보면, 메서드를 호출하는 소유자는 `s` 변수이고, 이는 `String` 타입이기 때문이다. 따라서 `to_uppercase()` 메서드를 사용할 때에는 반드시 `String` 타입을 가진 변수에서 호출해야 한다.
+위의 코드 예제와 결과를 보면, `john`이라는 문자열이 `JOHN`으로 변환되었음을 알 수 있습니다. `to_uppercase()` 함수는 문자열을 대문자로 변환하는 메서드이며, 더 복잡한 변환 방식을 원한다면 러스트의 다른 메서드를 사용할 수도 있습니다.
 
-만약 `String` 타입이 아닌 `&str` 타입의 문자열에서 대문자로 변경하고 싶다면 어떻게 할까? 이때는 `to_uppercase()`를 사용하는 대신 `to_uppercase()` 메서드를 포함하는 `String` 타입을 만들어야 한다. 이렇게 하면 문자열이 `String` 타입으로 바뀌고 대문자로 변경할 수 있다.
+## 깊은 이해
 
-```Rust
-let s = "hello";
-let result = s.to_uppercase().to_string();
+문자열을 대문자로 변환하기 위해서는 모든 문자를 단순히 대문자로 바꾸는 것이 아니라 해당 언어의 대/소문자 규칙을 고려해야 합니다. 예를 들어, 영어에서는 알파벳 'a'를 대문자로 바꾸면 'A'가 되지만, 독일어에서는 'ß'를 대문자로 바꾸면 'SS'가 됩니다. 러스트에서 제공하는 `to_uppercase()` 함수는 이러한 다양한 언어의 규칙을 처리할 수 있도록 설계되어 있습니다.
 
-println!("{}", result); // 출력 결과: HELLO
-```
+## 관련 자료
 
-## 깊게 파보기
-
-위에서 살펴본 `to_uppercase()` 메서드는 매우 간단하지만, `String` 타입에서 상당히 많이 사용되는 메서드이다. 그래서 러스트에서는 이 메서드를 최적화하여 더 효율적으로 동작하게 만들었다. `to_uppercase()` 메서드는 각 문자의 대소문자 여부를 판별하는 대신, 그저 영문의 알파벳 범위 내에서 소문자를 찾아 대문자로 변경하도록 동작한다. 이렇게 하면 처리 속도가 매우 빨라지기 때문에, 대량의 문자열을 변경하거나 반복적으로 `to_uppercase()`를 사용하는 경우에는 더욱 뛰어난 성능을 발휘한다.
-
-## 관련 링크
-
-- [러스트 공식 문서 - 문자열 메서드](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [러스트 공식 가이드 - 자주 사용하는 문자열 처리 메서드](https://rust-lang.github.io/rust-cookbook/text/strings.html#commonly-used-methods)
+- [Rust 문자열 처리 관련 문서](https://doc.rust-lang.org/std/primitive.str.html)
+- [Rust 방대한 표준 라이브러리 문서](https://doc.rust-lang.org/std/index.html)
+- [러스트 강의: 문자열 처리](https://www.youtube.com/watch?v=PzEox3szeRc)

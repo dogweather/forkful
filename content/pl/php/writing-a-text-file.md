@@ -1,51 +1,42 @@
 ---
-title:    "PHP: Tworzenie pliku tekstowego"
+title:    "PHP: Pisanie pliku tekstowego"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie plików tekstowych jest nieodłączną częścią procesu programowania w PHP. Jest to przydatna umiejętność, która pozwala na zapisywanie i odczytywanie danych w plikach, co jest niezbędne w wielu aplikacjach internetowych. W tym artykule dowiecie się, w jaki sposób można to zrobić w PHP.
+Pisanie pliku tekstowego jest jedną z podstawowych czynności w programowaniu PHP. Jest to niezwykle przydatne przy tworzeniu stron internetowych, aplikacji internetowych czy skryptów. Poniżej przedstawiona jest praktyczna instrukcja, jak pisać pliki tekstowe w języku PHP.
 
 ## Jak to zrobić
 
-W przypadku pisania pliku tekstowego w PHP należy wykorzystać funkcję "fopen()", która otwiera plik do zapisu lub odczytu, w zależności od potrzeb. Ważne jest, aby podać ścieżkę do pliku oraz tryb otwarcia, który określa, czy plik będzie otwierany do zapisu czy odczytu.
+Najpierw otwórzmy plik tekstowy przy pomocy funkcji `fopen()` w celu utworzenia uchwytu pliku. Następnie możemy użyć funkcji `fwrite()`, aby wpisać tekst do pliku. Na koniec zamykamy plik przy użyciu funkcji `fclose()`. Pozwala to na zapisanie wprowadzonych zmian.
 
-```
-$plik = fopen("twój_plik.txt", "w"); //otwarcie pliku do zapisu
-```
+```PHP
+<?php
 
-Następnie możesz użyć funkcji "fwrite()", aby zapisać dane do pliku. Ta funkcja przyjmuje jako argumenty uchwyt do otwartego pliku oraz dane, które chcesz zapisać. Poniżej znajduje się przykład zapisu napisu "Witaj świecie!" do pliku.
+// Otwieramy plik w trybie do odczytu i zapisu
+$file = fopen("tekst.txt", "w+");
 
-```
-fwrite($plik, "Witaj świecie!");
-```
+// Wpisujemy nasz przykładowy tekst do pliku
+fwrite($file, "Witaj, to jest przykładowy tekst dla bloga!");
 
-Po użyciu funkcji "fwrite()" zawsze należy zamknąć otwarty plik, korzystając z funkcji "fclose()".
+// Zamykamy plik
+fclose($file);
 
-```
-fclose($plik); //zamknięcie pliku
-```
-
-Aby odczytać dane z pliku, należy użyć funkcji "fread()", która przyjmuje jako argumenty uchwyt do pliku oraz liczbę bajtów, którą chcesz odczytać. Poniższy przykład odczyta całą zawartość pliku i wyświetli ją na ekranie.
-
-```
-$plik = fopen("twój_plik.txt", "r"); //otwarcie pliku do odczytu
-echo fread($plik, filesize("twój_plik.txt")); //wyswietlenie zawartości pliku
-fclose($plik); //zamknięcie pliku
+// Wyświetlamy komunikat o zapisaniu tekstu do pliku
+echo "Pomyślnie zapisano tekst do pliku!";
+?>
 ```
 
-## Głębszy wgląd
+## Głębszy zanurzenie
 
-Podczas pisania pliku tekstowego, istnieje także możliwość ustawienia dodatkowych opcji, takich jak kodowanie tekstu czy tryb dostępu. Możesz również wykorzystać funkcję "file_put_contents()" do zapisania danych do pliku jedną linijką kodu.
-
-Ważne jest również, aby upewnić się, że plik jest otwierany i zamykany w odpowiedniej sekcji programu, aby uniknąć problemów z dostępem do pliku przez inne procesy.
+W celu bardziej szczegółowego wyjaśnienia, warto wspomnieć o różnych trybach otwierania plików w PHP oraz funkcjach, które pozwalają na dokładniejszą kontrolę nad zapisywanymi danymi (np. `fputs()` czy `fpassthru()`). Warto również zwrócić uwagę na możliwość ustawienia pozycji kursora w pliku przy pomocy funkcji `fseek()`, co pozwala na dodawanie tekstu do istniejącego pliku bez nadpisywania całej zawartości.
 
 ## Zobacz również
 
-1. [Dokumentacja PHP: fopen()](https://www.php.net/manual/en/function.fopen.php)
-2. [Dokumentacja PHP: fwrite()](https://www.php.net/manual/en/function.fwrite.php)
-3. [Dokumentacja PHP: fclose()](https://www.php.net/manual/en/function.fclose.php)
-4. [Dokumentacja PHP: file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- [Funkcja fopen() w dokumentacji PHP](https://www.php.net/manual/en/function.fopen.php)
+- [Przykłady zapisu danych do plików tekstowych w PHP](https://www.php.net/manual/en/function.fwrite.php)
+- [Funkcje związane z zapisywaniem danych do pliku](https://www.php.net/manual/en/ref.filesystem.php)

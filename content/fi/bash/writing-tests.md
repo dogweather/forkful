@@ -1,58 +1,44 @@
 ---
 title:    "Bash: Testien kirjoittaminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Testien kirjoittaminen ohjelmointiprojekteissa voi tuntua ylimääräiseltä vaivalta, mutta ne ovat todella tärkeitä varmistamaan koodin toiminnallisuuden ja vakauden. Testien avulla voi välttää kalliita virheitä ja parantaa ohjelman luotettavuutta.
+Testien kirjoittaminen on olennainen osa Bash-ohjelmointia, koska se auttaa varmistamaan koodisi toimivuuden ja vähentää virheiden riskiä. Testit voivat myös nopeuttaa koodin kehittämistä ja tehdä siitä helpommin ylläpidettävän.
 
 ## Miten
 
-Testien kirjoittaminen Bash-kielellä on helppoa ja tehokasta. Seuraavassa on muutamia esimerkkejä, jotka näyttävät, kuinka testejä voi kirjoittaa ja mitä tulosteita niistä voi odottaa.
+Testien kirjoittaminen Bashissa on helppoa. Ensimmäinen askel on luoda testitiedosto, johon tallennat kaikki testitapaukset. Voit käyttää joko Bashin sisäänrakennettua "test" -komentoa tai suositeltua "bats" -komentoa testien kirjoittamiseen.
 
 ```Bash
-# Yksinkertainen vertailutesti
-yritys='Hello'
-odotettu_tulos='Hello'
-if [ $yritys = $odotettu_tulos ]; then
-    echo "Testi läpäistiin"
-else
-    echo "Testi ei läpäissyt, odotettu tulos oli $odotettu_tulos mutta saatiin $yritys"
-fi
-# Tuloste: Testi läpäistiin
-```
+# Sisällytetään "bats" -komento
+source /usr/local/bin/bats
 
-```Bash
-# Testattava funktio
-hello() {
-    echo "Hello $1"
+# Testitiedosto
+@test "Testin nimi" {
+  # Testitapausten koodi
+  result="$(your_command)"
+  [ "$result" == "expected_output" ]
 }
 
-# Testikutsu funktiolle
-tulos=$(hello "world")
-if [ "$tulos" = "Hello world" ]; then
-    echo "Testi läpäistiin"
-else
-    echo "Testi ei läpäissyt, odotettiin 'Hello world' mutta saatiin $tulos"
-fi
-# Tuloste: Testi läpäistiin
+# Käynnistä testit
+bats your_test_file.bats
 ```
 
-Seuraavaksi siirrytään hieman syvemmälle testien maailmaan.
+Tässä esimerkissä käytämme "bats" -komentoa, joka suorittaa kaikki testit testitiedostosta ja antaa tuloksia. Voit myös käyttää Bashin sisäänrakennettua "test" -komentoa, mutta siinä tapauksessa sinun on huolehdittava itse tulosten näyttämisestä.
 
 ## Syväsukellus
 
-Testien kirjoittamisessa on hyvä noudattaa jotain testaamisen strategiaa, kuten yksikkötestausta tai integraatiotestausta. Näin testien hallinta pysyy selkeänä ja tehokkaana.
+Kun kirjoitat testejä Bash-ohjelmillesi, on tärkeää ottaa huomioon muutamia asioita. Ensinnäkin, testien tulisi kattaa mahdollisimman monta eri tilannetta ja antaa tarkkoja tuloksia. Toiseksi, käytä muuttujia testien luomiseen, jotta voit helposti muuttaa testattavia parametrejä. Lisäksi, käytä "set -e" -komentoa varmistaaksesi, että testit keskeytyvät välittömästi jos jokin niistä epäonnistuu.
 
-Testien kirjoittamisessa on hyvä myös huomioida erilaisia testitapauksia, kuten syötteiden rajatapaukset ja virheiden käsittely. Tämä varmistaa, että testit ovat kattavia ja huomaavat myös mahdolliset ongelmat.
-
-Itse testien kirjoittamisessa on tärkeää käyttää Bashin ominaisuuksia, kuten vertailuoperaattoreita ja muuttujia, varmistaakseen, että testit ovat luotettavia ja tarkkoja.
+On myös tärkeää muistaa, että testien kirjoittaminen on jatkuva prosessi. Muokkaa ja lisää testejä aina kun koodia muutetaan, jotta voit varmistaa sen toimivuuden.
 
 ## Katso myös
 
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/bash)
-- [Bash-testejä käsittelevä opas](https://www.bash.academy/guide/testing.html)
-- [Bash-testien hyödyt ja sudenkuopat](https://spin.atomicobject.com/2016/09/07/bash-testing/)
+- [Bash-testien kirjoittaminen](https://www.linuxjournal.com/article/3587)
+- [Bats-dokumentaatio](https://github.com/bats-core/bats-core)
+- [Bash-opas aloittelijoille (suomeksi)](https://panerointi.github.io/bash-opas/)

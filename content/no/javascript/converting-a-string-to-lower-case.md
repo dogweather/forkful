@@ -1,46 +1,48 @@
 ---
-title:    "Javascript: Konvertere en streng til små bokstaver"
+title:    "Javascript: Konvertering av streng til små bokstaver"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å konvertere en streng til små bokstaver kan være nyttig hvis du for eksempel jobber med brukerinnganger eller må behandle tekst data på en bestemt måte.
 
-Det å konvertere en string til lower case er en viktig del av JavaScript programmering fordi det lar deg gjøre strenger sammenlignbare med hverandre. I tillegg, mange funksjoner og metoder fungerer kun med lower case strenger, så å konvertere et string til lower case er ofte nødvendig for å få koden din til å fungere.
+## Hvordan du gjør det
+```Javascript
+// Første måte: ved hjelp av metoden toLowerCase()
+let tekst = "Hei PÅ Deg";
+let konvertertTekst = tekst.toLowerCase();
 
-## Hvordan gjøre det
-
-For å konvertere en string til lower case i JavaScript, kan du bruke `toLowerCase()` funksjonen. Denne funksjonen tar en string som parameter og returnerer den samme stringen, men med alle bokstavene omgjort til lower case.
+console.log(konvertertTekst);
+// Output: hei på deg
+```
 
 ```Javascript
-let name = "Marie";
-let lowerCaseName = name.toLowerCase();
-console.log(lowerCaseName);
+// Andre måte: ved hjelp av for-løkke og ASCII-verdier
+let tekst = "Hei PÅ Deg";
+let konvertertTekst = "";
+for (let i = 0; i < tekst.length; i++) {
+    let tegn = tekst[i];
+    // Sjekker om ASCII-verdien er innenfor A-Z området
+    if (tegn.charCodeAt(0) >= 65 && tegn.charCodeAt(0) <= 90) {
+        // Hvis ja, legges det til 32 for å få tilsvarende små bokstav ASCII-verdi
+        konvertertTekst += String.fromCharCode(tegn.charCodeAt(0) + 32);
+    } else {
+        // Hvis ikke, legges det til uendret tegn i den konverterte teksten
+        konvertertTekst += tegn;
+    }
+}
+
+console.log(konvertertTekst);
+// Output: hei på deg
 ```
-Output: marie
 
-Her har vi definert en variabel `name` med verdien "Marie" og brukt `toLowerCase()` funksjonen for å konvertere den til lower case. Deretter har vi lagret resultatet i en ny variabel `lowerCaseName` og brukt `console.log()` for å skrive ut den nye strengen til konsollen.
-
-Det er også mulig å bruke metoden `toLowerCase()` direkte på en string uten å måtte lagre det i en ny variabel.
-
-```Javascript
-let name = "MARIE";
-console.log(name.toLowerCase());
-```
-Output: marie
-
-## Fordypning
-
-Det er viktig å merke seg at `toLowerCase()` funksjonen vil bare konvertere bokstaver som er en del av det engelske alfabetet. Bokstaver fra andre språk vil ikke bli omgjort til lower case, så hvis du jobber med flere språk, bør du være forsiktig med hvordan du håndterer strenger og konverteringer.
-
-I tillegg vil `toLowerCase()` funksjonen bare endre bokstaver til lower case. Hvis strengen din inneholder tall, symbolske tegn eller mellomrom, vil disse bli igjen uendret.
-
-En annen ting å merke seg er at `toLowerCase()` funksjonen ikke endrer den opprinnelige strengen, den returnerer bare en ny lower case versjon av den. Hvis du vil endre den originale strengen, må du lagre den nye lower case strengen i samme variabel.
+## Deep Dive
+Når vi snakker om å konvertere en streng til små bokstaver, mener vi å endre bokstavene fra deres opprinnelige store ASCII-verdi til sin tilsvarende små ASCII-verdi. Dette kan gjøres på forskjellige måter, men det viktigste å huske på er at det er viktig å ta hensyn til ulike språk og tegnsett. Dette kan påvirke resultatet av konverteringen, spesielt hvis man benytter seg av ASCII-verdier.
 
 ## Se også
-
-- [W3Schools - JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-- [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [JavaScript.info - Strings and arrays](https://javascript.info/string)
-- [JavaScript.com - String Methods](https://www.javascript.com/learn/strings/methods)
+- [Metoden toLowerCase() i Javascript](https://www.w3schools.com/JSREF/jsref_tolowercase.asp)
+- [ASCII-tabell](https://ascii.cl/)
+- [Utforsk ulike metoder for å jobbe med strenger i Javascript](https://www.freecodecamp.org/news/32-ways-to-use-javascripts-nobody-knows-about-d06c394ffc30/)

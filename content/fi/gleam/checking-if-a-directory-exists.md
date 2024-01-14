@@ -1,58 +1,40 @@
 ---
 title:    "Gleam: Tarkista, onko hakemisto olemassa"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi tarkistaa, onko hakemisto olemassa? 
+## Miksi: Miksi tarkistaa, onko hakemistoa olemassa?
 
-Monissa ohjelmointiprojekteissa on tärkeää tarkistaa, onko tietty hakemisto olemassa ennen sen käyttämistä. Tämä voi olla esimerkiksi tietokantaan tallennettujen tiedostojen paikan varmistamiseksi tai käyttäjän tekemien valintojen käsittelyn helpottamiseksi. Gleam-kielen avulla tämä on helppoa ja näytämme sinulle miten!
+Hakemiston tarkistaminen on tärkeä osa ohjelmointia, koska se auttaa varmistamaan, että ohjelma toimii oikein. Tarkistamalla, onko hakemisto olemassa, voit varmistaa, että ohjelma ei aiheuta virheitä tai kaatumisia, kun se yrittää käyttää tätä hakemistoa.
 
-## Miten tehdä tämä Gleamilla
+## Kuinka: Ohjeet hakemiston olemassaolon tarkistamiseen Gleam-ohjelmassa
 
 ```Gleam
-let directory = "./data"
+let directory = "/polku/hakemistoon"
+let exists = os.exists(directory)
+```
 
-let exists = std.fs.exists(directory)
+Tämä koodilohko osoittaa, kuinka tarkistaa, onko hakemisto olemassa Gleam-ohjelmassa. `os.exists` -toiminto palauttaa `true` tai `false` -arvon riippuen siitä, onko hakemisto olemassa annetussa polussa. Voit myös käyttää tätä toimintoa ehdollisena lausekkeena, jotta ohjelma voi reagoida oikein, jos hakemistoa ei ole olemassa.
 
+```Gleam
 if exists {
-  // Hakemisto on jo olemassa, voit jatkaa sen käyttöä
-  // esimerkiksi tiedostojen tallentamiseen
+  // Hakemisto on olemassa, tee jotain
 } else {
-  // Hakemistoa ei löytynyt, voit luoda sen tarvittaessa
-  std.fs.create_dir(directory)
+  // Hakemistoa ei ole olemassa, tee jotain muuta
 }
 ```
 
-## Syöte ja tulostus
+## Syvempi sukellus: Tietoa hakemiston olemassaolon tarkistamisesta
 
-Oletetaan, että käytettävissä on hakemisto nimeltä "data". Kun suoritamme koodin, saamme tämän tulosteen:
+Hakemiston olemassaolon tarkistaminen liittyy läheisesti tiedostojen hallintaan ja järjestelmänvalvontaan. Kun ohjelma pyrkii käyttämään tiettyä hakemistoa, on tärkeää varmistaa, että se on olemassa ja että ohjelma pystyy käsittelemään mahdolliset virhetilanteet, kuten hakemiston puuttumisen.
 
-```
-// Syöte
-"./data"
-
-// Tulostus
-Hakemisto löytyi, voit siirtää tiedostoja sinne.
-```
-
-Jos hakemistoa ei löydy, saat tämän tulosteen:
-
-```
-// Syöte
-"./data"
-
-// Tulostus
-Hakemistoa ei löydy, se luodaan automaattisesti.
-```
-
-## Syvällinen sukellus
-
-Gleam-kielen `std.fs` -kirjasto tarjoaa kätevät toiminnot tiedostojen ja hakemistojen hallintaan. `exists`-funktio palauttaa `true` tai `false` sen mukaan, onko annetulla polulla oleva tiedosto tai hakemisto olemassa. Tämä on hyödyllinen tarkistus ennen esimerkiksi tiedostojen avaamista tai luomista.
+Gleamissa `os` -kirjasto tarjoaa useita hyödyllisiä toimintoja tiedostojen ja hakemistojen tarkistamiseen, luomiseen ja muokkaamiseen. On myös mahdollista käyttää muita kirjastoja, kuten `filesystem` ja `rocket`, jotta tiedostojen ja hakemistojen käsittely olisi entistä helpompaa.
 
 ## Katso myös
 
-- Gleamin virallinen dokumentaatio: https://gleam.run/
-- Virallinen kielikirjasto, mukaan lukien `std.fs`: https://github.com/gleam-lang/gleam_stdlib
-- Ohjeita Gleam-kielen aloittamiseen: https://gleam-lang.org/guides/getting-started/
+- [`os`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/std/os) 
+- [`filesystem`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/filesystem) 
+- [`rocket`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/rocket)

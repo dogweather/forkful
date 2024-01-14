@@ -1,42 +1,53 @@
 ---
 title:    "TypeScript recipe: Writing to standard error"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a programmer, it is important to have knowledge of how to write to standard error. This allows you to effectively handle and troubleshoot errors in your code, providing a better user experience for your application.
+As a developer, one may often encounter errors and bugs while writing code. These errors can sometimes be difficult to track down and debug, especially in larger codebases. Writing to standard error can be a useful tool in providing more detailed information about these errors and how to fix them.
 
 ## How To
 
-Writing to standard error in TypeScript is a simple process. First, we need to import the `console` module:
+To write to standard error in TypeScript, we can use the `console.error` method. This method takes in a string or object as an argument and prints it to the standard error stream. Let's look at an example below:
 
 ```TypeScript
-import console from 'console';
-```
+const num1 = 10;
+const num2 = "five";
 
-Next, we can use the `console.error()` method to write to standard error. Let's say we have a variable `input` that contains a user's input. We can use the following code to check if the input is a number and write an error message if it is not:
+if (typeof num1 === "string") {
+  console.error("num1 is not a number.");
+}
 
-```TypeScript
-if(isNaN(input)) {
-    console.error("Please enter a valid number");
+if (typeof num2 === "number") {
+  console.log(`5 + ${num2} = ${5 + num2}`);
+} else {
+  console.error("num2 is not a number.");
 }
 ```
 
-The `console.error()` method will output the given message to the standard error stream, which can then be seen in the console or terminal when running the program.
+In the code above, we have two variables, `num1` and `num2`. We use the `typeof` operator to check the data type of each variable. If the data type is not what we expect, we can use `console.error` to print a message to the error stream. Running this code will produce the following output:
+
+```bash
+num1 is not a number.
+num2 is not a number.
+```
+
+This makes it clear to the developer which variables are causing errors and can help in identifying the root cause of the issue.
 
 ## Deep Dive
 
-When writing to standard error, it is important to understand the difference between writing to standard output (the `console.log()` method) and standard error. The main difference is that output messages are typically for regular program output, while error messages are for handling unexpected or critical events.
+Standard error (also known as "stderr") is a stream where a program can write error messages. This stream is separate from the standard output (stdout) stream, which is used for normal program output. In TypeScript, we can access the standard error stream through the `console.error` method.
 
-Furthermore, standard error has a different behavior than standard output when it comes to redirection. Output messages can be redirected to a file, but error messages will still be displayed in the console. This can be useful for easily identifying and troubleshooting errors in your code.
+One thing to note is that the messages written to standard error are typically displayed in red in most terminals, making it easier to distinguish them from regular program output. Additionally, the messages written to standard error are not buffered and will be immediately printed to the terminal.
 
-It is also worth noting that the `console.error()` method has an optional second argument, which accepts an object containing additional information to be displayed with the error message. This can be helpful for providing more context to the error.
+It is best practice to use `console.error` for error messages and `console.log` for regular output. This helps in keeping our code organized and makes it easier to troubleshoot issues.
 
 ## See Also
 
-- [Node.js documentation on console module](https://nodejs.org/api/console.html)
-- [W3Schools article on console.error()](https://www.w3schools.com/nodejs/met_console_error.asp)
-- [GeeksforGeeks article on writing to standard error in TypeScript](https://www.geeksforgeeks.org/writing-to-standard-error-with-console-in-typescript/)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/home.html)
+- [Writing to Standard Error in Node.js](https://www.w3schools.com/nodejs/nodejs_errors.asp)
+- [Console Methods in TypeScript](https://blog.bitsrc.io/console-methods-in-javascript-7158b1c18c9c)

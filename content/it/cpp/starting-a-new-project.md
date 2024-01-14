@@ -1,55 +1,42 @@
 ---
-title:    "C++: Avviare un nuovo progetto"
+title:    "C++: Iniziare un nuovo progetto"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere un nuovo progetto in linguaggio C++ può essere un'opportunità eccitante e gratificante per coloro che vogliono espandere le proprie conoscenze di programmazione o creare qualcosa di nuovo ed interessante. Creare un nuovo progetto in C++ può essere una grande sfida, ma può anche portare a risultati gratificanti e unici.
+Iniziare un nuovo progetto di programmazione può sembrare intimidatorio, ma si tratta di una sfida eccitante e gratificante. Con l'avanzare della tecnologia e la sempre crescente domanda di sviluppatori di software, creare il tuo progetto può diventare una grande opportunità per imparare nuove abilità e creare qualcosa di innovativo.
 
 ## Come fare
 
-Per iniziare un nuovo progetto in C++, è necessario avere una conoscenza di base del linguaggio di programmazione e un ambiente di sviluppo integrato (IDE) come Visual Studio o Code::Blocks. Una volta che si ha tutto il necessario, si può iniziare a scrivere il codice.
+Iniziamo con il codice! Una volta deciso il linguaggio di programmazione, come C++, e l'IDE preferito, puoi seguire questi semplici passaggi per iniziare il tuo progetto:
 
 ```C++
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
-   // Istruzione di output
-   cout << "Ciao mondo!" << endl;
-   
-   // Dichiarazione di una variabile
-   int numero = 5;
-   
-   // Istruzione di output con variabile
-   cout << "Il mio numero preferito è: " << numero << endl;
-   
-   return 0;
+int main() {
+  // Inserisci qui il tuo codice
+  return 0;
 }
 ```
 
-L'output del codice sarà:
+Questa è una struttura di base per un programma in C++. Inserisci il tuo codice all'interno del blocco `main` e avrai il tuo primo programma pronto per essere compilato ed eseguito. Ricorda di includere le librerie necessarie per il tuo progetto e di utilizzare commenti per rendere il tuo codice più comprensibile.
 
-```
-Ciao mondo!
-Il mio numero preferito è: 5
-```
+## Immersione profonda
 
-A partire da questo semplice esempio, si può iniziare a scrivere codice più complesso e utilizzare altre funzionalità del linguaggio C++ come le classi e le funzioni.
+Il primo passo per creare un nuovo progetto di programmazione è avere un'idea chiara di ciò che vuoi creare. Definisci gli obiettivi del tuo progetto e cosa vuoi ottenere al termine. Ti consiglio di creare un diagramma di flusso o uno schema per avere una visione più chiara dei passaggi che dovrai seguire per raggiungere il tuo obiettivo.
 
-## Approfondimento
+Inoltre, è importante pianificare il tuo codice, utilizzando funzioni e suddividendo il lavoro in piccoli moduli. Questo ti aiuterà a mantenere il tuo codice organizzato e facile da modificare in seguito.
 
-Quando si inizia un nuovo progetto in C++, è importante avere una chiara idea della sua finalità e delle funzionalità che dovrà avere. Si deve anche tenere in considerazione la complessità del progetto e se è necessario l'utilizzo di librerie esterne. Inoltre, è importante scrivere codice pulito e ben strutturato per facilitare la manutenzione e il debugging in futuro.
-
-Inoltre, si può cercare supporto da parte della comunità online di programmazione in C++ per risolvere eventuali problemi e consigli su come migliorare il proprio codice.
+Infine, non avere paura di fare ricerche. Non sarai in grado di risolvere tutti i problemi da solo, e ciò non fa di te un programmatore meno bravo. Utilizza risorse online, libri e tutorial per imparare dalle esperienze di altri programmatori e per trovare soluzioni ai problemi che potresti incontrare.
 
 ## Vedi anche
 
-- [Tutorial C++ per principianti](https://it.wikipedia.org/wiki/Linguaggio_di_programmazione_C%2B%2B)
-- [Sintassi e semantica del C++](https://www.learncpp.com/)
-- [Forum di supporto per C++](https://www.cplusplus.com/forum/)
+- [Come iniziare un progetto di programmazione in C++](https://www.geeksforgeeks.org/how-to-start-a-programming-project-in-c/)
+- [Guida ai diagrammi di flusso](https://blog.hubspot.com/website/how-to-create-flowchart)
+- [Le 10 cose che ogni nuovo programmatore deve sapere](https://blog.hubspot.com/programming/10-things-every-new-programmer-should-know)

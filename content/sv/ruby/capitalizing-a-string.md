@@ -1,42 +1,49 @@
 ---
-title:    "Ruby: Kapitalisering av en sträng"
+title:    "Ruby: Stora bokstäver i en sträng"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+ 
+Att skriva kod som är lätt att läsa och förstå är viktigt för alla programmerare. En av de enklaste sätten att göra detta är att följa konventionerna som används av standardspråket. Att kapitalisera en sträng är en av dessa konventioner som kan hjälpa till att göra koden mer läsbar och strukturerad.
 
-Att göra en sträng stor bokstav (capitalizing) kan vara användbart när man vill ändra utseendet på en sträng eller när man behöver följa konventioner i kodning.
-
-## Så här
-
-Det finns flera sätt att göra en sträng stor bokstav i Ruby.
+## Hur man gör 
 
 ```Ruby
-puts "hej".capitalize
-puts "hej".upcase
-puts "Hej".swapcase
+# Skapa en variabel med en sträng som inte är kapitaliserad
+strang = "hej alla"
+
+# Använd metoden .capitalize för att ändra strängen till att börja med en stor bokstav
+kapitaliserad_strang = strang.capitalize
+
+puts kapitaliserad_strang
+
+# Output: "Hej alla"
 ```
 
-Output:
+Det är också möjligt att använda metoden .upcase för att helt kapitalisera hela strängen:
 
-```
-Hej
-HEJ
-hEJ
-```
+```Ruby
+strang = "hej alla"
 
-Det första sättet, `capitalize`, gör bara första bokstaven i en sträng stor, medan `upcase` gör alla bokstäver stora och `swapcase` byter bara ut de små och stora bokstäverna i en sträng.
+kapitaliserad_strang = strang.upcase
+
+puts kapitaliserad_strang
+
+# Output: "HEJ ALLA"
+```
 
 ## Djupdykning
 
-När vi tittar närmare på metoden `upcase` så ser vi att den faktiskt använder sig av en konverteringsenhet som heter Unicode. Detta innebär att även andra språks bokstäver kan omvandlas till stora bokstäver, inte bara de traditionella engelska bokstäverna.
+När man kapitaliserar en sträng, är det viktigt att förstå att det bara påverkar den första bokstaven i strängen. Om strängen innehåller en mix av stora och små bokstäver, kommer alla andra bokstäver att förbli oförändrade. Det betyder också att om den första bokstaven redan är kapitaliserad, så kommer det inte att göras några förändringar.
 
-Unicode är en standard för att representera tecken från alla olika skriftsystem i världen. Det gör Ruby mycket användbart för internationell utveckling och textmanipulering.
+Det finns också andra metoder som kan användas för att manipulera strängen, såsom .downcase som helt omvandlar strängen till små bokstäver eller .swapcase som byter ut alla stora bokstäver mot små och vice versa. Det är viktigt att välja den metod som passar dina specifika programmål.
 
-## Se även
+## Se också
 
-- [Ruby dokumentation om string](https://ruby-doc.org/core-2.6/String.html)
-- [Guiden till Unicode i Ruby](http://ruby-doc.com/docs/ProgrammingRuby/html/tut_strings.html#S2)
-- [Unicode standarden](https://unicode.org/standard/standard.html)
+- [Ruby dokumentation om strängar](https://ruby-doc.org/core-3.0.0/String.html)
+- [Skillshare kurs: Introduction to Ruby Programming](https://www.skillshare.com/classes/Introduction-to-Ruby-Programming/1210676953)
+- [Ruby community forum](https://www.ruby-forum.com/)

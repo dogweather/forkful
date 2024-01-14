@@ -1,47 +1,56 @@
 ---
-title:    "Ruby: Kahden päivämäärän vertailu"
+title:    "Ruby: Vertaamalla kahta päivämäärää."
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit vertailla kahta päivämäärää Ruby-ohjelmoinnissa? Tämä on tärkeä taito, joka auttaa sinua vertailemaan päivämääriä, tarkistamaan onko jokin päivämäärä ennen tai jälkeen toista ja suorittamaan muita päivämäärään liittyviä toimintoja.
+Vertailu on tärkeä osa ohjelmointia ja vertailu kahden päivämäärän välillä on erityisen hyödyllistä, kun haluat tarkistaa esimerkiksi onko jokin tapahtuma tapahtunut ennen tiettyä päivämäärää tai haluat järjestää tapahtumat aikajärjestykseen.
 
 ## Miten
 
-Ruby-ohjelmoinnissa päivämäärien vertailuun on useita tapoja. Yksi tapa on käyttää `Date`-luokkaa ja sen sisäänrakennettuja metodeja, kuten `today` ja `parse`. Toinen tapa on käyttää `DateTime`-luokkaa ja sen metodeja, kuten `new`, `civil` ja `compare`.
+Vertailu kahden päivämäärän välillä on helppoa Rubyssa. Voit käyttää `Date`-luokkaa ja sen `<=` ja `>` operaattoreita. Voit myös käyttää `Compare` moduulia ja sen `compare` metodia. Katso esimerkkikoodi alla:
 
 ```Ruby
-# Vertaillaan kahta päivämäärää Date-luokan avulla
-date1 = Date.parse("2021-01-01")
-date2 = Date.today
+# Luodaan kaksi päivämäärää
+tänään = Date.today
+huomenna = tänään + 1
 
-puts "Ensimmäinen päivämäärä on ennen toista." if date1 < date2
+# Vertailu <= operaattorilla
+if tänään <= huomenna
+ puts "#{tänään} on ennen #{huomenna}"
+end
 
-# Vertaillaan kahta päivämäärää DateTime-luokan avulla
-datetime1 = DateTime.new(2021, 1, 1)
-datetime2 = DateTime.civil(2021, 12, 31)
+# Vertailu > operaattorilla
+if huomenna > tänään
+ puts "#{huomenna} on myöhemmin kuin #{tänään}"
+end
 
-puts "Toinen päivämäärä on ennen ensimmäistä." if DateTime.compare(datetime1, datetime2) < 0
+# Käyttämällä Compare moduulia
+if Compare.compare(tänään, huomenna) == -1
+  puts "#{tänään} on edeltävä päivämäärä #{huomenna}"
+end
 ```
 
-Koodin tulos:
+Tämä koodi tuottaa seuraavan tulosteen:
 
+``` 
+2021-06-09 on ennen 2021-06-10
+2021-06-10 on myöhemmin kuin 2021-06-09
+2021-06-09 on edeltävä päivämäärä 2021-06-10
 ```
-Ensimmäinen päivämäärä on ennen toista.
-Toinen päivämäärä on ennen ensimmäistä.
-```
 
-Voit myös käyttää muita metodeja ja matemaattisia operaatioita, kuten ` + `, `-` ja `between?`, vertaillessasi päivämääriä.
+## Syväsukellus
 
-## Syvällisempi tarkastelu
+Vaikka päivämäärän vertailu Rubyssa on helppoa, on tärkeää olla tietoinen muutamasta asiasta. Esimerkiksi, jos vertaat eri aikavyöhykkeillä olevia päivämääriä, saatat saada odottamattomia tuloksia. Tämä johtuu siitä, että päivämäärä luokka tallentaa päivät UTC-aikana ja tekee vertailut sen mukaan.
 
-Päivämäärien vertailu Ruby-ohjelmoinnissa perustuu niiden sisäiseen esitykseen sekunneiksi tai nanosekunneiksi. Tämä mahdollistaa päivämäärien tarkemman vertailun ja antaa lisätietoa päivämääristä. Lisäksi päivämäärän aikavyöhyke vaikuttaa sen esitykseen ja vertailuun.
+Toinen ratkaistava asia on vertailun tarkkuus. Jos vertaat ajan kanssa, seurauksena oleva ero on sekunteina. Tämä tarkkuus voi aiheuttaa ongelmia, jos haluat esimerkiksi verrata kahta päivämäärää, jotka ovat samassa kuukaudessa mutta eri päivinä. Tässä tapauksessa on suositeltavaa käyttää `Date` luokan `==` operaattoria.
 
 ## Katso myös
 
-- [Date-luokka Ruby-dokumentaatiossa](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [DateTime-luokka Ruby-dokumentaatiossa](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
-- [Ruby-ohjelmointiopas](https://www.ruby-lang.org/fi/documentation/quickstart/)
+- Ruby `Date` luokka: https://ruby-doc.org/core/Date.html
+- Ruby `Comparable` moduuli: https://ruby-doc.org/core-2.7.0/Comparable.html
+- Aikavyöhykkeet ja UTC: https://www.timeanddate.com/time/time-zones.html

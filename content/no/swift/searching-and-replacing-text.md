@@ -1,32 +1,53 @@
 ---
-title:    "Swift: Søking og erstattelse av tekst"
+title:    "Swift: Søke og erstatte tekst"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du jobber med programmering, vil du ofte støte på situasjoner hvor du må gjøre endringer i store mengder tekst. Dette kan være en tidkrevende og kjedelig oppgave hvis du gjør det manuelt. Derfor kan det være nyttig å lære om søking og bytting, som er en effektiv måte å gjøre slike endringer på.
+Å søke og erstatte tekst er en grunnleggende oppgave innen programmering, og det er viktig å mestre denne ferdigheten for å optimalisere koden din og gjøre endringer raskt og effektivt.
 
-## Hvordan
+## Hvordan å søke og erstatte tekst i Swift
 
-For å søke og bytte tekst i Swift, kan du bruke den innebygde funksjonen `replacingOccurrences(of:with:)`. La oss si at du har en streng som inneholder et ord du vil bytte ut med et annet. Da kan du bruke følgende kode:
+For å søke og erstatte tekst i Swift, kan du bruke `replacingOccurrences(of, with:)` metoden. Denne metoden tar to parametere: en streng du ønsker å søke etter, og en streng du ønsker å erstatte med.
 
-```Swift
-let originalStreng = "Hei, mitt navn er Jan"
-let nyStreng = originalStreng.replacingOccurrences(of: "Jan", with: "Per")
-print(nyStreng) // "Hei, mitt navn er Per"
+```
+let originalTekst = "Hei, dette er en test"
+let nyTekst = originalTekst.replacingOccurrences(of: "test", with: "eksempel")
+
+print(nyTekst) // Output: Hei, dette er en eksempel
 ```
 
-Du kan også spesifisere at søket skal være case-sensitivt ved å legge til parameteren `options: .caseInsensitive`. Hvis du vil bytte ut alle forekomster av et ord, kan du bruke `.replaceAll` i stedet for `.replace`.
+I dette eksempelet erstatter vi "test" med "eksempel" i den opprinnelige teksten. Det er viktig å merke seg at denne metoden returnerer en ny streng og ikke endrer den opprinnelige strengen.
 
-## Dykk dypere
+Du kan også bruke `replacingOccurrences(of, with:, options:)` metoden hvis du ønsker å gjøre en case-insensitive søk og erstatning:
 
-Det finnes flere funksjoner og metoder i Swift som gir deg mer kontroll over søking og bytting av tekst. Du kan for eksempel bruke `range(of:)` for å finne ut hvor i strengen et visst ord eller tegn befinner seg. Dette kan være nyttig hvis du vil bytte ut noe i en bestemt del av strengen. Du kan også bruke `replaceSubrange(with:)` for å erstatte en del av strengen med noe annet.
+```
+let originalTekst = "Hei, dette er en test"
+let nyTekst = originalTekst.replacingOccurrences(of: "TEST", with: "eksempel", options: .caseInsensitive)
+
+print(nyTekst) // Output: Hei, dette er en eksempel
+```
+
+## Dypere dykk
+
+Når du bruker `replacingOccurrences(of, with:)` metoden, erstatter den alle forekomster av den angitte teksten. Dette betyr at hvis den samme teksten forekommer flere ganger i strengen, vil den bli erstattet hver gang.
+
+Du kan også bruke `replacingOccurrences(of, with:, options:, range:)` metoden hvis du ønsker å begrense antall erstatninger som gjøres. I dette tilfellet må du angi et område av strengen som skal søkes i.
+
+```
+let originalTekst = "Hei, dette er en test"
+let nyTekst = originalTekst.replacingOccurrences(of: "e", with: "a", options: [], range: originalTekst.startIndex..<originalTekst.index(originalTekst.startIndex, offsetBy: 12))
+
+print(nyTekst) // Output: Hia, dette ar an test
+```
+
+I dette eksempelet begrenser vi søket til bare de første 12 tegnene i strengen, slik at bare de første to forekomstene av "e" blir erstattet med "a".
 
 ## Se også
 
-- [Swift String API](https://developer.apple.com/documentation/swift/string)
-- [Søking og bytting i Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
-- [String og NSString i Swift](https://www.vadimbulavin.com/swift-4-strings-and-nsstring/)
+- [String Manipulation in Swift](https://medium.com/swinginc/string-manipulation-in-swift-eee5248ec22a)
+- [Working with Strings in Swift](https://www.hackingwithswift.com/articles/155/working-with-strings-in-swift)

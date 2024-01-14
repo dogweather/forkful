@@ -1,52 +1,32 @@
 ---
 title:    "Kotlin: テキストファイルの作成"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-なぜ: テキストファイルを書くことに関わる理由
+## なぜテキストファイルを作成するのか
 
-テキストファイルは、データを整理して保存するための重要なツールです。プログラミングにおいても、データを読み書きする必要があるため、テキストファイルを書くことは重要です。
+テキストファイルを作成することで、プログラムの出力やデータの保存など、さまざまな目的を達成することができます。
 
-この記事では、Kotlinを使ってテキストファイルを書く方法をご紹介します。
+## 作成方法
 
-## テキストファイルを書く方法
+テキストファイルを作成するには、Kotlinの```File```クラスを使用します。以下のコードを使用して、新しいテキストファイルを作成し、テキストを書き込むことができます。
 
-テキストファイルを書くためには、まず必要なのはファイルを新規で作成することです。次に、ファイルに書き込む文字列を指定し、ファイルに書き込む処理を行います。
-
-以下の例では、"Hello, world!"という文字列をカレントディレクトリに新しいファイルとして書き込みます。
-
-```Kotlin
-val str = "Hello, world!"
-val file = File("output.txt")
-
-file.writeText(str)
+```kotlin
+val file = File("sample.txt")
+file.writeText("Hello, world!")
 ```
 
-上記のコードを実行すると、"output.txt"というファイルが作成され、その中に"Hello, world!"という文字列が書き込まれます。
+上記のコードでは、まず```File```クラスを使用して新しいファイルを作成し、そのファイルに```writeText()```メソッドを使用してテキストを書き込んでいます。ここで、ファイル名は```sample.txt```として設定されていますが、任意のファイル名を使用することができます。
 
-また、複数行の文字列を書き込む場合は、`writeText()`ではなく`writeLines()`を使います。
+## ディープダイブ
 
-```Kotlin
-val lines = listOf("This is line 1", "This is line 2", "This is line 3")
-val file = File("output.txt")
+テキストファイルを作成する際には、ファイルのパスや書き込むテキストのエンコーディングを指定することができます。また、ファイルを開く際には```FileWriter```クラスを使用することもできます。さらに、テキストファイルを読み込む際には```BufferedReader```クラスを使用できます。
 
-file.writeLines(lines)
-```
+## その他にも参考になるリンク
 
-このように、`writeText()`や`writeLines()`メソッドを使うことで、簡単にテキストファイルを書くことができます。
-
-## テキストファイルについての深掘り
-
-テキストファイルは、コンピュータにとっては単なるバイトの列であるため、文字コードの設定が重要です。Kotlinでは、`File`クラスのインスタンスを作成する際に、文字コードを指定することができます。
-
-また、ファイルの読み書きには`Charset`クラスを使用し、ファイルの文字コードを指定することもできます。
-
-さらに、ファイルを開く際には`BufferedReader`や`BufferedWriter`クラスを使用することで、効率的に読み書きを行うことができます。
-
-## それ以外にも参考になるリンク
-
-- [Kotlin公式ドキュメント: ファイルの読み書き](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Kotlin Tips: テキストファイルの読み込みと書き込み](https://kotlinlang.org/docs/tutorials/kotlin-for-py/strings-and-regexes.html#stringio)
-- [Tech Academy: KotlinのFileクラスでテキストファイルを扱う方法](https://techacademy.jp/magazine/20549)
+[Fileクラスのドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)  
+[Kotlinのファイル操作についてのチュートリアル](https://www.tutorialsbuddy.com/kotlin-file-handling)  
+[Kotlinでファイルを読み書きする方法](https://www.geeksforgeeks.org/kotlin-file-inputoutput-operations/)

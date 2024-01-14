@@ -1,32 +1,60 @@
 ---
-title:    "Swift: Lettura degli argomenti dalla riga di comando"
+title:    "Swift: Lettura degli argomenti della riga di comando"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se stai cercando di diventare un programmatore Swift di successo, probabilmente sei consapevole dell'importanza di imparare a leggere gli argomenti della riga di comando. Questa è una competenza fondamentale per molte applicazioni e ti permetterà di creare programmi più versatili e interattivi per gli utenti.
+Se siete sviluppatori Swift, è probabile che abbiate sentito parlare di argomenti della riga di comando. Questi sono input che vengono passati al vostro programma quando viene eseguito da una riga di comando o da una shell. Ma perché dovreste imparare a leggere questi argomenti? Beh, ci sono molti casi in cui questo può essere utile, ad esempio quando si vuole fornire opzioni personalizzabili al vostro programma o quando si vuole passare dati esterni al programma.
 
 ## Come fare
 
-Per leggere gli argomenti della riga di comando in Swift, è sufficiente utilizzare il metodo `CommandLine.arguments` all'interno del blocco `main`. Ecco un esempio di codice:
+In Swift, possiamo leggere gli argomenti della riga di comando utilizzando l'oggetto `CommandLine`, che rappresenta l'intera riga di comando. Esistono due metodi principali per accedere agli argomenti:
+
+1. Usando gli indici degli argomenti per accedere a un argomento specifico
+2. Iterando attraverso tutti gli argomenti utilizzando un ciclo `for`
+
+Qui di seguito trovate un esempio di codice che mostra come leggere il primo argomento passato al programma:
 
 ```Swift
-import Foundation
-
-let arguments = CommandLine.arguments
-print(arguments)
+let firstArgument = CommandLine.arguments[1]
+print("Il primo argomento è: \(firstArgument)")
 ```
 
-Utilizzando questo codice, verranno restituiti tutti gli argomenti della riga di comando inseriti dall'utente al momento dell'esecuzione del programma. Per esempio, se l'utente esegue il programma con `swift myProgram.swift arg1 arg2`, l'array `arguments` conterrà i valori `[myProgram.swift, arg1, arg2]`.
+Se si vuole iterare attraverso tutti gli argomenti, possiamo utilizzare il seguente codice:
+
+```Swift
+for (index, argument) in CommandLine.arguments.enumerated() {
+    print("Argomento \(index): \(argument)")
+}
+```
+
+Ecco un esempio di output di entrambi i metodi:
+
+```shell
+$ swift read_args.swift Hello World
+Il primo argomento è: Hello
+Argomento 0: /usr/bin/swift
+Argomento 1: read_args.swift
+Argomento 2: Hello
+Argomento 3: World
+```
 
 ## Approfondimento
 
-Oltre al semplice accesso agli argomenti della riga di comando, Swift offre diverse funzionalità avanzate per manipolarli. Ad esempio, è possibile utilizzare l'operatore ternario per fornire valori di default in caso di mancanza di alcuni argomenti, o convertire gli argomenti in tipi di dati specifici usando metodi come `Int()` o `Double()`.
+Oltre ai metodi di base per leggere gli argomenti della riga di comando, ci sono alcune cose da tenere a mente quando si lavora con essi:
+
+- Il primo argomento (indice 0) è sempre il percorso del programma stesso
+- Gli spazi nei valori passati come argomenti vengono ignorati, a meno che non siano racchiusi tra virgolette `" "` o apostrofi `' '`
+- Se si passano argomenti contenenti `=` (ad esempio `--key=value`), il segno `=` verrà ignorato e il valore verrà incluso nell'argomento
+
+Inoltre, si possono utilizzare librerie di terze parti come `CommandLineKit` per semplificare la gestione degli argomenti della riga di comando in Swift.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Swift su CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Tutorial su come leggere gli argomenti della riga di comando in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-command-line-arguments-using-commandline)
+- [Documentazione di Apple: CommandLine](https://developer.apple.com/documentation/foundation/commandline)
+- [CommandLineKit su GitHub](https://github.com/jatoben/CommandLine)
+- [Articolo su Swift by Sundell: Working with the command line in Swift](https://www.swiftbysundell.com/articles/working-with-the-command-line-in-swift/)

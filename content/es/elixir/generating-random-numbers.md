@@ -1,30 +1,53 @@
 ---
-title:    "Elixir: Generando números aleatorios"
+title:    "Elixir: Generación de números aleatorios"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué generar números aleatorios en Elixir
+## Por qué
 
-Si eres un programador de Elixir o estás interesado en aprender sobre este lenguaje de programación funcional, es posible que te hayas preguntado por qué es importante generar números aleatorios en tus aplicaciones. En este post, te explicaré por qué es útil y te mostraré cómo hacerlo en Elixir.
+Generar números aleatorios es una habilidad importante para cualquier programador en Elixir. En muchos casos, necesitamos simular datos aleatorios para pruebas o para crear juegos y aplicaciones. Afortunadamente, en Elixir hay una manera fácil de generar números aleatorios, lo que hace que nuestro código sea más eficiente y dinámico.
 
-## Cómo generar números aleatorios en Elixir
+## Cómo hacerlo
 
-Generar números aleatorios en Elixir es bastante sencillo gracias a la función `:rand.uniform/1`. Esta función toma un número entero como argumento y genera un número aleatorio entre 0 y el número especificado. Por ejemplo:
+Elixir tiene una función incorporada llamada `rand/0` que nos permite generar un número entero aleatorio. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, podemos usar `rand(1..10)`.
 
-```elixir
-rand.uniform(10)
+```Elixir
+iex> rand(1..10)
+6
 ```
 
-Este código generará un número aleatorio entre 0 y 10, como 6 o 9. Es importante tener en cuenta que esta función utiliza un generador de números pseudoaleatorios, lo que significa que los números no son verdaderamente aleatorios, sino que siguen un patrón predecible. Sin embargo, para la mayoría de los casos, esto no es un problema y podrás obtener la aleatoriedad suficiente para tus aplicaciones.
+También podemos generar un número aleatorio de coma flotante entre 0 y 1 usando `Float.random/0`.
 
-## Profundizando en la generación de números aleatorios
+```Elixir
+iex> Float.random()
+0.8323526955950203
+```
 
-Si deseas tener un control más preciso sobre la generación de números aleatorios, Elixir te ofrece la función `:rand.seed/0`, que te permite establecer una semilla para el generador de números aleatorios. Esto es útil si necesitas repetir una secuencia de números aleatorios para pruebas o si deseas garantizar una secuencia específica para la aleatoriedad. Además, Elixir también cuenta con otras funciones para generar números aleatorios en diferentes formatos, como `:rand.float/1` para números decimales aleatorios o `:rand.choice/1` para elegir un elemento aleatorio de una lista.
+Si queremos generar una lista de números aleatorios, podemos usar la función `Enum.map/2` junto con `rand/0`.
 
-# Ver también
+```Elixir
+iex> 1..10 |> Enum.map(fn(_) -> rand(1..100) end)
+[34, 56, 10, 78, 43, 23, 89, 61, 5, 93]
+```
 
-- [Documentación de Elixir sobre generación de números aleatorios](https://hexdocs.pm/elixir/1.12/Kernel.SpecialForms.html#rand/0)
-- [Tutorial de Elixir para principiantes: generación de números aleatorios](https://www.tutorialspoint.com/elixir/elixir_random.htm)
-- [Ejemplos de uso de generación de números aleatorios en Elixir](https://www.tysonmaly.com/posts/elixir-random-number-generation-functionality/)
+También podemos especificar un número de elementos para nuestra lista aleatoria usando `Enum.map/3` y `Enum.reduce/3`.
+
+```Elixir
+iex> Enum.map(1..10, fn(_) -> rand(1..100) end, 0, &+/2)
+416
+```
+
+## Profundizando
+
+Si bien `rand/0` es fácil de usar, no siempre es eficiente en cuanto a rendimiento. Elixir también ofrece una librería llamada `:rand`, que se centra en la generación de números aleatorios más eficiente.
+
+Además, podemos especificar una semilla para nuestro generador de números aleatorios usando `Random.seed/1`, lo que nos permite generar los mismos números aleatorios en diferentes ejecuciones del código.
+
+## Ver también
+
+- Documentación oficial de Elixir sobre la generación de números aleatorios: https://hexdocs.pm/elixir/Kernel.html#rand/1
+- Blog post sobre la generación de números aleatorios con Elixir: https://www.badykov.com/elixir-random-number-generation/
+- Ejemplos de código para generar números aleatorios en Elixir: https://github.com/xtuc/Elixir-Random-Number-Generation

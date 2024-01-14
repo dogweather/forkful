@@ -1,36 +1,43 @@
 ---
 title:    "Kotlin: Utilizando expressões regulares"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar expressões regulares em Kotlin?
+# Por que usar expressões regulares em Kotlin?
 
-As expressões regulares são uma poderosa ferramenta para manipular e extrair informações de strings. Em Kotlin, elas podem ser usadas para encontrar padrões específicos em textos e realizar operações de busca, substituição e validação. Ao aprender a usar expressões regulares, você poderá simplificar e otimizar seu código, tornando suas tarefas de processamento de texto mais eficientes.
+As expressões regulares são padrões de caracteres que permitem que você encontre e manipule texto de forma eficiente. Em Kotlin, elas são implementadas pela classe `Regex` e podem ser usadas para tarefas como validação de entrada de usuário, extração de dados de texto e substituição de padrões.
 
 ## Como usar expressões regulares em Kotlin
 
-Para utilizar expressões regulares em Kotlin, é necessário importar a classe `Regex` e criar uma instância da mesma para representar o padrão que você deseja encontrar. Em seguida, você pode usar os métodos `find()`, `matchEntire()` ou `matches()` para realizar diferentes tipos de busca e validação. Veja um exemplo de código a seguir:
+Usar expressões regulares em Kotlin é relativamente simples. Primeiramente, você precisa criar uma instância da classe `Regex` passando o padrão que deseja procurar como argumento. Em seguida, basta chamar o método `find()`, `match()`ou `replace()` com a string que deseja manipular.
 
+Veja um exemplo de como validar um endereço de e-mail usando uma expressão regular em Kotlin:
+
+```Kotlin
+val emailRegex = Regex("[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}")
+val email = "exemplo@exemplo.com"
+
+if (emailRegex.find(email) != null) {
+    println("Endereço de e-mail válido!")
+} else {
+    println("Endereço de e-mail inválido!")
+}
 ```
-val regex = Regex("[0-9]+")
-val string = "Hello123World"
-val matchResult = regex.find(string)
+Saída:
+`Endereço de e-mail válido!`
 
-println(matchResult?.value) // saída: 123
-```
+## Mergulhando mais fundo nas expressões regulares em Kotlin
 
-Nesse código, criamos uma instância da classe `Regex` com o padrão "[0-9]+" que representa um ou mais números. Em seguida, aplicamos o método `find()` na string "Hello123World" e recebemos como resultado um objeto `MatchResult` que contém a string "123". Esse é apenas um exemplo simples, mas as possibilidades de utilização de expressões regulares em Kotlin são vastas.
+As expressões regulares em Kotlin podem ser combinadas com diversos métodos de string para uma manipulação mais complexa de texto. Por exemplo, você pode usar o método `find()` juntamente com o método `groupValues` para obter os valores correspondentes a cada grupo na expressão regular.
 
-## Aprofundando-se em expressões regulares
+Além disso, a classe `Regex` possui diversos métodos, como `replaceFirst()` e `replace()` que permitem substituir padrões em uma string. Você também pode usar o método `toPattern()` para obter o objeto `Pattern` correspondente à expressão regular, caso deseje utilizar em outras linguagens de programação.
 
-Além de apenas encontrar padrões, expressões regulares também podem ser usadas para extrair informações específicas de uma string. Por exemplo, você pode utilizar grupos de captura para resgatar partes específicas de uma string que correspondem a diferentes padrões. Há também a opção de utilizar modificadores para tornar a expressão regular mais flexível, possibilitando a utilização de letras maiúsculas e minúsculas, por exemplo.
+Para mais informações sobre o uso de expressões regulares em Kotlin, consulte a [documentação oficial](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.text/-regex/).
 
-No entanto, é importante lembrar que expressões regulares podem ser complexas e difíceis de entender, principalmente em casos de padrões complicados. Por isso, é necessário ter bastante prática e conhecimento para utilizá-las com eficiência. Uma boa dica é utilizar ferramentas online de teste de expressões regulares para verificar se o padrão que você está criando está realmente correspondendo ao que deseja.
+# Veja também
 
-## Veja também
-
-- [Documentação oficial do Regex em Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tutoriais sobre expressões regulares em Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
-- [Ferramenta online para teste de expressões regulares](https://regex101.com/r/0CNJUi/1)
+- [Documentação oficial do Kotlin sobre expressões regulares](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.text/-regex/)
+- [Exemplo de uso de expressões regulares em Kotlin](https://www.baeldung.com/kotlin-regex)

@@ -1,36 +1,37 @@
 ---
-title:    "Kotlin: Überprüfung der Existenz eines Verzeichnisses"
+title:    "Kotlin: Überprüfen, ob ein Verzeichnis vorhanden ist"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Das Überprüfen ob ein Verzeichnis existiert, ist eine wichtige Aufgabe in der Programmierung, um sicherzustellen, dass der Code reibungslos ausgeführt wird und keine Fehler verursacht. Es ist also sinnvoll, zu wissen, wie man dies in Kotlin erreichen kann.
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Aufgabe in der Programmierung. Es ermöglicht uns zu prüfen, ob bestimmte Dateien oder Ordner vorhanden sind, bevor wir versuchen, mit ihnen zu arbeiten. Dies hilft uns, Fehler zu vermeiden und einen zuverlässigen Code zu schreiben.
 
-##Wie geht das
+## Wie man es macht
 
-Es ist relativ einfach, in Kotlin zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein Beispielcode:
+Um zu überprüfen, ob ein Verzeichnis existiert, können wir die Funktion `exists()` aus der `File`-Klasse verwenden. Diese Funktion gibt uns einen booleschen Wert zurück, der angibt, ob das Verzeichnis existiert oder nicht.
+
 ```Kotlin
-val directory = File("C:/Users/Username/Documents")
-
-if(directory.exists()){
-    println("Das Verzeichnis existiert.")
-} else{
-    println("Das Verzeichnis existiert nicht.")
+val directory = File("/pfad/zum/verzeichnis")
+if (directory.exists()) {
+    println("Das Verzeichnis existiert!")
+} else {
+    println("Das Verzeichnis existiert nicht!")
 }
 ```
-Dieser Code erstellt eine `File` Instanz für das angegebene Verzeichnis und verwendet dann die Methode `exists()`, um zu prüfen, ob es tatsächlich existiert oder nicht. Je nach Ergebnis wird eine entsprechende Nachricht ausgegeben.
 
-##Tiefergehende Informationen
+In diesem Beispiel erstellen wir ein `File`-Objekt für das angegebene Verzeichnis und rufen dann die `exists()`-Funktion auf. Wenn das Verzeichnis existiert, wird die entsprechende Meldung ausgegeben, ansonsten wird die andere Meldung angezeigt.
 
-Bevor Sie beginnen, Verzeichnisse in Ihrem Code zu überprüfen, sollten Sie verstehen, wie sie in Ihrem Betriebssystem strukturiert sind. In Windows werden Verzeichnisse normalerweise durch Verzeichnisnamen und dem Backslash-Symbol (`\`) getrennt, während in Unix-Systemen der Trennzeichen erfolgt durch das Vorwärtsschrägstrich-Symbol (`/`).
+## Tiefere Einblicke
 
-Es gibt auch die Möglichkeit, in Kotlin mit relativen Pfaden zu arbeiten, indem man die Methode `relativeTo()` verwendet. In Linux-Systemen können beispielsweise relative Pfade von Ihrem aktuellen Arbeitsverzeichnis aus in einem Befehl verwendet werden. Dies ist besonders nützlich, wenn Sie Code schreiben, der auf verschiedenen Systemen ausgeführt werden soll.
+Bevor wir ein Verzeichnis überprüfen, müssen wir sicherstellen, dass wir den richtigen Pfad dafür angeben. Wir können dies tun, indem wir die Funktion `isDirectory()` aus der `File`-Klasse verwenden. Diese Funktion gibt uns ebenfalls einen booleschen Wert zurück und überprüft, ob die angegebene Datei tatsächlich ein Verzeichnis ist.
 
-##Siehe auch
+Ein weiterer wichtiger Punkt ist, dass die `exists()`-Funktion lediglich prüft, ob das Verzeichnis da ist, jedoch nicht, ob wir Zugriff auf das Verzeichnis haben. Wir müssen also auch sicherstellen, dass wir die erforderlichen Berechtigungen haben, um auf das Verzeichnis zuzugreifen.
 
-- [Dokumentation zu `File` in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Tutorial zu Datei- und Verzeichnisoperationen in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_file_io.htm)
-- [Vergleich von Windows- und Unix-Pfaden](https://www.shell-tips.com/2010/06/13/file-paths-in-windows-and-unix/)
+## Siehe auch
+
+- [Java Dokumentation zu File.exists()](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#exists())
+- [Kotlin Dokumentation zu File.isDirectory()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/is-directory.html)

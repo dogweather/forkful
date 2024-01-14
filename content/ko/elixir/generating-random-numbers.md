@@ -1,44 +1,43 @@
 ---
-title:    "Elixir: 난수 생성하기"
+title:    "Elixir: 랜덤 숫자 생성하기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-Elixir 프로그래밍 블로그 포스트: 무작위 숫자 생성하기
-
 ## 왜
 
-당신은 어떻게 무작위 숫자를 생성하는지 궁금하셨나요? Elixir를 사용하면 당신의 애플리케이션에 다양한 방식으로 무작위 숫자를 생성할 수 있습니다. 예를 들면, 암호 생성, 랜덤한 유저 식별자 생성 등이 있습니다. 이러한 무작위 숫자는 보안이나 다양한 데이터 샘플링에 유용합니다. 그럼 한 번 방법을 살펴보겠습니다!
+랜덤 숫자를 생성하는 것이 중요한 이유는 다양한 응용 분야에서 임의의 값이 필요하기 때문입니다. 예를 들어 게임에서 적들의 위치나 적절한 보상을 계산하기 위해 랜덤 숫자를 사용합니다.
 
 ## 방법
 
-Elixir에서 무작위 숫자를 생성하는 방법은 간단합니다. 먼저 Elixir에서 제공하는 라이브러리인 `:rand`를 import해야 합니다. 그런 다음 `:rand.uniform/0` 함수를 호출하면 된다는 건가요? 아니요, 이 함수는 항상 같은 숫자를 리턴하기 때문에 우리가 원하는 무작위 숫자를 받기 위해서는 `seed` 값을 넘겨줘야 합니다. 우선 아래와 같은 코드로 seed 값을 생성해보겠습니다.
+랜덤 숫자를 생성하는 방법은 간단합니다. 먼저 Elixir의 내장 함수인 `:rand.uniform/0`을 사용하여 0과 1 사이의 임의의 실수를 생성할 수 있습니다. 다음 예시 코드를 살펴봅시다.
 
 ```Elixir
-{ :ok, pseudorandom1 } = :rand.seed(:erlang.system_time(:micro_second))
-{ :ok, pseudorandom2 } = :rand.seed(:erlang.system_time(:micro_second))
-IO.puts("first random number: #{pseudorandom1}")
-IO.puts("second random number: #{pseudorandom2}")
+number = :rand.uniform()
+IO.puts("The random number is #{number}")
 ```
 
-위 코드를 실행해보면, 두 개의 다른 무작위 숫자를 출력하는 것을 볼 수 있습니다. `:rand.seed/1` 함수는 매우 작은 시드 값을 입력으로 받는데, 그렇기 때문에 우리는 무작위 숫자를 생성하기 위해 우리의 시스템 시간을 이용했습니다.
+위 코드를 실행하면 화면에 "The random number is 0.783"와 같이 랜덤 실수가 출력됩니다.
 
-하지만 이 값들은 항상 같은 값을 리턴할까요? 아니요, 다음과 같은 코드를 실행하면 계속해서 다른 무작위 숫자를 출력할 수 있습니다.
+또한, 임의의 정수를 생성하기 위해서는 `:rand.uniform/1` 함수를 사용할 수 있습니다. 이 함수는 매개변수로 최솟값과 최댓값 사이의 임의의 정수를 생성합니다. 예시 코드를 살펴봅시다.
 
 ```Elixir
-{ :cont, pseudorandom } = :rand.uniform()
-IO.puts("random number: #{pseudorandom}")
+number = :rand.uniform(1, 100)
+IO.puts("The random number is #{number}")
 ```
 
-`while` 루프를 사용하여 무작위 숫자를 계속해서 생성할 수도 있습니다. 또한 `:rand` 라이브러리에는 최소값과 최대값을 입력으로 받아 원하는 범위 내의 무작위 숫자를 생성하는 함수도 있습니다.
+위 코드를 실행하면 화면에 "The random number is 47"와 같이 1부터 100 사이의 임의의 정수가 출력됩니다.
 
-## 깊게 파고들기
+## 깊이 파고들기
 
-위 코드 예제를 통해 알 수 있듯이, Elixir에서는 무작위 숫자를 생성하기 위한 다양한 방법을 제공합니다. 하지만 `:rand` 라이브러리는 유사 난수를 생성하기 때문에 보안을 위해 사용하는 것은 적합하지 않습니다. 또한 특정 시드 값을 사용하면 예측할 수 있는 값들을 생성할 수 있기 때문에, 암호화와 같은 보안 기능에는 적합하지 않습니다. 따라서 보안에 중요한 영향을 끼칠 수 있는 코드를 작성할 때에는 다른 라이브러리나 방법을 고려하는 것이 좋습니다.
+Elixir는 `:rand` 모듈을 통해 랜덤 숫자를 생성할 수 있습니다. 이 모듈은 `seed/0` 함수를 제공하는데, 이를 사용하면 랜덤 숫자의 시드 값을 설정할 수 있습니다. 시드 값은 랜덤 숫자를 생성하는 알고리즘에 영향을 주는 값으로, 동일한 시드 값을 설정하면 항상 같은 랜덤 숫자가 생성됩니다.
 
-그 외에도 Elixir에서는 다양한 방식으로 무작위 숫자를 생성할 수 있습니다. `UUID` 라이브러리를 이용하면 고유한 유니크 값들을 생성할 수 있고, `Base` 라이브러리를 사용하면 문자열로 된 무작위 값들을 생성할 수도 있습니다.
+이외에도 Elixir에서는 더 강력한 랜덤 숫자 생성 라이브러리인 `:rand_compat`과 `:random`도 제공됩니다. 이 라이브러리를 사용하면 다양한 분포의 랜덤 숫자를 생성할 수 있으며, 추가적인 기능들도 제공합니다.
 
-## 연관 자료
+## 더보기
 
-- [Elixir 공식 문서 -
+- [Elixir 공식 문서 - :rand 모듈](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#rand/1)
+- [Elixir 공식 문서 - :rand_compat 모듈](https://hexdocs.pm/rand_compat/readme.html)
+- [Elixir 공식 문서 - :random 모듈](https://hexdocs.pm/elixir/Random.html)

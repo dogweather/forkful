@@ -1,39 +1,74 @@
 ---
 title:    "Ruby: 编写测试"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要写测试？
+# 为什么?
 
-写测试是软件开发中的关键步骤，可以帮助我们检查代码是否正常工作，避免出现错误和Bug。它也可以帮助我们保证代码质量和可靠性。
+写测试，是软件开发中不可或缺的一个环节。通过编写测试代码，可以确保我们的软件在每次更改后仍然能够正常运行。同时，它也能够帮助开发者在编码过程中发现潜在的问题，并提高整体代码质量。
 
-## 如何编写测试？
+# 如何编写测试?
+
+编写测试并不难，下面我们通过一些实例来解释如何使用Ruby进行测试。
+
+首先，我们需要安装RSpec库。在终端输入以下命令即可：
 
 ```Ruby
-# example_test.rb
-require "minitest/autorun"
+gem install rspec
+```
 
-class ExampleTest < Minitest::Test
-  def test_addition
-    assert_equal 4, 2 + 2
+接着创建一个新的Ruby文件，命名为“calculator.rb”，包含两个方法：add和subtract。
+
+```Ruby
+def add(x, y)
+  x + y
+end
+
+def subtract(x, y)
+  x - y
+end
+```
+
+现在，我们为这些方法编写测试代码。在同一目录下，创建一个新的RSpec测试文件，命名为“calculator_spec.rb”。
+
+```Ruby
+require_relative "calculator" # 导入我们刚刚创建的“calculator”文件
+
+RSpec.describe "Calculator" do
+  describe "add" do
+    it "returns the sum of two numbers" do
+      expect(add(1, 2)).to eq(3)
+    end
+  end
+
+  describe "subtract" do
+    it "returns the difference of two numbers" do
+      expect(subtract(5, 3)).to eq(2)
+    end
   end
 end
 ```
 
-运行代码会输出以下结果：
+现在我们可以运行测试文件来验证代码是否正确。在终端输入以下命令：
+
+```Ruby
+rspec calculator_spec.rb
 ```
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
-```
 
-这是一个简单的测试例子，在`test_addition`方法中，我们使用`assert_equal`断言来比较实际结果和期望结果，如果两者相同，则测试通过。如果测试不通过，会有错误或者失败的信息打印出来，帮助我们定位问题所在。另外，我们也可以在测试文件中添加多个测试方法，测试不同的功能和场景。
+如果一切顺利，你将会得到两个通过的测试案例。
 
-## 深入了解
+# 深入了解
 
-除了简单的断言，我们还可以使用`assert`、`refute`等方法来进一步判断代码的正确性。还有一些其他的测试工具和库，如RSpec、Capybara等，可以帮助我们进行更复杂的测试。同时，了解TDD（测试驱动开发）等开发方法也能帮助我们更好地编写测试。
+编写测试并不只是为了验证代码是否按预期运行。它也能帮助我们为未来的改动做好准备，避免不必要的错误。此外，编写测试也能够让我们更加自信地重构代码，从而提高整体代码质量。
 
-## 参考资料
-- [Ruby MiniTest Documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/minitest/rdoc/index.html)
-- [Writing Tests for Ruby](https://www.rubyguides.com/2018/07/ruby-testing-minitest/)
-- [The RSpec Book](https://pragprog.com/book/achbd/the-rspec-book)
+总的来说，编写测试是一种良好的编程习惯，能够帮助我们更加高效地开发软件。
+
+# 参考资料
+
+* [RSpec官方网站](https://rspec.info/)
+* [RSpec教程](https://www.tutorialspoint.com/rspec/index.htm)
+* [Ruby编程语言官方网站](https://www.ruby-lang.org/en/)
+* [Ruby文档](https://www.ruby-doc.org/)

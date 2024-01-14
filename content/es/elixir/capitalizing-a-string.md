@@ -1,60 +1,47 @@
 ---
-title:    "Elixir: Capitalizar una cadena"
+title:    "Elixir: Capitalización de una cadena"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué capitalizar una cadena de texto en Elixir?
 
-Capitalizar una cadena de caracteres es una tarea común en la programación y puede ayudar a mejorar la legibilidad de un código. Si estás trabajando en un proyecto donde necesitas mostrar datos en mayúsculas, o simplemente quieres dar una mejor apariencia a tus mensajes de error, capitalizar una cadena es una gran opción.
+Capitalizar una cadena de texto puede ser útil para mejorar la legibilidad y presentación de datos en una aplicación. Además, puede ser necesario cuando se trabaja con información sensible, como nombres de usuarios o contraseñas.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena en Elixir, podemos utilizar la función `capitalize/1`, que recibe como parámetro la cadena que queremos capitalizar. A continuación, un ejemplo de cómo utilizar esta función en un programa sencillo:
+Utilizar la función `String.capitalize/1` es la forma más sencilla de capitalizar una cadena en Elixir. Aquí hay un ejemplo de código que capitaliza una cadena y muestra el resultado en la consola:
 
-```Elixir
-defmodule Main do
-  def capitalize_example do
-    input = "ejemplo de cadena"
-    output = capitalize(input)
-    IO.puts output
-  end
-end
-
-Main.capitalize_example()
-
-# Output: Ejemplo de cadena
+```Elixir 
+cadena = "hola mundo"
+capitalizado = String.capitalize(cadena)
+IO.puts(capitalizado)
 ```
 
-Como se puede observar, la función `capitalize/1` toma la cadena "ejemplo de cadena" y la convierte a "Ejemplo de cadena". Esta función también se puede utilizar en cadenas que ya contengan mayúsculas, ya que no las afectará.
+Salida: "Hola mundo"
 
-Otra opción para capitalizar una cadena es utilizar la función `String.capitalize/1`, que funciona de la misma manera que `capitalize/1`. Sin embargo, esta función también tiene en cuenta la regla de capitalización de palabras compuestas. A continuación, un ejemplo de cómo se comportaría `String.capitalize/1` en una cadena con una palabra compuesta:
+También se puede utilizar `String.upcase/1` para convertir una cadena en mayúsculas o `String.downcase/1` para convertirla en minúsculas. Aquí hay un ejemplo de código que convierte una cadena a mayúsculas:
 
-```Elixir
-defmodule Main do
-  def capitalize_example do
-    input = "cadena compuesta"
-    output = String.capitalize(input)
-    IO.puts output
-  end
-end
-
-Main.capitalize_example()
-
-# Output: Cadena Compuesta
+```Elixir 
+cadena = "hola mundo"
+mayusculas = String.upcase(cadena)
+IO.puts(mayusculas)
 ```
 
-Si bien ambos métodos producen el mismo resultado en cadenas simples, es importante tener en cuenta esta diferencia en casos de texto más complejos.
+Salida: "HOLA MUNDO"
 
 ## Profundizando
 
-En Elixir, las cadenas no se modifican directamente, sino que se crea una nueva cadena cada vez que se realiza una operación. Por lo tanto, cuando utilizamos la función `capitalize/1`, se crea una nueva cadena a partir de la original con el cambio necesario.
+Elixir ofrece varias funciones para manipular y formatear cadenas de texto. Además de `String.capitalize/1`, también se pueden utilizar `String.capitalize_first/1` y `String.capitalize_words/1`. Estas funciones proporcionan más opciones para capitalizar cadenas en diferentes contextos.
 
-Además de `capitalize/1` y `String.capitalize/1`, también existen otras funciones como `String.upcase/1` y `String.downcase/1` que nos permiten convertir una cadena a mayúsculas o minúsculas, respectivamente.
+Además, Elixir también ofrece el módulo `String.Case` que contiene varias funciones para manipular el formato de las cadenas de texto, incluyendo la mayoría de las funciones de capitalización.
+
+Para obtener más información sobre cómo manipular cadenas en Elixir, se recomienda revisar la documentación oficial del lenguaje o buscar ejemplos y tutoriales en línea.
 
 ## Ver también
 
-- [Documentación de Elixir sobre cadenas](https://hexdocs.pm/elixir/String.html)
-- [Tutorial de Elixir en español](https://elixirespanol.github.io/)
-- [Ejercicios de Elixir en línea con Proyecto Euler](https://euler.codes/)
+- [Documentación oficial de Elixir sobre cadenas de texto](https://elixir-lang.org/getting-started/string.html)
+- [Ejemplos de manipulación de cadenas en Elixir](https://blog.lelonek.me/elixir-strings-in-depth-4ef7a4188aaa)
+- [Tutorial de Elixir sobre cadenas y patrones de texto](https://elixirschool.com/es/lessons/basics/basics/#cadenas-y-patrones-de-texto-en-elixir)

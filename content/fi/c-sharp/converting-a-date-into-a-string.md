@@ -1,52 +1,39 @@
 ---
 title:    "C#: Päivämäärän muuttaminen merkkijonoksi"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Useimmat ohjelmat käsittelevät päivämääriä ja aikaa ainakin jossain vaiheessa. On tärkeää pystyä muuttamaan nämä arvot merkkijonoksi, jotta niitä voidaan käyttää esimerkiksi tulostuksessa tai tallentamisessa tietokantaan.
+### Miksi muuttaa päivämäärä merkkijonoksi?
 
-## Kuinka tehdä
-Seuraava koodiesimerkki näyttää, kuinka muuttaa päivämäärä ja aika merkkijonoksi käyttäen C#-ohjelmointikieltä:
+Päivämäärien muuttaminen merkkijonoiksi on tärkeä osa ohjelmointia, joka mahdollistaa päivämääräarvojen tallentamisen ja käsittelyn tietokannoissa ja tekstitiedostoissa. Merkkijonoiksi muuttaminen myös helpottaa päivämääräarvojen tulkintaa ja näyttämistä käyttäjille.
 
-```C#
-// Luo uusi DateTime-objekti annetuilla arvoilla
-DateTime date = new DateTime(2021, 11, 5, 14, 30, 0);
-
-// Käytä ToString-metodia muuttaaksesi päivämäärä ja aika merkkijonoksi
-string dateString = date.ToString();
-
-// Tulosta tulos konsoliin
-Console.WriteLine(dateString);
-
-// Output: 11/5/2021 2:30:00 PM
-```
-
-Toinen tapa muuttaa päivämäärä ja aika merkkijonoksi on käyttää ToString-metodin yhteydessä toista parametria, joka määrittää halutun muodon. Seuraava koodi muuttaa päivämäärän ja ajan englanninkieliseen muotoon:
+### Kuinka muuttaa päivämäärä merkkijonoksi?
 
 ```C#
-string dateString = date.ToString("MM/dd/yyyy hh:mm:ss tt");
-
-// Output: 11/05/2021 02:30:00 PM
+// Alustetaan DateTime-tyyppinen muuttuja, joka sisältää nykyisen päivämäärän.
+DateTime tänään = DateTime.Today;
+// Muutetaan päivämäärä merkkijonoksi käyttämällä ToString-metodia.
+string merkkijonoPäivästä = tänään.ToString();
+// Tulostetaan merkkijono konsoliin.
+Console.WriteLine(merkkijonoPäivästä);
 ```
 
-On myös mahdollista määrittää oma muoto päivämäärälle ja ajalle käyttämällä erilaisia merkkejä ja merkkijonoja. Esimerkiksi seuraava koodi muuttaa päivämäärän ja ajan seuraavaan muotoon: "Perjantai 5. marraskuuta 2021 klo 14.30":
+**Tulos:**
 
-```C#
-string dateString = date.ToString("dddd d. MMMM yyyy 'klo' HH.mm");
-
-// Output: Perjantai 5. marraskuuta 2021 klo 14.30
+```
+02/10/2021 00:00:00
 ```
 
-Oman muodon määrittäminen voi olla hyödyllistä, jos haluat mukauttaa päivämäärän ja ajan ulkoasua tiettyyn tarkoitukseen.
+### Syventävä tarkastelu
 
-## Syvällisempää tietoa
-Päivämäärän ja ajan muuttaminen merkkijonoksi ei ole vaikeaa C#:ssa, mutta on tärkeää ymmärtää muutaman asian siitä, miten tämä toimii. Ensinnäkin, ToString-metodin käyttämä oletusmuoto voi vaihdella eri kielialueilla. Esimerkiksi englanninkielisessä ympäristössä päivämäärä ja aika muunnetaan yleensä kuukausi/päivä/vuosi -muotoon, mutta suomenkielisessä ympäristössä se voi olla päivä/kuukausi/vuosi. Tästä syystä on tärkeää määrittää haluttu muoto toisena parametrina ToString-metodille.
+Päivämäärän muuttaminen merkkijonoksi ei ole aina yksiselitteinen prosessi, vaan siihen liittyy erilaisia muotoilu- ja lokalisaatio-ongelmia. Esimerkiksi koodin pitäisi tuottaa eri formaattia eri kielissä. Lisäksi merkkijonon sisältö ja muotoilu voivat vaihdella sen mukaan, onko päivämäärä esimerkiksi ennen vai jälkeen puolenyön.
 
-Toiseksi, päivämäärän ja ajan muuttaminen merkkijonoksi käyttäen ToString-metodia käyttää oletusarvoisesti kulttuuriasetuksia. Kulttuuriasetuksilla tarkoitetaan alueellisia asetuksia, kuten desimaalierottimen ja ajan muodon muotoilua. Jos haluat määrittää oman kulttuuriasetuksen, voit käyttää ToString-metodia kolmella parametrilla: haluttu muoto, kulttuuriasetukset ja IFormatProvider -rajapinnan toteuttava objekti.
+C# tarjoaa kuitenkin laajan valikoiman erilaisia muotoiluvaihtoehtoja päivämäärän muuttamiseen merkkijonoksi, kuten päivämäärän esittäminen tiettynä viikonpäivänä tai vuoden päivämäärän järjestysnumerona.
 
-## Katso myös
-- [DateTime.ToString-metodi (C#-ohjelmointikieli)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
-- [
+### Katso myös
+
+- [DateTime.ToString Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [Standard Numeric Format Strings - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings?view=net-5.0)

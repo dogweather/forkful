@@ -1,31 +1,49 @@
 ---
-title:    "PHP: Eliminazione di caratteri corrispondenti a un modello"
+title:    "PHP: Eliminazione dei caratteri corrispondenti a un modello"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Cancellare i caratteri che corrispondono ad un particolare schema può essere utile in diverse situazioni di programmazione. Ad esempio, per pulire una stringa di input o per filtrare dati non desiderati da un array.
+Ci sono molte ragioni per cui potresti trovare la necessità di eliminare dei caratteri che corrispondono ad un determinato modello all'interno del tuo codice PHP. Forse stai cercando di validare l'input degli utenti, oppure vuoi rimuovere caratteri invisibili che possono causare errori. Qualunque sia il motivo, esiste un modo semplice per farlo utilizzando il linguaggio di programmazione PHP.
 
 ## Come fare
 
-Per effettuare questa operazione in PHP, possiamo utilizzare la funzione `preg_replace()`. Questa funzione prende come parametri l'espressione regolare che descrive il pattern da eliminare, il rimpiazzo desiderato e la stringa di input su cui effettuare la sostituzione. 
+Per eliminare i caratteri che corrispondono ad un modello, è necessario utilizzare la funzione `preg_replace()` in PHP. Questa funzione accetta tre parametri: il modello di ricerca, il nuovo valore di sostituzione e la stringa da cui eliminare i caratteri. Per esempio, se volessimo eliminare tutti i numeri da una stringa, il codice sarebbe il seguente:
 
 ```PHP
-$input = "14-06-2020";
-$output = preg_replace('/[^0-9]/s', '', $input);
-echo $output;
+<?php
+$stringa = "Hello123World";
+$stringa_nuova = preg_replace("/[0-9]/", "", $stringa);
+echo $stringa_nuova; //Stampa "HelloWorld"
+?>
 ```
-Nell'esempio sopra, stiamo eliminando tutti i caratteri che non sono numeri dalla stringa "14-06-2020", ottenendo così il risultato "14062020".
+In questo esempio, abbiamo utilizzato il modello `/[0-9]/` che indica tutti i numeri da 0 a 9. Tutti i caratteri che corrispondono a questo modello verranno sostituiti con una stringa vuota, effettivamente eliminandoli dalla stringa originale.
+
+È possibile utilizzare anche espressioni regolari più complesse per eliminare caratteri specifici o intere parole. Ad esempio, se volessimo eliminare tutte le vocali da una stringa, potremmo utilizzare il modello `/[aeiou]/i`, dove il flag `i` indica che la ricerca deve essere case-insensitive. 
 
 ## Approfondimento
 
-La funzione `preg_replace()` utilizza le espressioni regolari per identificare il pattern da eliminare nella stringa di input. Per chi non è familiare con le espressioni regolari, queste sono delle sequenze di caratteri che descrivono uno schema preciso. Ad esempio, `[0-9]` indica tutti i numeri da 0 a 9, mentre `[^0-9]` indica tutti i caratteri che non sono numeri. Possiamo utilizzare queste espressioni per eliminare caratteri speciali, lettere e simboli specifici da una stringa.
+Se stai cercando di eliminare caratteri da una stringa che può contenere anche caratteri speciali, come ad esempio un URL, è importante utilizzare la funzione `preg_quote()` per evitare errori.
+
+Ecco un esempio di come utilizzarla:
+
+```PHP
+<?php
+$stringa = "https://www.example.com/?var=foo&bar=baz";
+$caratteri_speciali = ["+", "=", "&"];
+$stringa_nuova = preg_replace("/[" . preg_quote(implode($caratteri_speciali)) . "]/", "", $stringa);
+echo $stringa_nuova; //Stampa "httpswwwexample.com?varfoobarbaz"
+?>
+```
+
+In questo caso, abbiamo utilizzato la funzione `preg_quote()` per indicare a `preg_replace()` di non considerare i caratteri speciali indicati all'interno dell'espressione regolare.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [Guida alle espressioni regolari in PHP](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
-- [Tutorial di espressioni regolari su Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
+- [Documentazione PHP: La funzione preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [Esempi di espressioni regolari in PHP](https://www.w3schools.com/php/php_regex.asp)
+- [Validazione input degli utenti in PHP](https://www.w3schools.com/php/php_form_validation.asp)

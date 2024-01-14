@@ -1,62 +1,63 @@
 ---
-title:    "C++: 「標準エラーへの書き込み」"
+title:    "C++: 標準エラーへの書き込み"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-プログラマーにとって、エラーの出力は非常に重要です。エラーが発生した場合、デバッグに役立つ情報を提供するだけでなく、コードの動作を理解するのにも役立ちます。それでは、C++に限らず、様々なプログラミング言語でよく使われている標準エラー出力について、詳しく見ていきましょう。
+C++プログラミングを行う上で、標準エラーへの書き込みを行う理由は何でしょうか？標準エラーへの書き込みは、プログラム実行中に発生したエラーをユーザーに表示するために使用されます。このように、プログラミングにおいて重要な役割を果たすことができます。
 
 ## 方法
-まずは、C++で標準エラー出力を行うための基本的なコードを見ていきましょう。
+標準エラーへの書き込みを行う方法を見ていきましょう。まずは、以下のように```C++```コードブロック内に、エラーを生成するコードを記述します。
 
 ```C++
 #include <iostream>
 
-int main() {
-    std::cerr << "エラーが発生しました。" << std::endl;
+int main()
+{
+    // 5で割り算を行い、エラーを生成する
+    int result = 10 / 0;
+    
+    return 0;
 }
 ```
 
-上記のように、<iostream>ヘッダーファイルを使用してiostreamライブラリをインポートし、std::cerrストリームを使用してエラーメッセージを出力しています。ここで、cerrのcはconsoleの略で、標準エラー出力を行うためのストリームです。また、endlを使用することで、改行を行うことができます。
+このように、プログラム実行中にエラーを発生させることができます。次に、標準エラーへの書き込みを行う部分を記述します。
 
-コンパイルして実行すると、以下のような出力になります。
+```C++
+#include <iostream>
+
+int main()
+{
+    // 5で割り算を行い、エラーを生成する
+    int result = 10 / 0;
+    
+    // 標準エラーへの書き込みを行う
+    std::cerr << "エラーが発生しました。" << std::endl;
+    
+    return 0;
+}
+```
+
+このように、```std::cerr```を使用して標準エラーへ書き込むことができます。最後に、プログラムを実行してみましょう。
 
 ```
+$ g++ main.cpp
+$ ./a.out
 エラーが発生しました。
 ```
 
-次は、エラーの詳細な情報を出力する例を見てみましょう。
+これにより、プログラム実行中にエラーが発生した場合でも、ユーザーは標準エラーへ書き込まれたメッセージを通じてエラーを確認することができます。
 
-```C++
-#include <iostream>
-#include <string>
+## ディープダイブ
+標準エラーへの書き込みを行う際には、```std::cerr```だけでなく、他の入出力ストリームを使用することも可能です。また、エラーの情報を詳しく出力するために、```std::cerr```には```<<```演算子を使用して複数のメッセージを連結することもできます。
 
-int main() {
-    // エラーの詳細を格納するstring変数を定義
-    std::string error_message = "データの読み込みに失敗しました。";
+## おわりに
+標準エラーへの書き込みについてご紹介しました。プログラム実行中にエラーが発生した場合でも、ユーザーがエラーを確認できるように標準エラーへの書き込みを行うことが重要です。ぜひ、今後のプログラミングで活用してみてください。
 
-    // 文字列と変数を結合して、エラーメッセージを作成
-    std::cerr << "エラーが発生しました：" + error_message << std::endl;
-}
-```
-
-今回は、stringヘッダーファイルを使用してstring型の変数を定義し、エラーメッセージの一部として使用しています。また、+演算子を使用して文字列と変数を結合しています。これにより、より詳細なエラーメッセージを出力することができます。
-
-出力結果は以下のようになります。
-
-```
-エラーが発生しました：データの読み込みに失敗しました。
-```
-
-## 詳細
-標準エラー出力を行うと、エラーが発生した時だけでなく、コードの実行中に任意のタイミングでメッセージを出力することもできます。そのため、標準エラー出力は単にエラーを表示するだけでなく、デバッグやプログラムの進行状況の監視にも役立つ便利な機能なのです。
-
-また、標準エラー出力にはデータの書き込みバッファがあり、デバッグ中にバッファリングされることなく即時にエラーメッセージを出力できるため、デバッグの効率を向上させることができます。
-
-## 参考
-- [CPP Reference: Standard Streams](https://en.cppreference.com/w/cpp/io/basic_filebuf)
-- [LearnCPP.com: C++ Standard Library - Iostream](https://www.learncpp.com/cpp-tutorial/c-out-expanding-on-the-basic-program/)
-- [TutorialsPoint: C++ Standard Library - Standard Streams](https://www.tutorialspoint.com/cplusplus/cpp_standard_streams.htm)
-- [GeeksforGeeks: Precision of floating-point numbers in C
+## さらに見る
+- [C++ 入門 — エラーメッセージを取得する方法](https://www.codecademy.com/learn/learn-c-plus-plus/modules/cpp-debugging/cheatsheet)
+- [C++ 公式ドキュメント —入出力ライブラリ](https://docs.microsoft.com/ja-jp/cpp/standard-library/input-output-library?view=msvc-160)
+- [C++ 標準出力と標準エラー出力の違い](https://itmanabi.com/std_err/)

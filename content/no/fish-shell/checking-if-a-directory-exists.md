@@ -1,32 +1,41 @@
 ---
-title:    "Fish Shell: Sjekker om en mappe eksisterer"
+title:    "Fish Shell: Å sjekke om en mappe eksisterer"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
 
-Hvis du noen gang har jobbet med å programmere i Fish Shell, har du kanskje lurt på om det er en enkel måte å sjekke om en mappe eksisterer. Å kjenne til denne funksjonaliteten kan være nyttig for å sørge for at skriptene dine fungerer som de skal og for å unngå feil.
+Å sjekke om en mappe eksisterer er en viktig og vanlig prosess når man skrive programmer i Fish Shell. Dette kan være nyttig for å unngå feil og sikre at koden din fungerer som forventet. 
 
-# Slik gjør du det
+# Hvordan gjøre det
 
-Det er en enkel kommando i Fish Shell for å sjekke om en mappe eksisterer, nemlig `test -d /sti/til/mappe`. Denne kommandoen tester om en mappe finnes på den spesifiserte plasseringen og vil returnere en sann eller usann verdi. Her er et eksempel på hvordan dette kan se ut i praksis:
+For å sjekke om en mappe eksisterer i Fish Shell, kan vi bruke kommandoen `test -d`. Denne kommandoen vil returnere en sann/ulik-verdi (true/false) basert på om mappen eksisterer eller ikke. Her er et eksempel på hvordan du kan bruke denne kommandoen:
 
 ```Fish Shell
-test -d /home/bruker/dokumenter
-
-echo $status
+test -d Documents
 ```
 
-I dette eksempelet vil `echo $status` printe ut enten `0` (sant) hvis mappen eksisterer, eller `1` (usant) hvis den ikke gjør det. På denne måten kan du lage en betingelse i skriptet ditt basert på resultatet av kommandoen.
+Hvis mappen "Documents" eksisterer, vil denne kommandoen returnere sann (true). Hvis ikke, vil det returnere ulikt (false).
+
+En annen måte å sjekke om en mappe eksisterer på er å bruke kommandoen `exists`. Denne kommandoen vil også returnere en sann/ulik-verdi basert på om mappen eksisterer eller ikke. Her er et eksempel på hvordan du kan bruke denne kommandoen:
+
+```Fish Shell
+exists Pictures
+```
+
+I tillegg til disse kommandoene, kan du også bruke forskjellige parametere som `-L` for å sjekke om en mappe er en symbolisk lenke, eller `-P` for å sjekke om en mappe er en vanlig mappe og ikke en lenke. Du kan lese mer om disse parametrene ved å bruke kommandoen `man test` i terminalen.
 
 # Dypdykk
 
-En annen måte å sjekke om en mappe eksisterer er å bruke `stat` kommandoen. Denne kommandoen vil gi deg informasjon om en fil eller mappe, inkludert størrelse, modus og når den sist ble endret. For å sjekke om en mappe eksisterer, kan du bruke `stat -t /sti/til/mappe` og sjekke om kommandoen returnerer en feilmelding. Dette kan være nyttig hvis du ønsker å få mer informasjon om mappen i tillegg til å sjekke om den eksisterer.
+Under overflaten bruker `test -d` og `exists` kommandoene faktisk `stat` kommandoen for å sjekke om en mappe eksisterer. `stat` kommandoen viser statusinformasjon om en fil eller mappe, inkludert om den eksisterer eller ikke. Når vi bruker `test -d` eller `exists` i Fish Shell, bruker de denne informasjonen til å returnere en sann/ulik-verdi basert på om mappen eksisterer eller ikke. 
+
+Det er også verdt å merke seg at `test -d` og `exists` kommandoene også vil fungere for å sjekke om en fil eksisterer, ved å bruke filens fulle bane i stedet for mappenavn. 
 
 # Se også
 
-- [Fish Shell offisiell nettside](https://fishshell.com/)
 - [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
+- [Linux-kommandoen "test"](https://linux.die.net/man/1/test)
+- [Linux-kommandoen "stat"](https://linux.die.net/man/1/stat)

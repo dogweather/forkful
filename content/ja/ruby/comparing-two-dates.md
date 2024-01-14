@@ -1,47 +1,33 @@
 ---
-title:    "Ruby: Begin your code2つの日付の比較"
+title:    "Ruby: 「二つの日付の比較」"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-日々のプログラムで、日付を比較することが必要になることがあります。例えば、予定を調整するために、ある日付が別の日付より前か後かを確認する必要がある場合などです。Rubyでは、日付を比較することが簡単にできるため、便利です。この記事では、日付を比較する方法をご紹介します。
+日付を比較したいと思う理由はさまざまです。例えば、あるイベントの開始日と終了日を比較することで、イベントの期間を計算することができます。また、誕生日や記念日を比較することで、その日からどれだけ経ったかを計算することもできます。
 
 ## 使い方
+比較したい日付を、RubyのDateオブジェクトに変換します。その後、比較演算子を使用して日付を比較することができます。例えば、あるイベントの開始日が"2021/01/01"で、終了日が"2021/01/15"の場合、以下のようなコードを記述します。
 
-Rubyでは、日付を比較するために `Date` クラスを使います。例えば、ある日付がある日付より後ろかどうかを判断するには、`>` や `<=` といった比較演算子を使います。また、日付を `Date.new` を使って作成することもできます。
+```Ruby
+start_date = Date.new(2021, 01, 01)
+end_date = Date.new(2021, 01, 15)
+if start_date < end_date
+  puts "イベントはまだ終わっていません"
+else
+  puts "イベントは終了しました"
+end
+```
 
- ```Ruby
- date1 = Date.new(2020, 7, 1)
- date2 = Date.new(2020, 7, 5)
- puts date2 > date1 # true
- puts date1 <= date2 # false
- ```
- 
-また、日付のフォーマットを変更したい場合は、`strftime` メソッドを使うことができます。
- 
- ```Ruby
- date = Date.new(2020, 7, 1)
- puts date.strftime("%Y/%m/%d") # 2020/07/01
- ```
- 
-## 深堀り
+コードの実行結果は、"イベントはまだ終わっていません"と表示されます。
 
-日付を比較する際には、時刻の情報が無視されるため、日付のみが比較されます。また、`Date` クラスには様々なメソッドが用意されており、特定の日付が休日や平日などを判定することもできます。
+## ディープダイブ
+日付を比較する際に注意することがいくつかあります。まず、Rubyの日付はコンピューターの内部的な数値で表されています。そのため、日付を直接比較するのではなく、Dateオブジェクトを使用することで正確な比較ができます。また、時間の情報もDateオブジェクトに含めることができるので、時間も含めた比較が可能です。
 
-また、日付の比較では同じ日付でも、時間や時間帯の情報が異なると「等しくない」と判定されることに注意が必要です。このような場合は、直接日時を比較する `DateTime` クラスを使うほうが適しています。
-
-## さらに見る
- 
-- [RubyのDateクラス公式ドキュメント](https://docs.ruby-lang.org/ja/latest/class/Date.html)
-- [Rubyで日時を扱う方法まとめ](https://qiita.com/katsuhisa__/items/4acd6460051233b01823)
-- [Rubyでの日付と時刻の操作方法について](https://www.javadrive.jp/ruby/date_class/)
- 
-## 参考文献
-
-この記事は、以下のリソースを参考に作成しました。
-- [Rubyで日付を比較する方法](https://www.sejuku.net/blog/25336)
-- [日付を比較する-「＜ =，> =」](https://docs.ruby-lang.org/ja/latest/class/Date.html#I_LESS_THAN_OR_EQUAL.3D.3E_)
-- [Rubyで日付をフォーマットする方法](https://qiita.com/WorldWaiting/items/57c665bb51519b28a6b5)
+## 関連リンクを見る
+- [Rubyの日付を比較する方法についての記事](https://qiita.com/hiyuzawa/items/0a0d2b867a1cba207be5)
+- [RubyのDateクラスの公式ドキュメント](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
+- [Rubyの比較演算子についての説明](https://www.javadrive.jp/ruby/ope/index6.html)

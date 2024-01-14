@@ -1,44 +1,44 @@
 ---
-title:    "Rust: Beräkna ett datum i framtiden eller förflutna"
+title:    "Rust: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-I denna bloggpost kommer vi att titta på hur man kan beräkna datum i framtiden eller det förflutna med hjälp av Rust-programmering. Detta kan vara användbart i en rad olika situationer, såsom att skapa ett kalenderverktyg eller hantera bokningar.
+
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara en användbar funktion i många olika programmeringsuppgifter. Det kan användas för att planera möten eller evenemang, hantera deadlines eller helt enkelt hålla koll på tiden.
 
 ## Hur man gör
-För att beräkna ett datum i framtiden eller det förflutna behöver vi först importera standardbiblioteket "chrono", som innehåller funktioner för att hantera datum och tider. Vi behöver också använda oss av "DateTime" modulen från detta bibliotek.
+
+Att beräkna ett datum i framtiden eller förflutna är enkelt med hjälp av Rusts standardbibliotek. Först bör vi definiera ett datum med hjälp av `NaiveDate`-strukturen:
 
 ```Rust
-use chrono::{DateTime, Duration, Utc};
-
-fn main() {
-    // skapa ett startdatum
-    let start = Utc.ymd(2021, 8, 1).and_hms(12, 0, 0);
-    // beräkna ett datum 100 dagar framåt i tiden
-    let future_date = start + Duration::days(100);
-    // beräkna ett datum 3 månader bakåt i tiden
-    let past_date = start - Duration::weeks(12);
-
-    // skriv ut resultaten
-    println!("Datum 100 dagar från nu: {}", future_date.format("%d/%m/%Y"));
-    println!("Datum 3 månader bakåt i tiden: {}", past_date.format("%d/%m/%Y"));
-}
+let start_date = NaiveDate::from_ymd(2020, 11, 1);
 ```
 
-Output:
+Vi kan sedan använda funktionen `checked_add` för att lägga till ett antal dagar till detta datum för att få ett datum i framtiden:
+
+```Rust
+let future_date = start_date.checked_add(Duration::days(14)).unwrap();
 ```
-Datum 100 dagar från nu: 09/11/2021
-Datum 3 månader bakåt i tiden: 25/04/2021
+
+Om vi istället vill ha ett datum i förflutna, kan vi använda funktionen `checked_sub`:
+
+```Rust
+let past_date = start_date.checked_sub(Duration::weeks(3)).unwrap();
 ```
+
+Notera att vi använder oss av `checked_add` och `checked_sub` för att undvika eventuella fel om det skulle bli ett ogiltigt datum.
 
 ## Djupdykning
-För att förstå hur detta fungerar är det viktigt att förstå hur DateTime-modulen hanterar datum och tider. I Rust representeras en DateTime som en kombination av ett datum och en tidzon, vilket gör det enkelt att hantera en mängd olika tidszoner utan att behöva hantera omvandlingen manuellt.
 
-För att beräkna ett datum i framtiden eller det förflutna använder vi oss av Duration-modulen, som låter oss lägga till eller dra av en viss mängd tid från ett befintligt Datum. Detta gör det enkelt att räkna ut datum baserat på ett specifikt startdatum.
+Som vi nämnde tidigare är det möjligt att använda en `Duration` för att lägga till eller subtrahera dagar, veckor, månader eller till och med år från ett datum. Detta är på grund av att interna representationen av ett datum i Rust är en enkel räknare på antalet dagar sedan `1 januari 1` och därmed kan en `Duration` enkelt läggas till eller subtraheras för att få ett nytt datum.
+
+Det finns också andra funktioner som `checked_add_signed` och `checked_sub_signed` som kan användas för att beräkna datum baserat på ett angivet antal dagar, även om det är negativt.
 
 ## Se även
-- [Officiell dokumentation för "chrono" biblioteket](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust-programmering: En överblick](https://www.rust-lang.org/learn)
+
+* [Dokumentation för Rusts standardbibliotek](https://doc.rust-lang.org/std/index.html)
+* [Officiell bok för Rust](https://doc.rust-lang.org/book/)

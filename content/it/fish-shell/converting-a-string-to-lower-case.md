@@ -1,44 +1,48 @@
 ---
 title:    "Fish Shell: Convertire una stringa in minuscolo"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Convertingire una stringa in minuscolo è un'operazione fondamentale nella programmazione. Spesso, è necessario manipolare le stringhe di testo per ottenere una formattazione uniforme o per confrontare diverse parole indipendentemente dalle maiuscole o minuscole. Imparare a convertire le stringhe in minuscolo può semplificare il tuo lavoro e renderlo più efficiente.
+Spesso nella programmazione dobbiamo manipolare delle stringhe di testo. Una delle operazioni più comuni è la conversione di una stringa in caratteri minuscoli. Questo può essere utile per confrontare le stringhe in modo case-insensitive o per uniformare i dati di input.
 
-## Come Fare
+## Come fare
 
-Per convertire una stringa in minuscolo utilizzando Fish Shell, è possibile utilizzare il comando `string tolower`. Ad esempio:
-
-```Fish Shell
-$string = "Ciao a Tutti"
-echo (string tolower $string)
-```
-
-L'output sarà `ciao a tutti`, con tutte le lettere convertite in minuscolo.
-
-Puoi anche combinare il comando `string tolower` con altri comandi per ottenere una formattazione specifica. Ad esempio, puoi utilizzare il comando `string sub` per sostituire parti di una stringa con il testo in minuscolo. Ecco un esempio:
+Per convertire una stringa in minuscolo utilizzando il Fish Shell, possiamo utilizzare il comando `string tolower` seguito dalla stringa che vogliamo convertire. Ad esempio:
 
 ```Fish Shell
-$string = "Benvenuto nel MONDO della Programmazione!"
-echo (string sub --lower (string tolower $string) "mondo" "universo")
+set testString "Ciao a tutti!"
+echo (string tolower $testString)
 ```
 
-L'output sarà `benvenuto nel universo della programmazione!`, con la parola "mondo" sostituita con "universo" e tutto il testo convertito in minuscolo.
+Questo producirà l'output `ciao a tutti!`.
 
-## Approfondiamo
+Inoltre, se stai lavorando con variabili di ambiente, puoi utilizzare il comando `set` per assegnare il risultato della conversione a una nuova variabile. Ad esempio:
 
-Esistono diverse funzioni all'interno di Fish Shell che possono essere utilizzate per convertire una stringa in minuscolo. Il comando `string tolower` accetta opzioni aggiuntive, come `--all`, che convertirà tutte le lettere in minuscolo, comprese le lettere accentate che di solito non verrebbero convertite.
+```Fish Shell
+set originalString "FISH SHELL"
+set lowercaseString (string tolower $originalString)
+echo $lowercaseString # output: fish shell
+```
 
-Inoltre, se stai lavorando con i caratteri Unicode, puoi utilizzare il comando `string tolower --length` per specificare il numero di caratteri che vuoi convertire in minuscolo. Ad esempio, `string tolower --length=4` convertirà solo i primi 4 caratteri nella stringa.
+## Approfondimento
 
-Inoltre, se hai bisogno di una conversione bidirezionale, cioè convertire sia le lettere minuscole che quelle maiuscole in minuscolo, puoi utilizzare il comando `string swapcase` in combinazione con `string tolower` per ottenere questo risultato.
+Un fatto interessante è che la conversione di una stringa in minuscolo utilizzando il Fish Shell è effettuata in base al parametro di locale corrente. Questo significa che, a seconda del sistema in cui stai eseguendo il codice, il risultato potrebbe essere diverso.
 
-## Vedi Anche
+Inoltre, esiste un altro modo per convertire una stringa in minuscolo utilizzando il Fish Shell, ovvero utilizzando il correttore ortografico integrato. Questo può essere fatto utilizzando il comando `correct` seguito dalla stringa da convertire. Ad esempio:
 
-- [Fish Shell documentazione ufficiale](https://fishshell.com/docs/current/)
-- [Tutorial su Fish Shell per principianti](https://dev.to/gaelthomas/fish-shell-tutorial-for-beginners-30i5)
-- [10 comandi utili di Fish Shell che dovresti conoscere](https://medium.com/pragmatic-programmers/10-useful-fish-shell-commands-you-should-know-ab5142b25611)
+```Fish Shell
+echo (correct "Hello World") # output: hello world
+```
+
+Questo è possibile poiché il correttore ortografico mostra le parole con la prima lettera maiuscola e il resto minuscolo.
+
+## Vedi anche
+
+- [Guida rapida sulla manipolazione delle stringhe utilizzando il Fish Shell](https://fishshell.com/docs/current/cmds/set.html#syntax)
+- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sull'uso del Fish Shell per la programmazione](https://fishshell.com/docs/current/tutorial.html)

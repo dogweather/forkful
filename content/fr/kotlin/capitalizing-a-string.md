@@ -1,44 +1,57 @@
 ---
-title:    "Kotlin: Mise en majuscule d'une chaîne de caractères"
+title:    "Kotlin: Majuscule d'une chaîne de caractères"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La capitalisation d'une chaîne de caractères peut être utile dans de nombreuses situations. Cela peut permettre d'homogénéiser les données, améliorer la lisibilité du texte et faciliter la recherche d'informations spécifiques dans une chaîne.
+Capitaliser une chaîne de caractères est une tâche commune en programmation. Cela peut être utile pour mettre en évidence certains mots ou pour suivre les conventions de nommage dans votre code. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant le langage de programmation Kotlin.
 
 ## Comment faire
 
-Voici un exemple de code en Kotlin pour capitaliser une chaîne de caractères :
+Tout d'abord, nous allons créer une chaîne de caractères en utilisant l'opérateur de concaténation "+" :
 
 ```Kotlin
-val mot = "bonjour"
-val motCapital = mot.capitalize()
-
-println(motCapital)
-
-// Output : Bonjour
+var phrase = "je suis un programmeur kotlin"
 ```
 
-Vous pouvez également utiliser la méthode `toUpperCase()` pour capitaliser toutes les lettres d'une chaîne, ou `toLowerCase()` pour les mettre en minuscules.
+Ensuite, nous allons utiliser la fonction .toUpperCase() pour capitaliser la première lettre de chaque mot dans la chaîne :
 
 ```Kotlin
-val phrase = "c'est une phrase"
-val phraseCapital = phrase.toUpperCase()
+var phraseCapitale = phrase.split(' ').joinToString(" ") { it.capitalize() }
+```
 
-println(phraseCapital)
+Dans cet exemple, nous avons utilisé la fonction .capitalize() pour capitaliser la première lettre de chaque mot dans notre chaîne. Ensuite, nous avons utilisé la fonction .joinToString() pour rejoindre les mots capitalisés en une seule chaîne, en utilisant l'espace comme délimiteur.
 
-// Output : C'EST UNE PHRASE
+Enfin, pour afficher le résultat, nous allons simplement imprimer la variable phraseCapitale :
+
+```Kotlin
+println(phraseCapitale)
+```
+
+Lorsque nous exécutons ce code, nous obtenons la sortie suivante :
+
+```Kotlin
+Je Suis Un Programmeur Kotlin
 ```
 
 ## Plongée en profondeur
 
-La capitalisation dans les langages de programmation peut être réalisée de différentes manières. En Kotlin, la méthode `capitalize()` utilise le premier caractère de la chaîne pour le mettre en majuscule, sans affecter les autres caractères. Pour obtenir un résultat différent en termes de capitalisation, il est possible d'utiliser la méthode `replace()` pour remplacer un caractère spécifique par sa version majuscule ou minuscule.
+En utilisant la fonction .capitalize() dans notre exemple, nous avons capitalisé la première lettre de chaque mot. Cependant, il est important de noter que cette fonction ne prend pas en compte les caractères spéciaux ou les nombres.
+
+Pour capitaliser une chaîne de caractères en tenant compte de ces éléments, nous pouvons utiliser la fonction .capitalize() avec .toUpperCase() :
+
+```Kotlin
+var phraseCapitale = phrase.split(' ').joinToString(" ") { it.toLowerCase().capitalize() }
+```
+
+En utilisant .toLowerCase() avant .capitalize(), nous nous assurons que tous les caractères sont en minuscules avant d'en capitaliser la première lettre. De cette façon, même les mots avec des caractères spéciaux ou des chiffres seront correctement capitalisés.
 
 ## Voir aussi
 
-- [Documentation officielle de Kotlin sur la manipulation de chaînes](https://kotlinlang.org/docs/reference/strings.html)
-- [Guide complet sur la capitalisation en Kotlin](https://www.baeldung.com/kotlin/string-capitalization)
-- [Exemples pratiques de manipulation de chaînes en Kotlin](https://www.geeksforgeeks.org/kotlin-string-operations/)
+- [Documentation officielle Kotlin](https://kotlinlang.org/docs/reference/strings.html#accessing-parts-of-a-string)
+- [Comment capitaliser une chaîne en Kotlin](https://kotlinlang.org/docs/reference/extensions.html#scala-like-string-manipulation)
+- [Différentes façons de manipuler les chaînes en Kotlin](https://medium.com/@napperley/android-studio-different-ways-to-manipulate-strings-in-kotlin-f2d0148b4f9b)

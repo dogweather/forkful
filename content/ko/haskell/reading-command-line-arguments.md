@@ -1,42 +1,16 @@
 ---
-title:    "Haskell: 커맨드 라인 인수 읽기"
+title:    "Haskell: 컴퓨터 프로그래밍에 대한 기사 제목: 커맨드 라인 인수 읽기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+커맨드 라인 인수를 읽는 것에 대해서는 많은 이유가 있습니다. 첫째, 프로그램을 실행할 때 다른 설정 값을 전달하고 싶을 때 등 여러 용도로 사용할 수 있습니다.
 
-프로그래밍을 하다보면 종종 우리는 다양한 방법으로 사용자와 상호 작용해야 할 때가 있습니다. 예를 들어 사용자로부터 입력을 받거나 스크립트의 동작을 호출하는 등의 상황이 있을 수 있습니다. 이때 command line arguments는 유용한 도구가 될 수 있습니다. 이번 블로그 포스트에서는 Haskell에서 command line arguments를 읽는 방법에 대해 알아보겠습니다.
-
-## 어떻게?
-
-```Haskell
-import System.Environment
-
-main :: IO ()
-main = do
-  args <- getArgs     -- 입력된 argument들을 받아옴
-  putStrLn "인사말: "  -- 사용자로부터 입력 받기 전에 인사말을 출력
-  name <- getLine    -- 사용자로부터 입력 받음
-  putStrLn $ "Hello, " ++ name ++ "!"  -- 입력 받은 이름에 맞는 인사말 출력
-```
-
-위의 코드를 통해 우리는 `System.Environment` 라이브러리를 사용해 사용자로부터 입력 받고, 그 입력 값을 활용하는 방법을 배웠습니다. 이 코드를 실행하면 다음과 같은 결과를 볼 수 있습니다.
-
-```
-$ runhaskell hello.hs John
-인사말: 
-Hello, John!
-```
-
-위의 예제에서는 사용자로부터 입력 받는 대신에 command line arguments를 이용해 값을 전달받았습니다. 이를 통해 프로그램의 실행에 있어서 더 유연하게 대처할 수 있게 됩니다.
-
-## 깊게 들어가기
-
-이번 섹션에서는 좀 더 심화적인 내용을 다루겠습니다. 위의 예제에서는 `System.Environment` 라이브러리를 사용해 command line arguments를 읽었습니다. 이 라이브러리는 더 많은 함수를 제공하지만 우리가 가장 많이 사용할만한 함수는 `getArgs`와 `getProgName`일 것입니다. `getArgs`는 `IO [String]` 타입을 반환하며, 이는 입력된 argument들을 리스트 형태로 반환합니다. `getProgName`은 `IO String` 타입을 반환하며, 이는 현재 실행 중인 프로그램의 이름을 반환합니다.
-
-또한 우리가 인자를 입력하지 않았을 때 발생할 수 있는 오류에 대해서도 생각해야 합니다. 이때 사용할 수 있는 함수는 `init`과 `last`입니다. `init` 함수는 리스트에서 마지막 요소를 제외한 나머지 리스트를 반환하고, `last` 함수는 리스트에서 마지막 요소를 반환합니다. 이를 활용해서 우리는 다음과 같이 오류처리를 할 수 있습니다.
+## 사용 방법
+커맨드 라인 인수를 읽는 것은 간단합니다. `System.Environment` 모듈에서 제공하는 `getArgs` 함수를 사용하면 됩니다. 이 함수는 `IO [String]` 타입을 반환하므로 결과를 얻기 위해서는 `IO` 모나드 내에서 작성해야 합니다.
 
 ```Haskell
 import System.Environment
@@ -44,17 +18,24 @@ import System.Environment
 main :: IO ()
 main = do
   args <- getArgs
-  progName <- getProgName
-
-  -- 만약 인자를 입력하지 않았을 때
-  if last args == progName then
-    putStrLn "이름을 입력해주세요."
-  else do
-    putStrLn $ "Hello, " ++ init args ++ "!"
+  putStrLn ("입력받은 인수: " ++ show args)
 ```
 
-## 참고자료
+위 예제 코드를 컴파일하고 실행하면 아래와 같은 결과를 얻을 수 있습니다.
 
-- [Haskell Documentation](https://www.haskell.org/documentation/) - Haskell 공식 문서 웹사이트
-- [Real World Haskell](http://book.realworldhaskell.org/read/) - Haskell에 대한 실전적인 입문서
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - 예제 중심으로 Haskell을 배울 수 있는 책
+```
+$ ghc argument_example.hs
+$ ./argument_example Hello World
+입력받은 인수: ["Hello", "World"]
+```
+
+## 깊이 들어가기
+커맨드 라인 인수를 읽을 때 유의해야 할 몇 가지 사항이 있습니다.
+
+- `getArgs` 함수는 인수를 리스트 형태로 반환합니다. 이 때, 인수 마다 따옴표가 붙어 반환되는데, `show` 함수를 사용하면 해당 따옴표가 포함된 채로 문자열로 변환됩니다. 따라서, 인수를 파싱할 때에는 따옴표를 제거해주는 작업이 필요합니다.
+- 만약 프로그램을 실행할 때 인수를 전달하지 않으면 `getArgs` 함수는 빈 리스트 `[]`를 반환합니다. 따라서, 이에 대한 예외 처리를 해주는 것이 좋습니다.
+
+## 관련 자료
+- [Haskell 공식 문서: System.Environment 모듈](https://www.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
+- [Haskell Wikibook: Command line arguments](https://en.wikibooks.org/wiki/Haskell/Command_line_arguments)
+- [Haskell By Example: Reading Command Line Arguments](https://lotz84.github.io/haskellbyexample/ex/reading-command-line-arguments)

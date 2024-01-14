@@ -1,50 +1,43 @@
 ---
-title:    "Arduino: 프로그래밍에서 디렉토리가 존재하는지 확인하기"
+title:    "Arduino: 디렉토리가 존재하는지 확인하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-디렉토리가 존재하는지 확인하는 것은 프로그램 개발에 있어 중요한 부분입니다. 디렉토리가 존재하는지 여부를 확인하는 것은 데이터 파일과 같은 중요한 파일에 접근할 때 사용되며, 이를 통해 오류를 방지하고 안전성을 높일 수 있습니다.
+## 왜 이것을 하는가?
 
-## 어떻게
-디렉토리가 존재하는지 확인하는 가장 간단한 방법은 아두이노의 File 객체를 사용하는 것입니다. 아래는 아두이노 보드에서 디렉토리가 존재하는지 여부를 확인하는 예제 코드와 출력 결과를 보여줍니다.
+디렉터리가 존재하는지 확인하는 것은 매우 유용한 기능입니다. 디렉터리가 없으면 프로그램이 오류를 방지하고 미리 대비할 수 있도록 알려줍니다.
 
-```Arduino 
-#include <SPI.h>
-#include <SD.h>
+## 진행 방법
+
+우선 디렉터리가 존재하는지 확인하기 위해 `File` 라이브러리를 불러와야 합니다. 그 후에 `exists` 함수를 사용하여 디렉터리가 존재하는지 확인할 수 있습니다. 아래의 코드를 참고해주세요.
+
+```Arduino
+#include <File.h>
 
 void setup() {
-  pinMode(10, OUTPUT);
-  if (!SD.begin(10)) {
-    Serial.println("SD 카드를 읽지 못했습니다.");
-    while (1);
+  Serial.begin(9600); // 시리얼 통신 속도 설정
+  if (SD.exists("directory")) { // 디렉터리가 존재하는지 확인
+    Serial.println("디렉터리가 존재합니다.");
+  } else {
+    Serial.println("디렉터리가 존재하지 않습니다.");
   }
 }
 
 void loop() {
-  if (SD.exists("data")) {
-    Serial.println("data 디렉토리가 존재합니다.");
-  } else {
-    Serial.println("data 디렉토리가 존재하지 않습니다.");
-  }
-  delay(1000);
+
 }
 ```
 
-출력:
+위의 코드를 실행하면, 시리얼 모니터에 디렉터리가 존재하는지 여부를 확인할 수 있습니다. 존재하면 `디렉터리가 존재합니다.`라는 문구가 나오고, 존재하지 않으면 `디렉터리가 존재하지 않습니다.`라는 문구가 나옵니다.
 
-```
-data 디렉토리가 존재합니다.
-```
+## 더 깊이 들어가기
 
-여기서 ```SD.begin(10)```은 SD 카드의 삽입 핀을 10번 핀으로 설정하는 부분입니다. 따라서 다른 핀을 사용하고 있다면 해당 핀으로 변경해주어야 합니다.
+디렉터리의 존재 여부를 확인하는 것 이외에도 `File` 라이브러리에는 다양한 기능이 있습니다. 예를 들어, 디렉터리를 생성하거나 삭제할 수도 있고, 디렉터리에 있는 파일들의 이름을 확인할 수도 있습니다. 더 자세한 내용은 아래의 링크를 참고해주세요.
 
-## 딥 다이브
-```SD.exists()``` 함수는 디렉토리 뿐만 아니라 파일의 존재 여부도 확인할 수 있습니다. 또한, 아두이노에서는 SD 카드가 존재해도 해당 파일이나 디렉토리가 없는 경우에는 오류가 발생하지 않고 false를 반환합니다. 이를 이용하여 파일/디렉토리가 존재하는지 여부를 확인하고, 필요에 따라 오류를 처리할 수 있습니다.
+## 더 알아보기
 
-## 이어서 보기
-* [Arduino SD 라이브러리 공식 문서](https://www.arduino.cc/en/Reference/SD)
-* [SD 라이브러리 예제 코드](https://startiot.tistory.com/entry/Arduino-SD-%EC%82%AC%EC%9A%A9) 
-* [아두이노에서 SD 카드 사용하기](https://blog.naver.com/kih03011/220752167451)
+- [Arduino 공식 문서 - SD 라이브러리](https://www.arduino.cc/en/Reference/SD)
+- [Arduino 프로젝트 - SD 라이브러리를 이용한 파일 탐색기](https://create.arduino.cc/projecthub/abhi.dangare/sdio-card-reader-2389f8)

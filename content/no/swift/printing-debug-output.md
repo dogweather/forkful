@@ -1,38 +1,55 @@
 ---
 title:    "Swift: Utskrift av feilsøkingsutdata"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Våre lesere lurer kanskje på hvorfor det er viktig å inkludere utskrift av feilsøking i sine Swift programmeringsprosjekter. Å legge til debugging output kan hjelpe deg med å identifisere feil og feilkilder, noe som vil gjøre debugging prosessen mye enklere og mer effektiv.
+Mange utviklere har sannsynligvis opplevd å måtte feilsøke en kode uten å vite hva som egentlig skjer i bakgrunnen. Derfor kan å skrive ut feilmeldinger ved hjelp av debug-utskrift være et nyttig verktøy for å finne og fikse feil. I denne bloggposten vil jeg vise deg hvordan du kan bruke debug-utskrift i Swift for å gjøre debugging-prosessen mer effektiv.
 
-## Hvordan
+## Hvordan bruke debug-utskrift i Swift
 
-For å legge til debugging output i Swift, kan du bruke funksjonen `print()`. La oss si du har en variabel som inneholder navnet ditt, og du vil sjekke om variabelen er korrekt tilordnet. Da kan du skrive følgende kode i et `if`-statement:
+For å bruke debug-utskrift i Swift, kan du bruke funksjonen "print()" for å skrive ut meldinger til konsollen. La oss se på et enkelt eksempel:
 
 ```Swift
-let navn = "Ole"
+let tall = 5
+print("Tallet er \(tall)")
+```
 
-if navn == "Ole" {
-    print("Navnet er korrekt!")
-} else {
-    print("Navnet er ikke korrekt")
+Her vil konsollen vise meldingen "Tallet er 5". Dette kan være nyttig for å sjekke verdier av variabler og for å se om en bestemt del av koden blir utført som forventet.
+
+Du kan også bruke denne funksjonen til å skrive ut uttrykk og variabler for å få mer detaljert informasjon om hva som skjer i koden din. For eksempel:
+
+```Swift
+let tall1 = 10
+let tall2 = 5
+print("Summen av tall1 og tall2 er \(tall1 + tall2)")
+```
+
+Dette vil skrive ut meldingen "Summen av tall1 og tall2 er 15" i konsollen. Ved å skrive ut uttrykket får du et bedre innblikk i hva som skjer under kjøring av koden din.
+
+## En dypere forståelse av debug-utskrift
+
+Et annet nyttig aspekt ved debug-utskrift i Swift er muligheten til å legge til betingelser og begrensninger. Dette kan være spesielt nyttig når du vil sjekke om en bestemt del av koden din blir utført som forventet, eller hvis du vil se nærmere på en variabel ved hjelp av en betingelse.
+
+For eksempel, hvis du vil sjekke om et tall er større enn 10 før du skriver det ut, kan du bruke en if-setning slik:
+
+```Swift
+let tall = 7
+if tall > 10 {
+    print("Tallet er større enn 10")
 }
 ```
 
-Når du kjører koden, vil du se at "Navnet er korrekt!" blir utskrevet i konsollen, noe som betyr at variabelen er korrekt tilordnet.
+Dette vil bare skrive ut meldingen hvis betingelsen er oppfylt.
 
-## Dypdykk
-
-Det er viktig å være klar over at debugging output ikke bør inkluderes i den endelige koden din. Det kan påvirke ytelsen til applikasjonen din og gjøre den tregere. Derfor er det viktig å fjerne eller kommentere ut alle debugging statements før du publiserer koden.
-
-I tillegg til `print()` funksjonen, kan du også bruke `debugPrint()` som vil gi deg mer detaljert informasjon om objekter og deres verdier. Du kan også bruke `#file`, `#line` og `#function` for å få informasjon om hvilken fil, linje og funksjon som er ansvarlig for debugging output.
+Du kan også bruke debug-utskrift til å sjekke utførelsesrekkefølgen av koden din. Dette kan være nyttig hvis du har flere funksjoner og vil forsikre deg om at de blir kalt i riktig rekkefølge.
 
 ## Se også
 
-* [Apple: Debugging with Print](https://developer.apple.com/documentation/swift/debugging_with_print)
-* [Swift by Example: Printing Debug Output](https://www.swiftbyexample.com/print-debug)
-* [Hacking with Swift: Debugging 101](https://www.hackingwithswift.com/read/15/5/debugging-101)
+* [Official Apple Documentation on Debugging in Swift](https://developer.apple.com/documentation/xctest/debugging)
+* [Ray Wenderlich's Tutorial on Debugging in Swift](https://www.raywenderlich.com/7382-getting-started-with-swift-3-0/lessons/40)
+* [Hacking with Swift's Guide to Debugging](https://www.hackingwithswift.com/quick-start/swift-programming-language/how-to-debug)

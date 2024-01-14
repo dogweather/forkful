@@ -1,44 +1,41 @@
 ---
-title:    "Haskell: Das Lesen von Befehlszeilen-Argumenten"
+title:    "Haskell: Lesen von Befehlszeilen Argumenten"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine grundlegende Fähigkeit, die jeder Entwickler in Haskell beherrschen sollte. Durch das Verstehen dieser Funktion können wir unsere Anwendungen anpassen und auf vielfältige Weise interagieren.
+Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden Haskell-Programmierer. Es ermöglicht die Übergabe von Informationen an ein Programm auf einfache und effiziente Weise.
 
-## Wie geht das?
+# Wie geht das?
 
-In Haskell bietet die `System.Environment`-Bibliothek verschiedene Funktionen, um Befehlszeilenargumente zu lesen. Die gebräuchlichste ist `getArgs`, die eine Liste von `String`-Werten zurückgibt, die die Befehlszeilenargumente enthält.
-
-Ein einfaches Beispiel, um die Befehlszeilenargumente auszugeben könnte folgendermaßen aussehen:
+Um Befehlszeilenargumente in Haskell zu lesen, müssen wir die Funktion `getArgs` aus dem Modul `System.Environment` importieren. Diese Funktion gibt eine Liste mit den Argumenten zurück, die beim Aufruf des Programms übergeben wurden.
 
 ```Haskell
 import System.Environment
 
 main = do
-  args <- getArgs
-  putStrLn $ "Die Befehlszeilenargumente sind: " ++ show args
+    args <- getArgs
+    putStrLn ("Erhaltene Argumente: " ++ show args)
 ```
 
-Wenn wir nun dieses Programm mit dem Befehl `runhaskell args.hs arg1 arg2` ausführen, würde als Output erscheinen:
+Wenn wir dieses Programm mit dem Befehl `runghc programm.hs arg1 arg2 arg3` ausführen, wird die Ausgabe folgendermaßen aussehen:
 
 ```
-Die Befehlszeilenargumente sind: ["arg1", "arg2"]
+Erhaltene Argumente: ["arg1", "arg2" , "arg3"]
 ```
 
-## Tiefes Eintauchen
+Beachten Sie, dass der erste argument im output der Name des Programms ist, der dort automatisch eingefügt wird.
 
-Nun, da wir wissen, wie wir Befehlszeilenargumente lesen können, können wir auch tiefer eintauchen und uns mit verschiedenen Aspekten dieser Funktion auseinandersetzen. Ein wichtiger Punkt ist z.B. die Reihenfolge der Befehlszeilenargumente. In Haskell werden die Befehlszeilenargumente in der gleichen Reihenfolge wie sie eingegeben wurden in der Liste zurückgegeben. Dies kann hilfreich sein, wenn wir bestimmte Argumente benötigen, die in einer bestimmten Reihenfolge eingegeben wurden.
+# Tief in die Materie eintauchen
 
-Eine weitere wichtige Funktion ist `getProgName`, die den Programmnamen zurückgibt, mit dem das Programm gestartet wurde. Dies kann nützlich sein, wenn wir unser Programm abhängig von seinem Namen unterschiedliche Aktionen ausführen lassen wollen.
+Wenn wir uns genauer mit dem Versuch befassen, Befehlszeilenargumente zu lesen, können wir sehen, dass die Funktion `getArgs` in Haskell auf der Funktion `getProgArgs` basiert, die wiederum auf dem `System.IO`-Modul basiert. Durch die Kombination all dieser Funktionen wird das Parsen der Befehlszeilenargumente sehr effizient, da sie direkt auf dem Betriebssystem aufbauen.
 
-Es ist auch möglich, genauere Daten über die Argumente zu erhalten, z.B. durch die Verwendung von `lookupEnv`, mit der wir überprüfen können, ob ein bestimmtes Argument übergeben wurde oder nicht.
+# Siehe auch
 
-## Siehe auch
-
-- [Offizielle Dokumentation zu `System.Environment`](https://www.haskell.org/onlinereport/haskell2010/haskellch18.html#x25-25000018)
-- [Tutorial zum Umgang mit Befehlszeilenargumenten in Haskell](https://jkachmar.github.io/posts/2017-01-01-parsing-command-line-arguments-in-haskell.html)
-- [Haskells `System.Environment`-Bibliothek auf Hackage](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
+- Dokumentation zu `System.Environment` - https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html
+- Offizielle Haskell-Dokumentation - https://www.haskell.org/documentation/
+- Ein Tutorial zum Lesen von Befehlszeilenargumenten in Haskell - https://wiki.haskell.org/Command_line_argument_handling

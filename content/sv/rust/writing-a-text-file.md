@@ -1,50 +1,36 @@
 ---
 title:    "Rust: Skriva en textfil"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
+Att kunna skriva en textfil är en grundläggande färdighet inom programmering. Genom att kunna skapa, läsa och manipulera textfiler kan du skapa program som kan hantera stora mängder data på ett effektivt sätt.
 
-Att skriva en textfil är en grundläggande men viktig del av programmering. Det kan användas för att spara data, skapa loggar eller helt enkelt hålla ordning på information.
-
-##Så här gör du
-
-Att skriva en textfil i Rust är enkelt. Först måste vi importera File-modulen och File-objektet, som tillhandahålls av standardbiblioteket.
+## Hur man gör det
+För att skriva en textfil i Rust behöver du först importera standardbiblioteket "std" och sedan använda funktionen "write_all" från detta bibliotek. Här är ett exempel på kod som skapar en textfil med namnet "mitt_test.txt":
 
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
+
+fn main() {
+   let mut fil = File::create("mitt_test.txt").expect("Kunde inte skapa filen.");
+   fil
+       .write_all(b"Hej, det här är en text som jag skriver till filen.")
+       .expect("Kunde inte skriva till filen.");
+}
 ```
 
-Sedan skapar vi en ny fil med önskat namn och önskat läge (till exempel "skrivfil.txt") och öppnar den för skrivning.
+När koden körs skapas en ny fil med det angivna namnet och texten "Hej, det här är en text som jag skriver till filen." sparas i filen.
 
-```Rust
-let mut fil = File::create("skrivfil.txt").unwrap();
-```
+## Djupdykning
+Att skriva en textfil i Rust kan utföras på olika sätt beroende på dina specifika behov. För en mer exakt kontroll över innehållet i filen kan du använda funktionen "write" istället för "write_all" och ge den en referens till en array av bytes som innehåller din text.
 
-Nu kan vi skriva till filen med hjälp av `write_all`-funktionen, som tar in en skrivbar `&[u8]`-referens som argument.
+Du kan också använda dig av biblioteket "serde" för att konvertera dina datastrukturer till text och sedan skriva dem till filen. Detta kan vara särskilt användbart om du vill spara komplexa datatyper eller skapa en textfil med en specifik struktur.
 
-```Rust
-fil.write_all(b"Hej från den här filen!").unwrap();
-```
-
-Till sist stänger vi filen för att slutföra skrivningen.
-
-```Rust
-fil.sync_all().unwrap();
-```
-
-Och voilà, nu har vi en textfil med vår sträng som innehåll!
-
-##Djupdykning
-
-När vi skriver till en fil i Rust används en process som kallas "I/O streaming". Det betyder att data strömmar från vår källa (i detta fall vår `&[u8]`-referens) och skrivs till filen bit för bit. Detta är en effektiv och säker metod som garanterar att all data sparas korrekt.
-
-En annan viktig aspekt att notera är att filen måste stängas efter att skrivningen är klar, annars kan det leda till oförutsett beteende eller till och med dataförlust.
-
-##Se även
-
-- [Rust standardbibliotekets dokumentation för File-modulen](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [En guide till filhantering i Rust av The Rust Programming Language Book](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+## Se även
+- [Rust standardbibliotek](https://doc.rust-lang.org/std/)
+- [Serde biblioteket](https://serde.rs/)

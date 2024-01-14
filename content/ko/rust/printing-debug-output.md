@@ -1,43 +1,36 @@
 ---
-title:    "Rust: 디버그 출력하기"
+title:    "Rust: 디버그 출력 출력하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+목적: 디버그 출력을 찍는 것의 *왜* 중요한지에 대해서 설명한다.
 
-디버그 출력에 참여하는 이유는 무엇인가요?
+디버그 출력은 프로그래밍 과정에서 매우 중요한 역할을 담당합니다. 코드가 작동하는 과정에서 문제가 발생할 때, 디버그 출력을 통해 어떤 문제가 발생하고 있는지 쉽게 파악할 수 있습니다. 또한, 디버그 출력을 이용하면 코드의 흐름을 추적하고 변수의 값을 확인하는 데에도 도움이 됩니다.
 
-디버그 출력은 프로그래밍 코드의 작동을 이해하는 가장 쉬운 방법 중 하나입니다. 코드의 특정 부분에서 어떤 값이나 변수가 어떻게 작동하는지 확인할 수 있어 코드 디버깅에 매우 유용합니다. 또한 코드 작성 중에 간단한 테스트를 수행할 때도 디버그 출력을 사용할 수 있어 작업을 좀 더 쉽고 효율적으로 할 수 있습니다.
+어떻게: 코딩 예제와 함께 "```Rust ... ```" 코드 블록 안에서 샘플 출력을 제공합니다.
 
-## 사용법
-
-디버그 출력은 간단한 함수를 사용하여 쉽게 작성할 수 있습니다. 아래는 Rust로 디버그 출력을 하는 간단한 예시입니다.
-
-```Rust
-fn main() {
-    println!("Hello, Rust!"); // 디버그 출력 사용법 예시
-}
+```rust
+// 디버그 출력 예제
+let name = "John";
+let age = 25;
+println!("이름: {}, 나이: {}", name, age); // 새로운 줄로 출력됨
+print!("이름: {}, 나이: {}", name, age); // 같은 줄에 출력됨
 ```
 
-위 코드를 실행하면 터미널에 "Hello, Rust!"라는 메시지가 출력됩니다. 위 코드에서 "println" 함수는 디버그 출력을 하도록 지시하는 역할을 합니다. 괄호 안에 디버그 출력할 내용을 입력하면 됩니다. 디버그 출력할 내용은 변수, 상수, 문자열 등 모든 종류의 값이 될 수 있습니다.
+출력 결과:
+```
+이름: John, 나이: 25
+이름: John, 나이: 25
+```
 
-## 더 깊이 들어가기
+깊게 들어가기: 디버그 출력에 대해 더 깊이 알아보겠습니다. 먼저, `println!`과 `print!`는 형식 문자열을 사용하며, `println!`은 출력 후 새로운 줄로 넘어가고, `print!`는 같은 줄에 출력합니다. 또한, 형식 문자열에는 변수나 값을 넣는 데 사용되는 형식 지정자가 있습니다.
 
-실제로 디버그 출력을 사용할 때 코드를 어떻게 작성해야 할지 고민할 때가 있습니다. 때때로 디버그 출력이 코드의 흐름을 방해하는 경우도 있고, 너무 많은 디버그 출력을 사용하면 코드를 읽기가 어려워질 수 있습니다. 이런 상황에서는 무엇을 어떻게 디버그 출력할지에 대해 고민하는 것이 중요합니다.
+예를 들어, `%d`는 10진수 정수를, `%.2f`는 소수점 두 자리까지 반올림한 실수를 출력합니다. 이 외에도 여러 형식 지정자를 사용할 수 있으며, 필요한 경우 문자열의 형식을 정확하게 지정해야 합니다.
 
-디버그 출력은 필요한 부분에서만 사용하는 것이 좋습니다. 코드에서 원하는 장소에 디버그 출력을 넣어서 어떤 값이 저장되어 있는지 확인하고 해당 값이 코드에서 어떻게 사용되는지 이해하는데 도움이 됩니다. 이 때, 디버그 출력을 관리하기 위해 여러 표준 라이브러리가 제공되고 있으니 라이브러리를 적극 활용하는 것도 좋은 방법입니다.
-
-## 더 알아보기
-
-자세한 내용은 공식 Rust 문서를 참조해보세요. 아래 링크에서 디버그 출력에 대한 더 많은 정보를 확인할 수 있습니다.
-
-- <https://doc.rust-lang.org/std/macro.dbg.html>
-- <https://doc.rust-lang.org/book/appendix-01-syntax-index.html#debug-macro>
-- <https://doc.rust-lang.org/std/fmt/index.html>
-
-Markdown "See Also" 항목 참조:
-- <https://doc.rust-lang.org/edition-guide/types/macros.html>
-- <https://www.rust-lang.org/learn/get-started>
-- <https://www.rust-lang.org/production/>
+### 추천 링크
+- [Rust 공식 문서- 디버그 출력](https://doc.rust-lang.org/rust-by-example/hello/print/print_debug.html)
+- [Rust 디버깅하기 - TMI를 활용한 디버깅 출력](https://blog.mozilla.org/research/2015/05/11/rust-debugging-with-tmi/)
+- [The Art of Rust - 디버깅 팁](https://medium.com/@kevin_lynx/the-art-of-rust-debugging-tips-cae54cdcd9e)

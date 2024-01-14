@@ -1,42 +1,64 @@
 ---
 title:    "C: Å skrive en tekstfil"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det er mange grunner til å skrive en tekstfil når du koder i C. Det kan være å spare data, lage loggfiler eller lagre konfigurasjonsinformasjon.
+Å skrive en tekstfil kan være en viktig del av programmering, spesielt når det kommer til å lagre data og informasjon. Det kan være nyttig hvis du ønsker å lagre data som brukeren har lagt inn, eller hvis du trenger å generere en rapport med informasjon fra programmet ditt.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å skrive en tekstfil i C, må du først åpne en fil ved å bruke "fopen" funksjonen. Du må også spesifisere om du vil skrive til filen, ved å bruke "w" parameteret i fopen. Deretter kan du bruke "fprintf" funksjonen til å skrive ønsket informasjon til filen. Her er et eksempel på hvordan du kan skrive til en tekstfil:
+Å lage en tekstfil i C er ganske enkelt. Først må du åpne en fil ved hjelp av `fopen` -funksjonen og angi hvilken fil du vil åpne, og modusen du vil bruke (for eksempel lesing, skriving eller begge deler). Deretter kan du bruke `fputs` for å skrive teksten du ønsker å lagre i filen. Til slutt, må du huske å lukke filen med `fclose` for å sikre at dataene blir lagret riktig.
+
+Her er et eksempel på hvordan du kan skrive teksten "Hei verden!" til en fil og deretter lese den og skrive den ut på skjermen:
 
 ```C
 #include <stdio.h>
 
-int main() {
-  FILE * tekstfil;
-  tekstfil = fopen("minfil.txt", "w");
-  fprintf(tekstfil, "Dette er en tekstfil som er skrevet ved hjelp av C.\n");
-  fclose(tekstfil);
-  return 0;
+int main()
+{
+    // Åpne filen for skriving
+    FILE *fil = fopen("tekstfil.txt", "w");
+
+    // Skriv "Hei verden!" til filen
+    fputs("Hei verden!", fil);
+
+    // Lukk filen
+    fclose(fil);
+
+    // Åpne filen for lesing
+    fil = fopen("tekstfil.txt", "r");
+
+    // Les teksten fra filen og skriv den ut
+    char tekst[50];
+    fgets(tekst, 50, fil);
+    printf("%s", tekst);
+
+    // Lukk filen igjen
+    fclose(fil);
+
+    return 0;
 }
 ```
 
-Output:
+Dette vil gi følgende utskrift:
 
-Dette er en tekstfil som er skrevet ved hjelp av C.
+```
+Hei verden!
+```
 
-## Dypdykk
+## Deep Dive
 
-Når du skriver en tekstfil i C, er det viktig å passe på at du lukker filen ved hjelp av "fclose" funksjonen. Dette vil sørge for at all data er skrevet til filen og at ressursene blir frigjort. Du kan også bruke "fputs" funksjonen for å skrive en hel streng til filen, eller "fputc" for å skrive enkelttegn.
+Når du skriver en tekstfil i C, må du være oppmerksom på noen ting. For det første må du sørge for at filen du åpner faktisk eksisterer, ellers vil `fopen` returnere `NULL` og du vil ikke kunne skrive til den. Du bør også alltid kontrollere at filen lukkes riktig ved å bruke `fclose`. Hvis du ikke gjør det, kan dataene dine gå tapt eller filen kan bli skadet.
 
-Det er også viktig å sjekke om filen ble åpnet og lukket riktig, dette kan gjøres ved å bruke "fopen" og "fclose" i en "if" betingelse. Det anbefales også å bruke "feof" funksjonen for å sjekke om du har nådd slutten av filen mens du leser den.
+En annen viktig ting å huske på er at når du skriver til en fil, vil innholdet fra tidligere tekst bli overskrevet med den nye teksten. Hvis du vil legge til tekst i slutten av en eksisterende fil, bør du bruke `fseek` til å sette markøren til slutten av filen før du skriver ny tekst.
 
 ## Se også
 
-- [C-filbehandling](https://www.ntnu.no/wiki/display/programutvikling/Skrive+fil+i+kap%C3%A57)
-- [Cppreference - File I/O](https://en.cppreference.com/w/c/io)
-- [GeeksforGeeks - File Handling in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
+* ["Åpne og lese filer i C" av Programiz](https://www.programiz.com/c-programming/c-file-input-output)
+* ["C-filer og strømmer" av GeeksforGeeks](https://www.geeksforgeeks.org/c-files-and-streams/)
+* ["C-filer" av Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

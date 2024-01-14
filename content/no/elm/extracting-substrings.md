@@ -1,90 +1,46 @@
 ---
-title:    "Elm: Uthenting av delstrenger"
+title:    "Elm: Utvinning av substrenger"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor ekstrahere substrings i Elm
 
-Å ekstrahere substringer, eller delstrenger, fra en streng er ofte nødvendig når man jobber med tekstbehandling eller dataanalyse. Ved å uteksedere kun en del av en streng, kan man få tilgang til spesifikke deler av informasjonen og behandle den separat. Dette kan være spesielt nyttig når man ønsker å filtrere data eller manipulere tekstelementer.
+Det kan være en utrolig praktisk funksjon å være i stand til å ekstrahere substrings fra en streng i Elm. Dette kan være nyttig for å manipulere og bearbeide data, eller for å vise deler av en tekst på en mer leselig måte. Uansett hva årsaken er, kan substrings være en uvurderlig funksjon å ha i verktøykassen din som en Elm programmerer.
 
-# Hvordan
+## Slik gjør du det i praksis
 
-Først og fremst må vi importere biblioteket `String` for å kunne bruke de innebygde funksjonene for å ekstrahere substringer. Deretter kan vi bruke funksjonen `slice` til å angitte start- og sluttposisjonen for den delen av strengen vi ønsker å ekstrahere.
-
-```Elm
-import String exposing (slice)
-
-tekst = "Dette er en tekststreng"
-
-delstreng = slice 6 8 tekst
-
--- output: "er"
-```
-
-I dette eksemplet har vi ekstrahert delen av teksten mellom posisjon 6 og 8, og fått ut substrengen "er". Det er også mulig å bruke `slice` til å ekstrahere fra slutten av strengen ved å bruke negative tall.
+For å ekstrahere substrings i Elm, må du bruke funksjonen `String.slice` og angi start- og sluttposisjoner.
 
 ```Elm
-tekst = "Dette er en tekststreng"
-
-delstreng = slice -8 -1 tekst
-
--- output: "tekststre"
+String.slice start stop streng
 ```
 
-Man kan også angi kun startposisjon, og dermed ekstrahere alt etter denne.
+La oss se på et eksempel der vi ønsker å ekstrahere de tre første bokstavene i strengen "katten min":
 
 ```Elm
-tekst = "Dette er en tekststreng"
-
-delstreng = slice 11 tekst
-
--- output: "tekststreng"
+String.slice 0 3 "katten min"
 ```
 
-# Dypdykk
+Dette vil gi oss resultatet "kat" som output. Merk at startposisjonen er inkludert, mens sluttposisjonen ikke er det.
 
-I tillegg til `slice`-funksjonen finnes det også andre måter å ekstrahere substringer på i Elm. En annen nyttig funksjon er `left`, som lar deg skrive ut den angitte delen fra venstre side av strengen.
+Du kan også bruke en negativ verdi for å angi sluttposisjonen, slik at substrings blir ekstrahert fra slutten av strengen. Her er et eksempel på å ekstrahere de tre siste bokstavene i samme streng:
 
 ```Elm
-import String exposing (left)
-
-tekst = "Dette er en tekststreng"
-
-delstreng = left 5 tekst
-
--- output: "Dette"
+String.slice 0 -3 "katten min"
 ```
 
-Det finnes også `right`-funksjonen som gjør det samme på høyre side av strengen.
+Output vil da være "min" i dette tilfellet.
 
-```Elm
-import String exposing (right)
+## Dypdykk i substrings
 
-tekst = "Dette er en tekststreng"
+Som nevnt tidligere, kan substrings være nyttige for å manipulere data eller gjøre tekst mer leselig. Men det er også viktig å være oppmerksom på at det også kan være en utfordring å håndtere endringer i strengen du ekstraherer fra. Hvis start- eller sluttposisjonen endres, kan det hende at du ikke får den ønskede substrings som output.
 
-delstreng = right 9 tekst
+En annen ting å huske på er at substrings funksjonen ikke fungerer på Unicode-tegn. Dette betyr at hvis strengen din inneholder Unicode-tegn, kan du oppleve uventede resultater når du prøver å ekstrahere substrings.
 
--- output: "tekststreng"
-```
+## Se også
 
-En annen nyttig funksjon er `split`, som lar deg dele en streng opp i en liste ved å angi et bestemt tegn.
-
-```Elm
-import String exposing (split)
-
-tekst = "1, 2, 3, 4, 5"
-
-delstrenge = split ", " tekst
-
--- output: ["1", "2", "3", "4", "5"]
-```
-
-Dette kan være nyttig når man ønsker å behandle hver del av en string separat.
-
-# Se også
-
-- [Offisiell dokumentasjon for `String`-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm i praksis - ekstrahering av substringer](https://medium.com/elm-i-praksis/ekstrahering-av-substringer-med-elm-be900f6c0f75)
-- [Eksempelprosjekt med bruk av `slice` i Elm](https://github.com/Elm-i-praksis/slice-example)
+- Offisiell Elm dokumentasjon for `String.slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
+- Andre nyttige funksjoner for å håndtere strenger i Elm: https://package.elm-lang.org/packages/elm/core/latest/String

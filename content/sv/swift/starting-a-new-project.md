@@ -1,32 +1,34 @@
 ---
-title:    "Swift: Att påbörja ett nytt projekt"
+title:    "Swift: Att starta ett nytt projekt"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att starta ett nytt projekt kan vara en spännande utmaning och kan hjälpa dig att utöka dina kunskaper och erfarenheter inom Swift-programmering. Genom att starta ett nytt projekt kan du också öva på att använda dina färdigheter och kreativitet för att skapa något helt nytt.
+# Varför
 
-## Hur man gör
-Att starta ett nytt Swift-projekt är en relativt enkel process. Först måste du öppna Xcode och välja "Ny Projekt" från fil-menyn. Därefter väljer du "Single View App" som mall och ger ditt projekt ett lämpligt namn. När projektet har skapats kan du börja skriva din kod. Nedan följer ett exempel på hur du kan skriva ut "Hej världen" i Swift:
+Att starta ett nytt programmeringsprojekt är en spännande utmaning som kan leda till en mängd olika möjligheter. Det kan vara för att utveckla en ny app, skapa en hemsida, eller helt enkelt för att utveckla dina programmeringskunskaper. Oavsett anledning, är det alltid roligt att börja ett nytt projekt och se vad det kan leda till!
 
-```Swift
-print("Hej världen")
+# Hur man gör
+
+Att starta ett nytt Swift-projekt är enkelt och roligt! Först och främst behöver du ha Swift-installerat på din dator och ha en textredigerare eller en IDE (Integrated Development Environment) som stödjer Swift-utveckling. Sedan kan du följa dessa enkla steg för att komma igång:
+
+```
+Swift
+// Skapa en ny fil med ".swift" som filändelse
+// Ange klassnamn och eventuella properties och metoder
+// Anropa klassen och kör koden
 ```
 
-När du kör detta program kommer utmatningen att se ut så här:
+Om du vill ha mer detaljerade exempel och övningar, kan du kolla in Swift Playgrounds appen på din Mac eller iPad, som ger dig möjlighet att testa och utforska Swift utan att skapa ett helt nytt projekt.
 
-```Swift
-Hej världen
-```
+# Djupdykning
 
-Nu har du startat ditt första Swift-projekt!
+När du har skapat ditt första projekt, kan du börja utforska möjligheterna med Swift ännu mer. Ett par tips att komma igång med är att lära dig om olika datatyper, funktioner och operatorer, samt hur man skapar och använder klasser och strukturer. Genom att läsa dokumentationen och följa online-tutorials, kan du snabbt utveckla dina kunskaper och utmana dig själv med mer avancerade projekt.
 
-## Deep Dive
-Att starta ett nytt Swift-projekt ger dig möjlighet att utforska nya tekniker och koncept inom språket. Du kan utmana dig själv att skapa mer komplexa program och använda olika designmönster för att förbättra din kod. Dessutom kan du integrera olika API:er och bibliotek i ditt projekt för att utöka dess funktionalitet och göra det ännu mer imponerande.
+# Se också
 
-## Se även
-- [Officiell Swift-dokumentation](https://swift.org/documentation/)
-- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/)
-- [Ray Wenderlich Swift Tutorials](https://www.raywenderlich.com/category/swift)
+- [Official Swift Documentation (Officiell Swift-dokumentation)](https://docs.swift.org/swift-book/)
+- [Apple's Swift Playgrounds app (Apple's Swift Playgrounds-app)](https://www.apple.com/swift/playgrounds/)
+- [Codecademy's Swift course (Codecademy's kurs i Swift)](https://www.codecademy.com/learn/learn-swift)

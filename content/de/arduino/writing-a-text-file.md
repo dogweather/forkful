@@ -1,57 +1,50 @@
 ---
 title:    "Arduino: Das Schreiben einer Textdatei"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Textdateien sind ein wichtiger Bestandteil des Programmierens mit Arduino. Sie ermöglichen die Speicherung von Informationen, die später von Ihrem Programm gelesen und verwendet werden können. Das Schreiben einer Textdatei kann nützlich sein, um beispielsweise Daten zu protokollieren oder Konfigurationseinstellungen zu speichern.
+Es gibt viele Gründe, warum man ein Textdokument in einem Arduino Programm erstellen würde. Zum Beispiel könnte man Nutzerdaten speichern oder eine Log-Datei für Fehlermeldungen erstellen. Textdateien sind auch hilfreich, um Daten zwischen verschiedenen Programmen auszutauschen.
 
-## Wie geht das
+## Wie erstelle ich eine Textdatei in Arduino
 
-Um eine Textdatei in Arduino zu schreiben, müssen Sie zuerst die SD-Bibliothek einbinden. Dann erstellen Sie ein Objekt der Klasse File, um die Datei zu öffnen. Verwenden Sie die Methode "write" um Daten in die Datei zu schreiben und schließen Sie die Datei mit der Methode "close". Im folgenden Beispiel werden Daten in eine Textdatei mit dem Namen "daten.txt" geschrieben.
+Um eine Textdatei in Arduino zu erstellen, müssen Sie zuerst die Standardbibliothek "SD" importieren. Dann müssen Sie eine SD-Karte in Ihren Arduino einsetzen und zuweisen. Anschließend können Sie einfach den Befehl "open" verwenden, um eine neue Textdatei zu erstellen und darauf zuzugreifen. Hier ist ein Beispiel:
 
 ```Arduino
-#include <SD.h>
+#include <SD.h> // Standardbibliothek importieren
 
-File datenFile;
+File dataFile; // Textdatei-Variable erstellen
 
 void setup() {
-  // SD-Karte initialisieren
-  if (!SD.begin(10)) {
-    // Fehlerbehandlung, falls Karte nicht initialisiert werden kann
+  Serial.begin(9600); // Serielle Kommunikation starten
+  SD.begin(4); // SD-Karte zuweisen
+  dataFile = SD.open("daten.txt", FILE_WRITE); // Neue Textdatei mit Namen "daten.txt" erstellen
+  if (dataFile) { // Überprüfung, ob die Datei erfolgreich geöffnet wurde
+    Serial.println("Textdatei erstellt!");
   }
-
-  // Datei erstellen oder öffnen
-  datenFile = SD.open("daten.txt", FILE_WRITE);
-
-  // Daten in die Datei schreiben
-  if (datenFile) {
-    datenFile.print("Erster Eintrag");
-    datenFile.println("Zweiter Eintrag");
-    datenFile.close(); // Datei schließen
-  } else {
-    // Fehlerbehandlung, falls Datei nicht geöffnet werden kann
+  else { // Wenn die Datei nicht geöffnet werden konnte
+    Serial.println("Fehler beim Erstellen der Textdatei!");
   }
 }
 
 void loop() {
-  // Code für den Loop
+  // Hier können Sie Ihren Code schreiben, um Daten in die Textdatei zu schreiben
 }
+
 ```
 
-Das obige Beispiel schreibt die Textzeilen "Erster Eintrag" und "Zweiter Eintrag" nacheinander in die Datei "daten.txt" auf der SD-Karte. Beachten Sie, dass die Methode "print" nur eine Zeile schreibt, während "println" eine Zeile mit einem Zeilenumbruch am Ende schreibt.
+Wenn Sie das Programm ausführen, wird eine Textdatei mit dem Namen "daten.txt" erstellt und eine Meldung wird ausgegeben, wenn dies erfolgreich war.
 
 ## Tiefergehende Informationen
 
-Beim Schreiben einer Textdatei müssen Sie beachten, dass jede Textzeile durch einen Zeilenumbruch getrennt wird. Um einen Zeilenumbruch in der Datei einzufügen, können Sie entweder die Methode "println" verwenden oder ein "\n" am Ende der Zeile hinzufügen. Ansonsten wird der Text in der Datei in einer einzigen Zeile geschrieben.
-
-Außerdem sollten Sie beim Schreiben von Textdateien auf die Schreibgeschwindigkeit achten, insbesondere wenn Sie häufig Daten schreiben müssen. Eine Möglichkeit, die Schreibgeschwindigkeit zu erhöhen, ist das Verwenden von Pufferungen. Hierbei werden die Daten zunächst in einen Puffer geschrieben und dann in die Datei geschrieben, wenn der Puffer voll ist oder das Programm beendet wird. Dies kann die Anzahl der Schreibvorgänge reduzieren und die Geschwindigkeit erhöhen.
+Es gibt verschiedene andere Funktionen und Möglichkeiten, die Sie beim Erstellen einer Textdatei in Arduino nutzen können. Zum Beispiel können Sie mit dem Befehl "print" Daten in die Datei schreiben oder mit dem Befehl "seek" an eine bestimmte Position in der Datei springen. Außerdem können Sie mit dem Befehl "close" die Datei schließen, wenn Sie damit fertig sind. Es gibt auch andere Bibliotheken, die Ihnen helfen können, komplexere Textdateien zu erstellen, wie die "SPIFFS" Bibliothek für Flash-Speicher.
 
 ## Siehe auch
 
-- [Arduino Reference](https://www.arduino.cc/reference/de/)
-- [Tutorial zur Verwendung der SD-Bibliothek](https://www.arduino.cc/en/guide/libraries)
-- [Video-Tutorial zum Schreiben von Textdateien mit Arduino](https://www.youtube.com/watch?v=DbI32og7lMM)
+- [Arduino SD Library Dokumentation](https://www.arduino.cc/en/reference/SD)
+- [Tutorial zur Verwendung von SD-Karten mit Arduino](https://create.arduino.cc/projecthub/electropeak/how-to-use-sd-card-with-arduino-uno-10a2ae)
+- [Arduino SPIFFS Library Dokumentation](https://www.arduino.cc/en/Reference/spiffs)

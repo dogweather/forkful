@@ -1,48 +1,58 @@
 ---
-title:    "Go: Skriving av tester"
+title:    "Go: Skrive tester"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Så hvorfor bry seg med å skrive tester? Vel, for det første bidrar det til å sikre at koden vår fungerer som den skal. Ved å skrive tester får vi også en innebygd dokumentasjon av koden vår, som kan hjelpe fremtidige utviklere å forstå hva koden gjør og hvordan den fungerer.
+## Hvorfor
 
-# Hvordan
-For å skrive tester i Go-språket, bruker vi pakken "testing" som kommer med standardbiblioteket. La oss se på et enkelt eksempel:
+Hvis du er en erfaren Go-programmerer, har du sannsynligvis hørt om testing. Men hvorfor er det så viktig? Testing er en viktig del av utviklingsprosessen for å sikre at koden vår fungerer som den skal. Ved å skrive tester kan vi finne og fikse feil tidlig i utviklingsfasen, noe som sparer oss for mye tid og hodepine senere.
 
-```
+## Slik gjør du det
+
+For å skrive tester i Go, må vi først importere pakken "testing". Deretter kan vi bruke funksjonene "t.Logf" og "t.Errorf" for å logge utdata og feilhenvisninger. La oss se på et eksempel:
+
+```Go
 package main
 
-import "testing"
+import (
+    "testing"
+    "math"
+)
 
-func add(x, y int) int {
-    return x + y
-}
+func TestSquareRoot(t *testing.T) {
+    result := math.Sqrt(9)
+    expected := 3.0
 
-func TestAdd(t *testing.T) {
-    result := add(2, 3)
-    if result != 5 {
-        t.Errorf("Expected 5, got %d", result)
+    if result != expected {
+        t.Errorf("Expected %v, got %v", expected, result)
+    } else {
+        t.Logf("Success! The square root of 9 is %v", result)
     }
 }
 ```
 
-Her har vi definert en enkel funksjon "add" som legger sammen to tall, og vi tester den ved å bruke Test-funksjonen fra "testing" pakken. Ved å bruke "if" uttrykk i Test-funksjonen, sammenligner vi resultatet av vår add funksjon med forventet verdi og gir en feilmelding hvis de ikke er like.
-
+output:
 ```
-$ go test
-ok      _/home/user/example     0.004s
+--- FAIL: TestSquareRoot (0.00s)
+    main_test.go:12: Expected 3.0, got 2.0
+FAIL
+exit status 1
+FAIL    _/home/test    0.007s
 ```
 
-Vi kan se at testen har blitt utført og resultatet var vellykket. Hvis vi endrer funksjonen vår slik at den returnerer et annet resultat, vil testen feile og gi oss en feilmelding.
+I dette eksempelet tester vi om resultatet av kvadratroten skal være lik det forventede svaret 3.0. Hvis svarene ikke matcher, bruker vi "t.Errorf" for å vise en feilmelding. Hvis de matcher, bruker vi "t.Logf" for å vise en suksessmelding. Dette er en enkel test, men du kan implementere flere tester for å sikre at koden din fungerer i ulike scenarier.
 
-# Dypdykk
-Å skrive gode tester handler om å ha god dekning av koden vår og å teste alle mulige tilfeller. Man kan også bruke "benchmarks" for å måle ytelsen til koden vår. Go har også en funksjon som heter "coverage" som lar oss se hvor mye av koden vår som er dekket av testene våre.
+## Fordypning
 
-Et annet nyttig verktøy er "mocking", som lar oss etterligne visse funksjoner eller objekter i testmiljøet vårt. Dette kan være spesielt nyttig når vi trenger å teste funksjoner som er avhengige av eksterne tjenester eller databasekall.
+Å skrive effektive tester handler ikke bare om å teste logikk og funksjonalitet. Det er også viktig å teste grensetilfeller og feilhåndtering. Når du skriver tester, bør du prøve å dekke alle mulige scenarier for å sikre at din kode er robust og pålitelig.
 
-# Se også
-- [Go Dokumentasjon: Testing](https://golang.org/pkg/testing/)
-- [En kort introduksjon til testing i Go](https://blog.alexellis.io/golang-writing-unit-tests/)
-- [Bli en bedre Go-utvikler gjennom testing](https://dev.to/elastic/become-a-better-go-developer-through-testing-1f65)
+En annen viktig del av testing er å mocke objekter og funksjoner. Ved å gjøre dette kan du simulere ulike situasjoner og kontrollere hva slags data og utdata er involvert i testene dine. Dette kan hjelpe deg med å finne og fikse feil som du kanskje ikke ville ha oppdaget ellers.
+
+## Se også
+
+- [Offisiell dokumentasjon for pakken "testing" i Go](https://golang.org/pkg/testing/)
+- [Go Testing Cheat Sheet for quick reference](https://devhints.io/go-testing)
+- [Eksempler på testing med Go](https://github.com/techtalk/go-testing-examples)

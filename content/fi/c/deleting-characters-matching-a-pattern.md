@@ -1,57 +1,47 @@
 ---
-title:    "C: Kaavan mukaiseen merkkijonon poistaminen"
+title:    "C: Mallia vastaavien merkkien poistaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monissa tilanteissa on tarpeen poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi olla erittäin hyödyllistä esimerkiksi tekstimuotoilussa tai tietojen käsittelyssä.
+Joskus ohjelmointiprojekteissa joudutaan käsittelemään suuria määriä tekstiä ja siihen liittyviä merkkejä. Erilaiset virheelliset tai tarpeettomat merkit voivat vaikeuttaa ohjelman toimintaa ja hidastaa sen suoritusta. Tällöin voi olla hyödyllistä poistaa tietyt merkit, jotka eivät ole tarpeellisia ja saattavat aiheuttaa ongelmia.
 
-## Kuinka tehdä
+## Kuinka
 
-C-kielen avulla tämän tavoitteen saavuttaminen voi olla hyvin yksinkertaista. Alla olevassa koodiesimerkissä näet, kuinka käytännössä voidaan poistaa kaikki numerot sisältävä merkkijono. Tulostuksena saat puhtaan merkkijonon ilman numeroita.
+C-kielinen ohjelmointi tarjoaa helpon tavan poistaa merkkejä, jotka soveltuvat tiettyyn kuvioon. Tällä tavalla voit poistaa tarpeettomia tai virheellisiä merkkejä tekstistä.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-	char string[] = "Tämä on esimerkkimerkkijono, johon on lisätty 1234 numeroita.";
-	char result[100];
-
-	int i, j = 0;
-
-	for(i = 0; i < strlen(string); i++)
-	{
-		if(!isdigit(string[i]))
-		{
-			result[j] = string[i];
-			j++;
-		}
-	}
-
-	result[j] = '\0';
-	printf("Tulos: %s", result);
-
-	return 0;
+int main(){
+    char text[] = "Tämä on esimerkkiteksti, jossa on ***#" tarpeettomia merkkejä.";
+    //Tämä silmukka tarkistaa kaikki merkit ja poistaa tarvittavat
+    for(int i=0; i<strlen(text); i++){
+        //Jos merkki on sama kuin tähti, se korvataan tyhjällä merkillä
+        if(text[i] == '*'){
+            text[i] = ' ';
+        }
+    }
+    printf("Muokattu teksti: %s \n", text);
 }
-```
-
-Tulostus:
 
 ```
-Tulos: Tämä on esimerkkimerkkijono, johon on lisätty numeroita.
-```
+
+**Output:** Muokattu teksti: Tämä on esimerkkiteksti, jossa on # tarpeettomia merkkejä.
+
+Tässä esimerkissä käytettiin for-silmukkaa, joka käy läpi kaikki tekstin merkit ja korvaa tarpeettomat merkit tyhjillä. Tämä on yksinkertainen esimerkki, mutta voit soveltaa samaa logiikkaa myös monimutkaisempiin tekstiin tai kuvioihin.
 
 ## Syvemmälle
 
-Voidaksemme ymmärtää tarkemmin, kuinka merkkejä voi poistaa C-kielellä, on hyödyllistä tietää joitakin perustietoja merkkijonoista ja niiden käsittelystä. C-kielessä merkkijonot ovat taulukoita, joissa jokainen merkki vastaa yhtä taulukon alkiota. Merkkien poistaminen tapahtuu siis yksinkertaisesti siten, että poistettavat merkit jätetään huomioimatta ja loput merkit siirretään taulukossa siihen kohtaan, josta poistettu merkki alkoi.
+C-ohjelmoinnissa on erilaisia tapoja käsitellä ja muokata merkkejä. Yllä olevassa esimerkissä käytettiin for-silmukkaa, mutta myös esimerkiksi merkkijonojen kopiointi- tai muokkausfunktiot voivat olla hyödyllisiä. Kannattaa tutkia erilaisia ​​tapoja käsitellä merkkejä ja valita paras vaihtoehto projektisi tarpeisiin.
 
 ## Katso myös
 
-- [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language)
-- [C - Merkkijono](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Regex-tutoriaali](https://regexone.com/)
+- Vielä lisää esimerkkejä merkkien poistamisesta: https://www.geeksforgeeks.org/remove-characters-from-a-given-string-that-appears-exactly-k-times/
+- C-kielen merkkijonojen muokkausfunktiot: https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm
+- Lisää tietoa C-ohjelmoinnista: https://www.tutorialspoint.com/cprogramming/

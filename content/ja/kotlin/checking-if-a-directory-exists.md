@@ -1,38 +1,43 @@
 ---
-title:    "Kotlin: ディレクトリが存在するかどうかをチェックする"
+title:    "Kotlin: ディレクトリが存在するかどうかを確認する。"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜディレクトリの存在をチェックする必要があるのか
 
-ディレクトリが存在するかどうかをチェックすることの重要性は多岐にわたります。例えば、ファイルを読み書きする時や、バックアッププログラムを実行する前にディレクトリが存在するかを確認するなど、プログラムの実行において必要不可欠な要素です。
+ディレクトリの存在を確認することは、ファイルを作成する前に既存のディレクトリを確認する必要がある場合に重要です。これにより、プログラムがエラーにならないようにすることができます。
 
 ## 方法
 
-ディレクトリが存在するかどうかをチェックするには、 `File` クラスの `exists()` メソッドを使用します。以下の例を参考にしてください。
+まず、プロジェクトで使用するKotlinファイルを作成します。次に、```File```クラスの```exists()```メソッドを使用して、ディレクトリの存在をチェックします。
 
 ```Kotlin
-val directory = File("/path/to/directory")
+val directory = File("path/to/directory")
 
-if(directory.exists()){
-    println("ディレクトリが存在します。")
+// ディレクトリが存在するかチェック
+if (directory.exists()) {
+    println("ディレクトリが既に存在します。")
 } else {
-    println("ディレクトリが存在しません。")
+    println("ディレクトリを作成します。")
+    // ディレクトリを作成
+    directory.mkdir()
 }
 ```
 
-上記のコードでは、まず `File` クラスのインスタンスを作成し、引数としてチェックしたいディレクトリのパスを指定します。次に、 `exists()` メソッドを使用してディレクトリの存在をチェックし、存在する場合には "ディレクトリが存在します。" というメッセージを出力します。
+上記のコードを実行すると、指定したパスにディレクトリが存在しない場合は新しく作成され、既に存在する場合はメッセージが表示されます。
 
 ## ディープダイブ
 
-`exists()` メソッドは、指定したパスにファイルやディレクトリが存在するかどうかを真偽値で返します。ただし、このメソッドはディレクトリの存在だけをチェックするため、サブディレクトリの存在まではチェックしません。また、実際にファイルやディレクトリが存在するかどうかはファイルシステムのパーミッションにも左右されます。
+```exists()```メソッドは、ディレクトリの存在を確認するだけでなく、ファイルやシンボリックリンクの存在も確認することができます。また、プログラムで使用するパスは、絶対パスや相対パスの両方を指定することができます。
 
 ## 参考リンク
 
-[JavaDoc: File.exists()](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
-[Kotlin 公式ドキュメント: File.exists()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
-[GitHub: checking directory existence in Kotlin](https://github.com/KotlinBy/awesome-kotlin/blob/master/examples/checking_directory_existence.kt)
+- [Kotlin Fileクラス公式ドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Java Fileクラス公式ドキュメント](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [Kotlin Fileクラスのメソッドを使用してディレクトリの作成と存在確認を行う](https://qiita.com/kojionilk/items/b3b63029379b2b05d17c)
+- [Kotlinでディレクトリを作成する方法](https://www.it-swarm.dev/ja/kotlin/kotlindeskutopura-wotsukurumethodono-kara-anataha/b827144973cd65dcd996e2954fea8aa3/) 
 
-## 参考
+## 関連リンク

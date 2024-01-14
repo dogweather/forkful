@@ -1,46 +1,58 @@
 ---
-title:    "Kotlin: Jämförande av två datum"
+title:    "Kotlin: Jämföra två datum."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att jämföra två datum kan vara en nyttig funktion inom programmering. Det kan hjälpa till med att sortera data, beräkna tidsperioder eller skapa notifikationer baserade på datum. I denna bloggpost kommer vi att utforska hur man jämför två datum i Kotlin och ge en djupare förståelse av denna funktion.
+## Varför
 
-##Så här gör du
-För att jämföra två datum i Kotlin kan du använda en inbyggd metod som heter `isBefore`, `isAfter` eller `isEqual`. Dessa metoder finns i Java's `LocalDate` klass som kan importeras för att använda i Kotlin.
+Att jämföra två datum kan vara en viktig del av att skriva effektiv och korrekt Kotlin-kod. Det kan hjälpa dig att kontrollera för utgångsdatum, validera ålder eller sortera information baserat på datum. I denna bloggpost kommer vi att utforska hur man jämför två datum i Kotlin och dess användbarhet i olika scenarier.
+
+## Hur man gör
+
+För att börja jämföra två datum i Kotlin behöver vi först importera klassen "LocalDate". Detta gör vi genom att lägga till följande kod i början av vårt Kotlin-dokument:
 
 ```Kotlin
 import java.time.LocalDate
-
-fun main(){
-    val dateOne = LocalDate.of(2021, 9, 5)
-    val dateTwo = LocalDate.of(2021, 9, 10)
-
-    println(dateOne.isBefore(dateTwo)) //kommer att skriva ut true eftersom dateOne är innan dateTwo
-    println(dateOne.isAfter(dateTwo)) //kommer att skriva ut false
-    println(dateOne.isEqual(dateTwo)) //kommer att skriva ut false
-}
 ```
 
-I detta exempel skapar vi två LocalDate objekt och använder sedan de inbyggda metoderna för att jämföra dem. Du kan även använda dessa metoder med variabler som tilldelats olika datum och tider, inte bara för att jämföra med nuvarande datum.
+Nu kan vi tilldela två datumvärden till variabler och jämföra dem som följande:
 
 ```Kotlin
-val currentDate = LocalDate.now()
-val specificDate = LocalDate.of(2021, 12, 25)
-val specificTime = LocalTime.of(18, 30)
+// Skapa två lokala datumvariabler
+val datum1 = LocalDate.of(2021, 1, 1) // 1 januari 2021
+val datum2 = LocalDate.of(2021, 3, 1) // 1 mars 2021
 
-println(currentDate.isAfter(specificDate)) //kommer att skriva ut true eftersom currentDate är efter specificDate
-println(specificTime.isBefore(currentDate)) //kommer att skriva ut false
+// Jämför datum1 och datum2
+if (datum1 < datum2) {
+    println("datum1 ligger före datum2")
+} else if (datum1 > datum2) {
+    println("datum1 ligger efter datum2")
+} else {
+    println("datum1 och datum2 är lika")
+}
+
+// Output: datum1 ligger före datum2
 ```
 
-##Djupdykning
-Vid jämförelse av datum är det viktigt att förstå att det finns flera aspekter att beakta. Först och främst kommer `isBefore` och `isAfter` att jämföra både datum och tid, medan `isEqual` endast kommer att jämföra datum. Om tid också behöver beaktas i jämförelsen bör `isEqual` inte användas.
+Som vi kan se jämför vi de två datumvariablerna genom att använda " < ", " > " eller " == " tecken beroende på vilket resultat vi vill uppnå. Vi kan också använda andra metoder från LocalDate-klassen som "isEqual" eller "isAfter" för att göra olika typer av jämförelser.
 
-En annan viktig faktor att tänka på är hur formatet på datumet kan påverka jämförelsen. Om du till exempel har ett datum som är i formatet "dd/mm/yyyy" och ett annat som är i formatet "dd-mm-yyyy" kan de inte jämföras korrekt. Det är viktigt att se till att båda datum är i samma format för att få en korrekt jämförelse.
+## Djupdykning
 
-##Se även
-- [Officiell Kotlin dokumentation om LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/index.html)
-- [Javas LocalDate klassdokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial om hur man använder LocalDate i Kotlin](https://www.baeldung.com/kotlin-localdate)
+När vi jämför två datum i Kotlin finns det några saker vi bör tänka på. Först och främst är det viktigt att märka att LocalDate-klassen bara är giltig för dagar mellan åren 0001 och 9999. Detta innebär att om vi försöker jämföra datum utanför denna tidsram kan vi stöta på felaktigt beteende.
+
+För det andra, när vi jämför datum i en loop eller i en fil kan det vara mer effektivt att använda metoden "compareTo" istället för att använda "<" eller ">" jämförelsetecken. Detta minskar antalet objekt som behöver skapas för innehåll, vilket kan vara en fördel i applikationer med hög prestanda.
+
+Sist men inte minst är det också viktigt att notera att LocalDate-klassen är immutabel, vilket betyder att vi inte kan ändra ett datum efter att det har skapats. Det är också viktigt att vara medveten om olika tidszoner när vi jämför datum, eftersom det kan påverka resultatet.
+
+## Se även
+
+Läs gärna mer om hur man jämför datum i Kotlin genom att besöka följande länkar:
+
+- https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date.html
+- https://www.baeldung.com/kotlin-compare-dates
+- https://www.geeksforgeeks.org/kotlin-localdate-compareto-function/
+
+Tack för att du läste denna bloggpost om att jämföra datum i Kotlin. Hoppas det varit informativt och hjälpsamt för dig!

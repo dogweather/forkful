@@ -1,59 +1,42 @@
 ---
 title:    "Elixir: 比较两个日期"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：比较两个日期有什么用？
 
-在Elixir编程中，比较两个特定日期是一项非常常见的任务。通过比较日期，您可以确定某个日期在另一个日期之前、之后还是相同。这对于处理日程安排、时间表和截止日期等任务非常重要。
+比较两个日期在日常编程中是非常常见的。它可以帮助我们确定两个日期的先后顺序，或者计算出两个日期之间的时间差。举个例子，如果你正在开发一个日程安排应用程序，你可能需要比较用户选择的日期，以便将事件按照正确的顺序显示。在这篇博客文章中，我们将学习如何使用Elixir编程语言来比较两个日期。
 
-## 如何进行比较
+## 如何：
 
-在Elixir中，比较两个日期的一种方法是使用`Date.compare/2`函数。在下面的示例中，我们将比较两个日期，并根据结果打印出相应的消息。
+我们将首先使用Elixir的`DateTime`模块来创建两个日期对象，并将它们分别存储在`date_1`和`date_2`变量中：
 
-```elixir
-# 创建两个日期
-date1 = Date.from_iso8601("2020-04-15")
-date2 = Date.from_iso8601("2020-04-20")
-
-# 比较两个日期
-case Date.compare(date1, date2) do
-  1 -> IO.puts("日期1在日期2之后")
-  0 -> IO.puts("日期1和日期2相同")
-  -1 -> IO.puts("日期1在日期2之前")
-end
-
-# 输出：日期1在日期2之前
+```Elixir
+date_1 = DateTime.from_naive(~N[2020-01-01 00:00:00], "Etc/UTC")
+date_2 = DateTime.from_naive(~N[2020-06-01 00:00:00], "Etc/UTC")
 ```
 
-如上所示，当第一个日期早于第二个日期时，`Date.compare/2`返回-1。如果日期相同，则返回0，如果第一个日期晚于第二个日期，则返回1。
+接下来，我们可以使用`DateTime.compare/2`函数来比较这两个日期，它将返回一个整数值，表示第一个日期相对于第二个日期的关系。如果第一个日期早于第二个日期，返回值将小于0；如果两个日期相同，返回值将等于0；如果第一个日期晚于第二个日期，返回值将大于0。让我们来看看下面的例子：
 
-## 深入了解
-
-除了使用`Date.compare/2`函数，我们还可以使用`Date.diff/2`函数来比较日期。该函数返回两个日期之间的天数差。
-
-```elixir
-# 创建两个日期
-date1 = Date.from_iso8601("2020-04-15")
-date2 = Date.from_iso8601("2020-05-01")
-
-# 比较两个日期
-days_diff = Date.diff(date1, date2)
-
-# 输出：16
-IO.puts("日期1和日期2之间相差#{days_diff}天")
+```Elixir
+DateTime.compare(date_1, date_2) # 返回-1
+DateTime.compare(date_2, date_1) # 返回1
+DateTime.compare(date_1, date_1) # 返回0
 ```
 
-除此之外，还有许多其他的日期比较函数，如`Date.equal?/2`用于检查两个日期是否相等，`Date.before?/2`用于检查一个日期是否早于另一个日期等。
+除了使用`DateTime.compare/2`函数，我们还可以使用`Date.compare/2`和`Time.compare/2`来分别比较日期和时间。
 
-## 参考链接
+## 深入探讨：
 
-- [Elixir Docs: Date](https://hexdocs.pm/elixir/Date.html)
-- [Culttt: Comparing Dates in Elixir](https://culttt.com/2017/06/14/comparing-dates-elixir/)
+值得注意的是，Elixir中的日期和时间类型都是不可变的。这意味着比较操作并不会改变原始的日期对象，而是返回一个新的日期对象。因此，在比较日期之后，如果你想要修改日期对象，你需要将返回的新日期对象重新赋值给原始变量。
 
-## 参见
+此外，Elixir还提供了其他一些用于比较日期和时间的函数，比如`DateTime.before?/2`、`DateTime.after?/2`和`DateTime.diff/2`，它们分别用于检查一个日期是否早于/晚于另一个日期，并计算两个日期之间的时间差。
 
-- [Elixir官方文档: Date](https://hexdocs.pm/elixir/Date.html)
-- [Culttt: 在Elixir中比较日期](https://culttt.com/2017/06/14/comparing-dates-elixir/)
+希望本文能帮助你了解如何在Elixir中比较两个日期。要了解更多关于日期和时间类型的信息，请查看[Elixir官方文档](https://hexdocs.pm/elixir/DateTime.html)。
+
+## 参考链接：
+
+- [Elixir官方文档](https://hexdocs.pm/elixir/DateTime.html)

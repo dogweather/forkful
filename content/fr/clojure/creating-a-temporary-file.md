@@ -1,50 +1,57 @@
 ---
 title:    "Clojure: Création d'un fichier temporaire"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi créer un fichier temporaire en Clojure?
 
-La création de fichiers temporaires est une technique utile dans la programmation Clojure. Cela permet de stocker temporairement des données avant de les traiter ou de les utiliser dans une autre partie du code.
+Lorsqu'on programme en Clojure, il peut être utile de créer un fichier temporaire pour stocker des données temporaires ou pour effectuer des opérations spécifiques. Cela peut également être nécessaire lors de la manipulation de gros volumes de données où il est plus efficace de les stocker temporairement dans un fichier avant de les traiter.
 
-## Comment faire
+## Comment créer un fichier temporaire en Clojure?
 
-Pour créer un fichier temporaire en Clojure, utilisez la fonction `with-open`. Cela garantit que le fichier sera fermé automatiquement une fois que vous avez terminé de l'utiliser.
-
-Voici un exemple de code montrant comment créer un fichier temporaire et y écrire du contenu :
+Pour créer un fichier temporaire en Clojure, nous pouvons utiliser la fonction `with-open` qui nous permettra de créer le fichier temporaire et de le fermer automatiquement une fois que nous avons terminé nos opérations. Voici un exemple de code:
 
 ```Clojure
-(with-open [f (java.io.File/createTempFile "mon-fichier" nil)]
-  (spit f "Contenu de mon fichier"))
+(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
+    (println "Le chemin du fichier temporaire est:" (.getPath temp-file))
+    (println "Le nom du fichier temporaire est:" (.getName temp-file)))
 ```
 
-Dans cet exemple, le fichier temporaire sera créé dans le répertoire par défaut pour les fichiers temporaires, sans préfixe et avec l'extension `.tmp`. Vous pouvez spécifier un préfixe et une extension en passant des chaînes en deuxième et troisième arguments respectivement.
-
-Le contenu du fichier peut être écrit en utilisant la fonction `spit` de Clojure qui prend en premier argument le chemin du fichier et en deuxième argument le contenu à écrire.
-
-## Plongée en profondeur
-
-En utilisant la fonction `with-open`, nous pouvons également spécifier un comportement personnalisé pour la fermeture du fichier. Par exemple, vous pouvez définir une fonction à exécuter avant de fermer le fichier, comme ceci :
-
-```Clojure
-(with-open [f (java.io.File/createTempFile "mon-fichier" nil)]
-  (spit f "Contenu de mon fichier")
-  (println "Fichier temporaire créé à l'emplacement" (.getPath f)))
+Output:
 
 ```
+Le chemin du fichier temporaire est: /var/folders/g9/kq0cr4l14t503xh7b30c8f040000gn/T/temp5170164365431830835.txt
+Le nom du fichier temporaire est: temp5170164365431830835.txt
+```
 
-De plus, vous pouvez également définir un en-tête pour le fichier en utilisant la fonction `set-file-headers` de Clojure :
+Dans cet exemple, nous utilisons la fonction `java.io.File/createTempFile` pour créer notre fichier temporaire en spécifiant un préfixe ("temp") et une extension (".txt"). Nous pouvons ensuite accéder aux différentes propriétés de ce fichier en utilisant les méthodes disponibles dans la classe `java.io.File`.
+
+## Plongée en profondeur dans la création de fichiers temporaires en Clojure
+
+Il est important de noter que la fonction `createTempFile` crée un fichier qui est automatiquement supprimé lorsque le programme s'exécute avec succès. Cependant, si une erreur se produit, le fichier temporaire ne sera pas supprimé automatiquement et devra être supprimé manuellement.
+
+De plus, si nous voulons spécifier un chemin de destination différent pour notre fichier temporaire, nous pouvons utiliser la fonction `createTempFile` avec deux arguments supplémentaires: le chemin et le préfixe du fichier temporaire.
 
 ```Clojure
-(with-open [f (java.io.File/createTempFile "mon-fichier" nil)]
-  (set-file-headers f {:auteur "Jane Doe" :date "06/08/2021"})
-  (spit f "Contenu de mon fichier")
-  (println "Fichier temporaire créé avec l'en-tête" (.getHeader f)))
+(with-open [temp-file (java.io.File/createTempFile "/mon/chemin/destination/" "temp")]
+      (println "Le chemin du fichier temporaire est:" (.getPath temp-file))
+      (println "Le nom du fichier temporaire est:" (.getName temp-file)))
+```
+
+Output:
+
+```
+Le chemin du fichier temporaire est: /mon/chemin/destination/temp9053080553795498028
+Le nom du fichier temporaire est: temp9053080553795498028
 ```
 
 ## Voir aussi
 
-* [Documentation officielle de Clojure sur les fichiers temporaires](https://clojure.org/reference/java_interop#_create_temp_file)
-* [Tutoriel sur la manipulation des fichiers en Clojure](https://www.baeldung.com/clojure-read-write-files)
+- [Documentation officielle Clojure](https://clojure.github.io/api/)
+- [Tutoriels Clojure](https://www.tutorialspoint.com/clojure/)
+- [Guide du débutant en Clojure](https://www.braveclojure.com/)
+
+Merci d'avoir lu cet article sur la création de fichiers temporaires en Clojure! Nous espérons que cela vous a été utile dans vos projets de programmation. N'hésitez pas à consulter les liens ci-dessus pour plus de ressources sur le langage Clojure. Bonne programmation!

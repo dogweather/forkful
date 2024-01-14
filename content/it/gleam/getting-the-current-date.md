@@ -1,67 +1,47 @@
 ---
-title:    "Gleam: Ottenere la data odierna"
+title:    "Gleam: Ottenere la data corrente."
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Solo 1-2 frasi per spiegare *perché* qualcuno dovrebbe voler ottenere la data corrente.
 
-Può sembrare banale, ma sapere la data corrente è un'informazione importante per molte applicazioni. Ad esempio, può essere utilizzata per gestire le scadenze dei pagamenti, creare un diario digitale o semplicemente visualizzare la data corrente per l'utente.
+Se sei un programmatore Gleam, probabilmente sai che la data è un'informazione importante in molti programmi. Può essere utile per registrare quando vengono eseguite determinate azioni o per creare rapporti in applicazioni di monitoraggio dei dati. In questo articolo, ti mostrerò come ottenere la data corrente utilizzando il linguaggio di programmazione Gleam.
 
 ## Come Fare
-
-Per ottenere la data corrente in Gleam, possiamo utilizzare il modulo ```gleam/time``` e la funzione ```now()```. Questo ci darà un record con il fuso orario, l'ora, i minuti, i secondi e i millisecondi correnti.
-
-```Gleam
-import gleam/time
-
-let now = time.now()
-
-// Output:
-// Date(
-//   time_zone: Timezone.Etc,
-//   hour: 10,
-//   min: 25,
-//   sec: 5,
-//   msec: 789,
-// )
-```
-
-Se vogliamo ottenere la data attuale senza il fuso orario, possiamo utilizzare la funzione ```utc_now()```, che ci darà lo stesso risultato ma con il fuso orario impostato su UTC.
+Per ottenere la data corrente, è necessario utilizzare un modulo predefinito di Gleam chiamato `Time`. Questo modulo contiene funzioni utili per la gestione del tempo e delle date. Per prima cosa, importa il modulo nel tuo file di codice Gleam:
 
 ```Gleam
-import gleam/time
-
-let now = time.utc_now()
-
-// Output:
-// Date(
-//   time_zone: Timezone.UTC,
-//   hour: 10,
-//   min: 25,
-//   sec: 5,
-//   msec: 789,
-// )
+import Time
 ```
+
+Successivamente, utilizza la funzione `now` del modulo per ottenere la data corrente:
+
+```Gleam
+let current_date = Time.now() 
+```
+
+La funzione `now` restituisce un record con le seguenti informazioni: anno, mese, giorno, ora, minuto, secondo e millisecondo. Puoi accedere a queste informazioni utilizzando la dot notation. Ad esempio, per ottenere il mese corrente, puoi utilizzare `current_date.month`.
+
+```Gleam
+let current_month = current_date.month
+```
+
+Puoi anche formattare la data secondo le tue esigenze utilizzando la funzione `format` del modulo `Time`. Questa funzione accetta una stringa di formato e restituisce la data formattata come una stringa.
+
+```Gleam
+let formatted_date = Time.format(current_date, "%d/%m/%Y") 
+```
+
+In questo esempio, abbiamo utilizzato la stringa di formato `%d/%m/%Y`, che rappresenta rispettivamente il giorno, il mese e l'anno. Puoi trovare una lista completa delle stringhe di formato disponibili nella documentazione di Gleam.
 
 ## Approfondimento
-
-La funzione ```now()``` e ```utc_now()``` utilizzano il modulo ```gleam/time``` e il suo sottotipo ```Date``` per rappresentare la data corrente. Questa struttura dati è immutabile e offre diversi metodi utili per manipolare la data, come ad esempio ```add_days()``` per aggiungere un numero di giorni alla data corrente.
-
-Se si desidera ottenere la data in un formato diverso, è possibile utilizzare la funzione ```format()``` che accetta una stringa di formato e restituisce una stringa con la data formattata.
-
-```Gleam
-import gleam/time
-
-let now = time.utc_now()
-let formatted_date = time.format(now, "%d/%m/%Y")
-
-// Output:
-// 05/08/2021
-```
+Ottenere la data corrente è un'operazione semplice, ma potrebbe essere più complessa se si vuole gestire fusi orari diversi o se si vuole ottenere una data storica. Per approfondire questo argomento, puoi consultare la documentazione ufficiale di Gleam sul modulo `Time`.
 
 ## Vedi Anche
-
-- Documentazione ufficiale di Gleam sul modulo ```gleam/time```: https://gleam.run/modules/time
-- Esempi di utilizzo del modulo ```gleam/time```: https://github.com/gleam-lang/gleam_stdlib/blob/main/std/time_tests
+- Documentazione ufficiale del modulo `Time`: https://gleam.run/documentation/stdlib/time
+- Guida completa a Gleam: https://gleam.run/book/introduction
+- Esempi di codice Gleam: https://github.com/gleam-lang/gleam/tree/main/examples

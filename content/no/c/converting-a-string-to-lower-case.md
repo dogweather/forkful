@@ -1,55 +1,46 @@
 ---
-title:    "C: Konvertere en streng til små bokstaver."
+title:    "C: Konvertere en streng til små bokstaver"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
+"Ikke alle har like mye erfaring med programmering, og noen ganger er det enkleste å glemme grunnleggende konsepter. En av disse er å konvertere tekst til små bokstaver (lower case) i C-programmering. Selv om det høres ut som en enkel oppgave, kan det være en kilde til frustrasjon for mange nybegynnere. Derfor vil jeg i denne bloggposten gå gjennom hvorfor det er viktig å kunne konvertere en streng til lower case, hvordan man gjør det og dykke litt dypere inn i dette konseptet.
+
 ## Hvorfor
-Det er mange grunner til å ville konvertere en streng til små bokstaver i et C-program. Det kan for eksempel være for å forenkle sammenligning av tekster eller for å følge standard konvensjoner for tekstformattering.
+Det å kunne konvertere en streng til lower case kan være en svært nyttig ferdighet i C-programmering. Dette er spesielt nyttig hvis man jobber med brukerinndata, for eksempel bokstaver som er tastet inn av en bruker. Det er også viktig i situasjoner der man må sammenligne strenger, da dette sjekker om strengene er likestilte og ikke case-sensitive.
 
 ## Hvordan
-For å konvertere en streng til små bokstaver i C, kan vi bruke funksjonen `tolower()` fra standardbiblioteket `ctype.h`. Vi kan også skrive vår egen funksjon som itererer gjennom strengen og endrer hvert tegn til en liten bokstav ved hjelp av ASCII-kodene for hver bokstav.
+I C-programmering finnes det flere måter å konvertere en streng til lower case på. En av de enkleste måtene er å bruke standardfunksjonen "tolower()" som tar inn en enkelt karakter og returnerer den samme karakteren i lower case. Dette kan man gjøre for hver enkelt karakter i strengen for å konvertere hele strengen. Her er et eksempel på bruk av "tolower()" funksjonen:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-// Funksjon for å konvertere en streng til små bokstaver ved hjelp av tolower()
-void toLowerCaseUsingToLower(char str[]) {
-	for (int i = 0; str[i] != '\0'; i++) {
-    	str[i] = tolower(str[i]);
-    }
-    printf("Konvertert streng ved hjelp av tolower(): %s", str);
-}
-
-// Funksjon for å konvertere en streng til små bokstaver ved hjelp av ASCII-koder
-void toLowerCaseUsingASCII(char str[]) {
-	for (int i = 0; str[i] != '\0'; i++) {
-    	if (str[i] >= 'A' && str[i] <= 'Z') {
-        	str[i] = str[i] + 32;
-        }
-    }
-    printf("Konvertert streng ved hjelp av ASCII-koder: %s", str);
-}
-
 int main() {
-	char str[] = "Dette ER en STRENG";
-	
-	toLowerCaseUsingToLower(str);
-	// Output: Konvertert streng ved hjelp av tolower(): dette er en streng
-	
-	toLowerCaseUsingASCII(str);
-	// Output: Konvertert streng ved hjelp av ASCII-koder: dette er en streng
-	
-	return 0;
+    char string[] = "Dette Er En Streng";
+
+    for (int i = 0; i < strlen(string); i++) {
+        string[i] = tolower(string[i]);
+    }
+
+    printf("Lower case streng: %s", string);
+    return 0;
 }
 ```
+Dette vil gi følgende output:
+```
+Lower case streng: dette er en streng
+```
 
-## Dykk dypere
-Når vi bruker `tolower()`-funksjonen, konverteres tegnene kun hvis de er store bokstaver. Alle andre tegn, som tall og symboler, forblir uendret. Dette kan føre til uventede resultater hvis vi ønsker å konvertere en hel streng til små bokstaver. Derfor kan det være lurt å kombinere `tolower()` med en løkke som sjekker og behandler hvert tegn i strengen.
+En annen måte å konvertere en streng til lower case på er å bruke "strlwr()" funksjonen, som gjør det samme som "tolower()" funksjonen, men for hele strengen på en gang.
 
-## Se også
-- [The C Programming Language](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
-- [C Strings](https://www.programiz.com/c-programming/c-strings)
-- [tolower() function in C](https://www.geeksforgeeks.org/tolower-function-in-c/)
+## Dypdykk
+I C-programmering, og mange andre programmeringsspråk, blir karakterer representert ved hjelp av en tallverdi kalt ASCII-verdi (American Standard Code for Information Interchange). Store bokstaver og små bokstaver har forskjellige ASCII-verdier, for eksempel har 'A' en ASCII-verdi på 65, mens 'a' har en ASCII-verdi på 97. Derfor er det viktig å konvertere disse verdiene til riktig case for å få ønsket resultat.
+
+Det er også viktig å være oppmerksom på at konvertering til lower case kan føre til feil i visse situasjoner. For eksempel kan det påvirke utskrift av strenger til skjerm, da noen operativsystemer og terminaler kan kjøre forskjellige skriftformater og skriver ut strenger som er konvertert til lower case annerledes.
+
+## Se Også
+- [tolower() funksjonen på cplusplus.com](http://www.cplusplus.com/reference/cctype/tolower/)
+- [strlwr() funksjonen på cplusplus.com](http://www.cplusplus.com/reference/cstring/strlwr/)

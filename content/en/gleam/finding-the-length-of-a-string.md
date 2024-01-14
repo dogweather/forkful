@@ -1,53 +1,47 @@
 ---
 title:    "Gleam recipe: Finding the length of a string"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why
+Gleam is a modern functional programming language that has gained popularity in recent years. One of its key features is its strong type system, which makes it a great choice for building reliable and efficient applications. In this blog post, we will explore one of the most common tasks in programming - finding the length of a string, and how it can be done in Gleam.
 
-String manipulation is a common task in programming, and one important aspect of string manipulation is knowing the length of a string. Being able to find the length of a string can help you perform various operations, such as checking for valid input or formatting output. In this blog post, we will explore how to find the length of a string in the Gleam programming language.
-
-## How To
-
-To find the length of a string in Gleam, we can use the `len` function. This function takes a string as an argument and returns the length of that string. Let's take a look at an example:
+# How To
+Let's start with a simple string, "Hello, world!" and see how we can find its length in Gleam:
 
 ```Gleam
-let string = "Hello world!"
-let length = len(string)
+string = "Hello, world!"
+length = string |> String.length
 ```
 
-In this code, we have assigned a string to a variable called `string`, and then passed that variable to the `len` function. The result of this function call is stored in a variable called `length`. We can now use this variable to perform any operations that require the length of the string.
-
-We can also use the `len` function directly on a string literal, without the need for a variable. For example:
+This will return the length of the string as an integer, in this case, 13. We can also use pattern matching to handle different cases:
 
 ```Gleam
-let length = len("Hello world!")
+string = ""
+length = string |> String.length
 ```
 
-This will return the length of the string "Hello world!" and store it in the `length` variable.
-
-Another way to find the length of a string is by using pattern matching. We can match on a string and use a wildcard to capture the entire string. Then, we can use the `len` function on the captured string as shown below:
+This will return the length of an empty string as 0. We can also find the length of strings with non-ASCII characters:
 
 ```Gleam
-let string = "Hello world!"
-let len =
-  case string {
-    _string -> len(_string)
-  }
+string = "こんにちは世界"
+length = string |> String.length
 ```
 
-This method can be useful in certain scenarios, such as when we need to perform different operations based on the length of a string.
+This will correctly return the length as 7, even though the string contains 10 characters.
 
-## Deep Dive
+# Deep Dive
+Gleam's standard library provides the `String` module that offers various functions for working with strings. The `String.length` function is implemented using a built-in function called `Byte.length`, which returns the number of bytes in a given string.
 
-Behind the scenes, the `len` function simply counts the number of characters in a string and returns that as the length. However, it is important to note that in Gleam, strings are encoded as lists of integers, where each integer represents a Unicode codepoint. This means that each character in a string can have a different number of bytes. Therefore, the length of a string can vary depending on the encoding used.
+However, this may not always correspond to the number of characters in the string, as some characters can take up more than one byte. This is where the use of Unicode comes into play. Gleam uses the UTF-8 encoding for strings, which allows it to support a wide range of characters.
 
-Additionally, the `len` function is not limited to working only on strings. It can also be used on tuples, lists, and arrays to return the number of elements in those data structures.
+When calculating the length of a string, Gleam takes into account the number of logical characters, rather than just the number of bytes. This makes it a more accurate and reliable method for finding the length of a string.
 
-## See Also
+# See Also
+- [Gleam Documentation](https://gleam.run/documentation/)
+- [Gleam on GitHub](https://github.com/gleam-lang/gleam)
 
-- [Gleam documentation on strings](https://gleam.run/documentation/stdlib/string.html)
-- [Pattern matching in Gleam](https://gleam.run/documentation/guide/patterns.html)
-- [Unicode and encoding in Gleam](https://gleam.run/documentation/guide/unicode.html)
+Now that you know how to find the length of a string in Gleam, you can explore more of its features and discover the potential of this powerful programming language. Happy coding!

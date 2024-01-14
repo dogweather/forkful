@@ -1,32 +1,52 @@
 ---
 title:    "Elm: Convirtiendo una fecha en una cadena"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Al programar en Elm, es común necesitar convertir fechas en formato de cadena (string) para mostrarlas en la interfaz de usuario. Esto puede resultar en un proceso confuso si no se tiene experiencia en programación funcional. En este artículo, te explicaremos por qué es necesario convertir una fecha en una cadena y cómo hacerlo de manera efectiva en Elm.
+La conversión de una fecha en una cadena de texto es una habilidad útil en la programación, especialmente al trabajar con datos de tiempo y fechas. En este artículo, exploraremos cómo realizar esta conversión en Elm.
 
-## Cómo
+## Cómo hacerlo
 
-```elm
-fecha = Date.fromCalendarDate 2020 4 15
-cadena = Date.toString "dd/MM/yyyy" fecha
+Primero, debemos importar el paquete `Time` en nuestro proyecto Elm. Luego, utilizando la función `toIsoString`, podemos convertir una fecha en una cadena de texto con el formato ISO 8601.
+
+```Elm
+import Time exposing (toIsoString)
+
+date = Date.fromIsoString "2021-05-11"
+
+toIsoString date -- "2021-05-11T00:00:00.000"
 ```
 
-En este ejemplo, primero creamos una fecha utilizando la función `fromCalendarDate` y le asignamos los valores del año, mes y día que queremos. Luego, utilizamos la función `toString` para convertir la fecha en una cadena utilizando un formato específico, en este caso, "dd/MM/yyyy".
+También podemos utilizar la función `format` para personalizar el formato de la cadena de texto según nuestras necesidades. Esta función utiliza la sintaxis de formato de fecha `yy-MM-dd` para especificar cómo queremos que se vea nuestra cadena de texto.
 
-El resultado de `cadena` sería "15/04/2020". Es importante tener en cuenta que el formato utilizado dentro de la función `toString` debe estar en comillas dobles (""). Además, puedes cambiar el orden de los elementos en el formato para obtener diferentes resultados, como "MM/dd/yyyy" o "yyyy/MM/dd".
+```Elm
+import Time exposing (format)
 
-## Deep Dive
+date = Date.fromIsoString "2021-05-11"
 
-La razón por la cual es necesario convertir fechas en cadenas en Elm es porque el lenguaje trabaja principalmente con tipos de datos inmutables, lo que significa que no puedes modificar una fecha directamente. Por lo tanto, es necesario utilizar funciones como `toString` para obtener una representación legible de la fecha en lugar de tratar de modificarla directamente.
+format "yy-MM-dd" date -- "21-05-11"
+```
 
-Además, Elm se basa en el tipo de dato `Date` para trabajar con fechas, el cual es un tipo bastante complejo que maneja una gran cantidad de información relacionada con la fecha y la hora. Al convertir una fecha en una cadena, puedes elegir qué información deseas mostrar de manera más sencilla.
+Además, podemos utilizar la función `inLocalZone` para convertir la fecha en la zona horaria local del usuario.
+
+```Elm
+import Time exposing (inLocalZone)
+
+date = Date.fromIsoString "2021-05-11"
+
+inLocalZone date -- "Tue, 11 May 2021 00:00:00 GMT-0400 (Eastern Daylight Time)"
+```
+
+## Sumergirse más profundo
+
+Hay muchas más funciones y opciones disponibles en el paquete `Time` para manipular y convertir fechas. Podemos utilizar la función `fromCalendarDate` para crear una fecha a partir de un año, mes y día específicos, o la función `toTime` para convertir una fecha en milisegundos desde la época de Unix. Es importante revisar la documentación del paquete para conocer todas las posibilidades.
 
 ## Ver también
 
-- Documentación oficial de Elm sobre la conversión de fechas a cadenas: [https://package.elm-lang.org/packages/elm/time/latest/Date#toString](https://package.elm-lang.org/packages/elm/time/latest/Date#toString)
-- Ejemplo de uso de `toString` en un proyecto de Elm: [https://github.com/elm/projects/tree/master/elm-datetime-formatter](https://github.com/elm/projects/tree/master/elm-datetime-formatter)
+- Documentación del paquete Time: https://package.elm-lang.org/packages/elm/time/latest/
+- Tutorial de Elm en español: https://elmprogramming.com/es/

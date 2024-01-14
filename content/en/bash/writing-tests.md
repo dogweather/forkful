@@ -1,48 +1,88 @@
 ---
 title:    "Bash recipe: Writing tests"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-When it comes to programming, testing is an essential aspect that should not be overlooked. It ensures that the code is functioning correctly and can help catch potential errors or bugs before they cause bigger issues. Writing tests also increases the overall quality of the code and makes debugging and maintenance easier for developers. 
+In the world of software development, writing tests is becoming an increasingly important aspect of the process. It serves as a way to ensure that your code is functioning as intended and helps catch any potential bugs or errors before they reach the end-user. Writing tests also promotes better code organization and improves overall code quality.
 
-## How To 
+## How To
 
-The Bash programming language is primarily used for creating shell scripts for executing commands on a Unix or Linux operating system. To write tests in Bash, we can use the built-in testing utility called `test`. Let's look at an example of a simple test:
+To write tests in Bash, we will be using a framework called "Bats". It provides a simple and easy-to-use syntax for writing tests in Bash scripts.
 
-```
-#!/bin/bash
+First, we need to install Bats on our system. On a Mac, we can do this using Homebrew:
 
-# Test for the equality of two strings
-test "Hello" = "Hello"
-echo $?
+```Bash
+$ brew install bats
 ```
 
-The output of this code will be `0`, which indicates that the test was successful. If the strings were not equal, the output would be `1`, indicating a failed test. We can also use the `-f` flag to test for the existence of a file, like this:
+Once installed, we can start writing our tests. Let's say we have a simple Bash function that adds two numbers:
 
-```
-#!/bin/bash
-
-# Test for the existence of a file named myfile.txt
-test -f myfile.txt
-echo $?
+```Bash
+add() {
+  echo $(($1 + $2))
+}
 ```
 
-Again, the output will be `0` if the file exists or `1` if it does not. Bash also has other conditional tests such as `-e` for checking if a file exists, `-d` for testing if a directory exists, and more. Using these tests within conditional statements allows us to create more complex tests for our code.
+To test this function, we can create a new file called "test_add.sh" and add our test:
 
-## Deep Dive 
+```Bash
+#!/usr/bin/env bats
 
-Writing tests in Bash can involve more than just using the `test` utility. We can also use Bash's `set` command to enable or disable certain features for testing purposes. For example, the `-e` option will cause the script to exit if any command fails, making it easier to detect errors. We can also use `trap` to handle and respond to errors and failures during testing.
+@test "add() should add two numbers" {
+  result="$(add 5 3)"
+  [ "$result" -eq 8 ]
+}
 
-Another important aspect of testing is ensuring that the tests themselves are well-written and thorough. This means covering all possible scenarios and edge cases to provide comprehensive test coverage. It's also essential to regularly review and update tests as the codebase evolves to maintain their effectiveness.
+@test "add() should handle negative numbers" {
+  result="$(add -10 5)"
+  [ "$result" -eq -5 ]
+}
+```
 
-## See Also 
+As you can see, Bats provides an intuitive syntax for writing tests. We use the "@test" keyword to define a new test and inside the curly braces, we can run our function and assert the expected result.
 
-- [Bash Official Documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Test Expressions](https://www.artificialworlds.net/blog/2012/10/17/bash-test-operators-expressions/)
+To run our tests, we can simply execute the "test_add.sh" file:
 
-Testing is crucial for any programming project, and with Bash's built-in utilities, it can be easily incorporated into our scripts. By writing thorough and effective tests, we can ensure the quality and stability of our code. Happy coding!
+```Bash
+$ ./test_add.sh
+```
+
+If all tests pass, we will see a green "ok" for each test. If any tests fail, Bats will provide a detailed error message.
+
+## Deep Dive
+
+Bats also allows us to use setup and teardown functions to perform actions before and after each test, respectively. For example, we can add a setup function to our previous example to initialize a variable that stores the expected result:
+
+```Bash
+@test "add() should handle negative numbers" {
+  setup() {
+    expected=-5
+  }
+  result="$(add -10 5)"
+  [ "$result" -eq "$expected" ]
+}
+```
+
+Furthermore, Bats also supports looping through tests using the "@for" keyword. This can be useful if we have a large number of similar tests that we want to run:
+
+```Bash
+@for number in 1 2 3 4 5; do
+  @test "add() should double $number" {
+    result="$(add "$number" "$number")"
+    [ "$result" -eq "$(($number * 2))" ]
+  }
+done
+```
+
+For more advanced usage, Bats also offers features such as skipping certain tests, running tests in parallel, and capturing and checking output.
+
+## See Also
+
+- Bats documentation: https://github.com/bats-core/bats-core
+- Unit Testing in Bash with Bats: https://medium.com/@itseranga/unit-testing-in-bash-using-bats-b6844ac599ec
+- Bash Unit Testing: https://opensource.com/article/19/7/bash-testing

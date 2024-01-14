@@ -1,53 +1,47 @@
 ---
 title:    "Elixir recipe: Finding the length of a string"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with strings in Elixir, one common task is finding the length of a string. This is a crucial operation, especially when validating input or manipulating strings in some way. By knowing how to find the length of a string, you can enhance your Elixir programming skills and improve the quality of your code.
+When it comes to programming, there are often tasks that require finding the length of a string. Whether it's for data manipulation or input validation, knowing the length of a string can be crucial. In this blog post, we will explore how to find the length of a string in the Elixir programming language.
 
 ## How To
 
-In Elixir, the `len()` function can be used to find the length of a string. Let's take a look at how it works in practice:
+To find the length of a string in Elixir, we can use the `String.length()` function. Let's take a look at a simple example:
 
 ```Elixir
-str = "Hello, world!"
-len(str)
+string = "Hello, world!"
+
+IO.puts String.length(string)
+
 ```
-
-The above code will output `13`, as there are 13 characters in the string.
-
-If you want to get the length of a string as a number instead of just the number of characters, you can use the `byte_size()` function. This is useful if you need to limit the number of bytes in a string, for example:
+The output of this code will be `13`, showing that the string has 13 characters. We can also use string interpolation to dynamically find the length of a string:
 
 ```Elixir
-str = "Hello, world!"
-byte_size(str)
+name = "John"
+
+greeting = "Hello, #{name}!"
+
+IO.puts String.length(greeting)
 ```
 
-The above code will output `15`, as each character in the string takes up one byte of memory.
-
-Strings can also contain non-alphanumeric characters, such as emojis or accented letters. In these cases, the `length()` function can be used to get the number of Unicode code points in the string:
-
-```Elixir
-str = "Hello, 😊!"
-length(str)
-```
-
-The above code will output `6`, as the smiley face emoji takes up two code points.
+This will output `9`, as the string "Hello, John!" has 9 characters. It's important to note that this function also considers spaces and special characters when finding the length of a string.
 
 ## Deep Dive
 
-In Elixir, strings are represented as a special kind of binary called a UTF-8 encoded binary. This means that each character in a string is represented by a sequence of bytes, depending on the number of code points and the type of character. For example, emojis take up more code points and therefore require more bytes.
+Behind the scenes, the `String.length()` function in Elixir utilizes the `String.codepoints()` function to split the string into its individual characters and then counts them. This means that the function supports Unicode characters and can accurately find the length of strings with different languages and characters.
 
-Knowing this, the `len()` function calculates the length of a string by counting the number of bytes in the binary. On the other hand, the `byte_size()` function simply returns the number of bytes in the binary, regardless of how many code points it contains.
-
-It's also worth noting that since Elixir strings are immutable, finding the length of a string is an O(n) operation, where n is the number of bytes in the string. This means that the time it takes to find the length increases as the string gets longer.
+It's also worth mentioning that `String.length()` actually returns the number of codepoints in the string, not the number of characters. Codepoints are the numeric representation of each character in a string.
 
 ## See Also
 
-- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir data types](https://elixir-lang.org/getting-started/basic-types.html)
-- [Unicode code points](https://unicode.org/charts/)
+- [`String.length/1` documentation](https://hexdocs.pm/elixir/String.html#length/1)
+- [Elixir's Unicode and Codepoints guide](https://hexdocs.pm/elixir/master/unicode.html#codepoint-interoperability-in-elixir)
+- [Elixir School's Strings lesson](https://elixirschool.com/en/lessons/basics/strings/)
+
+By now, you should have a good understanding of how to find the length of a string in Elixir. Keep in mind that this function can vary in performance depending on the length of the string, as it needs to iterate through each character. Happy coding!

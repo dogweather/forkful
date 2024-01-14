@@ -1,38 +1,44 @@
 ---
-title:    "Swift: Lesen einer Textdatei"
+title:    "Swift: Einen Textdatei lesen."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Lesen von Textdateien ist eine grundlegende Fähigkeit für jeden Programmierer. Es ermöglicht uns, Daten aus externen Quellen zu laden und zu verarbeiten, was in vielen Anwendungen unerlässlich ist. In dieser Blog-Post lernst du, wie man in Swift eine Textdatei liest.
+Das Lesen von Textdateien ist ein grundlegender Bestandteil der Programmierung. Es ermöglicht uns, Informationen von externen Quellen in unsere Anwendungen zu integrieren und zu verarbeiten. In diesem Blogbeitrag werden wir uns ansehen, wie wir Textdateien in Swift lesen können.
 
-## Wie man eine Textdatei liest
+## Wie
 
-Um eine Textdatei in Swift zu lesen, müssen wir zuerst eine Dateiinstanz erstellen und den Pfad zur Textdatei angeben. Wir nutzen dazu die `URL` Klasse und die `fileURL(withPath:)` Methode, die wir dann der `String` Klasse verwenden können. So sieht unser Code aus:
+Um eine Textdatei in Swift zu lesen, verwenden wir die ```String```-Klasse und die ```String(contentsOfFile:encoding:)``` -Methode. Der ```encoding```-Parameter gibt den Zeichensatz an, der beim Lesen der Datei verwendet werden soll. Wenn die Datei UTF-8 codiert ist, können wir einfach ```String(contentsOfFile: filename, encoding: .utf8)``` eingeben, um die Datei zu lesen.
 
-```Swift
-let fileURL = URL(fileURLWithPath: "pfad/zur/textdatei.txt")
+Wenn wir beispielsweise eine Datei mit dem Namen "meinText.txt" haben, die den folgenden Inhalt enthält:
+
+```
+Hallo, Welt! 
+Dies ist ein Test.
 ```
 
-Als nächstes erstellen wir einen String, in den wir die Daten aus der Textdatei lesen werden. Wir nutzen dazu die `String` Klasse und die `init(contentsOf:encoding:)` Methode. Diese Methode erlaubt auch die Angabe der gewünschten Encodierung, falls die Textdatei Sonderzeichen enthält.
+dann können wir folgenden Code verwenden, um die Datei zu lesen und den Inhalt in der Konsole auszugeben:
 
-```Swift
-let fileText = String(contentsOf: fileURL, encoding: .utf8)
+```
+if let text = String(contentsOfFile: "meinText.txt", encoding: .utf8) {
+    print(text)
+}
 ```
 
-Nun haben wir die Daten aus der Textdatei erfolgreich in unserem String gespeichert. Um sie zu nutzen, können wir zum Beispiel mit der `components(separatedBy:)` Funktion den String anhand eines bestimmten Trennzeichens in ein Array aufteilen. Oder wir können die Daten in eine andere Datei schreiben, indem wir die `write(toFile:atomically:encoding:)` Methode verwenden.
+Dies wird "Hallo, Welt! Dies ist ein Test." in der Konsole ausgeben.
 
 ## Deep Dive
 
-Es gibt noch viele weitere Möglichkeiten und Anwendungen für das Lesen von Textdateien in Swift. Zum Beispiel können wir mithilfe der `FileManager` Klasse überprüfen, ob eine Datei existiert, bevor wir versuchen, sie zu lesen. Oder wir können mit der `LineReader` Klasse Zeile für Zeile durch die Textdatei iterieren, anstatt sie in einen String zu laden.
+Es ist wichtig zu beachten, dass die ```String(contentsOfFile:encoding:)``` -Methode eine werfen kann ```String``` , die möglicherweise ```nil``` falls die Datei nicht gelesen werden kann. Um dies zu vermeiden, können wir das optionale Bindungsmuster verwenden, um sicherzustellen, dass wir ein gültiges ```String```-Objekt erhalten. Wir können auch den ```path``` -Parameter verwenden, um den absoluten Pfad zur Datei anzugeben, anstatt nur den Dateinamen zu verwenden.
 
-Es ist auch wichtig zu beachten, dass wir bei der Verwendung von Textdateien immer mit möglichen Fehlern wie fehlerhaften Pfaden oder Dateiberechtigungen rechnen müssen. Wir können dies mit `try-catch` Blöcken oder der `guard` Anweisung abfangen.
+Es gibt auch weitere Möglichkeiten, Textdateien in Swift zu lesen, wie z.B. die Verwendung von Streams oder die Verwendung von ```Data``` -Objekten, um die Roh-Daten aus der Datei zu lesen. Für weitere Informationen empfehlen wir die offizielle Swift-Dokumentation zu diesem Thema.
 
 ## Siehe auch
 
-- [Apple Dokumentation: Dateien und Ordner in Swift](https://developer.apple.com/documentation/foundation/filesystem/about_the_file_system)
-- [Swift Code Beispiel: Lesen und Schreiben von Textdateien](https://www.hackingwithswift.com/read/32/2/reading-and-writing-strings-to-a-file)
-- [Tutorial: Arbeiten mit Textdateien in Swift](https://www.raywenderlich.com/6742871-working-with-text-files-in-swift)
+- [Offizielle Swift-Dokumentation zu Dateioperationen](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID300)
+- [Einen Text aus einer Datei lesen in Objective-C](https://www.techotopia.com/index.php/Working_with_Files_in_Objective-C)
+- [Ein Update auf Swift: Einen Text aus einer Datei lesen](https://stackoverflow.com/questions/31169654/an-update-to-swift-reading-a-text-file)

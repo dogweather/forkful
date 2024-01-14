@@ -1,39 +1,51 @@
 ---
-title:    "Java: Satunnaislukujen generointi"
+title:    "Java: Lukujen generointi tietokoneohjelmoinnissa"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Random-numerogeneraattorien luominen voi olla tärkeää, kun haluat lisätä satunnaisuutta ohjelmiisi tai simuloida erilaisia tapahtumia. Se voi myös olla hyödyllistä peleissä tai tietoturvatestauksessa.
+Satunnaislukujen tuottaminen on tärkeä osa monia ohjelmointitehtäviä, kuten pelien luomista ja tietojen muokkausta. Se voi myös auttaa simuloimaan ennustettua käyttäytymistä ja testaamaan koodin suorituskykyä. Yhteenvetona, satunnaislukujen generointi on tärkeä työkalu monelle Java-ohjelmoijalle.
 
-## Kuinka
+## Näin
+
+Satunnaislukujen tuottamiseen Java-kielellä on useita tapoja. Yksi vaihtoehto on käyttää Java Random-luokkaa, joka sisältää erilaisia ​​metodeja satunnaislukujen generoimiseen. Esimerkiksi seuraava koodinpätkä generoi satunnaisen kokonaisluvun väliltä 1-100 ja tulostaa sen konsoliin:
 
 ```Java
-// Luo uusi Random-objekti
-Random r = new Random();
-
-// Luo satunnainen kokonaisluku väliltä 0-10
-int randomNumber = r.nextInt(11);
-
-// Tulosta luku konsoliin
-System.out.println("Satunnainen luku on: " + randomNumber);
+Random random = new Random();
+int randomNumber = random.nextInt(100) + 1;
+System.out.println("Satunnainen luku välillä 1-100: " + randomNumber);
 ```
 
-Tässä esimerkissä käytämme Random-luokkaa luomaan uuden objektin, jolla voimme generoida satunnaisia lukuja. Käytämme sitten `nextInt()` -funktiota asettaaksemme välittämämme arvon, tässä tapauksessa 11, joka tarkoittaa, että haluamme generoida lukuja välillä 0-10.
+Tulostus voisi olla esimerkiksi: "Satunnainen luku välillä 1-100: 74".
 
-Voit myös käyttää `nextDouble()` -funktiota, joka generoi satunnaisia desimaalilukuja välillä 0.0-1.0.
+Lisäksi, jos haluat generoida satunnaisen liukuluvun, voit käyttää nextDouble() -metodia ja antaa sille parametrina haluamasi desimaalien tarkkuuden.
 
-## Syventyminen
+```Java
+double randomDouble = random.nextDouble(0.001);
+System.out.println("Satunnainen liukuluku kolmen desimaalin tarkkuudella: " + randomDouble);
+```
 
-Random-numerogeneraattorien taustalla on matematiikka ja todennäköisyyslaskenta. Generoidessaan "satunnaisia" lukuja, nämä generaattorit käyttävät matemaattisia algoritmeja ja siemenarvoja luodakseen lukuja, jotka näyttävät satunnaisilta. Tämän vuoksi todellisuudessa nämä numerot eivät ole täysin satunnaisia, mutta ne ovat tarpeeksi sattumanvaraisia, jotta voidaan käyttää erilaisiin tarkoituksiin.
+Tulostus voisi olla esimerkiksi: "Satunnainen liukuluku kolmen desimaalin tarkkuudella: 0.542".
 
-On myös tärkeää muistaa, että nämä generaattorit ovat ennustettavissa. Jos sama siemenarvo annetaan, sama sarja lukuja generoidaan aina. Tästä syystä on tärkeää käyttää erilaisia siemenarvoja tai jopa ajan perusteella vaihtuvia siemeniä, jotta saadaan todella satunnaisia lukuja.
+## Syvällisempi katsaus
+
+On tärkeää muistaa, että vaikka satunnaisluvut voivat tuntua täysin sattumanvaraisilta, ne todellisuudessa tuotetaan tiettyä algoritmia käyttäen. Esimerkiksi Java Random-luokka käyttää "pseudo-satunnaisluku generaattoria", joka tuottaa samassa järjestyksessä samat luvut, jos sama "siemen" (seed) on annettu alkuperäisenä parametrina.
+
+Tästä syystä, jos haluat todella satunnaisia lukuja, on suositeltavaa antaa jokaiselle ohjelman suoritukselle eri siemen. Voit tehdä tämän antamalla parametrina jokin vaihtuva arvo, esimerkiksi ajanhetki millisekunneissa:
+
+```Java
+long seed = System.currentTimeMillis();
+Random random = new Random(seed);
+```
+
+Tämä lisää satunnaisuutta, mutta ei siltikään takaa täysin sattumanvaraisia lukuja.
 
 ## Katso myös
 
-- [Random-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Miksi sinun ei pitäisi käyttää Math.random() -funktiota Java:ssa](https://stackoverflow.com/questions/738629/math-random-versus-java-util-random-nextint)
-- [Matematiikkataustaa random-numerogeneraattoreille](https://random.org/randomness/)
+- [Java Random-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Satunnaislukujen generointi Java-alustalla -opas](https://www.baeldung.com/java-generate-random-long-float-integer-double)
+- [Satunnaislukujen tuottaminen JavaFX-sovelluksessa](https://www.tutorialspoint.com/generating-random-numbers-in-javafx)

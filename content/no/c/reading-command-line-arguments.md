@@ -1,55 +1,54 @@
 ---
-title:    "C: Lesing av kommandolinjeargumenter"
+title:    "C: Lesing av kommandolinje-argumenter"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
+Å forstå hvordan man leser kommandolinjeargumenter er viktig for å kunne skrive effektiv og brukervennlig kode. Ved å lese argumenter fra kommandolinjen, kan man lage programmer som er fleksible og tilpassbare basert på brukerens behov.
 
-Å lese kommandolinjeargumenter i C-programmering kan være en viktig ferdighet for å lage mer fleksible, dynamiske og brukervennlige programmer. Ved å la brukere gi inn egne argumenter via kommandolinjen, kan man gi muligheten til å endre funksjonaliteten til et program uten å måtte endre koden. Dette kan også gjøre det enklere for brukere å tilpasse programmet til sine egne behov.
+# Hvordan gjøre det
+For å lese kommandolinjeargumenter i C, må man bruke funksjonen `main()` og dens parametere `argc` og `argv`. `argc` inneholder det totale antallet argumenter som blir sendt med, mens `argv` er en liste av strenger som inneholder de faktiske argumentene.
 
-# Hvordan
-
-Å lese kommandolinjeargumenter i C er enkelt og kan gjøres ved hjelp av `argc` og `argv`-variablene. `argc` inneholder antall argumenter som er gitt, mens `argv` er en array som inneholder verdiene til argumentene. La oss se på et eksempel:
+La oss se på et enkelt eksempel for å illustere dette:
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-
-    // Skriver ut alle kommandolinjeargumentene
+    printf("Antall argumenter: %d\n", argc);
     for (int i = 0; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
-
     return 0;
 }
 ```
 
-Hvis dette programmet kalles med følgende kommandolinje:
+La oss anta at vi kompilerer og kjører dette programmet med følgende kommandolinje-argumenter:
 
-```
-./program arg1 arg2 arg3
-```
-
-Vil det skrive ut:
-
-```
-Argument 0: ./program
-Argument 1: arg1
-Argument 2: arg2
-Argument 3: arg3
+```bash
+gcc example.c -o example
+./example hello world
 ```
 
-Plasseringen av argumentene i `argv` avhenger av operativsystemet, men det første argumentet vil alltid være selve programnavnet.
+Outputen vil da være:
 
-# Dykke dypere
+```
+Antall argumenter: 3
+Argument 0: ./example
+Argument 1: hello
+Argument 2: world
+```
 
-For å lese kommandolinjeargumentene på en mer avansert måte, kan man bruke `getopt`-funksjonen. Denne funksjonen lar deg spesifisere hvilke argumenter som er påkrevd og hvilke som er valgfrie, samt angi hva slags handling som skal utføres når spesifikke argumenter er gitt. For mer informasjon og eksempler på bruk av `getopt`, sjekk ut denne guiden: [https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html).
+Her ser vi at `argc` er 3, og at `argv` inneholder de tre argumentene vi sendte med. For å kunne bruke argumentene i koden vår, kan vi for eksempel lagre dem i variabler og deretter gjøre operasjoner med dem.
+
+# Dypdykk
+Nå som vi har sett et enkelt eksempel på hvordan man kan lese kommandolinjeargumenter i C, kan vi se litt dypere på hvordan dette fungerer. `argc` og `argv` er definert i headerfilen `stdlib.h`. `argv` er en peker til en peker (en liste av strenger), og alle strengene i denne listen er null-terminerte, noe som betyr at de avsluttes med `\0`-tegnet.
+
+Det finnes også en annen måte å lese kommandolinjeargumenter på, ved bruk av funksjonen `getopt()`. Dette kan være nyttig dersom man har behov for en mer fleksibel argumentbehandling, men kan være litt mer avansert å implementere.
 
 # Se også
-
-- [https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-- [https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [https://www.learn-c.org/en/Command_Line_Arguments](https://www.learn-c.org/en/Command_Line_Arguments)
+- [How To Use Command Line Arguments in C](https://www.digitalocean.com/community/tutorials/how-to-use-arguments-and-parameters-in-a-c-program)
+- [The getopt() function in C](https://www.gnu.org/s/libc/manual/html_node/Example-of-Getopt.html)

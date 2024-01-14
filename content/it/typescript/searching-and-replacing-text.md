@@ -1,52 +1,33 @@
 ---
-title:    "TypeScript: Cerca e sostituisci testo"
+title:    "TypeScript: Ricerca e sostituzione di testo"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Il processo di ricerca e sostituzione di testo è una delle attività più comuni quando si lavora con codice TypeScript. È utile per correggere errori di battitura, aggiornare nomi di variabili e molto altro ancora.
+C'è una cosa che tutti noi programmatori abbiamo in comune: dobbiamo lavorare con il testo. Potrebbe trattarsi di inserire del testo in un formulario, di stampare del testo a schermo o di manipolare il testo in modo dinamico. Ma a volte abbiamo bisogno di apportare delle modifiche al nostro testo. Forse vogliamo cambiare una parola o una frase in tutto il nostro codice, o forse vogliamo sostituire una variabile con un nuovo valore. In questi casi, l'utilizzo di una funzione di ricerca e sostituzione può essere un grande risparmio di tempo e fatica. Ecco perché imparare come farlo in TypeScript è una competenza importante per ogni programmatore.
 
-## Come Fare
+## Come fare
 
-Per eseguire una ricerca e sostituzione di testo in TypeScript, possiamo utilizzare il metodo `replace()` che accetta come argomenti il valore da cercare e il nuovo valore da sostituire.
-
-```TypeScript
-const frase = "Ciao, come stai?";
-const nuovaFrase = frase.replace("stai", "va");
-console.log(nuovaFrase);
-```
-
-Output: `Ciao, come va?`
-
-Possiamo anche utilizzare un'espressione regolare per eseguire una ricerca e sostituzione più avanzata. Ad esempio, se volessimo sostituire tutte le vocali di una stringa con un asterisco, possiamo fare così:
+Per eseguire una ricerca e sostituzione nel tuo codice TypeScript, puoi utilizzare il metodo `replace()` di una stringa. Prende due parametri: il testo da cercare e il testo con cui sostituirlo. Vediamo un esempio pratico:
 
 ```TypeScript
-const parola = "javascript";
-const nuovaParola = parola.replace(/[aeiou]/g, "*");
-console.log(nuovaParola);
+let testo: string = "Ciao a tutti!";
+testo = testo.replace("Ciao", "Salve");
+console.log(testo);
 ```
 
-Output: `j*v*scr*pt`
+L'output di questo codice sarà: `Salve a tutti!`. Come puoi vedere, la parola "Ciao" è stata sostituita con "Salve". Ora, questo esempio è molto semplice, ma puoi applicare lo stesso concetto per sostituire qualsiasi testo all'interno di una stringa.
 
-## Deep Dive
+## Approfondimento
 
-Il metodo `replace()` accetta anche una funzione come secondo argomento, che ci permette di eseguire una sostituzione personalizzata. La funzione riceve come argomenti il valore trovato, l'indice in cui si trova nella stringa originale e la stringa originale stessa. Ad esempio:
+Se vuoi approfondire la tua conoscenza sulla ricerca e sostituzione in TypeScript, ci sono alcune opzioni che possono tornarti utili. Per esempio, puoi usare espressioni regolari per cercare e sostituire testo in modo più flessibile e dinamico. Inoltre, puoi combinare il metodo `replace()` con altri metodi come `split()` e `join()` per effettuare sostituzioni su un array di stringhe. Inoltre, potresti aver bisogno di gestire caratteri speciali nel tuo testo come gli apici. Per questo, puoi utilizzare il metodo `replaceAll()` invece di `replace()`, che sostituirà tutte le occorrenze della stringa cercata.
 
-```TypeScript
-const frutta = "mela, banana, pera";
-const nuovaFrutta = frutta.replace(/\w+/g, (match, index) => match + index);
-console.log(nuovaFrutta);
-```
+## Vedi anche
 
-Output: `mela0, banana6, pera12`
-
-In questo esempio, la funzione aggiunge l'indice in cui viene trovato ogni valore alla fine di esso.
-
-## Vedi Anche
-
-- [Documentazione sul metodo replace di TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-replace)
-- [RegExr - Strumento online per testare e imparare le espressioni regolari](https://regexr.com/)
-- [Articolo sulla gestione delle stringhe in TypeScript](https://blog.bitsrc.io/string-manipulation-in-typescript-471b0a3a87f2)
+- [Documentazione ufficiale di TypeScript sul metodo replace()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#template-literal-types)
+- [Un tutorial su come utilizzare le espressioni regolari in TypeScript](https://www.digitalocean.com/community/tutorials/js-regular-expressions-in-typescript)
+- [Una guida su come gestire gli apici nel codice TypeScript](https://codeburst.io/typescript-escaping-special-characters-4e95b65f98b?gi=c572cbd85e06)

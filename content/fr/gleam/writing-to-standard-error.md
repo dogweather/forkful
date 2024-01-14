@@ -1,52 +1,57 @@
 ---
-title:    "Gleam: Écrire vers l'erreur standard"
+title:    "Gleam: Écriture vers l'erreur standard"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-L'utilisation de la sortie standard est essentielle pour le débogage de programmes. Il vous permet d'afficher des messages d'erreur et des informations supplémentaires qui peuvent vous aider à comprendre ce qui se passe dans votre code.
+# Pourquoi écrire vers l'erreur standard en programmation?
 
-## Comment faire
-Pour écrire dans la sortie standard en Gleam, utilisez la fonction `io.stderr.write` suivie du message que vous souhaitez afficher. Voici un exemple de code avec une sortie d'erreur personnalisée :
+L'écriture vers l'erreur standard est un concept essentiel en programmation où les erreurs et les messages de débogage sont envoyés vers un flux de sortie standard appelé stderr. Cela permet aux développeurs de mieux comprendre et de corriger les erreurs dans leur code, ce qui est crucial pour un développement efficace.
+
+## Comment faire?
+
+Ecrire vers l'erreur standard en Gleam est une tâche simple grâce à la fonction "std.error" qui prend en paramètre le message à afficher. Voici un exemple de code en Gleam pour écrire vers l'erreur standard:
 
 ```Gleam
+import gleam/io
+
 fn main() {
-  let error_message = get_error_message()
-  io.stderr.write(error_message)
-}
-
-fn get_error_message() {
-  let message = "Une erreur est survenue."
-  message
+  gleam/io.std.error("Erreur: une variable non définie.")
 }
 ```
 
-Cela va générer la sortie suivante dans le terminal :
+Le résultat de l'exécution de ce code serait:
 
 ```
-Une erreur est survenue.
+Erreur: une variable non définie.
 ```
 
-Vous pouvez également inclure des variables et des opérations dans votre message d'erreur en les concaténant avec `++`. Par exemple :
+Il est également possible de formater le message à afficher en utilisant la fonction "interpolation". Voici un autre exemple:
 
 ```Gleam
-let account_balance = 1000
-let error_message = "Solde insuffisant. Vous avez " ++ account_balance ++ " dollars sur votre compte."
+import gleam/io
+
+fn main() {
+  let name = "Maria"
+  gleam/io.std.error(`Bonjour, ${name} !`)
+}
 ```
-La sortie serait alors :
+
+Le résultat serait:
 
 ```
-Solde insuffisant. Vous avez 1000 dollars sur votre compte.
+Bonjour, Maria !
 ```
 
-## Deep Dive
-Il est important de noter que la sortie standard n'est pas seulement utile pour afficher des erreurs, mais aussi pour déboguer des programmes en général. Vous pouvez l'utiliser pour afficher des variables, des valeurs de retour de fonctions ou toute autre information pertinente à des fins de débogage.
+## Plongée en profondeur
 
-De plus, la bibliothèque standard de Gleam offre d'autres fonctions pour écrire dans la sortie standard, telles que `io.stderr.write_line` pour inclure un saut de ligne à la fin de votre message.
+Ecrire vers l'erreur standard peut sembler simple, mais c'est en réalité un outil très utile pour le débogage de code. En utilisant cette technique, les développeurs peuvent obtenir des informations précieuses sur l'exécution de leur programme en temps réel, ce qui facilite la détection et la résolution des erreurs.
 
-## Voir aussi
-- [Documentation officielle de Gleam sur la sortie standard](https://gleam.run/docs/std/io#stderr)
-- [Article de blog sur le débogage avec la sortie standard en Rust](https://medium.com/swlh/debugging-with-stderr-in-rust-292c0f35648b)
-- [Tutoriel sur les bases de Gleam](https://eli-gleam.github.io/tut-fr/)
+Il est également possible d'utiliser des bibliothèques externes comme "log" pour gérer et enregistrer les erreurs dans un fichier pour un suivi ultérieur. Cela peut être particulièrement utile pour les applications en production.
+
+# Voir aussi
+
+- [Documentation Gleam sur les fonctions standard pour interagir avec la console](https://gleam.run/documentation/stdlib/interacting-with-the-console)
+- [Exemples de code pour écrire vers l'erreur standard en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/standard_error.gleam)

@@ -1,57 +1,70 @@
 ---
-title:    "Arduino: Den aktuellen Datumsstand erhalten"
+title:    "Arduino: Das aktuelle Datum erhalten"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+In diesem Beitrag geht es um die Programmierung von Arduino und warum es wichtig ist, das aktuelle Datum abzurufen. Das aktuelle Datum kann in vielen Projekten von entscheidender Bedeutung sein, beispielsweise in einer Wetterstation oder einer automatisierten Bewässerungsanlage für den Garten.
 
-Wenn Sie sich schon einmal gefragt haben, wie Sie das aktuelle Datum in Ihren Arduino-Projekten verwenden können, dann sind Sie hier genau richtig! Das Abrufen des aktuellen Datums kann nützlich sein, um Zeitstempel für Ereignisse zu erstellen oder um bestimmte Aktionen basierend auf dem Datum auszuführen. In diesem Blogbeitrag lernen Sie, wie Sie das aktuelle Datum mithilfe von Arduino programmieren können.
-
-## Wie man das aktuelle Datum abruft
-
-Die Verwendung der eingebauten Funktionen von Arduino macht es einfach, das aktuelle Datum abzurufen. Zunächst müssen Sie die "Time" Bibliothek in Ihrem Sketch einbinden. Dies geschieht, indem Sie die folgende Zeile Code oben in Ihren Sketch einfügen:
+## Wie
+Die aktuelle Datumserfassung kann mit der Funktion `millis()` in Arduino erreicht werden. Diese Funktion gibt die Anzahl der Millisekunden seit dem Start des Arduino-Boards zurück. Mit dieser Information können wir das aktuelle Datum und die Uhrzeit berechnen.
 
 ```Arduino
-#include <Time.h>
+unsigned long currentTime = millis(); // aktuelle Zeit in Millisekunden
+int seconds = (currentTime / 1000) % 60; // Sekunden berechnen
+int minutes = (currentTime / (1000 * 60)) % 60; // Minuten berechnen
+int hours = (currentTime / (1000 * 60 * 60)) % 24; // Stunden berechnen
 ```
 
-Als nächstes müssen Sie eine Variable vom Typ "tmElements_t" erstellen, um das Datum zu speichern. Hier ist ein Beispiel, wie Sie dies tun können:
+Um das aktuelle Datum abzurufen, müssen wir auch den Tag, den Monat und das Jahr berücksichtigen. Hier können wir die Funktionen `day()`, `month()` und `year()` verwenden.
 
 ```Arduino
-tmElements_t currentDate;
+int currentDay = day(); // aktuellen Tag abrufen
+int currentMonth = month(); // aktuellen Monat abrufen
+int currentYear = year(); // aktuelles Jahr abrufen
 ```
 
-Dann können Sie die aktuelle Zeit und das Datum mit der Funktion "now()" abrufen und in der zuvor erstellten Variablen speichern:
+Mit diesen Informationen können wir das aktuelle Datum in einem bestimmten Format anzeigen. Hier ist ein Beispiel, wie man das aktuelle Datum im Format `TT.MM.JJJJ` ausgeben kann.
 
 ```Arduino
-currentDate = now();
+Serial.print(currentDay); // Tag ausgeben
+Serial.print("."); // Punkt hinzufügen
+Serial.print(currentMonth); // Monat ausgeben
+Serial.print("."); // Punkt hinzufügen
+Serial.println(currentYear); // Jahr ausgeben
 ```
 
-Um das Datum im Serienmonitor anzuzeigen, können Sie die entsprechenden Werte aus der Variablen extrahieren und ausgeben. Zum Beispiel:
+Die Ausgabe wird dann wie folgt aussehen: 12.05.2021. Natürlich können Sie das Format an Ihre Bedürfnisse anpassen.
+
+## Deep Dive
+Es gibt auch die Möglichkeit, das aktuelle Datum über eine RTC (Real-Time Clock) zu erhalten. Eine RTC ist eine elektronische Uhr, die eine unabhängige Stromquelle hat und somit auch weiterläuft, wenn der Arduino ausgeschaltet ist.
+
+Hier ist ein Beispiel, wie Sie das aktuelle Datum von einer RTC abrufen können:
 
 ```Arduino
-Serial.print("Aktuelles Datum: ");
-Serial.print(currentDate.Day);
-Serial.print(".");
-Serial.print(currentDate.Month);
-Serial.print(".");
-Serial.println(currentDate.Year);
+#include <Wire.h>
+#include "RTClib.h"
+RTC_DS1307 rtc;
+
+void setup() {
+  Wire.begin();
+  rtc.begin();
+  // Uhrzeit und Datum werden hier eingestellt
+  // rtc.adjust(DateTime(DATE, TIME));
+}
+void loop() {
+  DateTime now = rtc.now(); // aktuelles Datum und Uhrzeit abrufen
+  int currentDay = now.day(); // aktuellen Tag abrufen
+  // Weitere Funktionen wie in "Wie" erklärt benutzen
+}
 ```
 
-Die Ausgabe sollte in etwa so aussehen: "Aktuelles Datum: 18.05.2021".
-
-Jetzt können Sie das aktuelle Datum in Ihrem Arduino-Projekt verwenden, um verschiedene Aufgaben und Aktionen zu steuern.
-
-## Tiefergehende Informationen
-
-Die Funktion "now()" gibt die aktuelle Zeit und das Datum als Unix-Zeitstempel zurück. Dies ist die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00 Uhr UTC. Dieser Wert kann in verschiedene Zeitformate umgewandelt werden, um das Datum in verschiedenen Formaten anzuzeigen.
-
-Es gibt auch weitere Funktionen in der "Time" Bibliothek, mit denen Sie das Datum und die Zeit manipulieren können, z.B. "hour()", "minute()", "second()", etc. Diese können nützlich sein, wenn Sie bestimmte Aufgaben basierend auf spezifischen Uhrzeiten ausführen möchten.
+Es ist wichtig zu beachten, dass Sie die Uhrzeit und das Datum der RTC einmal einstellen müssen, bevor Sie das aktuelle Datum abrufen können.
 
 ## Siehe auch
-
-- Offizielle "Time" Bibliothek für Arduino: https://www.arduino.cc/reference/en/libraries/time/
-- Dokumentation zur "tmElements_t" Struktur: https://www.arduino.cc/reference/en/libraries/time/tmelementst/
-- Informationen zum Unix-Zeitstempel: https://www.unixtimestamp.com/
+- [Arduino - millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Arduino - day()](https://www.arduino.cc/reference/en/language/variables/time/day/)
+- [RTClib - Library für RTCs](https://github.com/adafruit/RTClib)

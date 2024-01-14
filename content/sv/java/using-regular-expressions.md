@@ -1,45 +1,55 @@
 ---
 title:    "Java: Användning av reguljära uttryck"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att använda reguljära uttryck (regular expressions) är ett mycket kraftfullt verktyg för att söka, manipulera och ersätta textsträngar i Java. Det kan hjälpa dig att snabbt och effektivt hantera stora mängder data och förbättra din kodning.
+## Varför använda regelbundna uttryck i Java?
 
-## Hur man gör
-För att använda reguljära uttryck i Java, behöver du först importera java.util.regex-paketet. Du kan sedan använda klasserna Pattern och Matcher för att skapa och matcha uttryck. Nedan följer ett enkelt exempel på hur man söker efter en viss text i en sträng och ersätter det med en annan:
+Regelbundna uttryck är ett kraftfullt verktyg inom Java-programmering som gör det möjligt att hitta och manipulera text på ett flexibelt sätt. Med hjälp av regelbundna uttryck kan du enkelt söka igenom en sträng efter specifika mönster eller uttryck, vilket kan spara mycket tid och arbete. Så varför ska du använda dem? Låt oss ta en titt på hur det fungerar.
+
+## Så här använder du regelbundna uttryck i Java
+
+För att använda regelbundna uttryck i Java, måste du först importera den inbyggda "Pattern" och "Matcher" klasserna. Sedan kan du skapa ett uttryck som innehåller det mönster du vill söka efter, och sedan köra det mot en sträng med hjälp av en Matcher-objekt. Här är ett exempel:
 
 ```Java
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegexExample {
-    public static void main(String[] args) {
-        // Skapa ett reguljärt uttryck för att söka efter ordet "java"
-        Pattern pattern = Pattern.compile("java");
 
-        // Skapa en matcher för en viss sträng
-        String text = "Java är ett populärt programmeringsspråk";
+    public static void main(String[] args) {
+        String text = "Detta är en text med numret 123456789";
+        String regex = "(\\d{3})(\\d{3})(\\d{3})"; // Uttryck för att hitta ett nummer med 9 siffror i rad
+
+        //Skapa ett Pattern-objekt
+        Pattern pattern = Pattern.compile(regex);
+
+        //Kör matchningen på strängen
         Matcher matcher = pattern.matcher(text);
 
-        // Hitta och ersätt alla förekomster av "java" med "Java"
-        String result = matcher.replaceAll("Java");
-
-        // Skriv ut resultatet
-        System.out.println(result); // Java är ett populärt programmeringsspråk
+        //Loopa igenom matchningarna och skriv ut dem
+        while (matcher.find()) {
+            System.out.println("Hittade matchning: " + matcher.group());
+        }
     }
 }
+
+// Output: Hittade matchning: 123456789
 ```
 
-Som du kan se i exemplet ovan använder vi metoder från klasserna Pattern och Matcher för att skapa och utföra matcher på en sträng. Det finns också flera andra användbara metoder för att hämta, ersätta och manipulera data med hjälp av reguljära uttryck.
+Som du kan se behöver vi bara några få rader kod för att hitta och skriva ut ett specifikt mönster i en sträng med hjälp av regelbundna uttryck.
 
-## Djupdykning
-Reguljära uttryck kan verka komplicerade till en början, men det finns många online resurser som kan hjälpa dig att förstå konceptet bättre. Det finns också flera olika symboler och metakaraktärer som kan användas för att skapa mer avancerade uttryck. Dessutom finns det viktiga funktioner som möjliggör förhöjd sökprecision som måste tas hänsyn till.
+## Djupdykning i användningen av regelbundna uttryck
 
-Det kan också vara användbart att använda olika verktyg för reguljära uttryck, som Regex Tester och RegexPlanet, för att testa och utveckla dina uttryck. Kom ihåg att övning gör mästare när det gäller att bli bekant med reguljära uttryck.
+Regelbundna uttryck kan vara mycket mer komplexa än det enkla exemplet ovan. De har en mängd olika funktioner och specialtecken som kan användas för att matcha olika typer av mönster i en sträng. Till exempel kan du använda karaktärsklassen "[a-z]" för att matcha alla små bokstäver, eller "[A-Z]" för att matcha alla stora bokstäver. Du kan också använda specialtecken som "*" för att representera noll eller fler förekomster av ett tecken, eller "?" för att representera noll eller en förekomst av ett tecken.
+
+Det finns också många olika användningsområden för regelbundna uttryck, som validering av användarinput, filtrering av text från en fil eller webbsida, eller extrahering av viss information från en sträng. Utöver Java, kan du också använda regelbundna uttryck i andra programmeringsspråk som Python, PHP och JavaScript.
 
 ## Se även
-- [Java Documentation - Regular expressions](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [RegEx Tester](https://www.regextester.com/)
-- [RegexPlanet](https://www.regexplanet.com/)
+
+- [Java Regex Tutorial på Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Regex Cheatsheet på Medium](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- [RegExr - Interaktiv regelbundna uttryckstester](https://regexr.com/)

@@ -1,30 +1,42 @@
 ---
-title:    "Gleam: Ein String großschreiben"
+title:    "Gleam: Großschreibung einer Zeichenkette"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+##Warum
 
-Es gibt viele Situationen, in denen man einen Text in Großbuchstaben schreiben möchte. Zum Beispiel bei der Eingabe von Passwörtern, in Überschriften oder zur Betonung bestimmter Wörter. Mit Gleam ist es ganz einfach, einen String in Großbuchstaben zu konvertieren. In diesem Blogbeitrag zeige ich dir, wie es geht!
+Die Kapitalisierung von Strings kann ein nützliches Tool sein, um Texte in bestimmten Fällen besser lesbar zu machen oder um bestimmte formale Richtlinien einzuhalten. Zum Beispiel können Benutzernamen oder Überschriften durch die Kapitalisierung vereinheitlicht werden.
 
-## Wie man einen String in Gleam in Großbuchstaben umwandelt
+##Wie geht man vor?
 
-Um einen String in Gleam in Großbuchstaben zu schreiben, musst du die Funktion `String.to_upper` verwenden. Diese Funktion akzeptiert einen beliebigen String und gibt den entsprechenden String in Großbuchstaben zurück.
+Die Kapitalisierung in Gleam ist ganz einfach! Man kann den eingebauten `String.capitalize()` Befehl nutzen, um den ersten Buchstaben eines Strings zu einem Großbuchstaben zu machen. Hier ein Beispiel:
 
 ```Gleam
-String.to_upper("Hallo, Berlin!")
+my_string = "hallo"
+kapitalisiert = String.capitalize(my_string)
 ```
 
-Das Ergebnis dieser Funktion wäre `"HALLO, BERLIN!"`. Wie du sehen kannst, werden alle Buchstaben im String in Großbuchstaben umgewandelt.
+Die Ausgabe im Falle von `kapitalisiert` wird "Hallo" sein. 
 
-## Tiefergehende Erklärung
+Es ist auch möglich, alle Buchstaben in einem String zu kapitalisieren mit `String.uppercase()`. Hier ein Beispiel, wo beide Befehle genutzt werden:
 
-Die `String.to_upper` Funktion verwendet das UTF-8-Zeichensatzformat, um sicherzustellen, dass auch Sonderzeichen und Umlaute korrekt in Großbuchstaben umgewandelt werden. Außerdem arbeitet die Funktion mit einfachen Unicode-Zeichencodes anstelle von Zeichen als solchen, was bedeutet, dass sie in der Lage ist, mit komplexen Texten umzugehen, die mehr als eine Byte-Gruppe pro Zeichen enthalten.
+```Gleam
+mein_string = "GUTEN ABEND"
+normalisiert = String.lowercase(my_string)
+kapitalisiert = String.capitalize(normalisiert)
+```
 
-## Siehe auch
+Die Ausgabe hier wird wieder "Guten Abend" sein. 
 
-- Dokumentation zu Gleam Strings: https://gleam.run/documentation/stdlib/string/
-- Offizielle Gleam Website: https://gleam.run/
-- Beispielcode für Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
+##Tiefergehende Information
+
+Die Kapitalisierung von Strings in Gleam nutzt die [Unicode character properties](https://unicode.org/reports/tr21/). Das heißt, dass es auch in anderen Sprachen als Englisch funktioniert und Sonderzeichen sowie Akzente korrekt behandelt. Es ist jedoch wichtig zu beachten, dass bestimmte Zeichenkodierungen und Schriften möglicherweise für die korrekte Kapitalisierung konfiguriert werden müssen.
+
+##Siehe auch
+
+- [Gleam Dokumentation über Strings](https://gleam.run/documentation/stdlib/String.html)
+- [Gleam Dokumentation über Unicode](https://gleam.run/documentation/stdlib/Unicode.html)
+- [Unicode Character Database](https://www.unicode.org/reports/tr44/#General_Category_Values)

@@ -1,48 +1,70 @@
 ---
-title:    "C++: Merkkijonojen yhdistäminen"
+title:    "C++: Stringien yhdistäminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-On monia syitä, miksi haluaisimme yhdistää merkkijonoja ohjelmoinnissa. Saattaa olla tarpeen luoda yksi iso merkkijono pienempien palojen pohjalta tai luoda dynaaminen viesti tai nimi käyttäjän antamien tietojen perusteella.
+Miksi haluaisit käyttää merkkijonojen yhdistämistä (concatenation) ohjelmoinnissa? Yksinkertaisesti sanottuna, se mahdollistaa useiden merkkijonojen yhdistämisen yhdeksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi tulostettaessa tekstiä tai luotaessa dynaamisia viestejä.
 
-## Miten?
+## Miten
 
-
-Yhdistäminen eli concatenation tapahtuu yksinkertaisesti yhdistämällä kaksi tai useampia merkkijonoja toisiinsa ja luomalla uusi merkkijono niiden yhdistelmästä. Tätä varten käytämme C++:n operointia '&' merkillä.
-
-Esimerkki:
+Merkkijonojen yhdistäminen C++:ssa on helppoa käyttämällä "+"-merkkiä. Alla olevassa esimerkissä käytämme kolmea merkkijonoa ja yhdistämme ne yhdeksi merkkijonoksi.
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
-int main() {
-  string etunimi = "Matti";
-  string sukunimi = "Meikäläinen";
-  
-  string kokonimi = etunimi + " " + sukunimi;
-  
-  cout << "Tervetuloa, " << kokonimi << "!" << endl;
-  return 0;
+int main()
+{
+    string hello = "Hei";
+    string name = "Maailma";
+    string greeting = hello + " " + name;
+    
+    cout << greeting << endl;
+    
+    return 0;
 }
+
+// Tulostaa: Hei Maailma
 ```
 
-Tulostus:
+Kuten näette, voimme käyttää myös "+"-merkkiä yhdistääksemme merkkijonon ja muuttujan, kuten "hello + name" -rivillä.
 
-Tervetuloa, Matti Meikäläinen!
+## Syvällinen sukellus
 
-## Syvemmälle
+Merkkijonojen yhdistämisessä kannattaa olla varovainen, että käytät oikeaa yhdistämismenetelmää. Jos käytät "+"-merkkiä liittämiseen (append), jokainen yhdistetty merkkijono täytyy kopioida uuteen merkkijonoon. Tämä voi aiheuttaa suorituskykyongelmia jos käsittelet useita suuria merkkijonoja.
 
-Merkkijonojen yhdistämisen lisäksi C++:ssa on muitakin tapoja käsitellä merkkijonoja. Esimerkiksi käyttämällä stringstream kirjastoa, voimme yhdistää muuttujia ja tekstejä helposti ja muuntaa ne merkkijonoiksi.
+Sen sijaan, voit käyttää "stringstream" -luokkaa, joka kerää merkkijonoja sisäisesti bufferiin ennen niiden yhdistämistä. Alla olevassa esimerkissä yhdistämme useita merkkijonoja käyttäen "stringstream"iä:
 
-Toinen hyödyllinen työkalu on to_string funktio, joka muuntaa numerot merkkijonoiksi ja mahdollistaa niiden yhdistämisen muihin merkkijonoihin.
+```C++
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+
+int main()
+{
+    stringstream ss;
+    ss << "Tämä " << "on " << "yhdistetty " << "merkkijono";
+    string result = ss.str();
+    
+    cout << result << endl;
+    
+    return 0;
+}
+
+// Tulostaa: Tämä on yhdistetty merkkijono
+```
+
+Lisätietoa erilaisista merkkijonojen yhdistämismenetelmistä löydät esimerkiksi täältä: [https://www.geeksforgeeks.org/string-manipulation-in-c-2/](https://www.geeksforgeeks.org/string-manipulation-in-c-2/)
 
 ## Katso myös
 
-- [C++ String Tutorial](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [C++ stringstream documentation](https://www.cplusplus.com/reference/sstream/stringstream/)
-- [C++ to_string function documentation](https://www.cplusplus.com/reference/string/to_string/)
+- [https://www.programiz.com/cpp-programming/string](https://www.programiz.com/cpp-programming/string)
+- [https://www.tutorialspoint.com/cplusplus/cpp_strings.htm](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [https://www.learncpp.com/cpp-tutorial/78-working-with-strings/](https://www.learncpp.com/cpp-tutorial/78-working-with-strings/)

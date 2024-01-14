@@ -1,50 +1,68 @@
 ---
-title:    "PHP: Das Lesen von Befehlszeilenargumenten"
+title:    "PHP: Lesen von Befehlszeilenargumenten"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+### Warum
+Wenn Sie sich schon immer gefragt haben, wie Sie in PHP Befehlszeilenargumente lesen können, dann sind Sie hier genau richtig! In diesem Blogbeitrag werde ich Ihnen zeigen, wie Sie mithilfe von PHP ganz einfach Befehlszeilenargumente lesen können.
 
-Die Verwendung von Befehlszeilenargumenten kann sehr hilfreich sein, um die Interaktion mit Benutzern zu verbessern oder komplexe Skripte auszuführen. Das Lesen von Befehlszeilenargumenten ermöglicht es Ihnen, dynamisch zu agieren und auf spezifische Benutzereingaben zu reagieren.
-
-## Wie man Befehlszeilenargumente liest
-
-Um Befehlszeilenargumente in PHP zu lesen, müssen Sie die globale Variable `$argv` verwenden. Diese Variable enthält ein Array mit allen eingegebenen Befehlszeilenargumenten. Hier ist ein Beispielcode:
+### Wie geht's
+Um Befehlszeilenargumente in PHP lesen zu können, müssen wir zuerst die Variable `$argv` verwenden. Diese Variable enthält alle Argumente, die an das Skript beim Aufruf übergeben werden. Hier ist ein einfaches Beispiel:
 
 ```PHP
-<?php
-$argumente = $argv;
+$arguments = $argv;
+print_r($arguments);
+```
 
-echo "Befehlszeilenargumente:" . PHP_EOL;
-foreach ($argumente as $argument) {
-    echo $argument . PHP_EOL;
+Wenn wir nun unser PHP Skript mit Befehlszeilenargumenten aufrufen, erhalten wir eine Ausgabe wie folgt:
+
+```PHP
+Array
+(
+    [0] => /usr/local/bin/php
+    [1] => my_script.php
+    [2] => argument1
+    [3] => argument2
+)
+```
+
+Wie Sie sehen können, enthält die Variable `$argv` alle übergebenen Argumente als Array. Das erste Element ([0]) ist der Pfad zur ausführenden PHP-Datei, gefolgt von den übergebenen Argumenten.
+
+Sie können nun auf die Argumente wie auf jedes andere Array-Element zugreifen. Zum Beispiel können wir das zweite Argument ([2]) ausgeben, indem wir folgenden Code verwenden:
+
+```PHP
+echo "Erstes Argument: " . $arguments[2]; // Output: Erstes Argument: argument1
+```
+
+### Tiefenanalyse
+Es gibt noch weitere Möglichkeiten, um Befehlszeilenargumente in PHP zu lesen. Wenn Sie beispielsweise wissen möchten, wie viele Argumente übergeben wurden, können Sie die Funktion `count()` verwenden:
+
+```PHP
+$argc = count($argv);
+echo "Anzahl der Argumente: " . $argc; // Output: Anzahl der Argumente: 4
+```
+
+Sie können auch überprüfen, ob ein bestimmtes Argument übergeben wurde, indem Sie die Funktion `in_array()` verwenden:
+
+```PHP
+if (in_array("argument3", $arguments)) {
+    echo "Das Argument 3 wurde übergeben!";
+} else {
+    echo "Das Argument 3 wurde nicht übergeben!";
 }
 ```
 
-Wenn Sie diesen Code ausführen und als Befehlszeilenargumente "hallo" und "welt" eingeben, wird die folgende Ausgabe erzeugt:
+Wenn Sie Befehlszeilenargumente mit Leerzeichen übergeben möchten, müssen Sie diese in Anführungszeichen setzen. Zum Beispiel:
 
-```
-Befehlszeilenargumente:
-hallo
-welt
+```bash
+php my_script.php "Argument mit Leerzeichen" argument2
 ```
 
-Sie können auch auf ein bestimmtes Argument in dem Array zugreifen, indem Sie den entsprechenden Index verwenden. Zum Beispiel, um auf das zweite Argument "welt" in unserem Beispiel zuzugreifen, können Sie `$argumente[1]` verwenden.
-
-## Tiefere Einblicke
-
-Wenn Sie mehr Kontrolle über die Behandlung der Befehlszeilenargumente benötigen, gibt es ein paar zusätzliche Funktionen, die nützlich sein könnten.
-
-Die Funktion `count()` gibt die Anzahl der in einem Array enthaltenen Elemente zurück. Dies kann hilfreich sein, um zu überprüfen, ob ein bestimmtes Argument angegeben wurde oder nicht.
-
-Die Funktion `array_shift()` entfernt das erste Element in einem Array und gibt es zurück. Dadurch können Sie das erste Argument in einer Variablen speichern und das Array für weitere Operationen kürzen.
-
-Es gibt auch Möglichkeiten, mit benannten Argumenten oder Flaggen umzugehen, aber das würde den Rahmen dieses Artikels sprengen. Stattdessen empfehle ich, sich die offizielle PHP-Dokumentation für die `$argv`-Variable anzuschauen, um mehr zu erfahren.
-
-## Siehe auch
-
-- [PHP CLI-Handbuch](https://www.php.net/manual/de/features.commandline.php)
-- [Offizielle PHP-Dokumentation zu $argv](https://www.php.net/manual/de/reserved.variables.argv.php)
-- [Einführung in die Befehlszeile für PHP-Entwickler (auf Englisch)](https://kizu514.com/blog/cli-for-php-devs/)
+### Siehe auch
+- [PHP Manual - Befehlszeilenparameter](https://www.php.net/manual/de/features.commandline.php)
+- [PHP Manual - $argv](https://www.php.net/manual/de/reserved.variables.argv.php)
+- [PHP Manual - count()](https://www.php.net/manual/de/function.count.php)
+- [PHP Manual - in_array()](https://www.php.net/manual/de/function.in-array.php)

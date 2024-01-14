@@ -1,44 +1,55 @@
 ---
-title:    "Swift: Unterzeichenketten extrahieren"
+title:    "Swift: Extrahieren von Teilzeichenketten"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Extrahieren von Teilstrings ist in der Swift-Programmierung extrem nützlich, um bestimmte Teile von Zeichenketten zu isolieren oder zu bearbeiten. Ob Sie eine Benutzereingabe validieren, Daten filtern oder einfach nur Text formatieren möchten, das Extrahieren von Teilstrings kann eine effiziente Lösung sein.
+Das Extrahieren von Teilstrings gehört zu den grundlegenden Aufgaben bei der Bearbeitung von Strings in Swift. Es ermöglicht uns, bestimmte Teilbereiche eines Textes zu isolieren und gezielt zu bearbeiten. In diesem Blogbeitrag werden wir uns genauer mit der Extrahierung von Teilstrings beschäftigen und verschiedene Möglichkeiten aufzeigen, wie wir dies in unserem Swift-Code umsetzen können.
 
-# Wie geht's
+## Wie geht das?
 
-Die Grundlage für das Extrahieren von Teilstrings in Swift ist die `substring` Methode. Diese Methode erlaubt es uns, eine Teilzeichenkette aus einer ursprünglichen Zeichenkette zu extrahieren, indem wir den Start- und Endindex angeben. Sehen wir uns ein Beispiel an:
+Um Teilstrings in Swift zu extrahieren, gibt es verschiedene Methoden und Techniken. Eine Möglichkeit ist die Verwendung der `substring()`-Funktion, die es uns ermöglicht, den Start- und Endindex des zu extrahierenden Teilstrings anzugeben. Schauen wir uns dazu ein Beispiel an:
 
-```swift
-let fruit = "Apfel"
-let startIndex = fruit.index(fruit.startIndex, offsetBy: 1) // startIndex wird den Index des zweiten Zeichens haben
-let endIndex = fruit.index(fruit.endIndex, offsetBy: -1) // endIndex wird den Index des vorletzten Zeichens haben
-let substring = fruit.substring(with: startIndex..<endIndex) // substring enthält jetzt "pfe"
-print(substring) // Ausgabe: "pfe"
+```Swift
+let str = "Hallo, Welt!"
+let start = str.index(str.startIndex, offsetBy: 7)
+let end = str.index(str.endIndex, offsetBy: -1)
+let substring = str.substring(with: start..<end)
+print(substring)
+
+// Ausgabe: "Welt"
 ```
 
-Diese Methode kann auch benutzt werden, um Teilstrings basierend auf einem bestimmten Zeichen zu extrahieren. Sehen wir uns ein weiteres Beispiel an:
+In diesem Beispiel definieren wir zuerst eine Variable `str`, die unseren Ausgangstext enthält. Dann geben wir den Startindex unseres Teilstrings mit Hilfe der `index()`-Funktion an. Hier wird der Index des Zeichens "W" im Wort "Welt" verwendet. Dann bestimmen wir den Endindex, indem wir die Länge des Textes (8) von der Gesamtlänge abziehen. Schließlich verwenden wir die `substring()`-Funktion, um den Teilstring zwischen dem Start- und Endindex zu extrahieren. In diesem Fall erhalten wir das Wort "Welt" als Ergebnis.
 
-```swift
-let sentence = "Das ist ein Satz."
-let index = sentence.firstIndex(of: " ") ?? sentence.endIndex // such nach dem ersten Leerzeichen
-let firstWord = sentence.substring(to: index) // extrahiere den Text von Anfang bis zum Leerzeichen
-print(firstWord) // Ausgabe: "Das"
+Eine weitere Möglichkeit besteht darin, den `split()`-Befehl zu verwenden, um einen String in Teilstrings anhand eines bestimmten Trennzeichens zu zerlegen. Hier ein Beispiel:
+
+```Swift
+let str = "Ich mag Äpfel, Birnen und Bananen."
+let substrings = str.split(separator: ", ")
+print(substrings)
+
+// Ausgabe: ["Ich mag Äpfel", "Birnen und Bananen."]
 ```
 
-Beachten Sie, dass wir bei der `substring(to:)` Methode den letzten Index nicht angegeben haben, was dazu führt, dass die Teilzeichenkette bis zum übergebenen Index extrahiert wird.
+In diesem Beispiel definieren wir zunächst einen String `str`, der verschiedene Früchte enthält und mit einem Komma und Leerzeichen getrennt ist. Mithilfe von `split()` wird dieser String in Teilstrings anhand des Trennzeichens zerlegt und in einem Array gespeichert.
 
-# Tiefgehender Einblick
+Es gibt noch viele weitere Methoden, um Teilstrings in Swift zu extrahieren, wie z.B. die Verwendung von regulären Ausdrücken oder der `range(of:)`-Funktion. Es ist wichtig, dass wir uns mit diesen verschiedenen Techniken vertraut machen, um sie in unseren Projekten sinnvoll einzusetzen.
 
-Es gibt noch weitere Methoden, die für das Extrahieren von Teilstrings in Swift genutzt werden können, wie `range(of:)` oder `prefix`. Auch die Arbeit mit Unicode kann eine wichtige Rolle spielen, wenn es um das Extrahieren von Teilstrings geht.
+## Tiefen Einblick
 
-Es ist auch erwähnenswert, dass es nicht empfohlen ist, Teilstrings zu ändern, da sie eine separate Zeichenkette sind und keine Referenzen auf die ursprüngliche Zeichenkette zurückhalten.
+Neben den oben genannten Methoden gibt es noch weitere Faktoren, die bei der Extrahierung von Teilstrings eine Rolle spielen. Zum Beispiel ist es wichtig zu beachten, dass die Indizierung von Zeichen in Strings in Swift mit `index()` und `offsetBy` entsprechend der verwendeten Zeichencodierung erfolgt. Daher kann es vorkommen, dass der Start- und Endindex je nach verwendeter Sprache oder Zeichensatz variieren können.
 
-# Siehe auch
+Ebenfalls wichtig ist es, mögliche Fehler bei der Extrahierung von Teilstrings zu vermeiden. Wenn der angegebene Index außerhalb des zugrunde liegenden Strings liegt, wird ein Fehler ausgelöst. Daher sollten wir immer sicherstellen, dass die angegebenen Indizes gültig sind, bevor wir versuchen, Teilstrings zu extrahieren.
 
-- [Swift Programmiersprache Offizielle Dokumentation - Strings und Zeichen](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift Blog - Working with Strings in Swift](https://swift.org/blog/working-with-strings/)
+Es lohnt sich auch, sich mit den verschiedenen Datenstrukturen in Swift, wie z.B. `Substring` und `String.Index`, auseinanderzusetzen, um komplexe Anwendungen mit Teilstrings zu realisieren.
+
+## Siehe auch
+
+- [Swift String Dokumentation](https://developer.apple.com/documentation/swift/string)
+- [Strings and Characters in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift Programming Language - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

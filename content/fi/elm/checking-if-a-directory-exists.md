@@ -1,52 +1,41 @@
 ---
-title:    "Elm: Tarkistetaan löytyykö kansio"
+title:    "Elm: Tarkista onko hakemisto olemassa"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa hakemiston olemassaolo
+## Miksi
 
-On monia syitä, miksi voit tarkistaa, onko hakemisto olemassa. Esimerkiksi, jos haluat tallentaa ja lukea tiedostoja, on tärkeää varmistaa, että haluamasi hakemisto on olemassa ennen kuin yrität tehdä mitään sen sisällä. Tämä auttaa välttämään virheitä ja parantaa ohjelman suorituskykyä.
+Tervetuloa lukemaan blogipostausta Elm-ohjelmoinnista! Tämä viesti käsittelee hakemiston olemassaolon tarkistamista ja miten se tehdään Elm-kielellä.
 
-## Kuinka tehdä se
+Hakemistojen tarkistaminen on tärkeä osa ohjelmointia, koska se auttaa välttämään virheitä, kun ohjelma yrittää käsitellä tiedostoja, jotka eivät ole olemassa. Elmillä on hyvä tapa tarkistaa, onko hakemisto olemassa, ja tämän viestin avulla opit, miten se tehdään.
 
-Tarkistaminen, onko hakemisto olemassa Elm-ohjelmoinnissa, on melko yksinkertaista. Käytämme Elm core -kirjaston `Directory` -moduulia, joka tarjoaa toiminnon `doesDirectoryExist` olemassaolotarkistukseen. Tässä on esimerkki:
+## Miten
+
+Elm-kielessä hakemiston olemassaolon tarkistamiseen käytetään "Directory" -moduulia. Se tarjoaa "exists" -funktion, joka ottaa parametrinaan hakemiston polun ja palauttaa "Task" -tyypin arvon.
+
+```
+import Directory
+
+Tämä esimerkki käyttää "exists" -funktiota tarkistamaan, onko hakemistossa "main" tiedostoa "Code.elm".
+```
 
 ```Elm
-import Directory exposing (doesDirectoryExist)
+Directory.exists "main/Code.elm"
 
-checkDirectory : String -> Cmd Msg
-checkDirectory dir =
-  doesDirectoryExist dir
-    |> Task.perform DirectoryResult
+-- Output: Ok True
 ```
 
-Ilmaisimme ensin `Directory` -moduulin ja sen jälkeen käytimme toimintoa `doesDirectoryExist`, joka lähettää ulostuloksi `Bool`-arvon osoittaen, onko hakemisto olemassa vai ei. Sitten suoritamme tehtävän `Task.perform` tulosarvolla `DirectoryResult`.
+Kuten voit nähdä, "exists" -funktio palauttaa "Ok" -arvon, jos hakemisto löytyy ja "False", jos sitä ei ole. Voit myös käyttää tämän funktion kanssa "Task" -tyypin funktioita, kuten "andThen" ja "map" saadaksesi tarkemman kontrollin ja käsittelyn hakemiston olemassaolosta riippuen.
 
-`DirectoryResult` on vain yksinkertainen tyyppien määrittämä merkki, jolla varmistamme, että saamme oikean tyyppisen arvon. Tässä on tulosarvo esimerkkiohjelman ajon jälkeen:
+## Syvemmälle
 
-```
-{ ok = True }
-```
-
-Tai jos hakemistoa ei ole olemassa, tulostus on seuraava:
-
-```
-{ ok = False }
-```
-
-## Syvempää tietoa
-
-Vaikka `doesDirectoryExist` on huomattavasti helpompi käyttää kuin muut vaihtoehdot, sitä on hyvä tietää myös kaksi muuta toimintoa: `getDirectory` ja `directoryExists`. Nämä antavat lisätietoa hakemiston sijainnista ja sen olemassaolosta. Voit tutustua niiden dokumentaatioon lisää täällä:
-
-- [getDirectory](https://package.elm-lang.org/packages/elm/core/latest/Directory#getDirectory)
-- [directoryExists](https://package.elm-lang.org/packages/elm/core/latest/Directory#directoryExists)
+Tässä viestissä olemme vain pyörähtäneet pintaa hakemiston olemassaolon tarkistamisesta Elm-kielellä. Voit myös käyttää "Directory" -moduulia luomaan uusia hakemistoja, poistamaan niitä tai siirtämään tiedostoja hakemistojen välillä. Lisätietoja löydät Elm-kieleen liittyvistä oppimateriaaleista ja kirjoista.
 
 ## Katso myös
 
-Tässä muutamia hyödyllisiä linkkejä, jotka liittyvät hakemiston tarkistamiseen Elm-ohjelmoinnissa:
-
-- [Elmin standardikirjasto: hakemistot](https://package.elm-lang.org/packages/elm/core/latest/Directory)
-- [The Elm Architecture](https://guide.elm-lang.org/architecture/)
-- [Elm Guide](https://guide.elm-lang.org/)
+- [Elmin virallinen dokumentaatio hakemistojen käsittelystä](https://guide.elm-lang.org/interop/file_system.html)
+- [Elm-kirjasto "elm-file-2"](https://package.elm-lang.org/packages/mpizenberg/elm-file/latest/)
+- [Elm-ohjelmoinnin perusteet (suomeksi)](https://www.ohjelmointiputka.net/elm-kirja/)

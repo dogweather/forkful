@@ -1,56 +1,39 @@
 ---
 title:    "C#: Criando um arquivo temporário"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário?
+# Por que criar um arquivo temporário em C#?
 
-Criar um arquivo temporário é uma tarefa comum em muitos projetos de programação. Esses arquivos temporários servem como espaços de armazenamento temporários para dados e informações que são usados durante a execução de um programa. Eles também são úteis para evitar sobrecarregar a memória do computador, já que os arquivos temporários podem ser apagados após o uso.
+Criar arquivos temporários pode ser útil em diversas situações durante o desenvolvimento de um programa em C#. Eles permitem que você armazene informações temporariamente e as acesse facilmente, sem a necessidade de lidar com a criação e manutenção de um arquivo permanente. Além disso, arquivos temporários podem ser excluídos quando não são mais necessários, economizando recursos do sistema.
 
 ## Como criar um arquivo temporário em C#
 
-Para criar um arquivo temporário em C#, podemos usar a classe `System.IO.Path` e o método `GetTempFileName()`, que gera um nome de arquivo aleatório para o novo arquivo temporário. Depois disso, podemos usar o namespace `System.IO` para criar o arquivo e escrever o conteúdo desejado. Veja o exemplo abaixo:
+Para criar um arquivo temporário em C#, você pode utilizar a classe `Path` e o método `GetTempFileName`, que irá gerar um nome aleatório para o arquivo temporário. Veja um exemplo abaixo:
 
-```
-Código C#: 
-
-var tempFilePath = Path.GetTempFileName(); // gera o nome do arquivo temporário aleatório
-using (StreamWriter writer = new StreamWriter(tempFilePath))
-{
-    writer.WriteLine("Este é um exemplo de conteúdo para o arquivo temporário."); // escreve o conteúdo no arquivo
-}
+```C#
+string nomeArquivo = Path.GetTempFileName();
+Console.WriteLine("Arquivo temporário criado: " + nomeArquivo);
 ```
 
-Após a execução do código acima, um arquivo temporário com o nome gerado será criado e o conteúdo especificado será armazenado dentro dele.
+A saída deste código será algo como: `Arquivo temporário criado: C:\Users\Usuario\AppData\Local\Temp\reyh2tzi.tmp`.
 
-Para acessar o arquivo temporário criado, podemos usar o método `Path.GetTempPath()` para obter o caminho da pasta temporária no sistema operacional e concatená-lo com o nome do arquivo gerado. Veja o exemplo abaixo:
+## Mais informações sobre criação de arquivos temporários
 
-```
-var tempPath = Path.GetTempPath(); // obtém o caminho da pasta temporária
-var tempFilePath = Path.Combine(tempPath, "nome-do-arquivo-temporario"); // combina o caminho com o nome do arquivo temporário
-```
+Além de utilizar o método `GetTempFileName`, você também pode criar um arquivo temporário especificando o diretório em que ele será criado, assim como seu nome e extensão. Para isso, é necessário utilizar a classe `Path` e o método `Combine`, como mostrado no exemplo abaixo:
 
-## Deep Dive: Criando um arquivo temporário com atributos personalizados
-
-Além de gerar um nome aleatório, também é possível criar um arquivo temporário com atributos personalizados, como o diretório onde ele será armazenado ou a extensão do arquivo. O segundo parâmetro do método `GetTempFileName()` aceita um prefixo e uma extensão para o arquivo. Veja o exemplo abaixo:
-
-```
-var tempFilePath = Path.GetTempFileName("meu-arquivo-", ".txt"); // gera um nome com o prefixo "meu-arquivo-" e extensão ".txt"
+```C#
+string nomeArquivo = Path.Combine(Path.GetTempPath(), "meuarquivo.txt");
+File.Create(nomeArquivo).Close();
+Console.WriteLine("Arquivo temporário criado: " + nomeArquivo);
 ```
 
-Isso criará um arquivo temporário com o nome `meu-arquivo-ABC123.txt`, por exemplo.
+Neste exemplo, o arquivo temporário será criado na pasta padrão de arquivos temporários do sistema operacional, com o nome "meuarquivo.txt". Além disso, é importante ressaltar que é necessário fechar o arquivo criado após sua criação, para que ele possa ser usado posteriormente.
 
-Podemos usar também o método `GetTempPath()` combinado com o método `GetRandomFileName()` da classe `Path` para gerar um nome de arquivo temporário completamente aleatório. Isso pode ser útil em casos em que não queremos que o nome do arquivo seja previsível. Veja o exemplo abaixo:
+# Veja também
 
-```
-var tempPath = Path.GetTempPath(); // obtém o caminho da pasta temporária
-var randomFileName = Path.GetRandomFileName(); // gera um nome de arquivo aleatório
-var tempFilePath = Path.Combine(tempPath, randomFileName); // combina o caminho com o nome do arquivo aleatório
-```
-
-## Veja também
-- [Documentação oficial da classe Path em C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.path)
-- [Como gerar nomes de arquivos seguro em C#](https://stackoverflow.com/questions/14608449/generate-secure-file-names-in-c-sharp)
-- [Exemplos de uso da classe Path em C#](https://www.c-sharpcorner.com/UploadFile/152596/path-class-methods-in-C-Sharp/)
+- [Documentação oficial do método GetTempFileName em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.io.path.gettempfilename?view=netframework-4.8)
+- [Exemplo prático de uso de arquivos temporários em C#](https://www.devmedia.com.br/trabalhando-com-arquivos-temporarios-em-csharp/37702)

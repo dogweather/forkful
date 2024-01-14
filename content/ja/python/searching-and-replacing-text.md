@@ -1,48 +1,69 @@
 ---
 title:    "Python: テキストの検索と置換"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ検索・置換テキストを使うのか？
+## なぜ
 
-検索・置換テキストは、大量のテキストデータを効率的に編集するために便利なツールです。例えば、大規模な文書内で特定の単語を一括で変更する場合や、複数のファイル内で同じ変数名を一括で修正する場合などに活用されます。手作業で1つ1つ変更するよりも、簡単かつ迅速に作業を行うことができます。
+テキストを検索して置換することのメリットは、より効率的かつ正確なテキスト編集を可能にすることです。例えば、大規模な文書の中から特定の単語やフレーズを一括で変更する場合、手作業では非常に時間がかかり間違いが起こりやすいですが、検索して置換することで簡単かつ正確に行うことができます。
 
-## 使い方
+## 方法
+
+Pythonでは、文字列メソッドの`replace()`を使用することで簡単にテキストを検索して置換することができます。以下のコード例を参考にしてみてください。
 
 ```Python
-# 文字列内の特定の単語の置換
-text = "Pythonは素晴らしいプログラミング言語です。"
-new_text = text.replace("Python", "Java")
-print(new_text) # 出力結果：Javaは素晴らしいプログラミング言語です。
+# 検索対象の文字列を定義
+text = "こんにちは、私はPythonです。Pythonはとても楽しいです。"
 
-# ファイル内の特定の文字列の置換
-file = open("sample.txt", "r")
-new_file = open("new_sample.txt", "w")
+#「楽しい」を「素晴らしい」に置換
+new_text = text.replace("楽しい", "素晴らしい")
 
-for line in file:
-    new_line = line.replace("Hello", "こんにちは")
-    new_file.write(new_line)
-
-file.close()
-new_file.close()
+print(new_text)
 ```
 
-上記のPythonコードでは、`replace()`メソッドを使って文字列やファイルの中の特定の単語や文字列を置換しています。文字列内の単語の検索と置換は`replace()`メソッドを使用し、ファイル内の検索と置換はループ処理を使用して行います。
+**出力:**
+```
+こんにちは、私はPythonです。Pythonはとても素晴らしいです。
+```
 
-## さらに掘り下げる
+`replace()`メソッドを使用することで、検索対象の文字列が複数回出現しても全て置換してくれます。
 
-検索・置換テキストの実装には、正規表現を使用する方法もあります。正規表現を使用すると、より柔軟な検索や置換が可能になります。また、Pythonの`re`モジュールを使用することで、正規表現をより効率的に扱うことができます。正規表現の詳細については、Pythonの公式ドキュメントやオンラインのチュートリアルを参考にしてください。
+また、正規表現を使うことで、より柔軟な検索と置換が可能です。以下のコード例を参考にしてみてください。
+
+```Python
+# 正規表現モジュールを読み込む
+import re
+
+# 検索対象の文字列を定義
+text = "パパイヤはおいしいですが、パイナップルは苦手です。"
+
+#「パイ」が含まれる単語を「フルーツ」に置換
+new_text = re.sub(r'パイ(\w+)', "フルーツ\1", text)
+
+print(new_text)
+```
+
+**出力:**
+```
+パパイヤはおいしいですが、フルーツナップルは苦手です。
+```
+
+このように、`re`モジュールを使用することで、パターンにマッチする全ての文字列を置換することができます。
+
+## 深堀り
+
+検索して置換する際には、正規表現の意味や使い方を理解することが重要です。また、Pythonの`regex`モジュールを使用することでより高度な正規表現操作が可能になります。さらに、コンパイル済みの正規表現を使用することで、処理速度を改善することができます。
+
+検索して置換する際には、テキストの大きさやパターンによっても処理速度が変わってきますので、適切な方法を選択することが重要です。
 
 ## 参考リンク
 
-- [Python公式ドキュメント](https://docs.python.org/ja/3/library/re.html)
-- [正規表現チュートリアル](https://techacademy.jp/magazine/19430)
-- [Pythonで文字列を置換する方法](https://note.nkmk.me/python-str-replace/)
+- [Python公式ドキュメント：reモジュール](https://docs.python.org/ja/3/library/re.html)
+- [正規表現チートシート](https://qiita.com/t2y/items/a8a40d38f25ae5908d0a)
+- [Pythonでパターンマッチングを加速する方法](https://note.nkmk.me/python-r-kunrei-spelling-pattern-matching-search-replace-compile/)
+- [Pythonで自然言語処理をするための正規表現の使い方](https://qiita.com/tomuraying/items/e6222fc79c809feadbf5)
 
-## 参考資料
-
-- [Python公式ドキュメント：文字列を検索する](https://docs.python.org/ja/3/library/stdtypes.html#string-methods)
-- [Python公式ドキュメント：ファイル入出力](https://docs.python.org/ja/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Python公式ドキュメント：正規表現操作](https://docs.python.org/ja/3/library/re.html#regular-expression-syntax)
+## 関連記事

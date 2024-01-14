@@ -1,58 +1,49 @@
 ---
-title:    "C#: Capitalizando uma string"
+title:    "C#: Transformando uma string em maiúsculas"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar strings em C#?
+## Por que capitalizar uma string?
 
-Capitalizar strings é uma tarefa comum em programação, especialmente em linguagens orientadas a objetos como C#. Ao capitalizar uma string, estamos alterando a primeira caractere para maiúscula e todas as outras para minúsculas. Isso pode ser útil para padronização de texto e apresentação mais legível de informações.
+Capitalizar uma string pode ser útil em diversas situações de programação, como por exemplo, ao exibir um título ou nome no formato padrão de capitalização. Além disso, quando lidamos com entradas de usuário, é importante ter consistência na maneira como a string é exibida. Por isso, aprender a capitalizar uma string é um conhecimento valioso para qualquer programador.
 
 ## Como fazer
 
-Para capitalizar uma string em C#, podemos utilizar o método `ToUpper()` da classe `String`. Este método converta todas as caracteres para maiúsculas, mas para apenas para a primeira caractere, podemos usar o método `Substring()` para obter a primeira caractere e depois convertê-la para maiúscula.
+Para capitalizar uma string em C#, usamos o método `ToUpper()` da classe `string`. Por exemplo, se tivermos a seguinte string chamada `nome`:
 
-Aqui está um exemplo de código em C# que demonstra como capitalizar uma string:
-
-```
-// Declara uma string
-string texto = "exemplo de string";
-
-// Aplica o método ToUpper ()
-string textoMaiusculo = texto.ToUpper();
-
-// Aplica o método Substring ()
-string primeiraLetraMaiuscula = texto.Substring(0, 1).ToUpper();
-
-// Concatena a primeira letra maiúscula com o resto da string convertida
-string textoCapitalizado = primeiraLetraMaiuscula + texto.Substring(1).ToUpper();
-
-// Imprime o resultado
-Console.WriteLine("String original: " + texto);
-Console.WriteLine("String maiúscula: " + textoMaiusculo);
-Console.WriteLine("String com primeira letra maiúscula: " + primeiraLetraMaiuscula);
-Console.WriteLine("String capitalizada: " + textoCapitalizado);
+```C#
+string nome = "joão";
 ```
 
-Output:
+Podemos usá-lo da seguinte forma para capitalizar a primeira letra:
 
+```C#
+string nomeCapitalizado = nome.ToUpper();
+
+Console.WriteLine(nomeCapitalizado); // Saída: João
 ```
-String original: exemplo de string
-String maiúscula: EXEMPLO DE STRING
-String com primeira letra maiúscula: E
-String capitalizada: Exemplo de string
+
+Observe que isso apenas capitaliza a primeira letra da string. Se quisermos capitalizar todas as letras, podemos usar o método `ToTitleCase()` da classe `TextInfo`, que é acessível através do objeto `CultureInfo`. Veja o exemplo:
+
+```C#
+CultureInfo cultura = new CultureInfo("pt-BR");
+TextInfo textInfo = cultura.TextInfo;
+
+string nome = "joão da silva";
+string nomeCapitalizadoComMaisculas = textInfo.ToTitleCase(nome);
+
+Console.WriteLine(nomeCapitalizadoComMaisculas); // Saída: João Da Silva
 ```
 
-## Profundidade
+## Informações adicionais
 
-Existem algumas coisas importantes a serem consideradas ao capitalizar strings em C#. Primeiramente, é importante notar que o método `ToUpper()` é culturalmente dependente, ou seja, ele irá capitalizar as letras de acordo com as configurações de idioma do sistema operacional. Portanto, é possível que o resultado final varie em diferentes computadores.
-
-Além disso, devemos ter cuidado ao trabalhar com pontuação e caracteres especiais em uma string. O método `ToUpper()` irá capitalizar apenas as letras, então pode ser necessário aplicar alguns tratamentos adicionais para caracteres especiais.
-
-Outra consideração é o desempenho. Como o método `ToUpper()` cria uma nova string, pode ser um problema em casos onde há um grande volume de texto sendo processado. Nesse caso, pode ser mais eficiente usar o método `Char.ToUpper()` em vez do `ToUpper()`.
+A capitalização de strings é um conceito simples, mas é importante ter em mente que esse processo pode ser influenciado pelo contexto cultural. Em idiomas como o português, existem regras específicas para a capitalização de sobrenomes, por exemplo. Portanto, é sempre bom consultar a documentação da linguagem e estar atento a essas diferenças.
 
 ## Veja também
-- [Documentação oficial do método ToUpper()](https://docs.microsoft.com/pt-br/dotnet/api/system.string.toupper?view=netcore-3.1)
-- [Exemplo de uso do método ToUpper()](https://www.educba.com/c-sharp-string-toupper/)
-- [Tutorial sobre manipulação de strings em C#](https://www.tutorialsteacher.com/csharp/csharp-string)
+
+- [Documentação oficial da Microsoft sobre o método ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+- [Documentação oficial da Microsoft sobre o objeto CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+- [Stack Overflow: Capitalize first letter of each word in a string using LINQ](https://stackoverflow.com/questions/2730191/capitalize-first-letter-of-each-word-in-a-string-using-linq)

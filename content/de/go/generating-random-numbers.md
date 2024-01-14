@@ -1,67 +1,46 @@
 ---
-title:    "Go: Zufällige Zahlen generieren"
+title:    "Go: Zufallszahlen generieren"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Random Numbers sind ein wichtiger Bestandteil jeder Programmiersprache und können in vielen verschiedenen Anwendungsbereichen eingesetzt werden. Das Generieren von zufälligen Zahlen in Go kann hilfreich sein, um Daten zu simulieren, Verschlüsselungsalgorithmen zu testen oder zufällige Entscheidungen zu treffen. In diesem Blog-Beitrag werden wir uns ansehen, wie man in Go zufällige Zahlen generieren kann und welche Methoden und Funktionen dafür zur Verfügung stehen.
 
-Wenn du schon einmal eine Anwendung geschrieben hast, die auf Zufallszahlen angewiesen war, weißt du wahrscheinlich, wie wichtig es ist, effektive und zuverlässige Methoden zur Generierung dieser Zahlen zu haben. In diesem Blog-Beitrag werden wir uns mit der Generierung von Zufallszahlen in der Programmiersprache Go beschäftigen und wie du diese Funktionen in deinen Projekten nutzen kannst.
-
-## Wie geht man vor
-
-Um Zufallszahlen in Go zu generieren, gibt es zwei Hauptmethoden: die Verwendung der "math/rand" und "crypto/rand" Packages. Für die meisten Anwendungen ist "math/rand" ausreichend, da es schneller und einfacher zu implementieren ist. Hier ist ein Beispielcode, wie du Zufallszahlen mit "math/rand" generieren kannst:
+## Wie geht das?
+Um zufällige Zahlen in Go zu generieren, können wir die integrierte Pakete "math/rand" und "time" verwenden. Zuerst müssen wir sicherstellen, dass wir den Zufallsgenerator mit einer eindeutigen Seed-Zahl initialisieren, damit er jedes Mal unterschiedliche Zahlen generiert. Dazu können wir die Funktion "Rand.Seed()" aus dem Paket "math/rand" verwenden und ihr eine beliebige Zahl als Argument übergeben.
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "math/rand"
+	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
-  rand.Seed(time.Now().UnixNano()) // sorgt für eine einzigartige Zufallszahl pro Ausführung
+	// Initialisieren des Zufallsgenerators
+	rand.Seed(time.Now().UnixNano())
 
-  // Generiere eine Zufallszahl zwischen 1 und 100
-  random := rand.Intn(100) + 1
-
-  fmt.Println("Deine zufällige Zahl ist:", random)
+	// Generieren einer zufälligen Ganzzahl zwischen 0 und 100
+	num := rand.Intn(101)
+	fmt.Println(num)
 }
 ```
 
-Dieses Beispiel verwendet die Funktion "Intn", um eine Zufallszahl innerhalb einer bestimmten Range zu generieren. "Seed" wird verwendet, um sicherzustellen, dass bei jeder Ausführung des Codes eine neue Zufallszahl generiert wird.
+Die obige Funktion "Intn(n)" generiert eine zufällige Ganzzahl zwischen 0 und n. Um beispielsweise einen Wert zwischen 50 und 100 zu erhalten, können wir die Funktion "Intn(51) + 50" verwenden.
 
-## Tiefergehende Informationen
+Das Paket "math/rand" bietet auch verschiedene andere Funktionen und Methoden, um zufällige Zahlen in verschiedenen Formaten zu generieren, wie zum Beispiel "Int", "Float32" oder "ExpFloat64". Es ist immer wichtig, die Dokumentation zu lesen und zu verstehen, um die richtigen Funktionen für Ihre Anforderungen auszuwählen.
 
-Wenn du eine höhere Qualität und Sicherheit bei den generierten Zufallszahlen benötigst, solltest du das "crypto/rand" Package verwenden. Dieses Package nutzt eine kryptografisch sichere Zufallszahlengenerierung und ist vorhersehbarer als die in "math/rand" verwendeten Methoden. Hier ist ein Beispielcode, wie du Zufallszahlen mit "crypto/rand" generieren kannst:
+## Tiefer eintauchen
+Das Paket "math/rand" in Go verwendet den Mersenne-Twister-Algorithmus als Zufallszahlengenerator. Es ist ein beliebtes Verfahren, um qualitativ hochwertige Zufallszahlen zu erzeugen, aber es gibt auch andere Algorithmen wie den XORShift-Algorithmus oder den Lehmer-Generator, die in anderen Programmiersprachen verwendet werden.
 
-```Go
-package main
-
-import (
-  "crypto/rand"
-  "fmt"
-  "math/big" // wichtig für die Verwendung von kryptografisch sicheren Zufallszahlen 
-)
-
-func main() {
-  random, err := rand.Int(rand.Reader, big.NewInt(100))
-  if err != nil {
-    fmt.Println("Fehler beim Generieren der Zufallszahl:", err)
-    return
-  }
-
-  fmt.Println("Deine zufällige Zahl ist:", random)
-}
-```
-
-Hier sehen wir, dass wir eine Instanz von "rand.Reader" verwenden müssen, und "big.NewInt" gibt die gewünschte Range an. Wenn ein Fehler auftritt, werden wir eine entsprechende Nachricht ausgegeben.
+Es ist wichtig zu beachten, dass der Mersenne-Twister-Algorithmus eine vorhersehbare Sequenz von Zufallszahlen generieren kann, wenn der Seed-Wert nicht eindeutig ist. Aus diesem Grund ist es wichtig, den Zufallsgenerator mit einem Wert zu initialisieren, der sich ständig ändert, wie zum Beispiel die aktuelle Systemzeit.
 
 ## Siehe auch
-
-- <https://golang.org/pkg/math/rand/>
-- <https://golang.org/pkg/crypto/rand/>
-- <https://blog.golang.org/rand>
-- <https://tour.golang.org/basics/49>
+- Go Dokumentation zu zufälligen Zahlen: https://golang.org/pkg/math/rand/
+- Weitere Informationen zum Mersenne-Twister-Algorithmus: https://de.wikipedia.org/wiki/Mersenne-Twister
+- Vergleich verschiedener Zufallszahlengeneratoren: https://www.pcg-random.org/

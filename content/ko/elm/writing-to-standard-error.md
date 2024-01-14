@@ -1,46 +1,41 @@
 ---
-title:    "Elm: 표준 에러에 쓰는 것"
+title:    "Elm: 표준 에러에 쓰는 방법"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-Elm 프로그래밍을 하면서 standard error를 작성하는 데 왜 관여하는지 알아보겠습니다.
+이번 포스트에서는 Elm 프로그래밍의 중요한 측면 중 하나인 표준 에러에 대해 다뤄보겠습니다. 표준 에러에 쓰는 것이 왜 중요한지 이유를 알아보겠습니다.
 
 ## 어떻게
 
+표준 에러(standard error)는 Elm 코드에서 오류를 식별하고 디버깅하는 데 매우 유용한 프로그래밍 기법입니다. 다음과 같이 코드 블록을 작성하면 해당 블록 내부에 있는 코드가 표준 에러에 쓰여집니다.
+
 ```Elm
-module Main exposing (..)
+-- 코드 예시
+import Debug
 
-import Debug exposing (log)
-
-timesTen : Int -> Int
-timesTen x =
-  let
-      result = x * 10
-  in
-      log ("결과: " ++ toString result)
-      result
-
-main =
-  timesTen 5
+Debug.log "Hello!" "world"
 ```
 
-위 코드는 5에 10을 곱한 후 결과를 로그로 남기는 간단한 예시입니다. 실행하면 다음과 같은 결과가 출력됩니다.
+위 코드를 실행하면 "world"라는 문자열이 표준 에러에 출력됩니다. 이렇게 출력된 결과는 디버깅을 위해 사용할 수 있습니다.
 
-```
-결과: 50
-```
+## 깊이 들어가기
 
-위의 예시처럼 `Debug.log` 함수를 사용하면, 우리가 원하는 값을 터미널에 로그로 남길 수 있습니다. 이를 통해 디버깅할 때 유용하게 사용할 수 있습니다.
+표준 에러는 Elm 프로그래밍에서 매우 중요하고 유용한 기능입니다. 이를 이용하면 코드에서 발생하는 오류를 더 쉽게 추적하고 디버깅할 수 있습니다. 또한, 표준 에러를 이용하면 코드의 실행 흐름을 더욱 세밀하게 조정할 수 있는 장점도 있습니다.
 
-## 깊이 파헤치기
+## 참고 자료
 
-standard error를 작성하는 데에는 여러가지 이유가 있습니다. 가장 보편적인 이유는 프로그래밍 중 발생할 수 있는 오류를 파악하고 수정하기 위해서 입니다. 터미널에 로그를 남겨서 어떤 값이나 변수가 어떤 식으로 작동하는지 확인할 수 있습니다. 또 다른 이유는 오류 메시지를 사용자들에게 노출하고, 애플리케이션의 안정성을 높이기 위해서 입니다.
+마지막으로 일반 출력과 표준 에러의 차이점과 표준 에러를 활용하는 방법에 대해 더 알고싶다면 아래의 링크를 참고하시기 바랍니다.
 
-## 또 보기
+- [Elm 표준 에러 문서](https://guide.elm-lang.org/error_handing/errors.html)
+- [Debug 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [디버깅을 위한 표준 에러 사용하기](https://www.snoyman.com/blog/2019/10/elm-debug#Explicitly_printing_to_stderr)
 
-- [Elm 공식 문서 - Debug 모듈](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm에 대해 알아보기](https://ko.wikipedia.org/wiki/Elm_(%EC%96%BC%EC%83%89_%EC%96%B8%EC%96%B4))
+## 참고하기
+
+- [Elm 표준 출력에 대한 포스트](https://exampleblog.com/elm/standard-output)
+- [Elm 디버깅에 대한 팁 포스트](https://exampleblog.com/elm/debugging-tips)

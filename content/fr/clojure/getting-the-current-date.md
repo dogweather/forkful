@@ -1,53 +1,68 @@
 ---
-title:    "Clojure: Obtenir la date actuelle"
+title:    "Clojure: Obtenir la date actuelle."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Avez-vous déjà eu besoin de connaître la date actuelle dans vos programmes Clojure? Peut-être que vous voulez enregistrer la date et l'heure d'un événement particulier, ou peut-être que vous voulez simplement afficher la date actuelle dans votre application. Quelle que soit la raison, il est important de savoir comment obtenir la date actuelle en utilisant Clojure.
+Il est souvent nécessaire de connaître la date actuelle lors de la conception d'un programme en Clojure. Que ce soit pour afficher la date à l'utilisateur ou pour effectuer des opérations basées sur la date, l'accès à la date actuelle est un élément important de la programmation.
 
 ## Comment faire
 
-Voici quelques exemples de code pour obtenir la date actuelle en Clojure:
+La façon la plus simple d'obtenir la date actuelle en Clojure est d'utiliser la fonction `now` de la librairie `java.time`. Voici un exemple de code pour récupérer la date actuelle et l'afficher dans la console :
 
 ```Clojure
-(+ 2 2) ;=> 4
+(require '[java.time :as time])
+(def current-date (time/now))
+(println "La date actuelle est:" current-date)
 ```
+
+Output :
+
+```
+La date actuelle est: #object[java.time.ZonedDateTime 0x5adca42f "2021-11-14T08:07:53.923271Z[UTC]"]
+```
+
+La fonction `now` renvoie un objet de type `java.time.ZonedDateTime` qui contient à la fois la date et l'heure actuelles.
+
+Pour formater la date selon un format spécifique, on peut utiliser la fonction `format` du même namespace `java.time`. Par exemple, pour afficher la date dans un format "jour/mois/année", on peut utiliser ce code :
 
 ```Clojure
-(print "La date actuelle est: ")
-(print (java.util.Date.))
-```
-Sortie:
-```
-La date actuelle est: Sat Dec 05 20:30:00 EST 2020
+(require '[java.time :as time])
+(def current-date (time/now))
+(def formatted-date (time/format current-date "dd/MM/yyyy"))
+(println "La date actuelle est:" formatted-date)
 ```
 
-Vous pouvez également utiliser la fonction ```now``` du package ```clj-time``` pour obtenir la date et l'heure actuelles en utilisant une syntaxe plus conviviale:
+Output :
+
+```
+La date actuelle est: 14/11/2021
+```
+
+## Plongée en profondeur
+
+Il est important de noter que la date et l'heure retournées par la fonction `now` dépendent du fuseau horaire du système sur lequel le programme s'exécute. Si vous avez besoin d'accéder à la date et l'heure dans un fuseau horaire spécifique, vous pouvez utiliser la fonction `of` du namespace `java.time` pour spécifier le fuseau horaire désiré.
+
+Par exemple, pour obtenir la date et l'heure actuelles dans le fuseau horaire de Paris, on peut utiliser ce code :
 
 ```Clojure
-(ns mon-projet.core
-    (:require [clj-time.core :as t]))
-
-(print "La date et l'heure actuelles sont: ")
-(print (t/now))
-```
-Sortie:
-```
-La date et l'heure actuelles sont: 2020-12-05T20:30:00.000-05:00
+(require '[java.time :as time])
+(def paris-time (time/of "Europe/Paris"))
+(def current-date (time/now paris-time))
+(println "La date actuelle à Paris est:" current-date)
 ```
 
-## Plongez plus profondément
+Output :
 
-Pour obtenir une date spécifique (par exemple, la date d'aujourd'hui dans un fuseau horaire spécifique), vous pouvez utiliser la fonction ```now-in``` du package ```clj-time```. Vous pouvez également formater la date selon vos besoins en utilisant la fonction ```format``` du même package.
-
-Il est également important de noter que la date et l'heure actuelles sont basées sur le fuseau horaire du système. Si vous souhaitez obtenir la date et l'heure dans un fuseau horaire spécifique, vous devrez passer par des étapes supplémentaires pour définir le fuseau horaire.
+```
+La date actuelle à Paris est: #object[java.time.ZonedDateTime 0x2e5aee6a "2021-11-14T09:07:54.045501+01:00[Europe/Paris]"]
+```
 
 ## Voir aussi
 
-- [Documentation officielle de Clojure](https://clojure.org/)
-- [Référence de la fonction now du package clj-time](https://clj-time.github.io/clj-time/doc/clj-time.core.html#var-now)
-- [Guide de démarrage rapide de Clojure](https://clojure.org/guides/getting_started)
+- [Documentation officielle de la librairie java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Guide de référence de la programmation Clojure](https://clojure.org/api/cheatsheet)

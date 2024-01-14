@@ -1,41 +1,46 @@
 ---
-title:    "Bash: 寻找字符串的长度"
+title:    "Bash: 查找字符串的长度"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-为什么有必要去寻找字符串的长度？当我们在处理文本、编写命令行程序或者进行数据分析时，经常会遇到需要知道字符串长度的情况。因此，掌握如何找到字符串的长度是很有用的技能，能够帮助我们更高效地完成任务。
+## 为什么要使用Bash编程？
 
-## 如何
-在Bash中，使用内置命令`echo`和重定向符号`>`可以轻松地获取字符串的长度。例如，我们要找到字符串`Hello World`的长度，可以输入以下命令，并在命令行界面按下回车键：
+Bash是一种强大的脚本语言，被广泛用于自动化任务和系统管理。通过编写Bash程序，您可以轻松地管理和操作文件、目录和系统。一个常见的任务就是要获取字符串的长度，这在处理文本数据、用户输入和检查输入的有效性时非常有用。
+
+## 如何获取字符串的长度
+
+为了获取字符串的长度，我们可以使用Bash内置的`expr length`命令。它会返回字符串的字符数，包括空格和标点符号。下面是一个简单的示例代码：
+
+```Bash
+string="Hello World"
+length=`expr length $string`
+echo $length
 ```
-Bash
-echo "Hello World" > len     # 使用重定向符将字符串输出到名为len的文件中
-wc -c len                    # 使用内置命令wc来计算len文件的字符数，即字符串长度
+**输出：**
 ```
-命令行界面会返回`12`，表示字符串`Hello World`的长度为12个字符。
-
-同样，在Shell脚本中，我们也可以使用`echo`和重定向符号来获取字符串的长度。下面是一个例子：
+11
 ```
-Bash
-#!/bin/bash
-str="Hello World"
-len=$(echo -n $str | wc -c)   # 使用echo命令的选项-n来取消输出行末的换行符，避免计算长度时将换行符也计入
-echo "字符串$str的长度为$len个字符"
+
+在这个例子中，我们首先定义了一个字符串变量`string`，然后使用`expr length`命令获取其长度，并将其赋值给变量`length`，最后我们使用`echo`命令输出变量`length`的值。
+
+## 深入了解如何获取字符串的长度
+
+如果您想更深入地了解如何获取字符串的长度，可以探索Bash脚本中的其他方法。例如，我们可以使用`wc`命令来计算字符串的字节数，如下所示：
+
+```Bash
+string="Hello World"
+bytes=`echo -n $string | wc -c`
+echo $bytes
 ```
-运行脚本后，会输出`字符串Hello World的长度为12个字符`。
 
-## 深入了解
-在Bash中，`echo`命令会将给定的参数输出到标准输出，而使用重定向符号`>`则可以将输出重定向到一个文件中。然后，在使用内置命令`wc`时，选项-c表示统计字符数。
+我们还可以使用循环来遍历字符串中的每个字符，并计算字符的数量。这需要一些额外的代码，但是可以更准确地计算字符串的长度。
 
-另外，还有一些其他的方法可以获取字符串的长度，比如使用`expr`命令、使用`\"`字符来转义特殊字符等。感兴趣的读者可以通过阅读相关文档来进一步学习。
+## 参考链接
 
-## 参考资料
-- [Linux命令-wc](https://www.runoob.com/linux/linux-comm-wc.html)
-- [Bash Shell中取得字符串长度的方法](https://www.cnblogs.com/belief3309/archive/2013/10/14/3367053.html)
-
-## 另请参阅
-- [Bash Shell教程](https://www.runoob.com/linux/linux-shell.html)
-- [Bash Shell官方文档](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash文档](https://www.gnu.org/software/bash/manual/)
+- [Bash编程入门教程](https://www.tldp.org/LDP/abs/html/)
+- [Bash字符串操作指南](https://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
+- [Bash中文手册](https://tinylab.gitbooks.io/bash/content/)

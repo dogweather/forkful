@@ -1,52 +1,39 @@
 ---
-title:    "Python: 将文档写入标准错误"
+title:    "Python: 向标准错误写入"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么写标准错误
+# 为什么要写到标准错误
 
-编程是一项很有挑战性的工作，经常会在开发过程中出现错误。而写入标准错误是一种常见的调试方法，可以帮助开发者更有效地定位和解决问题。
+在编写Python程序时，出错是不可避免的。当错误发生时，程序会自动将错误信息打印到标准输出，这样我们可以方便地找到问题所在。但是有时候，我们希望将错误信息打印到标准错误而不是标准输出。这是因为标准错误是一个独立的流，可用于输出错误信息，而标准输出则用于输出正常的程序结果。通过将错误信息打印到标准错误，可以更容易地区分错误信息和正常结果，并更有效地调试和修正程序。
 
-## 如何写入标准错误
+# 如何编写到标准错误
 
-Python中可以使用sys模块中的stderr对象来将错误信息写入标准错误。首先需要将sys模块导入，然后使用```sys.stderr.write()```函数来写入信息。下面是一个简单的示例：
+要在Python中编写到标准错误，可以使用sys模块中的stderr对象。首先，要导入sys模块，然后使用```sys.stderr.write()```来输出错误信息。下面是一个简单的示例：
 
 ```Python
 import sys
 
-sys.stderr.write("This is an error message.")
+num = 1
+if num % 2 == 0:
+    print("偶数")
+else:
+    sys.stderr.write("不是偶数")
 ```
 
-运行上述代码后，可以在终端看到以下输出：
+运行这段代码会输出错误信息```不是偶数```到标准错误而不是标准输出。这样就可以清晰地了解到程序出现了什么错误。
 
-```Python
-This is an error message.
-```
+# 深入了解写入标准错误
 
-## 深入了解
+除了上面的示例，还有其他方法可以将错误信息打印到标准错误。比如可以使用logging模块来记录错误信息，或者将错误信息写入一个单独的日志文件。此外，还可以使用try/except语句来捕获异常并将错误信息打印到标准错误。
 
-除了使用sys模块的```stderr```对象外，我们还可以使用logging模块来处理错误信息。logging模块允许我们将错误信息写入日志文件，方便在之后进行追踪和分析。下面是一个使用logging模块的示例：
+总的来说，编写到标准错误可以帮助我们更快地发现和解决程序中的错误，提升编程效率。当我们需要调试程序或者查找错误时，可以考虑使用这种方式来输出错误信息。
 
-```Python
-import logging
+# 相关阅读
 
-logging.basicConfig(filename='error.log', level=logging.ERROR)
-
-logging.error("This is an error message.")
-```
-
-运行上述代码后，会生成一个名为“error.log”的日志文件，并将错误信息写入其中。在实际开发中，我们也可以根据不同的情况使用不同的日志等级来记录信息，以便更好地调试和分析程序。
-
-## 查看更多
-
-如果想要深入了解更多关于写入标准错误的知识，可以参考以下链接：
-
-- [Python官方文档-正式标准库参考-sys模块](https://docs.python.org/3/library/sys.html)
-- [Python官方文档-正式标准库参考-logging模块](https://docs.python.org/3/library/logging.html)
-- [如何在Python中使用stderr输出](https://www.geeksforgeeks.org/how-to-use-sys-stderr-write-in-python/)
-
-# 参考资料
-
-[在命令行中以不同的颜色输出信息](https://www.cnblogs.com/dkblog/archive/2012/03/17/2393843.html)
+- [Python官方文档：sys模块](https://docs.python.org/3/library/sys.html)
+- [Python官方文档：logging模块](https://docs.python.org/3/library/logging.html)
+- [Python官方教程：异常处理](https://docs.python.org/3/tutorial/errors.html)

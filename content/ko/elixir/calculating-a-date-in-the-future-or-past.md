@@ -1,50 +1,27 @@
 ---
-title:    "Elixir: 미래나 과거의 날짜 계산"
+title:    "Elixir: 미래나 과거의 날짜를 계산하기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+"# 왜
+날짜를 미래나 과거로 계산하는 것에 대해 배우는 것은 중요합니다. Elixir에서 날짜를 계산하는 것은 매우 유용하며 더 나은 앱 개발을 위해 필수적입니다. 이 포스트에서는 어떻게 해야 하는지 알려줄 것입니다.
 
-날짜를 미래나 과거로 계산하는 것에 참여하는 이유는 타임스태프를 다룰 때 매우 유용하기 때문입니다.
-
-## 방법
-
-우리는 Elixir의 Date 모듈을 사용하여 미래나 과거의 날짜를 계산할 수 있습니다.
-
-우선, `~D` 텍스트 리터럴 문법을 사용하여 날짜를 만듭니다. 예를 들어, 오늘 날짜는 `~D[{{올해}, {이번 달}, {오늘}}} ~]`과 같은 형태로 표현할 수 있습니다. 이는 날짜를 `Date.new(year, month, day)`로 변환하는 것과 같습니다.
-
-그런 다음 `Date.add/2` 함수를 사용하여 날짜에 지정한 일 수를 더하거나 빼서 과거나 미래의 날짜를 계산할 수 있습니다. 예를 들어, `Date.add(~D[2018-09-12], -7)`은 2018년 9월 12일로부터 일주일 전인 2018년 9월 5일의 날짜를 계산하게 됩니다.
-
-아래 예제는 `Date.new/3`와 `Date.add/2` 함수를 사용하여 어떻게 미래나 과거의 날짜를 계산할 수 있는지 보여줍니다.
-
-```Elixir
-# 미래의 날짜 계산
-iex> Date.new(2019, 12, 25)
-~D[2019-12-25]
-
-# 일주일 후의 날짜 계산
-iex> Date.add(~D[2019-12-25], 7)
-~D[2020-01-01]
-
-# 과거의 날짜 계산
-iex> Date.new(2018, 4, 15)
-~D[2018-04-15]
-
-# 15일 전의 날짜 계산
-iex> Date.add(~D[2018-04-15], -15)
-~D[2018-03-31]
+## 어떻게하기
 ```
+Elixir.DateTime.utc_today
+|> Elixir.Calendar.Date.add(10)
+|> Elixir.DateTime.to_naive
+```
+이 코드는 현재 시간을 가져와서 10일을 더하는 예시입니다. 결과는 현재 시간에서 10일 후의 날짜가 됩니다. 이와 같이 Elixir에서 날짜를 계산할 수 있습니다.
 
 ## 심층 분석
+날짜와 시간을 다뤄야 하는 애플리케이션에서는 과거와 미래의 날짜를 계산하는 기능이 필수적입니다. Elixir에서는 DateTime 및 Calendar 모듈을 사용하여 간단하게 날짜 및 시간을 계산할 수 있습니다. 대부분의 언어에서 날짜 및 시간을 다루는 것은 복잡하고 어려운 과정일 수 있지만, Elixir에서는 간단하고 직관적인 방법으로 처리할 수 있습니다.
 
-Elixir의 Date 모듈은 날짜를 다루는 많은 함수들을 제공합니다. 그 중 가장 유용한 함수는 `Date.add/2`뿐만 아니라 `Date.diff/2`, `Date.day_of_week/1`, `Date.day_of_year/1` 등이 있습니다.
-
-또한 Elixir는 윤년을 고려한 날짜 계산을 자동으로 수행합니다. 따라서 개발자는 윤년을 따로 신경쓰지 않고도 정확한 날짜 계산을 할 수 있습니다.
-
-## 같이 보기
-
-- [Elixir 공식 문서: Date 모듈](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Date 관련 블로그 포스트 (번역)](https://elixirdose.tistory.com/86)
-- [날짜 계산 실습 예제 (번역)](https://medium.com/@chulhee23/elixir-%EB%82%A0%EC%A7%9C-%EC%84%A4%EC%A0%95-%EB%B0%A9%EB%B2%95-5fef6410a465)
+# 관련 자료
+- Elixir 날짜 및 시간 공식 문서 (https://hexdocs.pm/elixir/DateTime.html)
+- Elixir에서 날짜와 시간 다루기 (https://thoughtbot.com/blog/elixir-date-and-time)
+- Elixir와 날짜 형식 (https://devclass.com/2019/08/12/elixir-io-format-dates/)
+- Elixir의 정교한 Date API (https://dockyard.com/blog/2018/07/06/a-polyglot-s-guide-to-elixir-part-2-date-time-operations)

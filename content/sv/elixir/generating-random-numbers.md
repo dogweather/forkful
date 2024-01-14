@@ -1,37 +1,59 @@
 ---
-title:    "Elixir: Generera slumpmässiga tal"
+title:    "Elixir: Generera slumpmässiga nummer"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-För att utveckla dynamiska och slumpvisa funktioner är det viktigt att kunna generera slumpmässiga tal. Detta är särskilt användbart inom spelutveckling och simuleringar.
 
-## Hur man gör
-Det finns flera sätt att generera slumpmässiga tal i Elixir, men det enklaste sättet är att använda funktionen `:rand.uniform/1`. Här är ett exempel på hur man använder denna funktion:
+Att generera slumpmässiga nummer är en viktig del av de flesta programmeringsprojekt. Det kan användas för att skapa unika lösenord, simulera slumpmässiga händelser eller välja slumpmässiga värden från en lista. I denna bloggpost kommer vi att utforska hur man genererar slumpmässiga nummer med Elixir.
 
-```Elixir
-IO.puts(:rand.uniform(100)) # Genererar ett slumpmässigt tal mellan 0 och 100
-```
+## Så här gör du
 
-Det är också möjligt att ange ett intervall för slumpmässiga tal genom att ange en Start och Slut parameter för funktionen `:rand.uniform/2`. Här är ett exempel:
+För att generera slumpmässiga nummer i Elixir finns det flera olika sätt att göra det. Ett sätt är att använda funktionen `:rand.uniform/0`, som genererar ett slumpmässigt flyttal mellan 0 och 1.
 
 ```Elixir
-IO.puts(:rand.uniform(5,10)) # Genererar ett slumpmässigt tal mellan 5 och 10
+:rand.uniform() #=> 0.5869037038244131
 ```
 
-För att generera en sekvens av slumpmässiga tal kan man använda sig av funktionen `Enum.map/2`. Här är ett exempel på hur man kan använda denna funktion för att generera en lista med 10 slumpmässiga tal mellan 0 och 100:
+Om du vill ha ett heltal istället kan du använda `:rand.uniform/1` och ge det ett intervall som argument.
 
 ```Elixir
-Enum.map(1..10, fn(_) -> :rand.uniform(100) end) # Genererar en lista med 10 slumpmässiga tal mellan 0 och 100
+:rand.uniform(10) #=> 7
+:rand.uniform(1..100) #=> 45
 ```
 
-## En djupdykning
-Elixir använder sig av en teknik som kallas "Mersenne Twister" för att generera slumpmässiga tal. Detta är en mycket effektiv algoritm som är utvecklad för att minimera förutsägbarhet och ge en jämn fördelning av slumpmässiga tal.
+Du kan också använda funktionen `:rand.seed/1` för att sätta en startpunkt för de slumpmässiga numrerna. Det innebär att du kan generera samma sekvens av slumpmässiga nummer varje gång med samma seed-värde.
 
-Det finns också andra funktioner för att generera slumpmässiga tal i Elixir, såsom `:rand.uniform/0` som genererar en flytande punkt mellan 0 och 1, och `:rand.normal/2` som genererar ett tal från en normalfördelning med angiven medelvärde och standardavvikelse.
+```Elixir
+:rand.seed(1234)
+:rand.uniform() #=> 0.5347535595413858
+:rand.uniform() #=> 0.4525331979163501
+:rand.uniform() #=> 0.0647825241766279
+
+:rand.seed(1234)
+:rand.uniform() #=> 0.5347535595413858
+:rand.uniform() #=> 0.4525331979163501
+:rand.uniform() #=> 0.0647825241766279
+```
+
+Om du behöver generera en lista med slumpmässiga nummer kan du använda funktionen `:rand.uniform/2` för att specificera antalet nummer du vill ha.
+
+```Elixir
+:rand.uniform(10, 5) #=> [3, 7, 2, 9, 4]
+```
+
+## Djupdykning
+
+Elixir använder en algoritm som kallas Mersenne Twister för att generera sina slumpmässiga nummer. Detta är en välkänd och robust algoritm som är känd för att ge lång period och god fördelning av sina slumpmässiga tal.
+
+En intressant egenskap hos Mersenne Twister är att den kan ha flera olika seed-värden, vilket möjliggör att flera oberoende sekvenser av slumpmässiga nummer kan genereras samtidigt.
+
+Slumpmässiga nummer i Elixir är dock inte helt slumpmässiga eftersom de genereras från en seed-värde. Om du behöver äkta slumpmässiga nummer kan du använda externt genererade seed-värden, som t.ex. från en fysisk slumpgenerator.
 
 ## Se även
-- [Elixir Dokumentation om Slumpmässiga Tal](https://hexdocs.pm/elixir/Random.html)
-- [Elixir Forum Diskussion om Slumpmässiga Tal](https://elixirforum.com/t/randomness-in-elixir/24524)
+
+- [Elixir Official Documentation on Random Numbers](https://hexdocs.pm/elixir/Kernel.html#rand/1)
+- [Mersenne Twister Algorithm](https://en.wikipedia.org/wiki/Mersenne_Twister)

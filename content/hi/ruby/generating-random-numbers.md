@@ -1,70 +1,37 @@
 ---
-title:    "Ruby: अनियमित संख्याओं का उत्पादन"
+title:    "Ruby: कंप्यूटर प्रोग्रामिंग पर लेख: यादृच्छिक संख्याएँ उत्पन्न करना"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
-Random numbers ka utpadan karna kyun zaroori hai? Random numbers, humare dainik jeevan mein kai tarah ke kamo mein upyog hota hai, jaise cryptography, simulation, games, aur bahut kuch. Hum is blog post mein, Ruby programming language ke madhyam se random numbers ko kaise banaya ja sakta hai iska prarupan karenge.
+# क्यों
 
-## Kaise Karein
-Random numbers banane ke liye, Ruby programming mein `rand` method ka upyog kiya ja sakta hai. Yeh method [0,1) yaani 0 se lekar 1 ke beech mein ek random decimal number return karta hai. Iske alawa, hum `rand` method mein ek argument bhi pass kar sakte hain jisse hume desired range mein random numbers milenge. Iske liye hum `rand` method ko `min` aur `max` ke beech mein arguments ke saath use kar sakte hain.
+अकसर हमारे प्रोग्राम और गेमों में हमें कुछ हार्ड कोड्ड या रैंडम नंबर की आवश्यकता होती है। यह बहुत आसान हो सकता है, लेकिन इसका निर्माण कैसे किया जाता है? यहां हम आपको बताएंगे कि रूबी में रैंडम नंबर कैसे बनाएं और उन्हें इस्तेमाल कैसे करें। 
 
-```Ruby
-# Random decimal number
-puts rand
+## कैसे करें
 
-# Random number between 0 to 10
-puts rand(0..10)
+पहले हमारे पास Random मॉड्यूल होना चाहिए जिसका उपयोग हम रैंडम नंबर बनाने के लिए करेंगे। आप निम्न विधि का उपयोग करके रैंडम नंबर सीख सकते हैं: 
 
-# Random number between 50 to 100
-puts rand(50..100)
-```
-Output:
+```Ruby 
+# रैंडम नंबर बनाएं 
+puts Random.rand 
 
-```
-0.8375630533884556
-5
-85
-```
+# दो नंबरों के बीच रैंडम नंबर बनाएं 
+puts Random.rand(1..10)
 
-Iske alawa, hum `srand` method ka upyog karke, same random numbers ko generate kar sakte hain. Is method ko upyog karne se, humare code ka output hamein har baar same random numbers deta hai.
-
-```Ruby
-# Set seed for srand
-srand(1234)
-
-# Random decimal number
-puts rand
-
-# Random number between 0 to 10
-puts rand(0..10)
-
-# Random number between 50 to 100
-puts rand(50..100)
-```
-Output:
+# दोनों समान अंतराल के बीच रैंडम नंबर बनाएं 
+puts Random.rand(10..100)
 
 ```
-0.1915194503788923
-4
-89
-```
 
-## Deeper Info
-Random numbers banane ke liye, computer mein ek algorithm ka upyog kiya jaata hai jiska naam hai "Pseudorandom Number Generator". Yeh algorithm, ek seed value ka upyog karta hai jo ke sabhi random numbers ki base mein hoti hai. Seed value ko badalne se, hume different random numbers mil sakte hain. Ruby programming mein, `rand` method seed value ko automatically generate karta hai.
+उपरोक्त उदाहरण में हमने `Random.rand` का उपयोग किया जो एक ब्राउज़र जैसे एक रैंडम नंबर बनाता है। हमने इन्हें `puts` का उपयोग करके प्रिंट भी किया है। आप इन्हें अपनी फीब हट में भी इस्तेमाल कर सकते हैं। 
 
-Iske alawa, hum `Random` class ka bhi upyog kar sakte hain random numbers banane ke liye. Isse hume aur bhi options aur control milta hai random numbers ke upar. Is class ke ek instance banane ke baad, hum `rand` method ki jagah `Random.rand` bhi use kar sakte hain.
+## विस्तृत जानकारी
 
-```Ruby
-# Generate random number between 0 to 10 using Random class
-puts Random.rand(0..10)
-```
+रूबी में रैंडम नंबर का निर्माण प्रकृति के हुनर से किया जाता है। यहां हम भीड़ समान अंतराल और स्थिर रूप से अनुभव रैंडम नंबर हासिल कर सकते हैं। आप दिए गए लिंक में इस टॉपिक की गहराई में जानकारी प्राप्त कर सकते हैं। 
 
-## Dekho Bhi
-Aur bhi random numbers ke baare mein jaanne ke liye, neeche mention kiye gaye links dekhein:
+## और भी देखें 
 
-- [Ruby `rand` Method Documentation](https://ruby-doc.org/core-2.7.1/Random.html)
-- [How Pseudorandom Number Generators Work](https://www.geeksforgeeks.org/how-to-generate-large-random-numbers/)
-- [Seed value explained](https://www.thesprucecrafts.com/truly-random-seeds-in-a-pseudorandom-number-generator-2821221)
+- [ऑनलाइन दस्तावेज़ीकरण: रुबी में Random Module](https://ruby

@@ -1,61 +1,56 @@
 ---
-title:    "Elixir: 搜索与替换文本"
+title:    "Elixir: 查找和替代文本"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-為什麼：為什麼要使用Elixir中的搜索和替換功能？搜索和替換文本是一項重要的編程技巧，能夠幫助開發人員快速修改和更新大量的文本數據。
+## 为什么
 
-如何進行：下面將通過幾個簡單的步驟來介紹如何使用Elixir進行搜索和替換文本。
+在编程中，搜索和替换文本是经常会用到的常见操作。它可以帮助我们快速有效地修改大量的文本内容，节省宝贵的时间和精力。
 
-```
-Elixir中搜索和替換文本的基本語法如下所示：
+## 如何
 
-String.replace(要替換的字符串，要替換的內容，替換後的內容)
+对于Elixir编程语言来说，搜索和替换文本并不复杂。让我们来看一个简单的例子，假设我们有一段文本内容需要替换，如下所示：
 
-讓我們以一個簡單的例子來說明。假設我們有一段文本，裡面包含著許多的文字表情：
+"今天是个好天气，我很喜欢出门散步。"
 
-文本 = "我喜歡用😊來表示快樂，但是很討厭😭表示悲傷。"
+现在，假设我们想把其中的“好天气”替换为“糟糕的天气”。让我们通过使用`String.replace/4`函数来实现：
 
-現在，我們想把所有的文字表情都替換成文字，讓它看起來更加友好。我們可以使用String.replace來實現：
-
-String.replace(文本，"😊", "開心")
-
-文本 = "我喜歡用開心來表示快樂，但是很討厭😭表示悲傷。"
-
-同樣的，我們還可以使用正則表達式來進行更加靈活的搜索和替換。下面的例子將把所有以大寫開頭的單詞轉換為小寫：
-
-String.replace(文本，~r/[A-Z][\w]*/, &String.downcase(&1))
-
-文本 = "我喜歡用開心來表示快樂，但是很討厭哭泣表示悲傷。"
-
+```Elixir
+text = "今天是个好天气，我很喜欢出门散步。"
+String.replace(text, "好天气", "糟糕的天气")
 ```
 
-深入探討：在Elixir中，搜索和替換文本的功能並不限於String模塊，還可以在其他數據類型上使用。比如Map類型的Key和Value也可以使用Map.replace進行替換。
+运行上面的代码，我们会获得如下的输出结果：
 
-此外，Elixir還提供了更多高級的文本操作功能，如正則表達式匹配和模式匹配。這些功能可以幫助開發人員更靈活地進行文本處理。
+"今天是个糟糕的天气，我很喜欢出门散步。"
 
-參考連結：
+如果我们想替换多个内容，比如把`"今天"`也替换为`"明天"`，我们可以使用`String.replace/4`函数的第四个参数，它可以指定要替换的次数。让我们再来看一个例子：
 
-- Elixir文檔：https://hexdocs.pm/elixir/String.html#replace/3
-- 正則表達式教程：https://regexone.com/
+```Elixir
+text = "今天是个好天气，我很喜欢出门散步。"
+String.replace(text, "今天", "明天", 2)
+```
 
-參考資料：
+运行上面的代码，我们会得到：
 
-- "Elixir的字符串操作"：https://medium.com/@codinate/using-elixir-string-data-type-for-better-data-3d034d93e662
-- "Elixir技巧：搜索和替換字符串"： https://thoughtbot.com/blog/searching-and-replacing-strings-in-elixir
+"明天是个好天气，我很喜欢出门散步。"
 
-同類文章：
+## 深入了解
 
-参阅：
+在Elixir中，字符串是不可变的，也就是说它们无法被修改。所以在替换文本时，实际上是创建了一个新的字符串，而不是直接修改原来的字符串。这也是为什么在上面的例子中，我们需要使用变量来存储替换后的结果。
 
-- Elixir官方文档：https://hexdocs.pm/elixir/String.html#replace/3
-- 正则表达式教程：https://regexone.com/
+此外，Elixir还提供了更多用于替换文本的函数，比如`String.replace_leading/3`和`String.replace_trailing/3`，它们可以分别替换字符串开头和结尾的内容。
 
-参考资料：
+## 参考资料
 
-- "Elixir的字符串操作"：https://medium.com/@codinate/using-elixir-string-data-type-for-better-data-3d034d93e662
-- "Elixir技巧：搜索和替换字符串"： https://thoughtbot.com/blog/searching-and-replacing-strings-in-elixir
+- [`String.replace/4`函数](https://hexdocs.pm/elixir/String.html#replace/4)
+- [`String.replace_leading/3`函数](https://hexdocs.pm/elixir/String.html#replace_leading/3)
+- [`String.replace_trailing/3`函数](https://hexdocs.pm/elixir/String.html#replace_trailing/3)
 
-其他相关文章：
+## 参见
+
+- [Elixir官方文档](https://elixir-lang.org/docs.html)
+- [Elixir中文文档](https://elixir-cn.com/docs)

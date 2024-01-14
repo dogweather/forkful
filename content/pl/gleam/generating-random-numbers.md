@@ -1,44 +1,37 @@
 ---
 title:    "Gleam: Generowanie losowych liczb"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie losowych liczb jest niezwykle przydatną umiejętnością w programowaniu. Może być wykorzystywane do stworzenia symulacji, losowych eventów lub nawet do generowania unikalnych kodów dla użytkowników.
+Generowanie liczb losowych jest często wykorzystywane do stworzenia różnych gier, symulacji lub w prostych programach do losowania. Jest to również przydatne w testowaniu aplikacji, gdzie wymagane są dane losowe.
 
 ## Jak to zrobić
 
-Aby wygenerować losową liczbę w Gleam, możemy użyć funkcji `random.int()` z modułu `Random`. Możesz przekazać zakres liczb, które chcesz wygenerować jako parametry do funkcji. Na przykład, aby wygenerować liczbę z zakresu od 1 do 10, użyjemy kodu:
+Aby wygenerować liczbę losową w języku programowania Gleam, możemy skorzystać z wbudowanej funkcji `random.int`. Przykładowy kod wyglądałby następująco:
 
 ```Gleam
-let number = Random.int(1, 10)
+import random
+
+random_int := random.int(1, 10)
+
+// W tym przykładzie, `random_int` będzie liczbą losową z zakresu od 1 do 10.
 ```
 
-Możemy także wygenerować listę losowych liczb za pomocą funkcji `random.ints()`. Przykładowy kod poniżej wygeneruje 5 losowych liczb od 1 do 100:
+W przypadku, gdy potrzebujemy wygenerować więcej niż jedną losową liczbę, możemy użyć pętli `for` lub funkcji `List.map`.
 
-```Gleam
-let numbers = Random.ints(5, 1, 100)
-```
+## Deep Dive
 
-Bez ustalenia zakresu, funkcja `Random.int()` będzie generować losowe liczby całkowite z zakresu od 0 do `MAX_SAFE_INTEGER`.
+Podczas generowania liczb losowych, istotne jest aby wykorzystać wysokiej jakości algorytm generujący. W języku Gleam, funkcja `random.int` wykorzystuje algorytm Mersenne Twister, który jest szeroko uznawany za jeden z najlepszych algorytmów do generowania liczb losowych.
 
-## Głębszy wgląd
-
-W przypadku gdy potrzebujemy większej kontroli nad generowaniem liczb, możemy użyć sekwencji `Random.Generator`. Ta sekwencja pozwala na ustawienie nasionka (ang. seed) oraz na definiowanie własnego sposobu generowania losowych liczb.
-
-Przykładowy kod poniżej wykorzystuje `Random.Generator` do wygenerowania listy losowych liczb z przedziału od 0 do 1:
-
-```Gleam
-let random_generator = Random.make_generator()
-let numbers = Random.Generator.floats(random_generator, 0.0, 1.0)
-```
-
-Możemy także ustawić własną funkcję generującą, np. z wykorzystaniem innych funkcji z modułu `Random`, takich jak `string()`, `bool()`, lub `char()`.
+Jednakże, warto zauważyć, że liczb wygenerowanych przez funkcję `random.int` nie można uważać za całkowicie losowe. Dlatego też, jeśli potrzebujemy bardzo dokładnych danych losowych, powinniśmy skorzystać z biblioteki zewnętrznej, która udostępnia inne, bardziej zaawansowane metody generowania liczb losowych.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja modułu Random w Gleam: https://gleam.run/documentation/standard-libraries/random/
-- Poradnik dotyczący generowania losowych liczb w Gleam: https://blog.gleam.run/random-numbers/
+- Dokumentacja Gleam na temat funkcji `random.int`: https://gleam.run/docs/std-lib/Random.int/
+- Wprowadzenie do programowania w języku Gleam: https://gleam.run/getting-started/
+- Biblioteka `Erlang Random`, która oferuje szereg funkcji do generowania zaawansowanych danych losowych: https://github.com/erlang/otp/blob/master/lib/stdlib/src/random.erl

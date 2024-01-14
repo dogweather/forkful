@@ -1,56 +1,51 @@
 ---
-title:    "C++: Päiväyksen muuntaminen merkkijonoksi"
+title:    "C++: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Monissa ohjelmointiprojekteissa saattaa olla tarve muuttaa päivämäärä muotoon teksti. Tällainen muunnos voi olla hyödyllinen esimerkiksi, kun halutaan tulostaa päivämäärä tietokannasta löytyivän tiedon yhteydessä tai tallentaa päivämäärä tekstimuodossa tiedostoon.
+Aina välillä C++ ohjelmoinnissa tulee tarve muuttaa päivämäärä merkkijonoksi. Tämä voi olla tarpeen esimerkiksi laskurin näyttämiseksi käyttäjälle tai tallennettaessa tietoja tietokantaan. Seuraavassa kerromme, kuinka tämä voidaan tehdä helposti ja tehokkaasti.
 
 ## Kuinka
-
-Seuraavassa on esimerkki C++-koodista, joka muuttaa nykyisen päivämäärän muotoon "päivä.kuukausi.vuosi":
-
+Tätä toimintoa varten tarvitsemme käyttöömme muutaman C++ kielisen kirjaston. Ensiksi meidän täytyy sisällyttää <iostream> ja <sstream> kirjastot, koska ne tarjoavat meille tiedon tulostamiseen tarvittavia työkaluja. Tämän lisäksi tarvitsemme myös <ctime> kirjaston, jotta voimme käsitellä päivämäärätietoja. Ohessa on esimerkkikoodi, kuinka voit muuttaa päivämäärän merkkijonoksi.
 ```C++
 #include <iostream>
-#include <string>
+#include <sstream>
 #include <ctime>
-
-using namespace std;
 
 int main()
 {
-    // Haetaan nykyinen aika ja tallennetaan se aika-muuttujaan
-    time_t now = time(0);
+	// Luodaan päivämäärä tyyppi time_t
+	time_t now = time(0);
 
-    // Muutetaan aika aikarakenteeksi
-    tm *local_time = localtime(&now);
+	// Muutetaan nyt muuttujan sisältämä päivämäärä merkkijonoksi
+	char* date = ctime(&now);
 
-    // Luodaan merkkijono päivämäärälle
-    string date = to_string(local_time->tm_mday) + "." + to_string(local_time->tm_mon + 1) + "." + to_string(local_time->tm_year + 1900);
+	// Muutetaan merkkijono streamiksi
+	std::ostringstream os;
 
-    // Tulostetaan päivämäärä konsoliin
-    cout << "Nykyinen päivämäärä: " << date << endl;
+	// Lisätään merkkijono streamiin
+	os << "Nykyinen päivämäärä ja aika: " << date;
 
-    return 0;
+	// Tulostetaan merkkijonoina
+	std::cout << os.str();
+
+	return 0;
 }
 ```
-
-Tässä esimerkissä käytetään C++:n <ctime> ja <string> kirjastoja sekä aikarakennetta tm. Funktio localtime() palauttaa nykyisen ajan ja tämänhetkisen päivämäärän tiedot. Tämän jälkeen käytetään to_string()-funktiota muuttamaan numerot merkkijonoiksi ja lopuksi ne yhdistetään pisteillä erotettuun päivämäärämuotoon. Koodin tuloste näyttää esimerkiksi seuraavalta:
-
+Tämän koodin tulostus näyttää seuraavalta:
 ```
-Nykyinen päivämäärä: 8.1.2021
+Nykyinen päivämäärä ja aika: Tue Jul 14 20:25:38 2020
 ```
+Koodi ensin luo time_t tyyppisen muuttujan, johon tallennetaan nykyinen päivämäärä ja aika. Sitten se käyttää ctime() funktiota muuntaakseen tämän muuttujan sisältämän päivämäärän merkkijonoksi. Lopuksi se lisää merkkijonoon myös tarkemman päivämäärän ja tulostaa sen lopulta konsolille.
 
-## Syväsukellus
-
-Käytettäessä <ctime> kirjastoa, on tärkeää huomata että tm-rakenne sisältää päivämäärän tiedot vuosittain + 1900 ja kuukaudet ovat numeroina 0-11 välillä. Lisäksi tm-rakenteessa on myös muita tietoja, kuten tunnit, minuutit ja sekunnit, joiden avulla voidaan muodostaa myös kellonaika.
-
-On myös hyvä huomioida, että tämä esimerkki käyttää tietokoneen paikallista aikavyöhykettä päivämäärän muuttamiseen. Jos halutaan esimerkiksi muuttaa päivämäärä toisen aikavyöhykkeen mukaan, täytyy käyttää hieman erilaista lähestymistapaa.
+## Syvempi sukellus
+C++ tarjoaa useita erilaisia tapoja muuttaa päivämäärä merkkijonoksi. Esimerkiksi <chrono> kirjastosta löytyy Chrono Type Library, joka tarjoaa C++ standardin mukaiset työkalut aikamääreiden käsittelemiseen. Tämän lisäksi myös boost::date_time kirjasto tarjoaa useita erilaisia päivämäärä ja aika luokkia.
 
 ## Katso myös
-
-- C++ <ctime>, <string> kirjastot https://www.cplusplus.com/reference/ctime/
-- C++ to_string() funktio https://www.cplusplus.com/reference/string/to_string/
+- <a href="https://www.cplusplus.com/reference/ctime/">ctime()</a> - C++ referenssi päivämäärätietojen käsittelyyn.
+- <a href="https://www.cplusplus.com/reference/iomanip/">iomanip</a> - C++ referenssi tavujen tulostamiseen.
+- <a href="https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html">boost::date_time</a> - Boost kirjasto päivämäärä ja aikatietojen käsittelyyn.

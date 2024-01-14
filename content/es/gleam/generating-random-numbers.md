@@ -1,52 +1,56 @@
 ---
-title:    "Gleam: Generación de números aleatorios"
+title:    "Gleam: Generando números aleatorios"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios con Gleam
+## Por qué
 
-Muchos desarrolladores utilizan números aleatorios en sus programas para diversas tareas, como generar contraseñas seguras, realizar pruebas de unidad o incluso crear juegos. En esta publicación del blog, aprenderemos cómo generar números aleatorios en Gleam y cómo podemos utilizarlos en nuestros proyectos.
+En programación, a veces necesitamos generar números aleatorios para simular situaciones o para tomar decisiones. Con Gleam, podemos hacerlo de forma rápida y sencilla gracias a sus funciones para generar números aleatorios.
 
-## Cómo generar números aleatorios en Gleam
+## Cómo
 
-Para generar números aleatorios en Gleam, utilizaremos la función `random` del módulo `Random`. Esta función toma un parámetro opcional `seed`, que podemos usar para obtener números aleatorios predecibles. Si no proporcionamos un `seed`, la función utiliza un valor predefinido por el sistema.
+Para generar un número aleatorio en Gleam, podemos utilizar la función `rand.float()` que nos devuelve un número de tipo `Float` entre 0 y 1. Si queremos un número entero, podemos utilizar `rand.int()` especificando el rango deseado, por ejemplo `rand.int(1, 10)` nos dará un número entero entre 1 y 10.
 
-```
-Gleam import Random
+```Gleam
+// Generar un número aleatorio entre 0 y 1
+let random_num = rand.float()
 
-seed1 = Random.random(10)
-// Esto generará un número aleatorio entre 0 y 10.
-
-seed2 = Random.random()
-// Esto generará un número aleatorio utilizando el valor predefinido del sistema.
-
-print(seed1)
-// 3
-
-print(seed2)
-// 7
+// Generar un número entero entre 1 y 10
+let random_int = rand.int(1, 10)
 ```
 
-Podemos utilizar la función `uniform` del módulo `Random` para generar números aleatorios con decimales.
+Podemos también generar una lista de números aleatorios utilizando un ciclo `for` y la función `rand.int()`.
 
-```
-Gleam import Random
-
-random_num = Random.uniform(3, 8)
-print(random_num)
-// 5.2645 
+```Gleam
+let numbers = for _ in [1, 2, 3, 4, 5] {
+  rand.int(1, 10)
+}
 ```
 
-## Inmersión profunda en la generación de números aleatorios
+El resultado será una lista con 5 números enteros aleatorios entre 1 y 10.
 
-Ahora que sabemos cómo generar números aleatorios en Gleam, es importante entender cómo y por qué funciona esto. La función `random` utiliza un algoritmo llamado Generador de Números Pseudoaleatorios (PRNG, por sus siglas en inglés). Este algoritmo se basa en un valor inicial, o `seed`, que se va actualizando con una fórmula matemática cada vez que se llama a la función. Esto garantiza que los números aleatorios generados sean predecibles si se utilizan los mismos valores iniciales (o `seeds`).
+## Profundizando
 
-Es importante tener en cuenta que, aunque los números generados sean "aleatorios", en realidad son pseudoaleatorios, lo que significa que se generan en base a un algoritmo y no son verdaderamente aleatorios.
+En Gleam, los números aleatorios son generados utilizando una fuente de entropía criptográfica segura. Esto significa que los números son verdaderamente aleatorios y no dependen de un patrón o una semilla.
+
+Otra forma de generar números aleatorios es especificando una semilla con la función `rand.new_generator()` y luego utilizando esta semilla para generar números con `rand.int_from_generator()` o `rand.float_from_generator()`. Esto puede ser útil si queremos reproducir una serie de números aleatorios en diferentes momentos.
+
+```Gleam
+let generator = rand.new_generator(123)
+
+// Generar un número entero a partir de la semilla
+let random_num = rand.int_from_generator(generator, 1, 10)
+
+// Generar una lista de números enteros aleatorios a partir de la semilla
+let numbers = for _ in [1, 2, 3, 4, 5] {
+  rand.int_from_generator(generator, 1, 10)
+}
+```
 
 ## Ver también
 
-- [Documentación del módulo Random en Gleam](https://gleam.run/modules/rand.html)
-- [Explicación técnica de los PRNGs](https://computer.howstuffworks.com/question697.htm)
-- [Ejemplo de generador de contraseñas aleatorias en Gleam](https://github.com/gleam-lang/example-random-password-generator)
+- Documentación oficial de Gleam sobre números aleatorios: https://gleam.run/std/rand.html
+- Ejemplos de uso de `rand` en el repositorio oficial de Gleam: https://github.com/gleam-lang/gleam/tree/master/examples/rand

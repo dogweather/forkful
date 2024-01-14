@@ -1,63 +1,39 @@
 ---
-title:    "Java: Merkkijonojen yhdistäminen"
+title:    "Java: Merkkijonojen yhdisteleminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit yhdistää merkkijonoja? Yhdistäminen on hyödyllinen työkalu, jota käytetään usein Java-ohjelmoinnissa. Se mahdollistaa erilaisten tietojen yhdistämisen yhdeksi merkkijonoksi, mikä voi olla erittäin hyödyllistä tulostuksen yhteydessä.
+Miksi haluaisit yhdistää merkkijonoja Java-ohjelmoinnissa? Merkkijonon yhdistäminen on kätevä tapa luoda yksi kokonainen teksti useista osista. Tämä voi olla erityisen hyödyllistä, kun haluat rakentaa dynaamisia käyttöliittymiä tai tarkentaa tulosteita. Merkkijonojen yhdistäminen myös auttaa pitämään koodin siistinä ja helposti luettavana.
 
-## Miten
+## Kuinka
 
-Yhdistäminen voidaan tehdä helposti Java-kielen sisäänrakennetun concat() -metodin avulla. Se ottaa parametreiksi haluttujen merkkijonojen määrän ja yhdistää ne yhdeksi merkkijonoksi. Alla on esimerkki koodista ja sen tulostuksesta:
-
-```Java
-// Alustetaan kaksi merkkijonoa
-String hello = "Hei";
-String world = "maailma!";
-
-// Yhdistetään merkkijonot concat() metodilla
-String helloWorld = hello.concat(" ").concat(world);
-
-// Tulostetaan yhdistetty merkkijono
-System.out.println(helloWorld);
-```
-
-Tulostus:
-```
-Hei maailma!
-```
-
-## Syvempi sukellus
-
-Java mahdollistaa myös merkkijonojen suoran yhdistämisen "+" -operaattorin avulla. Tämä tekee koodista hieman siistimpää ja helpommin luettavaa. Alla olevassa esimerkissä käytetään myös yhdistettyä sijoitusoperaattoria "+=".
+Javassa merkkijonojen yhdistäminen tapahtuu käyttämällä plus-merkkiä (+) tai concat()-metodia. Kumpikin vaihtoehto tuottaa saman lopputuloksen, mutta concat()-metodi on hieman tehokkaampi.
 
 ```Java
-// Alustetaan kaksi merkkijonoa
-String language = "Java";
-String version = "8";
+// Plus-merkki (+)
+String nimi = "Maija";
+String tervehdys = "Hei " + nimi + "!";
 
-// Suora yhdistäminen + -operaattorilla
-String javaVersion = "This is " + language + " version " + version;
-
-// Yhdistetty sijoitusoperaattori +=
-javaVersion += "!";
-// Tämä vastaa javaVersion = javaVersion + "!"
-
-// Tulostetaan yhdistetty merkkijono
-System.out.println(javaVersion);
+// concat()-metodi
+String nimi = "Maija";
+String tervehdys = "Hei ".concat(nimi).concat("!");
 ```
 
-Tulostus:
-```
-This is Java version 8!
-```
+Tässä esimerkissä olemme yhdistäneet merkkijonot "Hei ", "Maija" ja "!". Lopputuloksena saamme merkkijonon "Hei Maija!".
 
-On myös tärkeää huomata, että concat() -metodi luo uuden merkkijonon jokaisen yhdistämisen jälkeen, kun taas "+" -operaattori muokkaa alkuperäistä merkkijonoa.
+## Syvällinen sukellus
+
+Merkkijonojen yhdistäminen voi olla tehokasta, mutta on myös tärkeää pitää mielessä muutama asia. Ensinnäkin, on tärkeää muistaa, että merkkijonot ovat pysyviä ja niitä ei voi muuttaa. Siksi joka kerta kun yhdistämme merkkijonon, luodaan uusi merkkijono-objekti. Tämä voi aiheuttaa suorituskykyongelmia, jos käytämme merkkijonojen yhdistämistä suurissa määrin.
+
+On myös tärkeää huomata, että merkkijonojen yhdistäminen voi olla hidas prosessi. Tämä johtuu siitä, että Javan String-luokkaa ei ole suunniteltu käsittelemään suuria merkkijonoja tehokkaasti. Jos tarvitset suurien merkkijonojen käsittelyä, harkitse StringBuilder- tai StringBuffer-luokkia.
 
 ## Katso myös
 
-- Java String concat() metodi: https://www.javatpoint.com/java-string-concat
-- String concatenation in Java: https://www.geeksforgeeks.org/string-concatenation-java/
+- [Javan String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Javan StringBuilder-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Javan StringBuffer-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)

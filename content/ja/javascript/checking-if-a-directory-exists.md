@@ -1,44 +1,58 @@
 ---
-title:    "Javascript: ディレクトリが存在するかどうかのチェック"
+title:    "Javascript: ディレクトリが存在するかどうかを確認する"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜディレクトリの存在をチェックする必要があるのか
 
-ディレクトリが存在するかどうかをチェックすることの重要性は、プログラミングにおけるエラー処理にあります。ディレクトリが存在しない場合、それに対する適切な処理を行わなければなりません。そのため、正確にディレクトリが存在するかを確認することは、プログラミングにおいて不可欠です。
+Javascriptプログラミングをしていると、時にはファイルやディレクトリの存在をチェックする必要があります。これは、特定の処理を行う前に、必要なファイルやディレクトリが存在するかどうかを確認するためです。そこで、今回はディレクトリの存在をチェックする方法について解説します。
 
 ## 方法
 
-ディレクトリの存在をチェックするには、Node.jsのfsモジュールの`existsSync()`メソッドを使用します。以下のコード例をご覧ください。
+Javascriptでディレクトリの存在をチェックするには、fsモジュールを使用します。まずは、fsモジュールをインポートします。次に、existsSync()メソッドを使用し、チェックしたいディレクトリのパスを引数として渡します。存在する場合はtrueを、存在しない場合はfalseを返します。
 
 ```Javascript
-const fs = require("fs");
+const fs = require('fs');
 
-// 指定したパスのディレクトリが存在するかどうかをチェックする
-if(fs.existsSync("/path/to/directory")){
-  console.log("ディレクトリが存在します。");
+if(fs.existsSync('./myDirectory')){
+  console.log('myDirectory exists');
 } else {
-  console.log("ディレクトリは存在しません。");
+  console.log('myDirectory does not exist');
 }
 ```
 
-上記のコードでは、`existsSync()`メソッドがディレクトリが存在するかどうかを返します。存在する場合は`true`、存在しない場合は`false`です。また、指定したパスには相対パスや絶対パスのどちらも使用することができます。
+上記のコードでは、myDirectoryという名前のディレクトリが存在するかどうかをチェックしています。もし存在する場合は、「myDirectory exists」というメッセージがコンソールに表示されます。存在しない場合は、「myDirectory does not exist」というメッセージが表示されます。
 
-## 詳細説明
+## ディープダイブ
 
-`existsSync()`メソッドは同期的なメソッドであり、ファイルシステムへのアクセスを行います。そのため、他の処理をブロックする可能性があることに注意してください。また、Node.js以外の環境（ブラウザなど）では使用できません。
+さらに詳しく調べると、existsSync()メソッドは同期的な方法でディレクトリの存在をチェックします。つまり、コードの実行を一時停止してチェックを行います。そのため、存在するかどうかを確認するだけであれば便利ですが、複数のファイルやディレクトリをチェックする場合は非推奨です。
 
-さらに、`existsSync()`メソッドはディレクトリの存在を確認するだけでなく、ファイルの存在も確認することができます。その場合は、引数にファイルのパスを指定してください。
+代わりに、exists()メソッドを使うことで非同期的にチェックを行うことができます。これは、コードの実行をブロックせずに処理を進めるため、複数のチェックを行う場合や大きなファイルを処理する場合にはより効率的です。
 
-## 参考リンク
+また、exists()メソッドを使用する場合はコールバック関数を指定する必要があります。コールバック関数には引数としてエラーと結果が渡されるため、返り値を取得するにはそれらを利用する必要があります。
 
-- [Node.js fsモジュール](https://nodejs.org/api/fs.html)
-- [existsSync()メソッドのドキュメント](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [ファイルパスについての詳細情報](https://nodejs.org/api/path.html#path_path_freepath_path)
+```Javascript
+const fs = require('fs');
 
-## 関連リンク
+fs.exists('./myDirectory', (err, result) => {
+  if(err) {
+    console.error(err);
+  } else {
+    if(result) {
+      console.log('myDirectory exists');
+    } else {
+      console.log('myDirectory does not exist');
+    }
+  }
+})
+```
 
-- [Node.jsドキュメント](https://nodejs.org/ja/docs/)
-- [フロントエンド開発の基本](https://digitalidentity.co.jp/blog/frontend-basics/)
+このように、exists()メソッドを使用すればより柔軟にディレクトリの存在をチェックすることができます。
+
+# また見る
+
+- [fsモジュールの公式ドキュメント](https://nodejs.org/api/fs.html)
+- [exists() vs existsSync()の比較](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)

@@ -1,44 +1,44 @@
 ---
-title:    "Javascript: 从命令行读取参数."
+title:    "Javascript: 读取命令行参数"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
+## 为什么要读取命令行参数？
 
-命令行参数是Javascript编程中的重要概念，它们允许程序从用户输入中获取信息。通过学习如何读取命令行参数，你可以构建更加灵活和交互式的程序。
+命令行参数是指在运行Javascript程序时，用户可以在命令行中输入的参数。它们可以帮助我们在运行程序时提供额外的信息，从而改变程序的行为。因此，学习如何读取命令行参数可以帮助我们更好地控制我们的程序。
 
-##如何进行
+## 如何读取命令行参数？
 
-读取命令行参数的方法很简单，只需要使用process对象的argv属性。下面是一个示例代码：
+在Javascript中，我们可以使用process对象来读取命令行参数。process对象是一个全局对象，它提供了与当前进程有关的信息，包括命令行参数。
 
-```Javascript
-let args = process.argv;
-console.log(args);
-```
-
-这段代码会打印出用户在命令行输入的所有参数，包括执行程序的路径和文件名。如果我们在命令行输入 `node index.js hello world`，那么打印出的结果将是：
+下面是一个简单的代码示例，演示如何在Javascript中读取命令行参数：
 
 ```Javascript
-["/usr/local/bin/node",
-"/Users/username/Documents/index.js",
-"hello",
-"world"]
+// 假设我们的程序名为"sayHello.js"
+// 在命令行中运行：node sayHello.js John
+// 则"John"将作为参数传递给程序
+const name = process.argv[2]; // 命令行参数以数组的形式保存在process.argv中
+console.log(`Hello ${name}!`); // 输出：Hello John!
 ```
 
-这里的`hello`和`world`就是我们输入的命令行参数。
+通过这种方式，我们可以在运行程序时，通过在命令行输入不同的参数来改变程序的输出。
 
-如果我们想要获取单独的参数，可以通过索引来获取。例如，我们想要获取第三个参数`hello`，只需要使用`process.argv[2]`即可。
+## 深入了解读取命令行参数
 
-##深入探讨
+除了通过process对象来读取命令行参数之外，我们还可以使用第三方库来帮助我们更方便地读取命令行参数。例如，"yargs"这个库可以帮助我们解析命令行参数，并提供更多的功能，如设置选项和命令别名等。
 
-除了使用`process.argv`来读取命令行参数，还可以使用第三方库，如`node-getopt`来帮助我们更方便地处理多个参数。这些库可以帮助我们解析参数的类型和选项，并且提供更友好的命令行交互。
+另外，需要注意的是，在读取命令行参数时，我们也可以通过命令行选项来指定参数的类型。例如，使用"--n 10"来表示参数n的值为整数10。这样就可以帮助我们更准确地读取和使用命令行参数。
 
-此外，还可以使用`os`模块的`platform()`方法来获取当前操作系统的信息，对于跨平台的程序来说，这是一个非常有用的方法。
+## 参考链接
 
-##参考资料
+- [Node.js官方文档 - process](https://nodejs.org/api/process.html)
+- [yargs官方文档](http://yargs.js.org/)
+- [阮一峰的《Node.js教程 - process对象》](https://www.ruanyifeng.com/blog/2015/05/process.html)
 
-- [Node.js官方文档 - Process](https://nodejs.org/api/process.html)
-- [Node-Getopt Github仓库](https://github.com/jiangmiao/node-getopt)
-- [Node.js官方文档 - OS](https://nodejs.org/api/os.html#os_os_platform)
+## 参见
+
+- [Markdown语法指南](https://www.markdownguide.org/)
+- [Javascript命令行工具开发教程](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/CommandLine#Reading_command_line_arguments)

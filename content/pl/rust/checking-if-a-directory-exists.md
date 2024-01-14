@@ -1,42 +1,45 @@
 ---
-title:    "Rust: Sprawdzanie czy katalog istnieje"
+title:    "Rust: Sprawdzanie czy istnieje katalog"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Sprawdzanie istnienia katalogu jest ważnym elementem programowania, ponieważ pozwala nam na wykonywanie różnych akcji w zależności od tego, czy dany katalog istnieje czy nie. To przydatna umiejętność, którą warto poznać w języku Rust.
+Istnienie katalogu jest ważnym aspektem każdego programu, który musi wykonywać operacje na plikach. Właściwe sprawdzanie, czy dany katalog istnieje, pomaga uniknąć błędów i nieporozumień, a także ułatwia utrzymanie poprawnej struktury plików w systemie. W tym artykule dowiesz się, jak w łatwy sposób można sprawdzić istnienie katalogu w języku Rust.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Sprawdzenie istnienia katalogu w języku Rust jest bardzo proste. Wystarczy użyć funkcji `Path::exists()` na instancji struktury `Path`, która reprezentuje nasz katalog. Poniżej znajduje się przykładowy kod:
+Rust oferuje proste i intuicyjne rozwiązanie do sprawdzania istnienia katalogu - moduł `std::fs`. Aby skorzystać z tego modułu, należy najpierw zaimportować go do swojego programu:
 
-```rust
+```Rust
 use std::fs;
+```
 
-fn main() {
-  let directory = Path::new("katalog/");
-    
-  if directory.exists() {
-      println!("Katalog istnieje!");
-  } else {
-      println!("Katalog nie istnieje!");
-  }
+Następnie, aby sprawdzić, czy dany katalog istnieje, należy użyć funkcji `metadata` z tego modułu i przekazać jako argument nazwę katalogu, który chcemy sprawdzić:
+
+```Rust
+let path = "sciezka/do/katalogu";
+let metadata = fs::metadata(path);
+```
+
+Funkcja `metadata` zwraca wartość typu `Result`, która może zawierać informacje o katalogu, jeśli istnieje, lub błąd, jeśli nie. Aby sprawdzić, czy katalog istnieje, należy wywołać funkcję `is_dir` na obiekcie `metadata`:
+
+```Rust
+if metadata.is_ok() && metadata.unwrap().is_dir() {
+    println!("Katalog istnieje!");
+} else {
+    println!("Katalog nie istnieje!");
 }
 ```
 
-Powyższy kod wykorzystuje bibliotekę standardową `std::fs`, która zawiera funkcje i metody do pracy z plikami i katalogami. Najpierw musimy utworzyć instancję `Path`, wskazującą na nazwę katalogu, którą chcemy sprawdzić. Następnie przy użyciu metody `exists()` sprawdzamy, czy katalog istnieje. W zależności od wyniku, wyświetlamy odpowiedni komunikat.
+## Również warto wiedzieć
 
-## Dogłębna analiza
+Ponadto, istnieje wiele innych funkcji z modułu `std::fs`, które mogą być przydatne przy pracy z katalogami, np. `create_dir` (tworzy nowy katalog), `remove_dir` (usuwa katalog) czy `read_dir` (odczytuje zawartość katalogu). Więcej informacji na ten temat znajdziesz w dokumentacji języka Rust i w przykładach kodu.
 
-Aby móc sprawdzić, czy katalog istnieje, musimy najpierw ustalić ścieżkę do tego katalogu. W języku Rust, ścieżki są reprezentowane przez struktury `Path` i `PathBuf`. Pierwsza z nich jest immutable (niemodyfikowalna), co oznacza, że ​​nie możemy zmienić ścieżki, która już istnieje. Natomiast `PathBuf` jest mutable (modyfikowalna) i możemy dodawać do niej nowe elementy ścieżki.
+## Zobacz także (See Also)
 
-Warto również zauważyć, że funkcja `exists()` zwraca wartość typu `bool`, co oznacza, że ​​jest to zmienna logiczna przyjmująca wartość `true` lub `false`. Dzięki temu możemy wykonać pewne działania w zależności od tego, czy katalog istnieje czy nie, np. utworzyć nowy katalog lub usunąć istniejący.
-
-## Zobacz także
-
-* [Dokumentacja Rust - ścieżki](https://doc.rust-lang.org/std/path/)
-* [Funkcja exists() w Rust](https://docs.rs/exists/0.1.0/exists/)
-* [Porównanie aktualnych i niedawnych elementów, czy katalog istnieje w Rust](https://stackoverflow.com/questions/27599725/how-do-i-check-if-a-file-or-directory-exists-in-rust)
+- Dokumentacja oficjalna języka Rust: https://doc.rust-lang.org/std/fs/index.html
+- Przykładowy kod sprawdzający istnienie katalogu w Rust Playground: https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=2c697daf91fa1a440ec4c26ef0c319c6

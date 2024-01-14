@@ -1,50 +1,37 @@
 ---
-title:    "Fish Shell: Creare un file temporaneo"
+title:    "Fish Shell: Creazione di un file temporaneo"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Creare un file temporaneo può sembrare una semplice operazione, ma ha molteplici utilizzi. Ad esempio, può essere utile quando si desidera salvare temporaneamente dati o output di un programma, senza dover creare un file permanente. Inoltre, i file temporanei vengono automaticamente eliminati quando il programma termina, riducendo il disordine nel sistema.
+Creare un file temporaneo può essere molto utile per gli sviluppatori di Fish Shell quando hanno bisogno di memorizzare temporaneamente dati o eseguire operazioni temporanee.
 
-## Come fare
+## Come
 
-Creare un file temporaneo in Fish Shell è molto semplice. Basta seguire questi passaggi:
+Codice esempio:
 
-1. Utilizzare il comando `mktemp` seguito da un nome di file opzionale. Se non si specifica un nome, verrà generato uno nome casuale.
-    ```
-    Fish Shell - mktemp template.tmp
-    ```
+```
+Fish Shell: set -gx TEMP_FILE $RANDOM.temp
+echo "Test" > $TEMP_FILE
+cat $TEMP_FILE
+```
 
-2. Utilizzare `touch` per creare effettivamente il file.
-    ```
-    Fish Shell - touch template.tmp
-    ```
+Output:
 
-3. Utilizzare `echo` per inserire dati nel file.
-    ```
-    Fish Shell - echo "Questo è un file temporaneo" >> template.tmp
-    ```
-
-4. Ecco il contenuto del file:
-    ```
-    Fish Shell - cat template.tmp
-    
-    Questo è un file temporaneo
-    ```
+```
+Test
+```
 
 ## Approfondimento
 
-Creare un file temporaneo richiede un po' più di lavoro nei sistemi operativi basati su UNIX, come macOS o Linux. Questo perché questi sistemi rappresentano i file come nodi nel filesystem e l'eliminazione di un file comporta anche la rimozione del nodo. Tuttavia, nel caso dei file temporanei, non si vuole eliminare il nodo, ma solo il file che rappresenta.
-
-Per creare un file temporaneo su questi sistemi, il sistema operativo crea un nome casuale per il file e lo aggiunge a un elenco di file che verranno eliminati all'uscita del programma. Quando il file viene creato, il sistema operativo aggiunge il nome del file al percorso in cui si trova il file, facendo sì che il file sembri esistere, anche se in realtà non è ancora stato creato.
-
-È importante notare che i file temporanei vengono eliminati solo quando il programma termina. Se un programma si blocca o viene interrotto, il file temporaneo potrebbe rimanere nel sistema.
+La creazione di un file temporaneo è un processo semplice ma può essere utilizzata in molti modi diversi. Ad esempio, è possibile utilizzare un file temporaneo per memorizzare informazioni su una sessione di lavoro in corso o per creare un file di configurazione temporaneo per un programma specifico. Inoltre, creare un file temporaneo è un ottimo modo per evitare conflitti di nomi di file e mantenere la pulizia del sistema.
 
 ## Vedi anche
 
-- [Documentazione di Fish Shell](https://fishshell.com/docs/current/)
-- [Mktemp (man page)](https://linux.die.net/man/1/mktemp)
-- [Touch (man page)](https://linux.die.net/man/1/touch)
+- [Creazione e gestione dei file temporanei in Fish Shell](https://fishshell.com/docs/current/tutorial.html#temporary-files)
+- [Come creare un file temporaneo con il comando mktemp in Linux](https://www.linuxnix.com/create-temporary-file-name-using-mktemp-linux/)
+- [Il vantaggio di utilizzare file temporanei nella programmazione](https://www.toptal.com/developers/blog/the-definitive-guide-to-using-temporary-files-in-your-code)

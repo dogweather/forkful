@@ -1,51 +1,55 @@
 ---
 title:    "C#: 获取当前日期"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要获取当前日期
+## 为什么
 
-在编程的世界里，获取当前日期是一个常见的需求。无论是用于计算日期的差异，或者简单地显示当前日期，获取当前日期都是必须要做的事情。在C#编程语言中，我们有许多方法来获取当前日期和时间。让我们看看如何实现它。
+为什么要获取当前日期？日常生活中，我们经常需要使用当前日期来记录时间或进行一些特定的计算。在编写程序时，获取当前日期也是非常常见的需求，比如在日志记录、数据存储、任务调度等场景中。因此，了解如何获取当前日期是一项基本的编程技能。
 
-## 如何实现
+## 如何做
 
-有几种方法可以获取当前日期。我们可以使用 `DateTime` 对象来获取当前日期和时间。让我们看看下面的代码示例：
-
-```C#
-// 获取当前日期和时间
-DateTime currentDateTime = DateTime.Now;
-
-// 获取当前日期
-DateTime currentDate = DateTime.Today;
-
-// 获取当前时间
-DateTime currentTime = DateTime.Now.TimeOfDay;
-
-// 显示日期和时间的不同部分
-Console.WriteLine($"当前日期和时间: {currentDateTime}");
-Console.WriteLine($"当前日期: {currentDate}");
-Console.WriteLine($"当前时间: {currentTime}");
-```
-
-这段代码会输出以下结果：
+在C#中，可以使用DateTime类来获取当前日期。首先，需要在程序中引入System命名空间，然后创建一个DateTime对象，即可获取当前日期。下面的代码示例演示了如何使用DateTime类来获取当前日期，并通过控制台打印输出：
 
 ```
-当前日期和时间: 8/21/2021 9:05:23 PM
-当前日期: 8/21/2021 12:00:00 AM
-当前时间: 9:05:23 PM
+using System;
+
+DateTime currentDate = DateTime.Now;
+Console.WriteLine("当前日期为：" + currentDate);
 ```
 
-除了使用 `DateTime` 对象，我们也可以使用 `DateTime.Now` 方法来获取当前日期和时间。这个方法会返回一个 `DateTime` 对象，包含当前日期和时间的信息。
+运行上述代码，会在控制台输出类似以下结果：
+
+```
+当前日期为：2021/9/27 上午 9:20:50
+```
+
+除了获取当前日期外，我们也可以通过DateTime类的其他方法来获取年、月、日、时、分、秒等具体的时间信息。比如，下面的代码演示了如何获取当前日期的年份：
+
+```
+using System;
+
+DateTime currentDate = DateTime.Now;
+int currentYear = currentDate.Year;
+Console.WriteLine("当前年份为：" + currentYear);
+```
+
+运行以上代码，会在控制台输出当前的年份，比如：
+
+```
+当前年份为：2021
+```
 
 ## 深入了解
 
-为了更深入地了解如何获取当前日期，我们需要知道日期是如何在计算机中表示的。在C#中，日期和时间都是被存储为 `DateTime` 对象。这个对象包含了日期和时间的信息，可以通过它的属性来获取。
+DateTime类是C#中用于处理日期和时间的核心类，除了可以获取当前日期外，它还提供了一系列方法来对日期进行操作和计算。例如，可以使用AddDays()方法来对日期进行加减天数的计算，或者使用ToString()方法来自定义日期的格式化输出。
 
-日期在计算机中是以一个数字来表示的，这个数字表示从特定日期（通常是1970年1月1日）到现在经过的秒数。这个数字称为epoch时间戳。所以实际上，获取当前日期和时间就是通过计算当前的epoch时间戳来实现的。
+此外，C#中还有其他相关的日期时间类，比如DateTimeOffset和TimeSpan，它们分别用于表示带有时区信息的日期时间和时间间隔。在实际开发中，可以根据具体的需求来选择合适的日期时间类来处理日期相关的业务逻辑。
 
-## 参考链接
+## 参考资料
 
-- [C# 中的日期和时间](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/dates-and-times)
-- [DateTime类](https://docs.microsoft.com/zh-cn/dotnet/api/system.datetime?view=net-5.0)
+- [DateTime Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [How to: Get the Current Date and Time (C# Programming Guide) (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/how-to-get-the-current-date-and-time)

@@ -1,48 +1,31 @@
 ---
 title:    "Fish Shell: Génération de nombres aléatoires"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi 
 
-L'utilisation de nombres aléatoires est essentielle dans la programmation pour créer des jeux, des simulations et des dessins génératifs. Cela permet également de tester les fonctionnalités de nos programmes en leur fournissant des données aléatoires.
+Générer des nombres aléatoires est un élément essentiel de la programmation pour de nombreuses raisons. Que vous créiez des jeux, des simulations ou des tests, avoir une source fiable de nombres aléatoires est primordial. La coquille Fish propose une méthode simple et efficace pour générer des nombres aléatoires dans vos scripts.
 
-## Comment faire
+## Comment faire 
 
-Les utilisateurs de Fish Shell peuvent facilement générer des nombres aléatoires en utilisant la fonction `math/random` intégrée au shell. Voici un exemple de code et son résultat :
-
-```Fish Shell
-# Générer un nombre aléatoire entre 1 et 10
-math/random 1 10
-# Sortie : 6
-```
-
-Vous pouvez également utiliser cette fonction pour créer des chaînes de caractères aléatoires en spécifiant la longueur souhaitée :
+Pour générer un nombre aléatoire dans la coquille Fish, nous allons utiliser la commande `math` intégrée. Cette commande calcule les équations mathématiques et génère une sortie numérique. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 10 :
 
 ```Fish Shell
-# Générer une chaîne aléatoire de 10 caractères
-math/random --string 10
-# Sortie : Lw6*g8H3HN
+math /dev/random '* 10' | awk '{print $1 % 10}'
 ```
 
-## Plongée en profondeur
+La partie `math /dev/random '* 10'` génère un nombre aléatoire entre 0 et 9 à l'aide du générateur de nombres aléatoires de votre système d'exploitation. Nous utilisons ensuite la commande `awk` pour sélectionner uniquement le premier nombre dans la sortie. Enfin, nous utilisons le modulo pour nous assurer que le nombre final est compris entre 0 et 9. Vous pouvez modifier les valeurs pour générer un nombre aléatoire dans une plage différente.
 
-La fonction `math/random` utilise un générateur de nombres pseudo-aléatoires basé sur une formule mathématique. Ce générateur utilise un "graine" (seed) pour démarrer la génération des nombres. Si aucune graine n'est spécifiée, Fish Shell utilisera l'horloge du système comme graine par défaut.
+## Plongée en profondeur 
 
-Il est également possible de spécifier une graine manuellement en utilisant l'option `--seed` suivie d'un nombre entier.
+La commande `math` offre de nombreuses possibilités pour générer des nombres aléatoires. Par exemple, vous pouvez utiliser le générateur de nombres aléatoires `RAND` pour créer une liste de nombres aléatoires. Vous pouvez également utiliser la commande `seq` intégrée pour générer une liste de nombres séquentiels et les mélanger à l'aide du générateur de nombres aléatoires. La coquille Fish propose également des variables intégrées telles que `$RANDOM` pour générer des nombres aléatoires de manière encore plus simple.
 
-```Fish Shell
-# Générer un nombre aléatoire avec une graine spécifique
-math/random --seed 1234
-# Sortie : 42
-```
+## Voir aussi 
 
-Il est important de noter que les nombres générés par cette fonction ne sont pas complètement aléatoires et peuvent être répétés si la même graine est utilisée à chaque fois.
-
-# Voir aussi
-
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/math.html#random-generation)
-- [Génération de nombres aléatoires en ligne de commande avec Fish Shell](https://www.linux.com/topic/desktop/generating-random-numbers-command-line/)
-- [Introduction à la programmation générative en utilisant des nombres aléatoires](https://www.smashingmagazine.com/2015/06/generating-random-shapes-with-math-and-svg/)
+- [Documentation officielle de la coquille Fish](https://fishshell.com/docs/current/cmds/math.html)
+- [Guide des commandes de la coquille Fish](https://fishshell.com/docs/current/commands.html)
+- [Guide du générateur de nombres aléatoires en ligne de commande](https://www.computerhope.com/unix/random.htm)

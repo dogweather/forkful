@@ -1,51 +1,54 @@
 ---
-title:    "TypeScript: Die Länge eines Strings finden"
+title:    "TypeScript: Ermitteln der Länge eines Strings"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Finden der Länge einer Zeichenkette ist ein grundlegender Bestandteil der Programmierung in TypeScript. Es ermöglicht es uns, die Anzahl der Zeichen in einer Zeichenkette zu bestimmen und somit bestimmte Funktionalitäten in unseren Programmen zu implementieren.
+Das Ermittlen der Länge eines Strings ist eine häufige Aufgabe in der Programmierung. Es ist wichtig, die Länge eines Strings zu kennen, um beispielsweise Strings korrekt zu validieren oder sie in einer längenbeschränkten Datenbank einzufügen. In diesem Blog-Beitrag werden wir uns ansehen, wie man die Länge eines Strings in TypeScript ermitteln kann.
 
-## Wie geht es
+## Wie
 
-Um die Länge einer Zeichenkette in TypeScript zu finden, können wir die integrierte Methode `length` verwenden. Diese Methode gibt die Anzahl der Zeichen in der Zeichenkette zurück. Hier ist ein Beispielcode:
-
-```TypeScript
-let name: string = "Max Mustermann";
-let length: number = name.length;
-console.log(length);
-```
-
-Der obige Code wird die Länge der Zeichenkette "Max Mustermann" ausgeben, die 14 Zeichen beinhaltet. Wir können auch die `length` Methode direkt auf eine Zeichenkette anwenden, ohne sie einer Variablen zuzuweisen.
+Um die Länge eines Strings zu finden, gibt es in TypeScript verschiedene Möglichkeiten. Die einfachste und am häufigsten genutzte Methode ist die Verwendung der `length` Eigenschaft eines Strings, die die Gesamtzahl der Zeichen im String zurückgibt.
 
 ```TypeScript
-let length: number = "Hallo Welt".length;
-console.log(length);
+const text: string = "Hallo Welt";
+console.log(text.length); // Output: 10
 ```
 
-Diesmal wird die Ausgabe 10 sein, da die Zeichenkette "Hallo Welt" aus 10 Zeichen besteht.
+Alternativ kann auch die `size` Methode des `string` Objekts verwendet werden, die ebenfalls die Länge des Strings zurückgibt.
+
+```TypeScript
+const text: string = "Hallo Welt";
+console.log(text.size); // Output: 10
+```
+
+Es ist auch möglich, die `length` Eigenschaft von `Array` zu verwenden, um die Länge eines Strings zu ermitteln. Da Strings in TypeScript als Arrays von Zeichen behandelt werden, kann die `length` Eigenschaft auf sie angewendet werden.
+
+```TypeScript
+const text: string = "Hallo Welt";
+console.log(text.split("").length); // Output: 10
+```
 
 ## Deep Dive
 
-Es gibt mehr zu beachten, als nur die `length` Methode zu verwenden, um die Länge einer Zeichenkette zu finden. Zum Beispiel werden Unicode-Zeichen in TypeScript als einzelne Zeichen behandelt, auch wenn sie aus mehreren Codepunkten bestehen. Daher kann es sein, dass die Länge einer Zeichenkette nicht immer der Anzahl der sichtbaren Zeichen entspricht.
+Die `length` Eigenschaft ist nicht nur auf Strings beschränkt, sondern kann auch auf anderen Datentypen wie Arrays, Maps und Sets angewendet werden. Es ist wichtig zu beachten, dass die `length` Eigenschaft die tatsächliche Anzahl der Elemente im Datentyp zurückgibt, nicht die Anzahl der indizierten Elemente.
 
-Darüber hinaus können wir auch die `slice` Methode verwenden, um einen Teil einer Zeichenkette zu extrahieren und somit die Länge zu manipulieren. Hier ist ein Beispiel:
+Ein weiterer wichtiger Aspekt ist, dass die `length` Eigenschaft nicht die tatsächliche Länge eines Strings in Bezug auf Bytes oder Speicherplatz zurückgibt. Sie gibt nur die Anzahl der Zeichen im String zurück.
+
+Wir können auch die `toString()` Methode verwenden, um einen Datentyp in einen String umzuwandeln und dann die `length` Eigenschaft darauf anzuwenden.
 
 ```TypeScript
-let name: string = "Anna Müller";
-let length: number = name.length;
-console.log(length);
-let shortName: string = name.slice(0, 4);
-length = shortName.length;
-console.log(length);
+// Anzahl der Zeichen im Integer-Wert 12345
+const number: number = 12345;
+console.log(number.toString().length); // Output: 5
 ```
-
-Die Ausgabe wird zuerst 11 sein, da die Zeichenkette "Anna Müller" 11 Zeichen hat. Aber nachdem wir mit der `slice` Methode einen Teil der Zeichenkette extrahiert haben, ist die Ausgabe jetzt 4.
 
 ## Siehe auch
 
-- [Anleitung zu den TypeScript-Grundlagen](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [Offizielle TypeScript-Referenz zur String-Methode](https://www.typescriptlang.org/docs/handbook/reference/de-DE/string.html)
+- [Offizielle TypeScript Dokumentation zur Länge eines Strings](https://www.typescriptlang.org/docs/handbook/strings.html#length)
+- [Stack Overflow Beitrag zum Ermitteln der Länge eines Strings in TypeScript](https://stackoverflow.com/questions/32714563/typescript-get-the-length-of-a-string)
+- [Tutorial zur Arbeit mit Strings in TypeScript](https://blog.logrocket.com/working-strings-typescript/)

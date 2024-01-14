@@ -1,45 +1,54 @@
 ---
-title:    "Haskell: Jämföra två datum"
+title:    "Haskell: Jämföring av två datum."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att jämföra två datum kan vara en viktig del av många Haskell-program. Detta kan göras för att kontrollera giltigheten av data eller för att sortera listor efter datum.
+I Haskell är det möjligt att jämföra två datum med hjälp av olika funktioner. Detta kan vara användbart när man behöver hantera datum i sina program, till exempel för att sortera data eller filtrera det efter ett visst datum. 
 
-## Hur man gör det
+## Så här gör du
 
-För att börja jämföra två datum i Haskell behöver vi först importera "Data.Time" biblioteket.
+Att jämföra datum i Haskell är enkelt och kan göras på flera olika sätt, beroende på vilken precision man behöver. Här är ett exempel på hur man kan jämföra två datum och få ut resultatet som en matematisk sanning (True eller False):
 
 ```Haskell
 import Data.Time
+import Data.Time.Calendar.OrdinalDate
+
+date1 = fromGregorian 2021 03 02
+date2 = fromGregorian 2021 05 15
+
+-- jämför om date1 är mindre än date2
+date1 < date2
+-- Output: True
 ```
 
-Sedan kan vi skapa två "Day" objekt som representerar våra datum som vi vill jämföra.
+Man kan även jämföra datum baserat på deras kalenderdatum och tidszon. Här är ett exempel på hur man kan jämföra två datum och få ut deras exakta skillnad:
 
 ```Haskell
-let datum1 = fromGregorian 2020 10 23
-let datum2 = fromGregorian 2020 10 24
+-- jämför två datum baserade på deras tidszon
+zonedTime1 = ZonedTime (LocalTime date1 (TimeOfDay 12 00 00)) (TimeZone 120 True "CET")
+zonedTime2 = ZonedTime (LocalTime date2 (TimeOfDay 20 00 00)) (TimeZone (-60) True "PST")
+
+zonedTime1 < zonedTime2
+-- Output: False
+
+-- jämför två datum baserade på deras kalenderdatum
+diffDays date1 date2
+-- Output: 73
 ```
 
-För att jämföra dessa två datum kan vi använda funktionen "compare", som jämför två objekt av typen "Ord".
+Som du kan se i det andra exemplet, kan man även få ut skillnaden mellan två datum i antal dagar genom att använda den inbyggda funktionen `diffDays`. Det finns också andra liknande funktioner som `diffLocalTime` och `diffTimeOfDay` för att få ut exakta skillnader baserat på datumens olika komponenter.
 
-```Haskell
-compare datum1 datum2
-```
+## Djupdykning
 
-Resultatet av denna funktion är antingen "LT" (mindre än), "GT" (större än) eller "EQ" (lika med). I vårt exempel blir resultatet "LT" eftersom "datum1" är mindre än "datum2".
-
-## Deep Dive
-
-I Haskell finns flera olika typer som kan representera datum och tid. Förutom "Day" som används i exemplet ovan, finns det också "TimeOfDay" för specifika tider, "LocalTime" för datum och tid baserat på en viss tidszon, och "UTCTime" för koordinerad universal tid. Det är viktigt att känna till vilken typ av datum du arbetar med när du jämför dem.
-
-När det gäller att jämföra tider finns det även funktionen "diffDays" som kan användas för att få antalet dagar mellan två datum.
+Att jämföra datum i Haskell involverar att först och främst omvandla dem till rätt format, och sedan använda de olika funktionerna som finns tillgängliga i språket. Det finns också en hel del andra inbyggda funktioner som kan vara användbara för datumhantering, som till exempel `addDays`, `addUTCTime`, och `formatTime`. Det kan vara värt att utforska dessa närmare när du arbetar med datum i dina program.
 
 ## Se även
 
-- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
-- https://wiki.haskell.org/Time_library
-- https://dev.to/cgarbin/date-and-time-programming-in-haskell-1608
+- [Haskell.org](https://www.haskell.org/)
+- [Haskell Wikibook - Datum och tid](https://en.wikibooks.org/wiki/Haskell/Datum_och_tid)
+- [Hoogle - sökmotor för Haskell-funktioner](https://hoogle.haskell.org/)

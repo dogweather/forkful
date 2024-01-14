@@ -1,50 +1,56 @@
 ---
-title:    "C++: Iniciando um novo projeto"
+title:    "C++: Começando um novo projeto"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em C++
+## Por que iniciar um novo projeto em C++?
 
-Quando se trata de programação, começar um novo projeto pode ser uma tarefa assustadora. Mas o C++ oferece uma ampla variedade de recursos e é uma linguagem extremamente poderosa, o que o torna uma ótima escolha para iniciar um novo projeto. Neste post, vamos dar uma olhada em por que você deve considerar usar C++ para o seu próximo projeto e como começar.
+Há muitos motivos pelos quais alguém pode querer iniciar um novo projeto em C++. Pode ser para aprender uma nova linguagem de programação, para desenvolver uma aplicação específica ou simplesmente porque é uma linguagem amplamente utilizada em muitas áreas.
 
-## Como começar um novo projeto em C++
+## Como começar?
 
-Para começar, você precisará ter um compilador de C++ instalado em seu computador. Existem várias opções disponíveis, como o GCC ou o Visual Studio. Depois de ter o compilador instalado, você pode começar a escrever seu código em um editor de texto simples, como o bloco de notas, ou em um ambiente de desenvolvimento integrado (IDE), como o Visual Studio Code ou Code::Blocks.
+Para iniciar um projeto em C++, primeiro é preciso ter um conhecimento básico da sintaxe da linguagem. É importante também ter um compilador C++ instalado no computador. Em seguida, pode-se seguir os seguintes passos:
 
-Aqui está um exemplo simples de código em C++ para imprimir "Hello World" na tela:
+1. Crie um novo arquivo .cpp
+2. Escreva o código necessário dentro do ```C++ ... ``` bloco de código.
+3. Compile o código e execute o programa.
+
+Aqui está um exemplo de código simples que imprime "Olá, mundo!" no console:
 
 ```C++
 #include <iostream>
 
-int main() {
-    std::cout << "Hello World!" << std::endl;
-    return 0;
+using namespace std;
+
+int main() 
+{
+    cout << "Olá, mundo!" << endl; 
+    return 0; 
 }
 ```
 
-Se você compilou e executou corretamente, você deve ver a seguinte saída:
+Output:
 
 ```
-Hello World!
+Olá, mundo!
 ```
 
-Parabéns! Você escreveu seu primeiro programa em C++.
+## Mergulho Profundo
 
-Você também pode dar uma olhada em tutoriais e documentação online para aprender mais sobre a sintaxe e recursos da linguagem.
+Ao iniciar um novo projeto em C++, é importante definir um objetivo claro e ter um planejamento adequado. Isso ajudará a evitar problemas e garantir uma implementação bem-sucedida. Aqui estão algumas dicas para o planejamento de um novo projeto em C++:
 
-## Mergulho profundo
+- Defina os requisitos do projeto e as funcionalidades importantes.
+- Faça um esboço do design do programa e escolha quais estruturas de dados e algoritmos serão utilizados.
+- Escreva pseudocódigo para ter uma ideia de como o programa funcionará.
+- Comece a implementar o código de acordo com o planejado, testando e depurando conforme necessário.
 
-Uma das grandes vantagens de usar C++ para um novo projeto é sua velocidade e eficiência. Ele é uma linguagem de programação compilada, o que significa que o código é traduzido diretamente para o código de máquina, tornando-o mais rápido do que linguagens interpretadas.
+Lembre-se de sempre manter o código organizado e documentado para facilitar a manutenção e o trabalho em equipe. Além disso, considere utilizar bibliotecas externas caso seja necessário. E, por fim, não tenha medo de pedir ajuda e pesquisar em comunidades online de programação.
 
-O C++ também oferece um alto nível de controle sobre a memória do computador, o que pode ser útil ao trabalhar com grandes quantidades de dados. No entanto, isso também pode ser uma armadilha para iniciantes, já que os erros de gerenciamento de memória podem levar a vazamentos e problemas de desempenho.
+## Veja também
 
-Outra vantagem é a ampla comunidade de desenvolvedores e a disponibilidade de bibliotecas e frameworks de código aberto que podem ajudar no desenvolvimento do seu projeto.
-
-## Ver também
-
+- [Tutorial de C++ para iniciantes](https://www.cplusplus.com/doc/tutorial/)
 - [Documentação oficial do C++](https://isocpp.org/)
-- [Tutoriais do C++ na TutorialsPoint](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [Compilador C++ GCC](https://gcc.gnu.org/)
-- [Ambiente de desenvolvimento integrado Code::Blocks](http://www.codeblocks.org/)
+- [Fórum de discussão C++ Brasil](https://cppbrasil.net/)

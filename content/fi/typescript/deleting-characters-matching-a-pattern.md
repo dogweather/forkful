@@ -1,39 +1,44 @@
 ---
 title:    "TypeScript: Mallia vastaavien merkkien poistaminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi poistaa merkkejä, jotka vastaavat kaavaa?
 
-Monissa ohjelmointitilanteissa saattaa olla tarpeen poistaa merkkejä, jotka vastaavat tiettyä **mallia**. Tämä voi tapahtua esimerkiksi koodien puhdistuksessa tai tietojen käsittelyssä. Tässä blogikirjoituksessa käydään läpi, kuinka poistaa merkkejä, jotka vastaavat tietyntyyppistä mallia TypeScript-ohjelmoinnissa.
+Merkkien poistaminen, jotka vastaavat tiettyä kaavaa, voi olla hyödyllistä, jos haluat puhdistaa tietoa tai tarkistaa sen tietyn muodon tai formaatin. Tämä voi auttaa sinua varmistamaan, että tiedot ovat oikein ja helposti käsiteltävissä myöhemmin.
 
-## Kuinka tehdä
+## Kuinka tehdä se TypeScriptillä?
 
-[Regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) eli tavallinen lauseke on työkalu, joka mahdollistaa merkkijonon hakuun ja muokkaukseen. Tämä on hyödyllinen työkalu, kun halutaan poistaa merkkejä, jotka täyttävät tietyn määritellyn mallin.
+Voit käyttää TypeScriptiä poistaaksesi merkkejä, jotka vastaavat tiettyä kaavaa, käyttämällä `replace`-metodia ja säännöllisiä lausekkeita.
 
-Esimerkiksi halutessamme poistaa kaikki numerot ja erikoismerkit merkkijonosta, voimme käyttää seuraavaa regular expression -koodia:
-
-```TypeScript
-const merkkijono = "1a2b3c4d";
-const puhdistettuMerkkijono = merkkijono.replace(/[0-9!@#$%^&*()]+/g, "");
-console.log(puhdistettuMerkkijono);
-```
-
-Tulostus:
+Esimerkiksi, jos haluat poistaa kaikki välilyönnit merkkijonosta, voit käyttää seuraavaa koodia:
 
 ```TypeScript
-abcd
+const merkkijono = "Tämä on esimerkki merkkijonosta.";
+console.log(merkkijono.replace(/\s/g, "")); // Output: Tämäonesimerkkimerkkijonosta.
 ```
 
-Mallissa `[0-9!@#$%^&*()+]` määritellään, mitkä merkit halutaan poistaa. Tämän perään laitetaan `+` merkki, joka tarkoittaa, että mallin täytyy toistua vähintään kerran. Lopuksi lisätään vielä `g` merkki, joka tarkoittaa, että haku suoritetaan koko merkkijonosta eikä vain ensimmäisestä löydetystä kohdasta.
+Lopullisessa koodissa `/ \s/g`-osa edustaa säännöllistä lauseketta, joka etsii kaikki välilyönnit ja korvaa ne tyhjällä merkkijonolla `""`.
 
-## Syvällisempiä tietoja
+Toinen esimerkki voisi olla uuden puhelinnumeron muotoilu oikeaan muotoon poistamalla väliviivat ja sulkumerkit:
 
-Regular expressionin käyttö voi aluksi tuntua haastavalta, mutta sen avulla voi saavuttaa paljon hyötyä. [Tässä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) on lisätietoa regular expressioneista ja niiden käyttämisestä JavaScriptissä, joka on TypeScriptin perusta.
+```TypeScript
+const puhelinnumero = "(123) 456-7890";
+console.log(puhelinnumero.replace(/[\(\)\-\s]/g, "")); // Output: 1234567890
+```
+
+Lopputuloksena säännöllisen lausekkeen `/[\(\)\-\s]/g` käyttämisestä on, että kaikki sulkumerkit, väliviivat ja välilyönnit poistetaan.
+
+## Syvällinen sukellus
+
+Kun poistat merkkejä, jotka vastaavat tiettyä kaavaa, on tärkeää ymmärtää säännöllisten lausekkeiden erilaiset merkitykset ja käyttötavat. Voit muuttaa / korvata vaihtelevia merkkejä, sijoittaa säännöllisiä lausekkeita muihin lausekkeisiin ja paljon muuta.
+
+Joten, jos haluat hallita merkkien poistamista tietystä kaavasta, suosittelen tutustumaan säännöllisiin lausekkeisiin ja niiden erilaisiin mahdollisuuksiin.
 
 ## Katso myös
 
-- [Regular expressioneiden käyttö JavaScriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
+- [Säännöllisten lausekkeiden opas (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Säännölliset lausekkeet TypeScriptissä (TypeScript-kirjasto)](https://github.com/microsoft/TypeScript/wiki/Regular-Expressions)

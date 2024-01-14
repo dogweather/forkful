@@ -1,56 +1,44 @@
 ---
 title:    "PHP: Konvertere en streng til små bokstaver"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man programmerer i PHP, kommer man ofte over situasjoner hvor man må behandle tekststrenger. En vanlig oppgave er å konvertere tekststrenger til små bokstaver. Dette kan være nyttig for å sikre at man sammenligner eller lagrer data på en ensartet måte.
+Noen ganger når du arbeider med tekster i programmering, vil du kanskje konvertere strenger til små bokstaver. Dette kan være nyttig for å gjøre det enklere å sammenligne tekster eller bare for å gjøre utskriften mer presentabel. Uansett årsak, er det enkelt å konvertere en streng til små bokstaver i PHP.
 
-## Slik gjør du det
+## Hvordan gjør man det
 
-Det er flere måter å konvertere en tekststreng til små bokstaver i PHP. Her er to eksempler:
-
-```PHP
-// Metode 1: Bruk funksjonen strtolower()
-$string = "Dette er en TEKSTSTRENG";
-$lowercase_string = strtolower($string);
-echo $lowercase_string;
-// Output: dette er en tekststreng
-```
+For å konvertere en streng til små bokstaver i PHP, kan du bruke den innebygde funksjonen `strtolower()`. Denne funksjonen tar en streng som argument og returnerer en ny streng med alle bokstavene konvertert til små bokstaver. Her er et eksempel på bruk av `strtolower()`:
 
 ```PHP
-// Metode 2: Bruk funksjonen mb_strtolower()
-$string = "Dette er en TEKSTSTRENG";
-$lowercase_string = mb_strtolower($string, "UTF-8");
-echo $lowercase_string;
-// Output: dette er en tekststreng
+$name = "TINA";
+echo strtolower($name);
 ```
 
-I begge disse eksemplene bruker vi en innebygget PHP-funksjon for å konvertere tekststrengen til små bokstaver. Det er viktig å merke seg at disse to metodene kan håndtere forskjellige tegnsett. ```strtolower()``` fungerer med ANSI-tegnsett, mens ```mb_strtolower()``` fungerer med flerspråklige tegnsett som krever UTF-8.
+Dette vil skrive ut `tina`. Som du kan se, blir alle bokstavene i strengen konvertert til små bokstaver.
+
+Du kan også bruke `strtolower()` til å konvertere alle bokstavene i en streng til store bokstaver. Dette gjøres ved å bruke funksjonen `strtoupper()` i tillegg til `strtolower()`. Her er et eksempel på hvordan du kan gjøre dette:
+
+```PHP
+$name = "tina";
+echo strtoupper(strtolower($name));
+```
+
+Dette vil skrive ut `TINA`. Først blir bokstavene konvertert til små bokstaver ved hjelp av `strtolower()`, og deretter blir de konvertert til store bokstaver ved hjelp av `strtoupper()`.
 
 ## Dypdykk
 
-Nå som vi har sett hvordan man kan konvertere en tekststreng til små bokstaver, la oss se litt nærmere på hvordan dette fungerer under overflaten. PHP har en innebygd funksjon som heter ```strval()``` som konverterer en verdi til en streng. Når vi bruker denne funksjonen på en tekststreng, vil den returnere en kopi av strengen der alle tegnene er konvertert til små bokstaver.
+Når du bruker `strtolower()`, er det viktig å huske at det bare vil fungere på bokstaver. Hvis strengen inneholder tall, symboler eller mellomrom, vil de ikke bli endret til små bokstaver. I tillegg, hvis strengen allerede inneholder små bokstaver, vil de forbli uendret.
 
-Ved å bruke ```var_dump()``` funksjonen på resultatet av ```strval()``` kan vi se hvordan den konverterte strengen blir behandlet:
-
-```PHP
-$string = "Dette er en TEKSTSTRENG";
-$string_copy = strval($string);
-var_dump($string);
-var_dump($string_copy);
-
-// Output:
-// string(20) "Dette er en TEKSTSTRENG"
-// string(20) "dette er en tekststreng"
-```
-
-Vi kan se at ```strval()``` konverterer alle tegnene til små bokstaver og returnerer en ny streng. Dette er en enkel måte å konvertere en tekststreng til små bokstaver på, uten å måtte bruke separate funksjoner som ```strtolower()``` eller ```mb_strtolower()```.
+En annen nyttig funksjon for å manipulere tekst i PHP er `ucfirst()`, som konverterer den første bokstaven i en streng til stor bokstav. Dette er praktisk hvis du for eksempel vil gjøre den første bokstaven i et navn stor.
 
 ## Se også
 
-- [PHP Manual: strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP Manual: mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)
+- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [PHP strtolower() function](https://www.php.net/manual/en/function.strtolower.php)
+- [PHP strtoupper() function](https://www.php.net/manual/en/function.strtoupper.php)
+- [PHP ucfirst() function](https://www.php.net/manual/en/function.ucfirst.php)

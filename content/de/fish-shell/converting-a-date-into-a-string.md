@@ -1,35 +1,53 @@
 ---
-title:    "Fish Shell: Eine Datum in eine Zeichenkette umwandeln"
+title:    "Fish Shell: Umwandeln eines Datums in eine Zeichenkette"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie mit Fish Shell programmieren, werden Sie merken, dass Sie oft mit Datums- und Zeitangaben arbeiten werden. Eine gängige Aufgabe ist es, ein Datum in einen String umzuwandeln, um es in Ihrem Code anzuzeigen oder weiterzuverarbeiten. In diesem Blog-Beitrag werden wir uns anschauen, wie man dies mithilfe von Fish Shell auf einfache Weise erreichen kann.
+Das Konvertieren von einem Date in eine Zeichenkette ist eine nützliche Fähigkeit, die in der Programmierung häufig benötigt wird. Es ermöglicht uns, Daten in einem für uns verständlichen Format anzuzeigen und zu manipulieren.
 
-## Wie geht das?
+# Wie
 
-Um ein Datum in einen String umzuwandeln, gibt es in Fish Shell die praktische Funktion `strftime`. Diese Funktion nimmt ein Datum als Parameter und gibt den entsprechenden String im gewünschten Format aus. Hier ist ein Beispiel, das das aktuelle Datum in einem benutzerdefinierten Format ausgibt:
+Um ein Datum in eine Zeichenfolge zu konvertieren, können wir die in Fish Shell eingebaute Funktion `date` verwenden. Diese Funktion akzeptiert ein Datum im Format `YYYY-MM-DD` und gibt es als Zeichenfolge aus.
 
 ```
-set today (date)
-strftime '%A, %B %e, %Y' $today
+Fish Shell Datumskonvertierung Beispiel:
+
+$ date 2021-09-01
+1. September 2021
+
+$ date -f "%d.%m.%Y" 2021-09-01
+01.09.2021
 ```
 
-Dies gibt zum Beispiel den String "Montag, Januar 12, 2021" aus. Sie können das Ausgabeformat nach Ihren eigenen Bedürfnissen anpassen, indem Sie die Parameter in dem `%`-Teil der Funktion `strftime` ändern. Eine vollständige Liste der verfügbaren Parameter finden Sie in der [Dokumentation](https://fishshell.com/docs/3.1/cmds/strftime.html).
+Die `-f` Option erlaubt es uns, das Ausgabeformat nach unseren eigenen Wünschen anzupassen. Die vollständige Liste der möglichen Formatierungsoptionen ist in der Fish Shell Dokumentation zu finden.
 
-## Tief eintauchen
+# Deep Dive
 
-Während die Verwendung von `strftime` eine einfache und schnelle Möglichkeit ist, ein Datum in einen String umzuwandeln, gibt es einige zusätzliche Tipps und Tricks, die Sie beachten sollten. Zum Beispiel können Sie die Funktion `date` verwenden, um ein spezifisches Datum zu erstellen und dann `strftime` darauf anwenden. Sie können auch `now` anstelle von `date` verwenden, um das aktuelle Datum und die Uhrzeit zu erhalten.
+Die `date` Funktion verwendet die in Ihrem System eingestellte Spracheinstellung, um die Ausgabe zu formatieren. Wenn Sie also möchten, dass die Ausgabe in einer anderen Sprache erscheint, können Sie dies über die Umgebungsvariable `LANG` angeben.
 
-Eine weitere hilfreiche Funktion ist `switch`. Diese Funktion kann verwendet werden, um verschiedene Formate basierend auf bestimmten Bedingungen zu wählen. Zum Beispiel können Sie verschiedene Formate für Wochenenden und Wochentage festlegen.
+Ein Beispiel für das Konvertieren von einem Datum in eine Zeichenfolge in Deutsch:
 
-Für weitere Informationen und Beispiele empfehle ich Ihnen, sich mit der [offiziellen Fish-Shell-Dokumentation](https://fishshell.com/docs/3.1/) vertraut zu machen.
+```
+$ set -x LANG "de_DE.UTF-8"
+$ date 2021-09-01
+1. September 2021
+```
 
-## Siehe auch
+Es ist auch möglich, eine andere Zeichenfolge anstelle eines Datums zu übergeben und sie als Datum zu interpretieren. Dies kann nützlich sein, wenn Sie beispielsweise eine Zeichenkette aus einer Benutzereingabe erhalten und sie als Datum verwenden möchten.
 
-- [Fish-Shell-Dokumentation](https://fishshell.com/docs/3.1/)
-- [Dokumentation zu strftime](https://fishshell.com/docs/3.1/cmds/strftime.html)
-- [Online-Forum für Fish Shell](https://github.com/fish-shell/fish-shell/discussions)
+```
+$ date -f "%Y/%m/%d" 2021/09/01
+01. September 2021
+```
+
+Diese Funktionen sind nur einige Beispiele für das Konvertieren von einem Datum in eine Zeichenfolge in Fish Shell. Es gibt noch viele weitere Optionen, die Sie in der Dokumentation entdecken können.
+
+# Siehe auch
+
+- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current/cmds/date.html
+- Umgebungsvariable `LANG` in Fish Shell: https://fishshell.com/docs/current/variables.html#locale.lang

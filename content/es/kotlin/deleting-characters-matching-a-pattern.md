@@ -1,37 +1,35 @@
 ---
-title:    "Kotlin: Eliminando caracteres que coincidan con un patrón"
+title:    "Kotlin: Eliminando personajes que coinciden con un patrón."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué eliminar caracteres que coinciden con un patrón
-A veces, al trabajar con cadenas de texto en un programa, puede ser necesario eliminar caracteres que siguen un cierto patrón. Esto puede ser útil cuando se desea limpiar o filtrar datos antes de procesarlos más a fondo.
+## Por qué
 
-## Cómo hacerlo
-Para eliminar caracteres que coinciden con un patrón en Kotlin, podemos utilizar la función `replace()` junto con expresiones regulares. Veamos un ejemplo:
+Eliminar caracteres que coinciden con un patrón puede ser una tarea útil y necesaria en la programación de Kotlin. Esto puede ahorrar tiempo y mejorar la eficiencia al trabajar con grandes cantidades de texto o datos.
+
+## Cómo
+
+Para eliminar caracteres con un patrón específico en Kotlin, podemos utilizar la función `replace` en la cadena de texto a la que queremos aplicar el cambio. Por ejemplo, si queremos eliminar todas las vocales de una palabra, podríamos escribir lo siguiente en nuestro código:
 
 ```Kotlin
-val texto = "¡Hola! Esta es una cadena de texto con algunos caracteres especiales."
-val patron = Regex("[!@#\$%^&*(),./:;<=>?@\\[\\]{}|]")
-val resultado = texto.replace(patron, "")
-println(resultado)
+val palabra = "Hola"
+val nuevaPalabra = palabra.replace("[aeiou]".toRegex(), "")
+println(nuevaPalabra) // imprime "Hl"
 ```
 
-El código anterior eliminará todos los caracteres que coinciden con el patrón especificado y mostrará la siguiente salida:
+Este código utiliza una expresión regular para encontrar y eliminar cualquier vocal de la palabra original. Podemos utilizar diferentes patrones y expresiones regulares para adaptar la función a nuestras necesidades específicas.
 
-```
-Hola Esta es una cadena de texto con algunos caracteres especiales
-```
+## Deep Dive
 
-En este ejemplo, utilizamos una expresión regular para buscar todos los caracteres especiales en la cadena de texto y luego los reemplazamos con una cadena vacía. De esta manera, eliminamos todos los caracteres que coinciden con el patrón.
+La función `replace` también nos permite reemplazar los caracteres que coinciden con nuestro patrón con otro texto. Además, podemos utilizar el parámetro `ignoreCase` para que la búsqueda de caracteres sea insensible a mayúsculas y minúsculas.
 
-## Profundizando
-Además de la función `replace()`, Kotlin también ofrece otras opciones para eliminar caracteres que coinciden con un patrón. Por ejemplo, podemos utilizar la función `replaceFirst()` para eliminar solo la primera ocurrencia del patrón, o la función `replaceAll()` para eliminar todas las ocurrencias del patrón. También podemos utilizar funciones como `removePrefix()` y `removeSuffix()` para eliminar un prefijo o sufijo específico de una cadena.
+Además, es importante tener en cuenta que la función `replace` devuelve una nueva cadena de texto con los cambios realizados, pero no modifica la cadena original. Esto es útil para mantener la integridad de nuestros datos originales.
 
-También es importante tener en cuenta que las expresiones regulares en Kotlin pueden ser muy poderosas y versátiles. Pueden ser utilizadas para buscar patrones específicos de caracteres en una cadena de texto, permitiendo un mayor control sobre qué caracteres deben ser eliminados.
+## Ver También
 
-## Ver también
-- [Documentación de Kotlin sobre expresiones regulares](https://kotlinlang.org/docs/regex.html)
-- [Tutorial sobre expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regex)
-- [Código de ejemplo en Kotlin: Eliminar caracteres que coinciden con un patrón](https://www.techiedelight.com/delete-characters-matching-pattern-kotlin/)
+- [Documentación oficial de Kotlin sobre la función replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
+- [Ejemplos de expresiones regulares en Kotlin](https://android.jlelse.eu/a-guide-to-regular-expressions-in-kotlin-78e753a1302b)
+- [Tutorial interactivo sobre expresiones regulares en Kotlin](https://www.resocoder.com/2019/07/18/kotlin-regular-expressions-complete

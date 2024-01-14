@@ -1,34 +1,40 @@
 ---
-title:    "Fish Shell: Lesen von Befehlszeilenargumenten"
+title:    "Fish Shell: Lesen von Befehlszeilenargumenten."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Es gibt viele Gründe, warum es sinnvoll ist, sich mit der Verwendung von Befehlszeilenargumenten in Fish Shell auseinanderzusetzen. Zum einen ermöglichen sie eine schnelle und effiziente Interaktion mit dem System, da man nicht ständig zwischen verschiedenen Fenstern oder Programmen wechseln muss. Außerdem bietet Fish Shell eine Vielzahl von Funktionen und Möglichkeiten, die mit Befehlszeilenargumenten genutzt werden können, um die Arbeit noch effizienter zu gestalten.
+Die Verwendung von Befehlszeilenargumenten kann die Effizienz und Flexibilität eines Programms erheblich verbessern. Durch das Lesen von Befehlszeilenargumenten können verschiedene Eingabeparameter gezielt angesprochen werden, ohne dass der Programmcode jedes Mal angepasst werden muss.
 
-# How To
+## Wie geht das?
 
-Um Befehlszeilenargumente in Fish Shell zu verwenden, müssen sie dem Befehl in der Shell übergeben werden. Hierfür werden sie einfach nach dem Befehl angegeben, getrennt durch Leerzeichen. Im Folgenden sind einige Beispiele aufgeführt, um den Umgang mit Befehlszeilenargumenten zu verdeutlichen:
+Um Befehlszeilenargumente in Fish Shell zu lesen, können Sie die integrierten Variablen $argv und $argc verwenden. $argv enthält alle eingegebenen Argumente als Array, während $argc die Anzahl der Argumente angibt.
+
+Ein Beispiel: Nehmen wir an, Sie haben ein Programm, das eine Datei mit einer bestimmten Größe erstellen soll. Sie möchten jedoch, dass die Größe der Datei durch ein Befehlszeilenargument bestimmt werden kann. In Fish Shell könnten Sie dies folgendermaßen realisieren:
 
 ```Fish Shell
-$ ls -l                  # Gibt alle Dateien und Ordner im aktuellen Verzeichnis aus
-$ git commit -m "Added new feature"     # Fügt eine Commit-Nachricht hinzu
-$ grep -r "keyword" ./        # Durchsucht alle Dateien im aktuellen Verzeichnis nach dem eingegebenen Keyword
+if test (count $argv) -eq 2
+    set dateiname $argv[1]
+    set size $argv[2]
+    fallocate -l $size $dateiname
+else
+    echo "Bitte geben Sie einen Dateinamen und eine Größe an."
+end
 ```
 
-Wie man sieht, können Befehlszeilenargumente dazu verwendet werden, die Befehle an die individuellen Bedürfnisse anzupassen und so die Arbeit noch effizienter zu gestalten.
+Dieses Beispiel überprüft zuerst die Anzahl der eingegebenen Argumente und weist dann die Werte von $argv zu entsprechenden Variablen zu. Anschließend wird die Datei mit der gewünschten Größe erstellt. Wenn nicht genügend Argumente eingegeben wurden, wird eine Fehlermeldung ausgegeben.
 
-# Deep Dive
+## Tiefere Einblicke
 
-Um tiefer in das Thema einzutauchen, lohnt es sich, sich mit den verschiedenen Arten von Befehlszeilenargumenten auseinanderzusetzen. Zum einen gibt es optionale Argumente, die den Befehl anpassen, aber nicht zwingend erforderlich sind. Diese werden in der Regel mit einem vorangestellten Minuszeichen (-) angegeben. Zum anderen gibt es auch Positional Arguments, die an einer bestimmten Stelle im Befehl stehen müssen, und Flags, die spezifische Funktionalitäten aktivieren oder deaktivieren.
+Neben den integrierten Variablen gibt es in Fish Shell auch die Möglichkeit, Befehlszeilenargumente mithilfe der "argparse" Bibliothek auszulesen. Diese bietet mehr Funktionalitäten wie z.B. das Festlegen von Argumenttypen oder das Hinzufügen von Standardwerten. Weitere Informationen zur Verwendung von "argparse" finden Sie in der offiziellen Dokumentation.
 
-Außerdem ist es wichtig zu wissen, dass Befehlszeilenargumente in der Reihenfolge ihrer Eingabe verarbeitet werden und dass es in Fish Shell auch die Möglichkeit gibt, Shortcuts für häufig verwendete Argumente zu erstellen.
+## Siehe auch
 
-# Sieh auch
-
-- [Fish Shell Dokumentation zur Verwendung von Befehlszeilenargumenten](https://fishshell.com/docs/current/cmds.html#command-line-arguments)
-- [Tutorial zur Verwendung von Befehlszeilenargumenten in Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-bash-scripts-de)
-- [Gelöste Beispiele mit Befehlszeilenargumenten in Fish Shell](https://www.hackerrank.com/domains/shell/bash?filters%5Bsubdomains%5D%5B%5D=shells&filters%5Bsubdomains%5D%5B%5D=bash)
+- https://fishshell.com/docs/current/cmds/set.html#$argv
+- https://fishshell.com/docs/current/cmds/set.html#$argc
+- https://fishshell.com/docs/current/cmds/fallocate.html
+- https://github.com/daniel-san/fish-argparse

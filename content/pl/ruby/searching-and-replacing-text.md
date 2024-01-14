@@ -1,41 +1,48 @@
 ---
-title:    "Ruby: Wyszukiwanie i zastępowanie tekstu"
+title:    "Ruby: Wyszukiwanie i zamiana tekstu"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wiele razy, przy pisaniu kodu w języku Ruby, mogą zdarzyć się sytuacje, w których musimy dokonać zmiany w tekście. Może to być konieczne do naprawienia błędów, aktualizacji danych lub po prostu aby dostosować tekst do naszych potrzeb. Dlatego ważne jest, aby znać możliwości wyszukiwania i zamiany tekstu w języku Ruby.
+Wpisz tutaj krótkie wyjaśnienie, dlaczego ktoś mógłby być zainteresowany przeszukiwaniem i zastępowaniem tekstu za pomocą języka Ruby.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-W języku Ruby istnieje kilka sposobów na wyszukiwanie i zamianę tekstu. Jedną z najczęściej wykorzystywanych metod jest użycie metody `gsub`. Zwróć uwagę, że ta metoda może zamieniać kilka wystąpień danego wyrażenia jednocześnie. Przykładowy kod wyglądałby następująco:
-
-```Ruby
-text = "Dzień dobry, świecie!"
-changed_text = text.gsub("świecie", "universum")
-puts changed_text
-```
-
-Output: Dzień dobry, universum!
-
-Możemy także wykorzystać wyrażenia regularne do wyszukiwania i zamiany tekstu. Jest to szczególnie przydatne, jeśli chcemy dokonać bardziej skomplikowanych zmian. Przykładowy kod wyglądałby następująco:
+Przeszukiwanie i zastępowanie tekstu to powszechne zadanie w procesie tworzenia oprogramowania. Dzięki językowi Ruby możemy to zadanie wykonać szybko i łatwo. Poniżej znajdziesz przykłady kodu oraz wyników dla różnych przypadków.
 
 ```Ruby
-text = "Dzień dobry, ŚwieTecznY!"
-changed_text = text.gsub(/[A-Z]/, "*")
-puts changed_text
+# Przykład 1: Zamiana wszystkich małych liter na wielkie
+
+tekst = "witaj świecie!"
+puts tekst.upcase
+
+# Wynik: WITAJ ŚWIECIE!
+
+# Przykład 2: Zastąpienie określonego słowa innym
+
+tekst = "Kocham Ruby!"
+puts tekst.gsub("Ruby", "programowanie")
+
+# Wynik: Kocham programowanie!
+
+# Przykład 3: Usunięcie znaków specjalnych
+
+tekst = "~~Ruby~~"
+puts tekst.delete("~")
+
+# Wynik: Ruby
 ```
 
-Output: *zień *obry, *wie*ecn*!
+## Wnikliwe Spostrzeżenia
 
-## Głębszy zanurzenie
-
-Metoda `gsub` działa na klasie String, więc możemy jej użyć bezpośrednio na zmiennych typu string. Istnieją jednak także metody `gsub!` oraz `sub`, które działają na tym samym zasadzie, ale modyfikują oryginalny ciąg znaków, bez tworzenia nowego obiektu. Możemy także określić liczbę wystąpień, które chcemy zamienić lub użyć bloku do dostosowania zamiany w zależności od warunków.
+Przeszukiwanie i zastępowanie tekstu to ważny element procesu tworzenia oprogramowania. Dzięki językowi Ruby możemy wykonać te zadania w prosty i skuteczny sposób. Jednak warto pamiętać o różnicach między użytymi metodami, takimi jak "gsub" i "delete". Głębsze zrozumienie tych różnic pozwoli Ci lepiej dostosować swoje rozwiązanie do konkretnego przypadku.
 
 ## Zobacz także
 
-* Dokumentacja Ruby o metodzie `gsub`:https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub
-* Wprowadzenie do wyrażeń regularnych w Ruby: https://www.rubyguides.com/ruby-tutorial/regex/
+- [Dokumentacja Ruby dla metod String](https://ruby-doc.org/core-2.7.1/String.html)
+- [Ruby Tutorial: Manipulowanie Tekstem](https://www.rubyguides.com/2019/05/ruby-string-methods/)
+- [Ruby Monk: Zastępowanie Tekstu w Ruby](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-strings/lessons/118-substitution-in-ruby)

@@ -1,50 +1,41 @@
 ---
 title:    "C: Convertire una stringa in minuscolo"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Convertire una stringa in minuscolo può essere utile per confrontare due stringhe senza prendere in considerazione le maiuscole e per rendere più facile la ricerca di un determinato testo all'interno di una stringa.
 
-Convertire una stringa in minuscolo è una funzionalità comune nei linguaggi di programmazione, ed è utile in molte situazioni. Ad esempio, potresti voler confrontare due stringhe senza distinguere tra lettere maiuscole e minuscole, oppure dover rendere uniforme il formato dei dati inseriti dall'utente.
-
-## Come fare
-
-La conversione di una stringa in minuscolo è una semplice operazione che può essere realizzata con poche linee di codice in linguaggio C. Per prima cosa, è necessario includere la libreria "string.h" nel tuo programma. In seguito, è possibile utilizzare la funzione "tolower()" per convertire ogni carattere della stringa in minuscolo, come mostrato nel seguente esempio:
+## Come Fare
+Per convertire una stringa in minuscolo in linguaggio C, è possibile utilizzare la funzione `tolower()` della libreria `ctype.h`. Questa funzione prende come parametro un carattere e lo converte in minuscolo. Di seguito un esempio di codice:
 
 ```C
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-int main() {
+int main(void) {
+  char str[] = "CIAO AMICI";
+  int i = 0;
+  
+  while (str[i]) {
+    str[i] = tolower(str[i]);
+    i++;
+  }
 
-    char stringa[] = "Hello World";
-    int lunghezza = strlen(stringa); // otteniamo la lunghezza della stringa
-    int i;
-
-    for (i = 0; i < lunghezza; i++) {
-        stringa[i] = tolower(stringa[i]); // utilizziamo tolower() per convertire il carattere in minuscolo
-    }
-
-    printf("%s\n", stringa); // stampiamo la stringa convertita in minuscolo
-    
-    return 0;
+  printf("%s", str);
+  // Output: ciao amici
+  return 0;
 }
 ```
 
-Questo codice produrrà l'output "hello world", come desiderato.
-
 ## Approfondimento
+In questo esempio, abbiamo utilizzato un loop `while` per scorrere ogni carattere della stringa e applicare la funzione `tolower()` su di esso. Possiamo notare che la funzione modifica direttamente la stringa originale e non è necessario assegnare il nuovo valore ad una variabile.
 
-La funzione "tolower()" è definita all'interno della libreria "ctype.h" ed è utilizzata per convertire un carattere in minuscolo. Tuttavia, è importante notare che questa funzione funziona solo con i caratteri ASCII e non funziona con caratteri di altri set di caratteri.
+È importante notare che la funzione `tolower()` può essere utilizzata solo su un carattere alla volta e non su un'intera stringa. Inoltre, questa funzione non effettua verifica sull'input, quindi è importante assicurarsi che il parametro passato sia un carattere valido.
 
-Un'altra cosa da tenere a mente è che la funzione "tolower()" restituirà sempre il valore ASCII di un carattere, anche se lo passiamo un valore diverso da un carattere. In questo caso, poiché il risultato è limitato all'intervallo di valori ASCII, è possibile che vengano restituiti risultati imprevisti o inaspettati.
-
-Inoltre, alcuni caratteri potrebbero non essere convertiti in minuscolo come ci si aspetta. Questo dipende dalle impostazioni e dal set di caratteri del sistema in cui viene eseguito il programma.
-
-## Vedi anche
-
-- [Converting Strings to Lowercase in C](https://www.programiz.com/c-programming/library-function/ctype/tolower)
-- [Standard Library Reference for toupper and tolower functions in C](https://www.cs.uic.edu/~jbell/CourseNotes/C_Programming/SourceFiles/c001.htm)
-- [Understanding ASCII and Unicode Characters](https://www.computerhope.com/jargon/a/ascii.htm)
+## Vedi Anche
+- [Funzione tolower() - Documentazione di Microsoft](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tolower?view=msvc-160)
+- [Libreria ctype.h - Documentazione di cplusplus.com](http://www.cplusplus.com/reference/cctype/)

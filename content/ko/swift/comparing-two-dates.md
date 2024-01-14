@@ -1,46 +1,52 @@
 ---
 title:    "Swift: 두 날짜 비교하기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜?
 
-두 날짜를 비교하는 데 참여해야 하는 이유는 무엇일까요? 이 블로그 포스트에서는 Swift 프로그래밍에서 날짜를 비교하는 것의 중요성과 유용성에 대해 알아보도록 하겠습니다.
+무엇보다도, 유저나 프로그래머 모두 날짜와 시간에 대해 생각할 일이 많습니다. 예를 들어서, 유저가 북미에서 개최되는 온라인 이벤트에 참여하려면 그 이벤트 시작 시간과 유저의 현재 시간을 비교할 수 있어야 합니다.
 
-## 어떻게
+또는, 프로그래머가 예약 시스템을 만들고 있다면, 오늘 날짜와 비교하여 예약이 가능한 날짜를 찾아야 할 것입니다. 이처럼 날짜 비교는 우리 생활과 소프트웨어 개발에 항상 쓰이는 것이니, 날짜를 비교하는 방법을 알고 있으면 큰 도움이 될 것입니다.
 
-Swift에서 두 날짜를 비교하는 방법을 알아보겠습니다. 아래의 코드 블록을 참고해 주세요.
+## 어떻게?
+
+Swift에서 두 날짜를 비교하는 방법은 간단합니다. 먼저, 비교하고 싶은 두 날짜를 `Date` 객체로 만들어주어야 합니다. 그리고 두 날짜 중 어느 날짜가 더 미래인지 비교해야 할 때는 `>` 기호를 사용하면 됩니다. 반대로 어느 날짜가 과거인지 비교해야 할 때는 `<` 기호를 사용합니다.
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MM/dd/yyyy"
-let date1 = dateFormatter.date(from: "03/27/2021")
-let date2 = dateFormatter.date(from: "04/01/2021")
+// 비교할 날짜를 원하는 형식으로 만든 후, Date 객체로 변환
+let date1 = "2020-06-15".toDate()
+let date2 = "2020-06-20".toDate()
 
-if date1! < date2! {
-  print("date1 is earlier than date2.")
-} else if date1! > date2! {
-  print("date2 is earlier than date1.")
+// 두 날짜 비교
+if date1 > date2 {
+    print("\(date1.toString())은(는) \(date2.toString())보다 미래입니다.")
+} else if date1 < date2 {
+    print("\(date1.toString())은(는) \(date2.toString())보다 과거입니다.")
 } else {
-  print("date1 and date2 are the same.")
+    print("\(date1.toString())은(는) \(date2.toString())와(과) 같은 날짜입니다.")
 }
 
-// Output:
-// date1 is earlier than date2.
+// 출력: 2020년 6월 15일은 2020년 6월 20일보다 과거입니다.
 ```
 
-위의 예시에서는 `DateFormatter`를 사용하여 두 날짜를 `MM/dd/yyyy` 형식으로 변환하고, `<` 연산자를 사용하여 두 날짜를 비교합니다. 이 외에도 `>` 연산자나 `==` 연산자를 사용할 수 있습니다. 또한 `Calendar`를 사용하여 더 복잡한 비교도 가능합니다.
+## 더 깊게
 
-## 깊게 들어가기
+날짜를 비교할 때 유의해야 할 점은 시간대(time zone)와 날짜 포맷(date format)을 고려하는 것입니다. 예를 들어, 서로 다른 시간대에서 동일한 날짜를 비교할 수도 있고, 날짜의 문자열 표기 방식이 다르면 제대로 된 비교가 이루어지지 않을 수도 있습니다.
 
-두 날짜를 비교하는 것은 다양한 상황에서 매우 유용합니다. 예를 들어, 사용자의 생년월일과 현재 날짜를 비교하여 만 나이를 계산하는 데 사용할 수 있습니다. 또는 예약 날짜와 현재 날짜를 비교하여 사용자가 즉시 예약할 수 있는지를 확인하는 데도 사용될 수 있습니다.
+이에 대한 해결책으로는 먼저, `Calendar` 클래스를 사용하여 시간대 정보를 추가해주는 것이 도움이 됩니다. 또한, `DateFormatter` 클래스를 사용하여 날짜 포맷을 표준화해주면 더 정확한 비교가 가능합니다.
 
-Swift에서 날짜를 비교하는 더 많은 방법과 유용한 팁들을 알아보려면 아래의 링크들을 참고해 주세요.
+## 더 알아보기
 
-# 참고
+- [Swift의 Date 클래스 문서](https://developer.apple.com/documentation/foundation/date)
+- [Swift의 Calendar 클래스 문서](https://developer.apple.com/documentation/foundation/calendar)
+- [Swift의 DateFormatter 클래스 문서](https://developer.apple.com/documentation/foundation/dateformatter)
+- [날짜 비교 관련 스택 오버플로우 질문과 답변](https://stackoverflow.com/questions/35700281/how-do-i-compare-2-dates-in-swift)
+- [시간대와 날짜 포맷 관련 스택 오버플로우 질문과 답변](https://stackoverflow.com/questions/39917564/is-the-date-format-about-time-zones-required-or-important-for-date-compli)
 
-- [Apple Developer Documentation - Working with Dates](https://developer.apple.com/documentation/foundation/date)
-- [How to compare two dates in Swift](https://www.hackingwithswift.com/example-code/system/how-to-compare-two-dates-in-swift)
-- [10 Tips to become a better Swift Developer](https://medium.com/swlh/10-tips-to-become-a-better-swift-developer-ad94928e7d28)
+## 관련 링크
+
+- [Swift와 날

@@ -1,63 +1,49 @@
 ---
-title:    "Haskell: Umwandlung eines Strings in Kleinbuchstaben"
+title:    "Haskell: Umwandlung eines Zeichens in Kleinbuchstaben"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Eine gängige Aufgabe beim Programmieren ist es, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. In diesem Blogbeitrag erfahren Sie, wie Sie dies mit Hilfe der funktionalen Programmiersprache Haskell ganz einfach umsetzen können.
+Das Konvertieren von Strings in Kleinbuchstaben ist ein häufiges Problem in der Programmierung. Es kann hilfreich sein, wenn man zum Beispiel Daten vergleichen oder auf bestimmte Muster in Texten prüfen möchte. In dieser Blogpost werden wir uns anschauen, wie man String in Haskell in Kleinbuchstaben umwandelt.
 
-## Wie geht's
+## Wie es geht
 
-Um eine Zeichenfolge in Haskell in Kleinbuchstaben umzuwandeln, gibt es verschiedene Ansätze.
-
-Ein möglicher Weg ist die Verwendung der Funktion `map` in Kombination mit der Unterfunktion `toLower` aus dem Modul `Data.Char`. Diese Funktionen sind sehr hilfreich, da sie bereits in der Standardbibliothek von Haskell vorhanden sind und somit keine zusätzlichen Imports benötigen.
+Um einen String in Kleinbuchstaben zu konvertieren, können wir die Funktion `toLower` aus dem Modul `Data.Char` verwenden. Diese Funktion benötigt einen einzelnen `Char` als Argument und gibt den entsprechenden Kleinbuchstaben als `Char` zurück. Wenn wir diese Funktion auf jeden einzelnen Buchstaben in einem String anwenden, erhalten wir einen neuen String, in dem jeder Buchstabe in Kleinbuchstaben geschrieben ist.
 
 ```Haskell
 import Data.Char
 
--- Definition der Funktion zur Umwandlung in Kleinbuchstaben
-toLowerString :: String -> String
-toLowerString str = map toLower str
+toLower 'A' -- gibt 'a' zurück
+toLower 'H' -- gibt 'h' zurück
+toLower '!' -- gibt '!' zurück (sonderzeichen bleiben unverändert)
 ```
 
-Der obige Code zeigt eine einfache Definition der Funktion `toLowerString`, die eine Zeichenfolge als Eingabe erwartet und diese mithilfe von `map` in Kleinbuchstaben umwandelt.
-
-Ein weiterer Ansatz ist die Verwendung von Pattern Matching. Hierbei wird geprüft, ob die übergebene Zeichenfolge leer ist und falls ja, wird sie direkt zurückgegeben. Ansonsten wird der erste Buchstabe in Kleinbuchstaben umgewandelt und der restliche Teil der Zeichenfolge rekursiv bearbeitet.
+Um einen vollständigen String in Kleinbuchstaben zu konvertieren, können wir die Funktion `map` verwenden, die eine Funktion auf jedes Element in einer Liste anwendet. In diesem Fall ist die Liste unser String, und die anzuwendende Funktion ist `toLower`.
 
 ```Haskell
--- Pattern Matching Funktion zum Umwandeln in Kleinbuchstaben
-toLowerStringMatch :: String -> String
-toLowerStringMatch "" = ""
-toLowerStringMatch (x:xs) = toLower x : toLowerString xs
+map toLower "HALLO!" -- gibt "hallo!" zurück
 ```
 
-Beide Ansätze erzielen das gleiche Ergebnis. Hier ein Beispiel mit der Eingabe "HaSkElL" und der erwarteten Ausgabe "haskell".
+## Tiefer Einblick
+
+Um zu verstehen, wie die Funktion `toLower` in Haskell funktioniert, können wir uns den Quellcode anschauen. In der offiziellen Dokumentation von Haskell können wir sehen, dass die Funktion wie folgt definiert ist:
 
 ```Haskell
--- Output
-toLowerString "HaSkElL" -- "haskell"
-toLowerStringMatch "HaSkElL" -- "haskell"
+toLower :: Char -> Char
+toLower c
+  | 'A' <= c && c <= 'Z' = chr (ord c - ord 'A' + ord 'a')
+  | otherwise = c
 ```
 
-## Tief tauchen
+Die Funktion prüft zuerst, ob der übergebene `Char` ein Großbuchstabe ist. Wenn dies der Fall ist, wird mithilfe der Funktionen `chr` und `ord` der entsprechende Kleinbuchstabe bestimmt und zurückgegeben. Andernfalls bleibt der `Char` unverändert.
 
-Der Vorteil des zweiten Ansatzes liegt in der besseren Performance, da keine spezifische Funktion wie `map` verwendet wird. Jedoch ist es auch möglich, die Funktion in einer Art und Weise zu definieren, die interne Optimierungen ermöglicht.
-
-Eine Möglichkeit ist die Verwendung von `foldl`, um die Funktion effizienter zu machen. Hierbei wird die Zeichenfolge von links nach rechts durchlaufen und bei jedem Schritt wird der aktuelle Buchstabe in Kleinbuchstaben umgewandelt und an den zuvor durchlaufenen Teil der Zeichenfolge angehängt.
-
-```Haskell
--- Effizientere Implementation mit foldl
-toLowerStringFold :: String -> String
-toLowerStringFold = foldl (\acc x -> acc ++ [toLower x]) ""
-```
-
-Diese Implementation ist noch robuster und schneller, da sie nicht die gesamte Zeichenfolge neu erstellen muss.
+Diese Implementierung zeigt auch, dass Haskell eine starke Unterstützung für funktionale Programmierung bietet, da wir hier eine Funktion haben, die sich nicht auf veränderbare Variablen oder Seiteneffekte verlassen muss.
 
 ## Siehe auch
 
-- Offizielle Haskell Dokumentation: https://www.haskell.org/documentation/
-- "Real World Haskell" Buch: http://book.realworldhaskell.org/read/
-- "Learn You a Haskell for Great Good" online Buch: http://learnyouahaskell.com/
+- [offizielle Haskell Dokumentation für `Data.Char`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
+- [Haskell Tutorial von LearnYouAHaskell.com](http://learnyouahaskell.com/chapters)

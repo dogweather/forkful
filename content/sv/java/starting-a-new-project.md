@@ -1,48 +1,50 @@
 ---
-title:    "Java: Att påbörja ett nytt projekt"
+title:    "Java: Att börja ett nytt projekt"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att starta ett nytt programmeringsprojekt kan vara ett spännande och utmanande äventyr. Det ger möjlighet att lära sig nya tekniker och utveckla färdigheter, samtidigt som det kan leda till att man skapar något användbart och innovativt.
+Att starta ett nytt programmeringsprojekt kan vara en spännande och utmanande uppgift. Det ger dig möjlighet att utforska nya koncept, utveckla din kodningskompetens och skapa något som du verkligen är stolt över. Att starta ett nytt projekt kan också hjälpa dig att förbättra din karriär och öppna upp dörrar till nya möjligheter.
 
-##Hur man gör det
+## Hur man gör
 
-Att börja ett nytt projekt i Java är en relativt enkel process, men det finns några steg som är viktiga att följa för att säkerställa en smidig start.
+För att starta ett nytt programmeringsprojekt i Java finns det ett par steg du kan följa:
 
-1. Välj och installera en utvecklingsmiljö som passar dig. Det finns flera olika att välja mellan, till exempel IntelliJ, Eclipse eller NetBeans.
+1. Börja med att skapa en grundläggande struktur för ditt projekt. Detta kan inkludera en källkodsmapp, en testsökväg och eventuellt en dokumentationsmapp.
 
-2. Skapa ett nytt Java-projekt i din utvecklingsmiljö och ge det ett passande namn.
+2. Välj en utvecklingsmiljö som passar dig. Det finns många olika alternativ såsom Eclipse, IntelliJ eller NetBeans. Se till att du har rätt Java JDK installerat och konfigurerat i din utvecklingsmiljö.
 
-3. Skapa och öppna en ny Java-klass inom ditt projekt. Detta är där du kommer skriva din kod.
+3. Skriv din kod i Java-filer inuti källkodsmappen. Du kan använda Java-nyckelordet "public" för att indikera att en klass eller metod är tillgänglig från andra delar av ditt projekt.
 
-4. Skriv din kod i klass-filen och se till att den är korrekt genom att använda dig av "syntax highlight" och andra funktioner som din utvecklingsmiljö erbjuder.
+    ```Java
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hej världen!");
+        }
+    }
+    ```
+    
+4. Kompilera och testa din kod. Om du har konfigurerat din utvecklingsmiljö korrekt kan du enkelt kompilera och köra din kod direkt från din IDE.
 
-5. När du är nöjd med din kod, kompilera den genom att trycka på "Build"-knappen. Om det finns några fel i koden så kommer de att visas i utgångsfönstret.
+## Djupdykning
 
-6. Följ stegen i ditt utvecklingsmiljö för att köra ditt program och se det köra i konsolen eller en grafisk användargränssnitt.
+När du startar ett nytt projekt är det viktigt att göra en ordentlig planering och design. Detta inkluderar skapandet av en kravspecifikation, där du definierar vad ditt projekt ska göra och vilka funktioner det ska ha. Du bör också skissa på en övergripande systemarkitektur för att se till att ditt projekt är skalbart och flexibelt nog för framtida ändringar.
 
-##Fördjupa sig
+Det är även viktigt att följa goda programmeringsprinciper och -mallar, såsom att använda lämpliga namngivningskonventioner och kommentera din kod ordentligt. Att göra detta från början av ett projekt kommer att göra det enklare att underhålla och utöka det i framtiden.
 
-Att starta ett nytt projekt i Java går utöver bara att skriva kod. Det finns flera andra viktiga aspekter att ta hänsyn till för att säkerställa ett lyckat projekt.
+Kom också ihåg att söka efter hjälp och stöd från andra programmerare. Det finns många forum och communitys där du kan ställa frågor och få råd och feedback från andra som är erfarna inom Java-programmering.
 
-1. Planera ditt projekt noggrant. Det är viktigt att ha en tydlig målbild och en plan för hur du ska nå dit.
+## Se även
 
-2. Använd lämplig design och arkitektur för ditt projekt. Det här är inte bara viktigt för att ditt program ska fungera korrekt, det gör det också enklare att underhålla och vidareutveckla i framtiden.
+Här är några länkar som kan vara användbara när du startar ett nytt Java-projekt:
 
-3. Implementera korrekta testmetoder för att säkerställa att din kod fungerar som det ska och för att upptäcka buggar i ett tidigt skede.
+- [Java-tutorials på W3Schools](https://www.w3schools.com/java/)
+- [IntelliJ-dokumentation](https://www.jetbrains.com/idea/documentation/)
+- [Java-programmeringsforum på Stack Overflow](https://stackoverflow.com/questions/tagged/java) (på engelska)
+- [Java Coding Standards and Best Practices](https://www.oracle.com/technetwork/java/codeconvtoc-136057.html) (på engelska)
 
-4. Arbeta i en version control system för att göra det enklare att hantera och spåra eventuella förändringar eller buggar.
-
-##Se även
-
-Här är några användbara länkar som kan hjälpa dig att komma igång med att starta ditt nya Java-projekt:
-
-- [IntelliJ User Guide](https://www.jetbrains.com/help/idea/2019.1/getting-started-with-intellij-idea.html)
-- [Eclipse Tutorials](https://www.eclipse.org/community/index.php/articles/how2java.php)
-- [Java API Documentation](https://docs.oracle.com/javase/8/docs/api/)
-
-Lycka till med ditt nya Java-projekt! Happy coding! 🚀
+Lycka till med ditt nya projekt!

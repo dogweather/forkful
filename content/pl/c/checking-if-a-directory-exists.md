@@ -1,46 +1,52 @@
 ---
-title:    "C: Sprawdzanie istnienia katalogu."
+title:    "C: Sprawdzanie istnienia katalogu"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Sprawdzanie czy istnieje katalog to bardzo przydatna umiejętność w programowaniu, która pozwala na sprawne zarządzanie plikami i folderami w systemie operacyjnym. W tym artykule dowiesz się, dlaczego warto nauczyć się tego zagadnienia.
+Czy kiedykolwiek zastanawiałeś się, jak sprawdzić, czy dany katalog istnieje w systemie plików w języku C? W tym artykule dowiesz się, dlaczego jest to ważne i jak to zrobić. 
 
-## Jak to zrobić
+## Jak To Zrobić
 
-```
+Aby sprawdzić, czy dany katalog istnieje w systemie plików w języku C, musimy użyć funkcji "opendir" i "closedir" z biblioteki <dirent.h>. Skorzystajmy z poniższego kodu jako przykład:
+
+```C
 #include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <dirent.h>
 
 int main() {
-    // Wprowadź ścieżkę do katalogu
-    char *path = "/sciezka/do/katalogu/";
-
-    // Użyj funkcji stat() do sprawdzenia istnienia katalogu
-    struct stat st;
-    if (stat(path, &st) == 0) {
-        // Jeśli katalog istnieje, wyświetl komunikat
-        printf("Katalog %s istnieje.", path);
-    } else {
-        // Jeśli katalog nie istnieje, wyświetl komunikat
-        printf("Katalog %s nie istnieje.", path);
-    }
-
-    return 0;
+   char* path = "/home/user/Documents"; // ścieżka do sprawdzenia
+   DIR* dir = opendir(path);
+   
+   if (dir) // jeśli funkcja "opendir" zwróciła niepuste wartości, oznacza to, że katalog istnieje
+      printf("%s - Katalog istnieje!\n", path);
+   else // w przeciwnym razie, katalog nie istnieje lub nie mamy do niego dostępu
+      printf("%s - Katalog nie istnieje lub mamy brak dostępu.\n", path);
+   
+   closedir(dir); // zamknięcie katalogu
+   return 0;
 }
 ```
 
-## Wnikliwiej
+Wywołując powyższy kod, otrzymamy następujący wynik:
 
-W celu sprawdzenia czy katalog istnieje, używamy funkcji `stat()`. Jest to funkcja, która pobiera informacje o pliku lub katalogu podanym w jej parametrze i zapisuje je do struktury `stat`. Jeśli funkcja zwróci wartość równą 0, oznacza to, że plik lub katalog istnieje. W przeciwnym przypadku, jeśli będzie to wartość różna od 0, oznacza to, że plik lub katalog nie istnieje.
+```
+/home/user/Documents - Katalog istnieje!
+```
 
-Możemy również użyć funkcji `access()`, która sprawdza czy dany plik lub katalog jest dostępny w systemie. Możemy wykorzystać ją w połączeniu z flagą `F_OK`, aby sprawdzić czy plik lub katalog istnieje.
+W przypadku, gdy katalog nie istnieje lub nie mamy do niego dostępu, otrzymamy informację o tym fakcie.
+
+## Deep Dive
+
+Sprawdzenie, czy katalog istnieje, jest niezbędne w przypadku, gdy nasz program musi korzystać z plików znajdujących się w określonym miejscu. Bez uprzedniego sprawdzenia, czy katalog istnieje, nasz program może napotkać błąd i nie będzie w stanie działać poprawnie. 
+
+Funkcja "opendir" zwraca wskaźnik do danego katalogu, co oznacza, że w przypadku sukcesu, możemy bez problemu odczytywać pliki znajdujące się w danym katalogu. W przypadku braku dostępu do katalogu lub gdy katalog nie istnieje, funkcja ta zwraca pusty wskaźnik, co umożliwia nam w porę wykryć potencjalny problem.
 
 ## Zobacz także
-
-- https://www.tutorialspoint.com/c_standard_library/c_function_stat.htm
-- https://www.tutorialspoint.com/c_standard_library/c_function_access.htm
+- [Funkcja opendir w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
+- [Dokumentacja biblioteki dirent.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/dirent.h.html)
+- [Przykłady użycia funkcji opendir w praktyce](http://www.martinbroadhurst.com/list-the-contents-of-a-directory-in-c.html)

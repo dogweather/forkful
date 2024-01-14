@@ -1,64 +1,47 @@
 ---
-title:    "C#: Sammenkobling av strenger"
+title:    "C#: Sammenkjeding av strenger"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
+Noen ganger, i vår C# programmering, trenger vi å kombinere to strenger for å lage en ny og lengre streng. Dette kalles å "konkatenere" strenger og kan være nyttig for å lage dynamiske meldinger og tekstutskrifter.
 
-Å koble sammen strenger er en nyttig teknikk som lar deg kombinere flere variabler eller tekststykker til én streng. Dette er spesielt viktig når du arbeider med tekstbaserte data eller når du må formatere utdata på en spesifikk måte. Ved å bruke denne teknikken, kan du enkelt håndtere komplekse strenger og gjøre koden din mer effektiv.
-
-## Hvordan
-
-For å koble sammen strenger i C#, bruker vi "+" operatøren. La oss se et enkelt eksempel:
+##Slik gjør du det
+For å konkatenerere strenger i C#, kan du bruke "+" operatøren. For eksempel:
 
 ```C#
-string navn = "Ola";
-string alder = "25";
+string navn = "Per";
+string etternavn = "Andersen";
 
-string setning = "Jeg heter " + navn + " og jeg er " + alder + " år gammel.";
+string fulltNavn = navn + " " + etternavn;
 
-Console.WriteLine(setning);
+Console.WriteLine(fulltNavn);
 ```
-**Output:**
->Jeg heter Ola og jeg er 25 år gammel.
 
-Her kombinerer vi variablene "navn" og "alder" med tekststrengene "Jeg heter" og "og jeg er". Vi kan også kombinere mer enn to variabler i samme uttrykk.
+Dette vil skrive ut "Per Andersen" i konsollen.
+
+Du kan også bruke String.Format metoden for å konkatenerere strenger på en mer strukturert måte:
 
 ```C#
-string fornavn = "Kari";
-string etternavn = "Nordmann";
-int alder = 30;
+string navn = "Per";
+string etternavn = "Andersen";
 
-string setning = "Navnet mitt er " + fornavn + " " + etternavn + " og jeg er " + alder + " år gammel.";
+string fulltNavn = String.Format("{0} {1}", navn, etternavn);
 
-Console.WriteLine(setning);
+Console.WriteLine(fulltNavn);
 ```
-**Output:**
->Navnet mitt er Kari Nordmann og jeg er 30 år gammel.
 
-Merk at vi bruker "+" operatøren for å kombinere variabler og tekststrenger. Det er viktig å huske på at alle variabler må være av samme type, ellers vil koden ikke fungere.
+Dette vil også skrive ut "Per Andersen" i konsollen.
 
-## Deep Dive
+##Dypdykk
+Når du konkatenere strenger i C#, må du være oppmerksom på at resultatet blir en ny streng hver gang. Dette betyr at hvis du gjør dette i en løkke eller i en større applikasjon, kan det føre til unødvendig bruk av minne og ressurser.
 
-I tillegg til "+" operatøren, kan vi også bruke metoden "Format" for å kombinere strenger i C#. Dette vil gi deg mer kontroll over formateringen av utdata.
+En annen ting å huske på er at du ikke kan konkatenere strenger med forskjellige datatyper. For eksempel kan du ikke legge til et tall og en streng sammen.
 
-```C#
-string fornavn = "Per";
-string etternavn = "Hansen";
-int id = 1234;
-
-string setning = string.Format("Min ID er {2} og mitt navn er {0} {1}.", fornavn, etternavn, id);
-
-Console.WriteLine(setning);
-```
-**Output:**
->Min ID er 1234 og mitt navn er Per Hansen.
-
-Som du kan se, bruker vi en "formatteringsstreng" i metoden for å fortelle C# hvor variablene skal plasseres i setningen. Dette kan være spesielt nyttig når du arbeider med mer komplekse utdataformater.
-
-## Se Også
-
-1. [Konkatinering av strenger i C#](https://www.w3schools.com/cs/char_arrays.asp)
-2. [C# Strenger](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/index)
+##Se også
+- [Microsoft sin dokumentasjon om String.Concat metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=netframework-4.8)
+- [C# string handling](https://www.csharp-station.com/Tutorial/CSharp/lesson14)
+- [Konkatenere strenger i C#](https://www.c-sharpcorner.com/article/concatenate-strings-in-C-Sharp/)

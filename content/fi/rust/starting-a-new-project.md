@@ -1,46 +1,48 @@
 ---
-title:    "Rust: Aloittaa uusi projekti"
+title:    "Rust: Uuden projektin aloittaminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projekti Rustilla?
+# Miksi aloittaa uusi projekti Rust-ohjelmoinnilla?
 
-Rust on moderni ohjelmointikieli, joka on suunniteltu turvallisuus ja suorituskyky edellä. Se tarjoaa työkaluja vaikeiden ongelmien ratkaisemiseen ja skaalautuvuuden hallintaan. Jos haluat rakentaa luotettavan ja tehokkaan ohjelman, kannattaa harkita Rustin käyttöä.
+Rust on suosittu ohjelmointikieli, joka on suunniteltu erityisesti turvallisuuden ja suorituskyvyn kannalta. Se on myös avoimen lähdekoodin ja kehittäjäyhteisönsä ansiosta saanut paljon huomiota viime vuosina. Joten, miksi aloittaa uusi projekti Rust-ohjelmoinnilla?
 
-## Kuinka aloittaa projektin Rustilla?
+Voit luoda turvallisia ja nopeita ohjelmia - Rustilla on sisäänrakennettuja turvallisuustoimintoja ja sen suorituskyky on verrattavissa muihin matalan tason ohjelmointikieliin kuten C:hen. Näin voit välttää muistiongelmia ja optimoida ohjelmasi suorituskykyä.
 
-Ensimmäinen askel on asentaa Rustin kehitystyökalut koneellesi. Tämä on tehty helpoksi Rustin verkkosivuilla olevan asennusohjelman avulla. Kun asennus on tehty, voit aloittaa uuden projektisi Rustilla.
+# Miten aloittaa Rust-projekti?
 
-```Rust
+Ensinnäkin, varmista että Rust Compiler on asennettuna. Voit tarkistaa sen komennolla ```Rust --version```. Seuraavaksi, voit luoda uuden projektin komennolla ```cargo new projektin_nimi```.
+
+Tässä on esimerkkikoodi, joka tulostaa "Hei maailma!" Rustilla:
+
+```
 fn main() {
     println!("Hei maailma!");
 }
 ```
 
-Yllä olevassa esimerkissä luodaan yksinkertainen ohjelma, joka tulostaa konsoliin "Hei maailma!". Voit myös käyttää Rustin pakettienhallintajärjestelmää, Cargoa, uusien projektien luomiseen ja riippuvuuksien hallintaan.
+Suorita tämä koodi komennolla ```cargo run``` ja näet tuloksen: ```Hei maailma!```
 
-```Rust
-let nimi = "Maailma";
-println!("Hei, {}", nimi);
-```
+# Syvällisempi sukellus uuden projektin aloittamiseen
 
-Yllä olevassa esimerkissä käytetään muuttujaa ja sijoitusoperaattoria tulostuksen luomiseen.
+Kun luot uuden projektin Rustilla, se luo automaattisesti muutaman tiedoston ja kansion projektin juurihakemiston sisään. Tässä on lyhyt selitys kustakin tiedostosta:
 
-## Syvempi sukellus uuden projektin aloittamiseen
+- ```Cargo.toml``` - tässä määritellään projektin riippuvuudet ja muut asetukset.
+- ```src``` - kansio, johon voit luoda moduuleja ja kirjoittaa koodia.
+- ```src/main.rs``` - tiedosto, jossa on pääohjelma.
+- ```target``` - kansio, johon tallennetaan käännöksen lopputulos.
 
-Ennen kuin aloitat uuden projektin, on hyvä tutustua Rustin peruskäsitteisiin ja syntaksiin. Käytettävissä on useita oppimateriaaleja, kuten Rustin virallinen käsikirja ja ohjelmointiyhteisöjen tarjoamat oppaat ja videomateriaalit.
+Voit myös lisätä tarvittavia riippuvuuksia ```Cargo.toml```-tiedostoon ja kääntää projektin uudelleen komennolla ```cargo build```.
 
-Rustilla on myös vahva yhteisö, jonka jäsenet ovat valmiita auttamaan uusia kehittäjiä. Voit löytää vastauksia kysymyksiisi ja pyytää apua foorumeilla, IRC-kanavilla tai sosiaalisessa mediassa.
+Kehittäjäyhteisö on myös yksi Rustin vahvuuksista - siellä on saatavilla paljon dokumentaatiota, opetusmateriaaleja ja keskustelupalstoja, jossa voit kysyä apua ja jakaa tietoa muiden kanssa.
 
-Kun olet aloittanut uuden projektisi Rustilla, suosittelemme käyttämään testausta ja dokumentointia prosessin aikana. Näin voit varmistaa ohjelmasi luotettavuuden ja helpottaa kehittäjien lukemista ja ylläpitoa.
+# Katso myös
 
-## Katso myös
+- [Rustin viralliset kotisivut](https://www.rust-lang.org/)
+- [Rustin dokumentaatio](https://www.rust-lang.org/learn)
+- [Rust-ohjelmointikielen esittely (video, englanniksi)](https://www.youtube.com/watch?v=zF34dRivLOw)
 
-- [Rustin verkkosivut](https://www.rust-lang.org/)
-- [Rustin käsikirja](https://doc.rust-lang.org/std/)
-- [Rust-yhteisön oppaat ja videomateriaalit](https://www.rust-lang.org/learn)
-- [Rustin foorumit](https://users.rust-lang.org/)
-- [Rustin IRC-kanavat](https://kiwiirc.com/client/irc.mozilla.org:+6697/#rust)
-- [Rustin sosiaalisen median kanavat](https://fossbytes.com/best-rust-programming-twitter-accounts/)
+Kiitos lukemisesta ja onnea uuden Rust-projektin aloittamiseen!

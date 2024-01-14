@@ -1,38 +1,61 @@
 ---
 title:    "PHP recipe: Converting a string to lower case"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-There are many reasons why a programmer may need to convert a string to lower case. One common reason is for input validation, to ensure that user input matches a particular format or is in a specific case. Lower case conversion can also be useful for sorting data and avoiding duplicate entries.
+
+Converting strings to lowercase is a common task in programming, especially when dealing with user input. This ensures that the input is consistent and can be easily compared to other strings without worrying about casing differences. In this blog post, we will explore different ways to convert strings to lowercase in PHP.
 
 ## How To
-Converting a string to lower case in PHP is a simple task that can be accomplished using the `strtolower()` function. Let's take a look at some examples:
 
-```
+### Using strtolower() function
+
+The simplest way to convert a string to lowercase in PHP is by using the `strtolower()` function. Here's an example of how to use it:
+
+```PHP
 <?php
-// Basic example
-$string = "HELLO WORLD";
-echo strtolower($string); // output: "hello world"
-
-// Example with user input
-$user_input = $_POST["name"];
-echo strtolower($user_input); // if user enters "John", output: "john"
-?>
+$string = "Hello World";
+echo strtolower($string);
 ```
 
-In addition to `strtolower()`, there are other functions that can assist with string manipulation, such as `ucfirst()` which converts the first letter of a string to upper case, and `ucwords()` which converts the first letter of each word to upper case.
+The output of this code will be: "hello world". As you can see, the function converts all the characters in the string to lowercase.
+
+### Using mb_strtolower() function
+
+If you are working with multibyte strings (such as non-English characters), the `mb_strtolower()` function comes in handy. It has the same functionality as `strtolower()` but supports multibyte characters. Here's an example:
+
+```PHP
+<?php
+$string = "Привет мир";
+echo mb_strtolower($string);
+```
+
+The output will be: "привет мир".
+
+### Using the strCASECASE() function
+
+The `strcasecase()` function is another option for converting strings to lowercase. It converts the first character of each word to lowercase, leaving the rest of the characters as is. Here's an example:
+
+```PHP
+<?php
+$string = "I LIKE TO CODE";
+echo strCASECASE($string);
+```
+
+The output will be: "i LIKE tO cODE".
 
 ## Deep Dive
-Converting a string to lower case may seem like a simple task, but there are a few things to keep in mind.
 
-1. Multibyte characters: When dealing with strings that contain non-ASCII characters, it's important to use the `mb_strtolower()` function instead of `strtolower()`. This ensures that the conversion is done correctly for multibyte characters.
+PHP provides several functions for string manipulation, and understanding how these functions work can help you choose the best option for your specific needs. When using `strtolower()` and `mb_strtolower()`, it's important to note that they both return a lowercase version of the string, leaving the original string unchanged. On the other hand, `strcasecase()` modifies the original string in place.
 
-2. Custom conversions: While the `strtolower()` function follows the basic ASCII conversion rules, you may need to perform a custom conversion for specific languages or situations. In this case, you can use a combination of `mb_strtolower()` and `strtr()`, which allows for more flexibility in defining your own conversion rules.
+Furthermore, when dealing with non-English characters, make sure to set the correct character encoding for your string using `mb_internal_encoding()` to avoid any unexpected results.
 
 ## See Also
-- [PHP string functions](https://www.php.net/manual/en/ref.strings.php)
-- [PHP Multibyte String Functions](https://www.php.net/manual/en/ref.mbstring.php)
-- [PHP strtr() function](https://www.php.net/manual/en/function.strtr.php)
+
+- [String functions in PHP](https://www.php.net/manual/en/ref.strings.php)
+- [Multibyte string functions in PHP](https://www.php.net/manual/en/ref.mbstring.php)
+- [PHP string manipulation: A beginner's guide](https://www.elegantthemes.com/blog/wordpress/php-string-manipulation)

@@ -1,47 +1,58 @@
 ---
-title:    "Ruby: Imprimiendo salidas de depuración"
+title:    "Ruby: Imprimiendo salida de depuración"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué imprimir el output de depuración?
 
-En el mundo de la programación, a veces nos encontramos con problemas difíciles de resolver. En estos casos, imprimir información de depuración (debug output) puede ser una herramienta muy útil. Nos permite ver qué sucede dentro de nuestro código y así poder identificar y corregir errores de manera más eficiente.
+Imprimir el output de depuración es una técnica útil para encontrar errores en tu código de Ruby. Al imprimir mensajes de depuración, puedes ver qué valores están siendo asignados a tus variables y cómo fluye la ejecución de tu código, lo que te ayuda a identificar problemas y corregirlos más fácilmente.
 
 ## Cómo hacerlo
 
-Para imprimir información de depuración en Ruby, podemos utilizar el método `p` o `puts`. Estos métodos nos permiten imprimir cualquier dato o variable en la consola. Veamos un ejemplo utilizando ambos métodos:
+Para imprimir el output de depuración en Ruby, puedes usar el método `puts()` seguido de la variable o valor que deseas imprimir. Por ejemplo:
 
 ```Ruby
 nombre = "María"
-edad = 25
-
-p nombre
-puts "La edad de " + nombre + " es " + edad.to_s + " años."
+puts(nombre)
 ```
 
-El código anterior imprimirá lo siguiente en la consola:
+Esto imprimirá en la consola el valor asignado a la variable `nombre`, que en este caso sería "María". También puedes imprimir múltiples variables o valores separándolos con comas dentro de los paréntesis de `puts()`, como en el siguiente ejemplo:
 
 ```Ruby
-"María"
-"La edad de María es 25 años."
+nombre = "Juan"
+apellido = "García"
+puts(nombre, apellido)
 ```
 
-En este caso, utilizamos `p` para imprimir la variable `nombre`, la cual nos devuelve su valor entre comillas ya que es un string. Y con `puts` utilizamos concatenación de strings para imprimir un mensaje más complejo.
+Esto imprimiría "Juan García" en dos líneas consecutivas.
 
-Otra opción es utilizar la gema `pry`, la cual nos ayuda a depurar nuestro código de manera más visual y organizada. Para utilizarla, primero debemos instalarla con el comando `gem install pry`. Luego, en nuestro código, podemos requerir la gema y utilizar el método `binding.pry` en el lugar donde queramos detener la ejecución y obtener información sobre nuestros datos y variables.
+## Profundizando en la impresión de output de depuración
 
-## Profundizando en la impresión de debug output
+La impresión de output de depuración también puede ser utilizada para mostrar información adicional sobre el estado de tu código en puntos específicos de tu programa. Por ejemplo, puedes imprimir un mensaje que muestre en qué punto del código se encuentra la ejecución, como en este ejemplo:
 
-Si bien imprimir información de depuración puede ser una herramienta muy útil para solucionar problemas, es importante tener en cuenta que no debe ser utilizado en producción, ya que puede ralentizar el rendimiento del código.
+```Ruby
+puts("Iniciando ejecución del programa...")
+```
 
-También es importante ser selectivo con lo que se imprime, ya que no queremos sobrecargar la consola con información innecesaria. Por eso, siempre es recomendable revisar cual es la información relevante para solucionar el problema y enfocarse solo en imprimir esa información.
+Esto imprimirá en la consola "Iniciando ejecución del programa..." antes de que se ejecute el resto de tu código.
 
-Otra opción para imprimir información de depuración de manera más organizada es utilizar la gema `logger`. Esta nos permite guardar los mensajes de depuración en un archivo de registro (log) en lugar de imprimirlos en la consola, lo cual puede ser especialmente útil en aplicaciones más grandes.
+Otra opción es imprimir mensajes de depuración solo cuando se cumple una determinada condición en tu código. Esto puede ser útil para encontrar errores en secciones específicas de tu programa. Por ejemplo:
+
+```Ruby
+contador = 0
+while contador < 10 do
+  puts("La variable contador es igual a #{contador}.")
+  contador += 1
+end
+```
+
+En este caso, solo se imprimirá el mensaje cada vez que el contador sea menor a 10.
 
 ## Ver también
 
-- [Documentación de Ruby: Depuración](https://ruby-doc.org/core-2.6/Kernel.html#method-i-p)
-- [Documentación de Pry](https://github.com/pry/pry)
-- [Documentación de Logger](https://ruby-doc.org/stdlib-2.6/libdoc/logger/rdoc/Logger.html)
+- [Guía de Ruby para principiantes](https://www.ruby-lang.org/es/documentation/quickstart/)
+- [Documentación oficial de la librería de Ruby](https://ruby-doc.org/)
+- [Ruby on Rails Tutorial en español](https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_ruby_on_rails/Ruby_on_Rails)

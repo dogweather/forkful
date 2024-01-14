@@ -1,63 +1,66 @@
 ---
-title:    "Go: Überprüfen, ob ein Verzeichnis existiert"
+title:    "Go: Überprüfung der Existenz eines Verzeichnisses"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie mit der Go-Programmiersprache arbeiten, kommt es oft vor, dass Sie prüfen müssen, ob ein bestimmtes Verzeichnis auf Ihrem System existiert. Das kann verschiedene Gründe haben, zum Beispiel um sicherzustellen, dass Ihre Anwendung auf alle benötigten Dateien zugreifen kann oder um sicherzustellen, dass der Code in der richtigen Umgebung ausgeführt wird. In diesem Blogbeitrag erfahren Sie, wie Sie mithilfe von Go-Code überprüfen können, ob ein Verzeichnis existiert.
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist ein wichtiger Teil der Datei- und Ordnerverwaltung in Go-Programmen. Es kann verwendet werden, um sicherzustellen, dass bestimmte Aktionen nur auf vorhandenen Verzeichnissen durchgeführt werden und um Fehler in der Programmausführung zu vermeiden.
 
-## Wie geht das?
+# Wie geht man vor
 
-Um zu überprüfen, ob ein Verzeichnis existiert, müssen Sie zuerst das Paket "os" importieren. Dieses Paket enthält Funktionen, die Ihnen dabei helfen, mit dem Betriebssystem zu interagieren. Im Folgenden finden Sie ein Beispiel:
+Um die Existenz eines Verzeichnisses in Go zu überprüfen, können wir die Funktion `os.Stat()` verwenden. Diese Funktion akzeptiert einen Dateipfad als Argument und gibt eine `os.FileInfo` Struktur zurück, die Informationen über die Datei oder das Verzeichnis enthält.
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// Hier definieren wir den Pfad zu unserem zu überprüfenden Verzeichnis
-	dir := "C:/Users/Max/Documents/"
+    // Überprüfe ob das Verzeichnis "beispiel" vorhanden ist
+    file, err := os.Stat("beispiel")
 
-	// Mithilfe der "Stat"-Funktion aus dem "os"-Paket können wir
-	// überprüfen, ob dieses Verzeichnis existiert
-	if _, err := os.Stat(dir); err != nil {
-		// Wenn ein Fehler auftritt, bedeutet das, dass das Verzeichnis nicht existiert
-		fmt.Printf("Das Verzeichnis '%s' existiert nicht\n", dir)
-	} else {
-		// Wenn kein Fehler auftritt, bedeutet das, dass das Verzeichnis existiert
-		fmt.Printf("Das Verzeichnis '%s' existiert\n", dir)
-	}
+    // Überprüfe ob ein Fehler aufgetreten ist
+    if err != nil {
+        // Wenn der Fehler eine Nicht-Vorhanden Fehler ist, existiert das Verzeichnis nicht
+        if os.IsNotExist(err) {
+            fmt.Println("Das Verzeichnis 'beispiel' existiert nicht.")
+            return
+        }
+        // Ansonsten ist ein unerwarteter Fehler aufgetreten
+        panic(err)
+    }
+
+    // Überprüfe ob es sich bei dem Ergebnis tatsächlich um ein Verzeichnis handelt
+    if file.Mode().IsDir() {
+        fmt.Println("Das Verzeichnis 'beispiel' existiert.")
+    } else {
+        fmt.Println("Der Pfad ist kein Verzeichnis.")
+    }
 }
 ```
 
-In diesem Beispiel verwenden wir die Funktion "Stat" aus dem "os"-Paket, um den Status eines Verzeichnisses abzufragen. Diese Funktion gibt zwei Werte zurück: den statischen Status und einen Fehlerwert. Wenn das Verzeichnis existiert, wird der erste Wert (der Status) zurückgegeben, andernfalls wird ein Fehler zurückgegeben. In unserem Beispiel prüfen wir einfach, ob ein Fehler zurückgegeben wird oder nicht.
-
-Die Ausgabe für dieses Beispiel wäre:
+Ausgabe:
 
 ```
-Das Verzeichnis 'C:/Users/Max/Documents/' existiert
+Das Verzeichnis 'beispiel' existiert.
 ```
 
-Falls das Verzeichnis nicht existiert, würde die Ausgabe lauten:
+# Tiefergehende Informationen
 
-```
-Das Verzeichnis 'C:/Users/Max/Documents/' existiert nicht
-```
+Die `os.FileInfo` Struktur, die von der `os.Stat()` Funktion zurückgegeben wird, enthält verschiedene Methoden und Eigenschaften, die nützlich sein können, um mehr Informationen über das Verzeichnis zu erhalten.
 
-## Tiefere Einblicke
+Zum Beispiel können wir mit der `Name()` Methode den Namen des Verzeichnisses abrufen oder mit der `Size()` Methode die Größe des Verzeichnisses in Bytes erhalten.
 
-Wenn Sie sich eingehender mit der Funktionsweise von "os.Stat" beschäftigen möchten, können Sie die Dokumentation auf der offiziellen Go-Website (https://golang.org/pkg/os/#Stat) überprüfen. Dort finden Sie weitere Informationen über diese Funktion und deren Parameter.
+Darüber hinaus gibt es auch eine `ModTime()` Methode, die uns das Datum und die Uhrzeit der letzten Änderung des Verzeichnisses gibt. Diese Informationen können hilfreich sein, um zu überprüfen, ob das Verzeichnis aktualisiert wurde oder nicht.
 
-Einer der häufigsten Fehler, die beim Überprüfen von Verzeichnissen auftreten, ist der Gebrauch von relativen Pfaden anstelle von absoluten Pfaden. Stellen Sie sicher, dass Sie immer den absoluten Pfad für das zu überprüfende Verzeichnis angeben, um unerwartete Fehler zu vermeiden.
+# Siehe auch
 
-## Siehe auch
-
-- https://golang.org/pkg/os/
-- https://golang.org/pkg/path/filepath/
+- [Go-Pakete zum Arbeiten mit Dateien und Verzeichnissen](https://golang.org/pkg/os/)
+- [Offizielle Go-Dokumentation zur os.Stat() Funktion](https://golang.org/pkg/os/#Stat)

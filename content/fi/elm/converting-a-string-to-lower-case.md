@@ -1,44 +1,36 @@
 ---
-title:    "Elm: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:    "Elm: Isojen kirjainten muuttaminen pieniksi ohjelmoinnissa"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluaisit muuntaa merkkijonon pieniksi kirjaimiksi
+## Miksi: 
 
-Joskus ohjelmoinnissa joudut käsittelemään merkkijonoja, ja usein näiden merkkijonojen takaisin olevat kirjaimet eivät ole tärkeitä. Tällöin voi olla hyödyllistä muuntaa ne pieniksi kirjaimiksi, jotta työtä varten tarvitsemasi tiedot ovat helpommin luettavissa ja käsiteltävissä.
+Miksi kukaan haluaisi muuttaa merkkijonon pienaakkosiin? 
 
-## Miten: Esimerkkejä ja koodinpätkiä Elmille konvertoidessa merkkijonoja pieniksi kirjaimiksi
+## Miten:
 
-### Koodinpätkät
-
-```Elm
-toLower "ELM ON UPEA OHJELMISTOKIELI" -- Output: "elm on upea ohjelmistokieli"
-```
-```Elm
-String.toLower "ELM ON UPEA OHJELMISTOKIELI" -- Output: "elm on upea ohjelmistokieli"
-```
-```Elm
-String.toLowercase "ELM ON UPEA OHJELMISTOKIELI" -- Output: "elm on upea ohjelmistokieli"
-```
+Muotoillut esimerkit koodista ja tulosteista "```Elm ... ```" koodilohkojen sisällä: 
 
 ```Elm
-String.toLower "KOODAAMINEN ON HAUSKAA!" -- Output: "koodaaminen on hauskaa!"
+// Luodaan merkkijono, joka sisältää sekä isoja että pieniä kirjaimia
+let merkkijono = "EKM Provigil"
+
+// Käytetään Elm:n String -moduulin toimintoa muuttaaksemme kaikki kirjaimet pieniksi
+let pienetKirjaimet = String.toLower merkkijono
+
+// Tulostetaan muutettu merkkijono konsolille
+konsoliin pienetKirjaimet  // tulostaa "ekm provigil" 
 ```
-```Elm
-String.toLowercase "KOODAAMINEN ON HAUSKAA!" -- Output: "koodaaminen on hauskaa!"
-```
 
-### Selitys
+## Syvällinen sukellus:
 
-Koodinpätkissä käytämme `String.toLower`-funktiota, joka muuntaa annetun merkkijonon pieniksi kirjaimiksi. Voimme myös käyttää `String.toLowercase`-funktiota, jolla on sama vaikutus.
+Merkkijonon muuttaminen pienaakkosiin voi olla hyödyllistä monissa eri tilanteissa, kuten tietokannassa tehtävien hakuessa, lomakkeiden validoinnissa ja monissa muissa. Pienaakkoset tarjoavat myös yhtenäisen ja helppolukuisen merkistyksen, mikä tekee koodista helpommin ymmärrettävää. Elm:n String -moduulin toiminnot auttavat helposti muuttamaan merkkijonot pienaakkosiin tai suuraakkosiin tarvittaessa. 
 
-## Syväluotaus: Tarkempaa tietoa merkkijonon muuntamisesta pieniksi kirjaimiksi
+## Katso myös:
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi on hyödyllistä, jos esimerkiksi haluat vertailla kahta merkkijonoa, mutta haluat tehdä sen ilman että isot ja pienet kirjaimet vaikuttavat vertailuun. Voit myös muuntaa käyttäjän antaman syötteen pienenä kirjainmuotoon, jolloin käsiteltävänä olevat tiedot ovat yhtenäisesti pieninä kirjaimina.
-
-## Katso myös
-
-- [String.toUpper](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
-- [String.capitalize](https://package.elm-lang.org/packages/elm/core/latest/String#capitalize)
+- Elm String -dokumentaatio (https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+- Pienaakkosmuunnoksen selitys Stack Overflow:ssa (https://stackoverflow.com/questions/513832/how-to-convert-string-to-lowercase-in-javascript)
+- Artikkeli merkkijonojen käsittelystä Elm-kielellä (https://medium.com/elm-shorts/handling-strings-in-elm-2383b348be7d)

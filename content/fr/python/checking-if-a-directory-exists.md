@@ -1,45 +1,44 @@
 ---
-title:    "Python: Vérifier si un répertoire existe"
+title:    "Python: Vérification de l'existence d'un répertoire"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Avant de plonger dans les détails, il est important de comprendre pourquoi il est utile de vérifier si un répertoire existe en Python. En général, cette vérification est importante lors de la manipulation de fichiers ou de la création de nouveaux fichiers, pour s'assurer que le répertoire cible existe avant d'y accéder. Sans cette vérification, l'exécution du code risque de provoquer des erreurs.
+Saviez-vous qu'il est possible de vérifier si un dossier existe en utilisant Python ? Cela peut être utile pour s'assurer qu'un certain dossier est bien présent avant d'exécuter le reste du code.
 
 ## Comment faire
 
-Pour vérifier si un répertoire existe en Python, il existe deux approches principales : utiliser la méthode `exists()` du module `os` ou la méthode `isdir()` du module `path`. Voici un exemple de code pour chacune de ces méthodes :
+Pour vérifier si un dossier existe, nous pouvons utiliser le module `os` de Python et plus précisément la fonction `path.exists()`. Voici un exemple de code :
 
 ```Python
 import os
-import os.path as path
 
-# utilisation de la méthode exists()
-directory = "chemin/vers/repertoire" 
-if os.path.exists(directory):
-    print("Le répertoire existe") 
+if os.path.exists("/chemin/vers/mon/dossier"):
+  print("Le dossier existe !")
 else:
-    print("Le répertoire n'existe pas")
-
-# utilisation de la méthode isdir()
-directory = "chemin/vers/repertoire"
-if os.path.isdir(directory):
-    print("Le répertoire existe") 
-else:
-    print("Le répertoire n'existe pas")
+  print("Le dossier n'existe pas.")
 ```
 
-La première approche utilise la méthode `exists()` qui renvoie `True` si le fichier ou le répertoire existe, et `False` dans le cas contraire. La seconde approche utilise la méthode `isdir()` qui renvoie également `True` si l'objet passé en paramètre est un répertoire, et `False` s'il s'agit d'un fichier ou s'il n'existe pas.
+Voici un exemple de sortie si le dossier existait :
 
-## Plongeon en profondeur
+```
+Le dossier existe !
+```
 
-Si vous souhaitez aller plus loin dans la vérification de l'existence d'un répertoire, il est important de comprendre quels sont les types d'erreurs qui peuvent se produire et comment les gérer. Par exemple, si le répertoire cible est situé sur un lecteur réseau, il est possible qu'il y ait des problèmes de permission d'accès. Dans ce cas, vous pouvez utiliser la méthode `access()` du module `os` pour vérifier les permissions avant d'accéder au répertoire.
+Vous pouvez également utiliser le module `os.path` pour vérifier si un fichier existe en utilisant la fonction `isfile()` ou si un lien symbolique existe en utilisant la fonction `islink()`.
+
+## Un peu plus en profondeur
+
+En utilisant la fonction `path.exists()`, il est important de noter qu'elle vérifie à la fois les dossiers et les fichiers. Si vous voulez uniquement vérifier si un dossier existe, vous pouvez utiliser la fonction `path.isdir()`.
+
+De plus, il est important de prendre en compte les permissions de fichier lors de la vérification si le dossier existe. Si vous n'avez pas les permissions nécessaires, la fonction peut renvoyer une erreur même si le dossier existe réellement.
 
 ## Voir aussi
 
-- [Documentation officielle de Python pour la méthode `exists()`](https://docs.python.org/fr/3/library/os.path.html#os.path.exists)
-- [Documentation officielle de Python pour la méthode `isdir()`](https://docs.python.org/fr/3/library/os.path.html#os.path.isdir)
-- [Documentation officielle de Python pour la méthode `access()`](https://docs.python.org/fr/3/library/os.html#os.access)
+- La documentation officielle de Python sur le module `os` : https://docs.python.org/fr/3/library/os.html
+- Un tutoriel sur la vérification des dossiers et fichiers en Python : https://www.digitalocean.com/community/tutorials/how-to-use-the-os-module-in-python-3
+- Une discussion sur Stack Overflow à propos des permissions lors de la vérification des dossiers : https://stackoverflow.com/questions/21185127/permission-denied-error-when-using-os-path-exists-in-python

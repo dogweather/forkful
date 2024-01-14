@@ -1,52 +1,40 @@
 ---
 title:    "Kotlin: Vérifier si un répertoire existe"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi il est important de vérifier l'existence d'un répertoire ?
+## Pourquoi
 
-Lorsqu'on programme en Kotlin, il est essentiel de vérifier si un répertoire existe avant d'effectuer une action qui pourrait potentiellement échouer. Cela permet d'éviter des erreurs et des plantages qui peuvent être coûteux en temps et en ressources.
+Saviez-vous qu'il est possible de vérifier si un répertoire existe en utilisant du code Kotlin ? Bien que cela puisse sembler trivial, cette fonctionnalité peut en fait être très utile pour les programmeurs. Dans cet article, nous allons explorer pourquoi il est important de vérifier l'existence d'un répertoire et comment le faire en utilisant Kotlin.
 
-## Comment vérifier si un répertoire existe en Kotlin
+## Comment faire
 
-Pour vérifier si un répertoire existe en Kotlin, il suffit d'utiliser la fonction `exists()` de l'objet `File`. Voici un exemple de code:
+Tout d'abord, il est important de comprendre que pour vérifier si un répertoire existe, nous avons besoin d'accéder au système de fichiers de l'ordinateur. Kotlin offre une fonction très pratique pour cela, appelée `exists()`. Voici un exemple de code montrant comment utiliser cette fonction pour vérifier si un répertoire nommé "documents" existe :
 
 ```Kotlin
-val directory = File("/chemin/vers/le/répertoire")
-
+val directory = File("documents")
 if (directory.exists()) {
-    println("Le répertoire existe.")
+    println("Le répertoire 'documents' existe !")
 } else {
-    println("Le répertoire n'existe pas.")
+    println("Le répertoire 'documents' n'existe pas.")
 }
 ```
 
-Dans cet exemple, nous avons créé un objet `File` représentant un répertoire dont le chemin est spécifié en tant que paramètre. Ensuite, nous utilisons la fonction `exists()` pour vérifier si le répertoire existe. Selon le résultat, nous affichons un message approprié.
-
-Lorsque nous exécutons ce code, nous obtenons l'un des deux messages suivants:
-
-```
-Le répertoire existe.
-```
-
-ou
-
-```
-Le répertoire n'existe pas.
-```
-
-Il est également possible d'utiliser la fonction `exists()` sur un objet `File` représentant un fichier pour vérifier l'existence de ce fichier.
+Si le répertoire existe, le code ci-dessus affichera "Le répertoire 'documents' existe !". Sinon, il affichera "Le répertoire 'documents' n'existe pas.".
 
 ## Plongée en profondeur
 
-La fonction `exists()` vérifie si un fichier ou un répertoire existe actuellement sur le système de fichiers. Cependant, elle ne garantit pas que le fichier ou le répertoire sera toujours accessible par la suite. En effet, le fichier ou le répertoire peut être supprimé ou son accès peut être restreint par des permissions.
+Maintenant que nous savons comment vérifier si un répertoire existe, il est important de comprendre pourquoi cela peut être utile dans la programmation. Tout d'abord, cela peut aider à éviter les erreurs. Par exemple, si votre programme a besoin d'accéder à un répertoire pour y stocker des fichiers, il est important de vérifier son existence avant de tenter de le trouver ou de le créer. Sinon, votre programme risque de planter s'il ne trouve pas le répertoire ou s'il ne peut pas le créer.
 
-Pour une vérification plus approfondie, il est recommandé d'utiliser la fonction `canRead()` pour vérifier si un fichier ou un répertoire peut être lu et `canWrite()` pour vérifier s'il peut être modifié. Il est également important de prendre en compte les différentes exceptions qui peuvent être levées lors de la vérification de l'existence d'un fichier ou d'un répertoire.
+De plus, il est également possible de vérifier l'existence d'un fichier en utilisant la même fonction `exists()`, en spécifiant le chemin complet du fichier. Cela peut être très utile si vous souhaitez vérifier avant d'écraser un fichier existant ou d'en créer un nouveau avec le même nom.
 
 ## Voir aussi
 
-- Documentation officielle de Kotlin sur l'utilisation de la classe `File`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/
-- Exemples de codes pour vérifier l'existence d'un fichier ou d'un répertoire en Kotlin: https://www.tutorialkart.com/kotlin/working-with-files-in-kotlin/
-- Ressources utiles pour apprendre Kotlin: https://blog.jetbrains.com/kotlin/2019/07/kotlin-microscope-useful-idioms/
+- [Documentation officielle pour la classe File de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/)
+- [Tutoriel sur la gestion des fichiers avec Kotlin](https://www.tutorialkart.com/kotlin/file-handling-create-read-write-kotlin/)
+- [Exemples de code pour vérifier si un répertoire existe en utilisant Kotlin](https://www.tutorial2learn.com/kotlin-check-directory-if-it-is-empty-or-no-empty)
+
+Nous espérons que cet article vous a aidé à comprendre l'importance de vérifier si un répertoire existe en programmation Kotlin. N'hésitez pas à explorer davantage cette fonctionnalité et à l'utiliser dans vos propres projets !

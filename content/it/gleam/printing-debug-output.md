@@ -1,55 +1,46 @@
 ---
 title:    "Gleam: Stampare l'output di debug"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+#Perché
 
-Spesso, durante la scrittura di codice, ci troviamo ad affrontare situazioni complesse e difficili da capire. Una delle tecniche più utili per superare queste sfide è la stampa di output di debug. Vediamo perché.
+Stampare l'output di debug è una pratica comune durante la programmazione, in quanto consente agli sviluppatori di identificare e risolvere facilmente eventuali errori nel codice. Questo articolo vi guiderà attraverso il processo di stampa dell'output di debug utilizzando il linguaggio di programmazione Gleam.
 
-## Come farlo
+#Come fare
 
-Per stampare output di debug in Gleam, possiamo utilizzare la funzione `debug.inspect`. Ad esempio, possiamo stampare il valore di una variabile utilizzando il seguente codice:
-
-```Gleam
-let my_var = "Hello World"
-debug.inspect(my_var)
-```
-
-Questo codice produrrà il seguente output di debug:
-
-```
-"Hello World"
-```
-
-Possiamo anche stampare più variabili contemporaneamente, utilizzando una lista di elementi da stampare come argomento della funzione `debug.inspect`:
+Per stampare l'output di debug in Gleam, è possibile utilizzare la funzione `io.debug` seguita da un'espressione o una variabile da controllare. Ad esempio:
 
 ```Gleam
-let var_1 = 42
-let var_2 = "ciao"
-let var_3 = true
-
-debug.inspect([var_1, var_2, var_3])
+io.debug("Contenuto della variabile:", variabile)
 ```
 
-Questo codice ci darà il seguente output di debug:
+L'output di debug verrà visualizzato nella console quando si esegue il codice.
 
+È possibile utilizzare anche espressioni multiple all'interno della funzione `io.debug` per stampare più variabili o valori. Ad esempio:
+
+```Gleam
+io.debug("X =", x, "Y =", y)
 ```
-42
-"ciao"
-true
+
+#Deep Dive
+
+La funzione `io.debug` accetta anche un parametro opzionale `show_values` che consente di visualizzare il valore effettivo di una variabile invece che solo il suo nome. Questo è particolarmente utile quando si stampa l'output di oggetti complessi o elenchi. Ad esempio:
+
+```Gleam
+io.debug("Oggetto:", oggetto, show_values = true)
 ```
 
-## Approfondimento
+Inoltre, è possibile utilizzare la funzione `io.debugf` per includere formattazione nei messaggi di debug. Ad esempio:
 
-La stampa di output di debug può essere particolarmente utile durante la fase di sviluppo del software, quando siamo ancora in fase di debugging e risoluzione dei bug. Possiamo utilizzare questa tecnica per visualizzare il valore delle variabili in un dato momento del codice, per controllare se sono corretti o se ci sono problemi con la loro assegnazione.
+```Gleam
+io.debugf("Numero di elementi nell'elenco: {}", lunghezza(elenco))
+```
 
-Inoltre, utilizzando la funzione `debug.inspect`, possiamo anche stampare strutture dati più complesse come liste, mappe o record. Questo ci permette di esplorare e comprendere meglio i nostri dati durante la fase di sviluppo.
+#Vedi anche
 
-## Vedi anche
-
-- Documentazione ufficiale di Gleam: https://gleam.run/
-- Tutorial su come stampare output di debug: https://gleam.run/book/tour/debug.html
-- Video tutorial su Gleam di Codecademy: https://www.youtube.com/watch?v=1NUr7nsWHD4
+- Documentazione ufficiale di Gleam su stampa di debug: https://gleam.run/articles/debugging/
+- Esempi di codice di stampa di debug in Gleam: https://github.com/yourusername/gleam-debug-examples

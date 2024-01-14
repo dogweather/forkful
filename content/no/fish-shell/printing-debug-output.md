@@ -1,53 +1,51 @@
 ---
-title:    "Fish Shell: Utskrift av feilsøkingsdata"
+title:    "Fish Shell: Utskrift av feilsøkingsresultater"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du er en utvikler som arbeider med Fish Shell, kjenner du sannsynligvis allerede til nytten av å bruke debug output i programmene dine. Men for de nye til dette språket, kan det hende at du lurer på hvorfor du i det hele tatt skulle bry deg om dette. Vel, debugging kan være en av de mest effektive måtene å finne og løse feil i koden din på. Det er en måte å spore gjennomgangen til programmet og sjekke verdier på forskjellige punkter i koden for å forstå hva som skjer og identifisere hvor potensielle problemer kan oppstå. Nå som du vet hvorfor dette er viktig, la oss se på hvordan du kan implementere debugging-teknikker i Fish Shell.
+Å skrive ut feilsøkingsutdata kan være en viktig del av utviklingsprosessen for å finne feil og forbedre koden din. Det kan hjelpe deg med å identifisere hvor programmet ditt mislykkes og hvorfor det gjør det.
 
-# Slik gjør du det
+## Hvordan gjøre det
 
-For å aktivere debugging i Fish Shell, må du bruke "set"-kommandoen med "fish_debug" flagget. Dette vil aktivere debugmodus og skrive ut output til terminalen. Her er et eksempel på Fish Shell-kode som demonstrerer dette:
+For å skrive ut feilsøkingsutdata i Fish Shell, kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å skrive ut. For eksempel:
 
-```
-set -x fish_debug
-echo "Hei, verden!"
-```
-
-Når du kjører dette i terminalen, vil du se en ekstra linje med output som viser hva som blir evaluert fra koden din:
-
-```
-+ echo "Hei, verden!"
-Hei, verden!
+```Fish Shell
+echo "Dette er et eksempel på feilsøkingsutdata."
 ```
 
-Dette gjør det enklere å forstå hva som skjer i koden din og hvor eventuelle problemer kan oppstå. Sørg for å fjerne "fish_debug" flagget når du er ferdig med debugging, ellers vil du få ekstra output hver gang du kjører koden din.
+Dette vil skrive ut teksten "Dette er et eksempel på feilsøkingsutdata." i terminalen når du kjører programmet ditt.
 
-# Dykk dypere
+En annen måte å skrive ut feilsøkingsutdata på er å bruke kommandoen `printf` etterfulgt av teksten du ønsker å skrive ut. For eksempel:
 
-Hvis du ønsker å ta debugging til et høyere nivå, kan du også bruke kommandoen "set -x", som vil aktivere tracing-modus. Dette vil skrive ut hver eneste linje med koden din, slik at du kan følge med på hva som skjer i detalj. Her er et eksempel på bruk av denne kommandoen:
-
-```
-set -x
-echo "Dette er min debugmelding."
+```Fish Shell
+printf "Verdi 1: %d\nVerdi 2: %d" $var1 $var2
 ```
 
-Output vil da se slik ut:
+Dette vil skrive ut verdiene av variablene `var1` og `var2` sammen med teksten "Verdi 1:" og "Verdi 2:".
 
+Det er også mulig å skrive ut feilsøkingsutdata til en fil ved å bruke `echo` eller `printf` og omdirigere utdata til en fil ved hjelp av `>` operatøren. For eksempel:
+
+```Fish Shell
+echo "Dette er et eksempel på feilsøkingsutdata." > feilsøkingsutdata.txt
+
+printf "Verdi 1: %d\nVerdi 2: %d" $var1 $var2 > feilsøkingsutdata.txt
 ```
-+ echo "Dette er min debugmelding."
-+ echo "Dette er min debugmelding."
-Dette er min debugmelding.
-```
 
-Som du kan se, skrives både koden og output ut i terminalen. Dette kan være nyttig hvis du trenger å finne feil på et svært detaljert nivå.
+Dette vil skrive ut teksten eller verdiene til en fil kalt "feilsøkingsutdata.txt".
 
-# Se også
+## Dypdykk
 
-- [Fish Shell nettside] (https://fishshell.com)
-- [Fish Shell dokumentasjon] (https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub-repositorie] (https://github.com/fish-shell/fish-shell)
+Det er flere formateringsalternativer du kan bruke når du skriver ut feilsøkingsutdata. For eksempel kan du bruke `echo -e` kommandoen for å vise spesielle tegn som linjeskift eller tabuleringer. Du kan også bruke variabler i utdataen din ved hjelp av `$` tegnet.
+
+I tillegg kan du bruke betingede uttrykk i `echo` eller `printf` for å kun skrive ut utdata hvis en gitt betingelse er oppfylt. Dette kan være nyttig for å skrive ut informasjon bare når noe spesielt skjer i programmet ditt.
+
+## Se også
+
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/)
+- [Guide til feilsøkingsutdata i Fish Shell](https://dev.to/thenemoscope/debugging-your-code-using-fish-shell-41i)
+- [Eksempler på feilsøkingsutdata i Fish Shell](https://www.maketecheasier.com/printing-debug-output-in-fish-shell/)

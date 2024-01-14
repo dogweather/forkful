@@ -1,32 +1,33 @@
 ---
-title:    "Swift: Söka och ersätta text"
+title:    "Swift: Sökning och ersättning av text"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##VarförDu kanske frågar dig varför man skulle behöva söka och ersätta text i sin Swift-kod. Svaret är enkelt: det är ett effektivt sätt att göra stora ändringar i din kod snabbt och enkelt.
+## Varför
 
-##Hur man gör
-Det finns flera olika sätt att hitta och ersätta text i din Swift-kod, men det enklaste sättet är att använda sig av "Find and Replace" funktionen. Detta kan du göra genom att trycka på "Command + F" på ditt tangentbord, eller genom att navigera till "Edit" menyn och välja "Find and Replace". Sedan kan du enkelt skriva in den text du vill hitta och det du vill ersätta den med, och låta Swift göra jobbet åt dig.
+Text sök och ersättning är en grundläggande funktion inom programmering som gör det möjligt att snabbt och enkelt ändra text i dina program. Genom att behärska denna teknik kan du spara tid och göra dina koder mer effektiva.
+
+## Så här gör du
+
+För att söka och ersätta text i Swift kan du använda dig av funktionen `.replacingOccurrences(of:with:)`. Detta tillåter dig att ange vilken text du vill söka efter och vad du vill ersätta den med. Koden nedan visar ett enkelt exempel på hur du kan använda denna funktion:
 
 ```Swift
-//Exempel på hur man använder "Find and Replace" i Swift
-
-var myString = "Hej världen!"
-
-//Söker efter "världen" och ersätter det med "Sverige"
-
-myString = myString.replacingOccurrences(of: "världen", with: "Sverige") 
-
-print(myString)
-
-//Output: Hej Sverige!
+var text = "Hej världen!"
+let nyText = text.replacingOccurrences(of: "världen", with: "alla")
+print(nyText)
 ```
 
-##Djupdykning
-Att söka och ersätta text i sin kod kan vara användbart för mer än bara att ändra ord eller fraser. Du kan också använda det för att göra omfattande ändringar i din layout eller för att korrigera stavfel. Det är också möjligt att använda sig av reguljära uttryck för mer avancerad sökning och ersättning.
+Output: Hej alla!
 
-##Se även
-- https://developer.apple.com/documentation/swift/string/replacingoccurrences
-- https://www.ios-blog.com/tutorials/swift/how-to-find-and-replace-text-in-swift/
+## Djupdykning
+
+För att förstå mer om sökning och ersättning inom Swift, är det viktigt att känna till att denna funktion är skiftlägeskänslig. Det betyder att om du söker efter "Hej" kommer det endast att ersätta det ordet och inte "hej" eller "HEJ". Du kan också använda dig av regex (regular expressions) för mer avancerad sökning och ersättning. Genom att lära dig mer om reguljära uttryck i Swift, kan du göra mer avancerade textmanipulationer inom dina program.
+
+## Se även
+
+1. [Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+2. [Swift Regular Expressions](https://pspdfkit.com/blog/2018/swift-regular-expressions/)
+3. [Swift String Manipulation](https://learnappmaking.com/swift-string-how-to/)

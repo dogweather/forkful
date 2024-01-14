@@ -1,36 +1,47 @@
 ---
-title:    "Haskell: Recherche et remplacement de textes"
+title:    "Haskell: Recherche et remplacement de texte"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes un programmeur ou programmeuse Haskell, vous avez probablement déjà eu à manipuler du texte dans vos programmes. L'une des tâches les plus courantes dans le traitement du texte est la recherche et le remplacement de chaînes de caractères. Cela peut sembler une tâche banale, mais elle est en fait très utile et peut vous faire gagner beaucoup de temps dans vos projets.
+La recherche et le remplacement de texte sont des tâches courantes en programmation. Que ce soit pour corriger des erreurs dans un code existant ou pour effectuer des modifications massives sur un grand nombre de fichiers, cette fonctionnalité est essentielle pour tout développeur.
 
-## Comment Faire
+# Comment faire
 
-En Haskell, la recherche et le remplacement de texte sont très faciles à réaliser grâce à la fonction `sub` du module `Data.Text`. Cette fonction prend trois paramètres : la chaîne de caractères à remplacer, la chaîne de remplacement et la chaîne de texte dans laquelle effectuer la recherche. Voici un exemple simple :
+Il existe différentes façons de rechercher et de remplacer du texte en Haskell, mais nous allons nous concentrer sur l'utilisation de la fonction `substitute` du module `Text.Regex.TDFA`.
 
-``` Haskell
-import Data.Text as T
+```Haskell
+import Text.Regex.TDFA
 
-main = do
-  let text = "Bonjour les amis!"
-  print $ T.sub "amis" "copains" text
+replaceText :: String -> String -> String -> String
+replaceText regex replacement input =
+    let replaced = substitute (makeRegex regex) replacement input
+    in case replaced of
+        Just result -> result
+        Nothing -> input
 ```
 
-Cet exemple remplace "amis" par "copains" dans la chaîne de texte et imprime le résultat : "Bonjour les copains!". Vous pouvez également utiliser cette fonction pour remplacer plusieurs occurrences en utilisant `subRegex` à la place de `sub`.
+Dans l'exemple ci-dessus, nous utilisons la fonction `substitute` pour rechercher et remplacer du texte dans une chaîne de caractères donnée. Nous utilisons également la fonction `makeRegex` pour créer une expression régulière à partir d'une chaîne de caractères donnée. Enfin, nous utilisons le mot-clé `case` pour gérer le cas où le remplacement ne peut pas être effectué correctement.
 
-## Plongée Profonde
+Voici un exemple de sortie pour la chaîne de caractères `"Bonjour, le monde !"` avec regex `monde` et remplacement `univers` :
 
-Si vous souhaitez effectuer une recherche plus avancée dans votre texte, vous pouvez utiliser `Data.Text.Regex` pour utiliser des expressions régulières. Cette bibliothèque vous permet de définir des schémas de recherche plus complexes et de remplacer le texte correspondant en utilisant `subRegex`.
+```
+Bonjour, le univers !
+```
 
-Un autre outil utile pour la manipulation du texte en Haskell est `Data.Text.ICU`, qui prend en charge les expressions régulières avec une syntaxe plus proche de celle utilisée par d'autres langages de programmation. Vous pouvez également combiner ces différents modules pour atteindre des fonctionnalités avancées en matière de recherche et de remplacement de texte.
+# Plongée en profondeur
 
-## Voir Aussi
+En plus de la fonction `substitute`, le module `Text.Regex.TDFA` offre également d'autres fonctions utiles pour effectuer des recherches et des remplacements. Par exemple, la fonction `substituteAll` permet d'effectuer des remplacements multiples dans une chaîne de caractères.
 
-- [Documentation officielle de Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Documentation officielle de Data.Text.Regex](https://hackage.haskell.org/package/regex-base/docs/Data-Text-Regex.html)
-- [Documentation officielle de Data.Text.ICU](https://hackage.haskell.org/package/text-icu/docs/Data-Text-ICU.html)
+De plus, le module `Text.Regex.TDFA` utilise des expressions régulières de type `ByteString` qui offrent de meilleures performances que les expressions régulières de type `String`.
+
+Il est également possible d'utiliser des expressions régulières avancées telles que les groupes de capture et les modificateurs pour effectuer des recherches et des remplacements plus complexes.
+
+# Voir aussi
+
+- [Documentation du module `Text.Regex.TDFA`](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
+- [Guide de référence sur les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions)

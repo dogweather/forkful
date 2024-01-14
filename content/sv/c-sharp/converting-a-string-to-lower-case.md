@@ -1,50 +1,42 @@
 ---
 title:    "C#: Omvandla en sträng till gemener"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför 
 
-Att kunna konvertera en sträng (string) till små bokstäver (lower case) är en viktig del av programmering. Genom att göra detta kan man enkelt jämföra strängar oberoende av strängarnas storlekar. Detta är också användbart när man vill visa konsistent utdata till användare, oavsett om de har skrivit in sin input med stora eller små bokstäver. Så varför det är viktigt att kunna konvertera en sträng till lower case, låt oss nu prata om hur man faktiskt gör det.
+Att konvertera en sträng till små bokstäver kan vara användbart i många olika situationer. Ofta behövs det när man arbetar med användarinmatningar, till exempel när man gör sökningar eller när man jämför strängar. Genom att konvertera alla bokstäver till små bokstäver så undviks eventuella fel som kan uppstå på grund av olika skrivningar.
 
-## Så här gör du
+##Så här gör du
 
-För att konvertera en sträng till lower case i C# så finns det inbyggda metoder som man kan använda. Den vanligaste metoden är `ToLower()`, som finns på alla strängar. Här är ett exempel på hur man använder `ToLower()` för att konvertera en sträng till lower case:
+Ett enkelt sätt att konvertera en sträng till små bokstäver i C# är genom att använda metoden `ToLower()` från klassen `String`. Detta gör att alla bokstäver i strängen omvandlas till små bokstäver och en ny sträng med de konverterade bokstäverna returneras.
 
-```C#
-string myString = "HELLO WORLD";
-string lowerCaseString = myString.ToLower();
-Console.WriteLine(lowerCaseString);
+```c#
+string input = "Hejsan!";
+string lowerCase = input.ToLower();
 
-// Output: hello world
+Console.WriteLine(lowerCase); // hejsan!
 ```
 
-I detta exempel konverterar vi den ursprungliga strängen "HELLO WORLD" till lower case genom att använda `ToLower()`-metoden och sedan skriva ut den nya strängen till konsolen.
+Om du däremot endast vill konvertera vissa delar av en sträng kan du använda metoden `Substring()` från klassen `String` för att först ta ut den aktuella delen av strängen och sedan konvertera den till små bokstäver.
 
-En annan metod som man kan använda är `CultureInfo.InvariantCulture.TextInfo.ToLower()`, som är användbar när man hanterar specifika kulturer och språk. Här är ett exempel på hur man skulle använda denna metod för att konvertera en sträng till lower case:
+```c#
+string input = "Hej på dig!";
+string subString = input.Substring(4, 6).ToLower(); // p
 
-```C#
-string myString = "HeLlO WoRlD";
-CultureInfo cultureInfo = new CultureInfo("en-US");
-string lowerCaseString = cultureInfo.TextInfo.ToLower(myString);
-Console.WriteLine(lowerCaseString);
-
-// Output: hello world
+Console.WriteLine(subString); // på
 ```
 
-Som ni kan se så ger båda metoderna samma resultat, men i det andra exemplet använder vi en specifik `CultureInfo` för att säkerställa att alla bokstäver konverteras på rätt sätt i en engelsk kontext.
+##Djupdykning
 
-## Djupdykning
+När du konverterar en sträng till små bokstäver i C# så används standarden för små bokstäver på det språk som du använder i din kod. Detta innebär att om du till exempel är svensk så kommer alla svenska bokstäver att konverteras till små bokstäver enligt den svenska standarden.
 
-Nu när vi vet hur vi konverterar en sträng till lower case, låt oss ta en titt på den tekniska aspekten av hur detta faktiskt fungerar. I bakgrunden så finns det en klass som heter `System.Globalization.TextInfo` som innehåller metoder för t.ex. att ändra teckensnitt, konvertera bokstäver och mycket mer. Detta är den klass som används när vi använder `CultureInfo.TextInfo.ToLower()`.
+Det finns också andra metoder som kan användas för att konvertera strängar till små bokstäver, till exempel `ToLowerInvariant()` som alltid returnerar en sträng i små bokstäver oavsett språkinställningar.
 
-För att förstå hur `ToLower()` fungerar, så måste vi först förstå att alla bokstäver i C# representeras av Unicode-tecken. Varje enskilt Unicode-tecken har en numerisk "kodpunkt" som motsvarar dess position i den globala Unicode-tabellen. I enkla termer så är `ToLower()`-metoden bara en lista över alla bokstäver och deras motsvarande små bokstavs koder i Unicode. När en sträng passerar genom `ToLower()`, så går algoritmen igenom varje tecken i strängen och byter ut det med dess motsvarande små bokstavs kod och returnerar sedan den nya strängen.
+##Se även
 
-## Se även
-
-- [MSDN - string.ToLower() Metod (System)](https://docs.microsoft.com/sv-se/dotnet/api/system.string.tolower?view=net-5.0)
-- [MSDN - CultureInfo Class (System.Globalization)](https://docs.microsoft.com/sv-se/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
-- [MSDN - TextInfo Class (System.Globalization)](https://docs.microsoft.com/sv-se/dotnet/api/system.globalization.textinfo?view=net-5.0)
-- [Unicode-codes](https://unicode-table.com/sv/)
+- C# String ToUpper() Metod: [https://www.w3schools.com/cs/cs_ref_string_tolower.asp](https://www.w3schools.com/cs/cs_ref_string_tolower.asp)
+- Utforska fler strängmetoder i C#: [https://www.c-sharpcorner.com/article/c-sharp-string-methods-with-examples/](https://www.c-sharpcorner.com/article/c-sharp-string-methods-with-examples/)

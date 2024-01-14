@@ -1,61 +1,47 @@
 ---
 title:    "Go recipe: Writing tests"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why Engage in Writing Tests?
+## Why
 
-Writing tests for our Go code can help us catch bugs and errors early on in the development process. This can save us time and effort in the long run by preventing major issues from arising.
+Writing tests is an essential aspect of any software development process, including writing code in Go. Tests help ensure the code's functionality and catch any errors or bugs before the application is deployed. They also serve as documentation and provide confidence in the code's correctness.
 
-##How To Write Tests in Go
+## How To
 
-Writing tests in Go is a straightforward process. First, we need to import the "testing" package into our code. Then, we can use the "func TestXxx(*testing.T)" syntax to create our tests. Let's take a look at an example:
+To write tests in Go, we use the testing package from the Go standard library. This package provides functions and methods to create and run tests, as well as compare values and report errors. Let's take a look at a simple example:
 
-```Go
-package main
-
-import (
-    "testing"
-)
-
-func Add(x, y int) int {
-    return x + y
+```
+func add(x, y int) int{
+  return x + y
 }
 
-func TestAdd(t *testing.T) {
-    result := Add(5, 10)
-    expected := 15
-    if result != expected {
-        t.Errorf("Expected %d, but got %d instead.", expected, result)
-    }
+func TestAdd(t *testing.T){
+  result := add(2, 5)
+  expected := 7
+  if result != expected {
+    t.Errorf("Add function did not return the expected result. Got: %d, Want: %d", result, expected)
+  }
 }
 ```
 
-In this code, we have created a function called "Add" that adds two integers together. Then, we have created a test called "TestAdd" to check if our function works correctly. We compare the result of Add(5, 10) to our expected value of 15. If they do not match, we use the t.Errorf() function to print an error message.
+In the example above, we have created a simple `add` function that takes two integers and returns their sum. We have then written a test for this function using the `testing` package. Within the `TestAdd` function, we call our `add` function with the input `2` and `5` and compare the result with the expected output of `7`. If the result is not equal to the expected output, we use the `t.Errorf` function to report an error, including the values of the result and expected output.
 
-Running this test using the "go test" command will give us the following output:
+To run this test, we use the `go test` command in the terminal, which will execute all tests in the current directory and its subdirectories. If all tests pass, a `PASS` message will be displayed. Otherwise, any failing tests will be highlighted along with their error messages. 
 
-```
---- FAIL: TestAdd (0.00s)
-    main_test.go:15: Expected 15, but got 0 instead.
-```
+We can also use the `t.Helper()` function within our test to mark it as a helper function, which can be helpful in identifying the exact location of the test failure in our code.
 
-This tells us that our test has failed because our expected value of 15 does not match the actual result of 0. We can then go back and fix our code accordingly.
+## Deep Dive
 
-##Deep Dive into Writing Tests
+Besides comparing values, the `testing` package also provides other useful functions like `t.Log` and `t.FailNow`. We can use `t.Log` to print additional information during the test, such as the values of variables or any intermediate steps. And if the test fails, `t.FailNow` can be used to immediately stop the test and declare it as failed.
 
-Writing tests in Go is not just about checking if our code works as expected. We can also use tests to improve the overall quality and maintainability of our code. This includes testing for edge cases, writing benchmarks, and using a test-driven development approach.
+Another important aspect of writing tests is to create testable code. This means writing functions that can be easily tested without the need for external dependencies or user input. We can achieve this by using interfaces and mocking, which allows us to create our own testable versions of external dependencies.
 
-One useful tool for writing tests in Go is the "go test -cover" command. This gives us a coverage report, showing which parts of our code are covered by tests. This can help us identify areas of our code that may need more testing.
+## See Also
 
-Another important aspect of writing tests is using table-driven tests. This involves creating a table of test cases and their expected outputs, which can make our tests more comprehensive and easier to manage.
-
-##See Also
-
-- [Effective Go - Writing Tests](https://golang.org/doc/effective_go#testing)
-- [Testing in Go](https://blog.golang.org/cover)
-- [Table-Driven Tests in Go](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
-
-By writing tests for our Go code, we can ensure that our code is more reliable and maintainable. It may require some extra effort, but in the long run, it can save us time and headaches. Happy coding!
+- [Writing Tests in Go](https://blog.alexellis.io/golang-writing-unit-tests/)
+- [Effective Go](https://golang.org/doc/effective_go.html#testing)
+- [Advanced Testing in Go](https://dev.to/quii/learn-go-by-writing-tests--m63)

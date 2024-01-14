@@ -1,46 +1,56 @@
 ---
 title:    "Haskell: Znajdowanie długości ciągu znaków"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Jeśli jesteś programistą lub chcesz zacząć swoją przygodę z programowaniem, zapewne słyszałeś o języku Haskell. Jest to funkcyjny język programowania, znany z wielu zalet, takich jak bezpieczeństwo typów i obsługa błędów. Jedną z funkcji, z których możesz skorzystać w Haskellu, jest znajdowanie długości ciągu znaków. W tym wpisie dowiesz się, dlaczego jest to przydatne i jak to zrobić.
+Jednym z najważniejszych zadań w programowaniu jest manipulacja i przetwarzanie danych. Aby to zrobić, często musimy poznać długość określonego ciągu znaków. W tym artykule dowiesz się, jak w języku Haskell znaleźć długość ciągu znaków i jak to może być przydatne w Twoim codziennym programowaniu.
 
-## Jak to zrobić?
+# Jak to zrobić
 
-Aby znaleźć długość ciągu znaków w Haskellu, musimy użyć funkcji `length`, która jest wbudowana w ten język. Spójrzmy na prosty przykład:
-
-```Haskell
-length "Haskell"
-```
-
-To polecenie zwróci wartość `7`, ponieważ jest tyle znaków w słowie "Haskell". Możemy również użyć zmiennej, aby zapisać długość ciągu znaków i wyświetlić ją w konsoli:
+Jedną z najprostszych metod na znalezienie długości ciągu znaków w Haskellu jest użycie funkcji `length`, która jest już wbudowana w ten język. Wystarczy podać jako argument funkcji ciąg znaków, a następnie otrzymamy wynik w postaci liczby całkowitej.
 
 ```Haskell
-let word = "Haskell"
-length word
+length "Hello World" -- Output: 11
 ```
 
-W tym przypadku otrzymamy również wartość `7`.
+Jeśli chcesz wykorzystać to w praktyce, możesz stworzyć prosty program, który będzie przyjmował tekst od użytkownika i wyświetlał jego długość. Przykładowy kod wyglądałby następująco:
 
-## Głębszy wgląd
+```Haskell
+main = do
+    putStrLn "Wprowadź dowolny ciąg znaków: "
+    userInput <- getLine
+    putStrLn ("Długość wprowadzonego ciągu to: " ++ show (length userInput))
+```
 
-W języku Haskell, funkcja `length` jest zdefiniowana jako:
+W powyższym przykładzie korzystamy z funkcji `putStrLn`, aby wyświetlić tekst na ekranie, oraz `getLine`, aby pobrać wprowadzony przez użytkownika ciąg znaków. Następnie, za pomocą funkcji `length` i `show` wyświetlamy długość ciągu wraz z dopiskiem. Przykładowy output dla wywołania programu mogłoby wyglądać tak:
+
+```Haskell
+Wprowadź dowolny ciąg znaków:
+Hello World
+Długość wprowadzonego ciągu to: 11
+```
+
+# Deep Dive
+
+Aby lepiej zrozumieć jak działa funkcja `length`, warto prześledzić jej definicję. Jako że jest ona wbudowana w język Haskell, nie musisz samodzielnie jej implementować, ale możesz zajrzeć do dokumentacji, aby zobaczyć w jaki sposób jest zaimplementowana. W skrócie, wygląda to następująco:
 
 ```Haskell
 length :: [a] -> Int
+length [] = 0
+length (x:xs) = 1 + length xs
 ```
 
-Oznacza to, że funkcja ta przyjmuje jako argument listę dowolnego typu (oznaczona jako `a`) i zwraca wartość typu `Int`. Oznacza to również, że możemy używać tej funkcji nie tylko do ciągów znaków, ale również do dowolnych list, nawet tych zawierających różne typy danych.
+Funkcja ta przyjmuje jako argument listę, a zwraca liczbę całkowitą. Jeśli przekażemy pustą listę, czyli `[]`, zostanie zwrócona wartość 0. W przeciwnym przypadku, funkcja ta rekurencyjnie oblicza długość listy poprzez dodawanie 1 do wyniku zwróconego przez wywołanie funkcji `length` z resztą listy `xs`.
 
-Ponadto, funkcja `length` jest rekurencyjna, co oznacza, że wewnętrznie wywołuje samą siebie w celu obliczenia długości listy. Dzięki temu jest bardzo wydajna i może radzić sobie z dużymi listami w krótkim czasie.
+Rekurencja jest jedną z podstawowych technik w programowaniu funkcyjnym, a znajomość jej działania może być bardzo pomocna w pisaniu efektywnych i wydajnych programów.
 
-## Zobacz również
+# Zobacz też
 
-- [Dokumentacja funkcji `length` w języku Haskell](https://hackage.haskell.org/package/base-4.15.1.0/docs/Data-List.html#v:length)
-- [Pętle rekurencyjne w języku Haskell](https://www.tutorialspoint.com/recursive-loops-in-haskell)
-
-Dziękujemy za przeczytanie tego wpisu! Mamy nadzieję, że pomógł Ci zrozumieć, dlaczego i jak obliczać długość ciągu znaków w języku Haskell. Jeśli chcesz dowiedzieć się więcej o tym języku, zapraszamy do sprawdzenia innych naszych wpisów na tej stronie. Powodzenia w nauce Haskella!
+- Dokumentacja funkcji `length`: https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:length
+- Wprowadzenie do programowania funkcyjnego w Haskellu (artykuł w języku polskim): http://learnyouahaskell.com/introduction#warto-się-isnąć-z-haskell-a
+- Przykładowe programy w Haskellu: https://wiki.haskell.org/Haskell_in_5_steps

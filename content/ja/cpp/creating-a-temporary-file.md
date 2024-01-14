@@ -1,39 +1,41 @@
 ---
-title:    "C++: 一時ファイルを作成する"
+title:    "C++: 一時ファイルの作成"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-プログラミングの世界では、一時的なファイルを作成することは非常に一般的です。これは、プログラムの実行中に一時的にデータを保存するために利用されます。例えば、データベース処理を行う際に一時的なファイルを作成し、データベースへのアクセスを最適化することができます。
+一時ファイルを作成するのか、その理由について説明します。一時ファイルは、プログラムの実行中に一時的なデータを保存するために使われます。例えば、プログラムが大量のデータを処理する場合、一時ファイルを使用することでメモリを節約し、プログラムの実行を効率的に行うことができます。
 
 ## 作り方
+一時ファイルを作成するには、C++の`<fstream>`ライブラリを使用します。以下の例では、`std::fstream`クラスの`open`関数を使って一時ファイルを作成し、データを書き込んでいます。
 
-一時的なファイルを作成するには、標準ライブラリやサードパーティライブラリを使用する方法があります。ここでは、C++の標準ライブラリである```std::tmpnam```関数を使用した例を紹介します。
-
-```
-#include <iostream>
-#include <cstdio>
+```C++
+#include <fstream>
 
 int main() {
-    char filename[L_tmpnam];
-    std::tmpnam(filename);
-    std::cout << "Temporary file name: " << filename << std::endl;
-    return 0;
+  // ファイルを書き込みモードでオープン
+  std::fstream temp_file("my_temp_file.txt", std::ios::out);
+
+  // ファイルにデータを書き込む
+  temp_file << "This is a temporary file" << std::endl;
+
+  // ファイルを閉じる
+  temp_file.close();
+  
+  return 0;
 }
 ```
 
-上記のコードを実行すると、一時的なファイル名が出力されます。このファイルはプログラムが終了すると自動的に削除されるため、一時的なデータを保存するのに適しています。
+実行すると、プログラムがあるディレクトリに`my_temp_file.txt`という一時ファイルが作成され、"This is a temporary file"という内容が書き込まれます。
 
-## 深堀り
+## 深掘り
+一時ファイルを作成する際には、`std::ofstream`クラスではなく`std::fstream`クラスを使用することが推奨されています。`std::ofstream`では、ファイルが既に存在する場合にデータを上書きしてしまいますが、`std::fstream`では既存のファイルを上書きするのではなく、新しいファイルを作成するように制御することができます。
 
-一時的なファイルを作成する際には、いくつかの注意点があります。まず、ファイル名は一意である必要があります。これにより、別のファイルとの混同を防ぐことができます。また、ファイルが削除されるタイミングはオペレーティングシステムに依存するため、プログラムを書く際にはその点にも注意する必要があります。
+また、一時ファイルを作成する際には、プログラムが終了する際に一時ファイルを削除するようにすることが重要です。これにより、不要なファイルが残らず、システムのストレージが占有されることを防ぐことができます。
 
-## 参考リンク
-
-- [C++ Reference - std::tmpnam](https://en.cppreference.com/w/cpp/io/c/tmpnam)
-- [Creating a temporary file in C++](https://www.daniweb.com/programming/software-development/threads/84267/creating-a-temporary-file-in-c)
-- [Temporary File Management in C++](https://www.geeksforgeeks.org/temporary-file-management-c/)
-- [Creating and Using Temporary Files in C++](https://aticleworld.com/creating-and-using-temporary-files-in-c/)
+## また参照
+- [C++ 公式ドキュメント - <fstream>](https://ja.cppreference.com/w/cpp/header/fstream)
+- [C++ ファイル操作 - ファイルの入出力](https://programming-place.net/ppp/contents/cpp/file/006.html)

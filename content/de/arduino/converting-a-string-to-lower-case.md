@@ -1,40 +1,55 @@
 ---
-title:    "Arduino: Umwandeln eines Strings in Kleinbuchstaben"
+title:    "Arduino: String in Kleinbuchstaben umwandeln"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Konvertieren von Text zu Kleinbuchstaben ist eine häufige Aufgabe beim Programmieren. Es kann nützlich sein, um Eingaben zu normalisieren oder Vergleichsoperationen durchzuführen.
+Möglicherweise möchtest du eine sensorbasierte Anwendung entwickeln oder Daten aus einer externen Quelle verarbeiten. In diesen Fällen kann es erforderlich sein, Texteingaben in Kleinbuchstaben umzuwandeln, um sie besser manipulieren oder vergleichen zu können.
 
-# Wie geht es
+## Wie man eine Zeichenfolge in Kleinbuchstaben umwandelt
 
-Um eine Zeichenkette in Kleinbuchstaben zu konvertieren, können Sie die Funktion `toLowerCase()` verwenden. Diese Funktion ist Teil der Standardbibliothek von Arduino und kann auf Zeichenkettenobjekten angewendet werden. Hier ist ein Beispielcode:
-
-```Arduino
-String text = "Hallo WELT";
-text.toLowerCase();
-Serial.println(text);
-```
-Das obige Beispiel würde "hallo welt" auf der seriellen Konsole ausgeben. Sie können auch eine neue Zeichenkette erstellen, die die konvertierte Version enthält, wie in folgendem Beispiel:
+Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, gibt es verschiedene Ansätze. Eine Möglichkeit ist die Verwendung der `toLowerCase()` Funktion. Diese Funktion akzeptiert einen String als Eingabe und gibt denselben String zurück, aber mit allen Buchstaben in Kleinbuchstaben.
 
 ```Arduino
-String text = "Hallo WELT";
-String new_text = text.toLowerCase();
-Serial.println(new_text);
+// Beispielcode zur Umwandlung in Kleinbuchstaben
+String text = "HALLO WELT";
+String converted = text.toLowerCase(); // "hallo welt"
+
+// Ausgabe
+Serial.println(converted); // "hallo welt"
 ```
 
-Die `toLowerCase()` Funktion ist nicht nur auf ASCII-Zeichen begrenzt, sondern funktioniert auch mit Unicode-Zeichen. Ein weiteres nützliches Feature ist die `toUpperCase()` Funktion, die eine Zeichenkette in Großbuchstaben konvertiert.
+Eine andere Möglichkeit ist die Verwendung der `charAt()` Funktion in Kombination mit der `toLowerCase()` Funktion. Mit `charAt()` kannst du auf einzelne Zeichen in einem String zugreifen und diese dann in Kleinbuchstaben umwandeln.
 
-# Tiefergehende Einblicke
+```Arduino
+// Beispielcode zur Umwandlung in Kleinbuchstaben
+String text = "HALLO WELT";
+String converted = "";
 
-In der Programmierung von Zeichenketten gibt es verschiedene Konventionen für die Verwendung von Klein- oder Großbuchstaben. Das Konvertieren von Zeichenketten in eine bestimmte Schreibweise kann hilfreich sein, um Vergleiche durchzuführen oder bei der Verarbeitung von Eingaben konsistente Daten zu erhalten.
+// Schleife durch die einzelnen Zeichen im String
+for (int i = 0; i < text.length(); i++) {
+  // Zugriff auf aktuelles Zeichen und Umwandlung in Kleinbuchstaben
+  converted += tolower(text.charAt(i));
+}
 
-Eine wichtige Sache, die man beachten sollte, ist, dass das Konvertieren von Zeichenketten in Klein- oder Großbuchstaben die ursprüngliche Zeichenkette nicht ändert, sondern eine neue Zeichenkette erstellt. Wenn Sie also die konvertierte Zeichenkette speichern möchten, müssen Sie sie einem neuen Variablennamen zuweisen.
+// Ausgabe
+Serial.println(converted); // "hallo welt"
+```
 
-# Siehe auch
+Es gibt auch Bibliotheken wie `String.toLowerCase()` oder `String.toLowerCaseINPlace()`, welche die Umwandlung noch einfacher gestalten.
 
-- [String-Methoden von Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [ASCII-Tabelle](https://www.ascii-code.com/) für die Übersicht der Zeichen und deren zugehörigen Codes.
+## Tiefere Einblicke
+
+Beim Umwandeln einer Zeichenfolge in Kleinbuchstaben gibt es einige Dinge, die du beachten solltest. Zum Beispiel können manche Sonderzeichen durch die Umwandlung verändert werden. Auch die Unterstützung von Umlauten und anderen Buchstaben aus verschiedenen Sprachen kann je nach verwendeter Methode variieren.
+
+Es ist immer wichtig, dass du deine Eingaben sorgfältig überprüfst, um unerwartetes Verhalten zu vermeiden. Wenn du beispielsweise nur bestimmte Zeichen oder Zeichenfolgen in Kleinbuchstaben umwandeln möchtest, solltest du dies explizit in deinem Code berücksichtigen.
+
+## Siehe auch
+
+- [String.toLowerCase() Referenz](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
+- [String.toLowerCaseINPlace() Referenz](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/tolowercase/)
+- [Beispielcode für die Umwandlung von Strings in Kleinbuchstaben](https://forum.arduino.cc/t/solved-how-to-make-string-lowercase/603746)

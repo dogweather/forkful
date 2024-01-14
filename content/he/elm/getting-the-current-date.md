@@ -1,50 +1,67 @@
 ---
-title:    "Elm: קבלת התאריך הנוכחי"
+title:    "Elm: קבלת תאריך נוכחי"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## How To - כיצד להשתמש בתאריך הנוכחי בתוכנית Elm
+### למה
 
-השתמש בפונקציית "Time" המובנית ב- Elm כדי להשיג את התאריך הנוכחי במחשב שלך. ניתן לעשות זאת על ידי קריאה לפונקציית "now" ולהשתמש בפונקציה "toUtc" כדי להמיר את התאריך לזמן אוניברסלי.
+תאר לעצמך את הסצנה הבאה: אתה מתחיל לפתח אפליקציה מרתקת ב-Elm, אך נתקלת בצורך להציג למשתמש את התאריך הנוכחי. לפעמים זה יכול להיות כמו להסתובב בתעלומות מבלי לדעת איך לעשות את זה, אבל אין צורך לדאוג יותר! ב-Elm זה פשוט ביותר לקבל את התאריך הנוכחי ובמאמר הזה אני אראה לך כיצד.
 
-```Elm
-module Main exposing (..)
+### איך לעשות
 
-import Time exposing (utc, toUtc, now)
-
-main =
-  toUtc (now utc)
-```
-
-כדי להשיג את התאריך בתצורה קריאה יותר, ניתן להשתמש בתוספת "elm/time" שנועד לעזור בעיבוד וניהול זמנים. לדוגמה:
+תחילה ניצור פונקציה פשוטה שקוראת "getDate" ומחזירה את התאריך הנוכחי כמחרוזת.
 
 ```Elm
-module Main exposing (..)
-
-import Time
-import Time.Format as Format
-
-main =
-  let
-    currentLocalTime = Time.now Time.utc
-    formattedDate = Format.format "%d/%m/%Y" currentLocalTime
-  in
-    formattedDate
+getDate : String
+getDate = 
+   let
+      today = Js.Date.today()
+      day = toString(today.getDate())
+      month = toString(today.getMonth() + 1)
+      year = toString(today.getFullYear())
+   in
+      day ++ "/" ++ month ++ "/" ++ year
 ```
 
-והנה פלט עבור קוד זה:
+זו פונקציה פשוטה שמשתמשת בחבילת JS.Date שיש בכל הדפדפנים ומחזירה את התאריך הנוכחי בפורמט יום/חודש/שנה.
+
+למשל, אם נקרא לפונקציה זו ב-html כך:
 
 ```Elm
-"10/02/2021"
+getDate
 ```
 
-## Deep Dive - עומק על קבלת התאריך הנוכחי בשפת Elm
+התוצאה המשומשת תהיה:
 
-כאשר משתמשים ב- Elm כדי לקבל את התאריך הנוכחי, יש לשים לב לכמה דברים חשובים. פונקצית "now" מחזירה צפוי באייפיי שקורא לה, אך יש לציין שהפונקציה יכולה להחזיר תוצאה שונה בכל פעם שרצים אותה. כמו כן, כאשר משתמשים בפונקצית "toUtc" יש לשים לב שהתאריך מתוחכם לזמן אוניברסלי ולא לזמן מקומי.
+```html
+03/09/2020
+```
 
-## See Also - ראה גם
+אפשר גם להתאים את הפורמט של התאריך לפי צורך, למשל, להציג את התאריך במבנה "יום|חודש|שנה" או כל פורמט אחר.
 
-- [תיעוד לפונקציית "Time" במדריך הרשמי של Elm](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [מדריך לניהול זמנים ב- Elm עם שימוש בתוספת "elm/time"](https://guide.elm-lang.org/effects/time.html)
+### מטען עמוק
+
+אם אתה מעוניין להשתמש בפונקציה מעט יותר מתקדמת, אני יפתח עבורך פונקציה שמקבלת את הפורמט והשפה המקומית של המשתמש ומחזירה את התאריך הנוכחי בפורמט מתאים.
+
+```Elm
+getLocalizedDate : String -> String -> String
+getLocalizedDate format locale =
+   let
+      options =
+         { weekday = Nothing, year = "numeric", month = "long", day = "numeric" }
+
+      result =
+         Js.Date.toLocaleDateString(locale, options)
+
+   in
+      case format of
+         "day-month-year" ->
+            String.join "/" <| String.split "," result
+         _ ->
+            result
+```
+
+פונקציה זו מקבלת שני פרמטרים - האחד הוא הפורמט, כמו "יום|חודש|שנה" והשני הוא הש

@@ -1,81 +1,59 @@
 ---
-title:    "Python: Testien kirjoittaminen"
+title:    "Python: Testausten kirjoittaminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi kirjoittaa testejä?
+## Miksi: Testien kirjoittamisen merkitys Python-ohjelmoinnissa
 
-Kirjoittaminen testejä on tärkeä osa hyvää ohjelmistokehitystä. Se auttaa varmistamaan, että koodi toimii oikein ja pysyy virheettömänä muutosten tai päivitysten jälkeen. Lisäksi testien avulla voit nopeasti havaita mahdolliset ongelmat ja korjata ne ennen kuin ne päätyvät loppukäyttäjän käsiin.
+Kirjoittaminen testejä on olennainen osa Python-ohjelmointia, ja se auttaa varmistamaan koodin toimivuuden ja vähentää virheiden määrää. Testien avulla voi myös helposti tunnistaa ja korjata mahdollisia ongelmia, joka säästää aikaa ja vaivaa pitkällä tähtäimellä.
 
-## Kuinka tehdä: Koodin esimerkit ja tulosteet
-
-Pythonissa voit helposti kirjoittaa yksikkötestejä käyttämällä sisäänrakennettua unittest-moduulia. Tässä on esimerkki luokasta, joka sisältää yksinkertaisen funktion ja testit sen testaamiseksi:
+## Miten: Esimerkkejä testien kirjoittamisesta ja tulostuksista
 
 ```Python
-class Laskin:
-    def summa(self, x, y):
-        return x + y
+# Aluksi tuodaan unittest-kirjasto
 
 import unittest
 
-class TestLaskin(unittest.TestCase):
-    def setUp(self):
-        self.laskin = Laskin()
+# Luodaan funktio, joka palauttaa kahden numeron summan
 
-    def test_summa(self):
-        tulos = self.laskin.summa(2, 3)
-        odotettu_tulos = 5
-        self.assertEqual(tulos, odotettu_tulos)
+def summa(a, b):
+  return a + b
 
-    def test_summa_negatiivisilla(self):
-        tulos = self.laskin.summa(-5, 10)
-        odotettu_tulos = 5
-        self.assertEqual(tulos, odotettu_tulos)
+# Tässä testataan, että funktio palauttaa oikean tuloksen kahdelle syötetylle numerolle
+
+class TestSumma(unittest.TestCase):
+  
+  def test_summa(self):
+    self.assertEqual(summa(2, 3), 5) # AssertEqual tarkistaa, että palautusarvo on yhtäsuuri kuin määritelty arvo
+    
+# Suoritetaan testi
 
 if __name__ == '__main__':
-    unittest.main()
+  unittest.main()
+
+# Jos testi läpäisee, näytetään seuraava tulos:
+
+# ----------------------------------------------------------------------
+# Luokka TestSumma
+# ----------------------------------------------------------------------
+# test_summa saa arvoksi 5.
+
+# ----------------------------------------------------------------------
+# Ran 1 test in 0.000s
+
+# OK
+
 ```
 
-Tulos on seuraava:
+## Syvempää sukellusta: Tietoa testien kirjoittamisesta
 
-```terminal
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
-
-OK
-```
-
-Näemme, että molemmat testit läpäisivät ja koodimme toimii odotetusti. Jos nyt muutamme funktion summa niin, että se palauttaa x - y, testit epäonnistuvat ja saamme seuraavan tulosteen:
-
-```terminal
-.F
-======================================================================
-FAIL: test_summa_negatiivisilla (__main__.TestLaskin)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_laskin.py", line 14, in test_summa_negatiivisilla
-    self.assertEqual(tulos, odotettu_tulos)
-AssertionError: 15 != 5
-
-----------------------------------------------------------------------
-Ran 2 tests in 0.001s
-
-FAILED (failures=1)
-```
-
-Tämä osoittaa, että testit todella testaavat koodiamme ja auttavat meitä löytämään mahdollisia virheitä.
-
-## Syvemmälle: Lisätietoa testeistä
-
-On olemassa erilaisia testaustyyppejä, kuten yksikkö-, integraatio- ja hyväksymistestit. Yksikkötestit testaavat yksittäistä osaa ohjelmasta, kun taas integraatiotestit testaavat useamman osan yhteistoimintaa. Hyväksymistestit, kuten käyttöliittymätestit, testaavat koko sovelluksen toiminnallisuuksia.
-
-Testien kirjoittaminen myös auttaa suunnittelemaan koodia, koska sinun täytyy ottaa huomioon kaikki mahdolliset skenaariot ja reunatapaukset. Lisäksi testien avulla voit nopeasti varmistaa, että uudet muutokset eivät riko toimivaa koodia.
+Testien kirjoittaminen tuo mukanaan monia etuja Python-ohjelmoinnissa. Ensinnäkin, testien ansiosta voimme olla luottavaisia koodin toimivuuteen ja vähentää virheiden määrää. Tämä säästää aikaa ja vaivaa pitkällä tähtäimellä, koska ongelmien löytäminen ja korjaaminen myöhemmin voi olla vaikeampaa ja aikaavievämpää. Lisäksi testit toimivat dokumentaationa koodin toiminnasta ja mahdollistavat nopean ja tehokkaan kehitysprosessin.
 
 ## Katso myös
 
-- [Python unittest dokumentaatio](https://docs.python.org/3/library/unittest.html)
-- [TDD (Test Driven Development) opas](https://www.obeythetestinggoat.com/pages/book.html#toc)
-- [Flask testaus opas](https://flask.palletsprojects.com/en/1.1.x/testing/)
+- [Unittest-dokumentaatio](https://docs.python.org/3/library/unittest.html)
+- [Pythonin virallinen sivusto](https://www.python.org/)
+- [Get started with testing in Python](https://realpython.com/python-testing/) (englanniksi)

@@ -1,64 +1,46 @@
 ---
 title:    "Javascript: Odczytywanie pliku tekstowego"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Dlaczego ktoś mógłby zainteresować się czytaniem pliku tekstowego? Często w programowaniu musimy zwracać uwagę na dane pobrane z zewnętrznych źródeł, takich jak pliki tekstowe. W tym wpisie dowiecie się, w jaki sposób można czytać pliki tekstowe za pomocą JavaScript.
+Istnieje wiele sytuacji, w których jesteśmy zmuszeni do czytania plików tekstowych w naszych programach Javascript. Może to być konieczne do wczytania danych do naszej aplikacji lub do przetworzenia pliku z danymi. Bez względu na cel, musimy wiedzieć jak czytać pliki tekstowe za pomocą Javascript.
 
 ## Jak to zrobić
 
-Czytanie pliku tekstowego z wykorzystaniem JavaScript jest proste i skuteczne. Najpierw musimy wybrać odpowiedni sposób dostępu do pliku. Istnieją dwa sposoby:
-
-1. Synchroniczny - czyli odczytujemy plik w sposób blokujący, co oznacza, że skrypt musi poczekać na zakończenie operacji odczytu, zanim przejdzie do kolejnych linii kodu. 
-
-2. Asynchroniczny - czyli odczytujemy plik w sposób nieblokujący, co oznacza, że skrypt nie musi czekać na zakończenie operacji odczytu i jest w stanie wykonywać inne zadania jednocześnie.
-
-Wybór zależy od indywidualnych preferencji programisty i potrzeb danej aplikacji. Poniżej przedstawione są przykłady obydwu sposobów.
-
-### Synchroniczny odczyt pliku
-
-Aby odczytać plik tekstowy synchronicznie, wystarczy użyć funkcji `readFileSync()` z modułu `fs`. Poniższy przykład kodu demonstruje prosty odczyt pliku tekstowego o nazwie `dane.txt` i wyświetlenie jego zawartości w konsoli.
+Najprostszym sposobem na czytanie plików tekstowych jest wykorzystanie wbudowanego obiektu "fs" (file system) w Javascript. Potrzebujemy najpierw zaimportować ten obiekt, a następnie możemy wykorzystać funkcję "readFileSync()" do wczytania pliku. Poniżej znajduje się przykładowy kod:
 
 ```Javascript
-const fs = require('fs');
-
-const dane = fs.readFileSync('dane.txt', 'utf8');
-console.log(dane);
-
-// Output:
-// To jest przykładowy plik tekstowy.
+const fs = require('fs'); // importowanie obiektu
+const text = fs.readFileSync('nazwa_pliku.txt', 'utf8'); // wczytywanie pliku
+console.log(text); // wyświetlanie zawartości pliku
 ```
 
-### Asynchroniczny odczyt pliku
+Powyższy kod wczytuje zawartość pliku "nazwa_pliku.txt" i wypisuje ją w konsoli. Ważne jest również zauważyć, że wykorzystaliśmy opcję 'utf8' w funkcji "readFileSync()", która określa format kodowania tekstu w pliku.
 
-Aby odczytać plik tekstowy asynchronicznie, musimy użyć funkcji `readFile()` z modułu `fs`. Poniższy przykład kodu demonstruje odczyt pliku tekstowego o nazwie `dane.txt` i wyświetlenie jego zawartości w konsoli.
+Jeśli chcielibyśmy przetworzyć zawartość pliku w celu dalszej obróbki, możemy wykorzystać funkcję "split()" wraz z odpowiednim separatorrem, na przykład znakiem nowej linii:
 
 ```Javascript
-const fs = require('fs');
-
-fs.readFile('dane.txt', 'utf8', (err, data) => {
-    if (err) throw err;
-    console.log(data);
-});
-
-// Output:
-// To jest przykładowy plik tekstowy.
+const lines = text.split('\n'); // dzielenie tekstu na linie
+for (let i = 0; i < lines.length; i++) { // pętla przetwarzająca kolejne linie
+    console.log(lines[i]);
+}
 ```
 
-W obu przypadkach odczytywany jest plik tekstowy w formacie UTF-8. Jeśli plik ten ma inny format, można go wybrać na podstawie potrzeb aplikacji.
+## Deep Dive
 
-## Deeper Dive
+Gdy już umiemy wczytywać i przetwarzać zawartość plików tekstowych w Javascript, warto również poznać bardziej zaawansowane techniki. Możemy na przykład wykorzystać moduł "readline", który umożliwia nam czytanie plików tekstowych linia po linii, co jest szczególnie przydatne przy przetwarzaniu większych plików. Możemy również wykorzystać technikę streamingu, która pozwala na wczytywanie pliku w częściach, co jest korzystne dla wydajności i nie obciąża pamięci naszego programu.
 
-Odczytywanie plików tekstowych przy użyciu JavaScript to tylko wierzchołek góry lodowej. W praktyce często musimy dokonać bardziej skomplikowanych operacji na danych pobranych z pliku. Możemy na przykład chcieć przefiltrować dane lub przetworzyć je w pewien sposób. W takich przypadkach przydatne mogą się okazać narzędzia takie jak biblioteka `lodash`, która udostępni nam szereg funkcji do manipulacji danymi.
+## Zobacz też
 
-Możemy również wykorzystać moduł `path` w celu dokonania operacji na ścieżkach plików, co może być pomocne przy odczytywaniu plików znajdujących się w różnych lokalizacjach.
+Poniżej znajduje się lista przydatnych linków dla dalszej nauki:
 
-## Zobacz także
+- [Dokumentacja wbudowanego modułu "fs" w Javascript](https://nodejs.org/api/fs.html)
+- [Dokumentacja modułu "readline"](https://nodejs.org/api/readline.html)
+- [Poradnik dotyczący streamingu w Javascript](https://www.infoq.com/articles/nodejs-streams/)
 
-1. Dokumentacja modułu `fs` w Node.js (https://nodejs.org/api/fs.html)
-2. Dokumentacja modułu `path` w Node.js (https://nodejs.org/api/path.html)
-3. Dokumentacja biblioteki `lodash` (https://lodash.com/docs)
+Teraz już wiesz jak czytać pliki tekstowe w programach Javascript. Bądź ciekawski i eksperymentuj z różnymi metodami, aby dostosować je do swoich potrzeb. Powodzenia!

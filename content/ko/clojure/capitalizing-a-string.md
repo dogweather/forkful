@@ -1,37 +1,33 @@
 ---
-title:    "Clojure: 문자열 대문자로 바꾸기"
+title:    "Clojure: 문자열 대문자로 변환하기"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-스트링을 캐피타라이징하는 방식으로 코딩을 해보길 추천해요. 이를 통해, 당신은 다양한 프로그래밍 언어에서 문자열을 더 쉽게 다룰 수 있게 될 거예요.
+자바에서 string 값을 대문자로 변환하는 것은 프로그래머들에게 매우 중요합니다. 이 기능을 통해 문자열을 정렬하거나 비교하는 등 다양한 작업을 수행할 수 있습니다.
 
-## 어떻게
+## 사용 방법
+
+문자열을 대문자로 변환하는 방법은 매우 간단합니다. 먼저 `toUpperCase` 함수를 사용하여 문자열을 모두 대문자로 변환한 다음 출력합니다.
 
 ```Clojure
-;; 스트링을 캐피타라이즈하는 함수 만들기
-(defn capitalize-string [str]
-  (str/upper-case str))
-
-;; 캐피타라이즈 함수 실행
-(capitalize-string "hello world") ; "HELLO WORLD"
-
-;; 여러 단어를 포함하는 경우에도 적용 가능
-(capitalize-string "i love clojure") ; "I LOVE CLOJURE"
+(def myString "hello world")
+(println (toUpperCase myString))
 ```
 
-## 깊게 파헤치기
+`toUpperCase` 함수를 사용해 `myString` 변수를 대문자로 변환하면 "HELLO WORLD"가 출력됩니다.
 
-캐피타라이즈 함수는 문자열을 대문자로 바꾸어주는 간단한 기능을 가지고 있어보이지만, 실제로는 여러가지 다양한 사용 방법이 있을 수 있어요. 예를 들어, 캐릭터 셋이나 locale 설정을 고려해야하는 경우에도 적용 가능하죠. 또한, 정규 표현식과 조합하여 원하는 패턴의 문자열만 캐피타라이즈 할 수도 있어요. 이러한 다양한 활용 방법을 익혀두면 코딩할 때 더욱 효율적인 방식으로 문자열을 다룰 수 있게 될 거예요.
+## 깊이 파고들기
 
-## 더 알아보기
+대문자로 변환하는 함수인 `toUpperCase`는 내부적으로 `Character/toUpperCase` 함수를 사용합니다. 이 함수는 유니코드 문자 값을 대문자로 변환해주는 역할을 합니다.
 
-[공식 Clojure 문서 - 문자열 함수 사용법](https://clojure.org/reference/strings)  
-[Clojure Cookbook - 문자열 다루기](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/06_strings.asciidoc)  
+대부분의 인코딩은 ASCII 문자에만 대소문자 구분이 적용되지만 유니코드는 대소문자 구분이 더 다양하게 적용됩니다. 따라서 문자열을 비교하거나 정렬할 때 항상 대소문자를 일치시켜줘야 합니다.
 
-## 관련글
+## 관련 링크
 
-[스택 오버플로우 - Clojure에서 문자열 캐피타라이즈하는 방법](https://stackoverflow.com/questions/3355123/how-to-capitalize-sequence-of-words-in-a-string-using-clojure)
+- 유니코드와 대소문자 변환에 대한 더 자세한 정보는 [이 문서](https://unicode.org/faq/casemap_charprop.html)를 참조하세요.
+- Clojure 공식 문서에서 [Character/toUpperCase 함수](https://clojuredocs.org/clojure.core/Character/toUpperCase)에 대한 정보를 확인할 수 있습니다.

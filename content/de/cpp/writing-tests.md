@@ -1,41 +1,29 @@
 ---
 title:    "C++: Tests schreiben"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+Warum:Um sicherzustellen, dass unsere Programme korrekt funktionieren, ist es wichtig, Tests zu schreiben. Tests können uns helfen, Fehler frühzeitig zu erkennen und die Qualität unserer Software zu verbessern.
 
-Das Schreiben von Tests ist ein wichtiger Bestandteil des Programmierens. Es hilft Programmierern dabei, sicherzustellen, dass ihr Code korrekt und stabil ist. Tests können auch dabei helfen, Bugs frühzeitig zu erkennen und zu beheben, was letztendlich zu einer höheren Qualität des Codes führt.
+Wie man Tests schreibt:Um Tests in C++ zu schreiben, müssen wir zunächst eine Testbibliothek wie Google Test oder Catch2 einbinden. Anschließend können wir unsere Tests in Funktionen mit Hilfe von Assertions schreiben, die überprüfen, ob bestimmte Bedingungen erfüllt sind. Hier ist ein einfaches Beispiel mit Catch2:
 
-## Wie geht man vor
-
-Um Tests in C++ zu schreiben, verwendet man normalerweise eine Unit-Testing-Bibliothek wie zum Beispiel Catch2. Zunächst muss man eine Test-Datei erstellen und die Bibliothek in das Projekt einbinden. Dann kann man verschiedene Testfälle definieren und überprüfen, ob die erwarteten Ergebnisse erzielt werden.
-
-Ein Beispiel dafür wäre die Addition von zwei Zahlen. Innerhalb einer ```C++ TEST_CASE``` Funktion kann man die Addition durchführen und mit Hilfe von ```REQUIRE``` sicherstellen, dass das Ergebnis korrekt ist. Der Output sollte dann folgendermaßen aussehen:
-
-```
-TEST_CASE("Additionstest") {
-
-  int sum = add(5, 10); // Funktion "add" muss implementiert werden
-  REQUIRE(sum == 15); // Überprüft, ob das Ergebnis 15 ist
+```C++
+TEST_CASE("Multiply Numbers") {
+  REQUIRE(2 * 2 == 4);
+  REQUIRE(5 * 3 == 15);
 }
 ```
 
-Dies ist nur ein einfaches Beispiel, aber es zeigt, wie man mit Unit-Tests arbeiten kann. Es gibt noch viele weitere Möglichkeiten, wie man Tests schreiben und ausführen kann, aber das grundlegende Konzept bleibt das Gleiche.
+Dieses Beispiel würde erfolgreich ausgeführt werden, da beide Bedingungen erfüllt sind. Falls eine Bedingung nicht erfüllt wird, würden die Tests fehlschlagen und uns darauf aufmerksam machen, dass wir einen Fehler in unserem Code haben.
 
-## Tiefere Einblicke
+Deep Dive:Tests zu schreiben ist nicht nur eine Aufgabe, die man am Ende des Programmierprozesses erledigt. Es sollte von Anfang an in den Entwicklungsprozess integriert werden, um sicherzustellen, dass jede Änderung am Code keine unerwarteten Seiteneffekte hat. Außerdem können Tests auch dazu beitragen, den Code aufzuräumen und Kompatibilitätsprobleme zu erkennen. Es ist auch wichtig zu beachten, dass Tests nicht 100%ige Sicherheit bieten, aber sie können die Qualität und Verlässlichkeit unserer Programme verbessern.
 
-Tests können auch in sogenannten Test-Driven-Development (TDD) Ansätzen verwendet werden. Hierbei schreibt man zuerst den Test und implementiert dann den Code, um den Test erfolgreich zu bestehen. Dies stellt sicher, dass der Code immer zuerst getestet wird, bevor er in die Anwendung integriert wird.
+Siehe auch:
+- [Einführung in das Testen von C++ Code mit Google Test](https://google.github.io/googletest/)
+- [Catch2 Dokumentation](https://github.com/catchorg/Catch2/blob/devel/docs/tutorial.md)
+- [Die wichtigsten Prinzipien für erfolgreiches Testen in der Softwareentwicklung](https://www.atlassian.com/de/agile/software-development/testing)
 
-Außerdem ist es wichtig, verschiedene Arten von Tests zu kennen und zu verwenden, wie z.B. Unit-Tests, Integrationstests und End-to-End-Tests. Jede Art hat ihre eigenen Vorteile und hilft dabei, unterschiedliche Aspekte des Codes zu überprüfen.
-
-Insgesamt ist das Schreiben von Tests eine wichtige Praxis für alle Programmierer, um sicherzustellen, dass ihr Code fehlerfrei und stabil ist. Es erfordert zwar zunächst etwas zusätzlichen Aufwand, aber es spart letztendlich Zeit und vermeidet mögliche Probleme in der Zukunft.
-
-## Siehe auch
-
-- [Catch2 Dokumentation](https://github.com/catchorg/Catch2/tree/devel/docs)
-- [Tutorial zu Unit-Tests in C++](https://www.codingame.com/playgrounds/247/introduction-to-unit-testing-with-catch)
-- [Test-Driven-Development Einführung](https://www.geeksforgeeks.org/test-driven-development-tdd/)
-- [Arten von Tests in der Softwareentwicklung](https://www.testlodge.com/types-of-software-testing/)
+Wir hoffen, dass dieser kurze Einblick Ihnen dabei geholfen hat, zu verstehen, warum es wichtig ist, Tests zu schreiben, und wie man Tests in C++ implementieren kann. Mit dieser Vorgehensweise können wir sicherstellen, dass unsere Software von hoher Qualität ist und unseren Benutzern eine zuverlässige Anwendung bietet. Viel Spaß beim Coden!

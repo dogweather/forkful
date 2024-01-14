@@ -1,44 +1,61 @@
 ---
 title:    "Rust: 정규 표현식 사용하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-정규 표현식을 사용하는 이유는 무엇일까요? 간단히 말하자면, 정규 표현식을 사용하면 패턴을 효과적으로 검색하고 대체하고 추출할 수 있기 때문입니다. 이를테면, 이메일 주소나 전화번호와 같은 특정한 형식의 데이터를 빠르고 정확하게 추출할 수 있습니다. 따라서 빠른 데이터 처리가 필요한 프로그래밍 작업에 유용하게 사용할 수 있습니다.
+정규식을 사용하는 이유는 텍스트에서 패턴을 찾기 위함입니다. 예를 들어, 이메일 주소를 찾는다거나 웹사이트에서 특정 단어를 찾는 경우 등에 자주 사용됩니다.
 
-## 사용 방법
+## 방법
 
-정규 표현식을 Rust로 적용하는 방법을 알아보겠습니다. 아래 예제 코드를 참고해주세요.
+우선 정규식 라이브러리를 프로젝트에 추가해야 합니다. `regex` 라이브러리를 사용할 것입니다. 다음은 간단한 코드 예시입니다:
 
 ```Rust
-// 새로운 정규 표현식 생성
-let regex = Regex::new(r"(\d{3})-(\d{4})-(\d{4})").unwrap();
+extern crate regex;
 
-// 정규 표현식 매칭
-let text = "010-1234-5678";
-let matches = regex.captures(text);
-println!("{:?}", matches);
+use regex::Regex;
 
-// 결과 출력
-Some(["010-1234-5678", "010", "1234", "5678"])
+fn main() {
+    // 텍스트에 있는 이메일 주소 찾기
+    let re: Regex = Regex::new(r"\w+@\w+\.com").unwrap();
+
+    let email: &str = "example@gmail.com";
+
+    if re.is_match(email) {
+        println!("이메일 주소를 찾았습니다!");
+    } else {
+        println!("이메일 주소를 찾지 못했습니다.");
+    }
+}
 ```
 
-맨 위의 코드는 `Regex` 구조체를 사용해 새로운 정규 표현식을 생성하는 부분입니다. `r"(\d{3})-(\d{4})-(\d{4})"`는 전화번호 형식을 포함하는 정규 표현식입니다. 매칭을 확인하기 위해 `captures` 메소드를 사용하고 매칭 결과를 `Option<Captures>` 형태로 반환합니다. 위의 예제에서는 전화번호 형식이 매칭되어 배열 형태로 반환되는 것을 확인할 수 있습니다.
+출력:
 
-## 깊이 파고들기
+```
+이메일 주소를 찾았습니다!
+```
 
-정규 표현식을 사용할 때 주의해야 할 점은 성능입니다. 최적화되지 않은 정규 표현식은 매우 느린 속도로 작동할 수 있습니다. 따라서 정확한 패턴을 구성하는 것이 중요합니다. 또한 Rust의 정규 표현식 라이브러리인 `regex`는 [PCRE](https://www.pcre.org/) 라이브러리를 사용하기 때문에, PCRE의 문법을 따라야 합니다. PCRE의 문법에 대해 더 알고 싶다면, [공식 문서](https://www.pcre.org/)를 참고해주세요.
+## 딥 다이브
 
-## 관련 링크
+보다 복잡한 정규식을 사용하는 경우, 다음과 같은 팁을 알아두면 유용합니다:
 
-- [Rust 정규표현식 라이브러리 - regex](https://docs.rs/regex/1.3.9/regex/)
-- [PCRE 공식 사이트](https://www.pcre.org/)
-- [Rust 공식 사이트](https://www.rust-lang.org/)
+- `.` : 임의의 한 문자를 의미합니다.
+- `*` : 앞에 오는 패턴이 0번 이상 반복됨을 의미합니다.
+- `+` : 앞에 오는 패턴이 1번 이상 반복됨을 의미합니다.
+- `?` : 앞에 오는 패턴이 0번 또는 1번 나타남을 의미합니다.
+- `^` : 문자열의 시작을 의미합니다.
+- `$` : 문자열의 끝을 의미합니다.
 
-## 참고 자료
+위의 예시 코드에서 `is_match()` 대신 `find()` 메서드를 사용하면 텍스트에서 실제로 일치하는 패턴을 찾을 수 있습니다. 또한, `captures()` 메서드를 사용하면 정규식에서 지정한 그룹을 추출할 수 있습니다.
 
-- [Rust Programming Language Book - Regular Expressions](https://doc.rust-lang.org/book/ch09-06-pattern-matching.html)
-- [Regex Tutorial - Getting Started with Regular Expressions](https://www.regextutorial.org/ko/)
+더 자세한 정보는 Rust 공식 문서에서 확인할 수 있습니다.
+
+## 더 알아보기
+
+- [Rust 정규식 문서](https://doc.rust-lang.org/std/str/struct.Regex.html) 
+- [정규식 Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/rust)
+- [Rust 정규식 연습 사이트](https://regexr.com/language-rust)

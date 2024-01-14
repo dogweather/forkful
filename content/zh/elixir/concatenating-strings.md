@@ -1,67 +1,48 @@
 ---
-title:    "Elixir: 字符串连接"
+title:    "Elixir: 连接字符串"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-字符串连接在编程中是一个常见的操作，它可以将多个字符串组合成一个单一的字符串。在Elixir中，字符串连接是一个重要的概念，因为它可以帮助我们构建复杂的数据结构和输出结果。无论是用于简单的字符串拼接还是更复杂的数据处理，掌握字符串连接技巧都是很有用的。
 
-## 如何操作
+当我们需要在编程中将多个文本片段组合起来时，字符串连接(concatenation)就成为了必不可少的工具。通过将多个字符串连接在一起，我们可以创建出更复杂的文本内容，这在处理用户输入或输出时尤为重要。
 
-要进行字符串连接，我们需要使用Elixir内置的`<>`操作符。下面给出一个简单的例子：
+## 如何
 
+```Elixir
+"Hello" <> " " <> "World!"
 ```
-Elixir
-name = "张三"
-greeting = "你好"
-message = greeting <> name
-```
-输出结果为：
-```
-你好张三
-```
-这样我们就可以将多个字符串组合起来，形成一个新的字符串。同时，我们也可以在字符串连接中使用变量、函数以及表达式，可以大大提高我们的代码灵活性。比如：
+将会输出："Hello World!"
 
-```
-Elixir
-number1 = 10
-number2 = 20
-sum = "结果是：" <> Integer.toString(number1 + number2)
+可以使用 `<>` 运算符来连接两个字符串，并创建一个新的字符串。需要注意的是，连接的内容必须是字符串，否则会报错。
+
+```Elixir
+"1" <> "2" <> 3
 ```
 
-输出结果为：
+将会报错，因为 3 是一个整数，而不是一个字符串。
+
+我们也可以使用 `Enum.into/2` 函数来将多个字符串连接成一个字符串。这个函数可以将一个字符串列表转换为一个字符串，并可以指定一个分隔符。
+
+```Elixir
+Enum.into(["I", "like", "to", "code"], " ") 
 ```
-结果是：30
-```
+
+将会输出："I like to code"
 
 ## 深入探讨
 
-在Elixir中，`<>`操作符其实是调用了`Kernel.<>/2`函数。该函数可以接受任意类型的参数，包括数字、布尔值、列表、集合和元组。当接受的参数为字符串时，它们会被组合成一个单一的字符串；当接受的参数为其他类型时，它们会被自动转换为字符串后再进行组合。这就使得字符串连接更加强大和灵活。
+Elixir 中的字符串连接实际上是通过元组拼接来实现的。每次使用 `<>` 运算符连接字符串时，都会创建一个元组，其中包含了之前的字符串和新的字符串。然后通过 `IO.iodata_to_binary/1` 函数来将这个元组转换为一个二进制字符串。
 
-另外，Elixir还提供了`...`操作符来进行多个字符串的连接，它会自动在每个字符串之间添加空格。比如：
-
-```
-Elixir
-message = "Hello" ... "world"
-```
-
-输出结果为：
-```
-Hello world
-```
+这种实现方式的好处是，每次字符串连接都不需要重新分配内存，可以避免字符串的不断复制，从而提高了性能。
 
 ## 参考链接
 
-- Elixir官方文档: [https://elixir-lang.org/getting-started/string-interpolation-and-concatenation.html](https://elixir-lang.org/getting-started/string-interpolation-and-concatenation.html)
-- Elixir字符串操作文档: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
-- 《Elixir in Action》: [https://www.manning.com/books/elixir-in-action](https://www.manning.com/books/elixir-in-action)
+- [Elixir字符串连接文档](https://hexdocs.pm/elixir/String.html#module-concatenation)
+- [Elixir核心函数Enum.into/2文档](https://hexdocs.pm/elixir/Enum.html#into/2)
+- [深入了解Elixir中字符串的运行机制](https://blog.danielberkompas.com/elixir-low-level-string-concatenation.html)
 
 ## 参见
-
-如果您对Elixir字符串连接感兴趣，可能也会喜欢以下主题：
-
-- Elixir字符串格式化：[https://elixirschool.com/lessons/basics/string-interpolation/](https://elixirschool.com/lessons/basics/string-interpolation/)
-- Elixir列表和集合操作：[https://elixirschool.com/lessons/basics/enum-map-reduce/](https://elixirschool.com/lessons/basics/enum-map-reduce/)
-- Elixir函数操作符：[https://elixirschool.com/lessons/advanced/function-composition/](https://elixirschool.com/lessons/advanced/function-composition/)

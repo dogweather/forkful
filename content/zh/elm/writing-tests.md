@@ -1,68 +1,54 @@
 ---
 title:    "Elm: 编写测试"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要编写测试？
+## 为什么
 
-测试是编程中不可或缺的一部分，它可以帮助我们检测代码中的错误，保证代码的质量和稳定性。编写测试可以帮助我们更快地发现和解决潜在的问题，节省时间和精力。
+为什么要编写测试呢？测试在编程过程中起着非常重要的作用。它可以确保我们的代码在运行时能够如预期般顺利运行，避免出现意想不到的bug，提高代码质量和可维护性。
 
-## 如何编写测试
+## 如何做
 
-为了演示如何在Elm中编写测试，我们将以一个简单的函数为例，该函数接受一个数字列表，并返回其中的最大值。
-
-```Elm
-getMax : List Int -> Int
-getMax numbers =
-  case numbers of
-    [] -> 0
-    [x] -> x
-    x :: xs -> 
-      let 
-        maxRest = getMax xs
-      in
-        if x > maxRest then
-          x
-        else
-          maxRest
-```
-
-我们提前定义了一个测试函数，并使用 [`elm-explorations/test`](https://package.elm-lang.org/packages/elm-explorations/test/latest/) 包来运行测试。
+首先，我们需要在代码中引入测试框架，比如elm-test。然后，我们可以使用各种断言函数来判断代码的输出结果是否符合我们的预期。例如：
 
 ```Elm
-test : Test
-test =
-  describe "getMax"
-    [ test "handles empty list" <|
-      \() ->
-        Expect.equal 0 (getMax [])
-    , test "returns max value for a single element list" <|
-      \() ->
-        Expect.equal 5 (getMax [5])
-    , test "returns max value for a list with multiple elements" <|
-      \() ->
-        Expect.equal 10 (getMax [1, 5, 10, 2, 8])
-    ]
+import Expect
+import Test exposing (..)
+
+square x = x * x
+
+tests =
+    describe "Square function"
+        [ test "should square positive numbers" <|
+            \() ->
+                Expect.equal (square 5) 25
+        , test "should return 0 for 0 input" <|
+            \() ->
+                Expect.equal (square 0) 0
+        ]
+
+main = beginnerProgram
+    { model = tests
+    , update = always
+    , view = always noContent
+    }
 ```
 
-运行测试时，我们可以看到所有的测试都通过了，这说明我们的函数在各种情况下都能返回正确的最大值。
+其中，我们通过导入Expect模块，使用equal函数来断言函数计算结果是否等于预期值。我们还可以使用其他断言函数来测试各种情况，比如Expect.greater等。
 
-<img src="https://i.imgur.com/bDVg08k.png" width="600">
+当我们运行这段代码时，如果所有测试通过，控制台会输出一个绿色的“OK”的字样，表示测试成功。
 
-## 深入了解编写测试
+## 深入了解
 
-编写测试不仅仅是为了确保函数的正确性，它还可以帮助我们更好地理解代码的功能和逻辑。通过编写测试，我们可以更早地发现并解决问题，避免将来可能会出现的错误。此外，测试也为代码的重构和更新提供了保障，确保在改动代码后，原有的功能仍然可靠地运行。
+编写测试不仅仅是为了简单地检查代码输出是否正确。通过编写详细的测试用例，我们可以更加深入地了解我们的代码内部实现逻辑。同时，当我们在后期对代码进行更改时，测试也能帮助我们发现潜在的bug，并及时修复，避免对现有功能的破坏。
 
-为了编写好的测试，我们需要充分了解被测试的代码，包括其输入和输出，以及可能存在的边界情况。我们还可以使用不同的数据和参数来测试函数，以确保其功能的完整性和稳定性。
+除了单元测试，我们还可以编写集成测试来验证整个应用程序的功能是否正常。这些不仅仅是为了保证代码质量，也能帮助我们更好地理解和改进我们的代码。
 
-# 参考资料
+## 查看更多
 
-- [Writing Tests in Elm](https://guide.elm-lang.org/testing/)
-- [`elm-explorations/test` Package Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Testing Basics with `elm-test`](https://elmprogramming.com/testing-basics-with-elm-test.html)
-
-# 参见
-
-- [The Importance of Writing Tests in Elm (English Version)](https://www.example.com)
+- [Elm官方文档-测试](https://guide.elm-lang.org/testing/)
+- [Elm-test文档](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [从零开始学习Elm-第三部分：编写测试](https://www.zhihu.com/column/p/1434539301061221376)

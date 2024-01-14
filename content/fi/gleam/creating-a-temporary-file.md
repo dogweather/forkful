@@ -1,41 +1,37 @@
 ---
 title:    "Gleam: Väliaikaistiedoston luominen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksikö?
 
-Luodessaan ohjelmia, yksi tärkeä asia on työskennellä tehokkaasti ja turvallisesti. Yksi tapa saavuttaa tämä on käyttämällä väliaikaisia tiedostoja, joita ei ole tarpeen tallentaa pysyvästi.
+Jokaisella ohjelmointikielellä on tapansa käsitellä muuttuvia tiedostoja ja tietoa. Gleamilla, funktionaalisella ohjelmointikielellä, on oma tapansa luoda väliaikaisia tiedostoja. Tässä artikkelissa sukellamme Gleamin `File`-moduuliin ja opimme, miksi ja miten luoda väliaikaisia tiedostoja tässä ohjelmointikielessä.
 
-## Miten
+## Kuinka luoda väliaikainen tiedosto Gleamilla
 
-Gleam tarjoaa kätevän tavan luoda väliaikaisia tiedostoja ohjelmassa. Se tehdään käyttämällä `temp_file` funktiota, joka hyväksyy yhden argumentin eli merkkijonon, joka toimii tiedostonimen pohjana.
-
-```Gleam
-let temporary_file = temp_file("example");
-```
-
-Tämän jälkeen, Gleam luo tiedoston `example` nimen ja lisää siihen satunnaisen numeron varmistaen, että tiedostonimi on uniikki. Tämän tiedoston voi sitten käyttää kuten mitä tahansa muuta tiedostoa ohjelmassa.
+Gleamin `File`-moduulista löytyy toiminto `Temporary.file()`, joka luo uuden väliaikaisen tiedoston annetulla tiedostopäätteellä ja palauttaa tiedoston nimen string-muodossa. Toiminnon ensimmäisen parametrin määritellään oletusarvoisesti olevan tiedostopääte `.tmp`. Alla on esimerkki siitä, kuinka voit luoda väliaikaisen tiedoston Gleam-ohjelmassa:
 
 ```Gleam
-// Kirjoitetaan tiedostoon
-File.write(temporary_file, "Tässä on tekstiä");
+import File
 
-// Luetaan tiedostosta
-let content = File.read(temporary_file);
+fn main() {
+  let tmp_file = File.Temporary.file()
+  // tmp_file = "/var/folders/vv/dfs78ndf22skfnh/tmp123456.tmp"
+  File.write(tmp_file, "Tämä on väliaikainen tiedosto")
+  let text = File.read(tmp_file)
+  // text = "Tämä on väliaikainen tiedosto"
+}
 ```
 
-Tärkeää on huomata, että tiedosto poistetaan automaattisesti, kun ohjelma suoritus päättyy. Tämä varmistaa, että väliaikaiset tiedostot eivät jää turhaan tallennettuna ja vie ylimääräistä tilaa.
+## Syvemmälle väliaikaisten tiedostojen luomiseen
 
-## Syvempi sukellus
-
-`temp_file` funktio hyödyntää alustan omia väliaikaisia tiedostoja. Gleam vain tarjoaa kätevän API:n tälle toiminnallisuudelle, joten kehittäjän ei tarvitse huolehtia tiedostojen luomisesta ja nimeämisestä.
-
-Väliaikaisten tiedostojen käyttö on hyvä tapa välttää turhia pysyviä tiedostoja ohjelman suorituksen aikana. Tämä on erityisen hyödyllistä esimerkiksi web-sovelluksissa, joissa on tarve luoda väliaikaisia tiedostoja käyttäjien lataamille tiedostoille.
+`File.Temporary.file()` käyttää Gleamin `File`-moduulin `open()` ja `close()` -toimintoja luodakseen väliaikaisen tiedoston. `Temporary.file()`-toiminto myös luo uniikin tiedostonimen käyttäen timestamppia, satunnaislukua ja annettua tiedostopäätettä. Tiedosto automaattisesti poistetaan, kun se suljetaa `File.close()` -toiminnolla tai ohjelma päättyy.
 
 ## Katso myös
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation/guide/temporary_files)
-- [Gleamin Github-repositorio](https://github.com/gleam-lang/gleam)
+- `File`-moduulidokumentaatio: https://gleam.run/modules/file/latest/
+- Gleamin virallinen verkkosivusto: https://gleam.run/
+- Lisää Gleam-ohjelmointikielestä: https://en.wikipedia.org/wiki/Gleam_(programming_language)

@@ -1,57 +1,45 @@
 ---
 title:    "Ruby: Pisanie do standardowego błędu"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisać na standardowe wyjście błędów?
+## Dlaczego
 
-Pisanie do standardowego wyjścia błędów jest ważnym narzędziem, które pozwala programistom na monitorowanie i debugowanie swojego kodu. Jest to szczególnie przydatne, gdy tworzymy duże i złożone projekty, gdzie błędy mogą nie tylko utrudnić działanie programu, ale również być przyczyną poważnych problemów dla użytkowników.
+Pisanie do standardowego błędu (standard error) może wydawać się frustrujące i niepotrzebne, ale jest to bardzo ważne narzędzie dla programistów Ruby. Dzięki temu, możemy monitorować, debugować i poprawiać nasze programy. W tym artykule dowiesz się, dlaczego pisanie do standard error jest ważne i jak to zrobić.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Aby napisać do standardowego wyjścia błędów w języku Ruby, można skorzystać z metody `warn`, która wypisze podaną wiadomość do wyjścia błędów. W poniższym przykładzie wykorzystamy tę metodę do wyświetlenia komunikatu "Wystąpił błąd!" na wyjściu błędów.
+Aby pisać do standardowego błędu w Ruby, musimy użyć metody `STDERR.puts`. Spójrzmy na przykład:
 
-```Ruby
-warn "Wystąpił błąd!"
+```ruby
+10 / 0
 ```
 
-Po uruchomieniu programu, powyższy kod spowoduje wyświetlenie podanego komunikatu w konsoli lub terminalu.
+Napisanie tego kodu spowoduje błąd dzielenia przez 0, ale nie zostanie wyświetlony żaden komunikat w konsoli. Jednak jeśli użyjemy metody `STDERR.puts`, wyświetli się ona w standardowym błędzie, który jest wyświetlany w konsoli na czerwono:
 
-### Manipulacja wyjściem błędów
-
-Warto również wiedzieć, że można manipulować wyjściem błędów i kierować go do innych miejsc niż konsola lub terminal. W tym celu można skorzystać z metody `$stderr`, która zwraca strumień wyjściowy dla błędów. Przykładowo, jeśli chcemy zapisać błędy do pliku, możemy wykorzystać poniższy kod:
-
-```Ruby
-File.open("errors.txt", "w") do |file|
-  $stderr = file
-  warn "Błąd został zapisany do pliku."
-end
+```ruby
+STDERR.puts "Nie można dzielić przez 0!"
+# => Nie można dzielić przez 0!
 ```
 
-Po uruchomieniu programu, błędy zostaną zapisane do pliku "errors.txt", a nie wyświetlone w konsoli lub terminalu.
+Możemy również użyć tej metody do wyświetlania innych informacji o błędzie, np. numeru linii, w którym wystąpił błąd:
+
+```ruby
+STDERR.puts "Wystąpił błąd w linii #{__LINE__}."
+# => Wystąpił błąd w linii 3.
+```
 
 ## Deep Dive
 
-W przypadku, gdy chcemy bardziej szczegółowych informacji o błędach w naszym programie, możemy skorzystać z modułu `Logger` dostępnego w języku Ruby. Jest to narzędzie, które pozwala na logowanie różnego rodzaju informacji, w tym błędów, do pliku lub konsoli z określonym poziomem ważności.
+W Ruby, `puts` i `print` są metodami do wypisywania tekstu na standardowym wyjściu (standard output). Natomiast `STDERR.puts` służy do wypisywania na standardowym błędzie. W przypadku błędów, takich jak wyjątki lub nieoczekiwane zachowania programu, wypisanie informacji na standardowym błędzie jest bardziej odpowiednie, ponieważ pomaga nam zlokalizować i naprawić problem.
 
-Aby użyć modułu `Logger`, musimy go najpierw zaimportować do naszego programu:
+Należy również pamiętać, że jeśli nie użyjemy metody `STDERR.puts`, błędy i wyjątki będą nadal wyświetlane, ale tylko na standardowym wyjściu. W takim przypadku będą wyświetlane na białym tle, co może być trudne do zauważenia, zwłaszcza jeśli mamy dużo tekstu w konsoli.
 
-```Ruby
-require 'logger'
-```
+## Zobacz też
 
-Następnie, możemy utworzyć nowy obiekt loggera i ustawić poziom ważności na `ERROR`, co spowoduje zapisywanie tylko błędów do logów. Przykładowy kod może wyglądać następująco:
-
-```Ruby
-logger = Logger.new("logs.txt")
-logger.level = Logger::ERROR
-```
-
-Wówczas, korzystając z metody `error` obiektu loggera, możemy zapisywać informacje o błędach w naszym programie do pliku "logs.txt".
-
-## Zobacz również
-
-- [Dokumentacja języka Ruby o wypisywaniu do standardowego wyjścia błędów](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-warn)
-- [Dokumentacja języka Ruby o manipulowaniu wyjściem błędów](https://ruby-doc.org/core-2.7.1/IO.html#method-c-new-label-I-O+Streams)
+- [Dokumentacja Ruby: standard error](https://ruby-doc.org/core-2.6.3/StandardError.html)
+- [Inne sposoby obsługi błędów w Rubym](https://www.rubyguides.com/2019/04/ruby-error-handling/)
+- [Poradnik dla początkujących w tworzeniu aplikacji w Ruby](https://dev.to/t/beginners/ruby)

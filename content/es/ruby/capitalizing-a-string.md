@@ -1,63 +1,70 @@
 ---
 title:    "Ruby: Capitalizando una cadena"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué capitalizar una cadena en Ruby
 
-Capitalizar una cadena de texto es una tarea común en la programación. Al convertir todas las letras de una cadena a mayúsculas, podemos dar un formato uniforme a nuestros datos y facilitar su manipulación. A continuación, veremos cómo realizar esta operación en Ruby.
+Capitalizar una cadena en Ruby es una tarea común en la programación. Es útil cuando se desea resaltar una palabra o frase en un texto, o cuando se quiere seguir una convención de estilo específica. A continuación, explicaremos cómo se puede hacer esto en Ruby.
 
-## Cómo hacerlo
+## Cómo capitalizar una cadena en Ruby
 
-La forma más simple de capitalizar una cadena de texto en Ruby es utilizando el método `upcase`, que se encuentra disponible en todos los objetos de tipo `String`. Este método devuelve una nueva cadena con todas las letras en mayúsculas.
-
-```Ruby
-"hola mundo".upcase
-# => "HOLA MUNDO"
+```ruby
+cadena = "hola, mundo"
+puts cadena.capitalize
 ```
 
-Si queremos capitalizar solo la primera letra de una cadena, podemos utilizar el método `capitalize`.
+Salida: "Hola, mundo"
 
-```Ruby
-"hola mundo".capitalize
-# => "Hola mundo"
+En el ejemplo anterior, utilizamos el método `capitalize` para capitalizar la primera letra de la cadena `hola, mundo`. Este método devuelve una copia de la cadena con la primera letra en mayúscula.
+
+Además, también podemos utilizar el método `capitalize!` para modificar la cadena original en lugar de crear una nueva:
+
+```ruby
+cadena = "hola, mundo"
+cadena.capitalize!
+puts cadena
 ```
 
-También existe el método `upcase!`, que modifica la cadena original en lugar de devolver una nueva cadena.
+Salida: "Hola, mundo"
 
-```Ruby
-texto = "hola mundo"
-texto.upcase!
-puts texto
-# => "HOLA MUNDO"
+Si la cadena comienza con una letra mayúscula, estos métodos no harán ningún cambio en la cadena original.
 
-puts texto.upcase!
-# => "HOLA MUNDO"
+## Profundizando en la capitalización de cadenas en Ruby
+
+Existen otros métodos en Ruby que nos permiten capitalizar una cadena de distintas formas. Por ejemplo, el método `upcase` nos permite convertir todas las letras de una cadena en mayúsculas:
+
+```ruby
+cadena = "hola, mundo"
+puts cadena.upcase
 ```
 
-También podemos utilizar el método `gsub` junto con una expresión regular para capitalizar cada palabra dentro de una cadena.
+Salida: "HOLA, MUNDO"
 
-```Ruby
-"hola mundo".gsub(/\b\w/){|l| l.upcase}
-# => "Hola Mundo"
+Mientras que el método `downcase` hace lo contrario, convirtiendo todas las letras en minúsculas:
+
+```ruby
+cadena = "HOLA, MUNDO"
+puts cadena.downcase
 ```
 
-## Profundizando
+Salida: "hola, mundo"
 
-Mientras que los métodos mencionados anteriormente funcionan perfectamente para cadenas en inglés o español, también existen métodos más avanzados para capitalizar cadenas en idiomas con reglas de capitalización más complejas. Por ejemplo, en alemán la letra "ß" se convierte en "SS" al capitalizar una palabra.
+Además, el método `swapcase` nos permite intercambiar las letras mayúsculas y minúsculas en una cadena:
 
-Para estos casos más específicos, podemos utilizar la gema `unicode`, que incluye el método `upcase_first_letter` que maneja correctamente estos casos especiales.
-
-```Ruby
-require 'unicode'
-Unicode.upcase_first_letter("Straße")
-# => "Straße"
+```ruby
+cadena = "Hola, Mundo"
+puts cadena.swapcase
 ```
+
+Salida: "hOLA, mUNDO"
+
+Estos métodos pueden ser útiles en diferentes situaciones, dependiendo de nuestras necesidades.
 
 ## Ver también
 
-- [Métodos de String en Ruby](https://ruby-doc.org/core-2.7.1/String.html)
-- [Gema Unicode](https://github.com/knu/ruby-unicode)
-- [Reglas de capitalización en diferentes idiomas](https://www.rosettacode.org/wiki/Title_case)
+- Documentación oficial de Ruby sobre el método `capitalize`: https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize
+- Tabla de contenido de la documentación de Ruby: https://ruby-doc.org/core-2.7.1/

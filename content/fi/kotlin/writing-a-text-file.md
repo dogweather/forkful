@@ -1,70 +1,49 @@
 ---
 title:    "Kotlin: Tekstitiedoston kirjoittaminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen on tärkeä osa ohjelmoinnin prosessia. Kun luomme ohjelmia, tarvitsemme usein tallennustilaa tietojen tallentamiseen. Tässä tapauksessa tekstitiedostot ovat hyvin kätevä työkalu, sillä ne mahdollistavat tiedon tallentamisen helposti ja yksinkertaisesti.
+Kirjoittaminen on yksi tärkeimmistä taidoista ohjelmoinnissa, ja tekstitiedostojen kirjoittaminen on keskeinen osa sitä. Tekstitiedostojen kirjoittamisen avulla voit tallentaa ja säilyttää tietoja eri ohjelmien välillä.
 
 ## Miten
 
-Kotlinilla on helppo kirjoittaa tiedostoon, ja se vaatii vain muutaman yksinkertaisen askeleen. Ensinnäkin, sinun täytyy luoda uusi tekstitiedosto nimipääteellä `.txt`. Tämän jälkeen voit käyttää `FileWriter`-luokkaa avaamaan ja kirjoittamaan tiedostoon.
+Kotlin-ohjelmointikieli tarjoaa helpon tavan kirjoittaa tekstitiedostoja. Se käyttää Java IO-kirjastoa, joka tarjoaa joukon luokkia ja metodeja tiedostojen käsittelyyn.
 
-```Kotlin
-import java.io.FileWriter
-
-fun main() {
-    val tiedosto = FileWriter("uusi_tiedosto.txt")
-    tiedosto.write("Tämä on ensimmäinen rivi.")
-    tiedosto.append("\nTämä on toinen rivi.")
-    tiedosto.close()
-}
+```
+Kotlin
+val tiedosto: File = File("tietoja.txt") // Luo uuden tiedoston
+tiedosto.writeText("Hei, tämä on esimerkki tekstiä.") // Kirjoittaa tiedostoon tekstin
+println(tiedosto.readText()) // Tulostaa tiedostoon tallennetun tekstin
 ```
 
-Käyttämämme `FileWriter`-luokka antaa meille mahdollisuuden avata ja kirjoittaa tiedostoon. Ensimmäisellä kerralla kirjoitamme tekstiä `write()`-metodilla ja toisella kerralla lisäämme tekstiä olemassa olevaan tiedostoon `append()`-metodilla. Lopuksi `.close()` sulkee tiedoston ja tallentaa kaikki tekstit.
+Tässä esimerkissä luomme ensin uuden tiedoston nimeltä "tietoja.txt". Sitten käytämme `writeText()`-metodia kirjoittamaan tiedostoon otsikon "Hei, tämä on esimerkki tekstiä". Lopuksi tulostamme tiedostosta luetun tekstin käyttäen `readText()`-metodia.
 
-## Syvemmälle
-
-Kirjoittaessa on tärkeää myös ottaa huomioon, miten kirjoitettu tiedosto tallennetaan. Käyttämämme `FileWriter`-luokka ei aina tallenna tiedostoa samaan paikkaan, josta sen avasimme. Tiedosto tallennetaan aina nykyisen projektimme juurikansioon.
-
-Voit myös käyttää `BufferedWriter`-luokkaa, joka antaa meille mahdollisuuden kirjoittaa enemmän tekstiä kerralla. Tämä saattaa nopeuttaa kirjoitusprosessia, koska jokaisella `write()`-kutsulla ei tallenneta tiedostoon heti, vaan vasta `flush()`-metodia kutsuttaessa.
-
-```Kotlin
-import java.io.BufferedWriter
-import java.io.FileWriter
-
-fun main() {
-    val tiedosto = FileWriter("uusi_tiedosto.txt")
-    val bufferedWriter = BufferedWriter(tiedosto)
-    bufferedWriter.write("Tämä on ensimmäinen rivi.")
-    bufferedWriter.newLine()
-    bufferedWriter.write("Tämä on toinen rivi.")
-    
-    bufferedWriter.close()
-}
+```
+Kotlin
+Hei, tämä on esimerkki tekstiä.
 ```
 
-Tiedostoon kirjoitettavan tekstin lisäksi voit myös käyttää `PrintWriter`-luokkaa tulostamaan muotoiltua tekstiä.
+## Syventävä tarkastelu
 
-```Kotlin
-import java.io.FileWriter
-import java.io.PrintWriter
+Kun kirjoitat tekstitiedostoja Kotlinilla, on hyvä myös huolehtia siitä, että tiedostot suljetaan ja virheenkäsittely tapahtuu asianmukaisesti. Tämä voi vaikuttaa ohjelman suorituskykyyn ja varmistaa, että tiedostoista ei tule jumiutuneita.
 
-fun main() {
-    val tiedosto = FileWriter("uusi_tiedosto.txt")
-    val printWriter = PrintWriter(tiedosto)
-    
-    printWriter.printf("Käyttäjänimi %s kirjoittaa tiedostoon.", "Esimerkki")
-    printWriter.close()
-}
+Lisäksi on hyödyllistä käyttää `FileWriter`-luokkaa, joka tarjoaa enemmän vaihtoehtoja tiedoston kirjoittamiseen, kuten lisätä tiedostoon sisältöä sen sijaan, että korvaisi sen kokonaan.
+
 ```
-
-Kotlinin virallinen dokumentaatio tarjoaa lisää tietoa tiedostonkirjoituksesta ja sen eri vaihtoehdoista. Voit myös tutustua Javan `FileWriter`-luokkaan, johon Kotlinin versio perustuu.
+Kotlin
+val tiedosto: File = File("lisays.txt")
+val lisays: String = "Lisää tekstiä tiedostoon."
+val fileWriter: FileWriter = FileWriter(tiedosto, true) // Toinen parametri tarkoittaa, että sisältöä lisätään eikä korvata
+fileWriter.use { it.write(lisays) } // "use" metodi sulkee tiedoston automaattisesti
+```
 
 ## Katso myös
 
-- [Kotlinin käsikirja tiedostojen lukemiseen ja kirjoittamiseen](https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-write-files.html)
-- [Java FileWriter-luokka](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+- [Kotlin ohjelmointikielen viralliset sivut](https://kotlinlang.org/docs/jvm-get-started.html)
+- [Java IO-kirjaston dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
+- [Kotin IO-kirjaston dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)

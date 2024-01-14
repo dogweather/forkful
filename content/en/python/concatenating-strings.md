@@ -1,68 +1,96 @@
 ---
 title:    "Python recipe: Concatenating strings"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Strings are an essential part of any Python program, and at some point, you might find yourself wanting to combine multiple strings into one. This is where concatenation comes in. By learning how to concatenate strings, you can manipulate and format your data in various ways to create more efficient and powerful programs.
+Strings are an essential part of any programming language, allowing us to work with text data in our code. One common task when dealing with strings is to combine, or concatenate, them together. This allows us to create new strings from existing pieces of text and is useful in many situations. In this blog post, we will explore the reasons why we would want to concatenate strings and how to do it in Python.
 
 ## How To
 
-Concatenating strings in Python is a simple task that can be achieved using the `+` operator. Let's take a look at an example:
+Concatenating strings in Python is a straightforward process that can be done in a variety of ways. Let's take a look at some examples using different approaches:
 
 ```python
-name = "John"
-message = "Hello, " + name + ". Welcome to my blog!"
-print(message)
+# Using the "+" operator
+str1 = "Hello"
+str2 = "World"
+concatenated_str = str1 + str2
+print(concatenated_str)
+# Output: HelloWorld
+
+# Using the "format" method
+str1 = "Hello"
+str2 = "World"
+concatenated_str = "{} {}".format(str1, str2)
+print(concatenated_str)
+# Output: Hello World
+
+# Using f-strings (Python 3.6+)
+str1 = "Hello"
+str2 = "World"
+concatenated_str = f"{str1} {str2}"
+print(concatenated_str)
+# Output: Hello World
 ```
 
-Output: `Hello, John. Welcome to my blog!`
+We can see that in all three examples, we are combining two strings together to create a new one. In the first example, we use the concatenation operator "+" to join the two strings. In the second and third examples, we use string formatting methods to insert the string variables into a template string. This allows for more flexibility in the final output string.
 
-In the above example, we have defined two strings, `name` and `message`. The `+` operator is used to combine the two strings, with the variable `name` being added in between the other two strings. This creates a new string, which is then printed to the console.
-
-Concatenation is not limited to just two strings, you can combine as many strings as you need. You can even concatenate strings with other data types, such as numbers.
+Concatenating strings can also involve more than just two strings. We can easily join multiple strings together using the same methods, as shown in the examples below:
 
 ```python
-age = 32
-sentence = "I am " + str(age) + " years old."
-print(sentence)
+# Joining multiple strings
+str1 = "Hello"
+str2 = "beautiful"
+str3 = "world"
+concatenated_str = str1 + " " + str2 + " " + str3
+print(concatenated_str)
+# Output: Hello beautiful world
+
+# Formatting with multiple variables
+str1 = "I"
+str2 = "am"
+str3 = "hungry"
+concatenated_str = "{} {} {}".format(str1, str2, str3)
+print(concatenated_str)
+# Output: I am hungry
+
+# Using f-strings with multiple variables
+str1 = "Welcome"
+str2 = "to"
+str3 = "my"
+str4 = "blog"
+concatenated_str = f"{str1} {str2} {str3} {str4}"
+print(concatenated_str)
+# Output: Welcome to my blog
 ```
 
-Output: `I am 32 years old.`
-
-Notice how we used the `str()` function to convert the integer value of `age` into a string, as the `+` operator can only be used to combine strings.
+As we can see, the possibilities are endless when it comes to concatenating strings in Python. It is a simple yet powerful tool that can be used in various scenarios.
 
 ## Deep Dive
 
-There are two other methods in Python that can be used for string concatenation - `str.join()` and `+=` operator. Let's take a look at these in detail.
+Under the hood, concatenating strings involves creating a new string object with the joined contents of the individual string variables. In Python, strings are immutable, meaning they cannot be changed. So when we concatenate strings, we are actually creating a new object in memory. This can have implications in terms of performance when working with large strings or a large number of concatenations.
 
-The `str.join()` method takes a list of strings as its argument and returns a single string made by concatenating all the elements of the list.
-
-```python
-names = ["John", "Sarah", "Mike"]
-message = ", ".join(names) + " are my friends."
-print(message)
-```
-
-Output: `John, Sarah, Mike are my friends.`
-
-Notice how we used the `", "` string to join the elements of the list, but you can use any other string or character.
-
-The `+=` operator is similar to the `+` operator, but it also assigns the concatenated string back to the original variable.
+One way to optimize string concatenation in Python is to use the `join` method. This method takes a list of strings and joins them together using the specified delimiter. Here's an example:
 
 ```python
-name = "John"
-name += " Doe"
-print(name)
+# Using the join method
+str_list = ["Python", "is", "awesome"]
+delimiter = " "
+concatenated_str = delimiter.join(str_list)
+print(concatenated_str)
+# Output: Python is awesome
 ```
 
-Output: `John Doe`
+Using the `join` method can be more efficient than concatenating strings one by one, especially with larger inputs.
 
 ## See Also
 
-- [Python String Concatenation](https://www.w3schools.com/python/gloss_python_string_concatenation.asp)
-- [Python String Operations](https://www.geeksforgeeks.org/python-string-operations/)
-- [Official Python Documentation on Strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+For more information on string concatenation in Python, check out these resources:
+
+- [Python String Concatenation](https://www.programiz.com/python-programming/string-concatenation)
+- [Python String Formatting](https://realpython.com/python-string-formatting/)
+- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)

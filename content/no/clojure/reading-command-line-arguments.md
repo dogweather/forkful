@@ -1,64 +1,71 @@
 ---
-title:    "Clojure: Lesing av kommandolinjeargumenter"
+title:    "Clojure: Lese kommandolinjeargumenter"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å lese argumenter fra kommandolinjen kan være en veldig viktig ferdighet for en Clojure-programmerer. Dette kan hjelpe deg med å lage mer dynamiske og fleksible programmer som kan tilpasses ved kjøretid. Så, hvorfor ikke lære å gjøre det?
+Å lese kommandolinjetilordninger er en viktig ferdighet for enhver programmerer, spesielt når du arbeider med Clojure. Det gir deg muligheten til å ta imot og behandle input fra brukere, som kan være nyttig for å lage interaktive programmer eller automatisere oppgaver.
 
-## Slik gjør du det
+# Hvordan
 
-Det er enkelt å lese argumenter fra kommandolinjen i Clojure. Alt du trenger å gjøre er å bruke funksjonen ```clojure.core/command-line-args``` og angi filen med argumenter som et argument. La oss se på et eksempel:
+For å lese kommandolinjetilordninger i Clojure, kan du bruke funksjonen *command-line-args*. Denne funksjonen vil returnere en liste med argumentene som ble gitt ved å starte programmene fra kommandolinjen. La oss se på et eksempel:
 
-```clojure
-(ns command-line
-  (:require [clojure.core :refer [command-line-args]]))
-  
-(def args (command-line-args))
-  
-(println "Navnet på programmet er: " (nth args 0))
-(println "Første argumentet er: " (nth args 1))
+```Clojure
+(defn print-args []
+  (let [args (command-line-args)]
+    (println "Antall argumenter:" (count args))
+    (println "Argumenter:" args)))
+
+(print-args)
 ```
 
-I dette eksempelet bruker vi funksjonen ```command-line-args``` for å lese argumentene som ble gitt ved kjøretid. Disse argumentene er lagret i variabelen ```args``` som vi deretter kan bruke til å få tilgang til hvert enkelt argument. Så hvis vi kjører dette programmet med følgende kommandolinje:
+Når du kjører dette programmet fra kommandolinjen med følgende kommando:
 
 ```bash
-lein run command-line.clj Clojure Programmerer
+lein exec print-args.clj arg1 arg2 arg3
 ```
 
-vil vi få følgende utskrift:
+vil output være:
 
-```
-Navnet på programmet er: command-line.clj
-Første argumentet er: Clojure Programmerer
-```
-
-Som du kan se, har vi fått tilgang til både navnet på programmet og det første argumentet som ble gitt i kommandolinjen.
-
-## Dypdykk
-
-Det er også mulig å lese inn argumenter som flagg (flags) i form av ```--navn-verdi``` eller ```-navn verdi```. Dette kan være nyttig for å gi ulike innstillinger til programmet ditt. La oss se på et eksempel på hvordan vi kan gjøre dette:
-
-```clojure
-(ns command-line
-  (:require [clojure.core :refer [command-line-args]]))
-  
-(def args (command-line-args))
-  
-(println "Navnet på programmet er: " (nth args 0))
-
-(if (= "-verbose" (nth args 1))
-  (println "Programmet kjøres i verbose modus."))
-
+```bash
+Antall argumenter: 3
+Argumenter: (arg1 arg2 arg3)
 ```
 
-I dette eksempelet sjekker vi om det andre argumentet er ```-verbose``` og hvis det er tilfelle, vil programmet gi tilbakemelding om at det kjører i verbose modus. Slik kan vi enkelt legge til ulike funksjoner eller innstillinger basert på argumentene som blir gitt ved kjøretid.
+Som du kan se, vil *command-line-args* funksjonen returnere en liste med alle argumentene som er gitt som input. Du kan deretter behandle disse argumentene videre for å oppnå ditt ønskede resultat.
 
-## Se også
+# Dypdykk
 
-- [Clojure.org - Command Line Args](https://clojure.org/reference/command_line_args)
-- [ClojureDocs - command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
-- [Repl.it - Online Clojure Compiler](https://repl.it/languages/clojure)
+Hvis du ønsker enda mer kontroll over hvordan kommandolinjetilordninger blir lest og behandlet, kan du bruke funksjonen *apply-args*. Denne funksjonen lar deg sende inn en funksjon som tar imot argumentene fra kommandolinjen og behandler dem på en bestemt måte. La oss se på et eksempel:
+
+```Clojure
+(defn multiply-args [args]
+  (apply * args))
+
+(let [args (command-line-args)]
+  (println "Resultat:" (multiply-args args)))
+```
+
+Kjører dette programmet med følgende kommando:
+
+```bash
+lein exec multiply-args.clj 5 3
+```
+
+vil output være:
+
+```bash
+Resultat: 15
+```
+
+Som du kan se, kan du med *apply-args* gi en personalisert funksjon for å behandle kommandolinjetilordninger.
+
+# Se også
+
+- [Clojure kommandolinjetilordninger dokumentasjon](https://clojuredocs.org/clojure.core/command-line-args)
+- [En introduksjon til Clojure](https://clojure.org/guides/getting_started)
+- [Mer om Clojure-syntaks](https://learnxinyminutes.com/docs/clojure/)

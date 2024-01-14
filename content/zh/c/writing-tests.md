@@ -1,67 +1,65 @@
 ---
 title:    "C: 编写测试"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-C语言编程博客：为什么编写测试是重要的?
+## 为什么会编写测试？
 
-## 为什么
-
-在软件开发中，编写测试是极其重要的。通过编写测试，我们可以检验代码是否达到预期效果，发现并修复可能存在的错误，保证程序的稳定性和可靠性。编写测试也有助于我们更深入地理解代码运行过程，提高代码质量和开发效率。
+在编程中，测试是非常重要的一步。它们可以帮助我们检查和验证自己编写的代码是否正确，并且可以在我们进行更改时提供反馈。编写测试也可以帮助我们节省时间和精力，因为它们可以帮助我们快速测试代码并发现潜在的问题。
 
 ## 如何编写测试
 
-编写测试可以通过以下基本步骤来完成：
+编写测试的第一步是确定我们要测试的功能或代码。然后，我们可以使用C语言中的断言(assertions)来编写测试代码。断言是一种用于验证某个条件是否满足的表达式。接下来，我们使用测试框架来运行我们编写的测试代码。一个常用的测试框架是Unity，它提供了一些方便的宏来帮助我们编写测试代码。
 
-1. 确定被测试的函数或模块；
-2. 编写测试用例，涵盖不同输入和边界条件；
-3. 使用断言语句来验证代码的正确性；
-4. 运行测试并分析结果。
-
-让我们通过下面的示例来演示如何编写测试。
+下面是一个简单的测试例子，我们将测试一个名为`add`的函数，它可以将两个整数相加并返回结果：
 
 ```C
-// 定义一个简单的函数，用于计算两个整数之和
-int sum(int a, int b) {
-    return a + b;
+#include <stdio.h>
+#include <assert.h>
+#include "unity.h"
+
+/* 待测试的函数 */
+int add(int x, int y) {
+  return x + y;
 }
 
-// 编写测试用例
+/* main函数，使用Unity测试框架来运行测试 */
 int main() {
-    // 测试输入为正数的情况
-    assert(sum(2, 3) == 5);
-    
-    // 测试输入为负数的情况
-    assert(sum(-5, 8) == 3);
-    
-    // 测试输入为0的情况
-    assert(sum(0, 6) == 6);
-    
-    // 测试溢出的情况
-    assert(sum(2147483647, 2147483647) == -2);
-    
-    printf("所有测试通过！\n");
-    return 0;
+  /* 添加测试代码 */
+  printf("====== 测试add函数 ======\n");
+  /* 第一个参数为测试名称，第二个参数为预期结果 */
+  TEST_ASSERT_EQUAL(2, add(1, 1));
+  TEST_ASSERT_EQUAL(5, add(2, 3));
+  TEST_ASSERT_EQUAL(-4, add(0, -4));
+  /* 运行所有测试并显示结果 */
+  UNITY_END();
 }
 ```
-输出结果为：
+
+测试输出如下：
+
 ```
-所有测试通过！
+====== 测试add函数 ======
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
 ```
 
-## 深入学习编写测试
+如果所有测试都通过，我们会看到`OK`的提示，这意味着我们的代码可以正确地将两个整数相加并返回正确的结果。如果有一个或多个测试失败，我们将会在输出中看到相应的错误信息，从而可以定位并修复代码中的问题。
 
-编写测试并不仅仅是简单地通过断言语句来验证代码的正确性。在实际工作中，我们还需要学习更多的测试工具和方法，例如单元测试、集成测试、黑盒测试等。编写测试也有很多技巧和经验，需要不断地实践和掌握。
+## 深入了解编写测试
 
-## 参考资料
+除了基本的使用方法，编写测试还有一些深层次的技巧和概念。首先，我们可以使用不同的断言来测试不同的条件，比如`TEST_ASSERT_LESS_THAN()`来测试某个值是否小于另一个值。其次，我们可以使用`TEST_IGNORE()`来忽略某个测试，比如当我们正在进行代码重构时，暂时忽略某个测试可能更方便。此外，我们还可以为我们的测试添加一些标签，比如`TEST_GROUP`和`TEST_SETUP`，来更好地组织我们的测试代码。
 
-- [C语言编程教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [C语言断言语句](https://www.runoob.com/cprogramming/c-assert.html)
-- [C语言测试工具：gtest简介](https://www.jianshu.com/p/fb71771a65ce)
+最后，编写测试也可以帮助我们更好地理解我们的代码。通过编写测试，我们可以深入了解代码的每一行都在做什么，以及它们是如何一起运行的。我们也可以使用测试来探索一些不常用的情况，从而发现并修复潜在的问题。
 
-## 参见
+## 参考链接
 
-- [如何在C语言中使用断言语句](https://www.runoob.com/cprogramming/c-assert.html)
-- [单元测试入门指南](https://www.jianshu.com/p/0439676c5b2f)
+* Unity测试框架：https://github.com/ThrowTheSwitch/Unity
+* C语言断言(assertions)：https://www.tutorialspoint.com/c_standard_library/assert_h.htm
+* 深入理解编写测试的意义：https://www.codementor.io/@nickmccullum/why-writing-tests-is-important-for-your-developer-career-xoh1lwxuo

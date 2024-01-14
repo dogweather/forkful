@@ -1,43 +1,38 @@
 ---
-title:    "Ruby: Przetwarzanie ciągu znaków na małe litery"
+title:    "Ruby: Konwersja ciągu znaków na małe litery"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Konwersja ciągów znaków na małe litery jest ważnym aspektem programowania w Ruby. Czasami jest to wymagane do porównywania lub wykonywania operacji na danych. Dzięki temu artykułowi dowiesz się, dlaczego jest to ważne i jak wykonać tę czynność.
+Jedną z podstawowych umiejętności programistycznych jest możliwość manipulacji tekstem. Często musimy zmieniać wielkość liter w tekście, na przykład aby uzyskać spójną formę lub dopasować się do pewnych zasad stylistycznych. W tym artykule dowiesz się, dlaczego warto umieć konwertować ciągi znaków na małe litery i jak to zrobić w języku Ruby.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Konwersja ciągów znaków na małe litery w Ruby jest bardzo prosta. Możesz to zrobić używając metody `downcase` na ciągu znaków. Oto przykład kodu:
-
-```Ruby
-string = "TEKST WIELKIMI LITERAMI"
-puts string.downcase
-```
-
-Ten kod wyświetli "tekst wielkimi literami", ponieważ metoda `downcase` zmienia wszystkie litery na małe. Możesz również wykorzystać tę konwersję do operacji porównywania. Na przykład:
+Najprostszym sposobem na konwersję tekstu na małe litery jest użycie metody `downcase` na obiekcie typu string. Oto przykładowy kod:
 
 ```Ruby
-string_1 = "Ruby"
-string_2 = "ruby"
-puts string_1.downcase == string_2.downcase
+string = "PRZYKŁADOWY TEKST"
+puts string.downcase #=> "przykładowy tekst"
 ```
 
-W tym przypadku wynikiem będzie `true`, ponieważ obie zmienne będą miały wartość "ruby" po konwersji do małych liter.
+W powyższym przykładzie, wywołując metodę `downcase` na zmiennej `string`, otrzymujemy jej wartość w postaci małych liter. Metoda ta nie zmienia wartości samej zmiennej, ale zwraca nowy string, zawierający tekst w małych literach.
 
-## Deep Dive
+Możemy także użyć metody `downcase!`, która dokonuje zmiany bezpośrednio na wartości zmiennej. Pamiętaj jednak, żeby używać tej metody z ostrożnością, ponieważ nie można jej cofnąć.
 
-Podczas konwersji ciągów znaków na małe litery, w tle Ruby korzysta z pewnych metod z biblioteki `unicode_utils`. Dzięki temu jest ona w stanie obsługiwać także inne języki, w których występują znaki specjalne lub diakrytyki. Jeśli chcesz dowiedzieć się więcej o tych mechanizmach, można przeczytać dokumentację na temat biblioteki `unicode_utils` lub przeprowadzić własne testy z różnymi ciągami znaków.
+Aby dowiedzieć się więcej o metodzie `downcase` i innych metodach służących do manipulowania tekstem, możesz przeczytać dokumentację języka Ruby [tutaj](https://ruby-doc.org/core-2.6/String.html#method-i-downcase).
 
-## Zobacz również
+## Pogłębiona analiza
 
-Jeśli chcesz dowiedzieć się więcej o różnych operacjach na ciągach znaków w Ruby, polecamy przeczytać artykuły pod poniższymi linkami:
+Konwersja tekstu na małe litery jest często wykorzystywana przy porównywaniu tekstów w celu uproszczenia i unifikacji ich formy. Jest to także przydatne podczas pracy z bazami danych, gdzie różnice w wielkości liter mogą powodować błędy.
 
-- [Praca z ciągami znaków w Ruby](https://www.rubyguides.com/2015/05/ruby-strings/)
-- [Kodowanie i dekodowanie w Ruby](https://www.sitepoint.com/ruby-coding-decoding-complete-guide/)
-- [Manipulowanie ciągami znaków w Ruby](https://medium.com/techspace-usict/manipulating-strings-in-ruby-ee2bd39b0b2a)
+Warto zauważyć, że metoda `downcase` nie działa jedynie na literach alfabetu angielskiego, ale na wszystkich znakach Unicode, włączając w to polskie znaki, cyfry i znaki specjalne.
 
-Dziękujemy za przeczytanie naszego artykułu! Mamy nadzieję, że dowiedziałeś się czegoś ciekawego o konwertowaniu ciągów znaków na małe litery w Ruby. Do zobaczenia w kolejnych wpisach na naszym blogu!
+## Zobacz także
+
+- Więcej informacji o metodzie `downcase` w języku Ruby znajdziesz [tutaj](https://ruby-doc.org/core-2.6/String.html#method-i-downcase).
+- Jeśli interesuje Cię temat manipulacji tekstem, przeczytaj również o metodach `upcase` i `capitalize` [tutaj](https://ruby-doc.org/core-2.6/String.html#method-i-upcase) i [tutaj](https://ruby-doc.org/core-2.6/String.html#method-i-capitalize).
+- Warto także zwrócić uwagę na różnice między metodami `downcase` i `capitalize` w [tym](https://www.techiedelight.com/perform-case-insensitive-comparison-two-strings-ruby/) artykule.

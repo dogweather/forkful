@@ -1,49 +1,49 @@
 ---
-title:    "Clojure: 新しいプロジェクトの始め方"
+title:    "Clojure: 新しいプロジェクトを始める"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
+Japanese:
+
 ## なぜ新しいプロジェクトを始めるのか
 
-新しいプロジェクトを始めることは、あなたのスキルを向上させ、新しいアイデアを実現するための素晴らしい方法です。Clojure言語を使うことで、あなたのコードはシンプルで読みやすくなり、効率的なプロジェクト管理ができるでしょう。
+新しいプロジェクトを始めることは、学ぶことや新しいアイデアを実現することができる素晴らしいチャンスです。また、新しい技術やアプローチを試すこともできます。Clojureを使ってプログラミングをすると、より柔軟性のあるコードを書くことができ、より高速でスケーラブルなアプリケーションを開発することができます。
 
-## どのように始めるか
+## 作り方
 
-Clojureを使って新しいプロジェクトを始めるのはとても簡単です。まずはClojureのリポジトリをクローンしましょう。
+Clojureを使って新しいプロジェクトを始める方法は簡単です。まず、プロジェクトを作るためのディレクトリを作成します。次に、Leiningenを使ってプロジェクトを初期化します。LeiningenはClojureの依存関係を管理し、プロジェクトのビルドを行うためのツールです。初期化したプロジェクトには、プロジェクト名や名前空間などの基本的な設定が含まれています。
 
 ```Clojure
-git clone https://github.com/clojure/clojure.git
-```
-
-次に、Leiningenという便利なツールを使用してプロジェクトを作成しましょう。
-
-```
 lein new my-project
 ```
 
-これでプロジェクトのファイル構造が作成されました。このプロジェクトを実行するためには、以下のコマンドを実行します。
+プロジェクトを初期化したら、必要なライブラリをプロジェクトのプロファイルに追加し、依存関係を解決します。Clojureには、多くの有用なライブラリがありますので、プロジェクトに追加することでより多様な機能を利用することができます。
 
-```
-lein run
-```
-
-そして、以下のような出力が得られるはずです。
-
-```
-Hello, World!
+```Clojure
+:dependencies [[org.clojure/clojure "1.8.0"]
+               [org.clojure/math.numeric-tower "0.0.4"]
+               [org.clojure/data.json "0.2.6"]
+               [org.clojure/core.async "0.1.345.0-17112a-alpha"]
+               [org.clojure/tools.logging "0.2.4"]]
 ```
 
-おめでとうございます！Clojureを使って新しいプロジェクトが作成できました。
+また、Clojureのコマンドラインツールを使ってREPL（Read-Eval-Print Loop）を起動し、コードを実行してテストすることができます。
 
-## 詳しく見ていく
+```Clojure
+lein repl
+```
 
-新しいClojureプロジェクトを始める際には、依存関係や実行コマンドなどの設定を行う必要があります。詳しい情報や他の便利なClojureツールについては、以下のリンクを参考にしてください。
+## ディープダイブ
 
-### See Also
+新しいプロジェクトを始める際に重要なポイントは、どのようにアプリケーションを設計するかです。Clojureは関数型プログラミング言語であるため、ミュータブルな状態を避け、状態を変更する代わりに新しい状態を返すような関数を書くことを推奨します。また、Clojureには多くの高度なデータ構造があり、それらを使うことでより効率的にデータを管理することができます。
+
+さらに、ClojureはJavaの仮想マシン上で動作するため、既存のJavaのライブラリを使うことも可能です。これにより、より広い範囲の機能を持つアプリケーションを開発することができます。また、Clojureは並列処理をサポートしているため、高速かつ並列的なアプリケーションを書くこともできます。
+
+## 参考リンク
 
 - [Clojure公式サイト](https://clojure.org/)
-- [Clojureスタイルガイド](https://guide.clojure.style/)
-- [Leiningenドキュメント](https://leiningen.org/)
-- [ClojureScriptについて学ぼう](https://dev.evernote.com/blog/2014/01/06/why-you-should-learn-clojure-and-clojurescript-for-front-end-development/)
+- [Leiningen公式サイト](https://leiningen.org/)
+- [Clojure連載記事 (Qiita)](https://qiita.com/bo

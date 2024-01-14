@@ -1,46 +1,51 @@
 ---
-title:    "Gleam: Sammanslagning av strängar"
+title:    "Gleam: Sammanslående av strängar"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Du kanske undrar varför du skulle vilja lära dig att sammanfoga strängar i Gleam. Svaret är enkelt - genom att använda denna funktion kan du enkelt kombinera flera strängar för att skapa en längre och mer komplex sträng. Detta är särskilt användbart vid formatering av text eller skapa dynamiska meddelanden.
+
+I den här bloggposten kommer vi att utforska hur man enkelt kan kombinera strängar i Gleam-programmeringsspråket. Att kunna kombinera strängar är en viktig del av att skapa dynamiska och interaktiva applikationer, så det är ett viktigt koncept att behärska när man lär sig Gleam.
 
 ## Hur man gör
-För att kunna sammanfoga strängar i Gleam, behöver du använda operatorn "+" tillsammans med två eller flera strängar. Här är ett exempel på hur du kan använda det:
+
+För att sammanfoga två strängar i Gleam använder man sig av operatorn `++` (konkatenering). Låt oss titta på ett enkelt exempel:
 
 ```Gleam
-let förnamn = "Anna"
-let efternamn = "Svensson"
-let namn = förnamn + " " + efternamn
+fn main() {
+    let str1 = "Hej";
+    let str2 = "världen!";
+    let resultat = str1 ++ str2;
+    // result: "Hej världen!"
+    io.println(resultat);
+}
 ```
 
-I detta exempel används "+" för att sammanfoga tre strängar - förnamn, efternamn och ett mellanslag. Resultatet blir en ny sträng som kombinerar båda namnen med ett mellanslag mellan dem. Output för detta exempel skulle vara "Anna Svensson". Du kan också sammanfoga flera strängar samtidigt genom att använda flera "+" operatorer, som i exemplet nedan:
+I det här exemplet sätter vi ihop strängarna "Hej" och "världen!" till en ny sträng som vi sedan skriver ut med hjälp av `io.println()`-funktionen.
+
+Det är viktigt att notera att `++`-operatorn endast fungerar för att kombinera strängar. Om man försöker använda den med andra datatyper som till exempel heltal eller booleska värden kommer man att få ett felmeddelande.
+
+## Djupdykning
+
+Det finns lite mer att veta när det gäller att konkatenera strängar i Gleam. Till exempel går det att kombinera fler än två strängar samtidigt genom att enkelt lägga till fler `++`-operatorer mellan dem. Det går också att använda `++` tillsammans med variabler som redan innehåller en sträng, som i följande exempel:
 
 ```Gleam
-let frukt = "äpplen"
-let grönsaker = "morötter"
-let andra_matvaror = "smör, mjölk"
-let inköpslista = frukt + ", " + grönsaker + " och " + andra_matvaror
+fn main() {
+    let str1 = "Gleam är";
+    let str2 = "super";
+    let str3 = "enkelt!";
+    let resultat = str1 ++ " " ++ str2 ++ " " ++ str3;
+    // result: "Hej super enkelt!"
+    io.println(result);
+}
 ```
 
-Output för detta exempel skulle vara "äpplen, morötter och smör, mjölk".
+Man kan också konkatenera strängar tillsammans med andra datastrukturer, till exempel listor och tupler. Detta gör att man kan bygga upp väldigt flexibla och dynamiska applikationer med hjälp av Gleam.
 
-## Fördjupning
-Överst på din inköpslista stod det "1 liter äpplejuice". Nu kanske du undrar hur du kan kombinera en sträng med en siffra för att skapa en komplett mening. Det finns ett antal sätt att göra detta på, men en enkel metod är att använda funktionen "to_string" för att konvertera talet till en sträng. Här är ett exempel på hur det kan se ut:
+## Se även
 
-```Gleam
-let juice_volym = 1
-let juice_mängd = " liter"
-let juice = juice_volym |> to_string |> +juice_mängd
-```
-
-Här används först funktionen "to_string" för att konvertera talet 1 till strängen "1", sedan sammankopplas den med strängen "liter" genom att använda "+".
-
-"juice" skulle då vara "1 liter". Nu kan du enkelt sammanfoga olika datatyper för att skapa mer komplexa strängar.
-
-## Se också
-- "Gleam - En helt ny funktional programmeringsspråk": https://gleam.run/
-- "Enhance Your Coding Skills with Gleam Programming Language": https://medium.com/@pierrenereya/enhance-your-coding-skills-with-gleam-programming-language-ebf697f98bcc
+* [Gleams officiella dokumentation för strängmanipulation](https://gleam.run/book/std/string-manipulation.html)
+* [En enkel introduktion till Gleam](https://www.cs.usfca.edu/~carnaval/makeLessons/lessons3.html) (på engelska)

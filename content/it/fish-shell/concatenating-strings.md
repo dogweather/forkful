@@ -1,46 +1,37 @@
 ---
-title:    "Fish Shell: Unendo stringhe"
+title:    "Fish Shell: Unire stringhe"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La concatenazione delle stringhe è un'operazione comune nei linguaggi di programmazione e può essere molto utile quando si lavora con i dati. Attraverso questa tecnica, è possibile unire più stringhe di testo in una sola e manipolarle in varie modi. Vediamo come utilizzarlo nel Fish Shell!
+Concatenare stringhe è un'operazione fondamentale nella programmazione e può essere utile per combinare più stringhe in una sola, lavorare con variabili e generare output personalizzati.
 
 ## Come Fare
 
-Per concatenare le stringhe nel Fish Shell, utilizzeremo l'operatore di concatenazione, che è rappresentato dal simbolo `+`. Vediamo un esempio di codice:
+Per concatenare stringhe in Fish Shell, puoi utilizzare l'operatore `+` o la funzione `string join`. Ecco due esempi di codice:
 
 ```Fish Shell
-set nome "Mario"
-set cognome "Rossi"
-echo $nome $cognome
+set str1 "Ciao"
+set str2 "mondo!"
+echo $str1$str2
 ```
-
-L'output di questo codice sarà `Mario Rossi`, poiché le due stringhe sono state unite grazie all'operatore `+`. Possiamo anche aggiungere del testo tra le due stringhe, ad esempio:
-
 ```Fish Shell
-echo "Il mio nome è: " $nome $cognome
+set arr (start 1 end 5)
+string join -s " e " $arr
 ```
 
-L'output sarà `Il mio nome è: Mario Rossi`. In questo modo possiamo creare stringhe più complesse, aggiungendo anche variabili o testo aggiuntivo.
+Il primo esempio utilizza l'operatore `+` per unire le due stringhe. L'output sarà `Ciao mondo!`. Nel secondo esempio, la funzione `string join` viene utilizzata per concatenare i valori dell'array `arr` utilizzando lo spazio e come separatore. L'output sarà `1 e 2 e 3 e 4 e 5`.
 
 ## Approfondimento
 
-La concatenazione delle stringhe può anche essere utilizzata per creare loop o costruire URL dinamici. È importante prestare attenzione agli spazi tra le stringhe, in quanto possono influire sul risultato finale. Inoltre, è possibile utilizzare l'operatore `+=` per concatenare una stringa al contenuto esistente di una variabile. Ad esempio:
-
-```Fish Shell
-set testo "Questo è un"
-set testo $testo "esempio"
-echo $testo
-```
-
-L'output sarà `Questo è un esempio`, poiché abbiamo aggiunto la parola "esempio" al contenuto della variabile `testo`.
+Ci sono molti altri modi per concatenare stringhe in Fish Shell. Ad esempio, puoi utilizzare la funzione `string join -n` per unire i valori di un array senza alcun separatore. Puoi anche utilizzare l'operatore `..` per aggiungere più stringhe insieme. Inoltre, diversi comandi di Fish Shell, come `grep` e `sed`, supportano l'utilizzo di stringhe concatenate per lavorare con i dati in modo più efficiente.
 
 ## Vedi Anche
 
-- [Guida per iniziare con il Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial avanzato per il Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-advanced)
+- [Concatenare stringhe using sed](https://fishshell.com/docs/current/cmds/sed.html)
+- [Concatenare stringhe using grep](https://fishshell.com/docs/current/cmds/grep.html)
+- [Concatenare stringhe using string join](https://fishshell.com/docs/current/cmds/string-join.html)

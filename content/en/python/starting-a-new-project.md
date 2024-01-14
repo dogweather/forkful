@@ -1,76 +1,58 @@
 ---
 title:    "Python recipe: Starting a new project"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project in Python is a great way to challenge yourself, expand your skills, and potentially add something valuable to your portfolio. Plus, it's always exciting to see your code come to life and make a real impact.
+Starting a new project in any programming language can be exciting, but also daunting. It gives you a chance to explore new ideas and techniques, and ultimately helps you improve your coding skills. In this blog post, we will focus specifically on starting a new project using Python and share some tips and tricks to make the process smoother.
 
 ## How To
 
-To get started with your new project, first make sure you have the latest version of Python installed on your computer. Then, you can begin writing your code using your preferred text editor or IDE. Let's take a look at a simple example of creating a calculator using Python:
+To start a new project in Python, follow these simple steps:
+
+1. Open your preferred integrated development environment (IDE). We recommend using Jupyter Notebook or PyCharm, as they both have great features for project organization and code development.
+2. Create a new project in your IDE and give it a name. This will create a project folder where you can store all your code and files related to your project.
+3. Create a new Python file within your project folder and name it `main.py`, or any name you prefer.
+4. Begin by importing any necessary modules or libraries. For example:
 
 ```Python
-# Python Calculator
+import pandas as pd
+import numpy as np
+```
+5. Write your code and save the file. Here is an example of some code that generates a random number and prints it to the console:
 
-# Function to add two numbers
-def add(x, y):
-    return x + y
-
-# Function to subtract two numbers
-def subtract(x, y):
-    return x - y
-
-# Function to multiply two numbers
-def multiply(x, y):
-    return x * y
-
-# Function to divide two numbers
-def divide(x, y):
-    return x / y
-
-# User input
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-
-# Output
-print("=========== CALCULATOR ===========")
-print("Addition: ", add(num1, num2))
-print("Subtraction: ", subtract(num1, num2))
-print("Multiplication: ", multiply(num1, num2))
-print("Division: ", divide(num1, num2))
+```Python
+import random
+x = random.randint(1,10)
+print("Here's a random number:", x)
 ```
 
 Output:
 
-```Python
-Enter the first number: 10
-Enter the second number: 2
-=========== CALCULATOR ===========
-Addition:  12
-Subtraction:  8
-Multiplication:  20
-Division:  5.0
+```
+Here's a random number: 7
 ```
 
-Feel free to play around with the code and add more functionalities to create your own custom calculator.
+6. Keep adding code to your `main.py` file as needed for your project. It's always a good idea to regularly save your work to avoid losing any progress.
 
 ## Deep Dive
 
-When starting a new project, it's important to plan and organize your code effectively. This includes breaking down your project into smaller, manageable tasks and writing clean, readable code. It's also useful to utilize functions, classes, and libraries to make your code more efficient and reusable.
+Starting a new project can be overwhelming, so it's important to break it down into smaller, manageable tasks. Here are some tips to help you get started:
 
-Additionally, don't be afraid to seek help and resources when needed. There are plenty of online communities and tutorials available for Python programming, and they can provide valuable insights and solutions to help you overcome any obstacles.
+- Have a clear understanding of your project goal and what you want to achieve.
+- Break down your project into smaller tasks and create a plan or roadmap.
+- Utilize the power of libraries and packages to make your coding process easier.
+- Use version control to track changes and collaborate with others.
+- Don't be afraid to ask for help or seek guidance from online communities and forums.
+
+It's also important to keep your code well-organized and documented. This not only makes it easier for others to understand and contribute to your project, but also helps you maintain and update your code in the future.
 
 ## See Also
 
-To learn more about starting a new project in Python, check out these helpful resources:
-
-- [Official Python Website](https://www.python.org/)
-- [Real Python](https://realpython.com/)
-- [Codecademy](https://www.codecademy.com/learn/learn-python)
-- [Python for Beginners](https://www.pythonforbeginners.com/basics/)
-
-Happy coding!
+- [Python Documentation](https://www.python.org/doc/)
+- [RealPython - How to start a new Python project](https://realpython.com/python-application-layouts/)
+- [Tuts+ - How to start a new Python project](https://code.tutsplus.com/tutorials/how-to-start-a-new-python-project--cms-33766)

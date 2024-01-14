@@ -1,39 +1,57 @@
 ---
 title:    "Clojure: Читання текстового файлу"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Програмування - це красива та потужна мова, яка дозволяє нам створювати програми та впливати на наше оточення. Якщо ви хочете дізнатися про те, як читати файли у вашому коді Clojure, то ви потрапили за правильну статтю!
+Робота з текстовими файлами є невідємною частиною розробки програм на Clojure. Це дозволяє зчитувати та обробляти дані з зовнішніх джерел, таких як CSV-файли, лог-файли та інші текстові формати. 
 
 ## Як
 
-Робота з текстовими файлами є необхідною у багатьох програмах, тому це важлива навичка для кожного програміста. У Clojure ми можемо просто скористатися функцією `slurp`, щоб отримати вміст файлу у вигляді рядка.
+Один з способів зчитування текстових файлів - використання вбудованих функцій `slurp` та `line-seq`. Наприклад, якщо ми маємо файл `file.txt`, який містить наступний текст:
 
-```Clojure
-(def file-content (slurp "text_file.txt"))
+```
+Hello
+World
 ```
 
-Можна також скористатися функцією `read-line`, щоб прочитати файл по рядках і зберегти його вектор.
+Тоді за допомогою функції `slurp` ми можемо зчитати весь вміст файлу у вигляді одного рядка: 
 
 ```Clojure
-(def lines (with-open [rdr (clojure.java.io/reader "text_file.txt")]
-              (doall (line-seq rdr))))
+(slurp "file.txt") ; => "Hello\nWorld"
 ```
 
-У обох прикладах результат буде збережено у змінну, яку ви можете використовувати далі у своєму коді.
+Також ми можемо використовувати функцію `line-seq` для зчитування файлу по рядках: 
 
-## Глибоке занурення
+```Clojure
+(def lines (line-seq (slurp "file.txt")))
+(first lines) ; => "Hello"
+(second lines) ; => "World"
+```
 
-Коли ви працюєте з файлами у Clojure, важливо пам'ятати про вирішення проблем з неправильною кодуванням. По замовчуванню, Clojure використовує UTF-8 кодування, але ви можете вказати інше при необхідності.
+## Глибше
 
-Існують також деякі сторонні бібліотеки, які можуть спростити роботу з файлами у Clojure, наприклад, `clojure.java.io` та `clojure.java.io` з `clojure.test`. Розгляньте можливість їх використання у своїх програмах.
+Для більшої гнучкості та контролю над зчитуванням текстових файлів, ми можемо використовувати бібліотеку `clojure.java.io`. З її допомогою, ми можемо відкривати файл, читати його по рядках та обробляти ці рядки за потреби. Наприклад: 
 
-## Дивіться також
+```Clojure
+(require '[clojure.java.io :as io])
 
-- [Офіційна документація Clojure](https://clojure.org/)
-- [Інтерактивний курс Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [Корисні функції для роботи з файлами у Clojure](https://github.com/adambard/learnxinyminutes-docs/blob/master/clojure-ru.md)
+(with-open [reader (io/reader "file.txt")]
+  (doseq [line (line-seq reader)]
+    (println line)))
+    
+; => Hello
+; => World
+```
+
+Для більш складних операцій, таких як розбиття рядка на слова чи робота з CSV-файлами, варто розглянути використання бібліотеки [clojure-csv](https://github.com/clojure-csv/clojure-csv).
+
+## Дивись також
+
+- [Офіційна документація зчитування та запису в файл на Clojure](https://clojure.org/guides/reading_writing)
+- [Повна документація бібліотеки clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Офіційна документація зчитування та запису CSV-файлів на Clojure](https://github.com/clojure-csv/clojure-csv/wiki/How-to-use-clojure-csv)

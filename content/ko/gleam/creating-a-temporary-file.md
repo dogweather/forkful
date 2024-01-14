@@ -1,41 +1,37 @@
 ---
 title:    "Gleam: 임시 파일 만들기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 Temporary File을 만들까요?
+# 왜 Temporary 파일을 생성하는가?
 
-Temporary file은 프로그래밍에서 매우 중요한 역할을 합니다. 우리는 이 글에서 Temporary file이 왜 필요한지, 그리고 어떻게 만들 수 있는지에 대해 알아보겠습니다.
+Temporary 파일은 프로그래밍 중에 임시적으로 사용되는 파일입니다. 이러한 파일은 일시적인 데이터를 저장하고 처리하는 데 유용합니다.
 
-## 어떻게 만들까요?
-
-Temporary file을 만드는 방법은 매우 간단합니다. 아래의 코드를 참고해주세요.
+## 어떻게 만드는가?
 
 ```Gleam
-import gleam/file
+import gleam/temporary
 
-file_temp := file.temp()
-file_temp_path := file_temp.path()
+let temp_file = temporary.create()
+|> temporary.file
+
+if temp_file.ok? do
+  let file_path = temp_file.path
+  let file_content = "This is a temporary file."
+  temporary.write(file_path, file_content)
+  |> temporary.delete
+end
 ```
 
-위의 코드는 Gleam에서 file 모듈을 로드하고, `file.temp()` 함수를 사용하여 Temporary file 객체를 생성한 후, `file_temp.path()`를 호출해 해당 file의 경로를 얻는 과정을 보여줍니다. 아래는 위 코드의 예제 출력 예시입니다.
+위의 코드는 `gleam/temporary` 라이브러리를 사용하여 Temporary 파일을 생성하는 방법을 나타냅니다. `temporary.create()` 함수를 사용하여 Temporary 파일을 생성하고, `temporary.file` 함수를 사용하여 파일 객체를 가져옵니다. `ok?` 함수를 사용하여 파일이 정상적으로 생성되었는지 확인하고, 생성된 파일 객체에서 `path` 속성을 사용하여 파일 경로를 가져옵니다. 그리고 Temporary 파일의 내용을 파일 경로에 해당하는 파일에 쓰고, 처리가 끝난 후 `temporary.delete` 함수를 사용하여 파일을 삭제합니다.
 
-```
-/tmp/gleamfileXXXXX
-```
+## 깊게 들어가보기
 
-위와 같이 임의의 경로가 출력되는 것을 볼 수 있습니다. 이 경로는 임시적으로 생성된 파일이 저장되는 위치입니다.
+보다 자세한 내용은 `gleam/temporary` 라이브러리의 GitHub 페이지에서 확인할 수 있습니다. Temporary 파일의 생성과 사용 방법에 대한 더 많은 정보를 제공하고 있습니다.
 
-## Deep Dive
+# 참고자료
 
-Temporary file은 주로 프로그램이 작동하는 동안 임시적으로 사용되는 데이터를 저장하기 위해 사용됩니다. 이 파일들은 보통 프로그램이 종료되면 자동적으로 삭제되지만, 우리가 수동으로 삭제할 수도 있습니다. Temporary file은 프로그램간에 데이터를 교환할 때도 유용하게 사용될 수 있습니다.
-
-Temporary file은 사용하기 간단한 대신, 보안에 취약할 수 있습니다. 따라서, 프로그래머는 만약 민감한 데이터를 저장해야 한다면, 다른 방법을 고려해야 할 것입니다.
-
-## See Also
-
-- <https://ohmydis.github.io/2017/10/25/create-tempfile-in-python/>
-- <https://docs.python.org/ko/3/library/tempfile.html>
-- <https://www.geeksforgeeks.org/how-to-create-a-temporary-file-in-python/>
+- `gleam/temporary` 라이브러리: https://github.com/gleam-lang/gleam_temporary

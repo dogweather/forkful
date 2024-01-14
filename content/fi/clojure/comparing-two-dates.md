@@ -1,43 +1,37 @@
 ---
-title:    "Clojure: Päivämäärien vertailu"
+title:    "Clojure: Kahden päivämäärän vertailu"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Vertailla kahden päivämäärän välillä on tärkeä osa ohjelmointia, sillä se auttaa meitä ymmärtämään aikaa ja päivämäärien suhdetta toisiinsa. Tämä taito on erityisen hyödyllinen projektien aikataulutuksen ja tapahtumien järjestämisen yhteydessä.
+Monissa ohjelmointitehtävissä ja sovelluksissa on tarpeen vertailla kahta päivämäärää, kuten esimerkiksi tapahtumien ajoitusta ja aikarajoja varten.
 
-## Miten
+## Miten tehdä
 
-Käyttämällä Clojure-kieltä, voimme helposti vertailla kahta päivämäärää käyttäen seuraavia funktioita:
+Vertailemalla kahta päivämäärää Clojure-ohjelmointikielellä voidaan käyttää sisäänrakennettua funktiota `compare` ja siihen liittyviä funktioita, kuten `local-date` ja `after?`. Katso alla olevaa esimerkkiä:
 
-```Clojure
-(require '[clj-time.core :as t])
-
-(def date1 (t/date-time 2020 12 31))
-(def date2 (t/date-time 2021 1 1))
-
-(def compared (t/compare date1 date2))
-(println "Date 1 is" compared "to Date 2.")
+```
+Clojure (compare (local-date 2019 03 18) (local-date 2019 03 20))
 ```
 
-Tämä koodi palauttaa tulosteen "Date 1 is less than Date 2", mikä tarkoittaa, että ensimmäinen päivämäärä on aikaisempi kuin toinen. Voimme myös käyttää muita funktioita, kuten `between?`, joka tarkistaa ovatko kaksi päivämäärää välillä:
+Tämä palauttaa `-1`, mikä tarkoittaa, että ensimmäinen päivämäärä on ennen toista päivämäärää. Jos haluamme tarkistaa, onko ensimmäinen päivämäärä jälkeen toista päivämäärää, voimme käyttää `after?` -funktiota, kuten alla olevassa esimerkissä:
 
-```Clojure
-(def between (t/between? date1 date2 date3))
-(println "Date 3 is between Date 1 and Date 2:" between)
+```
+Clojure (after? (local-date 2019 03 18) (local-date 2019 03 20))
 ```
 
-Tämä tulostaa "Date 3 is between Date 1 and Date 2: true".
+Tämä palauttaa `false`, koska ensimmäinen päivämäärä ei ole jälkeen toista päivämäärää. On myös mahdollista verrata päivämääriä tunnusluvuilla, kuten vuosilla, kuukausilla ja päivillä, käyttämällä `year`, `month` ja `day-of-month` funktioita. Katso lisää esimerkkejä Clojure-verkosta löytyvistä oppimisresursseista.
 
-## Syvällinen sukellus
+## Syväsyöksy
 
-Clojure tarjoaa myös monia muita hyödyllisiä funktioita päivämäärien vertailuun, kuten `after?`, `before?` ja `duration`, jotka kaikki auttavat meitä ymmärtämään ja manipuloimaan päivämääriä ja aikoja. On myös tärkeää huomata, että Clojure käyttää Joda Time -kirjastoa päivämäärien käsittelyyn, mikä antaa meille lisävoimaa ja joustavuutta verrattuna muihin ohjelmointikieliin.
+Clojurella on laaja valikoima työkaluja ja funktioita, jotka liittyvät päivämäärien käsittelyyn. Tämä sisältää myös luokat kuten `LocalDate`, `LocalDateTime` ja `Period`, jotka tarjoavat tarkempia vaihtoehtoja päivämäärien vertailuun ja käsittelyyn. Suosittelemme tutkimaan tarkemmin Clojure'n virallisen dokumentaation ja alan hyväksyttyjen käytäntöjen lähteitä.
 
 ## Katso myös
 
-- [Clojure-päivämäärien vertailun dokumentaatio](https://clojure.org/api/clj-time/4.0.0/clj-time.core#var-compare)
-- [Joda Time -kirjaston dokumentaatio](https://www.joda.org/joda-time/)
-- [Clojure oppiminen -opas suomeksi](https://clojure.org/guides/learn/syntax)
+- [Clojure-päivämäärät ja aikaleimat](https://clojuredocs.org/clojure.core/LocalDate)
+- [Päivämäärien vertailu ja laskenta Clojurescriptillä](https://github.com/hyPiRion/first-last-predicates)
+- [Kattava opas päivämäärien käsittelyyn Clojurella](https://code.tutsplus.com/tutorials/clojure-from-the-ground-up-dates-and-times--cms-24949)

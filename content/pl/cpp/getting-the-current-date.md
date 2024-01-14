@@ -1,58 +1,66 @@
 ---
-title:    "C++: Otrzymywanie aktualnej daty"
+title:    "C++: Uzyskiwanie bieżącej daty"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dzisiejsza data jest ważnym elementem w wielu programach. Często musimy uzyskać aktualny dzień, miesiąc lub rok, aby przeprowadzić odpowiednie obliczenia lub wyświetlić informacje dla użytkownika. W tym krótkim artykule dowiesz się, jak w prosty sposób uzyskać aktualną datę w języku C++, aby móc wykorzystać ją w swoich projektach.
+Czy kiedykolwiek zastanawiałeś się, jak w prosty sposób uzyskać aktualną datę w swoim programie w języku C++? Może to być przydatne, jeśli tworzysz aplikację, która wymaga znalezienia daty lub po prostu chcesz wyświetlić bieżącą datę dla użytkownika. W tym blogu dowiesz się, jak użyć wbudowanej funkcji C++ do pobrania aktualnej daty.
 
 ## Jak To Zrobić
 
-W języku C++ istnieje wiele sposobów na uzyskanie aktualnej daty. Jednym z najpopularniejszych jest użycie biblioteki <ctime>, która zawiera funkcje umożliwiające operowanie na czasie. Poniżej znajdują się dwa przykłady kodu, które wykorzystują bibliotekę <ctime> do uzyskania aktualnej daty:
+Aby uzyskać aktualną datę w języku C++, musisz użyć funkcji `localtime()` z biblioteki `ctime`. Następnie zmiennej typu `time_t` przypiszemy wartość `time(nullptr)`, która zwraca czas w sekundach od 1 stycznia 1970 roku. Następnie, wywołując funkcję `localtime()` z argumentem typu `time_t`, można uzyskać strukturę `tm`, która zawiera informacje o bieżącej dacie i godzinie.
 
-```
+```C++
 #include <iostream>
 #include <ctime>
 using namespace std;
 
 int main() {
-    // Przykład 1 - użycie funkcji time()
-    time_t now = time(0);
-    tm *local_time = localtime(&now);
-
-    cout << "Aktualna data: " << local_time->tm_mday << "-" << local_time->tm_mon + 1 << "-" << local_time->tm_year + 1900;
-
-    // Przykład 2 - użycie funkcji ctime()
-    time_t now = time(0);
-    char* current_time = ctime(&now);
-
-    cout << "Aktualna data: " << current_time;
-
+    // uzyskanie aktualnego czasu w sekundach
+    time_t now = time(nullptr);
+    
+    // przypisanie czasu do struktury tm
+    tm * current = localtime(&now);
+    
+    // wyświetlenie bieżącej daty
+    cout << "Aktualna data: " << current->tm_mday << "." << current->tm_mon+1 << "." << current->tm_year+1900 << endl;
+    
     return 0;
 }
 ```
 
-W powyższych przykładach użyto funkcji "time()", która zwraca aktualny czas jako liczbę sekund od 1 stycznia 1970 roku oraz funkcji "localtime()" i "ctime()", które konwertują tę liczbę na czytelną dla człowieka formę daty.
+Powinniśmy uzyskać następujący wynik:
 
-### Wyjście z Przykładu 1:
+```shell
+Aktualna data: 5.9.2021
+```
 
-> Aktualna data: 23-09-2021
+## Deep Dive
 
-### Wyjście z Przykładu 2:
+Funkcja `localtime()` zwraca wskaźnik do struktury `tm`, która zawiera informacje o czasie w następujący sposób:
 
-> Aktualna data: Thu Sep 23 14:25:10 2021
+```C++
+struct tm {
+    int tm_sec;   // liczba sekund po minucie (od 0 do 61)
+    int tm_min;   // liczba minut po godzinie (od 0 do 59)
+    int tm_hour;  // liczba godzin po północy (od 0 do 23)
+    int tm_mday;  // dzień miesiąca (od 1 do 31)
+    int tm_mon;   // liczba miesięcy od stycznia (od 0 do 11)
+    int tm_year;  // liczba lat od 1900
+    int tm_wday;  // dzień tygodnia (od 0 - niedziela, do 6 - sobota)
+    int tm_yday;  // dzień roku (od 0 do 365)
+    int tm_isdst; // flaga określająca, czy obowiązuje czas letni
+};
+```
 
-Ważne jest również zauważenie, że przy użyciu funkcji "localtime()" musimy odjąć wartość "tm_mon" i "tm_year" o odpowiednie wartości, ponieważ w przypadku tych funkcji miesiące są numerowane od 0, a lata od 1900.
+Możesz również użyć funkcji `mktime()` do konwertowania struktury `tm` na czas lokalny, jeśli na przykład potrzebujesz porównać daty lub wyświetlić je w innym formacie.
 
-## Głębszy Wgląd
+## Zobacz też
 
-Jeśli chcesz poznać więcej sposobów na uzyskanie aktualnej daty w języku C++ lub dowiedzieć się więcej o funkcjach biblioteki <ctime>, możesz zajrzeć do dokumentacji języka lub poszukać tutoriali online. Warto również pamiętać o tym, że istnieją także dostępne biblioteki zewnętrzne, które ułatwiają operowanie na czasie w języku C++. Dzięki nim możemy np. wygodnie wyświetlać datę w różnych formatach lub wykonywać bardziej skomplikowane operacje na czasie.
-
-## Zobacz Również
-
-- Dokumentacja języka C++: https://en.cppreference.com/w/
-- Poradnik na stronie cppdigger.com: https://cppdigger.com/cpp-reference/ctime
-- Biblioteka "date" dostępna wraz ze standardem C++20: https://en.cppreference.com/w/cpp/header/date
+- [Referencja języka C++: localtime()](https://www.cplusplus.com/reference/ctime/localtime/)
+- [Referencja języka C++: mktime()](https://www.cplusplus.com/reference/ctime/mktime/) 
+- [Porównaj daty w języku C++](https://www.techiedelight.com/compare-dates-cpp/)

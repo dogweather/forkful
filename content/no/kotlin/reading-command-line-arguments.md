@@ -1,56 +1,45 @@
 ---
-title:    "Kotlin: Lesing av kommandolinje-argumenter"
+title:    "Kotlin: Å lese kommandolinje-argumenter"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
-Hvorfor bør man lese kommandolinje-argumenter når man programmerer? En vanlig grunn er for å gi programmet ditt ulik oppførsel eller funksjonalitet basert på hvilke argumenter som blir gitt under kjøring. Dette kan være nyttig når man ønsker å tilpasse programmet til ulike behov eller situasjoner.
 
-# Hvordan
-Det er flere måter å lese kommandolinje-argumenter i Kotlin på, men en vanlig metode er å bruke `args`-variabelen som er tilgjengelig som en parameter i `main()`-funksjonen.
+Kommandolinje-argumenter er en viktig del av å lage effektive og brukervennlige programmer, spesielt når man arbeider med større prosjekter eller utvikler kommandolinje-apper. Ved å lære hvordan man leser kommandolinje-argumenter i Kotlin, kan du gjøre programmene dine mer fleksible og robuste.
+
+# Hvordan gjøre det
+
+Det første vi må gjøre er å importere "args"-variabelen som inneholder alle kommandolinje-argumentene som er gitt til programmet ditt. Deretter kan du bruke en for-løkke for å gå gjennom listen over argumenter og gjøre det du ønsker med dem. La oss se på et eksempel:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) { // sjekker om det finnes argumenter
-        val arg1 = args[0] // tar ut første argument
-        println("Første argument: $arg1")
-    } else {
-        println("Ingen kommandolinje-argumenter ble gitt.")
+    for (arg in args) {
+        println("Argument: $arg")
     }
 }
 ```
 
-Kjører man dette programmet med kommandolinje-argumenter som f.eks. `java Program arg1 arg2`, vil man få følgende output:
+La oss anta at du kjører dette programmet fra kommandolinjen med følgende argumenter: "test1 test2 test3". Konsollen vil da vise følgende output:
 
 ```
-Første argument: arg1
+Argument: test1
+Argument: test2
+Argument: test3
 ```
 
-Man kan også bruke `System.getProperty()` for å lese spesifikke systemegenskaper som er satt ved kjøring av programmet.
+Som du kan se, vil for-løkken gå gjennom hvert argument og skrive det ut. Dette er bare et enkelt eksempel, du kan gjøre mye mer med kommandolinje-argumenter avhengig av hva slags app du lager.
 
-```Kotlin
-fun main(args: Array<String>) {
-    val property = System.getProperty("navn")
-    println("Hei, $property!")
-}
-```
+# Dykk dypere
 
-Når man kjører dette programmet med argumentet `-Dnavn=Anne`, vil man få følgende output:
+Nå som du har fått en forståelse av hvordan man leser kommandolinje-argumenter i Kotlin, kan det være nyttig å vite mer om hvordan man kan håndtere forskjellige typer argumenter som tall eller tekst. Du kan også utforske hvordan man bruker Kotlin-built-in-biblioteker for å analysere og validere argumenter.
 
-```
-Hei, Anne!
-```
+Merk at hvis du kjører et Kotlin-program fra en integrert utviklingsmiljø (IDE), må du legge inn argumentene manuelt i konfigurasjonen av prosjektet ditt for at de skal bli tatt med.
 
-Det finnes også biblioteker som gjør det enklere å håndtere kommandolinje-argumenter, som f.eks. `args4j` og `commons-cli`.
+# Se også
 
-# Dypdykk
-Det kan være nyttig å vite at kommandolinje-argumenter blir lest inn som strenger, derfor må man selv konvertere til ønsket datatype. Man bør også være klar over at argumenter som inneholder mellomrom må settes i anførselstegn for å bli lest riktig.
-
-Det er også mulig å legge til egne argumenter og flagg som gir mer avansert funksjonalitet. Dette kan være nyttig når man ønsker å tilby kraftigere muligheter for å konfigurere programmet.
-
-# Se Også
-- [Kotlin sin offisielle dokumentasjon for kommandolinje-argumenter](https://kotlinlang.org/docs/reference/properties.html#command-line-arguments)
-- [Eksempler på hvordan man kan bruke kommandolinje-argumenter i Kotlin](https://www.tutorialspoint.com/kotlin/command_line_arguments_in_kotlin.htm)
-- [Biblioteket args4j for å håndtere kommandolinje-argumenter i Kotlin](https://github.com/kohsuke/args4j)
+- [Offisiell Kotlin dokumentasjon om kommandolinje-argumenter](https://kotlinlang.org/docs/command-line.html)
+- [Kotlin Cheat Sheet](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Kotlin for Java-utviklere](https://kotlinlang.org/docs/tutorials/kotlin-for-java-developers.html)

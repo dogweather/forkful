@@ -1,40 +1,35 @@
 ---
-title:    "PHP: Utvinning av understrenger"
+title:    "PHP: Uthenting av delstrenger"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å ekstrahere substringer er en nyttig ferdighet som kan hjelpe deg i mange ulike programmeringsprosjekter. Ved å kunne hente ut deler av en tekststreng, kan du enkelt behandle og manipulere data, og få programmet ditt til å gjøre akkurat det du ønsker.
+Har du noen gang lurt på hvordan du kan hente ut deler av en tekststreng i PHP? Det kan være nyttig når du for eksempel skriver et program som skal behandle brukerinput eller formatere data. Ved å utnytte funksjoner for å trekke ut substrings, kan du gjøre koden din mer dynamisk og effektiv.
 
-## Slik gjør du det
+## Hvordan du gjør det
 
-Det er flere ulike måter å ekstrahere substringer på i PHP, og her er to av de mest vanlige metodene:
+Å trekke ut substrings i PHP er enkelt med funksjonen `substr()`. Denne funksjonen tar imot tre parametere: den opprinnelige tekststrengen, startindeksen og antall tegn du vil hente ut. Her er et eksempel på hvordan du kan bruke `substr()`:
 
 ```PHP
-// Metode 1: bruker substr() funksjonen 
-$string = "Hei, dette er en tekststreng";
-$sub = substr($string, 4, 4); // Ekstraherer "dett" som starter på indeks 4 og er 4 tegn lang
-echo $sub; // Vil gi output "dett"
-
-// Metode 2: bruker substr_replace() funksjonen
-$string = "Dette er en annen tekst";
-$sub = substr_replace($string, "min", 6, 2); // Erstatter "er" på indeks 6 med "min"
-echo $sub; // Vil gi output "Dette min en annen tekst"
+$original = "Hei, jeg heter Andreas.";
+$sub = substr($original, 5, 10);
+echo $sub;
 ```
 
-Som du kan se, kan du med disse funksjonene definere hvor du vil starte utdraget, og hvor mange tegn du vil ha med.
+Outputen vil være "jeg heter".
 
 ## Dypdykk
 
-Når du skal ekstrahere substringer, er det viktig å være klar over at indekseringen starter på 0 i PHP. Det betyr at det første tegnet i en tekststreng har indeks 0, og ikke 1 som vi kanskje er vant til.
+Det finnes også flere andre funksjoner som kan brukes for å hente ut substrings i PHP. Blant annet `mb_substr()` som lar deg håndtere flerspråklige tekststrenger, og `str_split()` som lar deg splitte en tekststreng inn i en array av mindre tekststrenger.
 
-En annen nyttig funksjon for å ekstrahere substringer er strpos(), som hjelper deg med å finne startposisjonen til et bestemt ord eller et tegn i en tekststreng.
+Det kan også være nyttig å vite at du kan bruke negative tall som startindeks i `substr()` for å starte tellingen fra slutten av tekststrengen. For eksempel vil `substr($original, -5)` hente de siste fem tegnene i tekststrengen.
 
 ## Se også
 
-- [PHP Manual: substr()](https://www.php.net/manual/en/function.substr.php)
-- [PHP Manual: substr_replace()](https://www.php.net/manual/en/function.substr-replace.php)
-- [PHP Manual: strpos()](https://www.php.net/manual/en/function.strpos.php)
+- [PHP dokumentasjon for substr()](https://www.php.net/manual/en/function.substr.php)
+- [W3Schools tutorial on substrings in PHP](https://www.w3schools.com/php/func_string_substr.asp)
+- [Codecademy course on manipulating strings in PHP](https://www.codecademy.com/courses/learn-php/lessons/php-string-handling/exercises/substr)

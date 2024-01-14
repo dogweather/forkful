@@ -1,58 +1,39 @@
 ---
 title:    "Swift: Leyendo un archivo de texto"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Muchas veces, al programar en Swift, necesitamos leer información desde un archivo de texto. Esto puede ser útil en situaciones como guardar datos de un juego o cargar configuraciones de una aplicación. Aprender cómo leer un archivo de texto nos permite tener un mayor control y flexibilidad en nuestro código.
+Leer un archivo de texto puede ser una habilidad útil para los programadores. Con este conocimiento, podrás manipular y analizar datos almacenados en formato de texto sin dificultad. Aprender a leer archivos de texto en Swift puede abrir muchas posibilidades y mejorar tus habilidades de programación.
 
 ## Cómo hacerlo
 
-Para leer un archivo de texto en Swift, primero debemos obtener la ruta del archivo en nuestro dispositivo. En este ejemplo, supongamos que tenemos un archivo llamado "datos.txt" en nuestro escritorio.
+Para leer un archivo de texto en Swift, primero necesitas especificar la ubicación del archivo que quieres leer. Esto se puede hacer mediante el uso del objeto `URL` y especificando la ruta del archivo.
 
 ```Swift
-if let ruta = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
-    let archivoURL = ruta.appendingPathComponent("datos.txt")
-}
+let fileURL = URL(fileURLWithPath: "ruta/al/archivo.txt")
 ```
-
-Una vez que tenemos la ruta del archivo, podemos leer su contenido usando el método `String(contentsOfURL:)` y asignarlo a una variable.
+Una vez que tengas la ubicación del archivo, puedes usar la clase `String` para leer el contenido del archivo en una sola cadena de texto. 
 
 ```Swift
-if let ruta = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
-    let archivoURL = ruta.appendingPathComponent("datos.txt")
-    if let contenido = try? String(contentsOf: archivoURL, encoding: .utf8) {
-        print(contenido)
-    }
+if let fileContents = try? String(contentsOf: fileURL) {
+    print(fileContents)
 }
 ```
-
-El resultado en consola será el contenido completo del archivo de texto.
+Este código leerá el contenido del archivo en la variable `fileContents` y lo imprimirá en la consola.
 
 ## Profundizando
 
-Además de simplemente leer el contenido de un archivo de texto, también podemos realizar operaciones más complejas, como por ejemplo leer línea por línea.
+Hay diferentes formas de leer un archivo de texto en Swift dependiendo de tus necesidades. Puedes usar la clase `FileHandle` si necesitas leer el contenido del archivo en bloques en lugar de una sola cadena de texto. También puedes especificar el tipo de codificación del archivo, como UTF-8 o ASCII.
 
-```Swift
-if let ruta = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
-    let archivoURL = ruta.appendingPathComponent("datos.txt")
-    if let contenido = try? String(contentsOf: archivoURL, encoding: .utf8) {
-        let lineas = contenido.components(separatedBy: .newlines)
-        for linea in lineas {
-            print(linea)
-        }
-    }
-}
-```
-
-Esto nos permitirá trabajar con cada línea de manera individual, lo que puede ser útil en diferentes situaciones.
+Además de leer, también puedes escribir en archivos de texto utilizando el método `write(to:atomically:encoding)` de la clase `String`. Este método te permite escribir texto en un archivo en una ubicación específica.
 
 ## Ver también
 
-Para obtener más información sobre cómo leer archivos de texto en Swift, puedes revisar estos recursos:
-
-- [Documentación oficial de Swift sobre manejo de archivos](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial sobre cómo leer y escribir archivos en Swift](https://www.hackingwithswift.com/read-and-write-files-with-uikit)
+- [Cómo escribir y leer archivos en Swift](https://www.ioscreator.com/tutorials/read-and-write-files-swift)
+- [Documentación oficial de Apple sobre el manejo de archivos en Swift](https://developer.apple.com/documentation/foundation/file_management)
+- [Tutorial de Hacking with Swift sobre la lectura de archivos de texto](https://www.hackingwithswift.com/example-code/strings/how-to-read-a-text-file-into-a-string)

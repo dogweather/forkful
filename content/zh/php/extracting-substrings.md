@@ -1,67 +1,49 @@
 ---
 title:    "PHP: 提取子字符串"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要从字符串中提取子串
+# 为什么要提取子字符串？
 
-提取子串是编程中常用的一项技术。它可以帮助我们从长的字符串中提取我们需要的部分，节省代码量并且提高代码的可读性。如果你经常需要处理字符串，提取子串是一个非常有用的技巧。
+在编写 PHP 程序时经常会遇到需要从一个字符串中提取一部分内容的情况。例如，如果要从一个长的 URL 中提取出网域名称，或者从一个字符串中提取出特定的日期格式，这时就需要用到提取子字符串的技巧。因此，了解如何提取子字符串是非常有用的，可以帮助我们处理字符串数据更高效、更准确。
 
-## 如何提取子串
+## 如何做？
 
-在PHP中，提取子串可以通过使用内置的substr()函数来实现。下面是一个简单的示例代码：
-
-```PHP
-<?php
-$str = "Hello World!";
-$subStr = substr($str, 6);
-echo $subStr;
-?>
-```
-该示例代码会从字符串"Hello World!"中提取从第六个字符开始的所有字符，即"World!"，并将其输出到屏幕上。
-
-我们也可以指定要提取的子串的长度，例如：
+为了提取子字符串，我们可以使用 PHP 中内置的 `substr()` 函数。这个函数接受三个参数，分别是原始字符串、起始位置和需要提取的长度。例如，如果我们有一个字符串 `$str = "Hello World"`，想要提取出 "World" 这个子串，可以使用以下方法：
 
 ```PHP
 <?php
-$str = "Hello World!";
-$subStr = substr($str, 6, 5);
-echo $subStr;
-?>
+$str = "Hello World";
+$substr = substr($str, 6, 5);
+echo $substr; // 输出 "World"
 ```
-该示例代码会从字符串"Hello World!"中提取从第六个字符开始的五个字符，即"World"，并将其输出到屏幕上。
 
-除了使用整数作为参数外，我们也可以使用负数来指定子串的位置。例如，如果我们想从字符串末尾开始提取子串，可以使用负数作为参数，例如：
+除了使用固定的起始位置和长度，我们也可以结合使用其他字符串函数来动态地确定需要提取的位置和长度。例如，我们可以使用 `strpos()` 函数来查找子串的起始位置，然后再结合 `strlen()` 函数来确定子串的长度。下面是一个提取 URL 中域名的例子：
 
 ```PHP
 <?php
-$str = "Hello World!";
-$subStr = substr($str, -6);
-echo $subStr;
-?>
+$url = "https://www.example.com/posts/123";
+$start = strpos($url, "www.") + strlen("www."); // 包含 "www."
+$end = strpos($url, "/", $start); // 不包含 "/"
+$domain = substr($url, $start, $end - $start);
+echo $domain; // 输出 "example.com"
 ```
-该示例代码会从字符串末尾开始提取六个字符，即"World!"，并将其输出到屏幕上。
 
-更多关于提取子串的用法，请参考PHP官方文档。
+## 深入了解
 
-## 深入了解提取子串
-
-除了使用内置的substr()函数外，我们还可以使用其他方法来提取子串。例如，我们可以使用正则表达式来提取特定模式的子串。此外，我们还可以使用其他string处理函数来实现类似的功能。
-
-需要注意的是，在提取子串时，我们需要考虑到字符串的编码格式，以避免出现乱码的情况。
+除了基本的 `substr()` 函数外，PHP 还提供了一些其他的字符串函数来帮助我们更灵活地提取子字符串。例如，如果需要提取多个子串，可以使用 `explode()` 函数来将字符串按照指定的分隔符拆分成数组。如果需要移除字符串中的特定部分，可以使用 `str_replace()` 函数来替换子串为空字符串。这些函数都可以在 PHP 官方文档中找到更详细的介绍和示例。
 
 ## 参考链接
 
-- [PHP官方文档](https://www.php.net/manual/en/function.substr.php)
-- [正则表达式教程](https://www.w3schools.com/php/php_regex.asp)
-- [PHP字符串处理函数](https://www.w3schools.com/php/php_ref_string.asp)
+- [PHP 官方文档 - 字符串函数](https://www.php.net/manual/zh/ref.strings.php)
+- [w3cschool - PHP 字符串函数](https://www.w3cschool.cn/php/php-string-functions.html)
+- [菜鸟教程 - PHP 字符串处理函数](https://www.runoob.com/php/php-string-functions.html)
 
-## 参见
+# 请参阅
 
-这篇文章只是介绍了提取子串的基本用法，如果您想进一步学习字符串处理技术，可以参考本站的其他文章，例如：
-
-- [PHP中的字符串连接技巧](link-to-article)
-- [如何在PHP中判断一个字符串是否包含特定字符](link-to-article)
-- [PHP中的正则表达式匹配](link-to-article)
+- [PHP 官方文档 - 字符串函数](https://www.php.net/manual/zh/ref.strings.php)
+- [w3cschool - PHP 字符串函数](https://www.w3cschool.cn/php/php-string-functions.html)
+- [菜鸟教程 - PHP 字符串处理函数](https://www.runoob.com/php/php-string-functions.html)

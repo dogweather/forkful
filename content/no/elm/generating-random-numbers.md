@@ -1,55 +1,46 @@
 ---
 title:    "Elm: Generering av tilfeldige tall"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Mange programmerere har behov for å generere tilfeldige tall i sine programmer. Dette kan være for å lage spill, teste algoritmer eller til og med for å legge til litt tilfeldighet i en applikasjon. Elm, et programmeringsspråk som fokuserer på funksjonell programmering, tilbyr flere innebygde funksjoner for å generere tilfeldige tall. I denne bloggposten vil vi se på hvorfor og hvordan man kan bruke disse funksjonene.
+Å generere tilfeldige tall kan være nyttig for mange programmeringsoppgaver, som å lage spill eller simulere tilfeldige situasjoner. Det kan også være nyttig i statistikk og forskning.
 
-## Hvordan
+## Hvordan lage tilfeldige tall i Elm
 
-For å generere tilfeldige tall i Elm, kan du bruke funksjonen `Random.generator`, som tar inn en `Random.Generator` som argument. Denne generator funksjonen er bygd opp av kombinasjonen av forskjellige handlinger og tall som deretter kan brukes til å generere nye tall.
+For å generere tilfeldige tall i Elm, kan du bruke funksjonen `Random.generate`. Denne funksjonen tar to argumenter: en funksjon for å generere tilfeldige tall og en funksjon for å behandle det genererte tallet. Se eksempelet nedenfor for å få en bedre forståelse.
 
-For eksempel, hvis vi ønsker å generere et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
+```Elm
+import Random
 
-```elm
-import Random exposing (Generator, int)
-import Random.List exposing (shuffle)
+-- Definerer en funksjon for å generere tilfeldige tall mellom 1 og 10
+randomNumber : Random.Generator Int
+randomNumber =
+  Random.int 1 10
 
-numbers : List Int
-numbers = [1..10]
+-- Definerer en funksjon for å behandle det genererte tallet
+-- i dette tilfellet skriver vi det ut i konsollen
+printNumber : Int -> Cmd msg
+printNumber number =
+  Debug.log "Tilfeldig tall:" (toString number)
 
-tallGenerator : Generator Int
-tallGenerator = shuffle numbers |> andThen int 1 10
+-- Genererer et tilfeldig tall og behandler det
+randomCommand : Cmd msg
+randomCommand =
+  Random.generate printNumber randomNumber
 ```
 
-I dette eksemplet bruker vi funksjonene `Random.int` og `Random.List.shuffle` for å lage en generator som først blander tallene i listen `numbers`, og deretter genererer et tilfeldig tall mellom 1 og 10.
-
-Når du har en generator, kan du bruke den til å generere tilfeldige tall ved å bruke funksjonen `Random.generate`, som tar inn en `Msg` funksjon og en generator. Her er et eksempel på hvordan du kan bruke vår `tallGenerator` til å generere tilfeldige tall og lagre dem i en variabel:
-
-```elm
-randomTall : Int
-randomTall =
-  Random.generate RandomTall tallGenerator
-
-type Msg = RandomTall Int
-```
-
-Nå vil `randomTall` variabelen inneholde et tilfeldig tall hver gang du kjører funksjonen.
+Kjører eksempelet vil gi ulike tilfeldige tall hver gang.
 
 ## Dypdykk
 
-Funksjonene vi har brukt så langt, `Random.generator` og `Random.generate`, er bare to av de mange mulighetene for å generere tilfeldige tall i Elm. Det er også andre funksjoner som `Random.bool` for å generere tilfeldige boolske verdier og `Random.float` for å generere tilfeldige desimaltall.
-
-Du kan også bygge dine egne generatorer ved å kombinere forskjellige funksjoner og handlinger, noe som gir enda mer fleksibilitet til å generere tilfeldige tall som passer til din applikasjon.
+Bak kulissene bruker Elm en algoritme kalt Mersenne Twister for å generere tilfeldige tall. Denne algoritmen er ansett som en av de beste for tilfeldig tallgenerering og har en veldig stor periode, noe som gjør at tallene er mer uforutsigbare.
 
 ## Se også
 
-- [Offisiell dokumentasjon for generering av tilfeldige tall i Elm](https://package.elm-lang.org/packages/elm/random/latest/Random)
-- [Elm programming language website](https://elm-lang.org/)
-- [Elm for nybegynnere kurs på Udemy](https://www.udemy.com/course/elm-for-beginners/)
-
-Takk for at du leste! Med disse verktøyene kan du enkelt legge til tilfeldighet i dine Elm-prosjekter. Fortsett å utforske og lære mer om de spennende mulighetene som funksjonell programmering tilbyr. Lykke til!
+- [Elm dokumentasjon om tilfeldige tall](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Mersenne Twister algoritmen](https://en.wikipedia.org/wiki/Mersenne_Twister)

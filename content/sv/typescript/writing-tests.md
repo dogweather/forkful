@@ -1,42 +1,37 @@
 ---
-title:    "TypeScript: Skrivning av tester"
+title:    "TypeScript: Att skriva tester"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför skriva tester i TypeScript?
-Att skriva tester är en viktig del av mjukvaruutveckling, oavsett vilket språk du arbetar med. I TypeScript är det särskilt viktigt eftersom språket är typsäkert och använder statisk typning. Att skriva tester säkerställer att din kod fungerar som den ska och minskar risken för buggar och oväntade fel i produktionen.
 
-## Så här skriver du tester i TypeScript
-För att skriva tester i TypeScript behöver du ett testramverk som Mocha eller Jest. Börja med att importera det testramverk du vill använda och de moduler eller funktioner du vill testa. Sedan kan du använda olika assertion-metoder, beroende på vilket testramverk du använder, för att kontrollera att din kod fungerar som förväntat.
+Att skriva tester är en viktig del av en utvecklares arbetsuppgifter. Det bidrar till att säkerställa att koden fungerar som tänkt och att den fortsätter att fungera även efter eventuella ändringar. I TypeScript, ett populärt programmeringsspråk för webbutveckling, kan du skriva tester med hjälp av verktyget Jasmine. Det ger dig en strukturerad och organiserad metod för att testa din kod.
+
+## Hur man skriver tester i TypeScript
+
+För att börja skriva tester i TypeScript, måste du först installera Jasmine via npm. Sedan kan du skapa en ny fil för dina tester och importera Jasmine biblioteket. Nedan följer ett exempel på hur du kan skriva ett enkelt test som kollar om en funktion returnerar rätt värde:
 
 ```TypeScript
-import { sum, subtract } from './mymodule';
+import { add } from "./calculator";
 
-describe('sum function', () => {
-  test('returns the sum of two numbers', () => {
-    const result = sum(5, 10);
-    expect(result).toEqual(15);
-  });
-});
-
-describe('subtract function', () => {
-  test('returns the difference between two numbers', () => {
-    const result = subtract(10, 5);
-    expect(result).toEqual(5);
-  });
+describe("add function", () => {
+    it("should return the sum of two numbers", () => {
+        expect(add(2, 3)).toEqual(5);
+    });
 });
 ```
 
-Som du kan se använder vi enkla testfall med olika värden för att kontrollera att våra funktioner returnerar rätt resultat. Detta är bara ett exempel på hur du kan skriva tester i TypeScript, men det finns många fler sätt att göra det på.
+I exemplet ovan importerar vi en funktion som heter "add" från en fil som heter "calculator". Därefter skapar vi en "describe" funktion som beskriver vad testet ska göra. Inuti denna funktion skapar vi en "it" funktion som specificerar vad som förväntas hända. Slutligen använder vi "expect" funktionen för att verifiera om resultatet från "add" funktionen stämmer överens med det förväntade värdet.
 
-## Djupdykning i att skriva tester i TypeScript
-När du skriver tester i TypeScript, är det viktigt att tänka på hur din kod interagerar med andra delar av din applikation. I en del fall kan det vara nödvändigt att mocka vissa moduler eller funktioner för att testa isolerade delar av din kod. Det är också viktigt att ha en god förståelse för hur olika typer och interfaces fungerar i TypeScript, eftersom dessa kan skapa utmaningar när du skriver tester.
+## Deep Dive
 
-Ett annat tips är att skriva dina tester samtidigt som du skriver din kod. På så sätt kan du se till att dina tester täcker alla delar av din kod och förhindra att buggar uppstår i framtiden.
+Nu när du har en grundläggande förståelse för hur man skriver tester i TypeScript, kan du utforska mer avancerade koncept som t.ex. mockning och stubbing. Mockning tillåter dig att simulera en extern resurs eller funktion för att testa din kod oberoende av den. Stubbing å andra sidan, låter dig definiera ett förutbestämt värde eller resultat för en funktion. Detta är speciellt användbart när du behöver testa avgränsade delar av din kod separat.
 
 ## Se även
-- [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
-- [Officiell TypeScript-dokumentation](https://www.typescriptlang.org/docs/)
+
+- [Jasmine](https://jasmine.github.io)
+- [TypeScript Official Website](https://www.typescriptlang.org)
+- [Mocka och Stubbning med TypeScript](https://medium.com/@aravindsharma66/mocking-and-stubbing-in-typescript-a7596417f8f2)

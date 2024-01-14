@@ -1,44 +1,73 @@
 ---
 title:    "Rust: Buscando y reemplazando texto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Reemplazar texto en un programa es una tarea común durante el proceso de desarrollo y mantenimiento de código. En Rust, esta tarea se puede lograr de manera eficiente y segura utilizando sus poderosas características de manejo de cadenas. En esta publicación del blog, aprenderemos cómo podemos realizar fácilmente operaciones de búsqueda y reemplazo de texto en Rust.
+La búsqueda y reemplazo de texto es una tarea común en la programación, especialmente cuando se trabaja con grandes cantidades de código. Usar un lenguaje de programación como Rust puede simplificar y mejorar esta tarea gracias a su enfoque en la seguridad y concurrencia.
 
 ## Cómo hacerlo
 
-El primer paso para realizar una búsqueda y reemplazo de texto en Rust es importar la biblioteca estándar de manejo de cadenas. Esto se puede hacer colocando la línea `use std::str` en la parte superior de su archivo de código. A continuación, podemos utilizar la función `replace()` para reemplazar una subcadena con otra en una cadena dada. Por ejemplo:
+Para realizar la búsqueda y reemplazo de texto en Rust, se pueden seguir estos pasos:
 
-```
-let text = "Hola mundo!";
-let new_text = str::replace(text, "Hola", "Adiós");
-println!("{}", new_text);
-```
+1. Importar la librería `std::fs` que permite trabajar con archivos.
 
-La salida de este código sería `Adiós mundo!`, ya que la subcadena "Hola" se ha reemplazado por "Adiós". La función `replace()` también puede tomar un tercer argumento opcional para especificar la cantidad máxima de reemplazos a realizar. Además, podemos usar `replace_first()` y `replace_last()` para solo reemplazar la primera o la última aparición de la subcadena en una cadena, respectivamente.
+2. Abrir el archivo que se desea modificar utilizando la función `File::open()` y almacenar el resultado en una variable.
 
-Otra forma de realizar una búsqueda y reemplazo de texto en Rust es utilizando expresiones regulares. Esto se puede hacer importando la biblioteca `regex` y utilizando la función `replace_all()` para reemplazar todas las apariciones de una expresión regular con una cadena dada. Por ejemplo:
+3. Leer el contenido del archivo con la función `read_to_string()` y guardarlo en una variable de tipo `String`.
 
-```
-use regex::Regex;
-let text = "Hola mundo!";
-let re = Regex::new(r"o").unwrap();
-let new_text = re.replace_all(text, "a");
-println!("{}", new_text);
-```
+4. Utilizar la función `replace()` en la variable de tipo `String` con los parámetros que se deseen reemplazar.
 
-La salida de este código sería `Hala mundo!`, ya que todas las letras "o" han sido reemplazadas por "a" utilizando la expresión regular `r"o"`.
+5. Escribir el contenido modificado en el archivo utilizando la función `write_all()`.
+
+A continuación, un ejemplo de código para reemplazar todas las apariciones de "hola" por "hello" en un archivo de texto:
+
+````Rust
+use std::fs::File;
+use std::io::{Read, Write};
+
+fn main() {
+    // Abrir el archivo y almacenar el resultado en una variable
+    let mut archivo = File::open("texto.txt").expect("No se puede abrir el archivo");
+
+    // Leer el contenido del archivo y guardarlo en una variable de tipo String
+    let mut contenido = String::new();
+    archivo.read_to_string(&mut contenido).expect("No se puede leer el archivo");
+
+    // Utilizar la función replace() para reemplazar las apariciones de "hola" por "hello"
+    let contenido_modificado = contenido.replace("hola", "hello");
+
+    // Escribir el contenido modificado en el archivo
+    let mut archivo_modificado =
+        File::create("texto_modificado.txt").expect("No se puede crear el archivo");
+    archivo_modificado
+        .write_all(contenido_modificado.as_bytes())
+        .expect("No se puede escribir en el archivo");
+}
+````
+
+El resultado del código anterior sería un archivo llamado "texto_modificado.txt" con todas las apariciones de "hola" reemplazadas por "hello".
 
 ## Profundizando
 
-Rust ofrece una amplia variedad de funciones y tipos de datos relacionados con el manejo de cadenas. Además de los mencionados anteriormente, también podemos utilizar la función `replace_range()` para reemplazar los caracteres en un rango específico de una cadena. También podemos utilizar tipos de cadena específicos, como `String` y `str`, que difieren en el manejo de la propiedad y el rendimiento. Para obtener más información sobre el manejo de cadenas en Rust, puedes consultar la documentación oficial de Rust o explorar otros recursos en línea.
+Además de la función `replace()`, Rust también ofrece otras opciones para realizar la búsqueda y reemplazo de texto. Algunas de ellas son:
+
+- `replace_range()` para reemplazar una sección específica del texto.
+
+- `split()` y `join()` para dividir y unir el texto utilizando un delimitador.
+
+- Expresiones regulares con la librería `regex`, que permiten buscar y reemplazar patrones específicos en el texto.
+
+Explorar estas opciones y su implementación en código puede ayudar a mejorar el proceso de búsqueda y reemplazo de texto en Rust.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre el manejo de cadenas](https://doc.rust-lang.org/stable/std/str/index.html)
-- [Tutorial de Rust: Manejo de cadenas](https://www.tutorialspoint.com/rust/rust_strings.htm)
-- [The Rust Programming Language Book - Capítulo 8: Manejo de cadenas](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Documentación oficial de Rust sobre [la librería `std::fs`](https://doc.rust-lang.org/std/fs/index.html)
+
+- Documentación oficial de Rust sobre [la librería `regex`](https://docs.rs/regex/)
+
+- [Ejemplos y ejercicios prácticos](https://rust-lang-nursery.github.io/rust-cookbook/text/replacing.html) de búsqueda y reemplazo de texto en Rust.

@@ -1,37 +1,37 @@
 ---
 title:    "Elm: Tworzenie pliku tekstowego"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać plik tekstowy w języku Elm?
+## Dlaczego
 
-Pisanie plików tekstowych jest często niezbędnym elementem programowania w języku Elm. Pozwala ono na przechowywanie danych w postaci tekstu, co jest niezwykle przydatne w różnych projektach programistycznych. W tym artykule dowiesz się, dlaczego warto nauczyć się tworzyć pliki tekstowe w języku Elm.
+Pisanie plików tekstowych jest częstym zadaniem w programowaniu w Elm. Jest to ważne, ponieważ pozwala na przechowywanie i przetwarzanie dużych ilości danych w łatwy i zorganizowany sposób.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pisanie plików tekstowych w języku Elm jest bardzo proste. Wystarczy użyć funkcji `File.out` z pakietu `elm/file`. Przykładowa implementacja może wyglądać następująco:
+Proces tworzenia plików tekstowych w Elm jest prosty i intuicyjny. Można to zrobić za pomocą modułu "Text", który oferuje wiele funkcji do manipulacji tekstem. Przykładowe użycie takiego modułu wyglądałoby następująco:
 
-```Elm
-import File
-import Html
+```
+import Text exposing (..)
 
-main : Html.Html msg
-main =
-  File.out "example.txt" "Hello, world!"
+text = "To jest przykładowy tekst"
+
+file = "tekst.txt"
+
+saveFile file text
 ```
 
-Powyższy kod utworzy plik o nazwie "example.txt" i umieści w nim tekst "Hello, world!". Możesz także wczytać dane z istniejącego pliku za pomocą funkcji `File.in`. Pamiętaj jednak, że Elm działa w przeglądarce internetowej, więc nie będziesz mógł bezpośrednio zapisywać i wczytywać plików na swoim komputerze.
+Wynikiem tego kodu będzie utworzenie pliku "tekst.txt" z zawartością "To jest przykładowy tekst". Istnieje wiele innych możliwości manipulacji tekstem i tworzenia różnych formatów plików, ale podstawowa składnia pozostaje taka sama.
 
-## Głębszy zanurzenie
+## Głębszy wgląd
 
-Pisanie plików tekstowych w języku Elm jest prostym procesem, ale istnieje kilka dodatkowych funkcji, dzięki którym możesz modyfikować lub analizować dane, zanim zostaną zapisane lub wczytane. Przykładowo, funkcja `File.append` pozwala na dodawanie danych do już istniejącego pliku, a `File.readLines` pozwala na wczytanie tekstu jako listy linii zamiast pojedynczego ciągu znaków.
+Tworzenie plików tekstowych w Elm może być wykorzystywane w różnych kontekstach, na przykład do zapisywania danych aplikacji do późniejszego odczytu lub do generowania raportów lub plików konfiguracyjnych. Istnieje wiele różnych modułów i narzędzi, które mogą pomóc w tym procesie, dlatego warto eksperymentować i znaleźć rozwiązanie, które najlepiej odpowiada danemu projektowi.
 
-Ponadto, używanie plików tekstowych może być również przydatne w tworzeniu aplikacji internetowych z interaktywnym interfejsem. Możesz wykorzystać je do przechowywania ustawień użytkownika lub danych wprowadzonych przez użytkownika w formularzu.
+## Zobacz też
 
-## Zobacz także
-
-1. Dokumentacja pakietu `elm/file`: https://package.elm-lang.org/packages/elm/file/latest
-2. Przykłady wykorzystania plików tekstowych w języku Elm: https://github.com/elm/file
-3. Poradnik "Jak pisać pliki tekstowe w języku Elm": https://medium.com/@mattiaerre/write-a-text-file-with-elm-b8d67a193da
+- [Dokumentacja modułu Text] (https://package.elm-lang.org/packages/elm/core/latest/Text)
+- [Przykłady zapisu plików tekstowych] (https://elmprogramming.com/creating-and-saving-text-files-in-elm.html)
+- [Inne przydatne narzędzia w Elm] (https://www.elm-tutorial.org/en/02-foundations/04-function.html)

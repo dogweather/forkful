@@ -1,57 +1,53 @@
 ---
 title:    "Python recipe: Converting a string to lower case"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-In the world of programming, there are countless tasks that require string manipulation. One of these tasks is converting a string to lower case. Whether you are working with user input, database queries, or simply formatting text, having the ability to convert a string to lower case can be incredibly useful. It allows for consistency in data and makes it easier to search and compare strings. In this blog post, we will dive into how to convert a string to lower case in Python.
+One of the most common tasks in programming is manipulating strings. Oftentimes, we need to convert strings to different formats to suit our needs. One useful conversion is changing a string to lowercase. This can be beneficial for things like data cleaning or string matching.
 
 ## How To
+To convert a string to lowercase in Python, we can use the built-in `lower()` function. Let's take a look at a simple example:
 
-To convert a string to lower case in Python, we will use the built-in `.lower()` method. This method takes the string and returns a new string with all characters converted to lower case. Let's see an example:
+```Python
+string = "PYTHON PROGRAMMING"
+lower_string = string.lower()
 
-```
-Python
-my_string = "HeLLo WoRLd"
-print(my_string.lower())
-```
-
-The output of this code will be: `hello world`
-
-We can also use the `.lower()` method on strings that contain special characters, numbers, and symbols:
-
-```
-Python
-my_string = "!#PYTHON123"
-print(my_string.lower())
+print(lower_string)
 ```
 
-The output of this code will be: `!#python123`
-
-But what if we want to convert a string to lower case without creating a new string? This is where the `.lower()` method becomes even more useful. By using the `.lower()` method on a variable, we can permanently change the value of that variable to lower case:
-
+Output:
 ```
-Python
-my_string = "UPPERCASE"
-my_string = my_string.lower()
-print(my_string)
+python programming
 ```
 
-The output of this code will be: `uppercase`
+In the code above, we first define a variable `string` with a string value. Then, we use the `lower()` function on that string and assign it to a new variable `lower_string`. Finally, we print out the result, which is the lowercase version of our original string.
+
+This method also works on strings with special characters or numbers. Let's see another example:
+
+```Python
+string = "Hello, 123!"
+lower_string = string.lower()
+
+print(lower_string)
+```
+
+Output:
+```
+hello, 123!
+```
 
 ## Deep Dive
+The `lower()` function works by looping through each character of the string and converting it to lowercase using the Unicode specifications. This means it can handle different languages and characters, making it a reliable choice for string conversion.
 
-Now, let's take a deeper look at how the `.lower()` method converts a string to lower case. Under the hood, Python uses the Unicode standard to represent characters. Each character has a corresponding numerical code, known as a code point. In Python, the `.lower()` method uses the Unicode code point for each character to convert it to its lower case equivalent. This allows for consistency across different languages and character sets.
+It's worth noting that the `lower()` function returns a new string rather than modifying the original string in place. This is important to keep in mind when working with mutable strings.
 
-It's worth noting that the `.lower()` method only converts characters that have a corresponding lower case equivalent. For example, the German letter "ß" does not have a lower case equivalent and will remain unchanged when using the `.lower()` method.
+Another thing to consider is that the `lower()` function does not work on non-string data types. If you try to use it on an integer or float, for example, you'll get an error. It's always a good idea to check the data type before applying any string methods.
 
 ## See Also
-
-To learn more about string manipulation in Python, check out these resources:
-
-- [Python documentation on the `.lower()` method](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Real Python's tutorial on string manipulation](https://realpython.com/python-strings/)
-- [GeeksforGeeks article on using string methods in Python](https://www.geeksforgeeks.org/python-string-methods-set-1-find-replace-split-reverse-join/)
+- [Official Python Documentation for `lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [GeeksforGeeks: Python | String lower()](https://www.geeksforgeeks.org/python-string-lower/#:~:text=Python%20string_lower%20function%20returns,Python%20String%20lower%20example)
+- [Real Python: String Formatting in Python](https://realpython.com/python-string-formatting/)

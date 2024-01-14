@@ -1,52 +1,44 @@
 ---
 title:    "Swift recipe: Writing tests"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When it comes to writing software, testing is a crucial step to ensure the quality and functionality of your code. Testing allows you to catch and fix bugs before they make it to production, saving you time and headaches in the long run.
+As developers, we all know the importance of writing tests for our code. It helps ensure that our code is functioning correctly and saves us from potential headaches in the future. In this blog post, we'll delve into the world of writing tests in Swift and understand the benefits it brings.
 
 ## How To
 
-To get started with writing tests in Swift, the first step is to import the `XCTest` framework. This framework provides all the necessary tools for writing and running tests.
+To write tests in Swift, we'll need to create a separate target in our project with the ".test" extension. Let's name it "MyAppTests". Inside this target, we'll create a new Swift file and name it "MyAppTests.swift".
 
-Next, you'll create a new Swift file for your tests. It's important to follow the naming convention of `[Name]Tests.swift`, where `[Name]` is the name of the file or class you want to test.
+Now, let's start writing our tests. We'll first need to import XCTest, which is the framework for writing tests in Swift. Then, we can start writing our test cases using the `XCTAssert` assertion functions.
 
-Within this file, you can create different `XCTestCase` classes for each component or functionality you want to test. For example, if you're testing a `Calculator` class, you can create a `CalculatorTests` class to hold all the tests related to that class.
-
-Let's take a look at an example test for our `Calculator` class:
+Below is an example of a test case that checks if a given array contains a specific element:
 
 ```Swift
-func testAdd() {
-    // given
-    let calc = Calculator()
-    
-    // when
-    let result = calc.add(5, 10)
-    
-    // then
-    XCTAssertEqual(result, 15)
+import XCTest
+
+class MyAppTests: XCTestCase {
+  func testArrayContainsElement() {
+    let array = [1, 2, 3, 4]
+    XCTAssertTrue(array.contains(3))
+  }
 }
 ```
 
-In this test, we're using the `XCTAssertEqual` assertion to check if the result of adding 5 and 10 is equal to 15. The `given`, `when`, and `then` comments are just a recommended format to help structure your tests, but they're not required.
-
-You can also use other assertions such as `XCTAssertTrue`, `XCTAssertFalse`, and `XCTAssertNil`, among others. It's a good practice to have multiple tests for each function or method to cover different scenarios and edge cases.
-
-Once you've written all your tests, you can run them by selecting the "Test" option in Xcode or by using the `xcodebuild test` command in the terminal. You should see a summary of all passed and failed tests, along with any errors or warnings that occurred.
+We can also use `XCTAssertEqual` to check for specific values, `XCTAssertNil` to check for nil values, and many more assertion functions provided by XCTest. These tests will run automatically when we build our project, and we'll get a green or red indicator depending on the results.
 
 ## Deep Dive
 
-Writing tests not only helps catch bugs, but it also encourages writing better and more modular code. By writing tests, you're forced to think about all possible inputs and outputs of your functions, resulting in more robust and maintainable code.
+In writing tests, we must make sure that the tests are independent and cover all possible scenarios. We can also use the `setUp` and `tearDown` functions to set up the environment and clean up after each test case, respectively.
 
-Another advantage of writing tests is that you can quickly and easily check for regressions after making changes to your code. This can save you from spending hours debugging and fixing unexpected issues.
-
-It's also worth noting that testing is not a one-time activity. As your codebase grows and evolves, it's important to continue writing tests and updating them as needed. This ensures that your code remains reliable and bug-free.
+In addition, we should also make use of code coverage tools, such as Xcode's built-in coverage profiler, to see which parts of our code are tested and which are not. This helps us identify any missing test cases and ensure that our code is thoroughly tested.
 
 ## See Also
-- [Apple's official XCTest documentation](https://developer.apple.com/documentation/xctest)
-- [A Beginner's Guide to Testing in Swift](https://www.raywenderlich.com/960290-a-beginners-guide-to-testing-in-swift)
-- [Unit Testing in Swift](https://www.swiftbysundell.com/basics/unit-testing/)
+
+- [Official XCTest Framework Documentation](https://developer.apple.com/documentation/xctest)
+- [An Introduction to Writing Unit Tests in Swift](https://www.raywenderlich.com/960290-an-introduction-to-writing-unit-tests-in-swift) 
+- [Code Coverage Tools for Swift](https://medium.com/@jamesrochabrun/ios-code-coverage-tools-259c74dd01da)

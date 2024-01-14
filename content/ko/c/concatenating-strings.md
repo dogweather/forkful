@@ -1,74 +1,89 @@
 ---
-title:    "C: 문자열 결합하기"
+title:    "C: 문자열 연결하기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 연결하는 일에 참여하는 *이유*는 무엇일까요? 간단히 말하자면, 문자열을 조작하는 작업을 수행할 때 서로 다른 문자열을 하나로 합치고 싶은 경우가 많기 때문입니다.
+문자열 연결(concatenating)이 필요한 이유는 여러 문자열을 하나로 합쳐서 사용해야 할 때입니다. 예를 들어, 이름과 성을 따로 입력받았지만 나중에는 이름과 성을 합쳐서 출력해야 할 때가 있습니다. 이럴 때 문자열 연결을 사용하면 편리하고 간편합니다.
 
 ## 방법
 
-C 프로그래밍에서 문자열을 연결하는 첫 번째 단계는 두 개의 문자열을 가지고 있어야 한다는 것입니다. 예를 들어, "안녕하세요"와 "반갑습니다"라는 두 개의 문자열이 있을 경우, 우리는 이 두 문자열을 하나의 문자열로 합칠 수 있습니다.
+문자열 연결에는 `strcat()` 함수를 사용합니다. 이 함수는 `string.h` 라이브러리에 포함되어 있으며 다음과 같은 형태를 가집니다.
 
 ```C
-#include <stdio.h>
-
-int main() {
-    char str1[30] = "안녕하세요";
-    char str2[30] = "반갑습니다";
-
-    strcat(str1, str2);
-
-    printf("%s\n", str1);
-    return 0;
-}
+strcat(결합할 문자열, 추가할 문자열);
 ```
 
-출력:
-
-```
-안녕하세요반갑습니다
-```
-
-이번에는 조금 더 복잡한 예제를 살펴보겠습니다. 더 큰 문자열을 만들고 싶다면 어떻게 해야 할까요? 아래 예제에서는 3개의 문자열을 한 번에 연결하고 있습니다.
+결합할 문자열에는 추가할 문자열이 뒤에 이어붙여지게 됩니다. 아래는 실제 사용 예시입니다.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[100] = "오늘은";
-    char str2[50] = "날씨가";
-    char str3[20] = "매우 좋아요";
+	// 이름과 성을 입력받는 예제
+	char name[10], surname[10];
+	printf("이름을 입력하세요: ");
+	scanf("%s", name);
+	printf("성을 입력하세요: ");
+	scanf("%s", surname);
 
-    strcat(strcat(str1, str2), str3);
+	// 두 문자열을 합쳐줍니다.
+	strcat(name, surname);
 
-    printf("%s\n", str1);
-    return 0;
+	// 합쳐진 문자열을 출력합니다.
+	printf("이름과 성이 합쳐진 결과: %s", name);
+
+	return 0;
 }
 ```
 
-출력:
+위 코드를 실행하면 아래와 같은 결과를 얻을 수 있습니다.
 
 ```
-오늘은날씨가매우 좋아요
+이름을 입력하세요: 홍
+성을 입력하세요: 길동
+이름과 성이 합쳐진 결과: 홍길동
 ```
 
-## 더 들어가보기
+## 딥 다이브
 
-`strcat()` 함수의 정확한 작동 방식을 알고 싶다면 어떻게 될까요? 이 함수의 원형은 다음과 같습니다:
+문자열 연결은 기본적으로 결합할 문자열에 추가할 문자열을 덧붙이도록 설계되어 있습니다. 하지만 `strncat()` 함수를 사용하면 추가할 문자열의 일부분만 결합할 수도 있습니다. `strncat()` 함수의 형태는 다음과 같습니다.
 
+```C
+strncat(결합할 문자열, 추가할 문자열, 추가할 문자열의 일부분 길이);
 ```
-char *strcat(char *str1, char *str2)
+
+추가할 문자열의 일부분 길이는 작성된 문자열의 길이를 넘지 않아야 합니다. 예를 들어, "Hello, World!"라는 문자열에서 "Hello"만 결합할 수 있습니다.
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	// "Hello, World!" 문자열
+	char str[50] = "Hello, ";
+	char hello[50] = "Hello";
+	char world[50] = "World!";
+
+	// "Hello"만 결합
+	strncat(str, hello, 5);
+
+	// 결과 출력
+	printf("결과: %s", str);
+
+	return 0;
+}
 ```
 
-여기서 `str1`과 `str2`는 합쳐질 문자열을 가리키는 포인터입니다. `strcat()` 함수는 먼저 `str1`의 끝을 찾은 다음, `str2`의 첫 번째 문자에서 `NULL` 문자를 복사하여 `str1`의 `NULL` 문자 다음에 붙입니다. 간단히 말해서, `str1`의 끝부터 `str2`의 시작까지 모든 문자를 차례대로 복사하여 하나의 문자열로 만드는 것입니다.
+위 코드를 실행하면 "Hello, Hello"가 출력됩니다.
 
-## See Also
+## 연관 정보
 
-- [String Concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
-- [C String Functions](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- [Concatenating Strings in C](https://www.w3schools.in/c-tutorial/strings-2/)
+- `strcat()` 함수 문서: https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm
+- `strncat()` 함수 문서: https://www.tutorialspoint.com/c_standard_library/c_function_strncat.htm
+- `string.h` 라이브러리 구문: https://www.tutorialspoint.com/c_standard_library/string_h.htm

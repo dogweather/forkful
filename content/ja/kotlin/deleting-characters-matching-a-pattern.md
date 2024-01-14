@@ -1,36 +1,50 @@
 ---
 title:    "Kotlin: パターンに一致する文字を削除する"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-＃＃ なぜ
-文字列を削除するためにパターンに一致する文字を削除するということは、文字列処理やデータの整理などの目的で、よく使われるコーディングのテクニックです。
+## なぜ
 
-＃＃方法
-以下の例では、Kotlinの文字列処理メソッドを使用して、パターンに一致する文字を削除する方法を示します。
+あなたはプログラミングをするとき、時々文字のパターンに合致する文字を削除したくなることがあります。この記事では、Kotlinを使って文字のパターンに合致する文字を削除する方法を紹介します。
 
-```
-// 処理前の文字列
-val str = "こんにちは！私はKotlinを勉強しています！"
+## 方法
 
-// パターンに一致する文字を削除する
-val result = str.replace(Regex("[!｜！]"), "")
+まず、削除したい文字列を含む変数を作成します。
 
-// 処理後の文字列
-println(result) // こんにちは私はKotlinを勉強しています
+```Kotlin
+var sentence = "私はカフェでコーヒーを飲むのが好きです。"
 ```
 
-この例では、`"!｜！"`というパターンに一致する`！`を`""`（空文字）に置き換えることで、文字列から`！`を削除しています。
+次に、削除したい文字のパターンを正規表現で定義します。例えば、文字列から「カフェで」を削除したい場合、正規表現としては「カフェで」の部分を指定する必要があります。
 
-＃＃深く掘り下げる
-パターンに一致する文字を削除するということは、正規表現を使用することができるKotlinの強力な機能の一つです。正規表現を使用することで、より複雑なパターンに一致する文字を効率的に削除することができます。また、`Regex`クラス以外にも、`Substring`や`Iterator`などの便利なメソッドを使用して文字列を処理する方法もあります。
+```Kotlin
+var pattern = "カフェで"
+```
 
-＃＃おわりに
-今回はKotlinを使用してパターンに一致する文字を削除する方法について紹介しました。正規表現を使用することで、より柔軟な文字列処理が可能になりますので、ぜひ活用してください！
+最後に、`replace()`関数を使って削除したい文字を指定し、新しい文字列を得ることができます。
 
-＃＃関連リンク
-- Regexクラスのドキュメント：https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/
-- 何でもわかる正規表現入門：https://qiita.com/jnchito/items/54ea3e1772fdcab143b7
-- 正規表現のサンプル集：https://www.javadrive.jp/regex/
+```Kotlin
+var newSentence = sentence.replace(pattern, "")
+println(newSentence)
+```
+
+実行すると、以下のような結果が得られます。
+
+```
+私はコーヒーを飲むのが好きです。
+```
+
+## 詳細
+
+`replace()`関数は、正規表現にマッチする文字列を削除するだけでなく、別の文字列に置き換えることもできます。また、`replace()`関数は文字列だけでなく、StringBuilderやRegexクラスオブジェクトでも使用することができます。
+
+`replace()`関数の他にも、`replaceFirst()`や`replaceAfter()`などの関数があります。これらの関数は指定した文字列を最初の1つや最後の1つだけ置き換えることができます。詳しくは公式ドキュメントを参照してください。
+
+## 関連記事
+
+- [Kotlin String manipulation](https://dev.to/ecorrea/kotlin-string-manipulation-c6o)
+- [Kotlin Regular Expressions](https://www.baeldung.com/kotlin-regular-expressions)
+- [Kotlin Strings](https://kotlinlang.org/docs/basic-syntax.html#strings)

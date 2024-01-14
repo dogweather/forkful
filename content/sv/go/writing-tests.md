@@ -1,36 +1,48 @@
 ---
-title:    "Go: Att skriva tester"
+title:    "Go: Skriva tester"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av utvecklingsprocessen inom Go-programmering. Det hjälper till att identifiera buggar och förbättra kodens stabilitet, vilket i sin tur leder till en bättre användarupplevelse och minskar risken för fel i produktionen.
+Att skriva tester är en viktig del av programmering i Go (Golang). Genom att skriva tester kan du säkerställa att din kod fungerar som den ska och undvika buggar och problem i framtiden. Dessutom hjälper det dig att förstå din kod bättre och gör det enklare att göra ändringar i framtiden.
 
-## Hur man gör
+## Hur man gör det
 
-För att skriva tester i Go behöver du använda paketet "testing" och definiera en funktion som börjar med prefixet "Test" följt av namnet på den funktionen du vill testa. Sedan använder du funktionen "t.Error()" för att markera testet som misslyckat om något går fel, eller "t.Log()" för att logga eventuell information.
+För att skriva tester i Go behöver du använda paketet "testing". Det innehåller funktioner som gör det möjligt för dig att testa dina funktioner och metoder. Här är ett enkelt exempel på hur man skriver ett test i Go:
 
 ```Go
+package main
+
+import "testing"
+
+func Add(x, y int) int {
+	return x + y
+}
+
 func TestAdd(t *testing.T) {
-	result := add(2, 3)
-	if result != 5 {
-		t.Error("Expected 5, got", result)
+	result := Add(5, 2)
+	if result != 7 {
+		t.Errorf("Expected 7, but got %d", result)
 	}
-	t.Log("TestAdd passed!")
 }
 ```
 
-I detta exempel skapar vi ett enkelt test för en funktion som adderar två tal. Om testet misslyckas kommer meddelandet "Expected 5, got X" att visas, där X är det faktiska resultatet. Annars kommer meddelandet "TestAdd passed!" att loggas.
+I detta exempel har vi en funktion som heter "Add" som lägger till två tal och returnerar resultatet. Vi testar sedan funktionen genom att anropa den och kontrollera att resultatet är korrekt. Om det inte är det, så får vi ett felmeddelande.
 
-## Djupdykning
+Det finns också andra funktioner i paketet "testing" som du kan använda för att testa olika aspekter av din kod, som till exempel "testing.T.Errorf" som används för att rapportera fel.
 
-För att skriva effektiva tester, försök att täcka så många fall som möjligt. Detta innefattar hanteringen av gränsfall, felhantering och olika kombinationer av indata. Använd också "Benchmark" funktionen för att mäta prestanda hos din kod och se till att dina tester körs regelbundet för att upptäcka eventuella förändringar i beteendet.
+## Utforska djupare
+
+Att skriva tester handlar inte bara om att skapa enkla fall som ovan. Du kan också utforska andra aspekter av dina funktioner och metoder för att säkerställa att de fungerar korrekt. Det kan inkludera gränsvärden, felhantering och andra scenarier som kan påverka din kod.
+
+En annan viktig del av att skriva tester är att se till att de är enkla att förstå och underhålla. Genom att organisera dina tester på ett logiskt sätt och använda tydliga namn kan du göra det enklare för dig själv och andra utvecklare att förstå din kod och göra ändringar när det behövs.
 
 ## Se också
 
-* Go Dokumentation: https://golang.org/doc/
-* How to Write Go Tests: https://golang.org/src/testing/examples_test.go
-* Test Driven Development in Go: https://github.com/quii/learn-go-with-tests
+- [Go-paketet "testing"](https://golang.org/pkg/testing/)
+- [5 tips for effective testing in Go (engelska)](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
+- [GopherCon talk: Advanced testing techniques with Go (engelska)](https://www.youtube.com/watch?v=8hQG7QlcLBk&t=333s) ## Se också

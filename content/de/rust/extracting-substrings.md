@@ -1,41 +1,83 @@
 ---
-title:    "Rust: Unterstrings extrahieren"
+title:    "Rust: Untersuchen von Teilsequenzen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Substring-Extraktion ist eine wichtige Technik beim Programmieren. Es kann verwendet werden, um einen Teil einer Zeichenkette zu extrahieren, der für bestimmte Operationen benötigt wird, anstatt die gesamte Zeichenkette zu verarbeiten. Dadurch können Programme effizienter und schneller ausgeführt werden.
+Rust hat sich schnell zu einer der beliebtesten Programmiersprachen entwickelt, und das aus gutem Grund. Die strenge Typprüfung und die kontrollierte Speicherzuweisung ermöglichen es Entwicklern, leistungsstarke und sichere Anwendungen zu erstellen. Eine häufige Aufgabe bei der Arbeit mit Strings ist die Extrahierung von Teilstrings oder Substrings. In diesem Blog-Beitrag lernen wir, wie man Substrings in Rust extrahiert und warum dies nützlich sein kann.
 
-## Wie man Substrings extrahiert
+## Wie geht's?
 
-Um Substrings in Rust zu extrahieren, können wir die `get`-Methode von `str` verwenden. Diese Methode erwartet zwei Indizes, die den Anfang und das Ende des zu extrahierenden Substrings angeben.
-
-Eine Beispielanwendung könnte so aussehen:
+Zunächst müssen wir unsere Rust-Anwendung erstellen und das `std::str::Chars`-Modul importieren, das uns Zugriff auf die einzelnen Zeichen eines Strings bietet.
 
 ```Rust
-let s = "Dies ist ein Beispiel";
-// extrahiert den Substring von Index 5 bis 10
-let substring = s.get(5..10);
-println!("{}", substring); // Ausgabe: ist ein
+let string = "Hallo, Welt!";
+
+for character in string.chars() {
+    println!("{}", character);
+}
 ```
 
-Der `get`-Methode kann auch eine `RangeFull` übergeben werden, um den gesamten Inhalt der Zeichenkette zu extrahieren.
+Dieses Beispiel iteriert über jeden Buchstaben in unserem String und gibt ihn aus. Nun wollen wir aber einen konkreten Teil unseres Strings extrahieren. Dafür können wir die Methode `slice()` verwenden, die folgendermaßen aufgerufen wird:
 
-Die Ausgabe wäre in diesem Fall "Dies ist ein Beispiel".
+```Rust
+let substring = &string[start_index..end_index];
+```
 
-## Tiefer Einblick
+Dabei wird der Teilstring von `start_index` bis `end_index` extrahiert. Beachten Sie, dass der `end_index` nicht im Substring enthalten ist. In unserem Beispiel könnte es so aussehen:
 
-In Rust werden Substrings als `&str` dargestellt, da sie nur einen Teil einer Zeichenkette enthalten und nicht als eigenständige Zeichenkette betrachtet werden. Diese `&str` können jedoch auch in `String` konvertiert werden, indem sie der `to_string`-Methode übergeben werden.
+```Rust
+let string = "Hallo, Welt!";
+let substring = &string[0..3];
 
-Wenn wir eine `&str`-Darstellung eines Substrings zu einer bestehenden `String`-Variable hinzufügen, wird der gesamte Inhalt der Zeichenkette kopiert und eine neue `String` erstellt. Dies kann zu Performance-Problemen führen, insbesondere wenn die ursprüngliche Zeichenkette sehr lang ist.
+println!("{}", substring); // "Hal"
+```
 
-Es ist auch wichtig zu beachten, dass Substrings in Rust immer Zugriff auf die ursprüngliche Zeichenkette benötigen. Wenn die ursprüngliche Zeichenkette gelöscht oder geändert wird, wird der Substring nicht mehr korrekt funktionieren.
+Alternativ können wir auch den `len()`-Methode des Strings eine Startposition übergeben, um das Gleiche zu erreichen:
+
+```Rust
+let substring = &string[start_index..string.len()];
+```
+
+Nun wollen wir aber auch den Rest unseres Strings nach einem bestimmten Zeichen durchsuchen, z.B. nach dem Komma. Dafür gibt es die Methode `find()`, die uns die Position des ersten gefundenen Zeichens zurückgibt, oder `rfind()`, die von rechts sucht.
+
+```Rust
+let index = string.find(',');
+let substring = &string[start_index..index];
+```
+
+Weitere nützliche Methoden für die Arbeit mit Substrings sind `trim()`, um Leerzeichen am Anfang und Ende zu entfernen, und `split()`, um den String an einem bestimmten Trennzeichen aufzuteilen.
+
+## Tiefer eintauchen
+
+Rust bietet auch die Möglichkeit, über Pattern-Matching Substrings zu extrahieren. Dafür können wir das `match`-Statement verwenden und ein `&str`-Pattern angeben, das unseren Suchkriterien entspricht.
+
+```Rust
+match string {
+    "Hello, world" => println!("Found it!"),
+    _ => println!("Not found.")
+}
+```
+
+Alternativ können wir auch reguläre Ausdrücke verwenden, um noch komplexere Muster zu durchsuchen. Dafür müssen wir das `regex`-Modul in unser Projekt importieren. Ein Beispiel könnte so aussehen:
+
+```Rust
+use regex::Regex;
+
+let re = Regex::new(r"(\d{2}-[A-Za-z]{3}-\d{4})").unwrap();
+let substring = re.captures(string).unwrap().get(0).unwrap().as_str();
+```
+
+Dieses Beispiel zeigt, wie wir mit regulären Ausdrücken ein bestimmtes Datumsmuster aus einem String extrahieren können.
 
 ## Siehe auch
 
-- [Rust Dokumentation über die get-Methode] (https://doc.rust-lang.org/std/primitive.str.html#method.get)
-- [Offizielle Rust Website] (https://www.rust-lang.org/de/)
-- [Rust Community Forum] (https://users.rust-lang.org/)
+* [Offizielle Rust-Dokumentation zu Substrings](https://doc.rust-lang.org/std/primitive.str.html#method.slice)
+* [Rust By Example: Strings and Substrings](https://doc.rust-lang.org/rust-by-example/std/str.html)
+* [Reguläre Ausdrücke in Rust](https://docs.rs/regex/)
+
+Vielen Dank fürs Lesen und viel Spaß beim Extrahieren von Substrings in Rust!

@@ -1,58 +1,58 @@
 ---
-title:    "Elixir: Uso de expresiones regulares"
+title:    "Elixir: Usando expresiones regulares"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Hola a todos los lectores de programación Elixir en español! En este post, vamos a hablar sobre una herramienta muy útil en la programación: las expresiones regulares.
+## Por qué
 
-## Porqué
+Las expresiones regulares son una poderosa herramienta de programación que permite buscar patrones en cadenas de texto. Esto es especialmente útil cuando se trabaja con grandes cantidades de datos o se necesita validar la información ingresada por el usuario.
 
-Las expresiones regulares son una forma poderosa de buscar y manipular texto. Son especialmente útiles para tareas como validar datos de entrada o buscar patrones en un texto. Con las expresiones regulares, puedes realizar búsquedas más precisas y eficientes en tus programas.
+## Cómo hacerlo
 
-## Cómo
-
-Para utilizar expresiones regulares en Elixir, primero debes importar el módulo `Regex` en tu archivo de código.
+Para utilizar expresiones regulares en Elixir, necesitaremos importar el módulo `Regex` de la biblioteca estándar. Luego, podemos utilizar la función `match?` para verificar si una cadena de texto coincide con un patrón determinado.
 
 ```
-import Regex
+Elixir
+iex> import Regex
+
+iex> match?("hola", ~r/^h/)
+true
 ```
 
-Luego, puedes utilizar el operador `=~` para buscar una expresión regular en una cadena de texto. Por ejemplo, si queremos encontrar todas las palabras que empiezan con la letra "a" en una lista, podemos hacerlo de la siguiente manera:
+En el ejemplo anterior, utilizamos la expresión regular `^h` para verificar si la cadena comienza con la letra "h". La función `match?` devuelve `true` si hay una coincidencia y `false` si no la hay.
+
+También podemos utilizar grupos para extraer información específica de una cadena de texto que coincida con un patrón. Por ejemplo, si queremos validar un número de teléfono en el formato xxx-xxx-xxxx, podemos hacer lo siguiente:
 
 ```
-palabras = ["amor", "azul", "oso", "casa"]
-for palabra <- palabras do
-  if palabra =~ ~r/^a/ do
-    IO.puts palabra
-  end
-end
+Elixir
+iex> match?("111-222-3333", ~r/^(\d{3})-(\d{3})-(\d{4})$/)
+true
 ```
 
-Este código imprimirá "amor" y "azul", ya que son las únicas palabras que cumplen con la expresión regular (`~r/^a/`).
-
-También puedes usar expresiones regulares para reemplazar parte de una cadena de texto con `String.replace/4` y `Regex.replace/3`. Por ejemplo, si queremos cambiar la fecha en un formato DD/MM/YYYY a MM/DD/YYYY, podemos hacerlo así:
-
-```
-texto = "Hoy es 01/07/2021."
-nuevo_texto = texto
-  |> Regex.replace(~r/(\d{2})\/(\d{2})\/(\d{4})/, "\\2/\\1/\\3")
-IO.puts nuevo_texto
-```
-
-La salida será "Hoy es 07/01/2021.", ya que hemos invertido el día y el mes en la fecha.
+En este caso, utilizamos tres grupos para capturar los tres grupos de dígitos separados por guiones.
 
 ## Profundizando
 
-Las expresiones regulares también tienen una gran cantidad de opciones y símbolos que puedes utilizar para buscar patrones más específicos. Por ejemplo, puedes utilizar `.` para representar cualquier caracter, `+` para indicar que el elemento anterior puede aparecer una o más veces, y `\d` para representar un dígito. Puedes encontrar una lista completa de estas opciones en la documentación oficial de Elixir.
+Las expresiones regulares en Elixir son compatibles con las expresiones regulares de Perl, por lo que podemos utilizar muchos de los patrones y operadores que ya conocemos.
 
-Además, puedes utilizar grupos de captura en tus expresiones regulares para guardar partes específicas de una cadena de texto en variables. Estos grupos se pueden utilizar luego en reemplazos, lo que hace que el código sea aún más dinámico y reutilizable.
+Sin embargo, también existen algunas diferencias en la sintaxis. Por ejemplo, en lugar de utilizar `\d` para buscar un dígito, en Elixir utilizamos `[0-9]`.
 
-## Ver también
+Además, Elixir también proporciona una sintaxis más clara y legible para expresiones regulares más complejas, como por ejemplo:
 
-- [Documentación de Elixir sobre expresiones regulares](https://hexdocs.pm/elixir/Regex.html)
-- [Tutorial de expresiones regulares en Elixir](https://medium.com/@grelsmag/tutorial-elixir-regex-268f7cc1d9d6)
-- [Cheat sheet de expresiones regulares en Elixir](https://www.rexegg.com/regex-elixir.html)
+```
+Elixir
+~r/^hola (mundo|amigos)$/i
+```
 
-¡Esperamos que este artículo te haya dado una mejor comprensión de cómo utilizar expresiones regulares en tus programas de Elixir! ¡Happy coding!
+Esta expresión regular buscará la cadena "hola" seguida de "mundo" o "amigos" (en cualquier combinación de mayúsculas y minúsculas). La barra vertical `|` funciona como el operador lógico "o" y la opción `i` después del patrón indica que la búsqueda no es sensible a mayúsculas y minúsculas.
+
+## Véase también
+
+- [Documentación oficial de expresiones regulares en Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Tutorial de expresiones regulares en Elixir](https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm)
+- [Ejemplos de expresiones regulares en Elixir](https://gist.github.com/radar/148328)
+
+Espero que esta breve introducción a las expresiones regulares en Elixir haya sido útil y te permita aprovechar al máximo esta herramienta poderosa en tus proyectos futuros. ¡Feliz programación!

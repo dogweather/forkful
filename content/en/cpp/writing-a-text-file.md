@@ -1,85 +1,51 @@
 ---
 title:    "C++ recipe: Writing a text file"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Many computer programs require the use of external files to store and manage data. Text files are a popular choice due to their simplicity and compatibility across different operating systems. In this blog post, we will delve into the world of writing text files in C++ and explore the various functionalities it offers.
+As a programmer, you may be wondering why you would need to write a text file using C++. Text files are a simple and efficient way to store and manipulate data. They can be used for a variety of purposes such as saving user preferences, storing game scores, or even creating a log file for debugging.
 
 ## How To
-
-Writing a text file in C++ involves a series of steps that begin with creating an instance of the `ofstream` class and providing it with the desired file name. We can then use the `open()` function to open the file in either input or output mode, depending on our requirements.
+To write a text file in C++, you will need to use the `<fstream>` library. This library provides classes and functions that allow you to easily create, open, and write to a text file. Let's take a look at an example:
 
 ```C++
 #include <iostream>
 #include <fstream>
-using namespace std;
 
-int main()
-{
-    // creating an instance of the ofstream class
-    ofstream file;
+int main() {
+    // Create an output file stream
+    std::ofstream file("my_text_file.txt");
 
-    // opening the file in output mode
-    file.open("sample.txt");
-
-    // writing data to the file
+    // Write a string to the file
     file << "Hello, world!";
 
-    // closing the file
+    // Close the file
     file.close();
 
-    // displaying success message
-    cout << "File created and data written successfully.";
+    // Output success message
+    std::cout << "Text file created successfully." << std::endl;
 
     return 0;
 }
 ```
-
-The above code creates a new text file named "sample.txt" and writes the string "Hello, world!" into it. We use the `<<` operator to transfer the data into the file. Once we are finished writing, it is important to close the file using the `close()` function to save our changes and free up any resources being used by the `ofstream` instance.
-
-### Sample Output
-
-```
-File created and data written successfully.
-```
-
-There are also other useful functions provided by the `ofstream` class that can be used for more advanced operations such as appending data to an existing file or checking if a file exists before opening it.
+Running this code will create a new text file called "my_text_file.txt" and write the string "Hello, world!" to it. You can also use the `open()` and `write()` functions to open and write to a file separately.
 
 ## Deep Dive
+When writing a text file, it's important to understand the different modes in which you can open the file. The three modes are: `ios::out` for writing to the file, `ios::in` for reading from the file, and `ios::app` for appending to the end of the file. By default, if no mode is specified, the file will be opened in `ios::out` mode.
 
-When writing to a text file, one must be aware of the different modes in which the file can be accessed. These modes determine the actions that can be performed on the file, such as reading, writing, or appending data. The most commonly used modes are "out" (output) and "app" (append).
+You can also specify the format in which data will be written to the file. For example, if you want to write a floating point number with 2 decimal places, you can use the `setprecision()` function from the `<iomanip>` library. Additionally, you can use the `<<` operator to write various data types to the file, such as integers, characters, or strings.
 
-```C++
-// opening the file in output mode
-file.open("sample.txt", ios::out);
-
-// opening the file in append mode
-file.open("sample.txt", ios::app);
-```
-
-Another important aspect to consider is the formatting of the data being written to the file. By default, data is written to the file in its raw form, without any formatting. For example, if we write multiple strings to a file without any spacing or new line characters, they will all be displayed as one continuous string when the file is opened.
-
-To overcome this, we can use the `setw()` function from the `<iomanip>` library to set the width of the data being written, and `endl` to add a new line after each piece of data.
-
-```C++
-// including the <iomanip> library for setw()
-#include <iomanip>
-
-// setting the width of data to be written to 10 characters
-file << setw(10) << "Hello" << endl;
-file << setw(10) << "World" << endl;
-
-// output in file:
-// Hello
-// World
-```
+It's important to properly handle errors when writing to a file. You can use the `fail()` function to check if the operation was successful and the `clear()` function to reset any error flags.
 
 ## See Also
+If you want to learn more about writing text files in C++, here are some helpful resources:
 
-- [C++ Documentation on Streams and Files](https://en.cppreference.com/w/cpp/io)
-- [GeeksforGeeks: Reading and Writing Files in C++](https://www.geeksforgeeks.org/reading-writing-text-files-c/)
-- [Tutorialspoint: File Input/Output in C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Working with Files in C++ - GeeksforGeeks](https://www.geeksforgeeks.org/working-with-files-in-c/)
+- [File Handling in C++ - Cplusplus.com](http://www.cplusplus.com/doc/tutorial/files/)
+- [Input/output with files - CppReference.com](https://en.cppreference.com/w/cpp/io)
+
+Start using text files in your C++ programs to make data manipulation easier and more organized. Happy coding!

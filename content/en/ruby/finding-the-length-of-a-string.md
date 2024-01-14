@@ -1,38 +1,43 @@
 ---
 title:    "Ruby recipe: Finding the length of a string"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why Finding the Length of a String is Essential in Ruby
+## Why
 
-As a language known for its simplicity and readability, Ruby relies heavily on its string manipulation capabilities. Therefore, understanding how to find the length of a string is crucial for any Ruby programmer. It allows you to perform various string operations, validate user input, and manipulate data efficiently.
+As a programming language, Ruby offers a wide range of built-in methods that allow developers to manipulate and analyze strings. One such method is `length`, which is used to find the length of a string. This may seem like a simple task, but it can be incredibly useful in various programming scenarios. Keep reading to learn more about why you should consider using this method in your Ruby projects.
 
-##How To Find the Length of a String in Ruby
+## How To
 
-To find the length of a string in Ruby, we can use the `length` method. Let's take a look at the following code snippet:
+Finding the length of a string in Ruby is easy and straightforward. You can simply call the `length` method on a string object and it will return the number of characters in that string. Let's take a look at an example:
 
 ```Ruby
-string = "Hello, world!"
-length = string.length
-puts length
+my_string = "Hello, world!"
+puts my_string.length
 ```
 
-In this example, we have a string variable with the value "Hello, world!" We then use the `length` method to find its length and assign it to a separate variable called `length`. Lastly, we print the `length` variable, which will output `13`, the total number of characters in the string.
+The above code will output `13`, which is the length of the string "Hello, world!". Additionally, you can also use the `size` method, which is an alias of `length` and performs the same task. Here's an example of using `size`:
 
-##Deep Dive into Finding String Length in Ruby
+```Ruby
+my_string = "Goodbye"
+puts my_string.size
+```
 
-It's essential to note that the `length` method also considers whitespace characters when calculating the length of a string. For example, if our string variable had a value of "Hello, world!  ", the output would be `15`, including the two additional whitespace characters.
+This code will output `7`, which is the length of the string "Goodbye". As you can see, the `length` method can be used to find the length of any string, regardless of its contents.
 
-Additionally, we can also use the `size` method to find the length of a string in Ruby. Both `length` and `size` methods return the same result, but `size` is more commonly used in arrays and other data structures.
+## Deep Dive
 
-It's also worth mentioning that we can use the `bytesize` method to find the byte size of a string, which is useful when dealing with multibyte characters.
+Under the hood, the `length` method works by counting the number of characters in a string. This includes letters, numbers, spaces, symbols, and even special characters. It also counts the white space characters, such as tabs and newlines. This is why the `length` of a string does not always correspond to the number of visible characters in that string.
 
-##See Also
+It's important to note that the `length` method is only available for string objects. If you try to use it on any other type of object, you will get an error. Additionally, the `length` method is not limited to strings with a fixed length. It can also be used with string variables and even strings that are created dynamically at runtime.
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Understanding String Manipulation in Ruby](https://www.sitepoint.com/ruby-string-manipulation/)
-- [Ruby String Methods Cheat Sheet](https://www.ruby-lang.org/en/documentation/quickstart/2/)
+## See Also
 
-Finding the length of a string may seem like a simple task, but it's a fundamental concept that every Ruby programmer should know. It's a small step towards mastering string manipulation and unlocking the full potential of this elegant language. Happy coding!
+To learn more about the `length` method and how to use it effectively in your Ruby projects, check out the official Ruby documentation and these helpful resources:
+
+- [Ruby `length` Method](https://ruby-doc.org/core-2.7.2/String.html#method-i-length)
+- [Ruby String Methods Guide](https://www.rubyguides.com/2019/07/ruby-string-methods/)
+- [Ruby String Tutorial](https://www.rubyguides.com/2015/06/ruby-string/)

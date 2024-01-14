@@ -1,40 +1,38 @@
 ---
-title:    "Fish Shell: Yhdistämisen merkkijonot"
+title:    "Fish Shell: Merkkijonojen yhdistäminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää Fish Shellia stringien yhdistämiseen?
+## Miksi
 
-Fish Shellin käyttö stringien yhdistämiseen on nopeaa ja tehokasta. Se sallii helposti muokata ja yhdistää erilaisia stringejä, mikä tekee siitä loistavan työkalun esimerkiksi tekstinkäsittelyssä tai ohjelmoinnissa. Lisäksi Fish Shellin laaja tuki erilaisille muuttujille tekee siitä monipuolisen vaihtoehdon stringien yhdistämiseen.
+Miksi haluaisit yhdistää merkkijonoja Fish Shell -ohjelmoinnissa? On olemassa monia tilanteita, joissa sinun on luotava uusi merkkijono yhdistämällä olemassa olevia merkkijonoja. Tämä voi olla hyödyllistä esimerkiksi tekstianalyyseissä tai kun luot sisällönhallintajärjestelmiä.
 
-## Miten Fish Shellilla yhdistetään stringejä?
+## Miten
 
-Fish Shellilla stringien yhdistäminen tapahtuu käyttämällä plus-merkkiä (+), joka toimii yhdistäjänä eri stringien välillä. Alla on esimerkki siitä, miten yhdistää kaksi stringiä.
-
-```Fish Shell
-set string1 "Hei"
-set string2 "maailma"
-echo $string1$string2
-```
-
-Tämä tulostaisi konsoliin "Heimaailma", kun taas alla olevassa esimerkissä käytetään lisäksi välilyöntiä stringien välissä.
+Fish Shellissa voit yhdistää merkkijonoja käyttämällä sanaa "echo" ja kahden merkkijonon peräkkäistä kirjoittamista. Esimerkiksi, jos haluat yhdistää merkkijonot "Terve" ja "päivää", kirjoitat seuraavan komennon:
 
 ```Fish Shell
-set string1 "Hei"
-set string2 "maailma"
-echo $string1" "$string2
+echo "Terve" "päivää"
 ```
 
-Tämä tulostaisi konsoliin "Hei maailma". Lisäksi Fish Shellilla on mahdollista yhdistää myös useampia stringejä samassa komennossa.
+Tämän komennon suorittamisen jälkeen näet tuloksen "Terve päivää" konsolissasi. Voit myös yhdistää useampia merkkijonoja yhdellä komennolla yksinkertaisesti kirjoittamalla ne peräkkäin.
 
-## Syvempää tietoa stringien yhdistämisestä
+## Syvällisempi tutustum
 
-Fish Shellilla on myös mahdollista yhdistää muita tyyppejä, kuten numeroita tai taulukoita, stringien lisäksi. Tämä tekee siitä erittäin monipuolisen vaihtoehdon ja antaa käyttäjille suuremman kontrollin siitä, miten he haluavat yhdistää eri tietoja. Lisäksi Fish Shellin ohjeista löytyy tarkempaa tietoa erilaisista muista käyttömahdollisuuksista stringien yhdistämisessä.
+Voit myös yhdistää merkkijonoja muuttujien kanssa käyttämällä "string concatenation" (merkkijonojen yhdistäminen). Tämä tarkoittaa yksinkertaisesti sitä, että sijoitat "+" -merkin kahden merkkijonon välille ja ne yhdistetään. Esimerkiksi, jos haluat luoda muuttujan nimeltä "nimi" arvolla "John" ja yhdistää sen merkkijonon "Hei", kirjoitat seuraavan komennon:
+
+```Fish Shell
+nimi="John"
+echo "Hei " + $nimi
+```
+
+Tämä tulostaa "Hei John". On tärkeää huomata, että muuttujan nimi on kirjoitettu "$"-merkillä komennossa, jotta Fish Shell tietää, että sen sisältö tulee yhdistää merkkijonon kanssa.
 
 ## Katso myös
 
-- Fish Shellin viralliset ohjeet stringien yhdistämisestä (https://fishshell.com/docs/current/cmds/set.html#strings)
-- Tutoriaalivideo Fish Shellin käyttämisestä stringien yhdistämiseen (https://www.youtube.com/watch?v=UArztFZFYHk)
-- Blogikirjoitus Fish Shellista ja sen käyttötavoista (https://medium.com/@orhunp/log-incoming-fish-1-scaling-your-shell-writing-functions-968be00c0a0a)
+- Fish Shell virallinen verkkosivusto: https://fishshell.com/
+- Fish Shell dokumentaatio: https://fishshell.com/docs/current/index.html
+- Fish Shell yhteisö: https://github.com/fish-shell/fish-shell/

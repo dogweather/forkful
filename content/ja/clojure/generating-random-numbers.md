@@ -1,38 +1,47 @@
 ---
-title:    "Clojure: ランダムな数字の生成"
+title:    "Clojure: ランダムの数字を生成する"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜランダムな数字を生成するのか?
+## なぜ
 
-ランダムな数字を生成することは、さまざまなプログラミングの応用で役に立ちます。例えば、ゲーム開発ではランダムな数字を使って敵の行動を制御したり、テスト環境ではランダムなデータを使ってバグを発見することができます。ランダムな数字を生成することで、予測不能なシチュエーションを作り出すことができるのです。
+乱数を生成することに興味がある人にとって、なぜこのようなことを行うのかは重要な質問です。乱数は、ゲームや暗号化、統計学など様々な分野で使用される重要なツールです。
 
-## 生成する方法
+## 方法
 
-ランダムな数字を生成するためには、Clojureの標準ライブラリに含まれる`rand-int`関数を使います。この関数は、引数として指定した範囲内のランダムな整数を返します。
-
-```Clojure
-(rand-int 10) ; 0から9のランダムな整数を生成
-(rand-int 100) ; 0から99のランダムな整数を生成
-```
-
-また、`rand`関数を使うことで、0から1の間のランダムな少数も生成することができます。
+乱数を生成する方法は多くありますが、Clojureを使用することで簡単かつ効率的に実装することができます。以下のコードブロックは、Clojureで乱数を生成する方法を示しています。
 
 ```Clojure
-(rand) ; 0から1の間のランダムな少数を生成
-(* (rand) 10) ; 0から10の間のランダムな少数を生成
+; 1から10までの間の整数乱数を生成する
+(rand-int 10)
+
+; 0から1までの間の小数乱数を生成する
+(rand)
+
+; シード値を指定して乱数を生成する
+(random-seed 1234)
+(rand-int 100)
 ```
 
-## ランダムな数字を生成する仕組みについて
+上記のように、`rand-int`と`rand`の2つの関数を使用して、整数や小数の乱数を生成することができます。また、`random-seed`関数を使用することで、同じシード値を指定することで同じ乱数を再現することができます。
 
-Clojureでは、乱数生成器と呼ばれる構造を使用してランダムな数字を生成します。これは、ある種のシード値を受け取ってランダムな数列を生成する仕組みです。通常、プログラムではシード値として現在時刻が使われますが、Clojureでは`seed`関数を使って自分でシード値を指定することもできます。
+## ディープダイブ
 
-また、プログラム内で同じシード値を使い続けることで、同じランダムな数列が生成されることになります。このため、テストなどで再現性が必要な場合は、あらかじめシード値を指定しておくことが重要です。
+乱数を生成するアルゴリズムには様々なものがありますが、ClojureではMersenne Twisterアルゴリズムが使用されています。このアルゴリズムは高速かつ疑似乱数を生成することができるため、広く使われています。
 
-## 関連リンク
+さらに、Clojureでは乱数の生成にJavaの`java.util.Random`クラスも使用されています。このクラスはMersenne Twisterアルゴリズムの改良版であり、より高品質な乱数を生成することができます。
 
-- [Clojureの標準関数について (英語)](https://clojure.org/api/cheatsheet)
-- [Clojureの乱数生成器について (英語)](https://clojure.org/guides/random_numbers)
-- [Clojureのシード値の指定方法 (英語)](https://clojure.org/reference/java_interop#_java_random_generator)
+## 詳細情報
+
+- [Clojure公式ドキュメント](https://clojuredocs.org/clojure.core/rand-int)
+- [乱数生成アルゴリズムの比較](https://qiita.com/nkoketsu/items/77cfdabb961f1eb2a8ab)
+- [Mersenne Twisterアルゴリズムの説明](https://en.wikipedia.org/wiki/Mersenne_Twister)
+
+## 参考
+
+[See Also]
+- [Javaのjava.util.Randomクラスの詳細情報](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html)
+- [Clojureで乱数を生成する方法](https://tech-ojisan.com/random-number-clojure/)

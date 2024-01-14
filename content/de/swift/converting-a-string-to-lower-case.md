@@ -1,42 +1,50 @@
 ---
-title:    "Swift: Ein String in Kleinbuchstaben umwandeln"
+title:    "Swift: Umwandeln eines Strings in Kleinbuchstaben"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie mit der Programmiersprache Swift arbeiten, werden Sie oft auf Strings als Datenstruktur stoßen. Strings sind einfach eine Sequenz von Zeichen, die verwendet werden, um Text darzustellen. Es gibt viele verschiedene Operationen, die Sie auf einem String durchführen können, z.B. die Konvertierung in Kleinbuchstaben. In diesem Blogbeitrag erfahren Sie, warum und wie Sie einen String in Swift in Kleinbuchstaben umwandeln können.
+Das Konvertieren einer Zeichenkette in Kleinbuchstaben kann in Swift nützlich sein, um Konsistenz in der Textdarstellung zu gewährleisten oder um die Benutzereingaben zu standardisieren.
 
-## Wie funktioniert es
+# Wie geht es
 
-Um einen String in Swift in Kleinbuchstaben zu konvertieren, können Sie die Methode `lowercased()` verwenden. Diese Methode gibt eine neue Version des Strings zurück, in der alle Zeichen in Kleinbuchstaben geschrieben sind. Wenn Sie den ursprünglichen String beibehalten möchten, können Sie den konvertierten String einer neuen Variablen zuweisen.
+````Swift
+//Input
+let string = "Hello World!"
 
-```Swift
-let string = "PROGRAMMIEREN IST TOLL!"
-let lowercaseString = string.lowercased()
-print(lowercaseString)
-// Output: programmieren ist toll!
-```
+//Verwendung der lowercased()-Methode
+let lowercasedString = string.lowercased()
 
-Sie können auch die `map()`-Funktion verwenden, um jeden Buchstaben in einen Kleinbuchstaben zu konvertieren. Dies ist besonders nützlich, wenn Sie eine Liste von Strings haben und sie alle in Kleinbuchstaben konvertieren möchten.
+//Output
+print(lowercasedString) //hallo welt!
+````
+Um eine Zeichenkette in Kleinbuchstaben zu konvertieren, können Sie die vorinstallierte lowercased()-Methode verwenden. Diese Methode gibt eine neue Zeichenkette mit allen Buchstaben in Kleinbuchstaben zurück. 
 
-```Swift
-let strings = ["Schule", "Uni", "Studium"]
-let lowercaseStrings = strings.map { $0.lowercased() }
-print(lowercaseStrings)
-// Output: ["schule", "uni", "studium"]
-```
+Alternativ können Sie auch die Funktion localizedLowercase() verwenden, um eine Zeichenkette basierend auf der aktuellen Spracheinstellung des Geräts in Kleinbuchstaben zu konvertieren.
 
-## Tiefergehende Informationen
+````Swift
+//Input
+let string = "Bonjour"
 
-Intern wandelt Swift jeden Buchstaben in einen Unicode-Wert um und vergleicht diesen dann mit einer Liste von Groß- und Kleinbuchstaben. Diese Konvertierung ist unabhängig von der Spracheinstellung des Geräts und folgt den offiziellen Unicode-Standards.
+//Verwendung der localizedLowercase()-Funktion
+let lowercasedString = string.localizedLowercase()
 
-Es ist auch wichtig zu beachten, dass die `lowercased()`-Methode nur auf Strings funktioniert, die aus einer einzigen Zeile bestehen. Wenn Ihr String mehrere Zeilen oder Sonderzeichen enthält, sollten Sie die `localizedLowercase`-Eigenschaft verwenden, die spezielle Regeln für unterschiedliche Sprachen berücksichtigt.
+//Output
+print(lowercasedString) //bonjour
+````
 
-## Siehe auch
+# Tiefer gehende Erklärung
 
-- [String in Swift](https://www.swift-tutorial.de/swift-programmierung/swift-string/)
-- [Unicode und Strings in Swift](https://swiftbysundell.com/tips/unicode-and-strings-in-swift/)
-- [Offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+Beim Konvertieren einer Zeichenkette in Kleinbuchstaben muss nicht nur an die englische Sprache und das lateinische Alphabet gedacht werden. Zum Beispiel haben einige Sprachen wie das Deutsche, Türkische und Ungarische spezielle Buchstaben wie Ä, Ö, Ü und Sz, die auch in Kleinbuchstaben umgewandelt werden müssen. Hier kommt die Funktion localizedLowercase() zum Einsatz, die solche Besonderheiten berücksichtigt.
+
+Zusätzlich ist zu beachten, dass die Konvertierung von Groß- und Kleinbuchstaben in manchen Sprachen nicht "eindeutig" ist. Zum Beispiel gibt es im Deutsch keinen eindeutigen Groß- oder Kleinbuchstaben für den Buchstaben "ß". Hier muss sich der Entwickler bewusst sein, welche Methode oder Funktion für die Konvertierung geeignet ist und zu welchem Zweck sie verwendet werden soll.
+
+# Siehe auch
+
+- [Die offizielle Swift-Dokumentation zu String-Manipulation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Stack Overflow - Wie kann ich eine Zeichenkette in Kleinbuchstaben konvertieren?](https://stackoverflow.com/questions/29076657/how-to-convert-string-to-lowercase-in-swift)
+- [Swift Blog - Localization in Swift: Eine detaillierte Anleitung](https://developer.apple.com/swift/blog/?id=25)

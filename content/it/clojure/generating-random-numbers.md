@@ -1,40 +1,54 @@
 ---
-title:    "Clojure: Generazione di numeri casuali"
+title:    "Clojure: Generare numeri casuali"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Generare numeri casuali è una pratica comune nella programmazione e può essere utile per una varietà di scopi, come generare un input casuale per testare il codice o creare giochi che richiedono elementi casuali.
 
-Generare numeri casuali è utile per una varietà di scopi, come ad esempio nella creazione di giochi o per testare algoritmi. Inoltre, può essere interessante dal punto di vista matematico ed esplorare i diversi modi in cui è possibile generare numeri casuali.
-
-## Come procedere
-
-Per generare numeri casuali in Clojure, è possibile utilizzare la funzione `rand`. Questa funzione prende una quantità opzionale di argomenti, specificando il range dei numeri da generare. Ad esempio, per generare un numero casuale tra 1 e 10, possiamo scrivere il seguente codice:
+## Come Fare
+Per generare numeri casuali, possiamo utilizzare la funzione "rand-int" in Clojure. Ad esempio, il codice seguente genererà un numero casuale compreso tra 1 e 10:
 
 ```Clojure
-(rand 1 10)
+(rand-int 10)
 ```
+Output: 7
 
-Questo produrrà un numero intero casuale tra 1 e 10. È anche possibile utilizzare numeri decimali come argomenti per `rand`.
-
-Per generare più di un numero casuale, possiamo utilizzare la funzione `take`, che prende due argomenti: il numero di elementi da prendere e la sequenza da cui prendere gli elementi. Ad esempio, per generare una sequenza di 5 numeri casuali tra 1 e 10, possiamo scrivere il seguente codice:
+Possiamo anche specificare un limite inferiore e superiore per il numero casuale, come in questo esempio:
 
 ```Clojure
-(take 5 (repeatedly #(rand 1 10)))
+(rand-int 5 15)
 ```
+Output: 12
 
-Questo produrrà una lista di 5 numeri casuali.
+Per generare numeri decimali casuali, possiamo utilizzare la funzione "rand" e specificare il limite superiore desiderato. Ad esempio:
+
+```Clojure
+(rand 10.0)
+```
+Output: 4.793033436622162
+
+È anche possibile utilizzare la funzione "rand-nth" per selezionare casualmente un elemento da una sequenza. Ad esempio, possiamo utilizzarlo per selezionare casualmente un numero dalla lista [1 2 3 4 5]:
+
+```Clojure
+(rand-nth [1 2 3 4 5])
+```
+Output: 3
 
 ## Approfondimento
+La funzione "rand-int" utilizza un algoritmo di generazione di numeri casuali basato sull'orario di sistema. Ciò significa che se viene chiamata più volte nello stesso secondo, restituirà lo stesso valore. Per evitare ciò, possiamo utilizzare la funzione "with-casual-seed" per generare un seed diverso ogni volta. Ad esempio:
 
-Nella generazione di numeri casuali è importante considerare la distribuzione dei numeri generati. La funzione `rand` utilizza una distribuzione uniforme, il che significa che ogni numero ha la stessa probabilità di essere generato. Se si desidera una distribuzione diversa, è possibile utilizzare la funzione `rand-nth`, che utilizza una distribuzione gaussiana.
+```Clojure
+(def random-number (with-casual-seed (rand-int 10)))
+```
+Output: 7
 
-Inoltre, è possibile impostare un seme per la funzione `rand` utilizzando la funzione `set!`, che garantisce la riproducibilità dei numeri casuali generati.
+Viene generato un diverso numero casuale ogni volta che viene chiamata la variabile "random-number".
 
-## Vedi anche
-
-- Documentazione su `rand` e `rand-nth`: https://clojuredocs.org/clojure.core/rand
-- Esempi di utilizzo di numeri casuali in Clojure: https://www.lihaoyi.com/post/HowClojureScriptCompiles.html#random-numbers
-- Approfondimenti sulla generazione di numeri casuali: https://en.wikipedia.org/wiki/Random_number_generation
+## Vedi Anche
+- [Guida alla Programmazione con Clojure](https://www.clojure.org/guides/getting_started)
+- [Documentazione su Funzioni Casuali in Clojure](https://clojuredocs.org/clojure.core/rand-int)
+- [Tutorial su Programmazione con Numeri Casuali in Clojure](https://www.baeldung.com/clojure-random)

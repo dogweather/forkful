@@ -1,44 +1,45 @@
 ---
-title:    "Bash: 标准错误的写作"
+title:    "Bash: 写入标准错误"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-为什么写入标准错误很重要？在编写Bash脚本时，我们可能会遇到各种错误。通过将错误信息写入标准错误，我们可以更方便地调试和定位问题。
+在编写Bash脚本时，我们经常会使用标准错误（stderr）来输出错误信息。这样做可以帮助我们调试和发现潜在的问题。因此，学习如何写入标准错误是非常重要的。
 
-## 如何
+## 如何使用
 
-要将错误信息写入标准错误，我们可以使用`>&2`来重定向输出。以下是一个简单的例子：
-
+要将信息写入标准错误，我们可以使用特定的符号“2>”，后跟错误信息要输出到的文件。以下是一个简单的例子：
 ```Bash
-#!/bin/bash
-echo "这是标准输出"
-echo "这是标准错误" >&2
+echo “这是一个错误信息” 2> error.txt
 ```
 
-运行该脚本后，我们可以看到标准输出和标准错误分别显示在屏幕上：
-
-```
-这是标准输出
-这是标准错误
+运行上述命令后，错误信息将被写入名为error.txt的文件中。如果我们想要将错误信息输出到屏幕上，可以使用符号“2>&1”，如下所示：
+```Bash 
+echo “这是一个错误信息” 2>&1
 ```
 
-## 深入了解
+现在，错误信息将被输出到终端上，而不是写入文件。
 
-在深入了解如何写入标准错误之前，我们需要了解标准输出和标准错误的概念。在Bash中，标准输出（stdout）和标准错误（stderr）是两种不同的输出流。标准输出通常用于输出正常的程序结果，而标准错误用于输出错误信息和警告。通过将错误信息写入标准错误而不是标准输出，我们可以更方便地区分两者，并且在调试时可以更加有效地定位问题。
+## 深入探讨
 
-另外，我们也可以通过重定向符号`2>`来将标准错误写入到指定的文件或者/dev/null中。这样做可以帮助我们将错误信息保存下来，以便后续分析和处理。
+写入标准错误还有一些其他的用途。比如，在一些复杂的脚本中，我们可能需要区分不同类型的错误信息并将它们分别写入不同的文件或输出到屏幕上。这就需要我们使用条件语句和重定向来完成。
 
-## 参考资料
+另外，标准错误还可以与其他Linux命令结合使用。例如，当我们使用管道符号在不同的命令之间传递输出时，如果有错误发生，我们可以使用重定向来将它们捕获并输出到屏幕上。
 
-- [Unix/Linux标准输出与标准错误的重定向](https://www.cnblogs.com/qdhxhz/p/14366130.html)
-- [Bash shell中的标准输出和标准错误](https://linuxize.com/post/bash-output-redirection/)
-- [Bash错误处理](https://bash.cyberciti.biz/guide/Error_handling)
+## 参考链接
 
-## 参见
+了解更多关于标准错误的用法，可以参考以下链接：
 
-- [Bash详细教程](https://www.ruanyifeng.com/blog/2020/04/bash-tutorial.html)
-- [Linux命令行快速入门](https://www.linux.com/learn/getting-started-bash-command-line-linux/)
+- [Linux命令行中的标准错误](https://zhuanlan.zhihu.com/p/140962454)
+- [Bash脚本中的重定向](https://blog.csdn.net/yshw1314/article/details/70144997)
+- [将标准错误信息输出到屏幕](https://www.cnblogs.com/wbwlu/p/5916931.html)
+
+## 参见 
+
+- [标准输出与标准错误的区别](https://zhuanlan.zhihu.com/p/129707452)
+- [如何调试Bash脚本中的错误](https://www.jianshu.com/p/0ad77b8e7eae)
+- [Linux命令中的重定向符号](https://linux.cn/article-5374-1.html)

@@ -1,46 +1,42 @@
 ---
-title:    "Ruby: Extraindo subcadeias"
+title:    "Ruby: Extraindo subtrings"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que é importante extrair substrings?
+#Por que
 
-Extrair substrings é uma tarefa comum em programação, especialmente em linguagens como Ruby. Isso porque essa funcionalidade permite que os desenvolvedores manipulem strings de maneira mais eficiente e precisa, destacando apenas as partes necessárias. Além disso, a extração de substrings é essencial para a validação e formatação de dados.
+Extrair substrings é uma habilidade essencial para qualquer programador que deseja manipular e trabalhar com strings de maneira eficiente. Isso permite que você pegue partes específicas de uma string e as utilize para realizar determinadas tarefas, como filtrar dados ou validar informações inseridas pelo usuário.
 
-## Como fazer
-
-A extração de substrings em Ruby é simples e pode ser feita de várias maneiras. Vamos dar uma olhada em algumas delas.
+#Como Fazer
 
 ```Ruby
-# Exemplo 1: Usando [] com um índice e tamanho
-string = "Olá, mundo!"
-p string[0, 4] # output: "Olá,"
-p string[5..-1] # output: "mundo!"
-
-# Exemplo 2: Usando [] com um intervalo
-string = "123456789"
-p string[1..3] # output: "234"
-
-# Exemplo 3: Usando slice com índice e tamanho
-string = "Eu amo programar"
-p string.slice(3, 6) # output: "amo pr"
-
-# Exemplo 4: Usando slice com um intervalo
-string = "Ruby é incrível!"
-p string.slice(0..3) # output: "Ruby"
+# Exemplo de código em Ruby para extrair substrings
+texto = "Olá, meu nome é João!"
+# Podemos extrair o nome do texto acima
+nome = texto[13..23]
+# O resultado será "João"
 ```
 
-Como você pode ver, é possível extrair substrings usando índices e tamanhos específicos ou mesmo intervalos. Além disso, a função `slice` também pode ser usada para o mesmo propósito.
+No código acima, utilizamos o método `[]` para extrair uma substring a partir de uma string. Os números dentro dos colchetes representam as posições inicial e final em que desejamos extrair a substring. Lembre-se de que as posições em Ruby começam em 0, então a posição 13 é onde começa a palavra "João" no texto.
 
-## Aprofundando
+Também podemos utilizar outros métodos para extrair substrings, como `slice`, `slice!` e `sub`. Cada um desses métodos possui suas próprias propriedades e pode ser utilizado para diferentes finalidades. A prática é a melhor forma de compreender cada um deles.
 
-A extração de substrings pode ser ainda mais aprimorada com a utilização de expressões regulares, que permitem a busca e substituição de padrões em uma string. Por exemplo, se você quiser extrair apenas as letras de uma string, pode usar a seguinte expressão regular: `/[a-zA-Z]/`. Isso retornará apenas as letras maiúsculas e minúsculas da string original.
+#Mergulho Profundo
 
-Além disso, é possível combinar diferentes métodos de extração de substrings para obter resultados ainda mais precisos. Por exemplo, você pode usar a função `scan` para extrair todas as ocorrências de um padrão específico em uma string e depois usar a função `join` para unir esses resultados em uma única string.
+Há muitas coisas a serem consideradas ao extrair substrings em Ruby. Uma das mais importantes é o uso da sintaxe de intervalo (`..`) em comparação com a sintaxe de pontos (`...`).
 
-## Veja também
+Por exemplo, se utilizarmos `texto[13...23]` no código anterior, o resultado será "Joã", pois a posição final não é inclusa. Já se usarmos `texto[13..23]`, a posição final é inclusa e o resultado será "João".
 
-- [Documentação oficial do Ruby sobre a extração de substrings](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice)
-- [Tutorial sobre expressões regulares em Ruby](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-ruby)
+Além disso, é importante entender como os métodos `slice` e `slice!` funcionam em diferentes situações, pois seus comportamentos podem variar dependendo dos argumentos passados.
+
+É essencial ter um bom domínio dos diferentes métodos para extrair substrings em Ruby para que você possa utilizá-los de forma eficiente em seus projetos.
+
+#Veja também
+- [Documentação oficial do Ruby para extrair substrings](https://ruby-doc.org/core-3.0.2/String.html#method-i-slice)
+- [Tutorial da Codeacademy sobre strings em Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-string-methods/cheatsheet)
+- [Guia da MDN sobre manipulação de strings em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+Esperamos que este post tenha sido útil para você entender melhor como extrair substrings em Ruby. Pratique e explore os diferentes métodos disponíveis para dominar essa habilidade em sua programação!

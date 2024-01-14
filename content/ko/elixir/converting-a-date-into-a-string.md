@@ -1,52 +1,40 @@
 ---
 title:    "Elixir: 날짜를 문자열로 변환하기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+Elixir로 날짜를 문자열로 변환하는 이유  
+Elixir는 다양한 데이터 유형을 처리할 수 있는 강력한 언어입니다. 따라서 Elixir 프로그래머라면 날짜를 문자열로 변환해야 할 일이 생길 수 있습니다. 이번 블로그 포스트에서는 날짜를 문자열로 변환하는 방법과 관련된 깊은 정보를 살펴보겠습니다. 
 
-날짜를 문자열로 변환하는 방법을 배우는 이유는 매우 실용적입니다. 날짜를 문자열로 변환하면 여러 언어나 데이터베이스에서 일관된 날짜 형식을 사용할 수 있고, 날짜를 텍스트 형태로 저장하거나 전송할 수 있습니다. 또한 엘릭서 (Elixir)에서 날짜를 처리하는 방법에 대한 이해도를 높일 수 있습니다.
+## 왜 
+날짜를 문자열로 변환해야 하는 이유는 다양합니다. 예를 들어, 특정 날짜를 데이터베이스에 저장하기 위해 문자열 형식으로 변환해야 할 수도 있습니다. 또는 사용자에게 보여지는 날짜를 문자열로 표시해야 할 수도 있습니다. 이러한 경우에 날짜를 문자열로 변환해주는 기능은 매우 유용합니다.
 
-## 방법
-
-먼저, 날짜를 문자열로 변환하는 가장 간단한 방법은 Elixir의 내장 함수 중 하나인 `to_string`을 사용하는 것입니다. 아래 예제를 통해 확인해보세요.
-
-```elixir
-# 날짜 객체 생성
-date = ~D[2019-10-27]
-# to_string을 사용하여 문자열로 변환
-date_str = to_string(date)
-
-IO.puts(date_str)
-# "2019-10-27"
-```
-
-또다른 방법으로는 `Calendar` 모듈의 `Format` 함수를 사용하는 것입니다. 이 함수는 날짜 객체와 형식 문자열을 매개변수로 받아, 원하는 형식으로 날짜를 문자열로 변환해줍니다. 예제를 확인해보세요.
+## 어떻게 
+Elixir에서 날짜를 문자열로 변환하는 방법은 매우 간단합니다. 우선, ```~D[YYYY-MM-DD]``` 을 사용하여 원하는 날짜 형식을 지정합니다. 그리고 ```to_string/2``` 함수를 사용하여 날짜를 문자열로 변환합니다. 아래의 예제 코드를 살펴보면서 자세히 살펴보겠습니다.
 
 ```elixir
-# 날짜 객체 생성
-date = ~D[2019-10-27]
-# 형식 문자열 정의
-format = "yyyy-MM-dd"
-# Format 함수를 사용하여 문자열로 변환
-date_str = Calendar.Format.format(format, date)
-
-IO.puts(date_str)
-# "2019-10-27"
+date = ~D[2020-12-25]
+formatted_date = to_string(date, "~D[YYYY-MM-DD]")
+IO.puts(formatted_date)
+```
+```
+2020-12-25
 ```
 
-## 깊이 파헤치기
+위의 예제에서는 ```~D[YYYY-MM-DD]``` 형식으로 날짜를 지정하고, ```to_string/2``` 함수를 사용하여 날짜를 문자열로 변환하였습니다. 이렇게 간단하게 날짜를 문자열로 변환할 수 있습니다.
 
-위에서 소개한 두 가지 방법 외에도 날짜를 문자열로 변환하는 다양한 방법이 존재합니다. 예를 들어, 엘릭서에서 날짜를 처리하는 데 사용되는 타임존 모듈인 `Timex`를 사용하여 날짜를 문자열로 변환할 수 있습니다. 또는 자신만의 함수를 작성하여 날짜를 원하는 형식으로 변환할 수도 있습니다. 이러한 다양한 방법을 사용하여 최적의 해결책을 찾아보세요.
+## 깊이 들어가기 
+날짜를 문자열로 변환하는 과정에서 발생할 수 있는 오류를 방지하기 위해 날짜 형식을 지정하는 방법에 대해 더욱 깊이 들어가보겠습니다. Elixir에서는 우선순위가 높은 형식을 사용하여 날짜를 처리합니다. 예를 들어, ```to_string(date, "~D[YYYY-MM-DD]")``` 코드에서는 ```YYYY-MM-DD``` 형식이 우선시되지만, ```to_string(date, "~D[YYYY-DD-MM]")``` 코드에서는 ```YYYY-DD-MM``` 형식이 우선시되어 이상한 날짜 형식이 출력됩니다. 따라서 정확한 날짜 형식을 지정하는 것이 중요합니다.
 
-## 끝으로
+## 참고 자료 
+[Elixir Datetime](https://hexdocs.pm/elixir/DateTime.html)  
+[Elixir Date](https://hexdocs.pm/elixir/Date.html)  
+[Elixir String](https://hexdocs.pm/elixir/String.html)  
 
-더 많은 엘릭서 프로그래밍 가이드를 받고 싶다면 아래 링크를 참고해보세요.
-
-## 참고자료
-
-- [Elixir 공식 문서](https://elixir-lang.org/getting-started/basic-types.html#dates-and-times)
-- [Calendar 모듈 문서](https://hexdocs.pm/elixir/Calendar.html#module-formatting-dates)
-- [Timex 모듈 문서](https://hexdocs.pm/timex/Timex.Format.DateTimeFormatter.html)
+## 참고 자료 
+[Elixir Datetime](https://hexdocs.pm/elixir/DateTime.html)  
+[Elixir Date](https://hexdocs.pm/elixir/Date.html)  
+[Elixir String](https://hexdocs.pm/elixir/String.html)

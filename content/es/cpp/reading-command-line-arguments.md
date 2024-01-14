@@ -1,51 +1,84 @@
 ---
-title:    "C++: Leyendo argumentos de línea de comandos."
+title:    "C++: Leyendo argumentos de línea de comandos"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberías leer argumentos de línea de comandos en C++?
+## ¿Por qué leer argumentos de línea de comandos en C++?
 
-Si eres un programador de C++, es importante entender cómo leer y manejar argumentos de línea de comandos en tus programas. Esto te permitirá crear programas más interactivos y versátiles, ya que podrás recibir información del usuario directamente desde la línea de comandos.
+La lectura de argumentos de línea de comandos es una habilidad esencial para cualquier programador en C++. Permite que el usuario proporcione información al programa cuando se ejecuta, lo cual es muy útil en casos como la personalización de opciones o la interacción con otras aplicaciones.
 
-# Cómo hacerlo:
+## Cómo leer argumentos de línea de comandos en C++
 
-Para leer argumentos de línea de comandos en C++, primero debes incluir la biblioteca `cstdlib` en tu código. Luego, puedes utilizar la función `atoi` para convertir los argumentos ingresados en la línea de comandos a valores numéricos, como se muestra en el siguiente ejemplo:
+En C++, la función `main` toma dos parámetros: `argc` y `argv`. `argc` es el número de argumentos ingresados por el usuario, mientras que `argv` es un arreglo de cadenas con los argumentos. A continuación, se muestra un ejemplo de cómo leer y mostrar los argumentos de línea de comandos en C++:
 
 ```C++
-#include <cstdlib>
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-  // Verifica si se ingresaron argumentos en la línea de comandos
-  if (argc > 1) {
-    // Convierte el argumento ingresado a un entero utilizando la función atoi
-    int argumento = std::atoi(argv[1]);
-
-    // Imprime el argumento y su doble
-    std::cout << "El argumento ingresado fue: " << argumento << std::endl;
-    std::cout << "Su doble es: " << argumento * 2 << std::endl;
-  }
-  return 0;
+    std::cout << "Se han ingresado " << argc << " argumentos:" << std::endl;
+    for (int i = 0; i < argc; i++) {
+        std::cout << "Argumento " << i + 1 << ": " << argv[i] << std::endl;
+    }
+    return 0;
 }
 ```
 
-Si compilamos y ejecutamos este código con el argumento `5` en la línea de comandos, obtendremos la siguiente salida:
+Si ejecutamos este programa con los argumentos `hola mundo`, obtendremos la siguiente salida:
 
 ```
-El argumento ingresado fue: 5
-Su doble es: 10
+Se han ingresado 3 argumentos:
+Argumento 1: ./programa
+Argumento 2: hola
+Argumento 3: mundo
 ```
 
-# Profundizando más:
+## Profundizando en la lectura de argumentos de línea de comandos
 
-Además de la función `atoi`, existen otras formas de leer y manejar argumentos de línea de comandos en C++. La biblioteca `getopt` permite analizar y obtener los argumentos de manera más estructurada, mientras que la biblioteca `boost::program_options` ofrece más opciones y funcionalidades avanzadas.
+Además de la función `main`, existen otras formas de leer argumentos de línea de comandos en C++. Una de ellas es mediante el uso de la librería `getopt`, que permite definir opciones y argumentos en un formato más estructurado.
 
-También es importante tener en cuenta que los argumentos de línea de comandos pueden ser muy útiles en la depuración y pruebas de nuestras aplicaciones, ya que nos permiten ingresar valores directamente en tiempo de ejecución.
+Por ejemplo, podríamos tener un programa que acepte las opciones `-h` para mostrar ayuda y `-n` para especificar un nombre, junto con el argumento obligatorio del nombre de la persona. A continuación, se muestra un ejemplo de cómo utilizar `getopt` para lograr esto:
 
-# Ver también:
+```C++
+#include <iostream>
+#include <unistd.h>
 
-- [Biblioteca cstdlib en C++ (en inglés)](https://www.cplusplus.com/reference/cstdlib/)
-- [Ejemplo de uso de getopt en C++ (en inglés)](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
-- [Documentación de boost::program_options en C++ (en inglés)](https://www.boost.org/doc/libs/1_74_0/doc/html/program_options.html)
+int main(int argc, char *argv[]) {
+    int opt;
+    bool showHelp = false;
+    char* name;
+    
+    // Definir las opciones y argumentos esperados
+    const char* optString = "hn:";
+    // Iterar hasta haber procesado todos los argumentos
+    while ((opt = getopt(argc, argv, optString)) != -1) {
+        switch(opt) {
+            case 'h':
+                // Si se ingresa "-h", se activa el flag
+                showHelp = true;
+                break;
+            case 'n':
+                // Si se ingresa "-n", se obtiene el argumento después de la opción
+                name = optarg;
+                break;
+        }
+    }
+    // Imprimir la ayuda si se pasó la opción "-h" o si no se especificó un nombre
+    if (showHelp || name == NULL) {
+        std::cout << "Uso: programa -n <nombre>" << std::endl;
+        return 0;
+    }
+    std::cout << "¡Hola, " << name << "!" << std::endl;
+    return 0;
+}
+```
+
+Si ejecutamos este programa con los argumentos `-n María`, obtendremos la salida `¡Hola, María!`.
+
+## Ver también
+
+- [Documentación sobre la función `main` en C++](https://www.cplusplus.com/reference/cstdlib/main/)
+- [Documentación sobre la librería `getopt` en C++](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [Ejemplos de uso de la función `main` y `getopt`](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)

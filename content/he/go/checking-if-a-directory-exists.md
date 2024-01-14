@@ -1,50 +1,49 @@
 ---
-title:    "Go: בדיקת קיום תיקייה"
+title:    "Go: לבדיקת האם תיקייה קיימת"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-בדיקת קיום של תיקייה היא חלק חשוב מתהליך כתיבת קוד בגו ומאפשרת לנו לבדוק אם התיקייה שאנחנו רוצים לכתוב אליה קיימת כבר או שנצטרך ליצור אותה. זה עשוי להגן עלינו מפני הפסד בנתונים או כשלון בתהליך הרצת הקוד.
+למה לבדוק אם תיקייה קיימת? כאשר אנו מפתחים תוכניות בשפת גו, ייתכן שהתוכנית שלנו תצטרך לגשת לקבצים או תיקיות שנמצאים במחשב. בדיקת קיום של תיקייה היא חלק חשוב של פיתוח התוכניות הללו, שכן על ידי כך אנו יכולים לוודא שהתיקייה או הקובץ שאנו מנסים לגשת אליהם קיימים ומוכנים לשימוש.
 
-## איך לבדוק קיום תיקייה ב-Go
+## איך לבדוק אם תיקייה קיימת
 
-בכדי לבדוק אם תיקייה קיימת בגו, ניתן להשתמש בפונקציה
-`os.Stat()` 
-שמחזירה את פרטי התיקייה המבוקשת או שגיאה אם התיקייה לא קיימת. ניתן להשתמש בתנאי `if` כדי לבדוק אם הפונקציה החזירה שגיאה או לא.
+בשפת גו ניתן לבדוק אם תיקייה קיימת על ידי שימוש בפונקציה `os.Stat`. הפונקציה מחזירה את המסלול המלא של התיקייה ומחזירה שגיאה אם התיקייה לא קיימת. נהרוץ את הקוד הבא כדי לבדוק אם תיקייה קיימת:
 
-```Go
-fileInfo, err := os.Stat("myDirectory")
-if err != nil {
-	fmt.Println("התיקייה לא קיימת")
-} else {
-	fmt.Println("התיקייה קיימת")
+```go
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    path := "path/to/directory"
+    if _, err := os.Stat(path); os.IsNotExist(err) {
+        fmt.Println("תיקייה לא קיימת")
+        return
+    }
+
+    fmt.Println("תיקייה קיימת!")
 }
 ```
 
-בנוסף, ניתן להשתמש גם בפונקציה `os.IsNotExist()` שתחזיר ערך בוליאני המציין אם התיקייה לא קיימת.
-
-```Go
-if os.IsNotExist(err) {
-	fmt.Println("התיקייה לא קיימת")
-} else {
-	fmt.Println("התיקייה קיימת")
-}
+פלט:
+```
+תיקייה קיימת!
 ```
 
-## חקירה מעמיקה
+## העמקה נוספת
 
-בנוסף לפונקציות הבדיקה המקובלות, ישנן אפשרויות נוספות לחקירה מעמיקה יותר בתיקייה ספציפית. לדוגמה, ניתן להשתמש בפונקציות כמו `os.FileInfo.IsDir()` שבודקת אם מדובר בתיקייה או בקובץ רגיל ו- `os.FileInfo.ModTime()` שמחזירה את תאריך השינוי האחרון של הקובץ או התיקייה.
-
-## למידע נוסף
-
-למידע נוסף על כיצד לבדוק קיום תיקייה בגו, ניתן לעיין במאמר הבא באתר הרשמי של גו:
-https://golang.org/pkg/os/#Stat
+למידע נוסף על איך לבדוק אם תיקייה קיימת בשפת גו ניתן להציץ במדריך הרשמי של גו: https://golang.org/pkg/os/#Stat 
 
 ## ראו גם
 
-- https://golangdocs.com/check-if-a-directory-exists-in-go
-- https://gobyexample.com/directory-exists
-- https://www.calhoun.io/how-to-check-if-a-file-or-directory-exists-in
+* https://www.digitalocean.com/community/tutorials/how-to-use-the-os-package-in-go
+* https://golangdocs.com/check-if-a-file-or-directory-exists-in-go
+* https://opensource.com/article/19/6/golang-directory

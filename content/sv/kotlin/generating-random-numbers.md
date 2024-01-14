@@ -1,53 +1,51 @@
 ---
-title:    "Kotlin: Genererande slumpmässiga tal"
+title:    "Kotlin: Generering av slumpmässiga tal"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-Välkommen till min blogg om att generera slumpmässiga nummer i Kotlin! Idag ska vi utforska varför random-nummer kan vara användbara, hur du kan använda dem i din kod och fördjupa oss i hur det faktiskt fungerar.
-
 ## Varför
+Att generera slumpmässiga nummer är en vanlig uppgift inom programmering och kan vara användbart för allt från spel till simuleringar och kryptografi.
 
-Generering av slumpmässiga nummer kan vara användbart i många olika scenarier, såsom spel, simuleringar eller för att testa kod. Genom att använda slumpmässiga nummer kan du skapa en mer varierad och realistisk upplevelse för användaren. Det kan också vara ett sätt att lära sig mer om hur kod fungerar genom att experimentera med olika generationstekniker.
+## Hur man gör det
+För att generera slumpmässiga nummer i Kotlin, kan vi använda standardbibliotekets `Random` klass. Den här klassen har olika metoder för att generera olika typer av slumpmässiga nummer.
 
-## Hur man gör
-
-För att använda slumpmässiga nummer i Kotlin finns det ett inbyggt bibliotek som heter `Random`. Genom att importera detta bibliotek kan vi använda funktioner för att generera slumpmässiga tal av olika typer.
+Här är ett exempel på hur man kan skapa en `Random` instans och sedan använda `nextInt()` metoden för att generera ett slumpmässigt heltal:
 
 ```Kotlin
-import kotlin.random.Random
-
-// Generera ett slumpmässigt heltal mellan 0 och 10
-val randomNumber = Random.nextInt(10)
-
-// Generera ett slumpmässigt flyttal mellan 0.0 och 1.0
-val randomDouble = Random.nextDouble()
-
-// Generera ett slumpmässigt Boolean-värde
-val randomBoolean = Random.nextBoolean()
-
-// Generera ett slumpmässigt tecken från en given teckenuppsättning
-val randomChar = Random.nextInt('a'.toInt(), 'z'.toInt() + 1).toChar()
+val random = Random()
+val randomNumber = random.nextInt()
+println(randomNumber) // t.ex. 123456789
 ```
 
-Möjligheterna är oändliga med `Random`-biblioteket, och med hjälp av olika funktioner kan du skapa en stor variation av slumpmässiga nummer i din kod.
+För att begränsa det slumpmässiga nummrets omfång, kan vi använda `nextInt(bound)` metoden för att generera ett nummer mellan 0 (inklusive) och `bound` (exklusive):
+
+```Kotlin
+val randomNumber = random.nextInt(100) // slumpmässigt nummer mellan 0 (inklusive) och 100 (exklusive)
+```
+
+Vi kan även använda `nextDouble()` metoden för att generera ett slumpmässigt flyttal mellan 0.0 (inklusive) och 1.0 (exklusive). Genom att sedan multiplicera detta med ett önskat intervall kan vi få ett slumpmässigt nummer inom detta intervall:
+
+```Kotlin
+val randomDouble = random.nextDouble() // slumpmässigt flyttal mellan 0.0 (inklusive) och 1.0 (exklusive)
+val range = 10.0..20.0
+val result = randomDouble * (range.endInclusive - range.start) + range.start // slumpmässigt nummer mellan 10.0 (inklusive) och 20.0 (inklusive)
+println(result) // t.ex. 16.731548124
+```
 
 ## Djupdykning
+För att förstå hur `Random` klassen genererar slumpmässiga nummer kan vi titta närmare på dess implementering.
 
-För att förstå korrekt generering av slumpmässiga nummer kan det vara bra att veta hur datorer faktiskt skapar dem. I grunden använder datorer en pseudoslumpmässig algoritm som baseras på en början (seed) för att skapa följderna av nummer. Denna början kan vara ett tal, en textsträng eller till och med systemets tid.
+I grunden använder `Random` klassen en algoritm som heter *Linear Congruential Generator* (LCG). Denna algoritm använder en formel för att generera en följd av nummer. För att få en mer jämn och slumpmässig fördelning, kombinerar `Random` klassen detta med andra logiska operationer.
 
-Detta betyder att även om numren som genereras inte är 100% slumpmässiga, kan de ändå ge en bra approximation av slumpmässighet. Det finns också sätt att öka slumpmässigheten genom att använda flera början eller "skaka om" algoritmen mellan varje generation av nummer.
+Det finns dock en viktig sak att notera - `Random` klassen är inte garanterat att generera helt slumpmässiga nummer eftersom den använder sig av en förutbestämd, seedad sekvens. Detta innebär att om vi skapar två olika `Random` instanser med samma seed kommer de att generera samma sekvens av nummer. För att få mer slumpmässiga resultat, kan vi istället använda den statiska `random()` metoden som ger oss en slumpmässig seed varje gång den anropas:
 
-Det är också viktigt att notera att vissa algoritmer som används för att generera slumpmässiga nummer kan vara mer tillförlitliga än andra, så det är alltid bra att göra lite forskning för att hitta det bästa alternativet för dina specifika behov.
+```Kotlin
+val randomNumber = random() // slumpmässigt nummer baserat på en ny seed
+```
 
-## Se också
-
-För mer information om att generera slumpmässiga nummer i Kotlin, kan du besöka följande länkar:
-
-- The `Random` Class - https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/
-- Pseudoslumpmässighet - https://en.wikipedia.org/wiki/Pseudorandomness
-- Bästa sättet att generera slumpmässiga nummer i Java - https://www.baeldung.com/java-random
-- Generatorer för slumpmässiga tal i Kotlin - https://blog.kotlin-academy.com/random-number-generators-in-kotlin-672e9045f19d
-
-Tack för att du läste min blogg och jag hoppas att du har lärt dig mer om att använda slumpmässiga nummer i Kotlin. Glöm inte att experimentera och ha roligt med detta verktyg i din kodning!
+## Se även
+- [Kotlin `Random` dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)

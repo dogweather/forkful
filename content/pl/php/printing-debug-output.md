@@ -1,40 +1,50 @@
 ---
-title:    "PHP: Wydrukuj wyjście debugowania"
+title:    "PHP: Wydrukowanie danych debugowania"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Dlaczego drukowanie danych debugujących jest ważne?
 
-Wyświetlanie informacji debugowania (debug output) jest nieodłączną częścią procesu tworzenia oprogramowania. Pomaga w śledzeniu błędów oraz weryfikowaniu poprawności działania kodu. W tym wpisie dowiecie się, dlaczego jest to ważne i jak to zrobić w języku PHP.
+Debugowanie jest nieodłączną częścią procesu programowania. Jest to proces znajdowania i naprawiania błędów w kodzie, co jest niezbędne dla poprawnego działania aplikacji. Drukowanie danych debugujących jest jedną z metod, które pomagają programistom w identyfikowaniu problemów w kodzie. Pozwala to na wgląd w zmienną, wartości i kolejność wykonywania kodu, co jest niezbędne do znalezienia błędu i jego naprawy.
 
-## Jak to zrobić?
+# Jak wykorzystać drukowanie danych debugujących w PHP?
 
-Istnieje kilka sposobów na wyświetlanie informacji debugowania w PHP. Oto przykłady najczęściej używanych:
+Aby wyświetlić dane debugujące w PHP, należy użyć funkcji `print_r()` lub `var_dump()`. Poniżej przedstawione są przykłady kodów oraz wyników wyświetlanych na ekranie.
 
 ```PHP
-// Wyświetlanie pojedynczej wartości
-echo $zmienna;
-
-// Wyświetlanie tablicy
-print_r($tablica);
-
-// Wyświetlanie obiektu
-var_dump($obiekt);
-
-// Wyświetlanie komunikatu błędu
-error_log("Błąd: nie można połączyć z bazą danych");
+<?php
+$name = "Jan";
+$age = 30;
+$height = 175;
 ```
 
-Powyższe metody są bardzo pomocne w trakcie debugowania, ponieważ pozwalają na szybkie i łatwe sprawdzenie wartości zmiennych, zawartości tablic i obiektów, a także wyświetlanie komunikatów błędów.
+```PHP
+print_r($name);
+```
+Output:
+```
+Jan
+```
 
-## Głębszy zanurkować
+```PHP
+var_dump($age);
+```
+Output:
+```
+int(30)
+```
 
-Wyświetlanie informacji debugowania może być także wykorzystywane w celach poza samym debugowaniem. Można je wykorzystać do monitorowania wydajności aplikacji poprzez sprawdzanie czasu wykonania różnych fragmentów kodu. Dodatkowo, można utworzyć własne funkcje i klasy, które będą wyświetlać informacje debugowania w sposobie bardziej czytelnym i intuicyjnym dla programisty.
+# Głębsze spojrzenie na drukowanie danych debugujących w PHP
 
-## Zobacz również
+Funkcja `print_r()` wyświetla zawartość zmiennej w czytelnej formie, co ułatwia identyfikację problemu. Natomiast `var_dump()` dodatkowo wyświetla informacje o typie i długości zmiennej. Dzięki temu, możemy błyskawicznie zauważyć, jeśli zmienna jest niezdefiniowana lub ma nieprawidłową wartość.
 
-- [Oficjalna dokumentacja PHP o wyświetlaniu informacji debugowania](https://www.php.net/manual/en/function.var-dump.php)
-- [Poradnik na temat debugowania PHP](https://dzone.com/articles/php-debugging-for-beginners)
-- [Praktyczne wskazówki dotyczące wyświetlania informacji debugowania](https://dev.to/spacejunkee/practical-tips-for-dumping-variables-in-php-4c0p)
+Innym przydatnym narzędziem jest funkcja `debug_backtrace()`, która wyświetla ślad wywołania funkcji i plików, co jest szczególnie pomocne w przypadku błędów w skomplikowanym kodzie.
+
+# Zobacz także
+
+- [Praktyczne wykorzystanie funkcji debugujących w PHP](https://www.php.net/manual/en/book.debugger.php)
+- [10 przydatnych funkcji debugujących w PHP](https://www.sitepoint.com/10-useful-php-debugging-functions/)
+- [Podstawowe techniki debugowania w PHP](https://www.tutorialspoint.com/php/php_debugging.htm)

@@ -1,45 +1,56 @@
 ---
 title:    "Swift: Lendo um arquivo de texto"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que ler arquivos de texto em Swift?
 
-Ler arquivos de texto pode ser uma tarefa muito útil e importante na programação Swift. Ao saber como ler esses arquivos, você poderá criar aplicativos que interajam com dados externos, como dados de um banco de dados ou informações fornecidas por um usuário.
+Então você decidiu que quer aprender Swift, mas por onde começar? Uma ótima maneira de começar a praticar suas habilidades de programação é lendo e escrevendo em arquivos de texto. Isso pode parecer um conceito simples, mas é essencial para qualquer programador. Ler arquivos de texto em Swift pode ajudá-lo a entender como os dados são armazenados e manipulados, além de ser uma habilidade muito útil em diversos projetos. Continue lendo para aprender como fazer isso!
 
-## Como fazer
+## Como ler arquivos de texto em Swift
 
-Para ler um arquivo de texto em Swift, você pode seguir alguns passos simples:
+Para ler um arquivo de texto em Swift, você precisará seguir alguns passos simples:
 
-1. Primeiro, declare uma constante ou variável para armazenar o caminho do arquivo de texto. Isso pode ser feito usando o padrão "Bundle.main.path (forResource: "nome do arquivo", ofType: "extensão")", onde "nome do arquivo" representa o nome do arquivo de texto (sem a extensão) e "extensão" representa a extensão do arquivo (por exemplo, "txt" para arquivos de texto).
-2. Em seguida, você precisará criar uma instância da classe "FileManager" para gerenciar o arquivo.
-3. Use o método "contents(atPath:)" da classe "FileManager" para obter o conteúdo do arquivo no formato de dados "Data".
-4. Se necessário, você pode converter os dados em uma string usando o método "String.init(data: encoding:)" e especificando o tipo de codificação.
+1. Em primeiro lugar, você precisará criar uma instância do `FileManager`, que é a classe responsável por gerenciar arquivos no iOS ou MacOS.
+2. Em seguida, utilize o método `urls(for:in:)` para encontrar o caminho do arquivo que você deseja ler.
+3. Crie um `InputStream` com o caminho do seu arquivo.
+4. Use o método `open()` para abrir o arquivo.
+5. Agora que o arquivo foi aberto, você pode ler o conteúdo do arquivo usando o método `read()`.
+6. Por fim, lembre-se de fechar o arquivo utilizando o método `close()`.
 
-Uma vez que você tenha lido o arquivo, você pode manipular os dados da maneira que desejar e utilizá-los no seu aplicativo.
-
-Veja um exemplo de código abaixo:
+Seu código deve se parecer com este:
 
 ```Swift
-if let caminhoArquivo = Bundle.main.path(forResource: "exemplo", ofType: "txt") {
-    let gerenciadorArquivo = FileManager()
-    if let dados = gerenciadorArquivo.contents(atPath: caminhoArquivo) {
-        let texto = String(data: dados, encoding: .utf8)
-        print(texto)
-    }
+let fileManager = FileManager()
+let fileURLs = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+let fileURL = fileURLs.appendingPathComponent("meuArquivo.txt")
+let inputStream = InputStream(url: fileURL)
+inputStream?.open()
+var buffer = [UInt8](repeating: 0, count: 1024)
+while inputStream!.hasBytesAvailable {
+    let bytesRead = inputStream!.read(&buffer, maxLength: buffer.count)
+    if bytesRead < 0 { break }
+    let data = Data(bytes: &buffer, count: bytesRead)
+    print(String(data: data, encoding: .utf8))
 }
+inputStream?.close()
 ```
 
-O resultado seria a impressão do conteúdo do arquivo "exemplo.txt" no console.
+Este código irá ler o conteúdo do arquivo `meuArquivo.txt` e imprimir na tela.
 
-## Aprofundando
+## Aprofunde-se na leitura de arquivos de texto
 
-Além do método "contents(atPath:)", existem outras formas de ler arquivos de texto em Swift, como o uso da classe "FileHandle" ou a utilização de bibliotecas de terceiros. Também é importante estar atento à manipulação dos dados lidos para evitar problemas como erros de codificação.
+Existem várias formas de ler arquivos de texto em Swift, como utilizando o método `contentsOfFile` da classe `String` ou utilizando a biblioteca `Foundation` para acessar o conteúdo do arquivo diretamente. Você também pode usar o método `write` para escrever dados em um arquivo de texto.
+
+Além disso, você pode aprender a ler e escrever arquivos de texto separados por vírgula, o que é útil para trabalhar com dados em formato de tabela. Essas são apenas algumas das possibilidades e é importante que você continue praticando para se aprofundar neste assunto e se tornar um expert em leitura de arquivos de texto em Swift.
 
 ## Veja também
 
-- Documentação oficial da Apple sobre a classe "FileManager" (https://developer.apple.com/documentation/foundation/filemanager)
-- Bright Hub Education's blog post sobre como ler arquivos de texto em Swift (https://www.brighthubeducation.com/programming-languages/124098-how-to-open-and-read-a-text-file-in-swift/)
-- Biblioteca de terceiros para leitura de arquivos de texto em Swift (https://github.com/Flipboard/FileKit)
+Aqui estão alguns links úteis para você continuar a sua jornada de aprendizado em Swift:
+
+- [Documentação oficial da Apple sobre FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Tutorial sobre leitura de arquivos de texto em Swift](https://www.raywenderlich.com/1148411-reading-and-writing-files-in-swift)
+- [Exemplos de código em Swift para ler e escrever arquivos de texto](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-files-in-swift)

@@ -1,19 +1,20 @@
 ---
-title:    "Go: 日付の取得"
+title:    "Go: 現在の日付を取得する"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を取得する理由は様々あります。例えば、アプリケーションのログに日付を記録したい場合や、特定の日付を処理する必要がある場合などがあります。Go言語を使えば、簡単に現在の日付を取得することができます。
+Go言語で現在の日付を取得する必要があるのでしょうか？Go言語のプログラミングにおいて、現在の日付を取得することはよくあることです。日付を取得することで、アプリケーションやプログラムをより柔軟に動かすことができます。例えば、特定の日付に基づいて処理を行う必要がある場合や、タイムスタンプを生成する必要がある場合などがあります。
 
 ## 方法
 
-Go言語では、timeパッケージを使用することで日付や時刻を扱うことができます。まず、現在の日付を取得するには、`Now()`関数を使用します。
+Go言語では、timeパッケージを使って現在の日付を取得することができます。以下のコードを参考にしてください。
 
-```Go
+```
 package main
 
 import (
@@ -22,50 +23,27 @@ import (
 )
 
 func main() {
-	today := time.Now()
-	fmt.Println(today)
+	currentTime := time.Now()
+	fmt.Println(currentTime.Format("2006/01/02"))
 }
 ```
 
-このコードを実行すると、現在の日付や時刻が表示されます。例えば、2021年4月16日の場合は以下のような結果になります。
+上記のコードでは、`time.Now()`を使って現在の日付を取得し、`Format()`を使って表示形式を指定しています。`2006/01/02`の部分は、Go言語において日付を表す特殊な形式です。このようにすることで、年、月、日を正しく表示することができます。
+
+上記のコードを実行すると、次のような出力結果が得られます。
 
 ```
-2021-04-16 10:30:00.000 +0900 JST m=+0.000000000
+2021/08/25
 ```
-
-また、特定のフォーマットで日付を取得することもできます。例えば、`Format()`関数を使用すると、指定したフォーマットで日付を取得することができます。
-
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	today := time.Now()
-	dateString := today.Format("2006-01-02")
-	fmt.Println(dateString)
-}
-```
-
-このコードを実行すると、以下のような結果になります。
-
-```
-2021-04-16
-```
-
-詳しくは、[Go言語の公式ドキュメント](https://golang.org/pkg/time)を参照してください。
 
 ## ディープダイブ
 
-`time`パッケージには、他にも様々な関数やメソッドが用意されています。例えば、特定の日付を表す`time`オブジェクトを作成したり、日付や時刻の計算を行ったりすることができます。
+`time.Now()`では、現在のローカルタイムを取得することができます。しかし、タイムゾーンを指定することもできます。例えば、日本のタイムゾーンでの現在の日付を取得するには、`time.Now().In(JST)`のようにすることができます。JSTは、`time.Location`型の変数であり、予め定義されています。
 
-また、注意すべき点として、Go言語では日付や時刻を扱う際にタイムゾーンの設定が重要です。タイムゾーンが違うと、期待した結果が得られない場合がありますので、注意してください。
+また、`time.Now()`は、UTC（協定世界時）を基準とした日付を返します。そのため、夏時間や冬時間の影響を受けません。もし、現在の日付をローカルタイムではなくUTCベースで取得したい場合は、`time.Now().UTC()`を使うことができます。
 
-## 参考リンク
+## 相関項目
 
-- [Go言語の公式ドキュメント - time](https://golang.org/pkg/time)
-- [A Tour of Go - Time](https://go-tour-jp.appspot.com/basics/15)
-- [Goを使ったプログラムから現在日付を操作する方法](https://qiita.com/ushio_github/items/b4eb94dcb761a80aa616)
+- [Go言語公式ドキュメント - timeパッケージ](https://golang.org/pkg/time/)
+- [Go言語公式ドキュメント - timeパッケージの例](https://golang.org/pkg/time/#example_Now)
+- [Go言語での日付処理のベストプラクティス](https://blog.learngoprogramming.com/go-time-time-format-time-parse-time-zone-timezone-conversions-4edfedef5ec5)

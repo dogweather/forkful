@@ -1,39 +1,39 @@
 ---
 title:    "C: Uuden projektin aloittaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Uuden projektin aloittaminen ohjelmoinnin parissa voi tuntua pelottavalta ja ylivoimaiselta tehtävältä, mutta se voi myös olla erittäin palkitsevaa ja opettavaista. Jokaisen uuden projektin myötä opit uusia taitoja ja parannat osaamistasi, ja lopulta voit luoda jotain ainutlaatuista ja arvokasta.
+Monet meistä ovat harrastaneet ohjelmointia jo jonkin aikaa ja monet ovat ehkä jo luoneet useita projekteja. Mutta miksi kukaan haluaisi aloittaa uuden projektin? Aloittaminen voi olla pelottavaa ja vaatia paljon työtä, mutta sen avulla voit kehittyä koodaajana, oppia uusia tekniikoita ja saada tyydytystä luomalla jotain uutta ja hyödyllistä. Uuden projektin aloittaminen voi myös auttaa sinua kasvattamaan omaa ohjelmointialustaa ja saada sinut huomaamaan omat vahvuutesi ja heikkoutesi.
 
-## Kuinka aloittaa
+## Miten aloittaa
 
-Jos olet kiinnostunut aloittamaan uuden projektin C-ohjelmointikielellä, tässä on muutama vaihe, jotka voivat auttaa sinua matkallasi:
+Jotta aloittaminen ei tuntuisi niin ylivoimaiselta tehtävältä, tässä on muutama yksinkertainen vaihe, jotka voivat auttaa sinua aloittamaan uuden C-ohjelmointiprojektin:
 
-```C
-#include <stdio.h> // Osoite stdio-kirjastoon
+1. Ideointi: Ensimmäinen vaihe uuden projektin aloittamisessa on keksiä hyvä idea. Voit miettiä jotakin, mikä auttaisi sinua tai muita ratkaisemaan ongelman tai jotain mielekästä ja viihdyttävää.
 
-int main() { // Pääfunktio
-  printf("Hei maailma!"); // Tulostaa merkkijonon "Hei maailma!"
-  return 0; // Lopettaa ohjelman suorituksen
-}
-```
+2. Suunnittelu: Kun sinulla on idea, on aika suunnitella se. Valitse projektisi tarkoitus, tavoitteet ja toiminnallisuus. Voit myös tehdä karkean koodikuvan tai pseudokoodin auttaaksesi hahmottamaan projektia.
 
-Kun olet luonut oikean ympäristön ja asentanut tarvittavat ohjelmistot, voit aloittaa kirjoittamaan omaa koodiasi ja nähdä mitä se tuottaa. Sillä ei ole väliä, kuinka pieni tai suuri projekti on, tärkeintä on aloittaa jostain ja rakentaa siitä eteenpäin.
+3. Koodaus: Kun tiedät, mitä haluat tehdä, on aika siirtyä koodaukseen. Aloita kirjoittamalla perusrakenne ja varmista, että se toimii oikein. Voit sitten lisätä siihen toiminnallisuutta pikkuhiljaa.
 
-## Syvempi sukellus
+4. Testaus: Vaikka voit testata koodia projektin kehityksen aikana, on tärkeää testata sitä kunnolla ennen sen julkaisemista. Tämä auttaa vähentämään virheitä ja varmistaa, että ohjelma toimii halutulla tavalla.
 
-Ennen kuin aloitat uuden projektin, on tärkeää tehdä suunnitelma ja hahmotella, mitä haluat saavuttaa. Määrittele tavoitteesi ja hanki tarvittavat materiaalit ennen kuin aloitat koodaamisen. Tee myös muistiinpanoja ja kommentoi koodiasi, jotta projekti pysyy järjestelmällisenä ja helpommin ymmärrettävänä.
+5. Dokumentointi: Muista dokumentoida projektin jokainen vaihe, jotta voit muistaa, mitä teit ja miksi. Myös muiden kehittäjien on helpompi ymmärtää projektia dokumentointisi avulla.
 
-Muista myös, että aloittaessasi uuden projektin, tulet kohtaamaan haasteita ja ongelmia matkan varrella. Älä anna periksi, vaan ota ne vastaan oppimismahdollisuuksina ja pidä mielessä, että ne ovat osa ohjelmoinnin prosessia.
+## Syväsukellus
+
+Uuden projektin aloittaminen voi tuntua pelottavalta, mutta sen avulla voit oppia paljon uutta ja kehittää taitojasi. Lisäksi C-kielen käyttäminen projekteissa voi auttaa sinua ymmärtämään kieltä paremmin ja mahdollisesti löytämään sen ominaisuuksia ja toiminnallisuuksia, joita et ehkä ole aiemmin käyttänyt.
+
+Muista myös käyttää hyväksesi olemassa olevia resursseja, kuten koodikirjastoja ja verkkotutoriaaleja. Ne voivat auttaa sinua nopeuttamaan projektin kehitystä ja opettavat sinulle uusia tapoja käyttää C-kieltä.
+
+Aloittaminen voi olla haastavaa, mutta ole rohkea ja luota taitoihisi. Katso mitä muita projekteja on tehty C-kielellä ja saa inspiraatiota niistä. Älä pelkää pyytää apua tarvittaessa ja muista pitää hauskaa koodatessasi.
 
 ## Katso myös
 
-- [C-ohjelmoinnin perusteet](https://www.tutorialspoint.com/cprogramming/index.htm)
-- [C-kielen oppimateriaalit (suomeksi)](https://www.mooc.fi/fi/courses/2013/programming-part-1/)
-- [C-koodaaminen kuntoon muutamassa minuutissa](https://www.youtube.com/watch?v=0W3GJIuIRrI)
-
-Kiitos lukemisesta ja onnea uuden projektin aloittamiseen!
+- [C-kieli: Infopankki](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli))
+- [C-kielen kirjastoja ja työkaluja](https://www.gnu.org/software/libc/)
+- [Koodikirjastot ja opetusresurssit C-kiele

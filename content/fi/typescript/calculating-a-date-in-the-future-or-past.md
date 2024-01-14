@@ -1,55 +1,47 @@
 ---
-title:    "TypeScript: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:    "TypeScript: Tulevaisuuden tai menneen päivämäärän laskeminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi laskea tulevaisuuden tai menneisyyden päivämäärän? Joskus ohjelmoinnissa on tarpeen tietää mikä päivämäärä on esimerkiksi yhden viikon tai kuukauden päässä. Tämä voi olla hyödyllistä esimerkiksi tapahtumien suunnittelussa tai laskutuksessa.
+Aiheuttaessa ohjelmistossa päivämäärä ei ole aina vain tämänpäiväinen. Joskus on tarpeen laskea päivämäärä joko menneisyyteen tai tulevaisuuteen. Tähän voi olla useita syitä, esimerkiksi laskutustietojen asettaminen tietyn päivämäärän mukaan, tai tapahtumien järjestäminen tulevina päivinä. Tämä blogikirjoitus opastaa, kuinka lasket päivämäärän tulevaisuudessa tai menneisyydessä TypeScript-ohjelmoinnissa.
 
 ## Miten
 
+Aloitetaan yksinkertaisimmasta tapauksesta: kuinka laskea päivämäärä tulevaisuudessa. Tarvitsemme käyttäjältä syötteen tulevan päivämäärän määräämiseksi ja sitä seuraavan päivän laskemiseksi:
+
 ```TypeScript
-// Määritetään funktio, joka laskee tietyn päivämäärän tulevaisuudessa
-const getDateInFuture = (days: number): Date => {
-  // Luodaan uusi Date-objekti nykyisestä päivämäärästä
-  let futureDate = new Date(); 
-  // Lisätään annettu määrä päiviä nykyiseen päivämäärään
-  futureDate = futureDate.setDate(futureDate.getDate() + days); 
-  // Palautetaan tulevaisuuden päivämäärä
-  return new Date(futureDate);
-}
-
-// Kutsutaan funktiota ja annetaan parametrina haluttu päivien määrä
-const futureDate = getDateInFuture(7); 
-
-// Tulostetaan tulevaisuuden päivämäärä konsoliin
-console.log(futureDate); // Output: 2021-06-22T10:55:33.354Z
-
-// Määritetään funktio, joka laskee tietyn päivämäärän menneisyydessä
-const getDateInPast = (months: number): Date => {
-  // Luodaan uusi Date-objekti nykyisestä päivämäärästä
-  let pastDate = new Date();
-  // Vähennetään annettu määrä kuukausia nykyisestä päivämäärästä
-  pastDate = pastDate.setMonth(pastDate.getMonth() - months);
-  // Palautetaan menneisyyden päivämäärä
-  return new Date(pastDate);
-}
-
-// Kutsutaan funktiota ja annetaan parametrina haluttu kuukausien määrä
-const pastDate = getDateInPast(3);
-
-// Tulostetaan menneisyyden päivämäärä konsoliin
-console.log(pastDate); // Output: 2021-03-14T10:55:33.354Z
+const tulevaPaiva = new Date(); // luodaan uusi päivä-olio
+tulevaPaiva.setDate(tulevaPaiva.getDate() + 1); // lisätään yksi päivä
+console.log(tulevaPaiva.toLocaleDateString()); // tulostetaan päivämäärä muodossa DD.MM.YYYY
 ```
 
-## Syväsukellus
+Tämä koodilohko luo uuden päivämäärä-olion ja lisää sille yhden päivän. Lopulta tulostetaan päivämäärä halutussa muodossa. Samaa logiikkaa voi soveltaa myös menneisyydessä laskemiseen, vain muuttaen `setDate()`-funktion parametria.
 
-Calculating a Date In The Future or Past -toiminnallisuus voidaan toteuttaa monella eri tavalla TypeScriptissä. Yllä olevat esimerkit käyttävät Date-objektin sisäänrakennettuja metodeja, mutta voit myös käyttää esimerkiksi Moment.js-kirjastoa, jos haluat lisää toiminnallisuuksia ja vaihtoehtoja tulevaisuuden ja menneisyyden päivämäärän laskemiseen.
+Entä jos haluamme laskea tietyn määrän päiviä tulevaisuuteen tai menneisyyteen? Tällöin voimme käyttää `setDate()`-funktion sijaan `setTime()`-funktiota, jolla voimme asettaa päivämäärän millisekuntien mukaan:
+
+```TypeScript
+const tulevaPaiva = new Date();
+const paivat = 5; // haluttu päivien määrä
+const lisaPaivat = paivat * 24 * 60 * 60 * 1000; // muutetaan päivät millisekunneiksi
+tulevaPaiva.setTime(tulevaPaiva.getTime() + lisaPaivat); // lisätään aikaa päivämäärään
+console.log(tulevaPaiva.toLocaleDateString()); // tulostetaan päivämäärä muodossa DD.MM.YYYY
+```
+
+## Syvemmälle
+
+Päivämäärän laskeminen TypeScriptissä ei kuitenkaan ole aina niin yksinkertaista. Esimerkiksi eri aikavyöhykkeillä voi olla erilainen päivämäärä ja aika. Tällöin tarvitaan `getTimezoneOffset()`-funktiota, jolla voidaan selvittää aikavyöhykkeen erotus Greenwichin aikaa vastaan ja käyttää tätä tietoa laskennassa.
+
+Lisäksi, jos halutaan tarkka päivämäärä laskettuna esimerkiksi tietyn kuukauden ja vuoden perusteella, voi käyttää `setFullYear()`- ja `setMonth()`-funktioita. Näiden avulla voidaan asettaa haluttu vuosi ja kuukausi päivämäärään ennen laskemista.
 
 ## Katso myös
 
-- [Date-olion dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js-kirjaston dokumentaatio](https://momentjs.com/docs/)
+- [MDN dokumentaatio päivämäärästä ja ajasta](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
+- [Object Oriented Tutorial](https://www.tutorialspoint.com/typescript/typescript_object_oriented.htm)
+
+Tässä blogikirjoituksessa opimme, kuinka lasketaan päivämäärä tulevaisuudessa tai menneisyy

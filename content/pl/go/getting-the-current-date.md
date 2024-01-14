@@ -1,60 +1,44 @@
 ---
-title:    "Go: Pobieranie aktualnej daty"
+title:    "Go: Pobieranie bieżącej daty"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pobrać bieżącą datę w języku Go?
+## Dlaczego
 
-Pobranie bieżącej daty jest bardzo ważnym aspektem programowania w języku Go. Wiele aplikacji wymaga dostępu do aktualnej daty i godziny, na przykład do tworzenia dzienników zdarzeń lub do zestawień danych. W tym artykule pokażemy Ci, jak w prosty sposób można uzyskać bieżącą datę w języku Go.
+Wiele aplikacji i systemów informatycznych wymaga aktualnej daty do prawidłowego działania. Bez niej nie byłoby możliwe śledzenie czasu, wyświetlanie wydarzeń czy generowanie raportów. W tym wpisie dowiesz się jak w języku Go uzyskać bieżącą datę oraz jak ją wykorzystać w swoim kodzie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby pobrać aktualną datę w języku Go, należy użyć funkcji `time.Now()`, która zwraca strukturę `Time` zawierającą informacje o bieżącej dacie i godzinie. Poniżej znajduje się prosty kod, który pokazuje to w praktyce:
+Pobranie aktualnej daty w języku Go jest bardzo proste. Wystarczy użyć funkcji `Now()` z biblioteki `time` i przypisać ją do zmiennej. Poniżej znajduje się przykładowe użycie tej funkcji:
 
 ```Go
-package main
-
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	currentTime := time.Now() // pobranie bieżącej daty i godziny
-	fmt.Println(currentTime) // wyświetlenie bieżącej daty i godziny
+    currentDate := time.Now()
+    fmt.Println(currentDate)
 }
 ```
 
-Output tego programu będzie wyglądał mniej więcej tak:
-
-`2021-08-25 10:30:00.555`
-
-Możemy również sformatować wyjście według swoich preferencji przy pomocy odpowiednich metod struktury `Time`. Na przykład, jeśli chcemy wyświetlić datę w formacie `DD-MM-RRRR`, możemy użyć metody `Format`:
+Wywołanie tej funkcji zwróci nam obecną datę wraz z godziną. Możemy także określić jak chcemy aby została wyświetlona poprzez użycie formatowania:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	currentTime := time.Now()
-	formattedDate := currentTime.Format("02-01-2006") // formatowanie daty według własnych preferencji
-	fmt.Println(formattedDate)
-}
+currentDate := time.Now().Format("02.01.2006 15:04")
 ```
 
-Output teraz będzie wyglądał tak: `25-08-2021`. Warto także zauważyć, że obszary ozdobne w formacie, takie jak `DD`, `MM` czy `RRRR` muszą być zapisane zgodnie z kolejnością dni, miesięcy i lat, a format musi zawierać cztery cyfry dla roku.
+W powyższym przykładzie użyłem przyjętego standardu formatowania dat w Go. Możemy oczywiście dostosować go do naszych potrzeb. Pełna lista opcji formatowania dostępna jest w dokumentacji języka Go.
 
-## Pogłębiona analiza
+## Głębszy zanurzenie
 
-W języku Go dostępne są różne metody i funkcje związane z obsługą dat i godzin. Można na przykład wykonywać operacje na nich, takie jak dodawanie lub odejmowanie określonej liczby lat, miesięcy, dni czy godzin. Zależy to od potrzeb aplikacji, w której jesteś, czy konieczność operowania na dacie i godzinie będzie częstym zadaniem. Wtedy warto zgłębić te kwestie i zapoznać się z dokumentacją języka Go w celu lepszego wykorzystania tej funkcjonalności.
+Dokładne zrozumienie sposobu działania funkcji `Now()` może być przydatne w przypadku bardziej skomplikowanych projektów. W języku Go, czas jest reprezentowany przez strukturę `Time`, która zawiera informacje o dniu, miesiącu, roku, godzinie, minucie, sekundzie, strefie czasowej oraz innych szczegółach. Funkcja `Now()` zwraca wartość tego typu, co pozwala na dokładne operowanie na czasie w naszym programie.
 
-## Zobacz również
+## Zobacz też
 
-- Oficjalna dokumentacja języka Go dotycząca obsługi dat i godzin: https://golang.org/pkg/time/
-- Poradnik na temat formatowania dat w języku Go: https://programming.guide/go/format-parse-string-time-date-example.html
+- Dokumentacja języka Go: https://golang.org/doc/
+- Przykładowe projekty w Go: https://github.com/golang/example

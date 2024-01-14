@@ -1,33 +1,48 @@
 ---
-title:    "C#: テキストの検索と置換"
+title:    "C#: 「テキストの検索と置換」"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-テキストを検索して置換することの利点は、複数の文書やファイル内の特定のテキストを自動的に変更できることです。これにより、手作業での大量のテキスト変更を行う必要がなくなり、時間を節約することができます。
 
-## 使い方
-以下のC#コードの例を参考にして、テキストの検索と置換をどのように行うかを学びましょう。
+テキストを検索して置換するということには、コンピュータープログラミングにおいて非常に便利な理由があります。テキストを一度に多くの場所で同時に変更することができますし、手作業で行うよりもはるかに高速です。
+
+## ハウツー
+
+テキストの検索と置換は、C#言語において非常に簡単に実現することができます。まずは、検索条件となる文字列を指定し、置換したい文字列を指定します。以下のコード例を参考にしてください。
+
 ```C#
-// 文字列内での置換
-string text = "こんにちは、世界！";
-string newText = text.Replace("世界", "地球");
-Console.WriteLine(newText);
-// 出力: こんにちは、地球！
+string inputText = "こんにちは、今日はいい天気ですね。";
+string searchText = "いい";
+string replaceText = "すばらしい";
 
-// ファイル内での置換
-string filePath = @"C:\Documents\file.txt";
-string fileContent = File.ReadAllText(filePath);
-string newContent = fileContent.Replace("旧テキスト", "新しいテキスト");
-File.WriteAllText(filePath, newContent);
+string outputText = inputText.Replace(searchText, replaceText);
+
+Console.WriteLine(outputText);
 ```
 
-## 深堀り
-テキストの検索と置換の実行は、プログラミング言語によってさまざまな方法で行うことができます。C#では、.NETフレームワークの一部である`String.Replace()`メソッドを使用することで簡単に置換を行うことができます。また、`File.ReadAllText()`や`File.WriteAllText()`メソッドを使用することで、ファイル内のテキストを読み取ったり書き込んだりすることができます。さらに、正規表現を使用することでより高度な置換が可能になります。
+出力結果は以下のようになります。
+
+```
+こんにちは、今日はすばらしい天気ですね。
+```
+
+## ディープダイブ
+
+テキストの検索と置換では、他にも様々なオプションが用意されています。例えば、大文字と小文字を区別するかどうかや、検索結果を制限するための正規表現を使用することもできます。さらに、一度に複数の文字列を置換することも可能です。必要に応じて、より詳しい情報を調べることができます。
+
+## 参考リンク
+
+- [C#における文字列の検索と置換の方法 (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/how-to-search-strings)
+- [C#での正規表現の使用 (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-usage)
+- [C#の文字列操作に関するベストプラクティス (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/best-practices-strings)
+
 
 ## 関連リンク
-- [C# String.Replace()メソッドのドキュメンテーション](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.replace?view=netcore-3.1)
-- [C# Fileクラスのドキュメンテーション](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file?view=netcore-3.1)
-- [C# 正規表現の使用方法について学ぶ](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-language-quick-reference#.NET_を使用した正規表現の一般的な使用方法)
+
+- [C#でファイルの読み書きをする方法](https://www.onlineclassnotes.com/2018/02/csharp-how-to-read-and-write-files-using-streamreader-and-streamwriter.html)
+- [C#で文字列を比較する方法](https://www.guru99.com/c-sharp-string-compare.html)
+- [C#のデバッグ方法 (Microsoft Docs)](https://docs.microsoft.com/ja-jp/visualstudio/debugger/debugger-feature-tour?view=vs-2019)

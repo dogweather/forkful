@@ -1,67 +1,50 @@
 ---
 title:    "Rust recipe: Writing a text file"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-
-Writing text files is a common task in programming. It allows for easy storage and retrieval of data that can be read and edited by humans. In this blog post, we will explore how to write a text file in Rust programming language.
+## Why
+Writing a text file is a fundamental task in programming that allows us to store and manipulate data in a human-readable format. In this blog post, we will explore how to write a text file in Rust and understand why it is an important skill for any developer.
 
 ## How To
-
-To write a text file in Rust, we first need to create a File object using the `File::create()` method. This method takes in the path to the file as a parameter and returns a `Result` enum, which contains either a `File` object or an error value. Let's see an example: 
+Writing a text file in Rust is a relatively simple process. First, we need to open a file in write mode using the `File::create()` method from the `std::fs` module. This method takes in a path to the file as an argument and returns a `Result` type, which we can use to handle any errors that may occur.
 
 ```
-Rust
 use std::fs::File;
-use std::io::prelude::*;
 
-let file_path = "sample.txt";
-let mut file = match File::create(file_path) {
-    Ok(file) => file,
-    Err(error) => panic!("Unable to create {}: {}", file_path, error),
-};
-
+let file = File::create("data.txt").expect("Unable to create file");
 ```
 
-Next, we need to write our data to the file using the `write_all()` method, which also takes in a `Result` enum. This method writes the entire buffer to the file. Let's see an example:
+Next, we can use the `write_all()` method to write data to the file. This method takes in a slice of bytes as an argument, so we need to convert our text into bytes using the `as_bytes()` method. Since this method returns a `Result` type, we can use the `?` operator to handle any potential errors.
 
 ```
-Rust
-let data = b"Welcome to my Rust programming blog post!";
-match file.write_all(data) {
-    Ok(_) => println!("Data successfully written to the file."),
-    Err(error) => println!("Unable to write data to the file: {}", error)
-};
+let data = "Hello world!";
+file.write_all(data.as_bytes())?;
 ```
 
-Lastly, we need to handle any errors that may occur during the writing process. This can be done using the `expect()` method, which will panic if an error is encountered. Let's see an example:
+To ensure that all the data is written to the file, we need to flush the internal buffer using the `flush()` method.
 
 ```
-Rust
-file.write_all(data).expect("Unable to write data to the file.");
+file.flush()?;
 ```
 
-Once we have finished writing our data and handling errors, we need to close the file using the `close()` method. This ensures that any remaining data in the buffer is written to the file before it is closed. Let's see an example:
+And finally, we need to close the file using the `close()` method to free up any system resources.
 
 ```
-Rust
-match file.close() {
-    Ok(_) => println!("File closed successfully."),
-    Err(error) => println!("Unable to close the file: {}", error)
-};
+file.close()?;
 ```
 
-## Deep Dive 
+## Deep Dive
+Writing a text file in Rust is actually writing bytes to a file. Rust's `std::io` module provides various methods to convert data into bytes, including `as_bytes()` for strings and `to_le_bytes()` or `to_be_bytes()` for numeric types.
 
-When writing a text file in Rust, there are a few things to keep in mind. The `File::create()` method is a generic method, which means it can create any type of file. This is why we need to specify the file path and extension in the method. Additionally, the `write_all()` method expects a `&[u8]` type data, which is why we have used the byte string literal (`b""`) in our example. 
+It is also important to handle errors effectively when writing to a file. Rust's `Result` type allows us to easily handle errors using the `?` operator, which returns the error if one occurs or continues with the next line if no error occurs.
 
-Furthermore, Rust also provides us with the `writeln()` method, which is similar to `write_all()` but adds a newline character at the end of the buffer. It is useful when writing multiple lines of data to a file.
+Additionally, we can use the `write_fmt()` method to format data before writing it to a file. This method takes in a `fmt::Arguments` type, allowing us to use the `format!` macro to format our data.
 
 ## See Also
-
-- [Rust Documentation](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Writing Files in Rust](https://www.sheshbabu.com/posts/rust-write-to-file/) 
-- [Rust by Example - Files](https://doc.rust-lang.org/stable/rust-by-example/std_misc/file.html)
+- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/)
+- [Writing Files in Rust](https://www.tutorialspoint.com/rust/rust_file_handling.htm)
+- [File::create() method](https://doc.rust-lang.org/std/fs/struct.File.html#method.create)

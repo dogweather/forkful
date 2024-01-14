@@ -1,44 +1,28 @@
 ---
 title:    "Clojure: Das Schreiben einer Textdatei"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Schreiben von Textdateien ist eine wichtige Fähigkeit für Programmierer und kann in vielen Situationen nützlich sein. Es ermöglicht das Speichern und Wiederverwenden von Daten sowie das Erstellen von Konfigurationsdateien für Programme.
 
-Das Schreiben von Textdateien ist eine wichtige Fähigkeit für jeden Programmierer, der mit Clojure arbeitet. Es ermöglicht es uns, Daten auf einer einfachen und übersichtlichen Weise zu speichern und zu verwalten. Es erleichtert auch die Zusammenarbeit mit anderen, da Textdateien universell lesbar sind und von verschiedenen Programmen verwendet werden können.
-
-## Wie geht es
-
-Um eine Textdatei in Clojure zu schreiben, verwenden wir die Funktion `spit` und geben den Namen der Datei sowie den Inhalt an. Hier ist ein Beispiel:
+## Wie geht's
+Um eine Textdatei in Clojure zu schreiben, können wir die `with-open` Funktion verwenden, um eine Datei zu öffnen und sie mit Inhalt zu füllen. Hier ist ein Beispielcode, der eine Datei mit dem Inhalt "Hallo Welt!" erstellt.
 
 ```Clojure
-(spit "meine-datei.txt" "Hallo Welt!")
+(with-open [file (clojure.java.io/writer "meine-datei.txt")]
+  (.write file "Hallo Welt!"))
 ```
 
-Dieser Code erstellt eine Datei mit dem Namen "meine-datei.txt" und dem Inhalt "Hallo Welt!".
+Die `with-open` Funktion sorgt dafür, dass die Datei am Ende automatisch geschlossen wird, um mögliche Speicherlecks zu vermeiden. Sie können auch `println` verwenden, um einen Zeilenumbruch am Ende Ihres Textes hinzuzufügen.
 
-## Tiefere Einblicke
-
-Clojure bietet verschiedene Optionen zum Schreiben von Textdateien. Wir können auch den Inhalt aus anderen Quellen wie Variablen oder Funktionen extrahieren und in die Datei einfügen. Hier ist ein Beispiel, das einen Zähler verwendet:
-
-```Clojure
-(def counter (atom 1))
-
-(spit "zähler.txt" (str "Der Zähler ist bei " @counter))
-```
-
-Dieser Codestück erstellt eine Datei mit dem Inhalt "Der Zähler ist bei 1". Wenn wir den Zähler dann aktualisieren und den Code erneut ausführen, wird der Inhalt der Datei entsprechend aktualisiert.
-
-Es ist auch wichtig zu beachten, dass wir beim Schreiben von Textdateien auf die richtige Codierung achten müssen, besonders wenn wir mit nicht-ASCII-Zeichen arbeiten.
+## Tiefer einsteigen
+Es gibt verschiedene Optionen, um den Inhalt einer Datei zu ändern oder zu ergänzen, wie zum Beispiel die `append` Funktion. Sie können auch spezifische Zeichenfolgen suchen und ersetzen oder die Größe der Datei ändern. Weitere Informationen finden Sie in der offiziellen Clojure-Dokumentation zu Dateien.
 
 ## Siehe auch
-
-Hier sind einige nützliche Ressourcen zum Schreiben von Textdateien in Clojure:
-
-- [Clojure Dokumentation über Dateioperationen](https://clojure.org/reference/java_interop#_file_system)
-- [Clojure Cookbook: Dateioperationen](https://clojure-cookbook.com/files/)
-- [Clojure Bücher und Tutorials](https://www.clojure.com/resources)
-
-Vielen Dank fürs Lesen und viel Spaß beim Schreiben von Textdateien in Clojure!
+- Offizielle Dokumentation zu Dateien in Clojure: https://clojure.org/reference/io
+- Nützliche Funktionen aus der Clojure core library: https://clojure.org/api/cheatsheet
+- Praktische Anwendungen des Schreibens von Textdateien: https://www.baeldung.com/java-write-to-file

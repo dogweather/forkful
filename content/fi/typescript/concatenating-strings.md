@@ -1,49 +1,57 @@
 ---
-title:    "TypeScript: Lausekkeiden yhdistäminen"
+title:    "TypeScript: Merkkijonojen yhdistäminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Miksi joku haluaisi yhdistää merkkijonoja TypeScript-ohjelmoinnissa? Yhdistäminen on välttämätöntä, kun haluat luoda uuden merkkijonon yhdistämällä useita erillisiä merkkijonoja.
+Ohjelmoijat usein tarvitsevat yhdistää merkkijonoja jotta pystyvät luomaan monimutkaisempia tekstejä tai viestejä. Tämä on tärkeää myös silloin kun halutaan tulostaa tietoa käyttäjälle tai tallentaa se tietokantaan. TypeScriptin merkkijonojen yhdistämisominaisuus mahdollistaa tämän prosessin helposti.
 
-## Miten tehdä?
-
-```TypeScript
-//Esimerkki 1
-let opiskelijat = "Matti";
-let koulu = "Aalto-yliopisto";
-let lopullinenMerkkijono = opiskelijat + " opiskelee " + koulu;
-console.log(lopullinenMerkkijono);
-// tulostaa: "Matti opiskelee Aalto-yliopisto"
-
-//Esimerkki 2
-let luku = 123;
-let merkkijono = "Tämä on luku: " + luku.toString();
-console.log(merkkijono);
-// tulostaa: "Tämä on luku: 123"
-```
-
-Yllä olevissa esimerkeissä näemme, että merkkijonojen yhdistäminen tapahtuu käyttämällä `+` -operaattoria. Voimme myös käyttää `.toString()` -metodia, jotta voimme yhdistää merkkijonon ja muun datan, kuten numeron.
-
-## Syvällisempi tarkastelu
-
-Merkkijonon yhdistäminen voi vaikuttaa yksinkertaiselta, mutta se voi aiheuttaa ongelmia, jos sitä ei käytetä oikein. Esimerkiksi, jos yritämme yhdistää merkkijono ja muuttujan, joka on `undefined`, tuloksena on "undefined" -sana, mikä ei ehkä ole haluttu tulos. On tärkeää varmistaa, että kaikki yhdistettävät arvot ovat halutussa muodossa, jotta lopullinen merkkijono olisi oikein.
-
-Toinen asia, jota on syytä huomata, on merkkijonojen ja numeroiden yhdistäminen. Vaikka tarvittaessa pystymme käyttämään `.toString()` -metodia, on parempi käyttää `Template literals` -ominaisuutta, joka on TurboScriptin syntaksi, joka auttaa yhdistämään erilaisia arvoja ilman monimutkaista koodia.
+## Miten
 
 ```TypeScript
-//Esimerkki 3
-let luku = 123;
-let merkkijono = `Tämä on luku: ${luku}`;
-console.log(merkkijono);
-// tulostaa: "Tämä on luku: 123"
+const nimi = "Matti";
+const tervehdys = "Hei " + nimi + ", tervetuloa sivustollemme!";
+console.log(tervehdys);
 ```
+
+Tässä esimerkissä käytämme "+" -operaattoria yhdistämään kaksi merkkijonoa yhdeksi. Lopputuloksena tulostuu "Hei Matti, tervetuloa sivustollemme!" konsoliin. Voimme myös yhdistää useita merkkijonoja yhtäaikaisesti.
+
+```TypeScript
+const kaupunki = "Helsinki";
+const maa = "Suomi";
+const yhteenveto = `Asun ${kaupunki}, joka sijaitsee maassa ${maa}.`;
+console.log(yhteenveto);
+```
+
+Toisessa esimerkissä käytämme backtick-merkkejä (`) ja ${} -syntaksia luodaksemme yhden merkkijonon useiden muuttujien kanssa. Lopputuloksena tulostuu "Asun Helsinki, joka sijaitsee maassa Suomi." konsoliin.
+
+## Syvällisempi sukellus
+
+Stringien yhdistämisessä on tärkeää huomata, että TypeScript osaa automaattisesti muuntaa muut tyypit merkkijonoksi. Tämä tarkoittaa sitä, että voimme yhdistää myös numeroita ja boolean-arvoja merkkijonoihin ilman että tarvitsee erikseen muuntaa niitä. Esimerkiksi:
+
+```TypeScript
+const ikä = 30;
+const tervetuloa = "Tervetuloa, olet " + ikä + " vuotta vanha!";
+
+console.log(tervetuloa);
+```
+
+Tulostuu "Tervetuloa, olet 30 vuotta vanha!" konsoliin.
+
+Voimme myös käyttää erilaisia operaattoreita osana merkkijonojen yhdistämistä.
+
+```TypeScript
+console.log("Tervetuloa sivustolle! " + "Jatka sivustomme selailua " + "saadaksesi lisää tietoa.");
+```
+
+Tämä tulostaa "Tervetuloa sivustolle! Jatka sivustomme selailua saadaksesi lisää tietoa." konsoliin.
 
 ## Katso myös
 
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/home.html)
-- [Tutorialspointin TypeScript-esittely](https://www.tutorialspoint.com/typescript/)
-- [TypeScript vs JavaScript: Mikä niiden ero on?](https://stackoverflow.com/questions/12694530/typescript-for-beginners#12695152)
+- [TypeScriptin virallinen dokumentaatio merkkijonojen muotoilusta](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#string-formatting)
+- [W3Schools sivusto merkkijonojen yhdistämisestä Javascriptillä](https://www.w3schools.com/js/js_string_concat.asp)
+- [Vuoropuhelun artikkeli stringien yhdistämisestä](https://dev.to/codementor/how-to-concatenate-strings-in-typescript-24c8)

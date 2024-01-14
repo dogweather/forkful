@@ -1,32 +1,43 @@
 ---
-title:    "C#: Schreiben auf den Standardfehler"
+title:    "C#: Schreiben in den Standardfehler"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben auf den Standardfehler ist ein wichtiger Teil des Programmierens in C#. Es kann verwendet werden, um Fehlermeldungen oder Warnungen während der Laufzeit anzuzeigen und zu beheben. Dies ist besonders nützlich für die Fehlersuche und das Debuggen von Code.
+Wenn du in der Welt des C# Programmierens unterwegs bist, wirst du früher oder später auf die sogenannte "Standardfehlerausgabe" (*standard error*) stoßen. Diese Ausgabe ist eine wichtige Methode, um Fehler in deinem Code zu erkennen und zu debuggen. In diesem Blogbeitrag werden wir uns genauer damit befassen, warum es wichtig ist, zur Standardfehlerausgabe zu schreiben und wie man dies effektiv tun kann.
 
-## Wie geht man vor
+## Wie man zur Standardfehlerausgabe schreibt
 
-Um auf den Standardfehler zu schreiben, können Sie die Methode `Console.Error.WriteLine()` verwenden. Dies ermöglicht es Ihnen, einen Text auf den Standardfehlerausgabestream zu schreiben, der vom Betriebssystem behandelt wird.
+Um zur Standardfehlerausgabe zu schreiben, musst du zunächst die `Console` Klasse aus der `System` Namespace importieren. Dann kannst du die Methode `Error.WriteLine()` verwenden, um eine Nachricht zur Standardfehlerausgabe zu senden.
 
 ```C#
-Console.Error.WriteLine("Dies ist ein Fehler!");
+using System;
+
+// ...
+
+Console.Error.WriteLine("Dies ist eine Fehlermeldung.");
 ```
 
-Dieses Beispiel würde die Nachricht "Dies ist ein Fehler!" auf den Standardfehlerausgabestream schreiben und vom Betriebssystem behandelt werden.
+Die Methode `Error.WriteLine()` akzeptiert eine beliebige Zeichenkette als Argument und gibt sie auf der Standardfehlerausgabe aus. Du kannst der Methode auch mehrere Argumente übergeben, die dann jeweils mit einem Leerzeichen zwischen ihnen ausgegeben werden.
 
-## Tiefergehende Informationen
+```C#
+Console.Error.WriteLine("Ein Fehler trat bei der Berechnung von {0} auf. Fehlernummer: {1}", berechnung, fehlernummer);
+```
 
-Wenn Sie genauer verstehen möchten, wie das Schreiben auf den Standardfehler funktioniert, können Sie die Unterschiede zwischen `Console.Error.Write()` und `Console.Error.WriteLine()` untersuchen. Die erste Methode würde die Nachricht ohne eine neue Zeile an den Standardfehlerausgabestream schreiben, während die zweite Methode eine neue Zeile am Ende hinzufügen würde.
+Ein weiterer hilfreicher Tipp ist die Verwendung der `Error.SetOut()` Methode, um die Standardfehlerausgabe auf eine Datei oder einen Textwriter zu lenken. Dadurch kannst du Fehler in einer separaten Datei oder einem separaten Textbereich für eine einfachere Analyse speichern.
 
-Sie können auch die Verwendung von `using System.Diagnostics;` in Betracht ziehen, um auf die `Trace` Klasse zuzugreifen, die zusätzliche Möglichkeiten zum Schreiben auf den Standardfehlerausgabestream bietet.
+## Tiefer einsteigen
+
+Nun, da du weißt, wie man zur Standardfehlerausgabe schreibt, lass uns einen tieferen Einblick in dieses Thema werfen. Im Grunde genommen ist die Standardfehlerausgabe eine spezielle Art der Konsolenausgabe, die dazu dient, Fehler und Ausnahmen in deinem Code anzuzeigen. Im Gegensatz dazu ist die Standardausgabe (*standard output*) für die reguläre Ausgabe zuständig, wie zum Beispiel das Anzeigen von Zeichenketten oder Werten.
+
+Es ist wichtig, die Standardfehlerausgabe zu nutzen, da sie eine effektive Methode ist, um Probleme in deinem Programm zu identifizieren. Wenn du nur die Standardausgabe verwendest, kannst du möglicherweise wichtige Fehlermeldungen verpassen, da sie zusammen mit anderen Ausgaben angezeigt werden.
 
 ## Siehe auch
 
-- [Console.Error.WriteLine-Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.console.error.writeline)
-- [Trace Class (System.Diagnostics)](https://docs.microsoft.com/de-de/dotnet/api/system.diagnostics.trace)
-- [Schreiben auf die Standardausgabe und den Standardfehler im C#](https://www.tutorialspoint.com/writing-to-standard-output-and-standard-error-in-csharp)
+- [Microsoft Dokumentation: Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=netcore-3.1)
+- [Tutorial: Fehlermeldung in C#](https://www.tutorialsteacher.com/csharp/csharp-console-application)
+- [Verwenden von Standardfehlerausgaben in C#](https://exceptionnotfound.net/using-strings-in-standard-error-and-standard-output-in-c-sharp-net/)

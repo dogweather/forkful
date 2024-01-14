@@ -1,44 +1,48 @@
 ---
-title:    "Bash: Entfernen von Zeichen, die einem Muster entsprechen."
+title:    "Bash: Musterübereinstimmende Zeichen löschen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum man beim Programmieren in Bash Zeichen löschen möchte, die einem bestimmten Muster entsprechen. Zum Beispiel könnte man unerwünschte Inhalte aus einer Datei entfernen, Formatierungsfehler korrigieren oder Daten bereinigen, bevor man sie weiterverarbeitet. In diesem Blogbeitrag werden wir uns genauer mit dem Löschen von Zeichen in Bash beschäftigen und dir zeigen, wie du es effektiv und einfach umsetzen kannst.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Bash-Programmierung sehr nützlich sein. Damit können unerwünschte Zeichen aus einer Datei oder einem Text entfernt werden, bevor sie weiterverarbeitet werden.
 
-## Wie geht das?
+## Wie man Zeichen mit einem Muster löscht
 
-Um Zeichen in Bash zu löschen, können wir das Befehlssatz `sed` verwenden. Dieser Befehl wird normalerweise verwendet, um Zeichen in Dateien zu suchen und zu ersetzen, aber er kann auch verwendet werden, um Zeichen basierend auf einem Muster zu löschen. Schauen wir uns ein Beispiel an:
-
-```Bash
-sed 's/[a-z]//g' datei.txt
-```
-
-In diesem Beispiel werden alle Kleinbuchstaben in der Datei `datei.txt` gelöscht und die bearbeitete Datei auf der Standardausgabe ausgegeben. Das Muster `[a-z]` gibt an, dass alle Kleinbuchstaben von a bis z gelöscht werden sollen, während der Modifier `g` dafür sorgt, dass alle Vorkommen des Musters in der Datei gelöscht werden.
-
-Um sicherzustellen, dass die Änderungen in der Originaldatei gespeichert werden, musst du den Befehl umleiten und den `sed` Befehl innerhalb des `>` Operators eingeben:
+Um Zeichen mit einem Muster zu löschen, verwenden wir das ```sed```-Kommando in der Bash. Hier ist ein einfaches Beispiel, um alle Zahlen aus einem String zu löschen:
 
 ```Bash
-sed 's/[a-z]//g' datei.txt > neue_datei.txt
+echo "123abc456" | sed 's/[0-9]//g'
 ```
 
-Dieser Befehl löscht alle Kleinbuchstaben in `datei.txt` und speichert die bearbeitete Datei als `neue_datei.txt`.
+In diesem Beispiel wird das ```sed```-Kommando verwendet, um alle numerischen Zeichen im String zu finden und zu löschen. Das Ergebnis ist "abc".
 
-## Tieferer Einblick
+## Tiefergehende Informationen
 
-Die Verwendung von `sed` zum Löschen von Zeichen basierend auf bestimmten Mustern erfordert das Verständnis der sogenannten regulären Ausdrücke. Diese Ausdrücke ermöglichen es uns, präzise Muster zu definieren, anhand derer Zeichen gelöscht werden sollen. In unserem Beispiel haben wir `[a-z]` verwendet, um alle Kleinbuchstaben zu löschen. Hier sind einige weitere Beispiele für reguläre Ausdrücke:
+Das Löschen von Zeichen mit einem Muster kann auch mit regulären Ausdrücken erfolgen. Diese ermöglichen es uns, noch spezifischere Muster anzugeben, die gelöscht werden sollen. Zum Beispiel könnten wir mit dem folgenden Befehl alle Leerzeichen aus einem String entfernen:
 
-- `[0-9]` löscht alle Zahlen
-- `[^a-z]` löscht alle Zeichen, die keine Kleinbuchstaben sind
-- `[a-z]*` löscht alle Wörter, die mit einem Kleinbuchstaben beginnen
+```Bash
+echo "Dies ist ein Beispiel" | sed 's/[[:blank:]]//g'
+```
 
-Indem du dich weiter mit regulären Ausdrücken auseinandersetzt, kannst du deine Fähigkeiten im Umgang mit `sed` und beim Löschen von Zeichen in Bash verbessern.
+Hier verwenden wir den regulären Ausdruck ```[[:blank:]]```, der alle Leerzeichen und Tabulatoren erfasst. Das Ergebnis ist "DiesisteinBeispiel".
+
+Es ist auch möglich, nur bestimmte Zeichen zu löschen, indem wir diese in eckige Klammern innerhalb des regulären Ausdrucks angeben. Zum Beispiel löscht der folgende Befehl alle Vokale aus einem String:
+
+```Bash
+echo "Hallo Welt" | sed 's/[aeiou]//g'
+```
+
+Das Ergebnis ist "Hll Wlt".
+
+Diese tiefergehenden Techniken bieten uns eine große Flexibilität bei der Bearbeitung von Texten und Dateien in der Bash.
 
 ## Siehe auch
 
-- [Verwendet von regulären Ausdrücken in Bash](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-- [Weitere Infos zu `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Bash Cheat Sheet](https://devhints.io/bash)
+- [Ein ausführlicherer Leitfaden zur Verwendung von sed](https://www.digitalocean.com/community/tutorials/how-to-use-sed-to-find-and-replace-text-in-files-in-linux)
+- [Weitere Informationen zu regulären Ausdrücken in der Bash](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
+
+Mit dem Wissen über das Löschen von Zeichen mit einem Muster in der Bash kannst du deine Skripte und Dateien effizienter bearbeiten und aufbereiten. Experimentiere mit verschiedenen regulären Ausdrücken und finde heraus, welche Ergebnisse du erzielen kannst!

@@ -1,44 +1,63 @@
 ---
 title:    "C# recipe: Writing to standard error"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing to standard error is an essential aspect of C# programming that allows for efficient debugging and error handling. By sending error messages to the standard error stream, developers can easily identify and address any issues that may arise during the execution of their code.
+
+As a programmer, you may have encountered errors while running your code. These errors can be helpful in troubleshooting and debugging, but they can also be quite frustrating. That's where standard error comes in. Writing to standard error allows you to specifically display error messages, making it easier to identify and address any issues in your code.
 
 ## How To
-To write to standard error in C#, developers can use the `Console.Error.WriteLine()` method. This method takes in a string as the parameter and prints it to the standard error stream. Here's a simple example:
 
-```C#
-// Writing an error message to standard error
-Console.Error.WriteLine("An error has occurred!");
+To write to standard error in C#, you will need to use the `Console` class and its `Error` property. This property allows you to write to the standard error stream rather than the standard output stream. Let's take a look at some code examples:
+
+```
+using System;
+
+// Direct output to standard error
+Console.Error.WriteLine("Oops, something went wrong!");
 ```
 
-The above code will print the error message "An error has occurred!" to the standard error stream. Additionally, developers can also use `Console.Error.WriteLine()` in combination with the `try-catch` block to print out specific error messages for different types of exceptions:
+In this first example, we use the `Error` property to write a string to the standard error stream. This will display the string on the console with a red font, indicating that it is an error message.
 
-```C#
-try
-{
-    // Code that may cause an exception
-}
-catch (Exception ex)
-{
-    // Writing a custom error message to standard error
-    Console.Error.WriteLine("An exception has occurred: " + ex.Message);
-}
+```
+using System;
+
+// Demonstrating a divide by zero error 
+int num = 10;
+int div = 0;
+
+// Direct output to standard error
+Console.Error.WriteLine("Attempting division...");
+Console.Error.WriteLine("Result: " + (num / div));
 ```
 
-The above code will catch any type of exception that may occur within the `try` block and print a custom error message, along with the specific exception message, to the standard error stream.
+In this next example, we intentionally divide by zero to generate an error. By using `Console.Error`, we can output a message before the error occurs, helping us to better understand the context of the error.
+
+The output for both of these examples would look like this in a console:
+
+```
+Oops, something went wrong!
+Attempting division...
+Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
+   at Program.Main()
+```
+
+As you can see, using `Console.Error.WriteLine()` allows us to write to the standard error stream and provide additional information about the error.
 
 ## Deep Dive
-When writing to standard error, it's important to note that the standard output and standard error streams are separate, which allows for a clear distinction between regular output and error messages. This can be useful when debugging or troubleshooting, as it allows developers to easily identify where an error has occurred.
 
-It's also worth mentioning that the `Console.Error` object is a `TextWriter` class, which means developers can use other methods from this class, such as `Write()` and `WriteLine()`, to write to the standard error stream.
+When writing to standard error, it is important to consider the difference between the standard output and standard error streams. The standard output stream is meant for regular program output, while the standard error stream is specifically for error messages.
+
+Additionally, it is worth noting that you can redirect the standard error stream to a file rather than displaying it on the console. This can be helpful in situations where you need to save and analyze error messages.
 
 ## See Also
-- [Documentation for Console.Error.WriteLine()](https://docs.microsoft.com/en-us/dotnet/api/system.console.error.writeline?view=netcore-3.1)
-- [Exception Handling in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
 
-By utilizing the `Console.Error.WriteLine()` method, developers can easily write to the standard error stream and improve their code's error handling process. Make sure to also check out the documentation and other resources for a deeper understanding of this topic. Happy coding!
+- [C# Console Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1)
+- [C# Error Messages Tutorial](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
+- [Redirecting Standard Error Stream in C#](https://www.dotnetperls.com/redirectstandarderror)
+
+Writing to standard error may seem like a small and simple concept, but it can greatly improve your debugging process. By using the `Console.Error` property, you can easily differentiate between regular program output and error messages, making troubleshooting and fixing errors much easier. Happy coding!

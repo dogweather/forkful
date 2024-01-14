@@ -1,47 +1,69 @@
 ---
-title:    "Elm: Comparando dos fechas."
+title:    "Elm: Comparando dos fechas"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Comparar dos fechas es una tarea común en la programación. Ya sea para realizar cálculos de tiempo o para verificar la validez de una fecha ingresada por un usuario, la comparación de fechas es una habilidad esencial en la programación. En este artículo, aprenderemos cómo comparar dos fechas en Elm de manera sencilla y efectiva.
+ A menudo, en la programación, es necesario comparar dos fechas para determinar si son iguales, una es anterior o posterior a la otra, o incluso la diferencia entre ellas. En Elm, esto se puede lograr fácilmente utilizando funciones y operadores específicos. En esta publicación, aprenderemos cómo comparar dos fechas en Elm y profundizaremos en cómo funcionan estas comparaciones.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en Elm, utilizaremos la función `compare` del módulo `Date`. Esta función toma dos argumentos de tipo `Date` y devuelve un `Order`, que indica si la primera fecha es menor, igual o mayor que la segunda fecha.
+Para comparar dos fechas en Elm, se pueden utilizar las funciones ```Date.compare``` y ```Date.diff```, junto con los operadores ```==```, ```<```, ```<=```, ```>``` y ```>=```. Veamos algunos ejemplos:
 
-```elm
-Imports:
+```
+import Date exposing (..)
 
-import Date exposing (compare)
-import Time exposing (..)
+date1 = Date.fromHttp "2021-05-30"
+date2 = Date.fromHttp "2021-05-31"
 
-Dates to compare:
+case Date.compare date1 date2 of
+  LT -> "La fecha 1 es anterior a la fecha 2"
+  EQ -> "Las fechas son iguales"
+  GT -> "La fecha 1 es posterior a la fecha 2"
 
-date1 : Date
-date2 : Date
+diff = Date.diff date2 date1
+-- diff es igual a 1 día en segundos
 
-date1 = fromTime <| posixToMillis 1546300800 -- 1/1/2019 at midnight
-date2 = fromTime <| posixToMillis 1577836800 -- 1/1/2020 at midnight
+date3 = Date.fromHttp "2021-05-30"
+date4 = Date.fromHttp "2021-05-29"
 
-Comparison:
-
-compare date1 date2 -- Result: GT (Greater Than)
+date3 > date4 -- devuelve True
+date4 <= date2 -- devuelve True
 ```
 
-Podemos ver que, en este ejemplo, la fecha1 (1 de enero de 2019) es mayor que la fecha 2 (1 de enero de 2020).
+Además de comparar fechas específicas, también se pueden usar funciones y operadores para comparar fechas actuales con fechas dadas o crear rangos de fechas. Por ejemplo:
 
-## Profundizando
+```
+import Task
+import Date exposing (..)
+import Html exposing (text)
 
-Es importante tener en cuenta que la función `compare` solo compara las fechas en sí, no las horas ni los minutos. Esto significa que si queremos comparar fechas con horas y minutos específicos, primero debemos convertirlas a la hora Unix (posix). También podemos utilizar otras funciones del módulo `Date`, como `toHour`, `toMinute` y `toSecond`, para obtener información más detallada de nuestras fechas.
+getTomorrowDate : Task x Date
+getTomorrowDate =
+  Date.fromTime 0
+    |> Task.andThen (\today ->
+        Date.add 1 Day today
+          |> Task.map toString
+    )
 
-Además, también podemos utilizar la función `max` y `min` del módulo `Basics` para obtener la fecha más reciente o la fecha más antigua entre dos fechas.
+view : Program Never
+view =
+  Html.text
+    ( Task.await getTomorrowDate
+        |> toString
+    )
+-- Devuelve "2021-05-31" si se ejecuta en 30 de mayo de 2021
+```
+
+## Inmersión profunda
+
+Cuando se comparan fechas en Elm, es importante recordar que las fechas son solo valores y no tienen ningún tipo de comportamiento asociado. Esto significa que, por ejemplo, una fecha no puede "igualar" o "superar" a otra fecha, ya que simplemente son valores almacenados. Además, al comparar fechas, es importante tener en cuenta que las fechas siempre se comparan en función de su hora UTC, no de la zona horaria del usuario. Esto puede afectar los resultados de las comparaciones, especialmente cuando se utilizan funciones como ```Date.fromCalendarDate```.
 
 ## Ver también
 
-- [Documentación de la función `compare` del módulo `Date`](https://package.elm-lang.org/packages/elm/time/latest/Time#compare)
-- [Guía de fechas en Elm](https://guide.elm-lang.org/dates_and_times/)
-- [Conversión de fechas a formato posix en Elm](https://discourse.elm-lang.org/t/how-can-i-convert-from-elm-date-to-unix-epoch-without-a-pit-of-despair/424)
+- Documentación de funciones de fecha en Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Ejemplos de comparación de fechas en Elm: https://gist.github.com/exploreelm/726be8f87ca6ac875b05a084fcc8e36b

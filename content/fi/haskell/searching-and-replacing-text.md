@@ -1,28 +1,58 @@
 ---
-title:    "Haskell: Tekstin hakeminen ja korvaaminen"
+title:    "Haskell: Tekstin etsiminen ja korvaaminen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä, miksi joku saattaisi haluta etsiä ja korvata tekstiä ohjelmointitehtävissä. Ehkä haluat muuttaa useita samanlaisia sanoja koodikappaleessa tai korjata kirjoitusvirheitä nopeasti. Haskellilla tämä onnistuu helposti ja tehokkaasti.
+Usein ohjelmoinnissa joudutaan muokkaamaan tekstiä, esimerkiksi korvaamaan sana toisella. Tässä blogikirjoituksessa opimme, kuinka voimme helposti suorittaa hakua ja korvausta Haskell-kielellä.
 
-## Kuinka
+## Kuinka tehdä
 
-Haskellissa voit käyttää funktiota nimeltä `replace` ja antaa sille parametreina etsittävän merkkijonon, korvaavan merkkijonon ja alkuperäisen merkkijonon. Esimerkiksi, jos haluat korvata kaikki kissat koirilla, voit kirjoittaa `replace "kissat" "koirat" "Tänään näin paljon kissoja."`. Tämä palauttaa uuden merkkijonon "Tänään näin paljon koiria.".
+Haskellissa tekstinhaku ja korvaus voidaan suorittaa käyttämällä `replace` funktiota `Data.Text` kirjastosta. Tässä on yksinkertainen esimerkki koodista, joka korvaa kaikki esiintymät sanan "tämä" merkkijonolla "se".
 
-Voit myös käyttää regex ilmaisuja `replaceRegex` funktion avulla. Tällä tavalla voit etsiä ja korvata monimutkaisia sanoja tai lausekkeita. Esimerkiksi, jos haluat korvata kaikki numerot merkkijonossa nollalla, voit kirjoittaa `replaceRegex "[0-9]+" "0" "1, 2, 3, 4, 5"`. Tämä palauttaa "0, 0, 0, 0, 0".
+```Haskell
+import Data.Text
 
-## Syväsukellus
+sampleText = "Tämä on esimerkki tekstistä."
 
-Haskellilla on monia muita hyödyllisiä funktioita, jotka ovat avuksi etsittäessä ja korvattaessa tekstiä. Joitakin hyödyllisiä ovat `map`, `filter` ja `concat`. Voit myös käyttää algebrallisia tyyppiluokkia kuten `Monoid` ja `Semigroup` helpottamaan manipulointia tekstiä.
+main = do
+    let modifiedText = replace "tämä" "se" sampleText
+    putStrLn modifiedText
+```
 
-On myös tärkeää muistaa, että Haskellissa merkkijonot ovat muuttumattomia eli funktiot eivät muuta alkuperäistä merkkijonoa vaan palauttavat uuden muutetun version. Tämä tekee Haskellista turvallisen ja luotettavan kielen tekstin käsittelyyn.
+Tulostus:
+
+```
+"Se on esimerkki tekstistä."
+```
+
+## Syvempi sukellus
+
+Haskellissa tekstinhaku ja korvaus voidaan suorittaa myös monimutkaisemmin käyttäen regex-ilmaisuja (`Data.Text.Regex`). Tässä esimerkissä korvaamme kaikki numerot välillä 0-9 sanalla "numero".
+
+```Haskell
+import Data.Text
+import Data.Text.Regex
+
+sampleText = "Tässä on 10 sanaa ja 5 lausetta."
+
+main = do
+    let regexPattern = mkRegex "[0-9]+"
+    let modifiedText = subRegex regexPattern sampleText "numero"
+    putStrLn modifiedText
+```
+
+Tulostus:
+
+```
+"Tässä on numero sanaa ja numero lausetta."
+```
 
 ## Katso myös
 
-- [Haskellin dokumentaatio merkkijonojen muokkaamiseen](https://www.haskell.org/hoogle/?hoogle=replace)
-- [Hakusanaopas regex ilmaisuihin Haskellissa](http://www.cis.upenn.edu/~cis194/fall14/solutions/07%20Parsec.html)
-- [Artikkeli merkkijonojen muuttumattomuudesta Haskellissa](https://wiki.haskell.org/Monomorphism_restriction)
+- [Regex ilmentymien käyttö yleisesti](https://www.regular-expressions.info/)
+- [Haskell teksti ja merkkijono käsittely](https://wiki.haskell.org/Strings_and_text)

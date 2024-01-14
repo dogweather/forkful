@@ -1,39 +1,42 @@
 ---
 title:    "Elixir: Das aktuelle Datum erhalten"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-Mein Name ist Anna und ich werde heute über die Programmiersprache Elixir schreiben. Elixir ist eine funktionale Programmiersprache, die für ihre Skalierbarkeit und Ausfallsicherheit bekannt ist. In diesem Blogpost gebe ich euch eine Einführung in das Arbeiten mit Datum in Elixir.
-
 ## Warum
 
-Das Abrufen des aktuellen Datums mag auf den ersten Blick keine wichtige Aufgabe erscheinen, aber es kann sehr nützlich sein, wenn wir Anwendungen entwickeln, die beispielsweise Zeiträume oder Verfallsdaten verarbeiten müssen. Auch für die Fehlerbehebung kann das aktuelle Datum sehr hilfreich sein.
+Elixir ist eine angesagte Programmiersprache, die immer mehr Aufmerksamkeit von Entwicklern auf der ganzen Welt gewinnt. Möglicherweise fragen Sie sich, warum Sie sich die Mühe machen sollten, das aktuelle Datum in Elixir zu erhalten. Die Wahrheit ist, dass es in vielen Anwendungsfällen sehr nützlich sein kann, das Datum als Teil Ihrer Programmlogik zu haben. Sei es für die Aufzeichnung von Zeitstempeln, die Berechnung von Altersangaben oder einfach nur um Ihr Programm dynamischer zu gestalten, der Zugriff auf das aktuelle Datum ist eine wichtige Funktion in jeder Programmiersprache.
 
 ## Wie man das aktuelle Datum in Elixir erhält
 
-Das Abrufen des aktuellen Datums in Elixir ist sehr einfach. Dafür verwenden wir die Funktion `DateTime.utc_now()`, die uns das aktuelle Datum im UTC-Format zurückgibt. Wir können dann die Funktion `DateTime.to_local()` verwenden, um das Datum in unsere lokale Zeitzone zu konvertieren.
+Das Abrufen des aktuellen Datums in Elixir ist sehr einfach und unkompliziert. Alles, was Sie tun müssen, ist die `Date.utc_today` Funktion aufzurufen und das zurückgegebene Datum entsprechend zu verarbeiten. Hier ist ein Beispiel:
 
 ```Elixir
-DateTime.utc_now()  # => ~U[2021-05-04 16:30:00Z]
-DateTime.to_local(DateTime.utc_now())  # => ~U[2021–05-04 18:30:00+02:00]
+def get_current_date() do
+  today = Date.utc_today()
+  IO.puts("Das aktuelle Datum ist #{today}")
+end
 ```
 
-Wir können auch nur das Datum ohne Uhrzeit erhalten, indem wir die Funktion `Date.utc_today()` verwenden.
+Dieser Code ruft die `get_current_date` Funktion auf und gibt das aktuelle Datum aus. Wenn Sie diesen Code in Ihrer Elixir-Konsole ausführen, sehen Sie etwas wie dieses als Output:
 
-```Elixir
-Date.utc_today()  # => ~D[2021-05-04]
+```
+Das aktuelle Datum ist 2020-11-11
 ```
 
-## Tiefere Einblicke
+Natürlich können Sie die Ausgabe auch anpassen, je nachdem, wie Sie das Datum verwenden möchten. Die `Date.utc_today` Funktion unterstützt auch optionale Argumente wie den Zeitbereich (`:gregorian` oder `:julian`) und die Zeitzone (`Date.utc_now()`), die spezifiziert werden können, um die Ergebnisse weiter anzupassen.
 
-Wenn wir in Elixir mit Datum arbeiten, verwenden wir normalerweise die `DateTime`- und `Date`-Module aus der Standardbibliothek. Diese Module bieten viele Funktionen, um mit Datum und Uhrzeit zu arbeiten. Einige nützliche Funktionen sind zum Beispiel `DateTime.add`, um eine bestimmte Anzahl von Tagen, Stunden oder Minuten zu einem Datum hinzuzufügen, oder `DateTime.diff`, um die Differenz zwischen zwei Datumswerten zu berechnen.
+## Tiefergehende Informationen zum aktuellen Datum
 
-Es gibt auch ein praktisches Tool namens Ecto, das häufig in Elixir-Projekten verwendet wird und eine Datenbank-Abstraktionsschicht bietet. Ecto bietet auch Unterstützung für das Arbeiten mit Datum und Zeit und verschiedene Funktionen, um Datums- und Zeitspalten in Datenbankabfragen zu verwenden.
+Wenn Sie mehr über die genauen Details des aktuellen Datums in Elixir erfahren möchten, gibt es einige interessante Informationen, die Sie sich anschauen können. Zum Beispiel verwendet Elixir das Erlang Kalendermodul, um das Datum zu berechnen, wodurch verschiedene Funktionen wie `Date.diff` und `Date.add` verfügbar werden, um das Datum in verschiedene Richtungen zu manipulieren.
+
+Darüber hinaus kann das Elixir-Datumsformat auch mit dem ISO-8601-Standard kompatibel sein, der in vielen anderen Programmen und Sprachen verwendet wird. Dies ist besonders hilfreich, wenn Sie mit verschiedenen Datumsformaten arbeiten und sicherstellen möchten, dass sie kompatibel sind.
 
 ## Siehe auch
 
-- [Elixir-Dokumentation zum Datum](https://hexdocs.pm/elixir/DateTime.html)
-- [Ecto-Dokumentation zum Datum und Zeit](https://hexdocs.pm/ecto/Ecto.DateTime.html)
-- [Elixir School: Datums- und Zeitmanipulation](https://elixirschool.com/de/lessons/basics/date-time/)
+- [Elixir School: Dates and Times](https://elixirschool.com/de/lessons/advanced/dates)
+- [Elixir Documentation: Date](https://hexdocs.pm/elixir/Date.html)
+- [Elixir Forum: Getting current date in Elixir](https://elixirforum.com/t/getting-current-date-in-elixir/4966)

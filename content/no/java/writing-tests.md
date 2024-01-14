@@ -1,43 +1,54 @@
 ---
 title:    "Java: Skrive tester"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive tester i Java-programmering
+# Hvorfor
 
-Å skrive tester er en viktig del av Java-programmering, da det sikrer kvaliteten og påliteligheten til koden din. Tester hjelper deg med å identifisere eventuelle feil eller mangler i koden din, slik at du kan rette dem før de påvirker brukeropplevelsen. De kan også brukes til å dokumentere koden din og gjøre det enklere for andre å forstå den. Derfor er det viktig for alle som programmerer i Java å mestre kunsten av å skrive effektive tester.
+Å skrive tester er en viktig del av utviklingsprosessen i Java-programmering. Det hjelper deg med å identifisere og forebygge feil i koden din, og sikrer at programmet fungerer som forventet. Å skrive gode tester kan også spare mye tid og stress på sikt.
 
-## Hvordan skrive tester i Java
+# Hvordan gjøre det
 
-Å skrive tester i Java kan gjøres ved hjelp av et testrammeverk som JUnit, som er et av de mest brukte testrammeverkene i Java. La oss se på et enkelt eksempel på hvordan vi kan skrive en test for en enkel metode som legger sammen to tall:
+For å skrive tester i Java, må du først lage en egen testklasse som inneholder dine testmetoder. La oss se på et eksempel:
 
-```Java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
-public class CalculatorTest {
+```java
+public class MinKlasseTest {
 
     @Test
-    public void testAdd() {
-        Calculator calc = new Calculator();
-        int result = calc.add(2, 3);
-        assertEquals(5, result);
+    public void testFunksjon1() {
+        // Sett opp data
+        // Kjør funksjonen som skal testes
+        // Sammenlign forventet resultat med faktisk resultat
+        // Assert metoder for å verifisere resultatene
+    }
+
+    @Test
+    public void testFunksjon2() {
+        // Sett opp data
+        // Kjør funksjonen som skal testes
+        // Sammenlign forventet resultat med faktisk resultat
+        // Assert metoder for å verifisere resultatene
     }
 }
 ```
 
-I dette eksempelet oppretter vi en testklasse som heter "CalculatorTest" og importerer testpakkene fra JUnit. Deretter oppretter vi en "testAdd" metode som bruker "assertEquals" for å sammenligne resultatet av metoden "add" med forventet verdi. Ved å kjøre denne testen vil den enten passere eller feile, avhengig av om metoden fungerer som forventet.
+Her har vi opprettet en testklasse, kalt "MinKlasseTest", og to testmetoder "testFunksjon1" og "testFunksjon2". Inne i hver testmetode setter vi opp data, kjører funksjonen som skal testes og sammenligner resultatene ved hjelp av assert metoder. Dette lar oss verifisere om funksjonen gir riktig resultat for forskjellige tilfeller.
 
-## Detaljert dykk i skriving av tester
+Det er også viktig å huske å bruke annotasjonen "@Test" før hver testmetode for at den skal bli kjørt som en test. Du kan også bruke andre annotasjoner som "@Before" og "@After" for å sette opp og rydde opp etter testene.
 
-I tillegg til å teste enkelte metoder, kan vi også skrive tester som dekker større deler av koden vår, for eksempel en hel klasse eller en gruppe av klasser. I tillegg til å forbedre kvaliteten på koden vår, sikrer dette også at endringer i koden vår ikke fører til uventede feil andre steder. En annen viktig del av skrivingen av tester er å lære å identifisere muligheter for å "mocke" objekter. Dette betyr å etterligne eksterne avhengigheter i testmiljøet for å gjøre testene våre mer isolert og uavhengige.
+# Dypdykk
 
-## Se også
+Å skrive gode tester innebærer å dekke alle deler av koden din og sikre at de fungerer som forventet. Det er viktig å skrive tester som er uavhengige av hverandre, slik at et feilfunksjonspunkt ikke påvirker resten av testene.
 
-For å lære mer om hvordan du skriver effektive tester i Java, kan du sjekke ut disse nyttige lenkene:
+En annen viktig ting å huske på er å ha tilstrekkelig testdekning for koden din. Dette betyr å sørge for at alle grenseverdier og potensielle feil blir testet. Å skrive tester for hjelpefunksjoner og grensesnitt er også viktig for å få en grundig testdekning.
 
-- JUnit offisiell dokumentasjon: https://junit.org/junit5/docs/current/user-guide/
-- Testdrevet utvikling (TDD) i Java: https://www.infoq.com/articles/test-driven-development-java/
-- Mockito - et populært mockito-rammeverk for Java: https://site.mockito.org/
+Det finnes også flere verktøy og rammeverk som kan hjelpe deg med å skrive, kjøre og rapportere tester i Java. Noen av de mest populære er JUnit, TestNG og Mockito. Utforsk disse og finn ut hvilket som passer best for dine behov.
+
+# Se også
+
+- [Java Testing Tutorial på baeldung.com](https://www.baeldung.com/java-testing)
+- [JUnit User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [TestNG Beginner's Guide](https://testng.org/doc/documentation-main.html)

@@ -1,67 +1,79 @@
 ---
-title:    "C++: 匹配模式的字符删除"
+title:    "C++: 删除匹配模式的字符"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：我们经常会遇到在编程中要删除某些特定模式的字符的情况，这是为了清理数据或者更有效地处理文本。
+## 为什么要删除匹配模式的字符
 
-如何做：我们可以使用C++中的string类的erase函数来实现这个功能。首先，我们需要创建一个字符串对象，然后通过调用erase函数来删除匹配的字符。下面是一个示例代码：
+在编程中，有时会遇到需要删除字符的情况。而有时，我们可能不想一个一个手动删除，而是想要用一种更高效的方式来删除特定的字符。这时候，我们可以使用删除匹配模式的字符的方法来完成这个任务。
+
+## 如何操作
+
+下面是一个使用C++来删除匹配模式字符的例子： 
+
+```C++
+#include <bits/stdc++.h> 
+#define MAX 100 
+
+using namespace std; 
+
+// 函数来删除给定的字符 
+int deleteCharacters(char str[], char to_be_deleted) 
+{ 
+	int count = 0; 
+
+	// 遍历整个数组
+	for (int i = 0; str[i]; i++) { 
+
+		// 如果遇到匹配的字符，就跳过
+		if (str[i] == to_be_deleted) 
+			continue; 
+
+		// 否则，将字符复制到新的数组中
+		str[count++] = str[i]; 
+	} 
+	str[count] = '\0'; 
+
+	return count; 
+} 
+
+int main() 
+{ 
+	// 例子输入
+	char str[] = "Hello World!"; 
+	char to_be_deleted = 'l'; 
+	
+	// 调用函数来删除给定的字符
+	int num = deleteCharacters(str, to_be_deleted); 
+
+	// 输出结果
+	cout << "String after deleting " << num << " " << to_be_deleted << "'s: " << str; 
+
+	return 0; 
+} 
+```
+
+输出结果应该为：
 
 ```
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main(){
-    //创建字符串对象
-    string str = "Hello, World!";
-
-    //删除所有包含'o'的字符
-    str.erase(remove(str.begin(), str.end(), 'o'), str.end());
-
-    //输出结果，将输出"Hell, Wrld!"
-    cout << str << endl;
-
-    return 0;
-}
+String after deleting 2 l's: Heo Word!
 ```
 
-深入了解：在上面的示例中，我们使用remove函数来删除符合条件的字符，并且结合erase函数来实现最终的删除操作。remove函数接受三个参数，分别是需要修改的字符串的起始和结束位置，以及要删除的字符。它会将这个字符串中所有匹配的字符放到字符串的末尾，并返回一个指向新的结尾位置的迭代器。然后，我们再通过erase函数将新的结尾位置之后的部分删除，从而实现最终的删除操作。需要注意的是，这种方法并不会改变原有的字符串对象，而是返回一个新的字符串。
+## 深入了解
 
-另外，我们还可以结合正则表达式来删除匹配的字符，这样能够更精准地定位需要删除的字符。比如，我们可以使用regex_replace函数来代替remove和erase函数，实现同样的效果。同时，使用这种方法还可以灵活地处理不同的匹配模式，从而实现更多的文本处理功能。
+当我们删除匹配模式的字符时，需要考虑一些边界情况和特殊情况。例如，如果字符串中有多个匹配字符，我们应该删除所有匹配的字符，而不仅仅是第一个。另外，我们也需要注意被删除字符后面的字符是否需要移动，以保持字符串的连续性。
 
-了解更多关于C++删除字符的方法，请参考以下链接：
+此外，如果我们想要删除的字符不仅仅是一个字符，而是一个字符串，我们也可以使用类似的方法来删除。
 
-- https://www.cplusplus.com/reference/string/string/erase/
-- https://www.geeksforgeeks.org/remove-characters-from-a-string-in-cpp/
-- https://www.techiedelight.com/remove-character-string-cpp/
+## 查看更多
 
-参考链接：
+- [C++字符串函数参考](https://www.runoob.com/cplusplus/cpp-standard-library-string-functions.html)
+- [C++字符串与字符数组相关操作](https://blog.csdn.net/fengtao5557/article/details/79814002)
+- [C++指针与数组的深入理解](https://www.cnblogs.com/mirage003/p/9956716.html)
 
-### 参考链接
+## 参考来源
 
-了解更多关于C++删除字符的方法，请参考以下链接：
-
-- https://www.cplusplus.com/reference/string/string/erase/
-- https://www.geeksforgeeks.org/remove-characters-from-a-string-in-cpp/
-- https://www.techiedelight.com/remove-character-string-cpp/
-
-另外，你也可以了解更多关于正则表达式的内容，来进一步提升文本处理的能力。例如：
-
-- https://blog.csdn.net/woi644/article/details/100133264
-- https://www.yiibai.com/regex/cpp-regex-replace.html
-
-### 请看
-
-最后要说的是，删除字符匹配模式是一个常用且有用的编程技巧，它可以帮助我们更高效地处理文本数据。希望本文能够为你提供帮助，谢谢阅读！
-
-### 请看
-
-如果你想了解更多关于C++的知识，请参考以下链接：
-
-- https://www.runoob.com/cplusplus/cpp-tutorial.html
-- https://blog.csdn.net/weixin_45390505/article/details/100251759
-- https://www.liaoxuefeng.com/wiki/1022910821149312
+此文章主要参考自 [GeeksforGeeks](https://www.geeksforgeeks.org/remove-all-occurrences-of-a-character-in-a-string/)

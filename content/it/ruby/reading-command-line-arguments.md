@@ -1,67 +1,38 @@
 ---
-title:    "Ruby: Lettura degli argomenti della riga di comando"
+title:    "Ruby: Interpretazione degli argomenti della linea di comando"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere gli argomenti della riga di comando in Ruby
+## Perché
 
-Leggere gli argomenti della riga di comando è un'abilità fondamentale per ogni programmatore Ruby. Questa pratica consente di creare programmi interattivi e dinamici, in grado di ricevere input dall'utente.
+Scrivere codice in Ruby può sembrare intimidatorio per molti, ma una delle sue caratteristiche più utili è la capacità di leggere gli argomenti della riga di comando. Questo significa che è possibile fornire input ai programmi Ruby direttamente dal terminale, senza dover modificare il codice ogni volta. In questo articolo spiegheremo come leggere gli argomenti della riga di comando in Ruby e come questo può semplificare il processo di sviluppo.
 
-## Come leggere gli argomenti della riga di comando in Ruby
+## Come Fare
 
-In Ruby, gli argomenti della riga di comando sono visualizzati come un array denominato `ARGV`. Per accedere a questo array, è sufficiente utilizzare il metodo `ARGV`. Ecco un esempio di codice che stampa tutti gli argomenti inseriti nella riga di comando:
-
-```Ruby
-puts "Gli argomenti della riga di comando sono: #{ARGV}"
-```
-
-Se eseguiamo il programma con `ruby nome_programma.rb arg1 arg2`, l'output sarà:
-
-```
-Gli argomenti della riga di comando sono: ["arg1", "arg2"]
-```
-
-Possiamo anche accedere a un singolo argomento utilizzando l'indice desiderato come per un normale array. Ad esempio, se vogliamo stampare solo il secondo argomento, possiamo utilizzare `ARGV[1]`:
+Per leggere gli argomenti della riga di comando in Ruby, è necessario utilizzare l'oggetto ARGV. Questo contiene tutti gli argomenti passati al programma tramite la riga di comando. Vediamo un esempio:
 
 ```Ruby
-puts "L'argomento inserito è: #{ARGV[1]}"
+# Esempio di come leggere gli argomenti dalla riga di comando
+nome = ARGV[0]
+cognome = ARGV[1]
+
+puts "Ciao #{nome} #{cognome}! Benvenuto nel mondo Ruby!"
 ```
 
-L'output sarà quindi:
+Se eseguiamo questo codice passando "John" e "Doe" come argomenti, l'output sarà "Ciao John Doe! Benvenuto nel mondo Ruby!".
 
-```
-L'argomento inserito è: arg2
-```
+Ogni elemento nell'oggetto ARGV è una stringa, quindi possiamo utilizzare i metodi delle stringhe per manipolare e accedere ai valori degli argomenti. Ad esempio, se vogliamo ottenere la lunghezza del primo argomento passato, possiamo scrivere `ARGV[0].length`.
 
-## Approfondimento su come leggere gli argomenti della riga di comando
+## Approfondimento
 
-Oltre all'utilizzo del metodo `ARGV`, è possibile utilizzare la gemma `optparse` per facilitare la lettura e l'interpretazione degli argomenti della riga di comando. Questa gemma permette di creare opzioni e argomenti con una sintassi intuitiva. Ad esempio, possiamo creare un'opzione per stampare una stringa personalizzata come output:
+Oltre a leggere semplici argomenti, possiamo anche gestire opzioni e valori di flag attraverso il modulo OptionParser di Ruby. Questo ci permette di specificare opzioni e valori per il nostro programma nella riga di comando, rendendolo più flessibile e versatile.
 
-```Ruby
-require 'optparse'
+Per maggiori informazioni su come utilizzare OptionParser, è possibile consultare la documentazione ufficiale di Ruby qui: https://ruby-doc.org/stdlib-2.6.3/libdoc/optparse/rdoc/OptionParser.html
 
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "Utilizzo: esempio.rb [opzioni]"
-
-  opts.on("-s", "--string STRING",
-          "Stampa una stringa personalizzata") do |s|
-    options[:string] = s
-  end
-end.parse!
-
-puts "La stringa inserita è: #{options[:string]}" if options[:string]
-```
-
-Eseguendo il programma con `ruby nome_programma.rb -s "Ciao mondo!"`, l'output sarà:
-
-```
-La stringa inserita è: Ciao mondo!
-```
-
-## Vedi anche
-
-- [Documentazione ufficiale di Ruby sugli argomenti della riga di comando](https://ruby-doc.org/core-2.7.1/ARGF.html)
-- [Documentazione della gemma OptParse](https://github.com/ruby/optparse)
+## Vedi Anche
+- https://www.rubyguides.com/2019/06/ruby-command-line-arguments/
+- https://www.tutorialspoint.com/ruby/ruby_command_line_arguments.htm
+- https://www.geeksforgeeks.org/command-line-arguments-in-ruby-programming/ (in inglese)

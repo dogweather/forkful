@@ -1,41 +1,36 @@
 ---
 title:    "C: Iniciando um novo projeto"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto?
+## Por que começar um novo projeto em C?
 
-Muitos programadores estão sempre buscando por novos desafios e maneiras de melhorar suas habilidades. Começar um novo projeto em C é uma ótima maneira de testar suas habilidades e aprender novos conceitos e técnicas. Além disso, criar algo do zero pode ser extremamente gratificante e pode levar a novas oportunidades profissionais.
+Se você é um entusiasta da programação ou está iniciando sua jornada na área, provavelmente já ouviu falar da linguagem de programação C. Criada em 1972, C é uma das linguagens mais antigas e amplamente usadas até hoje. Então, por que alguém iria iniciar um novo projeto em C? Existem muitas razões pelas quais C ainda é uma escolha popular para desenvolvedores de software. Com sua alta portabilidade, baixo nível de abstração e desempenho rápido, C é uma linguagem poderosa que pode ser usada em vários tipos de projetos, desde sistemas operacionais até jogos e aplicativos.
 
-## Como começar um novo projeto em C
+## Como começar um novo projeto em C?
 
-1. Primeiro, certifique-se de ter instalado um compilador C em sua máquina. Se não tiver, você pode baixar o GCC ou o Clang, que são populares e gratuitos.
-2. Abra seu editor de código favorito e crie um novo arquivo .c.
-3. Comece escrevendo seu código, lembrando-se sempre da sintaxe básica da linguagem, como a falta de ponto e vírgula após instruções e a importância dos parênteses.
-4. Aqui está um exemplo de um programa simples que imprime "Olá mundo!" na tela:
+Se você nunca teve contato com C antes, pode parecer intimidante começar um novo projeto nessa linguagem. Mas não se preocupe, aqui está uma visão geral básica de como iniciar um projeto em C:
 
-```C
-#include <stdio.h>
+1. Primeiro, você precisará de um compilador C instalado em seu computador. Existem várias opções disponíveis, como o GCC ou o Clang, que são gratuitos e de código aberto.
+2. Escolha um ambiente de desenvolvimento integrado (IDE) para facilitar sua vida ao escrever e depurar seu código. Exemplos de IDEs populares incluem o Visual Studio Code e o Code::Blocks.
+3. Agora é hora de escrever seu código! Use o comando ```#include <stdio.h>``` para importar a biblioteca padrão em seu programa.
+4. Em seguida, use a função ```main()``` para iniciar seu programa. Tudo o que estiver dentro desta função será executado quando o programa for iniciado.
+5. A partir daqui, você pode começar a escrever seu código, declarando variáveis, usando estruturas de controle de fluxo e funções para realizar tarefas específicas.
+6. Compile seu código usando o compilador e, se não houver erros, você poderá executar seu programa e ver a saída no seu console.
 
-int main()
-{
-    printf("Olá mundo!");
-    return 0;
-}
-```
+## Uma visão mais profunda sobre iniciar um novo projeto em C
 
-5. Compile seu código usando o compilador escolhido e execute o programa resultante.
+Embora seja possível escrever programas em C com apenas um editor de texto e um compilador, usar um IDE pode facilitar muito o processo de desenvolvimento. Com recursos como realce de sintaxe, depuração e gerenciamento de projetos, você pode economizar tempo e tornar o processo de codificação mais eficiente.
 
-## Mergulho profundo
+Além disso, é importante aprender os conceitos básicos de C, como ponteiros e alocação dinâmica de memória, para escrever programas mais complexos e eficientes. Como C é uma linguagem de baixo nível, os desenvolvedores precisam ter um bom entendimento desses conceitos para tirar o máximo proveito dela.
 
-Iniciar um novo projeto em C é uma tarefa empolgante, mas também pode ser desafiadora. É importante lembrar de planejar bem antes de começar a escrever o código. Pense no objetivo do seu projeto e na melhor forma de alcançá-lo. Também é importante adicionar comentários adequados ao seu código para torná-lo mais compreensível e fácil de modificar no futuro.
-
-Outra dica importante é pesquisar e ler sobre códigos C já existentes para ter uma ideia de boas práticas e padrões de programação. Isso ajudará a garantir que seu código seja eficiente, legível e fácil de manter.
+Outra dica útil é utilizar bibliotecas de terceiros para simplificar o processo de criação e adicionar recursos extras ao seu programa. Existem muitas bibliotecas disponíveis para C, como a biblioteca gráfica SDL para jogos e a biblioteca de janelas GTK para aplicativos de desktop.
 
 ## Veja também
-
-- [Tutorial de introdução à linguagem C](https://tutorialspoint.com/cprogramming/index.htm)
-- [Guia de referência da sintaxe C](https://www.programiz.com/c-programming/c-syntax)
-- [Projeto em C para iniciantes: Jogo da Forca](https://github.com/helendb/project-samples/blob/master/forca.c)
+- [GCC](https://gcc.gnu.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [SDL](https://www.libsdl.org/)
+- [GTK](https://www.gtk.org/)

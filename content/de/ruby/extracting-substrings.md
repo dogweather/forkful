@@ -1,59 +1,38 @@
 ---
-title:    "Ruby: Auslesen von Teilzeichenfolgen"
+title:    "Ruby: Unterstrings extrahieren"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
-Eine der nützlichsten Techniken im Ruby-Programmieren ist das Extrahieren von Substrings. Diese Methode erlaubt es Ihnen, Teile von Strings basierend auf bestimmten Bedingungen auszuwählen und zu manipulieren. Es ist eine unverzichtbare Fähigkeit für die Bearbeitung von Texten und das Durchsuchen von Daten.
+## Warum
 
-## Wie gehts?
+Das Herausziehen von Teilbereichen aus Strings ist eine nützliche Funktion in der Ruby-Programmierung. Es ermöglicht uns, Teile eines Strings zu isolieren und spezifische Informationen zu extrahieren, die wir in unserem Code benötigen. In diesem Blogpost werde ich erklären, wie man dies in Ruby macht und warum es eine wichtige Fähigkeit ist, die jeder Ruby-Entwickler beherrschen sollte.
 
-Um einen Substring in Ruby zu extrahieren, verwenden Sie die `slice` oder `[]` Methode mit dem Index des Anfangs- und Endzeichen. Zum Beispiel, wenn wir den Substring "Ruby" aus dem String "Ich liebe Ruby-Programmieren" extrahieren wollen, würden wir Folgendes tun:
- 
-```Ruby
-text = "Ich liebe Ruby-Programmieren"
-substring = text.slice(8, 4)  # oder text[8, 4]
-puts substring  # Ausgabe: "Ruby"
-```
+## Wie man es macht
 
-Sie können auch `slice` oder `[]` mit Range-Objekten verwenden, um den Substring anhand von Zeichenpositionen auszuwählen. Zum Beispiel, um die ersten drei Zeichen aus dem String "Ruby ist einfach großartig" zu extrahieren, müssten wir Folgendes tun:
+Um Teilbereiche aus Strings zu extrahieren, verwenden wir die `[]`-Notation in Kombination mit dem Indexing-Operator `..`. Zum Beispiel könnten wir einen Teilbereich eines Strings mit dem folgenden Code isolieren:
 
 ```Ruby
-text = "Ruby ist einfach großartig"
-substring = text.slice(0..2)  # oder text[0..2]
-puts substring  # Ausgabe: "Rub"
+str = "Hallo, Welt!"
+puts str[0..4]
 ```
 
-Eine weitere Möglichkeit, Substrings in Ruby zu extrahieren, ist die Verwendung von regulären Ausdrücken. Mit Hilfe von RegEx können Sie Substrings basierend auf bestimmten Mustern auswählen und manipulieren. Zum Beispiel, um alle Vokale aus dem String "Hallo Welt" zu extrahieren, könnten wir Folgendes tun:
+Dies würde den Teilbereich "Hallo" des Strings ausgeben. Wir geben den Start- und Endindex des Teilbereichs an, den wir extrahieren möchten, und der Operator `..` zeigt an, dass wir ein offenes Ende haben. Dies bedeutet, dass der Endindex eingeschlossen ist. Beachten Sie, dass der erste Index eines Strings bei 0 beginnt.
 
-```Ruby
-text = "Hallo Welt"
-vowels = text.scan(/[aeiou]/)
-puts vowels.join("")  # Ausgabe: "aoe"
-```
+Es gibt auch andere Möglichkeiten, Teile eines Strings zu extrahieren, wie zum Beispiel mit dem `slice`-Befehl oder dem `scan`-Befehl. Es gibt jedoch keine Notation wie `str[start, length]`, um einen Teilbereich von einer bestimmten Länge zu extrahieren.
 
-## Tiefer Tauchen
+## Tiefere Einblicke
 
-Die `slice` und `[]` Methoden nehmen auch negative Indizes an, was es Ihnen ermöglicht, von hinten zu zählen. Zum Beispiel, um den letzten Buchstaben aus einem String zu extrahieren, könnten wir Folgendes tun:
+Es gibt einige wichtige Dinge zu beachten, wenn wir Teilbereiche aus Strings extrahieren. Zum Beispiel ist es wichtig zu wissen, dass der Indexierungsvorgang von links nach rechts startet. Dies bedeutet, dass der Endindex immer größer oder gleich dem Startindex sein muss. Wenn wir versuchen, ein Bereich mit einem Endindex zu extrahieren, der kleiner als der Startindex ist, wird ein leerer String zurückgegeben.
 
-```Ruby
-text = "Hallo"
-last_letter = text.slice(-1)  # oder text[-1]
-puts last_letter  # Ausgabe: "o"
-```
-
-Sie können auch die `slice!` oder `slice!` Methoden verwenden, um den ausgewählten Substring direkt aus dem ursprünglichen String zu entfernen. Zum Beispiel:
-
-```Ruby
-text = "Hallo Welt"
-text.slice!(6..8)  # text wird jetzt "Hallo"
-puts text  # Ausgabe: "Hallo"
-```
+Ein weiteres wichtiges Konzept ist das von sogenannten "negative indices". Wir können Teilbereiche eines Strings auch von hinten aus extrahieren, indem wir negative Indices verwenden. Zum Beispiel würde `str[-3..-1]` den Teilbereich "elt" ausgeben, da der letzte Buchstabe des Strings dem Index -1 entspricht.
 
 ## Siehe auch
 
-- [Ruby String Dokumentation] (https://ruby-doc.org/core-2.7.1/String.html)
-- [Reguläre Ausdrücke in Ruby] (https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Ruby Substrings-Beispiele] (https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- [Ruby String-Dokumentation] (https://ruby-doc.org/core-2.7.1/String.html)
+- [Ruby `[]`-Notation] (https://medium.com/launch-school/ruby-numbered-reference-and-indexing-196ab7113a8d)
+- [Ruby `slice`-Befehl] (https://medium.com/launch-school/ruby-slicing-strings-3b3a390fbd7b)
+
+Ich hoffe, dass dieser Blogpost Ihnen geholfen hat, das Konzept der Unterstring-Extraktion in Ruby besser zu verstehen. Es ist ein sehr nützliches Werkzeug, das Ihnen helfen wird, effizientere und kontrolliertere Codes zu schreiben. Viel Spaß beim Programmieren!

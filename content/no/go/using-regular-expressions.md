@@ -1,60 +1,41 @@
 ---
 title:    "Go: Å bruke regulære uttrykk"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du arbeider med Go-programmering, kan det hende du kommer over utfordrende oppgaver som krever behandling av tekstdata. I slike tilfeller kan det være lurt å bruke regulære uttrykk. Disse uttrykkene gjør det enklere å finne og manipulere tekst på en mer effektiv måte.
+Regulære uttrykk, eller regex, er et viktig verktøy for å håndtere tekstbaserte data i Go. Det tillater deg å finne og manipulere tekstbaserte mønstre, og gjør koding av komplekse søk og erstatninger enklere og mer effektivt.
 
 ## Hvordan
 
-For å bruke regulære uttrykk i Go, må du først importere pakken "regexp". Du kan deretter bruke funksjonen "MatchString" til å finne en bestemt streng i en tekst. La oss si at du ønsker å finne alle ord som starter med "go" i en tekst. Du kan bruke følgende kode:
+For å bruke regulære uttrykk i Go kan du bruke pakken "regexp". Først må du importere pakken ved å legge til ```"regexp"``` i importdeklarasjonen din. Deretter kan du lage et nytt regeltreffobjekt ved å bruke ```regexp.Compile()``` funksjonen. La oss si at vi ønsker å finne alle ord som begynner med bokstaven "a" i en streng:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // Opprett et regulært uttrykk som matcher ord som starter med "go"
-    regex := regexp.MustCompile(`go\w+`)
-
-    // Definer en tekst som skal undersøkes
-    tekst := "Jeg liker å programmere i Go, det er så gøy!"
-
-    // Bruk funksjonen MatchString for å finne alle matches og lagre det i et array
-    result := regex.FindAllString(tekst, -1)
-
-    // Iterer gjennom arrayet og skriv ut resultatet
-    for _, s := range result {
-        fmt.Println(s)
-    }
+	text := "apple and banana are my favorite fruits"
+	r := regexp.MustCompile(`a\w+`)
+	fmt.Println(r.FindAllString(text, -1)) // output: [apple and]
 }
 ```
-
-Output:
-```Go
-go, Go, gøy
-```
+Her har vi brukt regexet ```a\w+```, som betyr en bokstav "a" etterfulgt av en eller flere bokstaver eller tall. Du kan også bruke spesialtegn som plassholder for å finne mønstre. For eksempel kan ```\d``` brukes for å finne tall og ```\s``` for å finne mellomrom.
 
 ## Dypdykk
 
-Det finnes flere metoder i pakken "regexp" som du kan bruke for å gjøre det enklere å behandle tekstdata. Her er noen av dem:
+Regex kan være veldig kraftig, men det kan også være forvirrende og komplekst for nybegynnere. Det er viktig å forstå grunnleggende syntax og hvordan man bruker spesialtegn og plassholdere for å finne det riktige mønsteret. Det kan også være nyttig å bruke online verktøy som regex101.com for å teste og validere regex før du implementerer det i koden din.
 
-- `Match`: Brukes for å finne matchende strenger og returnerer en boolsk verdi avhengig av om det ble en match eller ikke.
-- `ReplaceAllString`: Brukes for å erstatte matchende strenger med en annen tekst.
-- `Split`: Brukes for å dele en tekst i et array basert på et gitt regulært uttrykk.
+## Se også
 
-Det finnes også flere regulære uttrykkstyper du kan bruke for å finne mer spesifikk tekst, som for eksempel tall, bokstaver, eller spesifikke mønstre.
-
-## Se Også
-
-- Regular expressions i Go-dokumentasjonen: https://golang.org/pkg/regexp/
-- Regulære uttrykk cheat sheet: https://www.debuggex.com/cheatsheet/regex/go
-- Video tutorial om bruk av regulære uttrykk i Go: https://www.youtube.com/watch?v=Y6ibmYa6cgc
+- [Go regex pakke dokumentasjon](https://golang.org/pkg/regexp/)
+- [Regulære uttrykk Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/go)
+- [regex101.com](https://regex101.com/)

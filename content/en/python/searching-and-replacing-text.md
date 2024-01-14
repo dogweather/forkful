@@ -1,66 +1,66 @@
 ---
 title:    "Python recipe: Searching and replacing text"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Searching and replacing text is a common task in any programming language. It allows you to quickly and efficiently make changes to your code without having to manually go through each line. In Python, there are various ways to search and replace text, making it a valuable skill for any programmer.
+## Why
 
-## How To 
-To perform a search and replace in Python, you can use the `replace()` function. This function takes in two parameters, the old string and the new string, and returns a new string with the specified replacement. For example:
+Searching and replacing text is a common task in any programming language, and Python is no exception. This process allows for quick and efficient changes to be made in a large body of text or code, saving time and effort in the long run.
+
+## How To
+
+To search and replace text in Python, the `replace()` method can be used. This method takes two arguments, the text to be replaced and the text to replace it with.
+
+For example, if we have a string `sentence = "I like to eat apples"`, and we want to change "apples" to "oranges", we can use the `replace()` method as follows:
 
 ```Python
-sentence = "I love programming in Python!"
-new_sentence = sentence.replace("Python", "JavaScript")
-
+new_sentence = sentence.replace("apples", "oranges")
 print(new_sentence)
 ```
 
-This will output: `I love programming in JavaScript!`
+The output will be:
 
-You can also use `replace()` to replace multiple instances of a string. For example:
+`I like to eat oranges`
+
+The `replace()` method can also be used on input from the user. For instance, if we want to replace a certain word with another word based on user input, we can use the `input()` function and store the user's input in a variable. This can then be passed as an argument to the `replace()` method.
 
 ```Python
-sentence = "Python is my favorite programming language. Python is so versatile."
-new_sentence = sentence.replace("Python", "JavaScript", 2)
-
+search_word = input("Enter the word to be replaced: ")
+replace_word = input("Enter the word to replace it with: ")
+new_sentence = sentence.replace(search_word, replace_word)
 print(new_sentence)
 ```
 
-This will output: `JavaScript is my favorite programming language. JavaScript is so versatile.` Notice how the third parameter specifies the number of replacements to make. In this case, we only want to replace the first two instances of "Python".
+## Deep Dive
 
-Another useful function for search and replace is `re.sub()` from the `re` module. This function allows you to use regular expressions to search and replace text. For example:
+The `replace()` method is case-sensitive, meaning if the text to be replaced is in uppercase, it will only replace those specific characters. To replace all instances of a text, regardless of case, we can use the `lower()` method in conjunction with `replace()`.
 
 ```Python
-import re
-
-sentence = "I love using Python for web development!"
-new_sentence = re.sub(r'Python', 'JavaScript', sentence)
-
+sentence = "I like to eat apples but i also like APPLE juice"
+new_sentence = sentence.lower().replace("apple", "orange")
 print(new_sentence)
 ```
 
-This will output: `I love using JavaScript for web development!` Regular expressions can give you more flexibility when searching for patterns in your text.
+The output will be:
 
-## Deep Dive 
-When using `replace()` or `re.sub()`, it's important to note that the original string is not modified. Instead, a new string with the replacement is returned. If you want to modify the original string, you can assign the new string to the same variable, like this:
+`i like to eat oranges but i also like orange juice`
+
+Additionally, the `replace()` method can also be used on specific parts of a string. To do this, we can use string slicing to specify the starting and ending index of the portion we want to replace.
 
 ```Python
-sentence = "I love coding in Python!"
-sentence = sentence.replace("Python", "JavaScript")
-
-print(sentence)
+sentence = "I like to eat apples"
+new_sentence = sentence[:7].replace("like", "love") + sentence[7:]
+print(new_sentence)
 ```
 
-This will output: `I love coding in JavaScript!`
+The output will be:
 
-It's also worth mentioning that `replace()` and `re.sub()` are case-sensitive. So if you want to replace a string, make sure you use the exact same casing.
+`I love to eat apples`
 
-## See Also 
-Here are some additional resources for learning about searching and replacing text in Python:
+## See Also
 
-- [Python String Methods](https://www.programiz.com/python-programming/methods/string)
-- [Regular Expressions in Python](https://www.geeksforgeeks.org/python-regex-tutorial/)
-- [Regular Expression Syntax Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/python)
+- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+- [Official Python Documentation on `replace()`](https://docs.python.org/3/library/stdtypes.html#str.replace)

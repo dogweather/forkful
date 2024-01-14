@@ -1,47 +1,43 @@
 ---
 title:    "Bash: Comparaison de deux dates"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La comparaison de deux dates est une tâche courante dans la programmation Bash, que ce soit pour vérifier la validité d'une entrée utilisateur ou pour effectuer des opérations sur des fichiers basées sur leur date de création. Savoir comment comparer des dates correctement est donc une compétence importante pour tout programmeur Bash.
+Lorsque vous créez des scripts Bash, il est souvent nécessaire de comparer deux dates pour prendre une décision basée sur leur différence. Que ce soit pour effectuer une sauvegarde régulière de vos fichiers ou pour vérifier si un certificat SSL a expiré, la comparaison de dates peut être un outil très utile.
 
 ## Comment faire
 
-Tout d'abord, pour comparer deux dates, nous devons nous assurer qu'elles sont au bon format. En Bash, la commande `date` peut être utilisée pour obtenir la date et l'heure actuelles dans différents formats. Par exemple, pour obtenir la date au format `JJ/MM/AAAA`, nous pouvons utiliser `date +"%d/%m/%Y"`.
-
-Ensuite, nous pouvons stocker ces valeurs dans des variables et les comparer en utilisant les opérateurs de comparaison tels que `==` (égal), `!=` (différent), `<` (inférieur), `>` (supérieur), `<=` (inférieur ou égal) et `>=` (supérieur ou égal).
-
-En voici un exemple de comparaison de dates et de sortie correspondante :
+Pour comparer deux dates en Bash, il vous suffit d'utiliser la commande `date -d` suivie des deux dates à comparer, puis de spécifier comment vous souhaitez les comparer. Voici un exemple de script pour comparer la date actuelle avec une date donnée :
 
 ```Bash
-# Stocker les dates dans des variables
-date1=$(date -d "10 days ago" +"%d/%m/%Y")
-date2=$(date -d "3 days ago" +"%d/%m/%Y")
+#!/bin/bash
 
-# Comparer les dates
-if [[ $date1 > $date2 ]]; then
-  echo "La première date est postérieure à la deuxième date."
+date1="2021-01-01" # Date à comparer
+date2=$(date +"%F") # Date actuelle
+
+if [ $(date -d "$date1" +%s) -lt $(date -d "$date2" +%s) ]
+then
+  echo "$date1 est antérieure à $date2"
 else
-  echo "La première date est antérieure à la deuxième date."
+  echo "$date1 est postérieure à $date2"
 fi
-
-# Sortie : La première date est postérieure à la deuxième date.
 ```
 
-Pour des comparaisons plus complexes, nous pouvons également utiliser les commandes `date` ou `awk` pour extraire des informations spécifiques des dates, telles que le jour de la semaine ou le mois, et les comparer ensuite.
+Dans cet exemple, nous utilisons la commande `date -d` pour convertir les dates en format UNIX et les comparer en utilisant l'opérateur `-lt` (inférieur). Vous pouvez également utiliser des comparaisons telles que `-gt` (supérieur) ou `-eq` (égal).
 
-## Plongée en profondeur
+## Plongez plus profondément
 
-Les dates peuvent être comparées selon différentes unités de temps telles que les jours, les mois ou les années. Cependant, il est important de noter que la comparaison de dates peut également prendre en compte l'heure dans certains cas. Par exemple, si nous voulons comparer deux fichiers basés sur leur date de modification, il peut être utile de définir la précision à l'heure afin de ne pas confondre différents fichiers créés le même jour.
+En comparant deux dates en Bash, il est important de comprendre comment le système d'exploitation les interprète. Le format de date le plus couramment utilisé en Bash est celui des "secondes depuis l'époque UNIX" (1er janvier 1970). Il est également possible de les convertir en "jours depuis l'époque UNIX" en ajoutant l'option `--iso-8601=seconds` à la commande `date -d`.
 
-De plus, en plus des opérateurs de comparaison, il existe également différentes commandes telles que `find` ou `stat` qui peuvent être utiles pour comparer les dates des fichiers dans un script Bash.
+Il est également important d'être conscient des différences entre les dates locales et les dates universelles. La conversion en "jours depuis l'époque UNIX" peut être utile pour éviter les problèmes liés aux fuseaux horaires.
 
 ## Voir aussi
 
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/)
-- [Comparaison de variables avec Bash](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-- [Commande `date` dans Bash](https://www.geeksforgeeks.org/date-command-linux-examples/)
+- [Documentation officielle de la commande `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+- [Guide pour utiliser la commande `date` en Bash](https://www.lifewire.com/date-command-linux-unix-4097048)
+- [Plus d'informations sur le format de date UNIX](https://www.epochconverter.com/)

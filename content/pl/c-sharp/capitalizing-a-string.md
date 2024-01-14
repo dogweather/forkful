@@ -1,35 +1,54 @@
 ---
-title:    "C#: Zmiana wielkości litery w ciągu znaków."
+title:    "C#: Zapisywanie napisu dużymi literami"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego powinieneś zainteresować się formatowaniem tekstu w języku C#?
+## Dlaczego warto używać funkcji "string.ToUpper()" w języku C#?
 
-Jeśli jesteś początkującym programistą, może wydawać ci się, że formatowanie tekstu to drobny i nieistotny szczegół. Jednak w rzeczywistości jest to bardzo użyteczna umiejętność, która może ułatwić wiele codziennych zadań programistycznych. Dlatego właśnie warto poznać możliwości formatowania tekstu w języku C#.
+Często zdarza się, że w trakcie programowania musimy zmienić tekst z małych liter na wielkie lub odwrotnie. W takich przypadkach przydatna jest funkcja "string.ToUpper()", która pozwala na łatwe i szybkie zmienianie wielkości liter w danym stringu.
 
-## Jak to zrobić?
+## Jak używać funkcji "string.ToUpper()" w języku C#?
 
-Sposób formatowania tekstu w języku C# jest bardzo prosty i wykorzystuje metodę `ToUpper()` do konwersji czcionki na wielkie litery. Poniżej przedstawiam przykładowy kod w języku C#:
+Aby użyć funkcji "string.ToUpper()", należy podać jako argument tekst, który chcemy zmienić na wielkie litery. Na przykład:
 
 ```C#
-string imie = "jan";
-string imieWielkimi = imie.ToUpper();
-
-Console.WriteLine(imieWielkimi);
+string text = "programowanie w C#";
+string capitalizedText = text.ToUpper();
+Console.WriteLine(capitalizedText);
 ```
 
-Output: JAN
+Ten kod zwróci na konsoli tekst "PROGRAMOWANIE W C#".
 
-Jak widać, wykorzystanie metody `ToUpper()` pozwala na szybką i łatwą zmianę formatowania tekstu. Możliwe jest również wykorzystanie innych metod, takich jak `ToLower()` czy `Replace()` do dalszej edycji tekstu.
+Możemy również wykorzystać funkcję "string.ToUpper()" przy wprowadzaniu danych przez użytkownika, aby zapewnić jednolitą formę wpisanego tekstu.
 
-## Głębszy zanurzenie
+```C#
+Console.WriteLine("Podaj swoje imię:");
+string name = Console.ReadLine();
+string formattedName = name.ToUpper();
+Console.WriteLine("Witaj, " + formattedName + "!");
+```
 
-Istnieje wiele różnych sposobów na formatowanie tekstu w języku C#, w zależności od potrzeb i wymagań. Dzięki temu możemy dostosować wygląd tekstu do naszych potrzeb, co może być bardzo przydatne w wielu sytuacjach. Przykładowe zastosowania formatowania tekstu w języku C# to generowanie raportów, poprawa wyglądu interfejsu użytkownika czy wyświetlanie danych w czytelniejszy sposób.
+Teraz użytkownik może wpisać swoje imię z małych lub wielkich liter, a program zawsze wyświetli je w formacie z dużymi literami. To tylko jedno z wielu przykładów wykorzystania funkcji "string.ToUpper()" w programowaniu.
 
-## Zobacz także
+## Głębsze spojrzenie na funkcję "string.ToUpper()"
 
-- [Tutorial: Formatowanie tekstu w języku C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
-- [Przykłady wykorzystania formatowania tekstu w języku C#](https://www.c-sharpcorner.com/UploadFile/20abe7/coded-examples-for-string-formatting-in-Cs/)
-- [Dokumentacja metody ToUpper() w języku C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+Podczas zmieniania wielkości liter, funkcja "string.ToUpper()" korzysta z aktualnego ustawienia języka systemu operacyjnego. Jeśli chcemy, aby tekst zmieniał się zgodnie z innym językiem, możemy przekazać go jako drugi argument do funkcji. Na przykład:
+
+```C#
+string text = "uxe z małych na wielkie";
+string capitalText = text.ToUpper(new CultureInfo("pl-PL"));
+Console.WriteLine(capitalText);
+```
+
+Ten kod zwróci "UXE Z MAŁYCH NA WIELKIE", ponieważ użyliśmy polskiego języka jako drugiego argumentu.
+
+Funkcja "string.ToUpper()" także uwzględnia polskie znaki diakrytyczne, takie jak ą, ę, ć itp. Dzięki temu możemy zmienić wielkość liter bez obaw o utratę polskich znaków.
+
+## Zobacz też
+
+- Dokumentacja na temat funkcji "string.ToUpper()": https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper
+- Porównanie innych funkcji do zmiany wielkości liter w języku C#: https://www.c-sharpcorner.com/article/string-manipulation-methods-in-C-Sharp/
+- Przykłady użycia funkcji "string.ToUpper()" w praktyce: https://www.codegrepper.com/code-examples/csharp/c%23+toUpper

@@ -1,49 +1,39 @@
 ---
 title:    "Gleam: Escrevendo testes"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante para programadores iniciantes
+## Por que escrever testes em Gleam?
 
-Quando começamos a aprender a programar, muitas vezes sentimos a tentação de pular a etapa de escrever testes. Afinal, é mais divertido criar novas funções e ver nosso código funcionar do que escrever testes que parecem não servir para nada. Porém, a verdade é que escrever testes é uma parte fundamental do processo de programar e pode trazer muitos benefícios para desenvolvedores iniciantes.
+Escrever testes é uma prática essencial para garantir a qualidade e a estabilidade do seu código em Gleam. Além disso, ao escrever testes, você pode detectar e corrigir erros antes que eles se tornem um problema real em produção.
 
 ## Como escrever testes em Gleam
 
-Escrever testes é uma prática importante em qualquer linguagem de programação, e em Gleam isso não é diferente. Para começar, é preciso importar o módulo `testing` no seu arquivo de teste. Em seguida, é possível utilizar a função `describe` para agrupar testes com uma determinada descrição. Dentro de `describe`, é possível utilizar a função `test` para criar testes individuais. Veja um exemplo abaixo:
+Para escrever testes em Gleam, você pode usar a biblioteca padrão de teste [gleam_test](https://gleam.run/documentation/standard_library#gleam_test). Vamos dar uma olhada em um exemplo simples de um módulo de teste.
 
-```Gleam
-import testing
+```
+Gleam import List
 
-describe "Testes de adição" {
-
-  test "2 + 2 deve ser igual a 4" {
-    expect(2 + 2) |> to_equal(4)
-  }
-  
-  test "10 + 5 deve ser igual a 15" {
-    expect(10 + 5) |> to_equal(15)
-  }
+Gleam test "Testar função de adição" {
+  Gleam let numbers = [1, 2, 3]
+  Gleam assert_eq(List.fold_left(numbers, 0, Int.add), 6)
+  Gleam assert_eq(List.fold_left(numbers, 0, Int.multiply), 0)
 }
 ```
 
-Ao rodar esse arquivo como um script, o resultado será:
+Na primeira linha, importamos o módulo `List` para usar suas funções de lista. Em seguida, usamos a declaração `test` para definir um escopo para nossos testes. Dentro deste escopo, podemos definir variáveis e usar as funções de teste `assert_eq` para verificar se o resultado esperado é igual ao resultado real.
 
-```
-Running tests...
-✓ Testes de adição: 2 passed
-```
+Para executar este teste, basta executar `gleam test` no seu diretório de projeto.
 
 ## Aprofundando-se em testes em Gleam
 
-Agora que já vimos como criar testes básicos em Gleam, é importante entender alguns conceitos importantes para escrever testes eficientes e eficazes. Um desses conceitos é a "assertividade", que se refere à habilidade do teste em garantir que o resultado esperado seja alcançado. Para alcançar uma boa assertividade, é importante testar diferentes casos, incluindo casos extremos e entradas inválidas.
-
-Outro conceito importante é a cobertura de código, que se refere à porcentagem do código que é coberta por testes. É importante sempre buscar uma alta cobertura de código, uma vez que isso garante uma maior confiabilidade do código em geral.
-
-Além disso, é importante se familiarizar com as funções de teste disponíveis no módulo `testing`, como `to_equal`, `to_be_true`, `to_be_nil`, entre outras. Essas funções permitem especificar o comportamento esperado do código em cada teste.
+Além do exemplo básico acima, há muito mais que você pode fazer com testes em Gleam. Você pode usar a função `suite` para agrupar diferentes testes em uma suíte de testes, usar os módulos `String` e `Option` para facilitar a criação de casos de teste e mais. Para saber mais sobre como escrever testes em Gleam, consulte a documentação oficial.
 
 ## Veja também
-- [Documentação oficial sobre testes em Gleam](https://gleam.run/book/tour/testing.html)
-- [Artigo do Gleam sobre a importância de escrever testes](https://gleam.run/news/testing.html)
-- [Vídeo tutorial sobre testes em Gleam](https://www.youtube.com/watch?v=4zx3j0twl7M)
+
+- [Documentação da biblioteca padrão do Gleam](https://gleam.run/documentation/standard_library)
+- [Exemplos de testes em Gleam](https://github.com/gleam-lang/gleam_rebar3_exemple/blob/master/test)
+- [Guia de melhores práticas para escrever testes em Gleam](https://dev.to/jeuhenri/how-to-write-tests-in-gleam-1eob)

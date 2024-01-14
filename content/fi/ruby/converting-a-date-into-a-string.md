@@ -1,38 +1,41 @@
 ---
-title:    "Ruby: Päivämäärän muuttaminen merkkijonoksi"
+title:    "Ruby: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi muuntaa päivämäärän merkkijonoksi? Pelinä tehokkaasta ratkaisusta ja tarkoituksenmukaisesta ohjelmointikielestä, Rubyssa on useita käteviä tapoja käsitellä päivämääriä ja aikaa. Yksi näistä on päivämäärän muuntaminen merkkijonoksi, mikä voi olla hyödyllistä esimerkiksi lomakkeiden lähetys- ja tallennusprosessissa tai käyttäjien profiilisivuilla.
+Miksi muuttaa päivämäärä merkkijonoksi? Tämä on hyvä kysymys ja siihen on useita vastauksia. Yksi syy voi olla, että haluat näyttää päivämäärän tietyn muodon mukaisesti, kuten "dd/mm/YYYY" tai "mm/dd/YYYY". Tai ehkä haluat tallentaa päivämäärän merkkijonona tietokantaan tai käyttää sitä verkkosivustolla. Luoessaan päivämäärä-olioita, Ruby tarjoaa useita tapoja muuttaa ne merkkijonoiksi, ja tämä blogikirjoitus opettaa sinulle, kuinka se tehdään.
 
-## Kuinka
+## Kuinka tehdä
 
-Seuraavassa on kaksi esimerkkiä siitä, kuinka voit muuntaa päivämäärän merkkijonoksi Rubyssa:
+Muuttaaksesi päivämäärän merkkijonoksi, sinun täytyy ensin luoda päivämäärä-olio. Tämän jälkeen voit käyttää strftime-menetelmää muuttaaksesi päivämäärän haluamaasi muotoon. Esimerkiksi, jos haluat muuttaa päivämäärän muotoon "dd/mm/YYYY", voit käyttää seuraavaa koodia:
 
-```Ruby
-date = DateTime.now
-puts date.to_s # tulostaa päivämäärän ja ajan merkkijonona
+```ruby
+date = Date.today # luo päivämäärä-olion tämän päivän päivämäärällä
+p date.strftime('%d/%m/%Y') # tulostaa päivämäärän merkkijonona "23/04/2021"
 ```
 
-```Ruby
-date = Time.now
-puts date.strftime("%d.%m.%Y") # tulostaa päivämäärän muodossa DD.MM.YYYY
-```
+Katsotaanpa hieman tarkemmin strftime-menetelmää. Se ottaa yhden argumentin, joka on muotoilumuuttuja, ja palauttaa päivämäärän tässä muodossa. Voit käyttää erilaisia muotoilumuuttujia muuttaaksesi päivämäärää haluamallasi tavalla. Alla on esimerkkejä joistakin yleisimmistä muotoilumuuttujista ja niiden tuottamista tuloksista:
 
-Molemmat esimerkit hyödyntävät Rubyssa valmiiksi sisäänrakennettuja metodeja päivämäärän muuntamiseen merkkijonoksi. Ensimmäisessä esimerkissä käytämme `to_s` -metodia, joka palauttaa päivämäärän ja ajan merkkijonona. Toisessa esimerkissä käytämme `strftime`-metodia, joka antaa meille enemmän hallintaa siitä, millaisessa muodossa haluamme päivämäärän tulostettavan.
+* `%d` - päivän numero (esim. 23)
+* `%m` - kuukauden numero (esim. 04)
+* `%Y` - vuoden numero (esim. 2021)
+* `%b` - lyhyt kuukauden nimi (esim. Apr)
+* `%B` - pitkä kuukauden nimi (esim. April)
+* `%a` - lyhyt päivän nimi (esim. Fri)
+* `%A` - pitkä päivän nimi (esim. Friday)
 
-## Syventävä sukellus
+Voit käyttää myös muita muotoilumuuttujia ja yhdistellä niitä haluamallasi tavalla. Kokeile rohkeasti erilaisia vaihtoehtoja ja löydä juuri sinulle sopiva muotoilu.
 
-Mikäli haluat syvemmän ymmärryksen päivämäärän muuntamisesta merkkijonoksi Rubyssa, on hyödyllistä tietää, että Ruby sisältää myös `Date` ja `Time` -luokat, jotka tarjoavat erilaisia metodeja päivämäärän käsittelyyn. Näiden luokkien dokumentaatio on hyvä paikka aloittaa, mikäli olet kiinnostunut oppimaan lisää niiden tarjoamista toiminnoista.
+## Syvä Sukellus
 
-Lisäksi on hyvä huomioida, että päivämäärän muuntaminen merkkijonoksi voi olla myös haastavaa, mikäli päivämäärätiedot eivät ole oikeassa muodossa. On siis tärkeää varmistaa, että käsiteltävät päivämääräarvot ovat oikeassa formaatissa ennen muunnosta.
+Kuten jo mainitsimme, Ruby tarjoaa useita tapoja muuttaa päivämäärä-olioita merkkijonoiksi. Yksi vaihtoehto on käyttää to_s-menetelmää, joka palauttaa päivämäärän merkkijonona oletusmuodossa (esim. "2021-04-23"). Kuitenkin tämä menetelmä ei anna sinulle mahdollisuutta muuttaa päivämäärän muotoa. Toisaalta strftime-menetelmä antaa sinulle täyden hallinnan päivämäärän muotoiluun, mutta se vaatii hieman enemmän työtä.
 
 ## Katso myös
 
-- [Ruby `Date` Class Documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [Ruby `Time` Class Documentation](https://ruby-doc.org/core-2.7.0/Time.html)
-- [`to_s` vs. `strftime` in Ruby](https://stackoverflow.com/questions/29275736/difference-between-to-s-and-strftime)
+* Ruby:n virallinen strftime-dokumentaatio: https://ruby-doc.org/core-2.7.0/Time.html#method-i-strftime
+* strftime-cheatsheet: https://apidock.com/ruby/DateTime/strftime

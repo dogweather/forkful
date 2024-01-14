@@ -1,42 +1,44 @@
 ---
-title:    "Kotlin: שינוי אותיות בתוכנית מחשב: שינוי את רושם האותיות"
+title:    "Kotlin: כתיבת מחרוזת רישיות"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## על מה לכתוב:
- לאיזו סיבה אפשר להיות רוצים לכתוב בקוד הפקודה ב Kotlin כדי לשנות את ליותר ראשונו של כל מילה במחרוזת לאות גדולה.
+# למה
+במאמר זה, אנו נדבר על כיצד נוכל להפוך מחרוזת בקוד Kotlin לכתיב ראשוני גדול. כך תהיה לנו אפשרות להציג את המחרוזת בצורה יותר מסודרת ונוחה לקריאה.
 
-## כיצד לבצע:
-תחילה, ניתן להשתמש בפונקציה המובנת toUpperCase() כדי להמיר את האות הראשונה של מחרוזת לאות גדולה. עבור מחרוזות עם מספר תווים, ניתן להשתמש בלולאת foreach לעבוד על כל אחד מתווי המחרוזת ולהחליף את האות הראשונה באות גדולה. לדוגמה:
+# כיצד לעשות זאת
+כדי להפוך מחרוזת לכתיב ראשוני גדול בקוד Kotlin, אנו ניצור משתנה חדש שיכיל את המחרוזת המקורית. לאחר מכן, נפעיל פונקציה הנקראת "capitalize" על המשתנה כדי להפוך את הכתיב לראשוני גדול. לאחר מכן, נדפיס את המשתנה החדש כך שנוכל לראות את התוצאה המתאימה.
 
-```Kotlin
-fun capitalizeString(string: String): String {
-    var output = ""
-    for (char in string) {
-        output += char.toUpperCase()
-    }
-    return output
-}
+```
+Kotlin val str = "hello world"
+val capitalizedStr = str.capitalize()
+println(capitalizedStr)
 ```
 
-פלט למחרוזת "hello" יהיה "Hello".
+הפלט של הקוד הנלווה יהיה:
 
-בנוסף, אפשר להשתמש בפונקציה פנימית replaceFirst() כדי להחליף את האות הראשונה של מחרוזת באות גדולה. לדוגמה:
-
-```Kotlin
-fun capitalizeString(string: String): String {
-    return string.replaceFirst(string[0], string[0].toUpperCase())
-}
+```
+Hello world
 ```
 
-פלט למחרוזת "hello" יהיה "Hello".
+במקרה שבו נרצה להפוך רק את האות הראשונה במחרוזת לגדולה, נוכל להשתמש בפונקציה "replaceRange" כדי להחליף את האות הראשונה במחרוזת לכתיב גדול. הנה דוגמא לכך:
 
-## חקירה מעמיקה:
-יתרונות של השימוש בתהליך שינוי האות הראשונה של מחרוזת לאות גדולה כוללים קוד יותר נקי וקל לקריאה ואפשרות להתאים לשפת הטבע בה נכתב הקוד. בנוסף, במקרים שהמחרוזת כוללת שני תווים או יותר בתחילת המילה (לדוגמה מילת המפתח "McDonald's"), מייצר תהליך זה באגים פחותים בשלב העריכה ועיבוד הנתונים.
+```
+Kotlin val str = "hello world"
+val capitalizedFirstLetterStr = str.replaceRange(0, 1, str.substring(0, 1).toUpperCase())
+println(capitalizedFirstLetterStr)
+```
 
-## ראה גם:
-- [תיעוד הפונקציות המובנות ב Kotlin](https://kotlinlang.org/docs/reference/functions.html)
-- [מדריך תחבירי לשפת Kotlin](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [המרת אותיות במחרוזת לאותיות גדולות ב JavaScript](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+הפלט של הקוד הנלווה יהיה:
+
+```
+Hello world
+```
+
+# חפירה עמוקה
+הפונקציה "capitalize" מחזירה מחרוזת חדשה עם הכתיב ראשוני גדול, אך אינה משנה את המחרוזת המקורית. כאשר אנו משתמשים בפונקציה "replaceRange", אנו משנים את המחרוזת המקורית עצמה. גם פונקציות נוספות כמו "toTitleCase" ו-"toUpperCase" יכולות לשמש כדי להפוך את המחרוזות לכתיב ראשוני גדול.
+
+כדי להיות יעילים יותר ולמנוע טעויות, נוכל לעצור על בדיקה תנאית של המחרוזת לפני שאנו מנסים להפוך אותה לכתיב ראש

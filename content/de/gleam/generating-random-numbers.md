@@ -1,38 +1,38 @@
 ---
-title:    "Gleam: Zufallszahlen generieren"
+title:    "Gleam: Erzeugen von Zufallszahlen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist ein wichtiger Bestandteil vieler Programmiervorgänge. Ob bei der Entwicklung von Spielen, der Durchführung von Statistiken oder der Verschlüsselung von Daten, Zufallszahlen sind unerlässlich. In diesem Blogbeitrag werden wir uns ansehen, wie man in Gleam Zufallszahlen generiert und wie man sie in verschiedenen Anwendungsfällen nutzen kann.
+Es gibt viele Situationen, in denen das Generieren von Zufallszahlen in Gleam hilfreich sein kann. Zum Beispiel kann dies für die Erstellung von Testdaten, die Simulation von Szenarien oder die Implementierung von Spielen erforderlich sein. Mit Gleam können Sie einfach und effizient Zufallszahlen generieren, um Ihre Projekte zu verbessern.
 
-## How To
+## So geht's
 
-Um Zufallszahlen in Gleam zu generieren, können wir die Funktion `random.float` verwenden. Diese Funktion gibt eine zufällige Fließkommazahl zwischen 0 und 1 zurück. Um eine ganze Zufallszahl zu erhalten, können wir `random.int` verwenden, wobei wir den Wertebereich als Parameter angeben müssen.
+Es gibt verschiedene Möglichkeiten, um in Gleam Zufallszahlen zu generieren. Eine Möglichkeit ist die Verwendung der `random`-Bibliothek, die eine Vielzahl von Funktionen zur Erzeugung von Zufallszahlen bietet. Hier ist ein Beispielcode, der mithilfe der `random.float`-Funktion eine Zufallszahl zwischen 0 und 1 generiert und diese dann mithilfe der `io.println`-Funktion ausdruckt:
 
-```Gleam
-import random
-
-random_float = random.float()
-
-random_int = random.int(1, 10)
 ```
+Gleam import random
+Gleam import io
 
-Die Ausgabe in diesem Beispiel könnte zum Beispiel `0.456789` für `random_float` und `4` für `random_int` sein. Um die Zufallszahl jedes Mal unterschiedlich zu halten, können wir auch einen Seed-Wert angeben, der als zweiter Parameter an die Funktion übergeben wird.
+let random_num = random.float(0, 1)
+io.println(random_num)
+```
+Die Ausgabe dieses Codes könnte beispielsweise `0.72819` sein. Sie können auch andere Funktionen wie `random.int` verwenden, um ganze Zahlen zu generieren.
 
-## Deep Dive
+Sie können auch benutzerdefinierte Zufallszahlengeneratoren erstellen, indem Sie die `Random`-Struktur aus der `random`-Bibliothek verwenden. Diese Struktur bietet verschiedene Methoden zum Generieren von Zufallszahlen und ermöglicht es Ihnen, Ihren eigenen Algorithmus zu implementieren.
 
-Die Generierung von Zufallszahlen in Gleam basiert auf dem Mersenne Twister Algorithmus. Dabei handelt es sich um einen Pseudozufallszahlengenerator, der auf einer Reihe von mathematischen Berechnungen basiert. Dieser Algorithmus wurde ausgewählt, da er eine ausreichend hohe Periodenlänge hat und als sicher für die meisten Anwendungen gilt.
+## Tiefer Einblick
 
-Es ist jedoch wichtig zu beachten, dass diese Zufallszahlen nicht wirklich zufällig sind, sondern lediglich auf der Grundlage von Berechnungen erzeugt werden. Für kryptografische Anwendungen sollten daher andere Methoden zur Generierung von Zufallszahlen verwendet werden.
+Die `random`-Bibliothek verwendet einen Pseudo-Zufallszahlengenerator, der auf dem Mersenne-Twister-Algorithmus basiert. Dieser Algorithmus ist in der Regel schneller und zufälliger als andere Generatoren und wird häufig in anderen Programmiersprachen verwendet.
+
+Beim Generieren von Zufallszahlen ist es wichtig, dass der Seed-Wert, der vom Zufallszahlengenerator verwendet wird, eindeutig ist, damit die Zahlen nicht vorhersagbar sind. In Gleam gibt es eine `random.seed`-Funktion, mit der Sie den Seed-Wert des Generators festlegen können.
 
 ## Siehe auch
 
-Für weitere Informationen und Anwendungsmöglichkeiten zu Zufallszahlen in Gleam, siehe die folgenden Links:
-
-- Offizielle Gleam Dokumentation: https://gleam.run/documentation/index.html#internals.random
-- Eine Einführung in Zufallszahlen in der Programmierung: https://www.freecodecamp.org/news/how-to-generate-random-numbers-in-programming-418aec8f6e3a/
-- Das Mersenne Twister Verfahren im Detail: https://www.makeuseof.com/tag/mersenne-twister-generate-random-youtube-videos/
+- Offizielle Gleam-Dokumentation zur Verwendung der `random`-Bibliothek: https://gleam.run/documentation/stdlib/random
+- Gleam-Tutorial zur Erstellung eines Zufallszahlengenerators: https://medium.com/@gleamlang/create-your-own-random-number-generator-in-gleam-6a1b7e79f696
+- Liste von Mersenne-Twister-Implementierungen in verschiedenen Programmiersprachen: https://en.wikipedia.org/wiki/Mersenne_Twister#Pseudocode_implementation

@@ -1,28 +1,48 @@
 ---
-title:    "Clojure: テキストファイルの読み込み"
+title:    "Clojure: 読み込みファイル"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ読む必要があるのか
-テキストファイルを読むことは、プログラミングの世界で非常に一般的な作業です。この記事では、Clojureを使ってテキストファイルを読む方法を紹介します。テキストファイルを読むことで、データを取得し、処理することができます。
+## なぜ
 
-## どのようにするか
-下記のようなClojureコードを使用して、テキストファイルを読み込むことができます。テキストファイルの中身を確認したい時には、```println```関数を使うことで中身をターミナルに出力することができます。
+テキストファイルを読むことが重要なのか、それを説明するための簡単な1〜2文。
+
+テキストファイルを読むことは、コンピューターにとってデータを取得する重要な方法です。また、テキストファイルから情報を取得して加工することで、より複雑なタスクを実行することができます。
+
+## 使い方
+
+テキストファイルを読み取る方法を示す、```Clojure ... ```コードブロック内のコーディング例と出力サンプルを掲載します。
 
 ```Clojure
-(def file (slurp "sample.txt"))
-(println file)
+; テキストファイルを読み取り、その内容をリストとして返す
+(defn read-text-file [file]
+  (with-open [reader (reader file)]
+    (doall (line-seq reader))))
+
+; 使用例
+(read-text-file "sample.txt")
 ```
 
-上記のコードでは、```slurp```関数を使ってテキストファイルを読み込んでいます。また、```println```関数を使ってテキストファイルの内容を出力しています。このように、Clojureでは簡単にテキストファイルを読み込むことができます。
+出力：
+```
+("This is a sample text file."
+"This file contains multiple lines of text."
+"These lines will be returned as a list when the file is read.")
+```
 
-## 深堀り
-テキストファイルを読み込む際には、ファイルのエンコーディングに注意する必要があります。また、ファイルのパスを正しく指定することも重要です。Clojureでは、ファイルのエンコーディングを指定する方法や、パスを解決する方法についても詳しく学ぶことができます。
+## ディープダイブ
 
-## 参考リンク
-- [Clojureにおけるテキストファイルの読み込み方法](https://clojuredocs.org/clojure.core/slurp)
-- [ファイルパスの解決方法について](https://clojuredocs.org/clojure.java.io/as-file)
-- [テキストファイルのエンコーディングについて](https://www.nexon.co.jp/archives/18)
-- [Clojureでテキストファイルを読み込む方法の詳細解説](https://www.techlife-culture-blog.com/blog/2019-01-06/2451/)
+テキストファイルを読む方法についてのより詳細な情報を提供します。テキストファイルはテキスト形式で保存されており、その構造は行単位で分割されています。これにより、行単位でデータを処理することができます。
+
+また、Clojureではさまざまな方法でテキストファイルを読み込むことができます。例えば、```clojure.java.io```ライブラリの```reader```や```input-stream```を使用することで、より高度なテキストファイルの読み込みが可能になります。
+
+## 参考
+
+- [Clojure Documentation](https://clojure.org/)
+- [Clojure Cookbook](https://clojure-cookbook.com/)
+- [Getting Started with Clojure](https://clojure.org/guides/getting_started)
+- [Clojure for Beginners](https://www.braveclojure.com/)
+- [Clojure入門書 入門 Clojure](http://www.clojurebook.com/)

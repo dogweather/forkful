@@ -1,42 +1,64 @@
 ---
-title:    "Go: Schreiben in die Standardfehlerausgabe."
+title:    "Go: Zum Standardfehler schreiben"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Schreiben in die Fehlerausgabe wird oft verwendet, um Fehlermeldungen oder Debugging-Informationen während der Ausführung eines Programms anzuzeigen. Dies kann hilfreich sein, um Probleme zu identifizieren und zu beheben, oder um Informationen über den internen Zustand des Programms zu erhalten.
+In der Go-Programmierung ist es oft nötig, Informationen oder Fehlermeldungen auszugeben. Eine gängige Methode dafür ist das Schreiben in die Standardfehlerausgabe (standard error). In diesem Blogbeitrag erfahrt ihr, warum und wie man in Go nach standard error schreibt.
 
-## Wie geht das
+## Wie geht man vor?
 
-Um Text in die Fehlerausgabe zu schreiben, kann die Funktion "fmt.Fprintf" verwendet werden. Diese Funktion akzeptiert als ersten Parameter eine Ausgabestelle, in diesem Fall die Fehlerausgabe, und als zweiten Parameter den zu schreibenden Text. Der folgende Code zeigt ein Beispiel, wie dies in Go gemacht wird:
+Um Inhalt an die Standardfehlerausgabe zu schreiben, kann die Funktion `fmt.Fprintln()` verwendet werden, die einen Text und eine io.Writer-Schnittstelle erwartet. Standardmäßig wird die Standardfehlerausgabe jedoch automatisch verwendet, daher reicht es in der Regel aus, `fmt.Println()` zu benutzen. Hier ein Beispiel:
 
 ```Go
+// Ein einfaches Beispiel, um eine Fehlermeldung auszugeben
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// Schreibe "Hello World" in die Fehlerausgabe
-	fmt.Fprintf(os.Stderr, "Hello World")
+    fmt.Println("Dies ist eine Fehlermeldung")
+    os.Exit(1) // Beendet das Programm mit Exit-Code 1
 }
 ```
 
-Die Ausgabe dieses Programms wäre "Hello World" in der Fehlerausgabe.
+Die Ausgabe des obigen Beispiels wird auf der Konsole wie folgt aussehen:
 
-## Tiefer Einblick
+```
+Dies ist eine Fehlermeldung
+```
 
-Es gibt verschiedene Gründe, warum es sinnvoll ist, in die Fehlerausgabe zu schreiben. Zum einen kann dies dabei helfen, Fehlermeldungen zu erstellen, die für Benutzer leichter lesbar sind. Auch können Informationen über den internen Zustand des Programms ausgegeben werden, um bei der Fehlerbehebung zu helfen. Zudem kann die Fehlerausgabe oft als gültige Eingabestelle für andere Programme verwendet werden.
+## Tiefergehende Informationen
 
-Eine weitere wichtige Funktion von Schreiben in die Fehlerausgabe ist das Debugging. Durch das gezielte Schreiben von Informationen in die Fehlerausgabe können Entwickler Probleme in ihrem Code identifizieren und beheben. Oft wird dieses Verfahren in Kombination mit Breakpoints und anderen Debugging-Techniken verwendet, um ein tieferes Verständnis für den Code zu erhalten.
+In Go gibt es weitere Möglichkeiten, um an die Standardfehlerausgabe zu schreiben, wie zum Beispiel die Funktion `os.Stderr.Write()`, die eine Byte-Array und eine io.Writer-Schnittstelle erwartet. Diese Funktion gibt die Bytes direkt an die Standardfehlerausgabe weiter. Hier ein Beispiel:
+
+```Go
+// Ein Beispiel, um ein Byte-Array an die Standardfehlerausgabe zu schreiben
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    errMsg := []byte("Dies ist eine Fehlermeldung")
+    os.Stderr.Write(errMsg)
+    os.Exit(1) // Beendet das Programm mit Exit-Code 1
+}
+```
+
+Die Ausgabe wird auch hier wieder die gleiche sein wie oben gezeigt.
 
 ## Siehe auch
 
-- [Offizielle Go-Dokumentation zu "fmt.Fprintf"](https://golang.org/pkg/fmt/#Fprintf)
-- [Tutorial zur Fehlerbehebung in Go](https://www.calhoun.io/how-to-debug-in-go/) (auf Englisch)
-- [Video-Tutorial zum Schreiben in die Fehlerausgabe in Go](https://www.youtube.com/watch?v=0PmJ0443jO4) (auf Englisch)
+- [Go Doc: fmt.Fprintln()](https://golang.org/pkg/fmt/#Fprintln)
+- [Go Doc: os.Exit()](https://golang.org/pkg/os/#Exit)
+- [Go Doc: os.Stderr.Write()](https://golang.org/pkg/os/#Stderr.Write)

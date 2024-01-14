@@ -1,50 +1,47 @@
 ---
 title:    "Swift: חישוב תאריך בעתיד או בעבר"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+##מדוע
 
-כתיבת קאסטום טמפלייט לתאריך בעתיד או בעבר יכולה להיות כלי מועיל בתוכנות עסקיות או אפליקציות עבור משתמשים שמעוניינים לקבל מידע עתידי או עברי על אירועים או משימות מסוימים.
+בשפת סוויפט ניתן לחשב תאריך בעתיד או בעבר בפשטות בעזרת כמה שורות קוד. ייתכן שתרצו להשתמש בתכנות זה במסגרת שימוש עם תאריך מסוים או לצורך בניית אפליקציות ששומרות תאריכים.
 
 ## איך לעשות זאת
 
-ראשית, נצטרך להגדיר משתנה מסוג `Date` המכיל את התאריך הנוכחי. לדוגמה:
+משתמשים בחבילת התאריכים (Dates) ניתן לבצע חישובים של תאריך בעתיד או בעבר באמצעות הפונקציות המתאימות.
 
-```Swift
+```Swift 
+let monthsToAdd = 5
+
 let currentDate = Date()
+
+let futureDate = Calendar.current.date(byAdding: .month, value: monthsToAdd, to: currentDate)
+
+// Output: futureDate = Optional(2020-08-10 06:52:13 +0000)
 ```
 
-לאחר מכן, נשתמש בפונקציה `Calendar.current.date(byAdding:value:to:)` כדי להוסיף ערך מסוים לתאריך הנוכחי וליצור תאריך חדש. לדוגמה, אם נרצה להחזיר את התאריך של מחר ניתן להשתמש בפונקציה כדי להוסיף יום אחד לתאריך הנוכחי:
+כפי שאתם יכולים לראות, ביצירת משתנה התאריך העתידי ניתן להשתמש בפונקציית הקוד שתאפשר לכם להוסיף או להפחית חודשים לתאריך הנוכחי.
 
-```Swift
-let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+## חפירה עמוקה
+
+אם ברצונכם להתעמק עוד יותר בנושא החישובים של תאריכים בשפת סוויפט, ישנם עוד פונקציות ואפשרויות לחישוב תאריכים. למשל, ניתן להשתמש בפונקציית "dateComponents" אשר מאפשרת למשתמש ליצור תאריך ממספרים מדוייקים כמו יום, חודש ושנה.
+
+```Swift 
+let date = Date()
+
+let calendar = Calendar.current
+
+let components = calendar.dateComponents([.year, .month, .day], from: date)
+
+// Output: components = Optional(year: 2020, month: 3, day: 10, era: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil, weekday: nil, weekdayOrdinal: nil, year: nil, timeZone: nil)
 ```
 
-לבסוף, כדי להציג את התאריך בפורמט מסוים נשתמש ב- `DateFormatter` ונגדיר את הפורמט הרצוי. לדוגמה, אם נרצה להציג את התאריך בפורמט של חודש, יום ושנה ניתן לעשות זאת באמצעות הקוד הבא:
+בנוסף, ניתן להשתמש בפונקציית "dateFormatter" על מנת לבצע עיצוב והצגת התאריך בצורה הרצויה.
 
-```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "MMMM dd, yyyy"
-let formattedDate = formatter.string(from: tomorrow)
-```
+##ראו גם
 
-התוצאה תהיה: "יולי 21, 2021"
-
-## למעמק
-
-קביעת תאריך בעתיד או בעבר מורכב יותר ממה שנראה. על מנת לקבוע את התאריך בפורמט מיוחד עלינו להשתמש ב- `Calendar` ו- `DateComponents`. נצטרך גם להתייחס למיקום גיאוגרפי כדי לתאם את התאריך לתאריך מקומי.
-
-לדוגמה, אם נרצה לקבוע את התאריך ליום ראשון הבא שבו יהיה 15 בחודש ינואר של השנה הבאה עלינו לכתוב את הקוד הבא:
-
-```Swift
-let calendar = Calendar(identifier: .gregorian)
-var components = DateComponents()
-components.year = 2022
-components.month = 1
-components.weekday = 1
-components.weekdayOrdinal = 3
-
-if let futureDate = calendar
+כאשר אתם מתכנתים בשפת סוויפט, חישוב תאריך בעתיד או בעבר יכול להיות מאוד מועיל. ככל שתעמיקו ותתרגלו בשימוש בפונקציות התאר

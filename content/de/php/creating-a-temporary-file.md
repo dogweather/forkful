@@ -1,34 +1,47 @@
 ---
 title:    "PHP: Erstellen einer temporären Datei"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Das Erstellen temporärer Dateien ist ein nützliches Konzept in der PHP-Programmierung, da es ermöglicht, Daten temporär zu speichern, ohne permanente Dateien erstellen zu müssen.
+# Warum
 
-## Wie geht das?
-Um eine temporäre Datei in PHP zu erstellen, können Sie die `tempnam()` Funktion verwenden. Diese Funktion benötigt einen Parameter, der den Pfad zum Ordner angibt, in dem die temporäre Datei erstellt werden soll. In den meisten Fällen werden Sie wahrscheinlich den systemweiten temporären Ordner verwenden wollen, der mit der `sys_get_temp_dir()` Funktion abgerufen werden kann.
+Ein temporäres (oder auch zeitweiliges) File wird häufig von Programmierern erstellt, um komplexe Operationen durchzuführen, die ein Zwischenergebnis benötigen. Zum Beispiel kann ein temporäres File genutzt werden, um Daten einfacher zu speichern, nach bestimmten Bedingungen zu filtern oder um sie zu sortieren, bevor sie in die endgültige Datei geschrieben werden.
 
-Ein Beispielcode könnte wie folgt aussehen:
+# Wie geht's
+
+Um ein temporäres File in PHP zu erstellen, können wir die `tempnam()` Funktion nutzen. Diese Funktion erstellt eine temporäre Datei mit einem zufälligen Dateinamen und Pfad. Wir können diese Funktion wie folgt in unserem Code verwenden:
 
 ```PHP
-$tempFileName = tempnam(sys_get_temp_dir(), "prefix_");
-echo $tempFileName;
+$temp_file = tempnam(sys_get_temp_dir(), "prefix_");
+echo "Temporäres File: " . $temp_file;
+
+// Output: Temporäres File: /tmp/prefix_7XIUAt
 ```
 
-Dieser Code erstellt eine temporäre Datei mit dem Präfix "prefix_" und gibt den Dateinamen aus.
+In diesem Beispiel haben wir `tempnam()` mit zwei Parametern aufgerufen. Der erste Parameter ist der Pfad zum temporären Verzeichnis auf dem Server und der zweite ist der Präfix, der in den generierten Dateinamen eingefügt wird. Wir können den zweiten Parameter ignorieren und `tempnam()` wird automatisch einen Präfix erstellen.
 
-Die Ausgabe könnte beispielsweise lauten: "/tmp/prefix_zn23g92w1".
+# Tief eintauchen
 
-## Tiefere Einblicke
-Wenn Sie sich genauer mit dem Erstellen temporärer Dateien befassen möchten, sollten Sie die `tempnam()` Funktion genauer untersuchen. Es gibt verschiedene Optionen, die Sie übergeben können, einschließlich der Möglichkeit, den Präfix und den Suffix der Datei anzugeben.
+Die `tempnam()` Funktion generiert einen eindeutigen Dateinamen und erstellt automatisch die Datei. Wenn wir jedoch nur einen Dateinamen benötigen, können wir die `tmpfile()` Funktion verwenden, die nur den Dateinamen zurückgibt und die Datei nicht erstellt.
 
-Darüber hinaus können Sie auch die `tmpfile()` Funktion verwenden, um eine temporäre Datei zu erstellen, die automatisch gelöscht wird, sobald das Skript beendet ist. Diese Funktion erfordert keine Parameter und gibt direkt einen geöffneten Dateizeiger zurück, mit dem Sie arbeiten können.
+Was passiert, wenn wir ein temporäres File erstellen, aber es nicht mehr benötigen? Es ist wichtig, dass wir das File nach der Verwendung löschen, um Speicherplatz freizugeben. Hier können wir die `unlink()` Funktion verwenden, um das temporäre File zu löschen:
 
-In jedem Fall ist es wichtig, dass Sie die temporären Dateien am Ende Ihres Skripts löschen, um sicherzustellen, dass Ihr System nicht unnötig mit temporären Dateien belastet wird.
+```PHP
+$temp_file = tempnam(sys_get_temp_dir(), "prefix_");
+echo "Temporäres File: " . $temp_file;
 
-## Siehe Auch
-1. `tempnam()` Funktionsreferenz: https://www.php.net/manual/de/function.tempnam.php
-2. `tmpfile()` Funktionsreferenz: https://www.php.net/manual/de/function.tmpfile.php
+// Output: Temporäres File: /tmp/prefix_KH51fQ
+
+unlink($temp_file); // löscht das temporäre File
+```
+
+Abschließend ist es wichtig zu beachten, dass temporäre Files nur für kurzzeitige Verwendung gedacht sind und nicht für die langfristige Speicherung von Daten geeignet sind.
+
+# Siehe auch
+
+- [PHP Dokumentation: tempnam()](https://www.php.net/manual/de/function.tempnam.php)
+- [PHP Dokumentation: tmpfile()](https://www.php.net/manual/de/function.tmpfile.php)
+- [PHP Dokumentation: unlink()](https://www.php.net/manual/de/function.unlink.php)

@@ -1,64 +1,57 @@
 ---
 title:    "Java: 테스트 작성하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 테스트를 작성하는가
+# 왜?
 
-테스트 작성은 개발 과정에서 필수적입니다. 테스트를 작성함으로써 코드의 품질을 향상시키고 버그를 줄일 수 있습니다.
+프로그래머로서 테스트 작성을 왜 해야 할까요? 테스트는 우리의 코드를 검증하고 버그를 찾는 데 매우 중요합니다. 테스트 작성이 생산성과 코드의 신뢰성을 높이는 데 도움을 줄 수 있으며 최종 제품의 품질을 보장하는 데도 큰 역할을 합니다.
 
-## 작성 방법
+## 어떻게 해야 할까요?
 
-테스트를 작성하는 가장 기본적인 방법은 JUnit을 사용하는 것입니다. JUnit은 자바 단위 테스트 프레임워크로, 간단한 메서드부터 복잡한 클래스까지 다양한 상황에서 테스트를 작성할 수 있습니다. 아래는 JUnit을 이용하여 간단한 메서드의 테스트를 작성하는 예제입니다.
+자바 프로그래밍에서 테스트 작성하는 방법을 알아보겠습니다. 다음은 자바 메소드를 테스트하는 간단한 예제입니다. 
 
 ```Java
 public class Calculator {
 
-    public int add(int num1, int num2) {
-        return num1 + num2;
+    public static int add(int a, int b) {
+        return a + b;
     }
 
-    public int subtract(int num1, int num2) {
-        return num1 - num2;
+    public static int subtract(int a, int b) {
+        return a - b;
     }
 }
-```
-
-위 클래스의 메서드를 테스트하는 JUnit 코드는 다음과 같습니다.
-
-```Java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
-    
+
     @Test
     public void testAdd() {
-        Calculator calc = new Calculator();
-        int result = calc.add(5, 10);
+        int result = Calculator.add(5, 10);
         assertEquals(15, result);
     }
-    
+
     @Test
     public void testSubtract() {
-        Calculator calc = new Calculator();
-        int result = calc.subtract(10, 5);
+        int result = Calculator.subtract(10, 5);
         assertEquals(5, result);
     }
 }
 ```
 
-테스트는 메서드의 반환값과 예상한 값을 비교하여 일치하지 않으면 실패로 표시됩니다. 이렇게 테스트를 작성하면 코드를 변경할 때마다 테스트를 수행하여 버그를 발견하고 수정할 수 있습니다.
+위의 예제는 `Calculator` 클래스의 `add()`와 `subtract()` 메소드를 각각 테스트하는 방법을 보여줍니다. `@Test` 어노테이션을 이용하여 각 테스트를 정의하고, `assertEquals()` 메소드를 사용하여 예상 결과와 실제 결과가 일치하는지를 확인합니다.
 
-## 깊게 들어가기
+## 깊이 파고들기
 
-테스트 작성에는 여러 가지 기술과 패턴이 존재합니다. 예를 들어, TDD(Test-Driven Development)는 테스트를 작성하고 그 테스트를 통과할 수 있는 코드를 작성하는 개발 방법론입니다. 또한, Mockito와 같은 모의 프레임워크를 사용하여 외부 의존성을 모방하거나, 스프링 프레임워크에서 제공하는 테스트 관련 어노테이션을 사용하여 테스트를 조금 더 간결하게 작성할 수도 있습니다. 더 자세한 내용은 관련 링크를 참고해주세요.
+테스트 작성에 대해 더 깊이 알아봅시다. 테스트에는 몇 가지 유형이 있습니다. 예를 들어, 단위 테스트는 각각의 기능이 올바르게 작동하는지를 검증하는 것이고, 통합 테스트는 각 모듈이 서로 잘 동작하는지를 확인하는 것입니다.
 
-## 관련 링크
+또한 테스트를 작성할 때 주의해야 할 몇 가지 중요한 점이 있습니다. 모든 코드를 테스트해야 하는 것은 아니며, 주요 로직과 예외 사항을 테스트하는 것이 중요합니다. 또한 테스트가 오래 걸리거나 매우 복잡한 경우에는 테스트를 줄이거나 분리하는 것이 좋습니다.
 
-- [JUnit](https://junit.org/junit4/)
-- [Mockito](https://site.mockito.org/)
-- [TDD란 무엇인가?](https://en.wikipedia.org/wiki/Test-driven_development)
-- [스프링 테스트 관련 어노테이션](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#integration-testing-annotations)
+## 또 다른 참고자료
+
+- [JUnit 공식 홈페이지](https://junit.org/junit5/)
+- [Java 테스트 작성 가이드](https://www.javacodegeeks.com/2018/06/java-testing-guide-pros-cons-smart-tips-to-get-started.html)
+- [TDD(테스트 주도 개발)란?](https://www.slipp.net/questions/59)

@@ -1,56 +1,54 @@
 ---
-title:    "C++: 编写文本文件"
+title:    "C++: 编写文本文件。"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-文本文件是计算机编程中必不可少的一部分。它可以用来储存数据、配置代码和保存程序状态。同时，它也是与用户交互的常用方式，比如网页和文档。因此，学习如何编写文本文件是非常有意义的，它能让你获得更多的编程知识，使你的程序更加出色。
+为什么会有人想要编写一个文本文件呢？一个简单的回答就是：文本文件是存储和共享信息的重要途径。通过编写文本文件，我们可以轻松地创建和修改文本内容，并将其与他人分享。
 
-## 如何做
+## 如何
 
-首先，你需要一个编辑器，比如Visual Studio或者NotePad++。然后按下面的步骤编写文本文件：
+如果你是一名C++程序员或者对编程有一定了解，那么你可能会想知道如何在C++中编写一个文本文件。下面我们将通过一个简单的示例来展示这个过程。
 
-1. 打开编辑器，创建一个新文件。
-2. 添加所需的代码，确保它是C++语法。
-3. 保存文件，选择 "文本文件" 格式。
-4. 给文件取个名字，比如 "hello.txt"。
-5. 运行你的程序，可以在屏幕上看到输出结果。
-6. 如果想要修改文本文件，可以重新打开编辑器，进行修改并保存即可。
+首先，我们需要在代码中包含 `fstream` 头文件来使用文件流。然后，我们可以使用 `ofstream` 对象来打开一个文件，并使用 `<<` 运算符将文本数据写入文件中。最后，我们需要使用 `close()` 函数关闭文件。
 
-看下面的例子：
-
+```
 ```C++
-#include <iostream>
-#include <fstream> 
+#include <fstream>
 using namespace std;
 
 int main() {
-    ofstream myfile("hello.txt");
-    if (myfile.is_open()){
-        myfile << "Hello world!";
-        myfile.close();
-    }
-    else cout << "Unable to open file";
+    // 创建一个名为"example.txt"的文本文件，并将其打开
+    ofstream file("example.txt");
+    
+    // 将"Hello World!"写入文件中
+    file << "Hello World!";
+    
+    // 关闭文件
+    file.close();
+    
     return 0;
 }
 ```
 
-这段代码会创建一个名为 "hello.txt" 的文本文件，并在里面写入 "Hello world!" 这行字。当你运行这段代码后，就可以在文件夹中找到这个文件。打开它，就会看到里面写着 "Hello world!"。
+运行这段代码后，你将在相同的目录下找到名为"example.txt"的文本文件，里面包含着我们写入的文本数据。
 
 ## 深入探讨
 
-编写文本文件并不只是简单的创建一个文件并写入一些文字。还有一些细节需要注意：
+编写文本文件可能看起来很简单，但是其背后的流程和原理却并不简单。文本文件通常以ASCII码格式存储，每个字符都被编码为一个数字。因此，当我们将文本数据写入文件时，实际上是将ASCII码值存储在文件中。当我们打开文本文件进行阅读时，计算机会将ASCII码转换为字符，并将其显示给我们。
 
-- 所有的文本文件都有一个末尾字符，表示文件结束。
-- 文本文件可以包含特殊的控制字符，比如换行符和制表符。
-- 不同的操作系统使用的文本文件格式可能不同，比如Windows使用的是 `\r\n` 作为换行符，Unix系统使用的是 `\n`。
-
-因此，当你在编写文本文件时，需要注意这些细节，避免出现问题。同时也要牢记，文本文件是存储数据的一种方式，但并不适用于所有的情况。在某些场景下，使用二进制文件可能更加合适。
+此外，我们还可以通过指定不同的打开模式来实现对文本文件的不同操作。比如，使用 `ios::app` 模式可以在文件末尾追加文本内容，使用 `ios::trunc` 模式可以清空文件内容，等等。
 
 ## 参考资料
 
-- [C++文本文件的基本使用](https://www.baidu.com/link?url=0i-vh-gwbPGfV7t_P75jPSUtddQ5gFjiVHwQQ5O-SON5TBMuzSaXanaK_6tOD-NbnxlzDR3zqL95WafPP088Lq&wd=&eqid=fae35f8b0001fc75000000065c1694c1)
-- [如何在C++中写入文本文件](https://www.baidu.com/link?url=_WzLdPXBKb1n5F_NJLSpbFiZBZ2JAxMNknRaWjj6FfPm4Nva8BZ6hQEDlIprcU2Lg9DxkZZM5i2aJYlJcXAD_e0UGjph3J5K5SNPY1dNvFV&wd=&eqid=fae35f8b0001fc75000000065c1694c1)
+- [C++ File Handling](https://www.geeksforgeeks.org/file-handling-c-classes/) (英文)
+- [ASCII编码](https://www.asciitable.com/) (英文)
+
+## 参见
+
+- [C++中的文件输入输出操作](https://www.runoob.com/cplusplus/cpp-files-streams.html) (中文)
+- [ASCII码表](https://blog.csdn.net/michaelhanlong/article/details/47105749) (中文)

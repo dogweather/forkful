@@ -1,51 +1,52 @@
 ---
 title:    "Elm: Radera tecken som matchar ett mönster"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-I många programmeringsprojekt kan det finnas behov av att ta bort vissa tecken som matchar ett visst mönster. Detta kan vara användbart för att filtrera och rensa data eller för att omformatera text. Genom att lära sig hur man tar bort tecken som matchar ett mönster kan du effektivisera dina programmeringsuppgifter och uppnå mer precision i ditt arbete.
+Att ta bort tecken som matchar ett mönster kan göra det enklare att hantera och bearbeta strängar i dina Elm-program. Detta kan komma till nytta om du till exempel vill filtrera bort vissa tecken eller byta ut dem med andra.
 
-## Hur man gör
+# Så här gör du
 
-Att ta bort tecken som matchar ett mönster kan göras med hjälp av en funktion i Elm som heter `Regex.replace`. Denna funktion tar tre argument: ett reguljärt uttryck, en sträng och en funktion som anger vad som ska ersätta det matchande mönstret. I exemplet nedan kommer vi att ta bort alla siffror från en sträng och ersätta dem med en tom sträng.
+För att ta bort tecken som matchar ett visst mönster kan du använda funktionen `String.filter` tillsammans med en lambda-funktion som tar emot ett tecken som argument och returnerar `True` om det ska behållas eller `False` om det ska tas bort.
 
 ```Elm
-import Regex
-
-input = "Elm är en fantastiskt språk som är bara 123 ännu bättre"
-
-cleanedInput = Regex.replace (Regex.regex "\\d") input (\_ -> "")
-
--- Output: "Elm är en fantastiskt språk som är bara ännu bättre"
+sträng = "Detta är en sträng som behöver bearbetas"
+mönster = 'i'
+resultat = String.filter (\tecken -> tecken /= mönster) sträng
 ```
 
-Vi importerar först modulen `Regex` och definierar sedan en sträng `input` med både bokstäver och siffror. Sedan används `Regex.replace` för att ta bort alla siffror från `input` genom att använda ett reguljärt uttryck (`\\d` betyder alla siffror) och ersätta dem med en tom sträng. Detta resulterar i att strängen `cleanedInput` endast innehåller bokstäver.
+Resultatet blir en sträng där alla förekomster av bokstaven 'i' har tagits bort. Om du vill byta ut tecknet kan du använda funktionen `String.replace` tillsammans med `String.filter`.
 
-## Djupdykning
+```Elm
+sträng = "Detta är en sträng som behöver bearbetas"
+mönster = 'ä'
+ersättMed = 'a'
+resultat = String.replace mönster (String.fromChar ersättMed) (String.filter (\tecken -> tecken /= mönster) sträng)
+```
 
-Nu när vi har visat ett enkelt exempel på hur man tar bort tecken som matchar ett mönster, kan vi gå djupare in på hur man skapar reguljära uttryck. Elm stöder PCRE (Perl Compatible Regular Expressions), vilket innebär att du kan använda samma syntax som i många andra programmeringsspråk som stöder reguljära uttryck.
+Resultatet blir då "Datta ar an strang som behover bearbetas", där alla 'ä' har ersatts med 'a'.
 
-Här är några grundläggande metakaraktärer som kan vara användbara för att skapa reguljära uttryck i Elm:
+# Djupdykning
 
-- `.` matchar vilken karaktär som helst
-- `*` matchar noll eller flera gånger
-- `+` matchar en eller flera gånger
-- `?` matchar noll eller en gång
-- `|` används för att separera olika möjliga matchningar
-- `()` används för att gruppera mönster och återanvända dem i ersättningsfunktionen
+I Elm finns också möjligheten att använda en reguljär uttryck (RegExp) för att matcha mönster och ta bort tecken. Detta kan vara särskilt användbart om du behöver ta bort flera olika tecken eller vill använda mer avancerade mönster.
 
-Studiematerial för att lära dig mer om reguljära uttryck i Elm:
+```Elm
+import RegExp
 
-- [Elms dokumentation om reguljära uttryck](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [RegExr](https://regexr.com/) - ett interaktivt verktyg för att testa och utforska reguljära uttryck
-- [RegEx101](https://regex101.com/) - ett annat användbart verktyg för att testa och utforska reguljära uttryck
+sträng = "123-456-789"
+mönster = RegExp.make "[0-9-]"
+resultat = String.filter (not << RegExp.contains mönster) sträng
+```
 
-## Se även
+Resultatet blir då strängen " " (en tom sträng) där både siffrorna och bindestrecken har tagits bort. Du kan även använda en reguljär uttryck för att byta ut tecken, genom att använda funktionen `String.replace` tillsammans med `RegExp.replace`.
 
-- [Elms reguljära uttryckspaket](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Reguljära uttryck 101: En grundläggande handledning](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions)
-- [En komplett guide till reguljära uttryck](https://www.regular-expressions.info/)
+# Se även
+
+- [Elm dokumentation om String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Reguljära uttryck i Elm](https://dev.to/fbonetti/how-to-implement-regular-expressions-in-elm-32m5)
+- [Regelexempel och övningar](https://regex-101.com/)

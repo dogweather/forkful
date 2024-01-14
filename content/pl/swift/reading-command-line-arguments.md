@@ -1,44 +1,69 @@
 ---
 title:    "Swift: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Jeśli jesteś programistą Swift i chcesz nauczyć się, jak odczytywać argumenty linii poleceń, ten wpis jest dla Ciebie. Odczytywanie argumentów linii poleceń jest niezbędnym elementem wielu aplikacji. Pozwala użytkownikom przekazać programowi dane, które mogą wpływać na jego działanie. Dzięki temu użytkownik może łatwo dostosować działanie programu do swoich potrzeb.
+Czy kiedykolwiek zastanawiałeś się, jak programy takie jak systemy operacyjne czy aplikacje konsolowe przyjmują argumenty z wiersza poleceń? W tym wpisie dowiecie się, dlaczego jest to ważna umiejętność dla każdego programisty Swift.
 
-## Jak to zrobić
+## Jak To Zrobić?
 
-Jeśli chcesz odczytać argumenty linii poleceń w swojej aplikacji Swift, wystarczy użyć funkcji CommandLine. Najpierw musisz zaimportować framework Foundation, aby móc korzystać z tej funkcji:
+Aby odczytać argumenty z wiersza poleceń w Swift, użyjemy biblioteki "Foundation" i funkcji "CommandLine.arguments". Poniższy kod demonstruje, jak możemy wyświetlić wszystkie argumenty przekazane do programu:
 
 ```Swift
 import Foundation
-```
 
-Następnie możesz użyć klasy CommandLine, aby odczytać wszystkie przekazane argumenty linii poleceń:
-
-```Swift
 let arguments = CommandLine.arguments
+
+for argument in arguments {
+    print(argument)
+}
 ```
 
-Teraz możesz przeglądać zawartość tego tablicy, aby znaleźć konkretne argumenty, których potrzebujesz. Oto przykład, jak wydrukować drugi argument:
+Aby przekazać argumenty do programu podczas kompilacji, wystarczy wpisać je po nazwie pliku w terminalu. Przykładowo, jeśli nazwa pliku to "myProgram.swift" oraz chcemy przekazać argumenty "Hello" i "world", to wpiszemy w terminalu:
+
+```
+swift myProgram.swift Hello world
+```
+
+Po wykonaniu programu, otrzymamy następujący output:
+
+```
+Hello
+world
+```
+
+## Głębszy Wgląd
+
+Możliwość przekazywania argumentów do programu z wiersza poleceń jest szczególnie użyteczna, gdy chcemy zmienić działanie naszej aplikacji w zależności od parametrów. Dzięki temu możemy dostosowywać nasz program do różnych potrzeb i ułatwić jego używanie.
+
+Na przykład, możemy sprawdzić, czy przekazane argumenty zawierają określone wartości i na tej podstawie wykonać różne akcje. W naszym przykładowym kodzie, zamiast wyświetlać wszystkie argumenty, możemy sprawdzić, czy pierwszym argumentem jest słowo "Hello" i w zależności od tego, wyświetlić różne powitania:
 
 ```Swift
-print(arguments[1])
+import Foundation
+
+let arguments = CommandLine.arguments
+let firstArgument = arguments[1]
+
+if firstArgument == "Hello" {
+    print("Witaj!")
+} else {
+    print("Cześć!")
+}
 ```
 
-Jeśli chcesz przekonwertować argument na odpowiedni typ danych, musisz wykorzystać odpowiednie funkcje, np. `Int()` lub `Double()`.
+Dzięki temu, nasz program będzie bardziej interaktywny i elastyczny.
 
-## Głębszy zanurzenie
+## Zobacz Również
 
-Jeśli chcesz dowiedzieć się więcej o odczytywaniu argumentów linii poleceń w Swift, możesz zacząć od zapoznania się z dokumentacją API CommandLine. Znajdziesz tam więcej funkcji, które mogą być przydatne w różnych przypadkach. Możesz również spróbować stworzyć własną funkcję, która pozwoli Ci przetworzyć argumenty zgodnie z własnymi potrzebami.
+Jeśli chcesz dowiedzieć się więcej o pracy z argumentami z wiersza poleceń w Swift, polecamy zapoznać się z dokumentacją języka oraz poniższymi linkami:
 
-Ważne jest również pamiętanie o obsłudze błędów podczas odczytywania argumentów linii poleceń. W przypadku nieprawidłowych danych lub braku określonych argumentów, Twój program może wypisać błąd lub wywołać wyjątek.
+- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [Tutorial o obsłudze argumentów z wiersza poleceń w Swift](https://www.raywenderlich.com/1224214-command-line-programs-on-macos-tutorial-for-beginners)
+- [Inne artykuły na temat Swift na naszym blogu](https://www.raywenderlich.com/archive/?s=swift)
 
-## Zobacz także
-
-- Dokumentacja API CommandLine: https://developer.apple.com/documentation/foundation/commandline
-- Poradnik "Jak przekazywać argumenty linii poleceń w Swift": https://www.hackingwithswift.com/articles/106/how-to-pass-command-line-arguments-to-a-swift-2-script
-- Przykładowe aplikacje z wykorzystaniem argumentów linii poleceń stworzone w Swift: https://github.com/davuth/SwiftCmdTools
+Mamy nadzieję, że ten wpis był dla Ciebie pomocny. Pozostajemy do dyspozycji w razie pytań lub uwag w komentarzach poniżej!

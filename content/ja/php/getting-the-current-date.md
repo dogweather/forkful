@@ -1,45 +1,61 @@
 ---
-title:    "PHP: 現在の日付を取得する"
+title:    "PHP: 現在の日付の取得"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を取得するのか
+## なぜ「現在の日付」を取得したいのか
 
-現代のプログラミングでは、日付と時刻を取得することは非常に重要です。特定の日付や時間に処理を実行したり、現在の時刻を表示したりすることが必要になるケースは数多くあります。今回は、PHPプログラミングで日付を取得する方法について紹介します。
+プログラミングにおいて、時折現在の日付が必要になることがあります。例えば、ブログの投稿日時を表示したり、アプリケーションのログに記録したりする際には、現在の日付が欠かせません。また、タイムスタンプを生成したり、アプリケーションの特定の機能を特定の日付に設定したりする際にも必要です。つまり、現在の日付を取得することは、プログラミングにおいて非常に重要なことなのです。
 
-## 方法：日付を取得する基本的なコード
+## 方法：現在の日付を取得するには
 
-PHPでは、組み込み関数である`date()`を使用して日付を取得することができます。以下のコードを参考にしてください。
-
-```PHP
-<?php
-$date = date('Y-m-d'); // YYYY-MM-DD形式の現在の日付を取得
-echo $date; // "2021-09-15"のように表示される
-```
-
-上記のコードでは、`date()`関数に表示したい日付のフォーマットを指定する必要があります。`Y`は4桁の年、`m`は2桁の月、`d`は2桁の日を表しています。それぞれのフォーマットを組み合わせることで、さまざまな日付の表記が可能です。
-
-## 深い情報：`date()`関数のパラメーター
-
-`date()`関数では、取得したい日付のフォーマットを指定するだけでなく、より多くのパラメーターを利用することができます。例えば、以下のように`date()`のパラメーターを指定することで、週の最初の日付や12時間制の時刻などを取得することができます。
+PHPでは、現在の日付を取得するために、date関数を使用します。date関数は、指定したフォーマットに基づいて日付をフォーマットして返します。以下のコードを見てみましょう。
 
 ```PHP
 <?php
-$date = date('l, F jS', strtotime('next week')); // "September 20th"のように表示される
-$time = date('h:i A'); // "10:30 AM"のように表示される
+$date = date('Y-m-d');
+echo $date;
 ```
 
-詳しいパラメーターの指定方法はPHPの公式ドキュメントを参照することをおすすめします。
+上記のコードを実行すると、現在の日付が「2021-10-05」のような形式で返されます。フォーマットを変更したい場合は、一番最後の引数にフォーマットを指定することができます。例えば、以下のように変更することができます。
 
-## 参考リンク
+```PHP
+//日付を「10月5日 2021年」という形式で取得する
+$date = date('m月d日 Y年');
+echo $date; //出力結果：10月5日 2021年
+```
 
-- [PHP: date - Manual](https://www.php.net/manual/en/function.date.php)
-- [PHP: strtotime - Manual](https://www.php.net/manual/en/function.strtotime.php)
-- [Getting the Current Date and Time in PHP](https://www.w3schools.com/php/php_date.asp)
-- [PHPで日付・時刻を取得する方法【date, time, strftime】](https://techacademy.jp/magazine/19110) (Japanese) 
+さらに、現在の日付だけでなく、時間も取得することができます。例えば、以下のように「時:分:秒」という形式で取得できます。
 
-## 参考
+```PHP
+//現在の時刻を「時:分:秒」の形式で取得する
+$time = date('H時:i分:s秒');
+echo $time; //出力結果：16時20分35秒
+```
 
-[PHPで日付を取得する方法（「date」関数）](https://programming-study.com/php/get-date/) (Japanese)
+## ディープダイブ：現在の日付についてさらに詳しく
+
+date関数は、他にも様々なオプションを持っています。例えば、特定のタイムゾーンで日付を取得することもできます。また、引数に指定することで、現在の日付に対して加減算を行うこともできます。
+
+さらに、PHPのDateTimeクラスを使用することで、より複雑な操作を行うこともできます。例えば、2つの日付の差を計算したり、特定の日付の曜日を取得したりすることができます。
+
+現在の日付を取得する方法は、プログラミング初心者から上級者まで、どのレベルの人にも役立つ知識です。ぜひ、試してみてください。
+
+## その他の情報
+
+#### 他の言語における現在の日付の取得方法
+[JavaScriptでの現在の日付の取得方法](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+
+[Pythonでの現在の日付の取得方法](https://www.w3schools.com/python/python_datetime.asp)
+
+#### 参考リンク
+[PHPのdate関数について](https://www.php.net/manual/en/function.date.php)
+
+[PHPのDateTimeクラスについて](https://www.php.net/manual/en/datetime.format.php)
+
+[PHPのタイムゾーンリスト](https://www.php.net/manual/en/timezones.php)
+
+## 参考になるリン

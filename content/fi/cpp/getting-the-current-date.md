@@ -1,68 +1,66 @@
 ---
-title:    "C++: ”Nykyisen päivämäärän saaminen”"
+title:    "C++: Päivämäärän haku"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi 
 
-Monissa C++ ohjelmissa on tarve saada käyttöön nykyinen päivämäärä. Tämä voi olla tarpeellista esimerkiksi laskutoimitusten yhteydessä, kun halutaan laskea esimerkiksi ikä tai vertailla päivämääriä. Tässä blogikirjoituksessa käymme läpi, miten nykyinen päivämäärä saadaan ohjelman käyttöön.
+Monissa ohjelmoinnin projekteissa on tarvetta käyttää nykyistä päivämäärää ja aikaa. Tämä voi olla hyödyllistä esimerkiksi laskenta- tai ajoitussovelluksissa. Tässä blogikirjoituksessa kerromme, miten saat nykyisen päivämäärän C++ -ohjelmassasi ja annamme muutamia esimerkkejä sen käytöstä.
 
-## Miten
+# Miten
 
-Päivämäärän saamiseen C++ ohjelmassa käytetään standardikirjaston <chrono> ja <ctime> ohjelmakirjastoja. Näiden avulla ohjelma pystyy käsittelemään erilaisia aika- ja päivämäärätietoja.
-
-Alla näet esimerkin, miten saat nykyisen päivämäärän tulostettua konsoliin:
+Käytännössä nykyisen päivämäärän saaminen C++:ssa on hyvin yksinkertaista. Sinun tulee vain sisällyttää <ctime> -kirjasto ohjelmaasi ja käyttää time_t ja tm -rakenteita. Tässä esimerkissä tulostamme nykyisen päivämäärän muodossa "DD/MM/YYYY":
 
 ```C++
-// tarvittavien kirjastojen tuonti
-#include <chrono>
-#include <ctime>
 #include <iostream>
+#include <ctime>
 
-// vakiot ajan ja päivämäärän esittämiseen
-const int SECONDS_IN_DAY = 86400;
+using namespace std;
 
-// päivämääränmuokkausohjelman esittely
-std::tm* getParsedDate(std::time_t time) {
-  std::tm* parsedTime = std::localtime(&time); // saadaan käyttöpaikkaan sidottu aika
-  return parsedTime;
+int main()
+{
+    // Hae nykyinen aika
+    time_t now = time(0);
+    
+    // Luo aikarakenteen ja sijoita nykyinen aika siihen
+    tm *currentTime = localtime(&now);
+    
+    // Tulosta päivämäärä halutussa muodossa
+    cout << "Tänään on " << currentTime->tm_mday << "/" << currentTime->tm_mon + 1 << "/" << currentTime->tm_year + 1900 << endl;
+    
+    return 0;
 }
-
-int main() {
-  // haetaan nykyinen aika ja päivämäärä
-  std::time_t now = std::time(0);
-  // muokataan päivämäärämuotoon halutun tiedon saamiseksi
-  std::tm* currentDate = getParsedDate(now);
-  // haetaan vuosi, kuukausi ja päivä erikseen
-  int year = currentDate->tm_year + 1900;
-  int month = currentDate->tm_mon + 1;
-  int day = currentDate->tm_mday;
-  
-  // tulostetaan päivämäärä konsoliin
-  std::cout << day << "." << month << "." << year << std::endl;
-  
-  return 0;
-}
-
 ```
 
-Esimerkkituloste:
+Tämän ohjelman tuloste olisi esimerkiksi:
+
 ```
-11.7.2021
+Tänään on 13/10/2021
 ```
 
-## Syventävä tarkastelu
+Voit myös käyttää muita muotoilumerkkejä muodostaaksesi päivämäärän haluamassasi muodossa. Esimerkiksi, jos haluat tulostaa kuukauden kirjaimellisena versiona, voit käyttää muotoilumerkkiä "%b" seuraavasti:
 
-Edellisessä esimerkissä käytettiin std::time ja std::localtime funktioita saamaan nykyinen päivämäärä ja muuntamaan se haluttuun muotoon. On myös mahdollista käyttää muita funktioita, kuten std::chrono::system_clock ja std::chrono::steady_clock. Nämä tarjoavat erilaisia aikamuotoja ja toimivat hieman eri tavalla kuin aiemmat esimerkkifunktiot.
+```C++
+// Tulosta kuukausi kirjaimellisessa muodossa
+cout << "Tänään on " << currentTime->tm_mday << " " << currentTime->tm_mon % 12 + 1 << " " << currentTime->tm_year + 1900 << endl;
+```
 
-On myös hyvä huomata, että aikaa ja päivämäärää käsitellessä kannattaa ottaa huomioon eri aikavyöhykkeiden vaikutukset. Esimerkiksi std::time muodostaa ajan UTC-aikavyöhykkeen mukaan, kun taas std::localtime käyttää käyttöpaikkaan sidottua aikaa.
+Tämän ohjelman tuloste voisi olla esimerkiksi:
 
-## Katso myös
+```
+Tänään on 13 lokakuu 2021 
+```
 
-- [std::chrono ohjelmakirjasto](https://en.cppreference.com/w/cpp/chrono)
-- [std::ctime ohjelmakirjasto](https://en.cppreference.com/w/cpp/chrono/c/ctime)
-- [std::localtime funktio](https://en.cppreference.com/w/cpp/chrono/localtime)
-- [std::chrono::system_clock funktio](https://en.cppreference.com/w/cpp/chrono/system_clock)
-- [std::chrono::steady_clock funktio](https://en.cppreference.com/w/cpp/chrono/steady_clock)
+# Syvällisempi sukellus
+
+Nykyisen päivämäärän saamiseen vaadittavat toimenpiteet vaihtelevat eri järjestelmien välillä, kuten Windowsilla, Linuxilla ja Macilla. Tämä johtuu siitä, että jokaisella järjestelmällä voi olla hieman erilainen ajanmittauslogiikka.
+
+Päivämäärän ja ajan hallinta C++:ssa perustuu Unix-aikaleimaan, joka ilmaisee ajan kulun 1. tammikuuta 1970 kello 00:00:00 UTC:sta lähtien. Tämä aikaleima tallennetaan yleensä 32-bittiseen kokonaislukumuuttujaan, time_t:iin, ja sitä käytetään kaikissa päivämäärän ja ajan laskelmissa ja muunnoksissa. Tarkemmat tiedot ajanhallinnasta ja muunnoksista löytyvät <ctime> -kirjaston dokumentaatiosta.
+
+# Katso myös
+
+- C++ <ctime> kirjasto: https://www.cplusplus.com/reference/ctime/
+- Unix-aikaleima: https://en.wikipedia.org/wiki/Unix_time

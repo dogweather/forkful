@@ -1,42 +1,41 @@
 ---
 title:    "Java: Utskrift av feilsøkingsutdata"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det kan være fristende å hoppe over å inkludere debug utskrift i koden din, men det kan være en svært nyttig praksis når du utvikler et Java-program. Utskrift av feilmeldinger og variabler kan hjelpe deg med å feilsøke og forstå hva som skjer i koden din.
+Å skrive ut feilsøkingsmeldinger er en viktig del av å utvikle Java-programmer. Det lar deg utforske din kode, finne eventuelle feil og løse dem for å sikre at programmet kjører jevnt. Det er også en god måte å få et bedre innsyn i hvordan koden din fungerer.
 
-# Hvordan
+## Slik gjør du det
 
-Å legge til debug utskrift i Java-koden din er enkelt. Du kan bruke "System.out.println()" metoden for å skrive ut en variabel eller en melding til konsollen.
+For å skrive ut feilsøkingsmeldinger i Java, bruker du metoden `System.out.println()`. Denne metoden skriver ut en melding til konsollet, som kan være nyttig når du prøver å forstå programflyten eller finne ut hvor i koden en feil oppstår.
 
-```Java
-String navn = "Maria";
-System.out.println("Hei, mitt navn er " + navn);
-```
-Dette vil skrive ut "Hei, mitt navn er Maria" i konsollen når programmet kjører.
-
-Du kan også bruke "System.out.printf()" metoden for å skrive ut en formattert melding eller variabel.
+La oss se et enkelt eksempel på hvordan du kan bruke `System.out.println()`:
 
 ```Java
-int tall = 10;
-System.out.printf("Tallet er %d", tall);
+public class Eksempel {
+
+    public static void main(String[] args) {
+        int tall = 10;
+        System.out.println("Verdien av variabelen tall er: " + tall);
+    }
+}
 ```
-Dette vil skrive ut "Tallet er 10" i konsollen.
 
-Debug utskrift kan også hjelpe deg med å følge med på hva som skjer i koden mens den kjører. Du kan plassere utskriftssetninger i forskjellige deler av koden for å se hvordan variabler endres eller hvilke deler av koden som blir utført.
+I dette eksempelet oppretter vi en variabel `tall` med verdien 10. Deretter bruker vi `System.out.println()` til å skrive ut en melding som inneholder verdien til variabelen. Når programmet kjører, vil konsollet vise følgende output: "Verdien av variabelen tall er: 10". Dette viser oss at variabelen `tall` faktisk har verdien 10, og vi kan bruke denne informasjonen til å bedre forstå programmet vårt.
 
-# Dypdykk
+## Dypdykk
 
-Det er viktig å merke seg at debug utskrift bør fjernes før programmet ditt er ferdig og klart for produksjon. Utskriftssetningene kan forstyrre ytelsen til programmet ditt og kan føre til unødvendig langsomhet.
+Det er flere måter å skrive ut feilsøkingsmeldinger på i Java, avhengig av hva du ønsker å oppnå. `System.out.println()`-metoden er den enkleste, men du kan også bruke `System.out.print()` eller `System.out.printf()` for å formatere utskriften på ulike måter.
 
-I tillegg bør du vurdere å bruke en logging-bibliotek som log4j i stedet for å bruke standard utskriftsfunksjonene. Logging-biblioteker gir deg mer kontroll over hva som skal skrives ut, kan lagre utskrifter i en fil og kan være nyttig for feilsøking i produksjonsmiljøer.
+En annen nyttig måte å skrive ut feilsøkingsmeldinger på, er ved hjelp av loggelementer. Ved å bruke et loggelement, kan du definere forskjellige nivåer av meldinger basert på alvoret til feilen. Dette gjør det enklere å finne og løse feil i koden din.
 
-# Se også
+## Se også
 
-* [Java Debugging with IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html#debug)
-* [Debugging in Eclipse: Java’s Debugging Tool](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
-* [Java Logging Basics](https://www.tutorialspoint.com/log4j/log4j_logging_basics.htm)
+- [Java API for System.out](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out)
+- [Java Logging with SLF4J](https://www.baeldung.com/slf4j-logging)
+- [Debugging in Java](https://www.baeldung.com/java-debugging)

@@ -1,35 +1,37 @@
 ---
 title:    "Rust: Obtendo a data atual"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual em Rust?
+## Por que obter a data atual?
 
-Existem diversas razões pelas quais alguém pode precisar de obter a data atual em um programa de Rust. Pode ser para registrar informações de registros, lidar com datas limites ou simplesmente para exibir a data em um formato específico. Independentemente do motivo, é uma tarefa importante que pode ser facilmente realizada através do uso das bibliotecas internas de Rust.
+Obter a data atual é uma tarefa comum em muitos programas e aplicativos, especialmente aqueles que lidam com tarefas relacionadas ao tempo. Com a linguagem de programação Rust, é possível obter a data atual de forma eficiente e precisa, usando as ferramentas e bibliotecas certas.
 
-## Como obter a data atual em Rust
+## Como fazer:
 
-Para obter a data atual em Rust, é necessário utilizar uma biblioteca chamada `chrono`, que fornece métodos para lidar com datas e horas. Vamos dar uma olhada em um exemplo simples de como obter a data atual e imprimi-la na tela usando a função `now()` do `chrono`.
+Para começar, é necessário importar a biblioteca [`chrono`](https://docs.rs/chrono/latest/chrono/) na seção de dependências do seu projeto. Em seguida, utilize o seguinte código em um bloco `main()` para obter a data atual:
 
-```
-use chrono::Local; // importa a biblioteca chrono
+```Rust
+use chrono::{Local, Datelike};
 
-fn main() {
-    let local_date = Local::now(); // obtém a data atual usando a função "now()"
-    println!("A data atual é {}", local_date); // imprime a data atual na tela
-}
+let data_atual = Local::now();
+println!("A data atual é: {} de {} de {}", data_atual.day(), data_atual.month(), data_atual.year());
 ```
 
-Este código primeiro importa a biblioteca `chrono` e em seguida, utiliza a função `now()` para obter a data atual no formato de "dia-mês-ano hora:minuto:segundo". É importante mencionar que a função `now()` utiliza o fuso horário local do sistema. Se você quiser utilizar um fuso horário diferente, basta especificá-lo na função `now()`.
+Este código irá imprimir a data atual no formato "dia de mês de ano". Por exemplo, se hoje fosse 24 de fevereiro de 2021, o output seria: "A data atual é: 24 de 2 de 2021". Para formatar a data de maneira diferente, você pode explorar outras funções e métodos disponíveis na biblioteca `chrono`.
 
-## Deep Dive: Mais informações sobre como obter a data atual em Rust
+Além disso, a biblioteca `chrono` também permite obter informações como a hora e o fuso horário atual. Para isso, você pode utilizar as funções `hour()`, `minute()` e `timezone()`, respectivamente.
 
-A biblioteca `chrono` fornece diversas funções e métodos para trabalhar com datas e horas, além de oferecer suporte para datas específicas e fuso horário. Se você quiser aprender mais sobre como utilizar essa biblioteca, recomendamos a leitura da documentação oficial do `chrono` e a exploração de seus diversos recursos.
+## Deep Dive:
 
-## Veja também
+A biblioteca `chrono` é construída em cima de outra biblioteca de data e hora chamada [`time`](https://docs.rs/time/latest/time/), que oferece uma interface mais baixo nível e flexível para lidar com datas e horas. Se você precisa de recursos mais avançados para manipulação de data e hora, pode ser interessante explorar a biblioteca `time` e suas possibilidades.
 
-- [Documentação do `chrono`](https://docs.rs/chrono/)
-- [Tutorial de datas e horas em Rust](https://dev.to/qnighy/getting-started-with-datetime-in-rust-14ie)
-- [Exemplos práticos de uso da biblioteca `chrono`](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
+Além disso, a biblioteca `chrono` também possui suporte para formatação e parsing de datas em diferentes formatos, tornando possível trabalhar com datas vindas de diferentes fontes externas.
+
+## Veja também:
+
+- [Documentação oficial da biblioteca `chrono`](https://docs.rs/chrono/latest/chrono/)
+- [Documentação oficial da biblioteca `time`](https://docs.rs/time/latest/time/)

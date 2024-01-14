@@ -1,57 +1,53 @@
 ---
 title:    "Rust: 文字列を小文字に変換する"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
- Rustで文字列を小文字に変換することが重要なのか、その理由を説明します。
-
-## なぜ文字列を小文字に変換するか
-文字列を小文字に変換することは、単純に表示の問題ではありません。一つの理由としては、ユーザーが入力した文字列を処理する際に、大文字と小文字の違いを無視する必要がある場合があります。また、文字列の比較や検索を行う際にも、大文字と小文字を区別することができなくなる可能性があります。そのため、文字列を小文字に統一することで、これらの問題を回避することができるのです。
+## なぜ
+文字列を小文字に変換することの意義を説明します。Rust言語を学び始める人や、より良いコードを書くためのヒントをお探しの方にとって、理解することが重要です。
 
 ## 方法
-まず、Rustでは文字列の小文字への変換を行うために、`to_lowercase()`というメソッドを使用します。これを使うことで、文字列内の全ての文字を小文字に変換することができます。例えば、次のようなコードを実行すると、入力された文字列を小文字に変換して出力します。
+まずは、標準ライブラリの `to_lowercase()` 関数を使ってみましょう。例えば、`Hello Rust`を `hello rust` に変換したい場合、以下のようなコードを書くことができます。
 
 ```Rust
-let input = "Hello World";
-let lower_case = input.to_lowercase();
-
-println!("{}", lower_case);
+let s = "Hello Rust".to_lowercase();
+println!("{}", s);
 ```
 
-上記のコードの実行結果は、`hello world`となります。
+出力結果は、`hello rust`となります。
 
-また、もし変換結果を新しい文字列として取得したい場合は、`to_lowercase()`メソッドではなく、`to_lowercase()`関数を使用します。これにより、変数を新しい小文字の文字列として定義することができます。
+また、自分で実装する方法もあります。以下のサンプルコードをご覧ください。
 
 ```Rust
-let input = "Hello World";
-let lower_case: String = input.to_lowercase();
+fn convert_to_lowercase(s: &str) -> String {
+    let mut output = String::new();
+    for c in s.chars() {
+        if c.is_uppercase() {
+            output.push((c as u8 + 32) as char);
+        } else {
+            output.push(c);
+        }
+    }
+    output
+}
 
-println!("{}", lower_case);
+let s = "Hello Rust";
+let lowercased = convert_to_lowercase(s);
+println!("{}", lowercased);
 ```
 
-上記のコードでも同様に、`hello world`という文字列が出力されます。
+このコードでは、文字列の各文字をチェックし、大文字ならばアスキーコードを32減算して小文字に変換しています。出力結果は同じく`hello rust`となります。
 
-## 深堀り
-`to_lowercase()`メソッドでは、ASCII文字列のみを小文字に変換することができます。しかし、Unicode文字列の場合は異なります。Unicode文字列の小文字への変換には、`to_lowercase()`メソッドとは別に、`fold()`や`map()`といったメソッドを組み合わせる必要があります。
+## ディープダイブ
+文字列を小文字に変換する際、Unicode文字の処理や、他の言語との違いについて深く掘り下げていきましょう。Rustの `to_lowercase()` 関数は、UnicodeのNFC形式での変換を行います。また、UTF-8以外のエンコーディングでは、変換結果が異なることにも注意が必要です。
 
-例えば、次のようなコードでUnicode文字列を小文字に変換することができます。
+## 参考リンク
+- [Rust標準ライブラリ: str::to_lowercase()](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
+- [Unicode Normalization Forms](https://unicode.org/faq/normalization.html)
+- [UTF-8とは？](https://ja.wikipedia.org/wiki/UTF-8)
 
-```Rust
-let input = "Hello 世界";
-let lower_case: String = input.chars().map(|c| c.to_lowercase()).collect();
-
-println!("{}", lower_case);
-```
-
-上記のコードの実行結果は、`hello 世界`となります。
-
-# 参考
-- [Rust公式ドキュメント：Strings](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Rustで文字列を小文字に変換する方法](https://qiita.com/maroKanatani/items/c1417642f3e16e94a488) 
-
-# また見る
-- [Rustで文字列を大文字に変換する方法](https://dev.classmethod.jp/articles/python-rust-uppercase-lowercase/)
-- [Rustのメソッドチェーンを理解する](https://qiita.com/yuki_ycino/items/882449c3062fc973e274)
+## もっと詳しく知りたい方へ
+Rustの文字列処理については、[The Rust Programming Language](https://doc.rust-lang.org/book/)を参考にしてください。また、プログラミング言語全般の知識を深めたい方は、[プログラム言語の基礎](https://www.amazon.co.jp/プログラム言語の基礎-ヨハネス・グレーチェンバッハ/dp/4320123369)という本がおすすめです。

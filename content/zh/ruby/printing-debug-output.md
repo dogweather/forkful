@@ -1,64 +1,51 @@
 ---
 title:    "Ruby: 打印调试输出"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-在编程过程中，我们经常会遇到各种问题，这时候就需要使用调试来找出程序中的错误。打印调试输出是一种常用的调试技巧，它可以帮助我们更快地定位问题并进行修复。
+打印调试输出是在Ruby编程中重要的一部分。当您在编写代码时，有时候需要查看变量的值或程序的执行流程，以便更好地理解代码，发现潜在的错误。因此，打印调试输出可以帮助您更有效地调试和排除错误。
 
-# 如何
+## 如何做到
 
-要打印调试输出，我们可以使用Ruby中的`puts`和`p`方法。`puts`方法可以将输出打印到屏幕上，而`p`方法则会将输出以更易读的形式打印。让我们来看一个简单的示例：
-
-```Ruby
-# 创建一个数组
-arr = [1, 2, 3]
-
-# 使用puts打印输出
-puts arr
-# 输出： [1, 2, 3]
-
-# 使用p打印输出
-p arr
-# 输出： [1, 2, 3]
-```
-
-我们也可以在程序中加入调试标志，来实现只在特定情况下打印调试输出。例如：
+打印调试输出可以通过简单的puts语句来实现。例如：
 
 ```Ruby
-# 设置调试标志为true
-debug = true
-
-# 创建一个变量
-name = "John"
-
-# 只有在调试标志为true时，才会输出调试信息
-if debug
-  puts "姓名为："
-  p name
-end
+x = 5
+puts "The value of x is #{x}"
 ```
 
-这样就可以在需要调试时打印输出，而平时则不会干扰程序运行。
+这将输出类似于：“The value of x is 5”的内容。您还可以打印复杂的变量或表达式，例如：
 
-# 深入了解
+```Ruby
+array = [1, 2, 3]
+puts "The sum of the array is #{array.sum}"
+```
 
-除了`puts`和`p`方法外，Ruby还有许多其他方法可以用于打印调试输出。例如`inspect`方法可以将任意对象以字符串的形式输出，可以帮助我们更直观地查看对象的内容。同时，我们也可以通过`$DEBUG`全局变量来确定是否输出调试信息。
+这将输出类似于：“The sum of the array is 6”的内容。您还可以使用p语句来打印带有数据结构的变量，例如：
 
-在使用打印调试输出时，我们也需要注意适度，不要过度使用，以免影响程序的性能。最后，如果遇到较复杂的调试问题，可以考虑使用调试器来帮助我们更有效地调试程序。
+```Ruby
+hash = { a: 1, b: 2, c: 3 }
+p hash
+```
 
-# 参考链接
+这将输出类似于："{:a=>1, :b=>2, :c=>3}"的内容。请注意，使用p语句将打印出Ruby对象的详细信息，而不仅仅是它们的值。
 
-- [Ruby Kernel模块文档](https://ruby-doc.org/core-2.7.0/Kernel.html)
+## 深入了解
 
-- [Ruby中的调试技巧](https://medium.com/@practiceinvinc/ruby-debugging-tips-6b3852b954c3)
+除了使用puts和p语句外，您还可以使用其他调试工具来打印输出。例如，您可以使用byebug gem来设置断点并跟踪程序的执行流程。您还可以使用pry gem来进入一个交互式调试会话，从而可以在运行时检查变量的值。
 
-- [使用调试器来调试Ruby程序](https://medium.com/rubycademy/ruby-debugging-part4-better-than-puts-6696aa4f43cc)
+另一种打印调试输出的方式是使用logger类。您可以通过创建一个logger实例来打印不同级别的调试日志，并在程序的不同部分使用它来跟踪程序的执行流程。
 
-## 参阅
+## 参考
 
-- [Ruby调试教程（英文）](https://www.rubyguides.com/2015/03/ruby-debugging/)
-- [Ruby中的打印调试输出和断点（英文）](https://www.freecodecamp.org/news/how-to-debug-in-ruby-a-guide-for-beginners/)
+在开始打印调试输出之前，您可以先阅读以下官方文档来了解更多信息：
+
+- [Ruby文档：Kernel模块](https://ruby-doc.org/core-2.7.1/Kernel.html)
+- [byebug gem官方文档](https://github.com/deivid-rodriguez/byebug)
+- [pry gem官方文档](https://github.com/pry/pry)
+- [logger类官方文档](https://ruby-doc.org/stdlib-2.7.1/libdoc/logger/rdoc/Logger.html)

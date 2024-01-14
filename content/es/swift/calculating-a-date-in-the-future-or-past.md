@@ -1,47 +1,36 @@
 ---
 title:    "Swift: Calculando una fecha en el futuro o pasado"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué calcular una fecha en el futuro o en el pasado?
 
-Calcular una fecha en el futuro o en el pasado es una tarea común en la programación. Ya sea para planificar citas o eventos, o simplemente para realizar cálculos basados en fechas, saber cómo calcular una fecha es una habilidad útil que todo programador debe tener.
+Si eres un programador de Swift, es muy probable que en algún momento hayas necesitado calcular una fecha en el futuro o en el pasado. Ya sea para mostrar información de eventos programados o para realizar cálculos de tiempo en tu aplicación, saber cómo calcular fechas es una habilidad muy útil. En este artículo, repasaremos cómo hacerlo en Swift de manera sencilla y eficiente.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Swift, utilizaremos la estructura `Date` y el objeto `DateComponents`. Primero, debemos especificar los componentes de la fecha que queremos calcular, como el año, el mes, el día y la hora. Luego, podemos utilizar el método `Calendar.date(byAdding:to:)` para sumar o restar estos componentes de una fecha existente.
-
-Por ejemplo, si queremos calcular la fecha 2 de abril de 2022, podemos hacerlo de la siguiente manera:
+La forma más sencilla de calcular una fecha en el futuro o en el pasado es utilizando el método `addingTimeInterval` en la clase `Date`. Este método acepta un tiempo en segundos y devuelve una nueva fecha resultante de sumar o restar ese tiempo a la fecha original. Por ejemplo, si queremos obtener la fecha de mañana, podemos hacer lo siguiente:
 
 ```Swift
-let date = Date() // fecha actual
-var components = DateComponents()
-components.day = 2
-components.month = 4
-components.year = 2022
-
-let futureDate = Calendar.current.date(byAdding: components, to: date) // 02/04/2022
-```
-Además de poder sumar o restar componentes, también podemos especificar qué tipo de componente queremos calcular. Por ejemplo, si sólo queremos calcular la fecha un mes en el futuro, podemos hacerlo de la siguiente manera:
-
-```Swift
-let date = Date() // fecha actual
-var components = DateComponents()
-components.month = 1 // añadimos 1 mes a la fecha actual
-
-let futureDate = Calendar.current.date(byAdding: components, to: date) // fecha actual + 1 mes
+let tomorrow = Date().addingTimeInterval(86400) //86400 segundos en un día
+print(tomorrow) //imprime la fecha de mañana
 ```
 
-## Inmersión profunda
+También es posible utilizar una función más específica, como `date(byAdding:value:to:)` que nos permite especificar el tipo de componente de tiempo que queremos sumar o restar (días, meses, años, etc).
 
-Una cosa a tener en cuenta al calcular fechas en el futuro o en el pasado es que tenemos que tomar en cuenta los diferentes calendarios y zonas horarias. Por defecto, Swift utiliza el calendario Gregoriano y la zona horaria del sistema. Sin embargo, podemos especificar otros calendarios y zonas horarias según sea necesario utilizando el objeto `Calendar`.
+## Profundizando
 
-Además, podemos realizar cálculos más complejos utilizando el objeto `DateComponents`, como la diferencia entre dos fechas, obtener el día de la semana, o incluso calcular el tiempo transcurrido entre dos fechas.
+Ahora que hemos visto cómo calcular fechas de manera básica, es importante tener en cuenta ciertos detalles que pueden afectar los resultados. Por ejemplo, al sumar o restar tiempo a una fecha, el resultado puede variar dependiendo del calendario utilizado (gregoriano, hebreo, islámico, etc) y de la zona horaria en la que se encuentra el dispositivo. Es importante ser conscientes de estos factores y ajustarlos según sea necesario en nuestro código.
+
+Además, es importante tener en cuenta que las fechas en Swift también contienen información sobre la hora, por lo que si solo queremos trabajar con fechas, es recomendable utilizar la clase `DateComponents` en lugar de `Date`. Esta clase nos permite especificar únicamente los componentes de fecha que nos interesan, ignorando la información de hora.
 
 ## Ver también
 
-- [Documentación oficial de Apple sobre el objeto DateComponents](https://developer.apple.com/documentation/foundation/datecomponents)
-- [Guía del calendario en Swift](https://www.hackingwithswift.com/articles/118/how-to-use-dates-and-dateformatter-in-swift)
-- [Cómo trabajar con zonas horarias en Swift](https://www.raywenderlich.com/5154-programming-for-i18n-and-l10n-in-swift)
+Si quieres profundizar aún más en el cálculo de fechas en Swift, aquí te dejamos algunos recursos útiles:
+
+- [Documentación oficial de Apple sobre el manejo de fechas en Swift](https://developer.apple.com/documentation/foundation/date)
+- [Un tutorial completo sobre el manejo de fechas en Swift](https://www.swiftbysundell.com/basics/dates/)
+- [Una guía para trabajar con zonas horarias y calendarios en Swift](https://www.hackingwithswift.com/articles/117/calendars-and-timezones-using-calendar-and-datecomponents)

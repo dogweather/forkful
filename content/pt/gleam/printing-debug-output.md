@@ -1,26 +1,47 @@
 ---
 title:    "Gleam: Imprimindo saída de depuração"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-#
-## Porque
-Imprimir saída de depuração é uma técnica muito útil para rastrear problemas em seu código. Isso permite que você visualize o fluxo de execução de seu programa e identifique possíveis erros.
+## Por que
 
-## Como Fazer
-Para imprimir a saída de depuração em seu código Gleam, você pode usar a função `debug!()` e passar uma expressão ou variável como argumento. Aqui está um exemplo de como isso pode ser usado:
+Às vezes, quando estamos codificando em Gleam, precisamos verificar o que está acontecendo em nosso programa. Uma maneira simples de fazer isso é imprimir saídas de depuração no console. Isso pode nos ajudar a entender melhor o fluxo do programa e identificar possíveis erros.
 
-```Gleam
-let my_number = 10
-let doubled = debug!(my_number * 2)
+## Como fazer
+
+Imprimir saídas de depuração em Gleam é bastante simples. Podemos usar a função `io.inspect` e passar o valor que desejamos imprimir como argumento. Por exemplo:
+
 ```
-Este código imprimirá `20` como saída de depuração. Você também pode usar `debug!(some_function())` para imprimir a saída de uma função.
+Gleam.program
+module Main
 
-## Mergulho Profundo
-A função `debug!()` pode ser útil por mais do que apenas imprimir valores. Você também pode usar a função para imprimir mensagens de texto ou identificadores de código para ajudar a localizar onde a saída de depuração está vindo. Além disso, você pode adicionar chamadas de `debug!()` em diferentes partes do código para ter uma visão mais ampla do fluxo de execução.
+import gleam/io
+import gleam/string
 
-## Veja Também
-- Documentação oficial do Gleam sobre a função `debug!()` [link](https://gleam.run/documentation/core/function/#debug)
-- Artigo sobre depuração de código em Gleam [link](https://medium.com/@gleamlang/advanced-debugging-in-gleam-48d0fe4c074c)
+pub fn main() {
+  let name = "Gleam"
+  io.inspect(name)
+  io.inspect(string.length(name))
+}
+```
+
+Isso irá imprimir o valor da variável `name` e seu comprimento no console, que no caso seria "Gleam" e 5, respectivamente.
+
+## Profundando no assunto
+
+Ao imprimir saídas de depuração, também podemos utilizar formatação para tornar a saída mais legível e informativa. Podemos especificar o formato desejado como o segundo argumento da função `io.inspect`, usando a sintaxe `%<format>`. Por exemplo:
+
+```
+io.inspect(name, %{"O nome é %{name} e possui %{length} letras"})
+```
+
+Isso resultaria na seguinte saída: "O nome é Gleam e possui 5 letras". Dessa forma, podemos ter uma visão mais detalhada do valor que estamos inspecionando.
+
+## Veja também
+
+- Documentação oficial do Gleam sobre o uso de saídas de depuração: https://gleam.run/docs/getting-started/printing-debug-output
+- Artigo sobre saídas de depuração em Gleam do blog "Borja's Playground": https://www.borjasalguero.com/learn-gleam-print-debug-output 
+- Exemplo de código do uso de saídas de depuração no repositório oficial do Gleam: https://github.com/gleam-lang/gleam/blob/main/examples/debug_output.gleam

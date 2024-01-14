@@ -1,30 +1,53 @@
 ---
-title:    "Elm: Stampa dell'output di debug"
+title:    "Elm: Stampa di output di debug"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere codice è un processo complesso e spesso possono sorgere errori difficili da individuare. In questo caso, stampare output di debug può aiutare a identificare errori e semplificare il processo di debug.
+Stampare i messaggi di debug è un'importante pratica di programmazione che può aiutare a identificare ed eliminare errori nel tuo codice. Invece di provare a capire dove il tuo programma sta fallendo, la stampa dei messaggi di debug ti permette di vedere esattamente ciò che sta accadendo durante l'esecuzione del codice. Questo può risparmiare tempo e frustrazione nella risoluzione di bug.
 
 ## Come fare
 
-Per stampare output di debug in Elm, basta utilizzare la funzione `Debug.log` e passare come argomenti una stringa con il messaggio di debug e il valore da stampare. Ad esempio, se volessimo stampare il valore di una variabile `x`, il codice sarebbe il seguente:
+Per stampare i messaggi di debug in Elm, è possibile utilizzare la funzione `Debug.log`, che accetta due argomenti: una stringa con il messaggio di debug e un valore da stampare.
 
 ```Elm
-Debug.log "Valore di x:" x
+Debug.log "Debug message" 10
 ```
 
-Il messaggio di debug verrà stampato nella console del browser, insieme al valore della variabile. In questo modo, è possibile verificare il valore delle variabili durante l'esecuzione del programma e individuare eventuali errori.
+Questo codice produrrà il seguente output:
 
-## Approfondimenti
+```
+Debug message= 10
+```
 
-La funzione `Debug.log` può essere utilizzata in diversi scenari, ad esempio per visualizzare il contenuto di una lista o di una tupla, oppure per verificare il cammino di esecuzione del codice in una funzione ricorsiva. È importante però fare attenzione a rimuovere o commentare gli output di debug una volta risolto il problema, poiché possono rallentare l'esecuzione e rendere il codice meno leggibile.
+Puoi anche stampare valori più complessi, come liste o record, utilizzando la funzione `toString` per convertirli in stringhe.
+
+```Elm
+import Debug
+
+record = {name = "Mario", age = 30}
+
+Debug.log "Record" (toString record)
+```
+
+Questo produrrà l'output:
+
+```
+Record = "{ name = \"Mario\", age = 30 }"
+```
+
+## Approfondimento
+
+Mentre la stampa dei messaggi di debug può essere utile per identificare errori nel tuo codice, è importante non abusare di questa pratica. Troppi messaggi di debug possono essere confusi e rendere il codice meno leggibile. Inoltre, ricorda di rimuovere i messaggi di debug una volta risolti i bug.
+
+Inoltre, è possibile utilizzare il parametro `Always` nella funzione `Debug.log` per stampare i messaggi di debug anche in produzione. Questo può essere utile per verificare che il tuo codice sta funzionando correttamente in ogni contesto.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- [Articolo su Elm per principianti](https://www.elm-tutorial.org/it/01-hello-world.html)
-- [Video tutorial su Elm](https://www.youtube.com/watch?v=ZycOFAhNG1E)
+- [Documentazione di Elm sul debug](https://guide.elm-lang.org/debugging/)
+- [Articolo su quando utilizzare la stampa dei messaggi di debug](https://medium.com/@jono_bruce/when-to-use-debug-log-in-elm-a8a5dab57c39)
+- [Video tutorial su come utilizzare Debug.log in Elm](https://youtu.be/pPhGXZVIeF8)

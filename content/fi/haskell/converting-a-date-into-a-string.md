@@ -1,49 +1,40 @@
 ---
-title:    "Haskell: Päivämäärän muuntaminen merkkijonoksi"
+title:    "Haskell: Päivämäärän muuttaminen merkkijonoksi"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Päivämäärän muuntaminen merkkijonoksi on tärkeää, jotta voit esittää päivämääriä selkeässä, universaalissa muodossa. Tämä on erityisen hyödyllistä, kun jaat tietoja useiden käyttäjien kanssa tai tallennat niitä tietokantoihin.
+Monissa ohjelmoinnin projekteissa on tarve muuntaa päivämäärä merkkijonoksi. Tämä on tärkeää esimerkiksi silloin, kun halutaan tallentaa päivämäärä tietokantaan tai näyttää se käyttäjälle ymmärrettävässä muodossa. Tässä blogikirjoituksessa käsittelemme, miten tämä onnistuu Haskell-ohjelmointikielellä.
 
-## Ohjeet
-
-Käyttämällä Haskellia voit helposti muuntaa päivämäärän merkkijonoksi yksinkertaisella metodilla.
+## Kuinka
 
 ```Haskell
-import Data.Time.Format
-import Data.Time.LocalTime
-
-dateToString :: LocalTime -> String
-dateToString date = formatTime defaultTimeLocale "%d/%m/%Y" date
+import Data.Time.Format (formatTime, defaultTimeLocale)
+import Data.Time.Clock (UTCTime, getCurrentTime)
+formatDate :: UTCTime -> String
+formatDate utc = formatTime defaultTimeLocale "%d.%m.%Y" utc
+getCurrentTime >>= putStrLn . formatDate
 ```
 
-Tämä koodi käyttää `Data.Time.Format` -moduulia, joka tarjoaa `formatTime` -funktion päivämäärän muuntamiseen merkkijonoksi. Lisäksi käytämme `Data.Time.LocalTime` -moduulia saadaksemme `LocalTime` -tyypin, joka edustaa päivämäärää ja aikaa.
+Tässä esimerkissä käytämme Data.Time.Format- ja Data.Time.Clock-kirjastoja saadaksemme UTC-aikaleiman nykyhetkestä. Sitten muunnamme aikaleiman haluttuun merkkijonomuotoon käyttäen formatTime-toimintoa ja defaultTimeLocale-parametria. Lopuksi käytämme getCurrentTime-toimintoa saadaksemme nykyhetken ja tulostamme sen näytölle muunnetussa muodossa.
 
-Seuraavaksi kutsumme `dateToString` -funktiota antamalla sille haluamamme `LocalTime` -arvon. Esimerkiksi, jos haluamme muuntaa nykyisen päivämäärän merkkijonoksi, voimme käyttää `ZonedTime` -tyyppiä ja `LocalTime` -funktiota:
+Esimerkkituloste:
 
-```Haskell
-import Data.Time.Zones.All
-
-myDate :: ZonedTime
-myDate = localTimeToZonedTime utc (LocalTime (fromGregorian 2021 8 18) (TimeOfDay 10 30 0))
-
-dateToString myDate
+```
+08.09.2021
 ```
 
-Tulos olisi seuraava: `18/08/2021`
+## Syväsyventyminen
 
-## Syvällinen sukellus
+Yllä olevassa esimerkissä käytimme standardimuotoista "%d.%m.%Y", mutta formatTime-toiminto tukee useita muitakin vaihtoehtoja. Muun muassa voimme käyttää "%F" muodossa, jolloin päivämäärä näytetään ISO 8601 -standardin mukaisessa muodossa "vuosi-kuukausi-päivä".
 
-`formatTime` tarjoaa useita vaihtoehtoja päivämäärän muotoiluun, joten sinun kannattaa lukea tarkempi dokumentaatio [täältä](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html).
-
-Lisäksi, voit muuttaa käytettyä muotoa `defaultTimeLocale` -muuttujan avulla. Siinä on joitakin valmiina tarjolla, mutta voit myös luoda oman muodostimen tarpeidesi mukaan.
+Lisäksi formatTime-toiminto mahdollistaa myös kellonajan ja aikavyöhykkeen lisäämisen muotoon, jos se on tarpeellista. Tarkemmat tiedot formatTime-toiminnon käytöstä löytyvät Haskellin dokumentaatiosta.
 
 ## Katso myös
 
-- [Data.Time.Format dokumentaatio](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Data.Time.LocalTime dokumentaatio](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html)
-- [Data.Time.Zones.All dokumentaatio](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Zones-All.html)
+- [Dokumentaatio Haskellin formatTime-toiminnosta](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [Haskell-kääntäjä (GHC)](https://www.haskell.org/ghc/)

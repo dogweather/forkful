@@ -1,46 +1,53 @@
 ---
-title:    "C#: Söka och ersätta text"
+title:    "C#: Sökning och ersättning av text"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att söka och ersätta text är en viktig funktion inom programmering som hjälper oss att effektivt hantera stora mängder av textdata. Genom att lära sig denna färdighet kan du snabbt och enkelt ändra eller uppdatera stora delar av din kod, vilket sparar tid och minimerar risken för misstag.
+Att söka och ersätta text är en viktig färdighet för programmerare. Det låter dig enkelt byta ut en sträng av text med en annan i dina program eller dokument. Läs vidare för att lära dig mer om hur man gör detta i C#.
 
-## Hur man söker och ersätter text i C#
+## Så här gör du
 
-För att söka och ersätta text i C# behöver du använda dig av några grundläggande metoder och funktioner. Här är ett enkelt exempel som visar hur man kan söka efter ett visst ord i en sträng och ersätta det med ett annat ord:
+Sök och ersättning av text i C# är enkelt med hjälp av den inbyggda "Replace" funktionen. I exemplet nedan ersätter vi alla förekomster av "hej" med "hej hej" i en sträng.
 
 ```C#
-string text = "Detta är en text som du vill göra en ändring i.";
-string sökOrd = "ändring";
-string nyttOrd = "förändring";
-
-string ersattText = text.Replace(sökOrd, nyttOrd);
-Console.WriteLine(ersattText);
-// Output: Detta är en text som du vill göra en förändring i.
+string text = "Hej, jag heter Lisa. Hej Sara!";
+string ersatt = text.Replace("hej", "hej hej");
+Console.WriteLine(ersatt);
 ```
 
-I det här exemplet använder vi Replace() metoden för att ersätta alla förekomster av ordet "ändring" med ordet "förändring" i vår ursprungliga textsträng. Det är viktigt att notera att denna metod är casesensitive, vilket betyder att den kommer att ersätta endast exakta matchningar av sökordet.
+Output:
 
-Det finns också andra metoder och funktioner som kan användas för att söka och ersätta text i C#, som Regex.Replace() funktionen som erbjuder mer avancerade sökkriterier.
+```
+Hej hej, jag heter Lisa. Hej hej Sara!
+```
 
-## Fördjupning i sökning och ersättning av text
+Som du kan se ersattes både den första och andra förekomsten av "hej" med "hej hej". Detta fungerar också med Stor och Liten bokstav, så "hej" och "Hej" kommer att ersättas på samma sätt. 
 
-Det finns många olika sätt att söka och ersätta text i C#, och det kan vara bra att lära sig mer om de olika metoderna och funktionerna som finns tillgängliga. Det kan också vara hjälpsamt att förstå hur söknings- och ersättningsalgoritmer fungerar under huven.
+## Djupdykning 
 
-En viktig aspekt att överväga är prestandan - vissa metoder kan vara mer effektiva än andra beroende på storleken på texten du arbetar med och hur många gånger du behöver söka och ersätta. Det är också viktigt att vara medveten om eventuella buggar eller begränsningar för vissa funktioner.
+I Replace-funktionen kan du även ange ett tredje argument för att begränsa antalet förekomster som ersätts. Till exempel om vi bara vill ersätta det första "hej" med "hej hej" i vår tidigare sträng:
 
-Om du vill lära dig mer om sökning och ersättning av text i C# kan du kolla in följande länkar:
+```C#
+string text = "Hej, jag heter Lisa. Hej Sara!";
+string ersatt = text.Replace("hej", "hej hej", 1);
+Console.WriteLine(ersatt);
+```
 
-[Komplett guide om sökning och ersättning i C#](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/search-and-replace-substrings)
-[C# Regex klassen](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-[Effektivitetstips för sökning och ersättning i C#](https://www.dotnetperls.com/regex-performance)
+Output:
 
-## Se även
+```
+Hej hej, jag heter Lisa. Hej Sara!
+```
 
-* [C# String klassen](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
-* [C# Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-* [En komplett guide till Markdown](https://www.markdownguide.org/)
+Detta kan vara användbart när du vill byta ut en specifik del av en sträng och inte alla förekomster.
+
+## Se även 
+
+- [Microsoft Docs - String.Replace Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+- [W3Schools - C# Replace Method](https://www.w3schools.com/cs/cs_string_replace.asp)
+- [C# Programming Guide - String.Replace Method](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#replacing-substrings-within-a-character-array)

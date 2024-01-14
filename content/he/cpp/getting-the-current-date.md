@@ -1,50 +1,53 @@
 ---
-title:    "C++: לקבלת התאריך הנוכחי"
+title:    "C++: קבלת תאריך נוכחי"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-פריסת תוכניות מרובות תלויה באופן שבו הן מתגלגלות ומאגדות נתונים, בה במקרה שלנו היא תאריך נוכחי. באמצעות תאריך נוכחי, התוכנה יכולה להפגין תנועה ולשרוך אירועים אליו.
+ בכל תוכנית שנכתוב בסיס לשפת תכנות סי פלוס פלוס (C++) ישנו צורך לקבל את התאריך הנוכחי. אם נרצה להיות דייקים ניתן לשתותש בפקודות תאריך חיצוניות, אבל ישנן פתרונות נוספים שבעיקר ישמשו אנשי תוכנה או מפתחי תוכנה.
 
-## איך לעשות זאת
+## כיצד לקבל את התאריך הנוכחי
 
-בתכנות C++ ישנם מספר דרכים לקבלת תאריך נוכחי. הדרך הנפוצה ביותר היא על ידי שימוש בפונקציית `time()` והפעלתה על תאריך נוכחי. לדוגמה:
+כדי לקבל את התאריך הנוכחי בשפת תכנות C++, נשתמש בפונקציה `gettimeofday()` מספרת `sys/time.h`. התחביר הכללי של הפונקציה הוא:
+
+```C++
+#include <sys/time.h> 
+
+int gettimeofday(struct timeval *tv, struct timezone *tz);
+```
+
+עם זאת, מימושי המערכת שונים יעשו שימוש בפונקציות אחרות, אז מומלץ לבדוק את המימוש של המערכת על מנת להבין אילו פונקציות זמינות ואילו פונקציות הם עיקריות.
+
+הנה דוגמא פשוטה לקבלת התאריך הנוכחי ושימוש בו:
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <ctime> 
 
-int main() {
-    // משתנה לאחסון זמן נוכחי
-    time_t now = time(0);
-
-    // הפעלת התאריך הנוכחי על פני משתנה מטיפוס מספרי
-    tm* currentDate = localtime(&now);
-
-    // הצגת תאריך נוכחי על ידי שימוש בפונקציות בנויות
-    std::cout << "התאריך הנוכחי הוא: " << (currentDate->tm_mon + 1) << "/" << currentDate->tm_mday << "/" << (currentDate->tm_year + 1900) << std::endl;
-
+int main()
+{
+    // create a struct to hold the time
+    time_t rawtime;
+    // get current time and store it in the struct
+    time (&rawtime);
+    // print the current time
+    cout << "The current date and time is: " << ctime(&rawtime) << endl;
     return 0;
 }
 ```
 
-פלט ישלח:
+פלט יכול להיות משהו כזה:
 
 ```
-התאריך הנוכחי הוא: 12/16/2021
+The current date and time is: Mon Jul  5 15:53:25 2021
 ```
 
-## טיפול עמוק
+בנוסף לזה, ישנן גם ספריות פופולריות כמו ה-Boost Date Time שמציעה פתרונות מתקדמים יותר עבור קבלת התאריך הנוכחי. ככל שהמערכת גדולה יותר ומורכבת יותר, כך יש לו גם פתרונות יותר.
 
-בנוסף לשיטה המוצגת בדוגמה למעלה, ניתן להשתמש בספריות נוספות כמו `chrono` ו-`ctime` לעבודה עם תאריך נוכחי. כמו כן, ניתן להשתמש בפונקציות נוספות כגון `gettimeofday()` ו-`localtime_s()`. בקישורים מתחת תוכלו למצוא מידע נוסף על כל אחת מהשיטות.
+## חפירה עמוקה
 
-## ראו גם
-
-- [תיעוד ctime](https://www.cplusplus.com/reference/ctime/)
-- [תיעוד chrono](https://www.cplusplus.com/reference/chrono/)
-- [מדריך על תאריך נוכחי ב-C++](https://www.geeksforgeeks.org/current-date-and-time-using-c-programming/)
-- [תיעוד gettimeofday()](https://linux.die.net/man/2/gettimeofday)
-- [מדריך לתאריך נוכחי בשפת C++](https://www.guru99.com/c-date-time.html)
+אם נרצה להבין איך `gettimeofday()` מטפלת בפעולה זו, כדאי לברר את הקובץ `sys/time.h` בחבילת הנתונים של C++. הפונקציה מטפלת בעיתות זמן כדי לקבל את התאריך הנוכחי בנ

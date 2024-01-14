@@ -1,71 +1,60 @@
 ---
 title:    "Elixir: Extrayendo subcadenas"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué extraer subcadenas en Elixir?
+## Por qué
 
-Extraer subcadenas es una técnica muy útil en la programación en Elixir. Esta funcionalidad nos permite obtener una parte específica de una cadena de texto para poder manipular o utilizarla de manera independiente. En este artículo, aprenderemos por qué es importante saber cómo extraer subcadenas y cómo hacerlo de manera efectiva en Elixir.
+Extraer subcadenas es una habilidad importante en la programación de Elixir ya que te permite manipular y procesar cadenas de texto de manera efectiva. Con esta técnica, puedes obtener solo la información relevante de una cadena y utilizarla para diversos fines, como búsquedas y validaciones.
 
-## Cómo extraer subcadenas en Elixir
+## Cómo hacerlo
 
-La sintaxis para extraer subcadenas en Elixir es sencilla:
-
-```
-Elixir> cadena = "¡Hola Mundo!"
-"Hola Mundo!"
-```
-
-Podemos utilizar el operador de acceso `[]` seguido de un índice numérico para obtener un carácter específico de la cadena:
+Para extraer una subcadena en Elixir, puedes utilizar la función `String.slice/3`. Esta función toma tres argumentos: la cadena original, el índice de inicio y el índice de fin. Por ejemplo:
 
 ```
-Elixir> cadena[0]
-"¡"
+Elixir> String.slice("Hola mundo", 1, 4)
+"Hola"
 ```
 
-También podemos utilizar una lista de índices para obtener múltiples caracteres:
+En este ejemplo, la subcadena extraída comienza en el índice 1 y termina en el índice 4 (sin incluirlo). También puedes utilizar números negativos para comenzar desde el final de la cadena. Por ejemplo:
 
 ```
-Elixir> cadena[1,3]
-"ola"
+Elixir> String.slice("Hola mundo", -5, -1)
+"mundo"
 ```
 
-Incluso podemos utilizar rangos para obtener una subcadena con ciertos límites:
+También puedes utilizar `String.codepoints/1` para obtener los códigos numéricos de caracteres individuales en una cadena y buscar una subcadena con `String.match?/2`. Por ejemplo:
 
 ```
-Elixir> cadena[4..8]
-"a Mun"
+Elixir> cadena = "Hola Mundo"
+"Hola Mundo"
+
+Elixir> código = String.codepoints(cadena)
+[72, 111, 108, 97, 32, 77, 117, 110, 100, 111]
+
+Elixir> String.match?(código, [111, 108, 97])
+true
 ```
 
-## Profundizando en la extracción de subcadenas en Elixir
+## Profundizando
 
-Además de acceder a caracteres específicos o rangos de una cadena, Elixir también nos ofrece funciones más avanzadas para extraer subcadenas.
-
-La función `String.slice/2` nos permite obtener una subcadena a partir de un índice de inicio y un índice de fin:
+Hay varias funciones y métodos en Elixir que puedes utilizar para extraer subcadenas, como `String.split/3`, `String.replace/4` y `String.trim/2`. Además, puedes utilizar patrones de expresiones regulares con `Regex.scan/2` para obtener subcadenas que coincidan con ciertos patrones. Por ejemplo:
 
 ```
-Elixir> cadena = "¡Hola Mundo!"
-"Hola Mundo!"
+Elixir> cadena = "Hoy es un día soleado"
+"Hoy es un día soleado"
 
-Elixir> String.slice(cadena, 1, 4)
-"ola "
+Elixir> Regex.scan(~r/d[a|í]a/, cadena)
+[["día"]]
 ```
 
-También podemos utilizar la función `String.split/3` para dividir una cadena en partes separadas por un determinado carácter:
-
-```
-Elixir> cadena = "¡Hola,Mundo!"
-"Hola,Mundo!"
-
-Elixir> String.split(cadena, ",")
-["¡Hola", "Mundo!"]
-```
+Utilizar estas funciones y métodos te permite manipular y procesar cadenas de manera más eficiente y elegante, mejorando el rendimiento de tus aplicaciones.
 
 ## Ver también
 
-- [Documentación oficial de Elixir sobre extracción de subcadenas](https://hexdocs.pm/elixir/String.html#slice/2)
-- [Ejemplos de extracción de subcadenas en Elixir](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/string.ex)
-
-Esperamos que este artículo te haya ayudado a entender por qué es importante saber cómo extraer subcadenas en Elixir y cómo hacerlo efectivamente. ¡Sigue explorando y mejorando tus habilidades en este lenguaje de programación funcional!
+- Documentación oficial de Elixir sobre extracción de subcadenas: https://hexdocs.pm/elixir/String.html#slice/3
+- Artículo sobre patrones de expresiones regulares en Elixir: https://medium.com/elixir-explained/regular-expressions-in-elixir-e256ac42ce4d
+- Ejemplos prácticos de extracción de subcadenas en Elixir: https://dev.to/viniciusnegrisoli/working-with-strings-in-elixir-1nck

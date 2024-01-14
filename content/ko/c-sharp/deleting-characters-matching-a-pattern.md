@@ -1,50 +1,54 @@
 ---
-title:    "C#: 패턴과 일치하는 문자 삭제하기"
+title:    "C#: 패턴에 맞는 문자 삭제하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-왜: 왜 누군가가 패턴과 일치하는 문자를 삭제하는 것을 시도하는지에 대해 앞서 1-2 문장으로 설명하겠습니다.
+## 왜: 패턴과 일치하는 문자를 삭제하는 작업을 수행하는 이유를 설명하는 1-2 문장만 있어요.
+이 작업을 통해 원치 않는 문자를 쉽게 제거하고, 코드를 더욱 깔끔하고 가독성 좋게 만들 수 있습니다.
 
-이 방법을 시도하는 이유는 가장 간단하고 직관적인 방법으로 문자열에서 불필요한 문자를 제거하기 위해서입니다.
-
-## 패턴과 일치하는 문자 삭제하는 방법
+## 방법: "```C# ... ```" 코드 블록과 함께 코딩 예제와 출력 결과를 제공합니다.
+이 글을 읽는 모든 분들이 쉽게 따라할 수 있는 방법으로, 패턴과 일치하는 문자를 삭제하는 과정을 자세히 설명합니다.
 
 ```C#
-// 사용된 예제 코드는 C# 9.0을 기반으로 작성되었습니다.
-
+using System;
 using System.Text.RegularExpressions;
 
-// 입력 문자열 생성
-string input = "친구를 사랑하는 친구에게 선물을 주고 싶습니다.";
+namespace DeletingPattern
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 입력 문자열
+            string input = "Hello World! This is a test.";
 
-// 정규식 패턴 생성
-string pattern = "친구";
+            // 패턴 설정
+            string pattern = @"[aeiou]";
 
-// 패턴과 일치하는 문자를 빈 문자열로 대체
-string output = Regex.Replace(input, pattern, "");
+            // 문자열에서 패턴과 일치하는 문자 삭제
+            string output = Regex.Replace(input, pattern, "");
 
-// 출력
-Console.WriteLine(output);
+            // 출력 결과
+            Console.WriteLine(output);
 
-// 출력 결과: "를 사랑하는 에게 선물을 주고 싶습니다."
+            // 결과: Hll Wrld! Ths s  tst.
+        }
+    }
+}
 ```
 
-위 코드에서는 입력된 문자열에서 "친구"라는 패턴과 일치하는 문자를 빈 문자열로 대체하여 출력하는 예제를 보여주고 있습니다. 정규식을 사용하여 간단하고 효율적으로 문자를 삭제할 수 있습니다.
+## 깊이 파헤치기: 패턴과 일치하는 문자를 삭제하는 더 깊은 정보를 제공합니다.
+이 과정에서 사용되는 정규표현식을 자세히 설명하고, 다양한 패턴 매칭 메소드에 대해 알아봅니다. 또한, 패턴 대신 치환 문자열을 사용하는 방법도 소개합니다.
 
-## 깊게 파헤쳐보기
+이 작업을 통해 자신에게 맞는 최적의 방법을 선택할 수 있도록 도와드립니다.
 
-정규식을 사용하여 문자를 삭제하는 법에 대해 더 자세히 알아보겠습니다. 정규식은 패턴과 일치하는 문자를 찾아내는 강력한 도구입니다. 따라서 적절한 패턴을 사용하여 문자를 대체하면 쉽게 문자를 삭제할 수 있습니다.
+## 더 알아보기: 다른 관련 정보를 확인해 보세요.
+- [C# 정규 표현식 가이드](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [정규 표현식 테스트 사이트](https://regex101.com/) --> 정규 표현식을 테스트하고 디버깅하는 데 유용한 사이트입니다.
+- [C# 문자열 다루기](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/) --> 문자열에 대한 더 많은 정보를 확인할 수 있습니다.
 
-또한 위 예제에서 사용된 `Regex.Replace()` 함수는 문자열 대신 `MatchEvaluator` 델리게이트를 받을 수도 있습니다. 이를 사용하면 패턴에 맞는 각 문자열을 처리하기 전에 추가적인 로직을 넣을 수 있으며, 더욱 다양한 방식으로 문자를 삭제할 수 있습니다.
-
-## 더 알아보기
-
-- [C# 정규식 교육 동영상 (YouTube)](https://www.youtube.com/watch?v=JxP89Z6L5os)
-- [정규식 연습 사이트 (regexr.com)](https://regexr.com/)
-- [C# 정규식 공식 문서 (Microsoft Docs)](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-
-## 또 다른 방법 살펴보기
-
-정규식 외에도 문자를 삭제하는 다양한 방법이 있습니다. 대표적으로 `String.Replace()` 함수를 사용하는 방법이 있습니다. 이 함수는 특정 문자열을 다른 문자열로 간단하게 대체해주는 기능을 제공합니다. 정규식을 사용하지 않을 수 있기 때문에 좀 더 직관적으로 문자를 삭제할 수 있지만, 복잡한 패턴에는 적용하기 어려울 수 있습니다. 가장 적합한 방법은 사용하고자 하는 상황에 따라 다를 수 있으므로 여러 가지 방법을 살펴보고 적절하게 선택하는 것이 중요합니다.
+## 끝
+이 글을 통해 패턴과 일치하는 문자를 쉽게 삭제하는 방법에 대해 알아보았습니다. 이를 통해 코드를 더 깔끔하고 가독성 있게 만들 수 있으니 참고해 주세요. 감사합니다!

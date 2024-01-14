@@ -1,49 +1,46 @@
 ---
 title:    "Clojure: Écrire sur l'erreur standard"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire vers l'erreur standard est un moyen pratique et utile pour afficher des informations importantes sur les erreurs et les problèmes dans votre code Clojure. Cela peut vous aider à déboguer plus efficacement et à améliorer la qualité de votre code.
+Écrire sur une sortie d'erreur standard (standard error output) peut être utile dans le processus de débogage en affichant des informations d'erreur en temps réel.
 
 ## Comment faire
 
-Pour écrire vers l'erreur standard en Clojure, vous pouvez utiliser la fonction ```prn``` comme ceci :
-```Clojure
-(prn "Message d'erreur")
+```Clojure 
+;; Importer la bibliothèque 'clojure.java.io' pour accéder à la fonction
+;; pour écrire sur la sortie d'erreur standard
+(require '[clojure.java.io :as io])
+
+;; Utiliser 'with-out-str' pour capturer ce qui est écrit dans la sortie
+;; d'erreur standard dans une chaîne
+(with-out-str
+  (println "Voici un message d'erreur."))
+
+;; Afficher la chaîne capturée en utilisant la fonction 'err' de 'io'
+(println (io/err))
+
+;; Vous pouvez également écrire directement sur la sortie d'erreur standard
+;; en utilisant 'println' et 'System/err'
+(println "Ceci est un autre message d'erreur." System/err)
 ```
-Cela affichera le message "Message d'erreur" vers l'erreur standard.
 
-Vous pouvez également utiliser la fonction ```println``` pour afficher le message sans les guillemets :
-```Clojure
-(println "Message d'erreur")
+Output:
+```
+Voici un message d'erreur.
+Ceci est un autre message d'erreur.
 ```
 
-Dans les deux cas, le message sera affiché dans la console ou le terminal que vous utilisez.
+## Une plongée en profondeur
 
-## Approfondissement
-
-Lorsque vous écrivez vers l'erreur standard, vous pouvez également utiliser des arguments supplémentaires pour afficher des informations supplémentaires sur l'erreur. Par exemple, dans un bloc try/catch, vous pouvez utiliser la fonction ```ex-info``` pour inclure des informations sur l'exception dans le message d'erreur :
-```Clojure
-(try
-  (do-something)
-  (catch Exception e
-    (prn (ex-info "Une erreur s'est produite" {:cause e :trace (.getStackTrace e)}))))
-``` 
-Cela affichera le message "Une erreur s'est produite" ainsi que des informations sur l'exception et sa trace dans l'erreur standard.
-
-Vous pouvez également utiliser la fonction ```with-bindings``` pour afficher les valeurs des variables locales dans votre message d'erreur. Par exemple :
-```Clojure
-(with-bindings {a 5 b 10}
-  (prn "a vaut" a "et b vaut" b))
-```
-Cela affichera le message "a vaut 5 et b vaut 10" dans l'erreur standard.
+Outre l'utilisation principale pour le débogage, écrire sur la sortie d'erreur standard peut également être utile pour afficher des informations de diagnostic ou pour des tests. Il est important de noter que les messages écrits sur la sortie d'erreur standard sont généralement visibles par l'utilisateur final, il est donc essentiel de les utiliser avec parcimonie et de les supprimer une fois qu'ils ont servi leur but.
 
 ## Voir aussi
 
-- [La documentation officielle de Clojure](https://clojure.org/)
-- [Un guide pour déboguer en Clojure](https://purelyfunctional.tv/guide/clojure-debugging/)
-- [Un tutoriel de Clojure pour les débutants](https://clojure.org/guides/getting_started)
+- [Documentation officielle de Clojure pour la bibliothèque 'clojure.java.io'](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Article sur l'utilisation de 'with-out-str' en Clojure](https://danielcompton.net/2011/08/06/ouput-capture-in-clojure)

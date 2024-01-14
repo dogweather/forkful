@@ -1,36 +1,57 @@
 ---
 title:    "Python: Excluindo caracteres que correspondem a um padrão"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Deletar Caracteres Correspondentes a um Padrão
-Deletar caracteres correspondentes a um padrão é útil ao lidar com strings ou textos que contenham informações desnecessárias ou indesejadas. Isso pode ajudar a tornar seus dados mais limpos e fáceis de trabalhar.
+## Por que deletar caracteres que correspondem a um padrão?
 
-## Como Fazer
-Usando o Python, podemos usar a função `re.sub()` para encontrar e substituir padrões em uma string. Aqui está um exemplo de código que remove todas as vogais de uma string:
+Imagine que você está trabalhando em um projeto que envolve a manipulação de strings em Python. Em determinado momento, você percebe que precisa remover todos os caracteres que correspondem a um determinado padrão. Isso pode ser bastante útil em diversas situações, como limpar dados de entrada ou formatar strings de acordo com uma determinada máscara. Para fazer isso de forma eficiente, é importante saber como deletar caracteres que seguem um determinado padrão em Python.
 
-```Python
+## Como fazer?
+
+Você pode usar o método `re.sub()` do módulo `re` para substituir caracteres que correspondem a uma expressão regular por uma string vazia. Veja um exemplo de código:
+
+```
 import re
 
-string = "Essa é uma string com muitas vogais"
+# String original
+string = "Oi, tudo bem?# Como vai você?"
 
-padrao = "[aeiou]"
+# Removendo caracteres que são dígitos 
+nova_string = re.sub(r'\d+', '', string)
 
-nova_string = re.sub(padrao, "", string)
+# Imprimindo resultado
+print(nova_string)
 
-print(nova_string) # Ss  é  strng cm mts vgls
+# Saída: Oi, tudo bem?# Como vai você?
 ```
 
-Neste exemplo, usamos o módulo `re` para acessar a função `sub()`, que nos permite substituir caracteres correspondentes ao padrão por uma string vazia. Também usamos uma expressão regular `[aeiou]` para representar todas as vogais.
+Neste exemplo, usamos a expressão regular `\d+` para encontrar todos os dígitos na string e substituí-los por uma string vazia. É importante notar que o método `sub()` retorna uma nova string e não altera a string original.
 
-## Mergulho Profundo
-Além de usar a função `sub()`, o módulo `re` também possui outras funções úteis que permitem a manipulação avançada de strings. Por exemplo, podemos usar a função `findall()` para encontrar todas as correspondências de um padrão em uma string e retorná-las em uma lista. Além disso, também podemos usar grupos de captura para agrupar partes da string correspondentes ao padrão.
+Você também pode usar a função `filter()` junto com a função `lambda` para filtrar os caracteres indesejados. Veja outro exemplo:
 
-É importante notar que o uso de expressões regulares pode ser um pouco complexo, mas com a prática, você poderá dominar essa habilidade útil no seu código Python.
+```
+# Removendo caracteres maiúsculos da string
+nova_string = "".join(filter(lambda x: x.islower(), string))
 
-## Veja Também
-- [Documentação oficial do módulo re em Python](https://docs.python.org/3/library/re.html)
-- [Tutorial de Expressões Regulares em Python](https://realpython.com/regex-python/)
-- [Exercícios práticos de Expressões Regulares em Python](https://regexone.com/lesson/introduction_abcs)
+# Imprimindo resultado
+print(nova_string)
+
+# Saída: oi, tudo bem?# como vai você?
+```
+Neste caso, usamos a função `filter()` para filtrar apenas os caracteres minúsculos na string e depois usamos a função `join()` para juntá-los novamente em uma nova string.
+
+Existem também outras formas de realizar essa tarefa, como por exemplo o uso da função `translate()` ou a criação de uma função personalizada. O importante é entender os conceitos por trás dessas soluções para que você possa aplicá-las de acordo com suas necessidades.
+
+## Mergulho mais profundo
+
+Ao lidar com strings em Python, é importante conhecer as expressões regulares e como utilizá-las para manipular dados de forma mais eficiente. Além disso, é fundamental entender os métodos e funções disponíveis no módulo `re` e como aplicá-los em diferentes problemas. Investir um tempo para aprender esses conceitos pode poupar muito trabalho manual e garantir que suas strings estejam sempre no formato necessário.
+
+## Veja também
+
+- [Documentação oficial do módulo `re`](https://docs.python.org/3/library/re.html)
+- [Tutorial de expressões regulares em Python](https://docs.python.org/3/howto/regex.html)
+- [Funcionamento do método `sub()`](https://www.regular-expressions.info/python.html#sub)

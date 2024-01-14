@@ -1,33 +1,38 @@
 ---
-title:    "Swift: Hanki nykyinen päivämäärä"
+title:    "Swift: Nykyisen päivämäärän saaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi kukaan haluaisi hakea nykyisen päivämäärän käyttämällä Swift-ohjelmointia? Päivämäärän hakeminen on tärkeä osa monia erilaisia ohjelmointitehtäviä, kuten aikaleimojen lisäämistä tietokantaan tai tapahtumien järjestämistä.
+
+Oletko koskaan tarvinnut tietää nykyisen päivämäärän ja ajan? Esimerkiksi laskutusta tai aikaleimoja varten? Swift-ohjelmointikieli tarjoaa helpon tavan hakea nykyinen päivämäärä ja aika, ja tässä blogikirjoituksessa opit, miten se tehdään.
 
 ## Miten
-Tässä esimerkissä näytämme kuinka voit hakea nykyisen päivämäärän Swiftillä ja tulostaa sen konsoliin.
+
+Saadaksesi nykyisen päivämäärän Swiftillä, seuraavat koodirivit riittävät:
 
 ```Swift
+let currentDate = Date()
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy"
-let today = Date()
-let dateString = dateFormatter.string(from: today)
-print(dateString)
+dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+let currentDateString = dateFormatter.string(from: currentDate)
+print(currentDateString)
 ```
 
-Tämä koodi luo ensin DateFormatter-olion, joka mahdollistaa päivämäärän muotoilun halutulla tavalla. Sitten se määrittää halutun muotoilun ja hakee nykyisen päivämäärän Date-muodossa. Lopuksi se muuntaa tämän päivämäärän halutunlaiseen merkkijonoon ja tulostaa sen konsoliin.
+Ensimmäisellä rivillä luodaan muuttuja `currentDate`, joka sisältää nykyisen päivämäärän ja ajan. Toisella rivillä luodaan DateFormatter-olio, joka auttaa muotoilemaan halutunlaisen merkkijonon päivämäärästä. Seuraavalla rivillä määritellään haluttu muotoilu käyttämällä `dateFormat`-ominaisuutta. Lopuksi `string(from:)`-metodilla muodostetaan halutun muotoinen merkkijono `currentDate`-muuttujasta ja tulostetaan se konsoliin.
 
-Tulostus: 27.04.2021
+Tässä esimerkissä päivämäärästä muodostetaan merkkijono muodossa "päivä.kuukausi.vuosi tunti:minuutti:sekunti", mutta käytännössä voit muotoilla sen haluamallasi tavalla. Esimerkiksi kirjoittamalla `dateFormatter.dateFormat = "HH:mm"` saat tulostettua vain nykyisen ajan muodossa "tunti:minuutti".
 
-## Syväsukellus
-Päivämäärän hakeminen Swiftillä onnistuu myös eri aikavyöhykkeiltä ja lokalisoinnista riippumatta. Voit esimerkiksi käyttää eri formaatteja, kuten "yyyy" vuodessa tai "MM" kuukaudessa.
+## Syvemmälle
 
-Voit myös säätää DateFormattera-olion avulla asetuksia, kuten kellonajan näyttämistä ja kalenterityyppiä. Tämä mahdollistaa joustavan päivämäärän hakemisen erilaisissa käyttötapauksissa.
+Nykyisen päivämäärän saaminen Swiftillä perustuu käytännössä `Date`-rakenteeseen ja `DateFormatter`-luokkaan. `Date`-rakenne sisältää tiedon nykyisestä ajankohdasta ja `DateFormatter`-luokka auttaa muotoilemaan tuon tiedon halutun muotoiseksi merkkijonoksi.
+
+On myös hyvä huomata, että `dateFormat`-ominaisuus sekä `string(from:)`-metodi käyttävät merkkejä merkkaamaan erilaisia osia päivämäärässä, kuten päivän, kuukauden ja vuoden. Voit lukea lisää näistä merkeistä [DateFormatterin dokumentaatiosta](https://developer.apple.com/documentation/foundation/dateformatter), jossa on myös esimerkkejä erilaisista formaattivaihtoehdoista.
 
 ## Katso myös
-- [Swiftin virallinen dokumentaatio Date-muodosta](https://developer.apple.com/documentation/foundation/date)
-- [Opi lisää DateFormatterin käytöstä](https://www.codementor.io/@bretthicks/nsdateformatter-tutorial-how-to-convert-date-mcadfcep)
+
+- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

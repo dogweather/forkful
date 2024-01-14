@@ -1,73 +1,60 @@
 ---
 title:    "Haskell: Encontrando la longitud de una cadena"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-En la programación, es importante poder manipular cadenas de texto para realizar diversas tareas. Una de las tareas más comunes es encontrar la longitud de una cadena de texto. En este artículo te mostraremos cómo hacerlo utilizando Haskell.
+En la programación, a menudo necesitamos trabajar con cadenas de texto. Y una de las operaciones más comunes que realizamos con estas cadenas es encontrar su longitud. En este artículo, hablaremos sobre cómo podemos hacer esto en Haskell.
 
-## Cómo hacerlo
+# Cómo hacerlo
 
-Usando Haskell, podemos encontrar la longitud de una cadena de texto de manera sencilla. Primero, importemos el módulo `Data.List` para poder usar la función `length`.
-
-```Haskell
-import Data.List
-
-string = "¡Hola! ¡Este es un blog post en español!"
-
--- Usamos la función length para encontrar la longitud de la cadena
-length string -- Output: 41
-```
-
-En el código anterior, estamos asignando la cadena de texto a una variable llamada `string` y luego usando la función `length` para encontrar su longitud. La salida es `41`, ya que la cadena de texto contiene 41 caracteres incluyendo espacios y signos de puntuación.
-
-También podemos usar `length` en cadenas de texto que contienen caracteres unicode.
+Hay varias formas de encontrar la longitud de una cadena en Haskell. Una manera simple es usando la función `length`, que toma una cadena como argumento y devuelve su longitud como un número entero.
 
 ```Haskell
-string = "こんにちは世界"
-
-length string -- Output: 6
+length "Hola Mundo"
+-- Salida: 10
 ```
 
-Además, podemos usar `length` en listas de cadenas de texto.
+También podemos usar la función `length` en una lista de caracteres para obtener la misma resultado.
 
 ```Haskell
-strings = ["Hola", "Amigos", "en", "Haskell"]
-
-length strings -- Output: 4
+let lista = ['H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o']
+length lista
+-- Salida: 10
 ```
 
-## Profundizando
-
-La función `length` en Haskell es posible gracias a que el tipo de dato `String` se define como una lista de caracteres (`[Char]`). Por lo tanto, `length` simplemente cuenta el número de elementos en la lista.
-
-Es importante tener en cuenta que la función `length` también funciona en otros tipos de datos, como listas de números.
+Otra manera de encontrar la longitud de una cadena es usando `Data.Text`, una librería estándar de Haskell que nos permite trabajar con texto de manera eficiente. Para usarla, primero necesitamos importarla en nuestro código.
 
 ```Haskell
-numbers = [1, 2, 3, 4, 5]
-
-length numbers -- Output: 5
+import Data.Text as T
 ```
-
-También es posible crear una función propia para encontrar la longitud de una cadena de texto.
+Y luego podemos utilizar la función `T.length`, que funciona de la misma manera que `length`.
 
 ```Haskell
--- Creamos una función recursiva que cuenta los caracteres de una cadena
--- utilizando el patrón de plegado (folding)
-customLength :: [a] -> Int
-customLength = foldr (\_ acc -> acc + 1) 0
-
-string = "¿Qué tal?"
-
-customLength string -- Output: 8
+T.length "Hola Mundo"
+-- Salida: 10
 ```
 
-La función `foldr` nos permite aplicar una función a cada elemento de una lista en orden inverso y acumular el resultado en un valor inicial, que en este caso es `0`.
+# Inmersión profunda
 
-## Ver también
+Si nos adentramos en el código de la función `length`, encontraremos que está implementada de la siguiente manera:
 
-- [Documentación de la función `length` en Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#v:length)
-- [Tutorial de Haskell en español](https://leobenkel.com/haskell/capitulo1/)
+```Haskell
+length :: [a] -> Int
+length [] = 0
+length (_:xs) = 1 + length xs
+```
+
+Pero, ¿qué significan esas líneas? La primera línea indica que la función toma una lista de algún tipo `a` y devuelve un número entero (`Int`). La segunda línea es el caso base, que nos dice que si la lista está vacía, entonces su longitud es 0. Y la tercera línea es la recursión, lo que significa que podemos obtener la longitud de una lista no vacía sumando 1 y llamando a la función de nuevo con el resto de la lista.
+
+Esta implementación es una forma eficiente de encontrar la longitud de una lista, ya que no requiere recorrer la lista por completo. En cambio, va eliminando elementos uno por uno hasta llegar al caso base.
+
+# Ver también
+
+- [Documentación oficial de `length`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:length)
+- [Documentación de `Data.Text`](https://hackage.haskell.org/package/text-1.2.3.2/docs/Data-Text.html)
+- [Tutorial de Haskell](https://www.haskell.org/tutorial/index.html)

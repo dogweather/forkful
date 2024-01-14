@@ -1,67 +1,56 @@
 ---
-title:    "C++: Escritura de un archivo de texto"
+title:    "C++: Escribir un archivo de texto."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué escribir un archivo de texto en C++
 
-Escribir un archivo de texto es una habilidad fundamental que todo programador debe tener. Permite guardar y compartir información de manera sencilla y organizada, siendo una herramienta útil para almacenar datos importantes y crear registros en programas.
+Escribir un archivo de texto en C++ puede ser una tarea útil y necesaria en la programación. A través de la escritura de un archivo de texto, puedes almacenar y guardar información que puede ser utilizada posteriormente en tu programa. También puedes crear archivos de texto para usuarios finales, como configuraciones o registros.
 
-##Cómo hacerlo
+## Cómo escribir un archivo de texto en C++
 
-Para escribir un archivo de texto en C++, se utilizan las librerías estándar `fstream` y `iostream`. Aquí mostramos un ejemplo sencillo de cómo escribir un mensaje en un archivo de texto llamado "mensaje.txt":
+Para escribir un archivo de texto en C++, necesitarás seguir estos pasos:
 
-```
+1. Inicializar una instancia de `ofstream` para crear y escribir en un archivo.
+2. Abrir el archivo utilizando el método `open()` para especificar nombre y ubicación.
+3. Escribir en el archivo utilizando el operador `<<`, similar a como lo haces con `cout` para imprimir en la pantalla.
+4. Cerrar el archivo utilizando el método `close()` una vez que hayas terminado de escribir en él.
+
+A continuación, se muestra un ejemplo de código en C++ que escribe un archivo de texto llamado "saludo.txt" con el mensaje "¡Hola, mundo!":
+
+```c++
 #include <iostream>
-#include <fstream>
+#include <fstream>  // para ofstream
 
 using namespace std;
 
-int main() {
-    // Crear objeto ofstream para manejar el archivo de escritura
-    ofstream archivo("mensaje.txt");
-
-    // Verificar si el archivo fue creado correctamente
-    if (!archivo) {
-        cerr << "No se pudo crear el archivo" << endl;
-        return 1;
-    }
-
-    // Escribir el mensaje en el archivo
-    archivo << "¡Hola! Este es un mensaje de prueba." << endl;
-    archivo << "Espero que estés disfrutando de tu aprendizaje en C++." << endl;
-
-    // Cerrar el archivo
-    archivo.close();
-
-    // Mensaje de éxito
-    cout << "Se ha escrito el mensaje en el archivo correctamente" << endl;
-
+int main()
+{
+    ofstream archivo;  // inicializar instancia de ofstream
+    archivo.open("saludo.txt");  // abrir archivo
+    archivo << "¡Hola, mundo!";  // escribir en el archivo
+    archivo.close();  // cerrar archivo
     return 0;
 }
 ```
 
-El código anterior utiliza el operador `<<` para enviar el texto al archivo. El endl al final de cada línea sirve para insertar un salto de línea. Si se omite, el texto se escribirá en una sola línea.
+El archivo "saludo.txt" ahora debería contener el mensaje "¡Hola, mundo!".
 
-El resultado en el archivo "mensaje.txt" será:
+## Profundizando en la escritura de archivos de texto
 
-```
-¡Hola! Este es un mensaje de prueba.
-Espero que estés disfrutando de tu aprendizaje en C++.
-```
+Además de escribir en un archivo de texto, también puedes hacer lo siguiente:
 
-##Profundizando
+- Crear diferentes tipos de archivos de texto, como CSV o XML.
+- Escribir y leer estructuras de datos complejas en archivos de texto utilizando bucles y operadores de fluxión.
+- Manejar errores al escribir un archivo utilizando la sentencia `if-else` y lanzar excepciones.
 
-Ahora que ya sabes cómo escribir un archivo de texto en C++, es importante entender cómo funciona. En esencia, el código crea un objeto tipo `ofstream`, que se encarga de abrir el archivo y escribir los datos. Si el archivo no existe, se crea automáticamente. Sin embargo, si el archivo ya existe, el contenido anterior se sobrescribirá.
+La escritura de archivos de texto también es útil en la creación de programas con interfaces de usuario, ya que puedes guardar configuraciones o registros para que los usuarios finales puedan acceder y modificar.
 
-Para escribir en un lugar específico del archivo, se usa el método `seekp()` seguido de un desplazamiento en bytes desde el principio del archivo. También se puede utilizar el método `seekg()` para leer desde un punto específico del archivo.
+## Ver también
 
-Ten en cuenta que es necesario cerrar el archivo con el método `close()` para asegurarse de que los datos se guardan correctamente.
-
-##Véase también
-
-- [Librería estándar C++](https://es.cppreference.com/w/c)
-- [Tutorial de archivos en C++](https://www.learn-c.org/en/Files)
-- [Manipulación de archivos en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Tutorial de escritura de archivos de texto en C++](https://www.programiz.com/cpp-programming/writing-file)
+- [Más ejemplos de escritura de archivos de texto en C++](https://www.geeksforgeeks.org/writing-text-file-c/)
+- [Documentación de la clase `ofstream` en C++](http://www.cplusplus.com/reference/fstream/ofstream/)

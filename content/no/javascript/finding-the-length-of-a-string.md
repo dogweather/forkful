@@ -1,47 +1,36 @@
 ---
-title:    "Javascript: Finn lengden til en streng"
+title:    "Javascript: Finne lengden til en streng"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+I JavaScript, er en streng en sekvens av karakterer som brukes til å representere tekst. Det finnes ulike scenarioer der det kan være nyttig å finne lengden av en streng, for eksempel når man ønsker å sjekke om en brukers input er for lang eller for kort, eller for å manipulere tekst på en bestemt måte. 
 
-Å finne lengden av strenger er en viktig del av å programmere i JavaScript. Det lar deg håndtere og manipulere data på en mer effektiv måte, og det er en grunnleggende ferdighet som enhver JavaScript-utvikler bør ha.
-
-## Hvordan
-
-Det er flere måter å finne lengden av en streng i JavaScript på. La oss se på noen eksempler i koden under:
-
+# Slik gjør du det
+For å finne lengden av en streng i JavaScript, kan du bruke `length` egenskapen. Denne egenskapen returnerer antall karakterer i strengen og kan anvendes på både enkeltstående skjert og variabler som inneholder en streng.
+    
 ```Javascript
-// Metode 1: bruk .length på en streng
-let streng = "Hei alle sammen";
-console.log(streng.length); // Output: 15
-
-// Metode 2: bruk .length på en tom streng
-let tomStreng = "";
-console.log(tomStreng.length); // Output: 0
-
-// Metode 3: bruk .length på en streng med mellomrom
-let mellomromStreng = "   ";
-console.log(mellomromString.length); // Output: 3
-
-// Metode 4: bruk .length på en streng med spesialtegn
-let spesialStreng = "øåæ";
-console.log(spesialStreng.length); // Output: 3
+let string = "Hei, dette er en bloggpost";
+console.log(string.length);
+// Output: 27
 ```
+```Javascript
+let brukerInput = prompt("Skriv inn din personlige melding:");
+if (brukerInput.length > 50) {
+    console.log("Meldingen din er for lang, vennligst kutt den ned til 50 karakterer");
+} else {
+    console.log("Meldingen din er lagret!");
+}
+```
+I det første eksempelet bruker vi `length` egenskapen på variabelen `string` for å finne lengden av strengen som er lagret i den. I det andre eksempelet bruker vi `length` egenskapen til å sjekke om brukerens input er for lang og gir en tilbakemelding basert på det. 
 
-Som du kan se, er lengden av en streng gitt ved å bruke .length-metoden. Den returnerer antall tegn i strengen, inkludert mellomrom og spesialtegn.
+# Dypdykk
+Når vi bruker `length` egenskapen, må vi være oppmerksomme på at den kun returnerer antall *karakterer*, ikke antall *ord*. Dette kan være viktig å huske på hvis man ønsker å begrense teksten basert på et visst antall ord i stedet for antall karakterer. Det er også viktig å være klar over at blanke mellomrom og spesielle tegn også telles med i lengden av en streng.
 
-## Dypere dykk
-
-Når vi ser nærmere på .length-metoden, kan vi se at den faktisk er et egenskap til strengobjektet. Dette betyr at du kan bruke den på alle strenger, uavhengig av om de er lagret i en variabel eller skrevet rett i koden.
-
-Det er også verdt å merke seg at .length returnerer et nummer, ikke en streng. Dette kan være nyttig hvis du trenger å bruke strenglengden i matematiske operasjoner.
-
-En annen viktig ting å huske på er at .length bare teller antall tegn i en streng, ikke antall ord eller antall linjer. Det er bare en enkel måte å få informasjon om lengden til en streng som en helhet.
-
-## Se også
-
-- [MDN String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools JavaScript String length](https://www.w3schools.com/jsref/jsref_length_string.asp)
+# Se også
+- [String.prototype.length - JavaScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [JavaScript String Length - W3Schools](https://www.w3schools.com/jsref/prop_string_length.asp)
+- [Understanding String Length - SitePoint](https://www.sitepoint.com/understanding-string-length-javascript/)

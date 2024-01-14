@@ -1,44 +1,52 @@
 ---
-title:    "Javascript: Wyszukiwanie i zastępowanie tekstu"
+title:    "Javascript: Wyszukiwanie i zamiana tekstu"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Podstawowym elementem programowania jest praca z tekstem. W wielu przypadkach, może się zdarzyć, że będziemy musieli zmienić lub poprawić fragment tekstu w naszym kodzie. Wówczas bardzo przydatną umiejętnością jest umiejętność wyszukiwania i zamiany tekstu. Dzięki temu, możemy szybko i skutecznie wprowadzać zmiany w naszym kodzie.
+Zamienianie tekstu jest podstawowym zadaniem w programowaniu. Dzięki tej funkcji możemy łatwo i szybko zmieniać wybrane fragmenty tekstu, co jest niezbędne w wielu projektach.
 
 ## Jak to zrobić
 
-Do wyszukiwania i zamiany tekstu w JavaScript możemy wykorzystać metody `replace()` oraz `replaceAll()`. Pierwsza z nich służy do zamiany jednego wystąpienia danego słowa lub frazy, natomiast druga umożliwia zmianę wszystkich wystąpień w tekście.
+Aby zamienić tekst w Javascript, możemy użyć kilku różnych sposobów. Jednym z najprostszych jest użycie funkcji `replace()`. Przykładowy kod wyglądałby tak:
 
-Przykład użycia `replace()`:
 ```Javascript
-let tekst = "Cześć, witaj na moim blogu!";
-let nowyTekst = tekst.replace("witaj", "dzień dobry");
-console.log(nowyTekst); // Cześć, dzień dobry na moim blogu!
+let text = "Witaj na moim blogu!";
+let newText = text.replace("Witaj", "Cześć");
+console.log(newText);
 ```
 
-Przykład użycia `replaceAll()`:
+Wynikiem tego kodu jest "Cześć na moim blogu!".
+
+Możemy również użyć wyrażenia regularnego do zamiany tekstu. Przykładowy kod wyglądałby tak:
+
 ```Javascript
-let tekst = "To jest przykład przykład przykład!";
-let nowyTekst = tekst.replaceAll("przykład", "przykładem");
-console.log(nowyTekst); // To jest przykładem przykładem przykładem!
+let text = "Zamiana wielu słów za pomocą wyrażeń regularnych.";
+let newText = text.replace(/wielu słów/g, "dużo słów");
+console.log(newText);
 ```
 
-Obie metody przyjmują dwa parametry - pierwszy to wyszukiwany fragment, a drugi to zastępujący fragment. Jeśli chcemy zmienić wszystkie wystąpienia danego słowa lub frazy, musimy użyć odpowiednio `g` lub `gi` na końcu wzorca wyszukiwania. Oznacza to globalne wyszukiwanie (dla wszystkich wystąpień) oraz ignorowanie wielkości liter.
+Wynikiem tego kodu jest "Zamiana dużo słów za pomocą wyrażeń regularnych." 
 
-## Głębsza analiza
+## Deep Dive
 
-Warto także wiedzieć, że metoda `replace()` zwraca nowy tekst, a nie zmienia oryginał. Jeśli chcemy zmienić oryginalny tekst, musimy przypisać nowy tekst do zmiennej, jak pokazano w przykładzie.
+Funkcja `replace()` może przyjmować dwa parametry - wartość, którą chcemy zamienić oraz wartość, na którą chcemy ją zamienić. Możemy również przekazać funkcję jako drugi parametr, która będzie wywoływana na każdym dopasowanym fragmencie tekstu. Możemy w ten sposób dokonać bardziej zaawansowanych operacji podczas zamiany tekstu.
 
-Ponadto, metoda `replace()` może także przyjmować wyrażenia regularne jako parametry, co pozwala na bardziej rozbudowane i precyzyjne wyszukiwanie i zamianę tekstu. Jest to jednak tematem bardziej zaawansowanym, więc zachęcam do zgłębienia go na własną rękę.
+```Javascript
+let text = "Zamiana wielu słów za pomocą funkcji zamieniającej.";
+let newText = text.replace(/funkcji/g, function(match) {
+  return "funkcję " + match.toUpperCase();
+});
+console.log(newText);
+```
 
-## Zobacz także
+Wynikiem tego kodu jest "Zamiana wielu słów za pomocą funkcji ZAMIANIAJĄCEJ." 
 
-- [Dokumentacja metody `replace()` w MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
-- [Dokumentacja metody `replaceAll()` w MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replaceAll)
-- [Wyrażenia regularne w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+## Zobacz również
 
-Dziękuję za przeczytanie tego wpisu i mam nadzieję, że teraz czujesz się pewniej w zakresie wyszukiwania i zamiany tekstu w JavaScript!
+* [Funkcja replace() w Javascript](https://www.w3schools.com/jsref/jsref_replace.asp)
+* [Wyrażenia regularne w Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)

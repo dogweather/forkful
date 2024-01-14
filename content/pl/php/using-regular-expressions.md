@@ -1,53 +1,53 @@
 ---
-title:    "PHP: Użycie wyrażeń regularnych"
+title:    "PHP: Używanie wyrażeń regularnych"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego korzystamy z wyrażeń regularnych?
+## Dlaczego
 
-Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu PHP. Służą one do przetwarzania i manipulowania tekstem w sposób bardziej wyrafinowany niż standardowe funkcje. W poniższym wpisie przedstawimy, dlaczego warto poznać i wykorzystywać wyrażenia regularne w swoim kodzie.
+Każdy programista PHP powinien nauczyć się wykorzystywać wyrażenia regularne w swoim kodzie. Pozwalają one na precyzyjną manipulację ciągami znaków, co jest niezbędne w wielu projektach.
 
-## Jak to zrobić?
+## Jak używać wyrażeń regularnych w PHP
 
-Kodowanie przykładów i wyników zostanie przedstawiony w blokach ```PHP ... ```. Rozpoczniemy od prostej struktury wyrażenia regularnego, a następnie przedstawimy bardziej zaawansowane przykłady. Na początek, spróbujemy dopasować słowo "kot" w pewnym tekście za pomocą funkcji ```preg_match```.
+Wyrażenia regularne są obsługiwane przez funkcje wbudowane w PHP, w tym funkcje `preg_match()`, `preg_replace()` i `preg_split()`. Wszystkie przyjmują trzy argumenty: wyrażenie regularne, ciąg znaków do sprawdzenia i opcje.
+
+Przykładowo, jeśli chcemy znaleźć wszystkie wystąpienia słowa "hello" w ciągu znaków, możemy użyć funkcji `preg_match()` w ten sposób:
 
 ```PHP
-$text = "Ten tekst zawiera słowo kot.";
-$pattern = "/kot/";
-if (preg_match($pattern, $text)) {
-    echo "Słowo 'kot' zostało znalezione w tekście!";
+$str = "Hello world! Witaj świecie!";
+if (preg_match("/hello/i", $str)) { // /i oznacza ignorowanie wielkości liter
+  echo "Znaleziono słowo hello!";
 } else {
-    echo "Nie znaleziono słowa 'kot' w tekście.";
+  echo "Nie znaleziono słowa hello.";
 }
-
-// Wynik: Słowo 'kot' zostało znalezione w tekście!
 ```
 
-Następnie spróbujemy zamienić wszystkie wystąpienia słowa "kot" na słowo "pies" za pomocą funkcji ```preg_replace```.
+To wywołanie funkcji sprawdzi, czy w ciągu znaków `$str` znajduje się wyrażenie regularne `hello`, zignorując wielkość liter. W tym przypadku zostanie wyświetlony komunikat "Znaleziono słowo hello!".
+
+Można również zastosować wyrażenie regularne do zamiany części ciągu znaków, używając funkcji `preg_replace()`. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "Cześć" na "Hello", możemy użyć tego kodu:
 
 ```PHP
-$text = "Ten tekst zawiera słowo kot.";
-$pattern = "/kot/";
-$replacement = "pies";
-$newText = preg_replace($pattern, $replacement, $text);
-echo $newText;
-
-// Wynik: Ten tekst zawiera słowo pies.
+$str = "Cześć Maciek! Witaj w świecie programowania.";
+$newStr = preg_replace("/cześć/i", "Hello", $str);
+echo $newStr; // Wyświetli: Hello Maciek! Witaj w świecie programowania.
 ```
 
-Oczywiście, wyrażenia regularne są znacznie bardziej wszechstronne i mogą wykonywać wiele różnych operacji na tekście. Zachęcamy do eksperymentowania i poznawania różnych funkcji z dokumentacji PHP.
+## Głębsze zagadnienia dotyczące wyrażeń regularnych
 
-## Deep Dive
+Korzystając z wyrażeń regularnych, można znacznie usprawnić przetwarzanie danych w aplikacjach PHP. Można na przykład użyć wyrażeń regularnych do:
 
-Wyrażenia regularne to potężne narzędzie, ale mogą być również skomplikowane dla początkujących programistów. Warto zauważyć, że wyrażenia regularne są zgodne z wyrażeniami regularnymi używanymi w innych językach programowania, takich jak JavaScript czy Python. Dzięki temu, możesz wykorzystać swoją wiedzę i umiejętności również w innych technologiach.
+- Weryfikacji poprawności adresu email lub numeru telefonu
+- Sprawdzania poprawności formatu daty
+- Wyszukiwania i zastępowania części tekstu
+- Dzielenia tekstu na mniejsze części
 
-Podczas używania wyrażeń regularnych, warto pamiętać o zagrożeniu tzw. "rekurencyjnych wyrażeń regularnych". Oznacza to, że wyrażenie regularne może być nieskończone i nigdy nie zakończy się wykonywać, co może doprowadzić do awarii serwera lub przekroczenia limitów zasobów. Należy więc uważnie tworzyć swoje wyrażenia regularne i unikać wykorzystywania rekurencji.
+Warto poświęcić więcej czasu na poznanie składni i możliwości wyrażeń regularnych, aby móc wykorzystać je w swoich projektach w pełni.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja PHP - Wyrażenia regularne](https://www.php.net/manual/en/ref.regex.php)
-- [10 przydatnych wyrażeń regularnych w PHP](https://medium.com/@anil_singh/useful-regular-expression-regular-interval-to-manage-string-in-php-12c01abf9af)
-- [Interaktywne wyrażenia regularne do nauki](https://regexr.com/)
-- [Poradnik wyrażeń regularnych dla początkujących](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Dokumentacja PHP na temat funkcji regulárních výrazů](https://www.php.net/manual/en/ref.pcre.php)
+- [Tutorial na temat wyrażeń regularnych w PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Wyrażenia regularne w 10 minut](https://www.youtube.com/watch?v=EkluES9Rvak) - przydatny filmik dla początkujących programistów.

@@ -1,55 +1,49 @@
 ---
 title:    "C: Tekstin etsiminen ja korvaaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tekstin etsiminen ja korvaaminen ovat välttämättömiä toimintoja monissa ohjelmointiprojekteissa. Ne mahdollistavat tietyn tekstin tai merkkijonon nopean ja helpon muuttamisen toiseksi. Tämä on erityisen hyödyllistä, kun käsitellään suuria määriä tekstitiedostoja, joissa samanlaista tekstiä esiintyy useita kertoja.
+On monia syitä, miksi joku saattaisi haluta etsiä ja korvata tekstiä ohjelmointityössään. Ehkä tiettyä tekstipätkää käytetään usein ja halutaan helpottaa sen muuttamista, tai ehkä tietyt muuttujat pitää päivittää jatkuvasti eri projekteissa. Riippumatta syystä, C-ohjelmointikielessä on olemassa hyvät työkalut tekstikorvausten tekemiseen.
 
 ## Miten tehdä
 
-C-ohjelmoinnissa tekstin etsiminen ja korvaaminen tapahtuvat yleensä käyttämällä merkkijonojen tai merkkien käsittelyyn tarkoitettuja funktioita. Yksi tällainen funktio on `strstr()`, joka etsii tietyn merkkijonon esiintymän toisesta merkkijonosta. Alla on esimerkki:
+Etsimisen ja korvaamisen tekeminen C-ohjelmointikielessä on hyvin yksinkertaista, ja useimmat ohjelmoijat ovat sen jo oppineet perusohjelmoinnin kurssilla. Perusmalli on seuraava:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-  char teksti[] = "Tämä on esimerkkiteksti.";
-  char etsittava[] = "esimerkki";
+int main() {
+    char text[] = "Tervetuloa, maailma!";
+    char search[] = "Tervetuloa";
+    char replace[] = "Hei";
 
-  char *osoitin = strstr(teksti, etsittava);
+    // Etsitään tekstistä etsittävä teksti
+    char *result = strstr(text, search);
 
-  if (osoitin != NULL) {
-    printf("Ensimmäinen esiintymä löytyi kohdasta %d. \n", osoitin - teksti + 1);
-  } else {
-    printf("Ei löytynyt esiintymää. \n");
-  }
+    // Korvataan teksti käyttämällä strcpy-funktiota
+    strcpy(result, replace);
 
-  return 0;
+    printf("%s", text);
+    return 0;
 }
 ```
 
-Tulostus olisi seuraava:
+Tässä esimerkissä haetaan "Tervetuloa" tekstistä ja korvataan se "Hei"-tekstillä. Lopputuloksena tulostuu "Hei, maailma!". 
 
-```
-Ensimmäinen esiintymä löytyi kohdasta 11.
-```
+## Syvällinen tarkastelu
 
-Muita hyödyllisiä funktioita ovat esimerkiksi `strchr()`, joka etsii ensimmäisen tietyn merkin esiintymän merkkijonosta, ja `strtok()`, joka jakaa merkkijonon osiin tietyn erotinmerkin avulla. Nämä ja muut vastaavat funktiot löytyvät `string.h`-kirjastosta.
+On tärkeää huomata, että strstr-funktio etsii vain tekstin ensimmäisen esiintymän. Jos tekstissä on useita samanlaisia kohtia, ne eivät korvata. Tämä voidaan kiertää käyttämällä esimerkiksi while-silmukkaa ja käsittelemällä tekstiä yksi merkki kerrallaan. Lisäksi C-kielen stringien manipulointiin on muitakin tehokkaita funktioita, kuten strtok ja strncmp.
 
-## Syvällisemmin
-
-Tekstin etsiminen ja korvaaminen voivat olla hyödyllisiä myös, kun käsitellään käyttäjän syöttämiä merkkijonoja. Esimerkiksi ohjelman tulee usein varmistaa, että käyttäjän syöttämä merkkijono ei sisällä tiettyjä kiellettyjä merkkejä tai sanoja. Tällöin voidaan käyttää `strcmp()` tai `strtol()` -funktioita, jotka vertailevat merkkijonoja ja mahdollistavat esimerkiksi kiellettyjen merkkien poistamisen.
-
-Sekä tekstin etsiminen että korvaaminen ovat myös tärkeitä osia tiedostonkäsittelyä. Kun halutaan muuttaa tietyn tiedoston sisältöä, voidaan käydä läpi tiedosto ja korvata halutut merkkijonot toisilla. Tämä on erityisen kätevää, jos tietystä tiedostosta halutaan poistaa tiettyjä sanoja tai korvata niitä uusilla.
+On myös tärkeää käsitellä korvattavan tekstin pituus oikein, jotta sitä ei korvata liikaa tai liian vähän. Esimerkiksi strncpy-funktio kopioidaan vain määritellyn määrän merkkejä, joten se on hyödyllinen jos korvattava teksti on pidempi kuin uuden tekstin. Jos taas halutaan vain lisätä tekstiä olemassa olevan tekstin jatkoksi, käytetään strcat-funktiota.
 
 ## Katso myös
 
-- [String Function Examples in C](https://www.programiz.com/c-programming/c-strings-functions)
-- [C String Functions Reference](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Learn C - Strings](https://www.learn-c.org/en/Strings)
+- [C-kielen merkkijonojen käsittely](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [Stringin käsittely C:ssä](https://www.geeksforgeeks.org/string-handling-strings-c-2/)
+- [Strstr man-sivu](https://linux.die.net/man/3/strstr)

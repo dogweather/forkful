@@ -1,59 +1,70 @@
 ---
-title:    "Java: Das aktuelle Datum erhalten"
+title:    "Java: Erhalten des aktuellen Datums"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Abrufen des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es ermöglicht uns, den Zeitpunkt der Ausführung von Code zu verfolgen oder bestimmte Aktionen basierend auf dem aktuellen Datum auszuführen.
+Das aktuelle Datum ist oft ein wichtiges Element in der Programmierung. Es kann verwendet werden, um zeitbasierte Aktionen auszuführen oder um eine Zeitstempel für Dateien oder Datenbankeinträge zu erstellen.
 
-## Wie geht es
+## Wie man das aktuelle Datum in Java erhält
 
-Die beste Möglichkeit, das aktuelle Datum in Java abzurufen, ist die Verwendung der Klasse `LocalDate` aus dem Paket `java.time`. Dies stellt sicher, dass wir mit dem Datum und der Zeitzone korrekt umgehen und mögliche Fehler vermeiden.
+Das aktuelle Datum in Java zu erhalten ist einfacher als Sie vielleicht denken. Verwenden Sie einfach die `java.util.Date` Klasse und die `getTime()` Methode, um das aktuelle Datum als Millisekunden seit dem 1. Januar 1970 zurückzugeben. Hier ist ein Beispielcode:
 
-```Java
-import java.time.LocalDate;
+```java
+import java.util.Date;
 
-public class CurrentDateExample {
-
+public class DateExample {
     public static void main(String[] args) {
-    
-        // Abrufen des aktuellen Datums
-        LocalDate currentDate = LocalDate.now();
-        
-        // Ausgabe des Datums im Standardformat
-        System.out.println("Heute ist " + currentDate);
-    
+        Date currentDate = new Date();
+        long timestamp = currentDate.getTime();
+        System.out.println("Aktuelles Datum: " + currentDate);
+        System.out.println("Zeitstempel: " + timestamp);
     }
 }
 ```
 
-Der obige Code verwendet die Methode `now()` von `LocalDate`, um das aktuelle Datum zu erhalten. Mit der Methode `print()` können wir dann das Datum auf der Konsole ausgeben.
+Die Ausgabe dieses Codes sieht folgendermaßen aus:
 
-Die Ausgabe des obigen Beispiels wäre: `Heute ist 2021-05-20`.
-
-Es ist auch möglich, das Datum in einem bestimmten Format auszugeben. Zum Beispiel:
-
-```Java
-// Ausgabe im Format dd/MM/yyyy
-System.out.println("Heute ist " + currentDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-
-// Ausgabe im Format MMM dd, yyyy
-System.out.println("Heute ist " + currentDate.format(DateTimeFormatter.ofPattern("MMM dd, yyyy")));
+```
+Aktuelles Datum: Mon Oct 25 10:30:00 UTC 2021
+Zeitstempel: 1635161400000
 ```
 
-Die Ausgabe für das erste Beispiel wäre `Heute ist 20/05/2021` und die zweite `Heute ist May 20, 2021`.
+Es ist auch möglich, das aktuelle Datum in einem bestimmten Format auszugeben, indem man die `SimpleDateFormat` Klasse verwendet. Hier ist ein Beispielcode dafür:
 
-## Tiefer tauchen
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-Neben der Verwendung von `LocalDate` gibt es auch andere Möglichkeiten, das aktuelle Datum in Java abzurufen. Dazu gehören die Klassen `Calendar` und `Date`, die jedoch veraltet sind und nicht empfohlen werden, da sie nicht thread-safe sind und mögliche Probleme mit der Zeitzone verursachen können.
+public class DateFormatExample {
+    public static void main(String[] args) {
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        System.out.println("Aktuelles Datum: " + dateFormat.format(currentDate));
+    }
+}
+```
 
-Es ist auch wichtig zu beachten, dass das Datum in Java eine Instanz der Klasse `LocalDate` ist, die nur das Datum selbst darstellt und keine Zeit oder Zeitzone enthält. Wenn Sie also das aktuelle Datum und die Uhrzeit benötigen, sollten Sie `LocalDateTime` oder `ZonedDateTime` verwenden.
+Die Ausgabe dieses Codes lautet:
+
+```
+Aktuelles Datum: 25.10.2021
+```
+
+## Tiefergehende Informationen über das aktuelle Datum
+
+Obwohl das Erhalten des aktuellen Datums in Java einfach ist, gibt es ein paar Dinge, die Sie im Hinterkopf behalten sollten. Zum Beispiel kann die `java.util.Date` Klasse nur das Datum bis auf die Millisekunde genau darstellen und ist nicht thread-safe. Deshalb empfehlen sich andere Klassen wie `LocalDate` oder `Calendar`, um das Datum genauer und sicherer zu verarbeiten.
+
+Außerdem wurde in Java 8 die neue `java.time` API eingeführt, die viele nützliche Klassen und Methoden zur Verarbeitung von Datums- und Zeitinformationen bietet. Diese API ist auch thread-safe, hat eine bessere Genauigkeit und erleichtert die Arbeit mit Zeitzonen und unterschiedlichen Kalendersystemen.
+
+Insgesamt gibt es also mehrere Möglichkeiten, das aktuelle Datum in Java zu erhalten, je nach Ihren spezifischen Anforderungen und der verwendeten Java-Version.
 
 ## Siehe auch
 
-- `java.time.LocalDate` [Java-Dokumentation] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- "Handling Date and Time" [Java Tutorials] (https://docs.oracle.com/javase/tutorial/datetime/index.html)
-- "How to Get Current Date and Time in Java" [Baeldung-Artikel] (https://www.baeldung.com/java-get-current-date-time)
+- [Offizielle Dokumentation zu java.util.Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java-Kalender und Datum-Beispiel](https://examples.javacodegeeks.com/core-java/util/calendar/java-calendar-and-date-example/)
+- [Einführung in die Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

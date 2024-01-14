@@ -1,45 +1,45 @@
 ---
-title:    "Ruby: Scrivere su standard error"
+title:    "Ruby: Scrivere sull'errore standard"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error può essere utile quando si vuole visualizzare un messaggio di errore o avvisi durante l'esecuzione di un programma in Ruby. Invece di stampare il messaggio su standard output, che è la solita destinazione dei messaggi di output, si può scegliere di scrivere su standard error per indicare che il messaggio è un avviso o un errore.
+Scrivere sullo standard error può essere utile durante la ricerca di errori nel proprio codice. Questa pratica permette di visualizzare gli errori in una finestra separata, consentendo una migliore traccia e risoluzione dei problemi.
 
 ## Come Fare
 
-Per scrivere su standard error in Ruby, si può utilizzare il metodo `warn` che è originariamente definito nella classe `Kernel`. Ecco un esempio di codice:
+Per scrivere sullo standard error in Ruby, è possibile utilizzare il metodo "STDERR.puts". In questo modo, possiamo stampare un messaggio di errore sullo standard error invece che sullo standard output. Ecco un esempio di codice:
 
 ```Ruby
-def divide(a, b)
-  if b == 0
-    warn "Errore: divisione per zero"
-  else
-    a / b
-  end
+begin
+  # codice che può causare un errore
+  1/0
+rescue ZeroDivisionError => e
+  STDERR.puts "Errore: #{e.message}"
 end
+```
+Questo codice crea un errore di divisione per zero e stampa un messaggio di errore sullo standard error utilizzando "STDERR.puts".
 
-divide(6, 3)
-# 2
-divide(10, 0)
-# Errore: divisione per zero
+L'output sarà il seguente:
+
+``` 
+Errore: divided by 0
 ```
 
-Come si può vedere dall'esempio, il messaggio di errore è stato stampato su standard error invece di standard output.
+Invece, se utilizziamo il metodo "puts", il messaggio di errore sarebbe stampato sullo standard output.
 
 ## Approfondimento
 
-In Ruby, ci sono 3 stream di output standard: standard input, standard output e standard error. L'utilizzo di standard error per gli avvisi e gli errori è consigliato poiché viene gestito in modo diverso dallo standard output. Inoltre, è possibile reindirizzare gli output su standard error usando il simbolo `2>` in linea di comando. Ad esempio, se si vuole salvare gli errori di un programma in un file chiamato `errors.txt`, si può eseguire il seguente comando:
+Scrivere sullo standard error può essere particolarmente utile quando si utilizzano applicazioni web. In questi casi, gli errori vengono registrati sullo standard error e possono essere consultati in un file di log. Inoltre, è possibile impostare il livello di gravità degli errori, in modo da poter visualizzare solo quelli più critici.
 
-```bash
-ruby programma.rb 2> errors.txt
-```
+Inoltre, è possibile personalizzare il messaggio di errore e aggiungere informazioni utili, come il timestamp e il percorso del file in cui si è verificato l'errore.
 
-## Vedi Anche
+## Vedere Anche
 
-- [Documentazione di Ruby sul metodo `warn`](https://ruby-doc.org/core-2.6.6/Kernel.html#method-i-warn)
-- [Informazioni sui 3 stream di output standard](https://tldp.org/LDP/abs/html/io-redirection.html)
-- [Tutorial su come gestire gli errori in Ruby](https://www.codecademy.com/learn/learn-ruby/modules/exceptions-ruby)
+- [Documentazione su STDERR e STDOUT in Ruby](https://ruby-doc.org/core-2.5.1/IO.html#concept-stdios)
+- [Utilizzo dei file di log per il debugging in Ruby on Rails](https://guides.rubyonrails.org/debugging_rails_applications.html#the-rails-logger)
+- [Errore di divisione in Ruby](https://ruby-doc.org/core-2.5.1/ZeroDivisionError.html)

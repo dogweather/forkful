@@ -1,39 +1,56 @@
 ---
-title:    "Clojure: Sammenføyning av strenger"
+title:    "Clojure: Sammenslåing av strenger"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å slå sammen strenger er en vanlig oppgave i programmering, og kan være svært nyttig når man vil kombinere tekst og variabler for å lage dynamisk data. Det kan også hjelpe til med å organisere og strukturere data på en mer lesbar måte.
+Å kombinere eller "kata" strenger spiller en viktig rolle i mange programmeringsoppgaver. Ved å gjøre dette kan du enkelt konstruere store tekststrenger fra mindre biter som bidrar til å gjøre koden din mer lesbar og lett å vedlikeholde.
 
 ## Hvordan
 
-For å slå sammen strenger i Clojure, kan du bruke funksjonen `str` som tar imot en eller flere strenger som argumenter. Her er et eksempel:
+Du kan kombinere strenger ved å bruke funksjonen "str" i Clojure. Denne funksjonen tar imot en uendelig mengde argumenter, og returnerer en enkeltstreng som er en kombinasjon av disse.
 
 ```Clojure
-(str "Hei, " "verden!")
+(str "Hei" " " "alle sammen") ; Output: "Hei alle sammen"
+(str "abc" "def" "ghi") ; Output: "abcdefghi"
 ```
 
-Dette vil resultere i en ny streng som sier `Hei, verden!`. Men du kan også inkludere variabler i denne funksjonen. For eksempel:
+Du kan også kombinere strenger ved å bruke "+" operatoren.
 
 ```Clojure
-(def number 5)
-(str "Det er " number " elefant(er) i skogen.")
+(+ "Hva er" " " "opp?") ; Output: "Hva er opp?"
 ```
 
-Dette vil resultere i `Det er 5 elefant(er) i skogen.`
+Hvis du vil kombinere en streng med et tall eller et annet data type, kan du bruke funksjonen "format". Denne funksjonen tar imot en formatteringsstreng og argumenter som skal plasseres i denne strengen.
+
+```Clojure
+(format "Det var %s ganger jeg sa hei i dag." 5) ; Output: "Det var 5 ganger jeg sa hei i dag."
+(format "Jeg vant %d kroner i lotto!" 1000000) ; Output: "Jeg vant 1000000 kroner i lotto!"
+```
 
 ## Dypdykk
 
-I Clojure er strenger uforanderlige, noe som betyr at de ikke kan endres etter at de er opprettet. Dette betyr at når du slår sammen strenger ved hjelp av `str`, så opprettes det faktisk en helt ny streng og de opprinnelige strengene forblir uendret.
+Det er viktig å være oppmerksom på at string-konkatinering kan bli ineffektivt hvis du bruker det i løkker eller funksjoner som kalles mange ganger. Dette er fordi hver gang du kombinerer to strenger, blir en kopi av dem laget, som kan føre til at programmet ditt bruker mer minne enn nødvendig.
 
-Det finnes også flere andre funksjoner for å slå sammen strenger i Clojure, som `join` og `format`, som kan være nyttige i ulike situasjoner. Det er også viktig å være oppmerksom på at strenger i Clojure er Unicode-tekster, og derfor kan de inneholde mange forskjellige språk og symboler.
+For å unngå dette kan du bruke "StringBuilder" klassen i Java interop. Denne klassen lar deg bygge en streng ved å legge til små biter for å unngå å måtte skape mange kopier.
 
-## Se også
+```Clojure
+(require '[clojure.string :as str])
+(defn concatenate [list-of-strings]
+  (let [builder (java.lang.StringBuilder.)]
+    (doseq [str list-of-strings]
+      (.append builder str))
+    (.toString builder)))
 
-- [Offisiell Clojure dokumentasjon](https://clojure.org/api/cheatsheet)
-- [En enkel guide til Clojure strenger](https://www.freecodecamp.org/news/a-simple-guide-to-clojure-strings/)
-- [Mer om Unicode og strenger i Clojure](https://clojure.org/guides/unicode)
+(concatenate ["Hei, " "jeg " "heter " "Per"]) ; Output: "Hei, jeg heter Per"
+```
+
+## Se også 
+
+- [Clojure Docs - String Concatenation](https://clojuredocs.org/clojure.core/str)
+- [Java StringBuilder Class](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Clojure for Begynnere - Append og Str Concatenation](http://clojure-begginers-guide.blogspot.com/2016/07/append-and-str-concatenation.html)

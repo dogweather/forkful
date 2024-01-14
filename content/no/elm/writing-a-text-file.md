@@ -1,37 +1,36 @@
 ---
-title:    "Elm: Skriving av en tekstfil"
+title:    "Elm: Å skrive en tekstfil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å skrive en tekstfil er en viktig del av enhver programmeringsoppgave. Det tillater oss å lagre og manipulere data på en enkel og strukturert måte. I denne blogginnlegget skal vi se nærmere på hvordan du kan skrive tekstfiler ved hjelp av Elm programmeringsspråket.
 
-Skriving av en tekstdokumentfil kan være en enkel og effektiv måte å organisere og lagre informasjon på. Tekstfiler kan brukes til å lagre kode, notater, instruksjoner og annen data som du kan ha behov for å referere til senere.
+## Slik gjør du det
+For å skrive en tekstfil i Elm, må vi først importere File modulen. Deretter kan vi bruke funksjonen `writeFile` for å opprette og skrive til en tekstfil. Enkelt sagt tar denne funksjonen inn en liste med tekstlinjer, og skriver hver linje til filen etterfulgt av et linjeskift. La oss se på et eksempel:
 
-## Hvordan
+```
+import File exposing (..)
 
-For å skrive en tekstfil i Elm, kan du bruke funksjonen `File.write`. Her er et eksempel på hvordan du kan bruke denne funksjonen for å opprette og skrive til en ny tekstfil:
+-- Opprett og skriv til en tekstfil
+writeFile "minTekstfil.txt" ["Dette er en linje", "Dette er en annen linje"]
 
-```elm
-import File
-import Text
-
-main =
-    File.write "min_dokumentfil.txt" (Text.join "\n" [ "Dette er en tekstfil skrevet i Elm", "Jeg kan legge til så mange linjer som jeg vil", "Denne teksten vil vises i filen" ])
+-- Resultatet vil være en tekstfil med innholdet:
+-- Dette er en linje
+-- Dette er en annen linje
 ```
 
-I dette eksempelet importeres funksjonen `File.write` fra Elm-biblioteket og `Text.join` som brukes til å kombinere teksten i en liste til en enkeltstreng. Deretter brukes `File.write` til å opprette og skrive til tekstdokumentfilen "min_dokumentfil.txt". Når du åpner denne filen, vil du se at innholdet er det samme som vi har definert i funksjonen.
+Vi kan også bruke funksjonen `appendFile` for å legge til tekst til en eksisterende fil. For å lese en tekstfil, kan vi bruke `readFile` som returnerer en linje om gangen som en `Maybe String` verdi.
 
-## Dypdykk
+## Dykk ned
+Nå som vi har lært hvordan du kan skrive og lese tekstfiler, la oss se på noen mer avanserte funksjoner som File modulen tilbyr. Vi kan for eksempel bruke `directory` funksjonen til å få en liste over filer i en bestemt mappe. Eller `rename` funksjonen for å endre navnet på en fil.
 
-Det finnes ulike måter å skrive og organisere en tekstfil på i Elm. Du kan for eksempel bruke funksjonen `List.map` til å gå gjennom en liste og skrive hver element til sin egen linje i filen. Du kan også bruke funksjonen `Text.append` for å legge til nye linjer i en eksisterende tekstfil.
+Vi kan også bruke Elm's Native modul for å få tilgang til mer avanserte funksjoner som å endre filrettigheter og slette filer. Men husk at disse funksjonene bare kan brukes i Elm's Native modul, og ikke i nettlesere hvor Elm vanligvis kjører.
 
-I tillegg kan du også bruke funksjonen `File.append` for å legge til ny tekst i slutten av en eksisterende fil, eller `File.read` for å lese innholdet i en fil og skrive det til konsollen.
-
-## Se Også
-
-* [Elm Dokumentasjon](https://elm-lang.org/docs)
-* [Elm File Pakke](https://package.elm-lang.org/packages/elm/file/latest/File)
-* [Elm Text Pakke](https://package.elm-lang.org/packages/elm/text/latest/Text)
-* [Elm List Pakke](https://package.elm-lang.org/packages/elm/core/latest/List)
+## Se også
+- Offisiell File modul dokumentasjon: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm Native modul dokumentasjon: https://package.elm-lang.org/packages/elm/core/latest/Native
+- Enkel tekstfilbehandling i Elm: https://dev.to/evancz/text-file-handling-in-elm-2k6c

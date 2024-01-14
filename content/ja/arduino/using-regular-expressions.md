@@ -1,47 +1,41 @@
 ---
-title:    "Arduino: 『正規表現を使用する』"
+title:    "Arduino: 正規表現を使用する"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか
-
-正規表現は、テキストデータから特定のパターンを検索したり、置き換えたりするための非常に便利なツールです。Arduinoプログラミングでは、ユーザーからの入力を受け取ったり、センサーデータを処理したりする際に正規表現を使用することができます。
+# なぜ正規表現を使うのか
+正規表現は、プログラムをより効率的にするための非常に強力なツールです。データやテキストを特定のパターンに一致させたり、検索したり、変更したりすることができます。これにより、データの処理やパターンマッチングが容易になり、プログラムの完成度が向上します。
 
 ## 使い方
-
-正規表現を使用するには、まずArduinoのライブラリである"Regex"をインポートする必要があります。次に、Regexオブジェクトを作成し、そのオブジェクトを使用して文書内のパターンを検索または置き換えすることができます。
-
-```
+正規表現を使うには、まずArduinoプログラム内で「REGEX」ライブラリをインクルードする必要があります。その後、パターンに一致させたい文字列を変数に代入し、`Regex`オブジェクトを作成します。例えば、下記のようになります。
+```Arduino
 #include <Regex.h>
-
-Regex myRegex("[0-9]+");
-// 文書内の数字のパターンを検索する
-
-String myString = "今日の気温は25度です。";
-if (Regex.match(myString)) {
-  Serial.println("気温を検出しました！");
+String text = "Hello World!";
+Regex regex("World");
+```
+次に、`match()`関数を使って、文字列がパターンに一致するかどうかを確認することができます。戻り値は`true`または`false`です。
+```Arduino
+if(regex.match(text)){
+    Serial.println("Match found!");
+}else{
+    Serial.println("No match found.");
 }
 ```
+もし、一致した部分文字列を取得したい場合は、`getMatch()`関数を使うことができます。下記の例では、`world`という部分文字列が取得されます。
+```Arduino
+String match = regex.getMatch();
+Serial.println(match); // Output: world
+```
 
-上記の例では、正規表現を使用して文書内の数字のパターンを検索しています。もちろん、他のパターンを検索したり、置き換えたりすることもできます。
-
-## もっと詳しく
-
-正規表現についてもっと詳しく知りたい場合は、以下のリンクをご参照ください。
-
-- [正規表現チュートリアル](https://www.programmingsimplified.com/javascript/regular-expression-tutorial)
-- [正規表現の使用例](https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s05.html)
+## 深く掘り下げる
+正規表現にはさまざまなオプションやパターンがあり、それらを使いこなせるようになるとより複雑な処理を行うことができます。たとえば、`match()`関数の代わりに`find()`関数を使うことで、文字列内で複数回パターンに一致する部分文字列を検索することができます。また、正規表現のパターンでは、文字数や文字の種類を制限することができるため、特定の形式に一致するデータを抽出することも可能です。さらに、正規表現のオプションを使うことで、大文字と小文字を区別しない、複数行にまたがる検索を行うなど、検索の柔軟性を高めることができます。
 
 ## 参考リンク
+- [Arduino正規表現チュートリアル](https://www.arduino.cc/reference/en/regex/)
+- [Wokwi Simulatorで正規表現を試してみる](https://wokwi.com/arduino/projects/321338288107616005)
+- [正規表現の練習問題](https://regexone.com/) 
 
-- [ArduinoのRegexライブラリドキュメント](https://www.arduino.cc/reference/en/libraries/regexp/)
-- [正規表現の基礎](https://techacademy.jp/magazine/107152)
-- [正規表現入門](https://www.tohoho-web.com/ex/reg/regex.html)
-
----
-
-## 関連記事
-
-- [Arduinoで使用する便利なライブラリまとめ](https://qiita.com/naoyabigaoka/items/4c784dad2156b74f2560)
+# 参考リンク

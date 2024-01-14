@@ -1,36 +1,38 @@
 ---
-title:    "Gleam: Eine Zeichenfolge in Kleinbuchstaben umwandeln"
+title:    "Gleam: Umwandeln eines Strings in Kleinbuchstaben"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Umwandlung von Strings in Kleinbuchstaben ist ein grundlegendes Konzept in der Programmierung und kann in verschiedenen Szenarien nützlich sein. Zum Beispiel, wenn wir Benutzereingaben validieren möchten, ist es wichtig, dass wir sicherstellen, dass die Groß- und Kleinschreibung keine Rolle spielt. Deshalb ist es wichtig, zu wissen, wie man in Gleam Strings in Kleinbuchstaben umwandelt.
+Das Konvertieren von Zeichenketten in Kleinbuchstaben kann nützlich sein, wenn man sicherstellen möchte, dass alle Buchstaben in einer Zeichenkette einheitlich sind. Zum Beispiel, wenn man nach bestimmten Wörtern in einer Textdatei sucht, kann es hilfreich sein, alle Buchstaben in Kleinbuchstaben umzuwandeln, um sicherzustellen, dass keine Suchergebnisse aufgrund von Groß- und Kleinbuchstabenabweichungen verpasst werden.
 
-## So geht's
+## Wie man es macht
 
-Die Umwandlung von String in Kleinbuchstaben in Gleam ist ganz einfach! Im Folgenden zeigen wir dir, wie es geht:
-
-```Gleam
-input = "Hallo Welt"
-output = String.to_lower(input)
-```
-
-Der obige Code verwendet die eingebaute Funktion `String.to_lower`, um den String `input` in Kleinbuchstaben zu konvertieren. Das Ergebnis wird in der Variable `output` gespeichert.
-
-**Output:**
+Eine einfache Möglichkeit, eine Zeichenkette in Kleinbuchstaben umzuwandeln, ist die Verwendung der Funktion `String.to_lower()` in Gleam. Hier ist ein Beispiel:
 
 ```Gleam
-"hallo welt"
+// Deklariere eine Zeichenkette
+let string = "GLEAM PROGRAMMING"
+
+// Wende die Funktion an
+let lowercase_string = String.to_lower(string)
+
+// Gebe das Ergebnis aus
+IO.inspect(lowercase_string)
 ```
 
-## Tiefer Tauchgang
+Dies wird `gleam programming` als Ergebnis ausgeben.
 
-Es ist wichtig zu verstehen, dass die Umwandlung von Strings in Kleinbuchstaben von der verwendeten Codierung abhängt. In den meisten Fällen sollte Gleam jedoch automatisch die richtige Methode wählen, um Strings in Kleinbuchstaben umzuwandeln, unabhängig von der verwendeten Codierung. Dies macht es einfach und effizient, Strings in Gleam zu manipulieren.
+## Tiefer Einblick
+
+In Gleam wird das Konvertieren einer Zeichenkette in Kleinbuchstaben durch die Verwendung der Unicode-Kategorie "Ll" (Lowercase Letter) Algorithmus des Unicode-Konsortiums erreicht. Dies bedeutet, dass alle Unicode-Buchstaben, die zur Kategorie "Ll" gehören, in Kleinbuchstaben umgewandelt werden, während andere Zeichen unverändert bleiben. Dies erlaubt es, auch nicht lateinische Zeichen in Kleinbuchstaben umzuwandeln, was in manchen Programmiersprachen problematisch sein kann.
 
 ## Siehe auch
 
-- [Gleam-Dokumentation zu Strings](https://gleam.run/book/core/strings.html)
-- [Gleam-Tutorial zu Strings](https://gleam.run/book/tutorials/strings.html)
+- [Gleam Dokumentation über Zeichenketten](https://gleam.run/book/core_library/strings.html)
+- [Unicode Konsortium](https://www.unicode.org/)
+- [Liste der Unicode Kategorien](https://www.unicode.org/reports/tr44/tr44-24.html#GC_Values_Table)

@@ -1,31 +1,59 @@
 ---
-title:    "Elixir: Skriver til standardfeil"
+title:    "Elixir: Skriving til standardfeil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Å skrive til standardfeil kan være en nyttig feilsøkingsmetode for å oppdage potensielle problemer eller uønsket oppførsel i Elixir-kode. Det kan også hjelpe med å identifisere og isolere feil i større prosjekter.
 
-Å skrive til standardfeil er en viktig del av Elixir programmering, spesielt når det kommer til debugging og feilhåndtering. Det lar deg skrive ut feilmeldinger og annen informasjon som kan hjelpe deg med å forstå og løse problemer i koden din.
+# Hvordan
+For å skrive til standardfeil i Elixir, kan du bruke funksjonen `IO.puts/2` med argumentet `:stderr` for å skrive til standard error stream. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-## Hvordan Du Gjør Det
+```Elixir
+# Skriver en melding til standard error stream
+IO.puts(:stderr, "Dette er en feilmelding")
 
-I Elixir kan du skrive til standardfeil ved å bruke `IO.puts/2` funksjonen og spesifisere `:stderr` som argument. La oss si at vi har en variabel `error` som inneholder en feilmelding. For å skrive ut dette til standardfeil kan vi bruke følgende kodeblokk:
-
-```Elixir 
-IO.puts "En feil har oppstått: #{error}", :stderr
+# Skriver en variabelverdi til standard error stream
+feil = "Ingen tilkobling til server"
+IO.puts(:stderr, feil)
 ```
 
-Dette vil skrive ut feilmeldingen til standardfeil og du kan deretter se den i terminalen din.
+Denne koden vil skrive ut følgende til standard error stream:
 
-## Dykk Dypere
+```
+Dette er en feilmelding
+Ingen tilkobling til server
+```
 
-I tillegg til å skrive ut feilmeldinger, kan du også bruke standardfeil for å skrive ut generell informasjon mens du kjører koden din. Dette kan være nyttig når du vil holde deg oppdatert om statusen til programmet ditt. For eksempel kan du bruke `IO.write/2` funksjonen til å skrive til standardfeil uten å legge til en ny linje på slutten. Dette kan være nyttig hvis du ønsker å skrive ut informasjon i en løkke uten å skrive ut en ny linje for hvert trinn.
+Du kan også bruke `IO.inspect/2` funksjonen til å inspisere verdier og utskrive dem til standardfeil for feilsøking. Her er et eksempel på hvordan dette kan gjøres:
 
-En annen ting å merke seg er at standardfeil vil bli skrevet ut i rødt i terminalen, noe som gjør det enkelt å identifisere og skille fra annen utdatert informasjon fra programmet ditt.
+```Elixir
+# Variabel som inneholder et komplekst struct
+bruker = %{
+  navn: "Johannes",
+  alder: 25,
+  interesser: ["programmering", "musikk", "friluftsliv"]
+}
 
-## Se også
+# Skriver ut structet til standard error stream
+IO.inspect(:stderr, bruker)
+```
 
-- [Elixir dokumentasjon om IO modulen](https://hexdocs.pm/elixir/IO.html)
-- [Elixir dokumentasjon om standard IO](https://hexdocs.pm/elixir/IO.html#module-standard-io)
+Dette vil skrive ut følgende til standard error stream:
+
+```
+%{alder: 25, interesser: ["programmering", "musikk", "friluftsliv"], navn: "Johannes"}
+```
+
+# Dypdykk
+Når du skriver til standardfeil, kan du også kontrollere nivået på meldingene ved hjelp av `Logger` modulen i Elixir. Dette lar deg spesifisere forskjellige nivåer som `:debug`, `:info` og `:warn`, som deretter kan filtreres og styres i loggfiler.
+
+I tillegg kan du også bruke `raise/1` funksjonen for å løfte en unntaksmelding og utskrive den til standard error stream. Dette kan være nyttig når du vil få oppmerksomhet om en spesiell feilsituasjon i koden din.
+
+# Se også
+- [IO-modulen i Elixir](https://hexdocs.pm/elixir/IO.html)
+- [Logger-modulen i Elixir](https://hexdocs.pm/logger/Logger.html)
+- [Raise/1 funksjonen i Elixir](https://hexdocs.pm/elixir/Kernel.html#raise/1)

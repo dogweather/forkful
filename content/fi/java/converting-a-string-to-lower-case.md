@@ -1,47 +1,38 @@
 ---
-title:    "Java: Merkkijonon muuttaminen pienaakkosiksi"
+title:    "Java: Merkkijonon muuttaminen pieniksi kirjaimiksi"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Miksi yksilö haluaisi muuntaa merkkijonon pieniksi kirjaimiksi? On useita syitä, miksi tämä toiminto voisi olla hyödyllinen. Yksi yleinen käyttötapaus on tekstin syöttäminen käyttäjältä, jolloin on tärkeää vertailla syötettyä tekstiä ilman, että kirjainkoolla on merkitystä. Toisinaan myös vertailun helpottamiseksi tai käyttöliittymän kauneuden vuoksi halutaan muuntaa merkkijono pieniksi kirjaimiksi.
+Miksi haluaisi muuntaa merkkijono pienaikaiseksi? Tämä on yleinen tarve monissa Java-ohjelmointiprojekteissa, joissa käyttäjien syötteet on tarkistettava ja vertailtava. Pienaikaiset merkkijonot ovat myös helpompia käsitellä ja vertailla, mikä tekee koodista selkeämpää ja tehokkaampaa.
 
-# Kuinka tehdä se
+## Miten
 
-Koodin alla on esimerkkejä siitä, kuinka muuntaa merkkijono pieniksi kirjaimiksi Java-ohjelmointikielellä.
+Pienaikaisen merkkijonon luominen Java-ohjelmassa on helppoa käyttämällä String-luokan toLowercase() -metodia. Alla olevassa koodiesimerkissä näytetään, miten muuttaa syötetty merkkijono pienaikaiseksi ja tulostaa se konsoliin:
 
 ```Java
-// Esimerkki 1: Yksinkertainen tapa käyttää String-luokan sisäänrakennettua toimintoa
-String alkuperainenMerkkijono = "TäMÄ onEsimerkki";
-String muunnettuMerkkijono = alkuperainenMerkkijono.toLowerCase();
-System.out.println(muunnettuMerkkijono); // tulostaa "tämä onesimerkki"
-
-// Esimerkki 2: Käyttäen Character-luokkaa ja for-silmukkaa
-String alkuperainenMerkkijono = "vInkkiKonetEknOopy";
-char[] merkkijonoTaulukko = alkuperainenMerkkijono.toCharArray();
-for (int i = 0; i < merkkijonoTaulukko.length; i++) {
-    merkkijonoTaulukko[i] = Character.toLowerCase(merkkijonoTaulukko[i]);
-}
-String muunnettuMerkkijono = new String(merkkijonoTaulukko);
-System.out.println(muunnettuMerkkijono); // tulostaa "vinkkikoneteknoopy"
+// Syötetty merkkijono
+String s = "TÄMÄ ON TÄRKEÄÄ";
+// Kutsutaan toLowercase() -metodia
+String lowerCaseString = s.toLowerCase();
+// Tulostetaan pienaikainen merkkijono
+System.out.println(lowerCaseString);
 ```
 
-## Syöte ja tulostus
+Koodin tulostama tulos on "tämä on tärkeää". Huomaa, että koodi on helposti muokattavissa ja voi käsitellä erilaisia merkkijonoja.
 
-| Alkuperäinen merkkijono | Muunnettu merkkijono |
-| --- | --- |
-| "TäMÄ onEsimerkki" | "tämä onesimerkki" |
-| "vInkkiKonetEknOopy" | "vinkkikoneteknoopy" |
+## Syväsukeltaminen
 
-# Syväsukellus
+Pienaikaisen merkkijonon taustalla on Unicode-standardi, joka määrittelee jokaiselle merkille uniikin numerokoodin. Suuri ja pieni kirjain eroavat toisistaan numerokoodinsa perusteella. ToLowercase() -metodi lukee merkkijonon jokaisen merkin numerokoodin ja vähentää siitä tarvittaessa tietyn määrän. Tällä tavalla se pystyy muuttamaan suuret kirjaimet pieniksi kirjaimiksi.
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi on mahdollista myös muilla tavoilla, kuten käyttämällä regular expressionia tai erilaisia kirjastoja. On myös hyvä huomata, että tämä toiminto ei välttämättä tue kaikkia erilaisia kielimerkkejä tai aakkosia. Tästä syystä on tärkeää testata koodia muuntamaan myös erilaisia merkkijonoja ja varmistaa, että toiminto toimii oikein kaikissa tapauksissa.
+On myös hyvä huomioida, että toLowercase() -metodi käyttää laitteiston paikallista asetusta määrittääkseen, mitkä merkit ovat suuria ja pieniä kirjaimia. Tämä voi johtaa eroihin eri kielten välillä.
 
-# Katso myös
+## Katso myös
 
 - [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Character-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
-- [Regular expression in Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Unicode-standardi](https://unicode.org/charts/)
+- [Java merkkijonotutoriaali (englanniksi)](https://www.javatpoint.com/java-string-to-lowercase)

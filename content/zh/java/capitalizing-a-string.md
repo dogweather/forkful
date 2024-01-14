@@ -1,43 +1,39 @@
 ---
-title:    "Java: 将字符串大写"
+title:    "Java: 将一个字符串大写"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-"为什么要将字符串的首字母大写？"
+标题：为什么需要将字符串大写化
 
-在Java编程中，有时候我们需要把一个字符串的首字母改成大写。这样做可以让字符串看起来更加规范和整洁，也有助于区分字符串的不同部分。下面我们将会介绍如何在Java中实现字符串首字母大写，并深入探讨这个过程背后的原理。
+在Java编程中，经常会遇到需要将字符串大写化的情况。这可以用于各种操作，比如将用户输入转换为大写后再进行比较，或者将数据存储为大写以方便搜索。无论是解决数据匹配问题还是提高代码可读性，字符串大写化都是一个重要的操作。
 
-"##如何实现？"
+## 如何实现字符串大写化
 
-在Java中，我们可以使用String类的内置方法来实现将字符串的首字母大写。具体的代码如下所示：
-
-```Java
-String str = "hello world";
-String firstLetter = str.substring(0,1); //截取字符串的第一个字符
-String otherLetters = str.substring(1); //截取字符串中除第一个字符以外的部分
-firstLetter = firstLetter.toUpperCase(); //将第一个字符转换成大写
-str = firstLetter + otherLetters; //将转换后的第一个字符和剩余的部分拼接成新的字符串
-System.out.println(str); //输出结果为 "Hello world"
-```
-
-从上面的代码中，我们可以看到首先要截取字符串的第一个字符，然后将其转换成大写，最后与剩余的部分拼接成新的字符串。这样就可以将原字符串的首字母变成大写了。
-
-"##深入探讨"
-
-在Java中，字符串的首字母大写是通过调用String类的成员函数toUpperCase()来实现的。该函数的作用是将字符串中的所有字母都转换成大写。在上面的实现方法中，我们先截取字符串的第一个字母，再将其转换成大写，然后与剩余部分拼接。这样做的好处是可以保留原字符串中的其他字母大小写不变，只修改首字母的大小写。
-
-另外，如果需要将字符串的所有字母都转换成大写，也可以直接调用toUpperCase()函数，而不需要额外的处理步骤。例如：
+实现字符串大写化可以使用Java内置的toUpperCase()方法。以下是一个示例代码：
 
 ```Java
 String str = "hello world";
-str = str.toUpperCase(); //将字符串中所有字母转换成大写
-System.out.println(str); //输出结果为 "HELLO WORLD"
+str = str.toUpperCase();
+System.out.println(str);
 ```
+该代码的输出结果为：HELLO WORLD
 
-"##参考链接"
+## 深入了解字符串大写化
 
--Java String类文档：https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
--Java字符串转换：https://www.geeksforgeeks.org/convert-first-letter-string-uppercase-java/
--另一种实现方式：https://stackoverflow.com/questions/3904579/making-the-first-letter-of-a-string-uppercase-in-java
+字符串大写化的实现原理是通过遍历字符串中的每个字符，将小写字母转换为对应的大写字母。这需要使用到Unicode中的字符编码表来进行转换。在实际应用中，可以使用String类的toUpperCase()方法来简化代码，同时也能够处理一些特殊情况，比如针对不同语言的字符进行大写化。
+
+另外，需要注意的是，对于非英文字符，可能存在大小写转换后会改变字符意义的情况。因此，在实际使用中，需要仔细考虑字符串的语境和需求。
+
+## 参考资料
+
+- Java官方文档：https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase
+- Unicode官方网站：https://unicode.org/
+- 字符编码表查询网站：https://unicode-table.com/
+
+## 参见
+
+- [如何将字符串小写化](https://www.example.com/convert-string-to-lowercase-java/)
+- [字符串操作小技巧](https://www.example.com/string-manipulation-tricks/)

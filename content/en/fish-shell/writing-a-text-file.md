@@ -1,53 +1,46 @@
 ---
 title:    "Fish Shell recipe: Writing a text file"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing a text file may seem like a basic task, but it is an essential skill for any programmer. Text files allow you to store and organize your code, making it easier to manage and share with others.
+Writing a text file may seem like a simple task, but it can be a powerful tool for automating tasks in your workflow. With the Fish Shell, you can easily create and edit text files using simple commands, making your programming experience more efficient and organized. 
 
 ## How To
-
-In this blog post, we will explore how to write a text file using the Fish Shell, a user-friendly and powerful command-line shell. Follow along with the examples below to learn how to create and edit text files with ease.
+Creating a text file in Fish Shell is as easy as using the `echo` command. For example, to create a file named "hello.txt" with the content "Hello World!", you would use the following command:
 
 ```Fish Shell
-# To create a new text file, use the 'touch' command followed by the file name
-touch hello.txt
-# To open the file in a text editor, use the 'nano' command followed by the file name
-nano hello.txt
+echo "Hello World!" > hello.txt
 ```
 
-You should now see a blank text file open in the editor. You can start typing your desired content into the file. Once you are finished, use the keyboard shortcut 'Ctrl + X' to exit the editor. This will prompt you to save the changes, press 'Y' to confirm.
+To add more text to the file, you can use the append `>>` operator. For example, to add the line "Welcome to my text file!" to the existing "hello.txt" file, you would use:
 
 ```Fish Shell
-# To view the contents of the file, simply use the 'cat' command followed by the file name
+echo "Welcome to my text file!" >> hello.txt
+```
+You can also use the `cat` command to display the contents of a text file in your terminal. For example, to display the content of the "hello.txt" file, you would use:
+
+```Fish Shell
 cat hello.txt
-# To append text to an existing file, use the 'echo' command followed by the text and the '>>' operator
-echo "Hello world!" >> hello.txt
-# To overwrite the existing contents of a file, use the 'echo' command followed by the text and the '>' operator
-echo "This is a new line of text" > hello.txt
 ```
-
-Congratulations! You have successfully written a text file using the Fish Shell.
 
 ## Deep Dive
+When writing a text file, it's important to use the correct file encoding to ensure that your text is displayed correctly. Fish Shell uses UTF-8 encoding by default, which supports a wide range of characters and symbols. You can also change the file encoding by adding the `--eol-style` flag to your `echo` command. For example, to create a file with UTF-16 encoding, you would use:
 
-In the previous section, we used the 'touch' command to create a new file and the 'nano' command to open and edit it. However, the Fish Shell provides several other useful commands for creating and editing text files.
+```Fish Shell
+echo --eol-style utf-16 "Hello World!" > hello.txt
+```
 
-- 'cat' - This command prints the contents of a file to the terminal.
-- 'less' - This command allows you to view a file one page at a time, making it ideal for large files.
-- 'head' & 'tail' - These commands display the first or last lines of a file respectively. They are particularly useful when dealing with large log files.
-- 'cp' - This command can be used to make copies of existing files.
+You can also use variables in your text file by using the `$variable_name` syntax. For example, if you have a variable named `name` with the value "John", you can include it in your text file by using:
 
-For a complete list of commands and their usage, you can refer to the Fish Shell documentation.
+```Fish Shell
+echo "Hi $name, welcome to my text file!" > hello.txt
+```
 
 ## See Also
-
-- [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Tutorials](https://fishshell.com/docs/current/tutorial.html)
-- [GitHub Repository for Fish Shell](https://github.com/fish-shell/fish-shell)
-
-Happy programming! 🐟
+- Official Fish Shell documentation on [redirecting output to files](https://fishshell.com/docs/current/tutorial.html#tut_std) 
+- Tutorial on [working with text files in Fish Shell](https://www.linode.com/docs/guides/how-to-work-with-files-in-fish-shell/) 
+- Documentation for [Fish Shell's `cat` command](https://fishshell.com/docs/current/cmds/cat.html)

@@ -1,59 +1,50 @@
 ---
-title:    "C++: Confrontare due date"
+title:    "C++: Confrontare due date."
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Cosa
+## Perché confrontare due date in C++
 
-Molti programmatori si trovano a dover confrontare due date in un programma C++ e vogliono capire come farlo in modo efficiente. In questo articolo, esploreremo alcuni metodi per confrontare due date e ottenere il risultato desiderato.
+Il confronto tra due date è un'operazione molto comune in programmazione, in particolare nel linguaggio C++. Sapere come confrontare correttamente le date può aiutarci a gestire in modo efficiente le nostre applicazioni e a ottenere i risultati desiderati. In questo articolo, esamineremo come effettuare un confronto tra due date utilizzando il linguaggio C++.
 
-## Come Fare
+## Come fare
 
-Per confrontare due date in C++, possiamo utilizzare la libreria "time.h", che ci fornisce le funzioni necessarie per lavorare con le date. Vediamo un esempio di codice:
+Per confrontare due date in C++, abbiamo bisogno di utilizzare la libreria standard di C++ "ctime", che ci fornisce le funzioni necessarie per lavorare con le date. Inoltre, avremo bisogno di dichiarare una struttura "tm" che rappresenta una data.
+
+Per iniziare, dobbiamo inizializzare due variabili di tipo "tm" con le due date che vogliamo confrontare. Ad esempio, supponiamo che vogliamo confrontare le date 5/10/2021 e 10/15/2021. Dobbiamo dichiarare due variabili di tipo "tm" e assegnare loro i valori delle date:
 
 ```C++
-#include <iostream>
-#include <cstring>
-#include <ctime>
+tm data1, data2;
 
-int main() {
-    // Definiamo due date
-    tm date1 = { 0, 0, 0, 1, 1, 2021 - 1900 };
-    tm date2 = { 0, 0, 0, 1, 1, 2020 - 1900 };
+data1.tm_mday = 5; //giorno
+data1.tm_mon = 9; //mese - 1 (ottobre è il mese 9)
+data1.tm_year = 121; //anno - 1900 (2021 - 1900 = 121)
 
-    // Utilizziamo la funzione difftime() per confrontare le due date
-    // Il risultato sarà il numero di secondi tra le due date
-    double difference = difftime(mktime(&date1), mktime(&date2));
-
-    // Convertiamo il risultato in giorni, ore, minuti e secondi
-    int days = difference / (24 * 60 * 60);
-    int hours = (difference - (days * 24 * 60 * 60)) / (60 * 60);
-    int minutes = (difference - (days * 24 * 60 * 60) - (hours * 60 * 60)) / 60;
-    int seconds = difference - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
-
-    // Stampiamo il risultato
-    std::cout << "La differenza tra le due date è di " << days << " giorni, " << hours << " ore, " << minutes << " minuti e " << seconds << " secondi." << std::endl;
-
-    return 0;
-}
+data2.tm_mday = 15; //giorno
+data2.tm_mon = 9; //mese - 1 (ottobre è il mese 9)
+data2.tm_year = 121; //anno - 1900 (2021 - 1900 = 121)
 ```
 
-L'output di questo codice sarà:
+Ora che abbiamo inizializzato le due variabili con le date desiderate, possiamo utilizzare la funzione "difftime" della libreria "ctime" per confrontarle. Questa funzione calcola la differenza in secondi tra le due date e restituisce un valore. Se il valore è maggiore di 0, allora la prima data è successiva alla seconda data; se è minore di 0, allora la prima data è precedente alla seconda data.
 
-```
-La differenza tra le due date è di 366 giorni, 0 ore, 0 minuti e 0 secondi.
+```C++
+double diff = difftime(mktime(&data1), mktime(&data2)); //confronto tra le due date
+//mktime converte una variabile tm in una data del calendario
+cout << "Differenza in secondi: " << diff << endl;
 ```
 
-In questo esempio, utilizziamo la funzione "difftime()" per calcolare la differenza tra le due date e poi convertiamo il risultato in giorni, ore, minuti e secondi. È importante notare che la funzione "mktime()" richiede di passare una struct di tipo "tm" che rappresenta la data, quindi dobbiamo definire le due date come strutture di questo tipo.
+In questo caso, la differenza è di -1296000 secondi, quindi la prima data è precedente alla seconda data.
 
 ## Approfondimento
 
-Esistono anche altri approcci per confrontare due date in C++, ad esempio utilizzando la classe "Date" di C++20 o la libreria "boost::date_time". Inoltre, è importante tenere conto delle differenze nei formati delle date in base al sistema operativo su cui viene eseguito il programma.
+È importante notare che quando confrontiamo due date, dobbiamo assicurarci che siano rappresentate nella stessa scala di tempo. Per esempio, se stiamo confrontando una data nel formato "gg/mm/aaaa", dobbiamo assicurarci che entrambe le date siano in questo formato. Inoltre, dobbiamo tenere conto dei diversi metodi di rappresentazione delle date nei vari paesi, ad esempio il formato "mm/gg/aaaa" negli Stati Uniti.
 
-## Vedi Anche
+Un altro aspetto importante da considerare è il fatto che le date possono essere rappresentate in diversi formati, come ad esempio una stringa o un intero. In questi casi, dobbiamo utilizzare le funzioni appropriate per convertire la data nel formato "tm" prima di confrontarle.
 
-- [Documentazione della libreria time.h](https://www.cplusplus.com/reference/ctime/)
-- [Classe Date di C++20](https://en.cppreference.com/w/cpp/chrono/c/date)
-- [Libreria boost::date_time](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+## Vedi anche
+
+- [Funzione difftime in C++](https://www.cplusplus.com/reference/ctime/difftime/)
+- [Libreria standard di C++](https://www.cplusplus.com/reference/)

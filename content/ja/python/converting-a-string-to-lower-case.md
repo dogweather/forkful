@@ -1,50 +1,36 @@
 ---
 title:    "Python: 「文字列を小文字に変換する」"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-文字列を小文字に変換する必要があるのかを説明します。
+文字列を小文字に変換する必要性は、データの整理や検索のために必要です。
 
+## 方法
 
-コンピュータープログラミングでは、文字列を処理する場合には、文字列を比較したり、検索したり、その他多くの処理を行ったりすることがよくあります。しかし、文字列は大文字と小文字が区別されるため、正しく処理をするためには文字列をすべて同じ形式にする必要があります。
+```Python
+# 文字列の定義
+string = "HELLO WORLD"
 
-# 方法
+# 小文字に変換
+lowercase_string = string.lower()
 
-Pythonでは、`lower()`メソッドを使用して文字列を小文字に変換することができます。例として、以下のコードを見てみましょう。
+# 結果の出力
+print(lowercase_string)
 
-``` Python
-text = "Hello, WORLD!"
-print(text.lower())
+# 出力結果: hello world
 ```
 
-このコードの出力は`hello, world!`となります。`lower()`は元の文字列を変更せず、小文字に変換した新しい文字列を返します。
+## 深堀り
 
-また、特定の文字列だけではなく、変数や入力から取得した文字列にも同じように`lower()`を使用することができます。例えば、以下のように入力を受け取って、小文字に変換するプログラムを作ることができます。
+文字列を小文字に変換する方法は、Pythonの標準ライブラリである`lower()`メソッドを使用することで可能です。このメソッドは文字列の先頭から1文字ずつ取り出し、英字であれば小文字に変換し、それ以外の文字はそのまま返します。
 
-``` Python
-text = input("文字列を入力してください： ")
-print(text.lower())
-```
+また、大文字と小文字を区別せずに比較したい場合は、`lower()`メソッドを使用して文字列をすべて小文字に変換した上で比較することができます。
 
-このプログラムは、入力した文字列を小文字に変換して出力するものです。
-
-# 深堀り
-
-Pythonでは`lower()`メソッドだけではなく、`casefold()`メソッドも用意されています。このメソッドは、更に多言語対応しており、文字列の大文字と小文字の区別がない形式に変換してくれます。
-
-また、`lower()`や`casefold()`のようなメソッドが用意されていないプログラミング言語もあります。その場合、自分で文字列を小文字に変換するコードを書く必要があります。一般的には文字のASCIIコードを使って、大文字の文字を小文字に変換しますが、国際化の観点からは十分ではありません。そのため、多言語に対応できるように、より高度なアルゴリズムを使用したり、Unicodeのコードポイントを使用したりする必要があります。
-
-# おすすめの記事
-
-- 文字列を操作する際に役立つPythonの組み込み関数：https://www.python.org/dev/peps/pep-0376/
-- Unicodeと文字列の扱い方：https://unicode.org/standard/standard.html
-
-# 関連リンク
-
-- Python公式ドキュメント：https://docs.python.org/ja/3/library/stdtypes.html#str.lower
-- Pythonの文字列操作について学ぶ：https://www.tutorialspoint.com/python/python_strings.htm
-- Pythonで文字列を扱う上で注意すべきポイント：https://docs.python.org/ja/3/library/string.html
+## See Also 
+[Pythonの文字列に関する公式ドキュメント (英語)](https://docs.python.org/ja/3/library/stdtypes.html#str.lower)  
+[文字列の比較についての解説 (日本語)](https://www.python.jp/train/string/string_index.html#id9)

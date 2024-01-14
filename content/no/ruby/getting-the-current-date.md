@@ -1,57 +1,36 @@
 ---
-title:    "Ruby: Å få gjeldende dato"
+title:    "Ruby: Å få den nåværende datoen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å få den nåværende datoen er en viktig del av å programmere fordi det gir deg mulighet til å få nøyaktig informasjon om tiden og datoene for ulike handlinger.
+Å få den nåværende datoen i et Ruby-program kan være en viktig og nyttig funksjon for å øke nøyaktigheten og funksjonaliteten til programmet ditt. Enten du trenger det for å logge hendelser, sette opp automatisk genererte rapporter, eller bare for å vise den aktuelle datoen i brukergrensesnittet, er å kunne få den nåværende datoen en viktig ferdighet å ha når du koder i Ruby.
 
-## Hvordan
+## Hvordan få den nåværende datoen i Ruby
 
-For å få den nåværende datoen i Ruby, kan du bruke Time.now metoden. Denne metoden returnerer et objekt som inneholder informasjon om den nåværende datoen og tiden. Her er et eksempel på hvordan du kan bruke det i en metode og printe ut datoen:
-
-```Ruby
-def print_current_date
-  date = Time.now
-  puts "I dag er det #{date.day}.#{date.month}.#{date.year}."
-end
-
-print_current_date
-```
-
-Dette vil produsere følgende output:
-
-```
-I dag er det 22.11.2021.
-```
-
-Det er også mulig å formatere datoen på forskjellige måter ved hjelp av strftime metoden. Her er et eksempel på hvordan du kan gjøre det:
+For å få den nåværende datoen i Ruby, bruker du en kombinasjon av Ruby sin innebygde `Time` klasse og `strftime` metoden. Først lager du et nytt `Time` objekt ved å kalle `Time.now` metoden. Deretter bruker du `strftime` metoden for å formatere datoen slik du ønsker det. For eksempel:
 
 ```Ruby
-date = Time.now
-puts "I dag er det #{date.strftime("%A, %d %B %Y")}."
+now = Time.now
+puts now.strftime("%d/%m/%Y")
 ```
 
-Dette vil produsere følgende output:
+Dette vil resultere i output som ser omtrent slik ut: `12/03/2021`. Du kan også legge til forskjellige formateringsparametere for å få ønsket output, for eksempel `%B` for å få måneden skrevet ut som navn, eller `%H:%M` for å få tiden i timer og minutter.
 
-```
-I dag er det mandag, 22 november 2021.
-```
+## Dykk dypere ned i å få den nåværende datoen
 
-## Dypdykk
+Hvis du ønsker å få en mer detaljert forståelse av hvordan `Time` og `strftime` fungerer i Ruby, kan du utforske følgende konsepter og funksjoner:
 
-Time.now metoden bruker systemets klokke for å få den nåværende datoen og tiden. Dette betyr at datoen og tiden kan variere avhengig av hva systemet ditt er satt til. Du kan også spesifisere et annet tidssone ved å bruke Time.zone metoden.
-
-Det er også verdt å nevne at du kan få mer spesifikk informasjon om datoen og tiden ved å bruke ulike metoder tilgjengelig i Time objektet. For eksempel kan du bruke .year, .month, .day, .hour, .min, .sec for å få individuelle deler av datoen og tiden.
+1. Timezones: Ved å bruke `Time.now` vil du få datoen og tiden i din lokale tidssone. Hvis du ønsker å få datoen i en annen tidssone, kan du bruke `Time.now.getlocal` og legge til tidssonen som et argument.
+2. Andre formateringsparametere: Det finnes en rekke andre formateringsparametere du kan bruke med `strftime` for å få ønsket output, for eksempel `%A` for å få ukedagen skrevet ut som navn.
+3. Ytelse: Å bruke `Time.now` for å få datoen kan være en ressurskrevende operasjon, spesielt hvis du bruker den flere ganger i løpet av programmet. I slike tilfeller kan det være bedre å bruke `DateTime.now` som er en mer lettvektig versjon av `Time.now`.
 
 ## Se også
 
-For mer informasjon om å få den nåværende datoen i Ruby, kan du se på følgende ressurser:
-
-- [Ruby Time.now dokumentasjon](https://ruby-doc.org/core-2.7.4/Time.html#method-i-now)
-- [Ruby strftime dokumentasjon](https://ruby-doc.org/core-2.7.4/Time.html#method-i-strftime)
-- [Ruby Time.zone dokumentasjon](https://ruby-doc.org/core-2.7.4/Time.html#method-i-zone)
-- [Ruby datetime Objekt](https://ruby-doc.org/stdlib-2.7.4/libdoc/date/rdoc/DateTime.html)
+* [Ruby sin offisielle dokumentasjon om Time og Datetime](https://ruby-doc.org/core-3.0.0/Time.html)
+* [Enkel guide til formatering av dato og tid i Ruby](https://dev.to/shayanypn/using-datetime-in-ruby-zkf)
+* [Hvordan håndtere tidssoner i Ruby](https://thoughtbot.com/blog/how-to-handle-time-zones-in-ruby)

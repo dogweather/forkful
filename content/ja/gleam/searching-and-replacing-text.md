@@ -1,37 +1,49 @@
 ---
 title:    "Gleam: テキストの検索と置換"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleamのテキスト検索と置換のメリット
+## なぜ？ 
 
-## Why (なぜ)
+テキストの検索と置換をする理由は、文字列の変更や更新が必要な場合に便利であるためです。
 
-テキストの検索と置換を行うことで、大量のテキストファイルを効率的に編集することができます。新しい言語やコードの更新など、大規模なテキスト変更を行う場合に特に便利です。
+## 方法
 
-## How To (方法)
-
-Gleamでは、組み込みのテキスト検索と置換機能が利用できます。以下のようにコードブロックを使用して文字列を検索して置換することができます。
+テキストの検索と置換を行うには、Gleamプログラミング言語を使用します。以下のコードブロックで実装例と出力を示します。
 
 ```Gleam
-file = File.read("sample.txt") // テキストファイルの読み込み
+// 文字列の置換
+let original = "こんにちは、世界!"
+let replaced = String.replace(original, "こんにちは", "Hello")
+// 出力：Hello、世界!
 
-updated_file = regex::replace(file, "old_text", "new_text") // テキストの置換
-
-File.write("sample.txt", updated_file) // 置換したテキストファイルを保存
+// 正規表現による置換
+let original = "abc123def456"
+let pattern = Regex.compile("[0-9]+")
+let replaced = Regex.replace(pattern, original, "xyz")
+// 出力：abcxyzdefxyz
 ```
 
-上記の例では、特定の文字列を検索して置換する方法を示しています。正規表現を使用することで、より複雑なパターンの検索や置換も行うことができます。
+## ディープダイブ
 
-## Deep Dive (詳細)
+テキストの検索と置換の際には、正規表現を使用することでより高度な操作が可能です。正規表現を使用する場合、以下の要素を考慮する必要があります。
 
-テキストの検索と置換は、Gleamのパターンマッチング機能を使用して実現されています。パターンマッチングでは、文字列の一部または全体にマッチするパターンを定義し、そのパターンに基づいてテキストを検索したり置換したりすることができます。
+- 文字列パターンの作成方法
+- 置換結果の指定方法
+- 各種オプションの使用方法
 
-また、Gleamには標準ライブラリとしてreのパッケージが存在し、より高度な正規表現操作を提供しています。詳細な情報は公式ドキュメントを参照してください。
+また、Gleamではパターンマッチングを使用して処理を簡潔にすることができます。例えば、特定の文字列を置換する際に特定の形式を持つ文字列のみを対象にするようにパターンマッチングを使用することができます。詳細な操作方法については、公式ドキュメントを参照してください。
 
-## See Also (関連リンク)
+## 参考リンク
 
-- Gleamのテキスト検索と置換のソースコード: https://github.com/gleam-lang/gleam/blob/master/lib/regex/
-- 正規表現の公式ドキュメント: https://gleam.run/modules/re.html
+- Gleam公式ドキュメント：https://gleam.run/
+- Gleamでテキスト検索と置換する方法：https://gleam.run/articles/regex.html
+- 正規表現チュートリアル：https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
+## もっと読む
+
+- Gleamでの文書の操作方法について学ぶ：https://gleam.run/articles/files.html
+- より複雑なテキスト処理の方法について学ぶ：https://gleam.run/articles/pattern-matching.html

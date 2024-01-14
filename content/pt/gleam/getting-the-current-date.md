@@ -1,37 +1,45 @@
 ---
 title:    "Gleam: Obtendo a data atual"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+# Por que utilizar Gleam para obter a data atual?
 
-Ao se envolver em programação com Gleam, é comum a necessidade de obter a data atual. Isso pode acontecer em diversos cenários, como para exibir a data em um site, registrar datas de eventos ou até mesmo para realizar cálculos com datas.
+Você já se perguntou como os aplicativos e sites conseguem exibir a data atual? Ou talvez você esteja trabalhando em um projeto que precisa dessa funcionalidade? Independentemente do motivo, a linguagem de programação Gleam oferece uma maneira simples e eficiente de obter a data atual em seus programas.
 
-## Como fazer:
+# Como fazer isso em Gleam
 
-Para obter a data atual em Gleam, você pode utilizar a função `DateTime.now()`. Esta função retorna um registro contendo informações sobre a data e hora atual, como ano, mês, dia, hora, minuto, segundo e fuso horário. Veja abaixo um exemplo de código utilizando esta função:
-
-```
-Gleam DateTime.now()
-```
-
-O resultado deste código será um registro semelhante a este:
+Para obter a data atual em Gleam, utilizamos a função `Date.utc_now()` que retorna um objeto `Date` contendo a data e hora atuais.
 
 ```
-{year: 2021, month: 08, day: 10, hour: 14, minute: 30, second: 20, timezone: "UTC"}
+Gleam: obtenhaData
+import Date
+  Date.utc_now()
 ```
 
-Com esses dados, você pode trabalhar de diversas maneiras, como formatar a data em uma string específica ou realizar cálculos com as informações de data e hora.
+Agora, podemos usar esse objeto para acessar informações específicas, como o dia, mês, ano, entre outros.
 
-## Mergulho mais profundo:
+```
+Gleam: obtenhaDataDetalhada
+import Date
+  let dataAtual = Date.utc_now()
+  let dia = Date.day(dataAtual)
+  let mes = Date.month(dataAtual)
+  let ano = Date.year(dataAtual)
+```
 
-Quando se trata de obter a data atual em Gleam, é importante destacar que a função `DateTime.now()` retorna valores diferentes dependendo do fuso horário da máquina em que o código está sendo executado. Por exemplo, se você estiver em um fuso horário diferente de "UTC", os valores de hora, minuto e segundo serão diferentes dos mostrados no exemplo acima.
+O código acima irá retornar o dia, mês e ano atuais em variáveis separadas, que podem ser usadas para formar uma data personalizada de acordo com suas necessidades.
 
-Além disso, é possível utilizar a biblioteca "gleam-chronos" para trabalhar com datas e horas de forma mais avançada em Gleam. Ela oferece funções como `DateTime.from_string()` para converter uma string em um registro de data e hora e `DateTime.to_string()` para transformar um registro em uma string formatada.
+# Aprofundando no assunto
 
-## Veja também:
+O objeto `Date` também possui outras funções úteis para trabalhar com datas, como `Date.diff()` que calcula a diferença entre duas datas, `Date.to_iso8601()` que converte a data em uma string no formato ISO 8601 e `Date.from_utc_iso8601()` que converte uma string no formato ISO 8601 em um objeto `Date`.
 
-- Documentação oficial do Gleam sobre [datas e horas](https://gleam.run/documentation/standard-library#date-and-time)
-- Biblioteca "gleam-chronos" para trabalhar com datas e horas avançadas em Gleam: [https://github.com/gleam-lang/chronos](https://github.com/gleam-lang/chronos)
+Além disso, é possível utilizar a biblioteca `Timex` para ter acesso a mais funcionalidades relacionadas a data e hora em Gleam.
+
+# Veja também
+
+- Documentação oficial da Gleam sobre a função `Date.utc_now()`: https://gleam.run/modules/date#utc_now
+- Exemplo de uso da função `Date.utc_now()` em um programa Gleam: https://github.com/lpil/gleam/blob/master/examples/date.gleam

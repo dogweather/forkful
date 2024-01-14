@@ -1,50 +1,60 @@
 ---
 title:    "Javascript: Búsqueda y reemplazo de texto"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Si eres un programador en Javascript, probablemente hayas enfrentado el desafío de buscar y reemplazar texto en tu código. Ya sea para corregir errores o para realizar cambios en masa, la búsqueda y reemplazo de texto es una tarea común en la programación. Aprender cómo hacerlo correctamente te ayudará a ser más eficiente y a ahorrar tiempo en tu trabajo.
+El método de buscar y reemplazar texto es una herramienta esencial en la programación JavaScript. Esta función te permite encontrar una cadena de texto específica y reemplazarla con otra, lo que puede ser útil para corregir errores o realizar cambios en una gran cantidad de código.
 
 ## Cómo hacerlo
 
-Para buscar y reemplazar texto en Javascript, primero debes utilizar la función `replace()`. Esta función toma dos argumentos: el primer argumento es el texto que deseas buscar y el segundo argumento es el texto con el que deseas reemplazarlo. A continuación se muestra un ejemplo de cómo utilizar la función `replace()` para reemplazar todas las letras "a" con la letra "b" en un string:
+Para utilizar la función de buscar y reemplazar en JavaScript, puedes seguir estos pasos:
+
+1. Primero, debes identificar la cadena de texto que deseas buscar y reemplazar.
+2. Utiliza el método `replace()` en esa cadena de texto.
+3. Dentro de los paréntesis, escribe la cadena de texto que deseas reemplazar y después la nueva cadena de texto que deseas utilizar.
+4. Si la cadena de texto se encuentra en más de una ubicación, puedes utilizar la bandera `g` para realizar el reemplazo en todas las ocurrencias.
+
+A continuación, se presenta un ejemplo de cómo utilizar este método en código JavaScript:
 
 ```Javascript
-let texto = "Hola amigo";
-let nuevoTexto = texto.replace("a", "b");
-console.log(nuevoTexto); // Salida: Hblb bmigo
+let texto = "Hola amigos, ¿cómo están?";
+let nuevoTexto = texto.replace("hola", "buen día");
+
+console.log(nuevoTexto);
 ```
 
-Como se puede ver en el ejemplo, la función `replace()` reemplaza solo la primera coincidencia de la letra "a". Si deseas reemplazar todas las coincidencias, debes utilizar una expresión regular con el modificador "g" (global). A continuación se muestra un ejemplo de cómo hacerlo:
-
-```Javascript
-let texto = "Javascript es un lenguaje de programación";
-let nuevoTexto = texto.replace(/a/g, "o");
-console.log(nuevoTexto); // Salida: Jovoscript es un lenguoje de progromocon
+Output:
 ```
-
-Como se puede ver, ahora todas las letras "a" han sido reemplazadas por la letra "o". Puedes utilizar cualquier expresión regular dentro de la función `replace()` para realizar búsquedas más específicas y reemplazar texto de manera más compleja.
+Buen día amigos, ¿cómo están?
+```
 
 ## Profundizando
 
-La función `replace()` también puede ser utilizada con un callback para realizar reemplazos más avanzados. Este callback toma tres argumentos: el valor coincidente, el índice de la coincidencia en el string original y el string original completo. A continuación se muestra un ejemplo:
+Además de reemplazar una cadena de texto específica, el método `replace()` también te permite utilizar expresiones regulares para buscar patrones en un texto y reemplazarlos. Esto es especialmente útil cuando deseas realizar cambios en una gran cantidad de texto.
+
+Por ejemplo, si deseas reemplazar todas las letras mayúsculas de una palabra por minúsculas, puedes utilizar una expresión regular en vez de escribir cada letra individualmente. Una expresión regular se escribe entre dos barras diagonales (`/.../`) y puede contener diferentes símbolos para buscar patrones.
+
+A continuación, se muestra un ejemplo de cómo utilizar una expresión regular en el método `replace()`:
 
 ```Javascript
-let numeros = "1 y 2";
-let resultado = numeros.replace(/\d+/g, function(valor){
-    return valor * 10;
-});
-console.log(resultado); // Salida: 10 y 20
+let texto = "hOlA mUnDo";
+let nuevoTexto = texto.replace(/[A-Z]/g, (letra) => letra.toLowerCase());
+// El primer parámetro es la expresión regular y el segundo es una función que convierte la letra a minúscula.
+
+console.log(nuevoTexto);
 ```
 
-En este ejemplo, se utiliza una expresión regular para encontrar los números en el string y luego se multiplica cada número por 10 en el callback. Puedes utilizar cualquier lógica en el callback para realizar reemplazos más complejos.
+Output:
+```
+hola mundo
+```
 
 ## Ver también
 
-- [Documentación de la función `replace()` en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/replace)
-- [Guía de expresiones regulares en w3schools](https://www.w3schools.com/js/js_regexp.asp)
-- [Tutorial interactivo de expresiones regulares en RegexOne](https://regexone.com/)
+- [Método `replace()` en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Expresiones regulares en JavaScript en W3Schools](https://www.w3schools.com/js/js_regexp.asp)

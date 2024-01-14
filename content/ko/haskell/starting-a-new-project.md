@@ -1,44 +1,79 @@
 ---
 title:    "Haskell: 새 프로젝트 시작하기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜
 
-새 프로젝트를 시작하는 이유는 매우 다양합니다. 어떤 사람은 존재하는 문제를 해결하기 위해 새로운 소프트웨어를 만들고 싶어할 수 있고, 또 다른 사람은 그저 새로운 언어나 기술을 배우고 싶어서 새로운 프로젝트를 시작할 수도 있습니다. 어떤 이유가 있던 간에, 새로운 프로젝트를 시작하는 것은 항상 무언가를 배우고 새로운 것을 경험하는 좋은 방법입니다.
+새로운 프로젝트를 시작하는 이유는 다양합니다. 어떤 사람들은 자신의 스킬을 발전시키기 위해 새로운 언어나 프레임워크에 도전하고 싶어 할 것입니다. 또 다른 사람들은 현재 사용 중인 기존 솔루션보다 더 효율적이고 강력한 도구를 찾고 있을 것입니다. 어떤 이유로든 새로운 프로젝트를 시작하는 것은 항상 도전적이고 흥미로운 일이 될 수 있습니다.
 
-# 하는 방법
+## 어떻게
 
-해스켈(Haskell)은 함수형 프로그래밍 언어로, 다른 언어와는 다른 문법과 철학을 가지고 있습니다. 그래서 처음 해스켈을 접하면 다소 생소하게 느껴질 수 있지만, 실제로는 매우 강력한 언어입니다. 먼저 인터프리터를 설치하고, 기본적인 문법과 데이터 타입을 익힌 다음에는 다음과 같이 함수를 정의할 수 있습니다:
+Haskell은 함수형 프로그래밍 언어로서 매우 강력하고 표현력이 뛰어납니다. 새로운 프로젝트를 시작하기 위해서는 몇 가지 단계를 따라야 합니다.
 
-```Haskell
-double x = x * 2
-```
+### 프로젝트 만들기
 
-이제 이 함수를 사용해 값을 두 배로 만들 수 있습니다. 예를 들어, `double 5`를 실행하면 `10`이라는 결과가 나옵니다. 해스켈은 타입 안정성이 뛰어나기 때문에, 함수에 전달되는 인자의 타입을 명확하게 지정해줘야 합니다. 위의 예시에서는 `x`가 정수(`Int`)인 것을 명시해줬습니다. 또한, 함수를 더 간단하게 정의해볼 수도 있습니다:
+우선 프로젝트의 디렉토리를 만듭니다. 다음으로 `stack new` 명령어를 사용하여 기본적인 프로젝트를 생성합니다.
 
 ```Haskell
-double = (*2)
+stack new my-project
 ```
 
-이렇게 하면 `double`이라는 이름만으로 바로 함수를 정의할 수 있습니다. 여러분도 해스켈의 강력함을 느껴보세요!
+이 명령어는 `my-project` 디렉토리를 생성하고 기본적인 프로젝트를 설정합니다.
 
-# 깊이 파고들기
+### 모듈 만들기
 
-새로운 프로젝트를 시작하기 전에, 먼저 프로젝트의 목적과 스케줄을 계획하는 것이 중요합니다. 또한, 적절한 라이브러리를 선택하고 데이터 구조를 디자인하는 것도 중요합니다. 해스켈에서는 수학적인 추상화를 사용해 프로그래밍하므로, 처음에는 다소 복잡해보이지만 제대로 활용하면 코드의 가독성과 유지보수성을 높일 수 있습니다. 또한, 해스켈은 타입 시스템이 강력하기 때문에 코드의 안정성을 보장할 수 있습니다.
+프로젝트 내에서 사용할 모듈을 만듭니다. 모듈은 프로젝트의 코드를 구조화하는 데 유용합니다. 모듈을 만들기 위해서는 `src` 디렉토리 안에 `MyModule.hs` 파일을 생성합니다.
 
-# 참고자료
+```Haskell
+module MyModule
+  ( someFunction
+  , anotherFunction
+  ) where
 
-해스켈을 더 깊이 다뤄보고 싶다면 아래의 링크들을 참고하세요:
+someFunction :: Int -> Int
+someFunction = ...
 
-- [해스켈 공식 홈페이지](https://www.haskell.org/)
-- [해스켈 온라인 책](http://learnyouahaskell.com/chapters)
-- [실제 프로젝트에서 사용하는 해스켈 예제](https://github.com/haskell-synthetic-io/synthetic-io)
+anotherFunction :: String -> String
+anotherFunction = ...
+```
 
-See Also:
+### 메인 함수 만들기
 
-참고 자료:
-- [프로그래밍 언어 해스켈에 대한 소개](https://ko.wikipedia.org/wiki/%ED%95%B4%EC%8A%A4%EC%BC%88)
-- [해스켈과 함수형 프로그래밍에 대한 자세한 설명](https://en.wikipedia.org/wiki/Haskell_%28programming_language
+프로젝트의 주 실행 함수를 만듭니다. `main.hs` 파일을 `app` 디렉토리 안에 생성하고 `main` 함수를 작성합니다.
+
+```Haskell
+module Main where
+
+import MyModule
+
+main :: IO ()
+main = do
+  putStrLn "Hello, World!"
+  let result = someFunction 42
+  print result
+```
+
+### 빌드 및 실행
+
+마지막으로 `stack` 명령어를 사용하여 프로젝트를 빌드하고 실행합니다.
+
+```Haskell
+stack build
+stack exec my-project
+```
+
+위의 예제 코드는 "Hello, World!"를 출력하고 `someFunction`을 실행한 결과를 출력합니다.
+
+## 딥 다이브
+
+새로운 프로젝트를 시작할 때 가장 중요한 것은 기본적인 설계와 구조를 잘 세우는 것입니다. Haskell은 자유롭게 기능을 나누고 모듈화할 수 있도록 유연한 구조를 제공합니다. 또한 타입 시스템을 통해 코드의 안전성을 보장하므로 더 나은 유지 보수성과 가독성을 제공할 수 있습니다. 새로운 프로젝트를 시작할 때는 기본적인 컨셉과 설계를 확실히 하고 그에 맞는 모듈 구조를 생각하는 것이 중요합니다.
+
+## 참고 자료
+
+- [Haskell 공식 웹사이트](https://www.haskell.org/)
+- [Haskell 튜토리얼 - Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskell 샘플 프로젝트 - Real World Haskell](http://book.realworldhaskell.org/)

@@ -1,29 +1,61 @@
 ---
-title:    "Clojure: **Pisanie do standardowego wyjścia błędu"
+title:    "Clojure: Pisanie do standardowego błędu"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisać do standardowego błędu?
+## Dlaczego
 
-Pisanie do standardowego błędu jest bardzo pomocne podczas pisania programów w Clojure. Umożliwia wyświetlanie błędów i komunikatów o wyjątkach, dzięki czemu łatwiej jest nam debugować kod i naprawiać ewentualne problemy.
+Napisanie do standardowego wyjścia błędu jest ważnym aspektem programowania w Clojure, ponieważ pozwala na wyświetlenie informacji o błędach i wyjątkach, które mogą wystąpić w naszym kodzie. Jest to szczególnie przydatne podczas debugowania i znajdowania błędów w programie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby pisać do standardowego błędu, możemy użyć funkcji `println` w połączeniu z `System/err`. Przykładowy kod wyglądałby następująco:
+Aby napisać do standardowego wyjścia błędu w Clojure, możemy użyć funkcji `println` z argumentem `*err*`. Spowoduje to wyświetlenie podanego ciągu znaków w konsoli jako błąd. Na przykład:
 
 ```Clojure
-(println "Błąd: To jest wiadomość błędu" (System/err))
+(println *err* "Wystąpił błąd!")
 ```
 
-W powyższym przykładzie użyliśmy `println` do wyświetlenia tekstu "Błąd: To jest wiadomość błędu". Następnie, w drugim argumencie tej funkcji, przekazaliśmy `System/err`, co spowodowało, że wiadomość została wysłana na standardowy błąd.
+Wyjście będzie wyglądać następująco:
+```
+Wystąpił błąd!
+```
 
-## Głębszy zanurzenie
+Możemy także wykorzystać makro `with-out-str`, aby prześledzić wszystkie informacje wyświetlane do standardowego wyjścia błędu. Na przykład:
 
-Ważne jest, aby pamiętać, że standardowy błąd jest konsolą, która jest wykorzystywana do wyświetlania informacji o błędach i wyjątkach. Dlatego nie powinno się nadużywać tej funkcjonalności i wyświetlać na standardowym błędzie wszystkich komunikatów i informacji. Powinniśmy skupić się na wykorzystaniu go tylko w przypadkach, gdy rzeczywiście wystąpił błąd lub problem.
+```Clojure
+(with-out-str (println *err* "Wystąpił błąd!"))
+```
 
-## Zobacz również
+W ten sposób zadziała `println`, ale informacje nie zostaną faktycznie wyświetlone w konsoli. Zamiast tego, będą dostępne w ciągu znaków, który możemy przetworzyć lub zapisać do pliku.
 
-- [Dokumentacja funkcji println w Clojure](https://clojuredocs.org/clojure.core/println)
-- [Tutorial o standardowym wyjściu i błędzie w Clojure](https://www.clojureinaction.com/writing-to-standard-output-and-error/)
+## Deep Dive
+
+Poza wyświetlaniem prostych komunikatów błędów, możemy także zwrócić obiekty typu `Exception`, w których możemy zawrzeć dokładniejsze informacje o błędzie. Na przykład:
+
+```Clojure
+(def error (ex-info "Ten błąd jest spowodowany przez brakujący argument!" {:missing-arg "nazwa argumentu"}))
+```
+
+Następnie, możemy wyświetlić ten błąd używając funkcji `prn` na obiekcie `error`:
+
+```Clojure
+(prn error)
+```
+
+Wyjście będzie wyglądać następująco:
+```
+{:cause "Ten błąd jest spowodowany przez brakujący argument!", :data {:missing-arg "nazwa argumentu"}}
+```
+
+Możemy także wykorzystać funkcję `throw` aby rzucić ten błąd w kodzie.
+
+## Zobacz także
+
+Aby uzyskać więcej informacji na temat pisania do standardowego wyjścia błędu w Clojure, warto zapoznać się z poniższymi linkami:
+
+- Oficjalna dokumentacja Clojure: [https://clojuredocs.org/clojure.core/*err*](https://clojuredocs.org/clojure.core/*err*)
+- Poradnik z przykładami: [https://purelyfunctional.tv/guide/error-output/](https://purelyfunctional.tv/guide/error-output/)
+- Forum Clojure: [https://clojureverse.org/t/writing-to-standard-error/1596](https://clojureverse.org/t/writing-to-standard-error/1596)

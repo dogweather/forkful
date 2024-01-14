@@ -1,38 +1,86 @@
 ---
 title:    "Clojure: 搜索和替换文本"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-文本搜索和替换是编程中经常使用的重要技术。通过搜索和替换，您可以快速地修改大量文本，提高编程效率。无论您是初学者还是有经验的开发人员，掌握搜索和替换文本的方法都是必不可少的。 
 
-## 如何做
-```Clojure
-;; 假设我们有一个包含多个名字的字符串
-(def names "小明, 小红, 小刚, 小芳, 小丽")
+在编程中进行搜索和替换文本是非常常见的任务。它可以帮助我们快速地在大量的文本中找到特定的内容，并替换它们为我们需要的内容。无论是清理数据、完成批量操作，还是简单地修改文本，搜索和替换都是非常有用的工具。
 
-;; 我们想用名字替换"小"字
-(clojure.string/replace names "小" "大")
+## 如何
 
-;; 输出为 "大明, 大红, 大刚, 大芳, 大丽"
-```
+要在Clojure中进行搜索和替换文本，我们可以使用内置的`clojure.string`库中的`replace`函数。下面是一个简单的例子，用来替换字符串中的特定字符：
 
 ```Clojure
-;; 我们也可以使用正则表达式进行替换
-(def sentence "我喜欢吃水果和蔬菜")
+(require '[clojure.string :as str])
 
-;; 将"s"替换为"t"
-(clojure.string/replace sentence #"s" "t")
+(defn replace-char [string old-char new-char]
+  (str/replace string (str old-char) (str new-char)))
 
-;; 输出为 "我喜欢吃水果和蔬菜"
+(replace-char "Hello World" "o" "a")
+;; => "Hella Warld"
 ```
 
-## 深入探讨
-当进行文本搜索和替换时，我们可以使用多种方式来匹配和替换文本。Clojure提供了许多函数来帮助我们进行这些操作，例如`replace`、`replace-first`、`replace-nth`、`replace-all`等。我们也可以使用正则表达式来更灵活地匹配和替换文本。此外，Clojure还提供了一些库，如`clojure.string`和`clojure.walk`，可以帮助我们实现更复杂的文本搜索和替换功能。深入学习这些功能可以让我们更加灵活地处理文本数据。
+我们也可以使用`replace`函数来替换多个字符。例如，我们想要将字符串中所有的空格替换为下划线：
 
-## 参考链接
-- [Clojure文档](https://clojuredocs.org/)
-- [Clojure程序设计](https://wizardforcel.gitbooks.io/clojure-fp-tutorial/content/Introducing.html)
-- [learnxinyminutes上的Clojure教程](https://learnxinyminutes.com/docs/zh-cn/clojure-cn/)
+```Clojure
+(require '[clojure.string :as str])
+
+(defn replace-spaces [string]
+  (str/replace string " " "_"))
+
+(replace-spaces "This is a test")
+;; => "This_is_a_test"
+```
+
+当我们想要替换的内容比较复杂时，我们可以使用正则表达式来匹配并替换。让我们尝试将字符串中所有的数字替换为星号：
+
+```Clojure
+(require '[clojure.string :as str])
+
+(defn replace-numbers [string]
+  (str/replace string #"\d" "*"))
+
+(replace-numbers "1234abcd")
+;; => "****abcd"
+```
+
+## 深入了解
+
+除了`replace`函数，`clojure.string`中还有一些其他有用的函数可以帮助我们搜索和替换文本。例如，`split`函数可以根据指定的分隔符将字符串分割成一个列表。让我们尝试使用`split`函数来替换掉一个字符串中的所有元音字母：
+
+```Clojure
+(require '[clojure.string :as str])
+
+(def vowels #{"a" "e" "i" "o" "u"})
+
+(defn replace-vowels [string]
+  (str/join (str/split string #"" :remove-empty? true :when (complement vowels))))
+
+(replace-vowels "hello world")
+;; => "hll wrld"
+```
+
+除了`clojure.string`库，我们也可以使用`java.lang.String`类中的`replaceAll`函数来进行搜索和替换。让我们尝试使用正则表达式来替换字符串中的所有大写字母：
+
+```Clojure
+(defn replace-uppercase [string]
+  (.replaceAll string "[A-Z]" "#"))
+
+(replace-uppercase "Hello World")
+;; => "#ello #orld"
+```
+
+## 参考文献
+
+1. [Clojure string namespace docs](https://clojuredocs.org/clojure.string)
+2. [Java String class docs](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+3. [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html) 
+
+## 参见
+
+- [如何在Clojure中操作字符串](https://www.example.com/article?id=123)
+- [使用Clojure处理文本数据的实用技巧](https://www.example.com/article?id=456)

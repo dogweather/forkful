@@ -1,34 +1,37 @@
 ---
-title:    "Swift: Tekstitiedoston lukeminen"
+title:    "Swift: Tiedostotiedoston lukeminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi lukea tekstiketjua Swift-ohjelmointia varten?
 
-Miksi haluaisit lukea teksti-tiedostoja ohjelmointikieltä käytettäessä? Teksti-tiedostojen lukeminen voi olla hyödyllistä, kun haluat käsitellä suuria määriä tietoa, jota ei ole tallennettu tietokantaan tai muuhun tietokoneen muistiin. Tämä voi olla erityisen hyödyllistä, kun haluat lukea käyttäjän antamia syötteitä tai käsitellä tietoja ulkoisesta lähteestä.
+Jos olet aloitteleva Swift-ohjelmoija tai haluat oppia lisää tekstitiedostojen käsittelystä, tämä blogikirjoitus on juuri sinulle! Lukemalla tekstiketjuja voit oppia monia hyödyllisiä taitoja, kuten tiedon käsittelyä ja analysointia.
 
-## Miten
+## Miten lukea tekstiketjua Swiftillä?
 
 ```Swift
-let path = "/Users/kayttaja/documents/tiedosto.txt"
+let tiedostopolku = "tiedosto.txt"
 do {
-    let data = try String(contentsOfFile: path)
-    print(data)
+    let tekstiData = try String(contentsOfFile: tiedostopolku)
+    // tulostetaan tiedoston sisältö
+    print(tekstiData)
 } catch {
-    print("Tiedoston lukeminen epäonnistui.")
+    // tiedoston lukeminen epäonnistui, tulostetaan virheilmoitus
+    print("Tiedoston lukeminen epäonnistui: \(error)")
 }
 ```
 
-Yllä olevassa esimerkissä käytetään Swiftin `String`-luokan `contentsOfFile`-funktiota lukeaksesi teksti-tiedosto. `try` ja `catch`-lausekkeilla käsitellään virheellinen tilanne, jos tiedoston lukeminen epäonnistuu. Kun teksti-tiedosto on luettu, sen tiedot tallennetaan `data`-muuttujaan ja tulostetaan konsoliin.
+Tässä yksinkertaisessa esimerkissä käytämme "String" -luokan "contentsOfFile" -metodia lukeaksemme tekstiketjun ja tulostamme sen sisällön. Voit myös käyttää muita metodeja, kuten "initWithContentsOfFile" ja "stringWithContentsOfFile", saadaksesi erilaisia lopputuloksia.
 
-## Syvempi sukellus
+## Syvempi sukellus tekstiketjun lukemiseen
 
-Tiedostojen lukeminen voi olla monimutkaisempaa kuin yksinkertaisesti koodin esittäminen. Voit esimerkiksi haluta lukea vain tietyt rivit tai sarakkeet tiedostosta tai käsitellä tiedoston sisältöä tietokannan tavoin. On myös tärkeää muistaa käsitellä tiedoston sulkeminen lauseen `contentsOfFile` käytön jälkeen, jotta vältetään vuotoja ja tietokoneen ylikuormitusta.
+Tekstiketjun lukeminen Swiftillä tapahtuu usein käyttämällä "String" -luokan eri metodeja ja käsittelemällä tiedostopolkuja. Voit myös valita tietyn koodausjärjestelmän käyttämällä lisäparametreja "contentsOfFile" -metodiin. On myös tärkeää ottaa huomioon, että tiedoston lukeminen voi aiheuttaa virheitä, joten on hyvä olla valmistautunut käsittelemään näitä tilanteita.
 
-## Katso myös
+# Katso myös
 
-- [Swiftin virallisen dokumentaation osoite](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [How to Read a Text File in Swift -ohjeet](https://iosdevcenters.blogspot.com/2015/12/how-to-read-text-file-in-swift.html)
-- [NSScanner-luokan käyttö teksti-tiedostojen lukemiseen Swiftissä](https://stackoverflow.com/questions/2795096/split-string-into-subarrays-in-swift)
+- [Swiftin virallinen dokumentaatio tiedostojen lukemisesta](https://developer.apple.com/documentation/swift/string/2428388-contents)
+- [Tutoriaali tekstiketjun lukemisesta Swiftillä](https://www.hackingwithswift.com/read/9/3/reading-a-text-file-into-a-string) 
+- [Tekstikäsittely Swift-ohjelmointikielellä](https://www.makeuseof.com/tag/text-processing-swift/)

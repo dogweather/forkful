@@ -1,37 +1,55 @@
 ---
-title:    "C#: Tiedoston kirjoittaminen"
+title:    "C#: Tekstitiedoston kirjoittaminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tekstitiedoston kirjoittaminen on tärkeä osa ohjelmointia useista syistä. Se voi olla hyödyllistä tallentaessaan tietoja ja aloittaessa ohjelman tietokantojen luomisen. Se myös helpottaa tiedon jakamista ja käyttöä muiden ohjelmien kanssa.
+Tekstitiedostojen kirjoittaminen on olennainen osa ohjelmointia, kun haluat tallentaa tietoa ja käsitellä sitä myöhemmin. Se on myös hyödyllistä, kun tarvitset tietojen siirtämistä eri ohjelmien välillä.
 
 ## Miten
 
-Tekstitiedoston kirjoittaminen C#-kielellä on melko yksinkertaista. Se vaatii vain muutaman rivin koodia, mutta taito on erittäin hyödyllinen ohjelmointityössä. Alla on esimerkki siitä, miten voit luoda ja kirjoittaa tekstitiedoston käyttäen C#-kielen StreamWriter-luokkaa:
+Käyttämällä C#-ohjelmointikieltä, voit luoda uuden tekstitiedoston ja kirjoittaa siihen haluamasi sisällön seuraavalla koodilla:
 
 ```C#
-using (StreamWriter sw = new StreamWriter("tekstitiedosto.txt"))
-{
-    // Tähän voit kirjoittaa haluamasi tekstin
-    sw.WriteLine("Tämä on esimerkki tekstistä.");
-}
+// Luodaan uusi tekstitiedosto nimeltä "testi.txt"
+var tekstitiedosto = new StreamWriter("testi.txt");
+
+// Kirjoitetaan tiedostoon tekstiä
+tekstitiedosto.WriteLine("Tervetuloa lukemaan tämä teksti!");
+tekstitiedosto.WriteLine("Tämä on ensimmäinen rivi.");
+tekstitiedosto.WriteLine("Ja tämä on toinen.");
+
+// Suljetaan tiedosto
+tekstitiedosto.Close();
 ```
-Koodi käyttää StreamWriter-luokkaa, joka mahdollistaa tiedostoon kirjoittamisen. Ensimmäiselle riville on lisätty "using", joka huolehtii resurssien vapauttamisesta, kun tiedostoa ei enää tarvita. Tämän jälkeen määritellään uusi StreamWriter-olio, jolle annetaan parametrina tiedoston nimi, johon halutaan kirjoittaa. Sen jälkeen voit käyttää `sw.WriteLine()` -metodia lisätäksesi haluamasi tekstin tiedostoon.
 
-### Tulostettu sisältö
+Seuraava koodi lukee ja tulostaa tekstitiedoston sisällön konsoliin:
 
-Kun ohjelma suoritetaan, se luo tekstitiedoston ja kirjoittaa siihen. Tarkista tiedoston sisältö avaamalla se tekstieditorilla tai lukemalla sisältö suoraan C#-koodista.
+```C#
+// Luetaan tiedosto ja tallennetaan sisältö muuttujaan
+string sisalto = File.ReadAllText("testi.txt");
 
-## Syvällisempi perehtyminen
+// Tulostetaan sisältö konsoliin
+Console.WriteLine(sisalto);
+```
 
-Vaikka tekstitiedoston kirjoittaminen on suhteellisen helppoa C#-kielellä, siihen voi liittyä myös syvällisempiä käsitteitä, kuten tekstitiedostojen muotoilu ja käsitteleminen. On myös tärkeää huomata, että StreamWriter-luokkaan liittyy muutamia muita metodeja ja ominaisuuksia, joita voit tutkia lisää tarpeen mukaan.
+Tämän koodin output olisi seuraavanlainen:
+
+```
+Tervetuloa lukemaan tämä teksti!
+Tämä on ensimmäinen rivi.
+Ja tämä on toinen.
+```
+
+## Syväsukellus
+
+Voit myös käyttää erilaisia C#-luokkia ja metodeja kirjoittaaksesi tekstitiedoston. Esimerkiksi `StreamWriter`-luokka tarjoaa enemmän vaihtoehtoja kirjoittamiseen ja `File`-luokka tarjoaa monipuolisempia tapoja lukea tiedoston sisältöä. On tärkeää tutustua näihin luokkiin ja niiden tarjoamiin funktoihin, jotta voit löytää oikeat työkalut tarpeisiisi.
 
 ## Katso myös
 
-- [Tekstitiedostojen käsittely C#-ohjelmoinnissa](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
-- [C# StreamWriter-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
-- [C#-kielen perusteet](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp)
+- [C# StreamWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
+- [C# File](https://docs.microsoft.com/en-us/dotnet/api/system.io.file)

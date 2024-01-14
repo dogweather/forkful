@@ -1,42 +1,47 @@
 ---
-title:    "Kotlin: Começando um novo projeto"
+title:    "Kotlin: Iniciando um novo projeto"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em Kotlin?
+## Why
 
-Ao iniciar um novo projeto em Kotlin, os desenvolvedores têm a oportunidade de utilizar uma linguagem de programação moderna e eficiente, que oferece suporte para desenvolvimento mobile, web e back-end. Além disso, Kotlin possui uma sintaxe concisa e legível, o que facilita a manutenção e o trabalho em equipe.
+Ao iniciar um novo projeto de programação, é importante ter um objetivo claro em mente. Isso pode incluir criar um aplicativo útil para a comunidade, desenvolver uma ferramenta para facilitar tarefas do dia a dia ou simplesmente aprender uma nova linguagem de programação. Independentemente do motivo, iniciar um novo projeto é uma maneira emocionante de expandir suas habilidades de programação e criar algo novo e único.
 
-## Como Iniciar um Novo Projeto em Kotlin
+## How To
 
-Para iniciar um novo projeto em Kotlin, siga os seguintes passos:
+Para iniciar um projeto Kotlin, primeiro você precisa ter a linguagem de programação instalada em sua máquina. Você pode obter o Kotlin baixando e instalando o IntelliJ IDEA, que é uma das IDEs mais populares para desenvolvimento Kotlin.
 
-1. Instale o Kit de Desenvolvimento Java (JDK) da versão 8 ou superior;
-2. Baixe e instale o IntelliJ IDEA, uma IDE que oferece suporte completo para o desenvolvimento em Kotlin;
-3. Abra o IntelliJ IDEA e selecione a opção "New Project";
-4. Escolha a opção "Kotlin" no menu lateral e selecione a plataforma alvo para o seu projeto (mobile, web ou back-end);
-5. Siga as instruções do assistente de criação de projetos e escolha as configurações que melhor se adequam ao seu projeto.
+Uma vez instalado, siga esses passos para criar seu primeiro projeto Kotlin:
 
-Em seguida, você estará pronto para começar a codificar o seu novo projeto em Kotlin!
+1. Abra o IntelliJ IDEA e clique em "Create New Project"
+2. Na janela que aparece, selecione "Kotlin" como linguagem e escolha o local onde deseja salvar seu projeto
+3. Em "Project SDK", selecione a versão mais recente do Kotlin
+4. Clique em "Next" e dê um nome ao seu projeto
+5. Escolha um local para salvar seu projeto e clique em "Finish"
+
+Agora que sua estrutura do projeto foi criada, você pode começar a escrever seu código Kotlin. Aqui está um exemplo simples de um programa que imprime "Olá, Mundo!" na tela:
 
 ```Kotlin
 fun main() {
-println("Olá, mundo!")
+    println("Olá, Mundo!")
 }
 ```
 
-## Aprofundando no Processo de Iniciar um Novo Projeto em Kotlin
+Ao executar esse código, você verá a saída "Olá, Mundo!" impressa no console.
 
-Além dos passos descritos acima, ao iniciar um novo projeto em Kotlin, é importante também definir a estrutura de pastas e arquivos do projeto, assim como as dependências necessárias.
+## Deep Dive
 
-Felizmente, o IntelliJ IDEA oferece templates de projetos em Kotlin que já vêm com uma estrutura básica e as dependências mais comuns configuradas. Isso permite que você economize tempo e se concentre na lógica do seu projeto.
+Ao criar um novo projeto, é importante definir bem sua estrutura. Isso pode incluir a criação de pacotes para organizar seu código e a adição de bibliotecas e dependências ao seu projeto.
 
-Outro ponto importante a se considerar ao iniciar um novo projeto em Kotlin é a escolha de um sistema de controle de versão, como o Git. Isso permitirá que você acompanhe as alterações feitas no código ao longo do tempo e trabalhe em equipe de forma mais eficiente.
+Além disso, você também deve considerar o processo de compilação do seu projeto. O IntelliJ IDEA possui uma excelente integração com o Kotlin e é uma escolha popular para compilar e executar seus projetos.
 
-## Veja Também
+Por fim, lembre-se de utilizar boas práticas de programação, como comentários adequados, nomenclatura de variáveis ​​e funções significativas e testes rigorosos para garantir a estabilidade do seu projeto.
 
-- [Página oficial do Kotlin](https://kotlinlang.org/)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-- [Guia de início rápido com Kotlin](https://kotlinlang.org/docs/tutorials/getting-started.html)
+## See Also
+
+[Site oficial do Kotlin](https://kotlinlang.org/)\
+[Guia de início rápido do IntelliJ IDEA para Kotlin](https://www.jetbrains.com/help/idea/create-your-first-application-kotlin.html)\
+[Documentação do Kotlin sobre estrutura de projetos](https://kotlinlang.org/docs/tutorials/getting-started.html)

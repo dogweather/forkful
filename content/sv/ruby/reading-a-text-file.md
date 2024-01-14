@@ -1,43 +1,37 @@
 ---
 title:    "Ruby: Läsa en textfil"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa en textfil är viktigt inom programmering eftersom det låter dig få tillgång till och hantera stora mängder data. Detta kan vara användbart i många olika programmeringsprojekt.
 
-## Hur man gör det
-Läsning av en textfil i Ruby är en relativt enkel process. Först måste du öppna filen med hjälp av File klassen och sedan kan du börja läsa igenom den. Här är ett exempel på hur en kod skulle kunna se ut:
+Att läsa en textfil kan vara en viktig del av programmering. Det kan hjälpa dig att behandla stora mängder data och automatisera uppgifter.
+
+## Så här
+
+För att läsa en textfil med Ruby, behöver du först öppna filen med "File.open ()" funktionen. Du kan sedan läsa varje rad i filen med "readline" metod. Nedan finns ett exempel:
 
 ```Ruby
-file = File.open("textfil.txt", "r") #öppnar filen i läsläge
-file.each_line do |line| #läser varje rad i filen
-  puts line #skriver ut raden till terminalen
+File.open("textfil.txt", "r") do |f|
+  f.each_line do |line|
+    puts line
+  end
 end
-file.close #stänger filen när du är klar med att läsa
 ```
 
-Om vi antar att vår textfil har följande innehåll:
-
-```
-Hej
-Jag heter Ruby
-Detta är en textfil
-```
-
-Då kommer utmatningen från exemplet att vara:
-
-```
-Hej
-Jag heter Ruby
-Detta är en textfil
-```
+Detta kodblock öppnar textfilen "textfil.txt" och läser sedan varje rad, som sedan skrivs ut på skärmen.
 
 ## Djupdykning
-När vi läser en textfil i Ruby, går vi igenom varje rad i filen. Men det finns även andra sätt att hantera filen, såsom att läsa in hela filen till en variabel för vidare bearbetning eller att använda specifika metoder för att söka igenom filen. Det finns också möjlighet att skriva till en textfil på liknande sätt som vi läser den. Detaljerade instruktioner för detta finns tillgängliga på Rubys dokumentationssida.
+
+När du läser en textfil är det viktigt att ha i åtanke hur filen är formaterad. Om den är delimiterad, det vill säga separerad med ett särskilt tecken eller ett visst antal mellanrum, kan du använda "split" metod för att dela upp raden i olika delar. Detta kan vara användbart när du vill behandla specifika delar av varje rad.
+
+En annan viktig aspekt är att hantera fel som kan uppstå när du läser en textfil. Det är viktigt att ha ett sätt att kontrollera om filen du öppnar verkligen finns och om du har rätt behörighet att läsa den.
 
 ## Se även
-Rubys dokumentation för filoperationer: https://ruby-doc.org/core-2.7.2/File.html
-En guide om att läsa och skriva till filer i Ruby: https://www.digitalocean.com/community/tutorials/how-to-read-and-write-to-files-in-ruby-sv
+
+* [Ruby Dokumentation om File-klassen](https://ruby-doc.org/core-2.7.1/File.html)
+* [Enkelt sätt att läsa en textfil med Ruby](https://www.codecademy.com/articles/read-files-ruby)
+* [Lär dig mer om Ruby-programmering](https://www.ruby-lang.org/sv/)

@@ -1,54 +1,42 @@
 ---
-title:    "Javascript: Tekstin etsiminen ja korvaaminen"
+title:    "Javascript: Tekstin haku ja korvaaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kun ohjelmoit Javascriptillä, sinun on usein tarve etsiä ja vaihtaa tekstiä koodisi sisällä. Tämä voi olla esimerkiksi tarpeen korjata virheitä tai päivittää käytettyjä muuttujia. Onneksi Javascript tarjoaa helpon tavan suorittaa etsiminen ja tekstien vaihtaminen ohjelmassa.
+Ohjelmoijat käyttävät tekstin etsimistä ja vaihtamista työkaluinaan manipuloidessaan ja muokatessaan tekstejä. Näiden toimintojen avulla voidaan nopeasti ja tarkasti tehdä tiettyjä muutoksia tekstiin, mikä säästää paljon aikaa ja vaivaa.
 
-## Kuinka tehdä
+## Miten
 
-Kaikki lähtee Javascriptin sisäänrakennetusta `replace()` -funktiosta. Tämä funktio ottaa vastaan kolme parametria: etsittävän tekstin, korvaavan tekstin ja flag -parametrin. Flag -parametri on valinnainen ja sallii esimerkiksi kirjainkoolla tarkastelun.
-
-Seuraavassa esimerkissä oletamme, että haluamme korvata kaikki nimesi "Mikko" tekstillä "Marko":
+Tekstin etsiminen ja vaihtaminen on yksinkertaista käyttäen Javascriptin sisäänrakennettua metodologiaa `.replace()`. Tämä metodi etsii halutun tekstin ja korvaa sen toisella tekstillä. Esimerkiksi:
 
 ```Javascript
-let teksti = "Tervetuloa, Mikko!";
-let uusiTeksti = teksti.replace("Mikko", "Marko");
-
-console.log(uusiTeksti);
+let text = "Tervetuloa JavaScript-maailmaan!";
+let newText = text.replace("JavaScript", "React");
+console.log(newText); 
+// tulostaa "Tervetuloa React-maailmaan"
 ```
 
-Tämä koodi tuottaa seuraavan tulosteen:
-
+Voimme myös etsiä ja vaihtaa useita esiintymiä yhdellä kertaa käyttämällä säännöllisiä lausekkeita:
 ```Javascript
-"Tervetuloa, Marko!"
+let text = "Tämä on vain esimerkki. Esimerkki vain.";
+let newText = text.replace(/esimerkki/g, "malli");
+console.log(newText);
+// tulostaa "Tämä on vain malli. Malli vain."
 ```
 
-## Syvällisempi tarkastelu
+## Syvemmälle
 
-Javascriptin `replace()` -funktio ei automaattisesti korvaa kaikkia esiintymiä, vaan ainoastaan ensimmäisen löytämänsä. Voit kuitenkin käyttää regex -ilmaisuja ja flag -parametria korvauksen tekemiseen kaikille esiintymille. Esimerkiksi seuraava koodi korvaa kaikki tekstin "Mikko" esiintymät:
+Javascriptin `.replace()`-metodi hyödyntää säännöllisiä lausekkeita ja erityisiä merkintöjä etsiessään ja vaihtaessaan tekstiä. Voimme esimerkiksi käyttää "i"-merkintää löytääksemme tekstin tapauksesta riippumatta tai "g"-merkintää vaihtaaksemme kaikki esiintymät. Voimme myös antaa funktiolle parametrina toisen funktion, joka mahdollistaa monimutkaisemman käsittelyn tekstille.
 
-```Javascript
-let teksti = "Tervetuloa, Mikko ja Heini!";
-let uusiTeksti = teksti.replace(/Mikko/g, "Marko");
-
-console.log(uusiTeksti);
-```
-
-Tämä koodi tuottaa seuraavan tulosteen:
-
-```Javascript
-"Tervetuloa, Marko ja Heini!"
-```
-
-Regex -ilmaisut tarjoavat myös mahdollisuuden etsiä ja korvata tekstiä monimutkaisemmilla tavoilla, kuten käyttämällä säännöllisiä lausekkeita ja tunnisteita.
+Kannattaa myös huomata, että `.replace()`-metodi ei muuta alkuperäisen tekstin arvoa vaan luo uuden muutetun version. Jos haluamme muuttaa alkuperäistä tekstiä, voimme tallentaa uuden version alkuperäisen muuttujan päälle.
 
 ## Katso myös
 
-- [MDN web docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [JavaScript Tutorial: Regular Expressions](https://www.javascripttutorial.net/javascript-regular-expression/)
+- [MDN web docs: String.prototype.replace()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [JavaScript.info: Regular expressions](https://javascript.info/regexp)
+- [Codeacademy: Using regular expressions in JavaScript](https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-regex/cheatsheet)

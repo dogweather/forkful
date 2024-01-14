@@ -1,49 +1,49 @@
 ---
 title:    "C++: Tworzenie pliku tekstowego"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego pisać plik tekstowy?
 
-Pisanie plików tekstowych jest nieodłączną częścią programowania w języku C++. Umożliwia to przechowywanie danych w plikach dla późniejszego użycia lub wykorzystania przez inne programy.
+Pisanie plików tekstowych jest nieodłączną częścią programowania w C++. Są one wykorzystywane do przechowywania danych, tworzenia raportów lub komunikacji z innymi programami. Pisanie plików tekstowych jest niezbędnym umiejętnością, jeśli chcemy tworzyć zaawansowane programy.
 
-## Jak
+# Jak to zrobić?
 
-Aby napisać plik tekstowy w C++, musimy najpierw otworzyć plik w trybie do zapisu przy użyciu funkcji `open()` z biblioteki `fstream`. Następnie w celu zapisania danych do pliku, należy użyć funkcji `<<` lub `write()` wraz z wybranymi danymi wewnątrz strumienia plikowego. Na końcu nie zapomnijmy zamknąć pliku za pomocą funkcji `close()`.
+Pisanie plików tekstowych w C++ jest bardzo proste i wymaga tylko kilku linii kodu. Najpierw należy otworzyć plik za pomocą funkcji `fstream`, określając nazwę pliku i tryb dostępu. Następnie możemy użyć funkcji `<<` do zapisania danych do pliku, lub `>>` do odczytu danych z pliku. Na przykład:
 
 ```C++
-#include <iostream>
-#include <fstream>
-
-int main()
-{
-    // otwarcie pliku do zapisu
-    std::ofstream plik;
-    plik.open("moj_plik.txt");
-
-    // zapisanie danych do pliku
-    plik << "To jest przykładowy tekst.\n";
-    int liczba = 10;
-    plik << "Liczba: " << liczba << "\n";
-    double dlugosc = 3.14;
-    plik << "Długość: " << dlugosc << "\n";
-
-    // zamknięcie pliku
-    plik.close();
-
-    return 0;
-}
+// otwórz plik do zapisu
+fstream plik("dane.txt", ios::out);
+// zapisz dane do pliku
+plik << "Witaj, świecie!" << endl;
+// zamknij plik
+plik.close();
 ```
 
-Po uruchomieniu powyższego kodu, powinien zostać utworzony plik o nazwie "moj_plik.txt" zawierający tekst i liczby.
+Aby odczytywać dane z pliku, użyjemy podobnego kodu, zmieniając tylko tryb dostępu na `ios::in`. Oto przykładowy kod odczytujący dane z pliku:
 
-## Głębsze zagadnienia
+```C++
+// otwórz plik do odczytu
+fstream plik("dane.txt", ios::in);
+// zmienna do przechowywania odczytanych danych
+string dane;
+// odczytaj dane z pliku i zapisz do zmiennej
+plik >> dane;
+// zamknij plik
+plik.close();
+// wydrukuj odczytane dane
+cout << dane << endl; // wyświetli "Witaj, świecie!"
+```
 
-Przy zapisywaniu plików tekstowych należy pamiętać o używaniu odpowiednich typów danych, tak aby dane były zgodne ze specyfikacją danego pliku. Inne ważne aspekty to obsługa błędów i wyjątków, a także praca z plikami o większych rozmiarach danych.
+# Głębsza analiza
 
-## Zobacz też
+W C++ istnieje kilka innych funkcji, które można wykorzystać przy pisaniu i odczytywaniu plików tekstowych. Jedną z nich jest funkcja `getline()`, która pozwala nam odczytać całą linię tekstu z pliku za jednym razem. Innymi przydatnymi funkcjami są `tellg()` i `seekg()`, które pozwalają nam ustalić aktualną pozycję w pliku i przesunąć się do innej pozycji. Warto również zapoznać się z pojęciem bufora pliku, aby lepiej zrozumieć, jak działają operacje wejścia/wyjścia na plikach.
 
-- [Oficjalna dokumentacja języka C++](https://en.cppreference.com/w/)
-- [Podstawowe operacje na plikach w C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+# Zobacz też
+
+- [Podstawy programowania w C++](https://www.codecademy.com/learn/learn-c-plus-plus)
+- [Dokumentacja języka C++](https://en.cppreference.com/)
+- [Przykłady z wykorzystaniem plików tekstowych](https://www.geeksforgeeks.org/working-with-files-cpp/)

@@ -1,59 +1,58 @@
 ---
 title:    "PHP recipe: Writing tests"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Have you ever written a code that seemed perfect, but when you ran it, you encountered unexpected errors? This is where writing tests comes in. By writing tests, you can catch and prevent these errors before they even occur, ensuring a smoother and more efficient programming process.
+## Why
+
+Writing tests may seem like an extra step in the coding process, but it is crucial for developing high-quality and reliable software. Tests allow you to catch bugs and errors early on, saving time and effort in the long run. They also provide a safety net when making changes to your code, ensuring that everything still functions as intended.
 
 ## How To
-Writing tests may seem daunting at first, but with the help of PHP's testing framework, PHPUnit, it becomes much more manageable. Let's take a look at an example of a simple test:
 
-```PHP
-// Define a test class
-class SimpleTest extends \PHPUnit\Framework\TestCase 
-{
-    // A simple addition test
-    public function testAddition() 
-    {
-        $result = 5 + 5;
-        // The expected result should be 10
-        $this->assertEquals(10, $result);
-    }
+Writing tests in PHP is a straightforward process. First, you will need to set up a testing framework such as PHPUnit. This framework provides tools for creating and running tests, as well as generating reports and tracking code coverage. Next, you will need to create a separate directory for your tests and write test methods for each function or class in your code.
+
+Let's look at an example using a simple "calculate" function. We want our function to take in two numbers and return their sum.
+
+```
+<?php
+//Import necessary files
+require_once 'vendor/autoload.php';
+
+//Create a test class
+class CalculatorTest extends \PHPUnit_Framework_TestCase {
+
+//Method to test calculate function
+public function testCalculate() {
+//Define input values
+$a = 10;
+$b = 5;
+
+//Run calculate function and store result in variable
+$result = calculate($a, $b);
+
+//Assert that result matches the expected output
+$this->assertSame(15, $result);
+}
 }
 ```
 
-In the above code, we have defined a simple test class and added a test case to it. The `assertEquals` method compares the expected result (10) to the actual result (5+5), and if they match, the test passes. PHPUnit also provides other useful methods for testing code, such as `assertNotEmpty` and `assertSame`.
+In this example, we import necessary files, create a test class, and write a method to test our calculate function. We define input values, run the function, and use the `assertSame` assertion to compare the result with the expected output.
 
-Now let's take a look at some sample output when running this test:
-
-```Text
-PHPUnit 9.0.1 by Sebastian Bergmann and contributors.
-
-.                                                                   1 / 1 (100%)
-
-Time: 20 ms, Memory: 4.00 MB
-
-OK (1 test, 1 assertion)
-```
-
-As you can see, the test was successful, and the output also tells us that it ran 1 test and made 1 assertion. Using these simple examples and methods, you can easily write and run tests for your code.
+Running this test will show us that our function passes the test. However, we can also write tests for edge cases. For example, what happens if one, or both, of the input values is negative? This is where writing tests can help uncover potential errors and improve the overall quality of our code.
 
 ## Deep Dive
-While writing tests, it is essential to keep a few things in mind. First, tests should be independent of each other, meaning one test should not rely on the result of another test. This ensures that tests can be run individually and in any order without affecting the outcome.
 
-Secondly, good tests should have a clear and concise description of what they are testing. This helps in identifying the purpose of each test and makes debugging easier.
+Writing tests allows you to think more critically about your code and identify potential problems. It also serves as a form of documentation, providing insight into the expected inputs and outputs of your code. Additionally, tests can help with code refactoring and maintenance, as you can easily check if any changes have caused any issues.
 
-Lastly, remember to regularly update and maintain your tests as your codebase evolves. This ensures that your tests continue to check for any errors or changes in your code.
+It's also worth noting that writing tests does not guarantee perfect code. They can only catch errors that are explicitly tested for. However, they are still a valuable tool in the development process and can greatly improve the reliability and stability of your code.
 
 ## See Also
-For more information and resources on writing tests in PHP, check out these helpful links:
 
-- [PHP Testing with PHPUnit: Running tests](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
-- [PHPUnit Code Example](https://phpunit.de/getting-started/phpunit-8.html)
-- [Tips for Writing Better Tests in PHP](https://dzone.com/articles/tips-for-writing-better-unit-tests-in-php)
-- [Testing Tips from PHPUnit's Creator](https://thephp.cc/news/2021/02/tips-from-sebastian-bergmann-creator-of-phpunit)
+For more information and resources on writing tests in PHP, check out the following links:
 
-Now that you have a basic understanding of writing tests in PHP, go ahead and start adding tests to your code. Happy testing!
+- [PHPUnit Documentation](https://phpunit.de/documentation.html)
+- [A Beginner's Guide to Writing Tests in PHP](https://www.smashingmagazine.com/2018/02/guide-to-php-testing/)
+- [The Importance of Writing Tests for Your Code](https://code.tutsplus.com/tutorials/the-importance-of-writing-tests-for-your-code--net-30077)

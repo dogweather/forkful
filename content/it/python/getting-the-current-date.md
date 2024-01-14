@@ -1,105 +1,69 @@
 ---
 title:    "Python: Ottenere la data corrente"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
 
-Scrivere codice per ottenere la data corrente può sembrare banale, ma in realtà è un'attività molto utile per qualsiasi programmatore Python. Conoscere la data o l'ora corrente è fondamentale per una varietà di applicazioni, come programmi di prenotazione, sistemi di cronologia e report giornalieri. In questo articolo impareremo come ottenere la data corrente utilizzando Python e scopriremo i vari modi in cui questa informazione può essere utile.
+Le date sono un elemento importante nella programmazione, in particolare quando si devono gestire diversi processi e attività in base al giorno attuale. Con Python, è possibile ottenere facilmente la data e utilizzarla per automatizzare alcune funzioni nel tuo codice.
 
-## Come fare
+##Come Fare
 
-Per ottenere la data corrente in Python, ci sono diversi modi. Uno dei più semplici è utilizzare il modulo `datetime`, che facilita la gestione di date e orari in Python.
-
-```Python
-import datetime
-
-# Ottieni la data odierna
-oggi = datetime.date.today()
-print(oggi)
-
-# Ottieni l'anno corrente
-anno = oggi.year
-print(anno)
-
-# Ottieni il mese corrente
-mese = oggi.month
-print(mese)
-
-# Ottieni il giorno corrente
-giorno = oggi.day
-print(giorno)
-
-# Ottieni la data completa con il formato personalizzato
-data = oggi.strftime("%d/%m/%Y")
-print(data)
-```
-
-L'output di questo codice sarà:
-
-```
-2021-10-03
-2021
-10
-03
-03/10/2021
-```
-
-Possiamo anche utilizzare il modulo `time` per ottenere l'orario corrente, utilizzando la funzione `time()`.
-
-```Python
-import time
-
-# Ottieni l'orario corrente in secondi dal 1 gennaio 1970
-seconds = time.time()
-print(seconds)
-
-# Otteni l'orario corrente in una stringa leggibile
-ora = time.ctime()
-print(ora)
-
-# Usa il formato personalizzato
-ora_format = time.strftime("%H:%M:%S")
-print(ora_format)
-```
-
-L'output di questo codice sarà:
-
-```
-1633231254.1846983
-Sun Oct  3 12:47:34 2021
-12:47:34
-```
-
-## Più in profondità
-
-Ora che sappiamo come ottenere la data e l'orario correnti, possiamo approfondire un po' di più. Come probabilmente avrai notato, le funzioni utilizzate nei codici di esempio sopra restituiscono sempre i valori attuali, ovvero aggiornati all'istante in cui il codice viene eseguito. Ma cosa succede se vogliamo ottenere una data o un orario specifici? Per fare ciò, dobbiamo utilizzare il modulo `datetime` in combinazione con l'oggetto `timedelta`, che ci permette di aggiungere o sottrarre un certo numero di giorni, ore, minuti o secondi dalla data corrente.
+Per ottenere la data attuale in Python, è necessario importare il modulo "datetime". In questo modo, è possibile accedere a diverse funzioni per gestire le date. Ecco un esempio di codice che stampa la data corrente:
 
 ```Python
 import datetime
 
-# Aggiungi 5 giorni alla data corrente
-future_date = datetime.date.today() + datetime.timedelta(days=5)
-print(future_date)
-
-# Sottrai 3 ore dall'orario corrente
-future_time = datetime.datetime.now() - datetime.timedelta(hours=3)
-print(future_time)
+today = datetime.date.today()
+print(today)
 ```
 
-L'output di questo codice sarà qualcosa di simile a:
+L'output dovrebbe essere qualcosa del genere:
 
+```Python
+2021-08-04
 ```
-2021-10-08
-2021-10-03 09:47:34.240331
+
+In questo modo, si ottiene la data attuale nel formato anno-mese-giorno. Inoltre, è possibile ottenere la data e l'ora attuali utilizzando la funzione "datetime.now()". Ecco un esempio di codice che stampa la data e l'ora correnti:
+
+```Python
+import datetime
+
+now = datetime.datetime.now()
+print(now)
 ```
 
-Inoltre, Python offre anche altre funzioni utili per lavorare con le date, come ad esempio `weekday()` che restituisce il giorno della settimana corrispondente alla data fornita, o `isoweekday()` che restituisce il giorno della settimana come numero, anziché il nome.
+L'output dovrebbe essere qualcosa del genere:
 
-## Vedi anche
+```Python
+2021-08-04 15:30:00.951582
+```
 
-- [Documentazione ufficiale di Python sul modulo datetime](https://docs.python.org/3/library/datetime.html)
-- [Esempi di codice per lavorare con le date in Python](https://www.programiz.com/python-programming/datetime)
-- [Tutorial di Real Python su come lavorare con le date e gli orari in Python](https://realpython.com/python-date-time/)
+Inoltre, è possibile formattare la data in diversi modi utilizzando il metodo "strftime()". Ad esempio, se si vuole avere la data nel formato giorno/mese/anno, è possibile utilizzare il seguente codice:
+
+```Python
+import datetime
+
+today = datetime.date.today()
+formatted_date = today.strftime("%d/%m/%Y")
+print(formatted_date)
+```
+
+L'output dovrebbe essere:
+
+```Python
+04/08/2021
+```
+
+##Approfondimento
+
+Ottenere la data attuale può sembrare semplice, ma è importante comprendere come funziona il modulo "datetime" per gestire le date e le ore nel tuo codice. Inoltre, è possibile utilizzare diverse opzioni di formattazione e funzioni per trattare le date in modo più avanzato, ad esempio per eseguire calcoli o confronti tra date diverse.
+
+##Vedi anche
+
+- Documentazione ufficiale del modulo datetime: https://docs.python.org/3/library/datetime.html
+- Tutorial su come utilizzare il modulo datetime: https://www.programiz.com/python-programming/datetime
+- Altro esempio di formattazione delle date: https://www.w3schools.com/python/python_datetime.asp

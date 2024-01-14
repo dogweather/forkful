@@ -1,63 +1,60 @@
 ---
-title:    "C#: Beregning av en dato i fremtiden eller fortiden."
+title:    "C#: Kalkulering av en dato i fremtiden eller fortiden"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor 
+## Hvorfor
 
-Å beregne datoer i fremtiden eller fortiden kan være en viktig del av programmeringsarbeid, da dette kan hjelpe oss å planlegge hendelser eller håndtere tidssensitive data. Ved å implementere denne funksjonaliteten i våre programmer kan vi forutsi og planlegge fremtidige hendelser eller håndtere historiske data på en effektiv måte.
+Å kunne beregne datoer i fortiden eller fremtiden er en viktig ferdighet for enhver programmerer. Enten det er for å planlegge fremtidige oppgaver eller håndtere historiske data, er det ofte nødvendig å kunne utføre slike beregninger.
 
-# Hvordan
+## Hvordan
 
-**For å beregne en dato i fremtiden:**
+Å beregne en dato i fortiden eller fremtiden i C# er relativt enkelt. Først må vi opprette en ny instans av DateTime-klassen, som representerer en dato og tid i C#. Deretter kan vi bruke forskjellige metoder og egenskaper for å endre og få tilgang til ulike aspekter av datoen.
 
-```C#
-DateTime today = DateTime.Today; // Dagens dato
-DateTime futureDate = today.AddDays(10); // Beregner datoen 10 dager fram i tid
-Console.WriteLine("Datoen 10 dager fra i dag er: " + futureDate);
-```
-
-**Output:**
-
-Datoen 10 dager fra i dag er: 04/06/2021
-
-**For å beregne en dato i fortiden:**
+La oss for eksempel beregne datoen 10 dager etter i dag:
 
 ```C#
-DateTime today = DateTime.Today; // Dagens dato
-DateTime pastDate = today.AddDays(-7); // Beregner datoen 7 dager tilbake i tid
-Console.WriteLine("Datoen 7 dager tilbake i tid er: " + pastDate);
+DateTime nå = DateTime.Now; // Opprett en ny instans av DateTime med dagens dato og tid
+DateTime dato = nå.AddDays(10); // Legg til 10 dager til datoen og lagre resultatet i en ny variabel
+
+Console.WriteLine(dato); // Skriv ut resultatet: 10 dager etter i dag
 ```
 
-**Output:**
+Dette vil resultere i følgende output:
 
-Datoen 7 dager tilbake i tid er: 03/24/2021
+```
+10/10/2021 13:30:00
+```
 
-# Dypdykk
-
-Det er flere metoder i C# som kan hjelpe oss med å beregne datoer i fremtiden eller fortiden, som for eksempel `.AddDays()`, `.AddMonths()`, `.AddYears()`, `.AddHours()`, `.AddMinutes()` og `.AddSeconds()`. Disse metodene tar inn et tall som representerer antall dager, måneder, år, timer, minutter eller sekunder for å beregne den ønskede datoen.
-
-Vi kan også bruke `.Add()` metoden for å legge til både dato og tid. For eksempel:
+Vi kan også beregne en dato i fortiden ved å bruke `AddDays`-metoden og et negativt tall. For eksempel:
 
 ```C#
-DateTime today = DateTime.Today; // Dagens dato kl 00:00:00
-DateTime futureDateTime = today.Add(new TimeSpan(4, 6, 30, 0)); // Legger til 4 dager, 6 timer og 30 minutter for å beregne en fremtidig dato og tid
-Console.WriteLine("Fremtidig dato og tid: " + futureDateTime);
+DateTime nå = DateTime.Now; // Opprett en ny instans av DateTime med dagens dato og tid
+DateTime dato = nå.AddDays(-5); // Trekke fra 5 dager fra datoen
+
+Console.WriteLine(dato); // Skriv ut resultatet: 5 dager før i dag
 ```
 
-**Output:**
+Dette vil gi følgende output:
 
-Fremtidig dato og tid: 03/28/2021 06:30:00
+```
+10/5/2021 13:30:00
+```
 
-For mer avansert håndtering av dato og tid, kan vi også bruke biblioteket `System.Globalization` som gir oss flere muligheter for å formatere og manipulere datoer i forskjellige kulturer og språk.
+Det finnes også flere andre metoder for å endre datoen, som `AddMonths(), AddYears(), AddHours(), AddMinutes()` osv. For en komplett liste over disse metodene og deres bruk, sjekk ut Microsofts offisielle dokumentasjon.
 
-# Se Også
- 
-Her er noen ekstra ressurser for å lære mer om å beregne datoer i C#:
+## Dypdykk
 
-- [MSDN: DateTime Struct (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [C# Tutorial: Working with DateTime in C#](https://www.c-sharpcorner.com/UploadFile/b3727a/working-with-datetime-in-C-Sharp/)
-- [C# Tutorial: Date and Time in C#](https://www.guru99.com/c-sharp-date-time.html)
-- [C# Tutorial: How to Add or Subtract Days, Months, Years and Time from DateTime in C#](https://www.c-sharpcorner.com/blogs/how-to-add-or-subtract-days-months-years-and-time-from-datetime-in-c-sharp-programming1)
+Å beregne datoer krever en god forståelse av hvordan Datetime-klassen fungerer. Det er også viktig å sørge for riktig håndtering av tidszoner og justering for skuddår. I tillegg er det ofte lurt å bruke forskjellige formateringsmetoder for å få ønsket utseende på datoen.
+
+En annen viktig aspekt er å håndtere ulike typer datoer, som for eksempel fødselsdatoer, tidssoner og tidsstempel. Disse har alle sine egne utfordringer og krav til nøyaktighet.
+
+## Se også
+
+- [Microsofts offisielle dokumentasjon for DateTime-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [En guide til å arbeide med datoer og klokkeslett i C#](https://www.c-sharpcorner.com/UploadFile/mahesh/working-with-datetime-in-C-Sharp/) (på engelsk)
+- [Eksempler på ulike bruk av DateTime-klassen i C#](https://www.c-sharpcorner.com/UploadFile/87b416/concept-of-C-Sharp-datetime/) (på engelsk)
+- [Tips for å unngå vanlige feil ved bruk av DateTime-klassen](https://www.codeproject.com/Tips/653913/The-Dos-and-Don-ts-when-using-DateTime-in-Csharp) (på engelsk)

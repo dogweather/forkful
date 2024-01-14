@@ -1,41 +1,76 @@
 ---
 title:    "Javascript: Pisanie do standardowego błędu"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w programowaniu?
+## Dlaczego warto pisać do standardowego błędu w języku Javascript
 
-Pisanie do standardowego błędu jest ważną i przydatną umiejętnością w programowaniu. Wiele aplikacji i skryptów wykorzystuje ten mechanizm do informowania użytkownika o błędach w kodzie lub nieprawidłowych działaniach. Jest to istotne nie tylko dla samych programistów, ale także dla użytkowników, którzy mogą szybko zidentyfikować problem i zastosować odpowiednie rozwiązanie.
+Pisanie do standardowego błędu jest kluczowym elementem programowania w języku Javascript. Jest to przydatne narzędzie, które pozwala programistom wyświetlać błędy i ostrzeżenia w konsoli, co ułatwia debugowanie i poprawę kodu. W tym artykule dowiesz się, dlaczego warto pisać do standardowego błędu i jak to zrobić.
 
-## Jak to zrobić?
+## Jak pisać do standardowego błędu w języku Javascript
 
-Pisanie do standardowego błędu w języku Javascript jest bardzo proste. Wystarczy użyć metody `console.error()` i podać jako argument wiadomość, którą chcemy wyświetlić. Przykładowo:
-
-```Javascript
-console.error("Wystąpił błąd podczas wczytywania pliku.");
-```
-
-Wywołanie powyższego kodu spowoduje wyświetlenie w konsoli przeglądarki lub w wierszu poleceń odpowiedniej wiadomości o błędzie.
-
-## Dogłębne studium
-
-Pisanie do standardowego błędu jest bardzo przydatne podczas debugowania aplikacji lub skryptów. Używając tej metody, możemy wyświetlić nawet szczegółowe informacje o błędzie, takie jak poziom zagnieżdżenia funkcji, w którym wystąpił błąd, czy też wartości zmiennych. Przykładowo, możemy użyć metody`console.error()` do wyświetlenia wartości zmiennej:
+W języku Javascript istnieją dwa sposoby na wypisywanie błędów do standardowego błędu - `console.error()` i `process.stderr.write()`. Pierwsza metoda jest częściej używana i jest dostępna we wszystkich przeglądarkach. Druga metoda jest dostępna tylko w środowisku Node.js. Poniżej przedstawiono przykładowy kod, który wykorzystuje obie metody.
 
 ```Javascript
-let liczba = 10;
-console.error(`Wartość zmiennej "liczba" wynosi ${liczba}.`);
+// Wypisywanie błędu przy użyciu console.error()
+console.error("To jest jakiś błąd!");
+// Wypisywanie błędu przy użyciu process.stderr.write()
+process.stderr.write("To jest kolejny błąd!");
 ```
 
-Dodatkowo, warto zapoznać się z różnymi opcjami wyświetlania błędów w konsoli, takimi jak kolorowanie czy też zwracanie stosu wywołań. Można to zrobić poprzez dodatkowe konfiguracje, takie jak `console.log()` czy też `console.dir()`, których nie będę omawiać w tym artykule.
+Przy użyciu `console.error()` możemy również przekazać wiele argumentów, a następnie wyświetlić je w standardowym błędzie. Na przykład:
 
-## Zobacz również
+```Javascript
+let liczba = 5;
+console.error("Wartość liczby to", liczba);
+```
 
-Poniżej znajdują się kilka przydatnych linków, które mogą pomóc Ci w pogłębieniu swojej wiedzy na temat pisaniu do standardowego błędu w języku Javascript:
+Wyjście z powyższego kodu będzie wyglądać następująco:
 
-- [Dokumentacja metody `console.error()`](https://developer.mozilla.org/pl/docs/Web/API/Console/error)
-- [Przewodnik po debugowaniu w języku Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
-- [Video tutorial o pisaniu do standardowego błędu w języku Javascript](https://www.youtube.com/watch?v=C1PG1SP6uaM)
+```
+Wartość liczby to 5
+```
 
-Teraz już wiesz dlaczego i w jaki sposób warto umieć pisać do standardowego błędu w języku Javascript. Nie zapomnij o tym przy kolejnym projekcie! Happy coding! 🚀
+## Pogłębione zagadnienia dotyczące pisania do standardowego błędu
+
+Pisanie do standardowego błędu może być bardzo przydatne w przypadku, gdy chcemy wyświetlić błąd lub ostrzeżenie w odpowiednim miejscu kodu. Może również pomóc nam zlokalizować problem i szybciej go naprawić. Poniżej przedstawiono przykłady użycia pisanie do standardowego błędu w różnych sytuacjach.
+
+### Wyświetlanie błędu w przypadku błędnego argumentu funkcji
+
+Jedną z częstych sytuacji, w których możemy wykorzystać pisanie do standardowego błędu, jest sprawdzenie poprawności argumentów funkcji. Możemy dodać warunek, który sprawdzi, czy argument jest prawidłowy, a jeśli nie, to wyświetli błąd przy użyciu `console.error()`.
+
+```Javascript
+function dodaj(a, b) {
+    // Sprawdzamy, czy argumenty są liczbami
+    if (typeof a !== "number" || typeof b !== "number") {
+        // Wyświetlamy błąd, jeśli argumenty nie są liczbami
+        console.error("Oba argumenty muszą być liczbami!");
+        return;
+    }
+    // Wykonujemy operację dodawania
+    return a + b;
+}
+
+// Wywołujemy funkcję z błędnym argumentem
+dodaj(2, "abc");
+```
+
+Wyjście w konsoli będzie wyglądać następująco:
+
+```
+Oba argumenty muszą być liczbami!
+```
+
+### Wyświetlanie błędu w przypadku nieobsłużonego wyjątku
+
+Wyjątki mogą być trudne do zlokalizowania, szczególnie w większym i bardziej złożonym kodzie. W takiej sytuacji przydatne jest wyświetlenie informacji o wyjątku w standardowym błędzie, abyśmy mogli go łatwiej znaleźć i naprawić.
+
+```Javascript
+try {
+    // Wywołanie funkcji, która nie istnieje
+    nieznanaFunkcja();
+} catch (err) {
+    // Wyświetlenie błę

@@ -1,42 +1,65 @@
 ---
-title:    "Javascript: Sammenslåing av strenger"
+title:    "Javascript: Sammenføye strenger"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor?
+## Hvorfor
 
-Å kombinere strenger, eller "konkatenering", er en viktig del av Javascript-programmering. Det lar deg lage mer dynamiske og tilpassede strenger som kan brukes til å vise informasjon eller endre teksten på en nettside.
+Å kombinere strenger er en vanlig oppgave i Javascript-programmering. Dette gjøres for å kombinere tekststrenger og variabler for å danne en lengre streng med informasjon. Dette kan være nyttig for å skrive ut tekster, eller for å bygge dynamiske nettapplikasjoner.
 
-# Hvordan gjøre det
+## Hvordan å gjøre det
 
-For å konkatenering i Javascript, må du bruke operatøren "+" for å kombinere to eller flere strenger. La oss si at du har to variabler, "navn" og "by", og du vil lage en setning som sier "Hei, mitt navn er [navn] og jeg er fra [by]".
+For å kombinere strenger i javascript kan du bruke "+" operatøren til å binde strenger sammen.
 
-```
-Javascript
-var navn = "Sofie";
-var by = "Oslo";
-
-console.log("Hei, mitt navn er " + navn + " og jeg er fra " + by);
-```
-
-Dette vil produsere følgende output:
-
-```
-Hei, mitt navn er Sofie og jeg er fra Oslo
+```Javascript
+let fornavn = "Ole";
+let etternavn = "Hansen";
+let fulltNavn = fornavn + " " + etternavn;
+console.log(fulltNavn);
 ```
 
-Du kan også konkatenering strings med andre datatyper som tall. Javascript vil konvertere tall til en string automatisk når det brukes med "+" operatøren.
+Output: "Ole Hansen"
 
-# Dyp dykk
+I dette eksempelet har vi definert to variabler, "fornavn" og "etternavn", og deretter kombinert dem sammen ved hjelp av "+" -operatøren og lagret resultatet i en tredje variabel "fulltNavn". 
 
-Det er viktig å merke seg at konkatenering av strenger kan føre til uønskede resultater hvis det ikke brukes riktig. For eksempel, hvis du prøver å kombinere en streng og et nummer uten å bruke "+" operatøren, vil du ende opp med et string-objekt istedenfor en ny streng.
+Du kan også bruke "+=" operatøren for å legge til en streng til en allerede eksisterende streng variabel.
 
-Det finnes også alternative måter å konkatenering strenger på i Javascript, som ved hjelp av innebygde funksjoner som "concat()" og "join()". Disse alternativene kan være nyttige for mer avanserte string manipuleringer.
+```Javascript
+let tekst = "Denne setningen ";
+tekst += "fortsetter";
+console.log(tekst);
+```
 
-# Se Også
+Output: "Denne setningen fortsetter"
 
-- [W3Schools - Javascript String Concatenation](https://www.w3schools.com/js/js_string_concat.asp)
-- [MDN - String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_concatenation)
-- [JavaScript.info - Strings Concatenation](https://javascript.info/string concatenation)
+## Dykk ned
+
+Et viktig poeng å merke seg er at når du kombinerer strenger med variabler, må variablene skrives ut med et pluss mellomrom før og etter variabelnavnet for å unngå at variabelen blir tolket som en del av strengen.
+
+```Javascript
+let antallEpler = 5;
+console.log("Jeg spiste " + antallEpler + " epler til frokost.");
+```
+
+Output: "Jeg spiste 5 epler til frokost."
+
+En annen nyttig funksjon for å kombinere strenger er forlengelsesmetoden .concat (). Dette kan brukes til å kombinere flere strenger sammen.
+
+```Javascript
+let tekst1 = "Jeg elsker ";
+let tekst2 = "å programmere.";
+let kombinertTekst = tekst1.concat(tekst2);
+console.log(kombinertTekst);
+```
+
+Output: "Jeg elsker å programmere."
+
+## Se også
+
+For mer informasjon om hvordan du arbeider med strenger i Javascript, kan du se disse ressursene:
+
+- [W3Schools: Strings in Javascript](https://www.w3schools.com/js/js_strings.asp)
+- [MDN: Working with strings in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

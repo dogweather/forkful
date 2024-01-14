@@ -1,34 +1,47 @@
 ---
 title:    "Swift: 정규 표현식 사용하기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+정규 표현식을 사용하는 이유는 문자열을 검색, 추출 및 대체하는 데 유용하기 때문입니다.
 
-정규 표현식을 사용하는 이유는 무엇일까요? 정규 표현식은 패턴을 나타내고 매칭하거나 바꾸는 작업에 매우 유용합니다. 예를 들어, 특정 문자열에서 이메일 주소를 찾아내거나, 전화번호를 국제 표준 형식으로 바꾸는 등의 작업에 매우 유용합니다.
-
-## 이렇게 사용하세요
+## 사용 방법
+정규 표현식은 문자열을 비교하는 강력한 도구입니다. Swift에서 정규 표현식을 사용하려면 다음 단계를 따르세요.
 
 ```Swift
-let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+import Foundation
 
-let string = "저의 이메일 주소는 abc123@gmail.com입니다."
+let str = "안녕하세요, 저는 Swift를 공부하고 있습니다!"
 
-let matches = string.matches(for: emailRegex)
+// "안녕"이 들어간 부분 찾기
+let pattern = "안녕"
 
-// 결과
-matches = ["abc123@gmail.com"]
+// 정규식 객체 생성
+let regex = try! NSRegularExpression(pattern: pattern, options: [])
+
+// 문자열에서 검색
+let matches = regex.matches(in: str, options: [], range: NSRange(location: 0, length: str.utf16.count))
+
+// 찾은 부분 출력
+for match in matches {
+    let range = match.range
+    let startIndex = str.index(str.startIndex, offsetBy: range.location)
+    let endIndex = str.index(str.startIndex, offsetBy: range.location + range.length)
+    let matchString = String(str[startIndex..<endIndex])
+    print(matchString)
+}
+
+// Output: "안녕하세요"
 ```
 
-위의 예시 코드에서 `matches(for:)` 함수는 해당 문자열에서 정규 표현식과 매칭된 부분을 찾아 배열로 반환합니다. 이를 통해 원하는 작업을 쉽게 수행할 수 있게 됩니다.
+## 깊이 파고들기
+정규 표현식은 문자열에 더욱 복잡한 패턴을 적용할 수 있는 많은 옵션을 제공합니다. 예를 들어, 다양한 패턴 매칭 옵션으로 대소문자를 구분할 수 있고, 부분적일치나 전체적일치를 선택할 수 있습니다. 정규 표현식 패턴을 더 많이 배우려면 직접 실험해보고 다른 사용 사례를 찾아보세요.
 
-## 더 깊게 들어가보세요
-
-정규 표현식은 매우 강력한 도구이지만, 익숙하지 않을 경우 약간의 학습이 필요할 수 있습니다. 특히, 일부 문법이 다른 프로그래밍 언어와 다를 수 있습니다. 하지만 그만큼 익숙해진 후에는 매우 유용한 도구가 될 것입니다.
-
-## 더 보기
-
-- "[정규표현식 - 위키백과](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D)"
-- "[Swift에서 정규표현식 사용하기](https://zeddios.tistory.com/7)"
+## 더 알아보기
+[정규 표현식 소개](https://www.youtube.com/watch?v=rhzKDrUiJVk&t=301s)  
+[Swift에서 정규 표현식 사용하기](https://medium.com/@abhimuralidharan/regular-expression-in-swift-7ed46aaa6b6c)  
+[Swift의 Foundation 프레임워크: 정규 표현식](https://mobikul.com/regular-expression-swift/)

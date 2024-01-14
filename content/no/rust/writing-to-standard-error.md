@@ -1,42 +1,47 @@
 ---
-title:    "Rust: Å skrive til standardfeil"
+title:    "Rust: Skriving til standard feil"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive til standard error i Rust?
-Å skrive til standard error i Rust er en enkel og effektiv måte å håndtere feil og debugging på. Det lar deg raskt og nøyaktig identifisere og håndtere eventuelle problemer i koden din.
+## Hvorfor
 
-## Hvordan gjøre det
-For å skrive til standard error i Rust, kan du bruke funksjonen `eprintln!()` eller `writeln!()`. Disse funksjonene lar deg skrive en feilmelding eller annen informasjon til standard error stream, som kan leses fra terminalen.
+Å skrive til standard feil er en viktig del av å lage pålitelige og robuste Rust-programmer. Når du skriver til standard feil, er det en effektiv måte å håndtere feil og uventede situasjoner som kan oppstå i løpet av kjøretiden til programmet ditt.
+
+## Hvordan
+
+Rust har en innebygd funksjon for å skrive til standard feil, som kalles `eprintln!()` . Denne funksjonen tar inn en formateringsstreng og eventuelle variabler som du vil skrive ut, og skriver dem til standard feil i stedet for standard utgang.
+
+Her er et eksempel på hvordan du kan bruke `eprintln!()` for å skrive ut en feilmelding hvis en fil ikke kan åpnes:
 
 ```Rust
-fn main() {
-    let x = 10;
-    let y = 0;
-    if y == 0 {
-        eprintln!("Kan ikke dele på 0!");
-        return;
+use std::fs::File;
+
+let file = File::open("my_file.txt");
+
+match file {
+    Ok(f) => {
+        // gjør noe med filen her
+    },
+    Err(e) => {
+        // skriv feilmelding til standard feil
+        eprintln!("Kunne ikke åpne filen: {}", e);
     }
-    let result = x / y;
-    println!("Resultat: {}", result);
 }
 ```
 
-Output:
-```
-Kan ikke dele på 0!
-```
-
-I dette eksempelet har vi brukt `eprintln!()` for å skrive en feilmelding når forsøket på å dele på 0 feiler.
+Når programmet ditt kjører, vil feilmeldingen bli skrevet til standard feil i stedet for å bli vist på skjermen. Dette gjør det enklere å fange opp potensielle problemer og håndtere dem på en hensiktsmessig måte.
 
 ## Dypdykk
-Når du skriver til standard error i Rust, kan du også bruke *macros* som `panic!()` for å håndtere alvorlige feil og avslutte programmet. Du kan også bruke `eprint!()` og `print!()` for å skrive til standard error og standard output henholdsvis.
 
-Det er viktig å merke seg at skriving til standard error vil føre til en linjeskift etter hvert kall til `eprintln!()`. Dette kan være nyttig for å skille ut- og inn-data i konsollen når du kjører programmet ditt.
+Å skrive til standard feil kan også være nyttig når du vil logge informasjon om programmet ditt under kjøring. Ved å skrive til standard feil i stedet for standard utgang, kan du få en tydeligere og mer organisert utskrift av dataene dine.
 
-# Se også
-- [Offisiell Rust dokumentasjon om skriving til standard error](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Tutorial om debugging i Rust](https://www.rust-lang.org/tools/debugging)
-- [Stack Overflow diskusjon om forskjellen mellom `print!()` og `eprint!()`](https://stackoverflow.com/questions/34693801/what-exactly-is-the-difference-between-print-and-eprint-macros)
+I tillegg kan du også bruke `eprintln!()` for å logge informasjon om debug-utskrifter mens du utvikler og tester programmet ditt. Dette er spesielt nyttig hvis du jobber med flertrådede applikasjoner eller komplekse systemer.
+
+## Se også
+
+- [Rust dokumentasjon: eprintln!()](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Rust referanse: std::io::stderr()](https://doc.rust-lang.org/std/io/fn.stderr.html)
+- [Rust guide: håndtering av feil](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

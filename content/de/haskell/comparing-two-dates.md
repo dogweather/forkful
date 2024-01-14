@@ -1,52 +1,49 @@
 ---
-title:    "Haskell: Vergleich von zwei Daten"
+title:    "Haskell: Zwei Daten vergleichen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Vergleichen von Daten ist eine häufige Aufgabe in der Programmierung, insbesondere in Haskell. Es kann verwendet werden, um zu überprüfen, ob eine bestimmte Zeit bereits vergangen ist, an welchem Punkt im Jahr ein Ereignis stattfindet oder um einen bestimmten Zeitraum zu berechnen. Das Vergleichen von Daten kann auch hilfreich sein, um Zeitstempel in einer Datenbank zu sortieren oder um zu überprüfen, ob eine angegebene Frist bereits abgelaufen ist.
+Das Vergleichen von zwei Daten ist ein wichtiger Bestandteil der Programmierung. Es ermöglicht uns, Bedingungen zu erstellen und bestimmte Aktionen auszuführen, je nachdem, ob eine Bedingung erfüllt ist oder nicht. Mit Hilfe von Haskell können wir dies auf elegante und funktionale Weise tun.
 
-## Wie man Daten vergleicht
+## Wie geht man vor
 
-Das Vergleichen von Daten in Haskell ist relativ einfach, solange man die richtigen Funktionen verwendet. Zunächst muss man die beiden Daten in das Format "Jahr-Monat-Tag" übersetzen, da Haskell diese Form benötigt, um Daten zu vergleichen. Wir können dies mit der Funktion `fromGregorian` aus dem Modul `Data.Time.Calendar` tun.
-
-```Haskell
-import Data.Time.Calendar
-
--- Two dates to compare
-date1 = fromGregorian 2021 10 17
-date2 = fromGregorian 2022 4 1
-
--- Compare dates
-compareDates :: Day -> Day -> Ordering
-compareDates date1 date2 = compare date1 date2
-
--- Print output (GT for Greater Than, LT for Less Than, EQ for Equal)
-print (compareDates date1 date2)
-```
-
-Dieses Beispiel gibt "GT" aus, da `date2` ein späteres Datum ist als `date1`. Es ist auch möglich, zwei Daten direkt zu vergleichen, anstatt die `fromGregorian` Funktion zu verwenden.
+Um zwei Daten in Haskell zu vergleichen, müssen wir zuerst sicherstellen, dass sie das gleiche Datentyp haben. Wir können dies mithilfe der `compare` Funktion tun, die zwei Werte desselben Typs vergleicht und uns entweder "LT" (Less Than), "GT" (Greater Than) oder "EQ" (Equal) zurückgibt.
 
 ```Haskell
--- Compare dates
-compareDates :: Day -> Day -> Ordering
-compareDates date1 date2 = compare (fromGregorian 2021 10 17) (fromGregorian 2022 4 1)
+-- Vergleichen von Ints
+-- Output: LT
+compare 5 10 
 
--- Print output (GT for Greater Than, LT for Less Than, EQ for Equal)
-print (compareDates)
+-- Vergleichen von Strings
+-- Output: EQ
+compare "Haskell" "Haskell"
 ```
 
-Dieses Beispiel gibt ebenfalls "GT" aus. Es ist wichtig zu beachten, dass das Vergleichen von Daten immer "Ordering" als Rückgabetyp hat und nicht einfach "Bool". Dies liegt daran, dass es mehrere Möglichkeiten gibt, wie Daten miteinander verglichen werden können (z.B. "GT" für größer als, "EQ" für gleich usw.).
+Wir können auch die `==`, `<`, `>` Operatoren verwenden, um zwei Daten zu vergleichen. Diese operieren direkt auf Werten und nicht auf Funktionen und geben uns ebenfalls einen boolschen Wert zurück.
 
-## Tiefere Einblicke
+```Haskell
+-- Vergleichen von Floats mit dem "<" Operator
+-- Output: True
+3.14 < 4.13
+```
 
-Es gibt viele weitere Funktionen, die bei der Arbeit mit Daten in Haskell hilfreich sein können. Zum Beispiel gibt es Funktionen wie `diffDays`, `addDays` und `isLeapYear`, die für bestimmte Aufgaben nützlich sein können. Die Verwendung dieser Funktionen erfordert jedoch ein Verständnis der zugrunde liegenden Datentypen und Module. Es ist daher empfehlenswert, sich eingehender mit der Dokumentation für das Modul `Data.Time.Calendar` auseinanderzusetzen.
+## Tieferer Einblick
+
+Bei der Verwendung von `compare` ist es wichtig zu wissen, dass das zurückgegebene Ergebnis eine Instanz der `Ordering` Datenklasse ist. Diese ordnet die Ergebnisse `LT`, `GT` und `EQ` in dieser Reihenfolge an. In einigen Fällen kann es auch nützlich sein zu wissen, dass `EQ` als 0, `LT` als -1 und `GT` als 1 interpretiert wird.
+
+```Haskell
+-- Vergleichen von Daten mithilfe von Ordering
+-- Output: GT
+5 `compare` 4.5
+```
 
 ## Siehe auch
 
-- [Dokumentation für das Modul `Data.Time.Calendar`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
-- [Video-Tutorial zum Vergleichen von Daten in Haskell](https://www.youtube.com/watch?v=Rj_gF7rEryo)
-- [Programmierung mit Haskell: Eine Einführung](https://www.buch.de/shop/home/artikeldetails/ID63441034.html) (Buchempfehlung)
+- [Haskell-Dokumentation zur `compare` Funktion](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:compare)
+- [Video-Tutorial zur Verwendung von Vergleichsoperatoren in Haskell](https://www.youtube.com/watch?v=TOgV0oeejZo)
+- [Informationen zur `Ordering` Datenklasse](https://wiki.haskell.org/Class)

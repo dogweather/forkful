@@ -1,70 +1,57 @@
 ---
-title:    "Rust: Store bokstaver i en streng"
+title:    "Rust: Stor bokstavering av en streng"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noensinne lurt på hvordan du kan gjøre en tekst mer lesbar ved å kapitalisere den? I denne bloggposten skal vi ta en titt på hvordan du kan gjøre akkurat det ved hjelp av Rust-programmeringsspråket.
+Har du noen gang lurt på hvordan du kan endre et strengens første bokstav til en stor bokstav i Rust? Eller kanskje du allerede vet hvordan, men vil lære en mer effektiv måte å gjøre det på? Uansett hva som er grunnen din, er dette blogginnlegget for deg! Vi skal dykke inn i hvordan du kan kapitalisere en streng i Rust på en enkel og effektiv måte.
 
-## Hvordan
+## Hvordan Gjøre Det
 
-Først og fremst må vi importere biblioteket som lar oss utføre denne operasjonen. I dette tilfellet er det `to_uppercase`-metoden fra `str`-biblioteket i Rust.
-
-```Rust
-use std::str;
-
-fn main() {
-    // Opprett en variabel med tekst som skal kapitaliseres
-    let tekst = "hallo, verden!";
-
-    // Bruk to_uppercase-metoden for å gjøre teksten til store bokstaver
-    let kapitalisert_tekst = str::to_uppercase(tekst);
-
-    // Skriv ut resultatet
-    println!("{}", kapitalisert_tekst);
-}
-```
-
-Når du kjører dette programmet, vil du se følgende output:
-
-```txt
-HALLO, VERDEN!
-```
-
-Som du kan se, blir teksten vår kapitalisert. Men hva om vi ønsker å beholde store bokstaver som allerede finnes i teksten? Det kan vi enkelt gjøre ved å bruke `to_uppercase`-metoden med en instans av `Locale`, som lar oss spesifisere hvilket språk teksten skal behandles som.
+Det er flere måter å kapitalisere en streng på i Rust, men la oss se på den mest brukte og anbefalte måten å gjøre det på. Her er et eksempel på kode som viser hvordan du kan gjøre det:
 
 ```Rust
-use std::str;
-use std::locale::Locale;
+let name = "ola";
+let capitalized_name = name.to_uppercase();
+println!("Kapitalisert navn: {}", capitalized_name);
 
-fn main() {
-    // Opprett en variabel med tekst som skal kapitaliseres
-    let tekst = "Hello, world!";
-
-    // Bruk to_uppercase-metoden med en Locale-instans for å beholde allerede store bokstaver
-    let kapitalisert_tekst = str::to_uppercase_with_locale(tekst, Locale::root());
-
-    // Skriv ut resultatet
-    println!("{}", kapitalisert_tekst);
-}
 ```
 
-Denne gangen vil outputen bli:
+Når du kjører denne koden, vil den gi følgende utdata:
 
-```txt
-HELLO, WORLD!
+```
+Kapitalisert navn: OLA
 ```
 
-## Deep Dive
+Her bruker vi funksjonen `to_uppercase()` som er en del av `String` biblioteket i Rust. Denne funksjonen returnerer en ny streng med den første bokstaven som stor bokstav. Deretter kan vi bare skrive ut den nye strengen ved hjelp av `println!` makroen.
 
-Nå som vi har sett hvordan vi kan kapitalisere en tekst ved hjelp av Rust, la oss ta en nærmere titt på hvordan `to_uppercase`-metoden fungerer. Denne metoden tar inn en `&str`-referanse som parameter og returnerer en ny `String` med alle bokstavene konvertert til store bokstaver.
+Videre kan du også kapitalisere bare den første bokstaven i en streng ved å bruke `capitalize()` funksjonen. Her er et eksempel på hvordan du kan gjøre det:
 
-En viktig ting å merke seg er at `to_uppercase`-metoden er avhengig av den aktuelle locale, eller språkinnstillingen, på systemet ditt. Dette betyr at hvis teksten din inneholder bokstaver fra et annet språk, vil de ikke nødvendigvis bli kapitalisert riktig med mindre du spesifikt angir det i Locale-instansen.
+```Rust
+let greeting = "hei der";
+let capitalized_greeting = greeting.to_lowercase().capitalize();
+println!("Kapitalisert hilsen: {}", capitalized_greeting);
+
+```
+
+Dette vil gi følgende utdata:
+
+```
+Kapitalisert hilsen: Hei der
+```
+
+I tillegg kan du også sjekke om en streng allerede er kapitalisert eller ikke ved å bruke `is_ascii_uppercase()` funksjonen. Denne funksjonen vil returnere en boolsk verdi som indikerer om strengen bare har store bokstaver eller ikke.
+
+## Dykk Ned
+
+Som nevnt tidligere, er `to_uppercase()` funksjonen en del av `String` biblioteket i Rust. Dette biblioteket tilbyr forskjellige metoder for å håndtere og manipulere strenger på en enkel og effektiv måte. Ved å lese gjennom dokumentasjonen og eksperimentere med forskjellige funksjoner, kan du få dypere forståelse for hvordan du kan kapitalisere en streng på en mer avansert måte.
 
 ## Se Også
 
-- [Rust dokumentasjon: str::to_uppercase](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- [Rust dokumentasjon: locale::Locale](https://doc.rust-lang.org/std/locale/struct.Locale.html)
+- Rust Språkvedlikehold (https://www.rust-lang.org/no)
+- Rust Dokumentasjon (https://doc.rust-lang.org/std/string/struct.String.html)
+- Utforsk Rust (https://www.rust-lang.org/learn)

@@ -1,63 +1,36 @@
 ---
-title:    "Swift: Tulostus virheenjäljityslähtöön"
+title:    "Swift: Tulostaminen vianjäljitystuloste"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi tulostamme debuggaustietoja ohjelmassamme?
+Usein ohjelmointiprojektien aikana pelaamme monien vaihtoehtojen ja ratkaisujen kanssa löytääksemme parhaan tavan toteuttaa haluamamme toiminnallisuuden. Debug-tietojen tulostaminen on yksi tehokkaimmista tavoista selvittää, miten koodimme toimii ja mikä aiheuttaa mahdollisia virheitä. Se auttaa meitä paikantamaan ongelmakohtia ja löytämään ratkaisuja.
 
-Tulostamalla debuggaustietoja voimme tarkastella ohjelmamme käyttäytymistä ja löytää mahdollisia virheitä ja bugeja. Näiden tietojen avulla voimme myös seurata ohjelman suoritusta ja optimoida sen suorituskykyä. Debuggaustietojen tulostaminen on siis erittäin tärkeää ohjelmistokehityksen kannalta.
+## Kuinka
 
-## Miten
-
-Alla on esimerkki siitä, miten voimme tulostaa debuggaustietoja Swift-koodissa:
+Debug-tulosten tulostamiseen on monta tapaa, mutta yleisin ja helppokäyttöisin tapa on käyttää "print()" -toimintoa. Tämä toiminto tulee Swiftin peruskirjastosta ja sen avulla voimme tulostaa muuttujien arvoja, merkkijonoja tai muita tietoja, jotka auttavat meitä ymmärtämään koodin toimintaa.
 
 ```Swift
-let name = "Maija"
-let age = 25
+var nimi = "Milla"
+var ika = 25
 
-print("Käyttäjän nimi on \(name) ja ikä on \(age) vuotta.")
-
+print("Tervetuloa, \(nimi)! Olet \(ika) vuotta vanha.")
 ```
 
-Tämä koodi tulostaa seuraavan viestin:
+Tämä koodi tulostaisi seuraavan viestin: "Tervetuloa, Milla! Olet 25 vuotta vanha." Kuten huomaat, voimme käyttää myös muuttujien arvoja osana tulostusta lisäämällä ne viestin sisälle "\()" -merkkien väliin.
 
-<code> Käyttäjän nimi on Maija ja ikä on 25 vuotta. </code>
+## Syvällinen tarkastelu
 
-Voit myös tulostaa arvojen lisäksi esimerkiksi muuttujan nimen tai jonkin ehtolauseen arvon, jotta voit seurata ohjelman suoritusta tarkemmin. Esimerkiksi:
+Print-toiminnon lisäksi Swiftissä on muitakin hyödyllisiä työkaluja debug-tulosten tulostamiseen, kuten "debugPrint()" ja "dump()". DebugPrint-toiminto tulostaa tietoja eri muodoissa, kuten JSON-muodossa, mikä voi olla hyödyllistä tietyissä ohjelmointiprojekteissa. Dump-toiminnon avulla voimme tulostaa tietoja koko koodirakenteesta, joka voi auttaa meitä ymmärtämään koodin suoritusta ja paikantamaan virheitä.
 
-```Swift
-let number = 6
-if number % 2 == 0 {
-    print("\(number) on parillinen.")
-} else {
-    print("\(number) on pariton.")
-}
-```
-
-Tämä koodi tulostaisi:
-
-<code> 6 on parillinen.</code>
-
-Voit myös käyttää "debugPrint" -funktiota, joka antaa enemmän tietoa tulostettavasta arvosta. Esimerkiksi:
-
-```Swift
-debugPrint(number)
-```
-
-Tämä tulostaisi:
-
-<code> Int(6) </code>
-
-## Syvemmälle
-
-Debuggaustietojen tulostaminen voi joskus hidastaa ohjelman suoritusta. Tästä syystä on tärkeää muistaa poistaa debuggaustulostukset lopullisesta koodista. Voit tehdä tämän helpoiten lisäämällä "#if DEBUG" -ehdon ennen tulostuskomentoa ja "#endif" sen jälkeen. Tällöin tulostus tapahtuu vain silloin, kun ohjelma suoritetaan debug-tilassa, eikä vaikuta lopulliseen suorituskykyyn.
+On myös tärkeää huomata, että debug-tulosten tulostamisella voi olla vaikutuksia suorituskykyyn ja esimerkiksi suuret tulostukset voivat hidastaa ohjelmamme toimintaa. Siksi on tärkeää käyttää debug-tulostuksia vain tarpeen mukaan ja poistaa ne lopullisesta koodiversiosta.
 
 ## Katso myös
 
-- Debuggaus Swiftissä: https://developer.apple.com/documentation/swift/debugging
-- Debuggausvinkkejä Swiftissä: https://www.raywenderlich.com/416-the-ios-8-swift-debugger-part-1-2
-- Debuggaustietojen analysointi Xcode-ohjelmassa: https://www.iphonelife.com/content/top-10-xcode-debugging-tips-tips-and-tricks-ios-developers
+- [Apple:n ohjeet debuggerin ja debug-tulosten tulostamiseen Swiftissä](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebugYourApp/DebugYourApp.html#//apple_ref/doc/uid/TP40010215-CH55-SW1)
+- [Swiftin debug-toiminnon dokumentaatio](https://developer.apple.com/documentation/swift/debugprint)
+- [Debuggaus Swiftissä: käyttökelpoisia vinkkejä ja työkaluja](https://www.raywenderlich.com/4721-debugging-in-swift)

@@ -1,59 +1,56 @@
 ---
 title:    "Haskell recipe: Starting a new project"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Starting a new project can be an exciting and fulfilling experience for any programmer. It allows you to explore new ideas, develop new skills, and create something that has never been done before. Whether you are a beginner or an experienced Haskell programmer, starting a new project can be a great way to challenge yourself and improve your coding abilities.
+
+Starting a new project in Haskell may seem like a daunting task, but the benefits far outweigh any initial challenges. By using a functional and statically-typed language like Haskell, programmers can create robust and efficient code that is easier to maintain and debug. Additionally, Haskell's strong type system allows for safer and more reliable software, making it a great choice for new projects.
 
 ## How To
-To get started on your new Haskell project, first make sure you have the Glasgow Haskell Compiler (GHC) and the Cabal build tool installed on your system. Once you have those set up, create a new directory for your project and navigate to it using the command line.
+
+To get started on a new project in Haskell, first make sure you have the Glasgow Haskell Compiler (GHC) and the Haskell build tool, Cabal, installed on your system. Once those are set up, you can create a new project using the `cabal init` command. This will prompt you for some basic information about your project, such as the name and version number. 
+
+After your project is created, you can begin writing code in the `main.hs` file within the `src` directory. Here's an example of a simple Haskell program that greets the user:
 
 ```Haskell
-mkdir myProject
-cd myProject
+-- main.hs
+-- Simple greeting program
+
+main = do
+    putStrLn "Hello, what's your name?"
+    name <- getLine
+    putStrLn $ "Nice to meet you, " ++ name ++ "!"
 ```
 
-Next, initialize your project using Cabal by running:
+To run this program, navigate to the root directory of your project and use the `runhaskell` command:
 
-```Haskell
-cabal init
+```
+runhaskell src/main.hs
 ```
 
-You will be prompted to answer a few questions about your project, such as the name, version, and author. Once you have answered these, Cabal will generate a .cabal file, which is used to build and configure your project.
-
-Now it's time to start writing some code! Let's create a new file called "myProject.hs" and open it in your preferred text editor. In this file, we will define a simple function that takes in two integers and returns their sum.
-
-```Haskell
--- Function to add two integers
-add :: Int -> Int -> Int
-add x y = x + y
+The output should look something like this:
+```
+Hello, what's your name?
+John
+Nice to meet you, John!
 ```
 
-Save the file and return to the command line. We can now use the GHC compiler to build our project by running:
-
-```Haskell
-ghc -o myProject myProject.hs
-```
-
-This will generate an executable file called "myProject", which we can run using:
-
-```Haskell
-./myProject
-```
-
-When prompted, enter two integers and the program will output their sum. Congratulations, you have successfully started your new Haskell project!
+Haskell's syntax can be quite different from other languages, but don't let that discourage you. With practice and patience, you'll quickly get the hang of it.
 
 ## Deep Dive
-When starting a new project in Haskell, it's important to think about the structure and organization of your code. The best way to do this is by breaking your project into smaller modules, with each module focusing on a specific task or functionality. This not only makes your code more organized and easier to debug, but it also allows for better code reuse and maintainability.
 
-Another aspect to consider when starting a new project is the use of third-party libraries. Haskell has a vast collection of libraries available for various purposes, and it's always a good idea to explore these when starting a new project. This can save you time and effort in writing complex functions and algorithms, as well as ensuring efficient and optimized code.
+One of the key components of starting a new project in Haskell is choosing and setting up a development environment. The two most popular options are using an integrated development environment (IDE) or a text editor with a Haskell plugin. Whichever you choose, it's important to understand the basic concepts of Haskell, such as functional programming, lazy evaluation, and type inference, to effectively write code.
 
-Lastly, don't be afraid to ask for help! Haskell has a strong and supportive community, and there are many forums, blogs, and resources available for beginners and experienced programmers alike. Don't hesitate to reach out and ask for guidance or feedback on your project.
+Another important aspect of starting a new project is choosing the right libraries and dependencies. Haskell has a vast collection of open-source libraries available in the Hackage repository, so you can easily find and use packages to add additional functionality to your project. It's also important to keep your dependencies up-to-date to ensure your project runs smoothly.
+
+Lastly, testing is crucial for any project, and Haskell offers a variety of testing frameworks such as HUnit and QuickCheck. Writing tests early on can help catch bugs and prevent future issues, making it easier to maintain your code in the long run.
 
 ## See Also
-- [Glasgow Haskell Compiler](https://www.haskell.org/ghc/)
-- [Cabal Build Tool](https://www.haskell.org/cabal/)
-- [Haskell Libraries](https://hackage.haskell.org/)
+
+- Official Haskell website: https://www.haskell.org/
+- Haskell for Imperative Programmers: https://www.youtube.com/watch?v=cuTb8Uh1zYw
+- Hackage package repository: https://hackage.haskell.org/

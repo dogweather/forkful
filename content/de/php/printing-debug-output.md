@@ -1,55 +1,45 @@
 ---
-title:    "PHP: Ausgabe von Debugging Informationen drucken"
+title:    "PHP: Debugger-Ausgabe drucken"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Debugging ist ein wesentlicher Bestandteil der Softwareentwicklung, da es hilft, Fehler und Probleme im Code zu identifizieren und zu beheben. Eine Möglichkeit, um beim Debugging zu helfen, ist durch das Drucken von Debug-Output. In diesem Blog-Beitrag werden wir uns ansehen, warum das Drucken von Debug-Output nützlich sein kann.
+Das Drucken von Debug-Ausgaben ist ein sehr nützliches Werkzeug für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. Es ermöglicht Ihnen, den genauen Ablauf Ihres Programms zu verfolgen und potenzielle Probleme zu identifizieren. Wenn Sie also das nächste Mal auf Fehlersuche sind, sollten Sie unbedingt in Betracht ziehen, Debug-Ausgaben zu verwenden.
 
-## Wie
+## Anleitung
 
-Die Verwendung von ```PHP echo``` oder ```print_r``` in Ihrem Code ist eine einfache Möglichkeit, Debug-Output zu drucken. Diese Funktionen geben einen Wert auf dem Bildschirm aus, so dass Sie überprüfen können, ob der Wert korrekt ist. Zum Beispiel:
-
-```PHP
-$name = "Hans";
-echo $name;
-// Ausgabe: Hans
-```
-
-Eine andere nützliche Methode ist die Verwendung von ```var_dump```, die eine detaillierte Darstellung eines Wertes ausgibt, was besonders hilfreich sein kann, wenn es sich um komplexe Daten wie Arrays oder Objekte handelt. Zum Beispiel:
+Zur Veranschaulichung des Druckens von Debug-Ausgaben werden im Folgenden einige Beispiele in PHP gezeigt. Um Debug-Ausgaben zu erstellen, können Sie die Funktion "echo" oder "print_r" verwenden.
 
 ```PHP
-$numbers = array(1, 2, 3);
-var_dump($numbers);
-// Ausgabe: array(3) {
-//   [0]=>
-//   int(1)
-//   [1]=>
-//   int(2)
-//   [2]=>
-//   int(3)
-// }
+<?php
+$name = "Max";
+echo "Der Name ist: " . $name; // Ausgabe: Der Name ist: Max
 ```
 
-Schließlich kann auch der Einsatz von ```error_log``` hilfreich sein, da es den Debug-Output in eine Log-Datei schreibt, anstatt ihn auf dem Bildschirm auszugeben. Dies ermöglicht es Ihnen, den Output auch dann zu überprüfen, wenn Sie keinen Zugriff auf den Bildschirm haben. Zum Beispiel:
+In diesem Beispiel wird der Wert der Variable "$name" mit einem Text zusammengefügt und mit der "echo" Funktion ausgegeben. Sie können auch mehrere Variablen oder Texte miteinander kombinieren, um verschiedene Dinge auszugeben. Sehen wir uns jetzt ein Beispiel mit der "print_r" Funktion an.
 
 ```PHP
-$name = "Hans";
-error_log($name);
-// Ausgabe in der Log-Datei: Hans
+<?php
+$numbers = array(1, 2, 3, 4, 5);
+print_r($numbers); // Ausgabe: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
 ```
 
-## Deep Dive
+In diesem Beispiel werden die Werte des Arrays "$numbers" ausgegeben. Die "print_r" Funktion ist besonders nützlich, um komplexe Datenstrukturen wie Arrays oder Objekte auszugeben.
 
-Das Drucken von Debug-Output ist nicht nur hilfreich, um Werte zu überprüfen, sondern es kann auch dabei helfen, den Codefluss zu verstehen. Indem Sie gezielt Debug-Output an bestimmten Stellen in Ihrem Code platzieren, können Sie verfolgen, welche Variablen welche Werte haben und somit besser verstehen, wie Ihr Code genau funktioniert. Dies ist besonders nützlich bei komplexen oder fehlerhaften Code-Abschnitten.
+## Tiefer Einblick
 
-Es gibt auch Möglichkeiten, den Debug-Output zu verbessern, z.B. durch die Verwendung von formatierten Strings oder die Verwendung von Tools wie Xdebug, die zusätzliche Informationen wie Stack-Traces und Variablenwerte liefern können.
+Neben den "echo" und "print_r" Funktionen gibt es noch viele weitere Möglichkeiten, Debug-Ausgaben in PHP zu erstellen. Eine davon ist die Verwendung von "var_dump", die ähnlich wie "print_r" funktioniert, aber noch mehr Informationen über die Variablen ausgibt, wie z.B. ihren Datentyp. Eine andere hilfreiche Funktion ist "error_log", mit der Sie Fehlermeldungen und andere Informationen direkt in eine Log-Datei schreiben können.
 
-## See Also
+Eine andere Möglichkeit besteht darin, eine benutzerdefinierte Funktion zu erstellen, die Ihre Debug-Ausgaben formatiert und sie mit einem einfachen Aufruf im Code ausgeben lässt. Dies kann besonders nützlich sein, wenn Sie häufig Debug-Ausgaben erstellen müssen.
 
-- [Offizielle PHP-Dokumentation für Debugging-Funktionen](https://www.php.net/manual/de/function.print-r.php)
-- [Tutorial: Debugging mit Xdebug in PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging-with-xdebug.html)
-- [Video: PHP Debugging mit var_dump und print_r](https://www.youtube.com/watch?v=CXHN-WA95Sc)
+Es ist auch wichtig zu beachten, dass Sie Debug-Ausgaben nicht in Ihrer Produktionsumgebung lassen sollten, da sie Ihre Anwendung verlangsamen und möglicherweise sensible Daten preisgeben können. Verwenden Sie stattdessen Bedingungen oder Schalter, um Debug-Ausgaben nur in Ihrer Entwicklungsumgebung anzuzeigen.
+
+## Siehe auch
+
+- [Offizielle PHP-Dokumentation zu Debug-Ausgaben](https://www.php.net/manual/en/book.debugger.php)
+- [10 Tipps für effektives Debugging in PHP](https://www.sitepoint.com/10-tips-effective-php-debugging/)
+- [Warum ist Debugging wichtig für Programmierer?](https://stackify.com/why-debugging-is-important/)

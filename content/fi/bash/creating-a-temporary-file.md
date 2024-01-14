@@ -1,39 +1,33 @@
 ---
 title:    "Bash: Väliaikaisen tiedoston luominen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+# Miksi luoda tilapäistiedosto?
 
-On monia syitä, miksi voit tarvita luoda väliaikaisia tiedostoja Bash-ohjelmoinnissa. Joskus haluat tallentaa väliaikaisesti tietoja, kunnes niitä tarvitaan myöhemmin, tai ehkä tarvitset tilapäisen paikan lukea ja kirjoittaa tiedostoja. Väliaikaiset tiedostot voivat myös olla hyödyllisiä testatessa algoritmeja tai ohjelmakoodia ennen sen integroimista lopulliseen versioon.
+Tilapäisten tiedostojen luominen on tärkeä osa Bash-ohjelmointia, sillä se antaa meille mahdollisuuden tallentaa ja käsitellä väliaikaista tietoa. Tämä on erityisen hyödyllistä silloin, kun haluamme luoda väliaikaisia tietokantoja tai tallentaa käyttäjän syötteitä. Kaiken kaikkiaan tilapäisten tiedostojen luominen tekee Bash-ohjelmoinnista tehokkaampaa ja helppokäyttöisempää.
 
-## Miten luoda väliaikainen tiedosto Bash-ohjelmoinnissa?
+## Miten luoda tilapäistiedosto?
 
-Onneksi Bash-ohjelmointikieli tarjoaa helpon tavan luoda ja käsitellä väliaikaisia tiedostoja. Voit käyttää `mktemp`-komennon avulla luoda väliaikaisen tiedoston, joka on nimetty uniikilla satunnaisella nimellä. Voit myös määrittää tiedoston sijainnin ja halutun tiedoston luontopohjan `mktemp`-komennon avulla.
+Tilapäisen tiedoston luominen Bashilla on yksinkertaista. Voimme käyttää `mktemp`-komentoa luodaksemme uniikin tilapäistiedoston, joka poistetaan automaattisesti, kun Bash-ohjelma päättyy. Esimerkiksi, jos haluamme luoda tilapäistiedoston nimeltä "temp.txt", meidän tarvitsee vain kirjoittaa seuraava koodi:
 
 ```Bash
-tempfile=$(mktemp) # luo väliaikaisen tiedoston nykyiseen kansioon
-echo "Tämä on väliaikainen tiedosto" > $tempfile # kirjoittaa tiedostoon
-
-# tulostaa luodun väliaikaisen tiedoston nimen
-echo "Luotu väliaikainen tiedosto: $tempfile"
-
-# poistaa luodun väliaikaisen tiedoston
-rm $tempfile
+tempfile=$(mktemp temp.txt)
 ```
 
-Tässä esimerkissä luomme väliaikaisen tiedoston nykyiseen kansioon, kirjoitamme tiedostoon tekstin ja lopuksi poistamme tiedoston. Huomaa, että voit myös määrittää omat tiedostonimi ja tiedostotyyppi `mktemp`-komennolla. 
+Voimme myös käyttää `mktemp`-komennon parametreja määrittelemään tilapäistiedoston sijainnin tai nimen. Tämä antaa meille enemmän joustavuutta tiedostonhallinnassa.
 
-## Syvemmälle väliaikaisten tiedostojen luomiseen
+## Syvempi sukellus
 
-`mktemp`-komennon lisäksi Bash-ohjelmointikieli tarjoaa muitakin vaihtoehtoja luoda ja käsitellä väliaikaisia tiedostoja. Voit esimerkiksi käyttää `trap`-komennon avulla poistamaan väliaikaisen tiedoston automaattisesti, kun Bash-ohjelman suoritus päättyy. Voit myös määrittää väliaikaisen tiedoston sijainnin ja sudota-ominaisuuden `mktemp`-komennon avulla.
+Tilapäisten tiedostojen luominen tapahtuu käyttämällä Unix-järjestelmien `tempnam()`-funktiota. Tämä funktio luo uniikin tiedostonimen ja palauttaa sen käyttäjälle. Bash käyttää tätä funktiota `mktemp`-komentonsa kautta.
 
-Jos haluat syvempää tietoa väliaikaisista tiedostoista Bash-ohjelmoinnissa, suosittelemme lukemaan Bashin [virallisen dokumentaation](https://www.gnu.org/software/bash/manual/html_node/Temporary-Files.html) aiheesta.
+Meidän pitää myös muistaa, että vaikka tilapäinen tiedosto poistetaan automaattisesti Bash-ohjelman päätyttyä, se ei takaa tiedoston välitöntä poistamista. Tämä tarkoittaa, että meidän pitää huolehtia tarvittaessa manuaalisesti tilapäisten tiedostojen poistamisesta.
 
-## Katso myös
+# Katso myös
 
-- [How to Use Temporary Files in a Bash Script](https://linuxize.com/post/bash-temporary-files/) (englanniksi)
-- [Bash-historian ja tilapäisten tiedostojen tehokas käyttö](https://opensource.com/article/18/5/bash-tricks-history-processes) (englanniksi)
-- [Bash-skriptien perusteet](https://www.shell-tips.com/2006/06/23/bash-traps/) (englanniksi)
+- [Linux Foundationin Bash Scripting Guide](https://linuxcommand.org/lc3_wss0010.php)
+- [Bash-ohjelmoinnin perusteet](https://www.katacoda.com/courses/bash/introduction)
+- [Tilapäisten tiedostojen lopullinen poisto](https://linuxcommando.blogspot.com/2008/06/clean-up-temporary-files-in-linux.html)

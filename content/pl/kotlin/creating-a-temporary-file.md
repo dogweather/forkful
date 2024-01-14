@@ -1,49 +1,36 @@
 ---
 title:    "Kotlin: Tworzenie pliku tymczasowego"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego tworzenie pliku tymczasowego jest ważne?
+## Dlaczego
+Tworzenie tymczasowych plików jest nieodłączną częścią wielu aplikacji i programów w Kotlinie. Czy chcesz zapisać tymczasowe dane lub pobierać dane z zewnętrznych źródeł, tymczasowe pliki mogą być bardzo użyteczne w tym procesie.
 
-Tworzenie plików tymczasowych jest niezbędne w aplikacjach, które wymagają tymczasowego przechowywania danych. Jest to szczególnie przydatne w przypadku aplikacji internetowych, które wymagają przechowywania tymczasowych plików, takich jak wygenerowane treści, logi czy pliki tymczasowe zapisane przez użytkowników.
+## Jak to zrobić
+Kotlin ma wbudowaną funkcjonalność do tworzenia tymczasowych plików za pomocą `createTempFile()` metody. Możesz wybrać swoją własną ścieżkę oraz prefiks i sufiks dla tymczasowego pliku, aby lepiej go zidentyfikować. Oto przykładowy kod:
 
-## Jak to zrobić?
-
-```kotlin
-import java.io.File
-import java.io.IOException
-
-fun main() {
-    try {
-        // tworzenie nowego pliku tymczasowego
-        val tempFile = File.createTempFile("sample", ".txt")
-        // zapisywanie tekstu do pliku
-        tempFile.writeText("To jest przykładowy tekst.")
-        // odczytanie tekstu z pliku
-        println(tempFile.readText())
-        // usuwanie pliku tymczasowego
-        tempFile.delete()
-    } catch (e: IOException) {
-        e.printStackTrace()
-    }
-}
-```
-```
-To jest przykładowy tekst.
+```Kotlin
+val tempFile = createTempFile(prefix = "temp", suffix = ".txt")
+tempFile.writeText("To jest przykładowy zawartość tymczasowego pliku")
+println(tempFile.absolutePath)
 ```
 
-## Dogłębna analiza
+Jeśli uruchomisz ten kod, zobaczysz następujący wynik:
 
-Tworzenie pliku tymczasowego w aplikacji wymaga kilku kroków. Po pierwsze, należy zaimportować klasę `File` z pakietu `java.io`. Następnie, używając metody `createTempFile`, możemy utworzyć nowy plik tymczasowy. Argumentami metody są nazwa pliku oraz rozszerzenie, które chcemy nadać plikowi. 
+```Kotlin
+C:\Users\User\AppData\Local\Temp\temp123456789.txt
+```
 
-Aby zapisać dane do pliku, możemy użyć metody `writeText`, która przyjmuje jako argument tekst, który chcemy zapisać. Warto również pamiętać, że możemy również użyć innych metod z klasy `File`, takich jak `appendText` czy `writeBytes`.
+Tymczasowy plik zostanie automatycznie usunięty, gdy program zakończy działanie lub gdy odwołasz się do `delete()` metody na obiekcie `tempFile`.
 
-Po zapisaniu danych, możemy odczytać je za pomocą metody `readText`. W przypadku większych plików, lepiej byłoby użyć metody `bufferedReader().useLines`, aby uniknąć problemów z wydajnością.
+## Głębszy wgląd
+Podczas tworzenia tymczasowego pliku możesz również zdefiniować katalog, w którym chcesz go utworzyć, za pomocą opcjonalnego parametru `directory`. Jeśli nie podasz żadnej wartości, plik zostanie stworzony w domyślnym folderze systemowym dla tymczasowych plików.
 
-Na koniec, nie zapomnijmy o usunięciu pliku tymczasowego za pomocą metody `delete`. Dobrą praktyką jest umieszczenie tej linii kodu w bloku `finally`, aby upewnić się, że plik zostanie usunięty niezależnie od tego, czy operacje na nim się powiodły czy nie.
+Podczas pracy z tymczasowymi plikami musisz pamiętać, że informacje w nich zawarte mogą zostać utracone, dlatego nie są zalecane do długotrwałego przechowywania danych.
 
-## Zobacz również
-- [Dokumentacja klasy File w języku Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Tworzenie plików w języku Kotlin](https://kotlinlang.org/docs/basics-input-output.html#creating-and-writing-to-a-file)
+## Zobacz też
+- Dokumentacja oficjalna Kotlina: https://kotlinlang.org/docs/reference/io-files.html#working-with-temporary-files
+- Inne przydatne funkcje Kotlina: https://kotlinlang.org/docs/reference/idioms.html

@@ -1,74 +1,56 @@
 ---
-title:    "Python: Concatenando strings"
+title:    "Python: Unindo cadeias de caracteres"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que As Strings são Importantes na Programação Python?
+## Por que concatenar strings?
 
-Python é uma das linguagens de programação mais populares do mundo. Uma das razões para isso é a capacidade de trabalhar com strings, ou cadeias de caracteres. Strings são sequências de letras, números e símbolos que nos permitem armazenar e manipular texto. Mas por que exatamente isso é importante? Vamos descobrir!
+Concatenar strings é uma técnica muito útil em programação, que permite unir diferentes pedaços de texto em uma única string. Isso pode ser útil para criar mensagens mais complexas, formatar textos de maneira específica ou até mesmo para criar URLs dinâmicas. 
 
-##Como Concatenar Strings em Python
+## Como fazer?
 
-Concatenar strings é o processo de unir duas ou mais strings para formar uma única string. Em outras palavras, é um método de combinar diferentes textos em um só. Em Python, podemos fazer isso usando o operador de adição (+). Vamos ver um exemplo:
+Para concatenar strings em Python, podemos utilizar o operador de adição `+` ou o método `format()`. Veja abaixo dois exemplos de código, utilizando ambos os métodos:
 
 ```Python
-# Definindo as strings
-nome = "João"
+# Utilizando o operador de adição
+nome = "Maria"
 sobrenome = "Silva"
+print(nome + " " + sobrenome)
 
-# Concatenando as strings
-nome_completo = nome + " " + sobrenome
-
-# Imprimindo o resultado
-print(nome_completo)
+# Utilizando o método format()
+idade = 26
+cidade = "São Paulo"
+print("Eu me chamo {} e tenho {} anos. Sou de {}.".format(nome, idade, cidade))
 ```
-Output: João Silva
 
-Neste exemplo, primeiro definimos duas strings, uma com o nome e outra com o sobrenome. Em seguida, as concatenamos utilizando o operador de adição e adicionamos um espaço entre elas para que o nome e o sobrenome apareçam separados. Por fim, imprimimos o resultado na tela.
+O código acima produzirá a seguinte saída:
 
-Além do operador de adição, também podemos usar o método `format()` para concatenar strings. Vamos dar uma olhada em outro exemplo:
+```
+Maria Silva
+Eu me chamo Maria e tenho 26 anos. Sou de São Paulo.
+```
+
+## Aprofundando
+
+Além desses dois métodos mais comuns, também podemos utilizar o método `.join()` para concatenar strings em Python. Ele funciona de maneira similar ao método `format()`, mas permite unir uma lista de strings utilizando um separador definido por nós. Veja o exemplo abaixo:
 
 ```Python
-# Definindo as strings
-carro = "Ferrari"
-cor = "vermelha"
-
-# Concatenando as strings e adicionando algumas palavras extras
-frase = "Eu tenho uma {} {}.".format(cor, carro)
-
-# Imprimindo o resultado
-print(frase)
+numeros = [1, 2, 3, 4, 5]
+print(", ".join(str(num) for num in numeros))
 ```
-Output: Eu tenho uma vermelha Ferrari.
 
-Neste exemplo, usamos o método `format()` para inserir as variáveis `cor` e `carro` na string `frase` e imprimir o resultado.
+A saída desse código será:
 
-##Aprofundando-se na Concatenação de Strings
-
-Concatenar strings é uma ferramenta importante em Python, pois nos permite criar novas strings a partir de outras já existentes. Além de poder unir apenas duas strings, também podemos concatenar várias strings de uma vez. Podemos também usar loops para automatizar o processo de concatenar várias strings e tornar nosso código mais eficiente e escalável.
-
-Outra técnica útil é utilizar a função `join()`. Ela nos permite concatenar uma lista de strings utilizando um separador de nossa escolha. Vamos ver um exemplo:
-
-```Python
-# Definindo uma lista de strings
-nomes = ["Ana", "Maria", "João"]
-
-# Concatenando as strings com o separador "-"
-nome_completo = "-".join(nomes)
-
-# Imprimindo o resultado
-print(nome_completo)
 ```
-Output: Ana-Maria-João
+1, 2, 3, 4, 5
+```
 
-Neste exemplo, utilizamos a função `join()` para concatenar a lista `nomes` utilizando o separador "-". Isso nos permite ter mais controle sobre como queremos que as strings sejam unidas.
+Note que utilizamos o método `str()` para converter os números da lista em strings antes de concatená-los.
 
-Finalmente, é importante mencionar que podemos concatenar não apenas strings, mas também outros tipos de dados, como números. Mas tenha cuidado, pois isso pode resultar em erros ou resultados inesperados.
+## Veja também
 
-##Veja também
-
-- [Documentação oficial do Python sobre strings](https://docs.python.org/pt-br/3.9/library/string.html)
+- [Documentação oficial do Python sobre strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 - [Tutorial sobre strings em Python](https://realpython.com/python-strings/)
-- [Vídeo aula sobre concatenar strings em Python](https://www.youtube.com/watch?v=B312nS4nmXU)

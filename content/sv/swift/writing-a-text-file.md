@@ -1,37 +1,42 @@
 ---
 title:    "Swift: Skriva en textfil"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att skriva en textfil är en grundläggande färdighet inom Swift-programmering. Det kan vara användbart för att spara data, skapa mallar eller bara för att organisera din kod. Genom att lära dig hur man skriver en textfil kan du öka din effektivitet och förbättra din kod.
+Att skriva en textfil är ofta en grundläggande del av programmering eftersom det ger möjlighet att spara data på ett läsbart sätt. Det är en viktig färdighet som alla programmerare behöver för att kunna hantera data effektivt.
 
-# Hur man skriver en textfil
+## Så här gör du
 
-Att skriva en textfil i Swift är ganska enkelt med hjälp av några inbyggda metoder och funktioner. För att börja, skapa en ny textfil med filändelsen ".txt". Sedan kan du använda nedanstående kod för att skriva in text i filen:
+För att skriva en textfil i Swift behöver du bara följa några enkla steg. Först måste du skapa en instans av "FileManager" som hjälper dig att hantera filer och mappar. Sedan kan du ange sökvägen för din textfil och öppna den för skrivning. Du kan sedan fylla filen med önskad text genom att använda funktionen "write", och slutligen stänga filen när du är färdig. Här är ett enkelt exempel:
 
 ```Swift
-// Öppna filen för skrivning
-let textFile = "mittTestdokument.txt"
-let fileUrl = URL(fileURLWithPath: textFile)
-do {
-    let text = "Detta är en testtext."
-    try text.write(to: fileUrl, atomically: false, encoding: .utf8)
-} catch {
-    print("Kunde inte skriva till filen: \(error)")
+let fileManager = FileManager.default
+let textFilePath = "/Users/User/Desktop/myTextFile.txt"
+if fileManager.createFile(atPath: textFilePath, contents: nil, attributes: nil) {
+    let text = "Detta är en text som sparas i min textfil."
+    do {
+        try text.write(toFile: textFilePath, atomically: false, encoding: .utf8)
+        print("Texten sparades i filen.")
+    } catch {
+        print(error)
+    }
 }
 ```
 
-Om allt går som det ska, så borde nu en textfil skapats med den angivna texten. För att lägga till ytterligare text, behöver du bara upprepa koden och ändra det som står inom citattecknen.
+När du kör koden ovan kommer en fil som heter "myTextFile.txt" att skapas på skrivbordet och innehålla den angivna texten.
 
-# Djupdykning
+## Fördjupning
 
-Vad händer egentligen bakom kulisserna när vi skriver en textfil i Swift? Först skapar vi en URL som pekar på filens plats, sedan använder vi metoden `write` för att skriva in texten med hjälp av UTF-8-kodning. Detta kan också göras med hjälp av andra kodningsmetoder som t.ex. ASCII eller UTF-16. Om du vill lära dig mer om olika kodningar och deras användning, kan du utforska dokumentationen för `String.Encoding` i Swift.
+Att skriva en textfil i Swift ger också möjligheten att format och strukturera din data på ett specifikt sätt. Genom att använda funktionen "append" kan du lägga till text till en befintlig fil istället för att skriva över den. Du kan också använda olika teckenuppsättningar för att läsa och skriva filer, till exempel ".utf8" för vanlig text eller ".utf16" för Unicode-tecken.
 
-# Se även
+Dessutom finns det flera sätt att hantera felhantering och säkerhetsåtgärder när du skriver filer. Du kan till exempel använda "FileManager.default.isWritableFile(atPath:)" för att kontrollera om en fil är skrivbar innan du försöker att öppna den för skrivning.
 
-* [Swift – Dokumentation för textfilhantering](https://developer.apple.com/documentation/foundation/filemanager)
-* [Titanium-utveckling: Hur man skriver textfiler i Swift](https://www.titaniumdevelopment.com/how-to-write-text-files-in-swift/)
+## Se även
+
+- [Swift FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Writing Text to a File in Swift](https://www.techotopia.com/index.php/Writing_Text_to_a_File_in_Swift)

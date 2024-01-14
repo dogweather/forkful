@@ -1,42 +1,52 @@
 ---
 title:    "Elm: Skriva tester"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Att skriva tester är ett viktigt steg i utvecklingen av Elm-program. Tester hjälper till att säkerställa att koden fungerar som den ska och att eventuella buggar hittas och åtgärdas innan de når produktion.
 
-Att skriva tester är en viktig del av utvecklingsprocessen, oavsett vilket programmeringsspråk man använder. Testning hjälper till att säkerställa att vår kod fungerar enligt förväntningarna och minskar risken för buggar i produktion. Följ dessa steg för att lära dig hur man skriver tester i Elm!
-
-## Hur man gör det
-
-För att kunna skriva tester i Elm behöver du först lägga till testning som en dependency i ditt projekt. Detta gör du genom att lägga till "elm-community/elm-test" i din "elm.json" fil. Nu kan du importera "Test" modulen i dina testfiler och använda funktioner som "test" och "expect" för att skapa dina tester.
-
-Nedan finns ett exempel på hur du kan testa en funktion som adderar två tal:
-
-```Elm
-import Test exposing (..)
-
-add x y =
-    x + y
-
-test "testar adderingsfunktion" <|
-    \() ->
-        expect (add 2 3) |> toEqual 5
+# Hur man gör det
+För att skriva tester i Elm behöver du använda biblioteket Elm-test. Först lägger du till detta i din `elm.json` fil under "dependencies" sektionen.
+```
+elm install elm-explainer/elm-test -y
 ```
 
-Outputen av denna testfil skulle vara "Passed: 1" om funktionen fungerade som förväntat.
+Sedan skapar du en ny fil för dina tester, till exempel `MyTests.elm`, och importerar biblioteket. Därefter kan du skriva dina tester med hjälp av funktioner som `expectEqual` och `test` inuti ett `describe` block.
+```
+import Expect exposing (expectEqual)
+import Test exposing (describe, test)
 
-## Djupdykning
+myAdder : Int -> Int -> Int
+myAdder x y =
+    x + y
 
-Elm-test har många funktioner för att underlätta testning. Du kan till exempel använda "describe" för att gruppera dina tester och "fuzz" för att generera slumpmässiga värden för att testa din kod med. Det är också viktigt att testa både positiva och negativa scenarier för att säkerställa att din kod hanterar alla situationer korrekt.
+describe "Testing My Adder function" 
+    [ 
+        test "Adding 2 and 3 should equal 5" 
+            (expectEqual (myAdder 2 3) 5), 
+        test "Adding 5 and 7 should equal 12" 
+            (expectEqual (myAdder 5 7) 12) 
+    ]
+```
 
-Det är också bra att integrera testning i din Continuous Integration (CI) process för att säkerställa att alla tester körs automatiskt när du pushar till din kodbas. Detta hjälper till att snabbt upptäcka och åtgärda eventuella buggar.
+Du kan också använda `fuzz` för att generera slumpmässiga värden att testa din kod med.
+```
+fuzz (tuple int int) "Testar MyAdder med slumpmässiga nummer" 
+    (\(x, y) -> expectEqual (myAdder x y) (x + y))
+```
 
-## Se även
+När du är nöjd med dina tester kan du köra dem genom att köra kommandot `elm-test` i Terminalen. Om alla tester passerar, kommer du att se ett grönt meddelande, annars kommer du att få en lista över testerna som misslyckades och vad det förväntade värdet var.
 
-- [Elm-test dokumentation](https://package.elm-lang.org/packages/elm-community/elm-test/latest/)
-- [Elm-test exempelprojekt](https://github.com/elm-community/elm-test/tree/1.4.3/examples)
-- [Elm-test tutorial video](https://www.youtube.com/watch?v=lN7gu5NnTxg)
-- [Varför testa koden?](https://medium.com/@pyatyispyatilande/why-test-your-code-e89b50a65b0e) (på ryska)
+# Djupdykning
+När du skriver tester är det viktigt att täcka så många olika fall som möjligt. Det är också en bra idé att regelbundet gå tillbaka och uppdatera eller lägga till nya tester när koden har ändrats. Detta hjälper dig att undvika eventuella buggar och säkerställa att din kod fungerar som det är tänkt.
+
+Ett annat tips är att använda `expectFail` för att testa felaktiga värden eller beteenden. Detta hjälper dig att fånga och åtgärda fel innan de påverkar din produktionskod.
+
+# Se också
+- [Elm-test dokumentation](https://package.elm-lang.org/packages/elm-explainer/elm-test/latest/)
+- [En enkel guide till testning i Elm](https://dev.to/rtfeldman/a-beginner-s-guide-to-testing-in-elm-3oij)
+- [Exempel på testning i Elm](https://medium.com/elm-shorts/test-yet-another-comma-separated-lib-a722b2f84a5c)

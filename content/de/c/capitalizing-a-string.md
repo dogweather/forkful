@@ -1,54 +1,84 @@
 ---
-title:    "C: String in Großbuchstaben umwandeln"
+title:    "C: Einen String großschreiben"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Verschachteln von Strings ist eine grundlegende Aufgabe in der Programmierung. Es kann hilfreich sein, um sicherzustellen, dass Benutzereingaben oder Daten in einer bestimmten Form vorliegen und leichter verarbeitet werden können. Insbesondere in der Programmiersprache C ist dies nützlich, da sie keine integrierten Funktionen zur String-Manipulation hat.
+In dieser kurzen Blog-Post geht es um das Kapitalisieren von Strings in der Programmiersprache C. Wir werden die verschiedenen Methoden und Techniken betrachten, um dies zu erreichen.
 
-## So geht's
+# Wie
 
-Um eine Zeichenfolge in C zu kapitalisieren, muss jeder einzelne Buchstabe in einen Großbuchstaben umgewandelt werden. Dazu kann die Funktion `toupper()` aus der Bibliothek `<ctype.h>` verwendet werden. Im folgenden Beispiel wird eine Benutzereingabe eingelesen und dann in Großbuchstaben umgewandelt:
+Die einfachste Methode, um eine Zeichenfolge in Großbuchstaben zu konvertieren, besteht darin, die Funktion `toupper` aus der Standardbibliothek `ctype.h` zu verwenden. Diese Funktion nimmt einen einzelnen Zeichenwert als Argument und gibt den Großbuchstaben davon zurück.
+
+Beispiel:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
 int main() {
-    // Benutzereingabe einlesen
-    char input[50];
-    printf("Gib einen Text ein: ");
-    scanf("%s", input);
+    char str[] = "Hallo";
+    printf("Ursprünglicher String: %s\n", str);
 
-    // Schleife durchläuft den eingegebenen Text
-    for (int i = 0; input[i] != '\0'; i++) {
-        // Wandle jeden Buchstaben in einen Großbuchstaben um
-        input[i] = toupper(input[i]);
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
     }
 
-    // Ausgabe des kapitalisierten Strings
-    printf("Deine Eingabe in Großbuchstaben: %s", input);
+    printf("Kapitalisierter String: %s\n", str);
 
     return 0;
 }
 ```
 
-Beispiel-Ausgabe:
+Ausgabe:
+
 ```
-Gib einen Text ein: Hallo Welt
-Deine Eingabe in Großbuchstaben: HALLO WELT
+Ursprünglicher String: Hallo
+Kapitalisierter String: HALLO
 ```
 
-## Tiefer Einblick
+Eine andere Möglichkeit ist die Verwendung der Funktion `sprintf` aus der Standardbibliothek `stdio.h`. Diese Funktion kann einen formatierten String in eine Variable schreiben. Durch Verwendung des `%s`-Platzhalters und der Funktion `toupper` können wir die gesamte Zeichenfolge in Großbuchstaben konvertieren.
 
-In der C-Standardbibliothek sind viele nützliche Funktionen für die Zeichen- und String-Manipulation enthalten. `toupper()` ist eine davon und wird verwendet, um einen einzelnen Buchstaben in einen Großbuchstaben umzuwandeln. Diese Funktion ist in der Header-Datei `<ctype.h>` deklariert und nimmt einen `int` als Argument, der die ASCII-Nummer eines Zeichens darstellt. Sie gibt dann eine `int` zurück, die den entsprechenden Großbuchstaben repräsentiert.
+Beispiel:
 
-Es ist auch möglich, eigene Funktionen zu schreiben, die Zeichenfolgen in Großbuchstaben umwandeln. Dies kann durch eine einfache Schleife und die Verwendung von arithmetischen Operatoren erreicht werden. Zum Beispiel kann die ASCII-Nummer des kleinen Buchstabens 'a' (`97`) um 32 erhöht werden, um die entsprechende Großbuchstaben-Nummer `65` zu erhalten.
+```C
+#include <stdio.h>
+#include <ctype.h>
 
-## Siehe auch
+int main() {
+    char str[] = "Hallo";
+    printf("Ursprünglicher String: %s\n", str);
 
-- [String-Manipulation in C – Das Wichtigste auf einen Blick](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Übersicht der Funktionen in <ctype.h>](https://en.cppreference.com/w/c/string/byte/toupper)
+    sprintf(str, "%s", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
+    }
+
+    printf("Kapitalisierter String: %s\n", str);
+
+    return 0;
+}
+```
+
+Ausgabe:
+
+```
+Ursprünglicher String: Hallo
+Kapitalisierter String: HALLO
+```
+
+# Deep Dive
+
+Es gibt auch andere Methoden und Bibliotheken, um Strings in C zu kapitalisieren. Eine davon ist `strlwr` aus der Bibliothek `string.h`, die die Zeichenfolge in Kleinbuchstaben konvertiert, und anschließend die Funktion `toupper` verwendet, um sie in Großbuchstaben zu konvertieren.
+
+Es ist auch wichtig zu beachten, dass bei der Verwendung von `toupper` nur Standard-ASCII-Zeichen konvertiert werden können. Wenn die Zeichenkodierung UTF-8 verwendet wird, sind spezielle Funktionen wie `utf8_toupper` aus der Bibliothek `utf8proc.h` erforderlich, um Zeichen mit Akzenten oder anderer Diakritikums in Großbuchstaben umzuwandeln.
+
+# Siehe auch
+
+- [Tolower and Toupper in C](https://www.geeksforgeeks.org/tolower-toupper-c/)
+- [Convert string to uppercase in C](https://www.includehelp.com/c-programs/convert-string-to-upper-case-c-programming-string-toupper-function.aspx)
+- [UTF-8 Processing Library](https://www.npmjs.com/package/utf8proc)

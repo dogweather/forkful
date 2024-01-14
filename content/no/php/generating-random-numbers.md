@@ -1,58 +1,40 @@
 ---
 title:    "PHP: Generering av tilfeldige tall"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Dette kan være nyttig for å lage spill, simuleringer, eller for kryptering av data. Å forstå hvordan man kan generere tilfeldige tall i PHP kan være en verdifull ferdighet å ha for enhver programmerer.
 
-## Hvordan 
-Generering av tilfeldige tall i PHP kan enkelt gjøres ved hjelp av funksjonen `rand()`. Denne funksjonen tar to argumenter, hvor det første angir minimumsverdien og det andre angir maksimumsverdien, for å generere et tall innenfor det gitt intervallet. For eksempel, hvis vi ønsker å generere et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
+Mange programmerere kan føle at bruk av tilfeldige tall er unødvendig, men det finnes faktisk flere grunner til å inkludere denne funksjonen i koden din. Først og fremst kan tilfeldige tall brukes til å generere ulike scenarier og testing av edge-cases. Dette kan være nyttig når du ønsker å teste hvordan koden din vil oppføre seg i ulike situasjoner. I tillegg kan tilfeldige tall brukes til å skape en følelse av tilfeldighet i et spill eller en annen applikasjon.
 
-```
-<?php
-echo rand(1, 10); //output: et tilfeldig tall mellom 1 og 10
-?>
-```
+## Slik gjør du det
 
-For å generere flere tilfeldige tall, kan vi bruke en løkke og lagre tallene i en array for enkel tilgang senere.
+Det er flere måter å generere tilfeldige tall i PHP. En enkel måte å gjøre det på er ved å bruke funksjonen `rand()`, som tar to argumenter som definerer området hvor de tilfeldige tallene skal genereres fra. For eksempel, for å generere et tilfeldig tall mellom 1 og 10 kan du bruke følgende kode:
 
-```
-<?php
-$tilfeldige_tall = array(); //array for å lagre tilfeldige tall
-for ($i=0; $i<10; $i++) { //genererer 10 tall
-    $tilfeldige_tall[] = rand(1, 100); //hvert tall legges til i arrayen
-}
-print_r($tilfeldige_tall); //printer ut alle tall i arrayen
-?>
+```PHP
+$tilfeldig_tall = rand(1, 10);
+echo $tilfeldig_tall; // Utskrift: et tilfeldig tall mellom 1 og 10
 ```
 
-Dette vil gi en output som ligner på følgende:
+For å generere et tilfeldig desimaltall, kan du bruke funksjonen `mt_rand()`, som også tar to argumenter, men har et større område for tilfeldige tall.
 
-```
-Array
-(
-    [0] => 46
-    [1] => 21
-    [2] => 93
-    [3] => 5
-    [4] => 89
-    [5] => 3
-    [6] => 64
-    [7] => 77
-    [8] => 19
-    [9] => 11
-)
+```PHP
+$tilfeldig_desimal = mt_rand(1, 100) / 10;
+echo $tilfeldig_desimal; // Utskrift: et tilfeldig desimaltall mellom 0.1 og 10
 ```
 
-## Dypdykk
-Men hva skjer egentlig bak kulissene når vi genererer tilfeldige tall i PHP? I virkeligheten bruker PHP en algoritme som bruker en såkalt "seed" (frø) for å produsere et tilfeldig tall. Denne seeden er vanligvis tiden på klokken når funksjonen blir kalt, og det er derfor vi får forskjellige tall hver gang vi kaller på `rand()`.
+Det finnes også andre funksjoner for å generere tilfeldige tall i PHP, som `random_int()` og `random_bytes()`, som er mer sikre og anbefales for kryptografiske formål.
 
-I tillegg til `rand()`, har PHP også en mer avansert funksjon for generering av tilfeldige tall - `mt_rand()`. Denne funksjonen er kjent for å gi jevnere distribusjon av tall og er derfor å foretrekke i situasjoner hvor nøyaktigheten til tallene er viktig.
+## Dykk dypere
 
-## Se Også
-- [PHP rand() function documentation](https://www.php.net/manual/en/function.rand.php)
-- [PHP mt_rand() function documentation](https://www.php.net/manual/en/function.mt-rand.php)
-- [Generating Random Numbers in PHP](https://www.geeksforgeeks.org/generating-random-numbers-in-php/)
+Det er viktig å merke seg at funksjonene `rand()` og `mt_rand()` ikke er helt tilfeldige og kan føre til forutsigbare resultater. For å unngå dette, er det viktig å bruke en tilfeldig startverdi før du genererer tilfeldige tall. I tillegg kan man også bruke funksjonen `srand()` for å sette en startverdi.
+
+Du kan også bruke funksjonen `shuffle()` for å tilfeldig omorganisere elementer i en array i en tilfeldig rekkefølge.
+
+## Se også
+
+- [PHPs offisielle dokumentasjon for tilfeldige tall](https://www.php.net/manual/en/function.rand.php)
+- [Tilfeldig tallgenerator fra random.org](https://www.random.org/)

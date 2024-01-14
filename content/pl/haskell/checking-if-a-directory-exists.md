@@ -1,39 +1,73 @@
 ---
-title:    "Haskell: Sprawdzanie czy istnieje katalog."
+title:    "Haskell: Sprawdzanie czy istnieje katalog"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Czemu
+## Dlaczego
 
-Sprawdzenie, czy katalog istnieje, jest ważnym aspektem programowania w języku Haskell. Pozwala nam to upewnić się, że nasz kod będzie działał poprawnie i nie będzie wywoływał błędów związanych z brakiem katalogu.
+Czasami w programowaniu niezbędne jest sprawdzenie, czy dany katalog istnieje. Może to być konieczne, na przykład przy tworzeniu nowych plików lub manipulowaniu już istniejącymi. W tym wpisie dowiesz się, jak w prosty sposób sprawdzić istnienie katalogu w języku Haskell.
 
 ## Jak to zrobić
 
-Aby sprawdzić, czy dany katalog istnieje, musimy użyć funkcji *doesDirectoryExist*, która jest dostępna w bibliotece standardowej *System.Directory*. Funkcja ta przyjmuje jako argument ścieżkę do katalogu i zwraca wartość typu *IO Bool*, która określa, czy dany katalog istnieje.
-
-Przykładowy kod wykorzystujący funkcję *doesDirectoryExist* może wyglądać następująco:
+Sprawdzenie, czy dany katalog istnieje, w Haskellu jest bardzo proste. Wystarczy skorzystać z funkcji `doesDirectoryExist` z modułu `System.Directory`. Poniżej znajduje się przykładowy kod, który sprawdzi istnienie katalogu o nazwie "test":
 
 ```Haskell
 import System.Directory
 
+main :: IO ()
 main = do
-    putStrLn "Podaj ścieżkę do katalogu:"
-    path <- getLine
-    directoryExists <- doesDirectoryExist path
-    if directoryExists
-        then putStrLn "Katalog istnieje."
-        else putStrLn "Katalog nie istnieje."
+    let directory = "test"
+    exists <- doesDirectoryExist directory
+    if exists
+        then putStrLn "Katalog istnieje!"
+        else putStrLn "Katalog nie istnieje!"
 ```
 
-Powyższy kod najpierw prosi użytkownika o podanie ścieżki do sprawdzenia, a następnie wykorzystuje funkcję *doesDirectoryExist*, aby ustalić, czy podany katalog istnieje. Na podstawie zwróconej wartości *IO Bool*, program wyświetli odpowiedni komunikat informujący o stanie katalogu.
+Po uruchomieniu tego kodu, w zależności od istnienia katalogu "test", otrzymamy odpowiednie wyjście:
 
-## Głębszy wgląd
+```
+Katalog istnieje!
+```
 
-Sprawdzanie, czy katalog istnieje, może być ważne w różnych sytuacjach. Może nam to pomóc uniknąć błędów związanych z nieistniejącym katalogiem lub wykonać odpowiednie działania w zależności od tego, czy katalog istnieje czy nie. Funkcja *doesDirectoryExist* również wykorzystuje wywołanie systemowe, aby przetestować istnienie katalogu, co może być przydatne przy działaniu na różnych systemach operacyjnych.
+lub
 
-## Zobacz także
+```
+Katalog nie istnieje!
+```
 
-* [Dokumentacja funkcji *doesDirectoryExist*](https://hackage.haskell.org/package/directory/docs/System-Directory-Internals.html#v:doesDirectoryExist)
-* [Inne funkcje dostępne w bibliotece *System.Directory*](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+W powyższym przykładzie zmienną `exists` przypisujemy wartość logiczną `True` lub `False` w zależności od istnienia katalogu. Następnie w prosty sposób możemy wypisać odpowiedni komunikat.
+
+## Deep Dive
+
+Sprawdzanie istnienia katalogu opiera się na wywołaniu systemowej funkcji `stat`, która zwraca informacje o danym pliku lub katalogu. W Haskellu, aby wywołać tę funkcję, wykorzystujemy moduł `System.Posix.Files`.
+
+Funkcja `doesDirectoryExist` jest w rzeczywistości pomocniczą funkcją, która wywołuje funkcję `getFileStatus` z modułu `System.Posix.Files`. Otrzymujemy w ten sposób obiekt `FileStatus`, który zawiera m.in. informację o typie pliku - czy jest to katalog, czy plik.
+
+Możemy również wykorzystać funkcję `getFileStatus` bezpośrednio, aby otrzymać informacje o dowolnym pliku lub katalogu. Na przykład:
+
+```Haskell
+import System.Posix.Files
+
+main :: IO ()
+main = do
+    fileStatus <- getFileStatus "test"
+    let isDirectory = isDirectory fileStatus
+    putStrLn $ "Czy plik 'test' jest katalogiem? " ++ show isDirectory
+```
+
+Po uruchomieniu tego kodu, otrzymamy następujące wyjście:
+
+```
+Czy plik 'test' jest katalogiem? True
+```
+
+Warto również wspomnieć, że funkcja `getFileStatus` działa tylko w systemach Unixowych, dlatego nie można jej wykorzystać w środowisku Windows.
+
+## Zobacz również
+
+- <https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html>
+- <https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html>
+- <https://stackoverflow.com/questions/32614799/check-if-a-file-is-a-directory-haskell>

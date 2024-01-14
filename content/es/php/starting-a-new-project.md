@@ -1,38 +1,49 @@
 ---
 title:    "PHP: Comenzando un nuevo proyecto"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué empezar un nuevo proyecto?
 
-En el mundo de la programación, la posibilidad de iniciar un nuevo proyecto siempre es emocionante. Ya sea que estés desarrollando una aplicación para tu empresa, creando un sitio web personal o simplemente explorando nuevas tecnologías, iniciar un nuevo proyecto puede ser una experiencia gratificante. En este artículo, hablaremos de por qué deberías considerar iniciar un nuevo proyecto y cómo puedes hacerlo de manera efectiva con PHP.
+Empezar un nuevo proyecto en PHP puede ser una forma emocionante de expandir tus habilidades de programación y crear algo nuevo y único. Además, puede ser una gran oportunidad de aprender nuevas técnicas y herramientas de desarrollo.
 
-## Cómo
+## Cómo hacerlo:
 
-Iniciar un nuevo proyecto con PHP es un proceso relativamente sencillo y lo primero que necesitas es tener un entorno de desarrollo en tu computadora. Puedes utilizar herramientas como XAMPP o WAMP para crear un servidor local o si prefieres una opción más liviana, puedes instalar PHP directamente en tu máquina. Una vez que tengas tu entorno de desarrollo listo, puedes comenzar a escribir tu código en un editor de texto o utilizar un IDE (Entorno de Desarrollo Integrado) que te facilite la programación con características como autocompletado de código y depuración.
+Para empezar un nuevo proyecto en PHP, simplemente debes seguir estos pasos:
 
-Una vez que tengas tu entorno de desarrollo listo, puedes comenzar a escribir código en PHP. Puedes utilizar el siguiente código de ejemplo para imprimir "¡Hola Mundo!" en la pantalla utilizando PHP:
+1. Instalar un entorno de desarrollo PHP en tu computadora.
+2. Familiarizarte con los conceptos básicos de PHP, como variables, bucles y funciones.
+3. Crear un archivo `.php` para escribir tu código.
+4. Utilizar las etiquetas de apertura y cierre `<?php` y `?>` para delimitar tu código.
+5. Guardar y ejecutar tu código para ver el resultado.
 
-```PHP
+```PHP 
+<!-- Ejemplo de código PHP -->
 <?php
-echo "¡Hola Mundo!";
+   // Definir una variable y asignarle un valor
+   $nombre = "María";
+   
+   // Imprimir el valor de la variable
+   echo "¡Hola " . $nombre . "!";
 ?>
 ```
 
-Al ejecutar este código en tu servidor local, deberías ver la frase "¡Hola Mundo!" impresa en la pantalla. ¡Felicidades! Has escrito tu primer programa en PHP.
+¡Felicitaciones! Acabas de escribir tu primer código en PHP. Ahora puedes seguir construyendo tu proyecto utilizando otras características y funcionalidades de PHP.
 
-## Excavación profunda
+## Profundizando:
 
-Ahora que has aprendido cómo iniciar un nuevo proyecto con PHP, es importante tener en cuenta algunos aspectos clave antes de comenzar. En primer lugar, es importante tener un objetivo claro en mente para tu proyecto. Esto te ayudará a tener una visión clara sobre qué quieres lograr y te mantendrá enfocado durante el proceso de desarrollo.
+Si quieres profundizar más en la creación de tu proyecto en PHP, aquí hay algunas cosas que puedes hacer:
 
-También es importante planificar y estructurar tu código adecuadamente. PHP es un lenguaje de programación muy versátil que te permite utilizar diferentes métodos y enfoques para resolver un problema, pero asegúrate de tener una estructura coherente en tu código para que sea fácil de entender y mantener en el futuro.
+- Aprender sobre estructuras de datos en PHP, como arrays y objetos.
+- Utilizar funciones predefinidas de PHP para realizar tareas comunes, como `strlen()` para obtener la longitud de una cadena.
+- Aprender a manejar errores y excepciones en tu código para asegurarte de que funcione correctamente.
+- Utilizar librerías y frameworks de PHP para ampliar las funcionalidades de tu proyecto.
 
-Finalmente, siempre es útil tener un grupo de apoyo o una comunidad a la que puedas recurrir para obtener ayuda o consejos durante el proceso de desarrollo. ¡No tengas miedo de pedir ayuda cuando la necesites!
+## Ver también:
 
-## Ver también
-
-- [PHP.net](https://www.php.net/) - Sitio oficial de PHP con documentación y recursos para aprender PHP.
-- [Codecademy](https://www.codecademy.com/learn/learn-php) - Curso interactivo en línea para aprender PHP desde cero.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/php) - Comunidad en línea donde puedes hacer preguntas y obtener respuestas sobre PHP.
+- [Documentación oficial de PHP](https://www.php.net/manual/es/)
+- [Curso básico de PHP en Platzi](https://platzi.com/clases/php/)
+- [Frameworks populares de PHP](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)

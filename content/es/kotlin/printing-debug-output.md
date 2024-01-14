@@ -1,55 +1,54 @@
 ---
-title:    "Kotlin: Imprimiendo salidas de depuración"
+title:    "Kotlin: Imprimiendo salida de depuración"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué imprimir mensajes de depuración es importante
-Imprimir mensajes de depuración es una forma útil de verificar si nuestro código está funcionando correctamente. Proporciona una visión interna de lo que está sucediendo detrás de escena y nos ayuda a identificar y corregir posibles errores en nuestro código.
+##¿Por qué imprimir la salida de depuración en Kotlin?
 
-## Cómo imprimir mensajes de depuración en Kotlin
-Para imprimir mensajes de depuración en Kotlin, podemos utilizar la función `print()` o `println()`. Estas funciones nos permiten imprimir valores y cadenas de texto en la consola. Veamos un ejemplo:
+Si eres un programador principiante o incluso si tienes experiencia en Kotlin, es común encontrarse con errores en tu código. A veces, estos errores pueden ser difíciles de encontrar y solucionar. Es por eso que imprimir la salida de depuración es una técnica útil para identificar y solucionar errores en tu código de una manera eficiente.
 
-```Kotlin
-fun main() {
-    var nombre = "Juan"
-    var edad = 30
-    print("Mi nombre es $nombre y tengo $edad años")
-}
-```
+##¿Cómo hacerlo?
 
-La salida de este código sería:
+Imprimir la salida de depuración en Kotlin es bastante sencillo. Puedes utilizar la función "println()" para imprimir en la consola cualquier valor o variable que quieras verificar. Por ejemplo:
 
 ```Kotlin
-Mi nombre es Juan y tengo 30 años
+var edad = 26
+println("Mi edad es: " + edad)
 ```
 
-Podemos ver que el valor de las variables `nombre` y `edad` se imprimen en la cadena de texto utilizando la interpolación de cadenas (`$`). Esto nos permite verificar si los valores son los esperados en un determinado punto del código.
+El resultado en la consola sería:
 
-También podemos utilizar la función `debug()` para imprimir mensajes de depuración en lugar de `print()` o `println()`. Esta función nos proporciona información adicional, como el nombre de la variable y su tipo. Veamos un ejemplo:
+```
+Mi edad es: 26
+```
+
+También puedes imprimir mensajes de depuración con formatos específicos utilizando la función "printf()" de la clase "System.out". Por ejemplo:
 
 ```Kotlin
-fun main() {
-    var salario = 1500
-    debug(salario)
-}
+var nombre = "Juan"
+var apellido = "Pérez"
+System.out.printf("Mi nombre es %s y mi apellido es %s", nombre, apellido)
 ```
 
-La salida de este código sería:
+El resultado en la consola sería:
 
-```Kotlin
-salario(int) = 1500
+```
+Mi nombre es Juan y mi apellido es Pérez
 ```
 
-Esto nos muestra claramente el tipo de la variable y su valor. Además, podemos utilizar `debug()` en expresiones más complejas para imprimir sus resultados.
+##Profundizando
 
-## Profundizando en la impresión de mensajes de depuración
-Además de simplemente imprimir valores y cadenas de texto, podemos usar mensajes de depuración para rastrear el flujo de nuestro código y detectar posibles errores. Al agregar mensajes de depuración en diferentes puntos de nuestro código, nos permite ver qué parte del código se ha ejecutado y en qué orden.
+Además de imprimir valores y variables, también puedes imprimir mensajes de depuración en diferentes puntos de tu código para seguir su ejecución y ver si se están cumpliendo las condiciones y operaciones que esperas. Esto puede ser muy útil para comprender cómo funciona tu código y detectar posibles errores.
 
-También podemos utilizar `debug()` para imprimir mensajes de error cuando algo no funciona como se espera en nuestro código. Al imprimir mensajes de error junto con información adicional, nos permite identificar y solucionar problemas de manera más eficiente.
+Otra técnica útil es utilizar la función "Log" de la biblioteca de Android para imprimir mensajes de depuración en dispositivos móviles. Esto es especialmente útil cuando estás desarrollando una aplicación para Android utilizando Kotlin.
 
-## Ver también
-- [Documentación de Kotlin: Print y Debug](https://kotlinlang.org/docs/tutorials/kotlin-for-py/print-debug-messages.html)
-- [Cómo usar mensajes de depuración en Kotlin](https://www.youtube.com/watch?v=rlLuT0lTM2I)
-- [Ejemplos prácticos de mensajes de depuración en Kotlin](https://www.marcusoft.net/2016/11/print-debug-on-kotlin.html)
+Recuerda que es importante no dejar mensajes de depuración en tu código una vez que hayas solucionado los errores, ya que pueden afectar el rendimiento de tu aplicación.
+
+##Ver también
+
+- [Documentación de Kotlin sobre salida de depuración](https://kotlinlang.org/docs/reference/control-flow.html#println-for-debugging)
+- [Tutorial de Kotlin para principiantes](https://developer.android.com/kotlin?hl=es)
+- [Preguntas frecuentes sobre Kotlin](https://kotlinlang.org/docs/reference/migrating-from-java.html#what-is-the-difference-between-kotlin-and-java)

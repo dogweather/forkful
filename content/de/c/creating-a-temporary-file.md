@@ -1,51 +1,51 @@
 ---
 title:    "C: Erstellen einer temporären Datei"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-In der Programmierung ist es oft notwendig, temporäre Dateien zu erstellen, um Daten zu speichern oder zu verarbeiten, die während der Laufzeit des Programms benötigt werden. Diese temporären Dateien werden normalerweise gelöscht, sobald das Programm beendet wird.
+# Warum
 
-## Wie man temporäre Dateien in C erstellt
+Das Erstellen von temporären Dateien ist eine häufige Aufgabe beim Programmieren in C. Es kann nützlich sein, um Daten zwischen verschiedenen Funktionen oder Programmen auszutauschen. Außerdem können temporäre Dateien verwendet werden, um vorübergehend große Mengen an Daten zu speichern, ohne den Speicher des Computers zu belasten.
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
+# Wie man eine temporäre Datei erstellt
 
-int main() {
-   // Erstellt eine temporäre Datei mit dem Präfix "temp"
-   // und speichert den Dateinamen in der Variablen "tempfile"
-   char tempfile[] = "tempXXXXXX";
-   FILE *fp = mkstemp(tempfile);
+Um eine temporäre Datei in C zu erstellen, müssen wir drei wichtige Schritte durchführen: Erstellen, Öffnen und Schließen der Datei.
 
-   if (fp == NULL) {
-      printf("Fehler beim Erstellen der temporären Datei!");
-      exit(1);
-   }else{
-      printf("Temporäre Datei '%s' erfolgreich erstellt.", tempfile);
-   }
-
-   // Schreibt etwas in die temporäre Datei
-   fputs("Dies ist ein Text in der temporären Datei.", fp);
-
-   // Schließt die Datei und löscht sie
-   fclose(fp);
-   remove(tempfile);
-
-   return 0;
+```C 
+// Schritt 1: Datei erstellen
+FILE *file = tmpfile();
+if (file == NULL) {
+    printf("Fehler beim Erstellen der Datei!");
+    exit(1);
 }
+
+// Schritt 2: Datei öffnen
+int file_des = fileno(file); // konvertiert FILE-Pointer in Dateideskriptor
+FILE *fp = fdopen(file_des, "w"); // Datei im Schreibmodus öffnen
+
+// Schritt 3: Daten in die Datei schreiben
+fprintf(fp, "Hallo, Welt!");
+
+// Datei schließen
+fclose(fp);
 ```
 
-Die oben gezeigte Beispielcode erstellt eine temporäre Datei mit dem Präfix "temp" und einem zufällig generierten Suffix. Der Dateiname wird dann in der Variablen "tempfile" gespeichert. Mit der Funktion `mkstemp()` wird die Datei erstellt und ein Dateideskriptor wird zurückgegeben. Wenn ein Fehler auftritt, wird dies überprüft und das Programm beendet. Ansonsten wird der Dateiname ausgegeben und ein Beispieltext in die temporäre Datei geschrieben. Zum Schluss wird die Datei geschlossen und mit der Funktion `remove()` gelöscht.
+Die `tmpfile()`-Funktion erstellt eine temporäre Datei im System-Temp-Verzeichnis und gibt einen FILE-Pointer zurück. Wir prüfen dann, ob die Datei erfolgreich erstellt wurde und öffnen sie im Schreibmodus. Mithilfe von `fprintf()` können wir Daten in die Datei schreiben. Zum Schluss wird die Datei geschlossen, um den Speicher freizugeben.
 
-## Tiefer Einblick
-Es gibt noch weitere Möglichkeiten, temporäre Dateien in C zu erstellen. Eine andere Möglichkeit ist die Verwendung der Funktion `tmpnam()`, die einen zufälligen, noch nicht existierenden Dateinamen zurückgibt. Jedoch ist diese Funktion nicht sehr sicher in der Verwendung, da es möglich ist, dass ein anderer Prozess bereits dieselbe Datei erstellt hat.
+# Tiefere Einblicke
 
-Eine weitere Möglichkeit ist die Verwendung der Funktion `tmpfile()`, die einen Dateideskriptor einer temporären Datei zurückgibt. Der Nachteil ist, dass diese Datei im Arbeitsspeicher erstellt wird und keine Möglichkeit besteht, sie auf der Festplatte zu speichern.
+Das Erstellen einer temporären Datei ist in der Regel eine effiziente Methode, um Daten temporär zu speichern. Allerdings gibt es einige Punkte zu beachten:
 
-## Siehe auch
-- [Dokumentation zu mkstemp()](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
-- [Beispiele für die Verwendung von temporären Dateien in C](https://www.geeksforgeeks.org/temporary-file-creation-in-c/)
-- [Weitere Informationen zu temporären Dateien in C](https://c-for-dummies.com/blog/?p=3131)
+- Temporäre Dateien werden automatisch gelöscht, sobald das Programm beendet wird. Daher sollten sie nicht verwendet werden, um permanent Daten zu speichern.
+
+- Temporäre Dateien können von anderen Programmen oder Benutzern gelesen werden, da sie im System-Temp-Verzeichnis gespeichert werden. Um dies zu verhindern, sollten wir `mkstemp()` verwenden, um eine temporäre Datei mit zugriffsbeschränkten Berechtigungen zu erstellen.
+
+- Das Erstellen von temporären Dateien kann auf einigen Systemen, insbesondere in eingebetteten Systemen, nicht unterstützt werden. In diesen Fällen sollten wir alternative Methoden zur Speicherung temporärer Daten wie dynamische Speicherzuweisung verwenden.
+
+# Siehe auch
+
+- [C - Dateien und Streams](https://www.tutorialspoint.com/c_standard_library/c_function_freopen.htm)
+- [mkstemp() Funktion](https://www.man7.org/linux/man-pages/man3/tmpnam.3.html)

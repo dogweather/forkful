@@ -1,28 +1,78 @@
 ---
 title:    "Java: 文字列の抽出"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-サブストリングを抽出することのメリットをご存知ですか？ それは、文字列から必要な情報だけを取り出すことができる点にあります。例えば、あるテキストに含まれる特定の単語や文字列を見つけたい場合、サブストリングを抽出することでその情報を簡単に取得できます。
+
+文字列の一部を抽出することは、プログラミングにおいて非常に便利な機能です。例えば、ある文字列から特定の文字を検索したり、文字列を分割したりする際に使うことができます。また、プレゼンテーションやデータのフォーマットを整える際にも役立ちます。この記事では、Javaで文字列を抽出する方法について説明します。
 
 ## 方法
-Javaでサブストリングを抽出する方法をご紹介します。まず、どの部分を抽出したいかを指定します。例えば、文字列の一部を抽出したい場合は、開始位置と終了位置を指定する必要があります。その後、Stringクラスのsubstring()メソッドを使って抽出したい部分を指定します。ご覧の通り、以下のように書くことでサブストリングを取得できます。
 
-```Java
-String text = "こんにちは、私の名前は太郎です。";
-String substring = text.substring(4, 9);
-System.out.println(substring);
+Javaでは、文字列を抽出するためのいくつかの方法があります。まずは、substringメソッドを使用します。このメソッドを使うことで、文字列から指定した位置の文字を抽出することができます。
+
+一つ目の例として、次のような文字列があるとします。
+
 ```
-上記のコードでは、substringに"ちは、"というサブストリングが取得され、コンソールに表示されます。
+String str = "こんにちは、世界！";
+```
 
-## 深堀り
-サブストリングを抽出する際の注意点や応用例などをご紹介します。まず、サブストリングの開始位置と終了位置は0から始まることに注意してください。つまり、最初の文字の位置を0として数えるため、開始位置は実際の文字列上の位置より1少なくなります。また、終了位置は実際の値より1多く指定する必要があります。
+ここで、 "「こんにちは」"という部分を抽出したいとします。この場合、substringメソッドを使うと以下のようになります。
 
-応用例としては、ある文書から特定の単語を抽出したい場合が挙げられます。文字列内の単語の間には空白がありますので、JavaのStringクラスのsplit()メソッドを使って空白で分割し、必要な単語を抽出することができます。
+```
+String greeting = str.substring(0, 5);
+System.out.println(greeting);
+```
 
-## 参考
-- [Javaでサブストリングを抽出する方法](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [JavaのStringクラスのsplit()メソッドについて](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-)
+上記のコードで出力されるのは、「こんにちは」という文字列になります。
+
+また、substringメソッドは文字列の中に含まれる文字を指定した位置から抽出することもできます。例えば、次のような文字列があるとします。
+
+```
+String url = "https://www.example.com";
+```
+
+この場合、ドメイン名の部分だけを抽出したいとします。その場合、以下のようにコードを書くことができます。
+
+```
+String domain = url.substring(8, 22);
+System.out.println(domain);
+```
+
+このコードでは、 "www.example.com"という部分が抽出されます。
+
+## 深く掘り下げる
+
+substringメソッド以外にも、文字列を抽出するための方法があります。例えば、正規表現を使うことで、特定のパターンにマッチする文字列を抽出することができます。これは、特定の形式で入力されたデータから必要な情報を抽出する際に役立ちます。
+
+また、文字列を分割するためのsplitメソッドや、特定の文字を検索した後にその文字の位置を取得するためのindexOfメソッドもあります。これらの方法を使うことで、より柔軟に文字列を抽出することができます。
+
+## 参考リンク
+
+- [Javaで文字列を分割・抽出する方法](https://qiita.com/yshi12/items/8955ba2edae0e1116795)
+- [Java Stringの抽出、削除、変換まとめ](https://qiita.com/opengl-8080/items/dbd4432fd6eabb246def)
+- [Javaの正規表現で文字列を抽出する方法](https://qiita.com/meguroman/items/28faa8321202e53fbe3f)
+
+## みんなのHelloWorld
+
+```
+public class HelloWorld {
+
+    public static void main(String[] args) {
+
+        String str = "Hello, world!";
+        String hello = str.substring(0, 5);
+        System.out.println(hello);
+    }
+}
+```
+
+出力結果：Hello
+
+## See Also
+
+- [Java Stringクラスのsubstringメソッドの使い方](https://www.javadrive.jp/start/string/index5.html)
+- [Java正規表現チートシート](http://docs.oracle.com/javase/jp/7/api/java/util/regex/Pattern.html)

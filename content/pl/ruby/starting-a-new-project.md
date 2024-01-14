@@ -1,46 +1,47 @@
 ---
-title:    "Ruby: Rozpoczynając nowy projekt"
+title:    "Ruby: Rozpoczynanie nowego projektu"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego zacząć nowy projekt w Ruby?
+## Dlaczego
 
-Jeśli zastanawiasz się nad rozpoczęciem nowego projektu programistycznego, Ruby może być idealnym wyborem dla Ciebie. Ruby jest językiem programowania, który jest prosty i przyjemny w użyciu, a jednocześnie potrafi spełnić wiele złożonych wymagań. Dodatkowo, istnieje duże wsparcie od społeczności Ruby, dzięki czemu łatwiej rozwiązywać problemy i uczyć się nowych rzeczy.
+Zapewne wielu z Was zastanawia się, dlaczego warto zacząć nowy projekt w programowaniu Ruby. Odpowiedź jest dość prosta - Ruby jest prostym i eleganckim językiem, a dzięki dużej ilości gotowych bibliotek i frameworków, tworzenie aplikacji jest niezwykle szybkie i efektywne.
 
-# Jak zacząć?
+## Jak to zrobić
 
-Aby rozpocząć nowy projekt w Ruby, wystarczy mieć zainstalowany interpreter Ruby oraz wybrany edytor kodu. Możesz również zainstalować Ruby on Rails, popularny framework dla aplikacji webowych w Ruby. Poniżej przedstawione są przykłady kodu wraz z odpowiednimi wyjściami.
+Najważniejszą częścią rozpoczęcia projektu w Ruby jest oczywiście stworzenie odpowiedniego środowiska do pracy. Musimy mieć zainstalowaną odpowiednią wersję języka oraz upewnić się, że mamy dostęp do potrzebnych bibliotek. Poniżej przedstawię krótki przykład kodu oraz jego wyjścia, aby zobrazować, jak łatwo jest to zrobić w Ruby.
 
 ```Ruby
-# Zadeklarowanie zmiennej
-imie = "Anna"
+# Utworzenie zmiennej i przypisanie wartości
+name = "Anna"
 
-# Wypisanie zmiennej w konsoli
-puts imie
+# Wyświetlenie komunikatu z wykorzystaniem zmiennej
+puts "Cześć #{name}!"
 
-# Stworzenie pętli for
-for i in 1..5
-	puts i
-end
-
-# Wyjście:
-# Anna
-# 1
-# 2
-# 3
-# 4
-# 5
+# Wyświetlenie kolejnego komunikatu bez użycia zmiennej
+puts "Witaj w świecie Ruby!"
 ```
 
-# Głębsze zagłębienie się w temat
+Output:
+```
+Cześć Anna!
+Witaj w świecie Ruby!
+```
 
-Aby jeszcze lepiej poznać Ruby, możesz zacząć od nauki podstaw składni języka oraz konceptów programowania obiektowego. Pamiętaj również o wykorzystaniu dostępnych bibliotek i gemów, aby uprościć swoją pracę. Możesz również korzystać z tutoriali i dokumentacji online, ale najlepszym sposobem nauki jest praktyka.
+Jak widać, już samo utworzenie zmiennej i wypisanie jej wartości jest niezwykle prostym zadaniem w Ruby. Dzięki temu nie musimy się martwić o skomplikowane składnie czy używanie wielu linijek kodu.
 
-# Zobacz też
+## Głębszy zanurk
 
-- [Oficjalna strona Ruby](https://www.ruby-lang.org/pl/)
-- [Ruby on Rails](https://rubyonrails.org/)
-- [Kurs Ruby](https://www.codecademy.com/learn/learn-ruby)
-- [Dokumentacja Ruby](https://ruby-doc.org/)
+Jednym z najważniejszych kroków przy rozpoczęciu nowego projektu jest odpowiednie zaplanowanie jego struktury i funkcjonalności. W Ruby możemy wykorzystać różnego rodzaju frameworki, takie jak Ruby on Rails czy Sinatra, które pomogą nam w szybkim i efektywnym tworzeniu aplikacji internetowych. Dodatkowo, warto zapoznać się z dobrymi praktykami programowania oraz zasadami DRY (Don't Repeat Yourself), które pozwolą nam na pisanie czytelnego i łatwo rozszerzalnego kodu.
+
+Należy również pamiętać, że Ruby posiada szeroką społeczność programistów i mnóstwo materiałów edukacyjnych, które mogą nam pomóc w rozwiązywaniu ewentualnych problemów oraz rozwijaniu naszych umiejętności.
+
+## Zobacz również
+
+- [Ruby on Rails - oficjalna strona](https://rubyonrails.org)
+- [Sinatra - framework webowy](http://sinatrarb.com)
+- [Ruby Tricks - blog z przydatnymi trikami](https://rubytricks.com/)
+- [The Ruby Style Guide - standardy i dobre praktyki programowania](https://github.com/rubocop-hq/ruby-style-guide)

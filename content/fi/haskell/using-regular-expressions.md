@@ -1,45 +1,43 @@
 ---
 title:    "Haskell: Säännöllisten lausekkeiden käyttö"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Regular expressionit (tavallisesti kutsutaan myös regexeiksi) ovat voimakas työkalu, joka auttaa sinua löytämään, muokkaamaan ja korvaamaan merkkijonoja ohjelmointitehtävissä. Niiden avulla voit vähentää koodin määrää ja lisätä sen luettavuutta. Tämä tekee regexeistä erittäin hyödyllisen työkalun monissa eri tilanteissa.
+Miksi koodaajat ympäri maailmaa käyttävät säännöllisiä ilmaisuja (regular expressions) ohjelmoinnissaan? Yksi syy on, että ne tarjoavat tehokkaan ja monipuolisen tavan löytää ja manipuloida tekstiä tai merkkijonoja. Tämän avulla koodaajat voivat käsitellä suuria määriä dataa nopeasti ja tarkasti.
 
-## Miten
+## Kuinka käyttää säännöllisiä ilmaisuja Haskelliin
 
-Regular expressionit toimivat käyttäen säännöllisiä lausekkeita, jotka määrittelevät halutunlaisen merkkijonon. Käytettäessä sitä Haskellissa, on tärkeää tuoda import-komennolla "Text.Regex.Posix". Seuraavassa esimerkissä näytämme, miten voit käyttää regexejä löytääksesi kaikki sanan "tietokone" esiintymät annetusta merkkijonosta:
+Käyttääksesi säännöllisiä ilmaisuja Haskelliin, sinun täytyy tuoda ```Text.Regex.Posix``` kirjasto moduulisi alkuun. Tämän jälkeen voit käyttää erilaisia funktioita, kuten ```match```, ```subRegex``` ja ```splitRegex``` käsittelemään merkkijonoja säännöllisten ilmaisujen avulla.
 
-```Haskell 
+### Esimerkki:
+
+Esimerkiksi, jos haluat löytää kaikki kirjaimet merkkijonosta ja muuttaa niiden isoiksi kirjaimiksi, voit käyttää seuraavaa koodia:
+
+```Haskell
 import Text.Regex.Posix
 
-myString :: String
-myString = "Minulla on tietokone, joka on kolme vuotta vanha ja tarvitsee päivitystä."
+let teksti = "Tervetuloa ohjelmointimaailmaan!"
 
-computerRegex :: String
-computerRegex = "\\btietokone\\b"
+let uusiTeksti = subRegex (makeRegex "[a-z]") teksti (\match -> toUpper (fst match))
 
-foundStrings :: [String]
-foundStrings = getAllTextMatches (myString =~ computerRegex :: AllTextMatches [] String)
-
-main :: IO ()
-main = putStrLn $ show foundStrings
-
---[Output]
---["tietokone"]
+print uusiTeksti
 ```
 
-Kuten näemme, käytimme regexiä, joka koostuu sanoista "\\\bcomputer\\\b". Tämä tarkoittaa, että etsimme sanaa "computer", joka on eristetty sanojen väliltä. Lopuksi käytämme getAllTextMatches-funktiota saadaksemme kaikki löytyneet merkkijonot ja tulostamme ne näytölle. Mukavaa ja yksinkertaista, eikö?
+Tämä tulostaa: "T2RV2TUL04 0HJELM01NT100LMA00N!"
 
-## Syväsukellus
+## Syväluotaus säännöllisiin ilmaisuihin
 
-Regular expressionit tarjoavat monia erilaisia kaavoja, jotka auttavat sinua löytämään tai muokkaamaan haluamasi merkkijonon. Esimerkiksi, "\\d" tarkoittaa, että etsit kaikkia numeromerkkejä ja "\\s" tarkoittaa, että etsit kaikkia tyhjiä välilyöntejä. Regexejä käytetään yleisesti myös tekstinkäsittelyohjelmissa, kuten Wordissa tai Excelissä, joten opitun regex-taidon voi ottaa mukaan myös muille alustoille.
+Säännölliset ilmaisut koostuvat erilaisista symboleista ja operaattoreista, jotka mahdollistavat monimutkaisten haku- ja muokkaustoimintojen suorittamisen tekstissä. Esimerkiksi ```[a-z]``` tarkoittaa minkä tahansa pienikirjaimen löytämistä, kun taas ```[0-9]``` tarkoittaa minkä tahansa numeron löytämistä. Lisäksi voit käyttää erilaisia määreitä, kuten ```*``` ja ```+```, jotka tarkoittavat vastaavasti edellisen symbolin nolla tai useampaa esiintymää.
+
+On myös olemassa monia erilaisia symboleja ja operaattoreita, jotka antavat sinulle lisää mahdollisuuksia säännöllisten ilmaisujen käsittelyyn. Voit lukea lisää näistä esimerkiksi [täältä](https://www.regular-expressions.info/tutorial.html).
 
 ## Katso myös
 
-- [Haskell-ohjelmoinnin aloittaminen](https://haskell.fi/)
-- [Virallinen Haskell-dokumentaatio regexeistä](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
-- [FreeCodeCampin opas regexeihin](https://www.freecodecamp.org/news/a-quick-and-easy-guide-to-regular-expressions-regex/)
+- [Haskell Text.Regex.Posix dokumentaatio](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
+- [Säännölliset ilmaisut opetusohjelma](https://www.regular-expressions.info/tutorial.html)
+- [Haskell ohjeet ja oppaat](https://www.haskell.org/documentation/)

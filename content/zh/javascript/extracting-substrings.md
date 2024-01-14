@@ -1,35 +1,48 @@
 ---
 title:    "Javascript: 提取子字符串"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要提取子串？
+# 为什么要提取子字符串
 
-提取子串是一种常用的编程技巧，在处理字符串时非常有用。通过提取子串，您可以从一个字符串中获取特定部分的内容，以便在您的程序中使用。无论是处理用户输入还是处理大量文本数据，提取子串都是非常有用的。
+提取子字符串是一种常见的编程技术，它可以帮助我们从一个大的字符串中提取出需要的部分。这在处理文本和数据时非常有用，让我们更灵活地操作字符串。
 
-## 如何提取子串？
+# 如何提取子字符串
 
-提取子串可以通过在JavaScript中使用substring()函数来实现。这个函数接受两个参数，第一个参数是开始位置，第二个参数是结束位置。以下是一个简单的示例：
+提取子字符串最简单的方法是使用JavaScript中的 `substring()` 函数。我们需要传入两个参数，第一个参数是起始位置的索引，第二个参数是终止位置的索引（可选）。
 
 ```Javascript
-let str = "Hello world";
-let substr = str.substring(3, 7);
-console.log(substr); // 输出结果为 "lo w"
+let str = "Hello World!";
+let substring = str.substring(0, 5);
+console.log(substring); // Output: Hello
 ```
 
-在这个例子中，我们从位置3开始提取子串，直到位置7结束。注意，这个结束位置是不包含在提取的子串中的。您还可以使用负数来代表从右侧开始计算的位置，例如 -3 代表倒数第三个字符。
+我们还可以使用 `slice()` 函数来提取子字符串，它的工作方式与 `substring()` 类似，但是它也可以接受负数作为参数来表示相对于字符串末尾的位置。
 
-## 深入了解提取子串
+```Javascript
+let str = "Hello World!";
+let substring = str.slice(6, -1);
+console.log(substring); // Output: Worl
+```
 
-除了substring()函数之外，在JavaScript中还有其他提取子串的方法，比如slice()和substr()。与substring()一样，这些方法也接受开始和结束位置作为参数。它们之间的区别在于，slice()方法接受负数作为开始和结束位置，而substr()方法接受第二个参数作为子串的长度。
+如果我们想要提取出字符串中的最后几个字符，我们可以使用 `substr()` 函数，它接受两个参数，第一个参数是起始位置的索引，第二个参数是要提取的字符数量。
 
-此外，您也可以使用正则表达式来提取子串。这种方法可以根据特定的模式来提取需要的内容，非常灵活。若要了解更多关于正则表达式的信息，请参考下面的"相关链接"部分。
+```Javascript
+let str = "Hello World!";
+let substring = str.substr(6, 3);
+console.log(substring); // Output: Wor
+```
 
-## 参考链接
+# 深入了解提取子字符串
 
-- [JavaScript substring() 函数](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [JavaScript slice() 函数](https://www.w3schools.com/jsref/jsref_slice_string.asp)
-- [JavaScript substr() 函数](https://www.w3schools.com/jsref/jsref_substr.asp)
-- [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+除了上面提到的三个函数之外，还有一些其他的JavaScript字符串函数可以用来提取子字符串，如 `split()` 函数可以根据指定的分隔符将字符串分割成一个数组，我们可以根据数组的索引来获取需要的子字符串。此外，还有一些正则表达式的方法也可以用来提取子字符串，这些方法将在后续的文章中进行介绍。
+
+# 参考链接
+
+- [MDN - substring()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN - slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN - substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [MDN - split()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)

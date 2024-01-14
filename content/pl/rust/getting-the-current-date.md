@@ -1,55 +1,44 @@
 ---
-title:    "Rust: Otrzymywanie aktualnej daty"
+title:    "Rust: Pobieranie bieżącej daty"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Rust to jedno z najbardziej dynamicznych i szybko rozwijających się języków programowania. Jego popularność stale rośnie, a narzędzia i biblioteki dostępne dla programistów są nieustannie ulepszane. Jedną z wielu funkcji, które są dostępne dla użytkowników Rust, jest możliwość uzyskiwania aktualnej daty. W tym krótkim artykule opowiemy o tym, dlaczego warto poznać tę funkcję i jak jej używać.
+W dzisiejszym świecie, gdzie technologia jest kluczowym elementem codziennego życia, znajomość aktualnej daty i czasu jest niezbędna. Czy to do tworzenia zadań i wydarzeń w kalendarzu, czy też do dokonania płatności online - aktualna data jest potrzebna do prawidłowego funkcjonowania wielu aplikacji. Dlatego poznanie sposobu pobierania aktualnej daty w języku Rust jest ważnym krokiem dla każdego programisty.
 
 ## Jak to zrobić
 
-Aby uzyskać aktualną datę w języku Rust, musimy użyć funkcji `Local::now()` z biblioteki `chrono`. Oto przykład kodu, który pokazuje, jak użyć tej funkcji i wyświetlić datę w formacie miesiąc/dzień/rok:
+W języku Rust istnieje kilka sposobów na pobranie aktualnej daty. Pierwszym z nich jest użycie biblioteki standardowej - `std::time::SystemTime`. Przykładowy kod wygląda następująco:
 
 ```Rust
-use chrono::{Local, Datelike};
+use std::time::{SystemTime, UNIX_EPOCH};
 
-let now = Local::now();
-println!("{}", now.format("%m/%d/%Y"));
+let now = SystemTime::now();
+let seconds = now.duration_since(UNIX_EPOCH).expect("Time went backwards").as_secs();
 ```
 
-Wynik tego kodu będzie wyglądał mniej więcej tak: `08/23/2021`. Możemy również użyć `format()` i `print!()` z biblioteki standardowej, aby dostosować w sposób jeszcze bardziej szczegółowy sposób wyświetlania daty. Na przykład, jeśli chcemy dodać do wyświetlania również informację o godzinie, skorzystamy z `%H:%M:%S`:
+W powyższym kodzie, najpierw importujemy potrzebne nam moduły z biblioteki standardowej. Następnie używamy metody `now()`, aby pobrać aktualny czas. Aby przekonwertować go na liczbę sekund od początku epoki Unix, musimy odjąć czas początkowy od aktualnego czasu. Ostatecznie, wywołujemy metodę `as_secs()` dla wyniku.
+
+Innym sposobem jest użycie biblioteki `chrono`, która oferuje bardziej zaawansowane funkcje do obsługi dat i czasu. Przykładowy kod wygląda następująco:
 
 ```Rust
-use chrono::Local;
+use chrono::{Utc, DateTime};
 
-let now = Local::now();
-println!("{}", now.format("%m/%d/%Y %H:%M:%S"));
+let now: DateTime<Utc> = Utc::now();
 ```
 
-Wynik będzie teraz zawierał również informację o godzinie, np. `08/23/2021 14:25:50`.
-
-Jeśli chcesz uzyskać datę w formacie ISO 8601, możemy skorzystać z funkcji `to_rfc3339()`:
-
-```Rust
-use chrono::Local;
-
-let now = Local::now();
-println!("{}", now.to_rfc3339());
-```
-
-To spowoduje wyświetlenie daty w formacie `2021-08-23T14:30:00+02:00`.
+W tym przypadku, importujemy potrzebne nam moduły z biblioteki `chrono` i używamy metody `now()` z odpowiednim strefą czasową - tutaj jest to `Utc`. W wyniku otrzymujemy obiekt typu `DateTime`, który może być łatwo przetworzony według potrzeb.
 
 ## Deep Dive
 
-Teraz, gdy już wiesz, jak uzyskać aktualną datę w języku Rust, warto zagłębić się w to, jak działa biblioteka `chrono`. Pomimo swojej prostoty, biblioteka ta posiada wiele funkcji i możliwości dostosowania wyświetlania daty do naszych potrzeb. Możemy na przykład zmieniać strefy czasowe, dodawać lub odejmować określoną ilość czasu, czy też porównywać różne daty.
+Aby lepiej zrozumieć, jak w języku Rust działa pobieranie aktualnej daty, warto przyjrzeć się implementacji biblioteki standardowej `std::time::SystemTime`. Jest to struktura, która przechowuje czas w postaci liczby sekund od początku epoki Unix oraz nanosekund. Metoda `now()` zwraca wartość obecnej liczby sekund od początku epoki, którą następnie można przetworzyć do wybranego formatu.
 
-Dodatkowo, biblioteka `chrono` jest silnie typowana, co oznacza, że jest bezpieczna i wydajna w użyciu. Programista może mieć pewność, że wyświetlana data będzie zawsze poprawna i nie będzie się martwić, że wystąpią błędy związane z datą.
+## Zobacz też
 
-## Zobacz także
-
-- [Dokumentacja biblioteki `chrono` (język polski)](https://docs.rs/chrono/pl/chrono/)
-- [Poradnik o uzyskiwaniu i przetwarzaniu dat w języku Rust](https://dev.to/sivaraam/working-with-date-time-in-rust-1c7g)
-- [Strona domowa języka Rust (język polski)](https://www.rust-lang.pl/)
+- Dokumentacja biblioteki standardowej języka Rust: https://doc.rust-lang.org/std/time/struct.SystemTime.html
+- Dokumentacja biblioteki `chrono`: https://docs.rs/chrono/0.4.19/chrono/
+- Przykładowe projekty wykorzystujące pobieranie aktualnej daty w języku Rust: https://github.com/topics/current-date-rust

@@ -1,32 +1,38 @@
 ---
-title:    "Gleam: 표준 오류에 쓰는 글쓰기"
+title:    "Gleam: 표준 에러에 쓰는 방법"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-표준 오류(standard error)에 쓰기를 사용하는 이유는 코드 실행 중에 발생하는 오류를 찾고 디버그할 수 있기 때문입니다.
+## 왜
+
+코딩 중에 때때로 오류를 처리해야 할 때가 있습니다. 이때, 쓰이게 되는것이 바로 "standard error" 입니다. 이 포스트에서는 standard error에 대해 알아보고, 이를 어떻게 사용하는지 살펴보겠습니다.
 
 ## 사용 방법
-```
-Gleam.log.error("오류 메시지")
-```
-다음과 같은 형식을 사용하여 표준 오류에 메시지를 쓸 수 있습니다. 그리고 `Gleam.run/1` 함수를 사용하여 코드 실행 중에 오류가 발생하면 해당 메시지가 표시됩니다.
 
-### 예시
-```
-let name = "John"
+우선 Gleam에서 standard error을 쓰는 방법을 알아보겠습니다. 아래의 코드 블록을 참고해주세요.
 
-if name == "John Doe" {
-  Gleam.log.error("잘못된 이름입니다.")
+```Gleam
+import procedure.error_logger
+import gleam/io
+
+fn main() {
+  let message = "Hello, 에러!";
+  let error = ErrorLogger.error(message);
+  IO.write_lines(std.err, [error])
 }
 ```
-위의 예시에서는 `name` 변수의 값이 "John Doe"가 아니기 때문에 오류 메시지가 출력됩니다.
 
-## 심층적인 분석
-표준 오류에 쓰기는 디버깅에 매우 유용합니다. 오류가 발생한 원인을 찾고 수정하는 데에 필수적입니다. 또한 `Gleam.log.error/1` 함수를 사용하여 유용한 디버깅 정보를 추가할 수도 있습니다.
+위의 코드에서 `ErrorLogger.error`를 호출하여 오류 메시지를 만들고, `IO.write_lines`를 사용하여 `std.err`을 통해 콘솔에 출력합니다. 이렇게 하면 콘솔에 오류 메시지가 표시될 것입니다.
 
-## 더 알아보기
-[표준 출력과 표준 오류의 차이점](https://blog.naver.com/gleam/123456789)  
-[Gleam 로깅 문서](https://gleam.run/documentation/standard-library)
+## 자세히 알아보기
+
+"standard error"은 오류 메시지를 콘솔에 출력하는데 사용됩니다. 이것은 `std.err`이라는 특별한 파일 핸들을 통해 이루어집니다. 코드에서는 `IO.write_lines`를 사용하여 오류를 표시하는데, 이 함수는 문자열의 배열을 받아 해당 배열의 모든 요소를 새 줄로 쓰도록 작성되어 있습니다. 그 말은 즉슨, `std.err`에 출력할 메시지는 배열 형태로 전달되어야 한다는 것입니다.
+
+## 관련 링크 보기
+
+- Gleam 공식 문서: https://gleam.run/book/tour/error-handling.html
+- Standard output & standard error 관련 포스트: https://www.tutorialspoint.com/unix/unix-io-redirections.htm
+- `IO.write_lines`의 공식 문서: https://gleam.run/docs/stdlib/gleam#write_lines

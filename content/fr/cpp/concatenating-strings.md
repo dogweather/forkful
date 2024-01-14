@@ -1,40 +1,52 @@
 ---
 title:    "C++: Concaténation de chaînes de caractères"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes nouveau dans le monde de la programmation en C++, vous avez probablement entendu parler de la concaténation de chaînes de caractères. Mais pourquoi est-ce important? La concaténation de chaînes de caractères est un concept fondamental dans de nombreux projets de programmation, car elle permet de combiner plusieurs chaînes de caractères ensemble pour créer une chaîne plus longue et plus complexe. Cela peut être utile pour afficher des messages d'erreur, construire des URL dynamiques ou organiser des données pour le traitement ultérieur.
+La concaténation de chaînes de caractères est une tâche courante en programmation, surtout en C++. Elle permet de fusionner plusieurs chaînes pour en former une seule, ce qui peut être utile dans de nombreuses situations, telles que l'affichage de messages personnalisés ou la manipulation de données.
 
 ## Comment faire
 
-La concaténation de chaînes de caractères peut être réalisée en utilisant l'opérateur "+" pour ajouter des chaînes de caractères ensemble. Par exemple:
+En C++, la concaténation de chaînes de caractères se fait en utilisant l'opérateur `+` ou la fonction `concat()`. Voici quelques exemples de code pour mieux comprendre :
 
 ```C++
-#include <iostream>
-
-int main() {
-    std::string nom = "Marie";
-    std::string prenom = "Dupont";
-    std::cout << nom + " " + prenom << std::endl;
-    return 0;
-}
+// Utilisation de l'opérateur +
+string nom = "Jean";
+string prenom = "Dupont";
+string message = "Bonjour " + prenom + " " + nom + " !";
+cout << message; // affiche "Bonjour Jean Dupont !"
 ```
-Output: Marie Dupont
 
-Comme vous pouvez le voir, en utilisant l'opérateur "+", nous avons combiné les chaînes "nom" et "prenom" pour créer la nouvelle chaîne "Marie Dupont". Il est important de noter que le type de données utilisé doit être "string" et non "char" pour un résultat correct.
+```C++
+// Utilisation de la fonction concat()
+string chaine1 = "Hello";
+string chaine2 = " World!";
+string resultat = concat(chaine1, chaine2);
+cout << resultat; // affiche "Hello World!"
+```
 
-## Profondeur
+Il est important de noter que les chaînes de caractères doivent être du même type pour pouvoir être concaténées. Dans le cas contraire, une erreur de compilation sera générée.
 
-En plus de l'opérateur "+", il existe également une fonction "concat" dans la bibliothèque standard de C++ qui permet de concaténer des chaînes de caractères. Cette fonction peut être plus efficace que l'opérateur "+" dans certains cas, car elle utilise une méthode différente pour combiner les chaînes.
+En plus de l'opérateur `+` et de la fonction `concat()`, il est également possible d'utiliser la bibliothèque `<sstream>` pour concaténer des variables de différents types.
 
-Il est également important de comprendre l'allocation de mémoire lors de l'utilisation de la concaténation de chaînes de caractères. Comme les chaînes de caractères sont immuables en C++, vous devez gérer manuellement la mémoire allouée pour chaque nouvelle chaîne créée pendant le processus de concaténation. Sinon, cela pourrait entraîner des fuites de mémoire et affecter les performances de votre programme.
+## Plongée en profondeur
+
+En C++, les chaînes de caractères sont en fait des objets de la classe `string`. Ainsi, lorsqu'on les concatène, on utilise en fait les méthodes de cette classe. Par exemple, l'opérateur `+` appelle la méthode `append()` qui permet de concaténer deux chaînes. De même, la fonction `concat()` fait appel à cette même méthode.
+
+De plus, la concaténation de chaînes de caractères peut également se faire avec des littéraux de chaînes, c'est-à-dire des chaînes de caractères écrites directement dans le code. Par exemple :
+
+```C++
+string message = "J'ai " + to_string(3) + " pommes."; // affiche "J'ai 3 pommes."
+```
+
+Dans ce cas, le compilateur effectue automatiquement la conversion entre le type `int` de la valeur `3` et le type `string` nécessaire pour la concaténation.
 
 ## Voir aussi
 
-- [C++ Concatenation of Strings](https://www.programiz.com/cpp-programming/string-concatenation)
-- [How to Concatenate Strings in C++](https://www.geeksforgeeks.org/how-to-concatenate-strings-in-c/?ref=lbp)
-- [C++ String Concatenation Benchmark](https://stackoverflow.com/questions/17690898/c-string-concatenation-benchmark?rq=1)
+- [Documentation officielle de la classe string en C++](https://www.cplusplus.com/reference/string/string/)
+- [Tutoriel vidéo (en français) sur la concaténation de chaînes de caractères en C++](https://www.youtube.com/watch?v=YSQgu1y7Ovk)

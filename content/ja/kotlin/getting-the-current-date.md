@@ -1,48 +1,50 @@
 ---
-title:    "Kotlin: 現在の日付を取得する"
+title:    "Kotlin: 「現在の日付を取得する」"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を取得する必要があるのか
+## なぜ？
+現在の年月日を取得する理由は、アプリケーションやウェブサイトでタイムスタンプを使用する場合や、特定の機能を制限するための期限日を設定する場合などがあります。
 
-プログラミングをする上で、現在の日付を取得することはよくあることです。例えば、あなたが作成したアプリケーションにユーザーがログインしたときに、そのログインした日付を記録したい場合などです。また、ファイルを作成するときにそのファイルの作成日を表示するような機能を追加したいときにも必要になるかもしれません。
+## 方法: 
+```Kotlin
+// 現在の日付を取得する 
+val date = LocalDate.now()
+println("今日の日付は ${date}")
 
-## 日付を取得する方法
+// 現在の時刻を取得する
+val time = LocalTime.now()
+println("現在の時刻は ${time}")
 
-日付を取得する方法は簡単です。Kotlinの標準ライブラリには、日付を取得するための便利なクラスや関数が用意されています。例えば、`Date()`コンストラクタを使用することで、現在の日付を取得することができます。
+// 現在の日時を取得する
+val dateTime = LocalDateTime.now()
+println("現在の日時は ${dateTime}")
 
-```
-Kotlin val currentDate = Date()
-println(currentDate)
-```
-```
-出力結果: Thu Jun 17 22:29:12 JST 2021
-```
-
-また、より詳細な日付情報を取得したい場合は、参照するフォーマットを指定することもできます。以下の例では、`SimpleDateFormat`クラスを使用して、年月日のフォーマットに変換しています。
-
-```
-Kotlin val currentDate = Date()
-val simpleDateFormat = SimpleDateFormat("yyyy年MM月dd日")
-println(simpleDateFormat.format(currentDate))
-```
-```
-出力結果: 2021年06月17日
+// カスタムフォーマットで現在の日時を取得する
+val formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:ss")
+val customDateTime = LocalDateTime.now().format(formatter)
+println("現在の日時は ${customDateTime}")
 ```
 
-さらに、時間やタイムゾーンなどの情報も取得することができます。詳細な使い方は、公式ドキュメントを参照してください。
+出力:
 
-## 詳しい日付の取得
+```
+今日の日付は 2021-01-01
+現在の時刻は 18:30:00.123456
+現在の日時は 2021-01-01T18:30:00.123456
+現在の日時は 2021年01月01日 18:30:00
+```
 
-日付の取得には、`Date()`クラスの他にも様々な方法があります。例えば、`Calendar`クラスを使用して、任意の日付情報を取得することも可能です。また、外部ライブラリを使用することで、より高度な機能を実装することもできます。
+## ディープダイブ:
+現在の日時を取得するには、Kotlinの`LocalDate`、`LocalTime`、`LocalDateTime`クラスを使用します。これらは、日付や時刻をカスタマイズするための各種メソッドを提供しています。また、`DateTimeFormatter`クラスを使用することで、日付や時刻のフォーマットをカスタマイズすることができます。詳細な使い方については、公式ドキュメントを参照してください。
 
-## 関連リンク
+## おわり:
+ここでは、Kotlinで現在の日時を取得する方法についてご紹介しました。タイムスタンプや期限日を設定する際に必要な知識であるため、覚えておくと便利です。Kotlinを使って日時を取得する際は、ぜひこの方法を使用してみてください。
 
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/datetime.html)
-- [JavaのDateクラスとの比較](https://proandroiddev.com/working-with-date-and-timestamp-in-java-and-kotlin-7038848f6d3)
-
-# 同様に見てみる
-
-- [Kotlinで現在の時刻を取得する](https://blog.tamanegi.xyz/blog/2021/06/07/kotlin-time/)
+## 関連リンク:
+- [Java Time API | Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlin | Accessing Current Date and Time | GeeksforGeeks](https://www.geeksforgeeks.org/kotlin-accessing-current-date-and-time/)
+- [Kotlin | Date Time Formatting | javatpoint](https://www.javatpoint.com/kotlin-date-time-formatting)

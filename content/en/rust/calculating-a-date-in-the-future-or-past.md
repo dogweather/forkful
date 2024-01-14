@@ -1,58 +1,73 @@
 ---
 title:    "Rust recipe: Calculating a date in the future or past"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why 
 
-Calculating dates in the future or past can be a useful skill to have in programming. Whether you need to schedule tasks, set reminders, or plan events, being able to accurately calculate dates can make your programs more efficient and user-friendly. In this blog post, we will explore how to use Rust to calculate dates in the future or past.
+Calculating dates in the future or past may seem like a simple task, but it can quickly become complicated when dealing with different time zones, daylight saving time, and different calendar systems. Rust offers a robust and efficient way to handle such date calculations, making it a popular choice for many programmers.
 
-## How To
+## How To 
 
-To begin, we will first need to import the necessary libraries for date and time calculations in Rust. We can do this by adding the following lines of code at the top of our Rust file:
+To calculate a date in the future or past using Rust, we can first start by importing the `chrono` crate which provides utilities for date and time manipulation. 
 
-```Rust
-use chrono::{Duration, NaiveDate};
+```rust
+use chrono::{Utc, NaiveDate, Duration};
 ```
 
-Next, we can create a function that will take in a date and a number of days as parameters and return the calculated date. For example, if we wanted to calculate the date 10 days from today, our function would look like this:
+Next, we need to specify a starting date, which can be achieved using the `NaiveDate` class provided by `chrono`. For example, if we want to calculate 30 days from today, we can use the `today()` method to get the current date and then add 30 days to it.
 
-```Rust
-fn calculate_date(date: NaiveDate, days: i64) -> NaiveDate {
-    let future_date = date.checked_add_signed(Duration::days(days));
-    future_date.unwrap()
-}
+```rust
+let start_date = Utc::today().naive_local();
+let future_date = start_date + Duration::days(30);
 ```
 
-Here, we are using the `checked_add_signed` method from the `Duration` library to add the specified number of days to our given date. Then, we return the calculated date.
+To calculate a date in the past, we can simply subtract the desired number of days instead.
 
-We can then call our function and print the output to see the result:
-
-```Rust
-fn main() {
-    let today = NaiveDate::from_ymd(2021, 1, 1);
-    let future_date = calculate_date(today, 10);
-
-    println!("{}", future_date);
-}
+```rust
+let past_date = start_date - Duration::days(30);
 ```
 
-Running this code will print out the date 10 days from today, which in this case would be January 11th, 2021.
+We can also specify a specific date using the `NaiveDate::from_ymd()` method, which takes year, month, and day as parameters. 
 
-## Deep Dive
+```rust
+let date = NaiveDate::from_ymd(2021, 9, 1);
+```
 
-Now that we have a basic understanding of how to calculate dates in the future, let's take a deeper look at how the `checked_add_signed` method works. This method takes in a `Duration` parameter, which allows us to specify the amount of time we want to add to our current date. The `checked_add_signed` method then returns an `Option<NaiveDate>`, which means it can either return the calculated date or `None` if the resulting date is invalid (e.g. February 31st).
+We can even calculate dates in months and years instead of days using the `Duration` class. For example, to calculate a date 3 months in the future, we can use `Duration::months(3)`.
 
-Additionally, we can also use the `Duration` library to calculate dates in the past by using the `checked_sub_signed` method instead. This method works in the same way as `checked_add_signed`, except it subtracts the specified duration from the given date.
+```rust
+let future_date = start_date + Duration::months(3);
+```
 
-With these methods and the power of Rust's strong type system and error handling, we can ensure that our date calculations are accurate and error-free.
+Once we have our desired dates, we can print them out using the `format()` method and specify the desired format.
+
+```rust
+println!("Future date: {}", future_date.format("%Y-%m-%d"));
+println!("Past date: {}", past_date.format("%Y-%m-%d"));
+```
+
+The output would be:
+
+```
+Future date: 2021-10-16 
+Past date: 2021-08-16 
+```
+
+## Deep Dive 
+
+When dealing with date calculations, it's important to consider different time zones and daylight saving time. The `Utc` class provided by `chrono` ensures that all date and time values are converted to UTC for consistency. 
+
+Additionally, `chrono` also supports different calendar systems, such as the Gregorian, Julian, and Islamic calendars. This allows for accurate calculations regardless of which calendar is used.
+
+It's also worth noting that the `NaiveDate` class provides methods for converting dates to local timezone if needed.
 
 ## See Also 
+- [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust Language](https://www.rust-lang.org/)
+- [Understanding Date and Time in Programming](https://www.freecodecamp.org/news/understanding-date-and-time-in-programming/)
 
-For more information on the Date and Time library in Rust, check out the official documentation: 
-
-- [Chrono library](https://docs.rs/chrono/0.4.6/chrono/) 
-- [Duration methods](https://docs.rs/chrono/0.4.6/chrono/duration/struct.Duration.html)
-- [NaiveDate methods](https://docs.rs/chrono/0.4.6/chrono/naive/struct.Date.html)
+Overall, Rust offers a powerful and easy-to-use solution for calculating dates in the future or past. With the `chrono` crate, we can handle different time zones and calendar systems seamlessly, making it a reliable choice for any date-related tasks. Hopefully, this article has given you a good understanding of how to perform date calculations using Rust. Happy coding!

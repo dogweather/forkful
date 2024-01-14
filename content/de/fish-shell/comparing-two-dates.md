@@ -1,53 +1,52 @@
 ---
-title:    "Fish Shell: Vergleich zweier Daten"
+title:    "Fish Shell: Vergleich von zwei Datumsangaben"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Vergleichen von zwei Daten ist ein wichtiger Teil des Programmierens, besonders wenn es um die Verarbeitung von Datum und Zeit geht. Mit dem Fish Shell gibt es eine schnelle und einfache Möglichkeit, zwei Daten miteinander zu vergleichen.
+Das Vergleichen von zwei Daten ist eine gängige Aufgabe in der Programmierung. Es kann hilfreich sein, um festzustellen, ob ein bestimmtes Datum vor oder nach einem anderen liegt, oder um zu überprüfen, ob ein Ereignis in einem bestimmten Zeitraum stattgefunden hat. In diesem Blog-Beitrag werden wir uns ansehen, wie man dies mit dem Fish Shell durchführen kann.
 
-## Wie geht's
+## Anleitung
 
-Um zwei Daten im Fish Shell zu vergleichen, verwenden wir den `date`-Befehl. Dieser Befehl gibt das aktuelle Datum aus, das standardmäßig im Format "Wochentag Monat Tag Stunden:Minuten:Sekunden Zeitzone Jahr" angegeben ist.
-
-Für dieses Beispiel erstellen wir zwei Datumswerte:
+Um zwei Daten miteinander zu vergleichen, benötigen wir zunächst zwei Variablen, die jeweils ein Datum enthalten. Wir können diese Variablen mit dem Befehl "set" erstellen und ihnen ein Datum im Format "YYYY-MM-DD" zuweisen.
 
 ```
-Fish Shell $ set start (date +%s)
-Fish Shell $ set end (date -u +%s)
-```
-Der Befehl `date +%s` gibt das Datum im Unix-Zeitformat aus, das die Anzahl der seit dem 1. Januar 1970 vergangenen Sekunden angibt. Durch Zuweisen dieser Werte zu den Variablen `start` und `end` haben wir nun zwei vergleichbare Datumswerte.
-
-Um diese beiden Daten zu vergleichen, verwenden wir den `test`-Befehl mit der Option `-gt`, die für "größer als" steht. Das sieht folgendermaßen aus:
-
-```
-Fish Shell $ if [ $start -gt $end ]
-            echo "Das Startdatum ist später als das Enddatum."
-          else
-            echo "Das Startdatum ist früher als das Enddatum."
-          end
+Fish Shell
+set today 2021-07-15
+set deadline 2021-07-23
 ```
 
-Die Ausgabe wird je nach Zeitpunkt der Ausführung entweder "Das Startdatum ist später als das Enddatum." oder "Das Startdatum ist früher als das Enddatum." sein.
-
-Eine weitere Möglichkeit ist die Verwendung des `seq`-Befehls, der eine Sequenz von Zahlen generiert. Wir können diesen Befehl verwenden, um einen Zeitraum von Daten zu erstellen und diese dann miteinander zu vergleichen. Hier ist ein Beispiel:
+Um zu überprüfen, ob heute vor dem angegebenen Termin liegt, können wir den Befehl "test" verwenden und die Optionen "-lt" (für "less than") und "-eq" (für "equal") angeben.
 
 ```
-Fish Shell $ seq $start 100 $end | while read i; and [ $i == $end ]; and echo "Enddatum erreicht!"
+Fish Shell
+test $today -lt $deadline; and echo "Heute liegt vor dem Termin."
 ```
 
-Dieser Befehl generiert eine Sequenz von Zahlen, beginnend beim Wert des Startdatums und mit einem Schritt von 100, bis es den Wert des Enddatums erreicht. Dann wird eine simple Ausgabe "Enddatum erreicht!" ausgegeben.
+In diesem Beispiel werden wir die Ausgabe "Heute liegt vor dem Termin." sehen, da das heutige Datum vor dem angegebenen Termin liegt.
 
 ## Tiefergehende Informationen
 
-Das Vergleichen von Daten im Fish Shell hängt von der Verwendung von Shell-Variablen und Shell-Befehlen ab. Es gibt viele Möglichkeiten, diese Variablen und Befehle zu kombinieren, um verschiedene Daten zu vergleichen. Einige nützliche Befehle sind `test`, `seq`, `date`, `if` und `while`.
+Wenn wir einen genaueren Vergleich zwischen zwei Daten durchführen möchten, können wir die integrierten Funktionen von Fish Shell verwenden. Eine nützliche Funktion ist "date -d", die es uns ermöglicht, ein Datum im Unix-Zeitformat zu erhalten. Dies kann hilfreich sein, wenn wir Datumsangaben in Sekunden oder Millisekunden benötigen.
+
+Eine weitere nützliche Funktion ist "math" für mathematische Berechnungen. Mit dieser Funktion können wir beispielsweise die Anzahl der Tage zwischen zwei Daten berechnen.
+
+```
+Fish Shell
+set today (date -d $today +%s)
+set deadline (date -d $deadline +%s)
+set difference (math $deadline - $today)
+echo "Es sind $difference Sekunden zwischen heute und dem Termin."
+```
+
+Die Ausgabe dieses Beispiels wird die Anzahl der Sekunden zwischen den beiden Daten ausgeben.
 
 ## Siehe auch
 
-- [Fish Shell-Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Shell-Variablen](https://fishshell.com/docs/current/variables.html)
-- [Shell-Befehle](https://fishshell.com/docs/current/index.html#commands)
-- [Shell-Steuerstrukturen](https://fishshell.com/docs/current/index.html#scripts.flow)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Github Repository](https://github.com/fish-shell/fish-shell)
+- [Fish Shell Cheatsheet](https://gist.github.com/rogual/f4c19455ba78dd422cd4)

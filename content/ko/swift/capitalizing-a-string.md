@@ -1,56 +1,41 @@
 ---
-title:    "Swift: 문자열 대문자 변환하기"
+title:    "Swift: 문자열의 첫 글자를 대문자로 만들기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 대문자로 변환하는 것의 의미는 무엇일까요? 여러분이 일상 생활에서 문자열을 다루거나 프로그래밍을 할 때 이 작업을 수행하는 이유는 무엇일까요? 그것은 바로 사용자가 입력한 문자열을 일관적인 형식으로 표시하여 보기 쉽게 만들어주기 위해서입니다. 예를 들어, 사용자가 입력한 이름이나 제목을 대문자로 변환해주면 주목할 만한 효과를 만들 수 있습니다. 이제 이제 대문자를 어떻게 만들 수 있는지 살펴보겠습니다!
+한글로 쓰인 문자열의 첫 글자를 대문자로 바꾸는 것이 유용한 경우가 많습니다. 예를 들어, 사용자가 이름을 입력할 때 대문자로 시작하게 하기 위해 이 기능을 사용할 수 있습니다.
 
-## 어떻게
+## 방법
 
-Swift에서 문자열을 대문자로 변환하는 것은 매우 간단한 작업입니다. 먼저, 변환하려는 문자열을 String 형식으로 선언해야 합니다. 그리고 이제 `uppercased()` 메서드를 활용하여 대문자로 변환할 수 있습니다.
+```Swift
+let name = "김철수"
+print(name.capitalized)
 
-```
-// 예제 코드
-var str = "hello, world!"
-str = str.uppercased()
-print(str)
-
-// 결과
-HELLO, WORLD!
+// Output: 김철수
 ```
 
-위의 예제 코드에서 보시는 바와 같이, `uppercased()` 메서드를 호출한 뒤 변환된 문자열을 다시 원래의 변수에 할당해야 합니다. 그렇지 않으면 변환된 문자열이 저장되지 않습니다.
+이렇게 간단한 코드 한 줄로 문자열의 첫 글자를 대문자로 바꿀 수 있습니다. 이 기능은 문자열의 나머지 부분은 변경하지 않기 때문에 유용하게 사용할 수 있습니다. 만약 전체 문자열을 대문자로 바꾸고 싶다면 `uppercased()` 메서드를 사용할 수 있습니다.
 
-## 깊게 들어가보기
+```Swift
+let name = "김철수"
+print(name.uppercased())
 
-문자열을 대문자로 변환하는 방법은 더 있는 것을 알고 계신가요? Swift에서는 `lowercased()` 메서드를 활용해 소문자로 변환할 수도 있습니다. 또한, 문자열을 배열로 변환한 뒤 각 문자를 개별적으로 대문자로 변환할 수도 있습니다. 이는 `map()` 메서드와 `uppercased()` 메서드를 함께 사용하여 구현할 수 있습니다.
-
-```
-// 예제 코드
-let message = "hello, world!"
-let stringArray = message.map { String($0).uppercased() }
-let result = stringArray.joined(separator: "")
-
-print(result)
-
-// 결과
-HELLO, WORLD!
+// Output: 김철수
 ```
 
-이렇게 문자열을 배열로 변환하고 각 문자를 대문자로 변환한 뒤, 다시 합쳐주는 과정을 통해 모든 문자가 대문자로 변환된 문자열을 만들 수 있습니다. 이렇게 깊게 들어가는 것이 바로 프로그래밍의 매력이죠!
+이처럼 `capitalized` 메서드와 `uppercased` 메서드는 문자열을 변경하지 않고 새로운 값을 리턴하기 때문에 값이 바뀌지 않는다는 점을 주의해야 합니다. 그래서 적용한 결과를 변수에 저장하거나 출력할 때만 적용됩니다.
 
-## 같이 보기
+## 깊이 파헤치기
 
-위의 예제 코드 외에도 Swift에서 문자열을 다루는 다양한 방법들이 있습니다. 아래의 링크들을 참고하여 더 많은 정보를 알아보세요!
+두 메서드의 차이점은 어떤 문자열이든 대문자로 변환하는 것인지에 있습니다. `capitalized` 메서드는 문자열의 첫 글자만 대문자로 변환하지만 `uppercased` 메서드는 모든 글자를 대문자로 변환합니다. 따라서 사용하는 상황에 따라 적절한 메서드를 선택해야 합니다.
 
-[Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## 관련 항목
 
-[Tutorials Point](https://www.tutorialspoint.com/swift/swift_strings.htm)
-
-[Codecademy](https://www.codecademy.com/learn/learn-swift/modules/learn-swift-strings)
-
-많은 학습을 하신 후에는 여러분만의 창의적인 방법으로 문자열을 다루는 것도 좋은 아이디어입니다. 즐겁게 프로그래밍하시고, 더 많이 배워보세요!
+- [String에 대한 Apple 공식 문서](https://developer.apple.com/documentation/foundation/nsstring/1414082-uppercase)
+- [Swift에서 문자열 다루기](https://juyounglee.com/2019/07/16/swift_string/)
+- [온라인 Swift 플레이그라운드](https://swift.sandbox.bluemix.net/#/repl)

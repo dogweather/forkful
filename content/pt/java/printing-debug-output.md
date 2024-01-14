@@ -1,39 +1,50 @@
 ---
 title:    "Java: Imprimindo saída de depuração"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que imprimir saída de depuração em Java?
+## Por que
+Imprimir saída de debug é uma prática fundamental para qualquer programador no processo de depuração de código. Ela permite visualizar dados, variáveis e informações importantes que podem ser úteis para identificar e corrigir erros.
 
-Ao escrever um programa Java, é comum deparar-se com problemas de execução ou erros de lógica. Nesses casos, a impressão de saída de depuração pode ser uma ferramenta útil para entender o fluxo do programa e identificar possíveis bugs. Além disso, pode ser uma forma de verificar se os valores das variáveis estão corretos em determinados momentos da execução.
+## Como Fazer
+Para imprimir saída de debug em Java, é muito simples. O primeiro passo é importar o pacote `java.util.logging` no seu código:
 
-# Como fazer isso:
-
-Para imprimir saída de depuração em Java, utilizamos o método `System.out.println()`, que exibe uma mensagem no console. Por exemplo:
-
+```Java
+import java.util.logging.*;
 ```
-System.out.println("Valor da variável x: " + x);
+
+Em seguida, é preciso criar um objeto do tipo `Logger` e definir o nível de logging desejado, por exemplo:
+
+```Java
+Logger logger = Logger.getLogger("NomeDoArquivo.class");
+logger.setLevel(Level.INFO);
 ```
-O código acima irá imprimir a mensagem "Valor da variável x:" seguida do valor atual da variável x. Podemos também imprimir o conteúdo de mais de uma variável na mesma linha, utilizando o operador de concatenação `+`.
 
-Podemos também utilizar o método `System.out.printf()` para imprimir uma saída formatada, similar ao `printf` da linguagem C. Por exemplo:
+Agora, podemos utilizar os métodos `info()`, `warning()` e `severe()` para imprimir as mensagens de debug, seguidos pelo `log()` do objeto `Logger`, como no exemplo abaixo:
 
+```Java
+logger.info("Mensagem de debug");
+logger.log(Level.WARNING, "Aviso: variável x é igual a " + x);
 ```
-double valor = 10.25;
-System.out.printf("O valor é %.2f", valor);
+
+Ao executar o código, as mensagens de debug serão impressas no console.
+
+## Deep Dive
+Além das informações básicas, é possível aprofundar ainda mais o processo de saída de debug em Java. É possível definir um `Formatter` para personalizar o formato das mensagens de log, como por exemplo:
+
+```Java
+formatter = new SimpleFormatter();
+consoleLogger.setFormatter(formatter);
 ```
-O resultado impresso será "O valor é 10.25", com duas casas decimais após o ponto.
 
-# Mais detalhes:
+Também é possível especificar um `Handler` para redirecionar as mensagens de log para diferentes locais, como um arquivo de log ou um banco de dados.
 
-Além dos métodos `println()` e `printf()`, também podemos utilizar o método `System.out.print()`, que funciona de forma similar ao `println()`, mas não adiciona uma quebra de linha ao final. Isso pode ser útil quando queremos imprimir vários conteúdos na mesma linha.
+Outra opção é utilizar o método `setUseParentHandlers(false)` para impedir que as mensagens de debug sejam enviadas para cima na hierarquia de loggers, evitando logs duplicados.
 
-Outra opção interessante é utilizar uma classe externa de logs, como o `java.util.logging`, que permite criar mensagens de log com níveis de severidade, o que pode ser útil em programas mais complexos. Essa classe também permite direcionar a saída de log para um arquivo, ao invés do console, facilitando a análise posterior.
-
-# Veja também:
-
-- [Documentação do método System.out](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out)
-- [Documentação do método System.out.print](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#print-boolean-)
-- [Tutorial sobre logs em Java](https://www.baeldung.com/java-logging-intro)
+## Veja Também
+- [Documentação oficial do java.util.logging](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html)
+- [Tutorial de saída de debug em Java](https://www.baeldung.com/java-logging-intro)
+- [Artigo sobre as melhores práticas de logging em Java](https://www.journaldev.com/977/logging-best-practices-java)<Paste>

@@ -1,44 +1,47 @@
 ---
-title:    "Elixir: Extraindo subsequências"
+title:    "Elixir: Extraindo subtrings"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que extrair substrings em Elixir?
 
-Extrair substrings é uma tarefa muito comum na programação. Ao dominar essa habilidade em Elixir, você poderá melhorar sua eficiência e tornar seu código mais elegante.
+Extrair substrings é um conceito bastante útil na programação em Elixir. Isso permite que você selecione partes específicas de uma string, o que pode ser útil em várias situações, como formatação de dados ou manipulação de texto.
 
-## Como Fazer
+## Como fazer em Elixir?
 
-Através da função `String.slice/4`, é possível extrair uma substring de uma string a partir de um índice inicial e final. Por exemplo:
-
-```Elixir
-string = "Olá, mundo!"
-String.slice(string, 2, -1) #=> "á, mundo"
-```
-
-É importante notar que o índice final pode ser negativo, indicando a partir de qual caractere contar a partir do final da string. Outro ponto importante é que os índices em Elixir começam em 0, então o primeiro caractere da string é considerado 0, o segundo 1 e assim por diante.
-
-Além disso, é possível passar como entrada uma lista de índices para a função `String.slice/4` e receber uma lista de substrings correspondentes. Por exemplo:
+Extrair substrings em Elixir é muito fácil. Tudo o que você precisa é da função `String.slice/2` e dos parâmetros da posição inicial e final da substring desejada.
 
 ```Elixir
-string = "abcdef"
-String.slice(string, [0, 2, 4]) #=> ["a", "c", "e"]
+#Exemplo 1: Extraindo uma substring de uma string
+string = "Olá mundo!"
+substring = String.slice(string, 4, 8)
+IO.puts(substring)
+
+#Saída: mundo
 ```
 
-## Deep Dive
-
-Para entender melhor como a função `String.slice/4` funciona, é importante saber que em Elixir as strings são representadas como listas de caracteres. Isso significa que cada caractere da string é considerado um elemento da lista. Por exemplo:
+Você também pode usar índices negativos para contar a partir do final da string. E se quiser extrair uma substring até o final da string, basta deixar o segundo parâmetro em branco.
 
 ```Elixir
-string = "abc"
-[104, 101, 108, 108, 111] #=> "abc"
+#Exemplo 2: Extraindo uma substring até o final da string
+string = "Olá mundo!"
+substring = String.slice(string, 4, "")
+IO.puts(substring)
+
+#Saída: mundo!
 ```
 
-Com isso em mente, podemos entender que a função `String.slice/4` utiliza os índices para percorrer a lista e retornar os elementos que estão dentro do intervalo fornecido. Isso também justifica o fato da contagem dos índices começar a partir de 0, já que em Elixir as listas também são indexadas a partir de 0.
+## Aprofundando
+
+Além da função `String.slice/2`, Elixir também possui outras funções úteis para extrair substrings de uma string, como `String.split/2` e `String.replace/4`. Essas funções permitem que você selecione substrings com base em critérios específicos, como um caractere delimitador ou um padrão de regex.
+
+Além disso, é importante notar que as strings em Elixir são imutáveis, o que significa que ao extrair uma substring, na verdade, você está criando uma nova string com a substring desejada. Portanto, tomar cuidado com a manipulação excessiva de strings pode afetar a eficiência do código.
 
 ## Veja também
 
-- [Documentação da função `String.slice/4`](https://hexdocs.pm/elixir/String.html#slice/4)
-- [Tutorial sobre como manipular strings em Elixir](https://medium.com/@candland/manipulando-strings-em-elixir-c35c6a3cd9d2)
+- Documentação oficial do Elixir: https://elixir-lang.org/getting-started/string-patterns-and-operations.html
+- Tutorial de Elixir: https://elixir-lang.org/getting-started/basic-types.html#binaries-and-strings-extracting-data-from-binaries
+- Exemplo de implementação: https://gist.github.com/vipulnsward/41824edbcbf62d780d42f86a27a82ed1

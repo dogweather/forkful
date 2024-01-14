@@ -1,51 +1,60 @@
 ---
 title:    "Java: Wyszukiwanie i zastępowanie tekstu"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto wymieniać tekst w programowaniu Java?
 
-Przeszukiwanie i zamiana tekstu jest nieodłączną częścią procesu programowania w Javie. Jest to szczególnie przydatne, gdy musimy dokonać wielu zmian w dużej ilości tekstu. W tym artykule dowiesz się, dlaczego warto poznać tę umiejętność oraz jak dokonać skutecznej zamiany tekstu.
+Podczas programowania w języku Java bardzo często spotykamy się z koniecznością zmiany tekstu w kodzie źródłowym. Może to wynikać z różnych powodów, na przykład korekty błędów, aktualizacji danych czy zmiany formatu wyświetlanych informacji. W tym wpisie postaram się przybliżyć Wam technikę wyszukiwania i zamiany tekstu, która jest bardzo przydatna w codziennej pracy programisty.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby przeszukiwać i zamieniać tekst w Javie, musimy skorzystać z metody replace() klasy String. Przykładowe użycie tej metody wygląda następująco:
-
-```Java
-String text = "Witaj, świecie!";
-String nowyTekst = text.replace("świecie", "Javo");
-System.out.println(nowyTekst);
-```
-
-Powinniśmy otrzymać odpowiedź: "Witaj, Javo!" Metoda replace() zwraca nowy String z dokonanymi zmianami, ale nie zmienia oryginalnego tekstu.
-
-Aby dokonać zamiany tekstu w całym dokumencie, możemy wykorzystać pętlę for i metodę replace().
+Zacznijmy od najbardziej podstawowej metody, czyli wykorzystania metody `replace()` z pakietu `String`. Przykład tego rozwiązania wyglądałby następująco:
 
 ```Java
-for(int i = 0; i < dokument.length; i++){
-   dokument[i] = dokument[i].replace("slowo", "nowe slowo");
-}
+String text = "Hello World!";
+String changedText = text.replace("Hello", "Hi");
+
+System.out.println(changedText); // Output: Hi World!
 ```
 
-W ten sposób dopasujemy i zamienimy wszystkie wystąpienia słowa w dokumencie.
+W tym przypadku, wykorzystując metodę `replace()`, zamieniamy wyraz "Hello" na "Hi". Proces ten jest bardzo prosty i przydatny szczególnie w przypadku pojedynczych zmian.
 
-## Deep Dive
-
-String w Javie jest niemodyfikowalny, dlatego metoda replace() zwraca nowy String ze zmienioną wartością. Jeśli zastosujemy ten sam String do wielu zmiennych, każda zmiana spowoduje utworzenie nowego obiektu String. Dlatego zaleca się stosowanie StringBuffer lub StringBuilder do przeprowadzania zmian w tekście, ponieważ są one efektywniejsze w porównaniu do String.
-
-Inną metodą przeszukiwania i zamiany tekstu w Javie jest wykorzystanie wyrażeń regularnych. Dzięki nim możemy wyszukać określone wzorce i zamienić je na inne wyrażenie. Przykładowe użycie:
+Kolejnym sposobem jest wykorzystanie wyrażeń regularnych. Jest to dużo bardziej zaawansowane podejście, ale umożliwia bardzo precyzyjne i elastyczne wyszukiwanie i zamianę tekstu. Przykład wykorzystania wyrażeń regularnych wyglądałby tak:
 
 ```Java
-String text = "To jest przykładowy numer telefonu: 123-456-789";
-String nowyTekst = text.replaceAll("\\d{3}-\\d{3}-\\d{3}", "XXX-XXX-XXX");
-System.out.println(nowyTekst);
+String text = "Hej 123 to jest liczba!";
+String changedText = text.replaceAll("\\d+","replaced");
+
+System.out.println(changedText); // Output: Hej replaced to jest liczba!
 ```
-Powinniśmy otrzymać odpowiedź "To jest przykładowy numer telefonu: XXX-XXX-XXX".
+
+W tym przypadku zastosowaliśmy wyrażenie regularne, które oznacza, że wszystkie ciągi cyfr zostaną zastąpione ciągiem napisu "replaced". Dzięki temu możemy szybko i łatwo zastąpić różne formy danych w tekście, co może być bardzo przydatne przy eksportowaniu lub przetwarzaniu informacji.
+
+## Głębszy zanurzenie
+
+Podczas pracy z wyszukiwaniem i zamianą tekstu warto również pamiętać o wydajności i skuteczności naszego kodu. W przypadku dużych zbiorów danych lepszym rozwiązaniem może być użycie `StringBuilder`, który jest bardziej wydajny niż standardowy `String`. Przykład wykorzystania `StringBuilder` wyglądałby tak:
+
+```Java
+String text = "Ten tekst zostanie zamieniony za pomocą StringBuildera!";
+StringBuilder sb = new StringBuilder(text);
+
+sb.replace(0, 4, "To"); // Wymieniamy pierwsze słowo z "Ten" na "To"
+
+System.out.println(sb.toString()); // Output: To tekst zostanie zamieniony za pomocą StringBuildera!
+```
+
+Dzięki użyciu `StringBuilder` zmieniliśmy bezpośrednio wartość tekstu, zamiast tworzenia nowej zmiennej, co sprawia, że nasz kod jest bardziej wydajny i oszczędniejszy dla pamięci.
 
 ## Zobacz także
 
-- [Java String API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Porównanie pomiędzy StringBuffer a StringBuilder w Javie](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
-- [Wyrażenia regularne w Javie](https://regexr.com/)
+Jeśli chcesz poszerzyć swoją wiedzę na temat zmiany tekstu w programowaniu Java, polecam zapoznanie się z poniższymi linkami:
+
+- [Dokumentacja String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Wyrażenia regularne w Javie](https://www.w3schools.com/java/java_regex.asp)
+- [Porównanie wydajności Stringa i StringBuilder](https://www.baeldung.com/java-stringbuilder)
+
+Mam nadzieję, że ten krótki wpis przybliżył Wam podstawy wyszukiwania i zamiany tekstu w języku Java. Dzięki temu narzędziu możemy szybko i sprawnie dokonać zmian w naszym kodzie, co znacznie ułatwia pracę programisty.

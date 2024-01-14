@@ -1,42 +1,19 @@
 ---
 title:    "Ruby: Å bruke regulære uttrykk"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor du bør bruke regulære uttrykk i Ruby
+Hvorfor: Hvorfor bør du bruke regulære uttrykk i Ruby-programmering? Vel, en av hovedfordelene er at de lar deg søke og manipulere tekstmønstre på en enkel og effektiv måte. Dette er ideelt for ting som tekstformatering, datafiltrering og datavalidering.
 
-Regulære uttrykk er et kraftig verktøy for å behandle tekstbaserte data i Ruby-programmering. Ved å lære hvordan du bruker regulære uttrykk, kan du effektivt lete etter og manipulere tekst i store mengder informasjon. Dette sparer både tid og krefter når du håndterer store datamengder.
+Slik gjør du det: For å bruke regulære uttrykk i Ruby, må du først inkludere "regexp" biblioteket ved å skrive ```Ruby require 'regexp'``` i toppen av koden din. Deretter kan du begynne å konstruere uttrykkene dine ved å bruke ulike symbolske uttrykk for å matche eller erstatte tekst i en streng. For eksempel, hvis du vil matche alle tall i en streng, kan du bruke ```Ruby /[0-9]+/``` som ditt regulære uttrykk. Dette vil returnere en liste over alle tall som finnes i strengen.
 
-## Hvordan du bruker regulære uttrykk i Ruby
+Dypdykk: Selv om dette bare er et grunnleggende eksempel, kan regulære uttrykk bli mye mer komplekse og kraftige. Du kan bruke metakarakterer, gruppeuttrykk og til og med alternativer for å lage mer presise og avanserte uttrykk. Det er også viktig å vite at regulære uttrykk ofte brukes i kombinasjon med andre metoder i Ruby, som for eksempel .gsub (erstatte) eller .match (matche). Det er også mange online veiledninger og dokumentasjon tilgjengelig for å hjelpe deg å mestre bruken av regulære uttrykk i Ruby-programmering.
 
-For å begynne å bruke regulære uttrykk i Ruby, må du først definere uttrykket ditt ved å bruke en kombinasjon av bokstaver, tall og spesialtegn. For eksempel, hvis du ønsker å finne alle ord i en tekst som starter med bokstaven "a", kan du bruke uttrykket `/a[a-z]+/`. Dette vil finne alle ord som starter med "a" og kan være etterfulgt av en hvilken som helst kombinasjon av små bokstaver.
+Se også: For mer informasjon om regulære uttrykk i Ruby-programmering, kan du sjekke ut følgende ressurser:
 
-For å bruke uttrykket ditt i et Ruby-program, må du bruke metoden `.match()` og gi det teksten du ønsker å søke gjennom som et argument. La oss si at du ønsker å søke gjennom en streng som heter "appelsin og bringebær", kan du bruke følgende kode:
-
-```ruby
-uttrykk = /a[a-z]+/
-
-streng = "appelsin og bringebær"
-
-puts streng.match(uttrykk)
-
-# Output: appelsin
-```
-
-Som du kan se, har `.match()`-metoden funnet og returnert det første ordet i strengen som oppfyller uttrykket vårt.
-
-## Videre utforsking av regulære uttrykk
-
-Regulære uttrykk kan være ganske komplekse og det er viktig å forstå hvordan de fungerer for å kunne bruke dem effektivt. Du kan utvide dine kunnskaper ved å lese dokumentasjonen om Ruby sin `Regexp`-klasse og ved å eksperimentere med ulike uttrykk og tekstdata.
-
-Noen av de mest nyttige tegnene i regulære uttrykk er `+`, som betyr "én eller flere forekomster", `?`, som betyr "null eller én forekomst", og `*`, som betyr "null eller flere forekomster". Disse kan brukes sammen for å lage mer avanserte uttrykk.
-
-Du kan også bruke regulære uttrykk for å erstatte tekstdeler i en streng eller for å lage mønstre for å matche datoer, e-postadresser eller telefonnumre.
-
-# Se også
-
-- [Ruby sin dokumentasjon om regulære uttrykk](https://ruby-doc.org/core-3.0.2/Regexp.html)
-- [Regulære uttrykk Cheat Sheet](https://www.rubular.com/regexes/25510)
-- [YouTube-video om å bruke regulære uttrykk i Ruby](https://www.youtube.com/watch?v=VrJIEdXXQzM)
+- https://rubular.com/ - en nettbasert regulær uttrykk tester og veiledning
+- https://www.regular-expressions.info/ruby.html - en omfattende guide til bruk av regulære uttrykk i Ruby
+- https://www.rubyguides.com/ruby-reg-ex/ - en tutorial for nybegynnere om regulære uttrykk i Ruby-programmering

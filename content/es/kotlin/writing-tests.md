@@ -1,62 +1,57 @@
 ---
-title:    "Kotlin: Programando pruebas"
+title:    "Kotlin: Escribiendo pruebas"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué escribir pruebas en Kotlin
 
-Escribir pruebas es una parte esencial del proceso de programación y ayuda a garantizar que nuestro código funcione correctamente. Al escribir pruebas, podemos detectar y corregir errores en nuestro código de manera más eficiente y asegurarnos de que nuestro software cumpla con los requisitos y expectativas del usuario. Además, también nos permite realizar cambios en nuestro código sin preocuparnos de romper funcionalidades ya existentes. ¡Sigue leyendo para aprender cómo escribir pruebas en Kotlin!
+Escribir pruebas de código es una práctica esencial en el desarrollo de software. Aunque puede parecer tedioso y consumir tiempo extra, en realidad ahorra tiempo y problemas a largo plazo. En este artículo exploraremos por qué deberías considerar escribir pruebas en Kotlin para mejorar la calidad de tu código.
 
-## Cómo hacerlo
+## Cómo escribir pruebas en Kotlin
 
-Escribir pruebas en Kotlin es muy sencillo y sigue una estructura similar a otros lenguajes de programación como Java o Python. Utilizaremos la biblioteca de pruebas integrada de Kotlin, JUnit, para mostrar ejemplos de cómo escribir pruebas efectivas.
-
-Para empezar, debemos agregar la dependencia de JUnit a nuestro proyecto en el archivo de configuración Gradle:
+Para escribir pruebas en Kotlin, puedes usar el framework de pruebas integrado en el lenguaje, llamado "JUnit". Aquí te dejamos un ejemplo de cómo escribir una prueba básica para una función que suma dos números:
 
 ```Kotlin
-testImplementation 'junit:junit:4.12'
-```
+import org.junit.Test
+import org.junit.Assert.*
 
-Una vez que tenemos JUnit configurado, podemos escribir nuestras pruebas. Primero, definimos una clase para nuestras pruebas y anotamos su nombre con `@RunWith(JUnit4::class)`.
-
-```Kotlin
-@RunWith(JUnit4::class)
 class CalculadoraTest {
-    
+
+    @Test
+    fun sumaDosNumeros() {
+        val calculadora = Calculadora()
+        val resultado = calculadora.sumar(2, 3)
+        assertEquals(5, resultado)
+    }
 }
+
+class Calculadora {
+    fun sumar(a: Int, b: Int): Int {
+        return a + b
+    }
+}
+
 ```
 
-Luego, dentro de la clase, definimos funciones de prueba utilizando la anotación `@Test` y escribimos nuestros casos de prueba dentro de ellas.
+En el código de arriba, se importa el paquete "JUnit" para utilizar sus funciones de aserciones y se declara la clase "CalculadoraTest". Dentro de esta clase, se declara una función de prueba llamada "sumaDosNumeros", donde se crea una instancia de la clase "Calculadora" y se espera que la suma de dos números sea igual a 5. Luego, se declara la clase "Calculadora" donde se encuentra la función "sumar" que simplemente suma dos números.
 
-```Kotlin
-@Test
-fun sumaCorrecta() {
-    val calculadora = Calculadora()
-    val resultado = calculadora.sumar(5, 3)
-    assertEquals(8, resultado)
-}
-```
+Para ejecutar y ver el resultado de esta prueba en IntelliJ, simplemente haz clic derecho en el archivo y selecciona "Run 'CalculadoraTest'". Si todo está bien, deberías ver un resultado verde que indica "OK".
 
-En este ejemplo, creamos una instancia de la clase `Calculadora` y utilizamos el método `sumar()` para sumar dos números. Luego, utilizamos el método `assertEquals()` para verificar que el resultado sea igual a 8. Si ejecutamos esta prueba y todo está funcionando correctamente, obtendremos una salida positiva.
+## Profundizando en las pruebas en Kotlin
 
-Ahora podemos escribir más pruebas para cubrir diferentes casos de uso y asegurarnos de que nuestro código esté funcionando correctamente en todas las situaciones.
+Escribir pruebas en Kotlin puede ser muy beneficioso para tu código a largo plazo. No solo asegura que tu código funcione correctamente, sino que también actúa como documentación de tu código. Cuando escribes pruebas, estás obligado a pensar en todos los casos posibles y asegurarte de que tu función se comporte adecuadamente en cada uno de ellos. Esto ayuda a evitar errores y a detectarlos con mayor facilidad en futuras actualizaciones.
 
-## Profundizando
+Además de utilizar JUnit, también puedes integrar otros frameworks de prueba, como "Mockito" para probar código que interactúa con bases de datos o servicios externos. También puedes utilizar "Robolectric" para realizar pruebas de interfaz de usuario en tus aplicaciones móviles.
 
-Además de JUnit, también podemos utilizar otras bibliotecas de pruebas en Kotlin, como MockK o Spek, para escribir pruebas más avanzadas y específicas. Estas bibliotecas proporcionan una sintaxis más elegante y funciones adicionales para ayudarnos a escribir pruebas más eficientes.
-
-También es importante tener en cuenta algunos principios para escribir pruebas efectivas, como tener casos de prueba independientes y legibles, proporcionar comentarios claros y utilizar aserciones precisas.
-
-Recuerda que escribir pruebas no solo ayuda a detectar errores, sino que también sirve como documentación para nuestro código y facilita su mantenimiento a largo plazo.
+Otra ventaja de escribir pruebas en Kotlin es que te permite manejar errores de una manera más eficiente. Si una prueba falla, puedes tener una idea de dónde está el problema y corregirlo rápidamente antes de que se convierta en un problema más grande en producción.
 
 ## Ver también
 
-Si estás interesado en aprender más sobre pruebas en Kotlin, aquí tienes algunos recursos adicionales que pueden ser útiles:
+- [Documentación de JUnit](https://junit.org/junit5/docs/current/api/)
+- [Documentación de Mockito](https://site.mockito.org/)
+- [Documentación de Robolectric](http://robolectric.org/)
 
-- [Documentación oficial de JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [MockK: Biblioteca de pruebas de objetos falsos para Kotlin](https://mockk.io/)
-- [Spek: Biblioteca de pruebas de especificación para Kotlin](https://spekframework.org/)
-
-¡Sigue escribiendo pruebas en Kotlin y asegúrate de que tu código sea más robusto y confiable!
+¡Esperamos que este artículo te haya convencido de la importancia de escribir pruebas en Kotlin y te motive a implementarlo en tus proyectos! Recuerda que la calidad del código no solo se mide por su funcionalidad, sino también por su capacidad de ser probado y mantenerse en el tiempo. ¡Empieza a escribir pruebas hoy mismo!

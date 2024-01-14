@@ -1,49 +1,48 @@
 ---
-title:    "Clojure: Suppression de caractères correspondant à un modèle"
+title:    "Clojure: Suppression des caractères correspondant à un modèle"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous travaillez avec des données textuelles en Clojure, il est probable que vous ayez un jour eu besoin de supprimer des caractères correspondants à un certain modèle. Que ce soit pour nettoyer vos données, préparer une analyse ou résoudre un problème spécifique, supprimer des caractères peut être une tâche commune dans la programmation Clojure. Dans cet article, nous allons explorer comment le faire de manière efficace et élégante.
+La suppression de caractères correspondant à un modèle peut être utile dans de nombreuses situations, notamment pour nettoyer des données ou pour effectuer des transformations dans des chaînes de caractères.
 
 ## Comment faire
 
-Pour supprimer des caractères correspondants à un modèle en Clojure, nous allons utiliser la fonction `re-seq` qui renvoie une séquence de tous les correspondances trouvées dans une chaîne de caractères. Ensuite, nous allons utiliser la fonction `clojure.string/replace` pour remplacer ces correspondances par une chaîne vide, ce qui équivaut à les supprimer.
+Il existe plusieurs façons de supprimer des caractères correspondant à un modèle en utilisant Clojure. Voici deux exemples de code qui illustrent différentes approches :
 
 ```Clojure
-(def data "Je suis une chaîne de caractères avec des @@@ caractères inutiles!!!")
+;; Supprimer tous les caractères non numériques d'une chaîne de caractères
 
-(defn clean-string [str]
-  (clojure.string/replace str (re-seq #"@+") ""))
-  
-(clean-string data)
-;; Output : "Je suis une chaîne de caractères avec des caractères inutiles!!!"
+(def chaine "123abc456")
+(def nouveau-chaine (clojure.string/replace chaine #"\D" ""))
+(print nouveau-chaine)
+
 ```
 
-Dans cet exemple, nous avons utilisé l'opérateur `"#"` pour spécifier le modèle à utiliser pour les caractères correspondants. Vous pouvez également utiliser des expressions régulières plus complexes pour des cas plus spécifiques.
-
-## Deep Dive
-
-Il est important de noter que la fonction `re-seq` renvoie une `lazy sequence`, ce qui signifie que toutes les modifications effectuées avec `clojure.string/replace` sont évaluées à la demande et ne créent pas de séquence temporaire. Cela peut être très utile pour les grandes chaînes de caractères ou les fichiers de données.
-
-De plus, vous pouvez également utiliser la fonction `reduce` pour supprimer des caractères correspondants à un motif dans une chaîne de caractères.
+Le résultat de ce code serait "123456", car tous les caractères non numériques ont été supprimés de la chaîne d'origine.
 
 ```Clojure
-(def data ["Je suis une chaîne de!!!"
-           "Je suis une autre chaîne de$@###"
-           "Et moi un dernier exemple@@@@@"])
+;; Supprimer tous les espaces d'une chaîne de caractères
 
-(defn clean-strings [data]
-  (reduce (fn [acc str] (str, (clean-string str))) [] data))
-  
-(clean-strings data)
-;; Output : ["Je suis une chaîne de" "Je suis une autre chaîne de" "Et moi un dernier exemple"]
+(def chaine "Bonjour, je suis un exemple")
+(def nouveau-chaine (clojure.string/replace chaine #"\s" ""))
+(print nouveau-chaine)
+
 ```
+
+Le résultat de ce code serait "Bonjour,jesuisunexemple", car tous les espaces ont été supprimés de la chaîne d'origine.
+
+## Plongée profonde
+
+En utilisant la fonction "replace" de la bibliothèque de chaînes de caractères de Clojure, il est possible de supprimer des caractères correspondant à un modèle spécifique. Le modèle peut être défini à l'aide d'expressions régulières, ce qui offre une grande flexibilité dans la sélection des caractères à supprimer.
+
+De plus, il est également possible d'utiliser d'autres fonctions de la bibliothèque de chaînes de caractères, telles que "replace-first" ou "replace-nth", pour cibler des occurrences spécifiques du modèle à supprimer.
 
 ## Voir aussi
 
-- [Documentation Clojure pour `re-seq`](https://clojuredocs.org/clojure.core/re-seq)
-- [Documentation Clojure pour `clojure.string/replace`](https://clojuredocs.org/clojure.string/replace)
+- Documentation officielle de la bibliothèque de chaînes de caractères Clojure : https://clojuredocs.org/clojure.string/replace
+- Tutoriel sur les expressions régulières en Clojure : https://learnxinyminutes.com/docs/fr-fr/clojure-fr/

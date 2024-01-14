@@ -1,38 +1,58 @@
 ---
 title:    "Ruby: Znajdowanie długości ciągu znaków"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Jedną z podstawowych umiejętności w programowaniu jest operowanie na ciągach znaków. Często zdarza się, że potrzebujemy określić długość danego tekstu lub wykorzystać jego długość w innym celu. W takiej sytuacji niezbędne jest poznanie sposobów na znalezienie długości napisu w języku Ruby.
+Często, w trakcie programowania w Ruby, potrzebujemy znaleźć długość łańcucha. Może to być wykorzystane do liczenia znaków w ciągach tekstowych, sprawdzania poprawności wprowadzonego hasła lub po prostu do wyświetlenia informacji użytkownikowi. W tym krótkim artykule omówię, jak znaleźć długość łańcucha za pomocą prostych kodów w języku Ruby.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Sprawdzenie długości napisu w Ruby jest bardzo proste. Wystarczy wykorzystać metodę `length` na zmiennej będącej tekstem, który chcemy zbadać. Poniżej znajduje się przykładowy kod oraz wynik wywołania tej metody:
-
-```Ruby
-tekst = "Cześć, czy to jest ciąg znaków?"
-puts tekst.length # wynik: 28
-```
-
-W powyższym przykładzie zmienna `tekst` przechowuje dany napis, a następnie wywołujemy na niej metodę `length`, która zwraca długość tego napisu. Jest to bardzo wygodny i szybki sposób na uzyskanie tej informacji.
-
-## Głębsze zagadnienia
-
-Podczas korzystania z metody `length` warto pamiętać, że w języku Ruby wszystko jest obiektem, również ciągi znaków. Dlatego też, na zmiennej z tekstem możemy wywoływać nie tylko metodę `length`, ale również inne metody dostępne dla obiektów typu `String`.
-
-Ponadto, istnieje możliwość wykorzystania symbole `#{}`, aby wewnątrz napisu umieścić wyrażenie, które zostanie automatycznie przekonwertowane na ciąg znaków. Przykładowo:
+Aby znaleźć długość łańcucha w Ruby, użyjemy metody `.length`. Najpierw musimy przypisać łańcuch do zmiennej, na przykład:
 
 ```Ruby
-tekst = "Długość tego napisu to #{tekst.length} znaków."
-puts tekst # wynik: Długość tego napisu to 28 znaków.
+text = "Witaj, świecie!"
 ```
+
+Następnie, możemy wywołać metodę `.length` na zmiennej `text`:
+
+```Ruby
+puts text.length
+```
+
+Powyższy kod wyświetli wartość `15`, ponieważ łańcuch składa się z 15 znaków (w tym spacji). Możemy również użyć tej metody bezpośrednio na łańcuchu, bez przypisywania go do zmiennej:
+
+```Ruby
+puts "Hello, World!".length
+```
+
+Powyższy kod również wyświetli wartość `15`.
+
+Możemy również wykorzystać metodę `.length` do sprawdzania długości wprowadzanego przez użytkownika hasła. Przykładowo, jeśli chcemy, aby hasło miało co najmniej 8 znaków, możemy użyć warunku:
+
+```Ruby
+print "Wprowadź hasło: "
+password = gets.chomp
+if password.length >= 8
+  puts "Hasło jest wystarczająco długie."
+else
+  puts "Hasło jest za krótkie."
+end
+```
+
+Ten przykład pokazuje, jak prosto, ale przydatnie, możemy wykorzystać metodę `.length` w swoim kodzie Ruby.
+
+## Deep Dive
+
+Długość łańcucha jest liczbą znaków znajdujących się w łańcuchu, włączając w to spacje i znaki specjalne. Dlatego, metoda `.length` działa w prosty sposób - po prostu zlicza wszystkie znaki w łańcuchu.
+
+Warto również wspomnieć, że metoda `.length` może być używana na innych typach danych, takich jak tablice czy hashe. W przypadku tablic, metoda ta zwróci liczbę elementów w tablicy, a w przypadku haszy - liczbę par klucz-wartość.
 
 ## Zobacz także
 
-- Dokumentacja Ruby o metodzie `length`: https://ruby-doc.org/core-2.7.2/String.html#method-i-length
-- Wideo tutorial na temat ciągów znaków w Ruby: https://www.youtube.com/watch?v=9mQUZOKPM8U
-- Wstępny kurs programowania w Ruby: https://rubylearning.com/satishtalim/tutorial.html
+- Oficjalna dokumentacja Ruby o metodzie `.length`: https://ruby-doc.org/core-2.7.2/String.html#method-i-length
+- Przykładowe zadania z wykorzystaniem metody `.length`: https://www.codewars.com/kata/search/ruby?q=length

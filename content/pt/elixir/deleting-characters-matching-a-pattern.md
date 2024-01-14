@@ -1,59 +1,38 @@
 ---
-title:    "Elixir: Excluindo caracteres correspondentes a uma padrão"
+title:    "Elixir: Exclusão de caracteres correspondentes a um padrão"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-PORQUE: Por que você deve se engajar em excluir caracteres que correspondem a um padrão?
+## Por que
 
-Excluir caracteres que correspondem a um padrão é útil ao escrever código limpo e eficiente. Isso ajuda a evitar erros de digitação em variáveis que possam causar bugs em seu programa. Além disso, pode melhorar a legibilidade do código e torná-lo mais fácil de entender para outros programadores.
+A exclusão de caracteres que correspondem a um padrão é uma tarefa comum na programação. Isso pode ajudar a limpar dados inconsistentes ou preparar uma string para ser manipulada de maneira eficiente.
 
-COMO FAZER:
+## Como Fazer
 
-Para excluir caracteres que correspondem a um padrão em Elixir, podemos usar a função "String.replace/4". Esta função aceita quatro argumentos: a string original, o padrão a ser encontrado, a string de substituição e o número máximo de ocorrências a serem substituídas.
+Para excluir caracteres correspondentes a um padrão em Elixir, primeiro é preciso usar a função `String.replace/4`. Esta função aceita quatro argumentos - a string original, o padrão a ser correspondido, o texto a ser substituído e uma opção para especificar o número de substituições máximas a serem feitas.
 
-Vejamos um exemplo:
+Aqui está um exemplo de código em Elixir que excluirá todos os pontos de uma string:
 
-```
-Elixir
-iex> "banana" |> String.replace("na", "ra", 2) 
-"barara"
-```
-
-No exemplo acima, estamos substituindo o segundo e o terceiro "na" na string "banana" por "ra". O resultado é a string "barara".
-
-Outra função útil é "String.trim/2", que remove os caracteres especificados das bordas da string. Podemos usar isso para remover caracteres indesejados no início e no final da string.
-
-```
-Elixir
-iex> "!!!olá!!!" |> String.trim("!")
-"olá"
+```Elixir
+original_string = "Meu endereço é a R. Almeida, 123."
+pattern = "."
+replacement = ""
+String.replace(original_string, pattern, replacement)
 ```
 
-Esses são apenas alguns exemplos de como podemos excluir caracteres que correspondem a um padrão em Elixir. Experimente com diferentes funções e parâmetros para encontrar a melhor solução para sua situação específica.
+A saída será: "Meu endereço é a R Almeida, 123".
 
-MERGULHO PROFUNDO:
+## Deep Dive
 
-Para entender melhor como a função "String.replace/4" funciona, devemos dar uma olhada mais de perto em seu código. A função é definida dentro do módulo "String", que é parte da biblioteca padrão do Elixir.
+É importante notar que a função `String.replace/4` retorna uma nova string em vez de modificar a string original. Também é possível usar expressões regulares como padrão para correspondência. Além disso, a opção para especificar o número máximo de substituições pode ser útil ao lidar com grandes quantidades de dados.
 
-Dentro da função, está sendo usado o operador "|>" para encadear funções juntas. Isso é uma característica fundamental do estilo de programação funcional em Elixir.
+É sempre uma boa prática ler a documentação oficial do Elixir para obter mais informações sobre a função `String.replace/4` e suas opções de substituição disponíveis.
 
-Em seguida, há uma chamada para a função "String.replace_binary/4", que usa as funções "String.to_charlist/1" e "String.from_charlist/1" para converter a string em uma lista de caracteres e vice-versa. Isso é necessário porque o Elixir trabalha com strings internamente como listas de caracteres.
+## Veja Também
 
-Continuando, há uma chamada para a função "replace_binary/4" a partir do módulo "Binary.Replace". Esta função itera sobre a lista de caracteres e substitui as ocorrências do padrão pelo texto de substituição.
-
-Como resultado, obtemos a string com os caracteres substituídos. Conhecer o funcionamento interno dessas funções pode ser útil ao resolver problemas complexos que exigem substituição de caracteres em strings.
-
-VEJA TAMBÉM:
-
-- Documentação oficial do Elixir para a função "String.replace/4": https://hexdocs.pm/elixir/String.html#replace/4
-- Guia de Referência de Funções do Elixir: https://elixir-lang.org/getting-started/modules-and-functions.html
-- Vídeo tutorial sobre o uso de funções de string em Elixir: https://www.youtube.com/watch?v=dX15A30TQRc
-
-Esperamos que este artigo tenha sido útil para você aprender como excluir caracteres que correspondem a um padrão em Elixir. Continue praticando e explorando mais recursos da linguagem para melhorar suas habilidades de programação em Elixir.
-
-VEJA TAMBÉM:
-- Documentação oficial do Elixir para a função "String.replace/4": https://hexdocs.pm/elixir/String.html#replace/4
-- Guia de Referência de Funções do Elixir: https://elixir-lang.org/getting-started/modules-and-functions.html
-- Vídeo tutorial sobre o uso de funções de string em Elixir: https://www.youtube.com/watch?v=dX15A30TQRc
+- [Documentação oficial do Elixir para a função `String.replace/4`](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Tutorial do Elixir sobre expressões regulares](https://elixirschool.com/pt/lessons/advanced/regex/)
+- [Artigo da Elixir School sobre manipulação de strings](https://elixirschool.com/pt/lessons/basics/strings/)

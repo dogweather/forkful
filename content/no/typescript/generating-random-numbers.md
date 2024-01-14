@@ -1,41 +1,42 @@
 ---
 title:    "TypeScript: Generering av tilfeldige tall"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor generere tilfeldige tall?
+## Hvorfor
 
-Det å generere tilfeldige tall kan være nyttig i en rekke ulike situasjoner når du utvikler programmer. Det kan for eksempel brukes til å tilfeldig velge elementer fra en liste, simulere situasjoner i et spill eller lage unike identifikatorer. Ved å bruke TypeScript, kan du enkelt implementere funksjoner som genererer tilfeldige tall og tilpasse dem etter dine behov.
+Å generere tilfeldige tall er en viktig funksjon i mange programmeringsprosjekter. Enten det er å lage et dataspill med ulike nivåer av vanskelighetsgrad eller å utføre statistiske analyser, kan tilfeldige tall bidra til å gjøre programmet mer variert og realistisk. I denne bloggposten vil vi se på hvordan vi kan lage tilfeldige tall i TypeScript.
 
-## Slik gjør du det
+## Hvordan
 
-For å generere tilfeldige tall i TypeScript, kan du bruke Math.random() metoden. Denne metoden returnerer et desimaltall mellom 0 og 1, men du kan enkelt skalere dette tallet for å passe dine behov. For eksempel, hvis du vil generere et tilfeldig tall mellom 1 og 10, kan du bruke følgende kode:
+Vi kan enkelt generere tilfeldige tall i TypeScript ved å bruke funksjonen ```Math.random()```. Denne funksjonen returnerer et tilfeldig tall mellom 0 og 1. Ved å gange dette tallet med ønsket øvre grense og deretter rundet av til nærmeste heltall, kan vi få et tilfeldig tall innenfor ønsket område.
+
+For eksempel, hvis vi vil ha et tilfeldig tall mellom 1 og 10:
 
 ```TypeScript
-let tilfeldigTall = Math.floor(Math.random() * 10) + 1;
-console.log(tilfeldigTall); // Output: et tilfeldig tall mellom 1 og 10
+let randomNum = Math.random() * 10;
+randomNum = Math.round(randomNum) + 1;
+console.log(randomNum); // Output: et tilfeldig tall mellom 1 og 10
 ```
 
-Her bruker vi Math.floor() metoden til å runde tallet ned til nærmeste heltall, og deretter multipliserer vi med antall mulige tall vi vil ha (i dette tilfellet 10) og legger til 1 for å få tallene mellom 1 og 10.
-
-Du kan også bruke tilfeldige tall for å velge et tilfeldig element fra en liste. Det kan gjøres ved å bruke tilfeldige tall som indeks i en liste med elementer. For eksempel:
+Vi kan også bruke en lignende tilnærming for å få tilfeldige tegn i en streng ved å bruke funksjonen ```String.fromCharCode()```.
 
 ```TypeScript
-let navn = ["Kari", "Ola", "Lise", "Per", "Ingrid"];
-let tilfeldigNavn = navn[Math.floor(Math.random() * navn.length)];
-console.log(tilfeldigNavn); // Output: et tilfeldig navn fra listen
+let randomChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+console.log(randomChar); // Output: et tilfeldig tegn fra a til z
 ```
 
 ## Dypdykk
 
-Du lurer kanskje på hvordan Math.random() metoden produserer tilfeldige tall. Faktisk er det ikke mulig å generere helt tilfeldige tall i programmering, da de bygger på matematiske algoritmer. Men disse tallene vil være tilfeldige nok for de fleste bruksområder.
+Det er viktig å merke seg at funksjonen ```Math.random()``` ikke genererer ekte tilfeldige tall, da det er basert på en matematisk algoritme. For å få mer virkelighetsnære tilfeldige tall, kan vi bruke eksterne biblioteker som genererer tall basert på ekte fysiske fenomener, som radioaktiv nedbrytning eller atmosfæriske støy.
 
-En annen måte å generere tilfeldige tall i TypeScript på er ved å bruke biblioteker som "random-js" eller "faker". Disse bibliotekene tilbyr et bredt spekter av funksjoner for å generere tilfeldige tall og data.
+Vi kan også kontrollere inndataene til ```Math.random()``` ved å tilbakestille den innbygde pseudotilfeldighetsgeneratoren (PRNG) ved hjelp av funksjonen ```Math.seedrandom()```, som lar oss sette en startverdi for genereringen av tilfeldige tall. Dette kan være nyttig for å skape gjentagende tilfeldige tall for testing og debugging formål.
 
 ## Se også
 
-- [Math.random() Metode (engelsk)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Random-js Bibliotek (engelsk)](https://github.com/ckknight/random-js)
-- [Faker Bibliotek (engelsk)](https://github.com/Marak/Faker.js)
+- [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [RandomNumberAPI](https://www.randomnumberapi.com/)
+- [GitHub - seedrandom](https://github.com/davidbau/seedrandom)

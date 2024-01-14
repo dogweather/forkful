@@ -1,80 +1,43 @@
 ---
-title:    "Elm: Unterstrings extrahieren"
+title:    "Elm: Unterzeichenfolgen extrahieren"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum?
+## Warum
 
-Warum sollte man sich überhaupt mit dem Extrahieren von Teilstrings beschäftigen? Nun, es gibt viele Gründe - vielleicht möchtest du bestimmte Teile eines Textes isolieren, um sie zu analysieren, zu formatieren oder zu manipulieren. Vielleicht möchtest du auch einfach nur ein Wort oder eine Phrase hervorheben, um sie in einer anderen Anwendung zu verwenden. Das Extrahieren von Teilstrings ist eine wichtige Fähigkeit, die dir dabei helfen kann, deine Elm Programme noch effizienter zu gestalten.
+Für das Verarbeiten von Texten in Elm gibt es oft die Notwendigkeit, bestimmte Teile eines Strings, auch Substrings genannt, zu extrahieren. Dies kann nützlich sein, um bestimmte Informationen aus einem längeren Text zu filtern oder um Text in kleinere Teile aufzuteilen. In diesem Beitrag werden wir uns genauer ansehen, wie man Substrings in Elm extrahieren kann.
 
-## Wie geht's?
+## Wie man Substrings in Elm extrahiert
 
-Um Teilstrings in Elm zu extrahieren, kannst du die Funktion `String.slice` verwenden. Diese Funktion akzeptiert drei Argumente: den Startindex, den Endindex und den String, aus dem der Teilstring extrahiert werden soll. Hier ist ein einfaches Beispiel:
+Es gibt verschiedene Möglichkeiten, Substrings in Elm zu extrahieren. Eine davon ist die Verwendung der Funktion `String.slice` aus dem Modul `String`. Diese Funktion nimmt als Parameter den Startindex und den Endindex des Substrings und gibt den entsprechenden Teil des Strings zurück. Zum Beispiel:
 
-```Elm
-import String
-
-myString = "Hallo Welt"
-
-partOfString = String.slice 0 5 myString
--- partOfString = "Hallo"
+```elm
+String.slice 3 6 "Elephant" == "eph"
 ```
 
-Du kannst auch negative Indizes verwenden, um die Teilstrings vom Ende des Strings aus zu extrahieren. Hier ist ein Beispiel:
+Der Substring, der hier extrahiert wird, hat einen Startindex von 3 (das "e" in "Elephant") und einen Endindex von 6 (das "h" in "Elephant"). Beachte, dass der Endindex nicht im Substring enthalten ist, daher wird "h" nicht zurückgegeben.
 
-```Elm
-import String
+Man kann auch negative Indices verwenden, um von hinten zu zählen. Zum Beispiel würde `String.slice -3 -1 "Elephant" == "an"` zurückgeben. 
 
-myString = "Willkommen im Elm Universum"
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der Funktion `Regex.find` aus dem Modul `Regex`. Diese Funktion nimmt als Parameter eine Regex und einen String und gibt eine Liste mit allen gefundenen Substrings zurück. Hier ist ein Beispiel:
 
-partOfString = String.slice -9 0 myString
--- partOfString = "Universum"
+```elm
+Regex.find (Regex.regex "lo+") "Hello World" == [ "lo", "loo" ]
 ```
 
-Mehrere Teilstrings können auch hintereinander extrahiert werden, indem man eine Liste von Indizes anstatt eines einzelnen Index verwendet. Hier ist ein Beispiel:
+Dieser Code wird den Substring "lo" und "loo" in "Hello World" finden und in einer Liste zurückgeben. Beachte, dass reguläre Ausdrücke eine etwas fortgeschrittenere Technik sind, aber sehr nützlich, wenn man komplexe Suchmuster benötigt.
 
-```Elm
-import String
+## Tiefergehende Information
 
-myString = "1,2,3,4,5,6,7,8,9,10"
+Es gibt noch viele weitere Möglichkeiten, Substrings in Elm zu extrahieren. Zum Beispiel gibt es die Funktion `String.left` und `String.right`, die jeweils die ersten bzw. letzten n Zeichen eines Strings zurückgeben. Auch kann man den Startindex und Endindex in `String.slice` durch eine Funktion ersetzen, um dynamisch den zu extrahierenden Substring zu bestimmen.
 
-partOfStrings = String.slice [2,5,8] 9 myString
--- partOfStrings = ["2", "5", "8"]
-```
-
-## Tiefere Einblicke
-
-Das Extrahieren von Teilstrings mag auf den ersten Blick einfach erscheinen, aber es gibt einige Dinge zu beachten. Zum Beispiel, wenn du versuchst, einen Teilstring mit einem negativen Startindex zu extrahieren, musst du sicherstellen, dass der Endindex größer als der Startindex ist, sonst erhältst du einen leeren String als Ergebnis. Hier ist ein Beispiel:
-
-```Elm
-import String
-
-myString = "Ist das nicht verwirrend?"
-
-partOfString = String.slice -1 5 myString
--- partOfString = ""
-```
-
-Es ist auch wichtig, sicherzustellen, dass deine Indizes innerhalb der Länge des Strings bleiben, sonst kann es zu einem Fehler kommen. Hier ist ein Beispiel:
-
-```Elm
-import String
-
-myString = "Ich bin ein langer String"
-
-partOfString = String.slice 0 35 myString
--- ERROR: Index 35 is larger than the length of the string (length: 25)
-```
+Es ist wichtig, genau zu überlegen, welche Methode am besten für die jeweilige Aufgabe geeignet ist. Zum Beispiel ist es möglicherweise effizienter, `String.left` oder `String.right` zu verwenden, wenn man nur die ersten bzw. letzten n Zeichen eines Strings benötigt, anstatt die Funktion `String.slice` mit festen Indices zu nutzen.
 
 ## Siehe auch
 
-* [Offizielle Dokumentation zu String.slice](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-* [Weitere nützliche String-Funktionen in Elm](https://ckeditor.com/blog/Elm-String-Basics/)
-* [Verschiedene Anwendungsbeispiele für das Extrahieren von Teilstrings in Elm](https://www.samos-it.com/Elm/Views/Stringsessions.html#String[]
-)# Siehe auch
-
-* [Offizielle Dokumentation zu String.slice](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-* [Weitere nützliche String-Funktionen in Elm](https://ckeditor.com/blog/Elm-String-Basics/)
-* [Verschiedene Anwendungsbeispiele für das Extrahieren von Teilstrings in Elm](https://www.samos-it.com/Elm/Views/Stringsessions.html#String[])
+- [Elm Dokumentation zu Substrings](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- [Elm Dokumentation zu regulären Ausdrücken](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
+- [Elm Dokumentation zu String Funktionen](https://package.elm-lang.org/packages/elm/core/latest/String)

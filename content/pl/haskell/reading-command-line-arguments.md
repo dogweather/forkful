@@ -1,84 +1,95 @@
 ---
 title:    "Haskell: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Często, podczas pisania programów, jesteśmy zmuszeni do podawania pewnych danych na samym początku wykonywania programu, np. ścieżki do plików, argumentów czy flag ustawień. Dzięki temu, nasze aplikacje mogą dostosować swoje działanie do obecnie panujących warunków lub priorytetów użytkownika. W tym artykule dowiesz się, jak w języku Haskell odczytać argumenty wiersza poleceń i wykorzystać je w swoim kodzie.
+Czy zdarzyło Ci się kiedykolwiek napisać program, który musiał odczytać argumenty wprowadzone przez użytkownika z wiersza poleceń? Jeśli tak, lub jeśli jesteś ciekaw jak to zrobić przy użyciu Haskella, ten artykuł jest dla Ciebie!
 
-# Jak to zrobić?
+## Jak to zrobić
 
-Do obsługi argumentów wiersza poleceń w Haskellu wykorzystamy prosty moduł o nazwie System.Environment. Najpierw musimy zaimportować ten moduł do naszego kodu, a następnie skorzystać z funkcji getArgs, która zwróci listę z podanymi przez użytkownika argumentami. Poniżej znajduje się przykładowy kod:
+Aby odczytać argumenty wprowadzone przez użytkownika w wierszu poleceń, musimy wykorzystać bibliotekę System.Environment, która zawiera funkcje do obsługi argumentów w Haskellu. Spójrzmy na prosty przykład:
 
 ```Haskell
 import System.Environment
 
-main :: IO ()
 main = do
     args <- getArgs
-    putStrLn "Podane argumenty:"
-    print args
+    putStrLn $ "Podałeś " ++ show (length args) ++ " argumentów."
+
 ```
 
-Po uruchomieniu tego programu z argumentami wiersza poleceń:
-```bash
-ghc program.hs -o myprogram
+Jeśli skompilujemy i uruchomimy ten program, a następnie wprowadzimy kilka argumentów po jego nazwie, otrzymamy następujący wynik:
+
 ```
-Otrzymamy następujący wynik:
-```
-Podane argumenty:
-["-o", "myprogram"]
+$ ./program arg1 arg2 arg3 arg4
+Podałeś 4 argumentów. 
 ```
 
-Jeśli chcemy uzyskać dostęp do poszczególnych argumentów, możemy skorzystać z funkcji elemIndex, która zwraca pozycję danego elementu w liście. Przykładowo, jeśli chcemy odczytać drugi argument (w naszym przypadku "-o"), wykorzystamy tę funkcję w następujący sposób:
+Jak widzimy, argumenty wprowadzone przez użytkownika są przechowywane w liście, którą następnie możemy przetwarzać w dowolny sposób.
+
+## Deep Dive
+
+W przypadku bardziej zaawansowanych przypadków, gdzie chcemy np. określić opcje lub flagi, które program może przyjąć, warto zajrzeć do biblioteki System.Console.GetOpt. Pozwala ona na wygodną obsługę argumentów w stylu linii poleceń w innych językach programowania. Przykład użycia tej biblioteki może wyglądać następująco:
 
 ```Haskell
 import System.Environment
-import Data.List (elemIndex)
+import System.Console.GetOpt
+import System.IO
+import Data.Maybe
 
+-- Definiujemy nasze opcje/flagi jako konstruktory typu Optycja
+data Opcja = Wyswietl | Pomoc
+
+-- Definiujemy mapowanie dla naszych opcji/flag
+opcje :: [OptDescr Opcja]
+opcje =
+  [ Option ['w'] ["wyswietl"] (NoArg Wyswietl) "Wyswietla zadane dane.",
+    Option ['h','?'] ["pomoc"] (NoArg Pomoc) "Wyświetla pomoc."
+  ]
+
+-- Funkcja pomocnicza, która odpowiada za przetwarzanie argumentów
+procesujOpcje :: [String] -> IO ([Opcja], [String])
+procesujOpcje argv =
+  case getOpt Permute opcje argv of
+    (o, n, []) -> return (o, n)
+    (_, _, err) -> fail (concat err ++ usageInfo naglowek opcje)
+
+-- Funkcja pomocnicza, która odpowiada za wyświetlenie nagłówka informującego o użyciu flag
+naglowek :: String
+naglowek = "Usage: program [-w | -h] input_file"
+
+-- Główna funkcja programu
 main :: IO ()
 main = do
-    args <- getArgs
-    let index = elemIndex "-o" args
-    case index of
-        Just num ->
-            putStrLn $ "Drugi argument: " ++ (args !! (num + 1))
-        Nothing ->
-            putStrLn "Nie znaleziono argumentu -o"
-```
-Wynik dla tego programu będzie wyglądać następująco:
-```
-Drugi argument: myprogram
-```
+  -- Sprawdzamy, czy podane zostały jakieś argumenty
+  args <- getArgs
+  if null args
+    then putStrLn "Nie podano argumentów!"
+    else do
+      -- Przetwarzamy argumenty
+      (opcje, plik) <- procesujOpcje args
+      -- Sprawdzamy, czy podano flagę "pomoc"
+      when (elem Pomoc opcje) $
+        putStrLn $ "To jest pomoc dla tego programu."
+      -- Sprawdzamy, czy podano flagę "wyswietl" i czy podano nazwę pliku
+      when (elem Wyswietl opcje && not (null plik)) $
+        readFile (head plik) >>= putStrLn
 
-# Głębszy zanurzenie
-
-Powyżej przedstawione metody są wystarczające dla większości przypadków użycia argumentów wiersza poleceń. Jednak, jeśli chcemy odczytać bardziej skomplikowane argumeny lub skorzystać z flag ustawień, konieczne będzie wykorzystanie biblioteki optparse-applicative. Dzięki niej, możemy łatwo definiować nasze argumenty oraz ich wartości domyślne. Przykładowo, jeśli nasz program będzie posiadał opcję -v, która wypisze wersję programu, możemy to zdefiniować w ten sposób:
-
-```Haskell
-import System.Environment
-import Options.Applicative
-
-data ProgramOptions = ProgramOptions
-    { verbose :: Bool }
-
-parseOptions :: Parser ProgramOptions
-parseOptions = ProgramOptions
-    <$> switch (short 'v')
-
-main :: IO ()
-main = do
-    options <- execParser (info (parseOptions <**> helper) fullDesc)
-    if verbose options
-        then putStrLn "Wersja programu: 1.0"
-        else putStrLn "Wersja podstawowa"
 ```
 
-# Zobacz także
+Przykładowe wywołanie programu może wyglądać następująco:
 
-- [System.Environment documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Options.Applicative documentation](https://hackage.haskell.org/package/optparse-applicative)
-- [Haskell command-line argument parsing with optparse-applicative](https://www.fpcomplete.com/blog/2017/07/command-line-parser-optparse-applicative/)
+```
+$ ./program -w input.txt
+Witaj w programie! W czytanie argumentów jesteśmy już mistrzami!
+```
+
+## Zobacz także
+
+- [Dokumentacja System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html)
+- [Dok

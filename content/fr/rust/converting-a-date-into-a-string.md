@@ -1,38 +1,36 @@
 ---
-title:    "Rust: Transformer une date en une chaîne de caractères"
+title:    "Rust: Convertir une date en chaîne de caractères."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi convertir une date en chaîne de caractères en Rust ?
+## Pourquoi
 
-Si vous êtes nouveau dans le monde de la programmation en Rust ou si vous recherchez simplement une meilleure façon de gérer les dates et les heures dans votre code, vous avez peut-être entendu parler de la nécessité de convertir une date en chaîne de caractères. Mais pourquoi est-ce important et comment pouvez-vous le faire efficacement en Rust ? Dans cet article, nous allons explorer en détail la conversion de dates en chaînes de caractères en utilisant Rust.
+Si vous êtes développeur en Rust, vous savez peut-être que la manipulation des dates peut être une tâche fastidieuse. Ce n'est pas toujours facile de travailler avec différents formats de date et de les afficher correctement. C'est pourquoi il est important de savoir comment convertir une date en chaîne de caractères en Rust.
 
-## Comment procéder
+## Comment faire
 
-La conversion d'une date en chaîne de caractères peut sembler simple à première vue, mais il y a quelques détails à prendre en compte pour le faire correctement. Tout d'abord, il est important de comprendre que les dates sont représentées de différentes manières en fonction du format que vous choisissez. Par exemple, certaines personnes préfèrent le format "jour-mois-année" tandis que d'autres utilisent "mois-jour-année". En utilisant Rust, vous pouvez facilement spécifier le format souhaité pour votre date en utilisant de simples chaînes de caractères.
-
-Voici un exemple de code qui convertit une date en chaîne de caractères dans le format "jour-mois-année" :
+Pour commencer, voici un exemple de code pour convertir une date en chaîne de caractères en utilisant le crate `chrono` :
 
 ```Rust
-use chrono::{DateTime, FixedOffset, Utc};
-use chrono::format::strftime::StrftimeItems;
-
-let date = DateTime::<Utc>::from_utc(*NOW, FixedOffset::east(0));
-let format = StrftimeItems::new("%d-%m-%Y");
-
-let date_string = date.format(format).to_string();
+use chrono::{DateTime, Local, FixedOffset};
+let now: DateTime<Local> = Local::now();
+let offset: FixedOffset = now.offset();
+let date_string = now.format("%d/%m/%Y").to_string();
+println!("{}", date_string);
 ```
-Le résultat de ce code sera une chaîne de caractères contenant la date actuelle au format "jour-mois-année", par exemple "11-08-2021".
 
-## Plongeons plus profondément
+Lorsque vous exécutez ce code, vous obtiendrez la date actuelle au format jour/mois/année. Dans cet exemple, nous utilisons le format "day/month/year" mais il existe de nombreux autres formats que vous pouvez utiliser en fonction de vos besoins. Vous pouvez consulter la documentation du crate `chrono` pour découvrir toutes les options disponibles.
 
-Maintenant que vous savez comment convertir une date en chaîne de caractères en Rust, vous pouvez vouloir aller plus loin et en apprendre davantage sur le sujet. Un aspect important à comprendre est l'utilisation de différentes bibliothèques de date et d'heure en Rust, telles que la bibliothèque standard, Chrono et Time. Chacune de ces bibliothèques a ses propres avantages et inconvénients, il est donc important de connaître leurs différences pour choisir celle qui convient le mieux à votre projet.
+## Plongée en profondeur
 
-Vous pouvez également explorer différents formats de dates et apprendre comment les spécifier dans votre code, ainsi que les différentes méthodes pour manipuler des dates et des heures en Rust. Il y a beaucoup de ressources en ligne pour vous aider à approfondir vos connaissances sur la conversion de dates en chaînes de caractères en utilisant Rust.
+En plongeant plus en profondeur, vous pouvez vous demander comment exactement la conversion de date en chaîne de caractères fonctionne en Rust. Eh bien, cela se fait en utilisant la méthode `to_string` sur l'objet `DateTime` et en spécifiant le format souhaité. La macro `format!` est utilisée pour spécifier le format et les résultats sont renvoyés sous forme de `String`.
 
-# Voir aussi
-- [Gérer les dates et heures en Rust avec Chrono](https://blog.codeship.com/managing-dates-and-times-in-rust-with-chrono/)
-- [Utiliser la bibliothèque standard pour manipuler les dates en Rust](https://doc.rust-lang.org/std/time/index.html)
-- [Comprendre les différents formats de dates en Rust](https://www.freecodecamp.org/news/a-quick-start-guide-to-date-and-time-manipulation-in-rust/)
+De plus, il est important de noter que lors de la conversion en chaîne de caractères, la date est affichée selon la timezone locale de l'utilisateur. Si vous souhaitez spécifier une timezone spécifique, comme dans l'exemple ci-dessus avec `Local`, vous devrez utiliser la méthode `with_timezone` sur l'objet `DateTime`.
+
+## Voir aussi
+
+- La documentation officielle du crate `chrono` : https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html
+- Un exemple de conversion de date en chaîne de caractères avec différentes timezones : https://stackoverflow.com/questions/53445084/rust-how-to-get-datetime-in-a-custom-timezone

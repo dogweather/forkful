@@ -1,48 +1,61 @@
 ---
-title:    "Java: 임시 파일 만들기"
+title:    "Java: 일시적인 파일 생성하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-이번 글에서는 자바 프로그래밍에서 임시 파일을 생성하는 이유에 대해 알아보겠습니다. 임시 파일은 우리가 실제로 사용하는 파일이 아니지만, 일시적으로 필요한 정보를 담기 위해 사용됩니다. 보통은 프로그램의 실행 중에 생성되고, 사용이 끝나면 자동으로 삭제됩니다.
+임시 파일을 생성하는 것을 왜 해야 할까요? 자바 프로그래밍에서 임시 파일을 사용하는 이유는 다양합니다. 일시적으로 데이터를 저장하기 위해, 또는 프로그램 실행 중에 필요한 파일을 생성하기 위해 사용할 수 있습니다. 임시 파일을 생성하면 프로그래머가 파일 이름을 지정할 필요 없이 프로그램에서 생성된 임의의 파일명을 사용할 수 있어서 편리합니다.
 
-## 만드는 방법
+## 생성 방법
 
-우선 임시 파일을 생성하기 전에, `java.io.File` 패키지를 import 해주어야 합니다. 그리고 `createTempFile()` 메소드를 사용하여 임시 파일을 생성할 수 있습니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
+자바에서 임시 파일을 생성하는 방법은 간단합니다. 먼저 `java.io.File` 클래스의 `createTempFile()` 메소드를 사용합니다. 이 메소드는 임시 파일을 생성하고 `File` 객체를 반환합니다. 아래는 이 메소드를 사용하는 예제 코드입니다.
 
 ```Java
 import java.io.File;
+import java.io.IOException;
 
 public class TempFileExample {
-  public static void main(String[] args) {
-    try {
-      // 파일이 저장될 디렉토리와 파일 접두사를 지정합니다.
-      File tempFile = File.createTempFile("myTempFile", ".txt");
-      // 생성된 임시 파일의 경로를 출력합니다.
-      System.out.println("임시 파일 경로: " + tempFile.getAbsolutePath());
-    } catch (IOException e) {
-      e.printStackTrace();
+
+    public static void main(String[] args) {
+
+        // 임시 파일 생성
+        File tempFile = null;
+        try {
+            // 첫 번째 매개변수는 접두사, 두 번째 매개변수는 확장자입니다.
+            tempFile = File.createTempFile("myTempFile", ".txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // 임시 파일의 경로 출력
+        System.out.println("임시 파일 경로: " + tempFile.getPath());
+
+        // 임시 파일 삭제
+        tempFile.delete();
+
     }
-  }
+
 }
 ```
 
-위의 코드를 실행하면, 임시 파일 경로가 출력될 것입니다. 또한, 파일이 삭제되기 전까지는 해당 파일을 사용할 수 있습니다.
+위 코드를 실행하면 아래와 같은 출력이 나옵니다.
 
-## 심화 학습
+```
+임시 파일 경로: /var/folders/6k/sprxnbnx3cn3lvbkky5fm3YIP8LR6u/T/myTempFile2897470459548927704.txt
+```
 
-만약 임시 파일을 생성하는 과정에서 에러가 발생한다면 어떻게 해야 할까요? 이러한 경우에 대비하여 예외처리를 해주어야 합니다. 또한, `createTempFile()` 메소드를 사용할 때, 저장될 디렉토리와 파일 이름, 확장자를 지정해주어야 합니다. 그렇지 않으면, 운영체제가 임시 파일을 생성하기 위한 임시 디렉토리를 임의로 지정할 수 있기 때문입니다.
+보다시피 `createTempFile()` 메소드를 호출하면 임시 파일이 생성되고 해당 파일의 경로가 출력됩니다. 임시 파일을 사용한 후에는 `delete()` 메소드를 호출하여 파일을 삭제해야 합니다.
 
-## 참고 자료
+## 깊이 들어가기
 
-- [Java 공식 문서 - 임시 파일 생성](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
-- [자바의 지혜 - 임시 파일 생성하기](https://www.javajigi.net/2018/01/21/Java-Temp-File/)
-- [namu.wiki - 자바 스터디 팁](https://namu.wiki/w/자바/스터디/팁)
+실제로 자바에서 임시 파일은 어떻게 생성되는 걸까요? 자바에서는 임시 파일을 생성할 때 운영체제의 `tmp` 디렉토리에 생성합니다. 이때 `createTempFile()` 메소드는 자동으로 임시 파일의 이름을 생성합니다. 임시 파일의 이름은 `java.io.tmpdir` 시스템 프로퍼티와 일치하는 형식으로 생성됩니다. 운영체제마다 `tmp` 디렉토리의 위치는 다를 수 있기 때문에 `java.io.tmpdir` 시스템 프로퍼티를 사용하는 것이 안전합니다.
 
-## 더 알아보기
+## See Also
 
-- [Java.io 패키지 API 문서](https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
-- [Java 임시 파일 관리 방법](https://www.codejava.net/java-core/the-java-io-package/java-io-management-of-temporary-files)
+- [Java Docs: createTempFile()](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
+- [Java File I/O](https://www.baeldung.com/java-io)
+- [Java System Properties](https://www.geeksforgeeks.org/system-properties-java/#:~:text=System.-,Properties%20is%20a%20class%20provided%20by%20Java%20which%20gives%20the%20information%20about%20the%20current%20system.,-getAll()%20method"Java System Properties")

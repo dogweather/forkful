@@ -1,40 +1,46 @@
 ---
 title:    "Clojure: Skriva en textfil"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att skriva en textfil är en grundläggande del av att programmera och det kan vara en användbar färdighet att ha i din verktygslåda. Det är ett enkelt sätt att spara och organisera dina data eller kod och det kan bidra till en mer strukturerad och effektiv programmeringsprocess.
+Att skriva en textfil är en viktig del av programmering i Clojure. Det kan hjälpa dig att organisera din kod, dela den med andra och hålla en logg över dina projekt.
 
-## Hur man gör det
+## Hur man skriver en textfil i Clojure
 
-För att skriva en textfil i Clojure behöver du först skapa en textsträng och sedan använda en funktion för att skriva strängen till din fil. Här är ett exempel på hur man skapar en textsträng och skriver den till en fil som heter "exempel.txt":
-
-```Clojure
-(def text "Det här är en exempeltext")  ; skapar en textsträng
-(spit "exempel.txt" text)  ; skriver textsträngen till filen "exempel.txt"
-```
-
-Du kan också använda "with-open" för att se till att filen stängs efter att texten har skrivits:
+För att skriva en textfil i Clojure behöver du bara använda en grundläggande funktion som heter "spit". Här är ett exempel på hur du kan använda den:
 
 ```Clojure
-(with-open [file (java.io.FileWriter. "exempel.txt")]
-  (.write file text))  ; skriver textsträngen till filen
+(spit "mittprojekt.txt" "Det här är min textfil.")
 ```
 
-Om du vill lägga till texten i en redan befintlig fil kan du använda "append" istället för "spit".
+Det här kommer att skapa en textfil som heter "mittprojekt.txt" och fylla den med strängen "Det här är min textfil." Det är viktigt att notera att filen kommer att skapas i den aktuella arbetsmappen.
 
-## Djupdykning
+Om du vill ändra arbetsmappen innan du skapar filen kan du använda funktionen "with-out-str" tillsammans med "spit":
 
-I Clojure är det vanligt att skapa textfiler med hjälp av "slurp" och "spit" funktionerna. "Slurp" kan användas för att läsa innehållet från en befintlig fil som en enda textsträng, medan "spit" används för att skriva en textsträng till en fil. Båda funktionerna tar en sökväg som första argument och en textsträng som andra argument.
+```Clojure
+(with-out-str (spit "mittprojekt.txt" "Det här är min textfil."))
+```
 
-Om du vill läsa eller skriva textfiler i andra format, som t.ex. JSON eller YAML, kan du använda de inbyggda biblioteken "clojure.data.json" eller "com.fasterxml.jackson.core/jackson-core". Du kan också använda Java-klasser och metoder för att läsa och skriva filer i mer komplexa format.
+Det här kommer att ändra arbetsmappen till den plats där filen skapas och sedan återställa den när funktionen är klar.
 
-## Se även (See Also)
+## Djupare dykning
 
-- [Clojure Dokumentation - Filhantering](https://clojuredocs.org/clojure.core/spit)
-- [Clojure Dokumentation - Java I/O](https://clojuredocs.org/clojure.java.io)
-- [Clojure För Nybörjare - Spara Text Till En Fil](https://clojurefornybörjare.wordpress.com/2016/12/10/spara-text-till-en-fil)
+För att göra din textfil mer läsbar kan du lägga till linjeskift och andra formateringar. Till exempel:
+
+```Clojure
+(with-out-str (spit "mittprojekt.txt" "Det här är min textfil.\nHär är en ny rad."))
+```
+
+Där "\n" representerar ett linjeskift. Du kan också använda "\t" för att lägga till tabbar.
+
+Det finns många andra sätt att skriva textfiler i Clojure, inklusive att använda bibliotek som "clojure.java.io" och "clojure.string". Genom att lära dig mer om dessa bibliotek och deras funktioner kan du bli mer effektiv i att skriva och hantera textfiler i dina projekt.
+
+## Se också
+
+- [Clojure Dokumentation för spit](https://clojuredocs.org/clojure.core/spit)
+- [The Clojure Style Guide](https://guide.clojure.style/#file-io)

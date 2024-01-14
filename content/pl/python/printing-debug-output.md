@@ -1,32 +1,41 @@
 ---
-title:    "Python: Dr"
+title:    "Python: Drukowanie wyjścia debugowania"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego drukować informacje debugujące
 
-Debugowanie jest nieodłączną częścią każdego programisty. Jednak często napotykamy na trudności, szczególnie w większych projektach, gdy nie wiemy co dokładnie dzieje się w naszej aplikacji lub co jest przyczyną błędu. Wtedy przydatne staje się wypisywanie wyników naszego kodu, czyli tzw. "debug output". W tym artykule dowiesz się, dlaczego warto sięgać po tę metodę oraz jak ją zastosować w praktyce.
+Jeśli pracujesz z językiem Python, na pewno spotkałeś się z sytuacją, w której twój kod nie działa poprawnie. W tym przypadku, jednym z najprostszych sposobów na znalezienie błędu jest wyświetlenie informacji debugujących. W tym artykule dowiesz się dlaczego warto drukować takie informacje oraz jak to zrobić.
 
-## Jak
+## Jak to zrobić
 
-```python
-# Przykładowy kod z wykorzystaniem print()
-x = 5
-print(f"Wartość x wynosi: {x}")
+Aby wyświetlić informacje debugujące w Pythonie, możesz skorzystać z funkcji `print()`. Przykładowo, w poniższym kodzie chcemy przetestować funkcję liczącą średnią z listy liczb.
+
+```Python
+numbers = [1, 2, 3, 4, 5]
+avg = sum(numbers) / len(numbers)
+print("Średnia to: ", avg)
 ```
 
-Wykorzystanie funkcji `print()` jest najprostszym sposobem na wypisanie wartości zmiennych lub komunikatów w naszym kodzie. Możemy również wykorzystać funkcję `pdb.set_trace()` w celu tworzenia punktów zatrzymań, które pozwolą nam prześledzić dokładnie przebieg naszego programu.
+Po uruchomieniu powyższego kodu, zobaczymy na ekranie następujący wynik:
 
-## Deep Dive
+```
+Średnia to: 3.0
+```
 
-Istnieje wiele sposobów na wypisywanie debug output w Pythonie. Możemy korzystać z różnego rodzaju narzędzi, takich jak logger czy debugger. Jednak w przypadku prostych skryptów, wykorzystanie funkcji `print()` jest wystarczające.
+Dzięki wyświetleniu informacji debugujących, mamy pewność, że liczenie średniej zostało wykonane poprawnie. Możemy także wyświetlić inne zmienne czy informacje, które pomogą nam zlokalizować błąd w kodzie.
 
-Warto również wiedzieć, że funkcja `print()` może przyjmować wiele argumentów, co pozwala na wygodne wypisywanie wielu wartości jednocześnie. Możemy również korzystać z instrukcji warunkowych i pętli, aby kontrolować, które wartości zostaną wypisane.
+## Prześwietlenie
 
-## Zobacz również
+Drukowanie informacji debugujących jest szczególnie przydatne w przypadku bardziej skomplikowanych programów. Dzięki temu możemy zobaczyć, jak zmieniają się zmienne w różnych częściach kodu oraz dowiedzieć się, które linie są wykonywane.
 
-- [Dokumentacja Pythona - Debugging and Profiling](https://docs.python.org/3.8/library/pdb.html)
-- [10 przydatnych trików dla Pythonistów](https://realpython.com/python-tricks/)
-- [Ten sposób drukowania obiektów Pythona jest taki uroczy](https://docs.python.org/3/library/functions.html#print)
+W niektórych przypadkach, możemy także skorzystać z modułu `logging`, który daje możliwość dodatkowej konfiguracji wyświetlanych informacji debugujących. Jest to szczególnie przydatne w większych projektach, gdzie chcemy mieć bardziej przejrzysty i kontrolowany sposób wyświetlania tych informacji.
+
+## Zobacz także
+
+- [Dokumentacja Pythona na temat drukowania informacji debugujących](https://docs.python.org/3/library/functions.html#print)
+- [Poradnik na temat użycia modułu logging](https://realpython.com/python-logging/)
+- [Inne przydatne metody debugowania w Pythonie](https://realpython.com/python-debugging-pdb/)

@@ -1,51 +1,55 @@
 ---
-title:    "C++: Konwersja daty na ciąg znaków"
+title:    "C++: Konwertowanie daty na ciąg znaków"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na łańcuch znaków jest ważnym elementem programowania w C++. Pozwala nam wyświetlać daty w czytelny sposób, dostosowany do preferencji użytkowników.
+Konwersja daty na ciąg znaków jest niezbędnym procesem w wielu aplikacjach, gdyż pomaga w wyświetlaniu czytelnego formatu daty dla użytkowników. Jest to również często wymagane przy przetwarzaniu danych wejściowych lub wyświetlaniu raportów. W tym blogu omówimy różne sposoby konwersji daty na string w języku C++.
 
 ## Jak to zrobić
 
-Konwertowanie daty na łańcuch znaków w języku C++ jest bardzo proste. Wystarczy użyć funkcji `std::to_string()`, która zamienia liczbę na łańcuch znaków. Poniżej znajduje się przykładowy kod:
+ Istnieje wiele sposobów na dokonanie konwersji daty na ciąg znaków, ale w tym artykule skupimy się na dwóch najczęściej wykorzystywanych metodach: wykorzystanie biblioteki <ctime> oraz wykorzystanie biblioteki Boost.
 
-```C++
-#include <iostream>
-#include <string>
-#include <ctime>
+Pierwsza metoda polega na wykorzystaniu funkcji z biblioteki <ctime> do zamiany daty na wartość typu time_t, a następnie wykorzystaniu funkcji strftime (znowu dostępnej w <ctime>) do sformatowania wartości time_t do wybranego przez nas formatu daty.
 
-using namespace std;
+```c++
+#include <ctime> 
+#include <iostream> 
 
-int main()
-{
-    // Pobranie aktualnej daty
-    time_t now = time(0);
-    
-    // Przekonwertowanie daty na łańcuch znaków
-    string str_date = std::to_string(now);
-    
-    // Wyświetlenie daty w formacie MM/DD/RRRR
-    cout << str_date.substr(4,2) << "/"
-         << str_date.substr(6,2) << "/"
-         << str_date.substr(0,4) << endl;
-    
-    return 0;
+int main() { 
+    time_t now = time(0); 
+    char buffer[80]; 
+    strftime(buffer, 80, "%d/%m/%Y", localtime(&now)); 
+    std::cout << buffer << std::endl; 
 }
 ```
 
-Przykładowy output: `10/31/2021`
+Output: ```18/10/2021``` 
 
-## Głębszy wgląd
+Drugą metodą będzie wykorzystanie biblioteki Boost, która posiada wiele specjalistycznych narzędzi, w tym również do konwersji daty na string. Przy użyciu funkcji to_iso_extended_string z biblioteki Boost, można wygodnie skonwertować datę do wybranego przez nas formatu.
 
-Konwertowanie daty na łańcuch znaków jest często wykorzystywane w celu wyświetlenia daty w czytelnej formie lub zapisania jej w pliku. Funkcja `std::to_string()` jest szczególnie przydatna, ponieważ pozwala na konwersję daty w różnych formatach (np. rok-miesiąc-dzień) bez dodatkowego formatowania.
+```c++
+#include <boost/date_time.hpp> 
+#include <iostream> 
 
-Ważnym elementem konwersji jest również użycie odpowiedniego typu zmiennej. W przypadku daty, powinniśmy użyć typu `time_t`, który przechowuje liczbę sekund od 1 stycznia 1970. W ten sposób możemy łatwo przekonwertować datę na łańcuch znaków i wyświetlić ją w formacie, który najbardziej odpowiada naszym potrzebom.
+int main() { 
+    boost::gregorian::date date(boost::gregorian::day_clock::local_day()); 
+    std::string date_string = boost::gregorian::to_iso_extended_string(date); 
+    std::cout << date_string << std::endl; 
+}
+```
 
-## Zobacz także
+Output: ```2021-10-18``` 
 
-- [Dokumentacja funkcji std::to_string()](https://en.cppreference.com/w/cpp/string/basic_string/to_string)
-- [Inne przydatne funkcje związane z datami w C++](https://www.geeksforgeeks.org/c-datetime-functions-time-header/)
+## Deep Dive
+
+Konwersja daty na ciąg znaków może wydawać się prostym zadaniem, ale w rzeczywistości jest to proces wymagający od programisty dokładnej znajomości bibliotek i funkcji języka C++. W przypadku bardziej złożonych formatów daty, trzeba również brać pod uwagę ustawienia regionalne i różnice w sposobie wyświetlania dat dla różnych kultur.
+
+## Zobacz też
+
+- [Przewodnik po bibliotece C++ <ctime>](https://pl.cppreference.com/w/cpp/header/ctime)
+- [Dokumentacja biblioteki Boost dla języka C++](https://www.boost.org/doc/libs/1_77_0/)

@@ -1,38 +1,42 @@
 ---
-title:    "Rust: テキストファイルの読み込み"
+title:    "Rust: 「テキストファイルを読む」"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-この記事では、テキストファイルを読み込む方法を学ぶことができます。Rust言語を使って実際にコーディングを行い、テキストファイルを読み取る方法をご紹介します。テキストファイルの読み込みについて興味がある方はぜひ読んでみてください。
+## なぜ読むのか
 
-## 使い方
-まずはファイルを開き、必要なライブラリを導入します。その後、ファイルディスクリプタを用いてファイルを読み込み、文字列型の変数に格納します。最後に、ファイルを閉じてリソースを解放します。
+読み込み処理は、プログラミング言語を学ぶ上で重要な部分です。テキストファイルを読み込むことで、データを取得し、処理することができます。
+
+## 方法
+
+Rustでは、組み込みの`std::fs`ライブラリを使用して、テキストファイルを読み込むことができます。以下のコードを使用することで、簡単に実装することができます。
 
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
-
-let mut file = File::open("text_file.txt")?;
-let mut contents = String::new();
-file.read_to_string(&mut contents)?;
-
-println!("{}", contents);
+fn main() {
+    let mut file = File::open("sample.txt").expect("ファイルを開くことができませんでした。");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("ファイルの読み込みに失敗しました。");
+    println!("{}", contents);
+}
 ```
 
-上記のコードは、ファイルを開き、その内容をコンソールに出力する例です。コード内のコメントを参考にしながら、自分なりにカスタマイズして試してみてください。
+上記のコードでは、`File::open`メソッドを使用して、`sample.txt`という名前のファイルを開き、その内容を`String`型の変数`contents`に読み込んでいます。そして、`println!`マクロを使用して、ファイルの中身を出力しています。
 
-## 深堀り
-ファイルを読み込む際には、いくつかの注意点があります。例えば、ファイルが存在しない場合や、読み取り権限がない場合はエラーが発生します。また、ファイルのエンコーディングが異なる場合は、適切に指定する必要があります。さらに、Rust言語の特徴であるパターンマッチングを使うことで、ファイルの読み込み中に発生する可能性のあるエラーをハンドリングすることができます。
+## ディープダイブ
+
+テキストファイルを読み込む際、より詳細な制御が必要な場合があります。そのような場合には、`std::fs`ライブラリの`File`構造体を使用します。
+
+`File`構造体の`open`メソッドを使用することで、ファイルを開く際のさまざまなオプションを指定することができます。また、ファイルの読み込みをストリーム形式で行うことも可能です。
+
+詳細な情報は、Rustの公式ドキュメントを参照してください。
 
 ## 参考リンク
-- [Rustによるファイル操作のドキュメント](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Rustのパターンマッチングについての解説](https://doc.rust-lang.org/book/ch18-00-patterns.html)
-- [テキストファイルのエンコーディングについての解説](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)
 
-## 参考になるリンク
-- [Rustによるコンソールアプリケーションの作成方法](https://dev.classmethod.jp/articles/rust-cli/)
-- [Rustで文字列の処理をする方法](https://doc.rust-lang.org/std/primitive.str.html)
-- [ファイル操作に関するライブラリ一覧](https://github.com/rust-unofficial/awesome-rust#filesystem)
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rustにおけるファイル入出力](https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/std/fs/struct.File.html)
+- [Rustでファイルを読み書きする方法](https://qiita.com/hdais/items/2da13ed2c12d854a4663)

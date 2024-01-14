@@ -1,58 +1,42 @@
 ---
-title:    "Rust: Tests schreiben"
+title:    "Rust: Testen schreiben."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Softwareentwicklung ist das Schreiben von Tests oft ein wesentlicher Bestandteil des Prozesses. Gleichzeitig ist es jedoch auch eine lästige und zeitraubende Aufgabe, die oft vernachlässigt wird. Warum sollte man sich also die Mühe machen, Tests zu schreiben?
+In der heutigen Welt der Softwareentwicklung wird es immer wichtiger, qualitativ hochwertige und fehlerfreie Software zu liefern. Das Schreiben von Tests ist ein unverzichtbarer Schritt, um sicherzustellen, dass unsere Programme zuverlässig und robust sind. Auch in der Rust-Programmierung sollten Tests nicht vernachlässigt werden. In diesem Blogbeitrag werden wir uns genauer ansehen, warum das Schreiben von Tests in Rust von großer Bedeutung ist.
 
-Tests sind eine essentielle Maßnahme, um die Qualität unserer Software zu gewährleisten. Sie helfen uns dabei, Fehler frühzeitig zu entdecken und zu beheben, bevor sie in der Produktion auftreten. Durch das Schreiben von Tests können wir sicherstellen, dass unsere Software wie erwartet funktioniert und potenzielle Probleme vermeiden.
+## Wie geht man vor?
 
-## Wie man Tests schreibt
+Zunächst müssen wir sicherstellen, dass wir die notwendigen Abhängigkeiten für das Testen in unserem Projekt haben. Dazu gehören das `rustc` und das `test`-Paket. Sobald diese installiert sind, können wir unsere Tests schreiben.
 
-Um Tests in Rust zu schreiben, verwenden wir das in der Standardbibliothek enthaltene Modul `test`. Hier ist ein einfaches Beispiel, wie wir eine Funktion `add` testen können, die zwei Zahlen addiert:
+In Rust können wir Tests in derselben Datei wie unser Code schreiben, was es einfach und übersichtlich macht. Wir verwenden die Makros `#[cfg(test)]` und `#[test]`, um unsere Tests zu kennzeichnen. Innerhalb des `#[test]`-Makros können wir unsere Testfunktionen schreiben und Assertions hinzufügen, um sicherzustellen, dass unsere Ergebnisse den erwarteten Werten entsprechen.
 
 ```Rust
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-// Testfunktion mit dem Präfix `test` und der Annotation `#[test]`
-#[test]
-fn test_add() {
-    // Wir rufen die Funktion mit verschiedenen Eingaben auf und überprüfen das erwartete Ergebnis
-    assert_eq!(add(2, 3), 5);
-    assert_eq!(add(-1, 5), 4);
-    assert_eq!(add(0, 0), 0);
+#[cfg(test)]
+mod tests {
+   #[test]
+   fn test_addition() {
+       let result = 2 + 2;
+       assert_eq!(result, 4);
+   }
 }
 ```
 
-Beim Ausführen dieser Testfunktion erhalten wir folgende Ausgabe:
+Um unsere Tests auszuführen, können wir das `cargo test`-Kommando verwenden. Dies wird alle Dateien mit `#[test]`-Makros im `tests`-Ordner ausführen und uns mitteilen, ob die Tests bestanden oder fehlgeschlagen sind. Wenn wir mehr Informationen über die einzelnen Tests erhalten möchten, können wir auch das `--verbose`-Flag hinzufügen.
 
-```
-running 1 test
-test test_add ... ok
+## Tiefergehende Erläuterung
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
+Es gibt verschiedene Arten von Tests in Rust, die wir schreiben können, wie z.B. Modultests und Integrationstests. Wir können auch das `should_panic`-Attribut verwenden, um sicherzustellen, dass eine bestimmte Funktion einen Fehler wirft. Darüber hinaus ermöglicht uns Rust durch die Verwendung von generischen Funktionen und Traits das Schreiben von bulkigen Tests, die für mehrere Datentypen und Strukturen funktionieren.
 
-Wie wir sehen können, wurde unser Test erfolgreich durchgeführt und alle Assertions sind wahr. Wenn jedoch eine Assertion fehlschlägt, erhalten wir einen ausführlicheren Fehlerbericht, der uns dabei unterstützt, den Fehler in unserer Funktion zu finden.
-
-## Tiefer ins Detail gehen
-
-Das Schreiben von Tests ist jedoch weit mehr als nur das einfache Überprüfen von erwarteten Ergebnissen. Durch das Verständnis der vielfältigen Möglichkeiten von Tests können wir unsere Tests effektiver gestalten.
-
-Ein wichtiger Aspekt ist die Verwendung von Test-Driven Development (TDD). Dabei schreiben wir zuerst den Test für eine Funktion, bevor wir diese implementieren. Dies kann uns dabei helfen, eine klarere Vorstellung von der Funktion zu erhalten und mögliche Anforderungen oder Probleme frühzeitig zu erkennen.
-
-Ein weiteres nützliches Tool ist das Modul `assert`, das uns ermöglicht, eigene Assertions zu erstellen und so spezifische Bedingungen zu überprüfen. Des Weiteren bieten sich auch Associations-Tests an, bei denen wir das Verhalten unserer Funktion mit zufälligen Eingaben und Ausgaben überprüfen.
-
-Es gibt noch viele weitere Möglichkeiten und Techniken, um Tests zu schreiben. Mit dem Verständnis für diese verschiedenen Ansätze können wir unsere Tests optimieren und die Qualität unserer Software verbessern.
+Das Schreiben von Tests in Rust ist auch eine großartige Möglichkeit, um mehr über die Sprache und ihre Funktionen zu lernen, da es uns dazu zwingt, unsere Funktionen und Datenstrukturen besser zu verstehen und ihre Grenzen zu testen.
 
 ## Siehe auch
 
-- [Rust Dokumentation zu dem Modul `test`](https://doc.rust-lang.org/stable/rust-by-example/testing/unit_testing.html)
-- [Offizielles Rust Book zu Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rustlings Übungseinheit zu Tests](https://github.com/rust-lang/rustlings/tree/main/exercises/testing)
+- [The Rust Book: Writing Automated Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Rust by Example: Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
+- [Official Rust Testing Guide](https://www.rust-lang.org/learn/testing)

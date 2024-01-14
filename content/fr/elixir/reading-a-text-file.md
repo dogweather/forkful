@@ -1,35 +1,46 @@
 ---
 title:    "Elixir: Lecture d'un fichier texte"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Lire et manipuler des fichiers texte est une compétence essentielle pour tout programmeur Elixir. Cela permet de lire les données externes et de les utiliser dans votre code, ce qui peut être très utile dans de nombreux cas.
+La lecture de fichiers texte est un aspect essentiel de la programmation en Elixir. Cela permet aux développeurs de manipuler et d'utiliser des données provenant de différentes sources, telles que des fichiers JSON, CSV ou simplement du texte brut. Cet article vous montrera comment lire un fichier texte en utilisant Elixir.
 
-# Comment faire
+## Comment faire
 
-Pour lire un fichier texte en Elixir, nous pouvons utiliser la fonction `File.read!/1` en spécifiant le chemin du fichier en tant que paramètre. Cela renvoie le contenu du fichier sous forme de chaîne de caractères.
+Pour lire un fichier texte en Elixir, nous utilisons la fonction `File.read/1`. Elle prend en paramètre le chemin d'accès au fichier à lire et retourne son contenu sous forme de binaire.
 
 ```Elixir
-# Lecture du fichier
-data = File.read!("chemin/vers/votre/fichier.txt")
+# Lire le fichier "exemple.txt"
+{:ok, contenu} = File.read("exemple.txt")
+IO.puts contenu
+```
+Sortie:
 
-# Impression du contenu
-IO.puts(data)
+`Ceci est un exemple de fichier texte`
+
+Ainsi, avec seulement une ligne de code grâce à `File.read/1`, nous pouvons obtenir le contenu d'un fichier texte.
+
+## Plongée en profondeur
+
+En utilisant la fonction `File.read/1`, Elixir lit le contenu du fichier en mémoire. Cela signifie qu'il n'est pas recommandé de lire de gros fichiers à l'aide de cette fonction, car cela pourrait surcharger la mémoire de votre ordinateur.
+
+Pour lire de gros fichiers, nous utilisons la fonction `Stream` pour traiter les données en continu et éviter de les stocker en mémoire. Par exemple, nous pouvons utiliser `Stream.map/2` pour transformer chaque ligne du fichier en utilisant une fonction de mapping donnée.
+
+```Elixir
+# Lire un gros fichier en utilisant Stream
+"exemple_gros_fichier.txt"
+|> File.stream!() # Créer un Stream à partir du fichier
+|> Stream.map(&String.reverse/1) # Inverser chaque ligne
+|> Stream.into(File.stream!("exemple_inverse.txt")) # Écrire les lignes inversées dans un nouveau fichier
 ```
 
-Dans l'exemple ci-dessus, la variable `data` contiendra le contenu du fichier texte, et avec la fonction `IO.puts/1` nous pouvons l'imprimer dans la console.
+## Voir aussi
 
-# Plongée en profondeur
-
-En utilisant `File.read!/1`, nous pouvons également spécifier des options supplémentaires pour personnaliser la lecture d'un fichier. Par exemple, nous pouvons spécifier le nombre de bytes à lire avec l'option `:read_bytes`, ou spécifier un délimiteur avec l'option `:line, line_break: "\n"`.
-
-De plus, pour une meilleure gestion des erreurs, nous pouvons utiliser la fonction `File.read/1` qui renvoie un tuple avec le contenu du fichier et un code d'erreur en cas de problème de lecture.
-
-# Voir aussi
-
-- [Documentation sur la lecture de fichier en Elixir](https://hexdocs.pm/elixir/File.html#read!/1)
-- [Article sur les opérations de fichier en Elixir](https://medium.com/@kyrylo/how-to-perform-file-operations-in-elixir-9e576adb5d70)
+- Documentation Elixir pour `File`: https://hexdocs.pm/elixir/File.html
+- Tutoriel sur l'utilisation de Stream en Elixir: https://elixirschool.com/fr/lessons/advanced/stream/
+- Guide complet sur la manipulation de fichiers en Elixir: https://elixir-lang.org/getting-started/io-and-the-file-system.html#files

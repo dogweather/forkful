@@ -1,40 +1,46 @@
 ---
-title:    "Bash: Lesing av tekstfiler"
+title:    "Bash: Leser en tekstfil"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvis du er en nybegynner eller erfaren Bash-programmerer, har du sannsynligvis jobbet med å lese og manipulere tekstfiler. Å kunne lese tekstfiler er en essensiell ferdighet når du arbeider med data og automatisering i Bash. I denne blogginnlegget vil du lære hvorfor det er viktig å kunne lese tekstfiler og hvordan du enkelt kan gjøre det.
 
-## Hvordan
-For å lese en tekstfil i Bash, må du bruke kommandoen "cat". Dette vil skrive ut innholdet i tekstfilen til terminalen. For eksempel, hvis du har en tekstfil kalt "min_fil.txt", kan du skrive følgende kommando for å lese den:
+Lesing av tekstfiler er en viktig ferdighet for alle som jobber med programmering. Enten du jobber med store datasett eller bare trenger å få tak i spesifikke data fra en fil, så er evnen til å lese tekstfiler en grunnleggende kompetanse i Bash-programmering.
 
-```Bash
-cat min_fil.txt
-```
-Dette vil skrive ut innholdet i "min_fil.txt" til terminalen. Hvis du vil lagre utdataene i en annen fil, kan du bruke "redirect" -operatøren ">", som følger:
+## Slik gjør du det
+
+Her skal jeg vise deg hvordan du kan lese en tekstfil ved hjelp av Bash-skripting. Først må du ha en tekstfil tilgjengelig som du ønsker å lese. La oss si at filen vi skal lese heter "eksempel.txt". For å lese denne filen, må vi bruke kommandoen `cat` etterfulgt av filnavnet:
 
 ```Bash
-cat min_fil.txt > ny_fil.txt
+cat eksempel.txt
 ```
-Dette vil skrive ut innholdet i "min_fil.txt" og lagre det i "ny_fil.txt". Du kan også bruke "grep" -kommandoen for å søke etter en bestemt streng i en tekstfil. For eksempel, hvis du vil søke etter linjer som inneholder "github" i "min_fil.txt", kan du bruke følgende kommando:
+Dette vil skrive ut det som står i filen, enten det er tekst eller tall. Hvis du ønsker å lagre innholdet i filen i en variabel, kan du bruke følgende kommando:
 
 ```Bash
-cat min_fil.txt | grep "github"
+INNHOLD=$(cat eksempel.txt)
 ```
-Dette vil skrive ut alle linjene som inneholder "github" i "min_fil.txt".
+Nå vil variabelen "INNHOLD" inneholde alt som står i filen. Hvis du bare ønsker å lese en spesifikk linje i filen, kan du bruke denne kommandoen:
 
-## Deep Dive
-Nå som du vet hvordan du kan bruke "cat" og "grep" til å lese og søke i tekstfiler, kan du gå dypere inn i emnet og utforske flere kommandoer og muligheter. Du kan for eksempel bruke "awk" -kommandoen til å behandle og formatere data fra en tekstfil. Eller du kan bruke "sed" -kommandoen til å endre innholdet i en tekstfil.
+```Bash
+LINJE=$(head -n 1 eksempel.txt)
+```
+Dette vil lagre den første linjen i filen i variabelen "LINJE". Du kan justere hvor mange linjer du ønsker å lese ved å endre tallet etter "-n".
 
-En annen måte å lese en tekstfil er å bruke en løkke i Bash. Dette gjør det mulig å lese og behandle linje for linje i en tekstfil. Ved hjelp av forskjellige betingelser og kommandoer, kan du utføre ulike handlinger på hver linje i tekstfilen.
+## Dypdykk
 
-Det er også verdt å merke seg at Bash er et kraftig programmeringsspråk som kan benyttes til å lese og behandle ulike filformater, ikke bare tekstfiler. Dette gir deg muligheten til å håndtere mer komplekse datafiler og utføre avanserte oppgaver.
+Når du leser en tekstfil med Bash, vil innholdet bli lest som en enkelt streng. Dette betyr at hvis filen inneholder flere linjer, så vil de bli behandlet som én lang linje. Du kan også bruke "read" kommandoen til å lese en fil linje for linje. For eksempel:
+
+```Bash
+while read linje; do
+    echo $linje
+done < eksempel.txt
+```
+Dette vil lese filen linje for linje og skrive ut hver linje i terminalen.
 
 ## Se også
-- [The Linux Command Line: A Complete Introduction by William E. Shotts, Jr.](http://linuxcommand.org/tlcl.php)
-- [Bash Beginner's Guide by Machtelt Garrels](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Bash Programming Introduction by Bruce Barnett](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+
+* [Bash Command Line Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+* [Reading and Writing Files in Bash](https://www.linuxjournal.com/content/bash-reading-and-writing-files)

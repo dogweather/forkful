@@ -1,53 +1,56 @@
 ---
-title:    "C: निर्देशिका का अस्तित्व की जाँच"
+title:    "C: डायरेक्टरी मौजूद है या नहीं जांचना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-हाल ही में कई लोग से मुझे पूछा गया कि C प्रोग्रामिंग में निर्दिष्ट डायरेक्ट्री के अस्तित्व को कैसे जांचा जाता है। आप कोई प्रोजेक्ट बना रहे हो या अपनी एप्प्स को स्थायी रूप से स्थापित कर रहे हो, तो डायरेक्ट्री का अस्तित्व जांचना आपके लिए बहुत महत्वपूर्ण हो सकता है।
+
+अगर आप C programming सीख रहे हैं तो आपने शायद सुना होगा कि programming के दौरान directories की मौजूदगी की जांच करने का एक तरीका है। इस blog post में हम आपको बताएंगे कि आप directories के मौजूदगी को जांचने के कारण और तरीके जानते हैं।
 
 ## कैसे करें
-अपनी C प्रोग्राम में निर्दिष्ट डायरेक्ट्री के अस्तित्व को जांचने के लिए, हम `opendir()` और `readdir()` फंक्शन का उपयोग कर सकते हैं। `opendir()` फंक्शन द्वारा हम संकेतों से दिए गए पथ के लिए फ़ाइल डेस्क्रिप्टर प्राप्त कर सकते हैं और `readdir()` फंक्शन द्वारा हम डायरेक्ट्री में मौजूद फाइलों को पढ़ सकते हैं। नीचे एक इस्तेमाल का उदाहरण है:
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
 
 int main() {
-    char path[100];
-    printf("कृपया डायरेक्ट्री का पथ भरें: ");
-    scanf("%s", path);
+    char *directory_name = "mydirectory";
+    DIR *dir;
 
-    DIR *dir = opendir(path);
-    if(dir == NULL) {
-        printf("डायरेक्ट्री मौजूद नहीं है।\n");
-        return 0;
+    // opendir() फ़ंक्शन से directory को खोलें
+    dir = opendir(directory_name);
+
+    // यदि directory मौजूद है, तो सफलतापूर्वक folder का नाम प्रिंट करें
+    if (dir) {
+        printf("Directory '%s' मौजूद है।\n", directory_name);
+
+        // opendir() फ़ंक्शन को बंद करें
+        closedir(dir);
+    }
+    // यदि directory मौजूद नहीं है, तो त्रुटि मेसेज प्रिंट करें
+    else {
+        printf("Directory '%s' मौजूद नहीं है।\n", directory_name);
     }
 
-    printf("डायरेक्ट्री में मौजूद फाइलें:\n");
-    struct dirent *entry;
-    while((entry = readdir(dir)) != NULL) {
-        printf("%s\n", entry->d_name);
-    }
-
-    closedir(dir);
     return 0;
 }
 ```
 
 ### आउटपुट:
-जब हम `tmp` डायरेक्ट्री में इस प्रोग्राम को चलाते हैं तो नीचे दिए गए आउटपुट निकलते हैं।
-
-```text
-कृपया डायरेक्ट्री का पथ भरें: tmp
-डायरेक्ट्री में मौजूद फाइलें:
-.
-..
-a.txt
-b.txt
+```
+Directory 'mydirectory' मौजूद है।
 ```
 
-## डीप डाइव
-जब हम `readdir()` फंक्शन का उपयोग करते हैं, तो हम प्रत्येक 'directory
+## गहराई में
+
+C programming में directories से संबंधित काम करने के लिए, हमे <dirent.h> header file का उपयोग करना पड़ता है। opendir() फ़ंक्शन को उस directory के नाम के साथ कॉल करने से directory को खोला जा सकता है। यदि directory मौजूद होता है, तो कोड के अनुसार हम सफलतापूर्वक प्रॉसेसिंग कर सकते हैं। opendir() फ़ंक्शन को हमेशा बंद करना जरूरी है नहीं तो हमारे प्रोग्राम में memory leaks हो सकता है।
+
+## देखें भी
+
+- [Dirent.h C Reference](https://www.geeksforgeeks.org/dirent-h-header-file-c/)
+- [Introduction to File I/O in C](https://www.programiz.com/c-programming/c-file-input-output)
+- [C Programming Tutorials in Hindi](https://www.youtube.com/playlist?list=PLvc3v2D3bKHTNdN3UNWpa1JTnXocQjWua)

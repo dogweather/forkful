@@ -1,49 +1,42 @@
 ---
-title:    "Haskell: Å starte et nytt prosjekt."
+title:    "Haskell: Å starte et nytt prosjekt"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
----
+## Hvorfor
 
-# Hvorfor
+Å begynne et nytt prosjekt kan virke skremmende, spesielt for nybegynnere i Haskell. Men det å lage dine egne programmer er en flott måte å lære språket og utforske dets muligheter. Det kan også være en spennende måte å løse problemer på og skape noe nytt og unikt.
 
-Hvis du er en nybegynner eller erfaren utvikler som ønsker å ta din programmeringserfaring til neste nivå, kan det å starte et nytt Haskell-prosjekt være en spennende utfordring for deg. Haskell er et funksjonelt programmeringsspråk som gir deg mulighet til å skrive elegant og robust kode. Å starte et nytt prosjekt i Haskell kan hjelpe deg med å utvikle og forbedre dine programmeringsevner.
+## Hvordan du går frem
 
-# Slik gjør du det
+Først må du installere Haskell på datamaskinen din. Dette kan enkelt gjøres ved å følge instruksjonene på haskell.org. Når du har satt opp Haskell, er du klar til å begynne å kode.
 
-For å starte et nytt Haskell-prosjekt, må du først installere Haskell-plattformen på datamaskinen din. Dette er en enkel prosess og det finnes mange ressurser på internett som kan veilede deg gjennom denne prosessen. Når du har installert Haskell-plattformen, kan du bruke kommandolinjeverktøyet "stack" for å opprette et nytt prosjekt. Etter å ha opprettet prosjektet, kan du bruke en teksteditor som støtter Haskell-syntaks for å begynne å skrive koden din.
+For å opprette et nytt prosjekt, må du først lage en mappe og gi den et passende navn. Innenfor denne mappen kan du opprette en fil ved å bruke .hs-filendelsen for å indikere at den inneholder Haskell-kode. Deretter kan du åpne filen i en teksteditor og begynne å skrive koden din.
 
-La oss se på et enkelt eksempel på hvordan vi kan skrive og kjøre kode i Haskell. La oss si at vi ønsker å skrive et program som tar inn et tall og deretter legger 1 til det og printer ut det nye tallet. Her er koden vår:
+For å kompilere og kjøre koden din, kan du bruke kommandoen `ghc navn-på-filen.hs` i terminalen. Når koden er ferdigkjørt, vil du se resultatet i terminalen.
 
-```haskell
-main = do
-    putStrLn "Skriv inn et tall: "
-    input <- getLine
-    let tall = read input
-    let nytt_tall = tall + 1
-    putStrLn ("Det nye tallet er: " ++ show nytt_tall)
+La oss se på et enkelt eksempel på hvordan man kan skrive et "Hello, World!" program i Haskell:
+
+```Haskell
+-- Her definerer vi en funksjon kalt "main"
+main = putStrLn "Hello, World!"
 ```
 
-La oss nå se på hva som vil bli utskrevet når vi kjører programmet:
+Dette vil skrive ut "Hello, World!" når du kjører koden din. 
 
-```
-Skriv inn et tall:
-10
-Det nye tallet er: 11
-```
+## Dypdykk
 
-Som du ser, tar programmet inn et tall fra brukeren, legger til 1 til det og printer ut det nye tallet. Dette er et enkelt eksempel, men det viser deg hvordan du kan bruke "putStrLn", "getLine" og "let" i Haskell-programmering.
+Når du starter et nytt prosjekt i Haskell, er det viktig å ha en plan og forstå hva du vil oppnå. En god måte å begynne på er å bryte ned prosjektet ditt i mindre deler og fokusere på en del av gangen. Dette gjør det lettere å håndtere og feilsøke din kode.
 
-# Dypdykk
+Det kan også være lurt å undersøke eksisterende prosjekter og se hvordan andre har løst lignende problemer. Dette kan hjelpe deg med å få en bedre forståelse av Haskell og lære fra andres erfaringer.
 
-Når du starter et nytt Haskell-prosjekt, er det viktig å tenke grundig gjennom arkitekturen og designet ditt. Haskell er et sterkt typet språk, noe som betyr at du må definere datatypene dine tydelig og nøyaktig. Dette kan virke utfordrende i begynnelsen, men det vil bidra til å sikre at koden din er robust og feilfri.
+Ikke vær redd for å gjøre feil, det er en naturlig del av læring. Haskell har et sterkt type-system som kan hjelpe deg med å unngå noen vanlige feil, men det er fortsatt viktig å teste og feilsøke koden din grundig.
 
-En annen viktig del av å starte et Haskell-prosjekt er å bruke nyttige biblioteker. Haskell-samfunnet har et bredt utvalg av biblioteker som kan hjelpe deg med å løse forskjellige problemer. Det er viktig å forstå hvordan du kan bruke disse bibliotekene effektivt for å gjøre utviklingsprosessen enklere og mer effektiv.
+## Se også
 
-# Se også
-
-- [Haskell-plattform](https://www.haskell.org/platform/)
-- [Stack dokumentasjon](https://docs.haskellstack.org)
-- [Haskell-samfunnets biblioteker](https://hackage.haskell.org/)
+- [Haskell.org](https://www.haskell.org/)
+- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)
+- [Haskell on Reddit](https://www.reddit.com/r/haskell/)

@@ -1,33 +1,40 @@
 ---
-title:    "Elm: Encontrando o comprimento de uma string"
+title:    "Elm: Encontrando o tamanho de uma string."
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Em muitas linguagens de programação, é necessário encontrar o comprimento de uma string para realizar determinadas tarefas. No entanto, encontrar o comprimento de uma string em Elm pode ser um pouco diferente do que em outras linguagens. Neste artigo, vamos explorar por que é importante ser capaz de encontrar o comprimento de uma string em Elm.
+Você pode ter se perguntado algum dia: "Por que eu preciso saber o comprimento de uma string?". Embora possa parecer uma tarefa simples, essa habilidade é essencial para executar muitas tarefas de programação, como validar entradas de usuário, manipular dados e criar códigos eficientes.
 
 ## Como fazer
 
-Aqui está um exemplo simples de como encontrar o comprimento de uma string em Elm:
+Para encontrar o comprimento de uma string em Elm, basta usar a função `String.length`. Veja um exemplo abaixo:
 
-```Elm
-nome = "João"
-tamanho = String.length nome
+```elm
+nome = "Maria"
+comprimento = String.length nome
+
+-- Output: 5
 ```
 
-O código acima define uma variável "nome" com o valor "João" e, em seguida, usa a função `String.length` para encontrar o comprimento da string nome e armazená-lo na variável "tamanho". O valor resultante para "tamanho" seria 4, já que a string "João" tem 4 caracteres.
+Neste exemplo, criamos uma variável chamada `nome` que armazena uma string e, em seguida, usamos a função `String.length` para encontrar o comprimento da string e atribuí-lo à variável `comprimento`.
 
-## Profundidade
+## Deep Dive
 
-Encontrar o comprimento de uma string em Elm é bastante simples e fácil. No entanto, é importante observar que o comprimento é contado em caracteres, não em bytes. Isso significa que, se você estiver trabalhando com caracteres não ASCII ou emojis, o comprimento retornado pode não ser o esperado.
+Para entender melhor como a função `String.length` funciona, é importante entender que os caracteres em uma string são contados a partir do índice 0. Isso significa que o primeiro caractere é representado pelo número 0, o segundo pelo número 1 e assim por diante.
 
-Outra coisa a ter em mente é que a função `String.length` retorna um inteiro, portanto, se você estiver trabalhando com uma string que contém apenas números, poderá precisar convertê-la para um tipo numérico antes de realizar qualquer operação matemática com ela.
+Portanto, quando usamos `String.length`, ele conta o número de caracteres em uma string e retorna esse valor, que neste exemplo é 5.
 
 ## Veja também
 
-- [Documentação oficial do Elm sobre strings](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Outras funções úteis para trabalhar com strings em Elm](https://guide.elm-lang.org/strings/)
-- [Um tutorial abrangente sobre programação em Elm](https://www.elm-tutorial.org/pt-BR/)
+Aqui estão alguns links úteis para aprender mais sobre strings em Elm:
+
+- [Documentação da função String.length](https://package.elm-lang.org/packages/elm/core/latest/String#length)
+- [Tutorial sobre strings em Elm](https://guide.elm-lang.org/core_language.html#strings)
+- [Guia de referência para a linguagem Elm](https://elm-lang.org/docs)
+
+Agora que você sabe como encontrar o comprimento de uma string em Elm, pode aplicar essa habilidade em seus próprios projetos e tornar seus códigos mais eficientes. Divirta-se codando!

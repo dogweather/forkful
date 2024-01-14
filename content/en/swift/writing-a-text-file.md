@@ -1,56 +1,47 @@
 ---
 title:    "Swift recipe: Writing a text file"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to save some information in a file for later use? Maybe you wanted to save a game score or log some important data. Whatever the reason may be, writing a text file is a useful skill for any Swift programmer to have. In this blog post, you'll learn how to write a text file in Swift and explore the deeper concepts behind it.
+In today's digital world, writing a text file may seem like a thing of the past. However, it still serves an important purpose in many applications. Whether you need to store simple data, transfer information between systems, or even just create a log, knowing how to write a text file can be a valuable skill for any Swift programmer.
 
 ## How To
 
-Writing a text file in Swift is a relatively simple process. First, you'll need to create a String with the content you want to write in your file. Then, you'll use FileManager to specify the location and name of your file. Finally, you'll use the write(toFile:atomically:encoding:) method to actually write the content to the file.
+Writing a text file in Swift is a simple process. First, we need to define the file path where we want to save our text file. We can do this by using the `URL` class and specifying the location and name of our file.
 
+```Swift
+let fileURL = URL(fileURLWithPath: "myTextFile.txt")
 ```
-Swift
-//Declare the content to be written
-let content = "This is a sample text file."
 
-//Create a file manager
-let fileManager = FileManager.default
+Next, we need to create a string with the contents we want to write to our text file. This can be anything from a single word to a large block of text.
 
-//Specify the file location and name
-let fileURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("MyFile.txt")
+```Swift
+let text = "Hello, world!"
+```
 
-//Write the content to the file
+Now, we can use the `write(to:atomically:encoding:)` method to actually write the text to our file. This method takes in the file URL, a boolean value determining whether we want to write atomically (meaning the entire file is written at once), and an encoding value.
+
+```Swift
 do {
-    try content.write(to: fileURL, atomically: true, encoding: .utf8)
-    print("File saved successfully.")
+    try text.write(to: fileURL, atomically: true, encoding: .utf8)
+    print("Text file successfully created!")
 } catch {
     print("Error writing to file: \(error)")
 }
 ```
 
-If everything goes well, you should see a "File saved successfully." message in the console. You can then go to the specified file location and open MyFile.txt to see the content you wrote.
+When we run this code, we should see our text file appear in the specified location with the text "Hello, world!" written inside.
 
 ## Deep Dive
 
-Now that you know the basic steps for writing a text file, let's dive a bit deeper into some important concepts. There are a few things to keep in mind when working with text files in Swift:
-
-- You can choose the location and name of your file, but make sure to use a valid file path and name.
-- The write(toFile:atomically:encoding:) method has a "throw" keyword, which means it can throw errors. That's why we need to wrap it in a do-catch statement.
-- You can choose the encoding for your file, which determines how the content is saved. In our example, we used .utf8, but you can also use other encodings such as .ascii or .utf16.
-- If you want to append content to an existing file, you can use the .append() method instead of .write().
-- Once you have your content stored in a String, you can also manipulate it in various ways before writing it to the file. For example, you can add line breaks or concatenate multiple strings.
+The `write(to:atomically:encoding:)` method is just one way to write a text file in Swift. Another option is to use the `FileManager` class, which allows us to create the file if it doesn't already exist and append text to it. We can also specify a different encoding, such as UTF-16 or ASCII. Additionally, if we want to add more complex data, we can use the `NSKeyedArchiver` class to convert our data into an archived file, which can then be written to a text file.
 
 ## See Also
 
-If you want to learn more about working with files in Swift, check out these helpful resources:
-
-- [Apple Developer Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift File Handling Tutorial](https://www.hackingwithswift.com/articles/103/how-to-read-and-write-files-in-swift)
-- [Working with Strings in Swift](https://www.hackingwithswift.com/syntax/swift-strings)
-
-With these skills under your belt, you'll be able to confidently write and save text files in your Swift projects. Happy coding!
+- [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)
+- [Encoding in Swift](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_data_with_coding/keyed_encoding)

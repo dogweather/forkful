@@ -1,42 +1,62 @@
 ---
 title:    "Python: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, wenn man bestimmte Daten oder Zeichenfolgen aus einem Text oder einer Datei entfernen möchte. Dies kann nützlich sein, um unerwünschte Informationen zu filtern oder um die Datenstruktur zu vereinfachen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung sehr nützlich sein, um ungewünschte Daten zu entfernen oder Daten in einem bestimmten Format zu bearbeiten.
 
-## Wie geht man vor
+# How To
 
-Um Zeichen zu entfernen, die einem Muster entsprechen, können wir die `re` Bibliothek in Python nutzen. Diese Bibliothek bietet verschiedene nützliche Funktionen, um reguläre Ausdrücke zu nutzen.
+Um Zeichen in einem String zu löschen, die einem bestimmten Muster entsprechen, können Sie die `re` Bibliothek in Python verwenden. Zuerst importieren wir die Bibliothek:
 
-```
+```python
 import re
-
-# Beispieltext
-text = "Heute ist ein schöner Tag! Aber morgen wird es regnen."
-
-# Muster, das wir entfernen möchten
-pattern = "[!?.]"
-
-# Verwendung von re.sub() um die Zeichen zu löschen
-neuer_text = re.sub(pattern, "", text)
-
-# Ausgabe des neuen Textes
-print(neuer_text)
 ```
 
-Die Ausgabe dieses Codes wäre: "Heute ist ein schöner Tag Aber morgen wird es regnen". Wir haben erfolgreich alle Punkte, Frage- und Ausrufezeichen aus dem Text entfernt.
+Dann definieren wir unseren String und das Muster, das wir löschen möchten:
 
-## Tiefergehende Informationen
+```python
+txt = "Mein Geburtsdatum ist am 01/01/2000."
+pattern = "[0-9]"
+```
 
-Die `re` Bibliothek bietet auch andere nützliche Funktionen wie `findall()`, `split()` und `search()`, um mit regulären Ausdrücken zu arbeiten. Es ist auch möglich, komplexere Muster zu erstellen, um bestimmte Muster genau zu definieren, die gelöscht werden sollen. Es gibt viele Ressourcen online, die eine ausführlichere Erklärung und Beispiele für die Verwendung von regulären Ausdrücken in Python bieten.
+Das Muster `[0-9]` bedeutet, dass wir alle Ziffern von 0 bis 9 löschen möchten. Nun wenden wir die `re.sub()` Funktion an, um unsere Zeichenfolge zu ändern:
 
-## Siehe auch
+```python
+new_txt = re.sub(pattern, "", txt)
+print(new_txt)
+```
 
-- [Dokumentation der `re` Bibliothek](https://docs.python.org/3/library/re.html)
-- [Einführung zu regulären Ausdrücken in Python](https://www.python-kurs.eu/python3_re.php)
-- [Tutorial: Zeichenfolgen bearbeiten mit regulären Ausdrücken](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)
+Die Ausgabe wäre:
+
+`Mein Geburtsdatum ist am //.`
+
+Wie Sie sehen können, wurden alle Ziffern in unserem String gelöscht. Sie können auch komplexere Muster verwenden, um bestimmte Zeichen oder Wörter zu löschen. Hier ist ein Beispiel, in dem wir alle Sonderzeichen und Leerzeichen aus einem String entfernen:
+
+```python
+txt = "Hallo! Wie geht es dir?"
+pattern = "[^A-Za-z0-9]"
+new_txt = re.sub(pattern, "", txt)
+print(new_txt)
+```
+
+Die Ausgabe wäre:
+
+`HalloWiegehtesdir`
+
+# Deep Dive
+
+Das `re` Modul in Python bietet eine breite Palette an Funktionen und Möglichkeiten, um mit regulären Ausdrücken zu arbeiten. Mit dem `re.sub()` Befehl können Sie nicht nur Zeichen löschen, sondern auch ersetzen oder hinzufügen, je nachdem, welche Argumente Sie der Funktion übergeben. Es gibt auch verschiedene Optionen und Flags, die Sie verwenden können, um Ihre regulären Ausdrücke anzupassen.
+
+Um mehr über die Verwendung von regulären Ausdrücken in Python zu erfahren, können Sie die offizielle Dokumentation der `re` Bibliothek lesen oder verschiedene Tutorials online finden.
+
+# Siehe auch
+
+- Offizielle Dokumentation der `re` Bibliothek: https://docs.python.org/de/3/library/re.html
+- Tutorial über reguläre Ausdrücke in Python: https://realpython.com/regex-python/
+- Einführung in reguläre Ausdrücke in Python: https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial

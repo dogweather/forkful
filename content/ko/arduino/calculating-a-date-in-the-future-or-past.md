@@ -1,43 +1,57 @@
 ---
-title:    "Arduino: 미래나 과거 날짜 계산하기"
+title:    "Arduino: 미래나 과거의 날짜 계산하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 미래나 과거로 계산할 필요성
-날짜를 미래나 과거로 계산하는 것은 다양한 이유가 있을 수 있습니다. 예를 들어 아두이노를 사용하여 센서 데이터를 수집하고 특정 날짜와 시간에 이를 활용할 수 있습니다. 또한 특정 이벤트나 행사를 계획하는 데에도 필요한 기능입니다.
+# 왜
 
-## 사용 방법
-아두이노에서 날짜를 미래나 과거로 계산하기 위해서는 ```day(), month(), year()``` 함수와 연산자를 사용해야 합니다. 예를 들어, 현재 날짜와 10일 후의 날짜를 계산하는 코드는 다음과 같습니다.
+우리는 종종 미래나 과거의 특정 날짜를 계산하고 싶을 때가 있습니다. 예를 들어, 생일이나 휴일이 언제인지 알고 싶을 수 있습니다. 이런 경우에 아두이노 프로그래밍을 사용하면 쉽게 날짜를 계산할 수 있습니다.
 
-```Arduino
-int currentDay = day(); // 현재 날짜 저장
-int futureDay = currentDay + 10; // 10일 후의 날짜 계산
-int currentMonth = month(); // 현재 월 저장
-int currentYear = year(); // 현재 연도 저장
+# 어떻게하기
+
+아두이노에서는 내장된 시간 라이브러리를 사용하여 날짜를 쉽게 계산할 수 있습니다. 먼저 ```Time.h``` 라이브러리를 포함해야 합니다. 그런 다음 ```time_t``` 타입의 변수를 만들어 현재 시간을 저장합니다. 예를 들어:
+
+```
+#include <Time.h>
+
+time_t now = time(NULL);
 ```
 
-실행 결과는 다음과 같이 나타납니다.
+그런 다음 ```hour()```, ```minute()```, ```day()``` 등의 함수를 사용하여 변수에서 필요한 정보를 구할 수 있습니다. 아래는 현재 날짜와 시간을 계산하는 예제입니다.
 
-```Arduino
-Current date: 7/11/2021
-Future date: 7/21/2021
+```
+#include <Time.h>
+
+time_t now = time(NULL);
+
+int hour = hour(now);
+int minute = minute(now);
+int day = day(now);
+
+Serial.print("The current time is: ");
+Serial.print(hour);
+Serial.print(":");
+Serial.print(minute);
+Serial.print(", on day ");
+Serial.println(day);
 ```
 
-## 깊이 알아보기
-날짜를 계산하는 방법에는 여러 가지가 있지만, 가장 간단한 방법은 현재 날짜를 변수에 저장하고 이 변수를 수정해가면서 미래나 과거로 계산하는 것입니다. 또한 시간까지 고려해야 할 경우에는 ```hour(), minute(), second()``` 함수를 활용하여 이를 함께 계산할 수 있습니다.
+출력은 다음과 같이 나올 것입니다:
 
-또 다른 방법으로는 시간과 날짜를 저장하기 위해 자료형을 사용하는 방법이 있습니다. 예를 들어, ```struct```를 사용하여 연도, 월, 일, 시간, 분, 초를 저장할 수 있습니다. 이를 활용하면 보다 정확하고 다양한 날짜 계산을 할 수 있습니다.
+```
+The current time is: 15:30, on day 2
+```
 
-## 연관 자료
-Github에서 제공하는 라이브러리를 활용하면 더 많은 기능을 포함한 날짜 계산이 가능합니다. 아래의 링크를 참고해보세요.
+# 깊이 파고들기
 
-[Arduino 날짜 시간 라이브러리](https://github.com/PaulStoffregen/Time)
+더 깊이 들어가 보면, 아두이노에서는 1970년 1월 1일 이후 경과한 초로 시간을 측정합니다. 이를 Unix 시간이라고 합니다. 따라서 시간을 계산하고 싶다면 Unix 시간을 변환해야 할 필요가 있습니다. 또한, 아두이노에서는 내장된 RTC(Real-Time Clock) 모듈을 사용하면 보다 정확한 시간을 계산할 수 있습니다.
 
-## 참고 자료
-- [Arduino Reference - day()](https://www.arduino.cc/reference/en/language/functions/time/day/)
-- [Arduino Reference - month()](https://www.arduino.cc/reference/en/language/functions/time/month/)
-- [Arduino Reference - year()](https://www.arduino.cc/reference/en/language/functions/time/year/)
-- [C++ struct 사용 방법](https://www.learncpp.com/cpp-tutorial/47-structs/)
+# 더 알아보기
+
+이 글에서는 아두이노를 사용하여 날짜를 계산하는 방법을 간략하게 살펴보았습니다. 더 자세한 내용은 아래 링크들을 참고해주세요.
+
+- [Time 라이브러리 문서](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [RTC 모듈 사용하기](https://blog.naver.com/PostView.nhn?blogId=atork5445&logNo=221519282953)

@@ -1,51 +1,41 @@
 ---
-title:    "Javascript: Yhdistämisen merkkijonot"
+title:    "Javascript: Merkkijonojen yhdistäminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein kun ohjelmoidaan, tarvitaan tekstiketjuja tai -merkkijonoja. Näiden tekstiketjujen yhdistäminen tai "concatenating" on yksi tärkeä osa JavaScript-ohjelmointia. Se auttaa luomaan monipuolisia ja dynaamisia tekstejä, jotka voivat vaihdella sen mukaan, mitä tietoja ohjelma saa.
+Useimmissa tapauksissa ohjelmoijat joutuvat tekemään toimintoja, joissa useita merkkijonoja täytyy yhdistää yhdeksi suuremmaksi merkkijonoksi. Tätä kutsutaan merkkijonojen yhdistämiseksi tai concatenationiksi. Tämä on tärkeä osa ohjelmoinnin perusteita, ja se säästää aikaa ja vaivaa, kun työskentelet monipuolisilla merkkijonoilla.
 
-## Kuinka tehdä
+## Miten
 
-Kun haluat yhdistää kaksi tai useampia merkkijonoja yhdeksi, voit käyttää JavaScriptin perusmuotoa:
+Merkkijonojen yhdistäminen on helppoa JavaScriptissä. Voit käyttää "+" -merkkiä tai "concat ()" -metodia. Alla on esimerkki käyttämällä näitä kahta tapaa:
 
-```Javascript 
-var string1 = "Hei";
-var string2 = "maailma";
+```Javascript
+// Käyttäen "+" merkkiä
+let etunimi = "Matti";
+let sukunimi = "Meikäläinen";
+let kokoNimi = etunimi + " " + sukunimi;
+console.log(kokoNimi); // Tulostaa: Matti Meikäläinen
 
-var result = string1 + " " + string2;
-
-console.log(result); // Output: "Hei maailma"
+// Käyttäen "concat()" metodia
+let aineisto1 = "Esimerkki";
+let aineisto2 = "teksti";
+let uusiAineisto = aineisto1.concat(" ", aineisto2);
+console.log(uusiAineisto); // Tulostaa: Esimerkki teksti
 ```
 
-Voit myös yhdistää muuttujia ja muita merkkijonoja samalla tavalla. Voit myös käyttää erilaisia operaattoreita, kuten `+=` ja `concat()`.
+## Syvempi sukellus
 
-## Syventävä tieto
+JavaScriptissä merkkijonot ovat ei-muuttuvia arvoja eli niitä ei voi muuttaa suoraan. Siksi jokainen merkkijonon yhdistämistä koskeva toiminto luo aina uuden merkkijonon. Tämä tarkoittaa sitä, että jokainen yhdistetty merkkijono vie muistitilaa, joten on tärkeää käyttää tätä toimintoa harkiten.
 
-On tärkeää huomata, että kun yhdistät merkkijonoja JavaScriptissä, lopputulos on uusi merkkijono. Vanhat merkkijonot pysyvät ennallaan. Tämä johtuu siitä, että merkkijonot ovat ei-muuttuvia tai "immutable" JavaScriptissä. Siksi on tärkeää tallentaa yhdistetty merkkijono uuteen muuttujaan, jos haluat käyttää sitä myöhemmin ohjelmassa.
-
-Jokaisella merkkijonolla on myös oma pituutensa, joka voidaan selvittää `length`-ominaisuuden avulla:
-
-```Javascript 
-var string = "Tämä on tekstiketju";
-
-console.log(string.length); // Output: 20
-```
-
-Lisäksi voit käyttää `substring()`-metodia palauttamaan osan merkkijonosta:
-
-```Javascript 
-var string = "Tämä on tekstiketju";
-
-console.log(string.substring(5,8)); // Output: " on"
-```
+On myös huomattava, että merkkijonat eivät ole ainoita asioita, jotka voidaan yhdistää. Voit myös yhdistää muita tietotyyppejä, kuten numeroita ja muuttujia, merkkijonon kanssa. Käyttämällä "toString ()" -metodia voit muuttaa numeron merkkijonoksi, jotta se voidaan yhdistää toiseen merkkijonoon.
 
 ## Katso myös
 
-- [MDN web docs: String Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Concatenation)
-- [W3Schools: JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)
-- [Codecademy: Concatenation](https://www.codecademy.com/courses/introduction-to-javascript/lessons/introduction-to-javascript/exercises/concatenation)
+- [Merkkijonojen yhdistäminen JavaScriptissä (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [JavaScriptin perusteet (W3Schools)](https://www.w3schools.com/js/)
+- [JavaScript merkkijonot (Codecademy)](https://www.codecademy.com/learn/introduction-to-javascript/modules/introduction-to-javascript/cheatsheet)

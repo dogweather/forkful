@@ -1,49 +1,29 @@
 ---
-title:    "Haskell: להשוואת שתי תאריכים"
+title:    "Haskell: השוואת שתי תאריכים"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה?
 
-תאריך וזמן הם שני משתנים חשובים ביותר בכל תוכנית תוכנה. בהתבוננות יותר עמוקה, ניתן לקבל נתונים נוספים ומועילים על התאריכים שמשתמשים בהם בתכנית הפיתוח. בפוסט זה נלמד כיצד להשתמש בחשבון של שני תאריכים כדי להשוות ביניהם ולדעת מי מהם הוא יותר חדש.
+לייצר יישומים עם פונקציות תאריך ב־Haskell נוח, יש להתמקד במאפיינים של התאריכים. לוקחים בחשבון גם את תמיכה בפולג (כמו פריודים או נטיף) ואפילו חוסר תאיריך אזור כיפה. להגדיר פונקציות שמחזירות תאריך זה מאגנוסט היא דרך נהדרת לקרוא יותר פשוט ויתרונות רבים נוספים. 
 
-## איך לעשות
+## איך לעשות?
 
-עבודה עם תאריכים בשפת התכנות הפונקציונלית Haskell נעשת באמצעות המודול Data.Time המאפשר ליצור ולעבד תאריכים וזמנים בקלות. נתחיל עם קוד פשוט המייצג שני תאריכים בפורמט של Date, Time of Day ו Time Zone:
-
-```Haskell
-import Data.Time
-
-date1 = fromGregorian 2020 12 25
-time1 = makeTimeOfDay 15 30 0 -- 3:30 PM
-timezone1 = utc -- UTC Time Zone
-dateTime1 = LocalTime date1 time1
-
-date2 = fromGregorian 2019 1 1
-time2 = makeTimeOfDay 12 0 0 -- 12:00 PM
-timezone2 = hoursToTimeZone (-5) -- Eastern Time Zone
-dateTime2 = LocalTime date2 time2
-```
-
-הכמויות יכולות להיות מייצגות על ידי תאריך וזמן כפונקציות מכוונות, LocalTime עבור DATE, TIME_OF_DAY ו TIME_ZONT שאלה: כאן DateTime1 מייצג את יום חג המולד של שנת 2020, 3:30 PM UTC ו dateTime2 מייצג את 1 בינואר 2019 ב 12:00 PM Eastern Time.
-
-כעת נחשב את ההפרש בין התאריכים בסקריפט הזה על ידי השוואת שני התאריכים עם הודעת מיהו התאריך המוקדם יותר:
+הפונקציה `diffDays` בספריה הסטנדרטית של Haskell, `base`, מאפשרת לנו להשוות שלושה פונקציות תאריך שונות: תאריך מנורמלי, תאריך אסורטיבי ותאריך מלחי. כדי להשוות את שתי התאריכים הנתונים ניתן להשתמש בפונקציה `Day` כדי לחשב את ההפרש בין היום הנבחר והיום הנתון כארגומנטים. לדוגמה:
 
 ```Haskell
-compareDates :: LocalTime -> LocalTime -> String
-compareDates d1 d2 =
-    case compare d1 d2 of
-        GT -> "DateTime1 is earlier than DateTime2"
-        LT -> "DateTime2 is earlier than DateTime1"
-        EQ -> "The dates are the same"
+diffDays (fromGregorian 2021 5 1) (fromGregorian 2021 5 15)
 
-main = do
-    putStrLn (compareDates dateTime1 dateTime2) 
+-- הפלט יהיה: 14
 ```
 
-הפלט המצורף עבור הדוגמה זו הוא:
-> DateTime2 is earlier than DateTime1
+במקרים מסוימים, נוכל להשתמש גם בפונקציות נוספות כמו `diffLocalTime` כדי לחשב הפרשים בין התאריכים מורכבים יותר.
 
-ניתן להתאים את הפונקציה כדי להחזיר פלט מעודכן יותר, כגון התאריך המדויק המי
+## חפירה עמוקה 
+
+בכדי להבין איך משווים שני תאריכים בשפת Haskell נדרשת ידע על המונח "זמן עבודה אדוקטיבי" (UTC). אם הידע שלך על התאריך והזמן בשפת Haskell דרך ספרית `base` מספיק, אפשר להתעלם מהמידע הנוסף הזה. עוד כמה דברים שחשוב לדעת כשמשווים שני תאריכים במידה ראשית הם: שימוש בפונקציות עם תאריך מסירוף והשפעותם על התאריך הסופי, וכמה דברים טכניים נוספים.
+
+## ראו

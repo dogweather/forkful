@@ -1,70 +1,48 @@
 ---
 title:    "C: 连接字符串"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：有至1-2句话阐述为什么人们会使用字符串连接。
+# 为什么要用C语言连接字符串？
+连接字符串是一种常见的技术，它可以将多个字符串拼接成一个更长的字符串。这在处理文本数据时特别有用，可以帮助我们更有效地处理文本文件或用户输入。在C语言中，我们可以使用标准库函数strcat()实现字符串连接操作。
 
-## 为什么
-
-在编程中，经常会遇到需要将多个字符串结合在一起的情况。例如，在字符串拼接时，我们可能需要将一个人的名字和姓氏结合起来，或者将多条文本消息合并成一条长文本。使用字符串连接能够有效地帮助我们实现这些需求。
-
-## 如何实现
-
-要进行字符串连接，我们需要使用C语言中的一个函数`strcat()`。这个函数的功能是将一个字符串追加在另一个字符串的末尾，从而形成一个新的字符串。示例如下：
+## 如何连接字符串？
+在C语言中，字符串是以字符数组的形式存储的，它们以空字符（'\0'）作为结尾。要连接两个字符串，我们可以使用strcat()函数，它需要两个参数：目标字符串和源字符串。下面是一个连接两个字符串的例子：
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    // 创建两个字符串
-    char first_name[20] = "张";
-    char last_name[20] = "三";
+int main() {
+  char str1[20] = "Hello";
+  char str2[20] = "World";
 
-    // 使用strcat()函数将两个字符串连接
-    strcat(first_name, last_name);
+  strcat(str1, str2);
 
-    // 输出结果
-    printf("%s\n", first_name);
+  printf("Concatenated string: %s", str1);
 
-    return 0;
+  return 0;
 }
 ```
 
-输出结果为`张三`。我们可以看到，`strcat()`函数将`last_name`字符串连接到了`first_name`字符串的末尾，从而形成了新的字符串。
-
-除了`strcat()`函数外，我们还可以使用另一个函数`strncat()`来实现字符串连接。与`strcat()`不同的是，`strncat()`需要指定连接的字符个数，从而避免内存溢出的情况。示例如下：
+输出结果应该是：
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-    // 创建两个字符串
-    char first_name[20] = "张";
-    char last_name[20] = "三";
-
-    // 使用strncat()函数将两个字符串连接
-    strncat(first_name, last_name, 1); // 连接一个字符
-
-    // 输出结果
-    printf("%s\n", first_name);
-
-    return 0;
-}
+Concatenated string: HelloWorld
 ```
 
-输出结果为`张三`。我们可以看到，通过指定连接的字符个数，我们只连接了`last_name`字符串的第一个字符，从而得到了`张三`这个结果。
+## 深入了解字符串连接
+当我们调用strcat()函数时，它会从目标字符串的空字符处开始将源字符串的第一个字符复制过来，一直复制到源字符串的结尾，然后加上一个空字符。这样，就实现了两个字符串的连接。
 
-## 深入了解
+需要注意的是，源字符串的长度不能超过目标字符串的剩余空间，否则程序会发生未定义的行为。也需要确保目标字符串有足够的空间来存储连接后的字符串。
 
-在C语言中，字符串被视为字符数组，因此我们可以使用循环来遍历字符串中的每一个字符，从而实现更灵活的字符串连接操作。同时，我们也可以使用`strcmp()`函数来比较两个字符串，从而确定其连接顺序。值得注意的是，在使用`strcat()`和`strncat()`进行字符串连接时，我们需要保证目标字符串的长度足够长，以免造成内存溢出的情况。
+# 参考链接
+- C语言标准库手册：https://www.cplusplus.com/reference/cstring/strcat/
+- 字符串连接教程：https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm
 
-## 另请参阅
-
-- [C语言中的字符串操作](https://www.geeksforgeeks.org/string-handling-strings-in-c/)
-- [C语言字符串连接函数strcat()的使用](https://www.runoob.com/cprogramming/c-function-strcat.html)
-- [C语言字符串比较函数strcmp()的使用](https://www.runoob.com/cprogramming/c-function-strcmp.html)
+# 参见
+- 字符串拷贝：https://github.com/Languages4me/tutorials/tree/master/C/Strings/Copying
+- 字符串比较：https://github.com/Languages4me/tutorials/tree/master/C/Strings/Comparing

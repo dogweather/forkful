@@ -1,36 +1,54 @@
 ---
 title:    "PHP: Tests schreiben"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum Tests schreiben?
+## Warum
+Tests sind ein integraler Bestandteil der Softwareentwicklung, der oft übersehen oder vernachlässigt wird. Doch das Schreiben von Tests kann dazu beitragen, die Qualität und Stabilität einer Anwendung zu verbessern. In diesem Blogbeitrag werden wir uns ansehen, warum es wichtig ist, Tests in PHP-Anwendungen zu schreiben.
 
-Tests sind ein wichtiger Bestandteil des Programmierens, da sie sicherstellen, dass der Code wie erwartet funktioniert. Sie helfen dabei, Fehler zu finden und zu beheben, bevor sie in die Produktionsumgebung gelangen. Tests ermöglichen auch eine bessere Strukturierung des Codes und erleichtern es anderen Entwicklern, diesen zu verstehen und damit zu arbeiten.
-
-## Wie man Tests schreibt
-
-Das Schreiben von Tests in PHP ist relativ einfach und kann durch die Verwendung von Tools wie PHPUnit vereinfacht werden. Im Folgenden finden Sie ein Beispiel für das Schreiben eines einfachen Tests für eine Funktion, die zwei Zahlen addiert:
+## Wie
+Um mit dem Schreiben von Tests in PHP zu beginnen, müssen Sie zunächst eine Testframework wie PHPUnit installieren. Dann können Sie Ihre Tests in Methoden verpacken und Assertions hinzufügen, um die erwarteten Ergebnisse zu überprüfen. Hier ist ein Beispiel für das Testen einer einfachen Additionsfunktion:
 
 ```PHP
-/**
- * Test für die Additionsfunktion
- */
-public function test_addition() {
-  $sum = addNumbers(5, 10);
-  $this->assertEquals(15, $sum);
+<?php
+// zu testende Funktion
+function add($a, $b)
+{
+    return $a + $b;
+}
+
+// Testklasse
+class AddTest extends PHPUnit_Framework_TestCase
+{
+    public function testAdd()
+    {
+        // Arrange
+        $a = 5;
+        $b = 10;
+
+        // Act
+        $result = add($a, $b);
+
+        // Assert
+        $this->assertEquals(15, $result);
+    }
 }
 ```
 
-In diesem Beispiel wird die assertEquals-Funktion verwendet, um sicherzustellen, dass die Ausgabe der Funktion tatsächlich die erwartete Summe von 15 ist. Durch das Schreiben von solchen Tests können potenzielle Fehler im Code frühzeitig erkannt und behoben werden.
+In diesem Beispiel haben wir eine einfache Funktion "add" geschrieben, die zwei Zahlen addiert. Dann haben wir eine Testklasse erstellt, die von PHPUnit_Framework_TestCase erbt und eine Testmethode "testAdd" enthält. Dort haben wir die benötigten Variablen initialisiert, die Funktion aufgerufen und mit einer Assertion überprüft, ob das Ergebnis der erwarteten Summe entspricht.
 
-## Tiefer Tauchgang
+## Deep Dive
+Es gibt viele verschiedene Arten von Tests in der Softwareentwicklung, wie z.B. Unit-Tests, Integrationstests und Akzeptanztests. Unit-Tests konzentrieren sich auf das Testen von einzelnen Funktionen oder Methoden, während Integrationstests sich mit der Zusammenarbeit von Komponenten beschäftigen. Akzeptanztests überprüfen, ob die Anwendung die vom Kunden gewünschten Anforderungen erfüllt.
 
-Tests sollten immer vollständig und unabhängig voneinander sein, um sicherzustellen, dass sie zuverlässige Ergebnisse liefern. Es ist auch wichtig, sowohl positive als auch negative Fälle zu testen, um sicherzustellen, dass der Code in allen Szenarien korrekt funktioniert. Durch den Einsatz von Test-Driven-Development, bei dem Tests vor der eigentlichen Implementierung geschrieben werden, kann die Qualität des Codes weiter verbessert werden.
+Beim Schreiben von Tests ist es wichtig, eine gute Coverage zu erreichen, d.h. sicherzustellen, dass möglichst alle Codepfade getestet werden. Eine Coverage von 100% zu erreichen ist zwar nicht immer realistisch, aber es lohnt sich, sich konstant zu verbessern.
 
-# Siehe auch
+Ein weiterer wichtiger Aspekt des Testens ist das Mocking, d.h. das Ersetzen von Abhängigkeiten wie Datenbankzugriffe oder externe APIs durch simulierten Verhaltensweisen. Dies ermöglicht es, Tests unabhängig voneinander durchzuführen und die Anwendung schneller und zuverlässiger zu testen.
 
+## Siehe auch
 - [PHPUnit Dokumentation](https://phpunit.de/documentation.html)
-- [Test-driven development mit PHP](https://www.phparch.com/2019/05/confessions-of-a-test-driven-developer/)
-- [Warum Tests wichtig sind](https://www.sitepoint.com/why-test-units-best-practices-php-programs/)
+- [Test Driven Development mit PHPUnit](https://phpunit.de/getting-started/test-driven-development.html)
+- [10 Gründe, warum Tests wichtig sind](https://www.pmg.com/blog/10-reasons-why-testing-matters/)
+- [Test-Driven Development für Einsteiger](https://www.codeproject.com/Articles/1082055/Unit-Testing-for-Beginners)

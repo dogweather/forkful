@@ -1,49 +1,49 @@
 ---
-title:    "Go: Comprobando si existe un directorio."
+title:    "Go: Comprobando si existe un directorio"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué comprobar si un directorio existe en Go
 
-¿Alguna vez te has encontrado en la situación de necesitar saber si un directorio existe en tu sistema? Ya sea para organizar tus archivos o para validar una ruta de acceso en tu código, verificar la existencia de un directorio puede ser una tarea importante en el desarrollo de aplicaciones en Go.
+La comprobación de la existencia de un directorio es una parte importante de la programación en Go. Esta función ayuda a garantizar que el código se ejecute correctamente y se eviten errores al tratar de acceder a un directorio que no existe. Además, puede ser útil para verificar si un directorio previamente creado se ha eliminado o no.
 
-# Cómo hacerlo
+## Cómo hacerlo
 
-En Go, podemos utilizar la función `os.Stat()` para verificar la existencia de un directorio. Esta función devuelve un error si el directorio no existe o una estructura `FileInfo` si lo hace.
+Para comprobar si un directorio existe en Go, utilizaremos la función `os.Stat()` junto con un condicional `if`. Esta función toma como argumento la ruta del directorio que queremos comprobar y devuelve un objeto `os.FileInfo` si el directorio existe, o un error si no existe.
 
 ```Go
-if _, err := os.Stat("directorio/ejemplo"); err == nil {
-    fmt.Println("El directorio existe")
-} else {
-    fmt.Println("El directorio no existe")
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Ruta del directorio a comprobar
+	dir := "/ruta/del/directorio"
+
+	// Comprobamos si el directorio existe
+	if _, err := os.Stat(dir); err == nil {
+		fmt.Printf("El directorio %s existe\n", dir)
+	} else {
+		fmt.Printf("El directorio %s no existe\n", dir)
+	}
 }
 ```
 
-Si deseas verificar la existencia de un directorio de forma recursiva (es decir, en caso de que tenga subdirectorios), puedes utilizar la función `os.Stat()` en conjunto con `filepath.Walk()`, que recorre de forma recursiva una ruta de acceso y ejecuta una función en cada archivo o directorio que encuentre.
+Si el directorio existe, se imprimirá "El directorio {ruta del directorio} existe". De lo contrario, se imprimirá "El directorio {ruta del directorio} no existe".
 
-```Go
-err := filepath.Walk("directorio/ejemplo", func(path string, info os.FileInfo, err error) error {
-    if err != nil {
-        return err
-    }
-    if info.IsDir() {
-        fmt.Println("El directorio", path, "existe")
-    }
-    return nil
-})
-if err != nil {
-    fmt.Println(err)
-}
-```
+## Profundizando
 
-# Profundizando
+Además de la función `os.Stat()`, existen otras formas de comprobar la existencia de un directorio en Go. Por ejemplo, la función `os.IsExist()` puede usarse para verificar si se produce un error debido a que el directorio ya existe. También podemos utilizar la función `os.IsNotExist()` para verificar si se produce un error debido a que el directorio no existe.
 
-La función `os.Stat()` también es útil para obtener información sobre un directorio, como su tamaño o la fecha de su última modificación. Además, podemos utilizar `os.IsNotExist()` para verificar si un error específico corresponde a un directorio que no existe.
+Además, si necesitamos trabajar con directorios de forma más compleja, existen paquetes de terceros, como el paquete `path/filepath` que proporciona funciones para buscar en directorios y realizar operaciones de comparación.
 
-# Ver también
+## Ver también
 
-- [Documentación oficial de os.Stat() en Go](https://pkg.go.dev/os#Stat)
-- [Documentación oficial de filepath.Walk() en Go](https://pkg.go.dev/path/filepath#Walk)
-- [Tutorial sobre manejo de errores en Go](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-go-es)
+- Documentación oficial de Go sobre la función `os.Stat()`: https://golang.org/pkg/os/#Stat
+- Ejemplos adicionales de códigos para comprobar la existencia de directorios en Go: https://www.golangprograms.com/how-do-i-check-if-a-file-exists-in-go-lang.html

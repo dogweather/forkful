@@ -1,32 +1,54 @@
 ---
 title:    "Elm: Escrevendo para o erro padrão"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em Elm?
+## Por que escrever no erro padrão (Standard Error)
 
-Escrever para o erro padrão em Elm pode ser uma tarefa útil para os desenvolvedores que desejam melhorar o gerenciamento de erros em seus programas. Ao escrever para o erro padrão, é possível obter uma visão mais clara dos erros que ocorrem durante a execução do código, facilitando a identificação e resolução de problemas.
+Escrever no erro padrão é uma prática comum em programação Elm. Isso nos permite lidar com erros de maneira mais eficiente e oferece uma maneira mais robusta de lidar com exceções em nosso código.
 
 ## Como fazer
 
-Para escrever para o erro padrão em Elm, é necessário utilizar a função `Debug.crash` que recebe uma mensagem de erro como parâmetro. Dentro dessa função, podemos chamar a função `toString` para converter qualquer tipo de dado em uma string e assim, exibi-lo como mensagem de erro. Veja um exemplo abaixo:
+Para escrever no erro padrão em Elm, podemos usar a função `Debug.crash` seguida por uma mensagem de erro entre aspas. Por exemplo:
 
-```elm
-Debug.crash (toString "Ocorreu um erro inesperado!")
+```Elm
+Debug.crash "Ocorreu um erro inesperado!"
 ```
 
-Este código irá imprimir a mensagem "Ocorreu um erro inesperado!" no erro padrão quando for executado.
+Isso imprimirá a mensagem no console de desenvolvimento e ajudará a identificar a origem do erro.
 
-## Profundidade técnica
+Também podemos usar a função `Ergo.catch` para capturar e manipular erros específicos em nosso código. Por exemplo:
 
-Além de apenas exibir mensagens de erro, a função `Debug.crash` também pode ser utilizada para interromper a execução do programa. Isso significa que, quando ocorrer um erro, o programa irá parar de ser executado e as mensagens de erro serão exibidas no erro padrão.
+```Elm
+import Ergo exposing (catch)
 
-Além disso, é possível utilizar o `Debug.todo` para marcar partes do código que ainda não foram implementadas, e assim, evitar erros durante a compilação.
+divide x y =
+  if y == 0 then
+    catch (Just "Não é possível dividir por zero") (\msg -> Debug.crash msg)
+  else
+    x / y
+```
+
+Este bloco de código primeiro verifica se o divisor é igual a zero e, se for o caso, chama a função `catch` para capturar o erro e passar uma mensagem personalizada para a função `Debug.crash`.
+
+## Mergulho Profundo
+
+Escrever no erro padrão em Elm também nos permite lidar com casos inesperados que podem surgir durante a execução do nosso programa. Podemos usar a função `Task.perform` para realizar uma tarefa e, se houver um erro, chamar a função `Debug.crash` para imprimir uma mensagem no console. Por exemplo:
+
+```Elm
+performTask =
+  Task.perform
+    (\err -> Debug.crash "Ocorreu um erro ao realizar a tarefa")
+    (\success -> "Tarefa realizada com sucesso")
+```
+
+Esta função primeiro especifica o que deve ser feito em caso de erro (imprimir uma mensagem) e depois o que deve ser feito em caso de sucesso (retornar uma mensagem).
 
 ## Veja também
 
-- [Documentação oficial do Elm sobre Debug](https://guide.elm-lang.org/debugging/)
-- [Artigo sobre gerenciamento de erros em Elm](https://www.elmprogramming.com/error-handling-in-elm.html)
-- [Vídeo explicando o uso da função `Debug.crash`](https://www.youtube.com/watch?v=9OK-J1Gd-3M)
+- Documentação do Elm: https://guide.elm-lang.org/
+- Elm Weekly: https://elmlang.substack.com/
+- Fórum da Comunidade Elm: https://discourse.elm-lang.org/

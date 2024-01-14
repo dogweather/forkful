@@ -1,46 +1,36 @@
 ---
-title:    "C#: Slette karakterer som matcher et mønster"
+title:    "C#: Slette tegn som matcher et mønster"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Mange ganger i programmering, må vi manipulere data for å få ønsket resultat. Noen ganger må vi også slette visse tegn eller mønstre fra en streng. Dette kan være nyttig for å rense og forberede data for videre behandling. I denne bloggposten skal vi se på hvordan du kan slette tegn som matcher et gitt mønster i programmeringsspråket C#.
+Å slette tegn som matcher et mønster kan være nyttig i situasjoner der man ønsker å fjerne uønskede tegn fra en streng, for eksempel i et tekstbehandlingsprogram eller en database. Dette kan også være en viktig del av å validere brukerinput i et program.
 
-## Hvordan
+## Hvordan Gjøre Det
 
-Det finnes flere måter å slette tegn som matcher et mønster på i C#. I følgende kodeblokk vil vi bruke `Regex.Replace()`-metoden for å slette alle tall fra en streng.
-
-```C#
-string input = "abc123def456ghi789";
-string output = Regex.Replace(input, @"\d", ""); //output: abcdefghi
-```
-
-I dette eksempelet bruker vi `\d` som mønster, som representerer alle tall. Her erstatter vi alle tall med en tom streng, og får dermed en ny streng uten tall.
-
-Vi kan også bruke `Regex.Replace()`-metoden til å slette et bestemt mønster fra en streng. I følgende eksempel vil vi slette alle vokaler fra en streng.
+For å slette tegn som matcher et mønster, kan man bruke metoden `Regex.Replace()`. Dette er en innebygd metode i C# som tar inn tre parametre: en streng, et mønster og det nye tegnet man ønsker å erstatte det gamle med. La oss se på et eksempel:
 
 ```C#
-string input = "Hello World!";
-string output = Regex.Replace(input, "[aeiou]", ""); //output: Hll Wrld!
+string input = "d0g c@t f1sh";
+string pattern = "[^a-zA-Z0-9]"; // Dette mønsteret matcher alle tegn som ikke er bokstaver eller tall
+string output = Regex.Replace(input, pattern, "");
+Console.WriteLine(output); // Output vil være "d0g c@t f1sh"
 ```
 
-Her bruker vi `[aeiou]` som mønster, som representerer alle vokaler. Ved å erstatte disse med en tom streng, får vi en ny streng uten vokaler.
+I dette eksempelet bruker vi metoden til å slette alle tegn som ikke er bokstaver eller tall i den opprinnelige strengen `input`. Resultatet blir lagret i strengen `output` og deretter skrevet ut til konsollen.
 
-## Deep Dive
+## Dypdykk
 
-Når vi bruker `Regex.Replace()`-metoden, kan vi også spesifisere et tredje parameter, kalt `count`, som definerer hvor mange forekomster av mønsteret vi ønsker å erstatte. I følgende eksempel vil vi kun erstatte de to første forekomstene av mønsteret "oo" i en streng.
+Vi kan også bruke `Regex.Replace()` til å erstatte tegn med andre tegn eller strenger. For eksempel kan vi slette alle mellomrom i en streng ved å bruke følgende mønster: `\s+`. Dette vil matche alle mellomrom og erstatte dem med ingenting, noe som vil resultere i en streng uten mellomrom.
 
-```C#
-string input = "foo bar baz boo";
-string output = Regex.Replace(input, "oo", "", 2); //output: f bar baz bo
-```
-
-I tillegg til `Regex.Replace()`, har C# også en innebygd `Replace()`-metode for strenger som kan brukes til å slette et mønster. Denne metoden tar inn en `char` eller en `string` som parametere, i stedet for et regulært uttrykk.
+Det er også verdt å nevne at man kan bruke regulære uttrykk i stedet for en streng som mønster. Dette gir større fleksibilitet og mulighet for mer avanserte mønstre.
 
 ## Se Også
 
-- [Microsoft dokumentasjon for Regex.Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)
-- [C# Replace-metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+- [Microsofts offisielle dokumentasjon for Regex.Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)
+- [En guide til regulære uttrykk i C#](https://www.regular-expressions.info/dotnet.html)
+- [En oversikt over ASCII-tegn](https://www.ascii-code.com/)

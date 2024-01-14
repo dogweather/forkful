@@ -1,40 +1,34 @@
 ---
-title:    "TypeScript: Tarkistetaan, onko hakemistoa olemassa"
+title:    "TypeScript: Tarkistaako hakemisto on olemassa"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-"# Miksi
-
-Monissa ohjelmoinnin projekteissa on tarpeen tarkistaa, onko tietty hakemisto olemassa ja käsitellä sitä sen mukaan. Tämä yksinkertainen tehtävä voi säästää paljon aikaa ja estää virheitä jatkossa.
+## Miksi
+Tiedostonhallinnan ylläpito ja organisoiminen on olennainen osa ohjelmointia. Usein meidän täytyy tarkistaa, onko haluttua hakemistoa olemassa ja ohjata sen perusteella koodiamme eteenpäin.
 
 ## Miten
+```TypeScript
+import fs from 'fs';
 
-Tarkistaaksesi, onko hakemisto olemassa TypeScriptissä, voit käyttää Node.js:n `fs`-moduulia. `fs` tarjoaa erilaisia toimintoja tiedostojen ja hakemistojen käsittelyyn.
+// Tarkistetaan onko hakemisto olemassa
 
-```
-TypeScript
-import * as fs from 'fs';
-
-// Tarkistetaan, onko hakemisto "photos" olemassa
-if (fs.existsSync('./photos')) {
-  console.log('Hakemisto on olemassa.');
+if (fs.existsSync("./hakemisto")) {
+  // Tee tarvittavat toimenpiteet
+  console.log("Hakemisto on olemassa");
 } else {
-  console.log('Hakemistoa ei löydy.');
+  console.log("Hakemistoa ei löytynyt");
 }
+
 ```
+Tämä esimerkkikoodi käyttää Node.js:n fs-moduulia tarkistaakseen, onko hakemisto olemassa. Käytämme existSync-funktiota, joka palauttaa totuusarvon sen mukaan, löytyykö annetulla polulla oleva hakemisto vai ei. Sen perusteella voimme tehdä haluamamme toimenpiteet ohjelmassamme.
 
-Tämä koodi käyttää `existsSync()`-funktiota tarkistamaan, onko annetun polun mukainen tiedosto tai hakemisto olemassa. Jos hakemisto löytyy, konsoliin tulostetaan viesti "Hakemisto on olemassa". Jos hakemistoa ei löydy, tulostetaan "Hakemistoa ei löydy".
+## Syvempi sukellus
+Fs-moduuli tarjoaa myös muita vaihtoehtoja tarkistaa hakemiston olemassaolo, kuten accessSync-funktion, joka tarkistaa, onko hakemistoon pääsyä tai lukuoikeutta. Voimme myös käyttää exists-metodia, joka palauttaa Promisen ja on näin ollen käyttökelpoinen asynkronisessa koodissa. Lisää tietoa fs-moduulista ja sen metodeista löydät [Node.js:n dokumentaatiosta](https://nodejs.org/api/fs.html).
 
-## Syventävä tieto
-
-`existsSync()`-funktio palauttaa boolean-tyyppisen arvon, joten voit myös käyttää sitä ehtolauseissa ja tehdä haluamiasi toimenpiteitä sen perusteella, onko hakemisto olemassa vai ei. Voit myös käyttää `fs.statSync()`-funktiota saadaksesi tarkempia tietoja tiedostosta tai hakemistosta, kuten sen koon ja luomisajankohdan.
-
-On myös hyvä huomioida, että `fs.existsSync()` ja `fs.statSync()` toimivat vain synkronisesti, joten ne voivat hidastaa sovelluksen suoritusta, jos käsiteltävien tiedostojen määrä on suuri.
-
-# Katso myös
-
-- [Node.js: fs-moduuli](https://nodejs.org/api/fs.html)
-- [TypeScript for Beginners - Working with Files & Directories](https://youtu.be/F2uE_PvZJu0)
-- [Managing files and directories in TypeScript using the Node.js File System Module](https://www.section.io/engineering-education/managing-files-and-directories-in-typescript-using-the-node-js-file-system-module/)
+## Katso myös
+- [fs-moduuli Node.js:n dokumentaatiossa](https://nodejs.org/api/fs.html)
+- [Node.js - hakemistojen hallinta ja käsittely](https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/)
+- [TypeScriptin perusteet](https://www.typescriptlang.org/docs/handbook/basic-types.html)

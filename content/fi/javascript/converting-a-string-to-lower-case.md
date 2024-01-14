@@ -1,31 +1,36 @@
 ---
-title:    "Javascript: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:    "Javascript: Merkkijonon muuttaminen pienaakkosiksi"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? On olemassa useita syitä, miksi tämä voi olla hyödyllistä ohjelmointitehtävissä. Se voi auttaa vertaamaan kahta merkkijonoa, kun kirjainsuuruudella ei ole merkitystä. Se myös helpottaa merkkijonon hakemista ja muokkaamista, kun se on yhtenäisessä muodossa.
+JavaScriptissä on usein tarve muuttaa merkkijono pieniksi kirjaimiksi, esimerkiksi siksi että halutaan vertailla kahta samankaltaista merkkijonoa. Tämä voidaan tehdä käyttämällä merkkijonon lower case versiota.
 
 ## Miten
 
-Voit muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä Javascriptin `toLowerCase()`-funktiota. Seuraavassa esimerkissä oletetaan, että meillä on merkkijono "TÄMÄ ON ESIMERKKI":
+Merkkijonon muuttaminen pieniksi kirjaimiksi voidaan tehdä yksinkertaisesti käyttämällä `toLowerCase()` metodia. Seuraava esimerkki näyttää miten tämä voidaan tehdä:
 
 ```javascript
 let string = "TÄMÄ ON ESIMERKKI";
-let lowerCase = string.toLowerCase();
-console.log(lowerCase); // tulostaa "tämä on esimerkki"
+console.log(string.toLowerCase());
 ```
 
-## Syvällinen sukellus
+Tulosteena saadaan `tämä on esimerkki`. Huomaa, että metodi ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon.
 
-Käyttämällä `toLowerCase()`-funktiota, Javascript muuttaa jokaisen merkin merkkijonossa vastaavaksi pieneksi kirjaimeksi. Tämä toimii vain ASCII-merkkijonoille, eli esimerkiksi ääkköset eivät välttämättä muutu. Jos haluat käsitellä kansainvälisiä merkkejä, voit käyttää `toLocaleLowerCase()`-funktiota, joka tukee Unicode-merkkejä.
+## Syväsukellus
 
-On myös hyvä muistaa, että `toLowerCase()` ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden muutetun merkkijonon. Voit tallentaa tämän uuden arvon esimerkiksi uuteen muuttujaan tai sijoittaa sen suoraan haluamaasi muuttujaan.
+Merkkijonon muuttaminen pieniksi kirjaimiksi tapahtuu taustalla käyttäen Unicode-standardin `toLowerCase` funktiota. Tämä tarkoittaa, että vaikka tämä toimii suurimmalle osalle merkkijonoista, on olemassa poikkeustapauksia. Tässä pari esimerkkiä:
+
+1. Joissain kielissä, kuten saksassa, joillain kirjaimilla on kaksi eri pienikirjain versiota. Esimerkiksi ß voidaan muuttaa joko ss tai ß. Tämä saattaa aiheuttaa ongelmia, koska `toLowerCase` metodi ei osaa arvioida kumpi versio on oikein.
+2. Joissain kiinalaisissa merkistöissä ei ole käsitettä pieniä ja suuria kirjaimia, joten metodi ei tee mitään muutoksia.
+
+Näiden poikkeustapausten huomioiminen on tärkeää erityisesti silloin kun käytetään merkkijonon vertailua.
 
 ## Katso myös
 
-- [toLowerCase() dokumentaatio (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Kansainvälisten merkkien käsittely Javascriptissä (W3Schools)](https://www.w3schools.com/JSREF/jsref_tolocalelowercase.asp)
+- [Unicode standardi](https://unicode.org/)
+- [String.toLowerCase() MDN dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

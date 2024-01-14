@@ -1,46 +1,42 @@
 ---
-title:    "Haskell: Søke og erstatte tekst"
+title:    "Haskell: Søking og bytting av tekst"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Utilsiktet feilskriving eller endring av tekst kan være en vanlig utfordring i programmering. Å søke og erstatte denne teksten kan være en tidkrevende og kjedelig oppgave. Med Haskell sin kraftige funksjonelle programmeringsstil kan du effektivt håndtere denne oppgaven og spare tid og krefter.
+Mange av oss som programmerer i Haskell vet hvor viktig det er med effektiv og nøyaktig håndtering av tekst. Men noen ganger trenger vi å gjøre endringer i store mengder tekst på en effektiv måte. Dette er hvor søk og erstatting kommer inn i bildet. Ved å lære å søke og erstatte tekst, kan du spare tid og gjøre koden din mer strukturert og lesbar.
 
-# Hvordan gjøre det
+## Hvordan gjøre det
 
-For å søke og erstatte tekst i Haskell, kan du bruke funksjonene `find` og `replace` fra `Data.Text` biblioteket. For eksempel, hvis du ønsker å erstatte alle forekomster av "hej" med "hei" i en tekststreng `str`, kan du bruke følgende kode:
-
-```Haskell
-import Data.Text as T
-import Data.Text.Replace as TR
-
-str = "Hej, verden!"
-replace "hej" "hei" str
-```
-
-Dette vil gi deg utgangsresultatet `Hei, verden!`. Du kan også bruke `find` og `replace` funksjonene på filer ved å bruke `readFile` og `writeFile` funksjonene.
-
-En annen nyttig funksjon er `Regex.replace`, som lar deg erstatte tekst basert på et regex-uttrykk. For eksempel, hvis du ønsker å erstatte alle tall med "X" i en tekststreng `str`, kan du bruke følgende kode:
+I Haskell finnes det flere måter å søke og erstatte tekst på. Den vanligste metoden er å bruke funksjonene `words` og `unwords`, som kan dele en streng inn i en liste av ord og tilbake til en enkelt streng igjen.
 
 ```Haskell
-import Text.Regex as R
+ordListe = words "Dette er en setning"
+-- ["Dette", "er", "en", "setning"]
 
-str = "123 abc 456"
-R.replace (R.mkRegex "\\d+") str "X"
+tekst = unwords ["Hello", "world"]
+-- "Hello world"
 ```
 
-Dette vil gi deg utgangsresultatet `X abc X`.
+En annen nyttig funksjon er `replace`, som gir deg muligheten til å erstatte deler av en streng med en ny streng. Denne funksjonen tar tre argumenter: teksten du vil søke etter, teksten du vil erstatte det med, og strengen du vil erstatte teksten i.
 
-# Dypdykk
+```Haskell
+erstattTekst = replace "eple" "banan" "Jeg elsker epler"
+-- "Jeg elsker bananer"
+```
 
-Selv om det å søke og erstatte tekst med Haskell er enkelt, er det viktig å være oppmerksom på at funksjonene `find` og `replace` er case-sensitive. Dette betyr at hvis du vil erstatte en tekststreng som er skrevet i forskjellige store og små bokstaver, må du først gjøre hele strengen til en av de to. Du kan bruke funksjonene `toLower` og `toUpper` fra `Data.Text` biblioteket for dette.
+Du kan også bruke regex-uttrykk med `subRegex`-funksjonen for mer komplekse søk og erstattinger.
 
-En annen viktig ting å huske på er at `Regex.replace` funksjonen bare erstatter den første forekomsten av regex-uttrykket i en tekststreng. For å erstatte alle forekomster må du bruke funksjonen `Regex.subRegex` istedenfor.
+## Dykk dypere
 
-# Se også
+Nå som du har lært å søke og erstatte tekst i Haskell, kan du interessere deg for å lære mer om regex og hvordan du kan bruke det til å søke og erstatte tekst mer avansert. Det finnes også mange nyttige biblioteker som kan hjelpe deg med å håndtere tekst i Haskell, som `text` og `bytestring`.
 
-- [Data.Text biblioteket](https://hackage.haskell.org/package/text)
-- [Text.Regex biblioteket](https://hackage.haskell.org/package/regex)
+## Se også
+
+- [Haskell tekstbehandling med regex](https://wiki.haskell.org/Regex)
+- [Haskell "text" biblioteket](https://hackage.haskell.org/package/text)
+- [Haskell "bytestring" biblioteket](https://hackage.haskell.org/package/bytestring)

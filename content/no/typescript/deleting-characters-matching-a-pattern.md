@@ -1,51 +1,51 @@
 ---
 title:    "TypeScript: Sletting av tegn som matcher et mønster"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det kan være mange grunner til å engasjere seg i å slette tegn som matcher et mønster i TypeScript-kode. Dette kan være for å rengjøre og organisere koden din, forbedre lesbarheten eller forbedre ytelsen.
 
-Å slette tegn som matcher et visst mønster er et vanlig oppgave i programmering. Det kan være for å opprettholde god kodepraksis, for å rydde opp i uønsket data eller for å løse et spesifikt problem. Uansett årsak, å kunne slette tegn basert på et mønster kan være nyttig og tidsbesparende.
+## Hvordan man gjør det
+Det første trinnet for å slette tegn som matcher et mønster er å bruke String-replace-funksjonen i TypeScript, som lar deg erstatte tegn med et annet tegn eller en tom streng. Her er et eksempel på bruk av denne funksjonen:
 
-## Slik gjør du det
-
-For å slette tegn som matcher et mønster i TypeScript, kan vi bruke metoden `replace()` som finnes på alle strenger i språket. Denne metoden tar inn to argumenter - det første er mønsteret vi ønsker å finne og slette, og det andre er hva vi vil erstatte det med. La oss se på et eksempel:
-
-```
-TypeScript
-
-let tekst = "Jeg elsker å spise pizza på fredager!";
-let nyTekst = tekst.replace("elsker å ", "");
-
-console.log(nyTekst); // Output: Jeg spiser pizza på fredager!
+```TypeScript
+let sentence: string = "Dette er en tekst!";
+let newSentence: string = sentence.replace(/e/g, "");
+console.log(newSentence);
 ```
 
-I dette eksempelet har vi brukt `replace()` til å fjerne "elsker å " fra teksten vår og erstattet det med ingenting. Dette resulterer i at teksten vår nå kun inkluderer det vi vil beholde.
+I dette eksemplet bruker vi `/e/g` som mønster, som betyr at vi vil erstatte alle forekomster av "e" i strengen med en tom streng. Dette vil gi følgende utdata:
 
-Et annet vanlig scenario kan være å fjerne alle tall fra en tekststreng. I dette tilfellet kan vi bruke en såkalt regex (regulært uttrykk) for å identifisere alle tall og deretter bruke `replace()` for å slette dem. Her er et eksempel på hvordan det kan gjøres:
-
-```
-TypeScript
-
-let tekst = "123Hei234 på 456deg 789!";
-let regex = /[0-9]/g;
-let nyTekst = tekst.replace(regex, "");
-
-console.log(nyTekst); // Output: Hei på deg !
+```TypeScript
+Dtt i n txtst!
 ```
 
-Her har vi brukt en regex som identifiserer alle tall mellom 0 og 9, og `g`-flagget angir at vi vil gjøre dette for alle forekomster i teksten. Deretter bruker vi `replace()` til å slette alle tallene og får til slutt en tekst uten tall.
+Vi kan også bruke denne funksjonen til å erstatte deler av tegn med en annen streng, for eksempel:
 
-## Dykk dypere
+```TypeScript
+let sentence: string = "Dette er en tekst!";
+let newSentence: string = sentence.replace(/en/g, "ø");
+console.log(newSentence);
+```
 
-Nå som vi har sett hvordan vi kan slette tegn som matcher et mønster, la oss ta en titt på hvordan `replace()`-metoden faktisk fungerer. Denne metoden bruker et såkalt regular expression object (regex) til å finne og erstatte tegn. Dette objektet representerer et mønster som brukes for å søke etter en bestemt streng eller et mønster i en tekst.
+Dette vil gi utdata:
 
-I vårt eksempel brukte vi en regex som bare så etter tall, men det finnes utallige muligheter for hvordan man kan skrive en regex for å finne og slette bestemte tegn eller strenger i en tekst. Dette er et omfattende emne som krever en del kunnskap og erfaring, men det finnes gode ressurser på nettet for å lære mer om regex og hvordan man kan bruke det i sin kode.
+```TypeScript
+Døttø er ø økst!
+```
+
+Det er også verdt å merke seg at String-replace-funksjonen returnerer en ny streng og ikke endrer den originale strengen.
+
+## Dypdykk
+Det er mange forskjellige måter å bruke String-replace-funksjonen på for å slette tegn som matcher et mønster i TypeScript. Du kan for eksempel bruke mer avanserte regulære uttrykk for å matche et bredere spekter av tegn eller bruke løkker og betingelser for å håndtere spesielle tilfeller.
+
+Det kan også være nyttig å se på andre String-funksjoner som kan bidra til å slette tegn, som for eksempel String-slice-funksjonen for å fjerne deler av en streng, eller String-trim-funksjonen for å fjerne ekstra mellomrom rundt en streng.
 
 ## Se også
-
-* [MDN Web Docs - String replace()](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-* [Regex Tutorial - A Guide to Regular Expressions](https://www.regular-expressions.info/tutorial.html)
-* [TypeScript Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [String-replace-funksjonen i TypeScript](https://www.typescriptlang.org/docs/handbook/utilities.html#replace-extract)
+- [Regulære uttrykk i TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Andre nyttige String-funksjoner i TypeScript](https://www.typescripttutorial.net/typescript-string-functions/)

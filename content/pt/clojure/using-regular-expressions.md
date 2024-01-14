@@ -1,49 +1,43 @@
 ---
 title:    "Clojure: Utilizando expressões regulares"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que usar expressões regulares em Clojure?
 
-As expressões regulares são uma ferramenta poderosa para manipulação de texto em qualquer linguagem de programação, e em Clojure não é diferente. Com a utilização de expressões regulares, é possível buscar e substituir padrões de texto de forma mais rápida e eficiente, possibilitando uma maior produtividade e precisão no desenvolvimento de código.
+Expressões regulares são uma poderosa ferramenta de processamento de texto que permite buscar e manipular padrões de caracteres em uma string. Em Clojure, elas são especialmente úteis para tarefas que envolvem manipulação de dados, validação e limpeza de strings.
 
-## Como utilizar expressões regulares em Clojure
+## Como usar expressões regulares em Clojure
 
-Para utilizar expressões regulares em Clojure, é necessário importar o pacote de funções `clojure.string`, que possui uma variedade de funções para manipulação de strings, incluindo a função `re-find`, que é responsável por encontrar uma correspondência entre a expressão regular e o texto fornecido.
+Usar expressões regulares em Clojure é fácil e pode trazer muitos benefícios ao seu código. Primeiro, importe o namespace `clojure.string` para ter acesso às funções de manipulação de strings. Em seguida, você pode usar a função `re-pattern` para criar um objeto regex a partir de uma string de padrão.
 
-```
-(ns regex-example
-  (:require [clojure.string :as string]))
+Exemplo de código:
 
-(def text-to-check "abc123def") ; texto a ser verificado
-(def regex #"\d+") ; expressão regular para encontrar números
-
-(string/re-find regex text-to-check) ; saída: "123"
+```Clojure
+(require '[clojure.string :as str])
+(def email-pattern (re-pattern #"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"))
 ```
 
-Após encontrar a correspondência, é possível utilizar a função `re-groups` para obter as capturas específicas da expressão regular.
+O código acima cria um objeto regex capaz de validar se uma string é um endereço de email válido. Agora, você pode usar esse objeto em conjunto com a função `re-match?` para verificar se uma determinada string corresponde ao padrão desejado. Veja um exemplo completo abaixo:
 
+```Clojure
+(if (str/re-match? email-pattern "example@email.com")
+  (println "Email válido!")
+  (println "Email inválido. Por favor, insira um email válido."))
 ```
-(ns regex-example
-  (:require [clojure.string :as string]))
+Output: `Email válido!`
 
-(def text-to-check "abc123def") ; texto a ser verificado
-(def regex #"\d") ; expressão regular para encontrar números
+## Explorando mais a fundo as expressões regulares em Clojure
 
-(->> (string/re-find regex text-to-check) ; saída: "1"
-     (string/re-groups)) ; saída: ("1")
-```
+Clojure oferece várias funções úteis para trabalhar com expressões regulares, como `re-groups` para retornar as partes da string que correspondem a um determinado padrão, `re-matches` para encontrar todas as ocorrências de um padrão em uma string e `re-find` para encontrar a primeira ocorrência de um padrão.
 
-Assim, com a combinação dessas funções e outras disponíveis em `clojure.string`, é possível realizar diversas operações com expressões regulares em Clojure.
-
-## Mais informações sobre o uso de expressões regulares em Clojure
-
-Embora as funções de `clojure.string` sejam úteis para operações básicas com expressões regulares, é possível aprofundar ainda mais seu conhecimento através da biblioteca `clojure.repl`, que possui uma série de funções avançadas para trabalhar com expressões regulares em Clojure.
+Além disso, é possível usar flags como `re-matcher` para fazer buscas insensíveis a maiúsculas e minúsculas ou `re-seq` para obter uma sequência de todas as correspondências encontradas em uma string. Com um bom domínio das expressões regulares em Clojure, você pode criar códigos mais robustos e eficientes para manipular e validar strings.
 
 ## Veja também
 
-- [Documentação oficial de `clojure.string`](https://clojure.github.io/clojure/clojure.string-api.html)
-- [Documentação oficial de `clojure.repl`](https://clojure.github.io/clojure/clojure.repl-api.html)
-- [Tutorial de expressões regulares em Clojure](https://www.braveclojure.com/regular-expressions/)
+- [Documentação oficial sobre expressões regulares em Clojure](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-matcher)
+- [Regular Expressions in Clojure - Sitepoint](https://www.sitepoint.com/regular-expressions-clojure/)
+- [Clojure: Expressões Regulares - Programação em Scala](https://dirlididi.com/blog/clojure/clojure-%E2%80%93-expressoes-regulares/)

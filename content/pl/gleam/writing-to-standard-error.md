@@ -1,41 +1,42 @@
 ---
-title:    "Gleam: Pisanie do standardowego błędu"
+title:    "Gleam: Pisanie do standardowego wyjścia błędów"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami podczas pisania kodu w Gleam, zamiast standardowego wyjścia, chcemy wyświetlić pewne informacje na standardowe wyjście błędu. Może to być przydatne w celu debugowania lub raportowania błędów w naszym programie. W tym wpisie pokażę Ci, jak to zrobić.
+Dlaczego warto pisać do standardowego błędu przy programowaniu w Gleam? To proste - ponieważ standardowy błąd (ang. standard error) jest jednym z najważniejszych sposobów wyświetlania błędów i komunikatów diagnostycznych w programach. Bez tego narzędzia trudniej byłoby nam znajdować i naprawiać błędy w naszym kodzie.
 
 ## Jak to zrobić
 
-Aby wypisać dane na standardowe wyjście błędu, możemy użyć funkcji `stderr.write` z modułu `gleam/core/io`.
+Aby napisać do standardowego błędu w programie w Gleam, wystarczy użyć funkcji `log.error` i przekazać do niej wiadomość lub zmienną, którą chcemy wyświetlić. Przykładowy kod może wyglądać następująco:
 
-``` Gleam
-import gleam/core/io
-
-gleam/core/io.stderr.write("Błąd: Nie znaleziono pliku!")
+```Gleam
+log.error("Witaj, to jest wiadomość błędu!")
 ```
 
-Ten kod spowoduje wypisanie tekstu "Błąd: Nie znaleziono pliku!" na standardowe wyjście błędu. Możemy również użyć tej funkcji do formatowania danych, tak jak w przypadku funkcji `stdout` wyświetlającej dane na standardowym wyjściu.
+Po uruchomieniu tego kodu, w konsoli powinien pojawić się komunikat "Witaj, to jest wiadomość błędu!". Możemy także przekazać więcej niż jedną wiadomość lub użyć zmiennych, jak w poniższym przykładzie:
 
-## Deep Dive
+```Gleam
+let liczba = 5
+let błąd = "nieprawidłowa wartość"
 
-Funkcja `stderr.write` przyjmuje jako argument dowolną wartość i zwraca `Result(Int, String)`, czyli wynik zawierający informację o sukcesie lub błędzie. Jeśli wynik jest sukcesem, zwrócony zostanie `Ok(())`. W przypadku błędu, zostanie zwrócona wartość `Err`, zawierająca numer błędu oraz komunikat.
-
-Możemy również skorzystać ze specjalnej funkcji `stderr.write_err` do wypisywania błędów na standardowe wyjście błędu. Ta funkcja przyjmuje jako pierwszy argument numer błędu, a jako drugi dowolną wartość. Przykład użycia:
-
-``` Gleam
-import gleam/core/io
-
-gleam/core/io.stderr.write_err(404, "Nie znaleziono pliku")
+log.error("Błąd! Liczba ", liczba, " jest ", błąd, ".")
 ```
 
-## See Also
+W efekcie otrzymamy komunikat "Błąd! Liczba 5 jest nieprawidłowa wartość.".
 
-- Dokumentacja modułu gleam/core/io: https://gleam.run/modules/gleam/core/io.html
-- Przykładowe projekty w Gleam: https://github.com/gleam-lang/awesome-gleam
+## Głębsze zagadnienia
 
-Dzięki użyciu funkcji `stderr.write` i `stderr.write_err` możemy łatwo wypisywać informacje na standardowe wyjście błędu w naszych programach. Mam nadzieję, że ten wpis był dla Ciebie pomocny. Nie zapomnij również sprawdzić innych modułów i przykładowych projektów w Gleamie. Happy coding! 🚀
+Pisanie do standardowego błędu to jednak nie tylko prosty sposób na wyświetlanie komunikatów. Możemy także kontrolować, które informacje wyświetlamy, używając różnych funkcji z poziomem logowania. Na przykład, funkcja `log.error` wyświetla komunikaty tylko w przypadku błędu, natomiast funkcja `log.info` może służyć do wyświetlania ważnych informacji dla użytkownika.
+
+Możliwości jest wiele, a dokładne poznanie wszystkich funkcji związanych z wyświetlaniem błędów i komunikatów jest kluczowe do efektywnego debugowania aplikacji w Gleam.
+
+## Zobacz także
+
+- Dokumentacja Gleam dotycząca wyświetlania błędów: https://gleam.run/book/tour/logging.html
+- Przykłady użycia logów w Gleam: https://github.com/search?q=language%3Agleam+logging&type=Repositories
+- Wiedza na temat używania standardowego błędu w innych językach programowania: https://www.digitalocean.com/community/tutorials/how-to-use-the-standard-error-stream-to-handle-errors-in-bash

@@ -1,50 +1,35 @@
 ---
 title:    "Python: Uuden projektin aloittaminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi haluaisit aloittaa uuden ohjelmointiprojektin? Vastaus on yksinkertainen - ohjelmointi on loistava tapa luoda jotain uutta ja ottaa käyttöön luovuutta. Se voi myös olla erittäin tyydyttävää saada toimiva koodi aikaiseksi!
 
-Aloittaminen uuden Python projekti voi tuntua pelottavalta, mutta se on myös hyvin jännittävä prosessi. Se antaa sinulle mahdollisuuden oppia uusia taitoja ja luoda jotain uutta ja mielenkiintoista.
+## Kuinka
+Aloitetaan uusi Python-projekti! Ensinnäkin, asenna Python ja virtuaaliympäristö. Sitten voit luoda uuden projektin kansion ja asettaa sen aktiiviseksi. Seuraavaksi voit aloittaa kirjoittamaan koodia. Alla on yksinkertainen esimerkki koodista ja sen tulostus:
 
-## Miten
+``` Python
+# Luodaan muuttuja ja annetaan sille arvo
+muuttuja = "Terve maailma!"
 
-Yksi ensimmäisistä asioista, jotka sinun on tehtävä, ennen kuin voit aloittaa oman Python projektin, on varmistaa, että sinulla on Python asennettuna tietokoneellasi. Voit ladata ja asentaa sen virallisesta Pythonin verkkosivustolta tai asentaa sen käyttäen paketinhallintajärjestelmää, kuten pip. Kun Python on asennettu, voit aloittaa koodaamisen!
-
-```Python
-print("Tervetuloa uuden Python projektisi pariin!")
+# Tulostetaan muuttujan arvo
+print(muuttuja)
 ```
 
-Tästä lähtien vain mielikuvituksesi on rajana. Voit esimerkiksi aloittaa luomalla yksinkertaisen laskimen, joka laskee kahden luvun summan:
+Tulostus:
 
-```Python
-num1 = 5
-num2 = 10
-
-summa = num1 + num2
-
-print("Lukujen", num1, "ja", num2, "summa on", summa)
+```
+Terve maailma!
 ```
 
-**Output**: *Lukujen 5 ja 10 summa on 15*
-
-Voit myös oppia käyttämään Pythonin eri kirjastoja ja työkaluja kuten NumPy, Pandas ja SciPy. Nämä kirjastot auttavat sinua analysoimaan ja käsittelemään dataa tehokkaasti. Lisäksi voit käyttää Pythonia luomaan graafisia käyttöliittymiä, peliohjelmia, verkkosovelluksia ja paljon muuta. Mahdollisuudet ovat lähes rajattomat!
-
-## Syvemmälle
-
-Oman Python projektin aloittaminen vaatii itsensä haastamista ja taitojen kehittämistä. Tässä muutamia vinkkejä, jotka voivat auttaa sinua aloittamaan:
-
-- Aloita yksinkertaisesta projektista ja keskity yhteen asiaan kerrallaan.
-- Tutki ja käytä erilaisia Pythonin kirjastoja ja työkaluja.
-- Käytä aikaa koodin lukemiseen ja ymmärtämiseen.
-- Tee koodistasi selkeää ja helposti luettavaa.
-- Muista säännöllinen tiedoston tallennus ja varmuuskopiointi.
+## Syvenny
+Ohjelmointiprojektin aloittaminen voi aluksi tuntua pelottavalta, mutta älä huoli - sinä pystyt siihen! On tärkeää, että suunnittelet projektiasi ja jaat sen pienempiin osiin, jotka voit käsitellä yksi kerrallaan. Tee myös tutkimusta ja hyödynnä internetin tarjoamia resursseja. Ja tärkein asia on: älä pelkää epäonnistumista, se on osa oppimisprosessia.
 
 ## Katso myös
-
-- [Opettele Python perusteet](https://www.wikiwand.com/fi/Python)
-- [Virallinen Python ohjeistus](https://www.python.org/)
-- [Avoin oppimateriaali Pythonista](https://pythopedia.com/)
-- [Pip paketinhallintajärjestelmä](https://pypi.org/project/pip/)
+- [Pythonin viralliset dokumentit](https://docs.python.org/fi/3/)
+- [Virtuaaliympäristöjen käyttö Pythonissa](https://docs.python.org/fi/3/tutorial/venv.html)
+- [Ohjelmointiprojektin suunnittelu](https://realpython.com/python-application-layouts/)

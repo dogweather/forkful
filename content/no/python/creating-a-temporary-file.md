@@ -1,48 +1,65 @@
 ---
-title:    "Python: Oppretting av midlertidig fil"
+title:    "Python: Oppretting av en midlertidig fil"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Temporære filer er nyttige når du trenger midlertidig lagring av data i et Python-program. Dette kan være for å lagre informasjon som blir generert under kjøring eller for å passere data til ulike deler av koden din.
 
-Å lage en midlertidig fil er en praktisk måte å håndtere data på når du jobber med Python-programmering. Det er spesielt nyttig når du for eksempel trenger å behandle store datamengder, eller når programmet ditt krever midlertidig lagring av informasjon.
-
-## Hvordan
-
-Det er enkelt å opprette en midlertidig fil i Python. Først må vi importere "tempfile" biblioteket:
+# Hvordan
+Det er enkelt å opprette en temporær fil i Python ved å bruke modulen "tempfile". Først må vi importere denne modulen inn i koden vår:
 
 ```Python
-import tempfile 
+import tempfile
 ```
 
-Deretter kan vi bruke "tempfile.NamedTemporaryFile()" funksjonen til å opprette en midlertidig fil:
+Deretter kan vi opprette en midlertidig fil ved å bruke "NamedTemporaryFile" -funksjonen:
 
 ```Python
-with tempfile.NamedTemporaryFile() as temp:
-    # Gjør operasjoner med den midlertidige filen her
+temp_file = tempfile.NamedTemporaryFile()
 ```
 
-I kodelinjene over opprettes filen automatisk, og "with" statement sørger for at filen blir slettet etter at den ikke lenger er i bruk. Inne i "with" blokken kan du gjøre operasjoner med filen, for eksempel skrive eller lese data.
-
-Det er også mulig å spesifisere en bestemt plassering for den midlertidige filen ved hjelp av "dir" parameteren:
+Vi kan også spesifisere prefix og suffix for filnavnet:
 
 ```Python
-with tempfile.NamedTemporaryFile(dir="C:/temp") as temp:
-    # Gjør operasjoner med den midlertidige filen her
+temp_file = tempfile.NamedTemporaryFile(prefix="temp_", suffix=".txt")
 ```
 
-Du kan også velge å ikke slette filen automatisk ved å sette "delete" parameteren til False. Dette kan være nyttig hvis du trenger å bruke filen etter at programmet er avsluttet.
+Når vi er ferdig med å bruke filen, må vi huske å slette den ved å bruke "close" -funksjonen:
 
-## Dypdykk
+```Python
+temp_file.close()
+```
 
-Når vi oppretter en midlertidig fil, lagres den i det angitte temporære området. Hvis du ikke har spesifisert en plassering, vil filen bli lagret i det system-baserte temporære området. Dette området vil variere avhengig av hvilken plattform du bruker.
+Hvis vi vil skrive data til den midlertidige filen, kan vi bruke "write" -funksjonen:
 
-Det er også verdt å merke seg at den midlertidige filen ikke vil være synlig for andre programmer på datamaskinen din ettersom den ikke har et synlig filnavn. Dette er grunnen til at den midlertidige filen vanligvis slettes automatisk når programmet er avsluttet eller når "with" blokken er ferdig.
+```Python
+temp_file.write("Dette er en midlertidig fil.")
+```
 
-## Se også
+Når vi senere åpner filen, kan vi se at teksten har blitt skrevet til filen:
 
-- [tempfile dokumentasjon](https://docs.python.org/3/library/tempfile.html)
-- [Guide til Python ephemeral objekter](https://realpython.com/python-ephemeral-objects/)
-- [Hva er midlertidige filer og hvordan de fungerer?](https://www.howtogeek.com/410679/what-are-temporary-files-and-how-does-one-work/)
+```Python
+with open(temp_file.name) as file:
+   print(file.read())
+```
+
+Output: 
+
+```
+Dette er en midlertidig fil.
+```
+
+# Dypdykk
+Når vi oppretter en temporær fil, blir den automatisk slettet når programmet vårt er ferdig med å kjøre. Dette sikrer at vi ikke ender opp med en masse midlertidige filer som tar opp plass på datamaskinen vår.
+
+Vi kan også bruke modulen "tempfile" til å opprette midlertidige mapper ved å bruke "TemporaryDirectory" -funksjonen. Denne mappen vil også bli slettet automatisk når programmet er ferdig.
+
+En annen nyttig funksjon med modulen "tempfile" er "mkstemp", som lar oss opprette både et filnavn og en filobjekt samtidig.
+
+# Se også
+- [Python dokumentasjon for modulen "tempfile"](https://docs.python.org/3/library/tempfile.html)
+- [Artikkel på Real Python om bruk av temporære filer i Python](https://realpython.com/python-tempfile/)

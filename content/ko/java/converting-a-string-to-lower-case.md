@@ -1,54 +1,36 @@
 ---
 title:    "Java: 문자열을 소문자로 변환하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-이번 프로그래밍 기술 블로그는 문자열을 소문자로 변환하는 과정에 대해 소개해드립니다. 이 기술을 배우는 이유는 다양한 데이터 분석 혹은 검색 기능을 개발할 때 문자열을 일관된 형식으로 처리할 수 있어 효율적인 프로그래밍이 가능하기 때문입니다.
+자바 프로그래밍에서 문자열을 소문자로 변환하는 것은 문자열 처리에 매우 유용합니다. 이를 통해 문자열을 보다 쉽게 비교하고 처리할 수 있습니다.
 
-## 어떻게
-문자열을 소문자로 변환하는 방법은 간단합니다. 우선, 문자열을 새로운 변수에 저장한 뒤, `toLowerCase()` 메서드를 이용하면 됩니다. 아래는 예시 코드와 실행 결과입니다.
+## 방법
 ```Java
-// 문자열을 변수에 저장
-String name = "SHERLOCK HOLMES";
+ public static void main(String[] args) {
+   String name = "SEOUL";
+   System.out.println("원본 문자열: " + name);
 
-// 문자열을 소문자로 변환
-String lowerCaseName = name.toLowerCase();
-
-// 변환된 결과 출력
-System.out.print(lowerCaseName);
+   String lowerCaseName = name.toLowerCase();
+   System.out.println("소문자로 변환한 문자열: " + lowerCaseName);
+ }
 ```
 
-실행 결과: sherlock holmes
-
-## 딥 다이브
-위에서 설명한 방법은 간단하지만, 실제로는 어떻게 동작하는지 알고 싶으신 분들을 위해 좀 더 깊게 들어가보겠습니다. `toLowerCase()` 메서드는 문자열의 각 문자를 비교해 대문자일 경우 소문자로 변경하고, 이미 소문자인 경우 변경하지 않는 방식으로 동작합니다. 이를 기반으로 한 알고리즘을 구현한 `toLowerCase()` 메서드의 예시 코드는 다음과 같습니다.
-```Java
-// "a"의 아스키 코드 값: 97, "A"의 아스키 코드 값: 65
-// 대문자와 소문자의 아스키 코드 값 차이는 32
-// 따라서 대문자를 소문자로 변환하기 위해 32를 더한 값으로 변경
-
-// String 객체에서 사용할 문자 배열 생성
-char[] charArr = name.toCharArray();
-
-// 각 문자를 비교해 대문자인 경우 +32를 한 후 다시 대입
-for(int i = 0; i < charArr.length; i++){
-  if(charArr[i] >= 65 && charArr[i] <= 90){
-    charArr[i] = (char) (charArr[i] + 32);
-  }
-}
-
-// 결과적으로 변경된 문자 배열을 다시 String 객체로 변환
-String lowerCaseName = new String(charArr);
 ```
-이와 같은 방식으로 `toLowerCase()` 메서드가 동작하여 문자열을 소문자로 변경합니다.
+원본 문자열: SEOUL
+소문자로 변환한 문자열: seoul
+```
 
-## 참고자료
-- [String 클래스 JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [ASCII 테이블](https://ko.wikipedia.org/wiki/ASCII)
-- [Java에서 문자열 다루기](https://www.tutorialspoint.com/java/java_string_tolowercase.htm)
+위 코드는 `toLowerCase()` 메소드를 사용하여 문자열을 소문자로 변환하는 간단한 예시입니다. 문자열을 소문자로 변환하려면 `toLowerCase()` 메소드 뿐만 아니라 `toLowerCase(Locale.getDefault())` 메소드를 사용하여 기본 로케일을 적용할 수도 있습니다.
 
-## 참고
-본 포스트에서 공유한 예시 코드는 실제 프로그램에서 사용하기 위해 축약 처리한 것이므로 예시 코드 그대로 사용하지 않는 것을 권장합니다.
+## 깊이 파고들기
+문자열을 소문자로 변환하는 과정은 알파벳 문자에 해당하는 유니코드 숫자를 변경하는 것으로 이루어집니다. 대문자 `A`는 유니코드 숫자 65를 가지고 있고, 소문자 `a`는 유니코드 숫자 97을 가지고 있습니다. 따라서 `toLowerCase()` 메소드는 현재 문자의 유니코드 값을 변환하여 소문자로 출력합니다. 이러한 변환을 위해 `Character.toLowerCase()` 메소드를 사용합니다.
+
+## 같이 보기
+- [Java String 클래스 API 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java 변수와 자료형에 대한 이해](https://noanswercode.tistory.com/1)
+- [Java 알고리즘을 위한 자료구조](https://howtodoinjava.com/algorithms/basics-of-algorithms-and-data-structures/)

@@ -1,70 +1,58 @@
 ---
 title:    "Gleam recipe: Converting a string to lower case"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting strings to lower case is a common task in programming, especially when dealing with user input. It allows for consistent data processing and makes it easier to compare and manipulate strings. In this blog post, we will explore how to convert strings to lower case in the Gleam programming language.
+In programming, it is often necessary to convert strings to different formats for various purposes. One common conversion is from uppercase to lowercase, which can be useful for data manipulation, input validation, and more.
 
 ## How To
 
-To convert a string to lower case in Gleam, we can use the `String.to_lower` function. Let's look at an example using the Gleam REPL (read-eval-print loop):
+To convert a string to lowercase in Gleam, you can use the `String.to_lower_case` function. This function takes in a string as its argument and returns a new string with all letters converted to lowercase.
 
-```Gleam
-let name = "JOHN"
+```
+Gleam
 
-// Convert to lower case
-let lower = String.to_lower(name)
+import gleam/string
 
-// Print the result
-IO.println(lower)
+let input = "HELLO WORLD"
+let output = String.to_lower_case(input)
 
-// Output: john
 ```
 
-You can see that the string "JOHN" has been converted to "john" by using the `String.to_lower` function. This function takes in a string as an argument and returns a new string in lower case.
+The output of this code would be `"hello world"`. Keep in mind that the original string remains unchanged and the `String.to_lower_case` function will always return a new string.
 
-We can also use the `String.to_lower` function in a pattern matching statement. Let's see an example:
+You can also use pattern matching to convert individual characters within a string to lowercase. This can be useful for more complex situations where you only want to convert specific characters.
 
-```Gleam
-let greeting = "Hi, JOHN!"
+```
+Gleam
 
-// Match the string to lower case
-match String.to_lower(greeting) {
-    "hi, john!" -> IO.println("Hello!")
-    _ -> IO.println("Unknown greeting.")
-}
+import gleam/string
 
-// Output: Hello!
+let input = "HeLlO wORLd"
+let output = input
+|> String.chars
+|> List.map(\case
+  \H -> \h
+  \O -> \o
+  char -> char
+  )
+|> String.from_chars
 ```
 
-In this example, the `String.to_lower` function is used in the pattern to match the expected string "hi, john!". If the string matches, the `IO.println` function will print out "Hello!". If the string does not match, the statement will match the wildcard `_` and print out "Unknown greeting."
+In this example, we are using pattern matching within a `List.map` function to convert the letters "H" and "O" to lowercase, while leaving the other characters unchanged. The final output would be `"hello world"`.
 
 ## Deep Dive
 
-Now let's take a deeper look at how the `String.to_lower` function works. Under the hood, this function uses the `String.map` function which applies a function to each character in the string. In this case, the function used is `Char.to_lower` which converts a character to lower case. 
+Understanding how strings are stored in a computer is important for understanding the conversion process. In Gleam, strings are represented as a list of characters under the hood. This means that when we convert a string to lowercase, we are essentially converting each individual character to lowercase and then reconstructing the string with the new characters.
 
-In addition, the `String.to_lower` function also takes into account Unicode characters. This means that it can handle more than just the basic alphabet letters. It also preserves any special characters or symbols in the string. Here's an example:
-
-```Gleam
-let emoji = "😊 GLEAM IS AWESOME!"
-
-// Convert to lower case
-let lower = String.to_lower(emoji)
-
-// Print the result
-IO.println(lower)
-
-// Output: 😊 gleam is awesome!
-```
-
-As you can see, the emoji remains unchanged while the letters are converted to lower case. This is important to note when working with a diverse range of user input.
+Additionally, the `String.to_lower_case` function uses the Unicode standard for case conversions, which means that it can handle more than just the English alphabet. This is important for internationalization and supports different languages and characters.
 
 ## See Also
 
-- [Gleam Documentation](https://gleam.run/documentation/)
-- [String functions in Gleam](https://gleam.run/documentation/stdlib/string/)
-- [Unicode characters in Gleam](https://gleam.run/documentation/cheatsheet/#unicode)
+- [Unicode Standard for Case Conversions](https://unicode.org/standard/standard.html)
+- [Gleam Language Documentation](https://gleam.run/documentation/)

@@ -1,41 +1,46 @@
 ---
 title:    "Javascript: Convertendo uma data em uma string"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que
-Converter uma data em uma string pode ser útil em muitos programas de Javascript, como aplicações web, jogos e aplicativos móveis. Isso permite que você exiba a data de forma legível para o usuário final e oferece mais flexibilidade na manipulação de dados.
+## Por que Converter uma Data em uma String?
 
-##Como Fazer
-Para converter uma data em uma string, podemos usar o método `toString()` do objeto `Date`. Veja um exemplo de código abaixo:
+Ao lidar com datas em um programa JavaScript, é comum a necessidade de convertê-las em uma string legível para o usuário. Isso pode ser útil em diversas situações, como ao exibir um calendário ou em formulários de reserva online. Felizmente, JavaScript possui uma função dedicada para essa tarefa, tornando o processo bastante simples.
 
-```Javascript
-let data = new Date();
-let data_string = data.toString();
+## Como Fazer
 
-console.log(data_string); //Saída: Ter Jul 07 2020 15:24:56 GMT-0300 (Horário Padrão de Brasília)
-```
-
-Podemos também especificar o formato desejado da string usando os métodos `getMonth()`, `getDate()` e `getFullYear()`, que retornam o mês, dia e ano da data, respectivamente. Veja um exemplo de código abaixo:
+A função `toString()` é utilizada para converter um objeto Date em uma string. Vejamos um exemplo:
 
 ```Javascript
 let data = new Date();
-let mes = data.getMonth() + 1; //Adicionando 1 pois o mês inicia em 0 (Janeiro)
-let dia = data.getDate();
-let ano = data.getFullYear();
+let dataString = data.toString();
 
-let data_string = `${dia}/${mes}/${ano}`;
-
-console.log(data_string); //Saída: 07/07/2020
+console.log(dataString);
 ```
 
-##Deep Dive
-Além do `toString()`, existem outros métodos que podem ser usados para converter uma data em uma string, como o `toLocaleDateString()`, que retorna uma string com a data formatada de acordo com a localização do sistema. E para formatos mais complexos, podemos utilizar bibliotecas externas como o Moment.js.
+A saída desse código seria algo como `"Sex Nov 19 2021 16:21:30 GMT-0300 (Horário Padrão de Brasília)"`. Note que a função `toString()` aceita opções adicionais, como idioma e formatação, mas os valores padrão geralmente são suficientes.
 
-É importante lembrar que a conversão da data em uma string pode variar dependendo da linguagem de programação e do sistema operacional usado. É sempre recomendado consultar a documentação oficial para garantir a compatibilidade e consistência nos resultados.
+Outra maneira de converter uma data em uma string é utilizando a função `toLocaleString()`. Diferentemente da `toString()`, essa função permite especificar o idioma e formato da data. Vejamos um exemplo:
 
-##Veja também
-- Documentação oficial do objeto `Date` no Javascript: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Moment.js: https://momentjs.com/
+```Javascript
+let data = new Date();
+let opcoes = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric"};
+
+let dataString = data.toLocaleString("pt-BR", opcoes);
+
+console.log(dataString);
+```
+
+A saída seria algo como `"sexta-feira, 19 de novembro de 2021 às 16:21"`. É importante lembrar que as opções podem variar de acordo com o idioma selecionado.
+
+## Mergulho Profundo
+
+Além das funções mencionadas, JavaScript possui algumas outras opções para converter datas em strings, como `toDateString()` e `toISOString()`. Essas funções permitem mais controle sobre o formato e podem ser úteis em casos específicos. É recomendado ler a documentação oficial para explorar todas as possibilidades.
+
+## Veja Também
+
+- [Documentação oficial do objeto Date em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Outros métodos de conversão de datas para strings em JavaScript](https://www.w3schools.com/jsref/jsref_obj_date.asp)

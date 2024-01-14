@@ -1,58 +1,33 @@
 ---
-title:    "Rust: Konvertere en streng til små bokstaver"
+title:    "Rust: Konvertere en streng til lowercase"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konvertere en streng til små bokstaver kan være nyttig for å standardisere data eller utføre sammenligninger mellom tekster. Dette gjøres ofte i programmering for å sikre at inputen er konsistent og forventet.
+Stringene er viktige datastrukturer i de fleste programmeringsspråk, inkludert Rust. Det er derfor nyttig å kunne konvertere strings til ulike formater for å kunne håndtere dem på en enklere og mer konsistent måte. Å konvertere en string til lower case gir en mer standardisert måte å håndtere tekst på, noe som kan være nyttig i flere programmerings- og databehandlingsoppgaver.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-Det er enkelt å konvertere en streng til små bokstaver i Rust ved hjelp av `to_lowercase()`-funksjonen. Her er et eksempel på hvordan man gjør det:
-
-```Rust
-let tekst = "Hei, dette er en TEST!";
-let konvertert_tekst = tekst.to_lowercase();
-
-println!("{}", konvertert_tekst);
-```
-
-Output:
-
-```bash
-hei, dette er en test!
-```
-
-Vi kan også konvertere kun en del av strengen ved å bruke `to_lowercase()`-funksjonen på en spesifikk del av strengen. For eksempel:
+For å konvertere en string til lower case i Rust, kan du bruke funksjonen `to_lowercase()` fra standardbiblioteket til Rust. Her er et enkelt eksempel på hvordan dette kan gjøres:
 
 ```Rust
-let tekst = "Hei, dette er en TEST!";
-let første_del = &tekst[0..3]; // henter første tre bokstavene i strengen
-let andre_del = &tekst[4..]; // henter resten av strengen
-
-let endret_første_del = første_del.to_lowercase();
-
-let result = format!("{}{}", endret_første_del, andre_del);
-
-println!("{}", result);
+let string = "DETTE ER EN STRING";
+let lower_case = string.to_lowercase();
 ```
 
-Output:
+I dette eksemplet blir den opprinnelige stringen "DETTE ER EN STRING" konvertert til "dette er en string" og lagret i en variabel som heter `lower_case`. For å gjøre dette må du også importere `String`-typen fra preludiet til Rust.
 
-```bash
-hei, dette er en TEST!
-```
+## Dypdykk
 
-## Dykk dypere
+Det å konvertere en string til lower case kan virke som en enkel oppgave, men det er noen aspekter som kan være nyttige å være klar over. For det første vil konverteringen avhenge av konteksten til programmet ditt og hvilken språkinnstilling som brukes. Det er også viktig å huske på at noen bokstaver har forskjellige former i ulike språk, for eksempel "ß" som blir konvertert til "ss" i lower case. Derfor er det alltid viktig å teste og validere konverteringen for å sikre nøyaktighet.
 
-I Rust er alle tegn i en streng representert ved hjelp av UTF-8-encoding. Dette betyr at å konvertere en streng til små bokstaver ikke bare innebærer å endre det engelske alfabetet fra store til små bokstaver, men også å håndtere andre språk og tegnsett. 
-
-Det er også viktig å tenke på at enkelte Unicode-tegn kan bestå av flere tegn, og derfor vil ikke alle Unicode-tegn bli konvertert til små bokstaver ved bruk av `to_lowercase()`-funksjonen alene. Det er derfor viktig å undersøke og forstå hvordan denne funksjonen fungerer for å sikre korrekt konvertering.
+En annen ting å huske på er at `to_lowercase()` fungerer på en klon av den opprinnelige stringen, og du må derfor håndtere returverdien fra funksjonen på en annen måte hvis du trenger å beholde den opprinnelige stringen uendret.
 
 ## Se også
 
-- [Rust dokumentasjon for `to_lowercase()`](https://doc.rust-lang.org/std/string/trait.ToLowercase.html)
-- [GitHub-eksempel på konvertering av streng til små bokstaver i Rust](https://github.com/tomprogrammer/string_case_converter)
+- [Rust dokumentasjon for `String` og `to_lowercase()`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [En utfyllende forklaring på konvertering av bokstaver mellom ulike språk i Rust](https://users.rust-lang.org/t/strings-unicode-lang-hints-and-lowercase/25562)

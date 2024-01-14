@@ -1,62 +1,43 @@
 ---
-title:    "Go: Sletting av tegn som matcher et mønster"
+title:    "Go: Slette tegn som matcher et mønster"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvis du noen gang har jobbet med tekstbehandling eller dataprogrammering, har du sannsynligvis møtt på situasjonen der du må slette bestemte tegn fra en tekststreng. Dette kan være for å formatere teksten eller fjerne uønskede tegn som ekstra mellomrom eller linjeskift. I Go programming language, er det flere måter å håndtere dette på, og i denne blogginnlegget skal vi se nærmere på hvordan man kan slette tegn som matcher et mønster.
+Å slette karakterer som matcher et visst mønster kan være nyttig når du arbeider med tekstbehandling, dataanalyse eller tekstfiltrering. Det kan hjelpe deg med å rydde opp og organisere dataene dine på en mer effektiv måte.
 
-## Slik gjør du det
+## Slik
 
-For å slette tegn som matcher et mønster i Go, kan du bruke standardbibliotekets "strings" pakke og dens "ReplaceAllString" metode. Denne metoden tar inn to argumenter, en tekststreng og et mønster som skal erstattes med en tom streng.
+For å slette karakterer som matcher et bestemt mønster i Go-programmeringsspråket, kan du bruke standardbiblioteket "regexp" og metoden "ReplaceAllString" som følger:
 
-```Go
-package main
+```
+// Importer regexp-pakken
+import "regexp" 
 
-import (
-	"fmt"
-	"strings"
-)
+// Opprett en regexp-komponent med ønsket mønster
+pattern := regexp.MustCompile(`slettmeg`) 
 
-func main() {
-	text := "Dette er en tekststreng som inneholder ekstra mellomrom."
-	newText := strings.ReplaceAllString(text, " ", "")
-	fmt.Println(newText)
+// Opprett en streng med tekst som inneholder mønsteret 
+tekst := "Dette er en tekst som inneholder slettmeg, og vi vil slette denne delen" 
 
-	// Output: Detteerentekststrengsominneholderekstramellomrom.
-}
+// Bruk ReplaceAllString-metoden for å slette mønsteret 
+nytekst := pattern.ReplaceAllString(tekst, "") 
+
+// Skriv ut den nye teksten 
+fmt.Println(nytekst) 
 ```
 
-Som du kan se, blir alle mellomrommene i tekststrengen slettet, og bare de andre tegnene forblir. Dette kan også gjøres med regex-mønstre ved å bruke "ReplaceAllString" metoden fra "regexp" pakken.
+Dette vil resultere i følgende utdata: "Dette er en tekst som inneholder, og vi vil slette denne delen". Her har vi slettet "slettmeg" fra teksten ved å bruke metoden ReplaceAllString.
 
 ## Dypdykk
 
-Hvis du ønsker mer kontroll over hvordan tegnene blir slettet, kan du bruke "strings" pakken sin "Trim" metode. Denne metoden tar inn to argumenter, en tekststreng og en liste av tegn som skal fjernes fra starten og slutten av strengen.
-
-```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	text := "!-Dette er en tekststreng som inneholder ekstra mellomrom. "
-	newText := strings.Trim(text, " !-")
-	fmt.Println(newText)
-
-	// Output: Dette er en tekststreng som inneholder ekstra mellomrom.
-}
-```
-
-I dette eksemplet blir alle mellomrommene og spesialtegnene fra starten og slutten av teksten fjernet, men mellomrommene inne i teksten forblir uendret.
+Hvis du ønsker å forstå mer om hvordan dette fungerer, kan du se nærmere på Go's regexp-pakke. Denne pakken lar deg søke og manipulere tekst med regulære uttrykk. Hvis du er ukjent med regulære uttrykk, kan du finne mer informasjon og eksempler på nettet.
 
 ## Se også
 
-- [Go strings pakke dokumentasjon](https://golang.org/pkg/strings/)
-- [Go regexp pakke dokumentasjon](https://golang.org/pkg/regexp/)
-- [Golang Playground](https://play.golang.org/)
+- [Go sin offisielle regexp-dokumentasjon](https://golang.org/pkg/regexp/)
+- [Eksempler på regulære uttrykk i Go](https://yourbasic.org/golang/regexp-cheat-sheet-regex/)

@@ -1,66 +1,49 @@
 ---
 title:    "Elixir: Att få den aktuella datumen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-### Varför
-Att få den aktuella datumen är en av de grundläggande funktionerna inom programmering. Oavsett om du bygger en kalenderapplikation eller ett enkelt påminnelsesystem, behöver du kunna hämta den nuvarande datumen för att skapa korrekta tidsstämplar. I Elixir finns det flera sätt att få tag på den nuvarande datumen och i den här bloggposten kommer vi att utforska dem.
+## Varför
+Att få den nuvarande datumet är en vanlig uppgift när man skriver kod, oavsett vilket programmeringsspråk man använder. Det kan vara användbart för att hålla koll på tider i en applikation eller för att lösa problem med datum och tid. I denna bloggpost kommer vi att gå igenom hur man får den aktuella datumet i Elixir.
 
-### Hur du gör
-Det enklaste sättet att få den aktuella datumen i Elixir är att använda `Date.utc_today/0`-funktionen. Det här ger ett `Date`-objekt som motsvarar dagens datum enligt UTC-tidszonen.
-
-```Elixir
-Date.utc_today()
-```
-
-Om du vill ha den nuvarande timmen, minuten och sekunden är `Time.utc_now/0`-funktionen det rätta valet. Det här ger ett `Time`-objekt som representerar nuvarande tiden enligt UTC-tidszonen.
+## Hur man gör det
+För att få den nuvarande datumet i Elixir använder du funktionen `Date.utc_today/0`. Det är viktigt att notera att den här funktionen returnerar ett "Date"-objekt, som innehåller information om årtal, månad och dag. För att få en enkel sträng av bara datumet kan du använda funktionen `to_string/1`. Här är ett exempel:
 
 ```Elixir
-Time.utc_now()
+current_date = Date.utc_today()
+IO.puts("Idag är det " <> Date.to_string(current_date))
 ```
 
-För att få datumet och tiden i den lokala tidszonen kan du använda funktionerna `Date.now/0` och `Time.now/0`. Dessa funktioner använder systemets tidszon för att ge den nuvarande datumen och tiden.
+Detta kommer att producera följande output:
 
 ```Elixir
-Date.now()
-Time.now()
+Idag är det 2021-07-08
 ```
 
-Det finns också mer specifika funktioner för att få enskilda delar av datum och tid. Till exempel, `DateTime.utc_now/0` ger både datum och tid i UTC-tidszonen.
+En annan användbar funktion är `DateTime.utc_now/0`, som returnerar den nuvarande tiden och datumet baserat på den universella koordinerade tiden (UTC). Här är ett exempel på hur man använder den:
 
 ```Elixir
-DateTime.utc_now()
+current_datetime = DateTime.utc_now()
+IO.puts("Klockan är " <> Time.to_string(current_datetime))
 ```
 
-Det är också möjligt att ange en specifik tidszon för de datum- och tidstillfällen som du vill ha. Detta är särskilt användbart om du bygger en applikation som måste hantera flera tidszoner. I sådana fall kan du använda `DateTime.from_naive/2`-funktionen och ange tidszonen som andra argumentet.
+Detta kommer att ge output som liknar detta:
 
 ```Elixir
-DateTime.from_naive(DateTime.utc_now(), "Europe/Stockholm")
+Klockan är 2021-07-08 14:30:00.123456Z
 ```
 
-### Djupdykning
-Beroende på din applikation kan det vara nödvändigt att göra beräkningar baserat på den nuvarande datumen eller jämföra datum och tider med varandra. I Elixir finns det ett rikt utbud av funktioner för att manipulera datum och tid för att passa dina behov.
+## Djupdykning
+Det finns flera funktioner i Elixir för att hantera datum och tid, inklusive `Date`, `DateTime` och `NaiveDateTime`. Var och en har sina egna speciella egenskaper och användningsområden. Det är också viktigt att känna till att Elixir använder Erlangs `:calendar`-modul under huven för att hantera datum och tid.
 
-För att jämföra två datum kan vi använda `Date.compare/2`-funktionen som returnerar en av tre värden: -1 om det första datumet är tidigare, 0 om de är lika, eller 1 om det andra datumet är senare.
+En annan intressant funktion är `DateTime.from_iso8601/1`, som kan användas för att omvandla en sträng i ISO 8601-format till ett `DateTime`-objekt. Detta kan vara till nytta om du behöver konvertera datum och tid till ett annat format.
 
-```Elixir
-Date.compare(Date.utc_today(), Date.utc_today())
-```
+Det är också värt att nämna att Elixir erbjuder en rad hjälpprogram för att hantera datum och tid, såsom `NaiveDateTime.add/2` och `NaiveDateTime.diff/2`, som kan hjälpa dig att göra beräkningar med datum och tid.
 
-Om du vill lägga till eller dra bort en viss tidsperiod, t.ex. en dag eller en timme, kan du använda `Date.add/3` och `Date.diff/3`-funktionerna.
-
-```Elixir
-Date.add(Date.utc_today(), 1, :week)
-Date.diff(Date.utc_today(), Date.utc_today(), :days)
-```
-
-Det finns också funktioner som `Date.day_of_week/1` för att få veckodagen och `Date.day_interval/2` för att få antalet dagar mellan två datum.
-
-### Se också
-- [Elixir DateTime-modulen](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Date-modulen](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Time-modulen](https://hexdocs.pm/elixir/Time.html)
-
-Tack för att du läste! Vi hoppas att den här bloggposten har gett dig en bättre förståelse för hur du kan få den aktuella datumen i Elixir och hur du kan manipulera datum och tid för dina behov.
+## Se även
+- [Officiell Elixir dokumentation för Date och Time modulerna](https://hexdocs.pm/elixir/Date.html)
+- [Inbäddade Elixir funktioner för att hantera datum och tid](https://stackoverflow.com/questions/43998462/using-elixir-functions-to-handle-datetime-objects)
+- [Erlang :calendar-modulen](https://erlang.org/doc/man/calendar.html)

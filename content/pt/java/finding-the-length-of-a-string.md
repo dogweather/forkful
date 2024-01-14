@@ -1,44 +1,45 @@
 ---
 title:    "Java: Encontrando o comprimento de uma string"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação. Saber como fazer isso pode ajudar nas operações de manipulação de strings e outras tarefas de programação.
+Encontrar o comprimento de uma string é uma habilidade básica e essencial para qualquer programador de Java. Saber como fazer isso pode facilitar a manipulação de dados e otimizar o código em várias situações.
 
 ## Como fazer
 
-Encontrar o comprimento de uma string em Java é simples usando o método `length()`. Veja o exemplo abaixo:
+Para encontrar o comprimento de uma string em Java, usamos o método `length()`. Vamos ver um exemplo:
 
 ```Java
 String minhaString = "Olá, mundo!";
 int comprimento = minhaString.length();
-System.out.println(comprimento);
-```
-
-A saída do código acima será "12", pois existem 12 caracteres na string "Olá, mundo!". Outra forma de encontrar o comprimento de uma string é usando a propriedade `length()` na classe `String`. Veja o exemplo:
-
-```Java
-String minhaString = "Estou aprendendo Java!";
-int comprimento = minhaString.length();
 System.out.println("O comprimento da string é: " + comprimento);
 ```
 
-A saída do segundo exemplo será "24", pois a string contém 24 caracteres. É importante lembrar que espaços em branco também contam como caracteres na string.
+Neste exemplo, definimos uma string e, em seguida, usamos o método `length()` para encontrar seu comprimento. O valor retornado é armazenado em uma variável inteira e, por fim, é impresso na tela.
 
-## Mergulho profundo
+Podemos também combinar a chamada do método `length()` com a indexação das strings em Java para encontrar o comprimento de uma substring. Veja o exemplo:
 
-Ao lidar com strings em Java, é importante entender que o método `length()` retorna o número de caracteres, e não o número de bytes. Isso pode ser um fator importante ao trabalhar com diferentes idiomas e caracteres especiais.
+```Java
+String minhaString = "Olá, mundo!";
+int comprimento = minhaString.substring(0, 3).length(); // encontra o comprimento de "Olá"
+System.out.println("O comprimento da substring é: " + comprimento);
+```
 
-Além disso, o método `length()` só retorna inteiros positivos. Se quiser obter o tamanho de uma string vazia, o valor retornado será 0, e para uma string nula, irá gerar um erro.
+Neste caso, usamos o método `substring()` para obter a substring "Olá" e, em seguida, usamos o método `length()` para encontrar seu comprimento. Isso pode ser útil quando precisamos trabalhar com partes específicas de uma string.
 
-A classe `String` também possui o método `isEmpty()`, que pode ser utilizado para verificar se uma string está vazia antes de chamar o método `length()`, evitando assim possíveis erros.
+## Profundidade
+
+Internamente, o método `length()` em Java retorna a quantidade de caracteres armazenados em uma string. No entanto, isso pode ser afetado por diferentes codificações de caracteres. Por exemplo, uma string em UTF-8 pode ter um comprimento diferente do que seria em UTF-16.
+
+Além disso, o método `length()` não conta apenas as letras e números, mas também inclui espaços em branco e caracteres especiais. Isso é importante ter em mente ao trabalhar com strings de entrada do usuário.
 
 ## Veja também
 
-- Documentação oficial do método `length()` na classe `String`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--
-- Artigo sobre strings em Java: https://www.devmedia.com.br/trabalhando-com-strings-em-java/29703 
-- Vídeo tutorial sobre o método `length()`: https://www.youtube.com/watch?v=-npS28pBJDg
+- [Documentação oficial do método `length()` em Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--)
+- [Tutorial sobre manipulação de strings em Java](https://www.w3schools.com/java/java_strings.asp)
+- [Artigo sobre codificação de caracteres em Java](https://www.baeldung.com/java-char-encoding)

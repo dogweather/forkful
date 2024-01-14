@@ -1,42 +1,34 @@
 ---
 title:    "Swift: Merkkijonon pituuden löytäminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Merkkijonon pituuden etsimisen tärkeys
+## Miksi
 
-Merkkijonon pituuden etsiminen on yksi perustavaa laatua oleva tehtävä Swift-ohjelmoinnissa. Se on tärkeä taito, johon jokaisen kehittäjän tulisi perehtyä, jotta he voivat käsitellä ja manipuloida merkkijonoja tehokkaasti. Jokainen ohjelma, joka käsittelee käyttäjän syötettä, tarvitsee kyvyn löytää merkkijonon pituus.
+On monia syitä, miksi haluat selvittää merkkijonon pituuden Swift-ohjelmassa. Kenties haluat tarkistaa, onko merkkijono riittävän lyhyt tietylle tietokannalle tai rajapinnalle. Tai ehkä haluat vain tarkistaa, onko käyttäjän syöte sopiva ennen sen tallentamista.
 
-## Kuinka tehdä se: Esimerkkejä koodista ja tulosteista
+## Kuinka
 
-Merkkijonon pituuden etsiminen Swiftissä on helppoa ja suoraviivaista. Voit käyttää String-tyypin `count` -ominaisuutta saadaksesi merkkijonon pituuden. Tässä on esimerkki koodista:
-
-```Swift
-let merkkijono = "Hei maailma!"
-print(merkkijono.count) // Tulostaa 13
-```
-
-Voit myös käyttää String-tyypin `characters` -ominaisuutta ja laskea sen elementtien määrän merkkijonossa. Tämä tapahtuu käyttämällä `count` -ominaisuutta `characters` -ominaisuuden päässä. Tässä on esimerkki:
+Voit selvittää merkkijonon pituuden käyttämällä String-tyypin length-attribuuttia. Katso alla olevaa koodia ja tulosteita nähdäksesi miten tämä toimii käytännössä:
 
 ```Swift
-let merkkijono = "Tämä on esimerkki"
-print(merkkijono.characters.count) // Tulostaa 18
+let sana = "Hei maailma!"
+print(sana.length)
+// Tulostaa: 12
+
+let tyhja = ""
+print(tyhja.length)
+// Tulostaa: 0
 ```
 
-Merkkijonon pituuden etsiminen on myös tärkeää, kun haluat tarkistaa, onko käyttäjän antama syöte liian pitkä tai lyhyt. Voit tarkistaa merkkijonon pituuden ennen sen käsittelyä ja varmistaa, että se sopii tarpeisiisi. Esimerkiksi käyttäjänimiä käsitellessä voit varmistaa, että nimi ei ole liian pitkä tallentamaan sitä tietokantaan.
+## Syvemmälle
 
-## Syvä sukellus: Tarkempaa tietoa merkkijonon pituuden etsimisestä
-
-Merkkijonon pituuden etsiminen ei ole vain tärkeää, vaan myös mielenkiintoista. Monilla kielillä, kuten Englanti ja Suomi, merkkijonon pituus määritellään merkkien määrällä. Mutta joissain kielissä, kuten koraan, merkkijonon pituus määritellään tavujen määrällä. Tämä johtuu siitä, että jotkut kirjaimet vaativat useamman kuin yhden tavun tallentamiseen.
-
-Merkkijonon pituuden etsimisessä on myös huomioitava Unicode-merkistöt. Jotkut merkistöt, kuten emoji-merkit, vaativat enemmän tavuja tallentamiseen ja voivat vaikuttaa merkkijonon pituuteen.
-
-On myös hyvä huomata, että `count` -ominaisuus laskee myös välilyönnit merkkijonossa. Jos haluat laskea merkkien määrän välilyönnittä, sinun on käytettävä esimerkiksi `replacingOccurences` -metodia poistamaan välilyönnit ennen `count` -ominaisuuden käyttöä.
+Merkkijonon pituuden selvittäminen perustuu Unicode-yhdistimiin. Unicode-yhdistin on yksi tai useampi numeromuodoinen arvo, joka edustaa merkkiä merkistössä. Esimerkiksi "a" merkki on yhdistelmästä U+0061, eli numeromuotoisena 97. Nämä numeromuotoiset arvot lasketaan kokonaispituudeksi, kun haluat selvittää merkkijonon pituuden.
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio merkkijonoista](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Hienovaraisuuksia merkkijonojen käsittelyssä Swiftissä](https://www.swiftbysundell.com/posts/the-complete-guide-to-handling-strings-in-swift)
-- [Merkkijonojen manipulointi Swiftissä](https://www.hackingwithswift.com/articles/162/advanced-tips-for-working-with-strings
+- [Swiftin virallinen dokumentaatio String-tyypistä (englanniksi)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Stack Overflow: How to get length of String in Swift (englanniksi)](https://stackoverflow.com/questions/24041993/how-do-i-get-the-length-of-a-string-in-swift)

@@ -1,51 +1,67 @@
 ---
 title:    "C: Escrevendo um arquivo de texto"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em C?
+## Por que escrever um arquivo de texto no C?
 
-Existem várias razões para escrever um arquivo de texto em C. Pode ser para armazenar informações importantes, como configurações ou dados de usuário, ou para criar um log de atividades em um programa. Independentemente do motivo, aprender a escrever um arquivo de texto em C é uma habilidade essencial para programadores.
+Se você está aprendendo a programar em C, provavelmente já se deparou com a necessidade de escrever um arquivo de texto em algum momento. Mas por que é importante saber como fazer isso? Bem, arquivos de texto são uma forma de armazenar dados de forma persistente em um dispositivo de armazenamento, como um disco rígido ou uma unidade de armazenamento flash. Isso significa que os dados permanecem intactos mesmo após o encerramento do programa, permitindo que você os leia e manipule posteriormente. Além disso, arquivos de texto são amplamente utilizados em aplicações do mundo real, tornando-se uma habilidade valiosa para qualquer programador C.
 
 ## Como escrever um arquivo de texto em C
 
-Escrever um arquivo de texto em C é um processo relativamente simples, mas requer alguns passos importantes. Primeiro, é necessário incluir a biblioteca "stdio.h" em seu programa, que contém as funções necessárias para trabalhar com arquivos.
+Escrever um arquivo de texto em C é um processo relativamente simples, que pode ser dividido em cinco etapas principais:
 
-Em seguida, é preciso declarar uma variável do tipo `FILE` que será usada para apontar para o arquivo. Então, com a função `fopen()`, é possível abrir o arquivo e especificar o modo de abertura - "w" para escrita ou "a" para anexar.
+1. Declarar e abrir o arquivo: primeiro, é preciso declarar um ponteiro de arquivo e então abrir o arquivo usando a função `fopen()`. É importante especificar o modo do arquivo (leitura, escrita, etc.) e o nome do arquivo desejado.
 
-Uma vez que o arquivo é aberto com sucesso, basta usar a função `fprintf()` para escrever o texto desejado no arquivo. É importante fechar o arquivo usando a função `fclose()` quando a escrita estiver concluída.
+2. Escrever no arquivo: agora que o arquivo está aberto, você pode escrever nele usando a função `fprintf()`. Esta função possui uma sintaxe semelhante à função `printf()`, com a adição de um primeiro argumento que é o ponteiro do arquivo.
 
-Aqui está um exemplo de código mostrando como escrever a frase "Olá, mundo!" em um arquivo de texto chamado "meu_arquivo.txt":
+3. Fechar o arquivo: após terminar de escrever, é importante fechar o arquivo usando a função `fclose()`. Isso garante que todos os dados sejam salvos corretamente no arquivo.
 
-```
+4. Verificar erros: durante o processo de escrita, é importante verificar se ocorreram erros durante a abertura, escrita ou fechamento do arquivo. Para isso, você pode usar a função `ferror()`.
+
+5. Manipular dados do arquivo: depois de escrever o arquivo, você pode manipular os dados lidos a partir dele usando funções como `fseek()` e `fread()`.
+
+Aqui está um exemplo simples de como escrever um arquivo de texto em C:
+
+```C
 #include <stdio.h>
 
 int main() {
+  // declara e abre o arquivo
+  FILE *arquivo = fopen("meu_arquivo.txt", "w");
 
-    FILE *arquivo;
+  // escreve no arquivo
+  fprintf(arquivo, "Olá, mundo!");
 
-    arquivo = fopen("meu_arquivo.txt", "w");
-    fprintf(arquivo, "Olá, mundo!");
-    fclose(arquivo);
+  // fecha o arquivo
+  fclose(arquivo);
 
-    return 0;
+  // verifica erros
+  if (ferror(arquivo)) {
+    printf("Erro ao escrever no arquivo.");
+  }
+
+  return 0;
 }
 ```
 
-O resultado será um arquivo de texto contendo a mensagem "Olá, mundo!".
+## Profundidade da escrita de arquivos de texto
 
-## Mergulho mais profundo
+Agora que você já sabe como escrever um arquivo de texto em C, vamos nos aprofundar um pouco mais. Além do modo de escrita "w", que é usado no exemplo acima, existem outros modos que podem ser usados para escrever em arquivos:
 
-Além das funções mencionadas acima, existem outras que podem ser úteis ao trabalhar com arquivos de texto em C. Por exemplo, a função `fgetc()` pode ler um caractere por vez de um arquivo, enquanto `fgets()` pode ler uma linha inteira.
+- Modo "r": somente leitura
+- Modo "a": acrescenta dados ao final do arquivo
+- Modo "w+": leitura e escrita, apaga o conteúdo pré-existente do arquivo
+- Modo "a+": leitura e escrita, acrescenta dados ao final do arquivo
 
-Também é importante prestar atenção nos modos de abertura do arquivo. O modo "w" sobrescreverá todo o conteúdo existente no arquivo, enquanto "a" apenas irá anexar dados ao final do arquivo. Além disso, há o modo "r" para leitura, que não permite escrever no arquivo.
+Além disso, é importante lembrar que diferentes sistemas operacionais têm diferentes representações para quebra de linha em arquivos de texto. Para garantir que suas quebras de linha sejam interpretadas corretamente em diferentes sistemas, é recomendável usar as constantes `fputs('\n', arquivo)` ou `fputc('\n', arquivo)` para inserir uma quebra de linha no final de cada linha de texto.
 
-Explorar a documentação da biblioteca "stdio.h" pode oferecer uma visão mais abrangente das funções disponíveis para trabalhar com arquivos.
+Agora você tem o conhecimento necessário para escrever arquivos de texto em C com facilidade! Pratique esses conceitos e explore outras possibilidades de escrita de arquivos para aprimorar suas habilidades como programador C.
 
 ## Veja também
 
-- [Tutorial de C - Trabalhando com Arquivos](https://www.geeksforgeeks.org/working-with-files-in-c/)
-- [Funções da Biblioteca "stdio.h"](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
-- [Documentação da Linguagem C](https://devdocs.io/c/)
+- [Leitura de arquivos em C](https://exercism.io/tracks/c/exercises/cat-and-mouse)
+- [Manipulação de arquivos em C](https://www.programiz.com/c-programming/c-file-input-output)

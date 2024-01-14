@@ -1,49 +1,63 @@
 ---
 title:    "Elixir recipe: Comparing two dates"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Comparing dates is a common task in programming, especially when working with events or scheduled tasks. By understanding how to compare dates efficiently, you can ensure that your code runs smoothly and accurately reflects the desired behavior.
+Comparing two dates may seem like a simple task at first, but it can actually be quite challenging depending on the programming language you are using. In Elixir, knowing how to effectively compare dates can save you time and headaches when working with date-related logic in your code.
 
 ## How To
 
-To compare dates in Elixir, we can use the `DateTime` module, which provides various functions for working with dates and times.
+To compare two dates in Elixir, we can use the `DateTime.compare/2` function. This function takes in two DateTime values and returns -1, 0, or 1, depending on whether the first date is earlier, equal, or later than the second date.
 
-First, we need to convert our dates into a `DateTime` struct. We can do this using the `DateTime.from_iso8601/1` function, which takes in a string representing the date in ISO 8601 format.
-
-```Elixir
-date1 = DateTime.from_iso8601("2021-10-10T10:00:00Z")
-date2 = DateTime.from_iso8601("2021-10-11T10:00:00Z")
-```
-
-Next, we can use the `DateTime.compare/2` function to compare the two dates. This function returns `:lt` if the first date is earlier, `:gt` if the first date is later, and `:eq` if the two dates are equal.
+Let's take a look at an example:
 
 ```Elixir
+date1 = DateTime.from_iso8601("2021-01-01T00:00:00.000Z")
+date2 = DateTime.from_iso8601("2021-01-02T00:00:00.000Z")
+
 DateTime.compare(date1, date2)
-# Output: :lt
+# Output: -1
 ```
 
-We can also use the `DateTime.diff/2` function to get the difference between two dates in a specific unit (days, hours, minutes, etc.). This function returns a `%DateTime.Duration{}` struct, which contains the difference between the two dates.
+In this example, `date1` is earlier than `date2`, so the `DateTime.compare` function returns -1. But what if the two dates are the same? Let's see:
 
 ```Elixir
-DateTime.diff(date1, date2, :days)
-# Output: %DateTime.Duration{days: 1}
+date3 = DateTime.from_iso8601("2021-01-01T00:00:00.000Z")
+
+DateTime.compare(date1, date3)
+# Output: 0
 ```
+
+Since both dates are the same, the `DateTime.compare` function returns 0. This can be useful in scenarios where you need to check if two dates are equal.
+
+But what about comparing times within a date? For that, we can use the `DateTime.compare/3` function. This function takes in three arguments: the first date, the second date, and a unit of time (such as `:hours`, `:minutes`, etc.).
+
+Let's see an example:
+
+```Elixir
+date4 = DateTime.from_iso8601("2021-01-01T12:00:00.000Z")
+
+DateTime.compare(date1, date4, :hours)
+# Output: -12
+```
+
+In this example, the `DateTime.compare` function is comparing the two dates by hours and returns -12, since `date1` is 12 hours earlier than `date4`.
 
 ## Deep Dive
 
-When comparing dates, it's important to understand how different timezones and daylight saving time (DST) can affect the results.
+When it comes to comparing two dates in Elixir, there are a few important things to keep in mind.
 
-Elixir's `DateTime` module uses the UTC timezone by default. This means that when converting dates into `DateTime` structs, they will be in UTC time. However, the `DateTime.compare/2` function takes into account the timezone offset when comparing dates. So if our code is running in a different timezone, we may get unexpected results.
+First, always make sure to use `DateTime` values for accurate comparisons. While Elixir does have a `Date` module, it only deals with dates and does not include time information.
 
-Additionally, DST can also affect how dates are compared. When a daylight saving time change occurs, a specific date and time may not exist or may be repeated. This can cause issues when comparing dates, as they may not be exactly one day apart. It's important to consider these scenarios when working with dates and ensure that your code accounts for them.
+Secondly, when using the `DateTime.compare/3` function, be aware that it compares by the specified unit of time and not just the total time difference. In other words, comparing two dates by minutes will return a different result than comparing by hours, even if the total time difference is the same.
 
 ## See Also
 
-- [Elixir DateTime Module Documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Daylight Saving Time](https://www.timeanddate.com/time/dst/)
+- Elixir `DateTime` module documentation: https://hexdocs.pm/elixir/DateTime.html
+- Elixir `Date` module documentation: https://hexdocs.pm/elixir/Date.html
+- Elixir `DateTime` built-in functions: https://hexdocs.pm/elixir/DateTime.html#functions

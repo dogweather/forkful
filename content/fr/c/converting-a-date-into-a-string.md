@@ -1,59 +1,56 @@
 ---
-title:    "C: Conversion d'une date en chaîne de caractères"
+title:    "C: Convertir une date en chaîne de caractères"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles on pourrait vouloir convertir une date en une chaîne de caractères dans un programme en C. Par exemple, cela pourrait être utile pour afficher une date sur une interface utilisateur ou pour traiter des données horodatées.
+La conversion d'une date en une chaîne de caractères est une tâche courante en programmation, surtout si vous travaillez avec des données relatives au temps ou si vous souhaitez afficher une date formatée pour l'utilisateur. Cet article expliquera comment réaliser cette conversion en utilisant le langage de programmation C.
 
 ## Comment faire
 
-Pour convertir une date en une chaîne de caractères en utilisant le langage C, nous pouvons utiliser la fonction `strftime` de la bibliothèque standard `time.h`. Cette fonction prend en entrée une chaîne de format et une structure `tm` représentant la date. Voici un exemple de code :
+Pour commencer, nous allons déclarer une variable pour stocker notre date en utilisant le type de données struct tm de la bibliothèque standard du langage C. Ensuite, nous utiliserons la fonction strftime () pour convertir cette date en une chaîne de caractères selon le format souhaité. Voici un exemple de code :
 
 ```C
 #include <stdio.h>
-#include <time.h>
+#include <time.h> // inclus la bibliothèque pour la conversion de date
 
-int main(){
-    // création de la structure tm avec la date actuelle
-    time_t temps;
-    struct tm *dt;
-    time(&temps);
-    dt = localtime(&temps);
+int main()
+{
+    // déclaration d'une variable de type struct tm pour stocker la date
+    struct tm date = { .tm_year = 120, // année 2020 - 1900
+                    .tm_mon = 6, // mois de juillet (valeurs de 0 à 11)
+                    .tm_mday = 15, // jour 15
+                    .tm_hour = 15, // heure 15
+                    .tm_min = 30, // minute 30
+                    .tm_sec = 0 // seconde 0
+    };
 
-    // conversion de la date en une chaîne de caractères
-    char strdate[15];
-    strftime(strdate, 15, "%d/%m/%Y", dt);
+    // déclaration d'un tableau de caractères pour stocker la date en chaîne de caractères
+    char date_string[50];
 
-    // affichage du résultat
-    printf("La date du jour est : %s\n", strdate);
+    // utilisation de la fonction strftime pour convertir la date en chaîne de caractères
+    strftime(date_string, 50, "%A, %d %B %Y - %H:%M", &date);
+
+    // affichage de la date convertie
+    printf("La date est : %s\n", date_string);
 
     return 0;
 }
 ```
+Le résultat de ce code sera : "La date est : mercredi, 15 juillet 2020 - 15:30"
 
-Voici la sortie correspondante lorsque le code est exécuté :
+## Plongez plus en profondeur
 
-```
-La date du jour est : 21/09/2021
-```
+La fonction strftime () a plusieurs arguments qui permettent de spécifier le format de la chaîne de caractères de sortie. Le premier argument est un tableau de caractères qui stockera la date convertie, le deuxième argument est la taille de ce tableau, le troisième argument est le format de la chaîne de caractères, et le dernier argument est l'adresse de la variable de type struct tm qui contient la date. Vous pouvez trouver une liste complète des spécificateurs de format pour la fonction strftime () en consultant la documentation en ligne de la bibliothèque standard du langage C.
 
-Dans cet exemple, nous avons utilisé le format de date `"%d/%m/%Y"` pour obtenir la date sous la forme `jour/mois/année`. Il existe de nombreux autres formats disponibles, tels que `"%H:%M"` pour l'heure au format 24 heures et `"%I:%M %p"` pour l'heure au format 12 heures.
-
-## Plongée en profondeur
-
-Il est important de noter que la fonction `strftime` utilise les paramètres de langue et de localisation définis dans le système pour formater la date. Cela peut entraîner des différences dans les résultats selon les configurations des différents systèmes.
-
-De plus, la structure `tm` peut être utilisée pour représenter une date dans une plage plus large que celles prises en charge par `strftime`. Par exemple, la structure peut stocker des informations sur le fuseau horaire et les années bissextiles, alors que `strftime` les ignore.
-
-Il est donc crucial de bien comprendre les paramètres de langue et de localisation ainsi que les possibilités de la structure `tm` pour choisir la meilleure méthode de conversion de date en chaîne de caractères.
+Un autre point important à noter est que la fonction strftime () stocke automatiquement la date dans la zone horaire locale de l'utilisateur. Si vous avez besoin d'afficher la date dans une autre zone horaire, vous devrez utiliser d'autres fonctions, telles que gmtime () et mktime () pour effectuer les conversions nécessaires.
 
 ## Voir aussi
 
-- [Documentation de la fonction `strftime` (en anglais)](https://en.cppreference.com/w/c/chrono/strftime)
-- [Guide de la bibliothèque `time.h` (en français)](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/16860-utilisez-les-fonctions-de-gestion-du-temps)
-
-Nous espérons que cet article vous a été utile dans votre apprentissage de la conversion de date en chaîne de caractères en utilisant le langage C. N'hésitez pas à consulter les ressources recommandées pour approfondir vos connaissances sur le sujet. Bon codage !
+- [Documentation sur la fonction strftime ()](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Guide pour travailler avec les date et heure en C](https://www.programiz.com/c-programming/c-date-time)
+- [Autres fonctions utiles pour la gestion de la date en C](https://www.knowprogram.com/c-programming/date-and-time-programming-c/)

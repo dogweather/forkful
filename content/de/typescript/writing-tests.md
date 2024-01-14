@@ -1,40 +1,47 @@
 ---
 title:    "TypeScript: Tests schreiben"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Softwareentwicklung haben Tests einen wichtigen Platz eingenommen. Sie werden verwendet, um sicherzustellen, dass der Code richtig funktioniert und um Fehler zu entdecken, bevor sie in Produktion gehen. Das Schreiben von Tests kann zwar etwas zusätzliche Zeit und Mühe erfordern, aber es spart langfristig Zeit und verhindert mögliche Fehler, die ansonsten teuer werden könnten.
+In der Welt der Softwareentwicklung ist es unerlässlich, qualitativ hochwertigen Code zu schreiben. Eine Methode, um sicherzustellen, dass der Code richtig funktioniert und mögliche Fehler zu erkennen, sind Tests. Diese können manuell oder automatisiert durchgeführt werden und helfen dabei, Bugs frühzeitig zu finden und die Wartbarkeit des Codes zu verbessern.
 
 ## Wie man Tests in TypeScript schreibt
 
-Um Tests in TypeScript zu schreiben, müssen wir zuerst ein Test-Framework wie zum Beispiel Jest oder Mocha installieren. Anschließend können wir unsere Tests schreiben, indem wir die assert-Methode des jeweiligen Frameworks nutzen. Sehen wir uns hier ein einfaches Beispiel an:
+Um Tests in TypeScript zu schreiben, kann das Framework Jest verwendet werden. Dieses bietet eine einfache und intuitive Möglichkeit, Tests zu erstellen. Schauen wir uns zunächst die grundlegende Struktur eines Tests an:
 
 ```TypeScript
-// unsere Funktion, die wir testen wollen
-function add(x: number, y: number) {
-  return x + y;
-}
+// Importieren des Testframeworks
+import * as jest from 'jest';
 
-// ein Testfall
-test("Addition von zwei Zahlen", () => {
-  assert(add(2, 3) === 5); // erwartetes Ergebnis ist 5
-}
+// Beschreibung und Name des Tests
+describe('Funktion addieren', () => {
+  // Funktion, die getestet werden soll
+  it('sollte zwei Zahlen korrekt addieren', () => {
+    const result = addieren(2, 3); // Aufrufen der addieren-Funktion
+    expect(result).toBe(5); // Erwartetes Ergebnis
+  });
+});
 ```
 
-Das assert-Statement überprüft, ob die Funktion add tatsächlich das erwartete Ergebnis, in diesem Fall 5, liefert. Ansonsten würde der Test fehlschlagen und uns darüber informieren, dass etwas nicht wie erwartet funktioniert.
+In diesem Beispiel verwenden wir die Funktion `addieren`, um zu überprüfen, ob sie zwei Zahlen korrekt addiert. Mit `expect` können wir angeben, welches Ergebnis wir erwarten. Jest vergleicht dann automatisch das tatsächliche Ergebnis mit dem Erwarteten und gibt eine Fehlermeldung aus, wenn diese nicht übereinstimmen.
 
-## Tiefer Einblick
+## Deep Dive
 
-Neben einfachen assert-Statements gibt es noch viele weitere Möglichkeiten, Tests in TypeScript zu schreiben. Zum Beispiel können wir unsere Tests in verschiedene Kategorien oder Testgruppen unterteilen, um eine bessere Übersicht und Struktur zu haben. Außerdem können wir Mocking-Techniken nutzen, um externe Abhängigkeiten zu simulieren und unsere Tests unabhängig zu halten. Es gibt auch die Möglichkeit, asynchrone Tests zu schreiben, indem wir Promises oder async/await verwenden.
+Es gibt einige bewährte Methoden, um effektive Tests in TypeScript zu schreiben:
 
-Das Schreiben von Tests ist nicht nur wichtig, um sicherzustellen, dass der Code richtig funktioniert, sondern es fördert auch eine bessere Code-Qualität und Sichtbarkeit. Indem wir Tests schreiben, können wir sicherstellen, dass unser Code gut getestet und von anderen Entwicklern besser verständlich ist.
+- Schreibe unabhängige Tests, die nur eine Sache auf einmal überprüfen. Dadurch werden sie einfacher zu lesen und zu warten.
+- Nutze `beforeEach` oder `afterEach` Hooks, um wiederholte oder vorbereitende Schritte in deinen Tests auszuführen.
+- Nutze das mocking-Feature von Jest, um externe Abhängigkeiten zu simulieren, die deine Tests beeinflussen könnten.
+
+Es gibt viele weitere Tipps und Tricks, um effektive Tests zu schreiben, aber diese sollen dir einen guten Einstieg in das Testen in TypeScript geben.
 
 ## Siehe auch
 
-- [Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
-- [Mocha Dokumentation](https://mochajs.org/)
-- [Vergleich von Jest und Mocha](https://medium.com/@raj_sinha/choosing-a-javascript-testing-library-jest-vs-mocha-f87130f3478e)
+- [Offizielle Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
+- [Anleitung zur Verwendung von Jest in TypeScript-Projekten](https://kulshekhar.github.io/ts-jest/user/config/)
+- [Tutorial zum Testen von TypeScript mit Jest](https://www.valentinog.com/blog/jest/)

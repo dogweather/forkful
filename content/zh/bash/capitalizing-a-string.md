@@ -1,51 +1,36 @@
 ---
-title:    "Bash: 将字符串首字母大写"
+title:    "Bash: 将字符串大写"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要用Bash编程
+## 为什么
 
-Bash（Bourne-Again SHell）是一种流行的Unix shell和编程语言，经常被用于自动化任务和系统管理。它提供了多种功能，其中之一就是能够对字符串进行操作，包括将字符串转换为大写。在编写脚本或处理文本数据时，这个功能非常有用。
+命令行脚本是日常计算机任务中必不可少的工具。无论是对文件进行操作，还是管理系统设置，都可以通过编写命令行脚本来实现。而在编写命令行脚本时，经常会用到字符串的大写功能，使得字符串的呈现更加直观和易读。因此，学习如何在Bash中实现字符串的大写功能是非常有用的。
 
-## 如何使用Bash将字符串转换为大写
+## 如何实现
 
-首先，您需要打开终端并启动Bash。然后使用echo命令创建一个字符串变量，如下所示：
-
-```Bash
-string="hello world"
-```
-
-接下来，使用tr命令将字符串转换为大写，并将结果赋值给一个新的变量，如下所示：
+要想在Bash中实现字符串的大写，可以使用内置的tr命令。该命令可以将给定字符串中的小写字母转换为大写字母。下面是一个示例：
 
 ```Bash
-new_string=$(echo $string | tr '[:lower:]' '[:upper:]')
+echo "hello world" | tr [a-z] [A-Z]
 ```
 
-最后，使用echo命令打印出转换后的新变量，如下所示：
+该命令首先通过管道将字符串“hello world”传递给tr命令，然后将所有小写字母[a-z]替换为大写字母[A-Z]。运行这个命令后，会得到输出“HELLO WORLD”。
 
-```Bash
-echo $new_string
-```
+## 深入了解
 
-当您运行脚本后，将会看到输出 hello world 被转换为大写的 HELLO WORLD。
+除了使用tr命令，Bash中还有其他实现字符串大写的方法。比如，使用awk命令或者sed命令也可以实现相同的效果。另外，还可以使用Bash内置的${parameter^^pattern}语法来将字符串中符合模式匹配的部分转换为大写。此外，可以在man手册中查询更多有关字符串转换的方法。
 
-## 深入了解如何将字符串转换为大写
+## 参考链接
 
-在上面的例子中，我们使用了两个命令来将字符串转换为大写。第一个是tr命令，它被用来执行字符替换。`[:lower:]`和`[:upper:]`是两个字符集，分别代表小写和大写字母。tr命令会用后面的字符集替换前面的字符集。
+- [Bash手册](https://www.gnu.org/software/bash/manual/bash.html#Manipulating-Strings)
+- [tr命令文档](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Awk命令文档](https://www.gnu.org/software/gawk/manual/html_node/Format-Control-Sequences.html)
+- [Sed命令文档](https://www.gnu.org/software/sed/manual/html_node/sed-commands-list.html)
 
-第二个命令是echo，它被用来打印输出。在这个例子中，我们将输出赋值给了一个变量，这样我们就可以对输出进行进一步操作。
+## 参考
 
-除了tr命令，您还可以使用awk命令来将字符串转换为大写。它的用法类似于上面的例子，只需将tr命令替换为awk命令。
-
-## 参考文献
-
-- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Shell Scripting Tutorial](https://www.shellscript.sh/)
-- [The Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-
-## 另请参阅
-
-- [在Bash中将字符串转换为小写](https://example.com/convert-string-to-lowercase)
-- [Bash脚本编程：从入门到精通](https://example.com/bash-scripting-guide)
+- `Shell编程基础`： 钱文超

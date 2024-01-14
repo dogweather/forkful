@@ -1,53 +1,51 @@
 ---
-title:    "Ruby: Merkkijonojen yhdistäminen"
+title:    "Ruby: Jonojen yhdistäminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi yhdistää merkkijonoja? Siihen on monia syitä. Yksi tärkeimmistä syistä on, että yhdistetyt merkkijonot tarjoavat meille joustavuutta ja mahdollisuuden luoda kompleksisia lauseita ja tekstejä. Se myös auttaa meitä ylläpitämään siistiä ja helposti luettavaa koodia.
+Ruby on dynaaminen ohjelmointikieli, joka antaa mahdollisuuden monipuoliseen ja tehokkaaseen koodaamiseen. Yksi käyttökelpoinen toiminto Rubyssa on tekstien eli stringien yhdistäminen, jolla voi yksinkertaisesti muodostaa uusia merkkijonoja. Tässä artikkelissa tarkastellaan, miten stringien konkatenointi eli yhdistäminen tapahtuu Rubyssa ja miksi se on hyödyllistä.
 
 ## Miten
 
-Yhdistäminen merkkijonoja Rubyssa on yksinkertaista. Voit käyttää plus-merkkiä (+) tai concat-metodia. Katsotaanpa muutamia esimerkkejä:
+Stringien konkatenointi on helppoa ja nopeaa Rubyssa. Se tapahtuu käyttämällä plus-merkkiä yhdistämään kaksi tai useampaa merkkijonoa. Alla on esimerkki, jossa konkatenoidaan kaksi eri stringiä:
 
 ```Ruby
-str1 = "Hei"
-str2 = "maailma"
-str3 = str1 + " " + str2
-puts str3
+puts "Tervetuloa " + "koodaamaan!"
 ```
 
-Tulostus: "Hei maailma"
+Tämän koodin tulosteena näkyy "Tervetuloa koodaamaan!". Lisäksi Rubyssa on myös käytössä lyhyempi ja käytännöllisempi tapa yhdistää stringejä, käyttämällä plus-merkkiä ja yhtäsuuruusmerkkiä:
 
 ```Ruby
-name = "Sara"
-greeting = "Moi"
-sentence = greeting.concat(" ", name, "!")
-puts sentence
+string1 = "Hei "
+string2 = "sinä!"
+puts string1 += string2
 ```
 
-Tulostus: "Moi Sara!"
+Tämä koodi tulostaa saman lopputuloksen kuin ensimmäinen esimerkki. Tässä tapauksessa käytetään muuttujia, joiden arvot yhdistetään plus-merkillä ja tallennetaan uuteen muuttujaan.
 
-Huomaa, että plus-merkki (+) myös toimii numeroiden yhdistämiseen.
+## Syvemmälle
 
-## Syvällinen sukellus
+Rubyssa stringien konkatenointi tapahtuu takana olevassa koodissa käyttäen `+`-operaattoria, joka suorittaa yhdistämisen. Tämä tarkoittaa, että jokainen uusi stringi luodaan aina erillisenä oliona, vaikka se muodostettaisiinkin vanhojen stringien pohjalta. Tämä on tärkeää pitää mielessä, jos tarvitset yhdistettyjä stringejä edelleen jossakin muussa osassa koodia.
 
-Yhdistämisen lisäksi, Ruby tarjoaa myös monia muita hyödyllisiä merkkijonojen muokkausmenetelmiä. Yksi tärkeimmistä on interpolointi, joka mahdollistaa muuttujien tai lausekkeiden sisällyttämisen merkkijonoon. Voit tehdä tämän käyttämällä #-merkkiä ja aaltosulkia ({ }), kuten tässä esimerkissä:
+Ruby myös tukee muuttuvia määrityksiä stringien yhdistämiselle käyttäen `<<`-operaattoria. Tämä tarkoittaa, että voit muokata alkuperäisiä stringeja suoraan ilman uuden muuttujan luomista. Esimerkiksi:
 
 ```Ruby
-name = "Matias"
-sentence = "Tervehdys, #{name}! Kuinka voit?"
-puts sentence
+string1 = "Tämä on "
+string2 = "esimerkki."
+puts string1 << string2
+puts string1 #Uusi stringi tallennettu alkuperäiseen muuttujaan
 ```
 
-Tulostus: "Tervehdys, Matias! Kuinka voit?"
-
-Lisäksi Rubyssa on myös monia muita hyödyllisiä merkkijonojen muokkausmenetelmiä, kuten upcase, downcase ja capitalize. Näitä voit käyttää muuntaaksesi merkkijonoja haluamallasi tavalla.
+Tämän koodin tulosteena näkyy sama lopputulos kuin aiemmin. Huomaa kuitenkin, että string1 on muuttunut ja tallentaa nyt uuden yhdistetyn stringin.
 
 ## Katso myös
 
-* Ruby:n merkkijonojen interpolointi: https://ruby-doc.org/core-2.7.1/doc/syntax/literals_rdoc.html#label-String+Interpolation
-* Muut hyödylliset merkkijonomuokkausmenetelmät Rubyssa: https://ruby-doc.org/core-2.7.1/String.html
+- [RubyDocumentation: String](https://ruby-doc.org/core-2.6.5/String.html)
+- [Concatenation in Ruby](https://www.geeksforgeeks.org/concatenation-in-ruby/)
+
+Stringien yhdistäminen on vain yksi esimerkki siitä, kuinka Rubyssa voi käytännöllisesti ja tehokkaasti työskennellä ja manipuloida tekstejä. Toivottavasti tämä artikkeli auttaa sinua ymmärtämään tätä toimintoa paremmin ja hyödyntämään sitä koodissasi. Onnea koodaamiseen!

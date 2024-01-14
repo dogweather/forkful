@@ -1,41 +1,43 @@
 ---
-title:    "TypeScript: Generowanie losowych liczb"
+title:    "TypeScript: Tworzenie losowych liczb"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie losowych liczb jest ważnym aspektem w programowaniu w języku TypeScript. Może to być przydatne w różnych zastosowaniach, takich jak symulacja losowych wydarzeń, testowanie aplikacji, czy generowanie unikalnych identyfikatorów.
+Wiele programów wymaga wykorzystywania losowych liczb, czy to do symulacji scenariuszy, czy też do generowania różnych danych. W przypadku projektów tworzonych w języku TypeScript, można wykorzystać wbudowaną funkcję do generowania losowych liczb. W tym artykule dowiesz się, jak wykorzystać ten mechanizm i jakie są jego możliwości.
 
-## Jak to zrobić
+## Jak
 
-Aby wygenerować losową liczbę z odpowiedniego zakresu, możemy użyć funkcji `Math.random()` w połączeniu z odpowiednimi operatorami arytmetycznymi. Na przykład, jeśli chcemy wygenerować liczbę całkowitą z zakresu od 1 do 10, możemy użyć poniższego kodu:
+Generowanie losowych liczb w TypeScript jest bardzo proste i wymaga użycia wbudowanej funkcji `Math.random()`. Ta funkcja zwraca pseudolosową liczbę z przedziału 0 do 1. Następnie możemy przemnożyć tę wartość przez odpowiednią liczbę, aby uzyskać zakres liczb, który nas interesuje. Na przykład, jeśli chcemy wygenerować losową liczbę z przedziału od 1 do 10, możemy wykorzystać poniższy kod:
 
 ```TypeScript
-let randomNumber = Math.floor(Math.random() * 10) + 1;
+const randomNumber = Math.random() * 10 + 1;
 console.log(randomNumber);
 ```
 
-Otrzymamy w ten sposób liczbę całkowitą z zakresu 1-10. Możemy również wykorzystać tę samą metodę do wygenerowania losowego znaku z tablicy, na przykład:
+W powyższym przykładzie, funkcja `Math.random()` zwróci wartość od 0 do 1, a następnie zostanie ona przemnożona przez 10 i dodana 1, co pozwoli nam uzyskać liczbę z zakresu od 1 do 10.
+
+Możemy także wykorzystać funkcję `Math.floor()`, aby zaokrąglić wygenerowaną liczbę do najbliższej liczby całkowitej. W ten sposób otrzymamy losową liczbę całkowitą z zakresu, na przykład:
 
 ```TypeScript
-let characters = ["a", "b", "c", "d", "e"];
-let randomCharacter = characters[Math.floor(Math.random() * characters.length)];
-console.log(randomCharacter);
+const randomInteger = Math.floor(Math.random() * 10) + 1;
+console.log(randomInteger);
 ```
 
-W ten sposób otrzymamy losowo wybrany znak z tablicy.
+Powyższy kod zwróci losową liczbę całkowitą z przedziału od 1 do 10.
 
-## Głębszy wykład
+## Deep Dive
 
-W języku TypeScript istnieje również wbudowana klasa `Random` w module `crypto`, która umożliwia generowanie bezpiecznych i losowych liczb. Ta klasa wykorzystuje funkcję szyfrującą aby zapewnić większą losowość.
+Funkcja `Math.random()` jest oparta na algorytmie wykorzystującym liczbę pseudolosową, która jest generowana w sposób deterministyczny. Oznacza to, że przy użyciu tej samej wartości początkowej, zostanie wygenerowany ten sam ciąg liczb. W związku z tym, funkcja ta nie jest zalecana do wykorzystywania w celach bezpieczeństwa, takich jak generowanie haseł czy tokenów uwierzytelniających.
 
-Dodatkowo, jeśli potrzebujemy wygenerować wiele liczb w szybszy sposób, możemy użyć biblioteki TypeScript o nazwie `random-js`, która dostarcza wiele zaawansowanych funkcji generujących losowe wartości z różnych rodzajów danych.
+Jeśli chcesz mieć większą kontrolę nad generowaniem liczb losowych, można wykorzystać biblioteki zewnętrzne, takie jak `random-js`, które oferują rozmaite algorytmy dla generowania liczb pseudolosowych. Możesz także wykorzystać generator liczb losowych oferowany przez bibliotekę `nanoid`, który pozwala na generowanie unikalnych identyfikatorów, wykorzystując zarówno wartości pseudolosowe, jak i losowe.
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja TypeScript - Math.random()](https://www.typescriptlang.org/docs/handbook/basic-types.html#number)
-- [Dokumentacja TypeScript - Crypto](https://nodejs.org/api/crypto.html)
-- [Biblioteka random-js dla TypeScript](https://www.npmjs.com/package/random-js)
+- [Dokumentacja na temat funkcji Math.random() w języku TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#assoc-comm-index-access)
+- [Biblioteka random-js](https://github.com/davidbau/seedrandom)
+- [Biblioteka nanoid](https://github.com/ai/nanoid)

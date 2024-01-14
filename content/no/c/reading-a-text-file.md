@@ -1,47 +1,45 @@
 ---
-title:    "C: Lese en tekstfil"
+title:    "C: Å lese en tekstfil"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Text filer er et vanlig format for å lagre og dele data på en enkel måte. Det kan være nyttig for programmerere å kunne lese tekstfiler for å hente ut nødvendig informasjon eller manipulere data. I denne bloggartikkelen vil vi se nærmere på hvordan man kan lese en tekstfil ved hjelp av C-programmeringsspråket.
 
-## Slik gjør du det
-Før vi går inn i detaljene, la oss først se på en enkel måte å lese en tekstfil på. Vi kan bruke fopen() funksjonen for å åpne en tekstfil og deretter bruke fgets() funksjonen for å lese hver linje av filen. La oss se på følgende eksempel:
+Å lese og håndtere tekstfiler er en viktig del av programmering. Det er ofte nødvendig å kunne lese informasjon fra en tekstfil, enten det er for å behandle data eller for å vise resultatene til brukeren. I denne artikkelen vil vi forklare hvordan du kan lese en tekstfil i C-programmering, slik at du kan bruke denne kunnskapen i dine egne prosjekter.
+
+## Hvordan
+
+For å lese en tekstfil i C-programmering, trenger du først å åpne filen ved hjelp av fopen-funksjonen. Du må også spesifisere hvilken fil du ønsker å lese og hvilken modus du skal lese den i. Det finnes forskjellige moduser du kan åpne en fil i, som for eksempel "r" for å lese, "w" for å skrive og "a" for å legge til tekst i slutten av filen.
 
 ```C
-#include <stdio.h>
-
-int main(){
-  FILE * fp;
-  char line[100];
-
-  // Åpne tekstfil for lesing
-  fp = fopen("tekstfil.txt", "r");
-
-  // Les hver linje av tekstfilen
-  while(fgets(line, 100, fp) != NULL){
-    printf("%s", line);
-  }
-  
-  // Lukk filen
-  fclose(fp);
-  return 0;
-}
+FILE *file = fopen("tekstfil.txt", "r");
 ```
 
-I dette eksempelet åpner vi først en tekstfil med navnet "tekstfil.txt" for lesing (denne filen må selvfølgelig eksistere i samme mappe som programmet vårt). Deretter bruker vi en while-løkke for å lese hver linje av filen og skriver ut den til konsollen ved hjelp av printf() funksjonen. Til slutt lukker vi filen med fclose() funksjonen.
+Når filen er åpnet, kan du lese linje for linje ved hjelp av fgets-funksjonen og lagre innholdet i en variabel. Du må også passe på å lukke filen ved hjelp av fclose-funksjonen når du er ferdig med å lese den.
 
-## Gå dypere
-Når vi leser en tekstfil, kan det være nyttig å vite hvordan dataene er strukturert i filen. En tekstfil har en linje-struktur, noe som betyr at hver linje i filen er adskilt med et linjeskift. Dette linjeskiftet kan være representert som et nytt tegn ( '\n' ) eller et returtegn ( '\r' ). Det er viktig å huske på dette når du leser og manipulerer tekstfiler.
+```C
+char line[100];
+while (fgets(line, 100, file) != NULL) {
+    // Gjør noe med linjen
+}
+fclose(file);
+```
 
-En annen viktig ting å vite er at fgets() funksjonen leser en linje av filen og returnerer en peker til denne linjen. Det betyr at vi må bruke en char-variabel til å lagre denne pekeren og deretter bruke denne variabelen for å få tilgang til linjen.
+Det er viktig å huske på at lesing av en tekstfil kan være feilfølsomt, spesielt hvis filen inneholder forskjellige tegnsett som for eksempel æ, ø og å. Det er derfor viktig å konvertere teksten til riktig tegnkoding ved hjelp av f.eks. "setlocale" -funksjonen.
 
-Nå som du har en grunnleggende forståelse av hvordan man leser en tekstfil, kan du prøve å eksperimentere med forskjellige funksjoner og metoder for å få ut enda mer informasjon fra tekstfiler.
+## Dykk dypere
+
+Å lese en tekstfil i C kan også gjøres ved hjelp av "fscanf" -funksjonen, som lar deg lese og tolke hver linje direkte. Dette kan være nyttig hvis filen inneholder strukturerte data som f.eks. tall eller strenger.
+
+En annen viktig funksjon i C for å håndtere tekstfiler er "fprintf" -funksjonen, som lar deg skrive tekst og variabler til en fil. Dette kan være nyttig for å lagre data eller resultater fra programmet ditt.
+
+Husk også å sjekke for eventuelle feil underveis, og håndtere dem på en hensiktsmessig måte, for eksempel ved å gi en feilmelding eller lukke programmet.
 
 ## Se også
-* [C-programmeringsspråket - Dokumentasjon](https://www.cprogramming.com/tutorial/c/lesson17.html)
-* [Hvordan lese filer i C](https://www.programiz.com/c-programming/c-file-input-output)
-* [C Library - fopen() funksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+
+- [C-funksjoner for filbehandling](https://www.tutorialspoint.com/c_standard_library)
+- [Eksempler på å lese og skrive til en tekstfil i C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Hvordan lese data fra CSV-filer i C](https://www.geeksforgeeks.org/csv-files-in-c-syntax-working-with-csv-files/)

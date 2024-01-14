@@ -1,33 +1,62 @@
 ---
-title:    "Rust: Å lage en midlertidig fil"
+title:    "Rust: Opprette en midlertidig fil"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å opprette midlertidige filer er en viktig del av programmering, spesielt når man jobber med store eller komplekse datasett. Det kan også være nyttig når man trenger å kommunisere med andre programmer eller lagre midlertidig data mens man jobber med en større operasjon.
+Hvis du noen gang har jobbet med datafiler, programvaretesting eller generelt systemarbeid, har du sannsynligvis støtt på behovet for å opprette midlertidige filer. Disse filene er midlertidige lagringsplasser som brukes for å mellomlagre data mens du jobber med et større prosjekt. Å opprette og håndtere midlertidige filer i dine Rust-prosjekter kan være en viktig del av effektiviteten og funksjonaliteten til programvaren din.
 
 ## Hvordan
 
-For å opprette en midlertidig fil i Rust, kan du bruke standardbiblioteket `Std::fs`, spesifikt funksjonen `File::create()`. Her er et eksempel på hvordan du kan opprette en midlertidig fil kalt "temp.txt":
+For å opprette en midlertidig fil i Rust, kan du bruke `tempfile` biblioteket. Først må du legge til biblioteket i `Cargo.toml` filen din:
 
 ```Rust
-use std::fs::File;
-
-let temp_file = File::create("temp.txt").expect("Kunne ikke opprette filen.");
+[dependencies]
+tempfile = "3.1.0"
 ```
 
-I dette eksempelet bruker vi `expect()` for å håndtere eventuelle feil som kan oppstå under opprettingen av filen. Du kan også bruke `match` eller `Result` for å håndtere feil på en mer spesifikk måte.
+Deretter importerer du biblioteket i filen din ved å legge til følgende i toppen av koden:
 
-## Dypdykk
+```Rust
+extern crate tempfile;
+```
 
-Når man oppretter en midlertidig fil i Rust, blir den automatisk slettet når programmet avsluttes. Dette er nyttig for å unngå å fylle opp datamaskinen med unødvendige filer. Imidlertid kan du også velge å beholde den midlertidige filen ved å flytte den til en annen plassering eller gi den et spesifikt navn.
+For å opprette en midlertidig fil kan du bruke `NamedTempFile`-strukturen i `tempfile` biblioteket:
 
-Du kan også sette rettighetene til den midlertidige filen ved å bruke `File::set_permissions()`-funksjonen, som lar deg endre tilgangsnivå og eier. Dette er nyttig når man vil sikre at den midlertidige filen kun kan leses eller skrives av bestemte brukere.
+```Rust
+use std::io::prelude::*;
+use tempfile::NamedTempFile;
+
+let mut file = NamedTempFile::new().expect("Kunne ikke opprette midlertidig fil");
+```
+
+Deretter kan du skrive data til filen ved hjelp av `write`-metoden:
+
+```Rust
+let data = b"Dette er et eksempel på data som skal skrives til midlertidig fil.";
+file.write(data).expect("Kunne ikke skrive til fil");
+```
+
+For å lese data fra filen, kan du bruke `read_to_string`-metoden:
+
+```Rust
+let mut contents = String::new();
+file.read_to_string(&mut contents).expect("Kunne ikke lese fra fil");
+println!("{}", contents); // Skriver ut "Dette er et eksempel på data som skal skrives til midlertidig fil."
+```
+
+## Dykk dypere
+
+Opprettelsen av midlertidige filer i Rust er enkelt og kan være nyttig i en rekke forskjellige programmeringsprosjekter. Det er også viktig å merke seg at `NamedTempFile`-strukturen har flere nyttige metoder, som for eksempel `persist` som gir deg muligheten til å beholde den midlertidige filen permanent dersom du ønsker det.
+
+Det er også verdt å nevne at `tempfile` biblioteket også støtter opprettelse av midlertidige mapper og filer med spesifikke navn og plasseringer. For mer informasjon kan du se på dokumentasjonen til biblioteket.
 
 ## Se også
 
-- [Rust standardbiblioteket](https://doc.rust-lang.org/std/index.html)
-- [Opprette og håndtere filer i Rust](https://www.tutorialspoint.com/rust/rust_file_handling.htm)
+- [rust-lang.org](https://www.rust-lang.org/)
+- [tempfile dokumentasjon](https://docs.rs/tempfile/3.1.0/tempfile/)
+- [Rust-referanse](https://doc.rust-lang.org/reference/index.html)

@@ -1,41 +1,38 @@
 ---
-title:    "Swift: 「テキストファイルの書き方」"
+title:    "Swift: 「テキストファイルの作成」"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテキストファイルを書くのか
-
-プログラミングでテキストファイルを作成することには、さまざまな理由があります。たとえば、データを保存したり、ログを記録したり、テキストファイル形式でファイルをエクスポートしたりするためです。
+## なぜ
+テキストファイルを書くことには、コードを整理したり、データを保存したりするための便利な方法があります。
 
 ## 方法
-
-テキストファイルを書く方法を説明します。まず、新しいファイルを作成し、書き込むテキストを定義します。次に、`write(to: Atomically: Encoding:)`メソッドを使用して、テキストをファイルに書き込みます。最後に、ファイルを閉じて、保存することができます。
-
+まず、テキストファイルを新しく作成します。その後、テキストファイルに書き込むコードを記述します。最後に、ファイルを閉じて保存します。下記が実際のコード例になります。
 ```Swift
-let fileName = "myFile.txt"
-let text = "これはテキストファイルに書き込まれた文章です。"
+let text = "これはテキストファイルに書き込むテキストです。"
+
 do {
-    try text.write(to: URL(fileURLWithPath: fileName), atomically: true, encoding: .utf8)
-    print("ファイルの書き込みに成功しました。")
+    try text.write(toFile: "example.txt", atomically: true, encoding: .utf8)
+    print("ファイルが保存されました。")
 } catch {
-    print("ファイルの書き込みに失敗しました。")
+    print("ファイルの保存に失敗しました。")
 }
 ```
+このコードを実行すると、テキストファイルが作成され、その中に指定したテキストが書き込まれます。保存されたファイルを開いてみると、コードで指定した通りの内容が表示されるはずです。
 
-実行結果：
+## ディープダイブ
+テキストファイルを書く際には、ファイルの作成や書き込みの他にも、ファイルの追加や削除などの操作が可能です。また、ファイルの中身を改行やタブで整形することもできます。さらに、Swiftには、ファイルを操作するための便利なライブラリがたくさんありますので、ぜひ活用してみてください。
 
-```
-ファイルの書き込みに成功しました。
-```
+## 参考
+- [Swiftでファイルを操作する方法 (大阪スクールオブインターデザイン)](https://os-school.com/ios/developer/coder/swift/file/)
+- [Swift入門 – ファイル操作 (TechAcademy)](https://www.tech-academy.io/column/swift_file/)
+- [Writing Files with Swift (AppCoda)](https://appcoda.com/writing-files-documents-ios/)
 
-## 深堀り
+## おわりに
+今回は、テキストファイルを書く方法についてご紹介しました。テキストファイルを上手に活用することで、より効率的なコーディングが可能になります。ぜひぜひ、上記のコード例を参考に、テキストファイルを活用してみてください。
 
-テキストファイルを書く際には、いくつかの重要なことがあります。たとえば、ファイルを閉じることが必要です。また、文字コードを選択することも重要です。さらに、オプションでファイルをアトミックに書き込むこともできます。これにより、ファイルの書き込み中にエラーが発生した場合に、ファイルを破損することなく元の状態に戻すことができます。
-
-## さらに見る
-
-- [Swiftでテキストファイルを書き込む方法](https://www.swift-studies.com/blog/swift-text-file-write/)
-- [Swift公式ドキュメント: Writing Files](https://developer.apple.com/documentation/foundation/filemanager/1412653-write)
-- [Swiftでテキストファイルから情報を読み込む方法](https://patientprogrammer.com/reading-text-file-in-swift/)
+## 参考文献
+- [Swift言語リファレンス (Apple)](https://developer.apple.com/jp/documentation/swift/)

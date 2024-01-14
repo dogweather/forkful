@@ -1,52 +1,48 @@
 ---
-title:    "Clojure: Konvertering av dato til streng"
+title:    "Clojure: Konvertere en dato til en streng"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange programmerere kan trenge å konvertere datoer til strenger for å vise dem på en enklere og mer lesbar måte. Dette kan være nyttig for å presentere datoer i et brukergrensesnitt eller for å lagre dem i en database.
 
-Når man jobber med dataverdenen, er det ofte nødvendig å konvertere data i ulike formater. Dette kan være for å tilpasse data til ulike systemer eller for å gjøre det mer leselig for mennesker. En vanlig konvertering er å omgjøre en dato til en streng, og i denne artikkelen vil vi se på hvordan man gjør dette i Clojure.
-
-## Hvordan gjøre det
-
-Det er flere måter å konvertere en dato til en streng i Clojure, avhengig av hva slags format man ønsker. La oss starte med en enkel kode som konverterer dagens dato til en streng:
+## Hvordan
+Å konvertere datoer til strenger i Clojure er enkelt med bruk av funksjonen `(str ...)`. Dette er en innebygd funksjon som lar deg bygge en streng fra flere ulike datastrukturer, inkludert datoer.
 
 ```Clojure
-(let [current-date (java.util.Date.)]
-  (str current-date))
+(str 15 "April" 2020) ;;output: "15 April 2020"
 ```
 
-Output:
-
-```
-"Wed Jul 08 20:47:33 CEST 2020"
-```
-
-I dette tilfellet bruker vi funksjonen `str` for å konvertere datoen til en standard streng som viser dag, måned, tid og tidssone.
-
-Vi kan også bruke funksjonen `format` for å spesifisere ønsket format. For eksempel, hvis vi ønsker dato og tid på formatet "åååå/mm/dd - tt", kan vi bruke følgende kode:
+Du kan også bruke funksjonen `format` for å spesifisere formatet på datoen. For eksempel, hvis du ønsker å vise måneden som en forkortet streng, kan du skrive:
 
 ```Clojure
-(let [current-date (java.util.Date.)]
-  (format "yyyy/MM/dd - hh:mm a" current-date))
+(format "%d %b %Y" 15 :April 2020) ;;output: "15 Apr 2020"
 ```
 
-Output:
+Det er også mulig å konvertere datoer til andre formater, som ISO 8601-formatet, ved hjelp av biblioteket `clj-time`. Her er et eksempel på hvordan du kan gjøre det:
 
+```Clojure
+(require '[clj-time.format :as time])
+(time/unparse (time/date-time 2020 4 15) "yyyy-MM-dd") ;;output: "2020-04-15"
 ```
-"2020/07/08 - 20:47 PM"
+
+## Dypdykk
+Når du konverterer en dato til en streng, kan du også inkludere tid, tidssone og milliseconds hvis du ønsker det. Dette gjøres ved å bruke funksjonen `date-time`. Her er et eksempel på hvordan du kan legge til tid og milliseconds i en konvertert dato:
+
+```Clojure
+(str (time/date-time 2020 4 15 15 30 45 500)) ;;output: "2020-04-15T15:30:45.500"
 ```
 
-Det finnes mange andre tilgjengelige formater som kan spesifiseres ved hjelp av funksjonen `format`. Du kan finne en liste over disse i dokumentasjonen for `java.util.SimpleDateFormatter`.
+Det er også mulig å konvertere en dato til en lokal tidssone ved hjelp av `zoned-date-time`-funksjonen. Dette kan være nyttig hvis du ønsker å vise datoer i forskjellige tidssoner, som for eksempel i et globalt applikasjonsmiljø.
 
-## Dykk dypere
-
-Når vi konverterer en dato til en streng, er det viktig å forstå hva slags type vi ønsker å få ut som resultat. I eksemplene ovenfor brukte vi funksjonen `str`, som konverterer datoen til en enkel streng. Hvis man ønsker å lagre datoen i en spesiell form, som for eksempel å hente ut et spesifikt element som dag, måned eller år, må man først konvertere datoen til en annen type. Dette kan gjøres ved hjelp av funksjonen `local-date-time`, som gjør om datoen til et objekt av typen `java.time.LocalDateTime`. Dette gir oss muligheten til å hente ut individuelle elementer ved hjelp av funksjoner som `get-year` og `get-month`.
+```Clojure
+(str (time/zoned-date-time (time/date-time 2020 4 15) "Europe/Oslo")) ;;output: "2020-04-15T00:00:00.000+02:00"
+```
 
 ## Se også
-
-- [Clojure dokumentasjon](https://clojuredocs.org/)
-- [Java dokumentasjon for `java.util.Date`](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java dokumentasjon for `java.util.SimpleDateFormatter`](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Clojure `str`-funksjonen dokumentasjon](https://clojuredocs.org/clojure.core/str)
+- [Clojure `format`-funksjonen dokumentasjon](https://clojuredocs.org/clojure.core/format)
+- [Clj-time bibliotek dokumentasjon](https://github.com/clj-time/clj-time)

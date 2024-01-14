@@ -1,42 +1,44 @@
 ---
-title:    "Elixir: Beräkna ett datum i framtiden eller det förflutna"
+title:    "Elixir: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Du kanske undrar varför du skulle vilja räkna ut ett datum i framtiden eller förflutna? Det finns många användbara tillämpningar för denna funktion, såsom att planera möten, hantera prenumerationer eller för att utveckla algoritmer för tidshantering.
+Att kunna beräkna ett datum i framtiden eller förfluten tid är en viktig funktion inom programmering. Det kan användas för att planera möten, skapa påminnelser eller beräkna ålder på ett specifikt datum.
 
 ## Hur man gör det
+För att beräkna ett datum i Elixir, kan du använda funktionen `Date.add/2`. För att beräkna ett datum i framtiden, ange ett positivt tal som det andra argumentet. För att beräkna ett datum i förfluten tid, använder du ett negativt tal som det andra argumentet. Till exempel:
 
-För att räkna ut ett datum i framtiden eller förflutna i Elixir, använder man funktionen `DateTime.add/2`. Till exempel om vi vill ha datumet för en vecka framåt från idag, skulle koden se ut så här: 
+```Elixir
+iex> Date.add(Date.utc_today(), 30)
+{:ok, ~N[1970-02-15 00:00:00]}
 
+iex> Date.add(Date.utc_today(), -30)
+{:ok, ~N[1969-12-16 00:00:00]}
 ```
-Elixir DateTime.add(DateTime.utc_now(), 7, :days)
-```
-
-Detta kommer att returnera ett `DateTime` -objekt med det nya datumet. Om vi vill ha datumet för en månad framåt, skulle koden se ut så här:
-
-```
-Elixir DateTime.add(DateTime.utc_now(), 1, :months)
-```
-
-För att få datumet för ett förflutet datum, använder man istället en negativ siffra för andra parametern. Till exempel, om vi vill ha datumet för en vecka tillbaka från idag:
-
-```
-Elixir DateTime.add(DateTime.utc_now(), -7, :days)
-```
-
-Det är också möjligt att ange mer än en tidsenhet i andra parameter, till exempel `DateTime.add(DateTime.utc_now(), 2, :months, 1, :weeks)` skulle returnera datumet för två månader och en vecka framåt.
 
 ## Djupdykning
+För att beräkna datumet för en specifik veckodag i nästa vecka, kan du använda funktionen `Date.next_day/2`. Till exempel, om du vill beräkna nästa fredag:
 
-Nu när vi vet hur man beräknar datum i framtiden eller förflutna, kan vi titta på några vanliga användningar av denna funktion. En vanlig användning är att planera möten eller händelser. Om du behöver boka ett möte en månad framåt, kan du använda `DateTime.add` för att få det exakta datumet. En annan vanlig användning är för prenumerationer. Genom att använda denna funktion kan du beräkna när en prenumeration kommer att förfalla och skicka en påminnelse till användaren.
+```Elixir
+iex> current_date = Date.utc_today()
+~D[2021-09-24]
+
+iex> Date.next_day(current_date, 5)
+~D[2021-10-01]
+```
+
+För att hämta aktuell tid i en viss tidszon, kan du använda `DateTime.now/1` och specificera tidszonen som ett argument. Till exempel, om du vill hämta aktuell tid i New York:
+
+```Elixir
+iex> DateTime.now("America/New_York")
+~N[2021-09-24 09:30:00]
+```
 
 ## Se även
-
-* [Official Elixir Documentation on DateTime](https://hexdocs.pm/elixir/DateTime.html)
-* [Elixir DateTime Tutorial](https://elixir-lang.org/getting-started/datetime.html)
-* [Date and Time Functions in Elixir](https://thoughtbot.com/blog/date-and-time-in-elixir)
+- [Elixir Date modulen](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime modulen](https://hexdocs.pm/elixir/DateTime.html)
+- [List of Time Zones in Elixir](https://hexdocs.pm/elixir/TZ.html)

@@ -1,52 +1,47 @@
 ---
-title:    "C: Creando un archivo temporal"
+title:    "C: Creación de un archivo temporal"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué crear un archivo temporal en programación?
 
-Crear un archivo temporal en un programa de C puede parecer innecesario, pero puede ser muy útil en ciertas situaciones. Por ejemplo, puede utilizar un archivo temporal para almacenar información que sólo necesita durante la ejecución del programa y que no es necesaria una vez que el programa haya finalizado. Además, los archivos temporales pueden ser utilizados para realizar tareas de mantenimiento en el sistema, como copiar o mover archivos.
+Crear archivos temporales es una tarea común en la programación. Estos archivos se utilizan para almacenar temporalmente datos importantes durante la ejecución de un programa. También son útiles para realizar pruebas o pruebas de concepto sin afectar a los archivos permanentes. En resumen, crear un archivo temporal es una forma eficiente de manejar datos transitorios en un programa.
 
-## Como Hacerlo
+## Cómo crear un archivo temporal en C
 
-Para crear un archivo temporal en un programa de C, utilizamos la función `tmpfile()`. Esta función crea un archivo vacío en la ruta temporal del sistema y devuelve un puntero al archivo en el que se puede escribir y leer datos. Veamos un ejemplo de cómo utilizar esta función:
+Para crear un archivo temporal en C, utilizamos la función `tmpfile()` de la biblioteca `<stdio.h>`. Esta función reserva un archivo temporal en el sistema y devuelve un puntero a él. Luego podemos escribir y leer datos en este archivo como lo haríamos con cualquier otro archivo.
 
-```
+```C
 #include <stdio.h>
-
-int main()
-{
-    FILE *archivo_temp;
-
-    archivo_temp = tmpfile();
-
-    if(archivo_temp == NULL)
-    {
-        printf("Error al crear el archivo temporal.");
-        return 1;
-    }
-
-    fprintf(archivo_temp, "Este es un ejemplo de archivo temporal.\n");
-
-    fclose(archivo_temp);
-
-    printf("Archivo temporal creado exitosamente.");
-
-    return 0;
+int main() {
+   FILE *fp;
+   fp = tmpfile();
+   fprintf(fp, "Este es un archivo temporal creado en C.");
+   rewind(fp);
+   char buffer[100];
+   fgets(buffer, 100, fp);
+   printf("Datos del archivo temporal: %s\n", buffer);
+   fclose(fp);
+   return 0;
 }
 ```
 
-En este ejemplo, utilizamos `tmpfile()` para crear un archivo temporal y luego escribimos una línea de texto en él utilizando la función `fprintf()`. Una vez que hemos terminado de utilizar el archivo, lo cerramos con `fclose()` y nuestro programa termina sin dejar residuos del archivo temporal en el sistema.
+El resultado de este código será:
 
-## Profundizando
+```
+Datos del archivo temporal: Este es un archivo temporal creado en C.
+```
 
-Además de `tmpfile()`, también existen otras funciones para crear archivos temporales en C, como `tmpnam()` y `mkstemp()`. Estas funciones ofrecen mayor control sobre la ubicación y el nombre del archivo temporal que se creará.
+## Profundizando en la creación de archivos temporales
 
-Es importante tener en cuenta que los archivos temporales suelen ser eliminados automáticamente por el sistema operativo cuando el programa termina su ejecución, pero en algunos casos puede que sea necesario eliminarlos manualmente utilizando la función `remove()`.
+En el código anterior, utilizamos la función `tmpfile()` para crear un archivo temporal. Sin embargo, esta función solo funciona en sistemas Unix y no se puede utilizar en Windows. En su lugar, podemos usar la función `fopen()` y proporcionar al final del nombre de archivo la palabra clave `"tmp"` para indicar que es un archivo temporal.
 
-## Mira también
+Otra cosa importante a tener en cuenta al crear archivos temporales es que se eliminan automáticamente al finalizar el programa. Sin embargo, si queremos eliminarlos manualmente, podemos usar la función `remove()` proporcionándole el nombre del archivo temporal.
 
-* [Función tmpfile() en la documentación de C](https://www.learncpp.com/cpp-tutorial/186-creating-a-temporary-file-with-tmpfile/)
-* [Ejemplos de uso de archivos temporales en C](https://www.programmingwithwolfgang.com/c-programming-tutorial-create-temporary-files/)
+## Ver también
+- Tutorial para principiantes en programación en C: [https://www.tutorialspoint.com/cprogramming/index.htm](https://www.tutorialspoint.com/cprogramming/index.htm)
+- Documentación de la función `tmpfile()`: [https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
+- Diferencias entre Windows y Unix en la creación de archivos temporales: [https://stackoverflow.com/questions/3737210/temporary-files-in-unix-vs-windows](https://stackoverflow.com/questions/3737210/temporary-files-in-unix-vs-windows)

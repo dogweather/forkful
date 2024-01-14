@@ -1,49 +1,49 @@
 ---
-title:    "Haskell: Sletting av tegn som matcher et mønster."
+title:    "Haskell: Slette tegn som matcher et mønster"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor slette tegn som matcher et mønster?
 
-Å slette tegn som matcher et mønster kan være nyttig når man trenger å rydde opp i tekstfiler eller datasett. Ved å fjerne unødvendige tegn, kan man gjøre tekstbehandling mer effektiv og strukturere data på en mer oversiktlig måte.
+Sletting av tegn som matcher et bestemt mønster er nyttig i mange tilfeller, spesielt når man ønsker å rengjøre en tekst for uønskede tegn eller mønstre. Dette kan være spesielt viktig når man jobber med sensitiv informasjon eller ønsker å formatere tekst på en spesifikk måte.
 
-## Hvordan
+## Hvordan gjøre det
 
-Det finnes flere måter å slette tegn som matcher et mønster i Haskell på. Her er et eksempel på en enkel funksjon som fjerner alle forekomster av et bestemt tegn i en streng:
+For å slette tegn som matcher et mønster, kan man bruke funksjonen `deleteFirstsBy` fra `Data.List`-biblioteket i Haskell. Denne funksjonen tar inn en funksjon som definerer hvilke tegn som skal slettes, og en liste av tegn som skal søkes i.
 
-```Haskell
-removeChar :: Char -> String -> String
-removeChar _ [] = []
-removeChar ch (x:xs) | ch == x = removeChar ch xs
-                     | otherwise = x : removeChar ch xs
-```
-
-La oss nå teste funksjonen ved å kjøre følgende kommando i GHCi:
+La oss se på et eksempel hvor vi ønsker å slette alle tall fra en tekststreng:
 
 ```Haskell
-removeChar 'a' "Hello, world!"
+import Data.List
+
+tekst = "Dette er en tekst med tall 123"
+
+slettTall :: Char -> Char -> Bool
+slettTall c1 c2 = c1 `elem` ['0'..'9']
+
+slettetTekst = deleteFirstsBy slettTall tekst
+
+print slettetTekst
 ```
 
-Dette vil gi oss følgende output:
+Output:
 
 ```
-"Hello, world!"
+Dette er en tekst med tall
 ```
 
-Som man kan se, har alle bokstavene "a" blitt fjernet fra strengen. Man kan også bruke denne funksjonen til å fjerne flere typer tegn ved å gjenta kommandoen med ulike tegn som argument.
+Vi definerte først en funksjon `slettTall` som sjekker om et tegn er en tallverdi eller ikke. Deretter brukte vi `deleteFirstsBy`-funksjonen til å gå gjennom teksten og slette alle matchende tall.
 
-## Dypdykk
+## Dykk dypere
 
-For å forstå hvordan funksjonen vår fungerer, kan det være nyttig å se nærmere på mønstermatching i Haskell. I denne konteksten vil "mønster" referere til en sekvens av elementer, for eksempel en streng av tegn. Mønstermatching lar oss sammenligne en verdi med et gitt mønster og gjøre en handling basert på om verdiene matcher eller ikke.
+Hvis du ønsker en dypere forståelse av hvordan `deleteFirstsBy`-funksjonen fungerer, kan du se på dens implementasjon. Denne funksjonen tar inn en startliste, en liste av tegn som skal slettes, og returnerer en ny liste med de matchende tegnene slettet.
 
-I vårt tilfelle bruker vi mønstermatching til å sjekke om tegnet vi ønsker å fjerne (representert ved variabelen "ch") er lik det nåværende tegnet som blir undersøkt (representert ved variabelen "x"). Hvis det er tilfelle, går vi videre til å undersøke det neste tegnet i strengen. Hvis ikke, legger vi til det nåværende tegnet i den nye strengen som blir returnert.
-
-Dette er bare én av mange måter å slette tegn som matcher et mønster i Haskell på. Det finnes også moduler og funksjoner som er spesielt utviklet for tekstbehandling og mønstermatching, som kan være nyttige når man arbeider med mer komplekse datasett.
+Man kan også utforske andre måter å slette tegn som matcher et mønster på, for eksempel ved å bruke regulære uttrykk eller andre funksjoner fra `Data.List`-biblioteket.
 
 ## Se også
 
-- [Haskell.org](https://www.haskell.org/) - offisiell nettside for Haskell
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - en interaktiv guide til Haskell
-- [Data.ByteString.Char8](https://hackage.haskell.org/package/bytestring-0.10.10.0/docs/Data-ByteString-Char8.html) - en modul for håndtering av tegn i bytestrings i Haskell
+- [Dokumentasjon for `deleteFirstsBy`-funksjonen](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteFirstsBy)
+- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)

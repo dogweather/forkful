@@ -1,57 +1,62 @@
 ---
-title:    "Bash: Stor bokstav i en streng"
+title:    "Bash: Store bokstaver i en streng"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-I Bash-programmering, er det ofte nødvendig å formatere en tekststreng på en spesifikk måte. En vanlig formateringsoppgave er å gjøre første bokstav i hvert ord til en stor bokstav, også kalt "kapitalisering". Dette kan være nyttig for å gjøre tekst for eksempel mer leselig eller for å følge bestemte konvensjoner. I denne bloggposten vil vi utforske hvordan man kan kapitalisere en tekststreng i Bash-programmering.
+Å øke første bokstav i en streng er en vanlig utfordring i mange programmeringsspråk. Som med de fleste oppgaver i programmering, finnes det mange forskjellige måter å løse dette på. I denne bloggposten skal vi se på hvordan å gjøre akkurat dette ved hjelp av Bash-skripting.
 
-## Slik gjør du det
+# Hvordan
 
-For å kunne kapitalisere en tekststreng i Bash, trenger vi å bruke en kombinasjon av Bash-programmering og Linux-verktøy. La oss si at vi har følgende tekststreng som vi ønsker å kapitalisere: "dette er en test". Vi kan bruke følgende kode for å gjøre dette:
+Først må vi definere hva vi mener med å øke første bokstav i en streng. I dette tilfellet vil vi endre den første bokstaven i hvert ord til stor bokstav. For eksempel, "hei verden" skal bli "Hei Verden".
 
-``` bash
-string="dette er en test"
-echo "${string^}"
+For å gjøre dette i Bash, må vi bruke innebygde funksjoner som `tr` og `sed`. Her er et eksempel på hvordan du kan gjøre dette ved hjelp av `tr`:
+
+```
+#!/bin/bash
+input="hei verden"
+echo "$input" | tr '[:lower:]' '[:upper:]'
 ```
 
-Dette vil gi følgende utdata: "Dette er en test". Vi bruker `${string^}` for å fortelle Bash at vi ønsker å kapitalisere strengen "string".
+Dette vil gi følgende utgang:
 
-Vi kan også bruke en lignende syntaks for å kapitalisere kun den første bokstaven i strengen:
-
-``` bash
-string="dette er nok en test"
-echo "${string^s}"
+```
+HEI VERDEN
 ```
 
-Dette vil gi følgende utdata: "Dette er nok en test". Her bruker vi `${string^s}` for å fortelle Bash at vi ønsker å kapitalisere den første bokstaven av "string".
+Som du kan se, bruker vi `tr` til å konvertere alle små bokstaver til store bokstaver. Det er også mulig å bruke `sed` for å løse dette problemet. Her er en annen måte å øke første bokstav i en streng ved hjelp av `sed`:
 
-## Dypdykk
-
-Som nevnt tidligere, bruker vi en kombinasjon av Bash-programmering og Linux-verktøy for å kapitalisere en tekststreng. `${string^}` er et eksempel på Bashs parameterutvidelse, som er en funksjon som lar deg manipulere tekststrenger på forskjellige måter. I dette tilfellet bruker vi kapitaliseringen `^`.
-
-En annen måte å kapitalisere en tekststreng på er å bruke Linux-verktøyet `tr`. Dette verktøyet lar oss gjøre ulike typer tekstmanipulasjoner, inkludert kapitalisering. Vi kan bruke følgende kode for å kapitalisere tekststrengen "dette er en test" ved hjelp av `tr`:
-
-``` bash
-echo "dette er en test" | tr '[:lower:]' '[:upper:]'
+```
+#!/bin/bash
+input="hei verden"
+echo "$input" | sed -e "s/\b\w/\u&/g"
 ```
 
-Dette vil gi følgende utdata: "DETTE ER EN TEST". Her bruker vi `tr` til å konvertere alle små bokstaver til store bokstaver.
+Dette vil gi følgende utgang:
 
-Vi kan også kombinere både Bash-programmering og `tr` for å kapitalisere en tekststreng med en annen metode. For eksempel kan vi bruke følgende kode for å kapitalisere den første bokstaven i strengen "dette er nok en test":
-
-``` bash
-string="dette er nok en test"
-echo "${string^} ${string:1}" | tr '[:lower:]' '[:upper:]'
+```
+Hei Verden
 ```
 
-Dette vil gi følgende utdata: "Dette Er Nok En Test". Her bruker vi `${string^}` for å kapitalisere den første bokstaven, og deretter `${string:1}` for å hente resten av strengen. Til slutt bruker vi `tr` for å konvertere alle små bokstaver til store bokstaver.
+Her bruker vi `\u` for å konvertere den første bokstaven i hvert ord til stor bokstav.
 
-## Se også
+# Deep Dive
 
-- [Parameterutvidelse i Bash](https://www.linuxjournal.com/content/bash-parameter-expansion)
-- [Bruke `tr` for tekstmanipulasjon](https://www.computerhope.com/unix/utrumper.htm)
-- [Offisiell dokumentasjon for Bash](https://www.gnu.org/software/bash/manual/html_node/index.html)
+Både `tr` og `sed` er kraftige verktøy som kan brukes til en rekke formål i Bash. Når det gjelder å øke første bokstav i en streng, er det viktig å forstå de forskjellige parametrene og mulighetene disse verktøyene har å tilby. Du kan lese mer om dem ved å bruke `man` kommandoen:
+
+```
+man tr
+man sed
+```
+
+Det er også verdt å merke seg at det finnes andre måter å løse dette problemet på, for eksempel ved å bruke `awk` eller `perl`. Å utforske forskjellige måter å løse et problem på er en viktig del av å lære programmering.
+
+# Se Også
+
+- [Bash Manualen](https://linux.die.net/man/1/bash)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [How to Convert String to Title Case in Bash](https://linuxhint.com/convert_string_title_case_bash/)

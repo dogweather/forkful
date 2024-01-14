@@ -1,40 +1,68 @@
 ---
 title:    "Swift: 读取命令行参数"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+##为什么要读取命令行参数
 
-命令行参数是Swift编程中一个常用的概念，它可以为程序提供用户输入的数据。通过学习如何读取命令行参数，你可以更加灵活和高效地使用Swift来编写程序。
+读取命令行参数是一个很有用的技能，在Swift编程中经常会用到。它可以让你的程序在运行时接收用户输入的参数，从而实现更加灵活和个性化的功能。如果你想要了解如何在你的程序中读取命令行参数，继续阅读下去吧！
 
-## 如何做
+##如何读取命令行参数
 
-首先，让我们来看一个简单的例子。假设我们需要一个程序，可以打印出用户输入的名字和年龄。我们首先可以使用`CommandLine`类来获取命令行参数，然后使用`print()`函数来打印输出。
+首先，你需要使用CommandLine类来读取命令行参数。你可以通过将参数作为字符串数组传递给CommandLine对象来访问这些参数，例如：
 
 ```Swift
-let name = CommandLine.arguments[1]
-let age = CommandLine.arguments[2]
-print("\(name) is \(age) years old.")
+let arguments = CommandLine.arguments
 ```
 
-接下来，我们可以在终端中输入命令行参数来测试这段代码的输出。假设我们的程序名为`Hello`，我们可以输入以下命令来运行程序：
+接下来，你可以使用for循环来遍历这些参数，并对每一个参数进行操作。例如，假设你的程序需要接收两个整数作为参数，并将它们相加并打印出结果，你可以使用以下代码：
+
+```Swift
+for index in 1..<arguments.count {
+    if let number = Int(arguments[index]) {
+        let result = number + number
+        print(result)
+    }
+}
+```
+
+当你运行程序时，你可以这样输入参数来测试这段代码：
 
 ```
-Hello John 25
+命令行参数：3 5
 ```
 
-这样程序就会输出`John is 25 years old.`。我们也可以通过修改`CommandLine.arguments`中的索引来读取不同位置的参数，以实现更多的功能。
+输出结果将是：
 
-## 深入了解
+```
+6
+10
+```
 
-除了简单地读取参数外，我们还可以通过一些技巧来优化我们的代码。这包括使用`optional`类型来避免无效的参数输入、使用`contains()`函数来检查参数是否存在以及使用`Int()`或`Double()`来将参数转换成数字类型等等。
+##深入了解读取命令行参数
 
-同时，我们也可以通过查阅官方文档了解更多关于`CommandLine`类的方法和属性，以及如何使用它们来处理命令行参数。
+除了上面提到的基本用法，你还可以通过使用CommandLine对象提供的其他方法来进一步控制和处理命令行参数。例如，你可以通过给CommandLine对象传递一个字符串来检查是否存在某个特定的命令行参数：
 
-## See Also
+```Swift
+if CommandLine.arguments.contains("--debug") {
+    //执行代码
+}
+```
 
-- [Apple官方文档：CommandLine类](https://developer.apple.com/documentation/foundation/commandline)
-- [Swift开发者社区：命令行参数入门指南](https://www.jianshu.com/p/d243d8edb8ca)
-- [CocoaChina：Swift命令行参数解析](https://blog.cocoachina.com/article/64232)
+你也可以通过给CommandLine对象传递两个字符串来设定默认值和用户输入值，从而实现命令行参数的可选输入功能：
+
+```Swift
+let argument = CommandLine.option("password", "-p")
+```
+
+当你在命令行中输入`-p`时，`argument`变量将被赋值为`password`。如果你没有输入`-p`，则`argument`变量将被赋值为nil。
+
+##另请参阅
+
+- [Swift编程语言指南](https://docs.swift.org/swift-book/)
+- [Apple官方CommandLine文档](https://developer.apple.com/documentation/foundation/commandline)
+
+感谢阅读本文，希望它能帮助你更好地理解和使用命令行参数。继续学习和探索Swift编程的世界，尽情享受编程的乐趣吧！

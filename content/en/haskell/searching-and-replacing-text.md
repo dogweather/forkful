@@ -1,51 +1,59 @@
 ---
 title:    "Haskell recipe: Searching and replacing text"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Search and replace text is a common task in programming, and it allows developers to efficiently make changes to their code. In Haskell, this process can be done in a functional and concise way, making it a useful skill for any programmer to have.
+Have you ever found yourself in a situation where you needed to change a specific word or phrase in a large block of text? Maybe you have a lengthy document or code file and you need to replace all instances of a certain variable name or function call. Instead of manually going through each line, why not use Haskell to quickly and efficiently search and replace text?
 
 ## How To
 
-To perform a simple search and replace in Haskell, we'll start by importing the necessary module:
+To start, we'll need to import the `Text.Regex.TDFA` module, which provides regular expression support in Haskell. We'll also use the `sub` function, which allows us to perform a substitution based on a regex pattern and a replacement string.
 
 ```Haskell
-import Data.Text (replace)
+import Text.Regex.TDFA (sub)
 ```
 
-Next, we can use the `replace` function, which takes in three parameters: the old text, the new text, and the text to search and replace in. Let's say we have a string "Hello, world!" and we want to replace "world" with "Haskell":
+Now, let's say we have a string of text that contains multiple instances of the word "cat", but we want to replace them all with "dog". We can use the following code to achieve this:
 
 ```Haskell
-replace "world" "Haskell" "Hello, world!"
+let newText = sub "cat" "dog" "I have a cat, a black cat, a white cat."
+putStrLn newText
 ```
 
-The output of this would be "Hello, Haskell!". In this case, we're searching for the exact word "world", but we can also use pattern matching to search for a more general term within a string. For example, if we have a string "I love programming in Java" and we want to replace "Java" with "Haskell":
+The output of this code would be:
+
+```
+"I have a dog, a black dog, a white dog."
+```
+
+We can also use more complex regex patterns to search and replace text. For example, if we want to replace all instances of three consecutive numbers with "123", we can use the following code:
 
 ```Haskell
-replace "Java" "Haskell" "I love programming in Java"
+let newText = sub "[0-9]{3}" "123" "My favorite numbers are 123 and 456."
+putStrLn newText
 ```
 
-The output of this would be "I love programming in Haskell". 
+The output of this code would be:
 
-We can also use the `replace` function with regular expressions to search for specific patterns within a string. For example, if we want to replace all digits in a string with an asterisk "*", we can use the following code:
-
-```Haskell
-replaceRegexInfo "[0-9]" "*" "I have 5 apples and 2 oranges."
 ```
-
-The output of this would be "I have * apples and * oranges."
+"My favorite numbers are 123 and 123."
+```
 
 ## Deep Dive
 
-The `replace` function in Haskell uses the `Text` data type, which is immutable. This means that every time we perform a search and replace, a new `Text` value is created instead of modifying the original one. This is an important concept in functional programming, and it ensures that no unexpected changes are made to our code.
+The `sub` function has a few more parameters that allow for more customization. The full signature of the function is `sub :: Regex -> String -> ByteString -> ByteString`, where the first parameter is the regex pattern, the second parameter is the replacement string, and the third parameter is the input text.
 
-Additionally, the `replace` function is polymorphic, meaning it can work with different types of values, as long as they are instances of the `IsString` type class. This allows for more flexibility and allows us to search and replace in different data structures, such as lists or maps.
+The function also has an optional fourth parameter, called `Subst`, which allows for more options in the replacement process. For example, we can use the `SubAll` option to replace all instances of the pattern, or `SubOnce` to only replace the first instance. There are also options for case sensitivity and multiline matching.
+
+Furthermore, the `Regex` type itself has many features and functions to help us create complex and efficient regex patterns. With the combination of `Regex` and `sub`, we have a powerful tool for searching and replacing text in Haskell.
 
 ## See Also
 
-- Official Haskell documentation for `Data.Text`: https://hackage.haskell.org/package/text/docs/Data-Text.html
-- A beginner-friendly tutorial on using `replace` in Haskell: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/simple-file-manipulation#the-fundamentals-replace-a-string-in-a-text
+- [Haskell documentation on Text.Regex.TDFA](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
+- [Tutorial on regular expressions in Haskell](https://www.haskell.org/tutorial/patterns.html)
+- [Examples of regex patterns in Haskell](https://wiki.haskell.org/Regular_expressions)

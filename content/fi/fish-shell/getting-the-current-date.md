@@ -1,37 +1,42 @@
 ---
-title:    "Fish Shell: Nykyisen päivämäärän hakeminen"
+title:    "Fish Shell: Nykyisen päivämäärän hankkiminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Koska Fish Shellilla on helppo ja nopea tapa saada nykyinen päivämäärä ja aika ulosohjelmasta.
+Mikä voi olla syy siihen, miksi haluaisit saada nykyisen päivämäärän Fish Shellissä? On monia tilanteita, joissa tämä voi olla hyödyllistä, kuten päivämäärän lisääminen tiedostojen nimiin tai skriptien luomiseen, jotka käyttävät päivämäärää osana prosesseja.
 
-## Miten
-Fish Shellilla on sisäänrakennettu funktio, joka mahdollistaa nykyisen päivämäärän ja ajan saannin helposti. Käytä komentoa `date` ja määritä muoto, miten haluat päivämäärän tulostettavan. Alla on muutamia esimerkkejä koodista ja niiden tulostuksesta Fish Shellilla:
+## Kuinka
+```Fish Shell``` -koodilohkojen avulla voit helposti saada nykyisen päivämäärän ja tulostaa sen komentokehotteeseen. Alla olevassa esimerkissä käytämme ```date``` -komennon ```+%D``` -valitsinta, joka näyttää päivämäärän muodossa ```mm/dd/vvvv```.
 
-```fish
-date +%x
+```Fish Shell
+echo "Tänään on $(date +%D)"
 ```
-Tulostaa nykyisen päivämäärän muodossa: 12/02/19.
 
-```fish
-date +%A, %B %d, %Y
+Tämä antaisi seuraavan tulostuksen:
+
 ```
-Tulostaa nykyisen päivämäärän muodossa: Monday, December 02, 2019.
-
-```fish
-date +%r
+Tänään on 06/15/2021
 ```
-Tulostaa nykyisen ajan muodossa: 10:30:25 PM.
 
-## Syvällinen katsaus
-Fish Shellin `date`-komento perustuu UNIX-käyttöjärjestelmässä käytettyyn `date`-komentoon. Tämä komento mahdollistaa monipuoliset muotoiluvaihtoehdot päivämäärän ja ajan tulostamiseen. Voit käyttää erilaisia %-merkkejä ja kirjaimia määrittääksesi, mitä tietoja haluat tulostettavan.
+## Syvenny
+Fish Shellin ```date``` -komennossa on paljon muita saatavilla olevia muotoiluvaihtoehtoja. Esimerkiksi voit lisätä kellonajan antamalla ```+%r``` vaihtoehdon:
 
-Voit myös käyttää `date`-ohjelmaa komentokehotteessa saadaksesi lisätietoa formaattisäännöistä. Voit esimerkiksi käyttää `man date` saadaksesi selitykset käytettävissä olevista muotoiluvaihtoehdoista.
+```Fish Shell
+echo "Kello on $(date +%r)"
+```
+
+Tämä tuottaisi tuloksen:
+
+```
+Kello on 08:15:32 PM
+```
+
+Voit myös muokata päivämäärän muotoa antamalla tarvittavan muotoilumerkin. Esimerkiksi ```+%A``` antaisi viikonpäivän nimen, kun taas ```+%B``` antaisi kuukauden nimen.
 
 ## Katso myös
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [UNIX-komento date](https://www.unix.com/man-page/osx/1/date/)
-- [Muut hyödylliset Fish Shell komentot](https://github.com/jorgebucaran/awesome-fish)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Date Command Documentation](https://fishshell.com/docs/current/cmds/date.html)

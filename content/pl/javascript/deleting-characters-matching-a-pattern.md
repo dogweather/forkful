@@ -1,44 +1,55 @@
 ---
-title:    "Javascript: Usuwanie znaków pasujących do wzorca"
+title:    "Javascript: Usuwanie znaków pasujących do wzorca."
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+##Dlaczego
 
-Czasami, podczas pisania kodu, możesz znaleźć się w sytuacji, w której musisz usunąć wszystkie znaki, które pasują do określonego wzoru. Może być to przydatne, gdy masz dużą ilość danych i chcesz usunąć niechciane znaki w celu poprawienia odczytu lub przetwarzania danych.
+Często w trakcie pisania swojego programu możesz napotkać sytuację, w której chcesz usunąć pewien wzorzec znaków z tekstu. Może to wynikać z potrzeby wyciągnięcia konkretnej informacji lub uporządkowania danych. W takim przypadku bardzo przydatne może okazać się usunięcie znaków pasujących do zadanej formuły. W tym wpisie pokażemy, jak to zrobić w języku Javascript.
 
-## Jak to zrobić?
+##Jak to zrobić
 
-W JavaScript, istnieje kilka sposobów na usunięcie znaków pasujących do wzoru. Jedną z metod jest użycie wyrażenia regularnego za pomocą funkcji `replace()`. W poniższym przykładzie, pokazuję, jak usunąć wszystkie liczby z ciągu znaków:
+Usuwanie znaków pasujących do wzorca jest możliwe dzięki użyciu wyrażeń regularnych. Przedstawimy kilka przykładowych scenariuszy, gdzie może okazać się przydatne ich użycie.
 
-```Javascript
-let str = "1a2b3c4d";
-console.log(str.replace(/[0-9]/g, '')); // output: abcd
-```
+###Przykład 1:
 
-Jeśli chcesz usunąć wszystkie znaki specjalne, możesz użyć tego samego wyrażenia regularnego z dodanym znakiem ukośnika `\/` na początku, aby uniknąć konfliktu z meta-znakami. Przykładowy kod wyglądałby tak:
+Załóżmy, że mamy tekst zawierający różne informacje, a my chcemy pozbyć się z niego cyfr. Możemy to zrobić za pomocą metody `replace()` i wyrażenia regularnego znajdującego się w nawiasach kwadratowych. Poniżej mamy kod, który pokazuje tę operację:
 
 ```Javascript
-let str = "a!b@c#d$e";
-console.log(str.replace(/[!@#$]/g, '')); // output: abcde
+const text = "To jest przykład123"
+const newText = text.replace(/[0-9]/g, '');
+console.log(newText);
 ```
 
-Podobnie, możesz usunąć wszystkie spacje w ciągu znaków używając wyrażenia regularnego `/ /g` bez wyraźnego określenia znaku, ponieważ spacja jest już znakiem specjalnym.
+Output:
+`To jest przykład`
 
-## Głębsze zagadnienia
+W tym przypadku wykorzystaliśmy wyrażenie `/[0-9]/g` aby znaleźć wszystkie cyfry w tekście i zastąpić je pustym znakiem.
 
-Podczas używania wyrażeń regularnych, ważne jest, aby pamiętać o użyciu odpowiednich meta-znaków w zależności od wzoru, którego chcesz uzyskać. Na przykład, jeśli chcesz usunąć wszystkie litery z ciągu znaków, użyj wyrażenia regularnego `/[a-z]/gi`, gdzie `i` oznacza, że jest to niewrażliwe na wielkość liter. 
+###Przykład 2:
 
-Możesz również użyć złożonych wyrażeń regularnych, aby usunąć znaki pasujące do różnych wzorców naraz. Na przykład, jeśli chcesz usunąć zarówno litery, jak i cyfry z ciągu znaków, użyj wyrażenia regularnego `/[a-zA-Z0-9]/g`.
+Możemy również wykorzystać wyrażenia regularne do usunięcia wybranych słów z tekstu. W poniższym przykładzie chcemy usunąć słowo `"nie"` z naszego tekstu.
 
-Ważne jest również pamiętać o globalnym `g` flag'u, który pozwala na usunięcie wszystkich znaków pasujących do wzoru, a nie tylko pierwszego wystąpienia.
+```Javascript
+const text = "To nie jest przykład"
+const newText = text.replace(/nie /g, '');
+console.log(newText);
+```
 
-## Zobacz również
+Output:
+`To jest przykład`
 
-Jeśli jesteś zainteresowany bardziej zaawansowanymi technikami stosowanymi w wyrażeniach regularnych, zapoznaj się z poniższymi linkami:
+W ten sposób możemy łatwo usunąć wybrane słowo lub frazę z tekstu, wykorzystując wyrażenia regularne.
 
-- https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions
-- https://www.w3schools.com/jsref/jsref_obj_regexp.asp
-- https://www.regular-expressions.info/quickstart.html
+##Wnikliwe podejście
+
+Wyrażenia regularne są bardzo potężnym narzędziem w programowaniu i warto poświęcić trochę więcej czasu, aby dokładnie poznać ich możliwości. Mogą one służyć nie tylko do usuwania znaków pasujących do określonego wzorca, ale również do wyszukiwania, zamiany, walidacji danych i wiele więcej. W internecie można znaleźć wiele przydatnych poradników i kursów, które pomogą Ci pogłębić swoją wiedzę na temat wyrażeń regularnych.
+
+##Zobacz również
+
+- [MDN Web Docs: Wprowadzenie do wyrażeń regularnych w Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Wprowadzenie_do_wyra%C5%BCe%C5%84_regularnych)
+- [W3Schools: Wyrażenia regularne w Javascript](https://www.w3schools.com/js/js_regexp.asp)
+- [Kurs Udemy: Wprowadzenie do wyrażeń regularnych](https://www.udemy.com/course/wstep-do-wyrazen-regularnych/)

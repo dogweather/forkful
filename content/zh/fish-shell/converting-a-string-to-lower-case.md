@@ -1,33 +1,36 @@
 ---
 title:    "Fish Shell: 将字符串转换为小写"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-在编写代码时，有时我们需要将字符串转换为小写，这样可以方便我们进行大小写不敏感的匹配和操作。
+##为什么
 
-## 如何实现
+在编程过程中，有时候我们需要将字符串转换成小写字母。这项操作可能是为了标准化、比较字符串，或者是为了美观打印输出。无论是出于哪种原因，Fish Shell提供了简单的方法来实现这一目的。
+
+##如何进行
+
 ```Fish Shell
-set my_string "HELLO"
-echo $my_string | string tolower
-```
-输出：
-```
-hello
+# 使用内置的string函数来将字符串转换成小写
+set string "HELLO WORLD"
+set lower (string) | string.lower
+echo $lower  # 输出 hello world
 ```
 
-## 深入了解
-Fish Shell提供了一个内置的`string tolower`命令来实现字符串的转换。该命令会将字符串中的所有字母转换为小写，并返回转换后的结果。如果要转换的字符串是变量，则需要使用`$`符号来引用该变量。
+```Fish Shell
+# 使用参数扩展来进行字符串转换
+set string "\\\\HELLO WORLD"
+set lower "$string" # 使用双引号在第二个反斜杠后插入一个反斜杠
+echo $lower # 输出 \hello world
+```
 
-除了`string tolower`命令外，还可以使用Fish Shell的内置功能来实现字符串的转换。例如，可以使用`string match`命令来进行大小写不敏感的比较，以及使用`string replace`命令来替换字符串中的特定文本。
+##深入探讨
 
-## 参考链接
-[Fish Shell官方文档](https://fishshell.com/docs/current/cmds/string.html#tolower)
-[《Fish Shell教程》](https://fishshell.com/docs/current/tutorial.html)
-[Fish Shell的Github仓库](https://github.com/fish-shell/fish-shell)
+Fish Shell中的string函数和参数扩展都是用来操作字符串的方便工具。当你想要将字符串转换成小写时，可以使用string函数后跟string.lower来实现。参数扩展可以更灵活地在字符串中插入反斜杠，从而使得转换后的字符串输出更加符合需求。请注意，转换后的字符串将只能输出小写字母，如果有其它字符则不受影响。
 
-## 参见
-[字符串操作入门指南](https://www.jianshu.com/p/11a724a0ea1d)
-[Fish Shell的中文文档](https://fishshell-cn.readthedocs.io/zh_CN/latest/)
+##参考阅读
+
+- Fish Shell官方手册：https://fishshell.com/docs/current/index.html
+- Fish Shell Wiki：https://github.com/fish-shell/fish-shell/wiki

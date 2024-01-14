@@ -1,63 +1,55 @@
 ---
 title:    "C# recipe: Writing tests"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Write Tests
 
-As programmers, we spend a lot of time writing code and ensuring that it functions as intended. However, one aspect of coding that is often overlooked is writing tests. Although it may seem like an extra step, writing tests can actually save you time and effort in the long run. 
+Writing tests for your code may seem like an extra step that can be easily skipped, but it actually plays a crucial role in the development process. By testing your code, you can identify and fix potential bugs early on, ensuring a more stable and reliable product. Not only does it save time and effort in the long run, but it also boosts confidence in your code and gives you peace of mind knowing that it is functioning correctly.
 
-## How To
+# How To Write Tests in C#
 
-Writing tests involves creating code that checks the functionality of your existing code. This helps to catch any bugs or errors in your code before it is pushed to production. Writing tests can be done using a variety of tools and frameworks, but for this tutorial, we will be focusing on using C# and the NUnit testing framework.
+Writing tests in C# is actually quite simple. The first step is to create a new project in your preferred development environment. Then, import a testing framework such as NUnit or xUnit to your project. These frameworks provide functionality for creating and running tests.
 
-To get started, we will create a simple C# console application that calculates the area of a circle. First, we define a class called `Circle` and add a method to calculate the area:
+Next, create a new class for your tests and add the `[TestFixture]` attribute to it. This signifies to the testing framework that this class contains tests. Within this class, you can create methods with the `[Test]` attribute, which will be executed as individual tests. Then, use `Assert` statements to verify that your code is producing the expected results.
 
-```C#
-public class Circle
-{
-    public double CalculateArea(double radius)
-    {
-        return Math.PI * radius * radius;
-    }
-}
-```
-
-Next, we will create a test class called `CircleTests` and add a test method to ensure that the area is calculated correctly:
+Here's an example of a simple test using NUnit:
 
 ```C#
 [TestFixture]
-public class CircleTests
+public class CalculatorTests
 {
     [Test]
-    public void AreaCalculation_CalculateArea_ReturnsCorrectResult()
+    public void Add_TwoPositiveNumbers_ReturnsCorrectSum()
     {
-        // Arrange
-        var circle = new Circle();
-        var radius = 5.0;
+        // Arrange (set up test data)
+        int num1 = 5;
+        int num2 = 10;
 
-        // Act
-        var area = circle.CalculateArea(radius);
-        var expectedArea = Math.PI * 5 * 5;
+        // Act (perform the action to be tested)
+        int result = Calculator.Add(num1, num2);
 
-        // Assert
-        Assert.AreEqual(expectedArea, area);
+        // Assert (verify expected outcome)
+        Assert.AreEqual(15, result);
     }
 }
 ```
 
-In this code, we are using the `Assert` class from the NUnit framework to compare the expected result with the actual result. If the area calculation is incorrect, the test will fail and we can go back and fix the code. Writing tests allows us to catch errors like this early on and ensures that our code is functioning correctly.
+In this example, we are testing a `Calculator` class with an `Add` method. We set up two positive numbers, perform the addition with the `Add` method, and then verify that the result is equal to the expected sum of 15.
 
-## Deep Dive
+# Deep Dive into Writing Tests
 
-In addition to saving time and catching bugs, writing tests also promotes good coding practices. It forces us to break our code down into smaller, testable chunks and helps to improve the overall quality of our code. 
+Writing tests not only ensures the functionality of your code but also promotes good coding practices. It forces you to think about edge cases and handle potential errors, which ultimately leads to writing more robust and maintainable code.
 
-It's important to keep in mind that writing tests does not guarantee a bug-free code, but it does reduce the number of potential bugs and makes debugging easier. It is also important to regularly run and update tests as our code continues to evolve.
+Additionally, automated tests can be run repeatedly and quickly, giving you immediate feedback on the state of your code. This allows for easier refactoring and catch any new bugs that may arise as you make changes to your code.
 
-## See Also
+Some best practices for writing tests include writing small and specific tests, using descriptive test names, and using mock objects to isolate dependencies. It's also important to regularly review and update tests as your code evolves to ensure their validity.
 
-- [Introduction to Unit Testing in C#](https://www.c-sharpcorner.com/article/introduction-to-unit-testing-in-C-Sharp/)
-- [Getting Started with NUnit](https://docs.nunit.org/articles/nunit/intro.html)
-- [The Importance of Writing Tests in Software Development](https://www.softwaretestinghelp.com/importance-of-writing-tests-in-software-development/)
+# See Also
+
+- [Getting Started with NUnit and C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
+- [Writing Unit Tests in C# with xUnit](https://medium.com/@marcindziekuje/writing-unit-tests-in-c-with-xunit-213f078c6259)
+- [Mocking in C# with Moq](https://www.pluralsight.com/guides/mocking-c-sharp-with-moq)

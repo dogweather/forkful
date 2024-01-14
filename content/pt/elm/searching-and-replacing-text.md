@@ -1,37 +1,64 @@
 ---
-title:    "Elm: Procurando e substituindo texto"
+title:    "Elm: Busca e substituição de texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar a busca e substituição de texto em Elm?
+## Porque
 
-A busca e substituição de texto é uma tarefa comum em programação, especialmente em fornecer uma interface amigável para os usuários interagirem com seus aplicativos. Em Elm, é importante entender como realizar essa tarefa de forma eficiente e sem erros.
+Algumas vezes, quando estamos escrevendo código, nos deparamos com a necessidade de buscar e substituir texto em nossos arquivos. Isso pode ser por diversos motivos, como corrigir erros de digitação ou realizar uma refatoração em nossas funções. Felizmente, o Elm possui ferramentas que facilitam esse processo.
 
 ## Como fazer
 
-Para realizar a busca e substituição de texto em Elm, usamos a função `String.replace` que leva três argumentos: a string a ser substituída, a string de busca e a string de substituição. Aqui está um exemplo de como usá-lo:
+Para buscar e substituir texto em um arquivo que esteja sendo trabalhado no Elm, podemos usar a função `String.replace` do módulo `String`. Ela recebe três argumentos: o texto que queremos substituir, o novo texto que irá substituir e a string em que queremos fazer a substituição. Veja um exemplo:
 
 ```Elm
-import String exposing (replace)
- 
-texto = "Bem-vindo ao meu blog!"
- 
-novoTexto = replace "bem-vindo" "Oi" texto
- 
--- resultado: "Oi ao meu blog!"
+import String exposing (..)
+
+textoIncial = "Eu amo programar em Elm!"
+textoFinal = replace "amo" "adoro" textoIncial
+
+-- Saída: "Eu adoro programar em Elm!"
 ```
 
-Podemos ver que a string "Bem-vindo" foi substituída por "Oi" no texto original. Além disso, também podemos usar a função `String.contains` para verificar se uma string contém outra string antes de usá-la na substituição.
+Podemos também usar a função `String.replaceAll` para substituir todas as ocorrências do texto, ao invés de apenas a primeira. E se quisermos fazer a substituição apenas de forma case-insensitive, podemos usar a função `String.replaceCaseInsensitive`. Veja mais exemplos:
 
-## Mergulho Profundo
+```Elm
+import String exposing (..)
 
-Além da função `String.replace`, Elm também tem a função `String.replaceRange` que permite substituir parte de uma string com outra string. Isso pode ser útil em casos onde não queremos substituir a string inteira, mas apenas uma parte dela.
+textoIncial = "Preciso escrever mais código em Elm, pois é muito divertido!"
+textoFinal = replaceAll "Elm" "Haskell" textoInicial
 
-Outra função útil é `String.split` que divide uma string em uma lista de strings, separando-as em um determinado caracter. Isso pode ser útil em casos onde queremos trabalhar com partes específicas de uma string e, em seguida, substituí-las separadamente.
+-- Saída: "Preciso escrever mais código em Haskell, pois é muito divertido!"
 
-## Veja Também
+textoFinal = replaceCaseInsensitive "divertido" "legal" textoInicial
 
-- Documentação oficial do Elm sobre busca e substituição de texto: https://package.elm-lang.org/packages/elm/string/latest/String
-- Mais exemplos de busca e substituição de texto em Elm: https://elmprogramming.com/string-manipulation-elm.html
+-- Saída: "Preciso escrever mais código em Elm, pois é muito legal!"
+```
+
+## Aprofundando
+
+Caso tenhamos a necessidade de substituir texto em um contexto mais complexo, podemos usar a função `String.replaceRegex` do módulo `Regex`. Ela utiliza expressões regulares para buscar e substituir texto em uma string. Veja um exemplo:
+
+```Elm
+import Regex exposing (..)
+
+textoInicial = "Não consigo entender esse erro [E1234] no meu código."
+
+padrao = regex "\\[E\\d*\\]"
+novoTexto = "(veja a doc do [E1234] para resolver)"
+
+textoFinal = replaceRegex padrao textoInicial novoTexto
+
+-- Saída: "Não consigo entender esse erro (veja a doc do [E1234] para resolver) no meu código."
+```
+
+Podemos também usar as expressões regulares para extrair informações de um texto, em vez de apenas substituí-lo. E se quisermos fazer substituições recursivas, podemos usar a função `String.replaceRecursiveRegex`. Confira a documentação oficial para mais detalhes.
+
+## Veja também
+
+- Documentação oficial do módulo String: https://package.elm-lang.org/packages/elm/core/latest/String
+- Documentação oficial do módulo Regex: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- Cheatsheet para expressões regulares: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet

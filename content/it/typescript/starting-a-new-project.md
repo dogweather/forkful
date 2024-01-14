@@ -1,67 +1,78 @@
 ---
-title:    "TypeScript: Iniziare un nuovo progetto"
+title:    "TypeScript: Avviare un nuovo progetto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-In questa era digitale in continua evoluzione, è sempre più importante per gli sviluppatori saper utilizzare strumenti moderni e efficienti per creare applicazioni web e mobile di alta qualità. TypeScript è uno di questi strumenti che offre diversi vantaggi rispetto ad altri linguaggi di programmazione. In questo post, ti guiderò attraverso i passaggi necessari per iniziare un nuovo progetto TypeScript.
+Se sei uno sviluppatore alla ricerca di un nuovo progetto da iniziare, allora TypeScript potrebbe essere la scelta perfetta per te. Questo linguaggio di programmazione ti permette di scrivere codice in modo strutturato e di avere un controllo maggiore sul tuo codice, mentre allo stesso tempo ti offre tutte le funzioni avanzate di JavaScript.
 
-## Come
+## Come iniziare
 
-Per iniziare, assicurati di avere il compilatore TypeScript installato sul tuo computer. Puoi farlo facilmente con il gestore di pacchetti NPM. Apri il tuo terminale e digita il seguente comando:
+Per iniziare un nuovo progetto TypeScript, devi seguire questi passaggi:
 
-```
+1. Installa TypeScript attraverso il gestore di pacchetti di Node.js:
+```TypeScript
 npm install -g typescript
 ```
 
-Una volta installato, accertati di avere una cartella dedicata al tuo progetto ed entra all'interno del terminale al suo interno. Ora puoi creare un nuovo file di configurazione TypeScript "tsconfig.json" con il comando:
-
+2. Crea una cartella per il tuo nuovo progetto e naviga al suo interno:
+```TypeScript
+mkdir nuovo-progetto
+cd nuovo-progetto
 ```
+
+3. Inizializza il tuo progetto TypeScript:
+```TypeScript
 tsc --init
 ```
 
-Questo file configurerà il tuo progetto per l'utilizzo di TypeScript, inclusi i percorsi, le opzioni di compilazione e i file di output.
+4. Questo creerà un file `tsconfig.json` che contiene le impostazioni del tuo progetto TypeScript.
 
-Successivamente, crea il tuo primo file TypeScript con l'estensione ".ts" all'interno della tua cartella di progetto. Ora puoi utilizzare molte delle funzionalità avanzate di TypeScript, come la tipizzazione dei dati e le classi. Ad esempio:
-
-```
-TypeScriptclass User {
-  name: string;
-  age: number;
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
-
-  greet() {
-    console.log("Ciao, sono " + this.age + "anni e il mio nome è " + this.name );
-  }
+5. Ora puoi creare il tuo primo file TypeScript con l'estensione `.ts`:
+```TypeScript
+// In file: saluti.ts
+function saluta(nome: string) {
+    console.log("Ciao, " + nome);
 }
 
-let user = new User("Mario", 25);
-
-user.greet();
+saluta("Mario"); // Output: Ciao, Mario
 ```
 
-Il codice sopra definisce una classe "User" con due attributi, "name" di tipo stringa e "age" di tipo numerico. Il costruttore della classe viene utilizzato per inizializzare questi attributi quando viene creata un'istanza della classe. La funzione "greet" utilizza entrambi gli attributi per stampare un saluto personalizzato. Al momento dell'esecuzione, il seguente output verrà prodotto:
-
+6. Puoi compilare il file TypeScript in un file JavaScript eseguendo il seguente comando:
+```TypeScript
+tsc saluti.ts
 ```
-Ciao, sono 25 anni e il mio nome è Mario
+
+7. Avrai ora un file `saluti.js` con il seguente codice JavaScript:
+```JavaScript
+function saluta(nome) {
+    console.log("Ciao, " + nome);
+}
+
+saluta("Mario"); // Output: Ciao, Mario
 ```
 
-È possibile utilizzare TypeScript con qualsiasi framework JavaScript, come Angular, React o Vue.js per creare applicazioni web o mobile ancora più potenti.
+8. Puoi eseguire il file JavaScript ottenuto con Node.js:
+```TypeScript
+node saluti.js // Output: Ciao, Mario
+```
 
-## Deep Dive
+## Approfondimento
 
-Un vantaggio aggiuntivo di TypeScript è la possibilità di utilizzare i tipi di dati per aiutare a prevenire errori di codifica. Quando si utilizza un'IDE compatibile con TypeScript, come VS Code, si ottengono suggerimenti sugli errori di sintassi e sui possibili problemi di tipo mentre si digita il codice. Inoltre, il compilatore TypeScript fornisce un output più esplicativo degli errori rispetto ai linguaggi di programmazione tradizionali. Ciò consente di risolvere gli errori in modo più efficiente e di mantenere il codice più affidabile.
+Oltre a fornirti i passaggi basilari per iniziare un nuovo progetto TypeScript, è importante menzionare alcune delle sue funzionalità più avanzate.
 
-Inoltre, il supporto per le annotazioni dei tipi consente a nuovi sviluppatori di apprendere più rapidamente e comprendere meglio il codice. Inoltre, TypeScript è un linguaggio di scripting flessibile che offre molte opzioni di personalizzazione e integrazione con altri strumenti come React Native per lo sviluppo di app mobili o NestJS per la creazione di API REST.
+- Tipi di dati - TypeScript ti permette di specificare i tipi di dato delle variabili, delle funzioni e dei parametri, aiutandoti a individuare più facilmente errori di tipo durante la fase di sviluppo.
+- Classe - TypeScript supporta l'utilizzo delle classi, permettendoti di scrivere codice più strutturato e di organizzare il tuo progetto in modo più efficace.
+- Decoratori - Questa funzionalità avanzata ti permette di applicare annotazioni o metadati alle tue classi, funzioni o proprieta per ottenere un comportamento specifico.
+- Supporto per i moduli - TypeScript offre un eccellente sistema per importare ed esportare moduli e librerie, aiutandoti a gestire le dipendenze del tuo progetto.
+
+Inoltre, TypeScript è supportato da molte popolari piattaforme e framework come Angular, React e Vue.js, rendendolo una scelta ideale per la creazione di applicazioni web.
 
 ## Vedi anche
 
-- [Sito ufficiale di TypeScript](https://www.typescriptlang.org/)
-- [Documentazione di TypeScript](https://www.typescriptlang.org/docs/home.html)
+- [Documentazione di TypeScript](https://www.typescriptlang.org/docs/)
+- [Tutorial su TypeScript su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Classes)

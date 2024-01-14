@@ -1,43 +1,52 @@
 ---
 title:    "Ruby: Uzyskiwanie bieżącej daty"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W dzisiejszych czasach coraz więcej ludzi uczęszcza na kursy programowania, a nie ma w tym nic dziwnego. Programowanie jest nie tylko ciekawym i kreatywnym zajęciem, ale także zawodem przyszłości. Jednym z pierwszych kroków w nauce programowania jest poznanie podstawowych funkcji i możliwości języka programowania. Dlatego też w dzisiejszym wpisie zajmiemy się jedną z nich - jak uzyskać bieżącą datę w języku Ruby.
+W dzisiejszych czasach programowanie jest bardzo powszechne i ważne w różnych dziedzinach. Może to być z powodów zawodowych, hobbystycznych lub edukacyjnych. Jednym z podstawowych zadań programowania jest pracowanie z datami i czasem. W tym wpisie dowiesz się, jak w prosty sposób uzyskać obecny dzień w języku Ruby.
 
 ## Jak to zrobić?
 
-Do uzyskania aktualnej daty w języku Ruby możemy wykorzystać klasę `Date`. Przykładowo, jeśli chcemy wyświetlić obecną datę w konsoli, należy wprowadzić następujący kod:
+Aby uzyskać obecny dzień, musimy skorzystać z metody "Time.now". Następnie możemy wykorzystać metodę "strftime" do sformatowania daty w odpowiedni sposób. Oto przykładowy kod w języku Ruby:
 
 ```Ruby
-puts Date.today
+dzisiaj = Time.now
+puts dzisiaj.strftime("%d-%m-%Y")
 ```
-W wyniku otrzymamy datę w formacie `yyyy-mm-dd`.
 
-Jeśli chcemy wyświetlić nazwę dnia tygodnia oraz miesiąca, możemy to zrobić korzystając z metod `strftime` oraz `localize`:
+W powyższym przykładzie, wyświetli się bieżąca data w formacie "DD-MM-RRRR".
+
+Możemy także wyświetlić inną informację o bieżącym czasie, na przykład godzinę:
 
 ```Ruby
-puts Date.today.strftime("%A, %B").localize
+puts dzisiaj.strftime("%H:%M")
 ```
-Dzięki temu uzyskamy datę w formacie `nazwa dnia tygodnia, nazwa miesiąca`.
 
-## Wnikliwa analiza
+Wynik tego kodu będzie wyglądał w następujący sposób: "14:30". Jak widać, możliwości są bardzo szerokie i możesz sformatować datę tak, jak chcesz.
 
-Przypuśćmy, że chcemy otrzymać informację o dacie w danym formacie, ale z innej strefy czasowej. W takiej sytuacji możemy wykorzystać klasę `DateTime`, która posiada możliwość ustawiania różnych stref czasowych. Przykładowy kod może wyglądać następująco:
+## Głębszy zanurzenie
 
-```Ruby
-puts DateTime.now.new_offset(3)
-```
-W tym przypadku, ustawiliśmy strefę czasową na GMT+3, co spowoduje wyświetlenie bieżącej daty z uwzględnieniem tej zmiany.
+Metoda "strftime" jest bardzo przydatna, ale aby ją wykorzystać, musimy znać odpowiednie formaty. Oto kilka najczęściej wykorzystywanych formatów:
 
-Ważną klasą jest również `Time`, która pozwala na manipulowanie czasem, np. dodawanie lub odejmowanie dni, godzin czy minut. Może to być szczególnie przydatne w przypadku programowania aplikacji, gdzie wymagane jest zarządzanie czasem.
+- %d - dzień miesiąca (np. 05)
+- %m - miesiąc (np. 05)
+- %Y - rok (np. 2020)
+- %H - godzina w formacie 24-godzinnym (np. 14)
+- %M - minuta (np. 30)
+- %S - sekunda (np. 45)
+- %A - dzień tygodnia (np. Poniedziałek)
+- %B - miesiąc w pełnej nazwie (np. Maj)
+- %w - dzień tygodnia w formacie numerycznym (0 dla niedzieli)
+
+Możesz także wykorzystać symbole specjalne, takie jak "/", "-", ":" do sformatowania daty w sposób, który jest dla ciebie czytelny.
 
 ## Zobacz także
 
-- [Dokumentacja Ruby o klasie Date](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
-- [Przewodnik przez klasę DateTime w języku Ruby](https://www.rubyguides.com/2018/06/ruby-datetime/)
-- [Wykorzystanie klasy Time w ustawianiu czasu](https://stackoverflow.com/questions/21183069/set-time-from-string-with-timezone-in-ruby)
+- Dokumentacja języka Ruby: https://ruby-doc.org/core-2.7.1/Time.html
+- Poradnik dla początkujących: https://www.rubyguides.com/2015/05/working-with-dates-ruby/
+- Przykładowy kod z wykorzystaniem innych metod: https://www.rubyguides.com/2015/05/ruby-time/

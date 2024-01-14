@@ -1,40 +1,37 @@
 ---
-title:    "Bash: Capitalizando uma string"
+title:    "Bash: Colocando em maiúscula uma string"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string é importante na programação?
+## Por que capitalizar uma string?
 
-A linguagem de programação Bash é amplamente utilizada para automação de tarefas em sistemas operacionais Unix e Linux. Uma das tarefas mais comuns ao trabalhar com strings é capitalizar a primeira letra, o que pode ser necessário para garantir uma apresentação adequada de dados ou gerar um resultado preciso. Neste artigo, vamos explorar como capitalizar uma string no Bash e por que isso é importante.
+Capitalizar uma string é um processo comum em programação, especialmente em Bash. Isso significa transformar todas as letras de uma string em maiúsculas ou minúsculas, dependendo do que é necessário. Existem várias razões pelas quais alguém pode querer capitalizar uma string em um programa Bash.
 
-## Como fazer em Bash
+## Como fazer isso:
 
-A capitalização de uma string no Bash pode ser feita de várias maneiras. Uma opção é usar o comando sed, que é uma ferramenta de processamento de texto em linha de comando. Veja um exemplo de como capitalizar a primeira letra de uma string usando sed:
-
-```Bash
-echo "exemplo" | sed "s/./\U&/"
-```
-
-O comando sed substitui o primeiro caractere da string (representado por ".") pelo mesmo caractere em maiúsculo (\U&). Isso resulta na saída "Exemplo". Você pode alterar o valor da string para testar diferentes entradas e perceber como o comando sed funciona.
-
-Outra opção é usar a ferramenta de substituição de padrões do Windows Subsystem for Linux, que também está disponível no Bash. Abra o aplicativo bash.exe no Windows e tente este exemplo:
+Para capitalizar uma string em Bash, você pode usar o comando `tr` (traduzir) junto com algumas opções. O `tr` é um utilitário que funciona substituindo ou excluindo caracteres em um fluxo de texto. Para capitalizar uma string, podemos usar as opções `-u` (para maiúsculas) e `-t` (para aplicar as alterações apenas nos caracteres alfabéticos). Aqui está um exemplo de como ficaria o código:
 
 ```Bash
-${var^}
+texto="exemplo"
+texto_capitalizado=$(echo $texto | tr '[:lower:]' '[:upper:]')
+echo $texto_capitalizado
 ```
 
-Assim como o comando sed, essa ferramenta substitui o primeiro caractere da string pela versão em maiúsculo. Você pode salvar os comandos em um script Bash para utilizá-los em diferentes situações.
+A saída seria "EXEMPLO", com todas as letras maiúsculas. Você também pode usar a opção `-d` para excluir caracteres, por exemplo, para remover todos os espaços em branco de uma string antes de capitalizá-la.
 
-## Profundidade
+## Mergulho Profundo:
 
-Existem várias técnicas para capitalizar uma string, e cada uma pode ser útil em diferentes casos. Por exemplo, a opção de substituição de padrões do WSL só funciona no Bash para Windows, enquanto o comando sed é amplamente suportado em diferentes sistemas. Além disso, é importante considerar como a capitalização afeta strings com acentos e caracteres especiais. Realizar testes e explorar diferentes opções pode ajudar na escolha da melhor técnica para cada situação.
+Além do `tr`, existem outras maneiras de capitalizar uma string em Bash. Você também pode usar o comando `awk` com a função `toupper`, que transforma todos os caracteres em maiúsculas. Ou, se a sua string contiver acentos, você pode usar o utilitário `sed` junto com expressões regulares para capitalizar corretamente.
 
-No entanto, a capitalização de uma string pode ser um pouco mais complexa do que apenas capitalizar a primeira letra. Em alguns casos, pode ser necessário capitalizar todas as primeiras letras de cada palavra em uma frase ou até mesmo alterar palavras específicas para que fiquem em maiúsculo. Nesses casos, pode ser necessário usar expressões regulares ou criar um script mais elaborado. Explorar a documentação do Bash e outros recursos online pode ser útil para entender melhor essas técnicas.
+Além disso, é importante observar que em Bash, as variáveis são case sensitive, ou seja, "texto" é diferente de "TEXTO". Portanto, ao capitalizar uma string, verifique se você está usando os mesmos caracteres em todas as instâncias da variável.
 
-## Veja também
+## Veja também:
 
-- [Documentação Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial sed](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-- [WSL documentation](https://docs.microsoft.com/en-us/windows/wsl/about)
+- [Artigo sobre utilização do comando `tr` em Bash](https://tecadmin.net/learn-tr-command-with-15-practical-examples/)
+- [Tutorial do Awk para iniciantes](https://www.grymoire.com/Unix/Awk.html)
+- [Documentação oficial do Sed](https://www.gnu.org/software/sed/manual/sed.html)
+
+Código do exemplo baseado em: https://www.cyberciti.biz/faq/bash-convert-string-into-uppercase/

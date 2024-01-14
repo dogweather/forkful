@@ -1,50 +1,34 @@
 ---
-title:    "C++: Skrivande till standardfel"
+title:    "C++: Skriva till standardfel"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva till standard error är ett viktigt verktyg för att förstå och felsöka program i C++. Genom att skriva till standard error kan du utskriva meddelanden och felmeddelanden som hjälper dig att förstå vad som händer i ditt program.
 
-Att skriva till standardfel (standard error) är en viktig del av felsökning och feldiagnostik i C++ programmering. Genom att skriva till standardfel kan du skicka meddelanden om eventuella fel eller undantag som uppstår i ditt program, vilket hjälper till att felsöka och förbättra kvaliteten på din kod.
-
-## Så här
-
-För att skriva till standardfel i C++ behöver du använda "std::cerr" funktionen. Detta är en ström som är kopplad till konsolen och används för att skriva ut felmeddelanden. Här är ett enkelt exempel på hur du skulle använda den:
+## Hur man gör det
+För att skriva till standard error i C++ behöver du inkludera "iostream" biblioteket och använda "cerr" funktionen. Här är ett exempel på hur du kan göra det:
 
 ```C++
 #include <iostream>
 
-int main()
-{
-  int a = 5;
-  int b = 0;
-  
-  // Dividera a med b och skriv ut eventuellt felmeddelande
-  if (b == 0)
-  {
-    std::cerr << "Kan inte dividera med noll!" << std::endl;
-  }
-  else
-  {
-    std::cout << "Resultatet är: " << a / b << std::endl;
-  }
-  
-  return 0;
+int main() {
+    if (true) {
+        std::cerr << "Ett fel inträffade!" << std::endl;
+    }
+    return 0;
 }
 ```
 
-Detta kodblock visar hur du kan använda standardfel för att hantera felaktiga inmatningar och undvika kraschar i ditt program. Meddelandet "Kan inte dividera med noll!" kommer att skrivas ut till standardfel och programmet kommer att fortsätta köras utan att krascha.
+I detta exempel skriver vi texten "Ett fel inträffade!" till standard error genom att använda "cerr" funktionen. Sedan använder vi "endl" för att lägga till en radbrytning för tydlighet. När programmet körs kommer texten att skrivas ut till standard error och programmet kommer att fortsätta köra som vanligt.
 
 ## Djupdykning
+Att skriva till standard error är en del av det standarda utflödet (standard output) som är tillgängligt i de flesta programspråk. Det används främst för att skriva ut felmeddelanden eller annan information som är viktig för att förstå vad som händer i programmet. Ett vanligt fel är att blanda ihop "cerr" och "cout", vilket kan leda till förvirring och felaktiga utskrifter. En annan viktig sak att komma ihåg är att "cerr" inte buffrar utdata, vilket innebär att den skriver till standard error direkt utan att vänta på att programmet ska avslutas. Detta är särskilt användbart vid felsökning då du vill se felmeddelanden omedelbart istället för senare när programmet har kört klart.
 
-Det finns flera andra sätt att använda standardfel i C++, inklusive skriva till en loggfil, omrikta standardfel till en annan ström eller hantera flera felmeddelanden i en try-catch-block. Det är också möjligt att anpassa standardfelmeddelanden med hjälp av "std::setbuf()" funktionen.
-
-Det är viktigt att komma ihåg att använda standardfel är ett kraftfullt verktyg, men det bör bara användas för felsökning och diagnostik. Det är inte bra att använda standardfel för att kommunicera med användare av ditt program, eftersom meddelandena kan vara svåra att förstå för icke-tekniska personer.
-
-## Se även
-
-- [C++ Standardbibliotek](https://sv.wikipedia.org/wiki/C%2B%2B_standardbibliotek)
-- [Felhantering i C++](https://www.cplusplus.com/doc/tutorial/exceptions/)
-- [Guide till C++ programmering](https://www.learncpp.com/)
+## Se också
+- [C++ Standard Library](https://en.cppreference.com/w/cpp/header)
+- [Cerr Reference](https://en.cppreference.com/w/cpp/io/cerr)
+- [Understanding Standard Error in C++](https://www.learncpp.com/cpp-tutorial/understanding-standard-iostream/)

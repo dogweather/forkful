@@ -1,48 +1,36 @@
 ---
-title:    "Rust: 표준 오류에 쓰는 방법"
+title:    "Rust: 표준 오류에 쓰기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-"## 왜" 
- 
-Rust 프로그래밍에 대한 블로그 포스트를 쓰는 이유는 무엇일까요? Rust는 안전하고 효율적인 프로그래밍 언어로 많은 개발자들이 관심을 가지고 있습니다. 이번 포스트에서는 에러 처리를 위해 표준 출력 대신 표준 에러를 사용하는 방법을 알아보겠습니다. 
+# 왜?
 
-"## 작성하는 방법"
+개인 프로젝트를 할 때나 회사에서 개발을 할 때, 우리는 종종 오류 메세지 또는 디버깅 정보를 콘솔에 출력하도록 코드를 작성합니다. 이때 표준 에러 (standard error) 스트림을 사용하여 오류 메세지를 출력할 수 있습니다. 이렇게 함으로써 더 정확한 디버깅이 가능하고, 프로그램의 안정성을 높일 수 있습니다.
 
-Rust에서 표준 에러를 작성하는 방법은 매우 간단합니다. 맨 위에 `std::io` 모듈을 가져오고, 라이브러리 내부의 `io::stderr` 함수를 사용하여 표준 에러를 쓸 수 있습니다. 아래는 간단한 예제 코드입니다.
+## 어떻게?
 
-```
-use std::io;
+Rust에서 표준 에러 스트림에 메세지를 출력하기 위해서는 `std::io::stderr()` 함수를 사용해야 합니다. 이 함수는 표준 에러 스트림에 접근할 수 있는 `Stderr` 값으로 결과를 반환합니다. `write!` 매크로를 사용하여 해당 값에 문자열을 씁니다. 마지막으로 `flush()`를 사용하여 버퍼를 비워줍니다.
+
+```Rust
+use std::io::{self, Write};
 
 fn main() {
-    // 표준 에러에 문자열 출력하기
-    io::stderr().write(b"Hello, Rust!").unwrap();
-
-    // 변수를 사용하여 출력하기
-    let name = "Korean readers";
-    io::stderr().write(format!("Hello, {}!", name).as_bytes()).unwrap();
+  let mut stderr = io::stderr();  // 스트림에 대한 접근 권한 얻기
+  write!(stderr, "오류가 발생했습니다. 관리자에게 문의하세요.").expect("메세지 출력 실패");
+  stderr.flush().expect("버퍼 비우기 실패");
 }
 ```
 
-위 코드를 실행하면 표준 에러가 출력됩니다.
+## 깊게 들어가기
 
-```
-Hello, Rust!
-Hello, Korean readers!
-```
+표준 에러 스트림은 Rust의 `std::io` 모듈의 일부분입니다. 이 모듈은 입력 및 출력과 관련된 여러가지 기능을 제공합니다. `stdout()` 함수를 사용하면 표준 출력 스트림에 접근할 수 있으며, `stdin()` 함수를 사용하면 표준 입력 스트림에 접근할 수 있습니다. 이와 비슷하게, `stderr()` 함수를 사용하여 표준 에러 스트림에 접근할 수 있습니다.
 
-"## 더 깊게"
+`Stderr` 값은 `Write` 트레이트를 구현하고 있습니다. 이는 매우 유용한 트레이트로, 쓰기 기능을 제공하는 타입에 구현되며 다양한 데이터 형식을 출력할 수 있게 해줍니다. `write!` 매크로를 사용하여 문자열 뿐만 아니라 다양한 형식의 데이터를 쓸 수 있습니다.
 
-표준 에러 스트림은 다른 출력과 달리 그리 버퍼링되지 않습니다. 즉, 일부분만 쓰여진 문자열을 출력하는 것은 불가능합니다. 따라서 프로그래머는 완벽한 문자열을 출력하기 위해 항상 모든 내용을 쓴 후에 개행 문자를 추가해주어야 합니다. 
+# 참고 자료
 
-또한, 표준 에러를 사용하여 프로그램의 오류 메시지를 확인하는 것이 좋은 습관입니다. 특히 운영 중인 서비스에서 발생하는 오류는 사용자가 눈으로 확인할 수 있는 에러 메시지를 출력하는 것이 중요합니다.
-
-"## 같이 보기"
-
-표준 에러를 사용하여 프로그램의 에러를 처리하는 것은 매우 중요한 기술입니다. 아래의 링크들도 함께 확인해보시기 바랍니다.
-
-- [Rust 공식 문서 - std::io 모듈](https://doc.rust-lang.org/std/io/index.html)
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Rust 커뮤니티 공식 사이트](https://www.rust-lang.org/community)
+- [The Rust Programming Language: Writing to Standard Error](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#writing-error-messages-to-standard-error)
+- [The Rust Standard Library Documentation: std::io module](https://doc.rust-lang.org/std/io/index.html)

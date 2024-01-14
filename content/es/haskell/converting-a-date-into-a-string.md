@@ -1,67 +1,49 @@
 ---
-title:    "Haskell: Convirtiendo una fecha en cadena"
+title:    "Haskell: Convirtiendo una fecha en una cadena"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-¿Por qué convertir una fecha en una cadena de texto?
+## Por qué
 
-A menudo, al trabajar con datos de fechas en un programa, es necesario convertirlas en una cadena de texto para una mejor visualización o para realizar cálculos basados en la fecha. En Haskell, hay varias formas de hacer esta conversión y en este artículo exploraremos algunas de ellas.
+Una de las tareas más comunes en la programación es la conversión de datos de un formato a otro. En el caso específico de las fechas, a veces es necesario convertirlas a formato de cadena de texto para poder manipularlas o mostrarlas de manera adecuada. En este artículo, te mostraré cómo convertir una fecha en formato de cadena de texto en tu programa Haskell.
 
 ## Cómo hacerlo
 
-Para comenzar, importaremos el módulo `Data.Time.Format` que nos proporciona funciones para trabajar con fechas.
+Para convertir una fecha en formato de cadena de texto, utilizaremos la función `formatTime` de la librería `Data.Time.Format`. Esta función toma como parámetros una cadena de formato y un valor de tipo `UTCTime` (tiempo universal coordinado) y devuelve la fecha en formato de cadena.
+
+Por ejemplo, si queremos mostrar la fecha actual en formato DD/MM/AAAA, podemos hacerlo de la siguiente manera:
 
 ```Haskell
 import Data.Time.Format
+
+fecha_actual <- getCurrentTime
+formatTime defaultTimeLocale "%d/%m/%Y" fecha_actual
 ```
 
-Ahora, supongamos que queremos convertir la fecha actual en una cadena de texto con el formato "dd/mm/aaaa". Podemos hacerlo de la siguiente manera:
+El resultado será "04/07/2021", dependiendo de la fecha actual en la que se ejecute el código.
 
-```Haskell
-getCurrentDate :: IO String
-getCurrentDate = do
-  now <- getCurrentTime
-  let formattedDate = formatTime defaultTimeLocale "%d/%m/%Y" now
-  return formattedDate
-```
+## Inmersión profunda
 
-Aquí, hemos utilizado la función `getCurrentTime` para obtener la fecha y hora actual en formato `UTCTime` y luego hemos utilizado la función `formatTime` para convertir esa fecha en una cadena de texto con el formato deseado.
+La cadena de formato que se pasa como primer parámetro a `formatTime` sigue una sintaxis específica para indicar cómo se debe mostrar la fecha. Algunos de los caracteres más comunes son:
 
-Si queremos obtener la fecha en un formato diferente, como "mm/dd/aaaa", solo necesitamos cambiar el parámetro de formato en la función `formatTime`.
+- `d`: día del mes en formato numérico (sin ceros a la izquierda)
+- `dd`: día del mes en formato numérico (con ceros a la izquierda)
+- `m`: mes en formato numérico (sin ceros a la izquierda)
+- `mm`: mes en formato numérico (con ceros a la izquierda)
+- `y`: año en formato numérico (sin ceros a la izquierda)
+- `yy`: año en formato numérico (2 dígitos)
+- `yyy`: año en formato numérico (4 dígitos)
 
-```Haskell
-getCurrentDate :: IO String
-getCurrentDate = do
-  now <- getCurrentTime
-  let formattedDate = formatTime defaultTimeLocale "%m/%d/%Y" now
-  return formattedDate
-```
+También se pueden agregar otros caracteres como barras (/), guiones (-) o puntos (.) para separar las partes de la fecha.
 
-También podemos convertir una fecha específica en una cadena de texto haciendo uso de la función `parseTimeM`. Por ejemplo, si queremos convertir la fecha "7 de julio de 2021" en una cadena de texto con el formato "dd de mmmm de aaaa", podemos hacerlo de la siguiente manera:
+Es importante tener en cuenta que el formato de la fecha dependerá del local en el que se esté ejecutando el programa. Por ejemplo, en español es común usar la fecha en formato DD/MM/AAAA, mientras que en Estados Unidos se utiliza MM/DD/AAAA. Para especificar un local específico, se puede usar la función `setLocale`.
 
-```Haskell
-getSpecificDate :: IO (Maybe String)
-getSpecificDate = do
-  let inputDate = "07/07/2021"
-      format = "%d de %B de %Y"
-  parsedDate <- parseTimeM False defaultTimeLocale format inputDate :: IO (Maybe Day)
-  case parsedDate of
-    Just date -> return $ Just $ formatTime defaultTimeLocale format date
-    Nothing -> return Nothing
-```
-
-En este ejemplo, primero definimos la fecha en formato de cadena de texto y luego especificamos el formato en el que queremos que se muestre la fecha. Luego usamos la función `parseTimeM` para convertir la cadena en una fecha y la función `formatTime` para convertirla en una cadena de texto con el formato especificado. Cabe mencionar que la función `parseTimeM` devuelve un `Maybe`, ya que puede ocurrir un fallo al intentar convertir la cadena en una fecha. Por eso, hemos utilizado un `case` para manejar tanto el éxito como el fallo en la conversión.
-
-## Profundizando
-
-En los ejemplos anteriores, hemos utilizado los formatos de fecha y hora predeterminados que proporciona el módulo `Data.Time.Format`. Sin embargo, también es posible definir nuestros propios formatos utilizando la función `timeLocale` y pasarlos como parámetro a `formatTime` o `parseTimeM`.
-
-Además, el módulo `Data.Time.Format` también ofrece funciones para trabajar con diferentes zonas horarias y formatos específicos de idiomas. Con un poco de investigación, puedes encontrar la función adecuada para tus necesidades específicas.
+Puedes encontrar más información sobre la sintaxis de la cadena de formato de fecha en la documentación de Haskell.
 
 ## Ver también
 
-- [Documentación del módulo `Data.Time.Format`](https://haskell.org/haskellwiki/Data.Time.Format).
-- [Módulo `Data.Time` para trabajar con diferentes formatos de fechas](https://hackage.haskell.org/package/time).
-- [Tutorial sobre el módulo `Data.Time` en Haskell](https://en.wikibooks.org/wiki/Haskell/Datetime).
+- [Documentación de la librería `Data.Time.Format`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [Tutorial de Haskell en español](https://www.haskell-es.com/)

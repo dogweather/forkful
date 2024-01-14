@@ -1,46 +1,59 @@
 ---
 title:    "Haskell: Ricerca e sostituzione di testo"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
 
-La ricerca e la sostituzione di testo sono attività comuni durante la scrittura di codice. In un mondo in cui il tempo è prezioso, imparare a farlo in modo efficiente può risparmiare molto tempo e sforzi.
+La ricerca e sostituzione di testo è un'operazione comune e fondamentale nella programmazione, che consente di modificare rapidamente grandi quantità di dati in maniera efficace ed efficiente. Scopriamo come utilizzare questa funzione in Haskell. 
 
-## Come fare
+## Come fare 
 
-Per eseguire una ricerca e sostituzione di testo in Haskell, è necessario utilizzare la funzione `replace` del modulo `Data.List`.
-
-```Haskell
-import Data.List (replace)
-
-replace "vecchio" "nuovo" "Questa è una vecchia stringa."
-```
-
-Questo restituirà la stringa "Questa è una nuova stringa." come output. La funzione `replace` accetta tre argomenti: la sottostringa da sostituire, la nuova sottostringa e la stringa originale.
-
-Puoi anche utilizzare la funzione `replaceAll` per sostituire tutte le occorrenze della sottostringa nella stringa originale.
+Per usare la funzione di ricerca e sostituzione in Haskell, possiamo utilizzare il metodo `replace` del pacchetto `text`. Vediamo un esempio:
 
 ```Haskell
-import Data.List (replaceAll)
+import Data.Text
 
-replaceAll "a" "e" "banana"
+main = do
+  let str = "Ciao a tutti"
+  let newStr = replace "Ciao" "Hello" str
+  print newStr
 ```
 
-Questo restituirà "benene" come output. In questo caso, tutte le occorrenze della lettera "a" sono state sostituite con la lettera "e".
+Questo codice sostituirà la stringa "Ciao" nella variabile `str` con "Hello" e stamperà il nuovo valore. L'output sarà:
 
-## Approfondimento
+```
+Hello a tutti
+```
 
-La funzione `replace` e `replaceAll` sono entrambe basate sull'uso della funzione `isPrefixOf` del modulo `Data.List`. Questa funzione restituisce `True` se la sottostringa è un prefisso della stringa di input.
+La funzione `replace` accetta tre parametri: il testo da sostituire, il nuovo testo e la stringa originale. Possiamo utilizzare questa funzione anche per sostituire parole più lunghe all'interno di una stringa.
 
-Per esempio, `isPrefixOf "abc" "abcdefg"` restituirà `True`.
+## Approfondimento 
 
-Questa funzione è utile per capire come avviene la sostituzione di una sottostringa all'interno di una stringa.
+In Haskell, è possibile utilizzare una varietà di funzioni e metodi per la ricerca e sostituzione di testo. Ad esempio, possiamo utilizzare la funzione `map` per applicare una determinata operazione a ogni carattere della stringa. Vediamo un esempio:
 
-## Vedi anche
+```Haskell
+import Data.Char
 
-- [Haskell Wiki - Modulo Data.List](https://wiki.haskell.org/Data.List)
-- [Documentazione di Haskell per la funzione `replace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#g:9)
-- [Guida di riferimento per Haskell](https://wiki.haskell.org/Reference_card)
+main = do
+  let str = "Haskell"
+  let newStr = map toLower str
+  print newStr
+```
+
+In questo caso, abbiamo applicato la funzione `toLower` a ogni carattere della stringa e quindi stampato il risultato:
+
+```
+haskell
+```
+
+Questo esempio è un modo utile per manipolare il testo prima di eseguire la ricerca e sostituzione. Altre funzioni utili per il trattamento del testo sono `filter` e `splitOn`, che consentono di filtrare i caratteri e suddividere la stringa in base a un determinato delimitatore.
+
+## Vedi anche 
+
+- [Pacchetto text su Hackage](https://hackage.haskell.org/package/text)
+- [Guida rapida alle funzioni di manipolazione del testo in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/8_monadic-io) 
+- [Tutorial completo su come utilizzare le funzioni per la manipolazione del testo in Haskell](https://wiki.haskell.org/Simple.text)

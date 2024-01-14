@@ -1,59 +1,45 @@
 ---
 title:    "Bash: Escribiendo un archivo de texto"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto
+## Por qué
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador, ya que permite almacenar información y datos de manera estructurada y accesible. Además, puede ser utilizado para crear scripts y programas en lenguajes de programación como Bash.
+Escribir un archivo de texto puede ser una tarea común y necesaria para los programadores de Bash. Puede ser utilizado para almacenar datos, crear registros de código o simplemente como una forma de organizar y guardar información importante. Escribir un archivo de texto también puede ser útil en la creación de scripts y en la automatización de tareas. 
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en Bash, podemos seguir los siguientes pasos:
-
-1. Abrir la terminal o el programa de línea de comandos.
-2. Navegar hasta la ubicación donde queremos que se guarde el archivo usando comandos como `cd` y `ls`.
-3. Usar el comando `touch` seguido del nombre que queremos darle a nuestro archivo. Por ejemplo: `touch mi_archivo.txt`.
-4. Abrir el archivo con un editor de texto, como `nano` o `vim`.
-5. Escribir el contenido que queremos que tenga el archivo y guardarlo (`CTRL + X` en `nano`).
-6. ¡Listo! Hemos creado y escrito nuestro archivo de texto en Bash.
-
-A continuación, un ejemplo de código Bash y su correspondiente salida:
-
-```Bash
-touch mi_archivo.txt
-nano mi_archivo.txt
-```
-
-Salida:
+Para escribir un archivo de texto en Bash, primero necesitamos abrir un editor de texto. Puede ser cualquier editor de texto, pero en este ejemplo usaremos el editor de línea de comandos "nano". Luego, en la línea de comando, escribimos el siguiente comando:
 
 ```
-Este es mi archivo de texto creado en Bash.
-¡Genial!
+nano ejemplos.txt
 ```
+
+Esto abrirá una nueva ventana de "nano" con un archivo en blanco llamado "ejemplos.txt". Aquí es donde podemos comenzar a escribir nuestro texto. Una vez que hayamos terminado de escribir, podemos guardar el archivo presionando "Ctrl + O", seguido de "Enter" para confirmar el nombre del archivo. Luego, podemos salir de "nano" presionando "Ctrl + X".
 
 ## Profundizando
 
-Para escribir un archivo de texto en Bash, también podemos utilizar la redirección de flujo de salida. Por ejemplo:
+Es importante tener en cuenta que cuando abrimos un archivo en "nano", también podemos editarlo. Esto significa que podemos agregar datos a un archivo existente o modificar su contenido. También podemos utilizar comandos de Bash mientras estamos en "nano", esto nos permite realizar acciones adicionales como borrar, copiar y pegar texto.
 
-```Bash
-echo "Este es mi archivo de texto creado en Bash." > mi_archivo.txt
+Otra forma de escribir un archivo de texto en Bash es utilizando el comando "echo". Este comando permite imprimir o escribir texto en la salida estándar o en un archivo específico. Por ejemplo, si queremos escribir el texto "¡Hola mundo!" en un archivo llamado "prueba.txt", podemos utilizar el siguiente comando:
+
+```
+echo ¡Hola mundo! > prueba.txt
 ```
 
-En este caso, el comando `echo` imprime el texto entre comillas en la terminal, pero al agregar el símbolo `>` seguido del nombre del archivo, dicho texto se redirige y se guarda en el archivo.
+Este comando sobrescribirá cualquier contenido existente en el archivo "prueba.txt" con "¡Hola mundo!". Si queremos agregar más texto al archivo en lugar de sobrescribirlo, podemos utilizar el operador ">>" en su lugar, como se muestra a continuación:
 
-Por otra parte, también podemos concatenar contenido a un archivo existente mediante el uso de `>>`. Por ejemplo:
-
-```Bash
-echo "¡Genial!" >> mi_archivo.txt
+```
+echo Adiós mundo >> prueba.txt
 ```
 
-Esto añadirá la cadena "¡Genial!" al final del archivo existente, en la línea siguiente al texto previamente escrito.
+Esto agregará la línea "Adiós mundo" al final del archivo existente, en lugar de sobrescribirlo. Este es solo un ejemplo de cómo podemos usar el comando "echo" para escribir archivos de texto en Bash.
 
-## Ver también
+## Ver también 
 
-- [Tutorial básico de Bash en español](https://www.tutorialeslinux.com/tutorial-bash/)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/)
-- [Guía rápida de Bash](https://devhints.io/bash)
+- [Documentación de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Guía de "nano"](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
+- [Tutorial de "echo"](https://linuxize.com/post/echo-command-in-linux/)

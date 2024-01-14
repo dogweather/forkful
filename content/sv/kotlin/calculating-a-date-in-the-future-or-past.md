@@ -1,47 +1,43 @@
 ---
-title:    "Kotlin: Beräkning av ett datum i framtiden eller det förflutna."
+title:    "Kotlin: Beräkning av en datum i framtiden eller förflutna"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att kunna räkna ut en datum i framtiden eller förflutet kan vara användbart i många situationer, som att planera resor, hålla koll på deadlines eller bara för att tillfredsställa ens nyfikenhet.
+Att kunna beräkna ett datum i framtiden eller förfluten tid är en viktig färdighet inom programmering. Det kan hjälpa till att lösa problem och effektivisera arbetsflöden.
 
 ## Hur man gör det
-
-För att räkna ut ett datum i framtiden eller förflutet i Kotlin, kan vi använda funktionen `plus` och `minus` på en `LocalDate` objekt från `java.time` biblioteket.
-
-### Kodexempel:
+Det finns flera olika sätt att beräkna ett datum i Kotlin beroende på vilka förutsättningar och vilken precision som behövs. Här nedanför visas några exempel på hur man kan göra det.
 
 ```Kotlin
-import java.time.LocalDate
-
-// Räkna ut datumet 30 dagar framåt
+// Beräkna ett datum x antal dagar framåt
 val idag = LocalDate.now()
-val omTrettioDagar = idag.plusDays(30)
-println("Om 30 dagar kommer det att vara $omTrettioDagar")
+val antalDagar = 10
+val framtidDatum = idag.plusDays(antalDagar)
+println("Datum om $antalDagar dagar: $framtidDatum")
+// Output: Datum om 10 dagar: 2021-11-06
 
-// Räkna ut datumet 2 månader tillbaka
-val forraManaden = idag.minusMonths(2)
-println("Förra månaden var det $forraManaden")
+// Beräkna ett datum x antal månader bakåt
+val idag = LocalDate.now()
+val antalMånader = 3
+val förflutenDatum = idag.minusMonths(antalMånader)
+println("Datum för $antalMånader månader sedan: $förflutenDatum")
+// Output: Datum för 3 månader sedan: 2021-05-06
+
+// Beräkna ett datum utifrån ett specifikt datum
+val början = LocalDate.of(2020, 1, 1)
+val slut = LocalDate.of(2021, 1, 1)
+val antalDagar = ChronoUnit.DAYS.between(början, slut)
+println("Antal dagar mellan $början och $slut är: $antalDagar")
+// Output: Antal dagar mellan 2020-01-01 och 2021-01-01 är: 366
 ```
 
-### Output:
-```
-Om 30 dagar kommer det att vara yyyy-MM-dd
-Förra månaden var det yyyy-MM-dd
-```
+## Djupdykning
+För att kunna beräkna ett datum i framtiden eller förfluten tid i Kotlin så behöver man förstå hur datatyperna LocalDate och ChronoUnit fungerar. LocalDate är en klass som representerar ett datum och har metoder för att manipulera det datumet. ChronoUnit är en enum som innehåller olika enheter av tid som kan användas för att beräkna skillnaden mellan två datum.
 
-## Deep Dive
-
-För att förstå hur datumberäkningarna fungerar i Kotlin, är det viktigt att ha en grundläggande förståelse för datumen i Java. I Java är ett datum en kombination av år, månad och dag, representerat av klassen `LocalDate` i `java.time` biblioteket. Genom att använda funktionerna `plus` och `minus` på ett `LocalDate` objekt, kan vi ändra datumen med antalet dagar, månader eller år vi anger.
-
-En annan viktig detalj är att `LocalDate` objektet är oföränderligt, vilket betyder att när vi tillämpar en av funktionerna `plus` eller `minus` på ett objekt, returneras ett nytt objekt och det ursprungliga objektet förblir oförändrat.
-
-## Se Reschel
-
-- Kotlin Dokumentation om `LocalDate`: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
-- Java Dokumentation om `LocalDate`: [https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- Java.time - Paket för kotlin.system: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/index.html
+## Se även
+- Dokumentation för LocalDate och ChronoUnit: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/
+- Java 8 Time API: https://www.baeldung.com/java-8-date-time-intro

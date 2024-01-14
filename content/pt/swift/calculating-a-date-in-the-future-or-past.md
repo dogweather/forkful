@@ -1,47 +1,49 @@
 ---
 title:    "Swift: Calculando uma data no futuro ou passado"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que calcular uma data no futuro ou passado?
+## Por que
+Calcular datas no futuro ou passado é uma tarefa comum na programação Swift. Pode ser necessário para criar um calendário, marcar prazos ou agendar eventos. Aprender como calcular datas pode ser útil em uma variedade de projetos.
 
-Há muitas razões pelas quais alguém pode querer calcular uma data no futuro ou passado em programação Swift. Isso pode ser útil para criar um calendário, agendar eventos ou até mesmo para fins de controle de estoque.
+## Como Fazer
+Para calcular datas em Swift, você pode usar a classe `Calendar` e seu método `date(byAdding:value:to:wrappingComponents)`. Vamos dar uma olhada em um exemplo simples que calcula a data de hoje mais um mês:
 
-## Como fazer:
+```
+import Foundation
 
-Para calcular uma data no futuro ou passado, primeiro precisamos da data atual e, em seguida, usaremos o método `Calendar.date(byAdding:value:to:)` para adicionar ou subtrair o valor desejado. Aqui está um exemplo de código:
+let hoje = Date() //cria uma data com o dia atual
+let umMes = Calendar.current.date(byAdding: .month, value: 1, to: hoje) //adiciona 1 mês à data atual
+```
 
-```Swift
-// Declare uma data atual
+No código acima, usamos a data atual, obtida com `Date()`, e o método `date(byAdding:value:to:wrappingComponents)` da classe `Calendar` para adicionar um mês à data atual. O primeiro argumento `month` indica que estamos adicionando um mês, o segundo argumento `1` indica a quantidade de meses que queremos adicionar e o terceiro argumento `hoje` é a data à qual queremos adicionar. O resultado é armazenado na constante `umMes` e pode ser utilizado em outras partes do código.
+
+Outro exemplo seria calcular a data de ontem a partir da data atual:
+
+```
+import Foundation
+
 let hoje = Date()
-
-// Adicione 5 dias à data atual
-let dataNoFuturo = Calendar.current.date(byAdding: .day, value: 5, to: hoje)
-
-// Subtraia 2 meses da data atual
-let dataPassada = Calendar.current.date(byAdding: .month, value: -2, to: hoje)
-
-// Imprimir o resultado
-print("Data no futuro: \(dataNoFuturo)")
-print("Data passada: \(dataPassada)")
+let ontem = Calendar.current.date(byAdding: .day, value: -1, to: hoje)
 ```
 
-A saída do código acima seria:
+Neste caso, usamos o valor `-1` para indicar que queremos subtrair um dia da data atual.
+
+## Mergulho Profundo
+Além de adicionar valores a uma data, também é possível obter informações específicas de uma data. Para isso, podemos usar o método `component(_:from:)` da classe `Calendar`. Por exemplo, se quisermos obter o dia da semana de uma determinada data, podemos fazer isso da seguinte forma:
 
 ```
-Data no futuro: Optional(2021-08-21 13:30:32 +0000)
-Data passada: Optional(2021-04-20 13:30:32 +0000)
+import Foundation
+
+let data = Date()
+let diaDaSemana = Calendar.current.component(.weekday, from: data)
 ```
 
-## Mergulho Profundo:
+Neste caso, usamos o método `component(_:from:)` e passamos o argumento `weekday` para obter o dia da semana. O resultado será um número correspondente ao dia da semana, por exemplo, 1 para domingo, 2 para segunda-feira, e assim por diante.
 
-A classe `Calendar` em Swift nos permite trabalhar com datas de uma maneira mais avançada. É possível especificar o tipo de calendário e localização para os cálculos, além de adicionar ou subtrair outros componentes, como horas, minutos e segundos.
-
-Também é importante destacar que o método `date(byAdding:value:to:)` retorna um valor opcional, o que significa que a data resultante pode ser nula se o cálculo não puder ser feito.
-
-## Veja também:
-
-- [Documentação da classe Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift Playgrounds: Construindo um Calendário](https://developer.apple.com/documentation/swift_playground_support/building_a_calendar_with_swift_playgrounds)
+## Veja Também
+- [Documentação do Swift sobre Manipulação de Datas](https://developer.apple.com/documentation/foundation/date)
+- [Tutorial da Apple sobre Datas e Horários em Swift](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)

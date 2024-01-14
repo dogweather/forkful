@@ -1,47 +1,57 @@
 ---
 title:    "Fish Shell: Generowanie losowych liczb"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-Kochasz wyzwania i eksperymentowanie z kodem komputerowym? Chcesz nauczyć się generować losowe liczby za pomocą powłoki Fish Shell? Ten blogowy wpis jest dla ciebie! W trzech prostych krokach pokażemy, jak wygenerować losowe liczby za pomocą powłoki Fish.
-
 ## Dlaczego
 
-Generowanie losowych liczb może być bardzo przydatne w wielu różnych scenariuszach, na przykład w grach losowych, testowaniu, a nawet w kryptografii. Dodatkowo, nauka programowania w powłoce Fish Shell może poszerzyć twoje umiejętności w zakresie automatyzacji i manipulowania danymi.
+Generowanie liczb losowych jest nieodłączną częścią wielu programów i skryptów. Może to być przydatne do testowania lub losowych wyborów. W tym artykule dowiesz się, jak wygenerować liczby losowe w języku skryptowym Fish Shell.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Generowanie losowych liczb w powłoce Fish Shell jest bardzo proste. Wystarczy użyć wbudowanej funkcji ```rand()```, która zwraca losową liczbę całkowitą od 0 do 32767. Możemy przetestować tę funkcję przy użyciu następującego kodu:
+Aby wygenerować liczbę losową w Fish Shell, użyjemy polecenia `math` wraz z funkcją `rand`.
 
-```Fish Shell
-set random_number (rand)
-echo $random_number
+```
+Fish Shell
+math rand -0.5 0.5
 ```
 
-Wywołanie funkcji ```rand()``` w zmiennej ```random_number``` i wyświetlenie jej wartości z użyciem polecenia ```echo```. Przy każdym uruchomieniu funkcji otrzymamy inną losową liczbę.
+Ta komenda spowoduje wygenerowanie liczby losowej z zakresu od -0.5 do 0.5. Możesz zmienić ten zakres według potrzeb, podając odpowiednie wartości jako argumenty funkcji `rand`.
 
-Możemy również ustawić zakres, w którym chcemy generować liczby. Na przykład, jeśli chcemy wygenerować liczby z zakresu 1-10, możemy użyć funkcji ```math``` i ```rand()``` w następujący sposób:
+Możesz również wygenerować więcej niż jedną liczbę losową, dodając opcję `-c` i podając liczbę żądanych wyników.
 
-```Fish Shell
-math (rand % 10 + 1)
+```
+Fish Shell
+math -c 5 rand 0 10
 ```
 
-Wartość zwrócona przez funkcję ```rand()``` jest dzielona przez 10, a następnie dodawana jest jedynka, aby uzyskać zakres od 1 do 10.
+Powyższa komenda wygeneruje 5 liczb losowych z przedziału od 0 do 10.
 
-## Deep Dive
+## Pogłębiona analiza
 
-Jeśli chcesz zgłębić swoją wiedzę o generowaniu losowych liczb w powłoce Fish Shell, istnieje wiele innych funkcji i opcji do wykorzystania. Możesz na przykład użyć funkcji ```math``` z argumentem ```ceil```, aby zaokrąglić wynik do najbliższej liczby całkowitej. Możesz również manipulować generowanymi liczbami, wykonując na nich różne operacje matematyczne.
+W języku Fish Shell do generowania liczb losowych możemy również użyć polecenia `seq`. Polecenie to przyjmuje trzy argumenty: wartość początkową, wartość końcową i krok. Następnie generuje sekwencję liczb pomiędzy wartością początkową a końcową z określonym krokiem.
 
-Ważne jest również zwrócenie uwagi na wydajność generowania liczb losowych. W przypadku dużych projektów, może być lepszym rozwiązaniem wykorzystanie dedykowanych bibliotek lub zewnętrznych narzędzi do generowania liczb losowych.
+```
+Fish Shell
+seq 1 2 10
+```
+
+Komenda ta wygeneruje sekwencję liczb od 1 do 10 z krokiem równym 2.
+
+Możesz również skorzystać z polecenia `head` do wyświetlenia określonej liczby wygenerowanych liczb.
+
+```
+Fish Shell
+seq 1 1 100 | head -n 10
+```
+
+Powyższa komenda wygeneruje sekwencję liczb od 1 do 100 i wyświetli tylko pierwsze 10 liczb.
 
 ## Zobacz również
 
-Jeśli jesteś zainteresowany nauką więcej o programowaniu w powłoce Fish Shell, poniżej znajdziesz kilka przydatnych linków:
-
-- Oficjalna dokumentacja powłoki Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- Kurs programowania w powłoce Fish Shell: [https://fishshell.com/tutorial.html](https://fishshell.com/tutorial.html)
-- Poradnik dla początkujących w powłoce Fish Shell: [https://devhints.io/fish](https://devhints.io/fish)
-
-Teraz jesteś gotowy, aby zacząć eksperymentowanie z generowaniem losowych liczb w powłoce Fish Shell! Jest to tylko wstęp do możliwości, jakie oferuje ta potężna powłoka. Zachęcamy do dalszej nauki i eksploracji jej funkcji. Nie zapomnij też podzielić się swoimi osiągnięciami z innymi czytelnikami w komentarzach poniżej!
+- Dokumentacja polecenia `math` w języku Fish Shell: https://fishshell.com/docs/current/cmds/math.html
+- Przykłady użycia funkcji `rand` w języku Fish Shell: https://fishshell.com/docs/current/cmds/math.html#math-rand
+- Dokumentacja polecenia `seq` w języku Fish Shell: https://fishshell.com/docs/current/cmds/seq.html

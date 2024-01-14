@@ -1,48 +1,47 @@
 ---
 title:    "C#: Extraction de sous-chaînes"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'extraction de sous-chaînes est une technique utile dans de nombreuses situations de programmation en C#. Elle permet de récupérer une partie spécifique d'une chaîne de caractères, ce qui peut être très pratique lors de la manipulation de données ou de la création de conditions ou de boucles.
+Si vous êtes un programmeur en herbe ou expérimenté, vous avez probablement entendu parler de l'extraction de sous-chaînes (substrings). Mais qu'est-ce que c'est et pourquoi voudriez-vous l'utiliser dans votre code ? Dans cet article, nous allons plonger dans le monde des sous-chaînes et explorer pourquoi elles sont si utiles.
 
-## Comment faire
+# Comment faire
 
-Pour extraire une sous-chaîne en utilisant C#, vous pouvez utiliser la méthode `Substring()` de la classe `String`. Cette méthode prend en paramètre l'indice de départ et la longueur de la sous-chaîne à extraire.
-
-Voici un exemple de code:
+Pour extraire une sous-chaîne en C#, nous pouvons utiliser la méthode Substring(). Voyons un exemple concret.
 
 ```C#
-string phrase = "Bonjour le monde";
-string sousChaine = phrase.Substring(8, 4);
-Console.WriteLine(sousChaine);
+string myString = "Bonjour tout le monde !";
+string substring = myString.Substring(8);
+
+Console.WriteLine(substring);
 ```
+Le code ci-dessus extraira une sous-chaîne de la chaîne d'origine, en commençant au 8ème caractère (notez que le premier caractère est compté comme 0). Dans cet exemple, la sortie sera "tout le monde !".
 
-Cet exemple va extraire la sous-chaîne "le" à partir de la position 8 (comptée à partir de zéro) dans la chaîne "Bonjour le monde". Le résultat affiché sera donc "le".
-
-Vous pouvez également utiliser la méthode `Substring()` pour extraire une sous-chaîne à partir de la fin de la chaîne. Pour cela, il suffit de spécifier un indice de départ négatif, qui sera compté à partir de la fin de la chaîne.
-
-Par exemple:
+Mais que se passe-t-il si nous voulons extraire une sous-chaîne à partir d'une position spécifique et d'une longueur donnée ? Nous pouvons le faire en utilisant une surcharge de la méthode Substring() qui accepte deux paramètres : l'index de départ et la longueur de la sous-chaîne.
 
 ```C#
-string phrase = "Salut tout le monde";
-string sousChaine = phrase.Substring(12);
-Console.WriteLine(sousChaine);
+string myString = "Bonjour tout le monde !";
+string substring = myString.Substring(0, 7);
+
+Console.WriteLine(substring);
 ```
+La sortie de ce code sera "Bonjour", car nous avons spécifié que la sous-chaîne doit commencer au premier caractère et avoir une longueur de 7 caractères.
 
-Le résultat affiché sera "monde" car l'indice 12 correspond à la position du "m" dans la chaîne.
+# Plongée en profondeur
 
-## Plongée en profondeur
+L'une des raisons pour lesquelles les sous-chaînes sont si utiles est qu'elles permettent de manipuler facilement une partie d'une chaîne de caractères sans avoir à réécrire la chaîne complète. En utilisant la méthode Substring(), nous pouvons extraire des morceaux de texte, les modifier et les réinsérer dans la chaîne d'origine.
 
-En plus de la méthode `Substring()`, il existe d'autres façons plus avancées d'extraire des sous-chaînes en utilisant C#. Par exemple, vous pouvez utiliser la classe `Regex` pour extraire des sous-chaînes en fonction d'un motif de correspondance.
+De plus, les sous-chaînes sont largement utilisées pour traiter les données entrées par l'utilisateur, en extrayant des informations spécifiques telles que des noms, des dates ou des numéros de téléphone.
 
-De plus, vous pouvez également combiner l'extraction de sous-chaînes avec d'autres méthodes et fonctions de manipulation de chaînes afin de réaliser des tâches plus complexes.
+# Voir aussi
 
-## Voir aussi
+- [Documentation Microsoft pour la méthode Substring() en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.substring?view=netcore-3.1)
+- [Exemple d'utilisation de la méthode Substring()](https://www.tutorialspoint.com/csharp/csharp_string_substring.htm)
+- [Utiliser les sous-chaînes pour manipuler du texte en C#](https://www.c-sharpcorner.com/article/11-ways-to-manipulate-the-c-sharp-string/)
 
-- [Documentation officielle de la méthode Substring en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.substring)
-- [Tutoriel sur l'utilisation des expressions régulières en C#](https://www.freecodecamp.org/news/an-easy-guide-to-understanding-regex-c524805a6988/) (en anglais)
-- [Autres méthodes de manipulation de chaînes en C#](https://www.tutorialsteacher.com/csharp/csharp-string-class)
+Merci d'avoir lu cet article sur l'utilisation des sous-chaînes en C#! Nous espérons que vous pourrez maintenant utiliser cette fonctionnalité utile dans vos propres projets de programmation. N'oubliez pas de consulter les liens ci-dessus pour en savoir plus sur les sous-chaînes et comment les utiliser dans votre code. À la prochaine !

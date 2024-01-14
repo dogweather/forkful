@@ -1,57 +1,44 @@
 ---
 title:    "Elixir: Trova la lunghezza di una stringa"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Trovare la lunghezza di una stringa è un'operazione comune nella programmazione. Sapere come farlo può semplificare il processo di lavoro e aiutare a creare codice più efficiente.
+Se sei un programmatore Elixir, allora probabilmente hai già familiarità con il concetto di stringhe. Ma perché dovresti interessarti a trovare la lunghezza di una stringa? In realtà, questa è un'operazione comune nella programmazione, soprattutto quando si lavora con dati e input dell'utente.
 
 ## Come fare
 
-Per iniziare, l'utilizzo della funzione `String.length()` è il modo più semplice per ottenere la lunghezza di una stringa in Elixir. Questa funzione accetta una stringa come argomento e restituisce la sua lunghezza.
+Per trovare la lunghezza di una stringa in Elixir, possiamo utilizzare la funzione `String.length/1`. Prende un argomento, ovvero la stringa di cui vogliamo sapere la lunghezza, e restituisce il numero di caratteri presenti in quella stringa. Ecco un esempio di codice:
 
 ```Elixir
-stringa = "Ciao mondo"
-String.length(stringa)
+stringa = "Ciao mondo!"
+lunghezza = String.length(stringa)
+IO.puts("La lunghezza della stringa è #{lunghezza}") 
 ```
 
-L'output sarà `11`, poiché ci sono 11 caratteri nella stringa, inclusi lo spazio e la lettera "ò".
-
-Per rendere il processo più dinamico, è possibile creare una funzione personalizzata che accetta una stringa e restituisce la sua lunghezza.
-
-```Elixir
-def lunghezza_stringa(stringa) do
-  String.length(stringa)
-end
-
-lunghezza_stringa("Questo è un esempio di stringa") # 28
-```
-
-È importante notare che, poiché in Elixir le stringhe sono immutabili, la funzione `String.length()` non modificare la stringa originale.
+In questo caso, `lunghezza` sarà uguale a 12 poiché la stringa contiene 12 caratteri. L'output del codice sarà "La lunghezza della stringa è 12".
 
 ## Approfondimento
 
-In Elixir, le stringhe sono codificate in UTF-8, che utilizza più byte per rappresentare caratteri non ASCII rispetto all'encoding ASCII. Ciò significa che la funzione `String.length()` restituirà la lunghezza in byte della stringa e non il numero di caratteri visibili.
+Ora che sappiamo come trovare la lunghezza di una stringa, potresti chiederti come funziona esattamente questa operazione. In realtà, Elixir utilizza i byte per rappresentare una stringa, quindi la lunghezza della stringa sarà determinata dal numero di byte presenti al suo interno. Tuttavia, anche se otteniamo la lunghezza basandoci sui byte, Elixir ha la capacità di gestire anche caratteri multi-byte come quelli utilizzati nelle lingue asiatiche.
 
-Per ottenere il numero di caratteri visibili in una stringa, è possibile utilizzare la funzione `String.graphemes()` che restituisce una lista di caratteri.
+Un altro concetto importante da tenere a mente è che la funzione `String.length/1` non tiene conto dei caratteri speciali come l'apostrofo o gli accenti. Ad esempio, se abbiamo una stringa come "l'amore è la chiave per la felicità", la lunghezza sarà ancora di 26 caratteri, nonostante la presenza dell'apostrofo. Questo può essere importante da considerare quando si lavora con input dell'utente e si vuole gestire correttamente la lunghezza dei dati.
 
-```Elixir
-stringa = "Olà"
-String.length(stringa) # 5
-String.graphemes(stringa) # ["O", "l", "à"]
-```
-
-Se si vuole ottenere il numero di byte effettivo della stringa, è possibile utilizzare la funzione `byte_size()`.
+Inoltre, se abbiamo bisogno di trovare la lunghezza di una lista di stringhe, possiamo utilizzare la funzione `Enum.map/2` per applicare la funzione `String.length/1` a ogni elemento della lista. Ad esempio:
 
 ```Elixir
-stringa = "Ciao 👋"
-byte_size(stringa) # 7
+lista = ["Ciao", "Mondo", "Elixir"]
+lunghezza_lista = Enum.map(lista, fn x -> String.length(x) end)
+IO.inspect(lunghzza_lista) 
 ```
+
+L'output sarà una lista contente le lunghezze di ogni stringa presente nella lista originale.
 
 ## Vedi anche
 
-- [Elixir String Module]("https://hexdocs.pm/elixir/String.html")
-- [UTF-8 Encoding]("https://en.wikipedia.org/wiki/UTF-8")
+- [Documentazione di Elixir sulla funzione String.length/1](https://hexdocs.pm/elixir/String.html#length/1)
+- [Tutorial su Elixir su come trovare la lunghezza di una stringa](https://elixir-lang.org/getting-started/strings-sigils-and-char-lists.html#the-length-function)

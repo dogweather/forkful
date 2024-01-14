@@ -1,32 +1,40 @@
 ---
 title:    "Kotlin: डिबग आउटपुट प्रिंट करना"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-क्या आपने कभी अपने कोड में सही तरीके से काम न करने की समस्या से जूझा है? क्या आपको अपने कोड में गलतियां दिखने का सही तरीका नहीं मिल रहा है? यदि हाँ, तो आपको debugging का सही तरीका सीखने की आवश्यकता है। और कोटलिन में debugging करने का सबसे अच्छा तरीका है debug output प्रिंट करना।
+कोटलिन में डिबग आउटपुट प्रिंट करने का उद्देश्य त्रुटियों को ढूंढने और उन्हें ठीक करने में मदद करता है।
 
 ## कैसे करें
-
-अपने कोड में सही तरीके से debugging output प्रिंट करने के लिए, आपको बस `println()` मेथड का उपयोग करना होगा। इससे आपके कोड की चालाकी, वेरिएबल्स की मान, और संभावित गलतियां आसानी से पता चल सकेंगी। नीचे दिए गए कोटलिन कोड स्निपेट में आप debugging के लिए कैसे `println()` का इस्तेमाल कर सकते हैं।
-
-```Kotlin
-val name = "John"
-
-println("Name: $name") // Output: Name: John
+```kotlin
+fun main() {
+    val name = "John"
+    println("Hello $name!") // Output: Hello John!
+}
 ```
 
-जैसा कि आप देख सकते हैं, आप `println()` के भीतर वेरिएबल को `$` से आवृत करके अपने debugging मेसेज में सीधे इस्तेमाल कर सकते हैं। इसके अलावा, आप `println()` का उपयोग करके अपने कोड के अंत में किसी भी मान को प्रिंट कर सकते हैं, जैसे:
-
-```Kotlin
-println(2+2) // Output: 4
+```kotlin
+fun main() {
+    val num1 = 10
+    val num2 = 5
+    println("$num1 + $num2 = ${num1 + num2}") // Output: 10 + 5 = 15
+}
 ```
 
-## गहरा जाँच
+```kotlin
+fun main() {
+    val list = listOf("apple", "banana", "orange")
+    println("Fruits: $list") // Output: Fruits: [apple, banana, orange]
+}
+```
 
-डीबगिंग आपके कोड में गलतियों को पता करने के लिए बहुत अहम है। जब आप अपने कोड में debugging output प्रिंट करेंगे, तो आपको आपके कोड में स्पष्ट रूप से बग्स और समस्याएं दिखाई देंगी। आपको debugging output को हटाने की आवश्यकता नहीं होगी, आप बस बग्स को ठीक करके अपने कोड को सुधार सकते हैं।
+## गहराई में जाएं
+डिबग आउटपुट के लिए ```println()``` फंक्शन का उपयोग किया जाता है। यह फंक्शन मैसेज के साथ वेरिएबल या एक्सप्रेशन को लेकर उसे प्रिंट करता है। इससे हम अपनी कोड में ट्रैक कर सकते हैं कि कैसे अपने प्रोग्राम में कोई गलती हो सकती है और उसे ठीक कैसे कर सकते हैं।
 
-यदि आपक
+## देखें भी
+[Kotlin एक पूर्वावलोकन](https://kotlinlang.org/docs/reference/) \
+[Kotlin फंक्शन](https://kotlinlang.org/docs/reference/functions.html)

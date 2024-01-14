@@ -1,47 +1,35 @@
 ---
-title:    "Elm: 一時ファイルを作成する"
+title:    "Elm: 一時ファイルの作成"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-
-一時ファイルを作成する理由はさまざまですが、一般的な理由としては、一時的にデータを保存し、後で取り出す必要がある場合に便利です。そのため、Elmプログラマーであれば、一時ファイルの作成方法を知っておくことが重要です。
+## なぜ
+一時ファイルを作成することに取り組む理由はたくさんあります。たとえば、一時的なデータの保存やプログラムの実行中に必要な一時ファイルを作成するためです。
 
 ## 作り方
+一時ファイルを作成するには、Elm の `File` モジュールを使用します。まず、`File.System` モジュールから `open` 関数を使用して、一時ファイルを作成します。次に、作成した一時ファイルに対して、データを書き込んだり読み出したりすることができます。例えば、以下のように書くことができます。
 
-一時ファイルを作成するには、Elmの「File」モジュールを使用します。まずはファイルの名前を決め、それを「File.Name」関数で作成します。例えば、ファイル名を"temp_file"とした場合、以下のようにコードを記述します。
+```elm
+import File.System exposing (..)
 
-```
-Elm.File.Name "temp_file"
-```
-
-次に、作成したファイル名を使用して「File.Temp」関数を呼び出します。これにより、一時ファイルが作成されます。
-
-```
-Elm.File.Temp (Elm.File.Name "temp_file")
-```
-
-最後に、作成した一時ファイルを使用して、データを保存し、後で取り出すことができます。例えば、作成した一時ファイルを使用して、文字列"data"を保存する場合は以下のようにコードを記述します。
-
-```
-new String (Elm.File.Temp (Elm.File.Name "temp_file")) "data"
+main =
+  open "temp.txt" Write
+    `andThen` \handle ->
+        write handle "This is temporary data"
+          `andThen` \_ ->
+              read handle
+                  `andThen` \data ->
+                      Html.text data
 ```
 
-これで一時ファイルの作成が完了しました。
+以上のコードでは、`open` 関数を使用して `temp.txt` という名前の一時ファイルを作成し、`write` 関数でデータを書き込み、`read` 関数でデータを読み出しています。
 
 ## 深堀り
+一時ファイルを作成する際には、いくつかの注意点があります。まず、一時ファイルはプログラムが終了した時点で自動的に削除されるので、パーマネントなデータとして保存することはできません。また、一時ファイルを作成する際には、OS のファイルシステムにアクセスするため、セキュリティの観点から注意が必要です。
 
-一時ファイルは、一時的にデータを保存するだけではなく、バックアップファイルを作成する場合や、データを暗号化する際にも使用することができます。また、一時ファイルは、コンピュータープログラムの実行時に必要な一時的なファイルも作成します。そのため、Elmのようなプログラミング言語を使用する場合、一時ファイル作成の方法を知っておくことは重要です。
-
-## 詳しくは
-
-- [Elmの公式ドキュメント：Files](https://guide.elm-lang.org/architecture/effects/file.html)
-- [Elmドキュメンテーション：Fileモジュール](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elmプレイグラウンドで一時ファイルを作成する方法](https://ellie-app.com/9qJ4cs7bRVva1)
-
-## 関連リンク
-
-- [Elmプログラミングの基本：はじめの一歩](https://qiita.com/sakaiTo/items/f7294b6e983b246398dc)
-- [Elm：高速なフロントエンド開発を実現する関数型言語](https://medium.com/@dave_atx/model-view-update-in-elm-a4326ee3a2d3)
+## また見る
+- [Elm File モジュールのドキュメント](https://package.elm-lang.org/packages/elm/file/latest/)
+- [一時ファイルの作り方 (英語)](https://www.geeksforgeeks.org/creating-a-temporary-file-in-python/)

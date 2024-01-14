@@ -1,64 +1,40 @@
 ---
 title:    "Javascript: Encontrando la longitud de una cadena"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En programación, es importante poder manipular y trabajar con cadenas de caracteres. En ocasiones, necesitamos saber la cantidad de caracteres que contiene una cadena en particular. En este artículo, aprenderemos cómo encontrar la longitud de una cadena de manera eficiente utilizando Javascript.
+En la programación, es común encontrarse con la necesidad de conocer la longitud de una cadena de texto. Ya sea para validar la entrada del usuario o para realizar operaciones específicas, saber la cantidad de caracteres en una cadena puede ser muy útil.
 
 ## Cómo hacerlo
 
-En Javascript, hay varias formas de encontrar la longitud de una cadena. Aquí te mostramos dos métodos comunes:
-
-### Método 1: Utilizando la propiedad `length`
-
-Usando esta propiedad, podemos obtener la longitud de una cadena de caracteres simplemente accediendo a ella y usando el operador de punto:
+Hay diferentes formas de encontrar la longitud de una cadena en JavaScript. Una de las formas más sencillas es utilizando el método `length`. Este método se puede aplicar a cualquier cadena de texto y devuelve el número de caracteres que contiene. Veamos un ejemplo:
 
 ```Javascript
-let cadena = "¡Hola Mundo!";
-let longitud = cadena.length;
-console.log(longitud); // Devuelve 12
+let miCadena = "¡Hola, mundo!";
+console.log(miCadena.length); // Output: 13
 ```
 
-El valor devuelto será un número que representa la cantidad de caracteres que contiene la cadena.
-
-### Método 2: Utilizando el método `slice`
-
-Otra forma de encontrar la longitud de una cadena es utilizar el método `slice`, que nos permite extraer una parte de la cadena especificando el inicio y fin del segmento. Si especificamos como fin la longitud de la cadena, obtendremos la cantidad de caracteres:
+También se puede utilizar la propiedad `length` de un objeto String. Por ejemplo:
 
 ```Javascript
-let cadena = "¡Hola Mundo!";
-let longitud = cadena.slice(0, cadena.length);
-console.log(longitud); // Devuelve "¡Hola Mundo!"
+let miOtraCadena = new String("¡Hola!");
+console.log(miOtraCadena.length); // Output: 5
 ```
 
-## Inmersión profunda
+Es importante notar que tanto el método `length` como la propiedad `length` cuentan los espacios en blanco como caracteres, por lo que no es necesario realizar ningún tipo de manipulación adicional para obtener la longitud correcta de una cadena.
 
-Es importante notar que cuando utilizamos la propiedad `length`, no es necesario incluir los paréntesis, ya que se trata de una propiedad, no de un método. Además, la propiedad `length` nos devuelve la cantidad de caracteres en la cadena, incluyendo espacios en blanco y otros caracteres especiales.
+## Profundizando
 
-Si queremos excluir los espacios en blanco, podemos usar el método `trim` para eliminarlos y luego obtener la longitud de la cadena resultante:
+Al utilizar el método `length` o la propiedad `length`, se está accediendo al valor de una propiedad interna del objeto String. Esta propiedad se llama "length" y contiene el número de caracteres de la cadena. Es importante saber que esta propiedad es de solo lectura, lo que significa que no se puede asignar un valor a ella.
 
-```Javascript
-let cadena = "  ¡Hola Mundo!  ";
-let longitud = cadena.trim().length;
-console.log(longitud); // Devuelve 11
-```
-
-También podemos utilizar el método `split` para dividir la cadena en un array y luego obtener la longitud del array resultante:
-
-```Javascript
-let cadena = "¡Hola Mundo!";
-let array = cadena.split("");
-let longitud = array.length;
-console.log(longitud); // Devuelve 12
-```
+Por otro lado, es importante tener en cuenta que existen diferencias entre caracteres y bytes. Mientras que en la mayoría de los casos un carácter se corresponde con un byte, hay ciertas excepciones en las que un carácter puede ocupar más de un byte, lo que afectará el valor de la propiedad `length` en estas situaciones.
 
 ## Ver también
 
-- [Propiedad `length` en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length)
-- [Método `slice` en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice)
-- [Método `trim` en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/trim)
-- [Método `split` en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/split)
+- [Documentación de String.length en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Método length en W3Schools](https://www.w3schools.com/jsref/jsref_length_string.asp)

@@ -1,46 +1,44 @@
 ---
 title:    "Javascript recipe: Generating random numbers"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Random numbers play a crucial role in various programming tasks such as simulations, games, cryptography, and more. It adds an element of unpredictability and removes patterns, making the program more realistic and secure. Learning how to generate random numbers in Javascript can enhance your programming skills and add a new dimension to your projects.
+Have you ever wondered how games or applications generate random numbers? Or perhaps you want to add some randomness to your own code? Whatever your reason may be, learning how to generate random numbers in Javascript can be a useful skill to have in your programming toolbox.
 
 ## How To
 
-Generating random numbers in Javascript is a simple process. In fact, there are multiple ways to achieve it. Let's explore two different methods using built-in functions in Javascript.
+Generating random numbers in Javascript is surprisingly easy. All you need is the Math object's `random` method. This method will return a random number between 0 (inclusive) and 1 (exclusive). 
 
-#### Method 1 - Math.random()
+Let's see an example of how we can use this method:
 
-The Math.random() function returns a random floating-point number between 0 and 1 (excluding 1). We can use this function to generate a random integer within a range by multiplying it with the maximum value and rounding it down using Math.floor().
+```Javascript
+// Generating a random number between 0 and 10 (inclusive)
+let randomNumber = Math.random() * 10;
 
-```javascript
-// Generate a random number between 1 and 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber); //Output: 7
+// Rounding the number to the nearest integer
+randomNumber = Math.round(randomNumber);
+
+console.log(randomNumber); // Outputs a random integer between 0 and 10
 ```
 
-#### Method 2 - Using arrays and Math.floor()
+In this example, we used the `Math.round` method to round the random number to the nearest integer, giving us a more even distribution of numbers. Additionally, we multiplied the random number by 10 to get a range of 0-10 instead of 0-1.
 
-We can also use arrays to generate a random number within a specific range. First, we create an array with all the possible values and then use the Math.floor() function to round down a random index number.
-
-```javascript
-// Generate a random number between 1 and 10
-let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randomNumber); //Output: 4
-```
+You can also use the `Math.floor` method to round the random number down to the nearest integer, or the `Math.ceil` method to round it up. Experiment with different combinations to see which one works best for your code.
 
 ## Deep Dive
 
-Random number generation is not as straightforward as it seems. The Math.random() function, although widely used, is not completely random. It is based on an algorithm that generates a predictable sequence of numbers. There are other techniques like Pseudorandom number generators (PRNGs) and Cryptographically Secure Pseudorandom Number Generators (CSPRNGs) that are used to generate more unpredictable and secure random numbers.
+While the `Math.random` method is suitable for most cases, it is not truly random. It is known as a pseudo-random number generator, meaning that it is based on an algorithm that produces a sequence of numbers that appear to be random. 
 
-PRNGs are algorithms that use a seed value to generate a sequence of numbers that look random but are actually deterministic. This means that if we use the same seed value, we will get the same sequence of numbers. On the other hand, CSPRNGs add an extra layer of security by using a combination of a seed value and external inputs such as user mouse movements or keyboard strokes.
+If you require a more secure and unpredictable source of randomness, you can use the built-in `crypto` module in Node.js. This module provides access to the operating system's cryptographically strong random function, which is better suited for sensitive applications such as password generation.
+
+Another important thing to note is that the `Math.random` method should not be used for anything related to security or encryption, as it is not truly random and can be easily predicted.
 
 ## See Also
 
-- [Math.random() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Pseudorandom number generation - Wikipedia](https://en.wikipedia.org/wiki/Pseudorandom_number_generation)
-- [Cryptographically secure pseudorandom number generator - Wikipedia](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)
+- [MDN Web Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Node.js API: Crypto module](https://nodejs.org/api/crypto.html)

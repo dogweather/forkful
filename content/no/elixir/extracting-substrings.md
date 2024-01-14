@@ -1,59 +1,51 @@
 ---
-title:    "Elixir: Å hente delstrenger"
+title:    "Elixir: Uttrekking av delstrenger"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor?
 
-Elixir er et kraftig programmeringsspråk som gjør det enkelt å manipulere tekststrenger. En vanlig oppgave som ofte dukker opp er å trekke ut en del av en tekststreng, kalt en substrings.
+Du lurer kanskje på hvorfor du bør engasjere deg i å ekstrahere substringer i Elixir programmering. Vel, substringer er en viktig del av mange programmer og er svært nyttige når man ønsker å manipulere tekst. Ved å lære hvordan man ekstraherer substringer, kan du gjøre din kode mer effektiv og funksjonell.
 
-## Hvordan
+## Slik gjør du det:
 
-Elixir tilbyr forskjellige metoder for å ekstrahere substrings. En måte å gjøre det på er å bruke `String.slice/3`-funksjonen. Denne funksjonen tar inn en tekststreng, en startindeks og en lengde som argumenter. Her er et enkelt eksempel:
-
-```Elixir
-name = "Jeg elsker Elixir"
-substring = String.slice(name, 3, 6)
-IO.puts(substring)
-```
-
-Dette vil skrive ut "elsker" til konsollen. Vi gir `String.slice/3` funksjonen en startindeks på 3, og en lengde på 6, som betyr at vi vil ha en substring som starter på indeks 3 og inneholder 6 tegn.
-
-Vi kan også bruke `String.slice/2`-funksjonen for å ekstrahere en substring basert på en gitt indeks og frem til slutten av tekststrengen:
+For å ekstrahere substringer i Elixir, kan du bruke funksjonen `slice/3`. Denne funksjonen tar inn en liste, en startindeks og en slutindeks, og returnerer en del av listen som tilsvarer substrider fra og med startindeksen til, men ikke inkludert, slutindeksen.
 
 ```Elixir
-name = "Jeg elsker Elixir"
-substring = String.slice(name, 8)
-IO.puts(substring)
+my_list = [1, 2, 3, 4, 5]
+slice(my_list, 1, 3) # Output: [2, 3]
 ```
 
-Dette vil skrive ut "Elixir" siden vi gir funksjonen en startindeks på 8, som tilsvarer "E" i "Elixir".
-
-## Dypdykk
-
-Det finnes også andre metoder for å ekstrahere substrings i Elixir. `String.split/3` funksjonen kan brukes når vi vil dele en tekststreng basert på et gitt tegn, og returnere en liste med substrings. Her er et eksempel:
+Du kan også bruke `slice/2` for å ekstrahere en del av en liste fra en bestemt indeks til slutten av listen.
 
 ```Elixir
-name = "Jeg elsker Elixir"
-substring_list = String.split(name, " ")
-IO.inspect(substring_list)
+slice(my_list, 3) # Output: [4, 5]
 ```
 
-Dette vil returnere en liste med substrings basert på mellomrommet mellom hvert ord i den opprinnelige tekststrengen. Output vil være `["Jeg", "elsker", "Elixir"]`.
-
-Et annet nyttig verktøy for å ekstrahere substrings er `String.contains?/2`-funksjonen. Denne kan brukes til å sjekke om en tekststreng inneholder en bestemt substring. Her er et eksempel:
+Hvis du trenger å ekstrahere en del av en streng i Elixir, kan du bruke `String.slice/3` eller `String.slice/2` på samme måte som med lister.
 
 ```Elixir
-name = "Jeg elsker Elixir"
-IO.puts(String.contains?(name, "Elixir"))
+my_string = "Elixir programmering er gøy!"
+String.slice(my_string, 7, 19) # Output: "programmering"
+String.slice(my_string, 13) # Output: "gøy!"
 ```
 
-Dette vil skrive ut `true` siden tekststrengen inneholder substringen "Elixir".
+## Dypdykk:
 
-# Se også
+Det er viktig å merke seg at Elixir bruker null-indeks som standard for lister og strenger, noe som betyr at det første elementet har indeks 0. Dette betyr at hvis du vil ekstrahere første element i en liste eller streng, må du bruke indeks 0. Det er også viktig å huske på at indekser er inkludert i ekstraksjonen, men ikke sluttpunktet.
 
-- [Elixir docs: String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir School: String module](https://elixirschool.com/en/lessons/basics/string/)
-- [Elixirforum: Substring extraction](https://elixirforum.com/t/substring-exact-matching-from-strings/13302)
+Videre kan du også bruke negative indekser for å ekstrahere substringer fra slutten av listen eller strengen. For eksempel, hvis du bruker `-1` som slutindeks, vil substriden bli ekstrahert fra starten av listen eller strengen til og med det nest siste elementet. 
+
+```Elixir
+String.slice(my_string, 0, -3) # Output: "Elixir programmering er"
+```
+
+## Se også:
+
+- [Elixir Dokumentasjon for `slice/3`](https://hexdocs.pm/elixir/List.html#slice/3)
+- [Elixir Dokumentasjon for `slice/2`](https://hexdocs.pm/elixir/List.html#slice/2)
+- [Elixir Dokumentasjon for `String.slice/3`](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Elixir Dokumentasjon for `String.slice/2`](https://hexdocs.pm/elixir/String.html#slice/2)

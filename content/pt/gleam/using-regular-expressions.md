@@ -1,48 +1,52 @@
 ---
 title:    "Gleam: Utilizando expressões regulares"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em Programação?
+# Porque utilizar expressões regulares em programação
 
-Expressões Regulares, também conhecidas como Regex, são sequências de caracteres que permitem pesquisar e validar padrões em strings de texto. Usá-las pode simplificar tarefas como encontrar e substituir palavras ou extrair informações específicas de um texto. Além disso, aprender a escrever e utilizar expressões regulares pode melhorar sua eficiência e tornar suas tarefas de programação mais flexíveis.
+Se você está procurando uma maneira eficiente e poderosa de manipular textos e padrões dentro de seus programas, expressões regulares são a resposta. Essas sequências de caracteres permitem que você encontre e substitua padrões específicos em uma string, economizando tempo e esforço no processamento de grandes quantidades de dados.
 
-## Como Utilizar Expressões Regulares em Gleam
+# Como usar expressões regulares em Gleam
 
-A linguagem de programação Gleam possui ferramentas poderosas para lidar com expressões regulares de forma eficiente. Para usar Regex em Gleam, primeiro devemos importar o módulo `Regex` para nosso código.
+Em Gleam, você pode usar expressões regulares por meio da biblioteca `regex`. Primeiro, importe a biblioteca em seu arquivo:
 
-```Gleam
-import Regex
-
-// código de exemplo para criar uma expressão regular e usá-la para encontrar um padrão em uma string
-
-let regex = Regex.compile("^Olá, (\\w+)") // cria uma expressão regular que procura pela palavra Olá seguida de um nome
-
-case regex.capture("Olá, Maria") { // verifica se a string contém o padrão da expressão regular
-  Some(match) -> //se o padrão for encontrado
-    match.1 //retorna o nome capturado pelo grupo 1 (Maria)
-  None -> "Não foi possível encontrar o nome" //se o padrão não for encontrado
-}
+```
+import regex
 ```
 
-Este é um exemplo simples de uso de expressões regulares em Gleam, mas há muitas outras funções e recursos disponíveis no módulo Regex que vale a pena explorar.
+Em seguida, você pode usar a função `Regex.match` para verificar se um padrão específico é encontrado em uma string. O resultado será um `Result` que pode ser `Ok` se for encontrado ou `Err` se não for encontrado. Aqui está um exemplo:
 
-## Aprofundando-se em Expressões Regulares
+```
+let result = Regex.match(Integer.to_string(2020), "\\d{4}")  // retorna Ok
+```
 
-Embora possam parecer intimidantes no início, expressões regulares são uma ferramenta poderosa para lidar com padrões em strings de texto. Se você deseja dominar efetivamente o uso de expressões regulares em sua programação, aqui estão algumas dicas para aprofundar seu conhecimento:
+Você também pode usar a função `Regex.replace` para substituir um padrão em uma string por outro valor. Por exemplo, para mudar todos os números em uma string para "x", você poderia usar:
 
-- Comece com o básico: Familiarize-se com os elementos básicos das expressões regulares, como metacaracteres, classes de caracteres e quantificadores. Essas construções são a base para criar padrões.
+```
+let result = Regex.replace("abc123def456", "\\d", "x")  // retorna "abcxxxdefxxx"
+```
 
-- Use expressões regulares online: Existem muitas ferramentas online que permitem testar e experimentar diferentes expressões regulares em tempo real, o que pode ajudá-lo a entender melhor como elas funcionam.
+# Mergulho profundo em expressões regulares
 
-- Pratique: A melhor maneira de se tornar confortável com expressões regulares é praticar, então tente resolver problemas de programação que exigem seu uso e explore os diferentes recursos da linguagem.
+As expressões regulares têm uma sintaxe própria, que pode parecer intimidante no início. No entanto, vale a pena aprender alguns conceitos básicos para aproveitar ao máximo essa ferramenta poderosa. Aqui estão alguns exemplos de padrões comuns que você pode usar:
 
-## Veja Também
+- `.`: representa qualquer caractere
+- `*`: representa zero ou mais ocorrências do caractere anterior
+- `+`: representa uma ou mais ocorrências do caractere anterior
+- `\d`: representa um dígito
+- `\w`: representa um caractere alfanumérico
+- `\\`: representa uma barra invertida literal
 
-- [Documentação do Módulo Regex em Gleam](https://gleam.run/modules/regex.html)
-- [Guia Interativo para Expressões Regulares (em Inglês)](https://regexone.com/)
-- [Testador de Expressões Regulares Online (em Português)](https://www.regexpal.com/)
+Você também pode usar colchetes (`[]`) para representar um conjunto de caracteres. Por exemplo, `[A-Z]` significa qualquer letra maiúscula. E você pode usar o operador `|` para combinar diferentes padrões. Por exemplo, `(foo|bar)` significa "foo" ou "bar".
 
-Agora que você tem uma introdução básica às expressões regulares em Gleam, aproveite para explorar e experimentar com esta ferramenta poderosa em suas tarefas de programação. Com prática e dedicação, você pode se tornar um mestre em Regex em pouco tempo!
+Para saber mais sobre como criar suas próprias expressões regulares e usar suas funções em Gleam, recomenda-se ler a documentação oficial da biblioteca `regex` e praticar com diferentes exemplos.
+
+## Veja também
+
+- [Documentação Gleam de expressões regulares](https://gleam.run/packages/regex/)
+- [Tutorial de Expressões Regulares da MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Livro online "Regular Expressions Cookbook"](https://www.regular-expressions.info/cookbook.html)

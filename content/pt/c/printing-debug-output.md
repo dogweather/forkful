@@ -1,52 +1,41 @@
 ---
 title:    "C: Imprimindo saída de depuração"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração é importante
+## Por que imprimir saída de debug em C?
 
-Quando estamos desenvolvendo um programa em C, é comum nos depararmos com erros e bugs que tornam o processo de depuração indispensável. Nesses casos, a impressão de saída de depuração pode ser uma ferramenta valiosa para nos ajudar a entender o que está acontecendo em nosso código e identificar possíveis erros. É uma forma de visualizar e analisar informações importantes em tempo real, o que facilita bastante o processo de resolução de problemas.
+Depurar um programa pode ser uma tarefa desafiadora, especialmente quando se lida com erros desconhecidos ou comportamentos inesperados. Nesses casos, imprimir saída de debug pode ser uma ferramenta valiosa para entender o fluxo do programa e identificar onde está o problema. Isso é útil tanto para desenvolvedores iniciantes quanto para profissionais experientes que desejam economizar tempo durante o processo de depuração.
 
-## Como imprimir saída de depuração em C
+## Como fazer isso em C?
 
-A forma mais comum de imprimir saída de depuração em C é usando a função `printf()` da biblioteca padrão `stdio.h`. Essa função permite que você imprima qualquer tipo de dados, como strings, números, caracteres, etc. Veja um exemplo de código:
+Para imprimir saída de debug em C, podemos utilizar a função `printf` da biblioteca padrão `stdio.h`. Essa função aceita um ou mais parâmetros entre as aspas e os imprime na tela. Dessa forma, podemos inserir mensagens explicativas ou até mesmo variáveis durante a execução do programa.
 
-```
+```C
 #include <stdio.h>
 
 int main() {
-    int numero = 10;
-    char caractere = 'A';
-    float decimal = 3.14;
-
-    printf("O valor de numero é %d\n", numero);
-    printf("O caractere é %c\n", caractere);
-    printf("O valor de decimal é %.2f\n", decimal);
-
-    return 0;
+  int x = 5;
+  printf("O valor de x é %d", x);
+  return 0;
 }
 ```
 
-A saída desse código seria:
+Nesse exemplo, a mensagem "O valor de x é 5" será impressa na tela durante a execução do programa.
 
-```
-O valor de numero é 10
-O caractere é A
-O valor de decimal é 3.14
-```
+## Aprofundando-se em saída de debug
 
-Além dessa forma, também é possível imprimir saída de depuração usando diretamente a função `puts()`, que imprime uma string sem a necessidade de formatação, ou a função `putchar()`, que imprime um único caractere.
+Além da função `printf`, existem outras maneiras de imprimir saída de debug em C, como a função `puts` e `write` da mesma biblioteca. Além disso, também é possível utilizar diretivas de pré-processador, como `#define`, para criar macros que facilitam a impressão de mensagens de debug.
 
-## Aprofundando-se na impressão de saída de depuração
+Outra técnica útil é utilizar a função `fprintf` para imprimir em um arquivo ao invés de na tela. Isso pode ser útil quando se deseja fazer debug em um programa que está sendo executado em um ambiente sem terminal, como em sistemas embarcados.
 
-A função `printf()` pode parecer simples, mas ela possui diversos caracteres de formatação que podem ser usados para imprimir dados de diferentes tipos e formatar a saída de acordo com a sua necessidade. Por exemplo, você pode especificar a quantidade de casas decimais que serão impressas em um número decimal, ou formatar uma data em um determinado padrão. Além disso, você pode usar a função `fprintf()` para imprimir saída de depuração diretamente em um arquivo, ao invés de imprimir na tela.
-
-É importante lembrar que o uso excessivo de impressão de saída de depuração pode tornar o seu código poluído e menos eficiente. Por isso, é importante usá-la com cautela e remover esses trechos de código quando não forem mais necessários.
+No entanto, é importante lembrar de remover todas as mensagens de debug antes de finalizar o programa, já que elas podem impactar na performance e ocupar espaço desnecessariamente.
 
 ## Veja também
 
-- [Documentação da função `printf()` em C](https://www.cplusplus.com/reference/cstdio/printf/)
-- [Tutorial sobre impressão de saída de depuração em C](https://www.geeksforgeeks.org/c-programming-introduction-cs50-debug-output/)
-- [Explicação sobre formatação de saída de depuração em C](https://codeforwin.org/2015/09/what-is-debug-output-and-how-to-print-debug-output-in-c.html)
+- [Tutorial de depuração em C](https://www.freecodecamp.org/news/printing-debug-output-in-c/)
+- [Documentação da função printf](https://www.cplusplus.com/reference/cstdio/printf/)
+- [Como utilizar macros para debug em C](https://www.geeksforgeeks.org/how-to-describe-a-macro-in-cgb-run-time-debug/)

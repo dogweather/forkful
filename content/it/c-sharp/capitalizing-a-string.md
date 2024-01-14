@@ -1,53 +1,45 @@
 ---
-title:    "C#: Capitalizzazione di una stringa"
+title:    "C#: Maiuscolare una stringa"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché capitalizzare una stringa in C#
-
-La capitalizzazione di una stringa è un'operazione comune nella programmazione e consiste nel rendere maiuscola la prima lettera di una parola o di una frase. Questo può essere utile per presentare in modo più formale o leggibile i dati all'utente o per confrontare stringhe in modo non case-sensitive.
+## Perché
+Perché dovremmo preoccuparci di capitalizzare una stringa nel nostro codice C#? La risposta è semplice: utilizziamo spesso stringhe nei nostri programmi e c'è la possibilità che queste debbano essere visualizzate in modo leggibile per gli utenti. La capitalizzazione è un modo per rendere più ordinata ed esteticamente gradevole la visualizzazione delle stringhe.
 
 ## Come fare
+Per capitalizzare una stringa in C#, abbiamo diverse opzioni disponibili. Possiamo utilizzare il metodo `ToUpper()` per convertire tutti i caratteri in maiuscolo o il metodo `ToLower()` per convertirli tutti in minuscolo.
 
-Ci sono diverse modalità per capitalizzare una stringa in C#. Una delle più semplici è utilizzare il metodo `ToUpper()` che trasforma tutti i caratteri in maiuscolo:
-
-```C#
-string name = "mario";
-string capitalized = name.ToUpper();
-Console.WriteLine(capitalized);
-// output: MARIO
+```
+string frase = "ciao a Tutti!";
+Console.WriteLine(frase.ToUpper()); // Output: CIAO A TUTTI!
+Console.WriteLine(frase.ToLower()); // Output: ciao a tutti!
 ```
 
-In alternativa, è possibile utilizzare il metodo `Substring()` per dividere la stringa in due parti e utilizzare il metodo `ToUpper()` solo sulla prima lettera:
+Possiamo anche utilizzare il metodo `ToTitleCase()` per convertire la prima lettera di ogni parola in maiuscolo.
 
-```C#
-string name = "mario";
-string capitalized = name.Substring(0, 1).ToUpper() + name.Substring(1);
-Console.WriteLine(capitalized);
-// output: Mario
 ```
+string titolo = "il gatto sorridente";
+Console.WriteLine(titolo.ToTitleCase()); // Output: Il Gatto Sorridente
+```
+
+Inoltre, possiamo utilizzare il metodo `Replace()` per sostituire una determinata lettera o un gruppo di lettere all'interno della nostra stringa. Ad esempio, se vogliamo sostituire tutte le lettere "a" con "o" nella parola "casa", possiamo farlo in questo modo:
+
+```
+string parola = "casa";
+Console.WriteLine(parola.Replace("a", "o")); // Output: coso
+```
+
+È importante notare che questi metodi non modificano la stringa originale, ma restituiscono una nuova stringa modificata. Quindi, se vogliamo applicare una di queste modifiche alla nostra stringa originale, dobbiamo assegnare nuovamente il valore alla variabile.
 
 ## Approfondimento
+Ma quali sono i tipi di caratteri che possono essere capitalizzati? Possiamo capitalizzare solo lettere dell'alfabeto, o possiamo capitalizzare anche numeri e caratteri speciali? La risposta è che dipende dallo scopo della nostra applicazione.
 
-Mentre le due modalità sopra descritte funzionano per capitalizzare una sola parola, ci possono essere situazioni in cui è necessario capitalizzare l'intera frase. In questi casi, è possibile utilizzare il metodo `Split()` per dividere la stringa in parole e poi capitalizzare ogni parola usando uno dei due metodi visti in precedenza. Ad esempio:
-
-```C#
-string sentence = "ciao a tutti";
-string[] words = sentence.Split(' ');
-for(int i = 0; i < words.Length; i++){
-    words[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1);
-}
-string capitalized = String.Join(" ", words);
-Console.WriteLine(capitalized);
-// output: Ciao A Tutti
-```
-
-Inoltre, esistono anche altri metodi più complessi che permettono di capitalizzare stringhe con regole specifiche, come ad esempio il metodo `ToTitleCase()` della classe `TextInfo`.
+Se vogliamo solo visualizzare una stringa in modo più ordinato, possiamo utilizzare i metodi descritti sopra e capitalizzare solo lettere dell'alfabeto. Tuttavia, se dobbiamo verificare l'uguaglianza tra stringhe e vogliamo che anche le differenze di capitalizzazione siano considerate, dovremmo utilizzare il metodo `Equals()` passando come parametro il valore di confronto e l'oggetto `StringComparison.OrdinalIgnoreCase`.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di C# sul metodo ToUpper()](https://docs.microsoft.com/it-it/dotnet/api/system.string.toupper)
-- [Guida su come capitalizzare una stringa in C#](https://www.tutsmake.com/csharp/csharp-program-to-capitalize-every-word-in-string/)
-- [Esempi di utilizzo del metodo ToTitleCase()](https://www.c-sharpcorner.com/UploadFile/855fc9/convert-string-to-title-case-in-C-Sharp/)
+- Documentazione ufficiale su stringhe in C# (https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/strings/)
+- Tutorial su come manipolare le stringhe in C# (https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+- Articolo su come gestire correttamente la capitalizzazione in C# (https://www.c-sharpcorner.com/blogs/understanding-string-comparison-in-C-Sharp1)

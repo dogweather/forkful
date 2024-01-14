@@ -1,45 +1,65 @@
 ---
 title:    "PHP: Berechnung eines Datums in der Zukunft oder Vergangenheit"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-In dieser Blog-Post geht es darum, wie man mit PHP ein Datum in der Zukunft oder Vergangenheit berechnen kann. Das kann besonders nützlich sein, wenn man z.B. eine Booking- oder Reservierungsfunktion für eine Website erstellt und das Datum der Reservierung im Voraus anzeigen möchte.
 
-## Wie geht das?
+Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann in der Programmierung sehr nützlich sein. Zum Beispiel kann es hilfreich sein, das Ablaufdatum eines Gutscheins oder die Lieferzeit eines Produktes zu bestimmen.
 
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit kann mit einer Kombination aus der `strtotime()` und `date()` Funktion in PHP durchgeführt werden.
+## Wie geht's
 
-#### Beispiel 1: Datum in der Zukunft berechnen
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die PHP-Funktion `strtotime()` verwenden. Diese Funktion akzeptiert ein Datumsformat und gibt einen Timestamp zurück, der die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00 Uhr GMT darstellt. Mit diesem Timestamp können wir dann verschiedene Berechnungen durchführen.
+
+Lass uns ein paar Beispiele anschauen:
+
+**Berechnen eines Datums in der Zukunft:**
+
 ```PHP
-$future_date = strtotime("+1 week"); // Adds one week to the current date
-echo date("d.m.Y", $future_date); // Outputs the calculated date in the format "day.month.year"
+$timestamp = strtotime("+3 days");
+echo date("d.m.Y", $timestamp);
 ```
-Output: 21.08.2020
+Ausgabe: 27.09.2021
 
-#### Beispiel 2: Datum in der Vergangenheit berechnen
+**Berechnen eines Datums in der Vergangenheit:**
+
 ```PHP
-$past_date = strtotime("-3 days"); // Subtracts three days from the current date
-echo date("d.m.Y", $past_date); // Outputs the calculated date in the format "day.month.year"
+$timestamp = strtotime("-1 month");
+echo date("d.m.Y", $timestamp);
 ```
-Output: 12.08.2020
+Ausgabe: 28.08.2021
 
-## Tiefergehende Infos
-Die `strtotime()` Funktion konvertiert einen gegebenen String in einen Unix-Zeitstempel, welcher dann von der `date()` Funktion in ein lesbares Datum umgewandelt wird. Die Funktion akzeptiert verschiedene Parameter, wie z.B. "next Monday", "+2 weeks", "last day of next month" usw. Eine vollständige Liste der Parameter und deren Ausgabe ist in der [offiziellen PHP-Dokumentation](https://www.php.net/manual/de/function.strtotime.php) zu finden.
+Es ist auch möglich, ein bestimmtes Datum als Ausgangspunkt zu verwenden und dann eine Anzahl von Tagen, Monaten oder Jahren hinzuzufügen oder abzuziehen.
 
-Es ist auch möglich, ein spezifisches Datum als Basis anzugeben, anstatt vom aktuellen Datum aus zu rechnen. Dafür kann man das zweite Argument bei der `strtotime()` Funktion verwenden.
+**Verwenden eines spezifischen Datums:**
 
-#### Beispiel 3: Berechnung vom 1. Januar 2021 aus
 ```PHP
-$base_date = strtotime("01/01/2021"); // Sets the 1st of January 2021 as base date
-$calculated_date = strtotime("+2 months", $base_date); // Adds two months to the base date
-echo date("d.m.Y", $calculated_date); // Outputs the calculated date in the format "day.month.year"
+$timestamp = strtotime("10 September 2021");
+echo date("d.m.Y", $timestamp);
 ```
-Output: 01.03.2021
+Ausgabe: 10.09.2021
+
+**Hinzufügen von 2 Monaten:**
+
+```PHP
+$timestamp = strtotime("+2 months", strtotime("5 October 2021"));
+echo date("d.m.Y", $timestamp);
+```
+Ausgabe: 05.12.2021
+
+Es gibt viele weitere Möglichkeiten, um mit der `strtotime()`-Funktion zu arbeiten. Es ist wichtig, das gewünschte Datumsformat zu beachten und eventuell vorhandene Zeit- und Zeitzonenangaben zu berücksichtigen.
+
+## Tiefer gehen
+
+Das Berechnen von Datumsangaben kann auch komplexer werden, besonders wenn es um die Berücksichtigung von Schaltjahren oder verschiedenen Kalenderformaten geht. In solchen Fällen kann es hilfreich sein, spezialisierte PHP-Funktionen wie `date_diff()` oder `DateTime` zu verwenden.
+
+Es ist auch wichtig zu verstehen, dass Datumsangaben in der Programmierung oft in Form von Timestamps angegeben werden, die eine bestimmte Anzahl an Sekunden darstellen. Daher ist es wichtig, diese Timestamps korrekt zu interpretieren und bei der Berechnung und Umwandlung von Datumsangaben sorgfältig zu sein.
 
 ## Siehe auch
-- [Offizielle PHP-Dokumentation zu strtotime()](https://www.php.net/manual/de/function.strtotime.php)
-- [Offizielle PHP-Dokumentation zu date()](https://www.php.net/manual/de/function.date.php)
-- [Tutorial: Wie man mit PHP Datum und Zeit berechnet](https://www.php-einfach.de/experte/php-tutorial/datum-zeit-berechnen/)
+
+- [PHP Dokumentation: strtotime()](https://www.php.net/manual/de/function.strtotime.php)
+- [PHP Dokumentation: date_diff()](https://www.php.net/manual/de/datetime.diff.php)
+- [PHP Dokumentation: DateTime](https://www.php.net/manual/de/datetime.settimestamp.php)

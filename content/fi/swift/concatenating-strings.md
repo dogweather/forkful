@@ -1,59 +1,53 @@
 ---
-title:    "Swift: Stringien yhdistäminen"
+title:    "Swift: Yhdistettävien merkkijonojen yhdistäminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Onko Swift-ohjelmoija, oletko koskaan törmännyt tarpeeseen yhdistää merkkijonoja koodissasi? Tässä blogikirjoituksessa jaamme kanssasi muutamia vinkkejä ja syvempää tietoa kuinka voit yhdistää merkkijonoja tehokkaasti Swiftillä. Lue ja opi lisää!
+## Miksi
 
-##Miksi
+Miksi haluat yhdistää merkkijonoja Swift-koodissasi? Yhdistäminen antaa sinulle mahdollisuuden luoda uusia merkkijonoja, jotka koostuvat useista erillisistä merkkijonoista. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat luoda selkeitä ja hyvin muotoiltuja tekstirivejä tulostamiseen tai tallentamiseen.
 
-Merkkijonojen yhdistäminen (concatenation) on tärkeä osa ohjelmointia, sillä usein tarvitsemme luoda uusi merkkijono yhdistämällä olemassa olevia merkkijonoja. Tämä voi olla esimerkiksi käyttäjän syöttämä nimi ja sukunimi, joita tarvitsemme yhdistää yhdeksi merkkijonoksi.
+## Miten tehdä se
 
-##Kuinka tehdä se
-
-Voit yhdistää merkkijonoja muutamalla eri tavalla Swiftillä. Yksinkertaisin tapa on käyttää "+" operaattoria, joka yhdistää kaksi merkkijonoa yhdeksi. Esimerkiksi:
+Yhdistetään ensin kaksi merkkijonoa käyttämällä " + " operaattoria:
 
 ```Swift
-let nimi = "Matti"
+let etunimi = "Matti"
 let sukunimi = "Meikäläinen"
-let kokonimi = nimi + " " + sukunimi
-
-print(kokonimi) //Tulostaa "Matti Meikäläinen"
+let kokoNimi = etunimi + " " + sukunimi
 ```
 
-Voit myös yhdistää useampia merkkijonoja käyttämällä join() metodia, joka ottaa vastaan merkkijonojen taulukon ja yhdistää ne yhdeksi merkkijonoksi. Esimerkiksi:
+Tulosteena saat "Matti Meikäläinen", joka on yhdistelmä etu- ja sukunimestä. Voit myös yhdistää useita merkkijonoja yksinkertaisesti lisäämällä ne " + " merkkien väliin:
 
 ```Swift
-let sanat = ["Hei", "maailma", "!"]
-let lause = sanat.join(separator: " ")
-
-print(lause) //Tulostaa "Hei maailma !"
+let kaupunki = "Helsinki"
+let osoite = "Mannerheimintie"
+let postiosoite = kaupunki + ", " + osoite + " 21"
 ```
 
-##Syvällisempiä tietoja
+Tulosteena saat "Helsinki, Mannerheimintie 21", joka on yhdistelmä kaupungista, osoitteesta ja numerosta.
 
-Yhdistäminen (+) ja join() ovat käteviä tapoja yhdistää merkkijonoja, mutta on myös hyvä tietää, että nämä metodit luovat jokaisen kerran uuden merkkijonon. Jos sinun tarvitsee yhdistää suuri määrä merkkijonoja, tämä voi vaikuttaa suorituskykyyn.
-
-Sen sijaan voit käyttää StringInterpolation muodostimia, jotka ovat nopeampia ja tehokkaampia. Esimerkiksi:
+Voit myös yhdistää merkkijonoja käyttämällä yhdistetyn sijoitusoperaattorin " += " avulla:
 
 ```Swift
-let nimi = "Matti"
-let sukunimi = "Meikäläinen"
-let kokonimi = "\(nimi) \(sukunimi)"
-
-print(kokonimi) //Tulostaa "Matti Meikäläinen"
+var lause = "Tänään on "
+lause += "kaunis "
+lause += "sää."
 ```
 
-Näiden muodostimien avulla säästät muistia ja suoritusaikaa, sillä ne eivät luo joka kerta uutta merkkijonoa.
+Tulosteena saat "Tänään on kaunis sää.", joka on yhdistelmä kolmesta erillisestä merkkijonosta.
 
-##Katso myös
+## Syventävä tieto
 
-Haluatko oppia lisää merkkijonojen käsittelystä Swiftillä? Tutustu seuraaviin hyödyllisiin artikkeleihin:
+Swift tarjoaa myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä alilausekkeita tai yhdistämällä muuttujan tai vakion merkkijonon kanssa. Voit myös käyttää merkkijonan muotoilua käyttämällä interpolointia eli lisäämällä muuttujan tai vakion arvon merkkijonoon sen sijaan, että sekoittaisit sen " + " operaattoreilla.
 
-- [How to Use String Interpolation in Swift](https://www.hackingwithswift.com/read/0/2/string-interpolation)
-- [Concatenating Strings in Swift](https://medium.com/@alexandre_bernard/concatenating-strings-in-swift-b898b8fd66b3)
-- [Manipulating Strings in Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+Voit myös yhdistää muita tietotyyppejä, kuten numeroita ja booleaneja, merkkijonoon käyttämällä niiden tiedoston muotoilua.
 
-Toivottavasti tämä artikkeli auttoi sinua ymmärtämään miten voit yhdistää merkkijonoja Swiftissä. Jaa tämä artikkeli myös ystävillesi, jotka saattavat tarvita apua merkkijonojen yhdistämisessä. Kiitos lukemisesta ja nähdään seuraavassa blogikirjoituksessa!
+## Katso myös
+
+- [Swiftin merkkijonon perusteet](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Merkkijonon muotoilu Swiftissä](https://www.hackingwithswift.com/articles/162/how-to-format-strings-in-swift-using-string-interpolation)
+- [Muita vinkkejä Swift-kielen käyttöön](https://cocoacasts.com/40-essential-swift-tips-and-tricks)

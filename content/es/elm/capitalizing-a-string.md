@@ -1,41 +1,45 @@
 ---
-title:    "Elm: Capitalizando una cadena de texto."
+title:    "Elm: Capitalizando una cadena"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-La capitalización de una cadena de texto puede ser útil en situaciones en las que necesitamos resaltar ciertos aspectos de una palabra o frase. Por ejemplo, cuando queremos enfatizar un título o un nombre propio en un texto.
+La capitalización de una cadena de texto es una técnica común en la programación que puede ser útil en diversas situaciones, como formatear datos de entrada o mostrar información en pantalla de manera legible. En Elm, esta tarea puede lograrse de manera sencilla y eficiente con algunas funciones integradas.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-La programación en Elm ofrece una función incorporada para capitalizar una cadena de texto: `String.capitalize`. Simplemente debemos pasar la cadena como argumento y la función devolverá la misma cadena con la primera letra en mayúscula.
+Para capitalizar una cadena de texto en Elm, se puede utilizar la función `String.capitalize`, que toma como argumento una cadena y devuelve una nueva cadena con la primera letra en mayúscula. Por ejemplo:
 
 ```Elm
-String.capitalize "hola" -- retorna "Hola"
-String.capitalize "elm programming" -- retorna "Elm programming"
+String.capitalize "hola" -- Devuelve "Hola"
+String.capitalize "elm" -- Devuelve "Elm"
 ```
 
-Otra opción es utilizando la función `String.toUpper` en combinación con `String.slice` para obtener solo la primera letra en mayúscula y luego unirlo con el resto de la cadena.
+Otra opción es utilizar la función `String.toPascalCase`, que capitaliza todas las palabras en una cadena, independientemente de su posición. Por ejemplo:
 
 ```Elm
-String.toUpper (String.slice 0 1 "hola") ++ String.slice 1 4 "hola" -- retorna "Hola"
-String.toUpper (String.slice 0 1 "elm programming") ++ String.slice 1 5 "elm programming" -- retorna "Elm programming"
+String.toPascalCase "hola mundo" -- Devuelve "Hola Mundo"
+String.toPascalCase "haciendo elm en español" -- Devuelve "Haciendo Elm en Español"
+```
+
+En caso de necesitar capitalizar únicamente la primera letra de cada palabra en una cadena, se puede utilizar la función `String.words` para dividir la cadena en palabras y luego aplicar la función `String.capitalize` a cada una de ellas. Por ejemplo:
+
+```Elm
+String.words "elm en español" |> List.map String.capitalize |> String.join " " -- Devuelve "Elm En Español"
 ```
 
 ## Profundizando
 
-La función `String.capitalize` en realidad aplica la regla de capitalización del idioma inglés, es decir, solo la primera letra será mayúscula, independientemente de la posición de la palabra en la oración. También considera las excepciones de capitalización, como "Mc" o "Mac". Por ejemplo:
+Existen otras funciones y técnicas para capitalizar cadenas de texto en Elm, como el uso de expresiones regulares o la implementación de una función personalizada para manejar casos más específicos. También es importante tener en cuenta que, al igual que otros lenguajes de programación, Elm cuenta con funciones para manipular mayúsculas y minúsculas a nivel de carácter, como `Char.toUpper` y `Char.toLower`.
 
-```Elm
-String.capitalize "mcdonald's" -- retorna "McDonald's"
-```
-
-Si queremos aplicar reglas de capitalización diferentes, por ejemplo, en un idioma diferente, podemos escribir nuestra propia función personalizada utilizando `String.toUpper` y `String.slice` como se mostró anteriormente.
+En general, capitalizar una cadena de texto en Elm es una tarea sencilla que se puede realizar de manera rápida y eficiente con las funciones integradas en el lenguaje.
 
 ## Ver también
 
-- Documentación oficial de Elm sobre `String.capitalize`: https://package.elm-lang.org/packages/elm/core/latest/String#capitalize
-- Domingo Galdos, "Aprende Elm: Capitalizar una cadena": https://domingogaldos.com/tutoriales/aprende-elm-capitalizar-una-cadena/
+- [Documentación oficial de `String.capitalize`](https://package.elm-lang.org/packages/elm/core/latest/String#capitalize)
+- [Tutorial sobre procesamiento de cadenas en Elm](https://www.elm-tutorial.org/en/03-subs-cmds/002-processing-strings.html)
+- [Ejemplos de uso de expresiones regulares en Elm](https://elmprogramming.com/regular-expressions-in-elm.html)

@@ -1,30 +1,51 @@
 ---
-title:    "Kotlin: 문자열 결합"
+title:    "Kotlin: 문자열 연결하기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 이어붙이는 것에 참여하는 이유는 데이터를 조작하고 보기 좋은 형식으로 표현하기 위함입니다.
+문자열을 연결하는 것에 대해 생각해보신 적이 있나요? 만약 코틀린 프로그래밍에서 문자열을 합치려면 어떻게 해야 할까요? 이 블로그 포스트에서는 문자열을 연결하는 것에 대해 알아보도록 하겠습니다.
 
-## 하는 방법
+## 한글로 코딩하고 싶다면?
 
-```Kotlin 
-var name = "아이유"
-var age = 28
+예를 들어, "안녕하세요"와 "여러분"을 연결하면 어떻게 될까요? 우리는 우선 문장의 형식이나 구두점 등을 고려하지 않고 단순히 두 문자열을 결합하고 싶을 것입니다. 이를 위해서는 "+" 기호를 사용하여 다음과 같이 코딩할 수 있습니다.
 
-println("안녕하세요, 제 이름은 $name이고 나이는 $age살 입니다.")
+```Kotlin
+val hello = "안녕하세요"
+val everyone = "여러분"
+val greeting = hello + everyone
+print(greeting)
+
+// 출력 결과: 안녕하세요여러분
 ```
 
-이 코드는 "안녕하세요, 제 이름은 아이유이고 나이는 28살 입니다."를 출력합니다.
+문자열 연결을 위해 "+" 기호를 사용하는 것은 매우 간단한 방법입니다.
 
-## 깊이 파고들기
+## 깊이 들어가보기
 
-문자열을 이어붙이는 것은 기본적인 데이터 조작 기술 중 하나입니다. 이를 효율적으로 사용하기 위해서는 변수나 상수를 이용하여 중복되는 부분을 줄이고 코드를 간결하게 작성하는 것이 중요합니다. 또한, 적절한 형식으로 출력하면 사용자에게 직관적인 정보를 전달할 수 있습니다.
+하지만 "+" 기호는 문자열을 결합할 때마다 새로운 문자열 객체를 생성합니다. 이는 매우 비효율적일 수 있습니다. 따라서 더 나은 방법은 문자열을 합치는 대신 문자열 템플릿을 사용하는 것입니다.
 
-## 관련 링크
+```Kotlin
+val greeting = "안녕하세요" + "여러분"
 
-- [Kotlin 문자열 조작 문서](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
-- [문자열 이어붙이기에 관한 블로그 포스트](https://kotlinmagic.com/articles/kotlin-string-concatenation/)
+// 문자열 템플릿을 사용하면 다음과 같이 작성할 수 있습니다.
+val greeting = "${hello}${everyone}"
+```
+
+문자열 템플릿을 사용하면 새로운 문자열 객체를 생성하지 않고도 합칠 수 있으므로 더 효율적입니다.
+
+## 더 많은 정보
+
+이것 외에도 코틀린에서는 문자열을 합치기 위해 다양한 방법을 제공합니다. 예를 들어, ".concat()" 메서드를 사용하거나 StringBuilder를 사용할 수도 있습니다. 하지만 가장 간단한 방법은 "+" 기호나 문자열 템플릿을 사용하는 것입니다.
+
+## 관련 포스트
+
+[코틀린 공식 문서 - 문자열 템플릿](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+
+[코딩스쿨 - 문자열 연결하기](https://codingschool.info/post/concatenate-strings-kotlin/)
+
+[백준 온라인 저지 - 문자열 합치기](https://www.acmicpc.net/problem/10953)

@@ -1,44 +1,36 @@
 ---
-title:    "Swift: Utilisation des expressions régulières"
+title:    "Swift: Utiliser les expressions régulières"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi utiliser les expressions régulières en Swift
+## Pourquoi utiliser les expressions régulières en Swift ?
 
-Si vous êtes un développeur iOS ou macOS, vous avez probablement déjà entendu parler des expressions régulières. Mais pourquoi devriez-vous vous intéresser à eux ? En bref, les expressions régulières sont un moyen puissant de rechercher et de manipuler du texte en utilisant des motifs spécifiques. Cela peut être extrêmement utile pour diverses tâches de traitement de texte, comme la validation d'entrées utilisateur, la recherche de mots clés spécifiques dans un document ou la manipulation de chaînes de caractères complexes.
+Les expressions régulières sont un outil très utile pour rechercher et manipuler des chaînes de caractères dans un programme Swift. Elles permettent de définir des motifs de caractères à rechercher, ce qui peut être très pratique dans des situations telles que la validation des données de formulaire ou le filtrage de données. Dans cet article, nous allons expliquer comment utiliser les expressions régulières en Swift pour améliorer votre code.
 
-# Comment utiliser les expressions régulières en Swift
+## Comment faire ?
 
-La première étape pour utiliser les expressions régulières en Swift est d'importer la bibliothèque NSRegularExpression. Ensuite, vous pouvez commencer à créer vos propres motifs de recherche en utilisant des caractères spéciaux et des classes de caractères. Par exemple, si vous souhaitez trouver tous les numéros de téléphone dans une chaîne de caractères donnée, vous pouvez utiliser le motif "\d{3}-\d{3}-\d{4}" qui représente le format américain typique. Voici un exemple de code :
+Tout d'abord, il est nécessaire d'importer la bibliothèque `Foundation` dans votre fichier Swift pour pouvoir utiliser les expressions régulières. Ensuite, vous pouvez utiliser la méthode `range(of:options:range:locale:)` sur une chaîne de caractères pour rechercher un motif spécifique. Par exemple :
 
 ```Swift
-import Foundation
-
-let text = "Mon numéro de téléphone est 555-555-1234."
-let pattern = "\d{3}-\d{3}-\d{4}"
-do {
-    let regex = try NSRegularExpression(pattern: pattern)
-    let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
-    for result in results {
-        print(text[Range(result.range, in: text)!])
-    }
-} catch let error {
-    print("Invalid pattern: \(error.localizedDescription)")
+let string = "Bonjour le monde !"
+if let range = string.range(of: "le monde") {
+    print("Motif trouvé dans la chaîne à l'index \(range.lowerBound)")
 }
-
-// Output: 555-555-1234
 ```
 
-Comme vous pouvez le voir dans cet exemple, les expressions régulières en Swift peuvent être utilisées avec la classe NSRegularExpression pour rechercher et extraire des parties spécifiques d'un texte. Vous pouvez également effectuer des substitutions, des validations et bien plus encore en utilisant des expressions régulières.
+Cela va imprimer "Motif trouvé dans la chaîne à l'index 9", car "le monde" commence à l'index 9 dans la chaîne de caractères "Bonjour le monde !". Vous pouvez également utiliser cette méthode pour remplacer des motifs dans une chaîne de caractères.
 
-# Plongez plus loin dans les expressions régulières en Swift
+## Plongée en profondeur
 
-Il y a beaucoup à explorer en termes d'expressions régulières en Swift. Vous pouvez utiliser des modificateurs pour changer la façon dont les recherches sont effectuées, ou utiliser des groupes de capture pour extraire des parties spécifiques d'une correspondance. De plus, il existe de nombreux sites et applications qui peuvent vous aider à tester et à perfectionner vos expressions régulières. N'hésitez pas à expérimenter et à pratiquer pour maîtriser cette puissante fonctionnalité de Swift.
+Les expressions régulières offrent de nombreuses possibilités en termes de motifs de recherche. Vous pouvez utiliser des métacaractères tels que `*` pour représenter zéro ou plusieurs caractères, `+` pour représenter un ou plusieurs caractères, `?` pour représenter optionnellement un caractère, et bien d'autres encore. Vous pouvez également utiliser des classes de caractères tels que `[a-z]` pour représenter une plage de caractères. En utilisant correctement ces outils, vous pouvez créer des motifs de recherche très précis pour répondre à vos besoins.
 
-# Voir aussi
+Il est également important de prendre en compte la performance lors de l'utilisation d'expressions régulières. Par exemple, si vous utilisez un motif très précis mais complexe, cela peut prendre plus de temps à être exécuté. Il est donc important d'équilibrer la précision et la performance en fonction des besoins de votre programme.
 
-- Documentation Apple sur les expressions régulières en Swift : https://developer.apple.com/documentation/foundation/nsregularexpression
-- Un outil en ligne pour tester et expérimenter avec les expressions régulières : https://regex101.com/
-- Un livre sur l'utilisation des expressions régulières en Swift : https://www.amazon.com/dp/B0917B8ZVB
+## Voir aussi
+
+- [Documentation Apple sur les expressions régulières en Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift.org - Guide des expressions régulières](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID300)
+- [Syntaxe des expressions régulières](https://www.regular-expressions.info/)

@@ -1,43 +1,43 @@
 ---
-title:    "Rust: Calculer une date dans le futur ou le passé"
+title:    "Rust: Calculer une date dans le futur ou dans le passé"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+#
+## Pourquoi
 
-Le calcul de dates dans le passé ou dans le futur peut être utile pour de nombreuses applications telles que la planification de projets, la gestion de tâches ou encore la visualisation de données temporelles.
+Le calcul de dates dans le passé ou dans le futur peut être utile dans de nombreux cas, notamment pour planifier des événements, effectuer des calculs financiers ou créer des rappels. En utilisant Rust, un langage de programmation moderne et performant, vous pouvez facilement implémenter cet algorithme de calcul de date.
 
-# Comment faire
+## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en Rust, nous pouvons utiliser le type de données `chrono::DateTime` combiné avec la fonction `add()` pour ajouter ou soustraire une durée à une date donnée.
+Pour commencer, vous devez d'abord importer la bibliothèque standard de Rust qui contient toutes les fonctions nécessaires pour travailler avec des dates. Dans votre fichier source, ajoutez l'instruction `use std::time::Instant;` en haut du fichier.
 
-```
-use chrono::{DateTime, Duration, Utc};
+Ensuite, vous pouvez utiliser l'utilisation suivante pour calculer une date dans le futur ou dans le passé:
 
-let now = DateTime::<Utc>::from_utc(chrono::offset::Local::now().naive_local(), Utc);
-let future_date = now.add(Duration::days(7));
-let past_date = now.sub(Duration::weeks(2));
-
-println!("La date dans une semaine sera : {}", future_date);
-println!("La date il y a deux semaines était : {}", past_date);
-```
-
-La sortie de ce code sera :
-
-```
-La date dans une semaine sera : 2021-10-24 12:00:00 UTC
-La date il y a deux semaines était : 2021-09-26 12:00:00 UTC
+```Rust
+let now = Instant::now(); // Initialise une date courante
+let annee = now.year() + 1; // Additionne une année à la date courante
+let mois = now.month() - 1; // Soustrait un mois à la date courante
+let jour = now.day(); // Garde le jour de la date courante
 ```
 
-# Plongée en profondeur
+Dans l'exemple ci-dessus, nous avons utilisé les fonctions `year()`, `month()` et `day()` pour extraire respectivement l'année, le mois et le jour de la date courante. Ensuite, nous avons ajouté ou soustrait un nombre à ces valeurs pour calculer une nouvelle date.
 
-Il est important de noter que les durées utilisées dans la fonction `add()` et `sub()` sont des types `Duration` de la bibliothèque `chrono`. Cela signifie que vous pouvez utiliser non seulement des jours et des semaines, mais aussi des heures, des minutes, des secondes, etc. pour calculer des dates avec plus de précision.
+Notez que les fonctions `year()`, `month()` et `day()` renvoient des valeurs `u32` (entiers non signés de 32 bits). Si vous souhaitez utiliser des valeurs de date différentes, telles que des dates avec des heures et des minutes précises, vous pouvez utiliser la fonction `now()` qui renvoie un `Instant` complet à partir duquel vous pouvez extraire toutes les informations de date et d'heure.
 
-De plus, il existe également une fonction `subtract()` qui peut être utilisée pour calculer la différence entre deux dates et renvoyer une durée correspondante, ce qui peut être très utile dans certaines situations.
+## Plongée en profondeur
 
-# Voir aussi
+Le calcul de dates dans le futur ou dans le passé peut sembler simple au premier abord, mais il convient de noter qu'il existe des problèmes complexes associés à la gestion de différents calendriers et fuseaux horaires. Cependant, Rust dispose de nombreuses bibliothèques tierces pour gérer ces problèmes, telles que `chrono`, `time` ou `dates`, qui fournissent des fonctionnalités avancées pour travailler avec des dates.
 
-- La documentation officielle de `chrono`: https://docs.rs/chrono/0.4.19/chrono/
-- Un tutoriel sur l'utilisation de `chrono` pour manipuler les dates en Rust: https://blog.qutheory.io/learning-rust-dates/
+De plus, la bibliothèque standard de Rust dispose également de plusieurs fonctions pour vérifier la validité d'une date, la convertir en une chaîne de caractères et effectuer d'autres opérations courantes.
+
+## Voir aussi
+
+- https://doc.rust-lang.org/std/time/struct.Instant.html
+- https://doc.rust-lang.org/std/time/index.html
+- https://crates.io/crates/chrono
+- https://crates.io/crates/time
+- https://crates.io/crates/dates

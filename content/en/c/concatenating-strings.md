@@ -1,62 +1,69 @@
 ---
 title:    "C recipe: Concatenating strings"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Strings are an essential component of any programming language. They allow us to store and manipulate text, making our programs more dynamic and interactive. One common operation when working with strings is concatenation, which involves combining two or more strings into one. In this blog post, we will explore why and how to concatenate strings in the C programming language.
+In programming, it is common to come across situations where we need to combine or merge two or more strings together. This process is known as string concatenation and is a crucial aspect of string manipulations. Concatenating strings allows us to create larger, more complex strings that can be used for a variety of purposes. In this blog post, we will explore the concept of string concatenation in the C programming language.
 
 ## How To
-
-To concatenate strings in C, we will use the `strcat()` function from the `string.h` library. This function takes two arguments - the first is the destination string, and the second is the source string. The `strcat()` function will append the source string to the end of the destination string, modifying the original destination string.
-
-Let's see an example of how to use the `strcat()` function to concatenate two strings:
+To concatenate strings in C, we first need to understand the built-in string handling functions. The most commonly used function for concatenation is `strcat()`, which stands for string concatenation. This function takes two strings as arguments and merges the second string at the end of the first one. Let's see an example of how this works:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    char destination[30] = "Hello";
-    char source[] = "World!";
-    strcat(destination, source);
-    printf("%s", destination);
+int main()
+{
+    char str1[20] = "Hello ";
+    char str2[10] = "World";
+
+    strcat(str1, str2);
+
+    printf("Concatenated string: %s\n", str1);
+
     return 0;
 }
+
+// Output:
+// Concatenated string: Hello World
 ```
 
-The output of this program will be `HelloWorld!`, as the `strcat()` function has appended the source string "World!" to the end of the destination string "Hello."
+In this example, we declared two strings `str1` and `str2` and initialized them with some values. Then using the `strcat()` function, we merged `str2` at the end of `str1` to create a new string "Hello World". It's important to note that the first argument of `strcat()` must be a large enough string to hold the concatenated result. Otherwise, it can cause a buffer overflow, resulting in undefined behavior.
 
-We can also use the `strncat()` function if we want to concatenate a specific number of characters from the source string. This function takes a third argument, which specifies the maximum number of characters to concatenate.
-
-Let's see an example of using the `strncat()` function to concatenate only three characters from the source string:
+Apart from `strcat()`, we can also use the `strcpy()` function to concatenate strings. This function copies the contents of one string to another, effectively merging them. Let's see how this works in the example below:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    char destination[10] = "Cat";
-    char source[] = "Lion";
-    strncat(destination, source, 3);
-    printf("%s", destination);
+int main()
+{
+    char str1[20] = "Hello ";
+    char str2[10] = "World";
+
+    strcpy(str1, str2);
+
+    printf("Concatenated string: %s\n", str1);
+
     return 0;
 }
+
+// Output:
+// Concatenated string: World
 ```
 
-The output of this program will be `CatLio`, as only the first three characters of the source string "Lion" were concatenated to the destination string "Cat."
+In this example, we copied the contents of `str2` to `str1`, resulting in the concatenated string "World". Unlike `strcat()`, `strcpy()` overwrites the contents of the first string, so make sure to use it with caution.
 
 ## Deep Dive
-
-Under the hood, when we use the `strcat()` or `strncat()` functions, we are essentially copying the characters from the source string and adding them to the end of the destination string. The functions will stop when it reaches the end of the source string or when the specified number of characters have been concatenated.
-
-It is important to note that when using these functions, we must ensure that the destination string has enough space to hold the additional characters. Otherwise, we risk overwriting other data in memory and causing unexpected results.
+Under the hood, string concatenation in C is carried out by the `strcat()` function in a sequential fashion. It starts from the last character of the first string and copies each character from the second string until it reaches the null-terminator `\0`. This process continues until the second string is fully copied, resulting in a merged string. It is essential to ensure that the first string has enough memory to hold the concatenated result. Otherwise, it can lead to unexpected behaviors, such as segmentation faults.
 
 ## See Also
+- [String concatenation in C - GeeksforGeeks](https://www.geeksforgeeks.org/strcat-function-in-c/)
+- [String handling functions in C - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C string functions - Programiz](https://www.programiz.com/c-programming/library-function/string.h)
 
-- [C Programming Language - Strings](https://www.programiz.com/c-programming/c-strings)
-- [String Functions in C](https://overiq.com/c-programming-101/string-functions-in-c/)
-- [String Concatenation in C](https://www.guru99.com/c-string-functions.html#5)
+By now, you have a good understanding of how string concatenation works in the C programming language. Remember to use it with caution and make sure to check for adequate memory allocation to avoid any potential errors. Happy coding!

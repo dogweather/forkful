@@ -1,33 +1,47 @@
 ---
-title:    "Kotlin: Tarkista, onko hakemisto olemassa"
+title:    "Kotlin: Tarkistetaan löytyykö hakemistoa"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-On monia syitä miksi voit tarvita tarkistaa, onko hakemisto olemassa. Esimerkiksi voit haluta varmistaa, että hakemisto on olemassa ennen kuin tallennat tiedostoja siihen tai käytät sitä osana tiedostojen polkua.
 
-## Näin teet sen
-Tarkistaminen, onko hakemisto olemassa, on melko yksinkertaista käyttäen Kotlinin File-luokkaa. Seuraavassa on esimerkki, jossa tarkistetaan, onko "hakemisto" niminen hakemisto olemassa ja tulostetaan vastaava tieto:
+Monet Kotlin-ohjelmoijat saattavat joutua tarkistamaan, onko hakemisto olemassa, ennen kuin he voivat suorittaa tiettyjä toimintoja. Tässä blogikirjoituksessa tarkastelemme, miksi tämä on tärkeää ja miten se voidaan tehdä helposti Kotlinilla.
+
+## Miten
+
+Tarkistamalla hakemiston olemassaoloa voi olla useita syitä, kuten tiettyjen tiedostojen läsnäolon varmistaminen ennen niiden käsittelyä tai tietyn toiminnallisuuden toteuttaminen vain, jos hakemisto löytyy. Alla on esimerkki siitä, miten voit tarkistaa, onko hakemisto olemassa Kotlinilla:
 
 ```Kotlin
-val directory = File("hakemisto")
-if (directory.exists()){
-    println("Hakemisto on olemassa.")
+val directory = File("polku/hakemistoon")
+if (directory.exists()) {
+    println("Hakemisto löytyi!")
 } else {
-    println("Hakemistoa ei ole olemassa.")
+    println("Hakemistoa ei löytynyt.")
 }
 ```
 
-Tässä tapauksessa käytetään "exists()" funktiota, joka palauttaa totuusarvon sen perusteella, onko hakemisto olemassa vai ei.
+Tämä koodiesimerkki luo uuden File-olion ja käyttää sille `exists()`-metodia, joka palauttaa boolean-arvon riippuen siitä, löytyykö kyseinen hakemisto vai ei. Tämän jälkeen tulostetaan sen perusteella haluttu viesti. Voit myös halutessasi lisätä tarkistuksia, kuten `isDirectory()`-metodin avulla, jotta varmistat, että kyseessä on nimenomaan hakemisto eikä esimerkiksi tiedosto.
 
 ## Syvempi sukellus
-Tarkistaaksesi, onko hakemisto olemassa, ohjelma lukee aluksi hakemisto rakenteen ja varmistaa, että hakemisto on olemassa ja käytettävissä. Tämän jälkeen se tarkistaa, onko hakemiston merkintä oikein ja sallii yhteyden hakemistoon.
 
-Jos hakemisto ei ole käytettävissä, ohjelma heittää "SecurityException" poikkeuksen, joka osoittaa, että käyttäjällä ei ole oikeuksia käyttää kyseistä hakemistoa. Tämä on tärkeää pitää mielessä, jos käytät tarkistusta hakemistoon, johon sinulla ei ole tarvittavia oikeuksia.
+Kotlinilla on myös mahdollista luoda uusi hakemisto, jos sitä ei ole olemassa. Tämä voidaan tehdä `mkdir()`-metodilla, joka luo uuden hakemiston annetun polun perusteella. Alla on esimerkki:
+
+```Kotlin
+val directory = File("polku/uuteen/hakemistoon")
+if (directory.mkdir()) {
+    println("Uusi hakemisto luotiin!")
+} else {
+    println("Tapahtui virhe uuden hakemiston luomisessa.")
+}
+```
+
+Tämä koodi tarkistaa ensin, onko kyseistä hakemistoa jo olemassa. Jos ei, se luo uuden `File`-olion ja käyttää `mkdir()`-metodia luodakseen uuden hakemiston. Tämän jälkeen tulostetaan haluttu viesti sen perusteella, onnistuiko hakemiston luominen vai ei.
 
 ## Katso myös
-- [Kotlinin File-luokan dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Tiedostojärjestelmien perusteet Kotlinilla](https://www.raywenderlich.com/155083/android-tutorial-file-io-kotlin)
-- [Kotlin for Android: File I/O and Permissions](https://www.raywenderlich.com/4330491-kotlin-for-android-file-io-and-permissions)
+
+- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/io.html)
+- [Tietoa hakemistojen ja tiedostojen käsittelystä Kotlinilla](https://www.baeldung.com/kotlin-directory-files)
+- [Esimerkkejä hakemistojen luomisesta ja tarkistamisesta Kotlinilla](https://www.programiz.com/kotlin-programming/directory)

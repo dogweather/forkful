@@ -1,57 +1,74 @@
 ---
 title:    "C: Comparer deux dates"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Comparer deux dates peut sembler être une tâche simple en apparence, mais c'est en réalité un sujet complexe pour les programmeurs. Cela peut sembler être une petite fonctionnalité, mais elle est souvent utilisée dans de nombreux programmes. La compréhension de la comparaison de dates en C peut donc être extrêmement utile pour améliorer vos compétences en programmation et vous aider à devenir un meilleur développeur.
+La comparaison de deux dates est une étape importante dans la programmation en C, car cela permet de déterminer l'ordre chronologique entre deux événements ou de vérifier si une date est antérieure ou postérieure à une autre. Cela est particulièrement utile dans les applications de suivi de temps, de réservation de rendez-vous, ou simplement pour afficher une date correcte dans un format spécifique.
 
 ## Comment faire
 
-Pour comparer deux dates en C, nous allons utiliser la fonction `difftime`, qui est définie dans la bibliothèque standard `time.h`. Cette fonction renvoie la différence entre deux valeurs de temps en secondes. Pour cela, nous devrons d'abord convertir les dates en structures de données de type `time_t` à l'aide de la fonction `mktime`. Voici un exemple de code pour comparer deux dates dans le format "jour/mois/année" :
+La comparaison de deux dates peut être réalisée en utilisant les fonctions prédéfinies de la bibliothèque standard du C telles que `time()` et `difftime()`. Voici un exemple de code qui compare deux dates et affiche le résultat:
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // Première date à comparer
-    struct tm date1 = { .tm_mday = 1, .tm_mon = 0, .tm_year = 2020 - 1900 };
-    // Seconde date à comparer
-    struct tm date2 = { .tm_mday = 1, .tm_mon = 0, .tm_year = 2019 - 1900 };
+int main()
+{
+    time_t date1, date2;
+    double diff;
 
-    // Convertir les dates en valeurs de temps
-    time_t time1 = mktime(&date1);
-    time_t time2 = mktime(&date2);
+    // Obtenez les dates sous forme de nombres de type time_t
+    date1 = time(NULL);
+    printf("La première date est: %ld\n", date1);
 
-    // Comparer les dates et stocker le résultat dans une variable de type double
-    double diff = difftime(time1, time2);
+    // Vous pouvez également utiliser la fonction mktime() pour créer une date à partir de chiffres spécifiques
+    struct tm timeinfo = { .tm_year=2021, .tm_mon=0, .tm_mday=1 };
+    date2 = mktime(&timeinfo);
+
+    printf("La deuxième date est: %ld\n", date2);
+
+    // Comparez les deux dates en utilisant la fonction difftime()
+    diff = difftime(date1, date2);
 
     if (diff > 0) {
-        printf("Date 1 est plus récente que Date 2\n");
+        printf("La première date est postérieure à la deuxième date.\n");
     } else if (diff < 0) {
-        printf("Date 2 est plus récente que Date 1\n");
+        printf("La première date est antérieure à la deuxième date.\n");
     } else {
-        printf("Les deux dates sont identiques\n");
+        printf("Les deux dates sont identiques.\n");
     }
-    
+
     return 0;
 }
-
-// Sortie: Date 1 est plus récente que Date 2
 ```
 
-Dans cet exemple, nous utilisons la fonction `mktime` pour convertir les dates entrées en `struct tm`, puis nous comparons les valeurs de temps en utilisant la fonction `difftime`. La sortie variera en fonction des dates que vous entrez.
+Output :
+
+```
+La première date est: 1627628395
+La deuxième date est: 1609459200
+La première date est postérieure à la deuxième date.
+```
 
 ## Plongée en profondeur
 
-La comparaison de dates en C peut sembler simple, mais il y a plusieurs choses à prendre en compte lors de sa mise en œuvre. Tout d'abord, les dates doivent être valides et correctement formatées pour pouvoir être converties en `struct tm`. De plus, la fonction `difftime` renvoie une valeur de type `double`, il est donc important de manipuler correctement cette valeur en utilisant des conditions pour déterminer si la première date est antérieure, égale ou postérieure à la seconde. Enfin, il existe d'autres méthodes pour comparer des dates en C, telles que la fonction `strftime`, qui permet de formater et afficher des dates de manière plus précise.
+Il est important de noter que les fonctions de la bibliothèque standard du C utilisent les dates sous forme de nombres de type time_t qui représentent le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC. Cela signifie que lors de la comparaison de deux dates, une conversion de ces nombres en une structure de type `tm` est nécessaire pour pouvoir faire des comparaisons en termes de jours, mois et années.
+
+De plus, la fonction `difftime()` renvoie la différence entre les deux dates en secondes, ce qui peut être inutile pour les comparaisons avec de grandes différences de temps. Dans de tels cas, il peut être préférable d'utiliser des fonctions de traitement de date telles que `gmtime()` et `localtime()` qui convertissent le nombre de temps en une structure de type `tm` lisible par l'homme.
 
 ## Voir aussi
 
-- [Documentation officielle sur la fonction `difftime` en C](https://www.cplusplus.com/reference/ctime/difftime/)
-- [Guide sur les dates et heures en C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Autres méthodes pour comparer des dates en C](https://www.geeksforgeeks.org/compare-two-dates-c/)
+Pour en savoir plus sur les manipulations de dates en C et les différentes fonctions à utiliser, consultez les liens suivants :
+
+- [La bibliothèque standard du C - Les fonctions de date et heure](https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_standard_du_C#Fonctions_de_date_et_heure)
+- [Documentation de la fonction time()](https://www.cplusplus.com/reference/ctime/time/)
+- [Documentation de la fonction difftime()](https://www.cplusplus.com/reference/ctime/difftime/)
+- [Documentation de la fonction mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
+- [Documentation de la fonction gmtime()](https://www.cplusplus.com/reference/ctime/gmtime/)
+- [Documentation de la fonction localtime()](https://www.cplusplus.com/reference/ctime/localtime/)

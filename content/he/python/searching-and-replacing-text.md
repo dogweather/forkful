@@ -1,37 +1,50 @@
 ---
-title:    "Python: חיפוש והחלפת טקסטים"
+title:    "Python: חיפוש והחלפת טקסט"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##למה
-למה הייתם מעוניינים לעסוק בחיפוש והחלפת טקסט? מבחינה פשטנית, ברור שכתיבת קוד ותכנות כוללים כמובן גם תהליך של תיקון ושינוי של הטקסט שמורכבות מהם. בנוסף, בכדי לחקור ולנתח נתונים, לעתים קרובות יידרש מאיתנו לחיפוש והחלפת טקסט על מנת לקבל תוצאות מדויקות יותר. תהליך זה משמש בתחום המחקר, בעסקים או בתחומי מחשבה רבים אחרים ולכן ייחשב מאוד שימושי למתכנתים רבים. 
+## מדוע
 
-##כיצד לעשות זאת
-הלאה לקוראיים עם הכוונה ללמוד כיצד לחפש ולהחליף טקסט בעזרת פייתון, נביא כאן סדרת דוגמאות נפשטות המסבירות כיצד לכתוב פקודות לחיפוש ולהחלפת טקסט. 
+בעת התכנות בפייתון, ישנם רבים מצבים שבהם יהיה צורך לחפש ולהחליף טקסט בתוך קוד. למשל, ייתכן שיהיו שגיאות כתיב בחלק מהמשתנים או ייתכן שאנחנו רוצים לשנות משהו בטקסט המוצג למשתמש באפליקציה. בעזרת חיפוש והחלפה, אנו יכולים לבצע כך בקלות ובמהירות רבה.
 
-```Python
-# דוגמה 1: חיפוש והחלפת טקסט ספציפי במחרוזת
-text = "פייתון היא שפת תכנות מצוינת."
+## איך לעשות זאת
 
-changed_text = text.replace("מצוינת", "מדהימה")
+לפניכם דוגמאות לשימוש בפונקציות חיפוש והחלפה עם פייתון. שימו לב שהפעלת חיפוש והחלפה תבוצע מתוך תיקית העבודה הנוכחית.
 
-print(changed_text)
+```python
+# חיפוש והחלפה בכל הטקסט שמתאים לתבנית מסוימת
+import re
 
-# פלט: פייתון היא שפת תכנות מדהימה.
+text = "Hello, my name is John. I am from Israel."
+new_text = re.sub(r"John", "David", text)
 
-# דוגמה 2: חיפוש והחלפת טקסט בקובץ
-with open("example.txt", "r+") as file:
-    file_content = file.read()
-    changed_content = file_content.replace("שלום", "היי")
-    file.seek(0)
-    file.write(changed_content)
-    file.truncate()
+print(new_text)
+# Output: Hello, my name is David. I am from Israel.
 
-# תוכן הקובץ example.txt נשמר עם התיקון החדש
+# חיפוש והחלפה בכל הקבצים שסיומים ב-ext
+import os, re
 
+file_list = os.listdir()
+ext = input("Extension: ")
+
+for file in file_list:
+    matched = re.search(rf"{ext}$", file)
+
+    if matched:
+        new_file = re.sub(r"old_text", "new_text", file)
+        os.rename(file, new_file)
+
+print("Files renamed successfully!")
 ```
 
-##הצגה מעמיקה
-דרך אחת לשפר את החיפוש וההחלפה שלכם בפייתון היא להשתמש בתכונות מתקדמות כגון תבניות רגילות ותיעודי רגילות. אלו מאפשרים לנו לחפש ולהחליף טקסט בצורה יעילה ומהירה יותר, כמו גם להב
+## עומק נוסף
+
+ניתן להשתמש בתבניות מתקדמות יותר לחיפוש והחלפה, כגון שימוש בפונקציות כמו split ו- join, או להשתמש בתוסף כמו re.Match המאפשר לגשת למידע נוסף על התאים המתאימים בטקסט.
+
+## ראו גם
+- [מדריך לתוספי פייתון לחיפוש והחלפה](https://realpython.com/regex-python/)
+- [מדריך לביטויים רגולריים בפייתון](https://www.analyticsvidhya.com/blog/2019/03/beginner-guide-regex-python/)
+- [מדריך לתרגול חיפוש והחלפה בפייתון](https://www.w3schools.com/python/python_regex.asp)

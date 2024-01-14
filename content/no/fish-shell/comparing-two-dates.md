@@ -1,47 +1,71 @@
 ---
-title:    "Fish Shell: Sammenligne to datoer"
+title:    "Fish Shell: Sammenligner to datoer."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å sammenligne to datoer kan være viktig for å organisere og filtrere data. I Fish Shell er det enkelt å sammenligne datoer ved hjelp av innebygde funksjoner og enkle syntaks.
+Å sammenligne to datoer kan være nyttig for å organisere og analysere data. Dette kan hjelpe deg med å finne ut hvilke datoer som er nærmest eller lengst fra hverandre, og å se trender over tid.
 
-## Hvordan
+# Hvordan
 
-For å sammenligne to datoer i Fish Shell, bruker man `date` kommandoen og `<=` eller `>=` operatorer. Her er et eksempel på å sammenligne to datoer i formatet DD/MM/YYYY:
+Du kan enkelt sammenligne to datoer ved hjelp av Fish Shell. Her er noen eksempler på hvordan du kan gjøre det:
 
 ```
-Fish Shell $ date -s '01/01/2020'
-Fish Shell $ if date -s '02/02/2020' <= date -s '01/01/2020'
-    echo "Dato 2 er før eller lik Dato 1"
-else
-    echo "Dato 2 er etter Dato 1"
+# Setter to datoer som variabler
+
+set startdato 2021-01-01
+set sluttdato 2021-06-01
+
+# Sammenligner datoene ved hjelp av kommandoen 'test'
+
+if test $startdato -ge $sluttdato
+    echo "Startdatoen er større eller lik sluttdatoen"
+else if test $startdato -lt $sluttdato
+    echo "Startdatoen er mindre enn sluttdatoen"
 end
+
+# Output: Startdatoen er mindre enn sluttdatoen
 ```
 
-Dette vil gi følgende utgang:
+Du kan også formatere datoer på forskjellige måter for å få mer nøyaktige sammenligninger. For eksempel kan du bruke kommandoen `date` for å vise datoen på en bestemt måte:
 
 ```
-Dato 2 er etter Dato 1
+set startdato (date -f %Y-%m-%d -d "1 januar 2021")
+set sluttdato (date -f %Y-%m-%d -d "1 juni 2021")
+
+# Output: 2021-01-01
 ```
 
-Her brukte vi `<=` operator for å sjekke om Dato 2 er før eller lik Dato 1.
+Merk at disse eksemplene bruker standard norsk datoformat (år-måned-dag). Du kan justere formatet til ditt språks standard.
 
-Man kan også bruke `>=` operator på samme måte for å sjekke om Dato 2 er etter eller lik Dato 1.
+# Dypdykk
 
-## En dypdykk
+Fish Shell har også innebygde funksjoner for å arbeide med datoer. Du kan bruke `math`-kommandoen til å utføre matematiske operasjoner på datoer. For eksempel kan du legge til eller trekke fra et antall dager fra en dato:
 
-Det er viktig å merke seg at sammenligningsmetoden vil variere avhengig av formatet på datoene. For eksempel, hvis datoene er i formatet YYYYMMDD, må man bruke en annen metode for å sammenligne dem.
+```
+set startdato (date -d "1 januar 2021")
+set sluttdato (math $startdato + 5 days)
+```
 
-En annen ting å huske på er at Fish Shell også har innebygde funksjoner for å konvertere datoer til enklere formater. For eksempel, kan man bruke `date -s` kommandoen for å konvertere datoer til enklere format som DD/MM/YYYY.
+Dette vil gi deg sluttdatoen 5 dager etter startdatoen.
 
-Så, når man sammenligner to datoer, er det viktig å ta hensyn til formatet og eventuelt konvertere det så det passer med sammenligningsmetoden som brukes.
+En annen nyttig funksjon er `string`, som kan konvertere en dato til en streng. Dette kan være nyttig når du jobber med forskjellige format:
 
-## Se også
+```
+set startdato (date -d "1 januar 2021")
+set startdatostring (string "%d/%m/%Y" $startdato)
 
-- [Fish Shell dokumentasjon for date kommandoen](https://fishshell.com/docs/current/cmds/date.html)
-- [Guide for å sammenligne datoer i Bash Shell](https://stackoverflow.com/questions/4944340/compare-two-dates-with-linux-shell-script)
-- [Innbygde funksjoner for å jobbe med datoer i Fish Shell](https://fishshell.com/docs/current/tutorial.html#date)
+# Output: 01/01/2021
+```
+
+# Se også
+
+Her er noen flere ressurser som kan være nyttige når du jobber med datoer i Fish Shell:
+
+- [Fish Shell dokumentasjon om datoer](https://fishshell.com/docs/current/cmds/date.html)
+- [En veiledning til datoformatet i Unix](https://www.computerhope.com/unix/timestamp.htm)
+- [En sammenligning av forskjellige programmeringsspråks funksjoner for datoer](https://codereview.stackexchange.com/questions/173581/comparing-two-dates-in-different-programming-languages)

@@ -1,39 +1,38 @@
 ---
-title:    "Kotlin: 두 날짜를 비교하기"
+title:    "Kotlin: 두 날짜 비교하기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-때때로 우리는 두 날짜를 비교해야 할 때가 있습니다. 예를 들어, 년도를 계산하거나 이전 날짜와 현재 날짜 사이의 경과 시간을 알고 싶을 때 등 말이죠. 이러한 일을 할 때 우리는 두 날짜가 얼마나 차이가 나는지 알아야 합니다. 코틀린에서 날짜를 비교하는 방법을 배워보세요.
+# 왜
+날짜를 두 개 비교하는 일이 어떤 이유 때문에 중요할까요? 일반적으로 날짜를 비교하는 것은 유용한 일일 수 있습니다. 예를 들어, 어떤 사건이 두 날짜 사이에 발생했는지 알고 싶을 때, 또는 특정 날짜 이후의 일정을 확인하고 싶을 때 등이 있을 수 있습니다.
 
-## 어떻게
-이제 우리는 코틀린을 사용하여 두 날짜를 비교하는 방법을 살펴보겠습니다. 아래의 예제 코드를 참고해주세요.
+# 어떻게
+날짜를 비교하는 것은 매우 간단합니다. Kotlin에서는 `isAfter()`, `isBefore()`, `equals()`와 같은 메서드를 사용하여 두 날짜를 비교할 수 있습니다. 또한 `compareTo()` 메서드를 사용하여 두 날짜를 비교할 수 있습니다. 아래는 Kotlin으로 두 날짜를 비교하는 간단한 예제 코드입니다.
 
-```Kotlin
+```
+Kotlin
 val date1 = LocalDate.of(2021, 1, 1)
-val date2 = LocalDate.of(2021, 6, 1)
-println(date1.isAfter(date2)) // false
-println(date1.isBefore(date2)) // true
+val date2 = LocalDate.of(2021, 1, 15)
+
+println(date1.isBefore(date2)) // Output: true
+println(date1.compareTo(date2)) // Output: -14
 ```
 
-위의 예제 코드에서 우리는 두 개의 `LocalDate` 변수를 생성했습니다. 그리고 `isAfter()`와 `isBefore()` 메소드를 사용하여 두 날짜를 비교했습니다. 결과적으로 첫 번째 날짜가 두 번째 날짜보다 앞에 있는지 여부를 확인할 수 있습니다.
+# 깊이있는 탐구
+아래는 `compareTo()` 메서드를 사용하여 날짜를 비교하는 방법에 대한 몇 가지 깊이있는 정보입니다.
 
-또 다른 방법으로는 `compareTo()` 메소드를 사용하는 것도 있습니다. 아래의 예제 코드를 확인해주세요.
+- 두 날짜가 같으면 `compareTo()`는 0을 반환합니다.
+- 첫 번째 날짜가 두 번째 날짜보다 이전이면 `compareTo()`는 음수를 반환합니다.
+- 첫 번째 날짜가 두 번째 날짜보다 이후이면 `compareTo()`는 양수를 반환합니다.
 
-```Kotlin
-val date1 = LocalDate.of(2021, 1, 1)
-val date2 = LocalDate.of(2021, 6, 1)
-println(date1.compareTo(date2)) // -1
-println(date2.compareTo(date1)) // 1
-```
+더 자세한 정보는 Kotlin 공식 문서를 참고하시기 바랍니다.
 
-`compareTo()` 메소드는 첫 번째 날짜가 두 번째 날짜와 비교했을 때 어떤 값을 반환하는지를 나타냅니다. 위의 예제에서 보시면 첫 번째 날짜가 두 번째 날짜보다 빠른 날짜이므로 `-1`이라는 값이 반환됩니다.
+# 참고자료
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/compare-multiple-items.html#comparison-methods)
+- [Java 날짜 비교 방법](https://www.baeldung.com/java-compare-dates)
+- [날짜와 시간 처리를 위한 Java 8 새로운 기능들](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html])
 
-## 딥 다이브
-우리는 지금까지 코틀린에서 두 날짜를 비교하는 방법을 살펴보았습니다. 하지만 이 외에도 `isEquals()` 메소드를 사용하여 두 날짜가 동일한 날짜인지 아닌지도 비교할 수 있습니다. 또한, `LocalDateTime`과 `ZonedDateTime`같은 다른 타입의 날짜와 시간을 비교하는 방법에 대해서도 알아보는 것이 좋습니다.
-
-## 비슷한 글도 읽어보세요
-- [Kotlin의 LocalDate 클래스](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
-- [Kotlin의 날짜 및 시간 관련 함수](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/index.html)
+# 더 보기

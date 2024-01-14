@@ -1,50 +1,46 @@
 ---
-title:    "Bash: Beräkna ett datum i framtiden eller det förflutna"
+title:    "Bash: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Det kan finnas många olika anledningar till varför man skulle vilja räkna ut ett datum i framtiden eller i det förflutna. Det kan vara för att planera ett event eller en resa, hålla koll på viktiga deadlines eller bara för att det är intressant att veta.
+##Varför
 
-## Så här gör du
-Att räkna ut ett datum i framtiden eller förflutna är faktiskt enkelt med hjälp av Bash programmering. Detta är ett praktiskt verktyg som finns tillgängligt på de flesta Linux-datorer och är perfekt för att automatisera uppgifter och beräkningar.
+Att kunna räkna ut ett datum i framtiden eller i förflutnan kan vara användbart i många olika situationer. Det kan hjälpa dig att planera evenemang, boka resor eller helt enkelt hålla koll på viktiga datum.
 
-För att beräkna ett datum i framtiden använder vi oss av kommandot `date` och dess flagga `--date`. Till exempel, om vi vill beräkna 100 dagar framåt kan vi skriva följande i terminalen:
+##Så här gör du
 
-```Bash
-date --date="100 days"
-```
+Att beräkna ett datum i framtiden eller förflutna kan enkelt göras med hjälp av Bash-programmering. Först behöver du ange ett datum i form av år, månad och dag. Sedan kan du använda ett enkelt Bash-kommando för att lägga till eller dra bort ett antal dagar från datumet.
 
-Du kommer då få ett datum som ligger 100 dagar framåt i tiden, och utdata kommer se ut något liknande detta:
-
-```
-tis 23 mar 2021 00:00:00 CET
-```
-
-För att beräkna ett datum i förflutna kan vi använda en liknande syntax. Till exempel, om vi vill veta vilket datum det var för 10 år sedan skriver vi:
+Här är ett exempel på hur du kan beräkna ett datum i framtiden:
 
 ```Bash
-date --date="10 years ago"
+date -d "2021-12-01 + 7 days"
 ```
 
-Detta ger oss utdatan:
+Detta kommando kommer att ge dig datumet för en vecka efter det angivna datumet, i det här fallet den 8:e december 2021. Om du vill beräkna ett datum i förflutna behöver du bara byta ut "plus" mot "minus" i kommandot.
 
+##Djupdykning
+
+För att förstå hur detta fungerar behöver vi veta att Bash använder sig av Unix-tiden, som är antalet sekunder som har gått sedan 1 januari 1970. När du lägger till eller drar bort dagar från ett datum, konverteras detta datum till Unix-tiden och sedan omvandlas tillbaka till datumformatet.
+
+För att ta reda på Unix-tiden för ett visst datum kan du använda följande kommando:
+
+```Bash
+date -d "2021-12-01" +%s
 ```
-mån 23 mar 2009 00:00:00 CET
+
+Detta kommer att returnera antalet sekunder som har gått sedan 1970-01-01 00:00:00 UTC fram till detta datum. Sedan för att omvandla tillbaka till ett datum kan du använda följande kommando:
+
+```Bash
+date -d @${unix_time}
 ```
 
-Det är även möjligt att använda specifika datum eller tidsintervall, såsom "next Monday", "last month", eller till och med en viss tid på dagen, till exempel "1pm".
+Här ska du ersätta ${unix_time} med det värde du fick från det förra kommandot.
 
-## Djupdykning
-För de som är intresserade av att lära sig mer detaljerad information om att beräkna datum i Bash, finns det gott om resurser att utforska. Ett viktigt koncept att förstå är hur `date` kommandot hanterar tidszoner och vilken standard som används. Det finns även möjlighet att ange egna tidszoner och datumformat för ännu mer precision.
+##Se även
 
-En annan viktig faktor är att kommandot endast kan hantera datum från år 1902 och framåt. För datum före detta kan man använda sig av kommandot `cal` för att få information om en specifik månad eller år.
-
-## Se även
-Här är några användbara länkar för de som är intresserade av att lära sig mer om att beräkna datum i Bash:
-
-- [Bash Documentation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Documentation för `date` kommandot](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
-- [Resurser för att lära sig mer om Bash programmering](https://www.learnshell.org/sv/)
+- [Bash man-sidan för date](https://ss64.com/bash/date.html)
+- [Unix-tiden på Wikipedia](https://sv.wikipedia.org/wiki/Unix-tid)

@@ -1,49 +1,46 @@
 ---
 title:    "Rust: Comparando dos fechas"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué comparar dos fechas en Rust?
 
-¿Alguna vez te has preguntado cómo los programas comparan fechas? La comparación de fechas es una tarea común en la programación y puede ser útil para filtrar datos, ordenar listas o verificar la validez de una entrada de usuario. En este artículo, aprenderemos cómo comparar dos fechas en Rust y por qué es importante conocer esta habilidad.
+Comparar dos fechas puede ser una tarea común en muchas aplicaciones, ya sea para mostrar información ordenada por fechas o para realizar cálculos de tiempo transcurrido. En Rust, hay varias formas de comparar fechas y en este artículo exploraremos cómo hacerlo de manera eficiente.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en Rust, podemos utilizar el tipo de datos `DateTime` de la biblioteca `chrono`. Primero, importaremos la biblioteca en nuestro código:
+En Rust, las fechas son representadas por el tipo de datos `DateTime<Utc>` del paquete `chrono`. Para comparar dos fechas, podemos utilizar el método `.cmp()` que devuelve un valor `Ordering` indicando si la primera fecha es menor, igual o mayor que la segunda. Veamos un ejemplo:
 
 ```Rust
-use chrono::prelude::*;
-```
+use chrono::{Utc, DateTime};
+use std::cmp::Ordering;
 
-Luego, podemos crear dos variables con fechas diferentes y utilizar el método `.cmp()` para compararlas. Por ejemplo, para verificar si la fecha "2021-01-01" es anterior a la fecha "2021-01-15", podemos escribir lo siguiente:
+let date_1: DateTime<Utc> = Utc.ymd(2021, 8, 20).and_hms(12, 0, 0);
+let date_2: DateTime<Utc> = Utc.ymd(2021, 8, 15).and_hms(15, 0, 0);
 
-```Rust
-let fecha1 = Utc.ymd(2021, 1, 1);
-let fecha2 = Utc.ymd(2021, 1, 15);
+let result = date_1.cmp(&date_2);
 
-if fecha1.cmp(&fecha2) == Ordering::Less {
-    println!("La fecha 1 es anterior a la fecha 2");
+match result {
+    Ordering::Less => println!("La fecha 2 es mayor a la fecha 1"),
+    Ordering::Equal => println!("Las fechas son iguales"),
+    Ordering::Greater => println!("La fecha 1 es mayor a la fecha 2"),
 }
 ```
 
-En este ejemplo, utilizamos el tipo de datos `Utc` para crear las fechas, pero también podemos utilizar `Local` para tener en cuenta la zona horaria local.
+En este ejemplo, primero importamos el paquete `chrono` y el módulo `Ordering` de la librería estándar para poder utilizar el método `.cmp()`. Luego, creamos dos fechas utilizando el método `Utc.ymd()` y `Utc.and_hms()` para especificar el año, mes, día y hora. Finalmente, comparamos las fechas usando `.cmp()` y utilizamos un `match` para imprimir un mensaje dependiendo del resultado.
 
-También podemos utilizar los métodos `.lt()` (menor que), `.gt()` (mayor que), `.eq()` (igual a) para comparar las fechas. Estos métodos devolverán un valor booleano (`true` o `false`) según sea el caso.
+Además del método `.cmp()`, también podemos utilizar los operadores de comparación (`<`, `>`, `==`, `!=`) para comparar fechas en Rust. Sin embargo, es importante tener en cuenta que esto solo compara la fecha y hora exactas, no toma en cuenta la zona horaria ni otros aspectos específicos de la fecha.
 
-## Profundizando
+## Deep Dive
 
-Es importante tener en cuenta que no solo podemos comparar fechas enteras, sino también partes individuales como el año, mes o día utilizando los métodos `year()`, `month()` y `day()`. Además, también podemos comparar fechas con precisión aún mayor utilizando el tipo de datos `DateTime` en lugar de `Date`, que incluye información sobre la hora exacta además de la fecha.
+En la comparación de fechas, también es importante tener en cuenta el concepto de precisión. Las fechas pueden tener diferentes niveles de precisión, desde milisegundos hasta años completos. Rust nos permite especificar el nivel de precisión al crear una fecha, lo que puede afectar cómo se comparan las fechas entre sí.
 
-También debemos tener cuidado con la zona horaria al comparar fechas. Si no especificamos explícitamente la zona horaria en nuestras fechas, pueden ocurrir resultados inesperados debido a la conversión entre zonas horarias.
-
-En caso de necesitar comparar fechas complejas, como comparar fechas con diferentes calendarios (gregoriano, islámico, etc.), existen bibliotecas de Rust que pueden ayudarnos a manejar estas tareas de manera más precisa.
+Por ejemplo, si tenemos dos fechas con diferente nivel de precisión, como una con segundos y otra solo con minutos, pueden ser consideradas iguales por Rust, a pesar de no ser idénticas. Por eso, es importante tener en cuenta la precisión al comparar fechas en Rust.
 
 ## Ver también
-
-Ahora que sabemos cómo comparar fechas en Rust, podemos continuar explorando más funciones y métodos para trabajar con fechas con las siguientes referencias:
-
-- [Comparación de fechas en Rust de la documentación oficial de std](https://doc.rust-lang.org/std/cmp/trait.Ord.html#implementors-of-Ord)
-- [Manipulación de fechas con chrono en Rust](https://crates.io/crates/chrono)
-- [Tipo de datos DateTime de Rust](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html)
+- [Documentación del paquete `chrono`](https://docs.rs/chrono/0.4.19/chrono/)
+- [Pautas de formato de fechas y horas en Rust](https://doc.rust-lang.org/std/fmt/trait.Display.html#method.to_string)
+- [Ejemplos de uso de fechas en Rust](https://github.com/chrono-rs/chrono-rs/tree/master/examples)

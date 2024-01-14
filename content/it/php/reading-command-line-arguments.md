@@ -1,50 +1,75 @@
 ---
-title:    "PHP: Lettura degli argomenti della riga di comando."
+title:    "PHP: Lettura degli argomenti dalla riga di comando"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore PHP, probabilmente hai sentito parlare di "argomenti da riga di comando". Ma perché dovresti interessarti a questa funzionalità? In breve, leggere gli argomenti da riga di comando può aiutarti a creare script più dinamici e facilmente personalizzabili per soddisfare le esigenze dei tuoi utenti.
+La lettura degli argomenti della riga di comando è una skill essenziale per ogni programmatore PHP. Conoscere come farlo ti permetterà di creare script più flessibili e interattivi, in grado di accettare input utente e adattarsi a diverse situazioni. Continua a leggere per scoprire come!
 
 ## Come Fare
 
-Leggere gli argomenti da riga di comando in PHP è sorprendentemente semplice. Utilizzando la funzione interna `getopt()` e il simbolo `$argv`, è possibile accedere facilmente a tutti gli argomenti passati a uno script PHP da riga di comando.
+Per leggere gli argomenti della riga di comando in PHP, utilizziamo la funzione incorporata `getopt()`. Questa funzione prende due parametri obbligatori: una stringa contenente le opzioni disponibili e un array contenente i valori degli argomenti. Ecco un esempio di codice:
 
 ```PHP
-$opzioni = getopt("ho:");
-var_dump($opzioni);
+$opzioni = "a:b:";
+$valori = getopt($opzioni);
 
-php script.php -h -o output.txt
+echo "Primo argomento: " . $valori['a'] . "\n";
+echo "Secondo argomento: " . $valori['b'] . "\n";
 ```
 
-Questo codice stamperà l'array delle opzioni come `[ "h" => true, "o" => "output.txt" ]`.
+La stringa `$opzioni` specifica due opzioni (`a` e `b`) seguite da `:` per indicare che richiedono un valore. Ora eseguiamo lo script fornendo questi argomenti:
+
+```
+$ php script.php -a valore1 -b valore2
+```
+
+L'output sarà:
+
+```
+Primo argomento: valore1
+Secondo argomento: valore2
+```
 
 ## Approfondimento
 
-Ma come funziona esattamente la funzione `getopt()`? E quali sono le sue opzioni disponibili? Qui di seguito è riportato un esempio che utilizza l'opzione `-o` e il valore di output come argomento.
+Oltre alle opzioni, la funzione `getopt()` ci permette di leggere anche gli argomenti posizionali. Ad esempio, se vogliamo leggere un elenco di file forniti come argomenti, possiamo utilizzare questa sintassi:
 
 ```PHP
-$opzioni = getopt("o:");
-$opzioneO = $opzioni['o'];
+$opzioni = "f:";
+$valori = getopt($opzioni);
 
-if (!empty($opzioneO)) {
-    echo $opzioneO;
+$files = $argv;
+
+//rimuoviamo il nome dello script dal file
+array_shift($files);
+
+foreach($files as $file){
+    echo "Nome file: " . $file . "\n";
 }
-
-php script.php -o output.txt
 ```
 
-In questo caso, l'output verrà stampato direttamente a schermo e sarà "output.txt".
+Eseguendo lo script in questo modo:
+
+```
+$ php script.php -f file1.txt file2.txt file3.txt
+```
+
+Avremo questo output:
+
+```
+Nome file: file1.txt
+Nome file: file2.txt
+Nome file: file3.txt
+```
+
+È importante notare che i flag delle opzioni possono essere combinati, quindi possiamo usare qualcosa come `-ab` per specificare entrambe le opzioni con un solo argomento.
 
 ## Vedi Anche
 
-Ecco alcuni link utili per approfondire l'argomento:
-
-- [La documentazione ufficiale di PHP su getopt()](https://www.php.net/manual/en/function.getopt.php)
-- [Un tutorial su howtogeek.com](https://www.howtogeek.com/465973/how-to-use-command-line-arguments-in-php/)
-- [Una spiegazione dettagliata su geekytheory.com](https://www.geekytheory.com/parametros-linux-linea-comando-php/)
-
-Buon coding!
+- [Documentazione PHP su getopt()](https://www.php.net/manual/en/function.getenv.php)
+- [Tutorial su CLI PHP su Codecademy](https://www.codecademy.com/learn/learn-php/modules/php-cli)

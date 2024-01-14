@@ -1,43 +1,35 @@
 ---
-title:    "PHP: Tiedoston kirjoittaminen"
+title:    "PHP: Tekstitiedoston kirjoittaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet PHP-ohjelmoijat käyttävät tekstitiedostoja tallentaakseen tietoa, kuten käyttäjien syötteitä tai konfiguraatiotietoja. Tässä blogikirjoituksessa käymme läpi, mitä text-tiedostojen kirjoittaminen PHP:lla tarkoittaa ja miten se on hyödyllistä.
+Tekstitiedoston kirjoittaminen on tärkeä osa PHP-ohjelmoinnin prosessia. Se mahdollistaa tiedon tallentamisen ja jakamisen eri käyttäjien välillä, sekä luo pohjan monille monimutkaisemmille toiminnoille.
 
 ## Miten
 
-PHP tarjoaa käytännöllisen tavan kirjoittaa ja tallentaa dataa tekstitiedostoon `fwrite()`-funktion avulla. Alla olevassa esimerkissä näytämme, miten voit kirjoittaa merkkijonon tekstitiedostoon käyttämällä PHP:ta.
+Tekstitiedoston kirjoittaminen PHP:llä on helppoa. Tässä on esimerkki koodista ja sen tulosteesta:
 
 ```PHP
 <?php
-// Avaamme tekstitiedoston kirjoitustilassa
-$file = fopen('tiedosto.txt', 'w');
-
-// Kirjoitetaan merkkijono tiedostoon
-fwrite($file, 'Hei Maailma!');
-
-// Suljetaan tiedosto
+$file = fopen("tekstitiedosto.txt", "w");
+fwrite($file, "Tämä on tekstirivi.");
 fclose($file);
-?>
+
+echo "Tiedosto on kirjoitettu onnistuneesti!";
 ```
 
-Yllä olevan koodin suorittamisen jälkeen tiedostoon `tiedosto.txt` on tallentunut teksti "Hei Maailma!".
+Tämä ohjelma luo uuden tekstitiedoston nimeltään "tekstitiedosto.txt" ja kirjoittaa siihen tekstin "Tämä on tekstirivi." Kun tiedosto suljetaan, ohjelma tulostaa viestin "Tiedosto on kirjoitettu onnistuneesti!".
 
-## Syventävä sukellus
+## Syvempi sukellus
 
-PHP-ohjelmoijilla on usein tarve tallentaa tietoa, kuten käyttäjien syötteitä tai laskettuja lukuja, johon he voivat palata myöhemmin. Tekstitiedostot ovat yksinkertainen tapa tallentaa tällaista dataa ja niiden käyttö on helppoa PHP:ssa.
-
-On tärkeää muistaa avata tiedosto kirjoitustilassa käyttäen `fopen()`-funktiota ja sulkea se `fclose()`-funktiolla, jotta tiedostoon kirjoittaminen onnistuu. Lisäksi tekstitiedoston nimi ja polku voidaan määrittää `fopen()`-funktion ensimmäiseksi parametriksi sekä valita kirjoitustila (`'w'`).
-
-Kun tallennettava tieto on määritelty, se voidaan antaa `fwrite()`-funktiolle toisena parametrina. Tämän jälkeen tiedosto on suljettava `fclose()`-funktiolla, jotta kaikki muutokset tallentuvat.
+Tekstitiedostojen kirjoittamisessa on monia eri vaihtoehtoja, kuten tiedostomuodon ja -sijainnin valitseminen. Lisäksi PHP tarjoaa useita muita toimintoja, kuten tiedostojen muokkaamisen ja poistamisen. On tärkeää muistaa hallita tiedostoja asianmukaisesti ja tarkistaa, että kirjoitettava tiedostomuoto on tarkoituksenmukainen käyttötarkoitukseen.
 
 ## Katso myös
 
-- PHP:n `fwrite()`-funktio: https://www.php.net/manual/en/function.fwrite.php
-- Tekstitiedostojen kirjoittaminen PHP:lla: https://www.w3schools.com/php/php_file_write.asp
-- Tekstiedostojen käsittely PHP:lla: https://www.php.net/manual/en/book.filesystem.php
+- [PHP:n tekstitiedostojen kirjoittaminen](https://www.php.net/manual/en/function.fopen.php)
+- [Tiedostojen hallinta PHP:llä](https://www.php.net/manual/en/ref.filesystem.php)

@@ -1,48 +1,48 @@
 ---
-title:    "Elixir: Leser en tekstfil"
+title:    "Elixir: Lese en tekstfil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å kunne lese tekstfiler er en viktig ferdighet for enhver programmerer. Det lar deg enkelt få tilgang til og bearbeide store mengder data, noe som er avgjørende for å lage effektive og pålitelige programmer.
+Å lese og behandle tekstfiler er en nødvendighet for de fleste programmerere. Enten du jobber med store datafiler eller bare trenger å analysere logger, vil du sannsynligvis måtte lese en tekstfil på et tidspunkt. I denne bloggposten vil vi utforske hvordan du kan lese en tekstfil ved hjelp av Elixir-programmeringsspråket.
 
-## Slik gjør du det
+# Hvordan lese en tekstfil med Elixir
 
-Elixir har en innebygd funksjon, `File.read!`, som lar deg lese en tekstfil og returnere innholdet som en streng. La oss se på et eksempel:
+Elixir har et innebygd bibliotek kalt `File` som lar oss lese og skrive til filer. For å lese en tekstfil, må vi først åpne filen ved hjelp av `File.open/2`-funksjonen. Denne funksjonen tar to argumenter - filbanen og modusen. Modusen brukes til å avgjøre om filen skal åpnes for lesing eller skriving. I vårt tilfelle vil vi bruke modusen `:read` for å åpne filen for lesing.
 
-```Elixir
-content = File.read!("tekstfil.txt")
-IO.puts(content)
+For å lese innholdet i filen, bruker vi `IO.read/2`-funksjonen og passerer inn filhandelen som et argument. Dette vil returnere innholdet i filen som en streng. Hvis vi vil ha filinnholdet linje for linje, kan vi bruke `IO.stream/2`-funksjonen og deretter `Stream.each/2`-funksjonen for å skrive ut hver linje i filen.
+
+Her er et eksempel på hvordan vi kan lese en tekstfil med Elixir:
+
+```elixir
+# Åpne filen for lesing
+{:ok, file} = File.open("min_fil.txt", [:read])
+
+# Les innholdet i filen som streng
+innhold = IO.read(file)
+
+# Skriv ut filinnholdet linje for linje
+IO.stream(file) |> Stream.each(&IO.puts(&1))
 ```
 
-Her leser vi innholdet i filen "tekstfil.txt" og skriver det ut til konsollen ved hjelp av `IO.puts`-funksjonen. Hvis filen ikke eksisterer eller det oppstår en feil, vil `File.read!` kaste en feilmelding.
-
-Hvis du heller vil returnere innholdet som en liste med linjer, kan du bruke `File.read_lines!` i stedet:
-
-```Elixir
-lines = File.read_lines!("tekstfil.txt")
-Enum.each(lines, fn line -> IO.puts(line) end)
+Output:
 ```
+Dette er en testtekst
+som jeg har lagt til i filen.
+Du kan også bruke `line`-funksjonen
+for å lese en linje av gangen.
 
-Her bruker vi `Enum.each`-funksjonen til å iterere gjennom hver linje i filen og skrive den ut.
+# Dypdykk
 
-## Dypdykk
+I tillegg til å lese filer på tradisjonell måte, har Elixir også et kraftig bibliotek kalt `File.Stream` som lar deg behandle filer som en strøm av data. Dette gjør det enkelt å behandle store datafiler uten å måtte lese hele filen inn i minnet.
 
-Hvis du ønsker å lese og bearbeide tekstfiler på en mer avansert måte, kan du bruke `File.stream!`. Denne funksjonen åpner en strøm (stream) til filen, noe som betyr at innholdet blir lest inn chunk for chunk i stedet for å bli lastet inn i minnet på én gang. Dette er spesielt nyttig hvis du skal lese veldig store filer som kan føre til at programmet ditt går tom for minne.
+For å bruke dette biblioteket, må vi først åpne filen som en strøm ved hjelp av `File.Stream.open/2`-funksjonen. Deretter kan vi bruke funksjoner som `File.Stream.unfold/3` og `File.Stream.map/2` for å behandle dataene i filen. Dette kan være nyttig for å filtrere, transformere eller aggregere data på en effektiv måte.
 
-For å ta en titt på denne metoden, kan du se på følgende eksempel:
+# Se også
 
-```Elixir
-File.stream!("tekstfil.txt") |> Stream.each(&IO.puts/1) |> Stream.run
-```
-
-Her åpner vi en strøm til filen "tekstfil.txt" og bruker `Stream.each`-funksjonen til å skrive ut hver linje til konsollen. Deretter kaller vi `Stream.run` for å faktisk kjøre strømmen.
-
-## Se også
-
-- [Elixir Dokumentasjon om Fil IO](https://hexdocs.pm/elixir/File.html)
-- [Elixir Dokumentasjon om Streams](https://hexdocs.pm/elixir/Stream.html)
-- [Elixir Dokumentasjon om Enum](https://hexdocs.pm/elixir/Enum.html)
+- [Elixir File Module](https://elixir-lang.org/getting-started/basic-types.html#file-module)
+- [Elixir File.Stream Module](https://hexdocs.pm/elixir/File.Stream.html)

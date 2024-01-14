@@ -1,38 +1,38 @@
 ---
 title:    "Arduino: Pisanie do standardowego błędu"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w Arduino?
+## Dlaczego
 
-Pisanie do standardowego błędu jest ważnym aspektem programowania w Arduino, ponieważ pozwala nam na wyświetlanie informacji diagnostycznych na monitorze szeregowym. To przydatne narzędzie podczas debugowania kodu i szukania błędów w aplikacji. Bez wyświetlania informacji o błędach, trudno jest zlokalizować i naprawić problemy w naszym programie.
+Jeśli jesteś programistą Arduino, na pewno słyszałeś o funkcji "Serial.print ()". Jest to bardzo przydatna funkcja, która pozwala na wypisywanie informacji na standardowe wyjście (Serial Monitor) w celu monitorowania działania programu. Ale czy wiedziałeś, że istnieje także funkcja "Serial.printErr ()", która pozwala na wypisywanie informacji na standardowe wyjście błędów (standard error)? W tym artykule dowiesz się dlaczego warto korzystać z funkcji "Serial.printErr ()" i jak to zrobić.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Pisanie do standardowego błędu w Arduino jest bardzo proste. Wystarczy użyć funkcji ```Serial.println()``` lub ```Serial.print()```, podając jako parametr tekst lub wartość, którą chcemy wyświetlić na monitorze szeregowym. Poniższy przykład przedstawia użycie tej funkcji:
+Pierwszym krokiem jest otwarcie okna Serial Monitor w środowisku Arduino IDE, klikając na ikonę lupy w prawym górnym rogu lub wybierając opcję "Narzędzia" i "Serial Monitor". Następnie, w sekcji "Prędkość", wybierz odpowiednią szybkość transmisji - zalecamy 115200.
 
-```
-void setup() {
-  Serial.begin(9600); // ustawienie prędkości transmisji danych
-}
+Aby użyć funkcji "Serial.printErr ()", musisz wcześniej zainicjować obiekt Serial w swoim kodzie. W tym celu wystarczy dodać linię "Serial.begin ()" w funkcji setup ().
 
-void loop() {
-  int sensorValue = analogRead(A0); // odczytanie wartości z czujnika analogowego
-  Serial.println("Aktualna wartość czujnika to: " + String(sensorValue)); // wyświetlenie tekstu i wartości na monitorze szeregowym
-  delay(1000); // opóźnienie o 1 sekundę
-}
+Teraz możesz użyć funkcji "Serial.printErr ()" do wypisywania informacji na standardowe wyjście błędów. Na przykład, jeśli chciałbyś wypisać informację o błędzie w kodzie, możesz użyć następującej linijki:
+
+```Arduino
+Serial.printErr("Błąd! Nie można otworzyć pliku.");
 ```
 
-Po wgraniu tego kodu do płytki Arduino i uruchomieniu monitora szeregowego (9600 bps), będziemy widzieć na wyjściu informacje o wartości odczytanej z czujnika. Dzięki temu możemy na bieżąco monitorować działanie naszej aplikacji.
+Pamiętaj, że standardowe wyjście błędów jest różne od standardowego wyjścia, więc musisz użyć innej funkcji, żeby zobaczyć te informacje w Serial Monitorze. W sekcji "Linia kończąca" Serial Monitora wybierz opcję "Pojedyncza nowa linia" lub "Both NL & CR". W przeciwnym razie nie zobaczysz żadnych informacji w Serial Monitorze.
 
-## Głębsza analiza
+## Deep Dive
 
-Pisanie do standardowego błędu w Arduino jest przydatne nie tylko do wyświetlania wartości zmiennych, ale także do informowania nas o przebiegu programu, wykrywanych błędach czy ewentualnych ostrzeżeniach. W tym celu możemy użyć funkcji ```Serial.print()``` do wyświetlania krótkich komunikatów oraz funkcji ```Serial.println()``` do wyświetlania dłuższych wiadomości. Dodatkowo, możemy użyć funkcji ```Serial.begin()``` do ustawienia prędkości transmisji danych, tak aby zgadzała się z ustawieniami monitora szeregowego.
+Standardowe wyjście błędów jest przydatne w wielu sytuacjach. Możesz go użyć do monitorowania błędów w kodzie, do debugowania lub nawet do wypisywania informacji o wyjątkach. Dodatkowo, w przeciwieństwie do standardowego wyjścia, standardowe wyjście błędów nie jest buforowane, więc informacje są wypisywane od razu.
 
-## Zobacz też 
+## Zobacz Również
 
-- [Official Arduino Serial Library Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Tutorial: Arduino - Serial Communication](https://www.arduino.cc/en/Tutorial/SerialCommunication)
-- [How to Use and Understand the Arduino Serial Monitor](https://www.dummies.com/computers/arduino/how-to-use-and-understand-the-arduino-serial-monitor/)
+Jeśli jesteś zainteresowany bardziej szczegółowym wyjaśnieniem funkcji "Serial.printErr ()" oraz różnicami między standardowym wyjściem a standardowym wyjściem błędów, polecamy przeczytać następujące artykuły:
+
+- ["Arduino - Serial.printErr ()" od hackster.io](https://www.hackster.io/MaxLeo961/arduino-serial-printerr-9d5bda)
+- ["Serial.print () i Serial.printErr () - różnice" od programuj1.pl](https://programuj1.pl/arduino/o-seriale/serial-print-i-serial-printf-inna-jak/)
+
+Dzięki funkcji "Serial.printErr ()" będziesz miał jeszcze większą kontrolę nad swoim programem i łatwiej będziesz mógł znaleźć i naprawić błędy. Nie wahaj się korzystać z tego narzędzia podczas tworzenia swoich projektów z Arduino!

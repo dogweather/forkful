@@ -1,42 +1,49 @@
 ---
-title:    "Javascript: Conversione di una stringa in lettere minuscole"
+title:    "Javascript: Convertire una stringa in minuscolo"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-In programmazione, spesso ci troviamo ad avere a che fare con stringhe di testo. Per una maggiore flessibilità e facilità di manipolazione, è importante che siano tutte formattate allo stesso modo. Convertire una stringa in minuscolo è un modo semplice per ottenere un output uniforme e coerente.
+Converting una stringa in minuscolo è un'attività molto comune nella programmazione Javascript, poiché spesso è necessario manipolare le stringhe per ottenere risultati specifici. Conoscere come effettuare questa operazione può aiutare a rendere il codice più efficiente e facile da leggere.
 
 ## Come fare
 
+Per convertire una stringa in minuscolo in Javascript, è possibile utilizzare il metodo `toLowerCase()`, che converte tutti i caratteri della stringa in minuscolo.
+
 ```Javascript
-const stringa = "CIAO A TUTTI"
-console.log(stringa.toLowerCase())
+let stringa = "QUESTA È UNA STRINGA IN MAIUSCOLO";
+let nuovaStringa = stringa.toLowerCase();
+
+console.log(nuovaStringa);
 ```
-Output: "ciao a tutti"
 
-Utilizzando il metodo `.toLowerCase()` su una variabile di tipo stringa, questa verrà convertita interamente in minuscolo. Questo metodo è utile quando si vuole confrontare o cercare una stringa senza dover preoccuparsi delle differenze tra lettere maiuscole e minuscole.
+L'output di questo codice sarà `questa è una stringa in maiuscolo`.
 
-Un altro modo per ottenere lo stesso risultato è utilizzando il metodo `.replace()` insieme alla regex `/[A-Z]/g` come parametro per sostituire tutte le lettere maiuscole con le corrispondenti lettere minuscole.
+Si noti che il metodo `toLowerCase()` non modifica la stringa originale, ma restituisce una nuova stringa convertita in minuscolo. Per modificare direttamente la stringa originale, è possibile utilizzare l'operatore di assegnazione (`=`).
+
+È inoltre possibile combinare il metodo `toLowerCase()` con altri metodi per effettuare manipolazioni più complesse sulla stringa. Ad esempio, si può sostituire una parte della stringa con un'altra stringa in minuscolo, utilizzando il metodo `replace()`.
+
 ```Javascript
-const stringa = "CIao a Tutti"
-console.log(stringa.replace(/[A-Z]/g, function(lettera) {
-  return lettera.toLowerCase();
-}))
+let stringa = "Questo è un testo da convertire";
+let stringaModificata = stringa.replace("testo", "possiamo fare un esempio");
+let nuovaStringa = stringaModificata.toLowerCase();
+
+console.log(nuovaStringa);
 ```
-Output: "ciao a tutti"
 
-## Immergiamoci nel dettaglio
+L'output di questo codice sarà `questo è un esempio da convertire`.
 
-La conversione di una stringa in minuscolo può essere eseguita utilizzando anche il metodo `.toLocaleLowerCase()` che tiene conto delle regole specifiche della lingua di cui la stringa fa parte. Inoltre, è importante ricordare che la conversione avviene solo per le lettere, mentre i numeri, i simboli e gli spazi rimangono invariati.
+## Approfondimento
 
-È anche possibile utilizzare la libreria esterna `lodash` che offre il metodo `.lowerCase()` per convertire una stringa in minuscolo.
+La conversione di una stringa in minuscolo è possibile grazie al fatto che in Javascript le stringhe sono immutabili, ovvero non possono essere modificate direttamente. Per effettuare manipolazioni su una stringa, è quindi necessario utilizzare metodi o operatori che restituiscano una nuova stringa modificata.
+
+Inoltre, va tenuto presente che la conversione in minuscolo può variare a seconda della lingua. Ad esempio, nella lingua italiana la lettera "I" con l'accento (Ì) diventa "i" in minuscolo, mentre nella lingua inglese rimane "I". Pertanto, è importante considerare il contesto in cui si utilizza la conversione in minuscolo e capire come essa influenzi il risultato finale.
 
 ## Vedi anche
 
-- [MDN: String.prototype.toLowerCase()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [MDN: String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-- [MDN: RegExp](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Lodash: _.lowerCase()](https://lodash.com/docs/4.17.15#lowerCase)
+- [Metodo toLowerCase() su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Manipolazione delle stringhe in Javascript](https://www.html.it/articoli/come-manipolare-le-stringhe-in-javascript/)

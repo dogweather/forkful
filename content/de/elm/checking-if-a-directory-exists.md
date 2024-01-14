@@ -1,86 +1,50 @@
 ---
 title:    "Elm: Überprüfen, ob ein Verzeichnis existiert"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Wenn Sie jemals in einem Projekt mit Dateien gearbeitet haben, sind Sie vielleicht auf die Notwendigkeit gestoßen, zu überprüfen, ob ein bestimmter Ordner existiert. Dies kann nützlich sein, um zu vermeiden, dass unerwünschte Fehler auftreten, wenn Sie versuchen, auf einen nicht vorhandenen Ordner zuzugreifen. In diesem Blog-Beitrag zeige ich Ihnen, wie Sie mithilfe von Elm ganz einfach überprüfen können, ob ein Ordner vorhanden ist.
+## Warum
 
-## Wie geht das?
-Um zu überprüfen, ob ein Ordner existiert, müssen wir zunächst die Bibliothek `elm/file` importieren. Diese Bibliothek enthält Funktionen, um mit Dateien und Ordnern zu interagieren. Dann können wir die Funktion `File.isDirectory` verwenden, um zu testen, ob ein bestimmter Pfad zu einem Ordner zeigt oder nicht.
+Die Überprüfung, ob ein Verzeichnis existiert, ist eine wichtige Aufgabe beim Programmieren. Dies kann dazu beitragen, Fehler zu vermeiden und die Nutzererfahrung zu verbessern. In diesem Blog-Beitrag werden wir uns ansehen, wie man dies in der funktionalen Programmiersprache Elm erreichen kann.
 
-```Elm
-import File exposing (isDirectory)
+## Wie geht's
 
-checkDirectory: String -> Cmd msg
-checkDirectory path =
-  isDirectory path
-    |> task
-```
-
-Die Funktion `isDirectory` gibt eine `Task` zurück, die wir dann in ein `Cmd msg` konvertieren. Auf diese Weise können wir die Überprüfung in unserer `update` Funktion ausführen und eine Nachricht senden, basierend auf dem Ergebnis.
+Zunächst müssen wir das Elm-Modul "Directory" importieren, um auf die Funktionen zugreifen zu können, die uns bei der Überprüfung des Verzeichnisses helfen werden. Dann können wir die Funktion "directoryExists" verwenden, um zu überprüfen, ob ein bestimmtes Verzeichnis existiert. Die Syntax für die Verwendung dieser Funktion sieht folgendermaßen aus:
 
 ```Elm
--- Message type
+import Directory
 
-type Msg
-  = DirectoryExists
-  | DirectoryDoesNotExist
-
--- Update function
-
-update msg model =
-  case msg of
-    DirectoryExists ->
-      -- handle result when the directory exists
-
-    DirectoryDoesNotExist ->
-      -- handle result when the directory does not exist
+if Directory.directoryExists "meinVerzeichnis" then
+    -- Code ausführen, wenn Verzeichnis existiert
+else
+    -- Code ausführen, wenn Verzeichnis nicht existiert
 ```
+
+Das oben genannte Beispiel zeigt, wie einfach es ist, in Elm zu überprüfen, ob ein Verzeichnis existiert. Man kann auch einen Typ konvertieren, um sicherzustellen, dass das zurückgegebene Ergebnis ein boolescher Wert ist, wie im folgenden Beispiel gezeigt:
+
+```Elm
+import Directory
+
+existiert : Bool
+existiert =
+    Directory.directoryExists "meinVerzeichnis" |> Result.toMaybe |> Maybe.withDefault False
+```
+
+In diesem Beispiel wird die Funktion "directoryExists" in eine Elm-Syntax umgewandelt, die das Ergebnis als mayBe-Typ zurückgibt. Dann wird mit der Funktion "withDefault" ein Standardwert von "False" angegeben, falls das Verzeichnis nicht existiert. Auf diese Weise erhalten wir immer ein boolesches Ergebnis zurück, unabhängig davon, ob das Verzeichnis existiert oder nicht.
 
 ## Tiefer Einblick
-In Elm gibt es auch die Möglichkeit, mithilfe von `elm/http` auf Dateien und Ordner auf einem Server zuzugreifen. Dies ermöglicht es uns, nicht nur lokale Ordner, sondern auch entfernte Server-Ordner zu überprüfen. Auch hierfür können wir die Funktion `File.isDirectory` verwenden und den Pfad zu unserem Server-Ordner angeben.
 
-```Elm
-import File exposing (isDirectory)
-import Http
-import Task
+Um tiefer in die Funktionsweise des Codes einzusteigen, ist es wichtig zu wissen, dass die Funktion "directoryExists" eine asynchrone Operation ausführt. Dies bedeutet, dass das Ergebnis von Elm als Ergebnistyp zurückgegeben wird, anstatt direkt einen booleschen Wert zu erhalten. Stattdessen müssen wir den Rückgabewert konvertieren, wie im obigen Beispiel gezeigt, um ein boolesches Ergebnis zu erhalten.
 
-checkServerDirectory: String -> Cmd msg
-checkServerDirectory url =
-  Http.get
-    { url = url
-    , expect = Http.expectString (\_ -> Task.succeed DirectoryExists)
-    , timeout = Nothing
-    , headers = []
-    , body = Http.emptyBody
-    }
-    |> Task.mapError
-        (\error ->
-            case error of
-                Http.BadUrl url ->
-                    "Invalid URL: " ++ url
+Darüber hinaus gibt es noch andere Funktionen im "Directory" Modul, die uns bei der Überprüfung und Bearbeitung von Verzeichnissen helfen können. Eine vollständige Dokumentation aller Funktionen und Rückgabewerte ist auf der offiziellen Elm-Website verfügbar.
 
-                Http.Timeout ->
-                    "Request timed out"
+## Siehe auch
 
-                Http.NetworkError ->
-                    "Network error"
+- [Offizielle Elm-Website](https://guide.elm-lang.org/)
+- [Directory-Modul Dokumentation](https://package.elm-lang.org/packages/mgold/elm-directory/latest/Directory)
+- [Asynchrone Operationen in Elm](https://guide.elm-lang.org/effects/)
 
-                Http.BadStatus code ->
-                    "Unsuccessful response code: " ++ (toString code)
-
-                Http.BadHeader header ->
-                    "Unsupported header: " ++ header
-        )
-    |> Task.map DirectoryDoesNotExist
-```
-
-Hier verwenden wir die Funktion `Http.get`, um eine GET-Anfrage an den Server-Ordner zu senden und einen String als Antwort zu erwarten. Wenn die Anfrage erfolgreich ist, wird die Funktion `expectString` ausgeführt und gibt eine `Task` zurück, die entweder `DirectoryExists` zurückgibt, wenn der Ordner existiert, oder `DirectoryDoesNotExist`, wenn der Ordner nicht vorhanden ist.
-
-# Siehe auch
-- Offizielle Dokumentation zu `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
-- Blog-Beitrag über Dateibearbeitung mit Elm: https://elmprogramming.com/file-interactions-in-elm.html
-- Beispielprojekt auf GitHub zur Dateiverwaltung mit Elm: https://github.com/dillonkearns/elm-filemanager-example
+Vielen Dank fürs Lesen! Wir hoffen, dass dieser Artikel Ihnen dabei geholfen hat, ein besseres Verständnis dafür zu bekommen, wie man in Elm auf Verzeichnisse überprüft. Wir würden uns sehr über Ihr Feedback oder weitere Vorschläge für zukünftige Blog-Beiträge freuen. Bis bald!

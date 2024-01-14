@@ -1,46 +1,43 @@
 ---
-title:    "Elm: Convertir une chaîne en minuscules"
+title:    "Elm: Conversion d'une chaîne en minuscules"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous travaillez avec des chaînes de caractères en Elm, vous pourriez avoir besoin de les convertir en lettres minuscules pour diverses raisons. La conversion de chaînes en minuscules peut faciliter la comparaison de chaînes, la recherche de sous-chaînes, ou simplement pour des raisons de formatage.
+Vous êtes peut-être en train de vous demander pourquoi vous devriez vous préoccuper de convertir une chaîne en minuscules en Elm. Eh bien, la réponse est simple : la conversion en minuscules est un élément essentiel du traitement des données textuelles. Que vous travailliez sur un projet de traitement de texte ou que vous ayez besoin de comparer des chaînes de caractères sans tenir compte de la casse, la conversion en minuscules est une compétence de base que tout développeur Elm devrait maîtriser.
 
 ## Comment faire
 
-Il existe une fonction native en Elm appelée `toLower` qui permet de convertir une chaîne en minuscules. Voici un exemple de son utilisation :
+La conversion d'une chaîne en minuscules en Elm est très simple. Tout ce que vous avez à faire est d'utiliser la fonction `String.toLower` en lui passant la chaîne que vous souhaitez convertir en minuscules. Voyons un exemple concret :
 
 ```Elm
-import String
-
-String.toLower "ELM EST AMUSANT"
+let
+    string = "ELM PROGRAMMING"
+in
+    String.toLower string
 ```
 
-La sortie de ce code sera "elm est amusant". Comme vous pouvez le voir, la fonction `toLower` prend simplement une chaîne en argument et la convertit en minuscules.
-
-Vous pouvez également utiliser la fonction `map` pour appliquer cette conversion à une liste de chaînes. Voici un exemple :
+Lorsque vous exécuterez ce code, vous obtiendrez la sortie suivante :
 
 ```Elm
-import String
-
-listOfStrings = ["ELM", "EST", "AMUSANT"]
-
-List.map String.toLower listOfStrings
+"elm programming"
 ```
 
-La sortie de ce code sera une liste contenant les chaînes "elm", "est" et "amusant". La fonction `map` est utile si vous avez besoin de convertir plusieurs chaînes en même temps.
+Comme vous pouvez le constater, la fonction `String.toLower` a correctement converti la chaîne en minuscules.
 
 ## Plongée en profondeur
 
-Il est important de noter que la fonction `toLower` convertit une chaîne en utilisant les règles de séparation de mots Unicode. Cela signifie que certaines lettres peuvent ne pas être converties comme vous vous y attendez, en particulier pour les caractères non-latins.
+Maintenant que vous savez comment convertir une chaîne en minuscules en Elm, il est important de comprendre comment cette fonction fonctionne en interne. Fondamentalement, la fonction parcourt chaque caractère de la chaîne et remplace les lettres majuscules par leurs équivalents en minuscules, en utilisant le code ASCII comme référence. Elle renvoie ensuite la chaîne convertie en minuscules.
 
-Il est également possible de créer votre propre fonction de conversion pseudo-minuscule en utilisant `map` et la fonction `String.toCode` pour convertir chaque caractère individuel en code Unicode et ensuite le manipuler en utilisant des fonctions de comparaison. Cependant, cela devient rapidement complexe et il est préférable d'utiliser la fonction native `toLower` chaque fois que cela est possible.
+Il est également important de noter que la fonction `String.toLower` ne modifie pas la chaîne d'origine, mais renvoie plutôt une nouvelle chaîne en minuscules. Cela est dû au fait que les chaînes sont des valeurs immuables en Elm, c'est-à-dire qu'elles ne peuvent pas être modifiées une fois qu'elles ont été créées.
 
 ## Voir aussi
 
-- [Documentation officielle sur la manipulation des chaînes en Elm](https://guide.elm-lang.org/strings/) 
-- [Liste des règles de séparation de mots Unicode](https://www.unicode.org/versions/Unicode10.0.0/ch03.pdf#page=127)
-- [Documentation officielle String.toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Documentation officielle sur la fonction `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Exemples pratiques pour utiliser la fonction `String.toLower`](https://elmprogramming.com/convert-string-to-lowercase-elm)
+
+Maintenant que vous savez comment convertir une chaîne en minuscules en Elm, vous pouvez l'utiliser dans vos projets pour gérer facilement les données textuelles. La compréhension de cette fonctionnalité fondamentale vous aidera à devenir un meilleur développeur Elm. Bonne programmation !

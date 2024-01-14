@@ -1,60 +1,55 @@
 ---
 title:    "C++: Obteniendo la fecha actual"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-¿Alguna vez te has preguntado cómo obtener la fecha actual en un programa de C++? Gran pregunta. Podrías querer obtener la fecha actual para mostrarla en una interfaz de usuario o para realizar cálculos basados en el paso del tiempo. Sea cual sea tu razón, seguir leyendo para descubrir cómo obtener la fecha actual en C++.
+Una de las tareas más comunes a la hora de programar es obtener la fecha actual. Ya sea para generar informes, establecer fechas de vencimiento o simplemente mostrar la fecha actual en una aplicación, es fundamental saber cómo obtener la fecha en C++. En esta publicación, te explicaremos por qué es importante y cómo hacerlo de manera sencilla.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en C++, necesitarás incluir la librería `ctime`. A continuación, debes declarar una variable de tipo `time_t` y llamar a la función `time()` para asignarle el valor actual del tiempo. Después, puedes utilizar la variable `time_t` con la función `localtime()` para obtener la fecha y hora en un formato más legible.
+Para obtener la fecha actual en C++, podemos utilizar la biblioteca estándar `ctime`. Esta biblioteca incluye la función `time`, que nos permite obtener la hora actual en forma de un objeto de tipo `time_t`. A continuación, podemos utilizar la función `strftime` para formatear el objeto `time_t` en el formato de fecha deseado.
 
-```
+Veamos un ejemplo de cómo obtener la fecha actual y mostrarla en formato "día/mes/año":
+
+```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-
-    // Declarar variable de tipo time_t
-    time_t ahora;
-
-    // Llamar a la función time() para obtener el tiempo actual
-    time(&ahora);
-
-    // Utilizar la función localtime() para obtener la fecha y hora
-    struct tm *tiempo = localtime(&ahora);
-
-    // Imprimir la fecha actual
-    std::cout << "La fecha actual es: " << tiempo->tm_mday << "/" << tiempo->tm_mon + 1 << "/" << tiempo->tm_year + 1900 << std::endl;
-
-    // Imprimir la hora actual
-    std::cout << "La hora actual es: " << tiempo->tm_hour << ":" << tiempo->tm_min << ":" << tiempo->tm_sec << std::endl;
-
-    return 0;
+  // Obtenemos la hora actual
+  time_t now = time(0);
+  
+  // Creamos un objeto de tipo tm para almacenar la fecha
+  struct tm *date = localtime(&now);
+  
+  // Utilizamos strftime para formatear la fecha
+  char buffer[9];
+  strftime(buffer, 9, "%d/%m/%Y", date);
+  
+  // Imprimimos la fecha formateada
+  std::cout << "Hoy es " << buffer << std::endl;
+  
+  return 0;
 }
 ```
 
-La salida de este programa sería algo así:
+La salida de este programa sería "Hoy es 14/08/2021".
 
-```
-La fecha actual es: 29/9/2021
-La hora actual es: 11:30:45
-```
+## Deep Dive
 
-## Profundizando
+La función `time` de la biblioteca `ctime` retorna un valor de tipo `time_t`, que es en realidad un entero que representa el número de segundos transcurridos desde el 1 de enero de 1970 a las 00:00 UTC. Esto se conoce como el "epoch" de UNIX.
 
-Ahora, profundicemos un poco más en el código que acabamos de ver. La función `time()` que utilizamos para obtener el tiempo actual devuelve un valor entero de tipo `time_t` que representa la cantidad de segundos transcurridos desde la época UNIX (1 de enero de 1970). Por lo tanto, al llamar a esta función y asignar su valor a una variable `time_t`, estamos obteniendo el tiempo actual en segundos.
+El formato en el que se muestra la fecha depende de cómo lo especificamos en la función `strftime`. En nuestro ejemplo, utilizamos "%d" para el día, "%m" para el mes y "%Y" para el año. Puedes encontrar una lista completa de los códigos de formato aquí: [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)
 
-Luego, utilizamos la función `localtime()` para convertir este valor de segundos en una estructura `tm` que contiene información sobre la fecha y hora actual en un formato más legible. Por ejemplo, `tiempo->tm_mday` representa el día del mes, `tiempo->tm_mon` representa el mes (teniendo en cuenta que enero es el mes 0) y `tiempo->tm_year` representa el año (teniendo en cuenta que el año 1900 es el año 0).
-
-Por último, es importante mencionar que la salida de la función `localtime()` depende del idioma y la configuración regional de tu sistema operativo. Por lo tanto, la salida en tu máquina puede variar.
+También es importante mencionar que la función `localtime` convierte el objeto `time_t` en la zona horaria local. Si deseas obtener la fecha en una zona horaria diferente, puedes utilizar la función `gmtime`.
 
 ## Ver también
 
-- [Documentación de la librería `ctime`](https://www.cplusplus.com/reference/ctime/)
-- [Tutorial de C++ en SoloLearn](https://www.sololearn.com/learning/1051)
-- [Video tutorial de Introducción a C++ de freeCodeCamp](https://www.youtube.com/watch?v=vLnPwxZdW4Y)
+- [https://www.cplusplus.com/reference/ctime/](https://www.cplusplus.com/reference/ctime/)
+- [https://en.cppreference.com/w/cpp/chrono/c/strftime](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [https://www.cplusplus.com/forum/beginner/234327/](https://www.cplusplus.com/forum/beginner/234327/) (enlaces en inglés)

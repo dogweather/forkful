@@ -1,36 +1,47 @@
 ---
-title:    "Fish Shell: Localizando e substituindo texto"
+title:    "Fish Shell: Busca e substituição de texto"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a Fish Shell para busca e substituição de texto?
+## Por que usar a linguagem Fish Shell?
 
-A Fish Shell é um shell de linha de comando bastante poderoso e versátil, que oferece diversas funcionalidades para facilitar o trabalho de programadores e usuários do sistema operacional. Dentre essas funcionalidades, uma das mais úteis é a capacidade de buscar e substituir texto de forma rápida e eficaz. Com a Fish Shell, é possível realizar essas tarefas com apenas alguns comandos, economizando tempo e aumentando a produtividade.
+A linguagem Fish Shell é um interpretador de comandos que oferece uma abordagem mais fácil e intuitiva para a substituição de texto. Ao invés de precisar compreender expressões regulares, o Fish Shell permite que você procure e altere rapidamente o texto desejado de forma simples.
 
-## Como fazer busca e substituição de texto no Fish Shell
+## Como usar a substituição de texto no Fish Shell
 
-Para realizar uma busca e substituição de texto no Fish Shell, é necessário utilizar o seguinte formato de comando:
+Para utilizar a substituição de texto no Fish Shell, você pode seguir os seguintes passos:
 
-```Fish Shell
-replace "texto a ser substituído" "novo texto" -- *
+1. Abra o Fish Shell no seu terminal
+2. Digite o comando `sed "s/ANTIGO/NOVO/g" arquivo` onde "ANTIGO" é o texto que você deseja substituir e "NOVO" é o texto que será inserido no lugar
+3. Pressione Enter e observe o resultado do comando
+
+Por exemplo, se você quisesse substituir todas as ocorrências da palavra "amarelo" por "azul" em um arquivo de texto chamado "cores.txt", o comando seria `sed "s/amarelo/azul/g" cores.txt`.
+
+Isso irá substituir todas as palavras "amarelo" por "azul" no arquivo "cores.txt", sem a necessidade de usar expressões regulares complicadas.
+
+```
+Fish Shell
+~/Desktop > sed "s/amarelo/azul/g" cores.txt
+vermelho
+azul
+verde
+preto
+azul
 ```
 
-Por exemplo, se quisermos substituir todas as ocorrências de "olá" por "oi" em um arquivo chamado "meu_arquivo.txt", basta utilizar o seguinte comando:
+## Mais sobre a substituição de texto no Fish Shell
 
-```Fish Shell
-replace "olá" "oi" -- meu_arquivo.txt
-```
+O comando `sed` utilizado no Fish Shell é baseado no utilitário de linha de comando sed, que é um poderoso editor de texto em UNIX. No Fish Shell, ele permite que você substitua o texto desejado em um arquivo sem a necessidade de utilizar uma sintaxe complexa de expressões regulares.
 
-O resultado será um arquivo com todas as ocorrências de "olá" substituídas por "oi".
+Além disso, é possível adicionar opções ao comando `sed`, como por exemplo, especificar qual linha do arquivo deve ser alterada ou utilizar caracteres especiais para delimitar o texto a ser substituído.
 
-## Aprofunde-se na busca e substituição de texto com Fish Shell
-
-A busca e substituição de texto com Fish Shell oferece diversas opções e funcionalidades interessantes. É possível, por exemplo, utilizar expressões regulares para buscar e substituir padrões de texto específicos. Além disso, é possível utilizar comandos como "sed" e "awk" para realizar buscas mais complexas. Para saber mais sobre essas opções, consulte a documentação da Fish Shell.
+Para mais informações sobre o comando `sed` no Fish Shell, você pode consultar a documentação oficial [aqui](https://fishshell.com/docs/current/cmds/sed.html).
 
 ## Veja também
 
-- Documentação oficial da Fish Shell: [https://fishshell.com/docs/](https://fishshell.com/docs/)
-- Tutorial completo sobre busca e substituição de texto com o Fish Shell: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-- Guia prático de expressões regulares: [https://www.regular-expressions.info/quickstart.html](https://www.regular-expressions.info/quickstart.html)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Guia rápido de comandos do Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- [Tutorial interativo de Fish Shell](https://fishshell.com/docs/current/tutorial.html)

@@ -1,43 +1,36 @@
 ---
 title:    "C# recipe: Comparing two dates"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Comparing dates is a common task in programming, especially when working with time-sensitive data. By comparing two dates, you can determine if one is before, after, or equal to the other. This can be useful for tasks such as scheduling events, calculating durations, or verifying data validity.
+As a programmer, you may encounter situations where you need to compare two dates. This could be for tasks such as checking if a deadline has passed, or sorting a list of events by date. By understanding how to compare dates in C#, you can efficiently handle these scenarios in your code.
 
 ## How To
 
-To compare two dates in C#, you can use the `DateTime` class and its `Compare` method. Let's take a look at an example:
+To compare two dates in C#, we can use the `Compare()` method of the `DateTime` struct. This method takes two `DateTime` objects as parameters and returns an integer value. Here's an example:
 
 ```C#
-DateTime date1 = new DateTime(2020, 10, 15);
-DateTime date2 = new DateTime(2020, 10, 20);
+DateTime date1 = new DateTime(2021, 5, 1);
+DateTime date2 = new DateTime(2021, 4, 1);
 
-// Compare date1 and date2 - returns -1 since date1 is before date2
-int result = DateTime.Compare(date1, date2); 
-Console.WriteLine(result); // Output: -1
+int result = DateTime.Compare(date1, date2);
 ```
 
-In this example, we create two `DateTime` objects representing two different dates. We then use the `Compare` method to compare them, which returns an integer value representing the relationship between the two dates.
+In this code, we create two `DateTime` objects representing May 1, 2021 and April 1, 2021 respectively. Then, we use the `Compare()` method to compare these two dates. The return value will be 1, indicating that `date1` is after `date2`.
 
-If the first date is before the second date, the method returns -1. If the dates are equal, it returns 0. And if the first date is after the second date, it returns 1.
-
-You can also use the `Equals` method to check if two dates are equal or the `CompareTo` method for more specific comparison operations.
+We can use this return value to perform different actions in our code. For example, we could check if the return value is greater than 0 to determine if one date is after another. Additionally, we can use other methods of the `DateTime` struct, such as `Equals()` and `CompareTo()`, for more specific comparison needs.
 
 ## Deep Dive
 
-Behind the scenes, the `DateTime` class uses a 64-bit integer to store the date and time values, with the time portion being represented as the number of ticks since midnight. This allows for precise comparisons and calculations, even down to milliseconds.
+Behind the scenes, the `Compare()` method works by comparing the `Ticks` property of the two `DateTime` objects. The `Ticks` property represents the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 12:00 AM. This allows for a precise comparison of dates, including the time component.
 
-When comparing dates, it's important to consider the time zone and daylight saving time (DST) rules as they can affect the outcome. You can use the `ToLocalTime` and `ToUniversalTime` methods to convert between time zones.
-
-In addition to comparing dates, the `DateTime` class also offers a variety of methods for performing mathematical operations such as addition, subtraction, and rounding.
+It's also worth noting that the `Compare()` method is culture-sensitive, meaning it takes into account the current culture of the system. This can cause unexpected results if not handled properly. To avoid this, we can use the `DateTime.Compare()` overload that takes a `DateTimeKind` parameter, specifying the type of comparison we want to perform.
 
 ## See Also
 
-- [DateTime.CompareTo Method (DateTime) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto)
-- [DateTime.Equals Method (DateTime) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.equals)
-- [DateTime Class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+For more information on comparing dates in C#, you can refer to the official Microsoft documentation on the `DateTime.Compare()` method (https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare), as well as the `DateTime` struct in general (https://docs.microsoft.com/en-us/dotnet/api/system.datetime).

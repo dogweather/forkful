@@ -1,30 +1,40 @@
 ---
-title:    "C#: वर्तमान तारीख लेना"
+title:    "C#: वर्तमान तारीख प्राप्त करना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
-Din ko haasil karne ka prayas karne se pahle, aapko current date ka kya upayog ho sakta hai yeh samajhna zaroori hai.
+## क्यों
 
-## Kaise Karein
-```
-C# DateTime currentDate = DateTime.Today;
-Console.WriteLine("Aaj ki tareekh: " + currentDate);
-```
-### Output:
-```
-Aaj ki tareekh: 8/24/2020
-```
-Is code snippet mein humne C# programming language ka upayog karke DateTime class ka ek object banaya hai. Isme humne Today property ka upyog kiya hai jo ki current date ko represent karta hai. Uske baad humne WriteLine method ka upayog karke current date ko print kiya hai. Is tarah se hum bahut hi aasaani se current date ko haasil kar sakte hain.
+क्या आप भी निराश हो जाते हैं जब आपको कुछ कूड़ा भरने के लिए तारीख को गूगल करना पड़ता है? धैर्य रखें, आज मैं आपको इस समस्या का समाधान दूंगा। आइए अपने कंप्यूटर से वर्तमान तारीख को प्राप्त करने का बताता हूं।
 
-## Gahraai Mein Jaaen
-Current date haasil karne ka kaam bahut hi aasan aur zaroori hai. Hum logon ki daily life mein iska upayog humne kai baar dekha hai. Lekin is simple task ki peeche kya logic hai aur iski working kaise hoti hai, yeh jaanne mein bohot saari gahraai hai. DateTime class mein humein kayi aur useful properties bhi mil jaati hain jaise ki AddDays, AddMonths, AddYears, etc. Jinse hum date ko manipulate aur compare kar sakte hain.
+## कैसे करें
 
-## Dekhein Bhi
-"See Also"  
+अपने C# कोड में निम्न लाइन को शामिल करें:
 
-[Microsoft Docs - DateTime Class (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)  
-[C# DateTime Tutorial - W3Schools](https://www.w3schools.com/cs/cs_dates.asp)  
-[C# DateTime.Parse Method - GeeksforGeeks](https://www.geeksforgeeks.org/c-sharp-datetime-parse-method/)
+```C#
+DateTime today = DateTime.Now;
+```
+
+यह आपको अपने वर्तमान समय की प्रतिनिधि देता है। यदि आप तारीख, महीना या साल प्राप्त करना चाहते हैं, आप इसका उपयोग कर सकते हैं:
+
+```C#
+DateTime today = DateTime.Now;
+int date = today.Day;
+string month = today.ToString("MMMM");
+int year = today.Year;
+Console.WriteLine("आज " + month + " " + date + ", " + year + " है।");
+```
+
+आप इस कोड को अपने कंप्यूटर पर चलाकर वर्तमान तारीख के मजेदार हिसाब को देख सकते हैं।
+
+## गहराई में उतरें
+
+अब आप अपने सिस्टम समय के बारे में और गहराई से जानना चाहते हैं? धीरे से, शुरू से शुरू करें। Date and Time नामक प्रोपर्टी को DateTime कक्षा के साथ जोड़ा जाता है। DateTime.Now स्थानीय समय के साथ DateTime ऑब्जेक्ट बनाता है। आप अन्य प्रकार की तारीख के बारे में भी जान सकते हैं, जैसे DateTime.Now.ToLongDateString (), DateTime.Now.ToShortDateString (), और यूटिलिटी फ़ंक्शंस जैसे DateTime.Now.ToString("d"), DateTime.Now.ToString("D"), और DateTime.Now.ToString("MM/dd/yyyy")। इस संबंध में अधिक जानकारी के लिए, माइक्रोसॉफ्ट की आधिकारिक दस्तावेज़ीकरण पढ़ें।
+
+## देखें भी
+
+- [DateTime.Now.Property] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0#properties)
+- [DateTime Structure] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=

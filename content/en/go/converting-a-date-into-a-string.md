@@ -1,43 +1,55 @@
 ---
 title:    "Go recipe: Converting a date into a string"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to display a date in a specific format or manipulate it as a string in your Go program? Converting a date into a string can be useful in many scenarios, such as displaying a date on a webpage or parsing it from a CSV file. In this blog post, we will explore how to convert a date into a string in the Go programming language.
+When working with dates and time in a Go program, there may be instances where you need to convert a date into a string. This could be for displaying the date in a specific format, or for storing the date in a database. In this blog post, we will explore how to convert a date into a string in Go.
 
 ## How To
 
-To convert a date into a string, we first need to define our date in a variable. We can use the `time` package in Go to create a `time.Time` object, which represents a specific moment in time. Let's say we have a date of September 13th, 2021:
+Converting a date into a string in Go is a relatively straightforward process. There are several ways to do it, depending on your specific requirements. Let's take a look at some code examples to better understand the process.
+
+First, let's define a variable with a date value:
 
 ```Go
-date := time.Date(2021, time.September, 13, 0, 0, 0, 0, time.UTC)
+date := time.Date(2021, time.March, 20, 0, 0, 0, 0, time.UTC)
 ```
 
-Next, we can use the `Format()` method on our `time.Time` object to specify the desired format for our date string. For example, if we want to display the date as "Monday, January 2, 2006", we would use the following code:
+### Format the Date
+
+To convert this date into a string, we can use the `Format()` method from the `time` package. This method takes a layout string as the argument, which specifies how the date should be formatted.
 
 ```Go
-dateString := date.Format("Monday, January 2, 2006")
+dateString := date.Format("02-01-2006")
+fmt.Println(dateString) // Output: 20-03-2021
 ```
 
-Note that we use the reference date of January 2, 2006 as our format, as it was chosen by the creators of Go as a placeholder. The output of `dateString` would be "Monday, September 13, 2021".
+In this example, we used the layout "02-01-2006" to format the date into DD-MM-YYYY format. This might be useful for displaying the date in a more human-readable format.
 
-We can also use other date formatting options, such as the day of the week (Monday, Tuesday, etc.), the month (January, February, etc.), or the year (06, 2006, etc.). You can find a full list of formatting options in the [Go documentation](https://golang.org/pkg/time/#pkg-constants).
+### Convert to Unix Timestamp
+
+Another way to convert a date into a string is by using the `Unix()` method. This method returns the date in seconds since January 1, 1970 UTC.
+
+```Go
+unixDateString := strconv.FormatInt(date.Unix(), 10)
+fmt.Println(unixDateString) //Output: 1616208000
+```
+
+If you need to store the date in a database or perform calculations with it, using a Unix timestamp might be a better approach.
 
 ## Deep Dive
 
-Behind the scenes, the `Format()` method uses the `time.Format()` function, which takes in the same formatting options and returns a string representation of a date. It also has the option to accept a `layout` parameter, which allows for more customization in the format of the date string.
-
-Additionally, the `time` package in Go also provides other useful functions for converting a date into a string, such as `Parse()` for parsing a string into a date, `FormatDuration()` for converting a duration into a string, and more. For more in-depth information about working with dates and times in Go, check out the [official documentation](https://golang.org/pkg/time/).
+Go's `time` package offers a wide range of methods for manipulating and formatting dates. You can specify the layout string in various formats, depending on your needs. Additionally, Go also supports the parsing of dates from strings using the `Parse()` method.
 
 ## See Also
 
-- [Official Go Documentation](https://golang.org/)
-- [Go Time Package Documentation](https://golang.org/pkg/time/)
-- [Date and Time Formats](https://www.w3schools.com/js/js_date_formats.asp)
-- [Formatting Dates and Times in Go](https://www.educative.io/edpresso/formatting-dates-and-times-in-go)
+Here are some related links that might be helpful in further understanding date and time operations in Go:
 
-By now, you should have a better understanding of how to convert a date into a string in Go. Whether you need to display a date or manipulate it in your program, the `time` package in Go provides a simple and efficient way to handle dates and times. Happy coding!
+- [Go Time Package Documentation](https://golang.org/pkg/time/)
+- [Converting Time to Strings in Go](https://www.calhoun.io/converting-time-to-strings-in-go/)
+- [Parsing Dates and Times in Go](https://blog.gopheracademy.com/advent-2014/parsing-dates-and-times-in-go/)

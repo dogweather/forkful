@@ -1,27 +1,44 @@
 ---
-title:    "Fish Shell: Converter uma data em uma string"
+title:    "Fish Shell: Convertendo uma data em uma sequência de caracteres"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar a conversão de data para string?
+## Por que
 
-A conversão de data para string é uma habilidade útil para programadores que trabalham com datas em seus projetos. Ao converter uma data em formato de string, é possível manipulá-la facilmente e utilizá-la em diferentes partes do código.
+Se você é um programador iniciante ou experiente, provavelmente já se deparou com a necessidade de converter uma data em uma string. Isso pode ser útil para apresentar a data de forma mais legível para usuários ou para gerar relatórios com informações de data.
 
-## Como fazer a conversão de data para string no Fish Shell
-Para fazer a conversão de data para string no Fish Shell, é preciso utilizar o comando `strftime`. Ele permite especificar um formato de data e hora personalizado para a conversão. Vejamos um exemplo:
+## Como converter uma data em string usando o Fish Shell
+
+Para converter uma data em string com o Fish Shell, é preciso usar o comando `date` combinado com o operador `|%Y-%m-%d` para formatar a data no padrão desejado. Veja um exemplo abaixo:
 
 ```Fish Shell
-set data (date -f "%d/%m/%Y") #Atribui a data atual na variável "data"
-echo $data #Imprime a data no formato "dd/mm/aaaa"
+set data (date +%Y-%m-%d)
 ```
-A saída desse exemplo seria: 01/06/2021.
+O comando acima irá armazenar a data atual em uma variável chamada `data` no formato `aaaa-mm-dd`. É importante utilizar o operador `+%Y-%m-%d` para garantir que a data seja formatada corretamente.
 
-## Profundando na conversão de data para string
-O comando `strftime` também pode ser utilizado para formatar outros aspectos da data, como o dia da semana, o mês e o ano. É possível consultar a documentação do Fish Shell para ver todas as opções disponíveis. Além disso, é importante mencionar que, ao utilizar a conversão de data para string, deve-se levar em conta a localização do sistema, já que diferentes países possuem diferentes formatos de data. 
+Para visualizar a data armazenada na variável, basta utilizar o comando `echo` da seguinte forma:
+
+```Fish Shell
+echo $data
+```
+A saída será algo como: `2022-01-01`.
+
+## Aprofundando um pouco mais
+
+Além de converter para o formato padrão `aaaa-mm-dd`, é possível customizar a conversão para outros formatos, como por exemplo, utilizando o comando `strftime` para formatar a data de acordo com a linguagem do sistema.
+
+Veja um exemplo abaixo:
+
+```Fish Shell
+set data (date -f "%A, %d de %B de %Y")
+```
+Nesse caso, a data será formatada em português, exibindo informações como o dia da semana, dia do mês e mês por extenso. A saída pode ser algo como: `Sábado, 01 de Janeiro de 2022`.
 
 ## Veja também
-- Documentação do comando `strftime` no Fish Shell: https://fishshell.com/docs/current/commands.html#strftime
-- Como manipular datas no Fish Shell: https://fishshell.com/docs/current/tutorial.html#dates
-- Conversão de data para string em outros shells: https://www.computerhope.com/unix/strftime.htm
+
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sobre o uso do comando `date` no Fish Shell](https://www.digitalocean.com/community/tutorials/como-usar-o-comando-date-no-fish-shell-pt)
+- [Mais informações sobre o uso do comando `strftime`](https://www.man7.org/linux/man-pages/man3/strftime.3.html)

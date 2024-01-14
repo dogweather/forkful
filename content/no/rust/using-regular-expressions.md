@@ -1,38 +1,52 @@
 ---
 title:    "Rust: Å bruke regulære uttrykk"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor bør du bruke regulære uttrykk i din Rust programmering? Regulære uttrykk er en kraftig måte å søke og manipulere tekst på. Det kan være nyttig for å finne spesifikke mønstre i en tekst, validere brukerinput eller erstatte deler av en streng. Det er også et viktig verktøy i mange programmeringsspråk, så å lære å bruke det i Rust vil være en verdifull ferdighet å ha.
 
-## Hvordan
-For å bruke regulære uttrykk i Rust, trenger du først å importere Regex biblioteket. Deretter kan du definere et uttrykk ved hjelp av Regex::new() funksjonen og deretter bruke metoder som .is_match() for å se om strenger passer til uttrykket, eller .replace() for å erstatte deler av en streng.
+Regex, eller regulære uttrykk, er et kraftig verktøy for å finne og manipulere tekststrenger basert på spesifikke mønstre. Dette kan være nyttig for å søke gjennom store mengder data, eller for å utføre kompleks tekstbehandling. Rust tilbyr et innebygd Regex-bibliotek som gjør det mulig for utviklere å utføre dette på en effektiv og trygg måte.
 
-La oss si at du vil finne alle tall i en tekst og erstatte dem med "NUMMER". Dette kan enkelt gjøres ved hjelp av følgende kode:
+## Slik gjør du det
 
-```Rust 
-use regex::Regex;
+For å bruke Regex i Rust, må du først importere biblioteket med `use regex::Regex;`. Deretter kan du opprette en ny Regex-variabel ved å bruke `let regex = Regex::new("mønster");`, der "mønster" er det spesifikke mønsteret du ønsker å matche. For eksempel kan du bruke `let regex = Regex::new(r"katt|hund");` for å matche både "katt" og "hund" i en tekststreng.
 
-let re = Regex::new(r"[0-9]+").unwrap();
-let text = "Dette er en setning med tall 123 og 456";
+Når du har opprettet en Regex-variabel, kan du bruke den til å søke gjennom en tekststreng ved hjelp av `find`-metoden. Dette vil returnere en `Option` med en `Match`-struktur som inneholder informasjon om den første matchen som ble funnet. For å få tilgang til selve strengen, kan du bruke `unwrap`-metoden.
 
-let result = re.replace_all(text, "NUMMER");
-
-println!("{}", result); // Dette er en setning med tall NUMMER og NUMMER
+```Rust
+let result = regex.find("Jeg eier en katt og en hund.");
+if let Some(result) = result {
+    println!("Jeg eier en {}", result.as_str()); // vil skrive ut "Jeg eier en katt"
+}
 ```
 
-Som du kan se, tar Regex::new() funksjonen inn et mønster (her [0-9]+ som betyr en eller flere tall) og deretter bruker vi .replace_all() metoden for å erstatte alle forekomster av mønsteret med "NUMMER".
+Du kan også bruke `captures`-metoden for å få tilgang til deler av den matchede strengen, slik som gruppen du ønsker å hente ut. For å gjøre dette, må du først bruke parenteser rundt den delen av mønsteret du ønsker å matche og deretter bruke indeksering på `Match`-strukturen for å hente ut gruppen din.
 
-## Dypdykk
-Regulære uttrykk kan være komplekse, men å lære å bruke dem vil gjøre det enkelt å utføre avansert tekstbehandling. Det finnes mange forskjellige symbolske uttrykk og metoder for å gjøre søk og erstatninger enda mer presise. Det er også mulig å lage dynamiske uttrykk ved hjelp av variabler og løkker.
+```Rust
+let regex = Regex::new(r"([0-9]{2})/([0-9]{2})/([0-9]{4})");
+let result = regex.captures("Fødselsdato: 25/12/1990");
+if let Some(result) = result {
+    println!("Datoen er {}/{}/{}", result[1], result[2], result[3]); // vil skrive ut "Datoen er 25/12/1990"
+}
+```
 
-For å få en dypere forståelse av regulære uttrykk og hvordan du kan bruke det i din Rust programmering, anbefaler vi å se på offisiell dokumentasjon for Regex biblioteket og prøve ut ulike eksempler.
+For flere avanserte bruksområder, kan du også bruke `replace`-metoden for å erstatte deler av teksten med annen tekst basert på et mønster.
+
+```Rust
+let regex = Regex::new(r"mønster");
+let result = regex.replace("Dette er en tekst med mønster.", "erstattet mønster");
+println!("{}", result); // vil skrive ut "Dette er en tekst med erstattet mønster."
+```
+
+## Dykk dypere
+
+Som nevnt tidligere, er det mange flere avanserte bruksområder for Regex i Rust som ikke er dekket her. Du kan lære mer ved å lese dokumentasjonen for Regex-biblioteket og eksperimentere med forskjellige mønstre og metoder.
 
 ## Se også
-- [Offisiell dokumentasjon for Regex biblioteket i Rust](https://docs.rs/regex/1.4.2/regex/)
-- [Tutorial for å lære regulære uttrykk i Rust](https://medium.com/@ericdreichert/regex-in-rust-a06fc30ad58e)
-- [En interaktiv guide til regulære uttrykk i Rust](https://fosskers.github.io/writing-good-initialization.html#sec-6)
-- [Eksempler på bruk av regulære uttrykk i praktiske situasjoner](https://dev.to/dev0928/rust-regex-penetrating-examination-and-practice-3io2)
+
+- [Dokumentasjon for Regex-biblioteket i Rust](https://docs.rs/regex)
+- [Rust regex-syntaks Finn en god artikkel her](https://dev.to/emmanuelnwabueze/building-your-regex-skills-chapter-one-regex-syntax-and-patterns-in-rust-2a7g) 
+- [Offisiell Rust-hjemmeside](https://www.rust-lang.org/)

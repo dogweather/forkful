@@ -1,54 +1,37 @@
 ---
-title:    "Python: Écriture sur l'erreur standard"
+title:    "Python: Écrire vers l'erreur standard"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Dans la programmation Python, il est souvent nécessaire d'afficher des informations sur l'exécution du code. Souvent, ces informations sont imprimées à la console à l'aide de la fonction `print`, mais que faire si l'on veut afficher un message d'erreur ? Dans ce cas, il est utile de savoir comment écrire vers le *standard error*.
+Ecrire dans la sortie d'erreur standard peut sembler intimidant pour de nombreux programmeurs débutants, mais c'est une compétence importante à maîtriser. Ce processus vous permet d'afficher des messages d'erreur et de débogage dans votre code, ce qui peut vous aider à mieux comprendre et résoudre les problèmes dans vos programmes.
 
 ## Comment faire
 
-Ecrire vers le *standard error* est très similaire à l'écriture vers le *standard output*. La principale différence est l'utilisation de `sys.stderr` au lieu de `sys.stdout`. Voici un exemple de code :
+Voici un exemple simple qui montre comment écrire dans la sortie d'erreur standard en utilisant le module `sys` en Python :
 
 ```Python
 import sys
 
-print("Ceci sera imprimé à la console")
-print("Ceci sera imprimé au *standard error*", file=sys.stderr)
-
-# Output :
-# Ceci sera imprimé à la console
+sys.stderr.write("Erreur: la valeur entrée n'est pas un nombre entier")
 ```
 
-Comme vous pouvez le constater, `sys.stderr` peut être utilisé avec la fonction `print` pour écrire vers le *standard error*. Cela peut être très utile lorsque vous avez besoin d'afficher des messages d'erreur pour le débogage de votre code.
+Lorsque vous exécutez ce code, vous remarquerez que le message d'erreur est affiché en rouge, séparé du reste de votre programme. Cela permet de le distinguer des autres sorties et de le rendre plus visible pour le débogage.
+
+Vous pouvez également utiliser la méthode `.flush()` pour forcer l'affichage immédiat des messages dans la sortie d'erreur standard, plutôt que d'attendre la fin de l'exécution du programme.
 
 ## Plongée en profondeur
 
-L'utilisation de `sys.stderr` pour écrire vers le *standard error* peut être utile dans plusieurs situations. Par exemple, si vous utilisez un module de traitement de fichier et qu'une erreur se produit, vous pouvez utiliser `sys.stderr` pour afficher un message d'erreur à l'utilisateur plutôt que de simplement planter votre programme.
+Lorsque vous écrivez dans la sortie d'erreur standard, il est important de noter que cela ne garantit pas que le programme s'arrêtera. En effet, les erreurs peuvent être ignorées ou gérées par des blocs `try/except` dans votre code.
 
-Il est également possible d'utiliser `sys.stderr` avec la syntaxe `with` pour gérer les exceptions et afficher un message d'erreur approprié en cas d'erreur. Voici un exemple :
-
-```Python
-import sys
-
-try:
-    # Code qui peut générer une exception
-    1/0
-except ZeroDivisionError as error:
-    # Affichage d'un message d'erreur vers le *standard error*
-    print("Une erreur s'est produite :", error, file=sys.stderr)
-
-# Output :
-# Une erreur s'est produite : division by zero
-```
-
-En utilisant cette méthode, vous pouvez mieux contrôler les messages d'erreur et les rendre plus explicites pour l'utilisateur.
+De plus, il est important de toujours fermer la sortie d'erreur standard `sys.stderr` après l'avoir utilisée, en utilisant la méthode `.close()`.
 
 ## Voir aussi
 
-- [La documentation officielle de Python pour la gestion d'exceptions](https://docs.python.org/fr/3/tutorial/errors.html)
-- [Un tutoriel sur l'utilisation de la syntaxe `with` pour la gestion des exceptions](https://realpython.com/lessons/using-python-with-sources-statements/)
-- [Un article sur la différence entre le *standard output* et le *standard error*](https://www.tutorialspoint.com/what-is-the-difference-between-standard-error-and-standard-output-in-linux)
+- [Documentation officielle Python - Manipulation de la sortie d'erreur standard](https://docs.python.org/fr/3/library/sys.html#sys.stderr)
+- [Article sur la gestion des erreurs en Python](https://realpython.com/python-exceptions/)
+- [Guide de débogage en Python](https://www.fullstackpython.com/debugging.html)

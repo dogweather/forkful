@@ -1,41 +1,41 @@
 ---
 title:    "TypeScript: 정규식 사용하기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-
-정규 표현식을 사용하는 이유는 데이터를 효율적으로 분석하고 가공하기 위해서입니다.
+## 왜 regular expressions를 사용하나요?
+정규 표현식(regular expressions)은 문자열에서 특정한 패턴을 찾거나 매치시키기 위해 사용되는 매우 강력한 도구입니다. 이 도구를 사용하면 문자열에서 원하는 부분을 추출하거나 검색하고 대치할 수 있으며, 많은 언어에서 지원되는 유용한 기능 중 하나입니다. 따라서 프로그래머들은 정규 표현식을 사용하여 문자열 처리를 간편하고 효율적으로 할 수 있습니다.
 
 ## 사용 방법
-
-우선 TypeScript에서 정규 표현식을 사용하기 위해서는 `RegExp`를 사용해야 합니다. 아래는 간단한 예제 코드와 함께 정규 표현식을 사용하는 방법을 보여줍니다.
+정규 표현식은 일반적으로 세 가지의 구성 요소로 이루어져 있습니다: 패턴(pattern), 검색 대상 문자열(input), 그리고 플래그(flags). 패턴은 찾고자 하는 문자열의 패턴을 정의하는 부분으로, 이를 통해 문자열에서 일치하는 부분을 찾게 됩니다. 검색 대상 문자열은 실제로 패턴을 찾을 대상 문자열을 의미하며, 대부분 문자열 변수나 문자열 리터럴로 제공됩니다. 마지막으로 플래그는 패턴을 적용할 때 어떤 규칙을 따를지를 정하는 옵션으로, 예를 들어 대소문자를 무시하거나 전체 문자열에서 모든 일치하는 부분을 찾을지를 결정할 수 있습니다.
 
 ```TypeScript
-// 문자열에서 숫자만 추출하는 예제
-const str: string = "hello123world";
-const pattern: RegExp = /[0-9]/g;
-const result: RegExpMatchArray | null = str.match(pattern);
-
-console.log(result); // ["1", "2", "3"]
+// input 문자열에서 "cat"이라는 패턴을 검색하는 예시
+let input = "I have a cat and a dog.";
+let pattern = /cat/;
+console.log(pattern.test(input)); // true
 ```
 
-위 코드에서 보시다시피, 정규 표현식은 `/` 사이에 패턴과 옵션을 넣는 형태로 사용됩니다. 그리고 `\`는 Escape 문자로 문자 그대로 해석되도록 할 때 사용됩니다. 여기서 `g`는 전역 검색 옵션을 의미하며, 이 옵션을 사용하면 나오는 모든 패턴을 찾아줍니다.
+위의 예시에서는 input 문자열에서 "cat"이라는 부분을 찾으며, 찾으면 true를 출력합니다.
 
-이 외에도 정규 표현식에 대한 더 다양한 예제를 [이 곳](https://regexr.com/)에서 확인할 수 있습니다.
+더욱 복잡한 예시를 살펴보겠습니다.
 
-## 심층 분석
+```TypeScript
+// input 문자열에서 모든 전화번호를 추출하는 예시
+let input = "My phone number is (123)456-7890. Your number is (987)654-3210.";
+let pattern = /\(\d{3}\)\d{3}-\d{4}/g;
+console.log(input.match(pattern)); // ["(123)456-7890", "(987)654-3210"]
+```
 
-정규 표현식은 일반적으로 문자열에서 원하는 패턴을 추출하기 위해 사용됩니다. 하지만 더 깊이 들어가서 살펴보면, 정규 표현식은 매우 강력한 데이터 검색 도구입니다. 예를 들어, 이메일 주소를 검증하는데 정규 표현식을 사용할 수 있고, 복잡한 문자열에서 특정 패턴을 추출하는 것도 가능합니다. 
+위의 예시에서는 괄호로 묶인 세 자리 숫자 다음에 세 자리 숫자와 하이픈, 그리고 마지막으로 네 자리 숫자가 있는 패턴을 찾는 정규 표현식을 사용하고 있습니다. 이를 통해 input 문자열에서 모든 전화번호를 추출할 수 있습니다.
 
-또한 정규 표현식은 다양한 프로그래밍 언어에서 지원됩니다. 따라서 어떤 프로젝트를 진행하든지 간에 정규 표현식을 잘 이해하고 사용할 수 있다면, 데이터 처리에 있어서 매우 유용할 것입니다.
+## 깊이있게 살펴보기
+정규 표현식은 강력한 도구지만 사용하는 패턴에 따라 복잡해질 수 있습니다. 또한 잘못된 패턴을 사용하면 의도하지 않은 결과가 나올 수도 있습니다. 따라서 정규 표현식을 사용할 때는 반드시 문서를 참조하고 예제 코드를 참고하여 익숙해지는 것이 좋습니다. 또한 정규 표현식을 이용해 문자열을 처리할 때 각 언어별로 다르게 적용되는 문법이 있으므로, 자신이 사용하는 언어의 문법을 항상 확인하는 것이 중요합니다.
 
-## 관련 링크
-
-[JavaScript에서 정규 표현식 사용하기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
-
-[Regular Expressions 101 - 정규 표현식 예제와 테스터](https://regex101.com/)
-
-[정규 표현식 튜토리얼 - 모든 프로그래밍 언어 지원](https://regexone.com/)
+## 더 알아보기
+- [MDN 웹 문서: 정규 표현식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [자바스크립트 정규 표현식 테스트기](https://regexr.com/)
+- [정규표

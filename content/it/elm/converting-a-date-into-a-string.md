@@ -1,38 +1,35 @@
 ---
-title:    "Elm: Converting una data in una stringa"
+title:    "Elm: Convertire una data in una stringa"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Spesso ci troviamo ad avere la necessità di convertire una data in una stringa per poterla mostrare all'utente in un formato più comprensibile. In Elm, ci sono diverse funzioni utili che ci permettono di fare questo in modo semplice e preciso.
+La conversione di una data in una stringa è un'operazione comune nella programmazione di Elm, soprattutto quando si lavora con dati provenienti da fonti esterne come API. Conoscere come fare questa conversione può facilitare il lavoro di manipolazione dei dati e renderlo più preciso.
 
-## Come
+## Come fare
 
-Per convertire una data in una stringa, possiamo utilizzare la funzione `toString` del modulo `Date`. Ad esempio, se vogliamo mostrare oggi come stringa nella forma "giorno/mese/anno", possiamo scrivere:
-
-```Elm
-Date.toString (Date.fromTime (Time.millisToPosix 0)) "dd/MM/yyyy"
-```
-
-Questo ci restituirà una stringa che rappresenta l'ora attuale nella forma specificata. Se vogliamo invece convertire una data specifica, possiamo fare così:
+Per convertire una data in una stringa in Elm, è possibile utilizzare la funzione `DateTime.toIsoString` del modulo `elm/time`. Questa funzione accetta un oggetto `DateTime` e restituisce una stringa nel formato ISO 8601. Ad esempio:
 
 ```Elm
-Date.toString (Date.fromTime (Time.millisToPosix 1583979600000)) "dd MMMM yyyy"
+import DateTime exposing (..)
+
+myDate = fromYearMonthDay 2021 10 3
+DateTime.toIsoString myDate
 ```
 
-In questo caso, stiamo convertendo la data del 12/03/2020 nella forma "12 marzo 2020".
+Questa funzione è utile perché il formato ISO 8601 è standardizzato e facilmente interpretabile da altri linguaggi di programmazione o da servizi web.
 
-## Approfondimento
+## Approfondimenti
 
-Oltre alla funzione `toString`, il modulo `Date` ci offre anche altre funzioni utili per manipolare le date e le stringhe. Ad esempio, `fromIsoString` ci permette di convertire una stringa di formato ISO-8601 in una data, mentre `toInternetDate` ci consente di ottenere una stringa di formato RFC-1123 a partire da una data.
-
-Inoltre, è possibile specificare diverse opzioni per il formato della stringa di output, come ad esempio la lingua e la zona oraria. È importante sempre leggere la documentazione delle funzioni per utilizzarle correttamente.
+Ci sono diverse alternative per la conversione di una data in una stringa, come ad esempio l'utilizzo delle funzioni `Date.toGregorian` o `Date.toUnique`. Inoltre, è importante prestare attenzione ai fusi orari quando si manipolano le date, in modo da ottenere i risultati desiderati.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Elm sul modulo `Date`: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Tutorial su come utilizzare il modulo `Date`: https://elmprogramming.com/using-date-picker-inputs.html
-- Esempi di utilizzo del modulo `Date` in Elm: https://github.com/rtfeldman/elm-date-extra
+- [Modulo DateTime di Elm](https://package.elm-lang.org/packages/elm/time/latest/DateTime)
+- [Documentazione su Date.toGregorian](https://package.elm-lang.org/packages/elm/time/latest/Date#toGregorian)
+- [Documentazione su Date.toUnique](https://package.elm-lang.org/packages/elm/time/latest/Date#toUnique)
+- [ISO 8601 su Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)

@@ -1,56 +1,36 @@
 ---
-title:    "Elm: 비교 두 날짜"
+title:    "Elm: 두 날짜 비교하기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-두 날짜를 비교하는 데 관심이 있는 이유는 무엇일까요? Elm 프로그래밍을 할 때 날짜를 비교하는 것은 중요한 부분입니다. 왜냐하면 위험한 동작이 포함되기 때문입니다. 정확한 방법으로 비교하지 않으면 문제가 발생할 수 있습니다.
+Elm은 대부분의 프로그래밍 언어와 달리 타입 시스템과 정적 결정을 가지고 있습니다. 이것은 Elm이 더 안전하고 예측 가능한 프로그래밍을 할 수 있도록 도와줍니다. 그 중 하나가 두 개의 날짜를 비교하는 것입니다. 왜 두 개의 날짜를 비교해야 할까요? 이를 알아봅시다!
 
-# 방법
+## 어떻게 비교할까요?
 
-날짜를 비교하는 방법에는 여러 가지가 있지만 대부분은 잘못된 방법입니다. 그래서 여기서는 올바른 방법과 각 방법이 반환하는 결과를 살펴보겠습니다.
+아래의 코드 블록을 보면, 두 개의 날짜를 비교하는 방법을 알 수 있습니다. 먼저 ```Date.fromString``` 함수를 사용하여 날짜를 문자열에서 변환하고, 다음으로, ```Html.text``` 함수를 사용하여 결과를 화면에 보여줍니다. 결과를 보면, 이전 날짜가 최신 날짜보다 이전이라는 것을 알 수 있습니다. 코드를 실행하면서 다른 날짜들을 비교해보세요!
 
-```Elm
--- 예제 1: Date.comparableDates
-import Date exposing (Date, comparableDates)
-
-firstDate : Date
-firstDate = Date.fromString "2021-01-01"
-
-secondDate : Date
-secondDate = Date.fromString "2021-01-31"
-
-comparableDates firstDate secondDate
-
--- 결과: 0
+```elm
+Date.fromString "2020-01-01" |> Date.fromString "2021-01-01"
+|> Date.compare
+|> Html.text
 ```
 
-```Elm
--- 예제 2: Date.compare
-import Date exposing (Date, compare)
-
-firstDate : Date
-firstDate = Date.fromString "2021-01-01"
-
-secondDate : Date
-secondDate = Date.fromString "2021-01-31"
-
-compare firstDate secondDate
-
--- 결과: LT
+**코드 출력:**
+```
+LT
 ```
 
-위에서처럼 `comparableDates` 함수와 `compare` 함수는 각각 두 날짜를 비교하여 숫자와 문자열을 반환합니다. 숫자는 날짜 간의 차이를 나타내며, 문자열은 "LT" (firstDate가 secondDate보다 이전), "EQ" (firstDate와 secondDate가 같은 날짜), "GT" (firstDate가 secondDate보다 이후) 중 하나의 값을 갖습니다.
+## 깊게 파보자
 
-# 딥 다이브
+Elm에서 두 개의 날짜를 비교하는 더 많은 방법들이 있습니다. 예를 들어, ```Date.Compare``` 모듈에는 3개의 함수가 있습니다: ```Date.before```, ```Date.after```, 그리고 ```Date.between```. 각각 다른 비교 방법을 제공합니다. 또한, 날짜를 비교할 뿐만 아니라, 날짜가 유효한지 여부를 확인할 수도 있습니다. 이를 위해서는 ```Date.isValid``` 함수를 사용하면 됩니다. 더 많은 정보를 원한다면, Elm 공식 문서의 [날짜와 시간](https://guide.elm-lang.org/interop/dates.html) 부분을 참고해보세요.
 
-더 깊게 들어가기 전에 이 예제에서 반환되는 숫자나 문자열의 의미를 이해하는 것이 중요합니다. 숫자의 경우, 날짜를 `comparableDates` 함수를 통해 비교하면 오직 하루, 즉 두 날짜 사이의 최소 단위의 차이만 알 수 있습니다. 하지만 `compare` 함수를 사용하면 더 정확한 비교가 가능합니다.
+## 관련 자료
 
-날짜를 비교할 때에는 연도, 월, 일, 시간, 분, 초 등 다양한 요소를 고려해야 합니다. 그리고 어떤 요소를 우선하여 비교할지도 중요합니다. 이런 다양한 상황이 있기 때문에 이론적으로는 무한히 많은 방법으로 날짜를 비교할 수 있습니다. 하지만 Elm에서는 두 가지 함수를 제공하여 더 정확하고 간편하게 날짜를 비교할 수 있도록 해줍니다.
-
-# 이 외에도 알아보기
-
-- [Date 모듈 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/Date)
+- [Elm 공식 문서 - 날짜와 시간](https://guide.elm-lang.org/interop/dates.html)
+- [Elm 정적 타입 시스템에 대한 소개 (번역)](https://jjminsik.tistory.com/entry/Introduction-to-Elm-typing)
+- [JavaScript와의 상호 운용성을 위한 Elm 마법사 삽질기 (번역)](https://riiid-techblog.tistory.com/32)

@@ -1,44 +1,56 @@
 ---
-title:    "Clojure: Wyodrębnianie podciągów"
+title:    "Clojure: Ekstrakcja podciągów"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często podczas programowania w Clojure musimy pracować z ciągami znaków, które są długie i skomplikowane. Czasami potrzebujemy tylko części tych ciągów, ale ręcznie wybieranie odpowiednich fragmentów może być uciążliwe i czasochłonne. Dlatego warto poznać narzędzie, które pozwoli nam w prosty sposób wyciąć potrzebne nam podciągi.
+Wyciąganie podciągów jest jedną z podstawowych i ważnych czynności w programowaniu, która pozwala na manipulowanie i przetwarzanie danych tekstowych. W tym artykule dowiecie się, jak łatwo i szybko wykorzystać tę funkcjonalność w języku Clojure.
 
 ## Jak to zrobić
 
-W Clojure mamy dostęp do funkcji `subs`, która umożliwia nam wycinanie podciągów z dowolnego ciągu znaków. Przykładowo, jeżeli chcemy uzyskać podciąg zaczynający się od drugiego znaku a kończący na siódmym, wykonujemy następującą operację:
+Wyciąganie podciągów w Clojure jest bardzo proste dzięki funkcji `subs`, która pozwala na zdefiniowanie zakresu indeksów wewnątrz podanego tekstu. Poniżej znajdują się przykłady użycia tej funkcji:
 
 ```Clojure
-(subs "Lorem ipsum dolor sit amet" 2 7)
+(def text "To jest przykładowy tekst")
+(subs text 7 16)
 ```
-Wynik: `orem `
 
-Jeżeli chcemy wybrać tylko fragment od konkretnej pozycji do końca ciągu, możemy zastosować następujący zapis:
-```Clojure
-(subs "Lorem ipsum dolor sit amet" 12)
-```
-Wynik: `sit amet`
+Output: `przykładowy`
 
-Funkcja `subs` przyjmuje jako argumenty ciąg znaków oraz pozycje startową i opcjonalnie końcową do wycinania.
-
-Możliwe jest również wycinanie podciągów od końca ciągu, co jest szczególnie przydatne przy pracy z ciągami znaków o zmiennej długości. W takim przypadku pozycje należy podawać ujemne, np. `-5` oznacza piąty znak od końca. Przykład:
+Funkcja `subs` przyjmuje trzy argumenty - tekst, początkowy indeks i końcowy indeks. Pierwszy znak w tekście ma indeks 0, a ostatni indeks jest o 1 mniejszy niż długość tekstu. Można także wykorzystać ujemne indeksy, które oznaczają odliczanie od końca tekstu. 
 
 ```Clojure
-(subs "Lorem ipsum dolor sit amet" -9 -3)
+(subs text -5 -1)
 ```
 
-Wynik: ` dolor `
+Output: `tekst`
 
-## Wgląd w działanie funkcji `subs`
+Inną przydatną funkcją jest `subs-from`, która pozwala na wyciągnięcie podciągu od danego indeksu do końca tekstu.
 
-Warto wiedzieć, że funkcja `subs` w rzeczywistości korzysta z jednej z innych funkcji dostępnych w Clojure - `substring`. Możemy to wykorzystać, jeżeli chcemy uzyskać więcej szczegółów o funkcjonalności wyciągania podciągów.
+```Clojure
+(subs-from text 3)
+```
 
-## Zobacz również
+Output: `jest przykładowy tekst`
 
-- Dokumentacja funkcji `subs`: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subs
-- Więcej informacji o funkcji `substring` i sposobach jej użycia: https://clojuredocs.org/clojure.java.string/substring
+## Głębsze pogłębienie
+
+W języku Clojure istnieje również funkcja `subs-by`, która pozwala na wyciągnięcie podciągu o określonej długości, zaczynając od podanego indeksu. Na przykład, jeśli chcemy wyciągnąć podciąg z tekstu o długości 5 zaczynający się od indeksu 3, możemy wykorzystać tę funkcję w następujący sposób:
+
+```Clojure
+(subs-by text 3 5)
+```
+
+Output: `jest`
+
+Funkcja `subs-by` jest szczególnie przydatna, gdy chcemy wyciągnąć kolejne fragmenty tekstu o stałej długości.
+
+## Zobacz też
+
+- Dokumentacja funkcji `subs`: https://clojuredocs.org/clojure.string/subs
+- Przykłady użycia wyciągania podciągów: https://www.tutorialspoint.com/clojure/clojure_strings.htm
+- Krótki kurs o wyciąganiu podciągów w Clojure: https://clojureverse.org/t/crash-course-string-manipulation-in-clojure/6632

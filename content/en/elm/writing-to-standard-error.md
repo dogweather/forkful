@@ -1,60 +1,40 @@
 ---
 title:    "Elm recipe: Writing to standard error"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Write to Standard Error?
 
-Writing to standard error, also known as `stderr`, is an important feature in Elm programming. It allows us to log errors and warnings in a separate stream from regular output, making it easier to debug our code and improve its reliability.
+Writing to standard error (often abbreviated as "stderr") can be a useful tool for debugging and error handling in Elm programming. By printing out specific information to the error stream, developers can gain insight into the code and diagnose issues more easily.
 
-## How To
+# How To Write to Standard Error in Elm
 
-To write to `stderr` in Elm, we can use the `Debug.log` function. Here's an example:
+Writing to standard error in Elm is a straightforward process. The `Debug.log` function allows developers to print a message to stderr, along with any values they want to include for debugging purposes. Here's an example:
 
-```Elm
-import Debug exposing (log)
-
--- A function that divides two numbers
-divide : Float -> Float -> Float
-divide x y =
-  log "Dividing" (x / y)
+```elm
+-- Prints "x is 10" to stderr
+Debug.log "Debugging" ("x is " ++ toString 10)
 ```
 
-In this example, we are using `Debug.log` to log the result of our division operation to `stderr`. This function takes in a label (in this case, "Dividing") and the value we want to log (in this case, `x / y`). When we run our code, the output in the console will be:
+The above code would produce the following output in the console:
 
 ```
-Dividing: 2.5
+Debugging: x is 10
 ```
 
-This allows us to easily track what values are being passed into our functions and debug any potential issues.
+# Deep Dive into Writing to Standard Error
 
-## Deep Dive
+The `Debug.log` function takes two arguments: a message string and a value to include in the output. It then returns the value, making it easy to insert into existing code without causing side effects. This can be especially helpful when trying to track the value of a variable over multiple function calls.
 
-When using `Debug.log`, it's important to note that the label argument is evaluated as a function. This means if we want to log a variable, we need to use the `_` placeholder in the label. For example:
+Another useful function for writing to standard error in Elm is `Debug.todo`, which is used to signify that a certain part of the code is unfinished and still needs to be implemented. This can be a helpful reminder when working on a large project and allows for easy identification of incomplete tasks.
 
-```Elm
-import Debug exposing (log)
+# See Also
 
--- A function that divides two numbers
-divide : Float -> Float -> Float
-divide x y =
-  log (toString x ++ " / " ++ toString y) (x / y)
-```
+For more information on writing to standard error in Elm, check out these resources:
 
-In this example, we are using the `_` placeholder in the label to log the values of `x` and `y` without calling them as functions. This will result in an output of:
-
-```
-5.0 / 2.0: 2.5
-```
-
-Additionally, we can also use `Debug.log` as a "debugging print statement" to track the flow of our code and check if certain conditions are being met. This can be especially useful in more complex applications where it's not always easy to follow the data flow.
-
-## See Also
-
-For more information on writing to `stderr` in Elm, check out these resources:
-
-- [Elm Syntax: Debug.log](https://elm-lang.org/docs/syntax#debug-log)
-- [Elm Radio: Debug.module](https://elm-radio.com/episode/debug-module)
-- [Elm in Action: Debugging with Standard Error](https://livebook.manning.com/book/elm-in-action/chapter-11/38)
+- [Elm's Official Debug Module Documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [A Guide to Debugging in Elm](https://dennisreimann.de/articles/elm-debugging.html)
+- [Using Debug.log and Debug.todo in Elm](https://medium.com/@sav_ya/using-debuglog-and-debugtodo-in-elm-4829e0be3d96)

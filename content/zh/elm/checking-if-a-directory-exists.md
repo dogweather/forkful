@@ -1,50 +1,36 @@
 ---
 title:    "Elm: 检查目录是否存在"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
+## 为什么选择 Elm 编程?
 
-在Elm编程中，常会遇到需要找出某个文件夹是否存在的情况。这个过程对于编程来说非常重要，因为它可以帮助我们避免运行过程中出现错误，同时也可以提高我们的代码逻辑性和可读性。
+Elm 是一种功能强大的编程语言，它拥有清晰简单的语法和强大的类型系统。使用 Elm 可以帮助程序员编写更可靠、易于维护的代码。如果您是一名前端开发者，那么学习 Elm 会为您带来许多好处。它可以让您在构建 Web 应用程序时更加高效，并帮助您避免常见的错误。
 
-##如何进行
+## 如何检查目录是否存在？
 
-首先，我们需要创建一个函数来检查文件夹的存在性，代码如下所示：
+如果您正在开发一个文件管理系统或者需要在应用程序中操作文件和目录，您可能需要检查某个目录是否存在。下面是使用 Elm 编程语言检查目录是否存在的示例代码：
 
-```elm
-checkDirectoryExistence : String -> Bool
+```Elm
+import File
+
+checkDirectoryExists : String -> Cmd msg
+checkDirectoryExists path =
+    File.exists path
+        |> Task.perform (\exists -> if exists then "目录存在" else "目录不存在")
 ```
 
-然后，我们需要使用Elm的内置函数来实现这个检查过程，代码如下所示：
+运行以上代码的输出结果将根据目录是否存在而不同。如果目录存在，则输出结果为“目录存在”，如果目录不存在，则输出结果为“目录不存在”。
 
-```elm
-checkDirectoryExistence path =
-    Directory.exists path
-```
+## 深入了解检查目录是否存在
 
-最后，根据需要可以在函数中加入一些逻辑判断，来处理文件夹存在与否的情况。下面是一个完整的例子：
+在 Elm 编程中，使用 File.exists 函数可以轻松检查指定路径的目录是否存在。该函数返回一个 Task，使用 Task.perform 可以处理 Task 的结果。如果目录存在，则可以执行相关任务，如创建文件或读取文件内容等。如果目录不存在，则可以执行错误处理任务，如提示用户目录不存在或者创建目录等。
 
-```elm
-checkDirectoryExistence : String -> String
-checkDirectoryExistence path =
-    if Directory.exists path then
-      "文件夹存在！"
-    else
-      "文件夹不存在！"
-```
+## 参考链接
 
-在上面的代码中，我们使用了条件语句来判断文件夹是否存在，如果存在则返回相应的提示信息，如果不存在则返回另外一条信息。
-
-##深入了解
-
-实际上，文件夹的存在性检查是通过调用Elm的内置函数来完成的。这些内置函数可以帮助我们轻松地管理文件和文件夹，从而提高我们的编程效率。除了上面的例子中使用的`Directory.exists`函数外，还有其他一些常用的函数，例如`File.exists`, `Directory.ls`, `File.read`, 等等。
-
-总的来说，文件夹的存在性检查可以帮助我们更好地管理我们的代码和文件，提高代码的可读性和可维护性。我们可以根据自己的需要灵活地使用Elm的内置函数来完成这一过程。
-
-##参考链接
-
-- [Elm官方文档](https://elm-lang.org/docs)
-- [Elm博客](https://elmprogramming.com/)
-- [Elm中文文档](https://zhuanlan.zhihu.com/p/217106190)
+- [Elm 官方网站](https://elm-lang.org/)
+- [Elm 中文文档](https://elm-lang.org/docs)
+- [Elm 社区论坛](https://discourse.elm-lang.org/)

@@ -1,71 +1,59 @@
 ---
 title:    "C#: Testien kirjoittaminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testejä?
+## Miksi
+Miksi kukaan haluaisi kirjoittaa testejä? Testien kirjoittaminen voi tuntua turhalta lisätyöltä, mutta se voi todella säästää aikaa ja parantaa koodin laatua pitkällä tähtäimellä. Hyvin suunniteltujen ja toteutettujen testien avulla voit varmistaa, että koodisi toimii oikein ja vähentää virheiden esiintymistä tuotantoympäristössä.
 
-Testaus on erittäin tärkeä osa ohjelmistokehitystä, ja sen tavoitteena on varmistaa, että ohjelmisto toimii odotetulla tavalla. Testien kirjoittaminen auttaa löytämään mahdolliset virheet ja bugeja ennen kuin ohjelmisto julkaistaan loppukäyttäjille. Se myös auttaa varmistamaan, että uudet ominaisuudet eivät aiheuta ongelmia vanhoille toiminnoille. Jos olet ohjelmistokehittäjä, testien kirjoittaminen on ehdottomasti tärkeä taito hallita.
-
-## Näin kirjoitat testejä C# -koodiin
+## Kuinka
+Koodin testaaminen C#-kielessä voi tuntua haastavalta, mutta se on erittäin tärkeä osa kehitysprosessia. Alla on muutamia esimerkkejä, jotka auttavat sinua aloittamaan.
 
 ```C#
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-[TestClass]
-public class CalculatorTests
+// Luodaan luokka Calculator
+public class Calculator
 {
-    // Luodaan vaihtoehtoiset luvut testausta varten
-    int numberOne = 5;
-    int numberTwo = 10;
-
-    [TestMethod]
-    public void TestAddition()
+    // Metodi, joka laskee kahden luvun summan
+    public int Sum(int a, int b)
     {
-        // Luodaan oletettu vastaus summa-operaatiolle
-        int expected = 15;
-        // Kutsutaan metodia ja tallennetaan sen palauttama arvo
-        int actual = Calculator.Add(numberOne, numberTwo);
-        // Verrataan odotettua arvoa todelliseen
-        Assert.AreEqual(expected, actual);
-    }
-
-    [TestMethod]
-    public void TestSubtraction()
-    {
-        int expected = -5;
-        int actual = Calculator.Subtract(numberTwo, numberOne);
-        Assert.AreEqual(expected, actual);
+        return a + b;
     }
 }
 
-// Luodaan esimerkkilaskin luokka
-public class Calculator
+// Luodaan luokka testejä varten
+// Tässä esimerkissä käytämme NUnit-testauskirjastoa
+[TestFixture]
+public class CalculatorTests
 {
-    public static int Add(int x, int y)
+    // Luodaan testimetodi Sum-metodille
+    [Test]
+    public void SumTest()
     {
-        return x + y;
-    }
-
-    public static int Subtract(int x, int y)
-    {
-        return x - y;
+        // Luodaan instanssi Calculator-luokasta
+        Calculator calculator = new Calculator();
+        
+        // Kutsutaan Sum-metodia ja varmistetaan, että saatu tulos on oikea
+        Assert.AreEqual(4, calculator.Sum(2,2));
     }
 }
 ```
 
-Testi-luokassa käytetään [TestClass] -attribuuttia ja [TestMethod] -attribuuttia testiluokkien ja -metodien määrittämiseen. Assert-luokan metodit, kuten AreEqual, ovat hyödyllisiä testien arviointiin ja virheiden löytämiseen.
+Kun ajat testin, saat seuraavanlaisen tulosteen:
 
-## Syventävä sukellus testien kirjoittamiseen
+```bash
+SumTest:
+  Expected: 4
+  But was:  5
+```
 
-Testien kirjoittaminen voi vaikuttaa vaikealta aluksi. On tärkeää varmistaa, että testit kattavat kaikki mahdolliset reitit koodissa, ja että ne ovat riittävän kattavia. Sinun pitäisi myös ajaa testisi useita kertoja ja varmistaa, että ne tuottavat saman tuloksen jokaisella ajon kerralla.
+Tässä tapauksessa testi epäonnistui, sillä summan pitäisi olla 4, mutta tulokseksi tuli 5. Tämä osoittaa, että jotain on vialla ja nyt voit korjata virheen ennen kuin se pääsee tuotantoympäristöön.
 
-Kun olet kirjoittanut testit, käännytä projekti konsolikomennolla "dotnet test" tai Visual Studion Test Explorerin kautta. Jos kaikki testit menevät läpi ilman ongelmia, voit olla varma siitä, että koodisi toimii oikein.
+## Syvempi sukellus
+Testien kirjoittaminen ei rajoitu vain yksikkötestaamiseen. On myös tärkeää testata integraatioita ja käyttöliittymää, jotta varmistetaan, että kaikki toimii yhteen halutulla tavalla. Testien kirjoittaminen auttaa myös dokumentoimaan koodin toimintaa ja parantamaan sen ylläpidettävyyttä.
 
 ## Katso myös
-
-- [Microsoftin dokumentaatio testien kirjoittamiseen Visual Studiolla](https://docs.microsoft.com/en-us/visualstudio/test/writing-unit-tests-for-your-code?view=vs-2019)
-- [Testauksen perusteiden opas C#:lla](https://www.tutorialspoint.com/csharp/csharp_unit_testing.htm)
-- [Test-Driven Development (TDD) -konseptin ymmärtäminen](https://smartbear.com/learn/automated-testing/test-driven-development-guide/)
+- [NUnit-testauskirjasto](https://nunit.org/)
+- [Microsoftin ohjeet testien kirjoittamiseen C#-koodissa](https://docs.microsoft.com/en-us/dotnet/core/testing/?tabs=windows)

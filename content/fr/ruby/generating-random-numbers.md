@@ -1,46 +1,53 @@
 ---
 title:    "Ruby: Génération de nombres aléatoires"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Lorsque vous écrivez un programme en Ruby, il est parfois utile de pouvoir générer des nombres aléatoires. Que ce soit pour créer des jeux, des simulations ou tout simplement pour ajouter une dose d'imprévisibilité à votre code, la génération de nombres aléatoires peut être un outil très pratique. Dans cet article, nous allons découvrir comment générer des nombres aléatoires en utilisant Ruby.
+Générer des nombres aléatoires peut sembler être une tâche ennuyeuse et inutile, mais c'est en fait une compétence importante pour les programmeurs de Ruby. L'utilisation de nombres aléatoires peut ajouter une dimension d'imprévisibilité à vos programmes et les rendre plus intéressants.
 
-## Comment faire
+# Comment Faire
 
-Pour générer un seul nombre aléatoire en Ruby, vous pouvez utiliser la méthode `rand` suivie d'un nombre entier entre parenthèses représentant la limite supérieure de la plage de nombre aléatoires. Par exemple, si vous souhaitez générer un nombre aléatoire compris entre 1 et 10, vous pouvez utiliser `rand(10)`. Voici un exemple de code :
+La génération de nombres aléatoires en Ruby est assez simple grâce à la méthode `rand()`. Cette méthode prend un argument entier en tant que limite supérieure et renvoie un nombre aléatoire compris entre 0 et cette limite. Voyons un exemple :
 
-```Ruby
-puts rand(10)
-```
+````Ruby
+puts rand(10) # renvoie un nombre aléatoire entre 0 et 10
+````
 
-Ce code pourrait générer un nombre aléatoire comme 7. Vous pouvez également utiliser `rand` sans paramètre pour générer un nombre aléatoire entre 0 et 1. Pour générer plusieurs nombres aléatoires, vous pouvez utiliser une boucle `times` en spécifiant le nombre de fois que vous souhaitez générer un nombre aléatoire. Voici un exemple :
+Vous pouvez également spécifier une limite inférieure en utilisant une virgule :
 
-```ruby
-5.times do
-puts rand(100)
-end
-```
+````Ruby
+puts rand(1..5) # renvoie un nombre aléatoire entre 1 et 5
+````
 
-Cela générera 5 nombres aléatoires entre 0 et 100. Vous pouvez également utiliser la méthode `rand` avec des flottants pour générer des nombres aléatoires avec des décimales.
+Si vous souhaitez générer un nombre aléatoire à virgule flottante, vous pouvez utiliser la méthode `randf()` :
 
-## Plongée profonde
+````Ruby
+puts randf() # renvoie un nombre aléatoire entre 0 et 1
+````
 
-Maintenant que vous connaissez les bases pour générer des nombres aléatoires en utilisant Ruby, vous vous demandez peut-être comment cela fonctionne réellement. En fait, les nombres aléatoires sont générés à l'aide d'un algorithme qui utilise une graine (seed en anglais) pour calculer le nombre aléatoire. La graine est un nombre qui est donné à l'algorithme pour qu'il puisse générer des nombres aléatoires. Si vous ne spécifiez pas de graine, Ruby utilisera par défaut la date et l'heure actuelles comme graine. Cela signifie que chaque fois que vous exécutez votre code, vous obtiendrez des nombres différents. Si vous voulez toujours obtenir les mêmes nombres aléatoires, vous pouvez spécifier une graine en utilisant `srand` suivi du nombre de votre choix. Voici un exemple :
+Et si vous souhaitez obtenir un nombre aléatoire spécifique à chaque utilisation de votre programme, vous pouvez utiliser la méthode `srand()` pour initialiser la séquence de nombres aléatoires :
 
-```ruby
-srand 42
-puts rand(10)
-```
+````Ruby
+srand(12345) # initialise une séquence de nombres aléatoires basée sur le nombre 12345
+````
 
-Ce code générera toujours le nombre 6 car nous avons spécifié la même graine à chaque exécution.
+# Plongée Profonde
 
-## Voir aussi
+Si vous voulez vraiment vous plonger dans la génération de nombres aléatoires en Ruby, vous pouvez utiliser la classe `Random` pour avoir un contrôle plus précis sur la génération de nombres. Par exemple, si vous voulez générer un nombre aléatoire entre deux limites sans inclure ces limites, vous pouvez utiliser la méthode `randint()` :
 
-Pour plus d'informations sur la génération de nombres aléatoires en Ruby, vous pouvez consulter ces articles (en anglais) :
+````Ruby
+rng = Random.new
+puts rng.randint(1...10) # renvoie un nombre aléatoire entre 1 et 10, excluant 1 et 10
+````
 
-- [Ruby Random Library Documentation](https://ruby-doc.org/core-2.7.1/Random.html)
-- [Using Random Numbers in Ruby](https://medium.com/rubycademy/using-random-numbers-in-ruby-fe1b4ade6710)
+De plus, la classe `Random` offre également des méthodes pour générer des chaînes aléatoires, des nombres binaires et même des objets aléatoires à partir d'un tableau.
+
+# Voir Aussi
+
+- [Documentation officielle de Ruby sur la génération de nombres aléatoires](https://ruby-doc.org/core-2.7.1/Random.html)
+- [Article sur la génération de nombres aléatoires en Ruby](https://www.honeybadger.io/blog/generating-random-numbers-for-fun-and-profit-in-ruby/)

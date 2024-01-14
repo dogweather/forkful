@@ -1,56 +1,87 @@
 ---
-title:    "Clojure: 두 날짜 비교하기"
+title:    "Clojure: 두 개의 날짜 비교"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+나는 많은 프로그래머들이 비슷한 작업에 끊임없이 처음부터 코드를 다시 작성하는 것을 보았습니다. 이는 시간이 많이 소모되고 실수를 야기할 수 있기 때문에 매우 비효율적입니다. 그래서 오늘 우리는 두 개의 날짜를 비교하는 방법을 배우겠습니다.
 
-두 날짜를 비교하는 것에 관심이 생길 수 있습니다. 이는 프로젝트에서 날짜 데이터를 다뤄야 할 때 또는 개인적으로 날짜를 비교하는 데 필요할 때 유용합니다.
+## 왜?
 
-## 어떻게
+이번 포스트에서 우리는 두 개의 날짜를 비교하고 그 차이를 알아내는 방법을 살펴보겠습니다. 이는 매우 일반적인 작업이며, 우리의 일상적인 프로그래밍에서 종종 발생할 수 있습니다. 또한, 이를 활용하면 시간 관련 데이터를 더 쉽게 처리할 수 있으며, 효율적인 코드 작성에 도움이 됩니다.
 
-두 날짜를 비교하려면 `>` (초과), `<` (미만), `=` (같음) 연산자를 사용하거나 `clojure.core/different?` 함수를 이용할 수 있습니다. 아래에 예제 코드와 결과를 제시하겠습니다.
+## 어떻게?
 
-```Clojure
-(require '[clojure.java-time :as t])
+우리가 비교하고자 하는 두 날짜를 가져와 봅시다.
 
-(def date1 (t/local-date 2021 4 5))
-(def date2 (t/local-date 2021 4 8))
-
-(> date1 date2) ; false
-(< date1 date2) ; true
-(= date1 date2) ; false
-
-(t/different? date1 date2) ; true
-```
-
-위의 예제 코드에서는 먼저 `clojure.java-time` 라이브러리를 `require` 하고 두 날짜 `date1`과 `date2`를 생성합니다. 그 다음 `>` 연산자와 `<` 연산자, 그리고 `=` 연산자를 사용하여 두 날짜를 비교합니다. 또한 `clojure.core/different?` 함수를 이용하여 두 날짜가 서로 다른지 확인할 수도 있습니다.
-
-## 깊게 파고들기
-
-두 날짜를 비교할 때 주의해야 할 점이 있습니다. 두 날짜가 같은 날짜라도 시간 정보가 있을 경우 결과가 다를 수 있습니다. 예를 들어, `t/local-date-time` 함수를 이용하여 시간 정보를 추가한 두 날짜를 생성하고 비교해보겠습니다.
+T-1:
 
 ```Clojure
-(require '[clojure.java-time :as t])
-
-(def date1 (t/local-date-time 2021 4 5 9 30 0))
-(def date2 (t/local-date-time 2021 4 5 12 0 0))
-
-(= date1 date2) ; true
-(< date1 date2) ; false
-(> date1 date2) ; false
+(def d1 (local-date 2020 1 1))
+(def d2 (local-date 2020 3 15))
 ```
 
-두 날짜 `date1`과 `date2`가 같은 날짜이지만 시간 정보가 다르기 때문에 `=` 연산자에서는 같게 반환됩니다. 그러나 `<` 연산자와 `>` 연산자에서는 다른 결과가 나타납니다. 이는 두 날짜의 정확한 비교를 원한다면 시간 정보가 없는 `t/local-date` 함수를 사용해야 한다는 것을 의미합니다.
+우리는 이제 두 날짜를 비교하여 그 차이를 알아내기 위해 `-` 연산자를 사용할 수 있습니다.
 
-따라서 두 날짜를 비교할 때는 두 날짜가 가지고 있는 정보를 고려하여 적절한 함수나 연산자를 선택하는 것이 중요합니다.
+T-2:
 
-## 또 다른 정보 보기
+```Clojure
+(def days (- d2 d1))
+(def months (- (month d2) (month d1)))
+(def years (- (year d2) (year d1)))
 
-- [`clojure.java-time` 공식 문서](https://cljdoc.org/d/clojure.java-time/clojure.java-time/0.3.2/api/index)
-- [날짜 데이터 다루는 방법 더 알아보기](https://clojuredocs.org/clojure.java-time)
-- [비교 연산자와 함수에 대한 자세한 설명](https://clojuredocs.org/clojure.core/>) 
+(println "두 날짜의 차이는" days "일," months "개월," years "년입니다.")
+```
 
-# 또 보기
+출력:
+
+`두 날짜의 차이는 74 일, 2 개월, 0 년입니다.`
+
+이처럼 우리는 매우 간단하게 두 날짜를 비교하고 그 차이를 알아냈습니다.
+
+## 더 깊게 들어가기
+
+이제 우리는 `between` 함수를 사용해보겠습니다. 이 함수는 두 날짜 사이의 모든 날짜를 리턴해줍니다. 예를 들어, 우리가 비교하고자 하는 날짜가 2020년 1월 1일부터 2020년 1월 7일까지라면, `between` 함수는 2020년 1월 1일, 2020년 1월 2일, ..., 2020년 1월 7일을 리스트 형태로 리턴해줍니다. 이를 다음과 같이 사용할 수 있습니다.
+
+T-3:
+
+```Clojure
+(def d1 (local-date 2020 1 1))
+(def d2 (local-date 2020 1 7))
+
+(def days (between d1 d2))
+
+(println "두 날짜 사이의 모든 날짜는 다음과 같습니다:")
+(doseq [day days] (println day))
+```
+
+출력:
+
+`두 날짜 사이의 모든 날짜는 다음과 같습니다:`
+
+`2020-01-01`
+
+`2020-01-02`
+
+`2020-01-03`
+
+`2020-01-04`
+
+`2020-01-05`
+
+`2020-01-06`
+
+`2020-01-07`
+
+## 다른 예제들 보기
+
+- [ClojureDocs](https://clojuredocs.org/clojure.core/between)
+- [Calculated Dates and Times in Clojure](http://codingfoster.blogspot.com/2012/03/calculated-dates-and-times-in-clojure.html)
+
+---
+## 같이 보기
+
+- [Clojure로 간단하게 시작하기](https://clojure.or.kr/index.html)
+- [ClojureDocs 한국어 번역 프로젝트](https://github.com/clojure-docs-kr

@@ -1,52 +1,56 @@
 ---
-title:    "Ruby: Utskrift av feilsøkningsutdata"
+title:    "Ruby: Utskrift av feilsøkingsutdata"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Når du jobber med å programmere i Ruby, vil du ofte støte på situasjoner der du trenger å spore feil eller forstå hvordan koden din fungerer. En nyttig måte å gjøre dette på er å bruke "debug output" eller "utskrift for feilsøking". Dette lar deg se verdier og variable i koden din mens den kjører, og kan hjelpe deg med å finne og løse problemer raskere.
+## Hvorfor
 
-# Hvordan
-For å skrive ut feilsøkingsmeldinger i Ruby, bruker du en enkel metode kalt "puts". Denne metoden tar et argument, som kan være en streng med tekst eller en variabel. La oss se på et eksempel:
+Å printe ut debug-utgang er en viktig del av å skrive kode i Ruby, spesielt når du jobber med større og mer komplekse prosjekter. Det kan hjelpe deg med å finne og fikse feil og gjøre koden din mer effektiv og lesbar.
 
-```Ruby
-# Definerer en variabel
-navn = "Marius"
+## Slik gjør du det
 
-# Skriver ut en streng og variabelt ved hjelp av puts
-puts "Hei, mitt navn er #{navn}"
-```
-
-Dette vil gi følgende output når koden kjører:
+For å printe ut debug-utgang i Ruby, kan du bruke metoden `p`. Denne metoden tar et argument og printer det ut med et linjeskift. Du kan også bruke `puts` eller `print` metoder, men `p` er spesifikt designet for debug-utgang og vil vise mer informasjon om objektet du printer ut.
 
 ```Ruby
-Hei, mitt navn er Marius
+a = 5
+p a # => 5
 ```
 
-Som du kan se, blir verdien av variabelen (i dette tilfellet "Marius") satt inn i strengen når den skrives ut. Dette kan være nyttig når du vil se hva som skjer med en variabel i løpet av koden din.
-
-# Dypdykk
-En annen måte å bruke "puts" på er å skrive ut hele objekter eller variable. Dette kan være spesielt nyttig når du jobber med komplekse datastrukturer. For å gjøre dette, bruker du bare metoden "inspect" på objektet eller variabelen din, som vist i eksempelet nedenfor:
+Du kan også printe ut flere verdier eller variabler ved å separere dem med kommaer:
 
 ```Ruby
-# Definerer en hash med navn og alder
-person = {navn: "Marius", alder: 30}
-
-# Skriver ut hashen med "inspect" metoden
-puts person.inspect
+a = 5
+b = "hello"
+p a, b # => 5, "hello"
 ```
 
-Dette vil gi følgende output:
+En annen måte å få mer detaljert debug-utgang på, er å bruke `inspect` metoden. Denne metoden vil gi deg en detaljert beskrivelse av objektet du printer ut, inkludert dets klasse og verdi.
 
 ```Ruby
-{:navn => "Marius", :alder => 30}
+a = [1,2,3]
+p a.inspect # => "[1, 2, 3]"
 ```
 
-Som du kan se, blir hele hashen skrevet ut med nøkkelen og verdien for hver element på en enkel måte. Dette kan bidra til å identifisere problemer med datastrukturene dine og feil i koden.
+## Dykk dypere
 
-# Se også
-- [Ruby Dokumentasjon for "puts" metoden](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
-- [En omfattende guide til feilsøking i Ruby](https://www.educative.io/blog/ruby-debugging-complete-tutorial)
-- [En YouTube-video om debugging i Ruby av Derek Banas](https://www.youtube.com/watch?v=5VfRZQsiB5w)
+For mer avansert debugging kan du også bruke `binding.pry` eller `binding.irb` inne i koden din. Disse vil stoppe kjøringen av programmet og åpne et interaktivt konsollmiljø på det tidspunktet. Her kan du utforske og inspisere variabler og objekter for å finne feil eller se hvordan de blir endret.
+
+```Ruby
+def add_two_numbers(a, b)
+  result = a + b
+  binding.pry
+  return result
+end
+
+add_two_numbers(3, 4) # => [1] pry(main)> result
+                       # => 7
+```
+
+## Se også
+
+- [Ruby metoder: p, puts, print](https://www.rubyguides.com/2018/10/p-puts-print/)
+- [Debugging Ruby applikasjoner med pry](https://rossta.net/blog/debugging-ruby-applications-with-pry.html)
+- [Åtte måter å få mer ut av Ruby's `p` metode](https://thoughtbot.com/blog/using-the-pp-method-for-more-helpful-debugging-output)

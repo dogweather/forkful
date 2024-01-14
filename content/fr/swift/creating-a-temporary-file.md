@@ -1,46 +1,39 @@
 ---
 title:    "Swift: Création d'un fichier temporaire"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-La création de fichiers temporaires est une pratique courante en programmation Swift et peut être utile pour de nombreuses raisons. Les développeurs peuvent utiliser des fichiers temporaires pour stocker temporairement des données, pour tester et déboguer du code ou pour gérer des opérations de sauvegarde. Quelle que soit la raison, la création de fichiers temporaires peut être un outil pratique pour améliorer l'efficacité et la fiabilité de votre code Swift. Dans cet article, nous allons examiner comment créer un fichier temporaire en utilisant Swift. 
+Créer un fichier temporaire est souvent nécessaire pour stocker des données temporaires ou pour effectuer des opérations qui nécessitent l'utilisation d'un fichier. Que ce soit pour préserver l'espace de stockage de votre appareil ou pour des raisons de sécurité, créer un fichier temporaire peut être une étape importante dans la programmation en Swift.
 
-## Comment faire 
+## Comment faire
 
-Pour créer un fichier temporaire en utilisant Swift, vous pouvez utiliser la méthode `NSTemporaryDirectory ()` pour obtenir le chemin d'accès au répertoire temporaire système. Vous pouvez ensuite utiliser ce chemin pour créer un nouveau fichier à l'aide de la méthode `FileManager.default.createFile (atPath: isDirectory:)` en spécifiant le chemin d'accès et le nom de votre fichier temporaire. Ensuite, vous pouvez écrire des données dans le fichier à l'aide de la méthode `write (toFile: atomically: encoding:)`. Voici un exemple de code qui illustre ce processus : 
+Pour créer un fichier temporaire en Swift, vous pouvez utiliser la méthode `NSTemporaryDirectory()` pour obtenir le chemin du répertoire temporaire et `URL(fileURLWithPath:)` pour créer un objet URL à partir de ce chemin. Ensuite, vous pouvez utiliser la méthode `createFile(atPath:contents:attributes:)` pour créer le fichier temporaire à cet emplacement spécifique. Voici un exemple de code :
 
-```Swift 
-let tempDirectory = NSTemporaryDirectory()
-let tempFilePath = tempDirectory + "tempFile.txt"
+```Swift
+let tempPath = NSTemporaryDirectory()
+let tempURL = URL(fileURLWithPath: tempPath).appendingPathComponent("example.txt")
 
-FileManager.default.createFile(atPath: tempFilePath, contents: nil, attributes: nil)
-
-let text = "Ceci est un fichier temporaire."
 do {
-    try text.write(toFile: tempFilePath, atomically: true, encoding: .utf8)
+    try "Hello World!".write(to: tempURL, atomically: true, encoding: .utf8)
+    print("Fichier temporaire créé avec succès.")
+} catch {
+    print(error)
 }
-catch {
-    print("Erreur lors de l'écriture dans le fichier temporaire")
-}
-
-print("Le fichier temporaire a été créé avec succès à l'emplacement \(tempFilePath).")
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir le message de réussite s'afficher dans votre console, confirmant que le fichier temporaire a été créé avec succès. Vous pouvez également vérifier le répertoire temporaire de votre système pour voir le fichier.
+En exécutant ce code, vous devriez voir le message "Fichier temporaire créé avec succès." s'afficher dans la console et un fichier "example.txt" sera créé dans votre répertoire temporaire avec le contenu "Hello World!".
 
-## D plongée 
+## Approfondissement
 
-En plus de la méthode décrite ci-dessus, il existe d'autres options pour créer des fichiers temporaires en utilisant Swift, telles que l'utilisation de la bibliothèque `Foundation` ou de packages externes tels que `SwiftyFiles` ou `TemporaryFile`. Il est également important de s'assurer de supprimer correctement le fichier temporaire après son utilisation pour éviter de surcharger le système de fichiers. Pour cela, vous pouvez utiliser la méthode `FileManager.default.removeItem(atPath:)` pour supprimer le fichier temporaire. 
+Il est important de noter que les fichiers temporaires ne sont pas automatiquement supprimés une fois votre application terminée. Il est donc recommandé de les supprimer manuellement une fois que vous avez terminé de les utiliser. Vous pouvez utiliser la méthode `removeItem(at:)` pour supprimer un fichier temporaire. De plus, vous pouvez spécifier les attributs du fichier temporaire en utilisant le dictionnaire `attributes` dans la méthode `createFile(atPath:contents:attributes:)`. Cela peut inclure des informations telles que le type de fichier, la date de création ou des gestionnaires de fichiers personnalisés.
 
-## Voir aussi 
+## Voir aussi
 
-Pour plus d'informations sur la création de fichiers temporaires en Swift, vous pouvez consulter les ressources suivantes : 
-
-- [Documentation officielle Apple pour la classe FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Article sur la création de fichiers temporaires en Swift par Jimmy Ghelani](https://medium.com/@jimmyghelani/create-temporary-files-in-swift-b0b70eaca3ab)
-- [GitHub de SwiftyFiles](https://github.com/Mordil/swiftyfiles)
-- [GitHub de TemporaryFile](https://github.com/AliSoftware/TemporaryFile)
+- [Documentation Apple sur les fichiers et dossiers temporaires](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/TemporaryFilesandDirectories/TemporaryFilesandDirectories.html)
+- [Tutorial sur la création de fichiers temporaires en Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-a-temporary-file-using-contentsoftype)
+- [Exemple de gestion de fichiers dans l'application Notes d'Apple](https://developer.apple.com/documentation/uikit/view_controllers/adding_a_document_browser_to_your_app)

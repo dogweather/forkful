@@ -1,59 +1,54 @@
 ---
 title:    "Python: Tekstitiedoston lukeminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi?
 
-Tekstien lukeminen on yksi tärkeimmistä taidoista, joita ohjelmoijan tulee hallita. Monissa ohjelmissa tarvitaan mahdollisuus lukea ja käsitellä tekstitiedostoja, joten on tärkeää ymmärtää, miten tämä tapahtuu Python-ohjelmoinnissa. Tässä blogikirjoituksessa käymme läpi perusasiat tekstitiedostojen lukemisesta ja näytämme esimerkkien avulla, kuinka voit tehdä sen omassa ohjelmassasi.
+Lukeminen ja kirjoittaminen ovat olennainen osa ohjelmointia. Tekstitiedostojen lukeminen on tärkeä taito, jota kaikki ohjelmoijat tarvitsevat käyttäessään Pythonia. Tekstitiedostoissa on usein tallennettuna tärkeitä tietoja, kuten käyttäjätietoja, tiedostojen polkuja tai konfiguraatioasetuksia. Näiden tietojen saaminen ja käsitteleminen voi joskus olla haastavaa, mutta onneksi Pythonilla se on helppoa ja tehokasta.
 
-## Miten?
+## Miten tehdä?
 
-Tekstitiedostojen lukeminen on helppoa Pythonissa. Voit käyttää open() -funktiota, joka avaa tiedoston annettua polkua käyttäen. Tässä on esimerkki, joka luo uuden tiedoston, kirjoittaa siihen tekstin ja lopuksi lukee sen sisällön:
+Voit avata ja lukea tekstitiedostoja helposti käyttämällä `open()`-funktiota. Tämä funktio hyödyntää `with`-lausetta, mikä varmistaa, että tiedosto suljetaan automaattisesti lukemisen jälkeen. Tämän jälkeen voit käyttää `read()`-metodia lukeaksesi tiedoston sisällön ja tallentaa sen muuttujalle. Alla on esimerkki, jossa avataan tekstitiedosto nimeltä "tekstitiedosto.txt" ja luetaan sen sisältö tulostamalla se konsoliin:
 
-```python
-# Avataan tiedosto teksti-tilassa
-file = open("teksti.txt", "w+")
-
-# Kirjoitetaan tiedostoon tekstiä
-file.write("Tervetuloa lukemaan tekstiä!")
-
-# Nollataan kursori ja luetaan tiedoston sisältö
-file.seek(0)
-print(file.read())
-
-# Suljetaan tiedosto
-file.close()
-
-# Output:
-# Tervetuloa lukemaan tekstiä!
+```Python
+with open("tekstitiedosto.txt", "r") as tiedosto:
+    sisalto = tiedosto.read()
+    print(sisalto)
 ```
 
-## Syvempää sukellusta
+Tämä tulostaa tekstitiedoston sisällön konsoliin seuraavassa muodossa:
 
-Tekstitiedostojen lukeminen vaihtelee hieman riippuen siitä, millainen tiedosto on kyseessä. Jos esimerkiksi tiedostossa on eri riveillä olevia sanoja, voit käyttää split() -funktiota saadaksesi sanat talteen listana. Tässä on esimerkki, jossa luetiin tiedoston sisältö rivi kerrallaan ja palautetaan jokainen rivi listana:
-
-```python
-# Avataan tiedosto teksti-tilassa
-file = open("tehtävät.txt")
-
-# Luetaan rivi kerrallaan
-for line in file:
-    # Splitataan rivi ja tallennetaan sanat listaan
-    words = line.split()
-    print(words)
-
-# Output:
-# ['Ohjelmointi', 'on', 'hauskaa', '!']
-# ['Pythonilla', 'koodaaminen', 'on', 'helppoa', '.']
+```
+Tämä on esimerkki tekstitiedostosta.
+Voit tallentaa tähän tärkeitä tietoja.
 ```
 
-Kuten näet, tekstien lukeminen Pythonissa on hyvin suoraviivaista ja monipuolista. Voit myös käyttää erilaisia tekstin käsittelyyn tarkoitettuja funktioita, kuten replace() ja strip(), joka poistaa ylimääräiset välilyönnit ja rivinvaihdot. Toivottavasti tämä blogikirjoitus auttoi sinua ymmärtämään tekstitiedostojen lukemisen perusteet Pythonissa!
+Voit myös käyttää muita lukemismetodeja, kuten `readline()`, joka lukee yhden rivin kerrallaan, ja `readlines()`, joka lukee kaikki rivit ja tallentaa ne listana.
+
+## Syvemmälle aiheeseen
+
+Pythonilla voit myös käsitellä tekstitiedostojen rivi kerrallaan `for`-loopin avulla. Alla on esimerkki, jossa käydään läpi tiedoston rivit ja tulostetaan kukin rivi konsoliin:
+
+```Python
+with open("tekstitiedosto.txt", "r") as tiedosto:
+    for rivi in tiedosto:
+        print(rivi)
+```
+
+Voit myös kirjoittaa ja tallentaa tekstitiedostoja `write()`-metodin avulla. Alla on esimerkki, jossa luodaan uusi tekstitiedosto nimeltä "uusi_tiedosto.txt" ja kirjoitetaan siihen tietoja:
+
+```Python
+with open("uusi_tiedosto.txt", "w") as tiedosto:
+    tiedosto.write("Tämä on uusi tiedosto.")
+    tiedosto.write("Sisältö tallennetaan tähän.")
+```
 
 ## Katso myös
 
-- [Pythonin virallinen dokumentaatio tekstiä merkkijonona käsittelemisestä](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Python-kurssin tekstiä käsittelevä luento](https://www.youtube.com/watch?v=QiMdS7sEngA)
-- [Pythonin dokumentaatio tekstitiedostojen lukemisesta ja kirjoittamisesta](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Pythonin `open()`-funktio](https://docs.python.org/3/library/functions.html#open)
+- [Pythonin tiedostotoiminnot](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Markdownin käyttöönotto Pythonissa](https://www.python.org/dev/peps/pep-0008/#id50)

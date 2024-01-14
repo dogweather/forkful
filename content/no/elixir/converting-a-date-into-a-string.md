@@ -1,54 +1,37 @@
 ---
 title:    "Elixir: Konvertere en dato til en streng"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Konvertering av datoer til strings er en vanlig oppgave når du jobber med programmering, spesielt i webapplikasjoner og databaser. Å kunne gjøre dette effektivt kan bidra til å redusere feil og forbedre brukeropplevelsen når det kommer til å vise datoer i et leservennlig format.
+Det å konvertere en dato til en streng er en viktig del av programmering, spesielt i Elixir. Dette lar oss presentere datoer på en lesbar måte for brukere eller andre systemer. I tillegg kan det være nødvendig å konvertere datoer til strenger for å lagre dem i databaser eller sende dem over nettverket.
 
-## Hvordan gjøre det
+## Hvordan
 
-Å konvertere en dato til en string er enkelt med hjelp av Elixir-funksjonene `to_string` og `to_char_list`. La oss si at vi har en dato lagret i variabelen `date`:
+I Elixir er det flere måter å konvertere en dato til en streng på, avhengig av dine behov og preferanser. La oss se på noen eksempler:
 
-```Elixir
-date = ~D[2020-09-28]
+```elixir
+# Konverter en dato til en streng med formatet "YYYY-MM-DD"
+~D[2021-04-15] |> Date.to_string() # => "2021-04-15"
+
+# Konverter en dato til en kort streng med månedsnavn
+~D[2021-04-15] |> Date.to_string(:short) # => "15. apr"
+
+# Konverter en dato til en lang streng med ukedag og månedsnavn
+~D[2021-04-15] |> Date.to_string(:long) # => "torsdag 15. april 2021"
 ```
 
-For å konvertere denne datoen til en string i Elixir, kan vi bruke følgende syntaks:
+Som du kan se, bruker vi funksjonen `Date.to_string/2` for å konvertere datoen til en streng. Første argument er datoen vi ønsker å konvertere, og den andre er formatet vi ønsker å bruke. For mer informasjon om de ulike formatene og mulighetene som finnes, kan du sjekke Elixir sin offisielle dokumentasjon.
 
-```Elixir
-to_string(date)
-```
+## Dykk dypere
 
-Og her er den resulterende outputen:
-
-```Elixir
-"2020-09-28"
-```
-
-Hvis vi ønsker å endre formatet på datoen, kan vi bruke funksjonen `to_char_list` i stedet. For eksempel, hvis vi ønsker å vise datoen i formatet "dd/mm/yyyy", kan vi bruke følgende kode:
-
-```Elixir
-to_char_list(date, "{0}/{1}/{2}")
-```
-
-Dette vil gi følgende output:
-
-```Elixir
-["28", "09", "2020"]
-```
-
-## Dypdykk
-
-Nå som vi har sett hvordan vi kan konvertere datoer til strings, la oss se på noen dypere detaljer om denne prosessen. Elixir bruker Unicode og UTF-8 som standarde koding for strings, som er en vesentlig forskjell fra andre programmeringsspråk. Dette betyr at Elixir støtter et bredt spekter av språk og tegn fra ulike skriftsystemer.
-
-En annen viktig ting å merke seg er at Elixir behandler datoer som en egen datatype, kalt `~D`, som gjør det enklere å håndtere og manipulere datoer i koden. Dette er spesielt nyttig når det kommer til å utføre operasjoner som å legge til eller trekke fra et bestemt antall dager fra en dato.
+Under overflaten, bruker Elixir det innebygde `Calendar` biblioteket for å håndtere datoer. Dette biblioteket gir oss mange nyttige funksjoner for å håndtere datoer og tid. For å konvertere en dato til en streng, bruker `Calendar.ISO.format/2` funksjonen under capnds (calendar to printable string) modulen.
 
 ## Se også
 
-- [Elixir Datatypes](https://elixir-lang.org/getting-started/basic-types.html)
-- [Elixir Date Libraries](https://elixirforum.com/t/elixir-date-time-and-calendar-libraries/20309)
-- [Elixir Date Functions](https://hexdocs.pm/elixir/DateTime.html# functions)
+- [Elixir offisiell dokumentasjon for Date module](https://hexdocs.pm/elixir/Date.html#to_string/2)
+- [Elixir offisiell dokumentasjon for Calendar module](https://hexdocs.pm/elixir/Calendar.html)

@@ -1,39 +1,50 @@
 ---
 title:    "Rust: Verificando se um diretório existe"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que verificar se um diretório existe em Rust?
+## Por que verificar se um diretório existe em Rust?
 
-Se você está trabalhando em um projeto de programação em Rust, pode surgir a necessidade de verificar se um diretório existe no sistema. Isso pode ser útil para garantir que os arquivos estejam acessíveis antes de operar neles ou para tomar decisões com base na presença ou ausência de um diretório. Neste artigo, exploraremos como realizar essa tarefa em Rust.
+A verificação se um diretório existe pode ser uma tarefa importante em alguns programas escritos em Rust. Isso pode ser útil para garantir que os arquivos necessários estejam disponíveis antes de executar uma determinada função ou para evitar erros desnecessários. Portanto, aprender a verificar a existência de um diretório pode ajudar a melhorar a eficiência e a confiabilidade de seu código.
 
-## Como fazer
+## Como fazer a verificação em Rust
 
-Em Rust, podemos usar a função `Path::exists()` para verificar se um diretório existe. Vamos dar uma olhada em um exemplo simples:
+A verificação de diretório é feita através do uso da biblioteca padrão "std::fs", que possui uma função chamada "metadata()". Esta função nos permite obter informações sobre um determinado arquivo ou diretório, incluindo se ele existe ou não. Vamos ver um exemplo de como usar essa função:
 
 ```Rust
 use std::fs;
 
-let path = "caminho/do/diretorio";
+fn main() {
+    let path = "documentos/relatorio.txt";
+    let metadata = fs::metadata(path);
 
-if fs::metadata(path).is_ok() {
-    println!("Diretório existe!");
-} else {
-    println!("Diretório não existe.")
+    match metadata {
+        Ok(m) => {
+            // verifica se é um diretório
+            if m.is_dir() {
+                println!("O diretório existe!");
+            } else {
+                println!("O diretório não existe!");
+            }
+        },
+        Err(e) => println!("Erro ao verificar o diretório: {}", e),
+    }
 }
 ```
 
-No primeiro passo, importamos o módulo `fs` da biblioteca padrão, que nos permitirá acessar funções para trabalhar com arquivos e diretórios. Em seguida, criamos uma variável `path` com o caminho para o diretório que queremos verificar. Então, usamos a função `metadata()` do módulo `fs` para obter as informações do diretório especificado e verificamos se ela é bem-sucedida usando o método `is_ok()`. Se sim, imprimimos uma mensagem dizendo que o diretório existe, caso contrário, imprimimos uma mensagem dizendo que ele não existe.
+Se o arquivo "relatorio.txt" estiver presente na pasta "documentos", a saída será "O diretório existe!". Caso contrário, a saída será "O diretório não existe!".
 
-## Deep Dive
+## Aprofundando na verificação de diretório em Rust
 
-Agora, vamos dar uma olhada mais aprofundada em como a função `Path::exists()` funciona. Ela retorna um `Result` que indica se a operação foi bem-sucedida ou não. Se o resultado for `Ok()`, isso significa que o caminho especificado existe no sistema e é um arquivo ou diretório válido. Caso contrário, o resultado será `Err()` e podemos usar o método `unwrap_or_default()` para retornar um valor padrão se não quisermos lidar com o erro.
+Além de verificar apenas a existência de um diretório, a função "metadata()" também fornece outras informações úteis, como tamanho, data de criação e permissões do arquivo. Esses dados podem ser acessados usando os métodos disponíveis na estrutura de metadados retornada pela função.
 
-É importante notar que a função `Path::exists()` verifica apenas a existência do caminho especificado, mas não garante que ele esteja acessível ou que o usuário tenha permissão para manipulá-lo. Para isso, podemos usar a função `Path::is_dir()` para verificar se o caminho especificado é um diretório ou `Path::is_file()` para verificar se é um arquivo.
+Além disso, existe também a função "symlink_metadata()" que permite verificar a existência de um link simbólico em vez de um diretório em si. Isso pode ser útil em situações específicas onde um link simbólico é usado em vez de um diretório real.
 
 ## Veja também
 
-- [Documentação da biblioteca padrão de Rust](https://doc.rust-lang.org/std/fs/index.html)
-- [Checando se um arquivo existe em Rust](https://www.devdungeon.com/content/check-if-file-exists-rust)
+- [Documentação da biblioteca padrão do Rust sobre a função "metadata()"](https://doc.rust-lang.org/std/fs/fn.metadata.html)
+- [Tutorial de Rust para iniciantes](https://www.rust-lang.org/pt-BR/learn/get-started)
+- [Exemplos práticos de uso de "metadata()" em programas Rust](https://crates.io/search?q=metadata)

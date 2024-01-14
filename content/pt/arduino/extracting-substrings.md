@@ -1,32 +1,53 @@
 ---
-title:    "Arduino: Extraindo subcadeias"
+title:    "Arduino: Extraindo substrings"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair subcadeias?
+## Por que usar subcadeias de caracteres em programação Arduino?
 
-Extrair subcadeias é uma função importante de programação que pode ser útil em diversas situações. Ao extrair uma subcadeia de uma string, você está basicamente isolando uma parte específica da string original que pode ser utilizada para realizar alguma tarefa específica. Isso pode ser muito útil, por exemplo, na análise de dados ou na manipulação de textos.
+A extração de subcadeias de caracteres é útil quando você precisa manipular e trabalhar com apenas uma parte de uma string maior. Isso pode tornar sua programação mais eficiente e organizada.
 
-## Como fazer
+## Como fazer a extração de subcadeias de caracteres no Arduino
 
-Para extrair subcadeias em um programa Arduino, você pode utilizar a função `substring()`. Esta função requer dois parâmetros: o índice inicial da subcadeia (onde a extração deve começar) e o tamanho da subcadeia (quantos caracteres devem ser extraídos). Confira o exemplo abaixo:
+No Arduino, podemos usar a função `substring()` para extrair pedaços de uma string maior. Veja um exemplo de como usá-la:
 
 ```Arduino
-String nome = "Arduino";
-String sub = nome.substring(0, 3);
+String texto = "Olá mundo!";
+String palavra = texto.substring(0, 3); // extrai a primeira palavra do texto
+
+Serial.println(palavra); // imprime "Olá"
 ```
 
-Neste exemplo, a subcadeia extraída será "Ard", começando no índice 0 e com tamanho 3. O resultado será armazenado na variável `sub` e pode ser utilizado em outras partes do programa.
+Neste exemplo, usamos a função `substring()` para extrair a primeira palavra da string "Olá mundo!", que é "Olá". A função recebe dois parâmetros: o primeiro é o índice inicial da substring que queremos extrair, e o segundo é o índice final, que é opcional, e indica onde deve parar a extração. Se não for informado, a extração vai até o final da string original.
 
-## Profundando um pouco mais
+Outra função útil para extrair subcadeias de caracteres é a `indexOf()`. Ela retorna o índice da primeira ocorrência de um caractere ou string dentro de uma string maior. Veja um exemplo:
 
-Além da função `substring()`, existem outras formas de extrair subcadeias em um programa Arduino. Por exemplo, é possível utilizar a função `indexOf()` para encontrar a posição de um determinado caractere ou sequência de caracteres em uma string e, a partir disso, utilizar a função `substring()` para extrair a subcadeia desejada.
+```Arduino
+String fruta = "banana";
+int indice = fruta.indexOf("na"); // procura por "na" na string e retorna o índice da primeira ocorrência
 
-Também é importante lembrar que, ao trabalhar com strings, é preciso considerar o tamanho da memória disponível no Arduino. Strings muito grandes podem ocupar muito espaço e resultar em erros de memória. Por isso, é recomendado utilizar funções como `strncpy()` ou `strlcpy()` para copiar apenas uma parte da string original, evitando desperdício de memória.
+Serial.println(indice); // imprime 2
+```
+
+Também é possível usar a função `charAt()` para retornar o caractere em uma posição específica da string. Veja um exemplo:
+
+```Arduino
+String texto = "Olá mundo!";
+char letra = texto.charAt(4); // retorna o caractere na posição 4 da string, que é " "
+
+Serial.println(letra); // imprime " "
+```
+
+## Aprofundando na extração de subcadeias de caracteres
+
+Além das funções mencionadas, existem outras formas de extrair subcadeias de caracteres no Arduino. Uma delas é usando ponteiros para manipular a string original. Isso pode ser útil quando você lida com strings muito grandes e quer economizar memória.
+
+Outro ponto importante é ter cuidado com a manipulação das strings, pois se não forem feitas corretamente, podem causar erros no código ou até mesmo travar o Arduino.
 
 ## Veja também
-
-- [Função `substring()` da String do Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Manipulação de strings em linguagem C](https://www.programiz.com/c-programming/c-strings)
+- Documentação da função `substring()`: https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/
+- Tutorial sobre manipulação de strings no Arduino: https://www.filipeflop.com/blog/manipulacao-de-strings-no-arduino/
+- Vídeo explicando como extrair subcadeias de caracteres no Arduino: https://www.youtube.com/watch?v=vg-lDhYY5yc

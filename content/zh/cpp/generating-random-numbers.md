@@ -1,61 +1,44 @@
 ---
 title:    "C++: 生成随机数"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用随机数生成器
+## 为什么
+在编程中，生成随机数是一个非常常见的需求。无论是用于游戏开发、密码学还是其他领域，生成随机数都是必不可少的。它可以给程序带来一些不确定性，从而让它们变得更加灵活和有效。
 
-随机数生成器在编程中是一个非常常见的工具。它允许我们生成随机数，这在很多应用中都是必不可少的。比如游戏设计、随机密码生成等等。通过使用随机数，我们可以增加程序的变化性和挑战性。它也能够使得我们的程序更加真实和多样化。因此，在进行编程时，学习如何使用随机数生成器是非常有用的。
-
-# 如何使用随机数生成器
-
-使用C++语言编写一个简单的随机数生成器非常简单。首先，我们需要包含C++中的random库。
+## 如何生成随机数
+生成随机数的方法有很多种，但在C++中，我们通常会使用标准库中的rand()函数来实现。首先，我们需要包含<cstdlib>头文件，并使用srand()函数来设置随机数种子。接着就可以使用rand()函数来生成一个随机数了。下面是一个示例代码和输出：
 
 ```C++
-#include <random>
-```
-
-然后，我们可以使用random库中的不同函数来生成不同类型的随机数。比如，我们可以使用uniform_int_distribution函数来生成一个指定范围内的整数随机数。
-
-```C++
+#include <cstdlib>
 #include <iostream>
-#include <random>
 
 int main() {
-    //生成一个1到100的随机整数
-    std::random_device rd;   //用于随机数种子
-    std::mt19937 gen(rd());  //用于调用随机数引擎
-    std::uniform_int_distribution<int> dis(1, 100);  //指定生成随机数范围
-    int random_num = dis(gen);  //调用随机数引擎生成随机数
-    std::cout << "生成的随机数是：" << random_num;
-    
-    return 0;
+  // 设置随机数种子
+  srand(time(NULL));
+  
+  // 生成一个0-10之间的随机数
+  int random_num = rand() % 11;
+  
+  // 输出结果
+  std::cout << "随机数： " << random_num;
+  
+  return 0;
 }
 ```
 
-运行结果可能是：
+输出结果可能类似于：随机数： 4。我们可以使用取模运算来限制随机数的范围，在本例中就是0-10。
 
-```
-生成的随机数是：56
-```
+## 深入了解生成随机数
+在C++中，rand()函数实际上是伪随机数生成器，它会根据种子值来生成一个序列。这意味着，如果我们使用相同的种子值，就会得到相同的随机数序列。因此，为了让我们的程序每次运行都生成不同的随机数，我们需要使用一个随机的种子值，比如当前的时间。这就是为什么我们在前面的示例代码中使用了time(NULL)来设置随机数种子。
 
-除了生成整数随机数，我们也可以使用uniform_real_distribution函数来生成指定范围内的小数随机数。同时，如果我们想生成不同类型的随机数，比如布尔值、字符等，也有相应的函数可以使用。
+除了使用rand()函数之外，C++11标准库中还提供了更加强大的随机数生成器功能，比如uniform_int_distribution和mt19937。这些函数和类可以让我们更加灵活地生成随机数。有关这方面更多的内容，可以参考下面的参考链接。
 
-# 深入了解随机数生成器
-
-在背后，随机数生成器实际上使用了一个伪随机数算法。这个算法根据一个初始的随机种子，使用一系列复杂的计算来生成一系列随机数。因此，同样的初始种子会生成同样的随机数序列。这也是为什么我们在每次使用随机数的时候都需要使用一个随机设备来作为种子，以保证每次生成的随机数都是不同的。
-
-另外，随机数生成器也有一些参数可以调整，比如均匀性、分布形状等。这一般会影响到生成的随机数的分布情况。如果我们想要调整随机数的分布情况，可以使用对应的参数来实现。
-
-# 参考链接
-
-- [C++标准库中的随机数生成器](https://www.geeksforgeeks.org/generating-random-number-range-c/)
-- [C++ random库文档](https://en.cppreference.com/w/cpp/numeric/random)
-- [伪随机数生成器](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-
-# 参见
-
-- [随机数生成器的实际应用](https://blog.csdn.net/xingyeyiyi/article/details/77971265)
-- [使用C++生成随机密码的方法](https://www.cnblogs.com/haozhixiong7/p/13175111.html)
+## 参考链接
+- [C++标准库中的rand()函数文档](http://www.cplusplus.com/reference/cstdlib/rand/)
+- [C++11引入的随机数库文档](http://www.cplusplus.com/reference/random/)
+- [mt19937随机数引擎文档](http://www.cplusplus.com/reference/random/mt19937/)
+- [如何正确使用随机数生成器](https://en.cppreference.com/w/cpp/numeric/random)

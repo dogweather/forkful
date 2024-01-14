@@ -1,50 +1,54 @@
 ---
 title:    "Go: Comparando dos fechas"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Por qué comparar dos fechas en Go?
 
-Ya sea para realizar operaciones matemáticas o para validar y ordenar datos, comparar dos fechas en Go es una habilidad importante para cualquier programador. Aprender a comparar fechas correctamente garantiza un código eficiente y preciso.
+Comparar dos fechas es una operación común en cualquier lenguaje de programación, incluyendo Go. Esto puede ser útil en situaciones como validar fechas de nacimiento, calcular la antigüedad de un evento o simplemente ordenar una lista de fechas en orden cronológico. En este artículo, aprenderemos cómo comparar dos fechas en Go utilizando diferentes métodos y funciones.
 
-## Cómo hacerlo en Go
+## Cómo hacerlo:
 
-En Go, la forma más sencilla de comparar dos fechas es utilizando el operador de comparación ```<, >, ==```. Por ejemplo:
+Para comparar dos fechas en Go, podemos utilizar el paquete `time` que nos proporciona funciones y métodos útiles para manejar fechas y horas. A continuación, se muestra un ejemplo de cómo comparar dos fechas con la función `Before()`:
 
-```
+```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    date1 := time.Date(2021, 7, 20, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2021, 7, 21, 0, 0, 0, 0, time.UTC)
+	// Definir dos fechas
+	date1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+	date2 := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
 
-    if date1 < date2 {
-        fmt.Println("La fecha 1 es anterior a la fecha 2")
-    } else if date1 > date2 {
-        fmt.Println("La fecha 1 es posterior a la fecha 2")
-    } else if date1 == date2 {
-        fmt.Println("Las fechas son iguales")
-    }
+	// Comparar si date1 es anterior a date2
+	if date1.Before(date2) {
+		fmt.Println("La fecha 1 es anterior a la fecha 2")
+	} else {
+		fmt.Println("La fecha 1 es posterior a la fecha 2")
+	}
 }
 ```
 
-En este ejemplo, se crean dos variables ```date1``` y ```date2``` con fechas diferentes. Luego, se comparan utilizando el operador ```<```, ```>``` y ```==```. Dependiendo del resultado, se imprime un mensaje indicando la relación entre las dos fechas.
+El código anterior imprimirá "La fecha 1 es anterior a la fecha 2", ya que 01 de enero es anterior a 01 de febrero.
 
-## Profundizando en la comparación de fechas en Go
+## Profundizando:
 
-Go también ofrece una función ```Equal()``` en el paquete ```time``` que permite comparar fechas con mayor precisión. Esta función toma en cuenta diferencias de tiempo en diferentes zonas horarias y días bisiestos.
+Además de la función `Before()`, también podemos utilizar las funciones `After()` y `Equal()` para comparar dos fechas. Estas funciones devuelven un valor booleano que indica si la primera fecha es posterior, anterior o igual a la segunda fecha, respectivamente. También podemos utilizar el método `Before()` directamente en una variable de tipo `time.Time` para realizar la comparación.
 
-Además, al comparar dos fechas, también se pueden utilizar métodos como ```Before()``` y ```After()``` que devuelven un valor booleano indicando si una fecha es anterior o posterior a otra.
+Otra forma de comparar dos fechas es convirtiéndolas en valores numéricos y luego comparando los valores. Podemos utilizar el método `Unix()` para obtener el número de segundos desde la época Unix para una fecha determinada y comparar estos valores entre sí utilizando operadores de comparación.
 
-Utilizar estas funciones y métodos puede ser muy útil al trabajar con fechas en aplicaciones más complejas.
+Por último, debemos tener en cuenta que al comparar fechas, también se debe considerar la zona horaria. Si no se especifica una zona horaria, se asumirá la hora local del sistema.
 
-## Ver también
-- [Documentación oficial de Go sobre el paquete time](https://golang.org/pkg/time/)
-- [Ejemplos prácticos de comparación de fechas en Go](https://www.golangprograms.com/go-language/dates.html)
+## Ver también:
+
+- [Documentación oficial de Go sobre el paquete `time`](https://golang.org/pkg/time/)
+- [Ejemplos avanzados de comparación de fechas en Go](https://coderwall.com/p/jgmvjw/deep-equality-testing-for-comparable-types-in-go)
+
+¡Ahora que sabes cómo comparar dos fechas en Go, puedes utilizar esta habilidad en tus proyectos y aplicaciones! Recuerda siempre tener en cuenta la zona horaria y utilizar los métodos y funciones de `time` para realizar comparaciones precisas. ¡Happy coding!

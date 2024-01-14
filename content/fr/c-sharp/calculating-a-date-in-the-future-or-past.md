@@ -1,48 +1,43 @@
 ---
 title:    "C#: Calculer une date dans le futur ou le passé"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi 
+Il y a de nombreuses raisons pour lesquelles quelqu'un pourrait vouloir calculer une date dans le futur ou dans le passé. Peut-être que vous avez besoin de planifier des projets à une date spécifique ou peut-être que vous voulez simplement savoir quelle sera la date dans un certain nombre de jours. Quelle que soit la raison, il est important de connaître les bases de la programmation pour pouvoir effectuer facilement ces calculs.
 
-La calcul de dates dans le futur ou dans le passé est une tâche courante dans la programmation. En utilisant le langage de programmation C#, vous pouvez facilement faire des calculs précis pour des dates spécifiques.
+## Comment faire 
+Pour calculer une date dans le futur ou dans le passé en utilisant le langage de programmation C#, vous aurez besoin de quelques connaissances de base en matière de traitement de dates et d'heures. Tout d'abord, vous devrez importer l'espace de noms System afin d'utiliser la classe DateTime. Ensuite, vous pouvez utiliser différentes méthodes de cette classe pour effectuer des calculs sur les dates.
 
-# Comment faire
-
-Pour calculer une date dans le futur ou dans le passé, vous pouvez utiliser la méthode *Add* de la classe *DateTime*. Cette méthode prend un paramètre de type *TimeSpan* qui détermine la quantité de temps à ajouter ou à soustraire à la date d'origine.
-
-Voici un exemple de code pour calculer une date dans le futur:
+Par exemple, pour calculer une date dans le futur en ajoutant un nombre de jours donné à la date actuelle, vous pouvez utiliser la méthode AddDays() en spécifiant le nombre de jours à ajouter. Le code suivant illustre cela :
 
 ```C#
-// Date d'origine
-DateTime dateOriginale = new DateTime(2021, 1, 1);
-// Ajout d'un nombre donné de jours
-DateTime dateFutur = dateOriginale.Add(new TimeSpan(30, 0, 0, 0));
+using System;
 
-Console.WriteLine(dateFutur);
-// Résultat: 2021-01-31 (31 janvier 2021)
+DateTime currentDate = DateTime.Now;
+DateTime futureDate = currentDate.AddDays(10);
+Console.WriteLine("La date dans 10 jours sera : {0:d}", futureDate);
 ```
 
-Pour calculer une date dans le passé, il suffit de passer un nombre négatif à la méthode *Add*.
+Lorsque vous exécutez ce code, la sortie devrait ressembler à ceci :
 
-```C#
-// Date d'origine
-DateTime dateOriginale = new DateTime(2021, 1, 1);
-// Soustraction d'un nombre donné de jours
-DateTime datePassé = dateOriginale.Add(new TimeSpan(-30, 0, 0, 0));
-
-Console.WriteLine(datePassé);
-// Résultat: 2020-12-02 (2 décembre 2020)
+```
+La date dans 10 jours sera : 5/6/2021
 ```
 
-# Plongée en profondeur
+Vous pouvez également utiliser d'autres méthodes telles que AddWeeks(), AddMonths() ou même AddYears() pour effectuer des calculs sur les dates. De plus, si vous voulez calculer une date dans le passé, vous pouvez utiliser les mêmes méthodes en spécifiant un nombre négatif.
 
-En utilisant la méthode *Add*, vous pouvez également effectuer des calculs avec d'autres unités de temps telles que les heures, les minutes, les secondes, etc. De plus, il est important de comprendre la différence entre un *TimeSpan* positif et négatif lors du calcul d'une date dans le futur ou dans le passé.
+## Plongée en profondeur 
+Il est important de noter que ces méthodes de calcul de dates prennent en compte les années bissextiles et les différents nombres de jours dans les mois. En outre, vous pouvez également utiliser la classe Calendar pour prendre en compte les cultures et les calendriers spécifiques.
 
-# Voir aussi
+De plus, la classe DateTime dispose également de méthodes utiles telles que Compare(), Equals() et CompareTo(), qui vous permettent de comparer des dates et de vérifier si elles sont égales ou quelles sont leurs valeurs relatives.
 
-- [Documentation officielle Microsoft pour la classe DateTime (en français)](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-5.0)
-- [Tutoriel C# pour les débutants (en français)](https://docs.microsoft.com/fr-fr/dotnet/csharp/tutorials/intro-to-csharp/)
-- [Autre exemple de calcul de dates en C# (en français)](https://www.journaldunet.fr/web-tech/internet/1203833-messa-de-najai-ezreal-dans-lol-le-guide/)
+Enfin, il existe d'autres façons de calculer des dates en utilisant des bibliothèques tierces ou même des algorithmes complexes, mais la maîtrise de ces méthodes de base est essentielle dans la programmation C#.
+
+## Voir aussi 
+- [Documentation officielle sur la classe DateTime en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-5.0)
+- [Guide de formatage de dates et d'heures en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [Tutoriel sur le calcul de dates en C#](https://www.codeproject.com/Articles/45018/Calculating-Dates-in-C-NET)

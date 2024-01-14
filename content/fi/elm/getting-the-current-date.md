@@ -1,38 +1,54 @@
 ---
-title:    "Elm: Päivämäärän saaminen"
+title:    "Elm: Nykyisen päivämäärän saaminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
-Elm on ohjelmointikieli, joka on suunniteltu helpottamaan käyttäjän elämää. Yksi tapa tehdä tämä on saada ajankohtaista tietoa, kuten nykyinen päivämäärä, helposti ja tarkasti, ja Elm tarjoaa erinomaiset työkalut tähän tarpeeseen.
+# Miksi käyttää nykyisen päivämäärän hankintaa?
 
-## Miten: 
-Käyttämällä Elm Date -moduulia, voit helposti saada nykyisen päivämäärän koodisi sisällä. Katso alla oleva esimerkki:
+Jokainen ohjelmoija tarvitsee ajoittain kykyä hakea nykyinen päivämäärä. Se voi olla hyödyllistä esimerkiksi luotaessa sovelluksia tapahtumakalentereille tai aikaperusteisten toimintojen suorittamiselle. Elm-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan hakea nykyinen päivämäärä.
+
+## Kuinka tehdä se?
+
+Onneksi Elmillä on sisäänrakennettu funktio, joka mahdollistaa nykyisen päivämäärän hankkimisen. Se on nimeltään `Time.Now` ja se palauttaa `Posix`-tyypin arvon, joka edustaa tämänhetkistä aikaa.
+
+```Elm
+import Time
+
+-- haetaan nykyinen päivämäärä
+currentDate = Time.now
 ```
-Elm Day muodostaa
-  title : Date
-  title =
-    Date.today
+
+Tämä funktio palauttaa `Posix`-tyypin käärittynä `Result`-tyyppiin. Tämä tarkoittaa sitä, että on mahdollista, että jotain menee vikaan, jolloin `Result`-tyyppi sisältää virheen sijaan `Posix`-tyypin arvon. Tämä pitäisi ottaa huomioon, kun käsittelet nykyisen päivämäärän hankintaa.
+
+Jos haluat tarkastella nykyisen päivämäärän lisäksi myös kellonaikaa, voit käyttää `Time.millisToPosix`-funktiota muuntaaksesi millisekunnit `Posix`-tyypiksi.
+
+## Syvällinen sukellus
+
+Kun käytät `Time.now` -funktiota, Elm palauttaa nykyisen päivämäärän UTC-aikavyöhykkeessä. Jos haluat muuttaa aikavyöhykettä, voit käyttää `Time.inTimeZone` -funktiota ja antaa sille haluamasi aikavyöhykkeen `String`-muodossa.
+
+```Elm
+import Time
+
+-- haetaan nykyinen päivämäärä ja kellonaika Euroopan aikavyöhykkeelle muunnettuna
+currentDateTime = Time.inTimeZone "Europe/Helsinki" Time.now
 ```
-Tämä esimerkki luo muuttujan "title" ja asettaa sen nykyiseen päivämäärään.
 
-Voit myös mukauttaa päivämäärämuotoa käyttämällä funktioita, kuten "Date.month", "Date.day" ja "Date.year" saadaksesi tietyn osan päivämäärästä. Alla olevassa esimerkissä käytetään "Date.day" -funktiota saadaksesi nykyisen kuukauden päivämäärän:
+On myös tärkeää huomata, että `Time.now` palauttaa ajan millisekunteina. Jos haluat näyttää nykyisen päivämäärän ja kellonajan tietyn muodon mukaan, voit käyttää `Time.format`-funktiota, joka hyödyntää `iso8601`-formaatista.
+
+```Elm
+import Time
+
+-- haetaan nykyinen päivämäärä ja formaatataan se stringiksi
+currentDateTime = Time.format Iso8601 Time.now
 ```
-Elm Day muodostaa
-  title : Int
-  title =
-    Date.day Date.today
-```
-Tämä tulostaisi numeron nykyisestä päivästä, joka on muuttujassa "title".
 
-## Syvällinen perehtyminen:
-Kun käsittelemme päivämäärän saamista, tärkeää on ymmärtää aikavyöhykkeet ja niiden vaikutus. Elm Date -moduuli käyttää standardia UTC-aikavyöhykettä, joten jos haluat saada päivämäärän tietyssä aikavyöhykkeessä, sinun on käytettävä funktiota "Date.fromZone" ja annettava aikavyöhykkeen nimi.
+Tässä esimerkissä käytetään `Iso8601`-formaatia, mutta on myös muita vaihtoehtoja, kuten `Rfc3339`, `Rfc1123` ja `Rfc822`.
 
-On myös tärkeää muistaa päivämäärän muotoilu ja lokalisointi. Elm Date -moduuli tarjoaa funktioita, kuten "Date.toText", jotta voit muuntaa päivämäärän haluamaasi muotoon tai kielelle.
+# Katso myös
 
-## Katso myös: 
-- Elm Date -moduulin virallinen dokumentaatio: [linkki](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- Lisää tietoa aikavyöhykkeistä: [linkki](https://fi.wikipedia.org/wiki/Aikavy%C3%B6hyke)
-- Ohjeita päivämäärän muotoilemiseen: [linkki](https://pypi.org/project/dtf/)
+- [Elm dokumentaatio](https://elm-lang.org/docs)
+- [Elm Weekly](https://elmweekly.nl)
+- [Finnish Elm Slack-yhteisö](https://elmslack.com)

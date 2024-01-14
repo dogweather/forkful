@@ -1,42 +1,93 @@
 ---
 title:    "C++: Ottenere la data corrente"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Molti programmatori potrebbero chiedersi perché sia utile avere accesso alla data corrente durante la programmazione. In questo articolo esploreremo le motivazioni dietro questa esigenza e vedremo come è possibile ottenere la data corrente utilizzando il linguaggio di programmazione C++.
+
+Ogni programma ha bisogno di uno strumento per tenere traccia del tempo, e ottenere la data corrente è un'operazione fondamentale in quasi ogni linguaggio di programmazione. In questo articolo, impareremo come ottenere la data corrente in C++, fornendo sia una semplice soluzione che una più approfondita.
 
 ## Come fare
-Per ottenere la data corrente, dobbiamo utilizzare una funzione della libreria standard di C++, chiamata `time()`. Questa funzione restituisce il numero di secondi trascorsi dal periodo di tempo noto come "epoch" (1 gennaio 1970 ore 00:00:00). Possiamo utilizzare questo valore per creare una data concreta.
+
+Per ottenere la data corrente in C++, dobbiamo includere la libreria `ctime`, che ci fornisce funzioni per gestire il tempo. La funzione principale che useremo è `time()`, che restituisce il numero di secondi trascorsi dal 1 gennaio 1970 ad oggi.
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main() {
-    // Otteniamo il valore dei secondi trascorsi dall'epoch
-    std::time_t now = std::time(nullptr);
-    // Convertiamo i secondi in una struttura di tipo tm
-    std::tm *currentDate = std::localtime(&now);
+int main()
+{
+    // Otteniamo il numero di secondi trascorsi dall'1/1/1970 ad oggi
+    std::time_t now = std::time(0);
 
-    // Stampiamo la data corrente formattata utilizzando la struttura tm
-    std::cout << "La data corrente è: "
-              << currentDate->tm_mday << "/" << (currentDate->tm_mon + 1) << "/" << (currentDate->tm_year + 1900) << std::endl;
-    
+    // Usiamo la funzione ctime per convertire il numero in una stringa
+    std::cout << "La data corrente è: " << std::ctime(&now) << std::endl;
+
     return 0;
 }
 ```
 
-Questo codice utilizza la funzione `localtime()` per convertire il valore dei secondi in una struttura `tm` che contiene tutte le informazioni sulla data corrente, come giorno, mese e anno. Infine, utilizzando la sintassi `currentDate->tm_mday` possiamo accedere ai valori specifici e stamparli a schermo per ottenere una data formattata correttamente.
+L'output sarà simile a questo:
+
+```
+La data corrente è: Mon Jul 12 11:30:38 2021
+```
+
+Possiamo anche manipolare la stringa ottenuta per ottenere solo la parte di data, ignorando l'ora e il fuso orario.
+
+```C++
+#include <iostream>
+#include <ctime>
+
+int main()
+{
+    std::time_t now = std::time(0);
+    std::string dateString = std::ctime(&now);
+
+    // Utilizziamo il metodo substring per ottenere la data
+    std::cout << "La data corrente è: " << dateString.substr(0, 10) << std::endl;
+
+    return 0;
+}
+```
+
+L'output sarà:
+
+```
+La data corrente è: Mon Jul 12
+```
 
 ## Approfondimento
-La funzione `time()` utilizzata precedentemente, restituisce il numero di secondi trascorsi dall'epoch in formato `time_t`, un tipo di dato a 32 o 64 bit a seconda dell'implementazione. La funzione `localtime()` trasforma questo valore in una data locale, basandosi sull'ora impostata nel sistema operativo.
 
-Questa è una semplice implementazione per ottenere la data corrente, ma esistono anche molte librerie di terze parti che forniscono funzionalità più avanzate per lavorare con le date, come la gestione di fusi orari e la conversione tra formati differenti.
+Oltre alla funzione `time()`, possiamo anche utilizzare la struttura `tm` per ottenere informazioni più dettagliate sulla data corrente. Questa struttura include variabili come `tm_yday` (il giorno dell'anno), `tm_wday` (il giorno della settimana), `tm_mon` (il mese) e così via.
+
+```C++
+#include <iostream>
+#include <ctime>
+
+int main()
+{
+    std::time_t now = std::time(0);
+    std::tm* timeInfo = std::localtime(&now);
+
+    std::cout << "La data corrente è: " << timeInfo->tm_mon + 1 << "/" << timeInfo->tm_mday << "/" << timeInfo->tm_year + 1900 << std::endl;
+
+    return 0;
+}
+```
+
+L'output sarà:
+
+```
+La data corrente è: 7/12/2021
+```
+
+Ci sono anche altre funzioni utili nella libreria `ctime`, come ad esempio `asctime()` per formattare la stringa di data, `mktime()` per convertire la data in secondi e `strftime()` per formattare la data in modo personalizzato.
 
 ## Vedi anche
-- [Documentazione di C++ sulla funzione `time()`](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [Altre opzioni per ottenere la data corrente in C++](https://www.geeksforgeeks.org/working-with-date-and-time-in-cpp/)
-- [Libreria open source Boost per la gestione delle date in C++](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
+
+- [Documentazione ufficiale di C++ sulla libreria ctime](https://en.cppreference.com/w/cpp/header/ctime)
+- [Tutorial su come ottenere la data corrente in C++](https://www.programiz.com/cpp-programming/library-function/ctime/time)

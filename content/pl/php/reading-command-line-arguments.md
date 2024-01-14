@@ -1,48 +1,37 @@
 ---
-title:    "PHP: Odczytywanie argumentów z wiersza poleceń"
+title:    "PHP: Odczytywanie argumentów wiersza poleceń"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Podstawowym powodem, dla którego warto poznać jak czytać argumenty wiersza poleceń w PHP, jest to, że jest to niezbędne do pisania skryptów wiersza poleceń lub aplikacji konsolowych. Wiele projektów korzysta z tego sposobu przekazywania informacji do programu, a zatem umiejętność czytania argumentów wiersza poleceń jest bardzo przydatna.
+ W dzisiejszych czasach, programowanie jest nieodłącznym elementem wielu dziedzin życia. Aby być skutecznym programistą, ważne jest nie tylko zrozumienie podstawowych pojęć i języków programowania, ale także umiejętność korzystania z różnych narzędzi oraz rozwiązanie problemów na różnych poziomach. Jednym z takich przydatnych narzędzi jest "przetwarzanie argumentów wiersza poleceń" w języku PHP. W niniejszym artykule, dowiesz się dlaczego jest to ważne oraz jak skutecznie z tego skorzystać.
 
-## Jak to zrobić
+## Jak używać
 
-Aby odczytać argumenty wiersza poleceń w PHP, używamy zmiennych globalnych o nazwie ```$argc``` i ```$argv```. ```$argc``` jest liczbą argumentów, a ```$argv``` jest tablicą z argumentami przekazanymi do programu. Oto przykładowy kod:
+Aby korzystać z przetwarzania argumentów wiersza poleceń w PHP, musimy najpierw ustawić odpowiednie zmienne. Przykładowo możemy użyć funkcji "getopt()" wraz z parametrem "a", aby odczytać argumenty wiersza poleceń w postaci tablicy asocjacyjnej. Następnie, możemy wyświetlić zawartość tej tablicy za pomocą funkcji "print_r()". Przykład kodu w języku PHP może wyglądać następująco:
 
-```PHP
+```
 <?php
+// pobieramy argumenty wiersza poleceń i zapisujemy je w tablicy asocjacyjnej
+$arguments = getopt("a:");
 
-echo "Liczba argumentów to: " . $argc . "\n";
-
-echo "Argumenty przekazane do programu:\n";
-print_r($argv);
+// wyświetlamy zawartość tablicy
+print_r($arguments);
+?>
 ```
 
-Przykładowy wynik dla wywołania programu z argumentami ```php program.php argument1 argument2``` będzie wyglądać następująco:
+Po uruchomieniu powyższego kodu, jeśli wiersz poleceń będzie zawierał na przykład argument "-a hello", to zostanie wyświetlone "Array ( [a] => hello)". W ten sposób, możemy w prosty sposób odczytać argumenty przekazane do programu wierszem poleceń.
 
-```PHP
-Liczba argumentów to: 3
-Argumenty przekazane do programu:
-Array
-(
-    [0] => program.php
-    [1] => argument1
-    [2] => argument2
-)
-```
+## Deep Dive
 
-## Głębszy wgląd
-
-Istnieją też inne sposoby na czytanie argumentów wiersza poleceń w PHP, takie jak wykorzystanie biblioteki ```getopt()``` lub użycie pętli ```foreach``` do iteracji po tablicy z argumentami. Ważne jest również pamiętanie o poprawnej obsłudze błędów, gdy argumenty nie są przekazane do programu lub są nieprawidłowe.
+Aby lepiej zrozumieć działanie przetwarzania argumentów wiersza poleceń w PHP, można prześledzić kilka kroków, które są wykonywane. Po pierwsze, argumenty są przekazywane do programu jako tekst, który musimy przetworzyć. Następnie, za pomocą funkcji "getopt()", tworzymy tablicę asocjacyjną, w której nazwy argumentów są kluczami, a wartościami są przekazane wartości. Dzięki temu, łatwo możemy odwołać się do konkretnych argumentów za pomocą ich nazw. W przypadku błędnego lub niepoprawnego argumentu, wartość klucza będzie równa "false". W ten sposób, możemy wykryć i obsłużyć ewentualne błędy w przekazywanych argumentach.
 
 ## Zobacz także
 
-Jeśli jesteś zainteresowany/iona dalszym poznawaniem PHP, polecamy zapoznać się z poniższymi linkami:
-
-- [Dokumentacja PHP o argumentach wiersza poleceń](https://www.php.net/manual/en/features.commandline.php)
-- [Kurs PHP w Codecademy](https://www.codecademy.com/learn/learn-php)
-- [Poradnik jak programować w PHP od podstaw](https://www.youtube.com/playlist?list=PLpJJtTU6FOxaSzWL9IUtq_hmE-_FJxF45)
+- [Oficjalna dokumentacja PHP - przetwarzanie argumentów wiersza poleceń](https://www.php.net/manual/en/function.getopt.php)
+- [Tutorial na temat przetwarzania argumentów wiersza poleceń w PHP](https://www.tutorialspoint.com/php/php_command_line.htm)
+- [Blog o programowaniu w języku PHP](https://php.pl/)

@@ -1,63 +1,71 @@
 ---
 title:    "Clojure recipe: Calculating a date in the future or past"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Calculating dates in the future or past may seem like a simple task, but it can actually be quite complex. Whether you're trying to schedule events or track deadlines, having the ability to accurately calculate dates is essential for any programming task. In this blog post, we'll explore how to do this using Clojure.
+Calculating dates in the future or past is a common task in many programming projects. This can be useful for scheduling tasks, setting reminders, or simply managing time-based data. In this blog post, we will explore how to use Clojure to easily calculate dates in the future or past.
 
 ## How To
 
-To calculate a date in the future or past, we'll be using the `clj-time` library. This library provides functions for working with dates and times in Clojure. First, we need to import the library into our program:
+To calculate a date in Clojure, we can use the `clj-time` library. First, we need to add the `clj-time` dependency to our project. In our `project.clj` file, we can add the following line under the `:dependencies` section:
 
-```Clojure
-(ns my-program.core
+```
+[clj-time "0.15.2"]
+```
+
+Next, we need to import the necessary namespace in our Clojure file:
+
+```
+(ns your-project-name
   (:require [clj-time.core :as t]))
 ```
 
-Next, we can use the `plus` and `minus` functions to add or subtract days, months, or years to a given date. For example, to calculate a date 2 weeks from today:
+Now, let's explore how to calculate dates in the future or past using the following examples:
 
-```Clojure
-(def today (t/today))
-(t/plus today (t/weeks 2))
+### Calculate date in the future
+
+We can use the `t/plus` function to calculate a date in the future. This function takes in a time period and a starting date, and returns the calculated date.
+
+```
+(t/plus (t/months 1) (t/today))
+;; Output: #object[org.joda.time.DateTime 0x149b8014 "2021-08-31T00:00:00.000Z"]
 ```
 
-This will return the date object for 2 weeks in the future. Similarly, to calculate a date 10 days in the past:
+In this example, we are calculating the date one month from today.
 
-```Clojure
-(def today (t/today))
-(t/minus today (t/days 10))
+### Calculate date in the past
+
+Similarly, we can use the `t/minus` function to calculate a date in the past. This function also takes in a time period and a starting date, and returns the calculated date.
+
+```
+(t/minus (t/days 7) (t/today))
+;; Output: #object[org.joda.time.DateTime 0x1c661cc "2021-07-25T00:00:00.000Z"]
 ```
 
-The `plus` and `minus` functions also accept multiple arguments, allowing us to add or subtract different units of time. For example, to calculate a date 3 years and 2 months in the future:
+In this example, we are calculating the date seven days before today.
 
-```Clojure
-(def today (t/today))
-(t/plus today (t/years 3) (t/months 2))
+### Calculate date with specific time
+
+If we want to calculate a date with a specific time, we can use the `t/with-time` function. This function takes in a time and a date, and returns a new date with the specified time.
+
 ```
+(t/with-time (t/time 12 0) (t/today))
+;; Output: #object[org.joda.time.DateTime 0x6d6d805c "2021-07-31T12:00:00.000Z"]
+```
+
+In this example, we are calculating a date at 12PM today.
 
 ## Deep Dive
 
-Under the hood, the `plus` and `minus` functions are using the Joda-Time library to perform the calculations. Joda-Time is a popular Java library for working with dates and times, and `clj-time` provides a Clojure wrapper for it. This allows us to take advantage of all the functionality Joda-Time has to offer.
+The `clj-time` library also provides functions for advanced date calculations such as daylight savings, leap years, and time zones. For a complete guide, please refer to the official documentation [here](https://github.com/clj-time/clj-time).
 
-One particularly useful function in Joda-Time is `withDayOfWeek`, which allows us to find a date that falls on a specific day of the week. For example, if we wanted to find the date for the next Monday after a given date, we can use the following code:
+See Also
 
-```Clojure
-(def today (t/today))
-(t/plus today (t/withDayOfWeek 1))
-```
-
-This will return the next Monday's date. We can also pass in a negative number to find a date in the past. For example, to find the previous Friday's date:
-
-```Clojure
-(def today (t/today))
-(t/minus today (t/withDayOfWeek -5))
-```
-
-## See Also
-
-- Joda-Time library: https://www.joda.org/joda-time/
-- Clojure Time library documentation: https://clj-time.github.io/clj-time/
+- [Official `clj-time` documentation](https://github.com/clj-time/clj-time)
+- [ClojureDocs for `clj-time`](https://clojuredocs.org/clj-time)
+- [A basic introduction to calculating dates in Clojure](https://scotthaleen.github.io/blog/2013/10/06/calculating-dates-in-clojure/)

@@ -1,55 +1,40 @@
 ---
 title:    "Fish Shell: Generazione di numeri casuali"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è una funzione essenziale in molti programmi. Può essere utilizzato per creare scenari di gioco diversificati, generare password sicure e testare l'efficacia di algoritmi.
 
-## Come
-Per generare numeri casuali utilizzando Fish Shell, possiamo utilizzare il comando `math` seguito dalla funzione `random` e il numero massimo che si desidera generare. Ad esempio, per generare un numero casuale tra 1 e 10, possiamo scrivere:
+Generare numeri casuali può essere utile per la creazione di giochi, la gestione di password o semplicemente per scopi accademici.
+
+## Come fare
+
+Per generare numeri casuali nel Fish Shell, possiamo utilizzare il comando `math random` seguito dal numero massimo di cui vogliamo generare il numero. Per esempio, se vogliamo generare un numero casuale compreso tra 1 e 10, possiamo scrivere:
+
 ```Fish Shell
 math random 10
 ```
-Questo ci darà un output come:
-```
-7
-```
-Possiamo anche utilizzare la funzione `seq` per generare una sequenza di numeri casuali. Ad esempio, per generare una sequenza di 5 numeri casuali tra 1 e 100, possiamo usare:
+
+In questo modo, ogni volta che eseguiremo il comando, otterremo un numero diverso compreso tra 1 e 10. Possiamo anche utilizzare i numeri generati per assegnarli a variabili utilizzando il comando `set` come nel seguente esempio:
+
 ```Fish Shell
-seq 5 | math random 100
-```
-Ciò produrrà un output come:
-```
-23
-57
-82
-13
-44
-```
-Inoltre, il comando `shuf` può essere utilizzato per generare una sequenza di numeri casuali senza dover specificare il numero massimo. Basta passare la lunghezza della sequenza come parametro:
-```Fish Shell
-shuf -r -e 10
-```
-Questo ci darà un output come:
-```
-5
-8
-1
-10
-3
+set numero (math random 100)
+echo "Il numero casuale generato è $numero"
 ```
 
-## Deep Dive
-Fish Shell utilizza la libreria `libmath` del C per generare numeri casuali. Ciò significa che i numeri generati da `math random` sono basati sull'algoritmo di generazione di numeri casuali del C. Se vogliamo avere più controllo sulla generazione dei numeri, possiamo utilizzare la funzione `open`. Ad esempio, per generare numeri casuali con una distribuzione normale utilizzando la libreria `librandom`:
-```Fish Shell
-open /dev/random or /dev/urandom
-```
-Inoltre, possiamo specificare un seed per la generazione dei numeri utilizzando la funzione `srandom`. Questo ci permette di ottenere una sequenza di numeri casuali riproducibile se utilizziamo lo stesso seed.
+Questo comando ci restituirà il numero casuale generato e lo assegnerà alla variabile `$numero`.
+
+## Approfondimento
+
+Il comando `math random` utilizza un algoritmo di generazione di numeri pseudo-casuali per generare i numeri casuali. Ciò significa che i numeri generati non sono veramente casuali, ma sono determinati da un algoritmo matematico. Se vogliamo generare numeri veramente casuali, possiamo utilizzare il comando `uuidgen` che utilizza dati del sistema per generare numeri casuali.
+
+Tuttavia, per la maggior parte delle applicazioni, i numeri pseudo-casuali generati dal comando `math random` sono sufficientemente buoni.
 
 ## Vedi anche
-- [Documentazione Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida alla programmazione in Fish Shell](https://fishshell.com/docs/current/commands.html#math)
-- [Manuale di riferimento di libmath](https://man7.org/linux/man-pages/man7/libmath.7.html)
+
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Articolo su come generare numeri casuali in Bash](https://linuxhint.com/generate_random_number_bash/) 
+- [Esempi di utilizzo del comando `uuidgen`](https://www.geeksforgeeks.org/uuid-and-uuid_generate-function-in-c-with-examples/)

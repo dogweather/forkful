@@ -1,58 +1,67 @@
 ---
-title:    "TypeScript: Imprimiendo salidas de depuración"
+title:    "TypeScript: Imprimiendo salida de depuración"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-La impresión de salida de depuración es una herramienta útil para los desarrolladores, ya que les permite ver y comprender el estado interno de su código mientras se está ejecutando. También es útil para detectar errores y solucionar problemas en el código.
+## ¿Por qué imprimir la salida de depuración en TypeScript?
+
+La impresión de la salida de depuración es una práctica común en el desarrollo de software. Al imprimir mensajes de depuración, podemos ver el estado de nuestro código en diferentes puntos de ejecución, lo que nos ayuda a identificar y solucionar errores más fácilmente.
 
 ## Cómo hacerlo
-Para imprimir salida de depuración en TypeScript, puedes utilizar la función "console.log ()". Por ejemplo:
+
+En TypeScript, podemos imprimir la salida de depuración utilizando la función `console.log()`. Vamos a ver un ejemplo sencillo:
 
 ```TypeScript
 let nombre = "María";
-console.log("Hola", nombre);
+console.log("El nombre es: " + nombre);
 ```
 
-Esto imprimirá "Hola María" en la consola, lo que te permitirá ver el valor de la variable "nombre". Puedes imprimir cualquier tipo de dato en la consola, incluyendo strings, números, objetos y arrays.
+Al ejecutar este código, veremos en la consola el siguiente resultado:
 
-La salida de depuración también se puede utilizar para verificar si ciertas secciones de código se están ejecutando o para seguir el flujo de ejecución. Por ejemplo:
+```
+El nombre es: María
+```
+
+Podemos imprimir cualquier tipo de dato en la salida de depuración, ya sean cadenas de texto, números, booleanos o incluso objetos y arreglos. También podemos combinar varias variables en un solo mensaje de depuración:
 
 ```TypeScript
-console.log("Iniciando bucle for");
-for (let i = 0; i < 5; i++){
-  console.log(i);
-}
-console.log("Fin de bucle for");
+let edad = 27;
+console.log("La edad de " + nombre + " es " + edad);
 ```
 
-La salida en la consola sería:
-
 ```
-Iniciando bucle for
-0
-1
-2
-3
-4
-Fin de bucle for
+La edad de María es 27
 ```
 
-## Profundizando
-Además de la función "console.log ()", TypeScript también ofrece otras opciones para imprimir salida de depuración. Puedes utilizar "console.debug ()" para imprimir mensajes de depuración más detallados, "console.error ()" para imprimir mensajes de error y "console.warn ()" para imprimir advertencias.
+## Profundizando en la impresión de salida de depuración
 
-También puedes utilizar plantillas de cadena para imprimir variables y mensajes de una manera más eficiente y legible. Por ejemplo:
+Además de utilizar `console.log()`, TypeScript proporciona otras funciones útiles para la impresión de la salida de depuración, como `console.info()`, `console.warn()` y `console.error()`, que nos permiten imprimir diferentes tipos de mensajes de forma legible. También podemos utilizar la función `console.table()` para imprimir datos en forma de tabla.
+
+Otra técnica útil para imprimir la salida de depuración es utilizar el operador de propagación (`...`) para imprimir todos los elementos de un arreglo o los pares clave-valor de un objeto:
 
 ```TypeScript
-let nombre = "Juan";
-console.log(`Hola ${nombre}, ¿cómo estás?`);
+let numeros = [1, 2, 3, 4, 5];
+console.log(...numeros);
 ```
 
-Esto imprimiría "Hola Juan, ¿cómo estás?" en la consola.
+```
+1 2 3 4 5
+```
+
+```TypeScript
+let persona = { nombre: "Juan", edad: 30 };
+console.log(...persona);
+```
+
+```
+Juan 30
+```
+
+También podemos utilizar condicionales y ciclos para imprimir mensajes de depuración en determinados escenarios o en múltiples puntos de nuestro código.
 
 ## Ver también
-- [Documentación de TypeScript sobre Debugging](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [Tutorial de Debugging en TypeScript](https://dev.to/omiusone/debugging-typescript-using-vscode-4nfc)
-- [Vídeo de Debugging con TypeScript](https://www.youtube.com/watch?v=qjPqIP_LmYM)
+- [Documentación oficial de TypeScript sobre la impresión de salida de depuración](https://www.typescriptlang.org/docs/handbook/decorators.html)
+- [Tutorial de depuración en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-chrome-devtools)

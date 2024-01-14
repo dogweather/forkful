@@ -1,39 +1,55 @@
 ---
 title:    "Javascript: Sjekke om en mappe eksisterer"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det å sjekke om en mappe eksisterer kan være en viktig del av programmering fordi det gir deg muligheten til å håndtere tilfeller der en mappe ikke er tilgjengelig eller er skrevet feil i koden din.
+Å sjekke om en mappe eksisterer er en viktig del av programmering, spesielt når man jobber med filbehandling. Dette gjør det mulig å unngå feil og sikre at programmet kjører uten problemer.
 
-# Hvordan du gjør det
+## Hvordan
 
-For å sjekke om en mappe eksisterer i JavaScript, kan du bruke `fs.existsSync`-funksjonen. Denne funksjonen tar inn en bane som parameter og sjekker om en mappe med den gitte banen eksisterer eller ikke. Hvis mappen eksisterer, returneres `true`, ellers returneres `false`.
+Det finnes flere måter å sjekke om en mappe eksisterer i Javascript, men den vanligste og anbefalte metoden er å bruke FileSystem API. Dette gir tilgang til filsystemet på datamaskinen og gjør det mulig å utføre operasjoner som å sjekke om en mappe eksisterer.
 
 ```Javascript
 const fs = require('fs');
+const path = './min_mappe';
 
-const path = 'min/mappe/sti';
+// Sjekker om mappen eksisterer
+fs.existsSync(path) //Output: true hvis mappen finnes, false hvis den ikke finnes
+```
 
-if (fs.existsSync(path)) {
-  console.log('Mappen eksisterer!');
-} else {
-  console.log('Mappen eksisterer ikke.');
+Man kan også bruke promises og async/await for å gjøre koden mer lesbar og håndtere eventuelle feil. Her er et eksempel på hvordan man kan sjekke om en mappe eksisterer asynkront:
+
+```Javascript
+const fs = require('fs').promises;
+const path = './min_mappe';
+
+// Sjekker om mappen eksisterer
+async function sjekkMappe() {
+  try {
+    const exists = await fs.access(path);
+    return true; // mappen eksisterer
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return false; // mappen finnes ikke
+    }
+    console.error(error); // håndter andre feil
+  }
 }
 ```
 
-Utskriften av dette vil være avhengig av om mappen faktisk eksisterer eller ikke. Hvis mappen eksisterer, vil utskriften være "Mappen eksisterer!", ellers vil den være "Mappen eksisterer ikke." Dette kan også kombineres med andre funksjoner for å håndtere mer komplekse situasjoner.
+## Deep Dive
 
-# Dypdykk
+Når man bruker FileSystem API for å sjekke om en mappe eksisterer, brukes metoden `existsSync` eller `access` avhengig av versjonen av NodeJS. Denne metoden tar inn to argumenter: en streng som representerer stien til mappen vi vil sjekke, og en callback-funksjon som kalles når operasjonen er ferdig.
 
-Sjekking av eksistensen til en mappe kan også være nyttig når du skal lese eller skrive filer i den mappen. Hvis mappen ikke eksisterer, vil forsøk på å lese eller skrive filer i den feile. Derfor kan det være nyttig å først sjekke om mappen eksisterer før du prøver å jobbe med filene i den.
+Det første argumentet, stien til mappen, må være en relativ eller absolutt sti. Hvis det er en relativ sti, vil det bli konvertert til en absolutt sti basert på plasseringen til kjørefilen. Det andre argumentet er en funksjon som tar inn en eventuell feil og en boolean som sier om mappen eksisterer eller ikke.
 
-En annen viktig ting å huske på er at `fs.existsSync`-funksjonen sjekker kun om en mappe eksisterer, ikke om den er lesbar eller skrivbar. Det kan være lurt å kombinere denne funksjonen med andre funksjoner for å sikre at du har tilgang til mappen og dens innhold.
+## Se også
 
-# Se også
-
-- [JavaScript fs-modulen](https://nodejs.org/api/fs.html)
-- [Hvordan sjekke om en fil eller mappe eksisterer i Node.js](https://www.digitalocean.com/community/tutorials/how-to-check-if-a-file-or-directory-exists-in-node-js)
+- [FileSystem API](https://nodejs.org/api/fs.html)
+- [Node.js - Checking if a directory exists](https://www.geeksforgeeks.org/node-js-fs-existsync-method/)
+- [How to check if a file or directory exists in Node.js](https://attacomsian.com/blog/nodejs-check-if-file-directory-exists)

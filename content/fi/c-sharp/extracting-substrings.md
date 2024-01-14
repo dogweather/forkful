@@ -1,60 +1,54 @@
 ---
-title:    "C#: Palojen poimiminen"
+title:    "C#: Alimerkkijonojen erottelu"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi on hyödyllistä osata erottaa osajonot
 
-Substringien erottaminen on olennainen osa ohjelmointia ja sitä käytetään monissa eri koodauksen tilanteissa. Se voi auttaa sinua saamaan tietoja merkkijonoista, kuten sanoista tai lauseista, ja käsittelemään niitä haluamallasi tavalla. Tämä blogikirjoitus tulee opettamaan sinulle, kuinka voit helposti ja tehokkaasti erotella substringit C#-koodissasi.
+Osajonon erottaminen on tärkeä taito ohjelmoinnin maailmassa. Se antaa sinulle mahdollisuuden käsitellä tekstiä tehokkaasti ja helposti, jolloin voit suorittaa monimutkaisia tehtäviä nopeasti. Tässä artikkelissa jaamme kanssasi, miksi osajonon erottaminen on tärkeää ja kuinka voit oppia tekemään sen.
 
-## Kuinka
+## Kuinka: Esimerkkejä koodista ja tulostuksista
 
-Erottaminen substringeiksi on helppoa C#-koodilla. Se voidaan tehdä usealla eri tavalla, mutta tässä keskitymme kolmeen esimerkkiin. Käytämme esimerkkikoodissa merkkijonoa "Tämä on esimerkki merkkijonosta".
+Osajonon erottamisen perusteet ovat helposti opittavissa, mutta ne voivat tuntua ylivoimaisilta aloittelijalle. Käytämme C# -kieltä esimerkkien esittämiseen, mutta pohjimmiltaan samat periaatteet pätevät useilla ohjelmointikielillä.
 
-```C#
-string merkkijono = "Tämä on esimerkki merkkijonosta";
-```
+### Esimerkki 1: Yksinkertainen osajonon erottaminen
 
-### Esimerkki 1: Substring(int startIndex, int length)
-
-Tämä esimerkki käyttää Substring(int startIndex, int length) -metodia erottaakseen substringin alkamasta tietystä indeksistä ja halutun pituisena. Käyttämällä aiempaa merkkijonoamme, voimme erotella sanan "esimerkki" seuraavasti:
+Seuraava koodinpätkä esittää yksinkertaisen osajonon erottamisen tekstin perusteella. Asetamme ensin tekstiä sisältävän muuttujan ja sitten tulostamme sen osajonot.
 
 ```C#
-string sana = merkkijono.Substring(8, 8);
-Console.WriteLine(sana);
-
-// Tulostaa "esimerkki"
+string teksti = "Tämä on esimerkki tekstistä.";
+Console.WriteLine(teksti.Substring(5, 2));
 ```
 
-### Esimerkki 2: Split(char[] separator)
+Tämä tulostaa "on", koska tekstistä erotetaan kaksi merkkiä alkaen viidennestä merkistä.
 
-Toinen tapa erotella substringit on käyttää Split(char[] separator) -metodia, joka jakaa merkkijonon halutun erotusmerkin perusteella ja palauttaa taulukon. Jos siis haluamme erotella merkkijonossa olevat sanat erillisiin osiin, käytämme välilyöntiä "-merkkinä ja saamme seuraavanlaisen tuloksen:
+### Esimerkki 2: Osajonon erottaminen ehtolauseen avulla
+
+Voimme myös käyttää ehtolauseita osajonon erottamiseen. Seuraava esimerkki tarkistaa, onko tekstissä sana "tärkeää" ja jos on, tulostaa sen jälkeen tulevan osajonon.
 
 ```C#
-string[] sanat = merkkijono.Split(' ');
-Console.WriteLine(sanat[3]);
-
-// Tulostaa "merkkijonosta"
+string teksti = "Miksi on tärkeää oppia osajonon erottaminen?";
+if (teksti.Contains("tärkeää"))
+{
+    int index = teksti.IndexOf("tärkeää") + 8;
+    Console.WriteLine(teksti.Substring(index));
+}
 ```
 
-### Esimerkki 3: Regex.Match(string input, string pattern)
+Tämä tulostaisi "oppia osajonon erottaminen?", koska "tärkeää" on 8 merkkiä pitkä ja haluamme tulostaa kaiken sen jälkeen tulevan tekstin.
 
-Viimeinen esimerkki käyttää Regular Expression (Regex) -kirjastoa erottaakseen substringit halutun mallin perusteella. Käyttämällä aiempaa merkkijonoamme ja haluamme erottaa kaikki sanat, jotka alkavat kirjaimella "e", käytämme seuraavaa koodia:
+## Syvempi sukellus: Lisätietoja osajonon erottamisesta
 
-```C#
-Regex.Match(merkkijono, @"e\w+");
+Osajonon erottaminen on vain yksi osa tekstien käsittelyä ohjelmoinnissa. On tärkeää ymmärtää, että osajonojen erottaminen ei muuta itse tekstiä, vaan se vain palauttaa uuden osajonon. Tämä on tärkeää pitää mielessä, sillä se voi aiheuttaa haasteita monimutkaisemmissa koodinpätkissä.
 
-// Palauttaa Match-olion, jossa on kaikki e-kirjaimella alkavat sanat
-```
-
-## Syvemmälle
-
-Yllä esittelyt esimerkit ovat vain pintaraapaisu substringien erottamisesta C#-koodissa. On olemassa monia muita tapoja, kuten Substring(int startIndex), jolla pystytään erottamaan substringin halutusta indeksistä loppuun asti, tai Regex.Split(string input, string pattern), jolla voidaan jakaa merkkijono monen eri mallin perusteella.
+Tutki myös muita osajonon erottamiseen liittyviä toimintoja, kuten `Split()` ja `Replace()`. Näitä käyttämällä voit rakentaa monimutkaisempia tehtäviä, jotka käsittelevät suurempaa määrää tekstiä.
 
 ## Katso myös
 
-- [C#-kielen virallinen dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/csharp/)
-- [C# Regex-kirjaston dokumentaatio](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [C# Substring-metodin dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [C# ohjeet - Osajonon erottaminen](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/operators/string-substring)
+- [Codecademy - String manipulation in C#](https://www.codecademy.com/learn/learn-c-sharp/modules/csharp-string-manipulation)
+
+Kiitos, kun luit artikkelimme osajonon erottamisesta! Toivottavasti löydät tästä hyödyllistä tietoa ja pystyt soveltamaan sitä omassa koodissasi. Muista harjoitella ja kokeilla erilaisia tapoja käyttää osajonon er

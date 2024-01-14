@@ -1,64 +1,53 @@
 ---
 title:    "Rust: Pisanie do standardowego błędu"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu, czyli strumienia danych, które są błędne lub niepoprawne, jest nieodłączną częścią programowania w języku Rust. Bardzo ważne jest, aby wyświetlić odpowiednie komunikaty błędów, aby ułatwić użytkownikom zrozumienie co się stało i jak mogą to naprawić. W artykule tym omówimy dlaczego pisanie do standardowego błędu jest tak ważne oraz jak to zrobić w języku Rust.
+Standardowe wyjście oraz błąd to ważne części każdego programu. Wiedza na temat tego, jak wykorzystać standardowe wyjście jest niezbędna, jeśli chcemy wyświetlać wyniki naszych programów. Ale dlaczego powinniśmy również zwracać uwagę na standardowe wyjście błędu (standard error)? W tym artykule dowiecie się dlaczego jest to ważne i jak to zrobić w języku Rust.
 
 ## Jak to zrobić
 
-Aby pisać do standardowego błędu w języku Rust, należy użyć makra "eprintln!". Poniżej przedstawiamy prosty przykład, w którym próbujemy otworzyć plik, ale w przypadku niepowodzenia zostanie wypisany odpowiedni komunikat błędu:
-
-```Rust
-use std::fs::File;
-
-fn main() {
-    let file = File::open("nieistniejacy_plik.txt").unwrap_or_else(|error| {
-        eprintln!("Nie można otworzyć pliku: {}", error);
-        std::process::exit(1);
-    });
-}
-```
-
-W tym przykładzie wykorzystujemy metode "unwrap_or_else()" do obsługi błędu i wypisania komunikatu z użyciem makra "eprintln!". Dzięki temu, użytkownik będzie wiedział dlaczego wystąpił błąd i jak go naprawić.
-
-## Deep Dive
-
-Istnieje również możliwość użycia funkcji "eprint!" do wypisywania komunikatów bez dodania nowej linii. Jest to szczególnie przydatne, gdy chcemy wypisać kilka informacji na temat błędu bez przejścia do nowej linii. Innym ważnym aspektem jest możliwość wypisywania do standardowego błędu nie tylko tekstów, ale także zmiennych i wartości. Poniżej przedstawiamy przykład, w którym chcemy przypisać wartość wprowadzoną przez użytkownika do zmiennej i wypisać ją w przypadku gdy jest niepoprawna:
+W języku Rust, wypisywanie do standardowego wyjścia błędu jest bardzo proste. Wypisanie tekstu do standardowego wyjścia błędu można osiągnąć za pomocą funkcji `eprintln!`. W poniższym przykładzie wykorzystujemy funkcję `eprintln!` aby wyświetlić błąd, jeśli użytkownik wpisze złe hasło.
 
 ```Rust
 use std::io;
 
 fn main() {
-    let mut input = String::new();
-    println!("Podaj liczbę: ");
+    println!("Witaj! Podaj hasło:");
 
-    match io::stdin().read_line(&mut input) {
-        Ok(_) => {
-            let parsed_input: i32 = input.trim().parse().unwrap();
-            if parsed_input < 0 {
-                eprintln!("Podana liczba jest mniejsza od 0");
-                std::process::exit(1);
-            }
-        }
-        Err(error) => {
-            eprintln!("Nie udało się odczytać liczby: {}", error);
-            std::process::exit(1);
-        }
-    };
+    let mut password = String::new();
+
+    io::stdin()
+        .read_line(&mut password)
+        .expect("Nie udało się odczytać hasła.");
+
+    if password.trim() != "rust" {
+        eprintln!("Złe hasło!");
+    }
 }
 ```
 
-W tym przykładzie używamy metody "parse()" do przekształcenia wprowadzonej przez użytkownika wartości na typ "i32". W przypadku błędu, wypisujemy odpowiedni komunikat z użyciem makra "eprintln!".
+Output:
+```
+Witaj! Podaj hasło:
+rust
+Złe hasło!
+```
+
+Jak widać, wypisanie tekstu do standardowego wyjścia błędu jest bardzo proste w języku Rust. Dodatkowo, możemy użyć funkcji `eprint!` aby wypisać błąd bez dodawania nowej linii.
+
+## Głębsza analiza
+
+Zwracanie uwagi na standardowe wyjście błędu jest ważne z kilku powodów. Po pierwsze, pozwala nam wyświetlać informacje o błędach lub ważnych komunikatach dla użytkownika, które nie powinny być mieszane z normalnymi wynikami programu. Po drugie, w przypadku gdy nasz program jest uruchamiany z konsoli, możemy w prosty sposób przekierować wszystkie wiadomości błędów do pliku dziennika, co ułatwia debugowanie i znajdowanie problemów.
+
+Pamiętaj, że funkcja `eprintln!` wypisuje treść do standardowego wyjścia błędu, które jest oddzielone od standardowego wyjścia (println!) i może być przekierowane niezależnie.
 
 ## Zobacz również
-
-- [Dokumentacja języka Rust - std::io::Error](https://doc.rust-lang.org/std/io/struct.Error.html)
-- [Poradnik o debugowaniu w języku Rust](https://blog.thoughtram.io/rust/2016/03/14/rusts-panic-abort-and-unwind.html)
-- [Poradnik o obsłudze błędów w języku Rust](https://blog.logrocket.com/a-practical-guide-to-handling-errors-in-rust/)
-
-Dzięki znajomości tego prostego sposobu na pisanie do standardowego błędu w języku Rust, będziecie w stanie lepiej zarządzać i obsługiwać błędy w swoich programach. Pamiętajcie, że komunikaty błędów są bardzo ważne dla użytkowników, dlatego warto poświęcić czas na ich odpowiednie przygotowanie. Zaczynając przygodę z Rustem, warto zapoznać się z możliwoś
+- [Dokumentacja standardowej biblioteki Rust: std::io](https://doc.rust-lang.org/std/io/index.html)
+- [Artykuł: Obsługa błędów w języku Rust](https://pl.wikibooks.org/wiki/Rust/Obs%C5%82uga_b%C5%82%C4%99d%C3%B3w)
+- [Poradnik: Debugowanie w języku Rust](https://www.puritanic.net/2018/11/debugowanie-aplikacji-w-jezyku-rust/)

@@ -1,46 +1,41 @@
 ---
 title:    "Python: 将字符串转换为小写"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么要将字符串转换为小写？
+## 为什么要将字符串转换为小写
 
-当我们处理大量文本数据时，经常需要对字符串进行一些操作。其中一个常见的操作就是将字符串转换为小写。通过将字符串转换为小写，我们可以更容易地进行文本匹配、搜索以及其他字符串操作。
+字符串是计算机编程中的重要概念，它是由一系列字符组成的。有时，我们需要统一字符串的格式，例如将所有的字母转换为小写。这样做可以使得我们的程序更加健壮和高效。
 
-##如何进行字符串转换为小写？
+## 如何将字符串转换为小写
 
-在Python中，我们可以使用内置的`lower()`方法来将字符串转换为小写。下面是一个简单的示例代码：
-
-```python
-# 定义一个字符串
-my_str = "Hello, World!"
-
-# 使用lower()方法将字符串转换为小写
-new_str = my_str.lower()
-
-# 打印转换后的字符串
+```Python
+# 使用lower()方法
+str = "Hello World"
+new_str = str.lower()
 print(new_str)
+
+# 输出：hello world
 ```
+使用lower()方法可以将字符串转换为小写形式，它会返回一个新的字符串，因此在最后一行我们需要使用print()函数来打印出转换后的结果。
 
-运行以上代码，我们可以得到如下输出：
+## 深入了解字符串转换为小写的过程
 
-`hello, world!`
+在计算机中，每一个字符都会有一个对应的ASCII码。小写字母和大写字母的ASCII码相差32，因此将大写字母加上32就可以得到对应的小写字母。
 
-##深入探讨字符串转换为小写
+在Python中，字符串是不可变的数据类型，因此在使用lower()方法转换字符串时，实际上是创建了一个新的字符串，而原来的字符串并没有改变。
 
-`lower()`方法实际上是调用了字符串的 `str.casefold()`方法来进行转换。它们的区别在于`casefold()`方法对一些特殊字符有更严格的规则，能够处理更多的语言和特殊字符。除此之外，`lower()`方法也可以接受一个可选的参数`locale`，指定转换的字符集。
+## 参考资料
 
-值得注意的是，`lower()`方法并不修改原始的字符串，而是返回一个新的字符串。这样做的好处是我们可以在不影响原始字符串的情况下对其进行多次转换，保留不同版本的字符串。
+[Python字符串转换为小写](https://www.runoob.com/python3/python3-string-lower.html)
 
-##参考资料
+[ASCII码表](https://baike.baidu.com/item/ASCII/309296?fr=aladdin)
 
-- [Python官方文档：str.lower()方法](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Python官方文档：str.casefold()方法](https://docs.python.org/3/library/stdtypes.html#str.casefold)
-- [RealPython教程：Converting Between Strings and Lists in Python](https://realpython.com/python-strings/)
+## 参见
 
-##相关阅读
+[Python字符串教程](https://www.runoob.com/python3/python3-string.html)
 
-- [如何在Python中使用正则表达式匹配字符串？](https://github.com/marise-lee/python-casual-blog-posts/blob/master/using-regex-in-python)
-- [Python中常用的字符串操作方法](https://github.com/marise-lee/python-casual-blog-posts/blob/master/string-methods-in-python)
+[Python字符串格式化](https://www.runoob.com/python3/python3-string-format.html)

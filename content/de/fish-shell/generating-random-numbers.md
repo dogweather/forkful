@@ -1,37 +1,35 @@
 ---
-title:    "Fish Shell: Generieren von Zufallszahlen"
+title:    "Fish Shell: Zufallszahlen generieren"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum Generieren von Zufallszahlen Sinn macht
 
-Wenn Sie jemals ein Programm geschrieben haben, das auf Zufallszahlen angewiesen ist, wissen Sie, wie wichtig es ist, eine zuverlässige und effiziente Möglichkeit zu haben, diese zu generieren. Die Fish Shell bietet eine einfache und intuitive Methode zum Erstellen von zufälligen Zahlen, die in vielen Szenarien nützlich sein kann.
+Das Generieren von Zufallszahlen ist ein häufiger Bestandteil von Programmieraufgaben. Es kann verwendet werden, um zufällige Auswahl oder Variationen in Spielen, statistischen Simulationen oder Verschlüsselungsalgorithmen zu erzeugen.
 
-## Wie geht das?
+## Wie man Zufallszahlen in Fish Shell generiert
 
-Verwenden Sie einfach den Befehl `random` in der Fish Shell, um zufällige Zahlen zu erzeugen. Zum Beispiel:
-
+```Fish Shell
+# Verwendung des 'shuf' Befehls, um eine Liste von zufälligen Zahlen zu generieren
+shuf -i 1-100
+# Ausgabe: 86 7 54 91 33 29 18 6 36 83 58 68 78 30 53 74 99 12 70 92 55 61 25 45 47 13 85 23 96 95 37 35 76 20 88 44 66 16 52 38 67 50 42 46 79 14 
 ```
-fish_random 5
-=> 12435
+
+```Fish Shell
+# Verwendung von '/dev/random' oder '/dev/urandom' Dateien, um zufällige Zahlen zu generieren
+head -10 /dev/random
+# Ausgabe: 150 205 49 34 245 221 33 16 173 249
 ```
 
-Dieser Befehl generiert eine zufällige Ganzzahl mit der Anzahl der gewünschten Stellen. In diesem Fall werden 5 Stellen zurückgegeben, also eine Zahl zwischen 10000 und 9999.
+## Tiefere Einblicke in die Generierung von Zufallszahlen
 
-Sie können auch einen Bereich angeben, in dem die Zufallszahl erzeugt werden soll, z.B. `fish_random 1 10` würde eine Zahl zwischen 1 und 10 zurückgeben.
+Es gibt verschiedene Methoden zur Generierung von Zufallszahlen. Einige basieren auf statistischen Algorithmen, während andere auf physischen Ereignissen, wie der Quantisierung von Rauschen, basieren. Das Betriebssystem verwendet oft auch verschiedene Methoden, um Zufallszahlen zu generieren, die von der Hardware und der Umgebung abhängig sind.
 
-## Tieferes Eintauchen
+## Siehe auch
 
-Eine zufällige Zahl zu generieren scheint einfach genug, aber es gibt ein paar Dinge zu beachten, um sicherzustellen, dass die erzeugte Zahl wirklich zufällig ist.
-
-Das `random` Modul in Fish verwendet den Mersenne-Twister-Algorithmus, der als einer der besten Pseudozufallszahlengeneratoren gilt. Ein Pseudozufallszahlengenerator ist ein Algorithmus, der eine scheinbar zufällige Sequenz von Zahlen erzeugt, die jedoch aufgrund einer Startzahl und einiger Berechnungen wiederholt werden können.
-
-Es ist wichtig zu beachten, dass Zufallszahlen in der Regel nicht wirklich zufällig sind, sondern nur pseudozufällig. Wenn Sie also eine wirklich zufällige Zahl benötigen, z.B. für kryptografische Zwecke, sollten Sie besser eine spezielle Bibliothek verwenden, die dafür entwickelt wurde.
-
-# Siehe auch
-
-- Offizielle Fish-Dokumentation zum `random` Modul: https://fishshell.com/docs/current/cmds/random.html
-- Techrepublic-Artikel zum Thema "Wie man in der Fish Shell zufällige Wörter generiert": https://www.techrepublic.com/article/how-to-create-random-words-in-fish-shell/
-- Ein interessanter Blog-Beitrag darüber, wie man Zufallszahlen in Fish für ein Würfelspiel verwendet: https://www.starkandwayne.com/blog/how-to-roll-dice-in-the-fish-shell/
+- [Fish Shell Dokumentation zu shuf Befehl](https://fishshell.com/docs/current/cmds/shuf.html)
+- [Artikel über die Verwendung von /dev/random und /dev/urandom Dateien](https://www.gnu.org/software/coreutils/manual/html_node/dev_002frandom.html)
+- [Wikipedia Artikel über Pseudorandom Generatoren](https://de.wikipedia.org/wiki/Pseudorandom_number_generator)

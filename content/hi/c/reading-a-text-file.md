@@ -1,40 +1,50 @@
 ---
 title:    "C: टेक्स्ट फाइल पढ़ना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आपने कभी सोचा है कि आपके सिस्टम पर स्टोर किया गया कोई भी पाठ कैसे पढ़ा जाता है? आपको शायद इस कारण से प्रेरित करना होता है कि आप एक प्रोग्रामिंग भाषा में अपनी कौशल का उपयोग करके एक आसान तरीके से एक पाठ फ़ाइल पढ़ सकें।
+## Kyu
+Agar aap ek C programmer hai aur aapko text files ko padhna aur samajhna zaroori hai, toh is blog post ko padhna aapke liye faaydemand ho sakta hai.
 
-## कैसे करें
-"```C
-#include <stdio.h>
+## Kaise Kare
+Agar aap text file ko C program me padhna chahte hai, toh iss kaam ke liye hum `fopen()` aur `fscanf()` functions ka istemal karenge. Yeh functions file ko open aur read karne me madad karte hai. Neeche diye gaye code blocks me aap dekh sakte hai ki kaise hum in functions ka istemal kar sakte hai:
 
-int main() {
-  char file_name[100];
-  char data[1000];
-  FILE *fp; //Pointer to a file type
 
-  printf("Enter the name of the text file: ");
-  scanf("%s", &file_name);
+```C
+// File ko open karte hai
+FILE *myFile = fopen("myfile.txt", "r");
 
-  //Opening the text file in read mode
-  fp = fopen(file_name, "r");
+// Agar file successfully open hui hai
+if(myFile!=NULL){
+    char str[100];
 
-  //Looping through the file and printing each character
-  while(fgets(data, 1000, fp) != NULL) {
-    printf("%s", data);
-  }
-
-  //Closing the file
-  fclose(fp);
-
-  return 0;
+    // File se data read karte hai
+    fscanf(myFile, "%s", &str);  
+    
+    // Output ko print karte hai
+    printf("%s", str);  
+    
+    // File ko close kar dete hai
+    fclose(myFile);  
 }
-```"
-ऊपर दिए गए उदाहरण में हमने C भाषा का उपयोग करके एक पाठ फ़ाइल को पढ़ने का तरीका दिखाया है। पहले, हमने सभी आवश्यक लाइब्रेरियों को जोड़ी हैं। तो हमने प्रयोक्ता से एक फ़ाइल का नाम लेने के लिए कहा और वह नाम को प्रोग्राम में स्ट्रिंग के रूप में रखा। उसके बाद, हमने fopen () फ़ंक्शन का उपयोग करके फ़ाइल को खोला है और अंत में हमने फ़ाइल को बंद कर दिया है। हम कैसे यह तीन स्टेप दाेहर कर के पहले सभी चरित्रों को प्रिंट करते हैं और फिर eof (कितना भी पुनरावर्ती क्लाइएंट .;) ko पाठालेनकाfone दे रहे हैं। [गीती नीलाली से आधार कालगेत हैं। फ़ाइल पर १००० अंक तक प्रिंट करते हैं।]
+```
 
-## डीप डाइव
-पाठ फ़ाइल पढ़ने का और भी कुछ विशेष तरीकों के बारे में जानने के लिए, आप हमारे वेबसाइट
+Yahan humne `myfile.txt` file ko read kar ke usme se ek string ko read kiya aur use output me print kiya. Aap is code ko apni zaroorat ke hisaab se modify karke use kar sakte hai.
+
+## Gehraai Me Jaane
+Text file ko padhna aur samajhna koi mushkil kaam nahi hai. Aapko bas `fopen()` aur `fscanf()` functions ka istemal karna hoga aur aap file se data read kar sakte hai. Aap file ki type bhi specify kar sakte hai, jaise `.txt`, `.csv`, `.dat` etc. Aap chahe toh multiple files ko bhi ek sath read kar sakte hai.
+
+Iss post se aapko ek basic idea mil gaya hoga ki kaise hum C program me text files ko read kar sakte hai. Agar aapko aur gehraai me jaana hai toh aap online tutorials aur resources se aur jankari prapt kar sakte hai.
+
+## Dekhiye Bhi
+Iss blog post se related aur helpful resources ke liye neeche diye gaye links ko check kare:
+
+- [GeeksforGeeks - Reading and Writing to a Text File in C](https://www.geeksforgeeks.org/fopen-for-an-existing-file-in-write-mode/)
+- [C Tutorials - File Handling](https://www.cprogramming.com/tutorial/cfileio.html)
+- [Programiz - File Handling in C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Tutorialspoint - Handling Text Files in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+
+Ab aap text files ko C program me read karne ke bare me puri tarah se samajh gaye honge. Happy coding!

@@ -1,62 +1,51 @@
 ---
-title:    "Swift: Verkettung von Zeichenfolgen"
+title:    "Swift: Zusammenfügen von Zeichenketten"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Zusammenfügen oder Verketten von Strings ist eine häufig verwendete Technik in der mobilen App-Entwicklung. Es ermöglicht uns, variablen Inhalt in eine einzige Zeichenfolge zu kombinieren und so Texte dynamisch zu erstellen. Dies kann nützlich sein, um beispielsweise personalisierte Benachrichtigungen an Benutzer zu senden oder dynamische Textinhalte auf einer Benutzeroberfläche anzuzeigen.
+Wenn du in der Swift Programmiersprache arbeitest, wirst du wahrscheinlich irgendwann auf die Notwendigkeit stoßen, mehrere Strings miteinander zu verbinden. Das kann zum Beispiel beim Erstellen von Benutzerinteraktionen oder beim Zusammenfügen von Benutzer- und Systemdaten nützlich sein. In diesem Blogbeitrag werde ich dir zeigen, wie du einfach und effektiv Strings in Swift zusammenfügen kannst.
 
-## How To
+## Wie geht das?
 
-Es gibt verschiedene Möglichkeiten, Strings in Swift zu verketten, aber die gebräuchlichste ist die Verwendung des "+=" Operators. Hier ist ein Beispiel:
+Die einfachste Methode zum Zusammenfügen von Strings in Swift ist die Verwendung des `+` Operators. Schauen wir uns ein Beispiel an:
 
-```Swift
-var name = "Paula"
-var greeting = "Hallo "
-
-greeting += name
-print(greeting)
+```Swift 
+let name = "Sophia"
+let profession = "Programmiererin"
+let phrase = name + " ist eine erfolgreiche " + profession.
 ```
-Output: "Hallo Paula"
 
-Es ist auch möglich, Strings mithilfe des `"\()"`-Operators in eine Zeichenfolge einzubetten. Hier ist ein Beispiel:
+Das Ergebnis der Variable `phrase` ist "Sophia ist eine erfolgreiche Programmiererin". Wie du sehen kannst, werden die einzelnen Strings einfach hintereinander angehängt.
 
-```Swift
-var age = 32
-var message = "Ich bin \(age) Jahre alt."
-print(message)
+Eine weitere Möglichkeit ist die Verwendung von String Interpolation. Dabei werden Variablen direkt in einen String eingebettet, indem sie von einem BACKSLASH gefolgt werden. Schauen wir uns ein Beispiel an:
+
+```Swift 
+let age = 28
+let info = "Sophia ist \(age) Jahre alt."
 ```
-Output: "Ich bin 32 Jahre alt."
+
+Das Ergebnis der Variable `info` ist "Sophia ist 28 Jahre alt." Hier wird die Variable `age` direkt in den String eingefügt, ohne dass der `+` Operator verwendet werden muss.
 
 ## Deep Dive
 
-Swift bietet auch die `joined()` Methode, um eine Sequenz von Strings in eine einzelne Zeichenfolge zu verketten. Hier ist ein Beispiel:
+Wenn du noch tiefer in das Thema des Zusammenfügens von Strings in Swift eintauchen möchtest, gibt es noch einige weitere interessante Möglichkeiten. Zum Beispiel kannst du mit der `+=` Operator auch Strings aneinanderhängen, anstatt sie neu zu initialisieren.
 
-```Swift
-var fruits = ["Apfel", "Banane", "Orange"]
-var fruitsList = fruits.joined(separator: ", ")
-print(fruitsList)
+Außerdem bietet Swift eine praktische Funktion namens `joined(separator:)`, mit der du ein Array von Strings mit einem bestimmten Trennzeichen verbinden kannst. Schauen wir uns ein Beispiel an:
+
+```Swift 
+let hobbies = ["Klettern", "Reisen", "Programmieren"]
+let hobbyList = hobbies.joined(separator: ", ")
 ```
-Output: "Apfel, Banane, Orange"
 
-Auch der `split()` Operator kann verwendet werden, um eine Zeichenfolge in mehrere Teile zu zerlegen, die dann wieder zusammengesetzt werden können. Hier ist ein Beispiel:
+Das Ergebnis der Variable `hobbyList` ist "Klettern, Reisen, Programmieren". Hier wurde jede der Hobbys im Array durch ein Komma und ein Leerzeichen getrennt.
 
-```Swift
-var words = "Hallo, mein Name ist Max"
-var wordArray = words.split(separator: " ")
-var hello = String(wordArray[0])
-var name = String(wordArray[3])
-var message = "\(hello), ich heiße \(name)."
-print(message)
-```
-Output: "Hallo, ich heiße Max."
+## Siehe auch
 
-Es ist wichtig zu beachten, dass das Concatenieren von Strings immer ein neues Objekt erstellt und somit zu einer schlechteren Leistung führen kann, wenn es in einer Schleife verwendet wird. In diesem Fall ist es möglicherweise besser, einen `StringBuffer` zu verwenden, da dieser das hinzufügen von Strings ohne die Erstellung von Zwischenspeicher ermöglicht.
-
-# Siehe auch
-
-- [Swift Strings Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [StringAPI Reference](https://developer.apple.com/documentation/swift/string)
+- [Offizielle Swift Dokumentation zum Zusammenfügen von Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
+- [Swift-Tutorial: Einführung in Strings](https://www.raywenderlich.com/11520-swift-tutorial-a-quick-start)
+- [Interpolation in Swift](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)

@@ -1,37 +1,41 @@
 ---
-title:    "PHP: Löschen von Zeichen mit einem bestimmten Muster"
+title:    "PHP: Entfernen von Zeichen mit übereinstimmendem Muster"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung sehr nützlich sein, um unerwünschte oder unnötige Inhalte aus einem Text zu entfernen.
+## Warum
 
-Wie man es macht:
+Oftmals müssen wir in der Programmierung Zeichen löschen, die einem bestimmten Muster entsprechen. Dies kann zum Beispiel bei der Validierung von Benutzereingaben oder der Bereinigung von Datenbanken nützlich sein. In diesem Blog-Beitrag werde ich erklären, wie man in PHP Zeichen anhand eines bestimmten Musters löschen kann.
+
+## Wie es geht
+
+Um Zeichen in PHP zu löschen, die einem bestimmten Muster entsprechen, können wir die Funktion `preg_replace()` verwenden. Diese Funktion erwartet drei Parameter: das Muster, nach dem gesucht werden soll, der Text, in dem gesucht werden soll, und der Text, der anstelle des gefundenen Musters eingefügt werden soll. 
+
+In dem folgenden Beispiel werden alle Zahlen aus einem String gelöscht und der neue String ausgegeben:
 
 ```PHP
-// Beispiel eines Textes mit unerwünschten Zeichen
-$text = "H€llo W°rld!";
-
-// Funktion zum Löschen von Zeichen
-function deleteCharacters($text, $pattern){
-    return preg_replace($pattern, "", $text);
-}
-
-// Muster, das alle Sonderzeichen löscht
-$pattern = "/[^\w\s]/";
-
-// Ausgabe des bereinigten Textes
-echo deleteCharacters($text, $pattern); // Output: Hello World!
-
+<?php
+$string = "123abc45def";
+echo preg_replace("/[0-9]/", "", $string);
+// Output: abcdef
 ```
 
-Tiefer eintauchen:
+Das Muster `"/[0-9]/"` sucht nach allen Zahlen zwischen 0 und 9 und die leeren Anführungszeichen `""` bedeuten, dass diese durch nichts ersetzt werden sollen.
 
-Das Löschen von Zeichen mit regulären Ausdrücken ist eine gängige Methode in der Programmierung. Es ermöglicht es uns, flexibel nach bestimmten Mustern zu suchen und zu ersetzen. In unserem Beispiel haben wir das Muster `[^\w\s]` verwendet, das jedes Zeichen, das keine Buchstaben oder Leerzeichen sind, löscht. Es gibt jedoch unzählige andere Muster, die je nach Anwendungsfall verwendet werden können. Eine gute Ressource für die Verwendung von regulären Ausdrücken ist die offizielle PHP-Dokumentation.
+## Tiefergehende Erklärung
 
-Siehe auch:
+Die `preg_replace()` Funktion basiert auf regulären Ausdrücken, also Muster, die verwendet werden, um Strings auf bestimmte Zeichenfolgen zu überprüfen. Diese Muster werden in Schrägstrichen `//` eingeschlossen. Im obigen Beispiel haben wir das Muster `"/[0-9]/"` verwendet, um nach Zahlen zu suchen. Hier einige weitere Beispiele für reguläre Ausdrücke:
 
-- [PHP-Dokumentation zu regulären Ausdrücken](https://www.php.net/manual/de/book.pcre.php)
-- [Tutorial zu regulären Ausdrücken von TutorialsPoint](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-- [RegExr - Interaktives Tool zum Testen von regulären Ausdrücken](https://regexr.com/)
+- `"/[a-z]/"` sucht nach Kleinbuchstaben
+- `"/[A-Z]/"` sucht nach Großbuchstaben
+- `"/[a-zA-Z0-9]/"` sucht nach Buchstaben und Zahlen
+
+Reguläre Ausdrücke können aber noch viel komplexer werden und beinhalten eine Vielzahl von Metazeichen, die noch weiter angepasst werden können. Für tiefergehende Informationen zu regulären Ausdrücken empfehle ich die offizielle PHP-Dokumentation.
+
+## Siehe auch
+
+- Offizielle PHP-Dokumentation zu regulären Ausdrücken: https://www.php.net/manual/de/pcre.pattern.php
+- Tutorial zu regulären Ausdrücken in PHP (auf Deutsch): https://www.php-einfach.de/mysql-tutorial/regex-regular-expressions/

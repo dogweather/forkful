@@ -1,41 +1,34 @@
 ---
-title:    "Kotlin: 读取命令行参数"
+title:    "Kotlin: 读取命令行参数."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要阅读命令行参数？
+# 为什么
 
-当我们编写一个程序时，我们可能经常会想要接收用户的输入，而命令行参数正是一个很好的方法。它允许用户在运行程序时提供一些额外的信息，以此来影响程序的运行结果。通过阅读命令行参数，我们可以使我们的程序更加灵活和用户友好。
+命令行参数是编写任何程序时非常重要的一部分。它们为我们提供了一种与程序交互的方式，可以让程序根据输入的不同参数执行不同的操作。读取命令行参数也可以帮助我们更容易地调试程序，发现错误并进行修改。因此，深入了解如何读取命令行参数是非常有价值的。
 
-## 如何阅读命令行参数
+# 如何做
 
-首先，我们需要在 `main` 函数中添加一个 `args` 参数，用来接收命令行参数。然后，我们可以使用 `args` 数组来访问这些参数。让我们来看一个简单的示例：
+在Kotlin中，我们可以使用`args`数组来读取命令行参数。此数组包含了在命令行输入的所有参数。让我们看一个简单的示例，代码如下：
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("您的名字是：${args[0]}")
+    // 打印第一个参数
+    println(args[0])
 }
 ```
-在上面的代码中，我们通过 `args` 数组打印出用户提供的第一个参数，即用户的名字。如果我们在命令行执行这个程序并提供参数，比如 `kotlin MyName`，那么输出将为 `您的名字是：MyName`。
 
-## 深入了解命令行参数
+假设我们在命令行中输入`kotlin example.kt argument1 argument2`，则该程序的输出将是`argument1`。我们可以根据需要在程序中使用这些参数，例如根据输入的参数执行不同的计算或打印不同的信息。
 
-除了基本的访问方式，我们还可以通过 `args` 数组来获取更多有用的信息。首先，我们可以使用 `args.size` 属性来获取用户提供的参数个数。此外，我们还可以使用 `args.contains()` 方法来判断某个值是否在参数中存在。
+# 深入了解
 
-另外，我们也可以使用 `indexOfFirst()` 方法来查找某个参数在数组中的索引。比如，我们可以通过 `args.indexOfFirst { it == "-h" }` 来查找是否存在 `-h` 参数，并返回它的索引值。
+除了基本的命令行参数读取之外，Kotlin还提供了更多功能来帮助我们处理命令行参数。例如，我们可以使用`getOrNull`函数来检查数组中指定位置的参数是否存在，并在该参数不存在时返回null。我们还可以使用`getOptionValue`函数来获取键值对类型的参数，例如`--name=John`。另外，Kotlin还支持使用命令行参数来指定程序的默认运行参数，这些内容可以在官方文档中找到。
 
-总的来说，通过阅读命令行参数，我们可以更灵活地为我们的程序提供交互性，让用户能够更方便地使用我们的程序。
+# 参考链接
 
-## 参考资料
-
-- [Kotlin官方文档](https://kotlinlang.org/docs/reference/command-line.html)
-- [详细讲解Kotlin命令行参数的使用](https://www.jianshu.com/p/ee672a59405d)
-- [在Kotlin中处理命令行参数](https://www.bignerdranch.com/blog/command-line-programs-with-kotlin/)
-- [通过命令行参数增强你的Kotlin程序](https://medium.com/@vyacheslav_developing/extending-kotlins-application-with-command-line-parameters-5614b41799b5)
-
-## 参见
-
-- [学习Kotlin中的控制流](https://github.com/ZFyuan/Kotlin-Programming-Examples/blob/master/Control%20Flow/control-flow.md)
-- [使用Kotlin编写简单的命令行程序](https://zhuanlan.zhihu.com/p/128676925)
+- 官方文档：https://kotlinlang.org/docs/command-line.html
+- 学习Kotlin：https://kotlincn.netlify.app/docs/tutorials/command-line.html
+- Kotlin命令行参数教程：https://www.geeksforgeeks.org/kotlin-command-line-arguments/

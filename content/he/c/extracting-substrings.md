@@ -1,72 +1,41 @@
 ---
-title:    "C: שימוש בכיתובי משנה במחשבים"
+title:    "C: יציאת תת מחרוזות"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-Extraction of substrings היא תהליך חיוני בשפת תכנות C המאפשר למפתחים לחלץ תתי מחרוזות ממחרוזות גדולות יותר. ניתן להשתמש בפונקציות של מילולי של C להפיק חלקים מנתונים וליצור מחרוזות חדשות בעלות ערך ופורמט שונים.
+מחרוזות הן חלק חשוב בתכנות בשפת C. לעיתים קרובות נתקלים במצבים בהן נצטרך להפעיל פעולות על אחת או יותר מתתי-מחרוזות של מחרוזת גדולה יותר. לפיכך, השימוש בפעולות של החיתוך של מחרוזות נחשב למנגנון חשוב לתכנות ב-C.
 
-# איך לעשות זאת
+## איך לעשות זאת
 
-הנה דוגמאות של קוד תכנותי בשפת C עבור חלוץ תתי מחרוזות:
+ישנן מספר דרכים לחתוך מחרוזות בשפת C. הפעולה הכי פשוטה היא להשתמש בפונקציה "strncpy", שמקבלת שלושה פרמטרים: המחרוזת המקורית, מחרוזת יעד, ומספר התווים המקסימלי להעתקה. לדוגמה:
 
-```c
-// חיתוך תת מחרוזת ממיקום מסוים עד סוף המחרוזת
-#include <stdio.h>
-#include <string.h>
+```C
+char source[] = "שלום עולם";
+char destination[6];
 
-int main()
-{
-    char str[] = "פורץ שמיים";
-    char substring[7];
-    int starting_index = 6;
-
-    strncpy(substring, str + starting_index, strlen(str) - starting_index);
-    printf("תת המחרוזת הוא: %s\n", substring);
-
-    return 0;
-}
+strncpy(destination, source, 5);
+printf("%s", destination);
 ```
 
-פלט:
+תוצאה: "שלום"
 
-```
-תת המחרוזת הוא: שמיים
-```
+כמו כן, ניתן להשתמש בפונקציות נוספות כמו "strtok" ו-"strchr" לחיתוך מחרוזות לפי תווים מסוימים או לפי תתי-מחרוזות. כדאי לקרוא את התיעוד המקורי של C כדי להבין את הפונקציות הללו בצורה מלאה יותר.
 
-```c
-// חיתוך תת מחרוזת מהתחלה עד מיקום מסוים
-#include <stdio.h>
-#include <string.h>
+## חקירה עמוקה
 
-int main()
-{
-    char str[] = "מפבר חורף";
-    char substring[5];
-    int ending_index = 4;
+כעת שיזכרו את הדרכים השונות לחיתוך מחרוזות בשפת C, ניתן ללמוד כיצד הפונקציות האלה מובנות וממומשות בתוך השפה. כמו כן, ניתן לחקור מקרים מיוחדים כמו מחרוזות בפורמטים מיוחדים ואיך לחתוך אותן במקרה כזה.
 
-    strncpy(substring, str, ending_index + 1);
-    printf("תת המחרוזת הוא: %s\n", substring);
+למידע נוסף על מנגנוני חיתוך מחרוזות בשפת C, ניתן לעיין במאמרים המצורפים:
 
-    return 0;
-}
-```
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Learn C String Manipulation with Examples](https://www.educba.com/c-string-manipulation/)
+- [Manipulating Strings in C](https://www.geeksforgeeks.org/strings-in-c-2/)
 
-פלט:
+## ראה גם
 
-```
-תת המחרוזת הוא: מפבר
-```
-
-# לחפור עמוק יותר
-
-לחיצה תת מחרוזות היא תהליך פשוט אך חשוב בתכנות עם שפת C. קיימים מספר פונקציות שמגדירות ומפעילות את תהליך חיתוך תת מחרוזות, כגון `strncpy()`, `strchr()`, ו-`strtok()`. לפונקציות אלו ישנן כמה אפשרויות להצבת אותיות מסוימות, סימנים או תווים ליצירת תתי מחרוזות. כמו כן, ניתן לשלב את הפונקציות הללו כדי להגיע לתוצאה הרצויה.
-
-# ראה גם
-
-- [תיעוד C על חיתוך תת מחרוזות](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [תיעוד C על פונקציות מילולי](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
-- [
+- [תיעוד מלא על פונקציות מחר

@@ -1,54 +1,37 @@
 ---
-title:    "Javascript: 랜덤 숫자 생성하기"
+title:    "Javascript: 임의의 숫자 생성하기"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+#왜 정수 생성에 관여해야 하는가
 
-난수 생성은 프로그래밍에서 자주 사용되는 중요한 기술입니다. 난수를 생성하는 이유는 여러 가지가 있지만 그 중 하나는 어떤 값을 랜덤으로 선택해야 할 때 필요하기 때문입니다. 또한 난수는 데이터 암호화나 시뮬레이션 등 다양한 분야에서도 활용됩니다.
+우리는 일상에서 많은 수의 난수를 사용합니다. 웹 사이트에서 새로운 패스워드를 생성하거나 무작위로 주어진 예측 번호를 만들기 위해 로또를 구매할 때, 우리는 난수를 사용합니다. 이러한 난수들을 JavaScript로 만들기 위해서는 왜 하는지에 대해 알아야 합니다.
 
-## 방법
+#어떻게 생성하는가
 
-난수를 생성하는 방법은 간단합니다. Javascript에서는 Math 객체의 메소드를 사용하여 난수를 생성할 수 있습니다. 예를 들어, `Math.random()` 함수는 0부터 1 사이의 랜덤한 소수를 생성합니다. 이 값을 원하는 범위로 변환하려면 간단한 공식을 적용하면 됩니다.
-
-```Javascript
-// 1부터 10 사이의 랜덤한 정수 생성 예제
-let randomNum = Math.floor(Math.random() * 10) + 1;
-console.log(randomNum);
-// 출력: 6
-```
-
-한 번의 실행으로 하나의 랜덤한 값을 생성하고 싶지 않을 때는 반복문을 사용하여 여러 개의 난수를 생성할 수 있습니다.
+JavaScript에서 무작위로 정수를 생성하는 것은 매우 간단합니다. `Math.random()` 함수는 0 이상 1 미만의 임의의 부동 소수점 숫자를 반환합니다. 이 숫자를 정수로 변환하면 우리가 원하는 난수를 얻을 수 있습니다.
 
 ```Javascript
-// 1부터 10 사이의 랜덤한 정수 5개를 생성하는 예제
-for (let i = 0; i < 5; i++) {
-  let randomNum = Math.floor(Math.random() * 10) + 1;
-  console.log(randomNum);
-}
-// 출력:
-// 2
-// 8
-// 6
-// 9
-// 3
+// 1부터 10까지의 난수 생성
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber); // 출력 예시: 5
 ```
 
-이 외에도 난수를 생성하는 다양한 방법이 존재합니다. 하지만 주의해야 할 점은 Math 객체의 메소드는 경우에 따라 예측 가능한 난수를 생성할 수 있다는 점입니다.
+주의해야 할 점은 `Math.random()`이 철저히 무작위가 아니라는 것입니다. 그래서 악의적으로 보안을 통제할 수 있는 분야에서는 사용하지 않는 것이 좋습니다.
 
-## 깊이 파헤치기
+#더 깊게 들어가기
 
-난수 생성 알고리즘은 프로그래밍에서 자주 사용되기 때문에 많은 사람들이 이에 대해 깊이있는 지식을 갖고 있어야 합니다. 하지만 완벽한 난수를 생성하는 것은 불가능하며, 예측할 수 없는 난수를 생성하는 것만이 최선의 해결책입니다. 따라서 실제로 보안 등 안전한 분야에서는 보다 복잡한 알고리즘을 사용해야 합니다.
+더 많은 난수 관련 함수를 사용하고 싶다면 자바스크립트의 `crypto` 라이브러리를 살펴보세요. 이 라이브러리는 보안 관련 난수 생성과 같은 더 많은 기능을 제공합니다. 또한 `seedrandom`과 같은 서드파티 라이브러리도 좋은 선택일 수 있습니다.
 
-또한 Javascript에서는 이외에도 난수를 생성하는 다양한 방법이 있습니다. 예를 들어, 다른 프로그래밍 언어에서도 자주 사용되는 Pseudo-random Number Generator(PRG) 알고리즘을 사용할 수 있습니다. 이외에도 Crypto.getRandomValues()를 사용하여 보안 수준의 높은 난수를 생성할 수 있습니다.
+#더 알아보기
 
-## 연광
+[JavaScript에서 난수 생성하는 방법](https://www.freecodecamp.org/news/how-to-generate-random-number-in-javascript/)
 
-이 글에서는 난수 생성하는 방법과 주의해야 할 점에 대해 살펴보았습니다. Javascript에서는 Math 객체의 메소드를 사용하여 간단하게 난수를 생성할 수 있지만, 더 나은 보안 수준의 난수가 필요한 경우에는 다른 알고리즘을 사용해야 합니다. 프로그래밍에서 난수 생성은 빈번하게 사용되는 기법이므로 이에 대해 깊이있는 지식을 갖고 있으면 유용할 것입니다.
+[Math.random() 함수의 공식 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
-## 참고 자료
+[crypto 라이브러리의 공식 문서](https://nodejs.org/api/crypto.html)
 
-- [MDN Web Docs - 난수 생성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [개발자 진로 유튜브 채널 - [목요토크] 난수가 뭐지? | 개발자 진로](https://
+[seedrandom 라이브러리의 GitHub 페이지](https://github.com/davidbau/seedrandom)

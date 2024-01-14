@@ -1,48 +1,63 @@
 ---
 title:    "Elixir: Extraction de sous-chaînes"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'extraction de sous-chaînes est une fonctionnalité essentielle de tout langage de programmation. Elle permet de prendre une partie spécifique d'une chaîne de caractères et de la manipuler de manière indépendante. Dans cet article, nous allons plonger dans l'extraction de sous-chaînes en utilisant le langage de programmation Elixir.
+Si vous êtes un développeur Elixir, il est très probable que vous ayez déjà eu besoin d'extraire des sous-chaînes à partir d'une chaîne de caractères. Que ce soit pour traiter des données, effectuer des opérations sur des chaînes de caractères spécifiques ou pour des besoins de traitement de texte, l'extraction de sous-chaînes est une tâche commune et utile. Dans cet article, nous allons explorer comment extraire des sous-chaînes en utilisant le langage de programmation Elixir.
 
-## Comment Faire
+## Comment faire
 
-Dans Elixir, pour extraire une sous-chaîne d'une chaîne donnée, nous pouvons utiliser la fonction `String.slice/3`. Elle prend trois arguments : la chaîne d'origine, l'index de début et l'index de fin de la sous-chaîne que nous voulons extraire.
-
-```Elixir
-str = "Bonjour le monde"
-String.slice(str, 3, 8)
-# Output : "jour l"
-```
-
-Nous pouvons également extraire une sous-chaîne en utilisant des nombres négatifs comme indices. Dans ce cas, l'index compte à partir de la fin de la chaîne.
+Pour extraire des sous-chaînes en Elixir, nous pouvons utiliser la fonction `String.slice/2`. Cette fonction prend deux paramètres : la chaîne de caractères d'origine et un intervalle de début et de fin pour spécifier la partie de la chaîne à extraire. Voyons un exemple concret en utilisant un code Elixir :
 
 ```Elixir
-str = "Hello world"
-String.slice(str, -5, -1)
-# Output : "worl"
+str = "Bonjour le monde !"
+String.slice(str, 8..13)
 ```
+Output : `"le monde"`
 
-Pour extraire une sous-chaîne en utilisant des critères spécifiques, nous pouvons utiliser la fonction `String.slice/2` avec des opérateurs logiques. Par exemple, si nous voulons extraire tous les caractères avant le premier espace dans une chaîne, nous pouvons faire :
+Nous pouvons également spécifier une seule position dans l'intervalle pour extraire une seule caractère. Par exemple :
+
+```
+String.slice(str, 2)
+```
+Output : `"n"`
+
+En utilisant cette fonction, nous pouvons facilement extraire des parties de chaînes de caractères selon nos besoins.
+
+## Plongée en profondeur 
+
+En plus de la fonction `String.slice/2`, Elixir offre également d'autres méthodes pour extraire des sous-chaînes. Par exemple, nous pouvons utiliser la fonction `String.slice/3` qui prend trois paramètres : la chaîne de caractères d'origine, la position de début et la longueur de la sous-chaîne à extraire. Regardons un exemple :
 
 ```Elixir
-str = "Ceci est un exemple"
-String.slice(str, 0, String.length(str) - 1) |> String.split(" ") |> List.first()
-# Output : "Ceci"
+String.slice("Hello World!", 4, 5)
 ```
+Output : `"o Wor"`
 
-## Plongée Profonde
+Nous pouvons également utiliser la notation de tranche en utilisant le signe `..` pour définir un intervalle. Par exemple :
 
-Maintenant que nous avons vu comment extraire des sous-chaînes en utilisant des indices définis, voyons comment nous pouvons utiliser des fonctions pour en faire plus. Dans l'exemple précédent, nous avons utilisé `String.split/2` pour découper la chaîne en une liste et `List.first/1` pour récupérer le premier élément de cette liste.
+```Elixir
+str = "Github"
+str[2..5]
+```
+Output : `"ithu"`
 
-En utilisant ces fonctions, nous pouvons extraire des sous-chaînes basées sur des critères plus complexes, en utilisant par exemple des expressions régulières. Elixir a une librairie de fonctions pour la manipulation de chaînes de caractères appelée `Regex`, qui peut être utilisée dans ces cas-là.
+L'une des caractéristiques les plus intéressantes de la notation de tranche en Elixir est la prise en charge des index négatifs. Cela signifie que nous pouvons extraire des sous-chaînes à partir de la fin de la chaîne de caractères en utilisant des nombres négatifs pour spécifier la position de début et de fin. Par exemple :
 
-## See Also
+```Elixir
+str = "ElixirLang"
+String.slice(str, -4..-1)
+```
+Output : `"Lang"`
 
-- [Documentation officielle de `String.slice/3` en français](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Documentation officielle de `Regex` en français](https://hexdocs.pm/elixir/Regex.html)
-- [Article en anglais sur l'extraction de sous-chaînes avec Elixir](https://elixircasts.io/extract-substrings-in-elixir)
+En utilisant ces différentes méthodes, nous pouvons extraire des sous-chaînes de manière flexible en fonction de nos besoins.
+
+## Voir aussi
+
+- Documentation sur `String.slice/2` : https://hexdocs.pm/elixir/String.html#slice/2
+- Tutorial sur les chaînes de caractères en Elixir : https://elixir-lang.org/getting-started/string.html
+- Exemples de tranche en Elixir : https://elixirschool.com/en/lessons/basics/strings/#string-slicing

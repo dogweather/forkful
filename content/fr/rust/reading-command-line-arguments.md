@@ -1,52 +1,42 @@
 ---
-title:    "Rust: Lecture des arguments de ligne de commande"
+title:    "Rust: Lecture des arguments en ligne de commande"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
+Avant de plonger dans les détails de la lecture des arguments de ligne de commande en Rust, il est important de comprendre pourquoi cette compétence est importante. En programmation, il est courant d'avoir besoin d'interagir avec un utilisateur en lui demandant des entrées ou des informations. La lecture des arguments de ligne de commande est une méthode efficace pour obtenir ces informations directement à partir de la ligne de commande.
 
-La lecture des arguments de ligne de commande peut sembler être une tâche simple, mais cela peut être très utile dans certains cas. C'est une bonne compétence à avoir en tant que programmeur Rust, car cela vous permet de créer des programmes qui peuvent être configurés et personnalisés par l'utilisateur.
+## Comment Faire
+Pour lire les arguments de ligne de commande en Rust, nous pouvons utiliser la fonction ```env::args()```, qui renvoie un itérateur qui parcourt les arguments fournis par l'utilisateur. Nous pouvons ensuite itérer sur cet itérateur pour traiter chaque argument individuellement.
 
-## Comment Faire 
-
-Pour lire les arguments de ligne de commande en Rust, nous utiliserons la bibliothèque standard `env`. Tout d'abord, nous devons importer le module dans notre code :
-
-```Rust 
+Voici un exemple de code pour lire et afficher tous les arguments de ligne de commande :
+```Rust
 use std::env;
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    for arg in args {
+        println!("{}", arg);
+    }
+}
+```
+Output:
+```
+$ cargo run arg1 arg2
+arg1
+arg2
 ```
 
-Ensuite, nous pouvons utiliser la fonction `args` pour récupérer tous les arguments de la ligne de commande :
+## Plongée Profonde
+La fonction ```env::args()``` renvoie également un premier argument qui correspond au chemin du binaire utilisé pour lancer le programme. Nous pouvons utiliser cette information pour ajouter de la logique supplémentaire à notre programme, par exemple pour afficher un message d'aide lorsque le programme est exécuté sans aucun argument.
 
-```Rust 
-let args: Vec<String> = env::args().collect();
-```
+De plus, il est important de noter que les arguments de ligne de commande sont fournis sous forme de chaînes de caractères (```String```). Si nous avons besoin de les convertir en un autre type de donnée, comme un nombre entier, nous devrons utiliser des fonctions de conversion appropriées, comme ```parse()```.
 
-Nous pouvons ensuite accéder aux arguments individuels en utilisant l'index correspondant :
-
-```Rust 
-let first_arg = args[0];
-let second_arg = args[1];
-// etc.
-```
-
-Pour obtenir le nombre total d'arguments, nous pouvons utiliser la fonction `len` :
-
-```Rust 
-let num_args = args.len();
-```
-
-Maintenant que nous avons récupéré les arguments, nous pouvons les utiliser dans notre programme en fonction de nos besoins.
-
-## Plongée Profonde 
-
-La fonction `args` retourne en fait un itérateur, ce qui signifie que nous pouvons utiliser toutes les méthodes d'itérateur sur les arguments, comme `map` et `filter`. De plus, nous pouvons également spécifier des arguments à l'exécution en utilisant la commande `cargo run -- <arguments>`.
-
-Le type de données que nous avons utilisé pour stocker les arguments est un `Vec<String>`. Cela signifie qu'il s'agit d'un vecteur qui contient des chaînes de caractères. Si vous avez besoin d'arguments de types différents, vous pouvez également utiliser des vecteurs contenant d'autres types, comme `Vec<i32>` pour des arguments entiers.
-
-## Voir Aussi 
-
-- [Documentation officielle de la bibliothèque standard Rust - `env` module](https://doc.rust-lang.org/std/env/index.html)
-- [Guide sur la lecture des arguments de ligne de commande en Rust](https://www.rust-lang.org/learn/cli)
-- [Exemples de projets Rust utilisant la lecture des arguments de ligne de commande](https://github.com/rust-lang/rust/tree/master/examples/args)
+## Voir Aussi
+- [Documentation officielle de Rust sur la lecture des arguments de ligne de commande](https://doc.rust-lang.org/stable/std/env/fn.args.html)
+- [Exemple concret d'utilisation de la lecture des arguments de ligne de commande en Rust](https://www.educative.io/edpresso/how-to-read-command-line-arguments-in-rust)
+- [Tutoriel vidéo sur la lecture des arguments de ligne de commande en Rust](https://www.youtube.com/watch?v=vRFP4X8TQr4)

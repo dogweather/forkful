@@ -1,42 +1,51 @@
 ---
-title:    "Fish Shell: 난수 생성하기"
+title:    "Fish Shell: 랜덤 숫자 생성"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-랜덤 숫자를 생성하는 것에 참여하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 무작위로 선택된 항목을 구성하거나, 랜덤한 순서로 데이터를 처리하거나, 새로운 프로그램을 시험해볼 수 있습니다. 이런 작업을 할 필요가 있다면 랜덤 숫자를 생성해야 할 것입니다.
+난수를 생성하는 것은 프로그래밍에서 일상적인 일입니다. 우리는 무작위의 값을 사용하여 다양한 알고리즘을 테스트하고, 게임에서 랜덤 문제를 만들고, 데이터를 랜덤하게 샘플링하는 등 다양한 목적으로 난수를 사용합니다. 오늘은 Fish Shell에서 난수를 생성하는 방법을 알아보겠습니다.
 
-## 방법
+## 어떻게
 
-Fish Shell을 사용하면 랜덤 숫자를 쉽게 생성할 수 있습니다. 먼저, Fish Shell의 제공하는 `seq` 함수를 사용하여 1부터 100까지의 숫자를 생성하는 코드를 작성해보겠습니다. 아래 코드를 참고하세요.
-
-```Fish Shell
-seq 1 100
-```
-
-위 코드를 실행하면 1부터 100까지의 숫자가 무작위로 생성됩니다. 또한, `shuf` 함수를 사용하면 더욱 다양한 방법으로 숫자를 생성할 수 있습니다. 아래 코드는 1부터 100까지의 숫자 중에서 무작위로 5개를 선택하는 예제입니다.
+우선 `random` 명령어를 사용하여 랜덤한 정수를 생성할 수 있습니다. 예를 들어, 다음 명령어는 1부터 10까지의 정수를 랜덤하게 출력합니다.
 
 ```Fish Shell
-seq 1 100 | shuf -n 5
+random -l 1 10
 ```
 
-또 다른 방법으로는 `random` 함수를 사용하는 것입니다. 아래 코드를 참고하세요.
+출력 예시:
 
 ```Fish Shell
-echo (random 1 100)
+6
 ```
 
-위 코드를 실행하면 1부터 100까지의 랜덤 숫자가 생성됩니다. 더 많은 코드 예제는 Fish Shell 공식 문서를 참고하시기 바랍니다.
+또는 `random` 명령어를 사용할 때 `seq` 명령어를 함께 사용하여 원하는 개수의 난수를 생성할 수도 있습니다. 예를 들어, 다음 명령어는 1부터 10까지의 정수 중 5개를 랜덤하게 출력합니다.
 
-## 깊이 파고들기
+```Fish Shell
+seq 5 | xargs random -l 1 10
+```
 
-랜덤 숫자를 생성하는 알고리즘에는 여러 가지가 있지만, 가장 일반적으로 사용되는 알고리즘은 선형 합동법과 메르센 트위스터입니다. 선형 합동법은 고대부터 사용되어 온 방법으로, 현재까지도 많은 프로그램에서 사용되고 있습니다. 메르센 트위스터는 1997년 작성된 알고리즘으로 더 높은 수준의 무작위성을 제공합니다. 더 자세한 내용은 링크를 참고하시기 바랍니다.
+출력 예시:
 
-## 참고
+```Fish Shell
+10
+7
+2
+8
+5
+```
 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/shuf.html)
-- [선형 합동법](https://ko.wikipedia.org/wiki/%EB%A7%88%EC%95%84%EC%82%AC%EB%85%80_%EB%B2%95)
-- [메르센 트위스터](https://ko.wikipedia.org/wiki/%EB%A9%94%EB%A5%B4%EC%84%BC_%ED%8A%B8%EC%9C%84%EC%8A%A4%ED%84%B0)
+## 심층 탐구
+
+Fish Shell에서 `random` 명령어는 `/dev/random`과 `/dev/urandom` 디바이스를 사용하여 난수를 생성합니다. 이들 디바이스는 컴퓨터의 시스템 엔트로피를 사용하여 랜덤한 데이터를 생성합니다. 따라서 시스템 엔트로피가 부족할 경우 더 낮은 품질의 난수를 생성할 수 있습니다. 이를 방지하기 위해 `/dev/urandom` 디바이스를 사용하여 일정한 시스템 엔트로피 수준을 유지할 수 있습니다.
+
+## 관련 링크
+
+- [Fish Shell 공식 홈페이지](https://fishshell.com)
+- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 랜덤 난수 생성 예제](https://stackoverflow.com/questions/3239018/random-six-digit-number-with-fish-shell)

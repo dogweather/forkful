@@ -1,41 +1,26 @@
 ---
-title:    "Fish Shell: Transformant une chaîne en minuscules"
+title:    "Fish Shell: Conversion d'une chaîne en minuscules"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes peut-être en train de programmer en Fish Shell et vous vous demandez pourquoi convertir une chaîne de caractères en minuscules est important. Eh bien, cela peut être utile dans certaines situations, comme lors de la comparaison de chaînes de caractères qui peuvent contenir des majuscules ou des minuscules, ou lorsqu'une API demande des données en minuscules.
-
-Maintenant que nous avons établi l'importance de cette tâche, voyons comment la réaliser en utilisant Fish Shell.
+La conversion d'une chaîne de caractères en lettres minuscules est une tâche courante en programmation. Cela peut être utile pour normaliser les données entrées par les utilisateurs ou pour faciliter les comparaisons de chaînes de caractères.
 
 ## Comment faire
 
-Pour convertir une chaîne de caractères en minuscules en utilisant Fish Shell, nous pouvons utiliser la fonction intégrée `string tolower`. Elle prendra en argument la chaîne de caractères que nous voulons convertir en minuscules.
+Voici un exemple de code en utilisant Fish Shell pour convertir une chaîne en lettres minuscules :
 
 ```
-Fish Shell
-set text "Bonjour le Monde"
-echo (string tolower $text)
+set string "Bonjour le Monde"
+set lower_string (string | tr '[:upper:]' '[:lower:]')
+echo $lower_string
 ```
 
-Cela produira la sortie suivante :
-
-```
-bonjour le monde
-```
-
-Nous pouvons également utiliser la substitution de commandes pour convertir une chaîne de caractères en minuscules. Cela fonctionne en utilisant la commande `tr` pour transformer les lettres en minuscules.
-
-```
-Fish Shell
-set text "Bonjour le Monde"
-echo (tr '[A-Z]' '[a-z]' <<< $text)
-```
-
-La sortie sera la même que dans l'exemple précédent :
+Le résultat de cet exemple sera :
 
 ```
 bonjour le monde
@@ -43,26 +28,11 @@ bonjour le monde
 
 ## Plongée en profondeur
 
-Maintenant que nous savons comment convertir une chaîne de caractères en minuscules en utilisant Fish Shell, examinons quelques détails supplémentaires à propos de cette tâche. Tout d'abord, il est important de noter que la fonction `string tolower` ne modifie pas la chaîne de caractères d'origine, elle retourne plutôt une nouvelle chaîne de caractères en minuscules. Cela peut être utile si vous voulez stocker à la fois la chaîne d'origine et la version en minuscules.
+Il existe plusieurs façons de convertir une chaîne de caractères en lettres minuscules en utilisant Fish Shell. Vous pouvez utiliser la commande `string`, comme dans l'exemple ci-dessus, ou utiliser les commandes `lower` ou `tolower` selon vos préférences. Vous pouvez également utiliser des expressions régulières pour effectuer cette conversion.
 
-En outre, il est également possible d'utiliser la substitution de commandes pour convertir une chaîne de caractères en minuscules sans avoir à utiliser la commande `tr`. Cela peut être fait en utilisant un paramètre spécial `$home` pour accéder au répertoire de l'utilisateur et en utilisant `sed` pour transformer les lettres en minuscules.
-
-```
-Fish Shell
-set text "Bonjour le Monde"
-echo (sed 's/.*/\L&/' <<< $text)
-```
-
-La sortie sera toujours la même :
-
-```
-bonjour le monde
-```
+La conversion en lettres minuscules peut également être effectuée sur des chaînes de caractères contenant des caractères spéciaux tels que des accents. Fish Shell offre une prise en charge Unicode complète, ce qui en fait un outil pratique pour gérer des chaînes de caractères multilingues.
 
 ## Voir aussi
 
-Maintenant que vous savez comment convertir une chaîne de caractères en minuscules en utilisant Fish Shell, vous pouvez l'utiliser pour améliorer vos scripts ou vos programmes. Pour plus d'informations sur les fonctions intégrées à Fish Shell, consultez la documentation officielle sur leur site web.
-
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/functions.html)
-- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Tutoriel vidéo pour débutants sur Fish Shell](https://www.youtube.com/watch?v=c3PYvoVdqqc)
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Page Wikipedia sur les commandes convertissant la casse des chaînes](https://fr.wikipedia.org/wiki/Liste_de_commandes_concernant_la_casse)

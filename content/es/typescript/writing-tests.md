@@ -1,49 +1,41 @@
 ---
 title:    "TypeScript: Escribiendo pruebas"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en TypeScript
+## ¿Por qué escribir pruebas en TypeScript?
 
-Escribir pruebas es una parte esencial del proceso de desarrollo de software. Las pruebas nos permiten garantizar que nuestro código funciona correctamente y evita problemas en producción. Además, escribir pruebas en TypeScript nos permite detectar posibles errores de tipado y mejorar la calidad de nuestro código.
+Escribir pruebas en TypeScript es una práctica común en el desarrollo de software ya que permite detectar errores y fallos en el código de manera temprana. También ayuda a mantener un código más limpio y organizado, lo cual facilita su mantenimiento y futuras modificaciones. Al escribir pruebas, se asegura que el código funcione correctamente y se reduce el riesgo de posibles errores en producción.
 
 ## Cómo escribir pruebas en TypeScript
 
-Para escribir pruebas en TypeScript, es necesario utilizar un framework de prueba como Jest. Jest proporciona una amplia gama de funcionalidades para escribir pruebas en TypeScript de manera sencilla y eficiente.
-
-Para comenzar, es necesario instalar Jest en nuestro proyecto de TypeScript utilizando el siguiente comando:
-
-```
-npm install jest --save-dev
-```
-
-Una vez instalado, podemos crear nuestro primer archivo de prueba en TypeScript. Por ejemplo, si queremos probar una función que suma dos números, nuestro archivo de prueba se vería así:
+Para escribir pruebas en TypeScript, se puede utilizar una herramienta de pruebas como Jest. En este ejemplo, se mostrará cómo escribir una prueba sencilla para una función que suma dos números:
 
 ```TypeScript
-// Importamos la función a probar
-import { sumar } from './funciones';
+function sum(a: number, b: number): number {
+  return a + b;
+}
 
-// Definimos nuestro test case
-test('Suma dos números correctamente', () => {
-  // Definimos los dos números a sumar
-  const num1 = 5;
-  const num2 = 10;
-  // Llamamos a la función sumar y almacenamos su resultado
-  const resultado = sumar(num1, num2);
-  // Comprobamos que el resultado sea igual a la suma de los dos números
-  expect(resultado).toBe(num1 + num2);
+it('should return the sum of two numbers', () => {
+  expect(sum(2, 2)).toBe(4);
 });
 ```
 
-Al ejecutar este test, Jest nos indicará si pasa o falla. Además, gracias a la integración de TypeScript con Jest, podremos aprovechar todas las ventajas del tipado estático para detectar posibles errores en nuestro código.
+Al utilizar `expect` y `toBe`, se verifica que el resultado de la función `sum` sea igual a 4. Si fuera diferente, la prueba fallaría y se señalaría un posible error.
 
-## Profundizando en la escritura de pruebas en TypeScript
+Otra forma de escribir pruebas en TypeScript es utilizando una librería de aserciones como Chai, que ofrece más métodos para realizar diferentes tipos de comprobaciones en el código.
 
-Para aquellos que quieren adentrarse más en el mundo de escribir pruebas en TypeScript, existe una amplia documentación disponible en la página de Jest. Además, también se puede explorar otras funcionalidades avanzadas como la cobertura de código o la utilización de mocks y spies.
+## Profundizando en la escritura de pruebas
 
-## Ver también
+Para escribir pruebas efectivas, es importante considerar diferentes casos de uso y situaciones en las que el código puede fallar. Una buena práctica es escribir pruebas para cada función o componente del código, asegurando que todas las áreas estén cubiertas. Además, se pueden utilizar herramientas como Istanbul para medir la cobertura de las pruebas y garantizar que se esté probando el código de manera adecuada.
 
-- [Documentación de Jest](https://jestjs.io/docs/getting-started)
-- [Integrating Typescript with Jest](https://jestjs.io/docs/en/getting-started#use-with-typescript)
+También es importante recordar que las pruebas deben ser independientes y no deben depender de otras pruebas para funcionar correctamente. De esta manera, se asegura que cada prueba se ejecute de manera aislada y se puedan detectar errores específicos.
+
+## Vea también
+
+- [Jest](https://jestjs.io/)
+- [Chai](https://www.chaijs.com/)
+- [Istanbul](https://istanbul.js.org/)

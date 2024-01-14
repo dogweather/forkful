@@ -1,55 +1,41 @@
 ---
 title:    "Elixir: 将字符串转换为小写"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要将字符串转换为小写
 
-有时候，在编程过程中，我们需要将字符串转换成小写形式。这可能是为了与其他字符串进行比较，或者将字符串作为URL的一部分。使用Elixir，我们可以很容易地将字符串转换成小写形式。
+在Elixir编程时，有时候我们需要将字符串中的所有字符转换为小写。这可能是因为我们需要对字符串进行比较或者输出时需要格式化。无论什么原因，将字符串转换为小写是一个常见的编程需求。
 
-## 如何使用
+## 如何实现
 
-我们可以使用`String.downcase/1`函数来将字符串转换成小写形式。下面是一个简单的例子：
-
-```Elixir
-iex> String.downcase("HELLO WORLD")
-"hello world"
-```
-
-我们也可以将多个字符串一起转换：
+在Elixir中，我们可以通过使用`String.downcase/2`函数来将字符串转换为小写。该函数接受两个参数，第一个参数为要转换的字符串，第二个参数为指定的字符编码。请注意，如果没有第二个参数，则默认使用UTF-8编码。
 
 ```Elixir
-iex> String.downcase("HELLO", "WORLD")
-["hello", "world"]
+# 将字符串转换为小写，使用UTF-8编码
+String.downcase("HELLO WORLD")
+# 输出: "hello world"
+
+# 将字符串转换为小写，使用ASCII编码
+String.downcase("HELLO WORLD", "ASCII")
+# 输出: "hello world"
 ```
 
-另外，我们也可以使用`String.downcase!/1`函数，在原始字符串上直接进行转换，而不是返回一个新的字符串。
-
-```Elixir
-iex> str = "HELLO WORLD"
-"HELLO WORLD"
-iex> String.downcase!(str)
-"hello world"
-iex> str
-"hello world"
-```
+在上面的代码中，我们分别将字符串"HELLO WORLD"转换为小写，使用了默认的UTF-8编码和指定的ASCII编码。无论使用哪种编码，最终输出的结果都是"hello world"。
 
 ## 深入了解
 
-在Elixir中，将字符串转换成小写形式实际上是相当简单的。这是因为每个字符都有一个对应的小写形式，因此Elixir只需要检查每个字符，并将其转换成小写形式即可。
+在Elixir中，字符串是不可变的。这意味着，当我们使用`String.downcase/2`函数来转换字符串为小写时，实际上该函数会创建一个新的字符串并返回，原始字符串并不会被修改。
 
-另外值得一提的是，`String.downcase/1`函数是基于Unicode标准的，因此它可以正确地处理各种语言中的特殊字符。
+此外，`String.downcase/2`函数的实现是基于Unicode字符的，因此它可以正确地处理各种语言的字符。这也意味着，即使字符串中包含特殊字符，函数也可以正确地转换为小写。
 
 ## 参考链接
-- [Elixir官方文档-String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Elixir官方文档-String.downcase!/1](https://hexdocs.pm/elixir/String.html#downcase!/1)
-- [Elixir字符串转换的性能对比](https://medium.com/@brambulate/elixir-string-transformation-performance-comparison-32d4e08cf5b0)
 
-## 参看
+- [Elixir String.downcase/2文档](https://hexdocs.pm/elixir/String.html#downcase/2)
+- [Unicode编码简介](https://baike.baidu.com/item/Unicode/750500?fr=aladdin)
+- [ASCII编码简介](https://baike.baidu.com/item/ASCII/309296?fr=aladdin)
 
-如果你对Elixir中的字符串操作感兴趣，可以继续阅读以下文章：
-- [Elixir中的字符串操作指南](https://elixir-lang.org/getting-started/string.html)
-- [Elixir中常用的字符串操作函数](https://www.jessejanderson.com/elixir-string-functions/)
-- [使用Elixir构建字符串处理应用程序](https://hackernoon.com/building-a-string-processing-application-in-elixir-cb2d7ef036ea)
+# 参考链接

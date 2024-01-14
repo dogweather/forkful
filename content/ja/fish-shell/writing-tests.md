@@ -1,41 +1,33 @@
 ---
-title:    "Fish Shell: テストを書く"
+title:    "Fish Shell: 「テストの書き方」"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-テストを書くことのメリットは何でしょうか？プロジェクトで開発しているコードを常に最新の状態に保つことや、バグを発見しやすくすることができます。
+## なぜテストを書くのか
 
-## 方法
-テストを書くためには、Fish Shellの`begin`と`end`ブロックを使用します。例えば、以下のようにコードを記述します。
+テストを書くことは、コードの品質を保証し、バグを見つけるのに役立ちます。また、将来の変更に対応する際にも役立ちます。
 
-```Fish Shell
-begin
-# ここにテストしたいコードを記述します。
-end
-```
-
-また、`assert`コマンドを使用することで、テストしたいコードの期待する出力を指定することもできます。例えば、以下のようにコードを記述します。
+## テストの書き方
 
 ```Fish Shell
-begin
-assert "command" "expected_output"
-end
+# Example test case
+@test "Addition test"  # テストケースの説明
+set result (math 2 + 2)  # テストするコード
+# 期待される出力と実際の出力を比較
+expect $result -eq 4
 ```
 
-テストを実行するには、ターミナルで`fish test.fish`と入力します。このコマンドにより、テストが実行され、正しく動作するかどうかが確認されます。
+上記の例では、additionのテストケースを作成しています。まず、テストケースに説明を書きます。次に、テストしたいコードを書きます。最後に、期待される結果と実際の結果を比較します。
 
-## ディープダイブ
-テストを書く際には、様々なテストフレームワークやライブラリを使用することもできます。また、テストの種類によっても異なる書き方があります。全てのテストをカバーすることは難しいですが、プロジェクトのニーズに合わせて最適なテストを書くことが重要です。
+## テストの詳細
 
-## 関連情報を見る
-- Fish Shellの公式ドキュメント: https://fishshell.com/docs/current/
-- テストの書き方についてのベストプラクティス: https://docs.python-guide.org/writing/tests/
-- Fish Shellのテストフレームワーク「bats」のドキュメント: https://github.com/bats-core/bats-core#documentation
+テストを書くには、まずテストするコードについて十分に理解する必要があります。テストケースを作成する際には、様々なパターンやエラーを想定し、それに対する期待される結果を設定することが重要です。また、テストケースを書く際には、コードのカバレッジを考慮することも重要です。つまり、すべてのコードの分岐をテストすることで、コードの正確性を保証することができます。
 
-## 参考リンク
-- https://betterprogramming.pub/writing-tests-in-fish-shell-f637fc09729d
-- https://medium.com/@samuelfranklyn/testing-shell-scripts-fish-bash-and-zsh-with-bats-693efc3b9716
-- https://fish-shell.readthedocs.io/en/latest/tutorial.html#tests
+## さらに読む
+
+[Fish Shell の公式ドキュメント](https://fishshell.com/docs/current/index.html)  
+[Fish Shell のテストケース作成のベストプラクティス](https://github.com/fish-shell/fish-shell/wiki/Best-practices-for-testcases)  
+[Fish Shell のチュートリアル](https://github.com/fish-shell/fish-shell/wiki/Tutorial)

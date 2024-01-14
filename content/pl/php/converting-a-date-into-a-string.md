@@ -1,39 +1,52 @@
 ---
-title:    "PHP: Konwertowanie daty na ciąg znaków"
+title:    "PHP: Konwersja daty na ciąg znaków"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie daty na łańcuch znaków jest ważną częścią programowania, szczególnie w przypadku tworzenia aplikacji internetowych lub systemów do zarządzania danymi. Jest to niezbędne do prawidłowej prezentacji daty dla użytkowników oraz wykonania operacji na danych czasowych.
+Czasami w programowaniu musimy przekonwertować datę na ciąg znaków, na przykład aby wyświetlić ją użytkownikowi lub zapisać w pliku. W tym artykule omówimy, jak wykonać tę operację przy użyciu języka PHP.
 
-## Jak to zrobić
+## Jak to zrobić?
 
 ```PHP
-<?php
-$date = "2021-05-15";
-$format = "d-m-Y";
-$date_string = date($format, strtotime($date));
-echo $date_string;
-?>
+$timestamp = time(); //pobieramy aktualny czas
+$date = date('Y-m-d', $timestamp); //konwertujemy na żądany format
+echo $date; //wyświetlamy datę w postaci ciągu znaków
 ```
 
-W tym krótkim przykładzie uwzględniliśmy datę w formacie "YYYY-MM-DD" i pożądany format wyjściowy "DD-MM-YYYY". Za pomocą funkcji `date()` i `strtotime()` możemy przekonwertować datę na odpowiedni format i przypisać ją do zmiennej `date_string`. Wykorzystując komendę `echo` możemy wyświetlić przekonwertowaną datę w formie łańcucha znaków.
+Kod powyżej pobiera aktualny czas za pomocą funkcji `time()`. Następnie konwertuje ten czas na wybrany format daty za pomocą funkcji `date()`. Na koniec wyświetla wynikowy ciąg znaków z datą. 
 
-**Output:** 15-05-2021
+Możemy też dodać do formatu godzinę, minutę i sekundę:
 
-Możemy również wykorzystać funkcję `str_replace()` do zmiany znaków separatorów daty lub wykorzystać funkcję `date_create()` do konwersji daty z obiektu `DateTime`.
+```PHP
+$date = date('Y-m-d H:i:s', $timestamp);
+echo $date;
+```
 
-## Głębsza analiza
+W ten sposób wyświetlimy datę w formacie `rok-miesiąc-dzień godzina:minuta:sekunda`.
 
-Konwertowanie daty na łańcuch znaków wymaga użycia funkcji `date()` wraz z jednym z kilku argumentów formatowania. Przedrostek `d`, `m` i `Y` oznaczają odpowiednio dzień, miesiąc i rok. Możemy również wykorzystać inne opcje takie jak `l` dla pełnej nazwy dnia tygodnia, `F` dla pełnej nazwy miesiąca lub `s` dla sekund w formacie dziesiętnym.
+## Deep Dive
 
-Funkcja `strtotime()` jest bardzo przydatna w zarządzaniu datami i czasem w PHP. Przyjmuje ona łańcuch znaków reprezentujący datę i zwraca wartość liczbową, którą można następnie wykorzystać w funkcji `date()`.
+Funkcja `date()` w PHP pozwala na wiele różnych możliwości formatowania daty. Jest to szczególnie przydatne, gdy chcemy wyświetlić datę w języku polskim.
 
-## Zobacz również
+Możemy dodać do naszego kodu następujący fragment:
 
-- [Dokumentacja PHP: date()](https://www.php.net/manual/en/function.date.php)
-- [Dokumentacja PHP: strtotime()](https://www.php.net/manual/en/function.strtotime.php)
-- [Poradnik wideo: Jak konwertować daty w PHP](https://www.youtube.com/watch?v=d6rC9IwRfKE)
+```PHP
+setlocale(LC_ALL, 'polish'); //ustawiamy język na polski
+$date = strftime('%d %B %Y', $timestamp); //formatujemy datę z polskimi nazwami miesięcy i dni tygodnia
+echo $date;
+```
+
+W ten sposób wyświetlimy datę w formacie `dzień miesiąc rok`, na przykład `14 stycznia 2021`.
+
+Funkcja `setlocale()` umożliwia także formatowanie daty w innych językach. Po więcej informacji na temat możliwości funkcji `date()` i `setlocale()` zapraszamy do dokumentacji PHP.
+
+## Zobacz też
+
+- [Funkcja date() w dokumentacji PHP](https://www.php.net/manual/en/function.date.php)
+- [Funkcja strftime() w dokumentacji PHP](https://www.php.net/manual/en/function.strftime.php)
+- [Funkcja setlocale() w dokumentacji PHP](https://www.php.net/manual/en/function.setlocale.php)

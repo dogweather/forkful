@@ -1,50 +1,40 @@
 ---
-title:    "Swift: Konwertowanie daty na ciąg znaków"
+title:    "Swift: Konwersja daty na ciąg znaków"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie daty na łańcuch znaków jest częstym zadaniem w programowaniu, szczególnie w języku Swift. Jest to przydatna umiejętność, która pozwala na wyświetlanie dat w czytelny sposób dla użytkownika. W tym blogu dowiecie się, jak łatwo i szybko przekształcić datę na łańcuch znaków.
+Konwersja daty na łańcuch znaków jest nieodzownym krokiem w wielu aplikacjach Swift. Może to pomóc w wyświetlaniu daty w określonym formacie lub późniejszym przetwarzaniu jej jako danych tekstowych. Dzięki temu procesowi możesz dostosować wygląd i wykorzystanie dat w swojej aplikacji.
 
 ## Jak to zrobić
 
-Konwersja daty na łańcuch znaków jest możliwa dzięki użyciu metody `String(describing:)`. Wystarczy podać obiekt typu `Date` jako jej argument, a zostanie ona automatycznie przekonwertowana na łańcuch zgodnie z ustawionym formatem. Przykładowy kod wygląda następująco:
+Aby przekonwertować datę na łańcuch znaków w Swift, używamy metody `string(from: Date)` w klasie `DateFormatter`. Najpierw tworzymy instancję `DateFormatter` i ustawiamy pożądany format daty za pomocą właściwości `dateFormat`. Następnie wywołujemy metodę `string(from: Date)` i przekazujemy jej obiekt `Date`, który chcemy przekonwertować. Oto przykładowy kod:
 
 ```Swift
-let date = Date()
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd-MM-yyyy"
-let dateString = String(describing: date)
-print(dateString)
-```
-
-Powinniśmy uzyskać wyjście w postaci np. "24-09-2021".
-
-Dzięki temu prostemu rozwiązaniu, możemy dostosować format wyświetlania daty do swoich preferencji. Warto również wspomnieć, że metoda `String(describing:)` działa również z innymi typami danych, np. `Int` czy `Float`.
-
-## Głębszy wgląd
-
-Konwertowanie daty na łańcuch może wydawać się prostym zadaniem, ale warto poznać bardziej zaawansowane metody, które dają większą kontrolę nad wyświetlaniem dat. W celu uzyskania pełnego formatu daty, używamy metody `string(from:)` z obiektem `DateFormatter`. Przykładowy kod wykorzystujący tę metodę wygląda następująco:
-
-```Swift
-let date = Date()
-let dateFormatter = DateFormatter()
-dateFormatter.dateStyle = .long
-dateFormatter.timeStyle = .medium
+dateFormatter.dateFormat = "dd MMMM yyyy" // format daty
+let date = Date() // aktualna data
 let dateString = dateFormatter.string(from: date)
-print(dateString)
+print(dateString) // wyświetli "17 listopada 2021"
 ```
 
-Wyjście powinno wyglądać np. "24 września 2021, 14:30:00".
+## Głębsze zagadnienia
 
-Oprócz ustawienia stylów daty i czasu, istnieje wiele innych opcji, takich jak ustawianie języka, lokalizacji czy dostęp do poszczególnych elementów daty, takich jak dzień, miesiąc czy rok.
+Metoda `string(from: Date)` może być również przydatna, gdy chcemy przetworzyć datę z innego języka na format lokalny. W tym przypadku musimy ustawić odpowiedni locale w naszym `DateFormatter`. Na przykład, aby wyświetlić datę w języku polskim, możemy użyć:
 
-## Zobacz też
+```Swift
+dateFormatter.locale = Locale(identifier: "pl_PL")
+print(dateFormatter.string(from: date)) // wyświetli "17 listopada 2021"
+```
 
-- [Dokumentacja Swift - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Przekształcanie daty w łańcuch znaków w języku Swift](https://learnappmaking.com/date-string-swift-how-to/)
+Możesz również dostosować ustawienia dotyczące czasu, strefy czasowej i innych szczegółów dotyczących daty za pomocą odpowiednich właściwości w `DateFormatter`. Warto również przeczytać dokumentację dotyczącą tej klasy, aby poznać wszystkie dostępne opcje.
 
-Konwertowanie daty na łańcuch znaków jest podstawową umiejętnością, którą powinien znać każdy programista w języku Swift. Dzięki temu artykułowi, mam nadzieję, że będziesz w stanie wykorzystać tę funkcjonalność w swoich projektach. Zawsze pamiętaj, by dostosować format wyświetlania daty do potrzeb użytkownika i nie zapomnij sprawdzić dostępnych opcji, aby uzyskać jeszcze większą kontrolę nad wyglądem daty.
+## Zobacz także
+
+- [Dokumentacja Apple: Klasa DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift by Sundell: Working with dates in Swift](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)
+- [Medium: Date, DateFormatter, Locale, i DateFormatterStyle — szybki przegląd](https://medium.com/@tugger3/swift-date-dateformatter-locale-dateformatterstyle-a-quick-overview-1c20f328aa2d)

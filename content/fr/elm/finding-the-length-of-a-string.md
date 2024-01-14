@@ -1,38 +1,31 @@
 ---
 title:    "Elm: Trouver la longueur d'une chaîne de caractères"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes un programmeur Elm, vous avez probablement rencontré des situations où vous devez connaître la longueur d'une chaîne de caractères. Que ce soit pour valider une entrée utilisateur ou pour manipuler des données, il est crucial de savoir comment trouver la longueur d'une chaîne. Dans cet article, nous allons explorer différentes façons de le faire en Elm.
+Il y a plusieurs raisons pour lesquelles vous pourriez vouloir trouver la longueur d'une chaîne en programmation Elm. Par exemple, cela peut être utile pour valider les entrées de l'utilisateur ou pour manipuler des données dans votre programme.
 
-## Comment faire
+# Comment faire
 
-Il existe plusieurs façons de trouver la longueur d'une chaîne en Elm. Voici quelques exemples de code pour vous montrer comment faire :
+Pour trouver la longueur d'une chaîne en Elm, vous pouvez utiliser la fonction `String.length`. Voici un exemple de code avec un input et un output :
 
-```elm
--- Utiliser la fonction String.length
-String.length "Bonjour" -- Output: 7
-
--- Utiliser une liste de caractères et utiliser la fonction List.length
-List.length (String.toList "Bonjour") -- Output: 7
+```Elm
+chaine = "Bonjour!"
+longueur = String.length chaine
 ```
 
-Comme vous pouvez le voir, la fonction `String.length` donne directement la longueur d'une chaîne, tandis que la méthode avec `List.length` nécessite d'abord de convertir la chaîne en une liste de caractères.
+Dans cet exemple, la variable `longueur` aura pour valeur 8 car il y a 8 caractères dans la chaîne "Bonjour!". Vous pouvez également combiner cette fonction avec d'autres fonctions de manipulation de chaînes pour obtenir des résultats plus complexes.
 
-## Plongée en profondeur
+# Plongée en profondeur
 
-Maintenant que nous avons vu comment trouver la longueur d'une chaîne en Elm, explorons un peu plus en profondeur pour mieux comprendre comment cela fonctionne. En réalité, la fonction `String.length` utilise en interne la fonction `List.length` en convertissant la chaîne en une liste de caractères avant de trouver sa longueur. Cela peut sembler compliqué, mais c'est en fait une optimisation qui rend la fonction plus efficace.
+La fonction `String.length` utilise en fait un concept appelé le comptage de graphèmes, qui est une méthode de mesure de la longueur des caractères d'une chaîne en prenant en compte les caractères accentués et les lettres composées. En utilisant cette fonction, vous pouvez vous assurer que votre programme prend en compte toutes les nuances de la langue française.
 
-De plus, il est important de noter que la longueur d'une chaîne est différente de la taille de la chaîne. La longueur se réfère au nombre de caractères, tandis que la taille se réfère au nombre d'octets. Par conséquent, la longueur d'une chaîne peut être différente de sa taille, en particulier lorsque des caractères multibytes sont utilisés.
+# Voir aussi
 
-## Voir aussi
-
-- [Documentation officielle Elm sur les chaînes](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Guide pratique pour les débutants en Elm](https://guide.elm-lang.org/) 
-- [Vidéo de présentation d'Elm (en français)](https://www.youtube.com/watch?v=bbUu-VJR-Sw)
-
-Maintenant que vous maîtrisez la façon de trouver la longueur d'une chaîne en Elm, vous pouvez l'appliquer à vos propres projets. N'hésitez pas à explorer davantage les différentes fonctions de manipulation de chaînes en Elm pour améliorer vos compétences en programmation. Bonne chance !
+- Documentation officielle sur la fonction `String.length` : https://package.elm-lang.org/packages/elm-lang/core/latest/String#length
+- Un autre article sur les manipulations de chaînes en Elm : https://www.codementor.io/@elm/style-guide-for-elm-string-manipulation-x317gv84q

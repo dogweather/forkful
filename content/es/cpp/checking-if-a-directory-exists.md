@@ -1,54 +1,54 @@
 ---
-title:    "C++: Verificar si existe un directorio."
+title:    "C++: Comprobando si existe un directorio"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En programación, es común tener la necesidad de verificar si un directorio existe antes de realizar alguna operación. Esto nos permite asegurarnos de que nuestro código funcione de manera adecuada, evitando errores y posibles situaciones de falla.
+En la programación, a menudo es necesario verificar si una carpeta o directorio existe antes de realizar cualquier operación en él. Esto puede optimizar el rendimiento y evitar posibles errores en el código.
 
 ## Cómo hacerlo
 
-La forma más fácil de verificar si un directorio existe en C ++ es utilizando la función "opendir" de la biblioteca estándar. Esta función toma como parámetro la ruta del directorio y devuelve un puntero al directorio si existe, o un valor nulo si no existe.
+Para verificar si un directorio existe en C++, podemos utilizar la función `opendir ()` del header `dirent.h`. Esta función retorna un puntero al directorio si existe o un valor nulo si no existe. Aquí hay un ejemplo de cómo podemos implementarlo:
 
 ```C++
-DIR* dir = opendir("ruta/del/directorio");
+#include <dirent.h>
+#include <iostream>
+using namespace std;
+ 
+int main() {
+   DIR *dir;
+   string path = "/ruta/al/directorio";
 
-if(dir) {
-    std::cout << "¡El directorio existe!";
-} else {
-    std::cout << "El directorio no existe";
-}
+   dir = opendir(path.c_str());
 
-closedir(dir);
-```
-
-El código anterior primero intenta abrir el directorio utilizando la función "opendir". Si el directorio existe, se asigna un puntero al mismo a la variable "dir", lo que nos permite imprimir un mensaje indicando que el directorio existe. Si el directorio no existe, la función devolverá un valor nulo y se imprimirá un mensaje indicando que no existe.
-
-También podemos aprovechar la función "stat" para verificar la existencia de un directorio. Esta función toma como parámetro la ruta del directorio y una estructura "stat" que se utilizará para almacenar información sobre el mismo. Si la función tiene éxito en encontrar información sobre el directorio, podemos utilizar el campo "st_mode" para determinar si es un directorio o no.
-
-```C++
-struct stat info;
-
-if(stat("ruta/del/directorio", &info) == 0 && S_ISDIR(info.st_mode)) {
-    std::cout << "¡El directorio existe!";
-} else {
-    std::cout << "El directorio no existe";
+   if (dir != NULL) {
+   	   cout << "¡El directorio existe!" << endl;
+   	   closedir(dir);
+   } else {
+   	   cout << "¡El directorio no existe!" << endl;
+   }   
+   return 0;
 }
 ```
 
-En este caso, utilizamos la función "S_ISDIR" para verificar si el campo "st_mode" de la estructura "stat" indica que el archivo es un directorio o no.
+En este ejemplo, primero incluimos el header `dirent.h` que nos da acceso a la función `opendir()`. Luego, definimos la ruta del directorio que queremos comprobar en la variable `path`. Después, llamamos a la función `opendir()` pasando la ruta del directorio como argumento. Si la función retorna un puntero distinto de nulo, eso significa que el directorio existe. Cerramos el puntero con la función `closedir()` para liberar memoria y evitar posibles errores en el futuro.
 
-## Profundizando
+Si el directorio no existe, la función `opendir()` retornará un valor nulo, por lo que podemos utilizar una sentencia `if` para imprimir un mensaje de acuerdo al resultado.
 
-Además de las funciones mencionadas, existen otras formas de verificar la existencia de un directorio en C ++. Por ejemplo, podemos utilizar la biblioteca Boost y su función "exists" para comprobar si un directorio existe.
+## Profundizando en la verificación de directorios
 
-También es importante tener en cuenta que, aunque podamos verificar la existencia de un directorio, esto no significa que tengamos permisos para acceder a él. Por lo tanto, es importante manejar correctamente estas situaciones y asegurarse de tener los permisos necesarios antes de intentar realizar operaciones en un directorio.
+Además de la función `opendir()`, también podemos utilizar otras técnicas para verificar si un directorio existe. Por ejemplo, podemos utilizar el comando de sistema `mkdir()` para crear un directorio en la ruta especificada y luego eliminarlo. Si el directorio ya existe, el comando retornará un error y podemos utilizar esa información para determinar si el directorio existe.
+
+También podemos utilizar la librería `boost::filesystem` para verificar la existencia de un directorio en C++. Esta librería nos ofrece funciones más avanzadas para manejar la manipulación de archivos y directorios.
 
 ## Ver también
 
-- [Referencia de la función opendir de C ++](https://www.cplusplus.com/reference/cstdio/opendir/)
-- [Utilizando la función stat en C ++](https://www.tutorialspoint.com/c_standard_library/c_function_stat.htm)
-- [Documentación de la biblioteca Boost](https://www.boost.org/)
+- [Cómo verificar si un archivo existe en C++](https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-c/)
+
+- [Documentación de la función `opendir()`](https://www.man7.org/linux/man-pages/man3/opendir.3.html) 
+
+- [Guía de referencia de la librería `boost::filesystem`](https://www.boost.org/doc/libs/1_76_0/libs/filesystem/doc/reference.html#DirectoryIteration)

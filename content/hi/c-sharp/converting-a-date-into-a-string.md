@@ -1,28 +1,46 @@
 ---
-title:    "C#: एक तारीख को स्ट्रिंग में बदलना"
+title:    "C#: तारीख को स्ट्रिंग में रूपांतरण करना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों?
+## Kyun
+Dates ko string mein convert karna ek bahut aam prashna hai jab hum C# programming mein kaam karte hain. Is post mein hum is prashna ka jawab dene wale hain aur aapko batayenge ki iska kya upyog hai.
 
-जब हम किसी काम को प्रोग्रामिंग भाषा में करते हैं, तो मूल्य या डेटा को उसके निर्दिष्ट प्रारूप में परिवर्तित करना आम होता है। अपने डेटा को स्ट्रिंग में परिवर्तित करने से हम प्रोग्राम में उसे स्टोर और प्रदर्शित कर सकते हैं।
+## Kaise Karein
+Dates ko string mein convert karne ke liye, hum `ToString()` method ka upyog karte hain. Is method ke zariye hum ek DateTime object ko specific format mein convert kar sakte hain. Neeche diye gaye code blocks mein aap dekh sakte hain ki kaise hum is method ka upyog kar sakte hain:
 
-## कैसे करें?
+```C#
+// DateTime object banayein
+DateTime date = new DateTime(2021, 10, 15);
 
+// DateTime object ko string mein convert karein
+string strDate = date.ToString("dd/MM/yyyy");
+
+// Convert ka output hai: 15/10/2021
+Console.WriteLine("Convert ka output hai: " + strDate);
 ```
-C# DateTime myDate = new DateTime(2021, 10, 25);
-string dateString = myDate.ToString("MM/dd/yyyy");
-Console.WriteLine(dateString);
+
+Ek aur tarika hai `ToString()` method ka upyog karne ka, jismein hum `Format()` function ka upyog karte hain. Is tareeke se hum specific format ke saath direct convert kar sakte hain. Neeche diye gaye code block mein aap isko bhi dekh sakte hain:
+
+```C#
+// DateTime object banayein
+DateTime date = new DateTime(2021, 10, 15);
+
+// DateTime object ko string mein convert karein
+string strDate = string.Format("{0:MM-dd-yyyy}", date);
+
+// Convert ka output hai: 10-15-2021
+Console.WriteLine("Convert ka output hai: " + strDate);
 ```
-इस कोड के माध्यम से, हमने तारीख को स्ट्रिंग में परिवर्तित किया है जो हमें "10/25/2021" के रूप में मिलता है।
 
-## गहराई पर जाएं
+## Gehraai Mein Jaaein
+Agar aap ek developer hain, toh aapko pata hoga ki Dates ko string mein convert karne ke bahut sare tareeke hain. Humne upar sirf ek do tareeke dikhaye hain, lekin aap dekhenge toh C# mein aur bhi tareeke hain jiske zariye hum datetime object ko string mein convert kar sakte hain. Aap khud experiment karke aur alag-alag formats try karke dekh sakte hain ki kaise date ko hum string mein convert kar sakte hain.
 
-तारीख को स्ट्रिंग में परिवर्तित करने के लिए, हम `ToString()` मेथड का उपयोग कर सकते हैं। इस मेथड को दो पैरामीटर पास किये जा सकते हैं - एक शब्दकोष (जिसमें तारीख को सटीकता से परिवर्तित किया जाएगा) और एक स्ट्रिंग का स्वरूप जिसमें तारीख को प्रदर्शित किया जाएगा। आप अपनी मेथड को अन्य स्ट्रिंग स्वरूप भी पास कर सकते हैं, जैसे अमेरिकी मानक या ब्रिटिश मानक तारीख प्रदर्शित करने के लिए।
+## Dekhiye Bhi
+Agar aap C# programming aur DateTime object ke bare mein aur jaankari chahte hain, toh neeche diye gaye links aapke kaam aayenge:
 
-## देखें भी
-
-- [C# Μicrosoft डॉक्यूमेंटेशन](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
-- [DateTime माइक्रोसॉफ्ट डॉक्यूमेंटेशन](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [DateTime.ToString() method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
+- [Custom date and time format strings in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

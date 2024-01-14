@@ -1,57 +1,40 @@
 ---
 title:    "Arduino: Att påbörja ett nytt projekt"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skapa nya projekt med Arduino är en rolig och lärorik upplevelse som kan utveckla dina programmeringsfärdigheter och ge dig möjlighet att skapa egna elektroniska enheter.
+Funderar du på att starta ett nytt projekt med Arduino men vet inte var du ska börja? Fortsätt läsa! I den här bloggposten kommer jag att dela med mig av några tips och tricks för att komma igång med Arduino programmering.
 
-## Hur man gör
+## How To (Så här)
 
-För att börja ett nytt projekt med Arduino behöver du en Arduino board, en dator och en kreativ idé. Först och främst, se till att du har den senaste versionen av Arduino IDE installerad på din dator. Du kan ladda ner den gratis från Arduinos officiella hemsida. 
+Att programmera med Arduino är enkelt och roligt. Här är ett exempel på hur man kan blinka en LED-lampa med hjälp av en Arduino Uno:
 
-Nästa steg är att välja vilken typ av Arduino board du vill använda för ditt projekt, beroende på dess funktioner och kostnad. Det finns många olika typer att välja mellan, så ta dig tid att undersöka vilken som passar bäst för dina behov.
-
-När du har valt board är det dags att ansluta den till din dator med hjälp av ett USB-kabel. Öppna sedan Arduino IDE och välj rätt board och port under verktygsfliken.
-
-Nu är du redo att börja koda! Här är ett enkelt exempel på hur du kan blinka en LED-lampa med hjälp av Arduino:
-
-```Arduino
-int ledPin = 13; // initialisera variabel för pin nummer 13
-void setup() {
-	pinMode(ledPin, OUTPUT); // sätt pin nummer 13 som utgång
-}
-void loop() {
-	digitalWrite(ledPin, HIGH); // sätt pin nummer 13 till hög spänning
-	delay(1000); // vänta en sekund
-	digitalWrite(ledPin, LOW); // sätt pin nummer 13 till låg spänning
-	delay(1000); // vänta en sekund
+```
+Arduino uno;           // Skapar en variabel för att använda Arduino Uno
+pinMode(13, OUTPUT);   // Sätter pin 13 som en utgång
+while(true){           // En loop som körs hela tiden
+  digitalWrite(13, HIGH);  // Sätter pin 13 till "HIGH" (tänd)
+  delay(1000);              // Väntar en sekund
+  digitalWrite(13, LOW);   // Sätter pin 13 till "LOW" (släckt)
+  delay(1000);              // Väntar en sekund igen
 }
 ```
 
-När du har skrivit koden, tryck på "Ladda upp" knappen i Arduino IDE för att överföra koden till din Arduino board. Nu borde LED-lampan blinka med en sekunds intervaller.
+I detta exempel, skapas först en variabel för att representera Arduino Uno. Sedan sätts pin 13 som en utgång och en while-loop skapas som kommer att köra oändligt. Inuti loopen, ändras pin 13 mellan "HIGH" och "LOW" för att skapa en blinkande effekt med en paus på en sekund mellan varje tillstånd.
 
-Det finns oändliga möjligheter med Arduino, så var inte rädd för att experimentera och prova dig fram.
+## Deep Dive (Utforska Djupet)
 
-## Djupdykning
+För att komma igång med ett nytt Arduino projekt, är det viktigt att förstå de grundläggande koncepten för programmering. Arduino språket är baserat på C/C++, så det är en bra idé att bekanta sig med dessa språk innan du börjar.
 
-Innan du börjar med ett nytt projekt är det viktigt att ha en tydlig idé och plan för vad du vill uppnå. Du kan även söka online efter liknande projekt för inspiration och hjälp. Lär dig också grunderna i programmering och elektronik om du inte redan har gjort det.
+För att lära dig mer om Arduino programmering, kan du använda Arduinos officiella hemsida som har massor av handledningar, exempel och dokumentation. Du kan också gå med i Arduino forumet där du kan ställa frågor och få hjälp från andra användare.
 
-En annan viktig faktor är att ha rätt komponenter och utrustning för ditt projekt. Se till att du har alla de nödvändiga delarna och verktygen innan du börjar.
+## Se också (See Also)
 
-Det är också en bra idé att börja med mindre och enklare projekt innan du går vidare till mer avancerade projekt. Detta kommer att hjälpa dig att förstå Arduino och dess möjligheter bättre.
-
-## Se även
-
-Här är några användbara länkar för att lära dig mer om Arduino och hitta inspiration för dina projekt:
-
-- [Arduinos officiella hemsida](https://www.arduino.cc/)
-- [Arduino forum](https://forum.arduino.cc/)
-- [Arduino tutorials](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduino projektdatabas](https://create.arduino.cc/projecthub)
-- [Arduino YouTube kanal](https://www.youtube.com/channel/UCptFzGTOEk5fYAdwDKowc2w)
-
-Lycka till med ditt nya Arduino-projekt!
+- [Arduino officiella hemsida](https://www.arduino.cc/)
+- [Arduino förum](https://forum.arduino.cc/)
+- [Lär dig C/C++ på Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus)

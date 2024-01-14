@@ -1,55 +1,63 @@
 ---
 title:    "Haskell: 将日期转换为字符串"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 为什么
 
-在编程中，经常会遇到需要将日期转换成字符串的情况。这对于数据处理和显示非常有用，因此学习如何在Haskell中进行日期和字符串的转换是非常必要的。
+当我们进行日期和时间相关的编程时，经常需要将日期转换成字符串来进行操作，例如展示给用户或者存储到数据库中。使用 Haskell 的日期库可以轻松地实现这样的转换，让我们来看看具体的方法吧！
 
-## 怎么做？
+## 如何操作
 
-我们可以使用Haskell中的Time库来实现日期和字符串的转换。首先，让我们定义一个日期变量 date。
-
-```Haskell
-let date = fromGregorian 2021 5 29
-```
-
-然后，我们可以使用`formatTime`函数来将日期转换成字符串。
+首先，我们需要安装 `date` 库，可以在终端中使用以下命令来安装：
 
 ```Haskell
-let dateString = formatTime defaultTimeLocale "%Y年%m月%d日" date
+cabal install date
 ```
 
-这里，我们使用了`defaultTimeLocale`作为时间格式的默认设置，然后定义了要显示的时间格式，即"%Y年%m月%d日"，它的意思是以年月日的形式显示日期。根据需要，我们也可以使用其他的时间格式，例如"%m/%d/%Y"，表示以月/日/年的形式显示日期。
+接下来，我们需要导入 `Data.Time` 和 `System.Locale` 模块，代码如下：
 
 ```Haskell
-let dateString = formatTime defaultTimeLocale "%m/%d/%Y" date
+import Data.Time
+import System.Locale
 ```
 
-现在，我们可以打印出转换后的字符串。
+现在，我们可以通过 `formatTime` 函数来将日期转换成字符串，该函数包含三个参数：时间格式、区域设置和日期对象。让我们来看一个示例代码：
 
 ```Haskell
-putStrLn dateString
+-- 创建一个日期对象
+let currentDate = getCurrentTime
+
+-- 将日期转换成年-月-日的字符串格式
+let dateString = formatTime defaultTimeLocale "%Y-%m-%d" currentDate
+
+-- 输出转换后的字符串
+print dateString
 ```
 
-输出结果为：
-
-```
-2021年05月29日
-```
+运行上述代码，输出结果类似于 `2021-11-05`，我们也可以根据需要自定义时间格式来实现更灵活的转换。
 
 ## 深入了解
 
-为了更深入地了解日期和字符串的转换，我们可以探索Haskell中的Time库。该库提供了许多函数来处理日期和时间，例如`parseTimeM`函数可以将字符串解析成日期。我们也可以使用`getCurrentTime`函数来获取当前日期和时间。
+在转换日期成字符串时，我们需要使用 `formatTime` 函数来指定日期格式。常用的格式参数包括：
 
-在学习日期和字符串转换的同时，也要注意不同的时区和语言对日期表示的影响，需要在操作日期时进行正确的转换和处理。
+- `%Y`: 四位数字的年份（例如：2021）
+- `%m`: 两位数字的月份（例如：01）
+- `%d`: 两位数字的日期（例如：05）
+- `%H`: 两位数字的小时（24小时制）
+- `%I`: 两位数字的小时（12小时制）
+- `%M`: 两位数字的分钟
+- `%S`: 两位数字的秒
+- `%p`: AM/PM 标识符
+- `%Z`: 时区名称
+
+更多的日期格式参数和使用方法可以在 [Haskell 的文档](https://www.haskell.org/hoogle/?hoogle=formatTime) 中找到。
 
 ## 参考链接
 
-- [Haskell中的Time库文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [格式化日期和时间](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#g:8)
-- [如何解析日期字符串](https://stackoverflow.com/questions/1949666/parse-date-without-timezone-haskell)
-- [时区和日期处理](https://wiki.haskell.org/Time_and_time_zones)
+- [Haskell 日期库文档](https://www.stackage.org/haddock/lts-18.12/time-1.11.3.1/Data-Time.html)
+- [Haskell 中的字符串与日期相互转换](https://www.geeksforgeeks.org/haskell-string-datetime-conversion/)
+- [Haskell 中的时区和日期操作](https://www.stackage.org/haddock/lts-18.12/time-1.11.3.1/System-Locale.html#v:defaultTimeLocale)

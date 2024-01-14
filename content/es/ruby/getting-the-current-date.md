@@ -1,54 +1,76 @@
 ---
 title:    "Ruby: Obteniendo la fecha actual"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por Qué
+# Por qué obtener la fecha actual en Ruby
 
-¿Alguna vez te has preguntado por qué necesitamos saber la fecha y la hora exactas en un programa? Bueno, hay muchas razones para ello. Puede ser útil para programar eventos en nuestro calendario, para mostrar la fecha en una aplicación o simplemente para fines de registro. En cualquier caso, obtener la fecha y la hora actuales es una tarea muy común en la programación y hoy te enseñaré cómo hacerlo en Ruby.
+¿Se ha preguntado alguna vez cómo obtener la fecha actual en Ruby? Puede parecer un concepto sencillo, pero en realidad hay diferentes formas de hacerlo y pueden surgir dudas al momento de implementarlo. En esta publicación, exploraremos por qué es útil obtener la fecha actual en Ruby, cómo hacerlo y profundizamos en algunos detalles adicionales.
 
-# Cómo Hacerlo
+## Cómo obtener la fecha actual en Ruby
 
-En Ruby, hay una clase llamada `Time` que nos permite trabajar con fechas y horarios. Podemos crear una instancia de `Time` que represente la fecha y hora actuales usando el método `Now`. Veamos un ejemplo:
-
-```Ruby
-hoy = Time.now
-
-puts hoy
-```
-
-La salida de este código será algo como esto:
-
-```
-2020-01-01 10:00:00 +0000
-```
-
-Como puedes ver, nos devuelve la fecha y hora actuales en formato de 24 horas. Podemos especificar el formato que deseamos utilizando el método `strftime`. Por ejemplo, si queremos que se muestre en formato de 12 horas, podemos usar lo siguiente:
+Hay varias formas de obtener la fecha actual en Ruby, dependiendo de lo que estés buscando exactamente. Una forma sencilla es utilizar el método `Time.now`, que devuelve la fecha y hora actuales en formato de objeto en Ruby.
 
 ```Ruby
-puts hoy.strftime("%I:%M:%S %p")
+Time.now
+# => 2021-08-02 15:30:00 +0100
 ```
 
-Esto nos dará una salida como esta:
+Otra opción es utilizar el método `Date.today`, que devuelve la fecha actual en formato de objeto `Date`.
 
+```Ruby
+Date.today
+# => #<Date: 2021-08-02 ((2459415j,0s,0n),+0s,2299161j)>
 ```
-10:00:00 AM
+
+También puedes utilizar el método `DateTime.now` para obtener tanto la fecha como la hora actual en formato de objeto `DateTime`.
+
+```Ruby
+DateTime.now
+# => #<DateTime: 2021-08-02T15:30:00+01:00 ((2459415j,5100s,548283574n),+3600s,2299161j)>
 ```
 
-Puedes encontrar una lista completa de formatos disponibles en la documentación de Ruby.
+## Inmersión en detalle
 
-# Deep Dive
+La clase `Time` en Ruby proporciona una cantidad significativa de métodos y opciones para trabajar con fechas y horas. Por ejemplo, puedes utilizar los métodos `Time#year`, `Time#month` y `Time#day` para obtener el año, mes y día específicos de una fecha. También puedes formatear la fecha de diferentes maneras utilizando el método `strftime`.
 
-Si quieres profundizar un poco más en el tema de la fecha y hora en Ruby, aquí hay algunos conceptos interesantes que puedes explorar:
+```Ruby
+Time.now.year
+# => 2021
 
-- La diferencia entre los métodos `now` y `today` en la clase `Time`.
-- Cómo utilizar la clase `Date` para trabajar solo con fechas y no con horas.
-- El uso del método `parse` para convertir una cadena en un objeto `Time`.
+Time.now.month
+# => 8
 
-# Ver También
+Time.now.day
+# => 2
 
-- [Documentación de Ruby sobre la clase `Time`](https://ruby-doc.org/core-2.7.1/Time.html)
-- [Lista completa de formatos disponibles para el método `strftime`](https://ruby-doc.org/core-2.7.1/Time.html#method-i-strftime)
-- [Uso avanzado de la clase `Time` en Ruby](https://www.toptal.com/ruby/ruby-time-class)
+Time.now.strftime("%d/%m/%Y")
+# => 02/08/2021
+```
+
+Además, si necesitas trabajar con la zona horaria, puedes utilizar el método `in_time_zone` en objetos tipo `Time` y `DateTime`.
+
+```Ruby
+Time.now
+# => 2021-08-02 15:30:00 +0100
+
+Time.now.in_time_zone("Eastern Time (US & Canada)")
+# => 2021-08-02 10:30:00 -0400
+
+DateTime.now
+# => #<DateTime: 2021-08-02T15:30:00+01:00 ((2459415j,5100s,548283574n),+3600s,2299161j)>
+
+DateTime.now.in_time_zone("Pacific Time (US & Canada)")
+# => #<DateTime: 2021-08-02T07:30:00-07:00 ((2459415j,2100s,434283574n),-25200s,2299161j)>
+```
+
+## Ver también
+
+- [Documentación de Ruby sobre la clase Time](https://ruby-doc.org/core/Time.html)
+- [Documentación de Ruby sobre la clase Date](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
+- [Documentación de Ruby sobre la clase DateTime](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html)
+
+¡Y eso es todo! Esperamos que esta publicación te haya ayudado a comprender cómo obtener la fecha actual en Ruby y cómo trabajar con ella en tu código. ¡Feliz programación!

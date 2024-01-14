@@ -1,30 +1,45 @@
 ---
 title:    "Gleam: Obtenir la date actuelle"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi? La récupération de la date actuelle est une tâche couramment utilisée dans la programmation pour afficher la date et l'heure actuelles dans une application ou un système.
+# Pourquoi
 
-## Comment Faire
-Pour récupérer la date actuelle en Gleam, nous pouvons utiliser la fonction `DateTime.now()`. Cette fonction renvoie un enregistrement contenant un champ `date` pour la date et un champ `time` pour l'heure. Nous pouvons utiliser la fonction `format` pour formater la date selon notre préférence, par exemple en utilisant le code `%Y-%m-%d` pour afficher la date au format AAAA-MM-JJ.
+Saviez-vous qu'il est possible d'obtenir automatiquement la date actuelle dans vos programmes Gleam ? Cela peut sembler une petite fonctionnalité, mais elle peut être très utile pour de nombreuses raisons. Dans cet article, nous allons vous expliquer pourquoi vous devriez utiliser cette fonctionnalité et comment le faire de manière efficace.
+
+## Comment faire
+
+Pour obtenir la date actuelle en utilisant Gleam, nous allons utiliser la fonction `Date.now()` du module `Time` :
 
 ```Gleam
-let current_date = DateTime.now();
+import Time
 
-let formatted_date = current_date |> format("%Y-%m-%d");
-
-pub fn main() {
-  IO.print("La date actuelle est :", formatted_date);
-}
+let current_date = Time.Date.now()
 ```
 
-La sortie de ce code sera "La date actuelle est : 2021-01-08".
+Cette fonction renvoie un `Time.Date` avec les informations sur la date et l'heure actuelles. Voici à quoi ressemblera le résultat :
 
-## Plongée Profonde
-La fonction `DateTime.now()` utilise le fuseau horaire par défaut du système sur lequel le code est exécuté. Cela peut être modifié en utilisant la fonction `with_timezone` avant d'appeler `format`. De plus, la fonction `DateTime.now()` peut également prendre un argument pour spécifier un fuseau horaire différent si nécessaire.
+```Gleam
+{ year: 2020, month: July, month_day: 8, hour: 10, minute: 30, second: 59 }
+```
 
-## Voir Aussi
-- Documentation officielle de Gleam sur les dates et heures: https://gleam.run/lib/std/datetime.html
-- Tutoriel sur l'utilisation de Gleam pour manipuler les dates et heures: http://www.codingbeard.co.uk/guide-to-gleam-episodes/episode-24-date-and-time
+Vous pouvez également modifier le fuseau horaire en utilisant le paramètre `utc_offset`, comme ceci :
+
+```Gleam
+let current_date = Time.Date.now(utc_offset = 3)
+```
+
+## Plongée en profondeur
+
+La fonction `Date.now()` utilise le temps UNIX pour déterminer la date et l'heure actuelles. Cela signifie que le résultat sera différent selon le fuseau horaire de votre ordinateur, mais il sera toujours calculé en utilisant le temps UNIX, qui est le nombre de secondes écoulées depuis le 1er janvier 1970 à minuit UTC.
+
+De plus, vous pouvez également utiliser la fonction `Date.from_timestamp(timestamp)` pour créer une date à partir d'un timestamp UNIX spécifique. Cela peut être utile si vous devez convertir une date de votre système en utilisant Gleam.
+
+# Voir aussi
+
+- La documentation officielle de Gleam sur les dates et le temps : https://gleam.run/documentation/stdlib/time/
+- Un tutoriel sur les bases de la programmation avec Gleam : https://gleam.run/getting-started/
+- Un article sur la gestion des erreurs en utilisant le type `Result` en Gleam : https://gleam.run/documentation/the-basics/errors/

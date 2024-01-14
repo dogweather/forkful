@@ -1,55 +1,59 @@
 ---
-title:    "C++: Tiedoston kirjoittaminen"
+title:    "C++: Tekstitiedoston kirjoittaminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Kirjoittaa Tekstitiedosto?
+## Miksi
 
-Joskus ohjelmoidessa joudumme tallentamaan tekstiä tietokoneelle. Tämä voi olla esimerkiksi käyttäjän antama syöte tai tärkeä tieto, jota haluamme säilyttää ohjelman jälkeen. Tällöin on hyödyllistä osata kirjoittaa tekstitiedostoja C++:ssa.
+Tekstiasioiden lähettäminen on yksi tärkeimmistä tavoista tallentaa ja jakaa tietoa ohjelmoijien keskuudessa. Tekstiasiointi on hyödyllinen myös silloin, kun haluat säilyttää tietoja ohjelman suorituksen aikana tai tulostaa asiakirjan, kuten laskun tai raportin. Tässä blogikirjoituksessa käymme läpi, miten kirjoitat tekstiasiakirjan C++ -ohjelmassa.
 
-## Kuinka Tehdä Se
+## Miten
 
-Kirjoittaaksesi tekstitiedoston C++:ssa, sinun tulee ensin avata tiedosto ja määrittää sen sijainti ja tiedostotyyppi. Tämän jälkeen voit käyttää ```std::ofstream```-luokkaa kirjoittaaksesi sisältöä tiedostoon.
+Tekstiasioiden kirjoittaminen C++:ssa on suhteellisen yksinkertainen prosessi. Ilman paljon puhetta, mennään suoraan koodiin!
 
-```
+```C++
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 int main() {
-    // Määritetään tiedoston sijainti ja tiedostotyyppi
-    std::ofstream tiedosto("tiedosto.txt");
+  // Luo tiedosto
+  ofstream tiedosto("tekstiasiakirja.txt");
 
-    // Testidataa
-    std::string nimi = "Matti";
-    int ikä = 25;
+  // Tarkista, onko tiedosto avattu
+  if (tiedosto.is_open()) {
+    // Kirjoita teksti tiedostoon
+    tiedosto << "Tervetuloa lukemaan blogikirjoitustani!"
+             << endl;
 
-    // Kirjoitetaan tiedostoon
-    tiedosto << "Tervetuloa, " << nimi << "! Olet " << ikä << " vuotta vanha." << std::endl;
-
-    // Suljetaan tiedosto
+    // Sulje tiedosto
     tiedosto.close();
+  } else {
+    cout << "Tiedoston avaaminen epäonnistui!" << endl;
+  }
 
-    return 0;
+  return 0;
 }
 ```
 
-## Syöte ja Tulos
+Yllä olevassa koodissa luomme uuden tiedoston nimeltä "tekstiasiakirja.txt". Sitten tarkistamme, onko tiedosto avattu onnistuneesti. Jos näin on, kirjoitamme tiedostoon halutun tekstin ja suljemme sen. Muussa tapauksessa tulostamme virheilmoituksen.
 
-Ohjelman suorituksen jälkeen löydät tekstitiedoston nimeltä "tiedosto.txt" tiedostosi kansiosta. Kun avaat tiedoston, näet seuraavan tulosteen:
+Suorittaessamme ohjelman, näemme, että tiedostoon on kirjoitettu teksti "Tervetuloa lukemaan blogikirjoitustani!". Mikäli tarkastelemme tiedostoa tekstieditorilla, näemme sinne tallentuneen saman tekstin.
 
-```
-Tervetuloa, Matti! Olet 25 vuotta vanha.
-```
+## Syvällinen sukellus
 
-## Syvällisempi Tarkastelu
+Tekstiasiakirjan kirjoittaminen C++:ssa vaatii hieman ymmärrystä tiedostojen käsittelystä ja tiedon tallentamisesta. Tiedoston avaaminen voidaan tehdä joko käyttämällä `ofstream` -luokkaa tai `fstream` -luokkaa, joka on yleisempi ja mahdollistaa myös lukemisen tiedostosta.
 
-Kirjoittaessa tekstitiedostoa C++:ssa, voit käyttää myös muita metodeja kuten ```write()``` ja ```put()``` kirjoittaaksesi tiedostoon. Voit myös käyttää ```seekp()```-funktiota määrittääksesi sijainnin, josta haluat kirjoittaa tiedostoon.
+C++ tarjoaa myös mahdollisuuden asettaa erilaisia väliaikaisia merkkijonojen manipulointi vaihtoehtoja, joita voidaan käyttää tiedoston kirjoittamisessa. Esimerkiksi käyttämällä `setf()` -funktiota, voimme määrittää erilaisia välilyöntejä ja rivinvaihtoja haluamiimme kohtiin tiedostossa.
 
-# Katso myös
+Tärkeää on myös muistaa sulkea tiedosto suorituksen jälkeen. Tämä estää mahdollisia ongelmia tiedostojen käsittelyssä ja vapauttaa resursseja.
 
-- [C++ ofstream-luokka selityksineen](https://www.cplusplus.com/reference/fstream/ofstream/)
-- [Ohjeita tekstitiedoston kirjoittamiseen C++:ssa](https://www.geeksforgeeks.org/writing-text-file-c/)
+## Katso myös
 
- end.
+- [C++ tiedostojen käsittely](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Tiedostojen kanssa toimiminen C++:ssa](https://www.cs.fsu.edu/~hawkes/cda3101lects/IO.pdf)
+- [C++ documentaatio - ofstream luokka](https://en.cppreference.com/w/cpp/io/basic_ofstream)

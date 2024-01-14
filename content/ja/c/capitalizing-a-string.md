@@ -1,59 +1,56 @@
 ---
 title:    "C: 文字列のキャピタライズ"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を大文字に変換することに興味があるかもしれません。特定の文字列の書式を変更する必要がある場合や、表示を統一するために使用することができます。
+## Why (なぜ):
+文字列の大文字化を行う理由を1〜2文で説明します。
 
-## 使い方
-文字列を大文字に変換する方法はいくつかありますが、今回は以下の方法を紹介します。
+文字列の大文字化とは、文字列内のすべての文字を大文字に変換することであり、主に文字列の比較や表示の統一性を保つために使用されます。例えば、データベース内の名前を大文字で統一することで、同じ名前を持つレコードを正しく識別できるようになります。
+
+## How To (方法):
+以下の「```C ... ```」コードブロック内に、文字列を大文字化するためのプログラム例と実行結果を示します。
 
 ```C
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
-int main()
-{
-  // 変換する文字列を指定
-  char str[20] = "apple";
-  
-  // 変換した結果を保存するための新しい文字列を定義
-  char new_str[20];
-  
-  // strの長さを取得
-  int len = strlen(str);
-  
-  // 変換の処理を実行
-  for (int i=0; i<len; i++)
-  {
-    // 大文字に変換する
-    new_str[i] = toupper(str[i]);
+// 文字列を大文字に変換する関数
+void capitalize_string(char* str) {
+  int i = 0;
+  while (str[i]) {
+    str[i] = toupper(str[i]); // toupper()関数で文字を大文字に変換
+    i++;
   }
-  
-  // 新しい文字列を出力
-  printf("変換後の文字列: %s", new_str);
-  
+}
+
+int main() {
+  char name[20] = "yamada taro"; // 変換前の文字列
+  printf("Before: %s\n", name); // 変換前の文字列を表示
+  capitalize_string(name); // 大文字化関数を呼び出し
+  printf("After: %s\n", name); // 変換後の文字列を表示
   return 0;
 }
 ```
 
-上記のコードを実行すると、以下のような結果が得られます。
+実行結果:
 
+```C
+Before: yamada taro
+After: YAMADA TARO
 ```
-変換後の文字列: APPLE
-```
 
-## 詳細について
-文字列を大文字に変換する際には、特定の文字をASCII形式で表すことが重要です。C言語では、文字を表すために整数値を使用するため、大文字に変換したい場合はその整数値を使って処理を行います。また、文字列内に数字や記号などが含まれている場合も注意が必要です。
+## Deep Dive (詳細):
+文字列の大文字化には、さまざまな方法がありますが、上記のプログラムは文字列を一文字ずつ処理していることが特徴です。ここで使用している「toupper()」関数は、文字のASCIIコードを使用して大文字に変換しています。
 
-## 他にも見てみる
-この記事ではC言語で文字列を大文字に変換する方法を紹介しましたが、他にもさまざまな言語で同じような処理を行うことができます。
+また、文字列の大文字化には「strtoupper()」関数や「strlwr()」関数なども使用できます。これらの関数は、文字列を一括で大文字化や小文字化することができます。しかし、これらの関数はロケールによって変換する文字が異なる場合があるため、注意が必要です。
 
-- [Pythonで文字列を大文字に変換する方法](https://programmar.jp/blog/python-uppercase-lowercase/)
-- [Javaで文字列を大文字に変換する方法](https://targeting-japan.com/entry/toUpperCase-toLowerCase)
-- [C#で文字列を大文字に変換する方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.toupper)
+## See Also (関連記事):
+- [C言語での文字列操作](https://qiita.com/nametaketaketake/items/8c63ac9989f9c6b54fe7)
+- [toupper()関数の使い方](https://programming.pc-note.net/c/character.html#toupper)
 
-詳しいプログラムの動作や使い方については、各言語のドキュメントを参考にしてください。
+以上で、C言語で文字列を大文字化する方法を紹介しました。大文字化は、データを正しく識別するために欠かせない処理であるため、正しく理解しておくことが重要です。ご参考になれば幸いです。

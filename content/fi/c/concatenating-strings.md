@@ -1,46 +1,57 @@
 ---
 title:    "C: Merkkijonojen yhdistäminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi ketjuttaminen kannattaa?
 
-Miksi perehtyä merkkijonojen yhdistämiseen ohjelmoinnissa? Merkkijonojen yhdistäminen on tärkeä osa ohjelmoinnin maailmaa, ja se mahdollistaa monien tehtävien suorittamisen, kuten tekstin muokkaamisen ja tulostuksen.
+Ketjuttaminen eli merkkijonojen yhdisteleminen on tärkeä osa C-ohjelmointia. Se mahdollistaa monipuolisen ja joustavan tavan käsitellä merkkijonoja, mikä on tärkeää monissa ohjelmointitehtävissä. Ketjuttaminen tarjoaa myös tehokkaan tavan muokata, tulostaa ja käsitellä merkkijonoja ohjelmassa.
 
-## Miten
+## Miten: Esimerkkejä ja tulosteita "```C ... ```" koodilohkoilla.
 
-Merkkijonojen yhdistäminen onnistuu helposti käyttäen C-ohjelmoinnissa "strcat" -funktiota, joka yhdistää kaksi merkkijonoa toisiinsa. Tämän avulla voit luoda uuden merkkijonon yhdistämällä useita pienempiä merkkijonoja.
+Ketjuttaminen merkitsee kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Tämä tapahtuu käyttämällä '+'-merkkiä tai strcat-funktiota. Katso esimerkki alla:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    char str1[50] = "Tervetuloa!";
-    char str2[20] = "Opi ";
-    char str3[20] = "C-ohjelmointia";
+int main() {
+   char etunimi[20] = "Matti";
+   char sukunimi[] = "Meikäläinen";
+   char nimi[40];
 
-    strcat(str2, str3);
-    strcat(str1, str2);
+   // käytetään strcat-funktiota
+   strcpy(nimi, etunimi);
+   strcat(nimi, " ");
+   strcat(nimi, sukunimi);
+   printf("Nimi: %s", nimi);
 
-    printf("%s", str1);
-    return 0;
+   // käytetään '+'-merkkiä
+   strcpy(nimi, "Matti");
+   printf("\nNimi: %s", nimi + " Meikäläinen");
+
+   return 0;
 }
 ```
 
-Tämän koodin tuloste on: "Tervetuloa! Opi C-ohjelmointia".
+Tuloste:
 
-## Syvempi sukellus
+```
+Nimi: Matti Meikäläinen
+Nimi: Matti Meikäläinen
+```
 
-Merkkijonojen yhdistäminen ei vain yksinkertaisesti liitä merkkijonoja yhteen, vaan se käyttää taustalla monimutkaisempia algoritmeja löytääkseen sopivan tilan uudelle merkkijonolle. Tästä syystä on tärkeää muistaa varata tarpeeksi tilaa uudelle merkkijonolle ennen yhdistämisen suorittamista.
+## Syvällisemmin: Lisätietoja merkkijonojen ketjuttamisesta.
 
-Lisäksi tarvittaessa voit käyttää muita merkkijonojen yhdistämiseen tarkoitettuja funktioita, kuten "strncpy" tai "strncat", jotka mahdollistavat tietyn määrän merkkien kopiointia tai yhdistämistä.
+Merkkijonojen ketjuttamisessa on tärkeää ottaa huomioon muutamia asioita. Ensinnäkin, strcat-funktiota käytettäessä on varmistettava, että merkkijonolle on varattu tarpeeksi muistitilaa lisäämistä varten, jotta ohjelma ei kaadu. Myös muistin vapauttaminen ketjuttamisen jälkeen on tärkeää, jotta vältetään ylimääräisten muistivuotojen aiheuttamat ongelmat.
+
+Lisäksi ketjuttamista voidaan käyttää myös muiden tietotyyppien kanssa, kuten int- tai float-muuttujien, mutta silloin on huomioitava datan tyyppien yhteensopivuus.
 
 ## Katso myös
 
-- [C-ohjelmoinnin perusteet](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli))
-- [C-kielen merkkijonojen manipulointi](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Strcat ja muut merkkijonojen yhdistämiseen tarkoitetut funktiot](https://www.programiz.com/c-programming/library-function/string.h/strcat)
+- [C-kielen dokumentaatio merkkijonojen käsittelystä](https://www.cplusplus.com/reference/cstring/)
+- [Merkkijonojen yhdistäminen muiden C-tietotyyppien kanssa](https://www.tutorialspoint.com/cprogramming/c_concatenation.htm)
+- [Muistin vapauttaminen ketjuttamisen jälkeen](https://stackoverflow.com/questions/15144570/what-is-the-proper-way-of-free-space-allocated-for-the-char-pointer-when-string)

@@ -1,35 +1,31 @@
 ---
-title:    "Elixir: Scrivere sulla standard error"
+title:    "Elixir: Scrivere su errore standard"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere su standard error in Elixir?
+## Perché scrivere su standard error?
 
-Scrivere su standard error in Elixir può essere utile per poter visualizzare gli errori ed i messaggi di debug nel terminale. È una pratica comune nella programmazione e può aiutare a identificare e risolvere i problemi all'interno del codice.
+Scrivere su standard error è un'attività fondamentale nel processo di sviluppo di un'applicazione in Elixir. Questa pratica permette di identificare e risolvere eventuali errori e problemi nel codice in modo rapido ed efficiente.
 
-## Come: Esempi di codice in Elixir per scrivere su standard error
+## Come fare
 
-```Elixir
-IO.puts("Questo è un messaggio da scrivere su standard output")
-IO.puts("Questa è una frase di esempio da scrivere su standard error")
+Per scrivere su standard error in Elixir, è possibile utilizzare la funzione `IO.puts/2` passando come primo argomento la stringa da stampare e come secondo argomento `stderr`. Ad esempio:
 
-# Output:
-# Questo è un messaggio da scrivere su standard output
-# Questa è una frase di esempio da scrivere su standard error
+```elixir
+IO.puts("Errore!", :stderr)
 ```
 
-Nell'esempio sopra, il primo `IO.puts` scrive sullo standard output mentre il secondo `IO.puts` scrive sullo standard error. Nota che l'output è visualizzato in diverse righe nel terminale. È importante utilizzare `IO.puts` per scrivere su standard error poiché stampa l'output su una nuova linea.
+Questo stampa la stringa "Errore!" su standard error. È anche possibile utilizzare la macro `IO.warn/1` per stampare un messaggio di avviso su standard error.
 
-## Deep Dive: Maggiori informazioni su scrivere su standard error
+## Approfondimento
 
-In Elixir, possiamo utilizzare la funzione `IO.puts/2` per scrivere su standard error o possiamo utilizzare la macro `IO.warn/1` per scrivere un messaggio di avviso. La differenza principale tra le due è che `IO.warn/1` aggiunge anche un prefisso "[warning]" al messaggio prima di scriverlo su standard error.
-
-Inoltre, possiamo anche utilizzare la funzione `IO.inspect/2` per scrivere un messaggio di debug su standard error. Questa funzione accetta un valore e lo stampa insieme al nome della variabile per aiutare a identificare il valore corrente durante la fase di debug.
+Scrivere su standard error è particolarmente importante quando si tratta di errori non gestiti nel codice. Questo ci permette di identificare facilmente la causa dell'errore e di risolverlo in modo tempestivo. Inoltre, scrivere su standard error è utile anche per monitorare l'applicazione in fase di produzione e individuare eventuali problemi che possono emergere.
 
 ## Vedi anche
 
-- [Documentazione di IO in Elixir](https://hexdocs.pm/elixir/IO.html)
-- [Come utilizzare la funzione IO.puts in Elixir](https://www.dneves.dev/blog/how-to-use-io-puts-in-elixir/)
-- [Una guida utile per iniziare con Elixir](https://www.scalingdevops.it/elixer-programming-perche-utilizzarlo/)
+- Documentazione ufficiale di Elixir: https://elixir-lang.org/getting-started/io-and-the-file-system.html#stderr-and-stdout
+- Articolo su come gestire gli errori in Elixir: https://www.erlang-solutions.com/blog/error-handling-in-elixir.html
+- Esempi di utilizzo di `IO.puts/2`: https://hexdocs.pm/elixir/IO.html#puts/2

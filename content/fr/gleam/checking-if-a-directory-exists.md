@@ -1,37 +1,39 @@
 ---
 title:    "Gleam: Vérifier si un répertoire existe"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Saviez-vous qu'il existe une fonctionnalité très utile en utilisant le langage de programmation fonctionnelle, Gleam ? En effet, Gleam nous permet de vérifier si un répertoire existe avant d'effectuer une action. Mais pour quelle raison voudrait-on effectuer cette vérification ? C'est ce que nous allons explorer dans cet article.
 
-## Comment faire 
-Il existe plusieurs façons de vérifier l'existence d'un répertoire en utilisant Gleam. Voici deux exemples de code suivis de la sortie attendue :
+La vérification de l'existence d'un répertoire est une étape importante dans de nombreux projets de programmation. Cela permet de s'assurer que le répertoire dans lequel vous souhaitez enregistrer ou lire des fichiers existe bien et évite ainsi les erreurs inattendues lors de l'exécution du code.
 
-```Gleam
-exists_directory("mon_dossier/")
+## Comment faire
+
+Pour vérifier si un répertoire existe en utilisant le langage de programmation Gleam, vous pouvez utiliser la fonction `exists` du module `gleam_fs`. Voici un exemple de code avec un répertoire existant :
+
+```
+gleam_fs.exists("chemin/du/repertoire")
+# => true
 ```
 
-> ``true``
+Et un exemple avec un répertoire inexistant :
 
-```Gleam
-exists_directory("mon_autre_dossier")
+```
+gleam_fs.exists("chemin/vers/repertoire/inexistant")
+# => false
 ```
 
-> ``false``
+## Plongeons plus en profondeur
 
-Comme vous pouvez le constater, en utilisant la fonction `exists_directory()`, nous obtenons un booléen en réponse. Cela nous permet de savoir si oui ou non, le répertoire que nous cherchons existe bien.
+La fonction `exists` fonctionne en utilisant la bibliothèque standard du système d'exploitation sur lequel Gleam est exécuté. Cela signifie qu'elle est sensible à la façon dont le système d'exploitation gère les chemins et les fichiers. Par exemple, sous Windows, les chemins utilisent des barres obliques inversées `\` tandis que sous Linux, ils utilisent des barres obliques normales `/`.
 
-## Plongée Profonde
-Vous vous demandez peut-être pourquoi nous aurions besoin de vérifier si un répertoire existe avant d'exécuter une action. Eh bien, cela peut être très utile si nous voulons éviter des erreurs dans notre code. Par exemple, si nous voulons créer un nouveau fichier dans un répertoire spécifique, mais que celui-ci n'existe pas encore, nous pouvons utiliser la fonction `exists_directory()` pour vérifier et créer le répertoire si nécessaire avant de continuer avec notre action.
+Il est également important de noter que la fonction `exists` peut également être utilisée pour vérifier l'existence de fichiers, et pas seulement de répertoires.
 
-## Voir Aussi
-Si vous souhaitez en savoir plus sur les fonctionnalités de Gleam, vous pouvez consulter les liens suivants :
+## Voir aussi
 
-- [Documentation officielle de Gleam](https://gleam.run/)
-- [Tutoriels Gleam](https://www.youtube.com/playlist?list=PLJXLvumqr7IEBL5x4xdy7Xi_ms1ci-e1m)
-
-Maintenant que vous connaissez la fonction `exists_directory()` en Gleam, à vous de jouer ! N'hésitez pas à l'expérimenter dans votre prochain projet.
+- [Documentation du module gleam_fs](https://gleam.run/modules/io/fs/)
+- [Tutoriel sur la gestion de fichiers en Gleam](https://medium.com/@gleamlangio/file-handling-in-gleam-63ceaa558920)
+- [GitHub du langage Gleam](https://github.com/gleam-lang/gleam)

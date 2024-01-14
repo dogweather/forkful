@@ -1,66 +1,60 @@
 ---
-title:    "TypeScript: 現在の日付を取得する"
+title:    "TypeScript: 「現在の日付を取得する」"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
+《なぜ》
+現在の日付を取得する理由を説明します。
+
 ## なぜ
-皆さんこんにちは！今日は、TypeScriptで現在の日付を取得する方法についてお話しします。プログラミングでは、現在の日付を取得することは非常に重要です。例えば、ユーザーが自分のアカウントにログインした日時を記録する必要がある場合や、特定の日付のイベントを計算する必要がある場合などには、現在の日付を知ることが必要です。
 
-## 方法
-TypeScriptで現在の日付を取得する方法は非常に簡単です。まずは、Dateオブジェクトを宣言しましょう。
+プログラマーにとって、現在の日付を取得することは非常に重要です。時には、タイムスタンプや有効期限などの特定の日付情報を取得する必要があります。また、特定の日付に応じて条件分岐する必要がある場合もあります。つまり、現在の日付を取得することは、日付に関する多くのプログラミング上のタスクに必要不可欠な作業です。
 
-```TypeScript
-let now = new Date();
-```
-
-これで、現在の日付と時刻が取得できます。次に、フォーマットを整える方法を見てみましょう。
+## ハウツー
 
 ```TypeScript
-let year = now.getFullYear();
-let month = now.getMonth() + 1;
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let seconds = now.getSeconds();
+// 現在の日付を取得する
+const currentDate = new Date();
 
-let formattedDate = `${year}/${month}/${date} ${hours}:${minutes}:${seconds}`;
-console.log(formattedDate);
+// フォーマットを指定して日付を取得する
+const formattedDate = currentDate.toLocaleDateString('ja-JP', {year: 'numeric', month: 'long', day: 'numeric'});
+console.log(formattedDate); // 2021年9月1日
+
+// タイムスタンプを取得する
+const timestamp = currentDate.getTime();
+console.log(timestamp); // 1630431600000 (2021年9月1日を表すタイムスタンプ)
+
+// 特定の日付に応じて条件分岐する例
+if (currentDate.getMonth() === 11) {
+    console.log("今年はクリスマスです！");
+} else {
+    console.log("クリスマスまでまだ時間があります。");
+}
 ```
 
-実行結果は以下のようになります。
+コードの出力:
 
-```bash
-2021/5/24 9:30:15
+```
+2021年9月1日
+1630431600000
+クリスマスまでまだ時間があります。
 ```
 
 ## ディープダイブ
-TypeScriptで現在の日付を取得する方法については以上ですが、もう少し深く掘り下げてみましょう。新しいDateオブジェクトが生成される際には、現在のローカル時間が設定されます。しかし、必ずしもそれが必要なフォーマットではない場合もあります。そんな時には、Dateオブジェクトのメソッドを使って設定を変更することができます。
 
-例えば、タイムゾーンを日本に設定する場合は、以下のようにすることができます。
+現在の日付を取得する方法は様々ありますが、主に3つの方法があります。
 
-```TypeScript
-now.setFullYear(2021);
-now.setMonth(4);
-now.setDate(24);
-now.setTimezoneOffset(-540);
+1つ目は、`new Date()`を使って現在の日付を取得する方法です。この方法は最も簡単で、新しいDateオブジェクトを作成して現在の日付を取得できます。
 
-let formattedDate = `${year}/${month}/${date} ${hours}:${minutes}:${seconds}`;
-console.log(formattedDate);
-```
+2つ目は、`Date.prototype.toLocaleDateString()`を使ってフォーマットを指定して日付を取得する方法です。この方法を使うと、日付を任意のフォーマットに変換できます。
 
-実行結果は以下のようになります。
+3つ目は、`Date.prototype.getTime()`を使ってタイムスタンプを取得する方法です。タイムスタンプは日付をミリ秒単位で表したもので、プログラミング言語やデータベースで日付を取り扱う際に便利です。
 
-```bash
-2021/5/24 9:30:15
-```
+## 関連リンク
 
-## 他にも見てみよう
-それでは、今日の記事は以上です。もしより深く学びたい方は、以下のリンクを参考にしてみてください。
-
-[Dateオブジェクトの仕様 (MDN)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-
-[TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
-
-それでは、また次回お会いしましょう！
+- [MDN Web Docs: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Language Specification: Date](https://github.com/microsoft/TypeScript/blob/master/doc/spec.md#14-built-in-operators)
+- [W3Schools: JavaScript Date Objects](https://www.w3schools.com/js/js_dates.asp)

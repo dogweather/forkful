@@ -1,30 +1,31 @@
 ---
-title:    "PHP: Skriva till standardfel"
+title:    "PHP: Skrivning till standardfel."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standard error, även känt som STDERR, är en viktig del av programmering för att spåra och åtgärda fel och buggar i din kod. Genom att skriva till STDERR kan du separera felmeddelanden från vanlig output och göra det lättare att felsöka ditt program.
+När du skriver kod är det viktigt att ha bra felhantering för att identifiera och åtgärda eventuella problem. Att skriva till standard error är ett sätt att fånga och logga felmeddelanden i din PHP-kod.
 
-## Hur man gör
-För att skriva till STDERR i PHP, använder du funktionen `fwrite()`. Du behöver också öppna filen för att skriva till den. Se till att du öppnar filen med skrivbehörighet för att undvika eventuella felmeddelanden.
+## Så här gör du
+För att skriva till standard error i din PHP-kod kan du använda funktionen `fwrite()` tillsammans med `STDERR`. Här är ett exempel som skriver ett felmeddelande till standard error:
 
 ```PHP
-$myfile = fopen("error.log", "w");
-fwrite($myfile, "Detta är ett felmeddelande som skrivits till STDERR.");
-fclose($myfile);
+$fel = "Ett fel har uppstått!";
+fwrite(STDERR, $fel);
+```
+Output:
+```
+"Ett fel har uppstått!"
 ```
 
-När du kör detta program kommer ett felmeddelande att skrivas till filen `error.log` istället för att visas på websidan. Detta kan hjälpa till att hålla din output ren och enkel att läsa.
-
 ## Djupdykning
-Skrivande till STDERR är också användbart när du vill logga felmeddelanden till en fil istället för att visa dem för användaren. Du kan till exempel använda STDERR för att spåra fel i en inloggningssida och sedan logga dessa felmeddelanden till en fil som bara administratörer kan se.
+Standard error är en ström som används för att skicka felmeddelanden som inte är direkt relaterade till den vanliga utdataströmmen. Till exempel kan fel i din kod skickas till standard error medan den normala utdatan används för att visa resultat eller information för användaren.
 
-En annan fördel med att skriva till STDERR är att du kan använda verktyg som `tail` för att övervaka loggar i realtid. Detta kan vara särskilt användbart när du utvecklar eller felsöker din kod.
+När det gäller felhantering är det också viktigt att veta att standard error är en omdirigering av utdatan för ditt PHP-skript. Det innebär att det kan skickas till en annan plats än standard utdatan, beroende på inställningarna för servern eller loggningskonfigurationen.
 
-## Se även
-- [PHP fwrite() funktionen](https://www.php.net/manual/en/function.fwrite.php)
-- [Felsökningsguide för PHP](https://www.php.net/manual/en/book.errorfunc.php)
-- [Tail command i Linux](https://www.geeksforgeeks.org/tail-command-linux/)
+## Se också
+- [PHP dokumentation om fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [Mer information om standard error och felhantering i PHP](https://www.w3schools.com/php/php_error.asp)

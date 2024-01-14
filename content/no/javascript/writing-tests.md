@@ -1,39 +1,43 @@
 ---
 title:    "Javascript: Skriving av tester"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å skrive tester i JavaScript kan virke tidkrevende og unødvendig, men det er faktisk en viktig del av å utvikle pålitelige og robuste programmer. Ved å skrive tester, kan du oppdage feil og bugs tidlig i utviklingsprosessen, noe som sparer deg for mye tid og frustrasjon i det lange løp.
 
-## Slik gjør du det
-For å skrive tester i JavaScript, kan du bruke et rammeverk som Mocha eller Jest. Disse rammeverkene gjør det enkelt å definere tester og kjøre dem automatisk.
+Å skrive tester som en del av utviklingsprosessen er en viktig praksis for å sikre kvalitet og pålitelighet i koden din. Tester hjelper deg med å identifisere og fikse feil i koden tidlig, redusere risikoen for at uønskede endringer blir gjort, og gjør det enklere for deg å vedlikeholde og videreutvikle koden din.
 
-La oss se på et eksempel med Jest:
+## Hvordan
+
+Her er et enkelt eksempel på hvordan du kan skrive en enkel test i Javascript ved hjelp av Jest-testrammeverket:
 
 ```Javascript
-// Funksjonen vår som skal testes:
-function add(a, b) {
+// Kodestump: Funksjonen som skal testes
+function addNumbers(a, b) {
   return a + b;
 }
 
-// Testen:
-test('add funksjonen skal legge til to tall', () => {
-  expect(add(2, 2)).toBe(4);
+// Tester: Vi forventer at funksjonen returnerer riktig sum
+test('Skal returnere riktig sum', () => {
+  expect(addNumbers(2, 3)).toBe(5);
 });
 ```
 
-Her bruker vi funksjonen `test` for å definere en ny test. Vi gir testen en beskrivelse og bruker `expect` for å sjekke om resultatet av `add`-funksjonen er 4 når vi gir den to tall som argumenter. Kjører vi denne testen vil den passere, men dersom vi endrer på funksjonen vår slik at den returnerer feil svar, vil testen feile og gi oss en indikasjon på at noe må fikses.
+I dette eksempelet bruker vi testfunksjonen `expect` fra Jest for å sjekke om resultatet av funksjonen `addNumbers` er lik verdien 5 når vi gir inn argumentene 2 og 3. Dette er en enkel måte å teste en funksjon på og gir oss en rask tilbakemelding på om koden fungerer som forventet.
+
+I tillegg til å bruke testrammeverk som Jest, kan du også skrive egne tester ved å sjekke forventede resultater mot faktiske resultater, og ved å sjekke om funksjoner utfører ønsket oppførsel.
 
 ## Dypdykk
-I tillegg til å teste funksjoner, kan du også skrive tester for brukergrensesnitt, API-er og mer komplekse deler av koden din. Ved å ha en god dekning av tester, kan du være trygg på at endringer og ny funksjonalitet du implementerer ikke ødelegger eksisterende funksjonalitet.
 
-Det er også verdt å nevne at det å skrive tester også kan føre til en mer ryddig og strukturert kode. Når du må tenke på hva slags input funksjonene dine kan få og hva slags output de skal gi, kan det hjelpe deg med å skrive mer lesbar og oversiktlig kode.
+Å skrive tester kan virke tidkrevende og unødvendig i begynnelsen, men det kan faktisk spare deg for mye tid og arbeid på lang sikt. Gjennom å skrive tester, lærer du deg å tenke mer gjennom grundig på koden din og forbedre kvaliteten på den. Det kan også hjelpe deg med å identifisere dårlige designvalg og gjøre koden din mer lesbar og vedlikeholdbar.
 
-## Se også
-- [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
-- [https://www.testim.io/blog/testing-javascript/](https://www.testim.io/blog/testing-javascript/)
-- [https://codeburst.io/learn-to-test-javascript-in-30-minutes-818a41aea05d](https://codeburst.io/learn-to-test-javascript-in-30-minutes-818a41aea05d)
+Det er også viktig å huske på at tester ikke garanterer feilfri kode, men de kan hjelpe deg med å avdekke potensielle feil og gi deg en større følelse av trygghet når du gjør endringer i koden din.
+
+## Se Også
+
+- [Jest](https://jestjs.io/) - Testrammeverk for Javascript
+- [Testing JS](https://www.testingjavascript.com/) - Ressurser og kurs for å lære mer om testing i Javascript
+- [10 Mest Vanlige Feil i Testkode og Hvordan Unngå Dem](https://codeutopia.net/blog/2017/11/10-common-unit-testing-mistakes/) - Tips for å skrive bedre tester.

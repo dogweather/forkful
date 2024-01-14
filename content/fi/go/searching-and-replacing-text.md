@@ -1,43 +1,46 @@
 ---
 title:    "Go: Tekstin etsiminen ja korvaaminen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluat käyttää tekstiin haku- ja korvaustoimintoa? Se on hyödyllinen tekniikka tekstin muokkaamiseen nopeasti, erityisesti silloin kun työskentelet suurten tekstimäärien kanssa. Se voi säästää aikaa ja vaivaa manuaalisen muokkaamisen sijaan.
+Jos olet ohjelmoija Go-kielellä, saatat löytää itsesi usein etsimässä ja korvaamassa tekstiä koodistasi. Tämä on yleinen tehtävä kehitystyössä, joten on hyödyllistä tietää miten se tehdään tehokkaasti Go:n avulla.
 
-## Kuinka
+## Miten Tehdä
 
-Voimme käyttää Go-ohjelmointikielen ```strings``` kirjastoa etsimään ja korvaamaan tekstiä. Alla on esimerkki koodista, joka korvaa kaikki ```hello``` sanat ```hej``` sanoilla:
+Go-kielessä on erilaisia tapoja etsiä ja korvata tekstiä, riippuen siitä mitä tarkalleen haluat saavuttaa. Yksi yleisimmistä tavoista on käyttää **strings.Replace** -funktiota, joka korvaa kaikki esiintymät annetulla merkkijonolla annetulla uudella merkkijonolla. Tässä on esimerkkitilanne:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	text := "Hello world, hello everyone!"
-	replacedText := strings.ReplaceAll(text, "hello", "hej")
-
-	fmt.Println(replacedText)
-
-	// Output: Hej world, hej everyone!
+    s := "Tervetuloa Go-ohjelmointimaailmaan"
+    newS := strings.Replace(s, "Tervetuloa", "Moi", -1)
+    fmt.Println(newS)
 }
+
+//Tulostaa "Moi Go-ohjelmointimaailmaan"
 ```
 
-## Syvempi sukellus
+Huomaa, että **-1** määrittää korvattavien esiintymien lukumäärää. Jos haluat korvata vain tietyn määrän esiintymiä, voit antaa sen korvaavan merkkijonon jälkeen.
 
-Etsimisen ja korvaamisen lisäksi Go:ssa on myös muita työkaluja tekstinkäsittelyyn, kuten ```regexp``` kirjasto, joka mahdollistaa monimutkaisempien sääntöjen käytön tekstiä etsiessä ja korvatessa. Go sisältää myös useita muita hyödyllisiä kirjastoja, jotka voivat auttaa tekstinkäsittelyssä.
+## Syväsukellus
+
+On myös muita tapoja käsitellä tekstiä Go-kielellä. Voit esimerkiksi käyttää **strings.Contains** -funktiota tarkistaaksesi, onko merkkijonossa tiettyä tekstiä. Voit myös käyttää **strings.Index** -funktiota löytääksesi tietyn merkkijonon ensimmäisen esiintymän indeksin.
+
+On myös hyödyllistä tietää, että Go tarjoaa myös **regexp** -kirjaston, jolla voit suorittaa monimutkaisempia hakuja ja korvauksia säännöllisiä lausekkeita käyttäen.
 
 ## Katso myös
 
-- [Go-kielen viralliset dokumentit](https://golang.org/doc/)
-- [Go-kielen ```strings``` kirjaston dokumentit](https://golang.org/pkg/strings/)
-- [Go-kielen ```regexp``` kirjaston dokumentit](https://golang.org/pkg/regexp/)
-- [Go-kielen muita tekstinkäsittelyyn liittyviä kirjastoja](https://github.com/avelino/awesome-go#text-processing)
+- <a href="https://blog.golang.org/strings">Go:n blogikirjoitus merkkijonojen käsittelystä</a>
+- <a href="https://golang.org/pkg/strings/">Go:n virallinen dokumentaatio merkkijonofunktioista</a>
+- <a href="https://medium.com/golangspec/regular-expressions-in-go-1-12-1-1-1-29d13cd217dd">Säännöllisten lausekkeiden käyttö Go:ssa</a>

@@ -1,43 +1,45 @@
 ---
-title:    "Fish Shell: Extraindo subcadeias"
+title:    "Fish Shell: Extraindo substrings"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a extração de substrings em Fish Shell?
+## Por que
 
-A extração de substring, ou seja, a obtenção de uma parte específica de uma string, pode ser útil em diversas situações na programação com Fish Shell. Por exemplo, se você precisa manipular dados em um formato específico ou deseja remover determinados caracteres de uma string, a extração de substrings pode ser uma ótima solução.
+Se você está trabalhando com strings em suas programações em Fish Shell, é provável que, em algum momento, precise extrair partes específicas dessa string. O processo de extrair uma substring é conhecido como "extracting substrings" e pode ser útil em diversas situações, como manipulação de dados ou formatação de saída.
 
-## Como fazer a extração de substrings em Fish Shell
+## Como fazer
 
-Para realizar essa tarefa em Fish Shell, você pode utilizar o comando `string sub`, seguido do índice do primeiro caractere e do último caractere que deseja extrair. Por exemplo, se você tem uma string chamada `frase` e deseja extrair apenas a primeira palavra, o código ficaria assim:
-
-```
-frase="Olá, tudo bem?"
-
-string sub $frase 1 3
-```
-
-O comando acima irá extrair os caracteres da posição 1 até a posição 3, ou seja, `Olá`. Vale ressaltar que o primeiro caractere de uma string tem índice 1, e não 0.
-
-Você também pode utilizar o comando `string match` para extrair substrings que correspondam a um padrão específico. Por exemplo, se você tem uma string que contém um endereço de e-mail e deseja obter apenas o domínio, você pode usar o seguinte código:
+Para extrair uma substring em Fish Shell, você pode utilizar o comando `string sub`. Por exemplo, se tivermos a string "lorem ipsum dolor sit amet", podemos extrair apenas "ipsum" utilizando a seguinte sintaxe:
 
 ```
-email="usuario@dominio.com"
-
-string match --regex '\@(.+)$' $email
+string sub 'lorem ipsum dolor sit amet' 6 11
 ```
 
-O resultado será `dominio.com`, que é a parte da string que corresponde ao padrão `\@(.+)$`, que significa "o caractere '@' seguido de um ou mais caracteres até o final da string".
+Onde o primeiro argumento é a string original, o segundo é o índice de início da substring e o terceiro é o índice de fim (incluindo o último caractere).
 
-## Aprofundando na extração de substrings em Fish Shell
+Ou seja, `string sub 'lorem ipsum dolor sit amet' 6 11` extrairá a substring "ipsum" da string original.
 
-Para quem deseja se aprofundar mais neste assunto, é possível utilizar wildcards e expressões regulares com o comando `string match` para extrair substrings ainda mais específicas. Além disso, o Fish Shell também possui outras ferramentas para manipulação de strings, como o comando `string join` e a função `string split`.
+Além disso, você também pode utilizar esse comando em conjunto com outras ferramentas do Fish Shell, como o `echo` para imprimir a saída, ou redirecionar a saída para um arquivo. Veja um exemplo abaixo:
 
-A extração de substrings também pode ser útil no processo de substituição de caracteres em uma string, por exemplo, utilizando o comando `string replace`.
+```
+echo (string sub 'lorem ipsum dolor sit amet' 6 11) > output.txt
+```
+
+Nesse caso, a saída da string "ipsum" será redirecionada para o arquivo "output.txt".
+
+## Aprofundando
+
+O comando `string sub` pode ser usado de diversas maneiras, permitindo extrair não apenas uma substring específica, mas também múltiplas substrings. Além disso, também é possível utilizar expressões regulares no lugar dos índices, o que permite extrair partes da string que correspondam a um determinado padrão.
+
+Outra funcionalidade interessante é a possibilidade de utilizar variáveis no lugar da string original, o que proporciona maior flexibilidade e dinamismo em suas programações.
+
+Para saber mais sobre o comando `string sub` e todas suas funcionalidades, confira a documentação oficial do Fish Shell.
 
 ## Veja também
 
-- [Documentação oficial do Fish Shell sobre strings](https://fishshell.com/docs/current/cmds/string.html)
-- [Exemplos práticos de extração de substrings em Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_special_variables)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/cmds/document.html)
+- [Tutorial sobre expressões regulares no Fish Shell](https://medium.com/@razncex/my-fish-shell-config-part-3-extracting-substrings-with-regex-groups-8edec2a01a85)
+- [Exemplos de utilização do comando `string sub`](https://fishshell.com/docs/current/cmds/string-sub.html)

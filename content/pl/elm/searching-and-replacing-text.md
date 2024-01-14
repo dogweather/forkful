@@ -1,38 +1,55 @@
 ---
-title:    "Elm: Wyszukiwanie i zamiana tekstu"
+title:    "Elm: Wyszukiwanie i zamienianie tekstu"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami podczas pisania kodu w Elm, może zdarzyć się, że potrzebujemy bardzo szybko zmienić pewien fragment tekstu, na przykład nazwę zmiennej lub funkcji. W takich sytuacjach bardzo przydatna jest funkcja wyszukiwania i zastępowania tekstu.
+Czy kiedykolwiek zastanawiałeś się, dlaczego warto poszukać i zamienić tekst w swoim programie w Elm? W tym artykule opowiem Ci o kilku powodach, dla których jest to przydatne narzędzie dla każdego programisty.
+
+Głównym powodem, dla którego warto używać funkcji `String.replace` w Elm, jest możliwość szybkiego i łatwego zmieniania tekstu w wielu plikach jednocześnie. Wystarczy jedna komenda, aby zastąpić wszędzie dowolne wyrażenie lub słowo bez konieczności szukania i poprawiania każdego wystąpienia oddzielnie.
 
 ## Jak to zrobić
 
-Aby wyszukać i zastąpić tekst w Elm, możemy skorzystać z funkcji "replace" z modułu "String". Przykładowo, jeśli chcemy zmienić nazwę zmiennej "liczba" na "number", możemy to zrobić w następujący sposób:
+W Elm możemy używać `String.replace` w prosty sposób za pomocą funkcji `String.replace old new text`, gdzie `old` to szukane wyrażenie, `new` to zamiennik, a `text` to tekst, w którym chcemy dokonać zmiany. Poniżej znajduje się przykładowy kod w Elm oraz wynik działania:
 
-```elm
-replace "liczba" "number" "liczba = 5" 
--- zwróci "number = 5"
+```Elm
+String.replace "pszenica" "ryż" "Lubię jeść pszenicę na śniadanie."
 ```
 
-Funkcja "replace" przyjmuje trzy argumenty: szukaną frazę, frazę zastępczą oraz tekst, w którym chcemy przeprowadzić zmiany.
-
-## Głębszy wgląd
-
-W Elm możemy również stosować wyrażenia regularne do wyszukiwania i zastępowania tekstu. Możemy użyć funkcji "Regex.replace" z modułu "Regex", aby przeprowadzić bardziej zaawansowane zmiany w tekście. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "kot" na "pies" w tekście, możemy to zrobić w ten sposób:
-
-```elm
-Regex.replace (Regex.fromRegex "kot") "pies" "Kot lubi mleko"
--- zwróci "pies lubi mleko"
+```
+"Lubię jeść ryż na śniadanie."
 ```
 
-Funkcja "Regex.fromRegex" zamienia wzorzec regularny na obiekt regex, który zostaje następnie przekazany do funkcji "Regex.replace" jako pierwszy argument.
+Możemy również użyć `String.replace` w połączeniu z funkcją `List.map` dla większej liczby plików. Przykładowy kod poniżej zamienia nazwę programu Shopify na Spotify we wszystkich plikach w liście `files`:
 
-## Zobacz również
+```Elm
+List.map (\file -> String.replace "Shopify" "Spotify" file) files
 
-- [Dokumentacja funkcji replace w Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Dokumentacja funkcji Regex.replace w Elm](https://package.elm-lang.org/packages/elm/regex/latest/Regex#replace)
-- [Przykładowe wyrażenia regularne w Elm](https://dev.to/buntine/elm-regex-cheat-sheet-5621)
+-- Plik 1: "Moja aplikacja Shopify jest niesamowita."
+-- Plik 2: "Kupiłem kilka produktów na Shopify."
+```
+
+```
+-- Plik 1: "Moja aplikacja Spotify jest niesamowita."
+-- Plik 2: "Kupiłem kilka produktów na Spotify."
+```
+
+## Dogłębny przegląd
+
+Funkcja `String.replace` w Elm oferuje również wiele opcji dostosowywania podczas wyszukiwania i zamieniania tekstu. Możemy użyć dowolnego wyrażenia regularnego jako `old`, co daje możliwość zaawansowanego przeszukiwania i zastępowania. Możemy również użyć opcji `limit`, aby określić maksymalną liczbę wystąpień, które chcemy zastąpić.
+
+Funkcja `String.replace` jest również bardzo wydajna, ponieważ stosuje specjalne optymalizacje w celu uniknięcia niepotrzebnych iteracji przez tekst. W ten sposób może być używana nawet w dużych i złożonych projektach bez problemów wydajnościowych.
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o funkcji `String.replace` w Elm, polecam zapoznać się z oficjalną dokumentacją oraz innymi przydatnymi artykułami na temat programowania w Elm:
+
+- https://guide.elm-lang.org/strings/
+- https://www.elm-tutorial.org/en/03-subs-cmds/04-request.html
+- https://medium.com/@evancz/string-literals-are-not-utf-8-266f6919e26f
+
+Dzięki wykorzystaniu funkcji `String.replace` w Elm, możesz zaoszczędzić czas i wysiłek podczas zmieniania tekstu w swoim programie. Jest to proste i wydajne narzędzie, które może być bardzo przydatne w różnych scenariuszach. Dlatego warto poznać je lepiej i wykorzystać w swoim kodzie.

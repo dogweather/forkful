@@ -1,78 +1,50 @@
 ---
-title:    "C: Uttrekking av delstrenger"
+title:    "C: Utvinne understrønger"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å hente ut delstrenger, eller substrings som det kalles på engelsk, er en viktig funksjon i C-programmering. Dette gjør det mulig å manipulere tekst på en mer presis og effektiv måte. I denne bloggposten skal vi se nærmere på hvorfor og hvordan man kan hente ut substrings i C.
+Mange ganger når man jobber med strenger i et C-program, kan det hende at man ønsker å isolere en del av teksten for å få tilgang til eller manipulere den separat. Dette er når å hente ut substrings kan være nyttig. Substrings er en del av en større tekststreng som vi ønsker å hente ut og jobbe med uavhengig av resten av strengen. Dette gjør det mulig å lage mer dynamiske og komplekse programmer som kan behandle tekst på en mer presis måte.
 
-## Hvordan
+## Hvordan?
 
-Å hente ut substrings i C krever bruk av et par funksjoner. Først må man velge hvilken del av teksten man ønsker å hente ut, deretter må man bruke funksjonen `strncpy()` for å kopiere delstrengen til et nytt sted i minnet. For å forklare dette bedre, la oss se på et eksempel:
+For å hente ut substrings fra en streng i C, kan vi bruke funksjonen `strncpy` som er tilgjengelig i standardbiblioteket `string.h`. Denne funksjonen kopierer en bestemt mengde tegn fra en kildestreng til en målstreng. La oss se på et eksempel:
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    // Oppretter en tekststreng
-    char tekst[] = "Dette er en tekststreng";
-
-    // Lager en buffer for den nye delstrengen
-    char buffer[20];
-
-    // Henter ut en del av teksten
-    strncpy(buffer, tekst + 11, 7);
-
-    // Printer ut delstrengen og legger til avsluttende nulltegn
-    printf("%s\0", buffer);
-
+    char original_string[] = "Hei, min venn!";
+    char substring[10];
+    
+    // Kopier de første 3 tegnene fra original_string og lagre det i substring
+    strncpy(substring, original_string, 3);
+    
+    // Legg til avslutningstegnet for å unngå uønsket data
+    substring[3] = '\0';
+    
+    // Skriv ut resultatet
+    printf("Substring: %s\n", substring);
+    
     return 0;
 }
 ```
 
-Når vi kjører dette programmet, vil vi få følgende utput:
+Dette programmet vil skrive ut "Hei" siden vi har valgt å kopiere de første 3 tegnene fra `original_string` og lagret det i `substring`. Det er viktig å merke seg at `strncpy` kopierer et bestemt antall tegn, så vi må også inkludere et avslutningstegn for å unngå uønsket data.
 
-`tekststre`
+## Større forståelse
 
-La oss nå forklare koden litt nærmere. Vi starter med å inkludere standard biblioteker `stdio.h` og `string.h`. Deretter oppretter vi en tekststreng `tekst` med teksten "Dette er en tekststreng". Vi lager også en buffer `buffer` for å lagre den nye delstrengen. I `strncpy()` funksjonen, spesifiserer vi at vi ønsker å starte å kopiere fra indeks 11 i `tekst` og at vi vil kopiere 7 tegn. Dette er fordi at arrays og strenger i C starter på indeks 0, så ved å legge til 11 på `tekst`overskrider vi "Dette er en " og ved å kopiere 7 tegn får vi "tekststre". Til slutt printer vi ut `buffer` og legger til et avsluttende nulltegn for å markere enden av delstrengen.
+For å få en dypere forståelse av hvordan substrings fungerer i C, er det viktig å forstå hvordan strenger er lagret i minnet. I C er en streng en sekvens av tegn som avsluttes med et nulltegn. Når vi henter ut en substring, bruker vi egentlig bare en peker til en del av den opprinnelige strengen. Dette betyr at vi ikke har to separate strenger, men heller to pekere som peker til forskjellige deler av den samme strengen.
 
-## Dykk dypere
-
-For å hente ut delstrenger på en mer avansert måte, kan man bruke funksjonen `strtok()` som deler opp en stor tekststreng i mindre deler basert på en gitt delimiter (skillemerke). La oss se på et eksempel på dette:
-
-```C
-#include<stdio.h>
-#include<string.h>
-
-int main() {
-    // Oppretter en tekststreng
-    char tekst[] = "en, to, tre, fire, fem";
-
-    // Første strtok() kall vil hente ut "en"
-    char *del = strtok(tekst, ", ");
-
-    // Går gjennom tekststrengen til strtok() returnerer NULL
-    while (del != NULL) {
-        printf("%s ", del);
-        // På neste strtok() kall vil "to" bli hentet ut
-        del = strtok(NULL, ", ");
-    }
-
-    return 0;
-}
-```
-
-Utpå kjøre programmet vil vi få følgende output:
-
-`en to tre fire fem`
-
-I dette eksempelet bruker vi komma og mellomrom som delimiter, og hver gang `strtok()` finner en av disse, vil den returnere den neste delen av strengen. Vi printer ut hver del og går gjennom hele teksten til `strtok()` returnerer `NULL`, som er slutten på strengen.
+Det er også viktig å merke seg at substrings ikke alltid trenger å være like lange som den opprinnelige strengen. Med hjelp av funksjoner som `strchr`, `strpbrk`, `strspn` og `strstr` i `string.h` kan vi også hente ut substrings basert på spesifikke kriterier, som for eksempel å finne en viss karakter eller et bestemt ord i en tekststreng.
 
 ## Se også
 
-- [C-programmering: Arrays og strenger (w3schools.com)](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [String manipulation functions (geeksforgeeks.org)](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-in-built-function/)
+- [C-programmering: Strenger](https://www.systutorials.com/docs/linux/man/3-stpcpy/)
+- [C-programmering: Arrays](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
+- [Standardbiblioteket `string.h` i C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

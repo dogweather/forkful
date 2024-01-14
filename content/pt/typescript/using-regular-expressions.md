@@ -1,47 +1,43 @@
 ---
 title:    "TypeScript: Utilizando expressões regulares"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em TypeScript?
+## Por que usar expressões regulares?
 
-As expressões regulares são uma poderosa ferramenta para lidar com padrões de texto em TypeScript. Elas permitem que você pesquise, extraia e manipule dados de maneira mais eficiente e elegante. Além disso, o uso de expressões regulares pode diminuir a quantidade de código que você precisa escrever para realizar tarefas específicas.
+Expressões regulares são uma importante ferramenta para manipular e buscar padrões de texto em programação. Ao utilizá-las, é possível automatizar tarefas e economizar tempo, além de tornar o código mais eficiente e fácil de entender.
 
-## Como usar expressões regulares em TypeScript?
+## Como usar expressões regulares em TypeScript
 
-Para começar a usar expressões regulares em seu código TypeScript, é necessário primeiro importar o módulo `Regex` do pacote `@types/regex` ou utilizar o operador `RegExp`. Em seguida, você pode utilizar os métodos e propriedades oferecidos por esse módulo para realizar as operações desejadas. Por exemplo, para verificar se uma string contém um determinado padrão, você pode utilizar o método `test()` seguido pelo padrão que deseja verificar entre barras `/  /`.
+Para utilizar expressões regulares em TypeScript, é necessário primeiro criar uma instância da classe ```RegExp```, que representa uma expressão regular. Dentro dos parênteses, é possível adicionar o padrão que se deseja buscar, utilizando símbolos especiais como ```+```, ```*``` e ```[]```.
 
-```TypeScript
-import Regex from '@types/regex';
+Por exemplo, se quisermos buscar todas as palavras que começam com a letra "c", podemos utilizar a expressão regular ```/c\w+/```, onde ```/``` indica o início e o fim da expressão, ```c``` é o padrão que procuramos e ```\w+``` representa qualquer palavra após a letra "c". Podemos então utilizar o método ```test()``` para verificar se uma determinada string possui uma correspondência com a expressão regular, ou o método ```exec()```, que retorna todas as correspondências encontradas.
 
-const str: string = "Blog de programação com TypeScript";
-
-Regex.test(/TypeScript/, str); // retorna true
-Regex.test(/Java/, str); // retorna false
-```
-
-Você também pode utilizar as expressões regulares para extrair dados de uma string usando o método `exec()`. Este método retorna um array com as correspondências encontradas ou `null` caso nenhuma correspondência seja encontrada.
+Veja abaixo um exemplo de como utilizar expressões regulares em TypeScript:
 
 ```TypeScript
-Regex.exec(/Blog(.*)TypeScript/, str); // retorna ["Blog de programação com ", undefined]
+// Criando uma instância da classe RegExp
+const rex = new RegExp(/c\w+/);
+
+// Verificando se uma string possui correspondência
+console.log(rex.test("cachorro")); // true
+console.log(rex.test("gato")); // false
+
+// Retornando todas as correspondências
+console.log(rex.exec("cavalo cavalo cobra")); // ["cavalo", index: 0, input: "cavalo cavalo cobra"]
 ```
 
-Além disso, você pode utilizar o método `replace()` para substituir uma parte da string por outra utilizando expressões regulares.
+## Mergulho profundo
 
-```TypeScript
-Regex.replace(/TypeScript/, "JavaScript", str); // retorna "Blog de programação com JavaScript"
-```
+Existem muitas formas de utilizar expressões regulares em TypeScript, como realizar substituições, buscar padrões específicos dentro de um texto ou até mesmo validar entradas de formulários. Além disso, é possível utilizar flags como ```i```, para ignorar letras maiúsculas e minúsculas, e ```g```, para buscar todas as correspondências em vez de apenas a primeira.
 
-## Mergulho profundo em expressões regulares
-
-Embora as expressões regulares sejam uma ferramenta muito útil, elas podem ser complicadas de entender e até mesmo de escrever. Compreender os padrões e metacaracteres utilizados nas expressões regulares é essencial para utilizá-las de forma eficiente em seu código TypeScript. Além disso, é importante ter conhecimento sobre a função de cada método oferecido pelo módulo `Regex` e como utilizá-los corretamente.
-
-Algumas outras opções de utilização de expressões regulares em TypeScript incluem o uso de flags, que permitem modificar o comportamento padrão das expressões regulares; o uso de grupos de captura, que permitem recuperar partes específicas de uma correspondência; e o uso de quantificadores, que permitem especificar a quantidade de vezes que um padrão deve aparecer.
+No entanto, é importante ter cuidado ao utilizar expressões regulares, pois podem ser complexas e afetar o desempenho do código. É recomendado sempre testar e verificar se o padrão utilizado retorna os resultados esperados.
 
 ## Veja também
 
-- [Documentação oficial do módulo Regex em TypeScript](https://www.typescriptlang.org/dt/search?search=regex)
-- [Guia completo sobre expressões regulares em TypeScript](https://regex101.com/library/Zqnr5A)
-- [Tutorial sobre expressões regulares em JavaScript para iniciantes](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [Documentação oficial do TypeScript sobre expressões regulares](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Expressões regulares: uma introdução para iniciantes](https://medium.com/tableless/express%C3%B5es-regulares-uma-introdu%C3%A7%C3%A3o-para-iniciantes-33a1ee687182)
+- [Tutorial de expressões regulares em TypeScript](https://www.tutorialspoint.com/typescript/typescript_regex.htm)

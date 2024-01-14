@@ -1,54 +1,47 @@
 ---
 title:    "Python recipe: Converting a date into a string"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-One common task in programming is converting a date into a string. This can be useful for displaying a date in a specific format or for saving dates in a certain format for future use. Understanding how to convert dates into strings is an essential skill for any Python programmer.
+Converting a date into a string is a common task for many Python programmers. It allows us to format dates in a way that is easily readable for both humans and machines. Whether you are working with date data in a project or just looking to learn more about date manipulation in Python, understanding how to convert a date into a string is a useful skill to have.
 
 ## How To
 
-Converting a date into a string in Python is a relatively straightforward process. We will use the built-in `datetime` module to work with dates and times. First, we need to import the `datetime` module:
+Converting a date into a string can be achieved using the `strftime` function from the `datetime` module. Let's take a look at a few examples of how to use this function.
 
-```python 
-import datetime
+```Python
+# Import the necessary modules
+from datetime import datetime
+
+# Create a date object
+date = datetime(2021, 10, 31)
+
+# Convert the date into a string using the default format
+print(date.strftime("%m/%d/%Y"))
+# Output: 10/31/2021
+
+# Convert the date into a string using a custom format
+print(date.strftime("%b %d, %Y"))
+# Output: Oct 31, 2021
 ```
 
-Next, let's create a new `datetime` object using the `datetime()` constructor. We will pass in the year, month, and day as arguments.
+In the first example, we used the `%m/%d/%Y` format to display the date in the format of month/day/year. In the second example, we used the `%b %d, %Y` format to display the date in the format of abbreviated month name, day, and year.
 
-```python 
-my_date = datetime.datetime(2021, 9, 1)
-```
-
-Now, we can use the `strftime()` method to convert the date into a string in a specified format. The `strftime()` method takes in a format string as an argument. This format string specifies how the date should be displayed. Some commonly used format codes are:
-
-- `%a`: abbreviated weekday name (e.g. Mon)
-- `%A`: full weekday name (e.g. Monday)
-- `%b`: abbreviated month name (e.g. Jan)
-- `%B`: full month name (e.g. January)
-- `%d`: day of the month (e.g. 01)
-- `%m`: month (e.g. 09)
-- `%Y`: year (e.g. 2021)
-
-Here is an example of converting our `my_date` object into a string in the format of "Month Day, Year":
-
-```python 
-print(my_date.strftime("%B %d, %Y"))
-```
-
-This will output: "September 01, 2021". You can experiment with different format codes to achieve your desired output.
+There are many different formatting options available for the `strftime` function, so be sure to check the [documentation](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) for a full list of options.
 
 ## Deep Dive
 
-Behind the scenes, the `datetime` module uses the `strftime()` method to convert the date into a string. The `strftime()` method uses the locale's formatting conventions by default, but you can also provide a custom format string as shown in the example above. It also supports localization by using the locale module which enables us to display dates in different languages and date formats.
+Behind the scenes, the `strftime` function uses a combination of strftime directives and the current locale to convert the date into a string. The strftime directives dictate how the date will be formatted, while the locale determines the language and cultural conventions to be used in the conversion.
 
-It is worth noting that in addition to the `strftime()` method, the `datetime` module also has a `strptime()` method which does the opposite - it converts a string into a structured date object. This can be useful when reading and parsing dates from a file or user input.
+If no locale is specified, the conversion will use the default locale for your system. However, you can also explicitly specify a locale for more precise control over the conversion.
 
 ## See Also
 
-- [Python official documentation on datetime module](https://docs.python.org/3/library/datetime.html)
-- [Python strftime reference](https://strftime.org/)
-- [Python strptime reference](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+- [Python datetime documentation](https://docs.python.org/3/library/datetime.html)
+- [Python strftime directives](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior)
+- [Python locale documentation](https://docs.python.org/3/library/locale.html)

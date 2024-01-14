@@ -1,37 +1,41 @@
 ---
-title:    "Fish Shell: Tarkistetaan löytyykö hakemistoa"
+title:    "Fish Shell: Tarkastetaan, onko hakemisto olemassa"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit tarkistaa, onko hakemistoa olemassa? Ehkä tarvitset ohjelmassasi tiettyä polkua tai haluat varmistaa, että tietty hakemisto on olemassa ennen kuin jatkat sen käyttöä.
+On monia syitä, miksi saattaisit haluta tarkistaa, onko kansiossa olemassa. Esimerkiksi voit käyttää tätä tarkistamaan, onko tarvittava kansio olemassa ennen tiedoston luomista, jotta voit varmistaa, että koodisi toimii oikein.
 
 ## Miten
 
-Fish Shellissa on helppo tarkistaa, onko hakemisto olemassa käyttämällä `test` komentoa ja `-d` flagia. Tämä tarkistaa, onko olemassaolon lisäksi kyseessä myös hakemisto.
+Fish Shelliin sisäänrakennettu `test` -toiminto mahdollistaa helposti kansion olemassaolon tarkistamisen. Se palauttaa `true`, jos kansio löytyy ja `false`, jos sitä ei ole olemassa. Käytä sitä seuraavasti:
 
-```
-Fish Shell kayttaen
-
-test -d hakemisto
-```
-
-Tulosteena saat joko `true` tai `false` riippuen siitä, onko hakemisto olemassa.
-
-```
-true
+```Fish Shell
+if test -d [kansion nimi]
+    echo "Kansio on olemassa"
+end
 ```
 
-## Syventävä sukellus
+Voit myös käyttää kansion olemassaolon tarkistamiseen `set` -komennon `--query` vaihtoehtoa. Tämä palauttaa `true`, jos kansiota ei ole olemassa ja `false` muuten:
 
-`test` komento tukee myös muita flagia, joita voit käyttää hakemistojen tarkistamiseen. Esimerkiksi `-f` flagin avulla voit tarkistaa, onko kyseessä tiedosto tai `-L` flagilla voit tarkistaa symbolisen linkin olemassaolon.
+```Fish Shell
+set --query [kansion nimi]
+```
 
-On myös mahdollista käyttää `if` ehtolauseita tarkistamiseen, jolloin voit määrittää tiettyjä toimenpiteitä, jotka suoritetaan vain jos hakemisto ei ole olemassa.
+### Syöte ja tuloste
+
+Syöteenä voit käyttää kansion nimeä tai polkua, joka sisältää kansion nimen. Tulosteessa `true` osoittaa, että kansio on olemassa ja `false` osoittaa, että sitä ei ole.
+
+## Syvemmälle
+
+Kansion olemassaolon tarkistaminen perustuu tiedostojärjestelmän olemassaolon tarkistamiseen, joka on yksi Unix-järjestelmän perusperiaatteista. Fish Shellin sisäänrakennettu `test` -toiminto käyttää taustalla olevaa `test` -komennon toteutusta, joka on myös Unix-järjestelmässä.
 
 ## Katso myös
 
-- [Fish Shell test documentation](https://fishshell.com/docs/current/cmds/test.html)
-- [DigitalOcean article on working with files in Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-the-fish-shell)
+- [Fish Shellin dokumentaatio kansioita koskevista komentoista](https://fishshell.com/docs/current/cmds/dirs.html)
+- [Unix-järjestelmän perusperiaatteet](https://en.wikipedia.org/wiki/Unix_philosophy#The_Modular_Design_Principle)
+- [Fish Shellin dokumentaatio `test` -toiminnosta](https://fishshell.com/docs/current/cmds/test.html)

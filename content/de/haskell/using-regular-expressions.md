@@ -1,47 +1,47 @@
 ---
-title:    "Haskell: Verwendung regulärer Ausdrücke"
+title:    "Haskell: Verwendung von regulären Ausdrücken"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum Regular Expressions in Haskell verwenden?
 
-Regular Expressions sind ein leistungsstarkes Werkzeug, das dir dabei helfen kann, Zeichenketten in deinen Haskell Programmen zu verarbeiten. Sie ermöglichen es dir, komplexe Muster in Texten zu finden, zu ersetzen oder zu validieren. Mit Regular Expressions kannst du deine Programmierung auf ein neues Level bringen und effizienter arbeiten.
+Regular Expressions sind ein mächtiges Werkzeug in der Programmierung, um bestimmte Muster in Texten zu erkennen und zu manipulieren. In Haskell ermöglichen sie uns, komplexe Such- und Ersetzungsvorgänge auf einer effizienten und eleganten Art und Weise auszuführen. Ob bei der Verarbeitung von Daten oder der Entwicklung von Anwendungen, Regular Expressions können uns dabei helfen, unsere Programme präziser und skalierbarer zu gestalten.
 
-## Wie es geht
+## Wie man Regular Expressions in Haskell verwendet
 
-Um reguläre Ausdrücke in Haskell zu verwenden, musst du das `regex-base` Paket importieren. Schauen wir uns an, wie man einen einfachen regulären Ausdruck verwendet, um alle Wörter in einem Text zu finden.
-
-```Haskell
-import Text.Regex.Base
-import Text.Regex.Posix
-
-str = "Hallo, mein Name ist Max."
-
--- Finde alle Wörter in str
-words = getAllTextMatches (str =~ "\\w+")
-```
-Die Ausgabe wird so aussehen: `["Hallo", "mein", "Name", "ist", "Max"]`. Hier haben wir den regulären Ausdruck `\\w+` verwendet, der für ein oder mehrere alphanumerische Zeichen steht.
-
-Du kannst auch reguläre Ausdrücke verwenden, um Text zu ersetzen oder zu validieren. Schauen wir uns ein Beispiel an, wie man alle Kommas in einem Text durch Punkte ersetzen kann.
+Um Regular Expressions in Haskell zu verwenden, müssen wir zuerst das `Text.Regex` Modul importieren. Dann können wir `makeRegex` verwenden, um einen regulären Ausdruck aus einem String zu erstellen. Anschließend können wir `matchRegex` benutzen, um zu überprüfen, ob ein String mit dem regulären Ausdruck übereinstimmt. Hier ist ein Beispiel:
 
 ```Haskell
-str = "Das ist ein Beispiel, wie man Text ersetzen kann."
+import Text.Regex
 
--- Ersetze alle Kommas durch Punkte
-newStr = subRegex (mkRegex ",") str "."
+-- Erstellt einen regulären Ausdruck, der nach einer beliebigen Anzahl von Ziffern sucht
+regex = makeRegex "[0-9]+"
+
+-- Überprüft, ob der String "12345" mit dem regulären Ausdruck übereinstimmt
+matchRegex regex "12345" -- gibt Just ["12345"] zurück, da der String übereinstimmt
+matchRegex regex "abc" -- gibt Nothing zurück, da der String nicht übereinstimmt
 ```
-Die Ausgabe wird so aussehen: `"Das ist ein Beispiel. wie man Text ersetzen kann."`. Hier haben wir `mkRegex` verwendet, um eine Regex-Instanz zu erstellen und `subRegex` um die Ersetzung durchzuführen.
 
-## Tiefentauchen
+Neben `makeRegex` und `matchRegex` gibt es noch viele andere nützliche Funktionen, die uns bei der Verwendung von Regular Expressions in Haskell helfen. Hier sind einige weitere Beispiele:
 
-Regular Expressions unterstützen viele nützliche Funktionen wie Backreferences, Anker oder Quantoren. Diese werden verwendet, um komplexe Muster zu erstellen oder spezifische Teile des Textes zu finden. Es lohnt sich, sich mit diesen Funktionen auseinanderzusetzen, um das volle Potential von regulären Ausdrücken auszuschöpfen.
+```Haskell
+-- Ersetzt alle Vorkommen von "a" durch "b" in einem String
+subRegex (makeRegex "a") "b" "foobar" -- gibt "fbbbr" zurück
 
-Eine gute Ressource zum Lernen und Üben von regulären Ausdrücken in Haskell ist das `regex-tutor` Paket. Es bietet interaktive Übungen und Beispiele, die dir dabei helfen, deine Fähigkeiten zu verbessern.
+-- Findet alle Vorkommen von "abc" in einem String und gibt eine Liste der Indizes zurück
+matchAllRegex (makeRegex "abc") "abcabcabc" -- gibt [(0,3), (3,6), (6,9)] zurück
+```
 
-## Siehe auch
+## Tiefere Einblicke in die Verwendung von Regular Expressions
 
-- [Das regex-base Paket](https://hackage.haskell.org/package/regex-base)
-- [Die offizielle Dokumentation zu regulären Ausdrücken in Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/regex-base-0.94.0.0/Text-Regex-Base.html)
-- [Das regex-tutor Paket](https://hackage.haskell.org/package/regex-tutor)
+Regular Expressions sind mächtiger als viele denken mögen. Sie können nicht nur einfache Textsuche und -ersetzung ermöglichen, sondern auch komplexere Prozesse wie das Validieren von E-Mail-Adressen oder das Extrahieren von Daten aus HTML-Code. In Haskell können wir sogar benutzerdefinierte Funktionen in unsere regulären Ausdrücke integrieren, um die Verarbeitung von Texten noch weiter zu verbessern.
+
+Es ist jedoch wichtig zu beachten, dass Regular Expressions nicht die beste Wahl für jede Situation sind. Bei komplexen oder großen Datenmengen können sie sehr rechenintensiv werden. Außerdem können sie manchmal verwirrend oder schwer zu lesen sein, vor allem für Anfänger. Es ist daher ratsam, Regular Expressions nur dort einzusetzen, wo sie am besten geeignet sind und alternative Ansätze zu verwenden, wenn möglich.
+
+# Siehe auch
+
+- Offizielle Dokumentation des `Text.Regex` Moduls: https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex.html
+- Eine nützliche Einführung in die Verwendung von Regular Expressions in Haskell: https://wiki.haskell.org/Regex_Packages

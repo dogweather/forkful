@@ -1,37 +1,64 @@
 ---
-title:    "Swift: Capitaliser une chaîne de caractères"
+title:    "Swift: Majusculiser une chaîne de caractères"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous pouvez vous demander pourquoi vous voudriez mettre une chaîne en majuscule en programmant en Swift. Une raison courante pourrait être de suivre les conventions de nommage d'une API ou d'afficher du texte en majuscule dans votre application.
+Le capitalisation d'une chaîne de caractères est un aspect important de la programmation Swift car elle permet de mettre en évidence certaines parties du texte ou de respecter certaines normes de présentation. Dans cet article, nous allons explorer comment capitaliser une chaîne de caractères en utilisant le langage Swift.
 
-# Comment Faire
+## Comment faire
 
-Pour mettre une chaîne en majuscule en Swift, vous pouvez utiliser la méthode `uppercased()`. Voici un exemple de code pour mettre une chaîne en majuscule :
+Pour capitaliser une chaîne de caractères en Swift, nous pouvons utiliser la méthode `capitalized`. Voici un exemple de code avec une chaîne de caractères en minuscules :
 
 ```Swift
-let string = "Bonjour tout le monde!"
-let uppercaseString = string.uppercased()
-print(uppercaseString)
+let string = "hello world"
+let capitalizedString = string.capitalized
+print(capitalizedString)
+
+// Output : "Hello World"
 ```
 
-Résultat :
+Nous pouvons également utiliser la méthode `uppercased` pour capitaliser tous les caractères d'une chaîne, même ceux qui sont déjà en majuscules :
 
+```Swift
+let string = "HeLLo wORld"
+let capitalizedString = string.uppercased()
+print(capitalizedString)
+
+// Output : "HELLO WORLD"
 ```
-BONJOUR TOUT LE MONDE!
+
+Si nous voulons capitaliser uniquement le premier mot d'une chaîne, nous pouvons utiliser la méthode `capitalizingFirstLetter` en combinaison avec `lowercased` :
+
+```Swift
+let string = "apple banana orange"
+let firstWordCapitalized = string.capitalizingFirstLetter()
+print(firstWordCapitalized)
+
+// Output : "Apple banana orange"
+
+let onlyFirstWordCapitalized = firstWordCapitalized.lowercased()
+print(onlyFirstWordCapitalized)
+
+// Output : "apple banana orange"
 ```
 
-# Plongée Profonde
+## Plongée en profondeur
 
-La méthode `uppercased()` utilise les règles de casse locales de votre appareil pour mettre la chaîne en majuscule. Cela signifie que si vous utilisez cette méthode sur un appareil en anglais, la chaîne sera en majuscule uniquement avec des lettres telles que "A", "B", "C", etc. Si vous utilisez cette méthode sur un appareil en français, la chaîne sera en majuscule avec des lettres telles que "À", "Ê", "Ç", etc.
+En explorant les méthodes de capitalisation en Swift, nous pouvons constater que l'utilisation de `capitalized` est plus efficace que d'utiliser `uppercased` car elle prend en compte les caractères spéciaux et les accents.
 
-Vous pouvez également utiliser la méthode `localizedUppercase` si vous voulez que la chaîne soit en majuscule en utilisant les règles de casse du pays dans lequel se trouve l'utilisateur de l'application.
+Par exemple, avec la chaîne de caractères "éééé", `uppercased` retournerait la même chaîne alors que `capitalized` la capitaliserait correctement en "Éééé".
 
-# Voir Aussi
+## Voir aussi
 
-- [Documentation Apple sur la méthode `uppercased()`](https://developer.apple.com/documentation/swift/string/1787237-uppercased)
-- [Documentation Apple sur la méthode `localizedUppercase()`](https://developer.apple.com/documentation/swift/string/2894563-localizeduppercase)
+Vous pouvez en apprendre davantage sur la capitalisation des chaînes de caractères en Swift en consultant les liens suivants :
+
+- [La documentation officielle de Swift sur les méthodes de capitalisation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID538)
+- [Un tutoriel pour débutants sur la manipulation des chaînes de caractères en Swift](https://www.ralfebert.de/ios-examples/foundation/string/uikit_nsstring_nsattributedstring/capitalize/)
+- [Un article expliquant comment capitaliser correctement les noms propres en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)
+
+Maintenant que vous maîtrisez la capitalisation en Swift, vous pouvez faciliter la présentation de vos textes dans vos applications et respecter les normes de présentation. Bon codage !

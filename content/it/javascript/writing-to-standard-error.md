@@ -1,48 +1,46 @@
 ---
-title:    "Javascript: Scrivere su errori standard."
+title:    "Javascript: Scrittura su errore standard"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Spesso, quando scriviamo codice in Javascript, ci concentriamo sulle funzionalità del nostro programma e ci dimentichiamo di gestire gli errori che potrebbero verificarsi. Tuttavia, scrivere correttamente gli errori alla standard error può aiutare a debuggare e a individuare eventuali problemi nel nostro codice.
+Scrivere nel flusso di errore standard può essere utile per scrivere informazioni dettagliate su un errore durante l'esecuzione di una codice Javascript. Ciò può aiutare a identificare e risolvere problemi in modo rapido ed efficiente.
 
-## Come farlo
+## Come Fare
 
-Per scrivere correttamente gli errori alla standard error, è possibile utilizzare il metodo `console.error()`, fornito dalla libreria `console` di Javascript. Questo metodo accetta una serie di argomenti che verranno visualizzati come messaggio di errore sulla console.
+Per scrivere nel flusso di errore standard in Javascript, puoi utilizzare il metodo `console.error()`. Questo metodo accetta un argomento che può essere una stringa o un oggetto e lo stampa nel flusso di errore standard. Ad esempio:
 
-```
-Javascript
-console.error("Errore! Variabile non definita.", undefinedVariable) 
-```
-
-Questo codice produrrà un output come questo sulla console:
-
-```
-Errore! Variabile non definita. undefined
+```Javascript
+console.error("Oops! Qualcosa è andato storto.");
 ```
 
-In questo modo, si può identificare facilmente la causa dell'errore e lavorare per risolverlo. Si può anche utilizzare il metodo `console.warn()` per emettere un messaggio di avvertimento sulla standard error.
+Questo codice stamperà la stringa "Oops! Qualcosa è andato storto." nel flusso di errore standard, che può essere visualizzato nella console del tuo browser o in altri ambienti di esecuzione di Javascript.
+
+Puoi anche utilizzare `console.error()` per stampare oggetti con dettagli aggiuntivi sull'errore. Ad esempio:
+
+```Javascript
+const errore = {
+  codice: 404,
+  messaggio: "Pagina non trovata"
+};
+
+console.error(errore);
+```
+
+Questo codice stamperà l'oggetto `errore` nel flusso di errore standard, mostrando sia il codice 404 che il messaggio "Pagina non trovata".
 
 ## Approfondimento
 
-Scrivere correttamente gli errori alla standard error è particolarmente utile quando si gestiscono promesse in Javascript. Utilizzando il costrutto `catch` in combinazione con il metodo `console.error()`, possiamo gestire gli errori in modo più efficace e fornire un feedback migliore agli utenti del nostro programma.
+Scrivere nel flusso di errore standard può essere particolarmente utile durante il processo di debug. Può aiutare a identificare i problemi in modo più preciso e fornire informazioni utili per risolverli.
 
-```
-Javascript
-fetch('url_del_web_service')
-    .then(response => response.json())
-    .then(data => {
-        // manipolazioni dei dati
-    })
-    .catch(error => console.error("Errore durante il fetch dei dati:", error))
-```
+Inoltre, è possibile utilizzare `console.error()` per scrivere nelle console di altri ambienti di esecuzione di Javascript, come Node.js o ambienti di testing. Ciò rende questa funzione particolarmente versatile e utile per la risoluzione di errori in più tipi di progetti.
 
-In questo caso, se il fetch dei dati dovesse fallire, il messaggio di errore sarà visualizzato sulla standard error, aiutando a identificare il problema e a gestirlo correttamente.
+## Vedi Anche
 
-## Vedi anche
-
-- [Documentazione ufficiale di `console` in Javascript](https://developer.mozilla.org/it/docs/Web/API/Console)
-- [Gestione degli errori in Javascript con `try...catch`](https://www.w3schools.com/js/js_errors.asp)
+- [Documentazione di console.error()](https://developer.mozilla.org/it/docs/Web/API/Console/error)
+- [Come risolvere i problemi di debugging in Javascript](https://medium.com/@yashnm007/how-to-debug-errors-in-javascript-like-a-pro-o-d361f0b26db7)
+- [Guida completa al debugging in Node.js](https://medium.com/@meisterbrett/debugging-node-js-recipes-bba16722aec)

@@ -1,34 +1,62 @@
 ---
 title:    "Gleam: Escribiendo un archivo de texto"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto
+## ¿Por qué escribir un archivo de texto en Gleam?
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador. Puede ser utilizado para almacenar información, crear scripts o incluso como una forma de documentar el código. Además, el formato de archivo de texto es universalmente reconocido y puede ser abierto en cualquier dispositivo o sistema operativo.
+Escribir un archivo de texto es esencial en cualquier lenguaje de programación, ya que permite almacenar y compartir información de manera organizada y legible. En Gleam, esto se logra utilizando la función `File.write` que permite escribir datos en un archivo especificado.
 
-## Cómo escribir un archivo de texto en Gleam
+## ¿Cómo hacerlo?
 
-Gleam es un lenguaje de programación funcional que permite escribir de manera fácil y eficiente archivos de texto. A continuación, presentamos un ejemplo de código que muestra cómo crear un archivo de texto llamado "ejemplo.txt" y escribir algunos datos en él.
+Para escribir un archivo de texto en Gleam, se sigue el siguiente formato:
 
-```Gleam
-fn main() {
-  let output_file = File.create("ejemplo.txt") //crea el archivo de texto
-  File.write(output_file, "¡Hola, mundo!") //escribe en el archivo
-  File.append(output_file, " Esto es un ejemplo de archivo de texto en Gleam.") //añade más texto al archivo
-}
+```
+Gleam
+import gleam/file
+
+file.write(
+  path: "./mi_archivo.txt",
+  data: "¡Hola, mundo!"
+)
+```
+En este ejemplo, se ha importado el módulo `file` y se utiliza la función `write` para especificar la ruta del archivo y los datos que se desean escribir en él. En este caso, se escribe "¡Hola, mundo!" en el archivo `mi_archivo.txt` ubicado en la misma carpeta que el archivo Gleam.
+
+La función `File.write` también permite escribir datos de variables u otros tipos de datos, como por ejemplo:
+
+```
+Gleam
+import gleam/file
+
+let nombre = "Juan"
+let edad = 25
+let profesion = "Desarrollador"
+
+let datos = """
+Nombre: $(nombre)
+Edad: $(edad)
+Profesión: $(profesion)
+"""
+
+file.write(
+  path: "./datos_personales.txt",
+  data: datos
+)
 ```
 
-Una vez que se ejecute este código, se creará un archivo de texto llamado "ejemplo.txt" en el directorio donde se esté ejecutando el programa. Si abres el archivo, verás que contiene el texto "¡Hola, mundo! Esto es un ejemplo de archivo de texto en Gleam." 
+En este ejemplo, se crea una variable `datos` que contiene información personal y se utiliza la función `write` para escribir dichos datos en el archivo `datos_personales.txt`.
 
-## Profundizando en la escritura de archivos de texto
+## Profundizando
 
-Gleam ofrece múltiples funciones y métodos para la escritura de archivos de texto, como por ejemplo: File.read(), que permite leer el contenido de un archivo de texto, File.rename(), que permite cambiar el nombre de un archivo, y File.delete(), que elimina un archivo. Además, se pueden utilizar otros tipos de datos, como listas o mapas, para escribir información más compleja en un archivo de texto.
+La función `File.write` ofrece más opciones, como por ejemplo especificar el modo de escritura (`append` para agregar datos al final del archivo o `truncate` para sobrescribir el archivo) y configurar permisos de acceso al archivo. Estas opciones pueden consultarse en la documentación oficial de Gleam.
+
+También es importante tener en cuenta que al escribir un archivo, se debe asegurar de cerrarlo correctamente después de su uso utilizando la función `File.close` para evitar posibles errores o pérdida de datos.
 
 ## Ver también
 
-- [Documentación oficial de Gleam sobre manejo de archivos](https://gleam.run/documentation/manipulating-files)
-- [Tutorial de Gleam sobre escritura y lectura de archivos](https://gleam.run/documentation/manipulating-files/tutorial.html)
-- [Página de GitHub de Gleam, donde se pueden encontrar más ejemplos de código](https://github.com/gleam-lang/gleam)
+- [Documentación oficial de Gleam sobre la función `File.write`](https://gleam.run/documentation/core/modules/file#write)
+- [Tutorial de Gleam en español](http://gleam.run/es/tutorials)
+- [Ejemplos prácticos de uso de la función `File.write`](https://github.com/gleam-lang/examples/tree/main/file-write)

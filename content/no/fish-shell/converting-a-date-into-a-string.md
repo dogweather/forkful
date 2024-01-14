@@ -1,39 +1,48 @@
 ---
-title:    "Fish Shell: Konvertere en dato til en streng"
+title:    "Fish Shell: Konvertering av dato til en streng"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konvertere en dato til en streng er en viktig funksjon i programmering, spesielt når man arbeider med dato- og tidsbaserte applikasjoner. Denne prosessen tillater deg å vise datoer på en klar og forståelig måte for brukere av programmet ditt. I denne bloggposten vil vi se på hvordan du kan gjøre dette ved hjelp av Fish Shell.
+Å konvertere en dato til en streng kan være nyttig når du vil vise en dato på en mer lesbar måte. Dette er spesielt nyttig når du jobber med datoer i tekstfiler eller programmeringsspråk.
 
 ## Hvordan
 
-For å konvertere en dato til en streng i Fish Shell, kan du bruke kommandoen `date` etterfulgt av `+%A, %d. %B %Y`. Dette vil gi deg datoen i et format som "Tirsdag, 28. september 2021".
+For å konvertere en dato til en streng i Fish Shell, kan du bruke kommandoen `date -s`. Her er et eksempel på hvordan du kan gjøre det:
 
-```Fish Shell
-date +%A, %d. %B %Y
+```
+Fish Shell> date -s "2021-05-24"
+Mandag 24. Mai 2021  00:00:00
 ```
 
-Du kan også legge til klokkeslettet ved å bruke `%H:%M` i kommandoen. For eksempel, `date +%A, %d. %B %Y kl. %H:%M` vil gi deg "Tirsdag, 28. september 2021 kl. 10:30".
+Som du kan se, viser kommandoen datoen på en mer lesbar måte ved å bruke navn på måned og ukedag.
 
-Her er et eksempel på hvordan dette ville se ut i et skript:
+Du kan også bruke ulike formateringsalternativer for å tilpasse utseendet på datoen. Her er et eksempel der vi endrer formatet til å vise datoen som dag måned/år:
 
-```Fish Shell
-echo "Nåværende dato og tid er:"
-echo (date +%A, %d. %B %Y kl. %H:%M)
+```
+Fish Shell> date -s "2021-05-24" "+%d %B/%Y"
+24 Mai/2021
 ```
 
-### Mer informasjon
+Du kan også bruke flere kommandoer og variabler for å tilpasse datoen ytterligere. For eksempel, for å bare vise dag, måned og år, kan du bruke `date +%d.%m.%Y`:
 
-For å få en grundigere forståelse av hvordan `date` fungerer, kan du bruke kommandoen `man date` i terminalen. Dette vil gi deg dokumentasjonen for denne kommandoen og alle dens mulige formater.
+```
+Fish Shell> date -s "2021-05-24" +%d.%m.%Y
+24.05.2021
+```
 
-En annen måte å spesifisere et format på er ved hjelp av variabelen `$__fish_date_format`. Du kan endre dette formatet ved å skrive `set -U __fish_date_format "%Y-%m-%d"` i terminalen. Dette vil endre datoformatet til å bli "2021-09-28".
+## Dypdykk
+
+Bak kulissene bruker Fish Shell kommandolinjeverktøyet `date` som er tilgjengelig på mange Unix-baserte operativsystemer. Denne kommandoen lar deg manipulere og vise datoen på forskjellige formater. For mer informasjon og en fullstendig liste over formateringsalternativer, kan du bruke kommandoen `man date` i terminalen.
+
+Nå som du vet hvordan du konverterer en dato til en streng i Fish Shell, er du klar til å bruke dette verktøyet i dine egne prosjekter for å vise datoer på en mer lesbar måte.
 
 ## Se også
 
-- [Fish Shell dokumentasjon om `date`](https://fishshell.com/docs/current/cmds/date.html)
-- [Guide til å bruke dato og tid i Fish Shell](https://www.linux.com/topic/desktop/using-dates-date-command-linux/)
-- [Mer informasjon om formatering av datoer i Fish Shell](https://stackoverflow.com/questions/18615585/how-to-format-current-date-time-using-a-shell-script-in-linux)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Unix `date` kommando dokumentasjon](https://www.man7.org/linux/man-pages/man1/date.1.html)
+- [Guide til Grunnleggende Styresystemkonfigurasjon og Verktøy](https://www.ntnu.no/wiki/display/itinfo/010+Guide+til+Grunnleggende+Styresystemkonfigurasjon+og+Verkt%C3%B8y)

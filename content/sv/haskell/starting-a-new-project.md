@@ -1,48 +1,46 @@
 ---
-title:    "Haskell: Börja ett nytt projekt"
+title:    "Haskell: Att starta ett nytt projekt."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att starta ett nytt projekt kan verka skrämmande och överväldigande, men det kan också vara en spännande utmaning. Genom att lära sig Haskell kan du skapa välstrukturerad och robust kod som kan användas i olika projekt. 
+Att starta ett nytt programmeringsprojekt i Haskell kan verka överväldigande för många. Men med detta funktionsrika och eleganta programmeringsspråk kan du bygga robusta och effektiva programvaror. Så varför inte ge det en chans?
 
-# Hur man gör det
+## Hur man gör
 
-För att börja ett nytt Haskell-projekt, följ dessa enkla steg:
+Först och främst behöver du ladda ner och installera Haskell-plattformen på din dator. Detta gör du genom att gå till haskell.org och välja den lämpliga versionen för ditt operativsystem. När installationen är klar kan du öppna din favoriteditor och börjar koda!
 
-1. Installera Haskell-plattformen på din dator.
-2. Välj ett lämpligt utvecklingsverktyg, som till exempel GHCi, som gör det möjligt att interaktivt utforska och testa din kod.
-3. Skapa en mapp för ditt projekt och öppna det i ditt valda utvecklingsverktyg.
-4. Börja skriva din kod genom att definiera moduler och funktioner.
-
-Här är ett exempel på en enkel "Hello World" -applikation i Haskell:
+För att visa ett enkelt exempel på hur Haskell fungerar, ska vi skapa en funktion som räknar ut kvadraten på ett tal:
 
 ```Haskell
--- Importera standardbiblioteket för att använda funktionen "putStrLn".
-import Prelude
-
--- Definiera en funktion som skriver ut en sträng.
-helloWorld :: IO ()
-helloWorld = putStrLn "Hej världen!"
-
--- Anropa funktionen.
-main :: IO ()
-main = helloWorld
+square :: Int -> Int
+square x = x * x
 ```
 
-När du kör denna kod kommer du att se "Hej världen!" utskrift i ditt utvecklingsverktyg. 
+I koden ovan definierar vi en funktion som heter "square" som tar in en integer och returnerar en integer. Funktionen multiplicerar inparametern med sig själv och returnerar resultatet. 
 
-# Vertikal dykning
+För att testa funktionen kan vi skriva följande i en terminal:
 
-Att starta ett nytt projekt i Haskell ger dig möjlighet att lära dig grundläggande koncept som funktionsprogrammering och typsystem. Det är viktigt att tilldel din kod och strukturera den på ett sätt som är enkelt att underhålla och bygga vidare på. Du kan också utforska olika Haskell-ramverk och bibliotek för att hjälpa dig att bygga projekt efter dina behov.
+```Haskell
+square 5
+```
 
-Det är också viktigt att tänka på testning och dokumentation av din kod när du startar ett nytt projekt. Genom att göra detta från början kan du säkerställa att din kod är robust och lätt att förstå för andra utvecklare som kan bidra till ditt projekt i framtiden.
+Outputen blir då 25, eftersom vi matade in 5 som inparameter.
 
-# Se även
+## Djupdykning
 
-- [Officiell Haskell-plattform](https://www.haskell.org/platform/)
-- [Haskell-tutorial på svenska](https://leanpub.com/haskell-tutorial-sv/)
-- [Haskell Wiki](https://wiki.haskell.org/Haskell)
+För att verkligen komma igång med ett nytt Haskell-projekt är det viktigt att förstå hur man strukturerar koden på ett smidigt sätt. Haskell använder sig av moduler för att organisera kod och förhindra namnkollisioner. Du kan tänka på en modul som en samling av relaterade funktioner, datatyper och värden.
+
+Ett annat viktigt koncept i Haskell är "typklasser". Dessa liknar interfaces i andra programmeringsspråk och definierar vissa beteenden som en typ måste ha för att kunna användas på ett visst sätt.
+
+Slutligen är det viktigt att förstå konceptet av "lazy evaluation" i Haskell. Detta innebär att koden inte utvärderas omedelbart utan väntar tills resultatet behövs. Detta gör att programmen i Haskell kan vara mer effektiva och undviker onödig beräkning.
+
+## Se även
+
+- [Haskell.org](https://www.haskell.org/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Real World Haskell](http://book.realworldhaskell.org/)

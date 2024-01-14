@@ -1,57 +1,47 @@
 ---
-title:    "TypeScript: パターンに一致する文字の削除"
+title:    "TypeScript: パターンにマッチする文字を削除する"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
 
-なぜあなたはパターンに一致する文字を削除する必要があるのでしょうか？この記事では、TypeScriptで文字を削除する方法について説明します。
+あなたが文字のパターンにマッチする文字を削除することに興味があるかもしれません。この記事では、TypeScriptを使用して文字を削除する方法をご紹介します。
 
-## 方法
+##方法
 
-まず、`replace()`メソッドを使用して、文字列から特定の文字を置換する方法を見てみましょう。この例では、文字列から全ての小文字の"a"を削除します。
-
-```TypeScript
-let str = "Apple, banana, and orange.";
-let newStr = str.replace(/a/g, "");
-console.log(newStr);
-
-// Output: Apple, bnn, nd ornge.
-```
-
-また、正規表現を使用して複雑なパターンに一致する文字を削除することもできます。
+まず、文字列のpatternとreplacementを引数として取る`replace()`メソッドを使います。例えば、次のようになります。
 
 ```TypeScript
-let str = "John Smith (age: 29)";
-let newStr = str.replace(/\s\(.*\)/, "");
-console.log(newStr);
-
-// Output: John Smith
+const originalString = "Hello World!";
+const newString = originalString.replace(/o/g, "");
+console.log(newString); // "Hell Wrld!"
 ```
 
-さらに、`split()`メソッドを使用して文字列を配列に分割し、必要な部分だけを保持することもできます。
+この例では、文字列から`o`の文字を全て削除しました。`g`はRegExpオプションで、文字列内の全てのマッチを置換することを指定します。
+
+また、`replace()`メソッドを使う際には、文字列を直接変更するのではなく、新しい文字列を返すことに注意しましょう。
+
+##ディープダイブ
+
+`replace()`メソッドは、第一引数に正規表現を、第二引数に置換する文字列を指定することもできます。例えば、`/\d+/g`という正規表現は、文字列内の数字の列にマッチします。
 
 ```TypeScript
-let str = "1,2,3,4,5";
-let arr = str.split(",");
-arr.splice(2, 1);
-console.log(arr.join(","));
-
-// Output: 1,2,4,5
+const originalString = "I have 10 apples.";
+const newString = originalString.replace(/\d+/g, "five");
+console.log(newString); // "I have five apples."
 ```
 
-## 深堀り
+このように、正規表現を使用することで、より詳細なパターンにマッチする文字を選択することができます。
 
-文字の削除についてもっと学びたいですか？`replace()`や`split()`以外にも、`substring()`や`slice()`などの文字列操作メソッドを使用することもできます。また、正規表現のパターンをより詳細に設定することで、より特定の文字を削除することができます。
-
-## 参考リンク
+##参考リンク
 
 - [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs: RegExp](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [MDN Web Docs: String.prototype.split()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [MDN Web Docs: String.prototype.substring()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web Docs: String.prototype.slice()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [RegExp tutorial](https://javascript.info/regexp-introduction)
+- [正規表現30分入門](https://www.slideshare.net/moonpine/js-regular-expression-2012)
 
-## 関連リンク
+##もっと見る
+
+この記事で紹介した`replace()`メソッドを応用して、さまざまなパターンにマッチする文字を削除することができます。ぜひ実際にコーディングして試してみてください。

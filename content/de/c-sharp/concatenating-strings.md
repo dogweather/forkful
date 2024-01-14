@@ -1,58 +1,36 @@
 ---
-title:    "C#: Verknüpfung von Zeichenketten"
+title:    "C#: Zeichenfolgen verknüpfen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+Warum Strings in C# konkatenieren?
 
-In der Programmierung werden oft Strings verwendet, um Text darzustellen. Damit die Anwendung dynamischer und flexibler wird, muss es möglich sein, mehrere Strings miteinander zu verbinden oder aneinanderzuhängen. Dieser Prozess wird als String-Konkatenation bezeichnet und ist eine grundlegende Fähigkeit, die jeder Programmierer kennen sollte.
+String-Konkatenation ist eine grundlegende und wichtige Funktion beim Programmieren in C#. Strings sind eine Datenstruktur, die häufig für die Verarbeitung und Darstellung von Text verwendet wird. Die Fähigkeit, Strings effektiv zu konkatenieren, ist daher unerlässlich, um komplexe und dynamische Programmlogik umzusetzen.
 
-# Wie funktioniert String-Konkatenation in C#
+Wie wird es gemacht?
+
+Die Konkatenation von Strings in C# ist relativ einfach und erfordert nur die Verwendung des "+" Operators. Hier ist ein Beispielcode, der zwei Strings zusammenfügt:
 
 ```C#
 string firstName = "Max";
-string lastName = "Mustermann";
-
+string lastName = "Müller";
 string fullName = firstName + " " + lastName;
 Console.WriteLine(fullName);
-
-// Ausgabe: Max Mustermann
 ```
 
-In C# kann die Konkatenation von Strings auf verschiedene Arten durchgeführt werden. Eine Möglichkeit ist die direkte Verknüpfung der Strings mit dem `+` Operator. Dabei wird ein neuer String erstellt, der aus der Kombination der beiden ursprünglichen Strings besteht.
+Die Ausgabe dieses Codes wäre "Max Müller". Wie Sie sehen können, können nicht nur einzelne Zeichenfolgen, sondern auch Variablen und Ausdrücke miteinander konkateniert werden.
 
-Es ist auch möglich, die Methode `String.Concat()` zu verwenden, die mehrere Parameter akzeptiert und diese zusammenfügt. Diese Methode kann besonders nützlich sein, wenn mehr als zwei Strings miteinander kombiniert werden sollen.
+Tiefergehende Erklärung
 
-```C#
-string fruit1 = "Apple";
-string fruit2 = "Orange";
-string fruit3 = "Banana";
+Bei der Konkatenation von Strings in C# müssen Sie sich bewusst sein, dass der "+" Operator hinter den Kulissen einen anderen Operator namens "String.Concat" verwendet. Dieser Operator nimmt eine beliebige Anzahl von Argumenten entgegen und fügt sie zu einer einzigen Zeichenfolge zusammen. Daher können Sie auch mehr als zwei Strings miteinander konkatenieren, indem Sie einfach weitere Argumente dem "+" Operator hinzufügen.
 
-string fruits = String.Concat(fruit1, ", ", fruit2, ", ", fruit3);
-Console.WriteLine(fruits);
+Ein weiterer wichtiger Punkt bei der String-Konkatenation ist die Performance. Da Strings in C# unveränderlich sind, müssen bei jedem Konkatenationsvorgang neue Strings erstellt werden, was zu einem höheren Speicherverbrauch führen kann. Daher ist es oft effizienter, die Klasse "StringBuilder" zu verwenden, um Strings zusammenzufügen, insbesondere wenn Sie eine größere Anzahl von Zeichenfolgen konkatenieren müssen.
 
-// Ausgabe: Apple, Orange, Banana
-```
+Siehe auch
 
-# Tiefergehender Einblick
-
-In C# gibt es noch eine weitere Möglichkeit, Strings zu konkatenieren: mit dem `StringBuilder`-Objekt. Dies ist besonders effizient, wenn viele Strings kombiniert werden müssen, da dabei nicht jedes Mal ein neuer String erstellt werden muss.
-
-```C#
-StringBuilder sb = new StringBuilder();
-sb.Append("Hello");
-sb.Append(" World!");
-Console.WriteLine(sb.ToString());
-
-// Ausgabe: Hello World!
-```
-
-Zudem bietet der `StringBuilder` die Möglichkeit, bereits vorhandene Strings zu bearbeiten, anstatt neue zu erstellen. Dies kann Ressourcen sparen und die Geschwindigkeit der Anwendung verbessern.
-
-# Siehe auch
-
-- [Offizielle Microsoft Dokumentation zur String-Konkatenation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
-- [Erläuterung der Unterschiede zwischen `+` Operator und `String.Concat()` Methode](https://stackoverflow.com/questions/1309981/concatenation-vs-stringbuilder-which-one-is-faster)
-- [Weitere nützliche C# String Operationen](https://www.c-sharpcorner.com/article/string-operations-in-c-sharp/)
+- Offizielle Dokumentation zu String-Konkatenation in C#: https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/strings/#concatenation
+- Ein ausführliches Tutorial zur String-Konkatenation in C#: https://www.tutorialspoint.com/csharp/csharp_string_concatenation.htm
+- Weitere Informationen zur Klasse "StringBuilder": https://www.dotnetperls.com/stringbuilder

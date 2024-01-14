@@ -1,39 +1,48 @@
 ---
-title:    "Go: Konvertere en streng til små bokstaver"
+title:    "Go: Konvertering av en streng til små bokstaver"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å konvertere en streng til enkle bokstaver er en grunnleggende funksjon i mange programmeringsspråk, inkludert Go. Det er nyttig for å unngå sammenligningsfeil ved å sikre at to strenger med samme tekst, men med forskjellige bokstaver (store eller små), blir ansett som like. 
+Å konvertere en streng til små bokstaver er en vanlig oppgave i programmering, spesielt når man jobber med tekstbehandling. Ved å gjøre dette, kan man gjøre søk og sammenligninger av tekst mer nøyaktig og effektivt. 
 
 ## Hvordan
 
-Konverteringen av en streng til små bokstaver i Go kan gjøres ved hjelp av den innebygde funksjonen `strings.ToLower()`. Funksjonen tar en streng som argument og returnerer en ny streng med samme innhold, men alle bokstavene er konvertert til små bokstaver. 
-
 ```Go
-package main 
+package main
 
-import ( 
+import (
 	"fmt"
 	"strings"
 )
 
-func main() {
-	str := "HEI ALLE SAMMEN"
-	lowerCaseStr := strings.ToLower(str)
-	fmt.Println(lowerCaseStr) // utskrift: hei alle sammen
+func makeLowerCase(str string) string {
+	return strings.ToLower(str)
 }
+
+func main() {
+	str := "HELLO, WORLD!"
+	fmt.Println(makeLowerCase(str))
+}
+```
+
+Output:
+
+```
+hello, world!
 ```
 
 ## Dypdykk
 
-Det er viktig å merke seg at konverteringen til små bokstaver følger Unicode-prinsippene. Dette betyr at den håndterer ikke-vestlige tegn korrekt, som for eksempel akutt aksent (á) som blir konvertert til vanlig a (a). Det er også viktig å merke seg at konverteringsfunksjonen tar hensyn til lokale språkinnstillinger. Dette kan føre til at noen bokstaver, som for eksempel tyske umlaut (ä, ö, ü), behandles annerledes enn i andre programmeringsspråk. 
+Å konvertere en streng til små bokstaver kan virke enkelt, men det er viktig å være oppmerksom på ulike faktorer som kan påvirke resultatet. For eksempel kan noen bokstaver i andre språkskrifter ha spesielle regler for små bokstaver. I Go er det også mulig å bruke ulike funksjoner og metoder for å tilpasse konverteringen etter behov.
 
 ## Se også
 
-- Dokumentasjon for `strings.ToLower()` funksjonen: https://golang.org/pkg/strings/#ToLower
-- Informasjon om Unicode-prinsipper i Go: https://blog.golang.org/strings
-- Diskusjon om lokale språkinnstillinger og konvertering av bokstaver: https://stackoverflow.com/questions/7059968/how-do-i-convert-a-string-to-another-locale-in-go
+* [strings.ToLower() dokumentasjon](https://golang.org/pkg/strings/#ToLower)
+* [Slik bruker du strings.ToLower i Go](https://www.calhoun.io/using-the-basics-of-the-strings-package-in-go/)
+
+Takk for at du leste! Har du spørsmål eller tilbakemeldinger, ikke nøl med å kontakte meg. Lykke til med konvertering av strenger til små bokstaver i dine fremtidige Go-prosjekter!

@@ -1,86 +1,39 @@
 ---
-title:    "Elixir: Wydrukowanie wyników debugowania"
+title:    "Elixir: Drucken von Debug-Ausgabe"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest wyzwaniem, które wymaga nieustannego doskonalenia swoich umiejętności. Jednym ze sposobów na poprawę jakości kodu jest używanie funkcji do debugowania. W tym artykule dowiesz się, dlaczego warto korzystać z wydruku debugowania w Elixirze.
+Drukowanie wyjścia debugowania jest niezbędnym narzędziem podczas programowania w języku Elixir. Pomaga nam w zrozumieniu działania naszego kodu, identyfikowaniu błędów i poprawianiu go. Jest to szczególnie przydatne w przypadku dużych i złożonych projektów.
 
 ## Jak to zrobić
 
-Wykorzystanie wydruku debugowania w Elixirze jest bardzo proste i może znacznie usprawnić proces tworzenia oprogramowania. Aby zacząć, dodaj "IO.inspect()" do swojego kodu, który jest miejscem, w którym chcesz wydrukować wartości zmiennych. Następnie uruchom swoją aplikację i sprawdź, czy wydruk został poprawnie wyświetlony w konsoli.
+Aby wyświetlić wyjście debugowania w Elixir, możemy użyć funkcji `IO.inspect/2` lub `IO.inspect/3`. Przykładowy kod wyglądałby następująco:
 
-```elixir
-defmodule Opgblog.PostController do
-  def index(conn, _params) do
-    posts = Repo.all(Post)
+```Elixir
+# Użyj funkcji IO.inspect/2
+IO.inspect(variable, label: "Zmienna")
 
-    IO.inspect(posts)
-
-    conn
-    |> render("index.html", posts: posts)
-  end
-end
+# Użyj funkcji IO.inspect/3
+IO.inspect(variable, label: "Zmienna", limit: 10)
 ```
 
-Przykładowy output:
+Gdzie zmienna to nazwa zmiennej, którą chcemy sprawdzić, a limit to opcjonalny parametr określający maksymalną ilość danych do wyświetlenia. Możemy również podać etykietę, aby łatwiej zidentyfikować wyjście.
 
-```elixir
-[debug] QUERY OK source="posts" db=6.0ms
-SELECT p0.`id`, p0.`title`, ...
-FROM `posts` AS p0 []
-[
-  %Post{
-    __meta__: #Ecto.Schema.Metadata<
-      :loaded, "posts",
-      "posts.id=0", {:conn, #PID<0.1086.0>, :...}
-      ...>,
-    created_at: ~U[2022-01-01 00:00:00.000000Z],
-    id: 0,
-    title: "First Post"
-  },
-  %Post{
-    __meta__: #Ecto.Schema.Metadata<
-      :loaded, "posts",
-      "posts.id=1", {:conn, #PID<0.1086.0>, :...}
-      ...>,
-    created_at: ~U[2022-01-02 00:00:00.000000Z],
-    id: 1,
-    title: "Second Post"
-  }
-]
-```
+Po uruchomieniu naszego kodu z wykorzystaniem funkcji `IO.inspect`, wyświetlone zostaną informacje o zmiennej, wraz z wartością i typem. Dzięki temu możemy zweryfikować, czy dana zmienna ma oczekiwaną wartość w określonym momencie.
 
-## Głębszy wgląd
+## Głębsze przyjrzenie się
 
-Wydruk debugowania może również pomóc w zrozumieniu i naprawianiu błędów w aplikacji. Aby zobaczyć, które linie kodu są wykonywane, możesz dodać "IO.inspect(__ENV__)" i "IO.inspect(__MODULE__)" przed kodem, który chcesz sprawdzić. Dzięki temu, będziesz miał lepszy wgląd w to, które linie kodu są odpowiedzialne za dany output.
+Funkcja `IO.inspect` ma również inne opcje, takie jak `:depth`, która określa maksymalną głębokość wyświetlania zagnieżdżonych struktur danych, oraz `:pretty`, która formatuje dane w bardziej czytelny dla człowieka sposób.
 
-```elixir
-defmodule Opgblog.PostController do
+Istnieje również możliwość użycia `require IO` w naszym module lub skrypcie i późniejsze użycie tylko funkcji `inspect` zamiast `IO.inspect`. Użycie tej drugiej opcji może sprawić, że nasz kod będzie bardziej czytelny i zwięzły.
 
-  IO.inspect(__ENV__)
+## Zobacz również
 
-  IO.inspect(__MODULE__)
-
-  ...rest of the code
-end
-```
-
-Przykładowy output:
-
-```elixir
-[
-  line: 2,
-  file: "lib/opgblog/post_controller.ex",
-  function: :index,
-  module: Opgblog.PostController
-]
-```
-
-## Zobacz także
-
-- [Dokumentacja Elixir](https://hexdocs.pm/elixir/IO.html#inspect/1) - oficjalna dokumentacja dla funkcji IO.inspect().
-- [Blog Elixir Bubble](https://elixirbubble.io/debugging-with-io-inspect-in-elixir) - artykuł na temat debugowania w Elixirze przy użyciu IO.inspect().
+- [Dokumentacja Elixir - Moduł IO](https://hexdocs.pm/elixir/IO.html)
+- [Przewodnik po języku Elixir - Debugowanie](https://elixir-lang.org/getting-started/debugging.html)
+- [Podstawy wyjścia debugowania w Elixir](https://thoughtbot.com/blog/elixir-debugging-101)

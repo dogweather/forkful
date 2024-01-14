@@ -1,34 +1,39 @@
 ---
-title:    "Elm: Sammenligner to datoer"
+title:    "Elm: Sammenligning av to datoer"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvis du noen gang har programmert i Elm, har du sannsynligvis støtt på et problem med å sammenligne to datoer. Dette kan virke som en enkel oppgave, men det er faktisk ganske komplisert. I denne bloggposten vil jeg gå gjennom hvorfor det er nødvendig å sammenligne to datoer og hvordan du kan gjøre det på en effektiv måte.
+Å sammenligne to datoer er en vanlig utfordring når man jobber med programmering. Enten det er å sjekke om en bestemt hendelse har skjedd før eller etter en annen, eller å sortere en liste med datoer, er det viktig å kunne sammenligne dem på en nøyaktig og effektiv måte.
 
-## Hvordan
+# Hvordan
 
-Det finnes forskjellige metoder for å sammenligne to datoer i Elm, men den mest pålitelige og enkleste måten er ved å bruke den innebygde funksjonen `DateTime.compare`. La oss si at du har to datoer: `dato1` og `dato2`. For å sammenligne dem, kan du bruke følgende uttrykk:
+For å sammenligne to datoer i Elm, kan vi bruke `Date.compare` funksjonen. Denne funksjonen tar inn to `Date` verdier og returnerer en `Order` som kan være `Less`, `Equal` eller `Greater`, avhengig av forholdet mellom de to datoene.
 
-```Elm
-case DateTime.compare dato1 dato2 of
-  LT -> "dato1 er tidligere enn dato2"
-  EQ -> "dato1 og dato2 er de samme"
-  GT -> "dato1 er senere enn dato2"
+La oss se på et eksempel der vi sammenligner to datoer og deretter sjekker resultatet:
+
+```elm
+myDate1 = Date.fromString "2020-01-01"
+myDate2 = Date.fromString "2020-05-05"
+
+resultat = Date.compare myDate1 myDate2 
+
 ```
 
-Dette vil sammenligne de to datoene og returnere en `Order` type, som kan være `LT` (mindre enn), `EQ` (lik) eller `GT` (større enn). Deretter kan du bruke en `case` uttalelse for å håndtere de forskjellige tilfellene.
+I dette tilfellet vil `resultat` variabelen være satt til `Less`, siden `myDate1` kommer før `myDate2` i kalenderen. Vi kan også bruke denne funksjonen til å sortere en liste med datoer, i stedet for å bruke en innebygd funksjon som `List.sortBy`.
 
-## Dypdykk
+# Dypdykk
 
-Som nevnt tidligere, er det ganske komplisert å sammenligne to datoer på en nøyaktig måte. Dette er fordi datoer kan ha forskjellige tidszoner, formater og inneholde tidspunkter. Derfor er det viktig å konvertere datoene til en felles enhet før du sammenligner dem. Dette kan gjøres ved å bruke funksjonen `DateTime.toUtc`.
+Når man sammenligner datoer, er det viktig å være klar over at det ikke bare er dagene som sammenlignes, men også tidspunktene. Dette kan føre til uventede resultater, spesielt når man jobber med datoer fra forskjellige tidszoner.
 
-Det er også viktig å vite at `DateTime.compare`funksjonen sammenligner både dato og tid. Hvis du bare vil sammenligne datoen, kan du bruke funksjonen `Date.compare` i stedet.
+En annen ting å være oppmerksom på er at `Date.fromString` funksjonen forventer datoer i formatet "yyyy-mm-dd", men hvis man får datoer i et annet format, kan det føre til feil ved sammenligning. Det er derfor viktig å passe på at datoene som sammenlignes er i samme format.
 
-## Se også
+# Se også
 
-- Elm dokumentasjon om `DateTime` og `Date`: https://package.elm-lang.org/packages/elm/time/latest/
-- En artikkel om datoer og tidsstyring i Elm: https://dev.to/s-yucel/date-and-time-management-in-elm-55g2
+- Elm Date Package (https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm Documentation on Date (https://package.elm-lang.org/packages/elm/time/latest/Date)
+- Date Comparison in JavaScript vs Elm (https://dev.to/derekbeattie/date-comparison-in-javascript-vs-elm-46df)

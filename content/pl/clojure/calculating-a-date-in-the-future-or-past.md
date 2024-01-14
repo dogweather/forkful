@@ -1,52 +1,60 @@
 ---
-title:    "Clojure: Obliczanie daty w przyszłości lub przeszłości."
+title:    "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Czasami, podczas pisania programów, musimy manipulować datami, włączając w to daty w przeszłości lub przyszłości. Może być to przydatne, gdy budujemy aplikacje, które wymagają wyświetlania przyszłych lub przeszłych wydarzeń lub planowania działań na przyszłość.
+Obliczanie daty w przyszłości lub przeszłości może być istotne w wielu programach, szczególnie w tych, które wymagają określania okresów czasu. Na przykład, może to dotyczyć programów rezerwacji biletów lub kalendarzy. W Clojure możesz użyć wbudowanych funkcji, aby łatwo i precyzyjnie obliczyć daty w przyszłości lub przeszłości.
 
 ## Jak to zrobić
 
-Nie martw się, bo w Clojure istnieją gotowe funkcje do obliczania dat w przyszłości lub przeszłości. Oto kilka przykładów:
+Obliczenie daty w przyszłości lub przeszłości w Clojure jest łatwe i wymaga kilku kroków. Najpierw musisz zaimportować bibliotekę "clojure.java.time", zawierającą wiele przydatnych funkcji do pracy z datami. Następnie, używając funkcji "plus" lub "minus", możesz wybrać, czy chcesz dodać lub odjąć określony czas od bieżącej daty. Możesz również określić jednostkę czasu, np. "days" lub "months", aby uzyskać bardziej precyzyjny wynik.
 
 ```Clojure
-(require '[clojure.java-time :as t])
+(require '[clojure.java.time :as time])
 
-(t/plus (t/local-now) (t/period 0 1 0 0)) ; dodaje 1 rok do aktualnej daty
-; => #object[java.time.LocalDateTime 0x57d8ebaa "2022-06-25T10:55:08.254"]
+; Dodanie 7 dni do bieżącej daty
+(time/plus (java.time.LocalDate/now) 7 :days)
 
-(t/plus (t/local-now) (t/period 0 0 2 0)) ; dodaje 2 miesiące do aktualnej daty
-; => #object[java.time.LocalDateTime 0xc695f3 "2021-09-25T10:55:08.262"]
-
-(t/plus (t/local-now) (t/period 0 0 0 7)) ; dodaje 7 dni do aktualnej daty
-; => #object[java.time.LocalDateTime 0x4fa47542 "2021-07-02T10:55:08.268"]
+; Odjęcie 1 miesiąca od bieżącej daty
+(time/minus (java.time.LocalDate/now) 1 :months)
 ```
 
-Możemy również wykorzystać funkcję `t/minus` aby odjąć określoną liczbę lat, miesięcy lub dni. Wszystkie wyżej wymienione funkcje działają na obiekcie `java.time.LocalDateTime` i zwracają taki sam obiekt jako wynik.
-
-## Głębsze zanurzenie
-
-W Clojure możemy również wykorzystać bibliotekę `clj-time` do manipulowania datami. Umożliwia ona wykonanie bardziej skomplikowanych operacji, takich jak dodanie lub odjęcie określonej liczby godzin, minut lub sekund.
-
-Oto przykładowe wykorzystanie tej biblioteki:
+W powyższym przykładzie użyto funkcji "now" do pobrania bieżącej daty. Możesz również podać własną datę jako argument. Funkcja "plus" i "minus" zwraca datę w postaci obiektu Java, więc jeśli chcesz ją sformatować, musisz użyć funkcji "format" z biblioteki "clojure.string".
 
 ```Clojure
-(require '[clj-time.core :as t])
+; Ustawienie własnej daty jako argumentu
+(def start-date (java.time.LocalDate/of 2021 1 1))
 
-(t/plus (t/today) (t/days 10)) ; dodaje 10 dni do dzisiejszej daty
-; => #inst "2021-07-04T00:00:00.000-00:00"
+(time/plus start-date 1 :years)
 
-(t/plus (t/now) (t/hours 5)) ; dodaje 5 godzin do aktualnego czasu
-; => #inst "2021-06-25T15:59:41.269-00:00"
+; Sformatowanie wyniku
+(clojure.string/format "%1$td-%1$tm-%1$tY" (time/plus start-date 1 :years))
 ```
 
-Biblioteka `clj-time` również oferuje możliwość formatowania dat i czasów oraz wykonywania innych operacji z nimi.
+Wynik powinien wyglądać następująco: "01-01-2022".
+
+## Głębszy kontekst
+
+Istnieje również możliwość obliczenia daty w przyszłości lub przeszłości z uwzględnieniem różnych stref czasowych. W tym celu możesz użyć funkcji "plus-hours", "plus-days", itp. z biblioteki "clojure.java.time". Te funkcje możliwe do wykorzystania również pozwalają na przekazywanie obiektów dat z innych stref czasowych.
+
+```Clojure
+; Obliczanie daty w przyszłości z uwzględnieniem różnych stref czasowych
+(def date-now (java.time.Instant/now))
+
+; Przekazanie obiektu daty z innej strefy czasowej
+(def date-tokyo (java.time.ZoneId/of "Asia/Tokyo").from date-now)
+
+(time/plus-hours date-tokyo 12)
+```
+
+W powyższym przykładzie wynik wynosiłby datę 12 godzin później, ale w strefie czasowej Tokio.
 
 ## Zobacz również
 
-- Dokumentacja funkcji `plus` i `minus` z biblioteki `clojure.java-time`: https://github.com/dm3/clojure.java-time#plusminus
-- Dokumentacja funkcji `plus` i `minus` z biblioteki `clj-time`: https://github.com/clj-time/clj-time#functions
+- Dokumentacja Clojure na temat dat: https://clojure.org/api/java.time
+- Przewodnik po pracy z datami w Clojure: https://purelyfunctional.tv/guide/date-time/

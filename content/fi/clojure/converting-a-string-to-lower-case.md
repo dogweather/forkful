@@ -1,36 +1,32 @@
 ---
-title:    "Clojure: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:    "Clojure: Merkkijonon muuntaminen pieniksi kirjaimiksi"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi:
 
-On monia syitä, miksi haluat muuttaa merkkijonon pienaakkosiksi Clojurella. Yksi syy voisi olla vertailun tai hakemisen helpottaminen, kun haluat varmistaa, että isot ja pienet kirjaimet eivät vaikuta tuloksiin.
+Yksi yleinen ohjelmointitehtävä on muuntaa merkkijono pienaakkosiksi. Tämä on hyödyllistä esimerkiksi tietokantojen kanssa työskentelyssä, jossa vertailu tapahtuu usein pienaakkosittain.
 
-## Miten
-
-Muuttaminen isoista pieniksi kirjaimiksi Clojurella on erittäin helppoa. Voit käyttää funktiota "lower-case" ja antaa sille merkkijonon parametrina. Alla on esimerkki koodista ja tulostuksesta:
+## Miten:
 
 ```Clojure
-(def sana "Tämä ON Merkkijono")
-(lower-case sana)
-```
+(def s "Tämä on TESTIMERKKIJONO")
 
-Tämä koodi tuottaa seuraavan tulosteen:
+(println (.toLowerCase s))
 
 ```
-"tämä on merkkijono"
-```
+Tulostus: "tämä on testimerkkijono"
 
-## Syvempää tietoa
+## Syvempi sukellus:
 
-Kun muutat merkkijonon pienaakkosiksi, Clojure käyttää Unicode-standardia sääntöjen mukaisesti. Tämä tarkoittaa, että myös erikoismerkit ja aktsentit muutetaan pieniksi kirjaimiksi.
+Merkkijonon muuntaminen pienaakkosiksi tapahtuu käyttämällä Clojuren '.toLowerCase' toimintoa, joka käyttää Java-kirjaston vastaavaa metodia. Tämä toiminto ottaa merkkijonon ja palauttaa uuden kopion, jossa kaikki merkit ovat pienaakkosina.
 
-Jos haluat muuntaa vain tietyt kirjaimet pieniksi, voit käyttää funktiota "clojure.string/lower-case" ja antaa sille halutun merkkijonon ja erikseen vaihtoehtoisen kielen asetuksena. Voit lukea lisää tästä toiminnosta Clojuren virallisesta dokumentaatiosta.
+On tärkeää huomata, että tämä toiminto ei muuta alkuperäistä merkkijonoa, vaan palauttaa aina uuden kopion. Tämä voi olla hyödyllistä, jos haluat säilyttää alkuperäisen merkkijonon muuttumattomana.
 
-## Katso myös
+## Katso myös:
 
-- [Clojuren virallinen dokumentaatio](https://clojure.org/api/cheatsheet)
-- [Clojuren merkkijonofunktiot](https://clojure.org/reference/strings)
+- Clojure '.toUpperCase' toiminto: https://clojuredocs.org/clojure.core/upper-case
+- Java String '.toLowerCase' metodi: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--

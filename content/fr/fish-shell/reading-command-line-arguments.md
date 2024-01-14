@@ -1,46 +1,43 @@
 ---
-title:    "Fish Shell: Lecture des arguments de ligne de commande"
+title:    "Fish Shell: Lecture des arguments en ligne de commande"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Vous avez peut-être entendu parler de programmation en ligne de commande et de l'utilisation de lignes de commande pour exécuter des tâches sur votre ordinateur. Mais saviez-vous que le shell Fish offre une solution plus conviviale pour travailler avec des arguments de ligne de commande ? Dans cet article, nous allons plonger dans le monde de la programmation en ligne de commande avec Fish et découvrir pourquoi vous devriez envisager d'utiliser ses fonctionnalités.
+Si vous êtes un programmeur ou un administrateur système, vous savez probablement déjà à quel point le terminal peut être puissant. Mais saviez-vous qu'il est possible de passer des arguments en ligne de commande avec Fish Shell ? Si vous souhaitez automatiser des tâches ou simplement gagner du temps en utilisant la ligne de commande, lire des arguments en est une compétence essentielle.
 
-## Comment faire
+## Comment faire 
 
-Fish Shell facilite la lecture des arguments de ligne de commande grâce à sa syntaxe simple et intuitive. Voici un exemple de commande qui utilise un argument de ligne de commande :
+La syntaxe pour lire des arguments en ligne de commande avec Fish Shell est simple : 
 
-```Fish Shell
-cp monfichier.txt ~/Documents/
+```
+Fish Shell <nom du script> <arguments> 
 ```
 
-Dans cet exemple, `monfichier.txt` est un argument de la commande `cp`, qui copie le fichier dans le dossier `Documents` de votre utilisateur. Vous pouvez également utiliser des arguments pour définir des options, comme dans cet exemple :
+Par exemple, si vous avez un script nommé "mon_script.fish" et que vous souhaitez lui passer les arguments "foo" et "bar", vous pouvez taper : 
 
-```Fish Shell
-ls -l
+```
+Fish Shell mon_script.fish foo bar 
 ```
 
-Ici, l'argument `-l` est utilisé pour demander à la commande `ls` d'afficher les résultats en format long.
+Dans votre script, vous pouvez accéder aux arguments en utilisant les variables spéciales $argv et $argc. Par exemple, $argv[1] sera égal à "foo" et $argc sera égal à 2.
 
-## Plongée en profondeur
+## Plongée en profondeur 
 
-Outre les arguments simples, Fish Shell offre également la possibilité de lire des arguments combinés. Par exemple, vous pouvez utiliser un seul argument pour exécuter des commandes successives :
+Maintenant que vous savez comment lire des arguments en ligne de commande avec Fish Shell, voici quelques astuces supplémentaires. Vous pouvez accéder à l'ensemble des arguments en utilisant $argv ou $argc, mais vous pouvez également utiliser des index négatifs pour obtenir les arguments en partant de la fin. Par exemple, $argv[-1] sera égal à "bar" dans notre exemple précédent.
 
-```Fish Shell
-echo Cela est du texte || echo Cela n'est pas du texte
-```
+De plus, si vous devez traiter des arguments avec des espaces, vous pouvez les entourer de guillemets doubles pour les séparer en un seul argument. Par exemple, vous pouvez passer "bar baz" comme un seul argument en utilisant "bar baz" dans la ligne de commande.
 
-Dans cet exemple, la commande `echo` sera exécutée deux fois, mais seules les instructions après l'opérateur `||` seront imprimées à l'écran.
+## Voir aussi 
 
-Vous pouvez également utiliser des arguments dans des scripts pour automatiser des tâches récurrentes. Par exemple, vous pourriez créer un script qui prend en argument le nom d'un fichier, puis le copie dans un dossier spécifique. Cette fonctionnalité peut être très utile pour gagner du temps et éviter de saisir une commande complète à chaque fois que vous avez besoin de faire la même tâche.
+Pour en savoir plus sur la lecture des arguments en ligne de commande avec Fish Shell, voici quelques liens utiles : 
 
-## Voir aussi
+- Documentation officielle de Fish Shell sur la lecture des arguments : https://fishshell.com/docs/current/cmds/exec.html#reading-arguments
+- Tutoriel vidéo sur la lecture des arguments en ligne de commande avec Fish Shell : https://www.youtube.com/watch?v=po_ec6KQJiw
+- Exemples de scripts utilisant des arguments en ligne de commande avec Fish Shell : https://github.com/fish-shell/fish-shell/tree/master/doc_src/commands
 
-Si vous souhaitez en savoir plus sur la programmation en ligne de commande avec Fish Shell, voici quelques ressources supplémentaires que vous pourriez trouver utiles :
-
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Un tutoriel sur les bases de la programmation avec Fish Shell](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-fish-shell)
-- [Une liste de commandes utiles pour Fish Shell](https://github.com/jorgebucaran/awesome-fish)
+Maintenant que vous maîtrisez la lecture des arguments en ligne de commande avec Fish Shell, vous pourrez automatiser des tâches plus rapidement et plus efficacement. Bon codage !

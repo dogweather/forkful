@@ -1,43 +1,56 @@
 ---
 title:    "C#: 将日期转换为字符串"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：将日期转换为字符串是很常见的编程任务，因为它可以帮助我们将日期以更可读的方式呈现给用户。此外，将日期转换为字符串也可以方便我们在不同的程序中进行数据交互。
+为什么：只需要1-2句话来解释为什么某人会进行日期转换成字符串的操作。
 
-如何：下面我们将介绍如何使用C#编程语言来将日期转换为字符串。首先，我们需要创建一个DateTime对象，该对象包含我们想要转换的日期。然后，我们可以使用ToString()方法来将日期转换为字符串，如下所示：
+## 为什么
 
+在编程中，日期和时间在很多情况下都是必不可少的。有时候我们需要将日期和时间作为字符串进行处理，比如在输出日志或者保存数据时。因此，将日期转换成字符串是一项常见的操作。
+
+## 如何进行日期转换
+
+要将日期转换成字符串，我们可以使用C#中的ToString()方法。这个方法可以将日期按照指定的格式转换成字符串。让我们来看一个例子：
 ```C#
-DateTime date = new DateTime(2021, 11, 11); // 创建DateTime对象
-string dateString = date.ToString(); // 将日期转换为字符串
-Console.WriteLine(dateString); // 输出: 2021/11/11（具体格式可能会根据电脑系统的设置而有所不同）
+DateTime now = DateTime.Now;
+// 将日期转换成字符串
+string date = now.ToString("MM/dd/yyyy");
+// 输出结果为 09/21/2021
+Console.WriteLine(date);
 ```
 
-我们也可以使用ToString()方法的重载版本来指定日期的格式，如下所示：
+我们可以在ToString()方法中传入不同的格式来得到不同的字符串，比如"dd/MM/yyyy"、"M/d/yyyy"等。具体的格式可以根据自己的需求来定制。
 
+有时候，我们也需要将字符串转换成日期。此时，我们可以使用C#中的Parse()方法。这个方法可以将字符串转换成日期类型。让我们来看一个例子：
 ```C#
-DateTime date = new DateTime(2021, 11, 11); // 创建DateTime对象
-string dateString = date.ToString("dd-MM-yyyy"); // 将日期转换为字符串，并指定格式为：日-月-年
-Console.WriteLine(dateString); // 输出: 11-11-2021
+string strDate = "09/21/2021";
+// 将字符串转换为日期
+DateTime date = DateTime.Parse(strDate);
+// 输出结果为 09/21/2021 12:00:00 AM
+Console.WriteLine(date);
 ```
 
-深入：除了简单地将日期转换为字符串，我们还可以使用C#中的DateTimeFormat类来更灵活地控制日期的格式。该类提供了各种预定义的格式，也可以自定义格式。下面是一个例子：
+一般来说，C#中的日期格式和语言的日期格式是不同的。因此，在进行日期转换时需要注意格式的问题。
 
-```C#
-DateTimeFormatInfo format = new DateTimeFormatInfo(); // 创建DateTimeFormatInfo类的实例
-format.ShortDatePattern = "yyyy/dd/MMM"; // 自定义日期格式为：年/日/月（月份为三个字母缩写）
-DateTime date = new DateTime(2021, 11, 11);
-string dateString = date.ToString("d", format); // 对日期使用自定义格式
-Console.WriteLine(dateString); // 输出: 2021/11/Nov
-```
+## 深入了解日期转换
 
-参考链接：
+在C#中，日期和时间的处理是基于DateTime结构体的。这个结构体提供了一系列方法来处理日期和时间，包括ToString()和Parse()方法。在实际开发中，我们还可以使用其他的方法来处理日期和时间，比如Add()、Subtract()等等。
 
-- [C#官方文档 - DateTime.ToString()方法](https://docs.microsoft.com/zh-cn/dotnet/api/system.datetime.tostring?view=net-5.0)
-- [C#官方文档 - DateTimeFormat类](https://docs.microsoft.com/zh-cn/dotnet/api/system.globalization.datetimeformatinfo?view=net-5.0)
+此外，C#中还有一个重要的类叫做DateTimeFormatter，它提供了更加灵活的日期格式转换功能。我们可以根据自己的需求来定制格式，比如国际化的日期格式、24小时制和12小时制的时间等等。
 
-另请参阅：
+## 参考链接
 
-- [C#官方文档 - 格式化日期和时间字符串](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/how-to-convert-a-string-to-a-datetime?view=net-5.0#format-a-datetime-as-a-string)
+- [DateTime.ToString()方法文档](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [DateTime.Parse()方法文档](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-5.0)
+- [DateTime 结构体文档](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [DateTimeFormatter 类文档](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatter?view=net-5.0)
+
+## 参见
+
+如果你想了解更多关于C#中日期和时间的处理，可以参考下面的链接：
+- [日期和时间教程](https://docs.microsoft.com/en-us/dotnet/standard/base-types/date-time)
+- [日期和时间格式化指南](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

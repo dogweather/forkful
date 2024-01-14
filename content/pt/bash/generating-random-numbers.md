@@ -1,39 +1,42 @@
 ---
 title:    "Bash: Gerando números aleatórios"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é útil em programação Bash?
+## Por que gerar números aleatórios?
 
-Gerar números aleatórios é uma ferramenta útil em programação Bash por diversas razões. Pode ser usado para criar dados de teste, criar senhas seguras ou gerar valores aleatórios em jogos ou sorteios. Além disso, a geração de números aleatórios pode ser usada para adicionar variedade e imprevisibilidade aos programas, tornando-os mais eficientes e dinâmicos.
+Ao escrever scripts e programas em Bash, pode ser útil gerar números aleatórios para uma variedade de tarefas. Isso inclui desde selecionar aleatoriamente um item de uma lista até simular jogos de azar. Gerar números aleatórios também pode ser útil em testes de software, onde é necessário criar conjuntos de dados aleatórios para verificar a robustez de um sistema.
 
-## Como gerar números aleatórios em Bash
+## Como fazer?
 
-Gerar números aleatórios em Bash é fácil e pode ser feito usando um comando específico chamado "shuf". Este comando pode ser usado para gerar uma sequência aleatória de números ou para selecionar aleatoriamente uma fatia de dados de um conjunto especificado. Para gerar uma sequência de números aleatórios, basta inserir o seguinte código no seu script Bash:
-
-```Bash
-seq <número_inicial> <número_final> | shuf
-```
-O comando "seq" irá gerar uma sequência de números de <número_inicial> a <número_final>, que será então embaralhada pelo comando "shuf". O resultado será uma sequência aleatória de números.
-
-Outra forma de gerar números aleatórios em Bash é usando o comando "echo" em conjunto com o redirecionador ">" para redirecionar a saída para um arquivo. Isso pode ser útil para criar arquivos com um número aleatório específico de linhas ou para criar uma lista aleatória de palavras. Veja um exemplo abaixo:
+Para gerar números aleatórios em Bash, podemos usar a função `echo` juntamente com o `RANDOM` builtin. Por exemplo, para gerar um número aleatório entre 1 e 10, podemos usar o seguinte código:
 
 ```Bash
-for i in {1..10}
-do
-    echo $RANDOM >> random_numbers.txt
-done
+echo $((RANDOM%10+1))
 ```
-Neste exemplo, o loop for irá gerar 10 números aleatórios e adicioná-los no arquivo "random_numbers.txt" usando o redirecionador ">". Você também pode especificar um intervalo para o comando "echo" gerar números aleatórios, por exemplo, "echo $((RANDOM%50))" para gerar números aleatórios entre 0 e 50.
 
-## Mergulho Profundo: A matemática por trás da geração de números aleatórios
+Isso irá exibir um número aleatório entre 1 e 10 toda vez que o script for executado. Para gerar um número aleatório com uma maior faixa, basta ajustar os valores no código acima.
 
-A geração de números aleatórios em Bash é baseada em algoritmos matemáticos e não é 100% aleatória. O comando "shuf" usa o gerador de números aleatórios "Mersenne Twister" que é considerado suficientemente aleatório para a maioria dos casos de uso. No entanto, se você precisar de uma maior aleatoriedade, pode gerar seus próprios algoritmos personalizados ou utilizar bibliotecas externas.
+Podemos até mesmo usar o `RANDOM` builtin para preencher variáveis com valores aleatórios. Por exemplo, para gerar uma senha de 8 dígitos, podemos usar o seguinte código:
 
-## Veja também:
+```Bash
+password=$RANDOM$RANDOM$RANDOM
+echo ${password:0:8}
+```
 
-- [Documentação oficial do comando 'shuf'](https://man7.org/linux/man-pages/man1/shuf.1.html)
-- [Perguntas frequentes sobre números aleatórios em Bash](https://stackoverflow.com/questions/3492788/how-to-generate-a-random-number-in-a-range-with-bash)
-- [Biblioteca externa para geração de números aleatórios em Bash](https://sourceforge.net/projects/bashrandom/)
+Esse código irá gerar uma senha aleatória com 8 dígitos sempre que o script for executado.
+
+## Profundidade na geração de números aleatórios
+
+Por baixo dos panos, a função `echo` em conjunto com o `RANDOM` builtin utiliza o gerador de números pseudoaleatórios (PRNG) do sistema operacional. Esse gerador utiliza um algoritmo complexo para produzir números aparentemente aleatórios a partir de uma semente predefinida. A semente é gerada automaticamente pelo sistema operacional a cada inicialização, garantindo que o PRNG produza sequências diferentes a cada execução.
+
+É importante notar que, apesar de parecerem aleatórios, os números gerados pelo PRNG são previsíveis e, portanto, não devem ser usados em situações que exigem alta segurança, como na geração de senhas para sistemas críticos.
+
+## Veja também
+
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Perguntas frequentes sobre geração de números aleatórios no Bash](http://mywiki.wooledge.org/BashFAQ/026)
+- [Artigo sobre o gerador de números pseudoaleatórios no Linux](https://www.2uo.de/myths-about-urandom/)

@@ -1,64 +1,53 @@
 ---
-title:    "Gleam: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+title:    "Gleam: コマンドライン引数の読み込み"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleamのコマンドライン引数を読み込むのにトピックについて説明します。
+## なぜ読むのか
 
-## なぜ
+コマンドライン引数を読む必要は、コンピュータープログラミングにおいて非常に重要です。コマンドライン引数を使用することで、プログラムを簡単にカスタマイズしたり、さまざまなオプションを提供したりすることができます。この記事では、Gleamプログラミング言語を使用して、コマンドライン引数を読み取る方法を紹介します。
 
-コマンドライン引数を読み込むことで、Gleamプログラムに柔軟性を与えることができます。プログラムの挙動を実行時にユーザーが設定できるようになります。
+## 読み取り方法
 
-## 方法
-
-まず最初に、コマンドライン引数を格納する変数を定義しましょう。
+コマンドライン引数を読み取るには、`Command` モジュールを使用します。まず、コマンドライン引数を読み取るための `parse` 関数を宣言します。
 
 ```Gleam
-let args = Sys.args()
+import gleam/command
+
+command.parse(args, []) 
 ```
 
-この変数には、実行時に与えられた全ての引数が文字列のリストとして格納されます。
+この関数では、`args` というリストを引数として受け取ります。`args` には、実際のコマンドライン引数が格納されます。また、空のリスト `[]` を引数として渡します。これは、オプションを指定することで、より詳細な読み取りを行うことができるようになります。
 
-次に、このリストをループして引数を1つずつ処理することができます。例えば、引数の数を出力するプログラムを書いてみましょう。
+次に、`Command.parse` 関数を使用して、コマンドライン引数を解析します。
 
 ```Gleam
-import gleam/io
-
-for arg in args {
-  io.print(arg)
-}
-
+let { "arg1", "arg2" } = command.parse(args, []) 
 ```
 
-このプログラムを実行すると、引数の数が画面上に表示されます。
-
-```bash
-$ gleam run args.gleam hello world
-2
-```
+この例では、コマンドライン引数の最初の2つを `arg1` と `arg2` という変数に格納しています。
 
 ## 深堀り
 
-コマンドライン引数は、`Sys.args()`を使用してアクセスできますが、この関数にはオプション引数を指定することもできます。例えば、`Sys.args("option")`とすると、オプション引数のみを受け取ることができます。
-
-また、コマンドライン引数にはパターンマッチングを使用することもできます。例えば、引数が整数の場合にはそれを数値として処理し、文字列の場合にはエラーを返すようなプログラムを書くことができます。
+`Command` モジュールには、より詳細なオプションが用意されています。例えば、`parse_required` 関数を使用することで、必須の引数を指定することができます。
 
 ```Gleam
-import gleam/io
-import gleam/string
-
-for arg in args {
-  case string.to_int(arg) {
-    Ok(num) -> io.print("This is the number: " ++ num)
-    Error(_e) -> io.print("This is not a number")
-  }
-}
+let { "arg1", "arg2" } = command.parse_required(args, ["required_arg1", "required_arg2"]) 
 ```
 
-## See Also
+また、`parse_args` 関数を使用することで、指定されたオプションに基づいて引数を解析することもできます。
 
-- [Gleamの入門](https://gleam.run/book/introduction.html)
-- [Gleamの構文ガイド](https://gleam.run/book/syntax.html)
-- [Gleamの標準ライブラリ](https://gleam.run/doc/stdlib.html)
+```Gleam
+let { "arg1", "arg2" } = command.parse_args(args, [flag("flag1"), string_flag("flag2")]) 
+```
+
+これらのオプションを使用することで、より柔軟にコマンドライン引数を読み取ることができます。
+
+## See Also
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [Gleamコマンドライン引数の解析](https://gleam.run/articles/command-line-arguments/)
+
+コマンドライン引数を解析することで、プログラムをより柔軟にカスタマイズすることができるようになります。是非、この記事を参考にして、ご自身のプロジェクトでコマンドライン引数を活用してみてください。

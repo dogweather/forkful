@@ -1,44 +1,36 @@
 ---
-title:    "Clojure: האם תיקייה קיימת: בדיקה"
+title:    "Clojure: בדיקת קיום תיקייה במחשב"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+# למה
 
-בדיקת קיום תיקייה היא חלק חשוב משימות התיכנות היום יום. באמצעות זה, אנו יכולים לוודא שהתיקייה שאנו מנסים לגשת אליה כבר קיימת ולפעול בהתאם. במאמר זה, אנו נלמד כיצד לבדוק אם תיקייה קיימת בשפת Clojure.
+בכדי לבנות תוכניות יותר יעילות ומדויקות, חשוב לברר האם תיקייה קיימת לפני שמתחילים לכתוב קוד. בדיקה זו יכולה להציג שגיאות מוקדמות כדי שנוכל להתמודד איתן בזמן הוגן.
 
-## איך לעשות זאת
-
-הצעד הראשון הוא לייבא את הספרייה שלך שבה נמצאת הפונקציה "file-exists?" כדי לבדוק אם קובץ קיים. בדוגמה הבאה, אנו מייצרים משתנה בשם "my-dir" המכיל את הנתיב של התיקייה שנרצה לבדוק. נשתמש בפונקציה "file-exists?" כדי לבדוק אם התיקייה קיימת או לא ונחזיר את התוצאה באמצעות פונקציית "println".
+# איך לבדוק אם תיקייה קיימת
 
 ```Clojure
-(ns my-namespace
-  (:require [clojure.java.io :refer [file-exists?]]))
+;;להגדיר פונקציה שבודקת האם התיקייה קיימת
+(defn check-dir-exists [dir-path]
+  (.isDirectory (java.io.File. dir-path)))
 
-(def my-dir "C:\\users\\username\\my-directory")
+;;זה יחזיר true אם התיקייה קיימת ושגיאה אחרת
+(check-dir-exists "/Users/username/Documents")
 
-(println (file-exists? my-dir))
+;;העלתי תיקייה שלא קיימת כדי להראות את הפלט השגוי
+(check-dir-exists "/Users/username/FakeDocuments")
+;;שגיאה: FileNotFoundException לא נמצא קובץ או תיקייה בדרך
 ```
 
-פלט: true
+# לעבוד בעומק יותר
 
-במקרה שהתיקייה לא קיימת, נקבל כתוצאה את הבא:
+אם אנחנו רוצים לעבוד עם תיקייה ספציפית ולא רק לבדוק האם היא קיימת, אפשר להשתמש בפונקציות נוספות כמו `.listFiles` כדי לקבל את רשימת הקבצים בתיקייה או `.mkdirs` כדי ליצור תיקייה חדשה.
 
-```Clojure
-(ns my-namespace
-  (:require [clojure.java.io :refer [file-exists?]]))
+# ראו גם
 
-(def my-dir "C:\\users\\username\\non-existent-directory")
-
-(println (file-exists? my-dir))
-```
-
-פלט: false
-
-## מעמקים
-
-הפונקציה "file-exists?" משתמשת בפונקציות המבוססות על Java כדי לבדוק אם התיקייה קיימת. זה משמעותי כי אם התיקייה נמצאת בעולם Java, אף פעם לא נתקל בקובץ או תיקייה המתאימים לנתיב שמועבר כפרמטר לפונקציה.
-
-בנוסף, אם אתם מעוניינים לבדוק אם תיקייה קיימת תחת תיקייה אחרת, ניתן להשתמש בפונקציה "file-seq" כדי לקבל את כל הקבצים והתיקיות שנמצאים בתוך התיקייה המבוקשת. ניתן לשלב את שתי הפונקציות כדי לבדוק אם תיקייה קיימת תחת
+- למדו עוד על פונקציות של תיקיות בקלוג'ור: https://www.clojure.org/reference/java_interop#_java_io_file
+- בידור משתמשים בתיקיות בקלוג'ור: http://blogger.ziesemer.com/2010/07/clojure-file-directory-processing.html
+- דוגמאות למימוש של בדיקה אם תיקייה קיימת: https://boopathi.in/blog/clojure/2010/10/14/is-directory-exists-in-clojure/

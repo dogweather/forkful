@@ -1,43 +1,61 @@
 ---
-title:    "Java: Päivämäärän hakeminen"
+title:    "Java: Nykyisen päivämäärän hankkiminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tietojenkäsittelyssä on useita tilanteita, joissa haluamme käyttää tietokoneen nykyistä päivämäärää. Esimerkiksi järjestelmä voi tarvita päivämäärää päiväyksen tallentamiseen tietokantaan tai käyttäjälle näytettävään viestiin. Java-ohjelmoinnissa käytetään Date-luokkaa nykyisen päivämäärän hankkimiseen.
+Miksi olisi tärkeää saada nykyinen päivämäärä ohjelmallisesti? Nykyään useimmat laitteet ja sovellukset käyttävät päiväys- ja aikatietoja moniin eri tarkoituksiin. Esimerkiksi tekstiviestien aikaleimat, tapahtumakalenterit ja dokumenttien hallinta perustuvat kaikki päiväykseen ja aikaan. Siksi on tärkeää ymmärtää, kuinka saada nykyinen päivämäärä ja aika omassa ohjelmassasi, jotta voit hallita näitä tietoja ja tehdä sovelluksestasi toimivamman ja tehokkaamman.
 
-## Miten
+## Kuinka
 
-Nykyisen päivämäärän saaminen Java-ohjelmassa on helppoa. Käytämme vain Date-luokan getInstance-metodia, joka luo uuden Date-olion nykyisellä päivämäärällä ja ajalla.
+Saadaksesi nykyisen päivämäärän Javassa, voit käyttää `java.util.Date` -luokkaa. Tämä luokka tarjoaa erilaisia ​​metodeja, jotka mahdollistavat nykyisen päivämäärän, ajan ja aikavyöhykkeen hakemisen. Esimerkiksi:
 
-```Java
-Date nykyinenPaivamaara = Date.getInstance();
-System.out.println(nykyinenPaivamaara);
+```java
+Date nykyinenPaivamaara = new Date();
+
+// tulosta nykyinen päivämäärä
+System.out.println("Nykyinen päivämäärä: " + nykyinenPaivamaara);
+
+// tulosta päivämäärä ja aika tiettyyn muotoon
+SimpleDateFormat muotoinenPaivamaara = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+String paivamaara = muotoinenPaivamaara.format(nykyinenPaivamaara);
+System.out.println("Nykyinen päivämäärä tiettyyn muotoon: " + paivamaara);
+
+// aseta eri aikavyöhyke
+TimeZone toinenAikavyohyke = TimeZone.getTimeZone("UTC");
+muotoinenPaivamaara.setTimeZone(toinenAikavyohyke);
+System.out.println("Nykyinen päivämäärä toisessa aikavyöhykkeessä: " + muotoinenPaivamaara.format(nykyinenPaivamaara));
 ```
 
-Tämän koodin tuloste riippuu ajankohdasta, jolloin se suoritetaan. Esimerkiksi 18. lokakuuta 2021 se voi tulostaa "Mon Oct 18 15:41:23 UTC 2021".
+Tämän esimerkin tuloste voi olla esimerkiksi:
 
-Voimme myös muuttaa Date-olion muotoa haluamallamme tavalla käyttämällä SimpleDateFormat-luokkaa. Seuraava esimerkki esittää päivämäärän muuntamisen suomalaiseen muotoon.
-
-```Java
-SimpleDateFormat muotoilija = new SimpleDateFormat("dd.MM.yyyy");
-String paivamaara = muotoilija.format(nykyinenPaivamaara);
-System.out.println(päivämäärä);
+```
+Nykyinen päivämäärä: Mon Jan 25 12:47:13 EET 2021
+Nykyinen päivämäärä tiettyyn muotoon: 25.01.2021 12:47:13
+Nykyinen päivämäärä toisessa aikavyöhykkeessä: 25.01.2021 10:47:13
 ```
 
-Tämä koodi tulostaa "18.10.2021".
+## Syvällisempi katsaus
 
-## Syvällisempi sukellus
+`java.util.Date` -luokka ei ole täysin tarkka ja se käyttää tietokoneesi aikavyöhykkeen asetuksia, mikä voi aiheuttaa haasteita aikojen ja päivämäärien tarkkojen vertailujen kanssa. Tästä syystä on suositeltavaa käyttää `java.time` -pakettia, joka sisältää uuden `LocalDateTime` -luokan. Tämän luokan avulla voit hallita paikallista aikaa tai jopa päiväykseen liittämätöntä aikaa.
 
-Date-luokka sisältää myös muita hyödyllisiä metodeja, kuten before(), after() ja compareTo(), jotka mahdollistavat päivämäärien vertailun. Ne ovat hyödyllisiä esimerkiksi, kun haluamme tarkistaa onko tietty päivämäärä ennen vai jälkeen toisen.
+```java
+// nykyinen paikallinen aika
+LocalDateTime nykyinenAika = LocalDateTime.now();
+System.out.println("Nykyinen aika: " + nykyinenAika);
 
-On myös tärkeää huomata, että Java 8:ssa otettiin käyttöön uusi LocalDate-luokka, joka tarjoaa entistä monipuolisemman päivämäärän käsittelyn. Se lisäksi että se pystyy käsittelemään päivämääriä, siihen on myös lisätty päivämäärien ja ajankohtien välinen ajan leima.
+// nykyinen UTC-aika
+LocalDateTime nykyinenUtcAika = LocalDateTime.now(ZoneOffset.UTC);
+System.out.println("Nykyinen UTC-aika: " + nykyinenUtcAika);
+```
+
+`java.time` -paketti tarjoaa myös monia muita hyödyllisiä luokkia ja metodeja päivämäärien ja aikojen hallintaan. Lue lisää Java 8 -dokumentaatiosta löytääksesi parhaiten sopivan ratkaisun tarpeisiisi.
 
 ## Katso myös
 
-- [Java Date-luokka (Oracle Docs)](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat-luokka (Oracle Docs)](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java LocalDate-luokka (Oracle Docs)](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java 8 -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/)
+- [Java.time-paketin opas

@@ -1,59 +1,53 @@
 ---
-title:    "Python: Beregning av en dato i fremtiden eller fortiden"
+title:    "Python: Utregning av datoer i fremtiden eller fortiden"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge fremover eller å se tilbake på viktige hendelser. For eksempel kan det være en måte å finne ut hvor lang tid det er igjen til en viktig begivenhet, som bursdagen til en venn eller et bryllup.
+Det er mange grunner til å ønske å beregne en dato i fremtiden eller fortiden i et Python-program. Kanskje du planlegger en hendelse og trenger å vite hvilken dato den vil falle på, eller kanskje du vil lage en funksjon som beregner alderen til en person basert på fødselsdatoen deres. Uansett hva årsaken er, kan å kunne beregne datoer i Python være en nyttig ferdighet å ha.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å beregne en dato i fremtiden eller fortiden, kan vi bruke Python-modulen datetime. Først må vi importere denne modulen ved å skrive følgende kode:
+Det er enkelt å beregne datoer i fortiden eller fremtiden ved hjelp av Python sin `datetime` -modul. Først må du importere modulen ved å skrive `import datetime` øverst i programmet ditt. Deretter kan du bruke de forskjellige funksjonene og metodene i modulen for å beregne datoen.
 
-```Python
-import datetime
-```
-
-Deretter kan vi bruke funksjonen datetime.now() for å få dagens dato og tid. For å beregne en dato i fremtiden, kan vi bruke funksjonen timedelta som tar i bruk antall dager vi vil legge til eller trekke fra. For eksempel, hvis vi vil beregne en dato 30 dager fra i dag, kan vi skrive:
+For å beregne en dato i fremtiden, kan du bruke `timedelta` -funksjonen. For eksempel, hvis du vil finne ut hvilken dato det vil være 100 dager fra i dag, kan du skrive følgende i Python:
 
 ```Python
-future_date = datetime.datetime.now() + datetime.timedelta(days=30)
-print(future_date)
-```
-Dette vil gi oss en output som ligner på dette:
+from datetime import datetime, timedelta
 
-```
-2020-08-27 21:00:00.0000
-```
+days_in_future = 100
+today = datetime.today()
+future_date = today + timedelta(days=days_in_future)
 
-For å beregne en dato i fortiden, kan vi bruke samme funksjon, men med et negativt antall dager. For eksempel, hvis vi vil vite hvordan datoen var for 100 dager siden, kan vi skrive:
+print(f"Datoen {days_in_future} dager fra i dag vil være: {future_date}")
+```
+Dette vil gi følgende utdata:
+
+`Datoen 100 dager fra i dag vil være: 2021-05-17 17:36:10.044948`
+
+For å beregne en dato i fortiden, kan du bruke `replace` -metoden. Hvis du for eksempel vil finne ut hvilken dato det var for én måned siden, kan du bruke følgende kode:
 
 ```Python
-past_date = datetime.datetime.now() - datetime.timedelta(days=100)
-print(past_date)
+from datetime import datetime
+
+today = datetime.today()
+past_date = today.replace(month=today.month-1)
+
+print(f"Datoen én måned tilbake fra i dag var: {past_date}")
 ```
+Dette vil gi følgende utdata:
 
-Output vil da være:
+`Datoen én måned tilbake fra i dag var: 2021-03-17 17:45:49.944064`
 
-```
-2020-04-19 21:00:00.0000
-```
+## Dypdykk
 
-## Detaljert forklaring
-
-Beregning av en dato i fortiden eller fremtiden kan være mer komplekst enn bare å legge til eller trekke fra antall dager. Du kan også spesifisere antall timer, minutter eller til og med år. Du kan også kombinere flere variabler for å få mer nøyaktig beregning av en dato. Det er også mulig å bruke ulike formater for datoen, som å få den i en forkortet versjon eller som en tekststreng.
-
-Her er noen nyttige ressurser for å lære mer om hvordan du beregner datoer i Python med datetime-modulen:
-
-- [Python documentation for datetime module](https://docs.python.org/3/library/datetime.html)
-- [Real Python article on datetime](https://realpython.com/python-datetime/)
-- [Python tutorial on datetime](https://www.programiz.com/python-programming/datetime)
+Det er mange flere funksjoner og metoder i `datetime` -modulen som kan hjelpe deg med å beregne datoer i fortiden eller fremtiden. Du kan også bruke `strftime` -metoden til å formatere datoen på den måten du ønsker det. Utforsk gjerne dokumentasjonen til Python sin `datetime` -modul for å lære mer om disse funksjonene og metodene.
 
 ## Se også
 
-- [Python tutorial on formatting dates](https://www.programiz.com/python-programming/datetime/strftime)
-- [Python documentation for datetime module](https://docs.python.org/3/library/datetime.html)
-- [Real Python article on timedelta](https://realpython.com/python-timedelta/)
+- [Dokumentasjon for datetime-modulen fra Python sin offisielle nettside](https://docs.python.org/3/library/datetime.html)
+- [En interaktiv guide til å beregne datoer i Python](https://www.programiz.com/python-programming/datetime)

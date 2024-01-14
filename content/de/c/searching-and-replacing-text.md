@@ -1,64 +1,60 @@
 ---
-title:    "C: Textsuche und -ersetzung"
+title:    "C: Suchen und Ersetzen von Text"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Suchen und Ersetzen von Text ist eine grundlegende Funktion in der Programmierung, die dazu dient, Text in einem Computerprogramm zu verändern. Es ist besonders nützlich, um Fehler zu beheben oder bestimmte Teile eines Textes zu ändern.
+Wenn Sie jemals mit großen Textdateien oder umfangreichen Codeprojekten gearbeitet haben, wissen Sie, wie mühsam es sein kann, Text manuell zu suchen und zu ersetzen. Aber zum Glück gibt es in der C-Programmierung eine einfache Möglichkeit, dies automatisch zu erledigen. Durch das Schreiben von Code, der Text sucht und ersetzt, können Sie Zeit sparen und Fehler minimieren.
 
-## Wie geht das?
+## Wie geht das
 
-Die grundlegende Syntax für die Funktion "Suchen und Ersetzen" in der Programmiersprache C ist wie folgt:
+Das Suchen und Ersetzen von Text in C ist einfach mit der Verwendung der Funktion `strstr()` zu erreichen. Diese Funktion sucht nach dem ersten Vorkommen eines bestimmten Teilstrings in einem größeren String und gibt einen Zeiger auf die erste Position des Teilstrings zurück. Die Syntax sieht wie folgt aus:
 
 ```C
-str_replace(original, find, replace);
+char *strstr(const char *haystack, const char *needle);
 ```
-
-Dabei ist "original" der ursprüngliche Text, "find" der zu suchende Text und "replace" der Text, durch den "find" ersetzt werden soll. Diese Funktion kann einfach in einem C-Programm verwendet werden, um bestimmte Wörter oder Zeichenketten zu ersetzen.
-
-Hier ist ein Beispiel, wie die Funktion in einem Programm aussehen könnte:
+Um diese Funktion zu verwenden, müssen Sie zunächst den zu durchsuchenden Text und den zu suchenden Teilstring angeben. Der folgende Code zeigt, wie man `strstr()` in einem einfachen Programm verwenden kann:
 
 ```C
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    char sentence[] = "Ich mag Kaffee.";
+    // Text, in dem gesucht wird
+    char text[] = "Informatik ist toll";
 
-    printf("Ursprünglicher Satz: %s\n", sentence);
+    // Teilstring, der ersetzt werden soll
+    char needle[] = "toll";
 
-    str_replace(sentence, "mag", "liebe");
+    // Text durchsuchen und Zeiger auf das erste Vorkommen des Teilstrings erhalten
+    char *position = strstr(text, needle);
 
-    printf("Neuer Satz: %s", sentence);
+    // Teilstring durch neuen Text ersetzen
+    sprintf(position, "fantastisch");
+
+    // Ergebnis ausgeben
+    printf("%s", text);
 
     return 0;
 }
 ```
+Dieses Programm durchsucht den Text "Informatik ist toll" nach dem Teilstring "toll" und ersetzt ihn dann durch "fantastisch". Das Ergebnis lautet "Informatik ist fantastisch".
 
-Ausgabe:
+Natürlich ist dies nur ein einfaches Beispiel und es gibt viele weitere Möglichkeiten, die `strstr()` Funktion in Ihrem Code zu verwenden. Es kann auch hilfreich sein, die Funktion `strchr()` zu kennen, die nach dem ersten Vorkommen eines bestimmten Zeichens in einem String sucht.
 
-```
-Ursprünglicher Satz: Ich mag Kaffee.
-Neuer Satz: Ich liebe Kaffee.
-```
+## Tiefere Einblicke
 
-## Tiefer eintauchen
+Für anspruchsvollere Such- und Ersatzoperationen kann es sinnvoll sein, in die Verwendung von regulären Ausdrücken einzutauchen. Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, das in vielen Programmiersprachen verwendet wird, um nach bestimmten Mustern in Texten zu suchen und sie zu ersetzen. Die C-Standardbibliothek bietet jedoch keine native Unterstützung für reguläre Ausdrücke, daher müssen Sie möglicherweise eine externe Bibliothek wie PCRE (Perl-kompatible reguläre Ausdrücke) nutzen.
 
-Es gibt mehrere Möglichkeiten, um zusätzliche Funktionalitäten beim Suchen und Ersetzen von Text zu implementieren. Eine Möglichkeit ist die Verwendung von regulären Ausdrücken, die es ermöglichen, gezielt nach bestimmten Mustern im Text zu suchen und diese zu ersetzen.
-
-Außerdem kann die Wahl der richtigen Datenstruktur für den Text eine wichtige Rolle spielen. Beispielsweise kann das Speichern des Textes in einer verketteten Liste es einfacher machen, bestimmte Wörter oder Zeichenketten zu ersetzen, da die Elemente einfacher zugänglich sind.
-
-Es ist auch wichtig, die Effizienz und Laufzeit Ihrer Such- und Ersatzfunktionen zu berücksichtigen, um sicherzustellen, dass sie auch bei größeren Textmengen schnell und effektiv arbeiten.
+Eine weitere Sache, die Ihren Code effektiver machen kann, ist die Verwendung von Befehlszeilenargumenten. Durch das Lesen von Benutzereingaben aus der Befehlszeile können Sie Ihr Such- und Ersatzprogramm flexibler gestalten und es dem Benutzer ermöglichen, verschiedene Optionen anzugeben, wie z.B. welchen Teilstring er sucht oder welcher Text ersetzt werden soll.
 
 ## Siehe auch
 
-- [Tutorial: Suchen und Ersetzen in C](https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm)
-- [Reguläre Ausdrücke in C](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#Regular-Expressions)
-- [Effizienz in der Programmierung](https://www.geeksforgeeks.org/efficient-c-tips/)
-
----
-
-Diese einfachen Tipps und Tricks können Ihnen helfen, effektiv Text zu suchen und zu ersetzen in Ihrer C-Programmierung. Wir hoffen, dass Sie diese Funktion nun besser verstehen und in Ihren Programmen erfolgreich einsetzen können. Viel Spaß beim Coden!
+- [Die offizielle C-Dokumentation zur strstr() Funktion](https://en.cppreference.com/w/c/string/byte/strstr)
+- [Eine einfache Einführung in reguläre Ausdrücke in C](https://www.linuxjournal.com/article/1130)
+- [PCRE-Bibliothek](https://www.pcre.org/) für die Verwendung von regulären Ausdrücken in C

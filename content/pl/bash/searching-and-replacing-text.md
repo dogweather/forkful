@@ -1,42 +1,52 @@
 ---
 title:    "Bash: Wyszukiwanie i zamienianie tekstu"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często zdarza się, że w trakcie pisania skryptów lub programów w języku Bash, musimy dokonać zmiany w tekście. Przykładowo, może to być zmiana separatora w pliku CSV lub zamiana nazwy zmiennej. W tych sytuacjach bardzo przydatne jest umiejętne korzystanie z funkcji wyszukiwania i zamiany tekstu. Dzięki temu możemy szybko i precyzyjnie wprowadzać niezbędne zmiany w naszym kodzie.
+Jeśli jesteś programistą lub po prostu często pracujesz z plikami tekstowymi, prawdopodobnie musisz dokonywać zmian w tekście wielokrotnie. W takim przypadku bardzo przydatne jest narzędzie do wyszukiwania i zamiany tekstu. W Bashu istnieje kilka sposobów na przeprowadzenie tej operacji, które są niesamowicie proste i skuteczne. W tym artykule przyjrzymy się, dlaczego warto poznać te możliwości oraz jak je wykorzystać.
 
 ## Jak to zrobić
 
-Korzystanie z funkcji wyszukiwania i zamiany tekstu w języku Bash jest bardzo proste. Wystarczy użyć wbudowanej komendy "sed", która jest odpowiedzialna za przeprowadzanie operacji na tekście. Poniżej przedstawione są przykłady kodu i wyników dla różnych scenariuszy.
-
-1. Zamiana jednego słowa na inne słowo w całym pliku:
+Pierwszym sposobem na wyszukiwanie i zamianę tekstu jest użycie polecenia `sed`. Przykładowo, jeśli chcemy zmienić wszystkie wystąpienia słowa "kot" na "pies" w pliku `animals.txt`, wykonujemy następującą komendę:
 ```
-Bash sed 's/stary_nowy/g' plik.txt
+sed -i 's/kot/pies/g' animals.txt
 ```
-Gdzie "stary" to wyrażenie, które chcemy zastąpić, "nowy" to wyrażenie, na które chcemy je zamienić, a "plik.txt" to nazwa pliku, na którym chcemy przeprowadzić operację.
-
-2. Zamiana wszystkich wystąpień w pliku z użyciem podwójnych cudzysłowi:
+Poleceń `sed` można używać do bardziej złożonych operacji, na przykład zmieniania wyrażeń regularnych. W poniższym przykładzie zmieniamy datę zapisaną w formacie DD/MM/YYYY na format YYYY-MM-DD:
 ```
-Bash sed "s/[,]/ [tab] /g" plik.csv
+sed -i 's/\([0-9]\{2\}\)\/\([0-9]\{2\}\)\/\([0-9]\{4\}\)/\3-\2-\1/g' data.txt
 ```
-W powyższym przykładzie dokonujemy zamiany separatorów "," na "[tab]" w pliku CSV.
-
-3. Wykorzystanie wyrażeń regularnych do bardziej złożonych operacji:
+Dzięki użyciu flagi `-i` zmieniamy plik bezpośrednio, bez tworzenia nowego. Jeśli chcemy przeprowadzić operację na kilku plikach naraz, możemy zastosować polecenie `find` i przekazać je jako argument do `sed`:
 ```
-Bash sed 's/ha(te|owi)j/tekstu/g' plik.txt
+find . -name "*.txt" -exec sed -i 's/kot/pies/g' {} +
 ```
-W powyższym przykładzie dokonujemy zamiany słów "hatej" lub "hatejowi" na słowo "tekstu" w naszym pliku.
 
-## Warto wiedzieć
+Kolejną opcją jest użycie polecenia `awk` w połączeniu z poleceniem `sub`. W tym przypadku podajemy szukane wyrażenie, nowe wyrażenie oraz plik, na którym chcemy przeprowadzić operację. Należy pamiętać, że `awk` jest wrażliwy na wielkość liter:
+```
+awk '{sub(/kot/,"pies",$0); print}' animals.txt
+```
+Jeśli chcemy zastąpić wszystkie wystąpienia wyrażenia, możemy użyć dodatkowego parametru `g`:
+```
+awk '{sub(/kot/,"pies",$0);print}' animals.txt
+```
 
-Funkcja wyszukiwania i zamiany tekstu w Bash jest bardzo elastyczna i pozwala na dokonywanie złożonych operacji przy wykorzystaniu wyrażeń regularnych. Dodatkowo, komenda "sed" umożliwia używanie flag (opcji) do precyzyjnego określenia zakresu czy też typu operacji. Pełna dokumentacja dostępna jest w manualu systemowym, który można wywołać poleceniem "man sed".
+## Głębszy wgląd
 
-## Zobacz także
+`sed` i `awk` to nie jedyne możliwości, jeśli chodzi o wyszukiwanie i zamianę tekstu w Bashu. Warto również wspomnieć o tym, że narzędzia te działają na strumieniach danych, co oznacza, że możemy je wykorzystać w połączeniu z innymi poleceniami.
 
-- Dokumentacja komendy "sed": https://linux.die.net/man/1/sed
-- Przydatne wyrażenia regularne: https://www.regular-expressions.info/quickstart.html
-- Praktyczny poradnik korzystania z "sed": https://www.linux.com/training-tutorials/going-deeper-into-sed-linux/
+Na przykład, jeśli chcemy wyświetlić tylko pliki z rozszerzeniem `.txt` i jednocześnie zamienić w nich wyrażenie "kot" na "pies", możemy użyć polecenia `grep` w połączeniu z `sed`:
+```
+grep -l "kot" *.txt | xargs -I {} sed -i 's/kot/pies/g' {}
+```
+Polecenie `grep -l` wyświetla tylko nazwy plików, zawierających podane wyrażenie. Następnie korzystamy z `xargs` aby przekazać te pliki jako argumenty do polecenia `sed`.
+
+W podobny sposób można wykorzystać inne polecenia, takie jak `find` czy `xargs`, aby przeprowadzić operacje na wielu plikach naraz.
+
+## Zobacz również
+
+- [10 przydatnych poleceń Bash](https://www.linode.com/docs/tools-reference/tools/10-useful-bash-commands/)
+- [Spraw

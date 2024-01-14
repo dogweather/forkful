@@ -1,45 +1,48 @@
 ---
 title:    "Rust: Att skriva tester"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Det finns många olika programmeringsspråk där ute, men varför ska man välja Rust? En av anledningarna är att Rust har inbyggd stöd för enhetstester, vilket är en viktig del av att skapa robusta och pålitliga program. Om du vill utveckla högkvalitativa program är det viktigt att inkludera tester i din kod.
+Att skriva tester är en viktig del av att skriva kod i Rust. Det hjälper till att upptäcka buggar och säkerställa att koden fungerar som det är tänkt. Dessutom kan det spara tid i det långa loppet genom att undvika fel i produktion.
 
-## Hur man skriver tester i Rust
+## Hur man gör det
 
-För att skriva tester i Rust använder man sig av modulen `#[cfg(test)]` tillsammans med `#[test]` för att markera funktioner som tester. Detta gör det möjligt att köra testerna endast när programmets flagga för testmiljö är satt. Ett enkelt exempel kan se ut så här:
+Att skriva tester i Rust är enkelt och effektivt. För att skapa en test fil, börja med att importera "test" biblioteket:
 
 ```Rust
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_addition() {
-        assert_eq!(2 + 2, 4);
-    }
+use std::test;
+```
+
+Sedan kan du definiera dina tester med funktionen "test::assert". Till exempel, om du vill testa en funktion som adderar två tal och returnerar summan, kan du skriva följande:
+
+```Rust
+fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+#[test]
+fn test_add() {
+    assert_eq!(add(3, 5), 8);
 }
 ```
 
-Här har vi en testfunktion som kontrollerar att en enkel addition ger det förväntade resultatet. `#[test]` markerar funktionen som ett test och `assert_eq!` används för att jämföra det faktiska resultatet med det förväntade. Om de inte är lika kommer testet att misslyckas och du får en varning.
+Här använder vi "assert_eq" för att jämföra resultatet av funktionen med det förväntade värdet. Om det inte stämmer, kommer testet att misslyckas och ge dig en information om var felet ligger.
 
-Testerna kan sedan köras via kommandot `cargo test` och du kommer få en lista över resultatet från alla tester som körts.
+## Djupdykning
 
-## Djupdykning i tester
+När du skriver tester, är det viktigt att täcka alla möjliga fall av din kod. Rust har olika funktioner som hjälper dig att göra det, som t.ex. "assert_ne" för att testa om det förväntade värdet är olik det faktiska, och "assert!(condition)" för att testa om en villkor är sant.
 
-Att skriva tester är en viktig del av utvecklingen i Rust, men det finns också potential att skapa mer komplexa tester. Ett annat användbart verktyg för testning är `#[should_panic]` som kan användas för att testa att en funktion faktiskt resulterar i ett avbrott. Man kan också skapa egna tester genom att använda makron från testmodulen.
+Det är också bra att ha flera tester för en funktion för att se hur den fungerar med olika parametrar och gränsvärden. Detta kan hjälpa till att upptäcka och åtgärda buggar tidigt.
 
-Det finns också andra moduler som kan hjälpa till att skriva tester i Rust, såsom `mockall` för att skapa mockning och `mutagen` för att testa felaktiga dataflöden.
+Slutligen, var noga med att skriva testet i en separat fil och inte blanda dem med din faktiska kod. Detta håller din kodbas ren och organiserad.
 
 ## Se även
 
-Här är några länkar för vidare läsning om enhetstester i Rust:
-
-- [Rust dokumentation för tester](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Test module](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html)
-- [Mockall för Rust](https://crates.io/crates/mockall)
-- [Mutagen för Rust](https://crates.io/crates/mutagen)
-
-Lycka till med att skriva tester i Rust!
+- [The Rust Book: Writing tests](https://doc.rust-lang.org/book/testing.html)
+- [Rust by Example: Testing](https://rustbyexample.com/testing.html)
+- [Rust test Crate Documentation](https://doc.rust-lang.org/std/test/index.html)

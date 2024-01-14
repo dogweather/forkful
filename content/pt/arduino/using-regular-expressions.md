@@ -1,49 +1,61 @@
 ---
 title:    "Arduino: Usando expressões regulares"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar expressões regulares em Arduino?
+## Por que usar Expressões Regulares em Programação Arduino?
 
-Expressões regulares são uma ferramenta poderosa e versátil para manipulação de texto em qualquer linguagem de programação, incluindo Arduino. Elas permitem que você procure e substitua padrões em uma string de uma maneira muito eficiente e flexível. Se você está trabalhando com strings em seus projetos Arduino, deve considerar aprender a usar expressões regulares para economizar tempo e escrita de código repetitivo.
+Em programação, muitas vezes precisamos procurar por padrões específicos em uma string de caracteres. Isso pode ser desde um endereço de email até um número de telefone. Usar expressões regulares em Arduino pode nos ajudar a encontrar e manipular esses padrões de forma eficiente e precisa.
 
-## Como usar expressões regulares em Arduino
+## Como usar Expressões Regulares em Programação Arduino?
 
-Para começar a usar expressões regulares em seu código Arduino, você precisará importar a biblioteca "Regex". Você pode fazer isso abrindo a biblioteca na IDE do Arduino e selecionando "Incluir biblioteca" e depois "Regex". Em seguida, você pode seguir as instruções do exemplo fornecido para aprender como usar as funções básicas.
+Para usar expressões regulares em Arduino, é necessário incluir a biblioteca "Regex.h". Em seguida, podemos usar a função "Regex.Match" para procurar um padrão específico em uma string. Veja um exemplo abaixo:
 
 ```Arduino
 #include <Regex.h>
 
-void setup() {
-  Serial.begin(9600);
-  // criar uma string para usar como exemplo
-  String texto = "Olá, mundo! Esta é uma string de exemplo.";
-  // criar um objeto regex para procurar pelo padrão "string"
-  Regex regex("string");
+String frase = "Meu endereço de email é exemplo@email.com";
 
-  // usar a função .match() para procurar pelo padrão
-  if (regex.match(texto)) {
-    // se o padrão for encontrado, imprimir a posição e o tamanho da string
-    Serial.println("O padrão foi encontrado em: " + regex.index() + ", com o tamanho de: " + regex.length());
-  } else {
-    Serial.println("O padrão não foi encontrado.");
-  }
+Regex padrao("([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})");
+// O padrão acima procura por um endereço de email válido
+
+if (padrao.Match(frase)) {
+  Serial.println("Endereço de email válido encontrado!");
+} else {
+  Serial.println("Nenhum endereço de email válido encontrado!");
 }
 
-void loop() {
-  // não é necessário fazer nada aqui para este exemplo
-}
+// Saída:
+// Endereço de email válido encontrado!
 ```
 
-O código acima imprimirá "O padrão foi encontrado em: 24, com o tamanho de: 6" porque o padrão "string" começa na posição 24 da string "texto" e tem um tamanho de 6 caracteres. Você pode usar outras funções da biblioteca Regex para executar substituições, pesquisa global e muito mais.
+Outra função útil é o "Regex.Replace", que permite substituir um padrão por outro. Veja um exemplo abaixo:
 
-## Mergulho profundo: Usando classes char e regex
+```Arduino
+#include <Regex.h>
 
-Embora a biblioteca "Regex" seja conveniente para usar e entender, é importante saber que ela usa classes char e regex subjacentes para fazer todo o trabalho pesado. Você pode aprender mais sobre como essas classes funcionam na documentação da IDE do Arduino para se tornar um especialista em expressões regulares em Arduino.
+String frase = "Bem-vindo ao meu website, onde você pode encontrar muitas informações.";
 
-# Veja também
+Regex padrao("website");
+// O padrão acima procura pela palavra "website"
 
-- [Documentação da biblioteca Regex para Arduino](https://arduino.github.io/arduino-cli/latest/libraries/)
-- [Tutorial de expressões regulares em Arduino](https://create.arduino.cc/projecthub/robekick/how-to-use-regex-regular-expressions-in-arduino-ide-tutorial-1-glyph-28d73b)
+String novaFrase = padrao.Replace(frase, "blog");
+// Agora "blog" substituiu "website" na string
+
+Serial.println(novaFrase);
+// Saída:
+// Bem-vindo ao meu blog, onde você pode encontrar muitas informações.
+```
+
+## Mergulhando mais fundo em Expressões Regulares
+
+Para entender melhor como as expressões regulares funcionam, é importante aprender sobre seus diferentes componentes, como metacaracteres, quantificadores e grupos de captura. Além disso, é útil praticar com diferentes exemplos e padrões para ganhar familiaridade com a sintaxe.
+
+## Veja Também
+
+- [Documentação Oficial da Biblioteca Regex.h](https://www.arduino.cc/reference/en/libraries/regex/)
+- [Tutorial de Expressões Regulares para Arduino](https://create.arduino.cc/projecthub/Arnov_Sharma/regex-regular-expressions-tutorials-a24ddc)
+- [Guia Completo de Expressões Regulares](https://www.regular-expressions.info/tutorial.html)

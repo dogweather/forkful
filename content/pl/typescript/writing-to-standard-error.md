@@ -1,70 +1,44 @@
 ---
-title:    "TypeScript: Zapisywanie do standardowego błędu"
+title:    "TypeScript: Pisanie do standardowego błędu"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Standardowe wyjście jest jednym z podstawowych elementów w każdym języku programowania. Jednak, kiedy chcemy przekazać informacje o błędach, niezbędne jest skorzystanie ze standardowego wyjścia błędu lub "standard error". W tym artykule dowiesz się dlaczego jest to ważne i jak to zrobić w języku TypeScript.
+W dzisiejszym wpisie omówimy, dlaczego pisanie do standardowego wyjścia błędów jest ważną częścią procesu programowania w języku TypeScript. Zobaczymy również, jak to zrobić i jakie korzyści możemy z tego czerpać.
 
 ## Jak to zrobić
-
-Aby napisać informację do standardowego wyjścia błędu w TypeScript, musimy skorzystać z obiektu process.stderr. Wykorzystujemy do tego metodę write, która przyjmuje jedną lub więcej wartości jako argumenty. Poniżej znajduje się przykładowy kod oraz jego wynik w terminalu.
-
-```TypeScript
-import * as process from 'process';
-
-process.stderr.write('To jest błąd');
-```
-
-```
-To jest błąd
-```
-
-Jeśli chcemy przekazać bardziej szczegółową informację, możemy skorzystać z szablonów stringów i przekazać zmienne wewnątrz tekstu.
+Pisanie do standardowego wyjścia błędów jest przydatne w wielu sytuacjach, szczególnie gdy chcemy szybko i łatwo zlokalizować błędy w naszym kodzie. Aby to zrobić, wystarczy użyć funkcji `console.error()` w naszym kodzie TypeScript.
 
 ```TypeScript
-import * as process from 'process';
+const age: number = 25;
+const name: string = "John";
 
-const kod = 123;
-
-process.stderr.write(`Kod błędu: ${kod}`);
-```
-
-```
-Kod błędu: 123
-```
-
-## Głębsza analiza
-
-Pisanie do standardowego wyjścia błędu jest szczególnie przydatne w przypadku obsługi błędów w naszym kodzie. Jest to również ważne w środowiskach produkcyjnych, gdzie musimy mieć możliwość szybkiego zlokalizowania i naprawienia błędów. Niektóre aplikacje wykorzystują również standardowe wyjście błędu do zapisywania logów, co może ułatwić diagnostykę problemów.
-
-W języku TypeScript mamy również dostęp do wyjątków, które pozwolą nam na bardziej precyzyjne przekazywanie informacji o błędzie. Możemy skorzystać z klasy Error, aby utworzyć własny obiekt błędu i przekazać go do standardowego wyjścia błędu.
-
-```TypeScript
-import * as process from 'process';
-
-class MojBlad extends Error {
-  constructor(kod: number, wiadomosc: string) {
-    super(wiadomosc);
-    this.name = 'MojBlad';
-    this.code = kod;
-  }
+if (age < 18) {
+  console.error("Osoba niepełnoletnia nie może wziąć udziału w konkursie.");
 }
 
-const mojBlad = new MojBlad(123, 'To jest mój błąd');
-
-process.stderr.write(mojBlad.message);
+console.log(`Witaj, ${name}!`);
 ```
 
-```
-To jest mój błąd
-```
+W powyższym przykładzie, jeśli zmienna `age` będzie miała wartość mniejszą niż 18, to w konsoli zostanie wyświetlony błąd. Natomiast komunikat powitalny zostanie wyświetlony tylko wtedy, gdy zmienna `age` będzie miała wartość równą lub większą niż 18.
+
+Pisanie do standardowego wyjścia błędów jest także przydatne podczas debugowania aplikacji. Możemy w ten sposób wyświetlać wartości zmiennych i upewnić się, że nasz kod działa poprawnie.
+
+## Deep Dive
+W przypadku większych projektów, gdzie błędy mogą być trudniejsze do znalezienia, pisanie do standardowego wyjścia błędów jest niezwykle ważnym narzędziem. Dzięki temu możemy szybko zlokalizować błąd i zacząć go naprawiać.
+
+Ponadto, pisanie do standardowego wyjścia błędów pomaga nam w tworzeniu czytelnego i przejrzystego kodu. W przypadku, gdy nasza aplikacja zwraca wiele różnych błędów, możemy użyć funkcji `console.error()` do wyświetlenia odpowiedniego komunikatu dla każdego z nich.
+
+Warto również pamiętać, że pisanie do standardowego wyjścia błędów nie przerywa działania naszego kodu. Jest to przydatne, gdy chcemy wyświetlić błąd, ale nie chcemy przerywać wykonywania programu.
 
 ## Zobacz również
+Pisanie do standardowego wyjścia błędów w języku TypeScript jest proste i przydatne w wielu sytuacjach. Jeśli chcesz dowiedzieć się więcej o programowaniu w TypeScript, zapraszamy do zapoznania się z poniższymi materiałami:
 
-* Dokumentacja w języku TypeScript na temat standardowego wyjścia błędu: https://nodejs.org/api/process.html#process_process_stderr
-* Praktyczny przykład wykorzystania standardowego wyjścia błędu w Node.js: https://blog.risingstack.com/node-js-logging-tutorial/
-* Artykuł na temat wyjątków w języku TypeScript: https://blog.logrocket.com/error-handling-in-typescript/
+- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+- [Kurs TypeScript na platformie Udemy](https://www.udemy.com/course/typescript-the-complete-developers-guide/)
+- [Blog programistyczny: Najczęstsze błędy w języku TypeScript](https://www.codementor.io/@dariogarciamoya/common-typescript-mistakes-fyk615vvy)
+
+Dziękujemy za przeczytanie tego wpisu i mamy nadzieję, że teraz wiesz, dlaczego pisanie do standardowego wyjścia błędów jest tak ważne w procesie programowania w języku TypeScript. Do zobaczenia w kolejnych wpisach!

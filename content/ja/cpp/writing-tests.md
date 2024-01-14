@@ -1,52 +1,49 @@
 ---
 title:    "C++: テストの書き方"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜプログラマーはテストを書くべきか
+## なぜテストを書くのか
 
-プログラミングにおいて、テストは非常に重要な役割を果たします。テストを書くことで、コードの品質を保証し、エラーを事前に発見することができます。また、テストを書くことでコードをより柔軟に変更できるようになります。つまり、テストを書くことはプログラマーにとって不可欠な作業なのです。
+プログラミングをする時、私たちはコードが予想通りに動作することを望んでいます。しかし、修正や新しい機能を追加する際には、予期しないバグが発生する可能性があります。このような場合、テストを書くことで予期せずにコードが崩れてしまうことを防ぐことができます。
 
-## テストを書く方法
+## テストの書き方
 
-テストを書く方法は、プログラミング言語やフレームワークによって異なりますが、C++でのテストの書き方を紹介します。まず、テストを実行するためにはテスティングフレームワークが必要です。ここではGoogle Testを使用します。
+テストを書くには、いくつかのステップが必要です。まずは、テストする機能やコードを理解することが重要です。次に、テストケースを作成し、実際にコードをテストしてみます。テストがすべて通過したら、テストを実行するためのコードを書きます。最後に、常にテストを実行して、コードに変更があった場合にはテストを更新するようにしましょう。
 
 ```C++
-#include <gtest/gtest.h>
+#include <iostream>
+#include <cassert>
 
-// テストする関数
+// 2つの数字を加算する関数
 int add(int a, int b) {
     return a + b;
 }
 
-// テストケースを定義
-TEST(TestAddFunction, PositiveNumbers) {
-    // 期待する結果と実際の結果を比較
-    EXPECT_EQ(add(3, 4), 7);
-}
-
-TEST(TestAddFunction, NegativeNumbers) {
-    EXPECT_EQ(add(-7, -8), -15);
-}
-
-// メイン関数を定義
-int main(int argc, char* argv[]) {
-    // テストを実行
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+// テストケース
+int main() {
+    // テスト1: 正しい出力が得られることを確認
+    assert(add(2, 3) == 5);
+    // テスト2: 負の数でも計算が可能であることを確認
+    assert(add(-2, 5) == 3);
+    
+    std::cout << "All tests passed!" << std::endl;
+    
+    return 0;
 }
 ```
 
-例として、add関数をテストするコードを書いています。テストケースでは期待する結果と実際の結果を比較し、結果が一致すればテストはパスします。これにより、プログラムのバグを早期に発見することができます。
+上記の例では、```assert()```を使用してテストを実行しています。この関数は、引数に与えられた条件が偽である場合にはプログラムを停止し、```assertion failed```というエラーメッセージを出力します。
 
-## テストの詳細について
+## テストを深く掘り下げる
 
-テストを書く際には、いくつかの注意点があります。まず、テストは単体で実行可能であることが重要です。また、どのような入力でもきちんと動作するように、ランダムな値や極端な値を使用してテストすることが大切です。さらに、テストのカバレッジを高くすることで、コードの全ての部分をテストすることができます。
+テストを書く際には、どのように入力値や条件を設定するかが重要です。入力値が異なる場合には、それぞれの場合に対応するテストを書く必要があります。また、コードのカバレッジを考えることも重要です。コードのすべての部分がテストされていることを確認しましょう。
 
-## おすすめのリンク
+## 参考リンク
 
-- [Google Test公式サイト](https://github.com/google/googletest)
-- [テスト駆動開発入門 | ドワンゴ Developers](https://dwango.github.io/articles/tdd)
-- [プログラマーのためのテスト駆動開発 | Qiita](https://qiita.com/y-tsutsu/items/aa7e13c1ce1e6949e663)
+- [Google C++ テスト フレームワーク - Google C++ スタイル ガイド](https://google.github.io/styleguide/cppguide.html#Google_C.2B-.2B-_Tests)
+- [Google Test ユーザーガイド (日本語訳)](https://github.com/google/googletest/blob/master/googletest/docs/DocumentationJa.md)
+- [Boost.Test ライブラリ ドキュメント(日本語)](https://www.boost.org/doc/libs/1_71_0/libs/test/doc/html/boost_test/oneminutetutorial.html)

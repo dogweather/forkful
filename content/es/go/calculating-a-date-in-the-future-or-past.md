@@ -1,50 +1,55 @@
 ---
 title:    "Go: Calculando una fecha en el futuro o pasado"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Alguna vez te has preguntado cómo calcular una fecha en el futuro o en el pasado en un programa? En este blog post, te explicaremos por qué esta funcionalidad puede ser útil y cómo puedes implementarla en tus proyectos de Go.
+# Porqué
 
-## Cómo Hacerlo
-Para calcular una fecha en el futuro o en el pasado en Go, podemos utilizar la función `Time.Add()` junto con el tipo de dato `Duration`. Por ejemplo, si queremos calcular la fecha de mañana, podemos hacer lo siguiente:
+Hay muchas situaciones en las que necesitamos saber la fecha en el futuro o en el pasado en nuestros programas, como por ejemplo, al crear una aplicación de calendario o al configurar recordatorios. Por eso es importante saber cómo calcular fechas en Go.
 
-```Go
-// Importamos el paquete de tiempo
-import "time"
+## Cómo
 
-// Creamos una variable con la fecha de hoy
-hoy := time.Now()
-
-// Calculamos la fecha de mañana
-manana := hoy.Add(24 * time.Hour) 
-
-// Imprimimos el resultado en la consola
-fmt.Println(manana)
-```
-
-Este código nos devuelve la fecha de mañana en el mismo formato que la fecha de hoy. Podemos también calcular una fecha en el pasado utilizando un número negativo para la `Duration`, por ejemplo:
+Calculando una fecha en el futuro o en el pasado en Go es sumamente fácil gracias a la librería incorporada de manejo de tiempo (time). Primero, importamos la librería con `import "time"` y luego utilizamos la función `AddDate()` para añadir o restar una cantidad especificada de años, meses y/o días a una fecha determinada. Veamos un ejemplo:
 
 ```Go
-ayer := hoy.Add(-24 * time.Hour)
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    fecha := time.Now() //obtenemos la fecha de hoy
+    fmt.Println("Fecha de hoy:", fecha.Format("02/01/2006"))
+    
+    fecha_futura := fecha.AddDate(2, 0, 0) //añadimos dos años a la fecha actual
+    fmt.Println("Fecha en dos años:", fecha_futura.Format("02/01/2006"))
+    
+    fecha_pasada := fecha.AddDate(0, -3, 0) //restamos tres meses a la fecha actual
+    fmt.Println("Fecha hace tres meses:", fecha_pasada.Format("02/01/2006"))
+}
 ```
 
-De esta manera, podemos obtener la fecha de ayer. También podemos utilizar otras unidades de tiempo como `Minute`, `Second`, `Millisecond`, etc. para calcular fechas más específicas.
+Este código nos dará la siguiente salida:
 
-## Inmersión Profunda
-La función `Time.Add()` funciona agregando o restando un intervalo de tiempo al tiempo actual. Sin embargo, también podemos calcular una fecha basada en una fecha específica utilizando la función `Time.Date()` y luego agregando la `Duration`. Por ejemplo:
-
-```Go
-// Calcula la fecha dentro de 2 meses y 3 días
-fecha := time.Date(2021, time.March, 20, 0, 0, 0, 0, time.UTC)
-futuro := fecha.Add(2 * time.Month + 3 * time.Day)
+```
+Fecha de hoy: 04/11/2021
+Fecha en dos años: 04/11/2023
+Fecha hace tres meses: 04/08/2021
 ```
 
-De esta manera, podemos personalizar aún más nuestras fechas y obtener resultados más precisos.
+## Deep Dive
 
-## Ver También
-- [Paquete de Tiempo en la documentación oficial de Go](https://golang.org/pkg/time/)
-- [Tutorial de Tiempo en Go](https://gobyexample.com/time)
-- [Calculando fechas con Go](https://golangexample.com/calculate-dates-in-the-golang-example/#:~:text=Calculating%20Dates%20in%20the%20Golang%20Example)
+Si queremos ir un poco más profundo en el manejo de fechas en Go, podemos utilizar la función `Parse()` para convertir una cadena de texto en una fecha y la función `Format()` para convertir una fecha en una cadena de texto con un formato específico. También existen librerías adicionales que nos permiten realizar operaciones más complejas, como cálculos entre diferentes zonas horarias o ajustes por horario de verano.
+
+Es importante tener en cuenta que las fechas en Go se manejan en formato Unix, contando los segundos desde el 1 de enero de 1970 a las 00:00 UTC. Esto nos permite realizar operaciones más precisas y evita posibles errores de formato.
+
+# See Also
+
+- Documentación de la librería time en Go: https://golang.org/pkg/time/
+- Tutorial de manejo de fechas en Go: https://golangbyexample.com/golang-date-time/
+- Librería adicional para cálculos con zonas horarias: https://github.com/jinzhu/now

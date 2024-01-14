@@ -1,28 +1,20 @@
 ---
-title:    "Go: Começando um novo projeto"
+title:    "Go: Iniciando um novo projeto"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Go?
+## Por que começar um novo projeto com Go?
 
-Se você está pensando em iniciar um novo projeto de programação, provavelmente está se perguntando por que deveria escolher a linguagem de programação Go. Aqui estão alguns motivos pelos quais Go pode ser uma ótima escolha para o seu próximo projeto:
+Se você está procurando uma linguagem de programação simples, eficiente e fácil de aprender, Go pode ser a escolha perfeita para o seu novo projeto! Com sua sintaxe limpa, forte suporte à concorrência e poderosas bibliotecas, Go é uma ótima opção para criar aplicativos modernos e escaláveis. Além disso, sua comunidade ativa e suas atualizações frequentes garantem que a linguagem esteja sempre evoluindo e melhorando.
 
-- É uma linguagem de programação de código aberto desenvolvida pelo Google, que garante uma grande comunidade e suporte ativo.
-- Possui uma sintaxe simples e concisa, o que a torna fácil de aprender e rápida de escrever.
-- Go é altamente eficiente em termos de desempenho, tornando-o ideal para projetos que exigem um alto poder de processamento.
-- Ele também tem uma biblioteca padrão abrangente, tornando-o ideal para o desenvolvimento de aplicativos da web e sistemas distribuídos.
+## Como começar a programar com Go
 
-Com essas razões em mente, vamos passar para a parte prática - como começar a programar em Go!
+Você pode instalar o Go em seu computador seguindo as instruções do site oficial, ou usar o playground online para testar alguns de nossos exemplos. Vamos criar um simples programa que imprime "Olá, mundo!" na tela:
 
-## Como fazer
-
-Antes de começar a escrever seu código em Go, você precisará configurar um ambiente de desenvolvimento. Comece baixando e instalando o compilador Go em seu sistema operacional. Em seguida, crie um novo diretório para o seu projeto e navegue para ele no terminal. Dentro do diretório, crie um novo arquivo chamado `main.go` e abra-o em seu editor de código favorito.
-
-Agora, vamos escrever nosso primeiro programa em Go. Copie e cole o seguinte código dentro do arquivo `main.go`:
-
-```Go
+```
 package main
 
 import "fmt"
@@ -32,22 +24,30 @@ func main() {
 }
 ```
 
-Este é um código simples que imprimirá a mensagem "Olá, mundo!" no terminal. Para executá-lo, basta ir até o diretório do seu projeto no terminal e digitar `go run main.go`. Você deve ver a saída "Olá, mundo!" impressa.
+Ao executar o código acima, você verá a mensagem "Olá, mundo!" impressa no console. Agora vamos dar um passo adiante e criar uma função que calcula e retorna o quadrado de um número:
 
-Agora que sabemos como executar um programa em Go, vamos dar uma olhada mais profunda em como começar um novo projeto.
+```
+func square(num int) int {
+	return num * num
+}
 
-## Mergulho profundo
+func main() {
+	fmt.Println(square(5))
+}
+```
 
-Quando começar um novo projeto em Go, é importante seguir as práticas recomendadas pela comunidade. Isso inclui a criação de pacotes para organizar seu código, o uso de testes unitários e comentários úteis para tornar seu código mais legível.
+Neste exemplo, declaramos uma função chamada "square" que recebe um número inteiro como parâmetro e retorna o seu quadrado. No "main", chamamos a função e imprimimos o resultado. Você pode modificar e testar esses exemplos no playground de Go.
 
-Além disso, o Go possui uma ferramenta útil chamada `go mod`, que gerencia as dependências do seu projeto. Certifique-se de manter o controle dessas dependências e atualizá-las regularmente para garantir um código mais robusto e seguro.
+## Aprofundando-se no processo de começar um novo projeto
 
-Uma vez que esteja familiarizado com as melhores práticas do Go, você estará pronto para realmente mergulhar no desenvolvimento do seu projeto!
+Antes de iniciar o desenvolvimento de um novo projeto, é importante estabelecer alguns passos essenciais. Primeiro, defina claramente qual é o objetivo do seu projeto e quais serão suas etapas de desenvolvimento. Em seguida, escolha as bibliotecas e ferramentas adequadas para o seu projeto, certificando-se de que estejam atualizadas e compatíveis com a versão mais recente do Go.
+
+Outro aspecto importante é seguir as boas práticas de codificação, como escrever código legível e bem documentado, e utilizar testes automatizados. Isso ajudará a manter seu código organizado e livre de erros.
+
+Além disso, é sempre bom estar familiarizado com os recursos da comunidade, como fóruns e grupos de discussão, onde você pode obter ajuda e trocar conhecimentos com outros desenvolvedores.
 
 ## Veja também
 
 - [Documentação oficial do Go](https://golang.org/doc/)
-- [Go Playground](https://play.golang.org/): para testar código Go online
-- [Go Blog](https://blog.golang.org/): blog oficial da comunidade Go com artigos e atualizações sobre a linguagem
-
-Agora que você entende as razões, sabe como começar e tem informações mais profundas sobre programar em Go, é hora de colocar suas habilidades em prática e iniciar seu próximo projeto emocionante! Boa sorte!
+- [Playground de Go](https://play.golang.org/)
+- [Curso gratuito de Go para iniciantes](https://gobyexample.com/)

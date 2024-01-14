@@ -1,49 +1,65 @@
 ---
 title:    "Arduino: वर्तमान तारीख प्राप्त करना"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-क्या आपको पता है कि आप अपने अर्डुइनो में समय और तारीख को कैसे प्राप्त कर सकते हैं? जानिए इस ब्लॉग पोस्ट में क्यों और कैसे करना होगा।
+आज की तारीख को प्राप्त करना आपके आर्डुइनो कोड में कई स्थानों पर उपयोगी हो सकता है, जैसे समय के साथ शुरुआत करने, लॉगिंग डेटा और समय पर आधारित निर्णय लेने में।
 
-# कैसे करें
+## कैसे करें
 
-**स्टेप 1:** सप्ताह और दिन की जांच करें
-```Arduino
-int weekDay = weekday();
-int day = day();
+आप आर्डुइनो कोड में ```Arduino``` लाइब्रेरी का उपयोग करके वर्तमान तारीख और समय प्राप्त कर सकते हैं। नीचे दिए गए उदाहरण को फॉलो करें:
+
+```arduino
+#include <Arduino.h>
+#include <TimeLib.h>
+
+void setup() {
+  Serial.begin(9600);
+  while(!Serial);
+  setTime(12, 0, 0, 1, 1, 2021); // सेट करें(hour, minute, second, day, month, year)
+  
+  // तारीख और समय प्राप्त करें
+  int currentHour = hour();
+  int currentMinute = minute();
+  int currentSecond = second();
+  int currentDay = day();
+  int currentMonth = month();
+  int currentYear = year();
+  
+  // सीरियल मॉनिटर में दिखाएं
+  Serial.print("वर्तमान समय: ");
+  Serial.print(currentHour);
+  Serial.print(":");
+  Serial.print(currentMinute);
+  Serial.print(":");
+  Serial.print(currentSecond);
+  Serial.println();
+  Serial.print("वर्तमान तारीख: ");
+  Serial.print(currentDay);
+  Serial.print("/");
+  Serial.print(currentMonth);
+  Serial.print("/");
+  Serial.print(currentYear);
+}
+
+void loop() {
+}
 ```
 
-**स्टेप 2:** महीना और साल को जांचें
-```Arduino
-int month = month();
-int year = year();
+नीचे का सैंपल आउटपुट आपको मॉनिटर पर दिखेगा:
+
+```
+वर्तमान समय: 12:0:0
+वर्तमान तारीख: 1/1/2021
 ```
 
-**स्टेप 3:** अब सभी जानकारी को मिलाकर प्रिंट करें
-```Arduino
-Serial.print("Today is ");
-Serial.print(weekDay);
-Serial.print(", ");
-Serial.print(day);
-Serial.print(" ");
-Serial.print(month);
-Serial.print(" ");
-Serial.print(year);
-```
+## गहराई में जाएं
 
-**आउटपुट:**
-> Today is Monday, 15 March 2021
+```TimeLib.h``` लाइब्रेरी वर्तमान समय को माइक्रोसेकंड तक ही प्रकट कर सकती है, जो वास्तविक वर्तमान समय को सेकंड के हिसाब से प्रदर्शित करता है। इसके अतिरिक्त, यह आर्डुइनो कोड में सही समय को सेव करने और उसे बाद में उपयोग करने की भी सुविधा प्रदान करता है।
 
-# गहराई में जाएं
-
-अर्डुइनो में समय और तारीख को प्राप्त करना काफी आसान है। यह [Time स्लाइप लाइब्रेरी](https://www.arduino.cc/reference/en/libraries/time/) का उपयोग करती है जो आपको हजारों वर्षों तक की तारीख प्रबंधन की सुविधा प्रदान करती है। इसके अलावा इस लाइब्रेरी में दिन, महीने, साल, घंटे, मिनट और सेकंड को पढ़ने और सेट करने के लिए अनेक सुविधाएं शामिल हैं। इससे आपको जरूरत के हिसाब से समय और तारीख को प्राप्त करने के लिए अपने कोड में कस्टमाइजेशन करने की सुविधा मिलती है।
-
-# देखें भी
-
-- [Time स्लाइप लाइब्रेरी डॉक्यूमेंटेशन](https://www.arduino.cc/reference/en/libraries/time/)
-- [अर्डुइनो में समय मॉड्यूल कैसे उपयोग करें](https://randomnerdtutorials.com/using-real-time-clock-rtc-arduino/) 
-- [अर्डुइनो और DS1307 रियल टाइम क्लॉक मॉड्यूल के साथ तारीख और समय प्राप्त करना](https://circuitdigest.com/microcontroller-projects/arduino-to-get-current-date-time-from-ds1307-rtc)
+समय को सेट करने के लिए ```setTime()``` फंक्शन को उसी तरह उपयोग किया जा सकता है जैसे ऊपर दिखाया गया है। ह

@@ -1,81 +1,43 @@
 ---
-title:    "C: Muuttaminen merkkijonoksi pienaakkosiksi"
+title:    "C: Muuntamassa merkkijonoa pieniksi kirjaimiksi"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Merkkijonon muuntaminen pieniksi kirjaimiksi
+## Miksi
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi on tärkeää monissa ohjelmoinnin projekteissa. Se voi auttaa luomaan yhtenäisen ja selkeämmän koodin, sekä helpottaa merkkijonojen vertailua ja etsintää. 
+Miksi kukaan haluaisi muuttaa merkkijonon pienaakkosiksi? Vaikka se saattaa kuulostaa yksinkertaiselta tehtävältä, on tämä muunnos tärkeä osa ohjelmointia monessa tilanteessa. Esimerkiksi silloin kun vertaillaan merkkijonoja, on tärkeää että molemmat merkkijonot ovat samassa muodossa.
 
-## Miten: Esimerkkejä koodin muotoilusta
+## Kuinka tehdä
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi voidaan tehdä monella eri tavalla käyttäen C kielen kirjastoja. Alla on kolme esimerkkiä, jotka näyttävät eri tapoja muuntaa merkkijono pieniksi kirjaimiksi ja tulostaa se näytölle.
-
-### Esimerkki 1:
+Merkkijonon muuttaminen pienaakkosiksi tapahtuu käyttäen C:n standardikirjastofunktiota `tolower`. Tämä funktio muuntaa yhden merkin kerrallaan ja sitä voi käyttää merkkijonon läpikäymiseen for-silmukan avulla. Alla esimerkki koodista ja sen tuottamasta tulosteesta:
 
 ```C
-//Luodaan merkkijono
-char string[] = "Merkkijono PIENILLÄ Kirjaimilla";
-
-//muunnettaan merkkijono pieniksi kirjaimiksi käyttäen strlwr funktiota
-strlwr(string);
-
-//tulostetaan merkkijono näytölle
-printf("Merkkijono: %s", string);
-
-```
-
-Tuloste: Merkkijono: merkkijono pienillä kirjaimilla
-
-### Esimerkki 2:
-
-```C
-//Luodaan merkkijono
-char string[] = "Tämä Merkkijono Muuntuu Martiksen kanssa";
-
-//otetaan käyttöön ctype.h kirjasto
+#include <stdio.h>
 #include <ctype.h>
 
-//Luodaan for-looppi, joka käy läpi merkkijonon
-for (int i = 0; string[i]; i++) {
-  //muutetaan jokainen kirjain pieneksi käyttäen tolower funktiota
-  string[i] = tolower(string[i]);
+int main() {
+  char string[] = "Tämä On MERRKIJONO PiENAkkOsina"; 
+  int i; 
+
+  for (i = 0; string[i] != '\0'; i++) {
+    string[i] = tolower(string[i]);
+  }
+
+  printf("%s\n", string); //tulostaa: "tämä on merkkijono pienaakkosina"
+  return 0;
 }
-
-//tulostetaan merkkijono näytölle
-printf("Merkkijono: %s", string);
-
 ```
 
-Tuloste: Merkkijono: tämä merkkijono muuntuu martiksen kanssa
+## Syväsukellus
 
-### Esimerkki 3:
+`tolower`-funktio käyttää ASCII-taulukkoa muuntaakseen merkkinä olevan kirjaimen vastaavaan pienaakkoseen. Tämä tarkoittaa, että esimerkiksi tästä merkistä `K` tulee `k` ja merkistä `Ö` tulee `ö`. On hyvä muistaa, että tämä muunnos ei toimi muiden kirjaimistojen kanssa, kuten esimerkiksi skandinaavisissa kieletissä käytetyllä UTF-8-koodistikolla.
 
-```C
-//Luodaan merkkijono
-char string[] = "MCMMXXVII";
-
-//Luodaan for-looppi, joka käy läpi merkkijonon
-for (int i = 0; string[i]; i++) {
-  //muutetaan jokainen kirjain pieneksi käyttäen bitwise operaatiota
-  string[i] |= 32;
-}
-
-//tulostetaan merkkijono näytölle
-printf("Merkkijono: %s", string);
-
-```
-
-Tuloste: Merkkijono: mcmmxxvii
-
-## Syvällisempi sukellus: Merkkijonon muuttaminen pieniksi kirjaimiksi
-
-Merkkijonon muuntaminen pieniksi kirjaimiksi on tärkeää ymmärtää, sillä se vaikuttaa suoraan koodin ylläpidettävyyteen ja luettavuuteen. Käyttämällä sopivia kirjastoja ja funktioita, merkkijonoja voidaan muuntaa pieniksi kirjaimiksi ilman turhia komplikaatioita. Tärkeintä on myös ymmärtää, miten eri kielet käsittelevät merkkijonoja ja miten se voi vaikuttaa muuntamisprosessiin.
+Tässä kohtaa voi myös mainita toisen hyödyllisen funktioon `toupper`, joka muuntaa merkkijonon isoaakkosiksi. Näiden kahden funktion yhdistelmä mahdollistaa merkkijonon muuntamisen eri muotoihin tarpeen mukaan.
 
 ## Katso myös
 
-- [C-kurssi (suomeksi)](https://www.tutorialspoint.com/cprogramming/)
-- [Merkkijonon käsittely C-kielessä](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Merkkijonon käsittely kirjastoissa C-kielessä](https://www.thegeekstuff.com/2013/04/c-strings-interview-questions/)
+- [C Standard Library: tolower](https://www.cplusplus.com/reference/cctype/tolower/)
+- [C Standard Library: toupper](https://www.cplusplus.com/reference/cctype/toupper/)

@@ -1,52 +1,51 @@
 ---
 title:    "Rust recipe: Concatenating strings"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Strings are an important part of any programming language, as they allow us to manipulate and display text. In Rust, strings are represented as collections of characters, and one common task when working with strings is concatenating them. In this blog post, we will explore why and how to concatenate strings in Rust.
+String concatenation is a common operation in programming, where two or more strings are combined together to form a new string. This can be useful in a variety of scenarios, such as creating dynamic messages or data structures.
 
 ## How To
 
-Concatenating strings in Rust is a relatively simple task. We can use the `+` operator or the `format!` macro to join multiple strings together. Let's look at an example using the `+` operator:
+In Rust, string concatenation can be done using the `+` operator or the `format!` macro. Let's take a look at some examples using both methods.
 
-```
+Using the `+` operator:
+
+```Rust
 let greeting = "Hello";
 let name = "John";
-let sentence = greeting + " " + name;
-println!("{}", sentence);
+let message = greeting + " " + name;
+println!("{}", message); // Output: Hello John
 ```
 
-The output of this code would be `Hello John`. As you can see, we simply used the `+` operator to concatenate the two strings together and create a new string.
+Using the `format!` macro:
 
-We can also use the `format!` macro to achieve the same result, but with a slightly different syntax:
-
-```
-let greeting = "Hello";
-let name = "John";
-let sentence = format!("{} {}", greeting, name);
-println!("{}", sentence);
+```Rust
+let country = "Canada";
+let capital = "Ottawa";
+let info = format!("The capital of {} is {}", country, capital);
+println!("{}", info); // Output: The capital of Canada is Ottawa
 ```
 
-The output would be the same as before. The `format!` macro works by taking in a format string (the first argument) and replacing the format specifiers (such as `{}`) with the values provided after the format string.
+It's important to note that the `+` operator will take ownership of the strings involved, so they cannot be used again after concatenation. However, the `format!` macro does not take ownership, so the original strings can still be used.
 
-It's worth noting that both the `+` operator and the `format!` macro take ownership of the strings they are concatenating. This means that the original strings are no longer valid after the concatenation. To avoid this, we can use the `&` operator to create a reference to the strings and avoid transferring ownership.
+In addition, the `format!` macro allows for more complex formatting of strings, such as inserting variables or performing calculations within the string.
 
 ## Deep Dive
 
-In Rust, strings are implemented as UTF-8 encoded byte sequences, which means they can contain characters from all languages and scripts. This also means that when concatenating strings, we need to be mindful of the encoding to avoid any issues.
+Behind the scenes, the `+` operator is calling the `push_str` method on the first string and passing the second string as an argument. This means that the first string is being modified and the resulting string is a combination of the two.
 
-One important thing to keep in mind when concatenating strings using the `+` operator is that it creates a new string every time, which can be inefficient for large strings. To address this, Rust provides the `std::string::String` type, which allows us to modify strings in place without creating new ones. This can be useful when dealing with large amounts of text.
+The `format!` macro, on the other hand, creates a new `String` object for the result, leaving the original strings untouched. This can be more efficient for larger strings as it avoids unnecessary memory allocations and copying.
+
+Additionally, the Rust compiler performs string concatenation at compile time, meaning it is optimized for performance. This is in contrast to other languages where concatenation is done at runtime.
 
 ## See Also
 
-- [Official Rust documentation on Strings](https://doc.rust-lang.org/std/string/index.html)
-- [Rust Book: Common Operations on Strings](https://doc.rust-lang.org/book/ch08-02-strings.html#common-operations-on-strings)
-- [Concatenation in Rust vs C++](https://medium.com/coding-in-simple-english/string-concatenation-in-rust-vs-c-a153233e5c95)
+To learn more about string concatenation in Rust, check out the official [Rust documentation](https://doc.rust-lang.org/std/string/struct.String.html#concatenation). You can also explore other string manipulation methods such as appending, replacing, and splitting.
 
----
-
-_Thank you for reading! Stay tuned for more Rust programming blog posts._
+Happy coding! 🚀

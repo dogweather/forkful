@@ -1,53 +1,54 @@
 ---
-title:    "Javascript: לקבלת התאריך הנוכחי - כותרת המאמר על תכנות מחשב"
+title:    "Javascript: לקבל את התאריך הנוכחי"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-יחד עם אתרי האינטרנט והיישומים המודרניים, תאריכו הנוכחי משמש ככלי מאוד חשוב בתכנות ג'אווהסקריפט. בכתבה זו נלמד למה אנו צריכים להשתמש בתאריך הנוכחי וכיצד לבצע זאת בקלות בקוד ג'אווהסקריפט.
+מתחשק לכם ליצור אפליקציה שמציגה את התאריך והשעה הנוכחיים? אולי אתם רוצים ליצור משחק אינטראקטיבי שדורש מהמשתמש לנתח את הזמן הנוכחי? סימפוניות מסוימת? יישום זה הינו כלי חיוני אם תרצו ליצור תוכניות אינטראקטיביות.
 
-## כיצד לבצע זאת
+## איך להשתמש
 
-כדי לקבל את התאריך הנוכחי בג'אווהסקריפט, נשתמש בתוכנית המובנית Date(). ניתן לשלוח לפעולה זו פרמטרים כדי לקבל תאריך ספציפי, אך אם לא נציין כלום נקבל את התאריך הנוכחי בפורמט של תאריך מלא.
+```
+Javascript
 
-```Javascript
-let currentDate = new Date();
-console.log(currentDate);
+// סעיף זה השתמש בפעולות מובנות לקבלת התאריך הנוכחי.
+const getDate = new Date();
+const currentDay = getDate.getDay();
+const currentMonth = getDate.getMonth();
+const currentYear = getDate.getFullYear();
+
+// ניתן גם להציג תאריך נוסף כמו זמן נוכחי עם הפונקציה הבאה:
+const getTime = new Date();
 ```
 
-הפלט של הקוד הנ"ל יהיה תאריך מלא בפורמט של יום, חודש ושנה. ניתן גם להציג רק חלקים ספציפיים של התאריך כגון שנה או חודש.
+מקובל להציג את התאריך הנוכחי בפורמט מסוים כגון יום/חודש/שנה או שעות/דקות/שניות.
 
-```Javascript
-// הצגת שנה
-let currentYear = currentDate.getFullYear();
-console.log(currentYear);
-
-// הצגת חודש
-let currentMonth = currentDate.getMonth();
-console.log(currentMonth);
+**תוצאה של משתנים התאריך הנוכחיים:**
+```
+שנה: 2021
+חודש: 12
+יום: 30
 ```
 
-בנוסף, ניתן להשתמש בתצורות שונות של התאריך הנוכחי כמו תאריך חיובי או שלישותיות.
-
-```Javascript
-// תאריך חיובי
-let positiveDate = currentDate.setDate(currentDate.getDate() + 7);
-console.log(positiveDate);
-
-// תאריך שלישיותי
-let fractionalDate = currentDate.setDate(currentDate.getDate() + 0.5);
-console.log(fractionalDate);
+**תוצאה של הפונקציה הזמן הנוכחי:**
+```
+שעה: 15
+דקות: 21
+שניות: 45
 ```
 
-## ייעולים נוספים
+## Deep Dive
 
-למרבה המזל, ניתן גם להשתמש בספריות נוספות בג'אווהסקריפט כדי לעבוד עם תאריכים בצורה יותר מתקדמת ונוחה. ספריות אלו כוללות את Moment.js ו-Date-fns.
+למרבה המזל, ב-Javascript ישנן פעולות מובנות שמאפשרות לנו לקבל את התאריך הנוכחי בקלות ובפשטות. נוכל להשתמש בפעולות כגון `new Date()` ו- `getDay()`, `getMonth()`, ו- `getFullYear()`. נוכל גם להשתמש בפעולה `getHours()`, `getMinutes()`, ו- `getSeconds()` כדי לקבל את הזמן הנוכחי.
 
-# רכיבים נוספים
+בנוסף, ניתן להשתמש בספריית חיצונית כגון Moment.js כדי לקבל יכולות נוספות כמו המרת זמני אזור זמן ופורמט מתאים.
 
-- תאריך ושעה בג'אווהסקריפט: https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Moment.js ספריית תאריך ושעה: https://momentjs.com/
-- Date-fns ספריית תאריך ושעה
+## ראה גם
+
+- [מדריך לפעולות התאריך והזמן ב-Javascript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [תיעוד של הפונקציות המובנות של תאריך וזמן ב-Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+-

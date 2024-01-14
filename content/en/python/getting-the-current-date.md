@@ -1,52 +1,62 @@
 ---
 title:    "Python recipe: Getting the current date"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As life becomes increasingly digital, keeping track of time and date has become an essential part of our daily routines. From scheduling appointments to managing deadlines, knowing the current date is crucial for staying organized and on top of our tasks. And with the Python programming language, getting the current date is quick and easy.
+Have you ever needed to know what day it is? Whether it's for a project, a meeting, or just to keep track of the passing of time, knowing the current date is a useful piece of information. Luckily, it's easy to get the current date using Python programming. In this blog post, we will explore how to retrieve the current date and some interesting ways to use it.
 
 ## How To
 
-To get the current date in Python, we can use the built-in `date` class from the `datetime` module. This class allows us to create objects that represent specific dates. Let's take a look at the following code:
+In Python, we can use the `datetime` module to get the current date. First, we need to import the module:
 
-```Python
-from datetime import date
-
-current_date = date.today()
-print(current_date)
+```python
+import datetime
 ```
 
-This code first imports the `date` class from the `datetime` module. Then, we use the `today()` method to create a `date` object that represents the current date. Finally, we use the `print()` function to display the value of `current_date`.
+Next, we can use the `date.today()` method to get the current date. This method returns a `datetime` object which contains the current date information including the year, month, and day.
 
-The output of this code would be the current date in the following format:
-
-`yyyy-mm-dd`
-
-For example, if today's date is January 20th, 2022, then the output would be:
-
-`2022-01-20`
-
-We can also customize the format of the output by using the `strftime()` method. This method allows us to specify a format string to display the date in a different format. Let's see an example:
-
-```Python
-print(current_date.strftime("%B %d, %Y"))
+```python
+today = datetime.date.today()
+print(today)
 ```
 
-Here, we use the `%B` directive to display the full month name, `%d` for the day of the month, and `%Y` for the full year. The output of this code would be:
+The output of this code will vary depending on when you run it, but it will look something like this:
 
-`January 20, 2022`
+```
+2021-10-14
+```
+
+We can also format the output to display the date in a specific way using the `strftime()` method. This method allows us to specify a format string to customize the output. For example, if we want to display the date in the format of "Month DD, YYYY", we can use the following code:
+
+```python
+today = datetime.date.today()
+formatted_date = today.strftime('%B %d, %Y')
+print(formatted_date)
+```
+
+The output of this code will be:
+
+```
+October 14, 2021
+```
+
+We can also get information about the current date, such as the day of the week or the day of the year, using the `weekday()` and `strftime()` methods, respectively.
 
 ## Deep Dive
 
-The `date` class in Python allows us to access various attributes and methods to work with dates. Some commonly used attributes include `year`, `month`, and `day`, which allow us to get the specific values of the date object.
+Behind the scenes, the `datetime` module is using the system's internal clock to get the current date and time. This means that if your system clock is not accurately set, the current date returned by the `date.today()` method will also be inaccurate.
 
-Additionally, we can perform arithmetic operations on date objects. For example, we can use the `timedelta()` class to add or subtract a certain number of days from a given date. This can be useful for calculating future or past dates.
+Additionally, the `datetime` module also allows us to work with timezones and perform various operations on dates, such as adding or subtracting days or comparing dates.
+
+There are also other ways to get the current date using other modules such as `time` or `calendar`. It's worth exploring these options to see which one works best for your particular use case.
 
 ## See Also
 
-- [Python documentation on the `date` class](https://docs.python.org/3/library/datetime.html#date-objects)
-- [Python strftime directives](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+- [Python datetime documentation](https://docs.python.org/3/library/datetime.html)
+- [Python time module documentation](https://docs.python.org/3/library/time.html)
+- [Python calendar module documentation](https://docs.python.org/3/library/calendar.html)

@@ -1,41 +1,50 @@
 ---
-title:    "Javascript: Tworzenie pliku tekstowego"
+title:    "Javascript: Pisanie pliku tekstowego"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać plik tekstowy
 
-Pisanie pliku tekstowego jest ważnym elementem dla wielu programistów Javascript. Jest to niezbędne w wielu przypadkach, takich jak zapisywanie danych, konfiguracji lub wyników działania programu. Dzięki pisaniu pliku tekstowego, możemy zachować ważne informacje i korzystać z nich w przyszłości.
+Pisanie pliku tekstowego jest nieodłączną częścią programowania w języku JavaScript, ponieważ pozwala na przechowywanie i przetwarzanie danych w przejrzystej i zrozumiałej formie. Jest to szczególnie przydatne, gdy chcemy przechowywać duże ilości danych lub je udostępnić innym użytkownikom. Pisanie pliku tekstowego jest również niezbędne, gdy pracujemy z aplikacjami, które wymagają określonego formatu danych.
 
-## Jak to zrobić
+## Jak pisać plik tekstowy
 
-Aby napisać plik tekstowy w Javascript, musimy użyć wbudowanego modułu `fs` (file system). Najpierw musimy utworzyć nowy plik przy użyciu metody `writeFile()`, która przyjmuje trzy parametry - nazwę pliku, dane do zapisania oraz funkcję zwrotną, która zostanie uruchomiona po zapisaniu pliku.
-
-Poniżej znajduje się przykładowy kod w Javascript, który tworzy plik tekstowy o nazwie "dane.txt" i zapisuje w nim informacje o imieniu i wieku osoby. 
+Pisanie pliku tekstowego w języku JavaScript jest proste, ponieważ możemy skorzystać z wbudowanych funkcji i metod. W poniższym przykładzie pokażemy, jak stworzyć nowy plik tekstowy o nazwie "dane.txt" i dodać do niego kilka linii tekstu.
 
 ```Javascript
+// Importujemy moduł fs, który pozwala nam na pracę z plikami
 const fs = require('fs');
 
-const dane = "Imię: John, Wiek: 25";
+// Tworzymy nowy plik tekstowy o nazwie "dane.txt" i przypisujemy go do zmiennej
+const plik = fs.createWriteStream('dane.txt');
 
-fs.writeFile('dane.txt', dane, function (err) {
-    if (err) throw err;
-    console.log('Plik został zapisany!');
-});
+// Dodajemy kilka linii tekstu do pliku, używając funkcji write()
+plik.write('To jest tekstowy plik dane.txt\n');
+plik.write('Zapisz te informacje dla późniejszego użytkownika\n');
+
+// Zamykamy plik, używając metody end()
+plik.end();
 ```
 
-Po uruchomieniu tego kodu, w naszym folderze pojawi się plik tekstowy o nazwie "dane.txt" z zawartością "Imię: John, Wiek: 25".
+Po uruchomieniu tego kodu, w katalogu projektu powinien pojawić się plik "dane.txt" zawierający podany tekst. Jeśli chcemy odczytać dane z pliku tekstowego, możemy użyć funkcji readFileSync(), która zwróci zawartość pliku jako ciąg znaków.
 
-## Głębszy zanurzenie
+```Javascript
+// Odczytujemy plik dane.txt i zapisujemy jego zawartość do zmiennej
+const zawartosc = fs.readFileSync('dane.txt', 'utf8');
 
-Ważne jest, aby wiedzieć, że przy użyciu metody `writeFile()` zapisujemy całkowicie nowy plik. Jeśli chcemy dopisywać dane do istniejącego pliku, powinniśmy użyć metody `appendFile()`.
+// Wyświetlamy zawartość pliku w konsoli
+console.log(zawartosc); 
+```
 
-Dodatkowo, możemy określić format naszego pliku tekstowego, dodając odpowiednią flagę jako trzeci parametr. Na przykład, jeśli chcemy zapisać nasze dane w formacie JSON, użyjemy flagi `{ flag: 'a', encoding: 'utf8' }`.
+## Głębszy wgląd
 
-## Zobacz również
+Pisanie plików tekstowych może wymagać dodatkowych ustawień, takich jak określenie kodowania znaków lub trybu zapisu. Możemy to zrobić, przekazując odpowiednie opcje do funkcji createWriteStream() lub readFileSync(). Istnieje również wiele innych metod z modułu fs, które pomogą nam w manipulowaniu plikami, takich jak rename() czy appendFile(). Ważne jest jednak, aby pamiętać o obsłudze wyjątków i błędów, które mogą wystąpić podczas pisania lub odczytywania plików.
 
-- [Dokumentacja modułu fs w języku Javascript](https://nodejs.org/api/fs.html)
-- [Przykładowy kod pisania pliku tekstowego w Javascript](https://www.geeksforgeeks.org/writing-data-to-a-text-file-using-javascript/)
-- [Przykładowy kod dopisywania danych do istniejącego pliku tekstowego w Javascript](https://www.guru99.com/reading-and-writing-files-in-nodejs.html#2)
+## Zobacz także
+
+- [Dokumentacja modułu fs w języku JavaScript](https://nodejs.org/api/fs.html)
+- [Tutorial: Pisanie i odczytywanie plików w języku JavaScript](https://www.digitalocean.com/community/tutorials/nodejs-reading-and-writing-files)
+- [Wideo: Tworzenie i zapisywanie plików w języku JavaScript](https://www.youtube.com/watch?v=EnaQd-6hQZU)

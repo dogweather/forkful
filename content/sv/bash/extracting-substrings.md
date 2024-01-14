@@ -1,53 +1,45 @@
 ---
 title:    "Bash: Extrahera delsträngar"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Det finns många tillfällen när det kan vara användbart att extrahera substrängar från en större sträng. Det kan vara för att söka igenom och manipulera data eller för att skapa dynamiska filnamn eller sökvägar. I denna bloggpost kommer vi att utforska hur man kan göra detta i Bash-programmering.
+Att extrahera substränger kan vara en mycket användbar färdighet inom Bash-programmering. Genom att använda sig av denna teknik kan man utvinna viktig information från en större sträng och använda den för att utföra olika åtgärder. Det är också ett vanligt förekommande problem som man stöter på vid skriptutveckling, så det är definitivt en bra kunskap att ha under bältet.
 
 ## Så här gör du
 
-Det finns flera olika sätt att extrahera substrängar från en sträng i Bash, beroende på vilket resultat du vill ha. Här är några olika metoder:
-
-1. Använda "substräng operator": Med $"sträng: start:längd" kan du extrahera en del av en sträng baserad på dess position och längd.
+För att extrahera en substräng från en större sträng kan man använda sig av "substring expansion" i Bash. Syntaxen för detta är ${string:start:length}, där "string" är den ursprungliga strängen, "start" är det index där man vill påbörja substrängen och "length" är antalet tecken som man vill extrahera. Här är ett exempel:
 
 ```Bash
-sträng="Hej världen"
-echo $"sträng: 4:5" # Resultat: värld
+original_string="Hej! Jag heter Johan."
+# Extrahera substrängen "Jag heter"
+substring="${original_string:5:9}"
+echo $substring # Output: Jag heter
 ```
 
-2. Använda "kmppisträng": Med ${sträng/mönster/ersättning} kan du ersätta en del av en sträng med en annan sträng.
+Man kan också använda negativa index för att räkna bakifrån i strängen. Om man till exempel vill extrahera de sex sista tecknen i en sträng kan man använda ${string: -6}.
 
 ```Bash
-sträng="Hej världen"
-echo ${sträng/Hej/Hello} # Resultat: Hello världen
+original_string="Detta är en sträng."
+# Extrahera de sex sista tecknen - "sträng."
+substring="${original_string: -6}"
+echo $substring # Output: sträng.
 ```
 
-3. Använda sed: Med sed kan du hitta och ersätta delar av en sträng baserat på ett mönster. 
+Det finns också andra sätt att extrahera substränger, som att använda grep-kommandot eller sed-kommandot, men dessa kräver mer avancerade kunskaper inom Bash.
 
-```Bash
-sträng="Hej världen"
-echo $sträng | sed "s/Hej/Hello/" # Resultat: Hello världen
-```
+## Fördjupning
 
-Det finns också många andra sätt att extrahera substrängar i Bash, såsom awk och grep. Utforska och använd den metod som passar bäst för ditt projekt.
+När man extraherar substränger i Bash är det viktigt att förstå att teckenföljden börjar på index 0 istället för 1. Detta kan orsaka förvirring för nybörjare, men det är en viktig del av Bash-syntaxen som man bör vara medveten om.
 
-## Deep Dive
-
-Genom att använda Bash-programmering för att extrahera substrängar kan du utföra många olika uppgifter med enkla och effektiva kommandon. Du kan också använda villkorliga uttryck och loopar för att manipulera strängar och få önskade resultat.
-
-En annan fördel med att använda Bash för substräng manipulation är att det är lätt att integrera med andra Bash-kommandon och verktyg. Du kan till exempel använda resultatet av en substrängsoperation som ett argument i ett annat kommando.
-
-Det finns också många avancerade tekniker för att extrahera delar av en sträng i Bash, såsom regex-mönstermatchning och användning av inbyggda variabler såsom $IFS (internal field separator). Genom att lära dig mer om dessa koncept kan du skapa mer avancerade och robusta skript för substrängsoperationer.
+Man kan också använda variabler för att definiera startindex och längd för en substräng, vilket kan göra koden mer flexibel och lättare att förstå. Det är också viktigt att komma ihåg att om man försöker extrahera en längre substräng än vad som finns tillgängligt i den ursprungliga strängen så kommer bara de tillgängliga tecknen att visas.
 
 ## Se även
 
-- [BashGuide](http://mywiki.wooledge.org/BashGuide) - En omfattande guide till Bash-programmering
-- [Bash-hjälp](https://www.gnu.org/software/bash/manual/bash.html) - Officiell dokumentation för Bash
-- [Bash Coloring](https://github.com/arnehilmann/bash-coloring) - Ett verktyg för att färgkoda och förbättra läsbarheten i Bash-skript
-
-Tack för att du läste denna bloggpost om hur man extraherar substrängar i Bash-programmering! Vi hoppas att du har lärt dig något nytt som du kan använda i dina egna projekt. Glöm inte att utforska och experimentera med olika metoder för att hitta den som passar bäst för dina behov. Lycka till!
+- [Bash-dokumentationen om "substring expansion"](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Grep-kommandot i Bash](https://www.gnu.org/software/grep/manual/grep.html)
+- [Sed-kommandot i Bash](https://www.gnu.org/software/sed/manual/sed.html)

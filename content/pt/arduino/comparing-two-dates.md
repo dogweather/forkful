@@ -1,63 +1,60 @@
 ---
 title:    "Arduino: Comparando duas datas"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas no Arduino?
+# Por que comparar duas datas?
 
-Comparar datas é uma tarefa comum em muitos projetos de Arduino, especialmente aqueles que envolvem sensores ou dispositivos que coletam dados em intervalos específicos. Comparar datas pode ajudar a organizar os dados coletados e realizar ações com base nesse tempo, tornando seu projeto mais eficiente e preciso.
+Comparar duas datas é uma tarefa comum em projetos de Arduino, especialmente quando se lida com temporizadores ou para verificar a diferença entre as datas atuais e as datas armazenadas em uma memória externa. Esta comparação pode ajudar a controlar eventos ou ativar dispositivos em horários específicos. Neste artigo, vamos aprender como fazer essa comparação utilizando o Arduino.
 
-## Como fazer a comparação de duas datas no Arduino
+## Como fazer
 
-Em primeiro lugar, é importante definir o formato em que as datas serão armazenadas e comparadas. No Arduino, é comum usar a biblioteca Time.h para manipular datas e horas. Esta biblioteca permite armazenar datas como uma estrutura de data e hora com seis variáveis: ano, mês, dia, hora, minuto e segundo.
+Para comparar duas datas, precisamos primeiro obter as datas desejadas e depois utilizar funções de comparação para determinar se as datas são iguais, maiores ou menores.
 
-Para comparar duas datas, é necessário primeiro criar duas estruturas de data e hora com os valores desejados. Em seguida, basta utilizar a função `timeDiff()` da biblioteca Time.h para calcular a diferença em segundos entre as duas datas. Se a diferença for igual a zero, significa que as datas são iguais.
+Passo 1: Obter as datas
 
-Aqui está um exemplo de código que compara duas datas e imprime a diferença em segundos:
+Usaremos a biblioteca <DateTime.h> para obter as datas desejadas. Esta biblioteca vem junto com a biblioteca <DS3231.h> para uso com o módulo de relógio DS3231. Primeiro, devemos inicializar o módulo e, em seguida, usar a função now() para obter a data atual.
 
 ```
-#include <Time.h>
+#include <Wire.h>
+#include <DS3231.h>
 
-// Definir duas datas para comparação
-struct tm data1 = {2020, 7, 15, 10, 30, 30};  // 15 de julho de 2020 às 10:30:30
-struct tm data2 = {2020, 7, 15, 9, 45, 0};  // 15 de julho de 2020 às 9:45:00
+DS3231 rtc; // inicializa o módulo de relógio
+DateTime now = rtc.now(); // obtém a data atual
+```
 
-void setup() {
-  // Inicializa a biblioteca Time.h
-  setTime(10, 30, 30, 15, 7, 2020);
-  
-  // Calcula a diferença em segundos entre as duas datas
-  int diferenca = timeDiff(data1, data2);
-  
-  // Imprime a diferença em segundos
-  Serial.print("A diferença entre as duas datas é de: ");
-  Serial.print(diferenca);
-  Serial.print(" segundos.");
+Passo 2: Comparar as datas
+
+Agora que temos a data atual, podemos compará-la com uma data armazenada em uma variável. Vamos supor que temos uma data desejada armazenada em uma variável chamada "data_alvo". Podemos usar as funções de comparação <, >, == para comparar as datas e tomar uma ação com base no resultado.
+
+```
+if (now < data_alvo) {
+  // a data atual é menor que a data alvo
+  // faça algo
 }
 
-void loop() {
-  // O código não terá loop pois estamos apenas comparando datas
+if (now > data_alvo) {
+  // a data atual é maior que a data alvo
+  // faça algo
+}
+
+if (now == data_alvo) {
+  // a data atual é igual à data alvo
+  // faça algo
 }
 ```
 
-A saída no monitor serial será:
+## Aprofundando
 
-```
-A diferença entre as duas datas é de: 2700 segundos.
-```
+Ao comparar duas datas, é importante levar em consideração o formato em que elas estão sendo armazenadas. Geralmente, datas são armazenadas em strings ou em milissegundos desde uma data de referência. Portanto, é importante converter as datas em um formato comum antes de compará-las.
 
-## Mais informações sobre a comparação de datas no Arduino
-
-Existem várias funções úteis na biblioteca Time.h que podem ser usadas para manipular datas no Arduino. Por exemplo, a função `monthDays()` retorna o número de dias em um determinado mês, enquanto a função `makeTime()` permite criar uma estrutura de data a partir de variáveis separadas para ano, mês, dia, hora, minuto e segundo.
-
-Além disso, é importante estar ciente de possíveis erros ao comparar datas, especialmente se as datas estiverem em diferentes fuso horários. É recomendado utilizar a função `time_t` para converter datas em segundos antes de compará-las.
+Também é importante ter em mente que algumas funções de comparação podem não funcionar corretamente com datas maiores que o ano 2038. Isso ocorre devido a limitações de armazenamento de dados em uma variável de 32 bits. Portanto, é aconselhável usar uma biblioteca de tempo como a <TimeLib.h> para lidar com datas maiores que o ano 2038.
 
 ## Veja também
 
-- [Documentação oficial do Time.h](https://www.arduino.cc/reference/en/libraries/time/)
-- [Tutorial sobre manipulação de datas no Arduino](https://www.tutorialspoint.com/arduino/arduino_date_time.htm)
-- [Introdução ao uso da biblioteca Time.h](https://lastminuteengineers.com/arduino-time-management-ntp-rtc-ds3231/)
-
-O uso eficiente e preciso de comparação de datas é uma habilidade útil em muitos projetos de Arduino. Com as informações e recursos fornecidos neste artigo, esperamos que você possa implementá-la com sucesso em seus próprios projetos!
+- <a href="https://www.arduino.cc/reference/pt/libraries/ds3231/">Biblioteca DS3231</a>
+- <a href="https://www.arduino.cc/reference/pt/language/functions/time/">Funções de tempo</a>
+- <a href="https://www.arduino.cc/reference/pt/language/functions/time/millis/">Função millis()</a>

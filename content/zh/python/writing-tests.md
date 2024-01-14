@@ -1,49 +1,58 @@
 ---
-title:    "Python: 撰写测试"
+title:    "Python: 编写测试"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么要编写测试
 
-编写测试是一种重要的软件开发实践，它可以帮助开发者提高代码的质量和稳定性。通过编写测试，我们可以确保代码在后续的更改中不会出现意外的错误，同时也可以帮助我们更快地发现和修复bug。
+编写测试是软件开发过程中非常重要的一步。通过编写测试，我们可以提高代码的质量和稳定性，并减少出现错误的可能性。测试也可以帮助我们快速定位和修复bug，节省开发时间和成本。因此，无论是作为一个专业的程序员，还是一个学习Python的爱好者，编写测试都是必不可少的。
 
 ## 如何编写测试
 
-编写测试的基本流程如下所示：
+编写测试的方法很简单，我们只需要使用Python自带的`unittest`模块即可。首先，我们需要导入`unittest`模块：
 
-```python
-# 导入需要的测试库
+```Python
 import unittest
+```
 
-# 定义一个测试类
-class TestFunction(unittest.TestCase):
-    # 定义一个测试方法
-    def test_function(self):
-        # 准备测试数据
-        num1 = 10
-        num2 = 5
-        # 调用被测试的函数
-        result = function(num1, num2)
-        # 断言测试结果与预期结果是否相等
-        self.assertEqual(result, 15)
+接着，我们可以创建一个测试类，该类继承`unittest.TestCase`类，并编写我们需要测试的函数：
 
-# 运行测试
+```Python
+class MyTestCase(unittest.TestCase):
+    # 测试函数以test开头
+    def test_add(self):
+        result = 1 + 2
+        self.assertEqual(result, 3) # 使用断言来判断结果是否正确
+```
+
+然后，我们可以使用`unittest.main()`来运行我们的测试：
+
+```Python
 if __name__ == '__main__':
     unittest.main()
 ```
 
-通过编写测试类和测试方法，我们可以对代码进行全面的测试，并且可以使用断言来验证测试结果。当我们运行测试时，如果发现有断言失败的情况，就说明代码可能存在问题，需要进行修复。
+运行结果如下所示：
+
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
+
+如果我们想要测试多个函数，只需要在测试类中添加更多的测试函数，并使用不同的断言来判断结果是否正确。
 
 ## 深入了解编写测试
 
-编写测试不仅仅是简单地验证代码的正确性，它还可以帮助我们更好地组织代码和设计函数。通过编写测试，我们可以更加灵活地修改代码，并且可以更容易地重构和优化代码。
+除了使用断言来判断结果是否正确，我们还可以使用`setUp()`和`tearDown()`方法来分别进行测试前的准备和测试后的收尾工作。我们也可以使用`skip()`来跳过某些测试，以及使用`assertRaises()`来判断函数是否会抛出异常。此外，我们还可以使用`mock`模块来模拟测试中的依赖项。
 
-此外，编写测试也是团队合作中的重要环节。在团队开发中，每位成员都可以编写自己的测试，并且通过测试来保证代码的质量和稳定性。同时，测试也是团队中交付高质量代码的重要手段。
+## 查看更多资源（See Also）
 
-## 参考资料
-
-- [Python官方文档-编写测试](https://docs.python.org/3/library/unittest.html)
-- [如何撰写高效的Python测试用例](https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonunittesting/index.html)
-- [测试驱动的Python开发](https://book.douban.com/subject/11706859/)
+- [unittest模块文档](https://docs.python.org/3/library/unittest.html)
+- [Python官方教程](https://docs.python.org/3/tutorial/index.html)
+- [Python Unittest：如何编写单元测试](https://www.jianshu.com/p/75935dff7fde)

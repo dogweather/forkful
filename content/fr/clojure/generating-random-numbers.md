@@ -1,34 +1,53 @@
 ---
-title:    "Clojure: Génération de nombres aléatoires."
+title:    "Clojure: Génération de nombres aléatoires"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Pourquoi devriez-vous vous intéresser à la génération de nombres aléatoires en programmation Clojure ? Il y a plusieurs raisons ! La génération de nombres aléatoires peut être utile pour simuler des jeux, effectuer des tests aléatoires ou générer des données pour des expériences statistiques.
+La génération de nombres aléatoires est une tâche courante lors de la programmation en Clojure. Cela peut être utile pour des simulations, des jeux, ou pour tout autre scénario où des valeurs aléatoires sont nécessaires.
 
 ## Comment faire
-Pour générer des nombres aléatoires en Clojure, vous pouvez utiliser la fonction `rand`. Elle prend en argument soit un nombre entier, qui sera le maximum du nombre aléatoire généré, soit un intervalle de nombres représenté par une liste `[min max]`.
+
+Générer des nombres aléatoires en Clojure est assez simple. Utilisez la fonction `rand` pour obtenir un nombre décimal aléatoire entre 0 inclus et 1 exclus.
 
 ```Clojure
-(+ (rand 10) 1) ; Renvoie un nombre aléatoire entre 1 et 10 inclus
-(vec (repeatedly 5 #(rand-nth ["a" "b" "c"]))) ; Renvoie une liste de 5 éléments aléatoires parmi "a", "b" et "c"
+(rand) ; Output: 0.708524928
 ```
 
-Vous pouvez également utiliser la bibliothèque `math.combinatorics` pour générer des permutations aléatoires de listes ou de séquences.
+Pour obtenir un nombre entier aléatoire, multipliez le résultat de `rand` par la limite supérieure voulue et utilisez ensuite la fonction `int` pour arrondir à un nombre entier.
 
 ```Clojure
-require '[clojure.math.combinatorics :as combo]
-(combo/permutations [:a :b :c]) ; Renvoie toutes les permutations possibles de :a, :b et :c
-(shuffle [:a :b :c]) ; Mélange aléatoirement une liste ou une séquence
+(int (* (rand) 10)) ; Output: 6 ou 3 ou 9 ...
+```
+
+Vous pouvez également utiliser le `+` pour ajouter un décalage à la limite inférieure. Par exemple, pour obtenir un nombre entier aléatoire entre 5 inclus et 10 inclus :
+
+```Clojure
+(+ 5 (int (* (rand) 6))) ; Output: 6 ou 9 ou 10 ...
 ```
 
 ## Plongée en profondeur
-Il est important de noter que la fonction `rand` utilise un générateur de nombres pseudo-aléatoires, c'est-à-dire qu'elle utilise une formule mathématique pour générer des nombres qui semblent aléatoires mais qui sont en réalité déterminés par une graine initiale. Cela signifie que si vous utilisez la même graine, vous obtiendrez toujours la même séquence de nombres aléatoires. Cela peut être utile pour reproduire des résultats, mais si vous avez besoin de réelles valeurs aléatoires, vous devriez utiliser la bibliothèque `clojure.core/rand-int` ou une bibliothèque externe comme `clojure.math.probability` qui utilise des sources externes pour générer des nombres aléatoires.
+
+Il est important de noter que la fonction `rand` utilise le générateur de nombres pseudo-aléatoires de Java par défaut. Cela signifie que si vous initialisez le générateur avec une même graine (seed), vous obtiendrez les mêmes séquences d'aléatoire à chaque fois.
+
+```Clojure
+(require '[clojure.java.api :as java])
+(java/random-set-state (java/util/Random. 42)) ; Initialise le générateur avec la graine 42
+(rand) ; Output: 0.03962344
+```
+
+Si vous souhaitez générer des nombres aléatoires qui sont réellement imprévisibles, utilisez la fonction `secure-random` du namespace `clojure.core`. Cela utilisera alors un générateur cryptographique plus fiable.
+
+```Clojure
+(require '[clojure.core :as core])
+(core/secure-random) ; Output: 0.8862011811106673
+```
 
 ## Voir aussi
-- [Documentation Clojure pour la fonction `rand`](https://clojuredocs.org/clojure.core/rand)
-- [Documentation Clojure pour la bibliothèque `math.combinatorics`](https://clojuredocs.org/clojure.math.combinatorics)
-- [Documentation Clojure pour la bibliothèque `clojure.math.probability`](https://clojuredocs.org/clojure.math.probability)
+
+- [Documentation sur la génération de nombres aléatoires en Clojure](https://clojure.org/reference/java_interop#_random_number_generation)
+- [Article sur les générateurs de nombres pseudo-aléatoires en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

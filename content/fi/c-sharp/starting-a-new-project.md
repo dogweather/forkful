@@ -1,53 +1,33 @@
 ---
 title:    "C#: Uuden projektin aloittaminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projektisi 
+## Miksi aloittaa uusi ohjelmointiprojekti?
 
-Aloittaessa uuden projektin, voi olla monia syitä miksi teet niin. Ehkäpä haluat oppia uusia tekniikoita, kehittää taitojasi tai haluat saavuttaa jotain tärkeää. Jokaiselle henkilölle syynä voi olla erilainen, mutta tärkeintä on, että projekti innostaa ja motivoi sinua!
+On monia syitä, miksi voit aloittaa uuden ohjelmointiprojektin, mutta yksi yleisimmistä on uuden taidon oppiminen ja nykyisten taitojen parantaminen. Ohjelmointi on jatkuva oppimisprosessi ja uuden projektin aloittaminen voi auttaa kehittämään taitojasi ja käyttämään niitä käytännössä.
 
-## Kuinka aloittaa uusi projekti
+## Miten aloittaa uusi ohjelmointiprojekti C#:ssa?
 
-Jos olet aloittelija, saattaa tuntua pelottavalta aloittaa uusi projekti. Mutta ei hätää, olemme täällä auttamassa! Aloitetaan luomalla yksinkertainen C# ohjelma, jossa kysytään käyttäjän nimi ja tulostetaan se konsoliin.
+Aloittaminen uuden ohjelmointiprojektin C#:ssa on helppoa. Ensimmäiseksi sinun tulee luoda uusi projekti C# -sovelluksessa, jossa voit määrittää projektillesi nimen ja tallennuspaikan. Seuraavaksi voit avata uuden C# tiedoston ja aloittaa koodaamisen. Esimerkiksi voit luoda yksinkertaisen "Hello World" -ohjelman käyttäen "Console.WriteLine()" -metodia:
 
 ```C#
-using System;
-
-namespace AloitaProjekti
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Kysytään käyttäjän nimi
-            Console.WriteLine("Hei! Mikä on nimesi?");
-            // Tallennetaan käyttäjän vastaus muuttujaan
-            string nimi = Console.ReadLine();
-            // Tulostetaan nimi konsoliin
-            Console.WriteLine("Hei " + nimi + ", hauska tutustua!");
-        }
-    }
-}
+Console.WriteLine("Hello World!");
 ```
 
-#### Tuloste:
+Tämän jälkeen voit suorittaa ohjelman ja näet tulosteen "Hello World!" komentorivillä.
 
-> Hei! Mikä on nimesi?  
-> *käyttäjän syöttämä nimi*  
-> Hei *käyttäjän nimi*, hauska tutustua!
+## Syvällinen sukellus: Uuden projektin aloittaminen
 
-Nyt olet luonut ensimmäisen C# ohjelmasi! Jatka kokeilemalla erilaisia ohjelmointikäsitteitä ja harjoittele listoja, ehtolauseita ja silmukoita.
+Kun aloitat uuden ohjelmointiprojektin, on tärkeää määrittää selkeät tavoitteet ja vaatimukset projektille. Tämä auttaa ohjaamaan ohjelmointiprosessia ja pitää projektin suunnassa. Lisäksi on hyödyllistä suunnitella ja hajauttaa ohjelma pieniin osiin, jolloin koodin hallinta on helpompaa ja virheiden jäljittäminen on tehokkaampaa.
 
-## Syvällisempi perehtyminen uuden projektin aloittamiseen
-
-Kun suunnittelet uutta projektia, on ensiarvoisen tärkeää hahmotella selkeä tavoite. Mitä haluat saavuttaa projektillasi? Onko tarkoituksena luoda sovellus, peli tai verkkosivusto? Älä myöskään unohda miettiä mitä kieliä ja työkaluja tarvitset projektiisi. Päätöksen jälkeen voit aloittaa suunnittelun ja määritellä projektisi tarpeet ja vaatimukset.
-
-Muista myös dokumentoida projektiasi ja pitää se järjestelmällisenä. Tee tarvittaessa suunnitelman muutoksia matkan varrella ja älä unohda testausta! Loppujen lopuksi projektin tulisi olla hauska ja oppimiskokemus.
+Oikeiden työkalujen käyttäminen on myös tärkeää uuden ohjelmointiprojektin aloittamisessa. C# -kielen lisäksi kannattaa tutustua käytettävissä oleviin kehitysympäristöihin, ohjelmointitekniikoihin ja tietokantoihin, jotka voivat nopeuttaa ja tehostaa ohjelmointiprosessia.
 
 ## Katso myös
 
-- [Microsoftin C# opetusohjelmat](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/)
-- [C# koodausstandardeja](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+- [C#:n opetusohjelmat ja oppaat](https://dotnet.microsoft.com/learn/csharp)
+- [C#:n virallinen sivusto](https://docs.microsoft.com/fi-fi/dotnet/csharp/)
+- [Visual Studio -kehitysympäristö](https://visualstudio.microsoft.com/vs/)

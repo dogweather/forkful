@@ -1,40 +1,34 @@
 ---
-title:    "Go: Wycinanie podłańcuchów"
+title:    "Go: Wydobywanie podciągów"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego ekstrakcja podciągów jest ważna dla programistów w języku Go?
+# Dlaczego używać funkcji wyciągających podciągi w Go?
 
-Ekstrakcja podciągów jest ważnym narzędziem dla programistów w języku Go, ponieważ pozwala na wygodne i szybkie przetwarzanie tekstów. Dzięki wykorzystaniu odpowiednich funkcji i metod, można w prosty sposób wyciągać wybrane fragmenty tekstu, co jest przydatne w wielu przypadkach, takich jak walidacja danych czy filtrowanie danych.
+Wyobraź sobie, że masz długi ciąg znaków i musisz wyodrębnić z niego tylko pewną część, która jest ważna dla Twojego kodu. W takim przypadku funkcje wyciągające podciągi są niezwykle przydatne i ułatwiają pracę programistom.
 
-## Jak to zrobić w praktyce?
+# Jak używać funkcji wyciągających podciągi w Go?
 
-Aby wyodrębnić podciąg w Go, należy użyć funkcji `substring()` lub wykorzystać mechanizm indeksowania w stringach. Przykładowe użycie powyższych metod można zobaczyć poniżej w bloku kodu napisanym w języku Go:
+Aby wyodrębnić podciąg w Go, musisz użyć wbudowanej funkcji `Substring`. Przykładowy kod wyglądałby następująco:
 
-```Go
-// Przykład 1
-str := "Witaj, świecie!"
-substr := str[7:] // wyodrębnienie podciągu zaczynającego się od 7 znaku (indeksowanie od 0)
-fmt.Println(substr) // wynik: świecie!
-
-// Przykład 2
-str := "Lorem ipsum dolor sit amet"
-substr := substring(str, 6, 11) // wyodrębnienie podciągu zaczynającego się od 6 znaku i mającego 11 znaków
-fmt.Println(substr) // wynik: ipsum
+```
+ciag_znakow := "To jest przykładowy ciąg znaków."
+podciag := Substring(ciąg_znaków, 8, 17)
+fmt.Println(podciag)
 ```
 
-W powyższych przykładach widać różne sposoby na wyciąganie podciągów z tekstu. Ważne jest również zauważenie, że aplikowanie funkcji `substring()` na stringu nie zmienia wartości samego stringa, a jedynie zwraca wybrany fragment.
+W powyższym przykładzie funkcja `Substring` wyodrębnia podciąg z `ciag_znakow` zaczynając od 8 znaku i kończąc na 17. Jeśli chcesz wyodrębnić cały ciąg od danego znaku do końca, możesz pominąć trzeci argument funkcji.
 
-## Głębsze spojrzenie na ekstrakcję podciągów
+# Głębsza analiza funkcji wyciągających podciągi
 
-Istnieje wiele metod i funkcji służących do wyodrębniania podciągów w języku Go. W przypadku użycia funkcji `substring()`, argumentami są indeks początkowy i końcowy, dzięki czemu można precyzyjnie zdefiniować jakiej części tekstu szukamy. Natomiast wykorzystanie mechanizmu indeksowania w stringach jest szczególnie przydatne w przypadku, gdy chcemy wyciągnąć fragmenty o stałych długościach.
+Funkcja `Substring` przyjmuje trzy argumenty - pierwszy to ciąg znaków, z którego chcesz wyodrębnić podciąg, drugi to indeks początkowy, od którego chcesz zacząć wyodrębnianie, a trzeci to opcjonalny indeks końcowy. Jeśli podasz tylko dwa argumenty, funkcja automatycznie zacznie wyodrębnianie od podanego indeksu do końca ciągu.
 
-Warto również wspomnieć o funkcji `strings.Contains()`, która pozwala na sprawdzenie czy dany string zawiera szukany podciąg. Dzięki temu można stosować warunki i w zależności od wyniku działania tej funkcji, podejmować dalsze działania w kodzie.
+Ważną rzeczą do zapamiętania jest to, że indeksowanie w Go zaczyna się od 0, czyli pierwszy znak ma indeks 0, drugi znak ma indeks 1 itd. Dzięki temu możesz precyzyjnie wybrać żądany podciąg.
 
-## Zobacz także
+# Zobacz także
 
-- Dokumentacja języka Go na temat stringów: https://golang.org/pkg/strings/
-- Przykłady użycia funkcji `substring()`: https://gobyexample.com/substrings
-- Poradnik o manipulacji stringów w języku Go: https://www.calhoun.io/5-tips-for-using-strings-in-go/
+- Dokumentacja Go dla funkcji `Substring`: https://golang.org/pkg/strings/#Substring
+- Przewodnik po podstawowych funkcjach w Go: https://tour.golang.org/basics/11

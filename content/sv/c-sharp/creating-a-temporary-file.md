@@ -1,44 +1,38 @@
 ---
 title:    "C#: Skapa en tillfällig fil"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför skapa en tillfällig fil?
+## Varför skapa en temporär fil?
 
-I programmering är det ibland nödvändigt att skapa tillfälliga filer för att lagra data, temporära resultat eller mellanprodukter. Detta kan vara till nytta för att undvika att överbelasta hårddisken med onödiga permanenta filer eller för att hantera data på ett effektivt sätt. Att skapa en tillfällig fil kan också vara en enkel och smidig lösning för att hantera brådskande data utan att behöva göra stora förändringar i din kod.
+Att skapa temporära filer kan vara användbart när du behöver tillfälligt lagra data eller information under körning av ditt program. Det kan också vara användbart för att undvika konflikter med befintliga filer eller för att minska risken för oavsiktlig dataändring.
 
-## Så här skapar du en tillfällig fil i C#
+## Hur man skapar en temporär fil i C#
 
-Att skapa en tillfällig fil i C# är enkelt och kan göras med hjälp av klassen "Path" och metoden "GetTempFileName()". Detta genererar en unik tillfällig fil som lagras i systemets temp-mapp. Följande kodexempel visar hur du kan skapa en tillfällig fil och skriva innehåll i den:
+För att skapa en temporär fil i C# kan du använda klassen `Path` och metoden `GetTempFileName()`. Se exemplet nedan:
 
 ```C#
+using System.IO;
+
 string tempFile = Path.GetTempFileName();
-
-using (StreamWriter writer = new StreamWriter(tempFile))
-{
-    writer.WriteLine("Detta är en tillfällig fil som innehåller data.");
-    writer.WriteLine("Den kommer att raderas automatiskt när programmet avslutas.");
-}
-
-Console.WriteLine("Tillfällig fil skapad på: " + tempFile);
-Console.ReadKey();
+Console.WriteLine("Den temporära filen heter: " + tempFile);
 ```
 
-Output:
-```
-Tillfällig fil skapad på: C:\Users\Användarnamn\AppData\Local\Temp\tmp43BF.tmp
-```
+Output: Den temporära filen heter: C:\TEMP\tmp1F8.tmp
 
-## Djupdykning i skapandet av en tillfällig fil
+Som du kan se i exemplet ovan så skapar metoden `GetTempFileName()` en unik filnamn baserat på systemets temporära mapp. Du kan sedan använda filnamnet för att läsa eller skriva data till din temporära fil.
 
-När vi använder metoden "GetTempFileName()" så skapas en unik tillfällig fil under mappen för temporära filer på systemet. Detta betyder att filen kommer att ha ett långt, slumpmässigt namn och att den endast kommer att finnas kvar tills programmet stängs av. Detta garanterar att det inte finns någon risk för namnkonflikter med andra filer på systemet.
+## Djupdykning i skapandet av temporära filer
 
-Förutom att skriva till en tillfällig fil, kan vi också använda den för att skapa säkra temporära mappar. Metoden "GetTempPath()" från samma klass kan användas för att hämta sökvägen till temp-mappen, och sedan kan funktionen "GetRandomFileName()" användas för att generera ett slumpmässigt namn för den temporära mappen.
+När du skapar en temporär fil, så skapas faktiskt en vanlig fil på din dator i systemets temporära mapp. Det unika filnamnet genereras av systemet och innehåller en unik kombination av bokstäver och siffror, vilket minskar risken för att namnet redan är upptaget.
+
+Det är också viktigt att notera att en temporär fil endast är tillgänglig under körning av ditt program. När programmet avslutas kommer filen att tas bort automatiskt av systemet. Det är därför viktigt att inte förlita sig på en temporär fil som en permanent lagringslösning.
 
 ## Se även
 
-- [Path.GetTempFileName() Metod (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=netframework-5.0)
-- [.NET Guide: Create a Temporary File in C#](https://dotnetcoretutorials.com/2018/03/22/creating-temporary-files-in-net-with-the-file-class/)
-- [How to work with temporary files in C#](https://www.c-sharpcorner.com/article/how-to-work-with-temporary-files-in-c-sharp/)
+- Microsoft Dokumentation om klassen `Path`: https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=netcore-3.1
+- Tutorial om att skapa temporära filer i C#: https://www.tutorialspoint.com/csharp/csharp_temporary_files.htm
+- Stack Overflow fråga om skapande av temporära filer: https://stackoverflow.com/questions/1365407/how-to-create-a-temporary-file-in-c-sharp

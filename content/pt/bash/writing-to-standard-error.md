@@ -1,32 +1,42 @@
 ---
-title:    "Bash: Escrevendo para o erro padrão"
+title:    "Bash: Escrevendo no erro padrão"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a escrita no erro padrão?
+## Por que Escrever para o Erro Padrão?
 
-Quando se trata de programação, muitas vezes nos deparamos com bugs e erros que podem dificultar a execução correta do nosso código. Aqui entra a importância da escrita no erro padrão, uma técnica que permite a identificação e correção de erros de forma mais eficiente.
+Escrever para o erro padrão é um recurso importante na programação em Bash. Ele permite que os desenvolvedores enviem mensagens de erro e outras informações para um local específico, em vez de misturar essas informações com a saída do programa. Isso torna a depuração mais fácil e ajuda a criar um código mais organizado e eficiente.
 
-## Como fazer:
+## Como Fazer
 
-Para escrever em erro padrão em Bash, utilizamos o comando "2>", seguido pelo arquivo em que desejamos salvar as mensagens de erro. Por exemplo:
+Para escrever para o erro padrão em Bash, utilizamos o comando `echo` seguido do símbolo `>` e o número `2`. Por exemplo, se quisermos enviar uma mensagem de erro, podemos usar o seguinte código:
 
-```Bash
-ls arquivo_inexistente 2> erros.txt
+```Bash 
+echo "Erro: arquivo não encontrado." > 2
 ```
 
-Isso irá redirecionar qualquer mensagem de erro gerada pelo comando "ls" para o arquivo "erros.txt". Podemos então analisar esse arquivo para verificar os erros e corrigi-los.
+Podemos também redirecionar todo o conteúdo do erro padrão para um arquivo específico, utilizando o comando `2>`. Por exemplo:
 
-## Mergulho Profundo:
+```Bash
+grep "Palavra-chave" arquivo.txt 2> erros.txt
+```
 
-Existem algumas coisas importantes a se ter em mente ao utilizar a escrita no erro padrão. Primeiro, é preciso entender que apenas as mensagens de erro são redirecionadas, as mensagens de sucesso ainda serão exibidas na saída padrão. Além disso, podemos utilizar o código de saída "2>&1" para redirecionar tanto as mensagens de erro quanto as de sucesso para o mesmo arquivo.
+Isso irá executar o comando `grep` normalmente, mas todos os erros serão redirecionados para o arquivo "erros.txt".
 
-É importante também lembrar que a escrita no erro padrão só funciona para comandos, não para programas em linguagens como Python ou Java. Nesses casos, deve-se utilizar a saída de erro padrão diretamente no código do programa.
+## Profundidade
 
-## Veja também:
+Existem várias razões pelas quais pode ser útil escrever para o erro padrão em Bash. Algumas delas incluem:
 
-- [Introdução ao Bash scripting](https://www.digitalocean.com/community/tutorials/how-to-write-a-simple-bash-script)
-- [Guia completo sobre redirecionamento em Bash](https://www.linuxjournal.com/article/4403)
+- Separação de informações: ao enviar mensagens de erro para um local específico, podemos separar essas informações da saída normal do programa, facilitando a leitura e depuração do código.
+
+- Tratamento de erros: escrever para o erro padrão torna mais fácil lidar com erros e exceções em nossos programas. Podemos verificar o arquivo de erros para identificar possíveis problemas e tomar ações específicas para lidar com eles.
+
+- Mensagens personalizadas: podemos personalizar as mensagens de erro que enviamos para o erro padrão, tornando-as mais informativas e amigáveis para o usuário final.
+
+## Ver também
+
 - [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Guia rápido de Bash](https://devhints.io/bash)

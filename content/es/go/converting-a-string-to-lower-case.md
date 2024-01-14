@@ -1,68 +1,65 @@
 ---
-title:    "Go: Convirtiendo una cadena a minúsculas"
+title:    "Go: Convirtiendo una cadena a minúsculas."
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué convertir una cadena a minúsculas en Go?
 
-La conversión de una cadena de texto a minúsculas puede ser una tarea muy útil cuando se trabaja con datos de entrada de usuarios o para fines de normalización de datos. Conocer cómo realizar esta conversión en Go puede mejorar la precisión de las búsquedas o comparaciones de cadenas de texto.
+Convertir una cadena a minúsculas es una tarea común en muchas aplicaciones de programación. En Go, esta funcionalidad se logra fácilmente gracias a la librería incorporada "strings". En este artículo, aprenderás cómo convertir una cadena a minúsculas en Go y por qué es una habilidad útil para tener en tu caja de herramientas de programación.
 
 ## Cómo hacerlo
 
-Para convertir una cadena de texto a minúsculas en Go, simplemente se utiliza la función `strings.ToLower()`. A continuación se muestra un ejemplo de código que convierte una cadena de texto a minúsculas y luego la imprime en pantalla:
+Hay varias formas de convertir una cadena a minúsculas en Go. Una forma es utilizando el método "ToLower" de la librería "strings". Aquí está un ejemplo de cómo se vería esto en código:
 
-```
+```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	texto := "¡HOLA A TODOS!"
-	fmt.Printf("Texto original: %s\n", texto)
-	texto = strings.ToLower(texto)
-	fmt.Printf("Texto convertido a minúsculas: %s\n", texto)
+    cadena := "PROGRAMANDO EN GO"
+    cadenaMin := strings.ToLower(cadena)
+    fmt.Println(cadenaMin)
 }
 ```
+La salida de este código sería: "programando en go". Como puedes ver, el método "ToLower" convierte toda la cadena a minúsculas.
 
-La salida de este código será:
+Otra opción para convertir una cadena a minúsculas es utilizando el método "ToLowerSpecial" de la librería "unicode". Este método te permite especificar el idioma que quieres utilizar para la conversión, lo que puede ser útil en situaciones multilingües. Aquí está un ejemplo de cómo se vería esto en código:
 
+```Go
+package main
+
+import (
+    "fmt"
+    "unicode"
+)
+
+func main() {
+    cadena := "PROGRAMANDO EN GO"
+    cadenaMin := strings.ToLowerSpecial(unicode.TurkishCase, cadena)
+    fmt.Println(cadenaMin)
+}
 ```
-Texto original: ¡HOLA A TODOS!
-Texto convertido a minúsculas: ¡hola a todos!
-```
+La salida de este código sería: "programando en go", pero con la letra "i" en minúscula y sin el acento que se encuentra en el idioma turco.
 
 ## Profundizando
 
-Es importante tener en cuenta que la conversión a minúsculas en Go utiliza unicode, lo que significa que también convertirá caracteres especiales de otros idiomas a su equivalente en minúsculas. Por ejemplo, la vocal Ñ en español se convertirá a ñ. Además, la función `strings.ToLower()` también puede manejar correctamente caracteres acentuados, como é, á o ô.
+Ahora que ya sabes cómo convertir una cadena a minúsculas en Go, es importante entender cómo funciona este proceso. La librería "strings" y el método "ToLower" utilizan la tabla "ASCII" para realizar la conversión. Esta tabla contiene pares de valores para cada letra, por lo que el método simplemente busca la letra en mayúscula y la reemplaza con la letra en minúscula correspondiente.
 
-Otra forma de convertir una cadena de texto a minúsculas es utilizando la función `strings.Map()`. Esta función permite especificar una función de mapeo que se aplicará a cada carácter de la cadena. A continuación, se muestra un ejemplo de cómo utilizar esta función para convertir una cadena de texto a minúsculas:
-
-```
-package main
-
-import (
-	"fmt"
-	"strings"
-	"unicode"
-)
-
-func main() {
-	texto := "¡HOLA A TODOS!"
-	fmt.Printf("Texto original: %s\n", texto)
-	texto = strings.Map(unicode.ToLower, texto)
-	fmt.Printf("Texto convertido a minúsculas: %s\n", texto)
-}
-```
-
-La salida de este código será la misma que en el ejemplo anterior.
+Por otro lado, el método "ToLowerSpecial" utiliza la tabla "Unicode" para la conversión. Esta tabla contiene más de 128,000 caracteres y es utilizada para soportar diferentes idiomas y símbolos. Al especificar un idioma en el método, estás indicando a Go que utilice la tabla "Unicode" correspondiente a ese idioma para realizar la conversión.
 
 ## Ver también
 
-- Documentación oficial de la función `strings.ToLower()` en el sitio web de Go: https://golang.org/pkg/strings/#ToLower
-- Documentación oficial de la función `strings.Map()` en el sitio web de Go: https://golang.org/pkg/strings/#Map
-- Ejemplos de uso de cadenas de texto en Go: https://blog.golang.org/strings
+Si quieres aprender más sobre Go y sus funcionalidades, aquí hay algunos recursos que pueden serte útiles:
+
+- [Documentación oficial de Go](https://golang.org/doc/)
+- [Videos tutoriales sobre Go](https://www.youtube.com/playlist?list=PLWDnPyr5QZxMpkGIWNuQLPAw1gPoid3Ue)
+- [Comunidad de Go en español](https://golang.es/)
+
+¡Esperamos que este artículo te haya sido útil y te haya ayudado a aprender más sobre Go y su funcionalidad para convertir cadenas a minúsculas!

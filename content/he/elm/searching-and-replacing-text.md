@@ -1,46 +1,52 @@
 ---
-title:    "Elm: חיפוש והחלפת טקסטים"
+title:    "Elm: חיפוש והחלפת טקסט"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כשמפתחים בשפת Elm ייתכן לנתק להעלות ולהעביר קוד, ייתכן שיהיה צורך לבצע החלפת טקסט בכמה מקומות בפעם אחת. לכן, יעיל ללמוד איך לעשות זאת כדי לחסוך זמן ומאמץ נוסף במהלך פיתוח הקוד.
+למה ייתכן שמישהו ירצה להתעסק בחיפוש והחלפת טקסט בתוך קוד Elm? כי זה מאפשר לך לפתור בעיות טכניות ולשפר את הקוד שלך בצורה קלה ומהירה.
 
 ## איך לעשות
 
-בכדי לבצע החלפה של טקסט ב-Elm, ישנם שני פונקציות ראשיות: `String.replace` ו- `String.replaceRegex`. לדוגמה, ננתק את הטקסט "אני אוהב את השפת Elm" ונחליף את המילה "Elm" במילה "קוד" במקום אחד:
+הנה כמה דוגמאות לכיצד לחפש ולהחליף טקסט בתוך קוד Elm:
 
 ```Elm
-text = "אני אוהב את השפת Elm"
-newText = String.replace "Elm" "קוד" text
+-- נמצא את התווים "hello" ונחליפם בתווים "world"
+String.replace "hello" "world" "Hello, Elm!"
+
+-- החלפה של מספרים באמצעות Regex
+Regex.replace Regex.all (Regex.regex "\d+") (\_ -> "5") "2 bottles of beer on the wall"
+
+-- חיפוש והחלפה של טקסט בתוך רשימת מחרוזות
+List.map (\string -> String.replace "hello" "world" string) ["Hello, Elm!", "Hello, World!"]
+
+-- חיפוש והחלפה של תווים בתוך מחרוזת באמצעות תנאים
+String.replaceIf (\char -> Char.isUpper char) "X" "hello world"
 ```
 
-פלט:
+בכל אחת מהדוגמאות, הפלט יהיה:
 
 ```
-אני אוהב את השפת קוד
+"World, Elm!"
+"5 bottles of beer on the wall"
+["World, Elm!", "World, World!"]
+"hello Xorld"
 ```
 
-ניתן גם לבצע החלפה של מילים באמצעות תבניות רגולריות באמצעות הפונקציה `String.replaceRegex`. לדוגמה, ננתק את המספר הטלפון 123-456-789 ונשתמש בפונקצית regex כדי להחליף את המספר במחרוזת ריקה:
+## מקורות נוספים
 
-```Elm
-text = "123-456-789"
-newText = String.replaceRegex "[0-9]+" text ""
-```
+כדי ללמוד עוד על חיפוש והחלפה של טקסט בקוד Elm, כדאי לבדוק את המקורות הבאים:
 
-פלט:
+- [המדריך הרשמי של Elm לחיפוש והחלפה של טקסט](https://guide.elm-lang.org/appendix/syntax.html#string-manipulation)
+- [הקוד המקורי של פונקציית replace בספריית String של Elm](https://github.com/elm/compiler/blob/master/hints/Review.md#replace)
+- [מאמר על Regex באתר הרשמי של Elm](https://elm-lang.org/docs/regexp)
 
-```
--
-```
+## לראות גם
 
-## חקירה מעמיקה
-
-כאשר מחפשים ומחליפים טקסט ב-Elm, יש מספר דברים שכדאי לקחת בחשבון:
-
-- יש להיות ער בבחירת התבניות הרגולריות כדי לוודא שהחלפת הטקסט תתבצע בכמה מקומות ככל האפשר.
-- יש צורך לציין את המשתנה המכיל את הטקסט המקורי וליצור משתנה חדש לכל הטקסט החדש שייוצר.
-- נקודת חשיבה נוספת היא חוסר הכיוון - אם המחרוזת החדשה ארוכה יותר מהמחרוזת המקורית, יש צורך לוודא שהיא תשתמש במספר מוסבך
+- [מדריך מקיף לכתיבה ב-Elm](https://guide.elm-lang.org/)
+- [אתר המדריך של Elm למתחילים](https://elmprogramming.com/)
+- [הקהילה הרשמית של Elm](https://discourse.elm-lang.org/)

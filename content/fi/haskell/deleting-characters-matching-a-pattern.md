@@ -1,31 +1,48 @@
 ---
-title:    "Haskell: Mallia vastaavien merkkien poistaminen"
+title:    "Haskell: Kuvioiden mukaisien merkkien poistaminen."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein ohjelmointitehtävissä joudutaan käsittelemään tekstejä ja poistamaan niistä tiettyjä merkkejä. Tässä blogikirjoituksessa käydään läpi, miksi ja miten voit poistaa merkkejä vastaten tiettyyn kaavaan Haskell-ohjelmointikielessä.
+Haskellissa on useita tapoja käsitellä merkkijonoja ja niiden osia. Usein kohtaamme tilanteita, joissa haluamme poistaa tietystä merkkijonosta tietynlaisia merkkejä. Tässä blogikirjoituksessa tarkastelemme, miten voi poistaa merkkejä, jotka vastaavat tiettyä kaavaa.
 
 ## Miten
 
-Haskelissa on monia tapoja poistaa merkkejä tekstistä, mutta käsittelemme tässä kirjoituksessa yhtä yleistä tapaa, joka käyttää ```filter``` ja ```not``` funktioita. Oletetaan, että haluamme poistaa kaikki numerot merkkijonosta "H4sk3ll", jolloin haluttu tulos olisi "Hskll". Käytännössä tämä voidaan toteuttaa seuraavalla koodilla:
+Haskellissa meillä on käytössämme `Data.Text` -kirjasto, joka tarjoaa useita hyödyllisiä toimintoja merkkijonojen käsittelyyn. Yksi niistä on `Data.Text.replace`, jota voimme käyttää poistamaan merkkejä tietystä merkkijonosta.
 
 ```Haskell
-removeNumbers :: String -> String
-removeNumbers str = filter (\x -> not (x `elem` ['0'..'9'])) str
-main = putStrLn (removeNumbers "H4sk3ll")
+import Data.Text (replace)
+
+main = do
+  let str = "Hello, World!"
+  let newStr = replace "l" "" str
+  print newStr
 ```
 
-Tässä esimerkissä funktio ```removeNumbers``` ottaa parametrinaan merkkijonon ja käyttää ```filter``` funktiota poistaakseen kaikki numerot merkkijonosta. Lopuksi ```main``` funktio tulostaa funktion palauttaman uuden merkkijonon. Huomaa, että käytimme anonyymia funktiota ```\x -> not (x `elem` ['0'..'9'])```, jolla tarkoitetaan funktiota, joka ottaa parametrinaan merkin ja palauttaa ```True``` jos se ei kuulu numeroihin ja ```False``` jos kuuluu.
+Tämä koodinpätkä tulostaa "Heo, Word!", sillä olemme poistaneet kaikki "l"-merkit merkkijonosta. Voimme myös käyttää tähän `Data.Text.filter` -funktiota, joka ottaa argumentiksi predikaatin ja poistaa merkit, jotka täyttävät sen ehdot.
 
-## Syvemmälle
+```Haskell
+import Data.Text (filter)
 
-Tämä esimerkki on vain yksi tapa poistaa merkkejä Haskellissa. Voit myös käyttää muita funktioita, kuten ```map```, tai erilaisia ehtolausekkeita ```if```, ```case``` tai ```guard```, jotta voit räätälöidä poistettavia merkkejä tai kaavaa vielä paremmin oman tarpeesi mukaan.
+main = do
+  let str = "Haskell on loistava kieli!"
+  let newStr = Data.Text.filter (/= 'a') str
+  print newStr
+```
+
+Tulostus tässä tapauksessa olisi "Hskell on loistv kieli!", sillä olemme poistaneet kaikki "a"-merkit merkistä.
+
+## Syvempi sukellus
+
+Haskellin merkkijonojen käsittelyssä on tärkeää muistaa, että merkkijonot ovat muuttumattomia, eli niitä ei voi muokata suoraan. Sen sijaan käytämme erilaisia toimintoja ja palautamme uuden merkkijonon muutoksien jälkeen. Lisäksi merkkijonoja käsitellessä tulee kiinnittää huomiota siihen, että `Data.Text` -kirjasto käyttää unicode-merkkejä, joten merkkien määrittelyssä tulee käyttää `Char`-tyypin sijaan `Data.Text` -kirjaston `Text`-tyyppiä.
+
+Merkkien poistaminen on myös yleinen tehtävä rekursiivisissa funktioissa, joissa käydään läpi pitkä merkkijono ja poistetaan siitä tietyt merkit.
 
 ## Katso myös
-- [Haskellin dokumentaatio filter-funktiosta](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter)
-- [Haskellin dokumentaatio not-funktiosta](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:not)
-- [Haskellin dokumentaatio anonyymeistä funktioista](https://www.haskell.org/tutorial/functions.html#anonymous-functions)
+
+- [Haskellin `Data.Text` -kirjaston dokumentaatio](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskellin merkkijonojen käsittelyn opas](https://stackoverflow.com/questions/57820747/haskell-how-to-process-text)

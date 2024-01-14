@@ -1,47 +1,48 @@
 ---
 title:    "C++: Mallia vastaavien merkkien poistaminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi poistaa merkkejä, jotka vastaavat kaavaa?
+## Miksi
 
-Poistaminen merkkejä, jotka vastaavat tiettyä kaavaa, voi olla hyödyllistä, kun käsittelet suuria määriä tietoa ja haluat helposti puhdistaa tiedostot tai merkkijonot ei-toivotuista merkeistä. Tämä voi myös säästää aikaa ja vaivaa manuaalisen poistamisen sijaan.
+Joskus ohjelmointitehtävissä saattaa syntyä tarve poistaa merkkejä tietystä kaavasta. Tämä voi johtua esimerkiksi tietojen puhdistamisesta tai tietojen käsittelystä.
 
-## Miten tehdä se?
+## Miten
 
-Tässä esimerkissä käytämme C++:aa poistaaksemme kaikki välimerkit annetusta merkkijonosta.
+Poistaminen merkkejä, jotka vastaavat tietyssä kaavassa, voidaan suorittaa käyttämällä C ++: n sisäänrakennettuja merkkijonojen käsittelytoimintoja. Tässä on yksinkertainen koodiesimerkki, joka poistaa kaikki välimerkit annetusta merkkijonosta ja tulostaa tuloksen:
 
-```
+```C++
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-    string teksti = "Tämä on, teksti!"
-    string puhdistettu_teksti = "";
-    
-    for (int i = 0; i < teksti.length(); i++) {
-        char c = teksti[i];
-        // Poistetaan kaikki välimerkit
-        if(!ispunct(c)) {
-            puhdistettu_teksti += c;
-        }
+  string s = "Tämä on#& esimerkkimerkkijono!";
+  string s_clean = "";
+
+  for (char c : s) {
+    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+      s_clean += c;
     }
-    cout << puhdistettu_teksti; // Tulostaa "Tämä on teksti!"
-    
-    return 0;
+  }
+
+  cout << s_clean << endl;
+
+  return 0;
 }
 ```
 
-## Syväsukellus
+Tämä tulostaa: "Tämäonesimerkkimerkkijono"
 
-Vaikka tässä esimerkissä käytämme vain yksinkertaista merkkijonon puhdistamista, voit soveltaa samaa periaatetta monimutkaisempien kaavojen poistamiseen. Voit myös käyttää säännöllisiä lausekkeita (regular expressions) helpottamaan prosessia, jos et halua kirjoittaa manuaalisesti jokaiselle poistettavalle merkille omaa ehtoa.
+## Syventävä sukellus
+
+Yllä oleva koodiesimerkki perustuu oletukselle, että haluamme poistaa välimerkit merkkijonosta. Jos haluamme poistaa kaikki numerot, voimme muuttaa ehtoa `if` lauseke seuraavasti: `c >= '0' && c <= '9'`. Sen sijaan voimme myös antaa luettelona kaikki halutut merkit poistettavaksi, esimerkiksi: `if (c == '#' || c == '&' || c == '$')`. Tällä tavalla voit mukauttaa poistettavat merkit tarpeidesi mukaan.
 
 ## Katso myös
 
-- [C++ merkkijonon puhdistamisesta](https://stackoverflow.com/questions/19138983/how-to-remove-punctuation-from-a-string-in-c)
-- [Säännölliset lausekkeet C++:ssa](http://www.cplusplus.com/reference/regex/)
-- [Miten käyttää merkkijonoja ja kirjastoja C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [Merkkijonojen käsittely C ++: lla](https://www.cplusplus.com/reference/string/string/)
+- [Merkit, jotka vastaavat erilaisia ​​ehtoja](https://en.cppreference.com/w/cpp/language/ascii)

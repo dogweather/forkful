@@ -1,41 +1,57 @@
 ---
-title:    "PHP: Å slette tegn som matcher et mønster"
+title:    "PHP: Sletting av tegn som matcher et mønster"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å slette tegn som stemmer overens med et mønster, kan være nyttig i mange programmeringsscenarier. Det kan hjelpe deg med å forenkle og effektivisere koden din, og gjøre det enklere å behandle store tekstfiler.
+Har du noen gang ønsket å lage et program som fjerner spesifikke tegn fra en tekststreng? Kanskje du ønsker å fjerne alle tallene eller symbolene fra en tekst? Å kunne slette tegn som matcher et mønster kan være nyttig i mange programmeringsscenarioer. Les videre for å lære hvordan du kan gjøre dette i PHP.
 
 ## Hvordan
 
-Å slette tegn som stemmer overens med et mønster kan gjøres ved hjelp av PHPs innebygde funksjoner, som f.eks. preg_replace(). La oss si at du har en streng med tekst og ønsker å fjerne alle tall fra den:
+For å slette tegn som matcher et mønster i PHP, kan du bruke funksjonen `preg_replace()`. La oss se på et eksempel hvor vi ønsker å fjerne alle tallene fra en tekststreng:
 
 ```PHP
-$text = "Vi elsker 123 programmering!";
-
+$text = "Jeg har 5 katter og 2 hunder.";
 $text = preg_replace("/[0-9]/", "", $text);
-
-echo $text; // Output: "Vi elsker programmering!"
+echo $text;
 ```
 
-Her bruker vi et regulært uttrykk for å spesifisere hvilke tegn som skal bli slettet - i dette tilfellet alle tall fra 0 til 9. Deretter erstattes disse tegnene med ingenting, slik at de blir fjernet fra teksten.
+Output:
 
-Du kan også bruke alternativer for å slette tegn som faller utenfor bestemte intervaller, f.eks. bokstaver fra "a" til "z". Det er også mulig å lage mer avanserte regulære uttrykk for å fjerne spesifikke tegn eller kombinasjoner av tegn.
+```
+Jeg har katter og hunder.
+```
+
+I dette eksempelet bruker vi et regulært uttrykk, angitt mellom skråstreker, for å matche alle tall (`[0-9]`). Deretter erstatter vi de matchende tegnene med et tomt tegn (`""`). Dette gjør at vi blir sittende igjen med bare tekst uten tall.
+
+Du kan også bruke spesifikke tegn eller symboler i mønsteret for å fjerne dem fra tekststrengen. La oss se på et annet eksempel hvor vi ønsker å fjerne alle spesialtegn fra en e-postadresse:
+
+```PHP
+$email = "john@doe.com";
+$email = preg_replace("/[!#$%&'*+-\/=?^_`{|}~]/", "", $email);
+echo $email;
+```
+
+Output:
+
+```
+johndoe.com
+```
+
+Å bruke funksjonen `preg_replace()` gjør det enkelt å fjerne tegn fra en tekststreng basert på et mønster du definerer.
 
 ## Dypdykk
 
-Dette er bare en enkel introduksjon til å slette tegn som stemmer overens med et mønster i PHP. Det er mange flere funksjoner og muligheter for å tilpasse koden etter dine behov og ønsker. Det er også viktig å ha god forståelse for regulære uttrykk for å kunne bruke dette konseptet effektivt.
+Nå som du vet hvordan du kan bruke `preg_replace()` til å slette tegn som matcher et mønster, kan du utforske flere muligheter med denne funksjonen. Du kan for eksempel kombinere flere mønstre ved hjelp av pipe (`|`), bruke flagg for å gjøre matchingen case-insensitive, og til og med bruke tilbakekallingsfunksjoner for å utføre mer avanserte handlinger på tekststrengen.
 
-Hvis du ønsker å lære mer om regulære uttrykk og mulighetene med å slette tegn som stemmer overens med et mønster i PHP, kan du sjekke ut disse ressursene:
-
-- [PHP manual](https://www.php.net/manual/en/function.preg-replace.php)
-- [RegExr](https://regexr.com/) - en online testside for regulære uttrykk
-- [Tutorialspoint](https://www.tutorialspoint.com/php/php_regular_expression.htm) - et nettsted med gratis PHP ressurser.
+Du kan også leke med regulære uttrykk på nettsteder som [Regex101.com](http://regex101.com) for å bli bedre kjent med mønstermatching og testing av koden din.
 
 ## Se også
 
-* [Effektivisering av kode med PHPs innebygde funksjoner](https://bloggprogrammering.no/effektivisering-med-phps-innebygde-funksjoner/)
-* [En introduksjon til regulære uttrykk i PHP](https://www.datamation.com/programming/a-primer-on-php-regular-expressions/)
+- [PHP manual for preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [Bruk av regulære uttrykk i PHP](https://www.php.net/manual/en/regexp.introduction.php)
+- [Regex101.com](http://regex101.com) - et nyttig verktøy for å teste og lære regulære uttrykk

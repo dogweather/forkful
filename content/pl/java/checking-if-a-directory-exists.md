@@ -1,55 +1,49 @@
 ---
-title:    "Java: Sprawdzanie istnienia folderu"
+title:    "Java: Sprawdzanie istnienia katalogu"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego sprawdzić, czy istnieje katalog
+## Dlaczego
 
-Sprawdzenie, czy katalog istnieje jest ważnym elementem w programowaniu Java, ponieważ pozwala na uniknięcie błędów związanych ze ścieżką dostępu do plików. Dzięki temu możemy mieć pewność, że wykonywane operacje na plikach będą działać prawidłowo.
+Sprawdzanie czy istnieje katalog jest ważnym aspektem programowania w Javie. Za pomocą tej funkcji można wykonać wiele różnych operacji, takich jak tworzenie, usuwanie i modyfikacja plików i folderów. Jest to niezbędne w wielu przypadkach, a więc warto się z tym zapoznać.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Sprawdzenie, czy dany katalog istnieje w Javie jest bardzo proste. Wystarczy wykorzystać klasę "Files" oraz metodę "exists", która zwróci wartość "true" lub "false", w zależności od tego czy dany katalog faktycznie istnieje czy nie.
+Aby sprawdzić czy dany katalog istnieje, należy użyć metody `exists()` z klasy `File`. Przykładowe użycie można zobaczyć poniżej:
 
 ```Java
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 
-public class SprawdzanieKatalogu {
-
+public class CheckDirectory {
     public static void main(String[] args) {
+        // utworzenie obiektu reprezentującego katalog
+        File directory = new File("mojekatalog");
 
-        // Ustawienie ścieżki do katalogu, który chcemy sprawdzić
-        Path katalog = Paths.get("C:/Users/Ja/Programy");
-
-        // Wywołanie metody exists i przypisanie wyniku do zmiennej
-        boolean czyIstnieje = Files.exists(katalog);
-
-        // Wyświetlenie odpowiedniego komunikatu w zależności od wyniku
-        if (czyIstnieje) {
-            System.out.println("Katalog istnieje!");
+        // sprawdzenie czy katalog istnieje
+        if(directory.exists()){
+            System.out.println("Katalog istnieje");
         } else {
-            System.out.println("Katalog nie istnieje!");
+            System.out.println("Katalog nie istnieje");
         }
     }
 }
 ```
-W powyższym przykładzie sprawdzamy, czy katalog "C:/Users/Ja/Programy" istnieje. Jeśli chcesz sprawdzić inny katalog, wystarczy zmienić ścieżkę w odpowiednim miejscu.
 
-# Głębszy wgląd
+Powyższy kod wyświetli informację czy katalog `mojekatalog` istnieje czy nie. Można też użyć metody `isDirectory()` aby upewnić się, że sprawdzany plik jest właśnie katalogiem.
 
-Przyjrzyjmy się teraz niektórym ważniejszym aspektom sprawdzania, czy katalog istnieje w Javie.
+## Wnikliwa analiza
 
-- Metoda "exists" zwraca wartość typu boolean, co oznacza, że może przyjąć jedynie wartości "true" lub "false".
-- Jeśli chcemy sprawdzić, czy dany katalog istnieje, możemy wykorzystać także metody "isDirectory" lub "isFile", które zwracają wartość "true" lub "false" w zależności od tego, czy dany plik jest katalogiem czy plikiem.
-- W przypadku, gdy chcemy stworzyć nowy katalog o danej nazwie, warto najpierw sprawdzić, czy nie istnieje już katalog o tej samej nazwie, aby uniknąć konfliktów.
-- W celu zachowania czytelności kodu, możemy wykorzystać także metodę "createDirectories", która pozwala na utworzenie katalogu wraz z całym drzewem podkatalogów, jeśli takie już istnieją.
+Głównym zadaniem funkcji `exists()` jest sprawdzenie czy dany plik lub katalog istnieje w systemie plików. Jest to bardzo przydatna funkcja w wielu sytuacjach. Na przykład, przed utworzeniem nowego pliku, warto sprawdzić czy nie istnieje już plik o takiej samej nazwie. W przypadku usuwania pliku, dobrze jest najpierw sprawdzić czy faktycznie istnieje, aby uniknąć błędów.
 
-# Zobacz także
+W przypadku, gdy program wykonuje wiele operacji na plikach, ważne jest również sprawdzenie czy ścieżka do pliku jest prawidłowa, a katalogi w których będzie się znajdować plik już istnieją. W takiej sytuacji, funkcja `exists()` jest nieoceniona.
 
-- Dokumentacja Java dotycząca sprawdzania czy katalog istnieje: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html#exists(java.nio.file.Path) 
-- Przydatne informacje o klasie "Files" w Javie: https://www.baeldung.com/java-nio-2-files 
-- Poradnik na temat pracy z plikami i katalogami w Javie: https://javastart.pl/programowanie/java-nio-2-operacje-na-plikach
+## Zobacz też
+
+- [Metoda exists() w dokumentacji Javy](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#exists())
+- [Tutorial o pracy z plikami i katalogami w Javie](https://www.tutorialspoint.com/java/java_files_io.htm)
+- [Jak sprawdzić czy plik istnieje w Javie? - artykuł na blogu devstyle.pl](https://devstyle.pl/2015/02/24/jak-sprawdzic-czy-plik-istnieje-w-javie/)
+
+Dzięki funkcji `exists()` możemy w prosty sposób sprawdzić czy dany katalog istnieje w systemie plików. Jest to niezbędne w wielu przypadkach i warto znać tę funkcję.

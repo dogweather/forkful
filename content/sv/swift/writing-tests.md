@@ -1,52 +1,40 @@
 ---
 title:    "Swift: Skriva tester"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva tester är en viktig del av Swift-programmering eftersom det hjälper till att säkerställa att koden fungerar som den ska och minimerar risken för buggar. Det kan också leda till en snabbare utvecklingsprocess och ökad kvalitet på koden.
+Att skriva tester är en viktig del av Swift programmering. Genom att skriva tester kan du säkerställa att din kod fungerar som den ska och undvika buggar och problem efter lansering. Det sparar också tid och minskar risken för driftstopp.
 
-## Hur man gör det
+# Hur man gör
 
-En av de vanligaste sätten att skriva tester i Swift är att använda sig av XCTest-ramverket. Detta är ett inbyggt ramverk i Swift som gör det enkelt att skriva, köra och debugga tester.
-
-För att använda XCTest behöver du en testklass, som är en Swift-fil som slutar på *Tests*. I denna fil kan du sedan skriva dina tester genom att använda olika metoder som *XCTAssertEquals* eller *XCTAssertTrue*. Dessa metoder tar in två värden och jämför dem för att se om de är lika och returnerar ett godkännande eller ett felmeddelande beroende på resultatet.
-
-Här är ett exempel på hur en testklass kan se ut i Swift:
+Att skriva tester i Swift är enkelt och det finns olika verktyg och ramverk som kan hjälpa dig. Ett sätt är att använda Xcode inbyggda testverktyg. Här är ett exempel på en enkel testfunktion som kontrollerar om två tal är lika:
 
 ```Swift
-import XCTest
-
-class PersonTests: XCTestCase {
-
-    func testPersonName() {
-        // Skapar ett nytt person-objekt
-        let person = Person(name: "Lisa")
-
-        // Jämför det förväntade namnet med det faktiska namnet på personen
-        XCTAssertEqual(person.name, "Lisa")
-    }
+func testAddition() {
+    let result = addNumbers(2, 3)
+    XCTAssertEqual(result, 5)
 }
 
+func addNumbers(_ num1: Int, _ num2: Int) -> Int {
+    return num1 + num2
+}
 ```
 
-När du har skrivit dina tester kan du köra dem genom att trycka på den mjölkvita triangelsymbolen bredvid dina testmetoder. Om alla tester passerar kommer du få ett grönt godkännande, annars kommer du få ett rött felmeddelande som indikerar vilket test som har misslyckats.
+I detta exempel skapas en testfunktion som kallar på en funktion med två tal och jämför resultatet med det förväntade svaret. Om svaren inte matchar kommer testet att misslyckas.
 
-## Djupdykning
+# Deep Dive
 
-Förutom de grundläggande metoderna som nämndes i föregående avsnitt, finns det många andra funktioner och metoder som du kan använda för att skriva mer avancerade tester. Till exempel kan du använda *XCTAssertThrowsError* för att testa att en viss kod faktiskt genererar ett felmeddelande, eller *XCTKVOExpectation* för att testa asynkron kod.
+För mer avancerat testning, eller för större projekt, kan det vara fördelaktigt att använda externa testramverk som XCTest eller Quick och Nimble. Dessa erbjuder mer flexibilitet och möjlighet att skriva modulära och lättlästa tester. De kan också integreras med kontinuerlig integration (CI) för att automatiskt köra tester varje gång kod ändras.
 
-Det finns också olika tekniker för att organisera dina tester, till exempel genom att använda *setUp()* och *tearDown()* metoder för att utföra kod som behövs innan och efter varje test.
+Det är också viktigt att skriva olika typer av tester, som enhetstester, integrationstester och acceptanstester, för att täcka olika delar av ditt projekt. Detta kommer att ge en bättre testtäckning och mer robust kod.
 
-Det är också viktigt att komma ihåg att skriva bra tester handlar inte bara om att ha en hög täckningsgrad, utan också om att testa olika fall och scenarier för att säkerställa att din kod fungerar som den ska i olika situationer.
+# Se även
 
-## Se även
-
-Här är några länkar med mer information om att skriva tester i Swift:
-
-- [Swift.org - Gra funktionsprovning i Swift](https://swift.org/blog/unit-testing/) 
-- [SwiftyJSON - Testing Swift Package](https://github.com/SwiftyJSON/SwiftyJSON#testing-swift-package)
-- [AppCoda - Getting Started with Swift Unit Testing in Xcode](https://www.appcoda.com/unit-testing-swift/)
+- [XCTest guide](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)
+- [Quick and Nimble](https://github.com/Quick/Quick)
+- [Bästa praxis för testning i Swift](https://medium.com/@johnsundell/the-best-ways-to-test-your-swift-code-9a8090ebe34e)

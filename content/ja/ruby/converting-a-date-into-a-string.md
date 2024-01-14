@@ -1,32 +1,43 @@
 ---
-title:    "Ruby: 「日付を文字列に変換する」"
+title:    "Ruby: 日付を文字列に変換する"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Why: 日付を文字列に変換する理由は、データを扱う上で非常に便利であり、情報を整理するために欠かせないものです。
+## なぜ
 
-How To: ```Ruby
-require 'date'
+日付を文字列に変換する理由は、プログラム内で日付を扱う必要があるためです。日付を文字列に変換することで、データベースに保存したり、ユーザーに表示したりすることができます。
 
-#Current Date
-current_date = Date.today 
+## 方法
 
-#Convert to String
-current_date_str = current_date.strftime("%m/%d/%Y") 
+Rubyでは、日付を`strftime`メソッドを使って任意のフォーマットに変換することができます。例えば、以下のように書きます。
 
-#Output
-puts current_date_str 
+```Ruby
+date = Date.today
+date.strftime("%Y年%m月%d日")
 ```
 
-**Output:** 08/12/2021
+このコードでは、今日の日付をフォーマット`年-月-日`に変換して表示します。出力結果は`2020年07月22日`となります。
 
-Deep Dive: 日付を文字列に変換する方法は、Rubyの `strftime`メソッドを使用することで実現できます。このメソッドは、日付を指定したフォーマットに従って、文字列として出力することができます。フォーマット指定には、年月日を表す `%Y/%m/%d`や、曜日を表す `%A`など、さまざまなオプションがあります。日付のフォーマットを自由にカスタマイズすることができるため、必要に応じて使い分けることができる重要な機能です。
+## 深堀り
 
-See Also (参考になるリンク):
-- [Rubyのstrftimeメソッドについて](https://docs.ruby-lang.org/ja/latest/class/Time.html#I_STRFTIME)
-- [Rubyで日付を扱う方法を学ぶ](https://qiita.com/tsugitada01/items/604b03ce9e488d391784#%E6%97%A5%E4%BB%98%E3%82%92%E5%BC%95%E6%95%B0%E3%81%AB%E3%81%The article ends with a strict正しい形式のマークダウンファイルを作成する方法を学ぶ)
-- [RubyのDateクラスについて](https://docs.ruby-lang.org/ja/latest/class/Date.html)
+`strftime`メソッドの引数には、フォーマットを指定する文字列を渡します。たとえば、`%Y`は4桁の西暦、`%m`は2桁の月、`%d`は2桁の日の数字を表します。詳しいフォーマットの一覧は公式ドキュメント[^1]を参照してください。
 
-今回は、日付を文字列に変換する方法について簡単に紹介しました。Rubyの日付操作機能をよく使いこなし、効率的なプログラミングを心がけましょう。
+また、`strptime`メソッドを使うことで、文字列を日付オブジェクトに変換することもできます。例えば、以下のように書きます。
+
+```Ruby
+date_str = "2020-07-22"
+Date.strptime(date_str, "%Y-%m-%d")
+```
+
+このコードでは、文字列`2020-07-22`をフォーマット`年-月-日`に従って日付オブジェクトに変換します。
+
+## 参考リンク
+
+* [Ruby Core Reference: Date モジュール][^1]
+* [Rubyドキュメント: strftime と strptime][^2]
+
+[^1]: https://docs.ruby-lang.org/ja/latest/class/Date.html
+[^2]: https://docs.ruby-lang.org/ja/latest/method/Date/i/strftime.html

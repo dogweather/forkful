@@ -1,41 +1,41 @@
 ---
-title:    "Elm: Søk og bytt ut tekst"
+title:    "Elm: Søke og erstatte tekst"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Tekst søking og erstatting er en viktig del av programmering og kan hjelpe deg med å effektivt endre og rette feil i din kode. Med Elm sin robuste og oversiktlige syntaks vil du kunne håndtere dette på en enkel og strukturert måte.
+
+Vi har alle vært der - du skriver en kode i Elm, og plutselig innser du at du må gjøre endringer i store deler av koden din. Å gå gjennom hver eneste linje og gjøre endringene manuelt kan være både tidkrevende og ineffektivt. Derfor er det viktig å bli kjent med søk og bytte-funksjonen i Elm, som gjør det enkelt å finne og erstatte tekst i en kodebase.
 
 ## Hvordan
-For å kunne søke og erstatte tekst i Elm trenger vi å bruke funksjonen `replace` som tar inn en karakter eller streng vi ønsker å bytte ut, og en annen karakter eller streng vi vil erstatte det med. La oss se på et eksempel:
+
+For å søke og erstatte tekst i Elm, kan du bruke "String.replace" funksjonen. Denne tar inn tre argumenter - en tekst du vil søke etter, en tekst du vil erstatte den med, og den opprinnelige teksten du søker i. Her er et eksempel:
 
 ```Elm
-replace "e" "o" "Hei, verden!" 
+String.replace "Hund" "Katt" "Jeg liker å gå tur med hunden min."
 ```
 
-Eksemplet ovenfor vil gi oss en output på `Hoi, vorlden!` siden funksjonen vil søke etter alle forekomster av karakteren "e" og erstatte de med "o". 
+Dette vil returnere teksten "Jeg liker å gå tur med katten min." som output. Hvis du vil erstatte all forekomst av en tekst, kan du legge til et fjerde argument som sier hvor mange forekomster du vil erstatte. For å erstatte alle forekomster, kan du bruke -1 som et argument. 
 
-En annen nyttig funksjon i Elm er `replaceOnce` som, som navnet tilsier, kun vil bytte ut den første forekomsten det finner:
+For å søke og erstatte i en liste med tekster, kan du bruke funksjonen "List.map" sammen med "String.replace" funksjonen. Dette vil gjøre søket og erstattingen på hver enkelt tekst i listen. Her er et eksempel:
+
 ```Elm
-replaceOnce "k" "t" "katten min"
+myListOfTexts = ["Jeg liker å spise bananer", "Jeg liker å drikke melk"]
+List.map (String.replace "Jeg" "Du") myListOfTexts
 ```
 
-Dette vil gi oss `tatten min` som output. Her ser vi at funksjonen kun har byttet ut den første "k"-en med en "t".
+Dette vil returnere en liste med tekstene "Du liker å spise bananer" og "Du liker å drikke melk".
 
 ## Dypdykk
-Hvis vi ønsker å gjøre mer avanserte søk og erstattinger, kan vi bruke funksjonen `regexReplace` som tar inn et regular expression (regex) i tillegg til strengene vi vil bytte ut. Dette vil åpne opp for flere muligheter for søk og erstatting. La oss se på et eksempel:
 
-```Elm
-regexReplace (Regex.parse "(\\d+)" |> Result.withDefault (Regex.fromString ".*"))
-    (Tuple.second >> String.reverse >> String.toUpper)
-    "A1b2c3d"
-```
+Det er viktig å være oppmerksom på at "String.replace" funksjonen i Elm er case-sensitive, noe som betyr at den skiller mellom store og små bokstaver. Dette kan føre til at teksten du leter etter ikke blir funnet hvis det er en forskjell i store og små bokstaver. For å unngå dette kan du bruke "String.toLower" funksjonen for å konvertere teksten til små bokstaver før du søker og erstatter. 
 
-I eksemplet over vil funksjonen ta alle tallene i strengen og bytte de ut med sin omvendte og storebokstavform, altså `A1b2c3d` vil bli til `AdC2b1A`.
+En annen nyttig funksjon i Elm er "String.replaceRegex", som lar deg søke og erstatte tekst basert på et regex-mønster. Dette kan være svært nyttig for mer avanserte søk og erstatting. 
 
-## Se Også
-- Slik bruker du regular expressions i Elm: [https://guide.elm-lang.org/interop/regex.html](https://guide.elm-lang.org/interop/regex.html)
-- Dokumentasjon for `replace` funksjonen: [https://package.elm-lang.org/packages/elm/core/latest/String#replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- Utforsk mer avanserte tekstfunksjoner i Elm: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+## Se også
+
+- [Offisiell dokumentasjon for String-modulen i Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Eksempler på bruk av String.replace funksjonen i Elm](https://elmprogramming.com/string-manipulation.html#replace)

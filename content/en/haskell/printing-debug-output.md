@@ -1,46 +1,53 @@
 ---
 title:    "Haskell recipe: Printing debug output"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is an essential part of any programming language, and Haskell is no exception. When writing code, it's common to encounter errors or unexpected behavior that can be difficult to determine the source of. This is where printing debug output comes in handy. By printing out certain values or variables in your code, you can get a better understanding of what is happening and where the issue may be occurring.
+Debugging is an essential part of any programming language, and Haskell is no exception. Printing debug output can help programmers track down the source of errors and make the debugging process smoother and more efficient.
 
 ## How To
 
-Printing debug output in Haskell is a simple process. First, you can use the `Debug.Trace` module to access the `trace` function, which allows for printing strings along with any value you want to inspect. Let's take a look at an example.
+To print debug output in Haskell, we can use the `Debug.Trace` module. Let's take a look at an example:
 
-```
-Haskell
+```Haskell
 import Debug.Trace
 
+factorial :: Int -> Int
+factorial n
+    | n < 0 = error "Number must be positive."
+    | n == 0 = 1
+    | otherwise = n * factorial (n-1)
+
 main = do
-  let x = 10
-  let y = 5
-  let z = x + y
-  trace ("Value of x: " ++ show x) z
-  trace ("Value of y: " ++ show y) z
+    let result = factorial 5
+    traceM $ "The factorial of 5 is " ++ show result
+    putStrLn $ "The result is: " ++ show result
 ```
 
-Here, we are using `trace` to print out the value of `x` and `y` while also performing the addition operation. The `show` function converts the integer values into strings so they can be concatenated with our custom strings. The output of this code would look like this:
+In the code above, we import the `Debug.Trace` module and use the `traceM` function to print the debug message. We can use the `show` function to convert the result into a string and concatenate it with our debug message. Running this code will output the following:
 
 ```
-Value of x: 10
-Value of y: 5
-15
+The factorial of 5 is 120
+The result is: 120
 ```
 
-As you can see, the values of `x` and `y` are printed out before the final result of `15`. This is helpful in understanding what values are being used in the calculation.
+We can also use `trace` instead of `traceM` if we don't want to print the result. Additionally, we can use `traceShow` if we want to print both the debug message and the value of the expression being traced. 
 
 ## Deep Dive
 
-The `Debug.Trace` module also provides additional functions such as `traceShow` and `traceStack`. These functions allow you to print out not only values but also the call stack of your code. This can be particularly useful in larger and more complex programs to pinpoint where an error may be occurring. It is important to note that the `Debug.Trace` module should only be used for debugging purposes and not in production code.
+The `Debug.Trace` module provides a variety of functions for printing debug output, including `trace`, `traceM`, and `traceShow`, as mentioned above. It also has functions for conditional tracing, such as `traceIf` and `tracePredicate`.
+
+It's important to note that the `Debug.Trace` module should only be used for debugging purposes and not in production code. This is because the debug output can significantly slow down the performance of your program. Therefore, it's recommended to remove all traces before deploying your code.
+
+Another useful technique when using `Debug.Trace` is to use it with the `Debug` language pragma. This pragma allows us to add debug statements without having to import the `Debug.Trace` module in every file. 
 
 ## See Also
 
-- [Debugging in Haskell](https://www.haskell.org/haskellwiki/Debugging)
-- [Haskell Debugging using ghci](https://wiki.haskell.org/Debugging)
-- [Tracing in Haskell](https://markkarpov.com/post/tracing-in-haskell.html)
+- [Haskell Debugging Guide](https://www.haskell.org/debugging/)
+- [Haskell Language Pragmas Documentation](https://downloads.haskell.org/~ghc/8.6.3/docs/html/users_guide/glasgow_exts.html#language-pragma)
+- [Debugging in Haskell Using Trace and Debug.Trace](https://drek4537.github.io/A-Simple-Overview-of-Haskell/module03/18-debugging-part-1-b.html)

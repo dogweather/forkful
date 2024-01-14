@@ -1,33 +1,24 @@
 ---
 title:    "Go recipe: Starting a new project"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project in Go can open up new opportunities for developers to explore the power and simplicity of this modern programming language. With its fast compilation times and efficient use of resources, Go is a popular choice for building robust and scalable applications.
+Starting a new project can be an exciting and fulfilling experience for a programmer. It allows you to explore new ideas, learn new skills, and potentially contribute something valuable to the open source community. Plus, who doesn't love the rush of creating something from scratch?
 
 ## How To
 
-To get started with a new Go project, follow these simple steps:
+To start a new project in Go, follow these simple steps:
 
-1. Set up your Go development environment by installing the necessary tools and packages. This includes the Go compiler, a code editor/IDE, and any relevant dependencies for your project.
-
-2. Create a new project directory and navigate to it using the command line.
-
-3. In the project directory, create a main.go file to house your code. This is where all of your Go code will go.
-
-4. Begin your project by importing any necessary packages using the `import` keyword. For example, `import "fmt"` will import the "fmt" package for formatting input and output.
-
-5. Write your code using the various built-in data types and functions available in Go. For example, to print "Hello, world!" to the console, use `fmt.Println("Hello, world!")`.
-
-6. Save your code and compile it using the `go build` command. If there are no errors, a binary executable will be created in the same directory.
-
-7. Run your executable and see the output of your code. Congrats, you have successfully created your first Go project!
-
-Here's a code snippet to demonstrate the process:
+1. Create a new directory for your project and navigate into it.
+2. In the terminal, use the command `go mod init <moduleName>` to initialize a go.mod file for your project. The module name can be anything you want, but it's recommended to use a URL-style name (e.g. github.com/username/projectname).
+3. Next, open your favorite text editor and create a new file `main.go` within your project directory.
+4. Inside `main.go`, import the `fmt` package and create a `main` function. This is where our code will go.
+5. Now we can start writing some code. Let's print out a simple "Hello World" message:
 
 ```Go
 package main
@@ -35,31 +26,25 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello, world!")
+	fmt.Println("Hello World!")
 }
 ```
 
-Running this snippet will produce the following output:
-
-```
-Hello, world!
-```
+6. Save the file and in the terminal, use the command `go run main.go` to run our program. You should see the message "Hello World!" printed out.
+7. Congratulations, you have successfully started a new project in Go!
 
 ## Deep Dive
 
-When starting a new project in Go, there are a few important things to keep in mind:
+When starting a new project in Go, it's important to keep a few things in mind:
 
-- Keep your code organized by creating separate files for different functions or parts of your project.
-- Take advantage of Go's powerful concurrency features, such as goroutines and channels, for efficient handling of concurrent tasks.
-- Familiarize yourself with the standard library, which contains a wide range of useful packages for common tasks.
-
-It's also recommended to follow the Go community standards and conventions for writing clean and idiomatic code. This includes formatting your code according to the official `gofmt` style.
+- Choose a clear and descriptive module name. This will make it easier for others to find and use your project.
+- Utilize the `go.mod` file to declare your project dependencies. This helps keep track of the packages your project relies on and ensures that everyone working on the project is using the same versions.
+- Write clean and well-documented code. This not only makes it easier for others to understand and contribute to your project, but it also helps with debugging and maintenance in the long run.
 
 ## See Also
 
-To learn more about starting a new project in Go, check out these helpful resources:
-
-- [Official Go documentation](https://golang.org/doc/)
-- [A Tour of Go](https://tour.golang.org/welcome/1)
-- [Go by Example](https://gobyexample.com/)
+- [Official Go Documentation](https://golang.org/doc/)
 - [Effective Go](https://golang.org/doc/effective_go.html)
+- [Go by Example](https://gobyexample.com/)
+- [Go Projects on Github](https://github.com/golang/go/wiki/Projects)
+- [Awesome Go](https://awesome-go.com/) (a curated list of Go frameworks, libraries, and software)

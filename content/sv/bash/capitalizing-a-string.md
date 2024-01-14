@@ -1,42 +1,42 @@
 ---
-title:    "Bash: Stor Bokstavering av en sträng"
+title:    "Bash: Att göra en sträng större"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
+Att skriva program i Bash är ett smidigt sätt att automatisera uppgifter och arbetsflöden. Genom att kunna hantera strängar på ett effektivt sätt kan vi enkelt manipulera data och skapa användbara verktyg. Att kunna konvertera strängar till versaler är ett vanligt förfarande inom programmering och kan användas för allt från att formatera utskrifter till att hantera användardata. I denna guide kommer vi att lära oss hur man kapitaliserar en sträng i Bash.
 
-Att kunna manipulera textsträngar är en grundläggande färdighet inom programmering, och att kunna konvertera en sträng till att börja med en stor bokstav kan vara mycket användbart vid formatering av data eller utskrifter. I denna bloggpost kommer vi att gå igenom hur du kan göra detta i Bash-programmering.
-
-## Så här gör du
-
-För att kapitalisera en sträng i Bash, kan du använda kommandot `tr` tillsammans med `[:lower:]` och `[:upper:]` för att ändra tecken från små till stora bokstäver. Här är ett exempel på hur du kan implementera detta:
+## Hur gör man?
+Att kapitalisera en sträng i Bash är enkelt och kan göras med hjälp av ett par olika metoder. Nedan följer ett par kodexempel på hur man kan göra detta:
 
 ```Bash
-strang="hej, jag heter Swedish reader."
-kapitaliserad_strang=$(echo $strang | tr '[:lower:]' '[:upper:]')
-echo $kapitaliserad_strang
+# Metod 1: Med hjälp av "tr" kommandot
+echo "ett exempel på en sträng" | tr '[:lower:]' '[:upper:]'
+# Output: ETT EXEMPEL PÅ EN STRÄNG
+
+# Metod 2: Med hjälp av "awk" kommandot
+echo "ett exempel på en sträng" | awk '{print toupper($0)}'
+# Output: ETT EXEMPEL PÅ EN STRÄNG
+
+# Metod 3: Med hjälp av "sed" kommandot
+echo "ett exempel på en sträng" | sed 's/\(.*\)/\U\1/'
+# Output: ETT EXEMPEL PÅ EN STRÄNG
 ```
 
-Detta kommer att producera följande utgång:
-
-```
-HEJ, JAG HETER SWEDISH READER.
-```
-
-Som du kan se har alla små bokstäver i den ursprungliga strängen nu konverterats till stora bokstäver. Detta är en enkel och effektiv metod för att kapitalisera en sträng i Bash.
+Som vi kan se i exemplen ovan används olika kommandon för att åstadkomma samma resultat. Kommandona "tr", "awk" och "sed" har alla olika användningsområden, men i detta fall kan de alla användas för att konvertera en sträng till versaler. Det är viktigt att märka att de olika metoderna kan ge olika resultat beroende på vilket språk som används. Till exempel kan "tr" endast hantera ASCII-bokstäver medan "awk" och "sed" kan hantera olika teckenkodningar.
 
 ## Djupdykning
+Nu när vi vet hur man kapitaliserar en sträng i Bash, kan vi titta närmare på hur dessa kommandon faktiskt fungerar. "tr" kommandot står för "translate" och används för att ersätta tecken eller teckenmönster i en sträng. I vårt exempel använder vi det för att ersätta alla små bokstäver med stora bokstäver. "awk" står för "Aho, Weinberger och Kernighan" och är namnet på det programmeringsspråk som är grunden för detta kommando. Det används främst för att behandla textfiler och kan utföra en mängd olika operationer på strängar. "sed" står för "stream editor" och används för att söka och ersätta text i en fil eller ström av data enligt ett givet mönster.
 
-Förutom `tr`-kommandot finns det också andra sätt att kapitalisera en sträng i Bash. Du kan till exempel använda inbyggda funktioner som `tr a-z A-Z` för att uppnå samma resultat. Dessutom finns det möjlighet att använda reguljära uttryck för att manipulera och hämta specifika tecken i en sträng.
-
-Det är också viktigt att notera att detta bara kommer att påverka det första tecknet i strängen. Om du vill kapitalisera varje ord i en sträng, kan du använda loopen `for` tillsammans med `cut`, `tr` och `sed` för att manipulera varje ord individuellt.
+Det finns många andra sätt att konvertera en sträng till versaler i Bash, och det viktigaste är att hitta en metod som fungerar bäst för ditt specifika användningsområde.
 
 ## Se även
+* [Bash Manual](http://www.gnu.org/software/bash/manual/bash.html)
+* [tr kommandot i GNU coreutils](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+* [awk kommandot i GNU AWK user's guide](https://www.gnu.org/software/gawk/manual/gawk.html)
+* [sed kommandot i GNU sed user's manual](https://www.gnu.org/software/sed/manual/sed.html)
 
-Här är några användbara länkar för vidare studier av Bash-programmering och manipulering av strängar:
-
-- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php)
-- [Manipulating strings in Bash](https://www.linuxjournal.com/article/8919)
-- [Regular expressions in Bash](https://regex101.com/r/z9ruDY/1)
+Förhoppningsvis har denna guide gett dig en förståelse för hur man kapitaliserar en sträng i Bash och introducerat dig till några användbara kommandon för stränghantering. Det finns många fler kommandon och tekniker att utforska, så fortsätt öva och experimentera för att bli en mästare på Bash-programmering!

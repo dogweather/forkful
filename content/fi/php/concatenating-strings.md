@@ -1,62 +1,48 @@
 ---
-title:    "PHP: Tekstijonojen yhdistäminen"
+title:    "PHP: Merkkijonojen yhdistäminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Tervetuloa lukemaan tämän päivän blogikirjoitusta! Tänään opimme kaikki tärkeät asiat PHP:n merkkijonojen yhdistämisestä. Tulet huomaamaan, että tämä taito on erittäin hyödyllinen monissa tilanteissa. Joten aloitetaanpa!
 
-Monissa PHP-ohjelmoinnissa on tarve yhdistää tai liittää erilaisia merkkijonoja. Tämä voi esimerkiksi olla tarpeellista, kun halutaan luoda dynaaminen viesti tai muokata olemassa olevaa tekstiä. Tätä kutsutaan merkkijonojen konkatenaatioksi ja se on hyödyllinen taito, joka kannattaa oppia.
+## Kuinka
+PHP:ssä merkkijonojen yhdistäminen tapahtuu yksinkertaisesti käyttämällä piste-merkkiä (.) kahden merkkijonon välissä. Katso alla olevaa esimerkkiä:
 
-## Miten
-
-PHP tarjoaa useita eri tapoja konkatenaation tekemiseen. Yksi tapa on käyttää piste-operaattoria (.), joka yhdistää kaksi merkkijonoa yhdeksi.
-
-```
-PHP
-$merkkijono1 = "Tämä on";
-$merkkijono2 = "esimerkki";
-echo $merkkijono1 . $merkkijono2;
-// Tulostaa: Tämä on esimerkki
+```PHP
+$name = "Laura";
+echo "Hei, " . $name . "!"; // Output: Hei, Laura!
 ```
 
-Toinen tapa on käyttää konkatenaatiomerkkiä (.=), joka yhdistää uuden merkkijonon jo olemassa olevaan muuttujaan.
+Voit myös yhdistää useita merkkijonoja kerrallaan käyttämällä samaa piste-merkkiä. Esimerkiksi:
 
-```
-PHP
-$merkkijono = "Tämä on";
-$merkkijono .= " esimerkki";
-echo $merkkijono;
-// Tulostaa: Tämä on esimerkki
+```PHP
+$firstName = "Katri";
+$lastName = "Mäkinen";
+echo "Tervetuloa, " . $firstName . " " . $lastName . "!"; // Output: Tervetuloa, Katri Mäkinen!
 ```
 
-Merkkijonojen yhdistäminen on myös mahdollista käyttäen sprintf-funktiota, joka antaa enemmän joustavuutta muotoilussa.
+Huomaa myös, että voit yhdistää muita muuttujia tai jopa numeroita merkkijonojen kanssa. Esimerkiksi:
 
-```
-PHP
-$nimi = "Matti";
-$ika = 30;
-$viesti = sprintf("Hei, olen %s ja olen %d vuotta vanha.", $nimi, $ika);
-echo $viesti;
-// Tulostaa: Hei, olen Matti ja olen 30 vuotta vanha.
+```PHP
+$age = 25;
+echo "Olen " . $age . " vuotta vanha."; // Output: Olen 25 vuotta vanha.
 ```
 
-## Syvällinen sukellus
+## Syvällisempi sukellus
+PHP:ssä merkkijonojen yhdistäminen on nimeltään "string concatenation" ja se on yksi perustaidoista jokaiselle PHP-kehittäjälle. Monissa tapauksissa meidän täytyy yhdistää useita merkkijonoja yhdeksi, jotta voimme tulostaa halutun viestin tai lähettää tietoja tietokantaan.
 
-Merkkijonojen konkatenaatio ei rajoitu pelkästään perusmerkkijonoihin, vaan sitä voidaan käyttää myös esimerkiksi muuttujien ja muiden PHP-ominaisuuksien yhdistämiseen.
+On myös tärkeää huomata, että PHP:ssä on muitakin tapoja yhdistää merkkijonoja, kuten käyttämällä "sprintf" -funktiota tai "sprintf" -string-muotoilija. Voit lukea lisää näistä vaihtoehdoista dokumentaatiosta.
 
-```
-PHP
-$luku1 = 10;
-$luku2 = 5;
-$yhteensa = "Yhteenlaskun tulos on: " . ($luku1 + $luku2);
-echo $yhteensa;
-// Tulostaa: Yhteenlaskun tulos on: 15
-```
+Yksi tärkeä seikka, johon kannattaa kiinnittää huomiota, on merkkijonojen oikea asettelu. Jos unohdat laittaa piste-merkin yhdistävien merkkijonojen väliin, saat virheen tai tulokset eivät ole odotetut.
+
+Toivottavasti tämä lyhyt artikkeli auttaa sinua ymmärtämään paremmin merkkijonojen yhdistämistä PHP:ssä. Se on yksinkertainen mutta tärkeä taito, jota käytetään jokaisessa PHP-projektissa.
 
 ## Katso myös
+Lue lisää merkkijonojen yhdistämisestä PHP:ssä virallisesta dokumentaatiosta:
 
-- [PHP:n merkkijonofunktiot](https://www.php.net/manual/en/ref.strings.php)
-- [Perusteet PHP:n merkkijonoilla työskentelystä](https://www.w3schools.com/php/php_strings.asp)
-- [PHP:n merkkijonojen formatointi](https://www.php.net/manual/en/function.sprintf.php)
+- https://www.php.net/manual/en/language.operators.string.php
+- https://www.php.net/manual/en/function.sprintf.php

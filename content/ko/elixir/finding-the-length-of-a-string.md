@@ -1,30 +1,40 @@
 ---
 title:    "Elixir: 문자열의 길이 찾기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열의 길이를 찾는 것의 중요성을 이해하기 위해 우선 문자열이 무엇인지 알아야 합니다. 문자열은 단순한 텍스트의 모음이지만, 프로그래밍에서 중요한 데이터 타입입니다. 문자열의 길이를 알면 문제 해결에 도움이 되는 경우가 많기 때문에 문자열의 길이를 찾는 법을 배우는 것은 중요합니다.
+문자열의 길이를 찾는 것에 대해 관심을 가질 이유는 여러 가지가 있습니다. 예를 들어, 사용자 입력을 검증하거나 문자열 처리를 위해 필요할 수 있습니다.
 
 ## 어떻게
 
+문자열의 길이를 찾는 가장 간단한 방법은 Elixir 내장 함수인 `String.length()`를 사용하는 것입니다. 이 함수는 문자열의 길이를 정수로 반환합니다.
+
 ```Elixir
-str = "안녕하세요! 이것은 하나의 문자열입니다."
-IO.puts(String.length(str))
+text = "안녕하세요!"
+String.length(text)
+# 출력: 6
 ```
 
-출력: `27`
+또 다른 방법은 문자열을 리스트로 변환한 후 `length()` 함수를 사용하는 것입니다. 이 경우에는 띄어쓰기도 한 글자로 카운트되므로 조심해야 합니다.
 
-위의 예시에서는 `String.length` 함수를 사용하여 문자열의 길이를 찾는 방법을 보여줍니다. 문자열을 변수에 할당하고 `String.length` 함수를 이용해 문자열의 길이를 출력합니다. Elixir에서는 문자열의 길이를 찾는 다양한 함수들이 있지만, 가장 자주 사용되는 함수는 `String.length`와 `Enum.count`입니다.
+```Elixir
+text = "Hello, world!"
+text |> String.graphemes() |> length()
+# 출력: 13
+```
 
-## 깊이 파고들기
+## 깊게 들어가기
 
-문자열의 길이를 찾는 방법에 대해서는 간단합니다. 하지만 그 이면에는 어떤 일이 벌어지는지 알아보겠습니다. 문자열은 내부적으로 인코딩되어 있고, 이 인코딩 방식에 따라 문자열의 길이를 찾는 방식도 달라집니다. 예를 들어, UTF-8 인코딩 방식을 사용하는 문자열의 경우, 1바이트에서 4바이트까지 다양한 크기의 문자가 사용될 수 있기 때문에 문자열의 길이를 찾을 때에는 조금 더 복잡한 과정이 필요합니다.
+문자열의 길이를 어떻게 정의할 수 있을까요? 실제로는 문자열이 저장된 방식에 따라 달라질 수 있습니다. Elixir에서는 문자열을 유니코드 코드 포인트의 리스트로 표현합니다. 따라서 `String.length()` 함수는 리스트의 길이를 반환합니다.
 
-## 참고자료
+만약, 한글과 같이 다중 바이트 문자를 사용하는 문자열을 다룬다면, `String.length()`의 결과가 예상과 다를 수 있습니다. 이를 방지하기 위해서는 `String.grapheme_length()` 함수를 사용하여 문자 그래프의 수를 반환해야 합니다.
 
-- [Elixir 문자열 API 문서](https://hexdocs.pm/elixir/String.html)
-- [Elixir 문자열 인코딩](https://hexdocs.pm/elixir/String.html#module-encodings)
+## 참고 자료
+
+- [Elixir 문자열 관련 문서](https://hexdocs.pm/elixir/String.html#functions)
+- [유니코드 그래프의 정의](https://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundary_Rules)

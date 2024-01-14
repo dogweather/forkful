@@ -1,48 +1,53 @@
 ---
-title:    "TypeScript: 두 날짜 비교"
+title:    "TypeScript: 두 날짜 비교하기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-"## 왜"
+# 왜: 두 날짜를 비교하는 것이 필요한 이유
+작성자님의 코딩 여정에서 두 날짜를 서로 비교하는 경우가 있을 것입니다. 이 글에서는 TypeScript를 사용하여 다양한 방법으로 날짜를 비교하는 방법을 배우게 될 것입니다.
 
-두 날짜를 비교하는 것이 왜 중요한지 궁금하신가요? TypeScript를 사용하는 경우, 날짜 비교는 두 날짜가 같은지 또는 어느 날짜가 빠른지 등을 확인하는 데 유용합니다.
+## 어떻게: TypeScript를 사용하여 두 날짜 비교하기
+```TypeScript
+// 두 날짜 변수 선언
+let date1: Date = new Date('2021/01/01');
+let date2: Date = new Date('2021/01/02');
 
-"## 어떻게"
+// 두 날짜 비교
+if(date1.getTime() === date2.getTime()) {
+    console.log('두 날짜는 같습니다.');
+} else if(date1.getTime() > date2.getTime()) {
+    console.log('date1이 date2보다 이후 날짜입니다.');
+} else {
+    console.log('date2가 date1보다 이후 날짜입니다.');
+}
 
-두 날짜를 비교하는 방법은 간단합니다. 먼저, 두 날짜 객체를 생성하고 `>` 나 `<` 연산자를 사용하여 비교할 수 있습니다. 또는 `getTime()` 함수를 사용하여 날짜를 숫자형으로 변환한 다음, 숫자 연산으로도 비교할 수 있습니다.
+// 출력 결과: date2가 date1보다 이후 날짜입니다.
+```
+
+위의 예시는 `Date` 객체의 `getTime()` 메서드를 사용하여 두 날짜를 밀리초로 바꾼 뒤 비교하는 방법을 보여줍니다. 다른 방법으로는 `>` 이나 `<` 연산자를 사용하여 비교하는 방법이 있습니다. `Date` 객체에 대한 자세한 정보는 [이 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)를 참고하시기 바랍니다.
+
+## 딥 다이브: 두 날짜 비교에 대해 더 알아보기
+날짜를 비교할 때에는 날짜 형식이 같은지 확인하는 것이 중요합니다. 예를 들어, `'2021/10/15'`와 `'10/15/2021'`는 같은 날짜를 나타내지만 서로 다른 형식이기 때문에 비교할 수 없습니다. 따라서 먼저 두 날짜의 형식을 일치시켜주는 작업이 필요할 수 있습니다.
+
+또한 날짜를 비교할 때에는 주의해야 할 점이 있습니다. 아래 코드를 보시면 어떤 점이 문제가 될 수 있는지 생각해보세요.
 
 ```TypeScript
-let date1 = new Date(2021, 5, 25);
-let date2 = new Date(2021, 3, 12);
+// 두 날짜 변수 선언
+let date1: Date = new Date('2021-01-01');
+let date2: Date = new Date('2021/01/01');
 
-if (date1 > date2) {
-    console.log(date1 + " is later than " + date2);
-}
+// 두 날짜 비교
+console.log(date1 === date2);
 
-let time1 = date1.getTime();
-let time2 = date2.getTime();
-
-if (time1 < time2) {
-    console.log(date1 + " is earlier than " + date2);
-}
+// 출력 결과: false
 ```
 
-위의 예시 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+위의 예시에서는 두 날짜를 다른 형식으로 입력해주고 있지만, 결과는 `false`가 나오게 됩니다. 이는 TypeScript에서 `===` 연산자를 사용하여 비교할 때, 두 객체의 주소값을 비교하기 때문입니다. 따라서 날짜를 비교할 때에는 `getTime()` 메서드를 사용하거나, `getDate()`, `getMonth()`, `getFullYear()` 메서드를 사용하여 날짜를 숫자로 변환하고 비교하는 것이 중요합니다.
 
-```
-Wed Jun 23 2021 00:00:00 GMT+0900 (Korean Standard Time) is later than Fri Apr 02 2021 00:00:00 GMT+0900 (Korean Standard Time)
-Wed Jun 23 2021 00:00:00 GMT+0900 (Korean Standard Time) is earlier than Thu Mar 12 2021 00:00:00 GMT+0900 (Korean Standard Time)
-```
-
-"## 깊은 살펴보기"
-
-날짜를 비교할 때, 주의해야 할 점이 있습니다. 바로 `getMonth()` 함수를 사용할 때입니다. 이 함수는 0부터 시작하기 때문에, 6월을 나타내는 `getMonth()` 값은 `5`가 됩니다. 따라서, 실수를 방지하기 위해 직접 `Date` 객체를 생성할 때, `getMonth()` 값을 명시적으로 1씩 빼주는 것이 좋습니다.
-
-또한, 두 날짜의 밀리초 값이 같아도 객체의 타입이 다를 경우 비교 결과가 다를 수 있습니다. 따라서, 객체의 타입을 동일하게 맞춰주는 것도 중요합니다.
-
-"## See Also"
-
-- [MDN web docs: Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs)
+## 이 외에도 참고할 만한 자료들
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+- [MDN 웹 문서](https://developer.mozilla.org/ko/)
+- [날짜 형식에 대한 더 많은 정보](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)

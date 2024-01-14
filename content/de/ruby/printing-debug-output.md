@@ -1,38 +1,53 @@
 ---
-title:    "Ruby: Ausgabe von Debug-Informationen"
+title:    "Ruby: Debug-Ausgabe drucken"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Wenn Sie jemals an einem komplexen Ruby-Programm gearbeitet haben, sind Sie wahrscheinlich auf Fehler gestoßen, die schwer zu finden sind. Eine einfache Möglichkeit, diese Fehler zu identifizieren und zu beheben, ist das Drucken von Debug-Ausgaben während der Ausführung des Programms. Dies ermöglicht es Ihnen, den Ablauf Ihres Codes zu überwachen und eventuelle Fehler oder Ungenauigkeiten zu erkennen.
+Das Drucken von Debug-Ausgaben ist ein wichtiger Schritt beim Programmieren in Ruby, um Fehler und Probleme im Code zu identifizieren. Es kann uns helfen, die Logik und den Fluss unseres Codes besser zu verstehen und zu überprüfen, ob unsere Erwartungen erfüllt werden.
 
-## Wie geht das?
+## Wie geht das
 
-Um Debug-Ausgaben in Ruby zu drucken, können Sie die `puts`-Methode verwenden. Diese Methode gibt den Wert eines Ausdrucks auf der Konsole aus. Hier ist ein Beispiel, das den Wert einer Variablen `x` ausgibt:
-
-```Ruby
-puts x
-```
-
-Sie können auch eine Zeichenkette mit der `puts`-Methode ausgeben, um zusätzliche Informationen zu erhalten:
+Um Debug-Ausgaben in Ruby zu drucken, können wir die `puts` oder `p` Methode verwenden. `puts` gibt einfach den Inhalt der übergebenen Variablen oder Strings in der Konsole aus, während `p` die Ausgabe mit zusätzlichen Informationen wie dem Datentyp anzeigt. Hier ist ein Beispiel:
 
 ```Ruby
-puts "x hat den Wert: #{x}"
+name = "Max Mustermann"
+puts "Hallo, mein Name ist " + name
+# Ausgabe: Hallo, mein Name ist Max Mustermann
+
+p age = 25
+# Ausgabe: 25 (mit Informationen über Datentyp)
 ```
 
-Diese Ausgabe wird Ihnen helfen, den Wert von `x` an bestimmten Stellen in Ihrem Code zu überwachen und zu überprüfen.
+## Tiefgehende Infos
 
-## Tiefer Einblick
+Zusätzlich zu `puts` und `p` gibt es auch die `print` und `printf` Methoden, die für Debug-Ausgaben verwendet werden können. `print` gibt den Inhalt ohne Zeilenumbruch aus, während `printf` formatierte Ausgaben ermöglicht, ähnlich wie `sprintf` für Strings. Hier sind weitere Beispiele:
 
-Es gibt noch andere Möglichkeiten, Debug-Ausgaben anzupassen und zu formatieren. Wenn Sie zum Beispiel die `p`-Methode verwenden, wird die Ausgabe mit dem Datentyp der Variablen angezeigt. Dies kann hilfreich sein, um sicherzustellen, dass der korrekte Datentyp verwendet wird. Sie können auch die `print`-Methode verwenden, um die Ausgabe in einer Zeile anstatt auf verschiedenen Zeilen anzuzeigen.
+```Ruby
+items = ["Apfel", "Banane", "Orange"]
 
-Eine weitere nützliche Technik ist die Verwendung von Ruby-Bedingungen und Ausnahmefällen mit Debug-Ausgaben. Dadurch können Sie spezifische Fehlerfälle in Ihrem Code erkennen und beheben.
+print items
+# Ausgabe: ["Apfel", "Banane", "Orange"]
+
+printf("Ich habe %d Stück Obst.", items.length)
+# Ausgabe: Ich habe 3 Stück Obst.
+```
+
+Debug-Ausgaben sind auch hilfreich, wenn wir Codeabschnitte oder Schleifen durchlaufen und überprüfen möchten, ob unsere Variablen die erwarteten Werte haben.
+
+## Weitere Informationen
+
+Weitere Informationen über das Drucken von Debug-Ausgaben in Ruby finden Sie in der offiziellen Ruby Dokumentation und in den folgenden Ressourcen:
+
+- [Official Ruby Documentation](https://ruby-doc.org/core-2.7.1/IO.html#method-i-puts)
+- [The Ruby Way: Debugging](https://www.rubyguides.com/2019/01/ruby-debugging/)
+- [Debugging Tips and Tricks in Ruby](https://medium.com/@aliciapquintana/debugging-tips-and-tricks-in-ruby-e3093e4170a7)
 
 ## Siehe auch
 
-- [Die offizielle Ruby-Dokumentation zur `puts`-Methode](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-puts)
-- [Ein Tutorial zum Debugging in Ruby](https://medium.com/rubycademy/ruby-debugging-tutorial-59c65b8323e3)
-- [Weitere Tipps zum Drucken von Debug-Ausgaben in Ruby](https://www.toptal.com/ruby/top-tips-for-debugging-ruby-on-rails)
+- [Effektives Debugging](https://rubyonrails.org/doctrine/2015/12/02/effective_debugging_in_rails.html)
+- [6 Tips for Debugging in Ruby](https://www.sitepoint.com/6-tips-debugging-ruby/)

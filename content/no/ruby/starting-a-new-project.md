@@ -1,32 +1,56 @@
 ---
-title:    "Ruby: Å starte et nytt prosjekt"
+title:    "Ruby: Å begynne på et nytt prosjekt"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan virke skremmende, men det er en spennende og givende opplevelse. Ved å lage noe fra bunnen av, kan du utvikle dine ferdigheter og skape noe unikt. Det er også en flott måte å utfordre deg selv og lære mer om programmering.
+Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg muligheten til å utforske nye ideer, lære nye teknologier og kanskje til og med bidra til å løse et problem du brenner for. Det er også en flott måte å utfordre deg selv og forbedre dine programmeringsferdigheter.
 
-## Hvordan
+#Slik gjør du det
 
-For å begynne å programmere i Ruby trenger du først å installere et tekstredigeringsprogram som Visual Studio Code eller Atom. Deretter må du laste ned og installere Ruby på datamaskinen din. Når du har gjort dette, er du klar til å begynne å skrive kode.
+For å starte et nytt prosjekt i Ruby, må du først ha Ruby installert på datamaskinen din. Deretter kan du følge disse enkle trinnene:
 
-I Ruby bruker vi ```puts``` kommandoen for å skrive ut tekst til skjermen. For eksempel, hvis vi skriver ```puts "Hei verden"``` vil det vises som "Hei verden" i terminalen eller konsollen. Du kan også skrive ut variabler ved å bruke ```#{variabel}``` syntaksen. For eksempel, hvis du har en variabel ```navn = "Johannes"```, kan du skrive ```puts "Hei, mitt navn er #{navn}"``` for å få utskriften "Hei, mitt navn er Johannes". 
+1. Åpne din favoritt tekstredigerer og lagre en ny fil med ".rb" filtype. Dette vil være filen der koden din vil bli skrevet.
 
-Du kan også bruke Ruby til å håndtere brukerinput ved å bruke ```gets.chomp```. Dette gjør at brukeren kan skrive inn informasjon som deretter kan behandles av programmet ditt. For eksempel, kan du skrive ```navn = gets.chomp``` og deretter hente ut det brukeren skriver inn ved å skrive ```puts "Hei #{navn}, velkommen til mitt program"```.
+2. Start ved å definere et nytt objekt ved hjelp av `class` kommandoen. Dette vil være grunnlaget for ditt prosjekt.
 
-## Dypdykk
+3. Deretter kan du begynne å legge til funksjoner og metoder til objektet ditt ved hjelp av `def` kommandoen.
 
-Når du begynner å lage et nytt prosjekt, er det viktig å ha en klar idé om hva du ønsker å oppnå. Lag en plan eller en liste med mål for prosjektet ditt. Deretter kan du begynne å bryte ned listen i mindre oppgaver og sette deg realistiske tidsfrister for hver oppgave. Dette vil hjelpe deg med å organisere arbeidet ditt og holde deg motivert.
+4. Du kan også legge til variabler og andre datastrukturer for å håndtere data i prosjektet ditt.
 
-I tillegg til å ha en plan, bør du også være komfortabel med å lese dokumentasjon og søke etter hjelp når det trengs. Ruby har en omfattende dokumentasjon som hjelper deg med å forstå språket og dets funksjoner. Det er også mange ressurser og forum online der du kan få hjelp og råd fra andre Ruby-programmerere.
+5. Når du er ferdig med å skrive koden din, kan du kjøre den ved å åpne terminalen og skrive `ruby filename.rb` kommandoen. Dette vil utføre koden din og vise resultatet til deg.
 
-## Se også
+```Ruby
+class MittProsjekt
+  def initialize(navn)
+    @navn = navn
+  end
 
-[Offisiell Ruby-dokumentasjon](https://www.ruby-lang.org/en/documentation/)
+  def si_hei
+    puts "Hei, mitt navn er #{@navn}!"
+  end
+end
 
-[Ruby kurs for nybegynnere](https://www.codecademy.com/learn/learn-ruby)
+min_objekt = MittProsjekt.new("Maren")
+min_objekt.si_hei
+```
 
-[Ruby on Rails tutorial](https://www.railstutorial.org/)
+Dette vil gi følgende utdata i terminalen:
+
+`Hei, mitt navn er Maren!`
+
+#Dykk dypere
+
+Etter å ha laget et grunnleggende Ruby-prosjekt, kan du begynne å utforske dype områder av programmeringsspråket. Du kan lese dokumentasjon, lære om ulike biblioteker og eksperimentere med mer avanserte konsepter som objektorientert programmering, feilhåndtering og parallellprogrammering.
+
+En annen måte å dykke dypere inn i Ruby på, er å delta på meetups, konferanser eller kurs. Dette vil gi deg muligheten til å møte andre Ruby-entusiaster og lære av deres erfaringer.
+
+#Se også
+
+- [Offisiell Ruby-dokumentasjon](https://www.ruby-lang.org/en/documentation/)
+- [Ruby Meetups i Norge](https://www.meetup.com/topics/ruby/no/)
+- [RubyConf Norge](https://rubyconf.no/)

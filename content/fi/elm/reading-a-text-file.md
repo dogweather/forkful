@@ -1,61 +1,51 @@
 ---
-title:    "Elm: Lukemassa tekstitiedostoa"
+title:    "Elm: Tiedoston lukeminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi 
 
-Miksi lukisin tekstitiedostoa? Tekstiedostojen lukeminen voi olla hyödyllistä, kun haluat esimerkiksi käsitellä suuria määriä tekstimuotoista dataa tai luoda ohjelmia, jotka ottavat tekstitiedoston sisällön huomioon.
+Tervehdys kaikille! Tiedän että monille lukijoihin innostaa oppia uusi ohjelmointikieli. Tänään keskitymme yhteen suosikkeihin - Elm. Tässä blogikirjoituksessa aiomme käsitellä, miksi sinun kannattaisi lukea tekstitystiedostoja Elm-ohjelmointikielellä ja miten se tehdään.
 
-## Kuinka
+## Miten
 
-Seuraavassa on muutamia esimerkkejä siitä, kuinka voit lukea tekstitiedostoa Elm-ohjelmalla.
-
-```elm
-import File
-import Html
-
-fileContent : String
-fileContent =
-    File.read "tekstitiedosto.txt"
-
-Html.text fileContent
+Elmillä on useita tapoja lukea tiedostoja. Yksi yleisimmistä tavoista on käyttää "elm/file" -moduulia. Se tarjoaa tarvittavat toiminnot tiedostojen avaamiseen ja käsittelyyn.
 
 ```
-
-Tässä esimerkissä luomme muuttujan nimeltä `fileContent`, joka sisältää tekstitiedoston sisällön. Sitten tulostamme sen HTML-elementin sisällöksi, jotta voimme näyttää sen käyttäjälle.
-
-```elm
 import File
-import Array
+import File2 as File
 
-fileContent : Array String
-fileContent =
-    File.lines "tekstitiedosto.txt"
 
+tiedostoTuloste = File.open "tiedosto.txt" File.Read 
+case tiedostoTuloste of 
+ File.
+  Datei.DesireSuccess muodostaa success  
+  tiedosto successi 
+     tiedostoSelin <-Eine.DeFile (folioGantt tty kieli) Nothing 
+
+  Datei.DesireError error-ilmoitus 
+    error <| toString error-ilmoitus 
 ```
 
-Tämä esimerkki lukee tekstitiedoston rivit ja tallentaa ne taulukkoon. Tämä on hyödyllistä, jos haluat käsitellä tekstitiedoston sisältöä rivien perusteella.
+Koodi avaa tiedoston "tiedosto.txt" ja palauttaa tuloksen. Jos tiedoston avaaminen onnistuu, "success" -mutantti saadaan ja tiedosto luetaan "tiedostoSelain" -muuttujaan. Jos tiedoston avaamisessa ilmenee virhe, "error" -muuttujassa on virheilmoitus.
 
-```elm
-import File
-import Json.Encode
+## Syventävä tarkastelu
 
-saveFile : String -> Cmd msg
-saveFile fileContent =
-    File.write "uusi_tiedosto.txt" (Json.Encode.string fileContent)
+Voit myös käyttää "elm/http"-moduulia tiedostojen lukemiseen HTTP-pyynnöillä. Tämä on hyödyllinen, jos haluat hakea tiedoston suoraan verkosta.
 
 ```
+get "http://www.example.com/tiedosto.txt"
+    |> Task.attempt ParseResponse
+```
 
-Tämä esimerkki luo uuden tekstitiedoston ja tallentaa siihen annetun sisällön. Huomaa, että käytämme myös Json.Encode-moduulia muuttaaksemme merkkijonon `fileContent` Json-muotoon.
-
-## Syvempi sukellus
-
-Jos haluat tutustua lisää tekstitiedostojen lukemiseen ja käsittelyyn Elm-ohjelmassa, suosittelemme tutustumaan viralliseen dokumentaatioon. Dokumentaatiossa on kerrottu tarkemmin moduuleista ja funktioista, joita voi käyttää tekstitiedostojen käsittelyyn.
+Tässä koodiesimerkissä käytetään "elm/http"-moduulia pyyntöön tiedostosta "tiedosto.txt" ja vastaus välitetään "ParseResponse" -funktiolle.
 
 ## Katso myös
 
-- [Elm-ohjelmointikielen virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Elm-tiedostokäsittelymoduulin dokumentaatio](https://package.elm-lang.org/packages/elm/file/latest/File)
+Lisätietoja tiedostojen lukemisesta Elm-ohjelmointikielellä löydät seuraavista linkeistä:
+
+- Elm tiedoston dokumentaatio: https://package.elm-lang.org/packages/elm/file/latest/File
+- Elm http dokumentaatio: https://package.elm-lang.org/packages/elm/http/latest/Http

@@ -1,48 +1,46 @@
 ---
 title:    "Kotlin: Å få gjeldende dato"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+En av de mest grunnleggende oppgavene til et programmeringsspråk er å håndtere datoen. Uansett om du utvikler et spill, en mobilapp eller en nettside, er det viktig å kunne få tak i og håndtere den nåværende datoen. Heldigvis gjør Kotlin dette til en enkel oppgave, og i denne bloggposten vil jeg vise deg hvordan du kan få tak i den nåværende datoen ved hjelp av Kotlin.
 
-Har du noen gang lurt på hvordan du kan få dagsaktig dato i Kotlin-programmer? Det er mange grunner til at du kan ønske å gjøre dette, enten det er for å lage datoen for en hendelse eller for å vise datoen i en brukergrensesnitt. Heldigvis er det enkelt å oppnå i Kotlin. 
-
-## Hvordan Gjøre Det
-
-Først og fremst må du importere "java.util.Date" biblioteket i filen der du ønsker å bruke dagsaktuelt dato. Deretter kan du bruke "Date()" konstruktøren for å lage et objekt av denne typen som vil inneholde dagens dato. Dette kan gjøres på følgende måte:
+## Hvordan
+Først må vi importere pakken som lar oss få tilgang til dato og tidsfunksjoner i Kotlin. Dette gjøres ved å legge til følgende linje øverst i kildekoden:
 
 ```Kotlin
-import java.util.Date
-
-...
-
-val currentDate = Date()
+import java.time.*
 ```
 
-Nå har du et objekt av typen "Date" som inneholder dagens dato. Hvis du ønsker å formatere datoen på en bestemt måte, kan du bruke "DateFormat" klassen. Her er et eksempel på hvordan man kan få datoen i formatet "dd/MM/yyyy":
+Deretter kan du få tak i den nåværende datoen ved å bruke klassen LocalDate og funksjonen now(). Dette vil gi deg datoen i form av år, måned og dag som vist under:
 
 ```Kotlin
-import java.util.Date
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-
-...
-
-val currentDate = Date()
-val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-val formattedDate = dateFormat.format(currentDate)
+val currentDate = LocalDate.now()
 ```
 
-Output fra dette vil være "25/10/2021" (hvis dagens dato er 25. oktober 2021).
+Utskriften vil da se noe lignende ut: 2021-02-09.
+
+Hvis du ønsker å få tak i mer spesifikk informasjon om datoen, for eksempel bare måned og år, kan du bruke funksjonen get():
+
+```Kotlin
+val currentMonth = currentDate.get(ChronoField.MONTH_OF_YEAR)
+val currentYear = currentDate.get(ChronoField.YEAR)
+```
+
+Utskriften for måned vil da være februar (i form av tall 2), og for år vil det være 2021.
 
 ## Deep Dive
+I Kotlin kan du også håndtere og manipulere datoer på en fleksibel og enkel måte. Du kan for eksempel få tak i en bestemt fremtidig eller tidligere dato ved hjelp av funksjonen plusDays() for å legge til dager eller minusDays() for å trekke fra dager.
 
-Dypere informasjon om å få dagsaktuelt dato i Kotlin er å forstå hvordan "Date" og "DateFormat" klassene fungerer. "Date" klassen inneholder metoder for å sette og hente forskjellige datoverdier som år, måned, dag osv. "DateFormat" klassen brukes til å formatere datoen basert på et spesifikt mønster. Det finnes også en "Calendar" klasse som kan være nyttig for å håndtere datoer i Kotlin.
+Du kan også formatere datoen ved hjelp av funksjonen format(). Dette lar deg endre hvordan datoen blir presentert, for eksempel å legge til månedsnavn eller endre rekkefølgen på dato, måned og år.
 
-## Se Også
+Det er også viktig å merke seg at Kotlin automatisk konverterer datoen til den lokale tiden til datamaskinen. Dette kan være nyttig å vite hvis du jobber med koder som brukes på tvers av ulike tidssoner.
 
-- [Java.util.Date dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java.text.DateFormat dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html)
-- [Java.util.Calendar dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+## Se også
+- [Kotlin Docs - Dates and Times](https://kotlinlang.org/docs/dates.html)
+- [JavaDocs - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorialspoint - Kotlin Date Time](https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm)

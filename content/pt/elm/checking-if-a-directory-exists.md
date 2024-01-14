@@ -1,44 +1,39 @@
 ---
-title:    "Elm: Verificando se um diretório existe."
+title:    "Elm: Verificando se um diretório existe"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar a existência de um diretório em Elm?
+## Por que verificar se um diretório existe?
 
-Para aqueles que estão iniciando na programação com Elm, pode parecer desnecessário verificar a existência de um diretório. No entanto, essa é uma etapa importante para garantir que seu código funcione corretamente e evite possíveis erros. Além disso, a verificação da existência de um diretório é crucial para a organização e gerenciamento de arquivos em seus projetos.
+Ao desenvolver um aplicativo ou site em Elm, muitas vezes precisamos verificar se um diretório específico existe no sistema de arquivos. Isso pode ser útil para garantir que os usuários tenham acesso a determinados arquivos ou para organizar melhor a estrutura dos arquivos no aplicativo.
 
-## Como fazer?
+## Como fazer:
 
-Antes de começarmos a verificar a existência de um diretório em Elm, é importante entendermos algumas coisas. Em Elm, um diretório pode ser representado por uma lista de caminhos de diretório, seguindo a estrutura de árvore. Então, para verificar se um diretório existe, precisamos usar a função `List.member` para procurar pelos caminhos de diretório em nossa lista. Aqui está um exemplo de código que pode ser usado para verificar a existência de um diretório em Elm:
+Verificar a existência de um diretório em Elm é muito simples. Podemos usar a função `File.exists` do pacote `elm/file` para verificar se um determinado diretório existe ou não. Por exemplo:
 
-```elm
--- Definindo a lista de caminhos de diretório
-directoryPaths = [ "src", "components", "js" ]
+```Elm
+import File exposing (exists)
 
--- Função para verificar a existência de um diretório em nossa lista
-directoryExists path =
-    List.member path directoryPaths
+directoryExists : Bool
+directoryExists =
+    exists "caminho/do/diretorio"
 ```
 
-Se o caminho de diretório especificado for encontrado em nossa lista, a função retornará `True`, caso contrário, retornará `False`. Agora, podemos usar essa função em nosso código para garantir que o diretório exista antes de realizar qualquer ação com ele.
+O código acima irá retornar um valor booleano, indicando se o diretório especificado existe ou não. Podemos então usar esse valor em nossa lógica para realizar ações diferentes dependendo da existência do diretório.
 
-Aqui está um exemplo de saída para o código acima, assumindo que o caminho de diretório `components` existe em nossa lista:
+## Mergulho profundo:
 
-```elm
--- Chamando a função e imprimindo o resultado
-directoryExists "components" == True
-```
+Além do pacote `elm/file`, também podemos usar o pacote `elm/directory` para trabalhar com diretórios em Elm. Esse pacote nos fornece funções mais avançadas para manipular diretórios, como listar os arquivos contidos em um diretório ou criar um novo diretório.
 
-## Mergulhe mais fundo
+A função `Directory.exists` do pacote `elm/directory` é semelhante à `File.exists`, mas ela permite verificar a existência de um diretório recursivamente, ou seja, incluindo todos os diretórios aninhados. Isso pode ser útil em casos em que precisamos ter certeza de que um diretório e todos os seus subdiretórios existem antes de realizar uma tarefa específica.
 
-Além disso, se você quiser se aprofundar ainda mais no processo de verificação de existência de diretórios em Elm, é importante entender como o sistema de arquivos funciona em um nível mais baixo. Em sistemas operacionais, os diretórios também são conhecidos como pastas, que são usados para organizar e armazenar arquivos. Cada arquivo tem um caminho de diretório, que é composto por uma sequência de pastas.
+## Veja também:
 
-Em Elm, as pastas e caminhos de diretório são representados como strings, e a função `List.member` é usada para procurar por strings em uma lista. É importante lembrar que o Elm é uma linguagem puramente funcional, o que significa que os caminhos de diretório são imutáveis e não podem ser alterados durante a execução do programa.
+- Documentação do pacote `elm/file`: [https://package.elm-lang.org/packages/elm/file/latest/](https://package.elm-lang.org/packages/elm/file/latest/)
+- Documentação do pacote `elm/directory`: [https://package.elm-lang.org/packages/elm/directory/latest/](https://package.elm-lang.org/packages/elm/directory/latest/)
+- Exemplo de código no Ellie App: [https://ellie-app.com/82dDKftKvF3a1](https://ellie-app.com/82dDKftKvF3a1)
 
-## Veja também
-
-- Documentação oficial sobre a função `List.member`: https://package.elm-lang.org/packages/elm/core/latest/List#member
-- Tutorial sobre manipulação de arquivos em Elm: https://elmprogramming.com/file-i-o.html 
-- Exemplo de projeto Elm com manipulação de arquivos: https://github.com/getify/elm-soundcloud/blob/master/src/Native/FileSystem.js
+Se você precisar trabalhar com diretórios em seu próximo projeto em Elm, esperamos que este artigo tenha sido útil e que os links fornecidos também sejam úteis para o seu aprendizado contínuo da linguagem. Boa codificação!

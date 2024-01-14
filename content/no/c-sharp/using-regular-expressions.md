@@ -1,50 +1,50 @@
 ---
 title:    "C#: Å bruke regulære uttrykk"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Regular expressions er et kraftig verktøy for å søke og manipulere tekststrenger i programmering. Ved å bruke regex, kan du enkelt finne og manipulere data som passer et bestemt mønster. Dette kan spare deg for mye tid og arbeid i en rekke forskjellige situasjoner, som å validere brukerinput, søke i store tekstfiler, og mye mer.
 
-## Hvordan
-For å bruke regular expressions i C#, må du først importere System.Text.RegularExpressions biblioteket. Deretter kan du bruke Regex-klassen til å søke etter og manipulere tekststrenger.
+Hvis du er en programmerer, har du sannsynligvis hørt om "regular expressions" før. Men hva er det egentlig, og hvorfor bør du bruke det i dine programmeringsprosjekter?
 
-La oss se på et enkelt eksempel der vi ønsker å finne og erstatte alle forekomster av ordet "hund" med "katt" i en tekststreng:
+Regular expressions, også kjent som "regex", er en måte å søke og manipulere tekststrenger på. Dette kan være nyttig i mange tilfeller, som for eksempel når du vil finne eller erstatte bestemte mønstre i en tekst eller søke gjennom store mengder data på en effektiv måte.
+
+## Slik gjør du det
+
+For å bruke regex i C# trenger du bare å inkludere "System.Text.RegularExpressions" namespace i prosjektet ditt. Deretter kan du enkelt lage et regex-objekt og bruke forskjellige metoder som "Match" og "Replace" for å manipulere tekststrenger.
+
+Her er et eksempel på hvordan du kan bruke regex for å finne og erstatte spesifikke ord i en tekst:
 
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-string tekst = "Jeg liker hunder, men jeg er allergisk mot dem.";
-string nyTekst = Regex.Replace(tekst, "hund", "katt");
+string tekst = "Hei, jeg heter John og jeg elsker å kode. Koding er gøy!";
+
+Regex regex = new Regex("kode");
+string nyTekst = regex.Replace(tekst, "programmering");
+
 Console.WriteLine(nyTekst);
 
-// Output: Jeg liker katter, men jeg er allergisk mot dem.
+// Output:
+// Hei, jeg heter John og jeg elsker å programmering. Programmering er gøy!
 ```
 
-Her er noen vanlige metoder og egenskaper på Regex-klassen som kan være nyttige i ditt arbeid med regular expressions:
+Som du kan se, bruker vi først "Regex" klassen til å lage et regex-objekt med søkeordet "kode". Deretter bruker vi "Replace" metoden til å erstatte alle forekomster av "kode" med "programmering" i teksten vår. Det er viktig å merke seg at regex er case sensitive, så "kode" og "Kode" vil ikke bli erstattet.
 
-- `IsMatch()` - sjekker om en tekststreng samsvarer med et gitt regex-mønster
-- `Match()` - returnerer en Match-objekt som inneholder informasjon om det første samsvarer mellom en tekststreng og et regex-mønster
-- `Matches()` - returnerer en MatchCollection-objekt som inneholder alle samsvarer mellom en tekststreng og et regex-mønster
-- `Split()` - deler en tekststreng basert på et regex-mønster
-- `Replace()` - erstatter samsvarer i en tekststreng med et gitt mønster eller en gitt tekst
+## Dykk dypere
 
-For å lære mer om hvordan du bruker regex i C#, kan du sjekke ut [dokumentasjonen til Regex-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1) og [regulære uttrykk på w3schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp).
+Det er mange forskjellige måter å bruke regex på i C#, og det er umulig å dekke alt i en kort bloggpost. Men her er noen tips som kan hjelpe deg på veien til å mestre regular expressions:
 
-## Dypdykk
-Det finnes mange forskjellige regex-mønstre og teknikker du kan bruke for å matche og manipulere tekst. Her er noen få tips som kan hjelpe deg å bli mer komfortabel med regular expressions:
-
-- Bruk [regex tester](https://regex101.com/) for å eksperimentere og teste dine regex-mønstre.
-- Uttrykket `.` betyr "any character", `*` betyr "zero eller flere forekomster", og `+` betyr "én eller flere forekomster". Disse er grunnleggende operatorer som kan være nyttige å lære seg.
-- Du kan bruke `\b` for å matche ordgrenser, `\d` for å matche tall, og `\w` for å matche bokstaver, tall og understrekere.
-- Ved hjelp av parenteser kan du gruppere deler av et regex-mønster for senere å bruke dette i erstatningen. For eksempel kan du bruke `(\w+) (\w+)` for å matche to ord og bruke `$2, $1` i erstatningen for å bytte plass på dem.
-- Regex-mønstre er vanligvis case-sensitive, men du kan bruke flaggene `RegexOptions.IgnoreCase` eller `RegexOptions.IgnorePatternWhitespace` for å gjøre søket case-insensitive eller ignorere mellomrom og kommentarer i mønsteret.
-
-Bare husk at regular expressions kan virke forvirrende og komplekst i begynnelsen, men etter hvert som du blir mer kjent med det, vil du oppdage at det er et kraftig verktøy som kan hjelpe deg å løse utfordringer i dine programmer.
+- Regex kan også brukes til å validere input fra brukere, som for eksempel e-postadresser eller telefonnumre.
+- Det er forskjellige "spesielle tegn" som kan brukes i regex for å søke etter bestemte mønstre, som for eksempel "w" for å finne bokstaver og "d" for å finne tall.
+- Hvis du trenger å finne og erstatte mønstre i en tekst som inneholder spesielle tegn, kan du bruke escape-tegn "\" for å fortelle regex at disse tegnene skal behandles som vanlig tekst.
 
 ## Se også
-- [Regex Tutorial på w3schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Regex Cheat Sheet på DevHints](https://devhints.io/regex)
-- [Regex Tutorial på ProgrammeringsWiki](https://programmeringswiki.no/wiki/Reg
+
+- [Offisiell dokumentasjon for regex i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Regex Tutorial på W3Schools](https://www.w3schools.com/python/python_regex.asp)
+- [10 Essential Tips for Regular Expressions in C#](https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial) (engelsk)

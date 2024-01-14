@@ -1,52 +1,32 @@
 ---
 title:    "C#: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tulevaisuuden tai menneisyyden päivämäärän laskeminen voi olla hyödyllistä esimerkiksi kirjanpitoa tai suunnittelua varten.
+Usein ohjelmoinnissa tarvitsemme tapoja laskea päivämääriä tulevaisuudessa tai menneisyydessä. Tämä voi liittyä esimerkiksi työtehtäviin, matkustamiseen tai yksinkertaisesti vaikkapa syntymäpäiviä suunnitellessa. Hyvä uutinen on, että C#:ssa on olemassa käteviä keinoja tähän!
 
-## Miten
+## Kuinka
 
-```C#
-// Alustetaan nykyinen päivämäärä 
-DateTime nykyinenPaivamaara = DateTime.Now;
-
-// Lisätään 30 päivää nykyiseen päivämäärään
-DateTime viidenPaivanPaasta = nykyinenPaivamaara.AddDays(30);
-
-// Tulostetaan tulos
-Console.WriteLine("Päivämääränä 30 päivän päästä on: " + viidenPaivanPaasta.ToString("dd/MM/yyyy"));
-```
-
-**Tulos:**
-
-Päivämääränä 30 päivän päästä on: 22/06/2021
+Esimerkiksi voimme käyttää `DateTime` luokkaa apuna päivämäärien laskemisessa. Voimme luoda uuden instanssin tälle luokalle ja antaa sille arvoksi nykyisen päivämäärän käyttämällä `DateTime`-metodia `Now()`. Sitten voimme käyttää `Add()`-metodia lisätäksemme tai vähentääksemme päiviä kyseisestä päivämäärästä.
 
 ```C#
-// Alustetaan nykyinen päivämäärä 
-DateTime nykyinenPaivamaara = DateTime.Now;
-
-// Vähennetään 10 päivää nykyisestä päivämäärästä
-DateTime kymmenenPaivanPaasta = nykyinenPaivamaara.AddDays(-10);
-
-// Tulostetaan tulos
-Console.WriteLine("Päivämääränä 10 päivän päästä on: " + kymmenenPaivanPaasta.ToString("dd/MM/yyyy"));
+DateTime tanaan = DateTime.Now;
+DateTime tulevaPaiva = tanaan.Add(TimeSpan.FromDays(10));
+Console.WriteLine(tulevaPaiva);
 ```
 
-**Tulos:**
+Tämä koodi tulostaisi kymmenen päivän päästä olevan päivämäärän. Voimme myös käyttää `Parse()`-metodia muuttaaksemme merkkijonon päivämääräksi ja `ToString()`-metodia muuttaaksemme päivämäärän taas takaisin merkkijonoksi.
 
-Päivämääränä 10 päivän päästä on: 02/06/2021
+## Syvempi sukellus
 
-## Syvällisempi sukellus
-
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen perustuu DateTime-luokan tarjoamiin metodeihin. Käyttämällä AddDays-metodia, voimme lisätä tai vähentää haluamamme määrän päiviä nykyisestä päivämäärästä. Muita hyödyllisiä metodeja voi löytää DateTime-luokan dokumentaatiosta.
+C# tarjoaa myös muita tapoja laskea päivämääriä. Esimerkiksi `DayOfWeek`-enumerointia voidaan käyttää määrittämään, mikä päivä viikosta on kyseisessä päivämäärässä. Voimme myös käyttää `DateTime`-metodia `IsLeapYear()` tarkistaaksemme, onko kyseinen vuosi karkausvuosi.
 
 ## Katso myös
 
-- [DateTime-luokka (MSDN)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [DateTime-luokan käyttö C# -sovelluksissa (C# Corner)](https://www.c-sharpcorner.com/UploadFile/syedshanu/datetime-class-c-sharp/)
-- [Päivämäärät ja kellonajat C# -ohjelmoinnissa (Microsoft Learn)](https://docs.microsoft.com/fi-fi/learn/modules/datetime/)
+- [Microsoftin C# dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/builtin-types/value-types)
+- [Stack Overflow - Sulkeutuuko DateTime sulkeutuvana välillä?](https://stackoverflow.com/questions/50362454/does-datetime-include-seconds-in-between)

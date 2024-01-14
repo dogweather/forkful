@@ -1,41 +1,62 @@
 ---
 title:    "Kotlin recipe: Writing tests"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests is Essential in Kotlin Programming
+# Why Write Tests? 
 
-When it comes to coding in any language, writing tests may not be the most exciting task. It can feel like an extra step that takes time away from actually writing code. However, in the long run, writing tests can save you time and frustration by catching bugs early on and ensuring the functionality of your code. In this blog post, we will explore the importance of writing tests in Kotlin programming and how to efficiently incorporate them into your workflow. 
+Writing tests is an essential aspect of professional programming and plays a crucial role in ensuring the quality of code. It helps to catch bugs, identify errors early on, and save time and effort in the long run. Additionally, having a comprehensive test suite in place can improve code readability and maintainability.
 
 ## How To Write Tests in Kotlin
 
-Kotlin provides a powerful testing framework called "JUnit" which allows for easy creation and execution of tests. Let's take a look at a simple example of writing tests for a function that calculates the area of a rectangle. 
+To write tests in Kotlin, we can use the built-in JUnit library, which is a popular testing framework for Java and other JVM languages. Let's take a look at an example of writing a simple unit test for a function that calculates the average of two numbers:
 
 ```
-Kotlin fun calculateArea(width: Int, height: Int): Int {
-    return width * height
+/**
+ * Calculates the average of two numbers.
+ * @param num1 The first number.
+ * @param num2 The second number.
+ * @return The average of the two numbers.
+ */
+fun average(num1: Int, num2: Int): Int {
+    return (num1 + num2) / 2
 }
 
-JUnit fun testCalculateArea() {
-    val width = 10
-    val height = 5
-    val area = calculateArea(width, height)
-    assertEquals(50, area)
+class AverageTests {
+    // Test case for a correct average calculation
+    @Test
+    fun testAverage() {
+        assertEquals(5, average(7, 3))
+    }
+
+    // Test case for a wrong average calculation
+    @Test
+    fun testWrongAverage() {
+        assertNotEquals(7, average(7, 3))
+    }
 }
 ```
 
-In this example, we have a function that calculates the area of a rectangle using the given width and height parameters. We then use the "assertEquals" function from JUnit to test if the calculated area is equal to our expected value. Running this test will ensure that our function is working correctly and return the expected value. 
+In the above code, we have defined a function called `average` that takes in two integer parameters and returns the average of those numbers. We have also written two test cases, one for a correct average calculation and another for a wrong calculation, using the `@Test` annotation from JUnit. We can run these tests by executing the `testAverage` and `testWrongAverage` functions. If the tests pass, we will see a green checkmark, indicating the correct output. However, if a test fails, we will see a red cross along with an error message indicating the reason for the failure.
 
-## Deep Dive into Writing Tests in Kotlin
+## Deep Dive: Best Practices for Writing Tests
 
-Writing tests not only helps catch bugs, but it also promotes good coding practices. When writing tests, you are forced to think about the different paths your code can take and handle potential errors. This results in writing more robust and error-free code.
+While writing tests in Kotlin, it is essential to follow some best practices to ensure the tests are effective and efficient. Here are a few tips to keep in mind:
 
-Additionally, having tests in place makes it easier to make changes and updates to your code. If a bug is found or a new feature needs to be added, tests can be run to ensure that these changes do not break any existing functionality. This helps with maintaining code quality and reducing the chances of introducing new bugs. 
+- Write tests for specific functionalities or methods rather than trying to test the entire codebase at once.
+- Use meaningful and descriptive test names to make it easier to identify the purpose of each test.
+- Use the `assertEquals` and `assertNotEquals` methods to compare expected and actual values in tests.
+- Use the `@Before` and `@After` annotations to set up and clean up test data before and after each test execution.
+- Write tests with both positive and negative scenarios, i.e., test for expected and unexpected inputs.
+- Use test coverage tools to determine which parts of the code are not being tested and need to be covered.
 
-## See Also
+# See Also
 
-- [Kotlin Testing Basics](https://www.baeldung.com/kotlin/testing-basics)
-- [JUnit 5 for Kotlin](https://www.baeldung.com/junit-5-kotlin)
-- [Effective Kotlin Testing](https://www.raywenderlich.com/1565545-effective-kotlin-testing)
+For more information on writing tests in Kotlin, check out the following resources:
+
+- [Kotlin Test documentation](https://kotlinlang.org/docs/testing.html)
+- [JUnit documentation](https://junit.org/junit5/)
+- [Effective Testing in Kotlin](https://proandroiddev.com/effective-testing-in-kotlin-dd8b4ecadebc)

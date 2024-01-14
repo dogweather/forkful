@@ -1,54 +1,77 @@
 ---
-title:    "Kotlin: Utmatning av felsökningsutskrift"
+title:    "Kotlin: Utskrift av felsökningsutdata"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Debuggning är en viktig del av programmering och att kunna skriva ut information för att spåra buggar är ett värdefullt verktyg för utvecklare. Utskrifter av debug-beräkningar kan ge oss en bättre förståelse för vad som händer i koden under exekveringen och möjliggöra felsökning av problem.
+Att skriva kod kan ibland vara en frustrerande uppgift. Felmeddelanden dyker upp och felsökning kan ta lång tid. Ett sätt att effektivisera denna process är genom att använda utskrift av felsökningsmeddelanden, även kallat debug output. Detta gör det enklare att förstå vad som händer i koden och var felet kan ligga, vilket sparar både tid och huvudvärk.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva ut debug-utdata i Kotlin kan vi använda en enkel utskriftsåtgärd med hjälp av `println()` funktionen. Denna funktion skriver ut en sträng som kan innehålla variabler, värden eller annan information som vi vill övervaka.
+För att skriva ut debug output i Kotlin kan du använda funktionen `println()` eller `print()`. Dessa kan du sedan placera var som helst i din kod för att få utskrifter på olika ställen.
 
-```Kotlin
-var num = 10
-println("Värdet av variabeln num är: $num")
+```
+Kotlin
+fun main() {
+    val num1 = 5
+    val num2 = 10
+    println(num1 + num2)
+}
+```
+Output:
+```
+15
 ```
 
-I detta exempel använder vi variabeln `num` i vår utskrift för att se värdet som den håller. Resultatet av denna kod skulle vara "Värdet av variabeln num är: 10".
-
-Vi kan också använda `print()` funktionen för att skriva ut en sträng utan att lägga till en ny rad. Detta kan vara användbart om vi vill skriva ut flera värden på samma rad.
-
-```Kotlin
-var a = 5
-var b = 10
-print("$a + $b = ")
-print(a + b)
+Det är också möjligt att skriva ut värden av variabler genom att inkludera dem i utskriften.
+```
+Kotlin
+fun main() {
+    val num1 = 5
+    val num2 = 10
+    println("Summan av $num1 och $num2 är ${num1 + num2}.")
+}
+```
+Output:
+```
+Summan av 5 och $num2 är 15.
 ```
 
-I detta exempel kommer utskriften att vara "5 + 10 = 15".
+Du kan även använda debug output för att se värdet av variabler i olika stadier av ditt program. Till exempel kan du lägga till utskrifter innan och efter en loop för att se vilka värden variabeln har i varje steg.
 
-Om vi vill ha mer kontroll över vår debug-utdata kan vi använda `Log` -klassen från Android SDK. Detta ger oss flera möjligheter att strukturera och filtrera våra utskrifter, vilket kan vara användbart vid felsökning.
-
-```Kotlin
-val TAG = "Debug"
-var num = 5
-Log.i(TAG, "Värdet av variabeln num är: $num")
 ```
-
-I detta exempel använder vi `Log.i()` funktionen för att skriva ut information med taggen "Debug". Konsolresultatet skulle vara "I/Debug: Värdet av variabeln num är: 5".
-
+Kotlin
+fun main() {
+    for (i in 1..10) {
+        println("Variabeln i har värdet $i.")
+    }
+}
+```
+Output:
+```
+Variabeln i har värdet 1.
+Variabeln i har värdet 2.
+Variabeln i har värdet 3.
+Variabeln i har värdet 4.
+Variabeln i har värdet 5.
+Variabeln i har värdet 6.
+Variabeln i har värdet 7.
+Variabeln i har värdet 8.
+Variabeln i har värdet 9.
+Variabeln i har värdet 10.
+```
 
 ## Djupdykning
 
-När vi skriver ut debug-utdata är det viktigt att vara medveten om prestandaskapande kostnader. Att skriva ut för mycket information kan leda till långsammare exekvering av vårt program. Därför bör vi bara skriva ut det mest relevanta för att undvika onödiga avbrott.
+Debug output är en viktig del av felsökning och kan hjälpa dig att förstå vad som händer i ditt program. Genom att använda olika utskrifter kan du se hur värden förändras och hur din kod beter sig. Detta kan vara avgörande för att hitta och åtgärda fel i din kod.
 
-En annan viktig sak att komma ihåg är att ta bort eller kommentera ut våra debug-utskrifter innan vi släpper vårt program. Lämna inte kvar några utskrifter i produktionskoden, eftersom det kan utgöra en säkerhetsrisk eller orsaka onödig overhead.
+Det är dock viktigt att tänka på att debug output endast bör användas under utvecklingsprocessen och inte i en färdig produktionsversion. Detta eftersom det kan påverka prestandan och säkerheten för din applikation.
 
 ## Se även
 
-- [Kotlin for Android Developers] (https://antonioleiva.com/kotlin-for-android-developers/) av Antonio Leiva
-- [Debugging in Kotlin] (https://kotlinlang.org/docs/reference/using-gradle.html) på Kotlin's officiella dokumentationssida
+- [Kotlin officiell dokumentation om debugging](https://kotlinlang.org/docs/tutorials/debugging.html)
+- [Ökat produktivitet genom felsökning i Kotlin](https://blog.jetbrains.com/kotlin/2017/04/debugging-in-kotlin/)

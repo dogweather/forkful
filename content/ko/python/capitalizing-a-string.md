@@ -1,31 +1,36 @@
 ---
-title:    "Python: 문자열 대문자화"
+title:    "Python: 문자열 대문자로 바꾸기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-
-문자열의 첫 글자를 대문자로 바꾸는 것은 프로그래밍에서 매우 일반적인 작업입니다. 이 작업을 수행하는 이유는 다양합니다. 대문자로 시작하는 문자열은 주로 제목이나 문장의 첫 글자를 대문자로 표시하기 위해 사용됩니다. 또는 입력된 문자열이 대소문자를 구분하는 작업을 수행할 때 유용할 수 있습니다.
+문자열을 대문자로 바꾸는 것에 참여하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 문자열이 데이터베이스나 파일에 저장될 때 대문자로 저장하는 것이 일반적이기 때문입니다. 또는 사용자의 입력을 대문자로 바꾸어서 처리하는 경우도 있을 수 있습니다.
 
 ## 어떻게
+파이썬에서 문자열을 대문자로 바꾸는 방법은 매우 간단합니다. 먼저, 문자열 변수를 선언하고 그 값을 할당합니다. 그리고 `upper()` 함수를 사용하여 대문자로 변환할 수 있습니다. 아래 예제를 확인해보세요.
 
-문자열을 대문자로 바꾸는 것은 Python에서 매우 간단합니다. 우선, 문자열을 변수에 할당한 다음 `capitalize()` 메서드를 사용하면 됩니다. 아래의 예제 코드를 참고하세요.
-
-```Python
+```python
+# 변수에 문자열 값 할당
 string = "hello world"
-print(string.capitalize())
+
+# 대문자로 변환하기
+string = string.upper()
+
+# 변환된 값을 출력
+print(string) # 출력 결과: HELLO WORLD
 ```
 
-위 코드의 결과는 "Hello world"가 됩니다.
+위 예제에서는 `upper()` 함수를 사용하여 문자열을 대문자로 변환하고 그 변환된 값을 출력했습니다. 이렇게 간단하게 대문자로 변환할 수 있습니다.
 
-## 깊게 파고들기
+## 심층 분석
+파이썬에서 문자열을 대문자로 변환하는 방식을 좀 더 자세히 알아보겠습니다. 파이썬에서는 문자열 변수 뿐만 아니라 `upper()` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 이 함수는 문자열에 포함된 모든 문자를 대문자로 변환합니다. 또한, `lower()` 함수를 사용하면 문자열을 소문자로 변환할 수도 있습니다.
 
-문자열의 첫 글자를 대문자로 바꾸는 방법에 대해 좀 더 깊게 알아보겠습니다. `capitalize()` 메서드는 해당 문자열의 첫 글자를 대문자로 변환하는 것 외에도, 그 다음 글자부터는 모두 소문자로 변환하고 나머지 글자는 그대로 유지합니다. 예를 들어, "heLlO WoRLd"라는 문자열에 `capitalize()` 메서드를 적용하면 "Hello world"가 아닌 "Hello World"가 됩니다. 이러한 특징을 이해하고 적절하게 활용하는 것이 중요합니다.
+또한, 파이썬에서는 `capitalize()` 함수를 사용하여 문자열의 첫 글자를 대문자로 만드는 것도 가능합니다. 이 함수는 문자열의 첫 글자를 대문자로 만들고 나머지 문자는 소문자로 만듭니다. 이렇게 파이썬에서는 다양한 함수를 사용하여 문자열을 대소문자를 변환할 수 있습니다.
 
-## 가장 참고할만한
-
-- [Python 문자열](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [문자열 메서드](https://www.w3schools.com/python/python_ref_string.asp)
-- [온라인 Python 코스](https://www.codecademy.com/learn/learn-python)
+## 참고 자료
+- [파이썬 문자열 변환 방법](https://wikidocs.net/21942)
+- [파이썬 공식 문서 - 문자열 메소드](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [파이썬 문자열 관련 실습](https://www.w3schools.com/python/exercise.asp?filename=exercise_strings1)

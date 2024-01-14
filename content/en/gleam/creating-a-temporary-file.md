@@ -1,41 +1,35 @@
 ---
 title:    "Gleam recipe: Creating a temporary file"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Creating a temporary file may not seem like an exciting task, but it is a crucial one in the world of programming. Temporary files serve as a temporary storage location for data or as a placeholder for future files. They are essential for the smooth functioning of many programs and can help optimize memory usage.
+Creating temporary files is a common practice in programming, especially when dealing with large or complex data that needs to be stored temporarily. These files are typically used for input/output operations or temporary caching of data.
 
 ## How To
-
-To create a temporary file in Gleam, we can use the `Temp` module provided by the standard library. First, we need to import the module using `import Temp` at the top of our code.
-
-Next, we can use the `file` function from the `Temp` module to create a temporary file. This function takes in two arguments - a prefix for the file name and a suffix for the file extension. For example, if we want to create a temporary file with the name "tempFile.txt", we can use the following code:
+To create a temporary file in Gleam, we can use the `temp_file` function from the `gleam_temp` module. This function takes in a file name and returns a temporary file handle. Let's see an example of how we can create a temporary file and write data to it:
 
 ```Gleam
-let temp_file = Temp.file("tempFile", ".txt")
+import gleam/temp
+
+fn write_to_temp_file() {
+  let mut temp = temp_file("data.txt")
+  temp.write("Hello, world!")
+}
 ```
 
-This will create a temporary file in the default temporary directory and return a `Result` type that contains a `File` object if the file was successfully created.
+The above code will create a temporary file named `data.txt` and write the string "Hello, world!" to it. We can also specify the location where we want the temporary file to be created, by passing in a second argument to the `temp_file` function.
 
-We can then use the `write` function from the `File` module to write data to our temporary file. For example, if we want to write the text "Hello World!" to our temporary file, we can use the following code:
-
-```Gleam
-File.write(temp_file, "Hello World!")
-```
-
-We can also use the `close` function from the `File` module to close our temporary file once we are done using it. This will free up any system resources being used by the file.
+Once we are done using the temporary file, we can close it using the `close` function from the `gleam_temp` module. This will delete the temporary file from the system.
 
 ## Deep Dive
+Under the hood, the `temp_file` function creates a file in the system's temporary directory. This location can vary depending on the operating system and environment variables. The temporary file created will have a unique name to avoid conflicts with other temporary files.
 
-Under the hood, creating a temporary file involves several steps. When we call the `Temp.file` function, Gleam checks for the default temporary directory and generates a unique file name using the provided prefix and suffix. It then creates an empty file with this name and returns it to us. The `File` object returned by the `Temp.file` function also contains information about the file's absolute path, size, and permissions.
+It is important to note that temporary files should not be relied upon for permanent data storage as their lifespan is unpredictable and they can be deleted at any time. They should only be used for temporary storing and processing of data.
 
-It is also worth noting that the `Temp` module provides additional functions for creating temporary directories, as well as randomly generated temporary file names. These can be useful for more complex applications that require a larger number of temporary files.
-
-See Also
-
-- Gleam standard library documentation for `Temp`: https://gleam.run/core/Temp.html
-- Gleam tutorial on file IO: https://gleam.run/book/tour/file_io.html
+## See Also
+- [The `gleam_temp` module](https://gleam.run/documentation/stdlib/gleam_temp/)
+- [Using temporary files in Rust](https://doc.rust-lang.org/std/fs/struct.File.html)

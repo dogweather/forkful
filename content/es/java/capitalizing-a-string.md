@@ -1,68 +1,59 @@
 ---
-title:    "Java: Capitalizando una cadena"
+title:    "Java: Capitalización de una cadena"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+¡Hola lectores de Java!
 
-¿Alguna vez has tenido que manipular una cadena de texto en tu programa Java y necesitabas que todas las primeras letras de cada palabra estuvieran en mayúscula? Si es así, entonces capitalizar una cadena de texto es una habilidad imprescindible que debes tener. En este post, te mostraré cómo capitalizar una cadena de texto de manera sencilla y eficiente en Java.
+En esta publicación de blog, vamos a hablar sobre cómo capitalizar una cadena (string en inglés) en Java. Esto puede ser una tarea común en la programación, por lo que es importante conocer cómo hacerlo de manera efectiva. Discutiremos por qué es importante capitalizar una cadena, cómo hacerlo y también profundizaremos en más detalles sobre este tema.
 
-##Cómo hacerlo
+## ¿Por qué?
 
-Para capitalizar una cadena de texto en Java, podemos utilizar la clase `StringBuilder` y su método `append()` junto con el método `toUpperCase()` de la clase `Character`. Aquí hay un ejemplo de código:
+La capitalización de una cadena es importante en la programación por varias razones. En primer lugar, facilita la legibilidad del código para otros programadores. Al capitalizar correctamente las cadenas, el código es más fácil de entender y seguir. Además, muchas aplicaciones y sistemas tienen reglas estrictas sobre la capitalización de ciertas palabras o nombres, por lo que es importante saber cómo hacerlo correctamente.
 
-```Java
-//Definimos la cadena de texto original
-String texto = "hola, ¿cómo estás?";
+## ¿Cómo?
 
-//Creamos un objeto StringBuilder
-StringBuilder builder = new StringBuilder();
-
-//Separamos la cadena original en un arreglo de palabras
-String[] palabras = texto.split(" ");
-
-//Iteramos sobre cada palabra del arreglo
-for (String palabra : palabras) {
-    //Convertimos la primera letra de cada palabra a mayúscula
-    palabra = Character.toUpperCase(palabra.charAt(0)) + palabra.substring(1);
-    //Agregamos la palabra al objeto StringBuilder
-    builder.append(palabra).append(" ");
-}
-
-//Convertimos el objeto StringBuilder a una cadena de texto
-String textoCapitalizado = builder.toString();
-
-//Imprimimos la cadena capitalizada
-System.out.println(textoCapitalizado);
-
-//Output: Hola, ¿cómo estás?
-```
-
-##Profundizando más
-
-Una forma más sencilla de capitalizar una cadena de texto en Java es utilizando el método `capitalize()` de la clase `StringUtils` de la librería Apache Commons. Este método convierte automáticamente la primera letra de cada palabra en mayúscula. Aquí hay un ejemplo de código:
+Para capitalizar una cadena en Java, podemos utilizar el método `toUpperCase()` de la clase String. Este método devuelve una nueva cadena con todos los caracteres en mayúsculas. Veamos un ejemplo de código:
 
 ```Java
-import org.apache.commons.lang3.StringUtils;
-
-//Definimos la cadena de texto original
-String texto = "hola, ¿cómo estás?";
-
-//Capitalizamos la cadena utilizando StringUtils
-String textoCapitalizado = StringUtils.capitalize(texto);
-
-//Imprimimos la cadena capitalizada
-System.out.println(textoCapitalizado);
-
-//Output: Hola, ¿cómo estás?
+String cadena = "hola mundo";
+String cadenaCapitalizada = cadena.toUpperCase();
+System.out.println(cadenaCapitalizada);
 ```
+La salida sería: `HOLA MUNDO`
 
-También debes tener en cuenta que estos métodos sólo capitalizan la primera letra de cada palabra, por lo que si tienes una cadena de texto en mayúsculas o con ciertas letras ya en mayúscula, no se verán afectadas al utilizar estos métodos.
+También podemos utilizar el método `replaceFirst()` para capitalizar solo la primera letra de una cadena. Veamos otro ejemplo:
 
-##Véase también
+```Java
+String cadena = "hola mundo";
+String primeraLetra = cadena.substring(0, 1);
+String cadenaCapitalizada = primeraLetra.toUpperCase() + cadena.substring(1);
+System.out.println(cadenaCapitalizada);
+```
+La salida sería: `Hola mundo`
 
-- [Clase StringBuilder - Documentación de Java](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Clase Character - Documentación de Java](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
-- [Clase StringUtils - Documentación de Apache Commons](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)
+También es importante tener en cuenta que Java es sensible a los acentos y mayúsculas. Por lo tanto, si tenemos una cadena con mayúsculas acentuadas, el método `toUpperCase()` no funcionará correctamente. Para evitar esto, podemos utilizar la clase `Locale` y su método `toLanguageTag()` para especificar un idioma específico en el que queremos que se capitalice la cadena.
+
+## Profundizando
+
+Como mencionamos anteriormente, Java es sensible a los acentos y mayúsculas. Esto significa que los métodos `toUpperCase()` y `toLowerCase()` utilizan las reglas del idioma inglés. Sin embargo, para aplicaciones multilingües, esto puede ser un problema. Para solucionarlo, tenemos la clase `Locale`, que nos permite especificar un idioma específico para aplicar las reglas de capitalización adecuadas. Veamos un ejemplo:
+
+```Java
+String cadena = "bonjour le monde";
+String cadenaCapitalizada = cadena.toUpperCase(new Locale("fr"));
+System.out.println(cadenaCapitalizada);
+```
+La salida sería: `BONJOUR LE MONDE`
+
+Aquí, al especificar el idioma francés en el método `toUpperCase()`, las reglas de capitalización francesas se aplican a la cadena, en lugar de las reglas en inglés.
+
+## Ver también
+
+- [Documentación oficial de Java sobre el método `toUpperCase()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Métodos de la clase String en Java](https://www.geeksforgeeks.org/string-methods-java/)
+- [Tutorial de Java: Aprende a programar en Java desde cero](https://www.aprenderaprogramar.net/tutoriales/?seccion=java)
+
+¡Esperamos que esta publicación te haya sido útil para aprender a capitalizar cadenas en Java! ¡Hasta la próxima!

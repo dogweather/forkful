@@ -1,40 +1,62 @@
 ---
-title:    "Bash: Painettujen komentoriviparametrien lukeminen"
+title:    "Bash: Komentoriviparametrien lukeminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi?
+## Miksi
 
-Bash-ohjelmointi on olennainen taito nykypäivän tietotekniikassa ja sen tärkein osa on komentoriviargumenttien lukeminen. Tämä taito on välttämätön ohjelmien käyttämiseksi ja ohjaamiseksi komentoriviltä.
+Miksi lukijan kannattaa kiinnostua komentoriviargumenttien lukemisesta Bash-ohjelmoinnissa? Komentoriviargumentit ovat erittäin kätevä tapa käyttää ohjelmaa, sillä ne mahdollistavat käyttäjän antaa tietoa ohjelmalle ohjelman suorituksen yhteydessä. Näin ohjelma voi reagoida eri tavoin eri käyttäjän syötteisiin.
 
-# Miten
+## Miten
 
-Bash-ohjelmoinnissa on tärkeää osata lukea ja käsitellä komentoriviargumentteja, jotka annetaan ohjelman suorittamisen yhteydessä. Tämä voidaan tehdä helposti käyttämällä "```$1```", "```$2```" jne. muuttujia, jotka vastaavat ohjelman suorittamisen yhteydessä annettuja argumentteja.
+Komentoriviargumentit luetaan Bash-skriptissä muuttujina, jotka on merkitty dollarimerkillä eli `$`. Ensimmäinen argumentti on `$1`, toinen `$2` ja niin edelleen. Esimerkiksi, jos haluamme käyttää komennon avulla käyttäjän antamaa etunimeä, voimme kirjoittaa `echo "Hei, $1!"` Bash-skriptissä. Kun käytämme tätä skriptiä komentoriviltä antamalla etunimen ensimmäisenä argumenttina, tulostus olisi esimerkiksi "Hei, Maria!".
 
-```
-Bash-ohjelma.sh $1 $2
+```Bash
+#!/bin/bash
 
-echo "Ensimmäinen argumentti: $1" 
-echo "Toinen argumentti: $2"
-```
-
-Kun suoritat tämän Bash-ohjelman antamalla kaksi argumenttia, saat seuraavan tulosteen:
-```
-Bash-ohjelma.sh argumentti1 argumentti2
-
-Ensimmäinen argumentti: argumentti1 
-Toinen argumentti: argumentti2
+echo "Hei, $1!"
 ```
 
-# Syvällinen sukellus
+Jos haluamme käyttää useampaa komentoriviargumenttia, voimme käyttää niitä esimerkiksi komentoriviltä annettujen lukuoperaatioiden kanssa:
 
-Komentoriviargumenttien lukeminen on tärkeä taito, joka auttaa varsinkin monimutkaisempien ohjelmien suorittamisessa. Bash-ohjelman suoritus voi myös sisältää sisäkkäisiä if-lausekkeita, jolloin eri argumentit voivat vaikuttaa suoritukseen eri tavoin.
+```Bash
+#!/bin/bash
 
-Bash-ohjelmoijana voit myös käyttää "```$#```" muuttujaa, joka kertoo kuinka monta argumenttia on annettu suorituksen yhteydessä. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat tarkistaa, että tarvittavat argumentit on annettu ennen kuin suoritat jonkin toiminnon.
+echo "Numeroita yhteensä: $(($1 + $2 + $3))"
+```
 
-# Katso myös
-- [Bash-argumentit](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
-- [Linux-tietokoneiden komentorivillä liikkuminen](https://www.ict.kruunusillat.fi/kotilin/vinkkeja/Linux/komentorivi)
-- [Bash-ohjelmoinnin perusteet](https://coderefinery.github.io/bash/01-introduction/index.html)
+Kun suoritamme tämän skriptin komentoriviltä esimerkiksi komennolla `bash summa.sh 3 5 2`, tulostus olisi "Numeroita yhteensä: 10". Huomaa, että argumentit luetaan aina merkkijonoina, joten jos haluamme käyttää niitä lukuoperaatioissa, niitä täytyy muuttaa halutunlaisiksi (esim. 3 --> 3).
+
+## Syventyvä oppiminen
+
+Voimme myös käsitellä komentoriviargumentteja taulukoissa Bash-skripteissä. Tämä on hyödyllistä esimerkiksi silloin, kun haluamme käyttää tuntematonta määrää argumentteja. Voimme käyttää `"$@"` muuttujaa, joka sisältää kaikki komentoriviargumentit tavallisena taulukkona. Voimme myös käyttää `"$#"` muuttujaa, joka kertoo, kuinka monta argumenttia annettiin komentorivillä.
+
+```Bash
+#!/bin/bash
+
+echo "Anna komentoriviargumentteja:"
+for arg in "$@"
+do
+  echo "$arg"
+done
+
+echo "Argumenttien määrä: $#"
+```
+
+Kun suoritamme tämän skriptin komentoriviltä esimerkiksi komennolla `bash taulukko.sh Maria Janne Maija`, tulostus olisi:
+
+Anna komentoriviargumentteja:
+Maria
+Janne
+Maija
+
+Argumenttien määrä: 3
+
+## Katso myös
+
+- [Bash-skriptit - virallinen ohje](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Komentoriviargumentit – Miikka Pakarinen](https://miikka.xyz/blog/ohjelmointi/luento1/#29.3)

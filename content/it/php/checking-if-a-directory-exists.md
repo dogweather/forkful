@@ -1,41 +1,61 @@
 ---
-title:    "PHP: Verifica dell'esistenza di una directory"
+title:    "PHP: Verificare l'esistenza di una directory"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-In questo post parleremo di come controllare se una directory esiste utilizzando PHP. Questa è una funzionalità molto utile per molti programmatori, in quanto permette di gestire meglio le directory e i file all'interno del proprio progetto.
+Spesso, mentre programmi in PHP, potresti aver bisogno di verificare se una directory esiste prima di eseguire alcune operazioni su di essa. Questo può essere utile per evitare errori e garantire che il tuo codice funzioni correttamente.
 
-## Come fare
+## Come Fare
 
-Per controllare se una directory esiste in PHP, possiamo utilizzare la funzione `is_dir()`. Questa funzione restituisce un valore booleano (true o false) a seconda che la directory passata come parametro esista o meno.
+Per verificare se una directory esiste in PHP, puoi utilizzare la funzione `is_dir()`. Questa funzione prenderà un percorso di directory come input e restituirà un valore booleano `true` se la directory esiste o `false` se non esiste.
 
-```PHP
-$directory = "/path/to/directory";
-
-if (is_dir($directory)) {
-  echo "La directory esiste.";
-} else {
-  echo "La directory non esiste.";
+```
+<?php 
+// Verifica se la directory "immagini" esiste
+if(is_dir("immagini")){
+  echo "La directory esiste";
+} else{
+  echo "La directory non esiste";
 }
+?>
+```
+Output:
+```
+La directory esiste
 ```
 
-L'esempio sopra stamperà "La directory esiste." se la directory specificata esiste, altrimenti stamperà "La directory non esiste.".
+Puoi anche utilizzare la funzione `file_exists()`, che accetta anche file come input. Questa funzione restituirà `true` se il file o la directory esiste e `false` se non esiste.
+
+```
+<?php
+// Verifica se il file "logo.jpg" esiste
+if(file_exists("logo.jpg")){
+  echo "Il file esiste";
+} else{
+  echo "Il file non esiste";
+}
+?>
+```
+Output:
+```
+Il file non esiste
+```
 
 ## Approfondimento
 
-Oltre alla funzione `is_dir()`, esistono altre funzioni utili per la gestione delle directory in PHP. Ad esempio, la funzione `mkdir()` permette di creare una nuova directory sul server. È inoltre possibile utilizzare la funzione `opendir()` per aprire una directory e visualizzare il suo contenuto.
+È importante notare che queste funzioni restituiranno anche `true` se il file o la directory sono vuoti. Inoltre, se il percorso fornito non è valido, entrambe le funzioni restituiranno `false`. Quindi, è una buona pratica verificare anche se la directory o il file ha contenuto utilizzando la funzione `scandir()`.
 
-Se si vuole controllare se una directory è scrivibile (cioè se è possibile creare o modificare i file al suo interno), si può utilizzare la funzione `is_writable()`. Questa restituisce un valore booleano a seconda che la directory sia scrivibile o meno.
+Inoltre, puoi utilizzare la funzione `is_readable()` per verificare se la directory è leggibile e `is_writable()` per verificare se la directory è scrivibile.
 
-È importante ricordare di gestire adeguatamente gli errori in caso di fallimento di una delle operazioni sopra descritte. Ad esempio, se la directory che si sta tentando di creare già esiste, la funzione `mkdir()` restituirà un errore.
+## Vedi Anche
 
-## Vedi anche
-
-- [Documentazione PHP: is_dir()](https://www.php.net/manual/en/function.is-dir.php)
-- [Documentazione PHP: mkdir()](https://www.php.net/manual/en/function.mkdir.php)
-- [Documentazione PHP: opendir()](https://www.php.net/manual/en/function.opendir.php)
-- [Documentazione PHP: is_writable()](https://www.php.net/manual/en/function.is-writable.php)
+- [La documentazione di PHP su is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [La documentazione di PHP su file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [La documentazione di PHP su scandir()](https://www.php.net/manual/en/function.scandir.php)
+- [La documentazione di PHP su is_readable()](https://www.php.net/manual/en/function.is-readable.php)
+- [La documentazione di PHP su is_writable()](https://www.php.net/manual/en/function.is-writable.php)

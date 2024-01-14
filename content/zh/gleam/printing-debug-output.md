@@ -1,90 +1,49 @@
 ---
-title:    "Gleam: 打印调试输出"
+title:    "Gleam: 打印调试输出。"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用Gleam打印调试输出
+## 为什么会使用打印调试输出
 
-在编程过程中，调试是非常重要的一部分。通过打印调试输出，我们可以更清楚地了解程序的运行情况，从而更容易找到可能存在的问题。使用Gleam可以轻松地打印各种类型的调试信息，使调试过程变得更加高效、快速。
+当我们在编写代码时，经常会遇到一些问题，比如代码运行出错或者逻辑错误。这时，打印调试输出可以帮助我们快速定位问题所在，进而进行修复。它是一种简单有效的调试手段，帮助我们更快地开发和调试代码。
 
-## 如何打印调试输出
+## 如何使用Gleam打印调试输出
 
-Gleam提供了多种方法来打印调试输出，下面将介绍几种常用的方式。
-
-### 使用 `gleam.debug` 函数
-
-在Gleam中，我们可以使用 `gleam.debug` 函数来打印调试输出。该函数接受一个任意类型的参数，然后将其转换为字符串并打印出来。例如：
-
-```Gleam
-let name = "John"
-let age = 25
-
-gleam.debug("Hello, I am " ++ name ++ " and I am " ++ age ++ " years old.")
-```
-
-输出结果为：
+在Gleam中，我们可以使用`debug.print`函数来打印调试输出。下面是一个示例代码：
 
 ```
-Hello, I am John and I am 25 years old.
+Gleam let
+  message = "Hello, World!"
+in
+  debug.print("The message is:", message)
 ```
 
-### 使用 `k ! g` 语句
-
-除了使用 `gleam.debug` 函数，我们也可以使用 `k ! g` 语句来打印调试输出。这种方式更加简洁，但只能打印字符串类型的调试信息。例如：
-
-```Gleam
-let name = "John"
-
-k ! g "My name is " ++ name
-```
-
-输出结果为：
+运行上面的代码，我们可以得到如下输出：
 
 ```
-My name is John
+The message is: Hello, World!
 ```
 
-## 深入了解打印调试输出
+这样，我们就可以看到变量`message`的值，帮助我们快速定位问题所在。同时，我们也可以在代码中使用多个`debug.print`语句来打印多个变量或者信息，以便更全面地了解代码执行过程。
 
-除了以上两种方式，Gleam还提供了更多灵活的方法来打印调试输出。例如，我们可以使用 `gleam.debug_list` 函数来打印含有多个元素的列表：
+## 深入讨论打印调试输出
 
-```Gleam
-let fruits = ["apple", "orange", "banana"]
+除了简单打印变量的值，`debug.print`函数还具有一些高级用法。例如，我们可以打印一个记录数据类型的数据结构，并使用`{:depth 5}`参数来限制打印深度。这样可以避免打印过多信息，让输出更加清晰。
 
-gleam.debug_list("My favorite fruits are: ", fruits)
-```
+此外，我们还可以使用`{:prefix "INFO"}`参数来添加前缀，帮助我们更快地定位信息输出的类型。同时，`{:color :blue}`参数可以让输出信息以蓝色高亮显示，更加易于区分。
 
-输出结果为：
+总的来说，打印调试输出是Gleam中非常常用而且强大的调试工具。通过灵活使用它的各种参数，我们可以更有效地检查和调试代码。
 
-```
-My favorite fruits are: [apple, orange, banana]
-```
+## 参考文献
 
-此外，我们还可以使用 `gleam.debug_map` 函数来打印含有键值对的映射：
+- [Gleam官方文档：Printing Debug Output](https://gleam.run/book/tour/printing_debug_output.html)
+- [Gleam官方文档：Debugging](https://gleam.run/book/tour/debugging.html)
+- [Gleam官方文档：Data Types](https://gleam.run/book/core_types/data_types.html)
 
-```Gleam
-let scores = { "math": 95, "english": 90, "history": 85 }
+## 另请参阅
 
-gleam.debug_map("My scores are: ", scores)
-```
-
-输出结果为：
-
-```
-My scores are: {math => 95, english => 90, history => 85}
-```
-
-## 参考链接
-
-- [Gleam 官方文档](https://gleam.run)
-- [Gleam 调试模式介绍](https://gleam.run/documentation/debugging.md)
-- [Gleam 调试输出函数文档](https://gleam.run/documentation/commands.md#gleamdebug)
-- [Gleam 列表和映射文档](https://gleam.run/documentation/collections.md) 
-
-# 请参阅
-
-- [了解更多Gleam功能](https://gleam.run/documentation/getting_started.md)
-- [Gleam社区论坛](https://gleam.run/community/)
-- [Gleam教程合集](https://gleam.run/tutorials/)
+- [Blogging with Gleam: A Beginner's Guide](https://www.bawgyu.com/blogging-with-gleam-a-beginners-guide/)
+- [An Introduction to the Gleam Programming Language](https://www.plausiblethought.com/an-introduction-to-the-gleam-programming-language/)

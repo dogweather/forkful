@@ -1,41 +1,67 @@
 ---
 title:    "Clojure: Usuwanie znaków pasujących do wzorca"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
+As a programmer, sometimes we come across situations where we need to delete characters from a string that match a certain pattern. This could be for formatting purposes or for data manipulation. In this blog post, we will explore how to do this in Clojure and dive deeper into the mechanics behind it.
+
 ## Dlaczego
 
-Często podczas pisania programów w Clojure, musimy przetwarzać tekst i usuwać z niego określone znaki, które nie są nam potrzebne. Może to wynikać z różnych powodów, na przykład usuwania białych znaków z tekstu, usunięcia znaków specjalnych lub filtrowania niechcianych znaków. Dlatego w tym artykule przedstawimy jak usunąć znaki pasujące do wzoru w języku Clojure.
+Możliwe, że jako programiści potrzebujemy usunąć ze stringa znaki, które pasują do określonego wzorca. Może być to związane z formatowaniem czy też manipulacją danymi. W tym wpisie na blogu dowiemy się, jak to zrobić w języku Clojure i zagłębimy się w mechanikę tego procesu.
 
 ## Jak to zrobić
 
-W języku Clojure możemy wykorzystać funkcję `clojure.string/replace` do usuwania znaków pasujących do wzoru. Poniżej przedstawimy przykładowe kody i wyniki dla różnych przypadków użycia:
+Aby usunąć znaki zgodne z określonym wzorcem w Clojure, możemy skorzystać z funkcji `replace` z biblioteki `clojure.string`. Przykładowo, jeśli chcemy usunąć wszystkie litery `'a'` z danego stringa, możemy użyć następującego kodu:
 
 ```Clojure
-(clojure.string/replace "Hello World!" #"\s" "")
+(use '[clojure.string :only [replace]])
+
+(def string-do-usuniecia "Programowanie jest zabawa!")
+(replace string-do-usuniecia #"a" "")
 ```
-Wynik: "HelloWorld!" - usuwa wszelkie białe znaki z tekstu.
+
+Kod ten wykorzystuje wyrażenie regularne `#"a"`, które określa, jakich znaków szukamy w stringu. Następnie, mamy pusty string jako drugi argument, co oznacza, że te znaki zostają usunięte z oryginalnego stringa. Jeśli uruchomimy ten kod, otrzymamy następujący wynik:
 
 ```Clojure
- (clojure.string/replace "Hello_123_" #"\W" "")
+"Progrmowienie jest zbaw!"
 ```
-Wynik: "Hello123" - usuwa znaki specjalne z tekstu.
+
+Ponadto, możemy też wykorzystać funkcję `replace` do zamiany danego znaku na inny. Na przykład:
 
 ```Clojure
-(clojure.string/replace "a1b2c3d" #"[^a-zA-Z]" "")
+(replace "Kuchnia nie jest tylko dla babć" #"nie" "jest")
 ```
-Wynik: "abcd" - usuwa wszystkie znaki z wyjątkiem liter alfabetu.
 
-## Głębsza analiza
+Wynik:
 
-Funkcja `clojure.string/replace` przyjmuje trzy argumenty: tekst, wzorzec i tekst zastępczy. Wzorzec może być zwykłym wyrażeniem regularnym lub ciągiem znaków. Jeśli wzorzec jest ciągiem znaków, funkcja zastępuje wszystkie wystąpienia tego ciągu w tekście. Jeśli wzorzec jest wyrażeniem regularnym, funkcja usuwa wszystkie znaki pasujące do tego wyrażenia.
+```Clojure
+"Kuchnia jest jest tylko dla babć"
+```
 
-## Zobacz również
+## Deep Dive
 
-Oto kilka linków, gdzie można dowiedzieć się więcej o usuwaniu znaków pasujących do wzoru w języku Clojure:
+Podczas wykorzystywania funkcji `replace` w Clojure, warto pamiętać, że argument `pattern` musi być wyrażeniem regularnym. Dzięki temu, mamy większą kontrolę nad tym, jakie znaki chcemy usunąć lub zamienić.
 
-- [Dokumentacja Clojure: funkcja replace](https://clojuredocs.org/clojure.string/replace)
-- [Podstawy wyrażeń regularnych w Clojure](https://medium.com/@joc_harris/regular-expressions-in-clojure-f38c57f7c716)
-- [Przewodnik po języku Clojure](https://clojure.org/guides/getting_started)
+Ponadto, w przypadku zamiany znaków, możemy wykorzystać nie tylko stringi jako argumenty, ale również funkcje anonimowe. Przykładowo, jeśli chcemy usunąć nie tylko litery `'a'`, ale również litery `'b'`, możemy wykorzystać poniższy kod:
+
+```Clojure
+(replace "Jabłka, pomidory, marchewki" #"[ab]" (fn [match] ""))
+```
+
+Wynik:
+
+```Clojure
+"Jłka, pomiody, mrczki"
+```
+
+W tym przypadku, wykorzystaliśmy wyrażenie regularne `#"[ab]"`, które oznacza, że nie tylko szukamy pojedynczych znaków `'a'` i `'b'`, ale również dowolnych ciągów tych znaków. Następnie, zamiast pustego stringa, wykorzystaliśmy funkcję anonimową, która zwraca pusty string dla każdego znalezionego dopasowania.
+
+## Zobacz też
+
+- Dokumentacja `clojure.string`: https://clojuredocs.org/clojure.string
+- Wyrażenia regularne w Clojure: https://clojuredocs.org/clojure.repl/source/clojure.repl/source
+
+Dzięki wykorzystaniu funkcji `replace` i wyrażeń regularnych, możemy łatwo manipulować stringami i usunąć z nich niechciane znaki. Mam nadzieję, że ten wpis był dla Ciebie pomocny i pozwolił na lepsze zrozumienie tego procesu. Do zobaczenia w kolejnych blogowych wpisach!

@@ -1,50 +1,30 @@
 ---
-title:    "Gleam: दो तारीखों को तुलना करना"
+title:    "Gleam: दो तारीखों का तुलना करना"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyon
+# क्यों
 
-Kisi bhi programming language mein, tarikhon ka tulna karna ek aam prashna hai. Yeh aksar kisi project mein aavashyak hota hai, jahan humein do tarikhon ke beech antar ko jaanna hota hai. Iske alava, hum kai baar tarikhein compare karke kisi condition ko check karte hain, jaise ki koi tarikh aaj se pahle ya baad mein hai ya nahi. Isliye, tarikhon ka tulna karna bahut zaruri hai aur isse programming skills ko improve karne mein bhi madad milti hai.
+कॉम्प्यूटर और वेब डेवलपमेंट में समय बहुत महत्वपूर्ण है। दो तारीखों को तुलना करने से हमें यह पता चलता है कि कौन सी तारीख पहले या बाद आती है और इससे हमें दो घटनाओं के बीच कितने समय का अंतर है। यह जानना महत्वपूर्ण होता है जब हम विभिन्न स्क्रिप्ट और अनुप्रयोगों में तारीखों को तुलना करते हैं।
 
-# Kaise
+# कैसे
 
-Tarikhon ka tulna karna Gleam programming language mein bahut hi aasan hai. Hum "Date" module ka upyog kar sakte hain, jismein "compare" function hain jo do tarikhon ko compare karta hai aur uska result humein "Order" enum ke roop mein deta hai. Iske alava, hum "Calendar" module ka bhi upyog kar sakte hain jismein "Days" function hain jo do tarikhon ke beech ke dinon ka antar calculate karta hai. Neeche diye gaye code blocks mein iska example diya gaya hai.
+ग्लीम एक फंक्शनल प्रोग्रामिंग भाषा है जो Elixir और Erlang पर निर्मित है। इसमें तारीखों को तुलना करने के लिए विभिन्न फंक्शन हैं। नीचे एक उदाहरण दिया गया है जिसमें हम दो तारीखों, जैसे "2021-05-01" और "2021-05-05" को तुलना करते हैं।
 
 ```Gleam
-import Date
-import Calendar
+import gleam/time.{Date, from_iso8601}
 
-// Do tarikhon ka tulna
+let date1 = from_iso8601("2021-05-01")
+let date2 = from_iso8601("2021-05-05")
 
-Date1 = Date.parse("2021-01-01")
-Date2 = Date.parse("2021-03-05")
-
-if Date.compare(Date1, Date2) == Order.Less {
-  "Date1 iss Date2 se pahle hai"
-} else if Date.compare(Date1, Date2) == Order.Greater {
-  "Date1 iss Date2 se baad hai"
-} else {
-  "Dono tarikhon mein koi antar nahi hai"
-}
-
-// Tarikhon ke beech ke dinon ka antar
-
-diff = Calendar.days(Date1, Date2)
-
-"Date1 aur Date2 ke beech mein", diff, "din ka antar hai"
+Date.compare(date1, date2)
 ```
 
-# Gahrai mein samaadhan
+उपरोक्त कोड का आउटपुट "LessThan" होगा क्योंकि date1 दूसरे तारीख से पहले है। इसी तरह, हम इन दो तारीखों को अलग-अलग तरीकों से तुलना कर सकते हैं, जैसे "Equal", "GreaterThan", और "Between"।
 
-Tarikhon ka tulna karna asan lag sakta hai, lekin ismein gahrai hoti hai jo experienced programmers ko bhi challenges provide karti hai. Isse aap apne programming skills ko develop kar sakte hain aur effective solutions banane mein madad milti hai. Isliye, is prashna mein gahrai mein samaadhan khojna bhi zaruri hai.
+# गहराई तक
 
-# Dekhein bhi
-
-Is article mein humne tarikhon ka tulna karna seekha. Agar aapko Gleam programming language aur humari articles pasand aayi hain, toh aap neeche diye gaye links mein se kuch aur bhi articles aur resources dekh sakte hain.
-
-- [Official Gleam Documentation](https://gleam.run/documentation)
-- [Gleam GitHub Repository](https://github.com/gleam-lang/gleam)
-- [Introduction to Functional Programming in Gleam](https://medium.com/@tuzz/functional-programming-in-gleam-dba9943a5b2c)
+तारीखों को तुलना करने के लिए ग्लीम में उपलब्ध विभिन्न लाइब्रेरी हैं। "compare" फंक्शन के अलावा भी, "days_between" और "months_between" जैसे फंक्शन हैं जो दो तारीखों के बीच कितने दिन या महीने का अंतर है उसे पता लगते हैं। इन लाइब्रेरी के अलावा, ग्लीम में डेट और टाइम का काफी पॉवरफुल कंसेप्ट है जो इसे अन्य

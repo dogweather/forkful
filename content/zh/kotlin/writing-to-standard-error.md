@@ -1,47 +1,44 @@
 ---
-title:    "Kotlin: 将数据写入标准错误流"
+title:    "Kotlin: 写入标准错误"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：当我们在编写Kotlin代码时，有时候我们需要向标准错误输出（standard error）写入一些信息。这可以用来帮助我们调试代码，并且使得错误信息更容易被发现和解决。
+## 为什么要写入标准错误？
 
-# 为什么要向标准错误输出写入信息？
+标准错误（Standard Error）是与标准输出（Standard Output）一同，用于在命令行界面显示程序的运行结果的一个重要组成部分。在编写Kotlin程序时，需要使用标准错误来输出程序的错误信息，以帮助我们更有效地调试程序。
 
-在软件开发过程中，我们经常会遇到一些错误，这些错误可能会导致程序运行失败或者产生不期望的结果。为了排查这些错误，我们需要能够快速定位到问题所在，并且及时解决，以保证程序的正常运行。而在Kotlin中，我们可以使用标准错误输出来输出错误信息，从而帮助我们更快地找到并修复问题。
+## 如何写入标准错误
 
-# 如何向标准错误输出写入信息
-
-要向标准错误输出写入信息，我们可以使用Kotlin标准库中的System类的方法eprintln()。下面是一个简单的例子，演示如何使用这个方法：
+要将错误信息输出到标准错误中，我们可以使用“System.err.println()”方法。这个方法会将括号中的内容打印到标准错误中，并换行。下面是一个简单的示例程序：
 
 ```Kotlin
 fun main() {
-    val name = "Jack"
-    if (name == "Jack") {
-        println("Hello, Jack!")
-    } else {
-        System.err.println("Name does not match!")
+    val num1 = 10
+    val num2 = 0
+    try {
+        val result = num1 / num2
+        println("Result: $result")
+    } catch (e: Exception) {
+        System.err.println("Error: $e")
     }
 }
 ```
 
-输出结果：
+上面的程序会尝试计算10除以0的结果，这会导致程序出现错误，并将错误信息打印到标准错误中。运行结果如下：
 
 ```
-Hello, Jack!
+Error: java.lang.ArithmeticException: / by zero
 ```
 
-在这个例子中，当用户输入的姓名与“Jack”不匹配时，我们使用System类的eprintln()方法向标准错误输出打印一条错误信息。
+## 深入了解
 
-# 深入了解标准错误输出
+除了使用“System.err.println()”方法，我们还可以使用“System.err.write()”方法将字节数组输出到标准错误中。这样可以更灵活地输出错误信息，以及控制输出的格式。此外，我们还可以使用“System.err.redirect()”方法将标准错误重定向到我们自定义的输出流中，以实现更多的自定义功能。
 
-向标准错误输出写入信息与向标准输出（standard output）写入信息的方法类似。唯一的区别在于，标准输出用于打印正常的程序输出信息，而标准错误输出用于打印错误信息。另外，我们可以使用Kotlin标准库中的System类的out和err属性来直接访问标准输出和标准错误输出流。
+## 参考链接
 
-如果需要重定向标准输出或标准错误输出，我们可以使用System类的setOut()和setErr()方法来指定要重定向的输出流。这在测试代码时非常有用，因为我们可以将输出重定向到一个文件中，以便后续查看。
-
-# 参考链接
-
-- Kotlin官方文档：https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/
-- Kotlin标准库：https://kotlinlang.org/api/latest/jvm/stdlib/index.html
-- Java标准库：https://docs.oracle.com/javase/8/docs/api/
+- [标准输出与标准错误的区别](https://www.runoob.com/linux/linux-shell.html)
+- [Kotlin官方文档](https://kotlinlang.org/docs/reference/compiler-plugins.html)
+- [Java标准错误的使用方法](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)

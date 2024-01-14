@@ -1,61 +1,58 @@
 ---
-title:    "Rust: 编写测试"
+title:    "Rust: 写作测试"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要写测试
+##为什么
 
-在编程世界中，测试是至关重要的一部分。它们可以帮助我们确保代码的质量和可靠性，同时也能节省我们的时间和精力。如果你想要一门强大的编程语言来帮助你写出高质量的代码，那么 Rust 就是你的最佳选择。下面将会介绍如何在 Rust 中编写测试，并深入探讨其中的原理。
+编写测试在Rust中是一个重要的实践，可以帮助我们确保代码的质量和稳定性。它可以帮助我们发现潜在的错误或问题，从而保证我们的代码能够正常运行并且符合预期。
 
-## 如何编写测试
+##如何编写测试
 
-为了展示如何在 Rust 中编写测试，我们将以一个简单的函数来作为示例。这个函数可以将一个字符串中的所有字符都转换为大写。
-
-```Rust
-fn to_uppercase(str: &str) -> String {
-    str.to_uppercase()
-}
-```
-
-接下来，我们使用 Rust 的内建测试框架 `test` 来写一个测试函数。首先，我们需要在测试文件的开头导入 `test` 框架。
-
-```Rust
-use test::Bencher;
-```
-
-然后，我们可以开始编写测试函数了。在函数的开头使用 `#[test]` 属性来标记该函数为一个测试函数。接着，我们可以使用 `assert_eq!` 宏来断言我们的函数返回的结果是否符合预期。
+编写测试的第一步是使用标准库中的`#[test]`宏来标识测试函数。接着，我们可以使用assert宏来验证我们的代码是否按预期工作，如下所示：
 
 ```Rust
 #[test]
-fn test_to_uppercase() {
-    assert_eq!(to_uppercase("hello"), "HELLO");
-    assert_eq!(to_uppercase("Rust"), "RUST");
-    assert_eq!(to_uppercase("2020"), "2020");
+fn test_addition() {
+    let result = 2 + 2;
+    assert_eq!(result, 4);
 }
 ```
 
-最后，我们运行 `cargo test` 命令来执行所有的测试。如果一切顺利，我们会在终端中看到如下结果：
+在上面的代码中，我们首先定义了一个测试函数`test_addition()`，然后调用了标准库中的assert宏来验证`2+2`是否等于4。如果测试失败，则会抛出一个panic，表示测试不通过。接下来，我们可以通过运行`cargo test`命令来运行所有的测试。
 
+除了基本的单元测试外，我们还可以编写集成测试来测试多个模块或组件之间的交互。我们可以将集成测试放在`tests`目录中，然后使用`cargo test --integration`来运行它们。完整的测试代码示例如下所示：
+
+```Rust
+fn add(n1: i32, n2: i32) -> i32 {
+    n1 + n2
+}
+
+#[test]
+fn test_addition() {
+    let result = add(2, 2);
+    assert_eq!(result, 4);
+}
+
+#[cfg(test)]
+mod integration_tests {
+    #[test]
+    fn test_addition() {
+        let result = crate::add(2, 2);
+        assert_eq!(result, 4);
+    }
+}
 ```
-running 1 test
-test test_to_uppercase ... ok
-```
 
-## 深入探讨
+##深入了解测试
 
-上面的例子演示了如何使用 `assert_eq!` 宏来断言函数的输出是否符合预期。除此之外，我们还可以使用 `assert!` 宏来判断一个条件是否为真。同时，我们还可以使用 `should_*` 系列的宏来制定特定的测试场景。Rust 的测试框架相当灵活，我们可以根据不同的需求来编写各种类型的测试。
+除了上述介绍的基本的测试之外，Rust还提供了更多高级的测试功能，例如属性测试、代码覆盖率统计等。我们可以通过在测试函数前添加`#[should_panic]`属性来测试代码是否能够正确地处理panic，或者使用`#[ignore]`属性来跳过某些测试。我们还可以通过设置`RUSTFLAGS`环境变量来打开代码覆盖率的统计功能，从而了解我们的测试覆盖了多少代码。更多关于测试的细节和高级功能可以参考Rust官方文档。
 
-另外，Rust 的测试还支持属性来标记测试函数的执行条件。例如，我们可以使用 `#[ignore]` 属性来暂时忽略某些测试，或者使用 `#[should_panic]` 属性来标记某些测试应该会导致程序崩溃。这些属性可以帮助我们更好地控制测试的过程，并且也有助于我们在代码重构的时候快速定位问题。
+##参考链接
 
-## 参考链接
-
-- [Rust 官方文档 - 写测试](https://doc.rust-lang.org/book/testing.html)
-- [Rust 测试文档](https://doc.rust-lang.org/test/)
-- [深入理解 Rust 的测试框架](https://medium.com/@bheisler/understanding-rust-tests-b12676cfa614)
-
-# 参考链接
-
-[Rust 攻略系列之测试](https://zhuanlan.zhihu.com/p/73671954)
-[Rust 官方文档 - 使用 Test 框架](https://www.rust-lang.org/zh-CN/learn/get-started)
+- [Rust官方文档：测试](https://doc.rust-lang.org/stable/book/ch11-00-testing.html)
+- [Rust官方文档：属性测试](https://doc.rust-lang.org/stable/book/ch11-02-running-tests.html#the-tests-directory)
+- [Rust官方文档：代码覆盖率](https://doc.rust-lang.org/stable/book/ch11-03-test-organization.html#showing-function-paths-being-tested)

@@ -1,79 +1,64 @@
 ---
 title:    "C: Comparando dos fechas"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+A menudo, en la programación, es necesario comparar dos fechas para determinar si una es anterior, posterior o igual a la otra. Esto puede ser útil en numerosas aplicaciones, como sistemas de reserva de citas, seguimiento de eventos y tareas, entre otros. La comparación de fechas también puede ser útil en la creación de informes y estadísticas.
 
-Comparar dos fechas es una tarea común en la programación, especialmente cuando se trabaja con aplicaciones que manejan eventos o citas. Al comparar dos fechas, podemos determinar si un evento ha pasado, está sucediendo en el momento presente o si sucederá en el futuro. En este artículo, aprenderás cómo comparar dos fechas en el lenguaje de programación C y cómo profundizar en el concepto de comparación de fechas.
-
-## Cómo
-
-En C, podemos comparar dos fechas utilizando la función `difftime()` de la biblioteca `time.h`. Esta función toma dos parámetros, las dos fechas que queremos comparar, y devuelve la diferencia en segundos entre ellas. Veamos un ejemplo para entenderlo mejor:
+## Cómo hacerlo
+Para comparar dos fechas en C, primero debemos asegurarnos de que las fechas estén en un formato adecuado. Podemos almacenarlas en variables de tipo estructura ```tm``` y luego utilizar la función ```difftime()``` para calcular la diferencia entre ambas fechas en segundos. Si la diferencia es 0, las fechas son iguales; si es negativa, la primera fecha es anterior a la segunda; y si es positiva, la primera fecha es posterior a la segunda.
 
 ```
 #include <stdio.h>
 #include <time.h>
 
-int main() {
+int main()
+{
+    struct tm date1 = {0}; // primera fecha
+    struct tm date2 = {0}; // segunda fecha
 
-    // Definir dos estructuras tm para almacenar las fechas
-    struct tm fecha1 = {0};
-    struct tm fecha2 = {0};
+    // establecer valores de fecha y hora
+    date1.tm_year = 2021 - 1900;
+    date1.tm_mon = 7;
+    date1.tm_mday = 10;
 
-    // Asignar valores a las estructuras de fecha
-    // Consideremos que fecha1 es el 10 de enero de 2020 y fecha2 es el 20 de enero de 2020
-    fecha1.tm_year = 2020;
-    fecha1.tm_mday = 10;
-    fecha1.tm_mon = 0; // enero es el mes 0
-    fecha2.tm_year = 2020;
-    fecha2.tm_mday = 20;
-    fecha2.tm_mon = 0;
+    date2.tm_year = 2020 - 1900;
+    date2.tm_mon = 11;
+    date2.tm_mday = 25;
 
-    // Calcular la diferencia en segundos entre las dos fechas
-    double diferencia = difftime(mktime(&fecha2), mktime(&fecha1));
+    // calcular diferencia en segundos
+    double diff = difftime(mktime(&date1), mktime(&date2));
 
-    // Imprimir la diferencia
-    printf("La diferencia entre las dos fechas es de %.0f segundos\n", diferencia);
-
-    // Comparar las fechas
-    if(diferencia > 0) {
-        printf("La fecha 2 es posterior a la fecha 1\n");
+    // imprimir resultados
+    if (diff == 0)
+    {
+        printf("Las dos fechas son iguales.\n");
     }
-    else if(diferencia < 0) {
-        printf("La fecha 1 es posterior a la fecha 2\n");
+    else if (diff < 0)
+    {
+        printf("La primera fecha es anterior a la segunda.\n");
     }
-    else {
-        printf("Las dos fechas son iguales\n");
+    else
+    {
+        printf("La primera fecha es posterior a la segunda.\n");
     }
 
     return 0;
 }
 ```
 
-**Salida:**
-
-```
-La diferencia entre las dos fechas es de 864000 segundos
-La fecha 2 es posterior a la fecha 1
-```
-
-En el ejemplo anterior, primero definimos dos estructuras `tm` para almacenar nuestras fechas. Luego asignamos valores a cada una de ellas y utilizamos la función `difftime()` para calcular la diferencia en segundos. Finalmente, comparamos las fechas utilizando la diferencia obtenida.
-
-Otra forma de comparar fechas en C es convertirlas a su forma de representación numérica y luego realizar la comparación. Por ejemplo, en lugar de utilizar la función `mktime()`, podemos utilizar directamente el número de días transcurridos desde una fecha de referencia determinada (como el 1 de enero de 1970).
+La salida de este programa sería: ```La primera fecha es posterior a la segunda.```
 
 ## Profundizando
+Ahora que sabemos cómo comparar dos fechas en C, es importante tener en cuenta algunos detalles. Primero, las fechas deben ser válidas y estar en el rango de los valores permitidos para la estructura ```tm```. Además, la función ```difftime()``` devuelve la diferencia en segundos, por lo que podemos utilizarla para comparar no solo fechas, sino también horas y minutos.
 
-Al comparar fechas, es importante tener en cuenta el formato y la precisión en la que se están almacenando las fechas. Por ejemplo, si estás trabajando con una fecha que incluye la hora, es necesario tener en cuenta también los minutos y segundos al realizar la comparación para obtener resultados precisos.
-
-Además, debemos tener cuidado con el manejo de los años bisiestos, ya que el mes de febrero tiene un número variable de días.
-
-Por último, es importante recordar que las fechas son un concepto abstracto y su representación numérica puede variar en diferentes culturas y zonas horarias. Por lo tanto, es importante tener en cuenta el uso de funciones como `gmtime()` o `localtime()` para obtener la fecha y hora en un formato adecuado según las preferencias del usuario.
+También es importante tener en cuenta que la comparación de fechas puede variar según el sistema operativo y la configuración regional en la que se está ejecutando el programa. Por lo tanto, siempre es recomendable hacer pruebas exhaustivas para asegurarse de que el resultado sea el esperado.
 
 ## Ver también
-
-- [Documentación de la función `difftime()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm)
-- [Especificación completa de la biblioteca `time.h` en la referencia del lenguaje C](https://www.gnu.org/software/libc/manual/html_node/Time.html#Time)
-- [Comparación de fechas en otros lenguajes de programación](https://medium.com/@codeloggy/comparing-dates-in-different-programming-languages-24af6214e5a5)
+- [Documentación de la función difftime en la página de cplusplus.com] (http://www.cplusplus.com/reference/ctime/difftime/)
+- [Tutorial sobre estructuras en C] (https://www.learn-c.org/en/C-Structures)
+- [Preguntas frecuentes sobre las estructuras de tiempo en C] (https://www.tutorialspoint.com/c_standard_library/time_h.htm)

@@ -1,70 +1,60 @@
 ---
 title:    "Arduino: Ottenere la data corrente"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Molti progetti basati su Arduino richiedono di avere la data e l'ora correnti come parte del loro funzionamento. Questa informazione è fondamentale per sincronizzare orologi, programmare eventi o semplicemente tenere traccia del tempo trascorso.
+Quando si programma su Arduino, a volte può essere utile ottenere la data corrente. Ad esempio, si potrebbe voler creare un orologio in tempo reale o un sistema di registrazione dei dati che richiede la data e l'ora corretti. In questo post, impareremo come ottenere la data corrente utilizzando Arduino.
 
-# Come fare
+## Come procedere
 
-Per ottenere la data e l'ora correnti su Arduino, ci sono alcune cose da considerare. In primo luogo, è necessario avere un modulo di tempo esterno collegato alla scheda Arduino. Ci sono diversi tipi di moduli disponibili sul mercato, ma i più comuni sono quelli basati sul chip DS1307 o DS3231.
+Per ottenere la data corrente su Arduino, possiamo utilizzare la libreria "Time". Per prima cosa, assicuriamoci di avere questa libreria correttamente installata nel nostro ambiente di sviluppo Arduino.
 
-Una volta collegato il modulo di tempo alla scheda, è possibile utilizzare la libreria Wire per comunicare con esso tramite il bus I2C. Per utilizzare questa libreria, è necessario includerla all'inizio del tuo codice:
+Una volta installata, dobbiamo includere la libreria nel nostro sketch utilizzando la seguente istruzione:
 
-```Arduino
-#include <Wire.h>
+```arduino
+#include <Time.h>
 ```
 
-A questo punto, è possibile utilizzare le diverse funzioni offerte dalla libreria per comunicare con il modulo di tempo e ottenere la data e l'ora correnti. Ad esempio, la funzione `Wire.begin()` deve essere chiamata all'inizio del tuo codice per aprire una connessione al bus I2C.
+Dopo aver incluso la libreria, possiamo utilizzare la funzione "now()" per ottenere un oggetto di tipo "tmElements_t". Questo oggetto contiene informazioni sulla data e l'ora correnti. Possiamo poi utilizzare le funzioni "year()", "month()", "day()", "hour()", "minute()" e "second()" per ottenere i valori specifici di ciascun elemento.
 
-Ora, per ottenere la data e l'ora correnti, possiamo utilizzare la funzione `Wire.requestFrom()` per inviare una richiesta al modulo di tempo e leggere i dati restituiti. Ecco un esempio di codice per ottenere la data corrente:
+Ecco un esempio di codice che stampa la data e l'ora correnti:
 
-```Arduino
-#include <Wire.h>
+```arduino
+#include <Time.h>
 
 void setup() {
-  // Inizializza la connessione I2C
-  Wire.begin();
   Serial.begin(9600);
+  setSyncProvider(RTC.get); // Imposta la funzione di sincronizzazione per la libreria Time
 }
 
 void loop() {
-  // Richiede 7 byte dal modulo di tempo
-  Wire.requestFrom(0x68, 7);
-  // Leggi i dati e assegnali alle variabili necessarie
-  int seconds = Wire.read();
-  int minutes = Wire.read();
-  int hours = Wire.read();
-  int day = Wire.read();
-  int month = Wire.read();
-  int year = Wire.read();
-  // Stampa la data corrente
-  Serial.print(hours); Serial.print(":");
-  Serial.print(minutes); Serial.print(":");
-  Serial.println(seconds);  
+  time_t t = now(); // Ottiene la data e l'ora correnti
+  tmElements_t tm = breakTime(t); // Converte l'oggetto time_t in un oggetto tmElements_t
+  // Stampa la data e l'ora correnti nel formato DD/MM/YYYY HH:MM:SS
+  Serial.printf("%d/%d/%d %d:%d:%d", tm.Day, tm.Month, tm.Year, tm.Hour, tm.Minute, tm.Second);
+  delay(1000); // Fai una pausa di un secondo prima di ripetere
 }
 ```
 
-Ecco un esempio di output che potresti ottenere:
+L'output del codice sarà qualcosa del genere:
 
 ```
-7:10:30
+20/09/2021 15:45:30
 ```
 
-Oltre a ottenere l'ora, è possibile utilizzare lo stesso sistema per ottenere anche la data e altri dati relativi al tempo. Assicurati di controllare la documentazione della tua libreria e del tuo modulo di tempo per ulteriori informazioni sulle funzioni disponibili e sul loro utilizzo corretto.
+## Approfondimento
 
-# Approfondimento
+Per ottenere in modo più preciso la data e l'ora correnti, possiamo utilizzare un modulo di tempo reale (RTC) collegato ad Arduino. Questi moduli sono dotati di una batteria di backup che mantiene l'orologio in funzione anche quando l'Arduino è spento o perde l'alimentazione.
 
-Ovviamente, l'uso di un modulo di tempo esterno è solo una delle tante opzioni disponibili per ottenere la data e l'ora correnti su Arduino. Alcune schede Arduino, come l'Arduino Uno, hanno un orologio interno integrato che può essere utilizzato senza bisogno di un modulo esterno.
+Inoltre, possiamo anche giocare con le impostazioni di fuso orario utilizzando la funzione "setTimeZone()". Questo ci permette di impostare il fuso orario desiderato per visualizzare la data e l'ora correnti in modo corretto.
 
-Inoltre, esistono anche diverse librerie disponibili online che offrono funzionalità più avanzate per la gestione del tempo e la sincronizzazione con server NTP (Network Time Protocol) per ottenere la data e l'ora precise.
+## Vedi anche
 
-# Vedi anche
-
-- [Documentazione ufficiale di Arduino Wire library](https://www.arduino.cc/en/reference/wire)
-- [Tutorial su collegamento e utilizzo di un modulo DS1307](https://www.arduino.cc/en/Tutorial/RTClib)
-- [Esempio di utilizzo di un orologio interno con Arduino](https://create.arduino.cc/projecthub/pibee/an-alarm-clock-with-arduino-619ccb)
+- Documentazione della libreria "Time": https://www.pjrc.com/teensy/td_libs_Time.html
+- Tutorial su come utilizzare una libreria RTC con Arduino: https://www.arduino.cc/en/Tutorial/BuiltinExamples/RTC
+- Guida all'utilizzo della funzione "setTimeZone()": https://www.arduino.cc/en/Reference/TimeSetTimeZone

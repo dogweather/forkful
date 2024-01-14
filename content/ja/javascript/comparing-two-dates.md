@@ -1,41 +1,54 @@
 ---
-title:    "Javascript: 「2つの日付の比較」"
+title:    "Javascript: 2つの日付の比較"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
+JavaScriptで日付を比較する方法
+
 ## なぜ
 
-日々のコーディングで、時々JavaScriptで日付を比較する必要があります。コードの正確さを保つために、日付を正しく比較することが非常に重要です。
+日付を比較することは、プログラミングにおいて非常に重要なスキルです。日付を比較することで、特定の日付が過去のものか未来のものかを判断し、それに応じてプログラムを実行することができます。例えば、特定の日付が今日よりも前のものであれば、特定の処理を実行するように命令することができます。
 
-## 方法
+## 使い方
 
-日付を比較するために、JavaScriptにはいくつかの便利なメソッドがあります。例えば、`Date()`コンストラクターを使用して新しい日付オブジェクトを作成することができます。次に、`getTime()`メソッドを使用して、日付をミリ秒単位の数値に変換します。そして、この数値を比較することで日付の大小を判断できます。以下は、実際にコードを使用した例です。
+日付を比較するには、一連のステップを踏む必要があります。
 
-```Javascript
-let date1 = new Date('2020/01/01');
-let date2 = new Date('2020/05/01');
+1. 日付を取得する
+2. 日付を比較する
+3. 比較結果を取得する
 
-console.log(date1.getTime() < date2.getTime()); // 出力結果: true
-```
-また、`getFullYear()`、`getMonth()`、`getDate()`メソッドを使用して、日付の年、月、日を取得し、それぞれ比較することもできます。
+例えば、今日の日付を取得するには、次のようなコードを書きます。
 
-```Javascript
-let date1 = new Date('2020/01/01');
-let date2 = new Date('2020/01/03');
-
-console.log(date1.getFullYear() === date2.getFullYear()); // 出力結果: true
-console.log(date1.getMonth() === date2.getMonth()); // 出力結果: true
-console.log(date1.getDate() < date2.getDate()); // 出力結果: true
+```JavaScript
+const today = new Date();
 ```
 
-## 深堀り
+そして、比較したい日付を変数に代入し、比較演算子を使用して今日の日付と比較します。
 
-日付を比較する場合、注意しなければならない点が1つあります。それは、JavaScriptにおける日付オブジェクトは、時差の影響を受けるということです。つまり、例えば`2020/01/01`という日付を日本時間で比較する場合、実際には時差により1日前の`2019/12/31`として扱われます。このような場合は、可能な限りUTCを使用することをおすすめします。
+```JavaScript
+const comparisonDate = new Date("2020-01-01");
+const result = comparisonDate < today;
+```
 
-## See Also
+このように、比較結果はtrueまたはfalseの値として取得することができます。
 
-- [JavaScriptで日付を比較する方法](https://techacademy.jp/magazine/18006)
-- [JavaScriptで時刻を考慮しない日付の比較をする](https://qiita.com/nek_0k_/items/8ffa7d3fa957324757a8)
-- [日付を比較する際の注意点](https://qiita.com/muran001/items/b623c1a47f065ab3e3f3)
+## 詳細を掘り下げる
+
+日付を比較する際には、留意すべきいくつかのポイントがあります。
+
+- 日付を表すオブジェクトを使用する際には、コンストラクタ関数の引数には月を表す数値ではなく、月のインデックスを表す数値を渡す必要があります。例えば、1月は0、12月は11となります。
+- 比較する際には、日付でも時刻でもなく、ただの日付を比較するように注意しましょう。日付と時刻を比較すると、想定した結果とは異なる結果が得られる可能性があります。
+
+## 参考リンク
+
+- [MDN web docs - 日付を操作する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TechAcademyマガジン - JavaScriptの日付を扱う方法](https://techacademy.jp/magazine/21464)
+- [JavaScript.info - Dateオブジェクト](https://ja.javascript.info/date)
+
+## 関連リンク
+
+- [JavaScriptで時間を扱う方法](https://mycodinglab.com/javascript-time/)
+- [JavaScript入門 - 日付の扱い方](https://javascript.programmer-reference.com/js-datetime/)

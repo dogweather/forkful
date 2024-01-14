@@ -1,45 +1,39 @@
 ---
 title:    "Rust: Att påbörja ett nytt projekt"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Rust är ett spännande språk som blir alltmer populärt bland utvecklare. Med enkel syntax, hög prestanda och inbyggd hantering av minnesåtkomst, är det ett utmärkt val för att utveckla pålitliga och effektiva program. Om du överväger att starta ett nytt projekt i Rust, låt mig få dig övertygad om varför det är en bra idé.
 
-Att börja ett nytt programmeringsprojekt kan vara en spännande och givande upplevelse. Med Rusts unika egenskaper och dess starka fokus på säkerhet och prestanda, är det ett utmärkt val för att utveckla högkvalitativ kod. Dessutom har Rust ett aktivt community som kontinuerligt bidrar med nya bibliotek och verktyg för att göra utvecklingsprocessen smidigare och mer effektiv.
-
-## Hur man
-
-För att komma igång med ett Rust-projekt behöver du först ladda ner och installera Rust-utvecklingsmiljön på din dator. Detta kan enkelt göras genom att följa instruktionerna på Rusts officiella hemsida. När det är gjort kan du skapa ett nytt projekt med hjälp av kommandot `cargo new [projektnamn]`.
-
-Efter att ha skapat ditt projekt kan du börja koda i din favorittextredigerare. Här är ett exempel på hur man kan skapa en enkel funktionsapplikation i Rust:
+## Hur man gör det
+Att starta ett projekt i Rust är inte lika komplicerat som det kan verka. Här är ett enkelt exempel på hur du kan skapa en ny skriptfil och köra den:
 
 ```Rust
 fn main() {
-  let num1 = 5;
-  let num2 = 10;
-  let sum = add(num1, num2);
-  println!("Summan av {} och {} är {}", num1, num2, sum);
-}
-
-fn add(num1: i32, num2: i32) -> i32 {
-  num1 + num2
+    println!("Hej världen!");
 }
 ```
 
-I detta exempel skapar vi en funktion `add` som tar två heltal som argument och returnerar deras summa. Vi använder sedan funktionen i `main`-funktionen och skriver ut resultatet med hjälp av `println`-makron. Genom att köra programmet med kommandot `cargo run` i terminalen kan vi se att programmet fungerar som förväntat och skriver ut "Summan av 5 och 10 är 15".
+Kom ihåg att kompilera koden innan du kör den. Nu kan du se resultatet av ditt program genom att köra kommandot "cargo run" i terminalen:
+
+```
+Hej världen!
+```
+
+Det var enkelt, eller hur? Nu kan du börja utforska alla de olika konstruktionerna i Rust och skapa mer avancerade projekt.
 
 ## Djupdykning
+Att starta ett projekt i Rust kan vara mycket givande, men det finns några saker som är viktiga att tänka på. För det första, se till att ha en grundläggande förståelse för programutvecklingsprinciper och hur Rust fungerar. Om du är helt ny inom programmering, rekommenderar jag att du börjar med att lära dig grunderna i ett annat språk innan du ger dig på Rust.
 
-Att starta ett nytt projekt med Rust kan ibland kännas överväldigande, särskilt om man är nybörjare. Men lyckligtvis finns det många resurser tillgängliga för att hjälpa dig på din resa. Här är några tips för att förenkla uppstarten:
+För det andra, ta dig tid att läsa igenom Rusts dokumentation och lära dig om dess olika funktioner som kan hjälpa dig att skapa mer robusta och effektiva program. Oroa dig inte, det finns en mängd resurser online som kan hjälpa dig att förstå och lära dig mer om Rust.
 
-- Utforska Rusts officiella hemsida för att lära dig mer om språket och dess funktioner.
-- Använd Rusts dokumentation för att lära dig mer om olika paket och bibliotek som kan hjälpa dig i ditt projekt.
-- Delta i Rusts community genom att ansluta dig till olika forum och chattgrupper för att ställa frågor och få feedback från andra utvecklare.
+Slutligen, var inte rädd för att söka hjälp och ställa frågor i onlineforum för Rust. Det finns en aktiv community av utvecklare som gärna delar sin kunskap och erfarenhet med andra.
 
 ## Se även
-
-- [Rust: Getting Started](https://www.rust-lang.org/learn/get-started)
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
-- [Rust Community Forum](https://users.rust-lang.org/)
+- [Rust officiella hemsida](https://www.rust-lang.org/sv-SE/)
+- [Rust for Begärers](https://doc.rust-lang.org/book/)
+- [Rust subreddit](https://www.reddit.com/r/rust/)

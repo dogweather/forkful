@@ -1,42 +1,43 @@
 ---
 title:    "Go: テストの書き方"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+[Japanese Title: テストを書く理由と方法、そして深掘り]
 
-テストを書くことの重要性を知っていますか？コードをテストすることで、バグを防ぎ、コードの信頼性を高めることができます。テストを書くことは、より品質の高いコードを作るための重要なステップです。
+## Why
+テストを書く理由は、コードの品質を向上させるためです。テストを書くことで、バグやエラーを早期に発見することができます。また、コードの変更や修正を行った際にも、テストがあれば影響範囲を把握しやすくなります。
 
-## 作り方
-
-テストを書くための基本的な方法を学ぶ準備ができましたか？Go言語を使ってテストを書く方法をいくつか紹介します。下のコードブロックを参考にして、自分のコードに合わせてテストを書くことができます。
+## How To
+テストを書く方法は簡単です。まず、Go言語で書かれたコードの中にある関数やメソッドを、テストするための専用の関数に変換します。例えば、以下のようなコードがあったとします。
 
 ```Go
-// テストする関数
 func add(x int, y int) int {
     return x + y
 }
+```
 
-// テストコード
+この関数をテストするためには、以下のようにTest関数を作成します。
+
+```Go
 func TestAdd(t *testing.T) {
-    result := add(2, 3)
-    if result != 5 {
-        t.Errorf("加算が正しくありません。期待値: 5、実際の値: %d", result)
+    result := add(2,3)
+    expected := 5
+    if result != expected {
+        t.Errorf("Expected %d, but got %d", expected, result)
     }
 }
 ```
 
-このコードでは、add関数をテストしています。add関数に2と3を渡し、結果が5になるかどうかを確認します。期待する結果と実際の結果が異なる場合は、エラーを出力します。このように、テストを書くことで、意図しない結果が得られた場合にすぐに気付くことができます。
+以上のように、テスト対象の関数をTest関数内で実行し、期待する結果と実際の結果が一致するかどうかを確認することでテストが完了します。
 
-## 深堀り
+## Deep Dive
+テストを書く際には、テストケースをできるだけ網羅的に作成することが重要です。また、テストを書くことで得られる利点の一つに、コードのリファクタリングが挙げられます。テストがあることで、コードの修正後にテストが通るかどうかを確認することができ、コードの品質を向上させることができます。
 
-テストの書き方にはさまざまなテクニックや概念があります。例えば、ユニットテストや統合テストなど、異なる種類のテストがあります。また、テストカバレッジと呼ばれる概念では、自分のテストがどれだけコードをカバーしているかを測定することができます。さらに、TDD (Test Driven Development) という考え方では、テストを先に書くことで、コードをより品質の高いものにすることができます。テストの世界は広大で奥深いものであり、常に新しいことを学ぶことができます。
-
-## 関連リンク
-
-- [Go言語公式ドキュメント](https://golang.org/)
-- [Go Testing パッケージ](https://golang.org/pkg/testing/)
-- [テストカバレッジの測定方法](https://blog.golang.org/cover)
-- [TDDについての記事](https://www.agilealliance.org/glossary/tdd/)
+## See Also
+- Test-driven development (TDD)
+- Writing tests in Go: https://golang.org/pkg/testing/
+- How to write effective tests: https://www.guru99.com/software-testing.html

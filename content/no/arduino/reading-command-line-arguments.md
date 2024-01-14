@@ -1,46 +1,50 @@
 ---
-title:    "Arduino: Lesing av kommandolinje-argumenter"
+title:    "Arduino: Å lese kommandolinjeargumenter"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Mange starter sin reise inn i programmering ved å lære et språk som Python eller Java. Men med sin enkle og brukervennlige plattform, er Arduino en flott måte å utforske verden av elektronikk og mikrokontrollere. For å utnytte hele potensialet til Arduino, er det viktig å forstå hvordan man leser kommandolinje-argumenter.
+Hvis du allerede er en erfaren Arduino-programmerer, så har du sannsynligvis hørt om å lese kommandolinjeargumenter. Dette kan virke som en ekstra trinn i kodingen din, men det kan være en nyttig måte å forbedre programmene dine på. I denne bloggposten skal vi utforske hvorfor du bør lære å lese kommandolinjeargumenter og hvordan du kan gjøre det på en enkel måte.
 
 ## Hvordan
 
-Arduino bruker en kommandolinje-looper for å kjøre programvaren, og dette kan bli brukt til å lese kommandolinje-argumenter. La oss ta en titt på et enkelt eksempel:
+Å lese kommandolinjeargumenter i Arduino-programmering kan hjelpe deg med å gjøre programmene dine mer fleksible og tilpassbare. La oss se på et enkelt eksempel på hvordan du kan lese en kommandolinjeargument og bruke den i koden din:
 
 ```Arduino
-void setup() {
-  Serial.begin(9600);                         // Starter seriell kommunikasjon
-  while (!Serial) {
-    ;                                         // Venter på seriell tilkobling
-  }
+int num = 0; //oppretter en variabel for å lagre argumentet
 
-  Serial.print("Kommandolinje-argumenter: "); // Skriver ut tekst før argumentene
-  Serial.println(Serial.readString());        // Leser og skriver ut kommandolinje-argumentene
+void setup() {
+  Serial.begin(9600); //starter seriell kommunikasjon
+  while (!Serial); //venter på at Serial skal være tilkoblet
+  if (Serial.available()) { //sjekker om det finnes et argument
+    num = Serial.parseInt(); //leser argumentet og lagrer det i variabelen
+  }
 }
 
 void loop() {
-  // Ingenting her, da vi bare vil lese kommandolinje-argumenter én gang
+  //bruker variabelen i koden
+  Serial.println("Det oppgitte nummeret er: " + String(num));
 }
 ```
 
-Når du laster opp dette til Arduino-enheten din og åpner Serial Monitor, vil du se en linje som sier "Kommandolinje-argumenter:", fulgt av argumentene du skrev inn etter at du startet programmet. For eksempel, hvis du skrev "test" som argument, vil du se "Kommandolinje-argumenter: test" i Serial Monitor.
+Her bruker vi funksjonen `Serial.parseInt()` til å lese et heltall fra kommandolinjen og lagrer det i variabelen `num`. Dette gjør det mulig for brukeren å endre verdien til `num` uten å måtte endre koden direkte. Du kan deretter bruke denne variabelen som du ønsker i koden din.
 
 ## Dypdykk
 
-Så hvordan fungerer dette egentlig? Når du starter et program på Arduino, sender kommandolinjen alle argumentene til datamaskinen, som deretter overfører dem til Arduino via den serielle kommunikasjonsporten. I programmet vårt, bruker vi ``Serial.readString()`` for å lese argumentene og skrive dem ut i Serial Monitor.
+Nå som du har sett et enkelt eksempel på hvordan du kan lese kommandolinjeargumenter i Arduino, la oss dykke litt dypere og se på noen viktige ting du bør huske på.
 
-Ettersom vi bruker ``Serial.print`` og ``Serial.println``, vil argumentene bli lagt til i slutten av linjen i stedet for å overskrive den. Dette er nyttig hvis du for eksempel vil skrive ut en "hei <navn>" melding basert på argumentet du gir.
+- Du kan lese kommandolinjeargumenter ved hjelp av både `Serial.read()` og `Serial.parseInt()` funksjonene, avhengig av hva slags data du forventer å motta.
+- Husk å sjekke om det faktisk finnes et argument tilgjengelig før du prøver å lese det ved hjelp av `Serial.available()` funksjonen.
+- Du kan også lese mer enn ett argument fra kommandolinjen ved å bruke en `for`-løkke og `Serial.read()` eller `Serial.parseInt()` i kombinasjon med `Serial.available()`.
 
-En annen viktig ting å merke seg er at kommandolinje-argumentene må være adskilt med mellomrom. Hvis du for eksempel skriver "test1,test2,test3" som argumenter, vil alle tre argumentene bli slått sammen til en streng og skrives ut som en.
+Å lese kommandolinjeargumenter kan være nyttig for å lage mer dynamiske og tilpassbare programmer. Det er også en viktig del av å lære å kommunisere med eksterne enheter og datakilder.
 
 ## Se også
 
-* [Kommandolinje-argumenter i Arduino Offisiell Dokumentasjon](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
-* [Serial Monitor tutorial på Arduino Project Hub (på norsk)](https://create.arduino.cc/projecthub/Arduino_Genuino/seriell-monitor-466d9b)
-* [Hvorfor begynne å lære Arduino? (på norsk)](https://engineering.thrysoee.net/2013/01/31/tutorial-why-start-learning-arduino/)
+- [Arduino Serial kommunikasjon](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Hvordan kommunisere med Arduino over serielt grensesnitt](https://www.arduino.cc/en/Guide/ArduinoSerial)
+- [Lære å programmere i Arduino](https://www.arduino.cc/en/Tutorial/HomePage)

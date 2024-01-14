@@ -1,57 +1,45 @@
 ---
-title:    "Gleam: 「文字列の連結」"
+title:    "Gleam: 文字列の連結"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-みなさんこんにちは！Gleamプログラミングの世界へようこそ！今日私たちは、文字列の連結についてお話ししようと思います。なぜなら、文字列の連結はプログラムでは非常に一般的なタスクだからです。そこで、なぜ文字列の連結が重要なのか、そしてどのように実装するか、そしてさらに深く調べてみましょう！
-
 ## なぜ
 
-文字列の連結は、プログラムで何かを表現する際に非常に重要な役割を果たします。例えば、あなたがウェブアプリケーションを開発しているとしましょう。ユーザーがログインするとき、あなたは彼らのメールアドレスとパスワードを連結してデータベースに保存する必要があります。文字列の連結を行うことで、アプリケーションの機能をよりスムーズに行うことができるのです。
+文字列の連結を行う理由は、プログラミングにおいてよく使用される一つの基本的なタスクです。文字列は、プログラム内でデータを表現するために使用されるため、複数の文字列を効率的に結合することは非常に重要です。
 
-## 使い方
+## 方法
 
-さて、Gleamで文字列の連結をする方法を見てみましょう。まずは、以下のコードをご覧ください。
-
-```Gleam
-let hello = "こんにちは"
-let world = "世界"
-let greeting = hello ++ world
-```
-
-上記のコードでは、2つの文字列を連結して`greeting`という新しい変数を定義しています。このように、`++`を使用することで、簡単に文字列の連結を行うことができます。
-
-そして、ここで`IO.print`関数を使って`greeting`を出力してみましょう。
+文字列の連結を行う方法はいくつかありますが、Gleamでは "+" 演算子を使用して簡単に実装することができます。例えば、文字列 "Hello" と "World" を連結するには、次のようにコードを書きます。
 
 ```Gleam
-IO.print(greeting) // 出力: こんにちは世界
+"Hello" + "World"
 ```
 
-見ての通り、文字列がきちんと連結されて出力されていますね！
-
-## 深堀り
-
-文字列の連結はプログラミングの世界で非常に一般的ですが、実は改善の余地があります。例えば、上記のコードでは単純に2つの文字列を連結しましたが、実際のプログラムでは複数の文字列を連結する必要がある場合もあります。そのような場合には以下のように`list.fold_left`関数を使うことで一括して連結することができます。
+これにより、"HelloWorld" という出力が得られます。また、文字列の変数を使用して連結することもできます。
 
 ```Gleam
-let names = ["太郎", "花子", "次郎", "三郎"]
-let all_names = list.fold_left(
-  fn (name, acc) -> acc ++ name ++ ", "
-  all_names
-)
-IO.print(all_names) // 出力: 太郎, 花子, 次郎, 三郎
+name = "Gleam"
+"Hello, " + name
 ```
 
-これにより、より柔軟に文字列の連結を行うことができるようになります。
+この場合、出力は "Hello, Gleam" となります。
 
-## また見る
+## ディープダイブ
 
-文字列の連結について私たちがお伝えできることはまだまだたくさんありますが、今回はここまでにしましょう。もし、さらに深く知りたい方は以下のリンクをご覧ください。
+Gleamでは、文字列のマイクロ言語を使用して文字列を連結することもできます。これは、より複雑な文字列の操作を行う場合に便利です。例えば、"Hello World" という文字列を "Hello, World!" に変更するには、次のようにコードを書きます。
 
-- [公式ドキュメント](https://gleam.run/documentation/)
-- [Gleamの文字列操作について](https://medium.com/@gamhsubstring/working-with-strings-in-gleam-fddb3c16be10)
-- [Gleamの標準ライブラリに関する情報](https://github.com/gleam-lang/gleam_stdlib)
+```Gleam
+string = "Hello {name}"
+string = string.append("!")
+```
 
-それでは、次の記事でお会いしまし
+これにより、変数 "{name}" が "Gleam" で置換され、"Hello, Gleam!" という出力が得られます。
+
+## 関連情報
+
+[Gleamドキュメンテーション](https://gleam.run/documentation)  
+[Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)  
+[Gleamコミュニティチャット](https://github.com/gleam-lang/gleam/discussions)

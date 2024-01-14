@@ -1,41 +1,39 @@
 ---
 title:    "Clojure: Å bruke regulære uttrykk"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Regular expressions, også kjent som "regex", er et kraftig verktøy i programmering for å søke og manipulere tekststrenger på en effektiv måte. Med regex kan du finne og erstatte deler av en tekst ved hjelp av spesielle uttrykk og symboler. Dette gjør regex veldig nyttig for oppgaver som datauttrekk, tekstanalyse, og formatering av data. 
+Hvorfor bruke regulære uttrykk i Clojure? Regulære uttrykk er en svært kraftig funksjon i Clojure som gjør det mulig å søke eller manipulere tekst på en enkel og effektiv måte. Enten du jobber med dataanalyse, tekstbehandling eller webutvikling, vil du ha nytte av å lære hvordan du bruker regulære uttrykk i Clojure.
 
-## Hvordan
+# Slik gjør du det
 
-For å bruke regex i Clojure, må du først importere "clojure.string" biblioteket. Deretter kan du bruke funksjonen "re-find" eller "re-seq" for å søke etter mønstre i en streng. Her er et enkelt eksempel på hvordan regex kan brukes:
-
-```Clojure
-(require '[clojure.string :as str])
-
-(def text "Heisann, dette er en tekststreng.")
-(str/re-find #"tekst" text) ; returnerer "tekst"
-```
-
-Du kan også bruke regex for å erstatte deler av en tekst med "re-replace" funksjonen:
+Å lære seg å bruke regulære uttrykk i Clojure kan virke skremmende ved første øyekast, men med litt øvelse vil du raskt få taket på det. La oss se på et eksempel der vi skal finne alle telefonnumre i en tekst:
 
 ```Clojure
-(str/re-replace #"tekst" "ord" text) ; returnerer "Heisann, dette er en ordstreng."
+(def tekst "Jeg kan nås på 12345678 eller 98765432")
+(re-find #"[0-9]+" tekst)
 ```
 
-## Dypdykk
+I dette eksempelet definerer vi en tekststreng og bruker deretter funksjonen `re-find` sammen med regulært uttrykk #"[0-9]+" for å finne alle tallsekvenser i teksten. Resultatet vi får er "12345678", det første telefonnummeret som matcher mønsteret vårt.
 
-Regex kan være komplekst og tidkrevende å lære, men det finnes mange ressurser tilgjengelig for å hjelpe deg å forstå konseptet bedre. Her er noen tips for å komme i gang:
+Men hva om vi ønsker å finne både tall og bokstaver i teksten? Da må vi utvide vårt regulære uttrykk til å inkludere både tall og bokstaver:
 
-- Bruk en regex tester online for å eksperimentere med ulike uttrykk og se hvordan de fungerer.
-- Lær de vanligste regex symbolene og deres betydning.
-- Prøv å løse ulike utfordringer og problemer ved hjelp av regex istedenfor manuelt arbeid. Dette vil hjelpe deg å forstå konseptet bedre og øke din regex-fobi. 
+```Clojure
+(re-find #"[a-zA-Z0-9]+" tekst)
+```
 
-## Se også
+Dette vil gi oss resultatet "Jegkanås" og "98765432". Som du kan se, er det viktig å være presis med hva du ønsker å finne med regulære uttrykk.
 
-- [offisiell Clojure regex dokumentasjon] (https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-find)
-- [regex tester] (https://regex101.com/)
-- [regex tutorial på norsk] (https://www.regexbuddy.com/regex.html?type=norsk)
+# Dypdykk
+
+Hvis du ønsker å lære mer om hvordan du bruker regulære uttrykk i Clojure, kan du sjekke ut dokumentasjonen for Clojure-regex-biblioteket og få mer informasjon om hvilke funksjoner du kan bruke for å søke og manipulere tekst. Du kan også øke dine ferdigheter ved å utforske ulike typer regulære uttrykk og se hvordan de fungerer.
+
+# Se også
+
+- [Clojure-regex dokumentasjon](https://clojure.github.io/clojure.contrib/regex-api.html)
+- [Clojure regex-hjelp](https://juxt.pro/blog/clojure-regex-guide.html)

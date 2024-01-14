@@ -1,58 +1,81 @@
 ---
 title:    "Swift: Concaténation de chaînes de caractères"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La concaténation de chaînes de caractères est l'une des fonctions essentielles de la programmation Swift. Elle permet de combiner plusieurs chaînes de caractères en une seule, offrant ainsi une grande flexibilité dans la gestion et la manipulation de données textuelles.
+Concaténer des chaînes de caractères est une étape essentielle de la programmation Swift. Cela nous permet de combiner différentes chaînes pour créer du texte plus complexe. Dans cet article, nous allons explorer comment le faire de manière efficace et comment approfondir cette technique.
 
 ## Comment faire
-
-Pour concaténer des chaînes de caractères en Swift, nous utilisons l'opérateur `+` entre les différentes chaînes que nous souhaitons combiner. Par exemple:
-
-```Swift
-let prenom = "Jean"
-let nomDeFamille = "Dupont"
-let nomComplet = prenom + " " + nomDeFamille
-print(nomComplet)
-```
-**Sortie:** Jean Dupont
-
-Nous pouvons également utiliser la méthode `append` pour ajouter une chaîne de caractères à la fin d'une autre chaîne en utilisant la syntaxe suivante:
+Pour concaténer des chaînes de caractères en Swift, nous pouvons utiliser l'opérateur `+` ou la méthode `append()` de la classe `String`. Voici un exemple de code avec l'utilisation de ces deux méthodes :
 
 ```Swift
-var message = "Bonjour"
-message.append(", comment allez-vous?")
-print(message)
+let nom = "Marie"
+let age = 25
+
+// En utilisant l'opérateur +
+let presentationAvecOperateur = "Je m'appelle " + nom + " et j'ai " + String(age) + " ans."
+
+// En utilisant la méthode append()
+var presentationAvecMethode = "Je m'appelle "
+presentationAvecMethode.append(nom)
+presentationAvecMethode.append(" et j'ai ")
+presentationAvecMethode.append(String(age))
+presentationAvecMethode.append(" ans.")
 ```
-**Sortie:** Bonjour, comment allez-vous?
 
-Il est important de noter que la concaténation de chaînes de caractères fonctionne également avec des valeurs numériques, qui sont automatiquement converties en chaînes de caractères lorsqu'elles sont combinées avec d'autres chaînes.
+Lors de l'utilisation de l'opérateur `+`, il est important de s'assurer que les valeurs à concaténer sont toutes de type `String`. Dans l'exemple ci-dessus, nous devons utiliser `String(age)` pour convertir la variable `age` en chaîne de caractères. La méthode `append()`, quant à elle, peut être appliquée à une variable de type `String` sans avoir besoin de le convertir au préalable.
 
-## Approfondissement
+Voici l'output de ces deux exemples de code :
 
-En plus de l'opérateur `+` et de la méthode `append`, Swift offre d'autres fonctionnalités pour concaténer des chaînes de caractères, comme l'utilisation de l'opérateur `+=` et la fonction `joined(separator:)`.
+```
+Je m'appelle Marie et j'ai 25 ans.
+```
 
-De plus, il est possible de formater une chaîne de caractères combinant à la fois du texte fixe et des variables, en utilisant la syntaxe suivante:
+Une autre méthode couramment utilisée pour concaténer des chaînes de caractères est la méthode `join()`. Cette méthode prend en paramètre un séparateur et une liste de chaînes et les concatène en utilisant le séparateur. Voici un exemple :
 
 ```Swift
-let age = 28
-let message = "J'ai \(age) ans"
-print(message)
-```
-**Sortie:** J'ai 28 ans
+let fruits = ["Pomme", "Banane", "Orange"]
 
-Cela peut être particulièrement utile lors de l'affichage de messages personnalisés dans des applications.
+// En utilisant la méthode join()
+let listeDeFruits = fruits.join(separator: ", ")
+
+print("Mes fruits préférés sont : \(listeDeFruits).")
+```
+
+Output :
+
+```
+Mes fruits préférés sont : Pomme, Banane, Orange.
+```
+
+## Plongée en profondeur
+Il est important de noter que concaténer des chaînes de caractères peut être inefficace pour les grands textes. C'est pourquoi Apple recommande d'utiliser la structure `StringBilder` pour une meilleure performance. Cette structure permet de construire une chaîne de caractères en ajoutant des valeurs à la fin sans avoir à créer une nouvelle instance de `String` à chaque ajout. Voici un exemple :
+
+```Swift
+var presentation = StringBuilder()
+
+presentation.append("Je m'appelle ")
+presentation.append(nom)
+presentation.append(" et j'ai ")
+presentation.append(String(age))
+presentation.append(" ans.")
+```
+
+De plus, pour une meilleure lisibilité de votre code, vous pouvez utiliser la concaténation interlinéaire de Swift en utilisant l'opérateur `+=`. Voici un exemple :
+
+```Swift
+var presentation = "Je m'appelle "
+
+presentation += nom
+presentation += " et j'ai "
+presentation += String(age)
+presentation += " ans."
+```
 
 ## Voir aussi
-
-Pour en savoir plus sur la concaténation de chaînes de caractères en Swift, vous pouvez consulter les ressources suivantes:
-
-- [Documentation officielle Swift sur la concaténation de chaînes](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID291)
-- [Vidéo sur la concaténation de chaînes en Swift](https://www.youtube.com/watch?v=65emDJ2Py1Q)
-- [Article sur les meilleures pratiques en matière de concaténation de chaînes en Swift](https://itnext.io/the-best-string-interpolation-practices-in-swift-a878c3b97982)
-
-N'hésitez pas à expérimenter avec la concaténation de chaînes de caractères dans vos projets et à découvrir toutes les possibilités qu'elle offre pour améliorer votre code. Bonne programmation!
+- [Documentation officielle Swift pour la concaténation de chaînes](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID289)
+- [Article sur l'utilisation de la structure StringBilder en Swift] (https://medium.com/swift-india/string-concatenation-in-swift-a-deep-dive-47b0c4370371)

@@ -1,43 +1,46 @@
 ---
 title:    "Rust: Søke og erstatte tekst"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-En viktig del av programmering er å kunne håndtere tekst på en effektiv måte. Noen ganger kan det være nødvendig å søke og erstatte spesifikke deler av en tekst. Dette er når søke og erstatte funksjonen i Rust kommer til nytte. Det lar deg søke og erstatte tekst i en enkel og effektiv måte, noe som kan være svært nyttig i mange ulike programmeringsoppgaver.
+For de som jobber med programmering og tekstbehandling, er det å søke og bytte ut tekst en viktig oppgave. Dette kan spare tid og redusere risikoen for feil i koden. I denne bloggposten vil vi utforske hvordan dette kan gjøres ved hjelp av Rust-programmeringsspråket.
 
-# Hvordan
+## Hvordan
 
-Før du kan bruke søke og erstatte funksjonen i Rust, må du importere standard biblioteket "regex". Dette gjøres ved å skrive ```use regex::Regex;``` øverst i filen din. Deretter kan du bruke den ved å erklære en ny "Regex" variabel og angi søkestrengen du vil søke etter. Du kan også angi en erstatningsstreng hvis du vil erstatte den søkte teksten med noe annet.
-
-For eksempel, hvis du vil søke etter alle forekomster av "hello" og erstatte dem med "heisann" i en tekststreng, kan du gjøre det slik:
+For å søke og erstatte tekst i en fil ved hjelp av Rust, kan du bruke standardbiblioteket Regex. Først må vi legge til "regex"-pakken i dependencies-seksjonen i Rust-prosjektet vårt. Deretter kan vi importere regex-biblioteket og bruke dets funksjoner.
 
 ```Rust
-let tekst = "hello world";
-let regex = Regex::new("hello").unwrap();
-let ny_tekst = regex.replace_all(tekst, "heisann");
-println!("{}", ny_tekst);
+// Importerer Regex-biblioteket
+use regex::Regex;
+
+// Definerer den ønskede teksten som skal erstattes
+let text = "Hei, dette er en testtekst";
+
+// Definerer et Regex-objekt som skal søke etter tekst som matcher uttrykket vårt
+let regex = Regex::new(r"testtekst").unwrap();
+
+// Utfører søket og erstatter den matchede teksten med "eksempeltekst"
+let replaced_text = regex.replace_all(text, "eksempeltekst");
+
+// Skriver ut resultatet
+println!("{}", replaced_text); // Hei, dette er en eksempeltekst
 ```
 
-Dette vil gi følgende output:
+Som du kan se, bruker vi her metoden `replace_all` for å erstatte all forekomst av søketeksten med det ønskede resultatet.
 
-```
-heisann world
-```
+## Deep Dive
 
-# Deep Dive
+Regex-biblioteket i Rust har mange nyttige funksjoner som gjør det enkelt å søke og erstatte tekst. Det støtter blant annet regulære uttrykk, som gjør det mulig å søke etter mer avanserte mønstre i teksten. Du kan også bruke `replace`-metoden for å erstatte kun den første forekomsten av søketeksten i en tekst.
 
-Hvis du ønsker å gå dypere inn i hvordan søke og erstatte funksjonen fungerer i Rust, kan du se på den offisielle dokumentasjonen for "regex" biblioteket. Der finner du mer detaljerte eksempler og informasjon om ulike søkemønstre du kan bruke.
+Det er også verdt å merke seg at Regex-biblioteket har god støtte for Unicode, noe som gjør det enkelt å håndtere forskjellige språk og tegnsett i teksten.
 
-En annen nyttig funksjon er muligheten til å bruke regulære uttrykk i søkestrengen. Dette gjør det mulig å søke etter mer komplekse mønstre i teksten, noe som kan være svært nyttig for å finne og erstatte deler av teksten på en mer spesifikk måte.
+## Se også
 
-# Se Også
-
-Søke og erstatte funksjonen i Rust er en svært nyttig verktøy for å håndtere tekst i programmering. For mer informasjon og eksempler, kan du sjekke ut følgende ressurser:
-
-- [Offisiell Rust dokumentasjon for "regex" biblioteket](https://docs.rs/regex/1.4.6/regex/)
-- [En fin tutorial på engelsk om søke og erstatte funksjonen i Rust](https://www.tutorialspoint.com/rust/rust_regular_expressions.htm)
-- [En YouTube video på norsk som forklarer bruk av regulære uttrykk i Rust](https://www.youtube.com/watch?v=KafjAN2ae4U)
+- [Rust Regex-dokumentasjon](https://docs.rs/regex/1.4.2/regex/)
+- [Regulære uttrykk i Rust](https://blog.burntsushi.net/transducers/#a-tutorial-on-regular-expressions)
+- [Unicode-støtte i Rust Regex-biblioteket](https://www.rust-lang.org/learn/get-started#unicode-support-no-encodings-required)

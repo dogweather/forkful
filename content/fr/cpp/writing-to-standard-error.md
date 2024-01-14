@@ -1,59 +1,62 @@
 ---
 title:    "C++: Écrire vers l'erreur standard"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Dans les programmes C++, il est souvent nécessaire de signaler des erreurs ou des avertissements à l'utilisateur. Cela peut être fait à travers la sortie standard, mais il est également possible d'utiliser la sortie d'erreur standard (standard error) pour des messages plus importants ou critiques. Dans cet article, nous allons explorer pourquoi et comment écrire vers la sortie d'erreur standard en C++.
+L'écriture vers le standard error est un outil important pour les programmeurs en C++. Cela permet de signaler des erreurs ou des informations de débogage importantes pendant l'exécution d'un programme en dehors de la sortie standard. Cela peut être utile pour les développeurs lorsqu'ils déboguent leur code ou pour les utilisateurs lorsqu'ils exécutent des programmes en ligne de commande.
 
 ## Comment faire
 
-Pour écrire vers la sortie d'erreur standard en C++, nous utilisons l'objet `cerr` qui est défini dans la bibliothèque standard `iostream`. Voici un exemple de code montrant comment écrire un message vers la sortie d'erreur standard :
+Pour écrire vers le standard error en C++, il suffit d'utiliser la fonction "std::cerr" qui est disponible dans la bibliothèque standard <iostream>. Voici un exemple de code qui affiche un message d'erreur et un message de débogage :
 
 ```C++
 #include <iostream>
 
 int main() {
-  std::cerr << "Ceci est un message d'erreur" << std::endl;
-  return 0;
+    std::cerr << "Une erreur s'est produite !" << std::endl;
+    std::cerr << "Le numéro de ligne est : " << __LINE__ << std::endl;
+    return 0;
 }
 ```
 
-Dans cet exemple, nous utilisons l'opérateur de flux `<<` pour écrire le message vers la sortie d'erreur standard, suivi par `std::endl` pour ajouter un saut de ligne. Il est également possible d'utiliser `"\n"` pour un saut de ligne.
-
-Il est important de noter que les messages écrits vers la sortie d'erreur standard ne sont pas mis en mémoire tampon, ce qui signifie qu'ils seront affichés immédiatement à l'écran, même si le programme se termine prématurément en raison d'une erreur.
-
-Voici un exemple de sortie lorsque nous exécutons le programme :
+La sortie de ce programme sera :
 
 ```
-Ceci est un message d'erreur
+Une erreur s'est produite !
+Le numéro de ligne est : 5
 ```
 
-## Plongée profonde
+Comme vous pouvez le voir, le premier message est affiché sur une ligne séparée de la sortie standard et est précédé par "[Erreur]" pour indiquer qu'il s'agit d'un message d'erreur.
 
-En plus d'écrire simplement des messages d'erreur, il est également possible de définir des codes d'erreur personnalisés avec la fonction `exit()`. Cette fonction prend un code d'erreur entier en paramètre et arrête le programme, tout en retournant le code d'erreur à l'environnement d'exécution.
+## Plongée en profondeur
 
-Voici un exemple de code montrant comment définir et retourner un code d'erreur :
+Il est également possible d'écrire vers le standard error en utilisant la classe "std::basic_ostream" qui est la classe de base pour les objets de flux tels que std::cout et std::cerr. Cela permet une plus grande flexibilité dans le formatage des messages d'erreur et de débogage. Par exemple :
 
 ```C++
 #include <iostream>
-#include <cstdlib>
 
 int main() {
-  int codeErreur = 5;
-  std::cerr << "Une erreur s'est produite. Code d'erreur : " << codeErreur << std::endl;
-  //terminer le programme avec le code d'erreur 5
-  exit(codeErreur);
+    std::basic_ostream<char> my_error_stream(std::cerr.rdbuf());
+    my_error_stream << "[ERREUR] Une erreur s'est produite !" << std::endl;
+    return 0;
 }
 ```
 
-Il est également possible de rediriger la sortie d'erreur standard vers un fichier en utilisant `freopen()`. Cette fonction prend le nom du fichier et le mode d'ouverture en paramètres et redirige la sortie d'erreur vers ce fichier. Cela peut être utile pour enregistrer les messages d'erreur dans un fichier plutôt que de les afficher à l'écran.
+La sortie de ce programme sera :
+
+```
+[ERREUR] Une erreur s'est produite !
+```
+
+Il est également important de noter que la fonction "std::cerr" est synchronisée par défaut avec la sortie standard, ce qui signifie que les messages d'erreur apparaîtront immédiatement dans le terminal, même si le programme se bloque ou se termine prématurément.
 
 ## Voir aussi
 
-- [Documentation Microsoft sur la sortie d'erreur standard en C++](https://docs.microsoft.com/fr-fr/cpp/standard-library/standard-error-output-cpp?view=msvc-160)
-- [Article sur la redirection de la sortie d'erreur en C++](https://www.techiedelight.com/redirect-stderr-stdout-c/)
-- [Article sur les codes d'erreur en C++](https://www.geeksforgeeks.org/introduction-user-defined-functions-c/)
+- [Documentation de std::cerr en français](https://fr.cppreference.com/w/cpp/io/cerr)
+- [Article sur l'utilisation de std::cerr en C++](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
+- [Exemple pratique d'utilisation de std::cerr pour le débogage](https://www.guru99.com/c-plus-plus-error-handling.html)

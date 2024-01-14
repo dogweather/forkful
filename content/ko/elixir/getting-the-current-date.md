@@ -1,32 +1,46 @@
 ---
-title:    "Elixir: 현재 날짜 받아오기"
+title:    "Elixir: 현재 날짜 가져오기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 날짜를 가져와야 하는가?
+# 왜
 
-Elixir는 매우 다양한 언어이지만 강력한 날짜 관련 기능을 제공합니다. 따라서 현재 날짜를 얻는 것은 굉장히 유용할 수 있습니다. 예를 들어 데이터베이스의 일부와 연결된 어플리케이션을 만들 때 많은 사람들이 현재 날짜를 가져와서 패턴을 작성합니다. Elixir는 이 작업을 매우 쉽게 만들어줍니다.
+일자를 얻는 것에 참여하는 이유는 무엇일까요? 일자는 프로그래밍에서 중요한 요소이며, Elixir에서 현재 일자를 얻는 것은 간단하고 편리합니다.
 
-# 방법
+# 어떻게
 
-```elixir
-# 현재 날짜를 가져오는 코드
-current_date = Date.utc_today()
-
-# 현재 날짜와 시간을 가져오는 코드
-current_date_time = DateTime.utc_now()
+다음은 현재 일자를 얻는 방법에 대한 주요 코드 예제입니다.
+```Elixir
+{:ok, date} = Date.utc_today()
+IO.puts(date)
 ```
 
-두 가지 방법 모두 매우 간단합니다. `Date.utc_today()` 함수를 사용하면 현재 날짜만 가져올 수 있고, `DateTime.utc_now()` 함수를 사용하면 현재 날짜와 시간을 함께 가져올 수 있습니다.
+출력:
+```
+2021-01-13
+```
 
-# 자세히 알아보기
+범위를 지정한 다음 일자를 얻는 방법도 있습니다.
+```Elixir
+{:ok, date} = Date.utc_today(2021, 12, 25)
+IO.puts(date)
+```
 
-Elixir는 Erlang 라이브러리인 `Calendar`을 기반으로 날짜와 시간을 다룹니다. 따라서 `Date`와 `DateTime` 모듈을 사용해 일반적인 날짜 형식을 다룰 수 있습니다. 예를 들어 `Date.new(year, month, day)` 함수를 사용해 지정된 날짜를 만들 수 있습니다. 또한 `DateTime.new(year, month, day, hour, minute, second)` 함수를 사용해 지정된 시간을 가진 날짜를 만들 수 있습니다.
+출력:
+```
+2021-12-25
+```
 
-# 관련 자료
+또한 시간대를 변경하거나, 특정 지역의 일자를 얻는 방법도 있습니다. 더 많은 정보는 공식 Elixir 문서를 참고해주세요. 
 
-- [Elixir Date 모듈 문서](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime 모듈 문서](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Calendar 모듈 문서](https://hexdocs.pm/elixir/Calendar.html)
+# 깊은 곳에서
+
+Elixir에서 현재 일자를 얻는 방법은 내부적으로 Erlang의 날짜와 시간 라이브러리인 `calendar`를 사용합니다. 이는 시간대, 윤초, 그리고 다양한 형식의 일자를 다룰 수 있는 강력한 기능을 제공합니다.
+
+# 참고
+
+- [공식 Elixir 문서](https://hexdocs.pm/elixir/Date.html)
+- [Elixir Date 라이브러리 소스 코드](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/date.ex)

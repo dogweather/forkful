@@ -1,41 +1,46 @@
 ---
 title:    "Clojure recipe: Concatenating strings"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Concatenating strings is a fundamental operation in many programming languages, including Clojure. It allows you to combine multiple strings into a single string, making it easier to read and manipulate data in your program. This can be particularly useful when working with text-heavy applications, such as data processing or web development.
+Concatenating strings is a common operation in programming, especially when it comes to creating user-friendly output. In Clojure, there are different ways to concatenate strings depending on the specific task at hand. Understanding these methods is essential for anyone looking to write efficient and effective Clojure code.
 
 ## How To
 
-To concatenate strings in Clojure, we can use the `str` function, which takes in one or more strings as arguments and returns a new concatenated string. We can also use the `clojure.string/join` function, which takes in a separator as the first argument and a collection of strings as the second argument. Let's see some examples below:
+There are a few ways to concatenate strings in Clojure, each with their own advantages and use cases.
 
-```
-Clojure
+One simple way is to use the `str` function, which takes in any number of arguments and returns them concatenated as a string. For example:
 
-(def str1 "Hello")
-(def str2 "World")
-
-(str str1 str2)
-;; Output: "HelloWorld"
-
-(clojure.string/join " " [str1 str2])
-;; Output: "Hello World"
+```Clojure
+(str "Hello" " " "World")
 ```
 
-We can also concatenate strings using the `+` operator, but it is generally considered a good practice to use the `str` or `clojure.string/join` functions instead.
+Running this code would output `"Hello World"`.
+
+Another method is to use the `clojure.string/join` function, which takes in a collection of strings and joins them together with a specified delimiter. For example:
+
+```Clojure
+(clojure.string/join ", " ["apple" "banana" "orange"])
+```
+
+This would output `"apple, banana, orange"`.
+
+Lastly, the `StringBuilder` class from Java can be used to concatenate strings for more complex scenarios. It allows for efficient string building and manipulation, making it a useful tool in performance-critical situations.
 
 ## Deep Dive
 
-When using the `str` function, it is important to note that the arguments are concatenated in the order they are passed in. This means that the type of the first argument determines the return type. For example, if the first argument is a string, then the returned value will also be a string. However, if the first argument is a number, then the returned value will be a string representation of that number followed by the remaining arguments.
+It's important to note the subtle differences between the different methods of string concatenation in Clojure. Using the `str` function is the most efficient and recommended way for simple concatenations. However, when dealing with large collections of strings or the need for a specific delimiter, it's more efficient to use `clojure.string/join` instead.
 
-Additionally, when using the `clojure.string/join` function, the separator can be any string, not just a space. This makes it useful for more complex concatenations, such as CSV files or HTML tables.
+Additionally, it's worth exploring the `StringBuilder` class for more complex string operations. Its `append` and `insert` methods provide efficient ways to manipulate strings, making it a valuable tool for certain use cases.
 
 ## See Also
 
-- Official Clojure documentation on `str`: https://clojure.org/reference/data_structures#_string_functions
-- Official Clojure documentation on `clojure.string/join`: https://clojuredocs.org/clojure.string/join
-- Clojure Tutorial on string manipulation: https://www.braveclojure.com/working-with-strings/
+- Official Clojure Documentation on Strings: https://clojure.org/guides/strings
+- ClojureDocs page for `str` function: https://clojuredocs.org/clojure.core/str
+- ClojureDocs page for `clojure.string/join` function: https://clojuredocs.org/clojure.string/join
+- Java StringBuilder Class Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html

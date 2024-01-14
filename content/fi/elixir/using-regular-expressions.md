@@ -1,52 +1,41 @@
 ---
-title:    "Elixir: Säännöllisten lausekkeiden käyttö"
+title:    "Elixir: Säännöllisten ilmaisujen käyttö"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää regular expressioneja?
+## Miksi
 
-Regular expressionit (lyhennettynä regex tai regexp) ovat voimakas työkalu Elixir-ohjelmoijille, joiden avulla voidaan muokata ja etsiä tietyntyyppisiä merkkijonoja tekstissä. Ne voivat säästää aikaa ja vaivaa, kun etsit tiettyjä kuvioita datasta tai haluat suorittaa useita muutoksia kerralla tietyssä tekstiosassa.
+Regular expressionien käyttö on erittäin hyödyllistä, kun halutaan löytää ja muokata tietoa tekstimuotoisesta datasta nopeasti ja tehokkaasti.
 
-## Miten käyttää regular expressioneja?
+## Kuinka
 
-Käytämme regular expressioneja slashmerkkien (/) ja lainausmerkkien (") sisällä. Seuraava esimerkki etsii tekstistä kaikki esiintymät "elixir" ja korvaa ne sanalla "Elixir":
-
-```Elixir
-Regex.replace(~r/elixir/, "Elixir", "Tämä on esimerkki Elixir-koodista")
-```
-
-Tuloksena saadaan:
+Regular expressionit ovat osa monia ohjelmointikieliä, mukaan lukien Elixir. Niitä käytetään merkkijonojen käsittelyyn ja manipulointiin. Alla on muutamia esimerkkejä regular expressionien käytöstä Elixirissä:
 
 ```
-"Tämä on esimerkki Elixir-koodista"
+Elixir -regex "hello|world"
 ```
 
-Regular expressioneille voidaan myös antaa vaihtoehtoja käyttämällä pystyviivoja (|) sisällä sulkumerkkejä. Seuraava esimerkki etsii tekstistä kaikki esiintymät joko "Elixir" tai "Phoenix" ja korvaa ne molemmat sanalla "Elixir/Phoenix":
-
-```elixir
-Regex.replace(~r/Elixir|Phoenix/, "Elixir/Phoenix", "Tämä on esimerkki Elixir-koodista ja Phoenixista")
-```
-
-Tuloksena saadaan:
+Tämä haku löytäisi kaikki esiintymät sanoista "hello" tai "world" tekstissä.
 
 ```
-"Tämä on esimerkki Elixir/Phoenix-koodista ja Elixir/Phoenixista"
+Elixir -regex "(\\d+)\\s*(\\w+)"
 ```
 
-## Regular expressioneihin syvällisemmin
+Tämä haku löytäisi numeron ja sitä seuraavan sanan missä tahansa tekstissä. Esimerkiksi jos teksti olisi "123 hello" niin haku palauttaisi "123 hello".
 
-Regular expressionit ovat laaja aihe, ja niiden ymmärtäminen täysin vaatii paljon harjoitusta ja opiskelua. On tärkeää muistaa, että ne eivät ole vain rajoitettuja Elixiriin, vaan niitä voi käyttää useimmissa ohjelmointikielissä. Näiden ilmaisinten opetteleminen auttaa sinua parantamaan koodisi tehokkuutta ja tekemään tarkempia hakuja ja muutoksia tekstissä.
+Elixirin regular expressionit tukevat myös monia eri vaihtoehtoja ja metakaraktereita, jotka tekevät niiden käytöstä joustavaa ja voimakasta. Voit oppia lisää Elixirin regular expressioneista [täältä](https://hexdocs.pm/elixir/Regex.html).
 
-Muutamia hyviä lähteitä opiskeluun ovat:
+##Syväsukellus
 
-- [Elixir regular expression -opas](https://elixir-lang.org/getting-started/regex.html)
-- [Regex101](https://regex101.com/) -sivusto, joka tarjoaa käytännössä tapauksia ja selityksiä
-- [Elixirin dokumentaatio regular expressioneille](https://hexdocs.pm/elixir/Regex.html)
+Regular expressioneiden lukeminen ja ymmärtäminen voi olla vaikeaa aluksi, mutta harjoittelu tekee mestarin. On tärkeää ymmärtää, että regular expressionit ovat vain merkkijonoja, joten ne voivat tuntua vaikeilta luettavilta ja epämääräisiltä. Paras tapa oppia niitä on kokeilemalla erilaisia hakuja ja näkemällä, miten ne toimivat eri skenaarioissa.
+
+On myös hyödyllistä muistaa, että regular expressionien käyttö ei ole ainoa tapa käsitellä merkkijonoja Elixirissä. On olemassa muita vaihtoehtoja, kuten String-moduulin funktiot, jotka voivat joskus olla parempi ratkaisu ongelmaan.
 
 ## Katso myös
 
-- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/)
-- [Regular expressionien opiskelu: vinkkejä aloittelijoille](https://medium.com/@rachelhow/learning-regular-expressions-the-easy-way-129375450c7a)
-- [Video-opetusohjelma regex-opiskeluun Elixirin kanssa](https://www.youtube.com/watch?v=wz_-vbxa4NI)
+- [Elixirin virallinen Regex-dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
+- [Visual Regex: Interaktiivinen työkalu regexien harjoitteluun](https://www.debuggex.com/)
+- [Regex101: Sivusto, joka opettaa regexien rakentamista ja testaamista](https://regex101.com/)

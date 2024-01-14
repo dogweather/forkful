@@ -1,60 +1,48 @@
 ---
-title:    "Elm: Convertir una cadena a minúsculas."
+title:    "Elm: Convirtiendo una cadena a minúsculas"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Convertir una cadena de texto a minúsculas puede ser una tarea común en programación, especialmente cuando se trabaja con datos sensibles a mayúsculas y minúsculas. Aprender cómo hacerlo en Elm puede ser útil en diversas situaciones.
+En la programación, a menudo necesitamos manipular cadenas de texto para realizar ciertas tareas. Una de ellas es convertir una cadena de texto a minúsculas. Esto es útil para comparar cadenas de texto de manera más precisa o para formatear datos de manera consistente.
 
 ## Cómo hacerlo
 
-En Elm, podemos convertir una cadena de texto a minúsculas utilizando la función `String.toLower`.
+En Elm, podemos usar la función `String.toLower` para convertir una cadena de texto a minúsculas. Veamos un ejemplo:
 
-```
-Elm import String
+```Elm
+import String exposing (toLower)
 
-
-let cadena = "ELM ES FÁCIL DE APRENDER"
-
-String.toLower cadena
-
-// Output: "elm es fácil de aprender"
+resultado = toLower "ELM" 
 ```
 
-También podemos utilizar esta función en una cadena de texto introducida por el usuario, utilizando el paquete `elm/html` y el evento `onInput`.
+El resultado de este código será `"elm"`. Como se puede ver, la cadena de texto "ELM" ha sido convertida a minúsculas usando la función `String.toLower`.
 
-```
-Elm import Html exposing (..)
-import Html.Events exposing (..)
-import String
+También podemos convertir una variable que contenga una cadena de texto a minúsculas de la siguiente manera:
 
-main =
-  Html.div []
-    [
-      Html.input [ onInput Convertir ] [],
-      Html.div [][TextoConvertido]
-    ]
+```Elm
+import String exposing (toLower)
 
-Convertir input =
-  Modelo (String.toLower input)
+cadena = "eLM"
 
-TextoConvertido =
-  Html.text modelo.textoConvertido
+resultado = toLower cadena
 ```
 
-Al escribir en el campo de entrada, `onInput` activará la función `Convertir` que, al utilizar `String.toLower`, convertirá lo que se escriba en minúsculas. Luego, el texto convertido se mostrará en el `div` correspondiente con el atributo `Modelo`.
+En este caso, el resultado también será `"elm"`, ya que la función `toLower` puede recibir una variable como argumento.
 
 ## Profundizando
 
-Al utilizar `String.toLower`, es importante tener en cuenta que la función no solo convierte letras a minúsculas, sino que también puede cambiar la representación de caracteres Unicode y ASCII. Esto se debe a que Elm está basado en Unicode y utiliza la tabla de caracteres Unicode para convertir una cadena de texto a minúsculas.
+Cuando convertimos una cadena de texto a minúsculas, debemos tener en cuenta que esto solo funciona correctamente con los caracteres del alfabeto inglés. Es decir, si tenemos palabras con acentos o caracteres especiales, estos no serán convertidos a minúsculas.
 
-Además, hay casos en los que `String.toLower` puede no funcionar como se espera, como en el caso de letras acentuadas o caracteres especiales. Para evitar esto, se pueden utilizar diferentes paquetes como `elm-community/string-extra` o `charlitos64/elm-i18n`, que proporcionan funciones específicas para manejar estos casos.
+También es importante mencionar que esta función no altera la cadena de texto original, sino que devuelve una nueva cadena en minúsculas. Por lo tanto, si deseamos guardar el resultado en una variable, debemos asignarla a una nueva variable.
+
+En resumen, la función `String.toLower` es útil para convertir cadenas de texto a minúsculas, pero debemos ser conscientes de sus limitaciones y cómo manejar el resultado correctamente.
 
 ## Ver también
 
-- [Referencia de la función `String.toLower` en la documentación oficial de Elm](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Paquete `elm-community/string-extra` en la biblioteca de paquetes de Elm](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
-- [Paquete `charlitos64/elm-i18n` en la biblioteca de paquetes de Elm](https://package.elm-lang.org/packages/charlitos64/elm-i18n/latest/)
+- [Documentación oficial de la función `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Tutorial de Elm en español](https://github.com/lucacavallin/taller-elm)

@@ -1,38 +1,44 @@
 ---
-title:    "Ruby: Verifica dell'esistenza di una cartella"
+title:    "Ruby: Verifica dell'esistenza di una directory"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Una delle attività più comuni nella programmazione è la gestione dei file e delle directory. Una delle tante sfide che si incontrano è verificare l'esistenza di una directory, che può risultare utile per diverse ragioni. Vediamo insieme come fare questa operazione in Ruby.
+Controllare se una directory esiste è un'operazione fondamentale nella programmazione Ruby. È necessario verificare l'esistenza di una directory per garantire che il codice funzioni correttamente e per gestire eventuali errori che possono verificarsi.
 
-## Come fare
+## Come Fare
 
-È possibile verificare l'esistenza di una directory utilizzando il metodo `Dir.exist?` e passando come argomento il percorso della directory da controllare. Questo metodo restituirà `true` se la directory esiste e `false` in caso contrario.
-
-```
-# Verifica se la directory "documents" esiste
-Dir.exist?("documents")
-=> true
-```
-
-In alternativa, si può utilizzare il metodo `Dir.exist?` che accetta come argomento anche un oggetto `File` che rappresenta la directory. In questo modo è possibile controllare anche i permessi di lettura, scrittura ed esecuzione sulla directory.
+Per controllare se una directory esiste in Ruby, è possibile utilizzare il metodo `.exist?` del modulo `File`. Questo metodo restituisce un valore booleano (vero o falso) in base all'esistenza della directory specificata.
 
 ```
-directory = File.new("documents")
-# Verifica se la directory esiste ed è accessibile in lettura, scrittura ed esecuzione
-Dir.exists?(directory)
-=> true
+Ruby #
+
+require 'file'
+
+puts File.exist? ("/path/to/directory")  # restituisce true se esiste
+puts File.exist? ("/path/to/nonexistent/directory") # restituisce false se non esiste
+```
+
+Se si vuole controllare l'esistenza di una directory relativa al percorso del file in cui viene eseguito il codice, è possibile utilizzare il metodo `.expand_path` per ottenere il percorso assoluto della directory.
+
+```
+Ruby #
+
+require 'file'
+
+puts File.exist? (File.expand_path("../directory", __FILE__))  # controlla un percorso relativo rispetto al file corrente
 ```
 
 ## Approfondimento
 
-Oltre a questi metodi, ci sono alcune cose da tenere presente quando si tratta di verificare l'esistenza di una directory. Ad esempio, se il percorso specificato punta a un file anziché a una directory, il metodo restituirà comunque `false`. Inoltre, il metodo `Dir.exist?` non verifica l'esistenza della directory definitiva, ma solo di quella specifica nel percorso fornito. Se si desidera controllare l'esistenza della directory completa, è necessario utilizzare il metodo `File.exist?`.
+Quando si utilizza il metodo `File.exist?` per verificare l'esistenza di una directory, è importante tenere presente che il metodo non controlla solo la presenza di una directory, bensì anche di qualsiasi file o link che abbia lo stesso nome. Inoltre, è possibile che il permesso di scrittura sulla directory non sia correttamente configurato, quindi è importante gestire gli errori di permesso in modo appropriato nel proprio codice.
 
-# Vedi anche
+## Vedi Anche
 
-- [Documentazione sul metodo `Dir.exist?` di Ruby](https://ruby-doc.org/core-2.7.0/Dir.html#method-c-exist-3F)
-- [Documentazione sul metodo `File.exist?` di Ruby](https://ruby-doc.org/core-2.7.0/File.html#method-c-exist-3F)
+- [Documentazione ufficiale di Ruby su File.exist?](https://ruby-doc.org/core-2.7.0/File.html#method-c-exist-3F)
+- [Come controllare l'esistenza di una directory in Ruby](https://www.rubyguides.com/2015/10/check-if-a-file-directory-exists/)
+- [Gestione degli errori di permesso in Ruby](https://www.honeybadger.io/blog/handling-permission-denied-errors-in-ruby/)

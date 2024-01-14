@@ -1,48 +1,54 @@
 ---
-title:    "Ruby: Verificando se um diretório existe."
+title:    "Ruby: Verificando se um diretório existe"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que verificar se um diretório existe?
 
-Verificar a existência de um diretório é uma tarefa importante na programação, pois garante que o código funcione corretamente e evita erros durante a execução do programa. Também pode ser útil para determinar se um diretório específico precisa ser criado ou não.
+Se você é um programador iniciante, pode se perguntar por que é importante verificar se um diretório existe antes de realizar qualquer operação nele. Bem, a resposta é simples: verificar a existência do diretório pode evitar erros e falhas no seu código.
 
-## Como fazer a verificação em Ruby
+Imagine que você está desenvolvendo um programa que precisa ler um arquivo em um determinado diretório. Se o diretório não existe, seu código provavelmente irá falhar ou gerar um erro, o que pode ser frustrante e demorado para corrigir. Por isso, é sempre uma boa prática verificar se o diretório existe antes de realizar qualquer operação nele.
 
-Em Ruby, podemos verificar se um diretório existe usando o método `Dir.exist?`, que retorna um booleano `true` se o diretório existir ou `false` se não existir. Veja um exemplo abaixo:
+## Como verificar se um diretório existe em Ruby
 
-```ruby
-if Dir.exist?("meu_diretorio")
+Para verificar se um diretório existe em Ruby, podemos usar o método `Dir.exist?`, que retorna `true` se o diretório existir e `false` se não existir. Podemos utilizar uma estrutura condicional `if` para lidar com esses dois casos.
+
+```Ruby
+if Dir.exist?("caminho/do/diretório")
   puts "O diretório existe!"
+  #Código para realizar operações no diretório
 else
   puts "O diretório não existe."
+  #Código para criar o diretório ou lidar com o erro
 end
 ```
 
-O output deste código será `O diretório existe!` se o diretório chamado "meu_diretorio" existir no sistema. Caso contrário, será exibida a mensagem `O diretório não existe.`.
+Podemos também utilizar o método `File.directory?`, que funciona de maneira semelhante. A diferença é que esse método não aceita o caminho completo do diretório, apenas o nome dele.
 
-Outra opção é usar o método `Dir.empty?`, que retorna um booleano `true` se o diretório estiver vazio ou `false` se tiver algum arquivo dentro dele. Veja o código a seguir:
-
-```ruby
-if Dir.empty?("meu_diretorio")
-  puts "O diretório está vazio."
+```Ruby
+if File.directory?("diretório")
+  puts "O diretório existe!"
+  #Código para realizar operações no diretório
 else
-  puts "O diretório possui arquivos."
+  puts "O diretório não existe."
+  #Código para criar o diretório ou lidar com o erro
 end
 ```
 
-O output será `O diretório está vazio.` se não houver arquivos no diretório "meu_diretorio". Caso contrário, será `O diretório possui arquivos.`.
+## Profundidade na verificação da existência de diretórios
 
-## Profundidade sobre a verificação de diretório
+Ao verificar se um diretório existe, é importante ter em mente que o Ruby procura por ele apenas no diretório atual. Isso significa que se você especificar um caminho que começa com `./`, o Ruby irá procurar a partir do diretório em que seu código está sendo executado.
 
-Há casos em que é necessário verificar se um diretório existe e criar um novo diretório caso não exista. Podemos fazer isso usando o método `Dir.mkdir`, que cria um novo diretório com o nome especificado. No entanto, é importante lembrar que este método pode retornar um erro se o diretório já existir, então é recomendado incluir uma verificação prévia usando o método `Dir.exist?`.
+Por exemplo, se seu código está sendo executado na pasta `home/usuario` e você quer verificar a existência do diretório `documentos`, o caminho correto seria `./documentos`. Mas se você escrever apenas `documentos`, o Ruby irá procurar em `home/usuario/documentos`, o que pode resultar em um erro se o diretório estiver em outro local.
 
-Além disso, existem outros métodos úteis para manipulação de diretórios em Ruby, como `Dir.chdir`, que permite mudar o diretório atual; `Dir.entries`, que retorna uma lista de arquivos e pastas dentro de um diretório; e `Dir.delete`, que exclui um diretório e todo o seu conteúdo.
+Além disso, é importante verificar se o diretório existe antes de realizar qualquer operação nele, pois caso contrário, seu código pode gerar erros desnecessários.
+
+Por fim, é possível utilizar a gem `fileutils` para realizar operações em diretórios de forma mais segura e eficiente. Vale a pena dar uma olhada nos métodos disponíveis nesta gem.
 
 ## Veja também
-
-- [Documentação oficial do Ruby sobre o módulo `Dir`](https://ruby-doc.org/core-3.0.0/Dir.html)
-- [Tutorial sobre verificação de existência de diretórios em Ruby](https://www.rubyguides.com/2015/07/ruby-directory/)
-- [Vídeo tutorial sobre manipulação de diretórios em Ruby](https://www.youtube.com/watch?v=WhlYcNSZC7w)
+- [Documentação do método `Dir.exist?`](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exists-3F)
+- [Documentação do método `File.directory?`](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
+- [Documentação da gem `fileutils`](https://ruby-doc.org/stdlib-2.7.1/libdoc/fileutils/rdoc/FileUtils.html)

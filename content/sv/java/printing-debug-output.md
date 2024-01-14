@@ -1,53 +1,52 @@
 ---
 title:    "Java: Utskrift av felsökningsutdata"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Det finns många gånger inom programmering när vi behöver få en bättre förståelse av vad som händer i vårt program. Det kan vara för att hitta buggar eller för att förstå varför vårt program inte fungerar som det ska. Ett sätt att göra det är genom att skriva ut så kallad debug output i vårt program. Detta är en enkel men effektiv metod för att felsöka och förstå koden bättre.
+Att skriva ut debug-output är ett viktigt verktyg för utvecklare. Det ger en möjlighet att enkelt identifiera och lösa eventuella buggar eller fel i koden.
 
-# Så här gör man
+## Hur man gör
 
-För att skriva ut debug output i Java, används metoden `System.out.println()`. Detta kommer att skriva ut den angivna informationen i konsolen. Låt oss ta en titt på ett enkelt exempel:
+För att skriva ut debug-output i Java kan du använda metoden ```System.out.println()```. Detta kommer att skriva ut en sträng till konsolen, vilket kan vara användbart för att visa värden på variabler eller för att markera vissa steg i koden.
 
-```Java
-String name = "Johan";
-int age = 30;
-System.out.println("Namn: " + name);
-System.out.println("Ålder: " + age);
-```
-
-Resultatet av detta skulle vara följande:
-
-```
-Namn: Johan
-Ålder: 30
-```
-
-På detta enkla sätt kan vi visa information som vi kan använda för att felsöka vårt program. Det är också möjligt att skriva ut information om variabler inuti en kodsträng genom att använda sig av placeholders, som `String.format()`-metoden. Exempel:
+Här är ett enkelt exempel:
 
 ```Java
-String name = "Johan";
-int age = 30;
-System.out.println(String.format("Jag heter %s och är %d år gammal.", name, age));
+int age = 25;
+double weight = 65.5;
+System.out.println("Min ålder är " + age + " år och min vikt är " + weight + " kg.");
 ```
 
-Detta skulle producera samma resultat som det första exemplet.
+Detta kommer att skriva ut följande i konsolen:
 
-# Djupdykning
+```Min ålder är 25 år och min vikt är 65.5 kg.```
 
-Att använda debug output är en utmärkt metod för att förstå vad som händer i vårt program. Genom att skriva ut information om variabler och körningsnivåer kan vi enkelt spåra buggar eller identifiera felaktiga uppgifter. Detta är särskilt användbart vid att felsöka mer komplexa problem eller när vi arbetar med flera utvecklare på samma kod.
+Du kan också använda metoden ```System.out.format()``` för att formatera strängen innan den skrivs ut. Detta kan vara användbart när du vill visa värden med ett specifikt format, som till exempel med decimaler eller som en valuta.
 
-Det finns också möjlighet att styra utskriften av debug information genom att använda en loggningsramverk, som till exempel Log4j. Genom att använda sådana verktyg kan vi kontrollera när och var våra debug-utskrifter visas och även spara dem till en fil för senare användning.
+Här är ett exempel på hur du kan använda ```System.out.format()```:
 
-# Se även
+```Java
+double price = 59.99;
+System.out.format("Priset för produkten är %.2f kr.", price);
+```
 
-Även om debug output är en användbar metod så är det inte alltid den bästa lösningen för felsökning. Det är alltid bra att vara medveten om andra alternativ, som användning av en debugger eller att använda loggningsramverk. Här är några länkar där du kan läsa mer om dessa:
+Detta kommer att skriva ut följande:
 
-- [En enkel guide till felsökning med en debugger](https://www.journaldev.com/13639/debugging-java-applications-with-eclipse)
-- [En kort introduktion till Log4j](https://www.loggly.com/ultimate-guide/introduction-to-log4j/)
+```Priset för produkten är 59.99 kr.```
 
-Genom att känna till olika metoder för felsökning kan vi välja den som passar bäst för vårt specifika problem och på så sätt öka vår effektivitet som utvecklare.
+## Djupdykning
+
+När du använder debug-output är det viktigt att du bara skriver ut den information som faktiskt är relevant för att lösa problemet eller förstå koden. Att skriva ut för mycket information kan göra det svårt att hitta den information du letar efter och kan även påverka prestandan för din kod.
+
+En annan användbar funktion för debug-output är att skriva ut felmeddelanden. Genom att använda ```System.err.println()``` istället för ```System.out.println()``` kan du skapa ett tydligt felmeddelande som hjälper dig att hitta och åtgärda fel i din kod.
+
+## Se även
+
+- [Debugging in Java: A Step by Step Guide](https://www.baeldung.com/java-debugging)
+- [How to Write and Use Java Debug Logs](https://www.baeldung.com/java-debug-logging)
+- [Debugging Best Practices](https://medium.com/@gustavonalle/debugging-best-practices-422b72a17d05)

@@ -1,41 +1,49 @@
 ---
 title:    "Go: 문자열 소문자로 변환하기"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+본격적으로 코딩을 하기 전에 가장 많이 실수하는 것 중 하나가 입력 받은 문자열의 대소문자를 구분하지 않아서 발생하는 문제입니다. 이러한 실수를 방지하기 위해서는 문자열을 모두 소문자로 변환하는 과정이 필요합니다.
 
-문자열을 소문자로 변환하는 것의 이점은 일반적으로 대소문자 구분 없는 문자열 검색이나 비교를 수월하게 만들어줍니다.
+## 왜 변환해야 하는가?
 
-## 방법
+소문자로 변환할 경우 문자열을 비교할 때 대소문자를 구분하지 않아도 되기 때문에, 입력 받은 값과 프로그램에서 사용하는 값을 정확하게 비교할 수 있습니다. 또한, 대부분의 데이터베이스나 파일 시스템은 대소문자를 구분하지 않기 때문에, 일관성 있는 데이터를 처리하기 위해서도 필요합니다.
+
+## 변환하는 방법
+
+Go 언어에서는 strings 패키지에서 strings.ToLower() 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 아래의 예시를 참고해보세요.
 
 ```Go
-func toLowerCase(str string) string {
-    result := ""
-    for _, char := range str {
-        if char >= 'A' && char <= 'Z' {
-            result += string(char + 32)
-        } else {
-            result += string(char)
-        }
-    }
-    return result
-}
+package main
 
-fmt.Println(toLowerCase("Hello World"))
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	word := "CoNvErT"
+	fmt.Println("입력된 문자열:", word)
+	fmt.Println("대소문자 변환 결과:", strings.ToLower(word))
+}
 ```
 
-출력 결과:
+출력 결과는 다음과 같습니다.
 
-`hello world`
+```bash
+입력된 문자열: CoNvErT
+대소문자 변환 결과: convert
+```
 
-## 깊게 파헤치기
+## 깊이있는 정보
 
-Go에서 문자열을 소문자로 변환하는 방법은 여러 가지가 있지만, 가장 간단한 방법은 `if`문과 `for`문을 이용하는 것입니다. `string` 타입은 불변이기 때문에, 새로운 문자열을 만들기 위해 `rune`이라는 타입을 사용합니다. `rune`은 유니코드 문자를 표현하는 데 사용되는 타입으로, `for`문을 이용해 문자열을 순회하면서 각 문자를 `rune`타입으로 변환하고, 대문자라면 `+32`를 해서 소문자로 변환합니다. 그 외에는 그대로 `result`에 추가해 최종적으로 소문자로 변환된 문자열을 반환합니다.
+Go 언어에서는 문자열을 변경할 수 없는 immutable data type으로 정의되어 있습니다. 따라서, strings.ToLower() 함수는 문자열을 새로운 메모리 공간에 할당하여 변환된 값을 반환하는 것입니다. 또한, ASCII 문자만 변환되고, 유니코드 문자는 변환되지 않는 것을 알 수 있습니다.
 
-# 참고 자료
+## 같이 보기
 
-- [Effective Go – The Go Programming Language](https://golang.org/doc/effective_go.html#conversions)
-- [Strings, bytes, runes and characters in Go - Golang basics](https://www.golangprograms.com/golang-string-operations.html)
+- [Go 언어 공식 문서 - strings 패키지](https://golang.org/pkg/strings/)
+- [Golang Cafe - 문자열 변환](https://www.golang.cafe/blog/golang-string-functions.html#converting-string-case)
+- [코딩집중력 블로그 - Go 언어 문자열 처리](https://coding-artist.tistory.com/11)

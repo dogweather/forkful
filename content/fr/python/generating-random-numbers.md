@@ -1,55 +1,41 @@
 ---
 title:    "Python: Génération de nombres aléatoires"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La génération de nombres aléatoires est une technique couramment utilisée en informatique pour créer des simulations, des jeux ou des tests. En utilisant des algorithmes, nous pouvons obtenir une séquence de nombres sans aucun modèle apparent, ce qui peut être utile dans de nombreux cas.
+Générer des nombres aléatoires est une tâche courante dans la programmation. Que vous ayez besoin de créer des données de test, de simuler des événements aléatoires ou d'ajouter un élément de surprise à votre programme, la génération de nombres aléatoires est une compétence précieuse à posséder.
 
-## Comment Faire
+## Comment faire
 
-Voici un exemple de code Python pour générer 10 nombres aléatoires entre 1 et 100:
+La génération de nombres aléatoires est facile à faire en Python grâce à la bibliothèque intégrée `random`. Voyons un exemple simple de génération de 5 nombres aléatoires entre 1 et 10 :
 
 ```Python
-# Importer la librairie random
 import random
 
-# Boucle pour générer 10 nombres aléatoires
-for i in range(10):
-    # Utiliser la fonction randint de la librairie random
-    # pour générer un nombre entre 1 et 100
-    number = random.randint(1, 100)
-    # Afficher le nombre généré
-    print(number)
+for i in range(5):
+  print(random.randint(1, 10))
 ```
 
-Voici un exemple de sortie possible:
-
+Output :
 ```
-82
-17
-49
-93
-62
-41
-10
-39
-57
+3
+7
+9
 1
+5
 ```
 
-## Plongée en Profondeur
+## Plongée en profondeur
 
-Générer des nombres aléatoires peut sembler simple, mais en réalité, cela implique des calculs complexes et des algorithmes sophistiqués. Les nombres générés ne sont jamais réellement aléatoires, mais plutôt pseudorandomes, car ils sont déterminés par une graine (seed) qui peut être un nombre, une chaîne de caractères ou même une image. Cette graine est utilisée pour initialiser l'algorithme de génération de nombres aléatoires et garantir que la séquence de nombres obtenue sera toujours la même pour une même graine donnée.
+La fonction `randint()` de la bibliothèque `random` génère des nombres entiers aléatoires dans un intervalle donné. Mais saviez-vous qu'il existe d'autres fonctions pour générer des floats, des séquences aléatoires et même des choix aléatoires dans une liste ? La documentation officielle de Python a une section dédiée à la génération de nombres aléatoires pour en savoir plus sur ces différentes fonctions et leurs paramètres.
 
-Il existe plusieurs méthodes pour générer des nombres aléatoires en informatique, telles que la méthode de congruence linéaire et la méthode de génération basée sur le bruit blanc.
+## Voir aussi
 
-En utilisant correctement des algorithmes de génération de nombres aléatoires, nous pouvons obtenir des résultats fiables et réalistes pour nos simulations et jeux.
-
-## Voir Aussi
-
-- [Documentation officielle de la librairie random en Python](https://docs.python.org/fr/3/library/random.html)
-- [Article sur les nombres aléatoires en informatique](https://fr.wikipedia.org/wiki/Nombre_al%C3%A9atoire_%28informatique%29)
+- [Documentation Python sur la génération de nombres aléatoires](https://docs.python.org/fr/3/library/random.html)
+- [Article du blog Real Python sur la génération de nombres aléatoires en Python](https://realpython.com/python-random/)
+- [Vidéo YouTube d'une présentation sur la bibliothèque random en Python](https://www.youtube.com/watch?v=NqEvSrqg_Hc)

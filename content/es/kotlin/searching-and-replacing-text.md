@@ -1,41 +1,51 @@
 ---
 title:    "Kotlin: Buscando y reemplazando texto"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué buscar y reemplazar texto es importante
+## ¿Por qué buscar y reemplazar texto en Kotlin?
 
-Buscar y reemplazar texto es una habilidad esencial para cualquier programador. Esto te permite hacer cambios rápidos y eficientes en grandes cantidades de código, ahorrando tiempo y esfuerzo en comparación con hacer cambios manualmente.
+Buscar y reemplazar texto es una tarea común en todos los lenguajes de programación, y Kotlin no es una excepción. Esta técnica es útil para corregir errores, actualizar variables y realizar otras modificaciones en nuestro código de manera rápida y eficiente.
 
-## Cómo buscar y reemplazar texto en Kotlin
+## Cómo hacerlo en Kotlin
 
-Para buscar y reemplazar texto en Kotlin, puedes utilizar la función `replace()` en la clase `kotlin.String`. Esta función toma dos argumentos: la cadena de texto que deseas reemplazar y la cadena de texto con la que deseas reemplazarla.
+Para realizar una búsqueda y reemplazo de texto en Kotlin, podemos utilizar la función `replace()` que está disponible en la clase `String`. Esta función recibe dos parámetros: el texto que queremos reemplazar y el texto por el que lo queremos sustituir. A continuación, un ejemplo y su respectivo resultado:
 
-Por ejemplo:
-```
-val texto = "¡Hola mundo!"
-val resultado = texto.replace("mundo", "amigos")
-println(resultado)
-```
-Salida:
-```
-¡Hola amigos!
+```Kotlin
+val texto = "¡Hola Mundo!"
+val nuevoTexto = texto.replace("Hola", "Hello")
+
+println(nuevoTexto) // Resultado: ¡Hello Mundo!
 ```
 
-También puedes utilizar la función `replaceFirst()` si solo deseas reemplazar la primera aparición de la cadena de texto. O bien, puedes utilizar la función `replaceAfter()` para reemplazar todo lo que viene después de una determinada cadena de texto.
+En este ejemplo, utilizamos la función `replace()` para cambiar la palabra "Hola" por "Hello" en la variable `texto`.
 
-## Deep Dive en buscar y reemplazar texto
+## Un poco más profundo
 
-Además de las funciones mencionadas anteriormente, Kotlin también ofrece otras opciones para buscar y reemplazar texto. Por ejemplo, puedes utilizar expresiones regulares para realizar cambios en diferentes patrones de texto.
+La función `replace()` también acepta expresiones regulares como parámetros. Esto significa que podemos realizar búsquedas y reemplazos más complejos. Por ejemplo:
 
-También puedes utilizar la función `replaceChars()` para reemplazar caracteres específicos dentro de una cadena de texto. Esta función puede ser útil si deseas realizar cambios en un texto específico, como cambiar todas las vocales a mayúsculas.
+```Kotlin
+val texto = "123456789"
+val nuevoTexto = texto.replace("[0-5]".toRegex(), "X")
 
-En resumen, existen muchas opciones en Kotlin para buscar y reemplazar texto de manera eficiente y efectiva. ¡No dudes en explorar y encontrar la opción que mejor se adapte a tus necesidades!
+println(nuevoTexto) // Resultado: XXXXX6789
+```
+
+En este caso, utilizamos una expresión regular para reemplazar todos los números del 0 al 5 por la letra "X" en la variable `texto`.
+
+Otra técnica que podemos utilizar es la función `replaceFirst()` que, como su nombre indica, reemplaza solo la primera ocurrencia del texto que estemos buscando. Un ejemplo práctico podría ser:
+
+```Kotlin
+val texto = "Bienvenido a mi blog, bienvenido a mi vida"
+val nuevoTexto = texto.replaceFirst("bienvenido", "Welcome")
+
+println(nuevoTexto) // Resultado: Welcome a mi blog, bienvenido a mi vida
+```
 
 ## Ver también
 
-- [Documentación oficial de Kotlin sobre la función `replace()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/replace.html)
-- [Tutorial de programación en Kotlin](https://www.codecademy.com/learn/learn-kotlin)
-- [Uso de expresiones regulares en Kotlin](https://www.regular-expressions.info/kotlin.html)
+- [Documentación oficial de la función replace en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Expresiones regulares en Kotlin](https://blog.kotlin-academy.com/regular-expressions-in-kotlin-60aa0a8b94ff)

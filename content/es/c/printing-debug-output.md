@@ -1,52 +1,55 @@
 ---
-title:    "C: Impresión de resultados de depuración"
+title:    "C: Imprimiendo salida de depuración"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías imprimir el output de depuración?
+## Por qué
 
-Existe una gran cantidad de razones por las que un desarrollador puede querer imprimir el output de depuración en su programa de C. Puede ser útil para entender cómo se está ejecutando el código, identificar errores o simplemente para asegurarse de que todo está funcionando como se espera. En general, imprimir el output de depuración es una buena práctica para mejorar la eficiencia y precisión al escribir código en C.
+Si eres un programador principiante o incluso si ya llevas tiempo en el mundo de la programación, probablemente te hayas encontrado con el término "imprimir salida de depuración" o "printing debug output". Esto puede sonar un poco técnico e incluso abrumador, pero en realidad es una herramienta muy útil para mejorar tus habilidades de programación. En pocas palabras, imprimir salida de depuración es una forma de mostrar información en la consola o terminal durante el proceso de ejecución de tu programa. Esto puede ayudarte a entender mejor lo que está sucediendo dentro de tu código y encontrar posibles errores.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-Afortunadamente, imprimir el output de depuración en C es un proceso muy sencillo. En primer lugar, debes usar la función "printf" para imprimir la información que desees. Esta función toma dos argumentos: una cadena de caracteres que contiene el texto que deseas imprimir y los valores de las variables que deseas mostrar. Además, debes incluir la biblioteca "stdio.h" al principio de tu programa para poder utilizar la función "printf".
+La forma más común de imprimir salida de depuración es utilizando la función `printf()` en lenguaje de programación C. Esta función toma dos argumentos: un formato en el que quieres que se muestre la información (como una cadena de texto con ciertos símbolos de formato) y los valores que quieres mostrar. Por ejemplo, si quieres imprimir el valor de una variable `x`, puedes usar `printf("El valor de x es: %d", x);` Ten en cuenta que en este caso `%d` indica que se imprimirá un número entero.
 
-Un ejemplo simple de cómo imprimir el output de depuración sería el siguiente:
+A continuación, te mostramos un ejemplo de cómo imprimir salida de depuración en un programa sencillo que calcula el área de un triángulo:
 
-```
+```C
 #include <stdio.h>
 
-int main() {
-    int a = 10;
-    int b = 5;
-    printf("El valor de 'a' es %d y el valor de 'b' es %d", a, b);
-    return 0;
+int main()
+{
+  float base = 5;
+  float altura = 3;
+  float area = (base * altura) / 2;
+  
+  printf("La base del triángulo es: %f\n", base);
+  printf("Su altura es: %f\n", altura);
+  printf("Por lo tanto, el área es: %f\n", area);
+  
+  return 0;
 }
-
 ```
 
-Este código producirá el siguiente output:
+Al ejecutar este programa, deberías ver lo siguiente en la consola:
 
 ```
-El valor de 'a' es 10 y el valor de 'b' es 5
+La base del triángulo es: 5.000000
+Su altura es: 3.000000
+Por lo tanto, el área es: 7.500000
 ```
 
-También puedes imprimir el output de depuración utilizando la función "fprintf". Esta función es similar a "printf" pero te permite imprimir en un archivo en lugar de en la pantalla. Esto puede ser útil si estás trabajando con programas que requieren una gran cantidad de output de depuración y no quieres que se muestre en la pantalla.
+Como puedes ver, la salida de depuración nos muestra los valores de las variables `base`, `altura` y `area` en cada paso del proceso. Esto puede ser muy útil cuando estás tratando de corregir errores en tu programa o simplemente quieres verificar que tus cálculos sean correctos.
 
-## Profundizando en el output de depuración
+## Profundizando
 
-Además de simplemente imprimir valores de variables, también puedes utilizar el output de depuración para mostrar información adicional sobre el estado del programa. Por ejemplo, puedes usar la función "printf" para imprimir mensajes de error o para mostrar el flujo de ejecución del programa.
+Ahora que sabes cómo imprimir salida de depuración con `printf()`, es importante mencionar que también hay otras formas de hacerlo en lenguajes de programación como Java o Python. Por ejemplo, en Java puedes utilizar el método `println()` de la clase `System`, mientras que en Python puedes usar la función integrada `print()`. Cada lenguaje tiene su propia forma de imprimir salida de depuración, así que asegúrate de consultar la documentación correspondiente a tu lenguaje de elección.
 
-Además, puedes utilizar la función "assert" para imprimir información de depuración en caso de que una expresión booleana sea falsa. Esto es especialmente útil para identificar errores y prevenir que el programa continúe ejecutándose si algo no está funcionando correctamente.
-
-Otra técnica común es utilizar una variable de entorno para activar o desactivar la impresión de debug output en el programa. Esto puede ser útil en situaciones en las que no quieres imprimir el output de depuración en la versión final de tu programa, pero sí quieres tener la opción de activarlo cuando sea necesario.
+También es importante mencionar que imprimir demasiada salida de depuración puede ralentizar tu programa y hacerlo menos eficiente. Por lo tanto, es importante utilizarlo de manera estratégica y en áreas donde realmente lo necesites.
 
 ## Ver también
 
-Aquí hay algunos recursos adicionales que pueden ser útiles para aprender más sobre la impresión de debug output en C:
-
-- [Documentación oficial sobre la función "printf"](https://www.cplusplus.com/reference/cstdio/printf/)
-- [Tutorial sobre cómo imprimir la información de depuración en C](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
-- [Ejemplos de uso de la función "fprintf"](https://www.geeksforgeeks.org/fprintf-in-c/)
+- [Debugging for beginners: 10 tips to get you started](https://www.freecodecamp.org/news/debugging-for-beginners-10-tips-to-get-you-started/)
+- [The Power of Debugging: An Introduction to Print Statements](https://www.digitalocean.com/community/tutorials/the-power-of-debugging-an-introduction-to-print-statements)

@@ -1,48 +1,41 @@
 ---
-title:    "Clojure: Satunnaislukujen generointi"
+title:    "Clojure: Sattumanvaraisten numeroiden generointi"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jos olet ohjelmoija tai haluat oppia ohjelmointia, saatat törmätä tilanteisiin, joissa tarvitset satunnaisesti generoituja numeroita. Esimerkiksi simulaatioissa tai tietokilpailupeleissä tarvitset lukuja, jotka eivät ole ennalta määrättyjä. Tämän vuoksi taito generoida satunnaisia lukuja on hyödyllinen taito jokaiselle ohjelmoijalle.
+Randomin numeroiden generoiminen on tärkeää ohjelmoinnissa, sillä se mahdollistaa pseudosatunnaisen tiedon luomisen. Tämä voi olla hyödyllistä esimerkiksi peleissä, arvontojen toteuttamisessa tai testitietojen generoinnissa.
 
 ## Miten
 
-Satunnaisluvut voidaan generoida Clojurella käyttämällä funktiota ```random```, joka hyväksyy parametrina muuttujan ja palauttaa siihen liittyvän satunnaisen luvun.
-
 ```Clojure
-(def number (random 10)) 
-;; Palauttaa satunnaisluvun väliltä 0 - 9
+(import '[java.util Random])
+
+(def r (Random.))
+
+; Yksittäisen satunnaisen numeron generointi
+(.nextInt r)
+
+; Satunnaisen numeron generointi tiettynä väliltä
+(.nextInt r 10)
 ```
 
-Voit myös generoida tietyn määrän satunnaisia lukuja käyttämällä ```repeat```-funktiota yhdessä ```random```-funktion kanssa:
-
-```Clojure
-(repeat 5 (random 100))
-;; Palauttaa viisi satunnaista lukua väliltä 0 - 99
+```
+9 ; esimerkki yksittäisen satunnaisen numeron kanssa
+7 ; esimerkki välillä 0-10 olevan numeron kanssa
 ```
 
-Voit myös antaa ```random```-funktiolle parametreina haluamasi ala- ja ylärajan satunnaislukujen generoimiseksi:
+## Syväsukellus
 
-```Clojure
-(random 50 100)
-;; Palauttaa satunnaisluvun väliltä 50 - 99
-```
+Satunnaisen numeroiden generoimisen perusperiaate on samanlainen useimmissa ohjelmointikielissä. Clojuressa voidaan käyttää `Random` luokkaa, joka mahdollistaa satunnaisten lukujen generoimisen. `.nextInt` metodin avulla voidaan määrittää haluttu numeron alue, jolta satunnainen numero generoidaan.
 
-## Sukella syvemmälle
-
-Clojuressa on myös mahdollista generoida erilaisia satunnaislukuja erilaisilla jakaumilla käyttämällä "```probabilistic```"-kirjastoa. Voit asentaa tämän kirjaston käyttämällä Clojurensa sisäänrakennettua työkalua "```deps.edn```" tai Leiningenin tai Bootin avulla. Tämän jälkeen voit käyttää esimerkiksi "```probabilistic.gaussian```"-funktiota palauttamaan satunnaisluvun normaalijakaumasta:
-
-```Clojure
-(use 'probabilistic.gaussian)
-(normal 50 10)
-;; Palauttaa satunnaisluvun, jonka keskiarvo on 50 ja hajonta on 10
-```
+Kiinnostavaa on se, että satunnaiset numerot eivät oikeasti ole täysin satunnaisia, vaan ne luodaan pseudosatunnaisena sekvenssinä tietyn pseudosatunnaisen numerogeneraattorin avulla. Tämä tarkoittaa sitä, että mikäli käytetään samaa pseudosatunnaisen numerogeneraattoria ja samalla alkuarvolla, saadaan aina sama numerosekvenssi.
 
 ## Katso myös
 
-- [Clojuren viralliset dokumentit random-funktiosta](https://clojuredocs.org/clojure.core/random)
-- [Probabilistic-kirjaston dokumentaatio](https://github.com/clojure-numerics/probabilistic)
+- [The Clojure Cheat Sheet](https://clojure.org/guides/learn/syntax#_language_syntactic_elements)
+- [The Java Tutorials - Random Numbers](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)

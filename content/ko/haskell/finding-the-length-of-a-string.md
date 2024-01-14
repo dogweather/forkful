@@ -1,61 +1,30 @@
 ---
 title:    "Haskell: 문자열의 길이 찾기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-
-문자열의 길이를 찾는 것은 Haskell 프로그래밍 언어를 학습하고 개발하는 데 중요한 부분입니다. 이 기능을 이해하면 다양한 유형의 문자열 데이터를 처리할 수 있으며, 프로그래밍 능력을 향상시킬 수 있습니다.
+Haskell은 함수형 프로그래밍 언어로써 많은 사람들이 놀라운 새로운 개념과 기술을 배우고 싶어합니다. 그 중 하나가 문자열의 길이를 찾는 것입니다! 이 작업을 하는 방법을 배워 더 많은 도전적인 프로그래밍을 할 수 있도록 해주세요.
 
 ## 어떻게
 
-"```Haskell
-length :: [a] -> Int
-```"
+이 작업을 수행하는 가장 간단한 방법은 `length` 함수를 사용하는 것입니다. ```Haskell
+length "한글" -- 출력: 2
+length "hello" -- 출력: 5
+```
 
-Haskell에서 문자열의 길이를 찾는 함수는 "length" 함수입니다. 이 함수는 문자열을 입력으로 받아 해당 문자열의 길이를 정수로 반환합니다. 예를 들어, "Hello, world!"의 길이는 "12"가 됩니다.
+이 함수는 문자열의 길이를 반환하는 것으로 검색할 수 있는 다른 것들과 비슷합니다.
 
-"```Haskell
-length "Hello, world!" 
--- 출력 결과: 12 
-```"
+## 깊이 파고들기
 
-또 다른 예로서, 이번에는 공백이 포함된 문자열을 사용해 보겠습니다.
+Haskell은 기본적으로 이미 정의된 `length` 함수를 제공하며, 인자로 들어오는 값에 따라 길이를 어떻게 계산하는지 다릅니다. 일반적인 문자열의 경우, 실제로 문자의 개수를 세어 길이를 계산합니다. 하지만 리스트나 튜플의 경우, 각 요소의 개수를 세어 길이를 반환합니다. 이렇게 다양한 데이터 타입에 대해서 `length` 함수를 사용할 수 있다는 것이 Haskell의 장점 중 하나입니다.
 
-"```Haskell
-length "안녕하세요, 세계!" 
--- 출력 결과: 11 
-```"
-
-또 다양한 유형의 문자열을 사용해 보면서 "length" 함수가 어떻게 작동하는지 살펴보세요.
-
-## 심층 분석 
-
-"length" 함수는 입력으로 "a" 타입의 리스트를 요구합니다. Haskell에서는 문자열을 단순히 문자의 리스트로 처리하기 때문에, "length" 함수는 문자열을 입력 받아 해당 문자열의 길이를 반환합니다. 이를테면, 다음과 같은 방식으로 리스트의 길이를 계산할 수 있습니다.
-
-"```Haskell
-length [1,2,3,4] -- 리스트의 길이는 4가 됩니다.
-length ['H', 'e', 'l', 'l', 'o'] -- 문자열 "Hello"의 길이는 5가 됩니다.
-```"
-
-또한, 문자열의 길이를 계산할 때 재귀 함수를 사용할 수도 있습니다. 이를테면 다음과 같이 구현할 수 있습니다.
-
-"```Haskell
-strLength :: String -> Int
-strLength [] = 0 -- 공백 문자열인 경우 길이는 0
-strLength (x:xs) = 1 + strLength xs -- 문자열을 순회하면서 길이를 계산
-```"
-
-위의 함수는 입력으로 받은 문자열의 첫 번째 요소를 제외하고 계속해서 재귀적으로 호출하여 마지막에는 더이상 요소가 없는 경우 0을 반환합니다. 따라서 문자열의 길이를 계산할 수 있습니다. 
-
-## 관련 정보 
-
-다른 Haskell 기능에 대한 정보를 얻으려면 다음 링크를 참조하세요.
+## 관련 자료들
 
 * [Haskell 공식 문서](https://www.haskell.org/documentation/)
-* [Haskell 커뮤니티 포럼](https://www.haskell.org/community/)
-* [Haskell 온라인 강좌](http://learnyouahaskell.com/)
-* [Haskell 무료 책](https://haskellbook.com/)
+* [Learn You a Haskell](http://learnyouahaskell.com/)
+* [Haskell Tutorial](https://www.tutorialspoint.com/haskell/index.htm)

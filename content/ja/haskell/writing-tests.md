@@ -1,77 +1,50 @@
 ---
 title:    "Haskell: テストの書き方"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか？
+## なぜ？
 
-プログラミング言語として、Haskellは静的型付けや強力な型システムを備えています。しかし、それでも私たちはバグを作り出してしまいます。テストは、私たちのコードが意図した通りに動くかどうかを確認するための重要な手段です。テストを書くことで、より信頼性の高いコードを作ることができます。
+プログラミングにおいて、テストは非常に重要です。コードを書く際には、何度もバグを確認する必要があります。しかし、テストを書くことで、コードのバグを事前に発見し、修正することができます。これにより、プログラミングの効率性が向上し、品質の高いコードを作成することができます。
 
-## テストの書き方
+## 方法
 
-テストを書くには、テストフレームワークとしてよく知られるHspecを使用することができます。Hspecを使用すると、テストスイートを簡単に作成することができます。以下のコードを参考にしてください。
+テストを書くには、Haskellの組み込みのテスティングツールである`QuickCheck`を使用するのが一般的です。例えば、以下のように書くことができます。
 
 ```Haskell
--- テストスイートをインポート
-import Test.Hspec
+-- 整数を受け取り、それが偶数かどうかをチェックする関数
+isEven :: Int -> Bool
+isEven x = x `mod` 2 == 0 
 
--- 同じファイルに実装した関数をインポート
-import Lib (add, subtract)
+-- テストのためのプロパティ
+-- すべての偶数を入力すると、偶数が出力されることを確認する
+prop_even :: Int -> Bool
+prop_even x = isEven x == True 
 
--- describe関数を使ってテストスイートを定義
--- describeの第1引数にはテスト対象の関数やモジュールの名前を指定
-describe "add" $ do
-
-  -- it関数を使ってテストケースを定義
-  -- itの第1引数にはテストケースの説明を、第2引数には期待する結果を指定
-  it "3と5を足した結果は8になるべき" $ do
-    add 3 5 `shouldBe` 8
-
-  it "10と(-2)を足した結果は8になるべき" $ do
-    add 10 (-2) `shouldBe` 8
-
-describe "subtract" $ do
-
-  it "5から3を引いた結果は2になるべき" $ do
-    subtract 5 3 `shouldBe` 2
-
-  it "3から10を引いた結果は(-7)になるべき" $ do
-    subtract 3 10 `shouldBe` (-7)
-
-
--- テストの実行
--- main関数を実行することで、テストスイートが実行される
-main :: IO ()
-main = hspec $ describe "テストスイート全体" $ do
-  it "add関数のテストを実行" $ do
-    hspec (describe "add" $ return ())
-  it "subtract関数のテストを実行" $ do
-    hspec (describe "subtract" $ return ())
+-- テストを実行する関数
+checkEven = quickCheck prop_even
 ```
 
-上記のコードを実行すると、以下のような結果が表示されるはずです。
+実行してみると、以下のような結果が得られるはずです。
 
 ```
-テストスイート全体
-  add関数のテストを実行
-    add
-      3と5を足した結果は8になるべき
-      10と(-2)を足した結果は8になるべき
-  subtract関数のテストを実行
-    subtract
-      5から3を引いた結果は2になるべき
-      3から10を引いた結果は(-7)になるべき
-
-Finished in 0.0014 seconds
-6 examples, 0 failures
++++ OK, passed 100 tests.
 ```
 
-これで、テストが正しく書かれているかどうかを簡単に確認することができます。
+これで、入力されたすべての偶数が正しくチェックされたことがわかります。
 
-## テストを書くときのポイント
+## 深い掘り下げ
 
-テストを書く際には、以下のポイントに注意するとより効果的なテストを書くことができます。
+テストを書くにはさまざまな方法がありますが、より詳細な情報を求める場合は、HUnitやTastyなどのさまざまなライブラリも使用することができます。これらのライブラリを使用することで、より高度なテストを作成することができます。
 
-- テストケースは可能な限り網羅的に書く。例えば、ユーザーの入力が空の場合や特殊な文字を含む場合など、想定外のケースもテストする。
+また、テスト駆動開発（TDD）と呼ばれるアプローチもあります。これは、コードを書く前にテストを書き、そのテストを通過するようにコードを書くという方法です。この方法を使用することで、プログラマーが自分の書いたコードをより自信を持って修正することができます。
+
+## 参考リンク
+
+- [HaskellのQuickCheckのドキュメント](https://hackage.haskell.org/package/QuickCheck)
+- [Tastyのドキュメント](https://hackage.haskell.org/package/tasty)
+- [HUnitのドキュメント](https://hackage.haskell.org/package/HUnit)
+- [テスト駆動開発（TDD）の解説](https://www.geeksforgeeks.org/test-driven-development-tdd/)

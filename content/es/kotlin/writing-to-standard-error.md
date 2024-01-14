@@ -1,60 +1,43 @@
 ---
 title:    "Kotlin: Escribiendo en el error estándar"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida de errores en Kotlin?
+## Por qué escribir a la salida de error en Kotlin
 
-Hay varias razones por las que un programador querría escribir a la salida estándar de errores en Kotlin. Una de ellas es para depurar y solucionar problemas en su código, ya que al escribir a la salida estándar de errores se pueden ver los errores y excepciones que ocurran en tiempo de ejecución. Esto permite al programador identificar y corregir posibles problemas en su código.
+Escribir a la salida de error es una práctica común en la programación en Kotlin para ayudar en la depuración de código y para mejorar la experiencia del usuario al mostrar mensajes de error más claros.
 
-Otra razón para escribir a la salida estándar de errores es para generar logs y registros de actividades. Al escribir a la salida estándar de errores, se pueden registrar eventos importantes en la ejecución de un programa, lo que puede ser útil para rastrear errores o para tener un registro de las acciones realizadas en el código.
+## Cómo hacerlo
 
-## Cómo escribir a la salida de errores en Kotlin
-
-Es muy sencillo escribir a la salida estándar de errores en Kotlin utilizando la función `System.err.println()`. Esta función toma un argumento de tipo `String` y lo imprime en la salida estándar de errores.
-
-Para utilizar esta función en Kotlin, simplemente escriba `System.err.println()` seguido del texto que desea imprimir entre paréntesis. Por ejemplo:
+Para escribir a la salida de error, se utiliza la función `System.err.println()`. Esta función tomará una cadena como argumento y escribirá esa cadena en la salida de error. Aquí hay un ejemplo de cómo usarlo:
 
 ```Kotlin
 fun main() {
-    System.err.println("Este es un mensaje de error")
+    val numero = 10
+
+    if (numero > 5) {
+        System.err.println("El número es mayor que 5")
+    }
 }
 ```
 
-La salida de este código se vería así:
+La salida de este código será:
 
-```Kotlin
-Este es un mensaje de error
+```
+El número es mayor que 5
 ```
 
-## Profundizando en la escritura a la salida de errores en Kotlin
+## Profundizando más
 
-Además de la función `System.err.println()`, también se puede utilizar la propiedad `error` del objeto `System.out` para escribir a la salida estándar de errores. Esta propiedad devuelve un flujo de salida que se puede utilizar para imprimir mensajes de error. Un ejemplo de cómo utilizarlo sería:
+Al escribir a la salida de error, es importante tener en cuenta que esta salida se muestra en rojo en la consola, lo que la diferencia de la salida estándar. Esto puede ser útil para identificar rápidamente mensajes de error en un gran volumen de texto. Además, también puede utilizar la función `System.err.print()` si desea escribir la cadena sin un salto de línea al final.
 
-```Kotlin
-fun main() {
-    System.err.error.println("Mensaje de error utilizando la propiedad 'error'")
-}
-```
+También es importante mencionar que, aunque es una práctica común, escribir a la salida de error debe ser utilizado con moderación y solo para mensajes de error relevantes. No se recomienda usarlo para imprimir información general o mensajes de depuración, ya que esto puede afectar negativamente el rendimiento del código.
 
-La salida de este código sería la misma que en el ejemplo anterior.
+## Ver también
 
-También se puede personalizar la salida de errores utilizando la clase `PrintWriter`. Esta clase proporciona más opciones para la impresión de mensajes de error, como por ejemplo, la posibilidad de escribir a un archivo o a un flujo de salida diferente. Un ejemplo de cómo utilizar esta clase sería:
-
-```Kotlin
-fun main() {
-    val printWriter = PrintWriter("archivo.txt")
-    printWriter.println("Mensaje de error personalizado")
-    printWriter.close()
-}
-```
-
-La salida de este código sería un archivo llamado "archivo.txt" con el mensaje de error dentro de él.
-
-## Vea también
-
-- [Documentación de Kotlin: System Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/index.html)
-- [Escribiendo a la Salida Estándar de Errores en Java](https://www.baeldung.com/java-write-to-standard-error)
-- [Utilizando PrintWriter en Kotlin](https://stackoverflow.com/questions/37592535/is-there-a-way-to-write-to-the-system-error-output-in-kotlin)
+- [Documentación de Kotlin sobre salida de error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/system.err.html)
+- [Blog sobre cómo manejar excepciones en Kotlin](https://www.baeldung.com/kotlin-exceptions)
+- [Guía de estilo de código de Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)

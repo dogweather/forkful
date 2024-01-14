@@ -1,59 +1,48 @@
 ---
 title:    "Arduino: Pobieranie bieżącej daty"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pobrać aktualną datę?
+## Dlaczego
 
-Pobieranie aktualnej daty w programowaniu Arduino może być niezbędne w różnych projektach. Jest to przydatne w przypadku tworzenia datowników, kalendarzy oraz innych urządzeń, które muszą uwzględniać aktualną datę. W niektórych przypadkach może być także potrzebne do synchronizacji zewnętrznego sprzętu lub serwera.
+Często informacja o aktualnej dacie jest niezbędna do wykonywania projektów związanych z elektroniką. Na przykład może to być potrzebne do uruchomienia alarmu o określonej godzinie lub wyświetlania aktualnej daty na ekranie. W tym artykule omówimy jak w prosty sposób uzyskać aktualną datę na Arduino.
 
-## Jak to zrobić?
-
-Do pobrania aktualnej daty w Arduino możemy użyć funkcji `millis()`, która zwraca liczbę milisekund, które minęły od uruchomienia płytki. Dzięki temu możemy wyliczyć aktualną datę na podstawie ustalonej daty początkowej.
+## Jak to zrobić
 
 ```Arduino
-unsigned long startMillis;
-unsigned long currentMillis;
+#include <RTClib.h>
+
+RTC_DS1307 rtc;
+DateTime now;
 
 void setup() {
-  //ustawienie daty początkowej na sekundę
-  startMillis = millis() / 1000;
+  Serial.begin(9600);
+  rtc.begin();
+
+  // Uzyskanie aktualnej daty i godziny z RTC
+  now = rtc.now();
+
+  // Wyswietlenie daty w formacie dd/mm/yyyy
+  Serial.println(String(now.day()) + "/" + String(now.month()) + "/" + String(now.year()));
+
+  // Wyswietlenie godziny w formacie hh:mm:ss
+  Serial.println(String(now.hour()) + ":" + String(now.minute()) + ":" + String(now.second()));
 }
 
 void loop() {
-  //wyliczenie aktualnej sekundy
-  currentMillis = millis() / 1000 - startMillis;
-
-  //przetworzenie na aktualną datę
-  int currentYear = 2020;
-  int currentMonth = 9;
-  int currentDay = 1 + (currentMillis / 86400);
-
-  //wyświetlenie na serial monitorze
-  Serial.print("Dzisiejsza data:");
-  Serial.print(currentDay);
-  Serial.print("/");
-  Serial.print(currentMonth);
-  Serial.print("/");
-  Serial.println(currentYear);
 }
-
-```
-### Przykładowe wyjście:
-```
-Dzisiejsza data: 1/9/2020
 ```
 
-## Wnikliwa analiza
+Przede wszystkim musimy zainstalować bibliotekę RTClib, która pozwala na obsługę modułu RTC (Real Time Clock). Następnie, korzystając z funkcji `.begin()`, inicjalizujemy moduł RTC. W celu uzyskania aktualnej daty i godziny, używamy funkcji `.now()`, która zwraca obiekt klasy `DateTime`. Następnie możemy wyświetlić aktualną datę i godzinę w formacie, który wybierzemy. W tym przykładzie wyświetlamy je w formatach `dd/mm/yyyy` oraz `hh:mm:ss`.
 
-Istnieje kilka innych sposobów na pobranie aktualnej daty w Arduino. Jednym z popularniejszych jest użycie zewnętrznych modułów RTC (Real-Time Clock), które posiadają wbudowane baterie i są w stanie wyświetlać aktualną datę niezależnie od zasilania płytki. Niektóre płytki Arduino, takie jak Arduino Nano czy Arduino Uno, posiadają także wbudowany oscylator krystaliczny, który może być użyty do wyliczenia aktualnej daty.
+## Deep Dive
 
-W przypadku bardziej zaawansowanych projektów, może być konieczne również uwzględnienie strefy czasowej oraz zmian czasu zimowego i letniego, co może być wyzwaniem w programowaniu.
+Moduł RTC jest wyposażony w baterię, która pozwala na zachowanie aktualnej daty i godziny nawet w przypadku zaniku zasilania. W związku z tym, nie musimy ustawiać daty i godziny za każdym razem po ponownym uruchomieniu Arduino. Moduł RTC może również działać jako timer, umożliwiając np. wykonywanie określonych czynności w ustalonych odstępach czasu.
 
 ## Zobacz także
 
-- [Poradnik: Pobieranie daty i czasu z modułu RTC](https://www.whadda.com/how-to-sync-an-arduino-with-a-real-time-clock-using-rtc-module/)
-- [Dokumentacja Arduino: Funkcja millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- [Tutorial: Przetwarzanie informacji o czasie](https://www.arduino.cc/en/Tutorial/DateTime)
+- Dokumentacja biblioteki RTClib: https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit
+- Poradnik dotyczący korzystania z modułu RTC: https://arduinogetstarted.com/tutorials/arduino-real-time-clock-ds1307-tutorial

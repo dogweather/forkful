@@ -1,20 +1,38 @@
 ---
 title:    "Clojure: המרת מחרוזת לאותיות קטנות"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-Tifroa: Mlula 1-2 mishkalot bneshima *ma* mishummekh o yitatev l'gaia limahar cel hmune lseifir.
+## מדוע 
 
-Bmah: Mishaot bksizot o mncbe mumhara binafisi "```Clojure...```" mimenot tnusa.
+ישנם מספר סיבות למה אנשים יעסקו בהמרת מחרוזות לאותיות קטנות. פעמים רבות, זה עשוי להיות חלק מתהליך מורכב יותר אשר משתמש במחרוזות כדי ליצור נתונים מבניים, או פשוט כדי להקל על טיפול בנתונים.
 
-Magfla dvtat: Mlula mahtat rshma vjra lseifir. "```Clojure (lower-case "SHALOM")```" tmgir "shalom".
+## איך לעשות זאת 
 
-Motad tar`vut: Anaknu jention dipisot, anal youyidim lifsheil celudim lmlula mahtat. Bkisafa shfela tchamesh (5) berkot. Edu kfuon jugaunz momhara nimlmatum. Cmhpish im yahid kforak yamahara iote.
+מחרוזות יכולות להיות מורכבות מרצפים של אותיות קטן או גדולות. כדי להמיר מחרוזת לאותיות קטנות, ניתן להשתמש בפונקציה "to-lower-case" של Clojure. להלן דוגמאות של איך להשתמש בפונקציה זו וכיצד הפלט יראה כאשר מיישמים את הפונקציה על מחרוזות שונות:
 
-See Also:
+```Clojure
+(to-lower-case "HELLO")
+; פלט: "hello"
 
-- [Clojure Docs: lower-case](https://clojuredocs.org/clojure.core/lower-case)
-- [Clojure Style Guide: Naming Conventions](https://guide.clojure.style/#_naming_conventions)
-- [Medium: Converting a String to Lower Case in Clojure](https://medium.com/@lopezmh/converting-a-string-to-lower-case-in-clojure-9b2860e2feae)
+(to-lower-case "WoRlD")
+; פלט: "world"
+```
+
+כמו כן, אם ברצונך להמיר את כל המחרוזת לאותיות קטנות בפעם אחת, ניתן להשתמש בפונקציה "lower-case" ולהעביר את המחרוזת כפרמטר, כפי שניתן לראות בדוגמה הבאה:
+
+```Clojure
+(lower-case "THIS IS A SENTENCE")
+; פלט: "this is a sentence"
+```
+
+## טביעה עמוקה 
+
+כשמשתמשים בפונקציות להמרת מחרוזות לאותיות קטנות, כדאי להיווכח שהתוכן של המחרוזת הוא באמת משמעותי בעברית. יתכן שפעם יהיה חלק מטקסט קריאה אנגלי או אחר שמתעבר על ידי שינוי האותיות. כמו כן, בסיבוב הפונקציות של הדברים, עשויות להיות פונקציות אחריות לפירוש שונה על בסיס המשך מרכיבים במחרוזת או נתונים מתורגמים.
+
+## ראה גם 
+
+למידע נוסף על מחרוזות בשפת Clojure, ניתן לעיין במדר

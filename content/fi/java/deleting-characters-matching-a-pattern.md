@@ -1,40 +1,47 @@
 ---
-title:    "Java: Mallia vastaavien merkkien poistaminen"
+title:    "Java: Poistetaan kaavan mukaiset merkkijonot"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joissakin tilanteissa on tarpeen poistaa tietyn kuvion mukaiset merkit tekstin joukosta. Tämä voi vaikuttaa vaivalloiselta tai aikaa vievältä tehtävältä, mutta onneksi Java-ohjelmoinnissa on käytettävissä tehokas tapa automatisoida tämä prosessi.
+On monia syitä miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa ohjelmointitehtävässä. Ehkä haluat puhdistaa merkkijonon ennen sen käyttämistä tai tunnistaa tietynlaisia merkkejä tietokannassa. Tässä blogipostissa keskitymme opettamaan, kuinka voit poistaa merkkejä tietyn kaavan perusteella käyttämällä Java-ohjelmointikieltä.
 
 ## Kuinka tehdä
 
-Javan String-luokka tarjoaa useita hyödyllisiä metodeja merkkijonojen manipulointiin. Yksi näistä on `replaceAll()`-metodi, joka ottaa ensimmäisenä parametrinaan säännöllisen lausekkeen ja toisena parametrina korvaavan merkkijonon. Alla on esimerkki koodista, joka poistaa kaikki numerot merkkijonosta:
+Poistaminen karaktereita käyttäen kaavaa Java-ohjelmointikielellä voidaan tehdä monella tavalla, mutta tässä esittelemme yksinkertaisimman tavan käyttää `String.replaceAll()`-metodia. Tämä metodi korvaa tekstissä esiintyvät merkit, jotka vastaavat annettua kaavaa, uudella merkkijonolla.
+
+Esimerkiksi, kun haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
 
 ```Java
-String teksti = "ABC123DEF456";
-teksti = teksti.replaceAll("[0-9]", "");
-System.out.println(teksti);
+String s = "Tämä on 1 esimerkki 2 poistettavista numeroista!";
+s = s.replaceAll("[0-9]", "");
+System.out.println(s);
 ```
 
-Tulostus olisi seuraava:
+Tulostus olisi:
 
 ```Java
-ABCDEF
+Tämä on esimerkki poistettavista numeroista!
 ```
 
-Tässä esimerkissä `[0-9]` on säännöllinen lauseke, joka vastaa kaikkia numeromerkkejä. `""` taas on tyhjä merkkijono, joka toimii korvaavana merkkijonona.
+## Syvällinen tutkimus
 
-## Syvempi sukellus
+`replaceAll()`-metodi perustuu säännöllisiin lausekkeisiin, jotka määrittelevät tietynlaisen kaavan merkkijonon poistamiseen. Tässä muutamia esimerkkejä säännöllisistä lausekkeista, joita voit käyttää `replaceAll()`-metodissa:
 
-Säännölliset lausekkeet ovat tehokas työkalu merkkijonojen hallintaan. Niiden avulla voit tarkasti määritellä minkä tahansa kaavion tai kuviomerkinnän ja poistaa sen tarvittaessa. Voit myös käyttää erilaisia metakaraktereja, kuten `.` tai `*`, joiden avulla voit tehdä entistä monimutkaisempia kuvioita vastaavia hakuja.
+- `[A-Z]` poistaa kaikki isot kirjaimet merkkijonosta
+- `[a-z]` poistaa kaikki pienet kirjaimet merkkijonosta
+- `[0-9]` poistaa kaikki numerot merkkijonosta
+- `[^\w\s]` poistaa kaikki erikoismerkit merkkijonosta
+- `is` poistaa kaikki esiintymät tekstin "is"
 
-On myös hyvä pitää mielessä, että `replaceAll()`-metodi palauttaa uuden merkkijonon, joten alkuperäinen merkkijono säilyy muuttumattomana. Jos haluat muuttaa alkuperäistä merkkijonoa, voit käyttää `replace()`-metodia, joka toimii samalla tavalla, mutta muuttaa suoraan alkuperäistä merkkijonoa tarvittaessa.
+Kun käytät säännöllisiä lausekkeita, voit myös käyttää `String[] split()`-metodia, joka pilkkoo merkkijonon kaavaa vastaavien merkkien kohdalta ja palauttaa taulukon merkkejä.
 
 ## Katso myös
 
-- [Java String-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Säännölliset lausekkeet](https://www.regular-expressions.info/)
-- [replaceAll() vs. replace()](https://stackoverflow.com/questions/5881409/string-replace-vs-string-replaceall)
+- [Säännölliset lausekkeet Java-ohjelmoinnissa](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
+- [Java String-luokan dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [String.replaceAll() Java-ohjelmoinnissa](https://www.geeksforgeeks.org/string-replaceall-java-examples/)

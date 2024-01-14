@@ -1,37 +1,54 @@
 ---
-title:    "C: Extraindo Substrings"
+title:    "C: Extração de subcadeias de caracteres"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em linguagem C?
+## Por que extrair substrings é importante?
 
-Extrair substrings, ou trechos de uma string, pode ser útil em diversas situações em programação. Pode ser necessário manipular uma string para obter apenas uma parte dela, ou até mesmo para separar informações específicas de um texto maior. Além disso, a extração de substrings pode ser uma técnica importante em algoritmos de processamento de texto.
+Uma substring é uma parte de uma string maior. Em programação, é comum precisar extrair certas informações de uma string específica. Isso pode ser útil para fazer manipulações de dados ou para analisar informações em um determinado formato. Extrair substrings é uma tarefa comum em programação e pode ser muito útil em diversas situações.
 
-## Como extrair substrings em linguagem C?
+## Como extrair substrings em C
 
-Extrair substrings em C é uma tarefa simples, mas requer conhecimento básico de strings e ponteiros. Um exemplo de código que extrai uma substring de uma string seria o seguinte:
+Em C, existem algumas funções que podem ser utilizadas para extrair substrings de uma string maior. A seguir, vamos ver alguns exemplos de código e sua saída correspondente.
 
 ```C
-char str[] = "Esta é uma string de teste.";
-char sub[10];
-int inicio = 5;
-int tamanho = 4;
-strncpy(sub, str + inicio, tamanho);
-printf("A substring é %s\n", sub);
+#include<stdio.h>
+
+int main() {
+    char str[] = "Programação em C";
+    char sub[5];
+    
+    // Extraindo os primeiros 5 caracteres da string
+    strncpy(sub, str, 5);
+    printf("A substring é: %s \n", sub);
+    
+    // Extraindo a parte da string iniciando na posição 7
+    char *ptr = str + 7;
+    printf("A substring é: %s \n", ptr);
+    
+    return 0;
+}
+
+```
+Saída:
+```
+A substring é: Progr
+A substring é: em C
 ```
 
-Neste exemplo, a função `strncpy` é usada para copiar 4 caracteres da string original, a partir do índice 5, para a substring `sub`. O resultado da impressão seria "substring é uma ".
+Nesse exemplo, estamos utilizando a função `strncpy()` para copiar os primeiros 5 caracteres da variável `str` para a variável `sub`. Também estamos utilizando a forma de ponteiro para extrair a parte da string iniciando na posição 7.
 
-## Mergulho Profundo: Mais informações sobre a extração de substrings
+## Explorando mais sobre a extração de substrings
 
-Para entender melhor a extração de substrings em linguagem C, é importante compreender como as strings são armazenadas na memória. Em C, uma string é um array de caracteres finalizado com o caracter nulo `\0`. Assim, ao utilizar ponteiros e índices, é possível acessar trechos específicos de uma string e copiá-los para outro local na memória.
+Além da função `strncpy()`, existem outras funções que podem ser utilizadas para extrair substrings em C. Uma delas é a função `strtok()`, que pode ser utilizada para dividir uma string em várias partes, delimitadas por um caractere específico. Também é possível utilizar a função `strchr()`, que permite encontrar o primeiro caractere específico dentro de uma string e utilizar sua posição como ponto de início para extrair a substring.
 
-Além da função `strncpy`, também existem outras funções para manipular strings, como `strncat` e `strncat`, que podem ser úteis na extração de substrings. É importante observar que algumas dessas funções podem não incluir o `\0` no final da substring, por isso é necessário adicioná-lo manualmente caso a substring seja utilizada como uma string independente.
+A extração de substrings também é uma tarefa importante em expressões regulares, uma ferramenta poderosa para manipulação de strings. É possível utilizar funções como `regcomp()` e `regexec()` para encontrar padrões dentro de uma string e extrair as informações desejadas.
 
 ## Veja também
 
-- [Documentação oficial da função strncpy em C](https://www.cplusplus.com/reference/cstring/strncpy/)
-- [Como manipular strings em linguagem C](https://www.programiz.com/c-programming/c-strings)
-- [Tutorial sobre ponteiros e arrays em C](https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html)
+- [Tutoriais de C da DevMedia](https://www.devmedia.com.br/tutoriais/c/)
+- [Documentação do C na linguagem C](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/built-in-types/string)
+- [Tutorial de expressões regulares em C](https://www.tutorialspoint.com/c_standard_library/c_function_regexec.htm)

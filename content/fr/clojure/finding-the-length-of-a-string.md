@@ -1,35 +1,55 @@
 ---
 title:    "Clojure: Trouver la longueur d'une chaîne de caractères"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # Pourquoi
-La longueur d'une chaîne est une mesure très utile en programmation. Elle peut nous aider à manipuler et à traiter des chaînes de caractères de manière plus efficace. Dans cet article, nous allons explorer comment trouver la longueur d'une chaîne en utilisant Clojure.
 
-# Comment Faire
-Tout d'abord, nous devons comprendre que les chaînes de caractères sont représentées comme des séquences de caractères en Clojure. Cela signifie que nous pouvons utiliser des fonctions telles que `count` pour trouver la longueur d'une chaîne.
+Parfois, lors de l'écriture de code Clojure, il est nécessaire de trouver la longueur d'une chaîne de caractères. Cela peut sembler être une tâche simple, mais cela peut être utile dans de nombreuses situations telles que la manipulation de données, la validation de saisie utilisateur ou même l'affichage de résultats.
 
+# Comment faire
+
+Il existe plusieurs façons de trouver la longueur d'une chaîne de caractères en Clojure. Dans cet article, nous allons en explorer quelques-unes en utilisant des exemples de code dans des blocs de code ```Clojure ...```.
+
+1. Utiliser la fonction `count`
+
+```Clojure
+(count "Bonjour") ; Retourne 7
+(count "") ; Retourne 0
 ```
-Clojure
-(count "Bonjour")
+
+2. Utiliser l'opérateur `count`
+
+```Clojure
+(= 6 (count "Hello")) ; Retourne true
+(= 0 (count "")) ; Retourne true
 ```
-La sortie de ce code sera `7` car la chaîne "Bonjour" contient 7 caractères.
 
-Une autre façon de trouver la longueur d'une chaîne est d'utiliser la fonction `length`. Cette fonction est spécifique aux chaînes de caractères et nous donne le même résultat que `count`.
+3. Utiliser la fonction `length`
 
+```Clojure
+(length "Bonjour") ; Retourne 7
+(length "") ; Retourne 0
 ```
-Clojure
-(length "Bonjour")
+
+4. Utiliser la méthode `.length` sur un objet String Java
+
+```Clojure
+(.length "Hello") ; Retourne 5
+(.length "") ; Retourne 0
 ```
-Encore une fois, la sortie sera `7`.
 
-# Plongée en Profondeur
-Il est important de noter que la longueur d'une chaîne est différente de son index. Par exemple, pour la chaîne "Bonjour", la longueur est de 7 mais l'index du dernier caractère est de 6. Cela est dû au fait que les indices commencent à 0 en Clojure.
+# Plongée en profondeur
 
-De plus, la fonction `count` fonctionne également sur d'autres types de données en plus des chaînes de caractères. Elle peut être utilisée sur des listes, des vecteurs, des ensembles, etc. pour trouver la taille de ces structures de données.
+Si nous regardons de plus près la fonction `count`, nous pouvons voir qu'elle utilise un protocole appelé `Counted` qui fournit une implémentation de la fonction `count` pour tout type qui implémente ce protocole. Cela signifie que nous pouvons utiliser la fonction `count` non seulement sur des chaînes de caractères, mais aussi sur d'autres types tels que des listes, des vecteurs et des sets.
 
-# Voir Aussi
-- Documentation Clojure sur les chaînes de caractères : https://clojuredocs.org/clojure.string
-- Tutoriel sur les structures de données en Clojure : https://lispcast.com/learn-clojure-data-structures/
+Une autre chose intéressante à noter est que la méthode `.length` sur un objet String Java utilise une approche différente pour trouver la longueur d'une chaîne de caractères, en utilisant le mécanisme de reflection Java. Cette méthode peut être plus efficace pour les chaînes de caractères plus longues, mais elle n'est pas spécifique à Clojure et n'utilise pas les fonctionnalités propres du langage.
+
+# Voir aussi
+
+- [Documentation officielle de la fonction `count`](https://clojuredocs.org/clojure.core/count)
+- [Documentation officielle du protocole `Counted`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.protocols/Counted)
+- [Guide de référence des opérateurs en Clojure](https://clojure.org/reference/protocols#counted)

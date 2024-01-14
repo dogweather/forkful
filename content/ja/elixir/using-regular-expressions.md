@@ -1,44 +1,58 @@
 ---
-title:    "Elixir: 正規表現を使用する"
+title:    "Elixir: 正規表現の利用"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-正規表現を使用する理由は何でしょうか？正規表現を使うことで、文字列データをより柔軟に操作することができます。特定のパターンに一致する文字列を検索したり、置換したりすることで、データの加工や分析をより効率的に行うことができます。
+
+正規表現を使用することのメリットは、テキスト処理をより簡単に、より柔軟に行うことができることです。正規表現を使用することで、特定のパターンに一致するテキストを検索したり、置換したりすることができます。
 
 ## 使い方
 
-正規表現を使用するために、Elixirでは`Regex`モジュールを使用します。まずは、単純な文字列パターンを作成してみましょう。
+まず、正規表現のためのElixirライブラリであるRegexをロードする必要があります。
 
 ```Elixir
-pattern = ~r/Hello/
+import Regex
 ```
 
-上記のコードでは、`~r`を使用することで正規表現パターンを定義しています。`Hello`という文字列に一致するパターンを作成しました。次に、文字列をチェックしてみましょう。
+次に、正規表現パターンを定義します。例えば、"Elixir"という文字列を含むテキストを検索する正規表現パターンは、次のようになります。
 
 ```Elixir
-Regex.match?(pattern, "Hello, world!")
+pattern = ~r/Elixir/
 ```
 
-出力結果は`true`となります。「Hello」が含まれているため、正規表現パターンに一致すると判定されました。さらに、文字列の一部を置換することも可能です。
+パターンが定義されたら、`match?`関数を使用してテキストがパターンに一致するかどうかをチェックすることができます。
 
 ```Elixir
-Regex.replace(pattern, "Hello, world!", "Hi")
+match? pattern, "I love Elixir!" # => true
+match? pattern, "Ruby is my favorite language." # => false
 ```
 
-出力結果は`"Hi, world!"`となります。正規表現パターンに一致する部分が「Hi」に置換されました。
+パターンに一致した部分文字列を取得するには、`match`関数を使用します。
+
+```Elixir
+match pattern, "Elixir is amazing." # => %Regex.MatchData{...}
+```
+
+また、正規表現を使用してテキストの一部を置換することもできます。
+
+```Elixir
+replace "I love Ruby and Python.", ~r/Ruby|Python/, "Elixir" # => "I love Elixir and Elixir."
+```
 
 ## 深堀り
 
-正規表現をより高度に使用するためには、メタキャラクターや量指定子の知識が必要です。メタキャラクターとは、特殊な意味を持つ文字のことで、例えばドット`.`は任意の1文字にマッチします。量指定子とは、マッチする文字列の数を制御するための記号で、`+`は1つ以上の繰り返しを表します。
+正規表現を使用する際に注意しなければならないことがいくつかあります。まず、正規表現パターン内で使用できる特殊文字やメタ文字には制限があります。また、パターンのマッチングはデフォルトで大文字と小文字を区別するため、文字列を比較する前に大文字や小文字に統一する必要があります。
 
-正規表現では、パターンを囲むカッコ`()`を使用することで、部分マッチを行うことができます。これを使って、複雑なパターンを作成することができます。
+また、正規表現はパフォーマンスに影響を与える可能性があります。パターンが複雑で長いテキストを検索する場合は、効率的なアルゴリズムが必要です。
 
-また、Elixirにはパターンマッチングと呼ばれる機能があります。正規表現を使用することで、文字列だけでなく様々なデータ構造に対してもパターンマッチングが行えるようになります。
+## 関連情報
 
-## See Also
+See Also (参考資料):
 
-- [Elixirの正規表現ドキュメント](https://hexdocs.pm/elixir/Regex.html)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
+- [ElixirSchoolの正規表現チュートリアル](https://elixirschool.com/ja/lessons/basics/pattern-matching/)
+- [ElixirのRegexドキュメンテーション](https://hexdocs.pm/elixir/Regex.html)
+- [正規表現チートシート](https://www.debuggex.com/cheatsheet/regex/elixir)

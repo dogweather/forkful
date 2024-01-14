@@ -1,50 +1,69 @@
 ---
-title:    "Ruby: Ekstrakcja podciągów"
+title:    "Ruby: Wyciąganie podciągów"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto wykorzystać wyciąganie podłańcuchów w Ruby?
+# Dlaczego warto używać wyciągania substrings w programowaniu Ruby?
 
-Wyciąganie podłańcuchów to kluczowa umiejętność w programowaniu Ruby, która pozwala na manipulowanie i przetwarzanie tekstu. Dzięki temu możemy precyzyjnie wybierać fragmenty słów czy znaków, które są nam potrzebne. Jest to szczególnie przydatne w przypadku analizowania i przetwarzania dużych zbiorów tekstu, na przykład w przypadku tworzenia aplikacji internetowych czy analizy danych.
+Wyciąganie substrings jest niezwykle przydatną funkcją w programowaniu Ruby, która pozwala na wyodrębnianie określonych części tekstu z ciągów znaków. Może to być przydatne w wielu sytuacjach, np. podczas pracy z danymi wejściowymi lub podczas tworzenia aplikacji webowych. W tym artykule dowiesz się, dlaczego warto nauczyć się używać tej funkcji i jak zrobić to w prosty sposób.
 
-## Jak to zrobić?
+## Jak wykorzystać wyciąganie substrings w programowaniu Ruby?
 
-Wyciąganie podłańcuchów w Ruby jest bardzo proste i odbywa się przy użyciu kilku funkcji. Aby wyciągnąć podłańcuch, musimy znać jego pozycję lub indeks w ciągu znaków. Następnie możemy wykorzystać funkcję `slice`, `[]` lub `slice!`, aby wyciąć interesujący nas fragment. Dzięki temu możemy wybierać konkretne znaki, wyrazy lub nawet zdania.
+Aby użyć funkcji wyciągania substrings w języku Ruby, wystarczy użyć metody `slice` lub `[]` z odpowiednimi parametrami. Ważne jest również przypisanie wyniku do zmiennej lub wyświetlenie go w konsoli za pomocą metody `puts`.
 
-Przykładowy kod:
-```Ruby
-name = "Kasia"
-puts name[0] # Wypisze "K"
-puts name[1..3] # Wypisze "asi"
-puts name.slice(2..-1) # Wypisze "sia"
+Przykładowe użycie metody `slice`:
+
+```
+# Tworzymy zmienną tekstową
+text = "Witaj w świecie Ruby!"
+
+# Wyciągamy pierwszych 5 liter z ciągu znaków
+puts text.slice(0, 5)
+# Output: Witaj
+
+# Wyciągamy ostatnie 8 liter z ciągu znaków
+puts text.slice(-8, 8)
+# Output: Ruby!
 ```
 
-Output:
+Przykładowe użycie metody `[]`:
+
 ```
-K
-asi
-sia
+# Tworzymy zmienną tekstową
+text = "Coding to jest super!"
+
+# Wyciągamy pierwsze 6 liter z ciągu znaków
+puts text[0, 6]
+# Output: Coding
+
+# Wyciągamy fragment tekstu pomiędzy 11 a 16 znakiem
+puts text[11...16]
+# Output: jest
 ```
 
-## Głębszy zanurzenie
+## Głębsze zagadnienia wyciągania substrings
 
-Wyciąganie podłańcuchów może być również wykorzystywane do bardziej zaawansowanych zadań, takich jak zastępowanie fragmentów tekstu czy wyodrębnianie liczb lub dat. Możemy także łączyć różne funkcje, aby uzyskać pożądany efekt. Na przykład, możemy wykorzystać funkcję `gsub` do zastąpienia konkretnego fragmentu tekstu innym, a następnie wykorzystać funkcję `split` do podzielenia tekstu na wyrazy.
+Metody `slice` i `[]` pozwalają również na wykorzystanie wyrażeń regularnych w celu wyciągnięcia jeszcze bardziej precyzyjnych fragmentów tekstu. Można również użyć dodatkowych argumentów np. `downcase` lub `upcase` w celu zmiany wielkości liter w wynikowym ciągu.
 
-Przykładowy kod:
-```Ruby
-text = "Dzisiaj jest piękna pogoda!"
-puts text.gsub("piękna", "zła").split(" ").slice(2,3) # Wypisze ["zła", "pogoda!"]
+```
+# Wykorzystanie wyrażenia regularnego
+text = "Kodowanie jest super!"
+
+puts text.slice(/\w+/)
+# Output: Kodowanie
+
+# Użycie argumentów
+puts text[1, 2].upcase
+# Output: O D
 ```
 
-Output:
-```
-zła pogoda!
-```
+Warto również zaznaczyć, że metoda `slice` pozwala na odnoszenie się do konkretnego znaku w ciągu znaków za pomocą jego indeksu. Natomiast `[]` daje większe możliwości dzięki wykorzystaniu różnych parametrów, np. wyrażeń regularnych. Warto więc przetestować obie metody i wybrać tę, która najlepiej pasuje do danego przypadku użycia.
 
 ## Zobacz także
 
-- [Dokumentacja Ruby: Wyciąganie podłańcuchów](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice)
-- [10 przykładów wyciągania podłańcuchów w Ruby](https://www.rubyguides.com/2015/05/working-with-strings-in-ruby/)
-- [Wyciąganie podłańcuchów w praktyce - artykuł na Medium](https://medium.com/@jesse_harold/understanding-string-slicing-in-ruby-5be35d892790)
+- Dokumentacja Ruby o metodach `slice` i `[]`: https://ruby-doc.org/core-2.6.3/String.html#method-i-slice
+- Przykładowe zadania z wyciągania substrings: https://www.codewars.com/kata/search/ruby?q=substring
+- Kurs programowania w języku Ruby: https://www.codecademy.com/learn/learn-ruby

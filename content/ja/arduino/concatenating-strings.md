@@ -1,36 +1,52 @@
 ---
-title:    "Arduino: 文字列を連結する"
+title:    "Arduino: 文字列の連結"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ？
-文字列の結合を行う理由は何でしょう？Arduinoプログラミングをする際に文字列結合が必要になることがあります。例えば、センサーからのデータを表示する際に、固定のテキストと合わせて表示するために文字列を結合する必要があります。
+# なぜ、文字列をつなげるのか？
 
-## 方法
-Arduinoでは、文字列結合のために```strcat()```という関数があります。この関数は、2つの文字列を結合し、新しい結合された文字列を返します。以下の例をご覧ください。
+C++言語で使用される、文字列をつなげるとは、2つ以上の文字列を合わせて1つの新しい文字列を作ることです。文字列をつなげることで、複数のデータを統合してより複雑なプログラムを作ることができます。また、Arduinoでは、文字列をつなげることでシリアルモニターにデータを表示させたり、データの送受信にも使用することができます。
+
+# つなげ方の手順
+
+Arduinoでは、文字列をつなげるために連結演算子「+」を使用します。下記のような例で、2つの文字列をつなげてシリアルモニターに表示させてみましょう。
 
 ```Arduino
-// 文字列の定義
-char str1[20] = "Hello";
-char str2[20] = "Arduino";
+String str1 = "Hello";
+String str2 = "World";
 
-// 文字列の結合
-char result[40];
-strcat(result, str1);
-strcat(result, str2);
-
-// 結果の出力
+String result = str1 + str2; 
+// Hello Worldという文字列が結果として表示される
 Serial.println(result);
-
-// 出力結果：HelloArduino
 ```
 
-## ディープダイブ
-文字列結合には、他にも便利な関数があります。例えば、```sprintf()```関数は、複数の変数を結合した文字列を作成することができます。また、Arduinoでは、文字列結合するための便利なライブラリがありますので、調べてみることもオススメです。
+このように、連結演算子を使用することで複数の文字列を簡単につなげることができます。また、文字列の前後に数字や変数を組み合わせることも可能です。下記の例では、「Hello1」や「Hello2」のように、変数と文字列を結合させて表示しています。
 
-## 関連リンク
-- [Arduino sprintf()関数の使用方法](https://qiita.com/taruwealth/items/3165f45fefac2da8ebba)
-- [Arduinoプログラミング入門 - 文字列編](https://www.arduino.cc/en/Tutorial/String)
-- [Arduinoプログラミングにおける配列とポインタの扱い方](https://www.petitmonte.com/robot/howto_string.html)
+```Arduino
+String str = "Hello";
+int num = 1;
+
+String result1 = str + num; 
+// Hello1という文字列が結果として表示される
+Serial.println(result1);
+
+num++; // numの値を1増やして2にする
+String result2 = str + num; 
+// Hello2という文字列が結果として表示される
+Serial.println(result2);
+```
+
+# 深く掘り下げる
+
+Arduinoでは、Stringクラスに用意された関数を使用することで、より高度な文字列の操作ができます。例えば、substring()関数を使用することで、ある範囲にある文字列を取り出したり、indexOf()関数を使用することで、特定の文字列が含まれる位置を取得したりすることができます。
+
+また、文字列の操作にはメモリの使用量にも注意する必要があります。文字列をつなげるたびに、新しいメモリ領域が必要となり、メモリの枯渇やプログラムの動作が遅くなる可能性があります。そのため、必要以上に文字列をつなげることは避けるようにしましょう。
+
+# 今後も参考にしてほしいリンク
+
+- Stringクラスの詳細: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- 文字列のつなげ方について詳しく学ぶ: https://www.arduino.cc/en/Tutorial/StringConcatenation
+- Stringクラスの関数一覧: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/

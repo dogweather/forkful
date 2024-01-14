@@ -1,49 +1,39 @@
 ---
 title:    "Go: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Odczytywanie argumentów wiersza poleceń jest nieodłączną częścią wielu programów. Jest to nie tylko przydatne, ale także niezbędne w niektórych przypadkach. W tej krótkiej instrukcji dowiesz się, jak odczytać argumenty wiersza poleceń w języku Go i wykorzystać je w swoich projektach.
+Zapisywanie i odczytywanie argumentów wiersza poleceń jest niezbędną umiejętnością w programowaniu w Go. Pozwala to na bardziej interaktywne i spersonalizowane uruchomienie programu oraz uproszczenie procesu testowania i debugowania. W tym wpisie dowiecie się, dlaczego warto poznać tę funkcjonalność i jak ją zaimplementować w swoim kodzie.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest zaimportowanie pakietu `os` w celu uzyskania dostępu do funkcji do odczytywania argumentów wiersza poleceń. Następnie, wewnątrz funkcji `main`, użyj funkcji `os.Args`, która zwraca tablicę stringów z wszystkimi argumentami podanymi przy uruchomieniu aplikacji.
+Aby odczytywać argumenty wiersza poleceń w języku Go, używamy wbudowanej biblioteki `flag`. Najpierw importujemy ją w naszym kodzie przy użyciu polecenia `import "flag"`, a następnie tworzymy zmienne, do których będą przypisane odczytane argumenty. Możemy to zrobić za pomocą funkcji `flag.String()` dla zmiennych typu string, `flag.Int()` dla zmiennych typu int itp. Ważne jest, aby ustawić wartość domyślną, którą odczytamy, jeśli nie zostanie podany żaden argument. Następnie wywołujemy funkcję `flag.Parse()` po wszystkich deklaracjach zmiennych, aby odczytać i przypisać odpowiednie argumenty. Poniżej znajduje się przykładowy kod, który odczytuje dwa argumenty wiersza poleceń `name` i `age`.
 
 ```Go
-import "os"
+import "flag"
 
 func main() {
-    args := os.Args
+    name := flag.String("name", "Anonymous", "Person's name")
+    age := flag.Int("age", 0, "Person's age")
+    flag.Parse()
 
-    // przetwarzanie argumentów tutaj
+    fmt.Println("Hello,", *name, "! You are", *age, "years old.")
 }
 ```
 
-Dzięki temu, możesz odwoływać się do pojedynczych argumentów za pomocą indeksów, np. `args[0]` to nazwa programu, a `args[1]` to pierwszy argument wiersza poleceń. Możesz również użyć pętli `for` do iteracji przez całą tablicę argumentów.
+Aby uruchomić ten kod z argumentami `John` i `27`, należy wpisać w konsoli `go run main.go -name John -age 27`. Wynikiem powinno być wyświetlenie wiadomości `Hello, John! You are 27 years old.`.
 
-```Go
-for i, arg := range args {
-    fmt.Printf("Argument #%d: %s\n", i, arg)
-}
-```
+## Głębsza analiza
 
-Możesz również wyświetlić aktualną liczbę argumentów używając funkcji `len` w następujący sposób:
-
-```Go
-argsCount := len(args)
-fmt.Printf("Liczba argumentów: %d\n", argsCount)
-```
-
-## Deep Dive
-
-Dla bardziej zaawansowanych potrzeb, warto wiedzieć, że argumenty wiersza poleceń są przechowywane jako slice (rodzaj zmiennej tablicowej) w programie Go, co oznacza że możesz manipulować nimi tak, jak wszelkimi innymi slice'ami. Możesz na przykład użyć funkcji `append` do dodawania nowych argumentów do listy, lub `delete` do usuwania istniejących. Możesz także korzystać z innych funkcji z pakietu `os` w celu uzyskania dodatkowych informacji o środowisku uruchamiania aplikacji.
+W powyższym przykładzie wykorzystaliśmy funkcję `flag.String()` i `flag.Int()`, ale w zależności od typu argumentów, możemy użyć innych funkcji, takich jak `flag.Bool()` czy `flag.Float()` (lub ich odpowiedników z literą `Var` na końcu, co pozwala na przypisywanie wartości do już istniejących zmiennych). Jeśli chcemy, aby argument był wymagany, możemy użyć fukcji `flag.StringVar()` zamiast `flag.String()`, a także ustawić flagę `flag.Usage` z własną funkcją, aby wyświetlić użycie argumentów, jeśli zostanie podane niepoprawne wywołanie. Warto również pamiętać, że podejście opisane powyżej jest jednym ze sposobów odczytywania argumentów wiersza poleceń w języku Go, a istnieją inne biblioteki i rozwiązania, np. pakiet `doc`, które oferują inne funkcje i podejścia.
 
 ## Zobacz też
 
-- [Dokumentacja pakietu os w języku Go](https://golang.org/pkg/os/)
-- [Wykorzystanie flag do odczytywania argumentów wiersza poleceń w języku Go](https://gobyexample.com/command-line-flags)
-- [Porównanie odczytywania argumentów wiersza poleceń w różnych językach programowania](https://www.linux.com/news/different-ways-parsing-command-line-arguments-python-and-go/)
+- [Dokumentacja pakietu `flag`](https://golang.org/pkg/flag/)
+- [Dokumentacja pakietu `doc`](https://golang.org/pkg/doc/)
+- [Przykładowy kod wykorzystujący bibliotekę `flag`](https://play.golang.org/p/KfJmlY6IlYr)

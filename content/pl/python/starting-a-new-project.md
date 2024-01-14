@@ -1,45 +1,54 @@
 ---
 title:    "Python: Rozpoczynając nowy projekt"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zacząć nowy projekt w programowaniu może być nie tylko przyjemnym wyzwaniem, ale także świetnym sposobem na rozwijanie swoich umiejętności. Dzięki zbudowaniu własnego projektu możesz nauczyć się nowych technik, rozwinąć swoją wiedzę i stworzyć coś, co może być użyteczne dla innych.
+Pisanie kodu może początkowo wydawać się trudne i przerażające, ale stworzenie nowego projektu w języku Python może być bardzo satysfakcjonujące i wzbogacające doświadczenie. Niezależnie od tego, czy jesteś początkującym programistą, czy doświadczonym ekspertem, rozpoczęcie nowego projektu może pomóc w rozwijaniu umiejętności, wyzwalać kreatywność i dostarczać wiele satysfakcji.
 
-## Jak zacząć
+## Jak to zrobić
 
-Pierwszym krokiem w rozpoczęciu nowego projektu jest wybranie języka programowania. W tym przypadku, skupimy się na Pythonie - popularnym języku wybieranym przez wielu początkujących programistów.
-
-Aby zacząć, musisz pobrać i zainstalować Pythona na swoim komputerze. Następnie, będziesz potrzebować edytora kodu, który pozwoli Ci pisać i uruchamiać swoje programy. Polecane edytory to na przykład VS Code, Sublime Text lub PyCharm. Po ustawieniu środowiska, jesteś gotowy, aby zacząć pisać kod!
-
-Oto przykładowy program w Pythonie, który wypisuje zdanie "Witaj świecie!" na ekranie:
+Aby rozpocząć nowy projekt w języku Python, musisz najpierw zainstalować interpreter oraz wybrać odpowiednie narzędzia i biblioteki. Następnie musisz zdefiniować cel projektu oraz określić swoje wymagania i założenia. Kolejnym krokiem jest napisanie kodu, testowanie, debugowanie i optymalizacja. Poniżej przedstawiono przykłady kodów oraz wyników w formatach opatrzonych ```Python ... ``` w celu pokazania, jak krok po kroku stworzyć działający projekt w języku Python.
 
 ```Python
-print("Witaj świecie!")
+# Przykładowy kod tworzący listę
+
+moja_lista = [1, 2, 3, 4, 5] #definiowanie listy
+print(moja_lista) #wyświetlenie listy w konsoli
 ```
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć następujący wynik:
+Output:
 
+[1, 2, 3, 4, 5]
+
+```Python
+# Przykładowy kod korzystający z biblioteki requests
+
+import requests #importowanie biblioteki requests
+r = requests.get("https://www.example.com") #wysyłanie zapytania GET
+print(r.text) #wyświetlenie odpowiedzi w formie tekstu
 ```
-Witaj świecie!
-```
 
-## Analiza w głąb
+Output:
 
-Teraz, gdy już wiesz, jak zacząć, możesz zastanawiać się, co dalej. Warto pamiętać, że każdy projekt powinien mieć jasny cel i plan działania. Przed rozpoczęciem kodowania, warto zaplanować strukturę swojego projektu i zdecydować, jakie funkcjonalności chcesz zaimplementować.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
 
-W trakcie tworzenia projektu, możesz również napotkać na różne problemy i wyzwania. To całkowicie normalne, a podejście do rozwiązywania tych problemów jest jedną z najważniejszych umiejętności każdego programisty. Nie bój się szukać pomocy w dokumentacji języka lub wśród społeczności programistycznych online.
+## Wchodzenie w szczegóły
 
-## Zobacz także
+Po rozpoczęciu projektu możesz odkrywać różne funkcje i możliwości języka Python, wykorzystywać różne biblioteki i narzędzia oraz doskonalić swoje umiejętności programistyczne. Możesz również dzielić się swoim projektem z innymi, uczestniczyć w społeczności programistów w celu uzyskania opinii i pomocy w rozwiązaniu problemów oraz kontynuować naukę i rozwój wraz z rozwojem swojego projektu.
 
-Teraz, gdy już wiesz jak zacząć swoją przygodę z programowaniem w Pythonie, możesz poszerzyć swoją wiedzę poprzez naukę innych technologii i udział w różnych projektach open-source. Oto kilka przydatnych zasobów, które mogą Ci się przydać w dalszym rozwoju:
+## Zobacz również
 
-- [Dokumentacja Pythona](https://docs.python.org/3/)
-- [Kursy online na platformie Coursera](https://www.coursera.org/courses?query=python)
-- [Projekty open-source na platformie GitHub](https://github.com/trending/python)
-- [Społeczność programistyczna na platformie Stack Overflow](https://stackoverflow.com/questions/tagged/python)
-
-Powodzenia w swojej przygodzie z programowaniem!
+- Tutorial języka Python (https://www.python.org/about/gettingstarted/)
+- Dokumentacja Python (https://docs.python.org/)
+- Społeczność Python (https://www.python.org/community/)
+- Przykładowe projekty w języku Python (https://github.com/search?q=python+projects)

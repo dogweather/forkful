@@ -1,19 +1,16 @@
 ---
-title:    "C: Att omvandla en sträng till stora bokstäver"
+title:    "C: Att skriva om en teckensträng"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att göra en sträng med versaler, eller att "kapitalisera" den, är en vanlig operation inom programmering. Det kan vara användbart för att på ett enkelt sätt ändra utseendet på en sträng eller för att jämföra strängar utan att bry sig om skillnader i versaler och gemener.
+Att kunna ändra en sträng så att första bokstaven blir stor är en viktig funktion i C-programmering. Det låter dig formatera utdata på ett sätt som är lättläst för användaren. I den här bloggposten kommer vi att utforska hur man gör detta på ett enkelt sätt.
 
 ## Hur man gör
-
-För att kapitalisera en sträng i C, finns det flera sätt att göra det på. Ett vanligt sätt är att använda en inbyggd funktion som heter `toupper()`. Den tar ett tecken som argument och returnerar samma tecken i versaler om det är en bokstav. Om tecknet redan är en versal kommer funktionen att returnera samma tecken.
-
-Här är ett exempel på hur man kan använda `toupper()` för att kapitalisera en helt sträng:
+För att kapitalisera en sträng i C behöver du använda två inbyggda funktioner, toupper() och tolower(). Dessa funktioner ändrar bokstäverna i en sträng till antingen stora eller små bokstäver. Här är ett exempel på hur du kan använda dem i kod:
 
 ```C
 #include <stdio.h>
@@ -21,63 +18,56 @@ Här är ett exempel på hur man kan använda `toupper()` för att kapitalisera 
 
 int main()
 {
-    char str[] = "hej på dig";
-    int i = 0;
+  char str[] = "hej alla!";
+  int i;
 
-    while(str[i])
-    {
-        str[i] = toupper(str[i]);
-        i++;
-    }
+  //kapitalisera strängen
+  for (i = 0; str[i] != '\0'; i++)
+  {
+    str[i] = toupper(str[i]);
+  }
 
-    printf("%s\n", str);
-    return 0;
+  printf("Den kapitaliserade strängen är: %s\n", str);
+
+  return 0;
 }
-
 ```
 
-Det här programmet kommer att skriva ut "HEJ PÅ DIG" eftersom alla tecken i strängen har omvandlats till versaler. Om du vill ha en sträng med gemener, kan du istället använda den inbyggda funktionen `tolower()`.
+Output:
 
-Du kan även skapa en egen funktion för att kapitalisera en sträng. Här är ett exempel på hur en sådan funktion skulle kunna se ut:
+```C
+HEJ ALLA!
+```
+
+Som du kan se, använde vi en for-loop för att gå igenom varje tecken i strängen och ändra det till stora bokstäver. Sedan skriver vi ut den kapitaliserade strängen med hjälp av printf()-funktionen.
+
+## Djupdykning
+Förutom toupper() och tolower() finns det en annan funktion som är speciellt användbar för att kapitalisera strängar. Det är funktionen strupr() som finns i string.h-biblioteket. Denna funktion kapitaliserar inte bara första bokstaven i en sträng, utan alla bokstäver i strängen. Här är ett exempel på hur man använder det:
 
 ```C
 #include <stdio.h>
-
-void capitalize(char* str)
-{
-    int i = 0;
-    while(str[i])
-    {
-        if(str[i] >= 'a' && str[i] <= 'z')
-        {
-            str[i] = str[i] - 32;
-        }
-        i++;
-    }
-}
+#include <string.h>
 
 int main()
 {
-    char str[] = "hej på dig";
+  char str[] = "hej alla!";
+  
+  //kapitalisera hela strängen
+  printf("Den kapitalgjorda strängen är: %s\n", strupr(str));
 
-    capitalize(str);
-    printf("%s\n", str);
-
-    return 0;
+  return 0;
 }
-
 ```
 
-I det här fallet kommer strängen "hej på dig" att omvandlas till "HEJ PÅ DIG".
+Output:
 
-## Djupdykning
+```C
+HEJ ALLA!
+```
 
-Att kapitalisera en sträng kan verka som en enkel process, men det finns faktiskt flera saker att tänka på. Till exempel, vad händer om strängen innehåller specialtecken eller siffror? Om vi bara använder funktionen `toupper()` så kommer inte dessa tecken att påverkas och kvarstå som de är.
-
-En annan sak att tänka på är att i vissa språk finns det särskilda tecken som behöver hanteras på ett annat sätt än de vanliga bokstäverna. Därför är det viktigt att ha en noggrann kontroll och testning när man skapar en funktion för att kapitalisera strängar.
+En annan viktig sak att notera är att toupper(), tolower() och strupr() funktionerna är inte specifika för svenska bokstäver. De fungerar med alla bokstäver i det ASCII-teckenuppsättning som C använder.
 
 ## Se även
-
-- [toupper()](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [tolower()](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [C Strings](https://www.programiz.com/c-programming/c-strings)
+- [toupper() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [tolower() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [strupr() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_strupr.htm)

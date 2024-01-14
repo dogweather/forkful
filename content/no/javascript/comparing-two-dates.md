@@ -1,69 +1,53 @@
 ---
-title:    "Javascript: Sammenligne to datoer"
+title:    "Javascript: Sammenligning av to datoer"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Sammenligning av to datoer er en vanlig oppgave når man jobber med datoer i Javascript. Dette kan være nyttig for å sjekke om en dato kommer før eller etter en annen, eller om de er like. Det kan også være nyttig for å bestemme hvor lang tid det er mellom to datoer.
+Sammenligning av datoer er en viktig del av programmering da det tillater oss å utføre forskjellige logiske operasjoner basert på dateringer. Det kan være nyttig for å sortere data, filtrere informasjon eller sjekke om en hendelse har skjedd før eller etter en annen hendelse.
 
 ## Hvordan
 
-For å sammenligne to datoer i Javascript, kan du bruke de innebygde funksjonene `new Date()` og `getTime()`. La oss se på et eksempel:
+For å sammenligne to datoer i Javascript, kan vi bruke den innebygde `Date`-klassen og dens metoder. La oss se på et eksempel på hvordan vi kan sammenligne to datoer:
 
-```Javascript
-// Opprett to datoer
-let date1 = new Date(2019, 6, 12); // 12 juli 2019
-let date2 = new Date(2020, 6, 12); // 12 juli 2020
+```javascript
+let date1 = new Date("2021-01-01");
+let date2 = new Date("2021-05-01");
 
-// Bruk getTime() for å få tiden i millisekunder
-let time1 = date1.getTime();
-let time2 = date2.getTime();
-
-// Sammenlign tidene og få ut en tallverdi
-let difference = time2 - time1;
-```
-
-I dette eksempelet oppretter vi to datoer og bruker `getTime()` for å få tiden i millisekunder. Vi trekker deretter fra den første datoen fra den andre for å få ut en positiv eller negativ tallverdi, som indikerer hvor lang tid det er mellom de to datoene i millisekunder.
-
-```Javascript
-// Kode for å sammenligne år
-if (date1.getFullYear() < date2.getFullYear()) {
-    console.log("Første dato kommer før andre dato.");
-} else if (date1.getFullYear() > date2.getFullYear()) {
-    console.log("Første dato kommer etter andre dato.");
+if(date1 > date2) {
+    console.log("date1 er senere enn date2");
+} else if(date1 < date2) {
+    console.log("date1 er før date2");
 } else {
-    console.log("Datoene er like.");
-}
-
-// Kode for å sammenligne måneder
-if (date1.getMonth() < date2.getMonth()) {
-    console.log("Første dato kommer før andre dato.");
-} else if (date1.getMonth() > date2.getMonth()) {
-    console.log("Første dato kommer etter andre dato.");
-} else {
-    console.log("Datoene er like.");
-}
-
-// Kode for å sammenligne dager
-if (date1.getDate() < date2.getDate()) {
-    console.log("Første dato kommer før andre dato.");
-} else if (date1.getDate() > date2.getDate()) {
-    console.log("Første dato kommer etter andre dato.");
-} else {
-    console.log("Datoene er like.");
+    console.log("date1 og date2 er lik");
 }
 ```
 
-I disse kodestykkene bruker vi de innebygde funksjonene `getFullYear()`, `getMonth()` og `getDate()` for å sammenligne år, måneder og dager på en mer nøyaktig måte.
+I dette eksemplet bruker vi den logiske operatøren `>` og `<` for å sammenligne to datoer. Vi kan også bruke `==` for å sjekke om datoene er like. Output av dette eksemplet vil være "date1 er før date2", da 1. januar kommer før 1. mai.
 
-## Dykk dypere
+Vi kan også sammenligne datoer med tidsstempel ved å bruke `getTime()`-metoden. Dette vil gi oss antall millisekunder siden 1. januar 1970, som er et vanlig referansepunkt for datoer i programmering. La oss se på et eksempel på dette:
 
-Du kan også bruke andre metoder som `getHours()`, `getMinutes()` og `getSeconds()` for å sammenligne tidspunkt på en mer presis måte. Det er også viktig å merke seg at Javascript bruker en innebygd metode for å håndtere datoen "1. januar 1970" som en referanse for `getTime()`. Dette betyr at hvis du sammenligner en dato som kommer før dette, vil du få en negativ tallverdi og hvis du sammenligner en dato etter dette, vil du få en positiv tallverdi.
+```javascript
+let date3 = new Date("2021-01-01");
+let date4 = new Date("2021-01-02");
+
+console.log(date3.getTime()); // 1609459200000
+console.log(date4.getTime()); // 1609545600000
+```
+
+Her ser vi at datoene er forskjellige med en dag, men ved å bruke tidsstempel kan vi tydelig se at de er forskjellige med nøyaktig 86400000 millisekunder (1 dag).
+
+## Dypdykk
+
+Når vi sammenligner datoer i Javascript, er det viktig å vite at det er forskjellige måter å representere datoer på. Vi kan for eksempel bruke en tekststreng, `Date`-objekt eller et tidsstempel. Det er også viktig å være klar over at Javascript inneholder datoen i lokal tidssone, og at dette kan føre til noen uventede resultater når du sammenligner datoer fra forskjellige tidssoner.
+
+For å håndtere dette, kan vi bruke `getTimezoneOffset()`-metoden for å få lokal tidssone og deretter justere datoene til å være i samme tidssone før vi sammenligner dem.
 
 ## Se også
-- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: Date Objects](https://www.w3schools.com/js/js_dates.asp)
-- [JavaScript.info: Date and time](https://javascript.info/date)
+
+- [Javascript Date Object](https://www.w3schools.com/jsref/jsref_date.asp)
+- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

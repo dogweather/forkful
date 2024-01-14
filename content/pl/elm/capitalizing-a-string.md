@@ -1,42 +1,32 @@
 ---
-title:    "Elm: Zmiana wielkości liter ciągu znaków"
+title:    "Elm: Zamienianie tekstu na wielkie litery"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś początkującym programistą w Elm, prawdopodobnie słyszałeś o funkcji `String.capitalize`. Możesz zastanawiać się, po co jest potrzebna ta funkcja i kiedy powinieneś jej używać. W tym blogu dowiecie się więcej o tym, dlaczego warto używać funkcji `String.capitalize` w swoim kodzie.
+W tym blogu omówimy jak zmieniać wielkość liter w ciągu znaków w języku Elm. Jest to przydatna umiejętność, która często jest wykorzystywana w programowaniu. Nauka tej techniki pozwoli Ci na jeszcze większą kontrolę nad swoimi programami.
 
 ## Jak to zrobić
 
-Możesz wykorzystać funkcję `String.capitalize` w swoim kodzie, gdy chcesz zmienić pierwszą literę wyrazu na wielką. Przykładowo, jeśli masz string "szczekam", po użyciu funkcji `String.capitalize` otrzymasz "Szczekam". Możesz również zastosować tę funkcję do całych zdań, zmieniając pierwszą literę każdego wyrazu na wielką.
+Do zmiany wielkości liter w ciągu znaków w Elm możemy użyć funkcji `String.toUpper`. Przyjmujemy w niej jako argument nasz ciąg znaków a następnie zwraca ona ten sam ciąg, ale z zamienioną na wielkie litery. Poniżej przedstawiamy przykład użycia funkcji w kontekście programowania Elm.
 
 ```Elm
-String.capitalize "dziękuję" -- "Dziękuję"
+string = "cześć"
 
-String.capitalize "mam trzy psy." -- "Mam trzy psy."
+uppercaseString = String.toUpper(string)
+
+-- W wyniku otrzymujemy "CZEŚĆ"
 ```
 
-Funkcja `String.capitalize` jest bardzo przydatna w przypadku, gdy chcesz poprawić wygląd tekstu w swoim programie lub wygenerować wyświetlane komunikaty.
+## Głębszy wgląd
 
-## Głębsze zagadnienia
+W języku Elm nie ma wbudowanej funkcji do zmieniania tylko wybranej części ciągu znaków na wielkie litery. Jednak istnieją biblioteki takie jak `String.Extra` lub `String.Replace` które przydadzą się w takim przypadku. Możesz także użyć funkcji `String.map` aby samodzielnie zaimplementować taką funkcjonalność. 
 
-Warto pamiętać, że funkcja `String.capitalize` nie zmieni liter, które już są wielkie. Jeśli więc masz string zawierający już wielkie litery, funkcja ta nie wpłynie na nie w żaden sposób.
+## Zobacz także
 
-```Elm
-String.capitalize "Hello, World!" -- "Hello, World!"
-```
-
-Możesz również zastosować funkcję `String.capitalize` do pustych stringów lub stringów zawierających tylko znaki interpunkcyjne, jednak nie spowoduje to żadnych zmian w wyjściowym tekście.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o funkcji `String.capitalize` i innych przydatnych funkcjach w języku Elm, polecam zapoznać się z poniższymi artykułami:
-
-- ["Język Elm dla początkujących" (ang.)](https://guide.elm-lang.org/)
-- ["Jak używać funkcji w Elm" (ang.)](https://elmprogramming.com/functions.html)
-- ["Pisanie funkcji w Elm" (ang.)](https://elmprogramming.com/functions.html)
-
-Dziękujemy za przeczytanie naszego bloga. Mam nadzieję, że ten artykuł pozwolił Ci lepiej zrozumieć funkcję `String.capitalize` i jej zastosowanie w Elm. Do zobaczenia w kolejnych wpisach!
+- [Dokumentacja Elm](https://guide.elm-lang.org/effects/string.html)
+- [Kurs Elm w języku Polskim](https://elmprogramming.com/pl/)

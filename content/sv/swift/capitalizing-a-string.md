@@ -1,32 +1,43 @@
 ---
-title:    "Swift: Storletterstring"
+title:    "Swift: Att stora bokstavera en sträng"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## För Att: Varför du skulle vilja använda storstavning i en sträng
+##Varför?
 
-När du jobbar med text i en applikation, kanske du ibland vill ändra utseendet på en sträng genom att göra den storstavad, det vill säga ha stora bokstäver. Det kan vara för att göra den mer framträdande eller för att matcha en viss design. Oavsett anledning, är det enkelt att göra med Swifts inbyggda funktioner.
+Att kapitalisera en sträng, eller göra om den till stora bokstäver, kan vara en viktig del av en Swift-utvecklares verktygslåda. Det kan hjälpa till att göra texten mer läsbar och enhetlig, vilket i sin tur kan förbättra användarupplevelsen och minska möjligheten för fel och buggar.
 
-## Hur Man Gör Det: 
+##Så här gör du
 
-För att kunna storstava en sträng i Swift, behöver vi använda funktionen `uppercased()` på vår sträng. Det ser ut så här:
+För att enkelt kapitalisera en sträng i Swift använder man sig av funktionen `uppercased()`. Detta exempel visar hur man kapitaliserar en sträng som heter "hej":
 
-```Swift
-let sträng = "hej, jag är en string"
-print(sträng.uppercased())
+```
+let str = "hej"
+let capitalizedStr = str.uppercased()
+
+print(capitalizedStr) // Output: HEJ
 ```
 
-Detta kommer att ge följande output: "HEJ, JAG ÄR EN STRING". Som du kan se, konverterar `uppercased()`funktionen alla tecken i vår sträng till stora bokstäver.
+För strängar som redan är i kapitaliserat format, eller för att växla mellan stor och liten bokstav, kan man istället använda sig av funktionen `lowercased()`. Detta exempel visar hur man växlar mellan stor och liten bokstav för strängen "Hej":
 
-## Djupdykning: 
+```
+let str = "Hej"
+let lowercasedStr = str.lowercased()
 
-Det finns även andra sätt att storstava en sträng i Swift, till exempel genom att använda `capitalized()` eller `localizedUppercase`. Det är viktigt att notera att `uppercased()` endast fungerar för strängar som innehåller latinska bokstäver, medan de andra funktionerna fungerar för ett bredare utbud av språk och teckenuppsättningar.
+print(lowercasedStr) // Output: hej
+```
 
-Det finns också möjlighet att anpassa storstavningen genom att använda en `Locale` parameter för de olika funktionerna. Detta gör det möjligt att hantera specifika tecken och teckenuppsättningar som används i vårt språk.
+##Djupdykning
 
-## Se även: 
+Som utvecklare är det alltid viktigt att förstå vad som händer bakom kulisserna för de funktioner vi använder. I Swift är det vanligtvis en kombination av olika metoder och egenskaper som utför kapitaliseringen. `uppercased()` använder sig av `Cocoa.framework`, medan `lowercased()` använder sig av `Foundation.framework`.
 
-* [Officiell Swift dokumentation för strängar](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-* [Apple Developer Documentation för storstavning av strängar i Swift](https://developer.apple.com/documentation/swift/1970737-uppercased)
+För att få en bättre förståelse för hur man kapitaliserar en sträng i Swift, rekommenderar vi att du utforskar dokumentationen för `NSString` och `NSMutableString`. Dessa klasser tillhandahåller flera metoder som är nyttiga för att manipulera textsträngar.
+
+##Se även
+
+- [Apple's offentliga dokument för Swift](https://developer.apple.com/documentation/swift)
+- [Officiell Swift-sida på Swift.org](https://swift.org/)
+- [Swift-kurs på Codecademy](https://www.codecademy.com/learn/learn-swift)

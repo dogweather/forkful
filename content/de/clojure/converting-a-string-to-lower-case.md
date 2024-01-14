@@ -1,46 +1,36 @@
 ---
-title:    "Clojure: Umwandeln eines Strings in Kleinbuchstaben"
+title:    "Clojure: In eine Zeichenkette in Kleinbuchstaben umwandeln"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Wenn du jemals mit Strings in deinem Clojure Code gearbeitet hast, bist du wahrscheinlich auf die Funktion `clojure.string/lower-case` gestoßen. Aber warum sollte man überhaupt Strings in Kleinbuchstaben umwandeln? Es gibt tatsächlich einige Gründe dafür:
+In der Programmierung ist es oft notwendig, Strings in Kleinbuchstaben zu konvertieren, sei es für Benutzereingaben, Datenbankabfragen oder generell für die Konsistenz der Daten. In diesem Blogbeitrag werden wir uns anschauen, wie man dies in Clojure umsetzen kann.
 
-- Formatierung: Oft möchten wir sicherstellen, dass alle Zeichen in einem String in derselben Formatierung sind, sei es in Großbuchstaben oder Kleinbuchstaben.
-- Vergleiche: Manchmal müssen wir Strings miteinander vergleichen, und die Vergleichsfunktion ist sensibel bezüglich Groß- und Kleinschreibung. Durch das Umwandeln in Kleinbuchstaben können wir sicherstellen, dass die Vergleiche korrekt durchgeführt werden.
-- Datenbereinigung: Beim Parsen von Daten aus verschiedenen Quellen können wir uns nicht auf die Formatierung von Strings verlassen. Das Umwandeln in Kleinbuchstaben ermöglicht es uns, Strings zu normalisieren und eine einheitliche Datenstruktur zu erhalten.
+## Wie geht man vor
 
-# Wie man Strings in Kleinbuchstaben umwandelt
-
-In Clojure können wir die Funktion `clojure.string/lower-case` verwenden, um einen String in Kleinbuchstaben umzuwandeln. Hier ist ein Beispiel:
+Um einen String in Kleinbuchstaben umzuwandeln, gibt es in Clojure mehrere Möglichkeiten. Hier sind zwei Beispiele:
 
 ```Clojure
-(clojure.string/lower-case "HELLO WELT") ; Output: "hello welt"
+;; Variante 1: Die Funktion "clojure.string/lower-case" verwenden
+(clojure.string/lower-case "Hallo WELT") ; Output: "hallo welt"
+
+;; Variante 2: Das "str" Makro und die Funktion "to-lower-case" kombinieren
+(-> "GUTEN MORGEN" str clojure.string/to-lower-case) ; Output: "guten morgen"
 ```
 
-Wir können diese Funktion auch auf Teile eines Strings anwenden, indem wir sie mit `subs` kombinieren. Zum Beispiel:
+Wie man sieht, ist es in Clojure sehr einfach, Strings in Kleinbuchstaben umzuwandeln. Das "clojure.string" Modul bietet bereits die nötigen Funktionen und Makros dafür.
 
-```Clojure
-(clojure.string/lower-case (subs "Hallo Welt" 0 5)) ; Output: "hallo"
-```
+## Tiefere Einblicke
 
-Eine andere Möglichkeit, Strings in Kleinbuchstaben zu konvertieren, besteht darin, die Methoden `to-lower-case` oder `toLowerCase` auf einem String-Objekt auszuführen. Zum Beispiel:
+Clojure behandelt Strings als unveränderliche Sequenzen von Zeichen, daher ist es wichtig, beim Arbeiten mit Strings darauf zu achten, dass sie nicht versehentlich verändert werden. Die Funktionen im "clojure.string" Modul geben immer eine neue String-Instanz zurück und ändern nicht den ursprünglichen String.
 
-```Clojure
-(.toLowerCase "GUTEN TAG") ; Output: "guten tag"
-```
+Es ist auch zu beachten, dass die Konvertierung von Groß- zu Kleinbuchstaben je nach Sprache unterschiedlich sein kann. Clojure nutzt die Standardbibliothek des Betriebssystems, um die Konvertierung korrekt durchzuführen.
 
-# Tiefere Einblicke
+## Siehe auch
 
-Es ist wichtig zu beachten, dass die Funktion `clojure.string/lower-case` keine rekursive Unterstützung für Unicode-Buchstaben bietet. Das bedeutet, dass Nicht-ASCII-Zeichen möglicherweise nicht korrekt umgewandelt werden. Um dieses Problem zu lösen, können wir die Bibliothek `clojure.string/lower-case` aus der Bibliothek `clojure.string/replace` verwenden. Diese Funktion verwendet reguläre Ausdrücke, um Unicode-Zeichen in Kleinbuchstaben umzuwandeln.
-
-Ein weiteres wichtiges Detail ist, dass die Transformationsfunktionen für Groß- und Kleinschreibung in Clojure für Performance-Optimierungen nicht in der Kontextauswertung ausgewertet werden. Dies bedeutet, dass die Funktion `clojure.string/lower-case` aufgerufen wird, wenn sie innerhalb einer Schleife oder einer Funktion mehrmals aufgerufen wird, was zu einer geringeren Leistung führen kann. In diesem Fall kann es sinnvoll sein, eine lokale Bindung für die Funktion zu erstellen und sie nur einmal auszuwerten.
-
-# Siehe auch
-
-- [Clojure Dokumentation zur Funktion lower-case](https://clojuredocs.org/clojure.string/lower-case)
-- [Tutorial zu regulären Ausdrücken in Clojure](https://purelyfunctional.tv/guide/clojure-regular-expressions/)
-- [Die offizielle Clojure Webseite](https://clojure.org/)
+- [Dokumentation für "clojure.string"](https://clojuredocs.org/clojure.string)
+- [Beispiele für die Arbeit mit Strings in Clojure](https://www.baeldung.com/clojure-strings)

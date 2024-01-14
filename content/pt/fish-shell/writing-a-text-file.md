@@ -1,40 +1,39 @@
 ---
 title:    "Fish Shell: Escrevendo um arquivo de texto"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que escrever um arquivo de texto em Fish Shell?
+# Por que escrever um arquivo de texto usando Fish Shell
 
-Escrever um arquivo de texto pode não parecer uma tarefa muito emocionante, mas pode ser extremamente útil para organizar informações ou automatizar tarefas. Além disso, ao escrever em Fish Shell, você pode aproveitar todos os recursos e funcionalidades dessa linguagem de programação poderosa.
+Escrever um arquivo de texto usando Fish Shell pode ser útil em diversas situações, desde criar um pequeno script até gerenciar configurações de um programa. Além disso, o Fish Shell oferece uma sintaxe simples e intuitiva, tornando a tarefa de escrever textos ainda mais fácil.
 
-## Como fazer?
+## Como fazer
+Para criar um arquivo de texto usando Fish Shell, siga os seguintes passos:
 
-A primeira coisa a fazer é abrir o Fish Shell em seu terminal. Em seguida, basta seguir os passos abaixo:
+1. Abra o terminal Fish Shell na sua máquina.
+2. Navegue até o diretório onde deseja criar o arquivo.
+3. Digite o comando `touch nome_do_arquivo.txt`, substituindo "nome_do_arquivo" pelo nome que deseja dar ao seu arquivo.
+4. Para começar a escrever no arquivo, utilize o comando `echo` seguido pelo texto que deseja adicionar, e redirecione a saída para o arquivo criado. Por exemplo: `echo "Olá, mundo!" > nome_do_arquivo.txt` irá adicionar a frase "Olá, mundo!" no arquivo criado.
+5. Para verificar o conteúdo do arquivo, utilize o comando `cat nome_do_arquivo.txt` e você verá o texto que foi adicionado.
 
-1. Escolha um editor de texto, como o nano ou o vim, para criar seu arquivo de texto.
-2. Digite o comando "touch" seguido do nome que deseja dar ao seu arquivo de texto. Isso criará um arquivo vazio.
-3. Abra o arquivo com o editor de texto escolhido e comece a escrever seu conteúdo.
-4. Quando terminar, salve o arquivo e saia do editor de texto.
+Você também pode criar um arquivo de texto diretamente no editor de texto do Fish Shell, utilizando o comando `fish_text_editor nome_do_arquivo.txt`.
 
-Agora você tem um arquivo de texto criado em Fish Shell!
+## Aprofundando
+Além do básico de criar e escrever em um arquivo de texto, o Fish Shell também oferece alguns recursos interessantes:
 
-```Fish Shell
-touch meu_arquivo.txt
-nano meu_arquivo.txt
-```
+### Modificando o arquivo existente
+Se você já possui um arquivo de texto e deseja adicionar mais conteúdo no final dele, é possível utilizar o comando `echo` com dois sinais de "maior que" (`>>`) para acrescentar o novo texto. Por exemplo: `echo "Mais um texto" >> nome_do_arquivo.txt` irá adicionar a frase "Mais um texto" no final do arquivo.
 
-## Mergulho profundo
+### Inserindo texto em uma linha específica
+Para adicionar texto em uma linha específica do arquivo, você pode utilizar o comando `sed` para substituir o conteúdo de uma linha existente ou inserir uma nova linha. Por exemplo: `sed '2s/.*/Nova linha de texto/' nome_do_arquivo.txt` irá substituir o texto da segunda linha pelo texto "Nova linha de texto".
 
-Para aqueles que querem se aprofundar ainda mais, aqui estão algumas dicas adicionais sobre a escrita de arquivos de texto em Fish Shell:
-
-- Você pode redirecionar a saída do resultado de um comando para um arquivo de texto usando o símbolo ">", por exemplo: "ls > lista_arquivos.txt". Isso criará um arquivo com o nome "lista_arquivos" e nele será impressa a lista de arquivos presentes no diretório atual.
-- Para adicionar texto a um arquivo já existente, use o comando "echo" seguido do texto que deseja adicionar, seguido do símbolo ">>" e o nome do arquivo, por exemplo: "echo "nova linha" >> meu_arquivo.txt". Isso adicionará a palavra "nova linha" em uma nova linha no final do arquivo.
-- Você pode usar o Fish Shell para automatizar tarefas através da criação de scripts em arquivos de texto. Para isso, basta adicionar comandos e estruturas de controle de fluxo no arquivo e depois rodá-lo como um programa.
+### Usando variáveis
+Você também pode utilizar variáveis para escrever em um arquivo de texto. Para isso, basta utilizar o comando `set` seguido pelo nome da variável e o conteúdo que deseja adicionar, e depois redirecionar a saída para o arquivo. Por exemplo: `set nome="Maria" ; echo "Olá $nome!" > meu_arquivo.txt` irá adicionar a frase "Olá Maria!" no arquivo.
 
 # Veja também
-
-- [Tutorial de Fish Shell (em português)](https://github.com/rodolfobandeira/oh-my-fish/wiki/Passos-B%C3%A1sicos-do-Fish-Shell)
 - [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Exemplos práticos de uso do Fish Shell](https://gist.github.com/jaseemabid/46c9fe9c7f92a867a7f8)
+- [Guia rápido de referência do Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- [Curso de introdução ao Fish Shell no YouTube](https://www.youtube.com/watch?v=4WnMIb5KvYw)

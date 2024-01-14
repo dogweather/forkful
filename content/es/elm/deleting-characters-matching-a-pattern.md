@@ -1,57 +1,54 @@
 ---
-title:    "Elm: Eliminación de caracteres que coinciden con un patrón"
+title:    "Elm: Borrando caracteres que coinciden con un patrón"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Eliminar caracteres que coincidan con un patrón puede ser útil en situaciones en las que necesitamos limpiar datos o dar formato a una cadena de texto. Esto puede ahorrar tiempo y esfuerzo en comparación con hacerlo manualmente.
+Eliminar caracteres que coinciden con un patrón puede ser una tarea útil al trabajar con texto en Elm. Puede ayudar a limpiar datos o a filtrar información de manera más precisa.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coincidan con un patrón en Elm, podemos utilizar la función `Regex.replace` de la biblioteca `elm/regex`. Pero antes de eso, necesitamos importar la biblioteca y definir nuestro patrón y cadena de texto. Luego, podemos utilizar `Regex.replace` para reemplazar los caracteres coincidentes con una cadena vacía.
+Para eliminar caracteres que coinciden con un patrón en Elm, podemos utilizar la función `String.replace` y proporcionar el patrón y la cadena original. Por ejemplo:
 
 ```Elm
-import Regex exposing (replace)
+import String
 
-pattern = "[^a-zA-Z ]"
-str = "¡Hola, ! ¿Cómo estás? ¡Soy un string con caracteres especiales!"
+phrase = "¡Hola! ¡Hola! ¡Adios!"
+pattern = "¡Hola!"
 
-newStr = Regex.replace pattern str ""
+String.replace pattern "" phrase
+
+-- output: " ¡Adios!"
 ```
 
-Esto eliminará todos los caracteres que no sean letras o espacios en blanco de la cadena `str` y nos dará como resultado "Hola Como estás Soy un string con caracteres especiales".
+En este ejemplo, reemplazamos todas las apariciones de "¡Hola!" con una cadena vacía, lo que resulta en la eliminación de esos caracteres del texto original.
 
-También podemos utilizar grupos de captura en nuestro patrón y utilizarlos en la cadena de reemplazo. Por ejemplo, si queremos eliminar todos los números en una cadena de texto, podemos hacerlo de la siguiente manera:
+También podemos combinar `String.replace` con otras funciones, como `String.filter`, para eliminar solo ciertos caracteres que coinciden con un patrón. Por ejemplo:
 
 ```Elm
-pattern = "\d+"
-str = "¡Hola, 123! ¿Cómo estás? ¡Soy un string con números!"
+import String
 
-newStr = Regex.replace pattern str "\1"
+phrase = "¡Hola mundo!"
+
+pattern = "\\s"
+onlyLetters = String.filter (\c -> c /= " ") phrase
+withoutSpaces = String.replace pattern "" onlyLetters
+
+-- output: "HOLAmundo!"
 ```
 
-Esto eliminará todos los números de la cadena `str` y nos dará como resultado "¡Hola, ! ¿Cómo estás? ¡Soy un string con números!".
+En este caso, primero filtramos los espacios en blanco utilizando el patrón "`\s`" que representa cualquier espacio en blanco. Luego, utilizamos `String.replace` para eliminar esos espacios del texto original.
 
-## Profundizando
+## Profundizando más
 
-Además de eliminar caracteres, también podemos utilizar `Regex.replace` para manipular y dar formato a cadenas de texto. Podemos utilizar expresiones regulares para buscar patrones específicos en una cadena y reemplazarlos con la información que deseemos.
-
-Por ejemplo, si queremos dar formato a una fecha en formato `dd/mm/aaaa` a `aaaa-mm-dd`, podemos hacerlo utilizando grupos de captura y la función `Regex.replace`. Aquí hay un ejemplo de cómo podríamos hacerlo:
-
-```Elm
-pattern = "(\d{2})/(\d{2})/(\d{4})"
-str = "Hoy es 31/05/2021"
-
-formattedStr = Regex.replace pattern str "\3-\2-\1"
-```
-
-Esto nos dará como resultado "Hoy es 2021-05-31". Podemos jugar con diferentes patrones y cadenas de reemplazo para lograr el resultado deseado.
+Elm ofrece una variedad de funciones y métodos para trabajar con cadenas de texto y patrones. Algunas de ellas incluyen `String.split`, `String.startsWith`, `String.fromList`, entre otras. Estas funciones pueden ser útiles al crear algoritmos más complejos para eliminar caracteres que coinciden con un patrón específico. Es importante experimentar con estas funciones y encontrar la mejor manera de aplicarlas a nuestro código.
 
 ## Ver también
 
-- Documentación de la biblioteca `elm/regex`: https://package.elm-lang.org/packages/elm/regex/latest/
-- Tutorial de expresiones regulares en elm-explorations/test: https://elm-explorations.netlify.app/test#regexp
-- Ejemplos de expresiones regulares en la documentación oficial de Elm: https://elm-lang.org/docs/regex
+- [Documentación oficial de Elm sobre String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Tutorial de Elm por el canal de YouTube Fazt Code](https://www.youtube.com/watch?v=zFP4_ymEj14)
+- [Ejemplos prácticos de uso de `String.replace`](https://korban.net/posts/elm/2018-07-12-slicing-up-text-with-elm-string-replace/)

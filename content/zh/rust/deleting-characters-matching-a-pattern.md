@@ -1,44 +1,55 @@
 ---
-title:    "Rust: 匹配模式的字符删除"
+title:    "Rust: 删除符合模式的字符"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要删除匹配模式的字符
+# 为什么会有删除匹配模式字符的需求？
 
-在编程中，有时我们会遇到需要删除字符串中特定模式的字符的情况。这可能是因为我们需要清理数据或者为了编写更高效的代码。使用Rust语言可以轻松地实现这一目的，让我们来学习如何做到这一点!
+当我们在处理文本数据时，可能会遇到需要删除特定模式的字符的情况。例如，我们想要删除所有的标点符号或者空格，以便我们可以更方便地处理数据。使用Rust编程语言，我们可以轻松地实现这一需求。
 
-## 如何做到
+## 如何在Rust中删除匹配模式的字符？
 
-首先，我们需要导入Rust语言中的`regex`库，它提供了正则表达式的支持。然后，我们可以使用`regex::Regex`来创建一个正则表达式，指定我们想要删除的模式。接下来，我们可以使用`replace_all`函数来删除匹配的模式，并将结果赋值给一个新的字符串变量。让我们来看看下面这个例子：
+首先，我们需要使用Rust的“正则表达式”库。正则表达式是一种使用特殊符号和文本模式来匹配和操作字符串的技术。我们可以使用Rust中的“regex”库来实现正则表达式的功能。
+
+在以下示例中，我们将以纯文本形式创建一个正则表达式，然后将其用于匹配和删除单词中的所有数字字符。
 
 ```Rust
-use regex::Regex;
+// 导入正则表达式库
+use regex::Regex; 
 
-fn main() {
-    let text = "Rust is a great programming language!";
-    let re = Regex::new("gr[a-z]*").unwrap(); // 匹配以gr开头的所有单词
-    let result = re.replace_all(text, ""); // 删除匹配的模式
-    println!("{}", result); // 输出 "Rust is a programming language!"
-}
+// 创建一个正则表达式，匹配所有数字字符
+let regex = Regex::new(r"[0-9]").unwrap(); 
+
+// 定义一个字符串
+let text = "I have 2 cats and 1 dog."; 
+
+// 使用正则表达式进行匹配和删除
+let modified_text = regex.replace_all(text, ""); 
+
+// 输出结果
+println!("{}", modified_text); 
+// 输出结果：I have  cats and  dog.
 ```
 
-通过这种方式，我们可以轻松地删除字符串中匹配特定模式的所有字符。
+在上面的示例中，我们使用了`Regex::new`函数创建了一个正则表达式对象，并且使用`unwrap`方法来处理可能出现的错误。然后，我们使用`replace_all`方法来将匹配到的数字字符替换为空字符串，最后打印出修改后的文本。
 
-## 深入了解
+## 深入探讨删除匹配模式字符的原理
 
-在Rust语言中，有两种不同的字符串类型：`&str`和`String`。`&str`是一种静态字符串，它的长度是固定的，而`String`则是一种动态字符串，可以根据需要调整长度。当我们使用`replace_all`函数时，我们需要传递`&str`类型的参数，这意味着我们需要将`String`类型的字符串转换为`&str`类型。这可以通过使用`as_str()`方法来实现，它会返回一个`&str`类型的字符串副本。
+在Rust中，使用正则表达式来删除匹配模式的字符的原理其实很简单，就是通过正则表达式匹配到需要删除的字符，然后用空字符串或其他替换字符来替换匹配到的字符。但是，正则表达式的模式匹配规则却非常复杂，可以实现非常精确的匹配要求。
 
-另外，与删除字符匹配模式相关的一个重要概念是贪婪匹配和非贪婪匹配。默认情况下，正则表达式会采用贪婪匹配方式，即最大限度地匹配模式。但是，如果我们想要删除最小匹配模式的字符，可以在我们的正则表达式后面添加一个问号。例如，在上面的例子中，如果我们将正则表达式改为`"gr[a-z]*?"`，那么它就会删除最小匹配的字符，也就是`gr`。
+在Rust中，我们还可以通过内置的`char`类型来操作字符，例如判断一个字符是否为数字字符，然后根据需要决定是否保留或删除。
 
-## 参考文献
+# 参考资料
 
-- [使用正则表达式](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#using-regex-to-separate-a-string-into-unique-words)
-- [Rust语言中的字符串类型](https://doc.rust-lang.org/1.5.0/std/string/)
-- [贪婪匹配和非贪婪匹配](https://www.geeksforgeeks.org/lazy-vs-greedy-regular-expressions/)
+- [Rust官方文档: 正则表达式](https://doc.rust-lang.org/std/regex/)
+- [Rust官方文档: char类型](https://doc.rust-lang.org/std/primitive.char.html)
+- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [正则表达式在线测试工具](https://regex101.com/)
 
 # 参见
 
-- [Rust语言官方文档](https://www.rust-lang.org/zh-CN/)
-- [简体中文版Rust官方文档](https://rustlang-cn.org/)
+- [Regexpression: 使用Rust编写的正则表达式引擎](https://github.com/BurntSushi/regex)
+- [Regexcrate: Rust中的正则表达式库](https://github.com/rust-lang/regex)

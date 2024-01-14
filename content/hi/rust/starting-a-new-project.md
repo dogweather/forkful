@@ -1,15 +1,34 @@
 ---
-title:    "Rust: एक नए प्रोजेक्ट की शुरुआत करना।"
+title:    "Rust: एक नया प्रोजेक्ट शुरू करना"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
- रस्ट प्रोग्रामिंग अपने लिए एक नया प्रोजेक्ट शुरू करने के लिए *क्यों* करना चाहिए? आप रस्ट में मासिक पेज़ के माध्यम से दोनों हार्डवेयर और सॉफ्टवेयर पर अपने दस्तावेजीकरण को आसानी से उपयोग करके मेटाडाटा लें मेल सर्वर्स को फॉलो कर सकते हैं। ## कैसे शुरू करें
- रस्ट प्रोग्रामिंग शुरू करने के लिए, सबसे पहले आपको रस्ट कंपाइलर को बनाने और इंस्टॉल करने की ज़रूरत होती है। इसके बाद, आप ```Rust ...``` कोड ब्लॉक के भीतर चयन करके विभिन्न कोडिंग उदाहरणों और उनके समाधान के साथ अपने प्रोजेक्ट को बनाना शुरू कर सकते हैं।
+## Kyun
+Kisi bhi bhasha mein programming sikhiye, ek naya project shuru karne ka ek vishesh tareeka hota hai apne dimaag ko tezi se sakriya rakhne ka. Yeh aapko naye samaadhaan aur dusre tareeko se sochne ke liye badhava deta hai. Rust ek aisa programming language hai jo bahut hi sakht aur surakshit hai. Iske use se kisi bhi project ko reliable, durable aur efficient banaya jaa sakta hai.
 
-अधिक गहराई खोजें
-आपके प्रोजेक्ट को शुरू करने से पहले, आप रस्ट ट्रेनिंग सेंटर से विभिन्न ट्यूटोरियल या कोर्स लेकर रस्ते प्रोग्रामिंग के अधिक गहराई को खोज सकते हैं। आपको अपने प्रोजेक्ट को शुरू करने से पहले डेटा स्ट्रक्चर, फंक्शन और मॉड्यूल जैसे रस्त भाषा की मूल शब्दावली का अधिक गहराई को समझना होगा।
+## Kaise Kare
+Rust mein ek naya project shuru karne ke liye, sabse pehle apko Rust compiler aur Cargo tool ki zaroorat hogi. Cargo tool ek package manager hai jisse aap apne project ke liye jaroori dependencies manage kar sakte hai. Iske baad, apko "```Cargo new <project-name>```" command ki madad se apne project ka scaffold banana hoga. Iske baad, aap apne project mein apne code ko "```src```" folder mein likh sakte hai. Neeche diye gaye code block mein ek simple "Hello World" program ko dikhaya gaya hai.
 
-आप अपने प्रोजेक्ट के विभिन्न भागों को `fn main()` फंक्शन के भीतर प्रोग्राम करके इसे एक पूर्णगामी समाधान में घिर सकते हैं। आप क्षेत्र के लिए भी संग्रहीत सूत्रों, लेखकीय शैली और लाइब्ररी के साथ कोडिंग कर सकते हैं। आप इस आर्टिकल में दिए गए नमू
+```Rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+Python ya Java jaise dusre languages ke mukaable, Rust mein trailing semicolons lagana zaroori nahi hai. Yeh bahut hi sada aur readable syntax hai. Rust mein aapko variable bindings, data types aur functions ka use karna hoga jisse aap apne code ko aur power aur control de sakte hai.
+
+## Gehri Jhaank
+Rust mein ek project shuru karne se pehle, kuch cheezein dhyan mein rakhni zaroori hai. Aapko apne project ke architecture, design aur data structures ko sahi se plan karna hoga. Iske alawa, compiler errors aur ownership concept ko bhi ache se samajhna hoga. Rust mein, data race aur segmentation faults jaise errors bhi kam honay ki wajah se yeh ek reliable language hai. Aapko apne code ko regularly test karna chahiye aur functional aur integration testing ke zariye bugs aur errors ko identify karna chahiye.
+
+## Dekhiye Bhi
+Agar aap aur zyada Rust programming sikhna chahte hai, toh neeche diye gaye resources aapke liye helpful honge:
+
+- [Rust Programming Language Official Website](https://www.rust-lang.org/hi)
+- [Rust Video Tutorials by Derek Banas](https://www.youtube.com/playlist?list=PLGLfVvz_LVvQUjiCc8lUT9aO0GsWA4uNe)
+- [The Rust Book](https://doc.rust-lang.org/book/)
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
+
+Dhanyavaad aur happy coding!

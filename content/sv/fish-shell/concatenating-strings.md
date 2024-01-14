@@ -1,29 +1,48 @@
 ---
-title:    "Fish Shell: Sammanfogning av strängar."
+title:    "Fish Shell: Sammanslagning av strängar"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att sätta ihop strängar, eller "concatenate strings" som det heter på engelska, är en vanlig uppgift inom programmering. Genom att lära sig denna teknik kan du manipulera och sammanfoga textsträngar för att skapa mer dynamiska och flexibla program.
 
-## Så här gör du
-Det första steget för att sätta ihop strängar i Fish Shell är att använda kommandot `string join`. Detta kommando tar emot två argument, en strängseparator och en lista med strängar som ska sättas ihop.
+Att sammanfoga strängar är en vanlig uppgift när man programmerar. Genom att lära sig hur man konkatenerar strängar kan du effektivt manipulera text och skapa mer dynamiska program.
+
+## Hur man gör
+
+För att sammanfoga strängar i Fish Shell, använder man en inbyggd funktion som heter `string join`. Funktionen tar in en lista av strängar och sätter ihop dem enligt ett valt separator-tecken. Här är ett exempel på hur man kan konkatenera två strängar med ett mellanslag som separator:
 
 ```Fish Shell
-set fruits apples bananas oranges  # Definiera en lista av strängar
-string join , $fruits  # Sätter ihop strängarna med kommatecken som separator
+set str1 "Hej"
+set str2 "världen"
+echo (string join " " $str1 $str2)
 ```
 
-Resultatet av detta kommer att vara `apples, bananas, oranges`.
+Detta kommer att ge följande utmatning:
+
+`Hej världen`
+
+Som du kan se i kodexemplet använder vi `set` för att skapa två variabler, en för varje sträng som vi vill konkatenera. Sedan använder vi `echo` för att skriva ut den sammansatta strängen genom att använda `string join` och ange mellanslag som separator.
 
 ## Djupdykning
-Det finns flera sätt att manipulera och sätta ihop strängar i Fish Shell. En av dessa är att använda kommandot `string replace`, som låter dig byta ut en del av en sträng med en annan. En annan användbar teknik är att använda variabler, vilket låter dig lagra strängar och sedan sätta ihop dem på olika sätt.
 
-En annan användbar funktion är `string length`, som ger dig längden på en sträng. Detta kan vara användbart om du vill kontrollera att en sträng är inom en viss längd, eller om du vill skapa en loop som går igenom varje tecken i en sträng.
+Det finns flera olika sätt att manipulera och sammansätta strängar i Fish Shell. En annan användbar funktion är `string split` som gör det möjligt att dela upp en sträng baserat på ett valt separator-tecken. Här är ett exempel på hur man kan använda `string split` för att dela upp en sträng i en lista av ord:
+
+```Fish Shell
+set str "det här är en mening"
+set words (string split " " $str)
+echo $words
+```
+
+Detta kommer att ge följande utmatning:
+
+`det här är en mening`
+
+Som du kan se i exempelkoden delar vi upp strängen `str` baserat på mellanslag och sätter ihop resultaten i en lista `words`. Sedan använder vi `echo` för att skriva ut listan.
 
 ## Se även
-- [Fish Shell officiell dokumentation om strängkonkaternering](https://fishshell.com/docs/current/cmds/string.html#concat)
-- [En enkel guide för att konkatenera strängar i Fish Shell](https://www.codelle.dev/blog/concatenate-strings-in-fish-shell/)
-- [Mer information om hur man manipulerar strängar i Fish Shell](https://www.tecmint.com/string-manipulation-in-fish/)
+
+- [Fish Shell - dokumentation för strängar](https://fishshell.com/docs/3.1/cmds/set.html#set-string-join)
+- [Fish Shell - lista av inbyggda funktioner](https://fishshell.com/docs/3.1/cmds.html)

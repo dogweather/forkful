@@ -1,46 +1,46 @@
 ---
 title:    "Gleam: Buscando e substituindo texto"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Utilizar Substituição de Texto em Gleam?
+## Por que
+Há muitas razões pelas quais alguém pode querer realizar a tarefa de busca e substituição de texto. Pode ser por correção de erros ortográficos, padronização de um código ou simplesmente para economizar tempo ao editar um documento extenso. Felizmente, no Gleam há uma maneira fácil e eficiente de realizar essa tarefa.
 
-Substituir texto é uma habilidade essencial para qualquer programador, e em Gleam, isso pode ser feito de forma eficaz e eficiente. Ao aprender como fazer substituição de texto, você poderá economizar tempo e esforço ao editar arquivos de código extensos. 
+## Como fazer
+Para buscar e substituir texto em Gleam, usamos a função `String.replace` passando a string de origem, o texto a ser substituído e o texto de substituição como argumentos. Vejamos um exemplo:
 
-## Como Fazer Substituição de Texto em Gleam
+```Gleam
+let texto = "Eu amo programação em Gleam."
+let novoTexto = String.replace(texto, "amo", "adoro")
 
-Para fazer substituição de texto em Gleam, você pode seguir os seguintes passos:
-
-- Passo 1: Importe o módulo `gleam/text`:
-
-```
-Gleam.Text
-```
-
-- Passo 2: Utilize a função `replace` para fazer a substituição. Por exemplo, se você quiser substituir todas as letras "a" por "e" em uma string, você pode fazer o seguinte:
-
-```
-Gleam.Text.replace("banana", "a", "e")
+// Output: "Eu adoro programação em Gleam."
 ```
 
-A saída seria "`benene`".
+Neste exemplo, estamos substituindo a palavra "amo" por "adoro" na string de origem "Eu amo programação em Gleam". O resultado é a string modificada "Eu adoro programação em Gleam".
 
-- Passo 3: Você também pode usar expressões regulares para substituir padrões específicos de texto. Por exemplo, se você quiser substituir todas as vogais em uma string por "`*`", você pode fazer o seguinte:
+Podemos usar a função `String.replace` em conjunto com outras funções, como `String.split`, para tornar a busca e substituição ainda mais poderosa. No exemplo abaixo, estamos substituindo todas as vogais maiúsculas por minúsculas em uma string:
 
+```Gleam
+let texto = "ESte é um PROBLEMA"
+let novoTexto = texto
+  |> String.split("")
+  |> List.map(String.to_lower)
+  |> String.join("")
+
+// Output: "Este é um problema"
 ```
-Gleam.Text.replace_regex("Hello world!", "[aeiou]", "*")
-```
 
-A saída seria "`H*ll* w*rld!`".
+Neste exemplo, primeiro dividimos a string em uma lista de caracteres, usamos a função `String.to_lower` para converter todas as letras em minúsculas e, em seguida, juntamos novamente em uma string usando a função `String.join`.
 
-## Mergulho Profundo
+## Mergulho profundo
+Além da função `String.replace`, o Gleam oferece outras funções úteis para busca e substituição de texto, como `String.replace_all` que substitui todas as ocorrências de um texto em uma string, e `String.replace_nth` que substitui apenas a enésima ocorrência.
 
-Existem algumas coisas importantes a serem lembradas ao fazer substituição de texto em Gleam. Primeiro, é importante certificar-se de que os argumentos da função `replace` estejam na ordem correta - a string de entrada, o texto a ser substituído e o novo texto. Além disso, você também pode usar padrões de expressão regular mais complexos para substituição de texto, permitindo maior flexibilidade ao realizar essa operação.
+Outra ferramenta útil é o uso de expressões regulares para buscar e substituir padrões de texto mais complexos. O Gleam tem um módulo de expressões regulares que pode ser importado e usado para realizar essas tarefas.
 
 ## Veja também
-
-- Documentação oficial sobre o módulo `gleam/text`: https://gleam.run/modules/gleam/text.html
-- Exemplos práticos de substituição de texto em Gleam: https://github.com/gleam-lang/gleam/blob/master/build/bazel/generate_code.sh
-- Tutorial sobre expressões regulares em Gleam: https://dev.to/yugisu/quick-intro-to-expressions-regulars-in-gleam-12o2
+- Documentação oficial do Gleam sobre busca e substituição de texto: https://gleam.run/documentation/stdlib/string.html#replace
+- Última versão do Gleam disponível no GitHub: https://github.com/gleam-lang/gleam/releases
+- Comunidade Gleam no Discord: https://discord.gg/hGJGtKQsJK

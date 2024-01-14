@@ -1,85 +1,50 @@
 ---
-title:    "Go: Ausgabe von Debug-Informationen"
+title:    "Go: Fehlerbehebungsausgabe drucken"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Debug-Ausgaben sind ein wesentlicher Bestandteil einer effektiven Fehlerbehebung beim Programmieren. Sie helfen dabei, den Code zu verstehen, Probleme zu identifizieren und Lösungen zu finden.
+Beim Programmieren ist es oft hilfreich, den aktuellen Zustand des Codes zu überprüfen und gezielt Fehler zu suchen. Hierbei kann das Ausdrucken von Debug-Ausgaben eine nützliche Methode sein.
 
-# Wie geht man vor?
+## Wie geht das?
 
-Um Debug-Ausgaben in Go zu erstellen, gibt es verschiedene Ansätze. Ein häufig verwendeter Weg ist die Verwendung der Funktion `Println` aus dem Paket `fmt`. Zum Beispiel:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    num := 42
-    fmt.Println("Die Variable num hat den Wert: ", num)
-}
-```
-
-Dieser Code block würde die folgende Ausgabe erzeugen:
-
-```
-Die Variable num hat den Wert: 42
-```
-
-Durch Hinzufügen von `Println`-Statements in verschiedenen Teilen des Codes, können Sie den Fluss des Programms verfolgen und mögliche Fehler identifizieren.
-
-# Tiefere Einblicke
-
-Neben dem `Println` gibt es in Go auch die Funktion `Printf`, die eine ähnliche Funktion hat, aber zusätzlich das Formatieren von Variablen ermöglicht. Zum Beispiel:
+Um Debug-Ausgaben in Go zu drucken, kann die Funktion "fmt.Println()" verwendet werden. Hierbei kann sowohl Text als auch Variablen übergeben werden, die dann in der Ausgabe erscheinen.
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    name := "Max"
-    age := 25
-    fmt.Printf("Mein Name ist %s und ich bin %d Jahre alt.", name, age)
-}
+name := "Sandra"
+age := 25
+fmt.Println("Der Name ist", name, "und das Alter ist", age)
 ```
 
-Dieser Code würde die folgende Ausgabe erzeugen:
+Diese Funktion gibt folgende Ausgabe aus:
 
 ```
-Mein Name ist Max und ich bin 25 Jahre alt.
+Der Name ist Sandra und das Alter ist 25
 ```
 
-Eine weitere hilfreiche Funktion ist `Sprintf`, die eine formatierte Zeichenkette zurückgibt, anstatt sie auf der Konsole auszugeben. Dies ermöglicht die Verwendung von Debug-Ausgaben in komplexeren Funktionen, die eine Rückgabe haben. Zum Beispiel:
+Es ist auch möglich, Variablenwerte in einem bestimmten Format zu drucken, zum Beispiel als Dezimalzahl oder in hexadezimaler Darstellung. Hierfür gibt es die Funktion "fmt.Printf()", bei der zusätzlich ein Formatierungsstring angegeben werden muss.
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    result := add(5, 7)
-    fmt.Printf("5 + 7 = %d", result)
-}
-
-func add(a, b int) int {
-    sum := a + b
-    return sum
-}
+favoriteNumber := 8
+fmt.Printf("Meine Lieblingszahl ist %d und es ist die %xte im Alphabet", favoriteNumber, favoriteNumber)
 ```
 
-Dieser Code würde die folgende Ausgabe erzeugen:
+Die Ausgabe sieht wie folgt aus:
 
 ```
-5 + 7 = 12
+Meine Lieblingszahl ist 8 und es ist die 8te im Alphabet
 ```
 
-# Siehe auch
+## Tieferer Einblick
 
-- [Go Dokumentation - Paket fmt](https://golang.org/pkg/fmt/)
-- [Code.org - Debugging in Go](https://studio.code.org/s/coursec/stage/6/puzzle/1) 
-- [Golang Basics - Fehlersuche mit Println](https://www.youtube.com/watch?v=KnaBP7e0_ZA)
+Es gibt verschiedene Möglichkeiten, Debug-Ausgaben in Go zu nutzen. So kann man zum Beispiel mit der Funktion "log.Println()" Ausgaben in einer Log-Datei schreiben, statt sie direkt in der Konsole auszugeben. Außerdem gibt es noch weitere Formatierungsverfahren für die Funktionen "fmt.Printf()" und "log.Println()", die in der offiziellen Go-Dokumentation genauer erläutert werden.
+
+## Siehe auch
+
+- Offizielle Go-Dokumentation: https://golang.org/doc/
+- Weitere Informationen zu Debugging in Go: https://golang.org/doc/gdb
+- Blogartikel zu Debugging-Techniken in Go: https://blog.golang.org/debugging-techniques

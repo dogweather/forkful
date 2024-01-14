@@ -1,68 +1,59 @@
 ---
 title:    "C# recipe: Using regular expressions"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever found yourself searching for a specific pattern in a large text document? Maybe you needed to find all email addresses or phone numbers within a document. This is where regular expressions come in handy. They allow you to search for specific patterns within a larger text, making tasks like data validation and text parsing much easier.
+Regular expressions are a powerful tool in the world of programming. They allow us to search, manipulate, and validate strings of text with ease. By learning how to use regular expressions, you can streamline your code and make it more efficient.
 
 ## How To
-
-Regular expressions, also known as regex, are a sequence of characters that define a search pattern. They are commonly used in programming languages, such as C#, to search and manipulate strings. Let's take a look at some examples of how to use regular expressions in C#.
+Using regular expressions in C# is actually quite simple. Let's look at a few examples to see how they work.
 
 ```C#
-//Import the System.Text.RegularExpressions namespace
-using System.Text.RegularExpressions;
+// Match a specific word in a sentence
+Regex regex = new Regex("hello");
+string sentence = "Hello there, how are you?";
+Match match = regex.Match(sentence);
+Console.WriteLine(match); // Output: "Hello"
 
-//Create a regex pattern to find email addresses
-Regex emailPattern = new Regex(@"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}");
-
-//Search for matches within a string
-MatchCollection emailMatches = emailPattern.Matches("john.doe@example.com, jane.smith@example.com");
-
-//Loop through the matches and print out the results
-foreach (Match match in emailMatches)
+// Find multiple occurrences
+Regex regex = new Regex("the");
+string sentence = "The cat in the hat";
+MatchCollection matches = regex.Matches(sentence);
+foreach (var match in matches)
 {
-    Console.WriteLine(match.Value);
+    Console.WriteLine(match); // Output: "the" "the"
 }
 
-//Output:
-//john.doe@example.com
-//jane.smith@example.com
-```
+// Replace a word in a sentence
+Regex regex = new Regex("apple");
+string sentence = "I love apples!";
+string newSentence = regex.Replace(sentence, "oranges");
+Console.WriteLine(newSentence); // Output: "I love oranges!"
 
-In this example, we first import the `System.Text.RegularExpressions` namespace to use regular expressions. Then, we create a `Regex` object with the pattern we want to search for. In this case, we are searching for email addresses. Next, we use the `Matches()` method to find all matches within a given string and store them in a `MatchCollection` object. Finally, we loop through the matches and print out the results.
-
-You can also use regular expressions for data validation. For example, if you want to make sure a user enters a valid phone number in a specific format, you can use a regular expression to check for it. 
-
-```C#
-//Create a regex pattern to validate phone numbers in the format of (123)456-7890
-Regex phonePattern = new Regex(@"^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$");
-
-//Check if a given string matches the pattern
-string input = Console.ReadLine();
-bool isValid = phonePattern.IsMatch(input);
-
-//Output:
-//Enter a phone number: (123)456-7890
-//True
+// Validate email address
+Regex regex = new Regex(@"\w+@\w+\.\w+");
+string email = "johndoe@email.com";
+if (regex.IsMatch(email))
+{
+    Console.WriteLine("Valid email address");
+}
+else
+{
+    Console.WriteLine("Invalid email address");
+}
+// Output: Valid email address
 ```
 
 ## Deep Dive
+Regular expressions may seem like a random assortment of symbols and characters, but each one serves a specific purpose. For example, the backslash "\" symbol indicates an escape character, which is used to give special meaning to certain characters. The dot "." symbol is a wildcard that represents any single character. By learning the different symbols and their meanings, you can create complex regular expressions to suit your needs.
 
-Regular expressions may seem daunting at first, with all the special characters and rules, but once you understand the basics, they can be a powerful tool in your programming arsenal.
-
-One important thing to note is that regular expressions are case sensitive. This means that using the `RegexOptions.IgnoreCase` option is useful to make your patterns case insensitive.
-
-Another useful feature of regular expressions is the use of quantifiers. These characters allow you to specify the number of matches you want to find. For example, the `*` quantifier means "zero or more occurrences" while the `+` quantifier means "one or more occurrences". These quantifiers can be used to make your patterns more flexible and match varying lengths of strings.
-
-Lastly, regular expressions can also be used for replacement, where you can replace certain patterns within a string with something else. This is done using the `Replace()` method and passing in the pattern, replacement string, and the original string as parameters.
+Other advanced features of regular expressions in C# include capturing groups, which allow you to retrieve specific parts of a match, and lookaround assertions, which let you specify the position of a match relative to another string. These features can greatly enhance the functionality and efficiency of your regular expressions.
 
 ## See Also
-
-- [Microsoft Docs: Regular Expression Language - Quick Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
-- [Regex Tester](https://regexr.com/)
+- [Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions-in-csharp)
+- [Regular Expressions 101](https://regex101.com/)
+- [Mastering Regular Expressions by Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

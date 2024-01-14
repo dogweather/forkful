@@ -1,40 +1,47 @@
 ---
-title:    "Gleam: 現在の日付を取得する"
+title:    "Gleam: 現在の日付の取得方法"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleamプログラミング：現在の日付を取得する
+# なぜ
 
-##なぜ
+最新の日付を取得するのに関わる理由は、特定の日付が必要な場合やプログラムで日付を使用することが必要な場合があるためです。
 
-日付を取得することは、多くのプログラマーにとって一般的なタスクです。プログラム内で時刻や日付のデータを使用する必要があるため、正確な日付を取得する必要があります。Gleamを使用すると、簡単に現在の日付を取得することができます。
-
-##やり方
-
-日付を取得する方法は、GleamのDateモジュールを使用することです。以下のサンプルコードをご覧ください。
+## 方法
 
 ```Gleam
-import Date
+import Time.Date
 
-let today = Date.now()
+// 現在の日付を取得
+let current_date = Time.Date.now()
+
+// 取得した日付を表示
+IO.print("今日の日付は ${Date.format(current_date, "%m/%d/%Y")} です。\n")
 ```
 
-上記のコードでは、現在の日付が `today`変数に格納されます。また、日付のフォーマットを指定することもできます。例えば、以下のコードでは、月-日-年の順で日付を取得します。
+このように、GleamではTime.Dateモジュールを使用して現在の日付を取得し、指定したフォーマットで表示することができます。
 
 ```Gleam
-let today = Date.to_string(Date.MonthDayYear)(Date.now())
+// 日付を取得してから2日後の日付を計算
+let today = Time.Date.now()
+let two_days_later = Time.Date.add_days(today, 2)
+
+// 計算した日付を表示
+IO.print("2日後の日付は ${Date.format(two_days_later, "%m/%d/%Y")} です。\n")
 ```
 
-これにより、現在の日付が "4-7-2020"のように表示されます。
+上記のように、Time.Dateモジュールを使用することで日付に対する様々な操作が可能です。
 
-##深い掘り下げ
+## 深層
 
-さらに詳しく日付を取得するためには、Dateモジュールのドキュメントを参照することができます。また、タイムゾーンの考慮や日付の比較、書式設定など、より高度な操作を行うこともできます。
+Gleamでは、Time.Dateモジュール以外にも日付に関わる操作が行えるモジュールがあります。例えば、Time.DateTimeモジュールを使用することで、時間の情報も含めた日付の取得や操作が可能です。
 
-##関連リンク
+また、Time.Dateモジュールのメソッドを使用する際には、引数に渡すフォーマットのパターンについてもより詳しく学ぶことができます。
 
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [Dateモジュールのドキュメント](https://gleam.run/modules/gleam_stdlib/Date.html)
-- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam)
+# これらも参考にしてください
+
+- [Gleam公式ドキュメント: Timeモジュール](https://gleam.run › std › gleam.time)
+- [Timeモジュールのフォーマットパターンについて](https://gleam.run › std › gleam.time › date › formatting)

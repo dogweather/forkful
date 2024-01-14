@@ -1,58 +1,69 @@
 ---
 title:    "TypeScript: Escrevendo para o erro padrão"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+# Por que escrever no erro padrão?
 
-Escrever para o erro padrão é uma prática comum em programação TypeScript. Isso permite que os desenvolvedores capturem e exibam informações de erro precisas, facilitando a depuração e o aprimoramento do código. Além disso, escrever para o erro padrão também pode ser útil para fins de registro e monitoramento de erros em aplicativos.
+Escrever para o erro padrão pode ser extremamente útil durante o processo de desenvolvimento de um projeto em TypeScript. Ele permite que você envie mensagens de erro e depuração para a saída padrão, o que ajuda a identificar possíveis problemas e aperfeiçoar seu código.
 
-## Como fazer
+## Como fazer?
 
-Para escrever para o erro padrão em TypeScript, você pode usar o objeto `console` e o método `error()`. Aqui está um exemplo simples de código:
-
-```TypeScript
-console.error("Este é um erro de exemplo");
-```
-
-O código acima irá imprimir a mensagem de erro no console e será exibido com um formato visualmente diferente do que as mensagens normais do console. Aqui está o output desta linha de código:
-
-<img src="https://i.imgur.com/CAIrP5c.png" alt="Exemplo de erro de console" width="400"/>
-
-Você também pode incluir informações adicionais na mensagem de erro, como uma variável ou uma descrição mais detalhada do erro:
+Para escrever no erro padrão em TypeScript, basta utilizar a função "console.error()" seguida da mensagem que você deseja exibir. Por exemplo:
 
 ```TypeScript
-const numero = 10;
-console.error(`O valor da variável "numero" é ${numero}. Este é um erro de exemplo.`);
+console.error("Erro: Variável x não definida");
 ```
 
-O output deste código será:
+A saída no console seria:
 
-<img src="https://i.imgur.com/c7NjhOr.png" alt="Exemplo de erro de console com variável" width="400"/>
+```
+Erro: Variável x não definida
+```
 
-Você também pode usar a sintaxe try/catch para capturar erros específicos e escrevê-los para o erro padrão. Aqui está um exemplo:
+Você também pode utilizar variáveis e expressões dentro da função "console.error()". Por exemplo:
 
 ```TypeScript
-try {
-  const lista = ["um", "dois", "três"];
-  console.log(lista[3]); // O índice 3 não existe neste array
-} catch (err) {
-  console.error(`Erro: ${err}`); // Imprime o erro específico
-}
+let mensagem = "Bem-vindo ao meu blog!";
+console.error("Mensagem:", mensagem);
 ```
 
-O output será:
+A saída no console seria:
 
-<img src="https://i.imgur.com/E3pcX5V.png" alt="Exemplo de captura de erro" width="400"/>
+```
+Mensagem: Bem-vindo ao meu blog!
+```
 
-## Mergulho Profundo
+## Aprofundando
 
-É importante lembrar que escrever para o erro padrão não é o único meio de lidar com erros em seu código TypeScript. Você também pode usar a declaração `throw` para lançar um erro em certas condições e tratá-lo com `try/catch`. Além disso, você pode personalizar a formatação da mensagem de erro usando o objeto `Error` e seu construtor. Para mais informações sobre tratamento de erros em TypeScript, recomendamos a leitura da documentação oficial.
+Além de exibir mensagens de erro, você também pode utilizar a função "console.error()" para depuração de código. É possível incluir informações sobre variáveis e estados do programa para diagnosticar possíveis problemas. Por exemplo:
 
-## Veja Também
+```TypeScript
+let x = 10;
+let y = 20;
+console.error("Valor de x:", x);
+console.error("Valor de y:", y);
+```
 
-- [Documentação oficial do TypeScript sobre tratamento de erros](https://www.typescriptlang.org/docs/handbook/errors.html)
-- [Guia sobre tratamento de erros em TypeScript](https://levelup.gitconnected.com/how-to-handle-errors-in-typescript-like-a-pro-40896411fc27)
-- [Tutorial de formatação de erros em TypeScript](https://www.digitalocean.com/community/tutorials/typescript-custom-error-objects)
+A saída no console seria:
+
+```
+Valor de x: 10
+Valor de y: 20
+```
+
+Isso pode ser extremamente útil ao tentar descobrir por que um determinado trecho de código não está funcionando corretamente.
+
+# Veja também
+
+Para mais informações e dicas sobre o uso do TypeScript, confira os seguintes links:
+
+- https://www.typescriptlang.org/
+- https://www.typescriptlang.org/docs/handbook/basic-types.html
+- https://www.freecodecamp.org/news/the-typescript-handbook/
+- https://www.tutorialspoint.com/typescript/index.htm
+
+Esperamos que este artigo tenha sido útil e que você possa utilizar a função "console.error()" em seus projetos em TypeScript para tornar o processo de desenvolvimento mais fácil e eficiente. Obrigado por ler e até a próxima!

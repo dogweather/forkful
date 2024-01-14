@@ -1,42 +1,54 @@
 ---
-title:    "Python: Extrahera delsträngar"
+title:    "Python: Utvinna delsträngar"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att extrahera substrängar, eller mindre delar av en större textsträng, är en avgörande färdighet för alla som programmerar i Python. Det kan användas för att manipulera och bearbeta textdata på ett effektivt sätt.
+
+Att extrahera substrängar kan vara en användbar teknik för att manipulera textdata i Python. Det tillåter dig att enkelt hämta delar av en sträng som matchar ett visst mönster eller kriterium. Detta kan vara till nytta för många olika programmeringsuppgifter, som att formatera datum, filtrera data eller hantera användarinput.
 
 ## Hur man gör det
-För att extrahera en substräng i Python använder man sig av metoden `substring()` eller genom att använda indexing och slicing. Nedan följer några exempel på hur man kan använda dessa metoder:
 
-```Python
-text = "Detta är en textsträng"
+För att extrahera en substräng i Python, kan du använda metoden `.substring()` eller indexering på en sträng. Låt oss säga att vi har en sträng som representerar en personens namn och vi vill extrahera bara förnamnet. Vi kan göra det på följande sätt:
 
-# Användning av substring() för att extrahera bokstäverna "en"
-substring = text.substring(11, 13)
-print(substring) # en
-
-# Användning av indexing för att extrahera de första 5 bokstäverna
-substring = text[0:5]
-print(substring) # Detta
-
-# Användning av slicing för att extrahera de sista 6 bokstäverna
-substring = text[17:]
-print(substring) # textsträng
+```python
+namn = "Sofia Andersson"
+förnamn = namn[0:5] # indexering från 0 till 5 ger oss "Sofia"
 ```
 
-I det första exemplet använder vi oss av `substring()` metoden och anger index för de bokstäver som vi vill extrahera i parenteserna. I det andra och tredje exemplet använder vi oss av indexing respektive slicing, vilket innebär att vi anger start- och slutindex för det område av texten som vi vill extrahera.
+Om vi ville extrahera efternamnet, kan vi använda metoden `.substring()`:
 
-## Deep Dive
-En viktig sak att komma ihåg när man extraherar substrängar är att indexering börjar från 0 i Python, vilket innebär att det första tecknet i en sträng har indexet 0. Man kan också ange ett negativt index, vilket gör att man räknar bakifrån i strängen. Till exempel har det sista tecknet i en sträng indexet -1, det näst sista tecknet har indexet -2 och så vidare.
+```python
+efternamn = namn.substring(6) # ger oss "Andersson"
+```
 
-Det finns också olika sätt att använda slicing för att extrahera delar av en textsträng. Man kan ange en tredje parameter efter det andra indexet för att bestämma hur många tecken som ska hoppas över i varje iteration. Man kan också ange enbart det första eller andra indexet, vilket innebär att slicing kommer att börja från början respektive sluta vid slutet av strängen.
+För att extrahera en specifik del av en sträng, kan vi använda indexering med hjälp av konceptet "slicing". Till exempel, om vi bara vill ha det andra till det femte tecknet i en sträng, kan vi göra det på detta sätt:
 
-Det finns många andra olika metoder och tekniker för att extrahera substrängar i Python, men det är dessa grundläggande metoder som är de vanligaste och mest användbara.
+```python
+sträng = "Hej hej"
+substring = sträng[1:5] # ger oss "ej h"
+```
+
+Det är också möjligt att använda indexering med negativa tal för att räkna bakifrån i en sträng. Till exempel, om vi ville extrahera de sista tre tecknen i en sträng kan vi göra det på följande sätt:
+
+```python
+sträng = "Hej hej"
+substring = sträng[-3:] # ger oss "hej"
+```
+
+## Djupdykning
+
+Det finns många olika sätt att använda substrängar i Python, men det är viktigt att notera att beroende på språket som används för strängmanipulering, så kan syntaxen och metoderna för att extrahera substrängar variera.
+
+Förutom det som presenteras ovan, finns det mer avancerade sätt att extrahera substrängar i Python, som att använda reguljära uttryck och använda inbyggda funktioner som `.split()` eller `.partition()`.
+
+Det är också viktigt att förstå att strängar i Python är oföränderliga, vilket innebär att de inte kan ändras direkt. Om du vill manipulera en sträng måste du skapa en kopia och sedan ändra den.
 
 ## Se även
-- [Officiell Python dokumentation om textsträngar](https://docs.python.org/2/library/string.html)
-- [Tutorial om substrängar i Python](https://realpython.com/python-strings/)
-- [Mer information om indexering och slicing i Python](https://www.datacamp.com/community/tutorials/python-string-slicing)
+
+- [Python String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
+- [String slicing in Python](https://www.programiz.com/python-programming/methods/string/slice)
+- [Regular expressions in Python](https://docs.python.org/3/library/re.html)

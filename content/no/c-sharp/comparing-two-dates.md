@@ -1,50 +1,50 @@
 ---
-title:    "C#: Sammenligning av to datoer"
+title:    "C#: Sammenligner to datoer"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å sammenligne to datoer kan være nyttig i mange programmeringsoppgaver, for eksempel i å sjekke om en bestemt dato er før eller etter en annen dato. Det kan også brukes til å beregne tidsintervaller og kontrollere om en dato faller innenfor et bestemt tidsintervall. Ved å kunne sammenligne datoer, kan du lage mer dynamiske og nøyaktige programmer.
+Å sammenligne to datoer er en vanlig oppgave i programmering, spesielt når du jobber med tidspunkt og planlegging. Ved å kunne sammenligne datoer kan man enkelt sjekke om en dato kommer før eller etter en annen, eller om de er like. Dette kan være nyttig for å håndtere betingede logikker og sjekke for utløpte tidsfrister.
 
-## Hvordan
+## Slik gjør du det
 
-For å sammenligne to datoer i C#, kan du bruke Compare-metoden i DateTime-klasse. Her er et eksempel på hvordan du kan sammenligne to datoer og få ut en tekstbasert beskrivelse av resultatet:
+Det finnes flere måter å sammenligne datoer på i C#, men den mest effektive og nøyaktige metoden er ved å bruke `DateTime.Compare()` funksjonen. Denne funksjonen tar inn to `DateTime` objekter og returnerer en verdi basert på forholdet mellom dem. La oss se på et eksempel:
 
 ```C#
-DateTime førsteDato = new DateTime(2021, 10, 10);
-DateTime andreDato = new DateTime(2021, 11, 15);
+DateTime d1 = new DateTime(2020, 12, 31);
+DateTime d2 = new DateTime(2021, 1, 1);
 
-int resultat = DateTime.Compare(førsteDato, andreDato);
+int result = DateTime.Compare(d1, d2);
 
-if (resultat < 0)
+if (result < 0)
 {
-    Console.WriteLine("{0} er før {1}", førsteDato.ToShortDateString(), andreDato.ToShortDateString());
+    Console.WriteLine("Datoen " + d1.ToString("yyyy/MM/dd") + " kommer før " + d2.ToString("yyyy/MM/dd"));
 }
-else if (resultat > 0)
+else if (result > 0)
 {
-    Console.WriteLine("{0} er etter {1}", førsteDato.ToShortDateString(), andreDato.ToShortDateString());
+    Console.WriteLine("Datoen " + d1.ToString("yyyy/MM/dd") + " kommer etter " + d2.ToString("yyyy/MM/dd"));
 }
 else
 {
-    Console.WriteLine("{0} og {1} er like", førsteDato.ToShortDateString(), andreDato.ToShortDateString());
+    Console.WriteLine("Datoene er like: " + d1.ToString("yyyy/MM/dd") + " og " + d2.ToString("yyyy/MM/dd"));
 }
+
 ```
 
-Output: 10.10.2021 er før 15.11.2021.
+I dette eksempelet oppretter vi to `DateTime` objekter og sammenligner dem ved hjelp av `DateTime.Compare()` funksjonen. Funksjonen vil returnere en verdi mindre enn 0 hvis d1 kommer før d2, en verdi større enn 0 hvis d1 kommer etter d2, og 0 hvis de er like. Vi kan deretter bruke en if/else-sjekk for å skrive ut en passende melding basert på resultatet.
 
-I dette eksempelet bruker vi Compare-metoden til å sammenligne to datoer og få et resultat i form av en integer. Dersom resultatet er mindre enn 0, betyr det at første dato er før andre dato, mens et resultat større enn 0 betyr at første dato er etter andre dato. En verdi på 0 betyr at datoene er like.
+## Dypere dykk
 
-## Dypdykk
+Når man sammenligner datoer, er det viktig å sørge for at man sammenligner samme aspekter av datoene. For eksempel, hvis du vil sammenligne den nøyaktige tiden på dagen, må du inkludere tidspunktet i `DateTime` objektene som sammenlignes. Hvis ikke, vil funksjonen bare sammenligne datoene på dag-nivå.
 
-Når du sammenligner datoer i C#, må du være oppmerksom på at tidspunktet også blir tatt med i beregningen. Dette betyr at om to datoer er like, men har forskjellige tidspunkter, vil Compare-metoden gi et annet resultat.
+Det er også viktig å huske på at datoer kan være skrevet på forskjellige formater, noe som kan påvirke sammenligningen. Derfor er det en god praksis å bruke `ToString()` funksjonen med et spesifisert format når man skriver ut datoene.
 
-I tillegg kan du også bruke andre metoder i DateTime-klassen til å sammenligne datoer, som for eksempel Equals-metoden eller større/lik og mindre/lik operatører. Det er også viktig å merke seg at DateTime-objekter er immutable, det vil si at de ikke kan endres. Derfor må du lage et nytt DateTime-objekt dersom du ønsker å endre datoen du sammenligner med.
+## Se også
 
-## Se Også
-
-- [DateTime.Compare Metode (System) (msdn.microsoft.com)](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.compare?view=net-5.0)
-- [DateTime.Equals Metode (System) (msdn.microsoft.com)](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.equals?view=net-5.0)
-- [How to: Extract the Day of the Week from a Date (c-sharpcorner.com)](https://www.c-sharpcorner.com/article/c-sharp-how-to-extract-the-day-of-the-week-from-a-datetime-in-net/)
+- [DateTime.Compare metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare)
+- [DateTime struct dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- [Hvordan sammenligne datoer i Java](https://www.javaer101.com/no/article/1490801.html) (på engelsk)

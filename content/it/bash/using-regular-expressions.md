@@ -1,29 +1,33 @@
 ---
-title:    "Bash: Utilizzo delle espressioni regolari"
+title:    "Bash: Utilizzare le espressioni regolari"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché usare Regular Expressions in Bash
-Le Regular Expressions (espressioni regolari) sono una potente e versatile tecnica di programmazione che può essere utilizzata in molti linguaggi di programmazione, tra cui anche Bash. In questo post, scoprirai perché dovresti imparare ad utilizzare le regular expressions in Bash e come farlo.
+## Perché
 
-## Come utilizzare le Regular Expressions in Bash
-Per utilizzare le Regular Expressions in Bash, è necessario utilizzare un comando specifico: `grep`. Questo comando ricerca all'interno di una stringa o di un file per un determinato modello, definito utilizzando le regular expressions.
+Se sei un programmatore o uno sviluppatore, probabilmente hai già sentito parlare delle espressioni regolari o "regular expressions" in inglese. Questo strumento è molto utile per il parsing e la ricerca di pattern all'interno di un testo. Usare le espressioni regolari ti permette di risparmiare tempo ed evitare di scrivere codice ripetitivo per la ricerca di determinati elementi. Inoltre, è un'ottima abilità da avere per un programmatore che vuole scrivere codice efficiente e pulito.
 
-Ecco un esempio di come utilizzare le regular expressions per cercare una data in un file di testo:
+## Come fare
+
+Per utilizzare le espressioni regolari in Bash, è necessario utilizzare il comando `grep`. Questo comando consente di cercare un pattern all'interno di un file o di un output di un altro comando. Di seguito un esempio di codice Bash che cerca tutte le righe che contengono la parola "ciao":
+
+```Bash
+grep "ciao" file.txt
 ```
-Bash
-grep '\d{2}\/\d{2}\/\d{4}' test.txt
-```
-In questo esempio, il modello di ricerca è `\d{2}\/\d{2}\/\d{4}`, che corrisponde a una data nel formato `DD/MM/YYYY`. L'uso di `\d` indica un carattere numerico, mentre `{2}` indica che ci devono essere esattamente due caratteri numerici. Con questa ricerca, vengono restituite tutte le linee del file di testo che contengono una data formattata correttamente.
 
-## Approfondimenti sulle Regular Expressions
-Le regular expressions possono essere utilizzate in molti modi diversi in Bash, come ad esempio per la ricerca e la sostituzione di testo, o per la validazione dei dati di input.
+Il comando `grep` accetta anche opzioni che possono aiutare a specificare ulteriormente il pattern da cercare. Ad esempio, utilizzando l'opzione `-i`, la ricerca verrà effettuata in modo case-insensitive. Inoltre, l'opzione `-E` permette di utilizzare un'estensione delle espressioni regolari, chiamata "extended regular expressions", che fornisce più funzionalità rispetto alle espressioni regolari standard.
 
-È importante studiare approfonditamente il funzionamento delle regular expressions per sfruttarne appieno il potenziale. Puoi fare riferimento alla documentazione ufficiale di Bash per imparare di più sulle varie opzioni e caratteri speciali che possono essere utilizzati all'interno delle regular expressions.
+## Approfondimento
+
+Le espressioni regolari seguono un set di regole e sintassi specifiche per effettuare il match con un determinato pattern all'interno di un testo. Ci sono numerosi simboli e metacaratteri che possono essere utilizzati per specificare un pattern, come ad esempio l'asterisco `*` per indicare ripetizioni o il punto `.`, che rappresenta qualsiasi carattere. È importante studiare la sintassi delle espressioni regolari per sfruttarne al massimo le potenzialità.
+
+Inoltre, esistono varie risorse online che permettono di testare ed esercitarsi con le espressioni regolari in tempo reale. Alcune di queste sono [Regex101](https://regex101.com/) e [RegExr](https://regexr.com/).
 
 ## Vedi anche
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/manual/html_node/grep-regular-expressions.html)
-- [Tutorial su Regular Expressions in Bash](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-regex-in-linux-commands-by-example)
-- [Una guida rapida alle Regular Expressions in Bash](https://opensource.com/article/19/6/grep-regular-expressions-cheat-sheet)
+
+- [Comandi Bash: espressioni regolari](https://www.linuxmanpages.net/it/man1/grep.1.html)
+- [Documentatione regex Bash](https://tldp.org/LDP/abs/html/x17129.html)
+- [Tutorial Regex Bash](https://ryanstutorials.net/bash-scripting-tutorial/bash-regular-expression.php)

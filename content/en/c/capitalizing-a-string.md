@@ -1,43 +1,107 @@
 ---
 title:    "C recipe: Capitalizing a string"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Capitalizing a string is a common task in programming, especially when dealing with user input or manipulating data. It allows for consistency and organization in the output of a program. 
+
+Capitalizing a string is a common task when working with text in programming. Whether it is for displaying user inputs or formatting data for a specific output, capitalization can play an important role in making data more readable and presentable. In this blog post, we will discuss why and how to capitalize a string in the C programming language.
 
 ## How To
-To capitalize a string in C, there are a few steps to follow. First, we need to include the `string.h` library for string functions. Then, we need to define a string that we want to capitalize. After that, we can use the `toupper()` function to convert each character in the string to uppercase. Finally, we print out the capitalized string to see the desired result.
 
-```C
-#include <stdio.h>
-#include <string.h>
+To capitalize a string in C, we can use the built-in function `toupper()` from the header file `<ctype.h>`. This function takes in a character and returns its uppercase equivalent. We can use this function in a loop to iterate through each character in the string and convert them to uppercase. Here is an example code:
+
+```
+#include<stdio.h>
+#include<ctype.h>
 
 int main(){
-    char str[] = "hello world";
-    int i;
-    
-    // convert each character to uppercase
-    for(i = 0; i < strlen(str); i++){
-        str[i] = toupper(str[i]);
-    }
-    
-    // print out the capitalized string
-    printf("%s", str);
-    return 0;
+  // declare a string
+  char str[50];
+  int i;
+
+  // ask for user input
+  printf("Enter a string: ");
+  scanf("%s", str);
+
+  // loop through each character
+  for(i = 0; str[i] != '\0'; i++){
+    // use toupper() function to convert to uppercase
+    str[i] = toupper(str[i]);
+  }
+
+  // print the capitalized string
+  printf("Capitalized string: %s", str);
+
+  return 0;
 }
 ```
 
-The output of this program would be `HELLO WORLD`, with all letters capitalized. This method can also be used for single characters or specific parts of a string. For more advanced manipulations, we can use functions like `strcmp()` to compare strings or `strcpy()` to copy strings.
+Sample Output:
+
+```
+Enter a string: hello world
+Capitalized string: HELLO WORLD
+```
+
+We can also create our own custom function to capitalize a string. This function would take in a string as a parameter and return the capitalized version of that string. Here is an example code:
+
+```
+#include<stdio.h>
+
+// function to capitalize a string
+char* capitalizeString(char* str){
+  int i;
+
+  // loop through each character
+  for(i = 0; str[i] != '\0'; i++){
+    // check if character is lowercase
+    if(str[i] >= 97 && str[i] <= 122){
+      // convert to uppercase by subtracting 32 from ASCII value
+      str[i] -= 32;
+    }
+  }
+
+  // return the capitalized string
+  return str;
+}
+
+int main(){
+  // declare a string
+  char str[50];
+
+  // ask for user input
+  printf("Enter a string: ");
+  scanf("%s", str);
+
+  // call the capitalizeString function
+  char* capitalized_str = capitalizeString(str);
+
+  // print the capitalized string
+  printf("Capitalized string: %s", capitalized_str);
+
+  return 0;
+}
+```
+
+Sample Output:
+
+```
+Enter a string: hello world
+Capitalized string: HELLO WORLD
+```
 
 ## Deep Dive
-In C, each character is represented by a numerical value known as its ASCII code. The `toupper()` function takes in a character and returns its uppercase ASCII code. This is why we can use a loop to convert each character in a string to uppercase. It is important to note that this function only works for letters, and will not affect other characters such as numbers or symbols.
 
-It is also worth mentioning that there are alternative methods for capitalizing strings in C, such as using bitwise operators or creating a new function to do the job. However, the `toupper()` function is the simplest and most commonly used method.
+In C, strings are represented as arrays of characters and are terminated by a null character (`\0`). This means that in order to capitalize a string, we can simply loop through each character and perform the necessary operations on them. The `toupper()` function takes in a character and returns its ASCII code equivalent for uppercase characters. This is why we can directly assign the return value of `toupper()` to the current character in the loop.
+
+It is also worth noting that the ASCII codes for lowercase and uppercase letters have a difference of 32. This is why in the custom `capitalizeString()` function, we can simply subtract 32 from the ASCII value to convert lowercase characters to uppercase.
 
 ## See Also
-- [C string functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [ASCII table](https://www.asciitable.com/)
-- [C bitwise operators](https://www.programiz.com/c-programming/bitwise-operators)
+
+- [ASCII Table](https://www.ascii-code.com/)
+- [String Functions in C](https://www.programiz.com/c-programming/library-function/string.h)
+- [C Programming Tutorial](https://www.tutorialspoint.com/cprogramming/)

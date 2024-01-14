@@ -1,32 +1,33 @@
 ---
-title:    "Java: Schreiben auf Standardfehler"
+title:    "Java: Schreiben in die Standardfehlerausgabe"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben von standard error ist eine wichtige Fähigkeit für jeden Programmierer. Es ermöglicht uns, Fehlermeldungen und Warnungen anzuzeigen, die während der Ausführung eines Programms auftreten können. Dadurch können wir potenzielle Fehler in unserem Code identifizieren und beheben, was dazu beiträgt, die Gesamtqualität unserer Anwendung zu verbessern.
+Das Schreiben in den Standardfehler oder die System Fehlerausgabe (stderr) ist ein wichtiger Aspekt der Java-Programmierung. Es ermöglicht uns, Fehler und Debugging-Informationen zu erfassen und anzuzeigen, die für die Entwicklung und Fehlerbehebung unserer Anwendungen entscheidend sein können.
 
-## Wie man standard error schreiben kann
+## Wie geht's
 
-Das Schreiben von standard error in Java ist relativ einfach. Wir verwenden die `System.err` Methode, um unsere Fehlermeldung oder Warnung auszugeben. Wir können dies entweder direkt im Code machen oder eine `try-catch`-Anweisung verwenden, um ein spezifisches Problem abzufangen und eine entsprechende Meldung zu erfassen.
+Um in den Standardfehler zu schreiben, müssen wir zuerst die Klasse "System" verwenden und die Methode "err" aufrufen. Dann können wir die Methode "println" verwenden, um unseren gewünschten Text auszugeben.
 
-```java
-try {
-  // Code ausführen
-} catch (Exception e) {
-  System.err.println("Fehler beim Ausführen des Codes: " + e.getMessage());
-}
+```Java
+System.err.println("Dieser Text wird in den Standardfehler geschrieben.");
 ```
 
-Dieser Codeblock zeigt, wie wir eine `try-catch`-Anweisung verwenden können, um auf eine Exception zu reagieren und eine entsprechende Fehlermeldung auszugeben.
+Die Ausgabe erscheint dann rot in der Konsole und wird immer angezeigt, auch wenn die Standardausgabe (stdout) umgeleitet wird.
 
-## Tiefergehende Informationen
+## Tiefer Tauchen
 
-Standard error ist ein Strom von Daten, der von der Standardfehlerausgabe des Betriebssystems empfangen und angezeigt wird. In Java können wir diese Ausgabe nutzen, um potenzielle Probleme in unserem Code zu identifizieren. Es ist wichtig, dass wir unsere Fehlermeldungen klar und aussagekräftig gestalten, damit wir die Ursachen für Fehler leichter nachvollziehen und beheben können.
+Im Hintergrund nutzt Java die sogenannte "System.err" PrintStream-Instanz, um Ausgaben in den Standardfehler zu schreiben. Diese kann auch durch die Verwendung der "setErr()" Methode geändert werden, um z.B. auf eine Datei oder einen Logger umzuleiten.
 
-See Also: 
-* [Java Exceptions Tutorial](https://www.w3schools.com/java/java_exceptions.asp)
-* [Java IO Tutorial](https://www.baeldung.com/java-io)
+Es ist auch wichtig zu beachten, dass Schreiboperationen in den Standardfehler teurer sind als in die Standardausgabe, da sie durch das System synchronisiert werden. Aus diesem Grund sollten wir sie nur für besonders wichtige oder fehlerhafte Nachrichten verwenden.
+
+## Siehe auch
+
+- [Java Dokumentation zu der "System" Klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Tutorial zu Standard Streams in Java](https://www.baeldung.com/java-standard-Streams)
+- [Artikel über das Schreiben in den Standardfehler in Java](https://stackify.com/java-system-out-println-vs-system-err-println/)

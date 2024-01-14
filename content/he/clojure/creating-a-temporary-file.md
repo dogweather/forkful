@@ -1,33 +1,42 @@
 ---
 title:    "Clojure: יצירת קובץ זמני"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה?
+## למה:
 
-הצורך ביצירת קובץ זמני יכול להיות טכני או פרקטי. לדוגמה, ייתכן שתרצו ליצור קובץ זמני בכדי לייצג נתונים מסוימים שאתם עובדים עליהם, או כספריה להתפתחות וניסיון עם קבצים זמניים.
+יצירת קובץ זמני היא פעולה חשובה לתכנותנים בכל שפת תכנות. באמצעות הפעולה הזו, אנו יכולים ליצור קובץ שימושי בזמן הרצת הקוד, אשר ניתן להשתמש בו כדי לאחסן נתונים או לבצע פעולות מסוימות.
 
-## איך לעשות זאת?
+## כיצד לעשות זאת:
 
-כאשר מדובר ביצירת קובץ זמני בקלול, ישנן מספר אופציות שניתן להשתמש בהן. לדוגמה, ניתן להשתמש בפונקציה `with-temp-file`, שמקלה על פתיחת קובץ זמני וכן על ניהול הקובץ. נדון יותר בפרטים בעמוד הפירוט "עמוד נחשק".
-
-הנה דוגמא ליצירת קובץ זמני בעזרת `with-temp-file`:
+למטרות הדוגמה, נשתמש בפונקציה "with-open" המאפשרת לנו ליצור ולנהל קובץ זמני בקלות:
 
 ```Clojure
-(with-temp-file "/path/to/file"
-  (println "Hello, world!"))
+(with-open [temp-file (java.io.File/createTempFile "my-temp-file-" ".txt")]
+  (println "נוצר קובץ זמני בנתיב: " (.getAbsolutePath temp-file)))
 ```
 
-כאן אנו מגדירים מיקום של הקובץ ומכניסים תוכן לקובץ על-ידי הדפסת המחרוזת "Hello, world!". בסיום הקוד, הקובץ יסגר אוטומטית וימחק.
+פלט:
 
-## עמוד נחשק
+נוצר קובץ זמני בנתיב: /var/folders/mx/3qkmwzq11s51x1bz6nwrz4g80000gn/T/my-temp-file-3300242438988184509.txt
 
-היצירת קובץ זמני בקלול היא פתרון יעיל עבור מספר רב של מטרות. כאשר נעשה שימוש נכון, יצירת קובץ זמני יכולה לחסוך זמן ולשפר את חוויית התפתחות הקוד שלכם. ניתן למצוא עוד פרטים על פונקציה `with-temp-file` כאן: [http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-temp-file](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-temp-file)
+## עומק:
 
-## ראו גם
+כאשר אנו יוצרים קובץ זמני ב- Clojure, הוא נמחק אוטומטית מכונת המחשב בסופו של דבר. גם אם התכנית שלנו נכשלת, יתרה הקובץ הולך לטיפול בסיום של התכנית, וזה אומר שאנו יכולים להשתמש בקובץ זמני את כל זמן הרצת הקוד הנתון.
 
-- [ארכיון המאמרים הרשמי של קולז'ר לעברית](https://www.clojure.org/guides/learn/)
-- [המדריך העמוק של קולז'ר לעברית](https://github.com/bbatsov/clojure-style-guide)
-- [קולז'ר לעברית - עמוד ה-Wikipedia הרשמי](https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%9C
+כמו כן, ניתן להתאים אישית את הקבצים הזמניים שנוצרים על ידי שימוש בתכונות מתקדמות של הפונקציה "createTempFile". לדוגמה, אפשר לקבוע את התיקייה בה יישמר הקובץ זמני, כדי להקל על הניתוב ואת גודל הקובץ הזמני.
+
+## ראה גם:
+
+- פירוט של פונקציות Java API: http://clojure-doc.org/articles/language/java_interoperability.html
+- הסיוע במחברת של Clojure: https://clojure.org/guides/repl/introduction
+- דרכים לנהל קבצים ממוחשבים על ידי שימוש בכתבי מסמכים: https://clojure.github.io/core.matrix/latest/tutorial/documents_management.html
+
+ראה גם:
+
+## ראה גם:
+
+- פירוט של פונקציות Java API: http://clojure-doc.org/articles/language/java_interoper

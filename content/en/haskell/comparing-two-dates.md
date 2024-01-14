@@ -1,54 +1,62 @@
 ---
 title:    "Haskell recipe: Comparing two dates"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to compare two dates in your Haskell program? Maybe you're working on a project that involves scheduling events or tracking time-sensitive data. In these cases, it's useful to be able to compare dates to see which one comes first. In this blog post, we'll explore how to compare dates in Haskell and why it's a handy skill to have in your programming toolkit.
+## Why Comparing Dates in Haskell is Useful
 
-## How To
-First, let's define two dates using the `Data.Time` module in Haskell. For this example, we'll use the `LocalDate` type.
+When working with dates and time in Haskell, it can be useful to compare two dates in order to determine which one came first, or to check if they are the same. This can be especially helpful when working with data that includes dates, as well as when dealing with specific events or schedule planning.
 
-```Haskell
-date1 :: LocalDate
-date1 = fromGregorian 2021 9 20
+## How To Compare Dates in Haskell
 
-date2 :: LocalDate
-date2 = fromGregorian 2021 9 25
-```
+Comparing two dates in Haskell is straightforward, due to the built-in `Ord` type class which allows for comparisons between values. We can use this type class to compare two dates by first converting them to the `UTCTime` type, which represents a specific moment in time.
 
-Next, we can use the `compare` function, which takes two arguments and returns an `Ordering` data type. This data type can have three possible values: `GT` (greater than), `LT` (less than), or `EQ` (equal).
+Here is a simple example of comparing two dates using the `compare` function:
 
 ```Haskell
-compareDates :: LocalDate -> LocalDate -> Ordering
-compareDates date1 date2 = compare date1 date2
+import Data.Time.Clock
+import Data.Time.Calendar
+import Data.Time.Calendar.OrdinalDate
+
+-- Create two dates
+let date1 = fromGregorian 2020 01 10
+let date2 = fromGregorian 2020 01 15
+
+-- Convert dates to UTCTime type
+let utcDate1 = UTCTime date1 (secondsToDiffTime 0)
+let utcDate2 = UTCTime date2 (secondsToDiffTime 0)
+
+-- Compare the two dates
+print $ compare utcDate1 utcDate2
 ```
 
-We can then use pattern matching to see the result of the comparison and print out a message accordingly.
+Running this code will output: `LT` indicating that `date1` comes before `date2`. If the dates were reversed, the output would be `GT` indicating that `date2` comes before `date1`. If the dates were the same, the output would be `EQ`.
+
+## Deep Dive into Comparing Dates
+
+When comparing dates in Haskell, it's important to note that the `Ord` instance for `UTCTime` does not take into account time zones. This means that two `UTCTime` values with different time zones may be considered equal when comparing them using `compare`. 
+
+To take time zones into account, we can use the `CalendarDiffDays` module from the `Data.Time.Calendar.OrdinalDate` package. This module provides functions for calculating the difference between two dates in days, taking the time zone into consideration.
+
+Here is an example of calculating the difference in days between two dates, using the `diffDays` function:
 
 ```Haskell
-printComparison :: LocalDate -> LocalDate -> IO ()
-printComparison date1 date2 = case compareDates date1 date2 of
-                                GT -> putStrLn "Date 1 is after Date 2."
-                                LT -> putStrLn "Date 1 is before Date 2."
-                                EQ -> putStrLn "Date 1 is equal to Date 2."
+import Data.Time.Calendar.OrdinalDate
+
+-- Create two dates with different time zones
+let date1 = fromGregorian 2020 01 10
+let date2 = fromGregorian 2020 01 15
+
+-- Calculate the difference in days
+print $ diffDays date1 date2
 ```
 
-Let's try it out with our two example dates:
-
-```
-> printComparison date1 date2
-Date 1 is before Date 2.
-```
-
-## Deep Dive
-Under the hood, the `LocalDate` type is actually just an alias for the `Day` type, which represents a day in the Gregorian calendar. So when we use the `fromGregorian` function, we're essentially creating a `Day` value. The `compare` function then compares the two `Day` values and returns the appropriate `Ordering`.
-
-It's also worth noting that the `LocalDate` type is part of the `time` package, which is not included in the standard library. Therefore, you will need to install this package using a package manager like Cabal or Stack before using it in your code.
+Running this code will output: `5` indicating that there are 5 days between `date1` and `date2`.
 
 ## See Also
-- [Official Haskell documentation for the `time` package](https://hackage.haskell.org/package/time)
-- [Tutorial on working with dates and times in Haskell](https://www.tutorialspoint.com/haskell/haskell_dates.htm)
-- [Haskell date comparison function on Rosetta Code](https://rosettacode.org/wiki/Date_comparison#Haskell)
+- [Haskell documentation on comparing dates](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#t:Day)
+- [Tutorial on working with dates and time in Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)
+- [Official Haskell website](https://www.haskell.org/)

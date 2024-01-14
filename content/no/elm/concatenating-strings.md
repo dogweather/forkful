@@ -1,62 +1,48 @@
 ---
-title:    "Elm: Sammenføyning av strenger"
+title:    "Elm: Sammenslåing av strenger"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å samle strenger, også kjent som å slå sammen eller konkatenering, er en viktig del av programmering. Det lar deg kombinere forskjellige tekststrenger for å lage mer komplekse og dynamiske utdata. I denne bloggposten skal vi utforske hvordan man kan gjøre dette ved hjelp av Elm-programmeringsspråket.
 
-En av de viktigste aspektene ved å programmere er å kunne manipulere data på en effektiv måte. Å kombinere eller "konkatenerer" strenger er en vanlig oppgave som kan hjelpe deg med å bygge mer dynamiske og nyttige programmer. I dette innlegget vil vi se nærmere på hvordan du kan gjøre dette ved hjelp av Elm-programmeringsspråket.
+## Hvordan
+For å konkatener tekststrenger i Elm, kan du bruke operatoren `++`. Denne operatoren kombinerer to strenger og gir som resultat en ny streng. La oss se på et eksempel:
 
-## Slik gjør du det
-
-For å konkatenerer eller kombinere flere strenger i Elm, kan vi bruke operatøren `++` eller funksjonen `String.concat`. La oss se på et eksempel:
-
-```
-Elm
-taskOne : String
-taskOne =
-    "Gå ut med hunden "
-
-taskTwo : String
-taskTwo =
-    "og mate katten"
-
-combinedTask : String
-combinedTask =
-    taskOne ++ taskTwo
-
--- Output: "Gå ut med hunden og mate katten"
+```Elm
+str1 = "Hei"
+str2 = "verden!"
+combined = str1 ++ " " ++ str2
 ```
 
-I dette eksemplet har vi definert tre strenger: `taskOne`, `taskTwo` og `combinedTask`. Ved hjelp av `++` operatøren har vi konkateneret `taskOne` og `taskTwo` til å danne `combinedTask` med en mellomrom mellom de to strengene.
+I dette eksempelet kombinerer vi strengene "Hei" og "verden!" ved hjelp av `++` operatoren. Den siste linjen vil da resultere i "Hei verden!" som utdata. Du kan også bruke denne operatoren til å kombinere flere strenger på en gang:
 
-Du kan også bruke `String.concat` funksjonen på en liste av strenger. La oss si at vi har en liste over navn og vi ønsker å generere en hilsen med alle disse navnene, separert med komma. Da kan vi gjøre følgende:
-
-```
-Elm
-names : List String
-names =
-    ["Lars", "Anna", "Kristian", "Sara"]
-
-hello : String
-hello =
-    "Hallo, " ++ String.concat ", " names
-
--- Output: "Hallo, Lars, Anna, Kristian, Sara"
+```Elm
+str1 = "Hvilken"
+str2 = "dag"
+str3 = "er"
+str4 = "det?"
+combined = str1 ++ " " ++ str2 ++ " " ++ str3 ++ " " ++ str4
 ```
 
-Som du kan se, brukes samme konsept som i det første eksemplet, men i stedet for å konkateneret to strenger, bruker vi `String.concat` funksjonen på listen `names` med komma som separator mellom hvert navn.
+Denne koden vil gi oss utdataen "Hvilken dag er det?".
 
-## Dykk dypere
+## Dypdykk
+I tillegg til å kombinere vanlige strenger, kan du også bruke `++` operatoren til å konkatenerere tall og andre datatyper i Elm. For eksempel:
 
-Å konkateneret strenger er en viktig del av databehandling i de fleste programmeringsspråk. I motsetning til noen andre språk, tillater Elm ikke bruk av operatører eller funksjoner som kan endre en streng direkte, noe som kan føre til forvirring. I stedet blir en ny streng opprettet hver gang en operasjon eller funksjon blir brukt på en streng.
+```Elm
+str1 = "Jeg er"
+age = 27
+str2 = "år gammel"
+combined = str1 ++ " " ++ (toString age) ++ " " ++ str2
+```
 
-Det er også viktig å huske på at når du jobber med flere strengetyper, for eksempel `String` og `Text`, må du konvertere dem til samme type før du kan konkateneret dem.
+Denne koden vil konkatenerere strengen "Jeg er" og "år gammel" med verdien av variabelen `age`, som i dette tilfellet er 27. Vi bruker funksjonen `toString` for å konvertere tallet til en streng, slik at det kan slås sammen med de andre strengene.
 
-## Se også
-
-- [Elm Language Guide](https://guide.elm-lang.org/)
-- [Elm String API](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm List API](https://package.elm-lang.org/packages/elm/core/latest/List)
+## Se Også
+- [Offisiell Elm Dokumentasjon](https://elm-lang.org/docs)
+- [Elm kurs for nybegynnere](https://egghead.io/browse/frameworks/elm)
+- [Elm fellesskapet på Reddit](https://www.reddit.com/r/elm/)

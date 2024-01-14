@@ -1,48 +1,37 @@
 ---
 title:    "C#: Skriva en textfil"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna skriva till en textfil i C# är en användbar färdighet som kan komma till nytta i många olika scenarier. Det kan användas för att spara användardata, loggfiler eller annan information som behöver lagras lokalt på en dator eller enhet. Det är även ett viktigt koncept att förstå för att kunna arbeta med filer och textbehandling i allmänhet.
 
-Att skriva en textfil är en vanlig uppgift för många programmersare och är ett viktigt koncept att lära sig inom C#-programmering. Det ger en strukturerad och anpassningsbar lösning för att lagra och hantera data på ett enkelt sätt.
+## Hur man gör
+Att skriva till en textfil i C# är relativt enkelt. Först behöver du skapa en instans av klassen "StreamWriter" och ange sökvägen till den fil du vill skriva till. Sedan kan du använda metoden "WriteLine" för att skriva en rad till filen. När du är klar med att skriva till filen behöver du stänga den genom att anropa metoden "Close". Nedan finns ett enkelt exempel på hur detta kan se ut:
 
-## Hur man gör det
-
-```C#
-// Skapa en fil på skrivbordet
-string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-string fileName = "MittTextDokument.txt";
-string filePath = Path.Combine(path, fileName);
-
-// Skapa en ny textfil
-using (StreamWriter sw = File.CreateText(filePath))
+```c#
+using (StreamWriter sw = new StreamWriter("minfil.txt"))
 {
-    sw.WriteLine("Det här är en textfil som skapades i C#!");
+    sw.WriteLine("Detta är en rad som skrivs till textfilen.");
+    sw.Close();
 }
-
-// Läsa från textfilen
-using (StreamReader sr = File.OpenText(filePath))
-{
-    string text = sr.ReadToEnd();
-    Console.WriteLine(text);
-} 
 ```
-
-Output:
+Output i "minfil.txt":
 ```
-Det här är en textfil som skapades i C#!
+Detta är en rad som skrivs till textfilen.
 ```
 
 ## Djupdykning
+När du skriver till en textfil i C# finns det några olika saker du bör ha i åtanke. Först och främst, om den fil du försöker skriva till redan finns kommer den att skrivas över helt och hållet. Om du vill lägga till ny information till en befintlig fil kan du använda "Append" som en parameter i "StreamWriter"-konstruktorn.
 
-När vi skapar en textfil i C#, använder vi klassen `FileStream` för att öppna en strömmen av data till filen och klassen `StreamWriter` för att skriva till filen. Vi använder också `Path`-klassen för att skapa en unik filväg och kombinera den med filnamnet. Genom att använda en `using`-sats ser vi till att alla resurser stängs automatiskt, vilket underlättar för effektiv kodning.
+Det är också viktigt att stänga filen när du är klar med att skriva till den. Detta kan göras manuellt genom att anropa "Close"-metoden eller genom att använda "using"-syntaxen som i kodexemplet ovan. Oavsett vilken metod du väljer är det viktigt att stänga filen för att undvika eventuella problem eller konflikter med andra delar av din kod.
 
-Andra användbara funktioner när det kommer till textfiler är att kunna ange olika teckenkodningar, till exempel UTF-8 eller Unicode. Detta kan göras genom att specificera en annan parameter när du skapar din `StreamWriter`. Du kan också använda `StreamReader`-klassen för att läsa från textfilen istället för att skriva till den.
+Slutligen, om du vill arbeta med specifika teckenkodningar när du skriver till textfiler kan du ange det som en parameter i "StreamWriter"-konstruktorn. Som standard kommer filen att skrivas med UTF-8-kodning, men du kan ändra detta till exempelvis ASCII eller Unicode beroende på dina behov.
 
 ## Se även
-
-- [C# Filhantering](https://www.w3schools.com/cs/cs_file_handling.asp)
-- [Microsoft Docs om Textfiler i C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file)
+- [Microsoft Docs: StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
+- [C-sharpcorner: Writing Text Files In C#](https://www.c-sharpcorner.com/article/writing-text-files-in-c-sharp/)  
+- [TutorialsTeacher: C# - File I/O](https://www.tutorialsteacher.com/csharp/csharp-file-io)

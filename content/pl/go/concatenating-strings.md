@@ -1,42 +1,54 @@
 ---
-title:    "Go: Łączenie ciągów znaków"
+title:    "Go: Konkatenacja ciągów znaków"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu istnieje potrzeba łączenia różnych ciągów znaków w jednym. Dzięki temu możemy tworzyć czytelne teksty lub generować dynamiczne wiadomości. W języku Go istnieje prosty sposób na łączenie stringów, o którym opowiemy w tym artykule.
+Jeśli chcesz tworzyć programy w języku Go, z pewnością natknąłeś się na potrzebę łączenia łańcuchów znaków. W tym artykule pokażemy Ci, dlaczego ten proces jest tak ważny i jak można go łatwo wykonać.
 
 ## Jak to zrobić
 
-Do łączenia stringów w Go używa się operatora `+`. Musimy jednak pamiętać o tym, że w Go ciągi znaków są niemutowalne, więc operacja łączenia tworzy nowy string, a nie zmienia wartości istniejącego. Przykładowe użycie operatora przedstawia poniższy kod:
+Aby połączyć dwa łańcuchy znaków w języku Go, możesz użyć wbudowanej funkcji `+`. Przykładowy kod wyglądałby tak:
 
 ```Go
-message := "Witaj"
-name := "Jan"
-greeting := message + " " + name
-fmt.Println(greeting)
+name := "John"
+greeting := "Welcome to our blog, "
+fmt.Println(greeting + name)
 ```
-Output: `Witaj Jan`
+ 
+Wynik:
 
-Zauważmy, że każdy string musimy oddzielić spacją, aby uzyskać czytelny tekst.
+`Welcome to our blog, John`
 
-## Deep Dive
-
-Warto zauważyć, że łączenie wielu ciągów znaków może być czasochłonne w przypadku dużych ilości danych. W takiej sytuacji lepszym rozwiązaniem jest użycie funkcji `strings.Join`, która pozwala na łączenie kilku stringów jednocześnie. Przykładowe użycie tej funkcji prezentuje się następująco:
+Możesz również użyć funkcji `fmt.Sprintf()` do połączenia wielu zmiennych w jednym łańcuchu znaków. Przykładowy kod wyglądałby tak:
 
 ```Go
-names := []string{"Adam", "Ewa", "Paweł"}
-greetings := strings.Join(names, ", ")
-fmt.Println(greetings)
+name := "John"
+age := 30
+info := fmt.Sprintf("Name: %s, Age: %d", name, age)
+fmt.Println(info)
 ```
 
-Output: `Adam, Ewa, Paweł`
+Wynik:
+
+`Name: John, Age: 30`
+
+## Głębsze zagadnienia
+
+Podczas łączenia łańcuchów znaków w języku Go, ważne jest, aby pamiętać o wydajności. Dlatego zaleca się używanie funkcji `bytes.Buffer` lub `strings.Builder` zamiast operatora `+` lub funkcji `fmt.Sprintf()`. Powodem jest fakt, że funkcje te alokują nową pamięć za każdym razem, gdy są wywoływane, co może spowolnić działanie programu.
+
+Innym ważnym elementem jest pamiętanie o prawidłowym formatowaniu łańcuchów znaków, szczególnie jeśli zawierają one znaki specjalne, takie jak cudzysłowy czy znaki nowej linii. W takich przypadkach należy użyć znaku ucieczki `\` przed tymi znakami, aby uniknąć błędów i nieprawidłowego formatowania.
 
 ## Zobacz również
 
-- [Dokumentacja języka Go o ciągach znaków](https://golang.org/pkg/strings/#Join)
-- [Przykładowy poradnik na temat manipulacji stringami w Go](https://blog.alexellis.io/golang-string-handling/)
-- [Kurs języka Go dla początkujących](https://www.freecodecamp.org/news/learn-go-programming-language-from-scratch-golang-1/)
+Jeśli chcesz dowiedzieć się więcej o łączeniu łańcuchów znaków w języku Go, polecamy zapoznanie się z oficjalną dokumentacją i innymi artykułami na ten temat:
+
+- [Dokumentacja języka Go - operacje na łańcuchach znaków](https://golang.org/pkg/strings/)
+- [Blog Gopher Guides - Concatenating Strings in Go](https://gopherguides.com/articles/concatenating-strings-in-go/)
+- [Medium - The Art of Concatenating Strings in Go](https://medium.com/better-programming/the-art-of-concatenating-strings-in-go-4c3a39e867c8)
+
+Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz wiesz, dlaczego i jak łączyć łańcuchy znaków w języku Go. Życzymy Ci powodzenia w nauce tego języka i tworzeniu w nim wspaniałych aplikacji!

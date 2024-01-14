@@ -1,48 +1,50 @@
 ---
-title:    "Swift: Uthenting av delstrenger"
+title:    "Swift: Ekstrahering av delstrenger"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang sittet med en lang streng av tekst og ønsket å bare få tak i en del av den? For eksempel, du har en tekststreng som inneholder et telefonnummer og du vil bare få tak i selve nummeret uten noe ekstra informasjon. Her kommer substring-ekstrahering til nytte!
+Å trekke ut substrings er en nyttig teknikk i Swift-programmering for å arbeide med deler av en streng. Dette kan være nyttig når du for eksempel trenger å hente ut et telefonnummer fra en lengre tekst eller når du ønsker å dele opp en adresse i ulike deler.
 
 ## Hvordan
 
-Det er flere måter å ekstrahere substrings i Swift på, avhengig av hva du trenger å hente ut. La oss ta en titt på noen eksempler:
+For å trekke ut en substring, bruker du metoden `prefix` eller `suffix` og angir hvilken del av strengen du ønsker å hente ut. La oss se på et eksempel:
 
-```Swift
-// Opprett en tekststreng
-let string = "Velkommen til Swift! Dette er en tekststreng."
-```
-```Swift
-// Ekstraher kun "Swift" fra strengen
-let substring1 = string.dropFirst(12).prefix(5)
-// substring1 = "Swift"
-```
+````Swift
+let navn = "Lars Olsen"
+let etternavn = navn.suffix(5)
 
-Her bruker vi både `dropFirst()` og `prefix()` metoder for å hente ut den delen av strengen vi trenger. Vi bruker `dropFirst()` for å fjerne de første 12 tegnene, og deretter bruker vi `prefix()` for å få tak i de neste 5 tegnene.
+print(etternavn)
 
-```Swift
-// Ekstraher nummeret fra en streng som inneholder et telefonnummer
-let phoneNumber = "+47 12345678"
-let startIndex = phoneNumber.firstIndex(of: "+")!
-let endIndex = phoneNumber.firstIndex(of: " ")!
-let phoneNumberSubstring = phoneNumber[startIndex...endIndex]
-// phoneNumberSubstring = "+47"
-```
+// Output: Olsen
+````
 
-Her bruker vi `firstIndex()` for å finne indeksene til "+" og mellomrommet i strengen, og deretter bruker vi dette til å ekstrahere den delen vi vil ha ved å bruke sluttindeksen som en grense.
+I dette eksempelet brukte vi `suffix`-metoden for å hente ut de siste 5 tegnene i strengen `navn`, som er etternavnet vårt. Du kan også bruke `prefix` på samme måte for å hente ut de første tegnene i en streng.
 
-## Dypdykk
+Det er også mulig å bruke `Range`-operatøren for å trekke ut en del av en streng. For eksempel:
 
-Det er mange metoder som kan brukes for å ekstrahere substrings i Swift, blant annet `dropFirst()`, `prefix()`, `suffix()`, `firstIndex()` og `substring()`. Husk at det også er mulig å kombinere disse metodene for å få akkurat den delen av strengen du ønsker.
+````Swift
+let tall = "123456789"
+let tredjeTilSjette = tall[2...5]
 
-Det er også viktig å merke seg at substrings i Swift er forskjellig fra vanlige strenger, da substrings ikke oppretter en ny instans, men heller refererer til en del av en eksisterende streng. Dette kan være viktig å huske på ved manipulasjon av tekststrenger.
+print(tredjeTilSjette)
+
+// Output: 3456
+````
+
+I dette tilfellet gir vi to indekser til `Range`-operatøren, som indikerer hvilke tegn som skal hentes ut.
+
+## Deep Dive
+
+Når du bruker `prefix` og `suffix`, må du passe på at du ikke prøver å hente ut et større antall tegn enn det som finnes i strengen. Ellers vil du få en runtime-feil. Pass også på at hvis du bruker `prefix` eller `suffix` på en Unicode-streng, kan du ende opp med uønsket oppførsel. Det er derfor viktig å alltid teste koden din grundig for å sikre at du får de resultatene du forventer.
+
+Det er også verdt å merke seg at de fleste av metodene for å trekke ut substrings i Swift returnerer en `Substring`-type i stedet for en `String`-type. Dette betyr at du kanskje må konvertere den til en `String` før du kan bruke den videre.
 
 ## Se også
 
-- [Swift.org - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Hva er en substring i Swift?](https://stackoverflow.com/questions/35044559/what-is-a-substring-method-in-swift)
+- [Offisiell Swift dokumentasjon for `prefix` og `suffix`](https://developer.apple.com/documentation/swift/substring)
+- [Stack Overflow: How to extract a substring in Swift?](https://stackoverflow.com/questions/39677330/how-to-extract-a-substring-in-swift)

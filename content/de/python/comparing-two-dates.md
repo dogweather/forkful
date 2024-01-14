@@ -1,76 +1,58 @@
 ---
 title:    "Python: Vergleich zweier Daten"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Das Vergleichen von zwei Datumsangaben ist ein häufiger Vorgang in der Programmierung, da es uns ermöglicht, zu bestimmen, welches Datum vor oder nach dem anderen liegt. Dies ist besonders nützlich bei der Verarbeitung von Zeitdaten oder bei der Berechnung von Zeitintervallen.
+Das Vergleichen von zwei Datumsangaben ist eine häufige Aufgabe in der Programmierung. Es ermöglicht uns, bestimmte Aktionen basierend auf dem Datum auszuführen, wie zum Beispiel das Überprüfen von Verfallsdaten oder das Sortieren von Daten nach Datum. In dieser Blog-Post werden wir uns ansehen, wie man in Python zwei Datumswerte vergleicht.
 
-# Wie man es macht
+# Wie geht das?
 
-Die Vergleichsfunktion in Python ermöglicht es uns, zwei Datumsangaben miteinander zu vergleichen. Hier ist ein Beispielcode, der zeigt, wie man zwei Daten vergleicht:
+Um zwei Datumswerte in Python zu vergleichen, können wir den Vergleichsoperator "==" verwenden. Dieser Operator prüft, ob zwei Werte gleich sind und gibt entweder "True" oder "False" zurück, je nachdem, ob die Bedingung erfüllt ist oder nicht.
 
-``` Python
-# Importiere das datetime Modul
-import datetime
- 
-# Erstelle zwei Datumobjekte
-date_1 = datetime.date(2020, 5, 12)
-date_2 = datetime.date(2021, 2, 24)
- 
-# Vergleiche die beiden Daten
-if date_1 < date_2:
-    print("date_1 liegt vor date_2")
-elif date_1 > date_2:
-    print("date_2 liegt vor date_1")
+```python
+# Vergleich von zwei Datumswerten
+date_1 = "2021-01-01"
+date_2 = "2021-01-02"
+if date_1 == date_2:
+    print("Die beiden Datumsangaben sind gleich.")
 else:
-    print("Die Daten sind gleich")
+    print("Die beiden Datumsangaben sind nicht gleich.")
 ```
 
-Die Ausgabe dieses Codes wäre:
+Die Ausgabe dieses Codes wird sein: "Die beiden Datumsangaben sind nicht gleich." Da die beiden Datumsangaben unterschiedlich sind, gibt der Vergleichsoperator "==" "False" zurück.
 
-```
-date_1 liegt vor date_2
-```
+Um jedoch zu vermeiden, dass manuell zwei Datumswerte eingegeben werden müssen, können wir auch die Python-Bibliothek "datetime" verwenden, um zwei Datumswerte zu erstellen und zu vergleichen.
 
-In diesem Beispiel wird die Python-Bibliothek "datetime" verwendet, um Datumobjekte zu erstellen und mit ihnen zu arbeiten. Dann wird die "if/elif/else" -Anweisung verwendet, um die Vergleichsergebnisse zu überprüfen und die entsprechende Ausgabe zu drucken.
-
-# Tiefer tauchen
-
-Python ermöglicht es uns nicht nur, zwei Datumsangaben zu vergleichen, sondern wir können auch feststellen, ob ein Datum vor oder nach dem aktuellen Datum liegt. Hier ist ein Beispielcode dazu:
-
-``` Python
-# Importiere das datetime Modul
-import datetime
- 
-# Erstelle ein Datumobjekt für heute
-today = datetime.date.today()
- 
-# Erstellen Sie ein weiteres Datumobjekt
-date = datetime.date(2021, 7, 5)
- 
-# Überprüfen Sie, ob das Datum in der Zukunft liegt
-if date > today:
-    print("Das Datum liegt in der Zukunft")
- 
-# Überprüfen Sie, ob das Datum in der Vergangenheit liegt
-if date < today:
-    print("Das Datum liegt in der Vergangenheit")
+```python
+from datetime import date
+# Erstellung der Datumswerte
+date_1 = date(2021, 1, 1)
+date_2 = date(2021, 1, 2)
+if date_1 == date_2:
+    print("Die beiden Datumsangaben sind gleich.")
+else:
+    print("Die beiden Datumsangaben sind nicht gleich.")
 ```
 
-Die Ausgabe dieses Codes wäre:
+Die Ausgabe dieses Codes ist dieselbe wie zuvor, jedoch basiert sie nun auf den von uns erstellten Datumswerten mit Hilfe der "datetime"-Bibliothek.
 
-```
-Das Datum liegt in der Zukunft
+# Nahaufnahme
+
+Beim Vergleichen von zwei Datumswerten ist es wichtig, dass beide Werte im gleichen Format vorliegen. Ansonsten könnte es zu unerwarteten Ergebnissen führen. Zum Beispiel werden die folgenden beiden Datumsangaben unterschiedliche Ergebnisse zurückgeben, da das Format nicht übereinstimmt.
+
+```python
+date_1 = "2021-01-01"
+date_2 = "01/01/2021"
 ```
 
-Wenn wir die Vergleichsfunktion kombinieren und mit bedingten Anweisungen arbeiten, können wir komplexe Programme schreiben, die auf verschiedenen Datumsangaben basieren.
+Es ist auch wichtig zu beachten, dass der Vergleich der Datumsangaben auch die Zeit mit einbeziehen kann, wenn diese in den jeweiligen Werten enthalten ist. In diesem Fall muss das Format der Zeit ebenfalls übereinstimmen, ansonsten kann es gegebenenfalls zu inkonsistenten Ergebnissen kommen.
 
 # Siehe auch
 
-- [Offizielle Python-Dokumentation zu datetime](https://docs.python.org/de/3/library/datetime.html)
-- [Ein Tutorial zur Arbeit mit datetime in Python](https://www.datacamp.com/community/tutorials/python-datetime-tutorial)
-- [Weitere Beispiele zur Vergleichsfunktion in Python](https://thepythonguru.com/python-built-in-functions/comparison-operators/)
+- [Python-Dokumentation zu Datum und Zeit](https://docs.python.org/de/3/library/datetime.html)
+- [Python-Dokumentation zur Vergleichsoperatoren](https://docs.python.org/de/3/library/operator.html#comparison-operators)

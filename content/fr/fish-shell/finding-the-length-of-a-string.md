@@ -1,43 +1,39 @@
 ---
-title:    "Fish Shell: Trouver la longueur d'une chaîne de caractères"
+title:    "Fish Shell: Trouver la longueur d'une chaîne"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La détermination de la longueur d'une chaîne de caractères est une tâche courante en programmation. Que ce soit pour compter le nombre de lettres dans un mot ou le nombre de caractères dans une phrase, cette opération est souvent nécessaire pour manipuler et analyser des données. Dans cet article, nous allons vous montrer comment utiliser la commande Fish Shell pour trouver la longueur d'une chaîne de caractères.
+Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation. Que ce soit pour compter le nombre de lettres dans un mot ou pour vérifier si une entrée utilisateur respecte un certain format, savoir comment obtenir la longueur d'une chaîne est une compétence essentielle pour tout développeur.
 
 ## Comment faire
 
-Nous allons utiliser la commande `string length` pour trouver la longueur d'une chaîne de caractères. Tout d'abord, ouvrez votre terminal Fish Shell et entrez la commande suivante :
+Heureusement, avec Fish Shell, obtenir la longueur d'une chaîne est très simple. Il suffit d'utiliser la commande `string` avec l'option `-l`, suivi de la chaîne à évaluer.
 
-```Fish Shell
-string length "Bonjour"
+```
+Fish Shell: string -l "Bonjour"
 ```
 
-Vous devriez voir une sortie de "7", car il y a 7 caractères dans le mot "Bonjour". Vous pouvez également utiliser cette commande avec des variables pour trouver la longueur d'une chaîne stockée dans une variable. Par exemple :
+Cette commande renverra la longueur de la chaîne "Bonjour", qui est de 7 caractères. Si vous souhaitez stocker cette valeur dans une variable, vous pouvez le faire de la manière suivante :
 
-```Fish Shell
-set mot "Bonjour"
-string length $mot
+```
+Fish Shell: set longueur (string -l "Bonjour")
 ```
 
-Cela affichera également une sortie de "7". La commande `string length` peut être utilisée avec n'importe quelle chaîne de caractères, qu'il s'agisse d'un simple mot ou d'une phrase entière.
+Maintenant, vous pouvez utiliser cette variable `longueur` dans votre code, par exemple pour vérifier si une entrée utilisateur est assez longue.
 
 ## Plongée en profondeur
 
-Saviez-vous que la commande `string length` a une option `-r` qui permet de compter le nombre de caractères réels dans une chaîne, plutôt que le nombre de codepoints ? Les codepoints sont des codes numériques attribués à chaque caractère d'une langue, et la longueur d'une chaîne peut varier en fonction de la façon dont les caractères sont encodés. Si vous utilisez l'option `-r`, la commande `string length` ne comptera que les caractères réels et non les codepoints. Par exemple :
+Maintenant que vous savez comment trouver la longueur d'une chaîne en utilisant Fish Shell, il est intéressant de comprendre comment cela fonctionne réellement. En fait, la commande `string -l` utilise la fonction interne `__fish_len_string` pour calculer la longueur de la chaîne. Cette fonction utilise un algorithme efficace pour parcourir tous les caractères de la chaîne et compter leur nombre. 
 
-```Fish Shell
-string length -r "é" 
-```
-
-Cela affichera une sortie de "1", alors qu'avec l'option `-r` cela afficherait "2". Cela peut être utile lorsque vous travaillez avec des chaînes de caractères multilingues.
+Il est important de noter que cette fonction ne compte que les caractères utilisant un seul code UTF-8. Les caractères combinés, tels que les accents ou les emojis, seront comptés comme un seul caractère. Si vous voulez une fonction plus précise pour compter ces combinaisons de caractères, vous pouvez utiliser la commande `string -c` à la place.
 
 ## Voir aussi
 
-- [Documentation de la commande Fish Shell string length](https://fishshell.com/docs/current/cmds/string-length.html)
-- [Guide de Fish Shell pour les débutants](https://www.linux.com/training-tutorials/Basics_of_Linux/FOSS/#!/term/Fish%20Shell)
-- [Tutoriels et ressources pour Fish Shell](https://fishshell.com/docs/current/project.html#tutorials)
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
+- [La page Wikipédia sur UTF-8](https://fr.wikipedia.org/wiki/UTF-8)
+- [Des exemples de commandes utiles en Fish Shell](https://fishery.fish/tutorial/cheatsheet/)

@@ -1,48 +1,73 @@
 ---
-title:    "PHP: 컴퓨터 프로그래밍에서의 명령 줄 인수 읽기"
+title:    "PHP: 컴퓨터 프로그래밍에서의 명령행 인수 읽기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-명령줄 인자를 읽는 방법을 배우는 것은 PHP 프로그래머로서 매우 유용합니다. 명령줄 인자를 사용하면 사용자로부터 입력을 받을 수 있으며, 동시에 미리 정의된 기능을 호출할 수도 있습니다.
+PHP 프로그래밍을 배우는 독자들은 일반적으로 명령 줄 인수를 읽는 방법을 배우고 싶어할 것입니다. 이 작업을 마스터하면 PHP 프로그램을 작성하고 실행하는 데 있어서 더 많은 유용한 기능을 발견할 수 있습니다.
 
-## 방법
+## 어떻게?
 
-PHP에서는 `$argv` 변수를 사용하여 명령줄 인자를 읽을 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
-
-```PHP
-// Example.php 파일에서 실행된 명령줄 인자 읽기
-
-<?php
-$argument = $argv[1];
-echo "입력된 인자는 " . $argument . " 입니다.";
-?>
-```
-
-위의 예제에서 `Example.php` 파일을 실행할 때 인자를 함께 입력하면 입력한 인자를 출력해줍니다. 예를 들어, `php Example.php "안녕하세요"`라고 입력하면 `입력된 인자는 안녕하세요 입니다.`라는 결과가 출력됩니다.
-
-## 딥 다이브
-
-PHP에서는 `getopt()` 함수를 사용하여 더욱 복잡한 명령줄 인자를 처리할 수 있습니다. 이 함수는 이름을 가지는 인자를 받아와 배열로 반환해줍니다. 다음은 `getopt()` 함수를 사용하는 예제입니다.
+명령 줄 인수를 읽는 가장 간단한 방법은 `argv` 전역 변수를 사용하는 것입니다. 다음의 예시 코드를 참고해주세요:
 
 ```PHP
-// Example.php 파일에서 실행된 명령줄 인자 읽기
-
 <?php
-$options = getopt("a:b:c:");
-foreach ($options as $key => $value) {
-    echo "키: " . $key . " 값: " . $value . PHP_EOL;
+
+// 스크립트 실행 시 사용된 명령 줄 인수를 모두 출력합니다.
+foreach ($argv as $arg) {
+    echo $arg . "\n";
 }
-?>
 ```
 
-위의 예제에서는 `a`, `b`, `c`라는 이름을 가지는 인자를 받아와 해당하는 값을 출력해줍니다. 예를 들어, `php Example.php -a 1 -b 2 -c 3`라고 입력하면 `키: a 값: 1`, `키: b 값: 2`, `키: c 값: 3`이라는 결과가 출력됩니다.
+위 코드를 실행하면 다음과 같은 결과를 볼 수 있습니다:
 
-## 참고 자료
+```
+php script.php arg1 arg2 arg3
+```
 
-- [PHP 공식 문서 - 명령줄 인자](https://www.php.net/manual/en/features.commandline.php)
-- [PHP 공식 문서 - getopt() 함수](https://www.php.net/manual/en/function.getopt.php)
-- [3분 PHP - 명령줄 인자 읽기](https://youtu.be/vNntHoLSDhM)
+```
+script.php
+arg1
+arg2
+arg3
+```
+
+만약 명령 줄 인수를 특정 변수에 저장하고 싶다면, 아래와 같이 할 수 있습니다:
+
+```PHP
+<?php
+
+// 스크립트 실행 시 전달된 첫 번째 인수를 $first 변수에 저장합니다.
+$first = $argv[1];
+
+// 인수를 출력합니다.
+echo $first;
+```
+
+출력 결과:
+
+```
+php script.php arg1
+```
+
+```
+arg1
+```
+
+## 심층 탐구
+
+프로그래밍에서 명령 줄 인수는 매우 중요한 요소입니다. 그러므로 더 많은 심층적인 정보를 알고있다는 것은 매우 유용할 것입니다. 명령 줄 인수를 더 잘 이해하기 위해 다음의 자료를 참고해보세요:
+
+- [PHP 쉘 스크립트 작성하기](https://www.php.net/manual/kr/features.commandline.php)
+- [MVC 패턴 및 명령 줄 인수 사용하기](https://medium.com/@gscheibel/mvc-pattern-using-command-line-arguments-da31336a9c8)
+- [CLI로 서버 관리하기](https://serversforhackers.com/c/running-php-cli-scripts-with-bash-scripts)
+
+## 또 참고해보세요
+
+- [PHP 공식 매뉴얼](https://www.php.net/manual/kr/)
+- [튜토리얼 포스트: PHP 프로그래밍 입문하기](https://www.udemy.com/course/the-complete-php-bootcamp/)
+- [이제부터 배워나가면서 해보세요](https://www.w3schools.com/php/)

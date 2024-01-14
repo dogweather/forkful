@@ -1,59 +1,55 @@
 ---
 title:    "Kotlin: Pisanie testów"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisanie testów jest ważne
+## Dlaczego pisać testy?
 
-Pisanie testów jest nieodłączną częścią procesu tworzenia aplikacji w Kotlinie. Testy są nie tylko pomocne w wyłapywaniu błędów, ale również ułatwiają refaktoryzację kodu oraz zapewniają bezpieczeństwo przy wprowadzaniu zmian w aplikacji.
+Pisanie testów jest ważną częścią procesu programowania, ponieważ umożliwia sprawdzenie poprawności naszego kodu w automatyczny sposób. Jest to szczególnie ważne w przypadku większych projektów, gdzie zmiany w jednej części kodu mogą mieć wpływ na inne części. Dodatkowo, testy pozwalają na szybkie wykrycie błędów i ułatwiają odnajdywanie przyczyny problemów.
 
-# Jak napisać testy w Kotlinie
+## Jak pisać testy w języku Kotlin?
 
-Poniżej znajdują się przykłady kodu oraz wizualizacje wyników dla różnych typów testów w języku Kotlin. Pamiętaj, że każda metoda testowa powinna zaczynać się od słowa kluczowego "test" oraz powinna zwracać wartość typu "Unit".
+Pisanie testów w języku Kotlin jest bardzo proste i wygodne. Aby to zrobić, należy użyć biblioteki do testowania, takiej jak `JUnit`, a następnie utworzyć klasę z metodami testowymi. Poniżej przedstawione są przykładowe testy wykorzystujące klasę `String`:
 
 ```Kotlin
-// Test jednostkowy
-@Test
-fun testCalculations() {
-    val result = calculate(2, 5)
-    assertEquals(7, result)
+// import biblioteki JUnit
+import org.junit.Test
+// import funkcji do asercji
+import org.junit.Assert.*
+
+// deklaracja klasy z testami
+class StringTests {
+  // deklaracja metody testującej
+  @Test
+  fun testLength() {
+    // przygotowanie danych wejściowych
+    val input = "Ala ma kota"
+    // wywołanie metody, którą chcemy przetestować
+    val output = input.length()
+    // asercja sprawdzająca, czy wynik jest zgodny z oczekiwaniami
+    assertEquals(11, output)
+  }
+
+  // inny przykład testu
+  @Test
+  fun testReversed() {
+    val input = "Kot ma Alę"
+    val output = input.reversed()
+    assertEquals("Alę ma Kot", output)
+  }
 }
 ```
 
-```Kotlin
-// Test z wykorzystaniem biblioteki mockito
-@Test
-fun testService() {
-    val mockService = mock(Service::class.java)
-    
-    `when`(mockService.getValue()).thenReturn(5)
-    
-    val result = mockService.getValue()
-    assertEquals(5, result)
-}
-```
+## Głębszy wgląd w pisanie testów
 
-```Kotlin
-// Testy integracyjne z użyciem biblioteki ktor-http
-@Test
-fun testApi() {
-    withTestApplication(Application::main) {
-        handleRequest(HttpMethod.Get, "api/user/1").apply {
-            assertEquals(HttpStatusCode.OK, response.status())
-            assertEquals("{\"id\": 1, \"name\": \"John\"}", response.content)
-        }
-    }
-}
-```
+Ważnym aspektem przy pisaniu testów jest pokrycie jak największej ilości możliwych przypadków. Testy powinny sprawdzać zarówno poprawne działanie kodu, jak i jego reakcję na błędy lub niepoprawne dane wejściowe. Możliwe jest również wykorzystanie asercji specjalnych, które pozwalają na porównanie wyjątków rzucanych przez nasz kod.
 
-# Głębszy zanurzenie w pisaniu testów
+Podczas pisania testów ważne jest również wykorzystanie nazewnictwa zgodnie z konwencjami, na przykład nazwa metody testującej powinna zawierać opis tego, co jest testowane.
 
-Pisanie testów może być czasochłonne, ale czyni nasz kod bardziej niezawodnym i łatwiejszym w utrzymaniu. Ważne jest również, aby pamiętać o dobrych praktykach, takich jak pisanie czytelnych asercji oraz unikanie zbyt wielu assertów w jednym teście. Możliwe jest również wykorzystanie frameworków do generowania danych testowych oraz do zarządzania testami.
+## Zobacz także
 
-# Zobacz również
-
-- [Dokumentacja JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Ktor - framework do tworzenia aplikacji webowych w Kotlinie](https://ktor.io/)
-- [Mockito - biblioteka do tworzenia mocków w Kotlinie](https://site.mockito.org/)
+- [Dokumentacja biblioteki JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [Przykładowy projekt z testami w języku Kotlin](https://github.com/junit-team/junit5-samples/tree/master/junit5-jupiter-starter-gradle)

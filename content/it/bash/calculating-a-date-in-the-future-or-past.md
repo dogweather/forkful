@@ -1,74 +1,56 @@
 ---
-title:    "Bash: Calcolare una data nel futuro o nel passato"
+title:    "Bash: Calcolare una data nel futuro o passato."
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Il calcolo di una data nel futuro o nel passato è una delle attività più comuni nei programmatori Bash. Ciò consente di automatizzare i processi che richiedono una determinata data per essere eseguiti, come l'invio di report mensili o il scheduling di attività. Inoltre, il calcolo di una data può essere utile per trovare una scadenza o una data limite in un progetto.
+Ci sono molte ragioni per cui potresti dover calcolare una data nel futuro o nel passato utilizzando il Bash programming. Potresti voler pianificare una data importante, come un compleanno o un'anniversario, o semplicemente avere bisogno di lavorare con date in un progetto di programmazione. Indipendentemente dalla ragione, il calcolo delle date può essere molto utile e può semplificare la tua vita.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato, è necessario utilizzare il comando `date` in Bash. Ecco un esempio di codice che calcola la data di ieri e di domani:
+Per calcolare una data nel futuro o nel passato utilizzando il Bash programming, ci sono alcuni semplici passaggi che puoi seguire.
 
-```Bash
-# Calculating yesterday's date
-yesterday=$(date -d "yesterday" +"%Y-%m-%d")
+1. Definisci la data di base che vuoi utilizzare come punto di partenza. Questo può essere fatto utilizzando il comando `date` seguito dal formato desiderato della data. Ad esempio, per definire la data odierna nel formato `giorno-mese-anno`, puoi digitare `date +%d-%m-%Y`.
 
-# Calculating tomorrow's date
-tomorrow=$(date -d "tomorrow" +"%Y-%m-%d")
+2. Aggiungi o sottrai i giorni, i mesi o gli anni desiderati utilizzando il carattere `+` o `-` e il numero corrispondente. Ad esempio, per ottenere la data di oggi più 10 giorni, puoi digitare `date -d "+10 days" +%d-%m-%Y`.
 
-echo "Yesterday's date was: $yesterday"
-echo "Tomorrow's date is: $tomorrow"
+3. Specifica il formato desiderato della data utilizzando il carattere `%` seguito dalle lettere corrispondenti al giorno, al mese e all'anno. Ad esempio, se vuoi ottenere la data nel formato `mese-giorno-anno`, puoi digitare `date -d "+10 days" +%m-%d-%Y`.
+
+Di seguito è riportato un esempio completo di codice che calcola la data di 10 giorni nel futuro:
+
+```
+#!/bin/bash
+
+# Definisce la data odierna nel formato 'giorno-mese-anno'
+today=$(date +%d-%m-%Y)
+
+# Calcola la data di 10 giorni nel futuro nel formato 'mese-giorno-anno'
+future_date=$(date -d "+10 days" +%m-%d-%Y)
+
+# Stampa i risultati
+echo "Data odierna: $today"
+echo "Data di 10 giorni nel futuro: $future_date"
 ```
 
-L'output di questo codice sarà:
+Ecco l'output di questo esempio:
 
-```Bash
-Yesterday's date was: 2021-08-29
-Tomorrow's date is: 2021-08-31
 ```
-
-In questo esempio, abbiamo utilizzato l'opzione `-d` per specificare quali informazioni sulla data vogliamo ottenere da `date`. Possiamo anche utilizzare un formato personalizzato per la data aggiungendo le giuste opzioni. Ad esempio, se volessimo ottenere solo il numero del mese, potremmo utilizzare l'opzione `%m`, come in questo esempio:
-
-```Bash
-# Calculating the current month
-month=$(date +"%m")
-
-echo "We are in the month number $month"
-```
-
-L'output di questo codice sarà:
-
-```Bash
-We are in the month number 08
-```
-
-Oltre a calcolare date nel futuro o nel passato rispetto alla data attuale, possiamo anche specificare una data di riferimento utilizzando l'opzione `-d` in combinazione con una data. Ad esempio, se volessimo calcolare la data di 10 giorni fa, faremmo:
-
-```Bash
-# Calculating a date in the past from a specific date
-ten_days_ago=$(date -d "2021-08-20 10 days ago" +"%Y-%m-%d")
-
-echo "10 days ago from 2021-08-20 was $ten_days_ago"
-```
-
-L'output di questo codice sarà:
-
-```Bash
-10 days ago from 2021-08-20 was 2021-08-10
+Data odierna: 11-10-2021
+Data di 10 giorni nel futuro: 21-10-2021
 ```
 
 ## Approfondimento
 
-Oltre alle opzioni di `date` che abbiamo visto fino ad ora, ci sono molte altre opzioni che possono essere utili per calcolare date in modi diversi. Ad esempio, possiamo utilizzare l'opzione `+%j` per ottenere il numero del giorno dell'anno, o l'opzione `%U` per ottenere il numero della settimana dell'anno. Inoltre, possiamo anche utilizzare `date` per calcolare intervalli di tempo, come ad esempio il numero di giorni tra due date specifiche.
+Oltre ai passaggi semplici sopra descritti, puoi anche eseguire calcoli più complessi utilizzando il Bash programming. Ad esempio, puoi calcolare una data 10 giorni dopo una data specifica o 10 giorni prima di una data specifica, prendendo in considerazione anche il cambio di mese o di anno.
 
-Ricorda che `date` utilizza il formato di data e ora del sistema operativo, quindi potrebbe variare da sistema a sistema. Assicurati di controllare la documentazione del tuo sistema operativo per avere informazioni precise sul formato delle date utilizzato.
+Inoltre, puoi utilizzare il comando `grep` per filtrare e lavorare solo con specifiche parti della data. Ad esempio, puoi usare `grep` per ottenere solo il mese o solo l'anno della data.
 
 ## Vedi anche
 
-- [Documentazione su `date` di GNU](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Tutorial su Bash per principianti](https://linuxize.com/post/bash-scripting-tutorial-for-beginners/) 
-- [Articolo su come utilizzare `cron` per eseguire script in determinati momenti](https://www.linux.com/topic/desktop/automate-linux-task-using-cron-and-crontab/)
+- [Comandi e utilizzo di date nel Bash programming](https://www.computerhope.com/unix/utime.htm)
+- [10 comandi Bash utili per la gestione delle date](https://www.tecmint.com/useful-linux-commands-programs-part-ii/)
+- [10 trucchi Bash per la gestione delle date](https://linuxhint.com/bash-date-tricks/)

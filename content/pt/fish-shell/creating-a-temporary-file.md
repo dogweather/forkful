@@ -1,42 +1,46 @@
 ---
 title:    "Fish Shell: Criando um arquivo temporário"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário com Fish Shell?
+## Por que
 
-Criar um arquivo temporário é uma tarefa comum ao desenvolver scripts de shell. Esses arquivos são úteis para armazenar informações temporárias ou para criar arquivos de teste durante o processo de desenvolvimento. O Fish Shell oferece uma maneira fácil e eficiente de criar e gerenciar esses arquivos temporários.
+Criar um arquivo temporário é uma tarefa comum em programação, especialmente na Fish Shell. Temporariamente armazenar dados ou informações pode ser útil para testar códigos ou para fins de organização.
 
-## Como criar um arquivo temporário com Fish Shell
+## Como fazer
 
-Para criar um arquivo temporário com Fish Shell, use o comando `mktemp` seguido de um nome de arquivo opcional. Por exemplo, se quisermos criar um arquivo temporário chamado "temp.txt", podemos usar o seguinte comando:
+Para criar um arquivo temporário na Fish Shell, você pode seguir os seguintes passos:
 
-```Fish Shell
-mktemp temp.txt
+1. Abra o terminal e inicie a Fish Shell digitando `fish`.
+2. Digite `mktemp` seguido do nome do arquivo temporário que você deseja criar, por exemplo `tmp_file`.
+3. Para escrever algum conteúdo no arquivo, use o redirecionamento de saída `>` seguido pelo nome do arquivo: `echo "Conteúdo do arquivo" > tmp_file`.
+4. Agora você pode verificar a existência do arquivo temporário com `ls`, que deve exibir o arquivo `tmp_file`.
+
+Código completo:
+
+```
+fish
+mktemp tmp_file
+echo "Conteúdo do arquivo" > tmp_file
+ls
 ```
 
-Podemos então usar o arquivo temporário recém-criado para armazenar informações usando outros comandos do shell, como `echo` ou `cat`.
+Saída:
 
-```Fish Shell
-echo "Informações importantes" > temp.txt
-cat temp.txt # imprime "Informações importantes"
+```
+tmp_file
 ```
 
-Uma vez que tenhamos terminado de usar o arquivo temporário, podemos excluí-lo usando o comando `rm`.
+## Deep Dive
 
-```Fish Shell
-rm temp.txt
-```
+Existem algumas coisas a serem consideradas ao criar um arquivo temporário na Fish Shell. Por padrão, o arquivo temporário será criado dentro do diretório temporário padrão do usuário (`/tmp`). No entanto, você pode especificar um diretório diferente usando a variável de ambiente `$TMPDIR`.
 
-## Aprofundando na criação de um arquivo temporário
-
-Ao criar um arquivo temporário com Fish Shell, ele será armazenado em uma pasta padrão, geralmente `/tmp`. No entanto, é possível especificar um diretório diferente usando a opção `--tmpdir` no comando `mktemp`. Além disso, podemos especificar um modelo de nome de arquivo usando a opção `-t`, que pode ser útil se quisermos que o arquivo temporário tenha um nome específico ou siga um padrão.
-
-Existem também várias opções adicionais disponíveis no comando `mktemp` que permitem personalizar ainda mais a criação de um arquivo temporário. Consulte a [documentação do Fish Shell](https://fishshell.com/docs/current/cmds/mktemp.html) para obter mais informações sobre essas opções.
+Além disso, é importante lembrar de excluir o arquivo temporário após seu uso, para não deixar resíduos desnecessários no sistema. Você pode fazer isso manualmente com o comando `rm`, ou incluir esse comando no seu script para garantir que o arquivo seja excluído automaticamente.
 
 ## Veja também
 
-- [Documentação do Fish Shell sobre o comando `mktemp`](https://fishshell.com/docs/current/cmds/mktemp.html)
-- [Exemplos de uso do comando `mktemp`](https://ostechnix.com/how-to-create-a-temporary-file-and-directory-in-linux/)
+- [Tutorial de redirecionamento de saída no Fish Shell](https://fishshell.com/docs/current/tutorial.html#output-redirection)
+- [Documentação completa da Fish Shell](https://fishshell.com/docs/current/index.html#generate-a-temporary-file-using-mktemp)

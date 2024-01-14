@@ -1,38 +1,53 @@
 ---
-title:    "Java: Écrire vers l'erreur standard"
+title:    "Java: Écriture vers l'erreur standard"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Pourquoi
 
-Écrire vers la sortie d'erreur standard est un moyen utile pour le débogage et la gestion des erreurs dans votre code Java. Cela permet de séparer les messages d'erreur des messages de sortie pour une meilleure lisibilité lors de l'exécution de votre programme.
+L'écriture sur la sortie d'erreur standard (standard error) est un moyen rapide et facile de déboguer votre code Java. Cela vous permet d'afficher des messages d'erreur et des informations de débogage directement dans votre terminal, sans avoir à interrompre l'exécution de votre programme.
 
-## Comment faire
+#Comment Faire
 
-Pour écrire vers la sortie d'erreur standard en Java, il suffit d'utiliser la méthode "System.err.println()" et de lui passer en paramètre le message que vous souhaitez afficher. Voici un exemple de code :
-
-```Java
-System.err.println("Erreur : impossible de lire le fichier");
-```
-
-Lors de l'exécution de votre programme, le message "Erreur : impossible de lire le fichier" sera affiché dans la sortie d'erreur standard.
-
-## Plongée en profondeur
-
-Il est important de noter que la sortie d'erreur standard n'est pas la même que la sortie standard (System.out). La sortie d'erreur standard est destinée à afficher uniquement les messages d'erreur, alors que la sortie standard est réservée pour les messages de sortie normaux. Vous pouvez également utiliser la méthode "System.err.print()" pour afficher un message sans retour à la ligne, contrairement à la méthode "println()" qui ajoute automatiquement un retour à la ligne.
-
-Il est également possible de rediriger la sortie d'erreur standard vers un fichier en utilisant la commande ">" dans le terminal, par exemple :
+Voici un exemple simple montrant comment écrire sur la sortie d'erreur standard en utilisant la méthode ```System.err.println()```:
 
 ```
-java MonProgramme > fichiersortie.txt
+public class Main {
+    public static void main(String[] args) {
+        System.err.println("Ceci est un message d'erreur");
+        
+        int a = 10;
+        int b = 0;
+        try {
+            int result = a / b;
+            System.out.println("Le résultat est : " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("Une erreur de division par zéro a été détectée");
+        }
+    }
+}
 ```
 
-Cela permet de stocker les messages d'erreur dans un fichier pour une consultation ultérieure.
+Lorsque vous exécutez ce code, vous obtenez l'output suivant:
 
-## Voir aussi
+```
+Ceci est un message d'erreur
+Une erreur de division par zéro a été détectée
+```
 
-- [Documentation officielle de Java sur la sortie d'erreur standard](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Guide complet sur la gestion des erreurs en Java](https://www.baeldung.com/java-exceptions)
-- [Tutoriel sur la redirection de la sortie d'erreur standard en Java](https://www.geeksforgeeks.org/redirecting-system-out-println-output-to-a-file-in-java/)
+Comme vous pouvez le voir, le message d'erreur est imprimé en rouge dans votre terminal grâce à l'utilisation de ```System.err.println()```.
+
+#Plongée En Profondeur
+
+Il est important de noter que la sortie standard (standard output) et la sortie d'erreur standard (standard error) sont deux canaux de communication distincts dans un programme Java. La sortie standard est utilisée pour l'affichage des résultats ou des messages informatifs, tandis que la sortie d'erreur standard est dédiée aux messages d'erreur et de débogage.
+
+Ainsi, en utilisant la méthode ```System.err.println()```, vous pouvez spécifiquement écrire sur la sortie d'erreur standard pour séparer clairement les différents types de messages dans votre programme.
+
+#Voir Aussi
+
+- [Documentation officielle de System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Guide complet du débogage en Java](https://www.baeldung.com/java-debugging)
+- [Utiliser les entrées et sorties en Java](https://www.tutorialspoint.com/java/java_files_io.htm)

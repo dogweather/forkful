@@ -1,51 +1,43 @@
 ---
-title:    "C: Nykyisen päivämäärän saaminen"
+title:    "C: Tämänhetkisen päivämäärän saaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Useat ohjelmat ja sovellukset käyttävät nykyään päivämäärää ja aikaa tietojen tallentamiseen ja näyttämiseen. Päivämäärän saaminen ohjelmassa on tärkeää, jotta voimme tietää, milloin jotain tapahtui tai milloin jotain on tallennettu. Se on myös hyödyllistä esimerkiksi kalenteri-sovelluksissa tai muistutusten asettamisessa tiettyyn päivämäärään. Siksi on tärkeää tietää, miten ohjelmassa saadaan nykyinen päivämäärä ja aika.
+On monia syitä, miksi voi olla tarpeen saada tietoja nykyisestä päivästä ohjelmassa. Jotkut esimerkit ovat kalenteritoimintojen toteuttaminen, tapahtumien seuraaminen tai vain tiedon tallentaminen tietokantaan.
 
 ## Kuinka
 
-Useimmissa ohjelmointikielissä on sisäänrakennettu funktio nykyisen päivämäärän ja ajan saamiseen. C-kielen tapauksessa käytämme `time.h`-kirjastoa ja sen sisältämiä funktioita. 
-
-Ensimmäinen askel on sisällyttää `time.h`-kirjasto C-koodiimme. Tämän jälkeen voimme käyttää `time()`-funktiota saadaksemme nykyisen ajan ja tallentaa sen muuttujaan.
+C-kielessä on useita tapoja saada nykyinen päivämäärä. Yksi tapa on käyttää time.h-kirjastoa ja sen sisältämää time() -funktiota. Tämä funktio palauttaa tietokonetaulukkoarvon, joka sisältää nykyisen päivän tiedot, kuten vuoden, kuukauden, päivän, tunnin, minuutin ja sekunnin. Alla on esimerkki tämän funktion käytöstä:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Muuttuja nykyisen ajan tallentamista varten
-    time_t nykyinen_aika;
-
-    // Käytetään time() saamaan nykyinen aika ja tallentamaan se muuttujaan
-    time(&nykyinen_aika);
-
-    // Käytetään ctime() muotoilemaan aika luettavaan muotoon
-    printf("Nykyinen aika ja päivämäärä: %s", ctime(&nykyinen_aika));
-
+    // Asetetaan aika tietokoneen mukaan
+    time_t t = time(NULL);
+    // Muutetaan aika rakenteeseen
+    struct tm tm = *localtime(&t);
+    // Tulostetaan nykyinen päivämäärä muodossa pp.kk.vvvv
+    printf("%d.%d.%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    
     return 0;
 }
 ```
 
-Tulostus:
-
-```
-Nykyinen aika ja päivämäärä: Mon Apr 5 10:52:18 2021
-```
+Tämän koodin tulosteena saadaan nykyinen päivämäärä muodossa pp.kk.vvvv. Funktio localtime() muuntaa tietokoneen ajan paikallisajaksi riippuen aikavyöhykeasetuksista. Tämä takaa oikean päivämäärän saamisen myös eri aikavyöhykkeillä.
 
 ## Syvempi sukellus
 
-`time()`-funktio palauttaa ajan kuluneina sekunteina vuoden 1970 tammikuun 1. päivästä alkaen. Tämä aika tallennetaan `time_t`-muuttujaan. `ctime()`-funktio puolestaan muuntaa tämän ajan luettavaan muotoon, kuten esimerkissä.
-
-On myös muita funktioita, kuten `localtime()`, joilla voimme muokata ja näyttää aikaa eri tavalla. Esimerkiksi `localtime()` palauttaa `struct tm`-tietorakenteen, joka sisältää tiedot tunnetusta ajasta. Tämän avulla voimme näyttää ajan esimerkiksi pelkästään tunnit ja minuutit tai päivämäärä ilman aikaa.
+Time.h-kirjaston sisältämien funktioiden lisäksi C-kielestä löytyy myös muita tapoja saada nykyinen päivämäärä. Esimerkiksi ISO C -standardi sisältää localtime_r() -funktion, joka on parempi versio localtime()-funktiosta monisäikeisille ohjelmille. Lisäksi C++ -kielessä voidaan käyttää boost -kirjastoa, joka tarjoaa monipuolisempia mahdollisuuksia päivämäärien käsittelyyn.
 
 ## Katso myös
 
-- [C Language - Date and Time](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [How to get current date and time in C?](https://www.geeksforgeeks.org/how-to-get-current-date-and-time-in-c/)
+- [time.h kirjaston dokumentaatio](https://www.cplusplus.com/reference/ctime/)
+- [ISO C -standardin localtime_r() -funktio](https://en.cppreference.com/w/c/chrono/localtime)
+- [Boost-kirjasto](https://www.boost.org/)

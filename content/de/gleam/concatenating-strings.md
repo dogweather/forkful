@@ -1,38 +1,60 @@
 ---
-title:    "Gleam: Zeichenfolgen verketten"
+title:    "Gleam: Verkettung von Zeichenfolgen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Warum sollte man sich überhaupt mit der Verknüpfung von Zeichenketten beschäftigen? Nun, wenn Sie in der Programmierung tätig sind, werden Sie oft auf Daten stoßen, die aus mehreren Teilen bestehen und die Sie zu einer einzigen Zeichenkette zusammenführen müssen. Mit der Konkatenation von Zeichenketten können Sie diese Aufgabe effizient und zuverlässig lösen.
+## Warum
 
-# Wie man es macht
-Die Konkatenation von Zeichenketten in Gleam ist einfach, aber leistungsstark. Schauen wir uns einige Beispiele an, um zu sehen, wie es funktioniert.
+Das Zusammenfügen von Zeichenketten (auch bekannt als String-Konkatenation) ist eine grundlegende Fähigkeit, die in vielen Programmiersprachen benötigt wird. Es ermöglicht es Entwicklern, mehrere Strings zu einem einzigen String zu verbinden und so komplexe Texte zu erstellen. In diesem Artikel werden wir uns ansehen, wie man dies mit der Gleam-Programmiersprache erreichen kann.
 
-```Gleam
-let name = "Max"
-let greeting = "Hallo " ++ name
+## So geht's
+
+In Gleam ist die Konkatenation von Zeichenketten ganz einfach. Wir verwenden dazu den Operator `++`, der zwei Strings miteinander verbindet.
+
 ```
-Das Ergebnis ist eine neue Zeichenkette, die "Hallo Max" lautet. Beachten Sie, dass wir den `++`-Operator verwendet haben, um die beiden Zeichenketten zu verbinden.
-
-Wir können auch mehr als zwei Zeichenketten kombinieren:
-
-```Gleam
-let first = "Hallo"
-let middle = ", ich bin "
-let last = "Max"
-let greeting = first ++ middle ++ last
+Gleam> "Hallo, " ++ "Welt!"
+"Hallo, Welt!"
 ```
-Das Ergebnis ist wiederum "Hallo, ich bin Max". Einfach, oder?
 
-# Tief eintauchen
-Wenn Sie genauer hinschauen, ist die Konkatenation von Zeichenketten in Gleam sehr effizient. Im Hintergrund verwendet der `++`-Operator das `String.concat`-Modul, das eine kontinuierliche Verkettung von Zeichenketten ermöglicht, ohne unnötige Zwischenspeicherung oder Kopiervorgänge durchzuführen. Das macht es zu einer effizienten und performanten Option.
+In diesem Beispiel haben wir die Strings "Hallo, " und "Welt!" miteinander konkateniert, um den Satz "Hallo, Welt!" zu erstellen. Beachten Sie, dass zwischen den beiden Strings ein Leerzeichen eingefügt wurde, da wir dies nicht explizit angegeben haben.
 
-Es ist auch erwähnenswert, dass Gleam Unicode-Unterstützung bietet, sodass Sie problemlos Zeichenketten mit Sonderzeichen und Emojis verknüpfen können.
+Aber was passiert, wenn wir mehr als zwei Strings miteinander verbinden wollen? Dafür können wir einfach mehrere `++` Operatoren aneinanderreihen.
 
-# Siehe auch
-- Offizielle Gleam-Dokumentation zu Zeichenketten: https://gleam.run/book/standard-library#strings
-- Ein Einführungsvideo zur Konkatenation von Zeichenketten in Gleam: https://www.youtube.com/watch?v=t1ykjkCcAoU
-- Beispielcode für die Konkatenation von Zeichenketten: https://github.com/example-code/gleam/
+```
+Gleam> "Guten " ++ "Morgen, " ++ "alle zusammen!"
+"Guten Morgen, alle zusammen!"
+```
+
+Wie Sie sehen können, können wir so viele Strings miteinander verbinden, wie wir möchten, um komplexe Texte zu erstellen.
+
+## Tiefer eintauchen
+
+Obwohl die Technik der String-Konkatenation einfach ist, gibt es einige Dinge, die man berücksichtigen sollte. Zum Beispiel können wir nicht einfach einen String mit einem anderen Datentyp wie einer Zahl verbinden.
+
+```
+Gleam> "5" ++ 3
+Cannot concatenate a string and an integer.
+```
+
+Um dies zu ermöglichen, müssen wir die Zahl zuerst in einen String umwandeln.
+
+```
+Gleam> "5" ++ Integer.to_string(3)
+"53"
+```
+
+Darüber hinaus kann die Konkatenation von Strings auch bei der Verwendung von Variablen nützlich sein, um dynamischere Texte zu erstellen.
+
+```
+Gleam> name = "Hans"
+Gleam> "Hallo, " ++ name ++ "!"
+"Hallo, Hans!"
+```
+
+## Siehe auch
+
+- [String-Konkatenation in C++](https://www.tutorialspoint.com/cplusplus/cpp_string_concatenation.htm)
+- [String-Konkatenation in Java](https://www.javatpoint.com/concatenation-in-java)

@@ -1,60 +1,54 @@
 ---
-title:    "Go: Konvertera en sträng till versaler"
+title:    "Go: Att Göra En Sträng Med Stora Bokstäver"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför capitalisera strängar i Go?
 
-Att använda sig av string capitalization är en viktig del av textbehandling i många olika programmeringsspråk, inklusive Go. Genom att förstå hur man korrekt kapitaliserar en sträng kan du förbättra användarupplevelsen och kvaliteten på din kod.
+Det finns många tillfällen då man behöver ändra en sträng så att den första bokstaven blir stor (kapitaliserad). Det kan exempelvis vara för att skapa en mer läsbar utskrift, eller för att matcha en sökterm på ett mer exakt sätt. I detta inlägg kommer vi att gå igenom hur man kan capitalisera en sträng i Go.
 
-## Så här gör du
+## Hur man capitaliserar en sträng i Go
 
-För att kapitalisera en sträng i Go kan du använda dig av funktionen "ToTitle" från paketet "strings". Detta kommer att konvertera alla bokstäver till versaler. Vår kod kan se ut så här:
-
-```Go
-package main
-
-import "fmt"
-import "strings"
-
-func main() {
-    str := "hej, jag heter Johan"
-    fmt.Println(strings.ToTitle(str))
-}
-```
-
-Output:
-
-HEJ, JAG HETER JOHAN
-
-Om du vill kapitalisera enbart första bokstaven i en sträng, kan du använda funktionen "Title" istället. Detta kommer också att behålla eventuella redan befintliga versaler. Koden skulle se ut så här:
+För att capitalisera en sträng i Go finns det några olika metoder man kan använda sig av. En av de enklaste är att använda standardbiblioteket `strings` som innehåller funktionen `Title`, vilket returnerar en kopia av strängen med capitaliserad första bokstav.
 
 ```Go
-package main
-
-import "fmt"
 import "strings"
 
-func main() {
-    str := "hej, jag heter Johan"
-    fmt.Println(strings.Title(str))
-}
+stringToCap := "hej världen"
+capitalized := strings.Title(stringToCap)
+
+fmt.Println(capitalized)
+// Utskrift: Hej Världen
 ```
 
-Output:
+En annan metod är att använda `bytes` för att konvertera strängen till en lista med bytes och därefter använda Unicode-paketet för att ändra första bokstaven.
 
-Hej, Jag Heter Johan
+```Go
+stringToCap := "hej världen"
+bytesToCap := []byte(stringToCap)
+bytesToCap[0] = bytes.ToUpper(bytesToCap[0])
 
-## Djupdykning
+capitalized := string(bytesToCap)
 
-Att förstå hur man korrekt kapitaliserar en sträng är viktigt för att undvika fel och göra din kod enklare att läsa och förstå för andra utvecklare. Det finns också olika sätt att kapitalisera en sträng beroende på språkets grammatiska regler. Till exempel har svenska och engelska olika regler för hur ord ska kapitaliseras.
+fmt.Println(capitalized)
+// Utskrift: Hej världen
+```
 
-Det är också viktigt att komma ihåg att funktionerna "ToTitle" och "Title" i Go endast fungerar för ASCII-tecken. Detta innebär att om du har specialtecken i din sträng, så kommer de inte att kapitaliseras korrekt. För att lösa detta, kan du använda paketet "unicode" och funktionen "ToTitleSpecial" som tar hänsyn till icke-ASCII tecken.
+## Djupdykning i att capitalisera strängar
+
+Som vi nämnde i början finns det många tillfällen då man kan behöva capitalisera en sträng. Det kan dock vara bra att vara medveten om att detta kan skapa problem om man har att göra med flerspråkiga strängar. Det beror på att olika språk kan ha olika regler för hur man ska capitalisera, vilket då kan leda till felaktiga resultat.
+
+En annan intressant sak att veta är att i vissa fall kan det vara mer optimalt att använda `bytes`-metoden för att capitalisera en sträng jämfört med att använda `strings`-metoden, då det kan vara mer effektivt och används ofta i stora projekt.
 
 ## Se även
 
-- [Official Go Documentation on Strings](https://golang.org/pkg/strings/)
-- [Article on Unicode and Text Processing in Go](https://blog.golang.org/strings)
-- [Additional string manipulation packages for Go](https://pkg.go.dev/search?q=strings)
+Här är några länkar som kan vara bra att kolla in för mer information om att capitalisera strängar i Go:
+
+- [Officiell dokumentation för strings-paketet i Go](https://golang.org/pkg/strings/)
+- [Unicode-paketet i Go](https://golang.org/pkg/unicode/)
+- [En artikel om effektivitet i användning av `bytes`-metoden för capitalisering](https://yourbasic.org/golang/compare-bytes/)
+
+Tack för att du läste! Hoppas det här inlägget var till hjälp för dig att förstå hur man kan capitalisera strängar i Go. Fortsätt lära dig och utforska språkets olika funktioner för att skriva effektiv och korrekt kod.

@@ -1,45 +1,48 @@
 ---
-title:    "C++: 컴퓨터 프로그래밍: 명령 줄 인수 읽기"
+title:    "C++: 명령 줄 인수 읽기"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
+사용자가 커맨드 라인 인자를 읽는 방법에 대해 배우는 것은 C++ 프로그래밍에서 중요한 기술입니다. 이를 통해 사용자는 프로그램 실행 시 동적으로 값을 전달할 수 있고, 보다 유연한 프로그래밍을 할 수 있습니다.
 
-프로그래밍을 하는 사람들은 명령 줄 인수에 대해 읽고 이해하는 것이 중요합니다. 명령 줄 인수는 사용자가 프로그램을 실행할 때 입력 할 수있는 추가 정보를 제공해 주므로 프로그램을 더 유연하게 만들 수 있습니다.
+## 방법
+커맨드 라인 인자를 읽는 방법은 간단합니다. 우선, `argc`와 `argv` 매개변수를 이용하여 함수를 선언해야 합니다. 아래는 예제 코드와 함께, 각각의 섹션을 읽어보세요.
 
-# 사용 방법
-
-```C ++
+```C++
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-  // "argc" 변수는 입력 된 인수의 수를 나타내며 "argv"는 입력 된 인수의 배열을 나타냅니다.
-  // 첫 번째 인수 (index 0)는 프로그램 이름 입니다.
-  // 이어지는 인수는 매개 변수로 사용할 수 있습니다.
-  // 예시:
-  std::cout << "프로그램 이름: " << argv[0] << "\n";
-  for (int i = 1; i < argc; i++) {
-    std::cout << "매개 변수 " << i << ": " << argv[i] << "\n";
-  }
+int main(int argc, char* argv[]){
+    for(int i = 1; i < argc; i++){
+        std::cout << "인자 " << i << "번은 " << argv[i] << "입니다." << std::endl;
+    }
+    return 0;
 }
-
 ```
 
-입력 할 때 "myprog hello world"와 같이 매개 변수를 추가하면 다음과 같은 출력이 표시됩니다 :
+### 입력
+커맨드 라인에서 다음과 같은 명령으로 프로그램을 실행합니다.
+
 ```
-프로그램 이름: myprog
-매개 변수 1: hello
-매개 변수 2: world
+명령어.exe 인자1 인자2 인자3 ...
 ```
 
-# 깊게 파고들기
+### 출력
+위 코드를 실행하면, `인자1`부터 차례대로 출력됩니다.
 
-위에서 언급했듯이, `argc` 변수는 입력 된 인수의 수를 나타내고 `argv` 배열은 실제 인수를 저장합니다. `wchar_t*` 타입인 `GetCommandLine` 함수를 사용하면 명령 줄 전체를 가져와 프로그램에서 나눌 수 있습니다.
+```
+인자 1번은 인자1입니다.
+인자 2번은 인자2입니다.
+인자 3번은 인자3입니다.
+...
+```
 
-# 참고
+## 깊이 들어가기
+커맨드 라인 인자는 해당 프로그램의 시작 매개변수로, 프로그램의 이름을 제외한 모든 인자들을 받아옵니다. 또한, 각 인자는 문자열 형태로 저장되기 때문에 `atoi()`와 같은 함수를 사용하여 정수로 변환할 수 있습니다.
 
-- [C++ 참고 문서](https://docs.microsoft.com/en-us/cpp/cpp/command-line-arguments?view=vs-2019)
-- [C++ 표준 라이브러리 참고 문서](https://en.cppreference.com/w/cpp/language/main_function)
-- [C++ 명령 줄 인수 관련 질문 및 답변](https://stackoverflow.com/questions/3024197/what-main-argc-and-argv-are-main-function-parameters)
+## 참고 자료
+- [C++ 커맨드 라인 인자 읽는 방법](https://modoocode.com/228)
+- [C++ 문자열을 정수로 변환하는 방법](https://modoocode.com/103)

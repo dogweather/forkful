@@ -1,53 +1,61 @@
 ---
 title:    "Java: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in vielen Situationen nützlich sein, wie zum Beispiel beim Bereinigen von Daten oder beim Filtern von Eingaben in einer Anwendung. In diesem Blog-Beitrag zeigen wir Ihnen, wie Sie dies in Java programmieren können.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann bei der Bearbeitung von Daten oder Texten hilfreich sein. Es ermöglicht das einfache Entfernen von unerwünschten Zeichen oder das Anpassen von Formatierungen.
 
-## Wie geht man vor
+# Wie Es Geht
 
-Die grundlegendste Methode zum Löschen von Zeichen gemäß einem Muster ist die Verwendung der `replaceAll()`-Funktion aus der `String`-Klasse. Hier ist ein Beispielcode, der alle Vokale aus einem String entfernt:
+Im Folgenden wird gezeigt, wie man in Java Zeichen löschen kann, die einer bestimmten Regel entsprechen. Dafür werden zwei verschiedene Methoden vorgestellt.
+
+### Methode 1: ReplaceAll()
+
+Die erste Methode verwendet die `replaceAll()`-Funktion, die in Java Strings verfügbar ist. Diese Methode sucht nach einem bestimmten Muster in einem String und ersetzt alle passenden Zeichen durch ein leeres Zeichen (String ohne Inhalt). Dadurch werden die unerwünschten Zeichen gelöscht.
 
 ```Java
-String text = "Hallo Welt!";
-text = text.replaceAll("[aeiou]", "");
-System.out.println(text); // Ddr!
+String text = "Die Sonne scheint, es ist ein schöner Tag!";
+String bereinigterText = text.replaceAll("[,!]", "");
+System.out.println(bereinigterText);
 ```
 
-Ein Assistent für reguläre Ausdrücke kann Ihnen dabei helfen, das richtige Muster zu finden. Außerdem können Sie die `Pattern`- und `Matcher`-Klassen verwenden, um komplexere Muster zu definieren und anzuwenden. Hier ist ein Beispiel, das alle Satzzeichen aus einem String entfernt:
+Output: "Die Sonne scheint es ist ein schöner Tag"
+
+In diesem Beispiel wird die `replaceAll()`-Funktion verwendet, um alle Kommata und Ausrufezeichen aus dem Text zu entfernen. Durch die Nutzung von eckigen Klammern kann man angeben, welche Zeichen gelöscht werden sollen. Der leere String am Ende der Funktion signalisiert, dass diese Zeichen durch nichts ersetzt werden.
+
+### Methode 2: Char Array
+
+Die zweite Methode basiert auf der Umwandlung eines Strings in ein Char Array. Hierbei wird jeder Buchstabe oder jedes Zeichen des Strings einzeln überprüft und gegebenenfalls aus dem Array gelöscht.
 
 ```Java
-String text = "Hört auf, mich zu stören!";
-Pattern pattern = Pattern.compile("[.,:;?!]");
-Matcher matcher = pattern.matcher(text);
-text = matcher.replaceAll("");
-System.out.println(text); // Hört auf mich zu stören
-```
+String text = "Eine 1 und eine 2 gehen ins Kino!";
+char[] textArray = text.toCharArray();
 
-Es ist wichtig zu beachten, dass die `replaceAll()`-Funktion ein neues `String`-Objekt zurückgibt und das ursprüngliche Objekt unverändert lässt. Wenn Sie das ursprüngliche Objekt ändern möchten, müssen Sie die `replaceFirst()`- oder die `replace()`-Funktion verwenden.
-
-## Tiefer Einblick
-
-Reguläre Ausdrücke bieten eine leistungsstarke und flexible Möglichkeit, nach Mustern in Zeichenketten zu suchen und diese zu ändern. Man kann auch Gruppierungen in regulären Ausdrücken verwenden, um Teile eines Strings zu extrahieren oder mit diesen zu arbeiten. Hier ist ein Beispiel, das alle Wörter in einem String ausgibt, die mit "hi" beginnen:
-
-```Java
-String text = "Hi, ich bin ein Hi-Tech-Entwickler!";
-Pattern pattern = Pattern.compile("\\bhi\\w*");
-Matcher matcher = pattern.matcher(text);
-while (matcher.find()) {
-    System.out.println(matcher.group()); // Hi, Hi-Tech
+for (int i = 0; i < textArray.length; i++) {
+    if (Character.isDigit(textArray[i])) {
+        textArray[i] = ' ';
+    }
 }
+
+text = String.valueOf(textArray);
+System.out.println(text);
 ```
 
-Es gibt viele verschiedene Zeichenklassen, Quantifikatoren und andere Funktionen, die in regulären Ausdrücken verwendet werden können. Wir empfehlen Ihnen, sich über diese Funktionalitäten weiter zu informieren, um die volle Flexibilität und Power von regulären Ausdrücken in Java zu nutzen.
+Output: "Eine und eine gehen ins Kino!"
 
-## Siehe auch
+In diesem Beispiel wird jedes Zeichen des Strings auf eine Ziffer überprüft und gegebenenfalls durch ein leeres Zeichen ersetzt. Hierfür wird die Funktion `isDigit()` aus der `Character`-Klasse verwendet.
 
-- [Java SE 11 Dokumentation zu regulären Ausdrücken](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
-- [Tutorial zu regulären Ausdrücken in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-- [Online-RegEx-Tester für Java](https://www.freeformatter.com/java-regex-tester.html)
+# Tiefer Eintauchen
+
+Beim Löschen von Zeichen sollte man darauf achten, dass die gewählte Methode auf die individuellen Anforderungen und Bedürfnisse angepasst wird. Die `replaceAll()`-Funktion ist in den meisten Fällen die einfachere und effizientere Wahl, da die Funktionalität bereits in Java integriert ist. Für spezifischere Fälle kann jedoch auch das Umwandeln in ein Char Array hilfreich sein.
+
+# Siehe Auch
+
+- [Java String Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [String.replaceAll() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+- [Character.isDigit() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isDigit-char-)

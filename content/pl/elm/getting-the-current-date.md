@@ -1,44 +1,40 @@
 ---
-title:    "Elm: Pobieranie bieżącej daty"
+title:    "Elm: Uzyskiwanie aktualnej daty"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie stało się niezwykle popularne, a coraz więcej osób zaczyna się interesować w nim. Jednym z języków programowania, który zyskuje na popularności jest Elm. Ma on wiele zalet, w tym przejrzystą składnię i silną statyczną typizację. Jedną z bardzo przydatnych funkcji, która może zainteresować początkujących programistów, jest możliwość uzyskiwania aktualnej daty w języku Elm. W tym artykule dowiesz się dlaczego warto znać ten sposób i jak go użyć.
+Jeśli jesteś programistą w języku Elm, prawdopodobnie zastanawiasz się, po co w ogóle pobierać aktualną datę. Często nasi klienci wymagają aktualnego znacznika czasu, aby śledzić zmiany w swoich aplikacjach lub chcą wyświetlić aktualną datę i godzinę na ich interfejsie użytkownika. W tym artykule pokażę Ci, jak możesz łatwo pobrać aktualną datę w języku Elm.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby uzyskać aktualną datę w Elm, należy wykorzystać funkcję `Time.now`, która zwraca wartość typu `Time`, reprezentującą bieżący czas i datę. Aby ją wyświetlić w konsoli, możemy użyć funkcji `Time.toString` i przekazać jej pierwszy argument jako wynik funkcji `Time.now`. Poniżej znajduje się przykładowy kod:
+Pobranie aktualnej daty w języku Elm jest bardzo proste. Wystarczy użyć wbudowanej funkcji `Time.now` i przekazać jej odpowiednią strefę czasową. Poniżej znajduje się przykładowy kod:
 
 ```Elm
-import Time exposing (..)
+import Time
 
-main : Program ()
-main =
-  let
-    currentTime = Time.now
-  in
-    Time.toString currentTime
+currentTime : Time.Time
+currentTime = Time.now Time.utc
 
+-- lub w innej strefie czasowej, np. dla Polski
+currentTime = Time.now Time.zone
+
+-- możesz również użyć funkcji `Time.nowInZone` i przekazać jej strefę czasową jako argument
+currentTime = Time.nowInZone "Europe/Warsaw"
 ```
 
-W powyższym kodzie `main` jest główną funkcją programu, która przyjmuje typ `Program ()`, a następnie wywołuje funkcje `now`i `toString` z modułu `Time`. Wykonując powyższy kod, otrzymamy na wyjściu aktualną datę i godzinę w postaci tekstowej.
+Kod ten zwróci aktualną datę w wybranej strefie czasowej. W ten sposób możesz łatwo skonstruować własne funkcje, które wykorzystują aktualną datę do różnych celów.
 
-```
-2019-05-09T21:49:48.3Z
-```
+## Głębszy zanurzenie
 
-Możemy również wyświetlić tylko konkretną część daty, np. rok lub dzień, stosując odpowiednie funkcje z modułu `Time`.
+Jeśli chcesz lepiej zrozumieć, jak działa funkcja `Time.now` w języku Elm, możesz zajrzeć do dokumentacji języka. Tam znajdziesz więcej informacji na temat stref czasowych oraz innych funkcji związanych z czasem, takich jak `Time.fromMillis` czy `Time.millisSinceEpoch`, które pozwalają na manipulację czasem w bardziej wyrafinowany sposób.
 
-## Głębsza Analiza
+## Zobacz także
+- [Dokumentacja języka Elm](https://elm-lang.org/docs)
+- [Dokumentacja modułu `Time` w języku Elm](https://package.elm-lang.org/packages/elm/core/latest/Time)
 
-W języku Elm, istnieje kilka funkcji, które mogą być przydatne podczas pracy z datami. Najważniejszą z nich jest `Time.now`, ale można również skorzystać z `Time.fromTimeStamp`, `Time.millisecond`, `Time.second`, `Time.minute` i `Time.hour`, które pozwalają na konwertowanie daty na różne jednostki czasu. Można również wykorzystać funkcję `Time.since`, aby obliczyć czas od danego punktu w przeszłości lub `Time.inDays` do konwersji czasu w dni.
-
-## Zobacz również
-
-- [Oficjalna dokumentacja Elm](https://elm-lang.org/docs)
-- [Przewodnik dla początkujących w Elm](https://guide.elm-lang.org/)
-- [Repl.it - narzędzie online do nauki języka Elm](https://repl.it/languages/elm)
+Dzięki tym prostym wskazówkom będziesz w stanie łatwo pobierać aktualną datę w języku Elm i wykorzystywać ją w swoich aplikacjach. Daj znać, w jaki sposób wykorzystujesz tę funkcję w swoim kodzie i udostępnij ten artykuł innym programistom, którzy też mogą potrzebować pomocy z tym zagadnieniem.

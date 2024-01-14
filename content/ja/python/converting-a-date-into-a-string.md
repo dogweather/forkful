@@ -1,43 +1,44 @@
 ---
 title:    "Python: 日付を文字列に変換する"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ: 日付を文字列に変換することの意義
+## なぜ
+日付を文字列に変換する理由を説明します。日付を文字列に変換することで、コードによって処理をさせることができるようになります。
 
-日付を文字列に変換することには、多くの理由があります。例えば、データを整形して表示したり、ファイル名として使用するために必要になる場合があります。
-
-## 作り方: 日付を文字列に変換する方法
-
-日付を文字列に変換するには、Pythonのdatetimeモジュールを使用する方法があります。下記のコードを参考にしてください。
+## 方法
+日付を文字列に変換する方法は、Pythonの組み込み関数の`str`を使用します。以下の例は、今日の日付を文字列に変換する方法を示しています。
 
 ```Python
-import datetime
+from datetime import date
 
-# 日付のデータを作成
-date = datetime.date(2021, 10, 31)
-
-# 日付を文字列に変換
-string_date = date.strftime("%Y年%m月%d日")
-
-# 結果を表示
-print(string_date)
+today = date.today()
+str_date = str(today) #今日の日付を文字列に変換
+print(str_date)
 ```
 
-このコードを実行すると、2021年10月31日という文字列が表示されます。日付を文字列に変換するためにやることは、日付データをstrftime()関数に渡して、指定した書式で文字列として取得することです。
+出力: `2021-01-01`
 
-## 深堀り: 日付を文字列に変換する際の詳細
+## 深堀り
+日付を文字列に変換する際、フォーマットを指定することもできます。`strftime()`メソッドを使用することで、指定したフォーマットに従った文字列を作成することができます。例えば、以下のコードは年月日のフォーマットで日付を文字列に変換する方法を示しています。
 
-日付を文字列に変換する際には、strftime()関数で使用する書式には多くのオプションがあります。たとえば、年や月を表す単語や数字を異なる表記にすることも可能です。Pythonの公式ドキュメントなどを参考にして、より詳細な書式を探求してみてください。
+```Python
+from datetime import date
 
-## よくある間違いとトラブルシューティング
+today = date.today()
+str_date = today.strftime("%Y年%m月%d日") #年月日のフォーマットで日付を文字列に変換
+print(str_date)
+```
 
-日付を文字列に変換する際に最もよくある間違いは、書式を間違えることです。書式には大小文字が区別されるので、注意しましょう。トラブルシューティングの際には、まずは書式に問題がないかを確認することが大切です。
+出力: `2021年01月01日`
 
-## 参考リンク
+## はてな
+日付を文字列に変換する方法は、プログラミングでよく使用されるテクニックの一つです。日付を文字列に変換することで、データの処理や表示をより柔軟に行うことができます。
 
-- Python公式ドキュメント: https://docs.python.org/ja/3/library/datetime.html
-- Pythonの日付を文字列に変換する方法についてのブログ記事: https://codechacha.com/ja/python-datetime-to-string/
-- 日付表示の書式について: https://strftime.org/
+## 関連リンク
+- [Python公式ドキュメント: `datetime`モジュール](https://docs.python.org/ja/3/library/datetime.html)
+- [Python公式ドキュメント: `str`関数](https://docs.python.org/ja/3/library/functions.html#func-str)
+- [Python公式ドキュメント: `strftime()`メソッド](https://docs.python.org/ja/3/library/datetime.html#datetime.datetime.strftime)

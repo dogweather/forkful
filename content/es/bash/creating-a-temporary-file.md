@@ -1,54 +1,52 @@
 ---
 title:    "Bash: Creando un archivo temporal"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué crear un archivo temporal?
 
-Crear un archivo temporal es una técnica útil en la programación de Bash. Estos archivos son utilizados para almacenar datos temporales que se generan durante la ejecución del programa y que no necesitan ser guardados permanentemente. Además, también se pueden utilizar para realizar pruebas de código sin afectar a archivos permanentes importantes.
+Crear un archivo temporal puede ser útil en situaciones en las que se necesita almacenar datos temporales o ejecutar un comando que solo necesita ser ejecutado una vez.
 
-## Cómo
+## Cómo crear un archivo temporal
 
-Para crear un archivo temporal en Bash, podemos utilizar el comando `mktemp`. Este comando generará un nombre único para el archivo temporal y lo creará en el directorio actual. Por ejemplo:
+Crear un archivo temporal en Bash es fácil y se puede hacer utilizando el comando `mktemp`. Este comando creará automáticamente un archivo único y lo colocará en la ubicación especificada. Aquí hay un ejemplo:
 
 ```Bash
 temp_file=$(mktemp)
-echo "Este es un archivo temporal creado con Bash" > $temp_file
+echo "Este es un archivo temporal" > $temp_file
 cat $temp_file
 ```
 
-La salida de este código será: `Este es un archivo temporal creado con Bash`.
+El primer comando `mktemp` asigna un archivo temporal único a la variable `temp_file`. Luego, usamos el comando `echo` para escribir una cadena en el archivo. Finalmente, usamos `cat` para imprimir el contenido del archivo temporal en la consola.
 
-Si deseamos especificar un prefijo para el nombre del archivo temporal, podemos utilizar el siguiente comando:
-
-```Bash
-temp_file=$(mktemp mi_archivo_temporal.XXXXXX)
-```
-
-El parámetro `XXXXXX` se reemplazará con un código aleatorio, lo que garantiza que el nombre del archivo será único. También podemos utilizar una plantilla de nombre para el archivo temporal, que se indicará con el sufijo `.XXXXXXXXXX` en la plantilla del nombre. Por ejemplo:
+Si deseas crear un archivo temporal en una ubicación específica, puedes hacerlo pasando la ruta deseada como argumento al comando `mktemp`, como se muestra a continuación:
 
 ```Bash
-temp_file=$(mktemp mi_archivo_temporal.XXXXXXXXXX)
+temp_file=$(mktemp /ruta/al/archivo/temporal)
 ```
 
-En cuanto al formato del nombre del archivo temporal, podemos especificar una extensión utilizando el mismo comando. Por ejemplo:
+También puedes especificar un prefijo para el nombre del archivo temporal utilizando la opción `-t`, como se muestra en el siguiente ejemplo:
 
 ```Bash
-temp_file=$(mktemp mi_archivo_temporal_XXXXXX.txt)
+temp_file=$(mktemp -t temp_file)
 ```
 
-En este caso, el archivo temporal se creará con la extensión `.txt`.
+Debes tener en cuenta que el archivo temporal creado por `mktemp` se borra automáticamente una vez que el script o comando finaliza su ejecución. Si deseas retener el archivo temporal para su uso posterior, puedes utilizar la opción `-d` para crear un directorio temporal o la opción `-p` para especificar una ubicación específica y retener el archivo en esa ubicación.
 
-## Profundizando
+## Inmersión profunda
 
-Además del comando `mktemp`, también podemos utilizar otras herramientas para crear archivos temporales en Bash, como el comando `touch` o el redireccionamiento de salida de un comando a un archivo. Sin embargo, el uso del comando `mktemp` nos garantiza que el archivo creado será único y se eliminará automáticamente al finalizar la ejecución del programa, evitando posibles conflictos con archivos permanentes.
+El comando `mktemp` utiliza una plantilla para generar un nombre de archivo temporal único. Por defecto, esta plantilla es `tmp.XXXXXXXXXX`. Sin embargo, esta plantilla también se puede personalizar utilizando la opción `-u`.
 
-Otra técnica útil es utilizar la variable de entorno `TMPDIR` para especificar el directorio en el que deseamos crear el archivo temporal. Por defecto, el comando `mktemp` utilizará el directorio `/tmp`, pero podemos cambiarlo según nuestras necesidades.
+Por ejemplo, si deseas que todos tus archivos temporales tengan un prefijo específico y un sufijo aleatorio, puedes especificar la plantilla de la siguiente manera:
+
+```Bash
+temp_file=$(mktemp -u /ruta/alArchivo/temporal/prefijo-XXXXXX-sufijo)
+```
 
 ## Ver también
 
-- [Comandos básicos de Bash](https://www.hostinger.es/tutoriales/comandos-basicos-de-bash/)
-- [Crear y eliminar archivos temporales en Bash](https://www.enmimaquinafunciona.com/pregunta/97346/como-crear-y-borrar-un-archivo-temporal-en-bash)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+- [Cómo crear y usar archivos temporales en Bash](https://www.digitalocean.com/community/tutorials/how-to-create-and-use-temporary-files-in-bash-es)
+- [Documentación oficial de `mktemp`](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)

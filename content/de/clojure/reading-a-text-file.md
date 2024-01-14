@@ -1,53 +1,41 @@
 ---
-title:    "Clojure: Das Lesen einer Textdatei"
+title:    "Clojure: Eine Textdatei lesen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum 
+## Warum
 
-Wahrscheinlich bist du hier, weil du lernen willst, wie man Textdateien in Clojure liest. Das kann aus verschiedenen Gründen nützlich sein, zum Beispiel um Daten zu analysieren oder sie in einem Programm zu verwenden. In diesem Blog-Post werde ich dir zeigen, wie es geht.
+In der Welt der Programmierung ist das Lesen von Textdateien ein grundlegender und notwendiger Schritt für die Verarbeitung von Daten, sei es zum Lesen von Konfigurationsdateien oder zum Extrahieren von Informationen aus großen Datenmengen. Lesen von Textdateien ermöglicht es einem Programmierer, auf einfache Weise Informationen aus einem externen Quelltext zu erhalten, ohne die Daten manuell eingeben zu müssen.
 
 ## Wie man Textdateien in Clojure liest
 
-Um eine Textdatei in Clojure zu lesen, verwenden wir die Funktion `slurp`. Diese Funktion liest den gesamten Inhalt der Datei als String ein. Hier ist ein Beispiel, wie man eine Datei mit dem Namen "beispiel.txt" einliest:
+Das Lesen von Textdateien in Clojure ist relativ einfach und erfordert nur wenige Zeilen Code. In der folgenden Beispielcode verwenden wir die Funktion `slurp` um den Inhalt einer Textdatei in eine variable zu speichern und dann die `println` Funktion, um den Inhalt auf der Konsole auszugeben.
 
 ```Clojure
-(slurp "beispiel.txt")
+(def text (slurp "datei.txt"))
+(println text)
 ```
 
-Das Ergebnis wird ein String sein, der den gesamten Inhalt der Datei enthält. Wenn die Datei zum Beispiel folgenden Inhalt hat:
-
-```
-Hallo Welt!
-Dies ist ein Beispieltext.
-```
-
-Das Ergebnis wäre der String "Hallo Welt! Dies ist ein Beispieltext.".
-
-Wenn du jedoch den Inhalt der Datei in einer Liste haben möchtest, kannst du die Funktion `line-seq` verwenden. Diese Funktion liest die Datei Zeile für Zeile ein und gibt eine Liste von Strings zurück. Hier ist ein Beispiel:
+Die Ausgabe wird dann den gesamten Inhalt der Textdatei auf der Konsole ausgeben. Alternativ kann auch die Funktion `read-lines` verwendet werden, um den Inhalt einer Textdatei zeilenweise in eine Liste zu speichern.
 
 ```Clojure
-(line-seq (io/reader "beispiel.txt"))
+(def lines (read-lines "datei.txt"))
+(println lines)
 ```
 
-Das Ergebnis wäre eine Liste mit den Strings "Hallo Welt!" und "Dies ist ein Beispieltext.".
+Die Ausgabe wird dann eine Liste mit jeder Zeile der Textdatei als separate Elemente enthalten.
 
-## Tieferer Einblick
+## Tiefere Einblicke
 
-Es ist wichtig zu beachten, dass sowohl `slurp` als auch `line-seq` den Dateipfad als String als Argument erwarten. Wenn du also eine Datei im gleichen Ordner wie dein Clojure-Programm hast, musst du nur den Dateinamen angeben. Wenn sich die Datei in einem anderen Ordner befindet, musst du den vollständigen Pfad angeben.
+Es gibt auch Möglichkeiten, Textdateien in Clojure zu lesen, die über die grundlegenden Funktionen `slurp` und `read-lines` hinausgehen. Zum Beispiel kann die Bibliothek "clojure-csv" verwendet werden, um CSV-Dateien zu lesen und in Clojure Datenstrukturen zu konvertieren.
 
-Es ist auch möglich, eine bestimmte Codierung zu spezifizieren, wenn die Datei nicht im Standardformat (UTF-8) ist. Dies kann mit der Funktion `with-open` erreicht werden, die einen Dateipfad und eine Codierung als Argumente erwartet. Hier ist ein Beispiel:
-
-```Clojure
-(with-open [rdr (io/reader "beispiel.txt" :encoding "ISO-8859-1")]
-  (line-seq rdr))
-```
-
-Dieses Beispiel würde dasselbe Ergebnis zurückgeben wie das vorherige, jedoch mit der spezifizierten Codierung.
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, um spezifische Informationen aus einer Textdatei zu extrahieren. In Kombination mit den Funktionen `slurp` und `read-lines` können reguläre Ausdrücke eingesetzt werden, um gezielt nach bestimmten Mustern in einer Textdatei zu suchen und diese zu verarbeiten.
 
 ## Siehe auch
 
-* [Official Clojure Documentation on slurp] (https://clojuredocs.org/clojure.core/slurp)
-* [Official Clojure Documentation on line-seq] (https://clojuredocs.org/clojure.core/line-seq)
+- [Offizielle Clojure Dokumentation](https://clojure.org/)
+- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+- [Clojure for Beginners YouTube Kanal](https://www.youtube.com/channel/UCbwhWannAwBT7PcDPKnox-g)

@@ -1,43 +1,45 @@
 ---
-title:    "Fish Shell: Pisanie pliku tekstowego"
+title:    "Fish Shell: Tworzenie pliku tekstowego"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego pisać pliki tekstowe?
 
-Pisanie plików tekstowych jest ważną umiejętnością dla każdego programisty. Jest to przydatne narzędzie do przechowywania i udostępniania kodu, ułatwia pracę zespołową oraz może być wykorzystywane do dokumentacji kodu. W tym artykule dowiesz się, jak pisać pliki tekstowe w Fish Shell oraz uzyskasz wgląd w niektóre zalety tego podejścia.
+Pisanie plików tekstowych jest bardzo przydatne w programowaniu w powłoce Fish Shell. Pozwala ono na przechowywanie kodu źródłowego w czytelnej formie, a także na łatwe udostępnianie i wersjonowanie kodu.
 
 ## Jak to zrobić?
 
-Pisanie plików tekstowych w Fish Shell jest proste i nie wymaga dużej ilości kodu. Wystarczy użyć komendy `echo` i przekierować wynik do pliku, np. `echo "To jest przykładowy tekst" > plik.txt` spowoduje stworzenie pliku o nazwie "plik.txt" zawierającego tekst "To jest przykładowy tekst". Możesz także wykorzystać polecenie `cat` do wyświetlania zawartości pliku lub dodawania tekstu do istniejącego pliku.
+Aby napisać plik tekstowy w Fish Shell, wystarczy wykorzystać polecenie `echo`. Przykładowo, jeśli chcemy stworzyć plik o nazwie `hello.txt` zawierający tekst "Witaj Świecie!", wykonujemy poniższą komendę:
 
 ```Fish Shell
-# Tworzenie pliku tekstowego
-echo "To jest przykładowy tekst" > plik.txt
-
-# Wyświetlanie zawartości pliku
-cat plik.txt
-
-# Dodawanie tekstu do pliku
-cat plik.txt >> plik.txt
+echo "Witaj Świecie!" > hello.txt
 ```
 
-## Głębszy zanurzenie
-
-Pisanie plików tekstowych w Fish Shell daje również możliwość używania różnych opcji i połączeń z innymi komendami. Możesz na przykład wykorzystać polecenie `grep` do filtrowania danych wejściowych i przekazać wynik do pliku. Możesz także wykorzystać polecenie `sed` do wcześniejszej edycji tekstu. Połączenie kilku komend w jedną linię może być bardzo przydatne i pozwala zaoszczędzić czas.
+Możemy także dopisywać do istniejącego pliku, korzystając z operatora `>>`. Na przykład, aby dodać wyraz "Dziękuję" do pliku `hello.txt`, używamy poniższej komendy:
 
 ```Fish Shell
-# Przekazywanie danych z komendy grep do pliku
-ls | grep "plik" > lista_plikow.txt
+echo "Dziękuję" >> hello.txt
+```
 
-# Edycja tekstu przy użyciu polecenia sed
-echo "To jest jakiś tekst" | sed "s/jakiś/inny/g" > nowy_plik.txt
+## Deep Dive
+
+Pamiętajmy, że polecenie `echo` wypisze podany tekst nie tylko do pliku, ale także na ekran konsoli. Jeśli chcemy zapisać tylko do pliku, możemy skorzystać z opcji `-n`, która wyłączy wypisywanie nowej linii:
+
+```Fish Shell
+echo -n "Hello" > hello.txt
+```
+
+W przypadku bardziej skomplikowanych plików tekstowych, możemy wykorzystać polecenie `cat`, które pozwala na konkatenację kilku plików tekstowych w jeden. Na przykład, jeśli mamy dwa pliki `hello.txt` i `world.txt`, możemy je połączyć w jeden za pomocą poniższej komendy:
+
+```Fish Shell
+cat hello.txt world.txt > hello_world.txt
 ```
 
 ## Zobacz także
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Przykłady pisania plików tekstowych w Fish Shell](https://fishshell.com/docs/current/tutorial.html#writing-a-text-file)
-- [Poradnik programisty Fish Shell](https://gist.github.com/antonagestam/1815087)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Inne języki programowania](https://www.taniom.com/czym-sie-rozni-jezyk-programowania-od-jednego-judenka-programowania-do-drugiego/)

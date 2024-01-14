@@ -1,67 +1,66 @@
 ---
 title:    "Python: 打印调试输出"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：
-许多程序员都会在编程过程中使用打印调试输出的方法来查找和解决程序中的错误。这是一种快速有效的方法，可以帮助程序员更快地找出问题所在，提高代码的质量和可靠性。
+为什么：在程序设计中，调试输出是一个非常重要的步骤，因为它可以帮助我们找出代码中的错误并进行修复。通过打印调试输出，我们可以更加有效地定位到问题所在，并且可以在修复后再次运行程序来验证修复是否成功。
 
-如何：下面将介绍使用Python中print函数来打印调试输出的几种不同方式。
+如何做：通过```Python ...```代码块中的实例和输出样例来演示如何打印调试输出。例如：
 
-```
-Python代码示例1:
+```Python
+# 创建一个测试列表
+list = [1, 2, 3, 4, 5]
 
-num = 5
-print("当前num的值为：" + str(num))
-
-输出结果：
-当前num的值为：5
-
-Python代码示例2：
-
-name = "John"
-age = 25
-print("姓名：{}, 年龄：{}".format(name, age))
-
-输出结果：
-姓名：John, 年龄：25
+# 使用循环打印每个元素及其索引
+for i in range(len(list)):
+    print("在索引{}的位置找到{}的值".format(i, list[i]))
 ```
 
-深入了解：
-除了基本的使用方法外，我们还可以通过给print函数传递多个参数来打印更多的调试信息。例如：
+输出结果为：
 
 ```
-Python代码示例3：
-
-num1 = 10
-num2 = 5
-sum = num1 + num2
-print("第一个数：{}, 第二个数：{}, 和：{}".format(num1, num2, sum))
-
-输出结果：
-第一个数：10, 第二个数：5, 和：15
+在索引0的位置找到1的值
+在索引1的位置找到2的值
+在索引2的位置找到3的值
+在索引3的位置找到4的值
+在索引4的位置找到5的值
 ```
 
-我们也可以通过设置sep和end参数来自定义输出的格式。例如：
+通过打印调试输出，我们可以看到每个元素的值和其对应的索引位置，从而更容易地发现问题所在。
+
+深入了解：当我们需要进行调试时，有时候只是简单地打印一条消息是不够的。我们可以通过在打印语句中使用不同的格式化选项来输出更详细的信息。例如，我们可以使用```%r```来打印变量的原始值，使用```%s```来打印变量的字符串表示，使用```%d```来打印变量的整数表示等等。
+
+此外，我们也可以使用条件语句来决定是否打印调试输出，这样可以避免在正式运行时产生过多的输出信息。例如，我们可以使用以下代码：
+
+```Python
+# 创建一个变量
+num = 10
+
+# 判断变量是否大于5，若是则打印调试信息
+if num > 5:
+    print("当前变量的值为：%d" % num)
+```
+
+输出结果为：
 
 ```
-Python代码示例4：
-
-num1 = 5
-num2 = 3
-print(num1, num2, sep=" is greater than ", end="!")
-
-输出结果：
-5 is greater than 3!
+当前变量的值为：10
 ```
 
-总之，打印调试输出是一种非常简单但却非常重要的调试方法，可以帮助我们发现并修复程序中的错误。
+当变量的值大于5时，才会打印调试信息。
 
-另外，我们还可以使用Python中的日志模块来记录调试信息，这种方式更加灵活和方便，可以在需要时开启和关闭，详细了解可以参考[Python官方文档](https://docs.python.org/3.9/library/logging.html)。
+参考链接：
 
-查看也可以：
+- [Python官方文档-字符串格式化](https://docs.python.org/3/library/stdtypes.html#string-formatting)
+- [易百教程-Python条件语句](https://www.yiibai.com/python/python_if_else.html)
 
-- [Python中print函数的官方文档](https://docs.python.org/3.9/library/functions.html#print)
-- [使用Python的日志模块进行调试的方法](https://realpython.com/python-logging/)
+另请参阅：
+
+[参考链接 1](http://www.runoob.com/python3/python3-debugging.html)
+
+[参考链接 2](https://medium.freecodecamp.org/how-to-debug-small-programs-5ab9c98a5cfd)
+
+[参考链接 3](https://realpython.com/python-debugging-pdb/)

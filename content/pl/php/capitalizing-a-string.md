@@ -1,33 +1,44 @@
 ---
-title:    "PHP: Zmiana wielkości liter dla ciągu znaków"
+title:    "PHP: Zapis wielkimi literami łańcucha znaków"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu musimy zmieniać tekst w pewny sposób, na przykład zamieniać wszystkie litery na duże lub małe. W tym artykule przedstawimy sposób na zmianę pierwszej litery w ciągu znaków na wielką.
+W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego codziennego życia. Od tworzenia aplikacji mobilnych po obsługę systemów internetowych, trudno jest znaleźć dziedzinę, która nie jest zależna od kodowania. Dzięki temu powstaje również potrzeba znajomości języków programowania, takich jak PHP, które pozwalają na tworzenie dynamicznych i funkcjonalnych stron internetowych.
 
-## Jak to zrobić?
+Jedną z najważniejszych umiejętności w programowaniu jest praca z ciągami znaków. W niektórych sytuacjach może być konieczne przekształcenie ciągu znaków do postaci, w której każde słowo zaczyna się wielką literą. Jest to przydatne, na przykład, w przypadku nazw własnych lub tytułów, gdzie zgodnie ze stylistyką języka polskiego każde słowo powinno być zapisane wielką literą.
 
-Aby zmienić pierwszą literę ciągu znaków na wielką, możemy użyć wbudowanej funkcji `ucfirst()`. Oto prosty przykład:
+## Jak to zrobić
+
+Aby przekształcić ciąg znaków na postać złożoną z wyłącznie wielkich liter, wystarczy skorzystać z wbudowanej funkcji w języku PHP - `strtoupper()`. Wystarczy podać jako argument funkcji żądany ciąg znaków i zostanie on zwrócony w postaci składającej się z samych wielkich liter.
+
+Przykładowy kod wyglądałby następująco:
 
 ```PHP
-$string = "programowanie jest wspaniałe";
-echo ucfirst($string);
+$string = "programowanie PHP jest fascynujące!";
+$upper_string = strtoupper($string);
+echo $upper_string; // OUTPUT: PROGRAMOWANIE PHP JEST FASCYNŨJĄCE!
 ```
 
-Wyjście z powyższego kodu to `Programowanie jest wspaniałe`.
+Widzimy, że wszystkie litery zostały przekształcone na wielkie, co może być przydatne w wielu przypadkach programistycznych.
 
-## Deep Dive
+## Głębsza analiza
 
-Jednym z najważniejszych kroków w programowaniu jest zrozumienie, dlaczego i jak dane rozwiązanie działa. W przypadku funkcji `ucfirst()` jest to dość proste - po prostu zmienia pierwszą literę ciągu znaków na jej odpowiednik zapisany wielką literą. Jednak warto zauważyć, że jeśli pierwsza litera jest już wielką literą lub nie jest literą w ogóle, to funkcja nie robi nic.
+Funkcja `strtoupper()` jest tylko jednym z przykładów, w jaki sposób można przekształcać ciągi znaków w języku PHP. Istnieje również funkcja `ucwords()`, która przekształca pierwszą literę każdego słowa w podanym tekście na wielką, oraz `ucfirst()`, która przekształca jedynie pierwszą literę całego tekstu na wielką.
 
-Dzięki tej funkcji nie musimy pisać złożonych i czasochłonnych mechanizmów, aby zmienić pierwszą literę ciągu znaków na wielką. Jest to szczególnie przydatne, gdy używamy formularzy w naszych aplikacjach i chcemy, aby wszyscy użytkownicy wpisywali dane zgodnie z ustalonymi standardami.
+Warto również pamiętać, że funkcje te uwzględniają ustawienia lokalizacyjne danego systemu operacyjnego. Dzięki temu można zachować odpowiednie formatowanie dla różnych języków.
 
-## Zobacz też
+## Zobacz także
 
-- [Funkcja `ucfirst()` w dokumentacji PHP](https://www.php.net/manual/en/function.ucfirst.php)
-- [Tutorial o zmianie wielkości liter w ciągu znaków w PHP](https://www.w3schools.com/php/func_string_ucfirst.asp)
-- [Inne przydatne funkcje dla pracy z tekstami w PHP](https://www.php.net/manual/en/ref.strings.php)
+#### Manual PHP - `strtoupper()` 
+https://www.php.net/manual/en/function.strtoupper.php
+
+#### Manual PHP - `ucwords()` 
+https://www.php.net/manual/en/function.ucwords.php
+
+#### Manual PHP - `ucfirst()` 
+https://www.php.net/manual/en/function.ucfirst.php

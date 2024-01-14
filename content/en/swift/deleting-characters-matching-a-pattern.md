@@ -1,48 +1,63 @@
 ---
 title:    "Swift recipe: Deleting characters matching a pattern"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In Swift programming, deleting characters that match a certain pattern is a common task that can help simplify and optimize code. By removing unwanted characters, you can filter, manipulate, and process data more efficiently. In this blog post, we will explore the reasons behind deleting characters matching a pattern and the various techniques to achieve it in Swift.
+In programming, there are often situations where we need to manipulate strings. One common task is deleting certain characters from a string that match a specific pattern. This can be useful for tasks such as removing punctuation or formatting characters from user input.
 
 ## How To
 
-To delete characters matching a pattern in Swift, we can use the `replacingOccurrences(of:with:)` method or the `split(whereSeparator:)` method. Let's take a look at some coding examples using these methods:
+To delete characters matching a pattern in Swift, we can use the `replacingOccurrences(of:with:)` method. This method takes in two parameters - the pattern to match and the replacement string. 
 
-```
-// Sample string with unwanted characters
-let originalString = "H3ll0 W0rld!"
+```Swift
+//Sample input string
+let input = "Hello, World!"
 
-// Using replacingOccurrences method to remove all numbers
-let filteredString = originalString.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
-
-// Output: Hll Wrld!
-
-// Using split method to remove all vowels
-let vowels = "aeiou"
-let filteredString = originalString.split(whereSeparator: { vowels.contains($0) })
-
-// Output: H ll W rld!
+//Deleting all punctuation marks
+let result = input.replacingOccurrences(of: "[^a-zA-Z]", with: "", options: .regularExpression, range: nil)
+print(result)
+//Output: HelloWorld 
 ```
 
-In the first example, we used regular expressions to specify the pattern of characters we want to remove. The second example uses a closure to specify the characters we want to split on. Both methods return a new string with the unwanted characters removed, leaving us with a clean and filtered string.
+In the above example, we use regular expressions to match any characters that are not letters and replace them with an empty string, effectively deleting them from the original string.
+
+We can also use this method to delete specific characters, such as a particular letter or symbol, from a string. 
+
+```Swift
+//Sample input string
+let input = "I love Swift!"
+
+//Deleting the letter "S"
+let result = input.replacingOccurrences(of: "S", with: "", options: [], range: nil)
+print(result)
+//Output: I love wift!
+```
+
+Regular expressions can also be used in more complex ways to match specific patterns and delete characters accordingly. For example, we can delete all numbers from a string:
+
+```Swift
+//Sample input string
+let input = "Apples123 are great456"
+
+//Deleting all numbers
+let result = input.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression, range: nil)
+print(result)
+//Output: Apples are great
+```
 
 ## Deep Dive
 
-Aside from the two methods mentioned, there are other ways to delete characters matching a pattern in Swift. We can use the `filter` method to create a new array with only the desired characters, then join them back into a string. Another approach is to use the `range(of:options:)` method to find the range of the unwanted character, then remove it using the `removeSubrange` method. These may be more complex, but it's always good to explore different approaches and learn new techniques.
+Regular expressions may seem intimidating at first, but they are a powerful and efficient tool for manipulating strings. The `[ ]` in a regular expression represents a character class, which can match any of the characters within the brackets. For example, `[a-zA-Z]` means any letter, `[0-9]` means any number, and `[^a-z]` means any character that is not a lowercase letter.
 
-Deleting characters matching a pattern can also be useful in text processing, where we want to remove specific words or phrases from a given string. By using the `replacingOccurrences` method with regular expressions, we can quickly and efficiently clean up strings and prepare them for further processing.
+Using the `options` parameter in the `replacingOccurrences` method allows us to specify additional options for how the replacement is performed. In the examples above, we used the `.regularExpression` option to enable regular expression matching. Other options include `.caseInsensitive`, which ignores case when matching, and `.anchored`, which only matches characters at the beginning or end of the string.
 
 ## See Also
 
-To learn more about Swift string manipulation and regular expressions, check out these resources:
-
-- [The Swift Programming Language: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Regular Expressions in Swift](https://www.ralfebert.de/snippets/ios/swift/regular-expressions/)
-- [Understanding Regular Expressions with Examples in Swift](https://www.appcoda.com/swift-regular-expressions/)
-
-Now that you have a better understanding of deleting characters matching a pattern in Swift, go ahead and try it out in your own projects. Happy coding!
+- [String and Character Manipulation in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Regular Expressions in Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Advanced Regular Expressions in Swift](https://www.swiftbysundell.com/articles/advanced-regular-expressions-in-swift/)

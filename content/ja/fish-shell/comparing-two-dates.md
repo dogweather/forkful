@@ -1,41 +1,43 @@
 ---
-title:    "Fish Shell: 「二つの日付を比較する」"
+title:    "Fish Shell: 日付の比較"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-コンピュータープログラミングと言えば、日付を比較することは非常によくあるタスクです。例えば、どのイベントがより古いかや、ある日付が別の日付よりも将来のものかなどを判断する必要があります。このようなタスクを実行するために、Fish Shellプログラミングにおいて日付の比較を行う方法を紹介します。
+プログラミングを学ぶと、日付を比較する必要がある場面があります。例えば、特定の日付のイベントを記録したい場合や、特定の日付以降の作業を実行したい場合などです。日付を比較することで、より効率的なコーディングが可能になります。
 
 ## 方法
 
-日付の比較にはいくつかの方法がありますが、ここでは最も一般的な方法を紹介します。まずは二つの日付を定義しましょう。例として、2021年12月1日と2021年12月2日の二つの日付を使用します。
+日付の比較には、Fish Shellの内部コマンドである`date`を使用します。以下の例を参考にしてください。
 
 ```Fish Shell
-set date1 2021-12-01
-set date2 2021-12-02
+set start_date (date -f "%Y-%m-%d" "2021-01-01")
+set end_date (date -f "%Y-%m-%d" "2021-02-01")
+if test $start_date -lt $end_date
+    echo "Start date is before end date"
+end
 ```
 
-次に、`string compare`コマンドを使用して二つの日付を比較します。このコマンドは二つの文字列を比較し、一つ目の引数が二つ目の引数よりも前に出現する場合には`-1`、後ろに出現する場合には`1`、同じ場合には`0`を返します。
+上記のコードでは、まず`date`コマンドを使用して、`%Y-%m-%d`の形式で日付を設定しています。そして、`if`文を使用して日付の比較を行い、`echo`コマンドで結果を出力しています。
 
-```Fish Shell
-string compare $date1 $date2
-```
+## 詳細
 
-このコマンドの出力は`-1`となり、つまり`date1`の日付が`date2`の日付よりも前であることを示します。
+日付の比較では、`date`コマンドの他にも様々なオプションがあります。
 
-## ディープダイブ
+例えば、`date -d`を使用することで、日付の計算を行うことができます。また、`date -s`を使用することで、日付を設定することも可能です。
 
-上記の方法では二つの日付を単純に比較し、それらが等しくないことを確認することができます。しかし、より詳細な日付の比較を行うためには、より複雑なプログラムを書く必要があります。
+その他にも、`date`コマンドの詳細な使用方法については、公式ドキュメントを参考にしてください。
 
-例えば、年や月、日のみでなく、時や分、秒までを比較したい場合や、異なる日付フォーマットを使用している場合など、様々なケースがあるでしょう。そのような場合には、Fish Shellの公式ドキュメンテーションやオンラインのコミュニティを参考にして、より詳細なプログラムを書くことができます。
+## はてな
 
-## は見ておき
+この記事では、Fish Shellを使用して日付を比較する方法を紹介しました。日付の比較には様々なケースがありますが、きちんと理解してコーディングすることで、より効率的なプログラミングが可能になります。
 
-Fish Shell programmingで日付を比較する方法を紹介しましたが、他にも便利なコマンドやテクニックがあるかもしれません。以下にいくつかの参考リンクをまとめましたので、ぜひチェックしてみてください。
+## 関連リンク
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
-- [Fish Shell公式GitHubリポジトリ](https://github.com/fish-shell/fish-shell)
-- [Reddit r/fishshellコミュニティ](https://www.reddit.com/r/fishshell/)
+- [Fish Shell 公式ドキュメント] (https://fishshell.com/docs/current/index.html)
+- [日付と時刻を操作する方法] (https://linuxacademy.com/blog/linux/the-linux-date-command-at-your-service/)
+- [Fish Shellの基本コマンドの使い方] (https://qiita.com/diskkid/items/9f86cdc0c6e7b82d5aae)

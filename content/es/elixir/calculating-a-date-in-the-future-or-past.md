@@ -1,55 +1,41 @@
 ---
 title:    "Elixir: Calculando una fecha en el futuro o pasado"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 # Por qué
 
-A veces, necesitamos calcular una fecha en el pasado o en el futuro para nuestro programa. Por ejemplo, tal vez queramos mostrar una fecha límite para una tarea o una fecha en la que un evento tendrá lugar. En estos casos, es útil tener una forma de calcular fácilmente una fecha específica a partir de la fecha actual.
+Las fechas son una parte importante de cualquier aplicación. Ya sea que estemos registrando eventos en un calendario o calculando el tiempo transcurrido desde una fecha específica, trabajar con fechas es una tarea común en la programación. En este artículo, exploraremos cómo podemos utilizar Elixir para calcular una fecha en el futuro o en el pasado.
 
 # Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Elixir, podemos utilizar la función `Date.add/2`. Esta función toma dos argumentos: una fecha y un número entero que representa la cantidad de días que queremos agregar a la fecha.
-
-Por ejemplo, si queremos calcular una fecha 7 días después de la fecha actual, podemos hacerlo de la siguiente manera:
+Primero, necesitaremos importar el módulo Date de Elixir para acceder a sus funciones. Luego, podemos utilizar la función `add` para calcular una fecha en el futuro o `sub` para calcular una fecha en el pasado. Ambas funciones toman tres argumentos: la fecha de partida, la cantidad de tiempo a agregar o restar y la unidad de tiempo (días, meses o años).
 
 ```Elixir
-Date.add(Date.utc_today(), 7)
+# Importar el módulo Date
+import Date
+
+# Calcular fecha en el futuro
+future_date = add(Date.utc_today(), 5, :days)
+# 2022-11-23
+
+# Calcular fecha en el pasado
+past_date = sub(Date.utc_today(), 2, :years)
+# 2019-11-23
 ```
 
-Esto devolverá una fecha en formato `{:ok, date}`, donde `date` será la fecha calculada. Del mismo modo, si queremos calcular una fecha 30 días antes de la fecha actual, podemos hacerlo así:
-
-```Elixir
-Date.add(Date.utc_today(), -30)
-```
-
-También podemos usar esta función con fechas específicas, por ejemplo:
-
-```Elixir
-my_date = Date.new(2021, 05, 01)
-Date.add(my_date, -14)
-```
-
-Estos ejemplos devolverán fechas en formato `{:ok, date}` también. Pero si queremos ver la fecha en un formato más legible, podemos usar la función `Date.to_string/2`, que toma una fecha y un formato como argumentos y devuelve una cadena con la fecha formateada.
-
-Por ejemplo, si queremos mostrar la fecha en formato "día-mes-año", podemos hacerlo así:
-
-```Elixir
-my_date = Date.new(2021, 05, 01)
-Date.to_string(my_date, "{D}-{0M}-{YY}")
-```
-
-Esto devolverá una cadena con la fecha en el formato deseado: "1-05-21".
+Como se puede ver en los ejemplos anteriores, podemos especificar la unidad de tiempo utilizando los átomos `:days`, `:months` o `:years`. También podemos utilizar números negativos para restar tiempo en lugar de agregarlo.
 
 # Profundizando
 
-Además de la función `Date.add/2`, también hay otras funciones útiles para trabajar con fechas en Elixir. Por ejemplo, la función `Date.add_years/3` permite agregar o restar años a una fecha, y la función `Date.diff/2` devuelve la diferencia en días entre dos fechas.
+Detrás de escena, la función `add` y `sub` utilizan la función `add_unit` del módulo `Calendar` para realizar los cálculos. Esta función toma como argumentos una fecha y una estructura llamada `caldendar_interval` para especificar la cantidad de tiempo y la unidad de tiempo.
 
-También es importante tener en cuenta que en Elixir, las fechas son inmutables, lo que significa que cada vez que realizamos una operación con ellas, se crea una nueva fecha en lugar de modificar la original.
+En nuestro ejemplo, `Date.utc_today()` se convierte en una estructura de `calendar_interval` con `:day` como unidad de tiempo. Luego, la función `add_unit` es llamada para realizar el cálculo y proporciona el resultado.
 
-# Ver también
+# Ver También
 
-- Documentación oficial de Elixir para el módulo Date: https://hexdocs.pm/elixir/Date.html
-- Ejemplos de cálculos de fechas en Elixir: https://www.jesse-anderson.com/2018/05/working-with-dates-and-times-in-elixir/
+- Documentación oficial de Elixir sobre fechas: https://hexdocs.pm/elixir/Date.html
+- Cómo utilizar el módulo `Calendar`: https://elixir-lang.org/getting-started/calendar.html

@@ -1,40 +1,33 @@
 ---
-title:    "Swift: 正規表現の使用"
+title:    "Swift: 正規表現を使用する"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ使うのか
-多くのプログラミング言語で利用できる正規表現。それは、テキストデータを効率的に処理するための強力なツールです。Swiftでも同様に、複雑なテキストデータの処理が簡単になります。さあ、正規表現を使ってコーディングを効率化しましょう！
+**Why: なぜ正規表現を使用すべきなのか？**
 
-## 使い方
-正規表現は、特定のパターンに一致するテキストを検索したり、置換したりするための表現方法です。例えば、テキスト内のメールアドレスや電話番号を一度に検索したり、置き換えたりすることができます。
+正規表現は文字列を操作するための強力なツールです。文字列を検索したり、置換したり、一致するパターンを確認したりする際に便利です。また、パターンを定義することで、複雑な文字列を簡単に処理できます。
+
+**How To: 正規表現の使用方法**
+
+正規表現を使用するには、まずパターンを定義する必要があります。例えば、任意の数字の連続を表すパターンは「\d+」となります。次に、指定したパターンに対して操作を行います。以下は、文字列中から数字の連続を検索し、置換するコードの例です。
 
 ```Swift
-let emailRegex = #"([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})"#
-let phoneRegex = #"(0\d{1,4}-\d{2,4}-\d{3,4})"# 
-
-let text = "こんにちは！ 私のメールアドレスはexample@example.comです。電話番号は053-123-4567です。"
-
-let emailMatches = text.matches(for: emailRegex)
-print(emailMatches) // ["example@example.com"]
-
-let phoneNumbers = text.replacingOccurrences(of: phoneRegex, with: "PHONE NUMBER") 
-print(phoneNumbers) // "こんにちは！ 私のメールアドレスはexample@example.comです。電話番号はPHONE NUMBERです。"
+let str = "今日は2月14日です"
+let pattern = "\\d+"
+let replacement = "12月25日"
+let newStr = str.stringByReplacingOccurrences(of: pattern, with: replacement)
+print(newStr) // 出力: "今日は12月25日です"
 ```
 
-## もっと詳しく
-正規表現では、パターン内に特殊な記号を使うことで、より柔軟な検索や置換が可能です。例えば、`[]`を使うことで特定の文字の範囲を指定したり、`{}`を使うことで文字の繰り返し数を指定したりすることができます。また、グループ化や後方参照を使うことで、マッチした部分を取得したり、置換文で再利用することができます。
+**Deep Dive: 正規表現の詳細**
 
-大文字小文字の区別や、正規表現のオプションを指定することもできます。詳しくは、正規表現のドキュメントを参照してください。
+正規表現パターンには様々な特殊文字が含まれています。例えば、「\d」は数字を表し、「.」はどの1文字にも一致するという意味です。また、「+」や「*」などの量指定子を使用することで、繰り返しパターンを定義することができます。さらに、グループ化やキャプチャなどの機能もあり、より柔軟なパターンの定義が可能です。
 
-## 参考文献
-- [Swift正規表現入門](https://qiita.com/satisfactory/items/a3fbc3efb1a7462422a3)
-- [正規表現の基礎](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html#//apple_ref/doc/uid/TP40001794-CJADHBFH)
-- [Swift API Reference: NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+**See Also: 関連リンク**
 
-## 関連リンク
-- [正規表現チートシート](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [正規表現のサンプル](https://regex101.com/)
-- [Swiftプログラミング入門](https://developer.apple.com/swift/)
+- [正規表現チートシート](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Swift正規表現ガイド](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [正規表現エディター](https://regex101.com/)

@@ -1,37 +1,54 @@
 ---
 title:    "Fish Shell: Obtendo a data atual"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que utilizar o Fish Shell para obter a data atual?
 
-Se você é um programador iniciante, pode ficar se perguntando por que precisaria obter a data atual durante a programação. Bem, há várias razões para isso. Por exemplo, você pode precisar registrar a data em que um arquivo foi criado, ou então usar a data atual como parte do seu código para fins de organização ou registro.
+Se você é um programador que deseja automatizar tarefas diárias ou simplesmente deseja saber a data atual para fins de organização, usar o Fish Shell para obter a data atual pode ser muito útil. O Fish Shell é uma linguagem de script de shell interativa moderna e poderosa, conhecida por sua simplicidade e expressividade. Neste artigo, vamos mostrar como é fácil obter a data atual usando o Fish Shell.
 
 ## Como fazer:
 
-Felizmente, com o Fish Shell, obter a data atual é uma tarefa simples e direta. Basta seguir esses passos:
+Vamos ver como podemos usar o Fish Shell para obter a data atual com alguns exemplos práticos. Antes de começarmos, certifique-se de que você tem o Fish Shell instalado no seu computador.
 
-1. Abra o terminal e inicie o Fish Shell usando o comando `fish`.
-2. Para obter a data atual, use o comando `date +%d/%m/%Y` que irá retornar a data no formato "dia/mês/ano".
-
-Aqui está um exemplo de como esse comando seria usado no Fish Shell:
-
+```Fish Shell
+$ date
+02/06/2021
 ```
-Fish Shell > date +%d/%m/%Y
-13/09/2021
+
+Este é um exemplo simples que usa o comando `date` para imprimir a data atual no formato DD/MM/YYYY. Mas e se quisermos alguma personalização na saída? Podemos usar a opção `-f` seguido de um formato de data específico:
+
+```Fish Shell
+$ date -f "Hoje é %d de %B de %Y"
+Hoje é 02 de Junho de 2021
 ```
-Note que o formato da data pode ser alterado de acordo com suas necessidades. Por exemplo, se você quiser incluir o horário, pode usar `date +%d/%m/%Y %H:%M:%S`.
 
-## Mergulhando mais fundo:
+Aqui, imprimimos a data atual no formato "dia de mês de ano" e adicionamos algumas palavras extras para torná-lo mais legível.
 
-Além de retornar a data atual, o Fish Shell também oferece a opção de adicionar ou subtrair valores da data. Por exemplo, se você quiser obter a data daqui a uma semana, pode fazer isso usando `date -d "+7 days" +%d/%m/%Y`. Você também pode personalizar a data usando outros parâmetros, como "years" (anos) ou "months" (meses).
+## Aprofundando:
 
-Outra funcionalidade interessante do Fish Shell é a capacidade de converter a data para outros formatos, como o Unix Timestamp. Você pode fazer isso usando o comando `date -j +%s` que irá retornar o timestamp atual.
+Você pode estar se perguntando como o Fish Shell obtém a data atual em primeiro lugar. Na verdade, o Fish Shell faz chamadas para a biblioteca C padrão `libc` para isso. Mas o Fish Shell também possui uma função interna chamada `date` que pode ser usada para obter a data atual. Podemos ver a definição dessa função usando o comando `functions`:
+
+```Fish Shell
+$ functions date
+function date --description 'Print the date and time'
+    builtin date $argv
+end
+```
+
+Aqui vemos que a função `date` simplesmente usa a função de biblioteca `libc` do Fish Shell com alguns argumentos opcionais passados.
 
 ## Veja também:
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia de referência para comandos do Fish Shell](https://fishshell.com/docs/current/cmds.html)
-- [Tópico do Stack Overflow sobre como obter a data atual no Fish Shell](https://stackoverflow.com/questions/24150486/get-current-date-and-time-in-fish-shell)
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guia de instalação do Fish Shell](https://fishshell.com/docs/current/tutorial.html#how-do-i-get-it)
+- [Guia de uso básico do Fish Shell](https://fishshell.com/docs/current/tutorial.html#how-do-i-use-it)
+
+## Veja também:
+
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guia de instalação do Fish Shell](https://fishshell.com/docs/current/tutorial.html#how-do-i-get-it)
+- [Guia de uso básico do Fish Shell](https://fishshell.com/docs/current/tutorial.html#how-do-i-use-it)

@@ -1,76 +1,44 @@
 ---
-title:    "Elixir: Päivämäärän saaminen"
+title:    "Elixir: Päivämäärän hankkiminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tämän blogin artikkelin aiheena on päivämäärän hankkiminen Elixir-ohjelmoinnissa. Päivämäärän hankkiminen on tärkeä osa monia sovelluksia, kuten aikaleimoja, sääsovelluksia ja tilastollisia laskelmia. Jatka lukemista ja opi, kuinka voit helposti hankkia nykyisen päivämäärän Elixirillä.
 
-## Kuinka
-Päivämäärän hankkiminen Elixir-ohjelmoinnissa on helppoa. Voit käyttää Elixirin sisäistä `DateTime`-moduulia tai `Calendar`-moduulia saadaksesi nykyisen päivämäärän.
+Elixir on monipuolinen ohjelmointikieli, joka tarjoaa monia hyödyllisiä toimintoja ohjelmoijille. Yksi näistä toiminnoista on nykyisen päivämäärän hakeminen. Miksi sitten haluaisit saada nykyisen päivämäärän? Päivämäärä on usein tärkeä osa ohjelmia, kuten laskutusohjelmia tai tapahtumakalentereita. Joten jatka lukemista oppiaksesi kuinka saada nykyinen päivämäärä käyttäen Elixir-kieltä.
 
-### DateTime-moduuli
-Voit hankkia nykyisen päivämäärän `DateTime.utc_now/0`-funktiolla, joka palauttaa UTC-aikaa vastaavan `DateTime`-olion.
+## Kuinka tehdä se
 
-```Elixir
-DateTime.utc_now()
-=> #DateTime<2019-04-24 07:19:49Z>
-```
-
-Voit myös hankkia paikallisen ajan `DateTime.now/0`-funktiolla, joka palauttaa paikallisen aikavyöhykkeen mukaisen `DateTime`-olion.
+Elixir tarjoaa helpon ja selkeän tavan hakea nykyinen päivämäärä. Voit käyttää Date-moduulia, joka sisältää toimintoja päivämäärän käsittelyyn. Käytä Date.utc_today/1 -toimintoa, mikä palauttaa nykyisen päivämäärän koordinoituna yleisessä koordinoimattomassa ajassa (UTC). Jos haluat päivämäärän oman aikavyöhykkeen mukaisena, voit käyttää Date.local_today/1 -toimintoa. Katso alla olevasta esimerkistä miten se tapahtuu:
 
 ```Elixir
-DateTime.now()
-=> #DateTime<2019-04-24 10:19:49+03:00 EEST>
-```
-
-Voit muokata päivämäärän esitysmuotoa `DateTime.to_iso8601/1`-funktiolla.
-
-```Elixir
-DateTime.to_iso8601(DateTime.now())
-=> "2019-04-24T10:19:49+03:00"
-```
-
-### Calendar-moduuli
-Voit myös käyttää `Calendar`-moduulia hankkimaan nykyisen päivämäärän. Voit käyttää `Date.utc_today/0`-funktiota hankkimaan nykyisen UTC-päivämäärän.
-
-```Elixir
+# Hae nykyinen päivämäärä UTC-ajassa
 Date.utc_today()
-=> {:ok, ~D[2019-04-24]}
+# Output: ~D[2020-11-12]
+
+# Hae nykyinen päivämäärä omassa aikavyöhykkeessäsi
+Date.local_today()
+# Output: ~D[2020-11-12]
 ```
 
-Voit myös hankkia nykyisen paikallisen päivämäärän `Date.today/0`-funktiolla.
+Voit myös muuttaa päivämäärän haluttuun muotoon Date.format/2 -toiminnolla. Esimerkiksi jos haluat päivämäärän muodossa "dd/mm/yyyy", voit käyttää seuraavaa koodia:
 
 ```Elixir
-Date.today()
-=> {:ok, ~D[2019-04-24]}
+Date.format(Date.utc_today(), "dd/mm/yyyy")
+# Output: "12/11/2020"
 ```
 
-Voit muokata päivämäärän esitysmuotoa `Date.to_iso8601/2`-funktiolla.
+## Syventävä sukellus
 
-```Elixir
-Date.to_iso8601(Date.today(), [{:format, :iso8601}])
-=> {:ok, "2019-04-24+03:00"}
-```
+Elixirin Date-moduuli käyttää Erlangin :calendar-moduulia päivämäärien käsittelyyn. Tämä tarkoittaa, että Date-moduuli perii kaikki toiminnot ja ominaisuudet :calendar-moduulista. :calendar-moduuli on täynnä hyödyllisiä toimintoja, kuten päivämäärän järjestäminen ja muuttaminen toiseen aikavyöhykkeeseen. Suosittelemme tutustumaan tarkemmin :calendar-moduulin dokumentaatioon saadaksesi lisätietoja.
 
-## Syvemmälle
-Elixir:ssä on myös muita tapoja hankkia päivämäärä, kuten käyttämällä `:calendar.universal_time/0`-funktiota, joka palauttaa nykyisen UTC-aika-timessä. Tämä voi olla hyödyllistä, kun työskentelet kansainvälisten aikavyöhykkeiden kanssa.
-
-```Elixir
-:calendar.universal_time()
-=> {{2019, 4, 24}, {7, 19, 49}}
-```
-
-Voit myös käyttää `:calendar.local_time/0`-funktiota hankkimaan nykyisen paikallisen ajan timessä.
-
-```Elixir
-:calendar.local_time()
-=> {{2019, 4, 24}, {10, 19, 49}}
-```
+Toinen asia, joka on hyvä huomioida, on päivämäärän tallennustyyppi Elixirissä. Kun käytät Date-moduulia, palautettu päivämäärä on Elixirin sisäänrakennettu Date-tietotyyppi. Tämä tarkoittaa, että voit suorittaa päivämäärään liittyviä toimintoja käyttämällä Elixirin sisäänrakennettuja funktioita, kuten Date.add/2 tai Date.diff/2.
 
 ## Katso myös
-- [Elixir DateTime-moduuli] (https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Calendar-moduuli] (https://hexdocs.pm/elixir/Calendar.html)
-- [Elixirin virallinen dokumentaatio] (https://elixir-lang.org/docs.html)
+
+- [Date-moduulin dokumentaatio](https://hexdocs.pm/elixir/Date.html)
+- [Elixirin sisäänrakennetut funktiot](https://hexdocs.pm/elixir/Kernel.html#functions)
+- [Erlangin :calendar-moduulin dokumentaatio](http://erlang.org/doc/man/calendar.html)

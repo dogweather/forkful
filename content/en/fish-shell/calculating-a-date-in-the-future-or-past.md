@@ -1,61 +1,48 @@
 ---
 title:    "Fish Shell recipe: Calculating a date in the future or past"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Calculating dates in the future or past can be a useful skill to have in your programming repertoire. With the ability to calculate dates, you can create automated tasks, schedule events, and more. In this blog post, we will explore how to calculate dates using the Fish Shell programming language.
+Calculating dates in the future or past is a common task in many programming projects. It allows you to manipulate and track dates, making it easier to manage deadlines, schedule events, and more. With Fish Shell, this process becomes even more efficient and simple.
 
-## How To 
+## How To
 
-To calculate dates using the Fish Shell, we will use the `date` command. This command takes in various parameters and returns the date in a specific format. Let's take a look at some examples:
-
-```
-Fish Shell> date
-Tue Sep 7 16:07:19 MST 2021
-```
-
-In this example, we simply ran the `date` command without any parameters and it returned the current date and time in the default format. But what if we want to calculate a date in the future or past? We can use the `-v` flag followed by a number and unit to specify the amount of time we want to add or subtract from the current date. Let's try adding 10 days to the current date:
+Using Fish Shell, you can easily calculate dates in the future or past with just a few lines of code. Let's take a look at some examples:
 
 ```
-Fish Shell> date -v 10d
-Fri Sep 17 16:08:11 MST 2021
+# Calculate one week from today
+set one_week (date -v+1w)
+echo $one_week
+
+# Calculate three months from a specific date
+set start_date "2021/01/01"
+set three_months (date -v+3m $start_date)
+echo $three_months
+
+# Calculate a specific date from today
+set future_date (date -v+2021y)
+echo $future_date
 ```
 
-As you can see, the output now shows a date that is 10 days in the future. Similarly, we can also subtract time from the current date by using a negative number. Let's try subtracting 2 weeks:
+In the first example, we use the `date` command with the `-v` flag, which specifies a date to add or subtract from. In this case, we add one week from the current date. The output will be the date one week from today.
 
-```
-Fish Shell> date -v -2w
-Mon Aug 23 16:10:21 MST 2021
-```
+Similarly, in the second example, we start with a specific date and add three months to it. The output will be a date that falls three months from the start date. You can also use the `-v` flag with different units, such as years (`y`), months (`m`), weeks (`w`), and days (`d`).
 
-We can also specify the date format using the `+` flag followed by a format string. For example, if we want the output to only display the month and year, we can use the following command:
+Lastly, in the third example, we calculate a future date by specifying a specific year. This will output the date in the year 2021.
 
-```
-Fish Shell> date -v 1m +'%b %Y'
-Oct 2021
-```
+## Deep Dive
 
-In this example, we added one month to the current date and specified the format to only display the abbreviated month and year. There are many different format options available, so make sure to check out the `date` command documentation for more details.
+Behind the scenes, Fish Shell uses the `date` command to manipulate and calculate dates. The `-v` flag allows for easy manipulation of dates by adding or subtracting a specific amount of time. Additionally, you can use other flags and options with the `date` command to further customize your date calculations.
 
-## Deep Dive 
+For more information about the `date` command and its different flags and options, you can check out the manual page by running `man date` in your terminal.
 
-Behind the scenes, the `date` command is using the Unix timestamp to calculate the dates. A Unix timestamp is a representation of the number of seconds that have elapsed since January 1, 1970. The `date` command takes the current Unix timestamp and adds or subtracts the specified amount of time to calculate the future or past date.
+## See Also
 
-You can also use the `date` command with a specific timestamp rather than the current one. This can be useful if you want to calculate dates from a certain point in time. For example, if you want to know what date will be 100 days from today, you can use the following command:
-
-```
-Fish Shell> date -v 100d -r $now
-Fri Dec 17 16:19:43 MST 2021
-```
-
-In this example, we are using the `now` variable which holds the current Unix timestamp, but you can also specify a specific timestamp value.
-
-## See Also 
-
-- Fish Shell `date` command documentation: https://fishshell.com/docs/current/cmds/date.html
-- GNU `date` command documentation: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Unix timestamp converter: https://www.unixtimestamp.com/
+- Fish Shell documentation: https://fishshell.com/docs/current/
+- Using Arrays in Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_arrays
+- Advanced usage of the `date` command: https://www.unix.com/man-page/osx/1/date/

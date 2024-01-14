@@ -1,69 +1,63 @@
 ---
 title:    "Rust recipe: Converting a date into a string"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Many programmers often need to convert dates into strings for various reasons, such as storing and displaying data, or parsing and manipulating dates. Rust provides a powerful Date and Time API that makes this conversion process easier and error-free.
+Converting dates into strings is a task that many programmers encounter in their projects. In Rust, this can be achieved with relative ease thanks to its robust standard library and powerful language features. So, why should you bother converting a date into a string? Well, there are a few reasons:
+
+- Dates are commonly used in various applications, from simple to-do lists to complex financial systems. Converting them into strings allows for easier manipulation and display of this important data.
+- String representation of dates is essential for data interchange between different systems. It provides a standardized format that can be easily parsed and understood by other programs.
+- When working with user inputs or databases, dates are often stored as strings. Converting them into the appropriate data type (in this case, a date) is necessary for proper processing.
+
+Now that we have a better understanding of why converting a date into a string is important, let's dive into how to actually do it in Rust.
 
 ## How To
 
-Converting a date into a string in Rust is a straightforward process. We will be using the `chrono` crate, which is the standard library for handling date and time in Rust.
-
-First, we need to add the `chrono` crate to our `Cargo.toml` file:
+Converting a date into a string in Rust can be achieved using the `format!()` macro, which is used to construct a string using a given format. Let's take a look at an example:
 
 ```Rust
-[dependencies]
-chrono = "0.4"
+use chrono::prelude::*;
+
+fn main() {
+    let current_date = Utc::now(); // get current date and time in UTC timezone
+    let date_string = format!("{}", current_date.format("%Y-%m-%d")); // convert date into string using specified format
+    println!("{}", date_string); // print the string representation of the date
+}
 ```
+Output: `2021-09-25`
 
-Next, we need to import the necessary modules in our Rust code:
+In this example, we used the `format!()` macro to convert the `current_date` into a string using the specified format: `"%Y-%m-%d"`, which represents the date in year-month-day format. You can use various other format specifiers to customize the string representation of the date according to your needs.
 
-```Rust
-use chrono::{DateTime, Utc};
-```
-
-Then, we can create a date variable and convert it into a `DateTime` object:
-
-```Rust
-let date = Utc::now();
-let datetime: DateTime<Utc> = date.into();
-```
-
-Finally, we can use the `format` function to convert the `DateTime` object into a string with the desired format:
-
-```Rust
-let str = datetime.format("%Y-%m-%d %H:%M:%S").to_string();
-println!("{}", str);
-```
-
-The output will look like this:
-
-```
-2021-05-19 12:30:00
-```
+It's important to note that the `format!()` macro returns a `String` type, so make sure to declare a variable of type `String` to store the converted date string.
 
 ## Deep Dive
 
-The `format` function uses `strftime` formatting to convert the `DateTime` object into a string. This provides a wide range of options to customize the output according to your needs. Some of the commonly used formatting options are:
+Now let's take a deeper look at the `format!()` macro and the different format specifiers that you can use to customize the string representation of a date in Rust.
 
-- `%Y`: Four-digit year
-- `%m`: Zero-padded month (e.g., `05`)
-- `%d`: Zero-padded day of the month (e.g., `19`)
-- `%H`: 24-hour format of an hour (e.g., `12`)
-- `%M`: Minute (e.g., `30`)
-- `%S`: Second (e.g., `00`)
-- `%P`: AM/PM designation (e.g., `AM` or `PM`)
-- `%p`: am/pm designation (e.g., `am` or `pm`)
-- `%z`: Offset from UTC (e.g., `+0000`)
+- `%Y`: Year with century as a decimal number (e.g. `2021`).
+- `%m`: Month as a zero-padded decimal number (e.g. `09` for September).
+- `%d`: Day of the month as a zero-padded decimal number (e.g. `25`).
+- `%H`: Hour (24-hour clock) as a zero-padded decimal number (e.g. `15` for 3 PM).
+- `%M`: Minute as a zero-padded decimal number (e.g. `30`).
+- `%S`: Second as a zero-padded decimal number (e.g. `07`).
+- `%w`: Weekday as a decimal number (e.g. `6` for Saturday).
+- `%a`: Weekday as an abbreviation (e.g. `Sat`).
+- `%A`: Weekday as a full name (e.g. `Saturday`).
+- `%b`: Month as an abbreviation (e.g. `Sep`).
+- `%B`: Month as a full name (e.g. `September`).
 
-For a full list of formatting options, you can refer to the `chrono` crate documentation.
+You can also use a combination of these specifiers to create a custom date format. For example, using `"%d %B, %Y"` will result in a date string like `25 September, 2021`.
+
+For a complete list of format specifiers and their descriptions, check out [Chrono's documentation](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html).
 
 ## See Also
 
-- [The Rust Book: Date and Time](https://doc.rust-lang.org/book/ch16-03-dates-and-times.html)
-- [Chrono crate documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Playground example](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=61adc81872a77e49f041a19054ecac81)
+- [Chrono documentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Format string syntax](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html#formatting-dates-and-times)
+
+Now that you know how to convert dates into strings in Rust, you can make use of this knowledge in your future projects. Remember to always refer to the documentation for any additional information or format specifiers that you may need. Happy coding!

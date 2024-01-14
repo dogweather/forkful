@@ -1,44 +1,47 @@
 ---
-title:    "Kotlin: Capitalizando una cadena"
+title:    "Kotlin: Capitalizar una cadena"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Uno de los aspectos más importantes de la programación es la gestión de datos y, en particular, la manipulación de cadenas de texto. Uno de los problemas más comunes que enfrentan los programadores es cómo capitalizar una cadena de texto de manera eficiente. En este artículo, vamos a explorar cómo capitalizar una cadena en Kotlin y por qué es útil hacerlo.
+Capitalizar una cadena de texto es una tarea común en la programación. Al convertir todas las letras de una palabra o frase a mayúsculas, facilita su lectura y evita errores en comparaciones de cadenas. En este artículo, aprenderemos cómo capitalizar una cadena en Kotlin y exploraremos un poco más sobre este concepto.
 
 ## Cómo hacerlo
 
-```Kotlin
-// Definir una función para capitalizar una cadena:
-fun capitalizeString(input: String): String {
-    return input.capitalize()
-}
+Para capitalizar una cadena en Kotlin, podemos utilizar la función `capitalize()`. Veamos un ejemplo:
 
-// Llamar a la función y asignar el resultado a una variable:
-val stringInput = "hola, mundo"
-val stringOutput = capitalizeString(stringInput)
-println(stringOutput) // Salida: Hola, mundo
+```Kotlin
+val cadena = "hola mundo"
+println(cadena.capitalize())
 ```
 
-La función `capitalize()` en Kotlin devuelve una nueva cadena con la primera letra en mayúscula y todas las demás letras en minúscula. Esto es útil para dar formato a títulos, nombres de ciudades, entre otros.
+Este código imprimirá "Hola mundo" en la consola. La función `capitalize()` convierte la primera letra de la cadena en mayúscula y el resto se mantiene igual.
 
-Además de `capitalize()`, Kotlin también proporciona las funciones `decapitalize()` y `capitalizeWords()` para manejar diferentes tipos de capitalización de cadenas.
+También es posible capitalizar cada palabra de una cadena con la función `titlecase()`. Veamos cómo se ve con un ejemplo:
+
+```Kotlin
+val cadena = "bienvenidos a mi blog"
+println(cadena.titlecase())
+```
+
+Este código imprimirá "Bienvenidos A Mi Blog". Podemos notar que la función `titlecase()` convierte la primera letra de cada palabra en mayúscula.
 
 ## Profundizando
 
-La capitalización de cadenas es una parte importante de la manipulación de cadenas de texto, pero también hay otros aspectos a tener en cuenta. Algunas cosas a considerar son:
+Ahora que sabemos cómo capitalizar cadenas en Kotlin, veamos un poco más sobre qué sucede detrás de escena. Aunque parezca simple, esta función en realidad usa un algoritmo para determinar cuál letra debe ser capitalizada.
 
-- La capitalización de acentos y caracteres especiales en diferentes idiomas.
-- Tener en cuenta las palabras que no deben ser capitalizadas automáticamente, como preposiciones y conjunciones.
-- La capitalización de nombres propios y apellidos, que pueden tener diferentes reglas según el idioma y la cultura.
+Por ejemplo, el algoritmo revisa si la letra anterior es un espacio, guión o carácter especial. Si es así, entonces la letra actual será capitalizada.
 
-Es importante tener en cuenta estas consideraciones al implementar la capitalización de cadenas en una aplicación.
+También es importante destacar que la función `capitalize()` solo capitalizará la primera letra de la cadena. Si la primera letra ya es mayúscula, no se realizarán cambios.
 
 ## Ver también
 
-- [Documentación oficial de Kotlin sobre manipulación de cadenas](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Artículo sobre las diferencias entre `capitalize()` y `capitalizeWords()` en Kotlin](https://kotlinexpertise.com/capitalize-first-letter-of-each-word-kotlin/)
-- [Tutorial sobre cómo trabajar con cadenas en diferentes idiomas en Kotlin](https://raywenderlich.com/9901953-multilingual-strings-in-kotlin-tutorial-getting-started)
+- [Documentación de la función `capitalize()` en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Documentación de la función `titlecase()` en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/titlecase.html)
+- [Diferencias entre `capitalize()` y `titlecase()`](https://www.tutorialspoint.com/capitalize-vs-titlecase-in-kotlin)
+
+¡Espero que este artículo les haya sido útil! Ahora podemos capitalizar cadenas en Kotlin sin problemas. ¡Hasta la próxima!

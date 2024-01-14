@@ -1,49 +1,34 @@
 ---
-title:    "Elm: Das Lesen einer Textdatei"
+title:    "Elm: Einen Textdatei lesen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum 
+## Warum
+Textdateien sind eines der grundlegendsten und häufig verwendeten Formate für Datenspeicherung. Das Lesen von Textdateien kann daher eine wichtige Fähigkeit für jeden Programmierer sein, der sich mit der Verarbeitung von Daten befassen möchte. Weiterlesen, um zu erfahren, wie Sie mit Elm Textdateien lesen können.
 
-Das Lesen von Textdateien ist ein wichtiger Bestandteil vieler Programmieraufgaben. Es ermöglicht uns, Daten aus externen Quellen in unsere Anwendungen zu integrieren und zu verarbeiten. In diesem Blog-Beitrag werden wir uns ansehen, wie wir Textdateien in Elm programmieren können.
-
-## So geht's
-
-Um eine Textdatei in Elm zu lesen, müssen wir zuerst eine Funktion zur Verfügung stellen, die die Datei laden kann. Dazu können wir den Befehl `File.toUrl` verwenden, um die URL der Datei zu erhalten. Dann können wir die `Http.get` Funktion verwenden, um die Datei zu laden.
+## Wie funktioniert es?
+Die Elm-Plattform bietet die `text`-Library, die uns das Lesen von Textdateien ermöglicht. Wir müssen jedoch zunächst die Bibliothek in unserem Programm importieren. Hier ist ein Beispielcode, der die grundlegende Struktur für das Lesen einer Textdatei in Elm zeigt.
 
 ```Elm
-import Http
-import File
-
-getFile : String -> Cmd msg
-getFile fileName =
-    File.toUrl fileName
-        |> Http.get
+import Text exposing (readFile)
+ 
+main =
+  let
+    filename = "mein_textdokument.txt"
+    in
+      readFile filename
+        |> Result.withDefault ""
 ```
+In diesem Beispiel definieren wir zunächst den Dateinamen als eine Zeichenkette und speichern ihn in der Variablen `filename`. Anschließend verwenden wir die `readFile`-Funktion aus der `text`-Bibliothek, um die Datei mit dem angegebenen Dateinamen zu lesen. Die Funktion gibt ein `Result`-Objekt zurück, das entweder ein Ergebnis oder einen Fehler enthält. Hier verwenden wir `Result.withDefault`, um das Ergebnis zu extrahieren und es in eine Zeichenkette zu konvertieren. Auf diese Weise können wir die Textdatei lesen und ihren Inhalt in unserem Programm verwenden.
 
-Nun können wir die Datei im `Http.get` Aufruf verwenden, indem wir `getFile "example.txt"` aufrufen. Wir können auch eine Verknüpfung mit der Antwort aus der Datei herstellen, indem wir eine Funktion angeben, die die Datei verarbeitet. 
+## Tiefergehende Informationen
+Natürlich bietet die `text`-Bibliothek noch viele weitere Funktionen und Optionen, um Textdateien zu lesen. Sie können beispielsweise die `findLine`, `lines` oder `words`-Funktion verwenden, um bestimmte Zeilen oder Wörter aus der Textdatei zu extrahieren. Sie können auch die `fromString`-Funktion verwenden, um eine Zeichenkette in einen Dateipfad umzuwandeln, falls Sie die Datei dynamisch auswählen möchten.
 
-```Elm
-getFile "example.txt" myFileLoaded
-
-myFileLoaded : Http.Error error -> Http.Response text -> msg
-myFileLoaded error response = 
-    case response of
-        Ok txt -> 
-            -- Wir können mit dem Inhalt der Datei weiterarbeiten. 
-        Err err -> 
-            -- Fehlerbehandlung für den Fall, dass die Datei nicht gelesen werden konnte.
-```
-
-## Tiefen Einblick
-
-Das Lesen von Textdateien kann noch komplexer werden, wenn wir mit verschachtelten Dateien oder unterschiedlichen Dateiformaten arbeiten müssen. In solchen Fällen sollten wir uns mit der elm/file Library vertraut machen, die es uns ermöglicht, die Datei in verschiedene Formate zu konvertieren und auf sie zuzugreifen.
-
-Wir sollten auch beachten, dass das Lesen von Textdateien in Elm asynchron stattfindet, was bedeutet, dass wir auf die Antwort der Datei warten müssen, bevor wir weitermachen können. Deshalb ist es wichtig, unsere Funktionen entsprechend zu gestalten, um sicherzustellen, dass wir die richtigen Daten zur richtigen Zeit erhalten.
+Es ist auch wichtig zu beachten, dass das Lesen von Textdateien eine nebenläufige Operation ist, was bedeutet, dass es asynchron geschieht. Dies bedeutet, dass Ihr Code möglicherweise auf das Ergebnis warten muss, bevor er weiterarbeiten kann. Seien Sie also vorsichtig, wie Sie mit dem gelesenen Inhalt umgehen, um Programmierfehler zu vermeiden.
 
 ## Siehe auch
-
-- [Elm Dokumentation zur Arbeit mit Dateien](https://guide.elm-lang.org/effect_managers/file.html)
-- [Ein einfaches Beispiel zum Lesen und Schreiben von Textdateien in Elm](https://medium.com/@optilude/a-simple-example-of-reading-and-writing-text-files-in-elm-5d0f5f2d5628)
+- [Offizielle Elm Dokumentation zur text Bibliothek](https://package.elm-lang.org/packages/elm/core/latest/Text)
+- [Ein Tutorial zum Lesen von Textdateien in Elm](https://dev.to/jenbor/read-text-file-in-elm-b6h)

@@ -1,52 +1,48 @@
 ---
-title:    "Clojure: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Clojure: Entfernen von Zeichen, die einem Muster entsprechen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in verschiedenen Szenarien sehr nützlich sein. Zum Beispiel kannst du damit unerwünschte Zeichen aus einer Zeichenkette entfernen oder eine bessere Datenverarbeitung in deinem Programm ermöglichen. In diesem Blogbeitrag werden wir uns ansehen, wie du dies in Clojure umsetzen kannst.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung nützlich sein, um unerwünschte Zeichen in einer Zeichenkette zu entfernen oder Daten zu bereinigen. In Clojure gibt es mehrere Möglichkeiten, dies zu erreichen.
 
-## So geht's
+## Wie es geht
 
-Um Zeichen basierend auf einem Muster zu löschen, verwenden wir die `clojure.string/replace` Funktion und geben das Muster und einen leeren String als Argumente an. Hier ist ein Beispielcode, der alle Vokale aus einem Satz löscht:
-
-```Clojure
-(let [satz "Das ist ein Beispieltext."]
-   (clojure.string/replace satz #"[aeiou]" ""))
-```
-Das Ergebnis dieser Operation ist "Ds st n Bspltxt." Die `replace` Funktion durchläuft den Satz und überschreibt alle Vokale mit einem leeren String, wodurch sie gelöscht werden.
-
-Du kannst auch reguläre Ausdrücke verwenden, um komplexe Muster zu erkennen und zu löschen. In diesem Beispiel ersetzen wir alle Zahlen in einem String mit einem leeren String:
+Es gibt verschiedene Funktionen in Clojure, die zum Löschen von Zeichen verwendet werden können, die einem bestimmten Muster entsprechen. Eine davon ist die `replace` Funktion, die verwendet wird, um ein Zeichen in einer Zeichenkette durch ein anderes zu ersetzen. Zum Beispiel:
 
 ```Clojure
-(let [text "Dies ist eine Nummer123."]
-   (clojure.string/replace text #"\d" ""))
+(def my-string "H3110 W0r1d")
+(replace my-string #"1" "i")
 ```
-Das Ergebnis ist "Dies ist eine Nummer." Hier wird der reguläre Ausdruck `"\d"` verwendet, der alle Zahlen im String erkennt und durch ein leeres String ersetzt.
 
-## Tiefergehender Einblick
-
-Clojure bietet auch die `clojure.string/replace-first` Funktion, die nur die erste Übereinstimmung im String ersetzt. Dies kann in bestimmten Fällen nützlicher sein als `replace`, das alle Übereinstimmungen ersetzt. Hier ist ein Beispielcode, der nur das erste Vorkommen einer Zeichenkette ersetzt:
+Die Ausgabe dieser Funktion wird "Hello World" sein, da das Zeichen "1" durch "i" ersetzt wurde. Eine weitere nützliche Funktion ist `clojure.string/replace-first`, mit der nur das erste aufeinanderfolgende Vorkommen eines Musters ersetzt wird. Eine Anwendung davon könnte sein, eine Telefonnummer in einem bestimmten Format zu normalisieren. Zum Beispiel:
 
 ```Clojure
-(let [text "Hello hello there"]
-   (clojure.string/replace-first text "hello" ""))
+(def phone-number "+123-555-4567")
+(clojure.string/replace-first phone-number #"-", "")
 ```
-Das Ergebnis ist " Hello there". Die `replace-first` Funktion ersetzt nur das erste "hello" im Satz, während `replace` alle ersetzen würde.
 
-Eine weitere nützliche Funktion ist `clojure.string/replace-iter`, die eine Funktion auf alle Übereinstimmungen im String anwendet. Hier ist ein Beispiel, das alle Zahlen im String verdoppelt:
+Die Ausgabe dieser Funktion wird "+123555-4567" sein, da das erste "-" Zeichen entfernt wurde. Andere nützliche Funktionen zum Löschen von Zeichen sind `clojure.string/replace-last` und `clojure.string/replace-re` (regular expression), die auf ähnliche Weise funktionieren.
+
+## Tiefergehende Informationen
+
+Um tiefer in das Thema des Löschens von Zeichen einzutauchen, ist es wichtig zu verstehen, wie reguläre Ausdrücke in Clojure funktionieren. Reguläre Ausdrücke werden verwendet, um Muster in Zeichenketten zu finden und können in Funktionen wie `replace` und `match?` verwendet werden. Eine hilfreiche Ressource, um mehr über reguläre Ausdrücke in Clojure zu erfahren, ist die offizielle Dokumentation unter https://clojuredocs.org/clojure.string/replace.
+
+Eine andere interessante Möglichkeit, Zeichen in Clojure zu löschen, ist die Verwendung der `clojure.string/trim` Funktion. Diese Funktion entfernt alle Leerzeichen am Anfang und Ende einer Zeichenkette. Eine Anwendung davon könnte sein, Benutzereingaben vor der Verarbeitung zu bereinigen. Zum Beispiel:
 
 ```Clojure
-(let [text "Die ersten 2 Zahlen sind 1 und 2"]
-   (clojure.string/replace-iter text #"\d" #(format "%d%d" (Integer/parseInt %) (Integer/parseInt %))))
+(def user-input "  Hello  ")
+(clojure.string/trim user-input)
 ```
-Das Ergebnis ist "Die ersten 4 Zahlen sind 2 und 4". Die `replace-iter` Funktion wendet die angegebene Funktion auf alle Zahlen im String an und verdoppelt sie.
+
+Die Ausgabe dieser Funktion wird "Hello" sein, da die Leerzeichen am Anfang und Ende entfernt wurden.
 
 ## Siehe auch
 
-- [Clojure String Dokumentation](https://clojuredocs.org/clojure.string)
-- [Reguläre Ausdrücke in Clojure](https://clojuredocs.org/clojure.string#clojure.string/replace)
-- [Praktische Einführung in Clojure](https://www.clojure-for-beginners.com/)
+* https://Clojure.org
+* https://Clojuredocs.org/clojure.string/replace
+* https://Clojuredocs.org/clojure.string/trim

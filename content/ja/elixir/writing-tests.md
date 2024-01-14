@@ -1,37 +1,53 @@
 ---
-title:    "Elixir: テストの書き方"
+title:    "Elixir: テストの作成"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+# なぜテストを作成するのか
 
-プログラムを書く上で、バグやエラーを防ぐためにテストを書くことが重要です。テストを書くことで、コードに潜む問題を早期に発見し修正することができます。テストはプログラムの品質を向上させ、安定性を保つために必要不可欠です。
+プログラミングにおいて、テストは非常に重要な役割を果たします。テストを作成することで、コードの品質を維持し、バグを見つけて修正することができます。こうすることで、プログラムが期待通りに動作することを確認することができます。
 
-## テストの書き方
+# テストの作り方
 
-Elixirでは、テストフレームワークとしてExUnitが提供されています。まずはExUnitをインポートし、テストを書くための関数である`defmodule`と`test`を使用します。以下のコードは、簡単な足し算のテストを行う例です。
+テストを作成するためには、Elixirに組み込まれているExUnitフレームワークを使用することができます。まずは、テストファイルを作成しましょう。例えば、"calculator_test.exs"というファイル名で作成します。
 
-```elixir
-defmodule MathTest do 
-  use ExUnit.Case 
-  
-  test "addition" do 
-    assert Math.add(1, 2) == 3 
-  end 
+```Elixir
+defmodule CalculatorTest do 
+  use ExUnit.Case
+
+  test "addition test" do 
+    assert Calculator.add(2, 3) == 5
+  end
 end
 ```
 
-ExUnitでは、`assert`という関数を使用して、テストの結果を確認します。もしテストに合格した場合は何も表示されませんが、合格しなかった場合はエラーが表示されます。また、テストの関数名は明確なものにすることが重要です。上記の例では、「addition」というテストを実行しているため、後でコードを確認する際にどのテストを実行していたのかを把握しやすくなります。
+このように、テストケースを作成し、期待する結果が得られるかどうかをassert関数を使って確認します。その後、コマンドラインで"mix test"を実行すると、テストが実行されます。
 
-## 深堀り
+```bash
+$ mix test
 
-テストを書く際に重要なのは、可能な限り網羅的なテストを行うことです。これは、各関数やモジュールに対して、異なる入力や状況を想定してテストを行うことを意味します。また、リファクタリングを行った際にもテストを行うことで、予期せぬ結果が発生しないようにすることも重要です。
+.....
 
-さらに、Elixirではプロパティベーステストを行うこともできます。これは、プロパティや条件を満たす複数の値を自動的に入力し、アサーションを行うものです。これにより、より網羅的なテストを行うことができ、コードの品質を向上させることができます。
+Finished in 0.05 seconds
+5 tests, 0 failures
+```
 
-## See Also
+テストが成功した場合は、"."が表示され、失敗した場合は"F"が表示されます。全てのテストが成功すると、緑色の"Finished"が表示されます。
+
+# 深堀り
+
+実際のプロジェクトでは、様々な種類のテストを作成することができます。UnitテストやIntegrationテストなどがあり、それぞれのテストが役割を果たしています。また、個々のテストケースの実行順序を制御することもできます。詳細については、公式ドキュメントや参考リンクを参照してください。
+
+## 参考リンク
 
 - [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [The Elixir Test-Driven Development Series](https://blog.carbonfive.com/elixir-test-driven-development-series/)
+- [Elixir School - Testing](https://elixirschool.com/ja/lessons/basics/testing/)
+
+# 関連リンク
+
+- [Elixir 公式サイト](https://elixir-lang.org/)
+- [Elixir 公式ドキュメント](https://elixir-lang.org/docs.html)
+- [Elixir 公式フォーラム (英語)](https://elixirforum.com/)

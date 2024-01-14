@@ -1,60 +1,45 @@
 ---
 title:    "Java recipe: Writing tests"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
+Writing tests may seem like an extra step in the software development process, but in the long run, it can save you time and headaches. By writing tests, you can catch bugs and errors before they escalate into larger problems. It also ensures that your code is functioning as intended, making it easier to maintain and update in the future.
 
-Writing tests for your Java code may seem like an tedious and unnecessary task, but it is actually a crucial aspect of software development. By writing tests, you can catch potential bugs and errors before they reach your production environment, saving time and resources in the long run.
+## How To 
+Writing tests in Java is a relatively simple process. The first step is to create a separate folder for your tests, preferably named "tests". Inside this folder, create a file for each class you want to test. For example, if you have a class called "Calculator", you would create a "CalculatorTest" file. 
 
-## How To
+Within the file, you will need to import the necessary testing libraries, such as JUnit or TestNG. These libraries provide the tools for creating and running tests. 
 
-Writing tests in Java is made easy with the use of the JUnit testing framework. Let's start with a simple example where we want to test a method that calculates the area of a rectangle.
+Next, you will need to create test methods for each method in your class. These methods should have a clear and descriptive name, such as "testAddition" or "testSubtraction". Within these methods, you will write code to set up the necessary test conditions and then assert the expected output using the "assertEquals" method. 
 
-```
-Java
+Let's take a closer look at an example of testing the "add" method in our "Calculator" class:
+
+```Java
 @Test
-public void testRectangleArea(){
-    // Create an instance of Rectangle class
-    Rectangle rectangle = new Rectangle(5, 10);
-    // Create an instance of RectangleTest class
-    RectangleTest test = new RectangleTest();
-    // Use assert equals to compare the expected and actual results
-    assertEquals(50, test.getArea(rectangle));
+public void testAddition() {
+  Calculator calculator = new Calculator();
+  int result = calculator.add(2, 3);
+  assertEquals(5, result);
 }
 ```
 
-In the above code, we have annotated our test method with `@Test` from the JUnit framework. Then, we create an instance of the class we want to test and an instance of our test class. Finally, we use the `assertEquals` method to compare the expected and actual results.
+In this code block, we first annotate the method with "@Test", indicating that it is a test method. Then, we create an instance of our "Calculator" class and use the "add" method to calculate the sum of 2 and 3. Finally, we use the "assertEquals" method to compare the expected result (5) with the actual result. 
 
-Running this test would yield a successful output, confirming that our method correctly calculates the area of a rectangle.
+Once you have written tests for all methods in your class, you can run the tests by right-clicking on the test file and selecting "Run as JUnit test". This will run all the test methods and provide you with a report of which tests passed and failed. 
 
-```
-Java
-Test successful!
-```
+## Deep Dive 
+Writing tests not only helps catch bugs, but it also promotes better coding practices. By breaking down your code into smaller, testable methods, you are implementing the principle of separation of concerns. This makes it easier to debug and modify your code in the future. 
 
-## Deep Dive
+Another important aspect of testing is code coverage. This measures the percentage of your code that is covered by tests. Ideally, you want to aim for a high code coverage to ensure that all parts of your code are being tested. 
 
-When writing tests, it is important to cover edge cases and handle exceptions properly. In our previous example, we only tested the method with positive values for length and width. What if we passed in negative values?
+There are also different types of tests you can write, such as unit tests, integration tests, and end-to-end tests, each serving a specific purpose. By utilizing all types of tests, you can ensure that your software is thoroughly tested and functioning as expected. 
 
-```
-Java
-@Test
-public void testNegativeRectangle(){
-    Rectangle rectangle = new Rectangle(-5, -10);
-    RectangleTest test = new RectangleTest();
-    assertEquals(50, test.getArea(rectangle));
-}
-```
-
-This test would fail, as expected. We can then refine our test methods to handle negative values and throw exceptions, ensuring that our code can handle different scenarios and prevent potential bugs.
-
-## See Also
-
-Here are some resources for further reading on writing tests in Java:
-
+## See Also 
 - [JUnit documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Unit testing in Java: How to write Unit tests for Java code](https://stackabuse.com/unit-testing-in-java-with-junit-5/)
-- [Introduction to Unit Testing in Java with JUnit 5](https://www.baeldung.com/junit-5-integration-test)
+- [TestNG documentation](https://testng.org/doc/)
+- [Code coverage tools for Java](https://dzone.com/articles/code-coverage-tools-for-java)
+- [Types of software testing](https://www.softwaretestinghelp.com/types-of-software-testing/)

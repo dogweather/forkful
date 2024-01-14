@@ -1,41 +1,33 @@
 ---
 title:    "Gleam: Merkkijonojen yhdistäminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Miksi kannattaa yhdistää merkkijonoja?
+## Miksi
 
-Yhdistäminen (concatenation) on yksi perustavanlaatuisimmista ohjelmoinnin käsitteistä, jota tarvitaan lähes kaikissa ohjelmointikielissä. Se tarkoittaa yksinkertaisesti kahden tai useamman merkkijonon yhdistämistä yhdeksi. Vaikka tämä saattaa tuntua yksinkertaiselta, on sillä suuri merkitys monissa ohjelmien rakentamisessa. Seuraavassa kerrotaan, miksi ja miten kannattaa käyttää yhdistämistä Gleam-ohjelmointikielessä.
+Miksi meidän pitäisi yhdistää merkkijonoja ohjelmoidessamme? Yksinkertaisesti sanottuna, merkkijonojen yhdistäminen mahdollistaa erilaisten tietojen yhdistämisen yhdeksi kokonaisuudeksi, mikä helpottaa tietojen hallintaa ja käsittelemistä.
 
-Kuinka: Esimerkki Gleam-koodilla ja tulostus näytölle
+## Kuinka tehdä se
 
-Yksinkertaisin tapa yhdistää merkkijonoja Gleamissa on käyttää plus-merkkijono-operaattoria (+"+). Esimerkiksi, jos haluamme yhdistää merkkijonot "Hei" ja "maailma", voimme kirjoittaa seuraavan koodin:
-
-```Gleam
-let teksti = "Hei " + "maailma"
-```
-
-Kun suoritamme tämän koodin, saamme tulosteen "Hei maailma". Voimme myös yhdistää useampia merkkijonoja samalla tavalla.
-
-Yhdistämisen avulla voimme myös helposti lisätä muuttujia ja arvoja merkkijonoihin. Esimerkiksi, jos haluamme lisätä muuttujan "nimi" arvon merkkijonoon "Hei", käytämme plus-merkkijono-operaattoria ja merkkiä "#" viestin sisällä:
+Gleam-ohjelmoinnissa merkkijonojen yhdistäminen tapahtuu käyttämällä "++" -operaattoria. Tämä operaattori yhdistää kaksi merkkijonoa yhdeksi ja tuottaa uuden merkkijonon. Alla on esimerkki:
 
 ```Gleam
-let nimi = "Matti"
-let tervehdys = "Hei #nimi#"
+let nimi = "Jussi"
+let tervehdys = "Hei, minun nimeni on " ++ nimi ++ "!"
+
+IO.println(tervehdys)
 ```
+Tulostaa: Hei, minun nimeni on Jussi!
 
-Tulostuksen jälkeen tervehdys on "Hei Matti". Tämä tekee koodista helpommin luettavan ja muokattavan, sillä meidän ei tarvitse kirjoittaa kaikkea yhteen pitkään merkkijonoon.
+## Syvemmälle Katsoen
 
-Syvällinen sukellus: Muita tapoja käyttää yhdistämistä
+Yhdistämisen lisäksi Gleam tarjoaa myös muita mahdollisuuksia merkkijonojen hallintaan. Voit esimerkiksi käyttää Gleam-standardikirjaston moduulia "string" löytääksesi merkkijonosta tiettyjä merkkejä tai merkkijonon osia. Voit myös käyttää "string.split" -funktiota jakamaan merkkijonon tietyn merkin tai merkkijonon mukaan. Näitä ja muita toimintoja voi tutkia lisää Gleam-dokumentaatiossa.
 
-Gleamissa on myös muita tapoja käyttää yhdistämistä, kuten `String.concat` -funktio tai tikunsyötön avulla. Lisäksi, voimme yhdistää merkkijonoja muun muassa `if`-lausekkeiden, `case`-lausekkeiden ja `for`-silmukoiden kanssa. Näitä strategioita kannattaa tutkia lisää, jotta voit hyödyntää yhdistämistä Gleam-ohjelmissasi mahdollisimman tehokkaasti.
+## Katso myös
 
-Katso myös: Katso seuraavista linkeistä lisää tietoa Gleam-kielen yhdistämisestä ja merkkijonoista:
-
-- Gleam-kielen virallinen dokumentaatio
-- Gleam-kurssin 4. osa: Merkkijonot ja yhdistäminen
-- String-moduulin dokumentaatio Gleam-kielen GitHub-sivustolla. 
-
-Lopussa on oltava otsikon "Katso myös" ja sitten lista linkejä.
+- [Gleam-dokumentaatio](https://gleam.run/book/stdlib.html#string)
+- [Merkkijonojen käsittelyn perusteet C-kielen avulla](https://www.tutorialspoint.com/cprogramming/string_handling_in_c.htm)
+- [10 työkalua, joilla parannat merkkijonojen hallintaa JavaScriptissä](https://www.freecodecamp.org/news/10-tools-to-power-up-your-string-manipulations-in-javascript-78a0f9157720/)

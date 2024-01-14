@@ -1,73 +1,48 @@
 ---
 title:    "Elixir: Imprimiendo salida de depuración"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué imprimir salida de depuración en Elixir?
 
-La impresión de salida de depuración es una herramienta importante para todo programador de Elixir. Te permite tener una mejor visibilidad de lo que está sucediendo en tu código y te ayuda a identificar y solucionar errores de manera más eficiente.
+La impresión de salida de depuración es una técnica utilizada por los desarrolladores para obtener información útil durante la ejecución de un programa. Esto puede ser especialmente útil para identificar y solucionar errores en el código, ya que proporciona una visión detallada de lo que está sucediendo en cada paso.
 
-## Cómo
+## Cómo hacerlo
 
-La impresión de salida de depuración se puede realizar fácilmente utilizando la función `IO.inspect/2`. Esta función toma dos argumentos: el valor que deseas inspeccionar y una lista de opciones de impresión. Veamos un ejemplo:
+La forma más común de imprimir salida de depuración en Elixir es utilizando la función `IO.inspect/2`, que acepta dos argumentos: el valor que se desea inspeccionar y una cadena opcional que se imprimirá junto con el valor. Veamos un ejemplo:
 
-```elixir
-defmodule Persona do
-  defstruct nombre: "Juan", apellido: "García", edad: 25
-end
-
-persona = %Persona{nombre: "María", apellido: "Pérez", edad: 30}
-IO.inspect(persona, label: "Persona")
-# Output: Persona: %Persona{nombre: "María", apellido: "Pérez", edad: 30}
+```Elixir
+my_variable = 42
+IO.inspect(my_variable, label: "Valor de variable")
 ```
 
-En el ejemplo anterior, creamos una estructura llamada `Persona` y luego creamos una instancia de esa estructura asignándola a la variable `persona`. Luego, utilizamos `IO.inspect/2` para imprimir la información de la variable `persona` con una etiqueta de "Persona". Esto ayuda a identificar fácilmente qué valor estamos inspeccionando.
+La salida de esto sería:
 
-También podemos utilizar la opción `:pretty` para obtener una salida más legible:
-
-```elixir
-IO.inspect(persona, label: "Persona", pretty: true)
-# Output:
-# Persona:
-# %Persona{
-#   apellido: "Pérez",
-#   edad: 30,
-#   nombre: "María"
-# }
+```
+Valor de variable: 42
 ```
 
-Además, `IO.inspect/2` también es útil para inspeccionar valores en medio de una pipelina:
+También se puede utilizar `IO.inspect/2` en expresiones complejas o incluso en bloques de código. Por ejemplo:
 
-```elixir
-persona
-|> Map.update(:edad, &(&1 * 2))
-|> IO.inspect(label: "Persona con edad duplicada")
-# Output: Persona con edad duplicada: %{apellido: "Pérez", edad: 60, nombre: "María"}
+```Elixir
+IO.inspect(4 + 3 * 2, label: "Resultado de operación")
 ```
 
-## Buceo profundo
-
-Además de la función `IO.inspect/2`, también podemos utilizar el módulo `Logger` para imprimir salidas de depuración. `Logger` proporciona diferentes niveles de registro (debug, info, warn, error) que se pueden utilizar para imprimir información dependiendo de su gravedad.
-
-Veamos un ejemplo utilizando `Logger`:
-
-```elixir
-Logger.debug("Esta es una salida de depuración")
-# Output:
-# 09:00:23.345 [debug] Esta es una salida de depuración
+```
+Resultado de operación: 10
 ```
 
-También podemos configurar el nivel de registro en nuestro archivo de configuración `config.exs`:
+## Profundizando en la impresión de salida de depuración
 
-```elixir
-config :logger, level: :debug
-```
+Además de la función `IO.inspect/2`, Elixir también cuenta con una variedad de herramientas para imprimir salida de depuración más detallada, como `IO.inspect/1` que imprime solamente el valor sin una etiqueta, `IO.inspect/3` que permite personalizar el formato de salida y `IO.inspect/4` que permite especificar a qué archivo y línea de código se refiere la impresión.
 
-Con esta configuración, todas las salidas de depuración se imprimirán en la consola.
+Además, Elixir proporciona la macro `require Logger`, que permite imprimir mensajes de registro con diferentes niveles de gravedad, como `:debug`, `:info`, `:warn` y `:error`, lo que permite una mejor organización y filtrado de la salida de depuración.
 
-## Vea también
-- [Documentación de Elixir sobre impresión de salida de depuración](https://elixir-lang.org/getting-started/debugging.html#printing-debug-output)
-- [Artículo de Medium: "Cómo utilizar IO.inspect en Elixir"](https://medium.com/@anamos/how-to-use-io-inspect-in-elixir-1477ba4f3f3d)
-- [Artículo de Elixir School sobre el módulo de registro de Elixir](https://elixirschool.com/en/lessons/advanced/logging/)
+## Ver también
+
+- [Documentación de Elixir sobre impresión de salida de depuración](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Tutorial de Elixir School sobre el uso de `IO.inspect/2`](https://elixirschool.com/es/lessons/basics/io-inspect/)
+- [Artículo de blog sobre el uso de `Logger` en Elixir](https://www.poeticoding.com/depuracion-en-elixir-analizando-el-comportamiento-de-tus-aplicaciones/)

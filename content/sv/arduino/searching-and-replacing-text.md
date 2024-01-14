@@ -1,27 +1,35 @@
 ---
 title:    "Arduino: Sökning och ersättning av text"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en viktig funktion i programmering för att effektivt kunna ändra textbaserad data. Det är också ett praktiskt sätt att korrigera felaktig eller föråldrad kod.
+Är du en hobbyist eller professionell utvecklare som arbetar med Arduino? Då har du säkert stött på situationer där du behöver göra ändringar i din kod. Att manuellt söka igenom och byta ut text kan vara mycket tidsödande och tråkigt. Men tack vare söka och ersätta funktionen i Arduino, kan du enkelt och snabbt göra dina ändringar.
 
-## Så här gör du
-Det finns flera olika sätt att söka och ersätta text i Arduino-program. Ett av de enklaste och mest användbara sätten är att använda funktionen "replace" i Arduino String-biblioteket. Nedan följer ett exempel på en kod som söker och ersätter text i en variabel:
-``` Arduino
-String text = "Hej, mitt namn är Arduino!";
-text.replace("Arduino", "Elsa");
-Serial.println(text);
+## Hur man använder sök och ersätt funktionen i Arduino
+För att använda sök och ersätt funktionen i Arduino behöver du först skriva koden du vill göra ändringar i. Sedan följer du dessa steg:
 
-```
-Detta kommer att skriva ut "Hej, mitt namn är Elsa!" på seriell monitor. Det är viktigt att notera att "replace" funktionen är fallkänslig, vilket innebär att den måste matcha exakt för att bytas ut.
+1. Öppna ditt kodfönster och tryck på "Ctrl+F" (kommando+F för Mac) för att öppna sökfönstret.
 
-## Fördjupning
-Det finns flera andra sätt att söka och ersätta text i Arduino, som att använda reguljära uttryck eller att manuellt loopa igenom en sträng för att hitta och ersätta specifika tecken eller ord. Det är också viktigt att förstå skillnaderna mellan olika datatyper och deras olika funktioner för att på bästa sätt kunna använda sök- och ersättningstekniker.
+2. Skriv in den text du vill söka efter i sökfältet.
+
+3. I rutan bredvid sökfältet väljer du "Sök och ersätt" (Ersätt i Mac).
+
+4. Skriv in den text du vill ersätta med i ersättningsfältet.
+
+5. Klicka på "Nästa" för att hitta nästa förekomst av söktexten och bekräfta om du vill ersätta den.
+
+6. Upprepa steg 5 tills all text har blivit ersatt.
+
+## Djupdykning
+Sök och ersätt funktionen i Arduino har många användbara funktioner som gör det enkelt att göra ändringar i din kod. Du kan till exempel söka efter specifika ord eller kombinationer av tecken för att hitta exakt det du söker efter. Dessutom kan du använda jokertecken som "*" för att söka efter alla förekomster av ett ord eller en fras.
+
+Du kan också använda regelbundna uttryck för att göra sökningen ännu mer specifik och effektiv. Reguljära uttryck är en typ av syntax som används för att söka efter mönster i text. Detta kan vara användbart om du till exempel vill söka efter alla förekomster av en siffra eller ett visst specialtecken.
 
 ## Se även
-- [Arduino String-biblioteket](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Söka och ersätta med reguljära uttryck i Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/serialbegin/)
-- [Skillnaden mellan datatyper i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/)
+* Officiell Arduino sök och ersätt dokumentation: https://www.arduino.cc/reference/en/language/structure/further-syntax/searchandreplace/
+* Enkla tips för att använda sök och ersätt funktionen i Arduino: https://create.arduino.cc/projecthub/alankrantas/simple-tips-for-using-the-search-replace-function-in-arduino-170ab5
+* Lär dig mer om reguljära uttryck: https://www.arduino.cc/reference/en/language/structure/further-syntax/regular-expressions/

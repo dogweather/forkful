@@ -1,44 +1,53 @@
 ---
-title:    "C#: Utskrift av feilsøkingsutdata"
+title:    "C#: Utskrift av feilrettingsutgang"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive ut debug output er en viktig del av å utvikle programvare. Det lar deg identifisere feil og feilsøke problemer som kan oppstå underveis i koden din. I denne bloggposten vil vi utforske hvordan du kan bruke C# for å skrive ut debug output, og hvorfor det er viktig for en effektiv utviklingsprosess.
+Å skrive ut feilrettingsutdata kan ofte være en nyttig måte å finne og løse problemer i koden din på. Ved å skrive ut informasjon om variabler, verdier og prosesser, kan du få en bedre forståelse av hva som skjer i koden din og hvor eventuelle feil oppstår.
 
 ## Hvordan
 
-Det første du trenger å gjøre er å importere System.Diagnostics namespace i C#:
+Du kan enkelt skrive ut feilrettingsutdata i C# ved å bruke ```Console.WriteLine()``` -funksjonen. Dette lar deg skrive ut en melding eller variabelverdi til konsollen mens koden blir kjørt. For eksempel:
 
 ```C#
-using System.Diagnostics;
+string navn = "Ola";
+Console.WriteLine("Hei, mitt navn er " + navn);
 ```
 
-Dette gir deg tilgang til debug-klassen, som har mange nyttige funksjoner for å skrive ut debug output. La oss se på et enkelt eksempel:
+Dette vil skrive ut følgende i konsollen:
+
+```
+Hei, mitt navn er Ola
+```
+
+Du kan også bruke ```Debug.WriteLine()``` -funksjonen for å skrive ut feilrettingsutdata til Visual Studio Output-vinduet. Dette er spesielt nyttig når du jobber med større prosjekter og ønsker å se feilutdata fra forskjellige deler av koden din på ett sted. For eksempel:
 
 ```C#
-int num1 = 10;
-int num2 = 5;
-Debug.WriteLine("Total = " + (num1 + num2));
+int a = 5;
+int b = 10;
+Debug.WriteLine("a + b = " + (a + b));
 ```
 
-I dette eksemplet bruker vi Debug.WriteLine() for å skrive ut resultatet av en enkel matematisk operasjon. Dette vil bli skrevet ut i output-panelet i Visual Studio, og vil hjelpe oss med å verifisere at koden vår fungerer som den skal.
+Dette vil skrive ut følgende i Output-vinduet:
 
-Det er også mulig å bruke Debug.Write() for å skrive ut en enkel verdi, eller Debug.Assert() for å sjekke om en betingelse er oppfylt og skrive ut en feilmelding hvis det er tilfelle.
+```
+a + b = 15
+```
 
-## Deep Dive
+Det er også mulig å bruke ```Console.WriteLine()``` og ```Debug.WriteLine()``` i kombinasjon for å skrive ut feilrettingsutdata både til konsollen og Output-vinduet.
 
-Det er mange andre nyttige funksjoner i debug-klassen som kan hjelpe deg med å finne og løse problemer i koden din. For eksempel kan du bruke Debug.WriteLineIf() for å skrive ut en melding bare hvis en spesifikk betingelse er oppfylt, noe som kan være nyttig når du søker etter en spesifikk feil.
+## Dypdykk
 
-En annen nyttig funksjon er Debug.Listeners, som lar deg velge hvor debug output skal skrives. Du kan for eksempel velge å skrive ut til et loggføringsbibliotek i stedet for output-panelet i Visual Studio.
+Når du skriver ut feilrettingsutdata, er det viktig å være bevisst på hva du skriver ut og hvor du skriver ut det. For mye utdata kan gjøre det vanskelig å finne de viktige meldingene og variablene, spesielt i større prosjekter. Det kan også være lurt å bruke forskjellige utdatameldinger for å skille mellom forskjellige deler av koden din.
 
-Det er også mulig å bruke conditional compilation for å sørge for at debug koden din bare blir utført i utviklingsmiljøet og ikke i produksjonsmiljøet. Dette kan bidra til å redusere unødvendig beregning og forbedre ytelsen til programvaren din.
+Det kan også være nyttig å bruke betinget feilrettingsutdata. Dette betyr å bare skrive ut informasjon når en bestemt betingelse er oppfylt. Dette er spesielt nyttig for å finne feil som bare oppstår i visse tilfeller.
 
-## Se også
+## Se Også
 
-- [Debugging med Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-with-visual-studio)
-- [Feilsøking i C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/using-the-visual-studio-debugger-for-error-handling)
-- [7 tips for effektiv feilsøking i C#](https://www.c-sharpcorner.com/article/7-tips-for-effective-debugging-in-c-sharp/)
+- [MSDN documentation on debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
+- [CodeCademy course on debugging in C#](https://www.codecademy.com/learn/learn-c-sharp/modules/csharp-debugging)

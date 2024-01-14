@@ -1,38 +1,43 @@
 ---
-title:    "TypeScript: Utskrift av felsökningsutdata"
+title:    "TypeScript: Utskrift av felloggning"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I programmering är det ofta nödvändigt att felsöka koden för att hitta och åtgärda eventuella fel. En bra metod för felsökning är att skriva ut debug-meddelanden, eller "debug output" på engelska. Detta kan ge viktig information som kan hjälpa dig att förstå vad som händer i koden och varför det eventuellt inte fungerar som förväntat.
+När vi skriver kod, är vår huvuduppgift att se till att den fungerar korrekt. Men ibland, när ett problem uppstår, är det svårt att veta var det gick snett. Då kan det vara till nytta att använda sig av debug-utskrifter. Genom att skriva ut data i olika delar av koden kan vi få en bättre förståelse för vad som händer och eventuella fel som uppstår.
 
-## Hur man gör det
+## Hur man gör
 
-I TypeScript finns det flera sätt att skriva ut debug-meddelanden, beroende på din specifika situation. Ett sätt är att använda loggningsfunktionen "console.log()", som skriver ut ett meddelande i webbläsarens utvecklarverktyg eller i terminalen om du kör ditt program utanför webbläsaren. Här är ett enkelt exempel på hur du kan använda "console.log()" i TypeScript:
+ För att skriva ut data i TypeScript kan vi använda oss av "console.log()" funktionen. Låt oss säga att vi har en variabel "namn" som innehåller en sträng, och vi vill skriva ut den till konsolen. Vi skulle då kunna använda koden nedan:
 
-```
-TypeScript
-var num1: number = 5;
-var num2: number = 10;
-console.log("Summan av " + num1 + " och " + num2 + " är " + (num1 + num2));
-```
+ ```TypeScript
+ let namn = "Erika";
+ console.log(namn);
+ ```
 
-Detta kommer att skriva ut "Summan av 5 och 10 är 15" i ditt utvecklarverktyg eller terminal. Detta kan hjälpa dig att kontrollera att dina variabler har rätt värden och att din kod fungerar som den ska.
+ Detta kommer att skriva ut strängen "Erika" till konsolen när vi kör vår kod. Vi kan också skriva ut flera variabler eller till och med kombinera text och variabler. Exempelvis:
 
-En annan metod är att använda "debugger", vilket är ett inbyggt kommando i webbläsaren som pausar koden och tillåter dig att steg-för-steg gå igenom den. Detta kan vara särskilt användbart när du felsöker komplicerade problem eller när du inte vet exakt var i koden problemet uppstår.
+ ```TypeScript
+ let år = 2021;
+ console.log("Hej " + namn + ", det är nu år " + år + "!");
+ ```
+
+ Detta kommer att skriva ut "Hej Erika, det är nu år 2021!" i konsolen. Genom att använda oss av debug-utskrifter på detta sätt kan vi se värdet på våra variabler och kontrollera om de håller våra förväntade värden.
 
 ## Djupdykning
 
-Att skriva ut debug-meddelanden är en viktig del av felsökning i TypeScript, men det är också viktigt att inte överanvända det. Att ha för många debug-meddelanden kan göra koden rörig och svår att läsa. Det är därför viktigt att vara selektiv och bara skriva ut det mest relevanta och viktiga informationen.
+Det finns flera andra sätt att skriva ut data i TypeScript, såsom "console.info()", "console.warn()" och "console.error()". Dessa funktioner ger oss möjlighet att skriva ut olika typer av meddelanden och varningar till konsolen. Det är även möjligt att använda "console.table()" för att skriva ut data som en tabell istället för en rad med text.
 
-En annan viktig aspekt är att ta bort debug-kod innan du publicerar din kod eller delar den med andra. Detta för att undvika att onödig information visas för användare, vilket kan vara en säkerhetsrisk.
+Det finns också olika sätt att manipulera utskrifterna, såsom att formatera numeriska värden eller använda färger för att tydliggöra olika typer av meddelanden. Genom att experimentera och lära sig olika sätt att använda debug-utskrifter kan vi få en bättre förståelse för vår kod och felsöka mer effektivt.
 
 ## Se även
 
-- [TypeScript Handbook: Debugging](https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html)
-- [Debugging TypeScript in Chrome and Visual Studio Code](https://blog.logrocket.com/debugging-typescript-in-chrome-and-visual-studio-code/)
-- [Using the JavaScript console](https://developer.mozilla.org/en-US/docs/Tools/JavaScript_console) (du kan använda samma metoder i TypeScript)
-- [Debugging TypeScript with breakpoints](https://stackoverflow.com/questions/16598467/debug-typescript-with-breakpoints)
+Här är några andra artiklar som kan vara intressanta för dig:
+
+- [10 Tips för Felsökning i TypeScript](https://www.linkedin.com/pulse/10-fels%C3%B6kning-i-typescript-tony-letey/)
+- [Aningens djupare om console.log i TypeScript](https://www.morain.se/know-how/blog_ser4.php)
+- [Debugga din kod som ett proffs med TypeScript](https://medium.com/@charliejackson/debugging-your-code-like-a-pro-with-typescript-aa718279f02f)

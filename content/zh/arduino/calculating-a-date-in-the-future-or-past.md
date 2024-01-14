@@ -1,69 +1,69 @@
 ---
-title:    "Arduino: 计算未来或过去的日期。"
+title:    "Arduino: 计算未来或过去的日期"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么要使用Arduino计算日期？
+使用Arduino计算日期可以帮助您在您的项目中确定特定日期，例如确定未来或过去的日期。这对于制作日历或倒计时器非常有用。
 
-计算一个日期的未来或过去能让我们更有效地规划我们的时间，并且可以帮助我们避免遗忘重要的日期。
-
-# 如何
-
-计算一个日期的未来或过去可能听起来很复杂，但在Arduino中却非常简单。首先，我们需要定义一个变量来表示当前日期，再定义一个变量来表示我们想要计算的日期。接下来，我们可以使用内置的函数来计算日期的差值，例如：```day(), month(), year()```。最后，将这些差值加到当前日期，就可以得到我们想要的日期了。
-
+## 如何使用Arduino计算日期？
+您可以使用以下代码来计算日期，并将结果输出到串行监视器：
 ```Arduino
-// 定义当前日期为2020年4月20日
-int currentDay = 20;
-int currentMonth = 4;
-int currentYear = 2020;
+#include <Time.h>
+#include <TimeLib.h>
 
-// 定义想要计算的日期为1年后
-int futureDay = currentDay;
-int futureMonth = currentMonth;
-int futureYear = currentYear + 1;
+int day, month, year;
 
-// 计算日期的差值
-int dayDifference = futureDay - currentDay;
-int monthDifference = futureMonth - currentMonth;
-int yearDifference = futureYear - currentYear;
+void setup() {
+  Serial.begin(9600);
+  setTime(20, 25, 00, 1, 1, 2020); // 设置时间为2020年1月1日20时25分00秒
+  day = day(); // 获取当前日期的天数
+  month = month(); // 获取当前日期的月份
+  year = year(); // 获取当前日期的年份
+  Serial.print("今天是");
+  Serial.print(year); // 输出年份
+  Serial.print("-");
+  Serial.print(month); // 输出月份
+  Serial.print("-");
+  Serial.println(day); // 输出天数
 
-// 将差值加到当前日期
-int resultDay = currentDay + dayDifference;
-int resultMonth = currentMonth + monthDifference;
-int resultYear = currentYear + yearDifference;
-
-// 输出结果
-Serial.print("计算日期结果为：");
-Serial.print(resultMonth);
-Serial.print("/");
-Serial.print(resultDay);
-Serial.print("/");
-Serial.println(resultYear);
-
-// 将结果打印为“MM/DD/YYYY”格式
-Serial.print("计算日期结果为：");
-if (resultMonth < 10) {
-  Serial.print("0");
+  tmElements_t futureDate; // 定义一个时间结构体
+  futureDate.Second = 0; // 设置秒数为0
+  futureDate.Minute = 0; // 设置分钟为0
+  futureDate.Hour = 0; // 设置小时为0
+  futureDate.Day = 14; // 设置日期为14
+  futureDate.Month = 2; // 设置月份为2
+  futureDate.Year = 2021; // 设置年份为2021
+  time_t futureEpoch = makeTime(futureDate); // 将时间结构体转换为time_t类型
+  setTime(futureEpoch); // 设置当前时间为未来日期
+  day = day(); // 获取日期的天数
+  month = month(); // 获取日期的月份
+  year = year(); // 获取日期的年份
+  Serial.print("未来日期是");
+  Serial.print(year); // 输出年份
+  Serial.print("-");
+  Serial.print(month); // 输出月份
+  Serial.print("-");
+  Serial.println(day); // 输出天数
 }
-Serial.print(resultMonth);
-Serial.print("/");
-if (resultDay < 10) {
-  Serial.print("0");
+
+void loop() {
+
 }
-Serial.print(resultDay);
-Serial.print("/");
-Serial.println(resultYear);
 ```
 
-输出结果为"计算日期结果为： 4/20/2021"。
+这段代码将输出当前日期和未来日期，您可以根据您的需求修改futureDate结构体来计算其他日期。
 
-# 深入探讨
+## 深入了解Arduino计算日期
+Arduino使用Time库来处理日期和时间。该库提供了许多有用的函数和结构体来处理日期和时间。
 
-在Arduino中，我们可以使用内置的函数来计算日期的差值，但在其他编程语言中可能需要使用更多的代码来实现相同的功能。此外，我们还可以自定义函数来计算某个特定日期的未来或过去。
+在本例中，我们使用makeTime函数将日期和时间转换为time_t类型，这样我们就可以使用setTime函数来设置当前日期和时间。
 
-# 参考资料
+另外，您还可以使用其他函数来计算某一日期之后或之前的日期，例如使用addTime函数来计算未来日期，并使用subtractTime函数来计算过去日期。
 
-- 将日期输出为特定格式的教程：https://www.arduino.cc/reference/en/language/functions/communication/serial/print/
-- Arduino内置日期函数的说明：https://www.arduino.cc/reference/en/language/functions/time/
+## 参考链接
+- [Arduino Time库文档](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [Arduino Time库GitHub仓库](https://github.com/PaulStoffregen/Time)

@@ -1,74 +1,38 @@
 ---
-title:    "Python: ランダム数の生成"
+title:    "Python: 乱数の生成"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-ランダムな数字を生成することの意義は何でしょうか？プログラミングでランダムな数字を使うことは、ゲームやシミュレーションなどでランダムな要素を取り入れることができるため非常に有用です。また、セキュリティや暗号化にも欠かせない重要な技術です。
+ランダムな数字を生成するプログラミングを行う理由は、様々な目的に使用できるからです。例えば、ゲームやシミュレーション、暗号学などにおいて、ランダムな値を使用する必要があります。また、ランダムな値を生成することで、プログラムの動作をテストすることもできます。
 
 ## 方法
-
-Pythonでは、`random`モジュールを使用して簡単にランダムな数字を生成することができます。以下のコードを使用して、0から10までのランダムな整数を表示してみましょう。
-
-```Python
-import random
-
-# 0から10までの範囲でランダムな整数を生成
-num = random.randint(0, 10)
-
-print(num)  # 例：5
-```
-
-同様に、小数点以下のランダムな数字を生成するには、`random.uniform()`を使用します。
+乱数を生成するには、Pythonの標準ライブラリであるrandomモジュールを使用します。以下のコードを使用することで、乱数を生成することができます。"
 
 ```Python
 import random
-
-# 0から1までの範囲でランダムな小数を生成
-num = random.uniform(0, 1)
-
-print(num)  # 例：0.459376
+num = random.randint(1, 100) # 1から100までの乱数を生成
+print(num) # 乱数を出力
 ```
 
-## 深堀り
-
-ランダムな数字を生成するアルゴリズムには様々な種類がありますが、Pythonの`random`モジュールでは、メルセンヌ・ツイスター(Mersenne Twister)アルゴリズムを使用しています。これは非常に高い品質のランダムな数字を生成することができるアルゴリズムであり、多くのプログラミング言語で採用されています。
-
-また、Pythonではシード(seed)という値を指定することで、同じランダムな数字を再現することもできます。例えば、以下のように実行すると、毎回同じ結果が表示されます。
+上記の例では、1から100までの乱数を生成していますが、生成する範囲は任意の値に変更することができます。また、乱数を重複させたくない場合には、randomモジュールの中にあるsample()関数を使用することができます。
 
 ```Python
 import random
-
-# シードを指定
-random.seed(1)
-
-# 0から10までの範囲でランダムな整数を生成
-num = random.randint(0, 10)
-
-print(num)  # 例：9
-
-# 同じシードを指定しても同じ結果が表示される
-random.seed(1)
-num = random.randint(0, 10)
-
-print(num)  # 例：9
+num_list = [1, 2, 3, 4, 5]
+random_num = random.sample(num_list, 3) # num_listから3つの乱数を重複せずに生成してリストとして返す
+print(random_num) # 例: [3, 5, 1]
 ```
 
-## 参考リンク
+さらに、randomモジュールには乱数を生成するためのさまざまな関数が用意されていますので、ドキュメントを参照することでより詳細な情報を得ることができます。
 
-- [Python公式ドキュメント：randomモジュール](https://docs.python.org/ja/3/library/random.html)
-- [Pythonでランダムな整数を生成する方法](https://techacademy.jp/magazine/18891)
-- [メルセンヌ・ツイスター法の解説](https://www.slideshare.net/ssuser1863f7/random-49092919)
+## ディープダイブ
+乱数を生成する方法について、もっと深く掘り下げてみましょう。乱数を生成するアルゴリズムには様々な種類がありますが、Pythonのrandomモジュールでは、メルセンヌツイスターというアルゴリズムを使用しています。メルセンヌツイスターは高速であり、周期も非常に長いという特徴があります。また、メルセンヌツイスターの他にも、様々なアルゴリズムがあるので、興味のある方は調べてみると良いでしょう。
 
-## この記事が気に入ったら？
-
-この記事が気に入ったら、ぜひ以下のリンクもチェックしてください。
-
-- [Pythonでランダムな文字列を生成する方法](https://qxresearch-nagoya.com/python-random/)
-- [Pythonでランダムな要素を含むリストを作成する方法](https://lespros.co.jp/media/articles/323)
-- [Pythonで乱数を使ってゲームを作るチュートリアル](https://qiita.com/gragragrao/items/1bf96616d33940f42075)
-
-ありがとうございました！
+## 関連記事
+- [Python公式ドキュメント - randomモジュール](https://docs.python.org/ja/3/library/random.html)
+- [Python randomモジュールを使ってみよう](https://qiita.com/creeper3eee/items/1a60c787cc7e22302c97)
+- [乱数の生成方法について](https://www.edemy.jp/technologies/1108)

@@ -1,45 +1,53 @@
 ---
 title:    "Elm: Comparaison de deux dates"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi: La comparaison de deux dates en Elm
 
-Il est souvent nécessaire de comparer deux dates en programmation pour effectuer différentes opérations telles que trier des données ou vérifier si une date est avant ou après une autre. Dans cet article, nous allons découvrir comment le langage Elm nous permet de comparer facilement deux dates.
+La comparaison de dates est un outil utile qui peut être utilisé dans divers projets de programmation. En utilisant le langage fonctionnel Elm, vous pouvez facilement comparer les dates pour déterminer si elles sont égales, après ou avant une autre date. Dans cet article, nous explorerons comment utiliser Elm pour comparer deux dates.
 
-## Comment faire
+## Comment Faire
 
-Pour comparer deux dates en Elm, nous pouvons utiliser la fonction `Date` intégrée au module `Time`. Voici un exemple de code qui compare deux dates :
+Pour commencer, nous devons d'abord définir nos deux dates à comparer en tant que variables. Dans l'exemple ci-dessous, nous utiliserons les dates 10 Octobre 2021 et 10 Octobre 2022:
 
-```Elm
-date1 = Date.everyDayAt 12 30
-date2 = Date.fromCalendarDate 2021 Jul 10
-result = Date.compare date1 date2
+```
+Elm
+import Time exposing (posixToMillis)
+
+date1 : Int
+date1 = posixToMillis 1633814400000
+
+date2 : Int
+date2 = posixToMillis 1665350400000
 ```
 
-Dans ce code, nous créons deux dates différentes `date1` et `date2` en utilisant les constructeurs de date fournis par le module `Date`. Ensuite, nous utilisons la fonction `compare` pour comparer ces deux dates et stockons le résultat dans la variable `result`. Le résultat sera un `Order` qui peut être `LT`, `GT` ou `EQ` (pour "inférieur", "supérieur" ou "égal").
+En utilisant la fonction `posixToMillis`, nous convertissons nos dates en millisecondes pour faciliter la comparaison. Ensuite, nous pouvons utiliser les opérateurs de comparaison tels que `==` pour vérifier si les dates sont égales, `<` pour vérifier si la première date est avant la seconde, ou `>` pour vérifier si la première date est après la seconde.
 
-Voici une liste de toutes les fonctions de comparaison de dates disponibles dans le module `Date` :
+```
+Elm
+date1 == date2 -- false
+date1 < date2 -- true
+date1 > date2 -- false
+```
 
-- `Date.compare` : compare deux dates et retourne un `Order`.
-- `Date.equals` : retourne `True` si deux dates sont égales, `False` sinon.
-- `Date.lessThan` : retourne `True` si la première date est antérieure à la deuxième, `False` sinon.
-- `Date.greaterThan` : retourne `True` si la première date est postérieure à la deuxième, `False` sinon.
-- `Date.min` : retourne la date la plus ancienne parmi une liste de dates.
-- `Date.max` : retourne la date la plus récente parmi une liste de dates.
+Dans l'exemple ci-dessus, nous voyons que la première date est avant la seconde et donc `date1 < date2` renvoie `true`.
 
-## Plongée en profondeur
+## Plongée en Profondeur
 
-En plus de ces fonctions de comparaison, le module `Date` propose également des fonctions pour effectuer des opérations mathématiques sur des dates telles que `Date.add`, `Date.sub`, `Date.since` et `Date.until`. De plus, les dates peuvent être facilement converties en chaînes de caractères grâce aux fonctions `Date.toCivilString` et `Date.toIsoString`.
+En comparant les dates en Elm, il est important de comprendre que chaque date est en fait un nombre de millisecondes depuis le 1er Janvier 1970. Cela signifie que si vous avez besoin de comparer des dates avec précision, vous devez également prendre en compte les fuseaux horaires et les années bissextiles.
 
-Il est également important de noter qu'en Elm, les dates sont immuables, ce qui signifie qu'une fois qu'une date est créée, elle ne peut pas être modifiée. Cela garantit une manipulation sûre des dates et évite les erreurs courantes telles que le décalage horaire.
+De plus, il est important de noter que la fonction `posixToMillis` utilisée dans notre exemple suppose que les dates sont dans le fuseau horaire UTC. Si vous avez des dates dans d'autres fuseaux horaires, vous devrez peut-être utiliser une autre fonction de conversion.
 
-Enfin, le module `Date` est fortement typé, ce qui signifie que toutes les opérations sur les dates ont des types spécifiques et sont vérifiées par le compilateur. Cela permet de détecter les erreurs de logique de comparaison de dates dès la phase de compilation plutôt qu'à l'exécution.
+## Voir Aussi
 
-## Voir aussi
+- La documentation officielle sur la comparaison de dates en Elm: https://package.elm-lang.org/packages/elm/time/latest/Time#posixToMillis
+- Un tutoriel sur les opérateurs de comparaison en Elm: https://elmprogramming.com/conditionals.html
+- Un article sur la conversion de dates en Elm: https://medium.com/@jacobworrel/parse-format-and-manipulate-dates-in-elm-71a86d72b640
 
-- La documentation complète du module `Date` : https://package.elm-lang.org/packages/elm/time/latest/Date
-- Un tutoriel sur les dates en Elm : https://www.elm-tutorial.org/fr/07-dates.html
-- Une introduction au langage Elm : https://www.elm-tutorial.org/fr/01-introduction.html
+---
+
+# Voir Aussi

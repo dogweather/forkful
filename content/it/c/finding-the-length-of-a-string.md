@@ -1,49 +1,45 @@
 ---
-title:    "C: Trova la lunghezza di una stringa"
+title:    "C: Calcolare la lunghezza di una stringa"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Trovare la lunghezza di una stringa è un'operazione comune nella programmazione in linguaggio C. Sapere quanto lunga è una stringa è fondamentale per poter manipolare e gestire correttamente i dati all'interno del tuo codice. In questo articolo, ti mostreremo come trovare la lunghezza di una stringa in modo semplice ed efficace.
+Spesso in programmazione ci troviamo ad avere la necessità di conoscere la lunghezza di una stringa di testo. Questa informazione è utile per molteplici scopi, come ad esempio la gestione dei dati provenienti da input dell'utente o il controllo di dimensioni massime nelle operazioni di concatenazione di stringhe.
 
 ## Come fare
 
-Per trovare la lunghezza di una stringa in linguaggio C, utilizzeremo la funzione `strlen()` della libreria standard del C. Questa funzione accetta come parametro una stringa e restituisce il numero di caratteri presenti in quella stringa. Ecco un esempio di codice:
+Esistono diverse funzioni in linguaggio C per calcolare la lunghezza di una stringa. Iniziamo con la più comune: `strlen()`. Questa funzione richiede come parametro la stringa di cui si vuole conoscere la lunghezza e restituisce un valore intero corrispondente alla quantità di caratteri presenti nella stringa. Vediamo un esempio di utilizzo:
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-int main() {
-	char stringa[50] = "Ciao a tutti!";
-	int lunghezza = strlen(stringa);
-	
-	printf("La lunghezza della stringa è: %d", lunghezza);
-	
-	return 0;
+int main()
+{
+  char stringa[] = "Ciao Mondo!";
+  int lunghezza = strlen(stringa);
+  printf("La lunghezza della stringa è: %d", lunghezza);
+  return 0;
 }
 ```
 
-Output: 
-```C
-La lunghezza della stringa è: 13
+Output:
+
+```
+La lunghezza della stringa è: 11
 ```
 
-Come puoi vedere, abbiamo dichiarato una variabile `lunghezza` di tipo `int` e abbiamo assegnato ad essa il valore restituito dalla funzione `strlen()`. In questo caso, la lunghezza della stringa è di 13 caratteri, inclusi gli spazi.
-
-È importante ricordare che la funzione `strlen()` conta solo i caratteri all'interno della stringa, non considerando il carattere terminatore `'\0'`. Per questo motivo, solitamente si definisce la dimensione dell'array che contiene la stringa con un valore di 1 in più rispetto alla lunghezza effettiva della stringa.
+Oltre a `strlen()`, esistono anche altre funzioni come `strnlen()` e `wcslen()` che permettono di specificare una lunghezza massima da contare o che possono essere utilizzate con stringhe di tipo wide (con caratteri unicode). Esempi d'utilizzo di queste funzioni possono essere trovati nella documentazione del linguaggio.
 
 ## Approfondimento
 
-Ora che hai imparato come trovare la lunghezza di una stringa in C, è importante capire come questa operazione viene eseguita. La funzione `strlen()` itera attraverso tutti i caratteri della stringa, contando quanti di essi sono validi. Quando raggiunge il carattere terminatore `'\0'`, interrompe il conteggio e restituisce il numero di caratteri contati.
-
-In alcuni casi, potresti incontrare un problema noto come "buffer overflow", ovvero quando la lunghezza fornita alla funzione `strlen()` è maggiore della dimensione dell'array che contiene la stringa. Questo può causare un errore imprevisto o addirittura una vulnerabilità di sicurezza nel tuo programma. Per evitare questo problema, è importante prestare attenzione alla dimensione dell'array durante la sua inizializzazione.
+Per comprendere meglio come queste funzioni vengano implementate, è utile anche comprendere come viene rappresentata una stringa in memoria. In linguaggio C, una stringa è semplicemente un array di caratteri terminato dal carattere nullo `'\0'`. Quando una funzione come `strlen()` viene chiamata, essa inizia a contare i caratteri dalla posizione di memoria in cui si trova la stringa fino a incontrare il carattere nullo di terminazione. È importante ricordare che il valore restituito da queste funzioni include anche il carattere nullo.
 
 ## Vedi anche
 
-- [Documentazione ufficiale della funzione `strlen()`](https://en.wikipedia.org/wiki/C_string_handling#strlen)
-- [Tutorial su come gestire correttamente le stringhe in linguaggio C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Altri esempi di codice per trovare la lunghezza di una stringa](https://www.includehelp.com/c-programming-examples/find-length-of-a-given-string.aspx)
+- Documentazione ufficiale del linguaggio C su stringhe: https://www.tutorialspoint.com/cprogramming/c_strings.htm
+- Funzioni utili per la gestione di stringhe in C: https://www.programiz.com/c-programming/c-strings-functions

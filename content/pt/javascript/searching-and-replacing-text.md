@@ -1,86 +1,50 @@
 ---
-title:    "Javascript: Procurando e Substituindo Texto"
+title:    "Javascript: Buscando e substituindo texto"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que procurar e substituir texto em Javascript?
+## Por que alguém se envolveria em procurar e substituir texto?
 
-Ao trabalhar com programação, é comum encontrar situações em que precisamos fazer alterações em um determinado texto. Em vez de fazê-las manualmente, podemos utilizar o recurso de busca e substituição de texto em Javascript para agilizar o processo e evitar erros humanos. 
+Há muitos motivos pelos quais alguém pode precisar realizar uma busca e substituição de texto em seu código JavaScript. Pode ser necessário corrigir erros de digitação, atualizar nomes de variáveis, ou até mesmo alterar trechos inteiros de código. Usando as ferramentas certas, esse processo pode ser automatizado e economizar tempo e esforço durante o desenvolvimento.
 
-## Como fazer a busca e substituição de texto em Javascript
+## Como fazer uma busca e substituição em JavaScript
 
-Para realizar a busca e substituição de texto em Javascript, podemos utilizar o método `replace()` junto com expressões regulares (regex). A sintaxe básica é a seguinte:
+Para realizar uma busca e substituição de texto em JavaScript, existem algumas opções diferentes, dependendo do ambiente de codificação que você estiver usando. Aqui estão alguns exemplos de como realizar esse processo em diferentes ambientes:
 
-```Javascript 
-var novoTexto = textoOriginal.replace(regex, substituicao); 
+### Usando o método replace() nativo do JavaScript:
+
+```
+let texto = "Olá, mundo!";
+let novoTexto = texto.replace("mundo", "JavaScript");
+
+console.log(novoTexto); // output: Olá, JavaScript!
 ```
 
-Vamos analisar alguns exemplos para entender melhor como funciona:
+### Usando o editor de código Visual Studio Code:
 
-**Exemplo 1**: Substituindo uma palavra em um texto completo
+1. Pressione `Ctrl+Shift+H` (Windows) ou `Cmd+Shift+H` (Mac) para abrir a janela de busca.
+2. Na barra lateral, clique no ícone de engrenagem e selecione "Substituir em arquivos" para abrir a ferramenta de busca e substituição.
+3. Escolha o texto que deseja procurar e o texto que deseja substituir, selecione os arquivos nos quais deseja realizar a busca e clique em "Substituir Tudo".
 
-Considere o texto "Eu amo programar em Javascript!" e queremos substituir a palavra "amo" por "gosto". Nesse caso, podemos utilizar o seguinte código:
+### Usando a ferramenta de linha de comando Sed:
 
-```Javascript
-var textoOriginal = "Eu amo programar em Javascript!";
-var novoTexto = textoOriginal.replace(/amo/, "gosto");
-console.log(novoTexto);
-
-// Output: Eu gosto programar em Javascript!
+```
+sed -i 's/mundo/JavaScript/g' arquivo.js
 ```
 
-Note que a palavra "amo" está representada pela regex `/amo/` e é substituída pela palavra "gosto". Ao executar o código, o novo texto, com a alteração realizada, será impresso no console.
+## Análise detalhada da busca e substituição de texto
 
-**Exemplo 2**: Substituindo todas as ocorrências de uma palavra em um texto
+Existem algumas coisas que devemos ter em mente ao realizar uma busca e substituição de texto em JavaScript. Primeiro, é importante notar que o método replace() nativo de JavaScript só substituirá a primeira ocorrência do texto que você estiver procurando. Se você quiser substituir todas as ocorrências, precisará adicionar a flag `g` no final da expressão regular.
 
-Caso queiramos substituir todas as ocorrências de uma palavra em um texto, podemos adicionar a flag `g` (de global) à regex, indicando que queremos que a substituição seja feita globalmente no texto. Por exemplo, para substituir todas as ocorrências da palavra "Javascript" por "PHP", utilizamos o código a seguir:
+Além disso, é importante entender o conceito de expressões regulares (regex) ao realizar uma busca e substituição de texto. As expressões regulares são padrões de texto usados para buscar e extrair informações de uma string. Elas são muito úteis em tarefas como buscar e substituir texto, já que elas permitem especificar padrões de texto mais complexos do que apenas uma correspondência exata.
 
-```Javascript
-var textoOriginal = "Eu amo programar em Javascript! Javascript é minha linguagem favorita!";
-var novoTexto = textoOriginal.replace(/Javascript/g, "PHP");
-console.log(novoTexto);
+Uma ferramenta muito útil para testar e aprender sobre expressões regulares é o [Regex101](https://regex101.com/), que permite inserir sua expressão regular e testá-la em tempo real em uma string.
 
-// Output: Eu amo programar em PHP! PHP é minha linguagem favorita!
-```
+## Veja também
 
-No código acima, a flag `g` é adicionada à regex `/Javascript/g`, permitindo que todas as ocorrências da palavra sejam substituídas.
-
-**Exemplo 3**: Adicionando variáveis à substituição
-
-Podemos também utilizar variáveis na substituição de texto. Por exemplo, se tivermos uma lista de palavras que queremos substituir em um texto, podemos criar uma função que recebe essas palavras e realiza a substituição de forma automática. Veja o exemplo a seguir:
-
-```Javascript
-var textoOriginal = "Aqui temos uma lista de compras: frutas e legumes.";
-var lista = ["frutas", "legumes"];
-var novoTexto = textoOriginal.replace(/frutas|legumes/g, escolherItem);
-
-function escolherItem(match) {
-  if (match === "frutas") {
-    return nomeFruta;
-  } else if (match === "legumes") {
-    return nomeLegume;
-  }
-}
-
-console.log(novoTexto);
-
-// Output: Aqui temos uma lista de compras: maçãs e cenouras.
-```
-
-No código acima, utilizamos a regex `/frutas|legumes/g` para substituir as palavras "frutas" e "legumes" por variáveis `nomeFruta` e `nomeLegume`, respectivamente.
-
-## Aprofundando na busca e substituição de texto em Javascript
-
-Existem inúmeras possibilidades de busca e substituição de texto em Javascript, utilizando diferentes expressões regulares e métodos. Recomendamos que você estude mais sobre o assunto para se tornar um expert no tema.
-
-Além disso, é importante lembrar que as regex possuem diferentes recursos e sintaxes em cada linguagem de programação, então é sempre bom verificar a documentação do Javascript para ficar por dentro das melhores práticas e recursos atualizados.
-
-# Veja também
-
-- [Documentação oficial do método replace() em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Guia de Regex em Javascript](https://www.regular-expressions.info/javascript.html)
-- [Curso gratuito de Regex em Javascript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/)
-
-Obrigado por ler este artigo e esperamos ter ajudado a tornar seus projetos de programação mais ef
+- [Documentação do método replace() em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Tutorial sobre expressões regulares em JavaScript](https://www.freecodecamp.org/news/a-guide-to-regular-expressions-in-javascript-82c6d30258e7/)
+- [Tutorial de busca e substituição em Visual Studio Code](https://code.visualstudio.com/docs/editor/findandreplace)

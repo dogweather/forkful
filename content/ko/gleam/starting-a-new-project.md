@@ -1,36 +1,48 @@
 ---
-title:    "Gleam: 새로운 프로젝트 시작하기"
+title:    "Gleam: 새 프로젝트 시작하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 시작해야할까?
+Gleam 프로그래밍 블로그 포스트 - 새 프로젝트 시작하기
 
-새 프로젝트를 시작하게 되는 이유는 여러 가지가 있습니다. 예를 들어, 새로운 도전을 즐기거나 새로운 기술을 배우기 위해서 일 수 있습니다. 또는 새로운 제품이나 서비스를 만들고 싶어서 시작할 수도 있습니다. 어떤 이유로든, 새로운 프로젝트를 시작하는 것은 도전적이고 재미있는 일입니다.
+## 왜?
 
-## 어떻게 시작할까?
+새로운 프로젝트를 시작할 때 왜 누군가는 이에 참여하는지 궁금하지 않으신가요? Gleam은 에러가 더 적은 코드를 작성하고 디버깅하기 쉬우며, 함수형 프로그래밍과 모듈 시스템을 지원하기 때문에 더 나은 개발 경험을 제공합니다. 또한 Erlang 가상 머신 위에서 돌아가기 때문에 견고하고 확장 가능한 어플리케이션을 만들 수 있습니다.
 
-새로운 프로젝트를 시작하기 위해서는 우선 언어부터 선택해야 합니다. 여러 언어 중에서 선택할 수 있는 Gleam은 함수형 프로그래밍 언어로 깨끗한 코드를 작성할 수 있도록 도와줍니다. 예를 들어 아래와 같이 Gleam 코드를 작성해보세요.
+## 시작하는 방법
+
+Gleam은 Erlang와 유사한 문법을 사용하기 때문에 Erlang 배경지식이 있는 분이라면 금방 익힐 수 있습니다. 그렇지 않더라도 Gleam 문서를 참고하면서 코드를 작성하면 됩니다.
+
+먼저 새로운 프로젝트 디렉토리를 만든 다음, 그 안에 `src` 폴더를 만듭니다. 그리고 `src` 폴더 안에 `main.gleam` 파일을 만듭니다. 이 파일에 다음과 같이 작성해보세요.
 
 ```Gleam
-let message = "안녕하세요!"
-let name = "글림"
-let fullMessage = message ++ " 나는 " ++ name ++ "이에요."
+pub fn main() {
+  let message = "New project, who dis?"
+  IO.println(message)
+}
 ```
 
-위 코드는 "안녕하세요! 나는 글림이에요." 라는 메시지를 만들어줍니다. 코드를 더 복잡하게 만들어보고 싶다면 여러분만의 창의적인 코드를 작성해보세요!
+이제 터미널에서 `gleam build src/main.gleam`을 실행해보면 컴파일이 성공하고 `new_project` 바이너리 파일이 생성됩니다. 이제 `./new_project`를 실행하면 메시지가 출력됩니다.
 
-## 깊게 들어가보기
+## 깊게 파보기
 
-새로운 프로젝트를 시작할 때 필요한 것 중 하나는 적절한 IDE입니다. Gleam 공식 웹사이트에서 자신의 운영체제에 맞는 IDE를 다운로드 받으세요. 또한 Gleam 커뮤니티에서 다른 개발자들과 의견을 나누고 도움을 받을 수도 있습니다. 새로운 언어로 시작하는 것은 어렵고 많은 고민이 필요하지만, Gleam은 보기 쉬운 문법과 강력한 도구들로 여러분을 도와줄 것입니다.
+새로운 Gleam 프로젝트를 시작할 때 몇 가지 중요한 점을 주의해야 합니다. 첫째, `pub fn main` 함수는 모든 프로젝트에서 유일해야 합니다. 둘째, 모든 코드는 `src` 폴더에 있어야 합니다. 셋째, `pub fn main` 함수는 어떤 값을 반환하지 않고, 모든 코드는 어떤 값이든 반환해야 합니다.
 
-# 더 알아보기
+## 관련 자료
 
-자세한 정보는 [Gleam 공식 웹사이트](https://gleam.run/)와 [Gleam 공식 문서](https://gleam.run/documentation/)를 참고하세요. 또한 Gleam 커뮤니티에서 여러분의 질문을 해결해줄 수 있는 다른 개발자들과 소통해보세요!
+Gleam 문서: https://gleam.run/getting-started.html
 
-# 참고자료
+Erlang 문서: http://erlang.org/doc/index.html
 
-- [Gleam 공식 웹사이트](https://gleam.run/)
-- [Gleam 공식 문서](https://gleam.run/documentation/)
-- [Gleam 커뮤니티](https://github.com/gleam-lang/gleam/discussions)
+IO 모듈 문서: https://gleam.run/modules/io.html
+
+파일 I/O 예제: https://github.com/gleam-lang/gleam/blob/main/examples/file_io.gleam
+
+홈브루를 통한 Gleam 설치: https://gleam.run/getting-started.html#installing-gleam-with-homebrew
+
+오마츠 캠페인 - 함수형 언어 블로거: https://gleam.run/posts/erlang-and-everything-austin-zhu-has-learned.html
+
+Youtobe - Gleam 패턴 매칭 예제: https://www.youtube.com/watch?v=fFcIvt1vfwY

@@ -1,54 +1,36 @@
 ---
-title:    "Swift: 標準エラーへの書き込み"
+title:    "Swift: 「標準エラーに書き込む」"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Why:
+## なぜ
 
-なぜ: なぜ誰かが標準エラーに書き込む必要があるのか、その理由を1-2文で説明。
+なぜ「標準エラー」に書き込む必要があるのでしょうか？Swiftプログラミングで、標準エラーを利用するメリットについてご紹介します。
 
-標準エラーに書き込む理由はいくつかあります。最も一般的な理由は、プログラムのデバッグ中に発生したエラーを特定し、修正するためです。標準エラーに書き込むことにより、プログラマーは詳細な情報を取得し、問題を解決することができます。
+## 方法
 
-How To:
-
-  ※すべてのコードは```Swift ... ```という形式で示されます。
-
-### 標準エラーへの書き込みの方法
-
-まず、`FileHandle`を使用して標準エラーのファイルデスクリプターを取得します。次に、`standardError`を使用して、エラーを出力するためのストリームを取得します。
+標準エラーへの書き込み方法はとても簡単です。下記のコード例をご覧ください。
 
 ```Swift
-let fileHandle = FileHandle.standardError
-let stream = TextOutputStream(fileHandle: fileHandle)
+var standardError = FileHandle.standardError
+let data = "エラーが発生しました".data(using: .utf8)
+standardError?.write(data!)
 ```
 
-このストリームを使用して、エラーを出力することができます。以下の例では、値を定義し、その値をストリームに書き込んでいます。
+実行すると、次のように標準エラーにメッセージが表示されます。
 
-```Swift
-let errorValue = "エラーが発生しました。"
-print(errorValue, to: &stream)
+```
+エラーが発生しました
 ```
 
-このコードを実行すると、標準エラーにメッセージが出力されます。
+## 深堀り
 
-```text
-エラーが発生しました。
-```
+標準エラーへの書き込みは主にエラーハンドリング時に使用されます。例えば、ファイルの読み込みに失敗した場合や、不正な入力があった場合などに、エラーメッセージを標準エラーに表示することができます。また、標準エラーは標準出力とは別のストリームを持つため、バグのデバッグやログを出力する際にも便利に使えます。
 
-Deep Dive:
+## あわせて読みたい
 
-### 詳細な情報
-
-標準エラーに書き込むことにより、プログラマーはエラーの詳細な情報を取得することができます。例えば、スタックトレースやプログラムの状態を表示することができます。これらの情報を使用して、どの部分のコードが問題を引き起こしているのかを特定し、迅速に解決することができます。
-
-標準エラーに出力されるメッセージは、通常赤色で表示されるため、プログラムの実行中に気づきやすく、修正することができます。
-
-See Also:
-
-参考リンク:
-
-- [Swiftの基本: 標準出力と標準エラー](https://developer.apple.com/documentation/swift/standardoutput)
-- [Swiftプログラミング: デバッグの基礎](https://www.raywenderlich.com/16422324-swift-programming-debugging-basics)
-- [Swiftでエラー処理をする方法](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [Swiftのエラーハンドリングについてのドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [FileHandleクラスについてのドキュメント](https://developer.apple.com/documentation/foundation/filehandle)

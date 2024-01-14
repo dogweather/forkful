@@ -1,48 +1,45 @@
 ---
 title:    "Rust: Sjekke om en mappe eksisterer"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Et viktig aspekt ved programmering er å sikre at koden din håndterer potensielle problemer som kan oppstå under kjøring. En av disse utfordringene er å sjekke om en mappe eksisterer før du prøver å utføre operasjoner på den. Dette er spesielt nyttig når du håndterer filer og mapper som brukeren selv kan ha skapt eller slettet.
+Å sjekke om en mappe eksisterer er en viktig del av programmering i Rust, spesielt når du jobber med filsystemer. Dette kan hjelpe deg med å håndtere feil og sikre at programmet ditt fungerer som det skal.
 
 ## Hvordan
 
-I Rust kan du sjekke om en mappe eksisterer ved å bruke std::fs biblioteket og dens funksjon `.metadata()` som returnerer metadata for en fil eller en mappe. Ved å bruke `is_dir()` metoden på denne metadatatypen, kan du få informasjon om hvorvidt den gitte filen er en mappe eller ikke. Hvis filen er en mappe, betyr det at mappen eksisterer, hvis ikke, betyr det at mappen ikke finnes.
-
-For å gjøre dette enda enklere, kan du pakke dette inn i en funksjon som tar inn en streng som representerer mappen du ønsker å sjekke. Her er et eksempel på hvordan det kan se ut:
+For å sjekke om en mappe eksisterer i Rust, kan du bruke funksjonen `Path::is_dir()` fra standardbiblioteket. Her er et eksempel på hvordan du kan bruke denne funksjonen i et program:
 
 ```Rust
 use std::fs;
 
-fn check_directory_exists(path: &str) -> bool {
-    let metadata = fs::metadata(path);
-
-    match metadata {
-        Ok(metadata) => metadata.is_dir(),
-        Err(_) => false,
-    }
-}
-
 fn main() {
-    let directory_exists = check_directory_exists("my_directory");
-    println!("My directory exists: {}", directory_exists);
+    let directory = "min_mappe";
+
+    if fs::metadata(directory).is_ok() && fs::metadata(directory).unwrap().is_dir() {
+        println!("Mappen {} eksisterer!", directory);
+    } else {
+        println!("Mappen {} eksisterer ikke.", directory);
+    }
 }
 ```
 
-I dette eksempelet, vil funksjonen sjekke om mappen "my_directory" eksisterer og returnere en bool verdi avhengig av resultatet. Deretter vil denne verdien skrives ut i konsollen. Hvis mappen eksisterer, vil utgangen bli "true", hvis ikke, vil utgangen bli "false".
+I dette eksempelet bruker vi først `fs::metadata()` for å hente metadata om mappen. Hvis dette er vellykket, kan vi bruke `is_dir()` for å sjekke om det er en mappe. Hvis det er tilfelle, vil vi få en beskjed om at mappen eksisterer.
 
 ## Dypdykk
 
-Når vi bruker `.metadata()` funksjonen, vil det returnere en `Result` type som enten vil inneholde metadataen for mappen eller en feil hvis mappen ikke finnes. Dette betyr at vi må bruke `match` for å håndtere begge tilfellene.
+Når vi bruker `fs::metadata()` for å sjekke om mappen eksisterer, må vi også håndtere eventuelle feil som kan oppstå. Dette kan gjøres ved hjelp av `Result`-typen og `unwrap()`-metoden.
 
-Det er også verdt å merke seg at denne funksjonen kan føre til at programmet ditt henger hvis mappen du prøver å sjekke inneholder en stor mengde filer. Dette skyldes at `.metadata()` funksjonen vil prøve å lese informasjon om alle filene i mappen, noe som kan være tidskrevende. Dette problemet kan løses ved å bruke `.exists()` funksjonen i stedet, som bare sjekker om mappen eksisterer uten å lese all metadata.
+En annen måte å sjekke om en mappe eksisterer på, er å bruke `Path::exists()` i stedet for `is_dir()`. Forskjellen er at `exists()` vil returnere `true` selv om det er en fil og ikke en mappe med det aktuelle navnet.
+
+Det er også verdt å merke seg at disse funksjonene bare sjekker om en fil eksisterer og ikke om du har tilgang til den. Derfor er det fortsatt viktig å håndtere eventuelle feil som kan oppstå når du prøver å åpne en fil eller mappe.
 
 ## Se også
 
+- [Dokumentasjon for stienes koplinger (Path links)](https://doc.rust-lang.org/std/path/index.html#links)
 - [Rust std::fs dokumentasjon](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust resultater og håndtering av feil](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)
-- [Sjekke om en fil eksisterer i Rust](https://mattschulte.github.io/2020/02/23/check-if-file-exists-in-rust-html)
+- [Hvordan håndtere feil og unntak i Rust](https://www.rust-lang.org/learn/errors)

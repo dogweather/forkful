@@ -1,37 +1,56 @@
 ---
-title:    "Fish Shell: Alastringien erottelu"
+title:    "Fish Shell: Merkkijonojen erottaminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi haluaisit poimia osastringejä?
 
-Substringien uuttaminen on hyödyllinen taito Fish Shell ohjelmoinnissa, sillä se mahdollistaa tiettyjen merkkijonojen erottamisen suuremmista merkkijonoista. Tämä voi auttaa tehostamaan koodia ja säästämään aikaa kirjoittaessa.
+Osastringien poimiminen on tärkeä osa Fish Shell -ohjelmoinnissa, koska se mahdollistaa tietyn osan merkkijonosta erottamisen ja käyttämisen. Tämä voi olla hyödyllistä esimerkiksi tiedostojen tai muuttujien nimien käsittelyssä.
 
-## Miten tehdä
+## Kuinka: Koodiesimerkkejä ja tulosteita "```Fish Shell ... ```" -koodilohkoissa.
 
-Fish Shell tarjoaa kätevän tavan uuttaa substringit käyttämällä sisäänrakennettuja funktioita `string sub` ja `string match`. Esimerkiksi, jos haluamme erottaa merkkijonon "-fishsell" merkkijonosta "this-is-a-fishsell-tutorial", voimme käyttää seuraavaa koodia:
-
-```Fish Shell
-string sub -b -q -u "this-is-a-fishsell-tutorial" "-fishsell"
+#### Koodiesimerkki 1:
+```
+set name "Fish Shell"
+echo $name[5..-2]
+```
+#### Tuloste:
+```
+Shel
 ```
 
-Tämä tuottaisi tulosteeksi "this-is-a-tutorial". Käyttämällä `-b` vaihtoehtoa, voimme määrittää, että merkkijonon loppuosa ("fishsell") tulee substrinksi. `-q` vaihtoehto piilottaa tulosteesta lainausmerkit, ja `-u` vaihtoehto tekee tuloksesta ainutlaatuisen.
+Tässä esimerkissä "Fish Shell" -merkkijonosta poimitaan osastringi "Shel" käyttämällä sulkumerkkejä ja indeksiä.
 
-Toinen tapa uuttaa substringi on käyttää funktiota `string match`, joka palauttaa merkkijonon osan, joka täsmää annetun säännön kanssa. Esimerkiksi, jos haluamme erottaa osan merkkijonosta "fishsell-tutorial", jossa on vain pienet kirjaimet, voimme käyttää seuraavaa koodia:
-
-```Fish Shell
-string match -lr "[a-z]+$" "fishsell-tutorial"
+#### Koodiesimerkki 2:
+```
+set filename "blog_post.md"
+echo $filename[-5..]
+```
+#### Tuloste:
+```
+post.md
 ```
 
-Tämä tuottaisi tulotseksi "tutorial", sillä vain "tutorial" täsmää sääntöön `[a-z]+$`, joka tarkoittaa, että merkkijonossa tulee olla vain pieniä kirjaimia viimeisen merkin jälkeen.
+Tässä esimerkissä tiedostonimessä poimitaan osastringi "post.md" käyttämällä negatiivista indeksiä.
 
-## Syvällisempi sukellus
+## Syvemmälle: Tietoa osastringien poimimisesta.
 
-Fish Shell tarjoaa myös muita hyödyllisiä toimintoja substringien uuttamiseen, kuten `string replace`, joka korvaa merkkijonon osan toisella merkkijonolla, ja `string trim`, joka poistaa merkkijonosta tiettyjä merkkejä tai sanoja. Näitä funktioita voidaan hyödyntää monin eri tavoin substringien käsittelyssä ja muokkaamisessa.
+Fish Shell tarjoaa erilaisia tapoja poimia osastringejä merkkijonoista. Alla on muutamia esimerkkejä eri tavoista ja niiden selitykset.
 
-## Katso myös
+#### Sulkumerkkejä ja indeksejä käyttäminen:
+Sulkumerkkejä [] voidaan käyttää määrittämään tietty indeksi tai indeksien alue, josta halutaan poimia osastringi. Indeksit voivat olla myös negatiivisia, mikä tarkoittaa, että laskeminen tapahtuu merkkijonon lopusta.
 
-- String Manipulation in Fish Shell: https://fishshell.com/docs/current/cmds/string.html
-- 10 kätevää Fish Shell ohjetta: https://www.ee.ryerson.ca/~elf/hack/fish.1.html
+#### Otsikon poimiminen merkkijonon alusta:
+Jos haluat poimia osastringin merkkijonon alusta, voit käyttää seuraavaa syntaksia: ```$merkkijono[indeksi..]```
+
+#### Otsikon poimiminen merkkijonon lopusta:
+Jos haluat poimia osastringin merkkijonon lopusta, voit käyttää seuraavaa syntaksia: ```$merkkijono[..indeksi]```
+
+Syvemmät tiedot ja esimerkit löydät Fish Shellin virallisilta verkkosivuilta dokumentaatiosta.
+
+## Katso myös:
+- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/)
+- [Substring Extraction in Fish Shell](https://dzone.com/articles/substring-extraction-in-fish-shell)

@@ -1,52 +1,47 @@
 ---
-title:    "Gleam: קריאת ארגומנטים של שורת פקודה"
+title:    "Gleam: קריאת ארגומנטים מהשורת פקודה"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+‎
+# למה ‎
+הכניסה לתכנית עם פרמטרים מפתחים היא כלי עוצמתי ושימושי ביותר בתכנות גלאם. כאשר משתמשים בפרמטרים מפתחים, ניתן להעביר ערכים לתוכנית ולהשתמש בהם בקלות ובפשטות. זה עוזר להפעיל את התכנית בצורה שונה ולספק מידע נלווה לפעולתה.‎
 
-למה כדאי לקרוא על ארגומנטים של שורת פקודה בגלים? במאמר זה נלמד כיצד לקרוא ולהשתמש בארגומנטים של שורת פקודה בגלים, ואיך זה יכול לאפשר לנו ליצור תכניות מעניינות ויעילות.
-
-## איך לעשות זאת
-
-כדי לקרוא ארגומנטים של שורת פקודה בגלים, ניתן להשתמש בפונקציית `Command.args()` ולשמור את התוצאה בפרמטר מסוג `Command.Args`. לדוגמה:
-
+# איך לעשות זאת ‎
+תכנות גלאם מספק דרך פשוטה ונוחה לקריאת פרמטרים מפתחים באמצעות הפונקציה `gleam_io.arguments()`. תנו מבט לדוגמאות הקוד והפלט להמחשה: ‎
+‎
 ```Gleam
-fn main(_) {
-  let args = Command.args()
-  case args {
-    [] -> println("No arguments passed")
-    [first] -> println("The first argument is: ", first)
-    [first, second, third] -> println("Multiple arguments passed: ", first, ", ", second, ", ", third)
-  }
-}
+import gleam/io
+import gleam/string
+
+arguments -> 
+  case arguments of
+    [name] -> 
+      io.print("שלום {{string.to_title_case(name)}}!")
+    [] -> 
+      io.print("התוכנית נקראה ללא פרמטרים מפתחים.")
 ```
 
-כאשר מפעילים את התכנית עם הארגומנטים "Hello", "שלום" ו"こんにちは", הפלט יהיה:
-
+פלט: ‎
+‎
+כאשר התאמנו את הקוד והרצנו את התוכנית עם הפרמטר "גלאם", הפלט יהיה: ‎
+‎
 ```
-Multiple arguments passed: Hello, שלום, こんにちは
-```
-
-## לחקור יותר
-
-ניתן לקרוא ערכים מסוימים מתוך הארגומנטים של שורת הפקודה באמצעות פונקציית `Command.value()`. ניתן גם להעביר לפונקציה זו את הסוג המתאים של הערך שאנחנו מצפים לקבל. לדוגמה, אם נרצה לקרוא ערך מספרי מתוך הארגומנט השני, נוכל לעשות כך:
-
-```Gleam
-fn main(_) {
-  let second_arg = Command.value(1, Type.Integer)
-  case second_arg {
-    Ok(number) -> println("The second argument is an integer: ", number)
-    Error(_) -> panic("The second argument is not an integer")
-  }
-}
+שלום גלאם!
 ```
 
-כעת נוכל לעבור על רשימת הארגומנטים ולכוף אם אירעה שגיאה בקריאת ארגומנטים לאחריהם. ניתן למצוא מידע נוסף על כל הפונקציות הנתמכות בפלטפורמה של גלים במפרט של הפונקציות של שפת גלים [כאן] (https://gleam.run/library/gleam/Command).
+כאשר הרצנו את התוכנית ללא פרמטרים מפתחים, הפלט יהיה: ‎
+‎
+```
+התוכנית נקראה ללא פרמטרים מפתחים.
+```
 
-## ראו גם
+# חקר מעמקים ‎
+כאשר מקבלים פרמטרים מפתחים, ניתן לשלב אותם עם פונקציות אחרות כדי ליצור תוכנית מתוחכמת ועוצמתית יותר. ניתן להשתמש במתיקות קוד כדי לתת יחסי מס או כדי ליצור תנאים אחרות להפעלת התוכנית בקלות ובפשטות. ניתן גם לנצל את הפרמטרים מפתחים כדי להעביר מידע בין תוכניות שונות.
 
-- [Official Gleam Docs] (https://gleam.run/)
-- [Command Line Arguments in Gleam] (https://gleam.run/library/gleam/Command)
+# ראו גם ‎
+- [תיעוד גלאם על פרמטרים מפתחים](https://gleam.run/docs/getting-started/cli-arguments)
+- [פונקציות מת

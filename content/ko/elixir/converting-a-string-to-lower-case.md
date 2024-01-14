@@ -1,36 +1,38 @@
 ---
-title:    "Elixir: 문자열을 소문자로 바꾸기"
+title:    "Elixir: 문자열을 소문자로 변환하기"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 소문자로 변환하는 것의 중요성은 Elixir 프로그래밍에서 문자열을 다루는 데에 있습니다. 이 기능을 사용하면 문자열을 비교하거나 검색할 때 대소문자를 무시할 수 있으며 결과물을 일관되게 만들 수 있습니다.
+문자열을 소문자로 변환하는 이유는 데이터의 일관성을 유지하고, 검색 및 비교 작업을 더 쉽게하기 위해서입니다.
 
-## 하우 투
+## 하기 방법
 
+```Elixir
+# 간단한 방법
+String.downcase("ELIXIR") #=> "elixir"
+
+# 변수에 할당하기
+original_string = "ELIXIR"
+lower_case = String.downcase(original_string) #=> "elixir"
+
+# 조건문과 함께 사용하기
+String.downcase("Elixir", "en") #=> "elixir"
+String.downcase("Elixir", "ko") #=> "elixir"
 ```
-Elixir defp downcase(string) do
-  String.downcase(string)
-end
 
-IO.puts downcase("Hello, World!")
-```
+첫번째 예제는 단순히 `String.downcase/1` 함수를 사용하여 문자열을 소문자로 변환합니다. 두번째 예제는 변수를 사용하여 변환한 문자열을 다룰 수 있도록 합니다. 마지막 예제는 두번째 인자에 언어 코드를 지정하여 해당 언어에 맞는 소문자로 변환할 수 있습니다.
 
-```
-# Output: "hello, world!"
-```
+## 더 깊게 들어가기
 
-위의 코드에서는  `String.downcase/1` 함수를 사용하여 문자열을 소문자로 변환하는 함수를 만듭니다. 이를 `downcase/1` 함수를 사용하여 출력하면 입력한 문자열이 소문자로 변환되어 출력됩니다.
+Elixir에서는 문자열 변환 작업을 위해 내장 함수인 `String.downcase/1` 외에도 더 많은 옵션을 제공합니다. `String.downcase/3` 함수를 사용하면 언어 코드 외에도 유니코드 표준에 따라 변환 작업을 할 수 있습니다. 또한, `String.downcase/3` 함수는 `:locale` 옵션을 통해 사용자가 직접 언어에 맞는 변환 규칙을 전달할 수 있습니다.
 
-## 딥 다이브
+## 관련 링크
 
-이제 문자열을 소문자로 변환하는 방법에 대해 더 자세히 알아보도록 하겠습니다. Elixir에서는 문자열을 처리할 때 모두 `String` 모듈에서 제공하는 함수들을 사용합니다. 즉, `String.downcase/1` 함수 또한 `String` 모듈에서 제공하는 함수 중 하나입니다.
-
-`String.downcase/1` 함수는 먼저 입력받은 문자열의 각 문자를 하나씩 처리합니다. 이때 문자의 유니코드 값을 확인하여 대문자인 경우 소문자로 변환시킨 후 결과물을 반환합니다. 그렇기 때문에 이 함수를 사용하면 모든 언어의 문자를 소문자로 변환할 수 있습니다.
-
-## 참고 자료
-
-- [Elixir String 모듈 문서](https://hexdocs.pm/elixir/String.html)
+[《Elixir School》](https://elixirschool.com/ko/lessons/basics/strings/#%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%B3%80%ED%99%98)  
+[《Programming Elixir 1.6》](https://doc-kurento.readthedocs.io/en/latest/INSTALL.html)  
+[《Elixir Korea》](http://elixir-kr.github.io/2015/08/23/section_3.html)

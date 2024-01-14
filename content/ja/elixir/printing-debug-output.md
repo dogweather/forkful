@@ -1,45 +1,50 @@
 ---
 title:    "Elixir: デバッグ出力の印刷"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
+Japanese translation: 
+
 ## なぜ
-Elixirでのデバッグ出力を表示するのか、その理由をご存知ですか？デバッグ出力を使用することで、プログラムの実行中に各ステップを確認することができます。これにより、コードの動作を理解し、エラーを特定することができます。
 
-## 方法
-デバッグ出力を表示するには、コードの中に`IO.inspect/2`を使用します。以下のような構文を使用してください。
-```Elixir
-IO.inspect(value, label: "デバッグ出力")
-```
-このようにすると、`value`の値がラベルとともに出力されます。例えば、`age = 25`というコードがあった場合、以下のように表示されます。
-```
-デバッグ出力: 25
-```
-また、モジュール内のすべての関数にデバッグ出力を追加する場合は、`using`キーワードを使用して、自動的に`IO.inspect`を挿入することができます。以下のように使用します。
-```Elixir
-defmodule Example do
-  using :debug
+デバッグ出力を表示することの利点を説明します。 
 
-  def add(a, b) do
-    a + b
-  end
+デバッグ出力は、アプリケーションの動作を理解し、問題を解決するために非常に有用です。コードを実行している間に起こった処理を把握し、プログラムの動きをトラックすることができます。さらに、デバッグ出力には、特定の変数の値や条件を確認することもできます。 
 
-  def multiply(a, b) do
-    a * b
-  end
-end
+## 使い方 
+
+デバッグ出力を表示するには、Elixirの `IO.inspect` 関数を使用します。以下は、リストの要素を1つずつデバッグ出力する例です。 
+
+```Elixir 
+list = [1, 2, 3] 
+Enum.each(list, fn x -> 
+  IO.inspect(x) 
+end) 
 ```
-これにより、関数の実行時に自動的にデバッグ出力が表示されます。
 
-## 深堀り
-デバッグ出力を表示する際には、`IO.inspect`にいくつかのオプションを追加することもできます。例えば、`depth`オプションを使用すると、ネストされたデータ構造内の階層を制限できます。以下のように使用します。
-```Elixir
-IO.inspect(data, depth: 2)
-```
-また、`color: [:cyan, :bg_black]`オプションを使用すると、ターミナル上でデバッグ出力をカラー表示することもできます。
+出力結果: 
 
-## See Also
-- [ElixirのIOモジュール](https://hexdocs.pm/elixir/IO.html)
-- [プロダクション環境でのデバッグ出力の制御](https://elixir-lang.org/getting-started/debugging.html#controlling-debug-output-in-production-environments)
+```shell 
+1 
+2 
+3 
+``` 
+
+## ディープダイブ 
+
+デバッグ出力をより効果的に使用するためには、いくつかのテクニックがあります。 
+
+- デバッグ出力をさまざまな階層で使用することで、プログラムの流れを把握しやすくなります。 
+- 特定の変数や条件の値のみをデバッグ出力することもできます。 
+- `IO.inspect(, label: "message")` を使用することで、メッセージを表示することができます。 
+
+## 参考リンク
+
+「[Elixirのデバッグ出力](https://elixirschool.com/jp/lessons/basics/io-and-the-stdout/)」 - Elixirスクールの基本レッスン 
+
+「[ElixirのIOモジュール](https://elixir-lang.org/getting-started/io-and-the-file-system.html)」 - 公式ドキュメント 
+
+「[コーディング中の5つのElixirデバッグテクニック](https://divante.com/blog/5-elixir-debugging-tools-to-use-when-the-code-goes-south/)」 - Divanteブログ記事

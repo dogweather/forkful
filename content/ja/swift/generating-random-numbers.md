@@ -1,37 +1,42 @@
 ---
-title:    "Swift: ランダム数値の生成"
+title:    "Swift: ランダムな数を生成する"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜランダムな数字を生成するのか？
 
-ランダムな数字を生成することに取り組む理由は、多くの場合、乱数が必要な特定のアプリケーションやゲームを作成する必要があるためです。幅広いランダムな数値を生成することで、より動的で面白いアプリケーションを作成することができます。
+ランダムな数字を生成することには、さまざまな用途があります。たとえば、ゲームや宝くじなどのギャンブルで使用するためにランダムな数値が必要な場合や、ランダムなデータを使ってテストを行う場合などが挙げられます。
 
-## 生成する方法
+# ランダムな数字を生成する方法
 
-ランダムな数値を生成するためにSwiftで使用できる2つの方法があります。一つは、`arc4random()`を使用する方法です。コードの例を示します。
+Swiftでは、Int型の乱数を生成するために`arc4random_uniform()`メソッドが使用できます。このメソッドは、指定した範囲内のランダムな整数を返します。例えば、1から100までのランダムな数字を生成する場合は以下のように記述します。
 
 ```Swift
-let randomNumber = arc4random()
+let randomNumber = Int(arc4random_uniform(100)) + 1
 print(randomNumber)
 ```
 
-このコードは、0から最大のランダムな数値までの数値を生成します。また別の方法として、`arc4random_uniform()`があります。これは、生成したいランダムな数値の範囲を指定できます。例えば、1から10までの数値を生成する場合、以下のようなコードを使用できます。
+このコードの出力例は、以下の通りです。
+
+```
+58
+```
+
+# ランダムな数字を生成する際の深堀り
+
+乱数を生成するたびに同じ数字が出てしまう可能性があります。そのため、よりランダムな数を生成するには、現在時刻を使用することができます。
 
 ```Swift
-let randomNumber = arc4random_uniform(10) + 1
+let randomNumber = Int(Date().timeIntervalSince1970) % 100
 print(randomNumber)
 ```
 
-このコードは、1から10までの数値をランダムに生成します。どちらの方法を選んでも、確実にランダムな数値を生成することができます。
+このコードでは、現在の時刻を元にランダムな数字が生成されます。もし、同じ時刻で生成された場合でも、`%`演算子によって100で割った余りが返されるので、より多様な数字が生成されるでしょう。
 
-## ディープダイブ
-
-ランダムな数字を生成する方法には、さまざまな方法があります。しかし、最も一般的な方法は、疑似乱数ジェネレーターを使用して数値を生成することです。これらのジェネレーターは、本当のランダム性をシミュレートすることで、ランダムな数値を生成します。Swiftでは、`arc4random()`や`arc4random_uniform()`などの組み込みの関数を使用して、これらのジェネレーターを実装します。
-
-## 併せて参照
-
-- [Swift公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID334)
-- [ランダムな数値を生成する方法](https://dzone.com/articles/how-to-generate-random-numbers-in-swift)
+# See Also
+- [Swift公式ドキュメント - arc4random_uniform()](https://developer.apple.com/documentation/swift/1558373-arc4random_uniform)
+- [ランダムな数字を生成する方法 ー Qiita](https://qiita.com/KikurageChan/items/6f4ea8c0466d9ba097fd)
+- [Swiftで乱数を生成する - Swiftサンプルコード集](https://swift-salaryman.com/random.php)

@@ -1,38 +1,62 @@
 ---
-title:    "C: コンピュータのプログラミングにおける「コマンドライン引数の読み込み」"
+title:    "C: コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-コマンドライン引数を読み取ることは、プログラミングで非常に便利です。コマンドライン引数を使用することで、ユーザーがプログラムを実行するときに必要な情報を提供することができます。これにより、プログラムをより柔軟に使用することができます。
+## なぜ
 
-## 使い方
-コマンドライン引数を読み取るには、以下のようなCプログラムを使用します。
+コマンドライン引数の読み取りを行う理由はさまざまですが、主な理由はプログラムの柔軟性を高めるためです。コマンドライン引数を使用することで、ユーザーがプログラムの挙動をカスタマイズしたり、異なる値を入力したりすることができます。
+
+## 実装方法
+
+コマンドライン引数を読み取るためには、まず`main()`関数の引数に`argc`と`argv`を追加します。`argc`はコマンドライン引数の数を表し、`argv`は引数の値を配列として保持します。
+
+以下の例では、コマンドライン引数を計算に使用する数値として取得し、それらの合計を出力するプログラムを示します。
 
 ```C
-#include <stdio.h>
+#include <stdio.h> 
 
-int main(int argc, char *argv[]) {
-    int i;
-    for (i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]); 
-    }
-    return 0;
-}
+int main(int argc, char *argv[]) 
+{ 
+    int sum = 0; 
+  
+     // 引数の数だけループを実行
+    for(int i = 1; i < argc; i++) 
+    { 
+        // argv配列から数値を取得してsumに加算
+        sum += atoi(argv[i]); 
+    } 
+  
+    // 合計を出力
+    printf("合計は %d です。", sum); 
+  
+    return 0; 
+} 
 ```
 
-上記のプログラムでは、`argc`と`argv`という2つの変数を使用しています。`argc`は引数の数を表し、`argv`は実際の引数を格納する配列です。プログラムを実行するときに引数を渡すことで、`argc`が変更され、`argv`の要素に引数が割り当てられます。
+コンパイルして実行すると、以下のような結果が得られます。
 
-例えば、上記のプログラムを`./example arg1 arg2`というコマンドで実行すると、`argc`は3になり、`argv`の要素は`./example`、`arg1`、`arg2`となります。そして、プログラムはこれらの引数を順に出力します。
+```
+入力: gcc sum.c -o sum
+引数: 1 2 3 4 5
+出力: 合計は 15 です。
+```
 
-## ディープダイブ
-コマンドライン引数を読み取るとき、注意しなければならないのは引数のデータ型です。`argv`はすべての引数を文字列として格納するため、数値型や文字型に変換する必要があります。また、引数を正しく渡さないと、例外処理を行うことができないため、引数の数や型をチェックすることが重要です。
+## 深堀り
 
-また、コマンドラインで`-h`や`--help`といったオプションを使用することで、プログラムのヘルプを表示することができます。これらのオプションを処理するために、`argc`と`argv`を使用する方法もあります。
+コマンドライン引数は、プログラムを実行する前に変更することができます。例えば、ファイル名やオプションの設定など、プログラムに必要な情報を渡すことができます。また、引数を使用することで、プログラムの実行時にエラーを検出することも可能です。
 
-# 参考リンク
-- [C言語のコマンドライン引数を処理する方法](https://www.techscore.com/blog/2015/03/03/c%E8%A8%80%E8%AA%9E%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E5%BC%95%E6%95%B0%E3%82%92%E5%87%A6%E7%90%86%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
-- [コマンドライン引数を扱う方法 (C言語)](https://qiita.com/mono_taro/items/d331f460ef978377f668)
-- [C言語でコマンドライン引数を扱う](https://www.it-swarm-ja.tech/ja/c/command-line-arguments/966305555/)
+さらに、コマンドライン引数はデバッグにも役立ちます。デバッグ時に変数の値をハードコーディングする代わりに、コマンドライン引数から値を取得すれば、プログラムを再コンパイルする必要なく変更することができます。
+
+## 関連リンク
+
+- [コード例と詳細な説明 - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [コマンドライン引数を使用する際の注意点 - GeeksforGeeks](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [引数の数や内容をバリデーションする方法 - CodeGuru](https://www.codeguru.com/cpp/cpp/cpp_mfc/article.php/c3879/Handling-Command-line-Arguments-as-a-Flexible-and-Powerful-Component-of-any-C-Application.htm)
+
+## ご参考
+
+- [Markdown 記法チートシート](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)

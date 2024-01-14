@@ -1,51 +1,53 @@
 ---
 title:    "Rust: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Kalkulowanie daty w przeszłości lub przyszłości może być bardzo przydatne w wielu różnych sytuacjach. Na przykład, może to pomóc w planowaniu wydarzeń, w tworzeniu interfejsów użytkownika lub w analizowaniu danych. Dzięki użyciu Rusta do obliczania dat, można mieć pewność, że kod będzie bezpieczny i wydajny.
+Programowanie może wydawać się trudne i skomplikowane, ale dzięki językowi Rust oraz jego silnym typom i wydajnemu systemowi typów, można stworzyć niezwykle dokładne i precyzyjne programy. W tym artykule dowiecie się, dlaczego warto poznać możliwości obliczania dat w przyszłości lub przeszłości przy użyciu Rust.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Obliczanie daty w przyszłości lub przeszłości jest łatwe w języku Rust dzięki modułowi `chrono`. Najpierw należy dodać tę bibliotekę do projektu, a następnie użyć funkcji `DateTime` do utworzenia daty. Następnie można wykorzystać funkcję `add` lub `subtract`, aby dodać lub odjąć określoną ilość czasu od daty.
+Aby obliczyć datę w przyszłości lub przeszłości, możemy wykorzystać bibliotekę `chrono` dostępną w języku Rust. Poniżej znajduje się przykładowy kod, który pokazuje, jak obliczyć datę dziesięć dni od dzisiaj.
 
 ```Rust
-use chrono::{DateTime, Utc};
-use chrono::Duration;
+use chrono::{Local, Duration};
 
 fn main() {
-    let date_now = Utc::now();
-    let date_in_future = date_now.add(Duration::days(7));
-    let date_in_past = date_now.subtract(Duration::hours(12));
-    
-    println!("Aktualna data: {}", date_now);
-    println!("Data za tydzień: {}", date_in_future);
-    println!("Data 12 godzin temu: {}", date_in_past);
+    let today = Local::today(); // pobranie dzisiejszej daty
+    let future_date = today + Duration::days(10); // dodanie 10 dni do dzisiejszej daty
+    println!("Data za 10 dni: {}", future_date.format("%d/%m/%Y")); // wyświetlenie sformatowanej daty
 }
 ```
 
-To wyświetli następujące wyniki:
+Wyjście z powyższego kodu powinno wyglądać następująco:
 
-```none
-Aktualna data: 2021-08-04 15:00:00 UTC
-Data za tydzień: 2021-08-11 15:00:00 UTC
-Data 12 godzin temu: 2021-08-04 03:00:00 UTC
+```
+Data za 10 dni: 30/01/2022
 ```
 
-Można również używać różnych jednostek czasu, takich jak minuty, sekundy czy tygodnie, aby dostosować utworzone daty do swoich potrzeb.
+Możemy również obliczyć datę w przeszłości, zmieniając jedynie operator `+` na `-` oraz używając metody `subtract` zamiast `add`.
 
-## Deep Dive
+## Głębszy zanurk
 
-Chrono oferuje wiele innych funkcji, które ułatwiają obliczanie dat w przeszłości lub przyszłości. Na przykład, można użyć funkcji `with_timezone` w celu dostosowania daty do określonej strefy czasowej. Można także użyć funkcji `format` do wyświetlania daty w wybranym formacie.
+Biblioteka `chrono` oferuje również mnóstwo innych możliwości obliczania i manipulowania datami w Rust. Na przykład, możemy zmieniać daty na różne strefy czasowe, obliczać różnice między datami, formatować daty zgodnie ze swoimi preferencjami, a nawet generować losowe daty.
 
-Aby uzyskać więcej informacji o tym, jak korzystać z modułu `chrono`, warto zapoznać się z dokumentacją tej biblioteki.
+Ważne jest, aby pamiętać o ustawianiu domyślnej strefy czasowej `Local` na początku programu, ponieważ w przeciwnym razie biblioteka będzie korzystać z trybu UTC. Można to zrobić za pomocą kodu:
+
+``` Rust
+use chrono::{Local, Timelike};
+
+fn main() {
+    let local_now = Local::now();
+    println!("Aktualna godzina w Twojej strefie czasowej: {}", local_now.hour());
+}
+```
 
 ## Zobacz także
 
-- Dokumentacja Chrono: https://docs.rs/chrono/.
-- Przewodnik po języku Rust: https://www.rust-lang.org/learn.
-- Przykładowe projekty z użyciem Rusta: https://github.com/rust-lang-projects.
+- Dokumentacja biblioteki `chrono` na stronie: https://docs.rs/chrono/
+- Poradnik do rustlang na temat obliczania i manipulacji datami: https://www.rust-lang.org/learn/dates

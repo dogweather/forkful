@@ -1,43 +1,49 @@
 ---
-title:    "Gleam: Analyse des arguments de ligne de commande"
+title:    "Gleam: Lecture des arguments de ligne de commande"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi
 
-Si vous êtes nouveau dans la programmation, la lecture des arguments en ligne de commande peut sembler intimidante. Cependant, c'est une compétence essentielle pour tout développeur, car elle vous permet d'interagir avec votre programme et de personnaliser son exécution. Dans cet article, nous allons vous montrer comment lire les arguments en ligne de commande en utilisant Gleam.
+Si vous êtes développeur ou programmer en Gleam, il est essentiel de comprendre comment lire les arguments de ligne de commande. Cela vous permettra d'interagir avec votre programme et de le personnaliser en fonction des besoins de l'utilisateur.
 
-## Comment faire 
+# Comment faire
 
-Pour lire les arguments en ligne de commande en utilisant Gleam, nous allons utiliser la fonction `os.args()` de la bibliothèque standard. Cette fonction renvoie une liste de chaînes, représentant les arguments passés lors de l'exécution du programme. Voici un exemple de code pour lire et afficher ces arguments :
+Pour lire les arguments de ligne de commande en Gleam, vous pouvez utiliser la fonction `os.args()` qui renvoie un tableau de chaînes de caractères contenant tous les arguments saisis lors de l'exécution du programme.
+
+Voici un exemple de code montrant comment utiliser cette fonction :
 
 ```
 Gleam
-let args = os.args()
-io.println(args)
+
+import os
+import gleam/pretty-print
+
+fn main() {
+  let args = os.args()
+  pretty-print.formatln("Les arguments saisis sont : {}", [args])
+}
 ```
 
-Si vous exécutez ce programme avec les arguments `first arg` et `second arg`, vous obtiendrez la sortie suivante :
+Si vous exécutez ce programme avec la commande `gleam run mon_programme.gleam arg1 arg2`, vous obtiendrez l'affichage suivant :
 
 ```
-["first arg", "second arg"]
+Les arguments saisis sont : ["arg1", "arg2"]
 ```
 
-Comme vous pouvez le voir, les arguments sont stockés dans une liste, et nous pouvons y accéder et les utiliser dans notre programme.
+Vous pouvez ensuite utiliser ces arguments dans votre programme pour effectuer différentes actions en fonction des besoins de l'utilisateur.
 
-## Plongée en profondeur 
+# Plongée en profondeur
 
-Il existe plusieurs façons de manipuler et d'utiliser les arguments en ligne de commande dans Gleam. Par exemple, vous pouvez vérifier le nombre d'arguments en utilisant la fonction `length` de la bibliothèque `list` ou extraire des informations spécifiques en utilisant des fonctions telles que `hd` et `tl`.
+Il est important de noter que la fonction `os.args()` renvoie également le nom du programme en tant que premier argument. Par conséquent, si vous souhaitez uniquement obtenir les arguments saisis par l'utilisateur, vous devrez les extraire du tableau renvoyé par la fonction.
 
-Il est également possible de passer des options et des valeurs aux arguments en utilisant des drapeaux `-` ou des valeurs `--`. Cela peut être utile pour personnaliser l'exécution de votre programme ou pour spécifier des options comme des chemins de fichiers.
+De plus, en utilisant le module `os`, vous pouvez également accéder à d'autres informations utiles concernant l'environnement et l'exécution de votre programme, telles que les variables d'environnement ou le répertoire de travail actuel.
 
-## Voir aussi 
+# Voir aussi
 
-Maintenant que vous savez comment lire les arguments en ligne de commande en utilisant Gleam, vous pouvez explorer davantage en consultant les ressources suivantes :
-
-- Documentation officielle de la bibliothèque standard Gleam : https://gleam.run/documentation/stdlib/
-- Tutoriel de Gleam sur la gestion des arguments en ligne de commande : https://gleam.run/getting-started/command-line-arguments/
-
-Merci d'avoir lu cet article et n'hésitez pas à explorer plus en profondeur Gleam pour découvrir toutes ses fonctionnalités !
+- Documentation officielle sur les commandes de ligne de commande en Gleam : [lien](https://gleam.run/book/intro/Commandline_arguments.html)
+- Tutoriel sur les arguments de ligne de commande en Gleam : [lien](https://dev.to/joelwurtz/comment-gerer-les-arguments-de-ligne-de-commande-en-gleam-1cje)
+- Exemples de code pour différents cas d'utilisation des arguments de ligne de commande : [lien](https://github.com/search?q=language%3Agleam+command+line)

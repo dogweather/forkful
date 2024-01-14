@@ -1,84 +1,90 @@
 ---
 title:    "Elm: 读取文本文件"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-文本文件是电脑中最常见的文件类型之一。它们可以包含文本内容，如文章、指令和数据。阅读文本文件的能力是一项重要的技能，可以帮助您更好地操作和处理电脑的数据。在这篇文章中，我们将讨论如何使用Elm编程语言来读取文本文件。
+在编程世界里，阅读文本文件是非常常见的任务。无论是处理数据、读取配置文件还是读取用户输入，都需要对文本文件进行操作。在Elm编程中，我们也经常需要读取文本文件来获取数据或配置信息。因此，学习如何读取文本文件是非常重要的。
 
-## 怎么做
+## 如何
 
-要读取文本文件，您首先需要创建一个`File`对象，它将指向您要读取的文件。您可以使用标准库中的`File`模块来创建此对象。例如，假设我们有一个名为`sample.txt`的文本文件，我们可以使用以下代码来创建一个`File`对象：
+在Elm中，我们可以使用内置的文件读取函数来读取文本文件。首先，我们需要导入`File`模块。
 
-```Elm
-import File exposing (File)
-
-
-file : File
-file =
-    File.fromPath "sample.txt"
+```elm
+import File
 ```
 
-接下来，我们需要指定我们要使用的编码格式。大多数文本文件都使用UTF-8编码，因此我们可以指定它作为我们的编码格式：
+然后，使用`File.read`函数来读取文本文件。这个函数接收两个参数，第一个参数为要读取的文件路径，第二个参数为读取完成后的回调函数。
 
-```Elm
-import File exposing (File)
-import Text.Encoding exposing (UTF8)
-
-
-file : File
-file =
-    File.fromPathWith
-        { encoding = UTF8 }
-        "sample.txt"
+```elm
+File.read "my_file.txt" (\result ->
+  case result of
+    Err _ -> -- 文件未读取成功
+    Ok text -> -- 成功读取文件，可以在这里处理读取到的文本数据
+)
 ```
 
-最后，我们需要定义一个函数来处理文件内容。我们可以使用`File.read`函数来读取文件内容，并且我们可以在`Task.perform`函数的回调函数中处理文件内容。例如，我们可以将文件内容打印到控制台上：
+在回调函数中，我们可以利用模式匹配来处理不同的读取结果。如果出现错误，我们可以在`Err`分支中处理，如果成功读取文件，可以在`Ok`分支中处理读取到的文本数据。
 
-```Elm
-import File exposing (File)
-import Text.Encoding exposing (UTF8)
-import Task exposing (Task)
+## 深入学习
 
+除了使用`File.read`函数外，我们还可以使用`Http`模块中的`send`函数来读取文本文件。这个函数可以从任何URL地址获取文本文件。不过，需要注意的是这个函数返回的是一个HTTP请求的`Cmd`类型，需要将其发送给调度器执行。
 
-file : File
-file =
-    File.fromPathWith
-        { encoding = UTF8 }
-        "sample.txt"
+```elm
+import Http
+import Html
+import Html exposing (text)
+import Html.Events exposing (onClick)
 
+-- 定义Msg类型
+type Msg = 
+  FileResult (Result Http.Error String)
+  -- 其他消息...
 
-printFileContent : String -> Task x ()
-printFileContent content =
-    Task.succeed ()
-        |> Task.andThen (\_ -> Debug.log "File content: " content)
+-- 定义检索结果
+type alias Model = 
+  { text : String }
 
+init : Model
+init = 
+  { text = "" }
 
-Task.perform printFileContent
-    (File.read file)
+-- 更新函数
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model = 
+  case msg of 
+    FileResult result ->
+      case result of 
+        Err _ -> -- 文件未读取成功
+        Ok text -> -- 成功读取文件，可以在这里处理读取到的文本数据
+    -- 其他消息的处理...
+
+-- 用于显示文本的视图
+view : Model -> Html Msg
+view model = 
+  div []
+    [ button [ onClick (Http.send FileResult (Http.getString "https://example.com/my_file.txt")) ] [ text "点击读取文件" ]
+    , text model.text
+    ]
+
+main : Program () Model Msg
+main =
+  Html.program
+    { init = init
+    , update = update
+    , view = view
+    , subscriptions = always Sub.none
+    }
+
 ```
 
-运行此代码后，您应该会在控制台上看到文件内容被打印出来。现在，您已经成功地使用Elm读取了一个文本文件！
+通过使用`Http`模块，我们可以更灵活地获取文本文件，但也需要注意安全性和性能方面的考虑。
 
-## 深入探讨
+## 参考链接
 
-在深入探讨读取文本文件之前，我们需要了解一下Elm中的`Task`模块。`Task`模块提供了一个简单的界面来执行一些可能失败的操作，例如读取文件。在上面的例子中，我们使用了`Task.perform`函数来触发文件读取操作，并在其回调函数中处理文件内容。这样做是为了避免程序直接访问文件系统，从而保持程序的稳定性和安全性。
-
-另外，如果您想要一次读取整个文件的所有内容，您可以使用`File.readAll`函数，它会将整个文件内容作为一个字符串返回。或者，如果您需要一行一行地读取文件内容，您可以使用`File.lines`函数来读取文件的每一行。
-
-## 参考资料
-
-- Elm官方文档（中文）：https://elm-lang.org/docs
-- Elm中国社区：https://www.elmchina.org/
-- Elm论坛（中文）：https://elm-china.org/
-- Elm中文翻译合集：https://elm-china.github.io/
-
--------------------------------------
-
-## 参见
-
-- [文本文件的读取与写入](https://elm-lang.org/examples/file)
-- [使用Elm编写文本编辑器](https://medium.com/@eeue56/creating-a-simple-text-editor-in-elm-67eab2aefa3c)
+- [Elm中文文档 - 文件和HTTP请求](https://guide.elm-lang.org/effect_managers/file.html)
+- [Elm中文文档 - Http模块](https://package.elm-lang.org/packages/elm/http/latest/Http)

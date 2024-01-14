@@ -1,34 +1,32 @@
 ---
 title:    "Fish Shell: Scrivere test"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Scrivere test di programmazione può sembrare una perdita di tempo, ma in realtà è uno strumento utile per garantire che il tuo codice funzioni correttamente e rimanga stabile nel tempo. Inoltre, aiuta a individuare eventuali errori o bug prima che il codice venga messo in produzione.
+
+Scrivere test è un passo importante nel processo di sviluppo del software, poiché aiuta a identificare e risolvere eventuali errori o bug nel codice. Inoltre, i test offrono una maggiore sicurezza e affidabilità nel software, garantendo che il codice funzioni correttamente in ogni situazione.
 
 ## Come fare
-Per scrivere test in Fish Shell, puoi utilizzare il modulo `test` incluso nella shell. Ecco un esempio di come creare un test per una funzione che aggiunge due numeri:
 
-```Fish Shell
-# Definisci la funzione di test
-function test_sum_addition
-  # Esegui la funzione che vuoi testare
-  set result (sum 2 2)
-  # Utilizza il comando `test` per verificare l'output
-  test $result -eq 4
-end
+Per scrivere test in Fish Shell, è necessario utilizzare il comando `test`. Questo comando accetta una serie di argomenti e una condizione da verificare. Per esempio:
 
-# Esegui la funzione di test
-test_sum_addition
+```
+Fish Shell:
+test -f myfile.txt; and echo "Il file esiste"
 ```
 
-Se l'output del test è 4, allora vuol dire che la funzione `sum` ha funzionato correttamente.
+In questo esempio, il comando `test` viene utilizzato per verificare se il file `myfile.txt` esiste, e se la condizione è vera, viene eseguito il comando `echo` per stampare a schermo il messaggio "Il file esiste".
 
 ## Approfondimento
-Scrivere buoni test richiede una buona comprensione del codice che si sta testando. È importante testare ogni possibile scenario e gestire gli errori in modo appropriato. Ci sono anche altre librerie di test disponibili per Fish Shell, come ad esempio `Bats` che fornisce strumenti aggiuntivi per creare test più complessi.
+
+Esistono diverse opzioni e condizioni che possono essere utilizzate con il comando `test`. Ad esempio, è possibile verificare se un file è leggibile o scrivibile, se una variabile è definita o se due numeri sono uguali. Inoltre, è possibile utilizzare il comando `and` e `or` per combinare più condizioni in una singola istruzione.
 
 ## Vedi anche
-- [Documentazione ufficiale del modulo `test` di Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [Libreria Bats per test di Fish Shell](https://github.com/bats-core/bats-core)
+
+- [Documentazione Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+- [Guida ai test in Fish Shell](https://devopsdirective.com/posts/how-to-use-fish-shell-test-command/)
+- [Video tutorial su test in Fish Shell](https://www.youtube.com/watch?v=Wj2W_tABkHI)

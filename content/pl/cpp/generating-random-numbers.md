@@ -1,52 +1,58 @@
 ---
 title:    "C++: Generowanie losowych liczb"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać generowania losowych liczb w C++
+## Dlaczego
 
-Generowanie losowych liczb jest nieodzowną częścią programowania w wielu językach, w tym także w C++. Pozwala to na stworzenie bardziej dynamicznych i złożonych programów, przez co jest bardzo przydatne dla programistów.
+Generowanie liczb losowych jest ważnym aspektem programowania w C++. Pozwala to na tworzenie dynamicznych i zróżnicowanych aplikacji, które nie są przewidywalne dla użytkowników. Zobaczmy, jak to zrobić!
 
-# Jak to zrobić
+## Jak To Zrobić
 
-Aby wygenerować losowe liczby w języku C++, należy skorzystać z funkcji `rand()` z biblioteki standardowej. Przykładowy kod będzie wyglądał następująco:
-
-```C++
+```c++
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib> // zawiera funkcję rand()
+#include <ctime> // zawiera funkcję srand()
+
 using namespace std;
 
 int main() {
-    // Ustawienie ziarna dla generatora losowych liczb
-    srand(time(0));
 
-    // Wygenerowanie liczby pseudolosowej z zakresu od 0 do 99
-    int liczba = rand() % 100;
+    srand(time(NULL)); // inicjalizuje generator liczb losowych
 
-    // Wyświetlenie wygenerowanej liczby
-    cout << "Wygenerowana liczba to: " << liczba << endl;
+    // generowanie liczby całkowitej z zakresu od 0 do 99
+    int randomNumber = rand() % 100;
+
+    // generowanie liczby rzeczywistej od 0 do 1
+    double randomDouble = (double) rand() / RAND_MAX;
+
+    // wyświetlenie wygenerowanych liczb
+    cout << "Liczb losowa całkowita: " << randomNumber << endl;
+    cout << "Liczba losowa rzeczywista: " << randomDouble << endl;
 
     return 0;
 }
-
 ```
 
-Przykładowy output:
-
+Przykładowy wynik:
 ```
-Wygenerowana liczba to: 74
+Liczba losowa całkowita: 84
+Liczba losowa rzeczywista: 0.497103
 ```
 
-Możemy również zastosować większą precyzję i ograniczyć zakres wygenerowanych liczb poprzez wykorzystanie dodatkowych funkcji matematycznych i arytmetycznych.
+## Głębsza Analiza
 
-# Głębszy zanurzenie
+Generator liczb losowych w C++ opiera się na algorytmie o nazwie "Linear Congruential Generator". Polega on na wykorzystaniu pewnej formuły matematycznej, aby wygenerować liczbę pseudolosową. 
 
-Generowanie losowych liczb może być przydatne w różnych zastosowaniach, takich jak symulacje, tworzenie gier, generowanie kluczy kryptograficznych czy testowanie programów na warunkach brzegowych. W języku C++ generacja liczb jest oparta o algorytm nazywany "Mersenne Twister", który pozwala na uzyskanie bardzo dużego zakresu możliwych wygenerowanych liczb.
+Ważnym aspektem używania generatora liczb losowych w C++ jest inicjalizacja funkcji `srand()` za pomocą `time(NULL)`. Dzięki temu generator będzie korzystał z aktualnego czasu jako ziarna, co sprawi, że wygenerowane liczby będą zupełnie różne przy każdym uruchomieniu programu.
 
-# Zobacz również
+Pamiętaj, że wykorzystanie generatora liczb losowych może być przydatne nie tylko w celach rozrywkowych, ale także w przypadku niektórych zadań programistycznych, takich jak sortowanie z wykorzystaniem algorytmu Quicksort.
 
-- [Dokumentacja biblioteki standardowej C++ - rand()](https://en.cppreference.com/w/cpp/numeric/random/rand)
-- [Tutorial o generowaniu losowych liczb w C++](https://www.cplusplus.com/reference/random/)
-- [Wykorzystanie funkcji `rand()` w tworzeniu gier w C++](https://www.gamedev.net/reference/articles/article248.asp)
+## Zobacz Również
+
+- Dokumentacja C++ na temat generatora liczb losowych: [http://www.cplusplus.com/reference/cstdlib/rand/](http://www.cplusplus.com/reference/cstdlib/rand/)
+- Przykładowe zadania programistyczne wykorzystujące generowanie liczb losowych: [https://www.geeksforgeeks.org/generate-random-number-range-c/](https://www.geeksforgeeks.org/generate-random-number-range-c/)
+- Wprowadzenie do algorytmu Quicksort: [https://www.programiz.com/dsa/quick-sort](https://www.programiz.com/dsa/quick-sort)

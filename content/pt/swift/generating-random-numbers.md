@@ -1,40 +1,50 @@
 ---
-title:    "Swift: Gerando números aleatórios"
+title:    "Swift: Geração de números aleatórios"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante?
+## Por que gerar números aleatórios?
+Muitas vezes, em programação, precisamos gerar números aleatórios para simular situações ou para criar uma variedade de opções. Isso é especialmente útil em jogos e aplicações de sorteio, mas também pode ser aplicado em outras áreas de desenvolvimento.
 
-Gerar números aleatórios é uma habilidade fundamental para programadores Swift, pois muitos aplicativos e jogos dependem de elementos aleatórios para funcionar corretamente. Além disso, também pode ser útil no desenvolvimento de algoritmos de inteligência artificial e simulação de processos.
-
-## Como gerar números aleatórios em Swift?
-
-Usando a função `arc4random()` é possível gerar números aleatórios em Swift. Essa função retorna um número aleatório inteiro entre 0 e 2^32-1. Veja o exemplo abaixo:
+## Como fazer
+Existem algumas maneiras de gerar números aleatórios em Swift. A seguir, mostraremos um exemplo simples e eficaz utilizando a função `arc4random_uniform()`.
 
 ```
-let numeroAleatorio = arc4random()
-print(numeroAleatorio)
+// Importe a biblioteca de arc4random
+import Foundation
+
+// Gera um número aleatório entre 1 e 100
+let numero = Int(arc4random_uniform(100))
+
+// Imprime o número gerado
+print(numero)
+
+// Saída de exemplo: 54
 ```
 
-Você pode restringir o intervalo de números aleatórios gerados usando o operador de resto `%`. Por exemplo:
+Este método retorna um número inteiro aleatório dentro do intervalo especificado. No exemplo acima, utilizamos a função `Int()` para garantir que o número gerado seja do tipo inteiro.
+
+## Mergulho profundo
+A função `arc4random_uniform()` utiliza o gerador de números pseudorandômicos do sistema operacional, que é considerado seguro e eficiente para a maioria dos casos. No entanto, se você precisar de uma geração mais precisa, pode utilizar a estrutura `Random` presente na biblioteca padrão do Swift.
 
 ```
-let numeroAleatorioEntreZeroEDez = arc4random() % 10
-print(numeroAleatorioEntreZeroEDez)
+// Importe a biblioteca padrão do Swift
+import Foundation
+
+// Gera um número aleatório entre 1 e 100
+let numero = Int.random(in: 1...100)
+
+// Imprime o número gerado
+print(numero)
+
+// Saída de exemplo: 82
 ```
 
-Isso irá gerar um número aleatório entre 0 e 9.
-
-## Profundidade sobre a geração de números aleatórios
-
-Na realidade, não existe algo completamente aleatório em programação, pois tudo é baseado em algoritmos e lógica. Então, quando falamos em gerar números aleatórios, na verdade estamos falando em gerar uma sequência pseudo-aleatória. Essa sequência é determinística e pode ser reproduzida, mas é difícil prever qual número será gerado a seguir.
-
-Há também a possibilidade de utilizar a biblioteca `GameplayKit` para gerar números aleatórios com mais complexidade e variedade. Ela oferece funções específicas para gerar números aleatórios de diferentes tipos, como inteiros, decimais e booleanos. Além disso, essa biblioteca também possui recursos para gerar sequências aleatórias com base em distribuições estatísticas.
+Diferente da função `arc4random_uniform()`, a estrutura `Random` utiliza um algoritmo próprio para gerar números aleatórios de forma mais precisa. Além disso, é possível especificar o tipo de dado desejado e até mesmo uma semente para gerar números repetíveis.
 
 ## Veja também
-
-- [Documentação oficial sobre a função `arc4random()`](https://developer.apple.com/documentation/foundation/1395184-arc4random)
-- [Tutorial sobre gerar números aleatórios em Swift](https://www.hackingwithswift.com/example-code/system/how-to-generate-random-numbers-using-random-uniform-a-arc4random)
-- [Documentação oficial da biblioteca `GameplayKit`](https://developer.apple.com/documentation/gameplaykit/random_sources_and_distribution)
+- [Documentação oficial da Apple sobre geração de números aleatórios em Swift](https://developer.apple.com/documentation/swift/random)
+- [Tutorial de geração de números aleatórios em Swift](https://www.hackingwithswift.com/read/38/5/challenge-how-to-generate-a-random-number)

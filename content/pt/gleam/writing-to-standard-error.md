@@ -1,37 +1,61 @@
 ---
-title:    "Gleam: Escrevendo para o erro padrão"
+title:    "Gleam: Escrevendo no erro padrão"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão
+## Porque
 
-Escrever para o erro padrão é uma técnica muito útil para programadores que desejam melhorar a qualidade do seu código. Ao imprimir mensagens de erro ou avisos no erro padrão, é possível depurar o código de forma mais eficiente e entender melhor o funcionamento do programa.
+Escrever para o erro padrão, ou standard error, pode ser útil em situações em que precisamos registrar informações de erro em um programa. Isso pode ser especialmente importante em ambientes de produção, onde é essencial capturar e salvar esses erros para fins de depuração.
 
-## Como fazer
+## Como Fazer
 
-Para escrever para o erro padrão em Gleam, basta utilizar a função `io.fwrite` passando como primeiro argumento o identificador do erro padrão (`error`) e, em seguida, a mensagem que deseja imprimir entre as aspas duplas.
-
-```Gleam
-io.fwrite(error, "Essa é uma mensagem de erro")
-```
-
-Caso deseje formatar a mensagem de forma mais elaborada, é possível utilizar a função `fmt` e passar o resultado como segundo argumento para `io.fwrite`.
+Para escrever para o erro padrão em um programa Gleam, podemos usar a função `erlang:error/1`. Veja um exemplo abaixo:
 
 ```Gleam
-let mensagem = fmt("O programa parou na linha {} com o erro '{}'", [line, error])
-io.fwrite(error, mensagem)
+import gleam/io
+
+fn main() {
+  erlang:error("Erro! Esta é uma mensagem de erro.")
+}
 ```
 
-## Profundando-se
+O programa acima irá imprimir a mensagem de erro no erro padrão. Veja o resultado abaixo:
 
-Existem diferentes motivos para escrever para o erro padrão em Gleam. Além de auxiliar no processo de depuração, essa técnica também pode ser útil para escrever logs e monitorar o desempenho do programa.
+```
+Erro! Esta é uma mensagem de erro. 
+```
 
-Uma boa prática é sempre utilizar mensagens claras e informativas ao escrever para o erro padrão, para que seja mais fácil entender o código no futuro ou para que outros programadores possam entender e solucionar problemas no seu código.
+## Mergulho Profundo
 
-## Veja também
+Ao escrever para o erro padrão, é importante notar que isto não encerra o programa. Para isso, podemos usar a função `erlang:halt/1`. Além disso, podemos capturar e lidar com erros usando blocos `try/catch`. É recomendado também adicionar informações específicas sobre o erro na mensagem para ajudar na resolução de problemas.
 
-- Documentação oficial da função `io.fwrite`: [https://gleam.run/modules/io#fwrite](https://gleam.run/modules/io#fwrite)
-- Tutorial sobre como depurar código em Gleam: [https://gleam.run/tutorials/debugging](https://gleam.run/tutorials/debugging)
-- Artigo sobre a importância de escrever mensagens de erro claras: [https://medium.com/digitalindia/logging-errors-in-your-python-application-94d243f78baa](https://medium.com/digitalindia/logging-errors-in-your-python-application-94d243f78baa)
+Veja um exemplo abaixo:
+
+```Gleam
+import gleam/io
+import erlang/try
+
+fn main() {
+  x = try sadd(2, "5") catch error -> "Ocorreu um erro ao somar 2 e 5: " ++ getMessage(error)
+  io.print(x)
+}
+
+fn sadd(x, y) {
+  x + y
+}
+```
+
+E a saída seria:
+
+```
+Ocorreu um erro ao somar 2 e 5: bad argument in "2+5"
+```
+
+## Veja Também
+
+- [Documentação oficial do Gleam](https://gleam.run/)
+- [Artigo sobre a função `erlang:error/1` (em inglês)](https://medium.com/@stoichkovictoramarc/debugging-in-gleam-the-saga-of-erlang-error-1-a0e75b18896f)
+- [Exemplo de como lidar com erros em programas Gleam (em inglês)](https://medium.com/@ajpotato/error-handling-in-gleam-a262bba4433d)

@@ -1,39 +1,42 @@
 ---
-title:    "Elixir: Rozpoczynając nowy projekt."
+title:    "Elixir: Rozpoczynając nowy projekt"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Język Elixir zdobywa coraz większą popularność wśród programistów dzięki swojej wydajności, skalowalności i prostocie. Jest również jednym z najnowocześniejszych języków programowania, który stale się rozwija i dostarcza narzędzia, aby tworzyć innowacyjne i niezawodne aplikacje. W tym artykule wyjaśnimy, dlaczego warto rozpocząć nowy projekt w języku Elixir.
+Zastanawiasz się, dlaczego powinieneś zacząć nowy projekt w Elixir? Jest wiele powodów, dlaczego ta język programowania jest warty Twojego czasu. Elixir jest wydajny, skalowalny i oparty na niesamowitym silniku działającym na Erlangu. Ponadto, jego składnia jest przyjazna dla programistów i bardzo dobrze radzi sobie z równoległym wykonywaniem zadań.
 
-## Jak to zrobić
+## Jak zacząć
 
-Rozpoczęcie nowego projektu w języku Elixir jest bardzo proste. Wystarczy zainstalować Elixir na swoim komputerze i już można zacząć kodować. Poniżej przedstawiamy przykładowy kod stworzonej aplikacji w języku Elixir:
+Zacznij od zainstalowania Elixir na swoim komputerze. Następnie możesz wybrać jeden z wielu dostępnych edytorów tekstowych, takich jak Emacs, Vim lub Visual Studio Code. Jeśli używasz Maca, możesz również rozważyć instalację aplikacji "Elixir for Mac". W następnym kroku zapoznaj się z dokumentacją języka Elixir oraz jego podstawowymi konceptami, takimi jak funkcje i wzorce dopasowania.
 
-```
-Elixir defmodule HelloWorld do
-  def say_hello do
-    IO.puts "Witaj Świecie!"
+```Elixir
+defmodule Hello do
+  def greeting(name) do
+    "Hello, #{name}!"
   end
 end
+
+IO.puts Hello.greeting("John")
 ```
 
-Po uruchomieniu tego kodu, powinno się pojawić na ekranie "Witaj Świecie!". Jak widać, kod w języku Elixir jest bardzo czytelny i łatwy do zrozumienia, co ułatwia tworzenie aplikacji.
+Output: Hello, John!
 
-## Głębsze poszukiwania
+Teraz pora nauczyć się korzystać z narzędzi w Elixir, takich jak mieszaniec (ang. mix). Jest to narzędzie do tworzenia, zarządzania i uruchamiania projektów w Elixir. Umożliwia ono także instalację zależności projektu oraz uruchomienie testów jednostkowych.
 
-Jedną z największych zalet języka Elixir jest jego systema aktora, którego fundamentem jest Platforma Erlang. System aktora umożliwia budowanie aplikacji w sposób rozproszony, co sprawia, że są one bardziej niezawodne i wydajne. Dodatkowo, Elixir jest językiem funkcyjnym, co oznacza, że zmienne są niemutowalne, co ułatwia testowanie i debugowanie kodu.
+## Głębszy wgląd
 
-Kolejną zaletą języka Elixir jest jego społeczność. Społeczność Elixir jest bardzo aktywna i otwarta na nowych użytkowników. Istnieje wiele darmowych materiałów, takich jak kursy online i blogi, które mogą pomóc w nauce języka. Dodatkowo, istnieją również meetup-y i konferencje, na których można poznać innych programistów i podzielić się swoją wiedzą.
+Aby lepiej zrozumieć Elixir, warto poznać jego podstawowe struktury danych, takie jak listy, mapy czy tupple. Ponadto, warto zapoznać się z mechanizmem kompilacji i działania maszyny wirtualnej Erlanga. W projekcie w Elixir można także wykorzystać wzorce projektowe, takie jak supervisor, który pomoże w kontroli wątków i naprawie ewentualnych błędów.
 
-## Zobacz też
+## Zobacz także
 
-Chcielibyśmy polecić kilka przydatnych linków dla osób, które chcą dowiedzieć się więcej o języku Elixir i rozpocząć nowy projekt:
+Jeśli jesteś zainteresowany lub zaciekawiony Elixirem, zapraszamy do zapoznania się z poniższymi linkami:
 
-- Oficjalna strona Elixir: https://elixir-lang.org/
-- Kurs Elixir na udemy: https://www.udemy.com/course/elixir-i-phoenix-listy-zadan/
-- Blog z poradami dla początkujących w języku Elixir: https://nebulab.com/blog/beginners-guide-to-elixir/
-- Społeczność Elixir na Reddit: https://www.reddit.com/r/elixir/
+- [Dokumentacja języka Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Phoenix Framework - najpopularniejszy framework webowy w Elixirze](https://www.phoenixframework.org/)
+- [Elixir School - darmowe interaktywne kursy Elixir](https://elixirschool.com/pl/)
+- [Reddit Elixir - społeczność Elixir na Reddit](https://www.reddit.com/r/elixir/)

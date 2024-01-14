@@ -1,50 +1,52 @@
 ---
 title:    "Clojure: Iniciando um novo projeto"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que iniciar um novo projeto em Clojure?
+# Por que iniciar um novo projeto?
 
-Clojure é uma linguagem de programação funcional dinâmica e moderna que tem sido cada vez mais adotada por desenvolvedores em todo o mundo. Além disso, ela é construída na plataforma JVM, o que significa que pode ser usada junto com outras linguagens Java para criar aplicativos poderosos e escalonáveis.
+Iniciar um novo projeto em Clojure pode ser uma ótima escolha para aqueles que desejam desenvolver aplicativos e sistemas robustos, escaláveis e funcionais. Com sua sintaxe concisa e sua forte tipagem, o Clojure oferece um ambiente propício para a criação de soluções de alta qualidade.
 
-## Como começar
-
-Antes de começar um novo projeto em Clojure, é importante ter uma compreensão básica da sintaxe e dos conceitos da linguagem. Uma das melhores maneiras de fazer isso é seguindo tutoriais online ou lendo um livro sobre Clojure.
-
-Uma vez que você tenha uma base sólida, é hora de começar a escrever seu código. Aqui está um exemplo simples de um programa que imprime "Hello World!" na tela:
+# Como fazer:
 
 ```Clojure
-(ns meu-projeto.core
-  (:require [clojure.main :refer [main]]))
-
-(defn -main []
-  (println "Hello World!"))
+(defn soma [a b]
+  (+ a b))
 ```
 
-Ao rodar esse código no terminal, você deve ver a seguinte saída:
+Neste exemplo, criamos uma função chamada `soma` que recebe dois parâmetros e retorna a sua soma. Podemos chamar essa função da seguinte forma:
 
-```Hello World!```
+```Clojure
+(soma 5 10) ; retorna 15
+```
 
-Nosso programa está funcionando corretamente!
+Além disso, a comunidade Clojure oferece uma ampla gama de bibliotecas e ferramentas que facilitam o processo de desenvolvimento. A seguir, mostraremos alguns passos para iniciar um novo projeto em Clojure:
 
-## Aprofundando
+- Instale o leiningen, uma ferramenta de gerenciamento de projetos Clojure
+- Crie uma nova estrutura de projeto usando o comando `lein new template`
+- Configure o arquivo `project.clj` para adicionar dependências e outras configurações necessárias
+- Crie seus arquivos de código fonte com a extensão `.clj`
+- Compile e execute seu projeto usando o comando `lein run`
 
-Além da sintaxe básica, é importante entender os principais conceitos por trás de Clojure. Aqui estão algumas coisas que você pode se aprofundar:
+Com esses passos, você estará pronto para começar a desenvolver seu projeto em Clojure.
 
-- Imutabilidade e estruturas de dados persistentes
-- Funções de ordem superior e programação funcional
-- Multithreading e concorrência
-- Gerenciamento de dependências com leiningen ou boot
+# Profundidade:
 
-Natualmente, há muito mais para aprender sobre Clojure, mas esses conceitos básicos devem ajudar a dar uma visão geral do que é essa linguagem e como ela é diferente de outras.
+Antes de iniciar um novo projeto em Clojure, é importante entender os principais conceitos por trás dessa linguagem funcional. Algumas das características mais importantes incluem:
 
-## Veja também
+- Imutabilidade: objetos em Clojure são imutáveis ​​por padrão, o que garante uma maior segurança e evita efeitos colaterais.
+- Coleções persistentes: em Clojure, as coleções são persistentes e as operações de modificação sempre retornam novas instâncias, garantindo assim uma maior eficiência e segurança.
+- Sintaxe de lisp: Clojure é baseado na linguagem lisp, que possui uma sintaxe simples e concisa, facilitando a leitura e o entendimento do código.
+- JVM: Clojure é executado na máquina virtual Java, o que permite a integração com outras linguagens e bibliotecas já existentes na plataforma.
 
-Aqui estão algumas recomendações de recursos adicionais para aprender mais sobre Clojure:
+Além disso, Clojure possui uma comunidade ativa e engajada, com diversos recursos e materiais disponíveis para ajudar no desenvolvimento de projetos.
 
-- [Site oficial de Clojure](https://clojure.org/)
-- [Documentação da linguagem Clojure](https://clojure.org/guides/learn/syntax)
-- [Livro "Clojure for the Brave and True"](https://www.braveclojure.com/)
-- [Comunidade ClojureBR no Slack](https://clojure-br.slack.com/)
+# Veja também
+
+- [Site oficial do Clojure](https://www.clojure.org/)
+- [Leiningen](https://leiningen.org/)
+- [ClojureDocs - Documentação e exemplos de código](https://clojuredocs.org/)
+- [Canal #Clojure no Slack](https://clojurians.slack.com/)

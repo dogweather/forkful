@@ -1,42 +1,29 @@
 ---
-title:    "Javascript: Alaryhmien eristäminen"
+title:    "Javascript: Alirivien erottaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi sinun pitäisi käyttää JavaScript-koodia alirivejä mahdollistavia substringeja?
+## Miksi: Miksi perehtyä alimerkkien pilkkomiseen?
+Alimerkkien pilkkominen, eli tietyn merkkijonon osan erottaminen ja käyttö erikseen, on tärkeä osa Javascript-ohjelmointia. Se mahdollistaa tietyn tiedon etsimisen ja käyttämisen suuremmasta tekstistä, mikä helpottaa monien ohjelmointitehtävien toteuttamista.
 
-Oletko koskaan joutunut työskentelemään suurten tekstien kanssa? Onko sinun tarvinnut etsiä tiettyä osaa merkkijonosta? Näinä tilanteina substringit voivat olla suureksi avuksi. Ne mahdollistavat tietyn osan merkkijonon erottamisen ja käytön halutussa muodossa.
-
-## Miten: Esimerkkejä ja koodipätkiä
+## Kuinka: Koodaesimerkkejä ja tulostuksia ```Javascript ... ``` -lohkoissa
+Teemalla "oppiminen tekemällä" esittelemme seuraavassa, kuinka voit käyttää Javascriptin `substring()` -funktiota alimerkkien pilkkomiseen. Esimerkiksi halutessasi etsiä ja käyttää tietyn sanan tai numeron pituutta, voit käyttää alla olevaa koodia:
 
 ```Javascript
-// Alirivin erottaminen käyttäen substr() -funktiota
-var sana = "Tervetuloa";
-var alirivi = sana.substr(6, 3);
-console.log(alirivi);
-// Tulostaa: "ulo"
-
-// Alirivin erottaminen ja muuttaminen isolla kirjaimella käyttäen toUpperCase() -funktiota
-var lause = "Koodataan yhdessä";
-var alirivi = lause.substr(9, 6).toUpperCase();
-console.log(alirivi);
-// Tulostaa: "YHDESSÄ"
+let sana = "Tämä on esimerkki lause.";
+let pituus = sana.substring(11, 18);
+console.log(pituus);
 ```
 
-Substringit toimivat myös muiden merkkijonomuotojen kanssa, kuten esimerkiksi taulukoissa ja muuttujissa.
+Tämä koodi tulostaa "esimerkki" konsolille, sillä funktiolla `substring()` haemme merkkijonosta sijainnit 11 ja 18 väliltä. Voit myös käyttää tätä funktiota eri muuttujille ja tulostaa tarvittavan tiedon haluamallasi tavalla.
 
-## Syvempi sukellus: Tietoa alirivien erottamisesta
-
-Substringit on mahdollista erottaa kahdella eri tavalla: substr() ja substring(). Ensimmäinen tapa erottaa osa merkkijonoa alkaen annetusta indeksistä ja jatkuen annetun määrän verran. Toisessa tavassa annetaan alku- ja loppuindeksit, ja se erottaa merkkijonon niiden väliltä.
-
-On myös tärkeää huomata, että merkkijonojen indeksointi alkaa aina nollasta. Tämä tarkoittaa sitä, että esimerkiksi merkkijonossa "Tervetuloa" indeksit 0-7 vastaavat kirjaimia "T", "e", "r", "v", "e", "t", "u", "l", "o" ja indeksit 7-10 vastaavat "a", "space" ja "E". Hyödyllistä tietoa, kun haluaa erottaa tietyn pituisen alirivin!
+## Syväsukellus: Tietoa alimerkkien pilkkomisesta
+Tämän lisäksi on hyvä huomata, että `substring()` -funktio toimii myös kahdella parametrilla. Jos käytät vain yhden parametrin, se aloittaa hakuoperaation parametrin kohdasta ja etsii loppuun asti. On myös hyvä huomata, että funktio `substr()` toimii samalla tavalla kuin `substring()`, mutta sen ensimmäinen parametri määrittää aloitussijainnin ja toinen parametri halutun merkkimäärän.
 
 ## Katso myös
-
-- [MDN web docs - substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [MDN web docs - substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [W3Schools - JavaScript Substrings](https://www.w3schools.com/js/js_string_substrings.asp)
-
-Kiitos lukemisesta! Toivottavasti tästä oli apua alirivien erottamisessa ja koodisi tekee siitä tulevaisuudessa entistä helpompaa. Onnea projektien ja tekstien käsittelyssä!
+- [MDN web docs - substring()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools - substring() Method](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [JavaScript substring() and substr()](https://www.tutorialrepublic.com/javascript-tutorial/javascript-string-substring-methods.php)

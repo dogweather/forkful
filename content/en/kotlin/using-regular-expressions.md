@@ -1,60 +1,52 @@
 ---
 title:    "Kotlin recipe: Using regular expressions"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Regular expressions are a powerful tool for pattern matching and manipulation in programming languages. They allow developers to search for specific patterns in strings and perform actions based on those patterns. This can save time and effort when dealing with large chunks of text, making regular expressions a valuable skill to have in your programming arsenal.
+Regular expressions, also known as regex, are a powerful tool in programming that allow for efficient and precise string matching and manipulation. They are especially useful when dealing with large amounts of text data and can save time and effort when searching and replacing specific patterns within a string. Learning how to use regular expressions can greatly enhance your programming skills and make your code more efficient.
 
 ## How To
 
-Regular expressions in Kotlin are represented by the `Regex` class. To use regular expressions, you will need to import this class at the beginning of your code.
+To use regular expressions in Kotlin, you will need to import the `kotlin.text.Regex` class. It is also recommended to use triple quotes `"""` when creating regular expressions to avoid issues with escape characters.
 
 ```
+Kotlin
 import kotlin.text.Regex
+
+val regex = Regex("Hello") // create a regex pattern
+val text = "Hello World"
+
+println(regex.matches(text)) // output: true, as "Hello" is present in the string
 ```
 
-To create a regular expression pattern, you can either use the `Regex(pattern: String)` constructor or the `toRegex()` extension function on a string.
+You can also use `find()` to search for the first occurrence of the pattern and `findAll()` to find all matches within a string. Additionally, you can use the `replace()` function to replace all occurrences of a pattern with a specified string.
 
 ```
-val regex = Regex("hello") // using constructor
-val regex = "hello".toRegex() // using extension function 
+Kotlin
+val result = regex.find(text) // output: Hello
+val results = regex.findAll(text) // output: [Hello]
+val newText = regex.replace(text, "Hi") // output: Hi World
 ```
 
-To match a regular expression pattern against a string, you can use the `matches(input: CharSequence)` function on the regex object, passing in the string you want to match against as the input.
-
-```
-val regex = Regex("hello")
-val result = regex.matches("hello world") // returns true
-```
-
-Regular expressions also allow you to specify patterns using special characters and symbols. For example, the `.` symbol matches any single character, while the `*` symbol matches any number of characters (including zero). You can also use ranges, such as `[a-z]` to match any lowercase letter.
-
-```
-val regex = Regex("[a-z]*")
-val result = regex.matches("hello world") // returns true
-```
-
-Regular expressions also support capturing groups, which allow you to extract specific parts of a string that match a pattern. This is done by surrounding the desired pattern with parentheses. The captured group can then be accessed using the `groupValues` property on the `MatchResult` object returned by the `matchEntire(input: CharSequence)` function.
-
-```
-val regex = Regex("([a-z]+)\\s([a-z]+)") 
-val result = regex.matchEntire("hello world") // returns MatchResult
-val firstName = result?.groupValues?.get(1) // returns "hello"
-val lastName = result?.groupValues?.get(2) // returns "world"
-```
+Regular expressions also support character classes, quantifiers, and groupings to further refine your pattern matching. It is important to note that regular expressions can be complex and may require some trial and error to get the desired results. There are also many online tools and resources available to help with creating and testing regular expressions.
 
 ## Deep Dive
 
-In addition to the basic functions mentioned above, regular expressions in Kotlin also offer various advanced features such as look-ahead and look-behind assertions, non-capturing groups, and more. These features give developers even more control and flexibility when manipulating strings using regular expressions.
+One of the most powerful features of regular expressions is the ability to use meta-characters such as `|` for alternation, `+` for one or more occurrences, and `?` for optional characters. You can also use `[a-z]` to match any lower case letter, `[0-9]` to match any digit, and `.` to match any character.
 
-One thing to keep in mind when using regular expressions in Kotlin is that they are compiled at runtime, so it may impact the performance of your code if you use them frequently in long strings. To avoid this, you can declare your regular expressions as `val` rather than `var`, as they will only be compiled once and then reused.
+Another useful feature is the ability to use backreferences, denoted by `\` followed by a number, to capture and reuse parts of a matched pattern. This can be especially useful when replacing text within a string.
+
+Regular expressions also have performance benefits. They use algorithms to quickly search and match patterns within a string, making them more efficient than traditional string methods.
 
 ## See Also
 
-- [Kotlin Regular Expressions Documentation](https://kotlinlang.org/docs/regular-expressions.html)
-- [Regex101](https://regex101.com/) - an online tool for testing regular expressions
-- [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124) - a comprehensive guide to regular expressions in various programming languages.
+- [Kotlin official documentation on regex](https://kotlinlang.org/docs/regular-expressions.html)
+- [RegExr - Online tool for testing and creating regular expressions](https://regexr.com/)
+- [Regular-Expressions.info - Comprehensive guide to regular expressions](https://www.regular-expressions.info/)
+
+Regular expressions may seem daunting at first, but with practice and knowledge of their syntax and features, they can greatly improve your programming abilities. So go ahead and give them a try in your Kotlin projects. Happy coding!

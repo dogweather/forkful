@@ -1,51 +1,41 @@
 ---
 title:    "Ruby recipe: Writing to standard error"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a programmer, you may have encountered the need to communicate errors or important information to the user while your program is running. Printing this information to the standard output may not always be the best option as it can get mixed in with other program output. This is where writing to standard error comes in handy.
+As developers, we spend a lot of time debugging and troubleshooting our code. One common issue we often encounter is not being able to see the exact error message when something goes wrong. That's where writing to standard error comes in.
 
 ## How To
 
-To write to standard error in Ruby, you can use the `STDERR.puts` method. This takes in a string or variable and prints it to the standard error stream. Let's take a look at an example:
+To write to standard error in Ruby, we use the `STDERR` constant and the `puts` method. Let's take a look at an example:
 
 ```Ruby
-name = "John"
-
-STDERR.puts "Hello, #{name}! There seems to be an error."
+STDERR.puts "Oops! Something went wrong."
 ```
 
-The code above will print the string "Hello, John! There seems to be an error." to the standard error. You can also use `STDERR.print` which works in the same way as `puts` but does not add a line break at the end.
+The `STDERR` constant represents the standard error output stream, which is separate from the standard output stream used by `puts` and `print`. By using `STDERR.puts`, we can print our error message to the standard error output stream instead of the standard output stream.
 
-```Ruby
-STDERR.print "Oops, something went wrong."
-```
-
-This will print "Oops, something went wrong." to the standard error without a line break.
-
-Now, let's see what the output looks like:
+Now, let's see what the output looks like when we run our code:
 
 ```
-Hello, John! There seems to be an error.
-Oops, something went wrong.
+Oops! Something went wrong.
 ```
 
-As you can see, the output from writing to standard error is separated from the standard output, making it easier to identify and debug errors.
+As you can see, our error message is now printed to the console, separate from any other output that may be present.
 
 ## Deep Dive
 
-In Ruby, writing to standard error is essential for handling errors in your programs. You can use the standard error stream to print out error messages or other important information when an exception occurs.
+In Ruby, `puts` actually stands for "put string". This method converts any arguments given to it into strings and then adds a new line character at the end. However, `STDERR.puts` does not add a new line character, meaning we have more control over how our error message is displayed. We can also use `STDERR.print` if we don't want the new line character to be added.
 
-One thing to note is that standard error will print out even if the standard output is being redirected to a file or a different location. This ensures that important information is not missed in case of any errors.
-
-You can also use `STDERR.puts` or `STDERR.print` in combination with `rescue` statements to handle exceptions and print out relevant messages. This can help with troubleshooting and identifying the cause of errors in your code.
+Another thing to keep in mind is that `puts` and `print` both return `nil`, meaning they don't have any meaningful value. This is important to note when using them in conjunction with other methods.
 
 ## See Also
 
-- [Ruby official documentation on STDERR](https://ruby-doc.org/core-2.5.1/IO.html#method-c-new-label-Standard+Error)
-- [Understanding Standard Streams in Ruby](https://dev.to/sublimegeek/ruby-standard-streams-41m8)
-- [Handling Errors and Exceptions in Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-errors-and-exceptions/cheatsheet)
+- [Ruby Documentation for STDERR](https://ruby-doc.org/core-2.7.0/STDERR.html)
+- [Difference between puts and print in Ruby](https://www.rubyguides.com/2019/07/ruby-puts-vs-print/)
+- [Ruby Kernel Module](https://ruby-doc.org/core-2.7.0/Kernel.html)

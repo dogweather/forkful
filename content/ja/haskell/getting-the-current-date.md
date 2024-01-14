@@ -1,43 +1,44 @@
 ---
 title:    "Haskell: 現在の日付を取得する"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 今日はなぜ日付を取得する必要があるのか
+## なぜ
 
-日付を現在のローカル時間で取得することは、プログラミングでよく必要とされます。特定のタスクやイベントを実行した際に、現在の時間や日付を知ることは重要です。
+Haskellで現在の日付を取得するのに役立つ理由はたくさんあります。なぜなら、現実世界のアプリケーションでは、現在の日付を使用することがよくあるからです。例えば、日付が重要なイベントを追跡するアプリケーションや、締め切りを計算するアプリケーションなどがあります。
 
-## 日付を取得する方法
+## 方法
 
-Haskellでは、Data.Timeモジュールを使用して現在の日付を取得することができます。以下のコードを参考にしてください。
+Haskellで現在の日付を取得するのはとても簡単です。まず、`Data.Time`モジュールをインポートします。
 
 ```Haskell
 import Data.Time
-
-main = do
-    now <- getCurrentTime
-    let today = utctDay now
-    print today
 ```
 
-上記のコードでは、Data.TimeモジュールのgetCurrentTime関数を使用して現在の日付を取得し、utctDay関数を使用して日付部分のみを取り出し、その結果をprint関数を使用して出力しています。
+次に、`getCurrentTime`関数を使用して現在の日付を取得します。
 
-実行すると、以下のような出力が得られます。
-
-```
-2019-10-30
+```Haskell
+currentDate <- getCurrentTime
 ```
 
-## 日付を取得する仕組みの詳細
+最後に、`formatTime`関数を使用して、取得した日付を指定した形式にフォーマットします。
 
-Haskellでは、様々なフォーマットの日付や時間を扱うための様々な関数や型が用意されています。例えば、LocalTime型やUTCTime型などがあり、それぞれ異なる方法で日付や時間を表現しています。
+```Haskell
+let formattedDate = formatTime defaultTimeLocale "%Y年%m月%d日" currentDate
+```
 
-また、Data.Timeモジュールにはさらに詳細な関数が用意されており、タイムゾーンの変更や特定の日付形式への変換などが可能です。
+このようにすると、`formattedDate`には現在の日付が"2021年04月15日"のような形式で格納されます。
 
-## See Also
+## 深堀り
 
+Haskellには、時間の計算やタイムゾーンの処理など、さまざまな機能があるため、現在の日付を取得する方法は多岐にわたります。また、Haskellの型システムを活用して、日付をより安全に扱うこともできます。
+
+## 関連リンク
+
+- [Haskell公式ドキュメント](https://www.haskell.org/)
+- [Haskellチュートリアル](https://wiki.haskell.org/Tutorials)
 - [Data.Timeモジュールのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskellで日付を扱う方法](https://qiita.com/waizu0/items/be116ae6910f82c627e6)
-- [Haskell入門: 関数と型](https://www.datacamp.com/community/tutorials/tutorial-functions-types-haskell)
+- [Haskellで日付を扱う方法](https://qiita.com/kazu69/items/065b253efa313fb095c3)

@@ -1,48 +1,50 @@
 ---
-title:    "Arduino: テストの書き方"
+title:    "Arduino: テストを書く"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くべきか
+## なぜArduinoプログラミングにテストを導入するか
 
-Arduinoプログラミングを行う際に、あなたはテストを書くことを考えたことがありますか？テストは、あなたが書いたコードが正しく動作するかどうかを確認するための重要なステップです。確実に動作するコードを書くためには、テストが欠かせません。
+Arduinoを使用すると、実際に物理的なものを制御することができますが、プログラムのバグは大きな問題を引き起こす可能性があります。そこで、テストを使用してプログラムの信頼性を確保することが重要です。
 
 ## テストの書き方
 
-テストを書くには、Arduinoが提供するテスト用ライブラリを使用します。例として、以下のようなコードを書いてみましょう。
+Arduinoでは、ArduinoUnitと呼ばれるライブラリを使用してテストを書くことができます。以下のようにテストを開始することができます。
 
 ```Arduino
 #include <ArduinoUnit.h>
 
-unittest(testName) {
-  String message = "Hello World";
-  assertEqual(message,"Hello World");
+// テストするコード
+void setup() {
+  // 初期化のコード
+}
+
+// テストするコード
+void loop() {
+  // 実際のコード
+}
+
+// ここからテストを開始する
+test(functionName) {
+  // 期待する結果を書く
+  // 実際の結果を比較する
+  assertEquals(expected, actual);
 }
 ```
 
-上記のコードでは、 `unittest` という命令を使ってテストを行っています。テストで使用される名前は `unittest` の後に続けて記述します。次に、 `assertEqual` 命令を使用して、 `message` が "Hello World" と等しいことをテストしています。
+テストを実行するには、シリアルモニターで"Test"と入力してEnterキーを押すだけです。
 
-テストを実行すると、以下のような結果が返ってきます。
+## テストの深堀り
 
-```
-Test: testName
-PASS
+ArduinoUnitでは、テストケースやテストスイートなど、様々な機能を使用することができます。また、デバイスやセンサーをシミュレーションするためのライブラリもあります。どのようにテストを構成するかは、プロジェクトの規模や目的によって異なりますが、テストの信頼性を高めるためにも、様々な機能を活用することをお勧めします。
 
-OK (1 of 1 tests passed)
-```
+## 参考リンク
 
-テストが正常に動作したことが確認できました。
+[ArduinoUnit公式ドキュメント](https://github.com/mmurdoch/arduinounit)
 
-## テストの詳細
+[Arduinoを使ったテスト駆動開発（TDD）についてのブログポスト](https://www.sigongtech.com/blog/2013/05/28/test-driven-development-for-arduino/)
 
-テストを書く際には、いくつかの注意点があります。まず、テストはコードの各部分を独立してテストする必要があります。また、テストが想定した通りに動作しない場合は、問題のあるコードを特定するように努める必要があります。
-
-さらに、テストはあなたのコードが変更された際にも常に正しく動作することを確認するためにも重要です。コードが変更された場合は、テストを再実行して問題がないかどうかを確認しましょう。
-
-## あわせて読みたい
-
-- [Arduinoテスト用ライブラリのドキュメント (英語)](https://github.com/mmurdoch/arduinounit/)
-- [テスト自動化入門 (日本語)](https://thinkit.co.jp/story/2013/08/07/4412)
-- [テスト駆動開発入門 (日本語)](https://codezine.jp/article/detail/627)
+[TDDを活用したArduinoプロジェクトの例](https://www.hackster.io/tddgreensboro/test-driven-development-for-arduino-7be3a7)

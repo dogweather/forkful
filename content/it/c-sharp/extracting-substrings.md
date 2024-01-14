@@ -1,46 +1,53 @@
 ---
 title:    "C#: Estrazione di sottostringhe"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Estrarre sottostringhe può sembrare una semplice operazione, ma in realtà è un'importante abilità da avere quando si lavora con stringhe in C#. Ci permette di manipolare e ottenere parti specifiche di una stringa in modo efficiente e preciso.
+L'estrazione di sottostringhe è un'operazione comune nella programmazione che consente di ottenere una parte specifica di una stringa più grande. Questa funzione può essere utile per la manipolazione di dati o per l'analisi di testi. In questo articolo, esploreremo come e perché utilizzare l'estrazione di sottostringhe in C#.
 
 ## Come fare
 
-Per estrarre una sottostringa in C#, possiamo utilizzare il metodo `Substring()` della classe `String`. Questo metodo richiede due parametri: l'indice di inizio e la lunghezza della sottostringa desiderata.
-
-Ad esempio, se abbiamo una stringa `"Ciao amici!"` e vogliamo estrarre solo la parola `"amici"`, possiamo utilizzare il seguente codice:
+Per estrarre una sottostringa da una stringa in C#, utilizzeremo il metodo `Substring()` della classe `String`. Questo metodo accetta due parametri: l'indice iniziale della sottostringa e la lunghezza della sottostringa desiderata. Vediamo un esempio:
 
 ```C#
-string greeting = "Ciao amici!";
-string friends = greeting.Substring(5,5);
-Console.WriteLine(friends);
-//Output: amici
+string frase = "Oggi è una bella giornata";
+string sottostringa = frase.Substring(6, 3);
+Console.WriteLine(sottostringa); // Output: è u
 ```
 
-In questo caso, abbiamo specificato che la nostra sottostringa inizia all'indice 5 (il primo carattere è considerato indice 0) e ha una lunghezza di 5 caratteri.
+In questo esempio, abbiamo estratto una sottostringa di lunghezza 3 a partire dall'indice 6 della stringa `frase`, che corrisponde alle lettere "è u". Si noti che gli indici iniziano da 0 e che la lunghezza è opzionale - se non specificata, la sottostringa includerà tutti i caratteri fino alla fine della stringa.
 
-Possiamo anche utilizzare il metodo `Substring()` per estrarre sottostringhe da una posizione specifica fino alla fine della stringa, specificando semplicemente l'indice di inizio. Ad esempio:
+Possiamo anche utilizzare il metodo `Substring()` per estrarre una parte di una stringa fino a un determinato carattere o parola. Vediamo un esempio:
 
 ```C#
-string sentence = "Questa è una frase.";
-string phrase = sentence.Substring(10);
-Console.WriteLine(phrase);
-//Output: una frase.
+string frase = "Benvenuti in Italia";
+string sottostringa = frase.Substring(10);
+Console.WriteLine(sottostringa); // Output: Italia
 ```
+
+In questo caso, abbiamo specificato solo l'indice iniziale e non la lunghezza, quindi la sottostringa include tutti i caratteri dalla posizione 10 fino alla fine della stringa.
 
 ## Approfondimento
 
-Il metodo `Substring()` è molto utile per vari scopi, come per esempio quando si vuole ottenere solo il nome di un file da un percorso completo o quando si lavora con stringhe di input da parte dell'utente.
+Oltre al metodo `Substring()`, esistono altri modi per estrarre sottostringhe in C#. Ad esempio, possiamo utilizzare il metodo `Split()` per dividere una stringa in più sottostringhe in base a un carattere o un insieme di caratteri specifici. Vediamo un esempio:
 
-Tuttavia, è importante ricordare che l'indice di inizio deve essere all'interno dei limiti della stringa originale per evitare errori. Inoltre, il metodo `Substring()` restituisce una nuova stringa invece di modificare quella originale, quindi è importante assegnare il risultato ad una nuova variabile o utilizzarlo in un'operazione successiva.
+```C#
+string numeri = "1, 2, 3, 4, 5";
+string[] sottostringhe = numeri.Split(',');
+Console.WriteLine(sottostringhe[2]); // Output: 3
+```
+
+In questo esempio, abbiamo diviso la stringa `numeri` ogni volta che incontriamo una virgola e abbiamo memorizzato le sottostringhe risultanti in un array. Possiamo quindi accedere alle singole sottostringhe utilizzando gli indici dell'array.
+
+Un'altra opzione è utilizzare le espressioni regolari per estrarre sottostringhe in base a un modello. Questo è particolarmente utile quando si desidera estrarre parti specifiche di una stringa che seguono un determinato schema.
 
 ## Vedi anche
 
-- Metodo `Substring()` nella documentazione di Microsoft: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring
-- Tutorial su stringhe in C#: https://www.programmareincsharp.it/stringhe-csharp/
-- Esempi di utilizzo del metodo `Substring()`: https://www.engineersedge.com/programming/C_vs_vb_net_strings_15047.html
+- [Documentazione di Microsoft su metodo `Substring()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [Tutorial su espressioni regolari in C#](https://www.c-sharpcorner.com/blogs/regular-expressions-in-c-sharp6)
+- [Esempio di utilizzo del metodo `Split()`](https://www.tutorialsteacher.com/csharp/csharp-string-split)

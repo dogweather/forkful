@@ -1,48 +1,43 @@
 ---
 title:    "C# recipe: Creating a temporary file"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Creating a temporary file is a common task in programming that serves a specific purpose. It allows developers to store data temporarily while it is being used or manipulated before being permanently saved or deleted. This can be beneficial in situations where the data is only needed temporarily or when there is a need for a backup of the original data.
+Temporary files are a crucial part of many programming projects, especially when dealing with large amounts of data or performing complex tasks. These files serve as an intermediary step, allowing for easier manipulation and organization of data before it is permanently stored or processed.
 
 ## How To
+Creating a temporary file in C# is a simple task that can be achieved using the ```Path``` and ```File``` classes. First, we need to define the path where we want the temporary file to be located using the ```GetTempFileName``` method from the ```Path``` class. This method will automatically generate a unique file name and return the path as a string. 
+
+Next, we can use the ```File.Create``` method to actually create the temporary file. This method takes the file path as its first argument and sets the file's access mode as its second argument, in this case, we will use ```FileAccess.ReadWrite``` to allow both reading and writing to the file.
+
+To write data to the temporary file, we can use the ```WriteAllText``` method from the ```File``` class, passing in the file path and the data we want to write as arguments. After we are done manipulating the file, we can delete it using the ```Delete``` method from the ```File``` class.
+
+Below is an example of how to create and manipulate a temporary file in C#:
+
 ```C#
-// Create a temporary file
-string tempFilePath = Path.GetTempFileName();
-
-// Write data to the temporary file
-using (StreamWriter writer = new StreamWriter(tempFilePath))
-{
-    writer.WriteLine("This is a temporary file.");
-}
-
-// Read from the temporary file
-using (StreamReader reader = new StreamReader(tempFilePath))
-{
-    string data = reader.ReadToEnd();
-    Console.WriteLine(data);
-}
-
-// Delete the temporary file
-File.Delete(tempFilePath);
+var path = Path.GetTempFileName();
+var file = File.Create(path, FileAccess.ReadWrite);
+File.WriteAllText(path, "This is a temporary file.");
+file.Close();
+File.Delete(path);
 ```
 
-Output:
-```
-This is a temporary file.
-```
+The above code will create a temporary file, write the string "This is a temporary file." to it, and then delete the file.
 
 ## Deep Dive
-Creating a temporary file in C# is a straightforward process. The `Path.GetTempFileName()` method generates a unique file name and creates a zero-byte file in the user's temporary folder. This method also returns the full path of the temporary file, which allows for easy manipulation and deletion.
+Apart from creating and manipulating temporary files, it is important to properly dispose of them after use. This can be achieved by using the ```using``` statement, which ensures that the resources used by the file are properly disposed of after its use.
 
-In the above example, we used the `StreamWriter` class to write data to the temporary file. This class allows us to write text to files in a specific encoding. Similarly, the `StreamReader` class was used to read from the temporary file. It reads characters from a byte stream in a particular encoding.
-
-It is essential to note that temporary files are not automatically deleted when the program terminates. As shown in the example, the `File.Delete()` method must be called to remove the temporary file after it has been used.
+It is also worth mentioning that temporary files are not automatically deleted by the operating system. It is good practice to delete the temporary file explicitly after it has served its purpose to avoid clutter and conserve resources.
 
 ## See Also
-- [MSDN: Path.GetTempFileName Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename)
-- [MSDN: StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
-- [MSDN: StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+Here are some helpful resources for further reading on creating and managing temporary files in C#:
+
+- [Microsoft Docs: Path Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=net-5.0)
+- [Microsoft Docs: File Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0)
+- [C# Corner: Managing Temporary Files in C#](https://www.c-sharpcorner.com/article/managing-temporary-files-in-C-Sharp/)
+
+Creating temporary files may seem like a small and trivial task, but it is an essential tool in the developer's toolbox. Properly utilizing temporary files can help improve the efficiency and organization of your code, making your programming projects smoother and more manageable.

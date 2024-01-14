@@ -1,41 +1,45 @@
 ---
-title:    "Arduino: Läsa en textfil"
+title:    "Arduino: Att läsa en textfil"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Det kan vara viktigt att kunna läsa en textfil i Arduino-programmering, speciellt om du behöver lagra eller hämta data från en extern källa. Detta kan vara användbart för att utöka funktionaliteten hos dina projekt och skapa mer interaktiva och dynamiska lösningar.
 
-Att läsa en textfil är en viktig del av många programmeringsprojekt. Det kan hjälpa dig att spara och hämta data som behövs för dina Arduino-program. Här lär vi dig varför läsa en textfil är viktigt och hur du gör det på bästa sätt.
+# Hur du gör det
+För att läsa en textfil i Arduino-programmering behöver du använda File-läsare-biblioteket. Detta bibliotek ger dig möjlighet att öppna och läsa en textfil från ett SD-kort eller ett annat extern lagringsmedium.
 
-## Hur man gör
-
-För att läsa en textfil i Arduino behöver du först öppna filen. Detta görs med funktionen `open()` som tar två argument - namnet på filen och vilken läge den ska öppnas i. Om filen inte finns kommer den att skapas automatiskt. Sedan kan du använda funktionen `read()` för att läsa in varje rad i filen och spara den i en variabel. Här är ett exempel:
+Här är ett exempel på kod som visar hur du kan läsa en textfil från ett SD-kort och skriva ut dess innehåll i seriell monitor:
 
 ```Arduino
-File textFile = SD.open("data.txt", FILE_READ);
+#include <SPI.h>
+#include <SD.h>
 
-String line = "";
-
-while (textFile.available()) {
-  line = textFile.readStringUntil('\n');
-  Serial.println(line);
+void setup() {
+    Serial.begin(9600); // starta seriell kommunikation
+    SD.begin(4); // initialisera SD-kortpinne
+    File textFil = SD.open("textfil.txt"); // öppna textfilen
+    while (textFil.available()) { // loopa igenom filen tills all text har lästs
+        char text = textFil.read(); // läs en tecken från filen
+        Serial.print(text); // skriv ut tecknet i seriell monitor
+    }
+    textFil.close(); // stäng filen när allting har lästs
 }
 
-textFile.close();
+void loop() {
+    // din kod här
+}
 ```
 
-Koden ovan öppnar filen "data.txt" för läsning, läser in varje rad och skriver ut den på seriell monitor. Notera att filen behöver stå i ett SD-kort för att kunna läsas. Om du vill spara datan som lästs i en variabel istället för att skriva ut den, kan du använda `textFile.readString()` istället.
+När du kör denna kod kommer du att se innehållet i din textfil skrivas ut i seriell monitor. Du kan också anpassa koden för att göra mer avancerade operationer med texten, till exempel spara den i en variabel eller utföra beräkningar på den.
 
-## Djupdykning
+# Djupdykning
+För att förstå mer om hur File-läsare-biblioteket fungerar kan du läsa dokumentationen på Arduino:s hemsida eller titta på källkoden för biblioteket. Du kanske också vill lära dig mer om hur man hanterar textfiler i allmänhet, till exempel hur man skriver till en textfil eller lägger till data i en befintlig fil.
 
-Det finns flera saker att tänka på när man läser en textfil i Arduino. Först och främst behöver du ha tillgång till en SD-kortläsare för att kunna läsa filer på SD-kortet. Dessutom kan du använda olika metoder för att läsa filen, beroende på vilken typ av datan är sparad som. Till exempel kan du använda `parseJASON()` om datan är i JSON-format eller `parseInt()` om det är numerisk datan.
-
-## Se även
-
-För mer information och exempel på hur man läser en textfil i Arduino, se följande länkar:
-
-- [Läsa en textfil på SD-kortet](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadFile)
-- [Serial.read()](https://www.arduino.cc/reference/en/language/functions/communication/serial/read/)
-- [Arduino SD library](https://www.arduino.cc/en/Reference/SD)
+# Se även
+- [File-läsare-bibliotekets dokumentation](https://www.arduino.cc/en/Reference/SD)
+- [Källkod för File-läsare-biblioteket](https://github.com/arduino-libraries/SD)
+- [Tips för att hantera textfiler i Arduino-projekt](https://learn.sparkfun.com/tutorials/how-to-work-with-text-files/all)

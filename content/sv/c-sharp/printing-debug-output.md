@@ -1,41 +1,96 @@
 ---
-title:    "C#: Utmatning av felsökningsdata"
+title:    "C#: Utskrift av felmeddelanden"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva debuggutdata är en oumbärlig teknik som hjälper utvecklare att förstå och lösa problem i sin kod. Genom att skriva ut information om variabler, funktioner och andra relevanta delar av koden kan man enkelt spåra och identifiera fel. Att använda utskrift av debuggutdata är ett enkelt och praktiskt sätt att förbättra kvaliteten på ens kod.
+Felsökningsutmatning är en viktig del av programmering. Det hjälper dig att identifiera och åtgärda problem i din kod på ett snabbt och effektivt sätt. Genom att skriva ut olika värden och variabler i din kod kan du se hur de ändras och spåra eventuella fel.
 
-## Så här gör du
+## Hur man gör
 
-För att skriva ut debuggutdata i C# kan man använda sig av metoden Console.WriteLine(). Denna metod tar emot en sträng som argument och skriver ut den till konsolen. Här är ett enkelt exempel:
-
-```C#
-int age = 25;
-Console.WriteLine("Min ålder är: " + age);
-```
-
-Detta kommer att skriva ut "Min ålder är: 25" i konsolen. Man kan också använda placeholders för att enklare formatera utskriften, exempelvis:
+Att skriva ut felsökningsinformation är enkelt och kan göras på olika sätt. Här är några exempel på hur du kan skriva ut felsökningsutmatning i C#:
 
 ```C#
-int a = 10;
-int b = 5;
-Console.WriteLine("Summan av {0} och {1} är {2}", a, b, a + b);
+int number = 42;
+string name = "John";
+
+Console.WriteLine(number); // Skriver ut värdet av variabeln "number"
+Console.WriteLine("Hej " + name); // Skriver ut text plus värdet av variabeln "name"
+
+// Resultat:
+// 42
+// Hej John
 ```
 
-Detta kommer att skriva ut "Summan av 10 och 5 är 15". Genom att använda placeholders kan man enkelt hantera olika typer av variabler och formatera utskriften på ett snyggt och lättläst sätt.
+Du kan också använda metoden `Debug.WriteLine()` för att skriva ut felsökningsinformation. Detta kan vara användbart när du behöver felsöka i en större applikation och vill ha möjlighet att kontrollera utmatningen vid ett senare tillfälle.
+
+```C#
+int x = 5;
+int y = 10;
+Debug.WriteLine($"Summan av {x} och {y} är {x+y}"); // Skriver ut en sträng med variabler
+```
+
+För att skriva ut information om en specifik variabel eller ett objekt, kan du använda `Debug.Print()`-metoden.
+
+```C#
+Person person = new Person("Anna", 26, "Stockholm");
+Debug.Print(person.Name); // Skriver ut värdet av "Name"-egenskapen i objektet
+```
+
+Felsökningsutmatning kan också vara till nytta när du vill se vad som händer i en loop eller en funktion. Du kan enkelt skriva ut information före, under och efter en loop, eller vid olika händelser i en funktion.
 
 ## Djupdykning
 
-Det finns flera olika sätt att skriva ut debuggutdata på i C#. En annan vanlig metod är att använda Debug-klassen, som finns i namespace System.Diagnostics. Genom att använda metoder som Debug.WriteLine() eller Debug.Print() kan man skriva ut debuggutdata till en specifik output, exempelvis en loggfil.
+Det finns flera olika alternativ för felsökningsutmatning i C#, såsom `Console.WriteLine()`, `Debug.WriteLine()` och `Debug.Print()`. Men det går också att göra mer avancerade utskrifter som kan göra ditt felsökningsarbete ännu enklare.
 
-Det är också viktigt att tänka på att inte överanvända utskrift av debuggutdata. Om man skriver ut för mycket data kan det göra det svårt att hitta de specifika uppgifter man letar efter. Det kan också påverka prestandan av ens kod. Det är därför viktigt att vara selektiv och noggrann när man väljer vad man ska skriva ut.
+En sådan möjlighet är att använda `string.Format()`-metoden för att formatera felsökningsutmatning på ett snyggare sätt.
+
+```C#
+// En funktion som dubblar ett tal och skriver ut det
+int DoubleNumber(int number)
+{
+    int result = number * 2;
+    string message = string.Format("Det dubbla av {0} är {1}", number, result);
+    Console.WriteLine(message);
+    
+    return result;
+}
+
+int result = DoubleNumber(7); // Anrop av funktionen ovan
+
+// Resultat:
+// Det dubbla av 7 är 14
+```
+
+Du kan också använda `string interpolation` för att formatera felsökningsutmatning på ett enklare sätt.
+
+```C#
+// Samma funktion som ovan, fast med string interpolation
+int DoubleNumber(int number)
+{
+    int result = number * 2;
+    string message = $"Det dubbla av {number} är {result}";
+    Console.WriteLine(message);
+    
+    return result;
+}
+
+int result = DoubleNumber(7); // Anrop av funktionen ovan
+
+// Resultat:
+// Det dubbla av 7 är 14
+```
+
+Det finns också möjlighet att använda debuggervyn i Visual Studio för att se felsökningsutmatning i realtid. Detta kan vara särskilt användbart när du behöver snabbt hitta ett problem i din kod.
 
 ## Se även
 
-- [Microsoft docs om Console.WriteLine()](https://docs.microsoft.com/en-us/dotnet/api/system.console.writeline?view=netcore-3.1)
-- [Microsoft docs om Debug-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=netcore-3.1)
-- [Artikel om print-debugging i C#](https://stackify.com/csharp-debugging-tips/)
+- [Microsoft dokumentation om felsökningsutmatning i C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-to-the-debug-output)
+
+- [En guide till felsökningsutmatning i C#](https://www.tutorialspoint.com/csharp/csharp_debugging.htm)
+
+- [Video tutorial om felsökningsutmatning i C#](https://www.youtube.com/watch?v=GnyTNyOSitg)

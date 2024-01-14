@@ -1,31 +1,45 @@
 ---
 title:    "Ruby: Lendo um arquivo de texto"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+## Por que
 
-Ler arquivos de texto é uma habilidade importante em programação Ruby, especialmente quando se trabalha com dados externos ou em projetos que envolvem manipulação de dados. Ao aprender a ler um arquivo de texto, você estará expandindo suas habilidades de programação e aumentando sua capacidade de criar soluções eficientes.
+Ler um arquivo de texto é uma tarefa comum na programação Ruby e pode ser útil por diversos motivos, como ler dados armazenados em um arquivo ou fazer a leitura de um arquivo de configuração do seu programa.
 
-## Como ler um arquivo de texto em Ruby
+## Como Fazer
 
-Para ler um arquivo de texto em Ruby, você precisa primeiro abrir o arquivo com o método `File.open()`. Em seguida, use o método `File.read()` para ler o conteúdo do arquivo e armazená-lo em uma variável. Aqui está um exemplo de código Ruby para ler um arquivo de texto chamado "exemplo.txt":
+Existem várias maneiras de ler um arquivo de texto em Ruby. Uma maneira é usando o método `File.open` que recebe o nome do arquivo e o modo de leitura como argumentos. Veja um exemplo:
 
+```
 ```Ruby
-file = File.open("exemplo.txt") # abre o arquivo
-contents = File.read(file) # lê o conteúdo do arquivo e o armazena na variável "contents"
-puts contents # imprime o conteúdo do arquivo
-file.close # fecha o arquivo
+file = File.open("arquivo.txt", "r")
+puts file.read
 ```
 
-## Mergulho mais profundo
+Neste exemplo, o arquivo de texto "arquivo.txt" será aberto no modo de leitura ("r") e seu conteúdo será impresso no console usando o método `read`.
 
-Existem várias maneiras de ler um arquivo de texto em Ruby, incluindo o uso dos métodos `File.readlines()` ou `IO.foreach()`. Além disso, você também pode especificar o modo de leitura ao abrir o arquivo, como "r+" para leitura e gravação ou "a+" para acrescentar conteúdo ao final do arquivo. É importante lembrar de fechar o arquivo após a leitura para evitar problemas com a memória.
+Outra opção é utilizar o método `File.readlines`, que lê o arquivo e retorna um array com cada linha do texto como um elemento. Veja:
 
-## Veja também
+```
+```Ruby
+lines = File.readlines("arquivo.txt")
+puts lines[0] # imprime a primeira linha do arquivo
+```
 
-- [Documentação oficial do Ruby sobre leitura de arquivos](https://ruby-doc.org/core/IO.html)
-- [Tutorial sobre leitura de arquivos em Ruby](https://www.rubyguides.com/2015/05/reading-files-ruby/)
-- [Exemplos práticos de leitura de arquivos em Ruby](https://stackify.com/ruby-read-from-file/)
+Você também pode iterar sobre o array de linhas para realizar alguma operação com cada uma delas.
+
+## Mergulho Profundo
+
+Ao ler um arquivo de texto em Ruby, é importante ter em mente que o processo de leitura pode ser influenciado pelo encoding do arquivo. Se o arquivo contém caracteres especiais, como acentos e cedilhas, é necessário utilizar o encoding correto para não ter problemas ao ler o arquivo.
+
+Além disso, é importante lembrar de fechar o arquivo após a leitura, utilizando o método `close`, ou utilizando o bloco `do...end` com o método `File.open`, que irá fechar o arquivo automaticamente ao final da operação.
+
+## Veja Também
+
+- [Documentação do método File.open](https://ruby-doc.org/core/IO.html#method-c-open)
+- [Documentação do método File.readlines](https://ruby-doc.org/core/IO.html#method-i-readlines)
+- [Tutorial sobre leitura de arquivos em Ruby](https://www.rubyguides.com/2015/05/reading-a-file-in-ruby/)

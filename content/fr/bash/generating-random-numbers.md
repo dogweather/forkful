@@ -1,34 +1,35 @@
 ---
-title:    "Bash: Génération de nombres aléatoires"
+title:    "Bash: La génération de nombres aléatoires"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Pourquoi générer des nombres aléatoires en Bash ?
 
-Vous êtes peut-être en train d'apprendre la programmation Bash et vous vous demandez pourquoi vous devriez vous intéresser à générer des nombres aléatoires. Eh bien, il se trouve que générer des nombres aléatoires est un outil utile pour de nombreuses tâches, telles que les jeux, les simulations et les tests de performance.
+Générer des nombres aléatoires peut être utile dans de nombreuses situations de programmation en Bash. Par exemple, cela peut être utile pour choisir un élément aléatoire parmi une liste, simuler des événements aléatoires ou encore créer des jeux.
 
-## Comment faire
+## Comment générer des nombres aléatoires en Bash
 
-Pour générer des nombres aléatoires en Bash, nous allons utiliser la fonction `shuf`. Cette fonction prend en paramètre une chaîne de caractères contenant une liste de nombres séparés par des espaces et renvoie un nombre choisi au hasard dans cette liste. Voici un exemple de code:
+Il existe plusieurs façons de générer des nombres aléatoires en Bash. La première méthode est d'utiliser la commande `shuf` qui permet de mélanger une liste de nombres de manière aléatoire. Par exemple, pour générer un nombre aléatoire entre 1 et 10, on peut utiliser la commande suivante :
 
 ```Bash
-#!/bin/bash
-# Ceci est un commentaire
-echo "Le nombre aléatoire est:"
-shuf -i 1-100 -n 1
+shuf -i 1-10 -n 1
 ```
 
-Dans cet exemple, nous demandons à `shuf` de générer un nombre aléatoire compris entre 1 et 100 inclus. L'option `-n` spécifie le nombre de nombres à générer, dans notre cas nous voulons en générer un seul. Vous pouvez également utiliser cette fonction pour choisir au hasard un élément dans une liste, en utilisant l'option `-e` suivie de la liste d'éléments.
+Cette commande va créer une liste de nombres allant de 1 à 10 grâce à l'option `-i`, puis va sélectionner un nombre aléatoire grâce à l'option `-n`. On peut ensuite stocker ce nombre dans une variable pour l'utiliser dans notre programme.
 
-## Deep Dive
+## Plongée plus profonde : les différents types de générateurs de nombres aléatoires
 
-Alors comment `shuf` génère-t-il ces nombres aléatoires? En réalité, il utilise une source d'entropie, appelée générateur de nombres pseudo-aléatoires, pour choisir un nombre aléatoire dans la liste donnée. Cette source d'entropie est un algorithme qui utilise des calculs complexes et des données aléatoires pour générer des nombres apparemment aléatoires. Cependant, ces nombres ne sont pas vraiment aléatoires, ils sont simplement imprévisibles.
+Il existe deux types de générateurs de nombres aléatoires en Bash : les générateurs pseudo-aléatoires et les générateurs aléatoires réels.
 
-Vous pouvez également utiliser `shuf` avec une source d'entropie externe en utilisant l'option `-R`. Cela peut être utile si vous voulez que vos programmes génèrent des nombres aléatoires plus imprévisibles, par exemple lorsque vous effectuez des tests de sécurité.
+Les générateurs pseudo-aléatoires utilisent une formule mathématique pour calculer une séquence de nombres qui semblent être aléatoires. Cependant, ils sont déterministes, c'est-à-dire que si on leur donne la même "graine" ou "seed" (nombre de départ), ils produiront toujours la même séquence de nombres. Cela les rend utiles pour les simulations ou les jeux.
 
-# Voir Aussi
+Les générateurs aléatoires réels, quant à eux, utilisent des sources externes telles que l'heure actuelle, la température ou d'autres mesures pour générer des nombres aléatoires. Ils sont donc plus imprévisibles et peuvent être utilisés pour des tâches de cryptographie ou de sécurité.
 
-- [Documentation sur la fonction `shuf`](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [Article sur la génération de nombres aléatoires en Bash] (https://www.cyberciti.biz/faq/unix-linux-random-number-generator-bash/)
+# Voir aussi
+
+- [Documentation de la commande `shuf`](https://www.computerhope.com/unix/shuf.htm)
+- [Générateur de code aléatoire en Bash](https://pastebin.com/kU3Jf8NC)
+- [Génération de nombres aléatoires avec l'outil `dd`](https://www.commandlinefu.com/commands/view/1043/randomly-generate-a-128-bit-encryption-key)

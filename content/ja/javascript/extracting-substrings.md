@@ -1,56 +1,34 @@
 ---
-title:    "Javascript: サブストリングの抽出"
+title:    "Javascript: 部分文字列を抽出する"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ？
 
-文字列の一部を抽出することは、プログラミングにおいて非常に便利です。例えば、ある文字列から特定の言葉やフレーズを抽出したり、必要な情報だけを取り出したりすることができます。この記事では、JavaScriptで文字列を抽出する方法についてご紹介します。
+文字列から部分文字列を抜き出すことのメリットはたくさんあります。例えば、文字列内の特定の単語や文字の出現回数を数える場合や、必要な情報を抜き出して新しい文字列を作成する場合に便利です。また、文字列が長すぎて読みづらい場合に、特定の部分のみを取り出して表示することで見やすくすることもできます。
 
-## 抽出の方法
+##抜き出し方の例
 
-文字列を抽出する方法にはさまざまな方法がありますが、ここでは主に `substring()` メソッドを使った方法をご紹介します。
-
-まずは、抽出したい部分の先頭と末尾のインデックスを指定して、 `substring()` メソッドを使います。例えば、次のコードで `Hello` という部分を抽出することができます。
+文字列から部分文字列を抜き出す方法はいくつかありますが、ここではJavaScriptの標準メソッドである`substring()`を使った例を見ていきましょう。
 
 ```Javascript
-const str = "Hello, world!";
-const hello = str.substring(0, 5);
-console.log(hello); // Output: Hello
+let str = "Hello world";
+console.log(str.substring(0, 5)); // Output: "Hello"
+console.log(str.substring(6, 11)); // Output: "world"
+console.log(str.substring(3)); // Output: "lo world"
 ```
 
-また、`substring()` メソッドを使わずに、配列のようにインデックスを指定して抽出することもできます。例えば、次のように `str[0]` と書くことで `H` を抽出することができます。
+この例では、`substring()`メソッドに抜き出したい部分文字列の開始位置と終了位置を引数として渡しています。第三引数を省略することで、開始位置から文字列の最後までを抜き出すことができます。戻り値として抜き出した部分文字列が返されるため、そのままコンソールに表示することで確認することができます。
 
-```Javascript
-const str = "Hello, world!";
-const firstLetter = str[0];
-console.log(firstLetter); // Output: H
-```
+##深堀り
 
-さらに、`substring()` メソッドを使わずに `slice()` メソッドを使うことでも抽出することができます。例えば、次のように書くことで同じ結果が得られます。
+`substring()`メソッド以外にも、文字列から部分文字列を抜き出す方法はあります。例えば、`slice()`メソッドや正規表現を使う方法があります。また、抜き出した文字列を変数に格納することで、後の処理に活用することもできます。このように、抜き出し方や利用方法は様々なので、自分のアプリケーションに合った最適な方法を選ぶことが重要です。
 
-```Javascript
-const str = "Hello, world!";
-const hello = str.slice(0, 5);
-console.log(hello); // Output: Hello
-```
+##参考リンク
 
-## 深堀り
-
-`substring()` メソッドでは、第一引数に指定したインデックスよりも大きなインデックスを指定した場合、自動的に大きな方のインデックスが先になるように抽出されることに注意しましょう。
-
-また、`substring()` メソッドでは、引数を省略すると自動的に文字列の末尾が指定されます。例えば、次のように書くことで `world!` を抽出することができます。
-
-```Javascript
-const str = "Hello, world!";
-const world = str.substring(7);
-console.log(world); // Output: world!
-```
-
-## See Also
-
-- [MDN Web ドキュメント: substring](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web ドキュメント: slice](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [JavaScriptで文字列を操作する方法まとめ](https://qiita.com/soarflat/items/9faffb87fc8610896efe)
+- [MDN Web Docs - substring()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs - slice()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [正規表現入門](https://www.webprofessional.jp/regex-character-classes-beginner/)

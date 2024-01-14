@@ -1,49 +1,47 @@
 ---
-title:    "Fish Shell: Ekstrakcja podciągów"
+title:    "Fish Shell: Pobieranie podciągów"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego?
+## Dlaczego
 
-W programowaniu często używamy funkcji do manipulacji łańcuchami tekstu, a wyodrębnianie podłańcuchów jest jednym z kluczowych procesów. Pozwala nam to na efektywne i precyzyjne zarządzanie tekstem, bez konieczności przeszukiwania go w całości. W tym wpisie dowiesz się, jak wyodrębnić podłańcuchy za pomocą języka programowania Fish Shell.
+W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego życia. Wiele z nas codziennie korzysta z różnych narzędzi wykorzystujących języki programowania. Jedną z popularnych opcji jest Fish Shell, które pozwala nam na automatyzację wielu zadań. Jedną z przydatnych funkcji w Fish Shell jest możliwość wyciągania podciągów z tekstu. W tym artykule dowiesz się, dlaczego warto poznać tę funkcję oraz jak jej używać.
 
-# Jak to zrobić?
+## Jak to zrobić
 
-Wyodrębnienie podłańcuchów w Fish Shell jest bardzo proste. Wystarczy użyć wbudowanej funkcji ```string sub```, która przyjmuje dwa argumenty: pierwotny łańcuch oraz indeks początkowy i końcowy podłańcucha, który chcemy wydzielić. Poniżej znajduje się przykładowy kod:
+Aby wyciągać podciągi w Fish Shell, używamy polecenia `string` oraz `cut`. Przykładowo, jeśli chcemy wyciągnąć pięć pierwszych znaków z tekstu "Programowanie jest fajne", używamy poniższego kodu:
 
-```
-Fish Shell: string sub "Hello World" 6 10
-
-Output: World
-```
-
-W powyższym przykładzie wyodrębniliśmy podłańcuch "World" z łańcucha "Hello World", zaczynając od indeksu 6 (licząc od zera) i kończąc na indeksie 10 (bez niego). Oznacza to, że wyodrębniony zostanie łańcuch od 6-tego do 10-tego indeksu.
-
-Możemy także wyodrębniać podłańcuchy korzystając z indeksów ujemnych. Jeśli podamy indeks ujemny, to będzie on liczył się od końca łańcucha. Na przykład, jeśli chcemy wyodrębnić ostatnie 5 znaków z łańcucha, możemy użyć takiego kodu:
-
-```
-Fish Shell: string sub "abcdefghijklmnopqrstuvwxyz" -5 -1
-
-Output: vwxyz
+```Fish Shell
+set tekst "Programowanie jest fajne"
+string sub -l 5 $tekst
 ```
 
-Zwróć uwagę na indeks końcowy -1. Jest to spowodowane tym, że indeksy w języku Fish Shell są zawsze o 1 mniejsze od faktycznej liczby znaków. Możemy temu zapobiec, dodając argument "length" do naszej funkcji, który określa długość wyodrębnionego łańcucha. Przykładowo:
+Wynik wyświetli się w terminalu jako "Progr".
 
+Możemy również wyciągać podciągi używając indeksów. Przykładowo, jeśli chcemy wyciągnąć pierwsze trzy znaki z tekstu, używamy poniższego kodu:
+
+```Fish Shell
+set tekst "Programowanie jest fajne"
+cut -c 1-3 $tekst
 ```
-Fish Shell: string sub "abcdefghijklmnopqrstuvwxyz" -5 -1 length 5
 
-Output: vwxyz
-```
+Wynik wyświetli się jako "Pro".
 
-# Deep Dive
+Możliwości wyciągania podciągów są nieograniczone. Możemy używać różnych funkcji, takich jak `substr` czy `find`, aby dopasować nasze potrzeby.
 
-Funkcja ```string sub``` pozwala nam także na wyodrębnianie podłańcuchów z podłańcuchów, tworząc w ten sposób bardziej złożone operacje. Możemy również wykorzystać ją w innych funkcjach, np. w pętlach lub warunkach, aby bardziej zaawansowanie manipulować tekstem.
+## Głębsze zagłębienie
 
-Poniżej znajdują się przykładowe linki z dokumentacją i kodami, które mogą Ci się przydać w wyodrębnianiu podłańcuchów w Fish Shell:
+Wyciąganie podciągów jest przydatne w różnych sytuacjach. Możemy wykorzystywać je do filtrowania danych, dzielenia tekstu na mniejsze części, czy też uzyskania tylko interesujących nas informacji. Jest to ważna umiejętność, którą warto poznać w celu ułatwienia sobie pracy z codziennymi zadaniami.
 
 ## Zobacz również
 
-- Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/commands.html#string-sub
-- Przykładowe kody z wykorzystaniem funkcji ```string sub```: https://github.com/fish-shell/fish-shell/blob/master/share/functions/string_sub.fish
+Jeśli chcesz dowiedzieć się więcej o funkcjach Fish Shell, polecamy zapoznanie się z poniższymi artykułami:
+
+- [Fish Shell – szybka i przyjazna powłoka dla programistów](https://geekblog.pl/post/fish-shell-szybka-i-przyjazna-powloka-dla-programistow/)
+- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [5 przydatnych funkcji Fish Shell, które musisz poznać](https://www.nixtutor.com/linux/5-useful-fish-shell-features-you-should-know/)
+
+Sprawdź również naszą stronę, gdzie znajdziesz wiele ciekawych artykułów na temat programowania.

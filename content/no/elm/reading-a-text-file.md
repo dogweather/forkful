@@ -1,43 +1,58 @@
 ---
-title:    "Elm: Leser en tekstfil"
+title:    "Elm: Lese en tekstfil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hvorfor
 
-Å lese en tekstfil kan være avgjørende når man jobber med programmering. Enten det er for å importere data, behandle store mengder informasjon, eller bare for å utføre en rekke handlinger basert på innholdet i filen, er det viktig å ha kunnskap om hvordan man kan lese en tekstfil i Elm.
+Hvis du er en nybegynner innenfor programmering eller en erfaren utvikler på jakt etter et nytt språk å lære, bør du ta en titt på Elm. Dette funksjonelle programmeringsspråket er enkelt å lære, og det har mange nyttige funksjoner. I denne bloggposten vil vi fokusere på hvordan du kan lese en tekstfil ved hjelp av Elm.
 
-## Hvordan
+#Slik gjør du det
 
-For å lese en tekstfil i Elm, kan vi bruke funksjonen `File.lines` som tar inn en `File` og returnerer en `Task` som inneholder en liste med hver linje i filen som en `String`. Her er et eksempel på hvordan man kan implementere dette:
+For å lese en tekstfil i Elm, må du følge disse trinnene:
 
-```Elm
-import File exposing (lines)
-import Task exposing (Task)
-import Result exposing (Result)
-import String
+1. Importer File modulen ved å legge til dette øverst i filen din: ```import File exposing (readString)```
 
--- Leser innholdet i en tekstfil og returnerer en liste med linjene som en Task
-readFile : File -> Task String (Result String (List String))
-readFile file =
-   lines file
+2. Bruk funksjonen ```readString``` for å lese innholdet av tekstfilen. Denne funksjonen tar to argumenter: filbanen og en funksjon som beskriver hva som skal gjøres med tekststrengen (for eksempel å skrive den ut til konsollen). Et eksempel på hvordan du kan bruke denne funksjonen: 
 
--- Funksjon for å konvertere tekstfilen til en liste med ord
-fileToList : File -> Task String (Result String (List String))
-fileToList file =
-   Task.map (List.map String.words) (readFile file)
+```
+readString "minfil.txt" (\result -> 
+    case result of 
+        Ok content -> 
+            Debug.log "Tekstfilinnholdet er" content 
+        Err error -> 
+            Debug.log "Det oppsto en feil: " error 
+)
 ```
 
-Etter å ha importert de nødvendige modulene, kan vi bruke `readFile`-funksjonen til å lese innholdet i filen. Deretter kan vi bruke `fileToList`-funksjonen til å konvertere tekstfilen til en liste med ord. Vi kan også jobbe med linjene individuelt ved å bruke funksjoner som `List.map` og `String.split` etter å ha fått tilgang til linjene som en liste.
+3. Nå kan du kjøre koden din for å se resultatet!
 
-## Dypdykk
+Eksempel på tekstfilinnhold (minfil.txt):
 
-Det er verdt å merke seg at `File.lines`-funksjonen tar en `File` som argument, som må være en fil som allerede er lastet opp til Elm-programmet ditt. For å laste opp en fil til Elm, kan vi bruke en input-fil-feltet og `File.Select`-modulen. Det er også viktig å håndtere eventuelle feil som kan oppstå under lesingen av filen ved å bruke `Result`-modulene.
+```
+Hei! Dette er en tekstfil.
+Den inneholder litt informasjon som vi skal lese med Elm.
+```
 
-## Se også
+Output i konsollen:
 
-- [Elm dokumentasjon om å lese filer](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Eksempel på en tekstfil i Elm](https://github.com/elm/file/blob/1.0.4/examples/File.elm) 
-- [Elm Guide om filer og input](https://guide.elm-lang.org/interop/file.html)
+```
+Tekstfilinnholdet er Hei! Dette er en tekstfil. Den inneholder litt informasjon som vi skal lese med Elm.
+```
+
+#Dykke dypere
+
+Nå som du vet hvordan du kan lese en enkel tekstfil i Elm, kan det være nyttig å vite om noen av de andre funksjonene og metodene for å lese filer. For eksempel kan du bruke ```readLines``` for å lese en tekstfil linje for linje, eller ```readAsStream```, som lar deg lese store filer stykkevis og kontinuerlig. 
+
+Du kan også bruke funksjonen ```readFile``` for å lese binærfiler, eller ```readDirectory``` for å lese innholdet av en hel mappe. Det er også mulig å lese filer fra internett ved å bruke funksjoner som ```Http.send```.
+
+Det er verdt å merke seg at disse funksjonene returnerer resultatet i form av en ```Task```, som må håndteres riktig for å unngå eventuelle feil.
+
+#Se også
+
+- Elm's offisielle dokumentasjon for File modulen: https://package.elm-lang.org/packages/elm/file/latest/
+- Enkel Elm guide for å lese tekstfiler: https://guide.elm-lang.org/effects/files.html
+- Elm tutorial for å lese og skrive filer: https://www.tutorialspoint.com/elm/elm_file_handling.htm

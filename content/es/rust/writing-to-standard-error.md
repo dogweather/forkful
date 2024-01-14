@@ -1,35 +1,42 @@
 ---
 title:    "Rust: Escribiendo en el error estándar"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué es importante escribir en el error estándar?
+# Por qué
 
-Aunque puede parecer tedioso o innecesario, escribir en el error estándar es una práctica importante en la programación de Rust. Al enviar mensajes de error específicos a la salida de error, puedes identificar y solucionar problemas en tu código de manera más eficiente.
+Escribir a la salida de error estándar es una práctica común en la programación, especialmente en lenguajes como Rust. Esto se debe a que al escribir en esta salida, se pueden mostrar mensajes de error o información de depuración durante la ejecución del programa. Además, también permite al usuario redirigir los mensajes de error a diferentes archivos o sistemas de registro, lo que facilita la identificación y solución de problemas en la aplicación.
 
 ## Cómo hacerlo
 
-Escribir en el error estándar en Rust es muy sencillo. Primero, debes importar la librería estándar `std::io` y la macro `println!` para imprimir mensajes. Luego, puedes utilizar el método `eprintln!` para escribir en el error estándar. Por ejemplo:
+Para escribir a la salida de error estándar en Rust, se utiliza la macro `eprintln!()`. Esta macro acepta un argumento de cadena y utiliza el formato de impresión para mostrar mensajes específicos. Por ejemplo:
 
-```rust
-use std::io;
-fn main() {
-  let error_message = "¡Ocurrió un error!";
-  eprintln!("Error: {}", error_message);
-}
+```Rust
+eprintln!("Error al conectarse al servidor. Código de error: {}", code);
 ```
-La salida de este código sería `Error: ¡Ocurrió un error!` en la consola.
 
-## Deep Dive
+Los mensajes escritos con `eprintln!()` aparecerán en la consola durante la ejecución del programa.
 
-Escribir en el error estándar también es útil cuando se trabaja con librerías y código externo. Si una librería lanza un error, puedes utilizar `eprintln!` para mostrarlo en la salida de error y tener una mejor comprensión de lo que está ocurriendo en tu programa.
+## Profundizando
 
-Otro motivo para escribir en el error estándar es en el caso de aplicaciones que se ejecutan en segundo plano o en servidores. Al escribir en el error estándar, los mensajes de error se registrarán en un archivo de registro, lo que te permitirá identificar y solucionar problemas en un momento posterior.
+Además de la macro `eprintln!()`, también es importante conocer la diferencia entre estándar error y estándar output. Mientras que la salida de error se usa para mostrar mensajes de error y depuración, la salida estándar se utiliza para información general y mensajes de éxito. En Rust, la salida estándar se maneja con la macro `println!()`.
+
+Otra función útil para escribir en la salida de error es `std::io::stderr()`. Esta función permite crear un objeto `Stderr` que se puede utilizar para escribir directamente a la salida de error. Por ejemplo:
+
+```Rust
+use std::io::Write;
+
+let mut stderr = std::io::stderr();
+writeln!(stderr, "Ocurrió un error en la línea {} del código", line);
+```
+
+Este método es particularmente útil para imprimir mensajes de error en un formato estructurado.
 
 # Ver también
 
-- [Documentación oficial de Rust sobre la librería estándar](https://doc.rust-lang.org/std/index.html)
-- [Guía de Rust sobre manejo de errores](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-- [Tutorial interactivo de Rust en español](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+- [Documentación oficial de Rust sobre escritura de mensajes de error](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.stderr)
+- [Tutorial de Rust sobre manejo de errores](https://www.rust-lang.org/learn/get-started)
+- [Artículo sobre el uso de salidas de error estándar en Rust](https://medium.com/@fredrikanderzon/rust-standard-output-and-standard-error-e1a7cf3086b9)

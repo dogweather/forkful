@@ -1,75 +1,64 @@
 ---
 title:    "Clojure: Impresión de salida de depuración"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir salida de depuración en Clojure?
+## Por qué
 
-La impresión de salida de depuración en Clojure es una práctica común para detectar y solucionar errores en el código. Al imprimir mensajes de depuración, podemos ver información detallada sobre el funcionamiento de nuestro programa, lo que nos ayuda a identificar dónde se producen los errores y cómo solucionarlos.
+¿Alguna vez te has encontrado en una situación en la que tu código no funciona como debería y no tienes ni idea de por qué? Esa es la razón por la que imprimir salida de depuración (debug output) puede ser útil. Al imprimir el valor de variables y hacer un seguimiento del flujo de tu programa, podrás identificar fácilmente dónde está el error y cómo solucionarlo.
 
-## Cómo imprimir salida de depuración en Clojure
+## Cómo hacerlo
 
-Para imprimir salida de depuración en Clojure, podemos utilizar la función `println`. Esta función toma un argumento y lo imprime en la consola. En el siguiente ejemplo, imprimimos la variable `x`:
-
-```Clojure
-(def x "Hola Mundo")
-(println x)
-
-;; Salida:
-Hola Mundo
-```
-
-También podemos utilizar la función `prn` para imprimir la representación en cadena de un objeto. Esta función imprime los elementos sin agregar espacios o nuevos saltos de línea. En el siguiente ejemplo, imprimimos una lista:
+Utilizar la función `println` es la forma más básica de imprimir debug output en Clojure. Por ejemplo:
 
 ```Clojure
-(def lista [1 2 3 4])
-(prn lista)
+(defn suma [a b]
+  (println "El valor de a es" a)
+  (println "El valor de b es" b)
+  (+ a b))
 
-;; Salida:
-[1 2 3 4]
+(suma 2 3)
 ```
 
-Otra opción es utilizar `pr-str`, que devuelve la representación en cadena de un objeto en lugar de imprimirlo. En el siguiente ejemplo, imprimimos una cadena con formato:
+La salida sería:
+
+```
+El valor de a es 2
+El valor de b es 3
+5
+```
+
+También puedes utilizar `prn` para imprimir valores sin ninguna información adicional, o `pr-str` para obtener una representación en forma de string de un valor. Ambas funciones aceptan múltiples argumentos y los imprimen en una sola línea.
+
+## Profundizando
+
+Además de las funciones mencionadas anteriormente, también puedes utilizar la macro `dbg` del librería tools.cli, que te permite especificar qué valores quieres imprimir en tu código. Por ejemplo:
 
 ```Clojure
-(def nombre "Juan")
-(def edad 30)
-(def ciudad "Madrid")
+(ns example.core
+  (:require [clojure.tools.cli :refer [dbg]]))
 
-(println (pr-str "Hola, mi nombre es" nombre "tengo" edad "años y vivo en" ciudad))
+(defn suma [a b]
+  (let [a (dbg a)
+        b (dbg b)]
+    (+ a b)))
 
-;; Salida:
-Hola, mi nombre es Juan tengo 30 años y vivo en Madrid
+(suma 2 3)
 ```
 
-## Profundizando en la impresión de salida de depuración
+La salida sería:
 
-Además de las funciones mencionadas anteriormente, también podemos utilizar `format` para imprimir cadenas con formato personalizado. Esta función toma una cadena de formato y una lista de argumentos. En el siguiente ejemplo, imprimimos un mensaje personalizado utilizando `format`:
-
-```Clojure
-(def nombre "Maria")
-(format "¡Hola %s, bienvenida a nuestro programa!" nombre)
-
-;; Salida:
-¡Hola Maria, bienvenida a nuestro programa!
+```
+a=2  b=3
+5
 ```
 
-También podemos utilizar `prn-str` para imprimir y devolver la representación en cadena de un objeto. Esto es útil si queremos almacenar la salida de depuración en una variable para su posterior uso. En el siguiente ejemplo, almacenamos la representación en cadena de una lista en una variable llamada `salida`:
-
-```Clojure
-(def nombres ["Lucia" "Luis" "Sara"])
-(def salida (prn-str nombres))
-
-(println salida)
-
-;; Salida:
-"[\"Lucia\" \"Luis\" \"Sara\"]"
-```
+También puedes utilizar un deshabilitador de debug output en producción para evitar que se impriman valores innecesarios y así mejorar el rendimiento de tu programa.
 
 ## Ver también
 
-- [Documentación de Clojure sobre la función `println`](https://clojuredocs.org/clojure.core/println)
-- [Documentación de Clojure sobre la función `prn`](https://clojuredocs.org/clojure.core/prn)
-- [Documentación de Clojure sobre la función `pr-str`](https://clojuredocs.org/clojure.core/pr-str)
+- [Documentación oficial de Clojure sobre imprimir valores](https://clojuredocs.org/clojure.core/println)
+- [Artículo en CódigoFacilito sobre la depuración de programas en Clojure](https://codigofacilito.com/articulos/debug-clojure)

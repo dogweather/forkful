@@ -1,63 +1,46 @@
 ---
-title:    "PHP: Generera slumpmässiga nummer"
+title:    "PHP: Skapa slumpmässiga nummer"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+Varför generera slumpmässiga nummer med PHP?
 
-Många gånger i vår kod behöver vi slumpvisa nummer för att skapa unika ID:er, generera slumpmässiga färger eller bara som grund för en spellogik. I den här bloggposten kommer vi att utforska hur du kan skapa slumpmässiga nummer i PHP och ge dig lite djupare förståelse för processen.
+Att kunna generera slumpmässiga nummer är en mycket användbar funktion inom programmering, speciellt inom webbutveckling. Det kan användas för allt från att skapa slumpmässiga lösenord till att simulera slumpmässiga händelser i spel. Med hjälp av PHP, kan du enkelt skapa dina egna slumpmässiga nummer för att använda i dina projekt.
 
-## Så här
+Hur man genererar slumpmässiga nummer med PHP
 
-För att generera slumpmässiga nummer i PHP använder vi funktionen `rand()`. Denna funktion tar två parametrar, `min` och `max`, vilka definierar intervallet som det slumpmässiga numret ska genereras i.
-
-```PHP
-// Generera ett slumpmässigt heltal mellan 1 och 10
-$randomNumber = rand(1, 10);
-
-// Generera ett slumpmässigt decimaltal mellan 0 och 1
-$randomDecimal = rand() / getrandmax();
-```
-
-Vi kan också använda `mt_rand()` för att generera mer säkra slumpmässiga nummer. Denna funktion tar också två parametrar, men har en bättre algoritm för att skapa slumpmässiga nummer.
+För att kunna generera slumpmässiga nummer med PHP, behöver du använda funktionen "rand()" som är inbyggd i språket. Denna funktion tar emot två parametrar, det lägsta och högsta värdet för intervallet av de slumpmässiga numren du vill generera. Här är ett exempel på hur du kan använda "rand()" för att skapa fem slumpmässiga nummer mellan 1 och 10:
 
 ```PHP
-// Generera ett slumpmässigt heltal mellan 1 och 10
-$randomNumber = mt_rand(1, 10);
-
-// Generera ett slumpmässigt decimaltal mellan 0 och 1
-$randomDecimal = mt_rand() / mt_getrandmax();
-```
-
-Nu när vi kan generera slumpmässiga nummer, låt oss använda det på ett konkret exempel. Vi ska skapa ett enkelt tärningsspel där datorn slår tärningen och vi gissar på om det blev udda eller jämnt.
-
-```PHP
-$computerRoll = rand(1, 6); // Datorn slår tärningen
-$userGuess = "odd"; // Vår gissning
-
-if ($computerRoll % 2 == 0) { // Om datorns tärning blev jämn
-    $computerGuess = "even";
-} else { // Om datorns tärning blev udda
-    $computerGuess = "odd";
+<?php
+for($i = 0; $i < 5; $i++){
+    $random = rand(1, 10);
+    echo $random . "\n";
 }
-
-if ($userGuess == $computerGuess) { // Om vår gissning är samma som datorns
-    echo "Grattis, du gissade rätt! Datorn slog en " . $computerRoll;
-} else { // Om vår gissning är annorlunda från datorns
-    echo "Tyvärr, du gissade fel. Datorn slog en " . $computerRoll;
-}
+?>
 ```
 
-## Djupdykning
+Detta kodblock kommer att ge dig en utskrift som ser ut så här:
 
-Det finns flera olika algoritmer som används för att generera slumpmässiga nummer. Men den mest grundläggande metoden är genom att använda en matematisk formel som kallas "linear congruential generator". Det är en enkel formel som använder ett startvärde och en multiplikator för att generera ett nytt värde varje gång.
+```
+5
+2
+9
+8
+3
+```
 
-Det är viktigt att komma ihåg att även om dessa funktioner genererar nummer som är tillräckligt slumpmässiga för de flesta användningsområden, är de inte helt säkra för kryptografiska syften.
+Djupdykning i generering av slumpmässiga nummer
 
-## Se även
+När du använder funktionen "rand()", är det viktigt att förstå att de genererade numren är pseudoslumpmässiga. Det betyder att de inte är helt slumpmässiga utan genereras utifrån en matematisk algoritm. Denna algoritm baseras på en "seed", som vanligtvis är tiden när funktionen kallas. Detta resulterar i att om du genererar slumpmässiga nummer i en snabb följd, kan de vara mindre slumpmässiga eftersom de baseras på samma "seed". En lösning på detta problem är att använda funktionen "mt_rand()" istället, som använder en annan algoritm som resulterar i mer slumpmässiga nummer.
 
-- [Dokumentation för rand()](https://www.php.net/manual/en/function.rand.php)
-- [Dokumentation för mt_rand()](https://www.php.net/manual/en/function.mt-rand.php)
-- [Tutorial om generering av slumpmässiga nummer i PHP](https://code.tutsplus.com/tutorials/random-number-generation-in-php--cms-27020)
+En annan viktig punkt att komma ihåg är att funktionen "rand()" är beroende av konfigurationen av din server. Om du inte har tillgång till konfigurationen, kan du istället använda funktionen "getrandmax()", vilket ger dig det högsta talet som kan returneras av "rand()".
+
+Se även
+
+- PHPs officiella dokumentation för "rand()": https://www.php.net/manual/en/function.rand.php
+- En artikel om pseudoslumpmässiga nummer: https://hackernoon.com/how-does-a-computer-generate-pseudo-random-numbers-9329bbfe0908
+- Användning av slumpmässiga nummer i spel med PHP: https://www.simplifiedcoding.net/random-number-picker-php/

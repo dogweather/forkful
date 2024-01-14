@@ -1,40 +1,37 @@
 ---
-title:    "Ruby: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:    "Ruby: Merkkijonon muuntaminen pieniksi kirjaimiksi"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monien ohjelmointikielien joukossa Ruby erottuu helppoutensa ja luettavuutensa ansiosta. Yksi sen kätevistä ominaisuuksista on kyky muuttaa merkkijono pienikirjaimiseksi. Tässä blogikirjoituksessa käymme läpi, miksi voit haluta tehdä tämän ja miten se tehdään.
+Miksi kukaan haluaisi muuttaa merkkijonon pieniksi kirjaimiksi?
+
+Muuttamalla merkkijonon pieniksi kirjaimiksi voit helpottaa tiedon vertailua ja käsittelyä. Pienet kirjaimet varmistavat myös, että merkkijonoja voidaan vertailla oikein, sillä Ruby-ohjelmointikieli on case-sensitive eli se huomioi kirjainten koon.
 
 ## Miten
 
-Koodiesimerkkejä ja tulosteita näet alla olevissa "```Ruby ... ```" -koodilohkoissa.
-
-```Ruby
-string = "TÄMÄ ON TEKSTIÄ"
-puts string.downcase
+```ruby
+puts "TÄMÄ ON MERKKIJONO".downcase
+puts "tämä on merkkijono".downcase
 ```
 
-Tuloste: "tämä on tekstiä"
+Seuraava koodinpätkä tulostaa molemmissa tapauksissa "tämä on merkkijono". Pilkkuja ja muita erikoismerkkejä ei muuteta, vaan ne pysyvät samanlaisina.
 
-```Ruby
-another_string = "Oletko Valmis ???"
-puts another_string.downcase
-```
+Tärkeää on muistaa käyttää `downcase`-metodia, joka muuttaa merkkijonon pieniksi kirjaimiksi. Ilman sitä, merkkijono pysyy ennallaan eikä muutosta tapahdu.
 
-Tuloste: "oletko valmis ???"
+## Syväsukellus
 
-## Syvällisempi katsaus
+Merkkijonon muuttamiseen pieniksi kirjaimiksi vaikuttaa myös ohjelmiston käyttöjärjestelmä. Esimerkiksi Windows-käyttöjärjestelmässä pienet kirjaimet saattavat muuttua eri tavalla kuin Linux-ympäristössä.
 
-Kun muutat merkkijono pienikirjaimiseksi, Ruby käyttää sisäistä ```downcase``` -metodia. Se muuttaa myös diakriittiset merkit oikein, kuten esimerkiksi ääkköset ja Š-merkit.
-
-Lisäksi on hyvä muistaa, että ```downcase``` -metodi ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon pienikirjaimisena. Tämä on tärkeää ottaa huomioon, jos haluat tallentaa muutetun merkkijonon uuteen muuttujaan.
+Rubyssa on myös muita tapoja muuttaa merkkijonon kirjaimia, kuten `capitalize`, joka muuttaa vain merkkijonon ensimmäisen kirjaimen isoksi ja muut pieniksi.
 
 ## Katso myös
 
-- [Ruby: Merkkijonon muuttaminen pienikirjaimiseksi](https://www.ruby-lang.org/fi/documentation/ruby-from-other-languages/to-ruby-language/string/)
-- [Ruby: Diakriittisten merkkien käsittely](https://www.ruby-lang.org/fi/documentation/syntax/string/#special_characters)
-- [Wikipedia: Diakriittiset merkit](https://fi.wikipedia.org/wiki/Luettelo_suomenkielisist%C3%A4_diakriittisist%C3%A4_merkeist%C3%A4)
+- [Ruby String Documentation](https://ruby-doc.org/core-3.0.2/String.html)
+- [Ruby Case Conversion Methods](https://www.rubyguides.com/2018/05/ruby-case-conversion-methods/)
+- [Ruby Tutorial - Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- [Ruby Style Guide - Case Conversion](https://rubystyle.guide/#case-conversion)

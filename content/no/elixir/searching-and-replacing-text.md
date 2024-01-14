@@ -1,34 +1,66 @@
 ---
-title:    "Elixir: Å søke og erstatte tekst"
+title:    "Elixir: Søke og erstatte tekst"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvis du jobber med tekstbehandling og programmering, har du kanskje kommet over utfordringen med å bytte ut ord eller setninger med andre. Dette kan være en tidkrevende oppgave, spesielt hvis du må gjøre det manuelt i en stor tekstfil. Men med Elixir trenger du ikke å bekymre deg for dette lenger! Ved hjelp av noen få enkle funksjoner kan du enkelt søke og erstatte tekst uten å måtte gjøre det manuelt.
+Å søke og erstatte tekst er en viktig del av programmering. Det lar deg raskt og enkelt gjøre endringer i store mengder tekst, noe som sparer deg for tid og gjør koden din mer effektiv.
 
-## Hvordan
+## Hvordan å gjøre det
 
-Koding av søk og erstatning i Elixir er veldig enkelt og intuitivt. For å søke og erstatte tekst, trenger du bare å bruke funksjonen `String.replace/3`. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Søke og erstatte funksjonene i Elixir er enkle å bruke, men de kan være veldig kraftige. La oss se på et eksempel der vi ønsker å endre alle forekomster av "hello" til "hei" i en streng:
 
-```Elixir
-text = "Hei verden!"
-ny_text = String.replace(text, "verden", "Elixir")
-IO.puts ny_text
+```elixir
+s = "hello world"
+new_s = String.replace(s, "hello", "hei")
+IO.puts new_s
 ```
 
-Dette vil skrive ut `Hei Elixir!` i terminalen. Som du kan se, tar funksjonen tre argumenter: teksten du vil søke i, teksten du vil erstatte og teksten du vil erstatte den første teksten med. Det er også viktig å merke seg at denne funksjonen bare erstatter den første forekomsten av teksten du søker etter. Hvis du vil erstatte alle forekomster, kan du bruke funksjonen `String.replace/4` og legge til et fjerde argument som angir antall forekomster som skal erstattes.
+Output vil være:
 
-## Dykk dypere
+```elixir
+hei world
+```
 
-Det finnes flere måter å søke og erstatte tekst på i Elixir, avhengig av dine behov. Du kan for eksempel bruke funksjonen `String.replace!/3` for å kaste en feilmelding hvis teksten du søker etter ikke finnes i teksten du søker i. Det er også mulig å bruke regulære uttrykk for å søke etter mer komplekse mønstre i teksten.
+Som du kan se, ble "hello" erstattet med "hei" i teksten. Du kan også søke og erstatte på flere forekomster ved å bruke en liste av verdier, for eksempel:
 
-Hvis du vil gå enda dypere, kan du utforske biblioteker som Regex eller ExRegex for å få enda mer avanserte funksjoner for søk og erstatning.
+```elixir
+s = "hello world, hello there"
+new_s = String.replace(s, ["hello", "there"], ["hei", "der"])
+IO.puts new_s
+```
+
+Output vil være:
+
+```elixir
+hei world, hei der
+```
+
+Du kan også bruke regulære uttrykk når du søker og erstatter tekst. La oss si at vi ønsker å endre alle tall i en streng til ordet "nummer". Vi kan bruke regulære uttrykket `\d+` som betyr å matche en eller flere sifre. Se på følgende eksempel:
+
+```elixir
+s = "I have 5 apples and 3 oranges"
+new_s = Regex.replace(~r/\d+/, s, "nummer")
+IO.puts new_s
+```
+
+Output vil være:
+
+```elixir
+I have nummer apples and nummer oranges
+```
+
+Se dokumentasjonen for mer informasjon om alle mulighetene du har med søke og erstatte funksjoner i Elixir.
+
+## Dypdykk
+
+Det er viktig å merke seg at når du søker og erstatter tekst, blir den originale variabelen ikke endret, men en ny kopi blir returnert. Dette er fordi strenger er uforanderlige i Elixir, noe som betyr at de ikke kan endres direkte. Derfor er det viktig å tilordne den nye variabelen til en eksisterende variabel eller bruke den i en funksjon.
 
 ## Se også
-
-- [Elixir Docs: String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir Docs: Regex module](https://hexdocs.pm/elixir/Regex.html)
-- [ExRegex: Regular expressions library for Elixir](https://github.com/elixyticsco/ex_regex)
+- [Elixir String-modulen dokumentasjon] (https://hexdocs.pm/elixir/String.html)
+- [Elixir Regex-modulen dokumentasjon] (https://hexdocs.pm/elixir/Regex.html)
+- [Elixir String og Regex Cheat Sheet] (https://devhints.io/elixir-strings-regex)

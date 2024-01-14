@@ -1,64 +1,58 @@
 ---
-title:    "Fish Shell: 디버그 출력 프린팅"
+title:    "Fish Shell: 디버그 출력 작성"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-디버그 출력을 프린팅하는 데 왜 관심이 있어야 할까요? 일반적인 개발자들이 자주 사용하는 방식에 대해 알아보고, 디버그 출력이 어떤 이점을 가지는지 알아보겠습니다.
+## 왜
 
-## 어떻게
-디버그 출력을 프린팅하는 방법에 대해 알아봅시다. 아래의 예제 코드와 함께 실제 출력 결과를 확인해보세요.
+디버그 출력을 인쇄하는 것에 대해 생각해보았을 때, 그것이 왜 중요한지 궁금하신가요? 디버그 출력은 코드를 디버그하는데 매우 유용합니다. 이를 통해 어떤 변수가 어떤 값을 가지고 있는지, 어떤 코드가 실행되고 있는지 등을 확인할 수 있습니다. 따라서 디버그 출력은 코딩 과정에서 중요한 역할을 합니다.
 
-```Fish Shell
-# 디버그 출력 설정
-set -x
+## 사용 방법
 
-# 출력할 내용 작성
-echo "Hello World"
-
-# 출력 결과
-+ echo "Hello World"
-Hello World
-```
-
-위의 예제 코드에서는 `set -x`를 사용하여 디버그 출력을 활성화한 뒤, `echo`를 사용하여 "Hello World"를 출력하고 있습니다. 디버그 출력이 활성화되면 `+` 기호가 출력되며, `echo`로 출력한 내용이 그 아래에 디버그 출력으로 나타납니다. 이를 통해 우리는 프로그램이 실행되는 동안 어떤 일이 일어나고 있는지 쉽게 파악할 수 있습니다.
-
-## 딥 다이브
-디버그 출력에 대해 더 자세히 알아봅시다. 디버그 출력을 활성화하면 프로그램이 실행되는 동안 변수의 값을 쉽게 추적할 수 있습니다. 예를 들어, 아래의 코드에서는 `count` 변수의 값을 출력하고 있습니다.
+Fish Shell에서 디버그 출력을 하기 위해서는 어떻게 해야 할까요? 간단한 코딩 예제를 통해 알아보겠습니다.
 
 ```Fish Shell
-set -x
-count=1
-set -x count
-
-+ count=1
-+ count
-1
+set var "Hello World"
+echo $var
 ```
 
-또 다른 유용한 사례는 반복문에서 디버그 출력을 사용하는 것입니다. 아래의 코드에서는 `for`문이 한 번 실행될 때마다 `i` 값의 변화를 살펴볼 수 있습니다.
+위 예제에서는 "Hello World"라는 값을 가지는 변수를 선언하고, 그 값을 출력하고 있습니다. 이렇게 출력된 값으로부터 어떤 로직이 실행되고 있는지 파악할 수 있습니다. 다른 간단한 예제를 살펴보겠습니다.
 
 ```Fish Shell
-set -x
-for i in 1 2 3
-set -x i
-
-+ for i in 1 2 3
-+ set -x i
-+ i=1
-+ for i in 1 2 3
-+ set -x i
-+ i=2
-+ for i in 1 2 3
-+ set -x i
-+ i=3
+for i in (seq 1 10)
+  if [ $i -lt 5 ]
+    echo $i
+  else
+    echo "Over 5"
+  end
+end
 ```
 
-디버그 출력은 디버깅을 도와주는 강력한 도구입니다. 프로그램이 어떻게 동작하는지 이해하고, 문제를 해결하기 위해서는 필수적인 기능이기 때문에 자주 사용되는 기능이기도 합니다.
+위 예제는 1부터 10까지의 숫자를 반복적으로 출력하는 예제입니다. 그리고 조건문을 통해 출력되는 값이 5보다 작을 경우에는 숫자를, 그렇지 않은 경우에는 "Over 5"라는 문자열을 출력하고 있습니다. 이렇게 코드를 실행하면서 디버그 출력을 통해 각 단계에서 어떤 동작이 이루어지고 있는지 확인할 수 있습니다.
 
-# 참고자료
-- [Fish Shell 공식 홈페이지](https://fishshell.com)
-- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
-- [Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki)
+## 깊게 파보기
+
+디버그 출력에 대해 더 깊이 알아보겠습니다. Fish Shell에서는 다양한 방법으로 디버그 출력을 할 수 있습니다. 위에서 살펴본 echo 명령어 외에도 다음과 같은 방식으로 디버그 출력을 할 수 있습니다.
+
+- printf 명령어: C언어와 유사한 형식의 문자열을 출력할 때 사용됩니다.
+- set (or set -l) 명령어: 변수의 값을 출력할 때 사용됩니다.
+- test 명령어: 조건문에서 조건을 체크하고 그에 맞는 결과를 출력할 때 사용됩니다.
+
+이 외에도 여러 가지 명령어를 사용하여 디버그 출력을 할 수 있습니다. 따라서 코딩하시다가 어떤 상황에서 디버그 출력을 하는 것이 좋을지 고려해보시기 바랍니다.
+
+## 더 알아보기
+
+"Dealing with Debug Output in Fish Shell" by Caleb Ancell: https://calebancell.com/blog/debugging-fish-shell/
+
+"Using Debug Output with Conditional Expressions" by Fish Shell documentation: https://fishshell.com/docs/current/cmds/test.html#using-debug-output-with-conditional-expressions
+
+"Debugging with Fish Shell" by Derek Wyatt: https://medium.com/@derekwyatt/debugging-with-fish-shell-13c42504b99a
+
+## 참고 자료
+
+- ["디버거의 기본 개념" by 네이버 지식백과](https://terms.naver.com/entry.nhn?docId=1130211&cid=40942&categoryId=32220)
+- ["디버깅 시작하기" by W3C Korea](https://schoo-nexon.w3c.or.kr/REFERENCE/w3c/TR/CSS21/)
+- ["코딩하는 선생님: 벌써 알고 있는 내용은 빼주세요!" by 용준승](https://brunch.co.kr/@juneyoung/207)

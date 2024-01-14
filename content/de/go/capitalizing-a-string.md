@@ -1,17 +1,18 @@
 ---
-title:    "Go: String auf Großbuchstaben umwandeln."
+title:    "Go: String in Großbuchstaben umwandeln"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Es gibt viele Situationen in der Programmierung, in denen es notwendig ist, Strings zu formatieren und zu bearbeiten. Eine häufige Aufgabe ist das Großschreiben von Strings, sei es für die Ausgabe in einem konsolenbasierten Programm oder für die Verwendung in einer Datenbankabfrage. In diesem Blog-Beitrag werde ich erklären, wie man dies mit der Go-Programmiersprache erreichen kann.
+Das Kapitalisieren eines Strings ist ein häufiges Problem beim Programmieren in Go, insbesondere bei der Verarbeitung von Benutzereingaben. Es kann auch nützlich sein, wenn man Daten in einer bestimmten konventionellen Formatierung ausgeben möchte.
 
-# Wie geht man vor?
+## So geht's
 
-Um Strings in Go zu kapitalisieren, gibt es verschiedene Ansätze. Der einfachste Weg ist die Verwendung der `strings`-Bibliothek, die bereits eine Funktion `ToUpper` zur Verfügung stellt.
+Die einfachste Methode, um einen String in Go zu kapitalisieren, ist die Verwendung der `strings` Bibliothek. Hier ist ein Beispielcode, der einen String in Großbuchstaben umwandelt:
 
 ```Go
 package main
@@ -22,41 +23,28 @@ import (
 )
 
 func main() {
-    str := "hallo"
-    upperStr := strings.ToUpper(str)
+    str := "hallo welt"
 
-    fmt.Println(upperStr) // Ausgabe: HALLO
+    fmt.Println(strings.ToUpper(str))
 }
 ```
 
-In diesem Beispiel wird die Funktion `ToUpper` auf den String `str` angewendet und das Ergebnis in der Variable `upperStr` gespeichert. Dann wird der Wert von `upperStr` in der Konsole ausgegeben.
+Die Ausgabe für diesen Code wird wie folgt aussehen:
 
-Eine weitere Möglichkeit ist die Verwendung von Unicode-Strings und der `strings.ToUpperSpecial`-Funktion, um die Großschreibung zu erreichen.
-
-```Go
-package main
-
-import (
-    "fmt"
-    "unicode"
-    "unicode/utf8"
-)
-
-func main() {
-    str := "äpfel"
-    stru := strings.ToUpperSpecial(unicode.TurkishCase, str)
-    fmt.Println(stru) // Ausgabe: ÄPFEL
-}
+```
+HALLO WELT
 ```
 
-Hier wird die Funktion `ToUpperSpecial` mit dem ersten Parameter `unicode.TurkishCase` aufgerufen, was bedeutet, dass die Großschreibung gemäß den Regeln der türkischen Sprache durchgeführt wird.
+## Tieferer Einblick
 
-# Tiefergehende Informationen
+In Go gibt es viele eingebaute Funktionen, die bei der Manipulation von Strings hilfreich sein können. Im obigen Beispiel haben wir `strings.ToUpper()` verwendet, aber es gibt auch `strings.ToLower()`, `strings.Title()` und `strings.TrimSpace()` - um nur einige zu nennen.
 
-Bei der Verwendung von Unicode-Strings gibt es einige wichtige Dinge zu beachten, die Auswirkungen auf die Großschreibung haben können. Zum Beispiel gibt es verschiedene Arten von Sonderzeichen, die eine Kombination aus mehreren Unicode-Codepunkten sind. In solchen Fällen kann es sein, dass die Funktion `ToUpper` oder `ToUpperSpecial` nicht wie erwartet funktionieren. Wenn Sie vollständige Kontrolle über die Großschreibung haben möchten, ist es ratsam, eine eigene Funktion zu schreiben, die die Regeln für die Sprache oder das Zeichenset berücksichtigt, mit dem Sie arbeiten.
+Außerdem ist es wichtig zu beachten, dass Go standardmäßig mit UTF-8 Strings arbeitet, was bedeutet, dass es Unicode-Unterstützung bietet. Dies ermöglicht eine einfache Handhabung von Strings in verschiedenen Sprachen und Zeichensätzen.
 
-# Siehe auch
+## Siehe auch
 
-- https://golang.org/pkg/strings/#ToUpper
-- https://blog.golang.org/strings
-- https://yourbasic.org/golang/uppercase-lowercase-strings/
+- [Offizielle Go Dokumentation zur `strings` Bibliothek](https://golang.org/pkg/strings/)
+- [Tutorial zur Verwendung von Strings in Go](https://gobyexample.com/strings)
+- [Weitere Informationen zu Unicode in Go](https://blog.golang.org/strings)
+
+Vielen Dank fürs Lesen und viel Spaß beim Programmieren in Go!

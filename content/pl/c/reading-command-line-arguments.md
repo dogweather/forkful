@@ -1,66 +1,81 @@
 ---
 title:    "C: Odczytywanie argumentów z wiersza poleceń"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+#Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak wiele informacji może być przekazane do programu z linii poleceń? Dzięki argumentom wiersza poleceń, jest to możliwe. W tym poście dowiesz się, dlaczego warto nauczyć się czytać argumenty wiersza poleceń w języku C.
+W dzisiejszych czasach, programiści często mają do czynienia z interakcją użytkowników z ich programami poprzez wiersz poleceń. W takich przypadkach, wiadomości przekazane przez użytkownika podczas uruchamiania programu mogą mieć duże znaczenie dla jego działania. Dlatego jest ważne, aby umieć prawidłowo odczytać argumenty wiersza poleceń poprzez kodowanie w języku C.
 
-## Jak To Zrobić
+#Jak to zrobić
 
-Aby odczytać argumenty wiersza poleceń w języku C, należy przejść przez kilka kroków:
+Aby odczytać argumenty wiersza poleceń w języku C, musimy użyć funkcji \texttt{argc} i \texttt{argv}. Pierwszy argument (\texttt{argc}) to liczba całkowita, która przechowuje ilość podanych argumentów wiersza poleceń, a drugi argument (\texttt{argv}) to tablica ciągów znaków, która zawiera te argumenty.
 
-1. W pierwszej kolejności należy zaimportować bibliotekę <stdio.h>.
+Przykładowy kod poniżej pokazuje, jak użyć tych funkcji w praktyce:
 
-```C
+```c
 #include <stdio.h>
-```
 
-2. Następnie zadeklaruj zmienną **argc**, która będzie przechowywać liczbę argumentów wiersza poleceń, oraz dwuwymiarową tablicę **argv**, która przechowa wartości tych argumentów.
+int main(int argc, char *argv[]) {
+    printf("Liczba argumentów: %d\n", argc);
 
-```C
-int argc;
-char *argv[MAX_ARGS];
-```
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
+    }
 
-3. W funkcji **main** należy przekazać parametry **argc** i **argv**, które są argumentami wiersza poleceń.
-
-```C
-int main(int argc, char *argv[])
-```
-
-4. Następnie można wypisać wartości argumentów wiersza poleceń za pomocą pętli **for**.
-
-```C
-for(int i = 0; i < argc; i++)
-{
-    printf("Argument %d: %s\n", i, argv[i]);
+    return 0;
 }
 ```
 
-5. Przejdź do konsoli i uruchom program z argumentami, np. ```./program nazwa 123```.
+Kiedy uruchomimy ten program z kilkoma argumentami, na przykład: ```./program argument1 argument2 argument3```, otrzymamy następujący wynik:
 
-6. Otrzymasz następujące wyjście:
-
-```bash
+```
+Liczba argumentów: 4
 Argument 0: ./program
-Argument 1: nazwa
-Argument 2: 123
+Argument 1: argument1
+Argument 2: argument2
+Argument 3: argument3
 ```
 
-## Deep Dive
+Mamy dostęp do każdego podanego argumentu poprzez indeksowanie tablicy \texttt{argv}.
 
-W przypadku gdy program wymaga więcej niż jednego argumentu, należy pamiętać o indeksowaniu argumentów od **0** do **argc-1**.
+#Głębszy zanurzanie
 
-Istnieje również możliwość przekazania argumentów opcjonalnych i opcji wiersza poleceń, co jest bardzo przydatne w większych programach.
+W wierszu poleceń możemy również używać opcjonalnych argumentów, które są poprzedzone znakiem ``-`` lub ``--``. W celu obsłużenia tych argumentów, musimy zastosować funkcję \texttt{getopt()}, która pozwala nam odczytać argumenty opcjonalne oraz ich wartości. Poniższy przykład prezentuje to w praktyce:
 
-Przed zastosowaniem argumentów wiersza poleceń, należy sprawdzić ich poprawność i dbać o bezpieczeństwo programu, aby uniknąć niechcianych luk w zabezpieczeniach.
+```c
+#include <stdio.h>
+#include <unistd.h>
 
-## Zobacz również
+int main(int argc, char *argv[]) {
+    int opt;
 
-- [Dokumentacja C - Argumenty wiersza poleceń](https://pl.wikibooks.org/wiki/C/Argumenty_funkcji)
-- [Poradnik: Czytanie argumentów z linii poleceń w języku C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Kurs C - Argumenty wiersza poleceń](http://forc.org.pl/~lukasiewicz/jp/www/cz-args.html)
+    while((opt = getopt(argc, argv, "abc:")) != -1) {
+        switch(opt) {
+            case 'a':
+                printf("Argument opcjonalny '-a' podany\n");
+                break;
+            case 'b':
+                printf("Argument opcjonalny '-b' podany\n");
+                break;
+            case 'c':
+                printf("Argument opcjonalny '-c' podany z wartością: %s\n", optarg);
+                break;
+            default:
+                printf("Nieznany argument opcjonalny\n");
+        }
+    }
+
+    return 0;
+}
+```
+
+W powyższym przykładzie określiliśmy, że nasz program akceptuje argumenty opcjonalne ``-a``, ``-b`` oraz ``-c``, który może mieć wartość. Więcej informacji na temat użycia funkcji ``getopt()`` znajduje się w jej dokumentacji.
+
+#Zobacz także
+
+- [Dokumentacja funkcji \texttt{argc} i \texttt{argv}](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html#Program-Arguments)
+- [Dokumentacja funkcji \texttt{getopt()}](https://www.gnu.org/software/libc/manual/html_node/Getopt.html#Getopt)

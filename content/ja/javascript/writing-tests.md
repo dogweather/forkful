@@ -1,39 +1,39 @@
 ---
 title:    "Javascript: テストの書き方"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを行うのか
+## なぜテストを書くのか？
 
-プログラミングにおいて、バグやエラーを事前に発見し、修正することは非常に重要です。そのためにテストを行うことが必要不可欠です。
+プログラミングを行う際に、テストを書くことは非常に重要です。テストを書くことで、コードの品質を向上させ、バグを早期に発見できます。また、将来的な変更や追加機能の実装にも役立ちます。
 
 ## テストの書き方
 
-テストを行うための方法として、「単体テスト」と「統合テスト」の2種類があります。単体テストでは、個々の機能をテストすることができ、結果を検証することができます。統合テストでは、異なる機能やコンポーネントの組み合わせをテストすることができます。
+テストを書く方法を示すために、以下のコードブロックをご覧ください。
 
 ```Javascript
-// 単体テストの例
-function add(x, y) {
-  return x + y;
+// テストする関数の定義
+function add(num1, num2) {
+    return num1 + num2;
 }
 
-console.log(add(2, 2)); // Output: 4
-
-// 統合テストの例
-function multiply(x, y) {
-  return x * y;
-}
-
-console.log(multiply(add(2, 2), 3)); // Output: 12
+// テストの実行
+// 期待通りの結果が返ってくるかを確認する
+console.log(add(5, 10)); // 出力結果: 15
+console.log(add(2, 8)); // 出力結果: 10
 ```
 
-## テストの実践
+このように、テストを書くことで、関数の動作を確認することができます。また、テストの実行結果を見ることで、コードに含まれるバグを発見することができます。
 
-テストを行う際には、具体的なシナリオやケースを考えて、それに基づくテストを書くことが重要です。また、デバッグやリファクタリングを行う際にテストを実行することで、コードの安定性を保つことができます。
+## テストの深堀り
 
-## See Also
+テストを書く際には、さまざまな方法やツールを利用することができます。例えば、JestやMochaなどのテストフレームワークを使用することで、より効率的にテストを書くことができます。また、カバレッジレポートを生成することで、どの部分のコードがテストされているかを確認できます。
 
-- [JavaScriptでテストを書く方法](https://medium.com/@mayruoyu/javascript%E3%81%A7%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E6%9B%B8%E3%81%8F%E6%96%B9%E6%B3%95-a7b8ac3f670a)
-- [JavaScriptにおけるテスト駆動開発の基本](https://qiita.com/ledsun/items/61a27687ed0d2e6448c7)
+## See Also 
+
+- [テスト駆動開発：コードの品質を向上させるための手法](https://qiita.com/YumaInaura/items/f80a295458addffb78ed)
+- [Jest 入門：JavaScript のテストフレームワーク](https://qiita.com/mainty/items/3603c5d2acb28d21a384)
+- [カバレッジレポートを生成するためのツール](https://qiita.com/blp1526/items/52a85b57c1bc8944af86)

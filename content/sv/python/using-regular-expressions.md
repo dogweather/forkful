@@ -1,44 +1,40 @@
 ---
-title:    "Python: Användning av reguljära uttryck i datorprogrammering"
+title:    "Python: Användning av reguljära uttryck"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att använda reguljära uttryck är ett kraftfullt verktyg för att söka och manipulera textsträngar i ett programmeringsprojekt. Det ger en effektiv och flexibel lösning för att hantera stora mängder data.
 
-Regular expressions (eller regex) är ett kraftfullt verktyg inom programmering som används för att söka och manipulera text baserat på mönster. Om du vill effektivisera ditt kodande och hantera stora mängder text, är det definitivt värt att lära sig använda regex.
+## Så här gör du
+Programmerare kan använda reguljära uttryck genom att importera inbyggda Python-moduler som `re`. Nedan följer några exempel på hur du kan använda reguljära uttryck i din kod:
 
-## Hur man gör
+```Python
+# Importera modulen re
+import re
 
-För att använda regex i Python behöver du importera "re" biblioteket. Sedan kan du använda olika metoder för att söka och ersätta text baserat på specifika mönster. Här är ett enkelt exempel på hur man kan matcha ett ord i en sträng:
+# Skapa ett reguljärt uttryck för att hitta ett telefonnummer i en sträng
+phone_pattern = r'\d{3}-\d{3}-\d{4}'
 
+# Använda reguljära uttryck för att matcha en sträng
+matches = re.search(phone_pattern, "Mitt telefonnummer är 123-456-7890")
+
+# Hämta den matchande strängen
+phone_number = matches.group(0)
+
+# Skriva ut resultatet
+print(phone_number) # Output: 123-456-7890
 ```
-import re 
-
-txt = "Jag gillar att koda med Python"
-x = re.search("koda", txt)
-print(x) # Detta kommer att skriva ut "Match"
-```
-
-Om sökningen lyckas, kommer det att returnera ett match objekt. Om sökningen misslyckas, kommer det att returnera "None". Här är ett annat exempel på hur man kan använda regex för att ersätta text i en sträng:
-
-```
-import re 
-
-txt = "Jag gillar att koda med Python"
-x = re.sub("Python", "Java", txt)
-print(x) # Detta kommer att skriva ut "Jag gillar att koda med Java"
-```
-
-Det finns många fler metoder och funktioner inom regex och det kan vara en god idé att kolla på dokumentationen för mer detaljerade exempel.
 
 ## Djupdykning
+Reguljära uttryck består av speciella tecken och symboler som följer ett visst mönster för att söka och matcha textsträngar. Det finns olika funktioner och metoder som kan användas för att bearbeta, extrahera och ersätta data med hjälp av reguljära uttryck.
 
-Regex kan verka förvirrande och komplicerat till en början, men det är definitivt värt att lära sig att använda det. Det ger en effektiv och flexibel lösning för att söka och manipulera text och kan göra processen med att hantera stora datamängder mycket enklare. Det finns också många online resurser, böcker och kurser som kan hjälpa dig att bli en expert inom regex.
+Det finns också många olika modifierare och mönster som kan användas för att anpassa reguljära uttryck för olika behov. Det är viktigt att förstå dessa koncept och öva på att skapa och använda reguljära uttryck för att få mest möjliga nytta av dem.
 
 ## Se även
-
-- [Dokumentation för "re" biblioteket i Python](https://docs.python.org/3/library/re.html)
-- [Regex tutorial för nybörjare](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)
-- [Officiell Python tutorial on regex](https://docs.python.org/3/howto/regex.html)
+- [Officiell Python-dokumentation för reguljära uttryck](https://docs.python.org/3/library/re.html)
+- [Regex101 - verktyg för att testa och experimentera med reguljära uttryck](https://regex101.com)
+- [RegExr - online redigerare och testare för reguljära uttryck](https://regexr.com)

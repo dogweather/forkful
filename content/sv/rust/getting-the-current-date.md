@@ -1,40 +1,43 @@
 ---
-title:    "Rust: Att få den aktuella datumet."
+title:    "Rust: Att få den aktuella datumen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att kunna hämta den aktuella datumet i ett programspråk är en användbar funktion för många olika applikationer. Oavsett om du vill visa den aktuella datumet på en hemsida, lägga till datumet i en filnamn eller bara hålla koll på när ett program senast kördes, är det viktigt att vara bekant med hur man hämtar datumet i Rust.
+Att kunna hämta och använda dagens datum är en viktig del av många programmerares vardagliga arbete. Oavsett om du behöver logga aktiviteter eller hålla koll på tidsstämplar, är det viktigt att ha en pålitlig metod för att få fram det aktuella datumet. I denna bloggpost kommer vi att titta på hur man kan göra detta i Rust.
 
-## Så här gör du
+## Hur gör man?
 
-Det finns flera sätt att hämta den aktuella datumet i Rust, men en vanlig metod är att använda den inbyggda standardbiblioteket chrono. För att använda detta bibliotek behöver du lägga till den i ditt projekt med hjälp av cargo.toml:
-
-```Rust
-[dependencies]
-chrono = "0.4.19"
-```
-
-När du har importerat biblioteket, kan du använda det för att skapa ett datumobjekt och sedan hämta den aktuella datumet:
+För att få fram dagens datum i Rust finns det flera olika metoder, men den enklaste och mest pålitliga är att använda standardbiblioteket. Först och främst måste vi importera standardbibliotekets `chrono` modul med hjälp av följande kod:
 
 ```Rust
-use chrono::{Local, NaiveDate};
-
-let datum = Local::now().date(); // Skapar ett datumobjekt för den aktuella lokala tiden
-println!("Idag är det {}", datum); // Skriver ut den aktuella datumet i formatet "ÅÅÅÅ-MM-DD"
+use chrono::{DateTime, Utc};
 ```
 
-Detta kodexempel använder Local::now() för att hämta den aktuella tiden i din lokala tidszon och .date() för att få datum-delen av detta objekt. Du kan sedan använda olika funktioner för att formatera eller manipulera datumet efter behov.
+Sedan kan vi skapa ett nytt `DateTime` objekt med hjälp av `Utc::now()` funktionen:
 
-## Djupdykning
+```Rust
+let now: DateTime<Utc> = Utc::now();
+```
 
-Den föregående koden visar bara en grundläggande metod för att hämta den aktuella datumet i Rust, men det finns många andra sätt att göra det. Till exempel kan du använda olika tidszoner, hantera datum i annat format eller beräkna skillnaden mellan två datum. För en djupare förståelse av hur man hanterar datum i Rust, kan du läsa dokumentationen för biblioteket chrono eller utforska andra alternativ som är tillgängliga.
+Genom att använda `now` variabeln som ett argument i `format()` funktionen kan vi sedan få ut datumbeskrivningen som en `String`:
+
+```Rust
+let current_date = now.format("%Y-%m-%d").to_string();
+```
+
+När vi kör koden kommer outputen att vara dagens datum i formatet "ÅÅÅÅ-MM-DD", till exempel "2021-01-23". Detta är en enkel och pålitlig metod för att få fram dagens datum i Rust.
+
+## Deep Dive
+
+I bakgrunden använder `Utc::now()` funktionen systemklockan för att få fram det aktuella datumet och tiden. Därefter konverteras det till UTC-tiden, som är en standardiserad tidszon som används av många programmeringsspråk. Genom att använda formatstringen "%Y-%m-%d" berättar vi för `format()` funktionen att vi vill ha ut datumbeskrivningen i årtal, månad och dag format. Detta gör det enkelt att anpassa outputen till önskat format.
 
 ## Se även
 
-- [Datum och tid i Rust dokumentationen](https://doc.rust-lang.org/std/time/index.html)
-- [Chrono biblioteket på Crates.io](https://crates.io/crates/chrono)
-- [Officiell Rust-sajt](https://www.rust-lang.org)
+- [Chrono Dokumentation](https://docs.rs/chrono/latest/chrono/)
+- [Rust Standardbibliotek](https://doc.rust-lang.org/std/)
+- [Datum- och Tidsbibliotek i Rust](https://www.theswiftlangblog.com/how-to-get-the-current-date-and-time-in-rust/)

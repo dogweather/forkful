@@ -1,63 +1,62 @@
 ---
 title:    "Ruby: Komentoriviparametrien lukeminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluat lukea komentoriviparametreja?
+## Miksi
 
-Yksi syy voi olla, että haluat luoda interaktiivisen ohjelman, joka ottaa käyttäjän antamat parametrit ja käsittelee niitä eri tavalla. Komentoriviparametrit voivat myös olla hyödyllisiä ohjelman suorittamisessa tiettyjen asetusten tai vaihtoehtojen kanssa.
+On monia syitä, miksi sinun kannattaisi lukea komentoriviparametreja Ruby-ohjelmoinnissa. Yksi tärkeimmistä syistä on se, että käyttämällä komentoriviparametreja ohjelmasi voi olla joustavampi ja helpompi käyttää. Tämä tarkoittaa, että käyttäjä voi antaa omia arvoja tietyille parametreille sen sijaan, että ne olisivat kovakoodattuja ohjelmassa.
 
-## Kuinka: Esimerkkejä komentoriviparametrien lukemisesta
+## Miten
 
-### Perusmuoto
-
-Käytä `ARGV`-muuttujaa saadaksesi kaikki komentoriviparametrit taulukkona.
+Komentoriviparametrien lukeminen Rubylla on helppoa. Sinun tarvitsee vain käyttää `ARGV`-muuttujaa, joka sisältää kaikki komentorivillä annetut argumentit taulukkona. Voit sitten käsitellä näitä argumentteja kuten mitä tahansa muuta taulukkoa Rubyssa.
 
 ```Ruby
-names = ARGV # ["Jussi", "Mikko", "Anna"]
-puts "Hei #{names[0]}, #{names[1]} ja #{names[2]}!"
+# Esimerkki ohjelmasta, joka tulostaa kaikki komentoriviltä annetut argumentit
+puts "Komentoriviltä annetut argumentit:"
+ARGV.each do |arg|
+  puts arg
+end
 ```
 
-Esimerkissä tulostetaan tervehdys käyttäjille, joiden nimet ovat annettuina komentorivillä.
+Kun suoritat tämän esimerkkiohjelman esimerkiksi komentoriviltä `ruby ohjelma.rb argumentti1 argumentti2`, tulostuu seuraava tulos:
 
-### Parametrien määrä
+```
+Komentoriviltä annetut argumentit:
+argumentti1
+argumentti2
+```
 
-Voit myös tarkistaa, kuinka monta parametria käyttäjä on antanut komentorivillä.
+## Syvempi sukellus
+
+Agumenttien lukemisen lisäksi on myös mahdollista antaa komentorivillä valinnaisten argumenttien arvoja. Tämä tehdään yleensä käyttämällä `-` tai `--` merkkejä argumentin nimen edessä ja sen jälkeen annetaan arvo yhteenlaskettuna esimerkiksi `-n 10` tai `--name Ruby`.
 
 ```Ruby
-puts "Annoit #{ARGV.length} parametria"
+# Esimerkki ohjelmasta, joka tulostaa valinnaisen arvon
+# Oletusarvoisesti nimeksi asetetaan Ruby, mutta käyttäjä voi antaa oman nimen komentoriviltä
+nimi = "Ruby"
+ARGV.each do |arg|
+  case arg
+  when "-n" # -n komentoriviparametri
+    nimi = ARGV[ARGV.index(arg) + 1] # Seuraava argumentti on nimi
+  when "--name" # --name komentoriviparametri
+    nimi = ARGV[ARGV.index(arg) + 1] # Seuraava argumentti on nimi
+  end
+end
+puts "Hei #{nimi}!"
 ```
 
-### Numeroiden käsittely
+Suorittaessa tämän esimerkki ohjelman komennolla `ruby ohjelma.rb -n Juha` tai `ruby ohjelma.rb --name Juha` tulostuu:
 
-Voit myös muuntaa parametrit numeromuotoon ja käsitellä niitä laskutoimituksilla.
-
-```Ruby
-numbers = ARGV.map(&:to_i) # ["2", 5, "6.4"] => [2, 5, 6]
-puts "Ensimmäinen numero on #{numbers[0]}"
-puts "#{numbers[1]} + #{numbers[2]} = #{numbers[1] + numbers[2]}"
 ```
-
-Parametrit voivat olla myös eri tyyppejä, joten niiden muuntaminen voi olla tarpeellista, jotta ne voidaan käsitellä oikein.
-
-## Syvädyli: Syvempää tietoa komentoriviparametrien lukemisesta
-
-Kun suoritat Ruby-ohjelmaa komentoriviltä, kaikki komentorivillä annetut sanat ja välilyönnit tallennetaan `ARGV`-taulukkoon. Voit käsitellä näitä parametreja kuten mikä tahansa muukin taulukko Ruby-valmiuksilla.
-
-Jos haluat lukea komentoriviparametreja ohjelman ulkopuolelta, voit käyttää `gets`-metodia ja `chomp`-metodia poistamaan uuden rivin merkin lopusta.
-
-```Ruby
-puts "Kirjoita jotain:"
-input = gets.chomp
-puts "Syötit: #{input}"
+Hei Juha!
 ```
-
-`chomp`-metodi poistaa myös kaikki muut rivinvaihtomerkit, joten voit käsitellä syöteparametreja helposti ilman ylimääräisiä välilyöntejä tai merkkejä.
 
 ## Katso myös
 
-- [Ruby's ARGV documentation](https://ruby-doc.org/core-2.7.2/ARGV.html)
-- [Command Line Arguments in Ruby](https://www.rubyguides.com/2018/05/ruby-command-line-arguments/)
-- [Ruby's gets method documentation](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-gets)
+- [ARGV-komentoriviparametrien dokumentaatio Rubyssa](https://ruby-doc.org/docs/keywords/1.9/argv.html)
+- [Käyttäjätunnusten läpikäynti Rubyn komentorivistringsillä](https://www.rubyguides.com/2018/05/ruby-argv/)
+- [Komentoriviparametrien käyttöönotto Rubyn ohjelmissa](https://www.rubyguides.com/2018/03/ruby-command-line-interface/)

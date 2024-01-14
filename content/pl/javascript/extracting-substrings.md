@@ -1,50 +1,52 @@
 ---
-title:    "Javascript: Wyodrębnianie podłańcuchów"
+title:    "Javascript: Wydobywanie podciągów"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w trakcie programowania potrzebujemy wyodrębnić pewną część tekstu z większego ciągu znaków. Możemy chcieć np. pobrać tylko imię z wprowadzonego przez użytkownika pełnego imienia i nazwiska. W takich przypadkach bardzo przydatne jest wykorzystanie funkcji pozwalających na wyciągnięcie podciągu znaków, czyli tzw. substrings.
+Istnieje wiele powodów dla których programiści mogą potrzebować wydobyć podłańcuchy (substrings) z większych ciągów znaków w swoim kodzie JavaScript. Może to być potrzebne do analizy danych, wyciągania określonych informacji lub po prostu do manipulacji tekstem. Poniżej przedstawione zostaną przykłady w jaki sposób można wykorzystać metodę substring w praktyce.
 
 ## Jak to zrobić
 
-W Javascripcie do wyciągania substrings możemy użyć metody `substring()` lub `substr()`. Są one bardzo podobne, jednak mają nieco inny sposób działania. W obu przypadkach podajemy jako parametry indeks początkowy i końcowy. Indeks początkowy określa, od którego znaku zaczynamy wybierać podciąg, a indeks końcowy - na którym znaku kończymy. Przykładowo, jeśli chcemy wyodrębnić z ciągu "John Smith" tylko imię, podamy indeks początkowy jako 0 (pierwszy znak w ciągu) i indeks końcowy jako 4 (pierwsze cztery znaki - "John").
+ W JavaScript istnieją różne metody do wydobywania podłańcuchów, jednak jedną z najczęściej używanych jest metoda `substring ()`. Pozwala ona określając początek i koniec podłańcucha, na wydzielenie go z większego ciągu znaków. Poniżej znajduje się przykład, który pokazuje jak uzyskać podłańcuch od 6 do 11 znaku z tekstu:
 
 ```Javascript
-let fullName = "John Smith";
-let firstName = fullName.substring(0, 4);
-console.log(firstName); // wynik: John
+let tekst = "To jest przykładowy tekst";
+let podlacuch = tekst.substring(6, 11);
+console.log(podlacuch); // wyświetli: jest 
 ```
 
-W przypadku metody `substr()` możemy także podać tylko jeden parametr - indeks początkowy - oraz liczbę znaków, które chcemy wyodrębnić. Przykładowo, jeśli chcemy wyodrębnić z ciągu "John Smith" tylko nazwisko, podamy indeks początkowy jako 5 (pozycja pierwszej litery nazwiska) oraz liczbę znaków jako 5 (5 znaków - "Smith").
+W powyższym przykładzie, użyliśmy metody `substring()` na zmiennej `tekst`, podając argumenty 6 i 11, co oznacza, że wybrane zostaną znaki od 6 do 11, a następnie wynik zostaje przypisany do zmiennej `podlacuch`, którą wyświetlamy na konsoli.
+
+Można również użyć `substring()` do wydobywania podłańcuchów na podstawie określonego znaku lub ciągu znaków znajdującego się w tekście. Na przykład, jeśli chcemy uzyskać podłańcuch zaczynający się od słowa "przykładowy", możemy użyć tego kodu:
 
 ```Javascript
-let fullName = "John Smith";
-let lastName = fullName.substr(5, 5);
-console.log(lastName); // wynik: Smith
+let tekst = "To jest przykładowy tekst";
+let podlacuch = tekst.substring(tekst.indexOf("przykładowy")); // znajduje indeks pierwszego wystąpienia słowa "przykładowy"
+console.log(podlacuch); // wyświetli: przykładowy tekst 
 ```
 
-## Wkład w głąb
-
-Funkcje `substring()` i `substr()` działają w podobny sposób, ale mają pewne różnice, które warto znać. Przede wszystkim, metoda `substr()` może także przyjmować liczbę ujemną jako drugi parametr, co oznacza liczbę znaków od końca ciągu. Przykładowo, jeśli chcemy wyodrębnić ostatnie 3 litery z nazwiska "Smith", możemy podać indeks początkowy jako -3 (3 od końca) oraz liczbę znaków jako 3.
+Inną przydatną metodą jest `slice()`, która działa w podobny sposób do `substring()`, ale pozwala na podanie tylko jednego indeksu jako argumentu. Jeśli podamy tylko jeden indeks, zostanie utworzony podłańcuch od tego indeksu do końca tekstu. Przykład:
 
 ```Javascript
-let lastName = "Smith";
-let lastLetters = lastName.substr(-3, 3);
-console.log(lastLetters); // wynik: ith
+let tekst = "To jest przykładowy tekst";
+let podlacuch = tekst.slice(8); // utworzy podłańcuch od 8 indeksu do końca tekstu
+console.log(podlacuch); // wyświetli: przykładowy tekst
 ```
 
-Dodatkowo, metoda `substr()` pozwala także na podanie tylko jednego parametru - indeksu początkowego - wtedy wyodrębniony zostanie cały podciąg od tego znaku do końca ciągu.
+## Głębsza analiza
 
-```Javascript
-let fullName = "John Smith";
-let lastPart = fullName.substr(5);
-console.log(lastPart); // wynik: Smith
-```
+Metody `substring()` i `slice()` opisane powyżej są bardzo podstawowe, jednak w JavaScript istnieje także wiele innych sposobów na wydobywanie podłańcuchów. Na przykład, można wykorzystać wyrażenia regularne lub zastosować różne funkcje do manipulacji tekstem, takie jak `split()` czy `replace()`.
+
+Podczas manipulacji tekstami, ważne jest także pamiętać o tym, że ciągi znaków są niezmienialne (immutable), co oznacza, że metody te nie zmieniają oryginalnego tekstu, lecz zwracają nowy podłańcuch.
 
 ## Zobacz również
-- [Metoda substring() w dokumentacji MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring)
-- [Metoda substr() w dokumentacji MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substr)
+
+Jeśli chcesz dowiedzieć się więcej na temat eksplorowania podłańcuchów w JavaScript, polecamy zapoznać się z poniższymi linkami:
+
+- Dokumentacja MDN na temat metody `substring()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring
+- Poradnik dotyczący wydobywania podłańcuchów w JavaScript: https

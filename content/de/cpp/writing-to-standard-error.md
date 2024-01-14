@@ -1,44 +1,43 @@
 ---
-title:    "C++: Schreiben in den Standardfehler"
+title:    "C++: Schreiben auf Standardfehler"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben von Fehlern auf die Standardfehlerausgabe kann ein nützliches Werkzeug sein, um Fehler in unserem C++ Code zu identifizieren und zu debuggen. Es ermöglicht uns, Fehlermeldungen im Konsolenfenster anzuzeigen, anstatt sie im regulären Ausgabestrom zu verstecken.
+Das Schreiben auf Standardfehler ist eine nützliche Technik, die häufig in der C++ Programmierung verwendet wird. Es ermöglicht die Ausgabe von Fehlermeldungen und anderen wichtigen Informationen während der Laufzeit des Programms. Dies kann besonders hilfreich sein, wenn das Programm mit verschiedenen Eingaben getestet wird oder in einer produktiven Umgebung ausgeführt wird.
 
-## Wie man
+## Wie gehe ich vor
 
-Um Fehler auf die Standardfehlerausgabe zu schreiben, müssen wir zuerst die Header-Datei `iostream` einbinden. Dann können wir die Funktion `std::cerr` verwenden, um unsere Fehlermeldung an die Konsole zu schreiben.
+Das Schreiben auf Standardfehler ist relativ einfach in C++ zu implementieren. Im Folgenden finden Sie ein Beispiel, das die Verwendung von "cerr" demonstriert:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-   cerr << "Dies ist ein Fehler!" << endl;
-   return 0;
+    std::cerr << "Dies ist eine Fehlermeldung." << std::endl;
+    return 0;
 }
 ```
 
-Die Ausgabe unseres Codes sieht folgendermaßen aus:
+Die Ausgabe dieses Codes wird so aussehen:
 
 ```
-Dies ist ein Fehler!
+Dies ist eine Fehlermeldung.
 ```
 
-Wir können auch Variablenwerte oder andere nützliche Informationen zu unseren Fehlermeldungen hinzufügen, indem wir sie einfach der `cerr` Funktion hinzufügen.
+Wie Sie sehen können, können wir ganz einfach eine Nachricht auf dem Standardfehler ausgeben, indem wir den "<
 
-## Tiefentauchen
+## Tiefergehende Informationen
 
-Die Standardfehlerausgabe ist besonders nützlich, wenn wir unsere Programme in der Konsole ausführen, da sie es uns ermöglicht, Fehler direkt im Konsolenfenster zu sehen, ohne auf die Ausgabedateien unseres Programms zugreifen zu müssen. Dies ist hilfreich bei der Fehlersuche und kann uns viel Zeit sparen.
+In der obigen Beispiel können wir sehen, dass die Ausgabe auf dem Standardfehler mit dem "cerr" Objekt erfolgt. Dies ist ein Objekt vom Typ "ostream", der für die Ausgabe von Daten auf dem Standardfehler zuständig ist. Das "std::endl" am Ende ist dafür verantwortlich, dass die Ausgabe in einer neuen Zeile erfolgt.
 
-Es ist auch wichtig zu beachten, dass die Standardfehlerausgabe nicht gepuffert wird, was bedeutet, dass die Fehlermeldungen in Echtzeit angezeigt werden. Dies kann bei der Fehlersuche hilfreich sein, da wir die Fehlermeldungen nicht manuell aus dem Puffer abrufen müssen.
+Es ist auch wichtig zu beachten, dass der Standardfehler in einer separaten Datenstruktur gespeichert wird als der Standardausgang ("cout"). Dies ist hilfreich, da es ermöglicht, dass wichtige Fehlermeldungen von anderen Programmausgaben getrennt werden.
 
 ## Siehe auch
 
-- [C++ Fehlerbehandlung: Wann sind Ausnahmen besser als Fehlercodes?](https://www.programmieraufgaben.ch/aufgabe/c-fehlerbehandlung-wann-sind-ausnahmen-besser-als-fehlercodes/b32i4k)
-- [So verwenden Sie `std::cout` und `std::cerr` in Lebensmitteln richtig](https://www.kompaktors.com/de/courses/cpp/lessons/how-to-use-std-cout-std-cerr)
-- [Debugging-Techniken für C++ Anfänger](https://www.codiens.de/blog/2021/03/08/debugging-techniken-fuer-c-anfaenger/)
+- [C++ Referenz für Standardfehler](https://en.cppreference.com/w/cpp/io/cerr)
+- [C++ Dokumentation für Standardausgabe und Standardfehler](https://www.cplusplus.com/articles/iE86b7Xj/)

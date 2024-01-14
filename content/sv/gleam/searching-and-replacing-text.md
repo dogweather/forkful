@@ -1,45 +1,43 @@
 ---
 title:    "Gleam: Sökning och ersättning av text"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att söka och ersätta text är en vanlig uppgift som många programmerare behöver utföra på daglig basis. Det kan vara för att ändra variabelnamn, uppdatera databasposter eller göra andra stora ändringar i kodbasen. Oavsett anledning är det viktigt att ha rätt verktyg för att effektivt söka och ersätta text.
+Att söka och ersätta text kan kännas som en enkel uppgift, men det kan spara dig mycket tid och möda när du jobbar med mycket kod. Med Gleam har du möjlighet att snabbt och enkelt söka igenom stora mängder text och ersätta den med önskad text, vilket gör det till ett ovärderligt verktyg för alla kodbaser.
 
-# Hur man gör det
+## Så här gör du
 
-I Gleam kan du söka och ersätta text med hjälp av inbyggda funktioner som `str.replace` och `str.replace_all`. Dessa funktioner tar två argument: en söksträng och en ersättningssträng. Du kan också använda regelbundna uttryck för mer avancerade sökningar.
-
-```Gleam
-let original = "Hej! Välkommen till min blogg."
-let nyText = str.replace(original, "min blogg", "Gleam-programmering")
-io.print(nyText)
-
-// Output: Hej! Välkommen till Gleam-programmering.
-```
-
-För att ersätta alla förekomster av en söksträng, använd `str.replace_all`:
+För att använda Gleams funktion för att söka och ersätta text, behöver du först importera den inbyggda modulen "String.Replace". Därefter kan du använda funktionen "replace" som tar tre parametrar: en sträng att söka igenom, den text du vill ersätta, och den text du vill ersätta den med. Koden nedan visar ett enkelt exempel på hur du söker igenom en sträng och ersätter all förekomst av ordet "hej" med "hallå":
 
 ```Gleam
-let original = "Hej! Jag gillar choklad, choklad och mer choklad."
-let nyText = str.replace_all(original, "choklad", "glass")
-io.print(nyText)
+import String.Replace
 
-// Output: Hej! Jag gillar glass, glass och mer glass.
+let str = "Hej världen, hej alla!"
+
+let result = String.Replace.replace(str, "hej", "hallå")
+
+gör result // "Hallå världen, hallå alla!"
 ```
 
-# Deep Dive
+Som du kan se är det enkelt och snabbt att söka och ersätta text med hjälp av Gleam.
 
-Vid sökning och ersättning av text i Gleam, är det viktigt att förstå hur funktionerna fungerar. Både `str.replace` och `str.replace_all` returnerar en ny sträng med de ersatta förekomsterna. Det innebär att du behöver använda de nya värdena för att uppdatera variabler eller skriva ut dem till konsolen.
+## Djupdykning
 
-En annan viktig detalj är att båda funktionerna är case-sensitive, vilket betyder att de skiljer mellan små och stora bokstäver. Så om du söker efter "Hej" kommer inte "hej" att ersättas.
+När du använder funktionen "replace" finns det några parametrar du kan lägga till för att anpassa din sökning och ersättning. Den första parametern är "case_sensitive" som bestämmer om sökningen endast ska leta efter exakta matchningar av den sökta texten, eller om den också ska matcha med olika bokstavskombinationer. Standardvärdet för denna är "false" vilket betyder att det inte spelar någon roll om du skriver "hej" eller "Hej", dessa kommer att matcha båda två.
 
-Det är också värt att nämna att båda funktionerna bara ersätter texten och returnerar inte en modifierad version av den ursprungliga strängen. Om du vill ersätta en del av en sträng måste det göras genom att skapa en ny variabel eller använda `str.insert` och `str.delete` för att manipulera strängen.
+En annan användbar parameter är "global" som bestämmer om åtgärden endast ska utföras på den första matchningen eller på alla matchningar. Om du till exempel vill ersätta alla förekomster av "hej" i en text med "hallå" kan du ställa in denna parameter till "true".
 
-# Se även
+Det finns också en tredje parameter som heter "limit" som bestämmer hur många matchningar som ska ersättas. Om du bara vill ersätta de två första förekomsterna av "hej" i en text kan du ställa in denna parameter till "2".
 
-- [Officiell Gleam dokumentation för textbehandling](https://gleam.run/documentation/standard-library/string/)
-- [Gleam regex modul](https://gleam.run/documentation/stdlib/regex/)
+Med dessa parametrar kan du anpassa sökningen och ersättningen för att passa dina specifika behov.
+
+## Se även
+
+- Gleam Officiell Dokumentation: https://gleam.run/
+- "Strings" modulen: https://gleam.run/modules/string/
+- "String.Replace" modulen: https://gleam.run/modules/string-replace/

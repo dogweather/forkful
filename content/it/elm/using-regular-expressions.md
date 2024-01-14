@@ -1,42 +1,34 @@
 ---
 title:    "Elm: Utilizzando le espressioni regolari"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Se sei un programmatore Elm probabilmente hai sentito parlare di espressioni regolari. Ma perché dovresti imparare a usarle? Le espressioni regolari sono potenti strumenti che ti permettono di manipolare ed estrarre informazioni da stringhe di testo in modo semplice ed efficace. Se vuoi migliorare le tue abilità di programmazione e diventare più efficiente nel lavorare con i dati, imparare le espressioni regolari può essere un'ottima aggiunta al tuo bagaglio di conoscenze.
+Capita spesso di dover manipolare dei testi all'interno dei nostri programmi. Grazie all'utilizzo delle espressioni regolari (o regular expressions), possiamo eseguire operazioni complesse di ricerca e sostituzione dei caratteri in modo rapido ed efficiente.
 
 ## Come fare
+Per utilizzare le espressioni regolari in Elm, dobbiamo prima importare il modulo `Regex`. Possiamo poi utilizzare diverse funzioni come `Regex.contains`, `Regex.replace` e `Regex.split` per eseguire operazioni specifiche sui nostri dati di testo.
 
-Per usare le espressioni regolari in Elm, devi prima creare un "modello" che descriva il tuo pattern di ricerca. Ad esempio, se vuoi trovare tutte le parole che iniziano con la lettera "a" in una stringa di testo, il tuo modello potrebbe essere "a+". Un "+" indica che la lettera "a" deve essere presente una o più volte.
-
-Una volta creato il modello, puoi utilizzare la funzione `Regex.find` di Elm per trovare tutte le corrispondenze nella tua stringa di testo. Ecco un esempio di codice che mostra come utilizzare le espressioni regolari per trovare tutte le parole che iniziano con la lettera "a":
+Ecco un esempio di codice che ricerca una parola all'interno di una stringa e la sostituisce con un'altra:
 
 ```Elm
-import Regex exposing (find, regex)
+import Regex
 
-inputString = "Questo è un esempio di stringa di testo che contiene alcune parole che iniziano con la lettera a."
+testo = "Ciao amici, benvenuti!"
 
-pattern = regex "a+"
-
-results = find pattern inputString
-
-main = text (toString results)
+sostituito = Regex.replace (Regex.regex "amici") (\_ -> "colleghi") testo
+-- Output: "Ciao colleghi, benvenuti!"
 ```
 
-Il risultato di questo codice sarà una lista di corrispondenze: `["a", "alcune", "a"]`. In questo caso, il modello ha trovato le parole "a", "alcune" e "a" perché tutte iniziano con la lettera "a".
+## Approfondimento
+Le espressioni regolari possono sembrare complicate, ma seguendo alcune regole di sintassi, possiamo creare dei pattern molto precisi per catturare i nostri dati di testo. Ad esempio, possiamo utilizzare il carattere `.` per rappresentare qualsiasi carattere, `*` per indicare un numero qualsiasi di ripetizioni e `+` per indicare una o più ripetizioni.
 
-## Approfondimenti
-
-Le espressioni regolari possono sembrare intimidatorie all'inizio, ma con la pratica e la conoscenza dei diversi metodi e sintassi, puoi diventare un esperto nel loro utilizzo. Inoltre, ci sono molti strumenti online disponibili per aiutarti a creare e testare i tuoi modelli di espressioni regolari prima di implementarli nel tuo codice Elm.
-
-Se vuoi saperne di più su come utilizzare le espressioni regolari in Elm, ti consigliamo di dare un'occhiata alla documentazione ufficiale di Elm su Regular Expressions (Espressioni Regolari) e agli esempi sul sito di Ellie, un emulatore Elm online.
+Possiamo anche utilizzare dei gruppi `()` per catturare parti specifiche del nostro testo e utilizzarle nella sostituzione. Inoltre, possiamo utilizzare le espressioni regolari anche per validare dati di ingresso come indirizzi email o numeri di telefono.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Elm su Regular Expressions](https://guide.elm-lang.org/appendix/regular_expressions.html)
-- [Esempi di espressioni regolari su Ellie](https://ellie-app.com/4J8XcQQJQcBa1)
-- [Guida alle espressioni regolari di TutsPlus](https://code.tutsplus.com/it/tutorials/introduction-to-regular-expressions-in-elm--cms-32453)
+- [Documentazione delle espressioni regolari in Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Tutorial su come utilizzare le espressioni regolari in Elm](https://www.paramander.com/blog/producing-a-string-using-regular-expressions-with-elm)
+- [Libreria di espressioni regolari avanzate per Elm](https://github.com/jonaljur/elm-regex-practices)

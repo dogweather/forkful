@@ -1,43 +1,41 @@
 ---
-title:    "Elm: Att skriva till standard fel"
+title:    "Elm: Skrivande till standardfel"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva till standard error är en viktig del av Elm-programmering, eftersom det ger en bättre förståelse för eventuella fel som kan uppstå under körning. Det ger också användaren mer kontroll över hur felmeddelanden visas och kan hjälpa till att förbättra felsökningsprocessen.
+I Elm-programmering kan det ibland vara nödvändigt att skriva till standard error (oftast kallat STDERR). Detta kan användas för att spåra och hantera eventuella fel eller för att få ut mer detaljerad information under utvecklingsprocessen.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva till standard error i Elm, använd funktionen `Debug.crash` och skicka meddelandet du vill visa som en sträng. Till exempel:
+För att skriva till standard error i Elm, används funktionen `Debug.log` tillsammans med en sträng och ett värde som du vill skriva ut. Här är ett enkelt exempel:
 
 ```Elm
-module Main exposing (..)
-
-import Debug exposing (crash)
+import Debug exposing (log)
 
 main =
-  Debug.crash "Felmeddelande visat på standard error"
+    log "Användare är inloggad" True
 ```
 
-När koden körs får du följande utdata i din konsol:
+Detta kommer att skriva ut följande i din terminal:
 
 ```
-Uncaught Debug.crash: Felmeddelande visat på standard error
+Användare är inloggad: True
 ```
 
-Detta är en enkel och effektiv metod för att skriva till standard error i Elm.
+Det är viktigt att notera att `Debug.log`-funktionen bara kommer att användas under utveckling och kommer att ignoreras när din Elm-kod kompileras för produktion.
 
 ## Djupdykning
 
-När man skriver till standard error är det viktigt att komma ihåg att det inte är samma som att skriva till standard output. Standard error skrivs ut separat från standard output och kan ses som en separat logg för eventuella fel som uppstår under körning av programmet.
+När du använder `Debug.log` för att skriva till standard error, är det viktigt att vara försiktig med vilken typ av information du skickar dit. Det är alltid bäst att undvika att skicka känslig information eller personlig information, särskilt när din kod kommer att användas i produktion.
 
-Det är också viktigt att inte överanvända denna funktion. Använd den endast för viktiga felmeddelanden och se till att andra felhanteringsmetoder används för mindre kritiska fel.
+En annan viktig poäng att tänka på är att om du skriver till standard error ofta, kan det orsaka en stor mängd utskrift och göra det svårt att hitta viktig information i din terminal. Så se till att bara använda `Debug.log` när det är nödvändigt och ta bort det när det inte längre behövs.
 
 ## Se även
 
-- [Elm Error Messages](https://package.elm-lang.org/packages/elm/core/1.0.5/Basics#crash)
-- [Handling Errors in Elm](https://guide.elm-lang.org/error_handling/)
-- [Debugging in Elm](https://guide.elm-lang.org/debugging/)
+- [Elm Debugger](https://package.elm-lang.org/packages/elm/browser/latest/Browser#debugger)
+- [Fejlsök din Elm-kod med standard error](https://www.giantheadrick.com/blog/elm/stderr-debugging/)

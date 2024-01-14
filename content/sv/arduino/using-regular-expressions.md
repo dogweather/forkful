@@ -1,52 +1,45 @@
 ---
 title:    "Arduino: Användning av reguljära uttryck"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför använda reguljära uttryck i Arduino programmering
+Att använda reguljära uttryck i Arduino programmering kan göra kodningen mer effektiv och strukturerad. Det gör det möjligt att söka efter mönster i stället för konkreta strängar och underlättar därmed hanteringen av data.
 
-I många fall när man programmerar med Arduino så behövs det att söka efter specifika mönster i en text eller sträng. Det kan vara allt från att leta efter specifika bokstäver eller siffror, till att ta bort eller byta ut delar av en sträng. Med hjälp av så kallade reguljära uttryck (regular expressions) kan du enkelt hantera detta och öppnar upp för mer kraftfulla möjligheter för din Arduino-kod.
-
-## Så här gör du
-
-För att använda reguljära uttryck i din Arduino-kod så behöver du först inkludera biblioteket "Regex" genom att skriva följande kod i början av ditt program:
-
+## Så här använder du reguljära uttryck i Arduino
+För att använda reguljära uttryck i Arduino måste du först inkludera biblioteket "Regexp", detta görs genom att lägga till följande kod i början av ditt program:
 ```Arduino
-#include <Regex.h>
+#include <Regexp.h>
 ```
-
-Nästa steg är att skapa ett nytt regex-objekt och definiera det mönster du vill matcha. Du kan göra detta på följande sätt:
-
+För att söka efter ett mönster i en sträng använder du funktionen "regexMatch()", tillsammans med pattern och input variabler:
 ```Arduino
-Regex myRegex("mönster");
+int pattern = "lidande";
+int input = "går du igenom något lidande idag?";
+bool match = regexMatch(pattern, input);
 ```
-
-Mönstret är det du vill matcha och kan vara en kombination av bokstäver, siffror och specialtecken. Sedan kan du använda funktionen "match()" för att söka igenom en sträng och få tillbaka en värdet som visar om det finns en matchning eller inte. Detta illustreras nedan:
-
+Om mönstret finns i strängen kommer "match" att ha värdet "true", annars kommer det att vara "false". Du kan också använda reguljära uttryck för att hitta matchningar och extrahera dem från en sträng. Till exempel:
 ```Arduino
-if (myRegex.match("sträng att söka igenom")) {
-  // Hantera matchning här
-} else {
-  // Ingen matchning hittad
-}
+int pattern = "(\\d+)-(\\d+)";
+int input = "Min födelsedag är den 31-12";
+String match = regexExtract(pattern, input);
 ```
-
-För att få ut mer information om matchningen, som till exempel var i strängen matchningen hittades, kan du använda funktionen "getMatch()" som returnerar ett "Match_info" objekt. Till exempel:
-
+Här kommer "match" att innehålla "31-12". Du kan också använda reguljära uttryck för att ersätta delar av en sträng:
 ```Arduino
-Match_info matchInfo = myRegex.getMatch();
+int pattern = "himmelskt";
+int replacement = "awesome";
+int input = "Den här tårtan är himmelsk!";
+String result = regexReplace(pattern, replacement, input);
 ```
+"result" varar får strängen "Den här tårtan är awesome!". Det finns många andra funktioner för att använda reguljära uttryck i Arduino, så se till att kolla in dokumentationen för fler exempel.
 
-Match_info objektet innehåller sedan olika metoder som du kan använda för att hantera matchningen, till exempel "start()" och "end()" som returnerar start- respektive slutpositionen för matchningen i strängen.  
+## Utforska reguljära uttryck ännu mer
+Om du vill lära dig mer om reguljära uttryck och hur du kan använda dem i Arduino rekommenderar vi att du tittar på dessa resurser:
+- [Arduino Regexp biblioteket](https://www.arduino.cc/reference/en/libraries/regexp/)
+- [Tutorial video om reguljära uttryck i Arduino](https://www.youtube.com/watch?v=saTxTKCPWuA)
+- [Reguljära uttryck Cheat Sheet för Arduino](https://github.com/ahmadyassir/arduino-regex-cheat-sheet)
 
-## Djupdykning
-
-Reguljära uttryck är mycket kraftfulla verktyg för att hantera textsträngar och det finns många möjligheter för att skapa olika mönster och kombinationer av tecken för att matcha. Det finns också mer avancerade funktioner inom reguljära uttryck, som att byta ut eller ta bort delar av en sträng, som du kan utforska för att optimera din kod. Det finns många olika tutorials och guider tillgängliga online för att hjälpa dig komma igång med reguljära uttryck i Arduino.
-
-## Se även
-
-- [Officiell dokumentation för Regex biblioteket](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Grundläggande guide till reguljära uttryck i Arduino](https://create.arduino.cc/projecthub/SAnwandter1/regular-expressions-regex-for-arduino-b13ef3)
-- [Mer avancerad guide för att använda reguljära uttryck i Arduino](https://blog.hackster.io/text-manipulation-in-arduino-using-regular-expressions-with-regex-a9e7cd49a1bd)
+## Se också
+- [Översättning av "regular expressions" i Svenska](https://lexikon.dinstudio.se/sok.php?ord=regular+expressions)

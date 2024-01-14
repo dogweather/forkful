@@ -1,45 +1,49 @@
 ---
-title:    "Ruby: Convirtiendo una fecha en una cadena"
+title:    "Ruby: Convirtiendo una fecha en una cadena de caracteres"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué convertir una fecha a una cadena en Ruby
+## ¿Por qué deberías aprender a convertir una fecha en un string en Ruby?
 
-Muchas veces, al trabajar con fechas en Ruby, es necesario convertirlos en cadenas de texto para poder mostrarlos correctamente o realizar ciertas operaciones. Conocer cómo convertir una fecha a una cadena en Ruby puede ser muy útil en diversas situaciones.
+Aprender a convertir una fecha en un string en Ruby puede ser muy útil para trabajar con fechas en tus programas. Te permitirá mostrar la fecha en un formato específico, manipularla y realizar cálculos con ella de una manera más eficiente.
 
 ## Cómo hacerlo
 
-Para convertir una fecha a una cadena en Ruby, podemos utilizar el método `strftime`, que nos permite formatear una fecha a una cadena según un patrón especificado. Veamos un ejemplo:
+Para convertir una fecha en un string en Ruby, podemos utilizar el método `strftime` que se encuentra en la clase `Time`. Este método nos permite especificar el formato en el que queremos que se muestre la fecha. Aquí hay un ejemplo de cómo puedes utilizarlo:
 
 ```Ruby
-date = Date.today
-puts date.strftime("%d/%m/%Y")
+# Convertir una fecha a un string en formato DD/MM/YYYY
+Time.now.strftime("%d/%m/%Y")
+# Output: "22/10/2021"
+
+# Convertir una fecha a un string en formato DD de mes de YYYY
+Time.now.strftime("%d de %B de %Y")
+# Output: "22 de Octubre de 2021"
 ```
 
-En este caso, el método `strftime` toma dos argumentos: el primero es el patrón de formato, y el segundo es la fecha que queremos convertir. En el ejemplo, le estamos indicando que queremos que la fecha se muestre en formato día/mes/año. La salida de este código sería: `09/07/2021`.
+Como puedes ver, el formato que le proporcionamos a `strftime` es una combinación de letras y símbolos que representan diferentes partes de la fecha. Algunos de los más comunes son:
 
-## Profundizando en la conversión de fechas a cadenas
+- `%d`: día del mes, con ceros iniciales
+- `%m`: mes del año, con ceros iniciales
+- `%Y`: año con cuatro dígitos
+- `%B`: nombre completo del mes
+- `%b`: abreviación del nombre del mes
+- `%A`: nombre completo del día de la semana
+- `%a`: abreviación del nombre del día de la semana
 
-El patrón de formato que se utiliza en `strftime` es muy amplio, por lo que es recomendable consultar la documentación para conocer todas las opciones disponibles. Algunos de los más comunes son:
+Puedes encontrar una lista completa de los formatos disponibles en la documentación de Ruby.
 
-- `%d`: día del mes (2 dígitos)
-- `%m`: mes del año (2 dígitos)
-- `%Y`: año con 4 dígitos
-- `%H`: hora en formato de 24 horas (2 dígitos)
-- `%M`: minutos (2 dígitos)
-- `%S`: segundos (2 dígitos)
-- `%b`: mes abreviado (ej. Jul)
-- `%B`: mes completo (ej. Julio)
-- `%A`: día de la semana completo (ej. Viernes)
-- `%a`: día de la semana abreviado (ej. Vie)
-- `%w`: día de la semana en número (domingo = 0, lunes = 1, etc.)
+## Profundizando
 
-Además de estos, existen muchos más patrones disponibles para dar formato a fechas y horas. Puedes experimentar con ellos y seguramente encontrarás el que más se ajuste a tus necesidades.
+Si quieres profundizar en cómo se realiza la conversión de una fecha a un string, es importante entender que las fechas en Ruby son representadas internamente como segundos desde la medianoche del 1 de enero de 1970 en formato UTC. Por lo tanto, la conversión a un string en realidad es una conversión de un número entero a una cadena de texto.
+
+Además, también es importante tener en cuenta que el método `strftime` es sólo un wrapper alrededor de la función estándar `strftime` de C, por lo que su comportamiento dependerá de la implementación de Ruby que estés utilizando.
 
 ## Ver también
 
-- [Documentación de Ruby sobre el método `strftime`](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime)
-- [Otras formas de formatear fechas en Ruby](https://www.rubyguides.com/2015/05/working-with-dates-and-time-in-ruby/)
-- [Método `String#to_date` para convertir cadenas a fechas en Ruby](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html#method-i-align-3F)
+- [Documentación de Ruby sobre el método `strftime`](https://ruby-doc.org/core/Time.html#method-i-strftime)
+- [Lista completa de los formatos disponibles en `strftime`](https://apidock.com/ruby/DateTime/strftime)
+- [Cómo trabajar con fechas en Ruby](https://www.rubyguides.com/2016/09/ruby-datetime/)

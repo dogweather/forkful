@@ -1,51 +1,45 @@
 ---
 title:    "C: Trouver la longueur d'une chaîne de caractères"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Avant de plonger dans le sujet de cet article, posons-nous la question : pourquoi devrions-nous nous intéresser à trouver la longueur d'une chaîne de caractères en programmation ? La réponse est simple : en tant que programmeurs, nous travaillons souvent avec des données de type chaîne de caractères qui ont une longueur variable. Savoir comment trouver cette longueur est donc essentiel pour pouvoir manipuler efficacement ces données.
+Trouver la longueur d'une chaîne de caractères peut sembler être une tâche simple en programmation, mais cela peut en réalité être très utile dans de nombreux cas. Par exemple, cela peut être nécessaire lorsque vous devez vous assurer que votre string n'excède pas une certaine limite de caractères ou lorsque vous travaillez avec des données saisies par un utilisateur.
 
 ## Comment faire
 
-Pour trouver la longueur d'une chaîne de caractères en langage C, nous pouvons utiliser la fonction prédéfinie `strlen()`. Cette fonction prend en paramètre une chaîne de caractères et renvoie sa longueur en tant que valeur entière. Voici un exemple de code montrant comment utiliser cette fonction :
+La fonction standard `strlen()` peut être utilisée pour trouver la longueur d'une chaîne de caractères en C. Voici un exemple de code pour l'utiliser:
 
 ```C
 #include <stdio.h>
-#include <string.h>
+#include <string.h> // nécessaire pour la fonction strlen()
 
 int main() {
-    char str[] = "Bonjour le monde";
-    int length = strlen(str);
-    printf("La longueur de la chaîne \"%s\" est : %d", str, length);
+    char str[] = "Bonjour!";
+    int len = strlen(str);
+
+    printf("La longueur de la chaîne est: %d", len);
+
     return 0;
 }
 ```
 
-La sortie de ce code sera :
+La sortie de ce code serait: `La longueur de la chaîne est: 8`, car il y a 8 caractères dans la chaîne "Bonjour!" (y compris l'espace).
 
-```
-La longueur de la chaîne "Bonjour le monde" est : 16
-```
-
-Dans cet exemple, nous avons d'abord déclaré une variable `str` de type `char` et lui avons assigné une chaîne de caractères. Ensuite, en utilisant `strlen()`, nous avons obtenu la longueur de la chaîne et l'avons stockée dans une autre variable `length`. Enfin, en utilisant `printf()`, nous avons affiché la chaîne et sa longueur.
-
-Il est important de noter que la fonction `strlen()` ne compte que les caractères de la chaîne jusqu'au premier caractère null `\0`, il faut donc s'assurer que la chaîne se termine bien par ce caractère pour obtenir un résultat correct.
+Assurez-vous d'inclure le fichier d'en-tête `<string.h>` dans votre programme pour pouvoir utiliser la fonction `strlen()`. Vous pouvez également créer votre propre fonction pour trouver la longueur d'une chaîne de caractères en utilisant une boucle `while` et en comptant le nombre de caractères jusqu'à atteindre le caractère de fin de chaîne `'\0'`.
 
 ## Plongée en profondeur
 
-Pour ceux qui veulent en savoir plus, la fonction `strlen()` parcourt simplement la chaîne de caractères jusqu'à rencontrer `\0` et compte le nombre de caractères rencontrés. Bien qu'elle soit très pratique à utiliser, cette fonction peut être assez inefficace si notre chaîne est très longue, car elle doit parcourir tous les caractères pour trouver la longueur.
+Il est important de noter que la fonction `strlen()` ne compte que les caractères jusqu'au caractère de fin de chaîne `'\0'`. Par conséquent, si vous avez une chaîne avec des espaces ou des caractères spéciaux après le caractère de fin de chaîne, ceux-ci ne seront pas comptés dans la longueur de la chaîne.
 
-Il est également à noter que pour les chaînes de caractères unicode, la fonction `strlen()` peut renvoyer une longueur incorrecte car elle compte chaque caractère comme un seul octet, même si certains caractères unicodes nécessitent plusieurs octets.
-
-Pour ces raisons, certains programmeurs préfèrent écrire leur propre fonction pour trouver la longueur d'une chaîne de caractères, en utilisant par exemple un compteur de boucle. Cela peut être plus efficace pour traiter de grandes chaînes de caractères, mais nécessite un peu plus de code.
+De plus, la fonction `strlen()` ne tient pas compte de la mémoire utilisée par la chaîne. Par exemple, une chaîne de 100 caractères aura une longueur de 100 selon la fonction `strlen()`, mais elle peut en réalité occuper plus de mémoire si elle est stockée en tant que chaîne Unicode.
 
 ## Voir aussi
 
-- [Documentation de la fonction `strlen()` en français](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [Différentes manières de trouver la longueur d'une chaîne en langage C](https://www.geeksforgeeks.org/strlen-vs-strlen-vs-strlen/)
-
-N'hésitez pas à explorer différentes solutions pour trouver la longueur d'une chaîne de caractères en langage C et à choisir celle qui convient le mieux à votre projet. Bonne programmation !
+- [Documentation de la fonction strlen() en français](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Tutoriel sur les chaînes de caractères en C en français](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/17198-les-cha-nes-de-caract-res)
+- [Exemple de création d'une fonction pour trouver la longueur d'une chaîne de caractères en C](https://stackoverflow.com/questions/2525524/how-to-find-the-length-of-a-string-in-c)

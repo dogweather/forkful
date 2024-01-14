@@ -1,68 +1,72 @@
 ---
 title:    "Elm: Erstellen einer temporären Datei"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Erstellen von temporären Dateien ist ein häufiges Szenario beim Programmieren. Es ermöglicht die Speicherung von temporären Daten oder die Verwaltung von Dateien, die nur für einen begrenzten Zeitraum benötigt werden.
 
-##Wie
-Um eine temporäre Datei in Elm zu erstellen, können wir die `createFile`-Funktion aus dem `FileSystem`-Modul verwenden. Hier ist ein Beispielcode, der eine temporäre Datei mit dem Namen "temp.txt" erstellt:
+Das Erstellen von temporären Dateien kann eine nützliche Technik sein, um Daten während der Ausführung eines Programms zu verarbeiten und zu speichern. Diese Dateien sind temporär und werden nach Beendigung des Programms automatisch gelöscht, was hilfreich sein kann, um Speicherplatz zu sparen.
+
+## Wie man es macht
+
+Eine temporäre Datei in Elm zu erstellen, ist relativ einfach. Zunächst importieren wir das `Temp` -Modul:
 
 ```Elm
-  import FileSystem
-
-  tempFile : FileSystem.File
-  tempFile =
-    FileSystem.createFile "temp.txt"
-
-  FileSystem.write "Hello, world!" tempFile
+import Temp
 ```
 
-Die `createFile`-Funktion gibt ein `FileSystem.File`-Objekt zurück, das dann verwendet werden kann, um Daten in die Datei zu schreiben. In diesem Beispiel verwenden wir die `write`-Funktion, um den String "Hello, world!" in die temporäre Datei zu schreiben.
-
-Um eine Liste aller temporären Dateien auf dem System abzurufen, können wir die `tempFiles`-Funktion verwenden, die eine Liste von `FileSystem.File`-Objekten zurückgibt:
+Als nächstes verwenden wir die `Temp.file` -Funktion, um eine temporäre Datei zu erstellen:
 
 ```Elm
-  import FileSystem
-
-  tempFiles : List FileSystem.File
-  tempFiles =
-    FileSystem.tempFiles
+Temp.file "test.txt"
 ```
 
-## Vertiefung
-Beim Erstellen von temporären Dateien ist es wichtig, darauf zu achten, dass diese nach der Verwendung auch wieder gelöscht werden. In der `FileSystem`-Bibliothek gibt es dafür die `delete`-Funktion, die es ermöglicht, eine Datei aus dem System zu entfernen. Hier ist ein Beispielcode, der eine temporäre Datei erstellt, Daten in die Datei schreibt und sie dann wieder löscht:
+Diese Funktion erstellt eine temporäre Datei mit dem angegebenen Namen und gibt ein `Result` zurück. Wir können dieses `Result` mithilfe von `case` auswerten und auf mögliche Fehler prüfen:
 
 ```Elm
-  import FileSystem
-
-  tempFile : FileSystem.File
-  tempFile =
-    FileSystem.createFile "temp.txt"
-
-  FileSystem.write "Hello, world!" tempFile
-
-  FileSystem.delete tempFile
+case Temp.file "test.txt" of 
+    Ok tempFile -> 
+        -- Hier können wir die temporäre Datei verwenden 
+    Err error -> 
+        -- Hier können wir auf den Fehler reagieren 
 ```
 
-Es ist auch möglich, ein spezifisches Verzeichnis für die temporären Dateien anzugeben, indem man den `tempFiles`-Funktion eine Pfadangabe als Argument übergibt. Zum Beispiel können wir eine temporäre Datei im Ordner "myTempFolder" erstellen und sie dann löschen:
+Um Daten in die temporäre Datei zu schreiben, verwenden wir die `File.write` -Funktion und geben den Inhalt als `String` an:
 
 ```Elm
-  import FileSystem
+Temp.file "test.txt"
+    |> Result.andThen (\tempFile -> File.write tempFile "Hallo, Welt!")
+```
 
-  tempFile : FileSystem.File
-  tempFile =
-    FileSystem.createFile "myTempFolder/temp.txt"
+Und um die temporäre Datei zu löschen, verwenden wir die `File.cleanup` -Funktion:
 
-  FileSystem.write "Hello, world!" tempFile
+```Elm
+Temp.file "test.txt"
+    |> Result.andThen (\tempFile -> File.cleanup tempFile)
+```
 
-  FileSystem.delete tempFile
+## Tieferer Einblick
+
+Beim Erstellen einer temporären Datei können wir optional auch weitere Parameter angeben, z.B. den Ordnerpfad und den Dateityp. Diese können uns bei der Verwaltung und Organisation unserer temporären Dateien helfen.
+
+```Elm
+Temp.file "temp/test.txt" "txt"
+```
+
+Außerdem ist es möglich, Filter und Vorlagen zu verwenden, um spezifischere und komplexere temporäre Dateien zu erstellen. Dazu können wir die Funktionen `Temp.fromTemplate` und `Temp.filter` verwenden.
+
+```Elm
+Temp.file (Temp.fromTemplate "temp-XXX") "txt"
+
+Temp.file "temp/test.revisions.txt" 
+    |> Result.andThen (\tempFile -> fileFilter >--> File.write tempFile)
 ```
 
 ## Siehe auch
-- [Die offizielle Elm Dokumentation](https://elm-lang.org/docs)
-- [Ein Tutorial zum Erstellen von temporären Dateien in Elm](https://www.tutorialspoint.com/elm/elm_file_system.htm)
-- [Eine vollständige Referenz für das `FileSystem`-Modul](http://packages.elm-lang.org/packages/elm-lang/core/latest/FileSystem)
+
+- [Elm Dokumentation zu `Temp`](https://package.elm-lang.org/packages/elm/core/latest/Temp)
+- [Offizielle Elm Webseite](https://elm-lang.org/)
+- [Weitere Artikel auf dem Elm Blog](https://elm-lang.org/blog)

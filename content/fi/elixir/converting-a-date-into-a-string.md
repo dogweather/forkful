@@ -1,49 +1,33 @@
 ---
-title:    "Elixir: Päivämäärän muuttaminen merkkijonoksi"
+title:    "Elixir: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Elixir on dynaaminen ohjelmointikieli, joka on erittäin suosittu käytettäessä hajautettuja ja skaalattavia sovelluksia. Yksi sen monista hyödyllisistä ominaisuuksista on kyky muuntaa päivämäärä merkkijonomuotoon. Tässä blogipostissa käymme läpi, miten tämä onnistuu ja miksi tämä taito voi olla hyödyllinen Elixir-ohjelmoijille.
+On monia tilanteita, joissa sinun täytyy muuttaa päivämäärä merkkijonoksi Elixir-ohjelmointikielen avulla. Tämä voi olla tarpeen esimerkiksi, jos haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle selkeässä muodossa. Onneksi Elixir tarjoaa helpon tavan muuttaa päivämäärä merkkijonoksi.
 
-## Miten?
+## Miten tehdä
 
-Muuntaaksesi päivämäärän merkkijonomuotoon Elixirissä, käytä funktiota `to_string` ja anna sille päivämäärä muodossa `{:calendar, päivämäärä}`. Katso alla oleva esimerkki:
-
-```Elixir
-date = {:calendar, {2020, 4, 14}}
-date_string = to_string(date)
-```
-
-Tässä esimerkissä päivämäärä muuttuu merkkijonoksi "2020-04-14".
-
-Voit myös lisätä haluamasi muodon käyttämällä funktiota `Date.to_string` ja antamalla sille päivämäärä ja muodon:
+Converting date into string in Elixir on yksinkertaista käyttämällä `DateTime.to_iso8601` -funktiota. Se ottaa DateTime-objektin parametrina ja palauttaa merkkijonon, joka vastaa ISO 8601 -standardia. Voit myös käyttää `DateTime.to_string` -funktiota, joka ottaa DateTime-objektin ja halutun päivämäärän tarkkuuden parametrina. Tässä on esimerkki:
 
 ```Elixir
-date = Date.utc_today()
-date_string = Date.to_string(date, "{YYYY}-{MM}-{DD}")
+DateTime.to_iso8601(~U[2020-12-31 18:30:00])
+#=> "2020-12-31T18:30:00Z"
+
+DateTime.to_string(~U[2020-12-31 18:30:00], :second)
+#=> "2020-12-31 18:30:00"
 ```
 
-Tässä esimerkissä käytämme `Date.utc_today` -funktiota saadaksemme nykyisen päivämäärän ja muuntamme sen haluamaamme muotoon "YYYY-MM-DD", joka antaa meille esimerkiksi "2020-04-14".
+## Syvällinen sukellus
 
-## Syvempi sukellus
-
-Miksi sitten haluaisimme muuntaa päivämäärän merkkijonomuotoon? Usein tämä taito on hyödyllinen, kun haluamme esittää päivämäärän käyttäjälle tai tallentaa sen tietokantaan merkkijonona. Tämä voi myös auttaa muokkaamaan ja käsittelemään päivämääriä helpommin Elixir-sovelluksissasi.
-
-Voit myös muuntaa päivämäärän merkkijonosta takaisin päivämääräksi käyttämällä `String.to_date` -funktiota ja antamalla sille päivämäärän muodossa "YYYY-MM-DD", kuten alla olevassa esimerkissä:
-
-```Elixir
-date_string = "2020-04-14"
-date = String.to_date(date_string)
-```
-
-Tämä tuo takaisin päivämäärän muodossa `{:calendar, päivämäärä}`.
+Elixirillä on myös useita muita funktioita, jotka tarjoavat joustavuutta päivämäärän muuntamisessa merkkijonoksi. Voit esimerkiksi käyttää `DateTime.to_naive` -funktiota, joka palauttaa DateTime-objektin ilman aikavyöhykettä. Voit myös käyttää `DateTime.add` -funktiota lisätäksesi tai vähentääksesi aikaa DateTime-objektista. Lisätietoja voit lukea Elixirin virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [Elixir-kirjaston dokumentaatio](https://hexdocs.pm/elixir/Kernel.html#to_string/1)
-- [Muotoiluoptiot päivämäärän muuntamiseen](https://hexdocs.pm/elixir/1.10/Date.html#to_string/2)
-- [String-moduulin dokumentaatio](https://hexdocs.pm/elixir/String.html#to_date/1)
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixirin date- ja time-moduulit](https://elixirschool.com/en/lessons/advanced/date-time/)
+- [Elixirin päivämäärä- ja aikavyöhykemoduulien käyttö](https://thoughtbot.com/blog/working-with-elixir-and-datetimes)

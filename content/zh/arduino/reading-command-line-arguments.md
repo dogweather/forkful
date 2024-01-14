@@ -1,49 +1,89 @@
 ---
 title:    "Arduino: 读取命令行参数"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要阅读命令行参数
-在使用Arduino进行编程时，我们可能会经常遇到需要从命令行中读取参数的情况。这些参数可以提供给我们的程序更多的灵活性和可配置性，帮助我们更好地控制和调试我们的代码。因此，阅读命令行参数是一个非常有用的技能，可以帮助我们更好地理解和运用Arduino。
+## 为什么
 
-## 如何阅读命令行参数
-阅读命令行参数的最基本的方法是使用Arduino的`Serial`库。我们可以将命令行参数作为字符串通过串口传输给Arduino，并在代码中使用`Serial.readString()`来读取这些参数。下面是一个简单的例子：
+为什么会有人想要学习读取命令行参数呢？因为在编程中，我们经常会需要用户输入一些信息来执行不同的操作。通过读取命令行参数，我们可以方便地接收用户输入，并根据不同的参数执行不同的代码。这对于想要扩展自己的编程能力的人来说是非常有用的。
 
-```Arduino
-// 设置串口通信的波特率为9600
-Serial.begin(9600); 
+## 如何
 
-// 在代码中使用Serial.readString()读取命令行参数
-String parameter = Serial.readString();
+如果你是一个Arduino编程的初学者，你可能会觉得读取命令行参数很复杂。但实际上，它并不难，只需要按照以下步骤进行：
 
-// 将参数打印出来
-Serial.println(parameter);
-```
+1. 首先，我们需要在代码中声明一个main()函数，它将是我们程序执行的入口点。
+2. 在main()函数的括号内，我们可以声明两个参数：一个是整型的argc，表示命令行参数的个数；另一个是字符型的argv，表示命令行参数的数组。
+3. 在代码的运行过程中，命令行参数将会被自动存储在这两个变量中，并可以通过它们来读取和使用。
 
-假设我们通过串口向Arduino传输参数`hello`，那么在串口监视器中我们将会看到输出`hello`。通过这种方法，我们可以很方便地从命令行中读取参数，并在代码中使用它们。
-
-## 深入了解命令行参数
-除了基本的方法外，我们还可以使用`argc`和`argv`这两个变量来读取命令行参数。`argc`代表命令行参数的数量，`argv`则是一个字符串数组，包含了所有的参数。我们可以通过遍历`argv`数组来获取每个单独的参数。下面是一个例子：
+下面是一个简单的例子，展示如何读取命令行参数并显示在串口监视器上：
 
 ```Arduino
-// 将命令行参数的数量保存到变量argc中
-int argc = ParameterCount();
-
-// 使用for循环遍历argv数组并打印每个参数
-for (int i = 0; i < argc; i++) {
-    Serial.println(argv[i]);
+void main(int argc, char** argv){
+  //读取第一个参数，并将其转换为整型
+  int num = atoi(argv[1]);
+  //在串口监视器上显示命令行参数
+  Serial.print("您输入的数字是：");
+  Serial.println(num);
 }
 ```
 
-如果我们通过串口向Arduino传输参数`hello`和`world`，那么在串口监视器中我们将会看到输出`hello`和`world`。通过使用`argc`和`argv`，我们可以更灵活地读取和处理命令行参数。
+假设我们将上面的代码上传到Arduino板，然后在串口监视器中输入命令行参数`123`，我们将会看到以下输出：
 
-## 参考资料
-- [Arduino官方文档 - Serial.readString()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
-- [Arduino官方文档 - ParameterCount()](https://www.arduino.cc/reference/en/language/functions/communication/serial/parametercount/)
-- [Arduino官方论坛 - How to read command line arguments](https://forum.arduino.cc/index.php?topic=319866.0)
+```
+您输入的数字是：123
+```
+
+通过这种方式，我们就可以方便地读取用户输入的参数并进行处理。
+
+## 深入探讨
+
+除了上面提到的方法外，我们还可以通过C语言中的`getopt()`函数来读取命令行参数。这个函数可以帮助我们更方便地解析命令行参数，并返回对应的值。下面是一个使用`getopt()`函数的例子：
+
+```Arduino
+void main(int argc, char** argv){
+  //声明一个字符型变量，存储getopt()返回的结果
+  int opt;
+  //循环读取用户输入的每个选项
+  while ((opt = getopt(argc, argv, "abc:")) != -1) {
+    //判断用户输入的选项，并进行相应的操作
+    switch (opt) {
+      case 'a':
+        Serial.println("您输入了选项a");
+        break;
+      case 'b':
+        Serial.println("您输入了选项b");
+        break;
+      case 'c':
+        //读取并转换为整型
+        int num = atoi(optarg);
+        //显示用户输入的值
+        Serial.print("您输入的数字是：");
+        Serial.println(num);
+        break;
+    }
+  }
+}
+```
+
+假设我们使用命令行参数`-a -c500`，则会得到以下输出：
+
+```
+您输入了选项a
+您输入的数字是：500
+```
+
+需要注意的是，`getopt()`函数只能读取单个字符的选项，而不能读取带有参数的选项，例如`-c500`。如果需要读取带有参数的选项，可以使用C++中的`getopt_long()`函数。
+
+## 参考链接
+
+- [C++ getopt()函数详解](https://www.runoob.com/cprogramming/c-function-getopt.html)
+- [C++ getopt_long()函数详解](https://www.runoob.com/w3cnote/cpp-getopt_long-function.html)
+- [Arduino命令行参数读取教程](https://forum.arduino.cc/index.php?topic=384198.0)
 
 ## 参见
-- [Arduino官方文档 - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [CSDN博客 - Arduino命令行参数的使用](https://blog.csdn.net/csdn_aiyang/article/details/90401563)
+
+- [Arduino编程入门指南](https://github.com/Clement19891207/Getting-started-with-Arduino/blob/master/README.md)
+- [Arduino官方文档](

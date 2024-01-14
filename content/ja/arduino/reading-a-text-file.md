@@ -1,60 +1,48 @@
 ---
 title:    "Arduino: テキストファイルの読み込み"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-今日は、あなたがおそらくすでに知っているように、あなたのArduinoデバイスにテキストファイルを読み込む方法を学びましょう。デバイスとの通信やデータ管理において、テキストファイルは非常に便利で効率的な方法です。つまり、あなたのプログラムがサポートする最も基本的なファイルタイプです。
+## なぜ
 
-# 作り方
-まず、テキストファイルを読み込むためには、ファイルをArduinoデバイスにアップロードする必要があります。そのためには、<File→Upload File>ツールを使用することができます。 
+なぜテキストファイルの読み込みをするのか、理由を説明します。テキストファイルを読み込むことで、データの保存やアクセスが容易になります。また、アプリケーションやデバイスによって生成されるデータを処理するためにも、テキストファイルの読み込みは重要な役割を果たします。
 
-```
-ArduinoのCREATEプラットフォーム。ファイル：Welcome.txt
-をデバイスにアップロードします。
-```
+## 使い方
 
-次に、ファイルを開くコードを書く必要があります。以下の例では、ファイル名を「Welcome.txt」とし、ファイルを読み込むためのシリアルポートを指定しています。
+テキストファイルを読み込むためのArduinoのコード例と、実行結果を「```Arduino ... ```」のコードブロックで示します。
 
-```
-ArduinoのCREATEプラットフォーム。コード：
-// テキストファイルの読み込み
-File textFile = SD.open("Welcome.txt");
+```Arduino
+// テキストファイルを読み込むためのファイルオブジェクトを作成
+File file = SD.open("data.txt");
 
-// ファイルが開かれたかどうかを確認
-if (textFile) {
-  // ファイルから１文字ずつ読み込み、シリアルモニタに出力
-  while (textFile.available()) {
-    Serial.write(textFile.read());
-  }
-  // ファイルを閉じる
-  textFile.close();
-} else {
-  // ファイルが開けない場合はエラーメッセージを出力
-  Serial.println("Error opening file");
+// ファイルが開けなかった場合、エラーを表示
+if (!file) {
+  Serial.println("error opening file");
+  return;
 }
+
+// ファイルの内容をシリアルモニターに表示する
+while (file.available()) {
+  Serial.write(file.read());
+}
+
+// ファイルを閉じる
+file.close();
 ```
 
-出力例：
+実行結果は、シリアルモニターやSDカードに保存されたテキストファイルに表示されます。
 
-```
-ArduinoのCREATEプラットフォーム。シリアルモニタ出力：
+## ディープダイブ
 
-Welcome to Arduino!
-This is a text file.
-We hope you enjoy learning about reading text files on your device.
-```
+テキストファイルの読み込みには、いくつかの重要な考慮事項があります。まず、デバイスやアプリケーションによってテキストファイルのフォーマットが異なることがあります。そのため、読み込むファイルのフォーマットに合わせてコードを変更する必要があります。また、大きなファイルの場合、メモリの制限によって読み込むことができないことがあります。そのため、ファイルを分割して読み込むなどの工夫が必要です。
 
-# 深堀り
-テキストファイルを読み込む際、Arduinoはファイルをバイト（8ビット）単位で読み込みます。つまり、ファイル内の全ての文字やスペースは、それぞれ８ビットの数値に変換されます。具体的には、ASCIIコードと呼ばれる標準的な文字コードが使用されます。それぞれの文字に対応する数値は、[この表](https://www.ibm.com/docs/ja/i/7.4?topic=s-pcascii-table)で確認することができます。
+## 他のリソース
 
-また、テキストファイルを読み込む際には、ファイル内の改行やタブなどの特殊文字も読み込まれます。これらの特殊文字についても、同じように８ビットの数値に変換されます。
+詳しい情報やさらに学習したい場合は、以下のリソースを参考にしてください。
 
-さらに、テキストファイルを読み込んだ後、Arduinoでそのデータを処理する場合、文字列として扱うことができます。このように、テキストファイルはデバイス間のデータ通信やデータ管理において非常に便利な役割を果たすことができます。
-
-# その他参考リンク
-- [ArduinoのSDライブラリドキュメント](https://www.arduino.cc/en/Reference/SD)
-- [ArduinoのASCIIコード表](https://www.ibm.com/docs/ja/i/7.4?topic=s-pcascii-table)
-- [ArduinoのStringライブラリドキュメント](https://www.arduino.cc/en/Reference/String
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [SDライブラリのドキュメント](https://www.arduino.cc/en/reference/SD)
+- [プチコンで学ぶマイコン入門 - ファイル入出力編](https://chibacus.com/2020/11/24/ピココンで学ぶマイコン入門-ファイル入出力編/)

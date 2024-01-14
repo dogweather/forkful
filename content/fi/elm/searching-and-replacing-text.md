@@ -1,38 +1,52 @@
 ---
 title:    "Elm: Tekstin etsiminen ja korvaaminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi jonkun kannattaa käyttää hakemisto- ja korvaustoimintoja tekstissä? Hakemisto- ja korvaustoiminnon avulla voit nopeuttaa koodaamista ja vähentää virhetilanteita tekemällä massiivisia muutoksia tekstiin kerralla.
+Monilla ohjelmointikielillä on mahdollista suorittaa tekstien etsimistä ja korvaamista. Tässä artikkelissa käsitellään sitä, miten sama saavutetaan Elm-ohjelmointikielessä.
 
-## Kuinka tehdä
+## Miten tehdä
 
-Yksi tapa käyttää hakemisto- ja korvaustoimintoja on käyttämällä Elm-ohjelmointikieltä. Se on puhdas ja turvallinen ohjelmointikieli, joka auttaa sinua tekemään muutoksia turvallisesti ja tehokkaasti. Alla on esimerkki koodista ja sen tuottamasta tulosteesta.
-
-```Elm
-import SearchAndReplace exposing (replace)
-
-replace "Hei!" "Moi!" "Hei maailma!"
+"```Elm
+-- Etsi ja korvaa funktion avulla
+printText : String -> String
+printText input =
+  String.replace "vanha sana" "uusi sana" input 
 ```
-Tulostaa: `Moi maailma!`
 
-## Syventyvä tieto
-
-Hakemisto- ja korvaustoimintojen avulla voit tehdä monimutkaisempia muutoksia teksteihin käyttämällä säännöllisiä lausekkeita. Voit esimerkiksi korvata kaikki numerot kirjaimilla käyttämällä `\d` ja `\w` säännöllisiä lausekkeita.
-
-```Elm
-import Regex exposing (replace, allMatches)
-
-replace (Regex.regex "\\d+") (\_ -> "---") "Hei 123 maailma!"
+"```Elm
+-- Suorita etsintä ja korvaus tehtävä aktivoinnin yhteydessä
+main =
+  printText "Tämä on vanha sana"
+  
+-- Output: "Tämä on uusi sana" 
 ```
-Tulostaa: `Hei --- maailma!`
+
+Voit myös käyttää `String.replace`-toimintoa suoraan tehtävään, kuten seuraavassa esimerkissä:
+
+"```Elm
+-- Vaihda kaikki isoille kirjaimille pienille kirjaimille
+text : String
+text = "TEKSTI tähän"
+
+String.replace "TEKSTI" "teksti" text 
+
+-- Output: "teksti tähän"
+```
+
+## Syvempää tietoa
+
+Elm:ssä on valmis `String.replace`-funktio, joka löytyy `elm/core`-kirjastosta. Voit myös luoda oman funktion, joka suorittaa halutun etsinnän ja korvauksen, kuten ensimmäisessä esimerkissä.
+
+On myös hyvä huomata, että tekstien etsiminen ja korvaaminen on mahdollista myös monimutkaisemman pattern matchaamisen avulla.
 
 ## Katso myös
 
-- [Elm ohjelmointikieli](https://elm-lang.org/)
-- [Säännölliset lausekkeet](https://www.regular-expressions.info/)
-- [Hakemisto- ja korvaustoimintojen käyttö Elm-paketteihin](https://package.elm-lang.org/)
+- [Elm virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [Elm Slack-yhteisö](https://elmlang.slack.com/)
+- [Elm konferenssit ja tapahtumat](https://elm-conf.com/)

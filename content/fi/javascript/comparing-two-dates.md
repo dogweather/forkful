@@ -1,39 +1,51 @@
 ---
 title:    "Javascript: Kahden päivämäärän vertailu"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kaksi päivämäärää?
+## Miksi
 
-Vertaileminen on olennainen osa ohjelmointia, ja päivämäärien vertaileminen voi olla erittäin hyödyllistä monissa tilanteissa. Esimerkiksi jos haluat tarkistaa, onko jokin artikkeli julkaistu ennen tiettyä päivämäärää tai tarkistaa, kuinka monta päivää on kulunut edellisestä tapahtumasta, päivämäärien vertaileminen on välttämätöntä.
+Usein ohjelmoinnissa täytyy tarkastella kahta päivämäärää ja verrata niitä keskenään. Tämä voi olla tarpeellista esimerkiksi aikaleimojen käsittelyssä tai tapahtumien järjestämisessä. Tässä blogikirjoituksessa käymme läpi, miten voit helposti vertailla päivämääriä Javascript-ohjelmoinnissa.
 
-## Kuinka vertailla kahta päivämäärää?
+## Miten
 
-Vertaileminen tapahtuu useimmiten käyttämällä Date-objektia ja sen sisältämiä metodeja. Ensimmäinen askel on luoda kaksi Date-objektia halutuille päivämäärille. Tämän jälkeen voit käyttää Date-objektien vertailumetodeja, kuten "getTime()", "getDate()" ja "getMonth()", saadaksesi tarvittavat tiedot. Lopuksi voit vertailla saatuja arvoja haluamallasi tavalla, esimerkiksi käyttäen if/else-lauseita. Alla on esimerkki kahden päivämäärän vertailusta:
+Vertaillaaksemme kahta päivämäärää Javascript-ohjelmoinnissa, meidän täytyy ensin muuttaa ne Date-tyyppisiksi objekteiksi. Tämän jälkeen voimme käyttää erilaisia vertailutoimintoja, kuten isEqual(), isBefore() ja isAfter(), verrataksemme näitä päivämääriä.
+
+Esimerkiksi jos haluamme tietää onko ensimmäinen päivämäärä ennen toista, voimme käyttää isBefore() -funktiota seuraavasti:
 
 ```Javascript
-const date1 = new Date("2020-01-01");
-const date2 = new Date("2020-01-10");
+var date1 = new Date("2020-11-01");
+var date2 = new Date("2020-11-07");
 
-if (date1.getTime() > date2.getTime()) {
-  console.log("date1 on myöhempi kuin date2");
-} else {
-  console.log("date2 on myöhempi kuin date1");
-}
-
-// Output: date2 on myöhempi kuin date1
+console.log(date1.isBefore(date2));
 ```
 
-## Syvemmälle päivämäärien vertailuun
+Tämä tulostaa "true", koska date1 on aikaisempi kuin date2. Voit myös käyttää isEqual() tai isAfter() -funktioita saadaksesi vastaavan tiedon.
 
-Päivämäärien vertailussa tulee ottaa huomioon, että Date-objektien vertailu perustuu niiden aikaleimoihin, eli millisekunteina mitattuun ajankohtaan tietyn päivämäärän jälkeen. Tämän takia esimerkiksi kaksi päivämäärää, jotka ovat samassa kuussa ja vuodessa, mutta eri viikolla, voivat silti olla eriarvoisia.
+## Syväsukellus
 
-Tämän lisäksi on hyvä muistaa myös aikavyöhykkeiden vaikutus, sillä Date-objektit käyttävät oletuksena käyttöjärjestelmän aikavyöhykettä. Tämä voi aiheuttaa ongelmia, jos haluat vertailla päivämääriä eri aikavyöhykkeiltä.
+Vertailutoimintojen lisäksi voimme myös käyttää Date-objektien sisäisiä metodeita, kuten getTime() ja getFullYear(), vertaillaksemme päivämääriä. getTime() palauttaa millisekuntien määrän, joka on kulunut tietystä päivämäärästä, ja getFullYear() palauttaa kyseisen vuoden.
+
+Esimerkiksi jos haluat vertailla kahden päivämäärän vuosia, voit käyttää seuraavaa koodia:
+
+```Javascript
+var date1 = new Date("2020-11-01");
+var date2 = new Date("2019-12-31");
+
+if (date1.getFullYear() === date2.getFullYear()) {
+  console.log("Samana vuonna.");
+} else {
+  console.log("Eri vuodet.");
+}
+```
+
+Tämä tulostaisi "Eri vuodet", koska date1 ja date2 ovat eri vuosiluvuilla.
 
 ## Katso myös
 
-- MDN Web Docs, "Date" -https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date
-- W3Schools, JavaScript Date - https://www.w3schools.com/jsref/jsref_obj_date.asp
-- Stack Overflow, "How to compare two dates in JavaScript" - https://stackoverflow.com/questions/8529873/how-to-compare-two-dates-in-javascript
+- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools: JavaScript Dates](https://www.w3schools.com/js/js_dates.asp)
+- [JavaScript.info: Date and time](https://javascript.info/date)

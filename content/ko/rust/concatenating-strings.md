@@ -1,51 +1,71 @@
 ---
 title:    "Rust: 문자열 연결하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 이러한 내용을 다루는 것인가?
+## 왜
 
-문자열을 이어 붙이는 것은 모든 프로그래밍 언어에서 자주 사용되는 기술입니다. 예를 들어, 문자열로 구성된 이름과 성 같은 정보를 결합하거나 다양한 사용자 정보를 표시하기 위해 사용됩니다. Rust에서는 문자열을 옵션으로 사용하거나 String 버퍼를 사용하여 문자열을 이어 붙일 수 있습니다. 이번 글에서는 기본적인 방법이 아니라 Reallocating string을 사용하여 문자열을 이어 붙이는 방법을 살펴보겠습니다.
+문자열을 연결하는 것이 중요한 이유는 프로그래밍에서 자주 사용되는 작업이므로, 이 작업을 효율적으로 수행하기 위해 연결 방법을 이해하는 것이 중요합니다.
 
-## 어떻게 이어 붙이나요?
+## 어떻게
 
-문자열을 이어 붙이는 가장 기본적인 방법은 "format!" 매크로를 사용하는 것입니다. 이를 위해서는 std::fmt::Argument를 먼저 정의해야 합니다. 예를 들어, 우리는 문자열 표기 방식으로 이름과 성을 받아서 새로운 문자열을 리턴하는 함수를 만들 수 있습니다.
+Rust에서 문자열을 연결하는 방법은 간단합니다. 기본적으로 `+` 연산자를 사용하면 됩니다.
 
-```rust
-use std:fmt;
+```Rust
+let first_name = "예지";
+let last_name = "송";
 
-fn full_name(first_name: &str, last_name: &str) -> String {
-    let name = format!("{} {}", first_name, last_name);
-    return name;
-}
-
-fn main() {
-    let name = full_name("John", "Smith");
-    println!("{}", name);
-}
+let full_name = first_name + " " + last_name;
+println!("나의 이름은 {}입니다.", full_name);
 ```
 
-위의 예제에서 "John Smith"가 출력됩니다. format! 매크로는 String 버퍼를 자동으로 만들어줍니다. 코드 블록 밖에서 컴파일러는 String의 내용을 복사하기 위해 이 버퍼에 근거합니다. 이를 통해 문자열을 이어 붙일 때마다 String의 길이를 재할당할 필요가 없어집니다. 이러한 방식은 간단하고 효율적이지만, 항상 재할당이 발생한다는 단점이 있습니다.
+출력:
 
-다음으로는 String의 capacity를 직접 지정하는 방법입니다. 이를 통해 재할당이 더 적게 발생하여 성능을 향상시킬 수 있습니다. 예를 들어, 만약 무언가 긴 문자열을 합쳐야 할 때, capacity를 크게 설정하여 필요한 재할당을 최소화할 수 있습니다.
-
-```rust
-use std::string::String;
-
-fn main() {
-    let mut string1 = String::from("Hello, ");
-    string1.reserve(20);
-    string1.push_str("world!");
-    println!("{}", string1);
-}
+```
+나의 이름은 예지 송입니다.
 ```
 
-위의 예제에서 String의 capacity를 미리 설정하고, push_str() 함수를 통해 새로운 문자열을 추가합니다. 이 방식은 더 많은 메모리를 사용하여 재할당을 최소화하지만, 여전히 String 버퍼를 새로운 String으로 복사해야 한다는 단점이 있습니다. 
+위 예제에서는 `+` 연산자로 두 개의 문자열을 연결했습니다. 하지만 더 많은 문자열을 연결해야 할 수도 있습니다. 이 경우 `format!` 매크로를 사용할 수도 있습니다.
 
-## 더 깊게 들어가기
+```Rust
+let price = 5000;
+let currency = "원";
+let item = "맛있는 음식";
 
-이어 붙이기의 세 번째 방법은 Reallocating string이라고 불리는 것입니다. 이것은 문자열을 추가하기 전에 capacity를 검증하고 필요한 경우 capacity를 늘리는 방식입니다. 이를테면 이어 붙일 문자열이 기존 capacity보다 길 경우, capacity를 늘리는 것입니다. 이 방식을 구현하기 위해서는 기존 String의 내용을 복사하지 않고, 우리가 이어 붙일 문자열의 capacity를 검증하여 필요하면 늘리는 과정을 거쳐야 합니다. 
+let message = format!("{} {}에 {}를 살 수 있습니다.", price, currency, item);
+println!("{}", message);
+```
 
-Reallocating string을 구현하는 방법은 여러 가지가 있습니다. 가장 간단한 방법은 String의 .with_capacity(n) 메서드를 사용하여 미리
+출력:
+
+```
+5000 원에 맛있는 음식를 살 수 있습니다.
+```
+
+## 딥 다이브
+
+Rust에서는 문자열을 연결하는 방법으로 세 가지가 있습니다. 첫 번째로, `+` 연산자를 사용하는 방법을 본 이전 예제대로입니다. 두 번째 방법은 `format!` 매크로를 사용하는 것입니다. 마지막으로, `String` 타입의 `push_str` 메소드를 사용하는 방법입니다.
+
+```Rust
+let mut hello = String::from("안녕");
+
+hello.push_str("하세요!");
+println!("{}", hello);
+```
+
+출력:
+
+```
+안녕하세요!
+```
+
+위 코드에서는 `String` 타입 변수인 `hello`에 `push_str` 메소드를 사용해 문자열을 추가했습니다. 이 방법은 메모리 사용 측면에서 더 효율적입니다.
+
+## 참고
+
+[Rust Book - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)<br>
+[Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/primitives/string.html)<br>
+[Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)

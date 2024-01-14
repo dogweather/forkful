@@ -1,54 +1,56 @@
 ---
 title:    "Fish Shell: Läsning av en textfil"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att läsa en textfil är en grundläggande färdighet för alla programmerare, oavsett vilket språk eller vilket skal de använder. Det är ett essentiellt sätt att läsa och manipulera data i ditt program. I denna bloggpost kommer jag att visa dig hur du kan använda Fish Shell för att läsa textfiler på ett enkelt och effektivt sätt.
+Att kunna läsa och hantera textfiler är en viktig färdighet inom programmering, oavsett vilket språk du använder. Genom att läsa en textfil kan du få tillgång till viktig information och sedan bearbeta den för att skapa önskad output. I denna artikel kommer vi att titta på hur du kan läsa textfiler med hjälp av Fish Shell för att underlätta dina uppgifter som programmerare.
 
-##Hur man gör
+## Hur man gör det
 
-Först och främst behöver vi öppna vår terminal och navigera till den mapp där vår textfil finns. Sedan kan vi använda följande kommando för att läsa filen och skriva ut dess innehåll till vår terminal:
-
-```Fish Shell
-cat namn.txt
-```
-
-Detta kommando kommer att skriva ut innehållet i textfilen "namn.txt" till vår terminal. Men vad händer om vi vill läsa filen rad för rad och kanske göra några ändringar? Då kan vi använda följande kommando för att loopa igenom raderna i filen och skriva ut dem en efter en:
+För att läsa en textfil med Fish Shell behöver du använda kommandot `cat` följt av sökvägen till filen du vill läsa. Här är ett exempel:
 
 ```Fish Shell
-while read rad
-    echo $rad
-end < namn.txt
+cat ~/Dokument/textfil.txt
 ```
 
-Som du kan se använder vi "while" loopen för att läsa varje rad i filen och skriva ut den till terminalen. Sedan avslutas loopen när det inte finns fler rader att läsa. Men kanske vill vi bara läsa en viss del av filen, till exempel de första fem raderna. Då kan vi använda följande kommando:
+Det här kommer att skriva ut innehållet av textfilen direkt till terminalen. Om du vill spara outputen till en annan fil, kan du använda `>` för att dirigera outputen till en specifik fil. Till exempel:
 
 ```Fish Shell
-head -n 5 namn.txt
+cat ~/Dokument/textfil.txt > ~/Dokument/output.txt
 ```
 
-I det här fallet använder vi "head" kommandot tillsammans med flaggan "-n" för att specificera antalet rader som vi vill läsa. Detta kommer att skriva ut de första fem raderna i vår textfil.
-
-## Djupdykning
-
-Nu när vi har lärt oss grunderna för att läsa en textfil, låt oss gå lite djupare och titta på andra sätt att manipulera dess innehåll. Kanske vill vi ersätta vissa ord eller rader i filen med nya värden. För det kan vi använda "sed" kommandot som gör det möjligt för oss att söka efter specifika mönster och ersätta dem med det vi vill. Till exempel kan vi ändra alla förekomster av ordet "John" till "Johan" med följande kommando:
+Du kan också läsa flera textfiler på en gång genom att använda wildcard-tecknet `*`. Till exempel:
 
 ```Fish Shell
-sed -i 's/John/Johan/g' namn.txt
+cat ~/Dokument/*.txt > ~/Dokument/all_textfiles.txt
 ```
 
-I det här fallet använder vi flaggan "-i" för att ändra filen direkt, utan att behöva skapa en ny fil med de nya ändringarna.
+## Djupdyka
 
-## Se även
+En av fördelarna med att använda Fish Shell för att läsa textfiler är att du kan använda många av dess inbyggda funktioner för att manipulera din output. Ett exempel på detta är att använda `grep` för att söka efter specifikt innehåll i textfilen. Till exempel:
 
-Här är några bra resurser för dig som vill lära dig mer om hur man läser textfiler i Fish Shell:
+```Fish Shell
+cat ~/Dokument/textfil.txt | grep "Fish Shell"
+```
 
-- [Officiell hemsida för Fish Shell](https://fishshell.com/)
-- [Dokumentation för Cat-kommandot](https://fishshell.com/docs/current/cmds/cat.html)
-- [Dokumentation för Sed-kommandot](https://fishshell.com/docs/current/cmds/sed.html)
+Det här kommer att skriva ut alla rader som innehåller ordet "Fish Shell" i textfilen.
 
-## Se även
+Du kan också använda `head` och `tail` för att bara läsa en viss del av textfilen, beroende på hur många rader du vill visa. Till exempel:
+
+```Fish Shell
+cat ~/Dokument/textfil.txt | head -n 10
+```
+
+Detta kommer att visa de första 10 raderna i textfilen.
+
+## Se också
+
+- [Fish Shell's officiella hemsida](https://fishshell.com)
+- [Fish Shell's dokumentation för läsning av filer](https://fishshell.com/docs/current/cmds/cat.html)
+- [En praktisk guide till att läsa textfiler i Fish Shell](https://www.journaldev.com/36907/fish-shell-cat-command)
+- [En tutorial om Fish Shell från noll till färdighet](https://www.howtogeek.com/362409/learn-linux-with-this-fish-shell-beginners-guide/)

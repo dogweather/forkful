@@ -1,41 +1,38 @@
 ---
-title:    "Haskell: Tarkistaan löytyykö hakemistoa"
+title:    "Haskell: Tarkistetaan, onko hakemisto olemassa"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tervetuloa lukemaan uutta blogikirjoitusta Haskell-ohjelmointikielen käytöstä! Tänään keskitymme katsomaan, kuinka voimme tarkistaa, onko kansio olemassa Haskellissa.
 
-Yleensä, kun kirjoitamme ohjelmaa, meidän on varmistettava, että se toimii oikein. Joskus tällainen tarkistus sisältää tietojen lukemisen ja kirjoittamisen tietokantoihin tai muihin tiedostoihin. Mutta se voi myös sisältää tarkistamisen, onko haluttu kansio olemassa. Tässä tapauksessa meidän on varmistettava, että ohjelmamme ei yritä käsitellä jotain, joka ei ole olemassa, ja että se toimii oikein, jos kansio löytyy.
+Monissa ohjelmointiprojekteissa on tarve tarkistaa, onko tietty kansio olemassa. Tämä voi liittyä esimerkiksi tarpeeseen luoda tai lukea tiedostoja tietyssä hakemistossa. Tässä blogikirjoituksessa tarkastelemme, miten tämä voidaan tehdä Haskell-ohjelmointikielellä.
 
-## Kuinka 
-Haskellissa on helppo tarkistaa, onko kansio olemassa. Voimme käyttää `doesDirectoryExist`-funktiota, joka on määritelty `System.Directory`-moduulissa. Katsotaanpa yksinkertaista esimerkkiä, jossa haluamme tarkistaa, onko `demo`-niminen kansio olemassa:
+## Miten
+
+Haskellissa kansio-olioita käytetään hallitsemaan tiedostojärjestelmää. Olemassa olevan hakemiston tarkistamiseksi käytämme `doesDirectoryExist`-funktiota. Se ottaa parametrinaan kansion polun ja palauttaa `IO Bool`-arvon, joka kertoo, onko kansio olemassa vai ei.
 
 ```Haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
 
+main :: IO ()
 main = do
-  exists <- doesDirectoryExist "demo"
+  let path = "kansio"
+  exists <- doesDirectoryExist path
   if exists
-    then putStrLn "Demo-kansio löytyi!"
-    else putStrLn "Demo-kansiota ei löytynyt."
+    then putStrLn "Kansio on olemassa"
+    else putStrLn "Kansiota ei ole olemassa"
 ```
 
-Jos ajamme tätä koodia kansiossa, jossa on `demo`-kansio, tulostus näyttää seuraavalta:
-```
-Demo-kansio löytyi!
-```
+Yllä olevassa esimerkissä luodaan `path`-muuttujaan kansion polku ja sitten `doesDirectoryExist`-funktiolla tarkistetaan, onko kyseinen kansio olemassa. Tämän jälkeen tulostetaan käyttäjälle haluttu viesti sen mukaan, mikä paluuarvo on.
 
-Voimme myös suorittaa saman tarkistuksen yksinkertaisesti kirjoittamalla `doesDirectoryExist "demo"` GHCi-tulkkiin, jolloin se palauttaa True tai False sen mukaan, löytyykö kansio vai ei.
+## Syvemmälle
 
-On hyvä huomata, että tämä funktio tarkistaa vain kansiot, ei tiedostoja. Tiedoston olemassaolon tarkistamiseen käytetään `doesFileExist`-funktiota.
+Kansion tarkistamisessa kannattaa olla tarkkana käyttäjän antamien polkujen kanssa. On hyvä idea validoida polku esimerkiksi `System.FilePath`-moduulin avulla ja ottaa huomioon myös käyttöjärjestelmän polkuseparaattori. Lisäksi voi olla hyödyllistä tutustua `System.Directory`-moduulin muihin funktioihin ja mahdollisuuksiin esimerkiksi kansioiden luomiseen tai poistamiseen.
 
-## Syvällistä tietoa
-Jos haluat tutustua tarkemmin `doesDirectoryExist`-funktion toimintaan, voit tutustua Haddock-dokumentaatioon sen [virallisella verkkosivustolla](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:doesDirectoryExist). Sieltä löydät esimerkiksi, että funktio käyttää alustariippumatonta kutsua `stat`-järjestelmäkutsua ja että se palauttaa tuloksen IO-operaationa boolean-arvona.
+## Katso myös
 
-## Nähdään myös
-- [System.Directory -dokumentaatio](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-- [Tietoja Haskelista](https://fi.wikipedia.org/wiki/Haskell)
-- [Haskelin virallinen verkkosivusto](https://www.haskell.org/)
+- [Haskellin System.Directory-dokumentaatio](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Haskellin System.FilePath-dokumentaatio](https://hackage.haskell.org/package/filepath/docs/System-FilePath.html)

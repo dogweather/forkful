@@ -1,44 +1,51 @@
 ---
-title:    "Java: 현재 날짜 얻기"
+title:    "Java: 현재 날짜 가져오기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-현재 날짜를 가져오는 것에 참여하는 이유는 단순합니다. 현재 날짜는 프로그래밍에서 자주 사용되며 예약된 작업, 파일 및 이벤트의 생성 날짜/시간을 결정하는 데 유용합니다. 또한 사용자에게 더 나은 사용자 경험을 제공하기 위해 화면과 관련된 날짜를 표시하는 등 다양한 용도로 사용됩니다.
+# 왜: 현재 날짜를 가져오는 것이 중요한 이유
 
-## 방법
-자바에서 현재 날짜를 가져오는 방법은 매우 간단합니다. 다음 코드 블록을 참조하십시오.
+컴퓨터 프로그래밍을 할 때, 모든 프로그램은 현재 시간과 날짜에 많은 의존성이 있습니다. 예를 들어, 파일 생성일, 시간 기반 이벤트 스케줄링, 사용자 인터페이스 등에서 현재 날짜를 사용하여 프로그램의 동작을 조정할 수 있습니다. 이러한 이유로 현재 날짜를 가져오는 것은 중요합니다.
 
-```java
-// 현재 날짜 가져오기
-LocalDate today = LocalDate.now();
+## 어떻게: 현재 날짜를 가져오는 방법
 
-// 현재 시간 가져오기
-LocalTime currentTime = LocalTime.now();
+Java에서 현재 날짜를 가져오는 방법은 간단합니다. Date 클래스를 사용하여 현재 시간을 객체로 생성하고, SimpleDateFormat 클래스를 사용하여 원하는 형식으로 날짜를 출력할 수 있습니다. 아래의 예제 코드를 참고해보세요.
 
-// 현재 날짜 및 시간 가져오기
-LocalDateTime currentDateTime = LocalDateTime.now();
+```Java
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
-// 원하는 형식으로 날짜 및 시간 출력
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-String formattedDateTime = currentDateTime.format(formatter);
-System.out.println(formattedDateTime);
+public class CurrentDate {
+  public static void main(String[] args) {
+    // 현재 날짜 객체 생성
+    Date currentDate = new Date();
+
+    // 날짜 출력 형식 지정
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+
+    // 현재 날짜를 지정한 형식으로 출력
+    System.out.println("현재 날짜: " + dateFormat.format(currentDate));
+  }
+}
 ```
 
-위의 예제에서는 `LocalDate`, `LocalTime`, `LocalDateTime` 및 `DateTimeFormatter` 클래스를 사용하여 현재 날짜 및 시간을 가져와 원하는 형식으로 출력하는 방법을 보여줍니다. 이 코드를 실행하면 출력 결과는 `2021/04/30 11:25:15`와 같이 현재 날짜 및 시간을 나타냅니다.
+위의 코드를 실행하면 아래와 같은 결과가 출력됩니다.
 
-## 깊이 들어가기
-`LocalDate`, `LocalTime`, `LocalDateTime` 및 `DateTimeFormatter` 클래스는 자바 8부터 추가된 `java.time` 패키지에 포함되어 있습니다. 이들은 모두 불변(immutable) 클래스로, 동시성(Concurrency) 문제가 발생하지 않도록 설계되었습니다.
+```
+현재 날짜: 2021년 01월 01일
+```
 
-또한, 이들 클래스는 기존 `Date` 및 `Calendar` 클래스보다 훨씬 간편하고 유연한 방식으로 날짜 및 시간을 다룰 수 있습니다. 예를 들어, `LocalDateTime` 클래스는 `Date` 클래스의 단순한 날짜와 시간 정보만 저장하는 반면, `LocalDate` 및 `LocalTime` 클래스는 날짜와 시간 정보를 따로 저장하여 세부적인 조작이 가능합니다.
+## 깊이 있는 정보: 현재 날짜를 가져오는 원리
 
-이러한 클래스들의 메소드는 매우 직관적이며, Javadoc 문서를 통해 더 자세한 정보를 얻을 수 있습니다.
+Java에서는 Date 클래스를 사용하여 현재 날짜와 시간을 객체로 생성할 수 있습니다. 이 클래스는 다양한 메소드를 제공하여 날짜와 시간을 다룰 수 있도록 도와줍니다. 또한 SimpleDateFormat 클래스를 사용하여 날짜를 지정한 형식으로 출력할 수 있으며, 이 클래스는 많은 형식 지정자를 제공하여 날짜를 원하는 형식으로 변환할 수 있도록 해줍니다.
 
-## 참고
-- <https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html>
-- <https://www.baeldung.com/java-8-date-time-intro>
-- <https://mkyong.com/java8/java-8-how-to-convert-string-to-localdate/>
-- <https://www.thejavaprogrammer.com/get-current-date-time-java-8/>
-- <https://dzone.com/articles/java-8-date-time-api-part-2>
+Java 8부터는 새로운 날짜와 시간 API인 LocalDateTime 클래스를 제공합니다. 이 클래스가 제공하는 메소드를 사용하여 날짜와 시간을 더 쉽게 다룰 수 있습니다.
+
+# 참고자료
+
+- [Java Date 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java SimpleDateFormat 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Java 8 LocalDateTime 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)

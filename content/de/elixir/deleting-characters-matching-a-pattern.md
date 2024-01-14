@@ -1,56 +1,51 @@
 ---
-title:    "Elixir: Das Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Elixir: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann sehr nützlich sein, wenn man Daten filtern oder bearbeiten muss. Dies kann beispielsweise bei der Verarbeitung von Benutzereingaben oder beim Entfernen von unnötigen Zeichen aus Texten hilfreich sein.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann hilfreich sein, wenn man bestimmte Daten in einer Elixir Anwendung filtern oder formatieren möchte.
 
-# Wie geht das?
+## Wie
 
-Es gibt verschiedene Möglichkeiten, in Elixir Zeichen zu löschen, die einem bestimmten Muster entsprechen. Im Folgenden werden drei Methoden vorgestellt:
-
-## String.replace/4
-
-Eine Möglichkeit ist die Verwendung von `String.replace/4`. Diese Funktion nimmt als Argumente den zu durchsuchenden String, das zu ersetzende Muster, die Ersatzzeichena und optional auch eine Anzahl von Vorkommnissen, die ersetzt werden sollen. Hier ein Beispiel:
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, kann die `String.replace/4` Funktion verwendet werden. Diese Funktion akzeptiert vier Argumente: den String, in dem das Muster gefunden werden soll, das zu ersetzende Muster, das Ersatzzeichen und einen Optionsparameter.
 
 ```Elixir
-string = "Dies ist ein Beispieltext mit vielen Zahlen 123 und Sonderzeichen!@#$"
-String.replace(string, ~r/\d+/, "")
+string = "Dies ist ein Beispieltext mit unerwünschten Zeichen!"
+
+result = String.replace(string, ~r/[^a-zA-Z]/, "")
+
+IO.puts result 
+
+# Output: DiesisteinBeispieltextmitunerwunschtenZeichen
 ```
 
-Das Ergebnis wird gleichzeitig zurückgegeben und in der Variablen `string` gespeichert. Die Ausgabe lautet `Dies ist ein Beispieltext mit vielen Zahlen  und Sonderzeichen!@#$`, da alle Zahlen im Text entfernt wurden.
+In diesem Beispiel wurde das Muster `[^a-zA-Z]` verwendet, um alle Zeichen zu löschen, die keine Buchstaben sind. Das vierte Argument `""` gibt an, dass diese Zeichen durch leere Strings ersetzt werden sollen.
 
-## Regex.replace/3
+## Deep Dive
 
-Eine weitere Möglichkeit ist die Verwendung von `Regex.replace/3`. Diese Funktion erwartet ein Regex-Muster, den zu durchsuchenden String und die Ersatzzeichen. Hier ein Beispiel:
+Es gibt verschiedene Beispiele, bei denen das Löschen von Zeichen, die einem bestimmten Muster entsprechen, hilfreich sein kann. Zum Beispiel kann es bei der Validierung von Benutzereingaben nützlich sein, um unerwünschte Zeichen zu entfernen und nur die gültigen Zeichen zuzulassen. Es kann auch hilfreich sein, um formatierte Telefonnummern oder Postleitzahlen aus einem String zu extrahieren.
 
-```Elixir
-string = "Ich mag Elixir, weil es so vielseitig ist!"
-Regex.replace(~r/Elixir/, string, "Phoenix")
+Eine weitere nützliche Funktion, um Zeichen zu löschen, die einem bestimmten Muster entsprechen, ist `Regex.replace/3`, die reguläre Ausdrücke verwendet.
+
+```Elixir 
+string = "123-456-789"
+
+result = Regex.replace(string, ~r/[^0-9]/, "")
+
+IO.puts result 
+
+# Output: 123456789 
 ```
 
-Die Ausgabe lautet `Ich mag Phoenix, weil es so vielseitig ist!`, da das Wort "Elixir" durch "Phoenix" ersetzt wurde.
+In diesem Beispiel wird wieder das Muster `[^0-9]` verwendet, um alle Nicht-Zahlen aus dem String zu entfernen. Diese Funktion bietet mehr Flexibilität, da sie auch komplexere Muster unterstützt.
 
-## String.replace_leading/4
+## Siehe auch
 
-Die dritte Option ist die Verwendung von `String.replace_leading/4`, um nur die führenden Vorkommnisse des Musters zu ersetzen. Diese Funktion funktioniert ähnlich wie `String.replace/4`, kann aber auch mit verschachtelten Mustern umgehen. Hier ein Beispiel:
-
-```Elixir
-string = "Dies$&var; lässt sich leicht löschen!"
-String.replace_leading(string, "$&var;", "")
-```
-
-Die Ausgabe lautet `Dies lässt sich leicht löschen!`, da das Muster "$&var;" am Anfang des Strings entfernt wurde.
-
-# Tief tauchen
-
-Um Zeichen in Elixir effektiv zu löschen, ist es wichtig, sich mit Regex-Mustern vertraut zu machen und die verschiedenen Funktionen wie `String.replace/4` und `Regex.replace/3` zu verstehen. Auch das Verständnis von verschachtelten Mustern und deren Umgang mit `String.replace_leading/4` kann dabei hilfreich sein.
-
-# Siehe auch
-
-- [Elixir Dokumentation über Zeichenersetzung](https://elixir-lang.org/getting-started/pattern-matching.html#string-replacement)
-- [Regex Tutorial auf Elixir School](https://elixirschool.com/de/lessons/basics/pattern-matching/#regex)
+- [Elixir String Dokumentation](https://hexdocs.pm/elixir/String.html)
+- [Reguläre Ausdrücke in Elixir](https://elixirschool.com/de/lessons/advanced/regex/)
+- [Musterabgleich in Elixir](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#=~/2)

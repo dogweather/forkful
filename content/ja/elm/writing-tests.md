@@ -1,61 +1,48 @@
 ---
 title:    "Elm: テストの書き方"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜテストを書くのか
 
-テストを書くことは、エラーやバグを事前に発見することができるため、コードの品質を向上させるために非常に重要です。また、テストを書くことで、コードの変更や改善を行った際に、予期しない影響が起きていないかを確認することができます。
+プログラマーにとってテストを書くことは非常に重要です。テストを書くことにより、自分のコードがどれだけ頑健であるかを確認することができます。また、新しい機能を追加する際に既存のコードが意図した通りに動作するかを確認することもできます。
 
 ## テストの書き方
 
-テストを書くためには、まずはElmコードをテスト可能なように分割する必要があります。具体的なコード例を示します。
+テストを書くためには、まず最初にElmのテストモジュールをインポートする必要があります。次に、テストを書きたい関数を定義します。そして、テストを書くための特別な関数を使用して、関数の期待される結果を指定します。最後に、作成したテストをテストスイートに追加します。
 
 ```Elm
--- オリジナルのコード
+import Test exposing (..)
+
 add : Int -> Int -> Int
 add x y =
   x + y
 
--- テスト可能なコードに分割
-add : Int -> Int -> Int
-add x y =
-  x + y
-
-addTest : List (Int, Int, Int)
+addTest : Test
 addTest =
-  [ (1, 2, 3)
-  , (5, 6, 11)
-  , (10, 5, 15)
-  ]
+  test "add関数は期待通りに動作する" (
+    add 2 3
+    |> Expect.equal 5
+  )
 
-testAdd : Bool
-testAdd =
-  List.all (\(x, y, expected) -> add x y == expected) addTest
+suite : Test
+suite =
+  describe "add関数" [
+    addTest
+  ]
 ```
 
-テスト可能なコードに分割することで、入力と期待する出力を対応させることができ、複数のテストケースをまとめて実行することも可能になります。
+上記の例では、`add`関数をテストするために`addTest`という名前のテストを定義しています。そして、`Expect.equal`関数を使用して、`add`関数の結果が`5`であることを期待しています。最後に、定義したテストを`suite`に追加し、全てのテストを実行します。
 
-## 奥深くテストを書く
+## テストの詳細
 
-テストを書く際には、以下のようなポイントに注意することで、より効果的なテストを作成することができます。
+テストを書く際には、様々なアサーションを使用することができます。例えば、`Expect.equal`以外にも、`Expect.notEqual`や`Expect.lt`などがあります。また、テストの実行前に特定の条件が満たされているかどうかを確認することができる`Test.andThen`や、エラーメッセージをカスタマイズすることができる`Expect.custom`などもあります。
 
-- テスト対象の関数やコードの特定の条件下での動作を確認するテストを書く
-- テストする値や入力をランダムに生成することで、より広範囲なケースをカバーするようにする
-- テストケースを他のエンジニアと共有し、フィードバックを受けることで、抜け漏れや改善点を発見する
+## その他のリンク
 
-これらのポイントを意識することで、よりロバストかつ有用なテストを作ることができます。
-
-## 参考リンク
-
-[Elm公式ガイド: テスト](https://guide.elm-lang.org/testing/)
-
-[Elm公式ドキュメント: fuzz](http://package.elm-lang.org/packages/elm-community/elm-test/latest/Test#fuzz)
-
-See Also:
-
-参考リンク:
-- [Elm公式ガイド: テスト](https://guide.elm-lang.org/testing/)
-- [Elm公式ドキュメント: fuzz](http://package.elm-lang.org/packages/elm-community/elm-test/latest/Test#fuzz)
+- [Elmのテストについての公式ドキュメント](https://guide.elm-lang.org/testing/)
+- [テストを書く際のベストプラクティス](https://thoughtbot.com/blog/elm-testing-for-beginners)
+- [Elmのテストに関する問題を解決する方法](https://medium.com/@matsimitsu/problem-solved-elm-testing-tools-764795d265cc)

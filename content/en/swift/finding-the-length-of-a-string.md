@@ -1,49 +1,49 @@
 ---
 title:    "Swift recipe: Finding the length of a string"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Are you learning Swift and wondering why you would ever need to know the length of a string? Well, let me tell you, it's a common task in programming and can come in handy for a variety of reasons. From validating user input to manipulating text, understanding how to find the length of a string is a fundamental skill in Swift.
+String manipulation is a fundamental aspect of programming, and one common task is finding the length of a string. By understanding how to find the length of a string, you will improve your ability to work with strings and become a more proficient Swift programmer.
 
 ## How To
-To find the length of a string in Swift, there are a few different methods you can use depending on your specific needs. Let's take a look at some examples and their corresponding output.
+Finding the length of a string may seem like a simple task, but there are a few different ways to achieve this in Swift. Let's take a look at some examples using the built-in String methods and properties.
+
+First, we can use the `count` property to directly get the number of characters in a string:
 
 ```Swift
-// Example 1: Using the built-in count property
-let string1 = "Hello, world!"
-let length1 = string1.count // Output: 13
+let message = "Hello, world!"
+let length = message.count // 13
 ```
+
+Another approach is to use the `characters` property, which returns the collection of characters in the string, and then get the `count` of that collection:
 
 ```Swift
-// Example 2: Iterating through each character of the string
-let string2 = "Coding is fun!"
-var length2 = 0
-
-for _ in string2 {
-    length2 += 1
-}
-
-// Output: 15
+let message = "Hello, world!"
+let characters = message.characters
+let length = characters.count // 13
 ```
+
+Finally, we can also use the `count` method, which allows us to specify a range of characters to count. In this case, we will use the full range of the string to get the total length:
 
 ```Swift
-// Example 3: Removing whitespace and punctuation before counting
-let string3 = "    Swift is #awesome!     "
-let string3Trimmed = string3.trimmingCharacters(in: .whitespacesAndNewlines)
-let length3 = string3Trimmed.count // Output: 16
+let message = "Hello, world!"
+let length = message.count(0..<message.count) // 13
 ```
 
-It's important to note that the first two examples, while simpler, may not always be accurate. The count property counts the number of UTF-8 code units in a string, which may not always correspond to the actual characters. Using the for loop and removing whitespace and punctuation allows for a more accurate count of visible characters.
+As you can see, there are a few different ways to find the length of a string in Swift. It's important to note that in all of these examples, the count includes any whitespace characters as well.
 
 ## Deep Dive
-Behind the scenes, the count property is actually accessing the count property of the string's underlying UTF-16 representation. This representation can cause issues when working with certain languages such as Chinese or Emojis which require multiple code units. To accurately handle these situations, you can use the String's lengthOfBytes(using:) method.
+Under the hood, Swift uses Unicode to represent strings, which means that a single character can have different representations depending on its context. This is why some languages or symbols may have a different count than others.
 
-Another important aspect to consider when finding the length of a string is performance. The count property is O(1), meaning it takes the same amount of time regardless of the size of the string. However, the for loop and trimming methods have a time complexity of O(n) where n is the length of the string. Therefore, for larger strings, it may be more efficient to use the count property.
+To go even deeper, the `count` property and method actually count the number of extended grapheme clusters in the string. This is a fancy way of saying it counts the number of visible characters, even if they are made up of multiple Unicode code points.
+
+This becomes important when working with languages or symbols that are made up of multiple Unicode code points, such as emoji or accented characters. In these cases, the length of the string may not always match the number of actual characters in the string.
 
 ## See Also
-- [Official Apple Documentation on Strings](https://developer.apple.com/documentation/swift/string)
-- [Tutorial on Using Strings in Swift](https://www.raywenderlich.com/5540...#toc-anchor-009)
-- [Stack Overflow Discussion on Calculating String Length in Swift](https://stackoverflow.com/questions/24068864/get-the-count-of-characters-in-a-string-swift)
+- Official Apple Documentation on String Manipulation: https://developer.apple.com/documentation/swift/string
+- Useful String Methods in Swift: https://medium.com/@abhimuralidharan/what-is-unicode-utf-8-utf-16-8a0f012cb292 
+- Deep Dive into Swift Strings: https://www.hackingwithswift.com/quick-start/understanding-swift/what-are-strings

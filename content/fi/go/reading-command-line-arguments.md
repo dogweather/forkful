@@ -1,17 +1,18 @@
 ---
 title:    "Go: Komentoriviparametrien lukeminen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi lukea komentoriviparametreja Go-ohjelmoinnissa?
 
-Kun kehität ohjelmistoa Go-kielellä, on tärkeää ymmärtää, miten lukea komentoriviargumentteja. Tämä on hyödyllistä, kun haluat antaa käyttäjän antaa ohjelmalle erilaisia toimintoja ja vaihtoehtoja. Jatka lukemista ja opit, miten voit lukea komentoriviargumentteja Go-kielellä.
+Tämä blogikirjoitus on tarkoitettu kaikille ohjelmoijille, jotka haluavat oppia lukemaan komentoriviparametreja Go-ohjelmoinnissa. Komentoriviparametrit ovat tärkeä osa monia komentorivisovelluksia ja niiden ymmärtäminen on tärkeää monissa ohjelmointiprojekteissa.
 
-## Kuinka
+## Miten lukea komentoriviparametreja
 
-Lue komentoriviargumentteja käyttämällä `os.Args` -muuttujaa, joka sisältää kaikki annetut argumentit taulukossa. Voit tulostaa kaikki argumentit käyttämällä `fmt.Println(os.Args)`. Tässä on esimerkki koodista:
+Go-ohjelmoinnin komentoriviparametrien lukeminen on yksinkertaista ja helppoa. Alla olevassa koodiesimerkissä näytämme, kuinka voit lukea parametreja käyttäen ´args´-muuttujaa ja ´len´-funktiota.
 
 ```Go
 package main
@@ -22,29 +23,20 @@ import (
 )
 
 func main() {
-  fmt.Println(os.Args)
+  args := os.Args
+  fmt.Println("Komentoriviparametrit: ", args[1:])
 }
 ```
 
-Kun suoritat tämän koodin komentorivillä ja annat sille argumentteja, näet tulosteessa kaikki annetut argumentit.
+Kun ajat edellä olevan esimerkin ohjelmaa komentoriviltä käsin antaen sille parametreja, ohjelma tulostaa ne kaikki. Esimerkiksi, jos ajat `go run arguments.go hello world`, ohjelma tulostaa "Komentoriviparametrit: hello world".
 
-```
-go run main.go arg1 arg2 arg3
-```
+## Tarkempi tarkastelu komentoriviparametreista
 
-Tulostus olisi seuraavanlainen:
+Komentoriviparametrien lukeminen Go-ohjelmoinnissa on vain yksi osa asiaa. Syvempään ymmärrykseen pääsee tutkimalla myös muita komentorivin ominaisuuksia, kuten ympäristömuuttujia ja käyttäjän syötteitä. Suosittelemme kokeilemaan erilaisia skenaarioita ja tutkimaan niiden toimintaa.
 
-```
-[arg1 arg2 arg3]
-```
+# Katso myös
 
-Voit myös käyttää `len()` -funktiota tarkistaaksesi, kuinka monta argumenttia on annettu. Esimerkiksi `len(os.Args)` palauttaisi 4, koska `os.Args` sisältää myös ohjelman nimen.
+- [Luettelo Go-kielessä käytettävistä komentoriviparametreista](https://gobyexample.com/command-line-arguments)
+- [Go-kielen opas komentoriviparametrien käsittelyyn](https://golang.org/pkg/flag/)
 
-## Syventävä tieto
-
-`os.Args` sisältää myös muita tietoja, kuten tiedostopolun ja argumenttien indeksinumeron. Voit käyttää tätä tietoa lisätoimintojen toteuttamiseen. Voit myös käyttää pakettia `flag` helpottamaan komentoriviargumenttien käsittelyä.
-
-## Katso myös
-
-- [Go-kielen virallinen dokumentaatio](https://golang.org/doc/)
-- [Go-kielen komentoriviargumentteihin liittyvät ohjeet](https://golangdocs.com/command-line-arguments-in-golang)
+Kirjoittanut: Sinun nimesi

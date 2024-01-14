@@ -1,50 +1,43 @@
 ---
-title:    "Clojure: Debug-Ausgabe drucken"
+title:    "Clojure: Druck von Debug-Ausgabe"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn du schon einmal Code geschrieben hast, dann weißt du wahrscheinlich wie wichtig es ist, während des Entwicklungsprozesses Debug-Ausgaben zu haben. Diese helfen dir dabei, zu verstehen, was genau in deinem Code passiert, und können mögliche Fehler oder Probleme aufdecken. In diesem Blogbeitrag werden wir uns genauer damit beschäftigen, wie man Debug-Ausgaben in Clojure programmieren kann.
+Das Drucken von Debug-Ausgaben während der Programmierung ist eine einfache und effektive Möglichkeit, um Fehler in Ihrem Code zu finden und zu beheben. Es ermöglicht es Ihnen, den genauen Ablauf Ihres Programms zu überprüfen und potenzielle Probleme zu identifizieren. 
 
-## Wie man Debug-Ausgaben in Clojure programmiert
+## Wie das geht
 
-Um Debug-Ausgaben in Clojure zu erstellen, gibt es verschiedene Möglichkeiten. Eine der beliebtesten ist die Verwendung der Funktion `println`. Diese Funktion erwartet als Argument eine beliebige Anzahl von Argumenten, die dann in der Konsole ausgegeben werden. Hier ein einfaches Beispiel:
-
-```Clojure
-(println "Hello World!")
-```
-
-Dieser Code wird einfach den String "Hello World!" in der Konsole ausgeben. Natürlich kannst du auch Variablen oder komplexe Ausdrücke an `println` übergeben, um sie auszugeben.
+Um Debug-Ausgaben in Clojure zu drucken, können Sie die `println` Funktion verwenden. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und druckt sie in der Konsole aus. Hier ist ein Beispiel:
 
 ```Clojure
-(def my-var 42)
-(println "The value of my-var is" my-var)
+(println "Debug-Ausgabe" 42)
 ```
 
-Dieser Code wird "The value of my-var is 42" in der Konsole ausgeben.
+Dies wird `Debug-Ausgabe 42` in der Konsole ausgeben. Sie können auch Variablen oder Ausdrücke in `println` verwenden, um deren Werte zu überprüfen. 
 
-Eine weitere Möglichkeit ist die Verwendung der Funktion `prn`, die ähnlich wie `println` funktioniert, aber den Ausgabeformaten von Clojure folgt. Hier ein Beispiel:
+Eine andere Möglichkeit, Debug-Ausgaben zu drucken, ist die Verwendung der `clojure.pprint` Bibliothek. Diese Bibliothek bietet mehrere Funktionen, mit denen Sie das Format und die Darstellung Ihrer Ausgabe anpassen können. Hier ist ein Beispiel:
 
 ```Clojure
-(def my-map {:name "John" :age 30})
-(prn my-map)
+(require '[clojure.pprint :refer [pprint]])
+
+(pprint {:name "John" :age 27})
 ```
 
-Dieser Code wird `{ :name "John", :age 30 }` in der Konsole ausgeben.
+Dies wird ein formatiertes Output mit dem Schlüssel `:name` und Wert `"John"` und dem Schlüssel `:age` und Wert `27` ausgeben. 
 
-## Tiefergehende Informationen über Debug-Ausgaben
+## Tiefer schürfen
 
-Zusätzlich zu `println` und `prn` gibt es noch weitere Funktionen wie `pr`, `print`, und `pprint`, die jeweils unterschiedliche Formatierungen für die Ausgabe haben. Außerdem gibt es auch spezielle `*print-length*` und `*print-level*` Variablen, die es dir ermöglichen, die Anzahl der ausgegebenen Elemente zu begrenzen.
+Das Drucken von Debug-Ausgaben kann auch nützlich sein, um zu verstehen, wie Ihre Funktionen und Makros arbeiten. Durch das Hinzufügen von Debug-Ausgaben an verschiedenen Stellen in Ihrem Code können Sie den Ablauf verfolgen und mögliche Probleme wie unerwartete Werte oder Schleifen erkennen. 
 
-Es ist auch möglich, benutzerdefinierte Ausgabe-Funktionen zu erstellen, die speziell auf deine Anforderungen zugeschnitten sind. Diese können dann verwendet werden, um Debug-Ausgaben in verschiedenen Formaten zu erstellen.
+Sie können auch verschiedene Level von Debug-Ausgaben verwenden, um zwischen grundlegenden Informationen und detaillierten Einblicken zu unterscheiden. Dies kann hilfreich sein, um nur wichtige Ausgaben anzuzeigen und die Menge an Output zu reduzieren.
 
-## Siehe Auch
+## Siehe auch
 
-* Documentation zu `println` und `prn`: https://clojuredocs.org/clojure.core/println
-* Ausführlicher Artikel über Debugging in Clojure: https://www.braveclojure.com/debugging/
-* Video-Tutorial zu Debugging in Clojure: https://www.youtube.com/watch?v=zS-5FzZy3pI
-
-Vielen Dank fürs Lesen! Ich hoffe, dieser Blogbeitrag hat dir geholfen, besser zu verstehen, wie man Debug-Ausgaben in Clojure erstellt. Wenn du noch weitere Tipps oder Tricks hast, teile sie gerne in den Kommentaren unten mit uns. Happy coding!
+- [clojure.pprint Dokumentation](https://clojuredocs.org/clojure.pprint)
+- [Clojure für Anfänger](https://learnxinyminutes.com/docs/clojure/) 
+- [Web development mit Clojure](https://gettingclojure.com/)

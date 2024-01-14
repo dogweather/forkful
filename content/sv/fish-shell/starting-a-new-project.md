@@ -1,44 +1,57 @@
 ---
-title:    "Fish Shell: Börja ett nytt projekt."
+title:    "Fish Shell: Att påbörja ett nytt projekt"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Om du är en programmerare som letar efter en ny och effektivare metod för att hantera dina uppgifter, kan Fish Shell vara svaret du letar efter. Fish Shell är en modern, interaktiv skalprogramvara som är utformad för att öka produktiviteten och förbättra användarupplevelsen. Det är ett kraftfullt verktyg för att hantera filer och driftsätta applikationer. 
+Att starta ett nytt projekt kan vara både spännande och överväldigande. Men med rätt verktyg och kunskap kan det också vara en rolig och givande upplevelse. I detta inlägg kommer vi att titta på hur man kan använda Fish Shell för att underlätta skapandet och hanteringen av projekt.
 
 ## Så här gör du
 
-För att börja använda Fish Shell, behöver du först installera den på din dator. Detta kan enkelt göras genom att följa dokumentationen på Fish Shell:s hemsida. När du har installerat Fish Shell, kan du börja experimentera med olika kommandon och syntax för att utföra dina uppgifter snabbare och mer effektivt.
+För att börja ett nytt projekt med Fish Shell, behöver du först se till att du har det installerat på din dator. Om du inte redan har det, kan du ladda ner det från deras hemsida eller använda ett pakethanteringssystem som Homebrew eller Aptitude för att installera det.
 
-```Fish Shell
-
-# Skapa en ny mapp
-mkdir new_folder
-
-# Navigera till mappen
-cd new_folder
-
-# Skapa en ny fil
-echo "Detta är en ny fil" > new_file.txt
-
-# Öppna filen i en texteditor
-open new_file.txt
+När Fish Shell är installerat och konfigurerat, kan du börja skapa ditt nya projekt. Detta görs genom att skapa en mapp för ditt projekt och sedan navigera till den. För att skapa mappen kan du använda följande kommando i Fish Shell:
 
 ```
+mkdir mitt-projekt
+```
 
-I exemplet ovan visar vi hur man skapar en ny mapp och en ny fil med hjälp av Fish Shell. Vi använder också några av dess inbyggda kommandon som mkdir, cd och echo. Detta är bara ett enkelt exempel på vad Fish Shell kan göra, men det finns många fler kommandon och funktioner som du kan utforska och anpassa efter dina behov.
+När mappen är skapad kan du gå till den genom att använda följande kommando:
+
+```
+cd mitt-projekt
+```
+
+Nu är det dags att skapa en ny fil för ditt projekt. Detta görs genom att använda kommandot ```touch``` följt av namnet på din fil. Till exempel:
+
+```
+touch index.html
+```
+
+Nu har du skapat en fil med namnet "index.html" som du kan börja arbeta med.
+
+För att koda i Fish Shell, kan du använda alla de vanliga kommandona och syntaxen som du är van vid. Här är ett enkelt exempel på hur en hello world-applikation kan se ut i Fish Shell:
+
+```
+echo "Hello World"
+```
+
+När du har gjort dina ändringar i ditt projekt och är nöjd med resultatet, kan du spara dem genom att lägga till filerna med kommandot ```git add``` och sedan göra en commit med ```git commit -m "meddelande"```.
 
 ## Djupdykning
 
-En av de mest anmärkningsvärda sakerna med Fish Shell är dess autokompletteringsfunktion. Istället för att behöva skriva hela filnamnet eller kommandon kan du bara trycka på Tab för att få förslag på vad du försöker skriva. Detta sparar både tid och minskar risken för felaktiga stavningar. Fish Shell har också möjlighet till plugins, vilket innebär att du kan anpassa den efter dina specifika behov och förbättra din produktivitet ännu mer.
+En av de största fördelarna med att använda Fish Shell för att starta ett projekt är dess kraftfulla funktioner för automatiskt fullbordande av kod. Detta gör att du kan skriva mindre och arbeta snabbare.
+
+Om du vill lära dig mer om Fish Shell och dess alla funktioner, kan du besöka deras officiella dokumentationssida eller gå med i deras community på Reddit eller andra forum. Genom att delta i dessa forum kan du också få hjälp och stöd från andra användare om du stöter på problem eller behöver tips och tricks.
 
 ## Se även
 
-* [Fish Shell:s hemsida](https://fishshell.com)
-* [Fish Shell:s dokumentation](https://fishshell.com/docs/current/)
-* [Fish Shell GitHub-repo](https://github.com/fish-shell/fish-shell)
-
-Tack för att du läste denna översikt om Fish Shell och dess möjligheter att öka produktiviteten för programmerare. Ge det en chans och utforska själv!
+- [Fish Shell hemsida](https://fishshell.com/)
+- [Homebrew](https://brew.sh/)
+- [Aptitude](https://wiki.debian.org/aptitude)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Reddit Fish Shell community](https://www.reddit.com/r/fishshell/)

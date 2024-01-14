@@ -1,44 +1,44 @@
 ---
 title:    "Clojure: ディレクトリが存在するかどうかをチェックする"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
+ディレクトリが存在するかどうかを確認することの重要性は、プログラミングの世界ではよく知られています。ディレクトリが存在するかどうかをチェックすることで、プログラムが必要なリソースを正しく見つけることができます。また、ディレクトリが存在しない場合は、エラーを避けることができます。
 
-ディレクトリが存在するかどうかを確認することの重要性は、プログラミングの世界では非常に一般的です。例えば、あなたがファイルを読み込もうとするとき、そのファイルが本当に存在することを確認する必要があります。あるいは、特定のディレクトリが存在しているかどうかを確認して、条件分岐を行う必要があるかもしれません。このような場面では、ディレクトリが存在するかどうかを確認することが重要です。
-
-## 方法
-
-Clojureを使ってディレクトリが存在するかどうかを確認するには、`fs/exists?`関数を使用します。この関数は、引数としてチェックするディレクトリのパスを受け取り、ディレクトリが存在する場合は`true`、存在しない場合は`false`を返します。以下の例をご覧ください。
-
+# 方法
 ```Clojure
-(ns example.core
-  (:require [clojure.java.io :as io]
-            [clojure.java.io :refer [file]]))
+;; 必要な名前空間をインポートする
+(ns sample.core
+  (:require [clojure.java.io :as io]))
 
-(defn check-directory? [dir]
-  (fs/exists? (io/file dir)))
+;; ディレクトリのパスを指定する
+(def dir-path "/Users/username/Documents")
 
-(defn -main []
-  (let [dir (io/file "sample/directory")]
-    (println (check-directory? dir))))
-
-;; 出力: true
+;; ディレクトリが存在するかどうかをチェックする
+(if (io/file dir-path)
+  (println "ディレクトリが存在します")
+  (println "ディレクトリは存在しません"))
 ```
 
-## 詳細説明
+上記のように、`clojure.java.io`ライブラリを使用してディレクトリのパスを指定し、`io/file`関数を用いてディレクトリが存在するかどうかをチェックすることができます。`if`文を使って存在の有無に応じて適切なメッセージを出力します。
 
-`fs/exists?`関数は、指定されたディレクトリだけでなく、その子ディレクトリも確認することができます。また、ファイルではなくディレクトリを指定した場合、`exists?`関数は常に`true`を返します。
+## スクリーンショット
+```
+ディレクトリは存在しません
+```
 
-この関数を使用してディレクトリを確認する際には、まず`clojure.java.io`ライブラリを使用して`io/file`関数を使ってパスを作成する必要があります。また、プロジェクト内のディレクトリを指定する際は、`(io/file "sample/directory")`のように、`project-name/resources`からの相対パスを指定することができます。
+# 深堀り
+`io/file`関数は、ファイルが存在するかどうかをチェックするためにも使用することができます。また、ディレクトリやファイルの作成や削除など、様々なファイル操作にも応用することができます。さらに、`io/file`関数を使用するために、Javaの標準ライブラリである`java.io.File`も使用可能です。開発者は、自分のプロジェクトに合った方法を選択することができます。
 
-## おさらい
+# もっと詳しく知る
+- [Official Clojure documentation on io/file](https://clojuredocs.org/clojure.java.io/file)
+- [Clojure Cookbook: Checking if a Directory Exists](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/02_file_system/2-03_checking-if-a-directory-exists.asciidoc#checking-if-a-directory-exists)
+- [Java API documentation for java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
 
-ディレクトリが存在するかどうかを確認する際には、Clojureの`fs/exists?`関数を使用することができます。`fs/exists?`はディレクトリだけでなく、子ディレクトリも確認することができます。また、プロジェクト内のディレクトリを指定するには、相対パスを使用することができます。
-
-## 参考リンク
-
-- [ClojureDoc: fs/exists?](https://clojuredocs.org/clojure.java.io/fs/exists_q)
-- [Clojure for the Brave and True](http://www.braveclojure.com/files/io-intro.zip) by Daniel Higginbotham.
+# 関連記事
+- [Learning Clojure: File Operations](https://www.brainatoms.com/clojure-file-operations/)
+- [初めてのClojure: ファイル操作](https://www.brainatoms.com/clojure-file-operations-japanese/)

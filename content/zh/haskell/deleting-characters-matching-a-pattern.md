@@ -1,42 +1,72 @@
 ---
-title:    "Haskell: 删除匹配模式的字符"
+title:    "Haskell: 删除匹配模式的字符。"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么: 有时候在编程中，可能会遇到需要删除符合某个特定模式的字符的情况。这可能是为了满足某些特定需求或者提高代码的可读性。
+## 为什么
 
-如何做：下面是一个简单的例子展示如何使用Haskell删除符合某个模式的字符。
+在编程中，我们经常会遇到需要删除特定模式字符的情况。这可能是因为我们需要清理数据，或者我们需要在字符串中删除特定的字符。无论是什么原因，删除匹配模式的字符是一个非常有用的编程技巧，可以帮助我们更有效地处理数据和字符串。
+
+## 如何做
+
+在 Haskell 中，我们可以使用 `filter` 和 `notElem` 函数来删除匹配模式的字符。首先，我们创建一个函数 `deleteMatching` 来接收一个模式和一个字符串作为参数。然后，我们使用 `filter` 函数来筛选出不满足模式的字符，并使用 `notElem` 函数来判断字符是否不等于模式。最后，我们返回经过筛选的字符列表。
 
 ```Haskell
-import Data.List
-
--- 删除列表中全部匹配包含a的元素
-deleteMatchingA :: [String] -> [String]
-deleteMatchingA x = deleteAll "a" x
-
--- 删除列表中首个匹配包含x的元素
-deleteFirstMatchingX :: [String] -> [String]
-deleteFirstMatchingX x = delete "x" x
-
-exampleList = ["apple", "orange", "banana", "pear"]
-
-deleteMatchingA exampleList
--- 输出结果为：["orange", "pear"]
-deleteFirstMatchingX exampleList
--- 输出结果为：["apple", "orange", "banana"]
+deleteMatching :: Eq a => a -> [a] -> [a]
+deleteMatching pattern string = filter (`notElem` [pattern]) string
 ```
 
-深入了解：Haskell提供了多种方法来删除符合某个模式的字符。除了上述示例中使用的`deleteAll`和`delete`函数之外，还可以使用`filter`函数来通过匿名函数来筛选出符合特定条件的元素。此外，还可以通过使用`map`函数来对列表中的每个元素进行转换，从而达到删除的效果。可以根据自己的需要来选择最合适的方法来删除符合某个模式的字符。
+让我们来尝试一下使用这个函数：
 
-看看这些链接来了解更多关于在Haskell中删除字符的方法：
+```Haskell
+deleteMatching 'a' "apple"
+```
 
-- [Haskell: Filtering Lists](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/9_Filtering_Lists)
-- [Real World Haskell: Modifying Lists](http://book.realworldhaskell.org/read/defining-types-streamlining-functions.html#modifyinglists)
-- [Haskell Docs: Data.List](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html) 
+输出结果为：
 
-参见：其他相似的主题可以阅读以下文章获得更深入的了解：
+```
+"pple"
+```
 
-- [Haskell中的字符串操作](https://juejin.cn/post/6850037263514790919)
-- [Haskell中的函数式编程风格](https://www.zhihu.com/question/20546253)
+我们也可以将这个函数用于字符串列表：
+
+```Haskell
+deleteMatching 'o' ["hello", "world", "how", "are", "you"]
+```
+
+输出结果为：
+
+```
+["hell", "wrld", "hw", "are", "yu"]
+```
+
+## 深入探讨
+
+尽管我们可以使用 `filter` 和 `notElem` 函数来删除匹配模式的字符，但有时候我们可能需要更复杂的模式匹配方法。在这种情况下，我们可以使用正则表达式库 `regex-tdfa` 来帮助我们。
+
+首先，我们需要导入 `regex-tdfa` 库：
+
+```Haskell
+import Text.Regex.TDFA
+```
+
+然后，我们使用 `subRegex` 函数来替换正则表达式匹配的字符。让我们尝试将字符串中所有的数字替换为空字符：
+
+```Haskell
+subRegex (mkRegex "[0-9]") "abc123xyz" ""
+```
+
+输出结果为：
+
+```
+"abcxyz"
+```
+
+## 参考阅读
+
+- [Haskell Wiki: filter](https://wiki.haskell.org/Filter)
+- [Haskell Wiki: notElem](https://wiki.haskell.org/NotElem)
+- [Hackage: regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)

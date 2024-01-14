@@ -1,45 +1,50 @@
 ---
-title:    "Arduino: Überprüfung der Existenz eines Verzeichnisses"
+title:    "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie schon einmal ein Arduino-Projekt entwickelt haben, haben Sie vielleicht bemerkt, dass es manchmal notwendig ist, das Vorhandensein eines bestimmten Verzeichnisses auf Ihrem Board zu überprüfen. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel um zu überprüfen, ob eine Datei vorhanden ist, bevor Sie versuchen, sie zu öffnen. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie Sie auf einem Arduino prüfen können, ob ein bestimmtes Verzeichnis vorhanden ist.
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Funktion beim Programmieren eines Arduino-Geräts. Es ermöglicht Ihnen, sicherzustellen, dass wichtige Dateien oder Daten vorhanden sind, bevor Sie diese bearbeiten oder darauf zugreifen.
 
-## So geht's
+# How To
 
-Um das Vorhandensein eines Verzeichnisses auf Ihrem Arduino-Board zu überprüfen, können Sie die `SD.exists()` Funktion verwenden. Diese Funktion benötigt eine Zeichenfolge als Argument, die den Pfad des Verzeichnisses darstellt, das Sie überprüfen möchten. Zum Beispiel:
+Das Überprüfen, ob ein Verzeichnis existiert, kann einfach erreicht werden, indem Sie die `File::exists()` Funktion verwenden. Hier ist ein Beispielcode, um ein Verzeichnis mit dem Namen "Daten" zu überprüfen:
 
-```
+```Arduino
+#include <SPI.h>
 #include <SD.h>
 
 void setup() {
-  // Initialisiere die SD-Karte
-  SD.begin(4);
-  
-  // Überprüfe, ob das Verzeichnis "logs" vorhanden ist
-  if (SD.exists("/logs")) {
-    Serial.println("Das Verzeichnis 'logs' existiert auf der SD-Karte.");
-  } else {
-    Serial.println("Das Verzeichnis 'logs' existiert nicht auf der SD-Karte.");
-  }
+  Serial.begin(9600);
+  // SD-Karte initialisieren
+  if (!SD.begin(4)) {
+    Serial.println("SD-Karte konnte nicht initialisiert werden.");
+    return;
+  }  
 }
 
 void loop() {
-  // Hier können weitere Aktionen durchgeführt werden
+  if (SD.exists("Daten")) {
+    Serial.println("Das Verzeichnis existiert.");
+  } else {
+    Serial.println("Das Verzeichnis konnte nicht gefunden werden.");
+  }
 }
 ```
 
-Je nachdem, ob das Verzeichnis existiert oder nicht, wird eine entsprechende Meldung auf der seriellen Monitor ausgegeben. Beachten Sie, dass Sie die SD-Bibliothek zuerst mit dem Befehl `#include <SD.h>` importieren müssen, bevor Sie die `SD.exists()` Funktion verwenden können.
+Wenn das Verzeichnis "Daten" auf der SD-Karte vorhanden ist, wird die Ausgabe "Das Verzeichnis existiert." auf der seriellen Schnittstelle angezeigt. Andernfalls wird die Ausgabe "Das Verzeichnis konnte nicht gefunden werden." gegeben.
 
-## Tiefergehende Informationen
+# Deep Dive
 
-Wenn Sie tiefer in die Funktionsweise von `SD.exists()` eintauchen möchten, können Sie sich die Dokumentation des SD-Typedefs ansehen. Dort finden Sie weitere Informationen über die verschiedenen Funktionen, die für die Überprüfung von Verzeichnissen auf der SD-Karte zur Verfügung stehen.
+Zusätzlich zur Überprüfung eines Verzeichnisses können Sie auch überprüfen, ob eine Datei in diesem Verzeichnis vorhanden ist, indem Sie den kompletten Pfad zur Datei angeben, z.B. `Daten/daten.txt`. Sie können auch die `SD.begin()` Funktion verwenden, um auf eine andere SD-Karte oder ein anderes Laufwerk zuzugreifen.
 
-## Siehe auch
+Es ist auch wichtig zu beachten, dass die Verwendung von `SD.exists()` nur überprüft, ob das Verzeichnis oder die Datei existieren. Es überprüft nicht, ob es tatsächlich lesbar oder beschreibbar ist. Um dies zu überprüfen, können Sie die Funktionen `SD.open()` oder `SD.mkdir()` verwenden.
 
-- Dokumentation des SD-Typedefs: https://www.arduino.cc/en/Reference/SD
-- Tutorial zur Verwendung der SD-Bibliothek: https://randomnerdtutorials.com/complete-guide-for-basics-of-sd-card-module-with-arduino/
+# Siehe auch
+
+- SD-Bibliothek Referenz: https://www.arduino.cc/en/Reference/SD
+- Arduino SD Library Tutorial: https://www.arduino.cc/en/Tutorial/LibraryExamples/SD

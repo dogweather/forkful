@@ -1,48 +1,58 @@
 ---
-title:    "Haskell: Sammenligne to datoer"
+title:    "Haskell: Sammenligning av to datoer"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å sammenligne to datoer kan være nyttig når du jobber med data eller trenger å vise informasjon basert på ulike tidspunkter. Ved å sammenligne datoer i Haskell, kan du enkelt sortere og filtrere data eller utføre beregninger basert på når dataen ble samlet inn. Dette kan være spesielt nyttig i finans- eller statistikkrelaterte applikasjoner.
+Å sammenligne to datoer er en vanlig oppgave i programmering, spesielt når man jobber med tidssensitive data eller funksjonalitet. Ved å lære hvordan man sammenligner to datoer i Haskell, kan du enkelt håndtere og manipulere datoer i dine programmer.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å sammenligne to datoer i Haskell, kan vi bruke funksjonen `diffDays` fra `Data.Time.Calendar` biblioteket. Denne funksjonen tar to `Day` objekter som argumenter og returnerer antall dager mellom disse to datoene. La oss se et eksempel på hvordan dette kan brukes:
+For å sammenligne to datoer i Haskell, kan du bruke funksjonen `compare`. Denne funksjonen tar inn to datotyper, og returnerer en `Ordering` type som enten kan være `LT` (mindre enn), `GT` (større enn), eller `EQ` (lik). Her er et eksempel som sammenligner to datoer og skriver ut resultatet:
 
 ```Haskell
 import Data.Time.Calendar
 
--- Definerer to datoer
-dato1 = fromGregorian 2020 1 1
-dato2 = fromGregorian 2020 1 15
+today = fromGregorian 2020 11 01 -- dd.mm.åååå format
+tomorrow = fromGregorian 2020 11 02
 
--- Sammenligner datoene og lagrer differansen i en variabel
-dager = diffDays dato2 dato1
-
--- Printer ut resultatet
-putStrLn $ "Antall dager mellom " ++ show dato1 ++ " og " ++ show dato2 ++ " er " ++ show dager ++ " dager."
+main = print $ compare today tomorrow
 ```
 
-Dette vil resultere i følgende utskrift:
+Dette vil gi følgende output:
 
 ```
-Antall dager mellom 2020-01-01 og 2020-01-15 er 14 dager.
+LT
 ```
 
-I dette eksempelet brukte vi `fromGregorian` funksjonen fra samme bibliotek for å opprette to `Day` objekter. Det er flere måter å opprette `Day` objekter på, avhengig av hva slags format du foretrekker å bruke for datoene. Du kan også bruke `getCurrentTime` funksjonen for å hente nåværende dato og deretter bruke `diffDays` for å sammenligne den med en annen dato.
+Dette betyr at `today` er mindre enn `tomorrow`. Hvis de to datoene hadde vært like, ville output vært `EQ`. Du kan også bruke funksjonen `diffDays` for å beregne antall dager mellom to datoer:
 
-## Dypdykk
+```Haskell
+import Data.Time.Calendar
 
-Som nevnt tidligere, kan `diffDays` funksjonen bare sammenligne datoer som `Day` objekter. Men hva om du trenger å sammenligne to datoer i et annet format, for eksempel `UTCTime`? I så fall kan du bruke funksjonen `utctDay` fra `Data.Time.Clock` biblioteket for å konvertere `UTCTime` objekter til `Day` objekter og deretter bruke `diffDays` for å sammenligne dem.
+today = fromGregorian 2020 11 01
+yesterday = fromGregorian 2020 10 31
 
-Du kan også bruke `Ord` typeklassen til å sammenligne to `Day` objekter. Dette gjør det mulig å bruke funksjoner som `>`, `<`, `==`, etc. for å sammenligne datoene. Men vær oppmerksom på at disse funksjonene sammenligner nøyaktig dato og ikke tar hensyn til tidspunkt.
+main = print $ diffDays today yesterday
+```
 
-## Se Også
+Dette vil gi følgende output:
 
-- [Haskell Programming Language](https://www.haskell.org/)
-- [Data.Time.Calendar Documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
-- [Data.Time.Clock Documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+```
+1
+```
+
+Som du ser, er det viktig å huske på datoformatet når du sammenligner eller manipulerer datoer.
+
+## Dykk dypere
+
+Haskell har en egen modul for å håndtere datoer og tid, `Data.Time.Calendar`. Denne modulen tilbyr en rekke funksjoner og datatype for å arbeide med datoer og tid. Du kan lese mer om denne modulen i Haskell sin offisielle dokumentasjon.
+
+## Se også
+
+- [Haskell sin offisielle dokumentasjon](https://www.haskell.org/documentation/)
+- [Data.Time.Calendar modulen](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)

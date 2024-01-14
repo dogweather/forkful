@@ -1,40 +1,67 @@
 ---
-title:    "C: Utilisation des expressions régulières"
+title:    "C: Utiliser des expressions régulières"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les expressions régulières sont un outil puissant pour la manipulation de chaînes de caractères dans un programme C. Elles permettent de rechercher et de remplacer des motifs spécifiques, rendant ainsi le traitement de données beaucoup plus efficace.
+Si vous êtes un programmeur C, vous avez probablement entendu parler de l'utilisation d'expressions régulières dans votre code. Mais pourquoi devriez-vous vous intéresser à leur utilisation ? Les expressions régulières peuvent être un outil puissant pour rechercher et manipuler des chaînes de caractères dans un programme.
 
 ## Comment faire
 
-Les expressions régulières sont composées de caractères spéciaux qui sont utilisés pour représenter des motifs de texte. Voici un exemple de code pour rechercher et remplacer le mot "chat" par "chien" dans une chaîne de caractères :
+Pour utiliser des expressions régulières en C, vous devez d'abord inclure la bibliothèque d'expressions régulières en utilisant la directive `#include <regex.h>`. Ensuite, vous pouvez utiliser les fonctions `regcomp()` et `regexec()` pour compiler et exécuter des expressions régulières respectivement.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
-    char texte[] = "J'aime les chats noirs.";
     regex_t regex;
-    regcomp(&regex, "chat", 0);
-    regsub("chien", texte, texte, REG_EXTENDED);
-    printf("%s", texte);
+    char *pattern = "hello";
+    char *string = "hello world";
+    char *result;
+    
+    // Compile la regex
+    int success = regcomp(&regex, pattern, 0);
+    if (success) {
+        printf("Erreur de compilation de la regex\n");
+        return 1;
+    }
+    
+    // Recherche de la regex dans la chaîne de caractères
+    regmatch_t matches[1];
+    if (regexec(&regex, string, 1, matches, 0) == 0) {
+        result = "Match trouvé";
+    } else {
+        result = "Aucun match trouvé";
+    }
+    
+    // Affiche le résultat
+    printf("%s\n", result);
+    
+    // Libère la mémoire allouée pour la regex
+    regfree(&regex);
+    
     return 0;
 }
 ```
 
-La sortie de ce code serait : "J'aime les chiens noirs.". Comme vous pouvez le voir, la fonction *regcomp* est utilisée pour compiler l'expression régulière "chat" et *regsub* pour la remplacer par "chien". Il existe d'autres fonctions utiles pour manipuler les expressions régulières, telles que *regexec* pour trouver des correspondances et *regfree* pour libérer la mémoire allouée à l'expression régulière.
+La sortie de ce programme sera "Match trouvé" car la chaîne de caractères contient la sous-chaîne "hello". Vous pouvez également utiliser des expressions régulières pour capturer des groupes spécifiques de caractères dans une chaîne.
 
-## Plongeon en profondeur
+## Plongée en profondeur
 
-Les expressions régulières offrent de nombreuses fonctionnalités avancées, telles que la possibilité d'utiliser des classes de caractères pour définir des ensembles de caractères à rechercher, ou des quantificateurs pour spécifier un nombre précis d'occurrences d'un motif. Vous pouvez également utiliser des assertions pour vérifier l'existence ou l'absence d'un motif à un endroit précis de la chaîne de caractères. Il y a une variété d'options disponibles pour personnaliser vos expressions régulières en fonction de vos besoins, alors n'hésitez pas à faire des recherches approfondies pour en apprendre davantage sur leur fonctionnement.
+La clé pour maîtriser les expressions régulières en C est de comprendre la syntaxe et les différents modificateurs disponibles. Par exemple, le modificateur `i` peut être utilisé pour rechercher de manière insensible à la casse, tandis que `w` permet de rechercher seulement des mots entiers. De plus, les caractères spéciaux comme `*`, `+` et `.*` ont des significations spécifiques dans les expressions régulières.
+
+Il est également important de comprendre les caractères d'échappement et les expressions régulières de plage, qui vous permettent de spécifier une plage de caractères à rechercher. En étudiant quelques exemples et en pratiquant, vous pourrez maîtriser l'utilisation de ces outils puissants dans votre code C.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque regex.h en français](https://www.gnu.org/software/libc/manual/html_mono/libc.html#Regular-Expressions)
-- [Tutoriel vidéo sur les expressions régulières en C](https://www.youtube.com/watch?v=8vKV4KMTfJk)
-- [Guide rapide pour les expressions régulières en C](https://medium.com/geekculture/a-quick-regex-cheatsheet-for-c-942f801a3461)
+- [Documentation de la bibliothèque d'expressions régulières en C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Guide pratique pour les expressions régulières en C](https://linux.die.net/Beta4/regex.html)
+- [Tests et exercices pour pratiquer les expressions régulières en C](https://www.geeksforgeeks.org/regular-expressions-in-c-programming/)
+- [Exemples de code pour les expressions régulières en C](http://www.zytra.net/regex/)
+
+En utilisant ces ressources et en étant patient, vous pourrez devenir un expert en matière d'expressions régulières en C. Alors n'hésitez pas à les utiliser dans votre code pour rendre vos programmes encore plus puissants !

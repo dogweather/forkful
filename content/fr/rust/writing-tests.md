@@ -1,46 +1,43 @@
 ---
-title:    "Rust: Écriture des tests"
+title:    "Rust: Ecrire des tests"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en Rust ?
+## Pourquoi
 
-Les tests sont un élément crucial dans le développement de logiciels en Rust. Ils permettent de détecter rapidement des erreurs et de garantir la fiabilité et la stabilité du code. En écrivant des tests, vous pouvez avoir confiance en votre code et le rendre plus facile à maintenir à long terme.
+Les tests sont un élément crucial dans le processus de développement de logiciels. Ils permettent de vérifier la fonctionnalité de notre code et de s'assurer qu'il fonctionne comme prévu. En utilisant Rust, un langage de programmation moderne et performant, écrire des tests peut grandement améliorer la qualité de notre code et rendre le processus de développement plus efficace. Dans cet article, nous allons découvrir pourquoi écrire des tests en Rust est si important et comment le faire correctement.
 
-## Comment écrire des tests en Rust ?
+## Comment faire
 
-Pour écrire des tests en Rust, vous devez tout d'abord définir une fonction avec l'attribut `#[test]` au-dessus de celle-ci. À l'intérieur de cette fonction, vous pouvez écrire des assertions qui vérifient que votre code se comporte comme prévu. Par exemple :
+Nous allons commencer par un exemple simple pour illustrer comment écrire des tests en Rust. Supposons que nous ayons une fonction qui prend en entrée un nombre entier et renvoie `true` si ce nombre est pair, sinon renvoie `false`.
 
 ```Rust
+fn est_pair(nombre: i32) -> bool {
+    nombre % 2 == 0
+}
+
 #[test]
-fn test_addition() {
-    let result = 2 + 2;
-    assert_eq!(result, 4);
+fn test_est_pair() {
+    assert!(est_pair(4));
+    assert!(!est_pair(5));
 }
 ```
 
-Une fois que vous avez écrit votre test, vous pouvez l'exécuter en utilisant la commande `cargo test`, qui exécute tous les tests contenus dans votre projet. Vous verrez alors l'output suivant :
+Dans cet exemple, nous avons créé une fonction `est_pair` et un test pour vérifier son fonctionnement. Nous utilisons la macro `#[test]` pour indiquer que cette fonction est un test. À l'intérieur du test, nous utilisons la macro `assert!` qui vérifie si l'expression à l'intérieur est évaluée à `true`. Si c'est le cas, le test réussit. Sinon, il échoue. Dans cet exemple, nous avons ajouté deux assertions pour tester la fonction `est_pair` avec différents nombres. Vous pouvez tester ce code en exécutant la commande `cargo test` dans votre terminal.
 
-```
-running 1 test
-test test_addition ... ok
+## Plongée en profondeur
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
+Il existe plusieurs types de tests que vous pouvez écrire en utilisant Rust, tels que les tests unitaires, les tests d'intégration et les tests de propriété. Les tests unitaires sont destinés à tester une fonction ou une partie spécifique de votre code. Les tests d'intégration sont utilisés pour s'assurer que différentes parties de votre code fonctionnent bien ensemble. Les tests de propriété, quant à eux, sont utilisés pour vérifier des propriétés spécifiques de votre code, telles que la conformité à des invariants ou des comportements attendus.
 
-Si le test échoue, vous verrez un message d'erreur détaillé, ce qui vous permet de facilement identifier et corriger le problème.
+Pour écrire des tests de manière efficace en Rust, il est important de comprendre les macros `assert!` et `assert_eq!` qui vous permettent de vérifier si une expression est vraie ou si deux valeurs sont égales respectivement. Vous pouvez également utiliser des fonctions utilitaires telles que `assert_ne!` pour vérifier si deux valeurs sont différentes, ou `panic!` pour arrêter l'exécution d'un test et afficher un message d'erreur.
 
-## Plongée en profondeur dans l'écriture des tests
+Enfin, n'oubliez pas que les tests doivent être maintenus et mis à jour au fur et à mesure que votre code évolue. Ne pas maintenir des tests peut entraîner des erreurs et rendre votre code instable.
 
-Les tests en Rust peuvent être plus complexes que des simples assertions. Vous pouvez utiliser un macro appelé `assert!` pour vérifier des conditions booléennes, ou encore utiliser le module `assert_eq!` pour comparer deux valeurs. De plus, Rust inclut également des fonctionnalités telles que `#[should_panic]` qui vous permettent de tester le comportement en cas d'erreur.
+## Voir aussi
 
-De plus, vous pouvez également utiliser des tests pour documenter votre code et montrer son fonctionnement de manière précise et reproductible.
-
-# Voir aussi
-
-Voici quelques ressources supplémentaires pour en savoir plus sur l'écriture de tests en Rust :
-
-- La documentation officielle de Rust sur les tests : https://doc.rust-lang.org/book/ch11-01-writing-tests.html
-- Un tutoriel complet sur l'écriture de tests en Rust : https://www.clifford.at/rust_test/
+- [Guide officiel de Rust sur les tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Vidéo YouTube sur les tests en Rust](https://www.youtube.com/watch?v=JFwPVK_2-Jw)
+- [Article de blog sur les tests de propriété en Rust](https://medium.com/@carlosfaria3/property-testing-in-rust-using-proptest-part-1-ef534607bdb9)

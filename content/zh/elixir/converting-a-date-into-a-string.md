@@ -1,44 +1,58 @@
 ---
 title:    "Elixir: 将日期转换为字符串"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Elixir编程：将日期转换为字符串的原因
+## 为什么
 
-## Why（为什么）
+在Elixir编程中，经常需要将日期转换为字符串格式。这样做的原因可能是为了方便存储、显示或者与其他系统进行交互。无论是哪种情况，将日期转换为字符串是非常有用的技能。
 
-在Elixir编程中，日期和时间是常见的数据类型。因此，将日期转换为字符串是必要的，因为它可以帮助我们在程序中操作日期。使用Elixir提供的日期和时间函数，可以快速，有效地将日期转换为字符串，使得程序更易于理解和开发。
+## 如何进行
 
-## How To（如何做）
+要将日期转换为字符串，我们可以使用 `DateTime` 模块中的 `to_string` 函数。让我们来看一个简单的例子：
 
-首先，我们需要导入Date和Timex库。接下来，我们可以使用`Date.format/2`函数将日期转换为指定格式的字符串。下面是一个简单的例子：
-
-```Elixir
-iex> import Date, only: [format: 2]
-iex> date = ~D[2021-09-01]
-iex> format(date, "{YYYY}-{MM}-{DD}")
-"2021-09-01"
+```elixir
+DateTime.to_string(~N[2021-10-10 18:00:00])
 ```
 
-在上面的例子中，我们使用了`{YYYY}-{MM}-{DD}`的格式来将日期转换为字符串。除此之外，我们还可以使用其他的日期格式，如`{MMMM} {D}, {YYYY}`，它会返回类似于“September 1, 2021”的结果。另外，我们也可以结合使用`format/3`函数来格式化时间，例如：
+运行这段代码，我们会得到如下输出：
 
-```Elixir
-iex> import Timex, only: [format: 3]
-iex> time = ~T[12:00:00]
-iex> format(time, "{h}:{m} {A}")
-"12:00 PM"
+```elixir
+"2021-10-10 18:00:00"
 ```
 
-## Deep Dive（深入了解）
+但是，如果我们想要自定义日期的格式，该怎么办呢？这时可以使用 `DateTime` 模块中的 `format` 函数。比如，我们想要将日期转换为类似"10月10日，2021年"的格式，可以这样做：
 
-在Elixir中，日期和时间是以Unix时间戳的形式存储的。Unix时间戳是从1970年1月1日开始计算的，每过一秒就会增加1。因此，Elixir中的日期和时间函数实际上是基于Unix时间戳的计算，并将其转换为我们熟悉的日期和时间格式。这就是为什么我们可以通过改变日期和时间的格式字符串来达到不同的日期和时间显示效果的原因。
+```elixir
+DateTime.format(~N[2021-10-10], "M月d日，yyyy年")
+```
 
-## See Also（参考链接）
+运行后，输出如下：
 
-- [Date模块文档](https://hexdocs.pm/elixir/Date.html)
-- [Timex模块文档](https://hexdocs.pm/timex/)
-- [Unix时间戳解释](https://www.epochconverter.com/)
+```elixir
+"10月10日，2021年"
+```
 
-感谢阅读本文！希望你现在对于如何将日期转换为字符串有更清晰的理解。继续探索Elixir编程世界吧！
+除了使用固定的日期，我们也可以使用当前的日期与时间。比如，我们想要将当前的日期转换为字符串，可以使用 `DateTime.utc_now` 函数：
+
+```elixir
+DateTime.utc_now() |> DateTime.to_string()
+```
+
+输出为当前的日期与时间的字符串。
+
+## 深入了解
+
+在Elixir中，日期与时间的表示采用了 `DateTime` 模块和 `NaiveDateTime` 模块。前者包含时区信息，后者不包含。在转换日期为字符串时，我们需要注意使用哪个模块，以免出现时区差异带来的错误。
+
+此外，`to_string` 函数接受一个 `format` 参数，这个参数决定了最终输出的格式。通过查阅文档，我们可以知道有哪些格式化选项可用，并根据自己的需要进行转换。
+
+## 参考链接
+
+- [Elixir官方文档 - DateTime模块](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir官方文档 - DateTime模块](https://hexdocs.pm/elixir/NaiveDateTime.html)
+- [Elixir官方文档 - DateTime模块](https://hexdocs.pm/elixir/DateTime.Format.html)
+- [Elixir官方文档 - DateTime模块](https://hexdocs.pm/elixir/DateTime.to_string.html)

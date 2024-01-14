@@ -1,55 +1,43 @@
 ---
 title:    "Javascript: 生成随机数"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要生成随机数
+# 为什么会生成随机数
 
-生成随机数在编程中是一项非常常见的任务。它可以被用来创建测试数据，增加程序的随机性，以及模拟真实世界中的随机事件。同时，生成随机数也是一种很有趣的编程挑战，可以帮助提高编程技能。无论你是初学者还是有经验的程序员，学习如何生成随机数都是很有价值的。
+在编程中，随机数是一个非常有用的工具。它可以被用来模拟随机事件，或者帮助生成唯一的标识符。使用随机数也可以增加程序的安全性，防止被恶意攻击。
 
-## 如何生成随机数
+# 如何生成随机数
 
-在Javascript中，我们可以使用内置的`Math.random()`函数来生成0到1之间的随机数。下面是一个简单的示例，它将生成和打印5个随机数：
+在Javascript中，可以通过`Math.random()`函数来生成一个0到1之间的随机数。如果需要生成指定范围内的随机数，可以使用以下公式：
 
-```Javascript
-for (let i = 0; i < 5; i++) {
-  let randomNum = Math.random();
-  console.log(randomNum);
-}
-// Output: 
-// 0.2645981940804652
-// 0.7238975991683529
-// 0.15641965144393282
-// 0.8976882373140053
-// 0.47038710399253965
+```
+Math.floor(Math.random() * (max - min + 1) + min);
 ```
 
-如果我们想要生成一个特定范围内的随机数，可以使用`Math.random()`乘以一个数字，并再加上另一个数字。例如，以下代码将生成和打印1到10之间的随机整数：
+其中`max`和`min`分别为所需要的随机数范围的最大值和最小值。例如，如果我们需要生成1到10之间的随机整数，可以使用以下代码：
 
-```Javascript
-let randomInt = Math.floor(Math.random() * 10) + 1;
-console.log(randomInt);
-// Output: 7
+```
+let randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+console.log(randomNumber);
 ```
 
-除了`Math.random()`函数，我们也可以使用其他的Javascript库或第三方API来生成随机数。比如，可以使用`faker.js`来生成更复杂的随机数据，或使用`random.org`来获取真正的随机数。
+以上代码的输出可能为`7`、`2`、`10`等随机整数。
 
-## 深入了解随机数
+# 深入了解随机数生成
 
-生成的随机数实际上并不是完全随机的。它们是由计算机算法生成的伪随机数。因此，每次运行同样的代码，都会得到相同的随机数序列。为了避免这种情况，我们可以使用一个种子（seed）来初始化随机数生成器。种子是一个数字，它可以改变生成的随机数序列。在Javascript中，我们可以使用`Math.seedrandom()`库来实现这一点。
+在计算机中，真正的随机数是不存在的，因为计算机是通过算法来生成随机数的。 `Math.random()`函数其实是基于一个伪随机数算法来实现的，所以它生成的随机数在一定程度上是有规律的。如果要生成更加随机的数，可以使用外部的随机数生成器来获取随机种子，然后再进行计算。
 
-另外，随机数也可以被用来帮助解决一些数学难题，比如在Monte Carlo方法中，通过生成大量随机数来近似计算概率和积分。因此，在学习如何生成随机数时，也可以深入研究相关的数学和计算方法。
+# 参考链接
 
-## 参考资料
-
-- [MDN web docs：随机数生成器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [W3School：生成随机数](https://www.w3schools.com/js/js_random.asp)
-- [全球真随机数：random.org](https://www.random.org/)
-- [本文中使用的库：seedrandom](https://github.com/davidbau/seedrandom)
+- [了解Javascript中的随机数生成](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Javascript生成指定范围内随机数的方法](https://www.cnblogs.com/ldp2016/p/6066837.html)
+- [计算机生成随机数的原理](https://www.eecis.udel.edu/~boothe/eleg601/randomnumgen.pdf)
 
 ## 参见
 
-- [MDN web docs：Math.random()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [W3School：Math.random()](https://www.w3schools.com/js/js_random.asp)
+- [Markdown语法参考](https://www.markdownguide.org/basic-syntax/)
+- [Javascript官方文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)

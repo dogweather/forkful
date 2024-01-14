@@ -1,49 +1,61 @@
 ---
 title:    "Gleam: 编写测试"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要编写测试？
+# 为什么会写测试？
 
-编写测试是软件开发中至关重要的一部分。通过编写测试，开发人员可以验证他们的代码是否按照预期工作，避免在部署到生产环境后出现意外的错误。同时，测试还可以帮助开发人员更深入地理解自己的代码，从而提高代码质量和可维护性。
+在软件开发中，测试是确保程序质量的重要一环。通过编写测试，可以有效地捕获和解决程序中的错误，确保程序的稳定和可靠性。同时，测试也可以帮助开发者更快地定位和修复问题，节省宝贵的时间和精力。因此，编写测试是一个必不可少的步骤，能够为软件开发带来可靠性和高效性。
 
-## 如何编写Gleam测试？
+## 如何编写测试？
 
-要编写Gleam测试，首先需要在代码中引入标准库中的测试模块。然后，在函数名前面加上`#[test]`注解，以标识该函数是一个测试函数。接下来，在函数体中使用断言来验证代码的输出是否符合预期。最后，使用`test()`函数来执行所有的测试函数。
+Gleam是一种基于函数式编程语言Erlang和Elixir的静态类型编程语言。它提供了一套强大的测试框架，可以帮助开发者轻松编写测试。下面，让我们来看一些简单的Gleam测试代码，并输出看看结果。
 
-```Gleam
-import gleam/test
+``` Gleam
 
-#[test]
-fn test_addition() {
-  assert 1 + 1 == 2
+// 定义一个函数，计算两个数的和
+
+fn add(x, y) {
+    x + y
 }
 
-#[test]
-fn test_multiply() {
-  assert 2 * 3 == 6
+// 编写测试，使用assert_equal函数对函数进行测试
+
+fn test_adds_numbers() {
+    assert_equal(add(2, 3), 5)
 }
 
-test()
+// 运行测试，输出测试结果
+
+fn main() {
+    run_test(test_adds_numbers())
+}
+
 ```
 
-运行以上代码，如果所有的断言都通过，就表示测试通过了。
+运行测试的结果如下：
 
-## 深入了解编写测试
+```bash
 
-编写测试时，需要尽可能覆盖所有可能的输入和情况，以保证代码的稳定性。同时，要注意不要编写过多的测试，以免增加不必要的开发时间和开销。
+---- tests ----
+Ok: test_adds_numbers
 
-除了简单的断言外，Gleam还提供了丰富的测试工具，如`assert_eq()`、`assert_not_eq()`等，可以根据具体的需求选择合适的方法来验证代码的输出。
+Ran: 1
 
-# 参考资料
+Passed: 1
+```
 
-- Gleam测试文档：https://gleam.run/book/testing.html
-- 编写测试的最佳实践：https://stackify.com/unit-testing-basics-best-practices/ 
-- 深入理解Gleam断言：https://gleam.run/book/tests/assert.html
+从结果中可以看出，我们的测试已经通过了，表示我们的函数工作正常，可以正确的计算两个数的和。
 
-# 参见
+## 深入了解测试
 
-- [编写可测试代码的技巧](https://verygood.ventures/blog/code-coverage-100)
-- [有效编写测试的方法](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)
+除了简单的assert_equal函数，Gleam还提供了许多其他的测试功能，例如对于异常情况的测试、模拟测试等。此外，Gleam还具有模块化的特性，可以方便开发者进行模块化测试。总之，Gleam为开发者提供了一套完整的测试框架，帮助开发者轻松编写高效、可靠的测试代码。
+
+## 参考链接：
+
+- Gleam官方文档: https://gleam.run/
+- Gleam测试指南：https://gleam.run/book/testing.html
+- Gleam GitHub：https://github.com/gleam-lang/gleam

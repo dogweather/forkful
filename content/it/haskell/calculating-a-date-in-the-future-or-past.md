@@ -1,29 +1,35 @@
 ---
-title:    "Haskell: Calcolo di una data nel futuro o nel passato"
+title:    "Haskell: Calcolare una data nel futuro o nel passato."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Calcolare una data nel futuro o nel passato può essere utile per una varietà di motivi, come programmare eventi futuri o tenere traccia di scadenze passate.
+
+Calcolare una data nel futuro o nel passato può essere utile in molte situazioni. Ad esempio, potresti voler sapere quale giorno della settimana cadrà il tuo compleanno in un determinato anno, o quando un dato evento si ripeterà in futuro. Inoltre, imparare a scrivere codice per calcolare date può aiutarti a sviluppare abilità di programmazione più avanzate.
 
 ## Come fare
-Per calcolare una data nel futuro o nel passato utilizzando Haskell, è possibile utilizzare la funzione `addDays` della libreria `Data.Time`. Di seguito è riportato un esempio di codice che calcola la data di domani:
+
+Per calcolare una data nel futuro o nel passato in Haskell, è necessario utilizzare la biblioteca `Time`. Ecco un esempio di codice che calcola la data di oggi più 10 giorni e la stampa nel formato "DD/MM/YYYY":
 
 ```Haskell
 import Data.Time
 
-main = do
-  let today = utctDay getCurrentTime
-      tomorrow = addDays 1 today
-  putStrLn $ show tomorrow -- output: 2021-08-04
+today = getCurrentTime
+futureDate = fmap (addDays 10) today
+formattedDate = fmap (formatTime defaultTimeLocale "%d/%m/%Y") futureDate
+print formattedDate
 ```
 
+L'uscita di questo codice sarà `31/01/2021`, se eseguito il 21 gennaio 2021. Possiamo anche calcolare una data nel passato utilizzando `addDays (-10)`.
+
 ## Approfondimento
-La funzione `addDays` prende due argomenti: il numero di giorni da aggiungere e la data di partenza. È importante notare che la funzione non modifica la data di partenza, ma restituisce una nuova data. È inoltre possibile utilizzare numeri negativi per calcolare una data nel passato. Altre funzioni utili della libreria `Data.Time` includono `diffDays` per calcolare la differenza in giorni tra due date e `getCurrentTime` per ottenere l'ora e la data correnti.
+
+Per calcolare una data nel futuro o nel passato, è importante comprendere come Haskell gestisce le date. In Haskell, le date sono rappresentate utilizzando il tipo `UTCTime`, che rappresenta un momento specifico nel tempo in UTC. L'aggiunta di giorni o altri valori a una data avviene utilizzando le funzioni `addDays` e `addUTCTime`, rispettivamente. Inoltre, il formato di visualizzazione delle date è gestito dalla funzione `formatTime`, che accetta un formato desiderato e una data da formattare.
 
 ## Vedi anche
-- [Documentazione ufficiale di Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial su come calcolare date nel futuro o nel passato in Haskell](https://www.geeksforgeeks.org/calculating-future-and-past-date-in-haskell/)
-- [Esempi di codice per operazioni su date in Haskell](https://wiki.haskell.org/Date_arithmetic)
+
+- [Documentazione di Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Esempi di Codice per Calcolare Date in Haskell](https://www.organicdesign.co.nz/Calculating_dates_in_Haskell)

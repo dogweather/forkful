@@ -1,34 +1,35 @@
 ---
-title:    "Python: Skriva till standardfel"
+title:    "Python: Skrivande till standardfel"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att skriva till standard error är en viktig del av felsökning och felhantering i Python-programmering. Genom att skriva ut felmeddelanden och andra viktiga information till standard error istället för standard output, kan du enkelt skilja mellan vad som är normalt programutdata och eventuella felmeddelanden som du behöver åtgärda.
+Att skriva till standard error i Python kan vara en användbar felsökningsmetod som hjälper dig att hitta och åtgärda eventuella fel i din kod. Genom att skicka ut felmeddelanden till standard error kan du lättare identifiera var problemet uppstår och vad som eventuellt orsakar det.
 
-## Hur man gör det
+## Hur man skriver till standard error i Python
 
-För att skriva till standard error i Python använder du funktionen "sys.stderr.write()". Detta tillåter dig att skriva ut en textsträng till standard error. Nedan visar ett exempel på hur du skulle använda denna funktion:
+För att skriva till standard error i Python kan du använda funktionen `sys.stderr.write()`. Här är ett enkelt exempel:
 
-```python
+```Python
 import sys
 
-sys.stderr.write("Detta är ett felmeddelande som skrivs till standard error")
+sys.stderr.write("Det här är ett felmeddelande\n")
 ```
 
-När du kör detta program kommer du se att textsträngen "Detta är ett felmeddelande som skrivs till standard error" skrivs ut till terminalen, men inte som en del av den vanliga programutdatan. Istället, om du skulle använda "sys.stdout.write()" skulle texten skrivas ut som en del av programutdatan.
+Output: `Det här är ett felmeddelande` kommer att skrivas ut i konsolen som standard error med röd text. Detta hjälper till att skapa en tydlig separation mellan utdata från programmet och eventuella felmeddelanden.
 
 ## Djupdykning
 
-I Python finns det två viktiga standarda värden: "sys.stdin" och "sys.stdout". Dessa representerar standard input och standard output för ditt program. Dessutom finns det också "sys.stderr", som är standard error. Detta är vanligtvis var dina felmeddelanden och annan viktig information skrivs ut.
+För att förstå mer om vad som händer när du skriver till standard error i Python, är det viktigt att förstå skillnaden mellan standard error och standard output. Standard error är en av tre standardströmmar som används i konsolen - de andra två är standard input och standard output. Standard error är avsedd att skicka ut felmeddelanden och andra felrelaterade utskrifter, medan standard output används för normal utdata från programmet.
 
-Det är också värt att notera att standard error används för mer än bara felmeddelanden. Det är också där man skriver ut annan information som inte är en del av det normala programflödet, såsom statusuppdateringar eller instruktioner för användaren.
+När du skriver till standard error i Python, använder du funktionen `sys.stderr.write()` för att skriva till standard error-strömmen, medan `print()` funktionen skriver till standard output-strömmen. Detta innebär att om du vill skriva ut ett felmeddelande, är det bästa sättet att göra det genom att använda `sys.stderr.write()`.
 
-## Se även
+## Se också
 
-* [Dokumentation för sys.stderr i Python](https://docs.python.org/3/library/sys.html#sys.stderr)
-* [Felsökning i Python using stderr](https://realpython.com/python-logging/) (på engelska)
-* [Skriva till standard error i terminalen](https://www.geeksforgeeks.org/redirecting-python-output-to-file-in-the-terminal/#error) (på engelska)
+* [Dokumentation om `sys.stderr.write()`](https://docs.python.org/3/library/sys.html#sys.stderr)
+* [Skillnaden mellan standard error och standard output](https://www.geeksforgeeks.org/what-is-the-difference-between-stderr-and-stdout/) 
+* [Felsökning i Python med standard error](https://realpython.com/python-logging/)

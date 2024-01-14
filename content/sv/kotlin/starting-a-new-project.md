@@ -1,44 +1,48 @@
 ---
-title:    "Kotlin: Att börja ett nytt projekt"
+title:    "Kotlin: Att påbörja ett nytt projekt"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-### Varför
+## Varför
+Att starta ett nytt projekt kan kännas överväldigande och kräver tid och engagemang. Men det är också en spännande möjlighet att utveckla dina färdigheter, utforska nya idéer och skapa något unikt.
 
-Att starta ett nytt programmeringsprojekt kan verka som en överväldigande uppgift, men det kan också vara en spännande och givande utmaning. Genom att skapa ett nytt projekt kan du utveckla dina programmeringsfärdigheter, utforska nya tekniker och verktyg, och skapa något unikt och användbart. Det är också ett bra sätt att utveckla din kreativitet och hålla dig motiverad i dina studier eller arbete.
+## Hur man gör
+För att skapa ett nytt projekt i Kotlin, följ dessa steg:
 
-### Så här
-
-För att starta ett nytt projekt i Kotlin, börja med att installera Kotlin-IDE eller ladda ner Kotlin-kompilatorn. Du kan sedan skapa en ny fil med ".kt" förlängningen för att börja skriva din kod. Här är ett exempel på en enkel "Hello World" -applikation i Kotlin:
-
-```Kotlin
+1. Öppna en kodredigerare på din dator.
+2. Skapa en ny fil och spara den med filnamnet <b>main.kt</b>.
+3. Börja koda i filen genom att definiera en main-funktion. ```Kotlin
 fun main() {
-    println("Hej världen!")
+    //kod här
 }
 ```
+4. Nu kan du börja experimentera med olika Kotlin-funktioner och syntax inom din main-funktion. Här är ett exempel på en kod som skriver ut en hälsningsfras till konsolen.
+```Kotlin
+fun main() {
+    val name = "Johanna"
+    println("Hej $name!") //output: Hej Johanna!
+}
+```
+5. Fortsätt att lägga till och ändra kod tills du är nöjd med ditt projekt.
 
-När du kör denna kod kommer "Hej världen!" att skrivas ut i konsolen, vilket bekräftar att din Kotlin-installation fungerar korrekt.
+## Deep Dive
+Att starta ett nytt projekt är en viktig del av att lära sig programmering. Det ger dig möjlighet att tillämpa dina kunskaper och utveckla din förmåga att lösa problem. När du skapar ett nytt projekt bör du överväga följande saker:
 
-Fortsätt sedan att utforska de olika funktionerna och syntaxen i Kotlin för att skapa mer komplexa applikationer. Du kan använda olika datatyper, villkorssatser, loopar och funktioner för att skapa interaktiva program. Det finns också många praktiska bibliotek och ramverk som du kan lägga till i ditt projekt för att göra det ännu mer kraftfullt.
+- Vad är målet med ditt projekt?
+- Vilka steg behöver du ta för att nå ditt mål?
+- Vilka resurser behöver du för att genomföra projektet?
+- Hur kan du utöka och utmana dig själv genom projektet?
 
-### Deep Dive
+Det är också viktigt att komma ihåg att det är okej att göra misstag och ändra riktning under projektets gång. Det är genom utmaningar och motgångar som vi växer som programmerare.
 
-Att starta ett nytt projekt handlar inte bara om att skriva kod, utan det omfattar också andra viktiga steg som att planera, dokumentera och testa din applikation. För att skapa en lyckad och hållbar produkt är det viktigt att du förstår dina krav och behov, skapar en genomtänkt struktur för din kod och ser till att allt fungerar som det ska.
+## Se även
+Här är några resurser som kan vara användbara när du startar ett nytt Kotlin-projekt:
 
-En av de största fördelarna med Kotlin är att det är ett mycket uttrycksfullt och typsäkert språk, vilket innebär att det är mindre benäget att buggar och fel jämfört med andra språk. Det gör det också enklare att upprätthålla och skalas upp din kod över tiden, vilket är särskilt viktigt för större projekt med flera teammedlemmar.
+- Officiell Kotlin-dokumentation (https://kotlinlang.org/docs/)
+- Tutorials från JetBrains (https://www.jetbrains.com/help/idea/discover.html)
+- Övningsexempel från Kotlin Koans (https://kotlinlang.org/docs/koans.html)
 
-När du väl har en stabilitet och fungerande grund kan du se fram emot att lägga till nya funktioner, förbättringar och få feedback från användare. Att starta ett nytt projekt är en kontinuerlig process och det finns alltid utrymme för utveckling och förbättring.
-
-### Se även
-
-Här är några resurser som kan hjälpa dig att komma igång med Kotlin och starta ditt nästa projekt:
-
-- Kotlin officiell hemsida: https://kotlinlang.org/
-- Kotlin-dokumentation: https://kotlinlang.org/docs/home.html
-- Kotlin-exempel: https://kotlinlang.org/docs/basic-syntax.html#basic-syntax
-- Kotlin programmeringsguider: https://kotlinlang.org/docs/reference/
-- Kotlin kurs på Coursera: https://www.coursera.org/courses?query=kotlin
-
-Lycka till med ditt nya Kotlin-projekt!
+Lycka till med ditt nya projekt!

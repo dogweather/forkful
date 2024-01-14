@@ -1,64 +1,42 @@
 ---
-title:    "Ruby: Umwandeln eines Strings in Kleinbuchstaben"
+title:    "Ruby: Ein String in Kleinbuchstaben umwandeln"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Man könnte sich fragen, warum es überhaupt notwendig ist, einen String in Kleinbuchstaben (lower case) umzuwandeln. Einer der Gründe dafür könnte sein, dass man sicherstellen möchte, dass alle Buchstaben in einem Wort einheitlich groß oder klein geschrieben sind, um beispielsweise Vergleiche oder Suchen zu erleichtern.
+Wenn Sie ein erfahrener Ruby-Programmierer sind, wissen Sie vielleicht bereits, wie man eine Zeichenfolge in Kleinbuchstaben umwandelt. Aber für diejenigen, die neu in der Programmiersprache sind, kann dieser Vorgang etwas verwirrend sein. Deshalb möchte ich Ihnen in diesem Blog-Beitrag zeigen, warum es wichtig ist, Strings in Kleinbuchstaben umzuwandeln und wie Sie dies in Ruby tun können.
 
-## Wie man es macht
+## So geht's
 
-Es gibt verschiedene Möglichkeiten, einen String in Ruby in Kleinbuchstaben umzuwandeln. Die einfachste Methode ist die Verwendung der Methode `downcase`:
-
-```Ruby
-x = "HELLO WORLD"
-puts x.downcase
-```
-
-Output: `hello world`
-
-Man kann auch die Methode `capitalize` verwenden, um den ersten Buchstaben eines Strings in einen Kleinbuchstaben umzuwandeln:
+Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, verwenden wir die `downcase` Methode. Sehen wir uns ein Beispiel an:
 
 ```Ruby
-x = "hello world"
-puts x.capitalize
+string = "HALLO WELT"
+puts string.downcase
 ```
 
-Output: `Hello world`
+Dieser Code gibt `"hallo welt"` als Output aus. Wie Sie sehen, wurden alle Großbuchstaben in der Zeichenfolge in Kleinbuchstaben umgewandelt. Das kann besonders nützlich sein, wenn Sie mit Benutzereingaben arbeiten oder Text für die Ausgabe formatieren möchten.
 
-Eine weitere Möglichkeit ist die Verwendung der Methode `swapcase`, mit der man zwischen Groß- und Kleinbuchstaben wechseln kann:
+Um das Ganze noch besser zu verstehen, lassen Sie uns ein weiteres Beispiel betrachten, bei dem wir die `downcase!` Methode verwenden. Diese Methode ändert den ursprünglichen Wert der Variablen, anstatt einen neuen Wert zurückzugeben.
 
 ```Ruby
-x = "hElLo WoRlD"
-puts x.swapcase
+string = "Hallo Welt!"
+string.downcase!
+puts string
 ```
 
-Output: `HeLlO wOrLd`
+Der Output für dieses Beispiel ist `hallo welt!`. Beachten Sie, dass wir hier keine `puts` Methode verwenden, da die Variable bereits den neuen Wert enthält.
 
-## Tiefere Einblicke
+## Tiefergehende Einblicke
 
-Die Methode `downcase` kann auch auf mehrere Wörter gleichzeitig angewendet werden, indem man sie auf einen ganzen String anwendet:
-
-```Ruby
-x = "HELLO WORLD"
-puts x.downcase
-```
-
-Output: `hello world`
-
-Außerdem ist es wichtig zu beachten, dass die Methode `downcase` keine Akzente oder Sonderzeichen umwandeln kann. Um dies zu erreichen, kann man die Anwendung der `unicode_normalize` Methode in Kombination mit `downcase` verwenden:
-
-```Ruby
-x = "ÉLÈVE"
-puts x.unicode_normalize(:nfd).downcase
-```
-
-Output: `élève`
+Um Strings in Kleinbuchstaben umzuwandeln, verwendet Ruby intern die ASCII-Tabelle. Dies ist eine Tabelle, die jedem Zeichen eine numerische Darstellung zuweist. Großbuchstaben haben eine höhere numerische Darstellung als Kleinbuchstaben, daher wird durch die Anwendung von `downcase` die numerische Darstellung jedes Zeichens verringert. Dies ist jedoch nicht der einzige Weg, um Strings in Ruby zu konvertieren. Es gibt auch die `capitalize` und `swapcase` Methoden, die jeweils andere Ergebnisse erzielen.
 
 ## Siehe auch
 
-- [Strings in Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [String Methoden in Ruby](https://ruby-doc.org/core-2.7.2/String.html)
+- [Ruby-Dokumentation zur downcase Methode](https://ruby-doc.org/core-2.5.1/String.html#method-i-downcase)
+- [ASCII-Tabelle](https://www.ascii-code.com/)
+- [Weitere String-Manipulationsmethoden in Ruby](https://www.rubyguides.com/2019/02/ruby-string-methods/)

@@ -1,39 +1,43 @@
 ---
 title:    "Ruby: 「標準エラーへの書き込み」"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
+プログラミング言語Rubyを学ぶことは、多くの人にとって非常に魅力的です。それは非常に直感的で読みやすい構文を持ち、エレガントなコードを書くことができることが知られています。しかし、プログラムを作成する際には、時折エラーが発生します。そして、このエラーを検知して対処するために、標準エラー出力を使用することが重要です。
+
 ## なぜ
 
-Rubyプログラミングの世界では、エラーメッセージは非常に重要です。様々なエラーが発生する可能性があり、それぞれのエラーには対応する必要があります。そのため、標準エラー出力への書き込みは非常に重要です。
+エラーは、プログラムを作成する上で避けて通ることができないものです。しかし、プログラマーにとってはエラーを素早く発見して修正することが重要です。そのため、エラーメッセージを表示するためには標準エラー出力を利用することが必要です。また、デバッグで使用されることが多いため、標準エラー出力を知っておくことは重要です。
 
 ## 方法
 
-標準エラー出力への書き込みには、`$stderr.puts`メソッドを使用します。以下の例を参考にしてください。
+標準エラー出力を使用するためには、Rubyで用意されている$stderrグローバル変数を使用します。例えば、以下のようにコードを書くことで、エラーメッセージを出力することができます。
 
 ```Ruby
-def divide(x, y)
-    if y == 0
-        $stderr.puts "エラー：ゼロで割ることはできません"
-    else
-        puts "結果：#{x / y}"
-    end
-end
-
-divide(10, 0)
-# => エラー：ゼロで割ることはできません
+$stderr.puts "エラーが発生しました。"
 ```
 
-上記のように、`$stderr.puts`を使用すると、エラーメッセージが標準エラー出力に書き込まれます。
+実行すると、ターミナル上に「エラーが発生しました。」というメッセージが表示されます。また、エラーメッセージをファイルに書き込むことも可能です。その場合は、以下のようにコードを書きます。
+
+```Ruby
+File.open("error.log", "a") do |file|
+  file.puts "エラーが発生しました。"
+end
+```
+
+これにより、現在のディレクトリに"error.log"というファイルが作成され、その中にエラーメッセージが書き込まれます。
 
 ## 深堀り
 
-標準エラー出力についてさらに詳しく知りたい方は、[Rubyドキュメント](https://docs.ruby-lang.org/ja/latest/method/IO/i/stderr.html)を参考にしてください。ここでは、標準エラー出力を使用する際の注意点や高度な使い方が詳しく説明されています。
+標準エラー出力は、「$stderr.puts」以外にも様々なメソッドが用意されています。例えば、"print"や"write"などがあり、それぞれの違いや使い方を理解することも重要です。
 
-## 関連リンク
+また、標準エラー出力は通常の"puts"や"p"と同様に、文字列や変数を出力することもできます。そのため、エラーメッセージ以外にも、デバッグ用に使用することもできます。
 
-- [Rubyドキュメント - 標準エラー出力](https://docs.ruby-lang.org/ja/latest/method/IO/i/stderr.html)
-- [RubyDoc.info - $stderr.puts](https://rubydoc.info/stdlib/core/Kernel:$stderr)
-- [Rubyでエラーをハンドリングする方法](https://qiita.com/naominix/items/8f723f9b487a3ceafba9)
+## 参考リンク
+
+- 標準エラー出力の使い方: https://docs.ruby-lang.org/ja/latest/method/Kernel/v/puts.html
+- $stderrグローバル変数: https://docs.ruby-lang.org/ja/latest/method/Kernel/g/e_003d_003d_003d_003d.html
+- その他のメソッド: https://docs.ruby-lang.org/ja/latest/method/?path=Kernel.html

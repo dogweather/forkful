@@ -1,58 +1,59 @@
 ---
 title:    "C: Generando números aleatorios"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué generar números aleatorios en programación
 
-Generar números aleatorios es un concepto importante en la programación ya que permite crear programas más dinámicos e interactivos. Con los números aleatorios, se pueden simular escenarios diferentes cada vez que se ejecuta un programa, lo que lo hace más interesante para los usuarios.
+La generación de números aleatorios es una técnica muy útil en programación ya que permite generar valores que no están predefinidos, proporcionando una mayor variedad de datos a utilizar en nuestros programas. Esto puede ser especialmente útil en juegos, algoritmos de inteligencia artificial y pruebas de software.
 
-# Cómo hacerlo
+## Cómo generar números aleatorios en C
 
-En C, hay varias formas de generar números aleatorios. Una de ellas es usando la función `rand()` de la biblioteca estándar `stdlib.h`. Esta función devuelve un número entero aleatorio entre 0 y `RAND_MAX`, que es una constante definida en la misma biblioteca.
-
-Para usar esta función, primero debemos incluir la biblioteca `stdlib.h` en nuestro programa. Luego, podemos llamar a la función `rand()` para obtener un número aleatorio. Por ejemplo:
+En el lenguaje de programación C, contamos con la función `rand()` para generar números aleatorios. Esta función toma como argumento un número entero que representa la "semilla" para la generación de números aleatorios. A continuación, se presenta un ejemplo de código que genera 5 números aleatorios entre 1 y 100 y los muestra por pantalla:
 
 ```C
-#include <stdlib.h>
 #include <stdio.h>
-
-int main() {
-  int num = rand();
-  printf("Número aleatorio generado: % d \n", num);
-  return 0;
-}
-```
-La salida de este programa será un número aleatorio generado cada vez que se ejecuta. Puedes probarlo tú mismo ejecutando el programa varias veces.
-
-# Inmersión profunda
-
-Sin embargo, hay una cosa importante que debemos tener en cuenta al generar números aleatorios en C. La función `rand()` genera los números aleatorios utilizando un algoritmo predeterminado, y este algoritmo se repite cada vez que se ejecuta un programa. Esto significa que, aunque se obtienen números diferentes cada vez, estos números seguirán una secuencia predecible.
-
-Para evitar esto, necesitamos inicializar la "semilla" del generador de números aleatorios antes de llamar a la función `rand()`. Esta semilla establece un punto de partida para el algoritmo de generación de números aleatorios, lo que garantiza que se generen números diferentes cada vez que se ejecuta el programa. La forma de inicializar la semilla es mediante la función `srand()` de la misma biblioteca, que toma como argumento un número entero que actuará como semilla.
-
-Una forma común de obtener una semilla aleatoria es usando la función `time()` de la biblioteca `time.h`, que devuelve la hora actual en segundos. Luego, podemos pasar este valor a la función `srand()` para obtener diferentes números aleatorios cada vez que se ejecuta el programa. Por ejemplo:
-
-```C
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
 
-int main() {
-  int num;
-  srand(time(NULL)); //inicilizar la semilla con la hora actual
-  num = rand();
-  printf("Número aleatorio generado: % d \n", num);
-  return 0;
+int main()
+{
+    // Se utiliza el tiempo actual como semilla
+    srand(time(NULL)); 
+    int i;
+    // Se generan y muestran 5 números aleatorios
+    for(i = 0; i < 5; i++)
+        printf("%d\n", rand() % 100 + 1);
+    return 0;
 }
 ```
 
-# Ver también
+**Salida de ejemplo:**
 
-Para más información sobre cómo generar números aleatorios en C, puedes consultar estos recursos:
+```
+72
+89
+17
+56
+94
+```
 
-- [Documentación oficial de la función `rand()` en la biblioteca `stdlib.h`](https://en.cppreference.com/w/c/numeric/random/rand)
-- [Tutorial sobre cómo generar números aleatorios en C](https://www.tutorialspoint.com/c_standard_library/c_function_srand.htm)
-- [Explicación más detallada sobre cómo funciona la función `rand()`](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+## Profundizando en la generación de números aleatorios
+
+Es importante tener en cuenta que los números generados por la función `rand()` no son realmente aleatorios, sino que siguen un patrón predecible. Esto se debe a que la función se basa en un algoritmo matemático que utiliza la semilla proporcionada para generar números. Por lo tanto, si se utiliza la misma semilla, se obtendrá siempre la misma secuencia de números.
+
+Para evitar esto, se suele utilizar la función `srand()` para establecer una semilla diferente cada vez que se ejecuta el programa, por ejemplo, utilizando el tiempo actual como se mostró en el ejemplo anterior.
+
+**Otras funciones útiles:**
+
+- `srand()` es necesario para generar una nueva secuencia de números aleatorios, pero si se desea generar números en un rango más específico, se puede utilizar la función `rand()` en combinación con operadores matemáticos, como se mostró en el ejemplo anterior.
+- También está disponible la función `rand_r()` que permite especificar una semilla directamente en lugar de utilizar `srand()`. Esta función puede ser útil en programas que requieran concurrencia.
+
+## Ver también
+
+- [Documentación de la función rand() en C](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Generación de números aleatorios en otros lenguajes de programación](https://www.geeksforgeeks.org/generating-random-number-range-c/)
+- [Ejemplo de juego en C utilizando números aleatorios](https://www.youtube.com/watch?v=5EosYa4gHBk)

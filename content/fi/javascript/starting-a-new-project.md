@@ -1,54 +1,59 @@
 ---
 title:    "Javascript: Uuden projektin aloittaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+## Miksi
 
-On monia syitä, miksi joku voisi päättää aloittaa uuden ohjelmointiprojektin. Ehkä haluat kehittää uusia taitojasi, ratkaista jonkin ongelman tai luoda jotain uutta ja luovaa.
+Uuden ohjelman aloittaminen voi tuntua pelottavalta ja haastavalta, mutta se voi myös olla erittäin palkitsevaa. Uuden projektin aloittaminen antaa mahdollisuuden haastaa itseään ja oppia uusia taitoja, ja lopputuloksena voi olla jotain upeaa ja hyödyllistä.
 
-## Kuinka aloittaa uusi projekti?
+## Miten aloittaa uusi projekti
 
-Jos olet päättänyt aloittaa uuden projektin, tässä on muutamia askelia, jotka voivat auttaa sinua alkuun.
+Aloittaessasi uuden ohjelmointiprojektin, ensimmäinen askel on valita ohjelmointikieli ja kehitysympäristö, joka sopii sinulle parhaiten. Valitse kieli, joka on sinulle tuttu ja jolla olet mukava työskentelemään. Tässä blogikirjoituksessa keskitymme Javascriptiin ja käytämme Node.js-kehitysympäristöä.
+
+Seuraavana sinun tulee luoda uusi projekti kansioon ja alustaa se Node.js-ympäristöä varten. Voit tehdä tämän kirjoittamalla seuraavat komennot komentoriville:
 
 ```Javascript
-// Luo uusi tiedosto
-touch index.js
-
-// Alusta uusi projekti
+mkdir uusi_projekti
+cd uusi_projekti
 npm init
-
-// Lisää riippuvuudet
-npm install <riippuvuudet>
-
-// Alusta uusi Git-repositorio
-git init
-
-// Lisää uusi tiedosto Git-seurantaan
-git add index.js
-
-// Tee ensimmäinen commit
-git commit -m "Initial commit"
-
-// Luo uusi branch
-git branch develop
 ```
 
-Nyt voit alkaa koodaamaan uutta projektiasi ja lisäämään tarvittavia toimintoja ja ominaisuuksia!
+Tämän jälkeen sinulle esitetään joukko kysymyksiä projektin asetuksista. Voit vastata niihin haluamallasi tavalla tai vain painaa Enter hyväksyäksesi oletusasetukset.
 
-## Syvällisempi sukellus aloittamiseen uusi projekti
+Seuraavaksi sinun tulee asentaa tarvittavat paketit projektiisi. Voit tehdä tämän komentamalla:
 
-Ennen kuin aloitat koodaamaan, on tärkeää miettiä projektisi tavoitteita ja päättää mitä ominaisuuksia ja toimintoja haluat siihen sisällyttää. Suunnittelu auttaa varmistamaan, että projekti etenee sujuvasti ja pysytään aikataulussa.
+```Javascript
+npm install paketin_nimi
+```
 
-Lisäksi kannattaa miettiä, mitä ohjelmointikieltä ja -työkaluja haluat käyttää projektissasi ja tutustua niiden dokumentaatioon etukäteen.
+Voit myös luoda uuden tiedoston projektiisi ja aloittaa koodaamisen. Esimerkiksi voit luoda tiedoston nimeltä "index.js" ja kirjoittaa siihen seuraavan koodin:
 
-Muista myös pitää tietokantaasi ajan tasalla ja käyttää versionhallintaa projektisi hallinnassa.
+```Javascript
+console.log("Tervetuloa uuteen ohjelmointiprojektiin!");
+```
+
+Voit ajaa tämän tiedoston komentoriviltä kirjoittamalla:
+
+```Javascript
+node index.js
+```
+
+Tämän pitäisi tulostaa teksti "Tervetuloa uuteen ohjelmointiprojektiin!" konsoliin.
+
+## Syvemmälle uuden projektin aloittamisessa
+
+Uuden ohjelmointiprojektin aloittamisessa on tärkeää pitää mielessä projektiin liittyvät tavoitteet ja tehdä suunnitelma siitä, mitä haluat saavuttaa. Muutaman minuutin ajan miettiminen ja suunnittelu voi säästää paljon aikaa ja vaivaa myöhemmin.
+
+Lisäksi on tärkeää käyttää versiohallintajärjestelmää, kuten Git, projektin hallintaan ja kehityksen seuraamiseen. Tämä auttaa pitämään projektin järjestyksessä ja mahdollistaa helpon paluun takaisin aikaisempiin versioihin, jos jotain menee pieleen.
+
+Lopuksi, muista pysyä motivoituneena ja nauttia matkasta uuden ohjelmointiprojektin parissa. Muista myös ottaa taukoja tarpeen mukaan ja kysyä apua, jos tarvitset sitä.
 
 ## Katso myös
 
-- [Alkuun pääseminen uudessa projektissa (MDN)](https://developer.mozilla.org/fi/docs/Learn/Getting_started_with_the_web)
-- [Projektin hallinta Gitillä (Atlassian)](https://www.atlassian.com/git/tutorials)
-- [Javascriptin dokumentaatio (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript)
-- [Versionhallinnan perusteet (GitHub Guides)](https://guides.github.com/introduction/git-handbook/)
+- [Node.js-dokumentaatio](https://nodejs.org/en/docs/)
+- [Git-dokumentaatio](https://git-scm.com/doc)
+- [Javascript-opetusohjelma](https://www.w3schools.com/js/)

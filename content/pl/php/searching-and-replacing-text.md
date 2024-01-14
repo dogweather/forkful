@@ -1,70 +1,40 @@
 ---
-title:    "PHP: Szukanie i zastępowanie tekstu"
+title:    "PHP: Wyszukiwanie i zamienianie tekstu"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto używać wyszukiwania i zastępowania tekstu w programowaniu PHP?
 
-W dzisiejszych czasach, kiedy prawie wszystko jest dostępne online, wykorzystanie języka programowania PHP staje się coraz popularniejsze. Ten język umożliwia nam tworzenie dynamicznych stron internetowych w łatwy sposób. Jednym z wielu przydatnych narzędzi, które PHP oferuje, jest funkcja wyszukiwania i zamiany tekstu.
+W dzisiejszych czasach, programowanie jest niezbędnym narzędziem w wielu dziedzinach. Jednym z najważniejszych elementów programowania jest manipulacja tekstem. W przypadku języka PHP, często zdarza się, że musimy przeprowadzić masową zmianę w tekście. Może to być wymaganie wprowadzenia nowej funkcji, naprawienie literówki lub zastąpienie starych wyrażeń nowymi. W takich sytuacjach, wyszukiwanie i zastępowanie tekstu jest nie tylko ważne, ale również oszczędza czas i pozwala uniknąć błędów. W tym artykule dowiesz się, jak wykorzystać to narzędzie w programowaniu PHP.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Kiedy tworzymy stronę internetową, często mamy do czynienia z dużą ilością tekstu. Czasami chcemy wprowadzić pewne zmiany w tekście, np. zmienić słowo, usunąć lub zamienić fragment. Dzięki funkcji wyszukiwania i zamiany teksty w języku PHP, możemy to zrobić bardzo szybko i bez problemów.
+Wyszukiwanie i zastępowanie tekstu w PHP jest możliwe dzięki użyciu funkcji `str_replace()` lub `preg_replace()`. Pierwsza z nich jest prostsza i pozwala na proste wyszukiwanie i zastępowanie tekstu, podczas gdy druga wykorzystuje wyrażenia regularne i jest bardziej zaawansowana. Przejdźmy teraz do praktycznych przykładów.
 
-Aby wyszukać i zamienić tekst w PHP, musimy użyć funkcji `str_replace()`. Przyjmuje ona trzy argumenty: szukaną frazę, frazę zastępującą oraz tekst, w którym chcemy dokonać zmian. W poniższym przykładzie zamienimy słowo "Hello" na "Cześć" w zdaniu "Hello World!".
+```
+// Proste wyszukiwanie i zastępowanie tekstu
+$text = "Dziękuję za pomoc w programowaniu!";
+echo str_replace("Dziękuję", "Wielkie dzięki", $text);
+// Output: Wielkie dzięki za pomoc w programowaniu!
 
-```PHP
-<?php
-    echo str_replace("Hello", "Cześć", "Hello World!");
-?>
+// Wyszukiwanie i zastępowanie tekstu z użyciem wyrażenia regularnego
+$text = "Witaj, użytkowniku! Twój PIN to 1234.";
+echo preg_replace("/PIN to \d+/", "PIN to ****", $text);
+// Output: Witaj, użytkowniku! Twój PIN to ****.
 ```
 
-Wynik:
+W pierwszym przykładzie, funkcja `str_replace()` wyszukuje w tekście wyrażenie "Dziękuję" i zastępuje je frazą "Wielkie dzięki". W drugim przykładzie, `preg_replace()` wykorzystuje wyrażenie regularne, aby zastąpić numer PIN gwiazdkami.
 
-```PHP
-Cześć World!
-```
+## Głębsze zanurzenie
 
-Ponadto, jeśli chcemy wyszukać i zmienić wiele różnych fraz, możemy użyć pętli `foreach` i tablicy z danymi. W poniższym przykładzie zamienimy wszystkie wystąpienia francuskich słów na angielskie.
+Wyszukiwanie i zastępowanie tekstu w PHP może być bardziej skomplikowane, zwłaszcza jeśli chcemy zastosować wiele zmian na jednym ciągu tekstu. W takich przypadkach, warto zapoznać się z dokumentacją funkcji `preg_replace()`, która pozwala na zaawansowane wyszukiwanie z wykorzystaniem wzorców i zmiennej tablicy zawierającej wyrażenia oraz ich zamienniki. Jest to szczególnie przydatne, gdy chcemy przeprowadzić masową zmianę w tekście, np. zmienić wszystkie daty na format DD/MM/RRRR.
 
-```PHP
-<?php
-    $replace = array("Pomme" => "Apple", "Fraise" => "Strawberry", "Orange" => "Orange");
-    $sentence = "J'aime manger une Pomme chaque jour. Je préfère les fraises aux oranges.";
-    echo str_replace(array_keys($replace), $replace, $sentence);
-?>
-```
+## Zobacz również
 
-Wynik:
+- [Dokumentacja PHP na temat funkcji str_replace()](https://www.php.net/manual/en/function.str-replace.php)
+- [Dokumentacja PHP na temat funkcji preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
 
-```PHP
-J'aime manger une Apple chaque jour. Je préfère les Strawberries aux Oranges.
-```
-
-## Deep Dive
-
-Funkcja `str_replace()` nie musi służyć tylko do zwykłych zamian słów. Możemy również użyć jej do dokonywania bardziej złożonych zmian, np. zmiany koloru tekstu lub formatowania daty. W poniższym przykładzie zmienimy kolor słowa "tekst" na czerwony i odwrócimy kolejność wyświetlania daty.
-
-```PHP
-<?php
-    $text = "Ten tekst jest niebieski a data to 30-06-2021.";
-    $replace = array("niebieski" => "<span style='color:red'>czerwony</span>", "-" => "/");
-    echo str_replace(array_keys($replace), $replace, $text);
-?>
-```
-
-Wynik:
-
-```PHP
-Ten tekst jest <span style='color:red'>czerwony</span> a data to 2021/06/30.
-```
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o funkcji `str_replace()` i innych przydatnych narzędziach PHP, możesz odwiedzić poniższe linki:
-
-1. [Oficjalna dokumentacja PHP](https://www.php.net/manual/en/function.str-replace.php)
-2. [Samouczek w języku polskim na w3schools](https://www.w3schools.com/php/func_string_str_replace.asp)
-3. [Poradnik na Tutsplus](https://code.tutsplus.com/tutorials/you-cant-live-without-the-str_replace-function--net-9048)
+Dzięki wykorzystaniu wyszukiwania i zastępowania tekstu w programowaniu PHP, możemy zaoszczędzić czas i uniknąć błędów. Pamiętaj, że jest to tylko jedno z narzędzi dostępnych w języku PHP, więc warto zgłębić również inne funkcje i możliwości tego języka.

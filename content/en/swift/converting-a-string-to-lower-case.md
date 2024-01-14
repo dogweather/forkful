@@ -1,47 +1,59 @@
 ---
 title:    "Swift recipe: Converting a string to lower case"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-In Swift programming, converting a string to lower case can be a useful tool when dealing with user inputs or comparing strings. By converting strings to lower case, you can ensure that the case of the letters does not affect the functionality of your code. Let's explore how to do this in Swift!
+In Swift programming, converting a string to lower case can be a useful task when dealing with user input or comparing strings. It allows for easier manipulation and comparison of strings without having to worry about case sensitivity.
 
-##How To
+## How To
 
-Converting a string to lower case in Swift is simple and can be done using the `lowercased()` method. Let's take a look at an example:
+Converting a string to lower case in Swift is a simple process. First, we declare a string variable with our desired phrase:
 
-```Swift
-let string = "Hello World"
-let lowercasedString = string.lowercased()
-print(lowercasedString) //output: hello world
+```
+Swift let phrase = "HeLlO wOrLd"
 ```
 
-As you can see, the `lowercased()` method is applied to the string and its output is assigned to a new variable. The result is a lowercased version of the original string.
+Next, we use the `lowercased()` method to convert the string to lower case:
 
-You can also use this method on user inputs, which can be helpful when comparing strings. Let's say we want to check if the user's input matches a secret word, but we want the comparison to be case-insensitive. We can use `lowercased()` on both strings to ensure that the comparison is accurate regardless of the case of the letters.
+```
+Swift let lowercasedPhrase = phrase.lowercased()
+```
 
-```Swift
-let secretWord = "password"
-let userInput = "PASSWORD"
-if userInput.lowercased() == secretWord.lowercased() {
-  print("Access granted!")
-} else {
-  print("Access denied.")
+And that's it! We now have a new string variable with our phrase in all lower case:
+
+```
+Swift print(lowercasedPhrase)
+// output: hello world
+```
+
+We can also use this method to directly convert user input to lower case, making it easier to compare with other strings:
+
+```
+Swift let userInput = "AppLe"
+let lowercasedInput = userInput.lowercased()
+if lowercasedInput == "apple" {
+    print("You entered the fruit!")
 }
-//output: Access granted!
+// output: You entered the fruit!
 ```
 
-##Deep Dive
+## Deep Dive
 
-Behind the scenes, the `lowercased()` method uses the Unicode standard to convert all of the letters in the string to lower case. This ensures that the method works correctly for all languages and special characters. It's also worth noting that this method does not change the original string, but instead returns a new lowercased string.
+Behind the scenes, the `lowercased()` method uses the Unicode Standard to convert characters to their lower case counterparts. This means that it can handle any language or special characters. It also takes into account language-specific rules for conversion.
 
-##See Also
+It's important to note that this method does not modify the original string. Instead, it returns a new string with the converted characters. This is because strings in Swift are immutable, meaning they cannot be changed after they are created. So, if you need to use the converted string multiple times, be sure to save it as a new variable.
 
-To learn more about string manipulation in Swift, check out these resources:
+## See Also
 
-- [String Manipulation in Swift](https://www.hackingwithswift.com/articles/131/string-manipulation-in-swift)
-- [String Manipulation Techniques in Swift](https://medium.com/swift-india/string-manipulation-techniques-in-swift-5ee5ed0f636b)
-- [The Swift Programming Language: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+For more information on string manipulation in Swift, check out these helpful resources:
+
+- [Swift Strings and Characters - Apple Developer](https://developer.apple.com/documentation/swift/string)
+- [The Swift Programming Language: Strings and Characters - Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift String Cheat Sheet - raywenderlich.com](https://www.raywenderlich.com/287-string-cheat-sheet-for-swift-4-0)
+
+Happy coding!

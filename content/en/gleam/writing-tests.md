@@ -1,50 +1,53 @@
 ---
 title:    "Gleam recipe: Writing tests"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing tests is an essential part of programming in any language, including Gleam. It allows developers to ensure their code is functioning as expected and catch any errors before they are introduced into production.
+
+It's often said that writing tests is just as important as writing code. You may be wondering, why should I put in the extra effort to write tests? Well, there are a few reasons why writing tests can greatly benefit your code and development process.
+
+Firstly, testing helps catch and prevent bugs before they make it into production. By writing tests, you can ensure that your code is functioning as expected and catch any unexpected errors. This can save you a lot of time and effort in the long run, as fixing bugs in production can be much more time-consuming than catching them during development.
+
+Secondly, tests act as documentation for your code. By looking at the tests, other developers can understand the expected behavior of your code without having to dive into the code itself. This can also help you when revisiting your own code after a long period of time.
+
+Overall, writing tests can improve the quality and maintainability of your code, making it a crucial aspect of developing software.
 
 ## How To
 
-Writing tests in Gleam is straightforward and follows a similar structure to other languages. Here is an example of a simple test case for a function that calculates the average of two numbers:
+Now that you understand the importance of writing tests, let's dive into how you can do it in Gleam.
+
+First, we need to create a test module in our project. This can be done by creating a new file with the `.gleam_test` extension. Inside this file, we will define our tests using the `test` function.
+
+Let's look at a simple example:
 
 ```Gleam
-fn average(x: Float, y: Float) -> Float {
-    (x + y) / 2.0
-}
-
-// Test case
-fn average_test() {
-    let result = average(2.0, 4.0)
-
-    assert result == 3.0
+test "addition" {
+  let result = 1 + 1
+  assert.equal(result, 2)
 }
 ```
 
-In this example, we have defined a function called `average` that takes two Float values and calculates their average. Then, we have created a test case called `average_test`, which calls the `average` function with two known values and asserts that the result is equal to the expected value. 
+In this code block, we have defined a test called "addition" which will add 1 + 1 and assert that the result is equal to 2. If the result is not equal to 2, the test will fail.
 
-To run this test case, we can use the `gleam test` command in our terminal. If all goes well, we should see a message indicating that the test has passed.
+You can also use `assert.ok` to test for truthy values and `assert.error` to test for expected errors. For a complete list of available assertions, check out the Gleam documentation.
 
-```
-Running 1 test
-
-OK 1 test complete. (0.002s)
-```
-
-In the event that the test fails, the output will indicate which assertion failed and what the actual result was.
+To run our tests, we can use the `gleam test` command in the terminal. This will run all the tests in our project and provide us with a summary of the results.
 
 ## Deep Dive
 
-Gleam also provides useful functions and macros for more complex testing scenarios. For example, the `assert_true` macro is useful for testing Boolean expressions, and the `assert_throw` function is helpful for testing code that is expected to throw an error. Additionally, the `suite` macro allows for the creation of multiple test cases, making it easier to organize and run tests.
+Writing tests is all about ensuring that your code is functioning as expected. This means writing tests for both happy and sad paths, as well as testing for edge cases.
 
-It is essential to thoroughly test all of your code, including edge cases and potential errors. Gleam's testing capabilities make it easier to identify and fix any problems, leading to more robust and reliable code.
+In Gleam, you can use pattern matching to help with testing. This allows you to test for different scenarios based on the input provided. You can also use generators to create randomized test data, making your tests more robust.
+
+It's also important to remember to keep your tests up to date as your code changes. This will ensure that the tests are still accurately reflecting the behavior of your code.
 
 ## See Also
 
-For more information on writing tests in Gleam, check out the official documentation and the community forum: 
-- [Writing tests in Gleam](https://gleam.run/book/getting-started/tests.html)
-- [Gleam community forum](https://community.gleam.run/)
+- [Gleam Documentation](https://gleam.run/)
+- [Testing in Gleam](https://gleam.run/articles/testing/)
+
+Happy testing! 🚀

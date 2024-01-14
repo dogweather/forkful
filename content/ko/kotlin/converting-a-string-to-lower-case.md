@@ -1,34 +1,42 @@
 ---
 title:    "Kotlin: 문자열을 소문자로 변환하기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열을 소문자로 변환하는 것이 중요한 이유는 프로그래밍에서 일반적인 작업 중 하나이기 때문입니다.
+자바나 코틀린에서는 문자열을 처리할 때 대문자와 소문자를 따로 구분합니다. 때로는 특정한 이유로 문자열을 모두 소문자로 변환해야 할 때가 있습니다. 이 포스트에서는 코틀린에서 문자열을 소문자로 변환하는 방법에 대해 알아보겠습니다.
 
-# 어떻게
+## 방법
+
+문자열을 소문자로 변환하는 방법은 코틀린에서 제공하는 `toLowerCase()` 함수를 사용하는 것입니다. 이 함수는 모든 문자를 소문자로 변환해줍니다. 예를 들어, 다음과 같이 문자열을 정의하고 `toLowerCase()` 함수를 호출하면:
 
 ```Kotlin
-fun main() {
-    val str = "HELLO WORLD"
-    val lowerCaseStr = str.toLowerCase()
-    println(lowerCaseStr)
-}
-
-//Output: hello world
+val str = "Hello World!"
+val lowerCaseStr = str.toLowerCase()
 ```
 
-문자열을 소문자로 변환하는 것은 매우 간단합니다. Kotlin에서는 String 클래스에 내장된 toLowerCase() 함수를 사용하면 됩니다. 위의 예시 코드에서는 "HELLO WORLD" 문자열을 소문자로 변환하여 출력하는 것을 볼 수 있습니다. 
+결과는 `hello world!`가 됩니다. 또한, 만약 문자열에 대한 참조가 없는 경우에는 함수를 바로 호출할 수 있습니다:
 
-# 심층탐구
+```Kotlin
+val lowerCaseStr = "Hello World!".toLowerCase()
+```
 
-문자열을 소문자로 변환하는 것은 소문자와 대문자를 구분하지 않는 경우에 매우 유용합니다. 이는 사용자의 입력에 대한 일관성을 유지하기 위해 매우 중요합니다. 또한 문자열을 정렬하거나 검색할 때 대소문자를 구분하지 않으면 코드 작성이 훨씬 더 간단해집니다. 또한, 문자열의 일부분만 소문자로 변환하거나, 모든 문자가 대문자인지 확인할 수도 있습니다. 
+이렇게 하면 작성하는 코드가 간결해지고 편리해집니다.
 
-# 더 많은 정보
+## Deep Dive
 
-- Kotlin String 클래스 문서: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html
-- Kotlin 문자열 다루기: https://kotlinlang.org/docs/strings.html
-- Kotlin String 표현식: https://www.baeldung.com/kotlin/string-expression
+`toLowerCase()` 함수는 문자열을 인수로 받아 새로운 문자열을 반환하는 무시합니다. 따라서 원본 문자열을 변경하지 않고 변환된 문자열을 사용할 수 있습니다. 이는 원본 문자열을 재사용해야 할 때 유용합니다.
+
+또한, 이 함수는 코틀린에서 자동으로 나타나는 유니코드 변환을 지원합니다. 따라서 여러 언어로 된 문자열도 소문자로 변환할 수 있습니다.
+
+이 함수는 문자열의 모든 문자를 소문자로 변환하기 때문에, 일부 특수한 상황에서 원하는 결과가 나오지 않을 수 있습니다. 이럴 때에는 정규표현식 등 다른 방법을 사용해야 할 수도 있습니다.
+
+## See Also
+
+- [코틀린 문자열 관련 공식 문서](https://kotlinlang.org/docs/reference/strings.html)
+- [코틀린 정규표현식 관련 공식 문서](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [코틀린 표준 라이브러리 공식 문서](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)

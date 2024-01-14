@@ -1,50 +1,65 @@
 ---
 title:    "Elm: Читання аргументів командного рядка"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Записати програму може бути заплутаним завданням, якщо ви не знаєте, як правильно працювати з аргументами командного рядка. Ця стаття допоможе вам зрозуміти, чому це важливо і як це зробити в Елм.
+Найпростіший спосіб для взаємодії з програмами на вашому комп'ютері - використання командного рядка. Прочитання аргументів командного рядка є важливою навичкою для розробника, яка дозволяє передавати вхідні дані у вашу програму під час її виконання.
 
-## Як це зробити
-
-Для того, щоб прочитати аргументи командного рядка в Елм, потрібно використовувати функцію `Platform.worker`. Просто передайте функцію, яка буде обробляти аргументи, і запустіть програму з необхідними аргументами.
+## Як
 
 ```Elm
-import Platform
+import Platform exposing (worker)
+import Task
 
-main =
-  Platform.worker getArguments
+type alias Args =
+    { program : String
+    , positional : List String
+    , named : Dict.Dict String String
+    }
+
+type alias Message =
+    Args -> Task.Task x ()
+
+getArgs : ( Args -> msg ) -> Cmd msg
+getArgs toMsg =
+    Json.Decode.list Json.Decode.string
+        |> Task.perform (toMsg << fromPlatformArgs)
+        |> Platform.worker
+
+fromPlatformArgs : List String -> Args
+fromPlatformArgs args =
+    let ( program, positional, named ) =
+        args
+            |> List.unzip
+    in
+        Args program positional (List.filterMap namedArgs args)
+
+namedArgs : String -> Maybe ( String, String )
+namedArgs arg =
+    case String.split "=" arg of
+        [ name, value ] ->
+            Just ( name, value )
+
+        _ ->
+            Nothing
+
+
 ```
 
-Функція `getArguments` може мати тип `List String -> Cmd msg`, де `List String` - це список аргументів командного рядка, а `Cmd msg` - команда для ефекту, який повідомляє про готовність обробки аргументів.
 
-Наприклад, якщо ми хочемо вивести на екран всі передані аргументи, функція буде виглядати так:
+Використовуйте функцію `getArgs` з параметром, який приймає тип даних `Msg`, отриманий з декодування аргументів командного рядка. Функція `fromPlatformArgs` допомагає розпакувати аргументи на окремі частини, які можна буде використовувати в вашій програмі.
 
-```Elm
-import Platform
-import List exposing (join)
+## Глибокий погляд
 
-main =
-  Platform.worker getArguments
-
-getArguments arguments =
-  Platform.send Effects.none <| Platform.log <| join " " arguments
-```
-
-Якщо ми запустимо програму з командою `elm make Main.elm "Hello, world!"`, на екрані буде виведено `Hello, world!`.
-
-## Глибоке поглиблене дослідження
-
-По-перше, варто зазначити, що аргументи командного рядка не підтримуються у веб-версії Елм. Вони доступні тільки в командному інтерфейсі (CLI).
-
-Також варто розглянути, як обробляти некоректні аргументи. Наприклад, якщо вони не відповідають очікуваному формату або їх недостатньо для виконання програми. Це може бути оброблено за допомогою викидання помилок або використання значень за замовчуванням.
+Застосовувані функції `Json.Decode.list` та `Json.Decode.string` допомагають декодувати аргументи з формату JSON у зрозумілі типи даних для Elm. Зверніть увагу, що треба буде самостійно обробляти значення зірочки `*`, які означають, що тип даних невідомий.
 
 ## Дивіться також
 
-- [Документація Елм](https://elm-lang.org/docs)
-- [Відеоуроки з Елм](https://www.youtube.com/playlist?list=PLGlkKtmKR_rjxhUqJcDdSKbJtjbQ7YtxJ)
-- [Статті про Елм на сайті Medium](https://medium.com/topic/elm)
+- [Документація Elm по `Platform.worker`](https://package.elm-lang.org/packages/elm/browser/latest/Platform#worker)
+- [Більше інформації про роботу з командним рядком в Elm](https://guide.elm-lang.org/interop/cmdline.html)
+- [Приклади коду з читанням аргументів командного рядка](https://github.com/elm-lang/elm-lang.org/tree/master/src/examples/cmdline)

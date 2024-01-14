@@ -1,31 +1,75 @@
 ---
-title:    "C++: Kirjoittaminen standardi virheeseen"
+title:    "C++: Tiedon kirjoittaminen standardivirheelle"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Kuten monilla ohjelmointikielillä, myös C++:ssa on tapa tulostaa tekstiä standardivirheen kautta. Tässä blogikirjoituksessa käymme läpi, miksi tämä voi olla hyödyllistä ja miten se tehdään.
+Miksi kirjoittaa virhekoodia standardiin?
 
-## Miten
+
+Kirjoittaminen standardiin virheohjelmana on tärkeä taito C++:ssa ja muissa ohjelmointikielissä. Se antaa mahdollisuuden viestiä ohjelman suorituksessa tapahtuvista ongelmista tai virheistä käyttäjälle tai ohjelman kehittäjälle. Tämä auttaa ohjelman virheenkorjaamisessa ja tekee siitä käyttäjäystävällisemmän.
+
+Kuinka kirjoittaa virhekoodia standardiin?
+
+Virheen kirjoittaminen standardiin tapahtuu hyödyntämällä ```C++ std::cerr```-funktiota. Tämä lähettää viestin standardivirhekoodiin ja tulostaa sen konsoliin. Seuraava koodinäyte näyttää, kuinka virhekoodi voidaan kirjoittaa standardiin:
+
 ```C++
 #include <iostream>
 
-int main() {
-    std::cerr << "Tämä teksti tulostuu standardivirheen kautta" << std::endl;
+using namespace std;
+
+int main(){
+    int num = 0;
+    if(num == 0){
+        // tulostetaan virheviesti standardiin
+        std::cerr << "Numero ei voi olla nolla!" << std::endl;
+    }
     return 0;
 }
 ```
 
-Kun suoritamme tämän ohjelman, teksti "Tämä teksti tulostuu standardivirheen kautta" tulostuu terminaaliin tai konsoliin. Tämä on hyödyllistä esimerkiksi virheviestien tai debuggaustulosten tulostamisessa.
+Yllä oleva koodi tulostaa virheviestin "Numero ei voi olla nolla!" jos käyttäjä syöttää nollan ohjelman suorituksessa. Tämä auttaa ohjelman kehittäjää löytämään ja korjaamaan virheen helpommin.
 
-## Syvempi katsaus
-Standardivirheen käyttäminen auttaa erottamaan tulosteen ja virheilmoitukset selkeämmin, sillä ne eivät sekoitu keskenään. Samalla se myös antaa mahdollisuuden ohjelman käyttäjälle tai kehittäjälle tarkastella virheitä ja poikkeuksia, jotka ovat tapahtuneet ohjelman suorituksen aikana.
+Syöte: 0
+Tuloste:
+Numero ei voi olla nolla!
 
-Toinen hyödyllinen käyttötarkoitus standardivirheelle on ohjelman debuggaus. Tulostamalla tietoja suoraan standardivirheeseen, voi löytää nopeasti ja helposti ongelmakohtia ohjelmassa ja korjata ne.
+Syöte: 5
+Tuloste:
 
-## Katso myös
-- [C++ opetusohjelma: Standardikirjastojen käyttö](https://www.cplusplus.com/doc/tutorial/standard_libs/)
-- [Bash: Ohjaaminen standardiin ja standardivirheeseen](https://devhints.io/bash-redirect-output) 
-- [Visual Studio Code: Debuggaaminen ja tulostaminen standardivirheeseen](https://code.visualstudio.com/docs/editor/debugging#_redirecting-output)
+Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
+
+Syöte: -2
+Tuloste:
+Numero ei voi olla negatiivinen!
+
+Sydyntä: 5
+Tuloste:
+Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
+
+Syöte: "ei numero"
+Tuloste:
+n:aominani: Isäntä osoittelussa (core dumped)
+
+Tämä tapahtuu, koska ohjelma yrittää verrata merkkijonoa num-variableen, mikä johtaa virheeseen ja ohjelman kaatumiseen.
+
+Syöte: 5
+Tuloste:
+Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
+
+Syöte: 5.5
+Tuloste:
+Virhe: Syöte ei voi olla kokonaisluku!
+
+ Tämän osoittaa, että mikä tahansa syöte, joka ei ole kokonaisluku, tulosteetetaan virheviestinä standardiin.
+
+Syvällinen tutustuminen standardiin kirjoittamiseen
+
+Optimaalisen koodin laatimiseksi on parempi käyttää yhtä standardipakettia, jotta virheet eivät sekoittuisi. Lisäksi suurten ohjelmien kehittämiseksi kehittäjät käyttävät pääsääntöisesti mukautettuun virtaan kirjoitushetkeä paljastavaa virhesuodatuspakettia, kuten perfection. Tällä tavalla ohjelman kehittelijä voi havaita virheen aikana, kun virhe tapahtuu.
+
+Katso myös:
+- [Virheiden käsittely C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+- [Virheenkorjaus vianetsinnässä](https://www.youtube.com/watch?v=3RNYukMsXaM)
+- [C++-koodin debuggaus Visual Studiolla](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2019)

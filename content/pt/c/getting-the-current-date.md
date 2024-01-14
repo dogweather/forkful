@@ -1,41 +1,48 @@
 ---
-title:    "C: Obtendo a data atual"
+title:    "C: Obtendo a data atual."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual é importante?
+# Porque Obter a Data Atual em Programação é Importante
 
-Obter a data atual é uma tarefa comum em muitos programas em C. A data atual pode ser usada para exibir informações para o usuário, registrar atividades ou até mesmo para fins de organização. Além disso, a obtenção da data atual é uma habilidade fundamental para qualquer programador iniciante em C.
+Quando estamos construindo um programa, muitas vezes precisamos trabalhar com diferentes datas e horários. Isso pode ser necessário para rastrear eventos, gerar relatórios, ou até mesmo fazer operações matemáticas básicas. Portanto, obter a data atual em um programa pode ser uma tarefa importante e útil.
 
-## Como fazer isso em C?
+# Como Obter a Data Atual em Programação
 
-Em C, a biblioteca padrão "time.h" fornece várias funções para trabalhar com datas e horas. Para obter a data atual, vamos utilizar a função "time()", que retorna o número de segundos desde 1º de janeiro de 1970, conhecido como Tempo Unix. Segue um exemplo de código:
+A linguagem de programação C possui uma biblioteca padrão que nos permite obter a data atual de forma rápida e eficiente. Para isso, podemos utilizar as funções `time()` e `localtime()`, que nos permitem acessar a informação da data atual em uma estrutura de dados `struct tm`.
 
 ```
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 int main() {
-    // Obtém a data e hora atual
-    time_t t = time(NULL);
-
-    // Converte para uma estrutura de data
-    struct tm *data = localtime(&t);
-
-    // Imprime a data atual no formato desejado
-    printf("A data atual é %02d/%02d/%d\n", data->tm_mday, data->tm_mon+1, data->tm_year+1900);
-    return 0;
+    // Obtendo a data atual
+    time_t currentTime = time(NULL); 
+    // Convertendo para estrutura de dados
+    struct tm *local = localtime(&currentTime);
+    // Imprimindo a data no formato desejado
+    printf("A data atual é: %d/%d/%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
 }
 ```
-A saída do código acima será: "A data atual é 31/01/2021", por exemplo.
 
-## Aprofundando
+**Saída:**
 
-Além da função "time()", a biblioteca "time.h" possui outras funções úteis para trabalhar com datas e horas, como "mktime()" e "strftime()". Também é possível manipular os campos individuais de uma estrutura de data, por exemplo, para alterar a data atual para um dia específico. É importante lembrar que a função "localtime()" retorna a data e hora no fuso horário local do sistema.
+```
+A data atual é: 3/10/2021
+```
 
-## Veja também
+# Detalhando a Obtenção da Data Atual
 
-- [Tutorial em português sobre a biblioteca time.h em C](https://www.devmedia.com.br/trabalhando-com-data-e-hora-em-linguagem-c/25576)
-- [Documentação oficial da biblioteca time.h em C](https://www.cplusplus.com/reference/ctime/)
+Além de utilizar as funções já mencionadas, também é possível obter informações mais específicas sobre a data atual, como o dia da semana, o horário e até mesmo o fuso horário. Isso pode ser útil quando precisamos exibir informações mais precisas em nosso programa.
+
+Outra coisa importante a ser considerada é que a biblioteca `time.h` possui diversas outras funções relacionadas a data e hora, como `asctime()`, que converte a estrutura `struct tm` para uma string formatada, ou `mktime()`, que converte a data em um valor do tipo `time_t`. Vale a pena explorar essas funções para um melhor entendimento e utilização da biblioteca.
+
+# Veja Também
+
+- [Documentação da biblioteca `time.h` em português](https://pt.cppreference.com/w/c/chrono)
+- [Tutorial sobre data e hora em C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+- [Outras funções da biblioteca `time.h`](https://www.geeksforgeeks.org/c-header-time-h-with-examples/)

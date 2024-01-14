@@ -1,58 +1,36 @@
 ---
-title:    "Swift: Oppretting av en midlertidig fil"
+title:    "Swift: Oppretting av midlertidig fil"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Velkommen til min casual Swift programmeringsblogg! I dag skal vi se på hvordan du kan lage midlertidige filer i Swift, og hvorfor dette kan være nyttig for deg som utvikler. Så la oss dykke rett inn!
 
-Noen ganger når vi utvikler programmer, trenger vi midlertidige filer for å holde data eller utføre en spesifikk funksjon. Disse filene vil slettes etter at de har oppfylt sitt formål, og vi kan opprette dem ved hjelp av Swift-programmeringsspråket.
+## Hvorfor
+Å lage midlertidige filer kan være nyttig når du jobber med data eller ønsker å gjøre midlertidige endringer i en fil uten å påvirke den permanente versjonen. Det kan også være nyttig når du trenger å lagre midlertidige resultat eller datastrukturer før du prosesserer dem videre. Så la oss se på hvordan du kan opprette midlertidige filer i Swift.
 
 ## Hvordan
-
-For å opprette en midlertidig fil i Swift, kan du følge disse enkle trinnene:
-
-```Swift
-// Setter navnet til filen
-let fileName = "tempfile.txt"
-
-// Oppretter en URL til midlertidig fil ved hjelp av FileManager
-let tempDirectoryURL = FileManager.default.temporaryDirectory
-
-// Legger til filnavnet til URL-en
-let fileURL = tempDirectoryURL.appendingPathComponent(fileName)
-
-// Oppretter en tom fil ved hjelp av URL-en
-FileManager.default.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
-```
-
-Nå har du opprettet en midlertidig fil med navnet "tempfile.txt" i det midlertidige mappen på enheten din. Du kan nå bruke denne filen til å lagre data eller utføre andre funksjoner. For å slette filen kan du bruke følgende kode:
+For å opprette en midlertidig fil i Swift, kan du bruke `FileManager` klassen. Her er et eksempel på hvordan du kan lage en midlertidig fil og skrive innhold i den:
 
 ```Swift
-// Setter navnet til filen
-let fileName = "tempfile.txt"
+// Opprett en URL til midlertidig fil
+let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("tempFile.txt")
 
-// Oppretter en URL til midlertidig fil ved hjelp av FileManager
-let tempDirectoryURL = FileManager.default.temporaryDirectory
-
-// Legger til filnavnet til URL-en
-let fileURL = tempDirectoryURL.appendingPathComponent(fileName)
-
-// Sletter filen ved hjelp av URL-en
-try? FileManager.default.removeItem(at: fileURL)
+// Skriv innhold i filen
+let content = "Dette er en midlertidig fil!"
+try content.write(to: tempURL, atomically: true, encoding: .utf8)
 ```
 
-Dette vil permanent slette filen fra det midlertidige mappen.
+Du kan også lese innhold fra en midlertidig fil på lignende måte ved å bruke `String` sin `init(contentsOf:usedEncoding:)` metode.
 
-## Dypdykk
+## Deep Dive
+Nå som vi har sett på hvordan du oppretter en midlertidig fil, la oss gå litt dypere inn i det og se på noen ekstra detaljer. Når du bruker `FileManager` for å opprette en midlertidig fil, vil Swift automatisk sørge for å gi deg en unik filnavn og plassere filen i et midlertidig katalog på operativsystemet. Dette sikrer at filene dine ikke krasjer med eksisterende filer og at de automatisk slettes når de ikke lenger er i bruk.
 
-Når du oppretter en midlertidig fil, er det viktig å huske på at filen vil bli slettet når appen din avsluttes eller enheten din blir restartet. Det er også viktig å bruke et unikt filnavn for å unngå konflikter med andre filer i det midlertidige mappen.
-
-Det er også nyttig å vite at du kan endre attributtene til en midlertidig fil før du oppretter den, for eksempel filens størrelse eller opprettelsesdato. Dette kan gjøres ved å legge til en `attributes` parameter i `createFile` metoden.
+Du kan også angi en prefiks for filnavnet ditt ved å bruke `temporaryFile` metoden på `FileManager`. For å slette en midlertidig fil manuelt, kan du bruke `removeItem(at:)` metoden på `FileManager` klassen og angi URLen til filen du ønsker å slette.
 
 ## Se også
-
-- [Apple Developer: Creating and Deleting Files](https://developer.apple.com/documentation/foundation/filemanager/1413570-createfile)
-- [Swifter.tips: Temp Files in Swift](https://swifter.tips/temp-files/)
-- [Hacking with Swift: How to create temporary files](https://www.hackingwithswift.com/example-code/system/how-to-create-temporary-files)
+* [Apple Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+* [Slik lager du og sletter midlertidige filer i Swift](https://medium.com/@apibillme/slik-lager-du-og-sletter-midlertidige-filer-i-swift-6ddae9509986)
+* [How to create and use temporary files in Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-and-use-temporary-files)

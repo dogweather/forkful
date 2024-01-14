@@ -1,55 +1,41 @@
 ---
-title:    "Haskell: ランダムな数値の生成"
+title:    "Haskell: 「ランダム数値の生成」"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-なぜランダムな数字を生成することが重要なのでしょうか？プログラマーにとって、ランダムな数字を生成することは非常に役に立ちます。例えば、シミュレーションやゲームの開発など、ランダム性が必要なプログラムを作る際に必要な機能です。また、データの偏りを防ぐためにもランダムな数字を生成することが重要です。
+ランダムな数値を生成することの魅力について言及します。Haskell言語を使ってプログラミングする際に、ランダムな数値がどのように役立つのかについて解説します。
 
-## ハウツー
+## 使い方
 
-Haskellでは、標準ライブラリの`System.Random`モジュールを使用してランダムな数字を生成することができます。以下のように、`randomRIO`関数で指定した範囲の中からランダムな整数を生成することができます。
-
-```Haskell
-import System.Random
-
-main = do
-    num <- randomRIO(1, 10)     -- 1から10までのランダムな数字を生成
-    print num
-```
-
-出力例:
-```
-6
-```
-
-また、`randomR`関数を使用すると、乱数ジェネレーターを指定することで同じ乱数を生成することができます。以下のように、生成器にシード値を与えることで同じランダムな数字を得ることができます。
+Haskell言語でランダムな数値を生成する方法について説明します。下記のコードブロックを参考にしてください。
 
 ```Haskell
 import System.Random
 
+-- 0から10の範囲でランダムな数値を生成する
 main = do
-    let gen = mkStdGen 42      -- 乱数ジェネレーターのシード値を指定
-    let (num, _) = randomR (1, 10) gen    -- ジェネレーターを使用してランダムな数字を生成
-    print num
+    gen <- getStdGen
+    let randomNum = take 1 $ randomRs (0,10) gen
+    print randomNum
 ```
 
-出力例:
-```
-2
-```
+`System.Random`ライブラリをインポートし、`getStdGen`関数を使用してランダム値のジェネレーターを取得します。その後、`randomRs`関数を使用して指定した範囲内でのランダムな数値を生成します。最後に`print`関数を使って結果を出力します。
 
-## ディープダイブ
+実行すると、コードブロック内の`randomNum`変数にはランダムな数値が代入され、出力結果として表示されます。
 
-Haskellのランダム数生成は、メルセンヌ・ツイスターアルゴリズムを使用しています。このアルゴリズムは非常に高品質なランダム数を生成することで知られています。また、乱数ジェネレーターのシード値は`StdGen`型で表され、ランダム性を保証するためにシード値が同じであれば同じ乱数を得ることができるよう設計されています。
+## 深層へ
 
-Haskellでは、このメルセンヌ・ツイスターアルゴリズムによる乱数生成機能を簡単かつ柔軟に使用することができます。また、より高度な乱数生成法を使用したい場合は、外部ライブラリをインポートすることで使用することもできます。
+ランダムな数値を生成する際には、乱数の種を指定することが大切です。同じ種を使えば常に同じ結果が得られるため、プログラムのテストやデバッグ時に役立ちます。また、ジェネレーターを更新することで、異なる乱数を得ることもできます。
 
-## もっと詳しく知りたい方は
+ランダムな数値を扱う際には、偏りやバイアスなどの問題があります。Haskellでは、`System.Random`モジュールに含まれる異なるアルゴリズムを使用することで、この問題を解決することができます。
 
-- [System.Randomモジュールのドキュメント](https://hackage.haskell.org/package/random/docs/System-Random.html)
-- [メルセンヌ・ツイスター](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E3%83%BB%E3%83%84%E3%82%A4%E3%82%B9%E3%82%BF%E3%83%BC)
-- [Haskellの乱数生成について](https://qiita.com/hiratara/items/c6f8449945cdd0766e6d)
+## 関連情報
+
+- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
+- [ランダムな数値を生成する方法](https://qiita.com/kkyouhei/items/59ea86b3c8d5f0d276ca)
+- [Haskellで乱数を生成する方法](https://qiita.com/nwtgck/items/3410d6d99f9323eec426)

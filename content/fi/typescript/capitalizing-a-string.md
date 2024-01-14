@@ -1,38 +1,60 @@
 ---
-title:    "TypeScript: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:    "TypeScript: Pääkirjoittaminen merkkijonolle"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On olemassa useita syitä, miksi voit haluta käyttää TypeScriptiä ohjelmoinnissa. Yksi tärkeimmistä on sen vahva tyyppijärjestelmä, joka auttaa välttämään virheitä koodin kirjoittamisessa ja parantaa koodin luettavuutta ja ymmärrettävyyttä. Tämä pätee myös merkkijonojen käsittelyyn, kuten esimerkiksi merkkijonon muuttaminen suuriksi kirjaimiksi. Se voi helpottaa koodin luomista ja vähentää mahdollisia virheitä, jolloin ohjelmointikokemus on sujuvampi.
+Miksi haluaisit käyttää aikaa ja vaivaa merkkijonon suurilla kirjaimilla kirjoittamiseen? Yksi yleinen syy on, että monissa ohjelmointikielessä merkkijonot kirjoitetaan normaalisti pienillä kirjaimilla. Näin ollen merkkijonon muuntaminen suuriksi kirjaimiksi on usein tarpeellista, jotta voidaan esimerkiksi verrata kahta merkkijonoa.
 
-## Miten
+## Miten tehdä
 
-Merkkijonon muuttaminen suuriksi kirjaimiksi on yksinkertaista tehdä TypeScriptillä. Käytä vain metodia "toUpperCase()", joka muuttaa merkkijonon kaikki kirjaimet suuriksi kirjaimiksi. Tämän jälkeen voit käyttää uutta muokattua merkkijonoa ohjelmassasi. Alla on esimerkki:
-
-```TypeScript
-let merkkijono = "tervetuloa!";
-console.log(merkkijono.toUpperCase());
-```
-
-Tuloste olisi: "TERVETULOA!"
-
-## Syvemmälle
-
-Vaikka "toUpperCase()" onkin helppo tapa muuttaa merkkijonon kirjaimet suuriksi, on hyvä olla tietoinen myös muista vaihtoehdoista. Esimerkiksi, jos haluat muuttaa vain ensimmäisen kirjaimen suureksi, voit käyttää metodia "charAt()" yhdistettynä "toUpperCase()" metodiin. Tämä antaa sinulle enemmän hallintaa siitä, minkä kirjaimen haluat muuttaa.
+### Käyttökelpoinen funktio
+Yksi tapa tehdä tämä on luomalla oma funktio, joka hyväksyy merkkijonon parametrina ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu suuriksi kirjaimiksi. Tämä voidaan toteuttaa TypeScriptillä seuraavalla tavalla:
 
 ```TypeScript
-let merkkijono = "tervetuloa!";
-console.log(merkkijono.charAt(0).toUpperCase() + merkkijono.slice(1));
+function muutaSuuriksiKirjaimiksi(merkkijono: string): string {
+    return merkkijono.toUpperCase();
+}
+
+// Kutsutaan funktiota ja tulostetaan palautettu arvo konsoliin
+console.log(muutaSuuriksiKirjaimiksi("moi maailma")); // "MOI MAAILMA"
 ```
 
-Tuloste olisi: "Tervetuloa!"
+### Käyttö sisäänrakennetulla toiminnolla
+Toinen vaihtoehto on käyttää TypeScriptin sisäänrakennettua toimintoa `toUpperCase()`, joka tekee saman asian kuin edellinen funktio. Alla on esimerkki tämän toiminnon käytöstä:
+
+```TypeScript
+// Luodaan uusi muuttuja, joka sisältää muutettavan merkkijonon
+let teksti = "hei kaikille";
+
+// Muutetaan merkkijonon kirjaimet suuriksi ja tallennetaan uuteen muuttujaan
+let uusiTeksti = teksti.toUpperCase();
+
+// Tulostetaan uusi merkkijono konsoliin
+console.log(uusiTeksti); // "HEI KAIKILLE"
+```
+
+## Syvällisempi sukellus
+Molemmat edellä mainitut vaihtoehdot ovat loistavia tapoja saada merkkijono kirjoitettua suurilla kirjaimilla. On kuitenkin huomattava, että TypeScriptin sisäänrakennettu toiminto `toUpperCase()` ei toimi kaikilla kielillä, joten jos käytät esimerkiksi ääkkösiä, tämä toiminto ei muuta niitä suuriksi kirjaimiksi. Tässä tapauksessa kannattaa luoda oma funktio, joka ottaa huomioon myös ääkköset.
+
+Lisäksi, jos tarvitset muuttaa vain tietyn osan merkkijonosta suuriksi kirjaimiksi, voit käyttää TypeScriptin `substring()` -toimintoa. Tämä toiminto leikkaa ja palauttaa merkkijonosta halutun alueen, jonka jälkeen voit muuttaa tämän alueen suuriksi kirjaimiksi. Esimerkiksi:
+
+```TypeScript
+let teksti = "tervetuloa vieraille";
+let haluttuOsa = teksti.substring(0, 10); // "tervetuloa"
+
+// Muutetaan haluttu osa suuriksi kirjaimiksi ja yhdistetään se loppuosaan
+let uusiTeksti = haluttuOsa.toUpperCase() + teksti.substring(10);
+
+console.log(uusiTeksti); // "TERVETULOA vieraille"
+```
 
 ## Katso myös
 
-- [MDN Web Docs: String toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [W3Schools: TypeScript Strings](https://www.w3schools.com/typescript/typescript_strings.asp)
-- [TypeScript Documentation: String methods](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#supported-string-methods)
+- [TypeScriptin virallinen verkkosivusto](https://www.typescriptlang.org/)
+- [TypeScriptin dokumentaatio](https://www.typescriptlang.org/docs/)
+- [TypeScriptin opetusohjelmat](https://www.typescriptlang.org/docs/home.html#tutorials)

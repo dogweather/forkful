@@ -1,57 +1,55 @@
 ---
-title:    "Python: Convirtiendo una fecha en una cadena de caracteres"
+title:    "Python: Conversión de una fecha a una cadena de caracteres"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¡Por qué!
+##Por qué
 
-En algún momento, mientras se está programando en Python, es posible que se encuentre con la necesidad de convertir una fecha en una cadena de texto. Esto puede ser necesario para imprimir la fecha en un formato específico o para utilizarla como parte de una cadena de búsqueda en una base de datos. A continuación, entraremos en más detalle sobre cómo hacer esto en Python.
+En la programación de Python, a menudo nos encontramos con la necesidad de convertir una fecha en una cadena de texto. Esto puede ser útil para mostrar fechas en un formato específico o para realizar cálculos de tiempo.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-La forma más sencilla de convertir una fecha en una cadena en Python es utilizando el método `strftime()` del módulo `datetime`. Este método toma como argumento un formato de fecha específico y devuelve una cadena con la fecha en ese formato.
-
-```Python
-import datetime
-
-# Crear un objeto de fecha
-fecha = datetime.date(2021, 10, 28)
-
-# Convertir la fecha en una cadena
-cadena_fecha = fecha.strftime("%d/%m/%Y")
-
-# Imprimir la cadena
-print(cadena_fecha)
-```
-
-El resultado de este código sería `28/10/2021`, ya que hemos especificado que queremos la fecha en el formato de día/mes/año. Hay una gran variedad de formatos que se pueden utilizar en el método `strftime()`, así que asegúrate de revisar la documentación de Python si necesitas un formato específico.
-
-También es posible convertir una fecha con hora en una cadena utilizando el método `strftime()`. En ese caso, se utiliza el formato de `strftime()` para especificar cómo quieres que se muestre la hora.
+Para realizar esta conversión, necesitamos importar el módulo de datetime en Python y utilizar su función "strftime" que permite formatear una fecha y hora en una cadena de texto.
 
 ```Python
 import datetime
 
-# Crear un objeto de fecha con hora
-fecha_hora = datetime.datetime(2021, 10, 28, 14, 30)
+fecha_actual = datetime.datetime.now()
 
-# Convertir la fecha con hora en una cadena
-cadena_fecha_hora = fecha_hora.strftime("%d/%m/%Y %H:%M")
+fecha_cadena = fecha_actual.strftime("%d/%m/%Y")
 
-# Imprimir la cadena
-print(cadena_fecha_hora)
+print(fecha_cadena)
+
+#output: 13/10/2021
 ```
 
-Este código imprimiría `28/10/2021 14:30`, ya que hemos especificado que queremos la fecha en el formato de día/mes/año y la hora en formato de 24 horas.
+En este ejemplo, hemos utilizado el formato "%d/%m/%Y" para obtener la fecha actual en formato dd/mm/aaaa. Sin embargo, el formato puede variar dependiendo de nuestras necesidades.
 
-## Profundizando
+##Profundizando
 
-En Python, las fechas se almacenan como objetos de la clase `date` o `datetime` en el módulo `datetime`. Estos objetos tienen varios métodos que se pueden utilizar para manipular y formatear fechas.
+Al utilizar la función "strftime" podemos especificar diferentes parámetros para obtener diferentes formatos de fecha y hora. Algunos de los más comunes son:
 
-En el ejemplo anterior, utilizamos el método `strftime()` para convertir una fecha en una cadena. Sin embargo, también hay un método llamado `strptime()` que se puede utilizar para leer una cadena y convertirla en un objeto de fecha. Ambos métodos utilizan los mismos códigos de formato, así que es importante tenerlos en cuenta al utilizarlos.
+- %d: día del mes (01-31)
+- %m: mes (01-12)
+- %b: mes como nombre abreviado (Jan-Dec)
+- %B: mes como nombre completo (January-December)
+- %Y: año con cuatro dígitos (2021)
+- %y: año con dos dígitos (21)
+- %H: hora en formato de 24 horas (00-23)
+- %I: hora en formato de 12 horas (01-12)
+- %M: minutos (00-59)
+- %S: segundos (00-59)
+- %p: AM o PM
+- %A: día de la semana como nombre completo (Monday-Sunday)
+- %a: día de la semana como nombre abreviado (Mon-Sun)
 
-## Consultar también
+Este es solo un pequeño ejemplo de los formatos que se pueden utilizar. Existen muchas más opciones y es importante consultar la documentación de datetime para conocer todas las posibilidades.
 
-- Documentación de Python sobre el módulo `datetime`: https://docs.python.org/es/3/library/datetime.html
-- Tabla de códigos de formato para el método `strftime()`: https://docs.python.org/es/3/library/datetime.html#strftime-and-strptime-format-codes
+##Ver también
+
+- [Documentación de datetime en Python](https://docs.python.org/es/3/library/datetime.html)
+- [Guía para formatear fechas en Python](https://www.programiz.com/python-programming/datetime/strftime)
+- [Ejemplos prácticos de conversión de fechas en Python](https://www.w3schools.com/python/python_datetime.asp)

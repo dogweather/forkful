@@ -1,51 +1,84 @@
 ---
-title:    "Bash: Uniendo cadenas de texto"
+title:    "Bash: Concatenando cadenas"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Hola a todos! ¿Están buscando una forma de mejorar sus habilidades de programación en Bash? Entonces, ¡han venido al lugar correcto! Hoy vamos a hablar sobre cómo concatenar cadenas en Bash. Este es un tema útil y fundamental para aquellos que están aprendiendo a programar o que simplemente quieren mejorar sus habilidades. ¡Así que sigan leyendo!
+## ¿Por qué utilizar concatenación de cadenas en Bash? 
 
-## ¿Por qué?
-
-Antes de entrar en cómo concatenar cadenas en Bash, es importante entender por qué es una habilidad importante. Concatenar cadenas simplemente significa unir dos o más cadenas en una sola. Esto puede ser útil en situaciones como crear un mensaje personalizado, formatear una salida o incluso manipular archivos. Al aprender a concatenar cadenas en Bash, podrás mejorar tus habilidades de programación y hacer tu código más eficiente y legible.
+La concatenación de cadenas es una técnica importante en la programación Bash que permite unir varias cadenas de texto en una sola. Esto puede ser útil en una gran variedad de situaciones, como la creación de nombres de archivos dinámicos, la generación de mensajes personalizados, o la construcción de una URL a partir de parámetros.
 
 ## Cómo hacerlo
 
-Ahora que sabes por qué es importante concatenar cadenas, veamos cómo hacerlo en Bash. En la mayoría de los casos, se utilizan las comillas dobles (") para encerrar las cadenas que se desean concatenar. A continuación, se utiliza el operador de concatenación (.) para unir las cadenas. Veamos un ejemplo:
-
-```Bash
-mensaje="¡Hola,"
-nombre="amigos!"
-echo "$mensaje $nombre"
-```
-
-En este ejemplo, hemos creado dos cadenas, "¡Hola," y "amigos!", y las hemos unido en una sola cadena utilizando el operador de concatenación (.). Al imprimir la cadena final, se mostrará "¡Hola, amigos!".
-
-Otro método común para concatenar cadenas en Bash es utilizar el comando `printf`. Veamos un ejemplo:
+La concatenación de cadenas en Bash es sencilla y se puede realizar de varias maneras. Una forma es utilizando el operador `+` dentro de una variable, como se muestra a continuación:
 
 ```Bash
 nombre="Juan"
-apellido="Pérez"
-printf "Bienvenido, %s %s" "$nombre" "$apellido"
+edad=30
+echo "¡Hola, mi nombre es $nombre y tengo $edad años!"
 ```
 
-En este ejemplo, hemos utilizado `printf` para mostrar un mensaje personalizado que incluye el nombre y apellido del usuario. Al ejecutar este código, la salida será "Bienvenido, Juan Pérez".
+El resultado de este código sería: 
 
-## Profundizando
+```
+¡Hola, mi nombre es Juan y tengo 30 años!
+```
 
-Ahora que ya sabes cómo concatenar cadenas en Bash, hablemos un poco más sobre las cadenas. Es importante tener en cuenta que en Bash, las cadenas pueden contener cualquier tipo de dato, no solo texto. Esto significa que también puedes concatenar números, variables y hasta comandos. Sin embargo, al concatenar cadenas que contienen variables, es importante utilizar las comillas dobles (") para que la variable se expanda correctamente.
+Otra forma es utilizando el comando `printf`, como se muestra a continuación:
 
-Otra cosa a tener en cuenta es que no todas las operaciones de cadenas están permitidas en Bash. Por ejemplo, no se puede utilizar el operador de multiplicación (*) o división (/) en cadenas. Esto se debe a que Bash tratará automáticamente los números como tal y no como parte de una cadena.
+```Bash
+apellido="Pérez"
+direccion="Calle Mayor"
+printf "Mi nombre completo es %s y vivo en la %s." "$nombre $apellido" "$direccion"
+```
 
-## Ver también
+El resultado de este código sería:
 
-Espero que este artículo te haya ayudado a entender un poco más sobre cómo concatenar cadenas en Bash. Si quieres profundizar más sobre este tema, aquí te dejo algunos enlaces útiles para que puedas seguir aprendiendo:
+```
+Mi nombre completo es Juan Pérez y vivo en la Calle Mayor.
+```
 
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.pdf)
-- [Tutorial de concatenación de cadenas en Bash](https://linuxconfig.org/how-to-concatenate-strings-in-bash)
-- [Ejemplos prácticos de concatenación de cadenas en Bash](https://www.geeksforgeeks.org/concatenation-of-two-string-variables-in-bash/)
-- [Más información sobre el comando `printf`](https://www.tutorialspoint.com/unix_commands/printf.htm)
+## Profundizando en la concatenación de cadenas 
 
-¡Hasta la próxima! Happy coding! ¡Hasta la próxima! ¡Feliz programación!
+En Bash, las cadenas se pueden concatenar utilizando el operador `+`, pero también se puede utilizar el comando `concat` para unir varias cadenas. Además, es importante tener en cuenta que las variables deben estar entre comillas dobles para que se puedan expandir dentro de la cadena concatenada.
+
+También es posible concatenar más de dos cadenas utilizando el operador `+=`, como se muestra en el siguiente ejemplo:
+
+```Bash
+saludo="¡Hola"
+saludo+=" a todos!"
+echo $saludo
+```
+
+El resultado de este código sería: 
+
+```
+¡Hola a todos!
+```
+
+Otra técnica útil es la de utilizar el comando `read` para obtener la entrada del usuario y concatenarla con una cadena, como se muestra a continuación:
+
+```Bash
+echo "Por favor, ingresa tu nombre:"
+read nombre
+saludo="¡Hola, $nombre!"
+echo $saludo
+```
+
+El resultado de este código sería:
+
+```
+Por favor, ingresa tu nombre: 
+María
+¡Hola, María!
+```
+
+## Ver también 
+
+Si deseas aprender más sobre la concatenación de cadenas en Bash, te recomiendo que consultes los siguientes recursos:
+
+- https://linuxize.com/post/bash-concatenate-strings/
+- https://www.geeksforgeeks.org/bash-script-write/
+- https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash

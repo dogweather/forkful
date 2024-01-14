@@ -1,49 +1,48 @@
 ---
 title:    "C#: Écriture de tests"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Dans le monde de la programmation, il est souvent dit qu'il ne faut jamais sous-estimer l'importance des tests. Mais pourquoi est-il si important d'écrire des tests pour notre code ? La réponse est simple : les tests permettent de détecter les erreurs et les bugs et de s'assurer que notre code fonctionne correctement. Ils peuvent également servir de documentation pour notre code, en montrant comment celui-ci doit être utilisé.
+Avant de parler de la façon d'écrire des tests en C#, il est important de comprendre pourquoi les tests sont si importants pour les développeurs. Les tests sont un moyen efficace de vérifier la fonctionnalité de notre code et de détecter les erreurs avant qu'elles ne deviennent un problème majeur. Ils nous aident également à maintenir notre code propre, organisé et facilement modifiable. En fin de compte, les tests nous donnent la confiance nécessaire pour lancer notre code en production en sachant qu'il fonctionne correctement.
 
 ## Comment faire
 
-Il existe plusieurs façons de réaliser des tests en C#, mais la méthode la plus courante consiste à utiliser le framework de test intégré de Visual Studio. Voici un exemple de test simple qui vérifie si la méthode Add de notre classe Calculator renvoie le bon résultat :
+Maintenant que nous avons compris pourquoi les tests sont si importants, passons à la partie pratique : comment écrire des tests en C#. Tout d'abord, nous devons ajouter une référence à la bibliothèque de test MSTest dans notre projet. Ensuite, nous pouvons commencer à écrire nos tests en utilisant la syntaxe suivante :
 
 ```C#
-[TestClass]
-public class CalculatorTests
+[TestMethod]
+public void TestMaFonction()
 {
-    [TestMethod]
-    public void Add_ReturnsCorrectResult()
-    {
-        // Arrange
-        Calculator calculator = new Calculator();
+    // Arrange
+    MaClasse maClasse = new MaClasse();
 
-        // Act
-        int result = calculator.Add(2, 3);
+    // Act
+    int resultat = maClasse.MaFonction();
 
-        // Assert
-        Assert.AreEqual(5, result);
-    }
+    // Assert
+    Assert.AreEqual(10, resultat);
 }
 ```
 
-Nous créons d'abord une classe de test, avec l'attribut `[TestClass]`. À l'intérieur de celle-ci, nous définissons des méthodes de tests avec l'attribut `[TestMethod]`, qui servent à vérifier différents aspects de notre code. Dans cet exemple, nous vérifions si la méthode Add renvoie le bon résultat en utilisant la méthode `Assert.AreEqual`.
+Dans cet exemple, nous créons une classe de test et utilisons la méthode `Assert.AreEqual()` pour vérifier si le résultat de la méthode `MaFonction()` est égal à 10. Si le test échoue, cela signifie que quelque chose ne fonctionne pas correctement dans notre code et qu'il doit être corrigé.
+
+Bien sûr, cela n'est qu'un exemple très basique de test. Vous pouvez également écrire des tests pour des scénarios plus complexes en utilisant d'autres méthodes de la classe `Assert` tels que `AreNotEqual()`, `IsTrue()`, `IsFalse()`, etc. Il est également recommandé de créer des classes de test séparées pour chaque classe que vous testez, afin de maintenir votre code organisé et facile à comprendre.
 
 ## Plongée en profondeur
 
-Il est important de noter que les tests doivent être écrits avant même que le code ne soit écrit. En utilisant une approche de développement piloté par les tests (TDD), nous nous assurons que notre code est testé à chaque étape, évitant ainsi des erreurs potentielles à long terme.
+Écrire des tests peut sembler fastidieux et prendre plus de temps au début de votre projet, mais cela en vaut vraiment la peine à long terme. Non seulement cela vous permettra de détecter et de corriger les erreurs plus rapidement, mais cela vous aidera également à gagner en confiance et en efficacité en tant que développeur.
 
-Il existe également différents types de tests, tels que les tests unitaires, qui sont utilisés pour tester des parties spécifiques de notre code, et les tests d'intégration, qui visent à tester le bon fonctionnement de différentes parties du code ensemble.
-
-Il est également important de garder à l'esprit qu'il est plus facile et moins coûteux de corriger des bugs détectés par des tests plutôt que par les utilisateurs finaux. Il est donc essentiel d'intégrer des tests dans notre processus de développement.
+De plus, les tests vous permettent de mieux comprendre votre propre code et de l'utiliser comme une sorte de documentation vivante. Vous pouvez également utiliser des outils tels que Microsoft's Code Coverage pour vous assurer que vous testez toutes les parties de votre code.
 
 ## Voir aussi
 
-- [Documentation officielle Microsoft sur les tests en C#](https://docs.microsoft.com/fr-fr/dotnet/core/testing/)
-- [Introduction au TDD avec C#](https://www.c-sharpcorner.com/article/introduction-to-test-driven-development-tdd-in-c-sharp/)
-- [Guide du bon développeur : pourquoi écrire des tests ?](https://www.societe.com/guide-du-bon-developpeur-pourquoi-ecrire-des-tests-1937.html)
+Voici quelques ressources supplémentaires pour vous aider à en savoir plus sur l'écriture de tests en C# :
+
+- [Documentation officielle de MSTest](https://docs.microsoft.com/fr-fr/dotnet/core/testing/unit-testing-with-mstest)
+- [Guide sur les bonnes pratiques pour l'écriture de tests avec C#](https://enterprisecraftsmanship.com/posts/best-practices-for-writing-c-unit-tests/)
+- [Introduction aux tests unitaires en C#](https://www.codeproject.com/Articles/178541/Introduction-to-Unit-Testing-with-Csharp)

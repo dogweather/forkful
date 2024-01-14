@@ -1,76 +1,40 @@
 ---
-title:    "Python: Lecture des arguments de ligne de commande"
+title:    "Python: Lecture des arguments de la ligne de commande"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi lire les arguments de ligne de commande en Python?
+# Pourquoi
 
-Il est essentiel de savoir comment lire les arguments de ligne de commande lorsque vous programmez en Python, car cela peut être très utile pour créer des programmes interactifs et personnalisables. En utilisant des arguments de ligne de commande, vous pouvez permettre à vos utilisateurs de fournir des informations spécifiques lorsqu'ils exécutent votre programme, ce qui peut rendre votre code plus polyvalent et convivial.
+Il est important pour tout programmeur Python de connaître les bases de la lecture des arguments en ligne de commande. Cela vous permettra de créer des scripts plus flexibles et plus simples à utiliser. En comprenant comment lire les arguments en ligne de commande, vous pouvez également créer des programmes interactifs qui permettent à l'utilisateur de fournir des entrées personnalisées.
 
-## Comment faire pour lire les arguments de ligne de commande en Python
+## Comment faire
 
-Pour lire les arguments de ligne de commande en Python, vous devez utiliser la bibliothèque `sys`, qui fait partie de la bibliothèque standard de Python. La méthode la plus courante consiste à utiliser la variable `argv`, qui stocke tous les arguments passés en ligne de commande.
-
-Voici un exemple de code Python qui lit les arguments de ligne de commande et les affiche à l'écran :
-
+Pour lire les arguments en ligne de commande en Python, vous pouvez utiliser le module "sys". Tout d'abord, importez le module en utilisant la ligne de code suivante : 
 ```Python
 import sys
-
-# Stocke les arguments de ligne de commande dans une variable
-arguments = sys.argv
-
-# Affiche les arguments un par un
-for arg in arguments:
-    print(arg)
 ```
 
-Si vous utilisez ce code et exécutez votre programme avec des arguments, vous devriez voir une sortie comme celle-ci :
-
-```
-python mon_programme.py arg1 arg2 arg3
-```
-
-```
-mon_programme.py
-arg1
-arg2
-arg3
-```
-
-## Plongée plus profonde dans la lecture des arguments de ligne de commande
-
-En utilisant la méthode `argv`, vous aurez accès à une liste contenant tous les arguments fournis en ligne de commande. Mais que se passe-t-il si vous voulez traiter certaines de ces données comme des nombres, des chaînes de caractères, ou appliquer d'autres manipulations ? Pour ce faire, vous pouvez utiliser les méthodes `int()` et `float()` pour convertir les données en nombres, ainsi que d'autres méthodes pour manipuler les chaînes de caractères.
-
-Par exemple, si vous voulez obtenir la somme de deux nombres fournis par l'utilisateur en tant qu'arguments de ligne de commande, vous pouvez utiliser le code suivant :
-
+Ensuite, pour lire les arguments, utilisez la fonction "argv" en utilisant la syntaxe suivante : 
 ```Python
-import sys
-
-# Stocke les arguments de ligne de commande dans une variable
-arguments = sys.argv
-
-# Convertit les arguments en nombres entiers
-nombre1 = int(arguments[1])
-nombre2 = int(arguments[2])
-
-# Calcule la somme et l'affiche à l'écran
-somme = nombre1 + nombre2
-print("La somme de ", nombre1, " et ", nombre2, " est ", somme)
+args = sys.argv
 ```
 
-Maintenant, si vous exécutez votre programme avec deux nombres comme arguments, vous obtiendrez une sortie comme celle-ci :
+Maintenant, vous pouvez accéder à chaque argument individuellement en utilisant l'indexage. Par exemple, pour accéder au premier argument, utilisez : 
+```Python
+args[0]
+```
 
-```
-python mon_programme.py 5 7
-```
+En utilisant ces bases, vous pouvez maintenant écrire un programme qui vous permettra de fournir des arguments en ligne de commande et d'afficher leur valeur à l'écran.
 
-```
-La somme de 5 et 7 est 12
-```
+## Plongée profonde
+
+Il est important de noter que les arguments en ligne de commande sont toujours lus en tant que chaînes de caractères. Si vous souhaitez utiliser ces valeurs en tant que nombres ou autres types de données, vous devrez les convertir en utilisant des méthodes telles que "int()" ou "float()". De plus, vous pouvez également utiliser des modules tels que "argparse" pour gérer des arguments plus complexes et offrir une meilleure expérience utilisateur.
 
 # Voir aussi
 
-- [Documentation officielle de Python pour lire les arguments de ligne de commande](https://docs.python.org/fr/3/library/sys.html#sys.argv)
-- [Un tutoriel complet sur l'utilisation des arguments de ligne de commande en Python](https://realpython.com/command-line-interfaces-python-argparse/)
+- Documentation officielle de Python sur les modules "sys" et "argparse" : https://docs.python.org/fr/3/library/sys.html, https://docs.python.org/fr/3/howto/argparse.html
+- Un tutoriel sur la lecture des arguments en ligne de commande en Python : https://realpython.com/command-line-interfaces-python-argparse/
+- Un exemple pratique de traitement d'arguments en ligne de commande en Python : https://www.geeksforgeeks.org/command-line-arguments-in-python/

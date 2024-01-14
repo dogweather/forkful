@@ -1,42 +1,49 @@
 ---
-title:    "Rust: Affichage des sorties de débogage"
+title:    "Rust: Affichage du débogage"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'impression de sortie de débogage est un élément essentiel de tout programmeur expérimenté. Cela peut sembler ennuyeux ou fastidieux, mais croyez-nous, c'est une habitude que vous voudrez développer. L'impression de sortie de débogage vous permet de suivre le fonctionnement de votre code et de détecter rapidement les erreurs.
+Imprimer des sorties de débogage est un outil précieux pour les programmeurs, que ce soit pour comprendre le fonctionnement d'un code complexe ou pour résoudre rapidement des erreurs.
 
-# Comment Faire
+## Comment faire
 
-L'impression de sortie de débogage en Rust est aussi simple que d'utiliser la macro `println!`. Cette macro prend en paramètre une chaîne de caractères et les arguments que vous souhaitez afficher. Voyons un exemple :
-
-```Rust
-fn main() {
-    let nombre = 10;
-    println!("Le nombre vaut : {}", nombre);
-}
-```
-
-Dans cet exemple, nous avons utilisé la macro `println!` pour afficher la valeur de la variable `nombre` en utilisant le format `{}` pour la remplacer. Vous pouvez également utiliser d'autres spécificateurs de format pour afficher différents types de données. Par exemple, `{:.2}` affichera un nombre flottant avec deux décimales.
-
-# Plongée En Profondeur
-
-En utilisant l'impression de sortie de débogage, vous pouvez également afficher le contenu de structures de données plus complexes telles que des vecteurs ou des hashmaps. Vous pouvez également utiliser `debug!` pour obtenir une sortie plus détaillée. Par exemple :
+Pour imprimer des sorties de débogage en Rust, utilisez simplement la macro `println!()` suivi du texte ou de la variable que vous souhaitez afficher. Par exemple :
 
 ```Rust
-fn main() {
-    let fruits = vec!["pomme", "banane", "orange"];
-    debug!(fruits);
-}
+let a = 10;
+println!("La valeur de a est : {}", a);
 ```
 
-Cela affichera une sortie telle que `[ "pomme", "banane", "orange" ]` avec des informations supplémentaires sur le type et la taille du vecteur.
+Cela affichera "La valeur de a est : 10" dans la console. Vous pouvez également utiliser plusieurs variables dans une seule instruction `println!()` en les séparant par des virgules.
 
-# Voir Aussi
+## Plongée en profondeur
 
-- [Documentation officielle de Rust sur l'impression de sortie de débogage](https://doc.rust-lang.org/std/macro.println.html)
-- [Article sur l'impression de sortie de débogage en Rust](https://www.educative.io/resources/system-design-for-coding-interviews)
-- [Vidéo tutoriel sur l'impression de sortie de débogage en Rust](https://www.youtube.com/watch?v=yG4sX57nKPU)
+La macro `println!()` accepte en fait un nombre quelconque d'arguments, ce qui permet d'effectuer des opérations plus avancées. Vous pouvez par exemple utiliser le debug trait `{:?}` pour afficher le contenu d'une structure ou d'un tableau.
+
+```Rust
+#[derive(Debug)]
+struct Personne {
+    nom: String,
+    age: u8,
+}
+
+let personne = Personne {
+    nom: String::from("Jean"),
+    age: 30,
+};
+
+println!("La personne est : {:?}", personne);
+```
+
+Cela affichera "La personne est : Personne { nom: "Jean", age: 30 }". Vous pouvez également utiliser la fonction `format!()` pour formater des valeurs avant de les afficher.
+
+## Voir aussi
+
+- [La documentation officielle sur les macros de débogage en Rust](https://doc.rust-lang.org/std/macro.println.html)
+- [Guide de débogage Rust pour les débutants](https://blog.logrocket.com/debugging-in-rust-for-beginners/)
+- [Vidéo tutoriel sur le débogage en Rust](https://www.youtube.com/watch?v=-Z9Ok4Z5S8I)

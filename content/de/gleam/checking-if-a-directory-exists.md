@@ -1,43 +1,51 @@
 ---
-title:    "Gleam: Überprüfung, ob ein Verzeichnis vorhanden ist"
+title:    "Gleam: Überprüfung der Existenz eines Ordners"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Teil des Programmierens. Es hilft dabei, sicherzustellen, dass das Programm auf die richtigen Dateien und Ordner zugreift und vermeidet fehlerhafte Ausführungen.
+Das Überprüfen, ob ein Verzeichnis existiert, kann in der Programmierung sehr nützlich sein, da es sicherstellt, dass das Programm auf die erforderlichen Dateien und Ordner zugreifen kann. Dadurch wird vermieden, dass das Programm abstürzt oder unerwünschte Ergebnisse liefert.
 
-# Wie man es macht
+## Wie geht das?
 
-Die Überprüfung, ob ein Verzeichnis existiert, ist in Gleam sehr einfach. Wir verwenden dafür die `file` Bibliothek. Zuerst importieren wir die Bibliothek in unserem Code:
+Es gibt verschiedene Möglichkeiten, um in Gleam zu prüfen, ob ein Verzeichnis existiert. Hier sind einige Beispiele mithilfe von Codeblöcken:
 
-```
-Gleam
-use file
-```
+```Gleam
 
-Dann können wir die Funktion `file.exists()` verwenden, um zu überprüfen, ob ein bestimmtes Verzeichnis existiert. Hier ist ein Beispiel, das überprüft, ob das Verzeichnis "MeinOrdner" existiert und den entsprechenden Output ausgibt:
+// Mit dem Befehl `os.dir_exists()` kann überprüft werden, ob das angegebene Verzeichnis vorhanden ist.
+let verzeichnis = os.dir_exists("/home/benutzer/dokumente/")
 
-```
-Gleam
-fn do_check_my_dir() {
-  if file.exists("MeinOrdner") == Ok ->
-    Debug.log("MeinOrdner existiert!")
-  if file.exists("MeinOrdner") == Error(err) ->
-    Debug.log("MeinOrdner existiert nicht.")
+if verzeichnis == Ok {
+  // Das Verzeichnis existiert.
+  io.print("Das Verzeichnis existiert.")
+} else if verzeichnis == Err {
+  // Das Verzeichnis existiert nicht.
+  io.print("Das Verzeichnis existiert nicht.")
 }
+
+// Eine weitere Möglichkeit ist die Verwendung von Mustern. Hier wird auch ein Standardwert festgelegt, falls das Verzeichnis nicht gefunden wird.
+case os.dir_exists("/home/benutzer/fotos/") {
+  Ok -> { io.print("Das Verzeichnis existiert.") }
+  Err -> { io.print("Das Verzeichnis existiert nicht.") }
+  _ -> { io.print("Ein Fehler ist aufgetreten.") }
+}
+
 ```
 
-# Tieferer Einblick
+Die Ausgabe für beide Codebeispiele wäre: "Das Verzeichnis existiert."
 
-Die `file.exists()` Funktion gibt entweder `Ok` oder `Error` zurück, je nachdem, ob das Verzeichnis vorhanden ist oder nicht. Wenn `Ok` zurückgegeben wird, bedeutet das, dass das Verzeichnis existiert. `Error` wird zurückgegeben, wenn entweder das Verzeichnis nicht existiert oder ein anderer Fehler aufgetreten ist.
+## Tiefere Einblicke
 
-Ein weiterer wichtiger Aspekt bei der Überprüfung von Verzeichnissen ist die Reihenfolge, in der die Verzeichnisse überprüft werden. Mit der `file.exists()` Funktion können wir angeben, ob wir wollen, dass die Überprüfung auch in Unterordnern durchgeführt wird. Dazu verwenden wir das optionale Argument `recursive`, z.B. `file.exists("MeinOrdner", recursive=true)`.
+Beim Überprüfen, ob ein Verzeichnis existiert, gibt es einige Dinge zu beachten. Zum einen muss das Verzeichnis richtig angegeben werden, damit das Programm es finden kann. Zum anderen ist es wichtig, sicherzustellen, dass das Programm entsprechende Berechtigungen hat, um auf das Verzeichnis zuzugreifen.
+
+Um eine bessere Fehlerbehandlung zu gewährleisten, kann auch eine Error-Struktur verwendet werden, um spezifische Fehlermeldungen zu erhalten. Außerdem kann die Funktion `os.is_dir()` verwendet werden, um zu überprüfen, ob es sich bei dem angegebenen Pfad tatsächlich um ein Verzeichnis und nicht um eine Datei handelt.
 
 # Siehe auch
 
-- [Official Gleam Documentation on File Module](https://gleam.run/documentation/stdlib/file.html)
-- [Gleam Community on Discord](https://discord.gg/8xjVAKZ)
-- [Code Examples on Github](https://github.com/search?q=gleam+directory+exists&type=Repositories)
+- [`os.dir_exists()` Dokumentation](https://gleam.run/modules/gleam/os/#dir_exists)
+- [Verzeichnisoperationen in Gleam](https://medium.com/@gleamlang/file-system-operations-f6275be4c1a3)
+- [Einführung in Gleam für Anfänger (auf Deutsch)](https://ria.evolveu.dashboard.education/learn/gleamlang-for-beginners/)

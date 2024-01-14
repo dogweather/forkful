@@ -1,46 +1,61 @@
 ---
 title:    "Clojure recipe: Using regular expressions"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In today's fast-paced world of programming, efficiency is key. Regular expressions are a powerful tool that can help you quickly manipulate and search through text data, making them an essential skill for any Clojure programmer. They allow you to match specific patterns within a larger text and apply various transformations to the matched text. This not only saves you time and effort, but also allows for more precise and accurate text processing.
+Regular expressions are a powerful tool for manipulating and extracting data from strings in Clojure. They allow you to search for specific patterns and perform replacements or transformations, making it easier to handle complex data. In this blog post, we will explore how to use regular expressions in Clojure and its benefits for developers.
 
 ## How To
 
-Using regular expressions in Clojure is relatively straightforward. Let's take a look at some examples using the `re-find` function.
-
-To start, we need to use a regular expression literal, which is made up of a pattern enclosed in forward slashes. Let's say we have a string containing various phone numbers and we want to extract just the area code. We can use the `\d{3}` pattern to match three consecutive digits and use `re-find` to extract the first occurrence of it:
+Using regular expressions in Clojure is straightforward. First, you need to import the `clojure.string` library, which contains functions to work with regular expressions. Then, you can use the `re-matches` function to find all occurrences of a pattern in a string. Let's see an example:
 
 ```Clojure
-(def phone-numbers "Call me at 111-222-3333 or 444-555-6666")
-(re-find #"\d{3}" phone-numbers)
-```
-Output: "111"
+(require '[clojure.string :as str])
 
-We can also use capturing groups to extract specific parts of a matched text. For example, let's say we have a string of email addresses and we want to extract just the domain name. We can use the `re-find` function with the `#"(?<=@)\w+"` pattern, which matches any word characters preceded by the "@" symbol:
+(def text "I love Clojure!")
+(str/re-matches #"love" text)
+```
+
+Output: `"love"`
+
+In this case, we are looking for the word "love" in the string "I love Clojure!" and the `re-matches` function returns that match. You can also use the `re-find` function to find the first occurrence, and `re-seq` to get a sequence of all matches.
+
+Regular expressions also allow you to perform replacements using the `re-gsub` function. It takes in a pattern, replacement, and string and replaces all occurrences of the pattern with the replacement. Let's try it out:
 
 ```Clojure
-(def emails "john.doe@example.com, jane.smith@example.net")
-(re-find #"(?<=@)\w+" emails)
-```
-Output: "example"
+(require '[clojure.string :as str])
 
-There are many more ways to use regular expressions in Clojure, such as replacing or manipulating text, as well as more complex matching patterns. It's important to experiment and practice with regular expressions to fully harness their power.
+(def text "I love Clojure!")
+(str/re-gsub #"love" "like" text)
+```
+
+Output: `"I like Clojure!"`
+
+Regular expressions also support capturing groups, which allows you to extract specific parts of a pattern. To access these groups, you can use the `re-find` function and provide an index for the group you want to retrieve. For example:
+
+```Clojure
+(require '[clojure.string :as str])
+
+(def text "My email is abc@def.com")
+(re-find #"([a-z]+)@([a-z]+)\.com" text 2) ;; returns the second group
+```
+
+Output: `"def"`
 
 ## Deep Dive
 
-Regular expressions can be intimidating at first, as they require you to think in terms of patterns and matching rather than just individual characters. However, once you understand the basics and gain some experience, they can become an invaluable tool in your programming arsenal.
+Regular expressions in Clojure support various special characters and modifiers that allow for even more flexibility when matching patterns. Some of these include `?` to make a character optional, `+` to match one or more occurrences, and `*` to match zero or more occurrences. You can also use the `^` and `$` anchors to specify the start and end of a string, respectively.
 
-One thing to keep in mind is that regular expressions are case sensitive by default, but you can use the `(?i)` flag to make them case insensitive. Additionally, there are many useful functions in Clojure's `clojure.string` library that work well with regular expressions, such as `clojure.string/replace` and `clojure.string/split`.
+Additionally, character classes can be used to match specific sets of characters. For example, `[a-z]` will match any lowercase letter and `[0-9]` will match any digit. You can also use quantifiers with character classes, such as `[a-z]{3}` to match exactly three lowercase letters.
 
-It's also important to be aware of any potential performance issues when using regular expressions, as they can be resource-intensive for certain tasks. In these cases, it may be more efficient to use a different approach or optimize your regular expressions.
+For a more comprehensive guide on regular expressions in Clojure, you can refer to the official documentation.
 
 ## See Also
 
-- Official ClojureDocs for `re-find`: https://clojuredocs.org/clojure.core/re-find
-- Regular Expressions Cheat Sheet: https://www.rexegg.com/regex-quickstart.html
-- Regular Expressions in Clojure: https://blog.cognitect.com/clojure/2017/02/13/regular-expressions-in-clojure.html
+- [Official Clojure documentation on regular expressions](https://clojure.org/guides/learn/regular_syntax)
+- [Mastering Regular Expressions by Jeffrey E. F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

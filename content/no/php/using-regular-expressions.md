@@ -1,62 +1,46 @@
 ---
 title:    "PHP: Å bruke regulære uttrykk"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å kunne bruke regulære uttrykk er en viktig ferdighet for enhver PHP-programmerer. Regulære uttrykk lar deg søke og manipulere tekst på en avansert og effektiv måte. Det sparer deg for mye tid og krefter i å skrive komplekse strengmanipuleringer. 
+Det kan være fristende å bare jobbe med enkle tekstbehandlingsfunksjoner i PHP, men å lære hvordan man bruker regulære uttrykk kan være svært nyttig i mer komplekse situasjoner. Regulære uttrykk er en måte å søke og manipulere tekstbaserte data på, og kan brukes til alt fra validering av skjemafelt til å finne og erstatte tekst i store filer.
 
 ## Hvordan
 
-For å bruke regulære uttrykk i PHP, må du først bruke funksjonen `preg_match()` eller `preg_match_all()`. La oss si at du ønsker å finne alle forekomster av ordet "telefonnummer" i en tekststreng. Du kan gjøre det ved å bruke følgende kode:
-
 ```PHP
-$str = "Har du et telefonnummer jeg kan ringe til?";
-if (preg_match("/telefonnummer/", $str)) {
-   echo "Ja, her er mitt telefonnummer!";
+$tekst = "Hei! Ønsker du å lære PHP-programmering? Send oss en melding da vel!";
+if (preg_match("/PHP/", $tekst)) {
+  echo "Fant 'PHP' i teksten!";
+} else {
+  echo "Fant ikke 'PHP' i teksten.";
 }
 ```
 
-Ovenstående kode vil skrive ut "Ja, her er mitt telefonnummer!" hvis det finner en match i teksten. Hvis du er interessert i å finne alle forekomster av et ord, så kan du bruke `preg_match_all()` funksjonen. 
+Dette er et enkelt eksempel på hvordan man kan bruke preg_match-funksjonen i PHP til å søke etter et bestemt mønster (i dette tilfellet strengen "PHP") i en tekststreng. Output vil her være "Fant 'PHP' i teksten!", siden teksten inneholder ordet "PHP".
 
-Men hva hvis du ønsker å finne en nøye bestemt type tekst, for eksempel et firmas telefonnummer som består av tall med bindestrek mellom hver tredje siffer? Dette er hvor regulære uttrykk skiller seg ut. Du kan bruke såkalte "regular expressions" for å definere hvilket mønster du ønsker å finne. I dette tilfellet kan du bruke følgende kode:
+Et annet nyttig preg-funksjon er preg_replace, som lar deg erstatte et mønster med en annen tekst. For å erstatte alle forekomster av "helt" med "svært" i en tekststreng, kan man for eksempel bruke følgende kode:
 
 ```PHP
-$str = "Firmanavnet mitt er XYZ og telefonnummeret mitt er 123-456-789";
-if (preg_match("/\d{3}-\d{3}-\d{3}/", $str, $matches)) {
-   echo "Firmaets telefonnummer er " . $matches[0];
-}
+$tekst = "Det er helt fantastisk at du lærer PHP-programmering!";
+$nytekst = preg_replace("/helt/", "svært", $tekst);
+echo $nytekst;
 ```
 
-Koden vil skrive ut "Firmaets telefonnummer er 123-456-789". La oss gå igjennom hva som skjer her: 
-
-- `/\d{3}-\d{3}-\d{3}/` definerer mønsteret vi ønsker å finne. `\d` betyr alle tall, `{3}` betyr det må være tre siffer etter hverandre, og bindestreken og mellomrommet er der for å definere hvor nummeret skal ha bindestrek.
-- `$str` er tekststrengen vi ønsker å søke i.
-- `$matches` er en variabel som vil inneholde alle matchene som blir funnet.
-- `$matches[0]` er det første matchet som blir funnet (i dette tilfellet, telefonnummeret vårt).
-
-Nå kan vi bruke regulære uttrykk for å finne alle slags kompliserte mønstre og manipulere teksten vår på en effektiv måte.
+Output vil da være "Det er svært fantastisk at du lærer PHP-programmering!".
 
 ## Dypdykk
 
-Regulære uttrykk er basert på et sett med spesielle symboler og metakarakterer som definerer forskjellige tekstmønstre. Noen av de vanligste er:
+For å bli virkelig dyktig i å bruke regulære uttrykk, anbefales det å lese dokumentasjonen til PHP for å lære mer om de ulike funksjonene som er tilgjengelige. Det er også nyttig å prøve seg frem med ulike mønstre og se hvordan de fungerer.
 
-- `^` betyr starten av en tekststreng
-- `$` betyr slutten av en tekststreng
-- `.` betyr enhver karakter
-- `[abc]` betyr en hvilken som helst karakter fra den angitte lista (i dette tilfellet, a, b eller c)
-- `[a-z]` betyr en hvilken som helst karakter fra a til z
-- `*` betyr null eller flere forekomster av et mønster
-- `+` betyr én eller flere forekomster av et mønster
-- `?` betyr null eller én forekomst av et mønster
-- `()` brukes for å gruppere mønstre sammen
-
-Det er mye å lære når det kommer til regulære uttrykk, og det tar tid å bli komfortabel med å bruke dem. Men når du først forstår konseptet og blir kjent med de vanligste symbolene og metakarakterene, vil du finne ut at det å bruke regulære uttrykk er enkelt og kraftig.
+En ting som er viktig å være klar over er at regulære uttrykk kan være svært komplekse, og noen ganger er det bedre å bruke mer spesialiserte funksjoner for å utføre oppgaver som f.eks. validering av e-postadresser eller datoer. Det er derfor viktig å vurdere om regulære uttrykk er den beste løsningen for din spesifikke oppgave.
 
 ## Se også
 
-- [PHP Manual - Regulære uttrykk](https://www.php.net/manual/en/function.preg-match.php)
-- [RegEx
+- [PHP: Regulære uttrykk](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [PHP: Validere e-postadresser med regulære uttrykk](https://www.php.net/manual/en/filter.examples.validation.php)

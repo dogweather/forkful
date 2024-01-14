@@ -1,55 +1,52 @@
 ---
 title:    "PHP: Testien kirjoittaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Testien kirjoittaminen on tärkeä osa PHP-ohjelmoinnin prosessia, sillä se auttaa varmistamaan koodin toimivuuden ja löytämään mahdollisia virheitä. Se myös helpottaa koodin ylläpitämistä ja kehittämistä pitkällä aikavälillä.
+Kirjoittaminen testejä on tärkeä osa PHP-ohjelmointia, sillä se auttaa varmistamaan ohjelman laadun ja vähentää mahdollisia virheitä järjestelmässä.
 
-## Miten tehdä
+## Kuinka kirjoittaa testejä PHP:lla
 
-Testien kirjoittaminen PHP:ssa on helppoa ja suoraviivaista. Ensimmäiseksi, varmista että [PHPUnit](https://phpunit.de/) on asennettuna ja käytössä. Sitten voit luoda yksinkertaisia testitapauksia seuraavasti:
+Testien kirjoittaminen PHP:lla on helppoa, ja se tehdään yleensä jokaisen toiminnon yhteydessä. Alla on esimerkki siitä, kuinka voit kirjoittaa yksinkertaisen testin funktiolle, joka laskee kahden luvun summan.
 
 ```PHP
-<?php
-require_once 'Calculator.php';
-use PHPUnit\Framework\TestCase;
-
-class CalculatorTest extends TestCase
-{
-    public function testSum()
-    {
-        $calc = new Calculator();
-        $this->assertEquals(4, $calc->sum(2, 2));
-    }
+function sum($a, $b){
+  return $a + $b;
 }
+
+echo sum(2, 3); // Output: 5
 ```
 
-Käynnistä testit suorittamalla komento `phpunit`. Näet tuloksen, joka näyttää siltä:
+Nyt voimme kirjoittaa yksinkertaisen testin, joka testaa että funktio palauttaa odotetun arvon.
 
+```PHP
+// Tarkistetaan että funktio palauttaa oikean summan
+function test_sum(){
+  $expected = 5;
+  $actual = sum(2, 3);
+  if ($expected === $actual) {
+    echo "Testi onnistui! Summa on 5.";
+  } else {
+    echo "Testi epäonnistui! Summa ei vastaa odotettua arvoa.";
+  }
+}
+
+test_sum(); // Output: Testi onnistui! Summa on 5.
 ```
-PHPUnit 9.0.0 by Sebastian Bergmann and contributors.
 
-.                                                                   1 / 1 (100%)
+## Syvempi sukellus testien kirjoittamiseen
 
-Time: 00:00.002, Memory: 4.00 MB
+Testien kirjoittaminen auttaa paitsi varmistamaan ohjelman toimivuuden, myös helpottaa koodin korjaamista ja ylläpitoa tulevaisuudessa. Hyvä käytäntö on kirjoittaa testejä jokaiselle toiminnolle ja varmistaa, että testit kattavat kaikki mahdolliset tilanteet ja antavat oikeat tulokset.
 
-OK (1 test, 1 assertion)
-```
-
-Hyväksytyn testituloksen tapauksessa näet viestin "OK", mutta mikäli testi epäonnistuu, saat virheilmoituksen ja tiedon siitä missä kohtaa testiä on ongelma.
-
-## Syvällinen sukellus
-
-Testien kirjoittamisen syvempi ymmärtäminen voi auttaa sinua kehittämään parempaa koodia. Testien avulla pystyt peittämään koko koodin eri osat ja varmistamaan, että ne toimivat yhteen. Ne myös auttavat sinua löytämään ja korjaamaan mahdollisia virheitä, ennenkuin ne pääsevät tuotantoon ja aiheuttavat ongelmia käyttäjille.
-
-Varmista, että kirjoitat testitapauksia kaikille tärkeille osille koodiasi, jotta voit olla varma sen toimivuudesta ja vakaudesta.
+Voit myös käyttää erilaisia testikehyksiä, kuten PHPUnit, joka tarjoaa lisäominaisuuksia testien kirjoittamiseen ja suorittamiseen.
 
 ## Katso myös
 
-- [PHPUnitin dokumentaatio](https://phpunit.readthedocs.io/en/9.5/index.html)
-- [The Art of Unit Testing: With Examples in PHP](https://www.amazon.com/Art-Unit-Testing-Examples-Net/dp/1617293705)
-- [PHP Weekly](https://www.phpweekly.com/) - viikoittainen uutiskirje uusimmista PHP-aiheisista artikkeleista ja uutisista
+- [PHPUnit](https://phpunit.de/)
+- [PHP-testausopas](https://www.php.net/manual/en/writing-tests.php)
+- [Testien kirjoittaminen PHP:lla](https://www.tutorialspoint.com/phpunit/phpunit_writing_tests.htm)

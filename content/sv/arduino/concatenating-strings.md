@@ -1,50 +1,42 @@
 ---
-title:    "Arduino: Sammanslagning av strängar"
+title:    "Arduino: Sammansättning av strängar"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kombinera strängar är en vanlig uppgift när man programmerar med Arduino. Det kan användas för att skapa dynamiska meddelanden, skriva ut data från sensorer eller bara för att göra texten på en skärm mer lättläst. 
+Concatenating (ihopsättning) av strängar är ett viktigt koncept inom programmering som gör det möjligt att skapa dynamiska och anpassade meddelanden eller instruktioner. Genom att lägga ihop flera strängar kan du skapa en ny, längre sträng som innehåller information från flera olika källor. Detta kan vara till stor hjälp när du arbetar med sensorer, LCD-skärmar eller annan hårdvara som kräver specifika meddelanden.
 
 ## Hur man gör
 
-Att lägga ihop eller konkatenera strängar med Arduino är ganska enkelt. Det finns två huvudsakliga metoder för att göra detta, med hjälp av *sprintf()* och *strcat()* funktionerna.
-
-### *sprintf()*
-
-Med hjälp av *sprintf()* funktionen kan du kombinera flera olika typer av variabler och konstanter tillsammans med en sträng. Här är ett exempel som visar hur du kan kombinera en sträng och en variabel som håller ett värde:
+För att concatenate strängar i Arduino, behöver du använda den inbyggda funktionen `String()`. Detta gör det möjligt att skapa en ny sträng genom att kombinera flera andra strängar. Låt oss anta att vi vill skapa ett meddelande som visar temperaturen från en sensor. Vi börjar med att definiera en variabel för vår temperatur som en `float`:
 
 ```Arduino
-String message = "Temperaturen är %d grader celsius";
-int temperature = 25;
-
-sprintf(message, message, temperature);
-
-Serial.println(message); // Output: Temperaturen är 25 grader celsius
+float temp = 25.5;
 ```
-
-### *strcat()*
-
-En annan metod är att använda *strcat()* funktionen som används för att lägga till en sträng till slutet av en annan sträng. Här är ett exempel där vi lägger till namnet på en stad till slutet av en sträng:
+Vi kan sedan använda `String()` för att skapa en ny sträng som kombinerar texten "Temperaturen är" med vår variabel `temp`, som visas nedan:
 
 ```Arduino
-String message = "Välkommen till ";
-String city = "Stockholm";
-
-strcat(message, city);
-
-Serial.println(message); // Output: Välkommen till Stockholm
+String meddelande = "Temperaturen är " + String(temp);
 ```
+Resultatet blir en ny sträng, `meddelande`, som ser ut så här:
+
+```
+Temperaturen är 25.5
+```
+Notera att vi använde funktionen `String()` för att konvertera vår `float` till en sträng innan vi lade ihop dem.
 
 ## Djupdykning
 
-När det kommer till att konkatenera strängar, är det viktigt att vara medveten om minnet. Om du lägger till strängar i en loop kan det snabbt ta upp mycket minne, vilket kan leda till minnesbrist och fel i programmet. Det är därför det är viktigt att se till att du inte överskrider den tillgängliga mängden minne när du kombinerar strängar.
+En annan viktig aspekt av ihopläggning av strängar är att det kan vara särskilt användbart när man arbetar med flerspråkiga projekt. Genom att lägga ihop olika strängar baserat på språk kan du enkelt skapa dynamiska meddelanden på olika språk baserat på dina behov.
+
+Det är också viktigt att komma ihåg att när du arbetar med större och mer komplicerade projekt, kan det vara mer effektivt att använda "char arrays" istället för `String`. Detta kan minimera minnesanvändningen och göra din kod mer lättläst och snabbare.
 
 ## Se även
 
-- [Arduino sprintf() referens](https://www.arduino.cc/reference/en/language/variables/data-types/strings/sprintf/)
-- [Arduino strcat() referens](https://www.arduino.cc/reference/en/language/functions/strings/stringobject/strcat/) 
-- [Tips for Reducing Arduino Sketch Size](https://www.arduino.cc/en/Guide/Troubleshooting#ought)
+- [Official Arduino documentation on String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [A tutorial on concatenating strings in Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
+- [A video tutorial on using `String()`](https://www.youtube.com/watch?v=gympLD6iOXo)

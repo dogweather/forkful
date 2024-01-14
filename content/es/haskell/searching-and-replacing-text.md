@@ -1,49 +1,46 @@
 ---
-title:    "Haskell: Buscar y reemplazar texto"
+title:    "Haskell: Buscando y reemplazando texto"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Reemplazar texto es una tarea común en la programación, ya sea para corregir errores o para actualizar información. Al utilizar Haskell, puedes hacerlo de manera eficiente y sencilla. En este artículo, aprenderás cómo realizar búsquedas y reemplazos de texto en Haskell.
+La búsqueda y reemplazo de texto es una habilidad fundamental en la programación, especialmente en lenguajes funcionales como Haskell. Con esta habilidad, puedes modificar grandes cantidades de texto con rapidez y precisión, ahorrándote tiempo y esfuerzo manual. Además, es una técnica útil para realizar cambios en proyectos más grandes y complejos.
 
-## Cómo
+## Cómo hacerlo
 
-Primero, importaremos el módulo `Text.Regex.TDFA` para utilizar sus funciones de búsqueda y reemplazo de texto. Luego, usaremos la función `subRegex` para realizar el reemplazo en una cadena de texto. Aquí hay un ejemplo de cómo reemplazar todas las apariciones de la palabra "mundo" por "Haskell":
-
-```Haskell
-import Text.Regex.TDFA
-
-texto = "Hola mundo, bienvenido a mi blog sobre Haskell."
-
-nuevoTexto = subRegex (mkRegex "mundo") texto "Haskell"
-
-print nuevoTexto -- salida: "Hola Haskell, bienvenido a mi blog sobre Haskell."
-```
-
-Podemos ver que la función `subRegex` recibe tres parámetros: una expresión regular, la cadena de texto original y la cadena de texto que queremos reemplazar. Además, utilizamos la función `mkRegex` para crear una expresión regular a partir de un patrón dado.
-
-También podemos utilizar la función `subRegexAll` para reemplazar todas las apariciones de la palabra "mundo" por "Haskell" y contar cuántos reemplazos se realizaron:
+Para realizar una búsqueda y reemplazo de texto en Haskell, necesitarás importar el módulo `Text.Regex.Posix` y definir una expresión regular. A continuación, puedes utilizar la función `subRegex` para realizar el reemplazo en una cadena de texto:
 
 ```Haskell
-nuevoTexto = subRegexAll (mkRegex "mundo") texto "Haskell"
+import Text.Regex.Posix
 
-print nuevoTexto -- salida: (2, "Hola Haskell, bienvenido a mi blog sobre Haskell.")
--- 2 representa la cantidad de reemplazos realizados
+-- Definir la expresión regular y el patrón a reemplazar
+regex :: String
+regex = "\\d+" -- Encuentra cualquier número en la cadena de texto
+
+-- Realizar el reemplazo
+subRegex regex "¡Hola 123 mundo!" "adiós" -- Salida: "¡Hola adiós mundo!"
 ```
 
-Además de la función `subRegex`, el módulo `Text.Regex.TDFA` también cuenta con otras funciones útiles para realizar búsquedas y reemplazos, como `matchOnceText` para encontrar la primera coincidencia de una expresión regular en una cadena de texto.
+También puedes usar la función `subRegexAll` para reemplazar todas las ocurrencias en una cadena de texto:
 
-## Profundizando
+```Haskell
+subRegexAll regex "123 ejemplo de 456 texto" "testing" -- Salida: "testing ejemplo de testing texto"
+```
 
-En Haskell, las expresiones regulares se representan como valores del tipo `Regex`, que se pueden crear utilizando la función `mkRegex`, como vimos anteriormente. Además, el módulo `Text.Regex.TDFA` ofrece un tipo de datos adicional llamado `RegexOptions`, que le permite al usuario especificar opciones personalizadas para su expresión regular, como el modo insensible a mayúsculas y minúsculas.
+## Inmersión profunda
 
-También es importante destacar que el reemplazo de texto en Haskell es inmutable, lo que significa que las cadenas de texto originales no se modifican, sino que se crean nuevas cadenas con el reemplazo realizado. Esto es una característica importante de Haskell ya que evita efectos secundarios inesperados.
+En Haskell, hay varias funciones disponibles para trabajar con expresiones regulares y realizar búsqueda y reemplazo de texto. Algunas de estas funciones incluyen `matchRegex`, `matchRegexAll` y `getAllMatches`, que permiten obtener información más detallada sobre las coincidencias encontradas en una cadena de texto.
+
+Además, el módulo `Text.Regex.Posix.ByteString` contiene versiones de estas funciones para trabajar con cadenas de bytes en lugar de cadenas de texto, lo que puede ser útil para proyectos que requieren una mayor eficiencia en el manejo de grandes cantidades de datos.
+
+En conclusión, la búsqueda y reemplazo de texto en Haskell puede parecer abrumadora al principio, pero una vez que entiendas cómo funciona y qué funciones están disponibles, puede ser una herramienta muy poderosa y útil en tu caja de herramientas de programación.
 
 ## Ver también
 
-- [Documentación oficial de Haskell sobre expresiones regulares](https://www.haskell.org/hoogle/?hoogle=Text.Regex.TDFA)
-- [Expresiones regulares en el libro de Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell/Understanding_arrows)
-- [Tutorial de expresiones regulares en FOSDEM](https://fosdem.org/2014/schedule/event/regexintro/)
+- [Documentación de Haskell sobre expresiones regulares](https://www.haskell.org/onlinereport/standard-prelude.html#regexps)
+- [Tutorial de búsqueda y reemplazo de texto en Haskell](https://wiki.haskell.org/Haskell_Regular_expressions)
+- [Ejemplos de búsqueda y reemplazo en Haskell en Rosetta Code](https://rosettacode.org/wiki/Search_and_replace)

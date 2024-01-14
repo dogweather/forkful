@@ -1,37 +1,32 @@
 ---
-title:    "Elixir: חיפוש והחלפת טקסט."
+title:    "Elixir: חיפוש והחלפת טקסט"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע
+## למה
 
-אנשים עשויים להשתמש בחיפוש והחלפת טקסט כדי להשתמש ברעיונות כמו כתיבת קוד ועריכת מחרוזות.
+השימוש בחיפוש והחלפה של טקסט הוא כלי חשוב בכל שפת תכנות, כולל ב-Elixir. יתרון השימוש בפונקציות מובנות במקום בכתיבת קוד מחדש הוא בביטחון וביעילות משופרת.
 
-# כיצד לעשות
+## איך לעשות זאת
 
-```Elixir
-# הנה דוגמה של החלפת טקסט באמצעות הפונקציה `String.replace`
+כדי לחלוף על טקסט ב-Elixir, ניתן להשתמש בפונקציה `String.replace/3`. פונקציה זו מקבלת שלושה פרמטרים: המחרוזת שבה כתוב הטקסט המקורי, הטקסט שברצונכם להחליף, והטקסט החדש שתרצו שיוחלף על ידו. לדוגמה:
+
+```elixir
 string = "שלום עולם"
-String.replace(string, "עולם", "מדינה")
-
-# Output: "שלום מדינה"
+new_string = String.replace(string, "עולם", "מאתנו")
 ```
 
-```Elixir
-# ניתן גם להשתמש בביטויים רגולריים כדי לחלוף על מחרוזות מתאימות
-string = "Is it spelled gray or grey?"
-Regex.replace(~r/grey/, string, "gray")
+במקרה זה, המחרוזת החדשה `new_string` תהיה "שלום מאתנו".
 
-# Output: "Is it spelled gray or gray?"
-```
+## חפירה מעמיקה
 
-# חפירה עמוקה
+בנוסף לפונקציה `String.replace/3`, ישנן פונקציות נוספות לחיפוש והחלפת טקסט ב-Elixir. למשל, `String.replace_leading/3` ו-`String.replace_trailing/3` נועדו להחליף רק את הטקסט המתחיל או נגמר בטקסט המקורי. ישנן גם פונקציות נוספות להתאמה עם ביטויים רגולריים, כמו `Regex.replace/3` ו-`Regex.replace_leading/3`. כל הפונקציות הללו מכילות בעצם את הפונקציה `String.replace/3`, אך מותאמות למטרות ספציפיות.
 
-חיפוש והחלפת טקסט הוא כלי חשוב לניהול טקסטים ולעיצוב קוד בדרך הכי יעילה ומהירה. בכדי ללמוד עוד על כיצד להשתמש בכלי זה במיטבה, תוכלו לעיין במדריך המפורט של Elixir על חיפוש והחלפת טקסט.
+## ראו גם
 
-# ראה גם
-
-- [Elixir נמצא באמצע קו המרה](https://elixir-lang.org/getting-started/introduction.html)
-- [מדריך נוסף על חיפוש והחלפת טקסט ב- Elixir](https://hexdocs.pm/elixir/String.html#replace/4)
+- [מדריך על השתמשות בפונקציות טקסט ב-Elixir](https://elixir-lang.org/getting-started/string-patterns-and-operations.html)
+- [מדריך על שימוש בביטויים רגולריים ב-Elixir](https://elixir-lang.org/getting-started/regex.html)
+- [תיעוד על הפונקציות המובנות להחלפת טקסט ב-Elixir](https://hexdocs.pm/elixir/String.html#functions-for-string-manipulation)

@@ -1,39 +1,41 @@
 ---
 title:    "Elixir: Convertir une chaîne en minuscules"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Tout programmeur est confronté à des tâches récurrentes, comme la conversion d'une chaîne de caractères en minuscules. Mais pourquoi est-il important de pouvoir le faire ? Tout simplement parce que cela facilite la comparaison entre les chaînes de caractères, car la casse peut affecter les résultats. De plus, de nombreuses bases de données et langages de programmation sont sensibles à la casse, il est donc crucial de pouvoir convertir des chaînes en minuscules pour éviter des erreurs lors des opérations.
+La conversion d'une chaîne de caractères en minuscules peut sembler être une action simple dans la programmation, mais elle peut avoir de nombreux usages pratiques. Cela peut notamment être utile pour comparer des chaînes de caractères de manière insensible à la casse ou pour normaliser les données entrantes.
 
 ## Comment faire
 
-Voici un exemple de code en Elixir pour convertir une chaîne en minuscules et afficher le résultat :
+Voici un exemple de code en Elixir pour convertir une chaîne de caractères en minuscules :
 
-```Elixir
-string = "Ici, nous convertissons une chaîne en minuscules."
-puts String.downcase(string)
+```elixir
+string = "Bonjour Elixir"
+lowercase_string = String.downcase(string)
+IO.puts lowercase_string
 ```
 
-Résultat :
+Cela produira la sortie suivante :
 
-```Elixir
-"ici, nous convertissons une chaîne en minuscules."
+```
+bonjour elixir
 ```
 
-Comme vous pouvez le constater, la fonction `downcase` de la bibliothèque standard Elixir permet de convertir facilement une chaîne en minuscules. Cette fonction accepte également un deuxième argument qui spécifie la langue à utiliser pour la conversion. Par défaut, c'est la langue anglaise qui est utilisée, mais vous pouvez spécifier d'autres langues comme le français ou l'espagnol.
+En utilisant la fonction `String.downcase/1` de la bibliothèque standard d'Elixir, nous pouvons facilement convertir n'importe quelle chaîne de caractères en minuscules.
 
 ## Plongée en profondeur
 
-Pour comprendre comment la fonction `downcase` fonctionne, il est important de connaître les concepts de base de la programmation fonctionnelle. En Elixir, les chaînes de caractères sont des listes de nombres correspondant aux codes ASCII des caractères. Ainsi, pour convertir une chaîne en minuscules, il suffit de parcourir cette liste et d'appliquer la fonction `String.downcase` à chaque code de caractère.
+La fonction `String.downcase/1` utilise l'algorithme de pliage de casse (casemap folding) pour effectuer la conversion vers la casse inférieure. En fin de compte, cela signifie que chaque caractère est remplacé par son équivalent en minuscules selon les règles du langage en cours d'utilisation.
 
-Un autre élément à prendre en compte est que la fonction `downcase` ne modifie pas la chaîne d'origine, mais renvoie une nouvelle chaîne en minuscules. Cela est dû au principe de l'immutabilité en Elixir, où les données ne peuvent pas être modifiées une fois qu'elles ont été créées.
+Par exemple, lors de l'utilisation de la langue française, la lettre "è" sera convertie en "e" minuscule. Il est important de noter que cela peut varier selon la langue et la configuration du système d'exploitation.
 
-# Voir aussi
+## Voir aussi
 
-- [Documentation officielle Elixir pour la fonction downcase](https://hexdocs.pm/elixir/String.html#downcase/2)
-- [Article sur l'immutabilité en Elixir](https://medium.com/elixir-mastery/the-concept-of-immutability-in-elixir-f3629a60659b)
-- [Tutoriel sur la programmation fonctionnelle en Elixir](https://elixir-lang.org/getting-started/introduction.html#functional-programming)
+- [Documentation sur `String.downcase/1`](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Guide du développeur Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Chaînes de caractères en Elixir : un aperçu](https://www.poignant.guide/book/chapters/string-grammar.html)

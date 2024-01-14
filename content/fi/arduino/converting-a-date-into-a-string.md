@@ -1,57 +1,43 @@
 ---
-title:    "Arduino: Päivämäärän muuntaminen merkkijonoksi"
+title:    "Arduino: Muunna päivämäärä merkkijonoksi."
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+### Miksi
+Oletko koskaan halunnut muuttaa päivämäärän merkkijonoksi Arduino-ohjelmoinnin yhteydessä? Tässä blogikirjoituksessa käymme läpi, miksi tämä voi olla hyödyllistä ja miten se tehdään.
 
-Miksi haluat muuntaa päivämäärän merkkijonoksi? Päivämäärän muuntaminen merkkijonoksi on hyödyllinen tekniikka, jota voit käyttää esimerkiksi tekstinäytöllä tai tallennettaessa tietokantaan. Tämä antaa sinulle mahdollisuuden näyttää päivämäärän haluamassasi muodossa ja käsitellä sitä helpommin.
-
-## Kuinka
-
-Merkkijonojen käyttäminen Arduino-ohjelmoinnissa voi vaikuttaa monimutkaiselta, mutta se on itse asiassa varsin helppoa. Sinun tarvitsee vain käyttää time.h-kirjastoa ja sen sisältämiä valmiita funktioita. Alla on esimerkki, joka näyttää, kuinka muuntaa nykyinen päivämäärä merkkijonoksi:
+### Miten se tehdään
+Kun haluat muuttaa päivämäärän merkkijonoksi, voit käyttää `toString()` funktiota yhdessä `String` luokan kanssa. Alla on esimerkki koodi, jossa päivämäärä muutetaan merkkijonoksi ja tulostetaan sarjamonitorille:
 
 ```Arduino
-#include <Time.h>
+#include <RTClib.h> // sisältää RTC-kirjaston
+RTC_DS1307 rtc; // luo RTC-olion
 
 void setup() {
-  // Alustetaan sarjaportti
-  Serial.begin(9600);
+  Serial.begin(9600); // käynnistää sarjamonitorin
+  rtc.begin(); // alustaa RTC:n
 }
 
 void loop() {
-  // Haetaan nykyinen aika
-  time_t nyt = now();
-
-  // Muutetaan aika merkkijonoksi
-  String paivamaara = String(day(nyt)) + "." + String(month(nyt)) + "." + String(year(nyt));
-
-  // Tulostetaan merkkijono sarjaporttiin
-  Serial.println(paivamaara);
-
-  // Odota 1 sekunti
-  delay(1000);
+  DateTime now = rtc.now(); // tallentaa nykyisen ajanmuutoksen muuttujaan
+  String date = now.toString("dd/MM/yyyy"); // muuntaa päivämäärän merkkijonoksi
+  Serial.println(date); // tulostaa merkkijonon sarjamonitorille
+  delay(1000); // odottaa sekunnin
 }
 ```
 
-Yllä olevassa koodissa käytetään valmiita day(), month() ja year() funktioita, jotka palauttavat päivän, kuukauden ja vuoden numeroina. Ne yhdistetään String-funktiolla ja tulostetaan sarjaporttiin.
-
-**Output:**
-
+Koodin tulostama sarjamonitori näyttäisi tältä:
 ```
-26.9.2021
+23/08/2021
 ```
 
-## Syvällinen tarkastelu
+### Syväsukellus
+Päivämäärän muuttaminen merkkijonoksi voi olla hyödyllistä esimerkiksi silloin, kun haluat tulostaa päivämäärän helposti luettavassa muodossa tai tallentaa sen johonkin tiedostoon. `DateTime` luokassa on monia muitakin käteviä funktioita, kuten `day()`, `month()` ja `year()`, joiden avulla voit käyttää erikseen päivää, kuukautta ja vuotta, jos haluat muokata päivämäärää enemmän.
 
-Arduino-ohjelmointiympäristö tarjoaa myös muita valmiita funktioita, kuten hour(), minute() ja second(), joilla voit hakea tarkempaa aikaa. Merkkijonon muuntamisen lisäksi voit myös muuntaa ajan millisekunneiksi käyttämällä millis() funktiota.
-
-Voit myös käyttää erilaisia muotoilumerkkejä muotoillaksesi päivämäärän haluamallasi tavalla. Esimerkiksi voit lisätä merkinnän "ti" päivän jälkeen käyttämällä merkkiä "%a" tai lisätä etunollan numeroiden eteen käyttämällä merkkiä "%02d". Täydellinen lista kaikista muotoilumerkeistä löytyy täältä: http://www.cplusplus.com/reference/ctime/strftime/
-
-## Katso myös
-
-- Arduino String-tietotyyppi: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- Millis() funktio: https://www.arduino.cc/reference/en/language/functions/time/millis/
-- Muotoilumerkit: http://www.cplusplus.com/reference/ctime/strftime/
+### Katso myös
+- [RTC-kirjasto](https://www.arduino.cc/reference/en/libraries/rtclib/)
+- [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [RTC DS1307 moduuli](https://www.arduino.cc/en/Main/ArduinoBoardRTCDS1307)

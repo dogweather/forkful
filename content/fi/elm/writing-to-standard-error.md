@@ -1,47 +1,50 @@
 ---
-title:    "Elm: Kirjoittaminen standardivirheeseen"
+title:    "Elm: Tietokoneohjelmoinnissa standardivirheen kirjoittaminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää standardivirheen kirjoittamista
+## Miksi
 
-Standardivirheen kirjoittaminen on tärkeä osa ohjelmointia, koska se auttaa kehittäjiä tunnistamaan ja korjaamaan ohjelmakoodeissa olevia virheitä. Kun ohjelma luo virheen, se kirjoitetaan standardivirheeseen ja näin kehittäjä voi tarkastella virheen syytä ja korjata sen.
+Miksi kirjoittaa standardi virheeseen (standard error)? Se on ohjelmoinnin tärkeä osa, jota käytetään virheiden hallintaan ja debuggaamiseen.
 
-## Kuinka tehdä
+## Miten
 
-```Elm
-import Debug exposing (crash)
- 
-calculateArea : Float -> Float -> String
-calculateArea length width =
-   if length * width < 0 then 
-      crash "Nelijyrmiön alue ei voi olla negatiivinen!"
-   else
-      "Nelijyrmiön alue on " ++ toString (length * width)
-```
-
-Tässä esimerkissä käytämme Elm Debug-moduulia luomaan virheilmoituksen, jos nelijyrmiön alue on negatiivinen. Tämä auttaa meitä tunnistamaan ja korjaamaan virheen ohjelmakoodissa. Tarkastelkaamme nyt esimerkkiä ja sen tulostetta.
+Seuraavassa on esimerkkejä Elm-koodista ja tulostuksesta. Koodi-kappaleet on merkitty "```Elm ... ```"-merkinnällä.
 
 ```Elm
-calculateArea 5 3
+-- Luo virheilmoitus
+error "Tämä on virheilmoitus!"
+
+-- Käsittele virheilmoitus
+case 1 / 0 of
+    Result.Ok result ->
+        -- Jos tulos on ok, tulosta se
+        Debug.toString result
+
+    Result.Err err ->
+        -- Jos tulos on virhe, tulosta virheilmoitus
+        error (Debug.toString err)
 ```
 
-Tulos: Nelijyrmiön alue on 15
+Tulostus:
 
-```Elm
-calculateArea -2 4
+```
+Tämä on virheilmoitus! -- Ensimmäinen esimerkki
+"Division by zero error" -- Toinen esimerkki
 ```
 
-Tulos: Tämä luo virheilmoituksen "Nelijyrmiön alue ei voi olla negatiivinen!", mikä auttaa meitä tunnistamaan ja korjaamaan virheen.
+## Syvällisempi tarkastelu
 
-## Syvällisempi tieto standardivirheen kirjoittamisesta
+Standardi virheen kirjoittamisella on muutamia huomionarvoisia seikkoja:
 
-Ohjelmakoodien lukeminen ja virheiden tunnistaminen voi olla haastavaa, mutta standardivirheen kirjoittaminen auttaa kehittäjiä selkeyttämään ohjelmakoodia ja tunnistamaan virheitä helpommin. On myös tärkeää muistaa, että standardivirheen kirjoittaminen ei ole ainoa tapa käsitellä virheitä ohjelmakoodissa, vaan on olemassa muita tapoja, kuten käyttäjäystävällisten virheilmoitusten luominen.
+- Virheen käsittely tapahtuu `case`-lauseessa, jossa joko `Result.Ok` tai `Result.Err` menestyvät riippuen tuloksesta
+- `Debug.toString` muuttaa arvon merkkijonoksi, jotta sen voi tulostaa
+- `error`-funktioon voidaan antaa joko merkkijono tai `Debug.toString`-arvo
 
 ## Katso myös
 
-- [Elm-sivuston virheenkäsittelydokumentaatio](https://guide.elm-lang.org/error_handling/)
-- [Ohjeet virheenhallintaan Elmissä](https://elmprogramming.com/error-handling.html)
-- [Debug-moduulin käyttö Elm-ohjelmoinnissa](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
+- [Error handling in Elm](https://elm-lang.org/docs/error-handling)
+- [Elm standard library documentation](https://package.elm-lang.org/packages/elm/core/latest/)

@@ -1,72 +1,50 @@
 ---
 title:    "Java: Säännöllisten lausekkeiden käyttö"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Javassa?
+## Miksi käyttää säännöllisiä lausekkeita Java-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat voimakas työkalu, joka mahdollistaa monimutkaisten tekstien etsimisen ja muokkaamisen Javassa. Niiden avulla voit suorittaa tarkkoja hakuja ja korvauksia yhdellä yksinkertaisella koodirivillä. Ne ovat erityisen hyödyllisiä, kun sinun on käsiteltävä suuria tekstimääriä, kuten tiedostoja tai käyttäjän antamia syötteitä.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja, kun halutaan käsitellä tekstipohjaista dataa Java-ohjelman sisällä. Ne mahdollistavat monimutkaisempien hakutoimintojen suorittamisen lyhyillä ja tehokkailla koodinpätkillä. Käyttämällä säännöllisiä lausekkeita voit esimerkiksi etsiä ja korvata tiettyjä merkkijonoja tai suodattaa tietoja haluamallasi tavalla.
 
-## Miten käyttää säännöllisiä lausekkeita Java-koodissa?
+## Miten käyttää säännöllisiä lausekkeita Java-ohjelmoinnissa?
 
-Säännöllisiin lausekkeisiin liittyvät Javan luokat ja metodit löytyvät paketista `java.util.regex`. Sinun on tuotava tämä paketti sisällyttääksesi ne koodiisi. 
-
-### Haku ja korvaus
-
-Yksi yleisimmistä käyttötarkoituksista säännöllisille lausekkeille Javassa on tekstien haku ja korvaus. Voit käyttää `Pattern` ja `Matcher` -luokkia tekstin hakuun ja siihen liittyviin korvauksiin.
+Säännöllisten lausekkeiden käyttö Java-ohjelmoinnissa tapahtuu pääasiassa java.util.regex-paketin kautta. Voit aloittaa käyttämällä säännöllisiä lausekkeita luomalla Pattern-objektin, joka ottaa vastaan säännöllisen lausekkeen ja halutun merkkijonon. Tämän jälkeen voit käyttää Matcher-objektia suorittamaan haluamasi toiminnot. Alla on yksinkertainen esimerkki:
 
 ```Java
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class RegexExample {
+public class RegularExpressions {
+
     public static void main(String[] args) {
-        String text = "Tämä on esimerkkiteksti, jossa on muutama luku 123 ja 456.";
-        String regex = "\\d+"; // Haku kaikista numeroista
-        String korvaus = "XXX"; // Korvausmerkintä
-
-        // Luo pattern-olio
+        String inputString = "Tämä on esimerkki tekstipohjaisesta datasta";
+        String regex = "esimerkki";
         Pattern pattern = Pattern.compile(regex);
-        
-        // Suorita haku tekstistä
-        Matcher matcher = pattern.matcher(text);
-
-        // Korvaa kaikki numerot merkillä XXX ja tulosta tulos
-        String korvattuTeksti = matcher.replaceAll(korvaus);
-        System.out.println(korvattuTeksti);
-    }
-}
-
-```
-**Tulostaa:** Tämä on esimerkkiteksti, jossa on muutama luku XXX ja XXX.
-
-### Split ja match-esimerkki
-
-Voit myös käyttää säännöllisiä lausekkeita tekstin erottamiseen `split` -metodin avulla. Voit käyttää myös säännöllisiä lausekkeita tekstin vertaamiseen `matches` -metodilla.
-
-```Java
-import java.util.regex.*;
-
-public class RegexExample {
-    public static void main(String[] args) {
-        String text = "Hello,world! Welcome-to Java.";
-        String regex = "[!,-]"; // Halkaisija huutomerkistä tai viivasta
-        String[] osat = text.split(regex); // Osaa sanoja huutomerkistä tai viivasta
-
-        // Tulosta osat
-        for (String osa : osat) {
-            System.out.println(osa);
-        }
-
-        // Teksti vastaa ehtoa
-        if (text.matches(".*Hello.*Java.*")) {
-            System.out.println("Teksti sisältää Hello ja Java!");
-        } else {
-            System.out.println("Teksti ei sisällä Hello ja Java.");
+        Matcher matcher = pattern.matcher(inputString);
+        while (matcher.find()) {
+            System.out.println("Löytyi osumat: " + matcher.group());
         }
     }
 }
+```
+
+Koodin tulos:
 
 ```
-**Tu
+Löytyi osumat: esimerkki
+```
+
+Tämä yksinkertainen esimerkki etsii annetusta merkkijonosta säännöllisen lausekkeen "esimerkki" ja tulostaa kaikki löydetyt osumat.
+
+## Syvempää tietoa säännöllisten lausekkeiden käytöstä
+
+Säännölliset lausekkeet ovat hyvin monipuolisia ja niillä voi suorittaa monenlaisia toimintoja, kuten esimerkiksi metakarakterien käyttöä, jolla voit hakea merkkijonoja tiettyjen kriteerien mukaan. Voit myös käyttää säännöllisiä lausekkeita merkkijonojen muotoiluun ja validointiin. On tärkeää tutustua säännöllisten lausekkeiden eri ominaisuuksiin ja toimintoihin, jotta voit hyödyntää niitä tehokkaasti Java-ohjelmoinnissa.
+
+## Katso myös
+
+- Java Regular Expressions Tutorial: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+- Regular Expressions Cheat Sheet: https://www.rexegg.com/regex-quickstart.html

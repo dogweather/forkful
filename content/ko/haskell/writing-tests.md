@@ -1,82 +1,61 @@
 ---
-title:    "Haskell: 프로그래밍에서의 테스트 작성"
+title:    "Haskell: 테스트 작성하기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 테스트 작성에 참여할 이유
+# 왜
 
-테스트는 소프트웨어 개발에서 중요한 부분입니다. 테스트는 코드의 안정성을 보장하고 버그를 최소화하는 데 도움이됩니다. 또한 테스트는 코드를 더 잘 이해하고 유지 보수하기 쉽게 만드는 데 도움이됩니다.
+소프트웨어와 프로그래밍 분야에서 가장 중요한 것 중 하나는 코드를 테스트하는 것입니다. 왜냐하면 테스트를 통해 코드의 안정성과 신뢰성을 보장할 수 있기 때문입니다. 따라서 프로그래머나 개발자가 코드를 작성할 때 테스트를 케어하며 작업하는 것은 매우 중요합니다.
 
-# 어떻게: 테스트 작성 방법
+## 작성 방법
 
-테스트를 작성하는 것은 단순합니다. 우리는 `hspec`라는 테스트 프레임워크를 사용할 것입니다. 먼저 `hspec`을 설치해야합니다. `cabal`, `stack` 또는 `ghc`을 사용하여 설치할 수 있습니다. 다음 코드를 사용하여 `hspec`을 설치하십시오.
+Haskell에서 테스트를 작성하는 방법은 매우 간단합니다. 먼저 테스트 프레임워크인 HUnit을 설치해야 합니다. 그리고 ```import Test.HUnit```을 통해 모듈을 불러오고, 테스트 케이스를 작성합니다. 일반적으로 각 함수마다 하나의 테스트 케이스를 작성하며, 이를 하나의 테스트 스위트로 묶어서 실행합니다.
 
-```Haskell
-cabal install hspec
-```
+예를 들어, 다음은 간단한 덧셈 함수를 테스트하는 코드입니다.
 
 ```Haskell
-stack install hspec
-```
+import Test.HUnit
 
-```Haskell
-ghc-pkg install hspec
-```
+-- 덧셈 함수 코드
+add :: Int -> Int -> Int
+add a b = a + b
 
-이제 `hspec`을 사용하여 테스트를 작성해 봅시다. 우리는 `reverse`라는 함수를 테스트 할 것입니다. 다음 코드를 사용하여 `reverse` 함수를 작성하십시오.
+-- 테스트 케이스
+testAddition :: Test
+testAddition = TestCase $ assertEqual "add 함수가 제대로 동작하지 않습니다." 10 (add 4 6)
 
-```Haskell
-reverse :: [a] -> [a]
-reverse [] = []
-reverse (x:xs) = reverse xs ++ [x]
-```
+-- 테스트 스위트
+tests :: Test
+tests = TestList [TestLabel "덧셈 함수 테스트" testAddition]
 
-이후 테스트를 작성하십시오. 다음과 같은 `spec.hs`이라는 파일을 작성하십시오.
-
-```Haskell
-import Test.Hspec
-import Test.QuickCheck
-import Control.Exception (evaluate)
-
-reverse :: [a] -> [a]
-reverse [] = []
-reverse (x:xs) = reverse xs ++ [x]
-
+-- 실행
 main :: IO ()
-main = hspec $ do
-  describe "reverse" $ do
-    it "reverses a list" $ do
-      reverse [1,2,3] `shouldBe` [3,2,1]
-    it "reverses an empty list to an empty list" $ do
-      reverse [] `shouldBe` ([] :: [Int])
+main = runTestTT tests
 ```
 
-마지막으로 `cabal spec` 또는 `stack spec`을 사용하여 테스트를 실행하십시오.
+위 코드를 실행하면 콘솔에 테스트 결과가 나타납니다. 그 결과는 다음과 같습니다.
 
-`cabal spec`을 사용한다면, 우리는 `package.yaml` 파일에 테스트를 추가해야합니다.
+```
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Counts {cases = 1, tried = 1, errors = 0, failures = 0}
 
-```yaml
-tests:
-  spec:
-    main: spec.hs
+Finished in 0.0001 seconds
 ```
 
-# 심층 분석: 테스트 작성에 대해서
+만약 테스트 케이스가 실패하는 경우, 이를 표시해줍니다. 따라서 위와 같이 제대로 동작하는 경우 모든 테스트 케이스가 통과하며 콘솔에 결과가 출력됩니다.
 
-테스트 작성에 대해 깊이 알아보겠습니다. 테스트를 작성함으로써 정확한 입출력을 확인하고 코드의 안정성을 보장할 수 있습니다. 또한 테스트를 작성하면 코드를 더 잘 이해할 수 있고, 유지 보수를 쉽게 할 수 있습니다.
+## 깊이있는 탐구
 
-하지만 테스트를 작성함으로써 모든 버그를 제거할 수 있는 것은 아닙니다. 심층 분석을 통해 테스트를 더 잘 작성할 수 있고, 코드의 모든 경우를 커버할 수 있습니다.
+테스트를 작성할 때 주의해야 할 몇 가지 사항이 있습니다. 첫째, 테스트의 범위는 충분히 넓어야 합니다. 너무 작은 단위의 테스트는 코드를 신뢰할 수 없게 만들 수 있습니다. 또한 각 테스트 케이스는 독립적이어야 합니다. 한 테스트 케이스가 다른 테스트 케이스에 영향을 주거나 의존하지 않도록 작성해야 합니다.
 
-또한 `hspec` 외에도 다른 테스트 프레임워크와 도구를 사용하여 테스트를 작성하고 실행할 수 있습니다. 이는 개발 환경에 따라 다를 수 있습니다.
+둘째, 어떤 시나리오에서도 코드가 일관되게 동작하도록 여러 테스트 케이스를 작성해야 합니다. 특히 예외 상황에 대한 테스트를 꼭 포함하도록 주의해야 합니다. 예외 상황에서도 코드가 제대로 동작하도록 테스트해야 실제로 사용할 때 불안정한 동작을 방지할 수 있습니다.
+
+마지막으로, 테스트 코드도 역시 관리되어야 합니다. 이는 일반적으로 작성한 코드보다 더 중요한 부분입니다. 테스트 코드는 만들어진 코드가 변경되면 함께 변경되어야 하며, 필요한 경우 테스트 코드를 수정해야 합니다.
 
 # 더 알아보기
 
-* [Hspec 공식 문서](http://hspec.github.io)
-* [우아한 형제들 기술 블로그 - 구조적인 프로그래밍: 테스트 코드 작성하기](https://woowabros.github.io/experience/2017/12/18/structural-programming-tests.html)
-* [프로그래밍언어 Haskell 정리 - 테스트하기](https://github.com/LeeKyoungIl/haskell/blob/master/11.test.md)
-
-# 참고
-
-이 문서는 [Haskell Programming from First Principles](http://
+- [HUnit 사용

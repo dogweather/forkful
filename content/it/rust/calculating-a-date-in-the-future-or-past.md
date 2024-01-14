@@ -1,63 +1,58 @@
 ---
 title:    "Rust: Calcolare una data nel futuro o nel passato"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se ti sei mai chiesto come calcolare una data nel futuro o nel passato utilizzando il linguaggio di programmazione Rust, allora questo articolo è quello che fa per te. Imparerai come utilizzare le librerie standard di Rust per gestire le date e i tempi in modo semplice ed efficiente.
+Ci sono molti motivi per cui qualcuno potrebbe voler calcolare una data in futuro o in passato, come per esempio per verificare quando un determinato evento potrebbe accadere o per pianificare una vacanza. In ogni caso, imparare come fare questo tipo di calcoli utilizzando Rust può essere molto utile e divertente.
 
-## Come fare 
+## Come
 
-Per calcolare una data in futuro o passato in Rust, è necessario utilizzare il modulo `chrono` della libreria standard. Innanzitutto, sarà necessario importare il modulo utilizzando la seguente dichiarazione:
-
-```Rust
-use chrono::prelude::*;
-```
-
-Successivamente, possiamo creare un oggetto `DateTime` che rappresenta una data specifica, utilizzando il metodo `new` e specificando l'anno, il mese, il giorno, l'ora, i minuti e i secondi. Ad esempio, se volessimo rappresentare il 1 gennaio 2022 alle ore 10:30:00, useremmo il seguente codice:
+Per calcolare una data in futuro o in passato in Rust, dobbiamo prima di tutto importare il modulo `chrono`, che ci permette di gestire date e orari in modo semplice e intuitivo. Inoltre, dovremo utilizzare i tipi di dato `DateTime` e `Duration` per fare i nostri calcoli.
 
 ```Rust
-let date = Utc.ymd(2022, 1, 1).and_hms(10, 30, 0);
+use chrono::{DateTime, Duration, Utc}; // Importa il modulo chrono
 ```
 
-Per calcolare una data nel futuro o nel passato, possiamo utilizzare il metodo `with_duration_since` passando come parametro un oggetto `Duration` che rappresenta la differenza di tempo desiderata. Ad esempio, se volessimo ottenere la data 10 giorni dopo la data creata in precedenza, useremmo il seguente codice:
+Per esempio, se vogliamo ottenere la data di oggi, possiamo utilizzare il metodo `now()` e specificare il fuso orario `Utc`:
 
 ```Rust
-let new_date = date.with_duration_since(Duration::days(10));
+let oggi = Utc::now();
 ```
 
-Infine, per ottenere il valore effettivo della data in un formato leggibile, possiamo utilizzare il metodo `to_rfc2822` come mostrato di seguito:
+Per calcolare una data in futuro o in passato, dobbiamo utilizzare il metodo `checked_add()` o `checked_sub()` della struttura `DateTime`. Questi metodi ci permettono di aggiungere o sottrarre una `Duration` dalla data corrente. Vediamo un esempio pratico:
 
 ```Rust
-println!("La nuova data è: {}", new_date.to_rfc2822());
+let oggi = Utc::now(); // Data di oggi
+let un_mese = Duration::days(30); // Durata di 30 giorni
+let tra_un_mese = oggi.checked_add(un_mese); // Data tra un mese
 ```
 
-Il codice completo del nostro esempio sarebbe il seguente:
+Possiamo anche utilizzare il metodo `format()` per formattare la data secondo il nostro gusto, per esempio per ottenere una stringa nella forma `giorno/mese/anno`:
 
 ```Rust
-use chrono::prelude::*;
-
-fn main() {
-    let date = Utc.ymd(2022, 1, 1).and_hms(10, 30, 0);
-    let new_date = date.with_duration_since(Duration::days(10));
-    println!("La nuova data è: {}", new_date.to_rfc2822());
-}
+let data = oggi.format("%d/%m/%Y");
+println!("La data di oggi è: {}", data); // Output: La data di oggi è: 10/06/2021
 ```
 
-E l'output sarebbe:
+## Deep Dive
 
+Se vogliamo andare più in profondità, possiamo approfondire il concetto di data e orario in Rust. In particolare, la struttura `DateTime` è composta da tre parti: data, orario e fuso orario. Possiamo ottenere ciascuna di queste parti utilizzando i metodi `date()`, `time()` e `timezone()` rispettivamente.
+
+Inoltre, possiamo anche convertire una data in un timestamp utilizzando il metodo `timestamp()` e specificando il fuso orario:
+
+```Rust
+let oggi = Utc::now(); // Data di oggi
+let timestamp = oggi.timestamp(); // Timestamp di oggi
+println!("La data di oggi in timestamp è: {}", timestamp); // Output: La data di oggi in timestamp è: 1623334978
 ```
-La nuova data è: Tue, 11 Jan 2022 10:30:00 +0000
-```
-
-## Approfondimento
-
-La libreria `chrono` di Rust offre una vasta gamma di funzionalità per gestire le date e i tempi in modo preciso e affidabile. Ad esempio, è possibile utilizzare il metodo `with_timezone` per impostare il fuso orario della data, il metodo `with_timezone_offset` per specificare un offset rispetto al fuso orario UTC e molto altro ancora. Per ulteriori dettagli e informazioni sulla libreria, si consiglia di consultare la documentazione ufficiale.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di `chrono`](https://docs.rs/chrono/)
-- [Tutorial su come gestire le date in Rust](https://www.codementor.io/@arpitbhayani/handling-dates-and-time-in-rust-o5m4pbgmt)
+* Documentazione ufficiale di `chrono`: https://docs.rs/chrono/
+* Tutorial su come calcolare una data in Rust: https://rosettacode.org/wiki/Relative_date_calculations#Rust
+* Approfondimento sulla gestione delle date in Rust: https://blog.logrocket.com/dates-and-times-in-rust/

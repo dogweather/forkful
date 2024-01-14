@@ -1,52 +1,55 @@
 ---
-title:    "Arduino: Iniziare un nuovo progetto"
+title:    "Arduino: Avviare un nuovo progetto"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché Iniziare un Nuovo Progetto con Arduino
+## Perché
 
-Se sei appassionato di tecnologia e desideri imparare a programmare, Arduino è il punto di partenza perfetto. Questa scheda di sviluppo open-source ti permette di creare progetti elettronici interattivi senza la necessità di una grande esperienza di programmazione. In questo articolo, ti mostreremo come iniziare un nuovo progetto con Arduino e alcune informazioni più dettagliate su come funziona.
+Ci sono molte ragioni per iniziare un nuovo progetto di programmazione con Arduino. Forse vuoi creare una luce automatica per la tua casa, o un robot che può muoversi e raccogliere oggetti. O forse semplicemente vuoi imparare qualcosa di nuovo e divertente!
 
-## Come Iniziare un Nuovo Progetto con Arduino
+## Come fare
 
-Per iniziare, avrai bisogno di una scheda Arduino, un cavo USB, un computer e il software Arduino IDE. Una volta che hai tutto l'hardware, segui questi passaggi:
+Per iniziare un nuovo progetto con Arduino, avrai bisogno di questi passi:
 
-1. Connetti la scheda Arduino al computer tramite il cavo USB.
-2. Apri il software Arduino IDE sul tuo computer.
-3. Seleziona il modello di scheda Arduino che stai utilizzando.
-4. Crea un nuovo sketch cliccando su "File" e poi su "Nuovo".
-5. Il codice di esempio "Blink" verrà creato automaticamente. Puoi modificarlo o scriverne uno nuovo da zero.
-6. Assicurati di avere selezionato la porta corretta nella barra degli strumenti.
-7. Carica il codice sulla scheda Arduno cliccando sull'icona "Carica".
+1. Acquista una scheda Arduino e i relativi componenti (ad esempio, sensori, motori, luci, ecc.).
+2. Scarica l'IDE di Arduino e installalo sul tuo computer.
+3. Connetti la tua scheda Arduino al computer tramite cavo USB.
+4. Progetta il tuo circuito utilizzando una breadboard.
+5. Scrivi il codice nel tuo IDE di Arduino e caricalo sulla scheda Arduino.
+6. Testa il tuo circuito e il codice per assicurarti che funzioni come previsto.
 
-Se il led di accensione sulla scheda Arduino inizia a lampeggiare, significa che hai caricato con successo il tuo primo programma su di essa!
+Ecco un esempio di codice che fa accendere un LED quando viene premuto un pulsante:
 
-```Arduino
+```
+#include <Arduino.h>
+
+#define LED 13
+#define BUTTON 2
+
 void setup() {
-  pinMode(13, OUTPUT); //imposta il pin digitale 13 come output
+  pinMode(LED, OUTPUT);
+  pinMode(BUTTON, INPUT_PULLUP);
 }
 
 void loop() {
-  digitalWrite(13, HIGH); //accende il led collegato al pin 13
-  delay(1000); //aspetta 1 secondo 
-  digitalWrite(13, LOW); //spegne il led collegato al pin 13 
-  delay(1000); //aspetta 1 secondo
+  if (digitalRead(BUTTON) == LOW) {
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  }
 }
 ```
 
-## Approfondimento: Come Iniziare un Nuovo Progetto con Arduino
+## Approfondimenti
 
-Oltre ai passaggi sopra descritti, ci sono alcune cose che dovresti sapere prima di iniziare a lavorare su un nuovo progetto con Arduino:
+Per iniziare un nuovo progetto con Arduino, è importante avere una buona comprensione dei suoi componenti principali: la scheda, i pin, la breadboard e il codice. Inoltre, è utile avere familiarità con alcune nozioni di elettronica, come la resistenza e la corrente. Assicurati di avere sempre un buon manuale di riferimento per consultare quando hai delle domande.
 
-- Analizza la tua idea di progetto e decidi quali componenti e sensori saranno necessari. Puoi trovare una vasta gamma di sensori compatibili con Arduino disponibili online.
-- Tieni sempre a mente la sicurezza elettrica quando utilizzi i componenti elettronici.
-- Utilizza una breadboard per collegare i componenti e testare il tuo progetto prima di saldarli.
-- Non esitare a cercare online tutorial e guide per aiutarti durante la fase di sviluppo.
+## Vedi anche
 
-# Guarda anche
-
-- [Come Collegare un Sensore alla Tua Scheda Arduino](https://www.arduino.cc/en/Tutorial/Sensor)
-- [10 Progetti per Principianti con Arduino](https://www.popsci.com/make-arduino-project/)
-- [Arduino Tutorial - Impara i Fondamenti della Programmazione](https://www.instructables.com/class/Arduino-Class/)
+- [Sito ufficiale di Arduino](https://www.arduino.cc/)
+- [Guida completa all'IDE di Arduino](https://www.arduino.cc/en/Guide/HomePage)
+- [Tutorial su Arduino di Adafruit](https://learn.adafruit.com/category/learn-arduino)
+- [Forum su Arduino di Arduino.cc](https://forum.arduino.cc/)

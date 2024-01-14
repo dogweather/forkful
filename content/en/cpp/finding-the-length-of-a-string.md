@@ -1,74 +1,64 @@
 ---
 title:    "C++ recipe: Finding the length of a string"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-String manipulation is a common task in software development, and finding the length of a string is a crucial part of it. Whether you are creating a word processing program or building a website, knowing how to find the length of a string can save you time and effort.
+As a programmer, it's important to have a good understanding of the basics of any programming language. One such basic function in C++ is finding the length of a string. Whether you're new to C++ or brushing up on your skills, knowing how to find the length of a string is essential for writing efficient and error-free code.
 
 ## How To
 
-To find the length of a string in C++, we can use the `length()` function from the `string` class. Let's take a look at an example:
+To find the length of a string in C++, you can use the built-in function `strlen()`, which is included in the `<string.h>` library.
 
 ```C++
-#include <iostream>
-#include <string>
+#include <iostream> 
+#include <string.h> 
 
-using namespace std;
+using namespace std; 
 
-int main() {
-    string str = "Hello World";
-    int length = str.length();
-
-    cout << "The length of the string is: " << length << endl;
-
-    return 0;
-}
+int main() 
+{ 
+  char str[] = "Hello World!"; 
+  int length = strlen(str); 
+  cout << "The length of the string is: " << length << endl; 
+  return 0; 
+} 
 ```
 
-Output:
-```
-The length of the string is: 11
-```
+This code will output: `The length of the string is: 12`. 
 
-In this example, we first declare a string variable `str` and assign it the value "Hello World". Then, we use the `length()` function to find the length of the string and store it in an integer variable `length`. Finally, we print out the length of the string using `cout`.
-
-We can also use the `size()` function to achieve the same result. Here's an example:
+You can also use the `size()` function to find the length of the string, which is included in the `<string>` library.
 
 ```C++
-#include <iostream>
-#include <string>
+#include <iostream> 
+#include <string> 
 
-using namespace std;
+using namespace std; 
 
-int main() {
-    string str = "Hello World";
-    int size = str.size();
-
-    cout << "The size of the string is: " << size << endl;
-
-    return 0;
-}
+int main() 
+{ 
+  string str = "Hello World!"; 
+  int length = str.size(); 
+  cout << "The length of the string is: " << length << endl; 
+  return 0; 
+} 
 ```
 
-Output:
-```
-The size of the string is: 11
-```
-
-The `length()` and `size()` functions have the same functionality, and you can use either of them to find the length of a string.
+This code will also output: `The length of the string is: 12`.
 
 ## Deep Dive
 
-Behind the scenes, the `length()` and `size()` functions use a hidden variable stored inside the `string` class called `length_` to keep track of the string's length. This variable is initialized when the string is created and is updated whenever the string is modified. By accessing this variable, the `length()` and `size()` functions can quickly return the length of the string without having to iterate through the entire string.
+The `strlen()` function calculates the length of a string by counting the number of characters until it reaches the null-terminating character, `'\0'`. This character marks the end of a string in C++.
 
-It is essential to note that the length of a string in C++ does not include the null character `'\0'` at the end of the string. This is because the null character is only used to mark the end of the string and is not considered as part of the string's contents.
+Similarly, the `size()` function counts the number of characters in a string until it reaches the null-terminating character. However, in this case, the null-terminating character is included in the count.
+
+It's important to note that `strlen()` and `size()` only work on null-terminated strings, meaning the string must end with `'\0'`. If the string does not have this character, the functions may return an incorrect length value.
 
 ## See Also
 
-- [C++ string class documentation](https://www.cplusplus.com/reference/string/string/)
-- [C++ string length and size functions documentation](https://www.cplusplus.com/reference/string/string/length/)
-- [C++ string length and size functions tutorial](https://www.learncpp.com/cpp-tutorial/3-8a-stdstring-length-and-size/)
+- [C++ string functions](https://www.programiz.com/cpp-programming/string-functions)
+- [Difference between `strlen()` and `size()`](https://stackoverflow.com/questions/825187/difference-between-strlen-and-size-in-c)

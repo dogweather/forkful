@@ -1,55 +1,40 @@
 ---
 title:    "TypeScript: Verificando se um diretório existe"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que verificar se um diretório existe em TypeScript?
+# Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é uma tarefa importante em muitos projetos de programação em TypeScript. Isso pode ser útil para garantir que um determinado diretório esteja disponível antes de tentar criar novos arquivos dentro dele, ou para lidar com diferentes cenários de erro.
+Verificar se um diretório existe é uma tarefa importante em projetos de programação. Isso permite que você garanta que o diretório necessário esteja presente antes de executar determinadas funções. Além disso, pode ajudar a evitar erros e garantir que o código seja mais robusto.
 
-Como fazer isso em TypeScript:
+## Como fazer?
 
-#### Exemplo de código:
+Para verificar se um diretório existe em TypeScript, podemos usar a biblioteca nativa 'fs'. Primeiro, importamos a função 'statSync' desta biblioteca, que permite verificar as estatísticas de um determinado arquivo ou diretório. Em seguida, usamos o método 'existsSync' para verificar se o diretório existe ou não.
 
 ```TypeScript
 import fs from 'fs';
-
-// Definindo o caminho do diretório a ser verificado
-const path = './meuDiretorio';
-
-// Verificando se o diretório existe
-if(fs.existsSync(path)) {
-    console.log("O diretório existe!");
-} else {
-    console.log("O diretório não existe.");
-}
+// Verificar se o diretório existe
+const dirExists = (path: string) => {
+  try {
+    fs.statSync(path);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+// Exemplo de uso
+console.log(dirExists('./meuDiretorio')); // Retorna true se existir, false se não existir
 ```
 
-#### Saída do console:
+## Mergulho Profundo
 
-```
-O diretório existe!
-```
+Ao verificar se um diretório existe, é importante entender que o método 'existsSync' pode retornar 'true' mesmo se o argumento fornecido for um arquivo e não um diretório. Além disso, o diretório em si pode existir, mas pode não estar acessível devido a permissões de arquivo ou disco. Portanto, é recomendado usar o método 'isDirectory' para garantir que o caminho fornecido seja de fato um diretório antes de prosseguir com certas operações no código.
 
-Mergulho profundo:
+# Veja também
 
-Para entender melhor como a verificação de diretório funciona em TypeScript, é necessário ter conhecimento sobre algumas funções e módulos importantes.
-
-- O módulo `fs` é utilizado para realizar operações com arquivos e diretórios em Node.js. Ele oferece funções como `existsSync()` para verificar a existência de um arquivo ou diretório.
-- Ao utilizar a função `existsSync()`, é possível passar o caminho do diretório como parâmetro e verificar se ele existe. Se o diretório existir, a função retornará `true`, caso contrário, retornará `false`.
-- É importante lembrar que apenas a existência do diretório é verificada, não a sua permissão de acesso. Portanto, é possível que o diretório exista, mas o usuário não tenha permissão para acessá-lo.
-
-Veja também:
-
-Veja abaixo alguns links úteis para aprofundar o conhecimento sobre como verificar a existência de diretórios em TypeScript:
-
-- [Documentação do módulo `fs` no site oficial do Node.js](https://nodejs.org/api/fs.html)
-- [Guia de referência do TypeScript sobre tratamento de erros com `try...catch`](https://www.typescriptlang.org/docs/handbook/advanced-types.html#try-catch-and-errors)
-- [Exemplo de código de verificação de permissões de diretório em TypeScript](https://stackoverflow.com/questions/3459476/how-to-check-if-rights-on-a-file-exists-in-node-javascript)
-
-# Veja também:
-
-- [Documentação do TypeScript](https://www.typescriptlang.org/)
-- [Node.js: um guia para iniciantes](https://blog.magrathealabs.com/node-js-um-guia-para-iniciantes-6226c39e5356)
+- [Documentação oficial da biblioteca 'fs' em Node.js](https://nodejs.org/api/fs.html)
+- [Guia para verificar se um diretório existe em TypeScript](https://www.geeksforgeeks.org/how-to-check-if-a-directory-or-a-file-exists-in-system/)
+- [Exemplos práticos de uso do método 'existsSync'](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)

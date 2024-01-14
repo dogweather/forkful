@@ -1,44 +1,38 @@
 ---
 title:    "Bash: Omvandla en sträng till gemener"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till gemener (lower case) kan vara användbart när man behöver standardisera text eller sökningar, eller om man vill undvika potentiella fel på grund av skillnader mellan stora och små bokstäver.
 
-## Så här gör man
-För att konvertera en sträng till gemener i Bash kan man använda kommandot `tr` (translate) tillsammans med flaggan `-s` (squeeze) för att ta bort dubbletter och `-d` (delete) för att ta bort specifika tecken.
+Att konvertera en sträng till gemener är en vanlig uppgift inom Bash-programmering. Det kan vara användbart om man vill standardisera input från användare eller jämföra strängar på ett enhetligt sätt.
+
+## Hur man gör det
+
+Det finns flera olika sätt att konvertera en sträng till gemener i Bash. Ett sätt är att använda inbyggda funktionen "tr". Här är ett exempel:
 
 ```Bash
-# Exempel 1: Konvertera en hel sträng till gemener
-$ echo "Hej alla programmerare!" | tr '[:upper:]' '[:lower:]'
-hej alla programmerare!
-
-# Exempel 2: Ta bort alla punkter och konvertera till gemener
-$ echo "Välkommen till Bash-programmering." | tr -d '.' | tr '[:upper:]' '[:lower:]'
-välkommen till bash-programmering
+echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
 ```
 
-I den första raden använder vi `tr` för att konvertera alla stora bokstäver till gemener. I den andra raden använder vi först `tr` för att ta bort alla punkter och sedan en andra gång för att konvertera till gemener.
+Detta kommer att ta strängen "HELLO WORLD" och konvertera den till "hello world". Det finns också möjlighet att använda inbyggda variabler som "tolower" eller "^^" för att konvertera en del av en sträng. Här är ett exempel på detta:
+
+```Bash
+text="HeLlO WoRlD"
+echo "${text,,}"
+```
+
+Detta kommer att konvertera hela strängen till gemener, vilket ger outputen "hello world".
 
 ## Djupdykning
-Det finns flera sätt att konvertera en sträng till gemener i Bash, men den enklaste metoden är att använda `tr`. Det finns många fler flaggor som kan användas, t.ex. `-c` för att komplementera och `-s` för att endast behålla ett exemplar av duplicerade tecken.
 
-En annan teknik är att använda inbyggda Bash-kommandon som `printf` och `echo` tillsammans med parameterutbytning (`${parameter,,}`) för att konvertera till gemener.
-
-```Bash
-$ str="VÄLKOMMEN TILL BASH-PROGRAMMERING"
-$ echo "${str,,}"
-välkommen till bash-programmering
-```
-
-Det finns också mer avancerade metoder som använder regelbundna uttryck (regular expressions) eller tredjepartsverktyg som `sed` för att konvertera en sträng till gemener.
-
-Det är viktigt att komma ihåg att vissa språk kan ha specifika regler för olika fall av gemener och att kommandot `tr` endast tar hänsyn till ASCII-tecken.
+För att förstå mer om hur man konverterar strängar till gemener i Bash är det viktigt att ha en grundläggande förståelse för "tr" och dess användningsområden. Detta kommando kan inte bara användas för att konvertera mellan gemener och versaler, utan också för att ändra tecken eller ta bort tecken helt. Det är också värt att notera att "tolower" och "^^" fungerar endast med bash version 4 eller senare.
 
 ## Se även
-- [Trigraph (Wikipedia)](https://en.wikipedia.org/wiki/Trigraph_(computing))
-- [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Reguljära uttryck (Wikipedia)](https://sv.wikipedia.org/wiki/Regulj%C3%A4ra_uttryck)
+
+- [Guide till "tr" kommandot](https://www.computerhope.com/unix/utr.htm)
+- [Komplett lista över inbyggda bash kommandon](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
+- [Mer information om inbyggda bash variabler](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)

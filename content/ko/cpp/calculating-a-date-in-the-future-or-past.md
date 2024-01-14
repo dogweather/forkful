@@ -1,68 +1,48 @@
 ---
 title:    "C++: 미래나 과거의 날짜 계산하기"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-나중이나 과거의 날짜를 계산하는 것에 관심을 가지는 이유는 매우 다양합니다. 예를 들어, 생일이나 기념일을 계산하는 경우, 비즈니스 일정을 조정하는 경우 또는 여행 계획을 세우는 경우에도 날짜를 계산해야 할 수 있습니다. 이러한 상황에서 날짜 계산을 잘 다루는 것은 중요합니다.
+날짜를 미래나 과거로 계산하는 프로그래밍을 해야 하는 이유는 무엇일까요? 간단히 말해서, 우리는 특정한 날짜를 계산하여 일정한 시간만큼 이동하거나 얼마나 지난 날짜인지 알 수 있기 때문입니다.
 
-## 어떻게
+## 계산 방법
 
-우리가 알고싶은 대부분의 날짜는 현재 날짜와의 차이로 계산됩니다. 따라서 현재 날짜를 알면 미래나 과거 날짜를 쉽게 계산할 수 있습니다. 다음은 C++로 날짜를 계산하는 간단한 예제 코드입니다.
+날짜를 계산하는 방법은 매우 간단합니다. 먼저, 계산하고자 하는 과거나 미래의 날짜를 알아야 합니다. 그리고 그 날짜를 기준으로 얼마만큼 이동하고 싶은지, 혹은 어느 방향으로 이동하고 싶은지를 정해야 합니다. 이 정보를 바탕으로 ```C++``` 프로그래밍 언어를 이용하여 다음의 예제 코드를 사용할 수 있습니다.
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <iomanip>
+#include <chrono>
+
 using namespace std;
 
+// 오늘 날짜를 기준으로 1달 후의 날짜를 계산하는 예제 코드
 int main() {
-    // 현재 날짜 가져오기
-    time_t currentTime = time(NULL);
-    tm* current = localtime(&currentTime);
-
-    // 목표 날짜인 2020년 12월 25일 계산하기
-    current->tm_year = 120; // 2020년 -> 1900년 기준으로 계산하므로 2020년 - 1900 = 120
-    current->tm_mon = 11; // 12월 -> 0부터 시작하므로 12월 - 1 = 11
-    current->tm_mday = 25; // 25일
-
-    // 시간 정보 초기화
-    current->tm_hour = 0;
-    current->tm_min = 0;
-    current->tm_sec = 0;
-
-    // mktime 함수를 이용하여 날짜 계산하기
-    time_t goalTime = mktime(current);
-    tm* goal = localtime(&goalTime);
-
-    // 계산 결과 출력
-    cout << "2020년 12월 25일은 ";
-    cout << goal->tm_year + 1900 << "년 ";
-    cout << goal->tm_mon + 1 << "월 ";
-    cout << goal->tm_mday << "일입니다." << endl;
-
-    return 0;
+  // 오늘의 날짜를 저장하는 변수
+  auto today = chrono::system_clock::now();
+  // 월 단위로 계산하기 위해 1달을 추가
+  auto future_date = today + chrono::months(1);
+  // 날짜를 출력하기 위해 필요한 포맷
+  auto formatDate = chrono::system_clock::to_time_t(future_date);
+  // 포맷에 맞는 날짜 출력
+  cout << put_time(localtime(&formatDate), "%Y/%m/%d") << endl;
+  return 0;
 }
 ```
 
-출력 결과는 다음과 같습니다.
+위 예제 코드를 실행하면 현재 날짜를 기준으로 1달 뒤의 날짜가 출력됩니다. 이와 같은 방법으로 다양한 시간 단위의 계산을 할 수 있으며, 필요에 따라서 날짜를 빼거나 더하여 원하는 결과를 얻을 수 있습니다.
 
-```
-2020년 12월 25일은 2020년 12월 25일입니다.
-```
+## 깊게 파고들어보기
 
-위 예제 코드에서는 time 라이브러리의 tm 구조체를 사용하여 날짜를 계산하고 출력하였습니다. 이 외에도 chrono 라이브러리의 duration, time_point 클래스를 이용하여 시간을 쉽게 계산할 수 있습니다.
+날짜 계산은 우리 일상 생활에서 매우 중요한 역할을 합니다. 예를 들어, 거래를 위해 공휴일을 고려하여 특정 날짜를 계산하거나, 여행 계획을 세울 때 날짜를 계산하고 예약하는 등 다양한 분야에서 사용될 수 있습니다. 이러한 날짜 계산을 컴퓨터 프로그램을 통해 더 쉽고 정확하게 할 수 있습니다. 날짜를 계산하는 방법은 프로그래밍 언어마다 다소 차이가 있지만 참고할만한 예제 코드나 라이브러리가 많이 존재합니다. 또한, 날짜 계산 과정에서 고려해야 할 점들도 많기 때문에 깊게 파고들어보면 더 많은 지식을 얻을 수 있습니다.
 
-## 딥 다이브
+## 또 다른 정보
 
-위에서 예제로 사용한 mktime 함수는 현재 날짜와 시간 정보를 이용하여 지정한 날짜와 시간을 계산하여 리턴하는 함수입니다. 따라서 이 함수를 사용할 때에는 문제가 되는 시간 정보를 미리 초기화해주어야 합니다. 또한 time 라이브러리의 다양한 함수를 이용하여 날짜와 시간을 다룰 수 있습니다.
-
-마지막으로, 위에서 사용한 localtime 함수는 현재 날짜와 시간을 미국 뉴욕 시간 기준으로 출력합니다. 따라서 사용자의 시스템이 다른 시간대를 사용하는 경우에는 결과가 다를 수 있습니다.
-
-## 참고 자료
-
-- [cppreference.com에서 현재 시간 정보 가져오기](https://cppreference.com)
-- [time 라이브러리 사용하기](https://www.geeksforgeeks.org/c-program-print-current-day-date-time/)
-- [chrono 라이브러리 사용하기](https://www.geeksforgeeks.org/working-with-date-and-time-in-cpp/)
+* [날짜 계산을 위한 C++ 라이브러리](https://www.boost.org/doc/libs/1_68_0/doc/html/date_time.html)
+* [날짜 계산 예제 코드](https://gist.github.com/tianon/6845679)
+* [나무위키: Excel에서 날짜 계산하는 방법](https://namu.wiki/w/Excel/%EB%82%A0%EC%A7%9C%20%EA%B3%84%EC%82%B0)

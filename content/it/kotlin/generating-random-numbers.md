@@ -1,59 +1,41 @@
 ---
-title:    "Kotlin: Generazione di numeri casuali"
+title:    "Kotlin: Generare numeri casuali"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte ragioni per cui potresti voler generare numeri casuali in un programma Kotlin. Potresti aver bisogno di scrivere un algoritmo di gioco, creare password randomiche o generare una chiave crittografica. Generare numeri casuali è un'abilità fondamentale per molti programmatori e con Kotlin è facile da fare.
 
-Generare numeri casuali è un'abilità fondamentale per qualsiasi sviluppatore di software. I numeri casuali sono utilizzati in una varietà di applicazioni, come giochi, algoritmi di crittografia, simulazioni e test di software. Imparare come generare numeri casuali in Kotlin ti aiuterà ad aggiungere un elemento di casualità ai tuoi progetti e a rendere il tuo codice più dinamico e interessante.
-
-## Come fare
-
-Ci sono diversi modi per generare numeri casuali in Kotlin. Uno dei modi più semplici è utilizzare la classe Random di Java. Ecco come puoi farlo:
-
+## Come Fare
+Per generare numeri casuali in Kotlin, è necessario utilizzare la classe `Random()`. Questa classe ha diversi metodi che ci permettono di ottenere diversi tipi di numeri casuali:
 ```
-Kotlin
-val random = Random()
-val number = random.nextInt()
-println(number)
-// Output: -58327484
+// Genera un numero intero tra 0 e 10
+val num1 = Random().nextInt(11)
+
+// Genera un numero decimale tra 0 e 1
+val num2 = Random().nextDouble()
+
+// Genera un numero lungo
+val num3 = Random().nextLong()
 ```
-
-In questo esempio, abbiamo creato un'istanza della classe Random e abbiamo utilizzato il metodo nextInt() per generare un intero casuale. Il valore verrà stampato a video ogni volta che esegui il codice, producendo un risultato diverso ogni volta.
-
-Se vuoi generare un numero casuale in un intervallo specifico, puoi utilizzare il seguente codice:
-
+<br>
+Possiamo anche specificare un valore minimo e massimo per limitare l'intervallo dei numeri generati:
 ```
-Kotlin
-val random = Random()
-val number = random.nextInt(10) // Genera un numero tra 0 e 9
-println(number)
-// Output: 4
+// Genera un numero intero tra 50 e 100
+val num = Random().nextInt(51, 101)
 ```
-
-Qui, abbiamo utilizzato il metodo nextInt() per generare un intero tra 0 e 9. Se vuoi generare un numero tra due estremi specifici, puoi utilizzare il seguente codice:
-
-```
-Kotlin
-val random = Random()
-val number = random.nextInt(5) + 10 // Genera un numero tra 10 e 14
-println(number)
-// Output: 12
-```
-
-In questo esempio, abbiamo utilizzato il metodo nextInt() per generare un intero casuale tra 0 e 4, e poi abbiamo aggiunto 10 al risultato, ottenendo così un numero tra 10 e 14.
 
 ## Approfondimento
+Sebbene generare numeri casuali possa sembrare una cosa semplice, ci sono alcune cose da considerare quando lo si fa in un programma. Per esempio, quando si genera un numero casuale in un ciclo, è importante fare attenzione a dove viene istanziata la classe `Random()`. Se viene istanziata ogni volta che il ciclo viene eseguito, si potrebbe finire per generare lo stesso numero più volte.
 
-Quando si tratta di generare numeri casuali, è importante capire che non esiste un numero veramente casuale. Tutti i generatori di numeri casuali si basano su un algoritmo che utilizza un numero precedente o un valore iniziale come base per generare il numero successivo.
+Un'altra cosa importante da considerare è che i numeri casuali non sono veramente casuali, ma sono generati da un algoritmo. I programmatori devono scegliere quale algoritmo utilizzare per garantire una distribuzione casuale dei numeri generati.
 
-Inoltre, è importante utilizzare una sorgente di entropia (casualità) per inizializzare il generatore di numeri casuali, altrimenti i numeri generati saranno sempre gli stessi. In Kotlin, questo viene fatto automaticamente dalla classe Random utilizzando la sorgente di entropia del sistema operativo.
+Inoltre, esistono anche altre classi in Kotlin che consentono di generare numeri casuali, come `ThreadLocalRandom` che è ottimizzata per l'utilizzo in ambienti multithread.
 
-Un'altra cosa da considerare è che i generatori di numeri casuali seguono un modello predeterminato, quindi è possibile che alcuni numeri vengano generati più frequentemente di altri. Se vuoi generare numeri completamente casuali, puoi utilizzare un servizio esterno che offre veri e propri numeri casuali basati su fenomeni naturali come il decadimento radioattivo.
-
-## Vedi anche
-- Documentazione sulla classe Random: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-random/index.html
-- Generare numeri casuali in Java: https://www.baeldung.com/java-generate-random-long-float-integer-double
-- Servizi di numeri casuali online: https://www.random.org/
+## Vedi Anche
+- [Documentazione sulla classe Random in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
+- [Tutorial su come generare numeri casuali in Kotlin](https://www.programiz.com/kotlin-programming/random-numbers)
+- [Discussione su Stack Overflow su quale algoritmo utilizzare per generare numeri casuali](https://stackoverflow.com/questions/29666142/java-random-number-vs-math-random)

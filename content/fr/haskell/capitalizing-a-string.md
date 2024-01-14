@@ -1,44 +1,49 @@
 ---
-title:    "Haskell: Capitalize une chaîne de caractères"
+title:    "Haskell: Capitaliser une chaîne de caractères"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque l'on travaille avec des chaînes de caractères en Haskell, il peut être utile d'avoir la fonction de convertir une chaîne en majuscules pour des raisons d'affichage ou de traitement de données. Dans cet article, nous allons expliquer comment capitaliser une chaîne de caractères en Haskell.
+Si vous êtes nouveau dans le monde de la programmation Haskell, vous vous demandez peut-être pourquoi nous voudrions capitaliser une chaîne de caractères. La réponse est simple : capitaliser une chaîne de caractères est souvent nécessaire pour des raisons esthétiques ou fonctionnelles dans de nombreux programmes.
 
 ## Comment faire
 
-En Haskell, la fonction `toUpper` du module `Data.Char` permet de convertir un caractère en majuscule. Pour capitaliser une chaîne de caractères entière, nous allons utiliser la fonction `map` qui applique une opération sur chaque élément d'une liste. Dans notre cas, nous allons appliquer `toUpper` à chaque caractère de la chaîne. Voici un exemple concret :
+La fonction "toUpper" est utilisée pour capitaliser une lettre individuelle dans une chaîne de caractères. En utilisant cette fonction avec la fonction "map", nous pouvons appliquer la mise en majuscule à chaque lettre d'une chaîne de caractères. Voici un exemple de code :
 
 ```Haskell
 import Data.Char (toUpper)
 
--- Définition de la fonction capitalize
 capitalize :: String -> String
-capitalize string = map toUpper string
+capitalize str = map toUpper str
 
 main = do
-    let myString = "salut le monde"
-    putStrLn (capitalize myString)
+  putStrLn $ capitalize "bonjour le monde" 
 ```
 
-La sortie de ce code sera :
+Lorsque vous exécutez ce code, vous devriez obtenir l'output suivant : "BONJOUR LE MONDE". Vous pouvez également utiliser cette fonction pour capitaliser seulement la première lettre d'une chaîne de caractères en utilisant la fonction "head" pour sélectionner le premier élément et "tail" pour les éléments restants. Voici un autre exemple de code :
 
+```Haskell
+firstCapital :: String -> String
+firstCapital str = toUpper (head str) : tail str
+
+main = do
+  putStrLn $ firstCapital "bonjour le monde" 
 ```
-SALUT LE MONDE
-```
 
-## Plongée en profondeur
+L'output de ce code sera "Bonjour le monde".
 
-Il est important de noter que la fonction `capitalize` que nous avons définie est sensiblement différente de la fonction `toUpper` de la bibliothèque standard de Haskell. La fonction `toUpper` s'attend à un seul caractère en entrée et renvoie un seul caractère en sortie, tandis que notre fonction `capitalize` travaille sur une chaîne de caractères complète.
+## Plongeon profond
 
-De plus, notre fonction `capitalize` est limitée aux caractères ASCII et ne fonctionnera pas avec des caractères Unicode. Pour une solution plus complète, il est recommandé d'utiliser le module `Data.Text` qui offre des fonctions de manipulation de texte plus avancées et prenant en charge les caractères Unicode.
+Maintenant que vous savez comment capitaliser une chaîne de caractères en Haskell, il est important de comprendre comment la fonction "map" fonctionne réellement. En Haskell, les fonctions sont des valeurs de première classe, ce qui signifie qu'elles peuvent être traitées comme n'importe quelle autre valeur. La fonction "map" prend en paramètre une autre fonction (dans ce cas, "toUpper") et l'applique à chaque élément d'une liste. Cela signifie que la fonction "map toUpper" peut être utilisée pour plus que simplement capitaliser une chaîne de caractères, elle peut également être utilisée pour transformer toutes sortes de données comme des listes de nombres ou des listes de booléens.
 
 ## Voir aussi
 
-- Documentation officielle de la fonction `toUpper` : https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toUpper
-- Documentation officielle du module `Data.Text` : https://hackage.haskell.org/package/text
-- Guide d'apprentissage Haskell : https://learnxinyminutes.com/docs/fr-fr/haskell-fr/
+Pour plus d'informations sur la fonction "map" et d'autres fonctions utiles en Haskell, vous pouvez consulter les ressources suivantes :
+
+- [Introduction à Haskell](https://www.haskell.org/)
+- [Documentation officielle de Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/)
+- [Tutoriel vidéo sur Haskell](https://www.youtube.com/watch?v=a1EU3exFS2s) (en français)

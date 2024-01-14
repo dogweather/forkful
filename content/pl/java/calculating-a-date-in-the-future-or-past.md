@@ -1,69 +1,54 @@
 ---
-title:    "Java: Obliczanie daty w przyszłości lub przeszłości"
+title:    "Java: Obliczanie daty w przyszłości lub przeszłości."
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wyobraź sobie, że musisz zaplanować wakacje w przyszłym roku lub stworzyć harmonogram spotkań biznesowych na kolejne miesiące. W takich sytuacjach często musimy wyznaczyć daty w przyszłości lub w przeszłości. W tym przypadku warto poznać sposoby obliczania daty w przód lub w tył za pomocą Javy.
+Czasami w programowaniu musimy pracować z datami, zarówno przeszłymi jak i przyszłymi. Może to wynikać z potrzeby wyświetlenia odpowiedniej informacji dla użytkownika lub obliczenia rozróżnienia między dwoma datami. W takich sytuacjach konieczne jest umiejętne obliczanie dat w przyszłości lub w przeszłości.
 
-## Jak to zrobić
+## Jak
 
-Poniżej przedstawiamy przykładowy kod w Javie, który pozwoli na obliczenie daty w przód lub w tył.
+Aby wykonać obliczenia daty w przyszłości lub w przeszłości w języku Java, musimy użyć klasy `Calendar`. Pierwszym krokiem będzie utworzenie obiektu `Calendar` i ustawienie aktualnej daty. Następnie, aby obliczyć datę w przyszłości, musimy użyć metody `add()`, która dodaje określoną liczbę dni, miesięcy lub lat do aktualnej daty. Przykładowy kod wyglądałby następująco:
 
-```Java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-public class DateCalculator {
-
-    public static void main(String[] args) {
-        
-        // Wyznaczenie daty za n lat
-        int years = 2;
-        LocalDate futureDate = LocalDate.now().plusYears(years);
-        
-        // Formatowanie daty do odpowiedniego formatu
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formattedDate = futureDate.format(formatter);
-        
-        System.out.println("Za " + years + " lata będzie " + formattedDate);
-        
-        // Wyznaczenie daty sprzed n dni
-        int days = 10;
-        LocalDate pastDate = LocalDate.now().minusDays(days);
-        
-        // Formatowanie daty do odpowiedniego formatu
-        String formattedPastDate = pastDate.format(formatter);
-        
-        System.out.println("10 dni temu było " + formattedPastDate);
-        
-        // Wyznaczenie daty za n miesięcy i n dni
-        int months = 3;
-        int additionalDays = 20;
-        LocalDate futureDateWithDays = LocalDate.now().plusMonths(months).plusDays(additionalDays);
-        
-        // Formatowanie daty do odpowiedniego formatu
-        String formattedFutureDateWithDays = futureDateWithDays.format(formatter);
-        
-        System.out.println("Za " + months + " miesięcy i " + additionalDays + " dni będzie " + formattedFutureDateWithDays);
-    }
-}
+```java
+// utworzenie obiektu Calendar
+Calendar now = Calendar.getInstance();
+// ustawienie aktualnej daty
+now.setTime(new Date());
+// dodanie 7 dni do aktualnej daty
+now.add(Calendar.DATE, 7);
+// wyświetlenie obliczonej daty
+System.out.println(now.getTime());
 ```
 
-**Output:**
-Za 2 lata będzie 29/07/2023
-10 dni temu było 19/07/2021
-Za 3 miesięcy i 20 dni będzie 18/11/2021
+W powyższym przykładzie dodajemy 7 dni do aktualnej daty, ale możemy również dodać miesiące lub lata, zmieniając odpowiednio drugi argument metody `add()`.
 
-## Głębsza analiza
+Aby obliczyć datę w przeszłości, możemy użyć metody `roll()`. Różnica między `add()` a `roll()` polega na tym, że `add()` zmienia również bieżący miesiąc lub rok, podczas gdy `roll()` pozostawia je bez zmian. Przykładowy kod obliczający datę w przeszłości wyglądałby następująco:
 
-W Javie istnieje wiele metod i klas, które umożliwiają obliczanie daty w przyszłości lub w przeszłości. W powyższym przykładzie wykorzystaliśmy metodę `plusYears()` do obliczenia daty za n lat, `minusDays()` do wyznaczenia daty sprzed n dni oraz `plusMonths()` i `plusDays()` do wyznaczenia daty za n miesięcy i n dni. Warto dokładniej przyjrzeć się tym metodom i innym sposobom obliczania daty w Javie, aby jeszcze bardziej usprawnić nasze działania.
+```java
+// utworzenie obiektu Calendar
+Calendar now = Calendar.getInstance();
+// ustawienie aktualnej daty
+now.setTime(new Date());
+// przesunięcie daty o 7 dni w przeszłości
+now.roll(Calendar.DATE, -7);
+// wyświetlenie obliczonej daty
+System.out.println(now.getTime());
+```
 
-## Zobacz też
+## Deep Dive
 
-- [Java LocalDate Dokumentacja](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java DateTimeFormatter Dokumentacja](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Tutorial: Obliczanie daty za pomocą klasy Calendar w Javie](https://www.baeldung.com/java-date-calendar)
+Klasa `Calendar` zawiera wiele innych przydatnych metod, które pozwalają na bardziej precyzyjne obliczenia daty, takie jak porównywanie dat lub obliczanie różnicy między dwoma datami. Warto również zauważyć, że klasa `Calendar` jest często używana wraz z klasą `DateFormat`, która umożliwia formatowanie daty w różnych formatach, np. jako tekst czy data.
+
+Duża część funkcjonalności związanych z datami została również dodana do języka Java 8 w postaci klasy `LocalDate`, która oferuje bardziej wygodne metody do obliczania dat w przyszłości lub przeszłości.
+
+## Zobacz także
+
+- [Przewodnik po klasie Calendar w języku Java](https://www.baeldung.com/java-calendar)
+- [Dokumentacja klasy Calendar w języku Java] (https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Przewodnik po formacie daty w języku Java] (https://www.baeldung.com/java-date-format)
+- [Dokumentacja klasy LocalDate w języku Java] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

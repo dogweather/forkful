@@ -1,44 +1,47 @@
 ---
-title:    "Arduino: パターンにマッチする文字の削除"
+title:    "Arduino: パターンに一致する文字を削除する"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-
-Arduinoプログラミングをする上で、パターンに一致する文字を削除することが重要な場合があります。それは、コードの読みやすさや処理の効率性を向上させるためです。この記事では、その重要性について詳しく説明します。
+# なぜ
+Arduinoを使ったプログラミングでは、文字列を操作することがよくあります。その中でも特に、指定したパターンに合致する文字を削除する方法は非常に便利です。
 
 ## 方法
+文字列を操作するためには、まずは`String`オブジェクトを作成する必要があります。例として、次のように文字列を定義してみましょう。
 
-文字を削除する方法は非常に簡単です。まずは、対象の文字列を定義します。
-
-```Arduino
-String text = "今日はいい天気ですが、明日は雨です。";
+```
+Arduinoソースコード
+String str = "abbbbccc";
 ```
 
-次に、パターンとして削除したい文字を定義します。例えば、ある文字列を削除したい場合は、その文字列を定義します。
+次に、定義した`String`オブジェクトを使用して、`replace()`関数を使います。この関数は、指定したパターンに合致する文字を、指定した文字列に置き換えることができます。例えば、次のように書くことで`b`という文字を全て`a`に置き換えることができます。
 
-```Arduino
-String pattern = "明日は";
+```
+Arduinoソースコード
+str.replace("b", "a");
 ```
 
-そして、`text`から`pattern`に一致する文字を削除し、新しい文字列として結果を保存します。
+そして、最後に変更した文字列を出力するために、`Serial.println()`関数を使います。
 
-```Arduino
-String result = text.replace(pattern, "");
+```
+Arduinoソースコード
+Serial.println(str);
 ```
 
-これで、`result`には「今日はいい天気ですが、雨です。」という文字列が保存されます。
+このコードを実行すると、次のような出力が得られます。
 
-## 深堀り
+```
+Arduinoソースコード
+aacc
+```
 
-文字の削除には、コードの見やすさや処理の高速化という重要なメリットがあります。特に、大量の文字列から特定のパターンを削除する必要がある場合には、これらのメリットが更に顕著になります。
+## 深く掘り下げる
+`replace()`関数は、指定したパターンに合致する全ての文字を置き換えます。しかし、万が一置き換えたくない文字がある場合はどうでしょうか。その場合は、第3引数に置き換えない文字の個数を指定することで対応することができます。また、`replace()`関数の内部で`indexOf()`関数を使用しているため、置き換えるパターンにはワイルドカード(`*`)を使用することもできます。詳しくは公式ドキュメントを参照してみてください。
 
-しかし、注意点として、文字を削除する際には残された文字列の間に空白ができる場合があるということです。例えば、先ほどの`text`から「明日は」を削除した場合、結果は「今日いい天気ですが、雨です。」となります。このような場合は、空白も削除する必要があるので、`pattern`を「明日は」ではなく「明日は 」と空白を追加することで対応することができます。
-
-## 参考リンク
-
-- [Arduino Documentation](https://www.arduino.cc/reference/en/)
-- [Tutorial on String manipulation in Arduino](https://www.marcelpost.com/wiki/index.php?title=Tutorial_on_String_manipulation_in_Arduino)
-- [Code examples on String Functions in Arduino](https://www.arduino.cc/en/Tutorial/StringRemoveCharacters)
+# 参考資料
+- [String オブジェクト - Arduino 公式ドキュメント](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/)
+- [replace() - Arduino 公式ドキュメント](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/replace/)
+- [indexOf() - Arduino 公式ドキュメント](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/indexof/)

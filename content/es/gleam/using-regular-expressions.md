@@ -1,45 +1,70 @@
 ---
 title:    "Gleam: Utilizando expresiones regulares"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué utilizar expresiones regulares en Gleam
+## Por qué utilizar expresiones regulares en Gleam
 
-Si eres un programador en Gleam, seguramente ya has escuchado sobre el uso de expresiones regulares. Pero, ¿por qué deberías utilizarlas en tus proyectos?
+Las expresiones regulares son una herramienta poderosa para manipular cadenas de texto en cualquier lenguaje de programación, y en Gleam no es la excepción. Con ellas, puedes realizar búsquedas, reemplazos y validaciones de forma eficiente y elegante. Sigue leyendo para descubrir cómo utilizarlas en tus proyectos de Gleam.
 
-Las expresiones regulares son una herramienta poderosa para buscar y manipular texto de forma eficiente. Son especialmente útiles cuando se trabaja con grandes cantidades de datos o cuando se necesita validar entradas del usuario. Además, su uso es ampliamente conocido en el mundo de la programación, por lo que es una habilidad valiosa para cualquier desarrollador.
+## Cómo utilizar expresiones regulares en Gleam
 
-# Cómo utilizar expresiones regulares en Gleam
+Para utilizar expresiones regulares en Gleam, primero debes importar el módulo `gleam/regex` en tu archivo:
 
-En Gleam, el módulo standard `regex` proporciona funciones para trabajar con expresiones regulares. Para comenzar, primero debes importar el módulo en tu archivo:
-
-```Gleam
-import regex
+```
+import gleam/regex
 ```
 
-Luego, puedes utilizar la función `match` para buscar una coincidencia en una cadena de texto utilizando una expresión regular:
+Luego, puedes crear una nueva expresión regular utilizando el constructor `Regex.new` y pasando como argumento el patrón que deseas buscar. Por ejemplo, si quieres buscar todas las palabras que empiecen con la letra "g" en una cadena, puedes hacer lo siguiente:
 
-```Gleam
-let pattern = regex.compile("\\w+")
-
-let result = regex.match(pattern, "Hola Mundo!")
-
-// El resultado será {ok: true, value: "Hola"}
+```
+let regex = Regex.new("g[a-z]+")
 ```
 
-En este ejemplo, utilizamos la expresión regular `\w+` para buscar una o más letras, números o guiones bajos en la cadena "Hola Mundo!". El resultado será un registro que indica si se encontró una coincidencia (`ok`) y el valor de la primera coincidencia encontrada (`value`).
+Ahora, puedes utilizar la función `Regex.match` para buscar coincidencias entre tu expresión regular y una cadena de texto. Por ejemplo:
 
-# Profundizando en el uso de expresiones regulares
+```
+let input = "gleam is great"
 
-Las expresiones regulares pueden ser más complejas que simplemente buscar una palabra en una cadena. Pueden ser utilizadas para realizar reemplazos, extraer información específica y validar patrones más complejos.
+let result = Regex.match(regex, input)
+```
 
-Además, en Gleam también es posible utilizar "capturas" en las expresiones regulares, lo que permite almacenar partes específicas de una coincidencia para su posterior uso en el código.
+El resultado será una lista de coincidencias, donde cada elemento es una tupla con la posición de inicio y fin de la coincidencia, así como el texto encontrado. En el ejemplo anterior, el resultado será `[(0, 4, "gleam"), (12, 17, "great")]`, ya que ambas palabras empiezan con "g" y contienen solo letras minúsculas.
 
-Para aprender más sobre las diferentes posibilidades y sintaxis de expresiones regulares en Gleam, consulta la documentación oficial del módulo `regex`.
+También puedes utilizar expresiones regulares en conjunto con la función `Regex.replace` para reemplazar partes de una cadena de texto. Por ejemplo:
 
-# Ver también
+```
+let input = "Greetings from Gleam!"
 
-- Documentación oficial del módulo `regex`: https://gleam.run/modules/regex.html
-- Ejemplos de expresiones regulares en Gleam: https://github.com/gleam-lang/gleam/blob/master/examples/regex/regex.gleam
+let modified = Regex.replace(regex, input, "cheerio")
+
+// El resultado será "cheerio from cheerio!"
+```
+
+## Profundizando en el uso de expresiones regulares en Gleam
+
+Las expresiones regulares en Gleam son compatibles con muchos de los patrones y operadores habituales en otros lenguajes. Por ejemplo, puedes utilizar los siguientes símbolos para hacer coincidir diferentes tipos de caracteres:
+
+- `.`: Cualquier carácter excepto nueva línea
+- `*`: Cero o más ocurrencias del carácter previo
+- `+`: Una o más ocurrencias del carácter previo
+- `[]`: Cualquier carácter dentro de los corchetes
+- `[^]`: Cualquier carácter que NO esté dentro de los corchetes
+- `^`: Coincidir al inicio de la cadena
+- `$`: Coincidir al final de la cadena
+
+Además, también puedes utilizar modificadores para realizar búsquedas más precisas:
+
+- `i`: Ignora mayúsculas y minúsculas
+- `m`: Tratar la cadena como varias líneas
+- `g`: Buscar todas las coincidencias, no solo la primera
+
+Si deseas conocer más sobre expresiones regulares y su uso en Gleam, puedes consultar la documentación oficial o explorar las diferentes funciones disponibles en el módulo `gleam/regex`.
+
+## Ver también
+
+- [Documentación de expresiones regulares en Gleam](https://gleam.run/book/tutorials/regular_expressions.html)
+- [Módulo Regex en la referencia del lenguaje Gleam](https://gleam.run/stdlib/regex.html)

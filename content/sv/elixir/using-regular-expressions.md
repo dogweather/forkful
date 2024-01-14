@@ -1,50 +1,36 @@
 ---
-title:    "Elixir: Användning av reguljära uttryck"
+title:    "Elixir: Att använda vanliga uttryck"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Regular expressions (regex) är ett användbart verktyg inom Elixir programmering för strängmanipulation. Det låter dig hitta, matcha och ersätta specifika mönster inom en sträng.
 
-Regular expressions är en kraftfull funktion inom Elixir som används för att matcha och manipulera textsträngar. Genom att behärska regular expressions kan du effektivt och snabbt utföra sökningar och ersättningar i större textfiler. Det sparar tid och gör dina kodningar mer effektiva.
+## Så här gör du:
+För att använda regex inom Elixir, är det viktigt att använda den inbyggda `Regex` modulen. Det finns flera olika funktioner som du kan använda för att skapa och manipulera regex.
 
-## Hur man gör
+```Elixir
+# För att skapa ett regex uttryck
+regex = ~r/hello/
 
-För att använda regular expressions inom Elixir behöver du först importera modulen Regex med `import Regex`. Sedan kan du skriva uttryck inom en `~r` eller `~R` tagg för att matcha en textsträng. Här är ett enkelt exempel på hur du kan matcha en viss bokstav:
+# För att söka efter ett visst mönster inom en sträng
+Regex.match?(regex, "hello world")
 
-```
-Elixir ~r/a/  #=> Returns a match for a letter 'a'
-
-Elixir ~R/a/  #=> Returns a match for any occurence of the letter 'a'
-```
-
-Du kan också använda metoder som `match?` och `match` för att utföra sökningar och få tillbaka resultat. Om du exempelvis vill hitta en email-adress i en textsträng kan du använda `match?` funktionen:
-
-```
-Elixir email = ~r/^[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+$/i
-Elixir match?(email, "example@gmail.com") #=> Returns true
-Elixir match?(email, "invalid_email") #=> Returns false
+# För att ersätta en del av en sträng med ett annat värde
+Regex.replace("Hello World", ~r/World/, "Elixir") #=> "Hello Elixir"
 ```
 
-## Djupdykning
+## Djupdykning:
+Det finns många olika specialtecken som kan användas för att skapa mer avancerade regex uttryck. Till exempel, `^` matchar början av en sträng och `$` matchar slutet av en sträng. Det finns också många olika modifierare, såsom `i` som gör uttrycket skiftlägesobestämt, och `s` som gör att `.` också matchar radbrytningar.
 
-Regular expressions innehåller många olika metakaraktärer och modifierare som kan hjälpa dig att göra mer avancerade sökningar och ersättningar. Här är några vanliga exempel:
+Du kan också använda grupparanteser för att söka efter specifika mönster och extrahera dem från en sträng. Till exempel, `(~r/([0-9]+)-([a-z]+)/)` kommer att extrahera alla tal före ett bindestreck och alla bokstäver efter bindestrecket.
 
-- `^` betyder att uttrycket måste matcha från början av en textsträng
-- `$` betyder att uttrycket måste matcha till slutet av en textsträng
-- `+` betyder att uttrycket måste matcha en eller flera gånger
-- `*` betyder att uttrycket kan finnas eller inte och kan förekomma flera gånger
-- `?` betyder att uttrycket antingen kan finnas eller inte
+Det finns också ett antal Elixir inbyggda funktioner som kan användas tillsammans med regex, såsom `String.match?` och `String.replace`.
 
-Det finns också många användbara modifierare som `i` för att ignorera skillnader mellan stora och små bokstäver, `m` för att matcha flera rader och `s` för att ignorera line breaks.
-
-Det är också viktigt att notera att regler för regular expressions kan vara olika inom olika programmeringsspråk, så det är bra att kontrollera syntaxen och modifierarna för just den programmering du arbetar med.
-
-## Se också
-
-Här är några användbara resurser för att lära dig mer om regular expressions:
-
+## Se även:
 - [Elixir Regex dokumentation](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir Regex cheat sheet](https://devhints.io/elixir-regex)
-- [Regular expression-tutorial på svenska](https://code.tutsplus.com/sv/tutorials/an-introduction-to-regular-expressions--net-5731)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Learn Elixir - Regular Expressions](https://learn-elixir.dev/docs/regular-expressions)

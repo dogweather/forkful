@@ -1,46 +1,44 @@
 ---
 title:    "Elm recipe: Checking if a directory exists"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Check If a Directory Exists in Elm
-Sometimes in programming, we need to check if a certain directory exists before performing any operations on it. This can be helpful in avoiding errors or unexpected behavior in our code. In this blog post, we will explore how we can do this in Elm.
+## Why 
 
-## How To Check If a Directory Exists
-To check if a directory exists in Elm, we can use the `filesystem` package. If you haven't already, you can install this package by running the following command in your terminal:
+Have you ever needed to check if a directory exists in your Elm program? This could be useful in scenarios where you need to create a directory if it doesn't exist or perform a certain action depending on the existence of a directory.
+
+## How To 
+
+Checking if a directory exists in Elm is a simple task. First, we need to import the `Directory` module from `elm/file`, since file operations in Elm are handled by this module. Then, we can use the `doesDirectoryExist` function to check if a directory exists.
+
 ```Elm
-elm install elm/filesystem
+import File exposing (Directory, doesDirectoryExist)
+
+-- check if a directory named "data" exists
+doesDirectoryExist (Directory "data")
+    --> False
 ```
 
-Once the package is installed, we can import it in our code using the following line:
+In the above example, we are checking if a directory named "data" exists and the output is `False` since we haven't created this directory yet. We can also use the `doesDirectoryExist` function to check if a given path is a directory.
+
 ```Elm
-import Filesystem exposing (..)
+import File exposing (Directory, doesDirectoryExist)
+
+-- check if path "elm/data" is a directory
+doesDirectoryExist (Directory "elm/data")
+    --> True
 ```
 
-Next, we need to specify the path of the directory we want to check. We can do this by using the `fromString` function and passing in the path as a string. For example, if we want to check if the directory "my_directory" exists in the current directory, our code would look like this:
-```Elm
-let
-    directoryPath = fromString "my_directory"
-in
-    ...
-```
+If the given path is not a directory, the function will return `False`.
 
-Now, we can use the `directoryExists` function to check if the directory exists. This function takes in the directory path and returns a `Task` with a `Bool` value. We can then use `andThen` to perform some action based on the result of the `Task`. For example, if we want to log a message when the directory exists, our code would look like this:
-```Elm
-let
-    directoryPath = fromString "my_directory"
-in
-    andThen (\exists -> if exists then log "Directory exists!" else log "Directory does not exist") (directoryExists directoryPath)
-```
+## Deep Dive 
 
-## Deep Dive into Checking for Directory Existence
-The `Filesystem.directoryExists` function in the `filesystem` package actually uses the `stat` function from the native JavaScript API to determine the existence of the directory. If the `stat` function returns an error, it means the directory does not exist.
+Under the hood, the `doesDirectoryExist` function uses the `getFileStatus` function from the `elm/file/FileInfo` module. This function returns information about a given file or directory, including its `type`. If the `type` is `Directory`, then the directory exists. 
 
-It's also important to note that this method only checks for the existence of the directory, not the accessibility permissions. So even if the directory exists but the user does not have permission to access it, the `directoryExists` function will still return `False`.
+## See Also 
 
-## See Also
-- [Filesystem package documentation](https://package.elm-lang.org/packages/elm/filesystem/latest/)
-- [Elm directoryExists function source code](https://github.com/elm/filesystem/blob/master/src/Filesystem.elm#L84)
-- [JavaScript stat function documentation](https://nodejs.org/api/fs.html#fs_statsync_path_options)
+- [Elm File Documentation](https://package.elm-lang.org/packages/elm/file/latest/) 
+- [Elm FileInfo Documentation](https://package.elm-lang.org/packages/elm/file/latest/FileInfo)

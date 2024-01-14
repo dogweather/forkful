@@ -1,44 +1,46 @@
 ---
-title:    "Java: Procurando e substituindo texto"
+title:    "Java: Buscando e substituindo texto"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Quando estamos trabalhando com uma grande quantidade de texto em um programa Java, pode ser necessário fazer alterações específicas. Ao invés de fazer essas mudanças manualmente, podemos usar a técnica de busca e substituição de texto para tornar o processo mais eficiente.
+Muitas vezes, ao escrever um programa em Java, você pode precisar realizar alterações em várias partes de um texto. Em vez de fazer essas alterações manualmente, é mais eficiente utilizar uma função de busca e substituição de texto. Esta técnica pode economizar tempo e facilitar o processo de edição.
 
 ## Como fazer
 
-A busca e substituição de texto em Java é feita através do método `replace()` da classe `String`. Veja um exemplo abaixo:
+Existem várias maneiras de se realizar uma busca e substituição de texto em Java. Uma delas é utilizando o método `replace()` da classe `String`. Veja um exemplo:
 
-```Java
-String texto = "Essa é uma frase exemplo.";
-texto = texto.replace("exemplo", "demonstração");
-System.out.println(texto);
+```java
+String texto = "Blog de Programação Java";
+String novoTexto = texto.replace("Java", "Python");
+System.out.println(novoTexto);
 ```
 
-O resultado desta implementação seria: "Essa é uma frase demonstração."  Note que a variável `texto` foi atualizada com a palavra "demonstração" substituindo "exemplo". 
+Este código irá imprimir "Blog de Programação Python", pois a palavra "Java" foi substituída por "Python" no texto original.
 
-Também podemos usar expressões regulares para fazer buscas e substituições mais complexas. Por exemplo:
+Outra opção é utilizar expressões regulares para realizar uma busca mais complexa. Veja um exemplo:
 
-```Java
-String texto = "O meu número de telefone é (123)456-7890.";
-texto = texto.replaceAll("[^0-9]", "");
-System.out.println("Apenas os dígitos: " + texto);
+```java
+String texto = "123-456-789";
+String novoTexto = texto.replaceAll("\\d","X");
+System.out.println(novoTexto);
 ```
 
-Neste exemplo, usamos a expressão regular `[^0-9]` para encontrar todos os caracteres que não são números e substituí-los por uma string vazia. O resultado seria: "1234567890" 
+Neste caso, o código irá imprimir "XXX-XXX-XXX", pois a expressão regular `\d` irá buscar por qualquer número e substituí-lo por "X".
 
-## Aprofundando mais
+## Mergulho Profundo
 
-Além da classe `String`, existem outras classes que também oferecem métodos para busca e substituição de texto em Java, como `StringBuilder` e `StringBuffer`. Estas classes são mais eficientes no que diz respeito à manipulação de strings, especialmente quando se trata de grandes quantidades de texto.
+Para entender melhor a funcionalidade de busca e substituição de texto em Java, é importante entender dois conceitos fundamentais: as classes `String` e `StringBuilder`. Ambas possuem métodos para realizar substituições de texto.
 
-Além disso, podemos realizar buscas e substituições com maior precisão e controle utilizando métodos mais avançados, como `replaceFirst()` e `replaceAll()`. Esses métodos também aceitam expressões regulares, o que nos possibilita fazer alterações mais complexas em nossos textos.
+Em uma `String`, a substituição é sempre feita criando uma nova `String`, pois ela é imutável. Já em um `StringBuilder`, a substituição é realizada diretamente no próprio objeto, tornando este processo mais eficiente em casos de alterações constantes de texto.
 
-## Veja também
+Outra diferença é que o método `replace()` de uma `String` só pode substituir uma sequência de caracteres por outra, enquanto o método `replace()` de um `StringBuilder` permite substituir múltiplas ocorrências ao mesmo tempo.
 
-- [Documentação oficial do método replace()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replace(char,%20char))
-- [Aprenda expressões regulares em Java](https://www.devmedia.com.br/expressoes-regulares-em-java/27490)
-- [StringBuilder vs StringBuffer: qual usar em Java?](https://www.devmedia.com.br/stringbuilder-x-stringbuffer-em-java/29348)
+## Veja Também
+
+- [Documentação oficial do Java sobre substituição de texto](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
+- [Tutorial de expressões regulares em Java](https://www.devmedia.com.br/expressoes-regulares-em-java/22062)

@@ -1,39 +1,40 @@
 ---
-title:    "Clojure: Skriving av tester"
+title:    "Clojure: Skrive tester"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å skrive tester er en viktig praksis i Clojure-programmering. Det hjelper deg å identifisere og fikse feil før de skaper problemer i produksjon, noe som sparer deg for tid og frustrasjon. I tillegg bidrar det til å sikre at koden din er pålitelig og robust.
+Å skrive tester (tests) er en viktig del av å lage kvalitetsprogramvare. Ved å skrive tester kan du sikre at koden din fungerer som den skal, og at den ikke bryter når du gjør endringer.
 
-## Hvordan gjøre det
+I tillegg kan det også være en god måte å organisere og strukturere koden din på, og bidra til å forbedre din forståelse av hvordan koden fungerer.
 
-For å skrive tester i Clojure, bruker vi biblioteket "clojure.test". Først må vi importere det ved å legge til dette i toppen av filen vår:
+##Slik gjør du det
 
-```Clojure
-(require '[clojure.test :refer [deftest is]])
-```
+For å skrive tester i Clojure, kan du bruke rammeverket med navn "clojure.test". Dette gir deg funksjonalitet for å definere tester og kjøre dem.
 
-Deretter kan du definere en test ved å bruke makroen "deftest". Pass på at navnet på testen følger konvensjonen "test-" + navnet på funksjonen du tester:
+For å lage en test, bruker du funksjonen "deftest". Inne i denne funksjonen kan du definere koden din og den forventede utgangen. For eksempel:
 
 ```Clojure
-(deftest test-addition
-  (is (= 6 (+ 2 4)))))
+(deftest addition-test
+  (is (= (+ 1 1) 2)))
+
 ```
 
-I dette eksempelet tester vi funksjonen "addition" og sjekker om resultatet er riktig. For å kjøre testene, bruker vi følgende kommando i REPL: (test-ns 'navn-på-fil). Dette vil kjøre alle testene definert i den angitte filen.
+I denne testen, bruker vi "is" funksjonen for å sjekke om utgangen av (+ 1 1) er lik 2. Hvis testen feiler, vil den vise en feilmelding med informasjon om hva som faktisk ble beregnet og hva som var forventet.
 
-## Dykk dypere
+For å kjøre testene dine, bruk "run-tests" funksjonen. Dette vil vise en oversikt over alle testene som ble kjørt og deres resultater.
 
-Når du skriver tester, er det viktig å dekke ulike scenarioer og kanttilfeller for å sikre et pålitelig program. Du kan også bruke makroen "is" for å sammenligne verdier og sjekke om de er like. I tillegg kan du bruke forskjellige funksjoner som "throws?" for å teste om en funksjon kaster et forventet unntak.
+##Dypdykk
 
-Det er også viktig å følge god praksis når du skriver tester, som å gjøre testene dine uavhengige av hverandre og å gi dem betegnelser som gjør det enklere å identifisere hva de tester.
+Det er flere aspekter ved å skrive tester i Clojure som kan være viktige å forstå. For eksempel kan du bruke "def" og "defn" funksjoner for å definere hjelpefunksjoner som kan brukes i testene dine. Du kan også bruke "testing" blokker for å gruppere testene dine.
 
-## Se også
+Det kan også være lurt å lese dokumentasjonen for rammeverket "clojure.test" for å bli bedre kjent med de forskjellige funksjonene som er tilgjengelige for å skrive tester.
 
-- [Offisiell Clojure.test-dokumentasjon](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Testing i Clojure](https://clojure.org/guides/testing)
-- [Eksempel på test-suiten i et Clojure-prosjekt](https://github.com/clojure/clojure/blob/master/test/clojure/test_clojure/test_).clj
+##Se også
+
+- [Documentation for clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- [An introduction to Clojure testing](https://purelyfunctional.tv/courses/clojure-testing-introduction/)

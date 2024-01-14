@@ -1,49 +1,54 @@
 ---
 title:    "Elixir recipe: Generating random numbers"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why
 
-Random numbers are an essential part of many programming tasks, from generating unique identifiers to simulating games or statistical processes. In Elixir, there are multiple ways to generate random numbers, making it a versatile and useful language for these types of tasks.
+Generating random numbers is a common task in programming, and it serves a variety of purposes. Whether you need to generate passwords, shuffle a list, or simulate random events, having the ability to generate random numbers is a useful skill to have in your programming arsenal.
 
-## How To
+# How To
 
-Generating random numbers in Elixir is a straightforward process. To generate a single random number, we can use the `:rand.uniform/0` function, which generates a float between 0.0 and 1.0.
+To generate random numbers in Elixir, we can utilize the `:rand` module. Let's take a look at a simple example:
 
-```elixir
-:rand.uniform() # output: 0.541512
+```Elixir
+# Generate a random integer between 1 and 10
+:rand.uniform(10)
 ```
 
-To generate a random integer within a specific range, we can use the `:rand.uniform/1` function, passing in the desired range as a tuple.
+This will output a random number between 1 and 10. But what if we want to generate a list of random numbers? We can use the `:rand` function along with the `Enum` module to achieve this:
 
-```elixir
-:rand.uniform({1, 10}) # output: 8
+```Elixir
+# Generate a list of 5 random integers between 1 and 10
+1..5 |> Enum.map(fn _ -> :rand.uniform(10) end)
 ```
 
-If we want to generate multiple random numbers, we can use the `Stream` module and the `:rand.uniform/0` function to generate an infinite stream of random numbers. We can then use the `Enum.take/2` function to take a specified number of random numbers from the stream.
+This will output something like `[7, 5, 8, 3, 2]`.
 
-```elixir
-Stream.repeatedly(fn -> :rand.uniform() end) |> Enum.take(5) 
-# output: [0.809688, 0.211992, 0.63823, 0.836724, 0.356106]
+# Deep Dive
+
+Behind the scenes, the `:rand` module uses a PRNG (Pseudo-Random Number Generator) to generate these numbers. This means that these numbers are not truly random, but instead, they are generated using a deterministic algorithm. This allows us to replicate the same sequence of random numbers by setting a seed. For example:
+
+```Elixir
+# Set a seed and generate the same sequence of random numbers
+:rand.seed(:erlang.phash2("elixir"))
+:rand.uniform(10)
 ```
 
-We can also generate random numbers from a custom distribution using the `:rand.uniform/1` function, passing in a distribution function as an argument. For example, to generate random numbers from a normal distribution with a mean of 0 and standard deviation of 1, we can use `:rand.normal/0`.
+This will always output the same number (which will be different than the one generated in the previous example). We can also use this same seed to generate a list of random numbers that will always be the same:
 
-```elixir
-:rand.normal() # output: 0.89202
-:rand.normal() # output: -1.56723
+```Elixir
+# Generate a list of 5 random integers using the same seed
+1..5 |> Enum.map(fn _ -> :rand.uniform(10) end)
 ```
 
-## Deep Dive
+This will output something like `[4, 2, 9, 5, 1]`.
 
-Under the hood, Elixir uses the `:random` module to generate random numbers. The `:random` module implements the Mersenne Twister algorithm, which is a high-quality pseudorandom number generator. Elixir also provides a `:rand` module, which is built on top of `:random` and provides a more convenient interface.
+# See Also
 
-It is worth noting that despite being pseudorandom, the output of Elixir's random number generator is deterministic. This means that given the same seed, the same sequence of random numbers will be generated. We can use the `:rand.seed/0` function to reset the seed of the random number generator, ensuring a different sequence of numbers is generated each time.
-
-## See Also
-
-- [Elixir `:random` module documentation](https://hexdocs.pm/elixir/Random.html)
-- [Elixir `:rand` module documentation](https://hexdocs.pm/elixir/Kernel.Rand.html)
+- Documentation for the `:rand` module: https://hexdocs.pm/elixir/Random.html
+- How to generate random strings in Elixir: https://dev.to/joeprevite/random-string-generation-with-elixir-354
+- How to generate random UUIDs in Elixir: https://medium.com/@b1nary642/how-to-generate-a-random-uuid-in-elixir-ee61c6b42cdb

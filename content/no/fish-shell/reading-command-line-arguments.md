@@ -1,56 +1,34 @@
 ---
-title:    "Fish Shell: Lese kommandolinje-argumenter"
+title:    "Fish Shell: Lese inn kommandolinje argumenter"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Velkommen til vår blogg om Fish Shell programmering! Hvis du er en norsk bruker som ønsker å dykke inn i verden av kommandolinjemiljøer, har du kommet til rett sted. I dag skal vi diskutere hvordan man kan lese kommandolinjeargumenter ved hjelp av Fish Shell.
 
-Har du noen gang lurt på hva som skjer når du kjører et skript i terminalen? Eller hva de rare symbolene og bokstavene du legger til etter et programnavn betyr? Det er her kommandolinjeargumenter kommer inn i bildet. Les videre for å lære mer om hvordan du kan lese og bruke dem i Fish Shell.
-
-## Hvordan
-
-```Fish Shell``` har en innebygd funksjon som heter ```argv``` som lar deg lese alle kommandolinjeargumentene som er gitt til et program eller et skript. Det er et array som inneholder alle argumentene, inkludert programnavnet som alltid vil være det første elementet.
-
-For eksempel, hvis du kjører følgende skript i terminalen:
+## Slik gjør du det
+For å lese kommandolinjeargumenter ved hjelp av Fish Shell, må du først forstå syntaxen for å lese argumentene. Dette gjøres ved å bruke spesialvariabelen `$argv`. La oss se på et eksempel:
 
 ```
-$ ./hello.sh John Doe
+Fish Shell 'set argumenter Eco'
+echo $argv
 ```
 
-Scriptet ville se slik ut:
+Dette vil returnere en liste over alle argumentene du har gitt til kommandoen, i dette tilfellet `"Eco"`, og vil være nyttig for senere bruk i din programmering.
 
-```
-echo Hei $argv[1] $argv[2]"
-```
+## Dypdykk
+For å forstå hvordan Fish Shell leser kommandolinjeargumenter, er det viktig å forstå den underliggende mekanismen for å tolke argumentene. Fish Shell bruker en "lazy loading" strategi når det kommer til parsing av argumentene, noe som betyr at i motsetning til andre kommandolinjemiljøer, vil Fish Shell bare lese argumentene når de skal brukes istedenfor å laste dem alle inn i minnet hver gang kommandoen kjøres.
 
-Output vil være:
-
-```
-Hei John Doe
-```
-
-Her bruker vi ```argv[1]``` og ```argv[2]``` for å få tilgang til de første to argumentene som ble gitt til skriptet vårt. Du kan også bruke ```argv[2:]``` for å få tilgang til alle argumentene etter det andre.
-
-Du kan også bruke flagg eller argumenter som har en bestemt betydning i et program eller skript. For å gjøre dette kan du bruke en innebygd funksjon kalt ```has-flag``` for å sjekke om flagget er gitt. Dette er spesielt nyttig i skript som tar imot ulike argumenter og må håndtere dem forskjellig.
-
-## Deep Dive
-
-Kommandolinjeargumenter er nyttige når du ønsker å gi informasjon til et program eller skript uten å måtte endre selve koden. Det kan også brukes til å angi filnavn, stier, valg og mye mer.
-
-I tillegg til å bruke ```argv``` og ```has-flag```, kan du også lese argumentene på en mer avansert måte ved å bruke en ```for```-loop. Dette lar deg håndtere hvert argument individuelt og utføre forskjellige handlinger for hvert av dem.
-
-For eksempel kan du bruke følgende kode for å liste ut alle argumentene i terminalen:
-
-```
-for arg in $argv
-  echo $arg
-end
-```
+Dette gir fordeler når det kommer til effektivitet og hastighet, men også noen ulemper, som for eksempel når argumentene trenger å bli filtrert eller transformert før kjøring av kommandoen. I slike tilfeller anbefales det å bruke Fish Shells innebygde funksjoner som `string split` for å håndtere argumentene på en mer kontrollert måte.
 
 ## Se også
+For mer informasjon om å lese kommandolinjeargumenter i Fish Shell, se følgende ressurser:
 
-- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Kommandolinjeargumenter i Bash Shell](https://www.baeldung.com/linux/bash-command-line-arguments)
-- [Slik bruker du variabler i Fish Shell](https://fishshell.com/docs/latest/tutorial.html#tut_variables)
+- [Fish Shell dokumentasjon om kommandolinjeargumenter](https://fishshell.com/docs/current/commands.html#sub-shells) 
+- [En tutorial på å lese kommandolinjeargumenter i Fish Shell](https://scotch.io/tutorials/getting-started-with-fish-the-friendly-interactive-shell)
+- [Hvordan bruke Fish Shell som din daglige kommandolinje](https://opensource.com/article/18/6/using-fish-instead-bash)
+
+Vi håper du har funnet denne artikkelen nyttig og at du er inspirert til å utforske mer av Fish Shell programmering! Lykke til og ha det gøy på kommandolinjen!

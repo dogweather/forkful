@@ -1,33 +1,82 @@
 ---
 title:    "C: Generowanie losowych liczb"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie losowych liczb jest nieodłączną częścią programowania w języku C. Może być wykorzystywane w różnych celach, takich jak testowanie algorytmów, symulacje lub tworzenie losowych wartości dla gier. Jest to przydatna funkcjonalność, której warto nauczyć się w celu ulepszenia swoich umiejętności programistycznych.
+Generowanie losowych liczb jest ważną częścią programowania w języku C. Losowe liczby są wykorzystywane w wielu aplikacjach, takich jak gry, symulacje, testowanie i wiele innych. W tym artykule dowiesz się jak wygenerować losowe liczby w Twoim programie w języku C.
 
 ## Jak to zrobić
 
-Aby wygenerować losowe liczby w języku C, musimy użyć funkcji `rand()`, która jest dostępna w standardowej bibliotece `stdlib.h`. Ta funkcja zwraca pseudo-losową liczbę z zakresu od 0 do `RAND_MAX`, który jest stałą zdefiniowaną w bibliotece. Aby wygenerować liczbę w określonym zakresie, możemy użyć prostej formuły:
+Istnieje kilka sposobów na wygenerowanie losowych liczb w języku C. Jednym z nich jest użycie funkcji `rand()` w połączeniu z funkcją `srand()`, która ustawia ziarno dla generatora liczb pseudolosowych. Poniżej znajduje się kod, który wygeneruje 10 losowych liczb z zakresu od 1 do 10:
 
 ```C
-int losowa_liczba = rand() % zakres + początek;
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    // ustawienie ziarna dla generatora liczb pseudolosowych
+    srand(time(0));
+
+    for (int i = 0; i < 10; i++) {
+        // wygenerowanie losowej liczby z zakresu 1-10 i wyświetlenie jej na ekranie
+        int random_number = rand() % 10 + 1; 
+        printf("%d ", random_number);
+    }
+
+    return 0;
+}
+
 ```
 
-Powyższy kod wygeneruje liczbę z zakresu od `początek` do `zakres + początek - 1`. Jeśli chcemy wygenerować liczbę zmiennoprzecinkową, możemy użyć funkcji `double random = (double)rand() / RAND_MAX;`, która zwróci wartość z przedziału od 0 do 1.
+Przykładowy wynik:
 
-## Głębszy zanurzenie
+```
+7 2 9 4 1 8 10 5 3 6
+```
 
-Funkcja `rand()` jest oparta na tzw. generatorze liczb pseudolosowych (PRNG - ang. Pseudo-Random Number Generator), który używa określonego algorytmu do generowania sekwencji liczb, które wydają się być losowe. Jednak w rzeczywistości te liczby są ustalone i powtarzają się po pewnym czasie. Dlatego nie powinno się używać funkcji `rand()` do celów, które wymagają wyjątkowej nieprzewidywalności, takich jak generowanie haseł.
+Możesz również użyć funkcji `random()` z biblioteki `stdlib.h` do generowania liczb pseudolosowych. Metoda ta działa na podobnej zasadzie jak `rand()`, ale może dawać lepsze wyniki w niektórych przypadkach. Poniżej znajduje się przykładowy kod wykorzystujący `random()`:
 
-W języku C dostępna jest również funkcja `srand()`, która ustawia tzw. ziarno generatora, co pozwala na kontrolowane generowanie sekwencji liczb. Jeśli funkcja `srand()` nie jest wywoływana, domyślnie używana jest wartość `1` jako ziarno.
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    // ustawienie ziarna dla generatora liczb pseudolosowych
+    srand(time(0));
+
+    for (int i = 0; i < 10; i++) {
+        // wygenerowanie losowej liczby z zakresu 1-10 i wyświetlenie jej na ekranie
+        int random_number = (random() % 10) + 1; 
+        printf("%d ", random_number);
+    }
+
+    return 0;
+}
+```
+
+Przykładowy wynik:
+
+```
+8 1 7 3 9 2 10 4 5 6
+```
+
+## Deep Dive
+
+Generowanie liczb pseudolosowych jest w rzeczywistości generowaniem ciągu liczb w sposób deterministyczny, tzn. na podstawie określonych reguł. W przypadku funkcji `rand()` i `random()` używana jest metoda zwana liniowym kongruencji. Jest to prosta i szybka metoda, ale może dawać nieco przewidywalne wyniki, zwłaszcza gdy nie jest używana w odpowiedni sposób.
+
+Aby uzyskać lepszą losowość, można wykorzystać bardziej złożone metody generowania liczb pseudolosowych, takie jak generator Mersenne Twister czy KISS (Keep It Simple Stupid) RNG. Te metody wymagają jednak dodatkowych bibliotek i są bardziej skomplikowane w użyciu.
 
 ## Zobacz także
 
-- Dokumentacja funkcji `rand()` w języku C: https://www.cplusplus.com/reference/cstdlib/rand/
-- Wszystko o generatorach liczb pseudolosowych: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
-- Przykładowe projekty wykorzystujące generowanie liczb losowych w języku C: https://www.codeproject.com/Articles/675417/Random-Number-Generators-RNGs-in-Cplusplus
-- Dlaczego nie powinieneś używać `rand()` do generowania haseł: https://nullprogram.com/blog/2013/07/27/
+- [Dokumentacja funkcji rand()](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Dokumentacja funkcji random()](https://www.tutorialspoint.com/c_standard_library/c_function_random.htm)
+- [Metoda liniowego kongruencji](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych#Metoda_liniowego_kongruencji)
+- [KISS RNG](https://pl.wikipedia.org/wiki/KISS_(Generator_liczb_pseudolosowych))
+- [Generator Mersenne Twister](https://pl.wikipedia.org/wiki/Generator_Mersenne_Twister)

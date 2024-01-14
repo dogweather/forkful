@@ -1,60 +1,80 @@
 ---
 title:    "Kotlin: З'єднання рядків"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Конкатенація - це процес об'єднання двох або більше рядків в один. Це корисно, коли вам потрібно створити складніший рядок зі змінними частинами.
+Конкатенація рядків є корисним інструментом для об'єднання декількох рядків в один. Це дозволяє програмістам створювати більш зрозумілі та зручні для використання рядки, що полегшує подальшу обробку та виведення даних.
 
 ## Як
 
 ```Kotlin
-val firstName = "Андрій"
-val lastName = "Іванченко"
-val fullName = firstName + " " + lastName
-
-println(fullName) // виведе: Андрій Іванченко
+fun main() {
+    var firstName = "Анна"
+    var lastName = "Петренко"
+    var fullName = firstName + " " + lastName
+    println(fullName)
+}
 ```
 
-У цьому прикладі ми використовуємо операцію конкатенації `+` для об'єднання двох рядків `firstName` та `lastName` зі знаком пробілу між ними. Результат - рядок `fullName`, який містить повне ім'я.
+Виведення: Анна Петренко
 
-## Profondeur
-
-Крім операції конкатенації `+`, у Kotlin є ще кілька способів об'єднання рядків. Одним з них є використання функції `plus()`:
+Конкатенація рядків у Kotlin може бути виконана за допомогою оператора "+" або застосуванням функції "plus()". Крім того, можна використовувати шаблонні рядки, де значення змінних вставляється за допомогою символу "$" перед назвою змінної.
 
 ```Kotlin
-val firstName = "Андрій"
-val lastName = "Іванченко"
-val fullName = firstName.plus(" ").plus(lastName)
-
-println(fullName) // виведе: Андрій Іванченко
+fun main() {
+    var firstName = "Анна"
+    var lastName = "Петренко"
+    var fullName = "$firstName $lastName"
+    println(fullName)
+}
 ```
 
-Також можна використовувати функцію `plus()` для об'єднання рядків змінної кількості:
+Виведення: Анна Петренко
+
+Застосування оператора "+=" дозволяє додавати нові значення до вже існуючого рядка.
 
 ```Kotlin
-val numbers = listOf("Один", "Два", "Три")
-val numbersString = numbers.joinToString(separator = " + ")
-
-println(numbersString) // виведе: Один + Два + Три
+fun main() {
+    var fullName = "Анна"
+    fullName += " Петренко"
+    println(fullName)
+}
 ```
 
-Крім цього, для об'єднання більшої кількості рядків можна використовувати функцію `concat()`:
+Виведення: Анна Петренко
+
+## Глибокий занурення
+
+Крім звичайного об'єднання двох рядків, в Kotlin також можна конкатенувати більше двох рядків за допомогою функції "StringBuilder.append()". Це особливо корисно, коли потрібно об'єднати більше ніж три рядки, оскільки кожен раз, коли оператор "+" використовується для конкатенації, створюється новий об'єкт рядка, що може призвести до зайвого використання пам'яті.
 
 ```Kotlin
-val numbers = arrayOf("Чотири", "П'ять")
-val numbersConcat = numbers.concat()
-
-println(numbersConcat) // виведе: ЧотириП'ять
+fun main() {
+    var fullName = StringBuilder()
+    fullName.append("Анна")
+    fullName.append(" Петренко")
+    println(fullName)
+}
 ```
 
-У цьому прикладі функція `concat()` об'єднує всі рядки з масиву `numbers` в один рядок.
+Виведення: Анна Петренко
+
+Крім того, Kotlin має вбудовану функцію "joinToString()", яка дозволяє злити елементи списку (або будь-якого ітерабельного об'єкта) у рядок з роздільником. Також можна встановити префікс та суфікс для кожного елементу в списку, або задати власний лямбда-вираз для обробки даних перед конкатенацією.
+
+```Kotlin
+fun main() {
+    var cities = arrayListOf("Київ", "Львів", "Одеса")
+    var cityList = cities.joinToString(prefix = "Міста: ", postfix = "!", separator = " - ")
+    println(cityList)
+}
+```
+
+Виведення: Міста: Київ - Львів - Одеса!
 
 ## Дивись також
 
-- [Офіційна документація Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#string-concatenation)
-- [Підручник з Kotlin для початківців](https://blog.jetbrains.com/kotlin/2020/12/strings-in-kotlin#concatenation)
-- [Стаття про рядки у Kotlin](https://www.baeldung.com/kotlin/string-concatenation)
+- [Офіційна документація Kotlin

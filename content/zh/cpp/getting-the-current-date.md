@@ -1,51 +1,51 @@
 ---
 title:    "C++: 获取当前日期"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-【为什么：探讨C ++获取当前日期的重要性】
+## 为什么要获取当前日期？
 
-获取当前日期是编写程序时经常需要做的一个任务。它可以帮助我们跟踪时间、调试问题和创建日志。同时，它也是一种良好的编程习惯，在构建可靠的应用程序时必不可少。在本文中，我们将学习如何在C ++中获取当前日期，并深入探讨它的工作原理。
+在编写程序时，经常需要获取当前的日期。这可以帮助我们跟踪时间，比如在日志记录中添加时间戳，或者在需要定期执行某些任务时判断日期。在C++中，获取当前日期是一项基本的操作，而且非常方便和灵活。
 
-【如何实现：示例代码和输出】
+## 如何获取当前日期？
 
-为了在C++中获取当前日期，我们需要使用标准库中的日期和时间函数。首先，我们需要在程序开头包含 “```C++ #include <ctime> ```” 来引用这个库。接下来，我们可以使用 “```C++ time_t now = time(0); ```” 来获取当前日期的数值表示。最后，我们可以使用 “```C++ char* dt = ctime(&now); ```” 来将日期转换为字符串格式，并将其打印出来。
-
-以下是完整的示例代码和输出：
+在C++中，获取当前日期需要使用标准库中的`<ctime>`头文件。下面是一个简单的例子，展示如何获取当前日期并输出它：
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main()
-{
-    // 获取当前时间的数值表示
+int main() {
+    // 获取当前日期
     time_t now = time(0);
     
-    // 将日期转换为字符串格式
-    char* dt = ctime(&now);
+    // 转换为可读格式
+    char* date = ctime(&now);
     
-    // 打印输出
-    std::cout << "当前日期为：" << dt << std::endl;
+    // 输出当前日期
+    std::cout << "当前日期为：" << date << std::endl;
     
     return 0;
 }
 ```
 
-输出：
+运行以上代码，输出将会是类似于以下格式的当前日期：
 
+```bash
+当前日期为：Mon Jun 21 11:54:59 2021
 ```
-当前日期为：Mon Mar 26 10:23:17 2018
-```
 
-【深入探讨：如何获取当前日期的原理】
+## 深入了解获取当前日期
 
-在我们的示例代码中，“time(0)” 返回一个数值，代表自 1970 年 1 月 1 日 00:00:00（协调世界时）以来的秒数。这个数值被称为“时间戳”。然后，我们将时间戳转换为一个字符串，这个字符串包含日期、时间和其他信息。注意，这个日期和时间是以当前系统时区为准的。因此，如果你需要使用不同的时区，可以使用 “```C++ struct tm *local = localtime(&now); ```” 函数来转换本地时间。
+在上面的例子中，我们使用了`ctime()`函数来获取当前日期。它的作用是将一个时间值转换为一个可读的C字符串。这个时间值通常是从`time()`函数中获取的，它返回一个表示自Epoch（计算机系统中某一刻开始的时间）以来的秒数的`time_t`类型的值。`ctime()`函数接受一个指向这个`time_t`值的指针，然后将它转换为一个字符串表示。
 
-【相关阅读：学习更多有关日期和时间的信息】
+除了`ctime()`函数外，C++标准库中还有其他有用的函数来获取当前日期，比如`localtime()`和`strftime()`。你可以尝试使用它们来获取当前日期的不同格式。同时，也可以阅读关于`<ctime>`头文件的更多详细信息来深入了解如何操作日期和时间。
 
-- [C++ 参考手册：time 函数](https://zh.cppreference.com/w/cpp/chrono/c/time)
-- [使用不同的时区来获取当前日期和时间](https://stackoverflow.com/questions/23019756/how-can-get-current-datetime-in-c-using-mktime-modified-such-current-time-disp)
-- [学习如何处理日期和时间格式](https://www.programiz.com/cpp-programming/library-function/ctime/ctime)
+## 另请参阅
+
+- [C++ Reference: <ctime>](https://www.cplusplus.com/reference/ctime/)
+- [GeeksforGeeks: C++ Standard Template Library <ctime>](https://www.geeksforgeeks.org/cpp-standard-template-library-stl/)
+- [C++ Plus: Date and Time in C++](https://www.cplusplus.com/forum/articles/36725/)

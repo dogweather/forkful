@@ -1,62 +1,43 @@
 ---
 title:    "Bash: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Każdy programista, niezależnie od poziomu zaawansowania, musi nauczyć się obsługiwać argumenty wiersza poleceń. Jest to niezbędne w tworzeniu skryptów lub aplikacji, które wymagają interakcji z użytkownikiem. Pozwala to na dynamiczne wprowadzanie danych i dostosowywanie działania programu w zależności od potrzeb. W tym artykule dowiesz się, jak czytać argumenty wiersza poleceń w języku Bash.
+Cześć! Jeśli jesteś początkującym programistą lub po prostu chcesz lepiej zrozumieć język Bash, to dobrze trafiłeś. W tym artykule dowiesz się, dlaczego warto nauczyć się czytać argumenty w wierszu poleceń (command line arguments) oraz nauczysz się, jak to zrobić. Czytaj dalej, jeśli jesteś zainteresowany rozwijaniem swoich umiejętności w języku Bash!
 
 ## Jak to zrobić
 
-Aby odczytać argumenty wiersza poleceń, należy skorzystać z wbudowanych zmiennych środowiskowych, takich jak $1, $2, $3 itd. Wartość tych zmiennych zależy od przekazanych argumentów. Można je również przypisać do innych zmiennych, co ułatwia pracę z nimi.
+Czasami podczas uruchamiania skryptu w Bash, możesz chcieć przekazać pewne informacje lub parametry, które będą wpływać na działanie programu. Tutaj właśnie przychodzą nam z pomocą argumenty w wierszu poleceń. Aby odczytać te argumenty, musimy użyć zmiennej "$@", która zawiera wszystkie przekazane argumenty w formie listy. Przykładowy kod wyglądałby następująco:
 
 ```Bash
-# Przykład: Skrypt, który wyświetla przekazane argumenty
-
 #!/bin/bash
-echo "Otrzymano następujące argumenty:"
-echo $1
-echo $2
+
+# Przykładowy skrypt czytający argumenty w wierszu poleceń
+
+echo "Hej, podaj swoje imię: "
+
+read name  # wczytujemy imię ze standardowego wejścia
+
+# "$@" pozwala nam na przekazanie wszystkich argumentów jako argument listy
+echo "Witaj, $name ! Twoje argumenty to: $@"
+
+# przykład uruchomienia: ./skrypt.sh argument1 argument2
+# Wyjście: Witaj, Adam ! Twoje argumenty to: argument1 argument2
 ```
 
-#### Przykładowe wywołanie skryptu z argumentami:
-```Bash
-./skrypt.sh argument1 argument2
-```
+Jak możesz zauważyć, zmienne "$@" są wykorzystywane do wyświetlenia wszystkich przekazanych argumentów. Możemy także odwołać się do konkretnych argumentów poprzez indeksowanie listy (np. "$1" dla pierwszego argumentu, "$2" dla drugiego itp.). Możliwości jest wiele, więc po prostu eksperymentuj i odkrywaj!
 
-#### Przykładowy wynik:
-```
-Otrzymano następujące argumenty:
-argument1
-argument2
-```
+## Deep Dive
 
-## Wnikliwa analiza
-
-Przekazane argumenty są przechowywane w tablicy, której nazwa to "$@", a jej elementy są indeksowane od 0. Warto zauważyć, że argumenty przekazywane w cudzysłowach będą traktowane jako pojedynczy argument, a spację można oddzielić użyciem symbolu "\".
-
-Możliwe jest również przekazanie argumentów bezpośrednio do pętli "for", co ułatwia iterację po wszystkich argumentach.
-
-```Bash
-for arg in "$@"
-do
-    echo "Przekazano argument: $arg"
-done
-```
-
-#### Przykładowy wynik:
-```
-Przekazano argument: argument1
-Przekazano argument: argument2
-```
+Jeśli chcesz dowiedzieć się więcej na temat czytania argumentów w wierszu poleceń, istnieje wiele dodatkowych zasobów, które mogą Ci pomóc. Możesz przeczytać dokumentację języka Bash lub poszukać różnych tutoriali i przykładów w Internecie. Zapewniam Cię, że znajdziesz mnóstwo przydatnych informacji i zastosowań dla tej umiejętności.
 
 ## Zobacz także
 
-* [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
-* [Poradnik Bash na Codecademy](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
-* [Przykłady zastosowań argumentów wiersza poleceń](https://www.howtogeek.com/435903/how-to-use-command-line-arguments-in-bash/)
-
-Dzięki temu artykułowi powinieneś mieć już podstawową wiedzę na temat czytania argumentów wiersza poleceń w języku Bash. Będąc programistą, warto umieć wykorzystywać przydatne narzędzia, takie jak narzędzia linii poleceń, aby ułatwić sobie pracę. W razie potrzeby, zawsze można poszerzyć swoją wiedzę, korzystając z przytoczonych źródeł.
+- [Dokumentacja języka Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutorial na temat czytania argumentów w wierszu poleceń](https://www.shellscript.sh/arguments.html)
+- [Blog Bash hackers](https://www.bash-hackers.org/wiki/doku.php)

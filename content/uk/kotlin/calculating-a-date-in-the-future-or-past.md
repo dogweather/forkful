@@ -1,42 +1,49 @@
 ---
-title:    "Kotlin: Обчислення дати в майбутньому або минулому"
+title:    "Kotlin: Обчислення дати в майбутньому або минулому."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+## Чому: 
+Обчислення дати у майбутньому або минулому може бути корисним при різних програмних завданнях, таких як планування подій або розрахунків бюджету. 
 
-Обчислення дати в майбутньому або минулому може бути корисним для планування подій або зберігання даних щодо минулих подій.
-
-## Як
-
+## Як: 
 ```Kotlin
-fun calculateFutureDate(years: Int, months: Int, days: Int): LocalDate {
-   val today = LocalDate.now()
-   val futureDate = today.plusYears(years).plusMonths(months).plusDays(days)
-   return futureDate
+
+// Імпорт необхідних бібліотек
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    // Обчислюємо дату п'ять днів в майбутньому
+    val futureDate = LocalDate.now().plusDays(5)
+
+    // Форматуємо дату за допомогою шаблону "dd.MM.yyyy"
+    val formattedFutureDate = futureDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+
+    // Виводимо результат
+    println("Дата через 5 днів: $formattedFutureDate") // Виводиться "Дата через 5 днів: 30.05.2021"
+
+    // Обчислюємо дату два роки назад
+    val pastDate = LocalDate.now().minusYears(2)
+
+    // Форматуємо дату за допомогою шаблону "dd.MM.yyyy"
+    val formattedPastDate = pastDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+
+    // Виводимо результат
+    println("Дата два роки тому: $formattedPastDate") // Виводиться "Дата два роки тому: 27.05.2019"
 }
 
-fun calculatePastDate(years: Int, months: Int, days: Int): LocalDate {
-   val today = LocalDate.now()
-   val pastDate = today.minusYears(years).minusMonths(months).minusDays(days)
-   return pastDate
-} 
-
-println("Дата в майбутньому: " + calculateFutureDate(5, 2, 18))
-// Output: Дата в майбутньому: 2026-09-18
-
-println("Дата в минулому: " + calculatePastDate(2, 6, 10))
-// Output: Дата в минулому: 2017-04-08
 ```
 
-## Глибше в обчислення
+## Profound Dive: 
+За допомогою стандартного класу `LocalDate` та його методів `plusDays()` та `minusYears()` ми можемо легко обчислювати дати у майбутньому та минулому. Також, за допомогою методу `format()` та класу `DateTimeFormatter` ми можемо форматувати дату у зручному для нас вигляді. 
 
-Kotlin пропонує декілька корисних функцій для обчислення дат в майбутньому або минулому. Функція `plusYears()` дозволяє додавати роки до поточної дати, `plusMonths()` - місяці, а `plusDays()` - дні. Аналогічно, функція `minusYears()` виконує обчислення в майбутньому, `minusMonths()` - місяці, а `minusDays()` - дні.
+## Дивіться також: 
+- [Документація про клас `LocalDate`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
+- [Стаття про форматування дати в Kotlin](https://kotlinexpertise.com/kotlin-date-time-api/)
+- [Приклади використання вбудованих методів для обчислення дати у майбутньому та минулому](https://www.geeksforgeeks.org/kotlin-localdate-minusyears-minusmonths-minusweeks-minusdays-must-see/)
 
-## Дивіться також
-
-- [Офіційна документація Kotlin](https://kotlinlang.org/)
-- [Стаття про роботу з датами в Kotlin](https://www.baeldung.com/kotlin/dates)
-- [Відео з прикладами обчислення дат в Kotlin](https://www.youtube.com/watch?v=vruGNhGDmns)
+Блог-пост написаний на мові програмування Kotlin, яку можна використовувати для широкого спектру завдань, включаючи обчислення дат у майбутньому та минулому. Надіємося, що ця стаття була корисною для вас, і ви будете використовувати ці знання у вашій роботі з Kotlin!

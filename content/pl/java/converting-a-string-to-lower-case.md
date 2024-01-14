@@ -1,45 +1,43 @@
 ---
-title:    "Java: Konwertowanie ciągu znaków na małe litery"
+title:    "Java: Konwersja ciągu znaków na małe litery"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie ciągu znaków na małe litery jest powszechnie używaną funkcją w języku Java. Jest to szczególnie przydatne w przypadku użytkowników, którzy chcą wprowadzić dane do programu w formacie, który jest niezależny od wielkości liter. Zmiana wielkości liter może również ułatwić porównywanie danych.
+Konwertowanie danych na małe litery jest częstym zadaniem wykonywanym w programowaniu Java. Jest to ważne, ponieważ pozwala na porównywanie i analizowanie napisów w sposób jednolity i spójny. W tym artykule omówimy, dlaczego warto przetwarzać dane na małe litery i jak to zrobić w prosty sposób.
 
 ## Jak to zrobić
 
+Aby przekonwertować napis na małe litery w Javie, wystarczy użyć metody `toLowerCase()`. Przykładowy kod wyglądałby następująco:
+
 ```Java
-public static void main(String[] args) {
-
-    // Przykładowy ciąg znaków
-    String name = "Java Programming";
-
-    // Użycie metody toLowerCase() do konwertowania na małe litery
-    String lowerCaseName = name.toLowerCase();
-
-    // Wyświetlenie wyniku
-    System.out.println("Przed konwersją: " + name);
-    System.out.println("Po konwersji: " + lowerCaseName);
-}
+String napis = "PRZYKŁADOWY NAPIS";
+String napisMaly = napis.toLowerCase();
+System.out.println(napisMaly);
 ```
 
-Output: 
+Powyższy przykład wyświetli na ekranie "przykładowy napis". Metoda `toLowerCase()` zwraca nowy obiekt typu String, więc warto przypisać go do nowej zmiennej.
+
+Innym sposobem na konwersję napisu na małe litery jest użycie metody `toUpperCase()` w celu zamiany wszystkich liter na duże, a następnie metody `toLowerCase()` dla uzyskania małych liter.
+
+```Java
+String napis = "Przykładowy napis";
+String napisMaly = napis.toUpperCase().toLowerCase();
+System.out.println(napisMaly);
 ```
-Przed konwersją: Java Programming
-Po konwersji: java programming
-```
 
-## Dogłębne zanurzenie
+## Deep Dive
 
-Konwersja ciągu znaków na małe litery odbywa się za pomocą metody `toLowerCase()`, która jest dostępna dla każdego obiektu typu `String`. W języku Java, wszystkie ciągi znaków są traktowane jako obiekty i dlatego mogą mieć różne metody dostępne do użycia. Metoda `toLowerCase()` przekształca wszystkie znaki na małe litery i zwraca wynik jako nowy obiekt `String`.
+Podczas konwersji na małe litery należy pamiętać o tym, że zależy to od ustawień lokalnych systemu operacyjnego. Jeśli system operacyjny jest ustawiony na język, który używa znaków Unicode, wynikiem działania metody `toLowerCase()` może być inny niż oczekiwany. Aby uniknąć tego problemu, można użyć metody `toLowerCase(Locale.ROOT)`.
 
-Jedną z głównych przyczyn, dla których konwertujemy ciągi znaków na małe litery jest uniknięcie problemów związanych z wielkością liter w danych wejściowych. Dzięki temu, że wszystkie znaki są konwertowane na małe, nie będzie znaczenia, czy użytkownik wprowadził dane z małej czy wielkiej litery.
+Kolejną ważną kwestią jest to, że metoda `toLowerCase()` działa tylko dla liter łacińskich. Jeśli potrzebujemy konwertować napis składający się z liter z alfabetów innych języków, należy użyć metody `toLowerCase(Locale)` i podać odpowiednie ustawienia regionalne. Na przykład, dla napisu w języku polskim, powinniśmy użyć `toLowerCase(new Locale("pl"))`.
 
-## Zobacz również
+## Zobacz także
 
-- [Java String Methods](https://www.w3schools.com/java/java_ref_string.asp)
-- [Konwertowanie liczb na tekst w języku Java](https://javatutorial.net/java-convert-number-to-string)
-- [Official Java Documentation on String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- Java String methods: https://www.javatpoint.com/java-string
+- Java Locale class: https://www.baeldung.com/java-locale
+- Unicode character sets: https://unicode-table.com/en/

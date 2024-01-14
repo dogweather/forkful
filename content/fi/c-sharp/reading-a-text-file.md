@@ -1,41 +1,68 @@
 ---
-title:    "C#: Tiedostotekstin lukeminen"
+title:    "C#: Tekstitiedoston lukeminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä miksi lukisi teksti-tiedostoa C#-ohjelmoinnissa. Se voi olla hyödyllistä esimerkiksi kun haluat lukea ja käsitellä suuria määriä dataa tai kun haluat tallentaa käyttäjän syöttämiä tietoja.
+Lukeminen on keskeinen osa ohjelmoinnin oppimista. Tekstikäsikirjoitusten lukeminen on erityisen tärkeää, sillä se antaa meille arvokasta tietoa siitä, miten tiedostot tallennetaan, jäsennellään ja käsitellään tietokoneella. Tässä blogikirjoituksessa opimme, miten voimme lukea tekstikäsikirjoituksia käyttämällä C# -ohjelmointikieltä.
 
-## Kuinka tehdä
+## Miten
 
-Lukeminen teksti-tiedostosta C# koodilla on helppoa. Seuraavassa on esimerkki koodista, joka lukee teksti-tiedoston ja tulostaa sen sisällön konsoliin.
+Käytämme C# -ohjelmointikieltä lukemaan tiedostoja. Ensimmäisen vaiheen tulisi olla tiedoston avaaminen ja lukeminen. Se voidaan tehdä käyttämällä `StreamReader` -luokkaa, joka auttaa lukemaan tekstikäsikirjoituksia ja tallentamaan sen sisällön muuttujaan.
 
 ```C#
-// Avaaminen ja lukeminen tiedostosta
-string tiedosto = @"polku/tiedosto.txt";
-string sisalto = File.ReadAllText(tiedosto);
+using System.IO;
 
-// Tulostaminen konsoliin
+// Avataan tiedosto "tiedostonimi.txt"
+StreamReader tiedosto = new StreamReader("tiedostonimi.txt");
+
+// Luetaan tiedoston sisältö ja tallennetaan se muuttujaan "sisalto"
+string sisalto = tiedosto.ReadToEnd();
+// Suljetaan tiedosto
+tiedosto.Close();
+
+// Tulostetaan tiedoston sisältö konsoliin
 Console.WriteLine(sisalto);
 ```
 
-### Tulostus
+Yllä olevassa esimerkissä luomme ensin uuden `StreamReader` -ilmentymän ja annamme sille tiedostonimen, jonka haluamme lukea. Tämän jälkeen käytämme `ReadToEnd()` -metodia lukemaan ja tallentamaan tiedoston sisällön `sisalto`-muuttujaan. Lopuksi suljemme tiedoston käyttämällä `Close()` -metodia.
+
+### Tulos
+
+Tulostamme konsoliin tiedoston sisällön käyttämällä `Console.WriteLine` -metodia ja antamalla sille `sisalto`-muuttujan.
+
 ```
-Tämä on esimerkki teksti-tiedostosta.
-Siinä on muutama rivi tekstiä.
-Voit lukea sen C# koodilla.
+Tervetuloa tekstikäsikirjoituksen maailmaan!
+```
+
+Voit myös lukea tekstikäsikirjoituksia rivin kerrallaan käyttämällä `ReadLine()` -metodia.
+
+```C#
+// Luetaan tiedoston ensimmäinen rivi ja tallennetaan se muuttujaan "rivi"
+string rivi = tiedosto.ReadLine();
 ```
 
 ## Syvällinen sukellus
 
-Teksti-tiedoston lukeminen ei rajoitu vain yllä olevaan esimerkkiin. Voit myös halutessasi käyttää lukemiseen teksti-tiedosto-olioita ja erilaisia lukemiseen tarkoitettuja funktioita, kuten `ReadLines()`.
+Lukeminen on vain yksi osa tiedoston käsittelyä. Voit myös muuttaa tiedoston sisältöä ja tallentaa sen takaisin käyttämällä `StreamWriter` -luokkaa.
 
-Lisäksi voit myös käsitellä tiedostosta luetun datan haluamallasi tavalla, kuten tallentaa sen muuttujiin tai käyttää sitä osana muuta koodia.
+```C#
+// Luodaan uusi "StreamWriter" -ilmentymä ja annetaan sille tiedoston nimi
+StreamWriter kirjoittaja = new StreamWriter("uusitiedosto.txt");
+
+// Muutetaan tiedoston sisältöä ja tallennetaan se käyttämällä "WriteLine" -metodia
+kirjoittaja.WriteLine("Tämä on uusi rivi.");
+// Suljetaan tiedosto
+kirjoittaja.Close();
+```
+
+Yllä olevassa esimerkissä käytämme `StreamWriter` -luokkaa tallentamaan uuden rivin tiedostoon. Voit myös käyttää muita metodeja, kuten `Write()` tai `Append()`, muokkaamaan tai lisäämään sisältöä tiedostoon.
 
 ## Katso myös
 
-- [C# tiedoston luku ja kirjoitus](https://www.linkedin.com/pulse/lukeminen-ja-kirjoittaminen-c-koodissa-mikko-sprinkman)
-- [C# tiedostojen käsittely](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
+- [Microsoft C# -dokumentaatio](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [SoloLearn C# -kurssi](https://www.sololearn.com/Course/CSharp/)

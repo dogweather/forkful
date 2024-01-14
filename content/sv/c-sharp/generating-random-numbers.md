@@ -1,35 +1,45 @@
 ---
-title:    "C#: Generering av slumpmässiga nummer"
+title:    "C#: Generera slumpmässiga nummer"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Generering av slumpmässiga nummer är en viktig del av programmering eftersom det låter oss skapa spel, utföra statistiska analyser och utföra andra kritiska uppgifter. Genom att använda slumpmässiga nummer kan vi skapa program som är mer realistiska och tillförlitliga.
+Att generera slumpmässiga nummer är en vanlig uppgift inom programmering, särskilt inom spelutveckling, dataanalys och simuleringar. Det kan också vara användbart för att skapa unika identifierare eller lösenord.
 
-## Hur man gör
+## Så här gör du
 
-För att generera slumpmässiga nummer i C# kan vi använda oss av "Random" klassen. Här är ett enkelt exempel på hur detta kan göras:
+Det finns flera sätt att generera slumpmässiga nummer i C#. En enkel metod är att använda klassen `Random` och dess metod `Next()` för att generera ett heltalsvärde som visas nedanför:
 
 ```C#
-Random random = new Random(); // Skapar en ny Random objekt
-int randomNumber = random.Next(1, 11); // Genererar ett slumpmässigt nummer mellan 1 och 10
+// Skapar en ny instans av klassen Random
+Random slumpgenerator = new Random();
 
-Console.WriteLine($"Slumpmässigt nummer: {randomNumber}"); // Skriver ut det slumpmässiga numret
+// Generera ett heltal i intervallet 1-100
+int slumpmässigtNummer = slumpgenerator.Next(1, 101);
+
+// Skriv ut det slumpmässiga numret
+Console.WriteLine("Det slumpmässiga numret är: " + slumpmässigtNummer);
 ```
 
-När koden körs kommer ett slumpmässigt nummer mellan 1 och 10 att genereras och skrivas ut på skärmen. Detta är bara en enkel användning av "Random" klassen och det finns flera andra metoder och funktioner som kan användas för att skapa olika typer av slumpmässiga nummer.
+Output:
+```
+Det slumpmässiga numret är: 39
+```
+
+För att generera flera slumpmässiga nummer kan man sätta koden i en `for`-loop eller använda metoden `Next()` flera gånger. Det finns också andra metoder i klassen `Random` som kan generera andra datatyper som flyttal eller booleska värden.
 
 ## Djupdykning
 
-Slumpmässiga nummer genereras med hjälp av en algoritm som kallas för "pseudo-random number generator (PRNG)". Detta innebär att numren som genereras inte är helt slumpmässiga utan beräknade baserat på en startpunkt, kallad "seed". Om vi exempelvis använde samma "seed" i vårt första exempel skulle det alltid generera samma sekvens av nummer.
+Vad som kan vara viktigt att veta är att "slump" i datorvärlden egentligen inte är helt slumpmässigt, utan baseras på en algoritm som genererar ett mönster som vi människor uppfattar som slumpmässigt. Det finns också olika algoritmer som kan användas för att skapa olika typer av slumpmässiga nummer, beroende på vad det ska användas till.
 
-En annan viktig faktor att tänka på är att datorer inte är kapabla att generera riktigt slumpmässiga nummer, eftersom de är byggda för att följa instruktioner. Istället använder de olika algoritmer för att simulera slumpmässighet.
+Det finns också sätt att förbättra slumpmässigheten, som att använda systemtid eller unika värden som frö för algoritmen. Det är också viktigt att vara medveten om att en dator inte kan skapa verkligt slumpmässiga nummer, utan det är alltid baserat på någon form av algoritm.
 
 ## Se även
 
-- [C# Random Klass](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [Slumpmässiga nummer i C#](https://www.geeksforgeeks.org/random-number-generator-in-c-sharp/)
-- [Pseudo-random number generator](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
+- [Dokumentation för klassen Random i .NET](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
+- [Random Number Generation in C# (Programiz)](https://www.programiz.com/csharp-programming/random-number)
+- [The Danger of Pseudo-Random Numbers (Medium)](https://medium.com/@afshinea/the-danger-of-pseudo-random-numbers-e29758ea38d2)

@@ -1,42 +1,41 @@
 ---
-title:    "C#: המרת תאריך למחרוזת"
+title:    "C#: מרתיחת תאריך למחרוזת"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-מדוע: 
-המרת תאריך למחרוזת היא תהליך חשוב בתכנות C#, מכיוון שהמחרוזת היא דרך נוחה ונרחבת יותר להצגת תאריך מאשר ערך נומרי. בנוסף, מומלץ להשתמש במחרוזת כאשר אנחנו רוצים להכיל מידע נוסף על התאריך בנוסחא מובנה.
+## למה
 
-איך לבצע:
-ניתן להמיר תאריך למחרוזת בעזרת הפונקציה ToString (). הנה דוגמא לקוד ב-C#:
+ממשקי משתמש ותוכניות דרישה לפעמים מצריכים המרה של תאריך למחרוזת. כתיבת פונקציה שתעשה זאת בכל פעם עשוי להיות מסורבלת ומבלבלת. איך ניתן להציג בצורה נוחה ומסודרת את התאריך בפורמט שניתן לקריאה על ידי מכונית ואנשים?
 
-```C#
-DateTime date = new DateTime(2020, 12, 31);
-string dateString = date.ToString();
-Console.WriteLine(dateString);
+## איך לעשות זאת
 
-// Output: 31/12/2020 12:00:00 AM
-```
-
-דילוג עמוק:
-הפונקציה ToString () מאפשרת לנו להציג את התווים הנוספים במחרוזת, כגון שם החודש, סימן היום הראשון וכו'. ניתן להשתמש בפורמטים שונים בפונקציה כדי להציג את התאריך בצורה מותאמת אישית.
-
-לדוגמא:
+כדי להמיר תאריך למחרוזת בשפת סי-שארפ, ניתן להשתמש בפונקציית ToString על אובייקט מסוג DateTime. היא מאפשרת להציג את התאריך בפורמט מותאם לצרכי המשתמש כגון "dd/MM/yyyy" או "MMM d, yyyy". להלן דוגמאות קוד ופלט:
 
 ```C#
-DateTime date = new DateTime(2020, 12, 31);
-string dateString = date.ToString("dd MMMM yyyy");
-Console.WriteLine(dateString);
-
-// Output: 31 דצמבר 2020
+DateTime today = DateTime.Today;
+string dateString = today.ToString("dd/MM/yyyy");
+Console.WriteLine(dateString); // תצוגת התאריך בפורמט dd/MM/yyyy
+string shortDateString = today.ToString("MMM d, yyyy");
+Console.WriteLine(shortDateString); // תצוגת התאריך בפורמט MMM d, yyyy
 ```
 
-בנוסף, ניתן להשתמש בפונקציה להפיכת התאריך למחרוזת בלי התווים הנוספים, כדי להציג רק את היום והחודש כמחרוזת מספרית.
+## שכיבה עמוקה
 
-עמודות לכתבות נוספות:
+פונקציית ToString מאפשרת הרבה יותר ממתן פורמט לתאריך. ניתן להשתמש במגוון מתן תבניות שמאפשרות להציג את התאריך בכל סוג של פורמט שנרצה. הנה כמה דוגמאות נוספות:
 
-ראו גם:
-- תיעוד על הפונקציה ToString () באתר הרשמי של C#: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring
-- הספרייה של Microsoft להפיכת תאריך למחרוזת: https://www.microsoft.com/en-us/globalization/dfps.mspx
-- פוסט נוסף בבלוג שלנו על השימוש בפונקציה ToString () להפיכת תאריך למחרוזת: [קישור לפוסט]
+```C#
+DateTime now = DateTime.Now;
+string fullDateFormat = now.ToString("dddd, dd MMMM yyyy"); // "D, d MMMM yyyy"
+string timeFormat = now.ToString("hh:mm tt"); // "10:45 PM"
+string customFormat = now.ToString("MM-dd-yy HH:mm:ss"); // "07-15-20 22:45:00"
+```
+ למידע נוסף על הפונקצייה ניתן לעיין במדריך המפורט של Microsoft ל [DateTime.ToString()](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1).
+
+## ראה גם
+
+- [מדריך לפורמט של תאריך וזמן בסי-שארפ](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [הבדלים בין DateTime.ToString() ל DateTime.ToShortDateString() ל DateTime.ToLongDateString()](https://stackify.com/csharp-datetime-toshortdatestring-tolongdatestring/)
+- [תבניות לפונקציית ToString()](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)

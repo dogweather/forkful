@@ -1,63 +1,55 @@
 ---
-title:    "Haskell: डीबग आउटपुट छापना"
+title:    "Haskell: Reply with डिबग आउटपुट मुद्रित करना"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-Debug आउटपुट प्रिंट करने का सबसे साधारण कारण यह है कि इससे आपको अपने कोड में दिख रही समस्याओं को आसानी से पहचानने में मदद मिलती है।
+कोई भी विकासकार जो कोड को डेबग कर रहा हो, उसे डेबग आउटपुट प्रिंट करने की आवश्यकता हो सकती है। विभिन्न त्रुटियों को सुलझाने और कोड को ठीक करने के लिए डेबग आउटपुट बहुत महत्वपूर्ण होता है।
 
 ## कैसे करें
 
-आप Haskell में `Debug.Trace` लाइब्रेरी का उपयोग करके, `trace` फ़ंक्शन को अपने कोड में डालकर debug आउटपुट प्रिंट कर सकते हैं। नीचे एक उदाहरण दिया गया है:
+डेबग आउटपुट प्रिंट करने के लिए `Debug.Trace` मॉड्यूल का उपयोग कर सकते हैं। नीचे कुछ उदाहरण दिए गए हैं:
 
-```Haskell
+``` Haskell
 import Debug.Trace
 
-square :: Int -> Int
-square x = trace ("Calculating square of " ++ show x) (x * x)
-
-main :: IO ()
 main = do
-  let num = 5
-  print $ "The square of " ++ show num ++ " is " ++ show (square num)
+  let x = 5
+  trace "x का मान प्रिंट कर रहे हैं" $ print x
 ```
 
 आउटपुट:
 
 ```
-"Calculating square of 5"
-"The square of 5 is 25"
+x का मान प्रिंट कर रहे हैं
+5
 ```
 
-## गहराई में खोजें
+अन्य तरीके से डेबग आउटपुट प्रिंट करने के लिए, `printf` फंक्शन का भी उपयोग किया जा सकता है।
 
-Debug आउटपुट प्रिंट करने के अलावा, आप भी `traceShow` फ़ंक्शन का उपयोग कर सकते हैं जो आपको अपने डेटा की गहराई में जानकारी देता है। नीचे एक उदाहरण दिया गया है:
+``` Haskell
+import Text.Printf
 
-```Haskell
-import Debug.Trace
-
-data Person = Person
-  { name :: String
-  , age :: Int
-  } deriving (Show)
-
-main :: IO ()
 main = do
-  let person = Person "John" 25
-  print $ traceShow person "Person:"
+  let x = 10
+  printf "x का मान = %d\n" x
 ```
 
 आउटपुट:
 
 ```
-Person: (Person {name = "John", age = 25})
+x का मान = 10
 ```
 
-## और भी देखें
+## गहराई में जाएं
 
-- [Haskell Wiki: Debugging techniques](https://wiki.haskell.org/Debugging_techniques)
-- [Haskell Debugging in GHCi](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugger.html)
-- [Debugging in Haskell with the `Debug.Trace` Module](https://daveaglick.com/posts/debugging-in-haskell-with-the-debug-trace-module)
+डेबग आउटपुट प्रिंट करने का अधिक गंभीर उपयोग हमेशा गहराई में जा सकता है। आप `Debug.Trace` के अलावा `Debug.Trace.Core` या `Debug.Trace.Bittorrent` जैसे दूसरे लाइब्रेरी भी उपयोग कर सकते हैं। इनमें से कुछ लिस्टिंग, ट्रेस और डंप फ़ंक्शन्स शामिल हो सकते हैं जो कोड को डेबग करने में मदद कर सकते हैं।
+
+## देखें भी
+
+- [डेबगिंग टूल्स के बारे में अधिक जानकारी के लिए, आप हमारे अन्य ब्लॉग पोस्ट पढ़ सकते हैं।](https://example.com/debugging-tools)
+- [Haskell डेबगिंग के अन्य तरीके के बारे में अधिक जानने के लिए, आप हमारे ऑफिशियल डॉ

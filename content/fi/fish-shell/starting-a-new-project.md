@@ -1,42 +1,34 @@
 ---
-title:    "Fish Shell: Aloittamassa uutta projektia"
+title:    "Fish Shell: Uuden projektin aloittaminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti?
 
-Joissakin tilanteissa on houkuttelevaa aloittaa uusi projekti Fish Shellin avulla. Tässä bloggausartikkelissa käymme läpi joitakin syitä siihen.
+On monia syitä aloittaa uusi projekti Fish Shell -ohjelmoidessa. Ehkä haluat automatisoida tiettyjä tehtäviä tai oppia uusia ohjelmointitaitoja. Riippumatta syystä, aloittaminen uudessa projektissa voi olla jännittävä ja palkitseva kokemus.
 
-## Miten
+## Kuinka aloittaa uusi projekti Fish Shell -ohjelmoinnissa?
 
-Fish Shellin avulla uuden projektin aloittaminen on helppoa. Alla on muutamia esimerkkejä koodinpätkistä ja niiden tuottamasta tulosteesta. Voit kokeilla näitä itse kopioiden koodinpätkät ja liimaten ne Fish Shelliin.
+Aloittaminen uudessa projektissa Fish Shell -ohjelmoinnissa on helppoa. Ensimmäiseksi luodaan uusi hakemisto projektia varten, ja sitten siirrytään siihen komennolla ```mkdir uusi_projekti``` ja ```cd uusi_projekti```. Sen jälkeen voit luoda uuden tiedoston komennolla ```touch script.fish```, joka on tiedosto, johon voit kirjoittaa projectisi koodin. Nyt voit avata tiedoston haluamallasi tekstieditorilla esimerkiksi komennolla ```nano script.fish```.
 
+```Fish Shell
+# Tervetuloa uuteen projektiin
+echo "Hei maailma!"
 ```
-Fish Shell -versio
 
-``` 
-Fish Shellin tämänhetkinen versio tulostuu ruudulle.
+Voit suorittaa tämän yksinkertaisen koodin komennolla ```fish script.fish```, ja saat näkyviin tuloksen ```Hei maailma!```. Nyt voit aloittaa ohjelmointisi ja lisätä haluamiasi komentoja ja logiikkaa.
 
-```
-Selainisku 'google.fi'
+## Syvällinen sukellus uuden projektin aloittamiseen
 
-```
-Tämä koodipätkä avaa oletusselaimessasi Google Finland-sivuston.
+Aloittaessasi uuden projektin Fish Shell -ohjelmoinnissa, on tärkeää pitää mielessä muutamia asioita. Ensinnäkin, varmista että käytössäsi on viimeisin versio Fish Shellistä, jotta saat parhaan mahdollisen kokemuksen. Myös ohjelmointityökalut, kuten tekstieditori, voivat vaikuttaa ohjelman suorituskykyyn.
 
-```
-a=`kaupunki` ; echo "Suosikkikaupunkisi on $a"
-
-```
-Tämä koodinpätkä kysyy sinulta suosikkikaupunkiasi ja tulostaa vastauksesi lauseessa.
-
-## Syvemmälle
-
-Uuden projektin aloittaminen Fish Shellillä tarjoaa monia mahdollisuuksia ja tapoja helpottaa koodaamista. Voit esimerkiksi käyttää Fish Shellin alias-toiminnallisuutta, joka antaa sinun määrittää lyhyempiä komentoja usein käyttämillesi komennoille. Voit myös luoda funktioita, jotka suorittavat tiettyjä toimintoja ja helpottavat koodin uudelleenkäyttöä.
+Lisäksi saatat haluta ottaa huomioon, miten haluat hallita projektisi ulkoasua ja tiedostorakennetta. Tämä voi helpottaa projektin ylläpitoa ja mahdollisesti auttaa muita kehittäjiä ymmärtämään projektisi paremmin.
 
 ## Katso myös
 
-- Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/index.html
-- Fish Shellin GitHub-sivu: https://github.com/fish-shell/fish-shell
-- Fish Shell -yhteisön keskustelufoorumi: https://www.reddit.com/r/fishshell/
+- [Fish Shell virallinen sivusto](https://fishshell.com/)
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub-sivu](https://github.com/fish-shell/fish-shell)

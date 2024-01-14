@@ -1,44 +1,47 @@
 ---
 title:    "Rust: 编写文本文件"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-编写文本文件可能是每个编程人员都经常做的事情，无论是作为注释，还是作为文档，或者仅仅为了测试一些代码。使用Rust编程语言来处理文本文件可以带来很多优势，例如效率高、安全性强等。下面我们就来看看如何用Rust来编写文本文件吧。
+Rust是一种功能强大的编程语言，它具有高性能、安全性和并发性能的优势。如果你想要学习一门新的语言，并且对编写文本文件感兴趣，那么Rust语言可能是一个很好的选择。
 
 ## 如何
 
-下面是一个简单的例子，展示了如何使用Rust来创建并写入文本文件：
+首先，你需要安装Rust编译器。在你的命令行界面中输入`rustc --version`来检查是否已经安装成功。接下来，你可以使用任何文本编辑器来编写Rust代码。
+
+下面是一个例子，展示如何使用Rust来创建和写入一个文本文件：
 
 ```Rust
 use std::fs::File;
-use std::io::Write;
+use std::io::prelude::*;
 
 fn main() {
-    // 创建一个叫做 "hello.txt" 的文件，并且以写入模式打开它
-    let mut file = File::create("hello.txt").unwrap();
-    // 使用 write 方法将文本内容写入文件
-    file.write(b"Hello world!").unwrap();
+    // 创建一个名为"hello.txt"的新文件，并以写入模式打开
+    let mut file = File::create("hello.txt").expect("无法创建文件");
+    
+    // 创建一个字符串，将要写入文本文件中
+    let message = "Hello, world!";
+    
+    // 将字符串写入文件中
+    file.write_all(message.as_bytes()).expect("无法将字符串写入文件");
 }
 ```
-代码很简单，首先，我们需要导入 `std::fs` 和 `std::io`，这两个模块提供了Rust操作文件的接口。然后，我们通过 `File::create` 方法来创建一个名为 `hello.txt` 的文件，并且以写入模式打开它。最后，我们使用 `write` 方法将文本内容写入文件。需要注意的是，`write` 方法的参数需要是一个字节数组，所以我们需要在文本内容前加上 `b` 前缀。
 
-运行上面的代码之后，我们就可以在当前目录下找到 `hello.txt` 文件，打开它，就会看到里面写入了 `Hello world!` 这段文本。是不是很简单呢？
+当你运行这段代码后，可以在相同的目录下找到你创建的"hello.txt"文件，其中包含了"Hello, world!"这句话。
 
 ## 深入了解
 
-其实，Rust在处理文本文件时还提供了更多的方法，例如可以根据需要选择不同的写入模式，还可以在写入文本之前先对其进行编码等等。如果想要深入了解Rust处理文本文件的知识，可以阅读官方文档中关于 `File` 和 `IO` 的部分。
+在Rust中，文本文件是通过`std::fs::File`模块来创建和操作的。使用`File::create()`函数来创建一个新的文件，并使用`File::write_all()`函数来将数据写入文件中。
 
-## 看看这些
+你也可以使用`std::io::BufWriter`模块来帮助提高写入文件的性能。这个模块可以将数据缓冲起来，每次都一次性写入文本文件中，而不是每次都写入一个字节。
 
-如果你对Rust编程感兴趣，可以参考下面这些学习资源：
+## 查看相关
 
-- [Rust官方文档](https://doc.rust-lang.org)
-- [Rust编程语言中文版](https://kaisery.github.io/trpl-zh-cn)
-- [Rust编程语言论坛](https://forum.rustchina.org)
-- [Rust编程语言中文社区](https://rustcc.cn)
-
-希望本文能帮助你更好地使用Rust来处理文本文件，谢谢阅读！
+- [Rust官方文档](https://www.rust-lang.org/zh-CN/learn)
+- [Rust编程语言教程](https://wiki.jikexueyuan.com/project/rust-primer/basic/textfiles.html)
+- [文件操作 - Rust编程语言官方教程](https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html#summary)

@@ -1,79 +1,58 @@
 ---
 title:    "PHP recipe: Comparing two dates"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When building a website or application, developers often need to compare two dates for various reasons. This could be for events scheduling, tracking user activities, or displaying time-sensitive information. Understanding how to compare dates in PHP is an essential skill for any programmer.
+When developing a website or application, it's common to have to compare two dates. This could be for tasks like calculating the difference in time, checking for overlap, or sorting data chronologically. In this blog post, we'll explore how to compare two dates using PHP.
 
 ## How To
 
-To compare two dates in PHP, we first need to convert them into a common format. The most common format for dates is the UNIX timestamp, which represents the number of seconds that have elapsed since January 1, 1970, at 00:00:00 UTC. We can use the `strtotime()` function to convert a date string into a UNIX timestamp.
+To compare two dates in PHP, we can use the built-in `DateTime` class. This class allows us to create date objects, perform operations on them, and compare them. Let's take a look at some examples.
 
-Let's take a look at an example:
+First, we'll create two date objects for comparison:
 
 ```PHP
-// Two different dates
-$date1 = "2021-06-01";
-$date2 = "2021-06-15";
-
-// Convert dates into UNIX timestamps
-$timestamp1 = strtotime($date1);
-$timestamp2 = strtotime($date2);
-
-// Compare the timestamps
-if ($timestamp1 < $timestamp2) {
-    echo "$date1 is before $date2";
-} elseif ($timestamp1 > $timestamp2) {
-    echo "$date2 is before $date1";
-} else {
-    echo "The dates are the same";
-}
+$date1 = new DateTime('2021-01-01');
+$date2 = new DateTime('2021-01-15');
 ```
 
-In this example, we first define two different dates, `$date1` and `$date2`. Then, we use `strtotime()` to convert them into UNIX timestamps. Finally, we use a series of conditional statements to compare the timestamps and display the appropriate message.
+To compare these dates, we can use the `->diff()` method, which returns a `DateInterval` object. We can then access the `days` property of this object to get the number of days between the two dates:
 
-The output of this code would be:
-
+```PHP
+$diff = $date1->diff($date2);
+echo $diff->days; // output: 14
 ```
-2021-06-01 is before 2021-06-15
+
+We can also check if one date is greater than, less than, or equal to the other using the `->format()` method. This method allows us to specify a format for the date, and then compare the resulting string. For example:
+
+```PHP
+$date1 = new DateTime('2021-01-01');
+$date2 = new DateTime('2021-01-15');
+echo $date1->format('Y-m-d') < $date2->format('Y-m-d'); // output: true
 ```
 
-We can also use other date functions, such as `date()` and `DateTime`, to compare dates in PHP. It's essential to consider the timezones when comparing dates to ensure accuracy.
+Finally, we can also use the `->modify()` method to alter a date object. This can be useful for tasks like checking for date overlap. For example, if we want to check if the date range of `$date1` overlaps with the date range of `$date2`, we can modify the start and end dates of `$date2` and then compare them:
+
+```PHP
+$date1 = new DateTime('2021-01-01');
+$date2 = new DateTime('2021-02-01');
+$date2->modify('+14 days');
+echo $date2 >= $date1 && $date2 <= $date2; // output: true
+```
 
 ## Deep Dive
 
-When comparing dates, you may encounter situations where the dates have the same format, but one is stored in a string, while the other is stored in a DateTime object. In such cases, we can use the `date()` function to convert the DateTime object into a formatted string for comparison.
+Under the hood, the `DateTime` class uses the Unix timestamps system, which counts the number of seconds since January 1, 1970. This is why we can compare dates as integers using the `->format()` method.
 
-Here's an example:
-
-```PHP
-// Date string
-$date1 = "2021-06-01";
-
-// DateTime object
-$date2 = new DateTime("2021-06-15");
-
-// Convert DateTime object into formatted string
-$date2 = date("Y-m-d", $date2->getTimestamp());
-
-// Compare the dates
-if ($date1 === $date2) {
-    echo "The dates are the same";
-} else {
-    echo "The dates are different";
-}
-```
-
-In this example, we use the `getTimestamp()` method to get the UNIX timestamp from the DateTime object, and then use `date()` to convert it into a formatted string. After that, we can compare the two dates using the `===` operator, which checks if the values and types are equal.
+It's also worth noting that the `DateTime` class takes time zone into consideration when creating date objects. If no time zone is specified, the default time zone of the server will be used. This can lead to unexpected results when comparing dates, so it's important to set the time zone or use the `UTC` time zone for consistency.
 
 ## See Also
 
-Here are some helpful resources to learn more about comparing dates in PHP:
-
-- [PHP Date and Time functions](https://www.php.net/manual/en/ref.datetime.php)
-- [Codecademy PHP Date and Time Manipulation](https://www.codecademy.com/learn/learn-php/modules/learn-php-datetime)
-- [PHP Manual - Comparing Dates](https://www.php.net/manual/en/datetime.diff.php)
+- [PHP DateTime class documentation](https://www.php.net/manual/en/class.datetime.php)
+- [Unix timestamps](https://www.php.net/manual/en/function.time.php)
+- [DateTime format options](https://www.php.net/manual/en/datetime.format.php)

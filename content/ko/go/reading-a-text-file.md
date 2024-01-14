@@ -1,54 +1,67 @@
 ---
 title:    "Go: 텍스트 파일 읽기"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-텍스트 파일을 읽는 것에 대해 궁금해하는 사람들을 위해 이 블로그 포스트를 작성하였습니다. Go 언어로 텍스트 파일을 읽는 방법에 대해 알아보겠습니다. 
+텍스트 파일을 읽는 것이 왜 중요한지 궁금하신가요? 텍스트 파일은 우리가 일상적으로 접하는 다양한 정보를 담고 있습니다. 예를 들어, 가장 간단한 형태의 텍스트 파일은 메모장에서 작성한 일기가 있을 수 있고, 더 복잡한 형태의 텍스트 파일은 소프트웨어 라이센스 파일 등이 있을 수 있습니다. 이러한 텍스트 파일을 읽는 것은 우리가 다양한 정보를 이해하고 활용하는 데 도움이 됩니다.
 
 ## 어떻게
 
-아래는 텍스트 파일을 읽어서 내용을 출력하는 간단한 예제 코드입니다. 
+텍스트 파일을 Go 언어로 읽는 방법은 다음과 같습니다.
 
-```Go
+```
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
+    "bufio"
 )
 
 func main() {
-	file, err := os.Open("sample.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
+    // 읽을 텍스트 파일 열기
+    file, err := os.Open("sample.txt")
+    if err != nil {
+        fmt.Println(err)
+    }
+    defer file.Close()
 
-	buffer := make([]byte, 1024)
-	for {
-		data, err := file.Read(buffer)
-		if data == 0 || err != nil {
-			break
-		}
-		fmt.Println(string(buffer[:data]))
-	}
+    // 파일 안의 데이터를 한 줄씩 읽어오기
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        fmt.Println(scanner.Text())
+    }
+
+    if err := scanner.Err(); err != nil {
+        fmt.Println(err)
+    }
 }
 ```
 
-위의 코드를 실행하면, "sample.txt" 파일의 내용이 한 줄씩 출력됩니다. 예제 코드를 보면, 우선 파일을 열고(err가 nil인지 확인하여), 파일을 닫아야하는 defer문이 있음을 알 수 있습니다. 그리고 파일의 내용을 읽어서 버퍼에 담아 한 줄씩 출력하고 있습니다.
+위의 코드를 실행하면 `sample.txt` 파일 안의 모든 내용을 한 줄씩 읽어와서 출력해줍니다. 이를 통해 우리는 텍스트 파일 안의 데이터를 쉽게 읽고 활용할 수 있습니다.
 
-## 깊게 파고들기
+## 딥 다이브
 
-텍스트 파일을 읽는 데 있어서 고려해야 할 몇 가지 사항이 있습니다. 첫째, 파일의 절대 경로를 제대로 입력하는 것이 중요합니다. 상대 경로를 사용할 경우, 원하는 파일을 찾지 못해 프로그램이 제대로 동작하지 않을 수 있습니다. 둘째, 파일에 쓰인 내용이 많을 경우, 버퍼의 크기가 충분한지 확인해야 합니다. 충분하지 않다면, 파일의 내용을 모두 다 읽지 못해 원하는 결과를 얻지 못할 수 있습니다. 
+텍스트 파일을 읽는 과정에서 더 심화된 내용을 알고 싶으신가요? 이를 위해 우리는 파일 입출력 기능과 버퍼링에 대해 좀 더 자세히 알아보도록 하겠습니다.
 
-# 또 다른 정보들
+파일 입출력 기능은 `os` 패키지 안에 있는 `Open()` 메소드와 `Close()` 메소드를 통해 구현할 수 있습니다. `Open()` 메소드는 파일을 읽기 위해 열고, `Close()` 메소드는 파일을 닫는 역할을 합니다. 또한 `bufio` 패키지의 `NewScanner()` 메소드를 사용하면 파일 안의 데이터를 한 줄씩 읽어올 수 있습니다. 이는 파일을 한 번에 전체를 읽는 것보다 효율적입니다.
 
-텍스트 파일을 읽는 방법에 대해 더 자세한 정보를 원한다면, 다음 링크들을 참고하세요.
+버퍼링은 우리가 일상생활에서 자주 사용하는 말일 수 있습니다. 버퍼링은 데이터를 일시적으로 저장해두는 메모리 공간을 의미합니다. 파일을 읽을 때도 버퍼링을 사용하여 한 번에 많은 양의 데이터를 읽어오는 것이 효율적입니다. 이를 위해 `bufio` 패키지의 `NewScanner()` 메소드는 내부적으로 버퍼링 기능을 제공합니다.
 
-- [Go 문서: 파일 읽기](https://golang.org/pkg/os/#File)
-- [GoWiki: 프로그래밍 문서 - 파일 읽기](https://github.com/golang/go/wiki/ProgrammingWiki#Reading_files)
-- [Go Tour: 파일 입출력](https://go-tour-kr.appspot.com/#52)
+## 더 알아보기
+
+더 많은 정보를 원하신다면 아래 링크들을 참고해보세요.
+
+- [Go 언어 텍스트 파일 입출력 구현 예제](https://zetawiki.com/wiki/Go_텍스트_파일_입출력)
+- [Go 언어 버퍼링 기능 소개](https://go-tour-kr.appspot.com/#65)
+- [Go 언어 공식 문서 - 파일](https://golang.org/pkg/os/#File)
+
+## 봐도 좋아
+
+- [Go 언어 공식 문서 - 버퍼링](https://golang.org/pkg/bufio/#Scanner)
+- [Go 언어를 통한 파일 입출력의 기본 개념](https://www.inflearn.com/course/golang-%ED%8C%8C%EC%9D%B4%EB

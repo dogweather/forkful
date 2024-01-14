@@ -1,50 +1,47 @@
 ---
 title:    "TypeScript recipe: Converting a string to lower case"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
+Converting a string to lower case is a common task in programming, especially when dealing with user input or manipulating text data. This can be helpful in ensuring consistency and ease of comparison in your code.
 
-Have you ever come across a situation where you needed to compare two strings but they were not in the same case? This can lead to unexpected results and can be frustrating to deal with. Converting strings to lower case is a common solution to this problem, and in this blog post, we will explore why it's important to do so and how to achieve it using TypeScript.
+## How To 
+```TypeScript 
+let string = "Hello World";
 
-## How To
-
-Converting a string to lower case in TypeScript is a simple task. You can use the built-in `toLowerCase()` method which is available on all string objects.
-
-```TypeScript
-let string = "Hello, World!";
+// Converting string to lower case 
 let lowerCaseString = string.toLowerCase();
-
-console.log(lowerCaseString); // output: hello, world!
+console.log(lowerCaseString); // "hello world"
 ```
 
-In the above example, we first declare a string variable with the value "Hello, World!" and then use the `toLowerCase()` method to convert it to lower case. We then log the result to the console and see the expected output.
+Here, we declare a variable `string` with the value "Hello World". We then use the `toLowerCase()` method to convert the string to lower case and assign it to a new variable `lowerCaseString`. Finally, we log the new value to the console, which will output "hello world". 
 
-But what if you have a string that contains special characters or accented letters? For these cases, you can use the `toLocaleLowerCase()` method, which uses the current locale's rules for lowercasing characters.
+Another way to achieve the same result is by using the `String.prototype.toLowerCase()` method:
 
-```TypeScript
-let string = "MÁGICáL";
-let lowerCaseString = string.toLocaleLowerCase();
+```TypeScript 
+let string = "Hello World";
 
-console.log(lowerCaseString); // output: mágicál
+// Converting string to lower case 
+let lowerCaseString = string.toLowerCase();
+console.log(lowerCaseString); // "hello world" 
 ```
 
-As you can see, the special characters and accented letters are converted to their respective lower case versions based on the current locale. This is useful for handling strings in different languages.
+This method works the same way as the first one, but it modifies the original string instead of creating a new variable.
 
-## Deep Dive
+## Deep Dive 
+Converting a string to lower case involves changing all uppercase letters to their lowercase counterparts. This process is important because it allows for more accurate comparisons and can also help with data validation.
 
-Behind the scenes, the `toLowerCase()` and `toLocaleLowerCase()` methods are executed using the Unicode standard. This means that the conversion is not limited to just the English alphabet, but also includes other languages and special characters.
+Some other ways to convert strings to lower case are using regular expressions or converting each character individually. However, the `toLowerCase()` method is preferred as it is more efficient and less error-prone.
 
-The Unicode standard defines a set of rules for lowercasing characters, which takes into account different writing systems, such as Latin, Greek, Cyrillic, and more. This ensures that the methods work accurately for a wide range of languages.
+It is important to note that the `toLowerCase()` method only works for ASCII characters. For non-ASCII characters, you can use the `toLocaleLowerCase()` method instead. This method also takes into account the language and locale of the string.
 
-Furthermore, the `toLocaleLowerCase()` method also takes into account the locale's language-specific rules for case conversion. For example, in the Turkish language, the uppercase "I" is converted to the lowercase "ı", whereas in English, it is converted to "i". This distinction is important to ensure proper string comparison in different languages.
+## See Also 
+- [String.prototype.toLowerCase() method in TypeScript](https://www.typescriptlang.org/docs/handbook/2/strings.html#stringprototype-methods)
+- [MDN Web Docs on converting strings to lower case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Comparison between `toLowerCase()` and `toLocaleLowerCase()` methods](https://stackoverflow.com/questions/2975457/what-is-the-difference-between-string-tolocalelowercase-and-string-tolower)
 
-## See Also
-
-- [TypeScript String Methods](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#in-typescript)
-- [Unicode Lowercase Mapping](https://unicode.org/reports/tr21/tr21-5.html#Mapping_Table)
-- [Lowercase Conversions in Different Languages](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase#conversion in different languages)
-
-By converting strings to lower case, you can avoid errors and ensure accurate string comparisons in various languages. So next time you encounter a case sensitivity issue with strings, remember to use the `toLowerCase()` or `toLocaleLowerCase()` methods in your TypeScript code. Happy coding!
+By now, you should have a good understanding of why and how to convert a string to lower case in TypeScript. Happy coding!

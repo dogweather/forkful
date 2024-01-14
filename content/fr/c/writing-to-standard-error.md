@@ -1,48 +1,34 @@
 ---
 title:    "C: Écrire vers l'erreur standard"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire dans la sortie d'erreur standard ?
 
-Si vous êtes un programmeur C, vous avez probablement déjà rencontré l'utilisation de la fonction `fprintf()` pour afficher des messages d'erreur. Cependant, il existe une autre façon d'afficher des erreurs, en utilisant la sortie standard d'erreur, également connue sous le nom de "standard error". Dans cet article, nous allons expliquer pourquoi et comment vous devriez écrire vers la sortie standard d'erreur dans vos programmes C.
+Il y a plusieurs raisons pour lesquelles un programmeur peut choisir d'écrire dans la sortie d'erreur standard plutôt que dans la sortie standard. Cela peut être utile lors du débogage d'un programme, en fournissant des informations de débogage plus détaillées ou en signalant des erreurs spécifiques.
 
 ## Comment faire
 
-Pour écrire vers la sortie standard d'erreur, vous devez utiliser la fonction `fprintf()` en remplaçant le premier argument par `stderr`. Par exemple, voici comment écrire un message d'erreur utilisant cette méthode :
+Pour écrire dans la sortie d'erreur standard en utilisant le langage C, vous pouvez utiliser la fonction `fprintf()` en passant `stderr` comme premier argument. Par exemple :
 
 ```C
-fprintf(stderr, "Erreur : impossible d'ouvrir le fichier.\n");
+fprintf(stderr, "Ceci est une erreur !");
 ```
+Cela écrira le message "Ceci est une erreur !" dans la sortie d'erreur standard.
 
-Ensuite, il vous suffit d'utiliser la fonction `perror()` pour afficher une description de l'erreur en plus du message que vous avez écrit :
+## Plongée profonde
 
-```C
-perror("Erreur");
-```
+Il est important de noter que la sortie d'erreur standard est généralement associée à la console ou au terminal, plutôt qu'à un fichier. Cela signifie que les messages envoyés à la sortie d'erreur standard seront affichés directement à l'utilisateur.
 
-Voici un exemple de sortie lorsque vous essayez d'ouvrir un fichier inexistant :
+De plus, les messages écrits dans la sortie d'erreur standard sont souvent affichés en rouge ou en jaune pour attirer l'attention de l'utilisateur et les distinguer des messages de sortie standard.
 
-```
-Erreur : impossible d'ouvrir le fichier.
-Erreur : Aucun fichier ou dossier de ce type.
-```
-
-## Plongée en profondeur
-
-Maintenant que vous savez comment écrire vers la sortie standard d'erreur, vous vous demandez peut-être pourquoi c'est une chose importante à faire. Il y a plusieurs raisons pour lesquelles il est recommandé d'utiliser la sortie standard d'erreur :
-
-- Séparation du flux de sortie : la sortie standard d'erreur est spécifiquement destinée aux messages d'erreur, ce qui vous permet de séparer les messages d'erreur des autres messages que vous pouvez afficher dans votre programme.
-- Affichage en temps réel : contrairement à la fonction `fprintf()`, qui stocke le message dans une mémoire tampon avant de l'afficher, la sortie standard d'erreur affiche immédiatement le message. Cela peut être utile lorsque vous rencontrez une erreur critique et que vous voulez en être informé immédiatement.
-- Facilité de débogage : en utilisant la sortie standard d'erreur, vous pouvez facilement rediriger l'ensemble de vos messages d'erreur vers un fichier et l'utiliser pour déboguer votre programme.
+Il est également possible de rediriger la sortie d'erreur standard vers un fichier en utilisant des opérateurs de redirection en ligne de commande. Cela peut être utile pour enregistrer les erreurs dans un fichier plutôt que de les afficher à l'utilisateur.
 
 ## Voir aussi
 
-- [La documentation officielle de la fonction fprintf](https://en.cppreference.com/w/c/io/fprintf)
-- [Un tutoriel sur la sortie standard en C](https://www.cs.swarthmore.edu/~newhall/unixhelp/C_printf.html)
-- [Un article sur la différence entre la sortie standard et la sortie standard d'erreur](https://www.explainshell.com/explain?cmd=2%3E%261)
-
----
-Mettez à jour votre code C en utilisant la sortie standard d'erreur et améliorez votre débogage !
+- [Documentation officielle de fprintf en français](https://fr.cppreference.com/w/c/io/fprintf)
+- [Tutoriel sur la gestion des erreurs en C](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/15291-la-gestion-des-erreurs)
+- [Différences entre la sortie standard et la sortie d'erreur standard en C](https://blog.hathix.com/differences-between-standard-output-and-standard-error-in-c)

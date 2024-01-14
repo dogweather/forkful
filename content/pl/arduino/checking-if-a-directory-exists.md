@@ -1,43 +1,65 @@
 ---
-title:    "Arduino: Sprawdzanie, czy istnieje katalog"
+title:    "Arduino: Weryfikacja istnienia katalogu"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Jeśli chcesz mieć pewność, że dany folder istnieje przed wykonaniem pewnych działań, istnieją specjalne funkcje w języku Arduino, które pozwolą Ci to sprawdzić. Dzięki temu unikniesz niepożądanych błędów i zapewnisz poprawne działanie Twojego kodu.
+
+Jeśli jesteś twórcą projektów z użyciem Arduino, pewnie wiesz, jak ważne jest, aby program był nie tylko wydajny, ale także bezpieczny. Czasami może się zdarzyć, że potrzebujesz sprawdzić, czy określony folder istnieje przed wykonaniem określonych działań. W tym artykule dowiesz się, dlaczego i jak można to zrobić w Arduino.
 
 ## Jak to zrobić
-Sprawdzenie istnienia folderu jest bardzo proste w języku Arduino. Wystarczy użyć wbudowanej funkcji `fileExists()`, która przyjmuje jako argument ścieżkę do folderu. Poniżej znajduje się przykładowy kod, który pokaże Ci, jak to zrobić:
+
+Sprawdzenie, czy dany folder istnieje na karcie SD lub w pamięci wewnętrznej Arduino, jest stosunkowo prostym procesem. Wystarczy użyć funkcji `SD.exists()` lub `SPIFFS.exists()`, w zależności od tego, gdzie znajduje się folder, który chcesz sprawdzić. 
+
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
-File myFile;
+#include <SPIFFS.h>
 
 void setup() {
-  Serial.begin(9600);
-  if (SD.begin(10)) {
-    if (SD.exists("/MojaPiosenka")) {
-      Serial.println("Folder istnieje!");
-    } else {
-      Serial.println("Folder nie istnieje!");
-    }
-  } else {
-    Serial.println("Błąd inicjalizacji karty SD!!");
-  }
+  // inicjalizacja modułu SD lub SPIFFS
+  SD.begin(4); // 4 to numer pinu CS dla modułu SD
+  SPIFFS.begin();
 }
 
 void loop() {
+
+  // sprawdzenie czy folder "dane" istnieje na karcie SD
+  if(SD.exists("/dane")) {
+    Serial.println("Folder istnieje na karcie SD!");
+  } else {
+    Serial.println("Nie znaleziono folderu na karcie SD.");
+  }
+
+  // sprawdzenie czy folder "dane" istnieje w pamięci wewnętrznej
+  if(SPIFFS.exists("/dane")) {
+    Serial.println("Folder istnieje w pamięci wewnętrznej!");
+  } else {
+    Serial.println("Nie znaleziono folderu w pamięci wewnętrznej.");
+  }
+
+  // odczekanie 5 sekund przed kolejną pętlą
+  delay(5000);
 }
 ```
-Po wgraniu tego kodu do płytki Arduino i otwarciu monitora szeregowego, powinno pojawić się odpowiednie powiadomienie informujące o istnieniu lub nieistnieniu folderu.
 
-## Deep Dive
-Podczas tworzenia projektów z wykorzystaniem Arduino często mamy do czynienia z zapisywaniem lub odczytywaniem danych z karty SD. W takich przypadkach ważne jest, aby przed wywołaniem odpowiednich funkcji, uprzednio sprawdzić czy dany folder istnieje. W przeciwnym przypadku narażamy się na błędy, a nawet utratę danych.
+Przykładowy output:
 
-Funkcja `fileExists()` działa na podobnej zasadzie jak funkcja `SD.exists()`, jednak pozwala na sprawdzenie istnienia nie tylko plików, ale również folderów. Możemy również użyć tej funkcji, aby sprawdzić czy istnieje określony plik w danym folderze. Należy wówczas podać pełną ścieżkę do pliku, np. `/MojaPiosenka/Piosenka.mp3`.
+```
+Folder istnieje na karcie SD!
+Nie znaleziono folderu w pamięci wewnętrznej.
+```
 
-## Zobacz też
-* [Dokumentacja funkcji `fileExists()`](https://www.arduino.cc/reference/en/libraries/sd/fileexists/)
-* [Dokumentacja funkcji `SD.exists()`](https://www.arduino.cc/reference/en/libraries/sd/exists/)
+## Głębsza analiza
+
+Funkcje `SD.exists()` i `SPIFFS.exists()` zwracają wartość `true` lub `false` w zależności od tego, czy folder istnieje lub nie. Można również wykorzystać je do sprawdzenia, czy plik lub inny obiekt istnieje w danym folderze. 
+
+Warto również pamiętać, że przy użyciu `SPIFFS` trzeba najpierw zainicjalizować pamięć wewnętrzną przy pomocy `SPIFFS.begin()`, co zostało pokazane w przykładzie powyżej.
+
+## Zobacz również
+
+1. Dokumentacja Arduino: [Sprawdzanie czy plik istnieje](https://www.arduino.cc/en/Reference/SDexists)
+2. Instrukcja obsługi modułu SD z Arduino: [Używanie modułu SD z Arduino](https://learn.adafruit.com/adafruit-tutorial-sparkfun-microsd-shield-arduino-library)
+3. Wideo tutorial na YouTube: [Jak używać karty SD w projekcie Arduino](https://www.youtube.com/watch?v=4DzMKqZZ9N0)

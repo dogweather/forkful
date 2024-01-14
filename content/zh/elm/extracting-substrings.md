@@ -1,57 +1,41 @@
 ---
 title:    "Elm: 提取子字符串"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
+## 为什么要提取子字符串？
 
-提取子字符串是一项非常有用的编程技巧，它可以帮助我们在字符串中定位和提取特定的信息，从而简化我们的编程工作。无论是处理用户输入，还是解析数据，提取子字符串都是必不可少的能力。
+提取子字符串是在处理字符串时一个非常常见且有用的操作。它可以帮助我们轻松地从给定的字符串中提取出我们想要的部分，比如手机号码、邮件地址等等。在编程过程中，我们经常需要处理大量的文本数据，通过提取子字符串，可以让我们的程序更有效地处理这些数据。
 
-## 如何
+# 怎么做
+## 使用Elm提取子字符串的方法
 
-提取子字符串的简单方法是使用 Elm的内建函数`slice`。它接受一个起始索引和结束索引作为参数，并返回在这两个索引之间的子字符串。
-
-下面是一个例子，提取字符串中指定位置的字符：
-
+在Elm中，我们可以使用`String.slice`函数来提取子字符串。它接受三个参数：目标字符串、起始索引和结束索引。起始索引表示需要提取的子字符串的起始位置，结束索引表示子字符串的结束位置。例如，如果我们想要从字符串"Hello World"中提取"World"这个单词，我们可以这样写：
 ```Elm
-str = "Hello World!"
-slice 2 3 str
+String.slice "Hello World" 6 11
 ```
-
-上面的代码输出的是`"l"`，因为它提取了起始索引为2（第三个字符）和结束索引为3（第四个字符）之间的子字符串。
-
-我们也可以使用`String.left`和`String.right`函数提取字符串的前几个或后几个字符：
-
+这将返回一个新的字符串，内容为"World"。如果我们想要提取"Hello"这个单词，我们可以这样写：
 ```Elm
-str = "Hello World!"
-String.left 5 str
+String.slice "Hello World" 0 5
 ```
+这将返回"Hello"。
 
-上面的代码输出的是`"Hello"`，它提取了`str`字符串的前5个字符。
+我们也可以使用`String.left`和`String.right`函数来提取字符串的前几个或后几个字符。例如，`String.left "Hello World" 5`将返回"Hello"，而`String.right "Hello World" 5`将返回"World"。
 
-## 深入探究
+# 深入了解
+## 关于提取子字符串的更多知识
 
-除了使用内建函数外，我们还可以使用`String.at`函数来提取特定位置的字符，它接受一个索引作为参数，并返回该位置的字符。
+除了上面提到的函数外，Elm还提供了许多其他函数来帮助我们提取子字符串。比如，我们可以使用`String.split`来按照指定的分隔符把字符串拆分成多个子字符串。我们也可以使用`String.trim`来去除字符串的前导或尾部空格。
 
-```Elm
-str = "Hello World!"
-String.at 6 str
-```
+另外，我们还可以使用正则表达式来提取子字符串。Elm提供了`Regex`模块来处理正则表达式，我们可以使用`Regex.contains`和`Regex.find`等函数来按照指定的模式提取字符串中的部分内容。
 
-上面的代码输出的是`"o"`，因为它提取了索引为6的字符。
+# 参考链接
+## 了解更多关于提取子字符串的内容
 
-我们还可以通过对字符串进行分割来提取子字符串，使用`String.split`函数可以将字符串分割成一个字符串列表。我们可以通过索引来获取列表中特定位置的子字符串。
-
-```Elm
-str = "Hello World!"
-String.split " " str
-```
-
-上面的代码输出的是`["Hello", "World!"]`，它将字符串按空格分割成两个子字符串，并存储在一个列表中。我们可以使用索引来提取特定的子字符串。
-
-## 参考资料
-
-- [Elm官方文档](https://guide.elm-lang.org/)
-- [提取子字符串的不同方法](https://www.tutorialspoint.com/how-to-extract-a-substring-in-elm-programming-language)
+- [Elm官方文档 - String模块](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm官方文档 - Regex模块](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Elm语言中文文档 - 字符串操作](https://www.elmchina.org/docs/syntax/strings.html#slice)

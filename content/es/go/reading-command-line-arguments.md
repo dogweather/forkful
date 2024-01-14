@@ -1,59 +1,54 @@
 ---
-title:    "Go: Argumentos de línea de comando en la lectura"
+title:    "Go: Leyendo argumentos de línea de comando"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Si estás comenzando a aprender Go y quieres aumentar tus habilidades de programación, leer argumentos de línea de comando es una herramienta útil para tener en tu cinturón de herramientas. Ahora que ya has aprendido los conceptos básicos, es hora de profundizar en como puedes usar esta funcionalidad en tus proyectos.
+## ¿Por qué leer argumentos de línea de comandos en Go?
+
+Los argumentos de línea de comandos son una forma útil de interactuar con programas y aplicaciones en el sistema operativo. Al aprender a leer y utilizar los argumentos de línea de comandos en Go, podrás trabajar de manera más eficiente y realizar tareas específicas en tus proyectos.
 
 ## Cómo hacerlo
-Para leer los argumentos de línea de comando en Go, necesitamos importar el paquete "os". Luego, podemos usar la función "Args" para obtener una lista de todos los argumentos ingresados en la línea de comando. Por ejemplo:
+
+Para leer argumentos de línea de comandos en Go, simplemente debes utilizar la función `os.Args`. Esta función devuelve un slice (rebanada) de tipo `[]string` con todos los argumentos de línea de comandos pasados al programa.
+
+Veamos un ejemplo de cómo imprimir los argumentos en la terminal:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	args := os.Args
-	fmt.Println(args)
+    args := os.Args[1:] // Ignora el primer argumento que se refiere al nombre del programa itself (sí mismo)
+    fmt.Println("Argumentos pasados:")
+    for _, arg := range args {
+        fmt.Println(" - " + arg)
+    }
 }
 ```
-
-Si ejecutamos este código y pasamos algunos argumentos en la línea de comando, como `go run main.go arg1 arg2`, obtendremos el siguiente resultado:
-
-`[main.go arg1 arg2]`
-
-Podemos acceder a cada argumento individualmente usando su índice en la lista. Por ejemplo, `args[0]` sería el nombre del archivo compilado, `args[1]` sería el primer argumento ingresado, `args[2]` el segundo argumento, y así sucesivamente.
+Output:
+```
+➜ go run main.go hello world
+Argumentos pasados:
+ - hello
+ - world 
+```
 
 ## Profundizando
-Además de obtener una lista de argumentos, también podemos usar la función "Flag" del paquete "flag" para especificar argumentos específicos que necesitamos para nuestro programa. Por ejemplo, si queremos que nuestro programa acepte un argumento de tipo "string", podemos usar la función "String" de "flag" para definir una variable que almacene ese argumento. Luego, en nuestro programa, podemos acceder a ese argumento usando el nombre de esa variable. Por ejemplo:
 
-```Go
-package main
+Hay varias maneras en las que puedes utilizar los argumentos de línea de comandos en tus proyectos. Puedes validarlos, leer diferentes tipos de datos y también utilizar librerías externas para facilitar su uso.
 
-import (
-	"flag"
-	"fmt"
-)
+Además, es importante mencionar que los argumentos de línea de comandos pueden incluir flags (banderas) y opciones, que te permiten pasar información adicional y personalizar el comportamiento del programa.
 
-func main() {
-	var myArg string
-	flag.StringVar(&myArg, "myArg", "", "This is a string argument")
-	flag.Parse()
-	fmt.Println(myArg)
-}
-```
-
-Al ejecutar este código y pasar el argumento de línea de comando `-myArg=test`, obtendremos el siguiente resultado:
-
-`test`
+Si deseas explorar más sobre cómo trabajar con argumentos de línea de comandos en Go, te recomendamos revisar la documentación oficial y experimentar con diferentes ejemplos.
 
 ## Ver también
-- [Documentación del paquete "os" en Go](https://golang.org/pkg/os/)
-- [Documentación del paquete "flag" en Go](https://golang.org/pkg/flag/)
+
+- Documentación oficial de Go sobre os.Args: https://golang.org/pkg/os/#Args
+- Ejemplos de uso de argumentos de línea de comandos en Go: https://github.com/golang/example/tree/master/cli

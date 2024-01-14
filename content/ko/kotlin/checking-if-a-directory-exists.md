@@ -1,42 +1,35 @@
 ---
-title:    "Kotlin: 디렉토리가 존재하는지 확인하는 방법"
+title:    "Kotlin: 디렉토리의 존재 유무 확인하기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 필요할까요?
 
-코틀린 프로그래밍을 하는 독자들에게는 "디렉토리가 존재하는지 확인하는 것"이 왜 중요한지에 대해 익숙할 수 있습니다. 하지만 새로운 프로그래머나 새로운 언어를 배우는 사람들에게는 이 과정이 왜 필요한지에 대해 설명해야 할 필요가 있습니다.
+우리가 가끔 디렉토리가 존재하는지를 확인해야 할 때가 있습니다. 이를 확인하는 방법을 알고 있다면, 애플리케이션을 보다 효율적으로 관리할 수 있습니다. 이 글에서는 Kotlin에서 디렉토리가 존재하는지를 확인하는 방법을 배워보겠습니다.
 
-디렉토리가 존재하는지 확인하는 것은 프로그래머에게 중요한 이유 중 하나는 파일의 존재 여부를 확인하는 것보다 더 복잡하기 때문입니다. 이 작업을 수행하지 않으면, 존재하지 않는 디렉토리에 디렉토리를 생성하려고 할 때 오류가 발생할 수 있습니다. 또한 파일을 처리하는 방식에 따라 프로그램의 동작이 다를 수 있습니다.
+## 방법
 
-## 어떻게 하나요?
+먼저 사용할 메소드를 import 합니다. 다음 예시는 특정 디렉토리가 존재하는지를 확인하는 방법입니다.
 
-능숙한 코틀린 사용자라면 아마도 이미 디렉토리를 확인하는 방법을 알고 있을 것입니다. 하지만 새로운 사람들을 위해 실제 코딩 예제를 제공하겠습니다.
+```Kotlin
+import java.io.File
 
-우리는 ```Files.exists()``` 메서드를 사용해서 디렉토리가 존재하는지 확인할 수 있습니다. 이 메서드는 불러온 파일의 존재 여부를 나타내는 ```Boolean``` 값을 반환합니다. 그리고 디렉토리를 삭제하려고 할 때 ```Files.delete()``` 메서드를 사용할 수 있습니다.
-
-```
-Kotlin
-val directory = File("some/directory/path")
-if (directory.exists()) {
-    // 디렉토리가 존재할 때 수행할 작업
-} else {
-    // 디렉토리가 존재하지 않을 때 수행할 작업
+fun main() {
+  val directory = File("C:/Users/username/Desktop/myDirectory")
+  println(directory.exists())
 }
 ```
+위 코드에서 `File` 클래스를 import 하고 `main()` 함수 안에서 특정 디렉토리 경로를 `File` 객체로 만든 후 `exists()` 메소드를 호출하면 해당 디렉토리가 존재하는지를 확인할 수 있습니다. 예시 코드의 결과는 `true`나 `false`로 나타납니다.
 
-위의 예제에서 볼 수 있듯이, 우리는 존재하는지 여부를 확인하고 그에 따라 작업을 수행할 수 있습니다.
+## 딥 다이브
 
-## 더 깊게 살펴보기
+`File` 클래스에는 디렉토리 외에도 파일이 존재하는지를 확인하는 `isFile()`과 하위 디렉토리가 있는지를 확인하는 `isDirectory()` 메소드가 있습니다. 또한, `exists()` 메소드를 이용하여 다른 경로에도 사용할 수 있습니다. 예를 들어, 다음과 같이 `directory.exists()` 대신 `File("C:/Users/username/Desktop/myDirectory/myFile.txt").exists()`를 사용하여 파일이 존재하는지를 확인할 수 있습니다.
 
-디렉토리가 존재하는지 확인할 때 반드시 기억해야 할 것은 디렉토리의 위치가 운영체제에 따라 달라질 수 있다는 것입니다. 예를 들어, 윈도우 운영체제에서 경로는 ```C:\some\directory\path```로 표시되지만, 리눅스나 맥OS에서는 ```/some/directory/path```로 표시됩니다.
+## 더 알아보기
 
-또한 파일 또는 디렉토리를 생성하기 전에 존재하는지 여부를 확인하는 것은 안전하고 올바른 방법입니다. 이를 통해 우리는 오류를 방지하고 파일 관리를 더욱 효율적으로 할 수 있습니다.
-
-## 또 보기
-
-- [파일과 디렉토리 관리에 대한 더 많은 정보](https://kotlinlang.org/docs/tutorials/io.html)
-- [코틀린 공식 도큐먼트](https://kotlinlang.org/docs/home.html)
-- [코틀린을 이용한 파일 관리](https://www.youtube.com/watch?v=G8705-XvqlY)
+- [Kotlin API 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Kotlin - 디렉토리와 파일 다루기](https://codechacha.com/ko/kotlin-manage-directory-file/)
+- [Kotlin에서 파일 입출력하기](https://www.baeldung.com/kotlin-file-io)

@@ -1,44 +1,42 @@
 ---
-title:    "Gleam: Skriver til standardfeil"
+title:    "Gleam: Skriver til standard feil"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det kan være mange grunner til å skrive til standard error i Gleam, men en av de vanligste er hvis man ønsker å skrive ut feil eller unntak i programmet for å forenkle feilsøking.
 
-## Hvordan gjøre det
-For å skrive til standard error i Gleam, kan du bruke funksjonen `gleam/io#stderr/1`. Her er et eksempel på hvordan du kan bruke denne funksjonen i et Gleam-program:
+Å skrive til standard error er en vanlig praksis i programmering, spesielt når man jobber med feilsøking og debugging. Det lar deg sende pålitelig og presis informasjon om eventuelle feil eller unntak som kan oppstå under kjøringen av programmet ditt.
 
-```gleam
-let tekst = "Dette er en feilmelding"
-gleam/io#stderr(tekst)
+## Hvordan du gjør det
+
+For å skrive til standard error, kan du bruke den innebygde funksjonen `io.format_error/2` i Gleam. La oss se på et eksempel på hvordan vi kan bruke denne funksjonen:
+
+```
+Gleam
+let error_message = "En feil har oppstått"
+let error_code = 500
+io.format_error("Feilkode: {} - {}", [error_code, error_message])
 ```
 
-Dette vil skrive ut teksten "Dette er en feilmelding" til standard error. Du kan også bruke formatering for å bygge en mer kompleks melding, for eksempel:
+Dette vil skrive følgende til standard error:
 
-```gleam
-let tall = 42
-let melding = "Kan ikke dele på {tall}"
-gleam/io#stderr(melding, [tall])
+```
+Feilkode: 500 - En feil har oppstått
 ```
 
-Dette vil skrive ut meldingen "Kan ikke dele på 42" til standard error.
+Som du kan se, kan du enkelt sette inn variabler inne i teksten ved å bruke krøllparenteser `{}`, som vil bli erstattet med verdien til variabelen. Dette gjør det enkelt å tilpasse meldingen basert på den aktuelle feilen.
 
-## Dypdykk
-Når du skriver til standard error i Gleam, vil meldingene automatisk bli skrevet ut i rød farge, slik at de skiller seg ut fra standard output. Dette kan være nyttig for å raskt identifisere feil og unntak når du kjører et program.
+## Dykk ned i detaljene
 
-Det er også mulig å skrive til standard error ved hjelp av en pipe-operator. For eksempel:
+Det er viktig å merke seg at når du skriver til standard error, vil dette skje i sanntid mens programmet kjører. Dette betyr at det kan påvirke ytelsen, spesielt hvis du bruker det i en løkke eller andre raske operasjoner. Derfor bør du bare bruke denne metoden når det er nødvendig, for eksempel under feilsøkingsprosessen.
 
-```gleam
-let tekst = "Dette er en feilmelding"
-tekst |> gleam/io#stderr
-```
-
-Dette vil oppnå det samme resultatet som det første eksempelet.
+Du kan også bruke `io.format_error/2` for å skrive til standard output ved å passere `io.stdout` som første argument. Men det er viktig å merke seg at standard output blir buffret, så utskriften din vil ikke vises umiddelbart.
 
 ## Se også
-- [Gleam dokumentasjon om å skrive til standard error](https://gleam.run/book/tutorials/writing_to_standard_error.html)
-- [Gleam dokumentasjon om IO-modulen](https://gleam.run/book/standard_library/io.html)
-- [Gleam Slack-gruppen for diskusjon](https://gleam-lang.slack.com/)
+
+- [Offisiell Gleam-dokumentasjon om io-modulen](https://gleam.run/documentation/std/io)
+- [Artikkel om debugging i Gleam](https://dev.to/happi/debugging-in-gleam-15gj)
+- [Eksempelkode som viser bruk av `io.format_error/2`](https://github.com/gleam-lang/gleam/blob/main/examples/error_logs_error_handler.gleam)

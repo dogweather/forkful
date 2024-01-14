@@ -1,13 +1,18 @@
 ---
-title:    "Go: 产生随机数"
+title:    "Go: 生成随机数"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：产生随机数是编程中一个常用的技巧，能够让程序变得更加有趣和多样化。无论是给用户展示不同的内容，还是用于游戏、密码生成等领域，随机数都扮演着重要的角色。
+## 为什么要生成随机数？
 
-如何做到：在Go语言中，产生随机数十分简单。首先，需要导入 `math/rand` 和 `time` 库。然后，使用 `rand.Seed(time.Now().UnixNano())` 来设定随机种子。最后，通过 `rand.Intn()` 函数来产生想要的随机数范围。下面是一个示例代码：
+生成随机数在编程中是一项很常见的任务，它可以用来模拟真实世界中的随机事件，例如扑克牌游戏中的发牌、抽奖和随机生成测试数据等。通过使用随机数，我们可以让程序更具有变化性和随机性，从而增加其趣味性和复杂性。
+
+## 如何生成随机数？
+
+首先，我们需要导入Go语言中的math/rand包，它提供了生成伪随机数的功能。然后，我们可以使用rand.Intn(n)函数来生成一个0到n-1之间的随机整数。下面是一个示例代码和输出结果：
 
 ```Go
 package main
@@ -15,26 +20,23 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 func main() {
-	// 设置随机种子
-	rand.Seed(time.Now().UnixNano())
-
-	// 产生一个0-9的随机数
-	randomNum := rand.Intn(10)
-
-	fmt.Println("随机数为：", randomNum)
+	// 生成一个0到9之间的随机整数
+	num := rand.Intn(10)
+	fmt.Println(num)
 }
 ```
 
-运行结果可能为：
+输出结果可能为：5、3、9等等，每次运行结果都会不同。
 
-```
-随机数为： 5
-```
+## 深入了解随机数生成
 
-深入了解：在生成随机数的过程中，随机种子是十分重要的。它决定了每次运行程序时所产生的随机数序列。如果不设置随机种子，那么每次运行程序都会得到同样的随机数。另外，要注意在多线程环境下，需要使用 `rand.NewSource()` 来设置随机种子，以避免出现竞争条件。此外，Go语言还提供了更多的随机数函数，如 `rand.Float64()`、`rand.Shuffle()` 等，大家可以根据需要进行使用。
+如果我们想要生成更复杂的随机数，可以使用rand.Float64()函数来生成一个0.0到1.0之间的随机浮点数。同时，为了保证每次运行结果的随机性，我们可以通过调用rand.Seed()函数来设定随机数的种子。我们也可以使用crypto/rand包来生成更加安全的随机数。
 
-查看也可以：想要深入了解随机数的生成过程，可以查看官方文档《生成随机数》（https://golang.org/pkg/math/rand/）。另外，还可以参考《Go语言圣经》一书中关于随机数的介绍（https://books.studygolang.com/gopl-zh/ch6/ch6-05.html）。
+## 参考链接
+
+- [Go语言官方文档 - math/rand包](https://golang.org/pkg/math/rand/)
+- [Go语言官方文档 - crypto/rand包](https://golang.org/pkg/crypto/rand/)
+- [Go语言教程 - 生成随机数](https://www.runoob.com/go/go-random-number.html)

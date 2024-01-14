@@ -1,45 +1,42 @@
 ---
-title:    "PHP: Säännöllisten ilmaisujen käyttö"
+title:    "PHP: Säännöllisten lausekkeiden käyttö"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi käyttää säännöllisiä lausekkeita ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja PHP-ohjelmoinnissa. Ne mahdollistavat merkkijonojen käsittelyn ja hakemisen tarkasti ja tehokkaasti. Säännöllisten lausekkeiden avulla voit tehdä monimutkaisia hakuja ja manipuloida merkkijonoja, mikä säästää aikaa ja vaivaa.
+Säännölliset lausekkeet ovat hyödyllinen työkalu ohjelmoijille, sillä ne mahdollistavat monimutkaisten tekstien etsimisen ja muokkaamisen nopeasti ja tehokkaasti. Ne ovat erityisen hyödyllisiä silloin, kun on tarve käsitellä erilaisia merkkijonoja ja tietueita, kuten esimerkiksi lomakkeiden syötteitä, sähköpostiosoitteita tai tiedostojen nimiä.
 
-## Miten käyttää säännöllisiä lausekkeita PHP:ssä?
+## Kuinka käyttää säännöllisiä lausekkeita PHP:ssa?
 
-```PHP
-// Luodaan säännöllinen lauseke, jolla etsitään merkkijonosta "Lorem ipsum" olevia sanoja
-$regex = "/Lorem ipsum/";
+Säännöllisiä lausekkeita käytetään PHP:ssa preg_match-funktion avulla. Tämä funktio ottaa kolme parametria: säännöllinen lauseke, haettava merkkijono ja muuttuja, johon haun tulos tallennetaan. Käyttämällä erilaisia säännöllisiä lausekkeita, voit tarkistaa, vastaako annettu merkkijono haluttua kaavaa ja tehdä sen perusteella jotain muuta.
 
-// Luodaan merkkijono, jota haluamme tutkia
-$string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+```
+<?php 
+$merkkijono = "Tämä on esimerkkimerkkijono";
 
-// Suoritetaan haku säännöllisen lausekkeen avulla
-if (preg_match($regex, $string)) {
-    echo "Merkkijono sisältää sanat 'Lorem ipsum'.";
+// Tarkistetaan, sisältääkö merkkijono sanan "esimerkki"
+if (preg_match("/esimerkki/", $merkkijono)) {
+  echo "Merkkijono sisältää sanan 'esimerkki'";
 } else {
-    echo "Merkkijono ei sisällä sanat 'Lorem ipsum'.";
+  echo "Merkkijono ei sisällä sanaa 'esimerkki'";
 }
-
-// Output: Merkkijono sisältää sanat 'Lorem ipsum'.
+?>
 ```
 
-Säännöllisten lausekkeiden käyttäminen vaatii hieman harjoittelua, mutta niiden avulla voit tehdä erittäin monimutkaisia hakuja ja käsittelyjä. On myös tärkeää muistaa, että säännölliset lausekkeet ovat selkeitä ja paljon tehokkaampia kuin perinteiset hakufunktiot.
+Tämä koodinpätkä tulostaisi "Merkkijono sisältää sanan 'esimerkki'".
 
-## Syvällinen sukellus säännöllisiin lausekkeisiin
+## Syvempi sukellus säännöllisiin lausekkeisiin
 
-Säännöllisten lausekkeiden Käyttö PHP:ssä vaatii ymmärrystä niiden syntaxista ja avainsanoista. Esimerkiksi, "[]"-avainsanan avulla voit etsiä merkkijonoista tiettyjä merkkejä tai merkkiryhmiä. Myös erikoismerkit, kuten "*" ja "+", voivat auttaa tekemään hakuja joustavammiksi ja monimutkaisemmiksi.
+Säännöllisiä lausekkeita voidaan käyttää moniin eri tarkoituksiin, kuten esimerkiksi hakemaan tiettyjä merkkijonoja, korvaamaan osia merkkijonosta tai tarkistamaan merkkijonojen muotoja. Niiden avulla voidaan myös suorittaa haun eri vaihtoehdoilla tai sallia tiettyjä sääntöjä, kuten esimerkiksi kirjainkoolla tai numeroiden läsnäololla.
 
-PHP:ssä on myös useita sisäänrakennettuja funktioita, jotka toimivat yhdessä säännöllisten lausekkeiden kanssa, kuten preg_match() ja preg_replace(). Näiden funktioiden avulla voit suorittaa erilaisia hakuja ja manipulointeja merkkijonoilla.
-
-On tärkeää muistaa, että säännöllisiä lausekkeita käytettäessä on otettava huomioon merkkijonon muoto ja kielen asetukset. Vielä tarkempiin haku- ja käsittelytoimiin kannattaa käyttää säännöllisten lausekkeiden lisäksi muita PHP:n tarjoamia työkaluja.
+Säännölliset lausekkeet voivat aluksi vaikuttaa monimutkaisilta, mutta niitä käyttämällä voit tehdä koodistasi huomattavasti tehokkaampaa ja välttyä turhalta koodin toistolta.
 
 ## Katso myös
 
-- [PHP:n säännölliset lausekkeet -dokumentaatio](https://www.php.net/manual/en/ref.pcre.php)
-- [Regex101 - verkkopalvelu säännöllisten lausekkeiden harjoitteluun](https://regex101.com/)
-- [PHP String Functions - dokumentaatio](https://www.php.net/manual/en/ref.strings.php)
+- [PHP.net: Preg_match](https://www.php.net/manual/en/function.preg-match.php)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

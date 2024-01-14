@@ -1,36 +1,40 @@
 ---
-title:    "PHP: 미래 또는 과거 날짜 계산하기"
+title:    "PHP: 미래 또는 과거의 날짜 계산하기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+날짜를 미래나 과거로 계산하는 것에 관심이 있을 수 있으며 이에 참여하는 이유는 다양할 수 있습니다. 예를 들어, 앞으로 언제 어떤 이벤트가 발생할지 알고 싶을 수 있습니다. 또는 아마도 휴가를 계획하고자 할 수도 있습니다.
 
-날짜를 미래나 과거로 계산하는 데 참여하는 이유는 무엇인가요? 이것은 코드에서 특정 날짜를 동적으로 처리하기 위해 매우 유용합니다.
-
-## 방법
-
-우리는 PHP에서  ```strtotime()``` 함수를 사용하여 미래나 과거의 날짜를 계산할 수 있습니다. 다음은 "2020-01-01"을 기준으로 일주일 뒤의 날짜를 계산하는 코드 예제입니다.
+## 어떻게
+날짜를 미래나 과거로 계산하는 것은 PHP에서 매우 쉽게 할 수 있습니다. 우선 다음과 같은 방법으로 현재 날짜와 시간을 가져옵니다.
 
 ```PHP
-<?php 
-$date = "2020-01-01";
-echo date("Y-m-d", strtotime($date. " + 1 week")); 
+$now = date("Y-m-d H:i:s");
+echo $now;
 ```
 
-위 코드의 출력은 2020-01-08이 될 것입니다. 또한 "Last Monday"와 같은 상대적인 날짜도 계산할 수 있습니다. 이 경우에도 ```strtotime()``` 함수를 사용하면 됩니다.
+이렇게 하면 현재 날짜와 시간이 표시됩니다. 그런 다음 다음과 같은 방법으로 날짜를 미래나 과거로 계산할 수 있습니다.
 
-자 이제 우리는 다양한 계산 방법을 알았으니 날짜를 동적으로 처리하는 데에 더 이상 어려움이 없을 것입니다.
+```PHP
+$future_date = date("Y-m-d H:i:s", strtotime("+1 week"));
+$past_date = date("Y-m-d H:i:s", strtotime("-1 month"));
+echo $future_date; // 1주일 후
+echo $past_date; // 1달 전
+```
 
-## 심층 분석
+이제 원하는 간격을 설정해서 날짜를 계산하고 출력할 수 있습니다.
 
-그러나 실제로 날짜를 계산하는 방법이 어떻게 되는지 궁금하지 않으신가요? 우리는 [UNIX time](https://ko.wikipedia.org/wiki/UNIX_%ED%91%9C%EC%A4%80%EC%9B%90)이라는 개념을 사용하여 날짜를 표현합니다. 이는 협정 세계시(UTC) 1970년 1월 1일 00:00:00를 기준으로 경과한 초수로 날짜를 나타내는 방식입니다.
+## 깊게 파고들기
+날짜를 미래나 과거로 계산하는 것은 timestamp를 사용하여 만들어진 UNIX 시스템에서 거의 모든 프로그래밍 언어에서 가능합니다. PHP에서는 `strtotime()` 함수를 사용하여 미래나 과거 날짜를 계산할 수 있습니다. 이 함수는 요일 이름이나 날짜 형식을 매개변수로 받을 수 있으며 다양한 날짜 계산 방법을 제공합니다. 더 자세한 정보를 원하신다면 PHP 공식 문서를 참조해보세요.
 
-```strtotime()``` 함수는 입력된 날짜를 UNIX time으로 변환하고, 이후에 사용자가 원하는 날짜 형식으로 변환하여 반환합니다. 이러한 개념을 알면 날짜를 처리하는데에 더 유연하게 코드를 짤 수 있게 될 것입니다.
+## 또 다른 정보 보기
+- [PHP 공식 문서](https://www.php.net/manual/en/function.strtotime.php)
+- [날짜와 시간을 계산하는데 유용한 함수들](https://www.geeksforgeeks.org/php-date-strtotime-function/)
+- [PHP에서 날짜를 다루는 방법](https://www.guru99.com/date-time-and-calendar-in-php.html)
 
-## 참고 자료
-
-- [PHP String to Timestamp strtotime()](https://www.w3schools.com/php/func_date_strtotime.asp)
-- [PHP Date/Time Functions](https://www.php.net/manual/en/ref.datetime.php)
-- [What is Unix Time?](https://www.epochconverter.com/epoch/what-is-epoch.php)
+## 참고
+본 글은 "날짜를 미래나 과거로 계산하는 방법"에 대해 간략하게 설명한 것입니다. 실제로 프로그래밍할 때에는 다양한 변수나 상황에 따라 다르게 적용될 수 있으니 참고용으로만 이용하시기 바랍니다. 감사합니다.

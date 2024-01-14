@@ -1,48 +1,51 @@
 ---
 title:    "Clojure: テキストの検索と置換"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストの検索と置換を行うのは、プログラマーにとって非常に重要な作業です。例えば、大量のテキストデータを処理する必要がある場合や、特定のキーワードを含んだ文章を一括で変更する必要がある場合には、検索と置換は非常に効率的な方法です。また、テキストファイルやコードの編集を行う場合にも、検索と置換は欠かせないものです。
+プログラムを通してテキストを検索や置換をすることは、エンジニアにとって非常に重要です。テキストを簡単に変更することができるため、より効率的なコーディングが可能になります。
 
 ## 使い方
 
-まずは、Clojureでテキストの検索と置換を行う方法を学びましょう。以下のようなコードを使うことで、文字列の中から指定したキーワードを含む部分を全て置換することができます。
+Clojureでは、```(clojure.string/replace text search replace)```コマンドを使用してテキストの検索と置換を行うことができます。下記の例を参考にしてください。
 
-```
-Clojure (replace "Hello World" "World" "Universe")
-```
+```Clojure
+; テキストの中から"Hello"を探し、"こんにちは"に置換する
+(clojure.string/replace "Hello world" "Hello" "こんにちは") 
+; => "こんにちは world"
 
-そして、上記のコードを実行すると、"Hello Universe"という文字列が返されることがわかります。
-
-```
-Clojure (println "Hello Universe")
-```
-
-これで、"Hello World"という文字列を"Hello Universe"に置換することができます。また、さらにパターンマッチングを使うことで、より柔軟な検索と置換が可能になります。以下のようなコードを使うと、先ほどの例と同じように置換することができます。
-
-```
-Clojure (clojure.string/replace "Hello World" #"World" "Universe")
+; 大文字と小文字を区別せずに検索する場合は、```replace-first```を使用する
+(clojure.string/replace-first "Hello world" #"hello" "こんにちは")
+; => "こんにちは world"
 ```
 
-しかし、こちらのコードは置換する文字が正規表現で表されているため、より複雑な検索と置換が可能になります。例えば、"Hello World"という文字列内の数字のみを"1"に置き換えることができます。
+文字列でなく正規表現を使用することもできます。例えば、テキスト内の全ての数字を置換する場合は、下記のようになります。
 
+```Clojure
+(clojure.string/replace "5 apples and 7 oranges" #"\d+" "10")
+; => "10 apples and 10 oranges"
 ```
-Clojure (clojure.string/replace "Hello 123 World" #"\d+" "1")
+
+Clojureでは、テキスト内の複数の置換も同時に行うことができます。例えば、下記のようになります。
+
+```Clojure
+(clojure.string/replace "Hello world" {"Hello" "こんにちは" "world" "世界"})
+; => "こんにちは 世界"
 ```
 
-これで、"Hello 123 World"が"Hello 1 World"に置換されます。さらに、パターンマッチングを使いこなせば、さまざまな検索と置換が可能になりますので、ぜひ積極的に取り入れてみてください。
+## 詳細を追う
 
-## 深堀り
+Clojureの ```clojure.string``` ライブラリには、テキスト検索と置換に役立つ多くの便利な関数が用意されています。```replace```, ```replace-first```, ```split```, ```join```などがありますので、是非試してみてください。
 
-Clojureでは、検索と置換を行うためのさまざまな関数が提供されています。例えば、`replace`や`replace-first`、`replace-last`、`replace-all`などがあります。それぞれの関数には、異なるオプションがあるため、適切に使い分けることが重要です。
+さらに、正規表現を使用する際には、Clojureの```re-find```や```re-seq```関数を活用することで、より高度な検索が可能になります。また、Clojureのベクターやマップなどのデータ構造を使用することで、テキストの便利な操作を行うこともできます。是非、ドキュメントやユーザーガイドを参考にして、様々な機能を学んでみてください。
 
-また、文字列だけでなく、リストやマップなどさまざまなデータ型に対しても検索と置換を行うことができます。さらに、`str`関数を使うことで、複数のデータ型を一つの文字列に変換することもできます。
+## 参考リンク
 
-さらに、正規表現を用いた検索と置換では、グループを指定することで、置換時にその部分を使うことができます。これにより、より複雑な検索と置換が可能になります。
-
-さらに詳しい情報が必要な場合は、公式ドキュメントを参照するか、オンラインコミュニティでメンバーに質問することで、深く理解を深めることができます
+- [Clojure公式ドキュメント](https://clojuredocs.org/clojure.string/replace)
+- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
+- [Clojureで正規表現を使用する方法](https://clojuredatascience.com/2019/08/28/regular-expression-in-clojure/)

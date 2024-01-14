@@ -1,35 +1,36 @@
 ---
-title:    "Clojure: Puuhan poistaminen kuvioon sopivilta merkeiltä"
+title:    "Clojure: Pilkkujen poistaminen vastaavaa kaavaa vastaavista merkeistä"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit poistaa merkkejä jotka vastaavat tiettyä kaavaa? Ehkä sinulla on iso tekstiaineisto ja haluat selventää sitä poistamalla tarpeettomat merkit. Tämä voi myös auttaa sinua löytämään tietoa kokonaisuudessaan tiettyä kaavaa vastaavista merkeistä.
+Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä esimerkiksi jos haluat siivota tekstidokumenttiasi tai käsitellä käyttäjän antamia syötteitä ennen niiden tallentamista tietokantaan.
 
-## Kuinka tehdä
+## Kuinka
 
 ```Clojure
-(defn poista-merkit [teksti kaava]
-  (clojure.string/replace
-    teksti
-    kaava
-    ""))
-    
-(poista-merkit "Tervetuloa maailmaan!" #"[aeiou]")
-=> "Trvltn mlmn!"
+; Ensimmäinen vaihtoehto: käyttämällä replace funktiota
+(replace #"kaava" "korvattava teksti" "korvaava teksti")
 
-(poista-merkit "Tämä on vain esimerkki." #"\W")
-=> "Tämäonvainesimerkki"
+; Toinen vaihtoehto: käyttämällä regex-replace funktiota
+(regex-replace #"kaava" "korvattava teksti" "korvaava teksti")
 ```
 
-## Syventävä sukellus
+**Esimerkki**: Poistetaan kaikki välilyönnit lauseen lopusta:
+```Clojure
+(replace #"\s+$" "Tämä on esimerkki  ") ; Output: "Tämä on esimerkki"
+(regex-replace #"\s+$" "Tämä on esimerkki  ") ; Output: "Tämä on esimerkki"
+```
 
-Funktiota "poista-merkit" käytetään Clojuren "clojure.string/replace" -metodin avulla. "replace" korvaa kaikki annetun kaavan mukaiset merkit tyhjällä merkillä, jolloin ne poistetaan kokonaan. Kaava on kirjoitettu säännöllisten lausekkeiden muodossa, joka mahdollistaa tarvittavien merkkien tarkemman määrittämisen.
+## Syväsukellus
+
+Kun käytät replace- tai regex-replace-funktioita, voit käyttää erilaisia kaavoja poistettavien merkkien tunnistamiseksi. Esimerkiksi "#\s" vastaa välilyönnin merkkiä ja "$" vastaa rivin loppua. Voit myös käyttää vakioita, kuten :ignore, :globs tai :exact, jotka auttavat tunnistamaan kaavaa tarkemmin.
 
 ## Katso myös
 
-- [Säännölliset lausekkeet](https://clojure.org/reference/regular_expressions)
-- [clojure.string/replace dokumentaatio](https://clojuredocs.org/clojure.string/replace)
+- [Clojure replace documentation](https://clojuredocs.org/clojure.string/replace)
+- [Clojure regex-replace documentation](https://clojuredocs.org/clojure.string/regex-replace)

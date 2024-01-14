@@ -1,37 +1,52 @@
 ---
-title:    "Haskell: Sjekke om en mappe eksisterer"
+title:    "Haskell: Kontrollerer om en mappe eksisterer"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å sjekke om en mappe eksisterer kan være nyttig når du jobber med filbehandling i Haskell. Dette kan hjelpe deg med å unngå feil og håndtere ulike grensetilfeller når du skal åpne eller lagre filer.
+Når du jobber med å utvikle programmer, kan det være nyttig å sjekke om en mappe eksisterer før du prøver å utføre en operasjon på den. Dette hjelper deg å unngå feil og sikrer at programmet ditt kjører jevnt.
 
 ## Hvordan
 
-For å sjekke om en mappe eksisterer i Haskell, kan du bruke funksjonen `doesDirectoryExist` fra `System.Directory` modulen. Denne funksjonen tar inn en `FilePath` - som er en streng som representerer plasseringen til mappen - og returnerer en `Bool` som indikerer om mappen eksisterer eller ikke.
+Å sjekke om en mappe eksisterer, kan enkelt gjøres ved å bruke funksjonen `doesDirectoryExist` fra Haskell-modulen `System.Directory`. Denne funksjonen tar inn en `FilePath` som argument, som er banen til mappen du vil sjekke. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+import System.Directory
 
--- Sjekker om mappen "Dokumenter" eksisterer
-doesDirectoryExist "Dokumenter"
--- Output: True
-
--- Sjekker om mappen "Bilder" eksisterer
-doesDirectoryExist "Bilder"
--- Output: False
+-- Sjekker om mappen "docs" eksisterer
+doesDirectoryExist "docs"
 ```
+
+Hvis mappen eksisterer, vil funksjonen returnere `True`, ellers vil den returnere `False`. Du kan også bruke en ternary operator for å få en enklere utskrift:
+
+```Haskell
+import System.Directory
+
+-- Sjekker om mappen "docs" eksisterer og printer ut en melding
+let dir = if doesDirectoryExist "docs" then "Mappen finnes!" else "Mappen finnes ikke!"
+print dir
+```
+
+Output vil være enten "Mappen finnes!" eller "Mappen finnes ikke!".
 
 ## Dypdykk
 
-Hvis du vil lære mer om hvordan funksjonen `doesDirectoryExist` faktisk fungerer bak kulissene, kan du ta en titt på dokumentasjonen eller kildekoden til `System.Directory` modulen. Der vil du kunne se at denne funksjonen bruker systemkallet `stat` for å få informasjon om filen eller mappen som gitt `FilePath` peker på.
+Hvis du ønsker å sjekke om en mappe eksisterer på en spesifikk bane, kan du bruke funksjonen `doesPathExist` i stedet. Denne funksjonen kan ta inn hvilken som helst `FilePath`, selv om den ikke er en mappe. Den sjekker om filen eller mappen eksisterer på den angitte banen.
 
-Dette systemkallet er en del av POSIX standarden, som er en samling av standarder for Unix-baserte operativsystemer som inkluderer Linux og macOS.
+```Haskell
+import System.Directory
+
+-- Sjekker om banen "/Brukere/navn/dokumenter" eksisterer
+doesPathExist "/Users/navn/Documents"
+```
+
+Output vil være enten `True` eller `False`.
 
 ## Se også
 
-* [System.Directory dokumentasjon](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-* [System.Directory kildekode ](https://hackage.haskell.org/package/directory/docs/src/System-Directory.html#stat)
+- [System.Directory dokumentasjon](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Dokumentasjon for `doesDirectoryExist` og `doesPathExist` funksjonene](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)

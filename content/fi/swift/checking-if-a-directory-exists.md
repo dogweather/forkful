@@ -1,63 +1,68 @@
 ---
-title:    "Swift: Tarkista onko hakemisto olemassa"
+title:    "Swift: Kansion olemassaolon tarkistaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi tarkistaa, onko hakemisto olemassa?
+## Miksi tarkistaa onko kansio olemassa?
 
-On tilanteita, joissa ohjelmoijan täytyy tarkistaa, onko tietty hakemisto olemassa ennen kuin se voidaan käyttää. Tämä voi johtua esimerkiksi siitä, että halutaan tallentaa tiedostoja tiettyyn sijaintiin tai että halutaan varmistaa, ettei jo olemassa olevia tiedostoja korvata vahingossa. Tässä blogikirjoituksessa käymme läpi, miten tarkistaa hakemiston olemassaolo Swift-ohjelmoinnissa.
+Monissa ohjelmointiprojekteissa on tärkeää varmistaa, että tiedostojärjestelmässä käytettävät kansiot ovat olemassa ennen kuin niihin yritetään tallentaa tai niistä yritetään lukea. Tämä varmistaa ohjelman sujuvan toiminnan ja välttää mahdollisia virheitä. Tässä blogikirjoituksessa kerromme miten tarkistaa, onko kansio olemassa käyttäen Swift-ohjelmointikieltä.
 
-## Kuinka tarkistaa hakemiston olemassaolo
+## Miten tarkistaa onko kansio olemassa?
 
-Tarkistamiseen käytetään FileManager-luokkaa ja sen `fileExists(atPath:)` -metodia. Metodi ottaa parametrinaan hakemiston polun ja palauttaa totuusarvon, joka kertoo, onko hakemisto olemassa vai ei.
+Tarkistaaksesi onko kansio olemassa, käytä `fileManager`-luokan `fileExists(atPath:)`-metodia. Tämä metodi ottaa parametrinaan polun tarkistamaan kansiotiedostoon. Jos kansio on olemassa, palauttaa metodi totuusarvon `true` ja jos kansioa ei ole olemassa, palauttaa metodi totuusarvon `false`. 
 
 ```Swift
-// Luodaan FileManager-instanssi
-let fileManager = FileManager.default
+import Foundation
 
-// Tarkistetaan, onko "Documents" -hakemisto olemassa
-if fileManager.fileExists(atPath: "Documents") {
-    print("Hakemisto on olemassa.")
+let fileManager = FileManager.default // Luodaan fileManager-objekti
+
+let directory = "/Users/testikansio" // Määritellään kansion polku
+
+// Tarkistetaan onko kansio olemassa
+if fileManager.fileExists(atPath: directory) {
+    print("Kansio on olemassa.")
 } else {
-    print("Hakemistoa ei löytynyt.")
+    print("Kansiota ei ole olemassa.")
 }
 
-// Output:
-// Hakemisto on olemassa.
+// Tulostaa:
+// Kansiota ei ole olemassa.
 ```
 
-## Syvemmälle tarkasteluun
+## Syväsukellus
 
-`fileExists(atPath:)` -metodi tarkistaa vain hakemiston olemassaolon, eikä se tarkista, onko kyseinen polku varmasti hakemisto. Tämä tarkoittaa, että se voi palauttaa `true` -arvon myös silloin, kun polku johtaa tiedostoon. Jos haluat varmistaa, että kyseessä todella on hakemisto, voit käyttää metodia `isDirectory` luokasta `URLResourceValues`. 
+Tässä esimerkissä käytämme `directory`-muuttujaa, jossa määritellään kansiomme polku. Tämän jälkeen `fileManager`-objektia käytetään tarkistamaan onko kyseinen kansio olemassa. Tulostamme sitten viestin sen mukaan, oliko kansio olemassa vai ei.
+
+On myös mahdollista tarkistaa, onko kansio olemassa käyttäen `fileManager`-luokan `enumerator(atPath:)`-metodia, joka palauttaa kaikki kansion sisältämät tiedostot ja alikansiot.
 
 ```Swift
-// Luodaan URL-instanssi hakemistolle
-let url = URL(fileURLWithPath: "Documents")
+import Foundation
 
-// Tarkistetaan, onko kyseessä hakemisto
-do {
-    let resourceValues = try url.resourceValues(forKeys: [.isDirectoryKey])
-    if resourceValues.isDirectory != nil {
-        print("Polku johtaa hakemistoon.")
-    } else {
-        print("Polku johtaa tiedostoon.")
+let fileManager = FileManager.default // Luodaan fileManager-objekti
+
+let directory = "/Users/testikansio" // Määritellään kansion polku
+
+// Tarkistetaan onko kansio olemassa
+if let enumerator = fileManager.enumerator(atPath: directory) {
+    print("Kansio on olemassa ja se sisältää seuraavat tiedostot ja kansiot:")
+    while let file = enumerator.nextObject() as? String {
+        print(file)
     }
-} catch {
-    print(error.localizedDescription)
+} else {
+    print("Kansiota ei ole olemassa.")
 }
 
-// Output:
-// Polku johtaa hakemistoon.
+// Tulostaa:
+// Kansio on olemassa ja se sisältää seuraavat tiedostot ja kansiot:
+// tiedosto1.txt
+// tiedosto2.pdf
+// alikansio
 ```
 
 ## Katso myös
 
-Jos haluat tutustua tarkemmin hakemistojen käsittelyyn Swift-ohjelmoinnissa, kannattaa tutustua seuraaviin artikkeleihin:
-
-- [Tiedostojen ja kansioiden luominen Swift-ohjelmoinnissa](https://www.appcoda.com/swift-filemanager/)
-- [Swift-tiedostojen käsittely ja tallentaminen](https://medium.com/@nomanbinhussein/working-with-files-in-swift-794f40a5f4b8)
-- [Swift-lukijärjestelmän tutkiminen](https://www.hackingwithswift.com/example-code/system/how-to-examine-systems-using-filemanager-and-url)
-
-Toivottavasti tämä blogikirjoitus auttoi sinua ymmärtämään, miten tarkistaa hakemiston olemassaolo Swiftissä. Hyviä ohjelmointihetkiä!
+- [File Manager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [How to Check if a Directory Exists in Swift](https://stackoverflow.com/questions/45106514/how-to-check-if-a-directory-exists-in-swift)

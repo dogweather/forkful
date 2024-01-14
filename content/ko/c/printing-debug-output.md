@@ -1,61 +1,79 @@
 ---
-title:    "C: 디버그 출력하기"
+title:    "C: 디버그 출력 출력"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜: 디버그 출력을 사용하는 이유
+# 왜 디버그 출력을 사용해야 할까요?
 
-프로그래밍을 할 때, 버그를 찾아내고 수정하는 것은 쉽지 않은 일입니다. 때때로 코드를 살펴보면서 어떤 부분에서 버그가 발생하는지 파악하기가 어려울 때가 있습니다. 그래서 우리는 디버그 출력을 사용합니다. 이것은 프로그램의 특정 부분에서 어떤 값이나 변수의 상태를 확인하고 문제를 해결하는 데 도움을 줍니다.
+디버그 출력은 프로그램을 디버깅하는데 매우 유용합니다. 프로그램이 실행될 때 변수의 값이나 프로그램의 흐름을 확인할 수 있어서 버그를 발견하고 수정하는데 도움이 됩니다.
 
-## 사용 방법
+## 디버그 출력하는 방법
 
-디버그 출력을 사용하는 방법은 아주 간단합니다. 우선 프로그램의 특정 부분에서 어떤 값을 콘솔에 출력하고 싶다면, 다음과 같이 코드를 작성합니다.
-
-```C
-printf("value: %d\n", value); // value는 변수나 값의 이름입니다.
-```
-
-여기서 %d는 값을 정수로 변환하여 출력하라는 의미입니다. 따라서 코드를 실행하면, "value: 10"처럼 출력될 것입니다. 이렇게 출력한 값들을 보면서 문제가 발생하는 부분을 찾을 수 있습니다. 또한 여러 개의 값을 출력하고 싶다면, 다음과 같이 작성할 수 있습니다.
+디버그 출력은 ```printf()``` 함수를 사용하여 쉽게 할 수 있습니다. 아래 예제를 참고하세요.
 
 ```C
-printf("value1: %d, value2: %d\n", value1, value2); // value1과 value2는 변수나 값의 이름입니다.
-```
+#include <stdio.h>
 
-모든 값을 출력하는 것이 아니라 특정 조건에서만 출력하고 싶다면, 다음과 같이 조건문을 사용할 수 있습니다.
+int main() {
+  // 변수에 값 할당
+  int num1 = 10;
+  int num2 = 20;
 
-```C
-if (value == 0) {
-    printf("value is 0\n");
+  // 디버그 출력
+  printf("num1의 값: %d\n", num1);
+  printf("num2의 값: %d\n", num2);
+
+  return 0;
 }
 ```
 
-이렇게 코드를 작성하면, value가 0일 때만 "value is 0"이라는 메시지가 출력될 것입니다. 디버그 출력은 이렇게 간단하게 사용할 수 있습니다.
+위의 코드를 실행하면 다음과 같은 출력이 나옵니다.
 
-## 딥 다이브
-
-디버그 출력을 사용하는 것은 간단하지만, 좀 더 깊게 들어가보면 더 많은 기능을 발견할 수 있습니다. 예를 들어, 여러 개의 변수의 값을 출력할 때 가독성을 높이기 위해 다음과 같이 코드를 작성할 수 있습니다.
-
-```C
-printf("Values:\n");
-printf("value1: %d\n", value1);
-printf("value2: %d\n", value2);
-printf("value3: %d\n", value3);
+```
+num1의 값: 10
+num2의 값: 20
 ```
 
-이렇게 하면 값이 출려될 때 한 줄씩 출력되어 보기 좋을 것입니다. 또한 디버그 출력을 사용해서 코드의 각 부분이 제대로 동작하는지 확인할 수도 있습니다. 예를 들어, for 루프를 사용해서 배열에 있는 값들을 출력하고 싶다면, 다음과 같이 할 수 있습니다.
+위의 예제처럼 ```printf()``` 함수를 사용하여 변수의 값을 확인할 수 있습니다.
+
+## 디버그 출력 깊게 살펴보기
+
+디버그 출력을 세밀하게 관리하려면 ```#define``` 전처리기를 사용할 수 있습니다. 아래 예제를 참고하세요.
 
 ```C
-for (int i = 0; i < size; i++) {
-    printf("array[%d]: %d\n", i, array[i]); // array는 배열의 이름, i는 for 루프에서 증가되는 카운터 변수입니다.
+#include <stdio.h>
+
+// DEBUG 모드 활성화
+#define DEBUG 1
+
+int main() {
+  // 변수에 값 할당
+  int num1 = 10;
+  int num2 = 20;
+
+  // 디버그 출력
+  #ifdef DEBUG
+    printf("num1의 값: %d\n", num1);
+    printf("num2의 값: %d\n", num2);
+  #endif
+
+  return 0;
 }
 ```
 
-이렇게 하면 배열 안에 있는 모든 값들이 출력될 것입니다. 디버그 출력은 이렇게 간단하지만, 많은 도움을 줄 수 있습니다.
+위의 코드에서 DEBUG 모드를 활성화하면 디버그 출력이 실행되지만 비활성화하면 디버그 출력이 실행되지 않습니다.
 
-## 관련 자료
+# 더 알아보기
 
-- [디버그 출력에 대한 더 많은 정보](https://docs.microsoft.com/ko-kr/visualstudio/debugger/dpprintf)
-- [printf 함수에 대한 자세한 설명](https://en.cppreference.com/w/c/io/fprintf)
-- [디버깅을 위한 다양한 방법들](https://www.geeksforgeeks.org/debugging-c-code-in-visual-studio-code/)
+이 블로그 포스트에서는 디버그 출력이 무엇이고 어떻게 사용하는지에 대해 알아보았습니다. 더 자세한 내용은 아래 링크를 참고하세요.
+
+- https://www.tutorialspoint.com/cprogramming/c_debugging.htm
+- https://www.guru99.com/c-programming-debugging.html
+
+# 관련 링크
+
+- https://ko.wikipedia.org/wiki/C_언어
+- https://www.tutorialspoint.com/cprogramming/index.htm

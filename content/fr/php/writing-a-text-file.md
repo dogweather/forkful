@@ -1,46 +1,84 @@
 ---
-title:    "PHP: Écrire un fichier texte"
+title:    "PHP: Ecrire un fichier texte"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous vous demandez peut-être pourquoi quelqu'un écrirait un fichier texte en utilisant PHP. Eh bien, cela peut être utile pour stocker des données dans un format lisible par l'homme et facilement manipulable avec du code.
+Ecrire un fichier texte est une tâche courante dans le développement web. Que ce soit pour stocker des données ou générer des rapports, il est important de savoir comment le faire en utilisant PHP. Dans cet article, nous allons vous montrer comment écrire un fichier texte en utilisant PHP et vous plonger en profondeur dans cette tâche.
 
 ## Comment faire
 
-Pour écrire un fichier texte en utilisant PHP, vous devez suivre ces étapes simples:
+Pour écrire un fichier texte en PHP, il faut suivre ces étapes simples :
+
+1. Ouvrez un nouveau fichier PHP et donnez-lui un nom pertinent, par exemple "ecriture_fichier.php".
+
+2. Utilisez la fonction `fopen()` pour ouvrir le fichier en mode écriture :
 
 ```PHP
-// Ouverture du fichier en mode écriture
-$fichier = fopen('mon_fichier.txt', 'w');
+$fichier = fopen("mon_fichier.txt", "w") or die("Impossible d'ouvrir le fichier !");
+```
 
-// Écriture d'une chaîne dans le fichier
-$texte = "Bonjour le monde !";
-fwrite($fichier, $texte);
+Dans cet exemple, nous avons créé un nouveau fichier texte appelé "mon_fichier.txt" et nous l'avons ouvert en mode écriture ("w"). Si le fichier n'existe pas, il sera créé automatiquement. Si le fichier existe déjà, son contenu sera écrasé.
 
-// Fermeture du fichier
+3. Utilisez la fonction `fwrite()` pour écrire du contenu dans le fichier :
+
+```PHP
+fwrite($fichier, "Bonjour le monde !");
+```
+
+Cette fonction prend deux paramètres : le premier est l'objet fichier et le deuxième est la chaîne de caractères que vous voulez écrire dans le fichier.
+
+4. N'oubliez pas de fermer le fichier lorsque vous avez fini :
+
+```PHP
 fclose($fichier);
 ```
 
-Vous pouvez également écrire plusieurs lignes dans votre fichier en utilisant la fonction `fwrite()` plusieurs fois.
+Cela permet de libérer les ressources utilisées par le fichier.
+
+Et voilà ! Vous venez d'écrire votre premier fichier texte en utilisant PHP. N'hésitez pas à expérimenter avec différentes fonctions pour découvrir toutes les possibilités.
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment écrire un fichier texte en utilisant PHP, explorons quelques fonctionnalités avancées.
+L'ouverture d'un fichier en mode écriture peut causer la perte de données si le fichier existe déjà et que vous ne voulez pas l'écraser. C'est pourquoi il est recommandé d'utiliser la fonction `file_exists()` avant d'ouvrir le fichier :
 
-Tout d'abord, vous pouvez ajouter des données à la fin d'un fichier existant en utilisant le mode d'ouverture `a` au lieu de `w` dans la fonction `fopen()`. De plus, vous pouvez utiliser la fonction `fputs()` à la place de `fwrite()` si vous préférez.
+```PHP
+if(file_exists("mon_fichier.txt")) {
+  // Code pour gérer le fichier déjà existant
+} else {
+  $fichier = fopen("mon_fichier.txt", "w") or die("Impossible d'ouvrir le fichier !");
+}
+```
 
-Si vous souhaitez écrire des données de manière binaire, vous pouvez utiliser le mode `wb` à la place de `w` dans la fonction `fopen()`. Cela est utile si vous souhaitez stocker des images, des fichiers audio ou d'autres types de fichiers dans un fichier texte.
+De plus, il est possible d'écrire dans un fichier texte ligne par ligne en utilisant la fonction `fgets()`. Cette fonction lit une ligne à la fois dans un fichier :
 
-N'oubliez pas de toujours fermer votre fichier après avoir fini d'écrire afin d'éviter toute perte de données ou de problèmes de performances.
+```PHP
+$fichier = fopen("mon_fichier.txt", "w") or die("Impossible d'ouvrir le fichier !");
+
+$txt = "Première ligne\n";
+fwrite($fichier, $txt);
+
+$txt = "Deuxième ligne\n";
+fwrite($fichier, $txt);
+
+fclose($fichier);
+```
+
+Le contenu du fichier "mon_fichier.txt" sera maintenant :
+
+```
+Première ligne
+Deuxième ligne
+```
 
 ## Voir aussi
 
-- [Documentation officielle sur la fonction `fopen()` de PHP](https://www.php.net/manual/fr/function.fopen.php)
-- [Guide sur la manipulation de fichiers texte en PHP](https://www.php.net/manual/fr/book.filesystem.php)
-- [Tutoriel sur la gestion des fichiers en PHP par OpenClassrooms](https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1669822-la-gestion-des-fichiers)
+Nous espérons que cet article vous a aidé à comprendre comment écrire un fichier texte en PHP. Pour en savoir plus sur les fonctions utilisées, consultez la documentation officielle de PHP :
 
-Merci d'avoir lu cet article sur l'écriture de fichiers texte en PHP ! Nous espérons que cela vous sera utile dans vos futurs projets de programmation. N'hésitez pas à explorer davantage les fonctionnalités telles que la lecture de fichiers texte, la manipulation de leurs contenus et la gestion des erreurs. À bientôt !
+- [Documentation de la fonction fopen()](https://www.php.net/manual/fr/function.fopen.php)
+- [Documentation de la fonction fwrite()](https://www.php.net/manual/fr/function.fwrite.php)
+- [Documentation de la fonction file_exists()](https://www.php.net/manual/fr/function.file-exists.php)

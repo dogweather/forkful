@@ -1,46 +1,50 @@
 ---
-title:    "Elixir: La lecture des arguments en ligne de commande"
+title:    "Elixir: La lecture des arguments de ligne de commande"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes nouveau dans le monde de la programmation en Elixir, vous pourriez vous demander pourquoi il est important de lire les arguments de ligne de commande. Tout d'abord, il est essentiel de comprendre comment votre programme communique avec l'utilisateur via les arguments de ligne de commande. Cela vous permettra de créer des applications plus interactives et personnalisées.
+Les arguments de ligne de commande sont une fonctionnalité importante de tout langage de programmation, y compris Elixir. Ils permettent aux utilisateurs de spécifier des options et des paramètres lorsqu'ils exécutent un programme à partir de la ligne de commande. Dans cet article, nous allons explorer pourquoi la lecture des arguments de ligne de commande est essentielle dans la programmation Elixir.
 
-## Comment faire
+# Comment Faire
 
-Parlons maintenant de la façon de lire les arguments de ligne de commande en Elixir. Tout d'abord, nous devons utiliser le module `OptionParser` qui nous permet de spécifier les options attendues pour notre programme. Voici un exemple de code qui lit deux arguments de ligne de commande, un pour le nom et un pour l'âge :
+Pour lire les arguments de ligne de commande en Elixir, nous utilisons le module `System` et sa fonction `argv/0`. Cette fonction retourne une liste contenant tous les arguments passés lors de l'exécution du programme. Voici un exemple de code pour lire et afficher les arguments de ligne de commande :
 
-```
-Elixir
-defmodule CommandLine do
-  def parse_args(args) do
-    OptionParser.parse(args, switches: [name: :string, age: :integer])
-  end
-end
-
-args = ["--name", "Pierre", "--age", "25"]
-result = CommandLine.parse_args(args)
-
-IO.puts "Bonjour #{result[:name]}, tu as #{result[:age]} ans !"
+```Elixir
+liste_arguments = System.argv()
+IO.puts("Les arguments de ligne de commande sont : #{inspect liste_arguments}")
 ```
 
-En entrant ces lignes de commande dans le terminal, vous devriez obtenir le résultat suivant :
+Supposons que vous exécutez ce code avec les arguments `hello world`. Le résultat affichera :
 
 ```
-Bonjour Pierre, tu as 25 ans !
+Les arguments de ligne de commande sont : ["hello", "world"]
 ```
 
-Comme vous pouvez le voir, nous avons utilisé les options `string` et `integer` pour spécifier le type de données attendu pour chaque argument. Vous pouvez également utiliser d'autres types tels que `boolean`, `float`, etc. pour définir vos options.
+Cela montre que les arguments de ligne de commande sont stockés sous forme de chaînes de caractères dans une liste.
 
-## Plongée en profondeur
+# Plongée Profonde
 
-Bien que le module `OptionParser` soit simple et pratique pour lire les arguments de ligne de commande, il y a d'autres façons d'y accéder. Par exemple, vous pouvez utiliser l'argument spécial `$*ARGS` qui renvoie une liste des arguments entrés par l'utilisateur. En utilisant cette méthode, vous n'êtes pas limité aux options spécifiées à l'avance et pouvez modifier votre code pour lire n'importe quel argument donné.
+Outre la fonction `argv/0`, le module `System` fournit également d'autres fonctions utiles pour travailler avec les arguments de ligne de commande. Par exemple, `get_env/2` vous permet de récupérer des valeurs d'environnement basées sur les arguments passés. La fonction `get_env/2` prend deux arguments : le nom de l'environnement et une valeur par défaut à utiliser si l'environnement n'est pas défini. Voici un exemple :
 
-## Voir aussi
+```Elixir
+# Si la valeur de l'environnement PORT est définie, elle est assignée à la variable "port".
+# Sinon, la valeur par défaut de 8080 est utilisée.
+port = System.get_env("PORT", 8080)
+```
 
-- [Documentation officielle d'Elixir sur la lecture des arguments de ligne de commande](https://hexdocs.pm/elixir/OptionParser.html)
-- [Tutoriel vidéo sur la lecture des arguments de ligne de commande en Elixir](https://www.youtube.com/watch?v=_qDAvXsk5bU)
-- [Article sur la gestion des erreurs avec les arguments de ligne de commande en Elixir](https://medium.com/@jamesaenera/elixir-tutorial-command-line-arguments-and-error-handling-c1244bd38497)
+Dans cet exemple, si vous exécutez le programme avec l'argument `PORT=3000`, alors la variable `port` sera assignée à la valeur `3000`.
+
+Les arguments de ligne de commande peuvent également être utilisés pour exécuter différentes tâches en fonction des options spécifiées. Par exemple, vous pouvez utiliser des options telles que `-h` pour afficher l'aide ou `-v` pour afficher la version de votre programme.
+
+# Voir Aussi
+
+Pour en savoir plus sur la lecture des arguments de ligne de commande en Elixir, consultez les ressources suivantes :
+
+- Documentation officielle d'Elixir sur les arguments de ligne de commande : https://hexdocs.pm/elixir/System.html
+- Un tutoriel sur les arguments de ligne de commande en Elixir : https://www.codementor.io/elixir/tutorial/how-to-use-command-line-argument-in-elixir
+- Un article sur les meilleures pratiques pour utiliser les arguments de ligne de commande : https://medium.com/@ElixirShots/elixir-tips-arguments-from-the-command-line-c39b722bc124

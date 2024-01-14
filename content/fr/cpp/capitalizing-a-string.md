@@ -1,54 +1,51 @@
 ---
-title:    "C++: Capitaliser une chaîne de caractères."
+title:    "C++: Mettre en majuscule une chaîne de caractères"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi capitaliser une chaîne de caractères en C++ ?
+## Pourquoi
 
-La capitalisation d'une chaîne de caractères en C++ signifie mettre en majuscules la première lettre de chaque mot dans une phrase. Bien qu'il puisse sembler trivial, il existe plusieurs raisons pour lesquelles un programmeur pourrait vouloir capitaliser une chaîne de caractères.
+Si vous êtes un programmeur C++, vous avez probablement rencontré des situations où vous avez besoin de capitaliser une chaîne de caractères. Cela peut sembler trivial, mais c'est en fait une tâche importante dans de nombreuses applications. Dans cet article, nous allons explorer pourquoi capitaliser une chaîne de caractères est important et comment le faire efficacement en C++.
 
 ## Comment faire
 
-Voici un exemple de code simple en C++ pour capitaliser une chaîne de caractères :
+Pour capitaliser une chaîne de caractères en C++, nous pouvons utiliser la fonction `toupper` de la bibliothèque `<cctype>`. Cette fonction prend en paramètre un caractère et renvoie sa version en majuscule. Nous pouvons donc l'utiliser pour parcourir la chaîne de caractères et convertir chaque caractère en majuscule.
+
+Voici un exemple de code en C++ montrant comment capitaliser une chaîne de caractères :
 
 ```C++
 #include <iostream>
-#include <string>
-
-using namespace std;
-
-string capitalize(string s) {
-    // Séparer la phrase en mots individuels
-    for (int i = 0; i < s.length(); i++) {
-        // Mettre en majuscules la première lettre de chaque mot
-        if (i == 0 || s[i - 1] == ' ') {
-            s[i] = toupper(s[i]);
-        }
-    }
-
-    return s;
-}
+#include <cctype>
 
 int main() {
-    string phrase = "je suis un programmeur C++";
-    cout << capitalize(phrase) << endl;
+    // initialiser une chaîne de caractères
+    std::string chaine = "bonjour le monde";
+
+    // parcourir chaque caractère et le convertir en majuscule
+    for (int i = 0; i < chaine.length(); i++) {
+        chaine[i] = toupper(chaine[i]);
+    }
+
+    // afficher la chaîne de caractères capitalisée
+    std::cout << chaine << std::endl;
 
     return 0;
 }
+
+// output: BONJOUR LE MONDE
+
 ```
 
-Output : "Je Suis Un Programmeur C++"
+## Plongée profonde
 
-## Plongée en profondeur
+Il est important de noter que la fonction `toupper` ne modifiera pas les caractères spéciaux ou les chiffres. Elle ne convertira que les lettres en majuscules. De plus, cette méthode ne fonctionnera que pour les chaînes de caractères dans la norme ASCII. Si vous travaillez avec des chaînes de caractères dans d'autres normes, vous devrez utiliser d'autres méthodes pour les capitaliser.
 
-Il existe plusieurs façons de capitaliser une chaîne de caractères en C++ en utilisant des fonctions de la bibliothèque standard telles que `toupper()` ou `transform()`. Cependant, il est important de prendre en compte les différences entre les langues et les encodages de caractères lors de la manipulation de chaînes de caractères.
+Une autre chose à prendre en compte est que la fonction `toupper` est sensible à la localisation. Cela signifie qu'elle peut produire des résultats différents en fonction de la langue et du pays dans lequel votre programme est exécuté. Si vous voulez vous assurer que votre programme fonctionne correctement dans toutes les situations, vous devrez peut-être utiliser des algorithmes plus complexes pour capitaliser une chaîne de caractères.
 
-De plus, il est également utile de comprendre les performances de différentes méthodes de capitalisation de chaînes et de choisir la plus efficace pour votre programme.
+## Voir aussi
 
-# Voir aussi
-
-- https://www.geeksforgeeks.org/capitalize-string-in-cpp/
-- https://www.techiedelight.com/capitalize-string-cpp/
-- https://docs.microsoft.com/fr-fr/cpp/standard-library/capitalize
+- [Documentation de la Bibliothèque Standard de C++](https://en.cppreference.com/w/cpp/header/cctype)
+- [Article sur la localisation en C++](https://en.wikipedia.org/wiki/C%2B%2B_localisation)

@@ -1,54 +1,52 @@
 ---
 title:    "Arduino: Skrivning till standardfel"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva kod till standardfel är en viktig del av felets hantering i ditt Arduino-program. Genom att skriva till standardfel kan du fånga och hantera felmeddelanden som uppstår under exekvering av din kod. Detta gör det möjligt för dig att felsöka och lösa problem i ditt program på ett mer effektivt sätt.
+
+Att skriva till standard error är ett viktigt steg i att debugga och förbättra din Arduino-kod. Genom att kunna hantera felmeddelanden som visas i din serieport kan du identifiera och åtgärda problem i din kod snabbare.
 
 ## Så här gör du
-Det första steget är att inkludera biblioteket "cstdio" i din kod. Detta ger dig tillgång till funktionen "fprintf", som låter dig skriva till standardfel. Här är en enkel kodsnutt för att skriva ett felmeddelande till standardfel:
+
+Att skriva till standard error i Arduino är enkelt. Du kan använda funktionen `print()` eller `println()` och lägga till bokstäverna `err` framför ditt meddelande.
 
 ```Arduino
-#include <cstdio>
+Serial.print("err"); // Skriver bara "err" till standard error
+Serial.println("err Felmeddelande"); // Skriver "err Felmeddelande" och hoppar till nästa rad på serieporten
+```
 
-int main(){
-    fprintf(stderr, "Ett fel uppstod i programmet.");
-    return 0;
+En annan användbar funktion är `errno()` som returnerar ett nummer som motsvarar det senaste felmeddelandet. Det är användbart om du vill använda det inom en `if`-sats eller behöver visa det specifika felet i din kod.
+
+``` Arduino
+if(errno() == 1) {   // Kontrollerar om det senaste felet var nummer 1
+    Serial.println("err Felmeddelande 1"); // Skriver ut en anpassad felmeddelande
 }
 ```
 
-När du kör ditt program kommer du se följande utskrift till standardfel:
+## Deep Dive
 
-```
-Ett fel uppstod i programmet.
-```
-
-Du kan också använda formatsträngar och variabler för att skriva mer detaljerade felmeddelanden, precis som du skulle göra med "printf" för att skriva till standardutgång. Här är ett exempel på hur du kan skriva ett felmeddelande som innehåller en variabel till standardfel:
+När du skriver till standard error används den inbyggda klassen `Serial`. Om du vill skriva till en annan seriell port, till exempel en LCD-skärm, måste du först använda funktionen `begin()` för att starta serialkommunikationen på den specifika porten.
 
 ```Arduino
-#include <cstdio>
-
-int main(){
-    int num = 2;
-    fprintf(stderr, "Ett fel uppstod vid hantering av numret %d.", num);
-    return 0;
-}
+Serial1.begin(9600); // Initierar kommunikation på serielport 1 med en baudhastighet på 9600
+Serial1.print("err Felmeddelande"); // Skriver till serielport 1 istället för standard error
 ```
 
-Output:
+Det finns också möjlighet att ändra bokstäverna `err` genom att redigera den inbyggda definitionen av `err` i filen "HardwareSerial.cpp".
 
+Att använda `fprintf()` är ett annat alternativ för att skriva till standard error. Detta kan vara enklare om du behöver formatera ditt felmeddelande med variabler. Detta kräver dock lite mer kod och lägger till en extern beroende till din Arduino-kod.
+
+```Arduino
+// Kräver inkludering av <stdio.h> och <errno.h>
+fprintf(stderr, "err Felmeddelande %d", errno()); // Skriver till standard error med format och variabler
 ```
-Ett fel uppstod vid hantering av numret 2.
-```
-
-## Djupdykning
-När ditt program körs, är standardutgången vanligtvis ansluten till en display eller serieport, medan standardfel är ansluten till en debug-port eller spårningsport. Genom att skriva till standardfel kan du separera utdata som är avsedd för felsökning och spårning från den vanliga utdatan.
-
-Det är också bra att veta att standardfel vanligtvis riktar sig till avancerade användare och utvecklare som har tillgång till dessa debug- och spårningsportar. Om du vill inkludera en felhanteringsmekanism för en mer allmän användare, kan det vara bättre att använda funktionen "Serial.print", som låter dig skriva till serieporten.
 
 ## Se även
-- [Arduino - Standard error](https://www.arduino.cc/reference/en/language/functions/communication/standarderror/)
-- [GNU C Library - fprintf](https://www.gnu.org/software/libc/manual/html_node/Error-Reporting.html#Error-Reporting)
+
+- [Arduino Dokumentation om seriell kommunikation](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Arduino Reference om seriell kommunikation](https://www.arduino.cc/en/Reference/Serial)
+- [Stack Overflow - How to write to standard error?](https://stackoverflow.com/questions/11192407/how-to-write-to-standard-error)

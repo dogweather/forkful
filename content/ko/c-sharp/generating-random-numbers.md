@@ -1,48 +1,80 @@
 ---
-title:    "C#: 랜덤 숫자 생성하기"
+title:    "C#: 랜덤 숫자 생성"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 랜덤 숫자를 생성하는가?
+# 왜 그랜드 랜덤 숫자를 생성하는가?
 
-랜덤 숫자를 생성하는 것은 프로그래밍에서 매우 중요합니다. 랜덤 숫자를 사용하면 다양한 기능을 구현할 수 있습니다. 예를 들어, 게임에서 더욱 다양한 경험을 제공하거나, 데이터를 분석할 때 표본을 뽑는 등 다양한 영역에서 랜덤 숫자는 매우 유용합니다. 그러므로 프로그래밍을 하는데 있어 랜덤 숫자를 생성하는 것은 필수적입니다.
+우리는 모두 컴퓨터 프로그래밍에서 랜덤 숫자 생성이 중요하다는 것을 알고 있습니다. 이것은 개발자가 다양한 상황에 대처할 수 있게 해주는 강력한 도구입니다. 여기서는 C#에서 랜덤 숫자를 생성하는 방법을 살펴보고 실제 코드 예제를 통해 보여줄 것입니다.
 
-## 어떻게 생성할까요?
+## 어떻게 하면 랜덤 숫자를 생성할 수 있나요?
 
-C#에서 랜덤 숫자를 생성하는 방법은 매우 간단합니다. 먼저, `Random` 클래스를 사용하여 객체를 생성한 다음 `Next()` 메소드를 호출하면 됩니다. 이 메소드는 0부터 지정한 숫자까지의 랜덤한 숫자를 반환합니다.
+랜덤 숫자를 생성하는 가장 간단한 방법은 `Random` 클래스를 사용하는 것입니다. 이 클래스는 C#에서 기본적으로 제공됩니다. 먼저 `Random` 클래스의 인스턴스를 만듭니다.
 
 ```C#
 Random rand = new Random();
-int num = rand.Next(10); // 0부터 9까지의 랜덤한 숫자
 ```
 
-또한 `Next()` 메소드를 통해 범위를 지정할 수도 있습니다. 예를 들어, `Next(5, 10)`은 5부터 9까지의 랜덤한 숫자를 반환합니다.
+여기서 `rand`는 우리가 사용할 랜덤 숫자 생성기 입니다.
+
+다음으로, `Next()` 메소드를 사용하여 랜덤 숫자를 생성할 수 있습니다. 인자로는 원하는 숫자 범위를 지정할 수 있습니다. 예를 들어, 1에서 100까지의 랜덤 숫자를 생성하고 싶다면 다음과 같이 사용합니다.
 
 ```C#
-int numRange = rand.Next(5, 10); // 5부터 9까지의 랜덤한 숫자
+int randomNumber = rand.Next(1, 101);
+Console.WriteLine(randomNumber);
 ```
 
-## 딥 다이브
-
-C#에서는 `Random` 클래스를 이용하여 더욱 다양한 랜덤 숫자를 생성할 수 있습니다. 예를 들어, `NextDouble()` 메소드는 0부터 1 사이의 랜덤한 소수를 반환합니다. 또한 `NextBytes()` 메소드를 사용하여 바이트 배열을 채울 수도 있습니다.
-
-또한 이를 활용하여 랜덤한 문자열을 생성할 수도 있습니다. 예를 들어, 알파벳 소문자와 숫자를 조합하여 8자리의 랜덤한 문자열을 생성하는 방법은 다음과 같습니다.
+코드를 실행하면 매번 다른 숫자가 출력되는 것을 확인할 수 있습니다.
 
 ```C#
-string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-string randomString = new string(Enumerable.Repeat(chars, 8)
-  .Select(s => s[rand.Next(s.Length)]).ToArray());
-Console.WriteLine(randomString); // 랜덤한 8자리 문자열 출력
+67
+23
+92
 ```
 
-이처럼 C#에서 랜덤 숫자를 생성하는 방법은 다양하며, 더욱 깊이 공부한다면 더 흥미로운 방법을 알게 될 수 있습니다.
+이처럼 간단한 방법으로 랜덤 숫자를 생성할 수 있습니다.
 
-# 관련 링크
+## 더 깊이 알아보기
 
-- https://docs.microsoft.com/ko-kr/dotnet/api/system.random?view=net-5.0
-- https://www.c-sharpcorner.com/blogs/random-number-generation-in-c-sharp-programming1
-- https://www.tutorialspoint.com/csharp/csharp_random_numbers.htm
-- https://www.c-sharpcorner.com/submission/1b76dff8-fc35-4c1c-99c2-332cdf418626
-- https://www.codeproject.com/Articles/25285/How-to-generate-a-random-number-in-a-specific-rang
+우리는 이제 `Next()` 메소드를 통해 랜덤 숫자를 생성할 수 있지만, 만약 우리가 숫자가 아닌 다른 자료형을 생성하고 싶다면 어떻게 할까요? 이때는 `Next()` 메소드에 다른 오버로드된 버전을 사용하면 됩니다.
+
+예를 들어, `NextDouble()` 메소드는 0 이상 1 미만의 랜덤 실수를 생성합니다.
+
+```C#
+double randomDouble = rand.NextDouble();
+Console.WriteLine(randomDouble);
+```
+
+실행 결과는 다음과 같이 나타납니다.
+
+```C#
+0.75892971487462
+0.439255462611492
+0.98204241185114
+```
+
+또한 `NextBytes()` 메소드를 사용하면 `byte` 배열을 생성할 수 있습니다.
+
+```C#
+byte[] byteArray = new byte[5];
+rand.NextBytes(byteArray);
+Console.WriteLine(String.Join(" ", byteArray));
+```
+
+출력 결과는 다음과 같습니다.
+
+```C#
+123 48 202 17 61
+65 239 72 215 227
+9 90 79 172 33
+```
+
+이처럼 `Random` 클래스는 다양한 메소드들을 제공하여 우리가 다양한 자료형의 랜덤 값을 생성할 수 있게 해줍니다.
+
+## 참고
+
+- [Microsoft 문서 - `Random` 클래스](https://docs.microsoft.com/ko-kr/dotnet/api/system.random?view=net-5.0)
+- [C# Random 클래스의 사용법](https://blog.naver.com/PostView.nhn?blogId=dnet9&logNo=221211571918&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=thumbnailList)

@@ -1,33 +1,37 @@
 ---
 title:    "PHP: Pobieranie aktualnej daty"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Każdego dnia wykorzystujemy datę w naszym życiu - w spotkaniach, zadaniach, wydarzeniach. W programowaniu nie jest inaczej - daty są niezwykle ważne w tworzeniu aplikacji i stron internetowych. Dlatego w tym artykule pokażę Wam, jak uzyskać bieżącą datę za pomocą PHP i dlaczego warto to umieć.
+Dlaczego powinniśmy wykorzystać bieżącą datę w programowaniu? Aktualna data jest ważnym elementem w wielu projektach, zwłaszcza w aplikacjach internetowych. Pomaga nam śledzić czas wydarzeń, zarządzać czasowymi interwałami i wiele więcej. W tym wpisie dowiesz się jak w prosty sposób wykorzystać bieżącą datę w PHP.
 
-## Jak to zrobić?
+## Jak to zrobić
+
+W PHP mamy dostęp do wielu funkcji, które pozwalają nam na pracę z datami. Jedną z podstawowych metod jest użycie funkcji `date()`. Poniżej możesz zobaczyć przykładowe wywołanie tej funkcji:
 
 ```PHP
-$data = date('d-m-Y');
-echo $data;
+echo date("d-m-Y");
 ```
 
-Wywołując funkcję `date()` z podaniem formatu daty w parametrze, możemy uzyskać bieżącą datę. W powyższym przykładzie użyliśmy formatu `d-m-Y`, który zwraca datę w formacie dzień-miesiąc-rok. Możemy również użyć innych formatów, np. `m-d-Y`, `Y/m/d`, `d-m-Y H:i:s`, aby uzyskać datę i godzinę.
+Wynik tego kodu będzie wyglądał tak: `11-10-2021`. Jak widzisz, funkcja ta zwraca nam aktualną datę w formacie `dzien-miesiac-rok`. Możemy również wykorzystać argumenty tej funkcji, aby uzyskać inną formę daty. Na przykład, jeśli chcemy otrzymać dokładną godzinę, możemy użyć następującego kodu:
 
-Warto również wspomnieć, że możemy stosować funkcję `date()` do innych zmiennych, np. `$time = date('H:i:s');`, aby uzyskać bieżącą godzinę.
+```PHP
+echo date("H:i:s");
+```
 
-## Wnikliwiej
+Wynik tego kodu będzie wyglądał tak: `11:34:26`. Jak widzisz, używając różnych argumentów, możesz otrzymać dokładnie to, czego potrzebujesz.
 
-Funkcja `date()` wykorzystuje aktualny strefę czasową ustawioną w pliku konfiguracyjnym PHP. Możemy ją zmienić za pomocą funkcji `date_default_timezone_set()`, podając jako parametr nazwę strefy czasowej.
+## Głębsze zanurzenie
 
-Możemy również użyć funkcji `strtotime()`, aby przekonwertować datę w formacie tekstowym na znacznik czasu, który później możemy wykorzystać do uzyskania innych informacji, np. `date('d-m-Y', strtotime('tomorrow'));` zwróci nam datę jutrzejszą.
+Funkcja `date()` to tylko jedna z wielu metod, które możemy wykorzystać w PHP do pracy z datami. Istnieje również funkcja `strtotime()`, która pozwala nam na operacje na datach, np. dodawanie lub odejmowanie dni, miesięcy czy lat od bieżącej daty. Możesz również użyć gotowych klas, takich jak `DateTime`, aby jeszcze bardziej rozbudować swoje umiejętności w pracy z datami.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja PHP - funkcja date()](https://www.php.net/manual/en/function.date.php)
-- [Dokumentacja PHP - funkcja date_default_timezone_set()](https://www.php.net/manual/en/function.date-default-timezone-set.php)
-- [Dokumentacja PHP - funkcja strtotime()](https://www.php.net/manual/en/function.strtotime.php)
+- [Dokumentacja PHP - Data i czas](https://www.php.net/manual/en/datetime.html)
+- [10 przydatnych funkcji PHP do pracy z datami](https://www.codepolitan.com/10-przydatnych-funkcji-php-do-pracy-z-datami)
+- [Praca z datami w PHP](https://egzamininformatyczny.pl/praca-z-danymi-w-php/)

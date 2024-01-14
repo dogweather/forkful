@@ -1,36 +1,34 @@
 ---
-title:    "Elixir: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:    "Elixir: Einen zukünftigen oder vergangenen Datum berechnen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Es gibt viele Szenarien, in denen das Berechnen eines Datums in der Zukunft oder Vergangenheit hilfreich sein kann, z.B. beim Erstellen von Terminplanern oder bei der Erfassung von Daten in einer Datenbank. Mit Elixir und seinen eingebauten Funktionen ist es einfach, solche Berechnungen durchzuführen.
 
-Das Berechnen von zukünftigen oder vergangenen Datum kann für Elixir-Programmiererinnen und Programmierer sehr hilfreich sein, um beispielsweise Terminplanungen oder Ablaufsteuerungen zu implementieren.
-
-## Wie man es macht
-
-Die Elixir-Standardbibliothek bietet verschiedene Funktionen zur Berechnung von Datum und Zeit. Hier ist ein Beispiel, um ein Datum 5 Tage in der Zukunft zu berechnen:
+## Wie geht das?
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann die Funktion `Date.add` verwendet werden. Hier ist ein Beispiel, um das Datum in 30 Tagen zu berechnen:
 
 ```Elixir
-{:ok, today} = Date.utc_today()
-Date.add(today, 5)
+today = Date.today()                # Zurückgegebenes Datum: 2020-09-10
+future_date = Date.add(today, 30)   # Zurückgegebenes Datum: 2020-10-10
 ```
 
-Das Ergebnis davon ist ein Tupel der Form `{ :ok, future_date }`, wobei `future_date` das berechnete Datum darstellt. Ebenso kann ein vergangenes Datum berechnet werden, indem man die Anzahl der Tage mit einem Minuszeichen angibt.
+Um das Datum in der Vergangenheit zu berechnen, muss lediglich ein negativer Wert für die Anzahl der Tage übergeben werden:
 
-Um Zeitintervalle zu berücksichtigen, gibt es auch die Funktion `DateTime.add/4`, die zusätzlich den Parameter `:minute` ermöglicht.
+```Elixir
+today = Date.today()                     # Zurückgegebenes Datum: 2020-09-10
+past_date = Date.add(today, -90)         # Zurückgegebenes Datum: 2020-06-12
+```
 
-## Tiefere Einblicke
+Die berechneten Daten können dann weiter verarbeitet oder in eine Datenbank gespeichert werden.
 
-Elixir verwendet den Gregorianischen Kalender für die Berechnung von Datum und Zeit. Dieser Kalender basiert auf dem Sonnenjahr und berücksichtigt Schaltjahre.
-
-Eine wichtige Sache, die bei der Berechnung von Zeitintervallen zu beachten ist, ist die Verwendung von Zeitzone in Elixir-Systemen. Die Funktionen `Date.utc_*` arbeiten mit der UTC-Zeitzone, während `Date.local_*` die lokale Zeitzone des Systems verwendet.
-
-Um mehr über die Elixir-Datums- und Zeitfunktionen zu erfahren, empfehlen wir die offizielle Dokumentation.
+## Tiefergehende Informationen
+Elixir bietet auch eine Reihe anderer Funktionen für die Arbeit mit Datum und Uhrzeit, wie z.B. `Date.subtract`, um eine bestimmte Anzahl von Tagen zu subtrahieren, `Date.compare`, um mit Datumswerten zu vergleichen, und `Date.utc_now`, um die aktuelle UTC-Uhrzeit abzurufen. Weitere Informationen zu diesen Funktionen und deren Verwendung finden Sie in der offiziellen Elixir-Dokumentation.
 
 ## Siehe auch
-
-- [Offizielle Elixir-Dokumentation zu Datums- und Zeitfunktionen](https://hexdocs.pm/elixir/Date.html)
-- [Blog-Beitrag zum Elixir-Kalenderpaket](https://tech.euromoneyplc.com/elixir-calendar-package/)
+- [Elixir-Dokumentation zu Datums- und Uhrzeitfunktionen](https://hexdocs.pm/elixir/Date.html)
+- [Tutorial zum Umgang mit Datums- und Uhrzeitfunktionen in Elixir](https://elixirschool.com/de/lessons/advanced/date-time/)

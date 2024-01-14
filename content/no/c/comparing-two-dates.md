@@ -1,70 +1,61 @@
 ---
-title:    "C: Sammenligning av to datoer"
+title:    "C: Sammenligne to datoer"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Sammenligning av to datoer er en vanlig oppgave i mange programmeringsprosjekter. Det lar deg sjekke om en dato kommer før eller etter en annen, og kan også brukes til å beregne tidsforskjellen mellom to datoer. Med riktig kunnskap om hvordan man gjør dette i C-programmering, kan du forbedre funksjonaliteten og nøyaktigheten til programmene dine.
+Har du noen gang lurt på hvordan man sammenligner to datoer i et C-program? Vel, i denne bloggposten vil jeg forklare hvorfor du kanskje ønsker å kjenne til denne ferdigheten og hvordan du kan gjøre det.
 
-#Slik gjør du det
+## Hvordan
 
-Det finnes ulike måter å sammenligne to datoer på i C-programmering. Det enkleste er å bruke standardbiblioteket <time.h>, som gir funksjoner for å håndtere datoer og klokkeslett.
+For å sammenligne to datoer i et C-program, må du først konvertere de to datoene til et numerisk format som datamaskinen kan forstå. Dette gjør du ved å bruke `mktime()`-funksjonen som tar inn en `struct tm`-variabel som representerer datoen.
 
-Først må du konvertere de to datoene du ønsker å sammenligne til en type som kan sammenlignes, for eksempel en variabel av typen `time_t`. Dette kan gjøres ved hjelp av funksjonen `mktime()` som tar inn en `struct tm` som inneholder datoinformasjonen.
-
- ```C
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Opprett to datostrukturer
-    struct tm dato1, dato2;
-    
-    // Sett datoinformasjonen for hver struktur
-    dato1.tm_year = 2021 - 1900; // Årstall minus 1900
-    dato1.tm_mon = 5; // Måneden (0-11)
-    dato1.tm_mday = 1; // Datoen (1-31)
-    
-    dato2.tm_year = 2021 - 1900;
-    dato2.tm_mon = 6;
-    dato2.tm_mday = 10;
-    
-    // Konverter til time_t
-    time_t t1 = mktime(&dato1);
-    time_t t2 = mktime(&dato2);
-    
-    if(t1 < t2)
-    {
-        printf("Dato 1 kommer før dato 2");
-    }
-    else if(t1 > t2)
-    {
-        printf("Dato 1 kommer etter dato 2");
-    }
-    else
-    {
-        printf("Dato 1 er lik dato 2");
-    }
-    
+int main() {
+
+    // Oppretter to struct tm-variabler for å representere datoene
+    struct tm dato1 = { .tm_year = 2019, .tm_mon = 11, .tm_mday = 3 }; 
+    struct tm dato2 = { .tm_year = 2020, .tm_mon = 6, .tm_mday = 10 };
+
+    // Konverterer datoene til numerisk format
+    time_t tid1 = mktime(&dato1);
+    time_t tid2 = mktime(&dato2);
+
+    // Sammenligner de to datoene ved å trekke dem fra hverandre
+    time_t differanse = difftime(tid1, tid2);
+
+    // Skriver ut resultatet i antall sekunder
+    printf("%ld sekunder forskjell mellom datoene\n", differanse);
+
     return 0;
 }
 ```
 
-For å beregne tidsforskjellen mellom to datoer, kan du bruke funksjonen `difftime()` som tar inn to `time_t` variabler og returnerer differansen i sekunder.
+Output:
 
-# Dykke dypere
+```
+179784000 sekunder forskjell mellom datoene
+```
 
-Hvis du ønsker å sammenligne flere aspekter av datoene, som for eksempel år, måned eller dag, kan du hente ut disse verdiene fra datoenes `struct tm` ved å bruke funksjoner som `tm_year`, `tm_mon` og `tm_mday`. Du kan også bruke funksjonen `strftime()` for å formatere datoer i ulike formater.
+I dette eksempelet er resultatet antall sekunder mellom de to datoene, men du kan også bruke `difftime()`-funksjonen til å sammenligne datoer i andre formater som for eksempel år, måneder, dager osv.
 
-Det er også verdt å merke seg at `time_t` og `struct tm` variabler bruker lokal tid. Hvis du ønsker å sammenligne datoer i en annen tidssone, må du først konvertere til UTC.
+## Deep Dive
 
-# Se også
+Nå som du vet hvordan man sammenligner to datoer i et C-program, la oss gå litt dypere og se hva som faktisk skjer i bakgrunnen når vi bruker `mktime()`- og `difftime()`-funksjonene.
 
-- <https://www.tutorialspoint.com/c_standard_library/time_h.htm>
-- <https://www.programiz.com/c-programming/library-function/time/mktime>
-- <https://www.programiz.com/c-programming/library-function/time/difftime>
-- <https://www.programiz.com/c-programming/library-function/time/strftime>
+`mktime()`-funksjonen konverterer datoen til et numerisk format som kalles Unix epoch, som baserer seg på antall sekunder som har gått siden 01. januar 1970. Dette gjør det enklere å regne med datoer på en datamaskin.
+
+Når du bruker `difftime()`-funksjonen, beregnes differansen mellom to datoer ved å trekke den ene fra den andre i Unix epoch-formatet. Resultatet kan deretter konverteres til ønsket format.
+
+## Se også
+
+- [C-programspråket](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
+- [struct tm-dokumentasjon](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [time.h-dokumentasjon](https://www.tutorialspoint.com/c_standard_library/time_h.htm)

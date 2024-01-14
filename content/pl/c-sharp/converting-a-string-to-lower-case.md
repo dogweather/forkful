@@ -1,45 +1,48 @@
 ---
-title:    "C#: Zmiana ciągu znaków na małe litery"
+title:    "C#: Konwersja ciągu znaków na małe litery"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Często zdarza się, że w trakcie pisania kodu musimy zmienić duże litery w ciągu znaków na małe. Może to być potrzebne do porównywania danych lub wyświetlania tekstu w jednolitym formacie. W takich przypadkach przydatną umiejętnością jest konwertowanie ciągów na małe litery w języku C#.
+Konwersja tekstu na małe litery jest częstym zadaniem w programowaniu, szczególnie w przypadku tworzenia aplikacji internetowych czy przetwarzania danych. Dzięki temu możemy porównywać teksty bez względu na wielkość liter oraz poprawić czytelność kodu. W tym artykule dowiesz się jak dokonać konwersji w języku C#.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W języku C# istnieje specjalna metoda o nazwie ToLower(), która pozwala na zmianę ciągu znaków na małe litery. Oto prosty przykład kodu, który wykorzystuje tę funkcję:
+W języku C# istnieje wbudowana metoda `ToLower()` która przyjmuje jako argument tekst i zwraca jego wersję złożoną z małych liter. Poniżej znajdują się przykładowe kody ilustrujące jej użycie:
 
 ```C#
-string text = "CIASTECZKA SĄ NAJLEPSZE!";
-string lowerText = text.ToLower();
+// Przykład 1
+string tekst = "PROGRAMOWANIE JEST SUPER!";
+string wynik = tekst.ToLower();
 
-Console.WriteLine(lowerText);
+Console.WriteLine(wynik); // "programowanie jest super!"
+
+// Przykład 2
+string nazwa = "John Smith";
+string wynik = nazwa.ToLower();
+
+Console.WriteLine(wynik); // "john smith"
 ```
 
-Wynik powyższego kodu będzie wyglądał następująco:
+### Obiekty typu `String`
 
-```sh
-ciasteczka są najlepsze!
-```
+W języku C# klasa `String` jest niezmienna, co oznacza, że każde działanie na obiekcie typu `String` zwróci nowy obiekt, a nie zmieni istniejący. Dlatego używając metody `ToLower()` nie zmieniamy oryginalnego tekstu, a jedynie otrzymujemy wynikową wartość.
 
-Jak widać, za pomocą jednej metody udało nam się zmienić wszystkie duże litery na małe. Jest to bardzo proste, a jednocześnie bardzo wygodne rozwiązanie.
+### Obsługa wyjątków
 
-Warto również zauważyć, że funkcja ToLower() działa dla różnych języków, co oznacza, że nie musimy martwić się o zmianę liter w wybranym języku.
+Należy pamiętać, że metoda `ToLower()` jest niewrażliwa na wyjątki, dlatego warto zawsze sprawdzać czy tekst, który przekazujemy jako argument, nie jest pusty lub czy nie zawiera znaków specjalnych, które mogą powodować problemy w dalszej obróbce. W przypadku błędnego argumentu, metoda zwróci pusty tekst.
 
-## Deep Dive
+## Pogłębiona analiza
 
-Konwersja ciągu na małe litery może wydawać się banalna, ale warto dowiedzieć się, jak dokładnie działa ta funkcja. W języku C# ciągi znaków są traktowane jako tablice typu char. Każdy znak w ciągu ma swój własny kod ASCII lub Unicode. Funkcja ToLower() działa w oparciu o te kody, zamieniając duże litery na ich odpowiedniki w postaci małych liter.
+Konwersja do małych liter w języku C# jest realizowana przez użycie tablicy z wartościami Unicode. Dzięki temu możemy bez problemu obsługiwać litery diakrytyzowane, takie jak "ą", "ń" czy "ź".
 
-Warto również zauważyć, że funkcja ToLower() zwraca nowy ciąg znaków, a nie zmienia istniejącego. Dzięki temu mamy pewność, że oryginalny ciąg pozostaje niezmieniony.
+Podczas przetwarzania tekstów w języku angielskim warto zwracać uwagę na różnice w wersalach. Często eksportowane dane mogą zawierać puste spacje lub białe znaki na końcu, co może skutkować niepoprawnym działaniem metody `ToLower()`. W takich przypadkach zaleca się użycie metody `Trim()` przed użyciem `ToLower()`.
 
 ## Zobacz także
 
-- [Dokumentacja języka C# on Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
-
-- [Poradnik programisty C# on YouTube](https://www.youtube.com/watch?v=N1Lq1_WNKz8)
-
-- [Przewodnik dla początkujących w języku C# on Codecademy](https://www.codecademy.com/learn/learn-c-sharp)
+- [Metoda ToLower() - dokumentacja Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netcore-3.1)
+- [Inne metody konwersji tekstu w C#](https://www.educba.com/string-toupper-c-sharp/)

@@ -1,66 +1,67 @@
 ---
-title:    "Ruby: Konkatenacja ciągów znaków"
+title:    "Ruby: Łączenie ciągów znaków."
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Ciągłe zdobywanie nowych umiejętności jest wciąż ważnym elementem bycia programistą. Jednym z podstawowych elementów programowania jest łączenie lub "konkatenacja" (w odróżnieniu od słowa "konkurencja"!) ciągów znaków. W tym artykule dowiesz się, dlaczego jest to ważne i jak to zrobić w Ruby.
+Czy kiedykolwiek zastanawiałeś się, jak połączyć różne ciągi znaków w jedno? A może potrzebujesz stworzyć dużą wiadomość z kilku sekcji? W takich przypadkach bardzo przydatna okazuje się funkcja "concat" w języku Ruby. Pozwala ona na łączenie różnych ciągów znaków w jeden, co jest niezwykle przydatne w wielu sytuacjach. Dlatego też postanowiliśmy przygotować dla Ciebie krótki przewodnik, który pomoże Ci zrozumieć, jak działa ta funkcja.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Najprostszym sposobem na połączenie ciągów znaków jest użycie operatora plus " + ". Spójrz na poniższy kod:
+Aby połączyć różne ciągi znaków w jedno, należy użyć funkcji "concat" i podać jako argumenty ciągi, które chcemy połączyć. Poniżej znajduje się przykładowy kod w języku Ruby:
 
-```ruby
-str1 = "Witaj"
-str2 = "świecie!"
-str3 = str1 + str2
-puts str3
+```Ruby 
+message_part_1 = "Witaj"
+message_part_2 = "na"
+message_part_3 = "naszym"
+message_part_4 = "blogu!"
+
+concat_message = message_part_1.concat(message_part_2, message_part_3, message_part_4)
+
+puts concat_message 
 ```
 Output:
-```ruby
-Witaj świecie!
+"Witaj na naszym blogu!"
+
+Jak widać, funkcja "concat" łączy wszystkie ciągi znaków w jeden i zwraca go jako wynik. Jest to bardzo przydatne, gdy chcemy dodać kilka elementów do jednej wiadomości lub stringa.
+
+## Głębszy zanurzenie
+
+Warto również wspomnieć, że funkcja "concat" jest tylko jednym z wielu sposobów na łączenie ciągów znaków w języku Ruby. Można także użyć operatora "+", na przykład:
+
+```Ruby 
+message_part_1 = "Witaj"
+message_part_2 = "na"
+message_part_3 = "naszym"
+message_part_4 = "blogu!"
+
+concat_message = message_part_1 + " " + message_part_2 + " " + message_part_3 + " " + message_part_4 
+
+puts concat_message 
 ```
-W powyższym kodzie, użyliśmy operatora plus aby połączyć dwa ciągi znaków i przypisaliśmy wynik do nowej zmiennej "str3". Następnie, używając metody "puts", wyświetliliśmy wynik połączenia.
-
-Kolejnym sposobem jest użycie metody "concat", która jest dostępna dla obiektów klasy String w Ruby:
-
-```ruby
-str1 = "Witaj"
-str2 = "świecie!"
-str1.concat(str2)
-puts str1
-```
-
 Output:
-```ruby
-Witaj świecie!
+"Witaj na naszym blogu!"
+
+Innym sposobem jest użycie metody "join", która pozwala na łączenie elementów tablicy w jeden string. Przykład:
+
+```Ruby 
+message_parts = ["Witaj", "na", "naszym", "blogu!"]
+
+concat_message = message_parts.join(" ")
+
+puts concat_message 
 ```
-
-Oprócz tego, możemy również skorzystać z metody "<<" (append), która dodaje ciągu znaków na końcu istniejącego ciągu:
-
-```ruby
-str1 = "Witaj"
-str2 = "świecie!"
-str1 << str2
-puts str1
-```
-
 Output:
-```ruby
-Witaj świecie!
-```
+"Witaj na naszym blogu!"
 
-Wszystkie te metody pozwalają na szybkie i wygodne łączenie ciągów znaków w Ruby.
-
-## Deep Dive
-
-Konkatenacja jest ważnym elementem programowania, ponieważ pozwala nam na tworzenie bardziej zaawansowanych aplikacji, w których musimy wyświetlać i manipulować dużymi ilościami tekstu. W Ruby, ciągi znaków są elastyczne i pozwalają na zastosowanie wielu różnych metod, takich jak "gsub" czy "split", które ułatwiają pracę z tekstem.
-
-Pamiętaj również, że Ruby oferuje wiele wbudowanych metod do łączenia ciągów, takich jak "concat", "<<" czy "+".
 
 ## Zobacz również
 
-Jeśli jesteś początkującym programistą w Ruby, polecamy zapoznanie się z dokumentacją języka, gdzie znajdziesz więcej informacji o konkatenacji i innych przydatnych metodach stringów, takich jak "reverse" czy "chomp". Możesz również przeczytać artykuły na temat podstaw programowania w Ruby na naszej stronie [RubyPolska](https://rubypolska.pl/).
+Jeśli chcesz dowiedzieć się więcej o łączeniu ciągów znaków w języku Ruby, polecamy zapoznanie się z poniższymi źródłami:
+
+- Dokumentacja Ruby: https://ruby-doc.org/core-2.7.1/String.html#method-i-concat
+- Wideo tutorial na temat łączenia ciągów znaków w Ruby: https://www.youtube.com/watch?v=bZpE2s9EUO4

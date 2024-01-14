@@ -1,52 +1,47 @@
 ---
 title:    "Ruby: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
+W dzisiejszym artykule dowiesz się, dlaczego czasami potrzebujemy obliczać datę w przyszłości lub przeszłości w naszych programach w języku Ruby.
 
-Obliczanie daty w przyszłości lub przeszłości może być niezbędne w wielu sytuacjach programistycznych, takich jak tworzenie harmonogramów lub przetwarzanie danych historycznych. W tym artykule dowiesz się, jak w prosty sposób osiągnąć ten cel w Ruby.
-
-## Jak to zrobić
-
-Aby obliczyć datę w przyszłości lub przeszłości w języku Ruby, można użyć metody `DateTime#advace` lub `DateTime#-`, aby dodać lub odjąć odpowiednią ilość dni, tygodni, miesięcy lub lat do istniejącej daty. 
-
+# Jak to zrobić
+Aby obliczyć datę w przyszłości lub przeszłości, możemy skorzystać z klasy `Date` w Ruby. Najpierw musimy wymagać jej użycia w naszym kodzie, używając polecenia `require`:
 ```Ruby
 require 'date'
-
-current_date = DateTime.now
-# 2021-05-31T17:32:58+02:00
-
-future_date = current_date.advance(days: 5, months: 2)
-# 2021-08-05T17:32:58+02:00
-
-past_date = current_date - 10
-# 2021-05-21T17:32:58+02:00
 ```
-
-W powyższych przykładach wykorzystano metodę `advance`, aby dodać 5 dni i 2 miesiące do bieżącej daty, oraz metodę `-`, aby odjąć 10 dni.
-
-Można także użyć metody `DateTime#parse` w połączeniu z metodami `advance` lub `-` do obliczania daty na podstawie tekstu. Na przykład:
-
+Następnie możemy użyć metody `new` aby stworzyć nowy obiekt `Date` z danymi, które chcemy obliczyć:
 ```Ruby
-future_date = DateTime.parse("July 15, 2021").advance(months: 3)
-# 2021-10-15T00:00:00+02:00
+# tworzymy obiekt z aktualną datą
+today = Date.new
+
+# lub możemy podać konkretną datę jako argumenty w kolejności rok, miesiąc, dzień
+some_date = Date.new(2020, 9, 30)
 ```
+Teraz, aby obliczyć datę w przyszłości lub przeszłości, możemy użyć metody `+` lub `-` wraz z liczbą dni, które chcemy dodać lub odjąć od naszego obiektu `Date`:
+```Ruby
+# obliczamy datę 5 dni w przód
+future_date = today + 5
 
-Pamiętaj, że metody `DateTime#advance` i `DateTime#-` zwracają nowy obiekt daty, a nie modyfikują oryginalnej daty. Dlatego jeśli chcesz zachować oryginalną datę, musisz przypisać nowy obiekt do zmiennej.
+# obliczamy datę 2 tygodnie wstecz
+past_date = today - 14
+```
+Możemy również porównywać daty, używając operatorów logicznych, na przykład:
+```Ruby
+# sprawdzamy, czy some_date jest poza zakresem od 1 do 10 dni od today
+some_date > today + 1 && some_date < today + 10
+=> true
+```
+Aby dowiedzieć się więcej o dostępnych metodach klasy `Date`, można zajrzeć do dokumentacji Ruby lub skorzystać z różnych tutoriali dostępnych online.
 
-## Głębszy przegląd
+# Deep Dive
+Aby jeszcze lepiej zrozumieć jak działa obliczanie daty w przyszłości lub przeszłości w Ruby, warto zobaczyć przykład z wykorzystaniem obiektów `DateTime` oraz `Time`. Klasy te dziedziczą z klasy `Date` i wykorzystują dodatkowe informacje, takie jak godzina czy strefa czasowa. Dzięki temu, możemy precyzyjniej obliczać daty w naszych programach.
 
-Obie metody `DateTime#-` i `DateTime#advance` są częścią klasy `DateTime`, która jest częścią biblioteki standardowej języka Ruby. Oznacza to, że można ich używać bez konieczności importowania dodatkowych bibliotek.
-
-W przypadku metody `advance` parametrami są liczbowe nazwy jednostek czasu, takie jak `days`, `weeks`, `months`, `years`. Zwraca ona obiekt daty, który jest odpowiednio przesunięty.
-
-Metoda `DateTime#-` jest zdefiniowana jako odbicie lustrzane metody `DateTime#advance`. Jego parametrami są liczby reprezentujące okres czasu, który ma zostać odjęty od daty.
-
-## Zobacz także
-
-- [Ruby - Dokumentacja metody DateTime#advance](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html#method-i-advance)
-- [Ruby - Dokumentacja metody DateTime#-](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html#method-i-23)
-- [Ruby - Dokumentacja klasy DateTime](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
+# Zobacz również
+- [Dokumentacja Ruby o klasie Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Przewodnik o pracy z datami w Ruby](https://www.rubyguides.com/2015/06/ruby-date-format/)
+- [Tutorial o klasie Time w Ruby](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)

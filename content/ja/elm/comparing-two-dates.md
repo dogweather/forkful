@@ -1,44 +1,46 @@
 ---
-title:    "Elm: 「2つの日付を比較する」"
+title:    "Elm: 2つの日付の比較"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+なぜ日付を比較するのか？
 
-日付を比較することの利点は何でしょうか？実際には、日付の比較はよく使用されるプログラミングタスクの一つです。例えば、特定のイベントが終了する日付をチェックしたり、期限が過ぎているかどうかを確認したりする際に役立ちます。
+日付を比較することは、プログラミングでよくあるタスクです。例えば、入力された日付が未来のものかどうかをチェックする場合などに必要になります。Elmは型安全な言語であり、日付を比較する際にも型が一致しているかどうかをチェックすることができます。
 
-## 方法
+## How To
 
-まず、日付をエポック秒に変換します。それから、Elmの``Time``モジュールにある``compare``関数を使用して日付を比較することができます。下記のコード例を見てみましょう。
+日付を比較する方法は、単純です。まず、比較したい2つの日付をDate型として宣言します。次に、Dateモジュールの`compare`関数を使用し、比較結果を得ることができます。例えば、以下のコードでは、今日の日付と明日の日付を比較しています。
 
-```
--- 今日と明日の日付
-today = Time.now
-tomorrow = Time.tomorrow
+``` elm
+import Date exposing (..)
 
--- 日付をエポック秒に変換
-todayInSeconds = Time.toPosix today
-tomorrowInSeconds = Time.toPosix tomorrow
+today : Date
+today = Date.fromCalendarDate 2020 9 21
 
--- 日付を比較
-comparison = Time.compare todayInSeconds tomorrowInSeconds
+tomorrow : Date
+tomorrow = Date.fromCalendarDate 2020 9 22
 
--- 結果をコンソールに出力
-Debug.log "比較結果" comparison
+compareResult : DateOrder
+compareResult = compare today tomorrow -- LTという結果が得られる
 ```
 
-このコードを実行すると、``comparison``変数に値が格納されます。``equals``、``lessThan``、``greaterThan``のいずれかを返します。これらの値を使用して、日付の比較結果を判断することができます。
+ここで使用した`DateOrder`型は、比較結果を表す型であり、3つの可能な値があります。`LT`は前の日付が後の日付よりも早いことを表し、`GT`は後の日付が前の日付よりも早いことを表します。そして、`EQ`は2つの日付が等しいことを表します。
 
-また、``Time``モジュールには``toIsoString``関数もあります。これを使用すると、日付の文字列を比較することもできます。詳しくは、公式ドキュメントを参照してください。
+## Deep Dive
 
-## 深堀り
+日付を比較する際には、注意すべきポイントがいくつかあります。
 
-日付の比較にはいくつかの注意点があります。まず、日付を``Time``モジュールで扱う場合、Timezoneを考慮する必要があります。また、日付を文字列として比較する場合、文字列のフォーマットが同じであることが重要です。例えば、"2021/01/01"と"01/01/2021"では結果が異なります。
+まず、`compare`関数は2つの日付を比較するだけではなく、3つ以上の日付を比較することもできます。その際は、最初の2つの日付を比較した結果に基づいて、残りの日付を比較します。
 
-## 併せて読みたい
+また、上記のコードでは、明示的に`LT`という比較結果を得るために`compare`関数を使用しましたが、Elmでは演算子を使用することでも比較が可能です。例えば、`>`, `<`, `==`のような演算子を使用することで、それぞれ`GT`, `LT`, `EQ`と同じ結果を得ることができます。
 
-- [Elm製のタイムゾーンライブラリの紹介 (英語)](https://elmprogramming.com/timezone-library-elm.html)
-- [日付の処理についてのElmの公式ドキュメント (英語)](https://package.elm-lang.org/packages/elm/time/latest/)
-- [日付の比較を行える別の言語 (日本語)](https://qiita.com/satoyan419/items/2865cc170f6992a8f12b)
+さらに、`Date`モジュールには`equals`や`compareValues`といった比較用の関数が用意されています。これらの関数は、日付の情報が同じかどうかをチェックすることができます。また、異なる日付表現を比較する際には、`Date.Extra`モジュールの関数を使用することで、日付を同じ表現に変換して比較することができます。
+
+## See Also
+
+- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Specific date comparison in Elm](https://reactgo.com/elm-date-comparison/)

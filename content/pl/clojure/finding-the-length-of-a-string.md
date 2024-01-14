@@ -1,38 +1,45 @@
 ---
 title:    "Clojure: Znajdowanie długości ciągu znaków"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu pojawia się potrzeba obliczenia długości ciągu znaków. Może to być użyteczne przy walidacji danych podczas tworzenia formularzy, czy też przy przetwarzaniu tekstów w aplikacji. W tym artykule dowiesz się, jak w prosty sposób znaleźć długość ciągu znaków w języku Clojure.
+Dlaczego ktoś zainteresowałby się znajdowaniem długości łańcucha? Odpowiedź jest dość prosta - jest to bardzo powszechne zadanie w programowaniu, szczególnie w językach takich jak Clojure. Wiele aplikacji i algorytmów wymaga operacji na łańcuchach, a znajomość sposobów na ich manipulowanie jest niezbędna do efektywnego pisania kodu.
 
 ## Jak to zrobić
 
-Obliczenie długości ciągu znaków w języku Clojure jest bardzo proste. Wystarczy użyć funkcji "count", która zwraca ilość elementów w danej kolekcji, a ciąg znaków jest właśnie kolekcją. Przykładowy kod wyglądałby następująco:
+Aby znaleźć długość łańcucha w Clojure, możemy skorzystać z funkcji `count`. Przyjmie ona kolejno wszystkie elementy łańcucha i zwróci liczbę reprezentującą jego długość.
 
 ```Clojure
-(def text "To jest przykładowy ciąg znaków")
-(count text)
+(count "Hello")
+;; Output: 5
 ```
 
-Powyższy kod zwróci wynik 32, ponieważ ciąg znaków składa się z 32 liter. W przypadku gdy chcemy policzyć długość ciągu znajdującego się w zmiennej, również możemy użyć funkcji "count":
+Możemy również wykorzystać tę funkcję do znalezienia długości listy zawierającej łańcuchy:
 
 ```Clojure
-(def weather "Słońce")
-(count weather)
+(count ["Hello" "World"])
+;; Output: 2
 ```
 
-W tym przypadku zmienna "weather" przechowuje ciąg "Słońce" i funkcja "count" zwróci wynik 6.
+Funkcja `count` działa również na innych typach danych, więc nie musimy się martwić o to, czy jest to łańcuch czy inny obiekt.
 
-## Deep Dive
+## Głębsze zagłębienie
 
-Funkcja "count" może przyjmować również inne typy danych, takie jak lista czy mapa. W przypadku listy zwraca ona ilość elementów znajdujących się na tej liście, a w przypadku mapy zwraca ilość par klucz-wartość. Warto również wspomnieć, że funkcja "count" jest bardzo wydajna, ponieważ nie iteruje po całym ciągu znaków, ale zwraca jego długość na podstawie metadanych.
+Podczas tworzenia aplikacji w Clojure, często będziemy potrzebować informacji o długości łańcucha, aby wykonać odpowiednie operacje. Jednakże, zależnie od kontekstu, pojęcie długości może różnić się. Na przykład, w przypadku liczb, długością może być liczba cyfr, a w przypadku listy - ilość jej elementów. Dlatego właśnie funkcja `count` jest tak przydatna - automatycznie dostosowuje się do typu danych, na którym jest użyta.
+
+Możemy także wykorzystać funkcję `count` w połączeniu z innymi funkcjami dostępnymi w języku Clojure, takimi jak `str`, aby uzyskać dokładnie to, czego potrzebujemy. Przykładowo, aby wyświetlić informację o długości danego łańcucha, możemy wpisać:
+
+```Clojure
+(str "Długość łańcucha wynosi: " (count "Hello"))
+;; Output: "Długość łańcucha wynosi: 5"
+```
 
 ## Zobacz również
 
-- Dokumentacja funkcji "count": https://clojuredocs.org/clojure.core/count
-- Poradnik dla początkujących w Clojure: https://www.braveclojure.com/getting-started/
-- Przykłady wykorzystania funkcji "count": https://www.dotkam.com/2010/09/01/count-in-clojure/
+- [Dokumentacja funkcji `count` w języku Clojure](https://clojuredocs.org/clojure.core/count)
+- [Inne przydatne funkcje do manipulowania łańcuchami w Clojure](https://www.tutorialspoint.com/clojure/clojure_string_manipulation.htm)

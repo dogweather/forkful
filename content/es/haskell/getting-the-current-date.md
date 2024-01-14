@@ -1,55 +1,50 @@
 ---
 title:    "Haskell: Obteniendo la fecha actual"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué 
+## Por qué
 
-En el mundo de la programación, a menudo necesitamos obtener y manipular fechas y horas en nuestros programas. Esto puede ser útil en aplicaciones de seguimiento de tiempo, registro de eventos y muchas otras situaciones. Afortunadamente, en Haskell, obtener la fecha actual es una tarea sencilla y hoy te mostraré cómo hacerlo.
+Todos los programadores saben lo importante que es mantener la precisión del tiempo en sus aplicaciones. Ya sea para registrar eventos, generar informes o simplemente mostrar la fecha actual en una interfaz de usuario, es crucial poder obtener la fecha y hora correctas. Afortunadamente, Haskell nos ofrece una forma sencilla y eficiente de hacerlo. En esta publicación, aprenderemos cómo obtener la fecha actual en Haskell.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en Haskell, usamos la función `getCurrentTime` del módulo `Data.Time`. Primero, importamos el módulo en nuestro archivo de código:
+Usando la biblioteca `time` de Haskell, podemos acceder fácilmente a la fecha y hora actual. Primero, importamos el módulo en la parte superior de nuestro archivo:
 
-```
+```Haskell
 import Data.Time
 ```
 
-Luego, llamamos a la función `getCurrentTime` y almacenamos el resultado en una variable llamada `fechaActual`:
+Luego, podemos utilizar la función `getCurrentTime` para obtener la fecha y hora actuales en un objeto `UTCTime`:
 
-```
-fechaActual <- getCurrentTime
-```
-
-¡Eso es todo! Ahora, si imprimimos la variable `fechaActual`, veremos la fecha y hora actual en formato ISO8601:
-
-```
-> fechaActual
-2019-10-21 09:36:28.639441371 UTC
+```Haskell
+currentDateTime <- getCurrentTime
 ```
 
-## Inmersión profunda
+Podemos imprimir el resultado utilizando la función `print` y formatear el objeto `UTCTime` utilizando la función `formatTime`:
 
-Ahora que ya sabemos cómo obtener la fecha actual, hagamos una pequeña inmersión profunda y exploremos un poco más. Si solo queremos la fecha sin la hora, podemos usar la función `utctDay` para obtener solo la parte de la fecha de nuestro objeto `fechaActual`:
-
-```
-> utctDay fechaActual
-2019-10-21
+```Haskell
+print (formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" currentDateTime)
 ```
 
-También podemos obtener la hora actual en formato UTC utilizando la función `utctDayTime`:
+Este código imprimirá la fecha y hora actual en el formato `AAAA-MM-DD HH:MM:SS` en la consola.
 
-```
-> utctDayTime fechaActual
-34288.462916265s
+También podemos obtener la fecha actual en diferentes zonas horarias utilizando la función `utcToLocalTime` y especificando la zona horaria deseada. Por ejemplo, para obtener la fecha actual en Nueva York, podemos hacer lo siguiente:
+
+```Haskell
+easternDateTime <- utcToLocalTime (hoursToTimeZone (-5)) currentDateTime
 ```
 
-¡Impresionante! Además, podemos manipular fácilmente esta fecha y hora utilizando funciones como `addUTCTime` y `diffUTCTime`, que nos permiten sumar o restar segundos a nuestra fecha actual.
+## Profundizando
+
+Además de obtener la fecha actual, la biblioteca `time` también nos permite realizar operaciones con fechas, como sumar o restar un cierto número de días o meses. También podemos obtener diferentes componentes de la fecha, como el día, el mes y el año, utilizando las funciones `toGregorian`, `toOrdinalDate` y `toWeekDate`, entre otras.
+
+Para obtener información más detallada sobre cómo trabajar con fechas en Haskell, se recomienda consultar la documentación de la biblioteca `time`.
 
 ## Ver también
 
-- [Documentación de Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Cómo trabajar con fechas y horas en Haskell](https://www.stackbuilders.com/tutorials/haskell/dates-and-times/)
-- [Guía rápida para principiantes de Haskell](https://wiki.haskell.org/Spanish_translation_of_Haskell_for_all#Guía_rápida_para_principiantes_de_Haskell) (en español)
+- [Documentación de la biblioteca `time` de Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Guía de formatos de fecha y hora en Haskell](https://wiki.haskell.org/Date_formatting_and_parsing)

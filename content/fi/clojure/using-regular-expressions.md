@@ -1,35 +1,34 @@
 ---
-title:    "Clojure: Säännöllisten lausekkeiden käyttö"
+title:    "Clojure: Regulaarilausekkeiden käyttö"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Clojure-ohjelmoinnissa?
+## Miksi käyttää tavallisia ilmauksia?
 
-Säännölliset lausekkeet ovat tehokas työkalu tiedon etsimiseen ja muokkaamiseen tekstipohjaisissa tiedostoissa. Niiden avulla voit etsiä tiettyjä merkkijonoja, suorittaa monimutkaisia muokkauksia ja jopa validoida käyttäjän antamia syötteitä. Clojuren sisäänrakennetut säännölliset lausekkeet tekevät tästä tehtävästä erittäin helpon ja suoraviivaisen.
+Tavalliset ilmaukset ovat erittäin hyödyllisiä työkaluja tiedonkäsittelyyn ja tekstinmuokkaukseen Clojure-ohjelmoinnissa. Niiden avulla voit löytää ja muokata tiettyjä tekstin osia, jotka noudattavat tiettyä kaavaa tai mallia. Tämä säästää aikaa ja vaivaa manuaalisen tiedonkäsittelyn sijaan.
 
-## Miten käytät säännöllisiä lausekkeita Clojure-ohjelmoinnissa?
+## Miten käyttää tavallisia ilmauksia?
 
-Ensimmäiseksi, sinun tulee tuoda säännölliset lausekkeet Clojureen käyttämällä ```(:require [clojure.string :as str])```. Tämän jälkeen voit käyttää ```re-find``` -funktiota etsimään merkkijonoja tietystä tekstipohjaisesta muuttujasta.
+Tavallisia ilmauksia voi käyttää Clojure-kielen `re-find` ja `re-matcher` -toimintojen avulla. Voit etsiä haluamasi kaavan tai mallin tekstin joukosta ja palauttaa tuloksen haluamassasi muodossa. Esimerkiksi, jos haluat etsiä kaikki numerot tekstistä ja palauttaa ne listana, voit käyttää seuraavaa koodia:
 
-Esimerkiksi, jos haluat etsiä kaikki puhelinnumeroita, jotka ovat muodossa "xxx-xxx-xxxx", voit käyttää seuraavaa koodia:
+```Clojure
+(def teksti "Tänään on ensimmäinen helmikuuta ja kello on 12:30.")
 
+(re-find #"[0-9]+" teksti)
+=> ("1" "0" "12" "30")
 ```
-(def phone-numbers "123-456-7890 555-123-4567 333-999-0000")
+Haluamme käyttää ilmestyspaikkaa (character class) `[0-9]+`, joka etsii kaikki numerot tekstistä. Käytämme myös `re-find`-funktiota löytääksemme kaikki täsmäävät ilmaukset ja palauttaaksemme ne listassa.
 
-(str/re-find #"(\d{3}-\d{3}-\d{4})" phone-numbers)
-```
+## Syvemmälle tavallisten ilmausten käyttöön
 
-Tämä palauttaisi listan löydetyistä puhelinnumeroista: ```["123-456-7890", "555-123-4567", "333-999-0000"]```.
+Tavallisia ilmauksia käyttäessä on tärkeää ymmärtää erilaisia ilmausten merkkejä ja niiden merkitys. Esimerkiksi `+` merkki ilmaisee, että edellinen ilmaus voi esiintyä useamman kerran, kun taas `*` merkki ilmaisee, että edellinen ilmaus voi olla tyhjä tai esiintyä useamman kerran. Voit löytää täydellisen listan ilmausten käyttötavoista ja merkityksistä Clojure:n dokumentaatiosta.
 
-## Syvempää tietoa säännöllisten lausekkeiden käytöstä Clojure-ohjelmoinnissa
-
-Clojuren säännölliset lausekkeet perustuvat Java-kielen säännöllisiin lausekkeisiin, joten niiden syntaksi on hyvin samanlainen. Voit esimerkiksi käyttää erilaisia säännöllisten lausekkeiden ilmaisuja kuten tähtimerkkiä ```*``` tai kysymysmerkkiä ```?``` löytääksesi tiettyjä merkkijonoja.
-
-On myös mahdollista käyttää säännöllisten lausekkeiden muuttujia, kuten osoittimia ja rajausmerkkejä, tarkempien hakujen tekemiseen. Voit kokeilla erilaisia säännöllisiä lausekkeita ja löytää parhaiten sopivan niille tarkoitetun ongelman ratkaisemiseksi.
+On myös hyvä muistaa, että tavalliset ilmaukset ovat melko tehokkaita, mutta samalla myös monimutkaisia. Niiden kanssa työskennellessä kannattaa olla kärsivällinen ja kokeilla erilaisia ilmauksia, kunnes löytää sopivan.
 
 ## Katso myös
 
-- [Clojure-ohjelmoinnin perusteet](https://clojure.org/guides/getting_started)
-- [Java säännölliset lausekkeet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Clojure:n dokomentaatio tavallisista ilmauksista](https://clojure.org/api/cheatsheet)
+- [Regexr - Työkalu tavallisten ilmausten testaamiseen ja luomiseen](https://regexr.com/)

@@ -1,73 +1,53 @@
 ---
 title:    "C: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 # Dlaczego
-Obliczanie daty w przyszłości lub w przeszłości może być przydatne w wielu sytuacjach, na przykład w tworzeniu kalendarzy lub planowania wydarzeń.
+
+Obliczanie daty w przyszłości lub przeszłości może być bardzo przydatne w wielu sytuacjach. Na przykład, jeśli musisz zaplanować termin spotkania lub wydarzenia, lub sprawdzić, kiedy upłynie okres ważności dokumentu. Dzięki temu zabiegowi możesz również lepiej zrozumieć, jak działają daty w komputerowych systemach i jak manipulować nimi w swoim kodzie.
 
 # Jak to zrobić
-Aby obliczyć datę w przyszłości lub w przeszłości, możemy wykorzystać funkcję `time()` oraz struktury danych `tm` dostępne w języku C. Najpierw musimy zadeklarować i zainicjalizować zmienną `struct tm`, żeby móc wprowadzić informacje o dacie i czasie, dla którego chcemy obliczyć przyszłą lub przeszłą datę. Następnie przy użyciu funkcji `time()` pobieramy obecny czas i zapisujemy go w innej zmiennej typu `time_t`. Na koniec, przy użyciu funkcji `mktime()` przekształcamy strukturę `tm` na wartość typu `time_t` reprezentującą daną datę. Przykładowy kod w języku C wyglądałby następująco:
+
+Kodowanie obliczeń dat może wydawać się skomplikowane, ale w rzeczywistości jest to dosyć proste. W poniższym przykładzie użyjemy języka C do obliczenia daty w przeszłości, a następnie w przyszłości.
+
 ```C
 #include <stdio.h>
 #include <time.h>
-
-int main(void) {
-    // Inicjalizacja struktury tm
-    struct tm date = {0};
-
-    // Ustawienie daty i czasu, dla którego chcemy obliczyć przyszłą/przeszłą datę
-    date.tm_year = 2022 - 1900; // rok - 1900
-    date.tm_mon = 6; // miesiąc (od 0 do 11)
-    date.tm_mday = 1; // dzień
-    date.tm_hour = 13; // godzina (od 0 do 23)
-    date.tm_min = 30; // minuta
-    date.tm_sec = 0; // sekunda
-
-    // Pobranie obecnego czasu
-    time_t now = time(NULL);
-
-    // Obliczenie daty
-    time_t new_time = mktime(&date);
-
-    // Wyświetlenie wyniku
-    printf("Przyszła/data w przeszłości: %s", ctime(&new_time));
-    
-    return 0;
+int main()
+{
+  // obliczanie daty 30 dni w przeszłości
+  time_t currentTime;
+  struct tm *dateInfo;
+  char dateInPast[15];
+  currentTime = time(NULL);
+  dateInfo = localtime(&currentTime);
+  time_t pastTime = currentTime - (30 * 24 * 60 * 60); // 30 dni w sekundach
+  dateInfo = localtime(&pastTime);
+  strftime(dateInPast, sizeof(dateInPast), "%d-%m-%Y", dateInfo);
+  printf("Data 30 dni w przeszłości: %s", dateInPast);
+  // obliczanie daty 30 dni w przyszłości
+  char dateInFuture[15];
+  time_t futureTime = currentTime + (30 * 24 * 60 * 60); // 30 dni w sekundach
+  dateInfo = localtime(&futureTime);
+  strftime(dateInFuture, sizeof(dateInFuture), "%d-%m-%Y", dateInfo);
+  printf("Data 30 dni w przyszłości: %s", dateInFuture);
+  return 0;
 }
 ```
-Przykładowy wynik dla powyższego kodu w przypadku obliczania daty w przyszłości:
-```
-Przyszła/data w przeszłości: Wed Jun 1 13:30:00 2022
-```
+Przy użyciu funkcji `localtime` i `strftime` możemy pobierać informacje o bieżącym czasie oraz formatować je według naszych preferencji. W powyższym przykładzie używamy formatu `%d-%m-%Y`, co oznacza, że data będzie wyświetlana w formacie dzień-miesiąc-rok. W celu obliczenia daty w przyszłości lub przeszłości, musimy dodać (lub odjąć) odpowiednią liczbę sekund od bieżącego czasu, co wykonał kod `currentTime + (30 * 24 * 60 * 60)`.
 
-# Głębsze zanurzenie
-Funkcja `mktime()` korzysta z aktualnych ustawień strefy czasowej oraz wprowadzonej daty i czasu, aby obliczyć wartość typu `time_t` dla danej daty. Jednak może się zdarzyć, że chcemy obliczyć datę w innej strefie czasowej. W takim przypadku, możemy użyć funkcji `localtime()` do przekonwertowania wartości zwróconej przez funkcję `time()` na wartość typu `tm`, którą następnie można zmodyfikować. Po zmianie daty i czasu, możemy ponownie użyć funkcji `mktime()`, aby wyliczyć wartość typu `time_t` w wybranej strefie czasowej. Przykładowy kod wyglądałby następująco:
-```C
-#include <stdio.h>
-#include <time.h>
+# Deep Dive
 
-int main(void) {
-    // Pobranie obecnego czasu
-    time_t now = time(NULL);
+Obliczanie dat w przyszłości lub przeszłości polega na manipulowaniu różnymi jednostkami czasu. W naszym przykładzie użyliśmy 30 dni, ale możemy również używać innych jednostek, takich jak godziny, minuty czy nawet milisekundy. Pobierając bieżący czas i dodając lub odejmując odpowiednią liczbę sekund, możemy uzyskać pożądany efekt.
 
-    // Przekonwertowanie na strukturę tm
-    struct tm *local_now = localtime(&now);
+W języku C istnieje wiele funkcji pomocniczych, które ułatwiają manipulowanie datami. Oprócz `localtime` i `strftime`, warto zapoznać się również z funkcjami `mktime`, `gmtime` oraz `difftime`, które mogą być przydatne w bardziej zaawansowanych scenariuszach.
 
-    // Dodanie jednego dnia do daty
-    local_now->tm_mday += 1;
+# Zobacz również
 
-    // Wyliczenie daty dla wybranej strefy czasowej
-    time_t new_time = mktime(local_now);
-
-    // Wyświetlenie wyniku
-    printf("Jutro: %s", ctime(&new_time));
-
-    return 0;
-}
-```
-Przykładowy wynik dla powyższego kodu w przypadku użytkownika mieszającego w strefie czasowej UTC+2:
-```
-Jutro: Tue Aug 17 21:
+- [Przykłady obliczania dat](https://www.programiz.com/c-programming/examples/current-time)
+- [Dokumentacja funkcji czasu w języku C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Manipulacja datami w języku C](https://www.geeksforgeeks.org/date-manipulation-in-c-c/)

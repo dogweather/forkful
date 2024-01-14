@@ -1,61 +1,45 @@
 ---
-title:    "Gleam: Jämförande av två datum"
+title:    "Gleam: Jämföring av två datum"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I många programmeringsprojekt är det viktigt att kunna jämföra två datum för att hantera tidsberoende data och göra korrekta beslut. I denna bloggpost kommer vi att utforska hur man kan jämföra datum i Gleam och ge lite djupare information om ämnet.
+Att jämföra två datum kan vara en vanlig uppgift i många program. Det kan hjälpa dig att avgöra om ett visst datum ligger före eller efter ett annat, eller om de är samma datum.
 
-## Hur Man Gör
+## Så här gör du
 
-För att kunna jämföra två datum i Gleam behöver vi först skapa två instanser av typen `Date`. Vi kan göra detta genom att använda funktionen `make` och skicka in år, månad och dag som argument.
+För att jämföra två datum i Gleam, kan du använda funktionen `Date.compare`. Det finns tre möjliga utfall av denna funktion: `Less`, `Equal` eller `Greater`. Dessa representerar om det första datumet är mindre än, lika med eller större än det andra datumet.
 
-```Gleam
-let date_one = Date.make(2021, 5, 1)
-let date_two = Date.make(2021, 6, 15)
-```
-
-Nu när vi har två datum att jämföra, kan vi använda följande funktioner för att få information om dem:
-
-- `Date.after(date_one, date_two)` - Returnerar true om date_one är efter date_two.
-- `Date.before(date_one, date_two)` - Returnerar true om date_one är före date_two.
-- `Date.diff_in_days(date_one, date_two)` - Returnerar antalet dagar mellan date_one och date_two.
-
-Låt oss till exempel använda dessa funktioner för att se om ett event sker inom en månad från och med idag:
+För att använda funktionen behöver du skapa två `Date`-objekt och sedan använda dem som argument i `Date.compare`-funktionen.
 
 ```Gleam
-let today = Date.todays_date()
-let event_date = Date.make(2021, 9, 1)
+let startDate = Date.from_iso_8601("2021-01-01")
+let endDate = Date.from_iso_8601("2021-01-30")
 
-if Date.before(event_date, Date.add_days(today, 30)) {
-  io.print("Eventet kommer att ske inom en månad från och med idag!")
-} else {
-  io.print("Eventet kommer inte att ske inom en månad från och med idag.")
-}
+let result = Date.compare(startDate, endDate)
 ```
 
-Output:
-```
-Eventet kommer att ske inom en månad från och med idag!
-```
+I det här exemplet kommer `result` att bli `Less`, eftersom `startDate` ligger tidigare än `endDate`. Du kan också använda operatorn `<`, `=` eller `>` för att jämföra direkt mellan två datum.
 
 ## Djupdykning
 
-När vi jämför datum i Gleam, är det viktigt att förstå att de alltid kommer att vara lokaliserade baserat på tidszonen som används i systemet. Det betyder att om du jämför två datum som har olika tidszoner, kommer resultatet att vara felaktigt. Det är viktigt att se till att alla datum är i samma tidszon innan du jämför dem.
+Vid jämförelse av datum är det viktigt att förstå skillnaden mellan lokala och UTC-tider. En lokal tid är baserad på tidszonen där användaren befinner sig, medan UTC-tider är baserade på Universal Time Coordinated.
 
-En annan faktor att tänka på är att Gleam inte har inbyggda funktioner för att hantera tidpunkter och tidsintervall. Därför måste vi använda `Date.add_*`-funktionerna för att göra beräkningar baserat på tiden. Till exempel, för att få antalet dagar mellan två datum, måste vi göra en beräkning baserad på skillnaden mellan de två datumens tidpunkter.
+När du skapar `Date`-objekt i Gleam, skapas de automatiskt som UTC-tider. Detta kan påverka resultatet av en jämförelse om du inte tar hänsyn till tidszonen.
 
-## Se Även
+För att hantera detta kan du använda funktionen `Date.with_timezone` för att omvandla ett `Date`-objekt till en lokal tid baserad på en specifik tidszon.
 
-- [Gleam Date Modul Dokumentation](https://gleam.run/documentation/stdlib/date.html)
-- [Så här använder du tidszoner i Gleam](https://jordankasper.com/gleam-time-zone-implementation/)
-- [Jämförelse av datum i andra programmeringsspråk](https://www.guru99.com/date-compare-operator-php-python-java.html)
+```Gleam
+let localDate = Date.with_timezone(startDate, Timezone.from_name("Europe/Stockholm"))
+```
 
-## Se Även
+## Se även
 
-- [Gleam Date-modulens dokumentation](https://gleam.run/documentation/stdlib/date.html)
-- [Så här använder du tidszoner i Gleam](https://jordankasper.com/gleam-time-zone-implementation/)
-- [Jämförelse av datum i andra programmeringsspråk](https://www.guru99.com/date-compare-operator-php-python-java.html)
+Här är några användbara länkar för mer information om att jämföra datum i Gleam:
+
+- [Officiell dokumentation för Date-modulen](https://gleam.run/modules/date.html#Date.compare)
+- [Blogginlägg om att jämföra datum i Gleam av The Gleam Experiments](https://gleampowered.org/Comparing-dates-in-Gleam)

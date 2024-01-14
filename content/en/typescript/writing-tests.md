@@ -1,61 +1,57 @@
 ---
 title:    "TypeScript recipe: Writing tests"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing tests is an essential part of software development. It allows developers to catch bugs early on and ensure that their code is functioning as intended. By writing tests, you can save time and avoid potential errors in your code, making the development process more efficient and effective.
+
+Writing tests may seem like an extra step in the development process, but it is an essential one. Tests help identify bugs and errors in your code, ensuring that your application runs smoothly and functions as intended. By writing tests, you can have greater confidence in your code and catch any issues before they make it to production.
 
 ## How To
-To write tests in TypeScript, you will need to use a testing framework such as Jest or Mocha. These frameworks provide functions and utilities for creating, organizing, and running tests. Let's take a look at a simple example using Jest.
 
-```
-TypeScript
-// Import the necessary functions and utilities from Jest
-import { describe, it, expect } from 'jest';
+### Setting Up
 
-// Import the function you want to test
-import { add } from './math';
+To start writing tests in TypeScript, you will need to have Node.js and TypeScript installed on your machine. Once you have those set up, you can create a new directory for your project and run `npm init` to create a `package.json` file.
 
-// Write the test description and function
-describe('add function', () => {
-  it('should add two numbers correctly', () => {
-    // Arrange - define the input and expected output
-    const x = 5;
-    const y = 10;
-    const expected = 15;
+Next, install the `typescript` and `ts-node` packages using `npm install`. This will allow us to compile and run our TypeScript code without having to manually transpile it.
 
-    // Act - call the function and pass in the inputs
-    const result = add(x, y);
+### Writing a Sample Test
 
-    // Assert - check if the result matches the expected output
-    expect(result).toEqual(expected);
-  });
-});
+Let's say we have a simple function that adds two numbers together:
+
+```TypeScript
+function addNumbers(a: number, b: number): number {
+  return a + b;
+}
 ```
 
-Running this test will give us the following output:
+To test this function, we can create a new file called `add.test.ts`. In this file, we will import the `assert` module from Node.js and our `addNumbers` function. Then, we can write a basic test that checks if the function returns the correct result for different inputs:
+
+```TypeScript
+import assert from 'assert';
+import { addNumbers } from './add';
+
+assert.equal(addNumbers(2, 2), 4);
+assert.equal(addNumbers(5, 10), 15);
+assert.equal(addNumbers(0, 0), 0);
 ```
-PASS  ./math.test.ts
-  √ add function (3 ms)
 
-Test Suites: 1 passed, 1 total
-Tests:        1 passed, 1 total
-```
+We use the `assert.equal` method to compare the expected result with the actual result from our function. If they are not equal, the test will fail and throw an error. You can run this test using the command `npx ts-node add.test.ts`.
 
-As you can see, the test was successful and the add function passed all the defined criteria. This is just a simple example, but there are many more useful functions and utilities that Jest and other testing frameworks provide for creating comprehensive tests.
+### Deep Dive
 
-## Deep Dive
-When it comes to writing tests, there are a few factors to consider. First, it's important to write tests that cover all possible scenarios and edge cases to ensure the reliability of your code. This includes testing for different input values, error handling, and performance. Additionally, writing tests that follow best practices, such as testing only one function at a time and using descriptive test descriptions, can make debugging and maintaining tests easier.
+One of the great things about writing tests is that you can catch bugs and errors early on in the development process. This not only saves time, but it also ensures that your code is more reliable and maintainable.
 
-Writing tests also requires a shift in mindset. Instead of just focusing on making the code work, you should think about how to break it. This means testing for negative scenarios and thinking about all possible ways your code could fail. Remember, the goal is to find and fix potential bugs before they cause issues in a production environment.
+Additionally, writing tests can also serve as documentation for your code. By creating tests for your functions, you are essentially describing how they should work and what output they should produce. This can be very helpful for other developers who may be working on the same codebase.
 
-Lastly, it's important to maintain and update tests as your code evolves. As you make changes and add new features, it's crucial to make sure your tests still cover all functionality and that they continue to pass. This will ensure that your code remains robust and reliable.
+Another important aspect of testing is code coverage. Code coverage measures how much of your code is covered by tests. This can help you identify any areas of your code that may need more tests to be written.
 
 ## See Also
-- [Jest Docs](https://jestjs.io/docs/en/getting-started)
-- [Mocha Docs](https://mochajs.org/#getting-started)
-- [TypeScript Testing Patterns by Kent C. Dodds](https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests)
-- [Test Driven Development with TypeScript by Basarat Ali Syed](https://basarat.gitbooks.io/typescript/content/docs/testing/%20test-driven-development.html)
+
+- [Testing JavaScript with Jest](https://jestjs.io/)
+- [An Introduction to TypeScript Testing](https://www.freecodecamp.org/news/an-introduction-to-testing-with-typescript-11a8b4e329ed/)
+- [The Importance of Testing in Software Development](https://www.thoughtworks.com/insights/blog/importance-testing-software-development)
+- [Setting Up a TypeScript Project](https://dev.to/istoreco/typescript-setup-in-a-nutshell-1pm2)

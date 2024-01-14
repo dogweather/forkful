@@ -1,50 +1,49 @@
 ---
-title:    "Haskell: Unindo strings"
+title:    "Haskell: Concatenando strings"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que 
 
-Se você é novo no mundo da programação em Haskell, pode estar se perguntando por que as pessoas costumam usar concatenação de strings. A resposta simples é que a concatenação de strings é uma maneira de juntar duas ou mais strings para formar uma única string.
+Concatenar strings é uma habilidade essencial para qualquer programador Haskell. Combinando diferentes strings, podemos criar mensagens personalizadas, formatar dados de maneira mais legível e construir novas funcionalidades para nossos programas.
 
 ## Como Fazer
 
-Para fazer a concatenação de strings em Haskell, podemos usar a função `++`. Por exemplo, digamos que temos duas strings, "Olá" e "mundo". Se quisermos criar uma nova string com estas duas palavras juntas, podemos usar a seguinte linha de código:
-
 ```Haskell
-"Olá" ++ "mundo"
+concatenar :: String -> String -> String
+concatenar x y = x ++ y
+
+mensagem1 = "Olá, "
+mensagem2 = "mundo!"
+concatenar mensagem1 mensagem2
+--Output: "Olá, mundo!"
+
+--Também podemos concatenar mais de duas strings:
+mensagem3 = "Hoje é "
+mensagem4 = "um dia "
+mensagem5 = "ensolarado."
+concatenar (concatenar mensagem3 mensagem4) mensagem5
+--Output: "Hoje é um dia ensolarado."
+
+--Podemos até mesmo combinar strings com outros tipos de dados, desde que usemos a função "show":
+idade = 25
+concatenar "Eu tenho " (show idade) ++ " anos."
+--Output: "Eu tenho 25 anos."
 ```
-
-A saída deste exemplo seria `"Olá mundo"`. Como podemos ver, a função `++` simplesmente adiciona uma string à outra. 
-
-Mas isso não é tudo! Também podemos usar a concatenação para juntar uma string a uma lista de strings. Por exemplo, se tivermos a lista `["Eu", "amo", "Haskell"]` e quisermos criar uma única string com todas essas palavras juntas e separadas por espaços, podemos usar o seguinte código:
-
-```Haskell
-" " ++ ["Eu", "amo", "Haskell"]
-```
-
-A saída seria `"Eu amo Haskell"`, com a string vazia servindo como o separador entre as palavras da lista.
 
 ## Mergulho Profundo
 
-Para aqueles que estão interessados em aprofundar-se mais no tema da concatenação de strings em Haskell, existem algumas coisas importantes a serem mencionadas. A primeira é que a função `++` é associativa à esquerda, o que significa que, se tivermos mais de duas strings sendo concatenadas, a função irá agrupar as strings da esquerda para a direita. Por exemplo:
+Em Haskell, a concatenação de strings é feita através do operador "++". Ele simplesmente combina duas strings em uma, sem adicionar nenhum espaço ou caractere especial entre elas. No entanto, se precisarmos adicionar algum caractere entre as strings (como um espaço), é possível utilizar a função "intercalate", que recebe um delimitador e uma lista de strings para serem unidas.
 
-```Haskell
-"Olá" ++ " " ++ "mundo" ++ "!" 
-```
+Outra função útil para manipular strings é a "words", que divide uma string em uma lista de palavras. E a função "unwords" faz o contrário, unindo uma lista de palavras em uma única string, adicionando espaços entre elas.
 
-Seria equivalente a:
-
-```Haskell
-("Olá" ++ " ") ++ "mundo" ++ "!" 
-```
-
-O segundo ponto importante é que, ao contrário de outras linguagens de programação, a concatenação de strings em Haskell é uma operação relativamente custosa. Isso ocorre porque, em Haskell, strings são representadas como listas de caracteres, e a concatenação de listas requer uma cópia completa da lista original. Portanto, ao lidar com grandes quantidades de dados, pode ser mais eficiente usar operações de concatenação otimizadas, como a função `concat`.
+Existem ainda outras funções relacionadas à manipulação de strings que podem ser exploradas, como "lines", "unlines", "take" e "drop".
 
 ## Veja Também
 
-- [Documentação sobre concatenação de strings em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#g:13)
-- [Tutorial básico sobre strings em Haskell](https://riptutorial.com/pt/haskell/topic/8743/strings)
-- [Explicações sobre a associação à esquerda em operações de concatenação](https://stackoverflow.com/questions/17102746/concatenation-associativity-in-haskell)
+- [Haskell Wiki: Concatenação de Strings](https://wiki.haskell.org/Strings)
+- [Learn You a Haskell for Great Good - Stringy Pattern Matching](http://learnyouahaskell.com/chapters#stringy-pattern-matching)
+- [Real World Haskell - Strings](http://book.realworldhaskell.org/read/strings.html)

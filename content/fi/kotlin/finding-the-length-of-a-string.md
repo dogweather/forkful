@@ -1,47 +1,38 @@
 ---
-title:    "Kotlin: Merkkijonon pituuden löytäminen"
+title:    "Kotlin: Nauhan pituuden löytäminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit selvittää merkkijonon pituuden? Yleisimpiä syitä ovat mahdollisuus tarkistaa käyttäjän antamaa syötettä tai varmistaa, että merkkijono mahtuu määritettyyn muuttujan kokoon.
+Miksi henkilö voisi haluta selvittää merkkijonon pituuden? Merkkijonojen käsittely on tärkeä osa ohjelmointia ja usein tarvitsemme tietoa merkkijonojen koosta ja sisällöstä. Merkkijonon pituuden selvittäminen on yksi tapa tehdä tämä.
 
 ## Kuinka
 
-Merkkijonon pituuden selvittäminen Kotlinissa on yksinkertaista. Voit käyttää `length`-metodia, joka palauttaa merkkijonon pituuden.
-
 ```Kotlin
-val merkkijono = "Hei!"
-println(merkkijono.length)
-// Output: 4
+// Luodaan esimerkki-merkkijono
+val merkkijono = "Tervetuloa Kotlinin ihmeelliseen maailmaan"
+
+// Käytetään String-luokan metodia length()
+val pituus = merkkijono.length
+
+println(pituus) // Tulostaa: 42
 ```
 
-Voit myös käyttää `count()`-funktiota, joka palauttaa saman tuloksen.
+Deep Dive:
 
-```Kotlin
-val merkkijono = "Tämä on merkkijono"
-println(merkkijono.count())
-// Output: 19
-```
+Merkkijonojen pituuden selvittämiseksi voimme käyttää String-luokan length-metodia, kuten yllä olevassa esimerkissä. Tämä metodi palauttaa arvon, joka kertoo merkkijonon merkkien lukumäärän. On hyvä huomata, että välilyönnit ja muut erikoismerkit lasketaan mukaan pituuteen.
 
-## Syvällinen sukellus
+##Lue Lisää
 
-Kotlinin merkkijonon pituuden selvittämisessä on hyvä muistaa, että se palauttaa merkkien määrän, ei sanojen. Esimerkiksi välilyönnit lasketaan myös merkkeinä.
-
-```Kotlin
-val merkkijono = "Tämä on testi"
-println(merkkijono.length)
-// Output: 13
-println(merkkijono.split(" ").size)
-// Output: 4
-```
-
-Lisäksi merkkijonon pituutta ei voi muuttaa, sillä merkkijonot ovat niin sanottuja "immutable"-muuttujia, jotka eivät voi muuttaa arvoaan.
+- [Kotlinin virallinen ohjelmointikielen peruskäsitteet](https://kotlinlang.org/docs/reference/basic-syntax.html)
+- [Merkkijonojen käsittely Java- ja Kotlin-ohjelmointikielissä](https://www.baeldung.com/java-string-length)
+- [String-luokan dokumentaatio Kotlinissa](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
 
 ## Katso myös
 
-- [Kotlinin dokumentointi: merkkijonot](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Stack Overflow: merkkijonon pituuden selvittäminen](https://stackoverflow.com/questions/41627592/kotlin-how-to-determine-string-length)
+- [Kotlinin opetusohjelma aloittelijoille](https://kotlinlang.org/docs/tutorials/getting-started.html)
+- [Kotlin-ohjelmointikielen virallinen sivusto](https://kotlinlang.org/)

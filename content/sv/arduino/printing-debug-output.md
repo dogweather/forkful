@@ -1,35 +1,34 @@
 ---
-title:    "Arduino: Utskrift av felsökningsutmatning"
+title:    "Arduino: Utskrift av felsökningsutdata"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skriva ut debuggutdata är ett användbart verktyg för att hitta och lösa problem i din Arduino-kod. Genom att skriva ut värden på olika variabler och steg i din kod kan du få en bättre förståelse för hur den fungerar och varför eventuella fel uppstår.
+Debugging är en viktig del av programmering och kan göra skillnad mellan ett lyckat och misslyckat projekt. Genom att använda utskrift av felsökningsmeddelanden kan du enkelt spåra problem i ditt Arduino-program och effektivt lösa dem.
 
 ## Så här gör du
-
-För att skriva ut debuggutdata i din Arduino-kod, använd funktionen Serial.println(). Detta kommer att skriva ut värdet på en variabel eller en sträng i seriell monitor. Här är ett exempel på hur du kan använda det i din kod:
+För att skriva ut felsökningsmeddelanden i ditt Arduino-program, behöver du först ansluta en seriell kommunikationsmodul till din Arduino. Därefter kan du använda funktionen "Serial.print" för att skriva ut värden och variabler på din dator via USB-porten.
 
 ```Arduino
-int sensorValue = analogRead(A0);  // läs av ett värde från pin A0
-Serial.println(sensorValue);  // skriv ut värdet i seriell monitor
+// Anslut en seriell kommunikationsmodul till din Arduino
+Serial.begin(9600);
+
+// Skriv ut ett felsökningsmeddelande
+Serial.print("Värdet av min variabel är: ");
+Serial.println(minVariabel);
 ```
 
-När du laddar upp koden till din Arduino, öppna sedan seriell monitor (Tools > Serial Monitor) för att se utdatan. Om du vill skriva ut fler värden, använd bara flera Serial.println() funktioner i din kod. Det är också möjligt att använda Serial.print() för att skriva ut data utan radbrytning.
+När du använder "Serial.print" funktionen, kan du också ange en radslutning genom att använda "println". Detta gör det lättare att läsa och organisera dina utskriftsmeddelanden.
 
 ## Djupdykning
+Genom att utskriva felsökningsmeddelanden kan du enkelt jämföra dina förväntade värden med de faktiska värdena som visas på din dator. Detta är särskilt användbart när du arbetar med sensorer eller andra externa enheter.
 
-Att skriva ut debuggutdata kan vara särskilt användbart när du arbetar med sensorer eller andra externa enheter. Genom att skriva ut sensordata kan du se om dina mätningar är korrekta och i vilken utsträckning de påverkas av yttre faktorer.
-
-Du kan också använda Serial.println() för att bekanta dig med dina kodblock. Genom att skriva ut värden på variabler, kan du följa hur de ändras under körning och felsöka eventuella fel.
-
-En annan fördel med att skriva ut debuggutdata är att det kan hjälpa dig att förbättra prestandan på din kod. Genom att skriva ut tiden det tar för olika delar av koden att köras, kan du identifiera flaskhalsar och optimera din kod för att göra den snabbare och effektivare.
+Om du behöver utskriva mer avancerade meddelanden kan du också använda funktionen "Serial.write". Denna funktion kan skriva ut binära data och är särskilt användbar när du arbetar med dataöverföringar.
 
 ## Se även
-
-- [Official Arduino Serial Documentation](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino Tutorial: Serial Communication](https://www.arduino.cc/en/Tutorial/Serial)
-- [Debugging Arduino Code Using Serial.print()](https://create.arduino.cc/projecthub/cesarzambrano/debugging-arduino-code-using-serial-print-944616)
+- [Arduino Serial Communication](https://www.arduino.cc/en/Serial/)
+- [Debugging Techniques for Arduino](https://blog.arduino.cc/2016/11/08/debugging-techniques-for-arduino/)
+- [Serial.print vs Serial.write](https://arduino.stackexchange.com/questions/6211/serial-print-vs-serial-write)

@@ -1,53 +1,44 @@
 ---
 title:    "Kotlin: Recherche et remplacement de texte"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes développeur, vous savez à quel point il peut être fastidieux de trouver et remplacer du texte dans votre code. Heureusement, Kotlin offre une solution simple et efficace pour résoudre ce problème. Dans cet article, nous allons vous montrer comment utiliser la fonction de recherche et de remplacement de texte en Kotlin.
+Il peut être nécessaire de rechercher et remplacer du texte dans votre code Kotlin pour plusieurs raisons. Par exemple, vous pourriez vouloir corriger une faute de frappe ou mettre à jour une variable dans plusieurs endroits de votre projet.
 
-## Comment faire
+# Comment faire
 
-Dans Kotlin, la fonction pour rechercher et remplacer du texte est `replace`. Voyons un exemple de code avec cette fonction :
-
-```Kotlin
-val phrase = "Bonjour tout le monde !"
-val nouveauMot = phrase.replace("Bonjour", "Salut")
-
-println(nouveauMot)
-```
-Lorsque vous exécutez ce code, la sortie sera `Salut tout le monde !`. Comme vous pouvez le voir, la fonction `replace` permet de remplacer facilement un mot par un autre dans une chaîne de caractères. Mais cette fonction ne s'arrête pas là, elle offre également la possibilité de faire des remplacements en utilisant des expressions régulières. Voyons un autre exemple :
+Pour rechercher et remplacer du texte dans un code Kotlin, vous pouvez utiliser la fonction `replace` de la classe `String`. Voici un exemple de code qui remplace toutes les occurrences de la chaîne "bonjour" par "salut":
 
 ```Kotlin
-val phrase = "Aujourd'hui, c'est mercredi !"
-val nouveauMot = phrase.replace("[a-z]".toRegex(), "X")
+val text = "Bonjour tout le monde!"
+val newText = text.replace("bonjour", "salut")
+println(newText)
 
-println(nouveauMot)
+// Output: Salut tout le monde!
 ```
-Dans cet exemple, nous utilisons une expression régulière pour remplacer toutes les lettres minuscules par la lettre `X`. La sortie sera alors `X XXHXXXX, C'XST MXXXXXXX !`.
 
-Si vous souhaitez remplacer plusieurs mots dans la même chaîne, vous pouvez utiliser la fonction `replaceEach` qui prend en paramètre une liste de paires de mots à remplacer. Prenons un dernier exemple :
+Vous pouvez également utiliser des expressions régulières pour effectuer une recherche et un remplacement plus avancés. Par exemple, le code suivant remplace toutes les lettres "a" ou "A" par le symbole "#":
 
 ```Kotlin
-val phrase = "Les chats et les chiens sont les meilleurs amis du monde."
-val nouveauMot = phrase.replaceEach(
-        listOf("chats" to "oiseaux", "chiens" to "poissons")
-)
+val text = "Ceci est un exemple de texte."
+val newText = text.replace(Regex("[aA]"), "#")
+println(newText)
 
-println(nouveauMot)
+// Output: C#ci est un ex#mple de texte.
 ```
-La sortie de ce code sera `Les oiseaux et les poissons sont les meilleurs amis du monde.`.
 
-## Plongée en profondeur
+# Plongée en profondeur
 
-En utilisant les expressions régulières, la fonction de recherche et de remplacement en Kotlin offre une grande flexibilité pour modifier des chaînes de caractères. Vous pouvez également utiliser la fonction `replaceFirst` pour ne remplacer que la première occurrence d'un mot dans la chaîne, ou encore utiliser les fonctions `replaceAfter` et `replaceBefore` pour cibler des mots précis avant ou après une certaine occurrence.
+En utilisant des expressions régulières, vous pouvez effectuer des recherches et des remplacements encore plus complexes, comme chercher et remplacer des mots qui commencent par une certaine lettre ou qui contiennent un certain motif. Il est également possible de spécifier le nombre maximum d'occurrences à remplacer ou d'utiliser des fonctions lambda pour personnaliser votre recherche et votre remplacement.
 
-N'hésitez pas à explorer la documentation officielle de Kotlin pour découvrir toutes les possibilités de la fonction `replace`.
+Veuillez noter que la fonction `replace` n'est pas limitée aux chaînes de caractères, elle peut également être utilisée avec des listes, des tableaux ou d'autres types de collections. Pour plus d'informations sur les différentes options de `replace`, consultez la [documentation officielle de Kotlin](https://kotlinlang.org/docs/reference/strings.html#string-replacements).
 
-## Voir aussi
+# Voir aussi
 
-- [Documentation officielle de Kotlin sur la fonction replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
-- [Documentation officielle de Kotlin sur les expressions régulières](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-regex.html)
+- [Documentation officielle de Kotlin sur les chaînes de caractères](https://kotlinlang.org/docs/reference/strings.html)
+- [Guide sur les expressions régulières en Kotlin](https://www.baeldung.com/kotlin-regular-expressions)

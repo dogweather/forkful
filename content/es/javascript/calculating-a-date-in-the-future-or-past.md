@@ -1,44 +1,62 @@
 ---
 title:    "Javascript: Calculando una fecha en el futuro o pasado"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
- 
-Calcular fechas en el futuro o pasado es una tarea muy común tanto en el desarrollo de aplicaciones como en el manejo de datos. Puede ser utilizado en situaciones como programación de recordatorios, planificación de viajes o análisis de datos históricos. En este artículo, aprenderemos cómo calcular una fecha en el pasado o en el futuro utilizando Javascript.
+## ¿Por qué calcular una fecha en el futuro o pasado?
 
-## Cómo
- 
-Para calcular una fecha en el futuro o pasado en Javascript, necesitamos utilizar el objeto `Date` y sus respectivos métodos. Primero, debemos crear una instancia del objeto `Date` con la fecha actual utilizando `new Date()`. Luego, podemos utilizar los métodos `getFullYear()`, `getMonth()` y `getDate()` para obtener el año, mes y día de la fecha actual respectivamente. Estos métodos nos devuelven un número, por lo que debemos almacenarlos en variables. Por ejemplo:
+La programación con Javascript puede ser útil para muchos propósitos, y calcular una fecha en el futuro o pasado es una de esas tareas. Ya sea para planificar eventos, realizar tareas de seguimiento o crear recordatorios, tener la habilidad de calcular fechas puede ser de gran ayuda.
 
-````javascript
-let hoy = new Date();
-let anio = hoy.getFullYear();
-let mes = hoy.getMonth();
-let dia = hoy.getDate();
-````
- 
-Una vez que tengamos estos valores, podemos utilizar el método `setFullYear()` para establecer una nueva fecha en el futuro o pasado, pasando como argumento el año deseado. También podemos utilizar los métodos `setMonth()` y `setDate()` para establecer el mes y día deseados. Por ejemplo:
+## Cómo hacerlo
 
-````javascript
-hoy.setFullYear(anio + 1); // Establece la fecha en 1 año en el futuro
-hoy.setMonth(mes - 2); // Establece la fecha en 2 meses en el pasado
-hoy.setDate(dia + 10); // Establece la fecha en 10 días en el futuro
-````
- 
-Finalmente, para obtener la nueva fecha calculada, podemos utilizar el método `toLocaleDateString()` y pasar el idioma deseado como argumento. Este método nos devolverá la fecha en el formato adecuado para el idioma seleccionado. Por ejemplo:
+Para calcular una fecha en el futuro o pasado utilizando Javascript, podemos utilizar el objeto `Date`. Por ejemplo, si queremos obtener la fecha de mañana, podemos hacer lo siguiente:
 
-````javascript
-console.log(hoy.toLocaleDateString("es")); // Imprime la fecha en formato DD/MM/YYYY para el idioma español.
-````
- 
-## Profundizando
- 
-La clase `Date` en Javascript también posee otros métodos útiles para el manejo de fechas, como `setHours()`, `setMinutes()`, `setSeconds()`, entre otros. También podemos utilizar el objeto `Intl.DateTimeFormat` para formatear fechas en idiomas específicos. Para más información sobre estos métodos, puedes consultar la documentación oficial de Javascript.
- 
+```Javascript
+let mañana = new Date();
+mañana.setDate(mañana.getDate() + 1);
+```
+
+De manera similar, si queremos obtener la fecha de ayer, podemos hacer lo siguiente:
+
+```Javascript
+let ayer = new Date();
+ayer.setDate(ayer.getDate() - 1);
+```
+
+También podemos utilizar la función `getFullYear()`, `getMonth()`, `getDate()` para obtener el año, mes y día respectivamente de una fecha determinada y luego modificarlos de acuerdo a nuestros cálculos. Por ejemplo, si queremos obtener la fecha dentro de una semana, podemos hacer lo siguiente:
+
+```Javascript
+let fecha = new Date();
+fecha.setDate(fecha.getDate() + 7);
+console.log('La fecha dentro de una semana es: ' + fecha);
+```
+
+Este código nos mostrará la fecha dentro de una semana en el formato de `MM/DD/YYYY`. Podemos adaptar estos ejemplos para calcular cualquier fecha en el futuro o pasado según nuestras necesidades.
+
+## Inmersión profunda
+
+Si queremos calcular fechas en el futuro o pasado de manera más precisa, podemos utilizar la librería `moment-js` que nos permite trabajar con fechas de forma más sencilla y flexible. Esta librería nos permite realizar operaciones con fechas, como agregar o restar días, meses o años, comparar fechas, obtener el último día de un mes, entre otros.
+
+Para utilizar `moment-js`, primero debemos instalarlo en nuestro proyecto a través de la línea de comandos con `npm install moment` y luego importarlo en nuestro archivo Javascript:
+
+```Javascript
+const moment = require('moment');
+```
+
+Por ejemplo, si queremos obtener la fecha de dentro de un mes a partir de hoy, podemos utilizar la función `add()` y especificar el intervalo de tiempo que queremos agregar:
+
+```Javascript
+let fecha = moment().add(1, 'month');
+console.log('La fecha dentro de un mes es: ' + fecha.format('MM/DD/YYYY'));
+```
+
+En este caso, especificamos que queremos agregar 1 mes. También podemos especificar otros intervalos de tiempo como días, años, horas, minutos, entre otros.
+
 ## Ver también
- 
-- [Documentación oficial de Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Objeto Intl.DateTimeFormat en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+
+- [Objeto Date en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Cómo trabajar con fechas en Javascript](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-in-javascript)

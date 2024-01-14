@@ -1,38 +1,49 @@
 ---
 title:    "Fish Shell: Capitalizando una cadena"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-A veces es necesario que un texto se presente con su primera letra en mayúscula, ya sea para fines estéticos o para cumplir con un formato específico. En este caso, capitalizar una cadena de texto puede ser una solución útil y sencilla de implementar.
+Si eres un desarrollador que trabaja con el Fish Shell, es posible que necesites capitalizar cadenas de texto en tus programas. Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúscula. Por ejemplo, "hola mundo" se convertiría en "Hola Mundo". Esta es una práctica común en programación y puede ser útil en diferentes situaciones.
 
 ## Cómo hacerlo
 
-En el shell de Fish, podemos utilizar el comando `string capitalize` para convertir la primera letra de una cadena en mayúscula. Por ejemplo, si tenemos la cadena "hola mundo", al utilizar el siguiente comando:
+Para capitalizar una cadena en el Fish Shell, puedes utilizar el siguiente comando:
 
-```Fish Shell 
-echo "hola mundo" | string capitalize
+```Fish Shell
+echo "hola mundo" | awk '{ print toupper(substr($0, 1, 1)) substr($0, 2) }'
 ```
 
-El resultado será "Hola mundo". Podemos incluso capitalizar todas las palabras de la cadena utilizando el parámetro `-a`:
+La salida de este comando será "Hola Mundo". Explicando el comando, primero tomamos la cadena "hola mundo" y la pasamos a la función `awk`. Luego, utilizamos la función `substr` para tomar la primera letra de la cadena y convertirla a mayúscula con la función `toupper`. Finalmente, utilizamos la función `substr` nuevamente para tomar el resto de la cadena (sin la primera letra) y la dejamos en minúscula. De esta manera, obtenemos la cadena final con la primera letra de cada palabra en mayúscula.
 
-```Fish Shell 
-echo "esto es una prueba" | string capitalize -a
+También puedes utilizar el comando `awk` de la siguiente manera:
+
+```Fish Shell
+echo "hola mundo" | awk '{print toupper($1) " " toupper($2)}'
 ```
 
-Obteniendo como resultado "Esto Es Una Prueba".
+En este caso, estamos capitalizando cada palabra por separado y luego uniendo las dos palabras con un espacio entre ellas. La salida también será "Hola Mundo", pero este método puede ser útil si necesitas capitalizar más de dos palabras.
 
 ## Profundizando
 
-El comando `string capitalize` también nos permite especificar un delimitador, de manera que sólo las palabras después del delimitador serán capitalizadas. Por ejemplo, si utilizamos el delimitador "-" en la cadena "mi-cadena-de-prueba", obtendremos "mi-Cadena-De-Prueba" como resultado.
+Una cosa a tener en cuenta es que estos comandos sólo capitalizan la primera letra de cada palabra en minúscula. Si la palabra ya comienza con una letra mayúscula, se mantendrá igual. Por ejemplo, "Hola mundo" seguirá siendo "Hola mundo" después de ser capitalizada.
 
-Además, es importante tener en cuenta que este comando no afecta a las mayúsculas o minúsculas de las letras que no están siendo capitalizadas. Por ejemplo, en la cadena "el mundo es un lugar maravilloso", el resultado sería "El Mundo Es Un Lugar Maravilloso".
+Además, si quieres que todas las letras de la cadena se conviertan a mayúscula, puedes utilizar la función `toupper` sin especificar una posición de la cadena:
 
-## Ver también
+```Fish Shell
+echo "hola mundo" | awk '{ print toupper($0) }'
+```
 
-- [Documentación oficial de `string capitalize`](https://fishshell.com/docs/current/cmds/string-capitalize.html)
-- [Lista de comandos y parámetros de Fish Shell](https://fishshell.com/docs/current/cmds.html)
-- [Introducción a la programación con Fish Shell](https://medium.com/@zamirverse/fish-shell-una-alternativa-moderna-para-el-shell-de-unix-e61bd5b2f191)
+La salida en este caso sería "HOLA MUNDO".
+
+Ten en cuenta que estas soluciones son específicas para el Fish Shell. Si estás utilizando otro shell, es posible que necesites utilizar un comando diferente o una librería específica para capitalizar cadenas.
+
+## Véase también
+
+- [Página oficial de Fish Shell](https://fishshell.com/)
+- [Documentación oficial de awk](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Tutorial de programación en el Fish Shell](https://fishshell.com/docs/current/tutorial.html)

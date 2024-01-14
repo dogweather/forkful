@@ -1,42 +1,54 @@
 ---
 title:    "Javascript: Gerando números aleatórios"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque
+## Por que gerar números aleatórios?
 
-Gerar números aleatórios pode ser útil em diferentes situações, desde jogos até testes de software. Além disso, pode ser uma ótima maneira de aprender sobre lógica e programação.
+Há muitas situações em que é necessário gerar números aleatórios em um programa Javascript. Isso pode ser útil em jogos, sorteios, testes de desempenho ou qualquer outra aplicação que requeira valores imprevisíveis.
 
-## Como Fazer
+## Como fazer
 
-Para gerar um número aleatório em Javascript, podemos utilizar a função `Math.random()`, que retorna um número entre 0 e 1. Por exemplo:
+Para gerar números aleatórios em Javascript, podemos usar a função `Math.random()` que retorna um número aleatório entre 0 (inclusivo) e 1 (exclusivo). Podemos então multiplicar esse valor pelo intervalo desejado e adicionar um número base para obter um número aleatório dentro de um determinado intervalo.
 
-```Javascript
-let num = Math.random(); // num será igual a um número aleatório entre 0 e 1
+Por exemplo, se quisermos gerar um número aleatório entre 1 e 10, podemos usar o seguinte código:
+
+```javascript
+let randomNum = Math.random() * 9 + 1;
+console.log(randomNum); // output: um número aleatório entre 1 e 10
 ```
 
-Para gerar um número dentro de um intervalo específico, podemos multiplicar o resultado dessa função pelo (valor máximo - valor mínimo) e adicionar o valor mínimo. Por exemplo, para gerar um número aleatório entre 1 e 100, podemos fazer:
+Outra abordagem é usar a função `Math.floor()` para arredondar o número gerado para baixo e, em seguida, adicionar o número base. Isso nos permitirá obter apenas números inteiros dentro do intervalo desejado.
 
-```Javascript
-let num = Math.random() * (100 - 1) + 1; // num será um número aleatório entre 1 e 100
+Por exemplo, se quisermos gerar um número aleatório entre 1 e 10, podemos usar o seguinte código:
+
+```javascript
+let randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum); // output: um número aleatório entre 1 e 10
 ```
 
-Podemos também utilizar `Math.floor()` para arredondar o número para baixo, caso queiramos um número inteiro. Por exemplo:
+Outro caso comum é gerar um número aleatório de uma lista de valores pré-selecionados. Podemos fazer isso atribuindo os valores a um array e, em seguida, gerando um número aleatório que será usado como índice para esse array.
 
-```Javascript
-let num = Math.floor(Math.random() * (100 - 1) + 1); // num será um número inteiro aleatório entre 1 e 100
+Por exemplo, se quisermos gerar um número aleatório de uma lista de cores, podemos usar o seguinte código:
+
+```javascript
+let colors = ["vermelho", "azul", "amarelo", "verde"];
+let randomIndex = Math.floor(Math.random() * 4);
+let randomColor = colors[randomIndex];
+console.log(randomColor); // output: uma cor aleatória da lista
 ```
 
-## Mergulho Profundo
+## Mergulho profundo
 
-Ao gerar números aleatórios, é importante ter em mente que eles não são 100% aleatórios, mas sim pseudoaleatórios, ou seja, são gerados por um algoritmo. Isso significa que, em alguns casos, eles podem seguir um padrão e não serem completamente imprevisíveis.
+A geração de números aleatórios em Javascript usa um algoritmo baseado em um valor inicial chamado `seed`. Esse valor é utilizado para calcular uma "semente" que será usada para gerar os números aleatórios. O valor padrão dessa semente é obtido a partir do tempo atual, mas podemos definir manualmente o valor da semente usando a função `Math.seedrandom()`.
 
-Outro ponto a ser considerado é que, se a função `Math.random()` for chamada várias vezes seguidas, é possível que ela retorne os mesmos números, pois ela se baseia no relógio do sistema para gerar os números. Para evitar isso, podemos utilizar um número aleatório como semente e passá-lo como argumento para a função. Isso irá garantir que sempre teremos um número diferente gerado.
+É importante notar que a função `Math.random()` não é verdadeiramente aleatória, já que usa um algoritmo para gerar os números. No entanto, para a maioria dos casos, esse algoritmo é suficientemente complexo para produzir números que são considerados aleatórios o suficiente.
 
-## Veja Também
+## Ver também
 
-- [Documentação do Math.random em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Entendendo o conceito de números aleatórios em programação](https://www.geeksforgeeks.org/generate-random-numbers-in-java/)
-- [Trabalhando com números aleatórios em jogos em Javascript](https://www.w3schools.com/Js/js_random.asp)
+- [Documentação oficial do Math.random()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Artigo sobre geração de números aleatórios em Javascript](https://www.devmedia.com.br/como-gerar-numeros-aleatorios-em-javascript/37411)
+- [Tutorial sobre como gerar números aleatórios em Javascript](https://www.w3schools.com/js/js_random.asp)

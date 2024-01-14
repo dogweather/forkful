@@ -1,30 +1,46 @@
 ---
-title:    "Gleam: Sprawdzanie czy istnieje katalog"
+title:    "Gleam: Sprawdzanie istnienia katalogu"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami musimy sprawdzić, czy dany katalog istnieje, aby upewnić się, czy możemy w nim zapisać lub odczytać pliki. W tym blogu dowiesz się, jak sprawdzić istnienie katalogu w języku programowania Gleam.
+Sprawdzenie, czy dany katalog istnieje, jest kluczowym elementem programowania w Gleam. Dzięki temu, możemy być pewni, że nasz program będzie działał prawidłowo i nie będzie przerywanych błędami związanymi z nieistniejącymi katalogami. W tym artykule dowiesz się, jak sprawdzić istnienie katalogu w języku Gleam.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Sprawdzenie, czy katalog istnieje w języku Gleam jest bardzo proste dzięki funkcji `os.dir_exists`. Wystarczy podać ścieżkę do katalogu jako argument funkcji, a wynik będzie zawierał wartość `true` lub `false`.
+Aby sprawdzić, czy dany katalog istnieje, możemy użyć wbudowanej funkcji `Dir.exists` w module `gleam/io`. Poniżej znajduje się przykładowy kod, który demonstruje użycie tej funkcji:
 
 ```Gleam
-let exist = os.dir_exists("sciezka/do/katalogu")
+import gleam/io
+
+fn main() {
+  // Ustawiamy ścieżkę do katalogu, który chcemy sprawdzić
+  let path = "ścieżka/do/katalogu"
+
+  // Wywołujemy funkcję Dir.exists i przekazujemy jej ścieżkę jako argument
+  let exists = io.Dir.exists(path)
+
+  // Sprawdzamy, czy katalog istnieje
+  case exists {
+    True -> io.println("Katalog istnieje")
+    False -> io.println("Katalog nie istnieje")
+  }
+}
 ```
 
-Jeśli katalog istnieje, wartość `exist` będzie równa `true`, w przeciwnym wypadku będzie równa `false`.
+Po uruchomieniu tego kodu, gdy katalog istnieje, zobaczymy na konsoli wiadomość "Katalog istnieje", a gdy nie istnieje - "Katalog nie istnieje".
 
-## Głębsza analiza
+## Zanurzenie W Temat
 
-Podczas sprawdzania, czy katalog istnieje, może pojawić się kilka problemów, na które warto zwrócić uwagę. Jednym z nich jest możliwość błędnego zapisania ścieżki, co spowoduje niepoprawne działanie funkcji. Ważne jest również upewnienie się, że funkcja `os.dir_exists` jest wywoływana z prawidłowymi argumentami.
+Sprawdzanie istnienia katalogu może być przydatne w wielu przypadkach. Na przykład, można go wykorzystać przy tworzeniu plików w określonym katalogu, aby upewnić się, że plik zostanie utworzony w odpowiednim miejscu. Można także skorzystać z tej funkcji w celu bezpiecznego przenoszenia lub usuwania plików. 
 
-## Zobacz również
+Warto także wspomnieć, że funkcja `Dir.exists` zwraca wartość `True` tylko wtedy, gdy podana ścieżka wskazuje na istniejący katalog. W przypadku, gdy podana ścieżka wskazuje na plik lub nie istniejący element, funkcja ta zwróci wartość `False`. 
 
-- Dokumentacja funkcji `os.dir_exists` w języku Gleam: https://gleam.run/function/os.dir_exists.html
-- Tutoriale i przykłady programów w języku Gleam: https://gleam.run/docs.html
-- Kurs programowania w języku Gleam w języku polskim: https://gleam.run/szkolenie.html
+## Zobacz Również
+
+- [Dokumentacja funkcji Dir.exists w języku Gleam](https://gleam.run/modules/gleam_io/dir.html#exists)
+- [Przykłady użycia funkcji Dir.exists](https://github.com/gleam-lang/gleam/blob/master/tests/io_dir_test.gleam)

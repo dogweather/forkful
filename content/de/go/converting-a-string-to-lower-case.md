@@ -1,43 +1,42 @@
 ---
-title:    "Go: Umwandeln eines Strings in Kleinbuchstaben"
+title:    "Go: Eine Zeichenfolge in Kleinbuchstaben umwandeln"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Konvertieren von Strings zu Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung, besonders bei der Textverarbeitung oder der Validierung von Nutzereingaben. Es ermöglicht auch eine konsistente Behandlung von Daten, die in verschiedenen Schreibweisen vorliegen.
 
-Immer wieder kommt es vor, dass man in der Programmierung mit Strings arbeiten muss. Eine gängige Anforderung ist dabei oft das Umwandeln eines Strings in Kleinbuchstaben. Warum sollte man das tun und wie funktioniert es in Go? In diesem Blog-Beitrag werden wir uns genau damit beschäftigen.
+## Wie geht's
+```Go
+// Konvertieren eines Strings zu Kleinbuchstaben
+s := "HALLO"
+fmt.Println(strings.ToLower(s))
+// Ausgabe: hallo
+```
+Um einen String zu Kleinbuchstaben zu konvertieren, können wir die Funktion `ToLower()` aus dem Paket `strings` verwenden. Diese Funktion nimmt einen String als Argument und gibt den konvertierten String zurück. In unserem Beispiel sehen wir, dass der String "HALLO" in "hallo" umgewandelt wurde.
 
-## Anleitung
-
-Die Go-Standardbibliothek bietet eine einfache Funktion, um einen String in Kleinbuchstaben zu konvertieren. Diese heißt `ToLower` und kann auf einen String angewendet werden, der in unserem Fall einfach eine Variable oder ein String-Literal sein kann.
+Eine andere Möglichkeit ist die Verwendung der Methode `ToLower()` des Datentyps `strings.Builder`. Diese ermöglicht es, direkt auf einem String zu arbeiten, ohne eine neue Variable erstellen zu müssen.
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    str := "GOLANG"
-    lowerStr := strings.ToLower(str)
-    fmt.Println(lowerStr)
-}
+// Verwendung von strings.Builder
+s := "Hallo"
+b := strings.Builder{}
+b.WriteString(s)
+b.WriteString(" Welt")
+fmt.Println(b.String())
+fmt.Println(b.String())
+// Ausgabe: hallo welt
 ```
 
-Die Ausgabe dieses Codes wäre `golang`, da die Funktion `ToLower` alle Zeichen des Strings in Kleinbuchstaben umwandelt.
+## Tiefergehende Informationen
+Ein wichtiger Punkt beim Konvertieren von Strings zu Kleinbuchstaben ist die Beachtung der Sprachunterstützung. Verschiedene Sprachen haben unterschiedliche Regeln für die Konvertierung, die beachtet werden müssen.
 
-## Tiefere Einblicke
-
-Wenn man genauer betrachtet, was genau in der `ToLower`-Funktion passiert, erfährt man, dass sie sich zunächst den Zeichensatz des Betriebssystems anschaut. Da dieser in der Regel Großbuchstaben verwendet, wie zum Beispiel `ABCDEFGHIJKLMNOPQRSTUVWXYZ`, weiß die Funktion, welche Zeichen in Kleinbuchstaben umgewandelt werden müssen. Anschließend wird eine neue `Rune`-Instanz erstellt, die alle Zeichen des Strings in Kleinbuchstaben enthält. Zuletzt wird diese Instanz zu einem String konvertiert und ausgegeben.
-
-Man sollte jedoch beachten, dass die `ToLower`-Funktion nur ASCII-Zeichen in Kleinbuchstaben umwandeln kann. Sollten im String also nicht-ASCII-Zeichen enthalten sein, müssen diese manuell bearbeitet werden.
+Wir können auch die Unicode-Eigenschaften von Go nutzen, um sicherzustellen, dass unsere Konvertierung korrekt durchgeführt wird. Dies kann durch die Verwendung von `unicode.ToLower()` erfolgen. Diese Funktion wandelt einen einzelnen Rune (ein Zeichen im String) in einen Kleinbuchstaben um und gibt ihn zurück.
 
 ## Siehe auch
-
-* [Go-Standardbibliothek: `ToLower`-Funktion](https://golang.org/pkg/strings/#ToLower)
-* [Blog-Beitrag über Strings in Go](https://www.digitalocean.com/community/tutorials/string-manipulation-in-go-de#getting-started-with-strings)
-* [Beispielcode für das Konvertieren von Strings in Go](https://gobyexample.com/string-functions)
+- [Dokumentation zu strings.ToLower()](https://golang.org/pkg/strings/#ToLower)
+- [Dokumentation zu strings.Builder](https://golang.org/pkg/strings/#Builder)
+- [Dokumentation zu unicode.ToLower()](https://golang.org/pkg/unicode/#ToLower)

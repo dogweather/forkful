@@ -1,62 +1,40 @@
 ---
-title:    "Java: Ottenerela data corrente"
+title:    "Java: Ottenere la data corrente"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-La data è una parte importante della nostra vita quotidiana. Sappiamo sempre il giorno e il mese in cui ci troviamo, ma a volte potremmo aver bisogno di ulteriori informazioni come il giorno della settimana o l'ora esatta. In questo post, impareremo come ottenere la data corrente utilizzando il linguaggio di programmazione Java.
+
+La programmazione è una forma d'arte che può portare molte soddisfazioni a chi la pratica. Ma perché dovresti imparare a ottenere la data corrente in Java? Beh, è un'operazione fondamentale per la gestione del tempo nei tuoi programmi e ti consente di creare applicazioni più efficienti e precise.
 
 ## Come fare
-Per ottenere la data corrente in Java, possiamo utilizzare la classe `LocalDate` dalla libreria `java.time`. Ecco un esempio di codice che stampa la data corrente:
+
+Per ottenere la data corrente in Java, possiamo utilizzare la classe `LocalDate` dalla libreria `java.time`. Iniziamo importando queste librerie nel nostro codice:
 
 ```Java
 import java.time.LocalDate;
-
-public class DateExample {
-    public static void main(String[] args) {
-        //ottieni la data corrente
-        LocalDate currentDate = LocalDate.now();
-
-        //stampa la data in formato dd/mm/yyyy
-        System.out.println("La data corrente è: " + currentDate.getDayOfMonth() + "/" + currentDate.getMonthValue() + "/" + currentDate.getYear());
-    }
-}
+import java.time.format.DateTimeFormatter;
 ```
 
-L'output di questo codice sarà: `La data corrente è: 14/09/2021`.
-
-Possiamo anche ottenere la data corrente con il fuso orario specifico utilizzando la classe `ZonedDateTime` come mostrato nell'esempio seguente:
+Adesso possiamo utilizzare il metodo `now()` della classe `LocalDate` per ottenere la data corrente nel formato desiderato. Ad esempio, se vogliamo visualizzare la data in formato "gg/mm/aaaa", possiamo usare il seguente codice:
 
 ```Java
-import java.time.ZonedDateTime;
-import java.time.ZoneId;
-
-public class DateExample {
-    public static void main(String[] args) {
-        //ottieni la data corrente con il fuso orario di Roma
-        ZonedDateTime currentDate = ZonedDateTime.now(ZoneId.of("Europe/Rome"));
-
-        //stampa la data in formato dd/mm/yyyy hh:mm:ss
-        System.out.println("La data corrente è: " +
-                currentDate.getDayOfMonth() + "/" +
-                currentDate.getMonthValue() + "/" +
-                currentDate.getYear() + " " +
-                currentDate.getHour() + ":" +
-                currentDate.getMinute() + ":" +
-                currentDate.getSecond());
-    }
-}
+LocalDate dataCorrente = LocalDate.now();
+DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+System.out.println("La data corrente è: " + dataCorrente.format(formato));
 ```
 
-L'output di questo codice sarà: `La data corrente è: 14/09/2021 18:30:12`.
+L'output di questo codice sarà simile a questo: `La data corrente è: 22/07/2021`.
 
-## Approfondimenti
-Per ottenere una migliore comprensione di come funziona il codice sopra riportato, è importante conoscere alcune nozioni di base sulla data e sull'ora in Java. Il pacchetto `java.time` è stato introdotto nella versione 8 di Java ed è il modo consigliato per gestire la data e l'ora. Include molte classi utili come `LocalDate`, `LocalTime`, `LocalDateTime`, `ZonedDateTime`, ecc. Ognuna di queste classi offre metodi specifici per ottenere parti specifiche della data o dell'ora.
+## Approfondimento
 
-Inoltre, è possibile giocare con i formati della data e dell'ora utilizzando la classe `DateTimeFormatter`. Questa classe ci consente di cambiare il formato predefinito della data e dell'ora e di convertirli in altri formati come ISO, RFC, ecc.
+Oltre a ottenere la data corrente, la classe `LocalDate` ci permette anche di manipolare facilmente le date. Ad esempio, possiamo aggiungere o sottrarre giorni, mesi o anni alla data corrente utilizzando i metodi `plusDays()`, `plusMonths()` e `plusYears()`. Possiamo anche confrontare due date utilizzando i metodi `isBefore()` o `isAfter()`. Per ulteriori informazioni su come gestire le date in Java, puoi consultare la documentazione ufficiale della classe `LocalDate`.
 
 ## Vedi anche
-- [Documentazione ufficiale di Java sul pacchetto java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Un tutorial su come utilizzare il pacchetto java.time](https://www.baeldung.com/java-8-date-time-intro)
+
+- Documentazione ufficiale di `LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- Tutorial su Java Date and Time API: https://www.baeldung.com/java-datetime-api
+- Guida completa su come gestire le date in Java: https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant

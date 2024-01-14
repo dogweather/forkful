@@ -1,76 +1,52 @@
 ---
-title:    "Haskell: Tiedoston lukeminen"
+title:    "Haskell: Tekstitiedoston lukeminen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea tekstitiedostoja?
+## Miksi
 
-Monet ohjelmat ja sovellukset käsittelevät suuria määriä tietoa, ja usein tämä tieto tallennetaan tekstitiedostoihin. Tekstitiedostoja voidaan lukea ja käsitellä eri ohjelmointikielillä, mukaan lukien Haskell. Tässä blogikirjoituksessa opimme, kuinka voit lukea ja käyttää tekstitiedostoja Haskellissa.
+Useimmat meistä ovat luultavasti törmänneet tekstifileihin aikaisemmin työskennellessämme data-analyysin tai ohjelmoinnin parissa. Kyseessä on yksi yleisimmistä tiedostotyypeistä, joten on tärkeää tietää, kuinka niitä voidaan käsitellä tehokkaasti ja kätevästi. Tässä blogitekstissä opimme, kuinka lukea tekstifilejä Haskellilla ja miksi se voi olla hyödyllistä.
 
-## Miten tehdä se Haskellilla?
+## Kuinka tehdä se
 
-Haskellissa tekstitiedoston lukeminen on melko yksinkertaista. Käytämme `readFile`-funktiota, joka lukee tiedoston ja palauttaa sen sisällön merkkijonona.
-
-```Haskell
--- Avataan tiedosto ja luetaan sen sisältö
-tiedosto <- readFile "tiedostonimi.txt"
--- Tulostetaan tiedoston sisältö konsoliin
-putStrLn tiedosto
-
--- Tulostaa: Tämä on tekstitiedosto.
-```
-
-Kuten näemme, `putStrLn`-funktio tulostaa tiedoston sisällön konsoliin. Voimme myös tallentaa tiedoston sisällön muuttujaan ja käyttää sitä muilla tavoilla.
+Lukeminen tekstifilejä Haskellilla on suhteellisen yksinkertaista. Siitä huolimatta se voi joskus olla hieman hämmentävää, etenkin jos olet juuri aloittamassa Haskell-ohjelmointia. Tässä on kuitenkin muutama esimerkki, joista voit ottaa mallia:
 
 ```Haskell
--- Tallennetaan tiedoston sisältö muuttujaan
-sisalto <- readFile "tiedostonimi.txt"
--- Etsitään ja tulostetaan tietty sana tiedoston sisällöstä
-let sana = "tekstitiedosto."
-putStrLn $ "Tiedostossa löytyi sana " ++ sana
+import System.IO
 
--- Tulostaa: Tiedostossa löytyi sana tekstitiedosto.
+main = do
+  file <- openFile "demo.txt" ReadMode  -- avataan tiedosto lukutilassa
+  contents <- hGetContents file         -- luetaan tiedoston sisältö
+  putStr contents                       -- tulostetaan sisältö konsoliin
 ```
 
-Voimme myös käsitellä tiedoston sisältöä muilla tavoilla, kuten esimerkiksi muuttaa sen listaksi merkkijonojen sijaan. Alla olevassa esimerkissä muutamme tiedoston rivit listaksi ja tulostamme sen sisällön.
+Tässä esimerkissä käytämme `System.IO` -paketin `openFile` -funktiota avataksemme tiedoston nimeltä "demo.txt" lukutilassa. Avatessamme tiedoston käytämme `hGetContents` -funktiota lukemaan sen sisällön. Lopuksi käytämme `putStr` -funktiota tulostamaan tiedoston sisällön konsoliin.
+
+Voit myös halutessasi käyttää `withFile` -funktiota, joka avaa tiedoston, suorittaa annetun toiminnon ja sulkee tiedoston automaattisesti. Se näyttää tältä:
 
 ```Haskell
--- Tallennetaan tiedoston sisältö muuttujaan
-sisalto <- readFile "tiedostonimi.txt"
--- Jaetaan tiedoston sisältö rivit listaksi
-let rivit = lines sisalto
--- Tulostetaan listan sisältö konsoliin
-putStrLn $ "Listassa on " ++ show (length rivit) ++ " riviä."
+import System.IO
 
--- Tulostaa: Listassa on 1 riviä.
+main = do
+  withFile "demo.txt" ReadMode (\handle -> do
+    contents <- hGetContents handle -- luetaan tiedoston sisältö
+    putStr contents                 -- tulostetaan sisältö konsoliin
+  )
 ```
 
-## Syvällinen sukellus
+Molemmat esimerkit toimivat samalla tavalla ja antavat saman tulosteen. Voit kokeilla muuttaa koodia, esimerkiksi lukea tiedoston rivit ja käsitellä niitä erikseen.
 
-Vaikka `readFile`-funktio onkin helppokäyttöinen ja kätevä, on hyvä tietää myös muita tapoja lukea tiedostoja Haskellissa. Voimme käyttää `withFile`-funktiota, joka avaa tiedoston ja suorittaa määritellyn toiminnon sen sisällölle.
+## Syventävä sukellus
 
-```Haskell
--- Avataan tiedosto ja suoritetaan toiminto sen sisällölle
-withFile "tiedostonimi.txt" ReadMode $ \tiedosto -> do
-    sisalto <- hGetContents tiedosto
-    putStrLn sisalto
+Nyt kun olemme käsitelleet perusteet, haluan nostaa esille muutamia lisäaspekteja, jotka voivat auttaa sinua lukiessasi ja työskennellessäsi tekstifileiden kanssa Haskellilla.
 
--- Tulostaa: Voit myös lukea tekstitiedostoja withFile-funktiolla!
-```
+Ensinnäkin, sinun tulisi aina sulkea tiedosto, kun olet saanut sen käsiteltyä loppuun. Tämä on tärkeää, sillä avoimet tiedostot voivat aiheuttaa muistiongelmia tai jopa hidastaa ohjelmaa. Voit sulkea tiedoston `hClose` -funktiolla.
 
-Voimme myös määrittää tiedoston avaustilaksi `WriteMode`, jolloin voimme kirjoittaa tiedoston sisältöä.
+Toiseksi, voit käyttää `hIsEOF` -funktiota tarkistaaksesi, oletko jo päässyt tiedoston loppuun. Tämä voi auttaa sinua käsittelyssä, esimerkiksi jos haluat käsitellä tiedostoa rivillä kerrallaan.
 
-```Haskell
--- Avataan tiedosto kirjoittamista varten
-withFile "uusitiedosto.txt" WriteMode $ \tiedosto -> do
-    -- Kirjoitetaan tiedoston sisältöä
-    hPutStrLn tiedosto "Kirjoitetaan uuteen tiedostoon!"
-    hPutStrLn tiedosto "Tämä on uusi rivi."
-```
+Lisäksi voit kokeilla tutkia `Text` -paketin tarjoamia työkaluja tekstien käsittelyyn, kuten `lines` ja `unlines` -funktioita, jotka jakavat tai yhdistävät tekstin rivien avulla.
 
-## Katso myös
-
-- [Haskellin virallinen dokumentaatio tiedoston lukemisesta](https://www.haskell.org/tutorial/io.html#reading-files)
-- [Learn You a Haskell for Great Good! -kirjan luku tiedostoista](http://learnyouahaskell.com/input-and-output#files-and-streams)
+Lopuksi haluan muistuttaa, että muuttujien tyypin määrittäminen voi auttaa sinua lukiessasi tiedostoa, etenkin jos se sisältää monen tyyppistä dataa. Esimerkiksi jos haluat lukea tiedoston kokonaislukuja, voit käyttää

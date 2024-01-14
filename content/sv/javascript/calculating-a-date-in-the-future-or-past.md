@@ -1,48 +1,38 @@
 ---
-title:    "Javascript: Beräkna ett datum i framtiden eller förflutna"
+title:    "Javascript: Beräkning av ett datum i framtiden eller i det förflutna"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
+Det finns många tillfällen när man behöver beräkna ett datum i framtiden eller förflutet. Kanske när man ska skapa en kalenderapplikation eller planera en resa. I denna bloggpost kommer vi att utforska hur man kan använda Javascript för att utföra dessa beräkningar.
 
-Beräkning av ett datum i framtiden eller det förflutna kan vara en användbar programmeringsfärdighet för att automatisera processer eller skapa dynamiska tidsbaserade funktioner. Det kan också vara en rolig utmaning för programmerare att utveckla algoritmer för att göra detta.
+## Hur man gör
+För att beräkna ett datum i framtiden eller förflutet i Javascript, behöver vi först skapa ett nytt Date-objekt med hjälp av `new Date()` konstruktorn. Därefter kan vi använda olika metoder för att manipulera detta datum.
 
-## Så här gör du
+För att beräkna ett datum i framtiden lägger vi till antalet millisekunder i framtiden som vi vill att datumet ska vara. Till exempel, om vi vill ha datumet för 5 dagar framöver, lägger vi till 5 dagar motsvarande 5 * 24 * 60 * 60 * 1000 millisekunder till datumet.
 
-För att beräkna ett datum i framtiden eller förflutna i Javascript, kan man använda Date-objektet och dess metoder. För att få ett datum 10 dagar framåt, kan man använda följande kod:
-
-```Javascript 
-let dagensDatum = new Date(); //skapar ett Date-objekt för dagens datum 
-let nyttDatum = new Date(dagensDatum.setDate(dagensDatum.getDate() + 10)); //lägger till 10 dagar till dagens datum 
-console.log(nyttDatum); //utskrift: 10 dagar framåt i tiden från dagens datum 
+```Javascript
+const today = new Date();
+const futureDate = new Date(today.getTime() + (5 * 24 * 60 * 60 * 1000)); // 5 dagar i millisekunder
+console.log(futureDate); // Output: 2021-06-10T10:35:28.348Z
 ```
 
-På samma sätt kan man använda Date-objektet för att få ett datum 10 dagar bakåt. Skillnaden är att man använder sig av `setDate()` metoden med ett negativt värde:
+För att beräkna ett datum i förflutet drar vi istället antalet millisekunder från datumet. Till exempel, om vi vill ha datumet för 2 veckor sedan, drar vi 2 veckors motsvarande 2 * 7 * 24 * 60 * 60 * 1000 millisekunder från dagens datum.
 
-```Javascript 
-let dagensDatum = new Date(); 
-let nyttDatum = new Date(dagensDatum.setDate(dagensDatum.getDate() - 10)); 
-console.log(nyttDatum); //utskrift: 10 dagar bakåt i tiden från dagens datum 
+```Javascript
+const today = new Date();
+const pastDate = new Date(today.getTime() - (2 * 7 * 24 * 60 * 60 * 1000)); // 2 veckor i millisekunder
+console.log(pastDate); // Output: 2021-05-23T10:35:28.348Z
 ```
 
-Man kan också specificera ett visst datum istället för dagens datum. Till exempel, om man vill ha ett datum 5 månader framåt i tiden från 1 januari 2021, kan man använda följande kod:
+## Djupdykning
+Det finns även andra metoder som kan användas för att beräkna datum i framtiden och förflutet i Javascript. Till exempel, `setDate()` och `getDate()` för att manipulera och hämta specifika datumvärden som dagar, `setMonth()` och `getMonth()` för månader, och så vidare.
 
-```Javascript 
-let startDatum = new Date("2021-01-01"); //skapar ett Date-objekt för 1 januari 2021 
-let nyttDatum = new Date(startDatum.setMonth(startDatum.getMonth() + 5)); //lägger till 5 månader till startdatumet 
-console.log(nyttDatum); //utskrift: 1 juni 2021 
-```
-
-## Djupdykning 
-
-Hela Date-objektet och dess metoder kan vara ganska komplexa att förstå och det finns många olika sätt att manipulera datum och tid i Javascript. Det är viktigt att förstå skillnaderna mellan olika metoder som `setDate()` och `setFullYear()` för att kunna skapa korrekta beräkningar. Att hantera tidszoner kan också vara en utmaning att hantera vid datumberäkningar.
-
-Referera till Javascripts dokumentation för mer detaljerad information om Date-objektet och dess metoder.
+Det finns också bibliotek och paket, som moment.js, som kan förenkla detta beräkningsprocessen och ge mer flexibilitet och funktionalitet.
 
 ## Se även
-
-- [Datum och tid i Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Datetime bibliotek för Javascript](https://momentjs.com/)
-- [Tidszonskonvertering i Javascript](https://momentjs.com/timezone/)
+- [Date object in Javascript (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [moment.js](https://momentjs.com/)

@@ -1,34 +1,53 @@
 ---
-title:    "Arduino: Å finne lengden på en streng"
+title:    "Arduino: Å finne lengden av en streng"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å finne lengden på en streng er en vanlig oppgave i programmering, spesielt hvis man jobber med dataanalyse, tekstbehandling eller kommunikasjon med eksterne enheter. Det er også en grunnleggende kunnskap som er viktig å mestre når man lærer å programmere.
+Enten du er nybegynner eller mer erfaren innenfor Arduino-programmering, vil du på et eller annet tidspunkt måtte håndtere strenger (engelsk: strings). Strenger refererer til en samling av tegn eller bokstaver som er satt sammen for å danne en tekst. Å finne lengden av en streng kan være nyttig når du arbeider med input fra brukere eller når du trenger å manipulere tekst i koden din.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å finne lengden på en streng i Arduino, kan vi bruke funksjonen `strlen()`. Denne funksjonen tar inn en streng som parameter og returnerer lengden på strengen. La oss se på et eksempel:
+For å finne lengden av en streng i Arduino, kan du bruke funksjonen `strlen()`, som finnes i standardbiblioteket `string.h`. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-```Arduino
-String name = "Erik";
-int length = strlen(name);
-Serial.println(length); // Dette vil skrive ut tallet 4, da "Erik" har 4 bokstaver
+```
+// Inkluderer den nødvendige headeren
+#include <string.h>
+
+void setup() {
+    // Setter den serielle kommunikasjonshastigheten til 9600 baud
+    Serial.begin(9600);
+}
+
+void loop() {
+    // Oppretter en streng ved å bruke "String" datatypen
+    String navn = "Ole Olsen";
+
+    // Bruker strlen() for å finne lengden av strengen
+    int lengde = strlen(navn);
+
+    // Sender lengden av strengen til serieporten
+    Serial.println(lengde);
+
+    // Venter 2 sekunder før loopen kjører på nytt
+    delay(2000);
+}
 ```
 
-Som du kan se, er det veldig enkelt å finne lengden på en streng. Man kan også bruke `name.length()` som er en annen innebygd funksjon i Arduino for å få samme resultat.
+I dette eksemplet oppretter vi først en streng og deretter bruker `strlen()` til å finne lengden av denne strengen. Resultatet blir deretter sendt til serieporten, slik at du kan se det i seriellmonitor. Husk å også inkludere `string.h` i koden din for å bruke `strlen()`.
 
 ## Dypdykk
 
-En ting å være oppmerksom på er at `strlen()` fungerer på en måte som er forskjellig fra de fleste andre språk. Hvis du prøver å bruke den på en variabel som ikke er en streng, vil den gi uforutsigbare resultater. I stedet kan du bruke funksjonen `sizeof()`, som vil gi deg størrelsen på variabelen i bytes. Dette er spesielt nyttig hvis du jobber med arrays og trenger å finne størrelsen på dem.
+Å finne lengden av en streng ved hjelp av `strlen()` er en veldig enkel og effektiv måte å håndtere tekst på i Arduino. Denne funksjonen går gjennom strengen og teller antall tegn før den når slutten av strengen, som ofte er markert med tegnet `\0`, også kjent som "nullterminering". Det betyr at `strlen()` stopper å telle når den kommer til dette tegnet.
 
-En annen ting å merke seg er at `strlen()` teller bare bokstaver i en streng, ikke symboler som mellomrom eller tegn med aksenter. Hvis du vil inkludere disse i tellingen, kan du bruke `name.getBytes()` som vil gi deg et array med hver enkelt byte i strengen.
+Det er også verdt å nevne at `strlen()` fungerer bare på strenger som er laget ved hjelp av `String` datatypen. Dersom du bruker en C-streng (engelsk: C-string) som er lagret som en array av tegn i en variabel, vil du måtte bruke en annen metode for å finne lengden av strengen.
 
 ## Se også
 
-* [Offisiell Arduino dokumentasjon for `strlen()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
-* [Tutorial om strings i Arduino](https://www.arduino.cc/en/Tutorial/StringLengthTrim)
-* [Stack Overflow diskusjon om å finne lengden på en streng i Arduino](https://stackoverflow.com/questions/18195450/how-to-find-the-length-of-a-string-in-arduino)
+- [Offisiell referanse for String akaratertegn (engelsk)](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
+- [Mer informasjon om C-strenger (engelsk)](https://www.programiz.com/c-programming/c-strings)
+- [Andre nyttige funksjoner for å håndtere strenger i Arduino (engelsk)](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

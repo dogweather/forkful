@@ -1,102 +1,61 @@
 ---
 title:    "C: デバッグ出力のプリント"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラムのデバッグを行う際、デバッグ出力を行うことはとても重要です。デバッグ出力を行うことで、プログラムの実行中に発生するエラーや問題を素早く特定し、修正することができます。
+プログラミングでデバッグ用の出力を表示することの重要性は、特定のコードの問題を特定することができるためです。出力を使用することで、コード内で何が起こっているかを理解し、バグを見つけ、修正することができます。
 
 ## 方法
 
-デバッグ出力を行うには、標準出力関数である`printf()`を使用します。以下の例では、変数`num`の値を表示します。
+以下の例では、C言語でデバッグ用の出力を表示する方法を示します。
 
 ```C
 #include <stdio.h>
 
 int main()
 {
-    int num = 5;
-    printf("numの値は%dです。", num);
-    return 0;
-}
+    // 単純な出力
+    printf("こんにちは、世界！\n");
 
-// Output:
-// numの値は5です。
-```
+    // 変数の値を出力
+    int a = 5;
+    printf("aの値は %d です。\n", a);
 
-また、デバッグ出力を行う際には、`printf()`を条件文やループ文の中に入れることで、特定の場所でのみ出力することもできます。
-
-```C
-#include <stdio.h>
-
-int main()
-{
-    int num = 5;
-    for (int i = 0; i < 10; i++)
+    // 条件式を出力
+    int b = 10;
+    printf("bの値は %d です。\n", b);
+    if (a < b) 
     {
-        if (i == num)
-        {
-            printf("numの値は%dです。", num);
-        }
+        printf("aはbより小さいです。\n");
+    } 
+    else 
+    {
+        printf("aはbより大きいです。\n");
     }
     return 0;
 }
+```
 
-// Output:
-// numの値は5です。
+出力例：
+
+```
+こんにちは、世界！
+aの値は 5 です。
+bの値は 10 です。
+aはbより小さいです。
 ```
 
 ## ディープダイブ
 
-デバッグ出力を行う際には、出力したい情報とそのフォーマットについて考えることが重要です。出力される情報が分かりやすいように、メッセージには変数の値や結果を含めることができます。また、整形指定子を使用することで、文字列や変数を特定の形式で表示することもできます。
+デバッグ用の出力には、標準出力の他にも様々な方法があります。例えば、`fprintf()`関数を使用することで、ファイルに出力を保存することができます。また、デバッグのためには特定の情報を表示することが重要ですので、`-D`オプションを使用して、プログラムのコンパイル時にデバッグ用のコードを追加することもできます。
 
-例えば、小数点以下2桁までの浮動小数点数を表示する際には、`%.2f`という指定子を使用できます。
+## See Also
 
-```C
-#include <stdio.h>
-
-int main()
-{
-    double num = 3.14159;
-    printf("円周率は%.2fです。", num);
-    return 0;
-}
-
-// Output:
-// 円周率は3.14です。
-```
-
-さらに、複数の変数を出力する際には、カンマで区切ることで順番に値が表示されます。
-
-```C
-#include <stdio.h>
-
-int main()
-{
-    int num1 = 10;
-    int num2 = 20;
-    printf("num1の値は%dで、num2の値は%dです。", num1, num2);
-    return 0;
-}
-
-// Output:
-// num1の値は10で、num2の値は20です。
-```
-
-デバッグ出力においては、このように出力のフォーマットを工夫することで、問題の特定や修正がよりスムーズに行えるようになります。
-
-## 関連リンク
-
-[C言語入門 - デバッグとprintf](https://www.javadrive.jp/cstart/printf/index7.html)
-
-[C - printf()関数について初心者向けに解説【基本編】](https://www.sejuku.net/blog/16924)
-
-[C言語のデバッグの方法～printfデバッグを使う～](https://qiita.com/moguno/items/0f5abf53d630f468c615)
-
-[Vimプラグインで幸せになるためのデバッグ Printならprintf.vim](https://qiita.com/prince_nano/items/aa565c088c0cbb301f13)
-
-```japanese
-# また、いつもお使いのテキストエディタには、デバッグ出力を行うためのプラグインがあるかもしれませんので、お調べください。
+- [C言語: はじめてのデバッグ方法](https://qiita.com/torimoto-shinya/items/e4aef85eacc0895c6g49)
+- [デバッグ用の出力を活用してCプログラムを改善する方法](https://www.howtogeek.com/507107/how-to-print-debug-messages-in-c-programs/)
+- [C言語でのデバッグ方法](https://docs.microsoft.com/ja-jp/cpp/c-language/c-debugging-and-preprocessor-directives?view=msvc-160)

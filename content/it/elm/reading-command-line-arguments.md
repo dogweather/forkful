@@ -1,62 +1,51 @@
 ---
-title:    "Elm: Lettura degli argomenti della riga di comando"
+title:    "Elm: Leggere gli argomenti della riga di comando"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Se sei un programmatore che utilizza Elm, è probabile che tu abbia già avuto a che fare con i tuoi script che richiedono input dall'utente, ma non sai come gestire i comandi da riga di comando. In questo post, ti illustrerò come leggere e gestire i parametri di input da riga di comando nel linguaggio di programmazione Elm.
+Alcune volte, quando si scrive un programma, può essere utile avere la possibilità di leggere gli argomenti inseriti dalla riga di comando. Questo può essere particolarmente utile quando si vuole rendere il programma più flessibile e configurabile.
 
 ## Come fare
-
-Per leggere i parametri da riga di comando in Elm, è necessario importare il modulo "Platform" e utilizzare la funzione `worker`. Qui di seguito troverai un semplice esempio di come gestire un singolo argomento di input.
+Per leggere gli argomenti dalla riga di comando in Elm, è necessario utilizzare il modulo `Platform.Cmd`, che fornisce una funzione `Cmd.args` che restituisce una lista di stringhe contenti gli argomenti inseriti dalla riga di comando.
 
 ```Elm
-module Main exposing (main)
+import Platform.Cmd
 
-import Platform
-
-main : Program Never String
-main = 
-    Platform.worker
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        }
-
-type alias Model = 
-    { arg : String 
+main : Program flags
+main =
+  Platform.worker
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
     }
 
-init : () -> (Model, Cmd Msg)
+init : flags -> ( Model, Cmd Msg )
 init _ =
-    ( Model "default", Cmd.none )
+  ( [], Cmd.none )
 
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model = 
-    case msg of 
-        SetArgument arg ->
-            ( { model | arg = arg }, Cmd.none )
+type Msg = GetCommandLineArgs (List String)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    GetCommandLineArgs args ->
+      ( model ++ args, Cmd.none )
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
-
-type Msg = 
-    SetArgument String
-
+  Platform.Cmd.args GetCommandLineArgs
 ```
 
-In questo esempio, il parametro inserito dall'utente verrà memorizzato nella variabile `arg` del modello. Per utilizzare più di un parametro, è necessario utilizzare una lista o una tupla come tipo del modello e gestire gli argomenti singolarmente o utilizzare la funzione `Platform.worker` per gestire tutti i parametri in un unico evento.
+Nell'esempio sopra, abbiamo utilizzato la funzione `Cmd.none` per indicare che non vogliamo eseguire alcun codice quando viene ricevuto il messaggio. Invece, aggiungiamo gli argomenti alla nostra struttura di dati Model.
 
-## Approfondimento
-
-Oltre alla funzione `worker` utilizzata nell'esempio, ci sono anche altri modi per gestire i comandi da riga di comando in Elm. Ad esempio, è possibile utilizzare il modulo `Task` per creare una task che legga i parametri da riga di comando. Inoltre, esistono anche librerie di terze parti come `elm-argv` che semplificano ulteriormente la gestione di input da riga di comando in Elm.
+## Analisi approfondita
+In realtà, la funzione `Cmd.args` non legge direttamente gli argomenti dalla riga di comando. Piuttosto, utilizza la funzione `Platform.worker` per creare un'interfaccia con il sistema operativo che gestisce l'esecuzione del codice. Ciò significa che non dobbiamo preoccuparci dei dettagli di basso livello del sistema operativo, ma possiamo semplicemente utilizzare i valori restituiti dalla funzione `Cmd.args` nel nostro codice.
 
 ## Vedi anche
-
-- Documentazione ufficiale di Elm sul modulo Platform: https://package.elm-lang.org/packages/elm/core/latest/Platform
-- Esempi pratici di gestione di input da riga di comando in Elm: https://gist.github.com/zwilias/06e9dc120552c5d70deb
-- Libreria di terze parti per la gestione di input da riga di comando in Elm: https://package.elm-lang.org/packages/elm-community/elm-argv/latest/
+- Documentazione ufficiale di Elm: https://elm-lang.org/docs
+- Tutorial su come leggere gli argomenti dalla riga di comando in Elm: https://guide.elm-lang.org/interop/cmd.html
+- Esempi di progetti Elm che utilizzano la lettura degli argomenti dalla riga di comando: https://github.com/topics/elm-command-line-args

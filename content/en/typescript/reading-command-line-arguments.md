@@ -1,52 +1,61 @@
 ---
 title:    "TypeScript recipe: Reading command line arguments"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Reading command line arguments is an essential part of programming and can greatly improve the functionality and flexibility of your code. It allows you to pass data and input directly into your program without having to modify the source code. This can be especially useful when your program needs to be run multiple times with different input parameters.
+## Why
+
+As a TypeScript programmer, you may have encountered situations where you need to pass in command line arguments to your program. Whether it's to provide user input or to customize the behavior of the program, knowing how to read command line arguments can be a useful skill to have. In this blog post, we will explore the basics of reading command line arguments in TypeScript and how you can use them in your own projects.
 
 ## How To
-To read command line arguments in a TypeScript program, we first need to access the `process` object which is available globally. Inside this object, we can access an array called `argv` which contains all the command line arguments passed to the program. Let's take a look at an example:
+
+Reading command line arguments in TypeScript is a fairly straightforward process. The `process.argv` function is the key to retrieving and parsing the arguments. Let's take a look at a simple example where we want to print out a message based on a user's input:
 
 ```TypeScript
+// printing-message.ts
+const args = process.argv; // retrieving arguments
+const userInput = args[2]; // accessing the third argument - first two are reserved for Node and the file path
+
+console.log(`Hello ${userInput}! Welcome to my program.`);
+```
+
+If we run this program with the command `ts-node printing-message.ts John`, our output would be:
+
+```
+Hello John! Welcome to my program.
+```
+
+We can also pass in multiple arguments and access them accordingly. Let's modify our program to accept two user inputs:
+
+```TypeScript
+// printing-message.ts
 const args = process.argv;
-console.log(args);
+const firstInput = args[2];
+const lastInput = args[3];
+
+console.log(`Hello ${firstInput} ${lastInput}! Welcome to my program.`);
 ```
 
-Now, when we run this program and pass in some arguments, for example `node index.ts arg1 arg2`, we will get the following output:
+Running this program with the command `ts-node printing-message.ts John Smith` would give us:
 
 ```
-[ 'node', '/path/to/index.ts', 'arg1', 'arg2' ]
-```
-
-As you can see, the first two arguments are always the absolute path to the Node.js binary and the path to the file being executed. The following arguments are the ones we have passed in ourselves. 
-
-We can also access specific arguments by using the index of the `argv` array. For example, `args[2]` would give us the first argument we passed in.
-
-```TypeScript
-console.log(args[2]); // outputs 'arg1'
-```
-
-We can also use the `slice()` method to access a range of arguments.
-
-```TypeScript
-const args = process.argv.slice(2); // this will exclude the first two arguments
-console.log(args); // outputs [ 'arg1', 'arg2' ]
+Hello John Smith! Welcome to my program.
 ```
 
 ## Deep Dive
-Command line arguments are always passed in as strings, so if your program expects a different data type, you will need to convert it. This can be done using methods like `parseInt()` or `parseFloat()`.
 
-Another important thing to note is that command line arguments are always passed in as a series of strings, even if they represent numbers or booleans. This means that you will need to handle any type conversions or validations in your code.
+Now that we have the basics of reading command line arguments down, let's dive a bit deeper into the details. Firstly, it's important to note that `process.argv` returns an array of strings, with the first two elements being reserved for Node and the file path, respectively. This means that the actual user inputs start from the third element.
 
-Also, it's important to properly handle any errors that may occur when reading command line arguments. For example, if the user doesn't pass in the expected number of arguments, your code should handle this and provide a meaningful error message.
+Additionally, all command line arguments are treated as strings, even if they are numbers. So, if you want to use a command line argument as a number in your program, you will need to convert it to a number using `parseInt()` or `parseFloat()`.
 
-Lastly, it's worth mentioning that there are libraries available, such as `yargs`, that can make working with command line arguments in TypeScript even easier. These libraries provide helpful functions and methods for parsing and validating arguments.
+It's also worth mentioning that we can use named arguments by specifying them in the command line with a double dash, like `--input=name`. These named arguments can be accessed using the `process.argv` array with `process.argv[index].slice(2)`.
 
 ## See Also
-- [Node.js process documentation](https://nodejs.org/api/process.html)
-- [TypeScript documentation](https://www.typescriptlang.org/docs/home.html)
-- [yargs library](https://www.npmjs.com/package/yargs)
+- [Node.js process.argv documentation](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_argv)
+- [TypeScript String interpolation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-interpolation)
+- [TypeScript parseInt() documentation](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#union-types)
+
+With this knowledge, you should now be able to utilize command line arguments in your TypeScript programs. Happy coding!

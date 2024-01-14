@@ -1,44 +1,65 @@
 ---
-title:    "Haskell: 문자열 연결하기"
+title:    "Haskell: 문자열 연결"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-스트링을 결합하는 것이 유용한 이유는 다양합니다. 모든 프로그래머는 스트링을 연결할 때 동일한 방법을 사용하고 이 방법을 익히는 것은 더 나은 코드 작성에 도움이 됩니다. 
+
+문자열을 연결하는 방법을 배우기 전에, 우리는 왜 이것을 해야하는지에 대해서 이야기해야 합니다. 문자열을 연결하는 것은 컴퓨터 프로그래밍에서 매우 일반적인 작업 중 하나입니다. 예를 들어, 사용자로부터 입력을 받고 그것을 반영하는 프로그램을 만들거나, 다른 파일들의 이름을 합쳐서 새로운 파일을 만드는 등에 사용할 수 있습니다. 이는 간단한 작업처럼 보일 수 있지만, 실제로는 매우 중요한 작업입니다. 그러니까 문자열을 연결하는 방법을 익혀두는 것은 우리에게 도움이 됩니다.
 
 ## 어떻게
-스트링을 결합하는 방법은 다양한데, 가장 일반적인 방법은 `++` 연산자를 사용하는 것입니다. 예시 코드는 다음과 같습니다.
+
+Haskell을 사용하여 문자열을 연결하는 방법을 배우기 전에, 우리는 먼저 문자열이 어떻게 이루어져 있는지 알아야 합니다. 일반적으로 문자열은 문자들의 리스트로 이루어져 있습니다. 예를 들어, "Hello World"라는 문자열은 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'라는 문자들의 리스트로 이루어져 있습니다.
+
+이제 문자열을 연결하는 방법을 배워봅시다. 우리는 `++` 연산자를 사용하여 두 개의 문자열을 연결할 수 있습니다.
 
 ```Haskell
-concatStrings :: String -> String -> String
-concatStrings s1 s2 = s1 ++ s2
-
-main = do
-  let str1 = "안녕하세요, "
-  let str2 = "저는 Haskell입니다."
-  let result = concatStrings str1 str2
-  putStrLn result
+"Hello " ++ "World"
 ```
 
-위 코드의 결과는 "안녕하세요, 저는 Haskell입니다."가 됩니다. 또 다른 스트링을 추가하고 싶다면, 이 방법을 계속 사용하여 여러 스트링을 결합할 수 있습니다.
-
-## 딥 다이브
-스트링을 결합하는 또 다른 방법은 `concat` 함수를 사용하는 것입니다. `concat` 함수는 리스트 안의 모든 스트링을 결합하여 하나의 스트링으로 만들어 줍니다. 예시 코드는 다음과 같습니다.
+위의 코드는 "Hello World"라는 문자열을 생성합니다. 또한, 우리는 문자열을 변수에 저장하고 `++` 연산자를 사용하여 문자열을 연결할 수도 있습니다.
 
 ```Haskell
-concatStrings :: [String] -> String
-concatStrings strs = concat strs
-
-main = do
-  let strings = ["안녕하세요, ", "저는 Haskell,", " 코딩을 좋아합니다."]
-  let result = concatStrings strings
-  putStrLn result
+let str1 = "Hello "
+let str2 = "World"
+str1 ++ str2
 ```
 
-위 코드의 결과는 "안녕하세요, 저는 Haskell, 코딩을 좋아합니다."가 됩니다. `concat` 함수는 리스트 안의 항목 순서대로 스트링을 결합하므로, 주의해서 사용해야 합니다.
+위의 코드는 "Hello World"라는 문자열을 생성합니다. 이제 다음은 두 개의 변수에 저장된 문자열을 연결하여 새로운 변수에 할당하는 예제입니다.
 
-## 또 보기
-- [Haskell 문자열 연결하기](https://stackoverflow.com/questions/26996131/haskell-concatenating-strings)
-- [Haskell 기본 문법](https://ko.wikipedia.org/wiki/하스켈_(프로그래밍_언어))
+```Haskell
+let name = "Korean"
+let greeting = "Hello "
+let message = greeting ++ name
+```
+
+위의 코드는 "Hello Korean"이라는 문자열을 생성하고 `message` 변수에 할당합니다.
+
+## 깊게 파고들기
+
+Haskell에서 `++` 연산자는 두 개의 문자열을 새로운 문자열로 연결하는 방법 중 하나입니다. 이외에도 문자열을 연결하는 다른 방법들이 존재합니다. 예를 들어, 우리는 `concat` 함수를 사용하여 문자열의 리스트를 연결할 수도 있습니다.
+
+```Haskell
+let names = ["Korean", "Chinese", "Japanese"]
+concat names
+```
+
+위의 코드는 "KoreanChineseJapanese"라는 문자열을 생성합니다. 또한, 우리는 `foldl` 함수를 사용하여 문자열의 리스트를 연결할 수도 있습니다.
+
+```Haskell
+let names = ["Korean", "Chinese", "Japanese"]
+foldl (++) "" names
+```
+
+위의 코드는 "KoreanChineseJapanese"라는 문자열을 생성합니다. 여러분은 위의 예제들을 통해, 문자열을 연결하는 다양한 방법들을 배워볼 수 있을 것입니다.
+
+## 더 알아보기
+
+만약 여러분이 Haskell을 처음 접하신다면, 문자열 연결 외에도 더 많은 것들을 배우고 싶을 수 있을 것입니다. 아래의 링크들을 따라가면 더 많은 정보를 얻을 수 있습니다.
+
+- [Haskell 공식 홈페이지](https://www.haskell.org/)
+- [Haskell 튜토리얼](https://www.tutorialspoint.com/haskell/index.htm)
+- [Haskell의 문자열 형식

@@ -1,44 +1,78 @@
 ---
-title:    "Python: Jämföring av två datum"
+title:    "Python: Jämförande av två datum"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att jämföra två datum är en viktig del av många programmeringsprojekt. Det kan hjälpa dig att sortera och filtrera data, beräkna tidsintervall och upptäcka mönster över tid.
+Att jämföra två datum i Python är en vanlig uppgift inom programmering. Det kan vara användbart för att kontrollera om ett datum är tidigare eller senare än ett annat, eller för att beräkna antalet dagar mellan två datum. Det kan också vara en del av en större applikation eller algoritm. Oavsett syfte är det viktigt att veta hur man jämför två datum för att kunna skriva effektiv och korrekt kod.
 
-## Hur man gör
+## Så här gör du:
 
-För att jämföra två datum i Python kan du använda modulen `datetime`. Här är ett exempel på hur du kan jämföra två datum och få ut skillnaden mellan dem:
+Att jämföra två datum i Python är enkelt och kan göras på olika sätt. Ett sätt är att använda inbyggda metoderna `datetime` och `timedelta`.
+
+```Python
+from datetime import date, timedelta
+
+# Skapa två datumobjekt
+d1 = date(2021, 1, 1)
+d2 = date(2021, 12, 31)
+
+# Jämför med <, > eller ==
+if d1 < d2:
+    print("d1 är tidigare än d2.")
+elif d1 > d2:
+    print("d1 är senare än d2.")
+else:
+    print("d1 och d2 är samma datum.")
+
+# Beräkna antal dagar mellan d1 och d2
+delta = d2 - d1
+print("Det är", delta.days, "dagar mellan d1 och d2.")
+```
+
+Output:
+
+```
+d1 är tidigare än d2.
+Det är 364 dagar mellan d1 och d2.
+```
+
+En annan metod är att använda `strftime()` för att omvandla datumet till en sträng och sedan jämföra strängarna.
 
 ```Python
 from datetime import date
 
-datum1 = date(2020, 1, 1)
-datum2 = date(2020, 1, 15)
+d1 = date(2021, 1, 1)
 
-skillnad = datum2 - datum1
+# Omvandla datumet till en sträng med
+# formateringen år-månad-dag
+d1_str = d1.strftime('%Y-%m-%d')
 
-print(f"Skillnaden mellan datum1 och datum2 är {skillnad.days} dagar.")
+# Omvandla strängen tillbaka till ett datumobjekt
+# Notera att den nya strängen inte har samma formatering
+d2 = date.fromisoformat(d1_str)
+
+print(d1 == d2)  # True
 ```
 
-Detta kommer att producera följande utdata:
+Output:
 
 ```
-Skillnaden mellan datum1 och datum2 är 14 dagar.
+True
 ```
 
-## Djupdykning
+## Deep Dive:
 
-När du jämför två datum måste du vara medveten om att datumen måste vara av samma typ. Det betyder att båda måste vara antingen `date`-objekt eller `datetime`-objekt. Om du behöver jämföra ett `date`-objekt med ett `datetime`-objekt, kommer du att få ett felmeddelande.
+När man jämför två datum i Python är det viktigt att vara medveten om några saker. För det första motsvarar varje datum i Python ett specifikt datum och klockslag. Det betyder att även om två datum verkar lika, kan de fortfarande ha olika klockslag. För att undvika oönskade resultat bör man alltid se till att jämföra ett datum mot det andra på samma sätt, antingen genom att omvandla dem till strängar eller genom att använda samma inbyggda metoder.
 
-En annan viktig sak att tänka på är att datum inte kan jämföras med strängar. Om du har data i strängformat måste du konvertera den till ett `date`-objekt med hjälp av `strptime`-funktionen innan du kan jämföra det med ett annat datum.
+För det andra är det viktigt att förstå att Python använder sig av den gregorianska kalendern, vilket innebär att vissa datum kan introducera missvisande resultat. Till exempel kan den 29 februari 2020 anses vara ett senare datum än den 1 mars 2020 eftersom det är senare i kalendern, trots att det egentligen är ett datum tidigare än den 1 mars. För att undvika sådana problem kan man använda sig av `timedelta` för att beräkna antalet dagar mellan två datum istället för att bara jämföra dem.
 
-En vanlig användning av jämförelse av datum är att kontrollera om ett datum är före eller efter ett annat datum. För detta kan du använda operatorerna `<` och `>` och få ett booleskt värde `True` eller `False`.
+## Se även:
 
-## Se också
-
-- [Python datetime-dokumentation](https://docs.python.org/3/library/datetime.html)
-- [Guide till att arbeta med datum och tider i Python](https://realpython.com/python-datetime/)
+- [Officiell dokumentation för inbyggda moduler `datetime` och `timedelta`](https://docs.python.org/sv/3/library/datetime.html)
+- [En sammanfattning om att jämföra datum i Python](https://www.programiz.com/python-programming/datetime/compare-dates)
+- [En diskussion om konsekvenserna av att använda gregorianska kalendern i Python](https://stackoverflow.com/questions/2066555/what-does-baseline-date-mean/2066588#2066588) (engelska)

@@ -1,50 +1,31 @@
 ---
-title:    "Fish Shell: Å finne lengden på en streng"
+title:    "Fish Shell: Å finne lengden av en streng."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hvorfor
+Å finne lengden på en streng er en grunnleggende funksjon som er nødvendig i mange programmeringssituasjoner. Ved å vite lengden på en streng, kan du kontrollere at teksten er innenfor en viss grense, og også utføre spesifikke operasjoner basert på lengden.
 
-Mange programmeringsoppgaver krever å finne lengden av en streng, enten det er for å validere brukerinndata eller manipulere tekst. I denne bloggposten vil vi utforske hvordan du kan bruke Fish Shell for å finne lengden av en streng.
-
-## Hvordan
-
-Det første vi trenger å gjøre er å definere en variabel som inneholder strengen vi ønsker å finne lengden av. Dette kan gjøres ved å skrive følgende i Fish Shell:
-
+#Slik Gjør Du
 ```Fish Shell
-set string 'Hei, verden!'
+set tekst "Hei, dette er en teststreng." #Definerer en variabel med en streng
+echo (count $tekst) #Bruker "count" for å finne lengden på strengen og skrive ut resultatet
 ```
+Output:
+23
 
-Vi kan da bruke kommandoen `string length` til å finne lengden av strengen vår:
+Det første trinnet er å definere en variabel som inneholder strengen vi vil finne lengden på. Dette kan gjøres ved å bruke "set" kommandoen og gi variabelen et navn, for eksempel "tekst".
 
-```Fish Shell
-set length (string length $string)
-echo $length
-```
+Neste steg er å bruke "count" kommandoen, som er en Fish Shell intern kommando som returnerer lengden på en streng. Ved å bruke parenteser rundt kommandoen, vil resultatet bli skrevet ut på skjermen ved hjelp av "echo" kommandoen.
 
-Dette vil gi oss følgende utskrift:
+#Dypdykk
+Når vi bruker "count" kommandoen, blir den interne funksjonen "string length" kjørt. Denne funksjonen tar inn en streng som input og returnerer et heltall som representerer lengden på strengen.
 
-```
-12
-```
+En ting å merke seg er at "count" kommandoen vil ignorere eventuelle escape karakterer i strengen, men vil telle nye linjer som ett tegn.
 
-Vi kan også kombinere kommandoer for å finne lengden av en variabel på en mer kompakt måte:
-
-```Fish Shell
-echo (string length (string match -r -c "e" $string))
-```
-
-Dette vil gi ut lengden av strengen med alle forekomster av bokstaven "e" talt med.
-
-## Dypdykk
-
-Fish Shell har mange nyttige funksjoner for å manipulere og analysere tekst. En måte å finne ut mer om disse på, er ved å bruke kommandoen `string inspection`.
-
-For å få en komplett oversikt over alle tilgjengelige funksjoner for å finne lengden av en streng, kan du bruke kommandoen `string help length`.
-
-## Se også
-
-- [Fish Shell dokumentasjon om lengde av strenger](https://fishshell.com/docs/current/cmds/string.html#length)
-- [Flere eksempler på å finne lengden av en streng i Fish Shell](https://stackoverflow.com/questions/14140676/how-do-i-find-the-length-of-a-string-in-fish-shell)
+#Se Også
+- [Fish Shell dokumentasjon om count](https://fishshell.com/docs/current/cmds/count.html)
+- [Intern "string length" funksjon dokumentasjon](https://fishshell.com/docs/current/index.html#string-length)

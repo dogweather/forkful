@@ -1,33 +1,58 @@
 ---
-title:    "Clojure: Att läsa kommandoradsargument"
+title:    "Clojure: Läsning av kommandoradsargument"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa kommandoradsargument är en viktig färdighet för alla som programmerar med Clojure (eller något annat programmeringsspråk). Det låter dig interagera med ditt program på ett mer direkt sätt och kan ge användbar information vid felsökning eller testning.
+Att kunna läsa kommandoargument i Clojure kan vara en användbar förmåga när du skriver program som behöver ta emot inputs från användaren. Genom att kunna läsa kommandoargument kan du enkelt få tillgång till olika värden och anpassa ditt program efter det.
 
-## Hur man gör
+## Hur man gör det
 
-För att läsa kommandoradsargument i Clojure använder vi funktionen `command-line-args`, som tar emot ingång från kommandoraden och returnerar en vektor av strängar. Låt oss titta på ett exempel:
+För att läsa kommandoargument i Clojure använder man sig av funktionen `command-line-args`. Den returnerar en lista med alla kommandoargument som skickats till programmet. Låt oss titta på ett litet exempel:
 
 ```Clojure
-(def args (command-line-args))
-(println "Det första argumentet är:" (nth args 0))
+(defn print-args []
+   (let [args (command-line-args)]
+      (println "Antal argument:" (count args))
+      (doseq [arg args]
+         (println "Argument:" arg))))
 ```
 
-Om vi kör detta program med kommandot `clj minprogram.clj hej` kommer det första argumentet som skrivs ut att vara `hej`. Vi kan också komma åt andra och efterföljande argument genom att ändra indexet i `nth`-funktionen. Om vi till exempel ändrar det till `1` kommer det andra argumentet att skrivas ut.
+Om vi kör detta program med kommandoargumenten `Clojure är roligt`, kommer följande output att visas:
+
+```
+Antal argument: 3
+Argument: Clojure
+Argument: är
+Argument: roligt
+```
+
+Det är viktigt att notera att `command-line-args` returnerar en lista av strängar, så om du behöver använda argumenten som andra datatyper måste du konvertera dem.
 
 ## Djupdykning
 
-En viktig sak att notera är att `command-line-args` returnerar alla argument som strängar, även om de kan representera andra datatyper. Om vi till exempel skulle köra kommandot `clj minprogram.clj 5` kommer värdet av `args` att vara vektorn `["5"]`, inte talet 5 som du kanske förväntar dig.
+Om du behöver mer kontroll över hur dina kommandoargument hanteras kan du använda dig av biblioteket Command Line Args. Det ger dig möjligheten att definiera flaggor och specificera vilken datatyp argumenten ska ha.
 
-En annan viktig aspekt att tänka på är att ordningen på argumenten spelar roll. Om vi skulle ändra kommandot till `clj minprogram.clj hej 5` skulle det första argumentet fortfarande vara `hej`, eftersom det är det första argumentet i kommandot.
+Till exempel kan vi använda biblioteket för att definiera ett kommando som tar emot en flagga `--name` med ett efterföljande värde av typen `string`:
+
+```Clojure
+(ns my-app.core
+  (:require [clj-picocli.core :refer [command option]]))
+
+(command (fn [args]
+  (println "Hej," (:name args)))
+  :name "say-hello"
+  :options [ 
+    (option :name "--name" :args 1 :type String)]))
+```
+
+Nu kan vi köra programmet med kommandot `lein run say-hello --name Adam` och få utskriften `Hej, Adam`.
 
 ## Se även
 
-- [Clojure Dokumentation om command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
-- [Artikel om kommandoradsargument i Clojure](https://martiancraft.com/blog/2019/02/clj-args/)
-- [En annan informativ guide till kommandoradsargument i Clojure](https://www.baeldung.com/clojure-command-line-arguments)
+- [ClojureDocs Kommandoargument](https://clojuredocs.org/clojure.core/command-line-args)
+- [Command Line Args biblioteket](https://github.com/ppikula/clj-picocli)

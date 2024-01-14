@@ -1,66 +1,42 @@
 ---
 title:    "Python: Eliminando caracteres que coinciden con un patrón"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué 
-A veces, en programación, es necesario eliminar caracteres que coinciden con un patrón específico en una cadena de texto. Este proceso puede ser útil en situaciones como limpieza de datos o análisis de texto. En este artículo, exploraremos cómo se puede hacer esto en Python.
+## ¿Por qué borrar caracteres que coinciden con un patrón?
+Eliminar caracteres que coinciden con un patrón puede ser útil para limpiar datos o para aplicar reglas específicas en un programa de Python. Esta es una tarea común en el procesamiento de texto y puede ayudar a mejorar la calidad y precisión de nuestros datos.
 
 ## Cómo hacerlo
-Para eliminar caracteres que coinciden con un patrón, utilizaremos el método "sub" de la librería "re" (regular expressions) en Python. Primero, debemos importar la librería:
+Para borrar caracteres que coinciden con un patrón en Python, podemos utilizar la función `re.sub()` del módulo de expresiones regulares. Veamos un ejemplo en el que eliminamos todos los números de una cadena de texto:
 
 ```Python
 import re
+
+texto = "¡H0la! ¿C0m0 están?"
+
+nuevo_texto = re.sub('[0-9]', '', texto)
+
+print(nuevo_texto)
 ```
 
-A continuación, definiremos una cadena de texto que contenga el patrón que deseamos eliminar:
-
+Output:
 ```Python
-texto = "¡Hola! ¿Cómo estás? ¡Hola!"
+¡Hola! ¿Cómo están?
 ```
 
-Para eliminar el patrón "¡Hola!", podemos utilizar el siguiente código:
+En este ejemplo, utilizamos una expresión regular `[0-9]` para indicar que queremos eliminar todos los caracteres numéricos del texto. La función `re.sub()` reemplaza el patrón encontrado con una cadena vacía, logrando así eliminar los números del texto.
 
-```Python
-texto = re.sub(r"¡Hola!", "", texto)
-print(texto)
-```
-
-La salida será: " ?Cómo estás? ". Como puedes ver, hemos eliminado todas las instancias del patrón "¡Hola!" de la cadena de texto.
-
-También podemos utilizar expresiones regulares más complejas para eliminar patrones específicos. Por ejemplo, si deseamos eliminar todos los dígitos de una cadena, podemos hacerlo de la siguiente manera:
-
-```Python
-cadena = "A1B2C3D4"
-cadena = re.sub(r"\d+", "", cadena)
-print(cadena)
-```
-
-La salida será: "ABCD", ya que hemos eliminado los dígitos de la cadena.
+También podemos utilizar expresiones regulares para eliminar otros tipos de caracteres, como signos de puntuación o espacios en blanco. Estas expresiones regulares se pueden encontrar en la documentación oficial de Python o en línea.
 
 ## Profundizando
-El método "sub" de la librería "re" nos permite reemplazar los caracteres que coinciden con un patrón en una cadena de texto con una cadena vacía. Pero también podemos utilizar grupos en expresiones regulares para reemplazar los patrones con otro texto. Por ejemplo:
+Eliminar caracteres que coinciden con un patrón puede implicar mucho más que solo utilizar expresiones regulares. Dependiendo de nuestro programa, puede que necesitemos aplicar diferentes reglas y condiciones antes de eliminar los caracteres deseados. También podemos utilizar otras funciones y métodos de Python para manipular y limpiar nuestros datos. Por ejemplo, podemos utilizar la función `strip()` para eliminar espacios en blanco al inicio y al final de una cadena de texto.
 
-```Python
-texto = "Hola, mi nombre es Juan"
-texto = re.sub(r"(\w+), (\w+) (\w+)", r"\3, \2 \1", texto)
-print(texto)
-```
-
-La salida será: "Juan, nombre mi es Hola", ya que hemos utilizado grupos para reordenar las palabras en la cadena de texto.
-
-También podemos utilizar el método "sub" para reemplazar el patrón con una versión modificada del mismo patrón. Por ejemplo, si queremos eliminar todos los caracteres de una cadena excepto las letras, podemos hacer lo siguiente:
-
-```Python
-cadena = "A1B2C3D4"
-cadena = re.sub(r"[^a-zA-Z]", "", cadena)
-print(cadena)
-```
-
-La salida será: "ABCD", ya que hemos reemplazado todos los caracteres que no son letras con una cadena vacía.
+Es importante entender cómo funcionan las expresiones regulares y conocer las diferentes opciones que tenemos para trabajar con ellas. De esta manera, podemos aplicarlas de manera efectiva y ahorrar tiempo y esfuerzo en nuestro código.
 
 ## Ver también
-- [Documentación de la librería re de Python](https://docs.python.org/es/3/library/re.html)
-- [Tutorial de expresiones regulares en Python](https://realpython.com/regex-python/)
+- [Documentación oficial de re.sub() en Python](https://docs.python.org/es/3/library/re.html)
+- [Tutorial de Expressions Regulares en Python (en inglés)](https://realpython.com/regex-python/)
+- [Lista de expresiones regulares útiles para limpiar datos en Python (en inglés)](https://www.analyticsvidhya.com/blog/2021/06/regular-expression-in-python-for-data-science/)

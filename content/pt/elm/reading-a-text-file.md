@@ -1,51 +1,50 @@
 ---
 title:    "Elm: Lendo um arquivo de texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler arquivos de texto em Elm?
+## Por que ler um arquivo de texto em Elm?
 
-Muitos projetos de programação exigem a leitura e manipulação de arquivos de texto. Em Elm, isso pode ser feito facilmente usando funções específicas. Neste artigo, vamos explorar como ler arquivos de texto em Elm e como essa habilidade pode ser útil em seus projetos.
+Algumas vezes, precisamos ler dados de um arquivo de texto para processá-los em nossos programas. Isso pode ser feito de várias maneiras, mas neste artigo, vamos explorar como fazê-lo usando o Elm.
 
-## Como fazer isso?
+## Como fazer
 
-Para ler um arquivo de texto em Elm, usamos a função `File.read`. Esta função recebe como parâmetro o caminho do arquivo e retorna um `Task` que pode ser executado para obter o conteúdo do arquivo.
+O Elm possui uma função chamada `File.read` que nos permite ler um arquivo de texto fornecendo o caminho do arquivo. Aqui está um exemplo de código que lê um arquivo chamado `dados.txt` e imprime seu conteúdo no console:
 
-Vamos dar uma olhada em um exemplo de código:
+```Elm
+module Main exposing (main)
 
-```
-Elm.file.read "arquivo.txt"
-    |> Task.perform LerConteudo Arquivo
-```
+import File exposing (read)
 
-Neste exemplo, usamos `File.read` para ler o arquivo "arquivo.txt" e então usamos `Task.perform` para executar uma tarefa com o resultado da leitura. Aqui, `LerConteudo` e `Arquivo` são funções que definimos e que serão chamadas com o conteúdo do arquivo como argumento.
+main =
+  File.read "dados.txt"
+    |> Task.attempt handleResult
 
-Podemos então imprimir o conteúdo do arquivo na tela:
-
-```
-LerConteudo : Result String String -> Cmd msg
-LerConteudo resultado =
-    case resultado of
-        Ok conteudo ->
-            conteudo
-                |> Debug.log "O conteúdo do arquivo é:"
-
-        Err erro ->
-            Debug.log "Ocorreu um erro ao ler o arquivo:"
+handleResult result =
+  case result of
+    Err _ ->
+      "Erro ao ler o arquivo :("
+        |> Debug.log "Resultado"
+    
+    Ok conteudo ->
+      conteudo
+        |> Debug.log "Resultado"
 ```
 
-Neste exemplo, estamos usando a função `Debug.log` para imprimir o conteúdo do arquivo ou qualquer erro que possa ter ocorrido durante a leitura.
+O código acima importa o módulo `File` do Elm e usa sua função `read` para ler o arquivo `dados.txt`. A leitura é realizada como uma `Task`, que é basicamente uma ação que pode ter um resultado bem-sucedido ou um erro. Por isso, é necessário lidar com esses dois possíveis resultados na função `handleResult`. Se a leitura for bem-sucedida, o conteúdo do arquivo será mostrado no console. Caso contrário, uma mensagem de erro será exibida.
 
-## Uma análise mais aprofundada
+Você pode executar este código no Elm Repl e ver o resultado no console. Lembre-se de que, para ler um arquivo de texto no Elm, é necessário que ele esteja no mesmo diretório do arquivo no qual o seu código é executado.
 
-Além da função `read`, Elm também possui outras funções úteis para ler e manipular arquivos de texto, como `readLines`, que retorna uma lista de linhas do arquivo, e `write`, que permite escrever em um arquivo. Também é possível ler e escrever em arquivos JSON em Elm.
+## Mergulho profundo
 
-É importante lembrar que a leitura de arquivos em Elm é assíncrona, o que significa que é realizada em segundo plano enquanto o restante do código é executado. Portanto, é comum usar funções como `Task.attempt` ou `Task.perform` para manipular o resultado da leitura de forma apropriada.
+Se você estiver interessado em entender como exatamente a função `File.read` funciona e como ela lê o arquivo de texto, pode dar uma olhada na documentação do Elm e no código fonte. Ela utiliza a API `FileReader` do JavaScript para realizar a leitura do arquivo em um formato simplificado e seguro.
 
-Além disso, Elm não suporta a leitura de arquivos da máquina local em navegadores por motivos de segurança. No entanto, é possível usar a biblioteca de JavaScript Ports para contornar esse problema.
+Além disso, é importante ressaltar que a leitura de arquivos em Elm é uma operação assíncrona, o que significa que você não pode simplesmente ler um arquivo e ter o conteúdo disponível imediatamente. É necessário esperar pelo resultado da `Task` e então lidar com ele.
 
 ## Veja também
 
-Se você quiser saber mais sobre a leitura de arquivos em Elm e outras funcionalidades, confira a documentação oficial do Elm e este tutorial sobre como criar uma aplicação de bloco de notas usando a leitura de arquivos. Também recomendamos o livro "Programming Elm: Build Safe, Sane, and Maintainable Front-End Applications" como uma fonte abrangente de informações sobre a linguagem. Happy coding!
+- Documentação oficial do [File module](https://package.elm-lang.org/packages/elm/file/latest/File)
+- Código fonte da função [read do Elm File module](https://github.com/elm/file/blob/1.0.5/src/File.elm#L115)

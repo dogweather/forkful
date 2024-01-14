@@ -1,72 +1,56 @@
 ---
 title:    "Elm: Obtenir la date actuelle"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-### Pourquoi 
+## Pourquoi
 
-Dans tout projet de programmation, il est souvent nécessaire d'obtenir la date actuelle. Que ce soit pour afficher la date à l'utilisateur, gérer des évènements en temps réel ou pour enregistrer la date de création d'un document, l'utilisation de la date est incontournable. Dans cet article, nous allons découvrir comment obtenir la date actuelle en utilisant le langage Elm.
+Dans la programmation, il est souvent nécessaire de connaître la date actuelle. Cela peut servir à différents usages tels que l'affichage sur une interface utilisateur ou à des fins de traitement de données. Dans cet article, nous allons voir comment obtenir facilement la date actuelle en utilisant le langage de programmation Elm.
 
-### Comment faire
+## Comment Faire
 
-Pour obtenir la date actuelle en Elm, nous allons utiliser la fonction `Time.now`. Cette fonction renvoie un `Task` contenant un objet `Posix`. Voici un exemple de code pour afficher la date actuelle dans la console :
+Pour obtenir la date actuelle en Elm, nous allons utiliser la fonction `Time.now`. Cette fonction retourne la date et l'heure actuelles sous forme de type `Posix` qui représente le temps en millisecondes depuis le 1er janvier 1970.
 
 ```
+Elm
 import Time exposing (now)
 
-main =
-    now
-        |> Task.perform (\posix -> Date.fromPosix posix |> Debug.log "Date actuelle")
+currentTime : Task x Time.Posix
+currentTime =
+  now
 ```
 
-Voici la sortie que nous obtenons dans la console :
+Pour afficher la date dans un format plus lisible pour l'utilisateur, nous pouvons utiliser la fonction `Time.Date`, qui prend en paramètre un `Posix` et retourne une structure de données contenant les informations de date.
 
 ```
-Date actuelle:
-    2020-09-25T14:17:48Z
+Elm
+import Time exposing (..)
+
+date : Date
+date =
+  Time.millisToPosix 1568838140000
+  |> Time.millisToDate
 ```
 
-Comme vous pouvez le constater, la date est au format ISO 8601. Si vous voulez modifier le format de la date, vous pouvez utiliser la fonction `Date.fromPosix`. Voici un exemple pour afficher la date au format DD-MM-YYYY :
+Avec cette structure de données, nous pouvons accéder facilement aux différentes informations de date telles que le jour, le mois et l'année.
 
 ```
-import Time exposing (now)
-import Date exposing (fromPosix, Date)
-import Html exposing (div, text)
-
-main =
-    now
-        |> Task.perform (\posix -> fromPosix posix |> dateToString |> div [] >> text)
-
-dateToString : Date -> String
-dateToString date =
-    let
-        day =
-            toString date.day
-
-        month =
-            String.padLeft 2 '0' (toString date.month)
-
-        year =
-            toString date.year
-    in
-    String.concat "-" [ day, month, year ]
+Elm
+date.month -- 9
+date.day -- 18
+date.year -- 2019
 ```
 
-Et voici la sortie correspondante :
+## En Profondeur
 
-```
-25-09-2020
-```
+Sous le capot, la fonction `Time.now` utilise la fonction `JS.Date.now` du langage JavaScript pour obtenir la date actuelle. Cela signifie que la date renvoyée peut varier légèrement en fonction de l'emplacement géographique de l'utilisateur.
 
-### Plongée en profondeur
+Il est également important de noter que la fonction `Time.now` retourne une action de tâche `Task` plutôt qu'une valeur réelle de date. Cela signifie que nous devons utiliser `Task.perform` ou un autre opérateur de `Task` pour récupérer la valeur de date réelle.
 
-La fonction `Time.now` utilise l'API JavaScript `Date.now()` pour obtenir la date actuelle en millisecondes. Ensuite, elle utilise la fonction `Time.fromPosix` pour convertir ces millisecondes en un objet `Posix`, qui représente un instant précis dans le temps en utilisant l'échelle temps Unix (nombre de secondes écoulées depuis le 1er janvier 1970 à minuit UTC).
+## Voir Aussi
 
-Si vous avez besoin de manipuler la date de manière plus complexe, vous pouvez utiliser le module `Date` qui expose de nombreuses fonctions pour travailler avec les dates en Elm.
-
-### Voir aussi 
-
-- [Documentation officielle Elm pour la gestion des dates et heures](https://package.elm-lang.org/packages/elm/time/latest)
-- [Documentation officielle JavaScript pour la fonction `Date.now()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
+- Documentation officielle Elm sur Time: https://package.elm-lang.org/packages/elm/time/latest/
+- Tutoriel sur la gestion des dates en Elm: https://www.programming-motherfucker.com/blog/86/the-ultimate-guide-to-date-and-time-manipulation-in-elm

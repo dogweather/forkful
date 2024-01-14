@@ -1,76 +1,44 @@
 ---
-title:    "Elm: 新しいプロジェクトを開始する"
+title:    "Elm: 新しいプロジェクトを始める"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜElmを始めるのか？
 
-新しいプロジェクトを始める
+新しいプロジェクトを始める理由はたくさんありますが、Elmは簡潔で学習しやすい言語であり、優れたユーザーインターフェースを提供することができます。それに加えて、Elmは信頼性が高く、バグが少ないことでも知られています。
 
-プログラミングの世界では、常に新しい挑戦があります。新しいプロジェクトを始めることは、学ぶことや成長することにつながります。Elmでプロジェクトを始めることは、あなたのスキルを向上させる素晴らしい機会です。
+## どのように始めるか？
 
-## 作り方
+まずはElmをインストールする必要があります。次に、プロジェクトのフォルダを作成し、そのフォルダ内で以下のコマンドを実行します。
 
-```elm
--- Elmプログラムの基本構造
-import Html exposing (text)
-
-main =
-  text "こんにちは、世界！"
+```
+Elm package install
 ```
 
-このコードブロックでは、基本的なElmプログラムの構造を示しています。まず、`import`ステートメントで必要なモジュールをインポートし、`main`関数を定義し、`text`関数を使用して画面に表示させるメッセージを指定します。この例では、「こんにちは、世界！」というメッセージが表示されます。
+このコマンドは、プロジェクトで使用するパッケージをインストールします。次に、以下のコマンドを実行してElmの開発サーバーを起動します。
 
-```elm
--- 数値の足し算
-import Html exposing (text)
-
-main =
-  text (String.fromInt (2 + 2))
+```
+Elm reactor
 ```
 
-こちらのコードブロックでは、2つの数字を足し合わせて、計算結果を表示する方法を示しています。数字を扱う際には、まず`String.fromInt`関数を使って、数値を文字列に変換する必要があります。
+これで、ブラウザで `http://localhost:8000` にアクセスすると、Elmの開発環境が起動します。ここから、新しいプロジェクトを開始して、Elmのコーディングを始めることができます。
 
-```elm
--- Todoリストの作成
-type Task = Task String
+## もっと深く掘り下げる
 
-tasks = [ "洗濯する"
-        , "ゴミを出す"
-        , "メールを確認する"
-        ]
+新しいプロジェクトを始める際には、以下のポイントに注意してください。
 
-displayTasks = 
-    let
-        toTask = \string -> Task string
-    in
-        List.map toTask tasks
-```
+- プロジェクトの構造を決めること
+- 開発環境の設定をすること
+- 重要なパッケージの選択をすること
 
-最後に、Todoリストを作成する方法を示します。まず、`Task`という型を定義し、それを使用してリストを作成します。そして、リストの各要素を`Task`型に変換する関数を定義し、`List.map`関数を使ってリスト全体を変換します。
+その他にも、書籍やチュートリアルなどを参考にすることで、より詳細な情報を得ることができます。
 
-## 深堀り
+## 参考リンク
 
-新しいプロジェクトを始めるときの最初のステップは、必要なライブラリをインストールすることです。Elmでは、`elm install`コマンドを実行することで、必要なライブラリを簡単にインストールすることができます。
-
-また、プロジェクトのフォルダ内に`elm.json`というファイルを作成し、プロジェクトの依存関係を管理することもできます。このファイルには、使用するライブラリやビルド設定などの情報を記述します。
-
-プロジェクトを始める際には、Elmの公式ドキュメントやコミュニティのチュートリアルなどを参考にすることもおすすめです。さまざまな情報を収集し、自分に合った方法でプロジェクトを進めていきましょう。
-
-## リンク集
-
-[Elm公式ドキュメント](https://guide.elm-lang.org/)
-
-[Elmコミュニティチュートリアル](https://elmprogramming.com/)
-
-[Elm UI](https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/)
-
-[Elmパッケージ一覧](https://package.elm-lang.org/)
-
-[Elmビルドツール](https://elm-tooling.github.io/)
-
-## 参考文献
-
-[Elmプログラミング入門 - Qiita](https://qiita.com/hirokidaichi/items/05a39cc99a7
+- [Elm公式サイト](https://elm-lang.org/)
+- [Elm Package](https://package.elm-lang.org/)
+- [Elmの開発サーバー](https://elm-lang.org/0.19.1/tools/elm-reactor)
+- [Elmチュートリアル](https://www.elm-tutorial.org/jp/)

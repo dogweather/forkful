@@ -1,40 +1,37 @@
 ---
 title:    "C++: Rozpoczynanie nowego projektu"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Założenie nowego projektu w języku programowania C++ może być wspaniałym doświadczeniem, ponieważ pozwala na tworzenie potężnych i wydajnych aplikacji. Jest to także doskonały sposób na naukę nowych umiejętności programistycznych. Dzięki temu tutorialowi dowiesz się, jak rozpocząć nowy projekt w C++ i stworzyć coś wartościowego.
+Czy kiedykolwiek zastanawiałeś się, dlaczego warto zacząć nowy projekt w C++? Istnieje wiele powodów, dla których ludzie decydują się na rozpoczęcie nowego projektu w tym języku programowania. C++ jest językiem ogólnego przeznaczenia, co oznacza, że może być używany do tworzenia różnych typów aplikacji, od prostych programów do zaawansowanych systemów operacyjnych. Jest również szybki, wydajny i ma bogatą bibliotekę standardową, co sprawia, że jest popularnym wyborem wśród programistów.
 
-## Jak zacząć
+## Jak to zrobić
 
-Przed rozpoczęciem projektu w C++, będziesz potrzebował środowiska programistycznego. Istnieje wiele opcji, ale jedną z najpopularniejszych jest Microsoft Visual Studio. Możesz go pobrać za darmo ze strony internetowej Microsoft lub kupić pełną wersję.
-
-Po zainstalowaniu środowiska programistycznego, możesz rozpocząć tworzenie nowego projektu. Oto przykładowy kod, którym możesz się kierować:
+Jeśli chcesz rozpocząć nowy projekt w C++, musisz najpierw zainstalować odpowiedni kompilator dla swojego systemu operacyjnego. Następnie musisz wybrać odpowiednie narzędzia i środowisko programistyczne, które ułatwią ci pisanie i debugowanie kodu. Możesz również skorzystać z różnych tutoriali i podręczników, aby nauczyć się podstaw języka oraz dobrych praktyk programistycznych.
 
 ```C++
 #include <iostream>
-using namespace std;
- 
-int main() {
-   cout << "Witaj w moim projekcie C++!";
-   return 0;
+
+int main()
+{
+    std::cout << "Witaj świecie!";
+    return 0;
 }
 ```
 
-Ten krótki kod wyświetli prostą wiadomość na ekranie. Aby uruchomić projekt, wystarczy kliknąć w przycisk "Run" lub użyć skrótu klawiaturowego "Ctrl + F5". Jeśli wszystko przebiegnie pomyślnie, zobaczysz wiadomość "Witaj w moim projekcie C++!" w konsoli.
+Ten krótki kod pokazuje, jak w prosty sposób możesz użyć standardowego strumienia wyjścia, aby wyświetlić napis na konsoli. Stałe `std` odwołuje się do przestrzeni nazw, a `cout` jest obiektem, który może być używany do drukowania informacji na ekranie.
 
-## Głębszy zanurzenie
+## Głębsze zagłębianie
 
-Przygotowanie do rozpoczęcia nowego projektu w C++ może wymagać pewnego wysiłku, ale jest to kluczowy krok, który pomoże Ci osiągnąć sukces. Musisz upewnić się, że wybrałeś odpowiednie środowisko programistyczne i masz podstawową wiedzę o składni języka C++.
+Aby zacząć nowy projekt w C++, musisz mieć jasno określony cel i plan działania. Następnie musisz zaprojektować i zaimplementować odpowiednią strukturę i algorytmy. Dodatkowo, musisz pamiętać o zagadnieniach takich jak zarządzanie pamięcią, obsługa wyjątków i optymalizacja kodu. To są tylko niektóre z wyzwań, które możesz napotkać podczas pracy nad projektem w C++.
 
-Pamiętaj także, że regularna praktyka jest kluczem do osiągnięcia mistrzostwa, więc nie zniechęcaj się, jeśli nie wszystko wychodzi od razu. Wyrusz w swoją programistyczną przygodę z entuzjazmem i cierpliwością, a osiągniesz swoje cele. Powodzenia!
+## Zobacz również
 
-## Zobacz także
-
-* [Oficjalna strona języka C++](https://isocpp.org/)
-* [Poradnik dla początkujących w języku C++](https://www.learn-c.org/)
-* [Kurs C++ na Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus)
+- [Poradniki C++](https://cppreference.com/)
+- [Kursy C++ na YouTube](https://www.youtube.com/watch?v=fCDQzjQZBWo)
+- [Strona główna języka C++](https://isocpp.org/)

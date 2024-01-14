@@ -1,43 +1,48 @@
 ---
-title:    "Clojure: Écriture d'un fichier texte"
+title:    "Clojure: Écrire un fichier texte"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire un fichier texte en Clojure ?
 
-Écrire un fichier texte est une compétence essentielle en programmation, car cela permet de stocker et d'organiser des données de manière lisible pour les humains et les ordinateurs. Cela est particulièrement utile pour stocker des informations importantes ou créer une base de données.
+L'écriture de fichiers texte en Clojure est une compétence utile à posséder en tant que programmeur. Cela vous permet de stocker et de manipuler des données de manière organisée et durable. Que vous souhaitiez enregistrer des données utilisateur ou créer un fichier de configuration pour votre application, la capacité d'écrire un fichier texte sera un atout précieux.
 
 ## Comment faire
 
-Lorsque vous écrivez un fichier texte en Clojure, vous devez d'abord définir une chaîne de caractères contenant le contenu du fichier. Vous pouvez ensuite utiliser la fonction `spit` pour écrire cette chaîne dans un fichier spécifié. Voici un exemple de code :
+Pour écrire un fichier texte en Clojure, il y a quelques étapes à suivre :
+
+1. Importez la bibliothèque `clojure.java.io` en haut de votre fichier. Cela vous permettra d'utiliser des fonctions pour manipuler les fichiers.
+2. Définissez le chemin et le nom de votre fichier à l'aide de la fonction `file` de la bibliothèque `clojure.java.io`.
+3. Utilisez la fonction `with-open` pour créer et écrire dans le fichier. Cette fonction garantit que le fichier sera fermé correctement après utilisation.
+4. Utilisez la fonction `spit` pour écrire du contenu dans le fichier, en utilisant le chemin et le nom du fichier définis précédemment.
+
+Voici un exemple de code :
 
 ```Clojure
-(def contenu "Ceci est un fichier texte en Clojure.")
+(ns mon.app
+  (:require [clojure.java.io :as io]))
 
-(spit "exemple.txt" contenu)
+(defn ecrire-fichier [chemin contenu]
+  (with-open [f (io/file chemin)]
+    (spit f contenu)))
+
+;; Exemple d'utilisation
+(ecrire-fichier "monfichier.txt" "Ceci est un exemple de contenu.")
 ```
 
-Cela créera un fichier texte appelé "exemple.txt" contenant la phrase "Ceci est un fichier texte en Clojure." Vous pouvez également utiliser des variables pour stocker le contenu du fichier, par exemple :
-
-```Clojure
-(def nom "Jean")
-(def age 25)
-
-(spit "profil.txt" (str "Prénom : " nom "\nÂge : " age " ans"))
-```
-
-Cela créera un fichier texte appelé "profil.txt" contenant les informations "Prénom : Jean" et "Âge : 25 ans". Comme vous pouvez le voir, vous pouvez utiliser la fonction `str` pour concaténer les différentes valeurs dans une seule chaîne.
+Lorsque vous exécutez ce code, un fichier nommé "monfichier.txt" sera créé et le contenu sera écrit dedans.
 
 ## Plongée en profondeur
 
-Il existe également d'autres fonctions utiles pour travailler avec des fichiers texte en Clojure, comme `slurp` pour lire le contenu d'un fichier et le stocker dans une chaîne et `spit-lines` pour écrire une liste de lignes dans un fichier. De plus, vous pouvez spécifier des options pour le formatage du fichier, telles que le codage et les caractères de fin de ligne.
+En plus d'écrire du contenu dans un fichier, vous pouvez également utiliser des fonctions pour lire et modifier des fichiers existants. Par exemple, la fonction `slurp` permet de lire le contenu d'un fichier dans une chaîne de caractères, et la fonction `spit` permet de modifier le contenu d'un fichier existant.
 
-L'utilisation de bibliothèques telles que 'io' et 'clojure.java.io' peut également simplifier le processus et offrir des fonctionnalités supplémentaires pour travailler avec des fichiers texte.
+Il est également possible de spécifier le format du fichier que vous souhaitez écrire. Par exemple, en utilisant la fonction `println` plutôt que `spit`, vous pouvez écrire du contenu dans un fichier au format CSV.
 
 ## Voir aussi
 
-- [Documentation officielle Clojure sur les fichiers](https://clojuredocs.org/clojure.java.io)
-- [Tutoriel sur les fichiers texte en Clojure](https://code.tutsplus.com/tutorials/reading-and-writing-text-files-in-java--cms-27509)
-- [Exemples pratiques d'utilisation de fichiers en Clojure](https://github.com/clojure-cookbook/clojure-cookbook/tree/master/04_files)
+- Documentation de Clojure pour la bibliothèque `clojure.java.io` : https://clojure.github.io/clojure/clojure.java.io-api.html
+- Tutoriel sur l'écriture de fichiers en Clojure : https://www.brainbell.com/tutors/Clojure/Writing_Files.htm
+- Exemple de projet GitHub utilisant l'écriture de fichiers en Clojure : https://github.com/apa512/clj-password-manager

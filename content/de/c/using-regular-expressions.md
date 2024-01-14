@@ -1,56 +1,57 @@
 ---
-title:    "C: Verwendung von regulären Ausdrücken"
+title:    "C: Die Verwendung von regulären Ausdrücken"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn Sie schon einmal versucht haben, bestimmte Zeichenfolgen in einem Text zu finden oder zu ersetzen, wissen Sie wahrscheinlich, wie mühsam und zeitaufwendig das sein kann. Hier kommen reguläre Ausdrücke ins Spiel. Mit Hilfe von regulären Ausdrücken können Sie Muster in Texten suchen und bearbeiten, um die Arbeit zu erleichtern. Lesen Sie weiter, um herauszufinden, wie Sie reguläre Ausdrücke in Ihren C-Programmen verwenden können.
+Reguläre Ausdrücke sind eine mächtige Methode, um Text in C-Programmen zu verarbeiten. Mit regulären Ausdrücken können Sie Text auf Muster überprüfen und bestimmte Zeichenfolgen suchen und ersetzen. Sie sind besonders nützlich, wenn Sie mit Benutzereingaben oder Dateien arbeiten, in denen Sie nach bestimmten Informationen suchen müssen.
 
 ## Wie geht man vor
 
-Um reguläre Ausdrücke in C zu verwenden, müssen Sie die Header-Datei `<regex.h>` einbinden. Dann können Sie die Funktion `regcomp()` verwenden, um einen regulären Ausdruck zu kompilieren. Als nächstes verwenden Sie `regexec()` oder `regerror()` für die Suche oder Bearbeitung von Texten. Hier ist ein Beispiel, wie Sie alle Vokale in einem Text durch das Zeichen `x` ersetzen können:
+Um reguläre Ausdrücke in C zu verwenden, müssen Sie zunächst die Header-Datei `regex.h` einbinden. Hier ist ein Beispiel, wie Sie einen regulären Ausdruck in Ihrem Code verwenden können:
 
-```C
-#include <stdio.h>
-#include <regex.h>
-int main()
-{
-    regex_t regex;
-    int result;
-    char text[] = "Die Katze läuft über den Zaun.";
-    char pattern[] = "[aeiouüöä]";
-    // Kompilieren des regulären Ausdrucks
-    result = regcomp(&regex, pattern, 0);
-    // Überprüfen, ob die Kompilierung erfolgreich war
-    if(result != 0) {
-        printf("Fehler beim Kompilieren des regulären Ausdrucks.");
-        exit(1);
-    }
-    // Ersetzen der Vokale mit x
-    result = regsub(&regex, text, "x", NULL);
-    // Ausgabe des bearbeiteten Textes
-    if(result != 0) {
-        printf("Fehler beim Bearbeiten des Textes.");
-        exit(1);
-    }
-    printf("%s\n", text);
-    // Freigeben des regulären Ausdrucks
-    regfree(&regex);
-    return 0;
-}
+```C 
+// Wir definieren hier ein einfaches Muster 
+char *pattern = "Hallo (Welt)"; 
+
+// Wir definieren auch einen Eingabetext 
+char *input = "Hallo Welt, wie geht es dir?"; 
+
+// Erstelle eine Variable vom Typ regex_t, um den regulären Ausdruck zu speichern 
+regex_t regex;
+
+// Wir kompilieren den regulären Ausdruck mit dem kompilierten Flag REG_EXTENDED 
+int result = regcomp(&regex, pattern, REG_EXTENDED); 
+
+// Wenn die Kompilierung erfolgreich war, können wir die Übereinstimmungen suchen 
+if(result == 0){ 
+    // Wir definieren eine Match-Variable vom Typ regmatch_t 
+    regmatch_t match; 
+
+    // Mit der Funktion regexec können wir nach dem Muster in unserem Eingabetext suchen 
+    result = regexec(&regex, input, 1, &match, 0); 
+
+    // Wir können jetzt die Ergebnisse überprüfen 
+    if(result == 0){ 
+        // Die Übereinstimmung befindet sich in match.rm_so und match.rm_eo 
+        printf("Das Muster wurde gefunden zwischen den Zeichen %d und %d des Eingabetextes!", match.rm_so, match.rm_eo); 
+    } 
+} 
+
+// Wir müssen am Ende unsere regex-Variablen freigeben 
+regfree(&regex); 
 ```
 
-Die Ausgabe dieses Programms wäre: `Dx Kxtz lxxt xbxr dxn Zxn.`
+Die Ausgabe dieses Codes sollte folgendermaßen aussehen: `Das Muster wurde gefunden zwischen den Zeichen 6 und 15 des Eingabetextes!` Dies ist die Position des Musters "Welt" in unserem Eingabetext.
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Während dieses Beispiel nur einen kleinen Einblick in die Verwendung von regulären Ausdrücken in C gibt, gibt es noch viele weitere Möglichkeiten und Funktionen, die Sie erkunden können. Sie können beispielsweise spezifische Zeichenmuster wie Zahlen oder Buchstaben suchen, Variablen für begrenzte Zeichenfolgen verwenden oder sogar komplexe Ausdrücke mit Hilfe von Quantoren erstellen. Es lohnt sich, sich mit den verschiedenen Funktionen und Optionen von regulären Ausdrücken in C vertraut zu machen, um sie effektiver in Ihren Programmen einsetzen zu können.
+Reguläre Ausdrücke können noch viel mehr als nur einfache Mustererkennung. Sie können auch verwendet werden, um Untergruppen zu definieren, die in der Übereinstimmung zurückgegeben werden sollen, oder um Zeichenklassen wie Zahlen oder Buchstaben zu erstellen. Eine ausführliche Anleitung zur Verwendung von regulären Ausdrücken in C finden Sie in der offiziellen Dokumentation der `regex.h`-Header-Datei.
 
 ## Siehe auch
 
-- Offizielle Dokumentation: https://en.cppreference.com/w/c/regex
-- Tutorial (auf Englisch): https://www.cprogramming.com/tutorial/regular-expression-matching-c.html
-- Beispiele für fortgeschrittene Verwendung (auf Englisch): http://clug.caltech.edu/~jafl/Regex1.html
+- Die offizielle Dokumentation der `regex.h` Header-Datei: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html

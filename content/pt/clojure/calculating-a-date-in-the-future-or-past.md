@@ -1,50 +1,41 @@
 ---
-title:    "Clojure: Calculando uma data no futuro ou passado"
+title:    "Clojure: Cálculo de uma data no futuro ou passado"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que Calcular uma Data no Futuro ou Passado?
 
-Às vezes, precisamos saber uma data futura ou passada a partir de uma data atual. Isso pode ser útil em muitos casos, como planejar viagens ou negócios, rastrear prazos ou simplesmente por curiosidade.
+Um dos motivos principais para calcular uma data no futuro ou passado é para automatizar tarefas e facilitar a vida do programador. Em vez de ter que calcular manualmente uma data, o programa pode fazer isso de forma rápida e precisa.
 
-## Como fazer
+## Como Calcular uma Data no Futuro ou Passado
 
-Calcular datas em Clojure é bastante simples. Podemos usar a função `inc` ou `dec` para aumentar ou diminuir uma data em um dia.
-
-```Clojure
-(inc (java.util.Date.)) ;; data futura
-(dec (java.util.Date.)) ;; data passada
-```
-
-Podemos também especificar uma quantidade de dias ou outras unidades de tempo para adicionar ou subtrair de uma data. Para isso, usamos a função `+` ou `-` com as unidades de tempo desejadas.
+Para calcular uma data no futuro ou passado em Clojure, é necessário usar a função `inc` (incremento) ou `dec` (decremento) junto com a função `+` ou `-`, respectivamente. Por exemplo, se quisermos calcular a data que será daqui a 5 dias, podemos escrever o seguinte código:
 
 ```Clojure
-(+ (java.util.Date.) 2 :days)) ;; data futura com 2 dias de adição
-(- (java.util.Date.) 5 :months)) ;; data passada com 5 meses de subtração
+(println (inc (+ 5 days)))
 ```
 
-## Mergulho profundo
+Este código irá imprimir a data de hoje mais 5 dias. Existem várias outras maneiras de manipular datas em Clojure, então é importante explorar mais a documentação e experimentar diferentes abordagens.
 
-Além de adicionar ou subtrair dias em uma data, também é possível especificar outras unidades de tempo, como horas, minutos, segundos e até mesmo milissegundos. Podemos usar a função `+` e `-` com essas unidades, assim como fizemos com os dias.
+Para calcular uma data no passado, podemos usar a função `dec` da seguinte maneira:
 
 ```Clojure
-(+ (java.util.Date.) 3 :hours) ;; data futura com 3 horas de adição
-(- (java.util.Date.) 30 :minutes) ;; data passada com 30 minutos de subtração 
+(println (dec (- 10 days)))
 ```
 
-Podemos também usar outras funções, como `days`, `hours`, `minutes` e `seconds`, para obter a diferença entre duas datas em uma determinada unidade de tempo.
+Este código irá imprimir a data de hoje menos 10 dias. É importante observar que, em ambas as situações, a função `days` é usada para identificar qual unidade de tempo estamos manipulando (dias, meses, anos, etc.).
 
-```Clojure
-(days (java.util.Date.) (org.joda.time.DateTime. "2020-02-29T00:00:00")) ;; diferença em dias entre a data atual e 29 de fevereiro de 2020
-(minutes (org.joda.time.LocalDate.) (org.joda.time.DateTime. "2020-07-13T12:00:00")) ;; diferença em minutos entre a data atual e 13 de julho de 2020 às 12:00 
-```
+## Mergulho Profundo
 
-## Veja também
+Para ter uma compreensão mais profunda de como calcular datas no futuro ou passado em Clojure, é importante entender como as datas são representadas na linguagem. Em Clojure, as datas são representadas como instâncias da classe `java.util.Date` e podem ser manipuladas usando várias funções e bibliotecas.
 
-- A documentação oficial do Clojure sobre data e hora: https://clojuredocs.org/clojure.java-time
-- Mais informações sobre a biblioteca Joda-Time utilizada nos exemplos: http://www.joda.org/joda-time/
-- Uma discussão sobre diferentes formas de calcular datas em Clojure: https://stackoverflow.com/questions/25145453/calculating-date-values-in-clojure
+Uma maneira de tornar o cálculo de datas ainda mais preciso é usando a biblioteca `clj-time`, que fornece funções e macros para manipular datas de forma mais fácil e intuitiva. Vale a pena explorar esta biblioteca e aprender como usá-la de forma eficiente em seus projetos.
 
-O cálculo de datas pode ser muito útil em diversas situações e, com as funções e bibliotecas disponíveis em Clojure, podemos realizar esses cálculos de forma rápida e simples. Esperamos que este artigo tenha sido útil e que você possa aproveitar esses recursos em seus projetos futuros.
+## Veja Também
+
+- [Documentação Clojure sobre manipulação de datas](https://clojure.org/guides/date_time)
+- [GitHub da biblioteca clj-time](https://github.com/clj-time/clj-time)
+- [Tutorial sobre manipulação de datas em Clojure](https://blog.michielborkent.nl/2019/05/06/using-dates-in-clojure.html)

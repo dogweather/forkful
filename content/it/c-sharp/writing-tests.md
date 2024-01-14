@@ -1,40 +1,51 @@
 ---
 title:    "C#: Scrivere test"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché scrivere test di programmazione è importante
-Scrivere test di programmazione può sembrare una perdita di tempo, ma in realtà è un passo essenziale per garantire la qualità del tuo codice. I test ti aiutano a individuare errori e bug prima che il tuo codice venga messo in produzione, evitando così problemi e fornendo un'esperienza utente migliore.
+## Perché
 
-##Come scrivere test in C#
-Scrivere test in C# è molto semplice e può essere fatto utilizzando il framework di test NUnit. Iniziamo creando una nuova classe di test e aggiungendo un metodo di test utilizzando l'annotazione `[Test]`. All'interno di questo metodo, utilizziamo una serie di asserzioni per verificare che il nostro codice si comporti come previsto. Ad esempio:
+Scrivere test può sembrare una perdita di tempo per alcuni programmatori, ma in realtà è un'attività molto importante per garantire la qualità del codice e la stabilità del software. In questo post, esploreremo come scrivere test in C# e come possono migliorare il tuo processo di sviluppo.
 
-```C#
+## Come scrivere test in C#
+
+Per scrivere test in C#, è necessario utilizzare un framework di test come NUnit o XUnit. Questi framework consentono di creare test che verifichino il funzionamento del codice in modo automatico. Ecco un esempio di come scrivere un semplice test in C# utilizzando NUnit:
+
+```
 [Test]
-public void TestMultiply()
+public void TestSomma()
 {
-    // Arrange
-    int x = 2;
-    int y = 3;
-    int expected = 6;
+    int risultato = Calcolatore.Somma(2, 2);
+    Assert.AreEqual(4, risultato);
+}
+```
+In questo esempio, abbiamo creato un test per verificare la funzione di somma di una classe chiamata `Calcolatore`. Utilizzando il metodo `Assert.AreEqual`, possiamo verificare che il risultato della somma sia uguale a quello atteso. Se il test fallisce, significa che c'è un errore nella funzione di somma.
 
-    // Act
-    int result = x * y;
+Oltre a verificare che il codice funzioni correttamente, i test possono anche essere utilizzati per coprire casi limite e scenari di errore. Ad esempio, possiamo creare un test per verificare che la funzione di somma gestisca correttamente numeri negativi:
 
-    // Assert
-    Assert.AreEqual(expected, result);
+```
+[Test]
+public void TestSommaNegativi()
+{
+    int risultato = Calcolatore.Somma(-2, -2);
+    Assert.AreEqual(-4, risultato);
 }
 ```
 
-Una volta scritti tutti i metodi di test, possiamo eseguirli e vedere i risultati nell'output del test runner. Se tutti i test passano, significa che il nostro codice è corretto e possiamo procedere tranquillamente con la fase di sviluppo.
+In questo modo, possiamo essere sicuri che la nostra funzione di somma gestisca tutti i possibili input in modo appropriato.
 
-##Approfondimento sui test di programmazione
-Scrivere test di programmazione non riguarda solo la verifica dei risultati delle nostre operazioni, ma anche la copertura dei possibili casi che il nostro codice potrebbe incontrare. È importante testare non solo i casi positivi, ma anche quelli negativi e borderline. Inoltre, i test ci aiutano a mantenere il codice flessibile e facilmente modificabile, in quanto possiamo eseguire i test dopo ogni modifica e verificare che non abbiamo introdotto nuovi errori.
+## Approfondimento
 
-##Vedi anche
-- [Guida completa a NUnit](https://docs.microsoft.com/it-it/dotnet/core/testing/choosing-a-test-framework)
-- [Come scrivere test di unità efficaci](https://www.pluralsight.com/guides/unit-testing-csharp)
-- [Cosa sono i test di regressione e come scriverli](https://www.softwaretestinghelp.com/regression-testing/)
-- [Vantaggi di scrivere test di programmazione](https://testing.guru/why-test-code/)
+Per scrivere test efficaci, è importante seguire alcune best practice. Una delle più importanti è quella di mantenere i test semplici e brevi, concentrandosi su un'unità di codice alla volta. È anche consigliabile scrivere i test prima del codice effettivo, in modo da poter utilizzare il test come guida durante lo sviluppo.
+
+Un altro approfondimento importante riguarda il concetto di "code coverage". Questo si riferisce alla percentuale di codice che i nostri test coprono. Un alto code coverage indica che i nostri test stanno verificando una buona parte del codice, ma non è sempre garanzia di qualità. È importante concentrarsi sulla qualità dei test, anziché sulla quantità.
+
+Inoltre, è possibile utilizzare alcune tecnologie aggiuntive per migliorare i test, come i mock objects per simulare parti del codice che sono ancora in fase di sviluppo.
+
+## Vedi anche
+- [Tutorial di introduzione a NUnit](https://www.nunit.org/index.php?p=quickStart&r=2.6.4)
+- [Guida di XUnit](https://xunit.net/docs/getting-started/netfx/visual-studio)
+- [Guide di TDD (Test Driven Development)](https://www.agilealliance.org/glossary/tdd/)

@@ -1,48 +1,53 @@
 ---
-title:    "Elm: Scrivere test di programmazione"
+title:    "Elm: Scrittura di test"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+## Perché scrivere test in Elm?
 
-Scrivere test è una pratica fondamentale nella programmazione Elm. Non solo aiuta a garantire che il nostro codice funzioni come previsto, ma ci dà anche la fiducia necessaria per apportare modifiche in modo sicuro e senza temere di introdurre errori.
+Scrivere test è uno strumento molto utile per garantire la qualità del codice che scriviamo. Ci permette di identificare eventuali errori o bug prima che il nostro codice sia in produzione, risparmiando tempo e riducendo i rischi. Inoltre, scrivere test ci aiuta a mantenere il codice organizzato e comprensibile, facilitando la manutenzione nel lungo termine.
 
-##Come fare
+## Come scrivere test in Elm
 
-Per iniziare a scrivere test in Elm, dobbiamo utilizzare il pacchetto `elm-test` disponibile su Elm Package Manager. Una volta installato, possiamo creare un file `tests/Tests.elm` che conterrà tutti i nostri test.
+Per scrivere test in Elm possiamo utilizzare il modulo `elm-test`, che ci permette di scrivere test in modo semplice e intuitivo. Vediamo un esempio pratico:
 
-Diamo uno sguardo ad un semplice esempio di test in Elm:
+```Elm
+-- Definiamo una funzione che restituisce true se il numero passato come argomento è pari
+isEven : Int -> Bool
+isEven number =
+  number % 2 == 0
 
-```elm
-module Tests exposing (..)
-
-import Expect
-import Main exposing (..)
-
-sumTest =
-    test "Sum function should return correct result" <|
-        \_ ->
-            Expect.equal (sum 2 3) 5
+-- Utilizziamo la funzione `describe` per definire il nome del nostro test e `test` per specificare il comportamento atteso
+tests : Test
+tests =
+  describe "isEven" [
+    test "should return true if number is even" <|
+      \() ->
+        Expect.equal (isEven 4) True
+  ]
 ```
 
-Notare che dobbiamo importare il modulo `Expect` per utilizzare il suo metodo `equal`, che confronta il nostro valore di aspettativa con quello ricevuto dalla funzione che stiamo testando.
+Eseguendo il test con il comando `elm-test` dovremmo ottenere il seguente output:
 
-Ora che abbiamo creato un test, dobbiamo eseguirlo. Ciò può essere fatto tramite il comando `elm-test` da terminale, che eseguirà tutti i test disponibili nel nostro file `Tests.elm`.
+```
+PASS 1 test passed
 
-Inoltre, possiamo utilizzare il modulo `Test` per creare test più complessi e per gestire eventuali errori e assertion personalizzati. Per ulteriori informazioni sui moduli da utilizzare per i test in Elm, si consiglia di consultare la documentazione ufficiale.
+Finished in 0.004 seconds
+```
 
-##Approfondimento
+## Approfondimento sui test in Elm
 
-In aggiunta alla scrittura dei test, c'è una pratica comune nella programmazione Elm che è nota come **test-driven development** (TDD). Questo approccio prevede di scrivere i test prima di scrivere il codice effettivo, in modo da avere una guida chiara su cosa il nostro codice dovrebbe fare.
+Scrivere test in Elm ci permette di essere più sicuri del nostro codice, ma è importante ricordare alcune best practice:
 
-Inoltre, la scrittura dei test ci aiuta a scrivere un codice più modulare e robusto. Quando scriviamo test, siamo costretti a pensare ai vari casi limite e alle possibili eccezioni del nostro codice, rendendolo più sicuro e gestibile.
+- Scrivere test precisi e specifici, in modo da poter identificare facilmente eventuali errori
+- Utilizzare la funzione `Expect.equal` per confrontare il valore attuale con quello atteso
+- Utilizzare il comando `elm-test` regolarmente per eseguire i test e garantire che il codice continui a funzionare correttamente
 
-Inoltre, la pratica di scrivere test ci porta a scrivere codice più leggibile e ben strutturato, poiché dobbiamo essere sicuri di capire veramente cosa il nostro codice sta facendo.
+## Vedi anche
 
-##Vedi anche
-
-- [Documentazione ufficiale di Elm sul testing](https://guide.elm-lang.org/testing/)
-- [Pacchetto elm-test su Elm Package Manager](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Articolo su test-driven development in Elm](https://www.brianthicks.com/post/2019/08/13/test-driven-development-in-elm/)
+- [Documentazione su `elm-test`](https://package.elm-lang.org/packages/elm-explorations/test/latest/) 
+- [Esempi di test in Elm](https://github.com/elm-explorations/test#examples) 
+- [Best practices per scrivere test in Elm](https://thoughtbot.com/blog/how-we-write-tests-in-elm)

@@ -1,42 +1,63 @@
 ---
-title:    "Bash: Tarkista, onko hakemistoa olemassa"
+title:    "Bash: Tarkistetaan löytyykö hakemisto"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa tiedostopolun olemassaolo?
+## Miksi: Miksi haluaisit tarkistaa, onko hakemisto olemassa?
 
-Tiedoston tai kansion olemassaolon tarkistaminen on tärkeä osa Bash-ohjelmointia ja auttaa varmistamaan, että ohjelmasi suorittaa toivotut toiminnot oikeissa poluissa ja tiedostoissa. Tämä auttaa myös estämään virheitä, jotka voivat johtua olemattomista tiedostoista tai kansionimistä.
+Hakemiston olemassaolon tarkistaminen on tärkeä osa Bash-ohjelmointia, sillä se auttaa sinua varmistamaan, että olet oikeassa paikassa ja käsittelet oikeaa hakemistoa. Tämä voi säästää paljon aikaa ja vaivaa virheiden selvittämisessä ja tekee ohjelmoinnista yleisesti ottaen tehokkaampaa.
 
-## Miten tarkistaa kansion olemassaolo Bashissa?
+## Kuinka:
 
-Kansion olemassaolon tarkistamiseksi Bashissa voidaan käyttää `test`-komennolla `-d`-tunnusta, joka tarkistaa, onko annetun polun pääte kansiona vai ei. Voimme myös käyttää `if`-lauseketta ja `&&`-operaattoria tarkistaaksemme olemassaolon ja suorittaa halutut toimenpiteet sen mukaan.
+Voit tarkistaa hakemiston olemassaolon Bashissa käyttämällä "test" -komentoa ja "-d" -tunnusta, joka tarkoittaa directory (hakemisto englanniksi). "test" -komentoa käytetään yleensä ehdollisten lauseiden yhteydessä ja se palauttaa joko "true" tai "false" riippuen siitä, onko ehto täytetty.
 
-```Bash
-if test -d /kansio/olemassa; then
-  echo "Kansio on olemassa."
+```
+Bash
+test -d <hakemisto>
+```
+
+Jos haluat esimerkiksi tarkistaa, onko hakemisto "Kuvat" olemassa, koodi olisi:
+
+```
+Bash
+test -d Kuvat
+```
+
+Jos hakemisto on olemassa, ohjelma palauttaa "true". Voit myös käyttää "if" -lauseketta yhdessä "test" -komenton kanssa käsittelemään erilaisia skenaarioita.
+
+```
+Bash
+if test -d Kuvat
+then
+    echo "Hakemisto 'Kuvat' on olemassa."
+else
+    echo "Hakemistoa ei löytynyt."
 fi
 ```
 
-Jos kansio ei ole olemassa, mikään ei tulostu.
+Tässä esimerkissä, jos hakemisto "Kuvat" on olemassa, tulostetaan "Hakemisto 'Kuvat' on olemassa." Muussa tapauksessa tulostetaan "Hakemistoa ei löytynyt."
 
-Voimme myös käyttää `test`-komennon `-e`-tunnusta, joka tarkistaa, onko tiedosto tai kansio olemassa. Tämä on hyödyllistä silloin, kun haluamme tarkistaa useita tiedostoja ja kansioita kerralla.
+## Syvempää tietoa:
 
-```Bash
-if test -e /kansio/olemassa; then
-  echo "Kansio tai tiedosto on olemassa."
+Komento "test" tarkistaa myös muiden tiedostojen ja kansioiden olemassaolon käyttämällä erilaisia tunnuksia. Esimerkiksi "-f" tarkoittaa regular file (tavallinen tiedosto), "-e" tarkoittaa existence (olemassaolo), jne. Voit lukea lisää erilaisista tunnuksista Bashin manuaalisivulta.
+
+Voit myös tarkistaa hakemiston olemassaolon käyttämällä "if" -lauseketta ja "ls" -komentoa, joka listaa tiedostot ja kansiot halutussa hakemistossa. Tämä lähestymistapa voi olla hyödyllinen, jos haluat tehdä muita toimintoja, kuten tulostaa sisältö tai poistaa hakemiston, jos se on olemassa.
+
+```
+Bash
+if [ -d Kuvat ]
+then
+    echo "Hakemisto 'Kuvat' on olemassa."
+else
+    echo "Hakemistoa ei löytynyt."
 fi
 ```
 
-## Syvempää tietoa tiedostopolun olemassaolon tarkistamisesta
+## Katso myös:
 
-Kansion olemassaolon tarkistamiseen Bashissa on useita eri tapoja. Lisäksi voidaan käyttää myös `[[`-lauseketta, joka on vähemmän herkkä virheille ja tarjoaa enemmän vaihtoehtoja, kuten tyhjän merkkijonon tarkistamisen ja yhtäsuuruuden tarkistamisen.
-
-Tärkeää on myös muistaa, että kansion olemassaolon tarkistaminen ei välttämättä tarkoita, että käyttäjällä olisi oikeudet kansion sisällön tarkastelemiseen tai muokkaamiseen. Tätä varten tulisi käyttää `test`-komennon `-r`-tunnusta, joka tarkistaa, onko käyttäjällä lukuoikeudet valittuun tiedostoon tai kansioon.
-
-## Katso myös
-
-- [Shellscript - Tiedostopolun tarkistaminen](https://www.shellscript.sh/tips/directory_exists/)
-
-- [Tarkista tiedoston olemassaolo Bashissa](https://javarevisited.blogspot.com/2019/03/how-to-check-if-file-or-directory-exists.html)
+- [Bash Manuali](https://www.gnu.org/software/bash/manual/bash.html)
+- [Linux Commando's Bash scripting tutorial](https://linuxcommando.blogspot.com/2008/03/bash-test-command.html)
+- [Tutustu Bashin ehtolausekkeisiin](https://www.tutorialspoint.com/unix/unix-basic-operators.htm)

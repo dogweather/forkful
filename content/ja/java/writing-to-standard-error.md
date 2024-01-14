@@ -1,49 +1,44 @@
 ---
-title:    "Java: 「標準エラーに書き込む」"
+title:    "Java: 「スタンダードエラーへの書き込み」"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-「 ## なぜ」
+# なぜ標準エラー出力を書くのですか？
 
-なぜ：なぜ誰かが標準エラーへの書き込みに関わるのかを説明する1-2文のみ。
+プログラミングの世界では、標準エラー出力は重要な役割を果たします。エラーメッセージを出力することによって、開発者は問題を特定し、修正することができます。そのため、標準エラー出力を書くことは、プログラムの実行やデバッグにとって大切なスキルです。
 
-プログラミングをする上で、時には標準エラーにメッセージを書き込む必要があります。これは、プログラムでエラーが発生した場合に開発者にプログラムの状態を通知するためです。例えば、正しく動作しないコードを実行したり、入力ミスがあった場合などにエラーを書き込むことができます。
+# どうやって標準エラー出力を書くのですか？
 
-## 方法
-
-まずは、Javaの ```System.err``` というメソッドを使って標準エラーに書き込む方法を紹介します。以下の例をご覧ください。
+Javaでは、Systemクラスを使用して標準エラー出力を行うことができます。以下のコード例を参考にしてください。
 
 ```Java
-System.err.println("エラーが発生しました。");
+public class HelloWorld {
+
+  public static void main(String[] args) {
+    System.err.println("Hello, world!"); // 標準エラー出力を行う
+  }
+}
 ```
 
-このように、 ```.println()``` メソッドを使い、標準エラーに書き込むメッセージを指定します。出力結果は、コンソール上で赤い文字で表示されます。
+上記のコードを実行すると、"Hello, world!"というエラーメッセージがコンソールに出力されます。
 
-また、```System.setErr()``` メソッドを使うことで、標準エラーの出力先を変更することもできます。例えば、ログファイルにエラーメッセージを書き込んでおくことができます。
+# 標準エラー出力についての詳細
 
-```Java
-System.setErr(new PrintStream("error.log"));
-```
+標準エラー出力は、System.errオブジェクトを使用して行われます。このオブジェクトは、System.outと同じように使用することができますが、エラーメッセージを出力するために特別に設計されています。通常、標準エラー出力は赤色のフォントで表示され、コンソールの標準出力とは別のストリームで処理されます。
 
-このように、指定したファイルにエラーメッセージを書き込むことができます。
+# 参考サイト
 
-## 詳細を調べる
+- Javaの公式ドキュメント: https://docs.oracle.com/javase/jp/8/docs/api/java/lang/System.html
+- 標準エラー出力についての詳細な説明: https://www.baeldung.com/java-stdout-stderr
+- Javaのプログラミング入門サイト: https://java-beginner.com/java/how-to-write-standard-error/
+- 日本語のJavaコミュニティサイト: https://www.java-users.jp/java/introduction/how-to-use-system_err_println
+- Javaのコンソール出力に関するチュートリアル: https://www.javabrahman.com/corejava/java-console-output-made-simple/ 
 
-標準エラーには、通常のエラーを書き込む```System.err```の他に、警告メッセージを書き込む```System.out```もあります。これらを上手く使い分けることで、プログラムの状態をより詳細に把握することができます。
+# 関連記事を見る
 
-また、エラーメッセージを翻訳することで、プログラムをより使いやすくすることができます。例えば、英語で書かれたエラーメッセージを日本語に変換することで、エンドユーザーにわかりやすいメッセージを表示することができます。
-
-## 参考リンク
-
-- [Java: StandardErrorクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/System.html)
-- [Java: PrintStreamクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/io/PrintStream.html)
-- [プログラミングで使う標準出力と標準エラーの意味と使い方](https://qiita.com/mima_ita/items/1e5c5c8614b6a394555e) 
-
-## 参照
-
-リンク：
-- [Java: StandardError class](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java: PrintStream class](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
-- [Meanings and usage of standard output and standard error in programming](https://qiita.com/mima_ita/items/1e5c5c8614b6a394555e)
+- Javaの標準入力と標準出力について: https://qiita.com/ir_fuma/items/dec40458477d105f7598
+- Javaのエラー処理についての基本的な知識: https://timeshift-blog.azurewebsites.net/java-error-handling/
+- Javaでコンソールアプリケーションを作成する方法: https://meltybitsblog.com/java-console/

@@ -1,42 +1,53 @@
 ---
-title:    "Elixir: Ricercare e sostituire testo"
+title:    "Elixir: Ricerca e sostituzione di testo"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore Elixir, probabilmente ti sei imbattuto nella necessità di cercare e sostituire del testo in alcuni dei tuoi progetti. Potresti aver pensato che si tratta di un'operazione semplice, ma la verità è che ci sono alcuni trucchi e tecniche che possono semplificare il processo e renderlo più efficiente. In questo articolo, esploreremo il motivo per cui dovresti essere interessato a imparare a cercare e sostituire il testo in Elixir.
+Il processo di ricerca e sostituzione del testo è un'operazione comune nella programmazione Elixir. Spesso, è necessario modificare grandi quantità di dati o semplicemente sostituire parti di una stringa in modo efficiente. Continua a leggere per scoprire come puoi farlo in modo semplice ed efficiente.
 
-## Come fare
+## Come Fare
 
-Per eseguire la ricerca e la sostituzione del testo in Elixir, puoi utilizzare la funzione `String.replace/4`. Questa funzione prende quattro argomenti: la stringa di input in cui cercare, il pattern da cercare, il pattern di sostituzione e le opzioni. Vediamo un esempio pratico utilizzando la stringa "Hello World" come input:
-
-```Elixir
-iex> String.replace("Hello World", "World", "Elixir")
-"Hello Elixir"
-```
-
-Come puoi vedere, il pattern "World" viene sostituito con "Elixir" nella stringa di input. Inoltre, puoi utilizzare opzioni per personalizzare il comportamento della funzione. Ad esempio, puoi impostare l'opzione `global: true` per sostituire tutte le occorrenze del pattern invece di solo la prima.
-
-Puoi anche utilizzare espressioni regolari come pattern per la ricerca e la sostituzione del testo. Ad esempio, se vuoi sostituire tutte le vocali in una stringa con degli asterischi, puoi farlo utilizzando una regex come pattern:
+La soluzione più comune per cercare e sostituire il testo in Elixir è utilizzare il metodo `String.replace/3`. Questo metodo prende tre argomenti: la stringa originale, il testo da cercare e la stringa di sostituzione. Ecco un esempio:
 
 ```Elixir
-iex> String.replace("Hello World", ~r/[aeiou]/, "*")
-"H*ll* W*rld"
+testo = "Ciao a tutti!"
+String.replace(testo, "Ciao", "Salve")
+# Output: "Salve a tutti!"
 ```
 
-Sperimenta con diverse opzioni e espressioni regolari per ottenere i risultati desiderati.
+È anche possibile utilizzare espressioni regolari per rendere la ricerca e la sostituzione più flessibili. Per fare ciò, si può utilizzare il modulo `Regex` e il metodo `Regex.replace/3`. Ad esempio, se si desidera sostituire tutte le vocali di una stringa con la lettera "o", si può utilizzare il seguente codice:
+
+```Elixir
+testo = "Ciao a tutti!"
+Regex.replace(~r/[aeiou]/, testo, "o")
+# Output: "Coao o tutti!"
+```
+
+Ci sono anche altri metodi utili per la ricerca e sostituzione del testo, come ad esempio `String.replace_prefix/3` e `String.replace_suffix/3`, che permettono di specificare esattamente dove sostituire il testo all'interno della stringa originale. Si consiglia di dare un'occhiata alla documentazione di Elixir per ulteriori opzioni e metodi utili.
 
 ## Approfondimento
 
-Oltre alla funzione `String.replace/4`, in Elixir ci sono altre funzioni utili per la ricerca e la sostituzione del testo, come `String.replace_leading/3` e `String.replace_trailing/3`. Queste funzioni consentono di specificare se si desidera sostituire solo il primo o l'ultimo match del pattern nella stringa. Inoltre, puoi anche utilizzare il modulo `Regex` per creare e utilizzare espressioni regolari più complesse.
+Il metodo `String.replace/3` è molto efficiente, ma può diventare un po' lento se si deve effettuare la sostituzione su una grande quantità di dati. In questo caso, si può utilizzare la libreria `Stream` per elaborare i dati in modo più efficiente, come ad esempio:
 
-Una cosa importante da tenere a mente è che le stringhe in Elixir sono immutabili, quindi ogni volta che utilizzi una funzione di ricerca e sostituzione, verrà creata e restituita una nuova stringa. Ciò significa che se hai bisogno di effettuare molte sostituzioni in una stringa, potresti voler considerare l'utilizzo di una libreria come `String.replace_stream/4`, che restituisce uno stream di stringhe senza creare copie multiple.
+```Elixir
+una_lista_di_testi = ["Ciao a tutti!", "Hello everyone!", "Bonjour à tous!"]
+una_lista_di_testi
+|> Stream.map(&String.replace(&1, "a", "o"))
+|> Enum.to_list
+# Output: ["Cioo o tutti!", "Hello everyone!", "Bonjouro touts!"]
+```
 
-## Vedi anche
+In questo esempio, si sta utilizzando il metodo `Stream.map/2` per applicare la sostituzione a ogni elemento della lista e `Enum.to_list/1` per convertire il risultato in una lista.
 
-- [Documentazione di Elixir sulla funzione String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Regex in Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir String Cheat Sheet](https://devhints.io/elixir-string)
+Inoltre, è possibile accedere ai gruppi catturati in un'espressione regolare utilizzando il modificatore di sostituzione `$`. Ciò può risultare molto utile per sostituire solo parti specifiche di una stringa.
+
+## Vedi Anche
+
+- Documentazione ufficiale di Elixir sulle stringhe e le espressioni regolari: https://hexdocs.pm/elixir/String.html
+- Tutorial su come usare le espressioni regolari in Elixir: https://elixirschool.com/it/lessons/basics/pattern-matching/
+- Articolo sulle libreria `StringScanner`, che fornisce funzionalità avanzate per la ricerca e la sostituzione del testo: https://www.poeticoding.com/elixir/scanning-strings-in-elixir-with-the-stringscanner-module/

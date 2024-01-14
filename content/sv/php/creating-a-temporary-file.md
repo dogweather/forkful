@@ -1,36 +1,50 @@
 ---
 title:    "PHP: Skapa en temporär fil"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför?
+##Varför
 
-Temporära filer är en viktig del av PHP-programmering eftersom de tillåter utbyte av data mellan olika delar av ett program. Genom att skapa temporära filer kan du enkelt lagra temporär data och sedan radera den när den inte längre behövs. Detta hjälper till att hålla din kod ren och förhindrar minnesläckor.
+Att skapa en tillfällig fil kan vara en viktig del av en programmerares arbetsflöde. Det kan hjälpa till att hantera temporära data och säkerställa att allt fungerar smidigt inom din applikation.
 
-## Hur man gör
+## Så här
 
-För att skapa en temporär fil i PHP kan du använda funktionen `tempnam()`. Den här funktionen tar två parametrar - sökvägen där den temporära filen ska skapas och ett prefix för filnamnet. Här är ett exempel på hur man använder `tempnam()`:
+Skapa en tillfällig fil är relativt enkelt i PHP. Du kan använda funktionen `tmpfile()` för att skapa en fil som automatiskt hanteras av operativsystemet och raderas när den inte längre behövs. Här är ett exempel:
 
 ```PHP
-$filepath = tempnam("/tmp", "TEMP");
-echo "Temporär fil skapad på: " . $filepath;
+<?php
+$file = tmpfile();
+fwrite($file, "Detta är en temporär fil.");
+echo ftell($file); // Output: 24 (antalet tecken som skrivits till filen)
+fclose($file); // Filen kommer automatiskt att raderas här
+?>
 ```
+Om du vill ändra namnet på den temporära filen kan du använda funktionen `tempnam()`. Det här kan vara användbart om du behöver hänvisa till filen senare i din kod. Här är ett exempel:
 
-Detta kommer att skapa en temporär fil med namnet "TEMP" i mappen "/tmp" och sedan skriva ut filvägen till denna fil. Om du inte anger någon sökväg kommer PHP att skapa filen i den temporära mappen för ditt system.
+```PHP
+<?php
+$tempfile = tempnam("/tmp", "TEMP_"); // Skapar en fil med namnet "TEMP_12345" i mappen "/tmp"
+$file = fopen($tempfile, "w"); // Öppnar filen i skrivläge
+fwrite($file, "Detta är en annan temporär fil.");
+fclose($file);
+echo file_get_contents($tempfile); // Output: "Detta är en annan temporär fil."
+unlink($tempfile); // Filen raderas manuellt här
+?>
+```
 
 ## Djupdykning
 
-När du använder `tempnam()` är det viktigt att notera att filen som skapas faktiskt inte är tom. Den innehåller ett slumpmässigt genererat innehåll som kan användas för att identifiera filen och förhindra åtkomst av andra program.
+Det finns flera anledningar till att man vill skapa en tillfällig fil. Att man behöver hantera temporär data är en vanlig anledning, till exempel när man arbetar med filer som är för stora för att lagras i minnet. Att skapa en tillfällig fil kan också användas för att testa viss funktionalitet utan att riskera att påverka befintliga filer.
 
-Det är också viktigt att se till att du raderar den temporära filen när den inte längre behövs. Detta kan göras med funktionen `unlink()`. Om du inte raderar filen manuellt kommer den att raderas automatiskt när ditt PHP-program avslutas.
+När du skapar en tillfällig fil i PHP är den automatiskt skyddad mot att återgå till användaren. Detta innebär att andra användare på servern inte kommer att kunna komma åt din fil. Det är också viktigt att notera att det inte finns något garantier för hur länge en tillfällig fil kommer att finnas kvar. Det kan variera beroende på operativsystem och serverinställningar.
 
-## Se även
+## Se också
 
-För mer information om PHP-programmering och olika funktioner, kolla in följande länkar:
+- [PHP-funktioner för tillfälliga filer](https://www.php.net/manual/en/ref.filesystem.php)
+- [Hur man hanterar filer i PHP](https://www.php.net/manual/en/function.file.php)
+- [Tips för effektiv PHP-programmering](https://www.php-fig.org/psr/psr-2/)
 
-- https://www.php.net/manual/en/function.tempnam.php
-- https://www.w3schools.com/php/func_filesystem_tempnam.asp
-- https://www.geeksforgeeks.org/php-builder-pattern/
-- https://www.phpclasses.org/blog/post/84-22-Easy-PHP-7-Code-Examples-of-Classes-and-Objects.html
+Det är viktigt att förstå hur man effektivt kan hantera tillfälliga filer i PHP för att kunna skriva robust och smidig kod. Genom att använda de funktioner som finns tillgängliga kan du enkelt hantera dina temporära data och undvika onödig komplexitet.

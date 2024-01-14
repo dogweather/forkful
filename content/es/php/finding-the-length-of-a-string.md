@@ -1,46 +1,34 @@
 ---
 title:    "PHP: Encontrando la longitud de una cadena"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué
 
-A veces en la programación es necesario saber la longitud de una cadena de texto. Esto puede ser útil para realizar operaciones como validar entradas de usuario o truncar un texto demasiado largo. En este artículo, exploraremos cómo encontrar la longitud de una cadena en PHP.
+En el mundo de la programación, hay veces en las que necesitamos saber la longitud de una cadena de texto. Esto puede parecer un concepto simple, pero saber la longitud de una cadena es esencial al manipular y procesar datos. Sigue leyendo para aprender cómo encontrar la longitud de una cadena en PHP.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-En PHP, podemos usar la función `strlen()` para encontrar la longitud de una cadena. Esta función toma como parámetro la cadena de texto y devuelve su longitud como un número entero. Veamos un ejemplo:
+Para encontrar la longitud de una cadena en PHP, utilizamos la función `strlen()`. Esta función toma una cadena como argumento y devuelve su longitud como un número entero. A continuación se muestra un ejemplo de cómo utilizar esta función en un código PHP:
 
 ```PHP
-<?php
-$cadena = "¡Hola Mundo!";
-$longitud = strlen($cadena);
-echo "La longitud de la cadena es: " . $longitud;
-?>
+$cadena = "¡Hola, mundo!";
+echo strlen($cadena);
 ```
 
-Este código producirá la siguiente salida:
+El código anterior imprimirá `13` en la pantalla, ya que la cadena tiene 13 caracteres. También puedes asignar el valor devuelto por `strlen()` a una variable y utilizarla en tu código de la forma que desees.
 
-```
-La longitud de la cadena es: 11
-```
+##Profundidad
 
-También podemos usar la función `mb_strlen()` si la cadena contiene caracteres multibyte, como letras acentuadas o emojis. Esta función toma un parámetro adicional opcional para especificar el conjunto de caracteres utilizado en la cadena.
+Ahora que sabes cómo usar la función `strlen()` para encontrar la longitud de una cadena, es importante entender cómo funciona en realidad. En PHP, cada cadena se almacena como una serie de bytes, que en términos simples, son una secuencia de números que representan los caracteres en la cadena. La función `strlen()` simplemente cuenta el número de bytes en una cadena, y ese número es lo que se devuelve.
 
-Ahora, si queremos encontrar la longitud de una cadena de texto que incluya etiquetas HTML, debemos usar la función `strip_tags()` para eliminar las etiquetas antes de usar `strlen()` o `mb_strlen()`. De lo contrario, la longitud devuelta incluirá las etiquetas, lo cual no es lo que buscamos.
+Es importante tener en cuenta que la función `strlen()` no cuenta los espacios en blanco al final de una cadena. Por lo tanto, si tienes un espacio al final de una cadena, este no se incluirá en la longitud devuelta. Es bueno tener esto en cuenta al tratar con datos y asegurarte de que estás obteniendo la longitud correcta.
 
-## Profundizando
+##Ver también
 
-Tener en cuenta que `strlen()` y `mb_strlen()` cuentan los espacios en blanco y los caracteres especiales como parte de la longitud de una cadena. Esto puede afectar los cálculos si necesitamos una longitud exacta en ciertos casos. Para solucionar esto, podemos usar la función `trim()` para eliminar los espacios en blanco al inicio y al final de la cadena antes de usar `strlen()` o `mb_strlen()`.
-
-También podemos usar la función `str_replace()` para reemplazar ciertos caracteres antes de contar la longitud de la cadena. Esto puede ser útil en casos donde queremos ignorar ciertos caracteres al calcular la longitud.
-
-## Ver también
-
-- [Documentación de PHP sobre la función strlen()](https://www.php.net/manual/es/function.strlen.php)
-- [Documentación de PHP sobre la función mb_strlen()](https://www.php.net/manual/es/function.mb-strlen.php)
-- [Documentación de PHP sobre la función strip_tags()](https://www.php.net/manual/es/function.strip-tags.php)
-- [Documentación de PHP sobre la función trim()](https://www.php.net/manual/es/function.trim.php)
-- [Documentación de PHP sobre la función str_replace()](https://www.php.net/manual/es/function.str-replace.php)
+- [Documentación oficial de PHP sobre la función `strlen()`](https://www.php.net/manual/es/function.strlen.php)
+- [Artículo sobre otras formas de encontrar la longitud de una cadena en PHP](https://www.w3schools.com/php/func_string_strlen.asp)
+- [Más información sobre cómo se almacenan las cadenas en PHP](https://www.tutorialrepublic.com/php-tutorial/php-strings.php)

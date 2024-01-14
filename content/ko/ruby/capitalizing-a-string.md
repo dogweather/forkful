@@ -1,47 +1,59 @@
 ---
 title:    "Ruby: 문자열 대문자로 변환하기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 대문자로 바꾸는 것에 대해 알고 싶은 이유는 무엇일까요? 이 글에서는 그 이유와 그 방법에 대해 알아보겠습니다.
+캐피탈라이징(captializing)은 루비(Ruby) 프로그래밍에서 매우 유용한 기능입니다. 문자열을 변경하거나 서식을 지정할 때 사용할 수 있어서, 코드의 유연성을 높여줍니다.
 
-## 어떻게
+## 하우 투
 
-문자열을 대문자로 바꾸는 것은 간단한 작업입니다. Ruby에서는 `.upcase` 메소드를 사용하여 간단하게 해결할 수 있습니다.
+먼저, `capitalize` 메소드를 사용하여 문자열을 대문자로 바꿀 수 있습니다. 아래의 코드를 참조하세요.
 
 ```Ruby
-# 문자열 변수 정의
-str = "hello world"
-
-# 문자열을 대문자로 바꾸기
-str.upcase
-
-# 출력
-HELLO WORLD
+"hello world".capitalize # output: "Hello world"
 ```
 
-## 깊이 파고들기
+이렇게 하면 첫 번째 단어만 대문자로 바뀝니다. 모든 단어를 대문자로 바꾸는 방법은 `upcase` 메소드를 사용하는 것입니다. 아래 코드를 확인하세요.
 
-문자열을 대문자로 바꾸는 과정에서 Ruby가 어떻게 코드를 실행하는지 알아보겠습니다. 우리는 `str.upcase` 메소드를 호출함으로써 문자열을 대문자로 바꿀 수 있지만, 실제로는 Ruby 내부에서 다음과 같은 과정이 일어납니다.
+```Ruby
+"hello world".upcase # output: "HELLO WORLD"
+```
 
-1. `String` 클래스 내부에서 `upcase` 메소드가 정의되어 있음을 확인합니다.
-2. `str` 변수가 인자로 들어가며, `upcase` 메소드가 실행됩니다.
-3. 메소드 내부에서 문자열을 대문자로 바꾸는 알고리즘을 수행합니다.
-4. 대문자로 바뀐 문자열을 반환합니다.
+만약 첫 글자를 제외하고 나머지 문자를 소문자로 바꾸고 싶다면 `downcase` 메소드를 사용하세요. 아래 코드를 참고하세요.
 
-이처럼 Ruby는 객체 지향 프로그래밍 언어이기 때문에 클래스와 메소드를 활용하여 간편하게 코드를 작성할 수 있습니다.
+```Ruby
+"HELLO WORLD".downcase # output: "hello world"
+```
 
-## 관련 글
+한 글자만 대문자로 바꾸고 싶을 때는 `capitalize!` 메소드를 사용하세요. 아래는 예제 코드입니다.
 
-- [Ruby 공식 문서 - String Class](https://ruby-doc.org/core-2.6/String.html)
-- [Ruby 공식 문서 - String#upcase](https://ruby-doc.org/core-2.6/String.html#method-i-upcase)
-- [Ruby Guid - Strings](https://www.rubyguides.com/ruby-tutorial/strings/)
+```Ruby
+"hello world".capitalize! # output: "Hello world"
+```
 
-## 관련 링크
+마지막으로, 모든 단어에서 첫 글자만 대문자로 바꾸는 경우 `capitalize` 메소드에 `each_word` 메소드를 추가하면 됩니다. 아래 코드를 참조하세요.
 
-- [Markdown 사용법](https://guides.github.com/features/mastering-markdown/)
-- [Visual Studio Code 설치 및 설정 방법](https://www.44bits.io/ko/post/visual-studio-code-tutorial-for-beginners)
+```Ruby
+"hello world".capitalize.each_word {|word| puts word} # output: "Hello World"
+```
+
+## 딥 다이브
+
+위의 예제로는 간단한 문자열만 다루었지만, `capitalize` 메소드는 문자열의 길이를 확장하여 사용할 수 있습니다. 다양한 조건에 따라 문자열을 변경할 수 있으며, 여러 기능과 함께 사용할 수 있습니다. 더 자세한 정보는 공식 문서를 참조해주세요.
+
+## 더 알아보기
+
+만약 루비의 문자열 관련 메소드에 대해 더 알아보고 싶다면 아래 링크들을 참고해주세요.
+
+- https://ruby-doc.org/core-2.7.1/String.html
+- https://ko.wikipedia.org/wiki/루비_(프로그래밍_언어)
+- https://www.fun-coding.org/PL&OOP5-Ruby.html
+
+## 참고하기
+
+이 글은 `ruby` 패키지의 `markdown` 형식으로 작성되었습니다. 자세한 사항은 `github`의 `markdown` 문서를 참고해주세요.

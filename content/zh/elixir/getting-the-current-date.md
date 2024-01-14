@@ -1,61 +1,83 @@
 ---
 title:    "Elixir: 获取当前日期"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+#为什么
+有时候我们需要知道当前的日期，比如在创建日历应用程序或记录时间戳时。Elixir提供了一种简单的方法来获取当前日期，让我们来看看如何做到这一点。
 
-如果您正在使用Elixir编程语言，那么肯定会遇到需要获取当前日期的情况。获取当前日期在编程中是非常常见的需求，因为它可以帮助您跟踪数据和事件的发生时间。在本文中，我们将学习如何使用Elixir获取当前日期，并深入探讨一些细节。
-
-## 如何
-
-获取当前日期在Elixir中非常简单。您只需要使用`Date.utc_today`函数即可，它将返回一个当前日期的UTC时间戳。下面是一个简单的例子：
+##如何
+获取当前日期在Elixir中非常简单。我们可以使用内置的Date模块，并调用`utc_today`或`local_today`函数，具体取决于我们想要获取的是UTC时间还是本地时间。让我们一起来看一个例子：
 
 ```Elixir
-Date.utc_today
+# 获取UTC时间
+Date.utc_today()
+
+# 获取本地时间
+Date.local_today()
 ```
 
-运行这段代码，你将得到类似这样的输出：
+输出将类似于下面的格式：
 
 ```
-~U[2021-09-29 00:00:00]
+# 获取UTC时间
+{:ok, #Date<2021-02-21>}
+
+# 获取本地时间
+{:ok, #Date<2021-02-21>}
 ```
 
-这是一个UTC时间戳，它表示的是当前日期的零点。如果您想要自定义日期的格式，您可以使用`Date.format`函数。下面是一个例子：
+我们也可以使用`DateTime`模块来获取更多的时间信息。让我们一起来看一个例子，获取当前时间的小时和分钟。
 
 ```Elixir
-Date.utc_today
-|> Date.format("{0,Calendar} {0,Time}")
+DateTime.utc_now() |> DateTime.to_time() |> Time.hour()
+DateTime.utc_now() |> DateTime.to_time() |> Time.minute()
 ```
 
-这将输出类似这样的结果：
+输出将类似于下面的格式：
 
 ```
-2021-09-29 00:00:00
+12  # 当前时间的小时
+37  # 当前时间的分钟
 ```
 
-## 深入探讨
-
-在Elixir中，日期是以`DateTime`数据类型表示的。它存储了日期和时间的信息，并且它是不可变的。当您使用`Date.utc_today`函数获取当前日期时，实际上是创建了一个`DateTime`对象，其中日期和时间信息都被设置为当前的UTC时间戳。
-
-在编程的过程中，您可能会遇到需要将日期转换为不同的时区的情况。在Elixir中，您可以使用`DateTime.with_timezone`函数来实现这个功能。下面是一个例子：
+##深入了解
+在Elixir中，日期实际上是一个`Date`结构体，它有三个字段：`year`、`month`和`day`。我们可以直接访问这些字段来获取特定的日期信息。例如，要获取当前日期的月份，我们可以这样写：
 
 ```Elixir
-DateTime.utc_now |> DateTime.with_timezone("Auckland")
+Date.utc_today().month
 ```
 
-这个例子将返回一个`DateTime`对象，其中日期和时间信息被转换为奥克兰的本地时间。
+输出将是当前月份的数字，比如2月就是2。我们也可以通过调用`Date.to_string`函数来获取一个日期的可读字符串。让我们来看一个例子：
 
-## 参考链接
+```Elixir
+Date.utc_today() |> Date.to_string()
+```
 
-- [Elixir Date module documentation](https://hexdocs.pm/elixir/Date.html)
-- [DateTime module documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Date cheatsheet](https://devhints.io/elixir-date)
-- [Working with dates and times in Elixir](https://medium.com/@vc143201/handling-dates-times-in-elixir-c64a9731b843)
+输出将类似于下面的格式：
 
-## 参见
+```
+"2021-02-21"
+```
 
-- [Elixir文档](https://elixir-lang.org/docs.html)
-- [从零开始学习Elixir](https://elixirschool.com/zh-hans/)
+一个有用的技巧是使用`Date.add`函数来增加或减少日期的天数。让我们来看一个例子，在当前日期的基础上增加10天：
+
+```Elixir
+Date.utc_today() |> Date.add(10)
+```
+
+输出将是10天后的日期。我们也可以使用负数来减少日期。让我们来看一个例子，在当前日期的基础上减少5天：
+
+```Elixir
+Date.utc_today() |> Date.add(-5)
+```
+
+输出将是5天前的日期。
+
+#参考
+- [Elixir Date模块文档](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime模块文档](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir Time模块文档](https://hexdocs.pm/elixir/Time.html)

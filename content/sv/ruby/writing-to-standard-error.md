@@ -1,43 +1,68 @@
 ---
-title:    "Ruby: Skrivning till standardfel"
+title:    "Ruby: Skrivande till standardfel"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva till standard error är ett viktigt verktyg för alla Ruby-programmerare. Genom att skriva ut information till standard error istället för standard output kan du enkelt separera ut felsökningsinformation från vanlig användardata. Detta gör det möjligt att hitta och åtgärda fel med din kod snabbt och effektivt.
+Att skriva till standard error är ett användbart verktyg för att felsöka dina Ruby-program. Genom att skriva till standard error kan du skriva ut specifika meddelanden som hjälper dig att identifiera och förstå varför ett program inte fungerar som det ska.
 
-## Hur man gör
+# Hur man gör det
 
-Det finns flera sätt att skriva till standard error i Ruby. Här är två enkla exempel:
-
-```Ruby
-# Metod 1
-$stderr.puts "Detta skrivs till standard error"
-$stdout.puts "Detta skrivs till standard output"
-
-# Metod 2
-puts "Detta skrivs till standard output"
-STDERR.puts "Detta skrivs till standard error"
-```
-
-När du kör detta kodexempel kommer den första raden ("Detta skrivs till standard error") att skrivas ut i terminalen som röd text medan den andra raden ("Detta skrivs till standard output") kommer att skrivas ut som vanlig text. Detta gör det enkelt att särskilja mellan felsökningsinformation och användarinformation.
-
-## Djupdykning
-
-Varför använda $stderr.puts istället för puts? Anledningen är att puts använder standard output (STDIO) kanal, medan $stderr.puts använder standard error (STDERR) kanal. Det finns tillfällen när du vill skriva ut information som är avsedd för användaren (t.ex. resultatet av en beräkning) och information som är avsedd för utvecklare (t.ex. felmeddelanden). Genom att skriva ut felsökningsinformation till standard error kan du enkelt filtrera ut dessa med hjälp av redirect syntaxen (>). Till exempel:
+För att skriva till standard error i Ruby, används metoden `warn`. Detta gör att meddelanden skrivs ut till standard error istället för till standard output. Här är ett exempel:
 
 ```Ruby
-ruby script.rb > output.txt # Skriver ut allt till en fil
-ruby script.rb 2> errors.txt # Skriver ut endast fel till en fil
+def divide(x, y)
+  if y == 0
+    warn "Kan inte dividera med 0!"
+  else
+    puts x / y
+  end
+end
+
+divide(10, 0)
 ```
 
-Detta kan vara särskilt användbart när du kör ett program på en server där du kanske inte har tillgång till utskrifter på skärmen.
+Output:
+
+```sh
+Kan inte dividera med 0!
+```
+
+I detta exempel använder vi `warn` för att skriva ut ett felmeddelande om vi försöker dividera med 0. Detta hjälper oss att snabbt identifiera felet i vårt program.
+
+# Djupdykning
+
+I vissa fall kan du vilja skriva till standard error även när allt fungerar som det ska. Detta kan vara till nytta när du vill skriva ut debugging-meddelanden för att kontrollera variabler eller andra värden i ditt program.
+
+En annan användbar metod är `raise`, som låter dig kasta ett undantag och skriva ett meddelande till standard error. Detta är användbart för att fånga och hantera fel i ditt program.
+
+```Ruby
+def get_user_age
+  age = gets.chomp.to_i
+  if age < 18
+    raise "Användaren är inte myndig!"
+  else
+    puts "Användaren är ${age} år gammal."
+  end
+end
+
+get_user_age()
+```
+
+Output:
+
+```sh
+Användaren är inte myndig!
+```
 
 ## Se även
 
-- [Redirecting standard error in Ruby](https://stackoverflow.com/questions/5888573/redirecting-standard-error-in-ruby)
-- [The Ruby Standard Library](https://ruby-doc.org/stdlib-2.7.1/) (sektionen om standard error)
-- [Använda standard error i dina Ruby-program](https://blog.bigbinary.com/2012/04/18/using-stderr-to-log-output-and-errors-in-ruby.html)
+Här är några resurser du kan använda för att lära dig mer om att skriva till standard error i Ruby:
+
+- Ruby dokumentation: https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-warn
+- Learn Ruby the Hard Way: https://learnrubythehardway.org/book/ex17.html
+- RubyGuides: https://www.rubyguides.com/2019/02/ruby-stderr-stdout/

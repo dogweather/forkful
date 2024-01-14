@@ -1,35 +1,50 @@
 ---
-title:    "PHP: Vérification de l'existence d'un répertoire"
+title:    "PHP: Vérifier l'existence d'un répertoire"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Pourquoi
 
-Lorsque vous travaillez avec des fichiers et des dossiers dans un projet PHP, il peut être utile de vérifier si un dossier existe avant de le manipuler. Cela peut vous éviter des erreurs et des bugs potentiels.
+Vérifier l'existence d'un répertoire dans une application PHP est une étape importante pour s'assurer que le code fonctionne correctement. Cela peut être utile pour créer un nouveau dossier si nécessaire ou pour éviter des erreurs lors de l'utilisation d'un fichier stocké dans un répertoire spécifique.
 
-## Comment
+#Comment Faire
 
-Pour vérifier si un dossier existe en utilisant PHP, vous pouvez utiliser la fonction intégrée `is_dir`. Elle vérifie si un chemin donné est un dossier et renvoie un booléen true ou false en conséquence.
+L'utilisation de la fonction `is_dir()` en PHP permet de vérifier si un répertoire existe déjà. Voici un exemple de code PHP pour vérifier l'existence d'un répertoire nommé "images" dans le répertoire actuel :
 
 ```PHP
-if (is_dir($chemin_dossier)) {
-    echo "$chemin_dossier existe."; // Output: /mon_dossier existe.
-} else {
-    echo "$chemin_dossier n'existe pas.";
+if(is_dir('images')){
+  echo "Le répertoire existe déjà.";
+}else{
+  echo "Le répertoire n'existe pas encore.";
 }
-
 ```
 
-## Plongée en profondeur
+Si le répertoire existe, le message "Le répertoire existe déjà." sera affiché. Sinon, le message "Le répertoire n'existe pas encore." sera affiché.
 
-Cette fonction utilise le système de fichiers du serveur pour réaliser cette vérification, elle est donc très efficace et rapide. Cependant, il est important de noter que la fonction `is_dir` ne vérifie que l'existence d'un dossier, pas sa disponibilité en écriture ou en lecture.
+Vous pouvez également utiliser cette fonction pour créer un nouveau répertoire si nécessaire. Voici un exemple de code qui vérifie d'abord si le répertoire existe et, s'il n'existe pas, le crée :
 
-Il est également possible d'utiliser la fonction `file_exists` pour vérifier l'existence d'un dossier, mais elle vérifie également l'existence de fichiers, ce qui peut ne pas être idéal pour notre cas d'utilisation spécifique.
+```PHP
+if(!is_dir('documents')){
+  mkdir('documents');
+  echo "Le répertoire a été créé.";
+}else{
+  echo "Le répertoire existe déjà.";
+}
+```
 
-## Voir aussi 
+Dans cet exemple, si le répertoire "documents" n'existe pas encore, il sera créé et le message "Le répertoire a été créé." sera affiché.
 
-- [Documentation officielle de la fonction is_dir en PHP](https://www.php.net/manual/fr/function.is-dir.php)
-- [Exemple d'utilisation de la fonction is_dir](https://www.sololearn.com/Course/PHP/?ref=app)
-- [Tutoriel sur la manipulation de fichiers et de dossiers en PHP](https://www.w3schools.com/php/php_file_open.asp)
+#Plongée en Profondeur
+
+Il peut être utile de comprendre comment la fonction `is_dir()` vérifie si un répertoire existe. En réalité, cette fonction utilise la fonction `file_exists()` pour vérifier si le chemin spécifié correspond à un fichier ou à un répertoire existant. Si le chemin existe et correspond à un répertoire, la fonction `is_dir()` renvoie "vrai" (true). Sinon, elle renvoie "faux" (false).
+
+Il est également important de noter que cette fonction ne vérifie que l'existence d'un répertoire et non sa permission d'accès. Cela signifie qu'elle peut renvoyer "vrai" même si vous n'avez pas la permission d'accéder au répertoire.
+
+#Voir Aussi
+
+- [Documentation officielle de la fonction is_dir() en PHP](https://www.php.net/manual/fr/function.is-dir.php)
+- [Documentation officielle de la fonction file_exists() en PHP](https://www.php.net/manual/fr/function.file-exists.php)
+- [Vérification de l'existence d'un fichier en PHP](https://www.php.net/manual/fr/function.file-exists.php)

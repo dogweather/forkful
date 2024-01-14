@@ -1,62 +1,30 @@
 ---
 title:    "Swift: Ein neues Projekt beginnen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+#Warum
+Das Starten eines neuen Projekts in Swift kann eine aufregende und lohnende Erfahrung sein. Mit der einfachen und intuitiven Syntax dieser Programmiersprache können Sie leistungsstarke Anwendungen für iOS, MacOS und andere Plattformen entwickeln.
 
-Wenn du ein begeisterter Programmierer bist, hast du wahrscheinlich schon von Swift gehört. Swift ist eine Programmiersprache, die von Apple entwickelt wurde und immer beliebter wird. Wenn du ein neues Projekt beginnen möchtest, kann es eine gute Idee sein, Swift als Option in Betracht zu ziehen. Warum? Erfahre es in diesem Blogpost!
+#Wie man anfängt
+Um ein neues Projekt in Swift zu starten, müssen Sie zunächst über die richtigen Tools verfügen. Laden Sie Xcode herunter und installieren Sie es auf Ihrem Mac. Öffnen Sie dann Xcode und klicken Sie auf "Neues Projekt erstellen". Wählen Sie "Swift" als Programmiersprache aus und geben Sie Ihrem Projekt einen Namen. Sie können dann mit der Entwicklung beginnen!
 
-# Wie man es angeht
+```Swift
+import UIKit
 
-Um ein neues Projekt in Swift zu starten, musst du zunächst die Sprache und ihre Syntax verstehen. Hier sind einige Beispiele, um dir den Einstieg zu erleichtern:
-
+let message = "Hallo Welt!"
+print(message)
 ```
-// Einfache Ausgabe auf der Konsole
-print("Hallo Welt!")
-```
+Dieses Beispiel zeigt Ihnen, wie einfach es ist, "Hallo Welt!" in einer Swift-Anwendung auszugeben. Mit einfachen Befehlen wie `import` und `print` können Sie bereits erste Schritte in der Programmierung machen.
 
-```
-// Eine Variable definieren und verwenden
-var name = "Maria"
-print("Mein Name ist \(name).")
-```
+#Tiefentauchen
+Wenn Sie tiefer in die Welt von Swift einsteigen wollen, gibt es viele Ressourcen, die Ihnen dabei helfen können. Sie können Bücher lesen, Online-Kurse belegen oder an Entwicklerkonferenzen teilnehmen. Zusätzlich bietet Xcode zahlreiche Hilfsmittel wie Code-Vervollständigung und Debugging-Tools, die Ihnen bei der Entwicklung helfen können. Vergessen Sie auch nicht, die offizielle Swift-Dokumentation zu lesen, um alle Funktionen und Möglichkeiten der Sprache zu entdecken.
 
-```
-// Schleifen und Bedingungen verwenden
-for i in 0...10 {
-    if i % 2 == 0 {
-        print("Die Zahl \(i) ist gerade.")
-    } else {
-        print("Die Zahl \(i) ist ungerade.")
-    }
-}
-```
+#Siehe auch
 
-```
-// Funktionen erstellen und aufrufen
-func multiply(a: Int, b: Int) -> Int {
-    return a * b
-}
-
-print("Das Ergebnis von 5 * 10 ist \(multiply(a: 5, b: 10)).")
-```
-
-Es gibt so viele Möglichkeiten, Swift zu verwenden, und diese Beispiele sind nur ein kleiner Ausschnitt davon. Je mehr du damit übst, desto besser wirst du darin!
-
-# Tiefer eintauchen
-
-Wenn du wirklich ernsthaft daran denkst, ein neues Projekt mit Swift zu starten, gibt es ein paar Dinge, die du beachten solltest. Zunächst solltest du sicherstellen, dass du die aktuellste Version von Xcode heruntergeladen hast, da Swift eng mit dieser integrierten Entwicklungsumgebung (IDE) von Apple verbunden ist.
-
-Außerdem solltest du dich über die verschiedenen Frameworks informieren, die von Apple bereitgestellt werden, um das Entwickeln in Swift noch einfacher zu machen. Dazu gehören UIKit für die Erstellung von Benutzeroberflächen, CoreData für die Verwaltung von Datenbanken und CloudKit für die Integration von Cloud-Services.
-
-Eine weitere wichtige Sache ist, sich mit der Swift-Community zu vernetzen. Es gibt viele Online-Ressourcen wie Tutorials, Foren und Meetups, die dir helfen können, deine Fähigkeiten zu verbessern und Fragen zu beantworten.
-
-# Siehe auch
-
-- [Apple Swift](https://developer.apple.com/swift/)
-- [Swift Tutorials von Ray Wenderlich](https://www.raywenderlich.com/swift/)
-- [Swift-Forum auf Stack Overflow](https://stackoverflow.com/questions/tagged/swift)
-- [Swift Meetups in deiner Nähe finden](https://www.meetup.com/topics/swift/)
+- Swift offizielle Dokumentation (https://docs.swift.org/swift-book/)
+- Online-Kurse (https://www.udemy.com/courses/search/?src=ukw&q=swift)
+- Entwicklerkonferenzen (https://swiftandpainless.com/conferences/)

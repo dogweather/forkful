@@ -1,44 +1,63 @@
 ---
 title:    "Rust: 获取当前日期"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要获取当前日期？
-获取当前日期是编程中最常见的需求之一。无论是在网站中显示当前日期，还是在程序中进行时间计算，获取当前日期都是必不可少的操作。Rust语言提供了简单易用的方法来获取当前日期，让我们一起来学习吧！
+# 为什么会获取当前日期？
 
-## 如何获取当前日期
-为了获取当前日期，我们需要使用Rust标准库中的`time`模块。首先，我们需要在代码中引入该模块：
+在编程中，经常需要使用当前的日期来做记录、计算或者展示给用户。Rust提供了方便的方式来获取当前日期，让我们来学习一下！
+
+## 如何获取当前日期？
+
+要获取当前日期，我们需要使用`chrono`这个Rust的日期和时间处理库。首先，在你的Rust项目的`Cargo.toml`文件中，添加如下代码：
+
+```Rust
+[dependencies]
+chrono = "0.4.0"
 ```
-use std::time;
+
+然后，在你的项目的代码中，导入`chrono`库：
+
+```Rust
+extern crate chrono;
+use chrono::{Local, Datelike};
 ```
-然后，我们就可以使用`time::SystemTime`结构体的`now()`方法来获取当前日期。代码如下：
+
+现在，我们就可以使用`chrono`来获取当前日期并对其进行处理。下面是一个例子，它会输出当前日期并显示是星期几：
+
+```Rust
+let current_date = Local::now();
+println!("今天是{}月{}日，星期{}", current_date.month(), current_date.day(), current_date.weekday());
 ```
-let now = time::SystemTime::now();
+
+运行以上代码，你会得到如下输出：
+
 ```
-接下来，我们可以使用`time::SystemTime`结构体的`duration_since()`方法来计算当前日期与某一日期的时间间隔。例如，我们可以计算当前日期与1970年1月1日的时间间隔：
+今天是6月11日，星期四
 ```
-let since_epoch = now.duration_since(time::UNIX_EPOCH).expect("Error");
-```
-最后，我们使用`format()`方法将日期格式化为我们想要的形式，例如年月日的形式：
-```
-let date = since_epoch.as_secs();
-let formatted_date = time::strftime("%Y-%m-%d", &time::at(time::Timespec::new(date as i64, 0))).unwrap();
-println!("{}", formatted_date);
-```
-运行以上代码，我们就可以得到当前日期的年月日形式输出。
 
 ## 深入了解获取当前日期
-Rust中的`time`模块内部实际上是使用C语言的`time`库来进行日期和时间的操作。因此，Rust中获取当前日期的方法与C语言中基本相同。
 
-需要注意的是，Rust中获取到的当前日期是以从1970年1月1日以来经过的时间间隔来表示的，这也被称为Unix时间戳。在进行日期计算时，我们需要将其转换为我们熟悉的年月日的形式。
+在`chrono`库中，`Local`类型代表了当前系统的本地时间。当我们使用`Local::now()`来获取当前日期时，它实际上是一个`DateTime<Local>`类型的值，其中包含了具体的年、月、日、时、分、秒等信息。通过调用相应的方法，我们可以从`DateTime`类型中提取这些信息。
 
-## 参考链接
-- Rust官方文档：https://doc.rust-lang.org/std/time/
-- 系统时间和日期：https://www.jianshu.com/p/749dc7e2e96e
-- Rust标准库中的`time`模块：https://rustlang-cn.org/office/rust/src/core/time/
+另外，`chrono`库还提供了方便的日期格式化功能，让日期可以以不同的样式显示给用户。例如，我们可以使用`format`方法来自定义日期的格式。下面是一个例子，它会以YYYY-MM-DD的形式显示当前日期：
 
-# 请参阅
-- [深入理解Rust标准库中的时间模块](https://blog.csdn.net/qq_40877296/article/details/102666510)
-- [使用Rust获取当前日期和时间](https://www.it1352.com/2216565.html)
+```Rust
+let current_date = Local::now();
+println!("{}", current_date.format("%Y-%m-%d"));
+```
+
+运行以上代码，你会得到如下输出：
+
+```
+2020-06-11
+```
+
+# 查看更多
+
+- chrono文档：https://docs.rs/chrono/0.4.0/chrono/
+- Rust官方文档：https://www.rust-lang.org/zh-CN/
+- Rust中文社区论坛：https://rust.cc/

@@ -1,60 +1,64 @@
 ---
-title:    "C++: Läsa en textfil"
+title:    "C++: Läsning av en textfil"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att läsa en textfil är en grundläggande del av programmering. Genom att läsa en textfil kan du få tillgång till och bearbeta data som är lagrad i filen. Detta kan vara användbart för att hantera stora mängder data eller för att läsa in information från externa källor.
 
-Att läsa en textfil är en grundläggande och nödvändig färdighet för alla som programmerar i C++. Det låter dig använda externa datafiler för att lagra och hämta information i dina program, vilket gör dem mer dynamiska och användbara. Att kunna läsa en textfil är också viktigt för att effektivt kunna behandla stora mängder data.
-
-## Hur man gör
-
-För att läsa en textfil i C++, måste du först öppna den i din kod med hjälp av ifstream-funktionen och ange filens namn som en parameter. Sedan kan du läsa in innehållet på olika sätt, beroende på hur filen är strukturerad.
-
-För att läsa en enskild rad i filen använder du getline-funktionen, som läser en rad i taget tills den når ett radbrytningstecken. Om du vill läsa in siffror eller ord, kan du använda operatorerna >> eller << som används för att läsa in och skriva ut värden i datatyper som int eller string. För att läsa in hela innehållet i en fil kan du använda en loop som fortsätter att läsa tills den når slutet av filen.
-
-Här är ett enkelt exempel på hur du kan läsa in en fil med hjälp av en loop och skriva ut dess innehåll:
+## Hur man gör det
+För att läsa en textfil i C++ behöver du först öppna filen med hjälp av "fstream" biblioteket och sedan använda kommandot "getline" för att läsa in varje rad av filen. Nedan finns ett exempel på kod tillsammans med den förväntade utmatningen.
 
 ```C++
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 int main() {
-    // öppna filen "textfil.txt"
-    std::ifstream textfil("textfil.txt");
-    
-    // läs in en rad i taget och skriv ut den till konsolen tills filen är slut
-    std::string rad;
-    while (getline(textfil, rad)) {
-        std::cout << rad << std::endl;
-    }
-    
-    // stäng filen
-    textfil.close();
-    
-    return 0;
+  // Öppna filen för läsning
+  ifstream fil("exempel.txt");
+
+  // Skapa en variabel för att lagra varje rad
+  string rad;
+
+  // Läs in varje rad av filen med hjälp av "getline"
+  while (getline(fil, rad)) {
+    // Skriv ut varje rad
+    cout << rad << endl;
+  }
+
+  // Stäng filen
+  fil.close();
+
+  return 0;
 }
 ```
-### Resultat:
+
+Om "exempel.txt" innehåller följande rader:
 
 ```
-Det här är en textfil.
-Den innehåller flera rader med text.
-Du kan läsa in hela filen eller bara en rad i taget.
+Hej!
+Hur mår du?
+Jag mår bra, tack.
+```
+
+Så kommer koden att producera följande utmatning:
+
+```
+Hej!
+Hur mår du?
+Jag mår bra, tack.
 ```
 
 ## Djupdykning
+Förutom att använda "getline" för att läsa in varje rad, kan du också använda ">>" operatorn för att läsa in varje ord av en rad. Du kan också använda "get" funktionen för att läsa in en enskild karaktär. Detta kan vara användbart för att läsa in specifika typer av data från en textfil.
 
-När du läser en textfil i C++, är det viktigt att kontrollera om filen är öppen och om filinnehållet är giltigt eller inte. Detta görs vanligtvis med hjälp av if-satser och felhantering med try-catch-block. Det är också en bra idé att använda funktioner som fortfarande läser filen även om det skulle uppstå ett fel, så att du inte förlorar information.
-
-Det finns också flera användbara funktioner och flaggor som du kan använda för att manipulera filinnehållet när du läser det. Till exempel kan du använda ifstream::ignore() för att ignorera specifika tecken, eller du kan använda std::ios::app-flaggan för att lägga till nytt innehåll i slutet av en befintlig fil.
-
-En annan viktig aspekt av att läsa en textfil är att hantera specialtecken som radbrytningar eller tabbtecken. Dessa tecken kan läsas och hanteras på olika sätt beroende på ditt system och ditt programs syfte.
+En viktig sak att tänka på när du läser en textfil är att kontrollera att filen verkligen har öppnats och att du har åtkomst till den. Om filen inte kan öppnas kan det bero på att den inte finns, att du inte har rättigheterna att öppna den, eller att sökvägen till filen är felaktig. Du bör också se till att stänga filen efter att du har läst den för att frigöra eventuella resurser som är knutna till den.
 
 ## Se också
-
-- [https://www.w3schools.com/cpp/cpp_files.asp](https://www.w3schools.com/cpp/cpp_files.asp) - En introduktion till filhantering i C++
-- [https://www.cplusplus.com/reference/fstream/ifstream/](https://www.cplusplus.com/reference/fstream/ifstream/) - C++ referens för ifstream-funktionen
-- [https://www.tutorialspoint.com/cplusplus/cpp_reading_from_file.htm](https://www.tutorialspoint.com/cplusplus/cpp_reading_from_file.htm) - En steg-för-steg guide för att läsa en fil i C++
+- [C++ - Läs en textfil](https://www.programiz.com/cpp-programming/library-function/fstream/ifstream)
+- [C++ - Skriv till en textfil](https://www.programiz.com/cpp-programming/library-function/fstream/ofstream)

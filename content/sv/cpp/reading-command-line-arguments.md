@@ -1,91 +1,45 @@
 ---
-title:    "C++: Läsning av kommandoradsargument"
+title:    "C++: Läsning av kommandolinjeargument"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att läsa command line arguments är en viktig del av C++ programmering och kan öka effektiviteten och funktionaliteten i dina program. Det är också en viktig färdighet att ha för att kunna utveckla avancerade och interaktiva applikationer.
+Att kunna läsa in argument från kommandoraden är en mycket användbar funktion inom C++ programmering. Det är ett sätt att ge flexibilitet till dina program genom att få användaren att ge in data när de kör programmet istället för att ha hårdkodade värden direkt inuti koden. Läsning av kommandoradsargument är också vanligt inom kommandoradsbaserade program, så det är en viktig färdighet att behärska.
 
-# Hur man gör det
+## Så här gör du
 
-Att läsa command line arguments är relativt enkelt i C++. Du kan göra detta genom att använda variabeln argc som representerar antalet argument som skickas till ditt program och variabeln argv som innehåller själva argumenten. För att använda dessa variabler behöver du inkludera header-filen "cstdlib" och sedan definiera main-funktionen med två parametrar som ser ut så här:
-
-`int main(int argc, char *argv[])`
-
-För att sedan läsa argumenten, kan du använda en loop som går igenom alla argumenten och skriver ut dem tillsammans med deras position i argumentlistan. Här är ett exempel med några kommandon och deras output:
+För att läsa in kommandoradsargument i C++, behöver du inkludera biblioteket `<iostream>` och använda funktionen `int main(int argc, char* argv[])`. För att få åtkomst till de faktiska argumenten, använder du en loop som går igenom varje element i `argv` (argv[0] är alltid programnamnet) och skriver ut dem eller använder dem i din kod.
 
 ```C++
-#include <cstdlib>
 #include <iostream>
 
-using namespace std;
-
-int main(int argc, char *argv[]) {
-
-    // Skriver ut antalet argument
-    cout << "Antal arguments: " << argc << endl;
-
-    // Loopar genom alla argument och skriver ut dem en efter en
+int main(int argc, char* argv[]) {
     for (int i = 0; i < argc; i++) {
-        cout << "Argument " << i+1 << ": " << argv[i] << endl;
+        std::cout << argv[i] << std::endl; // Skriver ut argumentet
     }
-
     return 0;
 }
 ```
 
-**Kommando:** `./program argument1 argument2`
+Om du kör programmet från kommandoraden med argumenten "hello" och "world" kommer output att vara:
 
-**Output:**
 ```
-Antal arguments: 3
-Argument 1: ./program
-Argument 2: argument1
-Argument 3: argument2
+./program hello world
 ```
 
-Det är också möjligt att läsa in argument som nummer eller andra datatyper. För att göra detta behöver du använda en string stream. Här är ett exempel på hur man kan konvertera och spara argumentet som en int:
+Hello
+World
 
-```C++
-#include <cstdlib>
-#include <iostream>
-#include <sstream>
+## Djupdykning
 
-using namespace std;
+`argc` representerar antalet argument som skickas in till programmet, medan `argv` är en array av strängar som håller de faktiska argumenten. Det finns också andra sätt att hantera kommandoradsargument, som att använda `std::string` eller `getopt()` funktionen. Det är viktigt att vara medveten om att argument är olika typer av data, så det kan krävas konverteringar när du använder dem i din kod.
 
-int main(int argc, char *argv[]) {
+## Se även
 
-    // Skapar en string stream och läser in argumentet som ett nummer
-    stringstream convert;
-    convert << argv[1];
-
-    int num;
-    convert >> num;
-
-    // Skriver ut det konverterade numret och dess dubbla värde
-    cout << num << " dubblerat blir: " << num * 2 << endl;
-
-    return 0;
-}
-```
-
-**Kommando:** `./program 5`
-
-**Output:**
-```
-5 dubblerat blir: 10
-```
-
-# Djupdykning
-
-Det finns många sätt att använda command line arguments i C++. Du kan till exempel använda flaggor för att aktivera olika funktioner i ditt program baserat på användarens input, eller utföra specifika åtgärder beroende på vilka argument som matas in.
-
-Det är också viktigt att komma ihåg att det finns vissa begränsningar när det kommer till command line arguments i C++. Till exempel finns det ett maxantal argument som kan skickas till ett program och detta värde varierar beroende på systemet.
-
-# Se även
-
-- [C++ Command Line Arguments Tutorial](https://www.programiz.com/cpp-programming/command-line-arguments)
-- [Official C++ Documentation on Command Line Parameters](https://docs.microsoft.com/en-us/cpp/c-runtime-library/parsing-the-command-line?view=msvc-160)
+- [C++ Kommandoradsargument reference](https://en.cppreference.com/w/cpp/language/main_function)
+- [Using getopt() to Parse Command-Line Arguments in C++](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [C++ String Class](https://www.cplusplus.com/reference/string/string/)

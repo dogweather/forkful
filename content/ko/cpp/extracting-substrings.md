@@ -1,43 +1,55 @@
 ---
-title:    "C++: 서브스트링 추출"
+title:    "C++: 부분 문자열 추출"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-### 왜
+## 왜
+문자열에서 부분 문자열을 추출하는 것에 관심이 있을까요?
 
-C++ 프로그래밍을 하는 개발자라면 문자열을 처리하는 일은 피할 수 없습니다. 때로는 문자열에서 원하는 부분만 추출해야 할 때가 있습니다. 이번 포스트에서는 C++로 문자열의 일부를 추출하는 방법에 대해 알아보겠습니다.
+부분 문자열 추출은 굉장히 유용한 기술입니다. 예를 들어, 특정 문자열에서 원하는 정보를 추출하고 다른 문자열과 결합하여 원하는 출력을 만들 수 있습니다.
 
-### 방법
+## 방법
+부분 문자열을 추출하는 방법은 다양한 방법이 있지만, 여기서는 C++을 사용하여 예를 들어보겠습니다.
 
-우선, 문자열에서 원하는 부분을 추출하기 위해서는 `substr()` 함수를 사용해야 합니다. 이 함수는 문자열에서 지정된 위치부터 지정된 길이만큼의 부분을 추출해 줍니다. 다음은 `substr()` 함수를 사용한 예제 코드와 출력 결과입니다.
-
+### C++ 코드 예시:
 ```C++
-// 문자열 생성
-string str = "Hello World";
+#include <iostream>
+#include <string>
 
-// 문자열의 일부를 추출해 새로운 문자열 생성
-string sub_str = str.substr(3, 5);
+using namespace std;
 
-// 새로운 문자열 출력
-cout << sub_str << endl;
+int main() {
+    // 첫 번째 예시: 문자열에서 특정 인덱스부터 지정된 길이의 부분 문자열 추출
+    string str1 = "안녕하세요";
+    string sub1 = str1.substr(0, 2); // 변수 sub1에는 "안녕"이 저장됩니다.
+
+    // 두 번째 예시: 특정 인덱스부터 끝까지 부분 문자열 추출
+    string str2 = "Hello World";
+    string sub2 = str2.substr(6); // 변수 sub2에는 "World"가 저장됩니다.
+
+    // 세 번째 예시: 특정 문자를 기준으로 부분 문자열 추출
+    string str3 = "Hello/World";
+    size_t pos = str3.find("/"); // 문자열에서 '/'가 처음 나오는 인덱스를 찾아 변수 pos에 저장
+    string sub3 = str3.substr(pos + 1); // 변수 sub3에는 "World"가 저장됩니다.
+
+    // 위 예시들은 모두 출력 결과가 같습니다.
+    cout << sub1 << endl; // 출력: 안녕
+    cout << sub2 << endl; // 출력: World
+    cout << sub3 << endl; // 출력: World
+
+    return 0;
+}
 ```
 
-출력 결과:
+## 깊이있는 이해
+부분 문자열을 추출하는 방법은 string 클래스의 멤버 함수인 substr()을 사용하면 쉽게 구현할 수 있습니다. 이 함수는 두 개의 매개변수를 가지는데, 첫 번째 매개변수는 부분 문자열을 추출할 시작 인덱스이고, 두 번째 매개변수는 추출할 문자열의 길이입니다. 만약 두 번째 매개변수를 생략하면, 시작 인덱스부터 끝까지의 문자열이 추출됩니다.
 
-```bash
-lo Wo
-```
+또한, find() 함수를 사용하여 특정 문자나 문자열이 처음으로 나타나는 인덱스를 찾을 수 있습니다. 이를 활용하면 특정 조건에 따라 부분 문자열을 추출하는 것도 가능합니다.
 
-위와 같은 방법으로 `substr()` 함수를 이용하여 문자열의 일부를 추출할 수 있습니다. 또한 `substr()` 함수의 시작 위치를 생략하면 첫 번째 문자부터 추출하고, 길이를 생략하면 시작 위치부터 문자열 끝까지 추출합니다.
-
-### 깊이 파고들기
-
-`substr()` 함수를 사용할 때 주의해야 할 점이 있습니다. 만약 시작 위치가 문자열의 길이보다 큰 경우, 오류가 발생하지 않고 빈 문자열을 반환합니다. 이 점을 유의하여 사용해야 합니다. 또한 `substr()` 함수를 이용하여 원본 문자열에서 추출한 부분을 변경하더라도 원본 문자열의 내용은 변하지 않습니다.
-
-### 참고
-
-- [C++ `substr()` 함수 참고 문서](https://www.cplusplus.com/reference/string/string/substr/)
-- [C++ 문자열 처리 관련 포스트](https://blog.naver.com/PostView.nhn?blogId=username&logNo=123456789) 
-- [C++ 문자열 다루기 강좌](https://www.youtube.com/watch?v=123456789)
+## 더 알아보기
+- [C++ string 클래스의 substr() 함수 문서](https://www.cplusplus.com/reference/string/string/substr/)
+- [string 클래스의 find() 함수 문서](https://www.cplusplus.com/reference/string/string/find/)
+- [GeeksforGeeks: C++에서 부분 문자열 추출하기](https://www.geeksforgeeks.org/cpp-program-extracting-specified-characters-from-string/)

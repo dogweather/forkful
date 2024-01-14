@@ -1,48 +1,63 @@
 ---
 title:    "C++: יצירת קובץ זמני"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-יצירת קובץ זמני היא תהליך חשוב בתכנות בשפת C++. קבצים זמניים משמשים כדי לאחסן מידע זמני בתוך תוכנית ובסופן נמחקים לגמרי. זה יכול לסייע ליצירת תוכניות יעילות יותר ולחסוך במשאבים.
+ישנם מצבים רבים שבהם ייתכן שתרצה ליצור קובץ זמני בתוכנית פיתוח שלך. לדוגמה, אם אתה צריך לכתוב נתוני מחיצה זמנית לגורם חיצוני, או אם אתה עובד עם קבצי טקסט ואתה רוצה ליצור קובץ זמני כדי לבדוק את הקוד שלך.
 
-## כיצד ליצור קובץ זמני בשפת C++
+## איך ליצור קובץ זמני ב-C++
 
-על מנת לצור קובץ זמני בשפת C++, ניתן להשתמש בפונקציית `tmpfile()` שמוגדרת בספריית התקנה הסטנדרטית `cstdio`. פונקציה זו מחזירה מצביע לקובץ זמני שנוצר בזמן הריצה של התוכנית.
+הייצור קובץ זמני בשפת סי++ הוא פעולה פשוטה וקלה לביצוע. פשוט עקוב אחר השלבים הבאים:
 
 ```C++
-#include <cstdio>
+// כותבים התאמות:
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 
-int main() {
-    FILE* temp_file = tmpfile();
-    if (temp_file == NULL) {
-        std::cout << "Failed to create temporary file!" << std::endl;
+int main()
+{
+    // יצירת משתנה לכתיבת שם לקובץ זמני:
+    char temp_name[L_tmpnam];
+    tmpnam(temp_name);
+
+    // פתיחת קובץ זמני לכתיבה:
+    std::ofstream file(temp_name);
+    if (!file.is_open())
+    {
+        // איפוס התוכנה במקרה שגיאה בפתיחת הקובץ:
+        std::cout << "Could not create temporary file\n";
+        exit(EXIT_FAILURE);
     }
-    else {
-        std::cout << "Successfully created temporary file." << std::endl;
-        // Use the temp file for temporary data storage
-    }
+
+    // כתיבת נתונים לקובץ:
+    file << "This is a temporary file" << std::endl;
+    file.close();
+
+    // קריאת הקובץ והדפסת התוכן שלו לצורך בדיקה:
+    std::ifstream temp_file(temp_name);
+    std::cout << temp_file.rdbuf();
+    temp_file.close();
+
+    return 0;
 }
 ```
-הפלט של הקוד המופעל יראה כך:
+
+פלט הקוד הנ"ל יהיה:
 
 ```
-Successfully created temporary file.
+This is a temporary file
 ```
 
-## Deep Dive
+## צילום מציאות
 
-כעת שהבנו איך ליצור קובץ זמני בשפת C++, ניתן לעשות קפיצה קדימה וללמוד עוד על פונקציית `tmpfile()`. פונקציה זו מקבלת כפרמטרים נוספים את התיקייה שבה הקובץ יוצר ואת הפורמט שלו.
+כאשר אתה יוצר קובץ זמני, הוא מאוחסן על גבי הדיסק הקשיח הפיזי של המחשב שלך. קיימים שני טיפוסים שונים של קבצי זמניים:
 
-בנוסף, כדי להבטיח שהקובץ יימחק בסיום התוכנית, יש להשתמש בפונקציית `fclose()` עם המצביע לקובץ זמני כדי לסגור אותו ולהסיר אותו מהמערכת.
+1. **קבצי שם זמני (Named temporary files):** יש להם שם והם נמצאים במיקום קבוע במערכת הקבצים של המחשב. לרוב, בסביבות מערכי ההפעלה שלנו, זהו תיקיית TEMP או TMP באתר התקני C:\.
 
-עוד דבר חשוב לזכור הוא שקבצים זמניים נמחקים אוטומטית בסיום התוכנית, אבל יש לזכור לסגור אותם כדי למנוע מנצחים במערכת ההפעלה.
-
-## See Also
-
-- [פונקציית tmpfile() במדריך לשפת C++](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tmpfile-tmpnam-mktemp-wtmpnam-s-wtmpnam-s-functions?view=msvc-160)
-- [קבצים
+2. **קבצי מסלול זמני (Path temporary files):** אינם מקבלים שם מזהה ייחודי, אלא נגישים לפי הנתיב המוגדר לק

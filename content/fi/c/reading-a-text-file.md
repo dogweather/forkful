@@ -1,56 +1,63 @@
 ---
-title:    "C: Tiedostotekstin lukeminen"
+title:    "C: Tiedoston lukeminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Yksi yleisiä tehtäviä C-ohjelmointikielessä on tiedostojen lukeminen ja niiden sisällön käsittely. On tärkeää tietää, miten tätä tehtävää suoritetaan, jotta voidaan parantaa ohjelman tehokkuutta ja luoda monimutkaisempia sovelluksia.
+Tervetuloa lukemaan blogia C-ohjelmoijille! Tässä artikkelissa sukellamme syvemmälle tiedostojen lukemiseen C-kielellä ja käymme läpi koodin esimerkkien avulla, miksi tämä on tärkeää ja miten se tehdään. Jos olet kiinnostunut oppimaan lisää tiedostojen käsittelystä C-kielellä, jatka lukemista!
 
-## Kuinka
+## Miten
 
-Tiedostojen lukeminen C-kielellä tapahtuu käyttämällä `FILE`-rakennetta ja siihen liittyviä funktioita, kuten `fopen()`ja`fscanf()`. Alla on esimerkki yksinkertaisesta ohjelmasta, joka lukee tekstitiedoston ja tulostaa sen sisällön:
+Tiedostojen lukeminen C-kielellä on tärkeä taito ohjelmoijille. Se antaa meille mahdollisuuden lukea tietoja ulkoisista lähteistä ja käsitellä niitä ohjelmassamme. Voimme lukea esimerkiksi tekstitiedostoja, jotka sisältävät käyttäjän syöttämiä tietoja, tai lukea tiedostoja, jotka sisältävät valmiiksi tallennettuja tietoja.
 
-```C
+Aloitetaan yksinkertaisella esimerkillä, jossa luemme ja tulostamme tiedoston sisällön näytölle. Käytämme fopen-funktiota avataksesi tiedoston ja tarkistetamme sen palauttaman osoittimen arvon. Jos osoitin on NULL, tiedoston avaaminen epäonnistui. Muuten luemme tiedoston sisällön ja tulostamme sen näytölle käyttäen fgets-funktiota.
+
+```
 #include <stdio.h>
 
-int main() {
-    // avataan tiedosto "teksti.txt" lukemista varten
-    FILE *tiedosto = fopen("teksti.txt", "r");
+int main(void) {
 
-    // tarkistetaan, että tiedosto avattiin onnistuneesti
+    FILE *tiedosto;
+    char rivi[1000];
+
+    tiedosto = fopen("esimerkki.txt", "r");
+
     if (tiedosto == NULL) {
-        printf("Tiedoston avaaminen epäonnistui");
-        return 1; // keskeytetään ohjelma
+        printf("Tiedoston avaaminen epäonnistui!");
+        return 1;
     }
 
-    // luetaan tiedostosta merkkejä ja tulostetaan ne näytölle
-    char merkki;
-    while((merkki = fgetc(tiedosto)) != EOF) {
-        printf("%c", merkki);
+    while (fgets(rivi, 1000, tiedosto) != NULL) {
+        printf("%s", rivi);
     }
 
-    // suljetaan tiedosto
     fclose(tiedosto);
+
     return 0;
 }
 ```
-Esimerkiksi, jos tiedoston "teksti.txt" sisältö on "Tämä on esimerkkiteksti", ohjelma tulostaa:
+
+Kun ajamme tämän koodin, tulostuu esimerkkitiedoston sisältö näytölle.
 
 ```
-Tämä on esimerkkiteksti
+Tämä on esimerkki.
+Tässä on toinen rivi.
 ```
 
-## Syvempi sukellus
+## Syvällinen sukellus
 
-Tiedostojen lukeminen voidaan tehdä myös riviväleillä ja sanojen väleillä määrittelemällä sopivat muuttujat ja käyttämällä `fgets()`- ja `sscanf()`-funktioita. Tämä antaa enemmän hallintaa tiedoston käsittelyyn ja mahdollistaa esimerkiksi tiettyjen rivien tai sanojen poimimisen.
+Tiedostojen lukeminen C-kielellä voi vaikuttaa monimutkaiselta, mutta kun ymmärrät sen perusteet, voit käyttää sitä monipuolisesti erilaisissa ohjelmissa. On tärkeää muistaa sulkea tiedosto käytön jälkeen tehokkaan muistinhallinnan takaamiseksi. Voit myös käyttää fseek-funktiota siirtääksesi lukupistettä tiedostossa, jotta voit lukea ja käsitellä tietoja haluamallasi tavalla.
 
-On myös tärkeää muistaa, että tiedostot tulee aina sulkea käytön jälkeen `fclose()`-funktiolla, jotta varmistetaan, että resurssit vapautuvat oikein.
+On myös hyvä huomata, että tiedostojen lukeminen ja kirjoittaminen eroavat toisistaan. Jos haluat kirjoittaa tiedostoon, sinun tulee käyttää fopen-funktiota parametrilla "w" ja fclose-funktiota tiedoston sulkemiseen.
+
+Toivottavasti tämä antoi sinulle hyvän alun tiedostojen lukemisen oppimiseen C-kielellä. Jatka tutustumista ja löydä uusia tapoja käyttää tätä taitoa!
 
 ## Katso myös
 
-- [C käsky Rakenne](https://www.tutorialspoint.com/cprogramming/c_structures.htm)
-- [C Tiedostojen käsittely](https://www.studytonight.com/c/file-handling-in-c.php)
-- [C-kielen virallinen dokumenttointi](https://devdocs.io/c/)
+- [C ohjelmointikieli] (https://www.tutorialspoint.com/cprogramming/c_fundamentals.htm)
+- [fgets-funktio] (https://www.tutorialspoint.com/c_standard_library/c_function_fgets.html)
+- [fopen-funktio] (https://www.tutorialspoint.com/c_standard_library/c_function_fopen.html)

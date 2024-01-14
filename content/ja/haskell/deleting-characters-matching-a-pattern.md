@@ -1,33 +1,48 @@
 ---
-title:    "Haskell: パターンにマッチする文字を削除する"
+title:    "Haskell: パターンに一致する文字を削除する"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-あるパターンにマッチした文字を削除することに関心を持つ理由は、テキスト処理を行う上で必要不可欠な操作の1つであるからです。例えば、不要な空白や特定の文字列を除去したり、データの整形を行う際に役立ちます。
 
-## 方法
-``` Haskell
--- 文字列から特定の文字を削除する関数
-deleteChar :: Char -> String -> String
-deleteChar x [] = []
-deleteChar x (y:ys)
-  | x == y = deleteChar x ys  -- マッチする文字を見つけたら再帰的に呼び出し、削除する
-  | otherwise = y : deleteChar x ys -- マッチしない場合はそのまま出力する
+あるパターンにマッチする文字を削除することについて、なぜ誰かがそれに関わることになるのかを説明します。
+
+パターンがマッチする文字を削除することは非常に便利であり、データのクリーニングや処理を行う際に非常に有用です。例えば、特定の文字列から特定の文字を取り除く場合などに使用することができます。
+
+## 試してみよう
+
+下のコードブロックにHaskellコードの例とサンプルの出力を示します。
+
+```Haskell
+-- 文字列から"abc"を削除する例
+deletePattern :: String -> String
+deletePattern [] = [] -- 空の文字列の場合はそのまま返す
+deletePattern (x:xs)
+    | x == 'a' = deletePattern xs -- 'a' が見つかったら再帰で削除
+    | x == 'b' = deletePattern xs
+    | x == 'c' = deletePattern xs
+    | otherwise = x:deletePattern xs -- マッチしない文字はそのまま追加
+
+main = do
+    putStrLn "文字列から'abc'を削除します。"
+    let str = "abcdef"
+    putStrLn $ "元の文字列: " ++ str
+    putStrLn $ "パターンを削除した結果: " ++ deletePattern str
+
+-- 出力:
+-- 元の文字列: abcdef
+-- パターンを削除した結果: def
 ```
 
-入力: `Delete Char
-Pattern Matching Sample
-Function`
+## 深く掘り下げる
 
-出力: `Dlete ChPtern Mtching Smple Function`
+パターンマッチングや再帰などのHaskellの基本的な概念が理解されていることが、このような文字の削除に役立ちます。また、上記の例では単純な文字列だけを扱っていますが、リストやタプルなどの他のデータ型でも同様のアプローチが使えます。さらに、リスト内包表記や高階関数など、より洗練された方法でパターンにマッチする文字を削除することができます。
 
-## ディープダイブ
-上記の例で使用したパターンマッチを用いて、文字の削除を行う関数を自作しました。パターンマッチとは、文字列を走査して特定のパターンがある場合に特定の処理を行うことを指します。例では、再帰的に呼び出すことでマッチする文字を全て削除しています。このような再帰的な処理が可能なのは、Haskellが純粋関数型言語であるためです。純粋関数型言語とは、値を変更することなく参照透過性がある関数を使うことで、副作用を最小限に抑えることができる言語のことを指します。
+## 関連リンクを見る
 
-## 併せて読みたい
-- [Haskellのパターンマッチングについて](https://qiita.com/7shi/items/f8d1bb1fc3128c30e040)
-- [Haskell入門](https://qiita.com/matsuo159/items/9edf99d50b5af55d9208)
-- [Haskellでの再帰関数の書き方](https://matsu7874.hatenablog.com/entry/2019/01/12/022354)
+[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - Haskellの基礎から応用までを学べるオンライン教材  
+[Haskell Wiki](https://wiki.haskell.org/) - Haskellに関する情報が集まっているWikiwikiサイト  
+[Real World Haskell](http://book.realworldhaskell.org/) - 実際のプロジェクトでHaskellを使う方法が学べるオンラインブック

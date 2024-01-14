@@ -1,79 +1,47 @@
 ---
 title:    "Elixir: Komentoriviparametrien lukeminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Komentoriviparametrien lukeminen on tärkeä osa Elixir ohjelmointia. Se antaa sinulle mahdollisuuden kommunikoida ja vaihtaa tietoja ohjelman ja käyttäjän välillä. Tämä tekee ohjelmasta helposti muokattavan ja skaalautuvan.
+Ohjelmointi on jännittävää ja luovaa, mutta joillakin aloilla se voi tuntua haastavalta. Tässä blogiartikkelissa tutustumme Elixir-ohjelmointikielen tapaan lukea komentoriviparametreja ja miten se voi helpottaa ohjelmointiprosessia.
 
-# Miten tehdä
+## Miten
 
-Ensimmäinen askel komentoriviparametrien lukemisessa on määrittää muuttujat, joissa haluat tallentaa parametrit.
-
-```Elixir
-args = System.argv
-```
-
-Tämä koodi tallentaa kaikki komentoriviltä annetut parametrit listaan nimeltä ```args```. Voit myös määrittää tietyn parametrin indeksin perusteella tai käyttää avainsanaa ```value``` saadaksesi parametrin arvon.
-
-Seuraavassa esimerkissä tulostamme toisen komentoriviparametrin:
-
-```Elixir
-second_arg = System.argv[2]
-
-IO.puts "The second argument is: #{second_arg}"
-```
-
-Kun suoritat tämän koodin antamalla komentoriville esimerkiksi seuraavan komennon: ```elixir read_args.exs --example arg1 arg2 arg3```
-
-Tulos olisi seuraava:
+Komentoriviparametrit ovat hyödyllisiä ohjelmien suorittamisessa, koska ne antavat käyttäjälle mahdollisuuden antaa tietoja ohjelmalle ennen sen käynnistämistä. Elixir tarjoaa helpon tavan lukea näitä parametreja käyttämällä ```System.argv()``` -funktiota. Katsotaanpa esimerkki:
 
 ```
-The second argument is: arg2
+Elixir hello.exs John 25
 ```
 
-# Syvällinen sukellus
+Tässä esimerkissä luomme yksinkertaisen ohjelman, joka tulostaa käyttäjän nimen ja iän. Käytämme ```System.argv()``` -funktiota lukeaksemme parametrit ja tallentamme ne muuttujiin. Sitten vain tulostamme halutut tiedot. Alla on koodiksi kommentoitu versio:
 
-Voit myös käyttää kirjastoa nimeltä ```Clap``` helpottamaan komentoriviparametrien lukemista. Tämä kirjasto tarjoaa lisää toimintoja, kuten automaattisen virheenkäsittelyn, parametriohjeet ja muita edistyneitä ominaisuuksia.
+```
+# "Hello, name! You are age years old."
+defmodule Hello do
+  # Luodaan muuttujat name ja age ja asetetaan niihin komentoriviparametrit
+  name = System.argv() |> Enum.at(0)
+  age = System.argv() |> Enum.at(1)
 
-## Määrittele parametrit
-
-Voit määrittää tarvittavat parametrit käyttämällä ```Clap``` kirjaston funktiota ```parse```. Tässä esimerkissä määritämme parametrin nimeltä ```help``` ja sille asetamme oletusarvoksi ```false```:
-
-```Elixir
-opts = Clap.parse(
-  [
-    version: "1.0.0",
-    help: false
-  ]
-)
+  # Tulostetaan haluttu viesti
+  IO.puts "Hello, #{name}! You are #{age} years old."
+end
 ```
 
-## Käsittele virheet
+Ja tässä on, miten tulostus näyttää komentoriviltä:
 
-Jos käyttäjä ei anna tarvittavaa parametria, ```Clap``` automaattisesti tulostaa virheilmoituksen ja näyttää mahdolliset parametrit, jotka käyttäjä voi antaa.
-
-## Näytä ohjeet
-
-Voit myös lisätä ohjeita parametreille käyttämällä funktiota ```help```. Voit määrittää parametrille haluamasi nimet ja lisätä lyhyt kuvaus toiminnosta parametrille.
-
-```Elixir
-opts = Clap.parse(
-  [
-    version: "1.0.0",
-    help: [
-      short: "h",
-      desc: "Show help"
-    ]
-  ]
-)
+```
+Hello, John! You are 25 years old.
 ```
 
-# Katso myös
+## Syvällisempää tietoa
 
-- [Elixir Command Line API](https://hexdocs.pm/elixir/System.html)
-- [Clap library documentation](https://hexdocs.pm/clap/)
-- [Elixir Command Line Applications tutorial](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#creating-command-line-applications)
+Luettuaan komentoriviparametreja Elixir-ohjelmilla on lisäetuna mahdollisuus käyttää OptionParser-moduulia. Tämä moduuli tarjoaa strukturoituja tapoja lukea ja hallita käyttäjän antamia parametreja. Voit tutustua tarkemmin OptionParserin käyttöön Elixirin dokumentaatiosta.
+
+## Katso myös
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/System.html#argv/0)
+- [OptionParser-moduulin käyttö](https://hexdocs.pm/elixir/OptionParser.html#content)

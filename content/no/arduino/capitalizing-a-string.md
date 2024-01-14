@@ -1,33 +1,50 @@
 ---
-title:    "Arduino: Å kapitalisere en streng"
+title:    "Arduino: Stor bokstav på en streng"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Hvis du noen gang har jobbet med tekst i en Arduino, har du kanskje lurt på hvordan du kan gjøre tekst mer lesbar og estetisk tiltalende. En måte å gjøre dette på er å kapitalisere strenger, som betyr å gjøre første bokstav i hvert ord til en stor bokstav. Dette kan være nyttig for å presentere tekst på en mer profesjonell måte eller for å få en enhet til å skille seg ut.
+Det å konvertere en streng til store bokstaver kan være et viktig element i programmering, spesielt når man jobber med brukerinput eller håndterer tekstbaserte data. Det kan bidra til å strømlinjeforme prosessen og sikre en konsistent formatering av tekst.
 
 ## Hvordan gjøre det
 
-Først må du velge hvilken streng du vil formatere. Deretter må du bruke en funksjon som heter "capitalize". Denne funksjonen er innebygd i Arduino-språket og gjør nøyaktig det navnet antyder - den kapitaliserer strenger. For å bruke denne funksjonen, må du først kalle den mens du bruker strengens navn og deretter skrive "capitalize()".
+For å konvertere en streng til store bokstaver i Arduino, kan du bruke funksjonen `toUpperCase()` som tar inn en streng som parameter. Her er et eksempel som tar inn et navn og konverterer det til store bokstaver:
 
 ```Arduino
-String tekst = "hallo verden";
-String formatert = tekst.capitalize();
-Serial.println(formatert);
+String navn = "Johannes";
+String konvertert = navn.toUpperCase();
+Serial.println(konvertert);
 ```
 
-Utskriften av dette vil være "Hallo Verden". Du kan gjenta denne prosessen for så mange strenger du ønsker, og hver enkelt vil bli formatert ved hjelp av denne enkle funksjonen.
+Dette vil gi følgende utskrift i seriell monitoren:
+
+```Arduino
+JOHANNES
+```
+
+Hvis du ønsker å konvertere en streng i et array eller en liste med tegn, kan du bruke en `for`-løkke for å iterere gjennom hvert tegn og bruke funksjonen `toupper()` for å konvertere dem til store bokstaver. Se et eksempel nedenfor:
+
+```Arduino
+char navn[] = "Johannes";
+for (int i = 0; i < strlen(navn); i++) {
+    navn[i] = toupper(navn[i]);
+}
+Serial.println(navn);
+```
+
+Dette vil også gi utskrift av navnet i store bokstaver.
 
 ## Dypdykk
 
-Dette er et enkelt eksempel på hvordan man kan kapitalisere strenger i Arduino, men det er viktig å merke seg at denne funksjonen bare vil kapitalisere det første tegnet i hver streng. Hvis du vil kapitalisere andre bokstaver, må du bruke en mer komplisert metode som innebærer å splitte strengen opp i ord og endre hver enkelt bokstav.
+Det finnes også andre måter å konvertere en streng til store bokstaver på i Arduino, som for eksempel å bruke funksjonen `charAt()` for å hente ut hvert tegn og gjøre en sjekk på om det er et lite tegn ved å bruke `isLower()`. Dette gir mulighet for å skrive en egen funksjon som konverterer en streng til store bokstaver.
 
-Det er også verdt å nevne at denne funksjonen bare kapitaliserer engelske bokstaver, så hvis du vil bruke den på strenger som inneholder andre språk, må du først bruke en funksjon som setter språket i enheten din.
+Det er også viktig å være oppmerksom på forskjellige tegnsett, da noen bokstaver kan ha forskjellig verdier avhengig av språk. Det kan være lurt å bruke funksjonen `setCharSet()` for å sikre at de riktige verdiene blir konvertert til store bokstaver.
 
 ## Se også
 
-- [Funksjonen "capitalize" i Arduino referansedokumentasjon](https://www.arduino.cc/en/Reference/StringCapitalize)
-- [Hvordan splitte en streng i Arduino](https://randomnerdtutorials.com/arduino-string-functions-fixed-and-advanced/#split)
+- [String-funksjoner i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [ASCII-tabellen](https://ascii.cl/)

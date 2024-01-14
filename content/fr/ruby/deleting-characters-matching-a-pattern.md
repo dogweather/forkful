@@ -1,50 +1,51 @@
 ---
-title:    "Ruby: Suppression de caractères correspondants à un modèle"
+title:    "Ruby: Suppression de caractères correspondant à un modèle"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes peut-être en train de travailler sur un projet en Ruby et vous vous demandez pourquoi vous auriez besoin de supprimer des caractères correspondant à un modèle dans votre code. Eh bien, il y a plusieurs raisons possibles. Peut-être que vous voulez nettoyer ou reformater une chaîne de caractères avant de la passer à une autre fonction ou méthode. Ou peut-être que vous souhaitez simplement supprimer des caractères inutiles d'une chaîne pour faciliter la lecture et le traitement des données.
-
-Quelle que soit la raison, supprimer des caractères en fonction d'un modèle peut être une tâche utile et courante en programmation Ruby. Voyons maintenant comment le faire.
+Vous êtes peut-être en train de travailler sur un projet en Ruby et vous vous demandez pourquoi quelqu'un se donnerait la peine de supprimer des caractères correspondant à un modèle. La réponse est simple: cela peut être utile lors de la manipulation de chaînes de caractères pour s'assurer qu'elles correspondent à un certain format ou pour supprimer des caractères indésirables.
 
 ## Comment faire
 
-Pour supprimer des caractères en fonction d'un modèle dans Ruby, nous allons utiliser la méthode `.gsub()`. Cela nous permet de remplacer tous les caractères correspondant à un motif par une chaîne vide.
+Pour supprimer des caractères correspondant à un modèle en utilisant Ruby, vous pouvez utiliser la méthode `gsub` qui permet de remplacer un motif par un autre. Voici un exemple de code qui supprime les caractères non numériques d'une chaîne de caractères:
 
 ```Ruby
-phrase = "Je suis un blogueur passionné de Ruby"
-nouvelle_phrase = phrase.gsub(/[aeiou]/, '')
-
-puts nouvelle_phrase
-# J s sm blgr pssnné d Rby
+str = "12th May 1992"
+new_str = str.gsub(/\D/, "")
+puts new_str
 ```
 
-Dans cet exemple, nous utilisons une expression régulière comme modèle pour la méthode `.gsub()`. La regex `[aeiou]` signifie que nous voulons remplacer toutes les voyelles par une chaîne vide. Vous pouvez bien sûr utiliser n'importe quel modèle ou caractères que vous souhaitez supprimer de votre chaîne.
+L'expression régulière `\D` correspond à tous les caractères non numériques, tandis que la chaîne vide `""` indique qu'ils doivent être remplacés par rien. Lorsque vous exécutez ce code, la sortie sera `121992`, où tous les caractères non numériques ont été supprimés.
+
+Vous pouvez également utiliser la méthode `delete` pour supprimer plus facilement une liste spécifique de caractères. Voici un exemple:
+
+```Ruby
+str = "Hello World!"
+new_str = str.delete("l")
+puts new_str
+```
+
+La sortie sera `Heo Word!`, où tous les caractères "l" ont été supprimés de la chaîne initiale.
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu comment supprimer des caractères en fonction d'un modèle, il est important de noter que la méthode `.gsub()` peut également prendre un bloc en tant que deuxième argument.
+Pour une utilisation plus avancée de la suppresion de caractères correspondant à un modèle en utilisant Ruby, vous pouvez également utiliser les expressions régulières pour capturer des groupes de caractères spécifiques à supprimer. Par exemple, si vous souhaitez supprimer tous les caractères compris entre des crochets dans une chaîne, vous pouvez utiliser l'expression régulière `\[.*?\]` pour capturer les caractères entre les crochets et les supprimer.
 
 ```Ruby
-phrase = "Je suis un blogueur passionné de Ruby"
-
-nouvelle_phrase = phrase.gsub(/[aeiou]/) { |match| match.upcase }
-puts nouvelle_phrase
-# J S SBlOgr Pssnné D RBy
+str = "I have [5] apples and [3] oranges"
+new_str = str.gsub(/\[.*?\]/, "")
+puts new_str
 ```
 
-Dans cet exemple, nous utilisons le bloc pour transformer chaque caractère correspondant en sa version en majuscule, plutôt que de simplement le supprimer.
-
-Il est également possible d'utiliser la méthode `.delete()` pour supprimer des caractères en fonction d'un modèle, mais cela n'est possible que si vous souhaitez supprimer des caractères individuels plutôt que des motifs plus complexes.
-
-Enfin, il est important de noter que la méthode `.gsub()` peut être utilisée pour remplacer les caractères par n'importe quelle chaîne de caractères, pas seulement une chaîne vide. Vous pouvez également utiliser des expressions régulières plus avancées pour des schémas de remplacement plus complexes.
+La sortie sera `I have apples and oranges`, où les groupes de caractères entre crochets ont été supprimés.
 
 ## Voir aussi
 
-- Documentation sur la méthode `.gsub()`: https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub
-- Tutoriel sur les expressions régulières en Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
-- Article sur la méthode `.delete()`: https://www.rubyguides.com/2019/05/ruby-string-delete/
+- [Ruby Docs - String#gsub](https://ruby-doc.org/core-2.7.4/String.html#method-i-gsub)
+- [Ruby Docs - String#delete](https://ruby-doc.org/core-2.7.4/String.html#method-i-delete)
+- [Rubular - Testeur d'expressions régulières en ligne](https://rubular.com/)

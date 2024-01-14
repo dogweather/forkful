@@ -1,52 +1,39 @@
 ---
-title:    "Elm: Ohjelmointiartikkeli: Virheilmoituksien tulostaminen"
+title:    "Elm: Virheenjäljitys tulostus"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Debug-tulostuksen käyttö on tärkeä osa ohjelmoinnin prosessia varmistaessaan, että ohjelma suorittaa halutun toiminnallisuuden oikein. Se voidaan myös käyttää ongelmien löytämiseen ja korjaamiseen ohjelmoinnin puhdistamisen aikana.
+Monet ohjelmoijat joutuvat joskus käsittelemään ohjelmoinnin vikasietoa koodia. Tulostuslausekkeet voivat auttaa ratkaisemaan näitä ongelmia ja lisätä ohjelman luettavuutta.
 
 ## Miten
 
-Debug-tulostuksen käyttäminen Elm-kielessä on helppoa. Voit käyttää funktiota `Debug.log`, joka hyväksyy kaksi argumenttia - merkkijonon ja minkä tahansa datan tyypin. Merkkijonon tulisi sisältää haluttu viesti ja data tulisi olla haluttu arvo, jota haluat tarkastella. Alla on esimerkki, joka tulostaa "Hei maailma" konsoliin:
+Elm-kielessä käytetään "Debug.log" -funktiota ​​tulostamaan debug-tietoja. Tämä funktio ottaa argumentikseen merkkijonon ja arvon, joka tulostetaan näytölle.
 
 ```Elm
-main = 
-    Debug.log "Hei" "maailma"
+Debug.log "viesti" 5
 ```
 
-Tämän tulisi tuottaa seuraavanlaisen tulosteen:
+Tämä tulostaa "viesti : 5" konsolille tai selaimen kehitystyökaluihin.
 
-```
-"maailma" : String
-```
+## Syvällisemmin
 
-## Syvempi sukellus
+"Debug.log" -funktio auttaa ohjelmoijaa näkemään, mitä koodi tekee tiettynä hetkenä suorituksen aikana. Näin ollen se voi auttaa tunnistamaan ongelmia ja virheitä ohjelmassa.
 
-Debug-tulostuksen avulla voit myös tarkastella monimutkaisempia rakenteita, kuten listoja ja tupleja. Voit käyttää myös pattern matchingia saadaksesi tarkempia tulosteita. Alla on esimerkki, joka tulostaa listan sisältöä:
+On myös mahdollista tulostaa monimutkaisempia arvoja, kuten lista tai tietue, "Debug.log" -funktion avulla.
 
 ```Elm
-main = 
-    let
-        lista = [1, 2, 3]
-    in
-        Debug.log "Lista" lista
+Debug.log "lista" [1, 2, 3]
 ```
 
-Tämä tuottaa seuraavan tulosteen:
-
-```
-Lista : List number
-[1, 2, 3]
-```
-
-Kuten näet, `Debug.log` -funktiosta on paljon hyötyä koodin tarkastelussa ja löydät siitä varmasti hyötyä ohjelmoinnin aikana.
+Tämä tulostaa "lista : [1, 2, 3]" konsolille. Tämä voi auttaa ohjelmoijaa ymmärtämään paremmin ohjelman datan rakennetta.
 
 ## Katso myös
 
-- Elm-kielessä on muitakin hyödyllisiä debuggausvälineitä, kuten `Debug.todo`, joka auttaa muistuttamaan puuttuvista osista koodissa. Lue lisää täältä: https://package.elm-lang.org/packages/elm/core/latest/Debug
-- Elm-kielessä on myös muita tapoja valvoa ohjelman suoritusta, kuten ajastimien ja lomakkeiden avulla. Lue lisää täältä: https://guide.elm-lang.org/effects/
-- Jos haluat syventyä lisää Elm-kieleen yleisesti, suosittelemme tutustumaan tämän oppaan materiaaleihin: https://elmprogramming.com/
+- [Elm-kurssi](https://guide.elm-lang.org/)
+- [Elm-yhteisö](https://www.elm-community.org/)
+- [Debug.log dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)

@@ -1,48 +1,45 @@
 ---
 title:    "Gleam: Iniziare un nuovo progetto"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-### Perché
+# Perché iniziare un nuovo progetto con Gleam?
 
-Se stai leggendo questo post, probabilmente vuoi iniziare un nuovo progetto in Gleam ma ti chiedi perché dovresti farlo. Bene, Gleam è un linguaggio di programmazione funzionale che offre grande sicurezza e affidabilità. Inoltre, ha una sintassi facile da imparare e un'ottima community di supporto. Iniziare un progetto in Gleam può portare a grandi risultati e miglioramenti nella gestione del tuo codice.
+Se sei un programmatore alla ricerca di un linguaggio funzionale moderno e performante, allora Gleam è la scelta perfetta per te. Con la sua sintassi user-friendly e la potenza della compilazione statica, questo linguaggio ti permetterà di scrivere codice efficiente e robusto per i tuoi progetti.
 
-### Come Fare
+# Come iniziare
 
-Per iniziare un nuovo progetto in Gleam, è necessario avere sul tuo computer il compilatore Gleam e il gestore dei pacchetti. Una volta installati, puoi seguire questi semplici passaggi.
+Per iniziare a sfruttare il potenziale di Gleam, basta seguirere pochi semplici passi. Prima di tutto, assicurati di avere installato sul tuo computer l'ultima versione di Erlang/OTP e di Elixir.
 
-```Gleam
-gleam new my_project
-```
+Una volta completata l'installazione, puoi creare un nuovo progetto Gleam con il seguente comando nel terminale:
 
-Questo creerà una nuova cartella chiamata "my_project" che conterrà una struttura di base per il tuo progetto, tra cui il file "gleam.toml" per la configurazione dei pacchetti e il file "src/my_project.gleam" con un semplice esempio di codice.
+```Gleam new nome-progetto```
 
-```Gleam
-pub fn greet(name) {
-  "Ciao, " ++ name ++ "!"  
-}
-```
+Questo comando creerà una struttura di base per il tuo progetto composta da una cartella "src" contenente il file "main.gleam" e una cartella "test" contenente un file di test di esempio.
 
-Una volta che hai scritto il tuo codice nel file "src/my_project.gleam", puoi compilare il tuo progetto eseguendo il comando:
+Per compilare il tuo progetto, utilizza il seguente comando:
 
-```Gleam
-gleam build
-```
+```Gleam build```
 
-Questo compilerà il tuo codice e genererà un eseguibile all'interno della cartella "bin". Per eseguire il tuo programma, basta digitare:
+E per eseguire il tuo codice, usa il comando:
 
-```Gleam
-./bin/my_project
-```
+```Gleam run```
 
-### Approfondimento
+Il risultato verrà visualizzato direttamente nel terminale.
 
-Se desideri saperne di più su come avviare un nuovo progetto in Gleam, puoi consultare la documentazione ufficiale. Lì troverai maggiori dettagli sulla configurazione dei pacchetti, sulla struttura dei progetti e su come compilare e eseguire il codice.
+# Approfondimento
 
-### Vedi Anche
+Per iniziare a scrivere codice Gleam, è importante comprendere i principi fondamentali del linguaggio. Gleam utilizza la sintassi funzionale e la programmazione basata sui tipi, il che significa che tutte le espressioni e le funzioni devono avere un tipo specificato.
 
-- Documentazione di Gleam: https://gleam.run/book/
-- Comunità di Gleam su Discord: https://discord.gg/gleam-lang
-- Esempi di progetti in Gleam: https://github.com/gleam-lang/awesome-gleam
+Inoltre, Gleam utilizza il concetto di moduli per strutturare il codice. Un modulo è una collezione di dichiarazioni, funzioni e tipi, che possono essere importati ed utilizzati in altri moduli. Questo permette una maggiore organizzazione e modularità nel tuo codice.
+
+Infine, Gleam ha un forte sistema di tipo e un sistema di gestione degli errori robusto che aiuta a prevenire errori comuni durante la compilazione e l'esecuzione del tuo codice.
+
+# Vedi anche
+
+- Documentazione ufficiale di Gleam: https://gleam.run/
+- Repository GitHub di Gleam: https://github.com/gleam-lang/gleam
+- Tutorial di introduzione a Gleam: https://dev.to/cscott/functional-programming-in-gleam-5cdi

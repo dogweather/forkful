@@ -1,41 +1,39 @@
 ---
-title:    "TypeScript: 난수 생성하기"
+title:    "TypeScript: 랜덤 숫자 생성하기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 랜덤 숫자를 생성해야 할까?
+## 왜
+랜덤 숫자를 생성하는 것이 왜 중요한지 생각해 보면, 여러분의 프로그램을 보다 다양하게 만들기 위해 필수적입니다. 예를 들어, 게임을 만들 때 랜덤 숫자를 사용해서 적들이 어디에 나타날지, 아이템이 어디에 놓여질지 등을 결정할 수 있습니다. 랜덤 숫자를 생성할 줄 안다면, 더욱 흥미로운 프로그램을 만들어볼 수 있을 것입니다.
 
-랜덤 숫자 생성은 컴퓨터 프로그램에서 매우 중요한 부분입니다. 예를 들어, 게임에서 세 개의 주사위를 굴릴 때, 각각의 주사위가 나올 수 있는 모든 숫자들은 총 6가지가 있습니다. 이렇게 많은 가능한 경우의 수에서 랜덤 숫자를 생성해야 하는데, 그렇지 않으면 게임은 예측 가능해지고 지루해질 것입니다. 또는 추첨 대회에서 당첨을 결정할 때, 우리는 매번 같은 숫자를 고르는 것보다 더 공평하고 흥미로운 방식을 원할 것입니다. 이러한 이유로 랜덤 숫자 생성은 프로그래밍에서 매우 필수적인 요소입니다.
-
-## 어떻게 하면 랜덤 숫자를 생성할 수 있을까?
-
-TypeScript에서 랜덤 숫자를 생성하는 방법은 간단합니다. 먼저, Math 라이브러리에서 제공하는 random() 메소드를 사용합니다. 이 메소드는 0 이상이고 1 미만의 임의의 실수를 반환합니다. 그리고 이 숫자를 우리가 원하는 범위로 변환하기 위해 일부 계산을 해야 합니다. 만약 우리가 1부터 100 사이의 정수를 원한다면, 반환된 실수에 100을 곱하고 1을 더해서 최종 결과를 얻습니다.
+## 방법
+먼저, TypeScript에서 랜덤 숫자를 생성하기 위해서는 Math 라이브러리를 사용해야 합니다. 이 라이브러리에는 여러 수학적 함수들이 내장되어 있어 매우 편리합니다. 아래는 TypeScript로 랜덤 숫자를 생성하는 간단한 예제입니다.
 
 ```TypeScript
-// 1부터 100 사이의 랜덤 숫자 생성
-let randomNumber = Math.random() * 100 + 1;
-console.log(randomNumber);
-// 예시 출력: 74.25323930598379
+// 랜덤 숫자를 생성하는 함수
+function generateRandomNumber() {
+  // 0에서 10 사이의 랜덤 숫자를 생성
+  const randomNumber = Math.floor(Math.random() * 10);
+
+  // 생성된 숫자를 출력
+  console.log(randomNumber);
+}
+
+// 함수 호출
+generateRandomNumber();
 ```
 
-## 더 깊게 들어가보자
+위 코드를 실행하면, 콘솔에서 0에서 10 사이의 랜덤 숫자를 출력할 수 있습니다. 이제 이 함수를 이용해서 다양한 곳에서 랜덤 숫자를 사용할 수 있게 되었습니다.
 
-Math.random() 메소드는 실제로 유사난수(pseudorandom)를 생성합니다. 이는 사람이 수학적인 공식을 사용하여 예측할 수 없는 숫자를 생성한다는 의미입니다. 하지만 컴퓨터는 결국 이러한 공식을 실행할 수 있기 때문에 완전한 랜덤 숫자는 생성할 수 없습니다. 그래서 우리는 컴퓨터에서 랜덤 숫자를 생성할 때 항상 유사난수를 사용하게 됩니다.
+## 깊이 파고들기
+랜덤 숫자를 생성하는데에는 여러 가지 방식이 있습니다. 위 예제에서는 Math 라이브러리의 `Math.random()` 메소드를 사용하였지만, 다른 방법도 있습니다. 예를 들어, `crypto` 라이브러리를 사용하여 보다 안전한 랜덤 숫자를 생성할 수 있습니다.
 
-또한, TypeScript에서는 Random 라이브러리를 사용하여 다양한 랜덤 숫자 생성 방법을 구현할 수 있습니다. 예를 들어, Random.integer(min, max) 메소드를 사용하면 최솟값과 최댓값 사이의 랜덤 정수를 생성할 수 있습니다. 그리고 Random.string(length, chars) 메소드를 사용하면 지정한 길이와 문자열에서 랜덤한 문자열을 생성할 수 있습니다.
+또한, 랜덤 숫자를 사용하는 알고리즘에 따라 결과값이 달라질 수 있습니다. 따라서, 여러분이 원하는 방식과 결과에 따라 적절한 랜덤 숫자 생성 방법을 선택해야 합니다.
 
-## 더 알아보기
-
-만약 더 많은 랜덤 숫자 생성 방법을 알고 싶다면 다음 링크를 참고해보세요.
-
-# 더 자세한 정보
-
-[TypeScript 공식 문서 - Math 라이브러리](https://www.typescriptlang.org/docs/handbook/stdlib.html#math) <br>
-[TypeScript 공식 문서 - Random 라이브러리](https://www.typescriptlang.org/docs/handbook/maths.html#rand) <br>
-[DeveloperHuddle - Math.random() vs Random 정수 생성](https://developerhuddle.tistory.com/176) 
- 
-# 관련 링크
-* [TypeScript 공식 사이트](https://www.typescriptlang.org/)
-* [TypeScript 한국 사용자 포럼](
+## 참고 자료
+- [Math 라이브러리 | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [crypto 라이브러리 | Node.js Documentation](https://nodejs.org/api/crypto.html)
+- [랜덤 숫자 생성 알고리즘 | Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation_algorithm)

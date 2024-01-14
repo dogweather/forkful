@@ -1,61 +1,49 @@
 ---
-title:    "Elixir: Convirtiendo una fecha en una cadena de caracteres"
+title:    "Elixir: Convirtiendo una fecha en un string"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena?
+## Por qué
 
-La conversión de una fecha en una cadena es una tarea común en la programación. Puede ser útil en varias situaciones, como mostrar la fecha en una interfaz de usuario, guardarla en una base de datos o enviarla en una solicitud HTTP.
+Con frecuencia en la programación, es necesario convertir una fecha en una cadena de texto para poder mostrarla en una interfaz de usuario o almacenarla en una base de datos. En Elixir, podemos hacer esto de forma rápida y sencilla utilizando algunas funciones y módulos incorporados en el lenguaje.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-Para convertir una fecha en una cadena, podemos utilizar la función `DateTime.to_iso8601` de la biblioteca estándar de Elixir. Esta función acepta un objeto `DateTime` y devuelve una cadena en formato ISO 8601.
+Para convertir una fecha en una cadena de texto en Elixir, podemos utilizar la función `DateTime.to_string/2` y el módulo `Date`:
 
-```Elixir
-date = DateTime.utc_now()
-# %DateTime{calendar: Calendar.ISO, day: 12, hour: 17, microsecond: {637995, 6}, minute: 36, month: 11, second: 6, std_offset: 0, time_zone: "Etc/UTC", year: 2021}
-DateTime.to_iso8601(date)
-# "2021-11-12T17:36:06Z"
 ```
-Podemos ver que la cadena resultante incluye la fecha y hora en formato de 24 horas, junto con la zona horaria UTC.
+Elixir DateTime.to_string(%{year: 2021, month: 10, day: 18})
+#=> "2021-10-18 00:00:00"
 
-Otra opción es utilizar la función `DateTime.to_string`, que permite especificar un formato personalizado para la cadena resultante.
-
-```Elixir
-date = DateTime.utc_now()
-# %DateTime{calendar: Calendar.ISO, day: 12, hour: 17, microsecond: {318811, 6}, minute: 43, month: 11, second: 57, std_offset: 0, time_zone: "Etc/UTC", year: 2021}
-DateTime.to_string(date, "{YYYY}/{M}/{D} a las {h}:{m} {a} ({z})", :strftime)
-# "2021/11/12 a las 5:43 PM (UTC)"
+Elixir Date.to_string({2021, 10, 18})
+#=> "2021-10-18"
 ```
 
-Podemos especificar diferentes formatos dependiendo de nuestras necesidades. Por ejemplo, para obtener solo la fecha en formato "DD/MM/YYYY", podemos utilizar `"{D}/{M}/{YYYY}"`.
+También podemos especificar un formato personalizado utilizando la función `DateTime.to_string/3`, que toma como argumentos la fecha, el formato y la zona horaria:
 
-## Profundizando en la conversión de una fecha a una cadena
-
-Elixir utiliza el módulo `Calendar` para manejar las fechas y horas. Esto significa que podemos utilizar diferentes calendarios y zonas horarias en nuestras conversiones.
-
-Por ejemplo, utilizando el calendario gregoriano y la zona horaria Colombia (GMT-5), tenemos:
-
-```Elixir
-date = DateTime.from_naive({2021, 11, 12}, "America/Bogota")
-# %DateTime{calendar: Calendar.Gregorian, day: 12, hour: 0, microsecond: {0, 0}, minute: 0, month: 11, second: 0, std_offset: -18000, time_zone: "America/Bogota", year: 2021}
-DateTime.to_string(date, "{D}/{M}/{YYYY} a las {h}:{m} {a} ({z})", :strftime)
-# "12/11/2021 a las 12:00 AM (GMT-5)"
+```
+Elixir DateTime.to_string(%{year: 2021, month: 10, day: 18}, "{M}/{D}/{YY}")
+#=> "10/18/21"
 ```
 
-Vemos que la zona horaria se incluye en la cadena resultante. También podemos convertir la fecha a diferentes calendarios, utilizando la función `DateTime.to_date` y especificando un calendario específico.
+El módulo `Date` también ofrece la función `Date.to_string!/2`, que devuelve una cadena de texto sin formato para fechas que no se pueden representar en formato ISO:
 
-```Elixir
-date = DateTime.utc_now()
-# %DateTime{calendar: Calendar.ISO, day: 12, hour: 19, microsecond: {591718, 6}, minute: 52, month: 11, second: 12, std_offset: 0, time_zone: "Etc/UTC", year: 2021}
-DateTime.to_date(date, Calendar.Julian)
-# %Date{calendar: Calendar.Julian, day: 30, month: 10, year: 2021}
 ```
+Elixir Date.to_string!({2021, 2, 30})
+#=> "2021-02-30"
+```
+
+## Profundizando
+
+Detrás de estas funciones y módulos se encuentran varios protocolos y tipos de datos en Elixir. Uno de ellos es el protocolo `DateTime.Format`, que define cómo se debe formatear un `DateTime` para su representación en una cadena.
+
+Además, los tipos concretos de fechas en Elixir son `DateTime`, `Date`, y `NaiveDateTime` (que no almacena información de zona horaria), y todos implementan el protocolo `Calendar.ISO`. Por lo tanto, podemos utilizar las mismas funciones en todos ellos.
 
 ## Ver también
 
-- [Documentación oficial de Elixir en la conversión de fechas y horas](https://hexdocs.pm/elixir/DateTime.html#to_string/3)
-- [Explicación detallada de ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Lista de calendarios y zonas horarias disponibles en Elixir](https://hexdocs.pm/elixir/Calendar.html)
+- [Documentación de Elixir sobre fechas y horarios](https://hexdocs.pm/elixir/Calendar.html)
+- [Ejemplos de formato de fechas en Elixir](https://devhints.io/elixir-date-time)
+- [Cheat sheet de Elixir sobre fechas y horarios](https://docs.plataformatec.com.br/elixir-cheatsheets/elixir-date-time.html)

@@ -1,43 +1,52 @@
 ---
-title:    "C++: Lukeminen komentoriviparametreista"
+title:    "C++: Asetusten lukeminen komentoriviltä"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi käyttää komentoriviparametrejä ohjelmoinnissa
 
-On monia syitä miksi olisi hyödyllistä osata lukea komentoriviargumentteja. Esimerkiksi, kun haluat ohjelman suorittuvan eri tavoin riippuen käyttäjän antamista argumenteista.
+Komentoriviparametrit ovat tärkeitä osia ohjelmoinnissa, sillä ne mahdollistavat ohjelman käyttäjän vuorovaikutuksen ja antavat mahdollisuuden ohjelman käyttämiseen eri tavoilla. Niiden avulla voit ohjelmoida monipuolisempia ja käytännöllisempiä sovelluksia.
 
-## Kuinka
+## Miten käyttää komentoriviparametrejä
 
-```C++
-#include <iostream>
+Esimerkiksi, jos haluat ohjelmasi ottamaan vastaan käyttäjän antaman luvun ja kertomaan sen kahdella, voit käyttää komentoriviparametrejä tämän saavuttamiseksi. Alla olevassa esimerkissä luodaan yksinkertainen C++ ohjelma, joka ottaa vastaan yhden komentoriviparametrin ja tulostaa sen kaksinkertaisena.
 
-int main(int argc, char** argv) {
-    // Jos argumentteja annettiin
-    if (argc > 1) {
-        // Tulostetaan jokainen argumentti omalle rivilleen
-        for (int i = 1; i < argc; i++) {
-            std::cout << "Argumentti " << i << ": " << argv[i] << std::endl;
-        }
+```C++ 
+#include <iostream> 
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    // tarkistetaan, että ohjelmaan on annettu yksi parametri
+    if(argc != 2)
+    {
+        cout << "Anna luku komentoriviparametrina!" << endl;
+        return 1; 
     }
-    else {
-        // Jos argumentteja ei annettu, tulostetaan viesti
-        std::cout << "Et antanut yhtään argumenttia." << std::endl;
-    }
+
+    // muutetaan parametri merkkijonosta kokonaisluvuksi
+    int luku = atoi(argv[1]);
+
+    // tulostetaan luku kaksinkertaisena
+    cout << "Annoit luvun " << luku << ", sen kaksinkertainen on " << luku * 2 << endl;
+
     return 0;
 }
 ```
 
-**Lähtö**: Kun suoritat ohjelman ja annat sille argumentteja, saat näkyviin jokaisen argumentin numeron ja sisällön. Jos et anna argumentteja, näet viestin "Et antanut yhtään argumenttia."
+Ajamalla ohjelma komentorivillä antamalla parametri, esimerkiksi `./kaksinkertainen 5`, ohjelma tulostaa `Annoit luvun 5, sen kaksinkertainen on 10`.
 
-## Syvällinen tarkastelu
+## Syvällisempi sukellus komentoriviparametreihin
 
-Kun käynnistät ohjelman komentoriviltä, argv-muuttujassa on tallennettuna kaikki komentoriviargumentit. Tämä muuttuja on tyyppiä "char**", eli taulukko osoittimia merkkijonoihin. Taulukon ensimmäinen alkio (argv[0]) sisältää ohjelman nimen, ja sen jälkeen tulevat argumentit. Tarvittaessa voit käyttää atoi()-funktiota muuttaaksesi merkkijonon kokonaisluvuksi.
+Komentoriviparametrit välitetään ohjelmalle käynnistettäessä ja ne tallennetaan `argv` (argument vector) taulukkoon ja niiden määrä tallennetaan muuttujaan `argc` (argument count). Taulukon ensimmäinen alkio sisältää aina ohjelman nimen, joten varsinaiset parametrit sijaitsevat sijainneissa 1, 2, jne. Taulukon alkiot ovat aina merkkijonoja, joten tarvittaessa ne täytyy muuttaa halutuiksi tietotyypeiksi, kuten esimerkissämme teimme käyttämällä `atoi()` funktiota.
 
-## Katso myös
+On myös hyvä mainita, että ohjelmat voivat ottaa vastaan useita komentoriviparametrejä ja että niitä voi käyttää monella eri tapaa riippuen ohjelman tarpeista. Esimerkiksi, jos ohjelmasi on graafinen käyttöliittymä, voit käyttää komentoriviparametreja määrittämään, millä tavalla ohjelma käynnistetään, kuten pienenä ikkunana tai koko näytöllä.
 
-- [Komentoriviargumenttien lukeminen C++:lla](https://www.learncpp.com/cpp-tutorial/122-command-line-arguments/)
-- [argv-muuttuja](http://www.cplusplus.com/forum/general/3097/)
-- [atoi()](https://www.cplusplus.com/reference/cstdlib/atoi/)
+# Katso myös
+
+- [C++ Foundation - Komentoriviparametrit](https://www.includehelp.com/cpp-tutorial/command-line-arguments-in-cpp.aspx)
+- [GeeksforGeeks - Komentoriviparametrit C++:ssa](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

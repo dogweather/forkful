@@ -1,62 +1,65 @@
 ---
 title:    "Bash: Comparando duas datas"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Comparar Duas Datas?
+## Por que Comparar Duas Datas em Programação Bash?
 
-Comparar datas é uma tarefa comum na programação, especialmente ao lidar com informações temporais, como datas de vencimento ou prazos de entrega. Saber como comparar duas datas pode ser útil para automatizar processos, fazer cálculos de tempo e muito mais.
+A comparação de datas é uma tarefa comum em programação, especialmente em Bash, onde as datas são frequentemente usadas para controle de fluxo e tomada de decisões. Ao comparar duas datas, podemos determinar qual delas é mais recente ou se elas são iguais, dando-nos informações importantes para executar nosso código corretamente.
 
-## Como Comparar Duas Datas
+## Como Comparar Duas Datas em Bash
 
-A linguagem de programação Bash oferece diversas maneiras de comparar datas de forma simples e eficiente. Aqui estão alguns exemplos de como você pode realizar essa tarefa:
+Comparar duas datas em Bash é feito usando o comando `test`, também conhecido como `[`. Nós usamos a opção `-nt` (mais novo que) para determinar se a primeira data é mais recente que a segunda data, ou seja:
 
-### Comparando datas no formato YYYY-MM-DD
+```
+#!/bin/bash
 
-Para comparar duas datas no formato padrão YYYY-MM-DD, você pode usar o comando `date` combinado com o operador de comparação `-ge` (greater than or equal to) ou `-le` (less than or equal to). Veja um exemplo:
+data_1="2021-10-15"
+data_2="2021-10-10"
 
-```Bash
-# Define duas datas no formato YYYY-MM-DD
-date1="2021-07-15"
-date2="2021-07-20"
-
-# Compara as datas usando o comando 'date'
-if [[ "$date1" -ge "$date2" ]]; then
-  echo "A primeira data é maior ou igual à segunda"
-else
-  echo "A primeira data é menor ou igual à segunda"
+if [ $data_1 -nt $data_2 ]; then
+    echo "Data 1 é mais recente que Data 2."
 fi
 ```
 
-A saída será `"A primeira data é menor ou igual à segunda"`, pois 15 de julho (date1) é menor que 20 de julho (date2).
+Se quisermos comparar se duas datas são iguais, usamos a opção `-eq` (igual a):
 
-### Comparando datas no formato timestamp
+```
+#!/bin/bash
 
-Outra forma de comparar datas é usando o formato timestamp, que representa a quantidade de segundos desde 1 de janeiro de 1970. Para isso, você pode usar os comandos `date +%s` e `bc` para converter as datas em timestamp e então compará-las. Veja um exemplo:
+data_1="2021-10-15"
+data_2="2021-10-15"
 
-```Bash
-# Define duas datas no formato timestamp
-date1=$(date -d '2021/07/15' +%s)
-date2=$(date -d '2021/07/20' +%s)
-
-# Compara as datas usando o comando 'bc'
-if [ "$date1" -ge "$date2" ]; then
-  echo "A primeira data é maior ou igual à segunda"
-else
-  echo "A primeira data é menor ou igual à segunda"
+if [ $data_1 -eq $data_2 ]; then
+    echo "As datas são iguais."
 fi
 ```
 
-A saída será `"A primeira data é menor ou igual à segunda"`, pois 15 de julho (date1) é menor que 20 de julho (date2).
+Podemos até mesmo comparar a data atual com uma data específica, usando o comando `date` para gerar a data atual no formato que desejamos:
 
-## Mergulhando Mais Fundo
+```
+#!/bin/bash
 
-Além das formas mencionadas acima, existem outras maneiras de comparar datas no Bash, como usando a biblioteca `dateutils` ou criando suas próprias funções. É importante também considerar mais informações ao comparar datas, como o horário específico ou até mesmo fuso horário.
+data_atual=$(date +"%Y-%m-%d")
+data_referencia="2021-10-01"
+
+if [ $data_atual -gt $data_referencia ]; then
+    echo "Já passou do dia 1 de outubro."
+fi
+```
+
+## Mergulho Profundo na Comparação de Datas
+
+Ao comparar datas, devemos ter cuidado para que elas estejam no formato correto. No nosso exemplo, usamos o formato "aaaa-mm-dd", mas também poderíamos usar "dd/mm/aaaa" ou "dd-mm-aaaa". Além disso, é importante lembrar que a ordem em que as datas são escritas no código é importante, uma vez que estamos comparando strings de texto.
+
+Uma opção para comparar datas mais complexas, como horários, é o uso do comando `date` juntamente com o formato "epoch". Este formato representa o número de segundos passados desde 1º de janeiro de 1970. Podemos converter datas para esse formato usando `date -d` e, em seguida, comparar os valores resultantes.
 
 ## Veja Também
 
-- [Documentação do comando `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Documentação do comando `bc`](https://www.gnu.org/software/bc/manual/html_mono/bc.html)
-- [Documentação da biblioteca `dateutils`](https://www.fresse.org/dateutils/#dateutils)
+- [Documentação do comando `test` em Bash] (https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
+- [Documentação do comando `date` em Bash] (https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Date-Manipulation.html#Bourne-Shell-Date-Manipulation)
+
+Esperamos que este artigo tenha sido útil para entender como comparar duas datas em Bash. Com a comparação de datas em seu repertório de habilidades de programação, você poderá escrever códigos mais eficazes e precisos.

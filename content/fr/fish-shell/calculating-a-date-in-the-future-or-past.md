@@ -1,52 +1,42 @@
 ---
-title:    "Fish Shell: Calculer une date dans le futur ou le passé"
+title:    "Fish Shell: Calculer une date dans le futur ou le passé."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous vous demandez probablement pourquoi calculer une date dans le futur ou dans le passé avec Fish Shell. Eh bien, cela peut être utile pour planifier des événements ou des tâches à l'avance, ou pour rechercher des dates spécifiques dans le passé.
+Calculer une date dans le futur ou dans le passé peut être extrêmement utile pour programmer des tâches ou pour vérifier des échéances. Avec Fish Shell, cette tâche peut être réalisée rapidement et facilement grâce à sa syntaxe simple et intuitive.
 
 ## Comment faire
 
-Calculer une date dans le futur ou dans le passé avec Fish Shell est assez simple. Utilisez la commande ```date -v [unité de temps] [nombre]```, en remplaçant "[unité de temps]" par une des options suivantes: 
-- s (secondes)
-- m (minutes)
-- h (heures)
-- d (jours)
-- w (semaines)
-- M (mois)
-- y (années)
+Pour calculer une date dans le futur ou dans le passé en utilisant Fish Shell, suivez ces étapes :
 
-Et en remplaçant "[nombre]" par la quantité de temps que vous souhaitez ajouter (pour une date future) ou soustraire (pour une date dans le passé). Par exemple, si vous voulez calculer la date d'aujourd'hui plus 5 jours, vous pouvez utiliser la commande ```date -v d 5```. 
+1. Ouvrez votre terminal et lancez la commande `fish` pour entrer dans l'interpréteur de commandes Fish Shell.
+2. Utilisez la commande `date` suivie du symbole `+` et d'une valeur numérique, par exemple `+2`, pour indiquer le nombre de jours que vous voulez avancer dans le temps. Vous pouvez également utiliser le symbole `-` pour reculer dans le temps.
+3. Ajoutez une unité de temps après la valeur numérique pour préciser combien de jours, mois, années, etc. vous voulez avancer ou reculer. Par exemple, `+2d` pour avancer de deux jours ou `-1m` pour reculer d'un mois.
 
-Voici un exemple de sortie pour cette commande:
 ```
-vendredi 13 décembre 2019, 12:00:00 (UTC+0100)
+Fish Shell  ~> date +2d
+lun. août 30 16:05:05 CEST 2021
+Fish Shell ~> date -1m
+sam. juil. 31 16:05:05 CEST 2021
 ```
 
-Si vous voulez une date spécifique dans le futur ou dans le passé, vous pouvez utiliser la commande ```date -v [unité de temps] [nombre] [date de référence]```. Par exemple, si vous voulez savoir quelle était la date il y a 8 jours à partir du 1er janvier 2020, vous pouvez utiliser la commande ```date -v d -8 2020-01-01```.
+## Plongée en profondeur
 
-Voici un exemple de sortie pour cette commande:
-```
-mercredi 25 décembre 2019, 12:00:00 (UTC+0100)
-```
+Il est possible d'utiliser plusieurs unités de temps à la fois pour calculer une date dans le futur ou dans le passé. Voici quelques exemples :
 
-## Plongée Profonde
+- `+2y3mo`pour avancer de 2 années et 3 mois
+- `-1w5d` pour reculer d'1 semaine et 5 jours
+- `+1y2h30m` pour avancer d'1 année, 2 heures et 30 minutes
 
-Si vous voulez aller plus loin, vous pouvez également utiliser la commande ```date -d [date] [opération]```. Cela vous permet de faire des opérations mathématiques directement sur une date donnée. Par exemple, si vous voulez savoir quelle était la date il y a exactement un an, vous pouvez utiliser la commande ```date -d "20200202 + 1 year"```.
+Il est également possible d'utiliser des formules mathématiques dans les valeurs numériques pour effectuer des calculs plus complexes. Par exemple, `+1w+3d` pour ajouter 1 semaine et 3 jours ou `+2*3mo` pour ajouter 6 mois.
 
-Voici un exemple de sortie pour cette commande:
-```
-mardi 2 février 2021, 12:00:00 (UTC+0100)
-```
+## Voir aussi
 
-Il est également possible d'utiliser des informations plus précises sur la date, telles que l'heure et les secondes, pour effectuer des opérations. Consultez la [documentation de Fish Shell](https://fishshell.com/docs/current/cmds/date.html) pour plus d'exemples et de détails sur ces commandes.
-
-## Voir Aussi
-
-- [Documentation de Fish Shell sur la commande *date*](https://fishshell.com/docs/current/cmds/date.html)
-- [Date Calculator Tool pour Fish Shell](https://github.com/mr6r4y/fish-date-calculator)
-- [Article sur les calculs de dates avec Fish Shell](https://medium.com/@Erik_Goldstein/calculate-dates-in-the-future-and-past-with-fish-shell-6d1dd74764c7)
+- [Documentation officielle de Fish Shell](https://fishshell.com/)
+- [Tutoriel pour débutants sur Fish Shell](https://www.linux.com/topic/desktop/getting-started-fish-shell/)
+- [Exemples d'utilisation avancée de Fish Shell](https://hackernoon.com/a-year-this-fish-instead-of-bash-40-lessons-learned-e9e90eb83a24) (en anglais)

@@ -1,43 +1,85 @@
 ---
-title:    "Kotlin: Concaténation de chaînes de caractères"
+title:    "Kotlin: Concaténation de chaînes"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La concaténation de chaînes de caractères est une pratique courante en programmation qui permet de combiner plusieurs chaînes pour en former une seule. Cela peut être utile dans de nombreuses situations, notamment pour afficher du texte à l'écran ou pour créer des URL.
+La concaténation de chaînes de caractères est une technique fréquemment utilisée en programmation permettant de combiner plusieurs chaînes de caractères en une seule. Elle est particulièrement utile pour afficher des messages personnalisés ou pour construire des requêtes dynamiques. Dans cet article, nous allons voir comment concaténer des chaînes de caractères en Kotlin de manière efficace et optimale.
 
 ## Comment faire
 
-Pour concaténer des chaînes de caractères en Kotlin, il suffit d'utiliser l'opérateur `+` entre les différentes chaînes. Par exemple :
+Pour concaténer des chaînes de caractères en Kotlin, nous pouvons utiliser l'opérateur plus (+) ou bien la fonction `plus()`.
+
+Les exemples suivants illustrent ces deux méthodes :
 
 ```Kotlin
-val prenom = "Jean"
-val nom = "Dupont"
-val nomComplet = prenom + nom
+var message = "Bonjour "
+val name = "Marie"
+message = message + name
+println(message)
 ```
 
-Dans cet exemple, la variable `nomComplet` contiendra la valeur "JeanDupont".
-
-Il est également possible d'utiliser la méthode `plus()` pour concaténer des chaînes, comme ceci :
+Output:
+```
+Bonjour Marie
+```
 
 ```Kotlin
-val age = 30
-val message = "J'ai " plus age plus " ans."
+val firstName = "Jean"
+val lastName = "Dupont"
+val fullName = firstName.plus(lastName)
+println(fullName)
 ```
 
-La variable `message` contiendra alors la valeur "J'ai 30 ans.".
+Output:
+```
+JeanDupont
+```
 
-## Approfondissement
+Nous pouvons également utiliser la fonction `format()` pour concaténer des chaînes de caractères en incluant des variables à l'intérieur. L'exemple suivant montre comment utiliser cette méthode :
 
-Lorsqu'on utilise l'opérateur `+` pour concaténer des chaînes, Kotlin utilise en réalité la méthode `plus()` en arrière-plan. Cette méthode est définie dans la classe `String` et permet de concaténer deux chaînes en les combinant dans un nouvel objet `String`.
+```Kotlin
+val year = 2021
+val message = "Nous sommes en %d".format(year)
+println(message)
+```
 
-Il est également important de noter que la concaténation de chaînes peut être gourmande en ressources, notamment lorsque l'on concatène un grand nombre de chaînes. Dans ces cas-là, il est préférable d'utiliser la classe `StringBuilder` qui offre de meilleures performances pour la concaténation de chaînes.
+Output: 
+```
+Nous sommes en 2021
+```
+
+L'utilisation de la fonction `format()` est particulièrement pratique lorsque nous devons concaténer plusieurs variables dans une chaîne de caractères.
+
+Notez que le symbole de pourcentage (%) doit être placé à l'endroit où nous voulons insérer la variable, et que le type de la variable doit être adapté. Par exemple, si nous voulons insérer un entier (%d), nous devons fournir une variable de type Int.
+
+## Deep Dive
+
+En Kotlin, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Ainsi, à chaque fois que nous concaténons des chaînes de caractères en utilisant l'opérateur plus (+) ou la fonction `plus()`, une nouvelle chaîne de caractères est créée et l'ancienne est supprimée.
+
+Pour éviter cette surconsommation de ressources, nous pouvons utiliser la classe `StringBuilder` qui permet de modifier une chaîne de caractères sans créer de nouvelles instances.
+
+L'exemple suivant montre comment concaténer des chaînes de caractères en utilisant la classe `StringBuilder` :
+
+```Kotlin
+val sb = StringBuilder("Bonjour")
+val name = "Marie"
+val message = sb.append(name).append("!").toString()
+println(message)
+```
+
+Output:
+```
+Bonjour Marie!
+```
+
+En utilisant `StringBuilder`, nous avons créé une seule instance de chaîne de caractères et l'avons modifiée à l'aide de la méthode `append()`. Cela permet d'économiser des ressources et d'améliorer les performances de notre code.
 
 ## Voir aussi
 
-- [Documentation officielle de Kotlin sur la concaténation de chaînes](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-- [Explications détaillées sur l'utilisation de la classe StringBuilder en Kotlin](https://kotlinlang.org/docs/basic-types.html#string-representation)
-- [Exemples pratiques de concaténation de chaînes en Kotlin](https://blog.kotlin-academy.com/kotlin-string-concatenation-performance-d4cf67d18f1b)
+- [Documentation officielle de Kotlin sur les chaînes de caractères](https://kotlinlang.org/docs/basic-types.html#strings)
+- [Différences entre les opérateurs et les fonctions en Kotlin](https://www.baeldung.com/kotlin-operators-functions)

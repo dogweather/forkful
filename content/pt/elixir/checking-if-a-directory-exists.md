@@ -1,43 +1,34 @@
 ---
 title:    "Elixir: Verificando se um diretório existe"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe
+## Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é uma tarefa importante em projetos de programação, especialmente em Elixir. Isso pode ser útil para criar uma lógica condicional em seu código e garantir que o diretório necessário esteja presente antes de prosseguir com determinadas ações.
+Existem várias razões pelas quais um desenvolvedor pode precisar verificar se um diretório existe. Uma das principais razões é garantir que o código não falhe ao tentar acessar um diretório inexistente. Verificar a existência de um diretório antes de tentar acessá-lo pode tornar seu código mais robusto e evitar possíveis erros.
 
-## Como Fazer
+## Como verificar se um diretório existe em Elixir
 
-Para verificar se um diretório existe em Elixir, você pode usar a função `File.stat/1` juntamente com o operador `&` para criar uma cláusula de comparação booleana.
+Verificar se um diretório existe em Elixir é bastante simples. Basta usar a função `File.dir?/1`, passando o caminho do diretório como argumento. Por exemplo:
 
-```elixir
-# Verifica se o diretório "exemplo_diretorio" existe
-File.stat("exemplo_diretorio") & &1.type == :directory
+```Elixir
+File.dir?("caminho/do/diretório")
+# => true or false
 ```
 
-Esse código irá retornar `true` se o diretório existir e `false` se ele não existir. Você também pode usar a função `File.dir?/1` diretamente para verificar se um diretório existe.
+Se o diretório existir, a função retornará `true`. Caso contrário, retornará `false`. Você também pode usar `File.dir?/1` para verificar se um arquivo existe, passando o caminho do arquivo como argumento.
 
-```elixir
-# Verifica se o diretório "exemplo_diretorio" existe
-File.dir?("exemplo_diretorio")
-```
+## Aprofundando mais
 
-## Profundidade na verificação de diretórios
+Além da função `File.dir?/1`, existem outras maneiras de verificar a existência de um diretório em Elixir. Você pode usar a função `File.ls!/1` para listar todos os arquivos e diretórios em um determinado caminho e, em seguida, verificar se o diretório desejado está na lista. Outra opção é usar a função `Dir.exists?/1`, que retorna `true` se o diretório existir e `false` se não existir.
 
-Ao trabalhar com a verificação de diretórios, é importante considerar os possíveis erros que podem ocorrer. Se o diretório não existir, a função `File.dir?/1` retornará um `false` booleano, mas se ocorrer algum erro durante a verificação, uma exceção será lançada. Portanto, é importante usar a função `File.dir?/2`, que permite passar uma opção adicional de `:raise` para especificar se uma exceção deve ser lançada ou não em caso de erro.
-
-```elixir
-# Verifica se o diretório "exemplo_diretorio" existe e não lança uma exceção em caso de erro
-File.dir?("exemplo_diretorio", [:raise => false])
-```
-
-Além disso, para evitar problemas de concorrência, é importante garantir que a verificação do diretório seja realizada de forma síncrona, usando a função `File.dir?/2` com a opção `:force_sync`. Isso garantirá que não haja problemas de leitura ou gravação simultânea no diretório em questão.
+Uma consideração importante ao verificar a existência de um diretório é garantir que o caminho fornecido seja absoluto e não relativo. Isso garante que o diretório seja procurado no local correto.
 
 ## Veja também
 
-- [Documentação oficial do Elixir sobre verificação de diretórios](https://hexdocs.pm/elixir/File.html#dir?/2)
-- [Tutorial sobre como verificar se um diretório existe em Elixir](https://www.tutorialspoint.com/elixir/elixir_check_directory.htm)
-- [Discussão sobre os possíveis problemas de concorrência ao verificar diretórios em Elixir](https://elixirforum.com/t/how-to-reliably-check-if-a-directory-exists/37811)
+- [Documentação oficial do Elixir sobre File](https://hexdocs.pm/elixir/File.html)
+- [Mais exemplos de como trabalhar com arquivos em Elixir](https://elixirschool.com/lessons/basics/file-operations/)
+- [Tutorial sobre como criar e gerenciar diretórios em Elixir](https://www.codementor.io/@calebhearth/how-to-create-and-manage-directories-in-elixir-q20ee507f)

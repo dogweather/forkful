@@ -1,45 +1,47 @@
 ---
 title:    "C: Å starte et nytt prosjekt"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-For mange mennesker kan det å starte et nytt programmeringsprosjekt virke overveldende og skremmende. Men det kan også være en spennende og givende opplevelse. Å skrive kode og se den komme til liv, kan være en utrolig følelse. I tillegg kan det å starte et nytt prosjekt hjelpe deg med å utvikle dine ferdigheter som programmerer og å utforske nye områder innenfor programmering.
+Å starte et nytt prosjekt kan være en spennende og givende opplevelse for alle som elsker å kode. Det gir muligheten til å skape noe nytt og utforske nye konsepter og teknikker. I tillegg kan det være en flott måte å forbedre sine programmeringsferdigheter på og bygge en portefølje.
 
-## Slik gjør du det
+## Hvordan å starte et nytt prosjekt i C
 
-Når du starter et nytt C-programmeringsprosjekt, er det viktig å starte med et solid fundament. Dette inkluderer å sette opp et arbeidsmiljø, inkludert tekstredigeringsprogram og en kompilator som gcc. Etter at du har satt opp arbeidsmiljøet, kan du begynne å skrive koden din.
-
-Et godt sted å begynne er med å skrive et enkelt program som skriver ut en melding til skjermen. Her er et eksempel på hvordan du kan gjøre dette:
+Å starte et nytt prosjekt i C kan virke overveldende for noen, spesielt for nybegynnere. Men med riktig fremgangsmåte og verktøy, kan det være en enkel og spennende prosess. La oss se på et enkelt eksempel på hvordan du kan komme i gang med å skrive en "Hallo Verden"-applikasjon i C:
 
 ```C
 #include <stdio.h>
-int main()
-{
-    printf("Hei fra C-programmet mitt!\n");
-    return 0;
+
+/* Hovedfunksjonen som skriver ut "Hallo Verden" */
+int main() {
+   printf("Hallo Verden\n");
+   return 0;
 }
 ```
 
-Det første du må gjøre er å inkludere standardinnholdet for å kunne bruke funksjonen `printf()`. Deretter skriver du selve `main()`-funksjonen som vil være inngangspunktet for programmet ditt. Inne i denne funksjonen bruker du `printf()` for å skrive ut en melding til skjermen, og deretter returnerer du verdien 0 for å indikere at programmet er ferdig. For å teste koden din, må du kompilere den ved å bruke kommandoen `gcc`, og deretter kjøre det nye programmet.
+Output:
+```
+Hallo Verden
+```
 
-Med dette enkle eksempelet kan du begynne å utforske forskjellige aspekter av C-programmering, for eksempel variabler, løkker og betingelser, og skrive mer komplekse programmer.
+I dette eksempelet bruker vi standardbiblioteket "stdio.h" som lar oss bruke funksjonen "printf()" til å skrive ut tekst til konsollen. Vi definerer en hovedfunksjon som er påkrevd i alle C-programmer, og inne i denne kaller vi "printf()" for å skrive ut "Hallo Verden". Til slutt returnerer vi verdien 0 for å indikere at programmet ble kjørt uten feil.
 
-## Dypdykk
+## Dykk dypere
 
-Når du er komfortabel med grunnleggende C-programmering, kan du begynne å tenke på å starte et større prosjekt. Dette kan være alt fra å lage et enkelt spill til å utvikle et mobilt eller web-basert program. Uansett hva du velger å gjøre, er det viktig å ha en god plan og organisering.
+Nå som vi har en grunnleggende forståelse av hvordan å starte et nytt prosjekt i C, la oss ta en dypere titt på noen av nøkkelkomponentene som er involvert i prosessen.
 
-En god måte å organisere et større prosjekt er å bruke moduler. Disse er separate filer som inneholder funksjoner som kan gjenbrukes i hele programmet. Dette gjør koden din mer lesbar og enklere å vedlikeholde.
+- Kompilering: For å kjøre et C-program må det kompileres først. Dette betyr at kildekoden blir konvertert til maskinkode som datamaskinen kan forstå og utføre.
+- Verktøy: Det finnes mange verktøy tilgjengelig for å hjelpe deg med å skrive og kjøre C-programmer, som f.eks. en teksteditor, en kompilator og en debugger.
+- Biblioteker: Biblioteker inneholder forhåndskrevne funksjoner og kode som kan gjenbrukes i programmer. Dette kan være nyttig for å spare tid og skrive mer effektiv kode.
 
-Et annet viktig aspekt av å starte et nytt prosjekt er å bruke versjonskontroll. Dette vil hjelpe deg med å spore endringer i koden din, og vil være spesielt nyttig hvis du jobber sammen med andre programmerere.
-
-Husk at det å starte et nytt C-programmeringsprosjekt kan være en lærerik og spennende reise. Det er viktig å være tålmodig og å fortsette å øve og utforske nye konsepter.
+Å lære mer om disse komponentene og hvordan de fungerer sammen, vil hjelpe deg med å forbedre dine C-programmeringsferdigheter og gi deg en dypere forståelse av prosjektene dine.
 
 ## Se også
-
-- [C-programmering - En innføring](https://no.wikibooks.org/wiki/C-programmering)
-- [GCC - Dokumentasjon](https://gcc.gnu.org/onlinedocs/)
-- [Git - Dokumentasjon](https://git-scm.com/doc)
+- [C-programmering for nybegynnere (på norsk)](https://www.ntnu.no/wiki/display/itgk/C-programmering+for+nybegynnere)
+- [C-programmering: Enkel innføring (på norsk)](http://folk.uio.no/lmadsen/c-programmering-enkel-innfoering.pdf)
+- [Start et nytt C-prosjekt i Visual Studio (på engelsk)](https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2019)

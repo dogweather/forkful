@@ -1,64 +1,62 @@
 ---
-title:    "Bash: Unterstrings extrahieren"
+title:    "Bash: Extrahieren von Teilstrings"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Extrahieren von Teilstücken oder Substrings aus Textzeilen ist eine wichtige Funktion in der Bash-Programmierung. Es kann dabei helfen, spezifische Informationen aus komplexen Daten zu filtern oder eine bestimmte Dateistruktur zu ordnen. In diesem Blog-Beitrag werden wir uns genauer ansehen, warum das Extrahieren von Substrings nützlich ist und wie man es in Bash umsetzen kann.
+Das Extrahieren von Teilzeichenketten ist eine nützliche Fähigkeit in Bash, die es Ihnen ermöglicht, bestimmte Teile eines Strings zu isolieren und zu manipulieren. Dies kann hilfreich sein, wenn Sie beispielsweise bestimmte Informationen aus einer längeren Zeichenkette extrahieren oder eine Zeichenkette in kleinere Teile zerlegen müssen.
 
-## Anleitung
+## Wie man es macht
 
-Um einen Substring aus einer Zeile Text zu extrahieren, gibt es verschiedene Methoden in Bash. Eine Möglichkeit ist die Verwendung des "cut" Befehls. 
+Um eine Teilzeichenkette in Bash zu extrahieren, verwenden Sie einfach die Syntax `${string:position:length}`, wobei "string" der ursprüngliche String ist, "position" der Startindex der zu extrahierenden Teilzeichenkette und "length" die Länge der zu extrahierenden Teilzeichenkette ist.
 
-```Bash
-text="Ich liebe Bash-Programmierung"
-echo ${text:4:13}
-# Ausgabe: liebe Bash
-```
-
-In diesem Beispiel verwenden wir den Variablennamen "text" und geben dann mit dem Doppelpunkt den Startindex und die Anzahl der Zeichen, die wir extrahieren möchten, an. In diesem Fall beginnen wir bei Index 4 (fünftes Zeichen) und extrahieren 13 Zeichen (von "liebe" bis "hing").
-
-Eine andere Möglichkeit ist die Verwendung von regulären Ausdrücken mit dem Befehl "grep".
+Ein Beispiel:
 
 ```Bash
-text="Heute ist ein schöner Tag"
-echo $text | grep -o 'schöner'
-# Ausgabe: schöner
+sentence="Ich gehe spazieren."
+echo ${sentence:8:8}
 ```
 
-In diesem Beispiel suchen wir nach dem Wort "schöner" im String und geben nur dieses Wort aus. Man kann hier auch mit verschiedenen Regular Expressions spielen, um spezifischere Muster zu suchen.
+Dies gibt "spazieren" als Ausgabe aus, da wir bei Index 8 beginnen und 8 Zeichen extrahieren.
 
-## Tiefere Einblicke
-
-Beim Extrahieren von Substrings gibt es einige Dinge zu beachten. Zum Beispiel kann man mithilfe von Variablen und Schleifen auch mehrere Substrings gleichzeitig extrahieren.
+Wenn Sie nur den Teil am Anfang einer Zeichenkette extrahieren möchten, können Sie einfach die Länge weglassen:
 
 ```Bash
-lines="1|John|Doe
-2|Jane|Smith"
-while IFS='|' read -r id first last; do
-  echo "ID: $id, Name: $first $last"
-done <<< "$lines"
-# Ausgabe:
-# ID: 1, Name: John Doe
-# ID: 2, Name: Jane Smith
+name="Max Mustermann"
+echo ${name:0:3}
 ```
 
-In diesem Beispiel haben wir eine Variable mit mehreren Zeilen Text und verwenden eine Schleife, um jedem Substring einen bestimmten Variablennamen zuzuordnen.
+Dies gibt "Max" als Ausgabe aus.
 
-Man kann auch eine bestimmte Anzahl von Zeilen oder Spalten aus einer Datei extrahieren und in eine andere Datei speichern.
+Sie können auch negative Indizes verwenden, um die Teilzeichenkette von rechts nach links zu extrahieren. Zum Beispiel:
 
 ```Bash
-cut -f 2 datei1.txt > datei2.txt
-# Dieser Befehl extrahiert die zweite Spalte von datei1 und speichert sie in datei2.
+phrase="Ich liebe Bash!"
+echo ${phrase:6:-1}
 ```
 
-Es gibt viele weitere Möglichkeiten, Substrings in Bash zu extrahieren, abhängig von den spezifischen Anforderungen und der Dateistruktur.
+Dies gibt "Bash" als Ausgabe aus, da wir bei Index 6 beginnen und bis zum Ende der Zeichenkette gehen.
+
+## Tiefergehende Informationen
+
+In Bash können Sie auch das sogenannte "Substring Expansion" verwenden, um Teilzeichenketten zu extrahieren. Dies beinhaltet die Verwendung von `%` und `#` in Variablenzuweisungen.
+
+Ein Beispiel:
+
+```Bash
+surname="Max Mustermann"
+echo ${surname% *}
+```
+
+Dies gibt "Max" als Ausgabe aus, da `% *` besagt, dass das längste vorkommende Leerzeichen und alle Zeichen danach entfernt werden sollen.
+
+Weitere Informationen und Beispiele zum Thema Extrahieren von Teilzeichenketten in Bash finden Sie in der offiziellen Dokumentation.
 
 ## Siehe auch
 
-- [Bash Guide für Anfänger (Deutsch)](https://linux.die.net/Bash-Beginners-Guide/)
-- [Bash-Skripting-Tutorials auf YouTube (Deutsch)](https://www.youtube.com/playlist?list=PLYBpGF-DpXtYozb19RQCt425FPDU8zkt4)
-- [Einführung in AWK (Deutsch)](https://www.hostsharing.net/wiki/Bash-intro_awk)
+- [Bash Manual: Substring Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+- [Explain Shell: Substring Expansion](https://explainshell.com/explain/1/bash/?x=-jw#%24%7Bvar%3A%25%7Bpattern%7D%7D)

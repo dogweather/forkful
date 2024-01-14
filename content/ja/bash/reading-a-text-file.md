@@ -1,67 +1,40 @@
 ---
 title:    "Bash: テキストファイルの読み込み"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを読み込むことの目的は、コンピューターが扱いやすい形式でデータを保存することです。例えば、プログラムや設定ファイルなどがテキストファイルとして保存されます。テキストファイルを読み込むことで、プログラミングの世界でもっとも基本的な操作のひとつを学べます。
+読み込み可能なテキストファイルの使用方法を知りたい方にとって、このブログポストは役に立つでしょう。
 
-## 特に見るべき
+## 方法
 
-テキストファイルを読み込む方法はたくさんありますが、ここではBashを使った方法を紹介します。Bashはシェルスクリプトを実行するために最も一般的に使用されているプログラミング言語であり、シンプルで効率的な方法でテキストファイルを読み込むことができます。
+Bashプログラミングは、テキストファイルを読み込むための簡単な方法を提供します。以下のコードブロックには、ファイルを読み込み、内容をプリントアウトする例が記載されています。
 
-まずは、読み込むテキストファイルを準備しましょう。例えば、以下のような`textfile.txt`というファイルを作成します。
-
-```
-Hello, world!
-This is a text file.
-It contains multiple lines of text.
-```
-
-次に、Bashスクリプト内で`cat`コマンドを使ってファイルを読み込みます。以下のようなコードを用意し、実行します。
-
-```
+```Bash
 #!/bin/bash
-
-cat textfile.txt
+# ファイルの内容を読み込みます。
+while read -r line; do 
+echo $line 
+done < sample.txt # sample.txtは読み込むファイル名です。
 ```
 
-実行すると、ターミナルにテキストファイルの内容が表示されます。
+上記のコードを実行すると、テキストファイルの内容がターミナル上に表示されるでしょう。
 
-```
-Hello, world!
-This is a text file.
-It contains multiple lines of text.
-```
+## 深く掘り下げる
 
-このように、`cat`コマンドを使うことで簡単にテキストファイルを読み込むことができます。
+テキストファイルを読み込む際に注意すべき点があります。例えば、ファイルの文字コードや改行コードによって読み込みに影響が出ることがあります。また、ファイルサイズが大きい場合は、メモリの制限に注意する必要があります。
 
-## 深堀り
+## 参考
 
-`cat`コマンド以外にも、Bashでテキストファイルを読み込む方法はいくつかあります。例えば、`read`コマンドを使うことでファイル内の特定の行を読み込むことができます。また、`awk`や`sed`といったパターンマッチングツールを使うことで、ファイル内から特定のパターンを見つけて処理することもできます。
+- [Bashでファイルを読み込む方法](https://techacademy.jp/magazine/4922)
+- [Bashチュートリアル](https://www.shellscript.sh/index.html)
+- [テキストファイルの読み込みについての詳細な説明](https://www.lifewire.com/reading-text-files-from-the-linux-shell-4082693)
 
-さらに、Bashでは変数を使ってファイル内のデータを処理することもできます。例えば、ファイル内の文字数を数える場合は以下のように変数を使うことができます。
+## 他にも見るべき
 
-```
-#!/bin/bash
-
-text=$(cat textfile.txt) # ファイルの内容を変数に代入する
-echo "${#text}" # 文字数を表示する
-```
-
-このように、Bashを使うことでさまざまな方法でテキストファイルを読み込むことができます。
-
-## 参考リンク
-
-- [Bash入門 - ファイル操作編](https://www.atmarkit.co.jp/ait/articles/1705/18/news013.html)
-- [Bashスクリプト](https://www.javadrive.jp/shell/)
-- [Bashでの変数の使い方](https://www.atmarkit.co.jp/ait/articles/1211/21/news142.html)
-
----
-## 関連リンク
-
-- [Bashチュートリアル](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Bashスクリプトの作成方法](https://www.unixtutorial.org/bash-scripting-quick-start)
+- [Bashプログラミング入門](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [テキストファイルの作成方法についてのガイド](https://www.wikihow.com/Create-a-Text-File-in-a-Linux-Terminal)

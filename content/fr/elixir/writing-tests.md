@@ -1,66 +1,64 @@
 ---
-title:    "Elixir: Écrire des tests"
+title:    "Elixir: Écriture des tests"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Ecrire des tests en Elixir : pourquoi et comment
+## Pourquoi 
 
-## Pourquoi
-
-Ecrire des tests est un aspect crucial du développement logiciel. Il permet de s'assurer que le code est fonctionnel, robuste et peut être modifié en toute sécurité. Avec l'utilisation du langage Elixir, il est important de comprendre à la fois pourquoi et comment écrire des tests pour améliorer la qualité de votre code.
+L'écriture de tests est une pratique courante dans le développement de logiciels, et cela pour une bonne raison. En écrivant des tests pour votre code Elixir, vous vous assurez qu'il fonctionne de la manière prévue et qu'il n'y a pas de bugs cachés. Cela permet également de faciliter la maintenance et les mises à jour de votre code.
 
 ## Comment faire
 
-Pour écrire des tests en Elixir, il existe un framework appelé ExUnit. Ce dernier fournit les outils nécessaires pour créer, exécuter et analyser des tests en Elixir. Voici un exemple d'une fonction simple et de son test correspondant :
+Pour écrire des tests en Elixir, nous allons utiliser le module ExUnit. Nous allons prendre l'exemple d'une fonction pour calculer la moyenne d'une liste de nombres :
 
-```elixir
-defmodule Calcul do
-  # Une fonction pour calculer le carré
-  def sq(num) do
-    num * num
+```Elixir
+defmodule Calculator do
+  def average(numbers) do
+    sum = Enum.sum(numbers)
+    n = length(numbers)
+    sum / n
   end
 end
 ```
 
-```elixir
-defmodule CalculTest do
+Nous voulons maintenant écrire des tests pour cette fonction. Voici comment cela pourrait ressembler avec ExUnit :
+
+```Elixir
+defmodule CalculatorTest do
   use ExUnit.Case
+  doctest Calculator
 
-  # On définit un groupe d'exécution pour les tests
-  @tag :test
-  describe "une fonction de calcul de carré" do
-    # On définit le test et on s'assure que le résultat est correct
-    test "calcule correctement le carré" do
-      assert Calcul.sq(2) == 4
-    end
+  test "average/1 returns the correct average" do
+    assert Calculator.average([1, 2, 3]) == 2
+  end
+
+  test "average/1 with an empty list returns 0" do
+    assert Calculator.average([]) == 0
+  end
+
+  test "average/1 with negative numbers returns a negative average" do
+    assert Calculator.average([-1, -2, -3]) == -2
   end
 end
 ```
 
-Après avoir exécuté ces tests, le résultat devrait être le suivant :
+En écrivant des tests pour différentes valeurs d'entrée, nous nous assurons que notre fonction fonctionne correctement dans tous les cas. Maintenant, si nous apportons des modifications à notre fonction, nous pouvons facilement exécuter nos tests et vérifier si tout fonctionne toujours comme prévu.
 
-```
-ExUnit.run(CalculTest)
-..
-
-Finished in 0.04 seconds
-2 tests, 0 failures
-```
-
-Vous pouvez également utiliser des fonctions spéciales comme `assert_raise` pour tester les erreurs, ainsi que les `setup` et `teardown` pour organiser vos tests.
+Pour exécuter ces tests, il suffit de lancer la commande `mix test` dans le répertoire de votre projet.
 
 ## Plongée en profondeur
 
-Maintenant que vous avez une idée de base sur comment écrire des tests en Elixir, plongeons un peu plus en profondeur. Tout d'abord, il est important de comprendre qu'en Elixir, les tests sont exécutés de façon asynchrone. Cela signifie que chaque test sera exécuté en parallèle et donc que vous devez vous assurer que vos tests soient indépendants les uns des autres pour éviter des problèmes de concurrence.
+Maintenant que nous savons comment écrire des tests en Elixir, nous pouvons également explorer les différentes options et fonctionnalités qu'offre ExUnit. Par exemple, nous pouvons utiliser les méthodes `setup` et `teardown` pour mettre en place et nettoyer des ressources avant et après l'exécution de nos tests. Nous pouvons également utiliser les tags pour exécuter des tests spécifiques ou pour définir des conditions de réussite pour certains tests.
 
-De plus, il est également important de tester de façon unitaire, c'est-à-dire en se concentrant sur une seule fonction ou un seul module à la fois. Cela rendra vos tests plus clairs et plus faciles à comprendre. Pensez également à tester les différentes situations possibles, y compris les erreurs et les cas limites.
+Il est également important de noter que les tests en Elixir peuvent être facilement parallélisés, ce qui permet d'accélérer considérablement l'exécution de vos tests.
 
-Enfin, n'oubliez pas d'écrire des tests pour chaque nouvelle fonctionnalité que vous ajoutez à votre code. Cela vous aidera à identifier et corriger les erreurs rapidement, ainsi qu'à éviter des regressions.
+Enfin, il est recommandé de garder vos tests courts, précis et faciles à lire. Vos tests doivent être des exemples clairs et concis de comment votre code devrait fonctionner. Si vos tests sont trop compliqués, cela peut indiquer un problème dans votre code et ils deviendront également plus difficiles à maintenir.
 
 ## Voir aussi
 
-- Guide officiel des tests en Elixir : https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-docs.html
-- Documentation de ExUnit : https://hexdocs.pm/ex_unit/ExUnit.html
-- Tutoriel vidéo sur les tests en Elixir : https://www.youtube.com/watch?v=N5HvhP8BJ2c&ab_channel=PragmaticReviews
+- [La documentation officielle d'ExUnit](https://hexdocs.pm/ex_unit/master/ExUnit.html)
+- [Un guide détaillé sur les tests en Elixir](https://elixir-lang.org/getting-started/introduction-to-mix.html#tests)
+- [Un article sur les tests parallèles en Elixir](https://medium.com/elixir-radar/parallel-tests-with-exunit-in-elixir-1-9-aa88810b6655)

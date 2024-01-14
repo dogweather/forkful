@@ -1,34 +1,46 @@
 ---
 title:    "Kotlin: 生成随机数"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：在编写程序时，生成随机数是必不可少的。它可以用于各种需求，例如模拟游戏中的掷骰子、生成随机密码以及测试程序的随机性等。
+# 为什么要生成随机数？
 
-如何：在Kotlin中，我们可以使用Random类来生成随机数。首先，我们需要在程序的顶部导入Random类：```Kotlin
-import java.util.Random
-```
+随机数在编程中是非常常见的概念，它们可以为我们提供一种随机的元素或者行为，从而使程序具有更强的灵活性。生成随机数可以用于测试、安全验证、游戏开发等多种场景。
 
-接下来，我们可以创建一个Random对象并使用它的nextInt()方法来生成随机整数。例如，我们想要生成一个1到10之间的随机整数，可以这样写：```Kotlin
+# 如何进行编程生成随机数？
+
+生成随机数通常需要选择一个范围和数量。在Kotlin中，使用 `Random` 类可以实现这一功能。例如，下面的代码将生成5个在1到10之间的随机数：
+
+```Kotlin
 val random = Random()
-val randomNumber = random.nextInt(10) + 1
+for (i in 1..5) {
+    val number = random.nextInt(10) + 1
+    println(number)
+}
 
-println(randomNumber) // 输出可能为1到10之间的任意整数
+/*
+Output:
+4
+9
+7
+1
+8
+*/
 ```
 
-如果我们想要生成一个0到1之间的随机小数，可以使用nextDouble()方法：```Kotlin
-val random = Random()
-val randomDouble = random.nextDouble() // 输出为0到1之间的任意小数
+除了 `nextInt()` 方法，`Random` 类还提供了其他多种生成随机数的方法，例如 `nextDouble()`、`nextBoolean()` 等。你也可以使用 `seed` 参数来设置一个种子值，从而保证每次运行生成的随机数序列都相同。
 
-println(randomDouble)
-```
+# 深入了解随机数的生成机制
 
-深入了解：在Kotlin中，Random类也可以设置种子值，以控制生成随机数的结果。我们可以通过在创建Random对象时传入一个long型的种子值来实现。例如，我们想要每次生成的随机数都相同，可以这样写：```Kotlin
-val random = Random(12345L) // 种子值为12345L
-```
+生成随机数的核心原理是通过计算机的伪随机数生成器算法来产生。这些算法使用一个随机的种子值作为输入，在每一次调用时都会生成一个不同的随机数。值得注意的是，这些生成的是伪随机数，因为它们是通过算法生成的，并非真正的随机数。
 
-此外，Random类还有其他一些方法可以用来生成不同类型的随机数，例如生成高斯分布的随机数、生成随机布尔值等。有兴趣的读者可以深入了解Random类的各种方法。
+除了 `Random` 类，Kotlin中还提供了 `Math.random()` 方法来直接生成一个在0到1之间的随机数。
 
-请参阅：如何使用Kotlin中的Random类来生成随机数：[https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)；使用Kotlin中的Random类来生成随机数的示例代码：[https://github.com/Kotlin/KEEP/blob/master/proposals/higherOrderFunctions.md](https://github.com/Kotlin/KEEP/blob/master/proposals/higherOrderFunctions.md)。
+# 参考链接
+
+* [Kotlin官方文档 - Random类](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+* [Kotlin官方文档 - Math.random()方法](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/random.html)
+* [Java - java.util.Random类](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

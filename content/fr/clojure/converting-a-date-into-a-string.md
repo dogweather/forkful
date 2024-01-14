@@ -1,50 +1,48 @@
 ---
-title:    "Clojure: Convertir une date en chaîne de caractères"
+title:    "Clojure: Transformer une date en chaîne de caractères."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La conversion d'une date en chaîne de caractères est une tâche courante dans la programmation Clojure. Cela peut être utile pour afficher une date dans un format spécifique ou pour la comparer à d'autres dates sous forme de chaîne de caractères. Dans cet article, nous allons explorer comment effectuer cette conversion de manière efficace et sans soucis.
+Si vous êtes un développeur Clojure, vous avez peut-être été confronté à un scénario où vous avez besoin de convertir une date en chaîne de caractères pour affichage ou pour une autre manipulation. Le processus peut sembler simple, mais il est important de comprendre les différentes méthodes et options disponibles pour effectuer cette conversion.
 
 ## Comment Faire
 
-Nous allons utiliser la fonction `str` pour convertir notre date en chaîne de caractères. Tout d'abord, définissons une date avec la fonction `local-date` de la bibliothèque `java-time` :
+La première étape pour convertir une date en chaîne de caractères est de créer une instance du type `java.util.Date` en utilisant les fonctions `date` ou `java.util.Date`. Ensuite, vous pouvez utiliser la fonction `format` de Clojure pour spécifier le format de sortie de la date.
+
+Voici un exemple qui convertit la date actuelle en format jour/mois/année (dd/MM/yyyy) :
 
 ```Clojure
-(require '[java-time :as t])
-
-(def date (t/local-date 2022 1 1))
+(def date (date))
+(format date "dd/MM/yyyy") ;; output -> "27/01/2021"
 ```
 
-Ensuite, nous utiliserons `str` pour convertir cette date en une chaîne de caractères au format "AAAA-MM-JJ" :
+Il est également possible de spécifier un fuseau horaire pour la date en utilisant la fonction `with-timezone` avant la fonction `format`. Voici un exemple pour une date dans le fuseau horaire de Paris :
 
 ```Clojure
-(str date)
-;; output: "2022-01-01"
+(def date (java.util.Date.))
+(format (with-timezone date (timezone "Europe/Paris")) "dd/MM/yyyy") ;; output -> "27/01/2021"
 ```
 
-Si nous souhaitons un format différent, nous pouvons utiliser une combinaison de `str` et des fonctions `t/day`, `t/month` et `t/year` pour extraire chaque partie de la date et les concaténer dans l'ordre souhaité :
-
-```Clojure
-(str (t/day date) "/" (t/month date) "/" (t/year date))
-;; output: "01/01/2022"
-```
+Il existe de nombreuses options pour spécifier le format de sortie de la date, y compris les noms de jours et de mois, les heures, les minutes, les secondes et bien plus encore. Vous pouvez trouver la liste complète des options dans la documentation de `java.text.SimpleDateFormat`, qui est le format utilisé par la fonction `format`.
 
 ## Plongée Profonde
 
-La fonction `str` convertit automatiquement une date en utilisant le format "AAAA-MM-JJ". Cependant, il est également possible d'utiliser la fonction `t/format` pour spécifier un format personnalisé. Cette fonction prend en paramètre un format de chaîne de caractères et la date à convertir. Voici un exemple :
+Il est important de noter que la fonction `format` renvoie toujours une chaîne de caractères. Si vous souhaitez effectuer des manipulations supplémentaires avec la date, vous devez la convertir en `java.util.Date` en utilisant la fonction `parse`. Voici un exemple de comment convertir une chaîne de caractères en date :
 
 ```Clojure
-(t/format "Le %d %B %Y" date)
-;; output: "Le 1 janvier 2022"
+(def date-string "27-01-2021")
+(def date (parse "dd-MM-yyyy" date-string)) ;; convertit la chaîne de caractères en date
 ```
 
-Il est important de noter que les spécificateurs de format pour la fonction `t/format` sont différents de ceux utilisés avec `str`. Par exemple, "%d" est utilisé pour représenter le jour de la date tandis que "%B" représente le nom complet du mois.
+Vous pouvez également utiliser la bibliothèque `clj-time`, qui offre une syntaxe plus concise pour le travail avec les dates en Clojure.
 
-# Voir Aussi
+## Voir Aussi
 
-- La documentation officielle de la bibliothèque `java-time` : https://github.com/java-time/java-time
-- Une liste complète des spécificateurs de format pour la fonction `t/format` : https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html#patterns
+- [Documentation Clojure sur les Dates](https://clojuredocs.org/clojure.core/date)
+- [Documentation Java sur SimpleDateFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html)
+- [Documentation pour la bibliothèque clj-time](https://github.com/seejohnrun/clj-time)

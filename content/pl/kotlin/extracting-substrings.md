@@ -1,53 +1,55 @@
 ---
-title:    "Kotlin: Wydobywanie podciągów"
+title:    "Kotlin: Wycinanie podciągów"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto używać wyodrębniania podciągów w Kotlinie?
 
-W dzisiejszych czasach, programowanie jest nieodłączną częścią naszego życia. Jednym z elementów, które są niezbędne w tworzeniu aplikacji czy stron internetowych, jest manipulacja tekstami. Często zdarza się, że potrzebujemy wyodrębnić z danego tekstu określony fragment, zwany podłańcuchem. W tym artykule dowiesz się, dlaczego wyodrębnianie podłańcuchów jest tak ważne i jak to zrobić za pomocą języka Kotlin.
+Wyodrębnianie podciągów jest nieodłączną częścią wielu zadaniach programistycznych. W języku Kotlin, dzięki wygodnej funkcji `substring()`, jest to zadanie nie tylko prostsze, ale także znacznie bardziej czytelne. Pozwala ona na wygodne wyciąganie wybranych fragmentów tekstu, co jest bardzo przydatne w wielu scenariuszach programistycznych.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Wyodrębnienie podłańcucha z tekstu w języku Kotlin jest bardzo proste. Najpierw musisz stworzyć zmienną przechowującą tekst, z którego chcesz wyodrębnić podłańcuch. Następnie, przy użyciu metody `.substring()` przekazujemy jej dwa argumenty: indeks początkowy oraz indeks końcowy podłańcucha.
-
-```Kotlin
-val tekst = "To jest przykładowy tekst do wyodrębnienia podłańcucha."
-val podlancuch = tekst.substring(8, 21)
-
-println(podlancuch) // wydrukuje "przykładowy tekst"
-```
-
-W powyższym przykładzie, podłańcuch został wyodrębniony od 8. do 21. znaku tekstu, włączając pierwszy i wyłączając ostatni znak. Natomiast jeśli chcemy wyodrębnić podłańcuch od konkretnego indeksu do końca tekstu, możemy pominąć drugi argument metody `.substring()`.
+Używanie funkcji `substring()` jest bardzo proste. Wystarczy podać jej dwa argumenty: początkowy i końcowy indeks, który określa zakres tekstu, który chcemy wyodrębnić. Przykład:
 
 ```Kotlin
-val tekst = "To jest kolejny przykładowy tekst do wyodrębnienia podłańcucha."
-val podlancuch = tekst.substring(8)
+val text = "To jest przykładowy tekst."
+val substring = text.substring(3, 10)
+println(substring)
 
-println(podlancuch) // wydrukuje "kolejny przykładowy tekst do wyodrębnienia podłańcucha."
 ```
 
-Możemy również wykorzystać indeksy ujemne, które liczą się od końca tekstu. Dzięki temu, możemy wyodrębnić podłańcuch od końca tekstu do wybranego indeksu.
+Output:
+```
+jest przykł
+```
+
+W powyższym przykładzie, używając funkcji `substring()`, wyodrębniliśmy fragment tekstu od trzeciego do dziesiątego indeksu i przypisaliśmy go do zmiennej `substring`. Następnie, wypisaliśmy go przy użyciu funkcji `println()`.
+
+Jeśli potrzebujemy wyodrębnić fragment tekstu od początku, możemy pominąć pierwszy parametr i podać tylko drugi, określający końcowy indeks, np. `text.substring(0, 5)` wyodrębni pierwsze 5 znaków ze zmiennej `text`.
+
+Funkcja `substring()` może również przyjmować tylko jeden argument - początkowy indeks, wtedy wyodrębniony zostanie cały tekst od tego indeksu do końca.
 
 ```Kotlin
-val tekst = "To jest jeszcze inny przykładowy tekst do wyodrębnienia podłańcucha."
-val podlancuch = tekst.substring(8,-10)
-
-println(podlancuch) // wydrukuje "inny przykładowy tekst do wyodrębnienia"
+val substring = text.substring(7)
+println(substring)
 ```
 
-## Deep Dive
+Output:
+```
+jest przykładowy tekst.
+```
 
-Metoda `.substring()` pozwala nam na wygodne manipulowanie tekstem, ponieważ nie musimy samodzielnie pisać kodu do wyodrębnienia fragmentów. Jest to szczególnie przydatne, kiedy mamy do czynienia z dużym tekstem i nie chcemy ręcznie wyliczać indeksów podłańcuchów.
+## Wnikliwszy opis
 
-Warto również wspomnieć, że metoda `.substring()` jest często wykorzystywana wraz z innymi metodami, takimi jak `.indexOf()` czy `.lastIndexOf()`, które pozwalają nam na znalezienie indeksów danego znaku lub podłańcucha w tekście.
+Funkcja `substring()` wykorzystuje indeksowanie zaczynające się od zera - pierwszy znak tekstu posiada indeks 0, kolejny 1, i tak dalej. Zwróćmy uwagę, że końcowy indeks nie jest wliczany w wyodrębniony fragment tekstu.
 
-## Zobacz również
+Ponadto, jeśli podane indeksy wykraczają poza długość tekstu, program wyrzuci błąd `IndexOutOfBoundsException`.
 
-- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/basic-syntax.html)
-- [Poradnik dla początkujących w języku Kotlin](https://www.tutorialspoint.com/kotlin/index.htm)
-- [Kotlin na platformie Android](https://developer.android.com/kotlin/get-started)
+Funkcja `substring()` może być również używana na obiektach typu `String?` (String z dodanym znakiem zapytania oznacza, że może to być również wartość null). Wtedy, jeśli wartość jest null, funkcja również zwróci null.
 
-Dzięki metodzie `.substring()` wyodrębnianie podłańcuchów może stać się prostsze i bardziej intuicyjne. Warto więc zapoznać się z jej zastosowaniem przy pracy z tekstami w języku Kotlin.
+## Zobacz też
+- Dokumentacja funkcji `substring()` w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html
+- Przykładowe zastosowania wyodrębniania podciągów w Kotlinie: https://www.programiz.com/kotlin-programming/substring

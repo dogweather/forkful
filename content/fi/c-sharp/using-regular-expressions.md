@@ -1,53 +1,34 @@
 ---
-title:    "C#: Regulaarilausekkeiden käyttö"
+title:    "C#: Regulaaristen lausekkeiden käyttö"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat erittäin hyödyllinen työkalu C#-ohjelmointikielen käyttäjille, jotka haluavat tehdä monimutkaisia haku- ja korvaustoimintoja merkkijonojen kanssa. Ne ovat myös erittäin hyödyllisiä tietojenkäsittelyn ammattilaisille ja verkkokehittäjille, jotka haluavat käsitellä suuria määriä tekstiä ja tiedostoja. Säännölliset lausekkeet säästävät aikaa ja vaivaa, kun etsitään tiettyjä kuvioita ja suoritetaan tietyt muutokset merkkijonoihin.
+Säännölliset lausekkeet ovat tärkeä osa C# ohjelmointia, sillä niitä käytetään tekstien käsittelyyn ja jäsentämiseen. Niiden avulla voidaan etsiä, korvata tai poistaa tiettyjä merkkijonoja halutusta tekstistä. Tämä tekee ohjelmista tehokkaampia ja helpompia ylläpitää.
 
-## Kuinka käyttää säännöllisiä lausekkeita C#-ohjelmoinnissa
+## Miten käyttää säännöllisiä lausekkeita C# ohjelmoinnissa?
 
-Säännölliset lausekkeet sisältävät erilaisia toimintoja ja muokkausmahdollisuuksia. Tässä on yksinkertainen esimerkki, jossa korvataan kaikki numerot merkkijonossa niiden vastaavilla kirjaimilla:
+C# tarjoaa laajan valikoiman säännöllisiä lausekkeita käsitteleviä luokkia ja metodeja, jotka tekevät niiden käytöstä melko suoraviivaista. Seuraavassa on esimerkkejä yleisimmin käytetyistä säännöllisiin lausekkeisiin liittyvistä toiminnoista C# ohjelmoinnissa:
 
-```C#
-using System;
-using System.Text.RegularExpressions;
+- Etsi tietty teksti: ```C# Regex.Match("teksti", "t"); // Palauttaa "t" ```
+- Korvaa teksti toisella: ```C# Regex.Replace("Tämä on esimerkki", "esimerkki", "demo"); // Palauttaa "Tämä on demo" ```
+- Tarkista onko teksti halutussa muodossa: ```C# Regex.IsMatch("12345", @"\d{5}"); // Palauttaa true ```
+- Etsi useita vaihtoehtoisia merkkijonoja: ```C# Regex.Match("C# on mahtava kieli", "mahtava|upea"); // Palauttaa "mahtava" ```
 
-class Program
-{
-    static void Main()
-    {
-        string originalString = "1234";
-        string replacedString = Regex.Replace(originalString, "[0-9]", "$&A");
-        Console.WriteLine("Original string: " + originalString);
-        Console.WriteLine("Replaced string: " + replacedString);
-    }
-}
-```
+Näiden lisäksi C# tarjoaa myös muita hyödyllisiä metodeja, kuten ```Regex.Split()``` ja ```Regex.Escape()```, jotka helpottavat säännöllisten lausekkeiden käyttöä ohjelmoinnissa.
 
-**Tulos:**
+## Syvempi sukellus säännöllisiin lausekkeisiin
 
-```
-Alkuperäinen merkkijono: 1234
-Korvattu merkkijono: 1A2A3A4A
-```
+C# säännöllisten lausekkeiden taustalla on .NET Frameworkin ```Regex``` luokka, joka sisältää kaikki tarvittavat luokat ja metodit niiden käsittelemiseen. Tämän luokan avulla voimme luoda oman luokkamme, joka käsittelee tietynlaisten säännöllisten lausekkeiden käsittelyä. Tämä antaa meidän hyödyntää niitä omassa ohjelmoinnissa entistä joustavammin.
 
-Tässä esimerkissä käytettiin Regex-luokan Replace-metodia korvaamaan kaikki numerot merkkijonossa A-kirjaimella. Regex-luokalla on myös muita hyödyllisiä metodeja, kuten Match ja Split, jotka auttavat löytämään ja erottamaan tietyt merkkijonot käyttäen säännöllisiä lausekkeita.
-
-## Syvempi sukellus säännöllisten lausekkeiden käyttöön
-
-Säännöllisiä lausekkeita voi käyttää monella eri tavalla C#-ohjelmoinnissa. Yksi hyödyllinen sovellus on tietokoneohjelmien lokien käsittely, jossa säännöllisiä lausekkeita voidaan käyttää haku- ja korvaustoimintojen lisäksi myös tiedon erotteluun ja muokkaukseen.
-
-Säännölliset lausekkeet myös tehostavat koodin suorituskykyä verrattuna perinteiseen merkkijonojen käsittelyyn. Ne ovat myös helposti skaalautuvia, joten ne ovat ihanteellisia suurten tekstimäärien käsittelyyn.
-
-On myös tärkeää muistaa, että säännölliset lausekkeet ovat puhtaasti tekstimuotoisia eivätkä ne tue ääkkösiä, joten suomenkielisten merkkijonojen käsittely voi aiheuttaa ongelmia.
+On myös tärkeää muistaa, että säännölliset lausekkeet ovat melko tehokkaita ja nopeita, mutta ne voivat myös olla hankalia ymmärtää ja käyttää oikein. Siksi on suositeltavaa harjoitella ja tutustua huolellisesti niiden käyttöön ennen niiden käytön aloittamista.
 
 ## Katso myös
 
-- [Regex-luokan dokumentaatio .NET Frameworkissa (Microsoft)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [Säännöllisten lausekkeiden opas (Python)](https://docs.python.org/3/library/re.html)
-- [Säännöllisten lausekkeiden käyttö tositilanteessa (TutsPlus)](https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149)
+- [C# Regular Expressions Tutorial](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [.NET Regular Expressions Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

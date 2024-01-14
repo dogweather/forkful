@@ -1,52 +1,64 @@
 ---
-title:    "Rust: Utmatning av felsökningsinformation"
+title:    "Rust: Utskrift av felsökningsutdata"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför man ska använda sig av utskrift av felmeddelanden i Rust
-När man arbetar med programmering, oavsett språk, är det nästan garanterat att man kommer att stöta på fel och buggar. Dessa fel kan vara väldigt frustrerande och tidskrävande att hitta och lösa. En av de mest användbara verktygen för att hitta och felsöka dessa problem är att använda sig av utskrift av felmeddelanden, eller "debug output". I denna bloggpost kommer vi att utforska hur man kan använda sig av utskrift av felmeddelanden i Rust för att underlätta felsökning och förbättra kvaliteten på sin kod.
+## Varför
 
-##Hur man använder sig av utskrift av felmeddelanden i Rust
-I Rust finns det flera olika sätt att skriva ut felmeddelanden, men det vanligaste är att använda sig av makron `println!` och `eprintln!`. Dessa makron tar en sträng och eventuella variabler som argument och skriver ut det på standard output respektive standard error. Här är ett exempel på hur man kan använda dem:
+Att skriva ut debug-utdata är ett viktigt steg i utvecklingsprocessen för att hitta och fixa buggar i din Rust-kod. Genom att utskrift debug-utdata kan du få en bättre förståelse av hur din kod fungerar och var eventuella fel kan uppstå.
 
-```Rust
-let name = "Alice";
+## Så här gör du
 
-println!("Hej, mitt namn är {}", name);
-eprintln!("Det här är ett felmeddelande");
-```
-
-Output:
-
-```
-Hej, mitt namn är Alice
-
-Det här är ett felmeddelande
-```
-
-Detta kan vara användbart för att kontrollera och felsöka variabler och värden i ens program under körning.
-
-##Djupdykning i utskrift av felmeddelanden i Rust
-En annan användbar funktion för utskrift av felmeddelanden i Rust är `dbg!` makron, vilket står för "debugger". Denna makro tar en variabel som argument och skriver ut både värdet och namnet på variabeln. Detta kan vara mycket användbart när man behöver ha mer detaljerad information om variabler och värden vid felsökning. Här är ett exempel:
+För att skriva ut debug-utdata i Rust, används makron "println!" och "dbg!". Dessa tar in det du vill skriva ut och skriver sedan ut det till konsolen.
 
 ```Rust
-let a = 5;
-let b = 3;
-
-dbg!(a + b);
+fn main() {
+   let num: u32 = 5;
+   println!("Debug-utdata: {}", num); // Skriver ut "Debug-utdata: 5"
+   dbg!(num); // Skriver ut "num: 5" och returnerar värdet
+}
 ```
 
-Output:
+Du kan också skriva ut flera variabler samtidigt genom att separera dem med ett kommatecken inuti parantesen för "println!" och "dbg!".
 
+```Rust
+fn main() {
+   let name = "Johan";
+   let age = 26;
+   println!("Namn: {}, Ålder: {}", name, age); // Skriver ut "Namn: Johan, Ålder: 26"
+   dbg!(name, age); // Skriver ut "name: "Johan", age: 26" och returnerar sista värdet (åldern)
+}
 ```
-[a + b: 8]
+
+## Djupdykning
+
+För att få ännu mer detaljerad debug-utdata, kan du använda "dbg!" med en conditional statement. Då kommer det bara att skrivas ut om conditionen är sann.
+
+```Rust
+fn main() {
+   let num1 = 5;
+   let num2 = 10;
+
+   dbg!(num1, num2 == num1 * 2); // Skriver bara ut "num2 == num1 * 2" eftersom det är det enda som är sant
+}
 ```
 
-En annan viktig aspekt av utskrift av felmeddelanden i Rust är möjligheten att ange vilken typ av information som ska skrivas ut, såsom till exempel filnamn och radnummer där utskriften sker. Detta kan hjälpa till att lokalisera och hitta problemet snabbare. Det finns också olika nivåer av utskrift, som kan ändras beroende på om man kör sitt program i utvecklings- eller produktionsmiljö.
+En annan användbar funktion är att använda "dbg!" tillsammans med "assert!" för att kontrollera om dina variabler har rätt värde vid en viss punkt i kodens användning. Om värdet inte är rätt, kommer det att sluta programmet med ett felmeddelande.
 
-##Se även
-- Rusts officiella dokumentation om utskrift av felmeddelanden: https://doc.rust-lang.org/book/ch09-01-unrecoverable-errors-with-panic.html
-- En tutorial om hur man använder `dbg!` i Rust: https://codetuts.tech/rust-debug/
-- En guide för att välja rätt utskriftsnivå i Rust: https://kerkour.com/blog/rust-log-levels/
+```Rust
+fn main() {
+   let age = 15;
+
+   dbg!(age);
+   assert!(age >= 18, "Åldern är inte rätt!"); // Om åldern är mindre än 18 kommer programmet att avslutas och skriva ut "Åldern är inte rätt!"
+}
+```
+
+## Se också
+
+- Rust dokumentation för [println!](https://doc.rust-lang.org/std/macro.println.html) and [dbg!](https://doc.rust-lang.org/std/macro.dbg.html)
+-Rust programming bloggartikel: [Debugging med Rust](https://lindseybieda.com/rust/debugging-with-rust/)
+- Rust video tutorial: [Print Debug Data Using println! and dbg! in Rust](https://www.youtube.com/watch?v=UVmugGMxOdk)

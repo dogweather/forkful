@@ -1,58 +1,45 @@
 ---
-title:    "Javascript: Att göra en sträng med stora bokstäver"
+title:    "Javascript: Att stora bokstäver i en sträng"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Du kanske har stött på situationer där du behöver ändra en sträng så att bara den första bokstaven är stor bokstav och resten är små bokstäver. Detta kallas att "kaptalisera" en sträng och det kan ha olika syften, till exempel när du vill förbättra läsbarheten eller för att matcha en specifik standard i din kod.
 
-Att koda är som ett matematiskt pussel där man sätter ihop bitar för att lösa ett problem. Att capitalisera en sträng kan vara en del av detta pussel och kan hjälpa till att skapa mer läsbara och förståeliga resultat i dina program.
-
-## Hur To
-
-För att capitalisera en sträng i Javascript, kan vi använda oss av inbyggda funktioner som `toUpperCase()` eller `charAt()`. Här är ett exempel på kod som tar en sträng och gör den helt capitals:
+## Hur man gör
+Det finns flera sätt att kaptalisera en sträng i Javascript, men här är två enkla exempel som du kan utforska:
 
 ```Javascript
-let namn = "svenska"
+// Med hjälp av "toUpperCase()" och "toLowerCase()" metoder
+let str = "hej på dig!";
+let capitalizedString = str[0].toUpperCase() + str.substring(1).toLowerCase(); // Output: "Hej på dig!"
 
-namn = namn.toUpperCase();
-
-console.log(namn);
-```
-
-Output:
-
-`SVENSKA`
-
-Vi kan också använda oss av en `for` loop för att loopa igenom varje bokstav i strängen och använda `charAt()` för att ändra första bokstaven till en capital och sedan lägga till resten av bokstäverna. Här är ett annat exempel på kod:
-
-```Javascript
-let ord = "javascript"
-
-let nyStrang = "";
-for (let i = 0; i < ord.length; i++) {
-    if (i === 0) {
-        nyStrang += ord[i].toUpperCase();
-    } else {
-        nyStrang += ord[i];
-    }
+// Med hjälp av "charAt()" och "slice()" metoder
+function capitalizeString(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-console.log(nyStrang);
+console.log(capitalizeString("hej på dig!")); // Output: "Hej på dig!"
 ```
 
-Output:
+Det första exemplet använder inbyggda metoder i Javascript för att göra den första bokstaven stor och resten små. Det andra exemplet skapar en funktion som tar en sträng som argument och använder olika metoder för att returnera en kaptaliserad version av strängen. Du kan välja det alternativ som passar dig bäst beroende på dina behov och preferenser.
 
-`Javascript`
+## Djupdykning
+Om du vill lära dig mer om hur kaptalisering av strängar fungerar i Javascript, kan vi ta en titt på det andra exemplet som visar användningen av "charAt()" och "slice()" metoder.
 
-## Deep Dive
+Först tar "charAt()" metoden ett index som argument och returnerar tecknet på det specifika indexet. I vårt exempel är indexet alltid 0 eftersom vi bara vill kaptalisera den första bokstaven.
 
-När vi capitaliserar en sträng, förändrar vi varje bokstav till en stor bokstav. Detta hjälper till att skapa en mer enhetlig och lättläst sträng, speciellt när vi har andra ord som är capitalize. Detta gör det också enklare att söka igenom och söka efter en sträng i vårt program.
+Därefter används "slice()" metoden för att skapa en ny sträng från en viss startpunkt till ett visst slutpunkt. Eftersom vi vill ha resten av strängen efter den första bokstaven, är vår startpunkt 1 och slutpunkten är inte specificerad, vilket betyder att vi använder standardvärdet som är slutet på strängen.
 
-Några saker att tänka på när man capitaliserar en sträng är att det här endast ändrar bokstäver och inte andra specialtecken eller siffror. Det är också viktigt att tänka på att vissa språk har olika regler för capitalisering, till exempel att det kan finnas accenter eller diakritiska tecken som också behöver förändras.
+Slutligen kombineras den kaptaliserade första bokstaven med resten av strängen genom att enkelt lägga ihop dem med "+" operatören.
 
-## Se också
+## Se även
+Här är några länkar som kan vara användbara vid kapitalisering av strängar i Javascript:
 
-- [MDN - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN - String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

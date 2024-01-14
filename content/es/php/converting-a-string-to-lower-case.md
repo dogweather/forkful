@@ -1,39 +1,35 @@
 ---
-title:    "PHP: Convirtiendo una cadena a minúsculas"
+title:    "PHP: Convirtiendo un string a minúsculas"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-### Por qué
-¿Alguna vez has tenido que manipular una cadena de texto en tus proyectos de programación? Una de las tareas más comunes es convertir una cadena a minúsculas. Esto se puede hacer fácilmente con PHP, y en este artículo te mostraré cómo hacerlo.
+## Por qué convertir una cadena a minúsculas?
 
-### Cómo hacerlo
-Para convertir una cadena a minúsculas en PHP, utilizamos la función `strtolower()`. Esta función toma una cadena como argumento y devuelve una nueva cadena con todos los caracteres en minúscula.
+Convertir una cadena de texto a minúsculas puede ser útil en diferentes situaciones de programación, como por ejemplo al validar entradas de usuarios, comparar cadenas sin importar su capitalización o formatear cadenas para mostrarlas de forma uniforme. Además, puede ser necesario para que el código sea más legible y fácil de entender para otros programadores.
 
-```PHP
-$string = "PROGRAMACIÓN EN PHP";
-echo strtolower($string); // Salida: programación en php
-```
-
-También podemos usar la función `mb_strtolower()` para manejar correctamente los caracteres multibyte en diferentes idiomas.
+## Cómo hacerlo:
 
 ```PHP
-$string = "ЭКСПЕРИМЕНТЫ С PHP";
-echo mb_strtolower($string, 'UTF-8'); // Salida: эксперименты с php
+// Ejemplo de cómo convertir una cadena a minúsculas en PHP
+$cadena = "ESTO ES UNA CADENA EN MAYÚSCULAS";
+$cadena_minusculas = strtolower($cadena);
+
+echo $cadena_minusculas;
+
+//Salida: esto es una cadena en mayúsculas
 ```
 
-Incluso podemos convertir solo la primera letra de la cadena a minúscula utilizando la función `lcfirst()`.
+## Un paseo en profundidad:
 
-```PHP
-$string = "PROGRAMACIÓN EN PHP";
-echo lcfirst($string); // Salida: pROGRAMACIÓN EN PHP
-```
+Para convertir una cadena a minúsculas en PHP, utilizamos la función `strtolower()`, que toma como parámetro la cadena a convertir y devuelve una nueva cadena en minúsculas. Esta función puede manejar tanto cadenas en inglés como en otros idiomas como el español.
 
-### Profundizando
-Ahora que sabemos cómo convertir una cadena a minúsculas en PHP, es importante entender cómo funciona realmente esta conversión. PHP utiliza el conjunto de caracteres ASCII para trabajar con cadenas. Los caracteres en minúsculas se encuentran dentro del rango de 97 a 122 en el conjunto de caracteres ASCII. Entonces, lo que hace la función `strtolower()` es restar 32 a cada código de carácter en la cadena para convertirlos a minúsculas.
+Una cosa importante a tener en cuenta es que la función `strtolower()` no convierte todos los caracteres a minúsculas, solo aquellos que pueden ser convertidos a través del sistema de codificación de caracteres utilizado en PHP. Por lo tanto, si tienes caracteres especiales en tu cadena, quizás sea necesario utilizar otras funciones para asegurarse de que se conviertan correctamente.
 
-### Ver también
-- [Funciones de cadena en PHP](https://www.php.net/manual/es/ref.srtring.php)
-- [Codificación de caracteres en PHP](https://www.php.net/manual/es/function.mb-srtring.php)
-- [Conjunto de caracteres ASCII](https://es.wikipedia.org/wiki/Ascii)
+## Ver también:
+
+- [La función strtolower() en la documentación oficial de PHP](https://www.php.net/manual/es/function.strtolower.php)
+- [Ejemplos de uso de strtolower() en diferentes situaciones](https://www.w3schools.com/php/func_string_strtolower.asp)
+- [Otras funciones útiles para el manejo de cadenas en PHP](https://www.php.net/manual/es/ref.strings.php)

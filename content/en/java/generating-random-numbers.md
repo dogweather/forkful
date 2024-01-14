@@ -1,56 +1,58 @@
 ---
 title:    "Java recipe: Generating random numbers"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Generating random numbers is a crucial task in software development. It allows us to add unpredictability and variability to our programs, making them more dynamic and realistic. This can be useful in simulations, games, and even security applications.
+## Why Generate Random Numbers in Java?
 
-## How To
-In Java, we can use the `Random` class to generate random numbers. First, we need to import the `java.util.Random` package. Then, we can create an instance of the `Random` class:
+Generating random numbers in Java can be extremely useful in various applications, such as simulations, games, and statistical analysis. It allows for the creation of unpredictable values, which can be used to test and validate algorithms, as well as add elements of randomness to a program.
 
-```java
-Random random = new Random();
+## How To Generate Random Numbers in Java
+
+Generating random numbers in Java can be easily done using the `java.util.Random` class. Below is a simple example that generates and prints 5 random integers between 1 and 10:
+
+```Java
+import java.util.Random;
+
+public class RandomNumbers {
+    public static void main(String[] args) {
+        Random rand = new Random();
+
+        for(int i = 0; i < 5; i++) {
+            int randomNum = rand.nextInt(10) + 1;
+            System.out.println(randomNum);
+        }
+    }
+}
+```
+Output:
+```
+7
+5
+10
+2
+8
 ```
 
-To generate a random integer, we can use the `nextInt()` method:
+The `nextInt()` method takes in an integer as the upper limit and returns a random integer between 0 (inclusive) and the given number (exclusive). Therefore, adding 1 to the result ensures that the random numbers generated are within the desired range.
 
-```java
-int num = random.nextInt();
-```
+Other commonly used methods from the `java.util.Random` class include `nextDouble()` for generating random decimal numbers and `nextBoolean()` for generating random boolean values.
 
-We can also specify the range for the random number to be generated. For example, to generate a random integer between 1 and 100:
+## Deep Dive into Generating Random Numbers in Java
 
-```java
-int num = random.nextInt(100) + 1;
-```
+The `java.util.Random` class uses a mathematical formula to generate random numbers based on a seed value. The seed value can be set manually or it is based on the current time by default. This means that the same seed will produce the same sequence of random numbers every time it is run.
 
-To generate a random double, we can use the `nextDouble()` method:
+To produce truly random and unpredictable numbers, the `java.util.SecureRandom` class should be used instead. It uses a more secure algorithm and additional sources of randomness to generate the numbers.
 
-```java
-double num = random.nextDouble();
-```
-
-We can also generate a random boolean value using the `nextBoolean()` method:
-
-```java
-boolean value = random.nextBoolean();
-```
-
-## Deep Dive
-Although the `Random` class may seem simple, it is actually based on a complex mathematical algorithm known as a pseudo-random number generator. This algorithm generates a sequence of numbers that appear to be random, but in reality, they follow a deterministic pattern.
-
-It is worth noting that the `Random` class is not truly random since the generated values can be reproduced if we know the algorithm and the initial value (also known as the seed). To set a specific seed value, we can use the `setSeed()` method:
-
-```java
-random.setSeed(1234);
-```
-
-Another important aspect to consider is that the `Random` class can only generate pseudo-random numbers, which means that the generated values are not truly random and can eventually repeat. To deal with this issue, we can use a larger seed value or combine multiple random values to create more unique and random results.
+Additionally, the `java.util.Random` class can also be used to generate random strings by using the `nextInt()` method to retrieve random characters from a given string.
 
 ## See Also
-- [Random class in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Generating random numbers in Java](https://www.baeldung.com/java-generating-random-numbers)
-- [Pseudo-random number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+
+Here are some useful resources for further reading on generating random numbers in Java:
+
+- [Java Random Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [SecureRandom in Java](https://www.baeldung.com/java-securerandom)
+- [Generating Random Strings in Java](https://www.geeksforgeeks.org/generate-random-string-of-given-size-in-java/)

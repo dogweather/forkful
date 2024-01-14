@@ -1,40 +1,41 @@
 ---
-title:    "Clojure: Puomien lukeminen komentoriviltä"
+title:    "Clojure: Pääkomennoin argumenttien lukeminen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi lukea komentoriviargumentteja? Komentoriviargumenttien lukeminen on tärkeä taito, joka auttaa ohjelmoijia paremmin hallitsemaan ja suorittamaan heidän luomiaan ohjelmia. Valmiiksi annettuja argumentteja käyttämällä ohjelmoijat voivat määrittää ohjelmiensa suorituksen eri parametreilla ja tehdä siitä joustavamman.
 
-Useimmissa ohjelmointiprojekteissa on tarpeen lukea komentoriviparametreja, jotta ohjelma voi toimia eri olosuhteissa. Tässä blogipostissa tutustumme siihen, miten tämä voidaan tehdä Clojure-kielellä ja miksi se on tärkeää.
-
-## Kuinka tehdä
-
-Komentoriviparametrien lukeminen Clojurella on helppoa käyttämällä `(command-line-args)`-funktiota. Tämä palauttaa listan annetuista komentoriviparametreista. Katso esimerkki koodilohkosta alla:
+## Miten
+Komentoriviargumenttien lukeminen on helppo toteuttaa Clojuren avulla. Alla on esimerkkejä koodista ja tulosteesta:
 
 ```Clojure
-(def args (command-line-args))
-(println "Annetut komentoriviparametrit:")
-(doseq [arg args]
-  (println arg))
+;; Määritetään muuttuja komentoriviargumenteille
+(def args *command-line-args*)
+ 
+;; Tulostetaan argumentit
+(print args)
 ```
 
-Kun suoritat tämän Clojure-koodin komentoriviltä antaen esimerkiksi parametrit `hello` ja `world`, saat tulosteen:
+Kun ajetaan komennolla `clj -m args "Hello" "world!"`, koodin tulosteena nähdään `"Hello" "world!"`. Käyttämällä tätä tapaa, ohjelmoija voi lukea ja käyttää komentoriviargumentteja koodissaan.
 
+## Syvällisempi tarkastelu
+Komentoriviargumenttien lukeminen onnistuu myös käyttämällä `clojure.core` -kirjaston `with-command-line` funktiota. Tämä mahdollistaa argumenttien käsittelyn ennen niiden käyttöä koodissa. Alla on esimerkki koodista:
+
+```Clojure
+;; Määritetään argumentit käytettäviksi muuttujissa
+(with-command-line args
+  (let [hello (first args)
+        name (second args)]
+    (println "Päivää," name "oletko kuullut tervehdyksestä" hello "?")))
 ```
-Annetut komentoriviparametrit:
-hello
-world
-```
 
-## Syvemmälle
-
-Komentoriviparametrien lukemisessa on tärkeää huomioida, että ne tulee antaa oikeassa järjestyksessä ja että ne tulee käsitellä oikein. Usein ohjelmissa tarvitaan myös tarkistuksia ja virheenkäsittelyä komentoriviparametreille, esimerkiksi tarkistaa, että annetut parametrit ovat oikeassa muodossa.
-
-Clojurella on myös mahdollista käyttää kirjastoa `(tools.cli)`, joka tarjoaa hyödyllisiä toimintoja komentoriviparametrien lukemiseen ja käsittelyyn.
+Kun ajetaan komennolla `clj -m args "Moi" "Sakura"`, koodin tulosteena nähdään `"Päivää, Sakura oletko kuullut tervehdyksestä Moi?"`.
 
 ## Katso myös
-
-- [https://clojuredocs.org/clojure.core/command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
-- [https://github.com/clojure/tools.cli](https://github.com/clojure/tools.cli)
+- [Clojure Docs: with-command-line](https://clojuredocs.org/clojure.core/with-command-line)
+- [Brave Clojure: Command-Line Arguments](https://www.braveclojure.com/functional-programming/?genie=querystring&arg0=command-line%20arguments&arg1=eb98842c-69aa-42b4-8331-3cbc20404c51&arg2=5c8894cd-9b50-44ea-8928-f177017e846b&arg3=https%3A%2F%2Fwww.braveclojure.com%2Ffunctional-programming%2F&arg4=1521704251824&arg5=0.9999999999968891)
+- [The Clojure Style Guide: Command-Line Arguments](https://guide.clojure.style/dynamic-programming/command-line.html)

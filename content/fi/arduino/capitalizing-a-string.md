@@ -1,41 +1,49 @@
 ---
-title:    "Arduino: Merkkijonon muuttaminen isoin kirjaimin"
+title:    "Arduino: Merkkijonon muuttaminen isokyseksi"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Miksi haluaisit muuttaa kirjainkokoa merkkijonossa? Saattaa kuulostaa turhalta, mutta joskus on hyödyllistä muuttaa merkkijonon kirjaimia isoihin tai pieniin kirjaimiin. Tämä voi auttaa helpottamaan tietojen syöttämistä ja verrattavuutta.
+Miksi sinun kannattaisi käyttää Arduinoa ja koodata merkkijonon kirjaimet isolla?
 
-## Kuinka tehdä?
+Ehkä haluat tehdä projektin, jossa haluat korostaa tiettyjä sanoja tai nimiä, tai ehkä haluat vain vaikuttaa hienostuneelta. Joka tapauksessa, merkkijonon kirjainten muuttaminen isoksi on hyödyllinen taito kaikille Arduino-ohjelmoijille.
 
-Arduino-koodilla on helppo muuttaa merkkijonon kirjainkokoja. Käytämme siihen string-olion capitalize() -funktiota. Se toimii seuraavasti:
+## Kuinka
 
-```Arduino
-string merkkijono = "Hei kaikki!";
-String isoiksi = merkkijono.capitalize();
-```
-
-Tuloksena saat "Hei kaikki!" -merkkijonon, jossa ensimmäinen kirjain on muutettu isoksi kirjaimeksi, muut pieniksi.
-
-Voit myös muuttaa merkkijonossa olevia tiettyjä kirjaimia käyttämällä String-olion replace() -funktiota. Esimerkiksi, jos haluat muuttaa kaikki "i" -kirjaimet "e":ksi, käytä seuraavaa koodia:
+Koodiesimerkkien avulla tässä selitetään kuinka voit helposti muuttaa merkkijonon kaikki kirjaimet isoksi käyttämällä Arduinoa.
 
 ```Arduino
-string merkkijono = "Pii2";
-String uusiMerkkijono = merkkijono.replace("i", "e");
+String teksti = "Hei maailma";
+String uusi_teksti = teksti.toUpperCase();
+Serial.println(uusi_teksti);
 ```
+Tässä esimerkissä merkkijono "Hei maailma" muutetaan isoksi ja tulostetaan sarjaportin kautta. Tulostus näyttää seuraavalta: "HEI MAAILMA". Huomaa, että alkuperäinen merkkijono ei muutu, vaan uusi muutettu merkkijono tallennetaan uuteen muuttujaan.
 
-Tuloksena saat "Pee2" -merkkijonon. Voit käyttää myös muita string-olioon kuuluvia funktioita, kuten toLowerCase() ja toUpperCase(), muuttaaksesi merkkijonon kirjainkokoja.
+Voit myös käyttää tätä toimintoa yhdessä `if`-lausekkeen kanssa tarkistaaksesi, sisältääkö merkkijono tiettyjä kirjaimia. Esimerkiksi:
 
-## Syvempää tietoa
+```Arduino
+String salasana = "Salainen";
+String syote = Serial.readStringUntil('\n'); //Luetaan käyttäjän antama syöte
+if (syote.toUpperCase() == salasana) { //Muutetaan käyttäjän syöte isoksi ja verrataan siihen salasanaa
+  Serial.println("Oikea salasana!");
+} else {
+  Serial.println("Väärä salasana!");
+}
+```
+Tässä esimerkissä käytetään `toUpperCase()`-funktiota, jotta käyttäjän syöte voidaan verrata salasanaan riippumatta siitä, kirjoittaako käyttäjä sen isolla vai pienellä alkukirjaimella.
 
-Merkkijonon kirjainkoon muuttamisella on muutakin käyttöä kuin vain tietojen helpottaminen. Esimerkiksi, joissakin tapauksissa vertaaminen merkkijonossa olevia sanoja voi olla hankalaa, jos ne ovat eri kirjainkoossa. Muuttamalla ne kaikki samaksi, tietojen vertailu ja käsittely helpottuu.
+## Syvällisempi tutustuminen
 
-On myös tärkeää huomata, että merkkijonon capitalize() -funktio muuttaa vain merkkijonon ensimmäisen kirjaimen, muut kirjaimet säilyvät samoina. Jos haluat muuttaa kaikki kirjaimet isoihin tai pieniin kirjaimiin, voit käyttää toUpperCase() tai toLowerCase() -funktioita.
+Arduino `String`-luokka tarjoaa kätevän `toUpperCase()`-funktion, joka muuttaa merkkijonon kaikki kirjaimet isoksi käyttämällä Unicode-taulukkoa.
+
+Koodin tarkastelussa voit huomata, että `toUpperCase()`-funktio käyttää itse asiassa `toUpper()`-funktiota, joka on määritelty Unicode-merkkien käsittelyssä.
+
+Vaikka `toUpperCase()`-funktio on käytännöllinen ja helppo tapa muuttaa merkkijonon kirjaimet isoksi, on myös tärkeää pitää mielessä, että se muuttaa vain kirjaimet, joilla on pieni alkukirjain. Jos merkkijonossa on esimerkiksi erikoismerkkejä tai numeroita, ne eivät muutu isoksi.
 
 ## Katso myös
-
-- [String-olion dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [mikrokontrollerin merkkijonon muokkaaminen](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [Arduino String-luokka](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Unicode-merkkien käsittely](https://www.unicode.org/)

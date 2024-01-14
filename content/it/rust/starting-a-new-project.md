@@ -1,31 +1,40 @@
 ---
-title:    "Rust: Iniziare un nuovo progetto"
+title:    "Rust: Avviare un nuovo progetto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se stai pensando di iniziare un nuovo progetto di programmazione, potresti voler considerare Rust come linguaggio di sviluppo. Con un approccio moderno alla gestione della memoria e una sintassi concisa, Rust è ideale per la creazione di applicazioni sicure e affidabili. Continua a leggere per scoprire come iniziare.
+Se siete come me, vi ritroverete spesso a voler iniziare un nuovo progetto di programmazione come hobby o per lavoro. Ma perché dovremmo scegliere di usare Rust per questo? Beh, Rust è un linguaggio di programmazione moderno e sicuro che offre prestazioni ad alte prestazioni e una gestione della memoria affidabile. Inoltre, ha una comunità attiva e una documentazione eccellente.
 
-## Come Iniziare
+## Come fare
 
-Per iniziare a programmare in Rust, prima è necessario scaricare e installare il compilatore. Puoi trovare le istruzioni dettagliate sul sito ufficiale di Rust. Una volta completata l'installazione, puoi creare un nuovo progetto utilizzando il comando "cargo new". Questo creerà una cartella contenente il file "main.rs", che è il punto di partenza per il tuo progetto. Ecco un esempio di codice Rust:
+Per iniziare a utilizzare Rust, prima di tutto dobbiamo installarlo sul nostro sistema. Per fare ciò, possiamo visitare il sito ufficiale di Rust e seguire le istruzioni di installazione. Una volta installato, possiamo utilizzare il comando `cargo new` per creare una nuova cartella del progetto. Successivamente, possiamo aprire il progetto nel nostro editor di testo preferito ed iniziare a scrivere il nostro codice Rust. Ecco un esempio di come potrebbe apparire il nostro primo programma Rust:
 
 ```Rust
 fn main() {
-    println!("Ciao, mondo!");
+    println!("Ciao mondo!"); //in Rust, per stampare a schermo utilizziamo il comando println!
 }
 ```
-Questo codice stampa semplicemente la stringa "Ciao, mondo!" sulla console. Puoi sperimentare con diverse funzioni e sintassi per iniziare a familiarizzare con il linguaggio.
 
-## Approfondimenti
+Se eseguiamo questo programma, dovremmo ottenere il seguente output:
 
-Oltre a imparare la sintassi di base di Rust, potresti voler approfondire alcuni concetti chiave come la gestione della memoria e i tipi di dato. Rust utilizza un sistema di proprietà per garantire la sicurezza della memoria e prevenire errori comuni come la violazione del puntatore. Inoltre, Rust ha diversi tipi di dato che possono essere utilizzati per gestire una vasta gamma di dati.
+```
+Ciao mondo!
+```
 
-## Vedi Anche
+Non è così difficile, vero? Rust ha una sintassi semplice e intuitiva che faciliterà la scrittura del nostro codice. Inoltre, possiamo utilizzare il comando `cargo run` per compilare ed eseguire il nostro programma in una sola volta.
 
-- [Sito Ufficiale di Rust](https://www.rust-lang.org/)
-- [Guida Rapida a Rust](https://www.rust-lang.org/learn/get-started)
-- [Tutorial di Rust da Programmazione In C](https://www.tutorialspoint.com/rust/index.htm)
+## Approfondimento
+
+Ora che abbiamo una base solida, possiamo approfondire un po' di più. Rust utilizza il concetto di *ownership* per gestire la memoria in modo sicuro e senza rischi di errori come i blocchi di memoria o le fughe di memoria. Grazie a questo, il processo di debugging risulta molto più semplice e veloce. Inoltre, Rust ha un sistema di tipi molto potente, che ci permette di scrivere codice robusto e sicuro. Anche la gestione degli errori è molto migliore rispetto ad altri linguaggi di programmazione, grazie all'utilizzo di `Result<T, E>` e `Option<T>`.
+
+## Vedi anche
+
+* [Sito ufficiale di Rust](https://www.rust-lang.org/it/)
+* [Documentazione di Rust](https://doc.rust-lang.org/book/)
+* [Rust Playground - un ambiente online per provare il codice Rust](https://play.rust-lang.org/)
+* [Progetti di esempio in Rust](https://github.com/rust-lang/rust/tree/master/src/test/ui)

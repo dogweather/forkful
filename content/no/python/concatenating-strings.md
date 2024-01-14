@@ -1,48 +1,54 @@
 ---
-title:    "Python: Sammenslåing av strenger."
+title:    "Python: Sammenføying av strenger"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kombinere, eller "konkatenere", strenger er en vanlig operasjon i programmering, spesielt når du jobber med tekstbaserte applikasjoner. Det lar deg sette sammen flere strenger til en enkelt streng, noe som kan være nyttig for å lage komplekse setninger eller formatering av tekst.
+Mange ganger i programmering, vil du trenge å kombinere to eller flere strenger for å lage en ny streng. Dette kalles "konkatinering" og det kan være veldig nyttig for å manipulere og lage mer komplekse data.
 
 ## Hvordan
 
-For å konkatenere strenger i Python, kan du bruke operatoren "+" eller metoden ".join()". La oss se på noen eksempler:
+Her er noen eksempler på hvordan man kan konkatinere strenger i Python:
 
-```Python 
-# Bruker "+" operatoren
-fornavn = "Lars"
-etternavn = "Olsen"
-navn = fornavn + " " + etternavn
+```python
+# Bruke "+" operator:
+fornavn = "Kari"
+etternavn = "Nordmann"
+navn = fornavn + etternavn
 print(navn)
-
-# output: Lars Olsen
 ```
+Dette vil produsere outputen "KariNordmann".
 
-``` Python
-# Bruker ".join()" metoden
-farger = ["rød", "grønn", "blå"]
-delimeter = " - "
-farge_string = delimeter.join(farger)
-print(farge_string)
-
-# output: rød - grønn - blå
+```python
+# Bruke "format" metoden:
+tall = 42
+navn = "Svar på alt er {}.".format(tall)
+print(navn)
 ```
+Dette vil produsere outputen "Svar på alt er 42.".
 
-Det er viktig å merke seg at begge måtene kan bare konkatenere strenger. Hvis du vil kombinere en streng med et tall, må du først konvertere tallet til en streng ved hjelp av "str()" funksjonen.
+```python
+# Bruke "join" metoden:
+list = ["Eple", "Banan", "Jordbær"]
+frukt = ", ".join(list)
+print(frukt)
+```
+Dette vil produsere outputen "Eple, Banan, Jordbær".
 
-## Dypdykk
+## Deep Dive
 
-Når du konkatenere strenger, oppretter du faktisk en helt ny streng, selv om du bruker eksisterende strenger. Dette skyldes at strenger i Python er uforanderlige, noe som betyr at de ikke kan endres direkte. Når du konkatenere strenger, opprettes det en kopi av de eksisterende strengene og kombineres for å danne en ny streng.
+I Python, er strenger immutable, noe som betyr at de ikke kan forandres etter at de er opprettet. Derfor, når man konkatinerer strenger, lager man en helt ny streng i stedet for å endre den eksisterende. Dette kan være viktig å huske på når man jobber med store strengoperasjoner.
 
-Et annet viktig konsept å huske på er at rekkefølgen på strengene du konkatenere betyr noe. Hvis du bytter rundt på rekkefølgen på strengene, vil du få en annen resultatstreng. Dette er spesielt viktig hvis du har et tomrom eller spesialtegn som en del av strengen.
+En annen ting å være oppmerksom på er rekkefølgen på strengene man konkatinerer. For eksempel, vil "he" + "ll" + "o" produsere en annen streng enn "ll" + "o" + "he".
 
-## Se Også
+## Se også
 
-- [Dokumentasjon for strenger i Python](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Tutorial om strenger i Python](https://realpython.com/python-strings/)
-- [Mer om tekstbehandling i Python](https://www.tutorialspoint.com/python/python_strings.htm)
+Her er noen andre nyttige ressurser for å lære mer om å konkatinere strenger i Python:
+
+- [Python String Concatenation and Formatting](https://realpython.com/python-string-concatenation/)
+- [Learn Python the Hard Way: Exercise 6 - Strings and Text](https://learnpythonthehardway.org/python3/ex6.html)
+- [Python String join() Method](https://www.w3schools.com/python/ref_string_join.asp)

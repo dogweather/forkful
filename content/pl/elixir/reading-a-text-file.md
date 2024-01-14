@@ -1,36 +1,52 @@
 ---
-title:    "Elixir: Czytanie pliku tekstowego"
+title:    "Elixir: Odczytywanie pliku tekstowego"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto czytać pliki tekstowe?
 
-Czy kiedykolwiek zdarzyło Ci się czytać pliki tekstowe w swoim kodzie Elixir? Jeśli nie, to może się zastanawiasz po co to robić. W tym artykule postaram się wyjaśnić dlaczego jest to ważna umiejętność, którą warto opanować.
+Czytanie plików tekstowych jest powszechną czynnością w programowaniu. Pliki tekstowe są wykorzystywane do przechowywania danych, konfiguracji aplikacji, czy też do przechowywania wyników wyjściowych programów. Jest to ważna umiejętność dla każdego programisty, niezależnie od używanego języka programowania.
 
-## Jak to zrobić
+## Jak czytać pliki tekstowe w Elixir?
 
-Najprostszym sposobem na czytanie plików tekstowych w Elixir jest użycie funkcji `File.read/1`, która zwraca całą zawartość pliku jako napis. Przykład użycia tej funkcji wyglądałby następująco:
+Aby czytać pliki tekstowe w Elixir, można użyć funkcji ```File.read/1```. Przykładowy kod wyglądałby tak:
 
-```Elixir
-content = File.read("plik.txt")
-IO.puts(content)
+```elixir
+# Otwarcie pliku tekstowego w trybie tylko do odczytu
+{:ok, file} = File.open("plik.txt")
+
+# Wczytanie zawartości pliku do zmiennej
+file_content = File.read(file)
+
+# Wyświetlenie zawartości pliku na ekranie
+IO.puts(file_content)
+
+# Zamknięcie pliku
+File.close(file)
 ```
 
-W powyższym przykładzie, zawartość pliku "plik.txt" zostanie wczytana i wypisana na ekranie. Możesz również skorzystać z funkcji `File.stream!/2`, która zwraca strumień zawierający linie tekstu z pliku. Przykład użycia tej funkcji wyglądałby tak:
+Output tego kodu będzie zawierał wszystkie linie tekstu znajdujące się w pliku "plik.txt". Można także użyć funkcji ```File.read!/1```, która zwróci zawartość pliku w postaci binarnej.
 
-```Elixir
-File.stream!("plik.txt")
-|> Enum.each(&(IO.puts &1))
+## Głębsze zagadnienia
+
+Przy czytaniu plików tekstowych ważne jest zabezpieczenie się przed błędami. Aby to osiągnąć, można wykorzystać try/catch lub funkcje obsługi wyjątków. Przykładowy kod wyglądałby tak:
+
+```elixir
+try do
+  file = File.read("plik.txt")
+rescue
+  :error -> IO.puts "Wystąpił błąd podczas czytania pliku."
+end
 ```
 
-Ten kod iteruje przez każdą linię tekstu z pliku i wypisuje ją na ekranie. W ten sposób można wygodnie przetwarzać pliki tekstowe w Elixir.
+W przypadku, gdy plik nie istnieje lub wystąpi inny problem podczas odczytu, funkcja ```File.read/1``` zwróci :error, a obsługujący ją blok try/catch wyświetli odpowiedni komunikat.
 
-## Głębsza analiza
+## Zobacz też
 
-Czytanie plików tekstowych może być bardzo przydatne w wielu sytuacjach. Możesz użyć tego do przetwarzania danych zapisanych w plikach, takich jak pliki CSV, pliki konfiguracyjne lub nawet pliki logów. W Elixir, czytanie plików jest szybkie i wydajne, więc jest to dobra opcja, jeśli potrzebujesz przetworzyć dużą ilość danych.
+Możesz przeczytać więcej o czytaniu plików tekstowych w Elixir na stronach:
 
-## Zobacz również
-
-Jeśli jesteś zainteresowany dalszym zgłębianiem tematu czytania plików tekstowych w Elixir, polecam zapoznać się z dokumentacją [File](https://hexdocs.pm/elixir/File.html) oraz [Enum](https://hexdocs.pm/elixir/Enum.html). Możesz również sprawdzić inne artykuły na temat Elixira, takie jak ["Elixir: podstawowe konstrukcje języka"](https://bykowski.pl/elixir-podstawowe-konstrukcje-jezyka/) lub ["Pobieranie i zapisywanie danych w Elixir z użyciem GenStage"](https://lunarbeam.net/2017/09/01/elixir-parallel-sinks-sources-and-genstage/).
+- http://elixir-lang.org/getting-started/io-and-the-file-system.html
+- https://hexdocs.pm/elixir/File.html

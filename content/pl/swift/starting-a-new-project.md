@@ -1,48 +1,41 @@
 ---
 title:    "Swift: Rozpoczynanie nowego projektu"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie staje się coraz bardziej popularnym zainteresowaniem. Nie tylko daje możliwość tworzenia unikalnych aplikacji, ale także rozwija umiejętności analityczne i logiczne. Rozpoczęcie nowego projektu jest więc świetnym sposobem na poszerzenie swojej wiedzy i wyzwanie dla siebie.
+Rozpoczęcie nowego projektu w programowaniu może być nieco przerażające, zwłaszcza dla początkujących. Jednak jest to świetny sposób na rozwijanie umiejętności programistycznych i tworzenie niesamowitych aplikacji. W tym artykule opowiemy o tym, dlaczego warto zacząć nowy projekt i jak to zrobić w języku Swift.
 
 ## Jak to zrobić
 
-Aby rozpocząć nowy projekt w języku Swift, musisz najpierw zainstalować najnowszą wersję Xcode, który zawiera wszystkie niezbędne narzędzia do programowania w tym języku. Następnie utwórz pusty projekt i dodaj pliki źródłowe. Oto kilka przykładowych kodów, które pomogą Ci zacząć:
+Język Swift jest jednym z najbardziej popularnych języków programowania na świecie i jest wykorzystywany przez firmy takie jak Apple, Uber i LinkedIn. Zanim zaczniemy pisać kod, musimy mieć zainstalowane odpowiednie narzędzia, takie jak Xcode i Swift Compiler. Następnie możemy rozpocząć tworzenie naszego projektu.
 
 ```Swift
-// Tworzenie zmiennej liczbowej
-var liczba = 5
-
-// Wyświetlenie liczby na konsoli
-print(liczba)
-
-// Pętla for
-for i in 0..<5 {
-    print("Liczba: \(i)")
-}
-
-// Funkcja z parametrem i zwracającym wartość
-func podwojLiczbe(_ liczba: Int) -> Int {
-    return liczba * 2
-}
-
-// Wywołanie funkcji
-let podwojonaLiczba = podwojLiczbe(5)
-print(podwojonaLiczba)
+let name = "Hello!"
+print(name)
+// Output: Hello!
 ```
 
-Po ukończeniu pisania kodu, możesz użyć Xcode, aby przetestować swoją aplikację i poprawić błędy.
+W powyższym przykładzie użyliśmy zmiennej "name", która przechowuje wartość "Hello!". Następnie wydrukowaliśmy tę wartość przy użyciu funkcji "print". To prosty przykład kodu Swift, ale pokazuje, jak łatwo możemy wykonywać operacje w tym języku.
 
-## Głębsze zanurzenie
+## Deep Dive
 
-Rozpoczęcie nowego projektu w języku Swift wymaga nie tylko umiejętności kodowania, ale także planowania i organizacji. Przed rozpoczęciem warto zawsze stworzyć schemat działania swojej aplikacji, aby mieć jasny cel i wiedzieć, jakie funkcjonalności chcesz zaimplementować. Pamiętaj również o dokumentacji swojego kodu, abyś mógł łatwo wrócić do niego w przyszłości.
+Podczas tworzenia nowego projektu bardzo ważne jest ułożenie planu i struktury. Musimy określić cel naszego projektu i zastanowić się, jakie funkcjonalności będą niezbędne. Dobrym sposobem na to jest stworzenie diagramu UML lub storyboardu, aby wizualnie przedstawić strukturę aplikacji.
 
-## Zobacz również
+Kolejnym ważnym krokiem jest wybór odpowiednich narzędzi i bibliotek, które pomogą nam w tworzeniu naszego projektu. W języku Swift jest wiele dostępnych bibliotek, takich jak Alamofire czy Realm, które mogą przyspieszyć i ułatwić nam pracę.
 
-- [Oficjalna strona języka Swift](https://swift.org/)
-- [Kurs programowania w języku Swift](https://www.udemy.com/course/swift-for-beginners/)
-- [Przykładowe projekty w języku Swift](https://github.com/soapyigu/Swift-30-Projects)
+Ważnym elementem jest również systematyczne testowanie naszej aplikacji, aby wykryć ewentualne błędy i poprawić je przed wypuszczeniem na rynek. Dzięki temu będziemy mieć pewność, że nasz projekt będzie działał w oczekiwany sposób.
+
+## See Also
+
+Jeśli chcesz dowiedzieć się więcej o programowaniu w języku Swift, przydatnymi źródłami informacji mogą być:
+
+- [Oficjalna dokumentacja Swift](https://developer.apple.com/documentation/swift)
+- [Kurs wideo na platformie Udemy](https://www.udemy.com/course/swift-zacznij-od-podstaw/)
+- [Forum dla programistów Swift](https://forums.swift.org/)
+
+Dziękujemy za przeczytanie naszego artykułu. Mamy nadzieję, że podzieliłeś się nim ze znajomymi i że stworzysz wspaniały projekt w języku Swift!

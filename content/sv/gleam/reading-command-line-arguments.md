@@ -1,60 +1,36 @@
 ---
-title:    "Gleam: Läsa kommandoradsargument"
+title:    "Gleam: Att läsa kommandoradsargument"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att kunna läsa kommandoradsargument är en viktig färdighet för alla som programmerar på Gleam. Det är ett sätt att läsa in data och variabler från terminalen och kan vara användbart för att göra din kod mer dynamisk och interaktiv.
+Att läsa kommandoradsargument är ett viktigt verktyg för alla Gleam-programmerare. Genom att kunna läsa in parametrar som användare ger till ditt program kan du skräddarsy körningen och öka dess flexibilitet.
 
 ## Så här
+Det finns flera sätt att läsa kommandoradsargument i Gleam, men det enklaste är att använda funktionen  `gleam:io:cli::parse_args()`, som tar in en sträng och returnerar en lista med alla argument. Här är ett enkelt exempel:
 
-För att börja läsa kommandoradsargument i Gleam behöver du först importera modulen "sys" som ger tillgång till funktioner för att hantera terminalen.
-
+```Gleam
+args = gleam:io:cli::parse_args("program --param1 value1 --param2 value2")
+println(args) // [ "--param1", "value1", "--param2", "value2" ]
 ```
-Gleam
-import sys
-```
+Som du kan se returneras alla argument som separata strängar, vilket gör det enkelt att hantera dem vidare i ditt program.
 
-För att läsa in ett enkelt argument med en sträng som värde kan du använda funktionen "sys.argv" och ange indexet på argumentet du vill läsa in.
+Om du vill läsa in värden till specifika parametrar kan du använda funktionen `gleam:io:cli::parse_args_with()`, som tar in en lista med argumentnamn och returnerar en lista med motsvarande värden. Om ett argument inte har ett tillhörande värde kommer `false` att returneras.
 
+```Gleam
+[foo, bar] = gleam:io:cli::parse_args_with(["--foo", "--bar"])
+println(foo) // true
+println(bar) // false
 ```
-Gleam
-let förnamn = sys.argv[1]
-```
-
-Om du till exempel kör din Gleam-kod från terminalen och skrivit ditt förnamn som argument, kommer värdet av förnamnet att lagras i variabeln "förnamn". För att sedan använda värdet kan du skriva ut det med hjälp av "IO.println".
-
-```
-Gleam
-IO.println("Hej" ++ förnamn ++ "!")
-```
-
-Om inget argument ges kommer funktionen "sys.argv" att returnera en tom lista. Det är också möjligt att läsa in flera argument på en gång och lagra dem i en lista.
-
-```
-Gleam
-let argument = sys.argv 
-IO.println("Du har givit" ++ length(argument) ++ "argument.")
-```
-
-I exemplet ovan använder vi funktionen "length" för att räkna antalet argument som har lästs in från terminalen.
 
 ## Djupdykning
+Det finns många andra användbara funktioner för att läsa kommandoradsargument i Gleam, såsom `gleam:io:cli::parse_args_to_map()` som returnerar en map med alla argument och deras värden. Det finns också möjlighet att läsa in flaggor och argument med liknande namn som ska grupperas tillsammans.
 
-Förutom att läsa in enkla värden kan du också använda funktionen "sys.argv" för att läsa in kommandoradsflaggor och valfri information från terminalen. Genom att använda funktionen "String.slice" kan du ta bort flaggan och få tillgång till värdet.
-
-```
-Gleam
-let flagga = "--viktig-flagga"
-let index = sys.argv |> index_of(flagga)
-let värde = String.slice(start=index + 1, end=2)
-```
+Det är viktigt att komma ihåg att kommandoradsargument alltid är strängar, så om du behöver läsa omvandla dem till andra datatyper måste du göra det manuellt.
 
 ## Se även
-
-- [Gleams dokumentation om sys-modulen på Engelska](https://gleam.run/articles/command_line_arguments/)
-- [En guide för Gleam på Svenska](https://github.com/gleam-lang/gleam/wiki/Hem)
-- [Gleams officiella hemsida](https://gleam.run/)
+- [Gleam Dokumentation för Gleam:io:cli modulen](https://gleam.run/documentation/stdlib/io/cli)
+- [En guide för att använda kommandoradsargument i Gleam](https://www.joannevy.com/using-command-line-arguments-in-gleam/)

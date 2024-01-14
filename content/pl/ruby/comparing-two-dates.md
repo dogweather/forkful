@@ -1,74 +1,61 @@
 ---
 title:    "Ruby: Porównywanie dwóch dat"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
+Porównywanie dat jest niezbędne w wielu aplikacjach Ruby. Jeśli tworzysz aplikację, która wymaga sprawdzania daty, ta umiejętność może być bardzo przydatna. Może ona pomóc Ci zaplanować przyszłe wydarzenia, sprawdzić czy dany dzień jest dniem roboczym czy nie, lub po prostu pomóc w utrzymaniu porządku w danych.
 
-Porównywanie dwóch dat może być ważnym aspektem w pisaniu kodu, ponieważ pozwala nam na sprawdzenie, czy jedna data jest wcześniejsza, późniejsza lub równa drugiej. Jest to szczególnie przydatne w przypadku tworzenia aplikacji, które muszą brać pod uwagę daty, takie jak rezerwacja biletów lotniczych lub organizowanie wydarzeń.
-
-# Jak to zrobić
-
-Aby porównać dwie daty w Ruby, możemy użyć metody `==` lub `eql?`. Metoda `==` sprawdza, czy dwie daty są dokładnie takie same, podczas gdy `eql?` sprawdza również czy są to dokładnie te same obiekty. Przyjrzyjmy się przykładowemu kodowi:
-
-```Ruby
-date1 = Date.new(2020, 10, 18)
-date2 = Date.new(2020, 10, 18)
-
-puts date1 == date2
-# Output: true
-puts date1.eql?(date2)
-# Output: true
-```
-
-W tym przykładzie, `date1` i `date2` są dokładnie takie same, więc zarówno `==` jak i `eql?` zwracają wartość `true`.
-
-Możemy również użyć metod `>` i `<` do porównywania dwóch dat. Jest to przydatne, gdy chcemy sprawdzić, która data jest wcześniejsza lub późniejsza. Przykładowo:
+## Jak to zrobić
+W Ruby, możemy porównać dwie daty za pomocą operatorów porównania, takich jak "<" i ">". 
+Przykładowo, chcąc sprawdzić czy dana data jest przed inną datą, możemy użyć następującego kodu:
 
 ```Ruby
-date1 = Date.new(2020, 10, 18)
-date2 = Date.new(2020, 10, 21)
+date_1 = Date.new(2021, 10, 15) #pierwsza data
+date_2 = Date.new(2021, 11, 1) #druga data
 
-puts date1 > date2
-# Output: false
-puts date1 < date2
-# Output: true
+if date_1 < date_2
+  puts "Pierwsza data jest wcześniejsza niż druga data"
+end
 ```
 
-W tym przykładzie, `date1` jest wcześniejszą datą niż `date2`, więc `date1 < date2` zwraca wartość `true`, a `date1 > date2` zwraca wartość `false`.
+W powyższym kodzie, najpierw deklarujemy dwie daty przy użyciu konstruktora `Date.new()`. Następnie, w warunku if, porównujemy je za pomocą operatora `<`. Jeśli warunek zostanie spełniony, to zostanie wyświetlony odpowiedni komunikat.
 
-# Głębsza analiza
-
-Ruby ma również wiele innych metod, które pozwalają nam na porównywanie dat. Jedną z nich jest metoda `between?`, która sprawdza, czy jedna data znajduje się pomiędzy innymi dwiema datami. Przykładowo:
+Możemy również porównywać daty używając funkcji `.between?`, która sprawdza czy dana data znajduje się pomiędzy podanymi datami. Przykładowo:
 
 ```Ruby
-date1 = Date.new(2020, 10, 18)
-start_date = Date.new(2020, 10, 15)
-end_date = Date.new(2020, 10, 20)
+date_1 = Date.new(2021, 10, 15) #pierwsza data
+date_2 = Date.new(2021, 11, 1) #druga data
+date_3 = Date.new(2021, 10, 20) #trzecia data
 
-puts date1.between?(start_date, end_date)
-# Output: true
+if date_3.between?(date_1, date_2)
+  puts "Trzecia data znajduje się między pierwszą a drugą datą"
+end
 ```
 
-W tym przypadku, `date1` jest pomiędzy `start_date` a `end_date`, więc metoda `between?` zwraca wartość `true`.
+W powyższym kodzie, funkcja `.between?` zostanie wywołana na trzeciej dacie, sprawdzając czy znajduje się ona pomiędzy pierwszą a drugą datą.
 
-Możemy również użyć metody `strftime` do porównywania dat, która pozwala nam na określenie formatu w jakim ma zostać zwrócona data. Przykładowo:
+## Głębszy wgląd
+W Ruby, daty są przechowywane jako obiekty klasy `Date`. Możemy więc używać różnych metod tej klasy do operowania na datach. Przykładowo, możemy sprawdzić czy dany rok jest rokiem przestępnym za pomocą metody `.leap?`:
 
 ```Ruby
-date1 = Date.new(2020, 10, 18)
-date2 = Date.today
-puts date1.strftime("%d/%m/%Y") == date2.strftime("%d/%m/%Y")
-# Output: true
+date = Date.new(2020, 3, 1) #data
+if date.leap?
+  puts "Rok 2020 jest rokiem przestępnym"
+end
 ```
 
-W tym przykładzie, użyliśmy metody `strftime` do określenia formatu daty jako "dzień/miesiąc/rok". Następnie porównaliśmy `date1` i `date2`, które są w tym samym formacie, więc metoda `strftime` zwraca wartość `true`.
+Możemy również dodać lub odjąć dni, tygodnie, miesiące lub lata od daty za pomocą metod `.+` i `.-`:
 
-# Zobacz także
+```Ruby
+date = Date.new(2021, 1, 1) #data
+puts date + 7 #dodajemy 7 dni do daty i wyświetlamy ją
+puts date - 1 #odejmujemy 1 dzień od daty i wyświetlamy ją
+```
 
-Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w Ruby, zapoznaj się z poniższymi linkami:
-
-- [Ruby Date Class - Dokumentacja](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Porównywanie dat w Ruby - Poradnik](https://www.geeksforgeeks.org/ruby-date-comparing-dates/)
-- [Porównywanie dat w Ruby - Tutorial](https://www.tutorialspoint.com/ruby/ruby_date_comparison.htm)
+## Zobacz również
+- https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html - Oficjalna dokumentacja Ruby dla klasy `Date`
+- https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/dates-and-times#comparing-dates - Dodatkowe informacje na temat porównywania dat w Ruby

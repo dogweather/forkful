@@ -1,61 +1,48 @@
 ---
 title:    "Kotlin: Escrevendo testes"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante
+## Por que escrever testes é importante?
 
-Escrever testes é uma parte essencial do processo de desenvolvimento de software. Eles garantem que nosso código funcione corretamente e evitam a ocorrência de bugs e erros no futuro. Além disso, testes bem escritos podem facilitar a manutenção do código e fornecer documentação para futuros desenvolvedores.
+Escrever testes é uma parte essencial do processo de desenvolvimento de software. Testes unitários e de integração garantem que o código está funcionando corretamente e que as mudanças feitas não quebraram funcionalidades existentes. Além disso, ter uma boa cobertura de testes aumenta a confiabilidade do código e facilita a manutenção no futuro.
 
-## Como escrever testes em Kotlin
+## Como escrever testes usando Kotlin?
 
-A linguagem Kotlin possui uma sintaxe muito clara e concisa para escrever testes. Vamos dar uma olhada em um exemplo simples de teste de função que verifica se uma string é um palíndromo:
-
-```Kotlin
-fun isPalindrome(str: String): Boolean {
-    //remover espaços e transformar em letras minúsculas
-    val cleanStr = str.replace("\\s".toRegex(), "").toLowerCase()
-    //criando uma cópia reversa da string
-    val reverseStr = cleanStr.reversed()
-    //verificando se as duas strings são iguais
-    if (cleanStr == reverseStr) {
-        return true
-    }
-    return false
+Para escrever testes em Kotlin, primeiro é preciso incluir a biblioteca de testes no arquivo gradle:
+```
+dependencies {
+    testImplementation 'junit:junit:4.12'
 }
+```
+Em seguida, podemos criar uma classe de teste e adicionar o annotation `@Test` antes do método que desejamos testar. Por exemplo:
+```
+class CalculadoraTest{
 
-fun main(){
-    //chamando a função com uma string que é um palíndromo
-    println(isPalindrome("ovo")) //vai imprimir "true"
-    //chamando a função com uma string que não é um palíndromo
-    println(isPalindrome("casa")) //vai imprimir "false"
+    @Test
+    fun testarSoma(){
+        val calc = Calculadora()
+        val resultado = calc.soma(2,3)
+        assertEquals(5, resultado)
+    }
 }
 ```
 
-Neste código, criamos uma função que recebe uma string e retorna um booleano indicando se ela é um palíndromo ou não. Em seguida, chamamos essa função em nosso bloco main para testar seu funcionamento.
+Neste exemplo, criamos uma classe de teste `CalculadoraTest` e adicionamos o método `testarSoma` com o annotation `@Test`. Dentro deste método, criamos uma instância da classe `Calculadora` e chamamos o método `soma` com dois números. Então, usamos o método `assertEquals` para verificar se o resultado é o esperado. Se o resultado não for igual a 5, o teste falhará.
 
-Escrever testes em Kotlin é simples e direto, permitindo que nos concentremos na lógica dos testes em vez de nos preocuparmos com a sintaxe da linguagem.
+É importante notar que há diversas bibliotecas de teste disponíveis para Kotlin, então cabe ao desenvolvedor escolher a que melhor se adequa ao seu projeto.
 
-## Profundidade na escrita de testes
+## Mais informações sobre escrever testes em Kotlin
 
-Existem diversas técnicas e boas práticas para escrever testes eficientes em Kotlin. Algumas delas incluem:
+Além dos testes unitários e de integração, existem outras formas de escrever testes em Kotlin. Por exemplo, testes de interface de usuário usando a biblioteca Espresso ou testes funcionais usando a biblioteca Robolectric.
 
-- Utilizar o padrão AAA (arrange, act, assert) para organizar os testes e torná-los mais claros;
-- Utilizar o framework de testes integrado do Kotlin, o `kotlin.test`, para escrever testes unitários e de integração;
-- Utilizar bibliotecas externas, como o `Spek`, para escrever especificações de testes mais complexas;
-- Sempre cobrir tanto casos de sucesso quanto casos de falha nos testes;
-- Separar os testes em diferentes arquivos para facilitar a manutenção e a execução;
-- Criar mocks dos objetos e dependências externas para isolar os testes e evitar interferências externas;
-- Manter uma cobertura de testes adequada para garantir a qualidade do código.
-
-Lembre-se de que os testes não devem ser uma reflexão tardia no processo de desenvolvimento, mas sim uma parte integrante do mesmo. A escrita de testes pode levar a um código melhor e mais confiável, economizando tempo e esforço no longo prazo.
+Outro ponto importante é seguir boas práticas de teste, como manter os testes independentes e testar apenas uma funcionalidade em cada teste, para facilitar a identificação e correção de problemas.
 
 ## Veja também
 
-- [Documentação oficial de testes em Kotlin](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Tutorial de testes com Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_testing.htm)
-- [Explicação do padrão AAA em testes](https://wiki.c2.com/?ArrangeActAssert)
-
-Pronto! Agora você já sabe porque e como escrever testes em Kotlin. Não deixe de implementá-los em seus projetos e melhorar a qualidade do seu código. Até a próxima!
+- [Documentação oficial do JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [Tutorial do Android TDD com Kotlin e Espresso](https://blog.mindorks.com/android-testing-tutorial-1-android-studio-best-practices-12910788abc7?gi=8d7bfbf7678e)
+- [GitHub da biblioteca Robolectric](https://github.com/robolectric/robolectric)

@@ -1,17 +1,18 @@
 ---
 title:    "Go: Busca e substituição de texto"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que fazer substituição de texto em Go
 
-A substituição de texto é uma tarefa comum na programação, e pode ser útil em diversas situações. Por exemplo, quando se quer corrigir erros ortográficos ou padronizar um trecho de código em várias linhas diferentes. Neste blog post, aprenderemos como realizar essa tarefa utilizando a linguagem de programação Go.
+Ao escrever um programa em Go, pode ser necessário fazer substituições de texto para alterar ou corrigir dados. A capacidade de encontrar e substituir texto é essencial para a manipulação de strings. Felizmente, Go possui recursos poderosos para realizar essa tarefa de forma eficiente.
 
-## Como fazer
+## Como fazer substituição de texto em Go
 
-A substituição de texto pode ser feita de forma simples utilizando a função `strings.Replace()` do pacote `strings`. Vamos ver um exemplo de como usar essa função através de um código em Go:
+Para fazer substituições de texto em Go, usamos a função `strings.Replace()`. Esta função recebe quatro argumentos: a string original, a string a ser substituída, a nova string e o número de ocorrências a serem substituídas. Aqui está um exemplo de como usar essa função:
 
 ```Go
 package main
@@ -22,15 +23,15 @@ import (
 )
 
 func main() {
-    texto := "Olá, mundo!"
-    novoTexto := strings.Replace(texto, "Olá", "Oi", 1)
-    fmt.Println(novoTexto)
+    str := "Olá mundo!"
+    newStr := strings.Replace(str, "mundo", "Go", 1)
+    fmt.Println(newStr)
 }
 ```
 
-Neste exemplo, estamos substituindo a palavra "Olá" por "Oi" no texto "Olá, mundo!". Ao executar esse código, o resultado será "Oi, mundo!". Além disso, podemos também especificar um terceiro argumento na função `Replace()` para indicar o número de substituições a serem feitas. Experimente alterar esse valor e ver como o resultado muda.
+Neste exemplo, a função `strings.Replace()` substitui a palavra "mundo" por "Go" apenas uma vez na string "Olá mundo!". Portanto, o resultado impresso será "Olá Go!".
 
-Outra forma de realizar a substituição de texto é utilizando expressões regulares. No Go, podemos fazer isso através do pacote `regexp`. Veja um exemplo:
+Outra maneira de fazer substituições de texto em Go é usar o pacote `regexp`. Esse pacote permite o uso de expressões regulares para encontrar e substituir padrões em uma string. Aqui está um exemplo:
 
 ```Go
 package main
@@ -41,23 +42,20 @@ import (
 )
 
 func main() {
-    texto := "Este é um exemplo de texto com números: 12345"
-    novoTexto := regexp.MustCompile("[0-9]+").ReplaceAllString(texto, "XXXXX")
-    fmt.Println(novoTexto)
+    str := "A data de hoje é 20/01/2021."
+    re := regexp.MustCompile(`(\d{2})/(\d{2})/(\d{4})`)
+    newStr := re.ReplaceAllString(str, "$3-$2-$1")
+    fmt.Println(newStr)
 }
 ```
 
-Neste caso, estamos substituindo todos os números do texto por "XXXXX". O resultado seria "Este é um exemplo de texto com números: XXXXX".
+Neste exemplo, usamos a expressão regular `(\d{2})/(\d{2})/(\d{4})`, que procura um padrão de data na string. Em seguida, a função `ReplaceAllString()` substitui esse padrão pelo formato "AAAA-MM-DD". Portanto, o resultado será "A data de hoje é 2021-01-20.".
 
-## Análise detalhada
+## Profundidade na substituição de texto em Go
 
-A função `strings.Replace()` realiza a substituição de forma simples, mas é importante entender como ela funciona por baixo dos panos. Ela recebe quatro argumentos: o texto original, a palavra ou expressão a ser substituída, a nova palavra ou expressão e o número de substituições a serem feitas. No exemplo que vimos anteriormente, como atribuímos o valor 1 a esse quarto argumento, apenas a primeira ocorrência da palavra "Olá" foi substituída. Se o valor for -1 ou não for especificado, todas as ocorrências serão substituídas.
-
-Já o uso de expressões regulares nos permite uma maior flexibilidade na substituição de texto, especialmente em casos mais complexos. A função `regexp.MustCompile()` compila uma expressão regular e a função `ReplaceAllString()` realiza a substituição em todo o texto.
+Além das funções mencionadas, Go possui muitos outros recursos para manipulação de strings, como a função `strings.ReplaceAll()` que substitui todas as ocorrências de uma string, e o pacote `unicode` que permite o tratamento de caracteres Unicode em substituições de texto. É importante entender esses recursos e escolher a melhor opção para cada tarefa específica de substituição de texto.
 
 ## Veja também
-
-- [Documentação oficial sobre a função `strings.Replace()`](https://golang.org/pkg/strings/#Replace)
-- [Documentação oficial sobre o pacote `regexp`](https://golang.org/pkg/regexp/)
-- [Tutorial sobre expressões regulares em Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-pt)
-- [Exemplos de expressões regulares em Go](https://github.com/cnych/go-regexp-examples)
+- [Documentação oficial strings.Replace()](https://golang.org/pkg/strings/#Replace)
+- [Tutorial sobre substituição de string em Go](https://www.calhoun.io/using-string-replace-in-go/)
+- [Documentação oficial do pacote regexp](https://golang.org/pkg/regexp/)

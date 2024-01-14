@@ -1,88 +1,38 @@
 ---
-title:    "Elm: Vergleich von zwei Daten."
+title:    "Elm: Vergleich von zwei Daten"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Vergleichen von zwei Daten kann sehr wichtig in der Elm-Programmierung sein. Es kann dazu beitragen, zu überprüfen, ob ein Datum in der Vergangenheit oder Zukunft liegt, oder ob ein Zeitintervall abgelaufen ist. In diesem Blogbeitrag werden wir uns genauer ansehen, wie man in Elm zwei Daten vergleichen kann.
+Es gibt viele Gründe, warum man sich mit der Programmiersprache Elm beschäftigen sollte, und das Vergleichen von zwei Daten ist definitiv einer davon. Mit diesem Artikel möchte ich Ihnen zeigen, warum dies eine wichtige Fähigkeit ist, die Sie beherrschen sollten.
 
-## Wie geht das?
+## Wie geht man vor?
 
-Um zwei Daten in Elm zu vergleichen, können wir die integrierten Vergleichsoperatoren verwenden. Zum Beispiel können wir den Operator `>` verwenden, um zu überprüfen, ob eine Datum später als ein anderes ist.
+Um zwei Daten in Elm zu vergleichen, gibt es verschiedene Methoden, aber die einfachste ist die Verwendung des inbuilt `Time.compare` Moduls. Hier ist ein Beispiel, wie man zwei Daten mit dieser Methode vergleichen kann:
 
-```
-elm date1 > date2
-```
+```Elm
+import Time
 
-Wenn date1 später als date2 ist, wird dies `True` zurückgeben, andernfalls `False`. Genauso können wir auch den `<=` Operator verwenden, um zu überprüfen, ob ein Datum vor oder gleich einem anderen liegt.
+date1 = Time.millisToPosix 1564262400000
+date2 = Time.millisToPosix 1564262460000
 
-```
-elm date1 <= date2
-```
+result = Time.compare date1 date2
 
-Im folgenden Beispiel werden wir zwei Daten vergleichen und die Ausgabe basierend auf dem Ergebnis des Vergleichs anzeigen.
-
-```
-elm import Date exposing (Date)
-
-date1: Date
-date1 =
-    Date.fromCalendarDate 2021 1 1
-
-date2: Date
-date2 =
-    Date.fromCalendarDate 2020 1 1
-
-output: String
-output =
-    if date1 > date2 then
-        "Datum 1 ist später als Datum 2"
-    else if date1 < date2 then
-        "Datum 1 ist früher als Datum 2"
-    else
-        "Beide Daten sind gleich"
-
-elm output
+-- result wird -1 zurückgeben, da date1 vor date2 liegt
 ```
 
-Die Ausgabe dieses Codes wird "Datum 1 ist später als Datum 2" sein.
+In diesem Beispiel habe ich zwei Millisekundenzeitstempel zum einfacheren Verständnis verwendet, aber Sie können auch andere Datentypen verwenden, wie z.B. `Time.Posix`, `Time.Year`, `Time.Month`, etc. `Time.compare` gibt einen Integer zurück, der -1, 0 oder 1 sein kann, je nachdem, ob die erste Date vor, gleich oder nach der zweiten Date liegt.
 
-## Tiefere Einblicke
+## Tiefes Eintauchen
 
-Bei der Verwendung von Vergleichsoperatoren ist es wichtig zu beachten, dass sie in erster Linie auf Basis der Zeitzone vergleichen. Wenn wir jedoch genauer unter die Haube schauen, werden wir feststellen, dass sie tatsächlich auf der Anzahl der Millisekunden seit dem 1. Januar 1970 basieren.
-
-Dies kann zu unerwarteten Ergebnissen führen, wenn Datumswerte mit unterschiedlichen Zeitzonen verglichen werden. In solchen Fällen ist es möglicherweise besser, die Funktion `Date.compare` zu verwenden, die auf der tatsächlichen Reihenfolge der Daten basiert, unabhängig von der Zeitzone.
-
-```
-import Date exposing (Date)
-
-date1: Date
-date1 =
-    Date.fromCalendarDate 2021 1 1
-
-date2: Date
-date2 =
-    Date.fromCalendarDate 2020 12 31
-
-output: String
-output =
-    case Date.compare date1 date2 of
-        LT ->
-            "Datum 1 liegt vor Datum 2"
-        EQ ->
-            "Beide Daten sind gleich"
-        GT ->
-            "Datum 1 liegt nach Datum 2"
-
-elm output
-```
-
-Die Ausgabe hier wird "Datum 1 liegt nach Datum 2" sein, da tatsächlich das Jahr 2021 später ist als das Jahr 2020.
+Wenn Sie noch tiefer in das Vergleichen von zwei Daten in Elm eintauchen möchten, gibt es noch viele andere Methoden und Funktionen, die Sie verwenden können. Ein Beispiel dafür ist `Time.compareInUtc`, das die Zeit in UTC-Variante vergleicht, oder `Time.dayOfYear`, das den Tag im Jahr zurückgibt. Sie können auch benutzerdefinierte Funktionen schreiben, um spezifischere Vergleiche durchzuführen, wie zum Beispiel das Vergleichen von Daten mit unterschiedlichen Zeitformaten.
 
 ## Siehe auch
 
-* Die Elm-Dokumentation zu [Date](https://package.elm-lang.org/packages/elm/core/latest/Date)
-* Das [Date-Extra-Paket](https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/) für erweiterte Datumsmöglichkeiten
+- [Elm Dokumentation - Time](https://elm-lang.org/docs/time)
+- [Blog post - Vergleichen von zwei Daten in Elm](https://medium.com/@joeljosephjohnson/elm-101-comparing-dates-83cb35ed8055)
+- [Github Gist - Vergleichen von zwei Daten in Elm](https://gist.github.com/ngvasa/f6411e4a3b7e8c72da9ce31a90727982)

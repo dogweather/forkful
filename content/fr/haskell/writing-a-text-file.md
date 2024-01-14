@@ -1,38 +1,46 @@
 ---
 title:    "Haskell: Écriture d'un fichier texte"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+### Pourquoi
 
-Écrire un fichier texte est une partie essentielle de la programmation en Haskell. Cela permet aux programmeurs de stocker des informations, de les manipuler et de les utiliser dans leurs programmes. Cela peut également être utile pour créer des fichiers de configuration ou des fichiers de données qui seront utilisés par le programme.
+Ecrire un fichier texte peut sembler banal et sans intérêt, mais c'est en réalité une compétence très importante pour tout programmeur ou programmeuse. En utilisant le langage de programmation Haskell, vous pouvez créer des fichiers texte qui sont faciles à lire pour les machines, mais aussi pour les êtres humains.
 
-## Comment faire 
+### Comment faire
 
-Pour écrire un fichier texte en Haskell, il faut d'abord déclarer la bibliothèque "System.IO" dans notre programme. Ensuite, nous pouvons utiliser la fonction "writeFile" pour créer un nouveau fichier ou écraser un fichier existant. Voici un exemple de code :
+Tout d'abord, vous aurez besoin de quelques connaissances de base en Haskell. Ensuite, vous pouvez suivre ces étapes simples pour écrire un fichier texte :
+
+1. Importez le module `System.IO` dans votre programme.
+2. Créez un nouveau fichier texte en utilisant la fonction `openFile`, en spécifiant le chemin d'accès et le mode d'ouverture (`WriteMode` pour créer un nouveau fichier ou `AppendMode` pour ajouter du contenu à un fichier existant).
+3. Utilisez la fonction `hPutStrLn` pour écrire une chaîne de caractères dans le fichier.
+4. Enfin, n'oubliez pas de fermer le fichier en utilisant la fonction `hClose`.
 
 ```Haskell
 import System.IO
 
-main :: IO ()
 main = do
-  let texte = "Bonjour! Ceci est un exemple de fichier texte."
-  writeFile "exemple.txt" texte
-  putStrLn "Fichier texte créé avec succès!"
+    -- Crée un nouveau fichier texte
+    let filePath = "mon_fichier.txt"
+    handle <- openFile filePath WriteMode
+    -- Ajoute du contenu au fichier
+    hPutStrLn handle "Bonjour tout le monde !"
+    hPutStrLn handle "Je suis un fichier texte écrit en Haskell."
+    -- Ferme le fichier
+    hClose handle
 ```
 
-Après l'exécution du code, un nouveau fichier appelé "exemple.txt" sera créé dans le même répertoire que notre programme. Si nous ouvrons ce fichier, nous verrons le texte que nous avons défini dans la variable "texte".
+Lorsque vous exécutez ce code, un nouveau fichier texte nommé `mon_fichier.txt` sera créé avec les deux phrases écrites à l'intérieur.
 
-## Plongée en profondeur 
+### Plongée en profondeur
 
-En utilisant la fonction "writeFile", il est également possible d'écrire des données structurées telles que des listes ou des tuples dans un fichier texte. Cela peut être utile pour stocker des informations plus complexes dans un format lisible par ordinateur. Nous pouvons également utiliser la fonction "appendFile" pour ajouter du contenu à un fichier existant sans l'écraser.
+Maintenant que vous savez comment écrire un fichier texte en Haskell, vous pouvez aller plus loin et explorer toutes les options disponibles. Par exemple, vous pouvez utiliser la fonction `hPrint` pour écrire des valeurs de différents types (entiers, flottants, booléens, etc.) dans le fichier. Vous pouvez également utiliser des fonctions de manipulation de chaînes de caractères pour créer des fichiers texte plus complexes.
 
-Le processus d'écriture d'un fichier peut sembler simple, mais il est important de noter que cela implique également des fonctionnalités de gestion des erreurs telles que la vérification des permissions d'écriture et la gestion des exceptions. Il est également possible d'utiliser la fonction "withFile" pour garantir que le fichier sera fermé après avoir été utilisé.
+### Voir aussi
 
-## Voir aussi 
-
-- [Documentation officielle sur la gestion de fichiers en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Le tutoriel "Learn You a Haskell" sur l'écriture de fichiers texte](http://learnyouahaskell.com/input-and-output#files-and-streams)
-- [Exemples de code pour écrire des fichiers en Haskell](https://github.com/snird/Haskell-CheatSheet/blob/master/write_file.hs)
+- [Documentation du module System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Tutoriel Haskell pour débutants](https://haskell-lang.org/tutorial/getting-started)
+- [Apprendre Haskell en une journée](https://wiki.haskell.org/Learning_Haskell_in_1_Day)

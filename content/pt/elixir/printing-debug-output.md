@@ -1,51 +1,49 @@
 ---
 title:    "Elixir: Imprimindo saída de depuração"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que imprimir saída de debug em Elixir?
 
-Debugging é uma parte importante do processo de desenvolvimento de software. É através do processo de depuração que podemos encontrar e resolver erros em nosso código. No entanto, pode ser difícil rastrear e entender o comportamento de um programa sem a ajuda de ferramentas de debug. A impressão de saída de debug é uma técnica útil para visualizar os valores de variáveis e o fluxo de execução do código, o que pode facilitar muito o processo de localizar e corrigir erros.
+A impressão de saída de debug é uma técnica crucial no processo de desenvolvimento de software. É uma forma de visualizar o fluxo de execução do seu código e encontrar possíveis erros e defeitos. Ao imprimir dados durante a execução do programa, você pode entender melhor como o seu código está se comportando e identificar problemas mais rapidamente.
 
-## Como fazer
+## Como fazer isso em Elixir?
 
-Para imprimir saída de debug em Elixir, podemos usar a função `IO.inspect/2`. Esta função aceita dois argumentos: o valor que queremos inspecionar e uma opção para formatar a saída. Veja um exemplo de uso da função `IO.inspect/2` abaixo:
-
-```Elixir
-defmodule Exemplo do
-  x = "Olá!"
-  IO.inspect(x, label: "Valor de x:")
-end
-```
-
-A saída deste código seria:
+Em Elixir, imprimir a saída de debug é simples e direto. Basta usar a função `IO.inspect/2` para imprimir qualquer valor em seu código. Aqui está um exemplo básico:
 
 ```
-Valor de x: "Olá!"
+Elixir IO.inspect/2 ``` 
+iex> IO.inspect("Elixir é incrível!")
+"Elixir é incrível!"
 ```
 
-Podemos usar a opção `label` para especificar um rótulo para a saída, o que pode ajudar a identificar o que está sendo inspecionado. Além disso, podemos usar as opções `:pretty` e `:width` para formatar a saída de forma mais legível.
-
-## Profundidade no assunto
-
-Ao usar a função `IO.inspect/2`, podemos imprimir não apenas valores de variáveis, mas também expressões e até mesmo funções. Podemos até mesmo inspecionar o valor de retorno de uma função sem precisar atribuí-lo a uma variável. Por exemplo:
-
-```Elixir
-IO.inspect(div(10, 2))
-```
-
-A saída deste código seria:
+Você também pode imprimir múltiplos valores ao mesmo tempo, passando-os como argumentos separados para a função. Por exemplo:
 
 ```
-5
+Elixir IO.inspect/2 ``` 
+iex> IO.inspect("Elixir", "é", "incrível!")
+"Elixir é incrível!"
 ```
 
-Além disso, podemos usar a função `IO.inspect/2` dentro de outras funções, permitindo que visualizemos o estado de variáveis em diferentes pontos do código.
+Além disso, você pode usar a opção `:label` para incluir um rótulo no seu output, tornando mais fácil a identificação dos dados impressos. Aqui está um exemplo:
+
+```
+Elixir IO.inspect/2 ``` 
+iex> IO.inspect("Elixir", label: "Linguagem")
+"Linguagem: Elixir"
+```
+
+## Uma análise mais profunda
+
+Existem outras funções úteis para imprimir saída de debug em Elixir, como `IO.puts/2` e `IO.inspect/4`, que permitem personalizar ainda mais o seu output. Além disso, é possível definir diferentes níveis de depuração com a função `Logger.debug/1`, permitindo que você escolha quais partes do código serão impressas durante a execução.
+
+Além disso, vale ressaltar que a impressão de saída de debug não deve ser usada como um substituto para testes adequados e depuração completa. Ela é apenas uma ferramenta adicional para ajudá-lo a entender melhor o seu código e encontrar possíveis problemas.
 
 ## Veja também
 
-- [Documentação oficial da função `IO.inspect/2`](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Artigo sobre debug em Elixir](https://medium.com/@jeremyjh/elixir-debugging-techniques-8116ed92d0d9)
-- [Vídeo explicando como usar a função `IO.inspect/2`](https://www.youtube.com/watch?v=wVHbHbMjDgs)
+- [Documentação oficial do Elixir](https://hexdocs.pm/elixir)
+- [Guia de Depuração em Elixir](https://medium.com/@tauli/elixir-debugging-basics-df8f319c0b13)
+- [Vídeo tutorial sobre impressão de saída de debug em Elixir](https://www.youtube.com/watch?v=eChYMdz-rHY)

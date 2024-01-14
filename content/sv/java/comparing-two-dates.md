@@ -1,42 +1,59 @@
 ---
-title:    "Java: Jämföra två datum"
+title:    "Java: Jämförande av två datum"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att jämföra två datum kan verka som en enkel uppgift, men det finns flera situationer där det är viktigt att kunna göra det korrekt. Till exempel kan det behövas för att bestämma födelsedagar eller för att kontrollera giltigheten på ett låneavtal.
+Varför: Att jämföra två datum i Java kan vara användbart i många olika situationer, till exempel vid hantering av bokningar, registrering av tidsstämplar eller beräkning av ålder. I denna bloggpost kommer vi att gå igenom hur man jämför två datum i Java och vilka verktyg som finns tillgängliga för detta.
 
-## Hur man gör 
-För att kunna jämföra två datum i Java kan man använda sig av klassen "LocalDate" som finns i Java 8 och senare versioner. Här är ett enkelt exempel på hur man kan jämföra två datum:
+## Hur man jämför två datum i Java
+
+För att jämföra två datum i Java finns det flera olika metoder och klasser som kan användas. Nedan följer några exempel:
 
 ```Java
-LocalDate datum1 = LocalDate.of(2020, 02, 15);
-LocalDate datum2 = LocalDate.of(2019, 12, 20);
-if (datum1.isAfter(datum2)) {
-    System.out.println("Datum 1 kommer efter datum 2.");
-} else if (datum1.isBefore(datum2)) {
-    System.out.println("Datum 1 kommer före datum 2.");
-} else {
-    System.out.println("Datumen är lika.");
+// Skapa två datumobjekt för jämförelse
+Date datum1 = new Date();
+Date datum2 = new Date();
+
+// Använd metoden compareTo() för att jämföra två datumobjekt
+int resultat = datum1.compareTo(datum2);
+
+// Om resultatet är 0 så är datumen lika, om det är mindre än 0 är datum1 tidigare än datum2, och om det är större än 0 är datum1 senare än datum2
+if(resultat == 0){
+  System.out.println("Datumen är lika.");
+}
+else{
+  System.out.println("Datumen är inte lika.");
 }
 ```
 
-Output:
+I detta exempel används metoden `compareTo()` som returnerar en integer som kan användas för att avgöra ordningen mellan två datum. Det finns flera andra metoder som också kan användas, till exempel `after()` och `before()`.
 
-> Datum 1 kommer efter datum 2.
+```Java
+// Skapa två datumobjekt för jämförelse
+LocalDate datum1 = LocalDate.now();
+LocalDate datum2 = LocalDate.of(2020, 5, 14);
 
-I det här exemplet kan man se att vi först deklarerar två olika datum med hjälp av "LocalDate.of()", och sedan använder vi metoden "isAfter()" och "isBefore()" för att jämföra dem. Om man istället vill jämföra tidpunkter kan man använda klassen "LocalDateTime" på samma sätt.
+// Använd metoden isAfter() för att avgöra om ett datum är senare än ett annat
+if(datum2.isAfter(datum1)){
+  System.out.println("Datum 2 är senare än datum 1.");
+}
+```
 
-## Djupdykning
-När man jämför två datum är det viktigt att vara medveten om att det finns flera olika sätt att göra det på beroende på vilket resultat man vill få. Till exempel kan man använda sig av metoden "isEqual()" för att kontrollera om två datum är exakt lika, eller "compareTo()" för att få en numerisk jämförelse av två datum.
+I detta exempel används klassen `LocalDate` som finns tillgänglig från Java 8. Denna klass har metoder som `isAfter()` och `isBefore()` för att jämföra två datum i LocalDate-format.
 
-Man bör även vara uppmärksam på tidszoner när man jämför datum och tider för att undvika eventuella felaktiga resultat. Det är också viktigt att vara medveten om hur datum och tider representeras i Java, eftersom detta kan påverka hur man jämför dem.
+## Djupdykning i jämförelse av datum
+
+När man jämför datum i Java är det viktigt att vara medveten om att det finns olika typer av datumformat och klasser som kan användas. Det är också viktigt att hantera tidszoner och att konvertera mellan olika tidszoner om det behövs.
+
+För att undvika felaktiga resultat bör man också vara noga med att jämföra datum på rätt nivå av precision. Till exempel bör man inte jämföra två datum baserat på timmar och minuter om de också innehåller sekunder.
+
+I vissa fall kan det också vara nödvändigt att använda metoder för att konvertera ett datum till en annan typ, till exempel från `Date` till `LocalDate` eller vice versa.
 
 ## Se även
-Här är några användbara resurser för att lära sig mer om att jämföra datum i Java:
 
-- [Java LocalDate API dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java LocalDateTime API dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Java Date and Time tutorials på Baeldung](https://www.baeldung.com/java-date-time)
+- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Java Date vs Calendar](https://www.baeldung.com/java-date-vs-calendar)
+- [Joda-Time library](https://www.joda.org/joda-time/)

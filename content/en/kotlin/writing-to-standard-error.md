@@ -1,46 +1,43 @@
 ---
 title:    "Kotlin recipe: Writing to standard error"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-When writing a Kotlin program, it is important to understand how to handle errors and exceptions. This includes knowing how to write to standard error, which is a useful tool for debugging and troubleshooting. By writing to standard error, we can get more detailed information about the error and pinpoint the exact issue in our code.
+
+In the world of programming, there are numerous reasons why someone may choose to write to standard error. One main reason is for debugging purposes. When errors occur in code, they are often sent to standard error, allowing developers to identify and fix them more efficiently. Additionally, writing to standard error can be useful for logging important information or displaying warnings to the user.
 
 ## How To
-To write to standard error in Kotlin, we can use the `System.err` object. This object represents the standard error stream, where error messages are printed. To use it, we can simply use the `write` method and pass in the message we want to print. Let's look at an example:
+
+To write to standard error in Kotlin, you can use the `System.err` object and the `println()` function. For example:
 
 ```Kotlin
-fun main() {
-    try {
-        val result = 10 / 0 // division by zero
-        println("Result: $result")
-    } catch (e: ArithmeticException) {
-        System.err.write("ERROR: Cannot divide by zero!")
-    }
-}
+System.err.println("An error has occurred.")
 ```
 
-In this example, we have a try-catch block where we attempt to divide 10 by 0, which will result in an `ArithmeticException`. Inside the catch block, we use the `System.err` object to write the error message to standard error. When we run this program, the output will look like this:
+This code will print the specified message to standard error, which can be viewed in the console. Another option is to use the `eprint()` function from the Kotlin standard library. This function takes in any object and prints it to standard error. For example:
 
-```
-ERROR: Cannot divide by zero!
+```Kotlin
+eprint("Warning: Low battery level.")
 ```
 
-We can also use the `println` method to write to standard error, but using `System.err` is considered a better practice as it explicitly shows that we are writing to the error stream.
+This code will print the warning message to standard error. It's important to note that standard error is typically used for text-based output, so it's best to avoid formatting or using any special characters.
 
 ## Deep Dive
-It's important to note that writing to standard error only works for command-line programs. If we are developing a web application, the error messages will be displayed in the console and not in standard error. We can also use `System.err` to write to a file by using a `FileOutputStream` as follows:
 
-```Kotlin
-System.setErr(FileOutputStream("error.log"))
-System.err.write("ERROR: Cannot divide by zero!")
-```
+Behind the scenes, writing to standard error is actually writing to a separate stream than standard output. In Kotlin, standard error is known as the `stderr` stream, while standard output is known as the `stdout` stream. These streams are important for differentiating between regular console output and errors or warnings.
 
-This will write the error message to a file called "error.log" instead of the console. It's also worth mentioning that we can change the default error output by using `System.setErr`.
+When using the `println()` function, the default behavior is to write to standard output. However, by using the `System` object and the `err` property, we are able to write to standard error instead. In most cases, this is all that is needed to successfully write to standard error in Kotlin.
 
 ## See Also
-- [Kotlin Documentation on Writing to Standard Streams](https://kotlinlang.org/docs/reference/standard-input-output.html)
-- [Java Documentation on Standard Streams](https://docs.oracle.com/javase/tutorial/essential/io/sysstreams.html)
-- [Tutorial on Exception Handling in Kotlin](https://www.baeldung.com/kotlin/exception-handling)
+
+For more information on writing to standard error in Kotlin, you may find the following resources helpful:
+
+- [Kotlin documentation on I/O](https://kotlinlang.org/docs/reference/keyword-reference.html#io)
+- [Kotlin standard library - eprint function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/eprint.html)
+- [Understanding Standard Streams in Java and Kotlin](https://www.baeldung.com/java-standard-streams)
+
+Now that you have a better understanding of writing to standard error in Kotlin, you can use this feature to improve your debugging and error handling processes in your code. Happy coding!

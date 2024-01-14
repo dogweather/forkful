@@ -1,70 +1,49 @@
 ---
 title:    "C++: Escrevendo um arquivo de texto"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## Por que escrever um arquivo de texto em C++?
 
-Escrever um arquivo de texto é uma tarefa essencial para todos os programadores, pois permite que os dados sejam armazenados e acessados facilmente, mesmo após o encerramento de um programa. Além disso, a criação de arquivos de texto é uma forma simples de armazenar informações e compartilhá-las com outros usuários.
+Se você é um programador iniciante ou experiente em C++, provavelmente já se deparou com a necessidade de escrever um arquivo de texto em algum momento. Mas por que fazemos isso?
 
-## Como fazer?
+Escrever um arquivo de texto é útil quando queremos armazenar dados ou informações permanentemente, ou seja, mesmo quando o programa é finalizado, esses dados ainda estarão lá para serem acessados em uma próxima execução. Isso é especialmente útil para dados que não podem ser perdidos, como configurações de um programa ou resultados de uma análise.
 
-Para criar um arquivo de texto em C++, é necessário utilizar algumas funções específicas como `ofstream` e `open()`. Vamos ver um exemplo de como criar um arquivo de texto chamado "meu_arquivo.txt" e escrever algumas informações nele:
+## Como escrever um arquivo de texto em C++
 
-```C++
-#include <iostream>
+Escrever um arquivo de texto em C++ é uma tarefa relativamente simples. Primeiro, precisamos incluir a biblioteca fstream para trabalhar com arquivos de texto. Em seguida, devemos criar um objeto do tipo ofstream e utilizá-lo para escrever em um arquivo específico.
+
+```
 #include <fstream>
 
+using namespace std;
+
 int main() {
-    // criando um objeto ofstream
-    ofstream arquivo;
+    ofstream arquivo("exemplo.txt"); //cria o arquivo
 
-    // abrindo o arquivo
-    arquivo.open("meu_arquivo.txt");
+    //escreve no arquivo
+    arquivo << "Este é um exemplo de arquivo de texto" << endl;
+    arquivo << "Podemos escrever informações aqui" << endl;
 
-    // verificando se o arquivo foi aberto corretamente
-    if(arquivo.is_open()) {
-        // escrevendo no arquivo
-        arquivo << "Bem-vindo ao meu primeiro arquivo de texto em C++!" << endl;
-        arquivo << "Aqui está um número: " << 42 << endl;
-        arquivo << "E um caractere: " << 'A' << endl;
-
-        // fechando o arquivo
-        arquivo.close();
-    }
-    else {
-        // caso o arquivo não possa ser aberto
-        cout << "O arquivo não pode ser aberto." << endl;
-    }
+    arquivo.close(); //fecha o arquivo
 
     return 0;
 }
 ```
 
-A saída desse código será um arquivo de texto com as seguintes informações:
+Se executarmos esse código, um novo arquivo chamado "exemplo.txt" será criado e irá conter as informações que especificamos.
 
-```
-Bem-vindo ao meu primeiro arquivo de texto em C++!
-Aqui está um número: 42
-E um caractere: A
-```
+## Mergulho Profundo
 
-É importante lembrar que o arquivo será criado no mesmo diretório onde o programa foi executado.
+Além de escrever simplesmente texto em um arquivo, também é possível formatar e organizar os dados de forma mais clara e legível. Podemos usar comandos como setw(), setfill(), setprecision(), entre outros, para formatar números e strings em uma saída de texto.
 
-## Mergulho profundo
-
-Ao trabalhar com arquivos de texto em C++, é importante entender o conceito de *streams*. Uma stream é um fluxo de dados, que pode ser de entrada (input) ou saída (output). Utilizamos as funções `ofstream` e `ifstream` para criar objetos de fluxo de saída e de entrada, respectivamente.
-
-Para escrever em um arquivo, utilizamos a função `<<` para inserir dados na stream de saída. Já para ler de um arquivo, utilizamos a função `>>` para extrair dados da stream de entrada.
-
-Além disso, é importante lembrar de sempre fechar o arquivo após utilizá-lo, para evitar problemas de vazamento de memória.
+Também é importante lembrar de verificar se o arquivo foi aberto com sucesso antes de tentar escrever nele. Podemos fazer isso verificando o valor booleano do objeto ofstream depois de criá-lo.
 
 ## Veja também
 
-- [Tutorial de arquivos em C++ (em inglês)](https://www.cplusplus.com/doc/tutorial/files/)
-- [Documentação oficial do C++ para manipulação de arquivos (em inglês)](https://en.cppreference.com/w/cpp/io)
-- [Guia completo de Markdown (em português)](https://www.markdownguide.org/)
-
-O uso de arquivos de texto em C++ é uma habilidade fundamental para todo programador. Com a prática e conhecimento adequado, você será capaz de manipular arquivos de texto de forma eficiente e criar programas mais completos e robustos. Espero que esse artigo tenha sido útil para você!
+- [Tutorial básico sobre arquivos em C++ (em inglês)](https://www.cplusplus.com/doc/tutorial/files/)
+- [Documentação da classe ofstream (em inglês)](https://www.cplusplus.com/reference/fstream/ofstream/)
+- [Mais exemplos de escrita de arquivos em C++ (em inglês)](https://www.geeksforgeeks.org/writing-text-file-c/)

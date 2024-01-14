@@ -1,48 +1,90 @@
 ---
 title:    "C: 문자열을 소문자로 변환하기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-스트링을 소문자로 변환하려는 이유는 파이썬에서 데이터 처리 또는 데이터 분석을 할 때 유용할 수 있습니다.
+문자열을 소문자로 변환하는 것이 유용한 이유는 다양합니다. 예를 들어, 사용자로부터 입력받은 문자열을 일관된 형식으로 처리하고 비교할 때 유용합니다. 또한, 데이터베이스에서 대소문자를 구분하는 경우 입력값을 모두 소문자로 변환하여 검색 결과를 정확하게 얻을 수 있습니다.
 
-## 방법
+## 어떻게?
 
-우선, `ctype.h` 헤더 파일을 포함시켜 아스키 코드 변환을 가능하게 만듭니다. 그 후에, `tolower()` 함수를 사용하여 문자열에 있는 모든 대문자를 소문자로 변환합니다. 아래는 C 언어로 이를 구현한 코드와 예시 출력입니다.
+C 언어에서 문자열을 소문자로 변환하는 방법에는 여러 가지가 있지만 가장 간단한 방법은 모든 문자를 ASCII 코드로 변환하고 해당 코드에서 32를 빼는 것입니다. 아래의 예시 코드를 확인해보세요.
 
 ```C
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 
-int main()
-{
-    char str[100];
+int main() {
+    char str[50];
     printf("문자열을 입력하세요: ");
     scanf("%s", str);
 
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        str[i] = tolower(str[i]);
+    for(int i=0; i < strlen(str); i++) {
+        // 대문자 ASCII 코드인 65에서 97을 빼주어 소문자로 변환합니다.
+        if(str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
     }
 
     printf("변환된 문자열: %s", str);
-
     return 0;
 }
 ```
 
-입력: HelloWorld
-출력: helloworld
+### 출력 예시
 
-## 깊은 고찰
+```
+문자열을 입력하세요: HELLOworld
+변환된 문자열: helloworld
+```
 
-문자열을 소문자로 변환하는 것은 프로그래밍에서 자주 사용되는 작업 중 하나입니다. 이는 문자열의 대소문자를 비교할 때 유용하며, 대문자로 입력된 데이터를 소문자로 재정렬하는 등의 작업에 사용될 수 있습니다. 하지만 문자열이나 문자를 비교할 때에는 주의해야 합니다. 다른 언어로 작성한 문자열의 경우 정확한 변환이 이루어지지 않을 수 있으며, 이는 프로그램의 오류를 발생시킬 수 있습니다.
+## 딥 다이브
 
-## 참고자료
+문자열을 소문자로 변환하는 방법에 대해 더 깊게 알아보겠습니다. 위의 예시 코드에서는 ASCII 코드를 사용하여 문자를 변환하였지만, 유니코드에서는 더 다양한 문자를 지원하기 때문에 더 복잡한 과정이 필요합니다.
 
-- [C 함수 레퍼런스 - tolower](https://www.cplusplus.com/reference/cctype/tolower/)
-- [Stack Overflow - How can I convert a string to lowercase in C?](https://stackoverflow.com/questions/351733/how-can-i-convert-a-string-to-lowercase-in-c)
+또한, 특수 문자나 공백 등의 예외 상황을 처리해주어야 합니다. 이를 위해 C 언어에서는 `tolower()` 함수를 제공하고 있습니다. 아래의 예시 코드를 확인해보세요.
+
+```C
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[50];
+    printf("문자열을 입력하세요: ");
+    scanf("%s", str);
+
+    for(int i=0; i < strlen(str); i++) {
+        // 검사한 문자가 대문자인 경우에만 소문자로 변환합니다.
+        str[i] = tolower(str[i]);
+    }
+
+    printf("변환된 문자열: %s", str);
+    return 0;
+}
+```
+
+### 출력 예시
+
+```
+문자열을 입력하세요: MyIdeaS
+변환된 문자열: myideas
+```
+
+## 더 알아보기
+
+여러분은 이제 문자열을 소문자로 변환하는 방법에 대해 잘 알게 되었습니다. 더 많은 정보를 얻기 위해 아래의 링크를 참고해보세요.
+
+* [ASCII 코드 표](http://www.asciitable.com/)
+* [C 언어의 string.h 라이브러리](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+* [C 언어의 ctype.h 라이브러리](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+
+## 관련 자료
+
+* [C 언어로 문자열을 역순으로 변환하는 방법](https://linktoexample.com)
+* [C 언어에서 대소문자를 구분하지 않고 문자열을 비교하는 방법](https://linktoexample.com)
+* [C 언어에서 문자열을 정렬하는 방법](https://linktoexample.com)

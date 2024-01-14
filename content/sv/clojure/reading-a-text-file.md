@@ -1,52 +1,52 @@
 ---
-title:    "Clojure: Läsa en textfil"
+title:    "Clojure: Läsning av en textfil"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att läsa textfiler är en grundläggande uppgift som många programmerare stöter på i sitt arbete. Det är viktigt att veta hur man ska hantera textfiler både för bearbetning av data och för att läsa in information i sina program.
+Att läsa en textfil kan vara en användbar kunskap inom Clojure-programmering. Det låter dig läsa och manipulera data från en textfil på ett enkelt sätt, vilket kan vara användbart för många olika användningsområden.
 
-# Så här gör du
+## Hur man gör
 
-För att läsa en textfil i Clojure kan du använda funktionen "slurp" tillsammans med filnamnet som argument. Detta kommer att läsa in hela filinnehållet som en sträng och spara den i en variabel. Till exempel:
-
-```Clojure
-(def data (slurp "min_textfil.txt"))
-```
-
-För att skriva ut innehållet i filen kan du använda "println" funktionen och skriva ut variabeln som du sparade innehållet i. Till exempel:
+För att läsa en textfil i Clojure, behöver du först öppna filen med hjälp av inbyggda funktionen "clojure.java.io/resource". Sedan kan du läsa filen rad för rad med hjälp av "clojure.java.io/reader" funktionen. Nedan finns ett kodexempel:
 
 ```Clojure
-(println data)
+(def file-resource (clojure.java.io/resource "names.txt"))
+(def file-reader (clojure.java.io/reader file-resource))
+
+; Läser rad för rad tills filen är slut
+(while-some? line (line-seq file-reader)
+  (println line))
 ```
 
-Om du vill läsa in filen rad för rad kan du använda funktionen "line-seq". Denna funktion returnerar en sekvens av alla rader i filen. Du kan sedan använda "doall" funktionen för att gå igenom sekvensen och göra vad du vill med varje enskild rad. Till exempel:
+Om vår "names.txt" fil hade följande innehåll:
 
-```Clojure
-(doall
-  (line-seq (open-file "min_textfil.txt")))
+```
+Anna
+Karl
+Maria
 ```
 
-# Djupdykning
+Så skulle ovanstående kod skriva ut:
 
-När du läser en textfil med Clojure är det viktigt att vara medveten om hur filen är kodad. Om filen är kodad i ett annat teckenuppsättning än standard kommer du att behöva ange detta med hjälp av ":encoding" tillsammans med filnamnet. Till exempel:
-
-```Clojure
-(def data (slurp "min_textfil.txt" :encoding "UTF-8"))
+```
+Anna
+Karl
+Maria
 ```
 
-Det är också viktigt att ta hänsyn till eventuella radbrytningar som kan finnas i filen, särskilt om du läser in filen rad för rad. I en Windowsmiljö kan radbrytningarna skilja sig från en Unixmiljö. Du kan ange hur Clojure ska hantera radbrytningarna med hjälp av ":newline" tillsammans med "line-seq" funktionen. Till exempel:
+## Djupdykning
 
-```Clojure
-(doall
-  (line-seq (open-file "min_textfil.txt" :newline :unix)))
-```
+När du läser en textfil i Clojure, är det viktigt att förstå hur filen kommer att läsas. Vanligtvis läses filen rad för rad, så om du vill läsa hela filen samtidigt, måste du använda en loop eller en rekursiv funktion. Det är också viktigt att känna till vad varje rad i filen innehåller, eftersom du behöver ange rätt datastruktur för att lagra den informationen korrekt.
 
-# Se också
+En annan viktig aspekt att tänka på är filens encoding, eller hur tecken kodas. Om du läser en fil med ett annat encoding än standard, måste du specificera det i din kod, annars kan tecken bli otydliga eller felaktiga.
 
-- [Clojure Dokumentation - File I/O](https://clojure.org/reference/java_interop#_file_io)
-- [Clojure Dokumentation - Strings](https://clojure.org/reference/strings)
-- [Java Dokumentation - BufferedReader Class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
+## Se även
+
+- Clojure.io: https://clojure.org/reference/io
+- Filmanipulationsfunktioner i Clojure: https://martintrojer.github.io/clojure/2016/06/07/clojure-and-file-io
+- Kom i gång med Clojure: http://clojurekoans.com

@@ -1,52 +1,39 @@
 ---
 title:    "Java: Comenzando un nuevo proyecto"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué empezar un nuevo proyecto?
+## ¿Por qué empezar un nuevo proyecto en Java?
 
-Empezar un nuevo proyecto en Java puede ser una oportunidad emocionante para mejorar tus habilidades de programación y crear algo nuevo y único. Además, puede ser una excelente manera de aplicar tus conocimientos en un proyecto real.
+La programación es una habilidad valiosa en la actualidad, y Java es uno de los lenguajes de programación más populares y utilizados en la industria. Empezar un nuevo proyecto en Java te brinda la oportunidad de aprender y mejorar tus habilidades, así como también de crear aplicaciones útiles y relevantes para el mundo tecnológico.
 
-## Cómo hacerlo
+## Cómo empezar un nuevo proyecto en Java
 
-Para empezar un nuevo proyecto en Java, primero debes tener instalado el JDK (Java Development Kit) en tu computadora. Luego, puedes usar tu IDE (entorno de desarrollo integrado) preferido para escribir y ejecutar tu código.
-
-Para crear un nuevo proyecto, sigue estos pasos:
+Para empezar un proyecto en Java, es necesario tener instalado el JDK (Java Development Kit) en tu computadora. A continuación, se presentan algunos ejemplos de código que puedes probar en tu IDE (Entorno de Desarrollo Integrado) favorito:
 
 ```Java
-// Importar el paquete necesario
-import java.io.*;
-
-// Crear la clase principal
-public class NuevoProyecto {
+// Hola mundo
+public class HolaMundo {
     // Método principal
     public static void main(String[] args) {
-        // Tu código aquí
+        System.out.println("¡Hola mundo!");
     }
 }
 ```
 
-Una vez que hayas creado y guardado tu archivo Java, puedes compilarlo y ejecutarlo en tu IDE. Si estás usando Eclipse, puedes hacer clic derecho en tu proyecto y seleccionar "Run as -> Java Application", mientras que si estás usando IntelliJ, puedes hacer clic derecho en tu archivo y seleccionar "Run 'NombreDelArchivo'".
+El código anterior imprimirá "¡Hola mundo!" en la consola cuando se ejecute. Este es un simple ejemplo de un programa en Java, pero puedes seguir explorando y aprendiendo sobre el lenguaje a través de tutoriales y proyectos prácticos.
 
-Si todo ha ido bien, deberías ver la salida de tu programa en la consola de tu IDE.
+## Profundizando en el inicio de un nuevo proyecto
 
-## Profundizando
+Antes de empezar a escribir código, es importante tener una idea clara de lo que quieres lograr con tu proyecto. Puedes comenzar por hacer un diseño y planificación de tu aplicación, identificando los requisitos y funcionalidades que deseas incluir. También es importante tener en cuenta las buenas prácticas de programación, como la estructura de clases y el uso de comentarios para hacer tu código más legible y mantenible.
 
-Antes de comenzar un nuevo proyecto en Java, es importante primero tener una idea clara de lo que quieres hacer y cómo quieres hacerlo. Aquí hay algunas cosas que debes tener en cuenta al comenzar un nuevo proyecto:
-
-- Define claramente el problema que estás tratando de resolver y el objetivo de tu proyecto.
-- Crea un plan de proyecto detallado que incluya todos los pasos necesarios para completarlo.
-- Investiga y familiarízate con las herramientas y bibliotecas que puedes usar para facilitar tu trabajo.
-- Haz una lista de posibles problemas que puedan surgir y cómo solucionarlos.
-- Prueba y depura tu código regularmente para asegurarte de que todo esté funcionando correctamente.
-
-Recuerda, un buen plan y una preparación adecuada pueden ahorrarte mucho tiempo y posibles dolores de cabeza en el futuro.
+Una vez que tengas un diseño y planificación sólidos, puedes comenzar a codificar tu proyecto y hacer uso de las características del lenguaje Java, como la orientación a objetos y la amplia biblioteca estándar, para construir una aplicación eficiente y funcional.
 
 ## Ver también
 
-- [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [Entorno de desarrollo integrado (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment)
-- [Ejemplos de proyectos en Java](https://github.com/karan/Projects)
 - [Documentación oficial de Java](https://docs.oracle.com/en/java/)
+- [Tutoriales de programación en Java](https://www.tutorialesprogramacionya.com/javaya/)
+- [Guía para crear una aplicación Java paso a paso](https://www.javatpoint.com/creating-first-java-app)

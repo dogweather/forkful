@@ -1,61 +1,121 @@
 ---
-title:    "C#: Utilisation des expressions régulières"
+title:    "C#: Utiliser les expressions régulières"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi utiliser des expressions régulières en C#?
+## Pourquoi utiliser les expressions régulières en programmation C#?
 
-Les expressions régulières sont des outils puissants pour gérer des chaînes de caractères complexes dans les programmes en C#. Elles permettent de rechercher, de remplacer et de valider des données en utilisant des modèles spécifiques. Si vous travaillez avec des données textuelles, les expressions régulières sont un outil essentiel pour augmenter votre efficacité et votre précision.
+Les expressions régulières sont un outil très puissant qui permettent de rechercher et de manipuler du texte en utilisant des motifs spécifiques. En utilisant des expressions régulières, vous pouvez créer des règles de recherche et de remplacement très précises pour traiter vos données. Cela peut être utile dans de nombreuses situations différentes, comme par exemple dans le traitement de formulaires en ligne, la vérification de la validité des adresses e-mail ou la recherche de mots-clés dans un document.
 
-Comment utiliser les expressions régulières en C# ?
+## Comment utiliser les expressions régulières en C#?
 
-Voici un exemple simple pour vous montrer comment utiliser les expressions régulières en C#. Tout d'abord, nous allons créer une chaîne de caractères :
+Pour utiliser les expressions régulières en C#, vous devez d'abord importer l'espace de noms `System.Text.RegularExpressions`. Ce dernier contient les classes et les méthodes nécessaires pour travailler avec les expressions régulières.
 
-```C#
-string texte = "Bonjour, je suis un texte contenant plusieurs numéros de téléphone : 06 12 34 56 78, 01 23 45 67 89 et 09 87 65 43 21.";
-```
-
-Pour rechercher tous les numéros de téléphone dans cette chaîne, nous allons utiliser une expression régulière qui ressemble à ceci :
+Voici un exemple de code simple qui recherche toutes les occurrences de la lettre "e" dans une chaîne de caractères en utilisant l'expression régulière `e`.
 
 ```C#
-@"(\d{2} ){4}\d{2}";
-```
+using System;
+using System.Text.RegularExpressions;
 
-Cette expression régulière utilise des symboles spéciaux, tels que le "\d" qui représente un chiffre et les accolades pour indiquer le nombre de répétitions souhaitées. Maintenant, voyons comment nous pouvons appliquer cette expression régulière sur notre chaîne de caractères :
-
-```C#
-MatchCollection matches = Regex.Matches(texte, @"(\d{2} ){4}\d{2}");
-
-foreach (Match match in matches)
+namespace ExempleRegex
 {
-    Console.WriteLine(match.Value); // affiche chaque numéro de téléphone trouvé
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string phrase = "Bonjour tout le monde!";
+            string pattern = "e";
+            MatchCollection matches = Regex.Matches(phrase, pattern);
+
+            foreach (Match match in matches)
+            {
+                Console.WriteLine("Occurrence trouvée: " + match.Value);
+            }
+        }
+    }
 }
 ```
 
-La sortie de ce code sera :
+L'output de ce code sera:
 
 ```
-06 12 34 56 78
-01 23 45 67 89
-09 87 65 43 21
+Occurrence trouvée: e
+Occurrence trouvée: e
+Occurrence trouvée: e
 ```
 
-Cette méthode peut sembler un peu complexe au début, mais une fois que vous comprendrez les bases des expressions régulières, vous pourrez les utiliser pour manipuler des chaînes de caractères de manière très précise et efficace.
+Vous pouvez également utiliser des métacaractères pour effectuer des recherches plus précises. Les métacaractères sont des caractères spéciaux qui représentent des groupes de caractères.
 
-Plongée en profondeur
+Voici un exemple de code qui vérifie si un numéro de téléphone est valide en utilisant l'expression régulière `\d{3}-\d{3}-\d{4}`, qui correspond au format des numéros de téléphone américains:
 
-Maintenant que vous avez vu un exemple concret d'utilisation des expressions régulières en C#, voici quelques informations supplémentaires pour vous aider à maîtriser cet outil. Tout d'abord, il existe différents symboles spéciaux pour représenter différentes classes de caractères, tels que "\w" pour les lettres et les chiffres et "\s" pour les espaces. De plus, vous pouvez utiliser des modificateurs pour indiquer si une correspondance doit être sensible à la casse ou non, ou pour rechercher des caractères non alphabétiques.
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-Il est également possible d'utiliser des expressions régulières dans des conditions et des boucles pour effectuer des tâches spécifiques en fonction des données trouvées. De plus, de nombreux éditeurs de code et logiciels de développement offrent une assistance et une coloration syntaxique pour les expressions régulières, ce qui facilite leur utilisation et leur compréhension.
+namespace ExempleRegex
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string numero = "123-456-7890";
+            string pattern = @"\d{3}-\d{3}-\d{4}";
+            Match match = Regex.Match(numero, pattern);
 
-Voir aussi
+            if (match.Success)
+            {
+                Console.WriteLine("Le numéro de téléphone est valide.");
+            }
+            else
+            {
+                Console.WriteLine("Le numéro de téléphone n'est pas valide.");
+            }
+        }
+    }
+}
+```
 
-Voici quelques ressources supplémentaires pour vous aider à approfondir vos connaissances sur les expressions régulières en C# :
+## Approfondissement: Utilisation avancée des expressions régulières en C#
 
-- Tutoriel Microsoft sur les expressions régulières en C# : https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference
-- Outil de testeur d'expressions régulières en ligne : https://regex101.com/
-- Livre "Mastering Regular Expressions" de Jeffrey E. F. Friedl : https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/
+Les expressions régulières en C# offrent de nombreuses fonctionnalités avancées telles que les groupes de capture, les modificateurs et les expressions régulières récursives. L'utilisation de ces fonctionnalités peut être très utile dans des cas plus complexes de recherche et de manipulation de texte.
 
-J'espère que cet article vous a donné un aperçu des possibilités qu'offrent les expressions régulières en C#. N'hésitez pas à pratiquer et à explorer pour en apprendre davantage sur cet outil puissant et utile. Bon codage !
+Par exemple, vous pouvez utiliser un groupe de capture pour extraire une partie spécifique d'une chaîne de caractères. Voici un exemple de code qui extrait les noms de domaine des adresses e-mail en utilisant l'expression régulière `@(\w+\.\w+)`:
+
+```C#
+using System;
+using System.Text.RegularExpressions;
+
+namespace ExempleRegex
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string email = "john.doe@example.com";
+            string pattern = "@(\w+\.\w+)";
+            Match match = Regex.Match(email, pattern);
+
+            if (match.Success)
+            {
+                Console.WriteLine("Domaine: " + match.Groups[1].Value);
+            }
+        }
+    }
+}
+```
+
+L'output de ce code sera:
+
+```
+Domaine: example.com
+```
+
+Pour en savoir plus sur les expressions régulières en C#, consultez la documentation officielle de Microsoft sur les expressions régulières en C# ou divers tutoriels en ligne.
+
+## Voir aussi
+- [Documentation Microsoft sur les expressions régulières en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions)
+- [Tutoriel sur les expressions régulières en C#](https://www.bogotobogo.com/cplusplus/regexes.php)
+- [Référence rapide des expressions régulières en C#](https://www.rexegg.com/regex-quickstart.html)

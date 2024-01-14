@@ -1,70 +1,43 @@
 ---
-title:    "Elixir: 删除匹配模式的字符"
+title:    "Elixir: 匹配模式的字符删除"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要删除匹配模式的字符？
+## 为什么
 
-有时候在编程中，我们会遇到需要删除特定字符的情况。这可能是为了清洗数据，提取特定内容等等。使用Elixir编程语言，我们可以很容易地根据特定模式删除字符，让我们来学习如何做到这一点！
+删除匹配特定模式的字符可能是一项非常有用的任务。例如，当我们需要清洁文本数据或转换文本时，删除特定字符可以帮助我们轻松地处理数据集。
 
-## 如何实现
+## 如何操作
 
-要删除匹配模式的字符，我们可以使用Elixir内置的`String.replace/3`函数。它接受三个参数：源字符串、需要替换的模式和替换后的字符串。
+在Elixir中，我们可以使用`String.replace`函数来删除匹配特定模式的字符。让我们看一个例子：
 
-```Elixir
-# 要删除所有数字
-input = "abc123def456ghi"
+```elixir
+str = "This is an example string with 123 numbers."
 
-String.replace(input, ~r/[0-9]/, "") # 输出 "abcdefghi"
+result = String.replace(str, ~r/[0-9]/, "")
+
+IO.puts(result)
 ```
 
-在这个例子中，我们使用了正则表达式模式`[0-9]`来匹配所有数字，并将它们替换为空字符串，从而删除了所有数字。
+输出：
 
-我们也可以使用`String.replace/3`函数来删除特定单词：
-
-```Elixir
-# 要删除"Elixir"这个单词
-input = "I love Elixir, it's my favorite language!"
-
-String.replace(input, "Elixir", "") # 输出 "I love , it's my favorite language!"
+```
+This is an example string with  numbers.
 ```
 
-在这个例子中，我们将"Elixir"替换为空字符串，从而删除了这个单词。
+在这个例子中，我们使用了正则表达式`~r/[0-9]/`来匹配数字，然后用空字符串替换这些数字，从而删除它们。
 
 ## 深入探讨
 
-除了使用简单的字符串和正则表达式来匹配字符，我们也可以使用更复杂的模式来删除字符。Elixir的`String.replace/3`函数可以接受任何一个实现了`String.Chars`协议的数据结构作为模式。
+删除匹配特定模式的字符是通过使用正则表达式来实现的。正则表达式是一种强大的文本匹配工具，它可以帮助我们快速而准确地识别和处理文本。在Elixir中，我们可以使用`Regex`模块来创建和操作正则表达式对象。有关更多关于正则表达式的信息，请查阅[Elixir官方文档](https://hexdocs.pm/elixir/Regex.html)。
 
-```Elixir
-# 要删除所有小写字母
-input = "Hello, world!"
-pattern = String.Chars.downcase().(&(&1 in ?a..?z))
+如果我们想要更加复杂的删除操作，例如删除多个不同的字符，我们可以使用`Regex.run`函数来匹配所有符合模式的字符，并将它们替换为指定字符串。我们也可以使用`Regex.replace`函数来自定义替换逻辑。在文本处理任务中，正则表达式通常是一项不可或缺的工具。
 
-String.replace(input, pattern, "") # 输出 "H, !"
-```
+## 参考链接
 
-在这个例子中，我们使用了一个lambda表达式来定义模式，它将匹配所有小写字母并将它们替换为空字符串，从而删除了所有小写字母。
-
-我们还可以使用函数作为模式来动态地选择需要删除的字符：
-
-```Elixir
-# 要删除所有偶数
-input = [1, 2, 3, 4, 5, 6]
-pattern = fn x -> rem(x, 2) == 0 end
-
-Enum.filter(input, pattern) # 输出 [1, 3, 5]
-```
-
-在这个例子中，我们定义了一个函数模式，它判断一个数字是否为偶数，然后使用`Enum.filter/2`函数来过滤出所有奇数，并删除了所有偶数。
-
-## 见证神奇的删除能力！
-
-现在我们已经了解了如何使用`String.replace/3`函数来删除字符，是不是感觉很神奇？不仅仅是简单的字符串和正则表达式，我们还可以使用函数等更复杂的模式来实现更强大的删除能力。赶快去尝试一下吧！
-
-## 看看这些有用的链接吧
-
-- [Elixir官方文档 - String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
-- [正则表达式指南](https://regexone.com)
-- [Elixir论坛](https://elixirforum.com)
+- [Elixir官方文档：Regex模块](https://hexdocs.pm/elixir/Regex.html)
+- [正则表达式教程：Learn Regex The Hard Way](https://regex.learncodethehardway.org/)
+- [正则表达式在线测试工具：Regexr](https://regexr.com/)

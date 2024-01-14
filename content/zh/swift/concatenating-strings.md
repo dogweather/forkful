@@ -1,58 +1,63 @@
 ---
-title:    "Swift: 串接字符串"
+title:    "Swift: 连接字符串"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要连接字符串
+在Swift编程中，连接字符串是一个非常常见的操作。它允许我们将多个字符串组合成一个更大的字符串，这在处理文本和用户输入时非常有用。接下来，让我们来看看如何使用Swift来连接字符串。
 
-当我们需要将多个字符串组合成一个时，就需要用到字符串连接。这种方法可以让我们更方便地处理字符串，并且可以使我们的代码更加简洁。
+## 为什么
 
-## 如何连接字符串
+连接字符串是一种很有用的技术，因为它允许我们创建一个更大的字符串，而不需要手动输入每个字符。这节省了大量的时间和努力，并使我们的代码更容易阅读和维护。
 
-要连接两个字符串，可以使用"+"运算符。例如：
+## 如何
 
-```Swift
-let str1 = "Hello"
-let str2 = "world"
-let combinedStr = str1 + str2
-```
-
-输出结果：HelloWorld
-
-除了使用"+"运算符，我们还可以使用字符串插值来连接字符串。这样可以将变量或常量直接插入到字符串中。例如：
+在Swift中，连接字符串可以通过使用"+"操作符来实现。让我们看一个简单的例子，并将两个字符串“Aloha”和“世界”连接起来。
 
 ```Swift
-let name = "Jay"
-let greeting = "Hello, \(name)!"
+let greeting = "Aloha" + "世界"
+print(greeting)
 ```
 
-输出结果：Hello, Jay!
+输出应该为：Aloha世界
 
-当我们需要连接多个字符串时，我们可以使用字符串的`.joined()`方法。这个方法接受一个数组作为参数，并将数组中的每个字符串组合成一个大字符串。例如：
+我们也可以使用字符串插值来连接字符串。这允许我们在字符串中嵌入变量或表达式，并将其转换为字符串。让我们看一个例子：
 
 ```Swift
-let array = ["I", "love", "programming"]
-let sentence = array.joined(separator: " ")
+let name = "小明"
+let greeting = "你好，\(name)"
+print(greeting)
 ```
 
-输出结果：I love programming
+输出应为：你好，小明
 
-## 深入了解连接字符串
+## 深入探讨
 
-在Swift中，字符串是一种值类型，意味着它们每次被修改时都会产生一个新的字符串。因此，当我们使用"+"运算符连接字符串时，实际上是创建了一个新的字符串，并将原有的字符串拼接在一起。这也意味着连接字符串的操作会消耗更多的内存，因此在处理大量字符串时需要注意内存使用情况。
+在Swift中，字符串连接使用的是字符串拷贝，这意味着原始字符串不会被修改，而是创建一个新的字符串。因此，在对性能要求较高的情况下，我们可以使用Swift中的其他方法来连接字符串，如使用`append()`方法或将字符串放入数组中并使用`joined()`方法。
 
-另外，我们也可以使用Swift的`.appending()`方法来连接字符串。与"+"运算符不同的是，这个方法会直接在原有字符串的末尾插入新的字符串，并返回一个新的字符串。这可以帮助我们节省一些内存空间。
+此外，字符串连接也可以与for循环结合使用，以便将多个字符串连接起来。让我们看一个例子：
+
+```Swift
+let fruits = ["苹果", "香蕉", "橘子"]
+var result = ""
+for fruit in fruits {
+    result += fruit + "，"
+}
+print(result)
+```
+
+输出应为：苹果，香蕉，橘子，
 
 ## 参考链接
 
-- [Apple官方文档：字符串和字符](https://developer.apple.com/documentation/swift/string_and_character)
-- [Swift中字符串的连接与插值](https://www.jianshu.com/p/ae55e3681754)
-- [谈谈Swift中字符串连接操作的性能消耗](https://zhuanlan.zhihu.com/p/29343983)
+- [Swift字符串官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift字符串拼接方法](https://www.hackingwithswift.com/articles/162/how-to-join-strings-free-using-appending-or-joined)
+- [使用+操作符连接字符串](https://www.swiftbysundell.com/basics/string-interpolation-and-concatenation/)
+- [参考字符串操作方法](https://www.programiz.com/swift-programming/methods/string)
 
-## 查看更多
+## 参见
 
-- [使用字符串插值的Swift语言基础](https://blog.csdn.net/u014205508/article/details/54179260)
-- [Swift中字符串的基本操作](https://www.jianshu.com/p/0cffd276b204)
-- [如何高效地拼接多个字符串](https://juejin.im/post/5c7f5b6d6fb9a04a037b7b67)
+- [Swift中的字符串操作技巧](https://www.appcoda.com/swift4-changes/)
+- [用Swift连接字符串的方法](https://www.hackingwithswift.com/articles/162/how-to-join-strings-free-using-appending-or-joined)

@@ -1,46 +1,61 @@
 ---
-title:    "C#: कंप्यूटर प्रोग्रामिंग पर एक लेख: एक टेक्स्ट फाइल लिखना"
+title:    "C#: एक पाठ फ़ाइल लिखना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## इसका कारण
+## क्यों
 
-क्या आप कभी कभी एक टेक्स्ट फ़ाइल में अपने डेटा को सहेजने की ज़रूरत है? कई लोगों के लिए, यह एक आम दैनिक काम है जो कंप्यूटिंग में कुछ समय लेता है। लेकिन ऐसे मामलों में, टेक्स्ट फ़ाइल अक्सर आसान और उपयोगी समाधान हो सकती है। इस ब्लॉग पोस्ट में, हम आपको बताएंगे कि कैसे C# में एक टेक्स्ट फ़ाइल लिखा जाता है। 
+कोई भी कंप्यूटर या मोबाइल डिवाइस देखें तो हार्डवेयर कोई न कोई तो पेरिफेरल होता है, जैसे की डिस्क ड्राइव जिसमे आप सभी फ़ाइलें स्टोर करते हैं। इन्हीं फ़ाइलों को पढ़ने या लिखने के लिए आपको सही तरीके से प्रोग्रामिंग की जानकारी होनी चाहिए। इस लेख में हम आपको C# में टेक्स्ट फ़ाइल लिखने के लिए सही तरीके के बारे में बताएंगे।
 
 ## कैसे करें
 
-टेक्स्ट फ़ाइल को C# में लिखने का सबसे सरल तरीका `StreamWriter` का उपयोग करना है। नीचे दिए गए उदाहरण में, हम एक नया `StreamWriter` बनाते हैं और फाइल का नाम और डायरेक्टरी पाठ देते हैं। फिर हम `WriteLine()` और `Write()` की मदद से अपने डेटा को फ़ाइल में लिखते हैं। 
-
 ```C#
-using System;
-using System.IO;
+using System; // नामस्थान संज्ञक
 
-namespace writing_text_file
+class Program
 {
-  class Program
-  {
     static void Main(string[] args)
     {
-      // Create a new StreamWriter and give it a filename and directory path
-      // एक नया StreamWriter बनाएं और उसे फ़ाइल का नाम और डायरेक्टरी पथ दें
-      using (StreamWriter writer = new StreamWriter(@"C:\Users\Username\Desktop\example.txt"))
-      {
-        // Write a line of text to the file and add a new line
-        // फाइल में एक लाइन टेक्स्ट लिखें और एक नई लाइन जोड़ें
-        writer.WriteLine("Hello Hindi readers!");
-        // Write text to the file
-        // फाइल में टेक्स्ट लिखें
-        writer.Write("Welcome to my blog post.");
-      }
+        // नया फ़ाइल निर्माण करें
+        string fileName = "myFile.txt";
+        using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(fileName))
+        {
+            // कुछ पंक्तियाँ लिखें
+            file.WriteLine("प्रथम पंक्ति");
+            file.WriteLine("दूसरी पंक्ति");
+        }
+
+        // फ़ाइल में कुछ पंक्तियाँ जोड़ें
+        using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(fileName, true))
+        {
+            file.WriteLine("तीसरी पंक्ति");
+            file.WriteLine("चौथी पंक्ति");
+        }
+
+        // फ़ाइल से सभी पंक्तियाँ पढ़ें
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
     }
-  }
 }
 ```
 
-जब आप यह कोड चलाएंगे, तो एक `example.txt` फ़ाइल बनाई जाएगी और उसमे दिए गए डेटा शामिल होगा। आप अपनी फ़ाइल को सहेजने के बाद उसे `using` की मदद से प्रक्रिया से बाहर भेज सकते हैं। 
+प्रोग्राम का आउटपुट:
 
-## डीप डाइव
+```
+प्रथम पंक्ति
+दूसरी पंक्ति
+तीसरी पंक्ति
+चौथी पंक्ति
+```
 
-`StreamWriter` को `using` के साथ सं
+## गहराई
+
+C# में टेक्स्ट फाइल लिखने के लिए, हम `System.IO` नामक नामस्थान गुना करते हैं जो में C# प्रोग्राम के लिए फ़ाइल और फ़ोल्डर को एक्सेस करने के लिए सहायता करता है। इस नामस्थान के अंतर्गत, हम `StreamWriter` नामक एक क्लास का उपयोग कर सकते हैं जो फाइल डाटा को लिखने के लिए उपयोग किया जाता है। हम `using` अभिव्यक्ति का उ

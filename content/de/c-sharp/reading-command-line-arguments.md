@@ -1,54 +1,59 @@
 ---
-title:    "C#: Das Lesen von Befehlszeilenargumenten"
+title:    "C#: Lesen von Befehlszeilenargumenten"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn Sie in der Welt des Programmierens unterwegs sind, haben Sie wahrscheinlich schon von Command Line Arguments gehört. Aber warum sind sie wichtig und warum sollten Sie sich damit befassen? Nun, Command Line Arguments sind ein wichtiger Teil beim Erstellen von interaktiven Tools, Scripting-Tools und anderen Anwendungen, die Benutzerinteraktion erfordern. Sie ermöglichen dem Benutzer, schnell und einfach Einstellungen und Parameter anzugeben, die das Verhalten der Anwendung beeinflussen.
+Haben Sie sich jemals gefragt, wie Sie Befehlszeilenargumente in Ihrem C# Programm lesen können? Möchten Sie eleganter auf Benutzereingaben reagieren? In diesem Blog-Beitrag erfahren Sie, warum das Lesen von Befehlszeilenargumenten nützlich sein kann.
 
-## Wie geht es
+## Wie es geht
 
-Das Lesen von Befehlszeilenargumenten in C# ist relativ einfach. Nehmen wir zum Beispiel an, Sie möchten einen einfachen Taschenrechner erstellen, der zwei Zahlen addieren kann. Sie möchten, dass der Benutzer die Zahlen über die Befehlszeile eingibt. Hier ist ein Beispiel für die Umsetzung dieses Szenarios:
+Die Verwendung von Befehlszeilenargumenten in Ihrem C# Code ist einfacher als Sie denken. Zunächst müssen Sie die `Main`-Methode ändern, indem Sie die `args`-Parameter hinzufügen. Diese Parameter enthalten alle vom Benutzer eingegebenen Befehlszeilenargumente als Array von Zeichenfolgen. Hier ist ein Beispiel dafür, wie Sie die `Main`-Methode schreiben könnten:
 
 ```C#
-using System;
-
-class Taschenrechner 
+static void Main(string[] args)
 {
-    static void Main(string[] args) 
-	{
-        // Überprüfen, ob zwei Argumente eingegeben wurden
-		if (args.Length == 2) 
-		{
-            // Konvertieren der Argumente in Integer
-			int x = Convert.ToInt32(args[0]);
-			int y = Convert.ToInt32(args[1]);
-
-            // Berechnen und Ausgabe des Ergebnisses
-			Console.WriteLine($"Summe: {x} + {y} = {x + y}");
-		} 
-		else 
-		{
-            // Fehlermeldung, wenn nicht genügend Argumente eingegeben werden
-			Console.WriteLine("Bitte geben Sie zwei Zahlen als Argumente ein.");
-		}
-	}
+    // Code hier
 }
 ```
 
-Wenn ein Benutzer nun den Befehl `dotnet taschenrechner.dll 3 5` ausführt, wird das Ergebnis "Summe: 3 + 5 = 8" ausgegeben.
+Stellen Sie sich vor, Sie möchten, dass Ihr Programm eine Zahl als Befehlszeilenargument erhält und diese in eine `int`-Variable speichert. Hier ist, wie Sie das mit Befehlszeilenargumenten tun könnten:
+
+```C#
+static void Main(string[] args)
+{
+    // Überprüfen, ob mindestens ein Argument eingegeben wurde
+    if (args.Length > 0)
+    {
+        // Das erste Argument als Zahl parsen und in einer Variable speichern
+        int zahl = Int32.Parse(args[0]);
+        // Ausgabe des Ergebnisses
+        Console.WriteLine($"Die Zahl war {zahl}");
+    }
+    else
+    {
+        // Ausgabe einer Fehlermeldung, wenn kein Argument eingegeben wurde
+        Console.WriteLine("Es wurde kein Befehlszeilenargument eingegeben.");
+    }
+}
+```
+
+Nun können Sie Ihr Programm ausführen und ihm eine Zahl als Argument übergeben, z.B. `dotnet ProgrammName.dll 42`. Die Ausgabe wäre `Die Zahl war 42`.
 
 ## Tiefer gehend
 
-Es gibt noch viele weitere Möglichkeiten, wie Sie Command Line Arguments in Ihren C#-Anwendungen nutzen können. Sie können beispielsweise verschiedene Datentypen als Argumente akzeptieren, Standardwerte für die Argumente festlegen oder sogar mehrere Parameter für eine bestimmte Einstellung zulassen. Es ist auch möglich, Argumente über Optionen oder Flags zu verarbeiten, die mit verschiedenen Bibliotheken wie "CommandLineUtils" oder "PowerArgs" implementiert werden können.
+Sie können nicht nur Zahlen, sondern auch andere Datentypen als Befehlszeilenargumente übergeben, wie z.B. `string` oder `bool`. Außerdem können Sie mehrere Argumente in einer Zeile eingeben, indem Sie sie mit Leerzeichen trennen. In unserem Beispiel würde dies mit `dotnet ProgrammName.dll 42 true` funktionieren.
 
-Um noch weiter in die Materie einzutauchen, empfehlen wir Ihnen, sich mit der Klasse `System.Environment.CommandLine` vertraut zu machen, die Ihnen noch mehr Informationen über die Befehlszeile und die eingegebenen Argumente liefert.
+Es gibt auch Möglichkeiten, die Eingabe der Befehlszeilenargumente zu überprüfen und zu validieren, z.B. mit Regulären Ausdrücken oder Try-Methoden. Es lohnt sich also, sich mit den verschiedenen Optionen vertraut zu machen, um Ihre Befehlszeilenargumente effektiv zu nutzen.
 
 ## Siehe auch
 
-- [Microsoft Dokumentation über Command Line Arguments](https://docs.microsoft.com/en-us/dotnet/core/extensions/command-line-args)
-- [CommandLineUtils Bibliothek](https://www.nuget.org/packages/CommandLineUtils/)
-- [PowerArgs Bibliothek](https://www.nuget.org/packages/PowerArgs/)
+- [Offizielle Dokumentation zu Befehlszeilenargumenten in C#](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Tutorial zum Lesen von Befehlszeilenargumenten in C#](https://www.codeproject.com/Articles/3111/Reading-Command-Line-Arguments)
+- [Beispielcode für die Verwendung von Befehlszeilenargumenten in C#](https://www.dotnetperls.com/args)
+
+Danke, dass Sie meinen Blog-Beitrag gelesen haben. Ich hoffe, Sie fühlen sich nun in der Lage, Befehlszeilenargumente in Ihren C# Programmen zu nutzen. Bis zum nächsten Mal!

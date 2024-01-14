@@ -1,50 +1,46 @@
 ---
 title:    "C recipe: Extracting substrings"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-Substring extraction is a common task in programming, especially when dealing with strings. It involves taking a portion of a string and using it as a separate entity. Whether you are working on data manipulation, text parsing, or simply formatting output, knowing how to extract substrings will save you time and make your code more efficient.
+Have you ever come across a situation where you need to take a part of a string and use it as a separate entity in your program? This is where extracting substrings comes in handy. By extracting substrings, you can take a portion of a string and manipulate it to fit your specific needs.
 
-## How To
+##How To
 
-To extract substrings in C, we will use the `strncpy()` function. This function takes three parameters - the destination string, the source string, and the number of characters to be copied. Let's take a look at a simple example:
+To extract substrings in C, we will be using the "```strncpy()```" function. This function allows us to copy a part of the string into a new string. Let's take a look at an example:
 
 ```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char source[] = "Hello World";
-    char destination[6];
-
-    strncpy(destination, source, 5);
-    destination[5] = '\0';
-    printf("Extracted substring: %s", destination);
-    
-    return 0;
-}
+char str[] = "Hello World";
+char sub[6];
+strncpy(sub, str + 6, 5);
+printf("Substring: %s", sub);
 ```
 
-In this example, we declare a source string containing the phrase "Hello World" and a destination string with a size of 6 (to accommodate for the 5 characters we want to extract plus a null terminator). Then, using `strncpy()`, we copy the first 5 characters from the source string to the destination string. Finally, we add a null terminator at the end and print out the extracted substring.
+In the above code, we first declare a string "str" with the value "Hello World". Then, we declare a new string "sub" with a size of 6, as our substring will contain 5 characters plus the null terminator. Next, we use the ```strncpy()``` function to extract the substring starting from the 6th character in "str" and copy it into "sub". Finally, we print out the substring using the ```printf()``` function.
 
-The output of this code will be "Hello", as the `strncpy()` function does not automatically add a null terminator.
+The output of this code will be: "Substring: World". Notice how we were able to extract the word "World" from the original string and use it as a separate entity.
 
-## Deep Dive
+##Deep Dive
 
-The `strncpy()` function is a safer alternative to the commonly used `strcpy()` function, as it allows you to specify the number of characters to be copied. This helps prevent buffer overflows, which can lead to security vulnerabilities. 
+There are a few parameters that we need to understand when using the ```strncpy()``` function. The first parameter is the destination string, in our case "sub". The second parameter is the source string, in our case "str". The third parameter is the number of characters we want to copy, which is 5 in our example. And finally, the fourth parameter is the maximum length of the destination string. This is important because if the source string contains more than the specified number of characters, the destination string will not have a null terminator at the end. Therefore, it is important to specify the maximum length of the destination string in order to avoid any unexpected errors.
 
-It is important to note that `strncpy()` does not guarantee that the destination string will be null-terminated, as seen in our example. To ensure this, we manually add a null terminator after copying the desired characters.
+Another important thing to note is that when using "```strncpy()```", it will always copy the specified number of characters, even if the source string is shorter. This can result in your substring not having a null terminator at the end. To avoid this, it is recommended to manually add a null terminator after using the ```strncpy()``` function, like so:
 
-Another important feature of `strncpy()` is that it does not automatically add extra padding if the source string is shorter than the specified number of characters. In our example, if we try to copy 10 characters from the source string "Hello World", the result will be "Hello W", as the function stops copying after encountering the null terminator. This is different from `strcpy()`, which will automatically add padding until the specified number of characters is reached.
+```
+sub[5] = '\0';
+```
 
-## See Also
+##See Also
 
-To learn more about using substrings in C, check out these resources:
+If you want to learn more about string manipulation in C, check out the following resources:
 
-- [String Manipulation in C](https://www.tutorialspoint.com/cprogramming/c_string_manipulation.htm)
-- [Extracting Substrings in C using Pointers](https://iq.opengenus.org/extract-substring-in-string-with-c/)
-- [Official Documentation for `strncpy()`](https://www.gnu.org/software/libc/manual/html_node/Copying-Strings-and-Arrays.html)
+- [String Manipulation in C: A Beginner's Guide](https://www.geeksforgeeks.org/string-manipulations-in-c-without-using-library-functions/)
+- [C Strings and String Functions](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [String data type in C](https://www.programiz.com/c-programming/c-strings)
+
+Now that you have a better understanding of how to extract substrings in C, you can use this knowledge in your future projects. Happy coding!

@@ -1,55 +1,37 @@
 ---
-title:    "Haskell: Merkkijonojen yhdistäminen"
+title:    "Haskell: Stringien yhdistäminen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia tilanteita, joissa haluat yhdistää merkkijonoja Haskell-ohjelmoinnissa. Tämä voi olla hyödyllistä esimerkiksi käyttäjän syötteiden tai tietokantatietojen yhdistämiseen ja käsittelyyn.
+Monissa ohjelmointikielissä on tarpeen yhdistää kaksi tai useampia merkkijonoja yhdeksi kokonaisuudeksi. Tämä voi olla hyödyllistä esimerkiksi tekstin muotoilemisessa tai tietokantaan tallennettaessa. Onneksi Haskellissa stringien yhdistäminen on helppoa ja tehokasta!
 
-## Miten
+## Kuinka tehdä
 
-Concatenate-funktio yhdistää kaksi merkkijonoa yhteen. Voit käyttää sitä merkkijonojen tai listojen yhdistämiseen. Katso tästä esimerkki, jossa yhdistämme kaksi merkkijonoa ja tulostamme sen:
-
-```Haskell
-concatenate :: String -> String -> String
-main = do
-  let string1 = "Tervetuloa "
-  let string2 = "blogiini!"
-  let concatenatedString = concatenate string1 string2
-  putStrLn(concatenatedString)
-```
-
-Tämä koodi tulostaa:
+Haskellissa stringien yhdistäminen tapahtuu `++` operaattorilla tai `concat` funktion avulla. Katsotaanpa pari esimerkkiä:
 
 ```
-Tervetuloa blogiini!
+-- Yhdistetään kaksi merkkijonoa
+"Hello " ++ "world!" 
+-- Tulostaa: "Hello world!"
+
+-- Yhdistetään lista merkkijonoja
+concat ["1", "2", "3"]
+-- Tulostaa: "123"
 ```
 
-Voit myös käyttää concatenate-funktiota yhdistämään listoja. Katso tästä esimerkki:
+Haskellissa on myös mahdollista käyttää `foldl (+) ""` funktiota, jolla voi yhdistää listan merkkijonoja yhdeksi kokonaisuudeksi. Tämä voi olla hyödyllistä silloin, kun tarvitsemme yhdistää suuren määrän merkkijonoja.
 
-```Haskell
-concatenateLists :: [String] -> String
-main = do
-  let words = ["Hei", "sinä", "siellä"]
-  let concatenatedWords = concatenateLists words
-  putStrLn(concatenatedWords)
-```
+## Syvällisempi sukellus
 
-Tämä koodi tulostaa:
-
-```
-Hei sinä siellä
-```
-
-## Syvempi sukellus
-
-Concatenate-funktiossa on paljon potentiaalia monimutkaisempiin tehtäviin. Voit esimerkiksi käyttää sitä hienostuneempien merkkijonojen käsittelyyn, kuten kehitsemään kustomoituja toimintoja, jotka yhdistävät merkkijonoja erilaisilla ehdoilla. Voit myös käyttää sitä listojen ja elementtien yhdistämiseen loogisilla ehdoilla. Kokeile rohkeasti ja kehitä omaa tapaasi käyttää concatenate-funktiota.
+Stringien yhdistäminen Haskellissa on tehokasta, sillä kieli käyttää Lazy Evaluation -toimintoa. Tämä tarkoittaa sitä, että merkkijonot eivät ole muistissa ennen kuin niitä tarvitaan, mikä säästää muistia ja prosessointiaikaa. Toisaalta tämä voi aiheuttaa ongelmia, mikäli haluamme yhdistää merkkijonoja järjestyksessä ja saada oikean tuloksen. Tällaisessa tapauksessa on parempi käyttää `foldl (+) ""` funktiota, joka käsittelee stringit järjestyksessä.
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio yhdistämisfunktioista (englanniksi)](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#v:++)
-- [Tutoriaali merkkijonojen ja listojen käsittelystä Haskellissa (englanniksi)](https://www.tutorialspoint.com/haskell/haskell_lists.htm)
-- [Laajempi tutoriaali Haskell-ohjelmoinnista (englanniksi)](https://www.haskell.org/tutorial/)
+- [Haskellin dokumentaatio stringien yhdistämisestä](https://www.haskell.org/tutorial/string.html#concatenation)
+- [Haskellin virallinen verkkosivusto](https://www.haskell.org/)
+- [Haskell-opetusohjelma suomeksi](https://wiki.haskell.org/Suomi/Haskell-opetusohjelma)

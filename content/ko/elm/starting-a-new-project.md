@@ -1,70 +1,54 @@
 ---
-title:    "Elm: 새 프로젝트 시작하기"
+title:    "Elm: 새 프로젝트 시작"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-왜 새 프로젝트를 시작하는 것이 좋을까요?
+## 왜 시작해야 할까요?
 
-새 프로젝트를 시작하는 것은 새로운 챌린지를 받아들일 준비가 되었기 때문입니다. 또한 새로운 언어를 배우고 새로운 기술을 습득하는 기회가 될 수 있습니다. 또한 Elm은 간결하고 안정적인 함수형 언어로서 다양한 프로젝트에 유용하게 활용될 수 있습니다.
+새 프로젝트를 시작하려는 이유는 다양할 수 있습니다. 더 나은 코드를 작성하고 다른 언어에 비해 더 안전하고 예측 가능하며 확장 가능한 앱을 만들 수 있기 때문입니다. 그리고 무엇보다도, Elm 커뮤니티는 매우 친절하고 지원을 제공하기 때문에 새로운 프로젝트를 시작하는 것은 더 쉽고 즐거운 경험이 될 것입니다.
 
-## 시작하는 법
-Elm으로 간단한 웹 애플리케이션을 만드는 방법을 알아보겠습니다. 먼저 Elm의 구조를 살펴보겠습니다. Elm은 모듈 형식으로 구성되어 있으며, `main` 모듈은 모든 Elm 애플리케이션의 시작점입니다. 이 모듈 안에는 `main`이라는 이름의 함수가 있어야 합니다.
+## 어떻게 시작할까요?
 
-```
+먼저 Elm 플랫폼을 설치해야 합니다. 그 후, ```elm init``` 명령어로 새 프로젝트를 초기화할 수 있습니다. 그리고 이제 새로운 코드를 작성해보겠습니다.
+
+```Elm
 module Main exposing (main)
 
-main : Program () () ()
-main =
-   -- 여기에 코드를 작성하세요
-```
-
-다음으로는 기본적인 HTML을 생성하는 `view` 함수를 정의해보겠습니다. 이 함수는 `Html.msg`라는 모듈에서 가져온 `p` 요소를 생성하고 이를 `body` 요소로 감싸서 반환합니다.
-
-```
-view : Html msg
-view =
-   Html.body
-      [ Html.text "이것은 새 Elm 프로젝트입니다."
-      ]
-```
-
-마지막으로 `main` 함수 안에서 `view` 함수를 호출하고 `Browser.sandbox`를 이용하여 브라우저에서 실행할 수 있는 앱을 만들어보겠습니다.
-
-```
-module Main exposing (main)
-
-import Browser
 import Html
 
-main : Program () ()
 main =
-   Browser.sandbox
-      { init = ()
-      , view = view
-      , update = \msg model -> (model, Cmd.none)
-      }
-
-view : () -> Html msg
-view _ =
-   Html.body
-      [ Html.text "이것은 새 Elm 프로젝트입니다."
-      ]
+  Html.text "안녕하세요! 이것은 새로운 Elm 프로젝트입니다."
 ```
 
-이제 브라우저에서 `elm reactor` 명령을 실행하고 브라우저에서 `http://localhost:8000/main.elm`을 열면 새 프로젝트가 실행되는 것을 확인할 수 있습니다.
+이 코드를 실행하면 다음과 같은 출력이 나타납니다.
 
 ```
-elm reactor
-http://localhost:8000/main.elm
+안녕하세요! 이것은 새로운 Elm 프로젝트입니다.
 ```
 
-## 더 깊게 들어가기
-새 프로젝트를 시작하면서 가장 중요한 것은 어떤 언어를 사용하느냐보다도 어떻게 코드를 구성하느냐입니다. Elm은 모듈 형식으로 구성되어 있으며, 각 모듈은 필요한 기능들을 잘 나누고 추상화해서 구현해야 합니다. 또한 Elm에서는 부작용을 다루기 위해 `Cmd`와 `Sub`를 이용해야 합니다. 이를 통해 코드를 알아보기 쉽고 유지 보수하기 쉽게 만들 수 있습니다. 또한 Elm 커뮤니티에서는 다양한 패턴과 라이브러리를 제공하고 있으니 참고하시길 바랍니다.
+## 깊이 파고들기
 
-## 이어서 보기
-- [Elm 공식 문서](https://guide.elm-lang.org/)
-- [Elm Korea 페이스북 그룹](https://www.facebook.com/groups/elmkorea)
-- [Elm 커뮤니티 뉴스레터](https://elmweekly.nl/)
+새로운 프로젝트를 시작할 때, Elm의 중요한 특징 중 하나는 모듈 시스템입니다. 이는 코드를 모듈 단위로 나누어 관리하는 것을 의미합니다. 또한 Elm에서는 모든 값이 불변(immutable)이기 때문에 예기치 않은 버그를 방지할 수 있습니다.
+
+또 다른 중요한 기능은 Elm의 타입 시스템입니다. 이는 코드를 작성하는 동안 타입을 검증하고 맞지 않는 타입 에러를 방지해줍니다. 이는 코드의 안정성과 예측 가능성을 높여주는 중요한 기능입니다.
+
+더 깊이 파고들기 위해선, 공식 Elm 가이드를 살펴보세요. 또한 Elm 커뮤니티에서는 다양한 예제와 자료를 제공해줍니다. 새로운 프로젝트를 시작하기 전에, 이러한 리소스들을 활용하여 더 익숙해지는 것을 추천드립니다.
+
+## 더 알아보기
+
+- [공식 Elm 가이드](https://guide.elm-lang.org/)
+- [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)
+- [Elm 슬랙 채널](https://elmlang.herokuapp.com/)
+
+## 참고 자료
+
+Elm을 처음 시작하는데 도움이 될 수 있는 몇 가지 참고 자료들입니다.
+
+- [Elm 플랫폼 설치 가이드](https://guide.elm-lang.org/install.html)
+- [Elm 언어 소개](https://guide.elm-lang.org/architecture/)
+- [Elm REPL(Read-Eval-Print Loop) 사용하기](https://elm-lang.org/examples/hello)
+- [Elm 파일 구조 설명](https://elm-lang.org/guide/architecture/importing-code)
+- [그라운드 제로 Elm 시작하기](https://www.elm-tutorial.org/)

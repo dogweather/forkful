@@ -1,92 +1,80 @@
 ---
 title:    "C: Ottenere la data corrente"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+### Perché
 
-Spesso nei nostri programmi abbiamo bisogno di conoscere la data attuale. Potrebbe essere per registrare le transazioni, per aggiornare gli eventi futuri o semplicemente per stampare la data su uno schermo. Conoscere la data corrente è fondamentale per molti programmi e in questo post vedremo come ottenerla utilizzando il linguaggio di programmazione C.
+A volte nei nostri programmi dobbiamo essere in grado di ottenere la data corrente. Potrebbe essere per registrare quando un'operazione è stata eseguita, per mostrare la data in un formato specifico o per altre finalità. In questo articolo vedremo come possiamo ottenere la data corrente in un programma C.
 
-## Come fare
+### Come
 
-Ci sono diverse librerie disponibili per ottenere la data attuale in C, ma la più comune è `time.h`. Includendo questa libreria nel nostro codice, possiamo utilizzare la funzione `time()` per ottenere il numero di secondi trascorsi dal 1 gennaio 1970. Ecco un semplice esempio:
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-   time_t t = time(NULL);
-   printf("La data attuale è: %s", ctime(&t));
-   return 0;
-}
-```
-
-In questo esempio, stiamo utilizzando la funzione `ctime()` per convertire il numero di secondi in una stringa leggibile. Il risultato sarà qualcosa del genere:
-
-```
-La data attuale è: Thu Jul 22 11:28:44 2021
-```
-
-Inoltre, potremmo voler formattare la data in un modo più specifico. Per fare ciò, possiamo utilizzare la funzione `localtime()` per convertire il valore di `time_t` in una struttura `tm`. Ecco un esempio che stampa la data nel formato `yyyy-mm-dd`:
+Per ottenere la data corrente in un programma C, dobbiamo utilizzare la libreria standard <time.h>. Questa libreria contiene funzioni utili per lavorare con il tempo e la data. Uno dei modi più semplici per ottenere la data corrente è utilizzare la funzione time(), che ci restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Ecco un esempio di codice:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-   time_t t = time(NULL);
-   struct tm* tmptr = localtime(&t);
-   printf("La data attuale è: %d-%02d-%02d",
-          tmptr->tm_year + 1900,
-          tmptr->tm_mon + 1,
-          tmptr->tm_mday);
-   return 0;
+    // Otteniamo la data corrente
+    time_t current_time = time(NULL);
+
+    // La convertiamo in una stringa
+    char* date_string = ctime(&current_time);
+
+    // Stampiamo la data corrente
+    printf("Data corrente: %s\n", date_string);
+
+    return 0;
 }
 ```
 
-Il risultato sarà:
+L'output di questo programma sarà qualcosa del genere:
 
 ```
-La data attuale è: 2021-07-22
+Data corrente: Mon Nov 1 12:00:00 2021
 ```
 
-## Approfondimento
-
-Ora che sappiamo come ottenere la data attuale, è importante sapere che questa viene calcolata in base al fuso orario del nostro sistema. Se vogliamo ottenere la data in un determinato fuso orario, possiamo utilizzare la funzione `tzset()` per impostare il fuso orario corretto. Ad esempio, per ottenere la data attuale in fuso orario GMT, possiamo utilizzare il seguente codice:
+Possiamo anche formattare la data in modi diversi utilizzando la funzione strftime() che ci permette di specificare il formato che vogliamo ottenere. Ecco un esempio modificato del codice precedente:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-   time_t t = time(NULL);
-   tzset(); // impostiamo il fuso orario
-   struct tm* tmptr = gmtime(&t);
-   printf("La data attuale in fuso orario GMT è: %d-%02d-%02d %02d:%02d:%02d",
-          tmptr->tm_year + 1900,
-          tmptr->tm_mon + 1,
-          tmptr->tm_mday,
-          tmptr->tm_hour,
-          tmptr->tm_min,
-          tmptr->tm_sec);
-   return 0;
+    // Otteniamo la data corrente
+    time_t current_time = time(NULL);
+
+    // Definiamo un buffer per la data formattata
+    char buffer[80];
+
+    // Formattiamo la data
+    strftime(buffer, 80, "%A %d %B %Y", localtime(&current_time));
+
+    // Stampiamo la data formattata
+    printf("Data corrente: %s\n", buffer);
+
+    return 0;
 }
 ```
 
-Il risultato sarà:
+L'output di questo programma sarà qualcosa del genere:
 
 ```
-La data attuale in fuso orario GMT è: 2021-07-22 09:32:27
+Data corrente: lunedì 1 novembre 2021
 ```
 
-## Vedi Anche
+### Deep Dive
 
-Ecco alcuni link utili per ulteriori informazioni sulla gestione delle date in C:
+Oltre alle funzioni che abbiamo visto in precedenza, ci sono altre opzioni per ottenere la data corrente in un programma C. Ad esempio, possiamo utilizzare la struct tm che rappresenta il tempo e la data e ci permette di accedere a ogni componente (anno, mese, giorno, ora, ecc.). Inoltre, possiamo utilizzare la funzione localtime() per ottenere il tempo locale anziché quello UTC.
 
-- [La libreria time.h su Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [La funzione ctime() su GeeksforGeeks](https://www.geeksforgeeks.org/ctime-function-in-c-cpp/)
-- [La funzione localtime() su Programiz](https://www.programiz.com/c-programming/library-function/stdio.h/strftime)
-- [La funzione strftime() su Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+Inoltre, è importante notare che la funzione time() restituisce un valore di tipo time_t, che è semplicemente un long int. Quindi, ci serve una qualche rappresentazione leggibile dalla data corrente. È qui che vengono in aiuto le funzioni ctime() e strftime() che convertono il valore time_t in una stringa leggibile.
+
+### Vedi anche
+
+- [Documentazione della libreria <time.h>](https://www.gnu.org/software/libc/manual/html_node/Time-and-Date-Basics.html)
+- [Spiegazione della funzione strftime()](https://en.wikipedia.org/wiki/Strftime)
+- [Esempi pratici di utilizzo delle funzioni per ottenere la data corrente in C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)

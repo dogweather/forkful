@@ -1,46 +1,40 @@
 ---
-title:    "TypeScript: Att skriva till standardfel"
+title:    "TypeScript: Skriver till standardfel"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför skriva till standardfel i TypeScript
+## Varför skriva till standardfelutmatning?
 
-Att skriva till standardfel är en viktig del av felhantering i TypeScript. Det ger utvecklare möjligheten att fånga och hantera eventuella fel som kan uppstå i deras kod, förbättrar kvaliteten på en applikation och ger en bättre användarupplevelse.
+Att kunna skriva till standardfelutmatning i din TypeScript-kod kan vara avgörande för felsökning och optimering av ditt program. Det är ett snabbt och enkelt sätt att identifiera och spåra eventuella fel eller avvikelser i din kod. Så, varför bör du lägga till det i din programmeringsvana?
 
-# Så här gör du
+## Hur man skriver till standardfelutmatning
 
-För att skriva till standardfel i TypeScript, används funktionen "console.error()". Detta låter utvecklare skriva ut felmeddelanden till den vanliga felutföringen i en webbläsare eller i en konsol.
-
-```TypeScript
-console.error("Ett fel uppstod!")
-```
-
-Detta kommer att skriva ut meddelandet "Ett fel uppstod!" till standardfel. Utvecklare kan också lägga till mer information i meddelandet för att hjälpa till att identifiera och lösa problemet.
+Skrivning till standardfelutmatning kan göras genom att använda den inbyggda funktionen "console.error()" i TypeScript. Det tar in ett argument i form av en sträng eller ett objekt som du vill skriva till standardfelutmatning. Här är ett exempel:
 
 ```TypeScript
-let num1 = 10;
-let num2 = 0;
-
-if (num2 === 0) {
-  console.error("Noll kan inte användas som nämnare.");
-} else {
-  let result = num1 / num2;
-  console.log(`Resultatet är ${result}.`);
-}
+console.error("Detta är ett felmeddelande!");
 ```
 
-I detta exempel kommer felmeddelandet att skrivas ut om en division med noll försöker utföras.
+Detta kommer att skriva ut "Detta är ett felmeddelande!" på din standardfelutmatning. Om du vill skriva ut ett objekt kan du använda JSON.stringify() för att konvertera det till en sträng som console.error() kan hantera:
 
-# Djupdykning
+```TypeScript
+let person = { name: "Anna", age: 25 };
+console.error("Personens information: " + JSON.stringify(person));
+```
 
-Att skriva till standardfel kan också vara användbart för att hantera asynkron kod, där fel inte alltid fångas och rapporteras på ett tillförlitligt sätt. Genom att använda "console.error()" kan utvecklare vara säkra på att eventuella felmeddelanden kommer att registreras och göras tillgängliga för felsökning.
+Detta kommer att skriva ut "Personens information: {"name":"Anna","age":25}" i din standardfelutmatning. Du kan också använda console.error() för att skriva ut variabler eller funktioner som kan hjälpa till att identifiera problem i din kod.
 
-Det är också viktigt att notera att det finns andra metoder för att hantera fel i TypeScript, såsom "try-catch" och "throw", men att skriva till standardfel kan vara en snabb och enkel lösning för mindre projekt.
+## En djupdykning i skrivning till standardfelutmatning
 
-# Se även
+Skrivning till standardfelutmatning är en viktig del av felsökning och optimering av din kod. När ett fel inträffar i din kod, kan console.error() hjälpa till att identifiera var det har skett och hjälpa till att hitta en lösning. Det är också användbart för att spåra eventuella misstag eller buggar i din kod och göra det lättare att hitta dem och fixa dem.
 
-- [TypeScript felhantering](https://www.typescriptlang.org/docs/handbook/exceptions.html)
-- [Standardfel i Node.js](https://nodejs.org/api/console.html#console_console_error_data_args)
-- [Felsökningsverktyg för webbläsare](https://developers.google.com/web/tools/chrome-devtools/javascript)
+En annan viktig användning av skrivning till standardfelutmatning är att fånga och logga undantag. Ofta när ett undantag kastas i din kod, har du inte en aning om varför eller var det har hänt. Genom att använda console.error(), kan du fånga och logga undantaget tillsammans med annan användbar information, som till exempel variabler eller funktioner som utfördes, för att spåra problemet.
+
+## Se även
+
+- [Officiell TypeScript-dokumentation om skrivning till standardfelutmatning](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html)
+- [Mer om hur man använder console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [En guide till felsökning i TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-vscode)

@@ -1,59 +1,41 @@
 ---
-title:    "Java: Excluindo caracteres que correspondem a um padrão"
+title:    "Java: Excluindo caracteres correspondentes a um padrão"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Sabe quando você tem um texto grande e precisa remover certos caracteres que seguem um padrão específico? Fazer isso manualmente pode ser um processo demorado e até mesmo tedioso. É aí que entra a função de deleteCharAt() do Java. Ao entender como usá-la corretamente, você pode economizar tempo e esforço ao lidar com strings em suas aplicações.
+Às vezes, ao trabalhar com strings em Java, precisamos remover caracteres específicos que correspondem a um determinado padrão. Isso pode ser útil ao fazer limpeza de dados ou ao manipular textos em geral.
 
 ## Como fazer
 
-Para começar, vamos supor que temos uma string chamada "Java Programming" e queremos remover todas as letras "a" dessa string. Usando a função deleteCharAt(), podemos fazer isso facilmente.
+Para remover caracteres que correspondem a um padrão em uma string, podemos usar o método `replaceAll()` da classe `java.util.regex.Pattern`. Vamos supor que queremos remover todos os dígitos de uma string. Podemos fazer isso da seguinte maneira:
 
 ```Java
-String texto = "Java Programming";
-StringBuilder sb = new StringBuilder(texto);
-
-for (int i = 0; i < sb.length(); i++) {
-  if (sb.charAt(i) == 'a') {
-    sb.deleteCharAt(i);
-  }
-}
-
-System.out.println(sb.toString());
+String texto = "Nando123Rocks";
+texto = texto.replaceAll("[0-9]", ""); // removerá todos os dígitos
+System.out.println(texto);
 ```
 
-O código acima irá iterar através da string e, toda vez que encontrar a letra "a", irá remover esse caractere usando a função deleteCharAt(). No final, o output será "Jv Progrmming", onde todas as letras "a" foram removidas.
+O código acima usará a expressão regular `[0-9]` para substituir todos os dígitos na string por uma string vazia, resultando em "NandoRocks" sendo impresso no console.
 
-Agora, vamos dar um exemplo de como podemos usar a função para remover números de uma string. Suponha que temos a seguinte string: "123Hello456World78". Nós queremos remover todos os dígitos dessa string para ficar apenas com as palavras "Hello World". Podemos fazer isso da seguinte maneira:
+Podemos usar outras expressões regulares para substituir diferentes padrões de caracteres. Alguns exemplos são:
 
-```Java
-String texto = "123Hello456World78";
-StringBuilder sb = new StringBuilder(texto);
+- `[\s]` para remover todos os espaços em branco
+- `[aeiou]` para remover todas as vogais
+- `[^a-zA-Z0-9]` para remover todos os caracteres que não sejam letras ou números
 
-for (int i = 0; i < sb.length(); i++) {
-  if (Character.isDigit(sb.charAt(i))) {
-    sb.deleteCharAt(i);
-    i--; //precisamos diminuir o contador para manter a posição correta
-  }
-}
+## Profundidade
 
-System.out.println(sb.toString());
-```
+O método `replaceAll()` usa expressões regulares para correspondência de padrão. Isso significa que podemos usar toda a potência das expressões regulares para manipular strings em Java. Por exemplo, podemos usar quantificadores como `*`, `+`, `?` e `{}` para definir padrões mais complexos.
 
-Neste exemplo, usamos a função isDigit() para verificar se o caractere atual é um dígito. Se for, removemos o caractere e diminuímos o contador para manter a posição correta ao iterar pela string. O output final será "Hello World", sem os números.
-
-## Deep Dive
-
-A função deleteCharAt() pertence à classe StringBuilder do Java e é usada para remover um caractere específico em uma posição específica em uma string. A string original não é modificada, já que a função retorna uma nova string com o caractere removido.
-
-Além disso, quando usamos deleteCharAt(), precisamos ter cuidado com o deslocamento dos caracteres. Ao remover um caractere em uma determinada posição, os caracteres subsequentes são deslocados para preencher o espaço deixado pelo caractere removido. Portanto, pode ser necessário diminuir o contador ao iterar pela string, como no exemplo anterior.
+Também podemos usar agrupamentos e grupos de captura para substituir diferentes partes de uma string em uma única operação `replaceAll()`. Este método é muito útil e economiza muito tempo se precisarmos substituir vários padrões em uma string.
 
 ## Veja também
 
-- Documentação oficial do Java para a função deleteCharAt(): https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#deleteCharAt-int-
-- Um tutorial sobre manipulação de strings em Java: https://www.baeldung.com/java-delete-specific-characters-from-string
-- Exemplos adicionais de uso da função deleteCharAt(): https://www.tutorialspoint.com/java/lang/stringbuilder_deletecharat.htm
+- Documentação do método `replaceAll()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-
+- Tutorial sobre expressões regulares em Java: https://www.devmedia.com.br/utilizando-expressoes-regulares-em-java/27539
+- Padrões Java - Guia completo para expressões regulares em Java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html

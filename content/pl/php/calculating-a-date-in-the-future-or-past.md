@@ -1,61 +1,44 @@
 ---
-title:    "PHP: Obliczanie daty w przyszłości lub przeszłości"
+title:    "PHP: Obliczanie daty w przyszłości lub przeszłości."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Dlaczego
 
-Czasami w tworzeniu aplikacji internetowych musimy wyświetlić datę w przyszłości lub w przeszłości. Może to być na przykład przewidywana data dostawy zamówienia lub data urodzenia użytkownika. W tym artykule dowiesz się, jak w prosty sposób obliczyć taką datę w języku PHP.
+Czasem może być potrzebne obliczenie daty w przyszłości lub w przeszłości w celu rozwiązania problemów programistycznych lub w celach biznesowych.
 
-## Jak to zrobić
+##Jak to zrobić
 
-Często kodowanie dat w PHP może być mylące, szczególnie jeśli nie korzystamy z gotowych bibliotek. Dlatego przygotowaliśmy dla Ciebie kilka prostych przykładów, które korzystają z wbudowanych funkcji PHP dotyczących dat. Zobaczmy, jak w prosty sposób obliczyć datę w przyszłości lub w przeszłości.
+Aby obliczyć datę w przyszłości lub w przeszłości w języku PHP, można wykorzystać funkcję `strtotime()`. Przyjmując jako pierwszy argument określoną datę oraz drugi argument w postaci "s" (sekund), "m" (minut), "h" (godzin), "d" (dni), można precyzyjnie określić, o ile chcemy przesunąć datę.
 
-```PHP
-<?php
-// Obecna data
-$today = date("d-m-Y");
-
-// Obliczanie jutra
-$tomorrow = date('d-m-Y', strtotime("+1 day"));
-
-// Obliczanie daty za 2 tygodnie
-$twoWeeks = date('d-m-Y', strtotime("+2 weeks"));
-
-echo "Dzisiaj jest $today <br>";
-echo "Jutro będzie $tomorrow <br>";
-echo "Za dwa tygodnie będzie $twoWeeks";
-?>
-```
-
-Wynikiem powyższego kodu będzie:
-
-```
-Dzisiaj jest 02-07-2021
-Jutro będzie 03-07-2021
-Za dwa tygodnie będzie 16-07-2021
-```
-
-Możemy również obliczyć datę w przyszłości lub w przeszłości, wykorzystując podstawowe działania matematyczne. Na przykład, jeśli chcemy obliczyć datę za 5 dni, możemy zastosować następujący kod:
+Przykład:
 
 ```PHP
-<?php
-$today = date("d-m-Y");
-$fiveDays = date('d-m-Y', strtotime($today. ' + 5 days'));
-
-echo "Dzisiaj jest $today <br>";
-echo "Za pięć dni będzie $fiveDays";
-?>
+$date = strtotime('+3 days'); // Wartość domyślna dla drugiego argumentu to "s"
+echo date('Y-m-d', $date); // 2021-11-29
 ```
 
-## Zagłębienie się
+Można również określić datę startową poprzez przekazanie jej jako trzeciego argumentu w postaci timestampu.
 
-W języku PHP istnieje wiele innych funkcji i metod do operowania na datach, takich jak `mktime()`, `DateTime` czy `DateInterval`. Warto poznać je, aby móc lepiej korzystać z możliwości wyliczania dat w przyszłości lub w przeszłości. Pamiętaj również, że daty mogą być wyświetlane w różnych formatach, więc warto zwrócić uwagę na to, jakie formatowanie jest wymagane przez Twój projekt.
+Przykład:
 
-## Zobacz także
+```PHP
+$startDate = strtotime('2021-12-01');
+$date = strtotime('+2 weeks', $startDate); // Przesuwamy datę o 2 tygodnie od 2021-12-01
+echo date('Y-m-d', $date); // 2021-12-15
+```
 
-- [Dokumentacja PHP: Data i godzina](https://www.php.net/manual/pl/datetime.html)
-- [PHP.net: Sugestie dla pracy z datami](https://www.php.net/manual/pl/book.datetime.php)
-- [PHP Date and Time Functions - W3schools](https://www.w3schools.com/php/php_ref_date.asp)
+##Vertiefung
+
+Funkcja `strtotime()` jest bardzo przydatna do obliczania dat w przyszłości lub w przeszłości w języku PHP, ale warto pamiętać o kilku rzeczach. Pierwszą z nich jest fakt, że przy niektórych kombinacjach daty i drugiego argumentu, wynik może być nieprecyzyjny lub w ogóle niepoprawny. W takim przypadku warto skorzystać z innej dostępnej funkcji, jak na przykład `DateTime` lub biblioteki Carbon.
+
+Kolejnym elementem jest fakt, że funkcja `strtotime()` bazuje na lokalnych ustawieniach czasowych, dlatego wynik może się różnić w zależności od strefy czasowej, w której działa skrypt. Dlatego ważne jest ustawienie odpowiedniej strefy czasowej przy użyciu funkcji `date_default_timezone_set()`.
+
+##Zobacz również
+
+- [Dokumentacja funkcji strtotime() w języku PHP](https://www.php.net/manual/en/function.strtotime.php)
+- [Poradnik dla programistów: jak wykorzystać funkcję strtotime() w języku PHP](https://www.php.net/manual/en/function.strtotime.php)
+- [Oficjalna strona biblioteki Carbon](https://carbon.nesbot.com/)

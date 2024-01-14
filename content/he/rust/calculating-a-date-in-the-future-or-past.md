@@ -1,43 +1,42 @@
 ---
 title:    "Rust: חישוב תאריך בעתיד או בעבר"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-התכנות ב־Rust הוא חוויה מרתקת ומאתגרת בו זמנים, אבל למה לעסוק בחישובי תאריך בעתיד או בעבר? יתרונותיו של להעמיק בנושא זה כוללים הבנה עמוקה יותר של עקרונות התכנות וכישורים שיכולים לסייע בפתרון בעיות מורכבות. בנוסף, חישובי תאריך בעתיד או בעבר יכולים להיות שימושיים ביישומים מגוונים כמו מערכות ניהול תורנויות ויישומי תזמונים.
+בזמנים האחרונים, התכנות בשפת Rust הפך לפופולרי מאוד בקרב מתכנתים. שפת ראשיינו משלבת בין היכולות של שפות תכנות נמכרות נפוצות, כגון C ו־C++, ובין היבטים חדשים ומתקדמים יותר שנועדו להפוך את תהליך התכנות לפשוט יותר ואמין יותר. במאמר הזה נתמקד בחישוב תאריך בעבר או בעתיד באמצעות Rust.
 
 ## כיצד לעשות זאת
 
-השתמשו ב־Rust כדי לבנות פונקציה המאפשרת לחשב תאריך בעתיד או בעבר בהתאם לקלט מהמשתמש. במקרה זה, נשתמש בספריית "chrono" המציעה כלים נוחים לטיפול בתאריכים ושעות בפורמט ייעודי לפיתוח ב־Rust.
+תחת הכותרת הזאת, יאפשר לקוראים ללמוד כיצד לכתוב קוד Rust שיכול לחשב תאריך בעבר או בעתיד לפי התאריך הנוכחי. במשלוחה הבאה, אנחנו נשתמש במודול "chrono" הכולל פונקציות לעיבוד תאריכים.
 
 ```Rust
-// היבא את הספרייה למיספר התאריכים
-use chrono::{DateTime, Duration, Local, TimeZone};
+use chrono::{Local, Duration};
 
 fn main() {
-    println!("בחרו את היום, החודש והשנה לחישוב בהתאם לתאריך שברצונכם");
+    let today = Local::today();
+    let past = today - Duration::days(7);
+    let future = today + Duration::weeks(3);
 
-    // קבלו קלט מהמשתמש
-    let day: i32 = input("היום:", 1,     31);
-    let month: u32 = input("החודש:", 1,     12);
-    let year: i32 = input("השנה:", 0,   9999);
+    let formatted_past = past.format("%A, %B %e").to_string();
+    let formatted_future = future.format("%A, %B %e").to_string();
 
-    // יצירת אובייקט מסוג DateTime מתוך הפרמטרים שקבלנו מהמשתמש
-    let date = Local.ymd(year, month, day);
-
-    // בחישוב התאריך העתידי, נוסיף שנים בהתאם לקלט מהמשתמש
-    let future_date = date + Duration::days(year);
-
-    // בחישוב התאריך העברי, נמצא את השנה שביקש המשתמש ונחשב נכונה
-    let past_year = date.year() - year;
-    let past_date = date.with_year(past_year).unwrap();
-
-    // הצגת הפלט של התאריך העתידי והעברי
-    println!("התאריך העתידי הוא: {}", future_date.format("%d/%m/%Y"));
-    println!("התאריך העברי הוא: {}", past_date.format("%d/%m/%Y"));
+    println!("In a week from now it will be {}, and three weeks from now it will be {}.", formatted_past, formatted_future);
 }
+```
 
-// ב
+בקוד הזה אנחנו משתמשים בפונקציות של Chrono כדי ליצור משתנה שמייצג את התאריך הנוכחי, ולאחר מכן להוסיף או להחסיר ימים או שבועות כדי לקבל תאריכים בעתיד או בעבר. סוף סוף, אנחנו מחלצים רק חלק מהמידע במשתנים פורמט תאריך ממש להדפסה.
+
+החל מהתאריך הנוכחי, נראה איך התאריך שיוצא נראה כך:
+
+```
+In a week from now it will be Tuesday, February 23. three weeks from now it will be Tuesday, March 16.
+```
+
+## Deep Dive
+
+בסעיף הזה נציג מידע נוסף על פונקציות חישוב תאריכים במודול Chrono שאינו מתפרט בפירוט ספציפי בתחתית כותרת "כיצד לעשות זאת". בנוסף, נוכל להעמיק טיפה יותר בנושא

@@ -1,36 +1,74 @@
 ---
-title:    "Ruby: Fusionner des chaînes de caractères"
+title:    "Ruby: Concaténation de chaînes de caractères"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-La concaténation de chaînes de caractères est une opération courante en programmation Ruby. Elle permet de combiner plusieurs chaînes ensemble pour en créer une seule nouvelle. Cela peut être utile lorsque vous travaillez avec des données ou des textes et que vous souhaitez les mettre en forme d'une certaine manière. 
+La concaténation de chaînes de caractères est une technique couramment utilisée en programmation pour combiner plusieurs morceaux de texte en une seule chaîne. Elle est particulièrement utile dans les situations où vous devez construire dynamiquement un message en combinant des variables ou en ajoutant des mots-clés prédéfinis à des phrases. Dans cet article, nous allons vous montrer comment utiliser la concaténation de chaînes en Ruby pour améliorer votre code et rendre vos messages plus dynamiques.
 
-## Comment faire 
+## Comment Faire
 
-Pour concaténer des chaînes de caractères en Ruby, vous pouvez utiliser l'opérateur `+` ou la méthode `concat`. Voici un exemple de code pour concaténer deux chaînes : 
+En Ruby, la concaténation de chaînes est réalisée en utilisant l'opérateur `+`. Voici un exemple :
 
-```Ruby 
-prenom = "Lucie" 
-nom = "Dupont" 
+```Ruby
+first_name = "Jean"
+last_name = "Dupont"
+full_name = first_name + " " + last_name
 
-puts prenom + " " + nom # Affiche "Lucie Dupont"
-prenom.concat(" ", nom) # Concatène les deux chaînes en une seule "Lucie Dupont"
+puts full_name
 ```
 
-Dans cet exemple, nous utilisons à la fois l'opérateur `+` et la méthode `concat` pour concaténer les chaînes. Vous pouvez utiliser celui qui vous convient le mieux en fonction de votre code et de vos préférences. 
+Ce bloc de code crée trois variables : `first_name` pour le prénom, `last_name` pour le nom de famille et `full_name` pour le nom complet. L'opérateur `+` est utilisé pour concaténer les variables avec un espace pour former `Jean Dupont` et le résultat est imprimé à l'écran.
 
-## Approfondissement 
+La concaténation n'est pas limitée aux seules variables. Vous pouvez également utiliser des chaînes de caractères littérales et même des méthodes pour manipuler les valeurs. Voici un autre exemple :
 
-La concaténation de chaînes de caractères peut sembler simple, mais il y a quelques points à garder à l'esprit lors de son utilisation. Tout d'abord, rappelez-vous que les chaînes de caractères sont immuables en Ruby, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Cela signifie que chaque fois que vous concaténez des chaînes, une nouvelle chaîne est créée à chaque fois. Donc, si vous avez besoin de concaténer un grand nombre de chaînes, cela peut ralentir votre code. 
+```Ruby
+message = "Aujourd'hui, nous célébrons "
+occasion = "l'anniversaire de mariage "
+years = 10
+full_message = message + occasion + "de nos " + years.to_s + " ans!"
 
-De plus, il est important de noter que la concaténation peut également être effectuée avec des variables autres que des chaînes. Par exemple, vous pouvez concaténer des entiers en les convertissant en chaînes à l'aide de la méthode `to_s`. 
+puts full_message
+```
 
-## Voir aussi 
+Ce code produit l'output suivant : `Aujourd'hui, nous célébrons l'anniversaire de mariage de nos 10 ans!`.
 
-- [Documentation officielle de Ruby sur la concaténation de chaînes](https://ruby-doc.org/core-2.6.3/String.html#method-i-2B)
-- [Vidéo explicative sur la concaténation de chaînes en Ruby](https://www.youtube.com/watch?v=1uumGos1xkI)
-- [Article de blog sur les meilleures pratiques en matière de concaténation de chaînes en Ruby](https://blog.appsignal.com/2018/09/25/ruby-magic-concatenation-vs-interpolation.html#best-practices-for-concatenation)
+## Plongée Profonde
+
+Maintenant que nous savons comment utiliser l'opérateur `+` pour concaténer des chaînes de caractères, il est important de noter que ce n'est pas la seule façon de le faire en Ruby. Il existe également une méthode de `String` appelée `concat` que vous pouvez utiliser pour ajouter une chaîne à une autre. Voici un exemple :
+
+```Ruby
+first_name = "Marie"
+last_name = "Lambert"
+full_name = first_name.concat(" ", last_name)
+
+puts full_name
+```
+
+Ce bloc de code produit le même résultat que notre premier exemple. La différence est que cette méthode modifie la chaîne originale, tandis que l'opérateur `+` crée une nouvelle chaîne.
+
+Un autre aspect important de la concaténation en Ruby est que vous pouvez utiliser des techniques plus avancées pour la rendre plus efficace et élégante. Par exemple, vous pouvez utiliser la méthode `interpolate` pour inclure des variables dans une chaîne sans avoir à concaténer manuellement. Voici un exemple :
+
+```Ruby
+first_name = "Nicolas"
+last_name = "Perrin"
+full_name = "#{first_name} #{last_name}"
+
+puts full_name
+```
+
+Ce code produit toujours le même résultat, mais il est plus facile à lire et à comprendre.
+
+## Voir Aussi
+
+Pour en savoir plus sur la concaténation de chaînes en Ruby, consultez les ressources suivantes :
+
+- [Documentation officielle de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-2B)
+- [Article sur la manipulation de chaînes de caractères en Ruby](https://www.rubyguides.com/2019/01/ruby-string-manipulation/)
+- [Tutoriel de la concaténation en Ruby](https://www.pragmaticlinux.com/2019/08/how-to-concatenate-strings-in-ruby/)
+
+Maintenant que vous avez appris à concaténer des chaînes de caractères en Ruby, n'hésitez pas à l'utiliser dans vos projets pour rendre votre code plus dynamique et facile à maintenir !

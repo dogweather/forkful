@@ -1,39 +1,47 @@
 ---
-title:    "Ruby: Merkkijonon isoiksi kirjoittaminen"
+title:    "Ruby: Merkkijonon isoittaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi capitalizing koodiin?
+# Miksi Päästä Jos-stringi
 
-Jos olet uusi Ruby-ohjelmoija, saattaa olla hämmentävää miksi haluaisit capitalisoida merkkijonoa ohjelmassasi. Kuitenkin, capitalisoinnilla on useita käyttötapoja kuten tietojen muokkauksessa ja merkkijonojen muotoilussa.
+Miksi: Päästä Jos-stringi voi olla tärkeä ohjelmoinnissa esimerkiksi kun haluat muuttaa käyttäjän syöttämän tiedon oikeaan muotoon tai tehdä tiedon käsittelystä helpompaa.
 
-## Kuinka capitalisointi suoritetaan
+## Miten tehdä se
 
-Capitalisointi voidaan tehdä käyttämällä `upcase`-metodia. Alla on esimerkki koodista ja siihen liittyvä tulos:
+Päästä Jos-stringin välityksellä voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi. Tämä voi tehdä käytännölliseksi esimerkiksi silloin kun haluat muuttaa käyttäjän nimen alkukirjaimen isoksi. Käytännössä tämä olisi tehtävissä kahdella eri tavalla.
 
-```Ruby
-# Alkuperäinen merkkijono
-merkkijono = "hyvää päivää"
+```
+# Ensimmäinen tapa
 
-# Capitalisoitu merkkijono
-capitalisoitu_merkkijono = merkkijono.upcase
+nimi = "emilia"
+puts nimi.capitalize
 
-# Tulostaa: HYVÄÄ PÄIVÄÄ
-puts capitalisoitu_merkkijono
+# Toinen tapa
+
+nimi = "emilia"
+puts nimi[0] = nimi[0].upcase
 ```
 
-Yllä olevassa koodissa `upcase`-metodia käytetään capitalisoimaan `merkkijono`-muuttuja ja tallentamaan se uuteen muuttujaan `capitalisoitu_merkkijono`.
+## Syöte ja Tuloste
 
-## Syvällinen sukellus capitalisoimiseen
+```
+Syöte: nimi = "emilia" (Merkkijono)
 
-On tärkeää huomata, että `upcase`-metodi ei muuta alkuperäistä merkkijonoa, vaan luo uuden capitalisoidun version. Lisäksi `upcase`-metodi toimii vain ASCII-merkkijonoille, eli se ei toimi esimerkiksi ääkkösten tai muiden erikoismerkkien kanssa.
+Tuloste: Emilia (Merkkijono)
+```
 
-On myös hyvä muistaa, että `upcase`-metodi ei ainoastaan capitalisoi kirjaimia, vaan kaikki merkit muuttuvat suuriksi kirjaimiksi. Esimerkiksi välilyönnit ja välimerkit säilyvät samana.
+## Syvempi Sukellus
+
+Päästä Jos-stringin avulla voit myös tehdä muita muutoksia merkkijonolle, kuten muuttaa kaikki kirjaimet isoksi tai pieneksi. Tämä voidaan tehdä käyttämällä .upcase tai .downcase -metodeja.
+
+Voit myös muuttaa pelkästään ensimmäisen kirjaimen isoksi ja jättää loput kirjaimet alkuperäiseen muotoon .capitalize -metodilla.
 
 ## Katso myös
 
-- [`upcase`-dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html#method-i-upcase)
-- [Ruby-merkkijonon muotoilu](https://www.rubyguides.com/2019/04/ruby-string-methods/)
-- [ASCII-merkkijonot](https://en.wikipedia.org/wiki/ASCII)
+- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
+- [Ruby String Methods](https://www.rubyguides.com/ruby-tutorial/string-methods/)
+- [Ruby String Manipulation](https://www.educative.io/blog/ruby-string-manipulation)

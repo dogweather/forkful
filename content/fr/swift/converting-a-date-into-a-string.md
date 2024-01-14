@@ -1,61 +1,54 @@
 ---
-title:    "Swift: Conversion d'une date en chaîne de caractères."
+title:    "Swift: Convertir une date en chaîne de caractères"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La conversion de dates en chaînes de caractères est une tâche courante dans la programmation Swift. Elle permet de formater les dates de manière lisible pour l'utilisateur final ou pour les intégrer dans des bases de données. Dans cet article, nous allons explorer comment réaliser cette conversion en utilisant le langage Swift.
+Si vous êtes un développeur Swift, vous êtes probablement familiarisé avec le type `Date` qui représente une date et une heure spécifiques. Si vous avez déjà travaillé avec les dates, vous avez peut-être eu besoin de les convertir en chaînes de caractères (strings) pour les utiliser dans votre application. Dans cet article, nous allons examiner comment convertir une date en une chaîne de caractères en utilisant le langage Swift.
 
 ## Comment faire
-
-Pour convertir une date en chaîne de caractères, nous allons utiliser la classe `DateFormatter` et sa méthode `string(from: Date)`. Voici un exemple de code qui illustre ce processus :
-
-```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
-let date = Date()
-let formattedString = formatter.string(from: date)
-print(formattedString)
-```
-
-Dans cet exemple, nous créons un objet `DateFormatter` et nous lui donnons le format désiré pour la date. Ensuite, nous obtenons la date actuelle en utilisant la classe `Date` et nous utilisons la méthode `string(from: Date)` pour convertir cette date en une chaîne de caractères selon le format spécifié. Enfin, nous imprimons cette chaîne pour vérifier le résultat.
-
-Lorsque vous exécutez ce code, vous devriez voir une sortie similaire à celle-ci :
-
-```
-27/08/2021
-```
-
->Note : Il est important de spécifier le format souhaité de la date pour éviter toute confusion dans la conversion. Vous pouvez consulter la documentation de la classe `DateFormatter` pour connaître les différents formats disponibles.
-
-## Plongée en profondeur
-
-La classe `DateFormatter` offre des options avancées pour personnaliser la conversion de dates en chaînes de caractères. Vous pouvez spécifier des localisations pour prendre en compte les différents formats de dates dans différentes régions du monde. Vous pouvez également utiliser des modèles de dates prédéfinis pour obtenir des résultats plus précis.
-
-Voici un exemple de code qui utilise une localisation pour convertir une date en anglais :
+La méthode la plus simple pour convertir une date en une chaîne de caractères consiste à utiliser le `DateFormatter` de Swift. Tout d'abord, nous allons créer une instance de `DateFormatter`, qui est une classe qui nous permet de formater les dates en chaînes de caractères selon nos besoins.
 
 ```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd MMMM yyyy"
-formatter.locale = Locale(identifier: "en")
-let date = Date()
-let formattedString = formatter.string(from: date)
-print(formattedString)
+let dateFormatter = DateFormatter()
 ```
 
-Et voici la sortie correspondante :
+Ensuite, nous devons spécifier le format dans lequel nous voulons que notre date soit affichée. Par exemple, pour afficher la date en format "jour/mois/année", nous pouvons utiliser la ligne suivante :
 
-```
-27 August 2021
+```Swift
+dateFormatter.dateFormat = "dd/MM/yyyy"
 ```
 
-Vous pouvez également utiliser les modèles de dates prédéfinis pour obtenir des résultats encore plus précis. Par exemple, pour afficher la date et l'heure actuelles, vous pouvez utiliser `formatter.dateFormat = "dd MMMM yyyy, HH:mm:ss"`. N'hésitez pas à explorer les différentes possibilités offertes par la classe `DateFormatter` pour trouver celle qui convient le mieux à vos besoins.
+Une fois que nous avons choisi notre format, nous pouvons utiliser la méthode `string(from: )` pour convertir notre date en une chaîne de caractères.
+
+```Swift
+let dateString = dateFormatter.string(from: Date())
+```
+
+Si nous imprimons `dateString`, nous obtiendrons une chaîne de caractères représentant la date actuelle dans le format que nous avons spécifié. Par exemple : "25/09/2021".
+
+## Deep Dive
+En plus du format de date standard `dateFormat`, le `DateFormatter` de Swift offre également d'autres options pour formater les dates en différentes langues et styles. Par exemple, vous pouvez spécifier un style court, moyen ou long pour la date et l'heure en utilisant les propriétés `dateStyle` et `timeStyle` du `DateFormatter`. Vous pouvez également personnaliser le format en utilisant des modèles comme "EEE" pour le nom abrégé du jour de la semaine ou "MMM" pour le nom abrégé du mois.
+
+```Swift
+dateFormatter.dateStyle = .medium
+dateFormatter.timeStyle = .none 
+
+//Output : Sep 25, 2021
+```
+
+Vous pouvez également utiliser les `locale` pour spécifier une région spécifique et afficher la date et l'heure dans le format local de cette région.
+
+```Swift
+dateFormatter.locale = Locale(identifier: "fr_FR") 
+
+//Output: 25 sept. 2021
+```
 
 ## Voir aussi
-
-- [Documentation officielle de la classe DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Guide complet pour la conversion de dates en chaînes de caractères en Swift](https://www.hackingwithswift.com/example-code/language/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
-- [Tutoriel avec des exemples pratiques de la conversion de dates en chaînes de caractères en Swift](https://dzone.com/articles/convert-dates-to-strings-in-swift-with-dateformatter)
+- [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Stack Overflow - Formatting Dates with DateFormatter in Swift](https://stackoverflow.com/questions/35700281/formatting-dates-with-dateformatter-in-swift)
+- [Swift Education - How to work with dates in Swift](https://www.swifteducation.com/swift/working-with-dates-in-swift/)

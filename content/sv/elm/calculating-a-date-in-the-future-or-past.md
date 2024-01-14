@@ -1,61 +1,51 @@
 ---
-title:    "Elm: Beräkning av ett datum i framtiden eller det förflutna"
+title:    "Elm: Beräkna ett datum i framtiden eller förflutna"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-I detta inlägg kommer vi att prata om hur man kan beräkna datum i framtiden eller i det förflutna i Elm-programmeringsspråket. Att kunna utföra dessa beräkningar kan vara till nytta för många projekt, från enkel kalenderintegration till mer avancerade tidsbaserade funktioner.
+Att kunna beräkna ett datum i framtiden eller förflutna kan vara användbart för att planera eller hålla koll på tidsbaserade händelser i din Elm-applikation. Det kan också vara en användbar funktion för att ge användare feedback baserat på ett specifikt datum.
 
-## Hur man gör det
+# Så här gör du
 
-Först och främst måste vi importera paketet "elm/time" i vår Elm-fil. Detta ger oss tillgång till olika tidsfunktioner som vi kommer att använda.
+För att kunna räkna ut ett datum i framtiden eller förflutna i din Elm-kod, behöver du först importera "Date" från biblioteket "Time". Sedan kan du använda funktionen "add" för att addera eller subtrahera antal dagar, månader eller år från ett given datum. Till exempel:
 
-```elm
-import Time exposing (..)
+```Elm
+import Date exposing (Date)
+import Time
+
+todaysDate : Date
+todaysDate = Time.now
+
+tomorrowsDate : Date
+tomorrowsDate = Date.add 1 Time.day todaysDate
+
+yesterdaysDate : Date
+yesterdaysDate = Date.sub 1 Time.day todaysDate
+
 ```
 
-För att beräkna ett datum i framtiden eller förflutnanen måste vi först ha ett "Time" värde att utgå ifrån. Detta värde representerar antalet millisekunder som har passerat sedan 1 januari 1970. Vi kan använda funktionen "millisToPosix" för att konvertera ett datum till detta värde.
+I detta exempel importeras "Date" och "Time" biblioteket och definieras sedan tre variabler: "todaysDate" som är dagens datum, "tomorrowsDate" som är morgondagens datum och "yesterdaysDate" som är gårdagens datum. Genom att använda funktionen "add" och "sub" kan vi enkelt lägga till eller ta bort en dag från det givna datumet.
 
-```elm
-let dateInEpoch = millisToPosix 1609459200000
+# Djupdykning
+
+För att kunna räkna ut ett datum i förflutna eller framtiden på ett mer exakt sätt, kan du använda funktionen "fromCalendarDate". Denna funktion tar in år, månad och dag som argument och returnerar ett datum i form av en "Maybe Date". Detta gör det möjligt att hantera eventuella fel eller ogiltiga datum som kan uppstå. Till exempel:
+
+```Elm
+import Date exposing (fromCalendarDate)
+
+myDate : Maybe Date
+myDate = fromCalendarDate 2020 8 30
+
 ```
 
-För att beräkna ett datum i framtiden, lägg bara till ett antal millisekunder till detta värde.
+Här definieras variabeln "myDate" som representerar 30 augusti 2020. Om detta datum är ogiltigt, till exempel om det inte finns en 30:e dag i augusti, kommer funktionen att returnera "Nothing". Annars kommer den att returnera "Just myDate" där "myDate" är ett giltigt datum i form av "Date".
 
-```elm
-let futureDate = add dateInEpoch (days 10) --> 1600560000000
-```
+# Se även
 
-För att beräkna ett datum i det förflutna, subtrahera ett antal millisekunder från detta värde.
-
-```elm
-let pastDate = sub dateInEpoch (hours 48) --> 1608672000000
-```
-
-Det är också möjligt att konvertera tillbaka detta värde till ett vanligt datumformat med hjälp av funktionen "posixToMillis".
-
-```elm
-let formatedDate = posixToMillis futureDate
-```
-
-## Djupdykning
-
-Om du vill beräkna mer komplexa datum kan du använda funktionen "since" som tar in två tidsvärden och returnerar antalet millisekunder som har passerat mellan dem.
-
-```elm
-let millisecondsPassed = since futureDate pastDate --> 10000000
-```
-
-Det är också möjligt att använda funktionen "inTenthOfMilliseconds" för att få antalet tiondels millisekunder mellan två datum.
-
-```elm
-let tenthMillisecondsPassed = inTenthOfMilliseconds futureDate pastDate --> 100000
-```
-
-## Se även
-
-- Elm dokumentation om tidsoperationer: <https://package.elm-lang.org/packages/elm/time/latest>
-- Så här beräknar du mellan tider i JavaScript: <https://www.w3schools.com/jsref/jsref_time.asp>
+- [Official Elm Time library](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)

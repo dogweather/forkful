@@ -1,35 +1,54 @@
 ---
-title:    "Bash: 「将来または過去の日付を計算する」"
+title:    "Bash: 「未来や過去の日付の計算」"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日常生活において、私たちは自分の生活や仕事の予定をスケジュールに基づいて計画する必要があります。しかし、時には、退屈な計算や手作業を行わなければならないこともあります。そこで、Bashプログラミングを使用して、将来や過去の日付を計算する方法を学ぶことは非常に便利です。
+今日、私たちは日常生活の中でさまざまな日付を計算する必要があります。誕生日や予定されたイベントの日付を計算したり、終わったイベントの日付を振り返ったりすることがあります。Bashプログラミングで日付を計算することは、これらのタスクをより簡単にするための一つの方法です。
 
 ## 方法
 
-まず、Bashを使用して日付を計算するには、`date`コマンドを使用します。例えば、2日後の日付を計算するには、以下のように入力します。
+Bashプログラミングで日付を計算するには、dateコマンドを使用します。例えば、2022年5月1日の1年前の日付を計算するには、以下のようにコマンドを入力します。
 
-```
-Bash ```date -d "2 days"
+```Bash
+date -d "1 year ago 2022-05-01"
 ```
 
 そして、出力は以下のようになります。
 
+```Bash
+Sun May 2 00:00:00 JST 2021
 ```
-Fri Feb 5 00:00:00 JST 2021
+
+このように、dateコマンドでは、指定した日付や時間から前後の日付を計算することができます。また、日付や時間のフォーマットをカスタマイズすることもできます。
+
+## 深堀り
+
+日付を計算する際、dateコマンドではさまざまなオプションを使用することができます。例えば、以下のオプションを使うことで、今日の日付から1週間後の日付を計算することができます。
+
+```Bash
+date -d "today + 1 week"
 ```
 
-さらに、一ヶ月後や前の日付を計算する方法や、特定の書式で出力する方法など、より複雑な計算をすることもできます。
+また、日付や時間のフォーマットを指定したい場合は、`-I`オプションを使用します。例えば、ISOフルフォーマットで日付を出力するには、以下のようになります。
 
-## ディープダイブ
+```Bash
+date -d "1 year ago 2022-05-01" -I
+```
 
-もし、さらに深く日付の計算について学びたい場合は、Bashの`date`コマンドのマニュアルを参照することをおすすめします。そこには、さまざまなオプションやフォーマット指定の方法が記載されています。また、日付と時刻のフォーマットに関するGNU dateの公式ドキュメントも参考にすることができます。
+そして、出力は以下のようになります。
 
-## 参考リンク
+```Bash
+2021-05-02
+```
 
-- [GNU dateの公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats)
-- [Bashの`date`コマンドのマニュアル](https://www.gnu.org/software/coreutils/manual/html_node/Calculating-Deltas.html#Calculating-Deltas)
+さらに、`-f`オプションを使用することで、独自の日付や時間のフォーマットを指定することもできます。詳しいオプションやコマンドの使い方については、[公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)を参考にしてください。
+
+## 関連リンク
+
+- [GNU Coreutils公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Bashのループ文で日付を計算する方法](https://dev.classmethod.jp/articles/bash-loop-date-calculation/)

@@ -1,42 +1,38 @@
 ---
 title:    "Clojure: Tekstin etsiminen ja korvaaminen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi etsiä ja korvata tekstiä?
+## Miksi 
+Tiedät varmasti sen tunteen, kun joudut manuaalisesti muuttamaan useita tekstidokumentteja samoilla muutoksilla. Onneksi Clojure tarjoaa helpon ja tehokkaan tavan automatisoida tekstihaun ja korvaamisen.
 
-Etsiminen ja korvaaminen on yleinen tehtävä, jota ohjelmoijat joutuvat tekemään tekstiprosessoinnin yhteydessä. Se voi auttaa parantamaan tekstin laatua, korvaamaan vanhentunutta koodia tai muokkaamaan suuria määriä tekstiä nopeasti ja tehokkaasti.
-
-## Kuinka tehdä: Ohjelmointiesimerkit
-
-Etsiminen ja korvaaminen voidaan helposti tehdä Clojure-kielellä käyttämällä `replace` -funktiota yhdessä `re-sekvensoinnin` kanssa. Katso alla oleva esimerkki:
-
+## Kuinka tehdä 
+### Yksinkertainen haku ja korvaaminen
 ```Clojure
-(replace #"vanha" "uusi" txt)
+(def dokumentti "Tämä on esimerkkidokumentti, jossa esiintyy sana kissa.")
+(clojure.string/replace dokumentti "kissa" "koira")
 ```
 
-Tämä koodi etsii kaikki esiintymät sanojen "vanha" ja korvaa ne sanalla "uusi" tekstillä `txt`.
-
-Syöte:
-
+### Haku ja korvaaminen monilla vaihtoehdoilla
 ```Clojure
-"Vanhan koiran temppuja ei kannata opettaa"
+(def vaihtoehdot {"kissa" "koira", "linnut" "kaloja"})
+(clojure.string/replace dokumentti #"kissa|linnut" vaihtoehdot)
 ```
 
-Tuotos:
-
+### Regex-hakujen käyttäminen
 ```Clojure
-"Uuden koiran temppuja ei kannata opettaa"
+(def dokumentti "Tämä on <esimerkki>dokumentista.</esimerkki>")
+(def regex #"<.*/>")
+(clojure.string/replace dokumentti regex "")
 ```
 
-## Syvemmälle: Tietoa etsimisestä ja korvaamisesta tekstissä
-
-Clojure tarjoaa monipuoliset työkalut, kuten säännölliset lausekkeet ja erilaiset funktiot, jotka tekevät tekstien etsimisestä ja korvaamisesta helppoa ja tehokasta. Näiden työkalujen lisäksi on tärkeää ymmärtää, miten tekstin käsittely toimii Clojuren sisäisesti, jotta voidaan optimoida ja parantaa suoritusta.
+## Syväsukellus
+Clojuren "clojure.string" kirjastossa on useita hyödyllisiä funktioita hakuun ja korvaamiseen. Voit esimerkiksi käyttää "split" ja "join" funktioita muuttaaksesi tekstin taulukoksi ja yhdistääksesi sen taas takaisin merkkijonoksi. Myös "re-find" ja "re-matcher" -funktiot voivat olla hyödyllisiä monimutkaisemmissa tilanteissa.
 
 ## Katso myös
-
-- [Clojure-oppaat ja dokumentaatio](https://clojuredocs.org/)
-- [5 syytä oppia Clojurea](https://medium.com/@thebachd/the-top-5-reasons-you-should-learn-clojure-1064ffb3dd15)
-- [Säännölliset lausekkeet Clojurella](https://clojure.org/guides/regex)
+- [Clojure 1.10.1 - String](https://clojuredocs.org/clojure.string)
+- [Regular Expressions in Clojure](https://www.braveclojure.com/regular-expressions/)
+- [Clojure Cookbook - Finding and Replacing Text](https://clojure-cookbook.com/finding-replacing-text/index.html)

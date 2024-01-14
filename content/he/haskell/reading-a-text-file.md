@@ -1,32 +1,38 @@
 ---
 title:    "Haskell: קריאת קובץ טקסט"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-קריאת קובץ טקסט היא תורנית נפוצה וחשובה בעולם התכנות. כאשר אתם קוראים קובץ טקסט, אתם יכולים לקרוא ולעבד מידע כגון טקסטים, מבני נתונים ועוד. קריאת קובץ טקסט יכולה להיות אפקטיבית עבור מגוון מטרות תכנותיות, ולכן היא מאוד שימושית ללמוד.
+קריאת קובץ טקסט היא כלי חשוב למתכנתי Haskell. בכתיבת עקביות, או בטיפול בנתונים מורכבים, קריאת קובץ טקסט היא כלי חיוני שיעזור לנו לעבוד בצורה יעילה ומהירה.
 
 ## כיצד לעשות זאת
 
-ב Haskell, אתם יכולים לקרוא קובץ טקסט באמצעות פונקציית `readFile`. הנה דוגמה לקריאת קובץ והדפסת התוכן שלו:
+קוד ה-Haskell הבא מדגים כיצד לקרוא קובץ טקסט באמצעות ספריית Prelude של השפה:
 
 ```Haskell
+import System.IO
+
 main = do
-    file <- readFile "myFile.txt"
-    putStrLn file
+    handle <- openFile "example.txt" ReadMode
+    contents <- hGetContents handle
+    putStr contents
+    hClose handle
 ```
 
-הפלט של התכנית יהיה התוכן של הקובץ "myFile.txt". תוכלו גם לפענח את מבנה הנתונים בקובץ ולעבד אותו בקלות באמצעות הפונקציות המתאימות.
+על מנת לקרוא את הקובץ, אנו משתמשים בפונקציה openFile כדי לפתוח את הקובץ וליצור ידית שמייצגת אותו. לאחר מכן, אנו משתמשים בפונקציה hGetContents כדי לקרוא את התוכן של הקובץ ולתתו למשתנה בשם contents. לבסוף, אנו מסגרים את הקובץ על ידי שימוש בפונקציה hClose.
 
-## צלילה עמוקה
+הקוד ידפיס את כל התוכן של הקובץ על המסך.
 
-כדי לקרוא קובץ טקסט ב Haskell, הפונקציה `readFile` מחזירה מחרוזת. ניתן להשתמש בפונקציות רבות כדי לעבד את המחרוזת הזו ולהפעיל את הפעולות הרצויות על הנתונים שבתוכה. כמו כן, ישנם פונקציות נוספות כמו `writeFile`, שנועדו לכתיבה לקובץ טקסט. כל הפונקציות האלו נותנות לכם את היכולת לעבד קבצים טקסט באופן יעיל במסגרת התוכנית שלכם.
+## עיון מעמיק
 
-## ראו גם
+קריאת קובץ טקסט היא פעולה יחסית פשוטה, אבל לאחריה יש לטפל בקובץ כדי לנקות ולעקוב אחריו כדי להימנע מאיות עקביות בשינויים. בנוסף, אנו יכולים להשתמש בפונקציות נוספות כמו hGetLine ו-hPutStr כדי לקרוא או לכתוב קווים ספציפיים בקובץ.
 
-- [Haskell IO דוגמאות](https://www.haskell.org/tutorial/io.html)
-- [Haskell תיעוד ספרייה קריאת וכתיבת קבצים](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html#g:17)
-- [Read/Write Files כדי לעבוד עם קבצים ב-Haskell](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
+הנה כמה כתובות מועילות על קריאת קבצים ב-Haskell שיעזרו לך להשתמש בכלי זה בצורה טובה יותר:
+
+- [Hackage: System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html) - מסמך המציג את ממשק ה-IO של Haskell, המכיל את הפונקציות הנכונות לשימוש בפתרון הללו.
+- [Real World Haskell - Chapter 7: Input and Output](https://www.oreilly.com/library/view/real-world-haskell/9780596800692/ch

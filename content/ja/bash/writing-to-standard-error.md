@@ -1,46 +1,41 @@
 ---
-title:    "Bash: 標準エラーに書き込む"
+title:    "Bash: 「標準エラーに書き込む」"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Bashプログラマーのみなさん！今日は、標準エラーに書き込む方法についてお話しします。
+## なぜ？
 
-## Why
+プログラミングを学ぶときに、標準エラー出力に書き込む方法を知ることは非常に重要です。デバッグのためにエラーメッセージを取得したり、プログラムの実行状況を把握するために必要になるからです。
 
-なぜ標準エラーに書き込むのでしょうか？標準エラーは、プログラムの実行中に発生したエラーを表示する場所です。プログラムがエラーに遭遇した場合、エラーメッセージを標準エラーに書き込むことで、そのエラーをプログラムの外部へと通知することができます。これにより、プログラムの実行が中断されることなく、エラーに対処することができます。
+## 方法
 
-## How To
+標準エラー出力に書き込むには、次のようにコードを記述します。
 
-では、実際に標準エラーに書き込む方法を見てみましょう。以下のように、`echo`コマンドを使用してメッセージを標準エラーに書き込むことができます。
-
-```bash
-echo "エラーメッセージ" 1>&2
+```Bash
+echo "Error message" >&2
 ```
 
-または、`echo`コマンドの代わりに`>&2`を使用することもできます。
+このように、`>&2`を追加することで、エラーメッセージを標準エラー出力に書き込むことができます。また、コマンドの実行結果を標準エラー出力に書き込むこともできます。
 
-```bash
-echo "エラーメッセージ" >&2
+```Bash
+ls -l file1 file2 2>&1 | grep -i 'Permission denied'
 ```
 
-`>&2`によって、標準出力ではなく、標準エラーにメッセージが書き込まれます。
+上記の例では、`ls`コマンドの実行結果が標準エラー出力に書き込まれ、そこから`Permission denied`というエラーメッセージを検索します。
 
-## Deep Dive
+## 深堀り
 
-標準エラーに書き込むためには、ファイル記述子1 (`1>&2`) を使用します。ファイル記述子1は、標準出力のことを指します。そのため、1を2にリダイレクトすることで、標準出力から標準エラーにメッセージを書き込むことができるのです。
+標準エラー出力に書き込むことで、プログラムの実行状況を把握することができます。また、エラーメッセージを出力することで、バグの原因を特定しやすくなります。さらに、リダイレクト演算子(`>&`や`|`)を使用することで、標準エラー出力を標準出力と同じように扱うことができます。
 
-さらに、上記の例では、`echo`コマンドを使用しましたが、`echo`以外のコマンドでも同様に標準エラーに書き込むことができます。例えば、`grep`コマンドを使用してエラーを検索し、標準エラーに書き込むことも可能です。
+## 参考リンク
 
-```bash
-grep "エラーメッセージ" 1>&2
-```
+- [Bashの標準エラー出力について](https://www.shellscript.sh/errormessages.html)
+- [リダイレクト演算子の使用方法](https://www.linuxjournal.com/article/7383)
+- [Unixコマンドの標準入出力について](https://linux.academicinfo.net/unix-command-io.html)
 
-また、標準エラーの出力先をデフォルトの場所から変更することもできます。例えば、`2>file`を使用することで、標準エラーの出力先を`file`という名前のファイルに変更できます。
+## 参考
 
-## See Also
-
-- [Bash Redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Linux Command Line Basics](https://www.youtube.com/watch?v=ysDEGhgz-L8)
+[Bashのリダイレクト演算子](https://www.tutorialspoint.com/unix/unix-io-redirections.htm)

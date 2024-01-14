@@ -1,37 +1,44 @@
 ---
-title:    "Ruby: Utiliser des expressions régulières"
+title:    "Ruby: Utilisation des expressions régulières"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Avez-vous déjà ressenti une certaine frustration lors de la recherche de données spécifiques dans un texte? Heureusement, avec Ruby, il y a une solution: les expressions régulières! Les expressions régulières sont des séquences de caractères utilisées pour trouver des motifs spécifiques dans une chaîne de texte. Cela peut sembler intimidant pour certains, mais une fois que vous aurez maîtrisé les expresssions régulières, vous pourrez effectuer des tâches telles que la validation de données, le nettoyage de texte et la recherche de motifs spécifiques dans des chaînes de texte.
+Les expressions régulières sont un outil puissant pour manipuler et rechercher des chaînes de caractères dans un programme Ruby. Elles permettent d'effectuer des opérations complexes en utilisant des motifs ou des règles. En utilisant des expressions régulières, vous pouvez décomposer une chaîne de caractères et extraire des informations spécifiques, ou même vérifier la validité d'une chaîne selon un certain format. En bref, les expressions régulières sont un moyen efficace de traiter et de manipuler les données dans votre code Ruby.
 
 ## Comment faire
 
-Pour utiliser des expressions régulières en Ruby, vous devez d'abord déclarer votre motif en utilisant des slashes, comme ceci: ```Ruby /motif/ ``` Ensuite, vous pouvez utiliser plusieurs méthodes pour comparer votre motif à une chaîne de texte. Par exemple, vous pouvez utiliser la méthode match, qui renvoie un objet Match si le motif est trouvé dans la chaîne de texte, sinon il renvoie nil. Exemple:
+Pour utiliser des expressions régulières dans votre code Ruby, vous devez d'abord les déclarer en utilisant la syntaxe `/pattern/`. Les expressions régulières consistent en des caractères spéciaux qui représentent des motifs et des règles à suivre. Par exemple, le caractère `.` représente n'importe quel caractère, tandis que `*` signifie « zéro ou plusieurs occurrences ». Voici un exemple de recherche d'une adresse e-mail valide en utilisant une expression régulière :
 
 ```Ruby
-/texte = "Je suis un programmeur passionné de Ruby!"
-texte.match(/Ruby/) # renvoie #<MatchData "Ruby">
+email = "example@test.com"
+if email =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  puts "Adresse e-mail valide"
+else
+  puts "Adresse e-mail invalide"
+end
+# Output: Adresse e-mail valide
 ```
 
-Vous pouvez également utiliser la méthode scan pour renvoyer un tableau contenant toutes les correspondances trouvées, ou la méthode sub pour remplacer le motif par une autre valeur. Voici un exemple d'utilisation de ces méthodes:
+Vous pouvez également utiliser des expressions régulières pour remplacer ou modifier certaines parties d'une chaîne de caractères. Par exemple, si vous souhaitez remplacer tous les espaces par des tirets dans un texte, vous pouvez utiliser la méthode `sub` avec une expression régulière :
 
 ```Ruby
-/texte = "J'aime apprendre Ruby, mais je n'aime pas la syntaxe compliquée."
-texte.scan(/ruby|syntaxe/) #renvoie ["Ruby", "syntaxe"]
-texte.sub(/ruby/, "coding") #renvoie "J'aime apprendre coding, mais je n'aime pas la syntaxe compliquée."
+texte = "Ceci est un exemple de texte avec des espaces"
+texte = texte.sub(/\s+/, '-')
+puts texte
+# Output: Ceci-est-un-exemple-de-texte-avec-des-espaces
 ```
 
-## Plongée en profondeur
+## Approfondissement
 
-Les expressions régulières peuvent sembler un peu déroutantes au début, mais il y a plusieurs ressources disponibles pour vous aider à les comprendre davantage. Une bonne façon de se familiariser avec les expressions régulières en Ruby est de les pratiquer sur des plateformes d'exercices en ligne telles que HackerRank ou Codewars. De plus, la documentation officielle de Ruby fournit une liste complète des méthodes et opérateurs d'expressions régulières disponibles en Ruby. N'hésitez pas à l'utiliser comme référence lors de l'écriture de vos propres expressions régulières.
+Les expressions régulières peuvent sembler complexes au premier abord, mais elles peuvent être très utiles une fois que vous les maîtrisez. En plus des caractères spéciaux mentionnés précédemment, il existe également des groupes de captures, des opérateurs de quantité, des groupes de négation et bien d'autres fonctionnalités. En en apprenant davantage sur les expressions régulières, vous pourrez résoudre des problèmes plus complexes et augmenter l'efficacité de votre code.
 
 ## Voir aussi
 
-- [Documentation officielle de Ruby sur les expressions régulières](https://ruby-doc.org/core/Regexp.html)
-- [Exercices d'expression régulières sur HackerRank](https://www.hackerrank.com/domains/regex)
-- [Codewars: apprenez les expressions régulières en pratiquant](https://www.codewars.com/kata/search/train/ruby?q=regexp)
+- [Documentation sur les expressions régulières en Ruby](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- [Ruby regular expressions: cheat sheet](https://www.rubyguides.com/2015/06/ruby-regex/#:~:text=Ruby%20Regular%20Expressions%20Tutorial%20%E2%80%94%20A%2023%2DPage%20Cheat%20Sheet&text=Cheat%20Sheet%E2%80%9D%20of%20just%2023%20pages,-%E2%80%94Scroll%20down) (en anglais)
+- [RegEx101 : pour tester et expérimenter avec des expressions régulières](https://regex101.com/) (en anglais)

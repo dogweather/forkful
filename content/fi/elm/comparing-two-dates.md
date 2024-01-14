@@ -1,36 +1,36 @@
 ---
 title:    "Elm: Kahden päivämäärän vertailu"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi vertailla kahta päivämäärää?
 
-Usein ohjelmoinnin yhteydessä joudutaan vertailemaan kahta päivämäärää. Tämä voi olla tarpeen esimerkiksi tietyn tapahtuman järjestämisessä tai tietyn ajanjakson tarkastelemisessa. Elm-kielellä tämä onnistuu helposti ja tehokkaasti.
+Päivämäärien vertailu on tärkeää monessa Elm-ohjelmointiprojektissa, sillä se auttaa meitä selvittämään, onko yksi päivämäärä ennen toista tai ovatko ne samat. Tämä voi olla hyödyllistä esimerkiksi tapahtumien järjestämisessä tai käyttäjien syötteiden validoimisessa.
 
-## Kuinka tehdä
+## Näin vertailet päivämääriä Elm-ohjelmassa
 
-Vertailun toteuttamiseksi tarvitaan kaksi erillistä päivämäärää, jotka annetaan Date-moduulin Date-tyyppinä. Esimerkiksi:
-
-```Elm
-date1 = Date.fromIsoString "2021-09-01"
-date2 = Date.fromIsoString "2021-10-01"
-```
-
-Päivämäärät voidaan nyt vertailla käyttämällä Elm-kieleen sisäänrakennettua Date.compare-funktiota. Tämä funktio palauttaa DateValue-tyypin arvon -1, 0 tai 1 riippuen siitä, kumpi päivämäärä on aiempi. Esimerkiksi:
+Vertaileminen kahden päivämäärän välillä on helppoa Elm:ssä käyttämällä `Date`-moduulia. Voit käyttää `Date.compare`-funktiota, joka palauttaa `-1`, `0`, tai `1` riippuen siitä, mikä päivämäärä on aikaisempi. Voit myös käyttää muita funktioita, kuten `Date.isBefore`, `Date.isAfter`, tai `Date.equals` riippuen siitä, millaista vertailua haluat tehdä.
 
 ```Elm
-Date.compare date1 date2 -- Tämä palauttaa arvon -1, koska date1 on aiempi kuin date2
-Date.compare date2 date1 -- Tämä palauttaa arvon 1, koska date2 on myöhempi kuin date1
+import Date exposing (..)
+
+january1 = Date.fromCalendarDate 2020 1 1
+january2 = Date.fromCalendarDate 2020 1 2
+
+Date.compare january1 january2 == -1
+
+january1 `Date.isBefore` january2 == True
 ```
 
-## Syvällisempi sukellus
+## Syvemmälle päivämäärien vertailuun
 
-Date.compare-funktion lisäksi Elm-kielestä löytyy muitakin hyödyllisiä toimintoja, joita voi käyttää päivämäärien vertailussa. Esimerkiksi Date.between-funktio voi tarkistaa, onko tietyssä ajankohtana annettu päivämäärä kahden muun päivämäärän välissä. Date.diff-funktio taas laskee päivämäärien välisen ajanjakson päivinä, kuukausina ja vuosina.
+Vertaillessasi päivämääriä, on tärkeää ymmärtää, että ne on tallennettu tietynlaiseen muotoon Elm:ssä. Päivämäärät tallennetaan UTC-aikavyöhykkeeseen liittyen, mikä saattaa aiheuttaa eroja eri aikavyöhykkeiden välillä. Myös päivämäärille on olemassa erilaisia muotoiluvaihtoehtoja, kuten ISO-8601, joten varmista, että käytät oikeaa muotoa vertaillessasi niitä.
 
 ## Katso myös
 
-- [Elm Date -dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Time-Date/)
-- [Elm Date-moduulin esimerkkejä](https://guide.elm-lang.org/interop/dates.html)
-  Kurkkaa myös muut jännittävät Elm-kieleen liittyvät artikkelit ja resurssit osoitteessa [elm-lang.org](https://elm-lang.org/).
+- [Date moduuli Elm Documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [ISO-8601 muotoilu Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
+- [Päivämäärän vertailu artikkeli Medium:ssa (eng.)](https://medium.com/@jessengatai/date-comparison-in-elm-how-does-it-work-bac9067fbae3)

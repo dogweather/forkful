@@ -1,39 +1,35 @@
 ---
-title:    "Gleam: Att få aktuell datum"
+title:    "Gleam: Att få den aktuella datumen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna hämta och använda den aktuella datumet är en grundläggande funktion inom programmering och kan vara användbar i en mängd olika situationer. Oavsett om du behöver spåra tidsstämplar för databashanterade poster eller helt enkelt vill inkludera den aktuella tiden i ett meddelande, så kommer du att behöva veta hur du hämtar den aktuella datumet i ditt program.
+Att få den nuvarande datumen är en av de mest grundläggande funktionerna i programmering. Det är en viktig del av att skapa dynamiska applikationer och hålla reda på tidsstämplar i olika processer.
 
-## Hur man gör det
+## Hur man gör
 
-Att hämta den aktuella datumet i Gleam är en enkel men viktig process. Här är ett enkelt exempel på hur du skulle göra det:
+För att få den nuvarande datumen i Gleam, behöver vi använda funktionen `Date.now()` som returnerar ett värdet motsvarande aktuell tid i millisekunder. För att omvandla detta till ett mer läsbart format, kan vi använda funktionen `Date.toString()` som returnerar ett strängvärde av datumet enligt ett specifikt format.
 
 ```Gleam
-
-import gleam/time.{LocalDateTime, TimeZone}
-
-let {year, month, day, hour, minute, second} =
-  LocalDateTime.now() |> TimeZone.utc() |> LocalDateTime.to_fields()
-
+let current_date = Date.now()
+let readable_date = Date.toString(current_date, "%Y-%m-%d") 
 ```
 
-Det här exemplet använder funktionen `now()` från modulen `gleam/time` för att hämta den aktuella tiden, och sedan omvandlas tiden till en lista med olika fält, som år, månad, dag, timme, minut och sekund, genom att använda funktionen `to_fields()`. Vad du sedan gör med dessa fält är upp till dig!
+Detta kommer att tilldela det nuvarande datumen i formatet "år-månad-dag" till variabeln `readable_date`.
+Vi kan också specificera ett mer detaljerat format genom att använda placeholders som `%H` för timmar, `%M` för minuter och `%S` för sekunder.
 
 ## Djupdykning
 
-Nu när vi har sett en enkel kod för att hämta den aktuella datumet, låt oss titta på några viktiga saker att tänka på när du arbetar med datum och tider i Gleam.
+Det finns många fler funktioner som kan användas för att manipulera eller omvandla datum i Gleam. Till exempel `Date.add()` för att lägga till ett visst antal millisekunder till ett datum, `Date.difference()` för att räkna antalet millisekunder mellan två datum och `Date.from_string()` för att konvertera ett datum från en sträng till ett gleam Date-värde.
 
-Först och främst är det viktigt att förstå tidzoner! Beroende på var ditt program körs, kan den aktuella tiden visas annorlunda. Därför använder exemplet ovan funktionen `utc()` för att hämta den aktuella tiden i UTC-tidzonen. Om du behöver tiden i en annan tidzon, kan du använda funktioner som `local()` eller `offset()`.
+Det är också möjligt att använda bibliotek som tillhandahåller mer avancerade funktioner för datummanipulering, som till exempel [gleam-time](https://github.com/gleam-lang/gleam-time).
 
-En annan viktig funktion när det gäller datum och tider är `parse()` som kan användas för att konvertera en strängrepresentation av datumet till en `LocalDateTime`-typ. Detta kan vara särskilt användbart när du behöver läsa och hantera datum från en extern fil eller databas.
+## Se också
 
-## Se även
-
-- Gleam dokumentation om tid: https://gleam.run/documentation/?api=gleam/time
-- Officiell Gleam-tutorial: https://github.com/gleam-lang/gleam/blob/master/docs/tutorial.md
-- Gleam Community Forum: https://elixirforum.com/c/gleam
+- [Dokumentation för Gleams Date-modul](https://gleam.run/modules/date.html)
+- [Gleam-timelib-Dokumentation](https://github.com/gleam-lang/gleam-time)
+- [Gleam-discussion about date handling](https://github.com/gleam-lang/gleam/discussions/2223)

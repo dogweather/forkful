@@ -1,78 +1,46 @@
 ---
 title:    "C#: 生成随机数"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要生成随机数
 
-为了许多计算机程序，生成随机数是一个非常重要的功能。随机数被用来模拟真实世界的情况、加密数据和测试程序的可靠性。在本文中，我们将探讨如何使用C#来生成随机数，以及生成随机数的一些深入知识。
+在编程过程中，有时我们需要生成随机的数字来模拟现实世界的情况，或者用作密码或加密等安全目的。生成随机数的能力可以为我们的程序增加更多的功能和保证安全性。接下来，我们将学习如何在C#中生成随机数，并深入了解其背后的工作原理。
 
-## 如何
+# 如何生成随机数
 
-生成随机数是一个比较简单的过程，但是它涉及到一些数学和编程的概念。在C#中，我们可以使用Random类来生成随机数。我们首先需要创建一个Random实例，然后调用它的Next方法来获取一个随机数。
-
+在C#中，我们可以使用Random类来生成随机数。首先，我们需要在程序中导入System命名空间，代码如下所示：
 ```C#
-Random random = new Random();
-int randomNum = random.Next();
-Console.WriteLine(randomNum);
+using System;
+```
+接下来，我们需要创建一个Random的实例，代码如下所示：
+```C#
+Random rand = new Random();
+```
+现在，我们可以使用此实例的Next()方法来生成随机整数，代码如下所示：
+```C#
+int randomInt = rand.Next();
+```
+我们还可以指定生成的随机数的范围，例如：生成一个1-10之间的随机数，代码如下所示：
+```C#
+int randomInt = rand.Next(1, 11);
+```
+此外，我们还可以生成随机小数，代码如下所示：
+```C#
+double randomDouble = rand.NextDouble();
 ```
 
-上面的代码片段将输出一个随机的整数。如果我们需要限制随机数的范围，可以在Next方法中传入两个参数，代表最小值和最大值。
+# 深入了解生成随机数
 
-```C#
-Random random = new Random();
-int randomNum = random.Next(1, 11); // 生成1-10之间的随机数
-Console.WriteLine(randomNum);
-```
+在计算机中，生成随机数并不是一件容易的事情。因为计算机是按照特定的算法运行的，所以它们不能自己产生随机数。相反，它们可以使用特定的算法来生成看似随机的数字。Random类中使用的算法称为“线性同余法”，它使用一个称为“种子”的数字来计算下一个随机数。如果使用相同的种子，将会生成相同的随机数序列。
 
-除了整数，我们还可以生成其他类型的随机数，比如双精度数、布尔值和字符。对于双精度数，我们可以使用NextDouble方法，它会生成一个大于等于0且小于1的随机小数。
+为了避免这种情况，我们可以使用系统时间作为种子，因为它每次都是不同的。此外，Random类还提供了一个种子字段，我们可以手动设置不同的种子来生成不同的随机数序列。
 
-```C#
-Random random = new Random();
-double randomNum = random.NextDouble();
-Console.WriteLine(randomNum);
-```
+# 另请参阅
 
-要生成随机布尔值，我们可以使用Next方法来生成随机整数，然后根据整数的奇偶性来决定布尔值。
-
-```C#
-Random random = new Random();
-int randomNum = random.Next(2); // 生成0或1的随机整数
-bool randomBool = randomNum % 2 == 0; // 如果随机数为偶数，则返回true，否则返回false
-Console.WriteLine(randomBool);
-```
-
-最后，如果我们需要生成随机字符，可以使用Next方法来生成一个随机整数，然后将其转换为对应的ASCII码。
-
-```C#
-Random random = new Random();
-int randomNum = random.Next(65, 91); // 生成65-90之间的随机整数，代表大写字母的ASCII码范围
-char randomChar = (char)randomNum; // 将随机整数转换为对应的字符
-Console.WriteLine(randomChar);
-```
-
-## 深入
-
-在上面的例子中，我们提到了Random类，它是C#中生成随机数的主要类。Random类使用了伪随机数生成器的算法来生成随机数。这意味着，它实际上不是完全随机的，而是根据一个种子值来生成数字序列，这个序列看起来像是随机的。因此，如果种子值相同，生成的随机数序列也是相同的。为了避免这种情况，我们可以在创建Random实例时传入一个不同的种子值。
-
-```C#
-Random random = new Random(12345); // 使用不同的种子值来生成不同的随机数
-```
-
-Random类还有一个NextBytes方法，它可以一次性生成多个随机字节，并将其填充到指定的字节数组中。
-
-```C#
-Random random = new Random();
-byte[] randomBytes = new byte[5];
-random.NextBytes(randomBytes);
-Console.WriteLine(BitConverter.ToString(randomBytes)); // 将随机字节数组转换为十六进制字符串打印出来
-```
-
-除了Random类，我们还可以使用CryptoServiceProvider类来生成安全的随机数。这个类使用了加密学中的随机性来生成数字序列，因此生成的随机数更加安全和随机。
-
-```C#
-using System.Security.Cryptography;
-
-RNGCryptoServiceProvider
+- [Random Class (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
+- [How to Generate Random Numbers in C#](https://www.c-sharpcorner.com/UploadFile/cd7c2e/random-numbers-in-C-Sharp/)
+- [Understanding the Random Class in C#](https://www.codeproject.com/Tips/1110346/Understanding-the-Random-Class-in-Csharp)

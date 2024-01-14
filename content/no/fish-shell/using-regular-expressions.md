@@ -1,73 +1,50 @@
 ---
 title:    "Fish Shell: Å bruke regulære uttrykk"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvorfor skal du bruke regulære uttrykk når du programmerer? Svaret er enkelt: det er en effektiv måte å søke og manipulere tekst på. Enten du utvikler et nettsted, prosesserer data eller bare redigerer tekstfiler, er regulære uttrykk et kraftig verktøy å ha i verktøykassen din.
+Hvorfor skal man bruke regulære uttrykk i programmering? Regulære uttrykk er et kraftig verktøy for å finne, filtrere og manipulere tekst og gjør det enklere og raskere å utføre komplekse søk og handlinger.
 
-## Slik gjør du det
+## Hvordan
 
-For å bruke regulære uttrykk i Fish Shell, kan du enkelt bruke kommandoen `grep`. For eksempel, la oss si at du har en tekstfil som heter "navnliste.txt" som inneholder følgende navn:
+Å bruke regulære uttrykk i Fish Shell er enkelt og effektivt. Her er noen eksempler på hvordan du kan bruke det:
 
-```
-Kari
-Ole
-Sofie
-Erik
-```
+```Fish Shell
+# Søk etter alle linjer som inneholder ordet "fisk"
+grep "fisk" filnavn.txt
 
-Hvis du vil søke etter alle navn som inneholder bokstaven "e", kan du bruke følgende kommando:
+# Finn alle tall i en tekststreng
+grep -E "[0-9]+" filnavn.txt
 
-```
-grep "e" navnliste.txt
+# Endre alle forekomster av "sea" til "ocean" i en tekstfil
+sed -i "s/sea/ocean/g" filnavn.txt
 ```
 
-Dette vil gi følgende output:
+Output for det siste eksempelet vil bli:
 
+```Fish Shell
+Dype havet er fylt med liv og mysterier.
 ```
-Kari
-Sofie
-Erik
-```
-
-Du kan også bruke regulære uttrykk for å søke etter mønstre. For eksempel, hvis du bare ønsker å få ut navn som starter med bokstaven "S", kan du bruke følgende kommando:
-
-```
-grep "^S" navnliste.txt
+til
+```Fish Shell
+Dype oceanet er fylt med liv og mysterier.
 ```
 
-Dette vil bare gi deg følgende resultat:
+## Dykke Dypere
 
-```
-Sofie
-```
+Regulære uttrykk har et stort utvalg av spesialtegn som kan brukes for å gjøre søk mer spesifikke og nøyaktige. Du kan også kombinere forskjellige uttrykk for å lage mer komplekse søk.
 
-## Dykk dypere
+En annen nyttig funksjon med regulære uttrykk er at du kan bruke dem sammen med andre kommandoer i Fish Shell, som for eksempel sed, awk og cut. Dette gir deg muligheten til å manipulere tekst på flere forskjellige måter og å automatisere oppgaver som tidligere kunne vært tidkrevende og kjedelige.
 
-For å få enda mer ut av regulære uttrykk, kan du utforske flere metakarakterer og spesialtegn. En av de mest nyttige er `*`, som betyr "null eller flere forekomster av det forrige tegnet". For eksempel, hvis du vil søke etter navn som inneholder "Erik" eller "Eirik", kan du bruke følgende kommando:
+Før du begynner å bruke regulære uttrykk, er det viktig å forstå hvordan de fungerer og å øve deg på å lage dem. Det finnes mange online ressurser og bøker som kan hjelpe deg med å lære mer om dette kraftige verktøyet.
 
-```
-grep "Ei*rik" navnliste.txt
-```
+## Se Også
 
-Dette vil gi deg følgende output:
-
-```
-Erik
-Eirik
-```
-
-Det er også andre metakarakterer som `+` (én eller flere forekomster av det forrige tegnet) og `?` (null eller én forekomst av det forrige tegnet). Å eksperimentere med disse kan hjelpe deg å lage mer avanserte søkemønstre.
-
-## Se også
-
-Få mer informasjon om regulære uttrykk og hvordan du bruker dem i Fish Shell her:
-
-- [Fish Shell Tutorial: Regular Expressions](https://fishshell.com/docs/current/tutorial.html#tut_regex)
-- [Learning Regular Expressions with Fish Shell](https://dev.to/ishworgurung/learning-regular-expressions-with-fish-shell-188p)
-
-Lykke til med å utforske de utallige mulighetene med regulære uttrykk i Fish Shell!
+- [Fish Shell's offisielle nettside](https://fishshell.com/)
+- [Regulære uttrykk tutorial fra W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [Bruke regulære uttrykk i Fish Shell blogginnlegg fra Stack Abuse](https://stackabuse.com/using-regular-expressions-in-fish-shell/)

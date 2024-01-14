@@ -1,30 +1,61 @@
 ---
-title:    "Ruby: Extrahera delsträngar"
+title:    "Ruby: Extrahering av delsträngar"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-I Ruby-programmering finns det ofta behov av att extrahera delsträngar från en given sträng. Det kan vara för att bearbeta data, filtrera information eller helt enkelt för att göra manipulationer på text. Oavsett syfte är det användbart att kunna extrahera substränger på ett effektivt sätt.
 
-## Hur man gör
-Att extrahera substränger är en relativt enkel process i Ruby. Det finns flera metoder som kan användas för detta ändamål, men en av de vanligaste är `.slice()`. Nedan följer ett exempel på hur man kan använda denna metod för att extrahera en delsträng från en längre text.
+I många programmeringsprojekt behöver vi ibland dela upp en sträng i mindre delar. Detta kan vara för att hitta ett specifikt tecken, ord eller för att bara dela upp en lång sträng i mer hanterbara delar. För att kunna göra detta behöver vi kunna extrahera substrängar från en större sträng. Detta är där Ruby kommer in i bilden och erbjuder en enkel och effektiv metod för att göra detta.
+
+## Så här gör du
+
+För att extrahera en substräng från en större sträng i Ruby, kan vi använda metoden `[]` eller `slice()`. Låt oss börja med ett enkelt exempel där vi har en sträng med en lista över namn separerade med kommatecken.
 
 ```Ruby
-text = "Hej, jag heter Lisa och jag älskar att programmera."
-delsträng = text.slice(13..17)
+namn = "Emma,Peter,Lisa,Anna"
+```
 
-puts delsträng
-# resultat: Lisa
-``` 
+Om vi nu vill extrahera namnen en efter en, kan vi använda metoden `split()`, som kommer att dela upp strängen och returnera en array med varje namn som ett element.
 
-I detta exempel använder vi `.slice()` för att extrahera delsträngen "Lisa" från texten. Vi tilldelar sedan resultatet till en ny variabel som vi sedan skriver ut.
+```Ruby
+namn_lista = namn.split(",")
+
+# Output: ["Emma", "Peter", "Lisa", "Anna"]
+```
+
+För att sedan extrahera ett specifikt namn från listan, kan vi använda indexpositionen för det namnet vi vill ha.
+
+```Ruby
+namn_lista[2]
+
+# Output: "Lisa"
+```
+
+Vi kan också använda en `range` för att extrahera flera namn från listan samtidigt.
+
+```Ruby
+namn_lista[1..3]
+
+# Output: ["Peter", "Lisa", "Anna"]
+```
+
+Om vi vill extrahera en del av en sträng, kan vi också använda metoden `[]` eller `slice()` med start- och slutpositioner för det område av strängen vi vill ha.
+
+```Ruby
+namn[5..9]
+
+# Output: "Peter"
+```
 
 ## Djupdykning
-Utöver `.slice()` finns det flera andra metoder som kan användas för att extrahera substränger. En annan vanlig metod är `.substring()` som fungerar på liknande sätt som `.slice()`. Ett viktigt att tänka på är att Ruby använder sig av en nollindexering vilket betyder att den första bokstaven i en sträng motsvaras av index 0. Detta kan ibland leda till förvirring när man använder sig av metoder som `.slice()` och `.substring()`, så det är viktigt att hålla koll på vilken bokstav som bara på index 0.
+
+Det finns många andra sätt att extrahera substrängar i Ruby, inklusive användning av regular expressions och andra inbyggda metoder som `scan()` och `match()`. Det är också viktigt att vara medveten om att det finns olika sätt att utföra samma sak, men det är alltid bra att välja det enklaste och mest lättlästa alternativet.
 
 ## Se även
-- [Dokumentation för Ruby String-klassen](https://ruby-doc.org/core-2.6.3/String.html)
-- [Tutorial för att jobba med strängar i Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Blogginlägg om Ruby substrings på engelska](https://www.skilledup.com/articles/extracting-substrings-ruby)
+
+- [String Class](https://ruby-doc.org/core-3.0.2/String.html)
+- [Arrays in Ruby](https://ruby-doc.org/core-3.0.2/Array.html)
+- [Regular Expressions in Ruby](https://ruby-doc.org/core-3.0.2/Regexp.html)

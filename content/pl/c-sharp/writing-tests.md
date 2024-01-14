@@ -1,47 +1,51 @@
 ---
-title:    "C#: Pisanie testów"
+title:    "C#: Pisanie testów."
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto pisać testy w C#?
 
-Testowanie w programowaniu jest ważnym aspektem, ponieważ pozwala na znalezienie i naprawę błędów w kodzie, zanim zostanie on wdrożony do działającego systemu. Dzięki testowaniu można również upewnić się, że program spełnia wymagania i działa zgodnie z oczekiwaniami użytkowników.
+Testowanie jest nieodzownym elementem procesu tworzenia oprogramowania. Jest to potwierdzenie, że nasz kod działa prawidłowo i spełnia założone wymagania. Pisanie testów w języku C# jest kluczowym krokiem w zapewnieniu jakości naszego kodu. W tym artykule omówimy, dlaczego warto pisać testy w C# oraz jak to zrobić.
 
-## Jak To Zrobić
+## Jak pisać testy w C#
 
-Pierwszym krokiem w pisaniu testów jest użycie odpowiedniego frameworka testowego. W języku C# popularne są między innymi NUnit, xUnit czy MSTest. Przykładowy test wyglądałby następująco:
+Aby napisać testy w języku C#, należy w pierwszej kolejności zdefiniować przestrzeń nazw "using NUnit.Framework;". Następnie, przy użyciu atrybutów "TestFixture" i "Test", można utworzyć nowe klasy i metody testowe. Poniższy przykład pokazuje, jak przetestować metodę dodawania:
 
 ```C#
-[Test]
-public void Calculator_Add_ReturnsCorrectSum()
+using NUnit.Framework;
+
+[TestFixture]
+public class CalculatorTests
 {
-    //Arrange
-    Calculator calculator = new Calculator();
+    [Test]
+    public void Add_TwoNumbers_ReturnsCorrectSum()
+    {
+        // arrange
+        Calculator calc = new Calculator();
+        int num1 = 2;
+        int num2 = 3;
+        int expectedSum = 5;
 
-    //Act
-    int result = calculator.Add(2, 3);
+        // act
+        int actualResult = calc.Add(num1, num2);
 
-    //Assert
-    Assert.AreEqual(5, result);
+        // assert
+        Assert.AreEqual(expectedSum, actualResult);
+    }
 }
 ```
 
-W powyższym przypadku testujemy metodę "Add" klasy "Calculator", oczekując, że zwróci ona poprawny wynik. W przypadku sukcesu, test zostanie oznaczony jako udany, a w przypadku błędu – jako nieudany.
+W powyższym przykładzie, najpierw tworzymy instancję klasy "Calculator", która zawiera metodę dodawania. Następnie definiujemy dwie zmienne, które będą argumentami metody "Add". W kolejnym kroku, wykonujemy metodę "Add" na obiekcie "calc", a następnie sprawdzamy czy otrzymany wynik jest zgodny z oczekiwanym.
 
-Kolejnym ważnym aspektem testowania jest tworzenie asercji. Są to wyrażenia, które określają oczekiwane wyniki testów. W C# do tworzenia asercji wykorzystuje się wbudowane klasy "Assert" lub "CollectionAssert".
+## Głębszy wgląd w pisanie testów
 
-Warto również zapoznać się z różnymi rodzajami testów, takimi jak testy jednostkowe, integracyjne czy testy wydajnościowe. Każdy z nich służy do innego celu i powinien być stosowany w odpowiednim kontekście.
+Pisanie testów w C# wymaga znajomości różnych metod asercji, takich jak "Assert.AreEqual()" czy "Assert.IsTrue()". Warto także zapoznać się z pojęciem mockowania obiektów przy użyciu biblioteki Moq. Pozwala to na symulowanie różnych scenariuszy i testowanie przypadków brzegowych. Należy również pamiętać o stosowaniu dobrej praktyki test-driven development (TDD), czyli pisaniu testów przed kodem właściwym.
 
-## Deep Dive
+# Zobacz również
 
-W dalszej części warto skupić się na niektórych wytycznych, które pozwolą na efektywne pisanie testów. Przede wszystkim, należy zadbać o dobrą jakość kodu, ponieważ testy powinny być czytelne i łatwe do zrozumienia. Ważne jest również unikanie powtarzalności kodu testów oraz ciągłe aktualizowanie ich wraz z rozwojem aplikacji.
-
-Warto również pamiętać o testowaniu zarówno poprawnych, jak i błędnych danych wejściowych, ponieważ testy powinny wykryć potencjalne błędy w programie. O wiele łatwiej jest naprawić błąd na etapie testowania, niż wdrożonym już do działającego systemu.
-
-## Zobacz Również
-
-- [Dokumentacja NUnit](https://docs.nunit.org/)
-- [Poradnik na temat testowania w C#](https://www.tutorialspoint.com/csharp/csharp_unit_testing.htm)
-- [Dokumentacja xUnit](https://xunit.net/docs/getting-started/netcore/cmdline)
+- [Tutorial: NUnit](https://nunit.org/)
+- [Moq documentation](https://www.nuget.org/packages/Moq/)
+- [Test-driven development: A Practical Guide](https://www.amazon.com/Test-Driven-Development-Microsoft-Professional/dp/0735619484)

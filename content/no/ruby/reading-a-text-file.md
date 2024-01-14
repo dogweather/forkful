@@ -1,48 +1,42 @@
 ---
-title:    "Ruby: Å lese en tekstfil"
+title:    "Ruby: 'Lese en tekstfil'"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lese og håndtere tekstfiler i Ruby er en viktig ferdighet for enhver programmerer. Dette kan være nyttig for å lagre og behandle store mengder data eller for å lese og analysere eksterne filer. Uansett hva formålet er, er det avgjørende å forstå hvordan man leser en tekstfil i Ruby.
+Det å lese en tekstfil i Ruby kan være svært nyttig når man ønsker å behandle store mengder tekstbasert data. Dette kan være nyttig for å lage rapporter, analysere data eller generelt manipulere tekst på en effektiv måte. Ved å lære hvordan man kan lese en tekstfil i Ruby, utvider man sine muligheter for å jobbe med tekstbaserte oppgaver.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å lese en tekstfil i Ruby, må vi først åpne filen ved hjelp av File-klassen og etablerer en stream for filen. Dette kan gjøres ved hjelp av "File.open" metodikk:
+For å lese en tekstfil i Ruby, kan man bruke metoden `File.readlines()`. Dette vil lese hver linje i tekstfilen og returnere en liste med hver linje som et element. På denne måten kan man enkelt iterere gjennom listen og behandle hver linje separat.
 
-```ruby
-file = File.open("tekstfil.txt", "r") 
+```Ruby
+file = File.readlines("tekstfil.txt") # Åpner tekstfilen og lagrer den som en liste
+
+file.each do |line| # Itererer gjennom hver linje i listen
+  puts line # Skriver ut linjen til skjermen
+end
 ```
-Her "tekstfil.txt" er navnet på filen vi ønsker å lese, og "r" står for "read mode". Det er viktig å merke seg at hvis filen ikke finnes, vil det bli opprettet en ny fil med det angitte navnet.
 
-Deretter kan vi bruke "File.foreach" metoden til å lese og behandle hver linje i filen:
-
-```ruby
-File.foreach("tekstfil.txt") { |line|
-  puts line
-}
-```
-Denne koden vil skrive ut hver linje i filen på skjermen.
-
-For å lukke filen når vi er ferdig med å jobbe med den, kan vi bruke "file.close" metoden. Det vil sikre at ressursene til filen blir frigjort.
+Dette er en enkel måte å lese en tekstfil på, men det finnes også andre metoder for å lese filer i Ruby. For eksempel kan man bruke `File.open()` for å åpne en fil, eller `file.gets()` for å lese en linje av gangen.
 
 ## Dypdykk
 
-I tillegg til den grunnleggende koden for å lese en tekstfil, er det nyttig å kjenne til noen flere funksjoner og begreper relatert til å håndtere tekstfiler i Ruby.
+Når man leser en tekstfil i Ruby, er det viktig å være klar over hvordan filen er strukturert. Det kan være nyttig å bruke metoder som `String.chomp()` for å fjerne linjeskift fra hver linje, eller `String.split()` for å behandle hver linje som en liste med ord.
 
-En av disse er "File.readlines" metoden, som leser innholdet i filen og returnerer en array med hver linje som en verdi.
-
-Det er også mulig å bruke "file.gets" metoden for å lese en bestemt linje i filen. For eksempel, hvis vi ønsker å lese bare den tredje linjen, kan vi bruke "file.gets[2]".
-
-I tillegg, hvis vi vil skrive til en tekstfil, kan vi bruke "file.write" eller "file.puts" metoden. "file.write" vil skrive til filen uten å legge til en ny linje, mens "file.puts" vil legge til en ny linje etter at teksten er skrevet.
-
-Det er viktig å merke seg at når du arbeider med tekstfiler, er det viktig å sjekke for eventuelle unntak og håndtere dem riktig for å unngå at programmet krasjer.
+Man kan også lese tekstfiler fra eksterne kilder, for eksempel en nettside eller en database, ved hjelp av Ruby Gems som Mechanize eller Nokogiri.
 
 ## Se også
 
-- ["The Basics of Reading and Writing Files in Ruby" av Rubyguides](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Ruby File-klassen dokumentasjon](https://ruby-doc.org/core-2.7.1/File.html)
-- ["Manipulating files and directories in Ruby" av Thoughtbot](https://thoughtbot.com/blog/manipulating-files-and-directories-in-ruby)
+For mer informasjon om å lese og behandle tekstfiler i Ruby, kan du sjekke ut følgende ressurser:
+
+- [Ruby Filbehandling](https://ruby-doc.org/core-2.6/File.html)
+- [Ruby Gems Dokumentasjon](https://rubygems.org)
+- [Mechanize Gem](https://github.com/sparklemotion/mechanize)
+- [Nokogiri Gem](https://github.com/sparklemotion/nokogiri)
+
+Lykke til med å utforske mulighetene for å lese tekstfiler i Ruby!

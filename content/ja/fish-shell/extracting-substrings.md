@@ -1,47 +1,46 @@
 ---
 title:    "Fish Shell: サブストリングの抽出"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-サブストリングを抽出することのメリットは、文字列から特定の部分を取り出し、必要な情報だけを抽出できることです。これはテキスト処理やデータ解析などの多くのタスクに役立ちます。
+抽出文字列に取り組む理由は何でしょうか？
+その理由は、文字列の一部だけを必要とする場合があるからです。例えば、長いファイル名から特定のキーワードだけを取り出したい場合や、テキスト処理を行う際に特定の部分だけを使用したい場合があります。抽出文字列は、これらのようなシナリオで非常に便利です。
 
 ## 方法
 
-Fish Shellでサブストリングを抽出するには、`string`コマンドを使用します。例えば、次のコマンドを実行すると、文字列の3番目の文字から5番目の文字までが抽出されます。
+抽出文字列を実装するには、次のようなFish Shellのコードを使用します。
 
 ```Fish Shell
-string sub 3 5 "abcdefg"
-# 出力: cde
+set name "John Smith"
+set firstName (echo $name | cut -d " " -f1)
+echo $firstName
 ```
 
-また、特定の文字列を指定してサブストリングを抽出することもできます。例えば、次のコマンドを実行すると、文字列の中から"world"という部分文字列が抽出されます。
-
-```Fish Shell
-string match "world" "Hello world!"
-# 出力: world
-```
-
-さらに、配列内の特定の要素だけを抽出して新しい配列を作成することもできます。次のコマンドでは、配列`fruits`から2つの要素を抽出し、新しい配列`selected_fruits`を作成しています。
-
-```Fish Shell
-set fruits apple banana orange lemon
-set selected_fruits (string sub 2 4 $fruits)
-# 出力: [banana orange]
-```
+このコードは、`John Smith`という文字列の一番目の単語である`John`を抽出し、出力するものです。
 
 ## ディープダイブ
 
-サブストリングを抽出するには、`string`コマンドの他にも`split`コマンドや`substr`コマンドなどがあります。これらのコマンドを組み合わせることで、より高度なサブストリングの抽出が可能になります。
+抽出文字列を行うために使用されるコマンドやそのコマンドのオプションについて、もう少し詳しく見てみましょう。
 
-また、コマンドライン引数や環境変数からの文字列の抽出にも`string`コマンドを使用することができます。これにより、シェルスクリプト内で柔軟に文字列を操作することができます。
+#### cutコマンド
 
-## 参考リンク
+`cut`コマンドは、指定された単位で文字列を分割し、その一部分を抽出するために使用されます。デフォルトでは、タブ文字を区切り文字として使用しますが、`-d`オプションを使用することで、任意の区切り文字を指定することができます。例えば、スペースを区切り文字として使用するには、`-d " "`という風に指定します。
 
-- [Fish Shellドキュメント(英語)](https://fishshell.com/docs/current/)
-- [Fish Shellチートシート(英語)](https://devhints.io/fish)
-- [Fish Shellユーザーガイド(日本語)](https://munisystem.github.io/docs-fish-shell/)
-- [Fish Shell公式GitHubリポジトリ(英語)](https://github.com/fish-shell/fish-shell)
+#### fオプション
+
+`f`オプションは、取得したい抽出文字列の位置を指定するために使用されます。例えば、1番目の単語を抽出したい場合は、`-f1`という風に指定します。複数の単語を抽出したい場合は、`-f1-3`のように指定することもできます。
+
+## おわりに
+
+抽出文字列は、文字列処理を行う際に非常に役立つ機能です。是非、上記の方法を参考に、あなたのプログラミングで活用してみてください。
+
+## おすすめリンク
+
+- [Fish Shellユーザーズガイド（英語）](https://fishshell.com/docs/current/index.html)
+- [抽出文字列を使用する場合のベストプラクティス（英語）](https://www.linux.com/training-tutorials/text-processing-using-cut/)
+- [Linuxコマンドの基本（日本語）](https://www.atmarkit.co.jp/ait/articles/1708/29/news025.html)

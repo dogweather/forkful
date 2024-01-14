@@ -1,53 +1,58 @@
 ---
 title:    "C# recipe: Getting the current date"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-As a developer, one of the most common tasks you will encounter is getting the current date. Whether you are working on a website, a mobile app, or a desktop application, knowing the current date is crucial in order to perform certain operations, such as displaying the date on a webpage or scheduling tasks.
+## Why
+
+Have you ever needed to display the current date on your application or website? Or maybe you wanted to keep track of the date and time the user performed an action. Whatever the reason may be, getting the current date is a common task in programming. In this blog post, we will explore how to get the current date in C# and why it is useful.
 
 ## How To
-Getting the current date in C# is actually quite simple. We can use the built-in DateTime class to retrieve the current date and time. Let's take a look at a few code examples to see how this can be done.
+
+To get the current date in C#, we can use the `DateTime.Now` property. This property returns a `DateTime` object that contains both the date and time, accurate up to the millisecond. Let's see an example of how we can use this property in our code:
 
 ```C#
-//Basic example
 DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate);
+Console.WriteLine("The current date and time is: " + currentDate);
 ```
-This code snippet will output the current date and time in the standard format. However, we can also format the output to suit our needs. For example:
+
+The output of this code will be something like this: `The current date and time is: 12/10/2020 3:25:34 PM`. We can also format the output to only display the date or time, depending on our needs. For example, if we only want to display the current date, we can use the `ToShortDateString()` method. Take a look at the code below:
 
 ```C#
-//Formatting the output
 DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate.ToString("MM/dd/yyyy"));
+string formattedDate = currentDate.ToShortDateString();
+Console.WriteLine("Today's date is: " + formattedDate);
 ```
 
-Using the ToString() method, we can specify the format in which we want the date to be displayed. In this case, it will output the date in the format month/day/year. You can find a list of all the available format options [here](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings).
-
-If you want to get just the current date without the time, you can use the Date property of the DateTime class:
-
-```C#
-//Getting only the current date
-DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate.Date);
-```
+The output of this code will be `Today's date is: 12/10/2020`.
 
 ## Deep Dive
-Now that we know how to retrieve the current date in C#, let's take a deeper look at how this process actually works. The DateTime class in C# represents an instant in time and has various methods to help us manipulate dates and times. When we call the Now property, it returns the current time in the local time zone of the computer running the code.
 
-If you want to get the current time in a different time zone, you can use the TimeZoneInfo class. For example:
+Now that we know how to get the current date in C#, let's take a deeper look at the `DateTime` object and its properties. This object represents a specific point in time and has several useful properties such as `Day`, `Month`, `Year`, `Hour`, `Minute` and `Second`. These properties allow us to access individual components of the date and time. For example, if we want to display the current year, we can use the `Year` property like this:
 
 ```C#
-//Getting current date and time in a specific time zone
 DateTime currentDate = DateTime.Now;
-Console.WriteLine(TimeZoneInfo.ConvertTimeBySystemTimeZoneId(currentDate, "Eastern Standard Time"));
+int currentYear = currentDate.Year;
+Console.WriteLine("The current year is: " + currentYear);
 ```
 
-In this code, we are using the ConvertTimeBySystemTimeZoneId method to convert the current date and time into Eastern Standard Time.
+The output of this code will be `The current year is: 2020`.
+
+We can also perform operations on `DateTime` objects, such as adding or subtracting days, months or years. This can be useful when dealing with date calculations. For example, if we want to calculate the date 7 days from now, we can do it like this:
+
+```C#
+DateTime currentDate = DateTime.Now;
+DateTime futureDate = currentDate.AddDays(7);
+Console.WriteLine("The date 7 days from now will be: " + futureDate);
+```
+
+The output of this code will be something like `The date 7 days from now will be: 12/17/2020 3:25:34 PM`.
 
 ## See Also
-- [DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
-- [TimeZoneInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo)
-- [Standard Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+
+- [DateTime.Now Property in C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0)
+- [Working with Dates and Times in C#](https://docs.microsoft.com/en-us/dotnet/csharp/datetime)
+- [Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

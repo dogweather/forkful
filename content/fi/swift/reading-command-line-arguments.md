@@ -1,45 +1,53 @@
 ---
-title:    "Swift: Komentoriviparametrien lukeminen"
+title:    "Swift: Komentoriviparametrien lukeminen."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Mikä motivoi lukemaan komentorivin argumentteja? Se on hyvä taito, joka auttaa saavuttamaan parempia ohjelmointitaitoja, ja se on myös välttämätöntä monissa projekteissa.
+## Miksi lukea komentorivin argumentteja?
 
-## Miten
-Komentorivin argumenttien lukeminen Swiftillä on helppoa ja hyödyllistä. Käytämme tätä aliohjelmaa `printCommandLineArguments()`, joka tulostaa kaikki argumentit komentoriviltä:
+Komentorivin argumenttien lukeminen on tärkeä taito, joka auttaa kehittäjiä ohjelman suorittamisen aikana. Se myös sallii ohjelman käyttäjien syöttää muuttujia ohjelman suoritusvaiheessa, mikä tekee ohjelmasta interaktiivisemman ja joustavamman.
+
+## Miten lukea komentorivin argumentteja?
+
+Komentorivin argumenttien lukeminen on yllättävän helppoa Swiftissä. Se voidaan tehdä käyttämällä `CommandLine`-luokkaa ja sen `arguments`-ominaisuutta. Tässä esimerkissä tulostamme kaikki annetut argumentit:
 
 ```Swift
-func printCommandLineArguments() {
-    let arguments = ProcessInfo.processInfo.arguments
-    print("Komentorivin argumentit: \(arguments)")
+let cmdArgs = CommandLine.arguments
+
+for (index, argument) in cmdArgs.enumerated() {
+    print("Argumentti \(index+1): \(argument)")
 }
 ```
-
-Esimerkiksi, jos suoritamme ohjelman seuraavilla argumenteilla:
-
-```Shell
-swift ohjelma.swift arg1 arg2 arg3
+Esimerkkitulos:
+```
+Argumentti 1: HelloWorld
+Argumentti 2: welcome
 ```
 
-`printCommandLineArguments()` tulostaa:
+## Syväsukellus: Komentorivin argumenttien lukeminen
 
-```Shell
-Komentorivin argumentit: [ohjelma.swift, arg1, arg2, arg3]
+Voit myös määrittää omaa logiikkaa komentorivin argumenttien lukemisen yhteydessä. Tässä esimerkissä luodaan toiminto, joka muuttaa kaikki annetut argumentit isoiksi kirjaimiksi ja tulostaa ne:
+
+```Swift
+let cmdArgs = CommandLine.arguments
+
+func convertToUppercase(argument: String) -> String {
+    return argument.uppercased()
+}
+
+let convertedArgs = cmdArgs.map(convertToUppercase)
+print("Muunnetut argumentit: \(convertedArgs)")
 ```
 
-Näin pääset alkuun komentorivin argumenttien lukemisessa Swiftillä. Kokeile rohkeasti erilaisia argumentteja ja tutustu niiden lukemiseen lisää!
-
-## Syvemmälle
-Komentorivin argumenttien lukeminen on yksinkertainen tapa hyödyntää ohjelman suorituksen yhteydessä annettuja arvoja. Voit esimerkiksi käyttää komentorivin argumentteja ohjelman asetusten määrittämiseen tai käyttäjän syötteenä. Voit myös siirtää komentorivin argumentteja toisten aliohjelmien käyttöön.
-
-Komentorivin argumenttien lukeminen tapahtuu `ProcessInfo` luokan avulla, joka tarjoaa pääsyn ohjelman suorituksen aikaisiin tietoihin, kuten komentorivin argumentteihin.
+Esimerkkitulos:
+```
+Muunnetut argumentit: [HELLOWORLD, WELCOME]
+```
 
 ## Katso myös
-- [Swiftin virallinen dokumentaatio](https://developer.apple.com/documentation/foundation/processinfo)
-- [Veera Nymanin blogipostaus (suomeksi)](https://veeran.fi/komentorivin-parametrit-ja-kayttajalta-saatava-syote-swiftissa/)
-- [Swiftin komentorivisovelluksen esimerkki GitHubissa](https://github.com/apple/swift/blob/master/utils/build-script)
 
-Kiitos lukemisesta ja onnea komentorivin argumenttien lukemisen kanssa!
+- [Swiftin CommandLine-dokumentaatio](https://developer.apple.com/documentation/swift/commandline)
+- [How to Read Command-Line Arguments](https://www.hackingwithswift.com/example-code/system/how-to-read-command-line-arguments-using-swift)

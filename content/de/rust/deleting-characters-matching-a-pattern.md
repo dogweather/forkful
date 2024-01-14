@@ -1,64 +1,45 @@
 ---
-title:    "Rust: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Rust: Löschen von Zeichen, die einer bestimmten Struktur entsprechen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
+Warum sollte man sich überhaupt mit dem Löschen von Zeichen beschäftigen, die einem bestimmten Muster entsprechen? Eine häufige Situation ist zum Beispiel, dass man in einer Textdatei bestimmte Wörter oder Zeichen entfernen möchte, um einen klareren und saubereren Text zu erhalten. In diesem Blogbeitrag zeigen wir, wie man dies mit Rust sehr effizient umsetzen kann.
 
-In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man in Rust Zeichen löscht, die zu einem bestimmten Muster passen. Warum sollte man das überhaupt tun? Nun, es gibt verschiedene Anwendungsfälle, wie zum Beispiel das Entfernen unerwünschter Zeichen oder die Vorbereitung von Text für die weitere Verarbeitung.
-
-##Wie?
-
-Um eine einfache Lösung für das Löschen von Zeichen in Rust zu finden, werden wir uns ein paar Code-Beispiele ansehen. Zunächst müssen wir ein paar notwendige Imports machen:
+## So geht's
+Um Zeichen in Rust zu löschen, gibt es verschiedene Wege. Ein einfacher Ansatz ist die Verwendung der "replace()" Funktion aus der "str" Bibliothek. Diese Funktion nimmt ein Muster und einen Ersatz als Parameter und ersetzt alle Vorkommen des Musters durch den Ersatz. Schauen wir uns dazu ein Beispiel an:
 
 ```Rust
-use std::io::{stdin, stdout, BufRead, Write};
+let text = "Dies ist ein Testtext.";
+let neuer_text = text.replace("Test", "");
+println!("{}", neuer_text);
+// Ausgabe: "Dies ist ein Text."
 ```
+In diesem Beispiel wird das Wort "Test" aus dem Text entfernt und der verbleibende Text wird in der Variable "neuer_text" gespeichert. Durch die Verwendung von "`{}`" in der "println!" Macro wird der Inhalt der Variablen ausgegeben.
 
-Als nächstes definieren wir die Funktion `delete_char` mit zwei Parametern: einen `&str` für den Text, den wir bearbeiten wollen, und einen `char`, der das zu entfernende Zeichen darstellt. Die Funktion wird dann jedes Vorkommen dieses Zeichens in dem Text löschen und den bearbeiteten Text zurückgeben.
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken. Hierbei können komplexere Muster definiert werden, um bestimmte Zeichen zu finden und zu ersetzen. Dies kann mit der "regex" Bibliothek in Rust umgesetzt werden. Hier ein Beispiel:
 
 ```Rust
-fn delete_char(text: &str, character: char) -> String {
-    text.chars()
-        .filter(|c| *c != character)
-        .collect()
-}
+extern crate regex; // Import der Bibliothek
+use regex::Regex; // Nutzung der Regex-Struktur
+
+let text = "11:00 Uhr"; // Text mit Uhrzeitangabe
+let muster = Regex::new(r"\d\d:\d\d").unwrap(); // Definieren des Musters (2 Zahlen, ein Doppelpunkt, 2 Zahlen)
+let neuer_text = muster.replace_all(text, ""); // Alle Vorkommen des Musters werden gelöscht
+println!("{}", neuer_text);
+// Ausgabe: " Uhr"
 ```
 
-Lassen Sie uns nun einen einfachen Text eingeben und das Ergebnis überprüfen:
+## Tiefergehende Informationen
+Das Löschen von Zeichen oder Textpassagen ist in vielen Situationen hilfreich, um Texte zu bereinigen oder bestimmte Informationen zu extrahieren. In Rust gibt es verschiedene Bibliotheken und Funktionen, die dabei unterstützen. Es kann auch sinnvoll sein, sich mit regulären Ausdrücken zu beschäftigen, um komplexere Muster zu definieren oder Texte auf bestimmte Bedingungen zu überprüfen.
 
-```Rust
-fn main() {
-    let mut input = String::new();
-    println!("Geben Sie einen Text ein:");
-    stdin().read_line(&mut input).expect("Konnte Eingabe nicht lesen");
-    let result = delete_char(&input, 'e');
-    print!("Ergebnis: {}", result);
-}
-```
+## Weitere Informationen
+Sie möchten mehr über das Löschen von Zeichen in Rust erfahren? Hier sind ein paar weitere Ressourcen, die Ihnen helfen könnten:
 
-Eingabe:
-```
-Hallo Welt!
-```
-
-Ausgabe:
-```
-Hllo Wlt!
-```
-
-##Tief eintauchen
-
-Wenn wir uns etwas tiefer mit dem Löschen von Zeichen in Rust befassen, werden wir feststellen, dass es mehrere Ansätze gibt, die wir nutzen können. Zum Beispiel können wir Zeichen mithilfe von regulären Ausdrücken löschen oder die Standardbibliotheksfunktion `replace` verwenden, um sie durch ein anderes Zeichen zu ersetzen.
-
-Es gibt auch Bibliotheken wie `string_utils`, die spezielle Funktionen für das Bearbeiten von Strings anbieten. Alternativ können wir auch eigene Funktionen schreiben, die komplexere Logik für das Entfernen von Zeichen ermöglichen.
-
-In jedem Fall ist es wichtig, die gewählte Methode gründlich zu testen, um unerwartete Ergebnisse zu vermeiden.
-
-##Siehe auch
-- [String-Handling in Rust](https://doc.rust-lang.org/std/string/index.html)
-- [Die `String`-Bibliothek in Rust](https://doc.rust-lang.org/std/string/struct.String.html)
-- [string_utils Dokumentation](https://docs.rs/string_utils/0.2.12/string_utils/)
-- [Reguläre Ausdrücke in Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
+- Offizielle Rust Dokumentation zu "replace()": https://doc.rust-lang.org/std/primitive.str.html#method.replace
+- Rust Bibliothek "regex": https://docs.rs/regex/1.5.4/regex/
+- Tutorials zu regulären Ausdrücken in Rust: https://docs.rs/regex/1.5.4/regex/
+- Weitere nützliche Funktionen für Textmanipulation in Rust: https://stackoverflow.com/questions/41745899/clean-a-char-based-text-string-in-rust/41762625#41762625

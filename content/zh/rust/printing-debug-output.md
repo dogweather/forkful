@@ -1,49 +1,45 @@
 ---
-title:    "Rust: 打印调试信息"
+title:    "Rust: 打印调试输出"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么： 打印调试输出是Rust编程中重要的一部分。通过打印调试输出，可以帮助程序员追踪程序运行过程中的错误和bug，提高代码的稳定性和可靠性。
+为什么：
 
-如何： 要打印调试输出，可以使用Rust语言中的"println!"宏，它可以将信息打印到控制台或终端窗口。下面是一个示例代码和输出：
+Rust 是一种功能强大的编程语言，它的特点包括高性能、安全性和并发性。打印调试输出是一种常见的调试手段，它可以帮助程序员在开发过程中更好地理解程序的运行情况。
 
-```Rust
-fn main() {
-    let num1 = 5;
-    let num2 = 10;
-    println!("Number 1 is {}", num1);
-    println!("Number 2 is {}", num2);
-}
-```
+## 如何打印调试输出
 
-输出：
-
-Number 1 is 5
-Number 2 is 10
-
-深入了解：除了基本的打印功能外，Rust还提供了其他一些有用的调试功能。例如，可以使用"dbg!"宏来打印变量的值及其类型，方便程序员进行调试。下面是一个示例代码和输出：
+要在 Rust 中打印调试输出，需要使用 `println!` 宏。下面是一个简单的例子：
 
 ```Rust
-fn main() {
-    let num1 = 5;
-    let num2 = 10;
-    dbg!(num1, num2);
-}
+let greetings = "你好！";
+println!("这是一个打印调试输出的例子：{}", greetings);
 ```
 
-输出：
+运行结果将会是：
 
-[src\main.rs:4] num1 = 5
-[src\main.rs:5] num2 = 10
+```
+这是一个打印调试输出的例子：你好！
+```
+可以使用 `{}` 占位符来打印变量或表达式的值，也可以使用其他占位符来指定打印结果的格式。更多详细的用法可以查看官方文档。
 
-此外，Rust还提供了"eprintln!"宏用于将信息打印到标准错误流中，这对于写入日志文件或处理不同类型的输出信息很有用。
+## 深入了解打印调试输出
 
-参见：如果想要进一步了解打印调试信息的使用方法和技巧，可以参考以下链接：
+在 Rust 中，打印调试输出并不仅限于使用 `println!` 宏。还可以使用 `eprintln!` 宏将输出打印到标准错误流中，或者使用 `dbg!` 宏来将变量的值和相应的代码位置打印出来以辅助调试。
 
-- [Rust文档：std::fmt::Debug trait](https://doc.rust-lang.org/std/fmt/trait.Debug.html)
-- [Rust文档：std::fmt::Display trait](https://doc.rust-lang.org/std/fmt/trait.Display.html)
-- [Rust By Example：Printing](https://doc.rust-lang.org/stable/rust-by-example/hello/print.html)
+另外，Rust 还支持自定义打印格式，可以通过实现 `std::fmt::Display` 或 `std::fmt::Debug` trait 来控制打印的格式。这是一种更加灵活的调试方式，可以根据具体的情况来定制输出结果。
 
-请记住，在编写Rust程序时，使用打印调试信息是一个非常有用的工具。它可以帮助您快速定位和解决错误，从而提高代码的质量和可读性。同时，也可以通过掌握更多的调试技巧，让您编写的程序更加健壮和可靠。
+## 参考链接
+
+- [Rust 官方文档：std::fmt](https://doc.rust-lang.org/std/fmt/index.html)
+- [Rust 官方文档：std::debug](https://doc.rust-lang.org/std/fmt/debug/index.html)
+- [Rust 官方文档：std::println](https://doc.rust-lang.org/std/macro.println.html)
+
+## 参见
+
+- [Rust 中最常用的调试方法](https://www.ruanyifeng.com/blog/2019/12/rust-debugging.html)
+- [Rust 调试技巧方法总结](https://cloud.tencent.com/developer/article/1463625)
+- [Rust 学习笔记：调试](http://www.sheshbabu.com/posts/rust-tricks-for-easy-debugging/)

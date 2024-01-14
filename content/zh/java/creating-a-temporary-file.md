@@ -1,45 +1,47 @@
 ---
-title:    "Java: 临时文件创建"
+title:    "Java: 创建临时文件"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要创建临时文件
-临时文件在Java编程中是非常有用的工具。它们可以用来存储临时数据，比如在程序运行过程中产生的中间结果。它们也可以用来保存一些不需要长期存储在磁盘上的数据。创建临时文件可以帮助我们更有效地管理和使用数据，从而提高我们的程序的性能。
+## 为什么
+
+经常在写Java程序时，我们经常会遇到需要创建一个临时文件的情况。这样做可以让程序更加灵活和高效。接下来，让我们来探讨一下如何创建临时文件以及它的深层原理。
 
 ## 如何创建临时文件
-要在Java中创建临时文件，我们可以使用`java.io.File.createTempFile()`方法。这个方法接受三个参数：前缀、后缀和文件所在的目录。让我们来看一个例子：
 
-```Java
+在Java中，我们可以使用`java.io.File`类来创建一个临时文件。首先，我们需要导入这个类：
+
+```java
 import java.io.File;
-import java.io.IOException;
-public class TemporaryFileExample {
-    public static void main(String[] args) {
-        try {
-            // 创建临时文件
-            File tempFile = File.createTempFile("temp", ".txt", new File("D:\\temp"));
-            // 输出文件路径
-            System.out.println("临时文件创建成功，路径为：" + tempFile.getAbsolutePath());
-            // 设置为在退出时自动删除
-            tempFile.deleteOnExit();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
 ```
 
-输出应该是：
+接下来，我们使用`createTempFile()`方法来创建一个临时文件，需要传入两个参数：前缀和后缀。前缀是临时文件的文件名前缀，后缀是临时文件的文件扩展名。例如，我们可以将前缀设置为"temp"，后缀设置为".txt"，这样创建的临时文件名就会是"temp[random string].txt"。
 
-```
-临时文件创建成功，路径为：D:\temp\temp1097761891306395803.txt
+```java
+File tempFile = File.createTempFile("temp", ".txt");
 ```
 
-## 深入了解临时文件
-临时文件并不会永久存储在磁盘上，它们只会在程序运行期间存在。当程序运行结束时，会自动删除掉这些临时文件。我们也可以通过`deleteOnExit()`方法来手动删除这些文件。此外，我们还可以通过`setLastModified()`方法来设置临时文件的最后修改时间，从而控制它们的存在时间。
+创建临时文件后，我们可以使用`deleteOnExit()`方法来告诉Java虚拟机在程序结束时删除这个临时文件。
+
+```java
+tempFile.deleteOnExit();
+```
+
+## 深入了解创建临时文件
+
+创建临时文件的原理是通过调用系统的临时文件存储位置（通常是操作系统的临时文件夹）来创建文件。当程序结束时，临时文件会被自动删除。
+
+除了上面提到的`createTempFile()`方法，Java还提供了另一个方法来创建临时文件，即`createTempFile(String prefix, String suffix, File directory)`。这个方法允许我们指定临时文件的存储位置，即`directory`参数，这样我们可以更加灵活地管理临时文件。
 
 ## 参考链接
-- [Java中如何创建临时文件？](https://www.cnblogs.com/fyq201/p/7925272.html)
-- [Understanding Temporary Files in Java](https://www.baeldung.com/java-temporary-files)
-- [TemporaryFileExample.java](https://gist.github.com/kendricktan/6c3c1c9a75fa6605f08fc1f24924e881) (示例代码)
+
+- [Java官方文档：File类](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java编程入门教程](https://www.runoob.com/java/java-tutorial.html)
+
+## 参见
+
+- [为什么使用临时文件](https://www.xxx.com/why-use-temporary-files)
+- [如何在Java中快速创建临时文件](https://www.xxx.com/how-to-create-temporary-files-in-java)

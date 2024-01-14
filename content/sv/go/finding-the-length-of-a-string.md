@@ -1,52 +1,37 @@
 ---
-title:    "Go: Att hitta längden av en sträng"
+title:    "Go: Att hitta längden på en sträng"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande operation inom programmering. Genom att förstå hur detta görs kan du använda denna kunskap i olika situationer, till exempel när du behöver validera inmatad text eller manipulera data i en sträng.
+Att kunna hitta längden på en sträng är en grundläggande färdighet inom Go-programmering. Genom att kunna göra detta kan du hantera data mer effektivt och korrekt i dina program. Det är en enkel uppgift som kan ge stor nytta i dina projekt.
 
-## Hur man gör
+## Hur man gör det
 
-För att hitta längden på en sträng i Go behöver du först importera standardpaketet "strings". Sedan kan du använda funktionen "len()" för att bestämma längden på en sträng. Här är ett enkelt exempel:
+Att hitta längden på en sträng i Go är väldigt enkelt. Du kan använda inbyggda funktionen ```len``` för att få längden på en sträng. Låt oss ta en titt på ett exempel:
 
-```Go
-import "strings"
-
+```
 func main() {
-    str := "Det här är en sträng"
-    length := len(str)
-    fmt.Println(length) // output: 20
+	str := "Detta är en sträng"
+	fmt.Println("Längden på strängen är:", len(str))
 }
 ```
 
-I det här exemplet använder vi funktionen "len()" för att bestämma längden på strängen "str". Vi skriver sedan ut resultatet med hjälp av "fmt.Println()"-funktionen. Resultatet visar att strängen består av 20 tecken.
+Output:
+```Längden på strängen är: 20```
 
-Det finns också andra sätt att hitta längden på en sträng, till exempel genom att använda funktionen "strings.Count()". Denna funktion räknar antalet förekomster av en viss delsträng i en större sträng. Om du anger en tom delsträng kommer funktionen att räkna antalet tecken i den stora strängen.
-
-```Go
-import "strings"
-
-func main() {
-    str := "Hej, jag heter Johan"
-    length := strings.Count(str, "")
-    fmt.Println(length) // output: 19
-}
-```
-
-I detta exempel använder vi funktionen "strings.Count()" för att räkna antalet tecken i strängen "str". Genom att ange en tom delsträng räknas antalet tecken i den stora strängen istället för antalet förekomster av den tomma delsträngen.
+Som du kan se använder vi funktionen ```len``` för att få längden på strängen och sedan printar vi ut resultatet tillsammans med en beskrivande text. Det är väldigt enkelt och det går snabbt att använda denna metoden i dina egna projekt.
 
 ## Djupdykning
 
-Att hitta längden på en sträng kan verka enkelt, men det finns vissa saker som är bra att ha i åtanke. En sak att tänka på är att funktionen "len()" räknar antalet bytes, inte antalet tecken. Detta kan vara viktigt om du arbetar med icke-latinska tecken eller emoticons.
-
-Att använda funktionen "strings.Count()" kan också leda till oväntade resultat om din sträng innehåller icke-printbara tecken som till exempel mellanslag eller remsor. Det är därför viktigt att alltid kontrollera vad som ska räknas för att få önskat resultat.
+Längden på en sträng beräknas genom antalet bytes i strängen, inte antalet tecken. Detta betyder att speciella tecken och bokstäver som inte finns i ASCII-alfabetet, som till exempel åäö, kan påverka längden av strängen. Om du behöver hantera icke ASCII-tecken i dina projekt är det viktigt att du är medveten om detta.
 
 ## Se även
 
-- Dokumentation för Go-paketet "strings": https://golang.org/pkg/strings/
-- Tutorial om Go-språket: https://tour.golang.org/
-- Forum för Go-programmerare: https://forum.golangbridge.org/
+- [Go Documentation: Strings](https://golang.org/pkg/strings/)
+- [A Tour of Go: Strings and Characters](https://tour.golang.org/basics/1)
+- [The Go Programming Language Specification: Length and capacity](https://golang.org/ref/spec#Length_and_capacity)

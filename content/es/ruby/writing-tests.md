@@ -1,57 +1,42 @@
 ---
-title:    "Ruby: Escribiendo pruebas"
+title:    "Ruby: Escritura de pruebas"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+#¿Por qué escribir pruebas en Ruby?
 
-Escribir pruebas en Ruby puede parecer una tarea tediosa y poco emocionante, especialmente cuando se está ansioso por comenzar a codificar la lógica de tu programa. Sin embargo, estas pruebas son una parte crucial del proceso de desarrollo de software, ya que tienen una gran cantidad de beneficios. Las pruebas pueden ayudar a evitar errores comunes, mejorar la calidad del código y hacer el proceso de desarrollo más eficiente a largo plazo.
+Escribir pruebas en Ruby es una práctica importante en el desarrollo de software, ya que garantiza que el código esté funcionando correctamente y que se cumplan los requisitos establecidos. Las pruebas ayudan a identificar y corregir errores en el código, lo que a su vez mejora la calidad del software y brinda confianza a los usuarios finales.
 
-## Cómo hacerlo
+##Cómo escribir pruebas en Ruby
 
-Hay varias formas de escribir pruebas en Ruby, pero una de las herramientas más populares es RSpec. Esta gema hace que sea fácil escribir y ejecutar pruebas en un formato claro y legible. Para comenzar a usar RSpec, primero debes instalarlo en tu proyecto:
+Para escribir pruebas en Ruby, primero es necesario tener un buen conocimiento del lenguaje y de las diferentes herramientas de pruebas disponibles. Una de las herramientas más comunes es RSpec, que permite crear estructuras de prueba claras y fáciles de leer.
 
-```ruby
-gem install rspec
+Un ejemplo de una prueba en RSpec se vería así:
+
 ```
-
-Luego, puedes crear un archivo de prueba con la extensión `.spec.rb` y comenzar a escribir tus pruebas. Por ejemplo, si queremos probar una función que devuelve la suma de dos números, podríamos escribir lo siguiente:
-
-```ruby
-# spec/calculadora_spec.rb
-
-require 'calculadora'
-
-RSpec.describe Calculadora do
-  describe "#sumar" do
-    it "devuelve la suma de dos números" do
-      expect(Calculadora.sumar(2, 3)).to eq(5)
-    end
+# Comprobando si la suma de dos números es correcta
+RSpec.describe "suma" do
+  it "debe ser igual a 10" do
+    resultado = 5 + 5
+    expect(resultado).to eq(10)
   end
 end
 ```
 
-En este código, estamos definiendo una clase `Calculadora` que tiene un método `sumar` que acepta dos números como argumentos y devuelve su suma. Luego, en nuestras pruebas, usamos la expectativa `to eq` para verificar que la función devuelve el resultado esperado.
+En este ejemplo, estamos probando si la suma de dos números es igual a 10. Primero, definimos la estructura de nuestra prueba utilizando `RSpec.describe` y luego especificamos qué es lo que queremos probar con `it`. Finalmente, utilizamos `expect` para comprobar que el resultado de la suma sea igual a 10.
 
-Una vez que hayas escrito tus pruebas, puedes ejecutarlas escribiendo `rspec` en la terminal de tu proyecto. Si todas las pruebas son exitosas, deberías ver un mensaje similar a este:
+##Profundizando en la escritura de pruebas
 
-```
-Finished in 0.00188 seconds (files took 0.0776 seconds to load)
-1 example, 0 failures
-```
+Escribir pruebas eficaces requiere de práctica y experiencia. Es importante tener en cuenta que las pruebas no solo deben cubrir los casos de uso más comunes, sino también los casos límite y los escenarios más complejos.
 
-Si alguna prueba falla, RSpec te mostrará información detallada sobre qué prueba falló y por qué, lo que hace que sea más fácil corregir errores en tu código.
+Otra herramienta útil al escribir pruebas en Ruby es Factory Bot, que permite crear datos de prueba de manera sencilla y consistente. Esto es especialmente útil cuando se tienen múltiples pruebas que requieren datos similares.
 
-## Profundizando
+En resumen, escribir pruebas en Ruby no solo ayuda a mejorar la calidad del código, sino también a agilizar el proceso de desarrollo y a mantener un código más limpio y organizado. Con un buen conocimiento del lenguaje y las herramientas de pruebas disponibles, puedes escribir pruebas efectivas para garantizar que tu software esté libre de errores.
 
-Escribir pruebas también te ayuda a pensar en tu código de una manera más estructurada y escalable. Puedes usar pruebas para guiar el diseño de tu código y asegurarte de que estás cubriendo todos los posibles casos y escenarios. También puedes usar pruebas para realizar pruebas de regresión, lo que significa que puedes asegurarte de que tus cambios no han roto ninguna funcionalidad existente.
-
-Otra técnica útil al escribir pruebas es la prueba impulsada por el comportamiento (BDD, por sus siglas en inglés). BDD se enfoca en escribir pruebas desde la perspectiva de un usuario o cliente, en lugar de centrarse en la lógica interna del código. Esto ayuda a garantizar que tu código cumpla con los requisitos del negocio y sea fácilmente comprensible por otros miembros del equipo.
-
-## Ver también
-
+##Ver también
 - [Documentación de RSpec](https://rspec.info/documentation/)
-- [Tutorial de TDD con RSpec](https://semaphoreci.com/community/tutorials/getting-started-with-rspec)
-- [BDD vs TDD: ¿Cuál es la diferencia?](https://www.freecodecamp.org/news/tdd-vs-bdd-c62d3b2bfd3c/)
+- [Pagina oficial de Factory Bot](https://github.com/thoughtbot/factory_bot)
+- [Curso de Ruby Testing en Codecademy](https://www.codecademy.com/learn/test-drive-ruby)

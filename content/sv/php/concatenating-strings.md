@@ -1,61 +1,43 @@
 ---
 title:    "PHP: Sammanslagning av strängar"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att konkatenera strängar är en viktig del av programmering i PHP. Det låter dig kombinera flera små strängar till en större sträng, vilket kan vara användbart för att bygga dynamiska texter eller för att hantera användarinput. Att förstå hur man konkatenerar strängar är därför en viktig färdighet för varje PHP-utvecklare.
+När du arbetar med PHP-programmering, kommer du ofta att behöva kombinera flera strängar eller textbitar till en enda sträng. Denna process kallas för strängsammanfogning eller concatenation, och är en viktig del av att bygga dynamiska webbapplikationer.
 
 ## Hur man gör det
-
-För att konkatenera strängar i PHP använder vi operatorn ".". Detta gör att vi kan sammanfoga två eller flera strängar till en enda sträng. Nedan följer några exempel på hur detta kan göras.
-
-```PHP
-$forsta = "Hej";
-$andra = "världen";
-echo $forsta . $andra; // Resultat: "Hej världen"
-```
-
-Vi kan också konkatenera strängar med hjälp av variabler som innehåller nummer eller andra datatyper. I sådana fall kommer PHP att konvertera dessa till strängar innan de konkateneras.
+För att sammanfoga strängar i PHP, använder man sig av operatorn `.` (punkt). Det gör att strängarna slås ihop och blir en enda sträng. Låt oss titta på ett enkelt exempel:
 
 ```PHP
-$nummer = 2021;
-$meddelande = "Vi är redan " . $nummer . "!";
-echo $meddelande; // Resultat: "Vi är redan 2021!"
+$name = "Maria";
+$greeting = "Hej " . $name . "! Välkommen till vår hemsida.";
+echo $greeting;
 ```
 
-En annan användbar funktion är att konkatenera en sträng med sig själv flera gånger. Detta kan göras med hjälp av operatorn ".=".
+Output:
+Hej Maria! Välkommen till vår hemsida.
 
-```PHP
-$text = "Ja, ";
-$text .= $text;
-$text .= $text;
-echo $text; // Resultat: "Ja, Ja, Ja, Ja, "
-```
+Som du kan se, så kombinerar vi här tre strängar men användning av punktoperatorn. Man kan också använda sig av variabler i strängsammanfogning, vilket gör det enkelt och effektivt att skapa dynamisk och personlig text.
 
 ## Djupdykning
-
-När vi konkatenerar strängar i PHP använder vi operatorn ".", men det finns också en alternativ funktion som heter "sprintf()". Denna funktion kan användas för att skapa en formaterad sträng genom att fylla i variabler i en mallsträng.
-
-```PHP
-$namn = "Peter";
-echo sprintf("Hej %s, hur mår du idag?", $namn); // Resultat: "Hej Peter, hur mår du idag?"
-```
-
-En annan viktig aspekt att tänka på när det gäller konkatenering av strängar är att det kan vara ineffektivt att göra det i loopar eller stora mängder. I sådana fall kan det vara bättre att använda en array och sedan konkatenera alla element i arrayen med hjälp av funktionen "implode()".
+En intressant egenskap med strängsammanfogning i PHP är att man även kan använda sig av andra datatyper, såsom tal eller boolean-värden. I sådana fall konverteras de automatiskt till en sträng och kan sedan läggas till i concatenation-processen. Detta gör det möjligt att skapa komplexa och dynamiska utskrifter med hjälp av enkla kodrader.
 
 ```PHP
-$array = ["Hej", "världen", "!"];
-echo implode(" ", $array); // Resultat: "Hej världen!"
+$age = 25;
+$output = "Jag är " . $age . " år gammal.";
+echo $output;
 ```
 
-Att förstå dessa tekniker kan hjälpa dig att effektivt hantera och manipulera textsträngar i PHP.
+Output:
+Jag är 25 år gammal.
+
+Det är också viktigt att komma ihåg att vid strängsammanfogning, så sammanfogas strängarna i den ordning som de skrivs i koden. Detta kan ha betydelse när man väljer att använda sig av variabler eller annan data som ligger i en annan ordning än det som man vill ha i den slutliga strängen.
 
 ## Se även
-
-- [PHP: Stränghantering](https://www.php.net/manual/en/language.types.string.php)
-- [Webbteknik - PHP för nybörjare](https://www.webbteknik.se/php)
-- [Kombinera strängar med operatorn "." i PHP](https://www.phphjälpen.se/kodexempel/6-blandat/36-kombinera-straengar-med-operatorn).
+- PHP - officiell webbplats: https://www.php.net/
+- PHP-konkatenering - dokumentation: https://www.php.net/manual/en/language.operators.string.php
+- Enkla kodexempel med strängsammanfogning: https://www.w3schools.com/php/php_operators.asp (på engelska)

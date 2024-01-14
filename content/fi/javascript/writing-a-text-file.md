@@ -1,36 +1,71 @@
 ---
 title:    "Javascript: Tekstitiedoston kirjoittaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Miksi: Kirjoittamalla tekstiä, voit tallentaa tärkeitä tietoja ja jakaa niitä muiden kanssa helposti.
 
-On monia syitä, miksi kirjoittaisit tekstitiedoston Javascript-ohjelmointikielellä. Yksi syy voi olla tallentaaksesi tietoja käyttäjän toiminnasta tai luodaksesi lomakkeita verkkosivuille. 
+Miksi joku haluaisi kirjoittaa teksti-tiedoston? On monia syitä, kuten tallentaa muistiinpanoja, luoda ohjelmakoodia, tai kirjoittaa blogikirjoituksia. Teksti-tiedostot ovat myös loistava tapa tallentaa tietoja, joita haluat säilyttää pitkällä aikavälillä.
 
-## Miten
-
-Aloittaaksesi tekstitiedoston kirjoittamisen Javascriptilla, tulee sinun luoda uusi tiedosto. Voit tehdä tämän käyttämällä Node.js:tä ja komentoa "fs.writeFile". Koodiblokissa näet esimerkin, kuinka voit luoda ja tallentaa tekstitiedoston nimeltä "uusi_tiedosto.txt".
+Miten: Alla on esimerkki, miten luoda ja kirjoittaa tiedostoon tekstiä Javascriptilla.
 
 ```Javascript
-const fs = require('fs'); 
-fs.writeFile('uusi_tiedosto.txt', 'Tämä on uusi tekstitiedosto!', function (err) { 
-	if (err) throw err; 
-	console.log('Tiedosto tallennettu!'); 
-});
+// Luodaan uusi tiedosto nimeltä "tekstifile.txt"
+var tiedosto = new File("tekstifile.txt");
+
+// Kirjoitetaan sisältöä tiedostoon
+tiedosto.write("Tämä on teksti-tiedosto, jonka olemme luoneet Javascriptilla.");
+
+// Suljetaan tiedosto
+tiedosto.close();
+
+// Luetaan tiedoston sisältö
+var sisalto = File.read("tekstifile.txt");
+
+// Tulostetaan sisältö konsoliin
+console.log(sisalto);
 ```
 
-Kun suoritat tämän koodin, luodaan uusi tekstitiedosto järjestelmään ja tallennetaan siihen annettu teksti. Voit myös lisätä muita parametreja, kuten merkkijonon enkoodauksen tai tarkistusfunktion tallentaaksesi tiedoston tiettyyn paikkaan.
+Tämä esimerkki luo tiedoston nimeltä "tekstifile.txt", kirjoittaa siihen halutun sisällön ja lopulta lukee ja tulostaa tiedoston sisällön konsoliin. Voit muokata esimerkkiä haluamallasi tavalla luodaksesi ja kirjoittaaksesi tiedostoon.
 
-## Syvällinen tarkastelu
+Syöte:
 
-Javascriptilla on myös muita tapoja kirjoittaa tekstitiedostoja, kuten "fs.appendFile" -komento, joka lisää tekstiä olemassa olevalle tiedostolle sen sijaan, että luodaan uusi tiedosto. Voit myös käyttää "fs.readFileSync" -komentoa lukeaksesi tiedoston sisältöä. 
+```
+Tämä on teksti-tiedosto, jonka olemme luoneet Javascriptilla.
+```
 
-On myös hyvä huomata, että tekstitiedostoissa voi olla erilaisia muotoiluja, kuten HTML tai CSV. Voit käyttää esimerkiksi "fs.createWriteStream" -komentoa luodaksesi virtaus kirjoittaaksesi HTML-tiedostoon.
+Deep Dive: Teksti-tiedostoihin liittyy monia muita toimintoja, kuten tiedostojen avaaminen, muokkaaminen ja poistaminen. Voit myös käyttää Node.js:ää teksti-tiedostojen käsittelyyn. Voit hakea lisätietoa näiden toimintojen käytöstä internetistä tai lukemalla Javascript-oppikirjoja.
 
-## Katso myös
+```Javascript
+// Avaamme olemassaolevan tiedoston nimeltä "muistiinpanot.txt"
+var tiedosto = new File("muistiinpanot.txt");
 
-- [Codecademy - Writing Files in Node.js](https://www.codecademy.com/courses/introduction-to-javascript/lessons/file-io/exercises/writing-files)
-- [W3Schools - Node.js File System Module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [MDN Web Docs - Node.js file system documentation](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction#File_system)
+// Luetaan tiedoston sisältö
+var sisalto = File.read("muistiinpanot.txt");
+
+// Muokataan sisältöä
+sisalto = sisalto.replace("ohjeet", "reseptit");
+
+// Kirjoitetaan muokattu sisältö takaisin tiedostoon
+tiedosto.write(sisalto);
+
+// Suljetaan tiedosto
+tiedosto.close();
+
+// Poistetaan tiedosto
+File.delete("muistiinpanot.txt");
+```
+
+Tämä esimerkki avaa tiedoston nimeltä "muistiinpanot.txt", muokkaa sen sisältöä ja kirjoittaa muokatun sisällön takaisin tiedostoon. Lopuksi esimerkki poistaa tiedoston. Tämä on vain yksinkertainen esimerkki teksti-tiedostojen käytöstä ja toiminnasta.
+
+Katso myös: Tästä löydät lisää tietoa Javascriptin teksti-tiedostojen käytöstä ja toiminnoista:
+
+1. https://developer.mozilla.org/en-US/docs/Web/API/File_system
+2. https://www.w3schools.com/js/js_file_system.asp
+3. https://codeburst.io/writing-to-files-with-node-js-d92a5c8703f
+4. https://www.lucidchart.com/techblog/2017/12/04/working-with-files-in-javascript/
+
+Nyt olet valmis aloittamaan teksti-tiedostojen luomisen ja käsittelyn Javascriptilla. Onnea matkaan!

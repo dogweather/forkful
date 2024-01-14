@@ -1,48 +1,37 @@
 ---
-title:    "Elm: 日期转换为字符串"
+title:    "Elm: 将日期转换为字符串"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
+有时候，我们需要将日期转换为字符串表示，例如在日历应用程序或日期选择器中。这可以让我们更容易地显示日期，比如在显示生日或会议时间时。
 
-为什么要将日期转换为字符串呢？在Elm编程中，有时我们需要将日期转换为字符串，例如在显示用户生日或者活动日期时。使用Elm内置的函数可以轻松地完成这项任务，让我们来看看如何操作吧！
+## 如何转换日期为字符串
+```elm
+import Time
+import Date.Format
 
-# 如何操作
+-- 创建一个日期对象
+date = Date.fromIsoString "2021-01-01"
 
-在Elm中，我们可以使用 `>>=` 运算符来连接内置函数来完成日期到字符串的转换。首先，我们需要导入 `Date` 模块：
+-- 使用Date.Format来将日期转换为特定格式的字符串
+stringDate = Date.Format.format "%Y年%m月%d日" date
 
-```
-import Date
-```
+-- 输出结果为："2021年01月01日"
+``` 
 
-接下来，我们将创建一个 `Date` 对象用于转换。假设我们想要将今天的日期转换为字符串，我们可以这样写：
+在上面的例子中，我们首先导入 `Time` 和 `Date.Format` 模块，然后我们创建了一个日期对象。接着，我们使用 `Date.Format` 中的 `format` 函数将日期对象转换为我们想要的格式。最后，我们将结果存储在 `stringDate` 变量中，并可以使用它来在我们的程序中显示日期。
 
-```
-Date.fromTime  (Time.now)
-```
+## 深入了解
+要深入了解如何将日期转换为字符串，我们需要更多的了解 `Date` 和 `Time` 模块。 `Date` 模块提供了一些基本函数来创建、修改和比较日期对象。 `Time` 模块提供了一些函数来处理时间单位，比如秒、分和时。我们可以使用这些单位来构建我们想要的日期格式。
 
-这将返回一个 `Result` 类型的值，我们可以使用 `Date.toOrdinal` 函数来将其转换为日期的字符串表示形式。让我们来看一个完整的例子：
+## 参考链接
+- [Elm官方文档：Date模块](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Elm官方文档：Time模块](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Date模块源代码](https://github.com/elm-lang/core/blob/master/src/Date.elm)
+- [Time模块源代码](https://github.com/elm-lang/core/blob/master/src/Time.elm)
 
-```
-Date.fromTime  (Time.now) >>= Date.toOrdinal
-```
-
-输出结果将会是类似于 `2021-08-08T00:00:00.000Z` 的字符串。我们可以使用 `Date.customFormat` 函数来自定义日期的格式，例如只保留月份和日期：
-
-```
-Date.fromTime  (Time.now) >>= Date.customFormat "%m/%d"
-```
-
-最终输出将会是 `08/08` 。
-
-# 深入了解
-
-除了 `Date.toOrdinal` 和 `Date.customFormat` 函数，Elm还提供了其他用于日期转换的函数。例如，`Date.dayOfWeek` 函数可以返回日期是星期几，`Date.month` 函数可以返回日期的月份等等。您可以参考 [Elm官方文档](https://package.elm-lang.org/packages/elm/time/latest/) 来了解更多可用的函数。
-
-# 参考链接
-
-- [Elm官方文档](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm教程 - 日期时间](https://elmprogramming.com/date-time.html)
-- [Elm日期转换示例](https://gist.github.com/dylanowen/1202230)
+## 相关链接

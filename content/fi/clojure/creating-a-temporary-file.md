@@ -1,50 +1,38 @@
 ---
-title:    "Clojure: Väliaikaistiedoston luominen"
+title:    "Clojure: Väliaikaisen tiedoston luominen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi luoda väliaikaisia tiedostoja?
 
-Joskus Clojure-ohjelmoijana saatat joutua luomaan väliaikaisia tiedostoja. Tämä voi johtua esimerkiksi tarpeesta tallentaa väliaikaisia tietoja tai jakaa tietoja eri prosessien välillä. Tällaisessa tilanteessa voi olla hyödyllistä tietää, miten luoda väliaikainen tiedosto Clojuren avulla.
+Väliaikaisten tiedostojen luominen on tärkeää monissa ohjelmointitehtävissä, kun halutaan tallentaa väliaikainen tieto, jota ei tarvita ohjelman suorituksen loppuvaiheessa. Tällaisia tehtäviä voivat olla esimerkiksi tietokannan varmuuskopiointi tai väliaikaisen tiedon tallentaminen ennen sen käsittelyä.
 
-## Miten
-
-Clojurella on sisäänrakennettu toiminto `with-open`, joka tarjoaa mahdollisuuden luoda ja käsitellä väliaikaisia tiedostoja. Alla on yksinkertainen esimerkki, joka luo väliaikaisen tekstitiedoston, kirjoittaa siihen tekstin ja lukee sen sisällön.
+## Kuinka tehdä se
 
 ```Clojure
-(with-open [file (io/file "tmp_file.txt")]
-  (spit file "Tämä on väliaikainen tiedosto.")
-  (println (slurp file)))
+; Luo väliaikainen tiedosto
+(with-open [temp-file (java.io.File/createTempFile "temporary" "txt")]
+  ; Kirjoita tiedostoon tekstit
+  (with-open [writer (clojure.java.io/writer temp-file)]
+    (.write writer "Tämä on väliaikainen tiedosto.")))
 ```
 
-Tämä koodi tuottaa seuraavan tulosteen:
+Tulostus:
 
 ```
+temporary1979337958178079866.txt
 Tämä on väliaikainen tiedosto.
 ```
 
-Voit myös käyttää Clojuren `temp-dir`-funktiota luomaan väliaikaisen hakemiston, johon voit tallentaa tiedostoja.
+## Syvällisempää tietoa väliaikaisten tiedostojen luomisesta
 
-## Syventyminen
-
-Kun luo väliaikaisia tiedostoja, on tärkeää muistaa, että ne eivät automaattisesti poistu, kun ohjelma päättyy. Sinun täytyy siis itse huolehtia niiden poistamisesta. Clojurella on kuitenkin `delete-file`-funktio, jolla voit poistaa tiedostoja.
-
-Voit myös muokata `with-open` -funktion esimerkkiä niin, että tiedosto poistetaan automaattisesti, kun se ei ole enää tarpeellinen. Tämä onnistuu käyttämällä `let`-lauseketta ja `when`-ehtolauseketta.
-
-```Clojure
-(let [tmp-file (io/file "tmp_file.txt")]
-  (with-open [file tmp-file]
-    (spit file "Tämä on väliaikainen tiedosto.")
-    (when (exists? tmp-file)
-      (delete-file tmp-file))))
-```
-
-Tällöin tiedosto poistetaan automaattisesti, kun koodi suoritetaan loppuun.
+Väliaikaisten tiedostojen luominen Clojurella on yksinkertaista käyttämällä Java-luokkia ja Clojuren `with-open` -makroa. Tiedostolle annetaan nimi ja tiedoston tyyppi, jonka jälkeen sen sisään voi kirjoittaa halutun sisällön. Tärkeää on huolehtia, että tiedosto suljetaan `with-open` -makron sisällä, jotta se poistetaan automaattisesti ohjelman suorituksen loputtua.
 
 ## Katso myös
 
-- [Clojure Dokumentaatio: io.nippy](https://clojuredocs.org/clojure.java.io#io/fn)
-- [Create temporary files in Java](https://www.baeldung.com/java-temporary-files)
-- [Clojure Cookbook: Creating temporary files](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/06_files-io/6-02_creating-temporary-files.asciidoc)
+- [Creating temporary files in Clojure](https://gist.github.com/ghoseb/cff71989e7d3ec01ea8f)
+- [Clojure's with-open explained](https://clojureverse.org/t/clojures-with-open-explained/4326)
+- [Using temporary files in Clojure for efficient resource management](https://gleamynode.net/articles/2215/)

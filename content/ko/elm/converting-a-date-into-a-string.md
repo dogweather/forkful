@@ -1,34 +1,75 @@
 ---
 title:    "Elm: 날짜를 문자열로 변환하기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 문자열로 변환하는 것에 참여하는 이유는 무엇일까요? 세상의 대부분의 일은 날짜와 시간에 대한 정보를 포함하고 있습니다. 예를 들어, 만약 당신이 사용중인 어플리케이션에서 어떤 이벤트가 몇 일 후에 발생하는지를 나타내거나, 기간이 다가오는 프로젝트의 마감일을 알려줘야 할 때, 날짜를 문자열로 변환하는 기능은 매우 유용합니다.
+# 왜 Elm에서 날짜를 문자열로 변환해야 하는가?
 
-## 어떻게
-이 포스트에서는 날짜를 문자열로 변환하는 방법에 대해 알아보겠습니다. Elm 프로그래밍 언어를 사용하여 간단한 예제를 작성해볼 것이며, 코드 블록 안에서는 실제 결과가 어떻게 출력되는지도 확인해볼 수 있습니다.
+날짜를 문자열로 변환하는 것은 자주 발생하는 문제입니다. 사람들은 날짜를 데이터베이스에서 가져와 사용자에게 보여줄 때 문자열로 변환해야 하며, 다양한 시간대에 맞게 보여주는 등 다양한 상황에서 필요할 수 있습니다. 이를 자동화하는 것은 중요한 일이며, Elm에서 날짜를 문자열로 변환하는 방법을 알아보겠습니다.
 
-```Elm
-import Date exposing (Day, Month, Year)
-import Date.Format exposing (format)
+## 어떻게 해야 할까요?
 
-dateToString : Day -> Month -> Year -> String
-dateToString day month year =
-  format "%d/%m/%Y" day month year
+우선 날짜의 형식을 결정해야 합니다. 예를 들어, '2021년 8월 23일' 혹은 '8/23/2021'과 같은 형식을 선택할 수 있습니다. 이 예제에서는 'YYYY년 MM월 DD일' 형식을 사용할 것입니다.
 
--- 입력: Day, Month, Year
--- 출력: d/m/Y 형식의 문자열
+먼저, 날짜를 나타내는 `Date` 객체를 생성해야 합니다. 이후 `Date` 객체를 `Intl.DateTimeFormat()`을 사용하여 형식을 설정하고, `DateTime` 모듈의 `toParts` 함수를 사용하여 해당 `Date` 객체를 문자열의 배열로 변환할 수 있습니다. 마지막으로 `String.join` 함수를 사용하여 배열을 하나의 문자열로 결합합니다.
+
+```elm
+import DateTime exposing (Date)
+import DateTime.Format exposing (toParts)
+import String exposing (join)
+
+dateToString : Date -> String
+dateToString date =
+    let
+        formatOptions =
+            { year = "numeric", month = "2-digit", day = "2-digit" }
+
+        formattedDate =
+            date
+                |> DateTime.fromDate
+                |> Result.map (Intl.DateTimeFormat "ko-KR" formatOptions)
+                |> Result.map toParts
+                |> Result.map (List.map .value)
+                |> Result.map join " "
+
+    in
+    case formattedDate of
+        Ok date ->
+            date
+
+        Err error ->
+            toString error
 ```
 
-위의 예제에서는 `format` 함수를 사용하여 날짜를 원하는 형식의 문자열로 변환했습니다. `format` 함수는 첫 번째 인자로 문자열 형식을 받고, 그 뒤에 변환하고자 하는 날짜의 정보를 인자로 전달합니다. 이렇게 하면 우리가 원하는 형식의 문자열로 쉽게 변환할 수 있습니다.
+이 함수를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
 
-## 깊이 들어가보기
-날짜를 문자열로 변환하는 것은 간단해 보이지만, 실제로는 그 안에 많은 로직과 처리 과정이 들어가 있습니다. 예를 들어, 우리가 출력하려는 형식이나 언어, 시간대 등 다양한 설정을 정확하게 다루기 위해서는 더 많은 작업이 필요할 수 있습니다. Elm에서는 이러한 다양한 설정을 쉽고 유연하게 다룰 수 있는 라이브러리를 제공합니다. 이러한 라이브러리를 적극 활용하여 원하는 기능을 구현할 수 있습니다.
+```
+2021년 08월 23일
+```
 
-## 참고자료
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [Date 모듈 문서](https://package.elm-lang.org/packages/elm/time/latest/Time-Date)
-- [Format 모듈 문서](https://package.elm-lang.org/packages/elm/time/latest/Time-Format)
+## 더 깊게 들어가보기
+
+날짜를 문자열로 변환하는 것은 간단하지만 실제로는 많은 일이 일어났습니다. `Intl.DateTimeFormat()`은 사용자의 로케일과 시간대를 고려하여 날짜를 형식화하는 기능을 제공합니다. 이를테면 우리나라에서 사용하는 `ko-KR` 로케일을 선택하면 달력 형식과 앞의 예제에서 본 것과 같은 언어 형식을 선택할 수 있습니다.
+
+또한 `DateTime.Format` 모듈의 `toString` 함수를 사용하면 더 간단하게 날짜를 문자열로 변환할 수 있습니다.
+
+```elm
+toString : Date -> Int -> Int -> String
+```
+
+`toString` 함수에 `Date` 객체와 `고유 밀리초` 및 `UNIX 시간`을 제공하면 날짜를 다양한 형식으로 변환할 수 있습니다.
+
+## 더 알아보기
+
+- [Elm Language 기본 날짜 형식](https://package.elm-lang.org/packages/elm/time/latest/Time#Data-types-and-math)
+- [Elm 날짜 형식 빌더 툴](https://package.elm-lang.org/packages/justgook/elm-fmt/latest/String)
+- [자바스크립트에서 날짜 형식 지정하기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+
+# 더 알아보기
+
+- [Elm 언어의 `DateTime`모듈](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm 기본 API 문서](https://package.elm-lang.org/packages/elm/core/latest/)
+- [Elm ko

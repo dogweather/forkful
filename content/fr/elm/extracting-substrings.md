@@ -1,40 +1,72 @@
 ---
-title:    "Elm: Extraction de sous-chaînes de caractères"
+title:    "Elm: Extraction de sous-chaînes"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Extractions de sous-chaînes, ou substring en anglais, est une fonctionnalité courante dans de nombreux langages de programmation. Il s'agit d'une méthode utile pour récupérer une partie spécifique d'une chaîne de caractères, que ce soit pour la manipuler ou pour l'afficher à l'utilisateur. Dans cet article, nous allons explorer comment implémenter cette fonctionnalité en utilisant Elm.
+Dans la programmation, il est souvent nécessaire de manipuler des chaînes de caractères. Cela peut inclure la création de sous-chaînes ou l'extraction de parties spécifiques d'une chaîne plus grande. C'est là qu'entre en jeu l'extraction de sous-chaînes en Elm, une fonction utile qui permet de simplifier ce processus.
 
 ## Comment faire
 
-```elm
--- Déclaration d'une chaîne de caractères
-let texte = "Bonjour tout le monde"
+L'extraction de sous-chaînes en Elm se fait à l'aide de la fonction `String.slice`, qui prend en paramètre une chaîne de caractères, ainsi que deux indices représentant le début et la fin de la sous-chaîne à extraire. Voici un exemple de code :
 
--- Récupérer la sous-chaîne de caractères à partir de l'index 8 (inclu)
--- jusqu'à l'index 12 (exclu)
-let sousChaine = String.slice 8 12 texte
-
--- Afficher la sous-chaîne
-Debug.log "Sous-chaîne:" sousChaine
+```Elm
+myString = "Bonjour tout le monde"
+substring = String.slice 8 12 myString
 ```
 
-Lorsque nous exécutons ce code, nous obtenons "tout" comme sortie, car la fonction `String.slice` récupère une partie de la chaîne en utilisant les indexes fournis. En spécifiant l'index de départ et l'index de fin (exclu), nous pouvons extraire une portion spécifique de notre chaîne de caractères.
+Dans cet exemple, nous extrayons la sous-chaîne "tout" de `myString`, en utilisant les indices 8 et 12 pour délimiter la partie que nous voulons extraire. Lorsque nous imprimons `substring` sur la console, nous obtenons le résultat suivant :
 
-Une autre méthode de récupération de sous-chaînes est `String.take`, qui permet de spécifier uniquement l'index de fin et renvoie la sous-chaîne à partir du début de la chaîne jusqu'à l'index spécifié (exclu). De même, `String.drop` renvoie la sous-chaîne à partir de l'index spécifié (inclu) jusqu'à la fin de la chaîne.
+```
+"tout"
+```
+
+Vous pouvez également utiliser un seul paramètre pour la fonction `String.slice` afin de spécifier uniquement le début de la sous-chaîne. Dans ce cas, la fonction prendra le reste de la chaîne à partir de cet index. Par exemple :
+
+```Elm
+myString = "Bonjour tout le monde"
+substring = String.slice 8 myString
+```
+
+Dans cet exemple, nous extrayons la sous-chaîne "tout le monde". La console affichera :
+
+```
+"tout le monde"
+```
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu comment extraire des sous-chaînes en utilisant les fonctions prédéfinies de Elm, allons un peu plus en détail. Ces fonctions nous permettent également de spécifier un nœud pour commencer l'extraction en utilisant le paramètre optionnel `offset`, qui par défaut est fixé à 0. Par exemple, en utilisant `String.slice 2 5 "Exemple"`, nous obtenons "emp" comme résultat. Cependant, si nous spécifions un `offset` de 1, le résultat sera "xem".
+Il est également possible d'utiliser la fonction `String.slice` pour extraire des parties spécifiques en utilisant des valeurs négatives pour les indices. Cela nous permet de compter en partant de la fin de la chaîne de caractères. Par exemple, si nous voulons extraire les deux derniers mots de `myString`, nous pouvons utiliser les indices -2 et -1 :
 
-Il est également possible de fournir un second paramètre optionnel `step` qui spécifie l'incrément, c'est-à-dire l'écart entre les indexes. Lors de l'utilisation de cette option, le `offset` devient obligatoire pour indiquer le nœud de départ de l'extraction.
+```Elm
+myString = "Bonjour tout le monde"
+substring = String.slice -6 -1 myString
+```
 
-Il est important de noter que ces fonctions de manipulation de sous-chaînes ne modifient pas la chaîne originale, mais renvoient plutôt une nouvelle chaîne en fonction des paramètres fournis.
+La console affichera alors :
+
+```
+"le monde"
+```
+
+Il est également possible d'utiliser la fonction avec des indices en dehors de la plage de la chaîne de caractères. Dans ce cas, la fonction renverra simplement une chaîne vide. Par exemple :
+
+```Elm
+myString = "Bonjour tout le monde"
+substring = String.slice 20 25 myString
+```
+
+La console affichera :
+
+```
+""
+```
 
 ## Voir aussi
 
-Pour plus d'informations sur les fonctions de manipulation de chaînes de caractères en Elm, consultez la documentation officielle : https://guide.elm-lang.org/strings/. Vous pouvez également explorer d'autres astuces et exemples pratiques sur la communauté Elm : https://elm-lang.org/community. N'hésitez pas à expérimenter et à partager vos découvertes avec la communauté. Bon codage!
+- [Documentation officielle d'Elm sur l'extraction de sous-chaînes](https://elm-lang.org/docs/string#slice)
+- [Article sur les chaînes de caractères en Elm](https://www.brianthicks.com/post/2016/08/05/a-journey-through-the-bowels-of-brian-part-2-strings/)

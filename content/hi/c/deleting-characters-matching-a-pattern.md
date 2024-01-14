@@ -1,52 +1,60 @@
 ---
-title:    "C: पैटर्न के अनुसार अक्षरों को हटाना"
+title:    "C: पैटर्न से मिलते हुए अक्षरों को हटाना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-किसी भी पैटर्न से मिलता जुलता अक्षरों को हटाने के लिए आप क्यों इस काम को करना चाहेंगे, उसके बारे में सिर्फ 1-2 वाक्यों में बताएं।
+एक निश्चित पैटर्न से मैच करने वाले अक्षरों को हटाने में काम लेने का *क्यों* कोई रुझान होगा जहां उपयोगकर्ता को केवल निश्चित अक्षरों को हटाने की आवश्यकता होगी।
 
-## कैसे करें
-
-कोडिंग उदाहरण और "```C ... ```" कोड ब्लॉक में नमूना आउटपुट कैसे प्राप्त करें।
+# कैसे करें
 
 ```C
-#include <stdio.h>
+#include<stdio.h>
+
+void deletePattern(char *str, char *pattern) {
+  int i, j, k, n, m;
+  n = strlen(str);
+  m = strlen(pattern);
+  
+  for (i = 0; i <= n - m; i++) {
+    for (j = i, k = 0; k < m; j++, k++) {
+      if (str[j] != pattern[k]) {
+        break;
+      }
+    }
+    if (k == m) {
+      for (j = i, k = k - 1; k >= 0; j++, k--) {
+        str[j] = ' ';
+      }
+    }
+  }
+}
 
 int main() {
-    char string[] = "Hello World";
-    char pattern = 'l';
-
-    // पैटर्न के साथ मिलते जुलते अक्षरों को हटाने के लिए लूप का उपयोग करें
-    for (int i = 0; string[i] != '\0'; i++) {
-        if (string[i] == pattern) {
-            // हटाएं या छोड़ें
-            string[i] = ' ';
-        }
-    }
-
-    // संशोधित स्ट्रिंग को मुद्रित करें
-    printf("बाद में पैटर्न के बिना स्ट्रिंग: %s", string);
-
-    return 0;
+  char str[] = "यह पाठ कुछ गलत अक्षरों के साथ है।";
+  char pattern[] = "कुछ";
+  
+  printf("पूर्व मैसेज: %s\n", str);
+  deletePattern(str, pattern);
+  printf("नया मैसेज: %s", str);
+  
+  return 0;
 }
 ```
 
 आउटपुट:
 
-```
-बाद में पैटर्न के बिना स्ट्रिंग: He o Wor d
-```
+पूर्व मैसेज: यह पाठ कुछ गलत अक्षरों के साथ है।
+नया मैसेज: यह पाठ        गलत अक्षरों के साथ है।
 
-## गहराई में
+# गहराई में
 
-पैटर्न से मिलता जुलता अक्षरों को हटाने का और अधिक गहरा ज्ञान। कई भाषाओं में उपलब्ध यह फ़ंक्शनालिटी C में ईम्प्लीमेंट कैसे किया गया है और और इसके अलावा उपलब्ध विकल्पों और विशेषताओं के बारे में हम गहराई करेंगे।
+प्रोग्रामिंग में अक्षरों को प्रोसेस करने का सबसे सामान्य तरीका `char` टाइप का उपयोग करना है। हालांकि, वैध स्ट्रिंग प्रोसेसिंग `char` अरे के साथ नहीं हो सकती है क्योंकि `char` केवल एक ही अक्षर को संग्रहीत कर सकता है। इसलिए, अक्षरों को हटाने के लिए हमें उन्हें एक स्ट्रिंग के रूप में संग्रहीत करने की आवश्यकता होती है ताकि हम उन्हें प्रोसेस कर सकें। इस लेख में हमने स्पेशल तरीके से `char` अरे की संख्या पायी गई है जो हमें पैटर्न के आधार पर स्ट्रिंग प्रोसेसिंग करने की अनुमति देती है।
 
-## आगे देखें
+# इसे भी देखें
 
-[FreeCodeCamp: C Programming](https://www.freecodecamp.org/learn/c-programming/)\
-[W3Schools: C String Manipulation](https://www.w3schools.in/c-tutorial/string-manipulation/)\
-[Coding Blocks: C Strings and String Manipulation](https://codingblocks.com/resources/c-strings-and-string-manipulation/)
+[Hindi Programming Tutorial: C Strings and String Functions](https://www

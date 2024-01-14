@@ -1,33 +1,44 @@
 ---
-title:    "Arduino: Utnytte substringer"
+title:    "Arduino: Uttrekking av delstrenger"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å utvinne substrings kan være en nyttig teknikk når du jobber med Arduino-programmering. Dette lar deg hente ut deler av en tekststreng eller et tall, noe som kan være nyttig for å håndtere data eller variabler på en mer effektiv måte.
+Hvorfor skulle noen ønske å ekstrahere substringer i Arduino programmering? Vel, substringer er viktige når vi jobber med tekst og ønsker å manipulere eller hente ut deler av en tekststreng. Dette kan være nyttig når vi for eksempel ønsker å filtrere eller behandle data, eller når vi vil presentere informasjonen på en mer lesbar måte.
 
-## Hvordan
+## Slik gjør du det
 
-For å utvinne en substring i Arduino, kan du bruke funksjonene `substring()` eller `subString()` avhengig av hvilken versjon av Arduino IDE du bruker. Disse funksjonene tar inn tre parametere: startindeks, sluttindeks og en tekststreng du vil utvinne substringen fra.
+For å ekstrahere substringer i Arduino bruker vi funksjonen `substring()`. Denne funksjonen tar imot to argumenter: startindeks og sluttindeks. Dette avgrenser hvilke deler av tekststrengen vi ønsker å få ut.
+
+For å illustrere dette, la oss si at vi har en tekststreng "Hei verden!" og vi ønsker å få ut "ei ve". Vi kan gjøre det på følgende måte:
 
 ```Arduino
 String tekst = "Hei verden!";
-String del = tekst.substring(4,8); // henter ut "verd"
+String uttekst = tekst.substring(2,8);
+
+Serial.println(uttekst);
 ```
 
-I dette eksempelet, starter substringen på indeks 4 og slutter på indeks 8 (indeksene starter alltid på 0).
+Her bruker vi `substring()` funksjonen til å ekstrahere tekst fra indeks 2 (som tilsvarer bokstaven "e") til indeks 8 (som tilsvarer bokstaven "e" i "verden"). Resultatet vil være "ei ve" som blir skrevet ut i serieporten.
+
+Det er viktig å merke seg at indeksene starter på 0 og ikke 1, så det første tegnet i tekststrengen har indeks 0.
+
+Vi kan også bruke negative indekser for å ekstrahere fra slutten av tekststrengen. For eksempel, bruker vi `substring()` funksjonen med argumentene (-6,-2) på samme tekststreng som ovenfor, vil resultatet bli "verd".
 
 ## Dypdykk
 
-Det kan være nyttig å forstå hvordan substringfunksjonene fungerer under overflaten. Når du bruker `substring()` eller `subString()`, oppretter Arduino egentlig en ny tekststreng og fyller den med tegnene fra den opprinnelige strengen som ligger mellom start- og sluttindeksen. Deretter returnerer funksjonen denne nye substringen.
+I tillegg til startindeksen og sluttindeksen, kan `substring()` funksjonen også ta imot et tredje argument som indikerer lengden på substringen vi ønsker å få ut. For eksempel, hvis vi bruker argumentet 4, vil den hente ut de neste 4 tegnene fra startindeksen.
 
-Det er også verdt å merke seg at indeksene kan være både positive og negative tall, hvor det negative tallet starter fra slutten av strengen. For eksempel, hvis du vil hente ut den siste delen av en tekststreng som er lagret i `tekst`, kan du bruke `substring(9, tekst.length())` eller `subString(-7, tekst.length())`.
+Vi kan også bruke variabler i stedet for tall som argumenter til `substring()` funksjonen. Dette gjør det mer fleksibelt og dynamisk når vi jobber med tekststrenger.
 
 ## Se også
 
-- [Arduino String Class Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Substring documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [SubString documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring-2/)
+For mer informasjon om `substring()` funksjonen og andre nyttige funksjoner når man jobber med tekststrenger i Arduino, kan du sjekke ut følgende ressurser:
+
+- [Arduino reference for Substring](https://www.arduino.cc/reference/en/language/functions/communication/substring/)
+- [Tutorial om tekstbehandling i Arduino](https://www.arduino.cc/en/Tutorial/StringIndexOf)
+- [En guide til Arduino String-funksjoner](https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-string-functions-1f5196)

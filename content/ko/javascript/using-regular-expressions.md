@@ -1,45 +1,33 @@
 ---
 title:    "Javascript: 정규 표현식 사용하기"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 정규 표현식을 사용하는가?
 
-정규 표현식을 사용하는 이유는 그것이 강력한 문자열 처리 도구이기 때문입니다. 정형화된 패턴을 사용하여 문자열을 검색, 대체, 핵심 단어 확인 등의 작업을 쉽게 수행할 수 있습니다.
+정규 표현식은 Javascript에서 문자열을 다루면서 가장 강력한 도구 중 하나입니다. 문자열을 처리하고 추출할 수 있도록 유연한 패턴 매칭 기능을 제공합니다. 따라서 특정한 조건의 문자열을 찾거나 수정하는 등 다양한 작업을 할 때 매우 유용합니다.
 
-## 사용 방법
+# 사용 방법
 
-정규 표현식은 주로 문자열 처리를 위해 사용됩니다. 예를 들어, 문자열에서 특정 패턴을 찾거나 문자열을 대체하는 등의 작업을 할 수 있습니다.
-
-아래는 정규 표현식을 사용한 예제 코드와 출력 예시입니다.
+정규 표현식을 사용하기 위해서는 먼저 `RegExp` 객체를 선언해야 합니다. 이 객체는 정규 표현식의 패턴과 플래그를 지정할 수 있으며, 이를 사용해 문자열을 매칭할 수 있습니다. 예를 들어, `RegExp` 객체로 `"hello"`라는 문자열을 찾아보겠습니다.
 
 ```Javascript
-// 문자열에서 숫자만 추출하기
-const str = "오늘의 날짜는 2021년 10월 18일입니다.";
-const regex = /\d+/g; // 숫자를 찾는 정규 표현식
-const numbers = str.match(regex); // 문자열에서 매칭되는 숫자들의 배열
-
-console.log(numbers); // [2021, 10, 18]
+let string = "hello world";
+let regex = new RegExp("hello");
+console.log(regex.test(string));
 ```
 
-```Javascript
-// 문자열 중간에 있는 단어 대체하기
-const str = "자바스크립트는 정말 재미있습니다.";
-const regex = /재미있/g; // 재미있는 단어를 찾는 정규 표현식
-const newStr = str.replace(regex, "신기하네요"); // 재미있는 단어를 신기하네요로 대체
+위 코드의 결과는 `true`가 출력됩니다. `regex` 객체를 통해 문자열이 `hello`를 포함하고 있는지 여부를 판단할 수 있었습니다. 또한 정규 표현식에서 `g` 플래그를 추가하면 전역에서 `hello`를 찾아서 이를 모두 수정하거나 추출할 수 있습니다.
 
-console.log(newStr); // 자바스크립트는 정말 신기하네요.
-```
+# 더 알아보기
 
-## 낮은 수심
+정규 표현식을 사용할 때 주의할 점이 있습니다. 예를 들어, `.`이라는 메타 문자는 어떤 문자라도 매칭하도록 정의되어 있기 때문에 `"hello"`라는 문자열에서 `.`을 사용하면 `e`와 `o`가 매칭될 것입니다. 이런 메타 문자를 이용한 패턴화를 통해 좀 더 복잡한 문자열 처리가 가능합니다. 또한 정규 표현식의 더 자세한 사용법과 예제는 [여기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)에서 확인할 수 있습니다.
 
-정규 표현식의 문법은 약간 복잡할 수 있지만, 익숙해지고 난 이후에는 매우 유용한 도구가 될 수 있습니다. 자바스크립트에서의 정규 표현식 문법은 다른 프로그래밍 언어에서도 대부분 동일하게 적용되는 점이 있어서 유용합니다.
+# 참고자료
 
-또한 정규 표현식을 사용하면 코드가 간결해지고 가독성이 좋아집니다. 패턴을 사용하여 원하는 문자열을 찾을 수 있으므로 순수한 문자열 처리 작업보다 더 빠르고 정확한 결과를 얻을 수 있습니다.
-
-## 또 보기
-
-- [MDN - 자바스크립트 정규 표현식 문법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [정규 표현식 빌더](https://regexr.com/)
+- [정규 표현식을 알아보자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [정규 표현식 간단 정리](https://medium.com/@jellyms/%EC%A0%95%EA%B7%9C-%ED%91%9C%ED%98%84%EC%8B%9D-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC-regular-expression-546446eba048)
+- [참고할 수 있는 정규 표현식 실습 사이트](https://regexr.com/)

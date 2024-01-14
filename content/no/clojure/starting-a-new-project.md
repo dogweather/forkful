@@ -1,36 +1,52 @@
 ---
 title:    "Clojure: Å starte et nytt prosjekt"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å starte et nytt prosjekt i Clojure kan være en spennende og givende opplevelse. Clojure er et funksjonelt programmeringsspråk som er godt egnet til å håndtere komplekse problemer og store datasett. Det er også et svært populært språk blant utviklere, noe som betyr at det finnes et stort og aktivt fellesskap som kan hjelpe deg på veien. Å starte et nytt Clojure-prosjekt kan åpne dørene for nye muligheter og få deg til å se programmering på en helt ny måte.
+Har du noen gang vurdert å starte et nytt programmeringsprosjekt, men vært usikker på om det er verdt tiden og innsatsen? Det er mange grunner til å ta steget og starte et nytt Clojure-prosjekt. For det første er Clojure et kraftig, funksjonelt programmeringsspråk som er enkelt å lese og skrive. I tillegg tilbyr Clojure et rikt økosystem av biblioteker og verktøy som gjør det enkelt å bygge komplekse og robuste applikasjoner. Uansett om du er nybegynner eller en erfaren utvikler, er Clojure et flott valg for å starte et nytt prosjekt.
 
-## Hvordan
+## Hvordan gjøre det
 
-Hvis du vil starte et nytt Clojure-prosjekt, er det første du må gjøre å installere Clojure på datamaskinen din. Du kan gjøre dette ved å følge instruksjonene på Clojure sin offisielle nettside. Når Clojure er installert, kan du opprette et nytt prosjekt ved å bruke kommandoen ```lein new app navn-på-prosjektet```. Dette vil opprette en mappe med navnet på prosjektet ditt, som inneholder filer og mapper slik at du kan starte å kode.
-
-La oss se på et enkelt eksempel. Anta at du vil lage en funksjon som legger sammen to tall og returnerer resultatet. Du kan gjøre dette ved å skrive følgende kode:
+Nå som du er overbevist om å starte et nytt Clojure-prosjekt, la oss se på hvordan du kan komme i gang. Først må du sørge for at Clojure er installert på datamaskinen din. Dette kan du enkelt gjøre ved å følge instruksjonene på Clojure sin offisielle nettside. Deretter kan du lage et nytt prosjekt og inkludere de nødvendige avhengighetene ved å bruke Leiningen, et byggeverktøy for Clojure-prosjekter.
 
 ```Clojure
-(defn legg-sammen [a b]
-  (+ a b))
+lein new prosjektnavn
 ```
 
-Denne koden definerer en funksjon kalt ```legg-sammen``` som tar inn to argumenter, ```a``` og ```b```, og bruker ```+```-operatoren til å legge dem sammen. Du kan teste denne funksjonen ved å skrive ```(legg-sammen 5 8)``` i terminalen, som vil gi deg resultatet 13.
+Nå kan du begynne å skrive kode ved hjelp av en tekstredigerer eller et utviklingsmiljø som f.eks. IntelliJ IDEA. La oss si at du vil skrive en funksjon som legger sammen to tall og skriver ut resultatet:
 
-## Dypdykk
+```Clojure
+(defn legg-sammen [tall1 tall2]
+  (println (+ tall1 tall2)))
+```
 
-Å starte et nytt Clojure-prosjekt kan være overveldende, spesielt hvis du er ny på språket. En viktig ting å huske på er å følge Clojure sin filosofi om å skrive "små og enkle" funksjoner som gjør én ting og gjør det godt. Clojure har også et omfattende bibliotek av funksjoner og verktøy som kan hjelpe deg med å løse forskjellige problemer på en effektiv måte.
+Nå kan du kalle funksjonen ved å bruke følgende kode:
 
-Et annet viktig aspekt ved å starte et nytt prosjekt er å planlegge godt og følge best practices. For eksempel bør du organisere koden din i logiske moduler og følge en konsistent kodekonvensjon. Det kan også være lurt å bruke et verktøy som Leiningen for å håndtere avhengigheter og bygge prosjektet ditt.
+```Clojure
+(legg-sammen 3 5)
+```
+
+Kjører dette vil gi følgende output:
+
+```
+8
+```
+
+Etter å ha skrevet koden, kan du teste den ved hjelp av enhetstester og sørge for at den fungerer som forventet.
+
+## Dykk ned i det
+
+For å få mest mulig ut av ditt nye Clojure-prosjekt, anbefales det å lære mer om språket og økosystemet rundt det. Clojure har et aktivt samfunn og det finnes mange ressurser, både på engelsk og norsk, som kan hjelpe deg å lære mer. Du kan også ta en titt på Clojure sin dokumentasjon og utforske ulike biblioteker som kan være nyttige for ditt prosjekt.
 
 ## Se også
 
-- [Clojure sin offisielle nettside](https://clojure.org/)
-- [En guide for å komme i gang med Clojure](https://clojurescript.org/guides/getting-started)
-- [Leiningen - et verktøy for å håndtere Clojure-prosjekter](https://leiningen.org/)
-- [Clojure-best practices](https://github.com/bbatsov/clojure-style-guide)
+- [Clojure.org](https://clojure.org/)
+- [Clojurescript.org](https://clojurescript.org/)
+- [Leiningen.org](https://leiningen.org/)
+- [Clojure for Nybegynnere (på norsk)](http://clojurenorge.com/)
+- [Clojure Programutvikling - Utforsk det kraftige Clojure-økosystemet (på norsk)](https://leanpub.com/cloju)

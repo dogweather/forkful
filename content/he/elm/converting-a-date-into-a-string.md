@@ -1,46 +1,38 @@
 ---
 title:    "Elm: המרת תאריך למחרוזת"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-עבור לכתוב ב-Elm פוסט על כתיבה אישית עבור קוראי הבלוג שלנו
+## למה: 
+ כי חשוב להיות מסוגלים להציג תאריך כגון בתור טקסט באפליקציות או באתרים.
 
-## למה
+## כיצד:
+ ###
+ ```Elm
+ import Time
 
-יש כמה סיבות לרצות להמיר תאריך למחרוזת ב-Elm . האחת העיקרית היא לשימוש בתאריך באופן דינמי, כך שניתן להציגו בצורה שונה לפי צרכי המשתמש. דוגמה לכך היא להציג תאריך לפי התבנית המקובלת במדינה שממנה המשתמש מגיע.
-
-## איך לבצע
-
-אלו הן החידושים הנדרשים:
-
-```Elm
---להמיר את התאריך למחרוזת
-
-dateToString : Date -> String
+dateToString : Time.Posix -> String
 dateToString date =
     let
-        day = Date.day date
-        month = Date.month date
-        year = Date.year date
+        month = Date.toMonth (Date.fromTime date)
+        day = Date.day (Date.fromTime date)
+        year = Date.year (Date.fromTime date)
     in
-    toString day ++ "." ++ toString month ++ "." ++ toString year
+      (Month.toString month) ++ "-" ++ (toString day) ++ "-" ++ (toString year)
 
---לכל תאריך נאות לידות להמירו למחרוזת, חשוב להניח שיותר ראוי ל
---כירוב זה לעבוד כרשת ציבוריתמסביר איפה העומדי imageם כל כך קרני
+date = Time.millisToPosix 1632242400000
+dateToString date --> "September-22-2021"
+ ```
 
-date : Date
-date =
-    Date.fromCalendarDate 2021 8 23
+## התעמקות:
 
-main =
-    text <| dateToString date
-```
+להמיר תאריך לטקסט באלם יכול להיעשות בעזרת הפונקציה Date.toMonth, Date.day ו- Date.year להשתמש באובייקט המכיל את התאריך וליצור ממנו טקסט ברוחב כמו התאריך הסטנדרטי. אם רוצים להיות מדויקים ניתן להשתמש בחיוג לכל אחד מהחודשים שיש כדי לוודא שהתאריך יוצג בדיוק כפי שציפיתם לו, לעומת זאת צריך לשים לב שצריך לתת רווחים וכוונות יתר עבור התאריך. בנוסף, כמובן שניתן להתאים את פורמט הטקסט בהתאם לצרכים שלכם ולהוסיף פרטים נוספים כמו יום בשבוע או שעות.
 
-## בירור עמוק
-
-ברצינות, המעבר מתאריך למחרוזת אינו משיג. ב-Elm ישנם כמה עקרונות שיש לקחת בחשבון בזמן ביצוע מעבר זה. ראשית, יש לוודא שהסדר של הערכים שצריך להימצא בתאריך הוא מהצפוי. למשל, בחלק מתחילת השנה ערך החודש מגיע ראשון, ולכן יש לטפל בזה בצורה מיוחדת. כמו כן, יש לוודא שהמכפתור המתיש של התאריך תמיד יוצא san לקראת הערכים כדי לאפשר את הפעולה הכפולה שNC לאפשרות - - המחרוזת והתאריך הנוכחי
-בנוסף, יש לווידא שאין תאריך המתיש שבו חודש יחיד. למשל, אם החודש הוא 9 אבל לוטה אחדות יחידים, אז צריך להוסיף 0 לפני הערך December.
-
-למעבר עמוק כל המ
+## ראה גם:
+ - [Date.toMonth](https://package.elm-lang.org/packages/elm/time/latest/Time)
+ - [Date.day](https://package.elm-lang.org/packages/elm/time/latest/Time)
+ - [Date.year](https://package.elm-lang.org/packages/elm/time/latest/Time)
+ - [תאריך באלם: התחברות, תאריך, שעות](https://www.bennadel.com/blog/3787-an-elm-datetime-exercise-meeting-planner.htm)

@@ -1,39 +1,36 @@
 ---
-title:    "PHP: Sjekke om en mappe eksisterer."
+title:    "PHP: Sjekke om en mappe eksisterer"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Det å sjekke om en mappe eksisterer kan være en viktig oppgave når man jobber med PHP-programmering. Dette kan være nyttig for å sikre seg at man har tilgang til nødvendige filer og data, og for å kunne håndtere eventuelle feilsituasjoner.
+Hvis du noen gang har programmert i PHP, har du sannsynligvis støtt på situasjoner der du må sjekke om en mappe eksisterer før du fortsetter kjøringen av koden din. Dette kan virke som en unødvendig sjekk, men det kan være viktig for å sikre at koden din fungerer riktig og forhindre eventuelle feil underveis.
 
-## Slik gjør du det
+# Hvordan gjøre det
 
-Sjekke om en mappe eksisterer kan gjøres ved å bruke PHP-funksjonen `file_exists()`. Denne funksjonen sjekker om en fil eller mappe eksisterer på serveren. Dersom den returnerer `true`, betyr det at objektet eksisterer, mens `false` betyr at objektet ikke eksisterer.
-
-For å sjekke om en mappe eksisterer, kan man bruke følgende kode:
+Det er flere måter å sjekke om en mappe eksisterer i PHP, men en av de enkleste er å bruke funksjonen `file_exists()`. Denne funksjonen tar inn en filbane som argument og returnerer enten `true` hvis filen eksisterer, eller `false` hvis den ikke gjør det.
 
 ```PHP
-<?php
-if(file_exists('min_mappe')) {
-    echo "Mappen finnes!";
+if (file_exists("/var/www/mapper")) {
+    echo "Mappen eksisterer!";
 } else {
-    echo "Mappen eksisterer ikke.";
+    echo "Mappen eksisterer ikke!";
 }
 ```
 
-Dersom mappen `min_mappe` eksisterer, vil koden over resultere i utskriften "Mappen finnes!", mens hvis mappen ikke eksisterer, vil koden gi utskriften "Mappen eksisterer ikke.".
+I dette eksempelet bruker vi filbanen `/var/www/mapper`, men du kan bytte den ut med den filbanen du ønsker å sjekke.
 
-## Dykk dypere
+# Dypere dykk
 
-Det finnes også andre funksjoner som kan brukes for å sjekke om en mappe eksisterer, som for eksempel `is_dir()` og `is_writable()`. Begge disse funksjonene kan gi nyttig informasjon om mappen, som om den er en fil og om man har skriverettigheter til mappen.
+Det er også mulig å bruke funksjonen `is_dir()` for å sjekke om en fil er en mappe eller ikke. Denne funksjonen tar også inn en filbane som argument og returnerer `true` hvis det er en mappe, eller `false` hvis det ikke er det.
 
-Det er også verdt å merke seg at `file_exists()` fungerer for både lokale og eksterne filer og mapper, så lenge man har riktig sti og rettigheter. Det kan også være lurt å bruke absolutte stier istedenfor relative stier når man sjekker etter eksisterende filer og mapper.
+Det er også viktig å merke seg at begge disse funksjonene bare sjekker om filer eksisterer eller om de er mapper. Det betyr at de ikke tar hensyn til eventuelle tillatelser eller andre faktorer som kan hindre tilgang til mappen.
 
-## Se også
+# Se også
 
-- [PHP sin offisielle dokumentasjon](https://www.php.net/manual/en/function.file-exists.php)
-- [En guide til å sjekke fil- og mappeeksistens i PHP](https://www.geeksforgeeks.org/php-file_exists-vs-is_file-function/)
-- [En artikkel om relativ og absolutt sti i PHP](https://www.w3schools.com/php/php_includes.asp)
+- [Offisiell PHP-dokumentasjon om file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [Offisiell PHP-dokumentasjon om is_dir()](https://www.php.net/manual/en/function.is-dir.php)

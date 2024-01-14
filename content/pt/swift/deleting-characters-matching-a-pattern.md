@@ -1,37 +1,33 @@
 ---
-title:    "Swift: Excluindo caracteres que coincidem com um padrão"
+title:    "Swift: Excluindo caracteres que correspondam a um padrão"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-Existe uma ferramenta muito útil em Swift para deletar caracteres que correspondem a um determinado padrão em uma string. Isso pode ajudar os programadores a simplificar o código e torná-lo mais eficiente. Neste blog post, vamos explorar este recurso e aprender a utilizá-lo em seus projetos em Swift.
+
+A exclusão de caracteres que correspondem a um padrão pode ser útil em várias situações de programação, como por exemplo, manipulação de string e processamento de dados.
 
 ## Como fazer
-Para deletar caracteres que correspondem a um padrão em Swift, utilizamos o método `replacingOccurrences()` em uma string. Vamos supor que temos uma string chamada `frase` e queremos deletar todas as letras "a" presentes nela. Podemos fazer isso da seguinte forma:
+
+Para deletar caracteres que correspondem a um padrão no Swift, podemos usar a função `replacingOccurrences` da classe `String`. Veja um exemplo abaixo:
 
 ```Swift
-let frase = "Eu amo Swift"
-let novaFrase = frase.replacingOccurrences(of: "a", with: "")
-print(novaFrase)
+let minhaString = "Olá, mundo!"
+let novaString = minhaString.replacingOccurrences(of: "mundo", with: "")
+print(novaString) // Saída: Olá,!
 ```
 
-A saída deste código será "Eu mo Swift", já que todas as letras "a" foram deletadas da string original. Podemos utilizar esse método com qualquer padrão de caracteres que desejarmos, tornando-o muito versátil.
+Neste exemplo, usamos a função `replacingOccurrences` para substituir a palavra "mundo" por uma string vazia, resultando na exclusão dessa palavra da string original.
 
-## Deep Dive
-O método `replacingOccurrences()` aceita diversos parâmetros, o que nos permite personalizar ainda mais a sua utilização. Além do padrão que queremos deletar, podemos especificar a partir de qual índice da string queremos começar a procurar, quantas vezes queremos que o padrão seja substituído e também qual será o novo padrão a ser inserido. Veja um exemplo:
+## Aprofundando
 
-```Swift
-let frase = "Eu amo Swift"
-let novaFrase = frase.replacingOccurrences(of: "a", with: "e", options: .caseInsensitive, range: nil)
-print(novaFrase)
-```
+Essa função pode receber diferentes parâmetros, permitindo assim uma maior flexibilidade na exclusão de caracteres. Além disso, é possível usar expressões regulares para especificar o padrão a ser excluído. As expressões regulares são uma forma poderosa de lidar com padrões de texto e podem ser muito úteis na exclusão de caracteres.
 
-Neste caso, além de substituir as letras "a" por "e", também especificamos que essa substituição deve ser feita sem levar em conta se a letra é maiúscula ou minúscula. A saída deste código será "Eu emo Swift". Há diversas opções disponíveis para essa função, tornando-a muito poderosa.
+## Veja também
 
-## See Also
-- Documentação oficial da Apple sobre o método `replacingOccurrences()`: https://developer.apple.com/documentation/foundation/nsstring/1416866-replacingoccurrences
-- Tutorial em vídeo sobre como usar esse método: https://www.youtube.com/watch?v=zTxVWdUNlAU
-
-Espero que este blog post tenha sido útil para você aprender mais sobre como deletar caracteres que correspondem a um padrão em Swift. Coloque em prática e veja como pode facilitar sua vida de programador. Até a próxima!
+- [Documentação oficial do Swift sobre a função `replacingOccurrences`](https://developer.apple.com/documentation/foundation/nsstring/1416386-replacingoccurrences)
+- [Guia de expressões regulares em Swift](https://www.raywenderlich.com/661-regex-tutorial-swift-getting-started)
+- [Documentação do Swift sobre expressões regulares](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID434)

@@ -1,38 +1,37 @@
 ---
-title:    "Fish Shell: Sattumanvaraisten lukujen luominen"
+title:    "Fish Shell: Satunnaislukujen luominen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia tilanteita, joissa random-numeroiden luominen voi olla hyödyllistä. Se voi esimerkiksi auttaa sinua testaamaan koodiasi tai luomaan satunnaisia parametreja simulaatioihin. Fish Shellin sisäänrakennettu random-toiminto tekee tästä entistä helpompaa.
+Halusitko koskaan luoda pelin, jossa on satunnaisia elementtejä? Tai kenties laskentaprojektissa tarvitset satunnaista dataa? Fish Shell tarjoaa helpon tavan luoda satunnaisia numeroita, joka on hyödyllinen monissa ohjelmointitilanteissa.
 
-## Miten tehdä
+## Miten
 
-Käyttämällä Fish Shellin `random`-funktiota voit luoda satunnaisia numeroita haluamallasi välillä. Esimerkiksi, jos haluat satunnaisen luvun väliltä 1-10, voit käyttää seuraavaa komentoa:
-
-```Fish Shell
-random 1 10
-```
-Tämä tulostaa random-numeron väliltä 1-10, esimerkiksi "5". Voit myös asettaa haluamasi luvun alkuun, jolloin numerot ovat väliltä 0-numeroon asti. Esimerkiksi, jos haluat satunnaisen numeron väliltä 20-50, käytä seuraavaa komentoa:
+Fish Shell:lla on valmiiksi sisäänrakennettu komento, `math random`, jolla voidaan generoida satunnaislukuja. Se ottaa parametrina minimi- ja maksimiarvon, ja palauttaa satunnaisen luvun niiden väliltä.
 
 ```Fish Shell
-random 20 50
+math random 1 100
 ```
-Tämä tulostaa random-numeron väliltä 20-50, esimerkiksi "38". Voit myös rajata tuloksen tiettyyn tarkkuuteen käyttämällä `-n` -valitsinta. Esimerkiksi, jos haluat random-numeroiden olevan tasan kaksi desimaalia, käytä komentoa:
+
+Tämä esimerkki palauttaisi satunnaisen kokonaisluvun väliltä 1-100, esimerkiksi 78. Voit myös käyttää muita muuttujia, kuten `echo`, tulostamaan satunnaislukuja.
 
 ```Fish Shell
-random -n 2 1 10
+set luku (math random 1 10)
+echo "Satunnainen luku on $luku"
 ```
-Tämä tulostaa random-numeron väliltä 1-10, esimerkiksi "2.55". Voit käyttää näitä komentoja myös scripteissä ja soveltaa niitä eri tavoin tarpeen mukaan.
 
-## Syvällinen sukellus
+Tämä tulostaisi esimerkiksi "Satunnainen luku on 6".
 
-Fish Shell käyttää sisäistä /dev/urandom -laitetta random-numeroiden luomisessa. Tämä laite tuottaa lukuja käyttäen "entropy gathering" järjestelmää, joka kerää satunnaisia muuttujia ympäristöstä, kuten käynnissä olevan prosessin PID:n, lähettäjän IP-osoitteen tai lausekkeisiin kuluvia nanosekunteja. Näiden muuttujien yhdistelmä tuottaa lopulliset random-numerot.
+## Syvään sukeltaminen
+
+Fish Shellin `math random` komento käyttää Perl-kirjastoa satunnaislukujen generoimiseen. Tarkempien ohjeiden ja vaihtoehtoisten parametrien löytämiseksi voit katsoa Fish Shellin dokumentaatiota tai Perl-kirjaston dokumentaatiota.
 
 ## Katso myös
 
-- [Fish Shellin dokumentaatio random-funktiosta](https://fishshell.com/docs/current/cmds/random.html)
-- [/dev/urandomin selitys](https://en.wikipedia.org/wiki//dev/random)
+- [Fish Shell:nnen dokumentaatio](https://fishshell.com/docs/current/cmds/math.html)
+- [Perl-kirjaston dokumentaatio](https://perldoc.perl.org/functions/rand.html)

@@ -1,44 +1,47 @@
 ---
-title:    "Javascript: パターンに一致する文字の削除"
+title:    "Javascript: パターンにマッチする文字の削除"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字のパターンに合致する文字を削除することについてなぜ誰かが関わるのか、1〜2文で説明します。
+人々はなぜ文字列をパターンにマッチするように削除するのか、その理由は何でしょうか。実際には、さまざまな理由があり、それぞれの状況に合わせてこの作業を行うことができます。
 
-## 方法
+例えば、データベースに保存された文字列から特定のキーワードを削除したい場合や、ユーザーからの入力データをバリデーションする際に特定の文字を排除したい場合などが考えられます。また、文字列に含まれる余分なスペースや記号を取り除く必要がある場合もあります。しかし、どんな理由であれ、私たちはプログラミングの世界でより効率的に作業を行うために、文字列をパターンにマッチするように削除する必要があるのです。
 
-この記事では、Javascriptで文字のパターンに合致する文字を削除する方法を説明します。まずは、以下のような文字列から始めましょう。
+## ハウツー
 
-```Javascript
-const string = "Hello123World";
+では、実際にどのようにして文字列をパターンにマッチするように削除するのでしょうか。JavaScriptを使用する場合、正規表現というものを利用することができます。
+
+例えば、次のように書くことで、文字列から特定のキーワードを削除することができます。
+
+```javascript
+let string = "This is a sample string including the keyword: delete.";
+let keyword = /delete./gi; // giフラグを使うことで大文字と小文字を区別しないように設定することができます。
+let result = string.replace(keyword, ''); // replaceメソッドを使うことで文字列からキーワードを削除することができます。
+console.log(result); // 出力結果：This is a sample string including the keyword: .
 ```
 
-文字のパターンに合致する文字を削除するには、文字列を正規表現で表現する必要があります。正規表現とは、特定のパターンに合致する文字列を検索・置換するための記述方法です。文字列を正規表現で表現した上で、Javascriptの`replace()`メソッドを使って削除することができます。
+また、空白や記号を取り除く場合は、次のように書くことができます。
 
-例えば、文字列中の数字を全て削除するには、次のように書きます。
-
-```Javascript
-const regex = /\d/g; //数字を表す正規表現
-const newString = string.replace(regex, ""); // 数字を空文字で置換
-console.log(newString); // 出力結果は "HelloWorld"
+```javascript
+let string = "This string contains a lot of unnecessary spaces and symbols !@#%$^&.";
+let pattern = /[!@#%$^&\s]/g; // 空白や記号を表す正規表現を指定することで、それらを削除することができます。
+let result = string.replace(pattern, '');
+console.log(result); // 出力結果：Thisstringcontainsalotofunnecessaryspacesandsymbols
 ```
 
-このように、正規表現を使うことで、特定のパターンに合致する文字を効率的に削除することができます。
+正規表現を使うことで、パターンにマッチする文字列を簡単に削除することができます。
 
-## 詳細を深く掘り下げる
+## ディープダイブ
 
-この記事では、削除する文字のパターンを表現する正規表現について詳しく説明しました。正規表現は非常に強力なツールであり、文字列操作において必須の知識と言えるでしょう。
+では、少し深く掘り下げて、もう少し詳しく文字列をパターンにマッチする方法を見てみましょう。
 
-例えば、正規表現内で`^`を使うことで、文字列の先頭にパターンに合致する文字があるかどうかをチェックすることができます。また、`$`を使うことで、文字列の最後にパターンに合致する文字があるかどうかをチェックすることもできます。
+まず、正規表現とは何でしょうか。正規表現とは、文字列に含まれる特定のパターンを表現する方法です。例えば、先ほど使用した「delete.」という正規表現は、「delete」の後にどんな文字が続いてもマッチすることを意味しています。
 
-正規表現については、専門的な知識が必要となりますが、その性質を理解することで非常に高度な文字列操作が可能になります。ぜひ、学習してみてください。
+正規表現を使う際、記号や省略記号を使うことで、さまざまなパターンを表現することができます。ただし、正規表現は少し複雑なものもあり、使いこなすには時間がかかるかもしれません。しかし、正規表現をマスターすることで、より高度な文字列操作を実現することができます。
 
-## 併せて見てください
-
-[正規表現についての詳細なガイド (英語)](https://www.regular-expressions.info/)
-
-[Javascriptの`replace()`メソッドについての詳細なドキュメンテーション (英語)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+## 参考リンク

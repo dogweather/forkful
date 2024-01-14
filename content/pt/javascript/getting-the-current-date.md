@@ -1,65 +1,56 @@
 ---
-title:    "Javascript: Obtendo a data atual"
+title:    "Javascript: Obtendo a data atual."
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual em JavaScript?
+## Por que utilizar programação Javascript?
 
-Quando escrevemos código, muitas vezes precisamos de informações da data atual para realizar alguma ação específica. Pode ser para registrar quando um usuário se cadastrou em um site, calcular a idade de uma pessoa ou simplesmente exibir a data no formato correto. Em JavaScript, obter a data atual é uma tarefa simples e pode ser muito útil em várias situações. Neste artigo, vamos explorar como obter a data atual em JavaScript e como utilizá-la em nosso código.
+Se você é um programador ou está começando a aprender a linguagem, provavelmente já se deparou com a necessidade de obter a data atual em seus projetos. Isso pode ser útil para mostrar a data atual em seu site ou aplicativo, criar recursos que dependam da data ou até mesmo registrar as datas de atividades específicas. Felizmente, a programação em Javascript torna isso uma tarefa simples.
 
-## Como Fazer
+## Como obter a data atual com Javascript
 
-Para obter a data atual em JavaScript, podemos utilizar o objeto `Date()`. Sempre que criamos uma instância desse objeto, ele nos fornece a data e a hora atual. Vamos dar uma olhada em alguns exemplos:
-
-```
-// Obtendo a data atual
-let dataAtual = new Date();
-console.log(dataAtual);
-
-// Saída: Mon Jul 20 2020 12:53:08 GMT-0300 (Horário Padrão de Brasília)
-```
-
-Podemos ver que a data e hora foram impressas no console no formato padrão. Mas podemos personalizar como queremos que a data seja exibida usando os métodos do objeto `Date()`.
+Para obter a data atual em seu projeto Javascript, você pode usar o objeto `Date`. Com ele, você pode acessar vários métodos e propriedades relacionados à data. Vamos dar uma olhada em alguns exemplos de código:
 
 ```
-// Obtendo apenas o ano atual
-let anoAtual = new Date().getFullYear();
-console.log(anoAtual);
+// Criando um objeto Date
+var today = new Date();
 
-// Saída: 2020
+// Obtendo a data atual em formato de string
+var currentDate = today.toDateString();
+console.log(currentDate); // Saída: Fri Mar 05 2021
 
-// Obtendo o dia atual
-let diaAtual = new Date().getDay();
-console.log(diaAtual);
-
-// Saída: 1 (segunda-feira)
+// Obtendo o dia da semana atual
+var currentDay = today.getDay();
+console.log(currentDay); // Saída: 5 (sendo 0 = domingo, 1 = segunda, ...)
 ```
 
-Também podemos criar data e hora específicas passando os parâmetros para o objeto `Date()`. Por exemplo:
+Você também pode personalizar o formato da data utilizando os métodos `getMonth()` e `getFullYear()`. Por exemplo:
 
 ```
-// Criando uma data específica
-let dataNascimento = new Date(1995, 02, 15);
-
-console.log(dataNascimento);
-
-// Saída: Wed Mar 15 1995 00:00:00 GMT-0300 (Horário Padrão de Brasília)
+// Obtendo o mês e ano atual em formato de string
+var currentMonth = today.getMonth() + 1; // Os meses começam em 0
+var currentYear = today.getFullYear();
+console.log(currentMonth + "/" + currentYear); // Saída: 3/2021
 ```
 
-Existem muitos métodos que podemos utilizar para obter informações específicas da data e hora, como `getMonth()`, `getHours()`, `getMinutes()`, etc. Também podemos adicionar ou subtrair valores de uma data, realizar operações matemáticas com datas e muito mais. O importante é entendermos que a data atual pode ser obtida facilmente em JavaScript e podemos manipulá-la de acordo com nossas necessidades.
+Além disso, você também pode adicionar ou subtrair dias, meses ou anos à data atual utilizando os métodos `setDate()`, `setMonth()` e `setFullYear()`. Por exemplo:
 
-## Aprofundando-se
+```
+// Adicionando 10 dias à data atual
+today.setDate(today.getDate() + 10);
+console.log(today.toDateString()); // Saída: Mon Mar 15 2021
+```
 
-O objeto `Date()` em JavaScript pode ser um pouco confuso, pois algumas funções como `getMonth()` e `getDay()` retornam valores numéricos que não correspondem exatamente aos meses e dias do calendário. Isso ocorre porque esses métodos retornam os valores começando em 0, ou seja, janeiro é representado por 0 e dezembro por 11. Por isso, é sempre importante ler a documentação ou fazer uma pesquisa para entender os valores retornados por cada método.
+## Aprofundando-se na obtenção da data atual
 
-Outro ponto importante é que o objeto `Date()` é baseado no horário do sistema do computador em que o código está sendo executado. Isso significa que se o usuário estiver em um fuso horário diferente, a data e hora exibidos serão diferentes. Para resolver esse problema, podemos usar as funções `getUTCDate()` e `getUTCHours()` para obter a data e hora no horário universal (UTC).
+O objeto `Date` também possui métodos para obter a data e horário local, além de permitir definir o fuso horário. Além disso, é importante lembrar que a data atual é baseada no fuso horário configurado no dispositivo do usuário. Portanto, é sempre recomendável converter a data e hora para o fuso horário do servidor antes de armazená-las no banco de dados, por exemplo.
 
-É importante também lembrar que o objeto `Date()` é mutável e pode ser modificado acidentalmente. Portanto, é uma boa prática criar uma cópia da data atual se você precisar utilizá-la em diferentes partes do código.
+Outra dica importante é que, quando comparar datas em Javascript, é necessário utilizar o método `getTime()` para converter as datas em milissegundos, caso contrário, a comparação será feita com base na diferença do fuso horário do dispositivo do usuário.
 
 ## Veja também
 
-- [Documentação oficial do objeto Date() em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Manipulando datas em JavaScript](https://www.w3schools.com/js/js_dates.asp)
-- [Métodos avançados do objeto Date() em JavaScript](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)
+- [Documentação do objeto Date em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Converter fuso horário em Javascript](https://www.w3schools.com/js/js_date_methods.asp)

@@ -1,36 +1,44 @@
 ---
 title:    "Elm: 텍스트 파일 읽기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-텍스트 파일을 읽는 것에 대해 이야기할 때마다 우리는 자신들이 텍스트 파일을 처리할 때 얼만큼 성공적 일 수 있는지에 대해 생각합니다. 우리는 여러분이 Elm 프로그래밍을 배울 때, 여러분이 쉽게 텍스트 파일을 읽을 수 있게 될 것이라고 믿습니다. 이 블로그 포스트는 텍스트 파일을 읽는 과정에서 발생할 수 있는 문제들과 그 해결법에 대해 알려드립니다.
 
-## 어떻게
-Emacs 처럼 많은 프로그램을 좋아하지 않는 이들도 우리는 Rust 프로그래머들이 수동으로 자료 구조를 작성할 때 느려지지는 않을 것이라고 확신합니다. 여러분은 효율적인 소프트웨어를 작성할 수 있도록 많은 도움을 받을 것입니다. 이것은 작업을 시작하기 전에 보이는 검사 파일 ( *.elm ) 이 될 것입니다.
+텍스트 파일을 읽는 데 관심을 가지게 되는 이유는 많지만, 그 중 하나는 데이터를 처리하거나 분석하거나 사용하기 위해서입니다. 
+
+## 방법
+
+텍스트 파일을 읽는 것은 Elm의 `File` 모듈을 사용하여 쉽게 할 수 있습니다. 먼저, 파일 데이터를 저장할 변수를 선언하고 파일을 열 때 사용될 `File.reader` 함수를 정의합니다. 그런 다음 `File.read` 함수를 사용하여 파일 데이터를 읽은 다음, `Result` 타입을 사용하여 실패나 성공 여부를 처리합니다. 아래는 파일을 읽는 간단한 예제 코드입니다:
 
 ```Elm
-생각
-의해서ansi-acpi::search 낭
+-- 파일 데이터를 저장하기 위한 변수 선언
+fileData : String
 
-선언 선언 
-searchFor :: String -> [String] -> List String
-searchFor phrase lines =
-    List.filter (String.contains phrase) lines
+-- 파일을 열 때 사용될 `File.reader` 함수 정의
+reader : File.Reader
+reader =
+    { onNextChar = \char -> ( fileData = fileData ++ toString char, ( reader ), ( reader ) )
+    , onEndOfFile = \_ -> ( fileData, ( reader ), ( reader ) )
+    , onError = \error -> ( fileData, ( reader ), ( reader ) ) 
+    }
 
-실여는클래스 actualClass :: Maybe a -> Int actualClass (Just home) = home actualClass Nothing = 0
+-- 파일 데이터를 읽음
+File.read "text.txt" reader
+
 ```
 
-이 코드는 텍스트 파일에서 특정 단어 또는 구를 찾는 방법을 보여줍니다. 여러분은 이 코드를 읽기 쉽고 이해하기 쉽게 만들 수 있을 것입니다.
+위 코드는 `text.txt` 파일을 읽을 때 사용되며, 파일 데이터는 `fileData` 변수에 저장됩니다. 
 
-## 깊숙한 다이브
-이제 여러분은 텍스트 파일을 읽는 방법을 알게 되었습니다. 이제 우리는 텍스트 파일을 읽을 때 발생하는 몇 가지 문제를 다룰 수 있습니다. 첫 번째로, 파일의 크기가 너무 커서 메모리에 모두 들어가지 않을 수 있습니다. 이 경우에는 'lazy' 라이브러리를 사용하여 파일의 일부분을 읽을 수 있습니다. 두 번째로, 파일이 잘못된 인코딩으로 작성되었을 수 있습니다. 이를 해결하기 위해서는 파일을 읽을 때 적절한 인코딩을 선택해야 합니다.
+## 딥 다이브
 
-이렇게 텍스트 파일을 읽기 위해서는 여러분이 재미있는 가이드들을 찾아야 합니다. 하지만 여러분이 Elm을 사용하려는 목적에 따라 더 많은 정보를 찾을 수 있습니다.
+`File.reader` 함수의 콜백 함수들 중에서 `onNextChar` 함수는 매개 변수로 전달되는 문자 하나하나를 읽을 수 있습니다. 이를 활용하면 파일 데이터를 읽을 때 추가적인 로직을 적용할 수 있습니다. 또한, `File` 모듈에는 옵션으로 파일을 읽을 때 인코딩 방식을 지정할 수 있는 기능도 있습니다.
 
-## 또보기
-- [Elm 공식 웹사이트](https://elm-lang.org/)
-- [Elm 커뮤니티 활동](https://discourse.elm-lang.org/)
-- [Elm 코드 예시](https://elm-lang.org/examples)
+## 참고
+
+- [Elm `File` 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/File)
+- [Elm과 파일 다루기](https://programmableweb.com)
+- [표준 입출력 장치와 파일 입출력](http://talestostories.tistory.com)

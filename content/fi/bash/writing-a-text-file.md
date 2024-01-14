@@ -1,39 +1,38 @@
 ---
 title:    "Bash: Tekstitiedoston kirjoittaminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Miksi sitten kirjoittaisit teksti-tiedostoa? Ehkä haluat tallentaa tärkeitä muistiinpanoja tai luoda ohjelman, joka käsittelee tietoja teksti-muodossa. Tekstiedostoja voidaan käyttää moniin eri tarkoituksiin, ja Bash-ohjelmointikielen avulla voit luoda yksinkertaisia, mutta tehokkaita työkaluja käsittelemään näitä tiedostoja.
+Bash-ohjelmoinnilla on monia käyttötarkoituksia, ja yksi niistä on tiedostojen luominen ja muokkaaminen. Tekstieditorit, kuten Vim tai Nano, vaativat usein hieman opettelua ja ovat hankalia käyttää automatisoiduissa tehtävissä. Bash-ohjelmoinnin avulla voit nopeasti ja tehokkaasti luoda ja muokata tiedostoja suoraan komentoriviltä.
 
-## Kuinka
+## Miten?
 
-Bash on Linux-käyttöjärjestelmän komentokehoteohjelmointikieli, joka mahdollistaa tekstipohjaisen ohjelmoinnin. Alla olevat esimerkit avaavat pienen ikkunan nähdäksesi, kuinka voit luoda ja muokata teksti-tiedostoja Bashin avulla.
+Aloittaaksesi tiedostojen luomisen Bashilla, sinun tarvitsee vain avata tekstieditori ja aloittaa kirjoittaminen. Käytä `touch`-komentoa luodaksesi uuden tiedoston ja `echo`-komennolla voit lisätä sisältöä tiedoston sisään. Voit myös käyttää `cat`-komentoa yhdistämään useita tiedostoja yhdeksi kokonaisuudeksi tai `> `-operaattoria ohjaamaan tulosteen suoraan uuteen tiedostoon.
+
+Esimerkiksi, jos haluat luoda uuden tiedoston nimeltä "blogi.txt" ja lisätä siihen tekstin "Tervetuloa lukemaan Bash ohjelmoinnista!", voit käyttää seuraavaa koodia:
 
 ```Bash
-# Luodaan uusi tiedosto nimeltä "tekstitiedosto.txt"
-touch tekstitiedosto.txt
-
-# Kirjoitetaan teksti tiedostoon
-echo "Tämä on ensimmäinen rivi" > tekstitiedosto.txt
-
-# Lisätään uusi rivi tiedoston loppuun
-echo "Tämä on toinen rivi" >> tekstitiedosto.txt
-
-# Muokataan olemassa olevaa riviä
-sed -i 's/toinen kolmas/' tekstitiedosto.txt
+touch blogi.txt
+echo "Tervetuloa lukemaan Bash ohjelmoinnista!" > blogi.txt
 ```
 
-Tässä esimerkissä luomme uuden tekstitiedoston, kirjoitamme siihen joitain rivejä ja muokkaamme yhden rivin käyttäen `sed`-komennolla. Voit huomata, että käytämme `>` ja `>>` merkkejä kirjoittaaksemme uusia rivejä tiedostoon ja `sed`-komentoa muokataksemme jo olemassa olevaa riviä.
+Tämä luo uuden tiedoston ja lisää sisällön siihen. Voit myös käyttää `cat`-komentoa, jos haluat lisätä enemmän sisältöä tai `>>`-operaattoria lisätäksesi sisältöä tiedoston loppuun.
 
-## Syväsukellus
+## Syvemmälle
 
-Teksti-tiedostojen kirjoittaminen Bashilla ei rajoitu pelkästään yksinkertaisiin komennoihin, joita näytimme edellä. Bash tarjoaa myös joukon komentoja, jotka helpottavat tiedon käsittelyä, kuten `grep`, `awk` ja `cut`. Voit myös käyttää muuttujia ja ehtolauseita tekstitiedostojen luomisessa ja muokkaamisessa.
+Bash-ohjelmoinnilla voit luoda ja muokata tiedostoja monilla erilaisilla tavoilla. Voit käyttää komentoja kuten `rm` poistaaksesi tiedostoja, `mv` siirtääksesi tiedostoja tai `touch` päivittääksesi tiedostojen aikaleimoja. Lisäksi Bash-ohjelmointi tarjoaa mahdollisuuden automatisoida tiedostojen luonti ja muokkaus erilaisten skriptien avulla.
+
+Bash-ohjelmoinnin avulla voit myös käsitellä tekstiä ja tiedostojen sisältöä. Voit käyttää komentoja kuten `grep` löytääksesi tietyn merkkijonon tiedostosta, `sed` muuttaaksesi tiedoston sisältöä tai `awk` käsitelläksesi tiedostojen rivejä.
 
 ## Katso myös
 
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Tekstin käsittely Bashilla](https://www.linux.com/tutorials/command-line-text-processing/)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash others commands](https://www.tutorialspoint.com/unix/unix-basic-utilities.htm)
+
+Kiitos lukemisesta ja hyvää ohjelmointia!

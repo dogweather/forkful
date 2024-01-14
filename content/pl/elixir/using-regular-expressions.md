@@ -1,39 +1,36 @@
 ---
 title:    "Elixir: Używanie wyrażeń regularnych"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać wyrażeń regularnych?
+# Dlaczego warto poznać wyrażenia regularne w Elixir
 
-Wyrażenia regularne to potężne narzędzie programistyczne, które pozwala na efektywne manipulowanie tekstami. Mogą być wykorzystane do wyszukiwania, filtrowania, a także podmieniania fragmentów tekstu. Jeśli chcesz osiągnąć szybkie i precyzyjne działanie na tekście, wyrażenia regularne są niezastąpione.
+Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu, pozwalającym na wyszukiwanie i manipulację tekstem w prosty i wydajny sposób. W Elixir mają one szczególne znaczenie, ponieważ są często używane w funkcjach wbudowanych oraz w przypadku parsowania danych wejściowych. Poznanie wyrażeń regularnych w Elixir może znacznie ułatwić prace z tekstem oraz zwiększyć wydajność kodu.
 
-## Jak korzystać z wyrażeń regularnych w Elixirze?
+## Jak używać wyrażeń regularnych w Elixir
 
-Sposób użycia wyrażeń regularnych w Elixirze jest bardzo prosty. Najpierw musimy skorzystać z wbudowanej funkcji `Regex` i przekazać jej jako argument wyrażenie regularne w postaci stringa, wraz z wywołaniem funkcji `Regex.match/2`. Następnie możemy wykorzystać funkcję `Regex.run/2` aby dopasować wyrażenie regularne do tekstu i otrzymać wynik w postaci listy napisów.
+Możesz używać wyrażeń regularnych w Elixir za pomocą wbudowanej funkcji `Regex`. Poniżej znajdują się przykładowe kody wykorzystujące wyrażenia regularne w celu wyszukania i zamiany tekstu:
 
-```
-Elixir
-%% Przykład:
-regex = ~r/abc/ # zapisanie wyrażenia regularnego
-match = Regex.match(regex, "abcxyz") # dopasowanie wyrażenia do tekstu
-result = Regex.run(regex, "xyzabc") # wynikiem będzie ["abc"] 
-``` 
+```Elixir
+str = "To jest przykład tekstu do przetworzenia"
+Regex.replace(~r/przykład/, str, "próba")
+# Wynik: "To jest próba tekstu do przetworzenia"
 
-## Głębsze zagadnienia dotyczące wyrażeń regularnych
-
-Kiedy już opanujemy podstawy korzystania z wyrażeń regularnych, możemy przejść do bardziej zaawansowanych zastosowań. Na przykład, za pomocą metody `Regex.replace/4` można dokonywać podmiany fragmentów tekstu według określonego wyrażenia regularnego. Istnieje również możliwość wykorzystania operatora `=~` w celu sprawdzenia czy dany tekst pasuje do wyrażenia regularnego.
-
-```
-Elixir
-%% Przykładowe wykorzystanie:
-Regex.replace(~r/\d+/, "a1b2c3", "*") # wynikiem jest "a*b*c*"
-"a1b2c3" =~ ~r/[a-z]+[0-9]+/ # zwraca true
+Regex.scan(~r/[a-z]+/, str)
+# Wynik: ["To", "jest", "przykład", "tekstu", "do", "przetworzenia"]
 ```
 
-## Zobacz także
+W powyższych przykładach użyto funkcji `Regex.replace/3`, która zastępuje dopasowane wyrażenie regularne podanym tekstem oraz funkcji `Regex.scan/2`, która zwraca listę dopasowanych wyrażeń. Istnieje wiele innych funkcji wbudowanych, które można wykorzystać, aby pracować z wyrażeniami regularnymi w Elixir.
 
-- Dokumentacja Elixir Regex: https://hexdocs.pm/elixir/Regex.html
-- A tutorial on Elixir Regex: https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm
-- Elixir Playground: https://elixirplayground.com/
+## Głębszy wgląd w wyrażenia regularne
+
+Wyrażenia regularne w Elixir są oparte na standardzie PCRE (Perl-Compatible Regular Expressions) oraz oferują szereg wygodnych dodatków, takich jak obsługa Unicode i możliwość zastąpienia tekstu funkcją. Warto poświęcić czas na poznanie składni wyrażeń regularnych oraz dostępnych funkcji, aby móc wykorzystać je w sposób jak najbardziej efektywny.
+
+# Zobacz również
+
+- [Dokumentacja Elixir dla funkcji Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Poradnik składni wyrażeń regularnych w Elixir](https://www.rexwolf.net/2016/06/elixir-regular-expressions/)
+- [Przykłady użycia wyrażeń regularnych w Elixir](https://csainty.github.io/elixir/2017/10/05/elixir-regular-expressions.html)

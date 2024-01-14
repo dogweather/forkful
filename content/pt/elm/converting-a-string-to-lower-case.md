@@ -1,45 +1,45 @@
 ---
-title:    "Elm: Convertendo uma string para letras minúsculas"
+title:    "Elm: Convertendo uma string para minúsculas"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+## Por que Converter uma String para Minúsculas?
 
-Você pode pensar que isso é algo simples e trivial, mas a conversão de uma string para letras minúsculas pode ser muito útil em certas situações. Por exemplo, quando você está trabalhando com dados de entrada fornecidos pelo usuário, faz sentido padronizar tudo em letras minúsculas para evitar erros ao comparar strings.
+Quando estamos programando em Elm, muitas vezes precisamos manipular strings. Uma tarefa comum é converter uma string para minúsculas. Isso pode ser útil em várias situações, como quando queremos comparar duas strings de forma não sensível a maiúsculas e minúsculas ou quando queremos formatar uma string para exibi-la em letras minúsculas.
 
-## Como fazer isso em Elm?
+## Como Fazer
 
-Em Elm, a conversão de uma string para letras minúsculas é feita através da função `String.toLower`. Veja abaixo um exemplo simples:
-
-```Elm
-String.toLower "ELM PROGRAMMING" -- Output: "elm programming"
-```
-
-Se a string já estiver em letras minúsculas, a função apenas retorna a própria string. Além disso, a função `String.toLower` não altera a string original, mas retorna uma nova string com as letras em minúsculo.
-
-Agora, vamos ver como isso pode ser útil no contexto de um formulário de login:
+A linguagem Elm possui uma função nativa chamada `String.toLower` que permite converter uma string para minúsculas facilmente, como mostrado no exemplo abaixo:
 
 ```Elm
-username = "USUÁRIO"
-password = "Tester123"
+nomeEmMaiusculo = "JOANA"
+nomeEmMinusculo = String.toLower nomeEmMaiusculo
 
-if (username == (String.toLower "Usuário")) && (password == "tester123") then
-    loginSuccessful
-else
-    loginFailed
+nomeEmMinusculo -- saída: "joana"
 ```
 
-Neste caso, a string de entrada `username` é convertida para letras minúsculas antes de ser comparada com a string "usuário". Isso garante que, independentemente de como o usuário digitou seu nome de usuário, o login será bem-sucedido desde que a senha esteja correta.
+Podemos também usar essa função para comparar duas strings independentemente de suas letras maiúsculas ou minúsculas. Por exemplo:
 
-## Mais detalhes sobre a conversão de strings em Elm
+```Elm
+nome1 = "Laura"
+nome2 = "laura"
+nome3 = "LAURA"
 
-Em Elm, a conversão de uma string para letras minúsculas é baseada no Unicode, o que significa que também funciona para caracteres acentuados e símbolos especiais. Além disso, a função `String.toLower` pode ser usada em conjunto com outras funções da biblioteca `String`, como por exemplo `String.toUpper`, para manipular e formatar strings de diversas formas.
+String.toLower nome1 == String.toLower nome2 -- saída: True
+String.toLower nome1 == String.toLower nome3 -- saída: True
+```
 
-## Veja também
-- [Documentação oficial do Elm sobre conversão de strings](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm String Cheat Sheet](https://devhints.io/elm-strings)
-- [Tutorial sobre strings em Elm](https://www.learnhowtoprogram.com/intermediate-programming-concepts/functional-programming-in-javascript/strings)
+## Mergulho Nas Profundezas
 
-Esperamos que este artigo tenha sido útil para você entender um pouco mais sobre como trabalhar com strings em Elm. Continue explorando a documentação oficial e praticando com exemplos para aperfeiçoar suas habilidades de programação nessa linguagem funcional maravilhosa!
+Por baixo dos panos, a função `String.toLower` utiliza o Unicode para converter a string para minúsculas. Isso significa que ela é capaz de lidar com caracteres acentuados e de outras línguas. Além disso, ela também é capaz de converter letras maiúsculas acentuadas para suas equivalentes minúsculas sem acentos.
+
+Por exemplo, a letra "Á" será convertida para "á", a letra "Ç" será convertida para "ç" e assim por diante. Isso torna a função `String.toLower` muito poderosa e versátil para lidar com strings em diferentes idiomas.
+
+## Veja Também
+
+- [Documentação oficial da função `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Exemplos de uso da função `String.toLower`](https://elmprogramming.com/convert-string-to-lowercase-in-elm.html)
+- [Outras funções de manipulação de strings em Elm](https://courses.knowthen.com/p/pure-functional-data-structures-in-elm/?product_id=79614&coupon_code=YT50OFF&preview=logged_out) (em inglês)

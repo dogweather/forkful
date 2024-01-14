@@ -1,63 +1,52 @@
 ---
-title:    "PHP: **Alimerkkijonojen erottaminen"
+title:    "PHP: Alimerkkijonojen erottelu"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet PHP-kehittäjät hyödyntävät substringsien "puuttumista" (engl. extraction) ohjelmointiessaan. Substringien poimiminen on kätevä tapa manipuloida merkkijonoja ja tehdä niistä tiettyjä toimintoja. Se voi myös auttaa koodin tehokkuudessa ja tietokannan käsittelyssä.
+Substringien erottaminen (extracting) on tärkeä osa PHP-ohjelmoinnin oppimista. Substringit ovat osa merkkijonoa, joka on poimittu toisesta merkkijonosta. Tämä on hyödyllistä esimerkiksi, kun haluat hakea ja käsitellä tietoja tietokannasta.
 
 ## Näin teet sen
 
-Substringsien poimiminen PHP:lla on helppoa ja nopeaa. Tässä esimerkissä käytämme merkkijonoa "Tervetuloa Suomeen" ja poimimme siitä osan "Suomeen".
+Substringien erotus PHP:ssä on suhteellisen helppoa käyttäen muutamia funktionaalisia työkaluja. Alla olevassa koodiesimerkissä käytämme "explode()" funktiota, joka jakaa merkkijonon erillisiin osiin (tokens) annetun erottimen perusteella. Suorita seuraava koodi ja näet tuloksen, jossa kukin "token" on erotettu omaksi stringikseen.
 
 ```PHP
-$merkkijono = "Tervetuloa Suomeen";
-echo substr($merkkijono, 11, 7);
+<?php
+$string = "Tämä on esimerkki merkkijonosta";
+$tokens = explode(" ", $string);
+foreach($tokens as $token){
+    echo $token . "\n";
+}
 ```
 
-Tämä tulostaa "Suomeen". Ensimmäisenä parametrina on merkkijono josta poimitaan, toisena parametrina aloituskohta ja kolmantena parametrina substringin pituus. Voit myös jättää viimeisen parametrin pois, jolloin substringin pituus lasketaan automaattisesti loppuun saakka.
+Tulos:
 
-Voit myös poimia merkkijonoja loppupäästä käyttämällä negatiivista aloituskohtaa. Esimerkiksi jos haluat poimia "Suomeen" merkkijonosta, voit käyttää seuraavaa koodia:
+```
+Tämä
+on
+esimerkki
+merkkijonosta
+```
+
+Voit myös käyttää "substr()" funktiota, joka palauttaa halutun osan merkkijonosta annetun aloitus- ja lopetuskohdan perusteella. Koodiesimerkki näyttää, kuinka voit käyttää tätä funktiota poimimaan tietyn alueen merkkijonosta.
 
 ```PHP
-$merkkijono = "Tervetuloa Suomeen";
-echo substr($merkkijono, -7);
+<?php
+$string = "Tämä on esimerkki merkkijonosta";
+$substring = substr($string, 4, 6);
+echo $substring; // palauttaa "on esi"
 ```
 
-Tämä tulostaa saman "Suomeen" lopusta.
+## Syvällinen sukellus
 
-Voit myös poimia useamman kuin yhden substringsin käyttämällä pilkkuja merkkijonon sisällä. Esimerkiksi jos haluat poimia "Tervetuloa" ja "Suomeen" merkkijonosta, voit käyttää tätä:
-
-```PHP
-$merkkijono = "Tervetuloa Suomeen";
-echo substr($merkkijono, 0, 10) . ", " . substr($merkkijono, 11);
-```
-
-Tämä tulostaa "Tervetuloa, Suomeen".
-
-## Syvemmälle
-
-Substringsien poimiminen ei rajoitu vain merkkijonoihin, vaan se toimii myös taulukoissa ja assosiatiivisissa taulukoissa. Voit käyttää samaa substr-funktiota, mutta sen ensimmäisenä parametrinä on taulukko ja sen toisena parametrina numerollinen tai merkkijonona oleva avain.
-
-```PHP
-$taulukko = array("Tervetuloa", "Suomeen");
-echo substr($taulukko[1], 0, 5);
-```
-
-Tämä tulostaa "Suome". Voit myös poimia substringsin assosiatiivisesta taulukosta käyttäen sen avainlukua.
-
-```PHP
-$taulukko = array("nimi" => "Suomeen", "tervehdys" => "Tervetuloa");
-echo substr($taulukko["nimi"], 0, 5);
-```
-
-Tämä tulostaa "Suome".
+On tärkeää ymmärtää, että substringien erotus on yksi keino käsitellä merkkijonoja PHP:ssä. On myös muita tapoja, kuten käyttää "preg_split()" funktiota, joka mahdollistaa regular expression -ilmauksien käytön merkkijonojen erotteluun. On tärkeää tutustua eri vaihtoehtoihin ja löytää itselleen sopivin tapa käsitellä merkkijonoja.
 
 ## Katso myös
 
-- PHP-käsikirja substr-funktiolle: https://www.php.net/manual/en/function.substr.php
-- W3Schools substr-esimerkkejä: https://www.w3schools.com/php/func_string_substr.asp
-- Live Coding -video substringien käytöstä: https://www.youtube.com/watch?v=Uc03GYl4PZo
+- [Official PHP substring documentation](https://www.php.net/manual/en/function.substr.php)
+- [Explode or split a string in PHP](https://www.geeksforgeeks.org/explode-or-split-a-string-in-php/)
+- [PHP Regular Expressions](https://www.w3schools.com/php/php_regex.asp)

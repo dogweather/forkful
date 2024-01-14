@@ -1,38 +1,48 @@
 ---
-title:    "Gleam: Text suchen und ersetzen"
+title:    "Gleam: Suchen und Ersetzen von Text"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele verschiedene Gründe, warum jemand gezielt nach Text suchen und ihn ersetzen möchte. Vielleicht möchtest du bestimmte Wörter oder Formulierungen in deinem Code ändern, um ihn übersichtlicher zu gestalten oder an eine bestimmte Sprachkonvention anzupassen. Oder du möchtest einfach nur eine Textdatei durchsehen und einige Begriffe durch andere ersetzen. In jedem Fall kann dies mit dem Gleam-Programmierungsframework schnell und effizient erledigt werden.
+Wenn du ein Programmierer bist, der mit Texten arbeitet, stößt du oft auf die Notwendigkeit, bestimmte Wörter oder Ausdrücke in deinem Code zu finden und zu ersetzen. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel um Fehler zu beheben oder um deinen Code effizienter zu machen. Hier kommt die Gleam-Programmiersprache ins Spiel, die eine robuste Such- und Ersetzungsfunktion bietet, die dir dabei hilft, diese Aufgabe schnell und effektiv zu erledigen.
 
 ## Wie geht das?
 
-Gleam bietet eine Vielzahl von Funktionen zum Suchen und Ersetzen von Text. Eines der einfachsten und am häufigsten verwendeten ist `String.replace`, das ein Muster und einen Ersatztext als Argumente akzeptiert. Eine typische Verwendung wäre:
+Die Gleam-Syntax für die Suche und Ersetzung von Text verwendet Mustererkennung und reguläre Ausdrücke, um die entsprechenden Textpassagen zu identifizieren. Hier ist ein Beispiel, um alle Vorkommen von "Gleam" in einem Text zu ersetzen:
 
 ```Gleam
-x = String.replace("Gle", "Ble", "Gleam ist fantastisch!")
+match text {
+    "Gleam" => "Programmieren"
+    text -> text
+}
 ```
 
-Die obige Zeile würde "Bleam ist fantastisch!" zurückgeben. Beachte, dass beim Suchen und Ersetzen die Groß- und Kleinschreibung berücksichtigt wird.
+In diesem Beispiel haben wir das Muster "Gleam" definiert und ihm den Ersatzwert "Programmieren" zugewiesen. Die Variante `text -> text` stellt sicher, dass alle anderen Passagen im Text unverändert bleiben. Das Ergebnis dieses Codes sind alle Vorkommen von "Gleam", die jetzt mit "Programmieren" ersetzt werden.
 
-Ein weiteres nützliches Feature ist die `Regex.replace` Funktion, die reguläre Ausdrücke unterstützt. Dadurch wird es möglich, komplexere Suchmuster zu definieren und mehrere Ersetzungen in einem Durchlauf durchzuführen. Zum Beispiel könnte man alle Vorkommen von "Gleam" mit "Bleam" ersetzen und dabei die Groß- und Kleinschreibung ignorieren:
+Ein weiteres wichtiges Merkmal der Gleam-Syntax ist die Möglichkeit, reguläre Ausdrücke zu verwenden. Dies ist besonders nützlich, wenn du nach bestimmten Mustern suchen und ersetzen möchtest. Hier ist ein Beispiel, um alle Vorkommen von Zahlen in einem Text zu ersetzen:
 
 ```Gleam
-x = Regex.replace(~r/Gleam/i, "Bleam", "Gleam ist fantastisch!")
+import gleam/regexp
+
+match text {
+    regexp.match([0-9]+) -> "Zahl"
+    text -> text
+}
 ```
 
-Weitere Informationen zu den verschiedenen Funktionen und Optionen für das Suchen und Ersetzen von Text im Gleam-Programmierungsframework findest du in der offiziellen Dokumentation.
+In diesem Beispiel importieren wir das Regexp-Modul von Gleam und verwenden es, um alle zusammenhängenden Zahlen (es können auch längere Zahlen sein) zu identifizieren und durch den Ersatzwert "Zahl" zu ersetzen.
 
-## Tiefergehende Informationen
+## Tiefere Einblicke
 
-Wenn du wirklich in die Details eintauchen möchtest, bietet Gleam auch die Möglichkeit, einen eigenen Parser zu schreiben, der Text analysiert und gezielt ersetzt. Mit dem `match`-Konstrukt und Pattern-Matching kannst du komplexe Muster definieren und den Text entsprechend anpassen.
+Die Gleam-Suche und -Ersetzungsfunktion bietet auch erweiterte Optionen, wie zum Beispiel die Möglichkeit, die Groß- und Kleinschreibung zu ignorieren oder einen globalen Austausch durchzuführen. Sie bietet auch verschiedene Funktionen, um die Such- und Ersetzungslogik anzupassen.
+
+Wenn du weitere Informationen und Beispiele zum Suchen und Ersetzen in Gleam benötigst, schaue dir die offizielle Dokumentation an.
 
 ## Siehe auch
 
-- Offizielle Dokumentation zu `String.replace`: https://gleam.run/documentation/stdlib/string#replace
-- Offizielle Dokumentation zu `Regex.replace`: https://gleam.run/documentation/stdlib/regex#replace
-- Beispielprojekte auf Github: https://github.com/gleam-lang/gleam/tree/main/examples/search-and-replace
+- Gleam offizielle Dokumentation: https://gleam.run/
+- Reguläre Ausdrücke in Gleam: https://gleam.run/articles/regular-expressions-in-gleam/

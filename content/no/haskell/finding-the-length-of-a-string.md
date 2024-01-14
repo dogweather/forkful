@@ -1,43 +1,34 @@
 ---
-title:    "Haskell: Finne lengden på en streng"
+title:    "Haskell: Å finne lengden på en streng"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Når vi jobber med programmering, er det ofte viktig å kunne finne lengden på en streng. Dette kan være nyttig når vi skal manipulere tekst eller utføre dataanalyse. I denne bloggposten skal vi utforske hvordan vi kan finne lengden på en streng ved hjelp av Haskell.
+
+Å finne lengden til en streng kan virke som en enkel oppgave, men når man begynner å jobbe med større programmeringsprosjekter, vil man ofte støte på oppgaver som krever denne kunnskapen. Å kunne finne lengden til en streng er en grunnleggende ferdighet som er nyttig i mange ulike programmeringsspråk, og kan hjelpe deg å skrive mer effektiv kode.
 
 ## Hvordan
-For å begynne, må vi først definere en variabel som inneholder en streng. La oss kalle den "tekst" og gi den verdien "Hei, verden!". Vi kan da bruke funksjonen "length" for å finne lengden på denne strengen. I Haskell ser det slik ut:
 
 ```Haskell
-tekst = "Hei, verden!"
-length tekst
+-- Definerer en funksjon for å finne lengden til en streng
+finnLengde :: String -> Int 
+-- Bruker funksjonen "length" for å finne lengden til strengen
+finnLengde myStreng = length myStreng 
+
+-- Eksempel på bruk av funksjonen 
+finnLengde "Dette er en streng" 
+-- Output: 19
 ```
 
-Dette vil gi oss outputen "13", som er lengden på strengen vår. La oss se på et annet eksempel, der vi ønsker å finne lengden på en streng som inneholder et navn:
-
-```Haskell
-navn = "Marie"
-length navn
-```
-
-Her vil outputen være "5", siden navnet "Marie" består av fem bokstaver. Vi kan også kombinere "length" med andre funksjoner, for eksempel "head", som lar oss ta ut den første bokstaven i en streng. La oss se et eksempel på det:
-
-```Haskell
-navn = "Marie"
-head navn
-length (head navn)
-```
-
-Dette vil gi oss outputen "M" og "1", siden "M" er den første bokstaven i "Marie".
+For å finne lengden til en streng i Haskell, kan man bruke den innebygde funksjonen "length". Denne tar inn en streng som parameter og returnerer antall tegn i strengen. I eksempelet over, tar vi inn strengen "Dette er en streng" og funksjonen returnerer verdien 19. Det er også mulig å definere sin egen funksjon for å finne lengden til en streng, som vist i koden over. Det kan være nyttig å bruke en egen funksjon for å finne lengden til en streng dersom man ønsker å implementere egne logikker eller utføre andre operasjoner på strengen før man finner lengden.
 
 ## Dypdykk
-Nå som vi har sett noen eksempler på hvordan vi kan finne lengden på en streng i Haskell, la oss se litt nærmere på hvordan dette egentlig fungerer. I Haskell er en streng en liste av karakterer. Når vi bruker funksjonen "length", teller den simpelthen antall elementer i denne listen. Dette betyr at enhver streng, uavhengig av hva den inneholder, kan finne sin lengde på denne måten.
 
-Vi kan også bruke "length" på lister av tall, og den vil da gi oss antall elementer i listen. Dette gjør funksjonen veldig allsidig og nyttig i mange ulike situasjoner.
+Når man jobber med større programmeringsprosjekter, kan det være nyttig å forstå hvordan lengden til en streng egentlig beregnes av datamaskinen. I Haskell og mange andre programmeringsspråk, blir tekst representer som en sekvens av Unicode-tegn. Hver av disse tegnene har en numerisk verdi som representerer dem. Når man finner lengden til en streng, blir hver av disse tegnene talt og returnert som resultat. Dette kan kompliseres ved for eksempel multibyte-strenger, hvor hvert tegn representeres av flere bytes, eller ved spesielle tegn som newline eller tab, hvor lengden kan variere avhengig av konteksten de brukes i. Det er derfor viktig å være bevisst på hvordan datamaskinen behandler og teller tekst for å kunne få korrekt lengde på en streng.
 
-## Se også
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Codecademy kurs i Haskell](https://www.codecademy.com/learn/learn-haskell)
+## Se Også
+- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/) 
+- [Haskell tutorial for nybegynnere](https://learnxinyminutes.com/docs/no-no/haskell/)

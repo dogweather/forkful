@@ -1,57 +1,48 @@
 ---
 title:    "C++: Skriva tester"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva kod är en spännande process som kräver kreativitet och problem-lösningstänkande. Men ibland kan denna process bli frustrerande när kod som vi trodde skulle fungera inte gör det. Att skriva tester kan hjälpa till att undvika dessa problem och säkerställa att vår kod fungerar som det är tänkt. I denna bloggpost kommer vi att titta närmare på hur man skriver tester i C++.
 
-## Hur man skriver tester i C++
-Att skriva tester i C++ innebär att vi skriver en kod som testar vår befintliga kod. Det finns olika typer av tester som vi kan använda, men vi ska fokusera på enhetstester i denna bloggpost. En enhetstest är ett test som fokuserar på att testa en enskild enhet av vår kod, vanligtvis en funktion eller metod. 
+Att skriva tester är en viktigt del av utvecklingsprocessen i C++. Det hjälper dig att säkerställa att din kod fungerar korrekt och minskar risken för buggar och felaktigt beteende.
 
-För att skriva ett enhetstest behöver vi ett testramverk, som hjälper oss att strukturera och organisera våra tester. Ett populärt testramverk för C++ är Google Test. Detta ramverk ger oss verktyg och funktioner för att skriva effektiva tester.
+## Så här gör man
 
-Låt oss ta ett enkelt exempel på en funktion som adderar två tal och skriva ett enhetstest för den. Vi kommer att använda Google Test för vårt exempel. 
+För att skriva tester i C++, behöver du använda ett ramverk som till exempel Google Test eller Catch2. Låt oss se ett enkelt exempel på hur du kan använda Catch2 för att skriva en testfunktion:
 
 ```C++
-#include <gtest/gtest.h> // inkluderar Google Test biblioteket
-#include "calculator.h" // inkluderar vår fil med adderingsfunktionen
-
-TEST(AdditionTest, AddsTwoNumbersCorrectly) { // Definierar ett testfall
-    // ARRANGE: Förbereder våra testdata och förväntat resultat
-    int num1 = 5;
-    int num2 = 10;
-    int expectedResult = 15;
-
-    // ACT: Utför vår adderingsfunktion med testdatan
-    int result = add(num1, num2);
-
-    // ASSERT: Kontrollerar om resultatet är samma som förväntat
-    ASSERT_EQ(expectedResult, result);
-}
-
-int main(int argc, char* argv[]) {
-    // Initialiserar vårt testprogram
-    testing::InitGoogleTest(&argc, argv);
-
-    // Kör våra tester
-    return RUN_ALL_TESTS();
+TEST_CASE("Addition") {
+  int result = add(2, 3);
+  REQUIRE(result == 5);
 }
 ```
 
-I vårt exempel använder vi makron från Google Test som hjälper oss att strukturera vårt testfall. Förberedelser görs i "ARRANGE" delen, funktionen som ska testas anropas i "ACT" delen, och slutligen kontrolleras resultatet i "ASSERT" delen. I vårt fall är resultatet rätt, och vårt test passerar.
+I detta exempel testas en funktion "add" som tar två heltal som parametrar och returnerar summan av dem. Med hjälp av "TEST_CASE" definierar vi en testfunktion med ett namn och sedan testar vi funktionen med hjälp av "REQUIRE" som kontrollerar att resultatet är det förväntade.
 
-Det är viktigt att notera att vårt testfall bara testar en specifik del av vår kod. Detta gör det möjligt för oss att isolera eventuella fel och felsöka dem enklare.
+När vi kör detta test med hjälp av Catch2 kommer vi att se följande output:
+
+```text
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+```
+
+Detta visar att vårt test har gått igenom och allt fungerar som vi förväntar oss.
 
 ## Djupdykning
-Att skriva tester kan verka som en tidsödande process, men det kan hjälpa till att upptäcka potentiella fel tidigt i utvecklingsprocessen. Det kan också ge oss mer självsäkerhet när vi gör ändringar i vår kod, eftersom vi vet att våra befintliga tester kommer att upptäcka eventuella fel som kan uppstå.
 
-När vi skriver tester, är det viktigt att tänka på våra testfalls täckning. Detta innebär att se till att vi testar alla olika vägar och scenarier inom vår kod. Ju högre täckningsgrad vi har, desto säkrare kan vi vara på att vår kod fungerar korrekt.
+När du skriver tester är det viktigt att tänka på olika scenarier och gränsvärden för att täcka så mycket av din kod som möjligt. Det är också viktigt att kontrollera att felhantering fungerar korrekt och att dina tester är tillförlitliga.
 
-Det är också viktigt att välja rätt nivå av tester. Enhetstester är bra för att testa små enheter av vår kod, men vi bör också använda andra typer av tester, såsom integrationstester och systemtester, för att testa hela vårt program.
+Ett annat tips för att skriva bra tester är att använda sig av "AAA"-principen, vilket står för "Arrange, Act, Assert". Det innebär att du ska förbereda testet genom att sätta upp ett scenario, utföra testet och sedan kontrollera att resultatet är det förväntade.
+
+Det finns många olika tekniker och strategier för att skriva tester och det bästa sättet är att utforska och experimentera för att hitta det som fungerar bäst för dig och ditt projekt.
 
 ## Se även
-- [Getting Started with Google Test (engelska)](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
-- [C++ testing libraries (engelska)](https://github.com/onqtam/awesome
+
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [TDD i C++](https://www.bitdegree.org/learn/tdd-cpp)
+- [Test-driven development för nybörjare](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/)

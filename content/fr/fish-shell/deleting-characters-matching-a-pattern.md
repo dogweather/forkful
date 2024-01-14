@@ -1,44 +1,55 @@
 ---
-title:    "Fish Shell: Suppression de caractères correspondant à un motif."
+title:    "Fish Shell: Suppression de caractères correspondant à un motif"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-### Pourquoi
+# Pourquoi
 
-Vous vous demandez peut-être pourquoi il serait utile de supprimer des caractères correspondant à un modèle dans le Shell Fish ? La réponse est simple : cela peut grandement faciliter et accélérer votre travail lorsque vous manipulez des fichiers et des données.
+Supprimer des caractères correspondant à un motif peut sembler être une opération simple, mais elle peut en fait être très utile dans certaines situations. Par exemple, cela peut être utile lorsque vous souhaitez nettoyer ou modifier une chaîne de caractères en supprimant des éléments indésirables.
 
-### Comment faire
+# Comment faire
 
-Pour supprimer des caractères correspondant à un modèle dans le Shell Fish, vous pouvez utiliser la fonction intégrée `string replace`. Voici un exemple de code utilisant cette fonction :
+Pour supprimer des caractères correspondant à un motif dans Fish Shell, vous pouvez utiliser la fonction `string replace` suivie du motif à supprimer et de l'élément par lequel le motif sera remplacé. Voici un exemple de code :
 
-```Fish Shell
-set my_string "Bonjour, je m'appelle Marie"
-string replace 'e' '' $my_string
+```
+Fish Shell > set phrase "Bonjour le monde!"
+Fish Shell > echo $phrase
+Bonjour le monde!
+Fish Shell > string replace r"le \w+" $phrase ""
+Bonjour !
 ```
 
-Ce code va supprimer toutes les occurrences de la lettre "e" dans la variable `my_string` et afficher le résultat: "Bonjour, j'appelll Mar1. 
+Dans cet exemple, nous avons utilisé le motif "le" suivi d'un espace et d'un ou plusieurs caractères alphabétiques (`\w+`). Ce motif correspond à "le monde" dans la phrase initiale, que nous avons ensuite remplacé par une chaîne vide afin de le supprimer.
 
-Vous pouvez également utiliser des modèles plus complexes en utilisant des expressions régulières. Voici un exemple de code supprimant tous les chiffres dans une chaîne de caractères :
+# Plongée en profondeur
 
-```Fish Shell
-set my_string "J'ai 35 ans"
-string replace -r '[0-9]' '' $my_string
+Lorsque vous utilisez `string replace` pour supprimer des caractères correspondant à un motif, vous pouvez également utiliser des expressions régulières plus complexes. Par exemple, si vous souhaitez supprimer tous les nombres contenus dans une chaîne de caractères, vous pouvez utiliser le motif `\d+` qui correspond à un ou plusieurs chiffres. Voici un exemple de code :
+
+```
+Fish Shell > set phrase "Il y a 3 pommes et 5 oranges dans le panier."
+Fish Shell > echo $phrase
+Il y a 3 pommes et 5 oranges dans le panier.
+Fish Shell > string replace r"\d+" $phrase ""
+Il y a pommes et oranges dans le panier.
 ```
 
-Le résultat sera: "J'ai ans". Comme vous pouvez le constater, cette fonction peut être très pratique pour nettoyer et manipuler des chaînes de caractères.
+Vous pouvez également utiliser `string replace` pour supprimer des caractères à partir d'un fichier texte en utilisant la commande `grep`. Par exemple, si vous voulez supprimer toutes les lignes contenant le mot "erreur" dans un fichier de log, vous pouvez utiliser cette commande :
 
-### Plongée en profondeur
+```
+Fish Shell > cat log.txt
+Ligne 1 - erreur système
+Ligne 2 - erreur de connexion
+Ligne 3 - tout va bien
+Fish Shell > grep -v "erreur" log.txt > log_sans_erreurs.txt
+Fish Shell > cat log_sans_erreurs.txt
+Ligne 3 - tout va bien
+```
 
-La fonction `string replace` possède plusieurs options pour vous permettre de personnaliser votre remplacement de caractères. Vous pouvez par exemple modifier la casse en utilisant l'option `-l` pour passer en minuscules ou `-u` pour passer en majuscules. Vous pouvez également utiliser l'option `-c` pour supprimer des caractères spécifiques plutôt que de les remplacer.
+# Voir aussi
 
-De plus, vous pouvez combiner plusieurs modèles en utilisant des expressions régulières dans la fonction `string replace`. Par exemple, vous pouvez supprimer à la fois les lettres et les chiffres dans une chaîne de caractères en utilisant le modèle `'[a-z]|[0-9]'`.
-
-### Voir aussi
-
-- Documentation officielle de la fonction `string replace` dans le Shell Fish : https://fishshell.com/docs/current/cmds/string.html#string-replace
-- Tutoriel sur l'utilisation des expressions régulières dans le Shell Fish : https://fishshell.com/docs/current/tutorial.html#regular-expressions
-- Exemples d'utilisation de la fonction `string replace` : https://everythinglinux.org/regular_expressions_1.html#section_1
-
-Profitez de cette fonctionnalité du Shell Fish pour vous simplifier la vie lors de vos manipulations de données et de fichiers !
+- [Documentation officielle du Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutoriel sur les expressions régulières dans Fish Shell](https://dev.to/fulara/fish-shell-regular-expression-tutorial-1bha)
+- [Liste des commandes Fish Shell](https://fishshell.com/docs/current/commands.html)

@@ -1,42 +1,44 @@
 ---
 title:    "Ruby: 检查目录是否存在"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：只有1-2句话来解释为什么某人会去检查文件夹是否存在。
+## 为什么
 
-Ruby编程简介：
-如果你是一个正在学习Ruby编程语言的初学者，那么你可能会经常在你的代码中遇到需要检查某个目录是否存在的情况。这可能是因为你需要在特定的目录下创建文件，或者需要在某个目录下查找特定的文件。无论是出于何种原因，检查目录是否存在是很重要的一步，它可以确保你的代码能够顺利执行。
+经常在编写代码的过程中，我们需要判断某个目录是否存在。这往往是因为我们需要通过代码来操作文件或者文件夹，但是在操作之前，需要确保所需的目录是存在的。通过检查目录是否存在可以避免程序出现不必要的错误。
 
-怎样实现：
-在Ruby中，你可以通过使用Dir.exist? 方法来检查某个目录是否存在。这个方法会以布尔值的形式返回结果，如果目录存在则返回true，反之则返回false。下面是一个简单的例子：
+## 如何进行目录检查
+
+在Ruby中，我们可以使用 `Dir.exist?` 方法来判断目录是否存在。这个方法会接收一个字符串作为参数，表示目录的路径，然后返回一个布尔值。如果目录存在，返回 `true`，否则返回 `false`。下面是一个简单的例子：
 
 ```Ruby
-if Dir.exist?("documents")
-  puts "Documents folder exists"
+if Dir.exist?("my_directory")
+  puts "目录存在"
 else
-  puts "Documents folder does not exist"
+  puts "目录不存在"
 end
 ```
 
-上面的代码将会检查当前目录下是否存在一个名为"documents"的目录，并根据结果打印不同的消息。
+上面的代码中，我们先使用 `Dir.exist?` 方法判断 `my_directory` 目录是否存在，如果存在就打印出 "目录存在"，否则打印出 "目录不存在"。
 
-深入解析：
-在上面的例子中，我们使用了Dir.exist? 方法来检查目录是否存在。这个方法其实是一个类方法，它属于Dir类。Dir类是Ruby标准库中用于处理目录和文件的类，在我们使用时无需额外引入。
+## 深入了解目录检查
 
-此外，除了Dir.exist? 方法外，你还可以使用Dir.exists? 方法来完成相同的任务。这两个方法基本上是相同的，只是exists? 方法是在Ruby 1.9之后引入的新方法，它更易于理解和使用。
+除了使用 `Dir.exist?` 方法，我们还可以使用 `File.directory?` 方法来进行目录检查。这个方法也接收一个字符串作为参数，表示目录的路径，返回的也是一个布尔值。下面是一个例子：
 
-总结：
-通过在你的代码中加入检查目录是否存在的步骤，你可以有效地避免因为找不到目录而导致的程序错误。同时学习使用Dir.exist? 和Dir.exists? 方法也会为你后续写文件和查找文件的代码带来便利。
+```Ruby
+if File.directory?("other_directory")
+  puts "目录存在"
+else
+  puts "目录不存在"
+end
+```
 
-参考链接：
-- Ruby官方文档：https://ruby-doc.org/core-2.5.1/Dir.html#method-c-exists-3F
-- Ruby编程语言：https://www.ruby-lang.org/zh_cn/
-- Ruby教程：https://www.runoob.com/ruby/ruby-tutorial.html
+这两个方法都可以很方便地帮助我们判断目录是否存在，但是需要注意的是，它们只能检查路径中的目录是否存在，不能检查路径中的文件是否存在。
 
-参见：
-- [检查Ruby文件是否存在](https://www.rubyguides.com/2018/10/file-exists/)
-- [从文件路径中提取文件名](https://www.rubyguides.com/2018/10/file-basename/)
-- [在Ruby中创建文件](https://www.rubyguides.com/2018/10/create-file-ruby/)
+## 参考资料
+
+- [Ruby文档: Dir模块](https://ruby-doc.org/core-2.6.3/Dir.html)
+- [Ruby文档: File模块](https://ruby-doc.org/core-2.6.3/File.html)

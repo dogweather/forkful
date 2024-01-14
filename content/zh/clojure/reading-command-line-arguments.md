@@ -1,39 +1,54 @@
 ---
 title:    "Clojure: 读取命令行参数"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-在编程过程中，有时候我们需要从命令行中获取输入。这可以让我们的程序有更多的灵活性，同时也能让我们与程序交互，从而更容易进行调试和测试。
+Clojure是一种流行的函数式编程语言，它被广泛用于构建高效和可靠的应用程序。当我们使用Clojure编写应用程序时，有时可能需要从命令行读取参数。这篇博文将带您深入了解如何在Clojure中读取命令行参数，以及为什么这在编程过程中非常重要。
 
-# 如何做
+## 如何进行
 
-Clojure提供了一个简单而有效的方法来读取命令行参数。我们可以使用命令行参数函数`command-line-args`来获取所有的命令行参数，然后使用Clojure的字符串处理函数来对它们进行进一步的处理。下面是一个简单的示例：
+读取命令行参数在Clojure中非常简单。您只需要使用 ```(System/getProperty "name")``` 的形式来获取特定参数的值。例如，如果我们希望获取命令行中输入的文件名，我们可以使用以下代码：
 
 ```Clojure
-(def args (command-line-args))
-(println "Hello, " (str/join " " args))
+(def file-name (System/getProperty "file"))
 ```
 
-在这个例子中，我们首先使用`command-line-args`获取所有的命令行参数，并将它们存储在变量`args`中。然后，我们使用`str/join`函数将所有的参数拼接成一个字符串，并与问候语“Hello”一起打印出来。
+您还可以使用 ```(System/getProperties)``` 来获取所有参数的键值对。让我们来看一个示例代码，假设我们有一个Clojure文件名为 ```command-line.clj```，其中包含以下代码：
 
-假设我们从命令行中输入了`lein run John Doe`，那么程序的输出将是`Hello, John Doe`。
+```Clojure
+(defn -main [& args]
+  (println (System/getProperties)))
+```
 
-# 深入探讨
+我们可以使用命令行运行该文件，如下所示：
 
-除了使用`command-line-args`函数外，我们还可以使用Clojure的`clojure.string/split`函数来将命令行参数拆分成一个字符串数组。我们也可以使用Clojure的`getenv`函数来获取特定的环境变量。
+```
+clj command-line.clj -name Bob -age 25
+```
 
-此外，我们还可以使用Clojure的`apply`函数来将命令行参数作为一个函数的参数传递，并执行一些特定的操作。
+该程序将输出以下内容：
 
-这些只是一些使用命令行参数的简单示例，如果你想深入了解，可以查阅Clojure官方文档或参考下面的链接。
+```
+{"name" "Bob", "age" "25"}
+```
 
-# 参考资料
+## 深入探讨
 
-- [Clojure官方文档](https://clojuredocs.org/)
-- [Clojure命令行参数函数文档](https://clojuredocs.org/clojure.core/command-line-args)
-- [Clojure字符串处理函数文档](https://clojuredocs.org/clojure.string/split)
-- [Clojure的环境变量处理文档](https://clojuredocs.org/clojure.core/env)
-- [Clojure的apply函数文档](https://clojuredocs.org/clojure.core/apply)
+读取命令行参数在编写具有交互性的应用程序时非常有用。它使您可以从用户输入中获取信息，从而对应用程序的行为进行动态调整。此外，读取命令行参数还使您的应用程序具有更大的灵活性，因为您可以根据不同的参数值执行不同的操作。
+
+另一个有用的技巧是使用 ```(System/getProperties)``` 来将参数值作为配置选项处理。这样，您可以指定不同的参数值来改变应用程序的行为，而无需更改代码。
+
+## 资料深挖
+
+虽然读取命令行参数在Clojure中很简单，但是有时会遇到一些挑战。例如，当命令行参数包含特殊字符时，它们可能会被解析为Clojure表达式，从而导致错误。为了避免这种情况，您可以使用 ```(clojure.string/escape args)``` 函数来转义参数。此外，您还可以使用命令行库如 [clj-opts](https://github.com/clj-commons/clj-opts) 来帮助处理命令行参数。
+
+## 参考资料
+
+- [Clojure中文网 - 命令行参数](https://clojure.org/reference/execution#_command_line_parameters)
+- [clj-opts库](https://github.com/clj-commons/clj-opts)
+- [Clojure中文网 - Clojure属性](https://clojure.org/reference/java_interop#_retrieving_system_properties)

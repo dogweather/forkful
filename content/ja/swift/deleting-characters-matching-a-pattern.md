@@ -1,36 +1,28 @@
 ---
-title:    "Swift: パターンに一致する文字を削除する"
+title:    "Swift: パターンに合致する文字の削除"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-
-文字列のパターンにマッチする文字を削除することの利点は、コードをより効率的にし、より読みやすくすることです。
+## なぜ
+「特定のパターンに一致する文字を削除する」という作業をするには、文字列処理が必要になる可能性があります。もしくは、単にテキストをクリーンアップしたい場合に役立ちます。
 
 ## 方法
-
 ```Swift
-func deletePattern(text: String, pattern: String) -> String {
-    return text.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
-}
-
-// サンプル入力
-let text = "Hello world! Goodbye world!"
-let pattern = "[aeiou]" // 削除するパターンは母音
-
-print(deletePattern(text: text, pattern: pattern))
-
-// サンプル出力
-Hll wrld! Gdb wrld!
+let string = "Hello World!"
+let newString = string.replacingOccurrences(of: "o", with: "")
+print(newString)
 ```
+出力：Hell Wrld!
 
-## 深く掘り下げる
+このように、 `replacingOccurrences` 関数を使用して、指定した文字を別の文字で置き換えることができます。
 
-パターンにマッチする文字を削除する方法は、正規表現を使用して文字列を置換することで実現できます。`replacingOccurrences`メソッドには、削除するパターンを指定する`options`パラメーターを追加できます。ここでは、`regularExpression`オプションを使用しました。
+## 深層ダイブ
+文字列処理についてさらに詳しく学ぶには、正規表現を使用することができます。正規表現を使用することで、より複雑なパターンに一致する文字を効率的に削除することができます。
 
-# 参考リンク
-
-- [SwiftのreplacingOccurrencesメソッド](https://developer.apple.com/documentation/foundation/nsstring/1417153-replacingoccurrences)
-- [正規表現のパターン作成方法](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID311)
+## 参考
+- [Swift公式ドキュメント](https://developer.apple.com/documentation/foundation/nsstring/1412441-replacingoccurrences)
+- [正規表現入門](https://www.atmarkit.co.jp/ait/articles/1308/02/news010.html)
+- [正規表現チートシート](https://www.cisco.com/c/ja_jp/support/docs/security/email-security-appliance/118654-technote-esa-00.html)

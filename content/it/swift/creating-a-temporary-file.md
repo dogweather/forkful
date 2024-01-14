@@ -1,53 +1,39 @@
 ---
 title:    "Swift: Creazione di un file temporaneo"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Creare un file temporaneo è un'operazione utile per gli sviluppatori Swift quando è necessario archiviare temporaneamente dei dati durante l'esecuzione di un programma.
+Creare un file temporaneo è un'utile pratica di programmazione per gestire dati temporanei o di cui si ha bisogno solo per una breve durata. Invece di utilizzare lo spazio di memoria permanente del dispositivo, è possibile creare un file temporaneo che verrà eliminato automaticamente una volta terminato il suo utilizzo.
 
 ## Come fare
 
-Per creare un file temporaneo in Swift, è necessario utilizzare la classe `FileManager`. Iniziamo creando un oggetto di questa classe:
+Per creare un file temporaneo in Swift, è necessario utilizzare la classe `FileManager`. Ecco un esempio di codice che crea un file temporaneo e scrive al suo interno un array di numeri:
 
 ```Swift
 let fileManager = FileManager.default
-```
+let tempDir = URL(fileURLWithPath: NSTemporaryDirectory())
+let tempFile = tempDir.appendingPathComponent("myTempFile.txt")
 
-Successivamente, definiamo il percorso in cui desideriamo creare il file temporaneo utilizzando la funzione `URLForDirectory`:
-
-```Swift
-let directoryURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
-```
-
-In questo esempio, abbiamo scelto di archiviare il file nella directory dei file di cache, ma è possibile scegliere qualsiasi altra directory adeguata per le proprie esigenze.
-
-Una volta scelto il percorso, utilizziamo la funzione `createTemporaryFile` della classe `FileManager` per creare il nostro file temporaneo:
-
-```Swift
-let temporaryFileURL = fileManager.createTemporaryFile(directory: directoryURL)
-```
-
-Una volta creato il file, è possibile utilizzarlo normalmente come qualsiasi altro file all'interno del proprio codice. Una volta che il file non è più necessario, è possibile eliminarlo utilizzando la funzione `removeItem` della classe `FileManager`:
-
-```Swift
 do {
-    try fileManager.removeItem(at: temporaryFileURL)
+    try [1, 2, 3, 4, 5].write(to: tempFile, atomically: true, encoding: .utf8)
 } catch {
-    print("Errore durante l'eliminazione del file temporaneo")
+    print("Errore durante la scrittura del file temporaneo: \(error)")
 }
 ```
 
+Una volta eseguito il codice, è possibile trovare il file temporaneo nella directory temporanea del dispositivo.
+
 ## Approfondimento
 
-La classe `FileManager` offre molte altre funzioni utili per la gestione dei file, come ad esempio la possibilità di verificare l'esistenza di un file, di copiarlo o di spostarlo in una nuova posizione.
-
-Inoltre, esistono alcune librerie open-source che semplificano ulteriormente la creazione e la gestione di file temporanei, come ad esempio la libreria [TemporaryFile](https://github.com/nnnnzs/TemporaryFile).
+Creare un file temporaneo è una buona pratica di sicurezza, in quanto garantisce la protezione dei dati sensibili. Inoltre, questa tecnica può anche essere utile per gestire situazioni di memoria insufficiente su dispositivi a bassa capacità.
 
 ## Vedi anche
 
-- [La documentazione ufficiale di Apple sulla classe FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [La libreria TemporaryFile su GitHub](https://github.com/nnnnzs/TemporaryFile)
+- [Apple documentation on temporary files](https://developer.apple.com/documentation/foundation/filemanager/1407696-createuniquefile)
+- [Using temporary files in Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-a-temporary-file-securely-using-contents-offilesystem)
+- [File System Programming Guide by Apple](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)

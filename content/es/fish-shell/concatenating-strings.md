@@ -1,49 +1,80 @@
 ---
-title:    "Fish Shell: Uniendo cadenas"
+title:    "Fish Shell: Concatenando cadenas"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué concatenar strings en Fish Shell?
 
-La operación de concatenación de cadenas es una técnica fundamental en cualquier lenguaje de programación, incluyendo Fish Shell. Al combinar fragmentos de texto, podemos crear mensajes más completos y tener un mejor control sobre la salida de nuestros programas.
+Concatenar strings es una función importante en la programación que permite combinar múltiples cadenas de texto en una sola. Puede ser utilizado para generar mensajes personalizados, crear nombres de archivos dinámicos o simplemente para organizar mejor la información. En esta entrada, aprenderemos cómo utilizar la función de concatenación en Fish Shell.
 
-## Cómo hacerlo
+## Cómo utilizar la concatenación de strings en Fish Shell
 
-La sintaxis básica para concatenar cadenas en Fish Shell es mediante el uso del operador `+`. Por ejemplo:
+La sintaxis para concatenar strings en Fish Shell es bastante sencilla. Simplemente tienes que utilizar el operador de suma (+) entre dos cadenas de texto para unirlas. Veamos un ejemplo:
 
+```Fish Shell
+set primero "Hola"
+set segundo "mundo"
+echo $primero$segundo
 ```
-Fish Shell > set saludo "Hola"
-Fish Shell > set nombre "amigos"
-Fish Shell > echo $saludo" "$nombre
-Hola amigos
+Output: Hola mundo
+
+En el ejemplo anterior, definimos dos variables, "primer" y "segundo", y luego utilizamos el operador de suma para unirlos e imprimir el resultado con el comando "echo". También puedes utilizar el operador de suma para unir múltiples cadenas de texto en una sola, como en el siguiente ejemplo:
+
+```Fish Shell
+set nombre "Maria"
+set apellido "García"
+set saludo "Hola "
+echo $saludo$nombre" "$apellido". ¿Cómo estás?"
 ```
+Output: Hola Maria García. ¿Cómo estás?
 
-También podemos incluir variables en la concatenación:
+Como puedes ver, también puedes agregar texto adicional entre las variables para crear una cadena de texto más compleja. Además, puedes utilizar el comando "set -l" para definir una variable local y utilizarla dentro de un bloque de código, como en este ejemplo:
 
+```Fish Shell
+set -l mensaje "Buenos días "
+for i in 1 2 3
+set saludo $mensaje$i
+echo $saludo
+end
 ```
-Fish Shell > set numero 42
-Fish Shell > echo "La respuesta al universo es "$numero
-La respuesta al universo es 42
+Output: Buenos días 1
+Buenos días 2
+Buenos días 3
+
+## Profundizando en la concatenación de strings
+
+Además del operador de suma, también puedes utilizar la función "string join" para unir múltiples cadenas de texto con un separador específico, como en este ejemplo:
+
+```Fish Shell
+set nombres "Maria" "Juan" "Ana"
+echo (string join ", " $nombres)" son amigos."
 ```
+Output: Maria, Juan, Ana son amigos.
 
-En caso de que necesitemos agregar números o caracteres a una cadena, podemos usar la función `string` para convertirlos:
+También puedes utilizar la función "contains" para verificar si una cadena de texto contiene otra cadena, lo cual puede ser útil al concatenar strings. Por ejemplo:
 
+```Fish Shell
+set palabra "perro"
+set oracion "El perro ladra."
+if contains $oracion $palabra
+echo "La oración contiene la palabra $palabra."
+end
 ```
-Fish Shell > set numero 3
-Fish Shell > echo "La cuenta regresiva comienza en "$(string $numero)
-La cuenta regresiva comienza en 3
+Output: La oración contiene la palabra perro.
+
+Otra función útil es "string replace", que te permite reemplazar una parte de una cadena de texto por otra. Por ejemplo:
+
+```Fish Shell
+set oracion "Estoy paseando al perro."
+set perro "gato"
+echo (string replace $oracion $palabra $gato)
 ```
-
-## Profundizando
-
-Fish Shell ofrece una gran cantidad de funciones útiles para manipular y concatenar cadenas. Podemos utilizar `string split` para dividir una cadena en varias partes, `string match` para encontrar una subcadena en otra, y `string sub` para reemplazar una parte de una cadena por otra. También podemos usar `strlen` para determinar la longitud de una cadena.
-
-Además, Fish Shell admite el uso de expresiones regulares para la manipulación de cadenas, lo que nos permite realizar operaciones más complejas y específicas.
+Output: Estoy paseando al gato.
 
 ## Ver también
-
-- Documentación oficial de Fish Shell sobre la concatenación de cadenas: https://fishshell.com/docs/current/cmds/set.html#description
-- Ejemplos y casos de uso de concatenación de cadenas en Fish Shell: https://danielmiessler.com/study/fish/productivity/
-- Tutorial en español sobre manipulación de cadenas en Fish Shell: https://medicstech.co/tutorial-fish-shell-en-espanol/
+- [Guía para principiantes de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Concatenar strings en otros lenguajes de programación](https://www.geeksforgeeks.org/how-to-concatenate-two-strings-in-java/)

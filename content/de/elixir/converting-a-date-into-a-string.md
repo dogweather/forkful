@@ -1,50 +1,49 @@
 ---
-title:    "Elixir: Umwandlung eines Datums in einen String"
+title:    "Elixir: Ein Datum in einen String umwandeln"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Im Elixir Programmieren gibt es oft die Notwendigkeit, ein Datum in einen String umzuwandeln. Dies kann für verschiedene Zwecke wie Datenbankabfragen, Berechnungen oder die Darstellung von Daten in einem bestimmten Format erforderlich sein.
 
-## Wie geht das?
-In Elixir gibt es verschiedene Methoden, um ein Datum in einen String umzuwandeln. Die einfachste Möglichkeit ist die Verwendung der Funktion `to_string`. Hier ein Beispielcode:
+Bei der Programmierung in Elixir kann es manchmal notwendig sein, ein Datum in eine Zeichenfolge (String) umzuwandeln, um es leichter lesen und verarbeiten zu können.
 
-```Elixir
-date = ~D[2021-01-01]
-string = to_string(date)
-IO.puts string
-```
+## Wie das geht
 
-Die Ausgabe dieses Codes wird `2021-01-01` sein. Wie Sie sehen können, hat die Funktion `to_string` das Datum in einen String im Format `YYYY-MM-DD` umgewandelt.
-
-Eine weitere Möglichkeit ist die Verwendung der Funktion `DateTime.to_iso8601`. Diese Funktion gibt das Datum in ISO-8601-Format zurück, das viele APIs und Datenbanken verwenden. Hier ein Beispielcode:
+Um ein Datum in Elixir in einen String umzuwandeln, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der Funktion `to_string/1`. Diese Funktion akzeptiert als Argument ein Datum im Elixir-internen Format und gibt einen String zurück, der das Datum im üblichen Format anzeigt. Hier ist ein Beispiel:
 
 ```Elixir
-date = ~D[2021-01-01]
-string = DateTime.to_iso8601(date)
-IO.puts string
+date = ~D[2020-12-25]
+result = to_string(date)
+IO.puts(result)
 ```
 
-Die Ausgabe dieses Codes wird `2021-01-01T00:00:00Z` sein. Beachten Sie, dass die Funktion `DateTime.to_iso8601` auch die Zeit und die Zeitzone des Datums berücksichtigt.
+Die Ausgabe dieses Codes wird `2020-12-25` sein, da das Datum im Jahr-Monat-Tag-Format angezeigt wird.
 
-## Tiefergehende Informationen
-Beim Konvertieren eines Datums in einen String ist es wichtig zu verstehen, dass das Datum im Elixir immer als Elixir-Struktur gespeichert wird. Dies bietet Flexibilität und ermöglicht es uns, verschiedene Funktionen je nach Anforderung zu verwenden.
-
-Darüber hinaus gibt es in Elixir auch die Möglichkeit, benutzerdefinierte Formate für Datum und Uhrzeit zu erstellen. Dafür gibt es die Funktion `Date.to_string`. Hier ein Beispielcode:
+Eine weitere Möglichkeit ist die Verwendung der Funktion `Calendar.Format.format/2`, die es ermöglicht, das Datum in einem benutzerdefinierten Format anzuzeigen. Hier ist ein Beispiel:
 
 ```Elixir
-date = ~D[2021-01-01]
-string = Date.to_string(date, "{0}/{1}/{2}")
-IO.puts string
+date = ~D[2020-12-31]
+result = Calendar.Format.format(date, "{1}/{2}/{3}")
+IO.puts(result)
 ```
 
-Die Ausgabe dieses Codes wird `01/01/2021` sein, da wir ein benutzerdefiniertes Format im Format `MM/DD/YYYY` angegeben haben.
+Die Ausgabe dieses Codes wird `12/31/2020` sein, da das Datum nun im Monat/Tag/Jahr-Format angezeigt wird.
 
-## Siehe auch
-- [Date.to_string Dokumentation](https://hexdocs.pm/elixir/Date.html#to_string/2)
-- [DateTime.to_iso8601 Dokumentation](https://hexdocs.pm/elixir/DateTime.html#to_iso8601/2)
-- [Date.to_string benutzerdefiniertes Format Dokumentation](https://hexdocs.pm/elixir/Date.html#to_string/1)
+## Tiefer einsteigen
 
-Ich hoffe, dieser Beitrag hat Ihnen geholfen, die verschiedenen Möglichkeiten zum Konvertieren eines Datums in einen String in Elixir zu verstehen. Viel Spaß beim Programmieren!
+Wenn wir uns die Funktion `to_string/1` genauer ansehen, können wir erkennen, dass sie eine Instanz der `%Elixir.Calendar.Date{}`-Struktur akzeptiert. Dies macht das Datum in Elixir sehr flexibel, da es nicht an ein bestimmtes Format gebunden ist. Wir können auch auf die einzelnen Komponenten des Datums zugreifen, indem wir die Funktionen `Calendar.Date.year/1`, `Calendar.Date.month/1` und `Calendar.Date.day/1` verwenden. Hier ist ein Beispiel:
+
+```Elixir
+date = ~D[2021-01-15]
+IO.puts("Das Jahr ist #{Calendar.Date.year(date)} und der Monat ist #{Calendar.Date.month(date)}.")
+```
+
+Die Ausgabe dieses Codes wird `Das Jahr ist 2021 und der Monat ist 1.` sein.
+
+## Sieh auch
+
+- [Elixir Dokumentation zu `to_string/1`](https://hexdocs.pm/elixir/Calendar.Date.html#to_string/1)
+- [Elixir Dokumentation zu `Calendar.Format.format/2`](https://hexdocs.pm/elixir/Calendar.Format.html#format/2)

@@ -1,41 +1,41 @@
 ---
 title:    "Swift: 텍스트 파일 읽기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-텍스트 파일을 읽는 데 참여하는 이유는 여러 가지가 있습니다. 프로그래밍 언어를 배우거나 업무를 수행하는 데 필수적이기 때문이죠. 텍스트 파일을 읽는 방법을 알아 두면 유용하게 사용할 수 있습니다.
+텍스트 파일을 읽는 것에 대해 생각해보면 종종 우리는 데이터 분석이나 파일 처리를 위해 이 작업을 해야하는 경우가 있습니다.
 
-## 텍스트 파일 읽기
+# 어떻게
 
-```Swift
-let fileURL = Bundle.main.url(forResource: "sample", withExtension: "txt")
+```Swift 
+let dataFile = "data.txt"
 do {
-    let contents = try String(contentsOf: fileURL!)
-    print(contents)
+    let fileContent = try String(contentsOfFile: dataFile)
+    print(fileContent)
 } catch {
-    print("Error reading file.")
+    print("Error: unable to read file")
 }
 ```
-
-위의 코드는 파일 경로를 가져오고 해당 파일의 내용을 읽어와 출력하는 간단한 예제입니다. 마찬가지로 다른 파일에 대해서도 동일한 방법으로 읽을 수 있습니다.
-
+**출력 결과:**
 ```
 Hello world!
-My name is Swift.
 This is a sample text file.
 ```
 
-위 코드를 실행하면, 텍스트 파일의 내용이 출력됩니다.
+위의 예제 코드를 보면, `try`와 `catch`를 이용하여 파일을 읽는 과정에서 발생할 수 있는 오류를 처리해주고 있습니다. `File` 클래스의 `String` 메소드를 이용하여 파일을 문자열로 변환하고, 해당 문자열을 `print` 함수를 이용하여 출력하고 있습니다. 이 예제를 참고하여, 여러분들도 텍스트 파일을 읽는 코드를 작성해보세요.
 
-## 깊이 파고들기
+# 딥 다이브
 
-텍스트 파일을 읽는 방법에는 여러 가지가 있습니다. 위에서 살펴본 것은 가장 간단한 방법 중 하나입니다. 하지만 파일의 크기가 큰 경우에는 메모리 문제가 발생할 수 있습니다. 이를 해결하기 위해 나중에는 메모리 효율적인 방법인 스트림을 사용해 볼 수도 있습니다.
+텍스트 파일을 읽을 때 다양한 옵션을 설정할 수 있습니다. 대표적인 예시로는 `encoding`과 `options`가 있습니다. `encoding`은 파일의 인코딩 방식을 지정할 수 있고, `options`는 파일을 읽을 때의 동작을 설정할 수 있습니다.
 
-## 관련 자료
+`File` 클래스에 대한 더 자세한 정보는 공식 [문서](https://developer.apple.com/documentation/foundation/filehandle)를 참고하세요.
 
-- [Swift 공식 문서 - 파일 처리](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift 입문서 - 스트림 방식으로 파일 읽기](https://www.notion.so/1dd3bbdeb8374db8ab745bf8702bccc6)
+# 참고
+
+- [Swifty Basics: Reading and Writing Files in Swift](https://www.swiftbysundell.com/basics/filemanager)
+- [Read and write text files in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-read-and-write-strings-in-swift)

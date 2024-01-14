@@ -1,41 +1,59 @@
 ---
 title:    "Python recipe: Extracting substrings"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-One common task in Python programming is extracting substrings from a larger string. This can be useful for tasks such as data cleaning and text analysis. 
+Have you ever needed to extract a specific part of a string in your Python program? Whether it's a word, a phrase, or even just a few characters, extracting substrings can be extremely useful in a variety of situations. Whether you're working with text data or processing input from users, knowing how to extract substrings can make your code more efficient and effective.
 
 ## How To
 
-To extract a substring in Python, we use the `substring[start:end]` notation. Here's an example:
+To get started with extracting substrings in Python, we first need to understand the basic syntax. We use square brackets to specify the indices of the substring we want to extract, with the first index being the starting position and the second index being the ending position. For example, if we have a string called "Hello World", and we want to extract the word "World", we would use the following code:
 
-```Python
-text = "Hello World"
-substring = text[0:5]
+```python
+s = "Hello World"
+substring = s[6:11]
 print(substring)
 ```
 
-The output of this code would be `Hello`, as it extracts the characters from index 0 to index 5 of the original string. 
+The output of this code would be "World", as expected. But what if we want to extract a substring from the beginning or end of our string? Luckily, Python provides a convenient alternative syntax for these cases. We can use a colon (:) on its own to specify that we want to extract all characters up to the specified index, or from the specified index to the end of the string. Let's see this in action:
 
-We can also use negative indexing to extract substrings. For example, `substring = text[-3:]` would extract the last three characters of the `text` string, resulting in `rld`.
+```python
+s = "Hello World"
+substring1 = s[:5] #extracts "Hello" - up to index 5 (not including 5)
+substring2 = s[6:] #extracts "World" - from index 6 to the end
+print(substring1)
+print(substring2)
+```
 
-In addition, we can use the `substring[start:end:step]` notation to extract a substring with a specified step size. For example, `substring = text[::2]` would extract every other character from the `text` string, resulting in `HloWrd`.
+The output of this code would be "Hello" and "World" respectively. This can be particularly useful when working with strings of unknown length or when we need to manipulate different parts of a string separately.
 
 ## Deep Dive
 
-In Python, strings are immutable, meaning they cannot be changed. However, when we extract a substring, we are creating a new string that is a copy of the original string. This can be useful for manipulating text without altering the original string.
+There are also some advanced techniques we can use for extracting substrings in Python. For example, we can use negative indices to start counting from the end of the string instead of the beginning. So, if we want to extract the word "World" from our earlier example, we could do so using negative indices like this:
 
-We can also use string methods such as `upper()` and `lower()` on extracted substrings to change the case of the characters. For example, `substring = text[0:5].upper()` would result in the substring being in all uppercase letters.
+```python
+s = "Hello World"
+substring = s[-5:]
+print(substring)
+```
 
-It's important to note that when extracting substrings, the `end` index is not inclusive. This means that if we want a substring to include the last character of a string, we need to use an index that is one higher than the position of the desired character. For example, `text[0:5]` includes characters at index 0, 1, 2, 3, and 4, but not 5.
+Another useful technique is using the step parameter, which allows us to specify the distance between the characters we want to extract. For example, if we want to extract every other character from the string "Hello World", we could do so using a step of 2 like this:
+
+```python
+s = "Hello World"
+substring = s[::2]
+print(substring)
+```
+
+The output of this code would be "HloWrd", as it takes every second character from the string.
 
 ## See Also
 
-- [Tutorial: Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Documentation: Python Built-in Types](https://docs.python.org/3/library/stdtypes.html#string-methods)
-
-By mastering the technique of extracting substrings in Python, you can enhance your skills in data manipulation and text analysis. Keep practicing and experimenting with different string methods to become a Python substring pro!
+- [Official Python documentation on strings and indexing](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Real Python article on slicing strings](https://realpython.com/python-string-slicing/)
+- [GeeksforGeeks tutorial on substring extraction in Python](https://www.geeksforgeeks.org/python-string-slicing/)

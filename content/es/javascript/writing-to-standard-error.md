@@ -1,49 +1,47 @@
 ---
-title:    "Javascript: Escribiendo en el error estándar"
+title:    "Javascript: Escribiendo a Error Estándar"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué escribir a la salida de error estándar es importante en Javascript?
 
-Escribir a la salida de error estándar es una práctica útil y fundamental en la programación de JavaScript. Al mostrar información de error o depuración en la salida de error estándar, podemos identificar y resolver problemas en nuestro código de manera más eficiente.
+Escribir a la salida de error estándar es una práctica crucial en Javascript ya que nos permite mostrar información importante sobre los errores o fallos en nuestro código. A través de la salida de error estándar, podemos identificar y corregir rápidamente los errores en nuestro código, lo que nos ayuda a mejorar nuestra capacidad de programación y a crear aplicaciones más robustas y funcionales.
 
-##Cómo hacerlo
+## ¿Cómo escribir a la salida de error estándar en Javascript?
 
-Para escribir a la salida de error estándar en JavaScript, podemos usar la función `console.error()` de la consola. Esta función toma como argumento un mensaje de error o depuración y lo muestra en la consola del navegador o del entorno en el que se está ejecutando el código.
-
-```Javascript
-console.error("¡Error! Algo ha salido mal.");
-```
-
-El resultado de este código sería algo como: 
-
-```console
-¡Error! Algo ha salido mal.
-```
-
-También podemos utilizar la sintaxis `console.error()` para imprimir objetos y variables en la salida de error estándar. Por ejemplo:
+La forma más común de escribir a la salida de error estándar en Javascript es utilizando el método `console.error()`. Este método acepta uno o varios argumentos y los imprime en la salida de error estándar. Veamos un ejemplo:
 
 ```Javascript
-const numero = 10;
-console.error("El número es: ", numero);
+let num = 5;
+
+if(num > 10) {
+  console.log("El número es mayor que 10");
+} else {
+  console.error("Error: El número es menor que 10");
+}
 ```
 
-El resultado sería:
+En este ejemplo, si el número es menor que 10, se imprimirá el mensaje de error en la consola. También es posible usar plantillas de cadena para imprimir información más detallada:
 
-```console
-El número es: 10
+```Javascript
+let nombre = "Juan";
+let edad = 25;
+
+console.error(`Error: ${nombre} tiene ${edad} años y no cumple con la edad mínima requerida.`);
 ```
 
-##Profundizando
+En este caso, la salida de error sería "Error: Juan tiene 25 años y no cumple con la edad mínima requerida."
 
-Aunque la función `console.error()` es muy útil para mostrar información de error o depuración, no es la única forma de escribir a la salida de error estándar en JavaScript. Podemos utilizar otros métodos, como `process.stderr.write()` en entornos Node.js o `window.onerror()` en navegadores.
+## Profundizando en la escritura a la salida de error estándar
 
-También es importante tener en cuenta que la salida de error estándar es diferente de la salida estándar. Mientras que la salida estándar se utiliza para mostrar información general del programa, la salida de error estándar se usa específicamente para mensajes de error o depuración.
+Además de mostrar mensajes de error, también podemos utilizar la salida de error estándar para imprimir otra información útil durante el proceso de depuración de nuestro código. Por ejemplo, podemos imprimir el contenido de variables o el resultado de una operación para asegurarnos de que nuestro código se está ejecutando correctamente en cada paso. 
 
-##Ver también
+También podemos utilizar el método `console.trace()` para imprimir una pila de llamadas, lo que nos permite rastrear el flujo de nuestro código y identificar dónde se originó un determinado error. 
 
-- [Documentación de `console.error()` en MDN](https://developer.mozilla.org/es/docs/Web/API/Console/error)
-- [Escribir a la salida de error estándar en Node.js](https://nodejs.org/api/process.html#process_process_stderr)
-- [Manejo de errores en JavaScript](https://www.w3schools.com/js/js_error_handling.asp)
+## Ver también
+- [Documentación de console.error() en MDN (en inglés)](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [Guía de depuración en Javascript (en español)](https://carlosazaustre.es/manos-a-la-consola-guia-de-depuracion/)
+- [Tutorial de Javascript para principiantes (en español)](https://codeburst.io/javascript-tutorial-espa%C3%B1ol-2f3f031ff01c)

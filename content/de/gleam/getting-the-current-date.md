@@ -1,39 +1,41 @@
 ---
-title:    "Gleam: Das aktuelle Datum erhalten"
+title:    "Gleam: Die aktuelle Datum erhalten"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Die heutige Welt wird immer digitaler und technologieabhängiger. Um in dieser Umgebung effektiv zu programmieren, ist es wichtig, die aktuelle Zeit und Datum zu ermitteln. Das kann hilfreich sein, um beispielsweise zeitabhängige Aktionen auszuführen oder verwendete Ressourcen zu verfolgen.
+Das Abrufen des aktuellen Datums kann in vielen Programmiersprachen sehr nützlich sein. Es ermöglicht uns, dynamische Daten in unsere Anwendungen einzubinden und sie immer auf dem neuesten Stand zu halten. In Gleam ist dies dank einiger eingebauter Funktionen besonders einfach.
 
-## So geht's
+# Wie Geht Es
 
-Um das aktuelle Datum in Gleam zu erhalten, können wir die integrierte ```date``` Funktion verwenden. Diese Funktion gibt ein Modul zurück, das verschiedene Methoden zum Umgang mit Datumsangaben enthält. Hier ist ein einfaches Beispiel:
+In Gleam können wir das aktuelle Datum mithilfe der Funktion `DateTime.now()` erhalten. Diese Funktion gibt eine Struktur zurück, die das aktuelle Datum, die Uhrzeit und die Zeitzone enthält. Wir können dann diese Struktur verwenden, um die einzelnen Komponenten des Datums abzurufen und in unserer Anwendung zu nutzen. Schauen wir uns dazu ein Beispiel an:
 
 ```Gleam
-let date = date.now()
-io.println(date.date())
+let date = DateTime.now()
+IO.debug("Das aktuelle Datum ist:")
+IO.debug("Jahr: {}", date.year)
+IO.debug("Monat: {}", date.month)
+IO.debug("Tag: {}", date.day)
 ```
 
-Dieses Code-Beispiel gibt das aktuelle Datum im Format "yyyy-mm-dd" aus. Es gibt auch Möglichkeiten, die Uhrzeit oder bestimmte Teile des Datums zurückzugeben. Ein tieferer Einblick in die verschiedenen Methoden, die das ```date``` Modul bietet, wird im nächsten Abschnitt gegeben.
+Dieses Beispiel gibt das aktuelle Datum in die Konsole aus und gibt uns die Möglichkeit, mit den einzelnen Komponenten des Datums zu arbeiten. Hier ist eine mögliche Ausgabe:
 
-## Tiefergehende Informationen
+```
+Das aktuelle Datum ist:
+Jahr: 2021
+Monat: 4
+Tag: 10
+```
 
-Das ```date``` Modul erlaubt es uns, das aktuelle Datum detailliert zu untersuchen und zu formatieren. Es beinhaltet Funktionen zum Abrufen von Wochentagen, Monaten und Jahren, sowie für die Berechnung von Differenzen zwischen verschiedenen Datumsangaben. Außerdem erlaubt es uns, die Darstellung des Datums in verschiedenen Formaten zu definieren. Zum Beispiel können wir das Datum als "dd Monat yyyy" oder als "Monat dd, yyyy" anzeigen lassen.
+# Tiefer Eintauchen
 
-Hier sind einige weitere Beispiele für die Verwendung des ```date``` Moduls:
+In Gleam gibt es noch viele weitere Funktionen, die uns bei der Arbeit mit Datum und Uhrzeit unterstützen. Zum Beispiel können wir mit `DateTime.add()` ein Datum um eine bestimmte Anzahl an Tagen, Monaten oder Jahren erweitern. Oder mit `DateTime.diff()` können wir die Differenz zwischen zwei Datumswerten berechnen. Es lohnt sich, diese Funktionen genauer zu untersuchen, um das volle Potenzial von Gleam bei der Arbeit mit Datum und Uhrzeit auszuschöpfen.
 
-- ```date.dayOfWeek(date)```: Gibt den Wochentag einer bestimmten Datumsangabe zurück, z.B. "Samstag"
-- ```date.year(date)```: Gibt die Jahreszahl einer Datumsangabe zurück
-- ```date.diff(date1, date2)```: Berechnet die Differenz zwischen zwei Datumsangaben in Tagen, Monaten oder Jahren
+# Siehe Auch
 
-Diese sind nur einige Beispiele, aber das ```date``` Modul bietet noch viele weitere nützliche Funktionen. Für mehr Informationen können Sie die offizielle [Dokumentation](https://gleam.run/docs/standard-library/date/) zu diesem Modul konsultieren.
-
-## Siehe auch
-
-- [Offizielle Dokumentation des date Moduls](https://gleam.run/docs/standard-library/date/)
-- [Gleam Blog: Using the date Module](https://gleam.run/blog/using-the-date-module/) - Ein weiteres hilfreiches Beispiel für die Verwendung des ```date``` Moduls in Gleam.
-- [Coderontheroad: Date Manipulation in Gleam](https://coderontheroad.com/2020/07/21/date-manipulation-in-gleam/) - Ein ausführlicher Artikel, der sich mit verschiedenen Arten der Datummanipulation in Gleam beschäftigt.
+- [Gleam-Dokumentation zu Datum und Uhrzeit](https://gleam.run/documentation/standard-library/date-time)
+- [Gleam-Zeitpaket auf GitHub](https://github.com/gleam-lang/time)

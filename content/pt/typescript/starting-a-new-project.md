@@ -1,56 +1,77 @@
 ---
-title:    "TypeScript: Começando um novo projeto"
+title:    "TypeScript: Iniciando um novo projeto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê iniciar um novo projeto? 
+## Por que começar um novo projeto em TypeScript?
 
-Iniciar um novo projeto em TypeScript pode ser uma ótima maneira de melhorar suas habilidades de programação e criar aplicações mais robustas. TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem estática e programação orientada à objeto. Com sua crescente popularidade, aprender TypeScript pode ser uma vantagem para qualquer desenvolvedor.
+Começar um novo projeto em TypeScript traz diversos benefícios para desenvolvedores. Com a tipagem estática e a possibilidade de utilizar recursos modernos do JavaScript, como classes e interfaces, TypeScript torna o processo de desenvolvimento mais organizado e eficiente.
 
-## Como começar
+## Como começar um projeto em TypeScript
 
-### Instalação e configuração
+Para começar um projeto em TypeScript, você precisa primeiro ter o TypeScript instalado em seu computador. Você pode fazer isso utilizando o gerenciador de pacotes npm, através do comando `npm install -g typescript`.
 
-Antes de começar a escrever código em TypeScript, você precisará instalá-lo em sua máquina e configurar sua IDE preferida para suportar a linguagem. Para isso, você pode seguir as instruções no site oficial do TypeScript. 
+Depois de ter o TypeScript instalado, crie uma nova pasta para o seu projeto e navegue até ela no terminal. Em seguida, utilize o comando `tsc --init` para gerar um arquivo de configuração para o TypeScript.
 
-### Criando um projeto
+Agora você pode começar a escrever seu código em TypeScript dentro de um arquivo com a extensão `.ts`. Para compilar seu código em JavaScript, utilize o comando `tsc nomeDoArquivo.ts`. O resultado será um arquivo `.js` com o mesmo nome, contendo seu código em JavaScript.
 
-Para começar um novo projeto em TypeScript, você pode usar o gerenciador de pacotes npm ou o yarn. Primeiro, crie uma pasta para o projeto e navegue até ela no seu terminal. Em seguida, execute o seguinte comando:
+Para utilizar recursos do JavaScript moderno, como módulos e classes, você pode utilizar o compilador com a flag `--module` setada para `es2015` e a flag `--target` setada para `es5`.
 
-```TypeScript
-npm init -y
-```
-
-Isso criará um arquivo `package.json` para gerenciar as dependências do projeto. Em seguida, instale o TypeScript usando o seguinte comando:
+Abaixo temos um exemplo de código TypeScript que utiliza classes e interfaces:
 
 ```TypeScript
-npm install typescript --save-dev
-```
+// Classe Pessoa
+class Pessoa {
+  nome: string;
+  idade: number;
 
-Isso instalará o TypeScript localmente no seu projeto. Agora, crie um arquivo `tsconfig.json` na raiz do seu projeto e configure-o para seus requisitos específicos. 
+  // Método construtor
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
 
-### Escrevendo o código
-
-Agora que seu projeto está configurado, você pode começar a escrever código em TypeScript. Aqui está um exemplo simples de uma função que recebe como parâmetro dois números e retorna sua soma:
-
-```TypeScript
-const soma = (num1: number, num2: number): number => {
-  return num1 + num2
+  // Método para imprimir informações da pessoa
+  imprimirInfo(): void {
+    console.log(`Nome: ${this.nome}\nIdade: ${this.idade}`);
+  }
 }
 
-const resultado = soma(5, 10)
-console.log(resultado) // output: 15
+// Interface para definir uma função
+interface FuncaoPessoa {
+  (pessoa: Pessoa): void;
+}
+
+// Função que recebe um objeto do tipo Pessoa e chama o método imprimirInfo
+const imprimirPessoa: FuncaoPessoa = (pessoa: Pessoa): void => {
+  pessoa.imprimirInfo();
+};
+
+// Criando um objeto do tipo Pessoa e chamando a função imprimirPessoa
+const pessoa1: Pessoa = new Pessoa("João", 20);
+imprimirPessoa(pessoa1);
 ```
 
-Observe como os tipos `number` foram especificados nos parâmetros da função e no seu retorno. Isso é o que torna TypeScript uma linguagem de tipagem estática.
+A saída desse código será:
 
-## Mergulho profundo
+`Nome: João
+Idade: 20`
 
-Além de adicionar tipos estáticos e recursos de POO ao JavaScript, TypeScript também possui outras vantagens, como suporte a módulos, interfaces e classes. Se você quiser se aprofundar mais em TypeScript, confira a documentação oficial e experimente diferentes recursos em seus projetos. 
+## Mergulhando mais fundo
+
+O TypeScript oferece muitos recursos poderosos para desenvolvedores. Além da tipagem estática e dos recursos modernos do JavaScript, TypeScript também permite a criação de módulos, interfaces genéricas e sobrecarga de funções.
+
+Outra vantagem de começar um projeto em TypeScript é que ele é totalmente compatível com JavaScript. Isso significa que você pode utilizar bibliotecas e frameworks JavaScript existentes em seus projetos em TypeScript.
+
+Para saber mais sobre os recursos do TypeScript, você pode consultar a documentação oficial em https://www.typescriptlang.org/docs/.
 
 ## Veja também
 
-- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/)
-- [Curso gratuito de TypeScript na Udemy](https://www.udemy.com/course/typescript-pt/)
+Aqui estão alguns links úteis para continuar aprendendo e explorando o mundo do TypeScript:
+
+- Documentação oficial do TypeScript (https://www.typescriptlang.org/docs/)
+- Tutorial do TypeScript no site da MDN (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/TypeScript)
+- Curso Interativo de TypeScript no Codecademy (https://www.codecademy.com/learn/learn-typescript)

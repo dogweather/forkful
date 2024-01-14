@@ -1,54 +1,41 @@
 ---
 title:    "Kotlin: Convertendo uma string para minúsculas"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que converter uma string para minúsculas?
 
-Converter uma string para letras minúsculas é uma tarefa comum em muitos projetos de desenvolvimento de software. Essa conversão é útil para garantir a consistência nos dados, facilitar a comparação entre strings e melhorar a legibilidade do código.
+Ao trabalhar com strings em um programa Kotlin, é comum precisar convertê-las para minúsculas. Isso pode ser útil para realizar comparações de strings sem levar em conta a diferença entre letras maiúsculas e minúsculas, ou para garantir que os dados inseridos pelo usuário estejam todos em minúsculas para facilitar o processamento.
 
-## Como fazer
-
-Para realizar a conversão de uma string para letras minúsculas em Kotlin, podemos usar o método `toLowerCase()` da classe `String`. Veja um exemplo abaixo:
+## Como fazer:
 
 ```Kotlin
-val string = "Olá Mundo"
-val stringEmMinusculas = string.toLowerCase()
-println(stringEmMinusculas) // saída: olá mundo
+val string = "EXEMPLO DE TEXTO EM MAIÚSCULAS"
+val lowerCaseString = string.toLowerCase()
+println(lowerCaseString)
 ```
 
-Podemos também usar o operador de extensão `?.let` para garantir que a conversão seja feita apenas se a string não for nula. Veja o exemplo abaixo:
+Saída:
 
-```Kotlin
-val string: String? = null
-string?.let {
-    val stringEmMinusculas = it.toLowerCase()
-    println(stringEmMinusculas) // saída: null
-}
+```
+exemplo de texto em maiúsculas
 ```
 
-## Mergulho profundo
+Podemos utilizar o método `toLowerCase()` diretamente em uma string para convertê-la para minúsculas. Ele faz parte da classe `String` e não é necessário importar nenhuma biblioteca adicional.
 
-Ao converter uma string para letras minúsculas em Kotlin, é importante entender que esse processo não modifica a string original, mas sim retorna uma nova string em caixa baixa. Além disso, devemos estar atentos aos caracteres acentuados, pois sua conversão para letras minúsculas pode variar dependendo do idioma e do sistema operacional utilizado.
+## Aprofundando:
 
-Caso seja necessário realizar a conversão de caracteres acentuados, podemos utilizar a função `fold()` da classe `StringBuilder` em conjunto com a função `removeAccents()` da biblioteca `ICU4J`. Veja o exemplo abaixo:
+O método `toLowerCase()` é baseado no padrão Unicode, que define como os caracteres devem ser representados e manipulados em um programa de computador. Ele irá converter todas as letras maiúsculas da string para suas respectivas letras minúsculas, seguindo as regras estabelecidas pelo padrão Unicode.
 
-```Kotlin
-val string = "Árvore à Beira do Mar"
-val stringEmMinusculas = StringBuilder(string.length).let {builder ->
-    builder.append(string)
-    builder.fold(“”,{acc,char ->
-        acc.append(ICU.removeAccents(char))
-    })
-}
-println(stringEmMinusculas) // saída: arvore a beira do mar
-```
+É importante lembrar que esse método só irá converter as letras que fazem parte do alfabeto. Caracteres especiais, símbolos e números não serão afetados pela conversão.
 
-## Veja também
+Outra forma de converter uma string em minúsculas é utilizando a função `toLowercase()` da classe `CharSequence`. Dessa forma, podemos converter não apenas uma string, mas também outros tipos de dados que implementam a interface `CharSequence`, como `StringBuilder` e `StringBuffer`.
 
-- Documentação oficial do método `toLowerCase()` (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/to-lower-case.html)
-- Documentação oficial do operador de extensão `?.let` (https://kotlinlang.org/docs/reference/scope-functions.html#-let)
-- Documentação oficial da função `fold()` da classe `StringBuilder` (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/fold.html)
-- Biblioteca ICU4J (http://site.icu-project.org/home)
+## Veja também:
+
+- [Documentação oficial do método toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Documentação oficial da interface CharSequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-char-sequence/index.html)
+- [Visão geral do padrão Unicode](https://unicode.org/standard/reports/tr10/#Case_Mappings)

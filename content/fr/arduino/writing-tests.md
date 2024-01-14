@@ -1,46 +1,45 @@
 ---
-title:    "Arduino: Écriture de tests"
+title:    "Arduino: Écrire des tests"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en programmation Arduino ?
+## Pourquoi
+Ecrire des tests peut sembler fastidieux et prendre du temps, mais c'est en réalité une étape très importante dans le processus de développement avec Arduino. Non seulement cela garantit que votre code fonctionne correctement, mais cela vous aide également à détecter et à résoudre rapidement les erreurs potentielles.
 
-Écrire des tests lors de la programmation Arduino peut sembler fastidieux et peu utile, mais cela peut en fait être très bénéfique pour votre projet. Les tests permettent de s'assurer que le code fonctionne correctement et de détecter d'éventuels bugs plus rapidement. De plus, cela facilite la maintenance du code à long terme.
-
-## Comment écrire des tests en Arduino ?
-
-Il existe différentes manières de réaliser des tests en Arduino. Voici un exemple de code pour tester une fonction simple qui additionne deux nombres :
+## Comment faire
+Ecrire des tests avec Arduino n'est pas aussi difficile qu'il n'y parait. Il vous suffit d'utiliser la fonction ```test()``` pour définir vos tests, puis d'utiliser ```assert()``` pour vérifier si les résultats correspondent à ceux que vous attendez. Voici un exemple simple de test pour une fonction qui multiplie deux nombres :
 
 ```Arduino
-int add(int a, int b) {
-  return a + b;
+int multiplication(int a, int b) {
+  return a * b;
 }
 
-void testAddition() {
-  int result = add(3, 5);
-  if (result != 8) {
-    Serial.println("L'addition a échoué !");
-  }
-  else {
-    Serial.println("L'addition a réussi !");
-  }
+void testMultiplication() {
+  assert(multiplication(2, 3) == 6); // Vérifie si le résultat est égal à 6
+  assert(multiplication(5, 5) == 25); // Vérifie si le résultat est égal à 25
+}
+
+void setup() {
+  // Lancez votre test ici
+  testMultiplication();
+}
+
+void loop() {
+  // Code principal de votre programme
 }
 ```
 
-Dans cet exemple, nous créons une fonction ```add``` qui prend deux entiers en paramètres et les additionne. Ensuite, nous créons une fonction ```testAddition``` qui utilise la fonction ```add``` pour vérifier si l'addition de 3 et 5 donne bien le résultat attendu, à savoir 8. En fonction du résultat, nous imprimons un message de réussite ou d'échec.
+Lors de l'exécution de ce code, si l'un de vos tests échoue, vous saurez immédiatement quel test en question a échoué et pour quelles raisons.
 
-Avec ce type de tests, vous pouvez également vérifier les différentes possibilités de valeurs en entrée, comme des nombres négatifs ou des nombres à virgule.
+## Deep Dive
+Pour écrire des tests plus complexes, vous pouvez utiliser des bibliothèques spécifiques telles que ```ArduinoUnit``` ou ```Unity``` pour tester des fonctions plus avancées telles que les fonctions temporisées ou les fonctions impliquant des composants externes. Ces bibliothèques offrent également une meilleure gestion des erreurs et des options de test plus avancées.
 
-## Approfondissement sur l'écriture de tests en Arduino
+Il est également important de noter que les tests doivent être écrits régulièrement tout au long du processus de développement, en particulier lorsque vous ajoutez de nouvelles fonctionnalités à votre code. Cela garantit que votre code reste fonctionnel et facile à maintenir à mesure que vous ajoutez de nouvelles modifications.
 
-Il existe différentes méthodes pour écrire des tests en Arduino, notamment l'utilisation de bibliothèques dédiées telles que la bibliothèque "ArduinoUnit". Ces bibliothèques offrent des fonctionnalités plus avancées pour le test de code, telles que la possibilité d'effectuer des tests unitaires ou des tests de performances.
-
-Il est également important de noter que les tests doivent être écrits au fur et à mesure de l'écriture du code, afin de ne pas accumuler trop de tests à la fin. Vous pouvez également utiliser des outils de couverture de code pour mesurer la quantité de code testée par les tests que vous avez écrits.
-
-# Voir aussi
-
-- Tutoriel Arduino : Écrire et exécuter des tests unitaires avec ArduinoUnit : https://create.arduino.cc/projecthub/TheGadgetKeeper/unit-testing-on-arduino-with-arduinounit-b968b0
-- Utiliser la bibliothèque ArduinoUnit pour écrire des tests de performance : https://forum.arduino.cc/t/performance-testing-using-arduinounit-library/389022
-- Les avantages des tests unitaires en Arduino : https://electronics.stackexchange.com/questions/91986/advantages-of-unit-testing-in-arduino
+## Voir aussi
+- [Tutoriel d'Arduino sur l'écriture de tests] (https://www.arduino.cc/en/Guide/ArduinoUnitTesting)
+- [GitHub - ArduinoUnit] (https://github.com/mmurdoch/arduinounit)
+- [GitHub - Unity] (https://github.com/ThrowTheSwitch/Unity)

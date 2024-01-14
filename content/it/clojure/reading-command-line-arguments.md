@@ -1,53 +1,39 @@
 ---
-title:    "Clojure: Lettura degli argomenti dalla linea di comando"
+title:    "Clojure: Lettura degli argomenti della riga di comando"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Mentre si scrive codice in Clojure, ci possono essere situazioni in cui si vuole essere in grado di leggere gli argomenti della riga di comando forniti dall'utente. Ciò può essere utile quando si vuole dare all'utente un controllo più diretto sul programma o quando si vuole facilitare la personalizzazione del programma.
+Leggere gli argomenti dalla riga di comando è un'abilità importante per ogni programmatore Clojure. Consente di rendere i tuoi programmi più flessibili e personalizzabili per gli utenti, che possono passare informazioni diverse ogni volta che eseguono il tuo codice. In questo articolo, vedremo come leggere e gestire gli argomenti dalla riga di comando utilizzando Clojure.
 
 ## Come fare
 
-Per leggere gli argomenti della riga di comando in Clojure, è possibile utilizzare la funzione `command-line-args` che restituisce una lista di stringhe contenente gli argomenti forniti dall'utente. Ad esempio:
+Per leggere gli argomenti dalla riga di comando in Clojure, utilizzeremo la funzione `clojure.core/command-line-args`. Questa funzione prende gli argomenti dalla riga di comando e li restituisce come una lista di stringhe.
 
 ```Clojure
 (def args (command-line-args))
-(println args)
+
+(print "I parametri dalla riga di comando sono" args)
 ```
 
-L'output di questo codice dipenderà dagli argomenti forniti dall'utente. Ad esempio, se l'utente fornisce `java -jar nome_programma arg1 arg2`, l'output sarà:
+Ecco un esempio di invocazione del programma con argomenti:
 
 ```
-[arg1 arg2]
+$ java -jar mio_programma.jar arg1 arg2
+I parametri dalla riga di comando sono ["arg1" "arg2"]
 ```
 
-È possibile utilizzare la funzione `nth` per accedere a un argomento specifico nella lista. Ad esempio, per ottenere il primo argomento, si può scrivere:
-
-```Clojure
-(nth args 0)
-```
-
-Questo restituirà `arg1`.
-
-Inoltre, Clojure offre anche una libreria chiamata `cli.args` che semplifica la lettura degli argomenti della riga di comando e fornisce funzionalità aggiuntive come la validazione degli argomenti. Per utilizzarla, è necessario importarla:
-
-```Clojure
-(require 'cli.args)
-```
-
-Si possono quindi definire i parametri e la loro validazione utilizzando la funzione `cli.spec/defcli`.
+Come puoi vedere dall'esempio, gli argomenti vengono passati al programma dopo il nome del file .jar. È possibile specificare qualsiasi numero di argomenti e verranno tutti letti dalla funzione `command-line-args`.
 
 ## Approfondimento
 
-La funzione `command-line-args` utilizza il valore di una proprietà di sistema chiamata `"clojure.main.opts"`. Questa proprietà viene settata dallo script `clojure` utilizzato per avviare i programmi Clojure. Questo significa che gli argomenti possono essere letti solo durante l'esecuzione dello script `clojure`. Se si desidera leggere gli argomenti da un'altra classe Java, è possibile utilizzare la proprietà di sistema `"clojure.args"`.
-
-Inoltre, è importante notare che gli spazi e i caratteri speciali negli argomenti vengono preservati come stringhe. Se si desidera elaborarli in modo diverso, è possibile utilizzare la funzione `shlex-split` della libreria `clojure.string`.
+Oltre alla funzione `command-line-args`, è possibile utilizzare anche la libreria `tools.cli` per leggere e gestire gli argomenti dalla riga di comando in modo più strutturato. Questa libreria consente di definire opzioni con parametri e fornire un'interfaccia più intuitiva per l'utente. Puoi consultare la documentazione ufficiale di `tools.cli` per saperne di più su come utilizzarla.
 
 ## Vedi anche
 
-- [Documentazione ufficiale su command-line-args](https://clojure.org/reference/repl_and_main#_command_line_arguments)
-- [Aritcolo di blog di Nashorn Clojure su cli.args](https://blog.nashorn.su/2016/07/02/0710-cli-args.html)
-- [Documentazione ufficiale su cli.args](https://github.com/clojure/tools.cli)
+- [Documentazione ufficiale di command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
+- [Documentazione ufficiale di tools.cli](https://clojure.github.io/tools.cli/)

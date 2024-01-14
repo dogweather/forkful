@@ -1,44 +1,56 @@
 ---
-title:    "Haskell: String in Großbuchstaben"
+title:    "Haskell: Ein String in Großbuchstaben umwandeln."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Haskell ist eine fortschrittliche Programmiersprache, die viele einzigartige Funktionen bietet, darunter die Möglichkeit, einen String zu verändern, indem man ihn in Großbuchstaben umwandelt. Warum sollte man diese Funktion nutzen? Nun, man könnte zum Beispiel einen Namen in einem Format wie "Vorname Nachname" in "VORNAME NACHNAME" ändern wollen. Oder man könnte einfach Spaß daran haben, Wörter in Großbuchstaben zu sehen!
+Das Kapitalisieren von Strings ist ein wichtiger Prozess in der Programmierung, der es uns ermöglicht, die Darstellung von Daten zu vereinheitlichen und sie leichter lesbar und verständlich zu machen. Es ist auch ein grundlegendes Konzept, das in vielen anderen Programmieraufgaben verwendet wird.
 
-## So geht's
+## Wie man
 
-Um einen String in Haskell in Großbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten. Hier sind zwei Beispiele:
+Um einen String in Haskell zu kapitalisieren, können wir die `toUpper` Funktion aus dem `Data.Char` Modul verwenden. Diese Funktion akzeptiert einen einzelnen Charakter als Argument und gibt den entsprechenden Charakter in Großbuchstaben zurück. Um diese Funktion auf einen gesamten String anzuwenden, können wir die `map` Funktion verwenden und sie auf jeden einzelnen Charakter im String anwenden.
 
-```
--- Beispiel 1: Mit der Funktion "map"
-map toUpper "hallo" -- Output: "HALLO"
+Ein Beispielcode für die Kapitalisierung eines Strings in Haskell könnte wie folgt aussehen:
 
--- Beispiel 2: Mit einem "case" Statement
+```Haskell
+import Data.Char (toUpper)
+
 capitalize :: String -> String
-capitalize [] = []
-capitalize (x:xs) = [toUpper x] ++ xs
--- Beispielaufruf: capitalize "hallo" -- Output: "HALLO"
+capitalize str = map toUpper str
 ```
 
-Das erste Beispiel nutzt die bereits eingebaute Funktion `toUpper` und die Funktion `map`, um jeden Buchstaben in einem String in Großbuchstaben umzuwandeln. Das zweite Beispiel zeigt eine selbstgeschriebene Funktion, die einen String nimmt und den ersten Buchstaben in einen Großbuchstaben umwandelt, während alle anderen Buchstaben gleich bleiben.
+Wir können diesen Code in der GHCi-Interpreter ausführen, um die Ausgabe zu sehen:
 
-## Tiefergehend
-
-In Haskell werden Strings als Listen von Zeichen dargestellt. Deshalb funktioniert das Beispiel mit `map` so gut - es wendet einfach die Funktion `toUpper` auf jedes Zeichen im String an. Eine weitere interessante Funktion für die Arbeit mit Strings ist `words`, die einen String in eine Liste von Wörtern aufteilt. So könnte man zum Beispiel eine Funktion schreiben, die einen Namen im Format "Vorname Nachname" nimmt und in "Nachname, Vorname" umwandelt:
-
+```Haskell
+> capitalize "hallo"
+"HALLO"
 ```
-switchName :: String -> String
-switchName name = let lastName = last (words name)
-                      firstName = head (words name)
-                  in lastName ++ ", " ++ firstName
--- Beispielaufruf: switchName "Max Mustermann" -- Output: "Mustermann, Max"
+
+Wir können auch eine Funktion schreiben, die ein einzelnes Wort in einem String kapitalisiert, anstatt den gesamten String. Dies kann mit der `words` Funktion aus dem `Data.List` Modul und der `unwords` Funktion aus demselben Modul erreicht werden. Das folgende Beispiel zeigt, wie das gemacht werden kann:
+
+```Haskell
+import Data.Char (toUpper)
+import Data.List (words, unwords)
+
+capitalizeWord :: String -> String
+capitalizeWord str = unwords $ map capitalize (words str)
 ```
+
+Dies ist ein Beispiel für den Einsatz von mehreren Funktionen und die Verkettung von Funktionen, um eine komplexere Aufgabe zu erledigen.
+
+## Tiefergehende Informationen
+
+In Haskell gibt es viele verschiedene Möglichkeiten, um Strings zu manipulieren, zu formatieren und zu verarbeiten. Das Kapitalisieren eines Strings ist nur eine davon. Es gibt auch Funktionen zum Konvertieren von Strings in kleinere Buchstaben, zum Entfernen von Leerzeichen oder anderen Zeichen aus einem String und vieles mehr.
+
+Darüber hinaus gibt es auch verschiedene Bibliotheken und Pakete, die speziell für die Arbeit mit Strings entwickelt wurden, wie z.B. die `text` Bibliothek von Bryan O'Sullivan. Diese Bibliothek bietet leistungsstarke Funktionen für die Arbeit mit Text und Strings und ist eine wichtige Ressource für jeden, der in Haskell mit Strings arbeitet.
 
 ## Siehe auch
 
-- [Haskell Dokumentation zu Strings](https://www.haskell.org/tutorial/strings.html)
-- [Haskell Funktionen für Listen](https://www.haskell.org/tutorial/strings.html)
+- [Haskell Dokumentation](https://www.haskell.org/documentation/)
+- [Data.Char Modul Dokumentation](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Data.List Modul Dokumentation](https://hackage.haskell.org/package/base/docs/Data-List.html)
+- [Text Bibliothek von Bryan O'Sullivan](https://hackage.haskell.org/package/text)

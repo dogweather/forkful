@@ -1,37 +1,53 @@
 ---
-title:    "Haskell: 打印调试输出"
+title:    "Haskell: 输出调试输出"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要打印调试输出(Debug Output)
+## 为什么要打印调试输出？
 
-调试输出(Debug Output)是一种在编程过程中非常有用的工具。它可以帮助我们更好地理解程序运行的细节，发现程序中的错误，并帮助我们更快地修复这些错误。通过打印调试输出，我们可以对程序的运行过程有更全面的了解，从而提高我们的编程效率。
+当我们在编写Haskell程序时，经常会遇到一些bug或错误。为了更有效地调试和解决这些问题，打印调试输出是一种常用的方法。通过打印程序执行过程中的变量值或关键信息，我们可以更深入地了解程序的运行情况，从而更容易找到出错的地方。
 
-## 如何使用打印调试输出
+## 如何打印调试输出？
 
-使用Haskell语言，我们可以很容易地在程序中加入打印调试输出的代码。以下是一个简单的示例：
+在Haskell中，打印调试输出非常简单。我们只需要使用`print`函数来输出我们想要调试的变量或信息。下面是一个基本的例子：
 
 ```Haskell
--- 定义一个函数计算两个数的和
-sum :: Int -> Int -> Int
-sum x y = x + y
-
--- 调用sum函数并打印调试输出
-main :: IO()
-main = do
-  let result = sum 3 4
-  putStrLn ("调用sum函数的结果为: " ++ show result)
+x = 5
+print x
 ```
 
-以上代码中，我们首先定义了一个函数sum来计算两个数的和。接着在main函数中，我们调用sum函数并使用putStrLn函数打印调试输出，将函数的结果以字符串形式打印出来。在运行这段代码后，我们可以在控制台看到打印出来的调试输出，从而更好地理解程序的运行过程。
+这段代码将会在控制台输出数字5，从而帮助我们验证程序中x的值是否正确。如果我们想要打印多个变量，可以使用`putStrLn`函数来打印字符串信息。例如：
+
+```Haskell
+x = 5
+y = 10
+putStrLn "The value of x is:"
+print x
+putStrLn "The value of y is:"
+print y
+```
+
+这会输出以下内容：
+
+```
+The value of x is:
+5
+The value of y is:
+10
+```
 
 ## 深入了解打印调试输出
 
-除了简单的打印调试输出外，我们还可以通过一些技巧来更有效地使用它。例如，我们可以使用trace函数来在程序中插入调试输出，从而可以在不修改程序逻辑的情况下，随时可以打印出某部分代码的调试输出。另外，我们也可以使用-Ghci选项来在命令行中执行程序，并可以用:trace命令来实时观察程序的运行过程。
+除了简单地使用`print`和`putStrLn`函数外，Haskell还提供了一些其他方式来打印调试输出。例如，我们可以通过导入`Debug.Trace`模块来使用`trace`函数来打印中间过程的变量值，从而更方便地调试复杂的程序。
 
-# 查看也可以
+此外，Haskell还有一些工具和技巧来帮助我们更好地使用打印调试输出。例如，我们可以使用`ghci`（Haskell的交互式解释器）来逐步执行程序并查看变量值，或者使用`-Wall`标志来查找可能的错误。深入了解这些工具和技巧可以帮助我们更有效地利用打印调试输出来解决问题。
 
-- [Haskell调试技巧](https://pro-tips.github.io/articles/6-haskell-debugging-tips.html)
-- [Haskell调试工具：GHCi和Hood](https://stackoverflow.com/questions/9973515/how-do-i-debug-a-haskell-program)
+## 参考链接
+
+- [Haskell调试指南](https://wiki.haskell.org/Debugging)
+- [Haskell调试工具集](https://hackage.haskell.org/packages/search?terms=debugging)
+- [使用GHCi调试Haskell程序](https://www.haskell.org/tutorial/gci.html)
+- [关于-haskell-options的更多信息](https://downloads.haskell.org/%7Eghc/7.2.1/docs/html/users_guide/ghci.html#ghci-cmd-:set)

@@ -1,50 +1,39 @@
 ---
 title:    "Rust: 두 날짜 비교하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
+루스트 프로그래밍을 하려는 사람들은 날짜를 비교해야할 필요가 있을 수 있습니다. 이는 프로그래머들이 날짜 및 시간 정보를 다루는 프로그램을 개발하는 데 유용하며, 루스트에서 날짜를 쉽게 비교하는 방법에 대한 지식은 필수적입니다.
 
-날짜를 비교하는 것에 대해 어떤 이유에서라도 관심이 있을 수 있습니다. 날짜는 우리 일상에서 중요한 역할을 맡고 있으며, 비즈니스 로직이나 알고리즘을 작성할 때 날짜를 비교하는 기능은 필수적입니다. 또한 날짜를 비교하는 것은 프로그래밍 언어를 배우는 과정에서 기본적인 스킬 중 하나입니다. 라스트(Rust)를 배울 때에도 날짜를 비교하는 방법은 중요한 주제 중 하나입니다.
-
-# 방법
+## 어떻게
+두 날짜를 비교하는 방법은 매우 간단합니다. 먼저 루스트의 `chrono` 라이브러리를 사용해서 두 날짜를 `DateTime` 형식으로 변환해야 합니다. 그리고 나서 `DateTime` 형식의 메서드인 `cmp()`를 사용하여 두 날짜를 비교할 수 있습니다.
 
 ```Rust
-use chrono::{DateTime, TimeZone, Utc};
+use chrono::{DateTime, Local, Duration};
 
-fn compare_dates() {
-    // 두 날짜 생성
-    let first_date = Utc.ymd(2021, 7, 1).and_hms(0, 0, 0);
-    let second_date = Utc.ymd(2021, 7, 2).and_hms(0, 0, 0);
+// 현재 시간과 비교할 날짜 생성
+let current_time = Local::now();
+let compare_time = DateTime::parse_from_str("2021-09-17 13:00:00", "%Y-%m-%d %H:%M:%S").unwrap();
 
-    // 두 날짜 비교
-    if first_date < second_date {
-        println!("첫 번째 날짜가 두 번째 날짜보다 빠릅니다.");
-    } else if first_date > second_date {
-        println!("첫 번째 날짜가 두 번째 날짜보다 늦습니다.");
-    } else {
-        println!("두 날짜는 동일합니다.");
-    }
-}
+// 두 날짜 비교
+let comparison = current_time.cmp(&compare_time);
 
-fn main() {
-    compare_dates();
-}
-
-// 출력:
-// 첫 번째 날짜가 두 번째 날짜보다 빠릅니다.
+// 결과 출력
+println!("현재 시간은 비교할 날짜보다 {}합니다.", comparison);
 ```
 
-위 코드에서는 라스트의 `chrono` 라이브러리를 사용하여 날짜를 생성하고 비교하는 방법을 보여줍니다. 우선 `DateTime` 구조체를 사용하여 날짜를 생성할 수 있습니다. 그리고 `<`와 `>` 연산자를 사용하여 두 날짜를 비교할 수 있습니다. 예제에서는 첫 번째 날짜가 두 번째 날짜보다 빠르기 때문에 첫 번째 `if` 절이 실행되게 됩니다.
+출력: "현재 시간은 비교할 날짜보다 미래입니다."
 
-# 딥 다이브
+위 코드에서는 현재 시간과 `2021-09-17 13:00:00`를 비교하고, `DateTime` 형식의 `cmp()` 메서드를 사용하여 두 날짜를 비교한 결과를 출력하는 예제입니다.
 
-날짜를 비교하는 방법은 여러 가지가 있을 수 있습니다. 위 예제에서는 `DateTime` 구조체를 사용하였지만, `NaiveDateTime` 구조체를 사용하거나 `Duration` 구조체를 사용하는 방법도 있습니다. 또한 날짜 형식에 따라서 비교 방식이 달라질 수도 있습니다. 이러한 다양한 경우에서도 정확히 원하는 결과가 나오도록 날짜를 비교하는 방법을 고민해야 합니다.
+## 깊게 들어가기
+루스트에서는 날짜와 시간을 다루는 다양한 기능을 제공합니다. `chrono` 라이브러리를 사용하면 윤년, 타임존, 시차 등을 고려하여 쉽게 날짜와 시간을 다룰 수 있습니다. 또한 `DateTime` 형식의 메서드를 활용하면 특정 날짜와 시간의 연산도 가능합니다. 이는 프로그래밍에서 유용하게 활용될 수 있습니다.
 
-# 참고
-
-- [Rust 공식 문서: chrono 라이브러리](https://docs.rs/chrono/)
-- [날짜 비교하기 (Rust by Example)](https://doc.rust-lang.org/stable/rust-by-example/std/ops/comparison.html)
-- [라스트 튜토리얼: 날짜와 시간 다루기](https://rust-tutorials.github.io/learn-rust-with-examples/8.1-dates-and-times.html)
+# 참고자료
+- [Rust 공식 문서 - 날짜와 시간 다루기](https://doc.rust-lang.org/std/time/index.html)
+- [Chrono 라이브러리 문서](https://docs.rs/chrono/0.4.19/chrono/)
+- [RustCrush 블로그 - 루스트와 날짜 비교하기](https://rustcrush.com/2021/02/27/compare-dates-in-rust/)

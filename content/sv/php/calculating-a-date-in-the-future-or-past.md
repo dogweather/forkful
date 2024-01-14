@@ -1,41 +1,42 @@
 ---
-title:    "PHP: Beräkning av ett datum i framtiden eller det förflutna"
+title:    "PHP: Beräkning av ett datum i framtiden eller förflutet."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför?
+## Varför
 
-Att kunna beräkna datum i framtiden eller från det förflutna är en viktig färdighet för alla som arbetar med webbutveckling. Det kan användas för att skapa dynamiska funktioner på en webbplats som behöver visa datum som är beroende av användarens ålder eller ett specifikt datum i framtiden.
+Att kunna beräkna ett datum i framtiden eller förflutet är en användbar och grundläggande funktion i många PHP-program. Det är särskilt användbart i applikationer som hanterar bokningar, tidigare händelser eller tidsbaserade påminnelser.
 
-## Hur man gör det
+## Så här gör du
 
-Beräkningen av datum i PHP är enkel att göra med några få rader kod. Först måste du definiera ett startdatum och sedan kan du använda PHP's `date` funktion för att räkna ut önskat datum. Se exempelkoden nedan:
+För att beräkna ett datum i framtiden eller förflutet behöver du använda PHP-funktionen `date()` i kombination med `strtotime()`. Låt oss titta på ett enkelt exempel:
 
 ```PHP
-// Definiera startdatumet
-$start_date = "2021-01-01";
-
-// Beräkna datumet 6 månader framåt
-$future_date = date('Y-m-d', strtotime('+6 months', strtotime($start_date)));
-
-// Beräkna datumet 2 år bakåt
-$past_date = date('Y-m-d', strtotime('-2 years', strtotime($start_date)));
-
-// Skriv ut resultatet
-echo "Datumet 6 månader fram i tiden är: " . $future_date;
-echo "Datumet 2 år bakåt är: " . $past_date;
+$today = date("Y-m-d"); // Här får vi dagens datum i formatet ÅÅÅÅ-MM-DD
+$future_date = strtotime("+1 week"); // Detta beräknar datumet för exakt en vecka framåt i tiden
+echo date("Y-m-d", $future_date); // Skriver ut det nya datumet, som nu är en vecka framåt i tiden
 ```
+
+I det här exemplet skrytt vi ut 2020-07-21 (om dagens datum är 2020-07-14), vilket är en vecka efter det aktuella datumet. Om du vill beräkna ett datum i förflutet istället för i framtiden kan du helt enkelt ändra ordningen på funktionerna:
+
+```PHP
+$past_date = strtotime("-1 month"); // Detta beräknar datumet för exakt en månad tillbaka i tiden
+echo date("Y-m-d", $past_date); // Skriver ut det nya datumet, som nu är en månad bakåt i tiden
+```
+
+Det är också möjligt att använda andra tidsenheter som dagar, år eller till och med specifika tider som klockslag. Du kan läsa mer om hur du använder `strtotime()` på [PHPs dokumentationssida](https://www.php.net/manual/en/function.strtotime.php).
 
 ## Djupdykning
 
-När man arbetar med datum i PHP finns det några saker man bör tänka på. För att undvika problem med tidszoner bör man alltid använda `strtotime` funktionen tillsammans med `date` funktionen. Det är också viktigt att se till att formatet på startdatumet och utdatumen är det samma.
+Förutom att enkelt kunna beräkna datum i framtiden eller förflutet, kan du också formatera datumet på olika sätt med hjälp av `date()`-funktionen. Till exempel kan du skriva ut namnet på veckodagen eller månaden, eller välja att endast skriva ut en del av datumet (som året eller månaden).
 
-För mer information och exempel på hur man kan beräkna datum med specifika tidsintervall, som veckor eller dagar, rekommenderas att läsa dokumentationen för `strtotime` och `date` funktionerna på PHP's officiella hemsida.
+Det är också viktigt att ta hänsyn till tidszoner när du hanterar datum i dina PHP-program. Det kan finnas tillfällen då du behöver justera dato-med så att de återspeglar rätt tidszon för din användare. PHP har också en inbyggd funktion för att hantera tidszoner, `date_default_timezone_set()`, som du kan läsa mer om på [PHPs dokumentationssida](https://www.php.net/manual/en/function.date-default-timezone-set.php).
 
 ## Se även
 
-- [PHP's officiella hemsida](https://www.php.net/)
-- [Dokumentation för strtotime funktionen](https://www.php.net/manual/en/function.strtotime.php)
-- [Dokumentation för date funktionen](https://www.php.net/manual/en/function.date.php)
+- [PHPs dokumentation om date()](https://www.php.net/manual/en/function.date.php)
+- [Mer om strtotime() hos PHP](https://www.php.net/manual/en/function.strtotime.php)
+- [Guide till att hantera tidszoner i PHP](https://www.php.net/manual/en/datetime.configuration.php)

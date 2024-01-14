@@ -1,71 +1,52 @@
 ---
-title:    "PHP: 랜덤 숫자 생성하기"
+title:    "PHP: 임의의 숫자 생성"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-랜덤 숫자를 생성하는 것에 참여하는 이유는 무엇일까요? 그 이유는 다양합니다. 예를 들어, 데이터 샘플링, 게임에서의 임의의 이벤트 발생, 암호 학습 등 다양한 분야에서 랜덤 숫자를 활용할 수 있기 때문입니다.
+## 왜
+난수 생성에 참여하는 이유는 다양할 수 있습니다. 예를 들어, 보안 관련 작업을 하거나 게임을 만들 때 사용할 수 있습니다. 또한 테스트나 평가를 위해 필요한 값들을 랜덤하게 가져오는데 활용할 수도 있습니다.
 
-## 방법
-PHP에서 랜덤 숫자를 생성하는 방법은 다음과 같습니다. 첫번째로, `rand()` 함수를 사용할 수 있습니다. 이 함수는 두 개의 매개변수를 받아서 그 사이의 임의의 정수를 반환합니다. 예를 들어, `rand(1, 10)` 는 1부터 10 사이의 정수 중 하나를 반환합니다.
+## 하는 법
+PHP에서 난수를 생성하는 가장 기본적인 방법은 `rand()` 함수를 사용하는 것입니다. 아래는 몇 가지 예제 코드와 그에 대한 출력 결과입니다.
 
-또 다른 방법으로 `mt_rand()` 함수를 사용할 수 있습니다. 이 함수는 `rand()` 함수보다 좀 더 빠르고 높은 품질의 난수를 생성합니다. 예를 들어, `mt_rand(1, 100)` 은 1부터 100 사이의 정수 중 하나를 반환합니다.
-
-아래는 각 함수를 10번 호출하여 결과를 출력할 예제 코드입니다.
-
+### 기본적인 난수 생성
 ```PHP
 <?php
-// rand() 함수 예제
-echo "rand() 함수 결과:<br/>";
-for ($i=0; $i<10; $i++) {
-  echo rand(1, 10) . "<br/>";
-}
-
-// mt_rand() 함수 예제
-echo "<br/>mt_rand() 함수 결과:<br/>";
-for ($i=0; $i<10; $i++) {
-  echo mt_rand(1, 100) . "<br/>";
-}
+  $random_number = rand(); // 랜덤한 정수를 생성합니다.
+  echo $random_number; // 예: 483666
 ?>
 ```
 
-### 출력 예제
-```
-rand() 함수 결과:
-3
-9
-7
-8
-4
-2
-9
-1
-6
-6
-
-mt_rand() 함수 결과:
-64
-46
-68
-54
-98
-92
-14
-88
-20
-91
+### 범위를 지정하여 난수 생성
+```PHP
+<?php
+  $random_number = rand(1, 100); // 1부터 100 사이의 난수를 생성합니다.
+  echo $random_number; // 예: 55
+?>
 ```
 
-## 심층 분석
-PHP에서는 `rand()` 함수와 `mt_rand()` 함수를 이용하여 랜덤 숫자를 생성합니다. 이 함수들은 유사난수 생성기(pseudorandom number generator)를 사용하여 난수를 생성합니다. 이는 시드(seed)값을 이용하여 알고리즘에 따라 계산된 값을 반환하므로 다양한 값을 반환할 수 있지만 항상 같은 시드값을 가진다면 같은 값이 반환됩니다.
+### 부동소수점 수를 포함한 난수 생성
+```PHP
+<?php
+  $random_number = rand(1, 100) / 10; // 1부터 100 사이의 난수를 생성하고 10으로 나누어 부동소수점 수를 포함합니다.
+  echo $random_number; // 예: 8.9
+?>
+```
 
-따라서, 시드값을 어떻게 설정하느냐에 따라 결과값이 크게 달라질 수 있습니다. 따라서, 만약 복잡하고 예상할 수 없는 결과가 필요하다면 `mt_rand()` 함수를 사용하는 것이 좋습니다.
+## 깊게 들어가기
+PHP에서 난수를 생성하는 다양한 함수와 사용법을 알아보았습니다. 이 외에도 `mt_rand()`, `random_int()`, `random_bytes()` 함수 등을 사용하여 난수를 생성할 수 있습니다. 이 함수들은 보안적인 측면에서 더 좋은 결과를 보장해주기 때문에 보안 관련 작업에 활용하는 것이 좋습니다. 하지만 기본적인 난수 생성을 위해서는 `rand()` 함수를 사용하면 충분합니다.
 
-그리고 PHP 7부터는 `random_int()` 함수를 이용하여 보안적으로 강력한 랜덤 숫자를 생성할 수 있습니다.
+## 또 다른 정보
+- [PHP 공식 매뉴얼 - 랜덤 함수](https://www.php.net/manual/en/function.rand.php)
+- [라라벨 랜덤 함수 가이드](https://laravel.com/docs/8.x/helpers#method-array-helpers)
+- [보안을 위한 PHP 난수 생성 방법](https://www.php.net/manual/en/function.random-int.php)
+- [난수 생성 방법 비교 및 성능 분석](https://www.php.net/manual/en/function.random-int.php)
 
-# 관련 정보
-- [PHP 문서: rand() 함수](https://www.php.net/manual/en/function.rand.php)
-- [PHP 문서: mt_rand() 함수](https://www.php.net/manual/en/function.mt-rand.php)
-- [PHP 문서: random_int() 함수](https://www.php.net/manual/en/function.random-int.php)
+## 참고
+- [Markdown 가이드](https://www.markdownguide.org/)
+  - [PHP에서 Markdown 사용하기](https://thephpdev.com/2019/03/29/how-to-render-markdown-files-using-php-erusev-parsedown/)
+- [Markdown 에디터 - Typora](https://typora.io/)
+- [IAMPARK - PHP 교육 강의 및 블로그](https://iampark.tistory.com/)

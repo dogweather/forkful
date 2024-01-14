@@ -1,45 +1,52 @@
 ---
 title:    "Elixir: Znajdowanie długości ciągu znaków"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Znalezienie długości ciągu znaków jest podstawową operacją w wielu językach programowania, w tym w Elixirze. W artykule tym dowiesz się, dlaczego znajomość tej operacji jest ważna dla każdego programisty i jak ją wykonać w Elixirze.
+Jeden z najważniejszych aspektów programowania to manipulowanie ciągami znaków. Potrzeba znania długości danego ciągu występuje często w procesie tworzenia aplikacji i funkcji. W tym poście przybliżymy Ci, jak w prosty sposób wyznaczyć długość łańcucha za pomocą Elixir.
 
 ## Jak to zrobić
 
-Zacznijmy od najprostszego przykładu. Chcemy obliczyć długość ciągu znaków "Elixir" i wyświetlić ją na ekranie.
+Zacznijmy od podstaw - deklaracji zmiennej, zawierającej nasz ciąg znaków:
 
-```
-Elixir.length("Elixir") #=> 6
-```
-
-Możemy także obliczyć długość ciągu znaków przechowywanego w zmiennej.
-
-```
-my_string = "Hello World"
-Elixir.length(my_string) #=> 11
+```Elixir
+string = "Tutaj jest przykładowy ciąg znaków."
 ```
 
-W Elixirze, do obliczenia długości ciągu znaków, używa się funkcji `length`. Możemy również użyć operatora `<>` do łączenia wielu ciągów znaków i obliczenia ich łącznej długości.
+Teraz możemy użyć funkcji `String.length(string)` aby wyznaczyć długość ciągu. W wyniku otrzymamy liczbę reprezentującą ilość znaków w ciągu:
 
+```Elixir
+len = String.length(string)
+IO.puts len
 ```
-my_string = "Hello"
-another_string = "World"
-Elixir.length(my_string <> another_string) #=> 10
+
+Output:
+```
+33
 ```
 
-## Głębsza analiza
+Możemy również wyznaczyć długość wybranego fragmentu ciągu, używając syntaktyki indeksów:
 
-W Elixirze, długość ciągu znaków jest obliczana w oparciu o liczbę znaków Unicode. Oznacza to, że litery z diakrytykami mają taką samą wartość co zwykłe litery, co może być zaskoczeniem dla osób, które są przyzwyczajone do innych języków programowania.
+```Elixir
+specific_length = String.length(string[5..13])
+IO.puts specific_length
+```
 
-Kolejną ważną rzeczą jest to, że w Elixirze ciągi znaków są niezmiennicze. Oznacza to, że nie możemy zmienić wartości ciągu znaków w miejscu, tylko musimy stworzyć nowy ciąg znaków.
+Output:
+```
+9
+```
+
+## Pogłębiona analiza
+
+Elixir posiada funkcję `String.length/1`, która przyjmuje jeden argument - ciąg znaków - i zwraca jego długość. Wewnętrznie, funkcja ta przekształca dany ciąg do formatu "listy znaków" i zlicza ilość elementów. W związku z tym, nie jest to najbardziej wydajne rozwiązanie na dłuższą metę. Dlatego warto wykorzystać funkcję `byte_size/1`, która zwraca ilość bajtów w ciągu, co jest równoznaczne z długością w przypadku kodowania UTF-8.
 
 ## Zobacz także
 
-- Dokumentacja Elixir do funkcji `length`: https://hexdocs.pm/elixir/List.html#length/1
-- Przewodnik po ciągach znaków w Elixirze: https://www.tutorialspoint.com/elixir/elixir_string.htm
-- Wideo na YouTube o obliczaniu długości ciągu znaków: https://youtu.be/0YOL-q-WYnM
+- [Oficjalna dokumentacja Elixir](https://hexdocs.pm/elixir/String.html#length/1)
+- [Blog post na temat funkcji `byte_size/1`](https://blog.appsignal.com/2017/01/31/elixir-alphabet-of-benjamin-b.html)

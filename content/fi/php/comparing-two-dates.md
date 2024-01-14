@@ -1,65 +1,51 @@
 ---
 title:    "PHP: Kahden päivämäärän vertailu"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi vertailla kahta päivämäärää?
+## Miksi vertailla kahta päivämäärää?
 
-Päivämäärien vertaileminen on tärkeää, kun haluat tarkistaa, ovatko kaksi päivämäärää sama, tai jos haluat laskea ajanjakson kahden päivämäärän välillä. Vertailemalla päivämääriä voit myös järjestää tapahtumia tai tehtäviä päivämäärän mukaan.
+Vertailemalla kahta päivämäärää, voit selvittää, kumpi päivämäärä on aikaisempi tai myöhempi. Tämä voi olla hyödyllistä esimerkiksi tapahtumien järjestämisessä tai tietyn ajanjakson laskemisessa.
 
-Kuinka vertailla kahta päivämäärää?
+## Miten vertailla kahta päivämäärää?
 
-Vertaamalla kahta päivämäärää PHP:llä on helppo tapa saada selville, onko toinen päivämäärä myöhempi, aikaisempi vai sama kuin toinen. Voit vertailla päivämääriä käyttämällä PHP:n sisäänrakennettuja funktioita, kuten "strtotime" ja "date_diff".
+Käytä PHP: n sisäänrakennettua "strtotime" -toimintoa muuntaaksesi päivämäärät Unix-ajaksi ja vertaile sitten niitä käyttämällä "if" -lauseketta.
 
-```
-// Luodaan kaksi eri päivämäärää
-$date1 = strtotime("2020-10-15");
-$date2 = strtotime("2020-10-20");
+```PHP
+$date1 = strtotime("2020-01-01");
+$date2 = strtotime("2020-02-01");
 
-// Vertaillaan päivämääriä ja tulostetaan tulos
 if ($date1 < $date2) {
-  echo "Ensimmäinen päivämäärä on aiempi kuin toinen päivämäärä.";
-} elseif ($date1 > $date2) {
-  echo "Ensimmäinen päivämäärä on myöhempi kuin toinen päivämäärä.";
+  echo "Ensimmäinen päivämäärä on aikaisempi kuin toinen.";
 } else {
-  echo "Päivämäärät ovat samat.";
+  echo "Toinen päivämäärä on aikaisempi kuin ensimmäinen.";
 }
-
-// Tulostus: Ensimmäinen päivämäärä on aiempi kuin toinen päivämäärä.
 ```
 
-Voit myös laskea ajanjakson kahden päivämäärän välillä käyttämällä "date_diff" funktiota.
+Tämä koodi tulostaisi "Ensimmäinen päivämäärä on aikaisempi kuin toinen."
 
-```
-// Luodaan kaksi eri päivämäärää
-$date1 = date_create("2020-01-01");
-$date2 = date_create("2020-01-10");
+## Syventävä sukellus
 
-// Lasketaan päivien ero
+Päivämäärän vertailuun voi liittyä monia eri tekijöitä, kuten aikavyöhykkeet ja kesäaika. On tärkeää varmistaa, että päivämäärät on muunnettu samassa aikavyöhykkeessä vertailua varten.
+
+Voit myös käyttää erityistä "diff" -toimintoa, joka laskee päivien, kuukausien ja vuosien erot kahden päivämäärän välillä.
+
+``PHP
+$date1 = strtotime("2020-01-01");
+$date2 = strtotime("2020-02-01");
+
 $diff = date_diff($date1, $date2);
 
-// Tulostetaan tulos
-echo 'Ero päivissä: ' . $diff->days;
-
-// Tulostus: Ero päivissä: 9
+echo "Ero on " . $diff->format("%m") . " kuukautta.";
 ```
 
-Syvällinen sukellus
+Tämä koodi tulostaisi "Ero on 1 kuukausi."
 
-Päivämäärien vertailu voi joskus olla monimutkaisempaa, etenkin jos haluat ottaa huomioon myös kellonajan. Lisäksi, jos päivämäärät on tallennettu tietokantaan, saatat joutua käsittelemään niitä eri muodoissa. On tärkeää ymmärtää eri päivämäärämuotoja ja niiden välisiä eroja.
+## Katso myös
 
-Yksi yleisimmistä ongelmatilanteista päivämäärävertailun yhteydessä on aikavyöhykkeiden huomioiminen. Päivämäärät voivat olla eri aikavyöhykkeillä, mikä voi vaikuttaa vertailun tulokseen. Tässä tapauksessa on suositeltavaa tallentaa päivämäärät UTC-aikavyöhykkeelle ja muuttaa ne näytettäessä käyttäjän aikavyöhykkeelle.
-
-Katso myös
-
-- PHP:n virallinen dokumentaatio päivämäärien vertailusta (https://www.php.net/manual/en/datetime.diff.php)
-- Opas päivämäärien tallentamiseen ja käsittelyyn tietokannassa (https://www.w3schools.com/php/php_mysql_date.asp)
-- Selitys eri päivämäärämuodoista ja niiden käytöstä (https://www.php.net/manual/en/datetime.formats.php)
-
-Katso myös
-
-- Päivämäärien vertailu PHP:llä (https://www.php.net/manual/en/datetime.diff.php)
-- Opas päivämäärien tallentamiseen ja käsittelyyn tietokannassa (https://www.w3schools.com/php/php_mysql_date.asp)
-- Selitys eri päivämä
+- [PHP Manuaali - strtotime](https://www.php.net/manual/en/function.strtotime.php)
+- [PHP Manuaali - if statement](https://www.php.net/manual/en/control-structures.if.php)
+- [PHP Manuaali - date_diff](https://www.php.net/manual/en/function.date-diff.php)

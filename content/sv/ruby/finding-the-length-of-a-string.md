@@ -1,45 +1,31 @@
 ---
-title:    "Ruby: Att hitta längden på en sträng."
+title:    "Ruby: Hitta längden på en sträng"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att hitta längden på en sträng kan vara en vanlig uppgift när man programmerar i Ruby. Det kan vara användbart när man vill veta hur många tecken en sträng innehåller eller när man behöver jämföra strängar i en algoritm. Oavsett anledning så är det ett viktigt och användbart koncept i Ruby-programmering.
+Att hitta längden på en sträng är en vanlig uppgift vid programmering. Det kan vara användbart för att kontrollera inmatningsdata eller för att hantera textsträngar i ditt program. Att kunna hitta längden på en sträng är en grundläggande kunskap som kommer att vara till nytta oavsett vad du programmerar i Ruby.
 
-## Så här gör du
-Det finns ett enkelt sätt att hitta längden på en sträng i Ruby genom att använda `length` eller `size` metoderna. Här är ett exempel:
-
-```Ruby
-strang = "Hej! Det här är en sträng."
-puts strang.length # output: 26
-puts strang.size # output: 26
-```
-
-Som du kan se i exemplet ovan använder vi antingen `length` eller `size` för att hitta längden på en sträng och sedan skriva ut resultatet med `puts`.
-
-Om du vill inkludera mellanslag eller andra specialtecken i din sträng kan du använda `size` metoden. Den räknar tecknen på samma sätt som det visas i strängen medan `length` metoden inte tar hänsyn till mellanslag och specialtecken.
+## Hur man gör det
+För att hitta längden på en sträng i Ruby, använder du metoden `length` eller `size`. Båda dessa metoder fungerar på samma sätt och returnerar längden på strängen som en numerisk värde. Se följande exempel:
 
 ```Ruby
-strang = "   Hej!   "
-puts strang.length # output: 5
-puts strang.size # output: 11
+text = "Hej världen"
+puts text.length  # output: 11
+puts text.size  # output: 11
 ```
 
-Det är också möjligt att hitta längden på en sträng i ett visst omfång med hjälp av `slice` metoden. Ta en titt på exemplet nedan:
-
-```Ruby
-strang = "Hej! Det här är en sträng."
-puts strang.slice(3..7).length # output: 5
-```
+Som du kan se i exemplet ovan, är "Hej världen" en 11-tecken lång sträng. Genom att använda metoden `length` eller `size` kan du hitta längden på en sträng på ett enkelt sätt i ditt Ruby-program.
 
 ## Djupdykning
-För att förstå varför `length` och `size` metoder fungerar på detta sätt behöver vi först förstå hur en sträng lagras i minnet i Ruby. I Ruby, liksom i många andra programmeringsspråk, representeras en sträng som en sekvens av tecken eller bytes. På grund av detta kan strängar enkelt hittas genom att räkna antalet tecken eller bytes i en sträng.
+Du kanske undrar vilken metod, `length` eller `size`, som är bättre att använda. Svaret är att det inte finns någon skillnad mellan dem när det gäller att hitta längden på en sträng. De kan båda utföra samma uppgift på samma sätt. Valet mellan `length` och `size` beror på personliga preferenser och kanske vana.
 
-Men det är inte alltid så enkelt. Vissa tecken kan ta upp mer än en byte, till exempel icke-engelska tecken eller specialtecken. Detta kan påverka längden på en sträng i Ruby som inte tar hänsyn till dessa specialtecken. Därför används `size` metoden för att räkna antalet bytes i en sträng som visar den riktiga längden på en sträng även med specialtecken.
+Det är dock viktigt att notera att både `length` och `size` är metoder som endast fungerar på strängar. Om du försöker använda dem på andra datatyper, såsom en numeriskt värde eller en array, kommer de inte att returnera ett resultat.
 
-## Se även
-- [Ruby dokumentation för String klassen](https://ruby-doc.org/core-3.0.2/String.html)
-- [Skillshare kurs: "Ruby för nybörjare" (på svenska)](https://www.skillshare.com/classes/Ruby-f%C3%B6r-nyb%C3%B6rjare-Steg-f%C3%B6r-steg/1287564023)
-- [Ruby on Rails tutorial för svenska läsare](https://guides.rubyonrails.org/getting_started.html)
+## Se också
+- [Ruby Dokumentation om Strings](https://ruby-doc.org/core-2.6.3/String.html)
+- [Ruby Metoder för Strings](https://www.rubyguides.com/ruby-string-methods/)
+- [En enkel guide till att programmera i Ruby](https://www.digitalocean.com/community/tutorials/how-to-program-in-ruby)

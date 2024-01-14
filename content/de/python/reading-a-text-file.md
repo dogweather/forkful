@@ -1,45 +1,37 @@
 ---
-title:    "Python: Eine Textdatei lesen"
+title:    "Python: Einen Textdatei lesen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Textdateien sind ein grundlegender Bestandteil der Programmierung und eine wichtige Fähigkeit für jeden Python-Entwickler. Sie ermöglichen es uns, größere Mengen an Textdaten zu verarbeiten, zu analysieren und zu manipulieren. Deshalb ist es wichtig, zu lernen, wie man Textdateien in Python liest.
+Warum: Lesen von Textdateien kann nützlich sein, um Daten oder Informationen aus externen Quellen in einem Python-Programm zu nutzen oder zu verarbeiten.
 
-## Wie Geht es
-Das Lesen einer Textdatei in Python ist ein einfacher Prozess, der nur wenige Schritte erfordert. Zunächst müssen wir die Datei öffnen und dann den Inhalt zeilenweise oder als Ganzes lesen. Wir verwenden die Methode `open()` und die `read()` oder `readline()` Funktionen, um den Inhalt zu lesen. Im folgenden Beispiel öffnen wir eine Datei namens `beispiel.txt` und lesen den Inhalt zeilenweise:
-
-```Python
-with open('beispiel.txt', 'r') as f:
-    for line in f:
-        print(line)
-```
-Die Ausgabe wird jede Zeile der Datei ausgeben.
-
-```
-Hallo, das ist eine Beispielzeile
-Hier ist eine zweite Zeile
-Eine andere Zeile
-```
-
-Wenn Sie den gesamten Inhalt der Datei auf einmal lesen möchten, können Sie die `read()` Funktion verwenden:
+Wie geht es: 
+Das Lesen von Textdateien in Python ist relativ einfach und erfordert nur wenige Schritte. Zuerst müssen wir eine Verbindung zur Textdatei herstellen, dann die Daten auslesen und schließlich die Verbindung schließen.
 
 ```Python
-with open('beispiel.txt', 'r') as f:
-    content = f.read()
-    print(content)
+datei = open('daten.txt','r') # Öffnet die Textdatei im Lesemodus und speichert sie in der Variable 'datei'
+daten = datei.read() # Liest die Daten aus der Datei und speichert sie in der Variable 'daten'
+print(daten) # Gibt die Daten aus
+datei.close() # Schließt die Verbindung zur Datei
 ```
 
-Die Variable `content` wird den gesamten Inhalt der Datei als eine einzige Zeichenfolge enthalten.
+Das obige Beispiel zeigt, wie wir eine Textdatei mit dem Namen "daten.txt" öffnen, die Daten auslesen und schließlich die Verbindung schließen. Wir können auch die "with" Anweisung verwenden, um die Verbindung zur Datei automatisch zu schließen, sobald der Codeblock beendet ist.
 
-## Tief Tauchen
-Es gibt verschiedene Methoden, um den Inhalt einer Textdatei zu lesen und zu manipulieren. Eine davon ist die Verwendung von Schleifen wie im obigen Beispiel. Sie können jedoch auch `seek()` verwenden, um an eine bestimmte Stelle in der Datei zu springen, oder `readlines()` verwenden, um den Inhalt als Liste von Zeilen zu erhalten. Es gibt auch Funktionen, um den Inhalt zu bearbeiten, wie das Hinzufügen oder Löschen von Zeilen.
+```Python
+with open('daten.txt', 'r') as datei: # Öffnet die Textdatei und speichert sie in der Variable 'datei'
+    daten = datei.read() # Liest die Daten und speichert sie in der Variable 'daten'
+    print(daten) # Gibt die Daten aus
+```
 
-Es ist auch wichtig zu beachten, dass Textdateien in Python standardmäßig im UTF-8-Format geöffnet werden. Wenn Sie mit anderen Zeichenkodierungen arbeiten möchten, müssen Sie dies angeben, indem Sie die Option `encoding` beim Öffnen der Datei angeben.
+Tief tauchen: 
+Beim Lesen von Textdateien in Python gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen wir angeben, in welchem Modus wir die Datei öffnen möchten (Lesen, Schreiben, Anhängen usw.), da dies Auswirkungen auf die Art und Weise hat, wie wir mit der Datei interagieren können.
 
-## Siehe Auch
-- [Python-Dokumentation zu Textdateien](https://docs.python.org/de/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Ein Einblick in den Umgang mit Dateien in Python](https://realpython.com/read-write-files-python/)
-- [10 praktische Beispiele für die Verwendung von Textdateien in Python](https://www.programiz.com/python-programming/examples/reading-large-file)
+Außerdem müssen wir bei der Verwendung der "read()" Methode berücksichtigen, dass sie die gesamte Datei auf einmal einliest und in einer einzelnen Zeichenfolge speichert. Wenn die Datei sehr groß ist, kann dies zu Leistungsproblemen führen. In diesem Fall können wir die "readline()" Methode verwenden, um die Datei zeilenweise zu lesen, oder die "readlines()" Methode, um eine Liste mit allen Zeilen in der Datei zu erhalten.
+
+Siehe auch: 
+- [Python Dokumentation zum Öffnen von Dateien](https://docs.python.org/3/library/functions.html#open)
+- [Python Dokumentation zu Dateiobjekten](https://docs.python.org/3/library/io.html#io.RawIOBase)
+- [Python Tutorial zur Arbeit mit Dateien](https://realpython.com/read-write-files-python/)

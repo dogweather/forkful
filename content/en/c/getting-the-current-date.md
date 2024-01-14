@@ -1,54 +1,87 @@
 ---
 title:    "C recipe: Getting the current date"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever wondered how your computer knows the current date and time? Or have you ever needed to use the current date in your programming project? Getting the current date may seem like a small task, but it can be very useful for various applications. In this blog post, we will explore how to get the current date in a C program.
+# Why Get the Current Date in C Programming
 
-## How To
+Getting the current date in C programming may seem like a simple task, but it has various practical applications. Whether you want to display the current date on your program's interface or use it to track the passage of time, being able to access the current date is an essential skill for any C programmer.
 
-To get the current date in a C program, we will use the <time.h> header file. This header file contains functions for manipulating date and time information. The main function we will be using is the `time()` function. Here is an example code snippet showing how to get the current time and date:
+# How To Get the Current Date in C Programming
 
-```C
+There are a few different ways to get the current date in C programming, each with its own advantages.
+
+**Using time.h Library:**
+
+```
 #include <stdio.h>
 #include <time.h>
-  
+
 int main()
 {
-    // declaring variables to store current time
-    time_t rawtime; 
-    struct tm * timeinfo;
-  
-    // getting current time and date
-    time (&rawtime);
-    timeinfo = localtime (&rawtime);
-  
-    // printing current date and time
-    printf("Current date and time: %s", asctime(timeinfo));
-  
+    // Declaring a variable to store the current time
+    time_t currentTime;
+
+    // Getting the current time using time() function
+    currentTime = time(NULL);
+
+    // Converting current time to local time
+    struct tm *localTime = localtime(&currentTime);
+
+    // Printing the date and time with proper formatting
+    printf("Current Date and Time: %d/%d/%d ", localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900);
+    printf("%d:%d:%d", localTime->tm_hour, localTime->tm_min, localTime->tm_sec);
+
     return 0;
 }
 ```
 
-Running this code will output the current date and time in the following format:
+**Output:**
+```
+Current Date and Time: 27/05/2021 15:04:26
+```
 
-`Current date and time: Wed Jul 28 11:59:53 2021`
+**Using Windows API:**
 
-The `time()` function returns the current time in seconds since January 1, 1970, also known as the "Unix Epoch." We then use the `localtime()` function to convert this time into a more readable format.
+```
+#include <stdio.h>
+#include <windows.h>
 
-## Deep Dive
-As mentioned earlier, the `time()` function returns the time in seconds since the Unix Epoch. This value is often referred to as a "timestamp." We can use this timestamp to perform various operations, such as calculating the time difference between two dates.
+int main()
+{
+    // Declaring a variable to store the current time
+    SYSTEMTIME currentTime;
 
-The `localtime()` function takes the timestamp and converts it into a `struct tm` type, which contains all the necessary information about the current date and time, such as year, month, day, hour, minute, and second. This makes it easy to access and manipulate specific components of the current date and time.
+    // Getting the current time using GetSystemTime() function
+    GetSystemTime(&currentTime);
 
-If you want more control over the output format, you can use the `strftime()` function to format the time and date according to your needs. This function takes in a format string and the `struct tm` type and returns a string with the formatted date and time. You can find a list of formatting options for the format string in the `strftime()` function documentation.
+    // Printing the date and time with proper formatting
+    printf("Current Date and Time: %d/%d/%d ", currentTime.wDay, currentTime.wMonth, currentTime.wYear);
+    printf("%d:%d:%d", currentTime.wHour, currentTime.wMinute, currentTime.wSecond);
 
-## See Also
-- <a href="https://www.geeksforgeeks.org/time-function-in-c/" target="_blank">GeeksforGeeks - time() function in C</a>
-- <a href="https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm" target="_blank">Tutorials Point - localtime() function in C</a>
-- <a href="https://www.programiz.com/c-programming/library-function/time/strftime" target="_blank">Programiz - strftime() function in C</a>
+    return 0;
+}
+```
 
-Getting the current date and time may seem like a small and trivial task, but it can be very useful in various programming applications. Understanding how to get the current date in C can open up a world of possibilities for your coding projects. So why not give it a try and see what you can create with this knowledge? Happy coding!
+**Output:**
+```
+Current Date and Time: 27/05/2021 15:04:51
+```
+
+# Deep Dive into Getting the Current Date in C Programming
+
+In C programming, the `time.h` library provides various functions for working with date and time. The `time()` function from this library returns the current time in seconds since the Epoch (00:00:00 UTC on 1 January 1970). This value can be used with `localtime()` function to convert it into a more understandable format.
+
+On the other hand, the Windows API provides the `GetSystemTime()` function, which returns the current system date and time in a `SYSTEMTIME` structure. This structure contains individual members for the date and time, making it easier to access and format the data.
+
+Apart from these methods, there are also third-party libraries available, such as `libtime` and `libtldate`, which offer more advanced features for working with date and time in C programming.
+
+# See Also
+
+- [Standard C Library - time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Windows API - GetSystemTime()](https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsystemtime)
+- [libtime - GitHub Repository](https://github.com/zerawr/libtime)
+- [libtldate - GitHub Repository](https://github.com/X-Factor/trusted_linux/security-mac/libtldate)

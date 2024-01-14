@@ -1,49 +1,62 @@
 ---
 title:    "Javascript recipe: Comparing two dates"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a programmer, there are many situations where you would need to compare two dates in your code. Whether you're working on a project that involves scheduling, online booking, or tracking data over time, being able to accurately compare dates is an important skill to have. In this blog post, we'll dive into the steps of how to compare dates in Javascript.
+Have you ever needed to compare two dates in Javascript but weren't sure how to do it? Maybe you want to check if a certain date is before or after another date, or if they are exactly the same. Comparing dates is a common task in Javascript programming and knowing how to do it can save you time and effort. In this blog post, we will explore the various methods and techniques for comparing two dates in Javascript.
 
 ## How To
 
-To begin, let's create two date objects using the `Date()` constructor:
+When working with dates in Javascript, it is important to understand how they are represented. Dates are stored as numbers, specifically the number of milliseconds since January 1, 1970, known as the "epoch" or "unix time". This means that we can easily compare two dates using mathematical operators, such as greater than or less than.
+
+To start, let's initialize two Date objects, representing two different dates:
 
 ```Javascript
-let date1 = new Date('01/01/2021');
-let date2 = new Date('05/10/2021');
+let date1 = new Date("December 25, 2020");
+let date2 = new Date("January 1, 2021");
 ```
 
-To compare these two dates, we can use the `getTime()` method which returns the time value in milliseconds. Then, we can simply use the greater than (`>`) or less than (`<`) operators to compare the values. Here's an example:
+To compare these two dates, we can use the greater than, less than, or equal to operators, as shown below:
 
 ```Javascript
-if (date1.getTime() > date2.getTime()) {
-  console.log('date1 is greater than date2');
-} else {
-  console.log('date2 is greater than date1');
-}
+console.log(date1 > date2); // false
+console.log(date1 < date2); // true
+console.log(date1 === date2); // false
 ```
 
-The output of this code would be:
+Another useful method for comparing dates is using the `getTime()` method. This returns the number of milliseconds since the epoch, which can then be compared using mathematical operators.
 
-```
-date2 is greater than date1
+```Javascript
+console.log(date1.getTime() < date2.getTime()); // true 
 ```
 
-If you need to know if two dates are equal, you can use the `===` operator instead of `>` or `<`.
+In addition, the `getTime()` method also allows for more precise comparisons, such as checking if a date is before or after a specific time in milliseconds.
+
+```Javascript
+console.log(date1.getTime() < 1609237200000); // true - 1609237200000 represents January 1, 2021 at midnight in milliseconds
+```
+
+Lastly, there are also built-in methods like `Date.UTC()` and `Date.parse()` that can be used for comparing dates in a specific format. These methods also return the number of milliseconds since the epoch, making them useful for comparisons.
+
+```Javascript
+console.log(Date.UTC(2020, 11, 25) === Date.UTC(2020, 11, 25)); // true 
+```
 
 ## Deep Dive
 
-It's important to note that comparing dates in Javascript also takes into account time zones. This means that two dates can have the same day, month, and year but still be considered different if they are in different time zones. To avoid this issue, it's recommended to use the `getUTCDate()` and `getUTCMonth()` methods to get the UTC (Coordinated Universal Time) values of the dates and then compare them.
+While comparing dates in Javascript may seem straightforward, there are some important considerations to keep in mind. One major issue is the possibility of time zone differences. When working with dates, it is important to always specify the time zone to avoid any discrepancies. This can be done using the `getTimezoneOffset()` method.
 
-Additionally, you can also use the `getFullYear()`, `getMonth()`, and `getDate()` methods to get the individual year, month, and day values of a date. This can be useful if you want to compare specific parts of dates.
+Another potential issue is leap years. Dates like February 29th can cause problems when comparing dates, as some years may have a leap day while others do not. The `getFullYear()` method can help with this by returning the four-digit year, allowing for accurate comparisons.
 
 ## See Also
 
-- [Date Object in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Comparing Dates in Javascript](https://www.geeksforgeeks.org/how-to-compare-two-dates-in-javascript/)
-- [Working with Dates and Times in Javascript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)
+To learn more about working with dates in Javascript, check out the following resources:
+
+- [MDN Web Docs - Working with Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools - Javascript Dates](https://www.w3schools.com/js/js_dates.asp)
+- [JavaScript.info - Date and Time](https://javascript.info/date)

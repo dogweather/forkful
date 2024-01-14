@@ -1,56 +1,37 @@
 ---
-title:    "Java: パターンに一致する文字の削除"
+title:    "Java: パターンと一致する文字を削除する"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-あなたはプログラミングをする際に、時々文字列の中に特定のパターンに一致する文字を削除する必要があるかもしれません。例えば、あなたがあるテキストファイルから特定の単語を取り除きたい場合や、不要な記号を削除したい場合などです。この記事では、Javaを使って文字パターンに一致する文字を削除する方法を紹介します。
+あるパターンにマッチする文字を削除することに必要性を感じるのは、データから特定の文字列を取り除く必要があるときです。例えば、テキストから不要な空白を削除したり、特定の文字列を省略したりする場合に使用できます。
 
-## 方法
+# 方法
 
-まずは、```replaceAll()```メソッドを使って文字列の中から特定のパターンに一致する文字を削除する方法を見ていきましょう。
-
-```Java
-String text = "これは、問題です！これは、大きな問題ではありません。";
-String pattern = "問題";
-String result = text.replaceAll(pattern, "");
-System.out.println(result);
-```
-
-このコードを実行すると、以下のような結果が得られます。
-
-```
-これは、！これは、大きなではありません。
-```
-
-また、正規表現を使って文字パターンに一致する文字を削除することもできます。以下は、数字だけを残すという正規表現を使った例です。
+文字列を扱うJavaで、パターンにマッチする文字を削除する方法は主に2つあります。一つはStringクラスのreplaceAll()メソッドを使用する方法、もう一つはStringBuilderクラスのdelete()メソッドを使用する方法です。以下のコードブロックを参考にしてください。
 
 ```Java
-String text = "I have 5 apples and 3 oranges.";
-String pattern = "[^0-9]";
-String result = text.replaceAll(pattern, "");
-System.out.println(result);
+// replaceAll()メソッドを使用する場合
+String str = "Hello World";
+String newStr = str.replaceAll("o", ""); // "Hello Wrld"
+
+// delete()メソッドを使用する場合
+StringBuilder sb = new StringBuilder("Hello World");
+sb.delete(4, 6); // StringBuilderの中身は "Helloorld" になる
 ```
 
-このコードを実行すると、結果は以下のようになります。
+上記の例では、"o"というパターンにマッチする文字を削除する方法を紹介しましたが、同様に正規表現を使用することで、より複雑なパターンにも対応できます。
 
-```
-53
-```
+# ディープダイブ
 
-これらの例を参考にしながら、自分のプログラムに合った方法で文字パターンに一致する文字を削除してみてください。
+文字を削除する際には、削除される文字のインデックスや位置を理解することが重要です。StringクラスのreplaceAll()メソッドでは、全てのパターンにマッチする文字が一括で削除されるため、文字の位置がずれてしまう可能性があります。一方、StringBuilderクラスのdelete()メソッドでは、指定した範囲の文字が削除されるため、文字の位置は変わりません。また、正規表現を使用する際にはパターンの記述にも注意が必要です。詳しくは公式ドキュメントを参考にしてください。
 
-## 深堀り
+# 併せて参照
 
-Javaでは、文字列処理をするための便利なクラスとして```StringBuilder```や```StringBuffer```があります。これらのクラスには、文字列を操作するための多くのメソッドが用意されています。例えば、```replace()```や```delete()```などがあり、文字パターンに一致する文字を削除することもできます。また、これらのクラスは文字列を直接操作するため、大量の文字列を扱う際にパフォーマンスの向上につながります。
-
-ただし、これらのクラスは**スレッドセーフ**ではないため、複数のスレッドで同時に実行する場合は注意が必要です。スレッドセーフなクラスを使いたい場合は、```StringTokenizer```を使うことができます。
-
-## 参考リンク
-
-- [JavaのreplaceAll()メソッドの使い方](https://java-code.jp/146)
-- [Javaの正規表現の書き方](https://java-code.jp/186)
-- [Javaで文字列操作を行うためのクラス一覧](https://java-code.jp/186)
+- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+- [JavaのStringBuilderクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#delete-int-int-)
+- [正規表現の基礎知識](https://www.javadrive.jp/start/regex/index1.html)

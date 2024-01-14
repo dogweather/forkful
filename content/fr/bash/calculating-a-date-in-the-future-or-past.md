@@ -1,42 +1,69 @@
 ---
 title:    "Bash: Calculer une date dans le futur ou le passé"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Calculer la date dans le passé ou dans le futur peut être un outil très utile dans de nombreuses situations. Par exemple, planifier des événements, suivre les délais ou simplement savoir quel jour de la semaine tombera une certaine date.
+Il est souvent nécessaire de calculer une date dans le futur ou dans le passé lors de la programmation en Bash. Que ce soit pour des tâches de planification ou de gestion de données, cette compétence est essentielle pour un programmeur.
 
-## Comment faire
+# Comment faire
 
-Pour calculer une date dans le passé ou dans le futur, nous pouvons utiliser la commande `date` en Bash. Voici un exemple pour calculer la date dans 5 jours :
+La première étape pour calculer une date dans le futur ou dans le passé est de déterminer la date de référence. Cela peut être la date actuelle, une date précédemment saisie ou une date fournie par l'utilisateur.
 
-```
-Bash date -d "5 days"
-```
+Ensuite, il faut décider du nombre d'années, de mois ou de jours à ajouter ou à soustraire à cette date de référence. Dans Bash, cela peut être fait en utilisant la commande "date -d" suivie de la durée souhaitée.
 
-L'ajout du préfixe `-d` nous permet de préciser à la commande `date` que nous voulons calculer une date dans le futur. Nous pouvons également spécifier une date de départ en utilisant la même syntaxe, par exemple si nous voulons calculer la date dans 5 jours à partir du 10 octobre 2021 :
+Par exemple, pour calculer la date dans 6 mois à partir de la date actuelle :
 
-```
-Bash date -d "2021-10-10 + 5 days"
+```Bash
+date -d "6 months"
 ```
 
-La sortie sera au format standard de date, mais nous pouvons également utiliser des options pour modifier le format de la sortie. Par exemple, pour avoir la date au format JJ/MM/AAAA :
+Le résultat sera affiché au format par défaut de la date et de l'heure.
 
+Pour obtenir un format spécifique de sortie, il suffit d'ajouter la commande "date" à la fin avec les options de formatage souhaitées.
+
+Par exemple, pour obtenir la date dans 6 mois au format AAAA-MM-JJ :
+
+```Bash
+date -d "6 months" +"%Y-%m-%d"
 ```
-Bash date -d "5 days" +"%d/%m/%Y"
+
+Cela peut également être utilisé pour soustraire des durées à la date de référence :
+
+```Bash
+date -d "1 year ago"
 ```
 
-## Plongée en profondeur
+Même principe pour formater la sortie selon nos besoins :
 
-La commande `date` est en réalité beaucoup plus puissante et peut calculer des dates dans le passé ou dans le futur avec une précision allant jusqu'au millième de seconde. Elle prend en compte les années bissextiles et les fuseaux horaires. Elle peut même calculer des dates à partir de chaînes de caractères relatives, comme "next Thursday" ou "last month".
+```Bash
+date -d "1 year ago" +"%d/%m/%Y"
+```
 
-Pour une utilisation plus avancée, nous pouvons également utiliser la commande `date` avec des variables et des fonctions pour automatiser le calcul de dates dans des scripts Bash.
+# Plongée en profondeur
 
-## Voir aussi
+En plus des durées de temps simples telles que "6 months" ou "1 year ago", les commandes "date -d" permettent également de gérer des dates à l'aide de valeurs absolues.
 
-- [Documentation officielle de la commande date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
-- [Tutoriel sur le calcul de dates en Bash](https://www.ostechnix.com/calculate-date-in-linux/)
-- [Autres astuces Bash sur notre blog](https://notreblogfrench.com/tag/bash/)
+Par exemple, pour calculer la date dans 10 jours à partir du 15 mars 2021 :
+
+```Bash
+date -d "2021/03/15 + 10 days"
+```
+
+De plus, il est possible de choisir une date de référence différente en utilisant le paramètre "-u" qui prend en compte le fuseau horaire UTC.
+
+```Bash
+date -d "-6 hours + 1 week" -u
+```
+
+Notez que l'ordre des valeurs est important, la commande utilisera la date de référence en premier avant de soustraire ou d'ajouter la durée spécifiée.
+
+# Voir aussi
+
+- [Documentation officielle de la commande "date"](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)
+- [Tutoriel sur la manipulation de dates en Bash](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/3737021-manipulez-les-dates-et-les-heures)
+- [Astuce pour ajouter une date à un fichier en Bash](https://stackoverflow.com/questions/17993449/appending-date-to-filename-in-bash)

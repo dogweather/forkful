@@ -1,53 +1,50 @@
 ---
 title:    "C#: Komentoriviparametrien lukeminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentoriviargumentteja
+### Miksi lukea komentorivin argumentteja?
 
-Tervetuloa lukemaan C# ohjelmointiblogia! Tällä kertaa keskitymme siihen, miksi on tärkeää osata lukea komentoriviargumentteja ja miten se onnistuu helposti C#-kielellä. Tämä taito on erittäin hyödyllinen kehittäjille, sillä se mahdollistaa ohjelman käyttämisen monipuolisemmin ja tehokkaammin.
+Komentorivin argumenttien lukeminen on tärkeä taito kaikille C#-ohjelmoijille. Se mahdollistaa ohjelman suorittamisen erilaisilla parametreilla, jolloin ohjelma voi toimia joustavammin ja tarjota käyttäjälle enemmän vaihtoehtoja. Lisäksi se tekee ohjelman ajoittamisesta helpompaa, koska eri skenaarioiden testaaminen ei vaadi koodimuutoksia.
 
-## Kuinka lukea komentoriviargumentteja
+### Kuinka lukea komentorivin argumentteja?
 
-C# tarjoaa helpon tavan lukea komentoriviargumentteja käyttämällä System.Environment.GetCommandLineArgs() -metodia. Tämä metodi palauttaa taulukon kaikista annetuista komentoriviargumenteista. Seuraavassa esimerkissä näytämme, miten tämä tapahtuu:
+Komentorivin argumenttien lukeminen C#-kielellä on helppoa. Ensin luodaan Main-metodi, joka on ohjelman aloituspiste ja ottaa vastaan taulukon komentorivin argumenteista. Tämän jälkeen voidaan käyttää string-taulukon indeksöintiä, jotta halutut argumentit saadaan talteen. Tässä esimerkissä luetaan ja tulostetaan ensimmäinen ja toinen komentorivin argumentti:
 
 ```C#
-using System;
-
-public class CommandLineArguments
+static void Main(string[] args)
 {
-    public static void Main(string[] args)
-    {
-        string[] arguments = System.Environment.GetCommandLineArgs();
+    string argument1 = args[0];
+    string argument2 = args[1];
+    Console.WriteLine(argument1);
+    Console.WriteLine(argument2);
+}
+```
 
-        // Tulostetaan kaikki argumentit
-        foreach (string arg in arguments)
-        {
-            Console.WriteLine(arg);
-        }
+Ohjelma voi myös lukea useita argumentteja ja suorittaa erilaisia toimintoja riippuen annetuista parametreista. Esimerkiksi jos halutaan tarkistaa, onko komentorivillä annettu "-help" argumentti, voidaan käyttää seuraavaa koodia:
+
+```C#
+static void Main(string[] args)
+{
+    if (args.Contains("-help"))
+    {
+        Console.WriteLine("Ohjeet:");
+        Console.WriteLine(" -help: Näyttää tämän viestin");
     }
 }
 ```
 
-Esimerkissä ohjelmamme tulostaa kaikki komentoriviargumentit yksi kerrallaan. Voit kokeilla tätä itse muuttamalla ja antamalla omia komentoriviargumentteja.
+Tässä tapauksessa ohjelma tulostaa ohjeet, mikäli komentorivillä on annettu "-help" argumentti. Muussa tapauksessa mitään ei tulosteta.
 
-```bash
-csc CommandLineArguments.cs # Käännä ohjelma
-CommandLineArguments abc 123 # Suorita ohjelma antamalla komentoriviargumentteja
-```
+### Syvällinen tarkastelu komentorivin argumenttien lukemisesta
 
-Komentoriviargumentteja voi käyttää esimerkiksi ohjelman parametreina tai syöttötietoina, joten niiden hyödyllisyys on kiistaton.
+Kuten edellä mainituista esimerkeistä huomataan, komentorivin argumenttien lukeminen on yksinkertaista C#-kielellä. Argumentteja voidaan käyttää monipuolisesti ohjelman suorittamisessa ja vaihtoehtojen tarjoamisessa käyttäjälle. On myös mahdollista käsitellä useita argumentteja ja suorittaa tarkempia tarkistuksia, mikä tekee ohjelmasta joustavamman ja dynaamisemman.
 
-## Syventävä tieto komentoriviargumenttien lukemisesta
+### Katso myös
 
-Komentoriviargumentit sisältävät usein tärkeitä tietoja, jotka ovat tarpeellisia ohjelman suorittamisessa. On kuitenkin tärkeää huomioida, että komentoriviargumentit eivät ole aina turvallisia, sillä ne voivat sisältää myös haitallista koodia. Siksi on tärkeää validoida ja tarkistaa argumentit ennen niiden käyttämistä ohjelmassa.
-
-## Katso myös
-
-[Microsoftin virallinen dokumentaatio komentoriviargumenttien lukemisesta C#-kielellä](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netcore-3.1)
-
-[Tutorialspointin opas C#-kielen perusteisiin, joka sisältää myös ohjeet komentoriviargumenttien lukemiseen](https://www.tutorialspoint.com/csharp/index.htm)
-
-[Stack Overflown vastaus komentoriviargumenttien validoinnista ja turvallisuudesta](https://stackoverflow.com/questions/628176/how-to-read-command-line-arguments-with-a-blank-spa
+- [C#-voimakkuuden perusteet: Komentorivin argumentit](https://docs.microsoft.com/fi-fi/dotnet/csharp/fundamentals/program-structure/main-command-args)
+- [Komentorivin argumenttien käsittely C#-kielellä](https://www.geeksforgeeks.org/command-line-arguments-in-c-sharp/) 
+- [Miten käyttää komentorivin argumentteja C#-koodissa](https://www.c-sharpcorner.com/UploadFile/pranayamr/working-with-command-line-arguments-in-C-Sharp/)

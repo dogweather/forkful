@@ -1,56 +1,48 @@
 ---
 title:    "Javascript: Päivämäärän muuttaminen merkkijonoksi"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi muuttaa päivämäärä merkkijonoksi?
+## Miksi
 
-Päivämäärän muuttaminen merkkijonoksi on tärkeä osa Javascript-ohjelmointia, koska se antaa mahdollisuuden käsitellä päivämääriä kätevässä muodossa. Tämä on erityisen hyödyllistä, kun halutaan tallentaa tai näyttää päivämäärä tietokannassa tai sivustolla.
+Miksi joku haluaisi muuntaa päivämäärän merkkijonoksi? Tämä on yleinen tehtävä, joka syntyy kun ohjelmointiin liittyvää tietoa tallennetaan tietokantaan tai saman tiedon lukemiseen käytetään käyttöliittymässä. Päivämäärän muuttaminen merkkijonoksi mahdollistaa sen helpon säilyttämisen ja käytön.
 
-## Miten: Koodiesimerkkejä ja tulosteita
+## Miten
 
-Jos haluat muuttaa päivämäärän merkkijonoksi Javascriptissä, voit tehdä sen yksinkertaisesti päivämäärä- ja aikaobjektin avulla.
-
-```Javascript
-// Luodaan uusi päivämäärä ja aika
-let date = new Date();
-
-// Muutetaan se merkkijonoksi
-let dateString = date.toLocaleString();
-
-// Tulostetaan merkkijono konsoliin
-console.log(dateString);  // tulostaa esimerkiksi "15.4.2021 klo 12.00"
-```
-
-Voit myös asettaa haluamasi merkinnän päivämäärälle käyttämällä `toLocaleDateString()` ja `toLocaleTimeString()` -metodeja:
+Muuntamalla päivämäärä merkkijonoksi Javascriptissa ei ole monimutkaista. Käytä vain Date-objektin sisäänrakennettua toString()-metodia. Katso alla olevaa koodi esimerkkiä ja sen palautusarvoja:
 
 ```Javascript
-// Luodaan uusi päivämäärä ja aika
-let date = new Date(2021, 3, 15, 12, 30);
+const date = new Date();
+console.log(date.toString()); 
 
-// Muutetaan se merkkijonoksi halutun merkinnän mukaisesti
-let dateString = date.toLocaleDateString('fi-FI', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
-let timeString = date.toLocaleTimeString('fi-FI', {hour: '2-digit', minute: '2-digit'});
-
-// Tulostetaan muodostetut merkkijonot konsoliin
-console.log(dateString); // tulostaa "torstai 15. huhtikuuta 2021"
-console.log(timeString); // tulostaa "12.30"
+// Output: Mon Apr 27 2020 17: 08: 02 GMT + 0300(EEST)
 ```
 
-## Syvällinen tarkastelu
+Voit myös muuttaa päivämäärän haluamaasi muotoon käyttämällä toLocaleString() -metodia yhdessä parameterin kanssa, joka määrittää halutun kielen. Katso alla olevaa koodi esimerkkiä ja sen palautusarvoja:
 
-Javascriptissä päivämäärät ja ajat tallennetaan erityisiksi objekteiksi, jotka tarjoavat monia hyödyllisiä metodeja, kuten `toLocaleString()` ja `toLocaleDateString()`. Nämä metodit ottavat parametreikseen maatunnisteen ja asetuksia, joiden avulla voit muokata päivämäärän merkintää haluamallasi tavalla.
+```Javascript
+const date = new Date();
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+console.log(date.toLocaleString('fi-FI', options)); 
 
-On myös tärkeää muistaa, että päivämäärät käsitellään paikallisen aikavyöhykkeen mukaan, joten jos haluat käsitellä päivämääriä eri aikavyöhykkeiltä, sinun kannattaa käyttää `getUTCDate()` ja `setUTCDate()` -metodeja.
+// Output: 27. huhtikuuta 2020
+```
 
-# Katso myös
+Päivämäärän muuntamisella on myös mahdollista käyttää muita Date-objektin metodien tarjoamia vaihtoehtoja, kuten getFullYear(), getMonth() ja getDate(). Näiden avulla voit muokata päivämäärän merkkijonoksi juuri haluamallasi tavalla.
 
-Suosittelemme lukemaan lisää Javascriptin päivämäärä- ja aikaobjekteista näistä linkeistä:
+## Syvällisempi sukellus
 
-- [MDN Web Docs: Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: JavaScript Date Reference](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [Eloquent Javascript: Dates and Times](https://eloquentjavascript.net/09_regexp.html#h_ebGV+0yWjv)
+Päivämäärän muuntaminen merkkijonoksi voi johtaa haasteisiin, kun tulee vastaan kansainvälisiä päivämäärän muotoja tai aikavyöhykkeitä. On tärkeää käyttää oikeita toimintoja ja säätää parametrejä oikein, jotta saadaan oikea tieto tallennettua ja näytettyä.
 
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään, miten voit muuttaa päivämäärän merkkijonoksi Javascriptissä. Onnea ohjelmointiin!
+Date-objekti tarjoaa myös muita hyödyllisiä metodeja, kuten getTime(), joka muuntaa päivämäärän millisekunneiksi. Tämä on hyödyllistä, kun tieto tallennetaan tietokantaan tai käsitellään muilla ohjelmointikielillä.
+
+Päivämäärän muuntaminen merkkijonoksi on yksi osa Javascript-ohjelmointia, joka vaatii tietämystä Date-objektin tarjoamista vaihtoehdoista ja sen käsittelemisestä oikealla tavalla.
+
+## Katso myös
+
+- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools - Javascript Date](https://www.w3schools.com/js/js_date.asp)
+- [GeeksforGeeks - JavaScript | Date toLocaleString() Method](https://www.geeksforgeeks.org/javascript-date-tolocalestring-method/)

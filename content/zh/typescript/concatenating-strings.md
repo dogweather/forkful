@@ -1,68 +1,64 @@
 ---
 title:    "TypeScript: 连接字符串"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：当我们需要将多个字符串连接在一起时，使用字符串连接是非常方便的。它可以帮助我们在代码中动态地生成字符串，使得我们的代码更加灵活和可读性更强。
 
-当我们在编写程序时，经常会遇到需要拼接（concatenate）字符串的情况。拼接字符串的作用是将多个字符串连接起来，形成一个新的字符串。这可以帮助我们更轻松地操作和处理字符串型数据，尤其是在需要动态生成文本内容的情况下。
+怎么做：首先，我们需要使用加号（+）运算符来连接两个字符串。让我们来看一个简单的例子，在控制台打印出“Hello World”的字符串：
 
-## 如何实现
-
-要在TypeScript中拼接字符串，我们可以使用`+`运算符或`concat()`方法。例如，假设我们有两个字符串`'Hello'`和`'world!'`，我们想要将它们拼接成一个新的字符串`'Hello world!'`，以下是两种方法的示例代码：
-
-```
-TypeScript
-
-// 使用 + 运算符
-let greeting = 'Hello';
-greeting = greeting + ' world!';
-console.log(greeting); // Output: Hello world!
-
-// 使用 concat() 方法
-let greeting = 'Hello';
-greeting = greeting.concat(' world!');
-console.log(greeting); // Output: Hello world!
+```TypeScript
+let hello:string = "Hello";
+let world:string = "World";
+console.log(hello + " " + world);
 ```
 
-从上面的代码可以看出，无论是使用`+`运算符还是`concat()`方法，我们都可以实现字符串的拼接。如果我们有多个字符串需要拼接，也可以反复使用这两种方法，例如：
+输出将会是：“Hello World”。我们也可以使用模板字面量（template literals）来连接字符串，使用反引号（`）来包裹字符串，并在其中使用占位符（placeholders）来插入变量。让我们来看一个使用模板字面量的例子：
 
-```
-// 使用 + 运算符
-let sentence = 'Hello';
-sentence = sentence + ', my name is';
-sentence = sentence + ' John.';
-console.log(sentence); // Output: Hello, my name is John.
-
-// 使用 concat() 方法
-let sentence = 'Hello';
-sentence = sentence.concat(', my name is');
-sentence = sentence.concat(' John.');
-console.log(sentence); // Output: Hello, my name is John.
+```TypeScript
+let user:string = "John";
+let message:string = `Hello ${user}, welcome to our website!`;
+console.log(message);
 ```
 
-## 深入了解
+输出将会是：“Hello John, welcome to our website！”在这个例子中，我们也可以使用表达式来计算占位符的值。例如，我们可以将一个数值与一个字符串连接起来：
 
-虽然`+`运算符和`concat()`方法都可以实现字符串的拼接，但它们的实现原理是不同的。`+`运算符实际上是一个数学运算符，在字符串类型数据中，它的作用是将两个字符串连接起来。而`concat()`方法是字符串对象内置的一个方法，它接收一个或多个字符串参数，并将它们连接起来形成一个新的字符串。
-
-此外，我们也可以使用模板字符串（template strings）来实现字符串的拼接。模板字符串使用反引号（`）包裹，可以在其中插入变量或表达式，例如：
-
-```
-// 使用模板字符串
-let name = 'John';
-let greeting = `Hello, my name is ${name}.`;
-console.log(greeting); // Output: Hello, my name is John.
+```TypeScript
+let num:number = 5;
+let message:string = `The result of the calculation is ${num + 5}`;
+console.log(message);
 ```
 
-## 参考资料
+输出将会是：“The result of the calculation is 10”。
 
-- [TypeScript官方文档：字符串](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN：String concat()方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [MDN：字符串和模板字符串](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Template_literals)
+深入了解：在TypeScript中，字符串连接的底层原理是使用字符串对象的concat()方法，它将两个或多个字符串连接成一个新的字符串。这个方法可以接受多个字符串作为参数，并依次将它们连接在一起。让我们来使用concat()方法来实现之前的两个例子：
 
-## 另请参阅
+```TypeScript
+let hello:string = "Hello";
+let world:string = "World";
+console.log(hello.concat(" ", world));
 
-- [TypeScript官方文档：基本数据类型](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [MDN：字符串方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#Methods)
+let user:string = "John";
+let message:string = "Hello";
+message = message.concat(" ", user, ", welcome to our website!");
+console.log(message);
+```
+
+在这个例子中，我们也可以传递一个数组作为参数，concat()方法将会将数组中的所有元素连接成一个新的字符串。例如：
+
+```TypeScript
+let colors:string[] = ["red", "green", "blue"];
+let result:string = colors.concat(["yellow", "orange"]);
+console.log(result);
+```
+
+输出将会是一个包含所有颜色的字符串，类似于：“redgreenblueyelloworange”。
+
+见下文：如果你想了解更多关于字符串处理的知识，请参考以下链接：
+
+- [TypeScript官方文档：字符串连接](https://www.typescriptlang.org/docs/handbook/strings.html#string-concatenation)
+- [Codecademy：字符串连接](https://www.codecademy.com/courses/learn-typescript/lessons/using-typescript/exercises/string-concatenation)
+- [W3Schools：字符串连接方法](https://www.w3schools.com/jsref/jsref_concat_string.asp)

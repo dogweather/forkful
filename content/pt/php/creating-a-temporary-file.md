@@ -1,57 +1,45 @@
 ---
 title:    "PHP: Criando um arquivo temporário"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em PHP?
+# Por que criar arquivos temporários em PHP?
 
-Criar um arquivo temporário é uma forma eficiente de armazenar dados temporários em um programa PHP. Isso pode ser especialmente útil em cenários onde é necessário salvar informações temporárias, mas não é necessário mantê-las permanentemente.
+Criar arquivos temporários pode ser útil em diversos casos, como por exemplo, para armazenar dados temporários, gerar arquivos de log ou criar backups em tempo de execução. Além disso, pode ser uma maneira de economizar espaço em disco, já que esses arquivos serão automaticamente excluídos após o uso.
 
-## Como criar um arquivo temporário em PHP
+## Como criar arquivos temporários em PHP
 
-Para criar um arquivo temporário em PHP, usamos a função `tmpfile()`, que retorna um ponteiro para um novo arquivo temporário. Podemos, então, ler e escrever dados neste arquivo da mesma forma que fazemos com outros arquivos. Veja um exemplo abaixo:
+Para criar um arquivo temporário em PHP, podemos usar a função `tmpfile()`. Ela retorna um ponteiro para o arquivo temporário criado, que pode ser usado para escrever e ler dados.
 
-```PHP
-// Cria um arquivo temporário
-$file = tmpfile();
+```
+<?php
+$arquivo_temp = tmpfile();
+if($arquivo_temp){
+    fwrite($arquivo_temp, "Esse é um arquivo temporário criado em PHP!");
+    fseek($arquivo_temp, 0); // volta para o início do arquivo
+    echo fgetc($arquivo_temp); // imprime o primeiro caractere do arquivo
+    fclose($arquivo_temp); // fecha o arquivo temporário
+}
+```
+O código acima irá criar um arquivo temporário, escrever um texto nele, imprimir o primeiro caractere e fechá-lo.
 
-// Escreve dados no arquivo temporário
-fwrite($file, "Este é um exemplo de conteúdo para o arquivo temporário.");
+## Aprofundando no assunto
+
+A função `tmpfile()` cria um arquivo temporário de forma segura, garantindo que o nome do arquivo não seja usado por outro processo e que o arquivo seja excluído automaticamente após o uso. No entanto, é possível especificar um nome para o arquivo temporário usando a função `tempnam()`, que aceita dois parâmetros: o diretório onde o arquivo será criado e um prefixo opcional.
+
+```
+<?php
+$temp_dir = '/tmp/';
+$prefix = 'arquivo_temp';
+$arquivo_temp = tempnam($temp_dir, $prefix);
 ```
 
-Podemos também recuperar o conteúdo do arquivo temporário usando a função `fgets()`, como mostrado no exemplo abaixo:
+Além disso, podemos controlar a duração do arquivo temporário usando a função `stream_set_timeout()`. Por exemplo, podemos definir um tempo limite para a exclusão do arquivo, caso ele ainda esteja aberto após o uso.
 
-```PHP
-// Volta para o início do arquivo temporário
-rewind($file);
+# Veja também
 
-// Lê o conteúdo do arquivo temporário
-$conteudo = fgets($file);
-
-// Imprime o conteúdo na tela
-echo $conteudo; // Output: Este é um exemplo de conteúdo para o arquivo temporário.
-```
-
-## Aprofundando no assunto: criando um arquivo temporário seguro
-
-Criar um arquivo temporário é uma tarefa simples, mas é importante garantir que o arquivo seja seguro para uso em seu programa. Para isso, podemos usar a função `sys_get_temp_dir()` para recuperar o diretório temporário do sistema operacional e, em seguida, especificar esse diretório como o local para o nosso arquivo temporário, como mostrado no exemplo abaixo:
-
-```PHP
-// Cria um arquivo temporário no diretório temporário do sistema
-$file = tmpfile(sys_get_temp_dir());
-
-// Escreve dados no arquivo temporário
-fwrite($file, "Este é um exemplo de conteúdo para o arquivo temporário.");
-
-// Fecha o arquivo para garantir que seja excluído
-fclose($file);
-```
-
-Ao fechar o arquivo, ele será excluído automaticamente, evitando possíveis brechas de segurança em seu programa. É importante lembrar que, ao usar essa técnica, é recomendado especificar um prefixo único para o nome do arquivo temporário, usando a função `tempnam()`.
-
-## Veja também
-
-- [Documentação oficial do PHP sobre a função tmpfile()](https://www.php.net/manual/pt_BR/function.tmpfile.php)
-- [Artigo sobre segurança em criação de arquivos temporários em PHP (em inglês)](https://paragonie.com/blog/2016/12/generating-secure-random-numbers-in-php)
+- [Documentação oficial do PHP sobre arquivos temporários](https://www.php.net/manual/pt_BR/function.tmpfile.php)
+- [Tutorial sobre arquivos temporários em PHP](https://www.tutorialspoint.com/php/php_files.htm)

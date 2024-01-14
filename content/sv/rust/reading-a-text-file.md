@@ -1,56 +1,45 @@
 ---
-title:    "Rust: Att läsa en textfil"
+title:    "Rust: Läsa en textfil"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa textfiler är en vanlig och viktig del av programmering. Oavsett om du vill manipulera data eller söka efter specifika mönster, är det nödvändigt att kunna läsa och hantera textfiler. I denna bloggpost kommer vi att titta på hur man kan göra detta med hjälp av Rust-programmeringsspråket.
+Att läsa och förstå textfiler är en grundläggande färdighet för alla programmerare. För att kunna behandla och analysera data måste man kunna läsa in det från textfiler. Här kommer vi att utforska hur man kan göra det med hjälp av Rust-programmeringsspråket.
 
-## Hur man gör
+## Hur man läser en textfil
 
-Eftersom läsning av textfiler är en grundläggande del av programmering, finns det flera olika sätt att göra det på. I denna bloggpost kommer vi att använda Rusts standardbibliotek för att läsa en textfil.
+Först och främst måste vi importera standardbiblioteket "std::fs" för att få tillgång till funktionen "File::open", som låter oss öppna en textfil.
 
-Först måste vi importera nödvändiga bibliotek i vår kod. För att kunna arbeta med filer måste vi inkludera `std::fs` biblioteket. Vi kommer också att använda några andra bibliotek för att hantera filnamn och eventuella fel som kan uppstå.
+``` Rust
+use std::fs::File;
 
-```Rust
-use std::fs;
-use std::io::{BufReader, BufRead, Error};
-use std::path::Path;
+let fil = File::open("exempel.txt").expect("Kunde inte öppna filen");
 ```
 
-Nu kan vi definiera vår huvudfunktion där vi kommer att läsa vår textfil. Vi börjar med att skapa en ny instans av en `BufReader` som läser vår fil. Sedan använder vi en `File` metod från `fs` biblioteket för att öppna filen vi vill läsa. I detta exempel kommer vi att läsa en fil som heter "test.txt".
+Nästa steg är att skapa en variabel som ska hålla vår filström och läsa in innehållet i textfilen med hjälp av "read_to_string" funktionen.
 
-```Rust
-fn main() -> Result<(), Error> {
-    let file = fs::File::open(Path::new("test.txt"))?;
-    let reader = BufReader::new(file);
+``` Rust
+let mut innehall = String::new();
+match fil.read_to_string(&mut innehall) {
+   Ok(_) => println!("{}", innehall),
+   Err(e) => println!("Kunde inte läsa filen: {}", e),
 }
 ```
 
-Nu har vi en läsare för vår fil och det är dags att läsa själva innehållet. Med hjälp av en `for` loop kan vi loopa igenom varje rad i filen och skriva ut den till konsolen.
-
-```Rust
-for line in reader.lines() {
-    println!("{}", line?);
-}
-```
-
-Med hjälp av `line?` kan vi hantera eventuella fel som kan uppstå under läsningen av filen.
-
-När vi har läst hela filen är det viktigt att stänga läsaren för att undvika eventuella läckor. Detta kan göras genom att till exempel placera koden `reader.close();` i slutet av vår funktion.
-
-Nu kan vi köra vår kod och se resultatet i konsolen! Om vår test.txt fil innehåller någon text kommer det att skrivas ut i konsolen.
+Vi kan nu skriva ut innehållet i textfilen på skärmen. Om allt går väl, kommer vi att se texten från vår fil i terminalen.
 
 ## Djupdykning
 
-Att läsa textfiler kan verka enkelt, men det finns många aspekter som kan behöva tas hänsyn till, beroende på vilken typ av textfil det är och vad vi vill göra med den. Till exempel kan det vara viktigt att ta hänsyn till filens encoding för att få korrekt utdata. Det kan också vara användbart att kunna manipulera och redigera filen innan den läses in.
+När vi läser in en textfil i Rust, så skapar programmet en instans av filtypen "std::fs::File". Denna fil ger oss tillgång till olika metoder för att läsa och manipulera filen. En av de mest användbara metoderna är "read_to_string", som vi nämnde i det tidigare exempel. Denna metod gör att vi kan läsa in hela filen och spara innehållet i en variabel som en sträng. Vi kan sedan använda detta innehåll för att utföra olika operationer.
 
-Det är också viktigt att ha i åtanke att läsning av filer kan vara en resurskrävande operation och att det kan finnas andra sätt att hantera och hantera data på mer effektiva sätt beroende på vad vi vill göra. Därför är det alltid viktigt att noggrant planera och välja lämpliga metoder för att hantera textfiler i våra program.
+En annan nyttig metod är "lines", som låter oss läsa in filen rad för rad och utföra operationer på varje rad separat. Detta kan vara användbart när man arbetar med stora textfiler som inte kan läsas in i minnet i ett enda skede.
 
 ## Se även
 
-- [Rust standardbibliotek](https://doc.rust-lang.org/std/fs/index.html)
-- [Läsa innehåll från en fil i Rust](https://riptutorial.com/rust/example/7828/reading-content-from-a-file)
+- [Rust Dokumentation - Läsning och skrivning av filer](https://doc.rust-lang.org/std/fs/struct.File.html#method.read_to_string)
+- [Rust Dokumentation - Iteratorer för filer](https://doc.rust-lang.org/std/fs/struct.File.html#method.lines)
+- [Officiell Rust-webbplats](https://www.rust-lang.org/sv-SE/)

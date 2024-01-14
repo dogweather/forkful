@@ -1,40 +1,44 @@
 ---
-title:    "Fish Shell: Capitalizzare una stringa"
+title:    "Fish Shell: Capitalizzazione di una stringa"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Ci sono molte ragioni per cui potresti voler capitalizzare una stringa nella programmazione Shell di Fish. Ad esempio, potresti voler rendere più leggibile la tua codifica o avere una formattazione consistente nei tuoi output.
+
+Se stai iniziando a imparare il Fish Shell, potresti trovarti a dover manipolare le stringhe di testo. Una delle operazioni più comuni è la capitalizzazione di una stringa, ovvero rendere la prima lettera maiuscola.
+
+Ma perché dovresti farlo? Ci sono molte ragioni, ad esempio per uniformare lo stile del testo, per rendere più leggibili i titoli o per rispettare alcune convenzioni di scrittura.
 
 ## Come fare
-Per capitalizzare una stringa in Fish Shell, puoi utilizzare il comando `string capitalize`, seguito dalla stringa che desideri modificare. Ad esempio:
+
+Se stai usando il Fish Shell, ci sono diverse opzioni per capitalizzare una stringa. Vediamo alcune di esse utilizzando l'operatore di sostituzione dei comandi ```sub```:
 
 ```
-string capitalize "ciao a tutti"
+# Capitalizza solo la prima lettera
+echo "ciao mondo" | sed 's/^\([a-z]\)/\U\1/'
+
+# Capitalizza tutte le lettere
+echo "ciao mondo" | sed 's/.*/\U&/'
 ```
 
-Questo produrrà l'output "Ciao a tutti". Puoi anche utilizzare il flag `-a` per capitalizzare ogni parola all'interno della stringa, invece di solo la prima lettera. Ad esempio:
+Un'altra opzione è utilizzare la funzione ```string```, disponibile nel pacchetto Fish Shell's string.
 
 ```
-string capitalize -a "ciao a tutti"
-```
+# Capitalizza solo la prima lettera
+echo (string upper --first "ciao mondo")
 
-Produrrà l'output "Ciao A Tutti".
+# Capitalizza tutte le lettere
+echo (string upper "ciao mondo")
+```
 
 ## Approfondimento
-Il comando `string capitalize` in realtà utilizza la funzione `string upcase` di Fish Shell per convertire tutte le lettere in maiuscolo. Tuttavia, se vuoi capitalizzare solo la prima lettera di una stringa, puoi utilizzare direttamente `string upcase -s`.
 
-Inoltre, puoi anche utilizzare l'operazione `~` per concatenare la stringa capitalizzata con il resto della tua codifica. Ad esempio:
-
-```
-echo "Ciao"~(string capitalize -a "a tutti")
-```
-
-Questo produrrà l'output "Ciao A Tutti".
+Se vuoi approfondire il tema della capitalizzazione delle stringhe nel Fish Shell, troverai una guida dettagliata sulla documentazione ufficiale (https://fishshell.com/docs/current/cmds/string.html). Inoltre, puoi esplorare ulteriori tecniche utilizzando l'operatore di sostituzione dei comandi ```sub```.
 
 ## Vedi anche
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida introduttiva a Fish Shell per principianti](https://www.tecmint.com/fishshell-a-command-line-shell-for-linux/)
-- [Esempi di codice per fare pratica con Fish Shell](https://gist.github.com/awesomefish/9f6f36d0d2cddfa2d9be)
+
+- Guida ufficiale alla documentazione del Fish Shell: https://fishshell.com/docs/current/cmds/string.html
+- Comandi di sostituzione dei comandi Fish Shell: https://fishshell.com/docs/current/commands.html#substitutions

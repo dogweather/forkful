@@ -1,54 +1,38 @@
 ---
-title:    "Python: Lese en tekstfil"
+title:    "Python: Leser en tekstfil"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å lese tekstfiler er en viktig del av programmering, spesielt for å få tilgang til og behandle store mengder data. Det kan også være nyttig når man ønsker å lage automatiserte oppgaver eller tilpasse data på en spesifikk måte.
+Lurer du på hvordan du kan lese innholdet i en tekstfil ved hjelp av Python? Da er du på rett sted! Denne bloggposten vil gi deg en enkel og grei forklaring på hvorfor det er nyttig å kunne lese tekstfiler i Python, samt hvordan du kan gjøre dette trinn for trinn.
 
-## Hvordan lese en tekstfil i Python
+## Hvordan du kan lese en tekstfil med Python
 
-For å lese en tekstfil i Python må man først åpne filen ved å bruke `open()` funksjonen. Deretter kan man bruke `read()` funksjonen for å lese innholdet i filen og lagre det i en variabel. Se eksempelet nedenfor:
+Når du jobber med programmering, er det ofte nødvendig å hente inn data fra ulike kilder. En vanlig måte å gjøre dette på er ved å lese en tekstfil. Med Python kan du enkelt lese innholdet i en tekstfil og deretter behandle det som du ønsker.
 
-```Python
-file = open("navn.txt", "r")
-data = file.read()
-print(data)
-```
-
-Denne koden vil åpne filen "navn.txt" og skrive ut hele innholdet i filen til konsollen. Det er også mulig å bruke `readline()` funksjonen for å lese en linje av gangen, eller `readlines()` for å lagre hvert linje som et element i en liste.
-
-Det er viktig å huske å lukke filen etter at man er ferdig med å lese den, ved å bruke `close()` funksjonen.
-
-## Dypdykk i lesing av tekstfiler
-
-Når man leser en tekstfil i Python, returneres alltid en string. Dette betyr at man må konvertere dataen til ønsket format, for eksempel ved å bruke `int()` eller `float()` funksjonene.
-
-Det er også mulig å lese innholdet i en tekstfil linje for linje ved å bruke en `for` loop. Se eksempelet nedenfor:
+For å lese en tekstfil i Python må du først åpne filen ved hjelp av funksjonen `open()` og spesifisere filnavnet og ønsket modus for lesing. Deretter kan du bruke en `for`-løkke for å lese linje for linje i filen og lagre dette i en variabel. Til slutt kan du skrive ut innholdet ved hjelp av `print()`-funksjonen.
 
 ```Python
-file = open("navn.txt", "r")
-for line in file:
-  print(line.strip())
+with open("tekstfil.txt", "r") as fil:
+    for linje in fil:
+        print(linje)
 ```
 
-Her vil hver linje i filen bli skrevet ut, uten å inkludere linjeskift.
+Dette vil skrive ut hele innholdet i filen `tekstfil.txt`.
 
-Når man jobber med store tekstfiler, kan det være mer effektivt å lese én linje av gangen i stedet for hele filen samtidig. Dette gjøres ved å bruke `next()` funksjonen. Se eksempelet nedenfor:
+## En dypere forklaring
 
-```Python
-file = open("navn.txt", "r")
-line = next(file)
-print(line)
-```
-
-Denne koden vil lagre den første linjen i filen som en string i variabelen `line`.
+Når vi leser en tekstfil ved hjelp av Python, behandler vi den som en tekststreng. Dette betyr at vi kan utføre ulike operasjoner som å splitte teksten i forskjellige deler, søke etter spesifikke ord eller setninger, eller endre innholdet før vi skriver det ut igjen. Ved å lære hvordan man leser tekstfiler i Python, åpner man også opp for muligheten til å jobbe med store mengder data på en effektiv måte.
 
 ## Se også
 
-- [Python dokumentasjon: Lesing og skriving av filer](https://docs.python.org/no/3/tutorial/inputoutput.html)
-- [Real Python: How to Read and Write Files in Python](https://realpython.com/read-write-files-python/)
-- [Programiz: Python File Handling](https://www.programiz.com/python-programming/file-operation)
+For å lære mer om å lese og behandle tekstfiler med Python, kan du sjekke ut følgende ressurser:
+
+- [Offisiell Python-dokumentasjon for tekstfiler](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [En interaktiv tutorial om å lese og skrive filer i Python](https://www.learnpython.org/en/Reading_and_Writing_Files)
+- [En tutorial om å behandle tekstfiler med Python](https://realpython.com/read-write-files-python/)
+- [En video som viser hvordan man kan lese tekstfiler i Python](https://www.youtube.com/watch?v=N-rFanWsi58)

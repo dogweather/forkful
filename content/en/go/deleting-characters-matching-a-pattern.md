@@ -1,17 +1,26 @@
 ---
 title:    "Go recipe: Deleting characters matching a pattern"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself working with a string or text data and needing to delete certain characters that match a specific pattern? Maybe you're working on a program that needs to clean up user inputs or parse through large amounts of data. Whatever the reason may be, knowing how to efficiently delete characters matching a pattern can be a valuable skill to have when working with string manipulation in Go.
+Deleting characters matching a pattern in Go can be a useful programming task for a number of reasons. It can help with data cleaning, removing sensitive information, or manipulating strings in specific ways. By understanding how to delete characters matching a pattern in Go, you can enhance the functionality of your code and make it more robust.
 
 ## How To
 
-To demonstrate how to delete characters matching a pattern in Go, let's create a simple program that takes in a string and removes all digits from it. Below is the code for our program:
+To delete characters matching a pattern in Go, we can use the `ReplaceAllString()` function from the `regexp` package. This function takes in three parameters - the pattern to be matched, the replacement string, and the input string. It returns a new string with the matched pattern replaced by the specified replacement string.
+
+For example, let's say we have a string `s` that contains the following sentence:
+
+```Go
+s := "I love Go programming!"
+```
+
+If we want to delete all vowels from this string, we can use the following code:
 
 ```Go
 package main
@@ -22,46 +31,41 @@ import (
 )
 
 func main() {
-    // User input string
-    input := "H3llo W0rld!"
-
-    // Compile regex pattern to match digits
-    regex := regexp.MustCompile("\\d")
-
-    // Use ReplaceAllString function to replace digits with empty string
-    output := regex.ReplaceAllString(input, "")
-
-    // Print output
-    fmt.Println("Without digits:", output)
+    s := "I love Go programming!"
+    re := regexp.MustCompile("[aeiouAEIOU]")
+    newStr := re.ReplaceAllString(s, "")
+    fmt.Println(newStr)
 }
 ```
 
-The first thing we do is import the necessary packages for our program, which in this case are "fmt" for printing and "regexp" for regular expressions. Then, we declare our main function and create a variable for our user input string. After that, we use the "regexp.MustCompile" function to compile our pattern, in this case "\\d" which matches any digit. Finally, we use the "ReplaceAllString" function to replace all digits in the input string with an empty string and print the output.
-
-Running this program will result in the following output:
+The output of this program would be:
 
 ```
-Without digits: Hllo Wrld!
+lv G prgrmmng!
 ```
 
-As you can see, all the digits have been successfully removed from the string. This is just one example of how you can delete characters matching a pattern in Go. With regular expressions, the possibilities are endless and you can create more complex patterns to fit your specific needs.
+In the above code, we first declare a regular expression `re` that matches all vowels, both lowercase and uppercase. Then, we use the `ReplaceAllString()` function to replace all occurrences of vowels with an empty string. Finally, we print out the new string without vowels.
 
 ## Deep Dive
 
-Knowing how to delete characters matching a pattern is useful not just in string manipulation, but also in data processing and validation. Regular expressions have a powerful syntax that allows for a wide range of pattern matching capabilities. It may seem intimidating at first, but with practice, you can become proficient in using them for various tasks.
+Regular expressions, or regex, are a powerful tool for pattern matching in strings. In Go, the `regexp` package provides functions and structs for working with regular expressions. The `ReplaceAllString()` function is just one example of using regular expressions for manipulating strings.
 
-In our example, we used the "\\d" pattern to match digits, but there are many other special characters and modifiers that can be used to create more complex patterns. Here are a few examples:
+To make our pattern matching more specific, we can use special characters in our regular expression. For example, if we only want to delete vowels that are followed by a space, we can use the `(*SKIP)` special feature in our regex. This tells the compiler to skip over the matched pattern instead of returning it. Let's see this in action:
 
-- "\\w" matches any word character (letters, digits, and underscore)
-- "\\s" matches any whitespace character (space, tab, line break)
-- "[]" allows you to specify a range of characters to match, e.g. "[a-z]" matches any lowercase letter
+```Go
+...
+re := regexp.MustCompile("(?i)[aeiou] (*SKIP) ")
+...
+```
 
-You can also use modifiers like the asterisk "*" to match zero or more occurrences of the previous character and the plus sign "+" to match one or more occurrences. There are many more patterns and modifiers that you can explore in the Go regular expressions documentation.
+The `(?i)` indicates that we want to match the pattern case insensitively. After that, we specify the pattern to be matched, followed by `(*SKIP)`. This will ensure that any vowels followed by a space are skipped and not included in the final output.
+
+There are many other special characters and features that can be used in regular expressions, making them a powerful tool for string manipulation in Go.
 
 ## See Also
 
-To learn more about regular expressions in Go and how to use them for pattern matching, check out these resources:
+- [Official Go Regexp Package Documentation](https://pkg.go.dev/regexp)
+- [Regular Expressions Cheat Sheet for Go](https://devhints.io/regexp)
+- [An Introduction to Regular Expressions in Go](https://medium.com/@avinashgupta75/introduction-to-regular-expression-in-go-b5e720796e3)
 
-- [The Go Blog: Regular Expressions in Go](https://blog.golang.org/regular-expressions)
-- [Regular Expressions in Go Package Documentation](https://golang.org/pkg/regexp/)
-- [Learn How To Use Regular Expressions in Go Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
+By mastering the art of deleting characters matching a pattern in Go, you can elevate your coding skills and make your programs more versatile. So go ahead and give it a try in your next Go project!

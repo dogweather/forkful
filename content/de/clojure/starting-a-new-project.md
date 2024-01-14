@@ -1,37 +1,58 @@
 ---
 title:    "Clojure: Ein neues Projekt beginnen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Hast du schon einmal daran gedacht, ein neues Projekt in Clojure zu starten? Vielleicht bist du ein erfahrener Programmierer, der gerne neue Herausforderungen annimmt, oder vielleicht bist du gerade erst in die Welt von Clojure eingetaucht und möchtest nun deine Fähigkeiten weiter ausbauen. Was auch immer dein Grund ist, Clojure ist eine spannende Sprache mit großer Community-Unterstützung und einer wachsenden Beliebtheit. Also warum nicht ein eigenes Projekt starten?
+Wenn du ein neues Projekt beginnen möchtest, könnte es aus verschiedenen Gründen sein. Vielleicht hast du eine neue Idee, die du unbedingt umsetzen möchtest. Oder du möchtest etwas lernen und dich in einer neuen Programmiersprache ausprobieren. Egal aus welchem Grund, es ist immer aufregend, ein neues Projekt zu starten.
 
-# Wie geht man vor?
+## Wie man anfängt
 
-Wenn du dich dazu entschlossen hast, ein neues Projekt in Clojure zu starten, sind hier einige Schritte, die dir dabei helfen können:
+Zunächst benötigst du natürlich eine Entwicklungsumgebung, in der du Clojure programmieren kannst. Wenn du noch keine Erfahrung mit Clojure hast, empfehle ich dir, den offiziellen Leitfaden von Clojure.org durchzuarbeiten.
+
+Sobald du mit der Syntax vertraut bist, kannst du mit dem Schreiben von Code beginnen. Hier sind ein paar Beispiele, wie du mit Clojure verschiedene Aufgaben lösen kannst:
 
 ```Clojure
-(ns mein-projekt.core
-  (:require [clojure.string :as str]))
-  
-(defn to-uppercase [str]
-  (str/upper-case str))
-  
-(def res (to-uppercase "hallo"))
-(println res)
+;; Eine einfache Funktion zum Verdoppeln von Zahlen
+(defn verdoppeln [zahl]
+  (* 2 zahl))
+
+(verdoppeln 5) ; => 10
+(verdoppeln -2) ; => -4
+(verdoppeln 3.5) ; => 7
 ```
-Das obige Beispiel zeigt eine einfache Funktion, die einen String in Großbuchstaben umwandelt. Du kannst dieses Beispiel als Ausgangspunkt für dein eigenes Projekt nehmen und es nach deinen eigenen Bedürfnissen anpassen.
 
-# Tiefer Einblick
+```Clojure
+;; Eine Funktion, die überprüft, ob eine Liste leer ist
+(defn ist-leer? [liste]
+  (empty? liste))
 
-Bei der Planung deines neuen Projekts solltest du einige Dinge im Hinterkopf behalten. Es ist wichtig, dass du dir vorher überlegst, welche Tools und Bibliotheken du verwenden möchtest, um dein Projekt umzusetzen. Auch die Struktur und Architektur deines Codes sollten gut durchdacht sein, um spätere Probleme zu vermeiden. Außerdem ist es hilfreich, bereits am Anfang Tests einzubauen, um die Qualität deines Codes zu verbessern und Bugs frühzeitig zu finden.
+(ist-leer? []) ; => true
+(ist-leer? [1 2 3]) ; => false
+```
 
-# Siehe auch
+```Clojure
+;; Eine Funktion, die die Anzahl der Wörter in einem String zählt
+(defn anzahl-woerter [string]
+  (count (clojure.string/split string #" ")))
 
-- Offizielle Clojure Dokumentation (https://clojure.org/)
-- Clojure Gemeinschaft (https://clojure.org/community)
-- Clojure Bibliotheken (https://clojars.org/)
-- ClojureScript (https://clojurescript.org/)
+(anzahl-woerter "Hallo Welt, wie geht es dir?") ; => 5
+```
+
+## Tiefergehende Infos
+
+Wenn du ein neues Projekt beginnst, gibt es ein paar Dinge, auf die du achten solltest. Zunächst solltest du dir überlegen, welches Problem du mit deinem Projekt lösen möchtest und welche Zielgruppe du ansprechen möchtest. Eine klare Vision hilft dir dabei, dein Projekt effektiver zu gestalten.
+
+Außerdem ist es wichtig, deine Codebasis gut strukturiert zu halten. Verwende sinnvolle Namen für Funktionen und Variablen und halte dich an gängige Coding Standards. So wird es einfacher für dich (und andere) den Code zu lesen und zu verstehen.
+
+Zuletzt aber nicht zuletzt, scheue dich nicht davor, Hilfe zu suchen, wenn du Fragen hast oder auf Probleme stößt. Die Clojure-Community ist sehr hilfsbereit und unterstützt dich gerne bei deinem Projekt.
+
+## Siehe auch
+
+- [Offizieller Leitfaden von Clojure.org](https://clojure.org/guides/getting_started)
+- [Clojure-Dokumentation](https://clojure.org/documentation)
+- [Community-Wiki für Clojure](https://clojure.org/community/resources)

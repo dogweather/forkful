@@ -1,70 +1,67 @@
 ---
 title:    "C recipe: Checking if a directory exists"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Checking if a directory exists is an essential task in many C programming projects. Whether it's for file input/output operations, creating new directories, or managing file system permissions, knowing whether a directory exists can help prevent errors and ensure proper execution of your code.
+Have you ever encountered an error in your code that reads "directory does not exist"? This can be frustrating, especially if you are working on a large project. Before attempting to create the directory, it is important to first check if it already exists. This will prevent any unnecessary errors and save you time in the long run.
 
 ## How To
 
-To check if a directory exists in C, we will use the `opendir()` function from the `<dirent.h>` header. This function takes in the name of the directory as a string and attempts to open it. If successful, it will return a pointer to a `DIR` structure, which represents the opened directory. If the directory does not exist, `opendir()` will return `NULL`.
-
-Let's take a look at a simple code snippet that checks if a directory named "test" exists in the current working directory:
+Checking if a directory exists in C programming is a fairly simple process. Here is a code example using the `opendir` function:
 
 ```C
 #include <stdio.h>
+#include <stdbool.h>
 #include <dirent.h>
-int main(){
-    // Open "test" directory
-    DIR* dir = opendir("test");
+
+int main() {
+    DIR *dir = opendir("my_directory"); // replace "my_directory" with your directory name
+    bool exists = false;
     
-    if (dir) {
-        // Directory exists, print success message
-        printf("Directory exists!\n");
-        // Remember to close the directory
-        closedir(dir);
-    } else {
-        // Directory does not exist, print error message
-        printf("Directory does not exist!\n");
+    if (dir) { // if opendir was successful, directory exists
+        exists = true;
+        closedir(dir); // close the directory
     }
+    
+    if (exists) {
+        printf("Directory exists!\n");
+    } else {
+        printf("Directory does not exist.\n");
+    }
+    
     return 0;
 }
 ```
-
-When we run this code, we will get the following output:
-
+Sample output:
 ```
 Directory exists!
 ```
 
-If we change the directory name to something that does not exist, for example, "fake", we will get the following output:
+Let's break down the code. First, we need to include the necessary header files, namely `stdio.h` for input/output, `stdbool.h` for the boolean data type, and `dirent.h` for directory operations. 
 
-```
-Directory does not exist!
-```
+Next, we use the `opendir` function to attempt to open the directory specified in the parameter. If the function is successful, the directory exists. We then set our `exists` boolean variable to true and close the directory using the `closedir` function.
 
-It's that simple! With just a few lines of code, we are able to check if a directory exists and take appropriate actions based on the result.
+Finally, we use an if statement to check the value of `exists` and print the appropriate message.
 
 ## Deep Dive
 
-For a deeper understanding of how `opendir()` works, let's take a look at its syntax:
+There are a few things to note when checking if a directory exists in C programming. 
 
-```C
-DIR * opendir(const char * name);
-```
+Firstly, the `DIR` pointer returned by the `opendir` function can also be used to perform operations on the directory such as listing its contents using the `readdir` function.
 
-The `opendir()` function takes in the name of the directory as a string and returns a pointer to a `DIR` structure. This structure contains information about the opened directory such as the number of entries and the current position in the directory.
-
-It's important to note that `opendir()` only checks if a file with the given name exists and not if it is a directory. So if you provide the name of a regular file, it will still return a pointer to a `DIR` structure. This is because `opendir()` is meant to be used for opening directories, not files.
+Secondly, the `opendir` function will return `NULL` if the directory does not exist, but it can also return `NULL` for other reasons such as insufficient permissions or not enough memory. This is why we check the `exists` variable after closing the directory rather than just relying on the `opendir` function.
 
 ## See Also
 
-Here are some additional resources that might be helpful in understanding how to check if a directory exists in C:
+Here are some additional resources on working with directories in C programming:
 
-- [Introduction to Directory Operations in C](https://www.geeksforgeeks.org/introduction-to-directory-in-c/)
-- [C Docs - opendir function](https://www.cplusplus.com/reference/cstdio/opendir/)
-- [Handling Error Conditions in C Programs](https://www.linuxjournal.com/article/6650)
+- [Working with Directories in C](https://www.geeksforgeeks.org/c-programming-working-with-directories/)
+- [Directory Handling in C](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
+- [C Programming Tutorial - 44: Create & Check Directories](https://www.youtube.com/watch?v=B7u5b6AFrWU)
+
+Now that you know how to check if a directory exists in C programming, you can ensure that your code runs smoothly and avoid any pesky errors. Happy coding!

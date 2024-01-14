@@ -1,89 +1,52 @@
 ---
-title:    "Go: Nykyisen päivämäärän hankkiminen"
+title:    "Go: Vastaanottaa nykyinen päivämäärä."
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Monet ohjelmistokehittäjät tarvitsevat nykyisen päivämäärän ja kellonajan erilaisiin tarkoituksiin, kuten laskutukseen ja aikaleimojen tallentamiseen tiedostoihin. Go-ohjelmointikielellä on helppo hakea ja käsitellä ajankohtaista päivämäärää, ja tässä blogikirjoituksessa näytämme, miten se tehdään.
+# Miksi Päivämäärän Haku Kannattaa
 
-## Kuinka tehdä
-Aloitetaan luomalla uusi Go-ohjelma ja tuomalla paketti "time", joka sisältää tarvittavat toiminnot nykyisen päivämäärän hakemiseen.
+Päivämäärän hakeminen on tärkeä osa monia ohjelmointiprojekteja. Se mahdollistaa ajankohdan tallentamisen ja käsittelemisen, mikä puolestaan tarjoaa käyttömahdollisuuksia esimerkiksi tapahtumien aikajärjestyksen seuraamiseen.
 
-```Go
-package main
+## Kuinka Tehdä Se Go-Ohjelmointikielellä
 
-import (
-  "fmt"
-  "time"
-)
-
-func main() {
-  // Haetaan nykyinen paivamaara
-  currentDate := time.Now()
-  fmt.Println("Nykyinen paivamaara on: ", currentDate)
-}
-```
-
-Kun suoritat tämän ohjelman, näet nykyisen päivämäärän ja kellonajan tulostettuna komentoriville.
-
-```
-$ go run current_date.go
-Nykyinen paivamaara on: 2020-09-15 14:00:00.8033337 +0300 EEST m=+0.002999901
-```
-
-Voit myös muokata tulostettavan päivämäärän muotoa käyttämällä "Format" -toimintoa ja haluamaasi aikaleiman merkkijonoa.
+Go tarjoaa sisäänrakennetun ajanmuutoksen toiminnon nimeltään `time.Now()`. Tämä palauttaa nykyisen ajan ja päivämäärän `time.Time` -muodossa. Seuraavassa esimerkissä tallennetaan paikallinen aika muuttujaan `nykyinenAika` ja tulostetaan se:
 
 ```Go
-package main
-
-import (
-  "fmt"
-  "time"
-)
-
-func main() {
-	// Haetaan nykyinen paivamaara
-	currentDate := time.Now()
-	// Tulostetaan paivamaara muodossa: 15-Sep-20
-	fmt.Println("Nykyinen paivamaara on: ", currentDate.Format("02-Jan-06"))
-}
+nykyinenAika := time.Now()
+fmt.Println(nykyinenAika)
 ```
 
+Tämä antaa seuraavan tulosteen:
+
 ```
-$ go run current_date.go
-Nykyinen paivamaara on: 15-Sep-20
+2021-08-17 20:30:00.123456789 +0300 MSK m=+0.000000001
 ```
 
-## Syvällisempi sukellus
-Go tarjoaa myös muita toimintoja nykyisen päivämäärän käsittelyyn, kuten päivämäärän lisäämiseen tai vähentämiseen tietyn ajanjakson verran. Voit tehdä tämän käyttämällä "Add" ja "Sub" -toimintoja ja antamalla niille halutun aikaleiman ja määrän. Esimerkiksi seuraava koodi lisää nykyiseen päivämäärään yhden päivän:
+Voit myös muokata tulosteen ulkoasua esimerkiksi käyttämällä `Format` -toimintoa. Tässä esimerkissä tulostetaan nykyinen aika muodossa "tunti:minuutti":
 
 ```Go
-package main
-
-import (
-  "fmt"
-  "time"
-)
-
-func main() {
-  // Haetaan nykyinen paivamaara
-  currentDate := time.Now()
-  // Lisataan yksi paiva
-  nextDay := currentDate.AddDate(0, 0, 1)
-  fmt.Println("Huomenna on: ", nextDay.Format("02-Jan-06"))
-}
+nykyinenAika := time.Now()
+muokattuAika := nykyinenAika.Format("15:04")
+fmt.Println(muokattuAika)
 ```
 
+Tuloste:
+
 ```
-$ go run current_date.go
-Huomenna on: 16-Sep-20
+20:30
 ```
 
-Voit myös käyttää muita aikayksiköitä kuten kuukausia tai vuosia "AddDate" -toiminnolla. Tutustu Go-dokumentaatioon löytääksesi lisätietoja ja nähdäksesi kaikki mahdolliset aikayksiköt.
+## Syventävä Sukellus Päivämäärän Hakuun
 
-## Katso myös
-* Go-dokumentaatio nykyisen päivämäärän hakemisesta: https://golang.org/pkg/time/#Time.Now
-* Muotoilumallit aikaleimojen merkkijonoiksi: https://golang.org/pkg/time/#pkg-constants
-* Esimerkkejä päivämäärän muokkaamisesta Go:lla: https://golangbyexample.com/modifying-datetime-golang/
+Päivämäärän hakeminen voi olla monimutkaisempaa kuin pelkän `time.Now()` -toiminnon käyttö. Esimerkiksi tarvittaessa voit määrittää päivämäärän tarkan aikavyöhykkeen ja aikaleiman. Samoin voit käyttää erilaisia muotoiluvaihtoehtoja tulostetulle päivämäärälle.
+
+Voit löytää lisätietoja ja esimerkkejä Go:n ajanmuutoksen toiminnon käytöstä [Go:n dokumentaatiosta](https://pkg.go.dev/time#Now).
+
+# Katso Myös
+
+- [Go:n dokumentaatio ajanmuutoksen toiminnosta](https://pkg.go.dev/time#Now)
+- [Blogikirjoitus Go:n ajanmuutoksen toiminnon käytöstä](https://blog.golang.org/time)
+- [Esimerkkejä Go:n ajanmuutoksen toiminnon käytöstä](https://golangdocs.com/go-time-now-get-current-time-in-go)

@@ -1,47 +1,42 @@
 ---
 title:    "C#: 문자열을 소문자로 변환하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 문자열을 소문자로 변환해야 하는가?
-문자열을 소문자로 변환하는 것은 일상적인 작업입니다. 문자열을 사용하여 비교하거나 데이터를 처리할 때, 일관성을 유지하기 위해 소문자로 통일하는 경우가 종종 있기 때문입니다.
+여러분은 C# 프로그래밍을 하다가 문자열을 소문자로 바꾸는 작업이 있을 때가 있을 것입니다. 그래서 오늘은 왜 문자열을 소문자로 변환해야 하는지, 그리고 어떻게 소문자로 바꿀 수 있는지 알아보려고 합니다.
 
-## 어떻게 소문자로 변환하는가?
-```C#
-// 소문자로 변환하기
-string input = "Hello World!";
-string output = input.ToLower();
-Console.WriteLine(output);
-```
-출력: hello world!
+## 왜
+
+문자열을 소문자로 바꾸는 이유는 여러 가지가 있지만, 가장 일반적인 이유는 데이터의 통일성을 유지하기 위해서입니다. 예를 들어, 사용자의 이름을 입력받을 때 대문자와 소문자가 섞여있으면 같은 이름임에도 다른 데이터로 인식할 수 있습니다. 이런 경우 모두 소문자로 바꾸어서 처리하는 것이 좋습니다.
+
+## 어떻게
+
+C#에서는 문자열을 소문자로 바꾸는 간단한 메소드를 제공하고 있습니다. 바로 `ToLower()` 메소드입니다. 이 메소드를 사용하면 소문자로 변환된 문자열을 리턴합니다. 예제를 통해 살펴보겠습니다.
 
 ```C#
-// 대문자로 변환하기
-string input = "Hello World!";
-string output = input.ToUpper();
-Console.WriteLine(output);
+string name = "John";
+string lowerCaseName = name.ToLower();
+Console.WriteLine(lowerCaseName);
 ```
-출력: HELLO WORLD!
 
-## 깊이 파헤쳐보기
-C#에서 문자열을 소문자로 변환하기 위해 ToLower() 메소드를 사용하는 것 외에도, LINQ를 사용하여 모든 문자를 소문자로 변환할 수 있습니다. 또한 특정 CultureInfo를 지정하여 해당 문화권의 소문자 변환 규칙을 따르는 것도 가능합니다.
+이 코드의 결과는 다음과 같이 나옵니다.
 
-예를 들어, CultureInfo.InvariantCulture를 지정하면 컴퓨터 기본 설정에 관계없이 일관된 방식으로 소문자로 변환할 수 있습니다.
+```
+john
+```
 
-## 또 다른 관련 정보
-### CultureInfo 클래스
-https://docs.microsoft.com/ko-kr/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8
+문자열 `name`이 `"John"`이었지만 `ToLower()` 메소드를 사용하여 소문자로 변환된 `"john"`을 리턴합니다. 이제 모든 문자열이 소문자로 통일되어 있어서 데이터를 처리하기가 더 쉬워졌습니다.
 
-### LINQ를 사용한 문자열 소문자 변환 예제
-https://www.tutorialspoint.com/linq/linq_lowercase_array_char.htm
+## Deep Dive
 
-### 문자열 비교를 위한 대소문자 변환
-https://docs.microsoft.com/ko-kr/dotnet/api/system.stringcomparison?view=netframework-4.8
+C#의 `ToLower()` 메소드는 매우 간단하지만 조금 더 깊이 들어가 보겠습니다. 이 메소드는 `.NET Framework`의 `String` 클래스에 속해 있습니다. 이 클래스는 매우 유용한 메소드들을 많이 가지고 있어서 문자열을 다룰 때 매우 편리합니다. `ToLower()` 메소드만을 사용하는 것이 아니라, 다른 메소드들도 함께 사용하면 더욱 다양한 작업을 할 수 있습니다. `String` 클래스에 대해서는 나중에 더 자세하게 살펴보도록 하겠습니다.
 
-## 참고 자료
-```See Also
-https://docs.microsoft.com/ko-kr/dotnet/api/system.string?view=netframework-4.8
-https://www.c-sharpcorner.com/blogs/to-lower-and-to-upper-case-in-c-sharp-programming1
-https://www.tutorialsteacher.com/linq/linq-case-insensitive-operation```
+## See Also
+
+- C# String 클래스 : https://docs.microsoft.com/ko-kr/dotnet/api/system.string?view=netcore-3.1
+- .NET Framework String 클래스 : https://docs.microsoft.com/ko-kr/dotnet/api/system.string?view=netcore-3.1
+
+이제 여러분은 C#에서 문자열을 소문자로 바꾸는 작업을 어떻게 할 수 있는지 알게 되었습니다. `ToLower()` 메소드를 사용하면 간단하게 소문자로 변환할 수 있습니다. 더 자세한 정보가 필요하다면 `String` 클래스를 살펴보세요. 감사합니다.

@@ -1,66 +1,39 @@
 ---
-title:    "Arduino: Vastaisen päivämäärän hankkiminen"
+title:    "Arduino: Nykyisen päivämäärän hankkiminen."
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Mikään Arduino-projekti ei ole täydellinen ilman tarkkaa ja ajankohtaista päivämäärää. Olitpa rakentamassa kelloa, ajastettua valojärjestelmää tai muuta laitetta, jossa tarvitset päivämäärän, Arduino tarjoaa helpon tavan hankkia ja näyttää sen.
+Miksi haluat saada nykyisen päivämäärän Arduinoa ohjelmoitaessa? On monia syitä, miksi tämä voi olla tärkeää, kuten esimerkiksi aikaleimojen tallentaminen datalle tai aikapohjaisten tehtävien suorittaminen.
 
 ## Kuinka
 
-Ennen kuin voimme hankkia nykyisen päivämäärän, meidän on ensin määriteltävä tarvittavat muuttujat ja kirjastot. Oletetaan, että haluamme tallentaa päivämäärän muuttujaan nimeltä "tänään", käyttäen RTC (Real-Time Clock) -kirjastoa.
+Voit helposti saada nykyisen päivämäärän Arduino-ohjelmassa käyttämällä `millis()` -funktiota, joka palauttaa ajan millisekunteina Arduino-laitteen käynnistysajan jälkeen. Tästä voidaan laskea nykyinen päivämäärä ja aika käyttämällä `millis()` -arvoa yhdessä `time()` tai `since()` -funktioiden kanssa käyttäen sopivaa kaavaa. Katso alla oleva esimerkki:
 
 ```Arduino
-#include <RTClib.h> //Ladataan RTC-kirjasto
-RTC_DS3231 rtc; //Luodaan RTC-olio
-DateTime today; //Luodaan muuttuja, johon tallennetaan päivämäärä
-
-void setup() {
-  Serial.begin(9600); //Aloitetaan sarjaliikenne
-  rtc.begin(); //Käynnistetään RTC
-}
-
-void loop() {
-  today = rtc.now(); //Haetaan nykyinen päivämäärä ja tallennetaan muuttujaan
-  Serial.println(today); //Tulostetaan päivämäärä sarjaporttiin
-  delay(1000); //Viiveen lisääminen estää päivämäärän näyttämisen liian nopeasti
-}
+unsigned long aika = millis(); // tallennetaan käynnistysaika muuttujaan
+unsigned long paivat = aika / (1000 * 60 * 60 * 24); // päivien määrä käynnistyksestä
+unsigned long tunnit = (aika / (1000 * 60 * 60)) % 24; // tunnit käynnistyksestä
+unsigned long minuutit = (aika / (1000 * 60)) % 60; // minuutit käynnistyksestä
+unsigned long sekunnit = (aika / 1000) % 60; // sekunnit käynnistyksestä
 ```
 
-Tämän koodin avulla saamme tulosteena nykyisen päivämäärän muodossa "YYYY-MM-DD HH:MM:SS". Voit myös muokata koodia lisäämällä määrittelemättömät muuttujat mm. "vuosi", "kuukausi", "päivä" ja "tunti", jotta voit näyttää ne erillisinä lukuina.
+Tämä esimerkki palauttaa nykyisen päivämäärän muuttujiin `paivat`, `tunnit`, `minuutit` ja `sekunnit`, jotka voidaan sitten tulostaa näytölle tai käyttää muilla tavoin haluamallasi tavalla.
 
-## Syvällisempi sukellus
+## Syvällisempi tarkastelu
 
-RTC-kirjasto käyttää oletuksena mikropiirin sisäistä kellotietoa päivämäärän ja ajan saamiseksi. Voit kuitenkin myös liittää erillisen RTC-moduulin, jotta voit varmistaa tarkemman ja vakioajan. Tällöin sinun on muokattava koodia käyttämään tätä lisämoduulia.
+Yllä oleva esimerkki antaa vain yksinkertaisen tavan saada nykyinen päivämäärä Arduino-ohjelmassa. On kuitenkin tärkeää huomata, että `millis()` ei palauta todellista kelloaikaa, vaan ajanjakson, joka on kulunut Arduino-laitteen käynnistyksestä. Joten jos laite käynnistetään uudelleen, nykyinen päivämäärä ja aika nollaantuvat.
 
-```Arduino
-#include <RTClib.h>
-#include <Wire.h> //Tarvitaan RTC-moduulin käyttöön
+Jotta voitaisiin saada todellinen nykyinen päivämäärä ja aika, sinun on käytettävä ulkoista RTC-moduulia (Real-Time Clock). RTC-moduuli sisältää oman kellonsa ja akkunsa, joka jatkaa toimintaansa myös, kun laite kytketään pois päältä tai käynnistetään uudelleen.
 
-RTC_DS3231 rtc(Wire); //Määritellään RTC-moduulin käyttö kirjastoon
-
-DateTime today;
-
-void setup() {
-  Serial.begin(9600);
-  Wire.begin(); //AVR-piirin aloitus RTC: lle
-  rtc.begin(); //RTC-moduulin käynnistys
-}
-
-void loop() {
-  today = rtc.now(); //Haetaan nykyinen päivämäärä RTC-moduulilta
-  Serial.println(today);
-  delay(1000);
-}
-```
-
-Jos haluat tarkempia ohjeita RTC-moduulin käyttöön, suosittelemme tarkastelemaan RTC-kirjaston dokumentaatiota tai hakemaan lisätietoa verkosta.
+Voit lukea lisää RTC-moduuleista ja niiden käytöstä Arduino-projekteissa täältä: [Tutorial: Using DS1307 and DS3231 Real-time Clock Modules with Arduino](https://www.circuitbasics.com/arduino-ds1307-real-time-clock-tutorial/)
 
 ## Katso myös
 
-- [RTC-kirjaston dokumentaatio](https://github.com/adafruit/RTClib)
-- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Real Time Clocks ja Arduino - Gravity Academy](https://www.dfrobot.com/blog-945.html)
+- [millis() - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Time Library - Arduino Libraries](https://www.arduino.cc/en/Reference/Time)
+- [DS1307 Real-time Clock Module - Adafruit](https://www.adafruit.com/product/264)

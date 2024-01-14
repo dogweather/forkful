@@ -1,51 +1,53 @@
 ---
-title:    "TypeScript: Sammanslagning av strängar"
+title:    "TypeScript: Sammanslående strängar"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanslå strängar är en vanlig uppgift i programmering och det är en viktig funktion att förstå för alla som vill bli ett proffs inom TypeScript. Genom att lära sig hur man isolerar, modifierar och sammanfogar olika textsträngar kan du skriva effektivare kod och bygga mer avancerade applikationer.
+Att sammanfoga strängar är en vanlig och användbar teknik inom programmering. Genom att kombinera flera strängar kan man skapa mer dynamiska och anpassningsbara texter, vilket är särskilt viktigt i webbutveckling. Det kan också hjälpa till att effektivisera koden och göra den mer läsbar för andra utvecklare.
 
-## Hur man gör
+## Så här gör du
 
-För att sammanslå strängar i TypeScript kan du använda operatorn "+" eller metoden "concat()" som finns tillgänglig på varje strängobjekt. Låt oss titta på några kodexempel för att förstå hur detta fungerar:
+För att sammanfoga strängar i TypeScript kan man använda operatorn "+" eller metoden "concat()". Här är några exempel:
 
-```TypeScript 
-let str1 = "Detta ";
-let str2 = "är en ";
-let str3 = "sträng.";
-
-// Sätter ihop en ny sträng genom att använda operatorn "+"
-let concatenatedStr = str1 + str2 + str3;
-console.log(concatenatedStr);
-// Output: Detta är en sträng.
-
-// Använder metoden "concat()"
-let newStr = str1.concat(str2, str3);
-console.log(newStr);
-// Output: Detta är en sträng.
+```TypeScript
+let förnamn: string = "Anna";
+let efternamn: string = "Andersson";
+// Använda operatorn "+" 
+console.log(förnamn + " " + efternamn); // Output: "Anna Andersson"
+// Använda metoden concat()
+console.log(förnamn.concat(" ", efternamn)); // Output: "Anna Andersson"
+// Kombinera flera strängar
+console.log("Jag heter " + förnamn + " " + efternamn + " och jag är " + 25 + " år gammal."); 
+// Output: "Jag heter Anna Andersson och jag är 25 år gammal."
 ```
 
-Som du kan se behöver vi bara använda "+" eller "concat()" för att lägga ihop flera strängar till en enda sträng. Du kan också sätta samman en mix av textsträngar och andra datatyper, till exempel nummer, genom att konvertera dem till strängar först.
+Som du kan se i exemplet ovan kan man även kombinera strängar med andra datatyper, som i det sista exemplet där vi använder operatorn "+" för att sammanslå en sträng med en numerisk variabel.
 
 ## Djupdykning
 
-För att sätta ihop stora mängder av strängar kan det vara mer effektivt att använda en lista istället för att upprepa operatorn "+" eller "concat()". I TypeScript finns det en inbyggd funktion som heter "join()" som låter dig göra detta enkelt. Låt oss titta på en kodexempel:
+När man använder operatorn "+" för att sammanfoga strängar i TypeScript så görs det automatisk konvertering av eventuella andra datatyper till strängar. Om det finns en annan datatyp än en sträng i strängsammanfogningen så kommer den datatypen att konverteras till en sträng. Det här kan vara användbart om man till exempel vill inkludera en variabel i en sträng men inte vill konvertera hela strängen till en variabel. 
+
+För att göra koden ännu mer dynamisk när det gäller strängsammanfogningar kan man använda placeholders och template literals. Detta tillåter oss att inkludera variabler direkt i strängen utan att behöva använda operatorn "+" eller metoden "concat()". Här är ett exempel:
 
 ```TypeScript
-let wordsList = ["Jag", "älskar", "att", "programmera"];
-let newStr = wordsList.join(" ");
-console.log(newStr);
-// Output: Jag älskar att programmera.
+let namn: string = "Lisa";
+let ålder: number = 30;
+// Placeholder med %
+console.log("Mitt namn är %s och jag är %d år gammal.", namn, ålder);
+// Output: "Mitt namn är Lisa och jag är 30 år gammal."
+// Template literal med ${}
+console.log(`Mitt namn är ${namn} och jag är ${ålder} år gammal.`);
+// Output: "Mitt namn är Lisa och jag är 30 år gammal."
 ```
 
-I detta exempel tar vi en lista av ord och sätter ihop dem med hjälp av "join()" funktionen, som lägger till ett mellanslag mellan varje ord. Detta är en smidigare och mer effektiv metod än att använda "+" eller "concat()" flera gånger.
+Som du kan se blir koden mer kompakt och lättläst med placeholders och template literals.
 
-## Se också
+## Se även
 
-- [MDN web docs: Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Concatenation)
-- [6 Examples of String Concatenation Using TypeScript](https://dzone.com/articles/6-examples-of-string-concatenation-using-typescript)
-- [TypeScript: String Concatenation Tutorial](https://appdividend.com/2019/08/22/javascript-string-concatenation-tutorial-with-example/)
+- [TypeScript officiella dokumentation om strängar (engelska)](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Förstå skillnaden mellan operatorn "+" och metoden "concat()"](https://dmitripavlutin.com/differences-between-concat-and-operator-plus-operator-in-javascript/)

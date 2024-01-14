@@ -1,58 +1,42 @@
 ---
 title:    "Kotlin: Comenzando un nuevo proyecto"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué iniciar un nuevo proyecto?
+## ¿Por qué empezar un nuevo proyecto?
 
-Iniciar un nuevo proyecto en Kotlin te permite desarrollar aplicaciones de manera más sencilla y eficiente. Con esta tecnología, podrás aprovechar al máximo las características del lenguaje y las ventajas de la programación orientada a objetos.
+Hay muchas razones por las que alguien podría estar interesado en comenzar un nuevo proyecto en Kotlin. Quizás estén buscando aprender un nuevo lenguaje de programación, o tal vez quieran aprovechar las ventajas de este lenguaje de tipado estático y funcional para un proyecto en particular. Sea cual sea la razón, comenzar un nuevo proyecto en Kotlin puede ser una decisión inteligente y emocionante.
 
-##¿Cómo hacerlo?
+## Cómo hacerlo
 
-Para comenzar un nuevo proyecto en Kotlin, puedes seguir estos pasos:
+Para comenzar un nuevo proyecto en Kotlin, solo necesitas unos pocos pasos básicos. Primero, asegúrate de tener el entorno de desarrollo adecuado para Kotlin, ya sea Android Studio o IntelliJ IDEA, y luego sigue estos pasos:
 
-1. Descargar e instalar el SDK de Kotlin en tu equipo.
-2. Crear un nuevo proyecto en el IDE que prefieras, como IntelliJ IDEA o Android Studio.
-3. Agregar la dependencia de Kotlin al archivo de configuración del proyecto.
-4. Comenzar a escribir tu código en Kotlin utilizando los objetos y funciones que ofrece el lenguaje.
+1. Crea un nuevo proyecto en tu IDE seleccionando la opción "Kotlin" como lenguaje.
+2. Define el paquete de tu proyecto y nombra tu aplicación.
+3. Agrega las dependencias necesarias a tu proyecto, como las bibliotecas de soporte de Android o cualquier otra biblioteca externa que vayas a utilizar.
+4. ¡Listo! Ya estás listo para comenzar a escribir en Kotlin.
 
-A continuación, te mostramos un ejemplo de cómo crear una clase en Kotlin y su correspondiente salida en pantalla:
+Veamos un ejemplo simple de cómo imprimir "¡Hola Mundo!" en Kotlin:
 
 ```Kotlin
-// Clase en Kotlin
-class Persona(val nombre: String, val apellido: String, val edad: Int) {
-    fun presentarse() {
-        println("Hola, mi nombre es $nombre $apellido y tengo $edad años.")
-    }
-}
-
-// Creación de una instancia de la clase y llamada al método
-val persona = Persona("Juan", "Pérez", 30)
-persona.presentarse()
+fun main() {
+  println("¡Hola Mundo!")
+} 
 ```
 
-Salida en pantalla:
+¡Fácil, ¿verdad? Ahora puedes continuar explorando el lenguaje y construir tu proyecto.
 
-```
-Hola, mi nombre es Juan Pérez y tengo 30 años.
-```
+## Profundizando
 
-##Profundizando en el inicio de un nuevo proyecto
+Si realmente quieres sacar el máximo provecho de Kotlin para tu nuevo proyecto, es importante que hagas una inmersión más profunda en el lenguaje. Puedes comenzar leyendo la documentación oficial, que es muy completa y fácil de seguir. También puedes unirte a la comunidad de Kotlin y participar en foros y eventos para aprender de otros desarrolladores y compartir tus propios conocimientos.
 
-Antes de iniciar un nuevo proyecto en Kotlin, es importante tener en cuenta algunos aspectos:
+Además, hay muchas bibliotecas y herramientas disponibles para Kotlin, lo que puede hacer que tu proyecto sea aún más poderoso y eficiente. No dudes en investigar y experimentar con ellas.
 
-- Familiarízate con la sintaxis y las características básicas de Kotlin, como la inmutableabilidad y la nulabilidad.
-- Aprende a utilizar las estructuras de control como `if`, `when` y `for`.
-- Conoce las herramientas de depuración y prueba de Kotlin, como el depurador de IntelliJ IDEA o el framework de pruebas de JUnit.
-- Revisa la documentación oficial de Kotlin y busca ejemplos de código en línea para tener una mejor comprensión del lenguaje.
+## Ver también
 
-Además, puedes considerar seguir una metodología de desarrollo ágil y utilizar herramientas como Git para un control de versiones eficiente.
-
-##Vea también
-
-- Documentación oficial de Kotlin: https://kotlinlang.org/docs/home.html
-- Ejemplos de código en línea: https://play.kotlinlang.org/
-- Metodología ágil de desarrollo: https://www.scrum.org/
-- Tutorial de Git: https://www.atlassian.com/es/git/tutorials/what-is-git
+- [Documentación oficial de Kotlin](https://kotlinlang.org/docs/home.html)
+- [Comunidad de Kotlin en español](https://discuss.kotlinlang.org/c/espanol)
+- [Blog de desarrollo de Kotlin](https://blog.jetbrains.com/kotlin/)

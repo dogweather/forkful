@@ -1,62 +1,51 @@
 ---
 title:    "Arduino: Convirtiendo una fecha en una cadena"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena?
+## Por qué
 
-Si estás trabajando en un proyecto de Arduino que necesita mostrar la fecha actual, es posible que te encuentres con la necesidad de convertir una fecha en una cadena. Al convertir una fecha en una cadena, puedes mostrarla fácilmente en una pantalla LCD o enviarla por una conexión serial a otro dispositivo.
+Existen varias razones por las que es importante aprender a convertir una fecha en una cadena de texto en Arduino. Por ejemplo, puede ser útil para mostrar la fecha actual en un reloj digital o para guardar la fecha en una tarjeta SD para su posterior análisis.
 
-## Cómo hacerlo: 
+## Cómo hacerlo
 
-Aquí hay un ejemplo de cómo convertir una fecha en una cadena en Arduino:
+Para convertir una fecha en una cadena de texto en Arduino, podemos utilizar la función `sprintf()`. Esta función toma una serie de valores y los convierte en una cadena de texto según un formato especificado. Aquí hay un ejemplo de cómo convertir la fecha actual en una cadena de texto en formato DD/MM/AA:
 
 ```Arduino
-#include <TimeLib.h>  // Librería de tiempo
+#include <Time.h>
+#include <TimeLib.h>
 
 void setup() {
-  // Inicializar la conexión serial
-  Serial.begin(9600);
-  // Definir la fecha y hora actual
-  tmElements_t tm;
-  tm.Year = 2021;
-  tm.Month = 9;
-  tm.Day = 15;
-  tm.Hour = 15;
-  tm.Minute = 30;
-  tm.Second = 0;
-  // Convertir la fecha y hora en una variable de tipo time_t
-  time_t t = makeTime(tm);
-  // Crear una cadena que contenga la fecha
-  char dateStr[11]; // Espacio para 11 caracteres: "dd/mm/yyyy\0"
-  sprintf(dateStr, "%02d/%02d/%04d", day(t), month(t), year(t));
-  // Imprimir la fecha en la consola serial
-  Serial.println(dateStr);
+  // Inicializar el reloj en tiempo real
+  setTime(12, 0, 0, 1, 1, 2020);
+  // Obtener la fecha actual en formato Unix
+  time_t t = now();
+  // Crear una variable para guardar la fecha en cadena de texto
+  char fecha[9];
+  // Utilizar sprintf() para convertir la fecha en una cadena de texto
+  sprintf(fecha, "%02d/%02d/%02d", day(t), month(t), year(t));
+  // Imprimir la cadena de texto en el monitor serial
+  Serial.println(fecha);
 }
 
 void loop() {
-  // No es necesario nada en el bucle loop para este ejemplo
+  // Nada que hacer en el bucle principal
 }
 ```
 
-#### Salida:
+Después de cargar este código en tu Arduino y abrir el monitor serial, deberías ver la fecha actual en formato DD/MM/AA cada vez que reinicies el Arduino.
 
-```
-15/09/2021 // Muestra la fecha en formato dd/mm/yyyy
-```
+## Profundizando
 
-## Profundizando:
+La función `sprintf()` toma una cadena de formato y una lista de valores. Los valores pueden ser variables, constantes o incluso expresiones matemáticas. La cadena de formato especifica cómo los valores deben ser convertidos en una cadena de texto. Por ejemplo, `%02d` indica que el valor debe tener dos dígitos y, de no ser así, se rellenará con ceros.
 
-La función `sprintf()` utilizada en el ejemplo es una herramienta poderosa para convertir variables en cadenas formateadas. El primer parámetro es la cadena de formato que se utilizará para crear la nueva cadena. Luego, en los siguientes parámetros, proporcionamos las variables que se deben agregar a la cadena siguiendo el formato especificado.
+Puedes encontrar más información sobre los formatos disponibles para `sprintf()` en la [documentación](https://www.cplusplus.com/reference/cstdio/sprintf/) de C++.
 
-En nuestro caso, utilizamos `%02d`, `%02d` y `%04d` para especificar el formato de la cadena de fecha. Estos significan, respectivamente, que la variable debe ser un número entero de 2, de 2 y de 4 dígitos, con un cero agregado al principio si el número tiene menos dígitos.
+## Ver también
 
-Con esto, podemos cambiar fácilmente el orden en que se muestran los componentes de la fecha simplemente cambiando el orden de las variables en `sprintf()`.
-
-## Ver también:
-
-- [TimeLib Library Reference](https://www.arduino.cc/en/Reference/Time) 
-- [sprintf() function reference](https://www.cplusplus.com/reference/cstdio/sprintf/) 
-- [Como convierto una variable días en 1, 2, 3, etc](https://forum.arduino.cc/t/como-convierto-una-variable-dias-en-1-2-3-etc-dd-mm-yyyy/646815)
+- [Cómo usar un reloj en tiempo real con Arduino](https://www.instructables.com/id/Real-Time-Clock-DS1307-With-Arduino-Using-LCD/)
+- [Cómo guardar datos en una tarjeta SD con Arduino](https://www.arduino.cc/en/tutorial/SimpleDataLogging)
+- [Documentación sobre la función sprintf()](https://www.cplusplus.com/reference/cstdio/sprintf/)

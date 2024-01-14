@@ -1,57 +1,63 @@
 ---
-title:    "C++: בדיקה אם תיקייה קיימת"
+title:    "C++: לבדיקה האם תיקייה קיימת"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why - למה
+# למה:
+בדיקת קיום תיקייה בקוד קורא יכולה להיות חשובה כאשר מתכנתים רוצים לוודא שמיקום מסוים במערכת הקבצים קיים ויכול לכלול קבצים או תוכניות חשובות.
 
-בכתיבת קוד בשפת C++, ייתכן כי תקבלו מצבים שבהם תרצו לבדוק אם תיקייה קיימת או לא. כזה יכול להיות למשל כאשר ברצונכם לכתוב קובץ או מחרוזת למיקום מסוים בתיקיית המערכת, ותרצו לוודא שהתיקייה הרלוונטית קיימת.
-
-## How To - איך לבדוק אם תיקייה קיימת
-
-בשפת C++, ניתן לבדוק את קיומה של תיקייה באמצעות הפונקציה `std::filesystem::exists()`. למשל, אם נרצה לבדוק את קיומה של התיקייה "myFolder" בתיקיית המערכת הנוכחית, ניתן לכתוב את הקוד הבא:
+## איך לבדוק את קיום התיקייה
+בשפת סי++ ישנם מספר דרכים שונות לבדוק אם תיקייה קיימת. להלן כמה דוגמאות קוד בסי++ עם פלט משתמש:
 
 ```C++
 #include <iostream>
 #include <filesystem>
 
+namespace fs = std::filesystem;
+
 int main()
 {
-    std::string folderName = "myFolder";
-    if(std::filesystem::exists(folderName))
+    // מסלול מלא של התיקייה לבדיקה
+    fs::path path_to_check = "C:/Users/User1/Desktop/Project";
+
+    // בדיקה האם התיקייה קיימת
+    if (fs::exists(path_to_check))
     {
-        std::cout << folderName << " exists\n";
+        std::cout << "התיקייה קיימת" << std::endl;
     }
     else
     {
-        std::cout << folderName << " doesn't exist\n";
+        std::cout << "התיקייה אינה קיימת" << std::endl;
+    }
+
+    // בדיקה האם התיקייה קיימת וגם היא תיקייה ריקה
+    if (fs::is_empty(path_to_check))
+    {
+        std::cout << "התיקייה ריקה" << std::endl;
+    }
+    else
+    {
+        std::cout << "התיקייה אינה ריקה" << std::endl;
     }
 
     return 0;
 }
 ```
 
-פלט התוכנית יהיה:
+פלט משתמש:
 
 ```
-myFolder exists
+התיקייה קיימת
+התיקייה אינה ריקה
 ```
 
-במידה והתיקייה לא תקיימת, הפלט יראה כך:
+## Deep Dive:
+עבור בדיקה מדוייקת יותר, ניתן להשתמש בפונקציות נוספות כמו `canonical()` לקבלת כתובת מסלול מדוייקת לתיקייה ו- `status()` לקבלת מידע נוסף על התיקייה כמו גודל וזמן יצירה. כדי לספק תמיכה במערכות הפעלה שונות, כדאי להשתמש במקרון `filesystem::path::preferred_separator` כדי לקבל את התו המתאים למערכת ההפעלה המקומית.
 
-```
-myFolder doesn't exist
-```
-
-## Deep Dive - חקירה מעמיקה
-
-ניתן לבצע גם בדיקת קיום של תיקייה באמצעות הפונקציה `std::experimental::filesystem::exists()`, שנועדה לבדיקת תיקיות בגרסאות ישנות יותר של שפת C++. אם נשתמש בפונקציה זו, יש להתחבר לאפשרות `-lstdc++fs` כדי לכלול את ספריית ה-filesystem הנדרשת.
-
-בנוסף, חשוב לציין כי הפונקציה `std::filesystem::exists()` נותנת חזרה תשובה ישירה בפורמט boolean (true/false), בעוד שהפונקציה `std::experimental::filesystem::exists()` מחזירה משתנה מסוג std::error_code, שיכול למשמש למטרת ניטור וטיפול בשגיאות במקביל.
-
-## See Also - ראו גם
-
-- [std::filesystem::exists() documentation](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [std::experimental::filesystem::exists() documentation](https://www.cplusplus.com/reference/experimental/filesystem/exists/)
+# ראו גם:
+- [תיעוד שפת סי++ בנוגע לבדיקת קיום תיקייה](https://en.cppreference.com/w/cpp/filesystem)
+- [מידע על תוכנית בדיקת קיום תיקייה בשפת סי++](https://www.geeksforgeeks.org/c-program-check-given-file-exists-not/)
+- [פרסום פוסט

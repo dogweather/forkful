@@ -1,72 +1,50 @@
 ---
-title:    "C: Creare un file temporaneo"
+title:    "C: Creare un file temporaneo."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Creare file temporanei è un'operazione fondamentale per molti programmatori in C. I file temporanei consentono di memorizzare temporaneamente dati all'interno del programma e possono essere utilizzati per una varietà di scopi, come il caching dei risultati di calcoli o la memorizzazione di dati sensibili in modo sicuro.
+Ci sono molte ragioni per voler creare un file temporaneo in un programma C. Un caso comune è quando si lavora con file di grandi dimensioni e si vuole salvare temporaneamente alcune parti del file senza doverlo modificare direttamente.
 
-## Come fare
+## Come Fare
 
-Per creare un file temporaneo in C, è necessario utilizzare la libreria standard `stdio.h` e la funzione `tmpfile()`. Questa funzione creerà un file temporaneo in modalità di scrittura e restituirà un puntatore `FILE` al file creato.
+Per creare un file temporaneo in C, abbiamo bisogno di utilizzare la funzione `tmpfile()`. Questa funzione crea un file temporaneo vuoto e restituisce un puntatore a quel file. Vediamo un esempio di codice:
 
-```C
+```c
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    FILE *temp_file = tmpfile();
-    if (temp_file == NULL)
-    {
-        printf("Errore nella creazione del file temporaneo");
+int main() {
+    FILE *fp = tmpfile(); //crea il file temporaneo
+    if (!fp) {
+        printf("Errore nella creazione del file temporaneo!\n");
         return 1;
     }
+    fputs("Questo è un file temporaneo!", fp); //scrive nel file temporaneo
+    fclose(fp); //chiude il file temporaneo
 
-    // Codice per scrivere dati nel file temporaneo
-    
-    fclose(temp_file); // Chiude il file temporaneo
+    printf("File temporaneo creato con successo!\n");
+    return 0;
 }
 ```
 
-Una volta creato il file temporaneo, è possibile utilizzarlo come qualsiasi altro file in modalità di scrittura. È possibile utilizzare le funzioni `fprintf()` o `fwrite()` per scrivere dati all'interno del file.
+Se eseguiamo il codice sopra, otterremo un output simile a questo:
 
-```C
-fprintf(temp_file, "Il valore di x è %d", x); // Scrive una stringa di testo nel file
-fwrite(array, sizeof(int), num_elements, temp_file); // Scrive un array di interi nel file
 ```
-
-Inoltre, per leggere i dati dal file temporaneo, è possibile utilizzare le funzioni `fscanf()` o `fread()`.
-
-```C
-int value;
-fscanf(temp_file, "%d", &value); // Legge un intero dal file
-fread(array, sizeof(int), num_elements, temp_file); // Legge un array di interi dal file
+File temporaneo creato con successo!
 ```
-
-Una volta terminato l'utilizzo del file temporaneo, è necessario chiuderlo utilizzando la funzione `fclose()`. Ciò garantisce che il file venga eliminato dal sistema operativo.
 
 ## Approfondimento
 
-È importante notare che i file temporanei vengono creati nella directory temporanea del sistema operativo. Ciò significa che quando il programma termina o il file viene chiuso, verrà automaticamente eliminato dal sistema. Questo è particolarmente utile per evitare l'accumulo di file inutili e risparmiare spazio nel disco fisso.
+Oltre alla funzione `tmpfile()`, ci sono anche altre funzioni che possono essere utili quando si lavora con file temporanei. Ad esempio, la funzione `tmpnam()` viene utilizzata per generare un nome casuale per il file temporaneo, mentre `tmpnam_r()` restituisce il nome del file temporaneo in una stringa passata come argomento.
 
-Inoltre, è possibile specificare un percorso diverso per la creazione del file temporaneo utilizzando la funzione `tmpfile()` in combinazione con la funzione `tmpnam()`. Questa funzione restituirà un nome univoco per il file temporaneo nella directory specificata.
+Un'importante cosa da notare è che i file temporanei creati con `tmpfile()` vengono cancellati automaticamente quando il programma termina o quando vengono chiusi con `fclose()`. Inoltre, questi file non sono accessibili da altri processi in esecuzione sul sistema.
 
-```C
-#include <stdio.h>
+## Vedi Anche
 
-int main()
-{
-    char temp_path[L_tmpnam];
-    tmpnam(temp_path); // Genera un nome univoco per il file temporaneo
-    FILE *temp_file = tmpfile(temp_path); // Crea il file temporaneo nella directory specificata
-}
-```
-
-## Vedi anche
-
-- [Documentazione su `tmpfile()`](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
-- [Esempi sull'utilizzo di file temporanei in C](https://www.geeksforgeeks.org/temporary-file-creation-using-c-programming/)
-- [Tutorial sulla gestione dei file in C](https://www.learn-c.org/en/Files)
+- [Documentazione di tmpfile()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [Guida all'utilizzo dei file temporanei in C](https://www.programiz.com/c-programming/c-file-input-output)

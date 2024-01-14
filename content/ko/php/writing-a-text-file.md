@@ -1,40 +1,50 @@
 ---
-title:    "PHP: 텍스트 파일 작성하기"
+title:    "PHP: 텍스트 파일 쓰기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-이번 글에서는 PHP의 텍스트 파일 작성과 관련된 내용을 다루려고 합니다. 이 기술을 사용하는 이유는 무엇일까요? 다양한 이유들이 있겠지만, 그 중에서도 텍스트 파일은 매우 유용한 방법으로 데이터를 저장하고 공유할 수 있기 때문입니다.
+텍스트 파일을 작성하려면 무엇을해야합니까? 프로그래밍에서 텍스트 파일은 중요한 역할을합니다. 예를 들어, 데이터를 저장하고 읽는 데 사용될 수 있습니다. 또는 웹 사이트에 동적 콘텐츠를 생성하는 데도 사용할 수 있습니다.
 
-## 하는 방법
-
-텍스트 파일을 작성하는 것은 매우 간단합니다. 먼저, `fopen()` 함수를 사용하여 파일을 열고, `fwrite()` 함수를 사용하여 파일에 필요한 데이터를 쓰고, `fclose()` 함수를 사용하여 파일을 닫습니다. 이 과정을 보다 자세하게 살펴보겠습니다.
+## 어떻게
 
 ```PHP
-// 파일을 쓰기 모드로 열기
-$file = fopen("textfile.txt", "w");
-// 파일에 데이터 쓰기
-fwrite($file, "안녕하세요! PHP를 활용한 텍스트 파일 작성입니다.");
-// 파일 닫기
-fclose($file);
+<?php
+
+// 파일을 쓰기 모드로 엽니다.
+$myfile = fopen("textfile.txt", "w") or die("파일을 열 수 없습니다!");
+
+// 파일에 데이터를 씁니다.
+$txt = "안녕하세요, PHP 프로그래밍을 배워보세요!";
+fwrite($myfile, $txt);
+
+// 파일을 닫습니다.
+fclose($myfile);
+
+// 파일을 읽기 모드로 엽니다.
+$myfile = fopen("textfile.txt", "r") or die("파일을 열 수 없습니다!");
+
+// 파일의 내용을 읽어옵니다.
+echo fgets($myfile);
+
+// 파일을 닫습니다.
+fclose($myfile);
+?>
 ```
 
-위 코드의 `fopen()` 함수의 첫 번째 파라미터는 작성하고자 하는 파일의 이름을 넣어줍니다. 두 번째 파라미터에서는 파일을 어떤 모드로 열 것인지를 설정합니다. `"w"`는 쓰기 모드를 의미합니다. `fwrite()` 함수는 첫 번째 파라미터에는 열린 파일의 핸들을, 두 번째 파라미터에서는 파일에 쓸 데이터를 넣어줍니다. 마지막으로, `fclose()` 함수를 사용하여 파일을 닫아줍니다. 이 과정을 거치면 우리는 원하는 데이터를 담은 텍스트 파일을 작성할 수 있습니다.
+위의 예제는 "textfile.txt"라는 텍스트 파일을 생성하고 거기에 "안녕하세요, PHP 프로그래밍을 배워보세요!"라는 문구를 쓴 다음 다시 읽어오는 과정을 보여줍니다. 각각의 코드 블록은 백틱 기호를 사용하여 구분됩니다.
 
-## 깊이 있는 설명
+## 딥 다이브
 
-PHP의 `fopen()` 함수는 다양한 모드를 지원합니다. `"w"` 외에도 `"a"`는 append 모드, `"r"`는 읽기 모드를 나타냅니다. 또한, 파일을 다루는 데에 있어서 예외 처리를 해주는 것이 좋습니다. `fopen()` 함수는 파일을 열지 못했을 경우 `false`를 반환합니다. 따라서 `if` 문을 사용하여 예외 처리를 해주는 것이 좋습니다.
+파일을 생성하고 데이터를 쓰고 읽는 것은 프로그래밍에서 자주 사용되는 작업입니다. 그러나 실제로 파일을 작성하는 것은 더 복잡할 수 있습니다. 텍스트 파일을 작성하는 데 필요한 요소들은 파일의 이름, 저장 위치, 데이터의 형식 등이 있습니다. 또한 파일을 읽고 쓰는 데 있어서 파일의 크기나 보안 등의 이유로 추가적인 처리가 필요할 수 있습니다. 이러한 디테일한 내용들은 프로그래머들에게 중요한 공부주제가 될 수 있습니다.
 
-또한, PHP에서는 파일의 내용을 배열로 저장할 수 있는 `file()` 함수를 제공합니다. 이 함수는 파일의 각 줄을 배열의 요소로 저장하여 반환해줍니다. 이를 활용하면 텍스트 파일을 쉽게 읽고 다룰 수 있습니다.
+## 또 다른 자료들
 
-## 관련 정보
-
-위에서 다뤘던 내용 외에도 PHP에서는 다양한 파일 관련 함수들을 제공합니다. 더 자세한 내용을 알고 싶다면 아래 링크들을 참고해보세요.
-
-* [PHP: fopen() 함수 문서](https://www.php.net/manual/kr/function.fopen.php)
-* [PHP: fwrite() 함수 문서](https://www.php.net/manual/kr/function.fwrite.php)
-* [PHP: fclose() 함수 문서](https://www.php.net/manual/kr/function.fclose.php)
-* [PHP: file() 함수 문서](https://www.php.net/manual/kr/function.file.php)
+- [PHP 파일 입출력 - w3schools](https://www.w3schools.com/php/php_file_open.asp)
+- [파일을 읽고 쓰는 방법 - PHP.net](https://www.php.net/manual/en/function.fopen.php)
+- [파일 읽고 쓰기 관련 함수 - TutorialsPoint](https://www.tutorialspoint.com/php/php_file_inclusion.htm)
+- [파일 입력받기 - Programiz](https://www.programiz.com/php-programming/file-input)

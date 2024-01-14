@@ -1,42 +1,35 @@
 ---
 title:    "Javascript: Commencer un nouveau projet"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous avez peut-être entendu parler de la programmation JavaScript et vous vous demandez pourquoi cela vaut la peine de se lancer dans un nouveau projet? Eh bien, la réponse est simple - JavaScript est l'un des langages de programmation les plus polyvalents et les plus populaires utilisés pour créer des sites Web, des applications mobiles, des jeux et bien plus encore. En apprenant JavaScript, vous pourrez créer des projets passionnants et ouvrir de nombreuses opportunités pour votre avenir.
+Il est courant pour un programmeur de se lancer dans un nouveau projet. Que ce soit pour apprendre de nouvelles technologies ou pour créer une application utile, un nouveau projet peut apporter de nombreux avantages. Dans cet article, nous allons expliquer pourquoi il peut être intéressant de se lancer dans un nouveau projet en Javascript.
 
 ## Comment faire
 
-Maintenant que vous êtes convaincu de démarrer un nouveau projet en JavaScript, vous devez savoir comment le faire. Tout d'abord, vous devez avoir un éditeur de code comme Visual Studio Code ou Sublime Text pour écrire votre code. Ensuite, vous devez créer un fichier HTML dans lequel vous importerez votre fichier JavaScript. Vous pouvez écrire du code JavaScript directement dans votre fichier HTML en utilisant des balises de script. 
+Pour commencer un nouveau projet en Javascript, il faut d'abord avoir une bonne compréhension des bases de la programmation en Javascript. Ensuite, il est important de choisir un bon éditeur de code tel que Visual Studio Code ou Atom. Voici un exemple de code pour afficher "Bonjour monde" en Javascript :
 
-Voici un exemple simple de code JavaScript pour afficher un message dans une boîte d'alerte à l'aide de la fonction `alert()`:
-
-```javascript
-<script>
-  alert("Bienvenue sur mon site en JavaScript!");
-</script>
+```Javascript
+console.log("Bonjour monde");
 ```
 
-Vous pouvez également créer un fichier JavaScript séparé et l'importer dans votre fichier HTML en utilisant une balise de script avec un attribut `src`, comme ceci :
+Ce code utilise la fonction "console.log" pour afficher le message "Bonjour monde" dans la console du navigateur. Il est important de se familiariser avec les différentes fonctions et syntaxes de Javascript avant de se lancer dans un projet.
 
-```javascript
-<script src="script.js"></script>
-```
+## Plongée en profondeur
 
-Dans votre fichier JavaScript, vous pouvez écrire tout type de code, des fonctions aux boucles en passant par les objets et les événements. Une fois que vous avez terminé d'écrire votre code, vous pouvez le tester dans votre navigateur en ouvrant la console de développement. Vous verrez les résultats de votre code s'afficher ici.
+Démarrer un nouveau projet en Javascript peut sembler intimidant, mais avec les bonnes connaissances et un bon plan, il peut être très gratifiant. Avant de commencer, il est important de définir clairement l'objectif du projet et de créer un plan détaillé pour la mise en œuvre. Il est également recommandé d'utiliser des outils de gestion de code tels que Git pour garder une trace des modifications apportées au projet.
 
-## Plongeon profond
+Ensuite, il est temps de choisir les bonnes bibliothèques et frameworks pour le projet, en fonction de ses besoins spécifiques. Certains exemples populaires incluent React pour les interfaces utilisateur, Express pour le développement côté serveur et Bootstrap pour le design web.
 
-Maintenant que vous avez les bases pour commencer votre projet en JavaScript, vous pouvez plonger plus profondément dans le langage. Il existe de nombreuses ressources en ligne, telles que des tutoriels, des cours et des forums, pour vous aider à apprendre les concepts avancés du JavaScript. Vous pouvez également explorer les différentes bibliothèques et frameworks disponibles pour vous aider à créer des projets plus complexes et plus professionnels.
-
-Il est également important de comprendre les meilleures pratiques en matière de programmation et de garder votre code propre et organisé. En suivant les conventions de codage et en utilisant des outils tels que les systèmes de contrôle de version, vous pourrez travailler en équipe et gérer efficacement votre projet.
+Une fois que toutes les bases sont en place, il est important de tester régulièrement le code et de s'assurer que tout fonctionne correctement avant de passer à l'étape suivante. N'hésitez pas à demander de l'aide à la communauté en cas de besoin.
 
 ## Voir aussi
 
-- [Codecademy : Explorez JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
-- [W3Schools : Tutoriel JavaScript](https://www.w3schools.com/js/)
-- [MDN Web Docs : Guide JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide)
+- [Introduction à Javascript](https://www.tutorialspoint.com/fr/javascript/)
+- [Les meilleurs éditeurs de code pour Javascript](https://www.lebigdata.fr/meilleurs-editeurs-code-javascript)
+- [Les bibliothèques et frameworks Javascript les plus populaires](https://www.tektutorialshub.com/popular-javascript-libraries-and-framework-of-all-time-to-consider/)

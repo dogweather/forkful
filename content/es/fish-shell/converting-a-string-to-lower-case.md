@@ -1,42 +1,46 @@
 ---
 title:    "Fish Shell: Convirtiendo una cadena a minúsculas"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué convertir una cadena a minúsculas
+## Por qué
 
-La tarea de convertir una cadena de texto a minúsculas puede ser muy útil en el desarrollo de aplicaciones web, especialmente cuando se trata de validación de entradas de usuarios. Al hacerlo, podemos asegurarnos de que las comparaciones de cadenas sean precisas y evitar errores de sintaxis.
+La conversión de una cadena de texto a minúsculas es una tarea común en la programación. En lugar de escribir constantemente código para convertir manualmente cada letra a minúscula, el Fish Shell ofrece una forma rápida y sencilla de hacerlo.
 
-## Cómo hacerlo
+## Cómo
 
-En Fish Shell, esta tarea es muy sencilla gracias al comando `string`:lower. Simplemente debemos proporcionar la cadena a la que deseamos convertir a minúsculas entre comillas, como se muestra en el siguiente ejemplo:
+Para convertir una cadena de texto a minúsculas en Fish Shell, simplemente utilizamos el comando ```string tolower``` seguido de la cadena que queremos convertir. Por ejemplo:
 
-```
-Fish Shell> string:lower "HOLA MUNDO"
-hola mundo
-```
-
-Como podemos ver, el comando `string:lower` ha convertido la cadena "HOLA MUNDO" a minúsculas y nos ha devuelto el resultado en la línea siguiente.
-
-Otra opción es utilizar la función `tolower` de Fish Shell, que realiza la misma tarea pero con una sintaxis diferente. Veámoslo en acción:
-
-```
-Fish Shell> tolower "¡¿CÓMO ESTÁS?"
-¡¿cómo estás?
+```Fish Shell
+string tolower "HOLA A TODOS"
 ```
 
-Ambos métodos son igualmente válidos, por lo que podemos elegir el que nos resulte más cómodo.
+La salida de este comando sería "hola a todos" en minúsculas.
 
-## Profundizando
+Otra forma de realizar esta tarea es utilizando el operador ```|```, que permite utilizar el resultado de un comando como entrada para otro. Por ejemplo:
 
-Es importante tener en cuenta que la conversión a minúsculas no solo afecta a las letras, sino también a los caracteres especiales y espacios. Por ejemplo, la cadena "¡Hola Mundo!" se convertiría a "¡hola mundo!".
+```Fish Shell
+echo "HOLA A TODOS" | string tolower
+```
 
-Además, en algunos casos podríamos encontrarnos con un comportamiento inesperado al convertir ciertas letras a minúsculas debido a las diferencias en la localización y codificación de caracteres. Por ejemplo, la letra "Ñ" en algunos idiomas puede convertirse a "ñ" en lugar de "N". Por ello, es importante probar nuestros comandos con diferentes cadenas de texto para asegurarnos de que obtengamos el resultado deseado.
+La salida de este comando sería la misma que en el ejemplo anterior.
+
+## Deep Dive
+
+Detrás de escena, el comando ```string tolower``` utiliza la función ```lowercase``` del lenguaje de programación interno de Fish Shell, que convierte cada letra en la cadena a su equivalente en minúscula. Además, esta función también es sensible a la localización, lo que significa que tomará en cuenta la configuración regional del sistema para la conversión de ciertos caracteres especiales.
+
+En caso de que necesite convertir una cadena en minúsculas pero mantener algunas letras en mayúsculas, puede utilizar el operador ```[^]``` y especificar los caracteres que desea mantener. Por ejemplo:
+
+```Fish Shell
+string tolower "Hola A Todos" | string replace '[^o]' 'O'
+```
+
+Este comando reemplaza todas las letras "O" que fueron convertidas a minúsculas por el comando anterior, y las devuelve a mayúsculas.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://dev.to/pablokbs/introduccion-a-fish-shell-4gk6)
-- [Guía completa de comandos de Fish Shell en español](https://blog.desdelinux.net/guia-comandos-fish-shell/)
+- [Guía de referencia de Fish Shell](https://fishshell.com/docs/current/cmds/lowercase.html)
+- [Cómo convertir texto a minúsculas en Fish Shell](https://fishshell.com/docs/current/cmds/string.html#tolower)

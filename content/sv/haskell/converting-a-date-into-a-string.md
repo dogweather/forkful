@@ -1,63 +1,54 @@
 ---
 title:    "Haskell: Omvandla ett datum till en sträng"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Haskell är ett kraftfullt programmeringsspråk som är populärt bland utvecklare på grund av sin funktionella stil och starka typsystem. Något som många utvecklare kanske inte vet är att Haskell också är ett effektivt verktyg när det gäller att konvertera datum till strängar. I denna bloggpost kommer vi att utforska varför du skulle vilja konvertera datum till strängar och hur du kan göra det i Haskell.
 
-Att konvertera ett datum till en sträng kan vara en viktig och användbar funktion i Haskell-programmering. Det kan tillåta dig att hantera datum och tid i ett läsbart format och använda dem på olika sätt inom ditt program.
-
-## Hur man gör
-
-Det finns flera olika sätt att konvertera ett datum till en sträng i Haskell. Ett sätt är att använda det inbyggda Date.Time-paketet.
+## Hur man gör det
+För att konvertera datum till strängar i Haskell kan du använda funktionen `show`. Denna funktion omvandlar ett datum till en sträng som följer formatet "YYYY-MM-DD". Här är ett exempel på hur man använder `show`:
 
 ```Haskell
-import Data.Time.Format (formatTime, defaultTimeLocale)
-import Data.Time.Clock (getCurrentTime)
+import Data.Time.Clock
+import Data.Time.Format
 
-getCurrentDate :: IO String
-getCurrentDate = do
-  time <- getCurrentTime
-  return $ formatTime defaultTimeLocale "%d/%m/%Y" time
-
-main :: IO ()
-main = do
-  currentDate <- getCurrentDate
-  putStrLn $ "Idag är datumet: " ++ currentDate
-  
--- Output:
--- Idag är datumet: 22/02/2021
+currentDate <- getCurrentTime
+let stringDate = show (utctDay currentDate)
+print stringDate
 ```
 
-Här använder vi getCurrentTime för att hämta det aktuella datumet och därefter använder vi formatTime för att ange önskat datumformat. I detta fall väljer vi "%d/%m/%Y" för att få datumet i formatet dag/månad/år.
+Output:
+```
+"2019-11-28"
+```
 
-En annan metod är att använda funktionen showDate från paketet Data.Time.Calendar. Detta ger dock bara datumet utan tidsinformation.
+Som du kan se i exemplet ovan, behöver du först importera datatyperna `Data.Time.Clock` och `Data.Time.Format` för att kunna använda funktionen `show`. Sedan använder du `getCurrentTime` för att få det aktuella datumet och `utctDay` för att hämta dagen från detta datum. Slutligen använder du `show` för att konvertera dagen till en sträng.
+
+## Djupdykning
+Om du vill konvertera datum till en sträng som följer ett annat format, kan du använda funktionen `formatTime`. Du behöver fortfarande importera `Data.Time.Clock` och `Data.Time.Format` men denna gång ska du också importera `System.Locale` för att kunna välja det format du vill använda. Här är ett exempel på hur man använder `formatTime`:
 
 ```Haskell
-import Data.Time.Calendar (showDate)
+import Data.Time.Clock
+import Data.Time.Format
+import System.Locale
 
-main :: IO ()
-main = do
-  let date = showDate (2021, 2, 22)
-  putStrLn date
-  
--- Output:
--- 2021-02-22
+currentDate <- getCurrentTime
+let stringDate = formatTime defaultTimeLocale "%d %b, %Y" currentDate
+print stringDate
 ```
 
-## Fördjupning
+Output:
+```
+"28 Nov, 2019"
+```
 
-Genom att använda paketet Date.Time kan du konvertera datum till strängar i olika format. Det finns också andra funktioner som kan användas för att manipulera, jämföra och arbeta med datum och tider i Haskell.
-
-För mer information om Date.Time-paketet och hur man kan använda det för att konvertera datum till strängar, se följande länkar:
-
-- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
-- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html
+I exemplet ovan valde vi formatet "%d %b, %Y" som betyder dagens nummer, månadens förkortning och årets fyra sista siffror. Det finns många andra format som du kan välja från, såsom "%d/%m/%Y" för att få datumet i standard europeiskt format eller "%A, %d %B, %Y" för att få hela datumet utskrivet med dagens namn och månadens namn.
 
 ## Se även
-
-- https://www.haskell.org/
-- https://www.haskell.org/documentation/
+- [Haskell Date- och tidsbibliotek](https://github.com/robstewart57/Haskell-Data-Time-Library)
+- [Haskell-dokumentation: Data.Time.Format](https://hackage.haskell.org/package/time-1.9.2/docs/Data-Time-Format.html)
+- [En introduktion till Haskell för nybörjare](https://codeburst.io/an-introduction-to-haskell-for-beginners-c382af5be24f)

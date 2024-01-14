@@ -1,52 +1,50 @@
 ---
 title:    "Clojure: 删除匹配模式的字符"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要删除匹配某模式的字符？
+# 为什么
 
-在编程中，我们经常会遇到需要删除特定字符或模式的情况。这可能是因为我们需要清理数据，或者需要从字符串中提取特定信息。无论何种原因，删除字符是一个常见的编程任务。在Clojure中，我们可以使用简洁的代码来快速有效地删除字符，让我们来看看具体的方法。
+Clojure 是一种功能强大的编程语言，它的设计目标就是简洁、高效和具有表达力。在日常开发过程中，删除与特定模式匹配的字符是一个常见的操作。这样一来，可以根据需求来过滤字符串并提取想要的部分。接下来我们将一起探讨如何在 Clojure 中实现这样的功能。
 
-## 如何实现
+# 如何进行匹配
 
-Clojure提供了多种方法来删除字符。最常用的方法是使用`clojure.string`库中的`replace`函数。我们可以将目标字符串和要删除的字符匹配模式作为参数传递给`replace`函数，它将返回一个新的字符串，其中匹配模式的字符被删除了。 例如，假设我们有一个字符串"Hello World!"，我们想要删除所有的小写字母。我们可以这样写代码：
-
-```Clojure
-(def str "Hello World!")
-
-(clojure.string/replace str #"[a-z]" "")
-```
-
-这里，我们首先定义了一个字符串变量`str`，然后使用`replace`函数将所有小写字母（通过正则表达式`[a-z]`匹配）替换为空字符串。执行后，输出将是："HW"。
-
-除此之外，我们还可以使用`clojure.string`中的其他函数，如`replace-first`来删除首个匹配字符，以及`replace-last`来删除最后一个匹配字符。
-
-## 深入了解
-
-除了`clojure.string`中提供的函数外，我们也可以使用`clojure.core`库中的`subs`函数来删除指定位置的字符。`subs`函数接受一个字符串和一个范围，可以是字符位置的起始和结束位置，也可以是两个字符之间的关系。例如：
+要从字符串中删除特定模式的字符，我们可以使用 Clojure 的 `remove` 函数。这个函数接受两个参数，第一个是谓词函数，用于定义匹配条件；第二个是要进行匹配操作的字符串。让我们来看一个示例：
 
 ```Clojure
-(def str "Hello World!")
-
-(clojure.core/subs str 1 5)
+(remove #{\s} "Hello World")
 ```
 
-这里，`subs`函数将从第二个字符（1）开始，删除到第六个字符（5）之前的所有字符。因此，输出为"ello"。
-
-另外，我们也可以使用`drop-while`和`take-while`函数来根据指定的条件来删除字符。例如，我们可以使用`drop-while`函数来删除所有数字：
+上述代码将使用 `remove` 函数来删除字符串中的空格字符。我们可以在第一个参数中定义任何匹配条件，只要符合这个条件的字符都会被删除。让我们来看一下输出结果：
 
 ```Clojure
-(def str "H3ll0 W0rld!")
-
-(clojure.core/concat (clojure.core/drop-while #{\0 \1 \2 \3 \4 \5 \6 \7 \8 \9} str))
+("HelloWorld")
 ```
 
-这里，我们首先定义了一个字符串变量`str`，然后使用`drop-while`函数来删除所有数字。最后，我们使用`concat`函数来将删除后的字符串连接起来，输出为"Hll Wrd!"。
+如你所见，空格字符已经被成功删除了。值得注意的是，这里使用了 Clojure 的 `#{}` 语法来定义一个集合，其中包含要删除的字符。除了单个字符，我们也可以使用正则表达式来匹配更复杂的模式。
 
-## 参考链接
+# 深入探讨
 
-- [Clojure官方文档](https://clojure.org/api/cheatsheet)
-- [Clojure字符串操作教程](http://gigbook.site/clojure-guide/strings.html)
-- [Clojure库中字符串函数的使用](https://clojure.org/api/cheatsheet#string_functions)
+除了使用 `remove` 函数外，我们还可以使用 `filter` 函数来实现删除字符的功能。这个函数也接受一个谓词函数作为第一个参数，但它会返回匹配的字符，而不是删除不匹配的字符。因此，我们需要使用 `apply` 函数来组合 `filter` 函数和 `str` 函数来得到最终的结果。让我们看一个例子：
+
+```Clojure
+(apply str (filter #{\l \d} "Hello World 123"))
+```
+
+上述代码中，我们先使用 `filter` 函数和一个包含 `l` 和 `d` 的集合来过滤字符串中的字符。然后再使用 `apply` 函数和 `str` 函数将过滤后的结果组合成一个字符串。让我们来看一下输出：
+
+```Clojure
+("lloorld123")
+```
+
+如你所见，除了匹配的字符，其他字符都被删除了。
+
+# 参考链接
+
+- [Clojure Docs - remove](https://clojuredocs.org/clojure.core/remove)
+- [Clojure Docs - filter](https://clojuredocs.org/clojure.core/filter)
+- [Clojure Docs - apply](https://clojuredocs.org/clojure.core/apply)
+- [Regular Expressions in Clojure](https://clojure.org/guides/learn/regular_expressions)

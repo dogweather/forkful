@@ -1,78 +1,72 @@
 ---
-title:    "Gleam: Ausgabe von Debugging-Informationen"
+title:    "Gleam: Ausgabe von Debug-Meldungen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Debugging ist ein wichtiger Teil der Softwareentwicklung und das Drucken von Debug-Ausgaben ist eine nützliche Methode, um Probleme in Ihrem Code zu identifizieren. In diesem Blog-Beitrag erfahren Sie, warum es wichtig ist, Debug-Ausgaben zu drucken und wie Sie dies mit Gleam erreichen können.
+Das Drucken von Debug-Ausgaben ist ein wichtiges Tool für die Fehlersuche und das Verständnis des Codes beim Programmieren in Gleam. Es kann helfen, Fehler schneller zu finden und die Funktionsweise des Codes besser zu verstehen.
 
-# Wie geht das
+# Wie geht man vor
 
-Um Debug-Ausgaben in Gleam zu drucken, können Sie die `info/1` Funktion aus der standardmäßigen `log`-Bibliothek verwenden. Diese Funktion akzeptiert einen beliebigen Datentyp als Argument und gibt ihn auf der Konsole aus. Hier ist ein Beispiel, wie Sie die `info/1` Funktion verwenden können:
+Um Debug-Ausgaben in Gleam zu drucken, nutzen wir die Funktion `gleam_io:p/1`, die einen beliebigen Wert in der Konsole ausgibt. Hier ist ein Beispiel, wie wir diese Funktion nutzen können:
 
 ```Gleam
-import gleam/debug
+import gleam/io
 
-fn main() {
-  let name = "Max"
-  debug.info("Der Name ist", name)
+pub fn main() {
+  greeting = "Hallo Welt"
+  gleam_io:p(greeting)
 }
 ```
 
-Die Ausgabe dieses Codes sieht so aus:
-
-```
-Der Name ist Max
-```
-
-Sie können auch komplexe Datenstrukturen wie Listen oder Records an die `info/1` Funktion übergeben. Die Ausgabe wird automatisch formatiert, um diese Datenstrukturen besser lesbar zu machen. Hier ist ein Beispiel:
+Dieser Code würde die Debug-Ausgabe "Hallo Welt" in der Konsole ausgeben. Wir können auch komplexe Datentypen wie Lists oder Tuples ausdrucken, um den Inhalt von Variablen besser zu verstehen.
 
 ```Gleam
-import gleam/debug
+import gleam/io
 
-fn main() {
-  let numbers = [1, 2, 3, 4]
-  let person = {name: "Anna", age: 25}
-  debug.info("Zahlen:", numbers)
-  debug.info("Person:", person)
+pub fn main() {
+  numbers = [1, 2, 3]
+  gleam_io:p(numbers)
 }
-```
-
-Die Ausgabe dieses Codes sieht so aus:
 
 ```
-Zahlen: [1, 2, 3, 4]
-Person: {name: "Anna", age: 25}
-```
+
+Die Ausgabe wäre `[1, 2, 3]`, was uns zeigt, dass `numbers` eine Liste mit den Zahlen 1, 2 und 3 ist. Dies kann besonders nützlich sein, wenn wir mit komplexeren Datenstrukturen arbeiten und den Überblick behalten wollen.
 
 # Tiefere Einblicke
 
-Das Drucken von Debug-Ausgaben kann Ihnen helfen, herauszufinden, wo genau in Ihrem Code ein Problem liegt. Es ist besonders nützlich, wenn Sie komplexe Funktionen oder Datenstrukturen haben. Sie können auch die `debug`-Bibliothek verwenden, um informative Fehlermeldungen zu generieren. Hier ist ein Beispiel:
+Wenn wir Debug-Ausgaben nutzen, sollten wir sicherstellen, dass sie nicht in der finalen Version unseres Codes enthalten sind. Wir können sie zum Beispiel mit `if`-Statements umgeben, um sicherzustellen, dass sie nur ausgeführt werden, wenn wir uns in der Debug-Phase befinden.
 
 ```Gleam
-import gleam/debug
+import gleam/io
 
-fn divide(a, b) {
-  case b {
-    0 -> debug.panic("Division durch 0 nicht erlaubt")
-    _ -> a / b
+pub fn main() {
+  debug = true
+  if debug {
+    // Code hier
   }
 }
 ```
 
-Wenn `b` 0 ist, wird die folgende Fehlermeldung gedruckt:
+Wir können auch mehrere Werte in einer Debug-Ausgabe ausdrucken, indem wir sie mit einem Komma trennen.
 
-```
-✗ Division durch 0 nicht erlaubt
+```Gleam
+import gleam/io
+
+pub fn main() {
+  first_name = "Max"
+  last_name = "Mustermann"
+  gleam_io:p(first_name, last_name)
+}
 ```
 
-Das Drucken von Debug-Ausgaben ist auch hilfreich, um die Reihenfolge, in der Ihr Code ausgeführt wird, zu verstehen. Manchmal kann ein Fehler auftreten, weil eine Funktion in einem anderen Kontext aufgerufen wird als erwartet. Der Einsatz von `debug.info` an verschiedenen Stellen in Ihrem Code kann Ihnen dabei helfen, dieses Problem zu erkennen.
+Die Ausgabe wäre `Max, Mustermann`, was uns den Wert von `first_name` und `last_name` zeigt.
 
 # Siehe auch
 
-- [Gleam Dokumentation über die `debug`-Bibliothek](https://gleam.run/book/stdlib.html#debug)
-- [Tutorial zur Verwendung von Gleam für Debugging](https://medium.com/@hogehoge/debugging-gleam-code-e1df7b2704db)
-- [Vergleich von Methoden zur Fehlersuche in Gleam](https://www.gleam-lang.org/posts/comparing-debugging-methods-in-gleam/)
+-[Gleam Dokumentation](https://gleam.run/documentation.html)
+-[Gleam Beispiele und Tutorials](https://github.com/gleam-lang/gleam/tree/master/examples)

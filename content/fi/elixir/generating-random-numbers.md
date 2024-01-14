@@ -1,29 +1,62 @@
 ---
-title:    "Elixir: Sattumanvaraisten numeroiden luominen"
+title:    "Elixir: Satunnaislukujen luominen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi haluat generoida satunnaisia lukuja Elixir-ohjelmoinnilla? Satunnaiset numerot ovat hyödyllisiä monissa sovelluksissa, kuten pelin luomisessa tai testitiedon tuottamisessa.
+# Miksi Käyttää Elixirin Satunnaisten Numeroiden Luontia?
 
-## Kuinka
-Koodausesimerkit ja esimerkkilähtöööt "```Elixir ... ```" koodiblokeissa.
+On monia erilaisia syitä, miksi voisi olla tarpeellista luoda satunnaisia numeroita Elixirillä. Jotkut esimerkkejä voivat olla simulaatiot, tietokannan testaus tai yksinkertaisesti satunnaisen luvun generointi erilaisiin ohjelmointiharjoituksiin. Satunnaisten numeroiden luominen on myös hauska tapa tutustua Elixirin ominaisuuksiin ja toimintoihin.
 
-```Elixir
-# Generoi satunnainen kokonaisluku välillä 1-10
-Enum.random(1..10) 
-#=> 7
+## Kuinka Tehdä Satunnaisia Numeroita Elixirillä?
 
-# Generoi 5 satunnaista nimeä
-["Mika", "Jenna", "Liisa", "Aleksi", "Emilia"] |> Enum.random(5) 
-#=> ["Mika", "Liisa", "Jenna", "Aleksi", "Emilia"]
+Elixirillä satunnaisia numeroita voidaan luoda käyttämällä moduulia nimeltä `:rand`. Tämä moduuli sisältää useita funktioita, joilla voi luoda erilaisia satunnaisia numeroita.
+
+### Satunnainen Kokonaisluku
+
+Aloita importoimalla `:rand` moduuli:
+
+```
+import :rand
 ```
 
-## Syvällisempi sukellus
-Satunnainen numeroiden generointi Elixirissä käyttää Erlangin rand-moduulia, joka perustuu Mersenne Twister -algoritmiin. Rand-moduuli tarjoaa monipuolisen valikoiman toimintoja, joilla voi generoida satunnaisia lukuja eri muodoissa. Näihin kuuluu esimerkiksi kokonaislukuja, liukulukuja ja merkkijonoja. Rand-moduulin lähtöarvoa voidaan myös asettaa uudelleen tarpeen mukaan jolloin luvut toistetaan samassa järjestyksessä.
+Voit sitten käyttää `rand/0` funktiota luomaan satunnaisen kokonaisluvun:
 
-## Katso myös
-* [Elixirin virallinen dokumentaatio satunnaisista numeroista](https://hexdocs.pm/elixir/Kernel.html#random/1)
-* [Erlangin rand-moduulin dokumentaatio](http://erlang.org/doc/man/rand.html)
+```
+random_number = rand()
+```
+
+Seuraava koodi näyttää satunnaisen kokonaisluvun väliltä 1-100:
+
+```
+1..100 |> Enum.random() #=> 58
+```
+
+### Satunnainen Liukuluku
+
+Satunnaisia liukulukuja varten, voit käyttää `float/1` funktiota ja antaa sille halutun desimaalien määrän:
+
+```
+random_float = float(3) #=> 0.278
+```
+
+### Satunnainen Merkkijono
+
+Jos haluat generoida satunnaisen merkkijonon, voit käyttää `string/1` funktiota ja antaa sille halutun merkkien määrän:
+
+```
+random_string = string(10) #=> "jDUmvHWp9u"
+```
+
+## Syvällisempi Sukellus
+
+Satunnaisia numeroita luodessa Elixir käyttää Mersenne Twister -algoritmia, joka on yksi tunnetuimmista ja nopeimmista satunnaislukugeneraattoreista. Tämä algoritmi hyödyntää lohkoketjua, joka mahdollistaa suuren määrän erilaisia satunnaisia numeroita.
+
+Voit myös asettaa halutun alunumeron `rand/1` funktioon, joka mahdollistaa samojen satunnaisien numeroiden generoinnin uudelleen. Tämä on hyödyllistä esimerkiksi testimielessä.
+
+## Katso Myös
+
+- Elixirin virallinen dokumentaatio `:rand` moduulista: https://hexdocs.pm/elixir/1.12.1/Kernel.html#rand/0
+- Mersenne Twister -algoritmin selitys: https://en.wikipedia.org/wiki/Mersenne_Twister

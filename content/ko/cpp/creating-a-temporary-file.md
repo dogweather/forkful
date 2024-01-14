@@ -1,75 +1,57 @@
 ---
-title:    "C++: 임시 파일 생성하기"
+title:    "C++: 임시 파일 만들기"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-번역:
 ## 왜
 
-이번 포스트에서는 C++에서 임시 파일(temporary file)을 생성하는 방법을 살펴보겠습니다. 임시 파일은 프로그래밍에서 자주 사용되며, 애플리케이션을 실행하는 동안 임시적으로 필요한 파일을 만들고 사용한 후 삭제하는 기능을 수행합니다.
+가끔은 우리가 프로그램을 만들다 보면 임시 파일이 필요한 경우가 있습니다. 이러한 임시 파일은 우리가 작업하는 동안 일시적으로 데이터를 저장하거나, 임시적으로 생성된 파일을 사용해야 할 때 유용하게 쓰입니다. 따라서 임시 파일을 생성하는 방법을 배우는 것은 매우 중요합니다.
 
-## 어떻게 하나요
+## 어떻게
 
-### 임시 파일 생성하기
-
-임시 파일을 생성하기 위해서는 `<cstdio>` 라이브러리에 정의된 `tmpnam()` 함수를 사용할 수 있습니다. 아래의 코드는 `tmpnam()` 함수를 사용해 임시 파일을 생성하는 간단한 예제입니다.
+우선, C++의 `<fstream>` 헤더 파일을 포함해야 합니다. 그러면 임시 파일을 생성할 수 있는 `tmpfile()` 함수를 사용할 수 있습니다. 아래는 예제 코드와 출력 결과입니다.
 
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <fstream>
 
 int main() {
-  // 임시 파일의 이름을 저장할 변수 선언
-  char tempFilename[L_tmpnam];
+    // 임시 파일 생성
+    std::FILE* tempFile = std::tmpfile();
+
+    // 쓰기 모드로 파일 열기
+    std::ofstream ofs;
+    ofs.open("temp.txt");
   
-  // 임시 파일 생성
-  // 첫 번째 매개변수는 이름을 저장할 문자 배열의 주소를 전달합니다.
-  // 두 번째 매개변수는 임시 파일의 이름을 작성할 수 있는 버퍼의 크기를 전달합니다.
-  // 함수가 성공적으로 실행되면 임시 파일의 이름이 tempFilename 변수에 저장됩니다.
-  tmpnam(tempFilename);
-  
-  // 임시 파일의 이름 출력
-  printf("임시 파일 이름: %s\n", tempFilename);
-  
-  return 0;
+    // 파일에 쓰기
+    ofs << "Temporary file created successfully!" << std::endl;
+
+    // 임시 파일 닫기
+    ofs.close();
+
+    // 결과 확인
+    std::cout << "Temp file created." << std::endl;
+    return 0;
 }
 ```
 
-아래는 위 코드의 실행 결과입니다.
+**결과:**
 
 ```
-임시 파일 이름: C:\Users\User\AppData\Local\Temp\fileTDxBwL
+Temp file created.
 ```
 
-### 임시 파일 삭제하기
+위 코드에서 볼 수 있듯이, 임시 파일을 생성하고 쓰기 모드로 파일을 열어 데이터를 파일에 작성하는 과정을 거칩니다.
 
-임시 파일을 사용한 후에는 삭제해주어야 합니다. 이를 위해 `<cstdio>` 라이브러리에 정의된 `remove()` 함수를 사용할 수 있습니다. 아래의 코드는 위에서 생성한 임시 파일을 삭제하는 예제입니다.
+## 딥 다이브
 
-```C++
-#include <cstdio>
+위의 예제에서는 `std::tmpfile()` 함수를 사용해 임시 파일을 생성했지만, 더 복잡한 파일 구조를 필요로 한다면 다른 방법을 사용해야 합니다. 예를 들어, `std::ofstream` 대신에 `std::fstream`을 사용해 파일을 열 수도 있습니다. 또한, 임시 파일을 생성할 때 `tmpnam()` 함수를 함께 사용해 파일 이름을 설정할 수도 있습니다.
 
-int main() {
-  // 임시 파일의 이름을 저장할 변수 선언
-  char tempFilename[L_tmpnam];
-  
-  // 임시 파일 생성
-  tmpnam(tempFilename);
-  
-  // 임시 파일 삭제
-  // 매개변수로 임시 파일의 이름을 전달합니다.
-  remove(tempFilename);
-  
-  return 0;
-}
-```
+## 참고
 
-## 깊게 들어가기
-
-임시 파일 생성 및 삭제 작업은 프로그래밍에서 자주 사용됩니다. 이를 효율적으로 수행하기 위해 다양한 방법들이 존재합니다. `tmpnam()` 함수 외에도 C++에서 임시 파일을 생성하는 다른 방법들을 살펴볼 수 있습니다. 예를 들어 `<iostream>` 라이브러리에 정의된 `tmpfile()` 함수를 사용해 임시 파일을 생성할 수 있습니다.
-
-## 더 알아보기
-
-- [C++에서 임시 파일 생성하기](https://www.tutorialspoint.com/creating-temporary-file-using-iostream-library-in-cplusplus)
-- [C++ 표준 라이브러리: 임시 파일 생성하기](https://en.cppreference.com/w/cpp/filesystem/temporary_file)
-- [C++ 임시 파일 사용 예제 코드](https://www.geeksforgeeks.org/c-programming-create-temporary-file-name/)
+- [C++ <fstream> 헤더 파일 설명서](https://www.cplusplus.com/reference/fstream/)
+- [C++ 임시 파일 생성 예제 코드](https://www.geeksforgeeks.org/tmpfile-function-in-c/)
+- [C++ tempnam() 함수 설명서](https://www.cplusplus.com/reference/cstdio/tempnam/)

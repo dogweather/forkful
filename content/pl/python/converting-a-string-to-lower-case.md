@@ -1,42 +1,53 @@
 ---
 title:    "Python: Konwersja ciągu znaków na małe litery"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wielu programistów często potrzebuje zamienić tekst na małe litery w celu ułatwienia porównywania i przetwarzania danych. Na przykład, gdy użytkownik wprowadza dane do formularza, można użyć funkcji zamieniającej tekst na małe litery, aby zapobiec błędom związanym z wielkością liter.
+Często w programowaniu jest potrzebne zmniejszanie wielkości liter w ciągu znaków (string). Może to być przydatne przy porównywaniu lub sortowaniu tekstu. 
 
 ## Jak to zrobić
 
-Konwersja tekstu na małe litery w języku Python jest bardzo prosta i może być wykonana za pomocą wbudowanej funkcji ```lower()```. Poniżej znajdują się kilka przykładowych kodów, pokazujących, jak użyć tej funkcji:
+Można użyć metody `lower()` aby skonwertować ciąg znaków na małe litery. Należy pamiętać, że ta metoda nie zmienia oryginalnego ciągu i zwraca nowy ciąg z małymi literami.
 
 ```Python
-# Przykładowy tekst
-text = "HELLO WORLD"
-
-# Przykład 1 - użycie funkcji lower() na całym tekście
+text = "Witaj Świecie!"
 print(text.lower())
-# Output: hello world
-
-# Przykład 2 - użycie funkcji lower() na pojedynczym znaku
-print(text[3].lower())
-# Output: l
-
-# Przykład 3 - użycie funkcji lower() na liście słów
-words = ["PYTHON", "PROGRAMMING", "BLOG"]
-print([word.lower() for word in words])
-# Output: ["python", "programming", "blog"]
 ```
 
-## Deep Dive
+Output: witaj świecie!
 
-Podczas pracy z tekstem należy pamiętać, że funkcja ```lower()``` zwraca nowy obiekt, więc oryginalny tekst pozostanie niezmieniony. Istnieje również wiele innych sposobów na konwersję tekstu na małe litery w Pythonie, na przykład można użyć metody ```casefold()``` lub modułu ```string```. Warto również zwrócić uwagę na różnice w konwersji zależnie od języka, ponieważ niektóre litery mogą być różnie przekształcane na małe litery w różnych językach.
+Jeśli chcemy zmienić oryginalny ciąg, musimy przypisać wynik metody `lower()` do zmiennej.
 
-## Zobacz również
+```Python
+text = "Witaj Świecie!"
+text = text.lower()
+print(text)
+```
 
-- [Dokumentacja Pythona - lower()](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [W3Schools - Python String lower() Method](https://www.w3schools.com/python/ref_string_lower.asp)
-- [Real Python - Lowercasing Strings in Python](https://realpython.com/python-string-case/)
+Output: witaj świecie!
+
+## Głębsza analiza
+
+Podczas konwersji na małe litery, należy pamiętać o różnicach między językiem angielskim a polskim. W języku angielskim, po zmianie na małe litery, litera `i` przed spółgłoskami `j`, `z` i `w` będzie wyświetlana jako `I`, podczas gdy w języku polskim będzie to `i`.
+
+Przykładowo, jeśli skonwertujemy ciąg "AbcZw" na małe litery, wynikiem w języku angielskim będzie "abczw", a w języku polskim "abcżw". Dzieje się tak, ponieważ w języku polskim litera `z` zmienia się na `ż` po przecinku, co jest preferowanym sposobem zapisu w języku polskim.
+
+Z drugiej strony, jeśli użyjemy metody `casefold()` zamiast `lower()`, zostaną uwzględnione szerokości litery i odpowiednio skonwertowany zostanie na małe litery.
+
+```Python
+text = "Witaj Świecie!"
+print(text.casefold())
+```
+
+Output: witaj świecie!
+
+## Zobacz też
+
+- Dokumentacja Pythona: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Porównywanie ciągów znaków (string comparison): https://www.programiz.com/python-programming/methods/string/casefold
+- Sortowanie ciągów znaków (string sorting): https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/

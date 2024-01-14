@@ -1,43 +1,41 @@
 ---
-title:    "Gleam: Mettre une chaîne en majuscules"
+title:    "Gleam: Majuscule d'une chaîne de caractères"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Le fait de mettre en majuscules une chaîne de caractères peut sembler une tâche simple en programmation, mais cela peut avoir un impact important sur l'esthétique et la compréhension de votre code. Dans cet article, nous allons discuter de la raison pour laquelle vous devriez envisager de capitaliser une chaîne de caractères dans vos projets Gleam.
+La capitalisation d'une chaîne de caractères peut être utile dans de nombreuses situations. Par exemple, si vous souhaitez afficher un titre en majuscules ou pour plainifier un texte pour l'utiliser dans une URL.
 
-## Comment Faire
+## Comment faire
 
-Gleam dispose d'une fonction pratique appelée `String.capitalize` qui vous permet de facilement mettre en majuscules la première lettre d'une chaîne de caractères. Voyons comment l'utiliser avec un exemple :
-
-``` Gleam
-let name = "gleam"
-let capitalized_name = String.capitalize(name)
-```
-
-Lorsque nous imprimons `capitalized_name`, nous obtenons `"Gleam"` comme résultat. Comme vous pouvez le voir, la fonction `capitalize` a automatiquement transformé la première lettre en majuscule, sans affecter le reste de la chaîne.
-
-Mais que se passe-t-il si notre chaîne de caractères contient déjà des majuscules ? Dans ce cas, la fonction les laissera en l'état et ne capitalisera que la première lettre. Par exemple :
+La capitalisation d'une chaîne de caractères en utilisant Gleam est simple grâce à la fonction `String.uppercase()`.
 
 ```Gleam
-let phrase = "Bonjour tout le monde"
-let capitalized_phrase = String.capitalize(phrase)
+let title = "programmation en gleam"
+let new_title = String.uppercase(title)
+
+// Résultat: "PROGRAMMATION EN GLEAM"
 ```
 
-Dans ce cas, le résultat de `capitalized_phrase` sera `"Bonjour tout le monde"`, car seules la première lettre de la phrase est mise en majuscule.
+Vous pouvez également utiliser `String.capitalize()` pour ne mettre en majuscule que la première lettre d'une chaîne de caractères.
 
-Il est également possible d'utiliser cette fonction avec des caractères spéciaux comme les accents ou les lettres majuscules accentuées. La fonction les prendra en compte et les laissera tels quels, en ne changeant que la première lettre si nécessaire.
+```Gleam
+let name = "pierre"
+let new_name = String.capitalize(name)
 
-## Plongée en Profondeur
+// Résultat: "Pierre"
+```
 
-Maintenant que nous avons vu comment utiliser la fonction `capitalize` de Gleam, creusons un peu plus profondément pour comprendre son fonctionnement. En réalité, cette fonction se base sur l'algorithme de transformation de casse Unicode, qui définit toutes les règles pour mettre en majuscule ou en minuscule les caractères de toutes les langues prises en charge.
+## Plongée en profondeur
 
-Ce processus utilise des informations sur les propriétés et les relations entre les caractères pour décider de la transformation finale. Il est donc plus robuste qu'un simple changement de casse selon le code ASCII.
+En utilisant la fonction `String.uppercase()` ou `String.capitalize()`, il est important de noter que les caractères accentués seront également mis en majuscule ou capitalisés correctement selon la langue utilisée.
 
-## Voir Aussi
+De plus, si vous souhaitez capitaliser une chaîne de caractères en suivant des règles de capitalisation spécifiques à votre langue, vous pouvez utiliser la bibliothèque `String/Transform` qui propose des fonctionnalités avancées pour la manipulation de chaînes de caractères.
 
-- Documentation de la fonction `String.capitalize` : https://gleam.run/modules/gleam_stdlib/String.html#capitalize
-- Algorithme de transformation de casse Unicode : https://unicode.org/faq/casemap_charprop.html
+## Voir aussi
+- [Documentation de la bibliothèque String de Gleam](https://gleam.run/documentation/stdlib/string.html)
+- [Documentation de la bibliothèque String/Transform de Gleam](https://gleam.run/documentation/stdlib/string/transform.html)

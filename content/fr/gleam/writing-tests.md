@@ -1,37 +1,63 @@
 ---
-title:    "Gleam: Écrire des tests"
+title:    "Gleam: Écriture de tests"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en Gleam ?
+# Pourquoi écrire des tests en Gleam ?
 
-Ecrire des tests est essentiel pour tout développeur, car cela garantit que votre code fonctionne correctement et cela vous évite de nombreuses heures de débogage. En écrivant des tests en Gleam, vous vous assurez que votre code est bien conçu et qu'il répond à toutes les exigences avant même de le déployer. 
+Écrire des tests est une pratique essentielle pour garantir la qualité de votre code en langue Gleam. Cela permet de détecter et de corriger les erreurs avant qu'elles ne deviennent un problème pour votre application. En outre, cela vous permettra de gagner du temps et de l'énergie à long terme en évitant des bogues coûteux.
 
-## Comment faire pour écrire des tests en Gleam ?
+## Comment faire
 
-Voici un exemple simple de test en Gleam, qui vérifie si une liste donnée contient un élément spécifique. 
+Il existe deux types de tests que vous pouvez écrire en Gleam : les tests unitaires et les tests d'intégration. Les tests unitaires se concentrent sur le test d'une seule fonction ou module, tandis que les tests d'intégration vérifient le fonctionnement de l'ensemble de votre application.
 
-```
-Gleam
-test "Vérifier si un élément existe dans une liste" {
-    // Déclarer une liste avec des éléments 
-    let liste = [1, 2, 3, 4, 5]
-    // Déclarer l'élément à chercher 
-    let element = 3
-    // Vérifier si la liste contient l'élément 
-    assert liste |> List.contains(element)
+Pour écrire un test unitaire, vous pouvez utiliser la fonction `assert` en passant en paramètre une expression à évaluer et une valeur attendue. Par exemple :
+
+```Gleam
+test "vérifie si 2 + 2 est égal à 4" {
+  assert 2 + 2 == 4   // cette expression est évaluée et comparée à 4
 }
 ```
 
-L'exemple ci-dessus montre comment utiliser la fonction `List.contains` pour vérifier si un élément donné est présent dans une liste. Vous pouvez également utiliser des blocs de code ```Gleam ... ``` pour écrire des tests plus complexes, comme vérifier si une fonction renvoie la valeur attendue. 
+Si la valeur attendue n'est pas égale à l'expression évaluée, une erreur sera générée et votre test échouera. Vous pouvez également utiliser la fonction `assert_ok` pour tester le succès d'une fonction qui retourne un type `Result`. Par exemple :
 
-## Approfondissement 
+```Gleam
+test "vérifie si la fonction division retourne le résultat attendu" {
+  assert_ok division(10, 2) == 5   // la fonction division doit retourner 5 pour ces paramètres
+}
+```
 
-En plus d'écrire des tests pour vérifier la précision de votre code, vous pouvez également utiliser des tests pour documenter le fonctionnement de votre code. Cela peut être utile pour les autres développeurs qui travaillent sur votre projet, car ils peuvent consulter les tests pour comprendre comment le code est censé fonctionner. De plus, en écrivant des tests, vous pouvez détecter rapidement les changements imprévus dans votre code et les corriger avant de les déployer. 
+Pour écrire un test d'intégration, vous pouvez utiliser la fonction `scenario` qui simule l'utilisation de différentes parties de votre application. Par exemple :
 
-## Voir aussi 
+```Gleam
+test "vérifie si la fonction de connexion d'un utilisateur fonctionne correctement" {
+  scenario "connexion avec un nom d'utilisateur et un mot de passe valides" {
+    let username = "John"
+    let password = "abc123"
+    assert_ok login(username, password)
+  }
 
-- [Documentation sur les tests en Gleam](https://gleam.run/book/testing.html)
-- [Exemples de tests en Gleam](https://github.com/gleam-lang/gleam/tree/master/examples/test)
+  scenario "tentative de connexion avec des informations invalides" {
+    let username = "Jane"
+    let password = "wrongpass"
+    assert_error login(username, password)
+  }
+}
+```
+
+Dans cet exemple, nous testons à la fois le succès et l'échec de la fonction de connexion en utilisant différentes combinaisons de noms d'utilisateur et mots de passe.
+
+## Plongée en profondeur
+
+Les tests peuvent également utiliser des modules externes pour simuler diverses conditions et mieux couvrir les différents scénarios possibles. Vous pouvez également écrire des tests pour vérifier que les messages d'erreur ou de réussite renvoyés par vos fonctions sont corrects.
+
+Il est important de noter que les tests ne peuvent pas couvrir tous les cas possibles, mais ils peuvent grandement améliorer la qualité de votre code et vous assurer une plus grande confiance en celui-ci.
+
+## Voir aussi
+
+- [Documentation sur les tests en Gleam](https://gleam.run/book/intro)
+- [Guide de style de code Gleam](https://gleam.run/book/change-the-name)
+- [Utiliser des tests pour améliorer la qualité de votre code](https://www.freecodecamp.org/news/using-tests-to-improve-code-quality/)

@@ -1,38 +1,35 @@
 ---
-title:    "Gleam: Sjekke om en mappe eksisterer"
+title:    "Gleam: Å sjekke om en mappe eksisterer"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Når vi skriver programmene våre, er det viktig å inkludere logikk for å håndtere eventuelle feil eller uventede situasjoner. En vanlig feil i programmering er å prøve å aksessere en fil eller mappe som ikke eksisterer. Dette kan føre til at programmet krasjer eller gir ugyldige resultater. Derfor er det viktig å ha en måte å sjekke om en mappe eksisterer før vi prøver å bruke den i koden vår. Gleam gir oss en enkel måte å gjøre dette på. 
+Å sjekke om en mappe eksisterer er et viktig aspekt av programmering. Ved å sjekke om en mappe eksisterer, kan man sikre at ens program kjører som det skal og at den ønskede funksjonen blir utført. Det er også viktig for å unngå buggs og feil i koden.
 
-## Hvordan
+# Hvordan
 
-For å sjekke om en mappe eksisterer, kan vi bruke funksjonen `Dir.exists`. Denne funksjonen tar inn en streng som representerer stien til mappen vi vil sjekke og returnerer enten `true` eller `false` avhengig av om mappen eksisterer eller ikke.
+Gleam har en innebygd funksjon for å sjekke om en mappe eksisterer. Denne funksjonen heter `File.exists?` og tar inn en streng av navnet på mappen. La oss se på et eksempel:
 
 ```Gleam
-let result = Dir.exists("stien/til/mappen")
-
-if result {
-  // Mappen eksisterer, vi kan fortsette med koden vår
-} else {
-  // Mappen eksisterer ikke, vi kan håndtere feilen her
+let main() {
+  let directory = File.exists?("bilder");
+  IO.println("Eksisterer mappen 'bilder'?", directory);
 }
 ```
 
-Hvis mappen ikke eksisterer, vil funksjonen returnere `false` og vi kan håndtere dette på en hensiktsmessig måte. Vi kan også inkludere denne sjekken som en del av et større program, slik at vi unngår feil og ugyldig kode.
+I dette eksemplet sjekker vi om mappen "bilder" eksisterer. Hvis den gjør det, vil utskriften bli `true`, hvis ikke, vil vi få `false` som utskrift.
 
-## Dypdykk
+# Deep Dive
 
-En interessant ting å merke seg er at `Dir.exists`-funksjonen også sjekker om brukeren har rettigheter til å aksessere mappen, ikke bare om den fysisk eksisterer. Dette kan være nyttig hvis programmet ditt krever spesifikke tilganger for å kjøre riktig.
+Når vi bruker `File.exists?` funksjonen i Gleam, er det viktig å merke seg at den vil returnere `true` selv om mappen ikke er tom. Dette betyr at selv om mappen kanskje ikke er tom, vil funksjonen likevel returnere `true` så lenge mappen eksisterer.
 
-Vi kan også kombinere `Dir.exists` med andre funksjoner i Gleam, for eksempel `Dir.list` for å få en liste over alle filer og mapper i en gitt mappe. Dette kan være nyttig for å utforske og håndtere filstrukturer i programmene våre.
+En annen ting å være oppmerksom på er at denne funksjonen også vil returnere `false` hvis den ikke har tilgang til mappen på grunn av sikkerhetsbegrensninger.
 
-## Se også
+# Se også
 
-- [Gleam dokumentasjon](https://gleam.run/documentation)
-- [Offisiell Gleam GitHub repository](https://github.com/gleam-lang/gleam) 
-- [Gleam Community Discord server](https://discord.gg/WrfpUMF)
+- Dokumentasjon for `File.exists?`: https://gleam.run/modules/gleam/file.html#exists%3F
+- Mer informasjon om mappebehandling i Gleam: https://gleam.run/guides/files.html

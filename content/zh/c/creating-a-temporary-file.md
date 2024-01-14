@@ -1,43 +1,59 @@
 ---
 title:    "C: 创建临时文件"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么要创建临时文件？
 
-在编程中，临时文件是很常见的。它们通常被用于存储程序运行期间产生或需要临时保存的数据。临时文件也可以被用作程序间共享数据的方式。无论如何，创建临时文件通常是为了方便数据处理，同时也可以保护原始文件的安全性。
+在编写C程序时，您可能会发现需要创建临时文件的情况。临时文件是暂时存储数据的文件，通常在程序运行结束后会被自动删除。创建临时文件可以帮助程序更高效地运行，同时也可以保护您的系统免受不必要的文件占用。
 
-# 如何
+## 如何创建临时文件？
 
-在C语言中，创建临时文件的过程是非常简单的。首先，我们需要包含头文件`<stdio.h>`，它包含了一些用于处理文件的函数。接下来，我们使用`fopen()`函数并指定`w+`参数来创建一个新的临时文件。这个函数会返回一个指向文件的指针，并将其赋值给一个变量，如`file`。接下来，我们可以使用`fprintf()`函数来向临时文件写入数据。
+在C语言中，可以使用`tmpfile()`函数来创建临时文件。该函数会在操作系统的临时目录中自动创建一个空白文件，并返回一个指向该文件的指针。下面是一个示例代码：
 
 ```C
 #include <stdio.h>
 
 int main() {
-   FILE* file;
-   file = fopen("tempfile.txt", "w+");
-   
-   fprintf(file, "这是一个临时文件\n");
-   fprintf(file, "它被用来存储临时数据\n");
+  FILE *tmp_file;
+  char text[] = "This is a temporary file.";
 
-   fclose(file);
-   return 0;
+  tmp_file = tmpfile(); // 创建临时文件
+
+  if (tmp_file != NULL) {
+    // 向临时文件中写入数据
+    fprintf(tmp_file, "%s", text);
+
+    // 从临时文件中读取数据
+    rewind(tmp_file);
+    fscanf(tmp_file, "%s", text);
+    printf("Temporary file contents: %s\n", text);
+
+    // 关闭临时文件
+    fclose(tmp_file);
+  }
+
+  return 0;
 }
 ```
 
-当我们运行这段代码后，会在当前目录下生成一个名为`tempfile.txt`的临时文件。其中包含了我们通过`fprintf()`函数写入的数据。
+运行上述代码后，您会发现在临时目录中出现了一个名为`tmp.XXXXXX`的文件，其中`XXXXXX`是随机生成的字符串。临时文件内容为`This is a temporary file.`。
 
-# 深入探讨
+## 深入了解临时文件
 
-在创建临时文件时，有一个重要的问题需要考虑，那就是如何确保文件名的唯一性。如果我们不特别指定文件名，每次运行程序都会创建一个名字相同的临时文件，这样会导致文件的内容被重写。为了避免这种情况，我们可以使用系统函数`tmpnam()`来生成一个唯一的文件名，并将其作为参数传递给fopen()函数。
+创建临时文件的具体实现方式会根据操作系统的不同而有所差异。在Windows系统中，`tmpfile()`函数会创建一个具有临时性质的文件，即文件不会出现在任何目录中，只能通过指针来访问。而在Unix/Linux系统中，`tmpfile()`函数会直接在临时目录中创建一个文件。不同的操作系统也可能会有不同的临时目录地址和文件命名规则。
 
-另外，为了保证程序的正常运行，我们需要在使用完临时文件后将其删除。我们可以使用`remove()`函数来删除临时文件。另一个方法是使用`fclose()`函数关闭临时文件时，设置一个标志位来指示程序退出时需要删除临时文件。
+另外，通过`tmpfile()`函数创建的临时文件会在程序运行结束后自动删除。如果您想要在程序运行期间保留临时文件，可以使用`mkstemp()`函数来创建临时文件。
 
-# 另请参阅
+## 参考链接
 
-- [C语言临时文件处理](https://www.runoob.com/cprogramming/c-file-io.html)
-- [临时文件的用途](https://www.techopedia.com/definition/1337/temporary-file)
-- [如何在C语言中创建临时文件](https://www.linuxtoys.org/c-cpp/create_temp_file.html)
+- [C语言中的临时文件和临时目录](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
+- [tmpfile()函数文档](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [mkstemp()函数文档](https://www.tutorialspoint.com/c_standard_library/c_function_mkstemp.htm)
+
+# 参见
+
+- [如何在C语言中使用文件操作？](https://www.howtoblog.cn/how-to-use-file-io-in-c-language/)

@@ -1,37 +1,43 @@
 ---
-title:    "Elm: Einen neuen Projekt beginnen"
+title:    "Elm: Ein neues Projekt beginnen."
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum man ein neues Programmierprojekt starten könnte. Vielleicht möchte man eine bestimmte Anwendung erstellen, die es noch nicht gibt, oder man möchte seine Fähigkeiten in einer neuen Sprache verbessern. Elm ist eine Programmiersprache, die oft für Webentwicklungsprojekte verwendet wird und es lohnt sich definitiv, sie auszuprobieren.
+Wenn du daran interessiert bist, eine neue Programmiersprache zu lernen, die einfach und funktional ist, dann ist Elm vielleicht genau das Richtige für dich. Elm ermöglicht es dir, schnell und effizient Webanwendungen zu erstellen, die stabil, sicher und leicht zu warten sind. In diesem Artikel erfährst du, wie du ein neues Projekt in Elm starten kannst.
 
-## Wie geht man vor?
+## Wie geht's
 
-Um mit Elm zu beginnen, muss man zunächst die Sprache und das zugehörige Framework installieren. Dann kann man mit der Erstellung seines Projekts beginnen. Hier ist ein Beispiel, wie eine einfache "Hello World" Anwendung in Elm aussehen könnte:
+Um ein neues Projekt in Elm zu starten, musst du zunächst die Sprache und ihre Syntax verstehen. Hier ist ein einfaches Beispiel, das eine Liste mit Namen von Personen erstellt und sie auf der Konsole ausgibt:
 
 ```Elm
-module Main exposing (main)
+-- Definition einer Liste von Namen
+names = ["Lisa", "Max", "Anna"]
 
-import Html exposing (text)
-
-main = 
-  text "Hello, world!"
+-- Funktion, die die Liste auf der Konsole ausgibt
+printNames list = 
+    List.map (\name ->
+        "Hallo " ++ name
+    ) list
+        |> Debug.log "Namen:"
 ```
 
-Nachdem man dieses Programm kompiliert und ausgeführt hat, sollte man die Ausgabe "Hello, world!" sehen.
+Dieses Beispiel zeigt dir den grundlegenden Aufbau einer Elm-Anwendung: Definition von Variablen, Funktionen und die Verwendung von Pipelines.
 
-## Tieferer Einblick
+## Tiefentauchen
 
-Möchte man tiefer in die Welt von Elm eintauchen, gibt es einige Dinge zu beachten. Zum Beispiel ist die Elm-Architektur ein wichtiges Konzept in der Programmiersprache. Sie umfasst drei Kernkomponenten: Model, View und Update. Das Model repräsentiert den Zustand der Anwendung, die View ist dafür zuständig, wie die Anwendung aussieht und der Update-Teil ist dafür verantwortlich, wie die Anwendung auf Benutzereingaben reagiert. Durch das Verständnis dieser Architektur kann man elegante und skalierbare Anwendungen entwickeln.
+Wenn du ein neues Projekt in Elm startest, gibt es ein paar Dinge zu beachten. Zunächst solltest du dir über die Struktur deiner Anwendung Gedanken machen. In Elm besteht jede Anwendung aus einer "Main"-Funktion, die das gesamte Programm verwaltet. Diese Funktion sollte wiederum aus Unterfunktionen bestehen, die jeweils für eine bestimmte Aufgabe zuständig sind.
 
-Es gibt auch eine aktive Community von Elm-Entwicklern, die einem gerne bei Problemen und Fragen weiterhelfen. Es lohnt sich definitiv, in dieser Community aktiv zu werden und von anderen zu lernen.
+Es ist auch wichtig, die Module in deinem Projekt richtig zu organisieren. In Elm gibt es keine Klassen, stattdessen werden Funktionen und Typen in Modulen gruppiert. Dadurch wird dein Code übersichtlicher und leichter zu warten.
+
+Schließlich solltest du beim Schreiben von Elm-Code immer darauf achten, dass du funktionale Konzepte wie Immutabilität und unveränderliche Datenstrukturen einhältst. Dadurch wird der Code stabiler, sicherer und leichter zu debuggen.
 
 ## Siehe auch
 
-- Offizielle Elm-Website: https://elm-lang.org/
-- Elm Dokumentation: https://guide.elm-lang.org/
+- Offizielle Elm Dokumentation: https://guide.elm-lang.org/
 - Elm Packages: https://package.elm-lang.org/
+- Elm Forum: https://discourse.elm-lang.org/

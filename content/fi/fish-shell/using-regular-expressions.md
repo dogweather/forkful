@@ -1,44 +1,32 @@
 ---
-title:    "Fish Shell: Säännöllisten lausekkeiden käyttö"
+title:    "Fish Shell: Regular expressionien käyttö"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita ohjelmoinnissa?
+## Miksi
+Regular expressionit ovat voimakas työkalu, jota voit käyttää helpottamaan päivittäistä ohjelmointityötäsi. Ne auttavat sinua etsimään ja työstämään tekstiä nopeammin ja tehokkaammin.
 
-Säännölliset lausekkeet ovat voimakas työkalu, jota voidaan käyttää tiettyjen merkkijonojen etsimiseen ja korvaamiseen suuresta tekstiaineistosta. Ne ovat erityisen hyödyllisiä, kun käsitellään suuria määriä tietoa, koska ne säästävät aikaa ja vaivaa manuaalisesti suoritettavilta toiminnoilta. 
-Säännölliset lausekkeet ovat myös olennainen osa monia ohjelmointikieliä, kuten Fish Shell, joten niiden käyttöä on tärkeää oppia.
+## Miten tehdä
+Fish Shell tarjoaa kattavan joukon työkaluja regular expressionien käyttämiseen. Voit aloittaa tutustumalla peruskäsitteisiin ja yksinkertaisiin käyttötapoihin. Alla on esimerkki siitä, miten voit käyttää regular expressioneja Fish Shellissä:
 
-## Näin käytät säännöllisiä lausekkeita Fish Shellissä
-
-Fish Shell tarjoaa kätevän ja tehokkaan tavan käyttää säännöllisiä lausekkeita. Ensimmäinen askel on selvittää, mitä haluat etsiä ja korvata. Tämän jälkeen voit seurata näitä ohjeita:
-
-1. Avaa Fish Shell ja siirry hakemistoon, jossa haluat suorittaa ohjelmointisi.
-2. Kirjoita "```grep [etsittävä lauseke] [tiedosto]```", jossa [etsittävä lauseke] on haluamasi lauseke ja [tiedosto] on tiedosto, johon haluat etsiä. Tämä tulostaa kaikki rivit, joissa löytyy haluamasi lauseke.
-3. Jos haluat korvata lausekkeen, lisää "```-E 's/[vanha lauseke]/[uusi lauseke]'```" komentoriville. Tämä korvaa vanhan lausekkeen uudella lausekkeella kaikissa tuloksissa.
-4. Voit myös lisätä "```-i```" komentoriville, jos haluat tehdä korvauksen isojen ja pienten kirjainten välillä välittämättä.
-
-Jos haluat esimerkin, jossa halutaan etsiä ja korvata kaikki "hello everyone" -lausekkeet "hello world" -lausekkeella tiedostosta "tervehdys.txt", komentorivisi olisi seuraavanlainen:
-
-```fish
-grep "hello everyone" tervehdys.txt-E 's/hello everyone/hello world/' -i
+```
+Fish Shell-regular expressionien käyttö
+\\d+: [sana tai lause] | grep -o '[sana tai lause]'
 ```
 
-Tämä tulostaisi kaikki rivit, joissa löytyy "hello everyone" -lauseke, mutta korvaisi sen "hello world" -lausekkeella.
+Alkuperäinen sana tai lause näytetään vain, jos se sisältää hakuehdossa määritetyn numeron ja kaksoispisteen. Esimerkiksi "123: Tämä on vain esimerkki" antaisi tulokseksi "Tämä on vain esimerkki". Tämä on vain yksi mahdollinen käyttötapa, ja Fish Shell tarjoaa paljon muita vaihtoehtoja.
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+## Syvällisempi katsaus
+Regular expressioneja käyttäessä on tärkeää ymmärtää, mitä kaikkia erilaisia ​​symboleja voit käyttää osana hakuehtoa. Esimerkiksi erottelusymbolit, kuten kaksoispisteet ja pilkut, voivat auttaa sinua rajamaan hakuehtoasi ja löytämään tarkempia osumia.
 
-Vaikka simple syntax regexes ovat hyvin hyödyllisiä ja yleensä toimivat useimmissa tapauksissa, säännölliset lausekkeet ovat paljon monipuolisempia ja monimutkaisempia kuin mitä tässä blogikirjoituksessa kuvataan. Jos haluat oppia enemmän, voit tutustua esimerkiksi seuraaviin sivustoihin:
-
-- [fishshell.com/docs/current/cmds/grep.html](https://fishshell.com/docs/current/cmds/grep.html)
-- [regex.info/](http://regex.info/)
-- [regexone.com/](https://regexone.com/)
-- [en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+Fish Shell tarjoaa myös erilaisia ​​toimintoja, kuten `grep` ja `sed`, jotka auttavat sinua käsittelemään tekstitietoja varsinaisten regular expressionien lisäksi. Näiden syvällisempien tietojen ymmärtäminen auttaa sinua hyödyntämään regular expressioneja mahdollisimman tehokkaasti.
 
 ## Katso myös
+- [Fish Shell -ohjeet](https://fishshell.com/docs/current/index.html)
+- [Regex101 -regular expressionien harjoittelua varten](https://regex101.com/)
+- [RegExr -toimiva työkalu regular expressionien editointiin](https://regexr.com/)
 
-- [fishshell.com](https://fishshell.com/)
-- [fishshell.com/docs/](https://fishshell.com/docs/)
-- [github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
-- [stackoverflow.com/questions/tagged/fish+regex](https://stackoverflow.com/questions/tagged/fish+regex)
+Kiitos lukemisesta! Toivottavasti tästä oli hyötyä ja että pääset hyödyntämään regular expressioneja entistä tehokkaammin ohjelmoinnissasi. Onnea ja hyviä hakutuloksia!

@@ -1,38 +1,39 @@
 ---
-title:    "Gleam: ディレクトリが存在するかどうかを確認する"
+title:    "Gleam: ディレクトリが存在するかどうかをチェックする"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+ディレクトリが存在するかどうかを確認することの利点は、コードのロジックを追加する前に、特定の処理が必要かどうかを判断することができることです。
 
-ディレクトリが存在するかどうかを確認することの重要性は、コーディングの基本的なスキルです。Gleamには、このような操作を実行するための便利な機能があります。そこで、今回はGleamでディレクトリの存在をチェックする方法をご紹介しましょう。
-
-## 手順
-
-まずは、Gleamコードブロックを使ってディレクトリをチェックする方法を学びましょう。以下のコードを使用します。
-
+## 方法
 ```Gleam
-result := Fs.exists("directory")
+// `dir_exists`関数を使用してディレクトリが存在するかどうかを確認する方法
+dir_exists("my_directory");
 
-match result {
-    Ok(exists) -> if exists {
-        IO.print("ディレクトリが存在します")
-    } else {
-        IO.print("ディレクトリは存在しません")
-    }
-    Err(error) -> IO.print("エラーが発生しました：$(error)")
-}
+// 出力：trueまたはfalseを返します
 ```
 
-上記のコードでは、`Fs.exists()`関数を使用してディレクトリが存在するかどうかをチェックしています。`result`変数には、`Ok`または`Err`のいずれかが格納されます。`Ok`の場合は、ディレクトリが存在するかどうかを示す真偽値が返され、`Err`の場合はエラーメッセージが返されます。これにより、適切なメッセージを出力することで、ディレクトリの存在を確認することができます。
+```Gleam
+// `dir_exists_or_create`関数を使用して、ディレクトリが存在しない場合はディレクトリを作成する方法
+dir_exists_or_create("my_directory");
 
-## ディープダイブ
+// 出力：trueまたはfalseを返します
+```
 
-このようにして、Gleamで簡単にディレクトリの存在をチェックすることができますが、より詳細に知りたい方のために、もう少し深く掘り下げてみましょう。Gleamには、ファイルやディレクトリを操作するための便利な関数やモジュールがたくさんあります。`Fs`モジュールには、ディレクトリを作成したり、名前を変更したりといった機能もあります。また、`File`モジュールを使用してファイルの存在をチェックすることもできます。さらに詳細な情報は、[Gleamの公式ドキュメント](https://gleam.run/)や[コミュニティフォーラム](https://github.com/gleam-lang/gleam/discussions)を参照してください。
+```Gleam
+// `dir_exists_with_permissions`関数を使用して、指定したパーミッションでディレクトリが存在するかどうかを確認する方法
+dir_exists_with_permissions("my_directory", [read: true, write: true, execute: true]);
 
-## 関連リンク
+// 出力：trueまたはfalseを返します
+ ```
 
-- [Gleam公式ドキュメント](https://gleam.run/)
-- [Gleamコミュニティフォーラム](https://github.com/gleam-lang/gleam/discussions)
+## 深堀り
+ディレクトリが存在するかどうかを確認する際には、ファイルシステムのパーミッションを考慮することも重要です。また、プログラムによっては自動的にディレクトリを作成する必要があるため、`dir_exists_or_create`関数の使用も検討してください。
+
+## 参考リンク
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)：Gleamの公式ドキュメント
+- [ディレクトリの存在を確認する方法](https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-a-bash-shellscript)：Bashシェルスクリプトでディレクトリの存在を確認する方法の例

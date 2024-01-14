@@ -1,48 +1,40 @@
 ---
 title:    "Kotlin: Omvandla ett datum till en sträng"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Att kunna konvertera ett datum till en sträng är en viktig funktion i Kotlin-programmering eftersom det gör det möjligt att visa datumet på ett läsbart format för användaren eller att använda det i andra delar av koden.
+## Varför
+Att konvertera ett datum till en sträng kan vara användbart för att visa datumet i ett visst format eller för att kommunicera med system som endast accepterar datum som strängar.
 
-# Hur man gör det
-Det första som behövs är att skapa ett datumobjekt med hjälp av Kotlin's Date-klass.
-
-```Kotlin
-val datum: Date = Date()
-```
-
-Sedan kan vi använda Kotlin's SimpleDateFormat-klass för att konvertera datumet till en sträng. Här är ett exempel där vi konverterar datumet till formatet "dd.MM.yyyy".
+## Hur man gör det
+Konverteringen kan enkelt göras med hjälp av Kotlin Standardbiblioteket. Nedan följer ett exempel där vi konverterar ett datum till en sträng med formatet "YYYY-MM-DD".
 
 ```Kotlin
-val format: SimpleDateFormat = SimpleDateFormat("dd.MM.yyyy")
-val datumStrang: String = format.format(datum)
-println(datumStrang) // Output: 23.08.2021
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val date = LocalDate.now()
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val dateString = date.format(formatter)
+    println(dateString) // Output: 2021-08-16
+}
 ```
 
-Vi kan också inkludera tiden i vår sträng genom att lägga till ett tidsformat, till exempel "dd.MM.yyyy HH:mm:ss". Detta kommer att ge oss en sträng som inkluderar både datum och tid.
+## Djupdykning
+Kotlin Standardbiblioteket erbjuder flera olika funktioner för att konvertera datum till strängar. Här är några av de vanligaste metoderna:
 
-```Kotlin
-val format: SimpleDateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm:ss")
-val datumStrang: String = format.format(datum)
-println(datumStrang) // Output: 23.08.2021 12:34:56
-```
+- `format`: Konverterar ett datum till en sträng med hjälp av ett angivet format.
+- `toString`: Konverterar ett datum till en sträng med hjälp av standardformatet för det aktuella språket.
+- `formatTo`: Konverterar ett datum till en sträng och lägger till det i en befintlig StringBuilder.
+- `isoFormat`: Konverterar ett datum till en ISO-sträng som följer formatet YYYY-MM-DD.
 
-# Djupdykning
-När vi använder SimpleDateFormat-klassen är det viktigt att veta vilka bokstäver som ska användas för att få det önskade formatet. Här är en lista över de vanligaste bokstäverna och vad de står för:
+Det är också möjligt att använda `DateTimeFormatter` för att skräddarsy konverteringen av datumet till önskat format.
 
-- d: dag i månaden (1-31)
-- M: månad (1-12)
-- y: år (exempelvis 2021)
-- H: timme (0-23)
-- m: minut (0-59)
-- s: sekund (0-59)
-
-Det finns även möjlighet att inkludera fler tecken för att formatera datumet och tiden på olika sätt. Mer information om detta, och andra användbara funktioner, hittar du i Kotlin's Date- & SimpleDateFormat-dokumentation.
-
-# Se även
-- [Kotlin's Date-klass](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
-- [Kotlin's SimpleDateFormat-klass](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-simple-date-format/index.html)
+## Se också
+- [Kotlin Standardbiblioteket](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/) - Officiell dokumentation för Kotlin Standardbiblioteket.
+- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) - Officiell dokumentation för Java Date and Time API som används av Kotlin.
+- [Kotlin Datum och Tid tutorial](https://www.callicoder.com/kotlin-date-time-tutorial/) - En praktisk guide för att arbeta med datum och tid i Kotlin.

@@ -1,46 +1,48 @@
 ---
 title:    "C#: 텍스트 파일 작성하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+텍스트 파일을 작성하는 이유는 프로그래밍에서 중요한 부분입니다. 텍스트 파일은 데이터를 저장하고 유지하는 데 사용되는 일반적인 파일 형식입니다.
 
-어떤 이유로 사람들이 텍스트 파일을 작성하는지에 대해 이야기해보겠습니다. 텍스트 파일은 코드나 데이터를 저장하고 공유할 때 매우 유용합니다. 예를 들어, 여러분이 작성한 코드를 다른 개발자들과 공유하거나, 작업 내용을 저장하고 나중에 사용할 수 있도록 하는 등의 경우에 텍스트 파일을 작성하는 것이 필요합니다.
-
-## 작성하는 방법
-
-아래는 C# 언어를 사용하여 텍스트 파일을 작성하는 간단한 예제 코드와 출력 결과입니다. 코드 블록은 "```C# ... ```" 형식으로 표시되며, 각 코드의 설명은 한국어로 제공됩니다.
+## 사용 방법
+텍스트 파일을 작성하는 가장 간단한 방법은 C#에서 `StreamWriter` 클래스를 사용하는 것입니다. 새 파일을 만들고 데이터를 입력하려면 다음과 같이 작성할 수 있습니다.
 
 ```C#
-using System;  // 노출하려는 네임스페이스를 추가합니다.
-using System.IO;  // 파일 처리를 위해 추가합니다.
+// 파일 생성
+StreamWriter writer = new StreamWriter("sample.txt");
 
-// 텍스트 파일을 작성할 경로와 파일명을 지정합니다.
-string filePath = @"C:\Users\Test\sample.txt";
+// 데이터 입력
+writer.WriteLine("안녕하세요!");
+writer.WriteLine("저는 프로그래머입니다.");
 
-// StreamWriter 클래스를 사용하여 파일을 생성하고 내용을 작성합니다.
-using (StreamWriter writer = new StreamWriter(filePath))
-{
-    writer.WriteLine("Hello World!");  // "Hello World!"라는 내용을 파일에 작성합니다.
-}
-
-// 파일이 성공적으로 작성되었는지를 확인하기 위해 출력합니다.
-Console.WriteLine("텍스트 파일이 성공적으로 작성되었습니다.");
+// 파일 닫기
+writer.Close();
 ```
 
-출력 결과:
-```
-텍스트 파일이 성공적으로 작성되었습니다.
+위 예제 코드를 실행하면 "sample.txt" 라는 파일이 만들어지고 텍스트가 입력될 것입니다. 파일을 만든 후에는 `StreamWriter` 객체를 닫아야 합니다.
+
+## 깊게 파고들기
+`StreamWriter` 클래스는 파일을 쓰는 데 사용됩니다. 일반적으로 데이터를 저장하기 위해 사용하는 `StreamWriter` 클래스의 메서드는 다음과 같습니다.
+
+- `Write()`: 문자열을 기록합니다.
+- `WriteLine()`: 문자열 뒤에 줄 바꿈 문자를 추가하여 기록합니다.
+- `Flush()`: 버퍼의 모든 내용을 파일로 작성합니다.
+
+또한 `File` 클래스의 `WriteAllText()` 메서드를 사용하여 텍스트 파일을 쉽게 작성할 수도 있습니다. 이 방법은 다음과 같이 사용할 수 있습니다.
+
+```C#
+// 파일 생성
+File.WriteAllText("sample.txt", "안녕하세요! 저는 프로그래머입니다.");
 ```
 
-## 더 깊게 알아보기
-
-텍스트 파일을 작성하는 것에 대해 더 자세히 알아보겠습니다. StreamWriter 클래스를 사용하면 파일의 인코딩 방식이나 한 줄씩 데이터를 추가하는 등의 여러 가지 옵션이 있습니다. 또한 데이터를 읽고 수정하는 등의 다양한 기능도 제공합니다. 이를 활용하여 더 복잡한 프로그램을 구현할 수 있습니다.
+`StreamWriter` 클래스나 `File` 클래스의 메서드들은 파일 내용을 덮어쓰게 됩니다. 이들의 오버로드된 메서드를 사용하여 파일의 내용을 추가할 수도 있습니다.
 
 ## 참고 자료
-
-- [C# StreamReader and StreamWriter 클래스 바로 알기](https://blog.naver.com/vilgund/140105965864)
-- [StreamWriter 클래스 개요](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamwriter)
-- [샘플 코드: 파일에 텍스트 쓰기 (C# 프로그래밍 가이드)](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+- [StreamWriter 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamwriter)
+- [File 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.file)
+- [Markdown 문법 가이드](https://www.markdownguide.org/)

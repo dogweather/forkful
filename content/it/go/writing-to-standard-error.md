@@ -1,66 +1,35 @@
 ---
-title:    "Go: Scrivere su standard error"
+title:    "Go: Scrivere su errore standard"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere su standard error in Go
 
-Scrivere a standard error è un'opzione utile quando si desidera visualizzare messaggi di errore o di avviso durante l'esecuzione di un programma Go. Invece di interrompere l'esecuzione del programma, i messaggi verranno visualizzati in modo sicuro nella console.
+Scrivere su standard error significa scrivere messaggi di errore e informazioni di debug sullo standard output del terminale. Questa pratica è essenziale per comprendere ed elaborare eventuali errori nel programma Go e ottenere una migliore comprensione del suo funzionamento. Inoltre, scrivere su standard error può aiutare a identificare e risolvere eventuali problemi nel codice.
 
-## Come Fare
+## Come scrivere su standard error in Go
 
-Per scrivere a standard error in Go, è necessario utilizzare il pacchetto `fmt` e la sua funzione `Fprintf`, specificando `os.Stderr` come primo argomento. Ad esempio:
+Per scrivere su standard error in Go, è necessario utilizzare la funzione "fmt.Fprintln" come mostrato nell'esempio di codice seguente:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
+import "fmt"
 
 func main() {
-    fmt.Fprintf(os.Stderr, "Questo è un messaggio di errore\n")
+    fmt.Fprintln(os.Stderr, "Questo è un messaggio di errore!")
 }
 ```
 
-Questo produrrà un output simile a questo:
+Nell'esempio, il messaggio di errore verrà scritto sulla standard error nel formato "os.Stderr". Questo è particolarmente utile quando si esegue il programma da riga di comando, in quanto i messaggi di errore saranno ben distinguibili dagli output del programma.
 
-```
-Questo è un messaggio di errore
-```
+## Approfondimenti su scrittura su standard error
 
-## Approfondimento
+Scrivere su standard error è utile non solo per la risoluzione degli errori, ma anche per il debugging e il monitoraggio del comportamento del programma. Inoltre, è possibile modificare la destinazione dei messaggi di errore utilizzando funzioni come "log.New(os.Stderr, prefix, flag)" per impostare una destinazione personalizzata per gli output di debug.
 
-Utilizzare `os.Stderr` consente di garantire che i messaggi di errore vengano visualizzati anche se il programma viene indirizzato verso un file o un'altra destinazione. Inoltre, è possibile utilizzare `fmt.Fprintf` per formattare i messaggi di errore con variabili.
+## Vedi anche
 
-Un esempio di utilizzo avanzato potrebbe essere il seguente:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    name := "Gianluca"
-    age := 30
-    fmt.Fprintf(os.Stderr, "Ciao, mi chiamo %s e ho %d anni\n", name, age)
-}
-```
-
-Questo produrrà un output simile a questo:
-
-```
-Ciao, mi chiamo Gianluca e ho 30 anni
-```
-
-## Vedi Anche
-
-- [Documentazione ufficiale di Go sull'utilizzo di fmt](https://golang.org/pkg/fmt/)
-- [Articolo su Medium sul passaggio di output a standard error in Go](https://medium.com/@spencerwooo/go-how-to-print-to-stderr-30b73985b255)
-- [Video tutorial su YouTube sull'utilizzo di fmt e os.Stderr in Go](https://www.youtube.com/watch?v=ne7oUHQvXi0)
+- [Documentazione ufficiale di Go sulla scrittura su standard error](https://golang.org/pkg/syscall/)
+- [Un esempio di utilizzo della funzione fmt.Fprintln](https://gobyexample.com/writing-files)
+- [Ulteriori informazioni sulle funzioni di log in Go](https://gobyexample.com/logging)

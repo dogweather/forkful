@@ -1,37 +1,46 @@
 ---
-title:    "Go: 部分文字列の抽出"
+title:    "Go: 部分文字列を抽出する"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜサブストリングを抽出するのか
 
-Go言語は、その簡潔で効率的な構文と高速な実行速度で人気があります。そのため、開発者がGo言語を選択する理由の1つは、パフォーマンスの向上です。部分文字列を抽出することは、プログラムの検索や処理が必要な場合に、処理速度を向上させるための重要な技術です。
+サブストリングの抽出をするメリットは、文字列の特定の部分を取得することができる点です。例えば、日付や時間の情報を含んだ文字列から特定の範囲の日付や時間だけを取り出したい場合に、サブストリングの抽出をすることで目的の情報を簡単に取得することができます。
 
-## 技術解説
-
-部分文字列を抽出する方法は、基本的な文字列処理の機能の1つです。これはGoの標準ライブラリで利用可能であり、シンプルな構文で記述することができます。
-
-以下のコードブロックは、文字列から指定した位置から指定した数の文字を抽出する例を示しています。
+## 抽出方法の例
 
 ```Go
-str := "こんにちは、世界！"
-println(str[3:7])
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "今日は2021年8月15日です"
+    date := str[3:15] // 文字列の3文字目から15文字目までを取得
+    fmt.Println(date) // 出力結果: 2021年8月15日
+}
 ```
 
-このコードを実行すると、出力は"んには、"となります。ストリングのインデックスは0から始まるため、この例ではインデックス3から7までの文字が抽出されます。
+このように、文字列から特定の範囲の部分を取り出すには、`[開始位置:終了位置]`という形式で範囲を指定し、その範囲の文字列を取り出すことができます。
 
-また、より複雑な部分文字列の抽出には、stringsパッケージのSplitやJoin関数が利用できます。これらの関数は文字列を指定した区切り文字で分割や連結することができます。
+## サブストリングの深堀り
 
-## 深堀り
+サブストリングの抽出は、文字列処理の中でもよく使われる機能であり、Go言語でも簡単に実装することができます。また、さまざまなメソッドを用いることで、より柔軟なサブストリングの抽出が可能になります。例えば、`strings.Index()`を使用することで、特定の文字列の位置を取得し、その位置からサブストリングを抽出することができます。
 
-文字列処理は、プログラム開発において非常に重要です。そのため、Go言語では標準ライブラリだけでなく、多くのサードパーティライブラリが利用できます。例えば、正規表現を使用して複雑なパターンマッチングを行うことができる"regexp"パッケージや、文字列の置換やトリミングを行うことができる"strings"パッケージなどがあります。
+## さらに詳しくはこちらを参照
 
-部分文字列の抽出は、単純な文字列操作から複雑な文字列処理まで幅広く利用されます。Go言語の強力な標準ライブラリと、豊富なサードパーティライブラリを駆使して、より高度な文字列処理を行うことができます。
+- [Go言語ドキュメント：stringsパッケージ](https://golang.org/pkg/strings/)
+- [サブストリングを取得する方法](https://www.oreilly.co.jp/community/blog/2015/10/go-substring.html)
+- [サブストリングの抽出方法を学ぶ](https://blog.golang.org/strings) 
 
-## 関連記事
+# その他の参考情報
 
-- [Go言語公式ドキュメント](https://golang.org/doc/)
-- [Learn Go in 10 Minutes](https://learnxinyminutes.com/docs/ja-jp/go-ja/)
-- [Go by Example](https://gobyexample.com/)
+- [Substrings in Go: Explained with Examples](https://www.freecodecamp.org/news/substrings-in-go-explained-with-examples/)
+- [Understanding Substrings in Go](https://dev.to/deciduously/understanding-substrings-in-go-aen)
+- [Go言語で文字列操作をする方法](https://qiita.com/Sekky0905/items/37812c1f0b22e7a8ba3b)

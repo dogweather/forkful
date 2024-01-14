@@ -1,36 +1,36 @@
 ---
-title:    "Java: Verkettung von Zeichenketten"
+title:    "Java: Zusammenfügen von Zeichenfolgen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Die Verkettung von Strings ist eine wichtige Funktion in der Java-Programmierung, die es ermöglicht, Zeichenketten miteinander zu verbinden. Dies ist besonders hilfreich, um benutzerfreundliche und lesbare Ausgaben zu erzeugen.
+Die Konkatenation von Strings ist ein grundlegender Aspekt der Java-Programmierung und dient dazu, mehrere Zeichenfolgen zu einer einzigen zusammenzufügen. Dies kann in verschiedenen Anwendungsfällen nützlich sein, z.B. bei der Erstellung von Benutzernamen oder der Darstellung von dynamischen Textinhalten.
 
-# Wie man Strings verkettet
+## So geht's
 
-Die Verkettung von Strings in Java ist einfach und erfordert nur die Verwendung des "+" Operators. Im folgenden Code-Beispiel werden zwei Strings miteinander verkettet und die Ausgabe auf der Konsole ausgegeben:
+Die Konkatenation von Strings wird in Java durch den "+" Operator durchgeführt. Hier ist ein Beispielcode, der zwei Strings kombiniert und die Ausgabe auf der Konsole ausgibt:
 
 ```Java
-String firstName = "Max";
-String lastName = "Mustermann";
-
-String fullName = firstName + " " + lastName;
-System.out.println(fullName);
+String vorname = "Max";
+String nachname = "Mustermann";
+String vollständigerName = vorname + " " + nachname;
+System.out.println(vollständigerName);
 ```
 
-Die Ausgabe dieses Codes wäre "Max Mustermann", da die Strings "firstName" und "lastName" mit einem Leerzeichen dazwischen verbunden wurden.
+Das Ergebnis dieser Codezeilen würde "Max Mustermann" ausgeben. Beachten Sie, dass zwischen den Zeichenfolgen Leerzeichen hinzugefügt werden können, um für eine bessere Lesbarkeit zu sorgen.
 
-# Tiefer Einblick
+## Tiefergehende Informationen
 
-Bei der Verkettung von Strings sollten Sie beachten, dass der "+" Operator Assoziativgesetze folgt, was bedeutet, dass die Ausdrücke von links nach rechts ausgewertet werden. Dies kann zu unerwarteten Ergebnissen führen, insbesondere wenn Zahlen und Strings gemischt werden.
+Beim Kombinieren von Strings ist es wichtig zu beachten, dass dies eine immutable Operation ist, was bedeutet, dass die ursprünglichen Strings unverändert bleiben und eine neue Zeichenfolge erstellt wird. Daher ist es ineffizient, große Mengen von Zeichenfolgen durch ständige Konkatenation zu verarbeiten, da dies zu einer großen Anzahl von ungenutzten Objekten im Speicher führen kann.
 
-In solchen Fällen können Sie die Klasse "StringBuilder" verwenden, die eine effiziente Möglichkeit bietet, Strings zu verkettet. Im Gegensatz zu dem "+" Operator, der immer neue String-Objekte erzeugt, aktualisiert "StringBuilder" nur ein bestehendes Objekt, was die Leistung verbessert.
+Eine effizientere Alternative ist die Verwendung der StringBuilder-Klasse, die speziell für die Manipulation von Zeichenfolgen entwickelt wurde. Sie bietet Methoden zum Hinzufügen, Entfernen oder Einfügen von Zeichenfolgen an einer beliebigen Stelle und speichert alle Änderungen in einem einzigen StringBuilder-Objekt.
 
-# Siehe auch
+## Siehe auch
 
-- [Java String API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [StringBuilder Klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Umgang mit Strings in Java](https://www.geeksforgeeks.org/java-handle-strings/#:~:text=Strings%20are%20an%20important%20part,concatenating%20two%20strings%20together.&text=Java%20%2B%20operator%20i.e.-%20Strings%20Java)
+- [Java String Klasse Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java StringBuilder Klasse Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Tutorial zu Strings in Java](https://www.w3schools.com/java/java_strings.asp)

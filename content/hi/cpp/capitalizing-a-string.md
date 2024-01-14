@@ -1,45 +1,47 @@
 ---
-title:    "C++: स्ट्रिंग को बड़ा अक्षर बनाना"
+title:    "C++: स्ट्रिंग को बड़े अक्षरों में परिवर्तित करना"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आप कभी सोचा है कि जब हम किसी वाक्यांश या शब्द को प्रथम अक्षर से बड़ा लिखते हैं तो उसमें एक अलग सीख छिपी होती है? आपने शायद अपने पत्नी को "डॉक्टर हो तो ठीक है" और "डॉक्टर हो तो ठीक है" कहते हुए देखा होगा। यही कारण है कि हमें अक्षरों को प्रथम अक्षर से बड़ा लिखने की जरूरत होती है और इसकी विधि के बारे में हम आपको बताएंगे।
+# वजह
+
+एक लचीले स्ट्रिंग को कैपिटलाइज करने के लिए कोई क्यों करे? 
 
 ## कैसे करें
-यहां हमारे पास हिंदी गीतों के कुछ उदाहरण हैं जिनमें हमें प्रथम अक्षर से बड़ा लिखने की जरूरत पड़ सकती है। इन उदाहरणों को देखते हुए हम आपको बताएंगे कि सही ढंग से आप अपनी प्रोग्रामिंग मानदंडों को कैसे बदल सकते हैं।
 
-```C++
-// उदाहरण 1: "chittiyan kalaiyaan" गाने से शूरुआत करें
+```
+C++ 
+#include <iostream> 
+#include <string> 
 
-#include <iostream>
-#include <cstring>
+using namespace std; 
 
-using namespace std;
-
-int main(){
-    char str[20] = "chittiyan kalaiyaan";
-    // प्रथम अक्षर को बड़ा करने के लिए, हमें स्ट्रिंग की लंबाई लेनी होगी
-    int len = strlen(str);
-    // अब हमें प्रथम अक्षर को बड़ा करने के लिए उसकी ASCII श्रृंखला को +32 करने की जरूरत है
-    str[0] = str[0] - 32;
-    // संशोधित स्ट्रिंग को प्रिंट करें
-    cout << str << endl;
-    return 0;
-}
-// आउटपुट: "Chittiyan kalaiyaan"
+int main() 
+{ 
+  string str = "hindi blog"; 
+  
+  // capitalize the first letter of each word 
+  for (int i=0; i<str.length(); i++) 
+  { 
+    // if current character is space 
+    if (i == 0 || str[i-1] == ' ') 
+      str[i] = toupper(str[i]); // convert to uppercase 
+  } 
+  
+  cout << str; // output: Hindi Blog
+  return 0; 
+} 
 ```
 
-```C++
-// उदाहरण 2: "आज के नसीब में" गाने से शुरू करें
+## डीप डाइव
 
-#include <iostream>
-#include <cstring>
+कैपिटलाइज़ फ़ंक्शन एक बहुत ही उपयोगी फ़ंक्शन है जो की स्ट्रिंग में एक लाइन या शब्द को uppercase में बदल देती है। यह स्ट्रिंग को मॉडीफ़ाई करती है और इसे लूप के द्वारा लागू किया जाता है। आप स्ट्रिंग के प्रत्येक आइटम को चेक कर सकते हैं और उसको uppercase में बदल सकते हैं। इस फ़ंक्शन के साथ आप टेक्स्ट आधारित गेम्स बना सकते हैं या शब्दों को स्विच कर सकते हैं। 
 
-using namespace std;
+# देखें भी
 
-int main(){
-    char str[20] = "आज के नसीब में";
-    // प्रथम अक्षर में ही नुक्ता होने के कारण उसे बड़ा नहीं क
+- [C++ string फ़ॉर्मेटिंग](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
+- [एक स्ट्रिंग को uppercase करने के तरीके](https://www.geeksforgeeks.org/how-to-capitalize-the-first-letter-of-each-word-in-a-string-in-cpp/)
+- [स्ट्रिंग कैसे मॉडीफ़ाई करें](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

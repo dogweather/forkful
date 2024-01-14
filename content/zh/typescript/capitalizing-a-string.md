@@ -1,68 +1,57 @@
 ---
 title:    "TypeScript: 字符串大写化"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-大家好！作为一个程序员，我们经常需要对字符串进行各种操作。其中一个常见的操作就是给字符串首字母大写。这样做的原因可能有很多，比如想要满足特定的命名规范，或者让字符串看起来更规整一些。在本篇文章中，我们会为大家介绍如何用TypeScript来给字符串首字母大写，让你的代码更加规范有序。
+在编程过程中，有时候我们需要将字符串中的第一个字母大写，这是因为在某些情况下，保持标准的大写格式可以使代码更易读且符合规范。同时，也可以避免出现因为大小写不一致而导致的错误。
 
 ## 如何
 
-成功销售，家族企业，头脑风暴，以上几个词组都是由多个单词组成的。但是，在编程时，这样的词组并不能满足命名规范。为了让这些词组看起来更加美观，我们可以用TypeScript来给它们的首字母大写。
-
-首先，我们需要定义一个字符串变量，比如`phrase`。
+在TypeScript中，我们可以通过使用内置方法`toUpperCase()`来实现字符串的大写化。具体实现代码如下所示：
 
 ```TypeScript
-let phrase: string = "成功销售，家族企业，头脑风暴";
+let word = "apple";
+let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
+
+console.log(capitalizedWord);
 ```
-
-然后，我们可以用`charAt()`方法来获取字符串的第一个字符，并用`toUpperCase()`方法来将它转换成大写。
-
-```TypeScript
-let firstChar: string = phrase.charAt(0).toUpperCase(); // "C"
+输出结果为：
 ```
-
-接着，我们可以使用字符串的`slice()`方法来获取剩余的字符，并用`toLowerCase()`方法将它们转换成小写。
-
-```TypeScript
-let restOfString: string = phrase.slice(1).toLowerCase(); // "heng gong xiao shou，jia zu qi ye，tou nao feng bao"
+Apple
 ```
+以上代码的思路是先使用`charAt()`方法获取字符串中的第一个字母，然后使用`toUpperCase()`将其转换为大写，最后再使用`slice()`方法将剩余部分拼接起来。
 
-最后，我们只需要将第一个字符和剩余字符连接起来，就可以得到首字母大写的字符串了！
+## 深入探讨
+
+除了使用内置方法外，我们也可以自己实现一个函数来完成字符串的大写化。具体实现代码如下所示：
 
 ```TypeScript
-let newPhrase: string = firstChar + restOfString; // "成功销售，家族企业，头脑风暴"
+function capitalizeString(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+let word = "banana";
+let capitalizedWord = capitalizeString(word);
+
+console.log(capitalizedWord);
 ```
-
-让我们来看一下完整的代码和输出结果：
-
-```TypeScript
-let phrase: string = "成功销售，家族企业，头脑风暴";
-let firstChar: string = phrase.charAt(0).toUpperCase();
-let restOfString: string = phrase.slice(1).toLowerCase();
-let newPhrase: string = firstChar + restOfString;
-
-console.log(newPhrase); // "成功销售，家族企业，头脑风暴"
+输出结果为：
 ```
-
-## 深入了解
-
-除了上述介绍的方法，我们还可以用`split()`方法来根据特定的分隔符来将字符串拆分成数组，然后对每个单词进行首字母大写的操作。最后再用`join()`方法来将数组拼接成字符串。
-
-```TypeScript
-let phrase: string = "成功，销售，家族，企业，头脑，风暴";
-let words: Array<string> = phrase.split("，"); // ["成功", "销售", "家族", "企业", "头脑", "风暴"]
-let capitalizedWords: Array<string> = words.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()); // ["成功", "销售", "家族", "企业", "头脑", "风暴"]
-let newPhrase: string = capitalizedWords.join("，"); // "成功，销售，家族，企业，头脑，风暴"
-
-console.log(newPhrase); // "成功，销售，家族，企业，头脑，风暴"
+Banana
 ```
+通过自己实现函数，我们可以更加灵活地控制字符串的大写化过程，同时也便于复用和维护。
 
-不仅如此，我们还可以用正则表达式来实现首字母大写的操作。正则表达式是一种强大的文本匹配工具，可以用来识别符合特定规则的文本。
+## 参考链接
 
-```TypeScript
-let phrase: string = "成功销售，家族企业，头脑风暴";
-let newPhrase: string = phrase.replace(/\b\w/g, (char) => char.toUpperCase()); // "成功销售
+- [TypeScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [How to capitalize the first letter of a string in JavaScript](https://stackoverflow.com/questions/1026069/how-to-capitalize-the-first-letter-of-a-string-in-javascript)
+
+## 更多资源
+
+[TypeScript 中文网站](https://www.tslang.cn/index.html)

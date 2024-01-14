@@ -1,43 +1,42 @@
 ---
 title:    "Kotlin: Erstellen einer temporären Datei"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt des Programmierens gibt es viele verschiedene Aufgaben, die Entwickler täglich bewältigen müssen. Eine davon ist die Erstellung von temporären Dateien. Warum sollte man sich überhaupt die Mühe machen, temporäre Dateien zu erstellen? Hier erfährst du es.
+Es gibt viele Gründe, warum man in der Programmierung temporäre Dateien erstellt. Einige häufige Gründe können sein: Zwischenspeichern von Daten, Speichern von Protokolldateien, Verarbeiten von großen Mengen an Daten, oder einfach nur zum Testen von Code.
 
-## Wie man temporäre Dateien in Kotlin erstellt
+# Wie man eine temporäre Datei erstellt
 
-Das Erstellen von temporären Dateien in Kotlin ist ein einfacher Prozess. Zunächst müssen wir die `createTempFile()` Methode aufrufen, die Teil der `java.io.File` Klasse ist. Wir können dieser Methode zwei Parameter übergeben: einen optionalen Dateinamen und eine optionale Dateiendung. Wenn wir keinen Namen oder keine Endung angeben, generiert die Methode automatisch einen einzigartigen Dateinamen für uns.
-
-```Kotlin
-val tempFile = File.createTempFile("temp", ".txt")
-```
-
-Wenn wir nun das erstellte `tempFile` Objekt ausgeben, sehen wir den vollständigen Pfad der temporären Datei.
+Um eine temporäre Datei in Kotlin zu erstellen, kann die `createTempFile()` -Funktion verwendet werden. Diese Funktion erstellt automatisch eine temporäre Datei in einem angegebenen Verzeichnis mit einem einzigartigen Namen. Hier ist ein Beispiel, wie man diese Funktion verwenden kann:
 
 ```Kotlin
-println(tempFile.getAbsolutePath())
+val tempFile = createTempFile("sample", ".txt")
+println("Name der erzeugten Datei: ${tempFile.name}")
+println("Pfad der erzeugten Datei: ${tempFile.absolutePath}")
 ```
 
-Die Ausgabe würde etwa wie folgt aussehen:
+Die Ausgabe dieses Codes in einer IDE könnte beispielsweise so aussehen:
 
+```txt
+Name der erzeugten Datei: sample5976583996218194573.txt
+Pfad der erzeugten Datei: /Users/name/Desktop/sample5976583996218194573.txt
 ```
-/var/folders/15/vfx06kgd7731822hxxxfq8mw0000gn/T/temp123456789.txt
-```
 
-## Tiefergehende Informationen zur Erstellung von temporären Dateien
+Wie man sehen kann, wird die temporäre Datei mit einem eindeutigen Namen im angegebenen Verzeichnis erstellt. Diese Datei kann dann verwendet werden, um Daten zu speichern oder zu verarbeiten.
 
-Jetzt, da wir wissen, wie man temporäre Dateien in Kotlin erstellt, lassen uns einen Blick auf einige weitere wichtige Details werfen. Die `createTempFile()` Methode erstellt automatisch eine temporäre Datei im entsprechenden System-Temp-Verzeichnis. Dieses Verzeichnis kann je nach Betriebssystem variieren, aber wir können immer auf den Pfad zugreifen, indem wir die `System.getProperty("java.io.tmpdir")` Methode aufrufen.
+# Tiefere Einblicke
 
-Wenn wir möchten, können wir auch eine benutzerdefinierte temporäre Datei in einem bestimmten Verzeichnis erstellen, indem wir der `createTempFile()` Methode ein zusätzliches Argument übergeben, das den Speicherort angibt. Außerdem können wir auch die `deleteOnExit()` Methode aufrufen, um sicherzustellen, dass die temporäre Datei automatisch gelöscht wird, sobald das Programm beendet wird.
+Die `createTempFile()` -Funktion verwendet einen Algorithmus, um sicherzustellen, dass der Name der temporären Datei eindeutig ist, auch wenn mehrere Threads gleichzeitig aufgerufen werden. Diese Funktion erstellt standardmäßig eine temporäre Datei im Standard-Temp-Verzeichnis des Betriebssystems. Sie können jedoch auch einen bestimmten Ordner angeben, in dem die Datei erstellt werden soll.
 
-## Siehe auch
+Eine weitere nützliche Funktion ist `createTempDirectory()`, die eine temporäre Verzeichnis zurückgibt, anstatt eine Datei zu erstellen. Diese Funktion kann verwendet werden, wenn Sie temporäre Dateien in einem Ordner organisieren möchten, anstatt sie direkt im Temp-Verzeichnis zu haben.
 
-Wenn du mehr über die Arbeit mit temporären Dateien in Kotlin erfahren möchtest, schau dir diese hilfreichen Ressourcen an:
+# Siehe auch
 
-- Offizielle Dokumentation für `java.io.File`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html
-- Tutorial zur Arbeit mit temporären Dateien in Kotlin: https://www.baeldung.com/kotlin-temporary-file
+- [Kotlin Dokumentation über das Erstellen von temporären Dateien](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [Creating Temporary Files in Java](https://www.baeldung.com/java-temporary-files)
+- [Kotlin schnelle Einführung - Erste Schritte mit Dateisystemoperationen](https://kotlinlang.org/docs/tutorials/kotlin-for-py/files.html)

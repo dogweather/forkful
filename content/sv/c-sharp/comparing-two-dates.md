@@ -1,73 +1,40 @@
 ---
 title:    "C#: Jämföra två datum"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När du arbetar med datum i ett C# program, kan det ibland vara nödvändigt att jämföra två olika datum. Det kan vara för att kontrollera om ett datum ligger före eller efter ett annat, eller om båda datumen är samma. I denna bloggpost kommer vi att titta på hur man enkelt kan jämföra två datum i C#.
+Att jämföra två datum är en vanligt förekommande uppgift i programmering och det kan ha många olika syften. Det kan vara för att se vilket av två datum som är tidigare eller senare, för att filtrera data baserat på datum eller för att visa hur lång tid det har gått mellan två specifika datum. Oavsett syfte är det viktigt att ha en bra förståelse för hur man jämför datum i C#.
 
 ## Hur man gör
 
-Enklaste sättet att jämföra två datum i C# är att använda sig av DateTime.CompareTo() metoden. Den här metoden jämför två Datetime-objekt och returnerar en hel siffra som indikerar om det första datumet är större, mindre eller lika med det andra datumet.
+I C# finns det olika sätt att jämföra två datum och det viktigaste att känna till är de inbyggda metoder som finns tillgängliga för detta ändamål. Här är ett exempel på hur man enkelt kan jämföra två datum:
 
 ```C#
-DateTime datum1 = new DateTime(2021, 04, 16);
-DateTime datum2 = new DateTime(2021, 04, 20);
+DateTime date1 = new DateTime(2020, 10, 10);
+DateTime date2 = new DateTime(2020, 11, 11);
 
-int resultat = datum1.CompareTo(datum2);
-
-if (resultat < 0)
+// Jämför om date1 är äldre än date2
+if (date1 < date2)
 {
-    Console.WriteLine($"{datum1} ligger före {datum2}");
+    Console.WriteLine("Date1 är tidigare än date2");
 }
-else if (resultat > 0)
-{
-    Console.WriteLine($"{datum1} ligger efter {datum2}");
-}
-else
-{
-    Console.WriteLine($"{datum1} och {datum2} är samma datum");
-}
-
-// Output: 2021-04-16 ligger före 2021-04-20
 ```
 
-I det här exemplet skapar vi två Datetime-objekt och använder sedan CompareTo-metoden för att jämföra dem. Beroende på resultatet, skrivs sedan ett lämpligt meddelande ut.
-
-En annan metod för att jämföra datum är att använda DateTime.CompareToExact() metoden. Den här metoden fungerar på samma sätt som CompareTo, men ger dig även möjlighet att specificera en tidszon eller ett kalendersystem. Detta är användbart om du behöver jämföra datum som är i olika tidszoner eller kalendersystem.
-
-```C#
-DateTime datum1 = new DateTime(2021, 04, 16, 13, 05, 00);
-DateTime datum2 = new DateTime(2021, 04, 16, 12, 05, 00);
-
-int resultat = datum1.CompareToExact(datum2, DateTimeKind.Local);
-
-if (resultat < 0)
-{
-    Console.WriteLine($"{datum1} ligger före {datum2}");
-}
-else if (resultat > 0)
-{
-    Console.WriteLine($"{datum1} ligger efter {datum2}");
-}
-else
-{
-    Console.WriteLine($"{datum1} och {datum2} är samma datum");
-}
-
-// Output: 2021-04-16 13:05:00 ligger före 2021-04-16 12:05:00
-```
+I det ovanstående exemplet använder vi den inbyggda metoden "Compare" för att jämföra två datum. Det är också möjligt att använda andra metoder såsom "Equals" eller "CompareTo" beroende på vad som passar bäst för din specifika användning.
 
 ## Djupdykning
 
-När man jämför datum i C#, är det viktigt att förstå hur DateTime-objektet fungerar. Ett Datetime-objekt består av datum, tid och en tidszon. När man jämför datumen måste man därför ta hänsyn till alla tre delar för att få ett korrekt resultat.
-
-Det är även viktigt att vara försiktig med tidszoner och sommartid, som kan påverka hur datumet visas och jämförs. Använd därför alltid DateTime.ToUniversalTime() metoden för att konvertera ett datum till UTC (koordinerad universell tid) innan du jämför det.
+Det finns många saker att tänka på när man jämför datum i C#. En viktig aspekt är att ta hänsyn till tidszoner, vilket kan påverka resultatet av en jämförelse. Det är också viktigt att vara medveten om att en del datum objekt i C# är oföränderliga, vilket innebär att när ett datum har skapats så kan det inte ändras. Därför är det viktigt att noga tänka igenom vilka metoder som passar bäst för din specifika användning och vilka resultat du förväntar dig.
 
 ## Se även
 
-- [DateTime.CompareTo() Metod](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=net-5.0#System_DateTime_CompareTo_System_DateTime_)
-- [DateTime.CompareToExact() Metod](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.comparetoexact?view=net-5.0#System_DateTime_CompareToExact_System_DateTime_System_DateTimeKind_)
+Här är några länkar som kan vara användbara för att lära sig mer om hur man jämför datum i C#:
+
+- [Microsoft's guide för att jämföra datum i C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-compare-dates)
+- [Tutorialspoint's artikel om jämförelse av datum i C#](https://www.tutorialspoint.com/How-to-compare-dates-in-C-Sharp)
+- [Stack Overflow tråd med tips för att jämföra datum i C#](https://stackoverflow.com/questions/17344984/how-do-i-compare-dates-in-c-sharp)

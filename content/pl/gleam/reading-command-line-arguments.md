@@ -1,45 +1,45 @@
 ---
-title:    "Gleam: Odczytywanie argumentów wiersza poleceń"
+title:    "Gleam: Odczytywanie argumentów linii poleceń"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Podczas pisania programów, często potrzebujemy, aby program przyjmował pewne argumenty z linii poleceń. To pozwala nam na dostosowanie działania programu bez konieczności zmieniania kodu źródłowego. W tym artykule dowiecie się, jak odczytywać argumenty z linii poleceń w języku Gleam.
+Istnieje wiele powodów, dla których powinieneś nauczyć się czytać argumenty z wiersza poleceń w Gleam. Przede wszystkim, jest to bardzo przydatna umiejętność, szczególnie jeśli pracujesz z większymi projektami. Pozwala to na dostosowanie zachowania programu w zależności od tego, w jaki sposób jest uruchamiany.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby odczytać argumenty z linii poleceń w Gleam, należy użyć funkcji `gleam/io/Cli.arguments` z modułu "gleam/io". Poniżej znajduje się przykładowy kod, który wypisze na ekranie podane argumenty:
+Aby wczytać argumenty z wiersza poleceń w Gleam, należy użyć funkcji `os.args()`, która zwraca listę argumentów przekazanych przy uruchamianiu programu. Następnie można przetworzyć tę listę w celu uzyskania wartości, które są potrzebne w programie.
+
+Przykładowy kod:
+
 ```Gleam
-external println(message: String) 
-  -> Ok
+import os
 
-let main = _ ->
-  let args = 
-    case io/Cli.arguments() in
-      Ok(cli_args) -> cli_args
-      Err(_) -> [""]
-  for arg in args do
-    println(arg)
-  Ok(())
+pubfn main() {
+  args = os.args()
+  for arg in args {
+    // przetwarzanie argumentu
+  }
+}
 ```
 
-Gdy uruchomimy ten program z argumentami `"hello"` i `"world"`, powinniśmy zobaczyć następujący output:
+Przykładowy output dla komendy `gleam run program "argument1" 2`:
+
+```Bash
+["program", "argument1", "2"]
 ```
-hello
-world
-```
 
-## Głębsza Analiza
+## Vert Deep Dive
 
-Funkcja `cli.arguments` zwraca wynik typu `Result`, który może być albo `Ok` (zawierającym tablicę argumentów) lub `Err`. Warto zauważyć, że funkcja ta zwróci błąd tylko wtedy, gdy program jest uruchomiony bez podania żadnych argumentów z linii poleceń. W przeciwnym razie zwraca ona pustą tablicę.
+Funkcja `os.args()` zwraca listę argumentów jako typ `List(String)`. Taki typ może być przetwarzany na inne typy, na przykład `Int` lub `Float`, zależnie od potrzeb programu.
 
-Dodatkowym ulepszeniem powyższego kodu może być sprawdzenie ilości argumentów i wyświetlenie odpowiedniego komunikatu w celu obsłużenia błędów.
+Ważne jest również zauważyć, że argumenty z wiersza poleceń są przekazywane jako ciągi znaków. W przypadku, gdy wymagane są inne typy, należy odpowiednio je przekonwertować.
 
 ## Zobacz także
 
-- Dokumentacja dla modułu `gleam/io`: https://gleam.run/docs/io
-- Dokumentacja dla `Result` w języku Gleam: https://gleam.run/docs/result
-- Przykładowe projektu wykorzystujące odczytywanie argumentów z linii poleceń: https://github.com/gleam-lang/examples/blob/master/cli_arguments/src/main.gleam
+- [Dokumentacja Gleam na temat argumentów z wiersza poleceń](https://gleam.run/book/tour/command-line-arguments.html)
+- [Przykładowy projekt z wykorzystaniem argumentów z wiersza poleceń w Gleam](https://github.com/yourusername/your-project-name)

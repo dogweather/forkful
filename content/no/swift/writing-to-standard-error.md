@@ -1,36 +1,42 @@
 ---
-title:    "Swift: Skriving til standardfeil"
+title:    "Swift: Skriver til standardfeil"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Skriver du programmer i Swift og lurer på hvorfor du skulle bry deg med å skrive til standard error? Les videre for å finne ut hvorfor skriving til standard error er en viktig del av Swift-programmering.
 
-## Hvordan
-Skriving til standard error kan være nyttig når du ønsker å varsle om feil, debugging eller andre meldinger som ikke bør vises til brukeren. Du kan enkelt skrive til standard error ved å bruke "print"-funksjonen med parameteren "error" og sende inn en String som inneholder meldingen du ønsker å skrive. 
+Å skrive til standard error kan være nyttig for å feilsøke og forbedre programmet ditt. I stedet for å bare skrive ut feilmeldinger til vanlig utgang, kan du skrive dem til standard error for å få mer detaljert og tydelig informasjon om hva som er galt. Dette kan hjelpe deg med å finne og rette feil raskere.
 
-```Swift
-print("Hei, dette er en feilmelding!", to: &stderr)
-```
+## Hvordan du gjør det
 
-Dette vil skrive meldingen til standard error i stedet for standard output. Du kan også legge til ekstra parametere for å spesifisere endring av format eller separator.
+Du kan enkelt skrive til standard error i Swift ved å bruke `print()` funksjonen og spesifisere `to: .standardError` som parameter. Her er et eksempel på hvordan du kan gjøre dette i et program som regner ut gjennomsnittet av to tall:
 
 ```Swift
-print("Summen av 2 og 3 er \(2+3)", to: &stderr, terminator: "\n")
+let tall1 = 10
+let tall2 = 5
+
+let gjennomsnitt = (tall1 + tall2) / 2
+
+if gjennomsnitt < 4 {
+  print("Gjennomsnittet er for lavt", to: .standardError)
+} else {
+  print("Gjennomsnittet er \(gjennomsnitt)")
+}
 ```
 
-Dette vil skrive ut summen til standard error og legge til en linjeskift på slutten.
+Denne koden vil skrive ut feilmeldingen "Gjennomsnittet er for lavt" til standard error dersom gjennomsnittet er mindre enn 4. Ellers vil den skrive ut gjennomsnittet som en vanlig utgang.
 
 ## Dypdykk
-Når du skriver til standard error, vil meldingen din bli sendt direkte til konsollen uten å bli lagt til i standard output. Dette er spesielt nyttig når du kjører din kode i et terminalmiljø og ønsker å skille mellom vanlige meldinger og feilmeldinger. 
 
-I tillegg, når du sender meldinger til standard error, vil de vises med en rød farge i konsollen. Dette gjør det enklere å identifisere og fange opp eventuelle feil som kan oppstå under kjøring av ditt program.
+I tillegg til å gi mer detaljert informasjon, kan skriving til standard error også være nyttig for å skille mellom forskjellige typer meldinger som skrives ut. Dette kan gjøres ved å bruke en egen `print()` funksjon som spesifiserer `.standardError` som parameter. Dette gjør det mulig å filtrere ut eller håndtere standard error-data separat fra annen utgang.
+
+Et annet bruksområde for skriving til standard error er å fange feilmeldinger og håndtere dem på en bestemt måte. Dette kan være spesielt nyttig når du arbeider med nettverk, filer eller andre eksterne ressurser.
 
 ## Se også
-For mer informasjon om skriving til standard error i Swift, se følgende ressurser:
 
-- [Swift's Standard Library dokumentasjon](https://developer.apple.com/documentation/swift/1541053-print)
-- [Ray Wenderlich's "Working with Standard Error in Swift" tutorial](https://www.raywenderlich.com/6308-working-with-standard-error-in-swift)
-- [Stack Overflow discussion on writing to standard error in Swift](https://stackoverflow.com/questions/33102947/writing-to-standard-error-in-swift)
+- [Error handling in Swift](https://blog.nordiskconetent.com/error-handling-in-swift)
+- [Printing to standard error in Swift](https://www.swiftbysundell.com/articles/printing-to-standard-error-in-swift)
+- [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)

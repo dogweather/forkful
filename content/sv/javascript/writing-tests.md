@@ -1,50 +1,39 @@
 ---
-title:    "Javascript: Att skriva tester"
+title:    "Javascript: Skriva tester"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför skriva tester i Javascript?
 
-Att skriva tester är en vanlig praxis inom Javascript-programmering och kan ge många fördelar. Genom att skriva tester kan du öka kvaliteten på din kod, identifiera och fixa buggar tidigare samt skapa ett mer robust och pålitligt program.
+Att skriva tester är en viktig del av utvecklingsprocessen i Javascript. Det hjälper till att förbättra kodens kvalitet, upptäcka potentiella buggar och underlätta felsökning. Det är också ett sätt att säkerställa att koden fungerar som den ska och bidrar till en stabil och pålitlig produkt.
 
-## Hur man skriver tester
+## Hur man skriver tester i Javascript
 
-För att skriva tester i Javascript använder man ofta ett testramverk som exempelvis Jest eller Mocha. I nedanstående exempel kommer vi att använda Jest för att demonstrera hur man skriver tester i Javascript.
+För att skriva tester i Javascript behöver du först välja ett lämpligt testningsramverk, såsom Jasmine, Mocha eller Jest. Dessa ramverk ger en strukturerad och enhetlig metod för att skriva tester. 
 
-Först behöver vi installera Jest genom att köra följande kommando i terminalen:
+Här är ett exempel på hur man skriver ett enkelt test i Jasmine:
 
-```Javascript
-npm install --save-dev jest
-```
-
-När installationen är klar kan vi börja skriva våra tester. Det första steget är att skapa en testfil och importera den funktion eller del av koden som vi vill testa. Sedan använder vi Jest's testfunktion för att definiera ett test och förväntat resultat. Nedanstående kod visar ett exempel på hur man kan testa en funktion som adderar två tal:
-
-```Javascript
-//Importera funktionen som ska testas
-const add = require('./math');
-
-//Enhetstest för funktionen add
-test('adds two numbers correctly', () => {
-  expect(add(2, 3)).toBe(5);
+```Javascript 
+describe('addition', function() {
+  it('should add two numbers together', function() {
+    expect(add(5, 10)).toBe(15);
+  });
 });
 ```
 
-Genom att köra vårt test med kommandot `jest` i terminalen får vi ett resultat som talar om ifall testet lyckades eller misslyckades. Om alla test lyckas får vi ett grönt meddelande, men om ett eller flera test misslyckas visas ett rött meddelande och en beskrivning av felet.
+I detta exempel skapar vi en testsvit med namnet "addition" och en testfunktion som kallas "should add two numbers together". Inom funktionen använder vi en förväntningsmetod "expect" för att definiera vad resultatet av en funktion ska vara. I detta fall förväntar vi oss att funktionen "add" lägger ihop två tal och ger oss resultatet 15. 
 
-## Djupdykning
+## Djupdykning i tester
 
-Att skriva tester kan verka tidskrävande och onödigt i början, men det kan spara dig mycket tid och frustration senare. Genom att skriva tester kan du känna dig tryggare med din kod och vara säker på att den fungerar som den ska även efter eventuella förändringar och uppdateringar. Det är också en bra praxis att skriva tester innan du börjar koda då det tvingar dig att tänka igenom din design och logik.
+Att skriva tester handlar inte bara om att skriva enkla fall som vi testar mot. Det handlar också om att tänka på olika scenarier och förvänta sig ovanliga eller felaktiga indata. I vårt tidigare exempel skulle det till exempel vara en bra idé att testa vad som händer om vi ger funktionen "add" en sträng istället för tal som indata.
 
-En annan fördel med att skriva tester är att det kan hjälpa dig att upptäcka buggar och fel tidigare i processen, vilket sparar dig tid och möjligtvis även frustration. Genom att ha ett välstrukturerat testdrivet utvecklingssätt kan du snabbt identifiera problem och åtgärda dem innan de påverkar din slutprodukt.
+Ett annat viktigt koncept inom tester är testdriven utveckling (TDD). Det innebär att man skriver tester innan man skriver koden, vilket hjälper till att fokusera på det önskade beteendet hos koden. Detta ger också en tydlig struktur och enklare underhåll av koden på lång sikt.
 
 ## Se även
 
-Här är några användbara resurser för att lära dig mer om hur man skriver tester i Javascript:
-
-- [Jest dokumentation](https://jestjs.io/docs/en/getting-started)
-- [Mocha dokumentation](https://mochajs.org/)
-- [En guide till testdriven utveckling i Javascript](https://www.freecodecamp.org/news/a-complete-guide-to-test-driven-development-a5ee7440bdad/)
-
-Lycka till med att integrera tester i din Javascript-kod och förbättra din programmeringsprocess!
+- [Jasmine](https://jasmine.github.io/)
+- [Mocha](https://mochajs.org/)
+- [Jest](https://jestjs.io/)

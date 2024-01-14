@@ -1,45 +1,66 @@
 ---
 title:    "TypeScript: 텍스트 파일 작성하기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+👨‍💻 TypeScript 프로그래밍 블로그: 텍스트 파일 작성 가이드! 
 
-텍스트 파일을 쓰는 것에 대한 이유는 매우 다양합니다. 그 중에서도 가장 중요한 이유는 프로그래밍에서 사용되는 데이터를 저장하고 관리하기 위해서입니다. 텍스트 파일은 프로그래밍에서 매우 중요한 역할을 합니다.
+## 왜 텍스트 파일을 작성할까요? 
+텍스트 파일은 우리의 일상에 필수입니다. 워드프로세서에서 문서 작성, 이메일 보내기, 쇼핑 목록 작성 등 여러 가지 활동에서 텍스트 파일을 사용합니다. 그렇다면, 우리는 왜 텍스트 파일을 작성할까요? 프로그래밍 여정에서도 텍스트 파일은 매우 중요한 역할을 합니다. 다음은 텍스트 파일을 작성하는 이유입니다. 
 
-# 방법
+- 소스 코드와 주석 등의 정보를 저장하기 위해
+- 데이터를 저장하고 불러오기 위해
+- 서버나 데이터베이스에 데이터를 업데이트 하기 위해 
 
-텍스트 파일을 쓰는 방법은 TypeScript에서도 매우 간단합니다. 먼저 파일 시스템 모듈을 임포트합니다. 그리고 `writeFileSync` 메소드를 사용하여 파일을 작성하고 내용을 쓸 수 있습니다.
+## 어떻게 텍스트 파일을 작성할까요? 
+이제 실제로 TypeScript를 사용해 텍스트 파일을 작성하는 방법을 알아보겠습니다. 
 
-```TypeScript
-import * as fs from 'fs';
+첫 번째로, fs 모듈을 불러옵니다. 
 
-fs.writeFileSync('example.txt', 'This is a text file written in TypeScript');
-```
+```TypeScript 
+import fs from 'fs'; 
+``` 
 
-위의 예시 코드를 실행하면 현재 디렉토리에 `example.txt` 파일이 생성되고 내용을 쓴 후에는 파일이 닫힙니다.
+다음으로, 텍스트 파일을 작성할 경로와 내용을 변수로 저장합니다. 
 
-# 깊이 들어가기
+```TypeScript 
+const path = './textFile.txt'; 
+const content = '안녕하세요, TypeScript 프로그래밍을 배우는 우리 모두에게 행운이 있기를!'; 
+``` 
 
-텍스트 파일을 쓰는 것은 파일을 생성하고 내용을 쓰는 것 이상의 역할을 할 수 있습니다. TypeScript에서는 파일의 경로, 인코딩 타입 등 다양한 옵션을 설정할 수 있습니다. 또한, `writeFile` 메소드를 사용하면 콜백 함수를 통해 비동기적으로 파일을 생성하고 내용을 쓸 수도 있습니다.
+이제 fs 모듈의 writeFile 함수를 사용해 파일을 작성합니다. 
 
-```TypeScript
-import * as fs from 'fs';
+```TypeScript 
+fs.writeFile(path, content, (err) => { 
+  if (err) throw err; 
+  console.log('텍스트 파일이 성공적으로 작성되었습니다!'); 
+}); 
+``` 
 
-fs.writeFile('example.txt', 'This is a text file written in TypeScript', (err) => {
-  if (err) throw err;
-  console.log('File successfully written');
-});
-```
+만약 이미 같은 이름의 파일이 존재한다면, 파일이 덮어쓰여집니다. 추가로 작성하고 싶다면 fs.appendFile 함수를 사용할 수 있습니다. 
 
-비동기적인 방식을 사용하면 파일 작성 후에 추가적인 작업을 수행할 수 있으므로 더욱 유연한 코드를 작성할 수 있습니다.
+```TypeScript 
+fs.appendFile(path, content, (err) => { 
+  if (err) throw err; 
+  console.log('텍스트 파일에 내용이 추가되었습니다!'); 
+}); 
+``` 
 
-# 또 다른 참고 자료
+## 깊게 파보기 
+일반적인 텍스트 파일 작성 외에도, TypeScript를 사용해 더 다양한 작업을 할 수 있습니다. 예를 들어, 데이터베이스에 정보를 저장하기 위해 텍스트 파일을 사용할 수 있고, node.js의 child_process 모듈을 사용해 외부 프로그램을 실행시키는 등 다양한 방법으로 텍스트 파일을 활용할 수 있습니다. 하지만, 이는 더 깊게 파고들어 갈 내용이므로 이번 글에서는 다루지 않겠습니다. 
 
-- [TypeScript 공식 문서](https://www.typescriptlang.org/)
-- [Node.js 파일 시스템 모듈 문서](https://nodejs.org/api/fs.html)
-- [TypeScript 기본 문법 강좌 (번역)](https://poiemaweb.com/typescript-introduction)
-- [Node.js로 텍스트 파일 다루기 (번역)](https://programmingsummaries.tistory.com/385)
-## 참고 자료
+## 더 알아보기 
+지금까지 TypeScript를 사용해 텍스트 파일을 작성하는 방법에 대해 알아보았습니다. 하지만, 텍스트 파일 작성 외에도 TypeScript를 사용해 더 다양한 작업을 할 수 있습니다. 아래 링크들을 참고해 더 많은 정보를 얻어보세요! 
+
+### 관련 링크들 
+- [fs 모듈 공식 문서](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html) 
+- [fs-extra 모듈](https://www.npmjs.com/package/fs-extra) 
+- [Node.js child_process 모듈](https://nodejs.org/dist/latest-v14.x/docs/api/child_process.html) 
+
+## 이어서 보기 
+이번 글에서는 TypeScript를 사용해 텍스트 파일을 작성하는 방법에 대해 알아보았습니다. 다음으로는 TypeScript에서 파일을 읽고 수정하는 방법에 대해 다룬 글을 보고 싶으시다면 아래 링크를 확인해보세요! 
+
+- [TypeScript

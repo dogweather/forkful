@@ -1,44 +1,54 @@
 ---
-title:    "Javascript: Ricerca e sostituzione del testo."
+title:    "Javascript: Ricerca e sostituzione di testo"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Un compito comune nella programmazione è la ricerca e sostituzione di testo. Questo è utile quando si desidera cambiare frasi o parole all'interno di un file o di una variabile. Continua a leggere per scoprire come farlo utilizzando Javascript!
 
-## Come fare
-Per eseguire la ricerca e sostituzione di testo in Javascript, è necessario utilizzare il metodo `replace()`. Questo metodo accetta due parametri: il primo è la stringa di ricerca e il secondo è la stringa di sostituzione. Ad esempio:
+La ricerca e la sostituzione del testo sono una parte essenziale della programmazione in JavaScript. Questa operazione consente di modificare dinamicamente il contenuto di una variabile o di un elemento HTML all'interno di un programma.
 
-```Javascript
-let testo = "Questo è un esempio di testo.";
-let nuovoTesto = testo.replace("esempio", "esempio interessante");
-console.log(nuovoTesto); // Output: "Questo è un esempio interessante di testo."
+## How To
+
+Per eseguire una ricerca e sostituire del testo in JavaScript, utilizziamo il metodo `replace()` di un oggetto stringa.
+
+Ad esempio, se abbiamo una variabile `nome` che contiene il valore "Giulia", possiamo utilizzare `nome.replace("Giulia", "Maria")` per sostituire la parola "Giulia" con "Maria". Il risultato sarebbe "Maria".
+
+Questo metodo può essere utilizzato anche su un elemento HTML, ad esempio `document.querySelector("h1").replace("Benvenuto", "Ciao")` sostituirà la parola "Benvenuto" con "Ciao" all'interno dell'elemento h1 del documento.
+
+Questo metodo può anche essere utilizzato per sostituire in modo globale tutte le occorrenze di una parola o di una frase, utilizzando il modificatore `/g`.
+
+`nome.replace(/Giulia/g, "Maria")` sostituirà ogni occorrenza di "Giulia" con "Maria" all'interno della variabile `nome`.
+
+## Deep Dive
+
+Il metodo `replace()` in realtà accetta due parametri, uno per la stringa da cercare e uno per la stringa da sostituire. Tuttavia, è anche possibile utilizzare una funzione come secondo parametro, che può essere molto utile in determinati contesti.
+
+Ad esempio, se vogliamo sostituire un numero all'interno di una stringa con quel numero incrementato di uno, possiamo utilizzare una funzione e l'operatore di incremento `++`.
+
+```
+let frase = "Il numero è 5";
+frase.replace(/\d+/, function(match) {
+  return parseInt(match, 10) + 1;
+});
 ```
 
-Come puoi vedere dall'esempio, il metodo `replace()` ha sostituito la parola "esempio" con "esempio interessante". Ma cosa succede se vuoi sostituire tutte le occorrenze della parola? Per farlo, dovrai utilizzare il cosiddetto flag "g" (globale). Ad esempio:
+Questo ci darà come risultato "Il numero è 6".
 
-```Javascript
-let testo = "Questo è un esempio di testo con più esempi.";
-let nuovoTesto = testo.replace(/esempio/g, "esempio interessante");
-console.log(nuovoTesto); // Output: "Questo è un esempio interessante di testo con più esempi interessanti."
+Un'altra caratteristica utile del metodo `replace()` è la possibilità di utilizzare espressioni regolari per effettuare ricerche più avanzate e sostituire parti specifiche di una stringa.
+
+Per esempio, se vogliamo sostituire tutte le vocali minuscole con il simbolo "-":
+
+```
+let frase = "Ciao, come va?";
+frase.replace(/[aeiou]/g, "-");
 ```
 
-Come puoi vedere, utilizzando il flag "g", tutte le occorrenze della parola "esempio" sono state sostituite con "esempio interessante".
-
-## Approfondimento
-Oltre alla sostituzione di parole specifiche, è possibile utilizzare il metodo `replace()` per eseguire ricerche e sostituzioni più complesse utilizzando le cosiddette espressioni regolari. Queste sono stringhe di caratteri che ti permettono di cercare pattern specifici e di sostituirli con il testo desiderato. Ad esempio:
-
-```Javascript
-let testo = "Numero di telefono: 1234567890.";
-let nuovoTesto = testo.replace(/[0-9]/g, "*");
-console.log(nuovoTesto); // Output: "Numero di telefono: **********."
-```
-
-In questo esempio, abbiamo utilizzato l'espressione regolare `[0-9]` per trovare tutti i numeri nel testo e sostituirli con l'asterisco "*". Ciò può essere utile per nascondere informazioni sensibili all'interno di un testo.
+Risultato: "C--,- c-- v?".
 
 ## Vedi anche
-- [Metodo replace() - MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Espressioni regolari in Javascript - MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Guida/Espressioni_Regolari)
-- [Tutorial su sostituzioni di testo in Javascript - DigitalOcean](https://www.digitalocean.com/community/tutorials/js-replacing-text)
+
+- [Documentazione su replace() di MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Guida alle espressioni regolari in JavaScript](https://flaviocopes.com/javascript-regular-expressions/)

@@ -1,60 +1,44 @@
 ---
-title:    "Haskell: 新しいプロジェクトの開始"
+title:    "Haskell: 新しいプロジェクトを始める"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ新しいプロジェクトを始めるか
 
-新しいプロジェクトを始めるには、Haskellプログラミング言語を使うことが非常に魅力的です。簡潔な構文と強力な型システムにより、コードをより安全かつ効率的に書くことができます。
+Haskellの魅力のひとつは、強力な静的型システムです。新しいプロジェクトを始めることで、柔軟性と堅牢性を兼ね備えたソフトウェアを作ることができます。
 
-## 作り方
+## やり方
 
-まず、Haskellコミュニティの活発なサポートフォーラムやウェブサイトを参考にして、基本的な文法や標準ライブラリを学びましょう。次に、新しいプロジェクトを始めるための準備をしましょう。下記のコード例を参考にしてみてください。
+まず、Haskellのコミュニティのサポートを受けるために、Haskellプロジェクトを始める前に、Haskellの基礎知識を身につけることが重要です。それから、以下のような手順で新しいプロジェクトを始めることができます。
 
-```Haskell
--- 標準ライブラリのインポート
-import Data.List
-import Data.Maybe (fromMaybe)
- 
--- 新しいデータ型の定義
-data Person = Person { name :: String, age :: Int }
+```
+Haskell 
+1. プロジェクトのディレクトリを作成する。
+2. プロジェクトのルートディレクトリに移動する。
+3. `stack new [プロジェクト名]` でプロジェクトを作成する。
+4. `cd [プロジェクト名]` でプロジェクトのディレクトリに移動する。
+```
 
--- 関数の定義
-getName :: Person -> String
-getName p = name p
- 
--- データのリスト
-people :: [Person]
-people = [ Person { name = "太郎", age = 25 },
-           Person { name = "花子", age = 30 } ]
+これで、プロジェクトを始める準備が整いました。以下のようなコードを書くことで、Haskellのパワーを実感することができます。
 
--- 出力
+```
+Haskell
 main :: IO ()
 main = do
-  putStrLn "名前一覧:"
-  mapM_ putStrLn $ map getName people
+    putStrLn "こんにちは、世界！"
 ```
 
-出力:
-
-```
-名前一覧:
-太郎
-花子
-```
-
-このように、Haskellでは簡潔な構文で、強力な機能を実現することができます。さらに、コードの実行前にコンパイルするため、エラーが発生する可能性が低く、プロジェクトの開発をスムーズに進めることができます。
+上記のコードを実行すると、`こんにちは、世界！`というメッセージが表示されます。
 
 ## 深堀り
 
-新しいプロジェクトを始める際には、プロジェクトの目的や機能、必要なライブラリなどを明確にすることが重要です。また、適切なデータ型の設計やモジュールの分割など、良い設計を行うことも大切です。
+新しいプロジェクトを始めるときに気をつけるべきことはいくつかあります。まず、プロジェクトの目的や構造を明確に決めることが重要です。また、Haskellの関数型プログラミングスタイルに慣れることも大切です。さらに、Haskellの著名なライブラリーである`Hackage`を活用することで、プロジェクトをより効率的に進めることができます。
 
-さらに、HaskellではHackageと呼ばれるパッケージマネージャーを使用して、多くの外部ライブラリを簡単に導入することができます。また、厳密な型システムにより、コードの品質を保つことができます。
+## 関連リンク
 
-## See Also
 - [Haskell公式サイト](https://www.haskell.org/)
-- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskellの基礎知識](https://learn.hfm.io/)
 - [Hackage](https://hackage.haskell.org/)

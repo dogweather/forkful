@@ -1,52 +1,63 @@
 ---
-title:    "C++: Odczytywanie argumentów z wiersza poleceń"
+title:    "C++: Odczytywanie argumentów wiersza poleceń"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Programowanie w C++ to wciągająca i potrzebna umiejętność, a dzięki umiejętności czytania argumentów wiersza poleceń możemy zbudować jeszcze lepsze i bardziej funkcjonalne programy. Dlatego, czytając ten blog post, dowiesz się jak odczytywać argumenty wiersza poleceń w C++.
+Czy kiedykolwiek zastanawiałeś się, jak programy wiersza poleceń pobierają informacje od użytkownika? Jeśli tak, to dobrze trafiłeś! W tym blogu dowiesz się, dlaczego jest ważne umieć czytać argumenty wiersza poleceń w języku C++.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby odczytać argumenty wiersza poleceń w C++, musimy użyć klasy "argc" i "argv". Oto przykład kodu:
+W języku C++, istnieje prosty sposób na odczytywanie argumentów wprowadzonych przez użytkownika podczas uruchamiania programu. Wystarczy użyć funkcji `int main(int argc, char* argv[])`. Jest to funkcja, która pobiera dwa argumenty - `argc`, który przechowuje liczbę argumentów oraz `argv[]`, który przechowuje właściwe wartości argumentów w postaci tablicy.
+
+Poniżej znajduje się przykładowy kod, który demonstruje to w praktyce:
 
 ```C++
 #include <iostream>
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 
-  // pętla odczytująca argumenty
-  for(int i = 0; i < argc; i++) {
-    cout << "Argument " << i << " to: " << argv[i] << endl;
-  }
+    // Wypisanie wszystkich argumentów podanych przez użytkownika
+    for (int i = 0; i < argc; i++) {
+        cout << "Argument nr " << i << ": " << argv[i] << endl;
+    }
 
-  return 0;
+    return 0;
 }
 ```
 
-Przykładowe wywołanie programu: `./myprogram argument1 argument2`. Otrzymasz następujący wynik:
+**Wejście:**
 
-```
-Argument 0 to: ./myprogram
-Argument 1 to: argument1
-Argument 2 to: argument2
+```sh
+./program argument1 argument2 argument3
 ```
 
-W powyższym kodzie, `argc` zawiera liczbę argumentów, a `argv` jest tablicą zawierającą same argumenty. Dzięki temu możemy przetwarzać i wykorzystywać te argumenty w naszym programie.
+**Wyjście:**
 
-## Głębsze zagłębianie
+```sh
+Argument nr 0: ./program
+Argument nr 1: argument1
+Argument nr 2: argument2
+Argument nr 3: argument3
+```
 
-Czytanie argumentów wiersza poleceń może być przydatne w wielu przypadkach. Możemy na przykład przekazywać wartości lub opcje do naszego programu, w zależności od tego, jak zawołamy go z wiersza poleceń. Możemy również wykorzystać argumenty do sterowania tym, co nasz program ma zrobić.
+## Wnikliwa Analiza
 
-Ważne jest, aby pamiętać, że pierwszym argumentem w `argv` jest nazwa naszego programu, a każdy kolejny jest kolejnym argumentem. Możemy wykorzystać tę wiedzę do dokładniejszego przetwarzania argumentów i ich wykorzystania w naszym programie.
+Jeśli zastanawiasz się, jak to działa pod spodem, to właśnie poniżej znajdziesz odpowiedź.
+
+Zmienna `argc` przechowuje liczbę argumentów wprowadzonych przez użytkownika, w tym również nazwę samego programu. Jest to zawsze co najmniej jeden argument, ponieważ program musi być uruchomiony przy użyciu jego nazwy.
+
+Z kolei zmienna `argv[]` jest tablicą przechowującą wszystkie argumenty wprowadzone przez użytkownika. Indeksowanie tablicy zaczyna się od 0, więc pierwszy argument znajduje się pod indeksem 0, drugi pod indeksem 1, itd.
+
+**ProTip:** Jeśli chcesz pobrać wartości liczbowe z argumentów, możesz użyć funkcji `atoi()` lub `atof()`.
 
 ## Zobacz również
 
-- [Dokumentacja C++ o użyciu argumentów wiersza poleceń](https://www.cplusplus.com/articles/DEN36T05/)
-- [Wideo na YouTube o czytaniu argumentów wiersza poleceń w C++](https://www.youtube.com/watch?v=63tGfP-qkRg)
-- [Przykładowy kod na GitHubie wykorzystujący argumenty wiersza poleceń](https://github.com/username/myprogram/blob/master/main.cpp)
+- [Dokumentacja C++ - Argumenty Programu](https://en.cppreference.com/w/cpp/language/main_function)
+- [C++ How to Program by Paul J. Deitel and Harvey Deitel](https://learning.oreilly.com/library/view/c-how-to/9780132323086/)

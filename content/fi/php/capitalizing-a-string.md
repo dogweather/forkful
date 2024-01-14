@@ -1,60 +1,53 @@
 ---
-title:    "PHP: Stringin kapitalisointi"
+title:    "PHP: Merkkijonon suurtaaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi koodata? 
+## Miksi käyttää PHP:ssa merkkijonon suurta kirjainta
 
-Miksi koodata, erityisesti PHP:tä? Yksinkertainen vastaus: koska ohjelmointi on tulevaisuuden taito ja PHP on yksi suosituimmista ja monipuolisimmista ohjelmointikielistä. PHP:llä voit luoda dynaamisia ja interaktiivisia verkkosivustoja ja sovelluksia, mikä tekee siitä erittäin hyödyllisen taidon oppia.
+On monia syitä, miksi haluat ehkä muuttaa merkkijonon ensimmäisen kirjaimen suureksi, esimerkiksi jos haluat muotoilla käyttäjän antaman nimen oikein tai jos haluat korostaa tiettyjä osia merkkijonosta.
 
-## Kuinka tehdä se?
+## Miten tehdä se PHP:llä
 
-PHP:n opetteleminen voi vaikuttaa aluksi pelottavalta, mutta onneksi yksinkertaiset tehtävät voivat auttaa sinua pääsemään alkuun. Yksi tärkeimmistä taidoista, joita PHP:llä voi oppia, on merkkijonojen käsittely. Tässä esimerkissä keskitymme erityisesti merkkijonon muuttamiseen isolla alkukirjaimella.
+Merkkijonon ensimmäisen kirjaimen suuren kirjaimen muuttaminen on helppoa PHP:llä. Voit käyttää `ucfirst()` -funktiota, joka muuttaa ensimmäisen kirjaimen suureksi ja palauttaa uuden merkkijonon. Alla on esimerkki koodista, joka käyttää tätä funktiota.
 
-```
+```PHP
 <?php
-$merkkijono = "hei, olen php-koodari!";
-
-//ensimmäinen tapa käyttää ucfirst-funktiota
-echo "Tervetuloa " . ucfirst($merkkijono) . "!";
-
-//toinen tapa käyttää strtoupper- ja substr-funktioita
-echo "Tervetuloa " . strtoupper(substr($merkkijono, 0, 1)) . substr($merkkijono, 1) . "!";
-?>
+$string = "tämä on esimerkkilause.";
+echo ucfirst($string);
 ```
 
-Koodi tulostaa seuraavan:
+Tulostus:
 
+```PHP
+Tämä on esimerkkilause.
 ```
-Tervetuloa hei, olen php-koodari!
-Tervetuloa Hei, olen php-koodari!
+
+Voit myös muuttaa kaikki merkkijonon kirjaimet suuriksi käyttämällä `strtoupper()` -funktiota. Katso esimerkki alla.
+
+```PHP
+<?php
+$string = "tämä on esimerkkilause.";
+echo strtoupper($string);
 ```
 
-## Syvemmälle aiheeseen
+Tulostus:
 
-Nyt kun olet oppinut perusteet, on aika kääriä hihat ja mennä syvemmälle aiheeseen. Miksi merkkijonon käsittely on tarpeellista? Yksi yleisimmistä syistä on tietokannan tiedon tarkistaminen ja käsittely. Esimerkiksi käyttäjien syöttämissä tiedoissa voi olla epätarkkuuksia, kuten merkkijonon alku pienaakkosella. PHP:n avulla voit helposti korjata nämä epätarkkuudet ja varmistaa, että tietokantaan tallennetut tiedot ovat kaikki samassa muodossa.
-
-Lisäksi, omien kirjoittamien funktioiden avulla voit muuttaa merkkijonon käsittelyä vieläkin monipuolisemmaksi. Esimerkiksi voit luoda oman funktion, joka muuttaa sanan ensimmäisen kirjaimen isoksi ainoastaan silloin, kun sana on yhden merkin mittainen.
-
+```PHP
+TÄMÄ ON ESIMERKKILAUSE.
 ```
-//funktio, joka muuttaa sanan ensimmäisen kirjaimen isoksi vain yhden merkin pituisissa sanoissa
-function eka_kirjain_isolla($merkkijono) {
-    if(strlen($merkkijono) == 1) {
-        return strtoupper($merkkijono);
-    }
-    else {
-        return $merkkijono;
-    }
-}
 
-$merkkijono = "php";
+## Syvemmälle merkkijonon suurten kirjainten taakse
 
-echo eka_kirjain_isolla($merkkijono); //tulostaa PHp
-```
+Kuten näette, merkkijonon ensimmäisen kirjaimen suuren kirjaimen muuttaminen PHP:ssa on melko helppoa. Voit myös käyttää muita funktioita, kuten `lcfirst()` muuttaaksesi ensimmäisen kirjaimen pieneksi tai `strtolower()` muuttaaksesi kaikki kirjaimet pieniksi. On myös mahdollista muuttaa tiettyjä kirjaimia suuriksi tai pieniksi käyttämällä `str_replace()` -funktiota.
+
+Katso lisätietoja PHP:n virallisesta dokumentaatiosta merkkijonojen muokkaamisesta.
 
 ## Katso myös
 
-- [PHP:n opas merkkijonojen käsittelyyn](https://www.php.net/manual/en/language.types.string.php)
-- [Lisää PHP:n merkkijonon muokkausfunktioita](https://www.php.net/manual/en/ref.strings.php)
+- [PHP:n virallinen dokumentaatio merkkijonojen muokkaamisesta](https://www.php.net/manual/en/ref.strings.php)
+- [W3Schoolsin tutoriaali merkkijonojen muokkaamisesta PHP:ssa](https://www.w3schools.com/php/php_string.asp)
+- [Miten muokata merkkijonoja PHP:ssa - ohjevideo](https://www.youtube.com/watch?v=ul2njh7kqBM)

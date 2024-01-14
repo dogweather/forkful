@@ -1,38 +1,41 @@
 ---
-title:    "Elm: נכתיבת מבחנים"
+title:    "Elm: כותבים בדיקות"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-כתיבת בדיקות היא חלק חשוב מתהליך הפיתוח ב-Elm. במאמר זה, נלמד למה כדאי לכתוב בדיקות וכיצד לעשות זאת בצורה נכונה.
+כתיבת מבחנים לתוכנתן של ישירה הוא כלי חשוב להבטיח שהקוד שנכתב עובד כמתוכנן ולמנוע באגים לפני שהם מתרחשים בסביבת ההפצה. כתיבת מבחנים גם עוזרת לפתח כישורי תכנות ולהבין את הקוד היטב.
 
-# איך
-
-כתיבת בדיקות ב-Elm היא דרך מצוינת לוודא שהקוד שלנו פועל כפי שצריך ולמנוע באגים עתידיים. עבור כל פונקציה, ניתן לכתוב מספר בדיקות באמצעות הפונקציה `test`. ניתן להשתמש בתנאי `Expect` כדי לבדוק את מצב תחילתי הפונקציה ולוודא שהפלט תואם את הצפוי.
+## איך לכתוב מבחנים ב־Elm
 
 ```elm
-test "מבחן קטן" <|
-    \() ->
-        Expect.equal 4 (calculateNumberSquared 2)
-
-calculateNumberSquared : Int -> Int
-calculateNumberSquared num =
-    num * num
+import Test exposing (..)
+import Expect
+suite : Test
+suite =
+    describe "MyFunction"
+        [ test "2 + 2 equals 4" <|
+            \_ ->
+                Expect.equal 4 (2 + 2)
+        , test "myFunction returns the correct string" <|
+            \_ ->
+                let
+                    expected =
+                        "Hello, World!"
+                in
+                    Expect.equal expected (myFunction "World")
+        ]
 ```
 
-הפקודה `Expect.equal` בפונקציה `calculateNumberSquared` מוודאת שהפלט מכפלת המספרים הוא 4 במקרה שלנו.
+## הגועה מתקדמת
 
-# Deep Dive
+כתיבת מבחנים באלם משתמשת במודול Test כדי לבצע בדיקות. מודול זה מספק טיפוסים שימושיים לביצוע בדיקות כמו Expect ו־Test. מודול זה מאפשר גם לכתוב בדיקות בפורמט שונה, כגון ייבוא קבצי JSON לבדיקה ועוד.
 
-כתיבת בדיקות גוררת את הפונקציונליות של Elm. היא מאפשרת מניעת רבת באגים ומגבירה את הביטחון בקוד. בנוסף, היא מסייעת ברכילים בפונקציות ללא התחייבות על מיקום פרותקסט בהם.
+## ראה גם
 
-אם בשלב מסוים קוד מכיל באג, כתיבת בדיקות עוזרת לזהות את האזור שבו הבאג מתרחש ולתקן אותו, מה שמקצר את זמן התיקון ומפחית את האפשרות של באגים עתידיים.
-
-# ראה גם
-
-- תיעוד רשמי לכתיבת בדיקות ב-Elm: https://guide.elm-lang.org/testing/
-- מדריך לבדיקות ב-Elm: https://elmprogramming.com/testing-elm-application.html
-- וידאו של אלקטרוויק על כתיבת בדיקות ב-Elm: https://www.youtube.com/watch?v=H-iBKDdgXXQ
+- [מסמך רשמי על מודול Test עבור אלם](https://package.elm-lang.org/packages/elm-explorations/test/latest/Test)
+- [מדריך לכתיבת מבחנים עבור אלם](https://pragmaticstudio.com/blog/2018/4/12/how-to-test-elm)

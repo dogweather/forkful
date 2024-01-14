@@ -1,42 +1,48 @@
 ---
 title:    "TypeScript: Sprawdzanie istnienia katalogu"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego sprawdzanie czy istnieje katalog?
 
-Sprawdzanie, czy katalog istnieje, jest ważną umiejętnością w programowaniu TypeScript. Dzięki tej umiejętności możemy upewnić się, czy przed próbą wykonania pewnych operacji na plikach, istnieje odpowiedni katalog, w którym będą się one odbywać. W tym artykule pokażę Ci, jak to zrobić.
+Sprawdzanie, czy katalog istnieje jest ważnym krokiem w procesie programowania, ponieważ pozwala na potwierdzenie, czy dany katalog istnieje, zanim podejmiemy dalsze działania, takie jak jego odczyt lub zapis. Nawiązując do języka JavaScript, TypeScript jest językiem programowania wysokiego poziomu, który zapewnia statyczną typizację, czyli sprawdzanie typów zmiennych podczas kompilacji kodu. Dlatego jest to szczególnie ważne dla programistów, którzy chcą uniknąć błędów w czasie wykonania.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Sprawdzenie, czy katalog istnieje, jest w rzeczywistości bardzo prostym zadaniem w TypeScript, dzięki wbudowanej metodzie `existsSync ()` z modułu `fs`. Poniżej znajduje się przykładowy kod, w którym sprawdzamy, czy katalog o nazwie "projekt" istnieje:
+Sprawdzenie czy istnieje katalog jest możliwe dzięki użyciu funkcji `existsSync` z modułu `fs`. Poniższy przykład kodu w TypeScript pokazuje, jak można sprawdzić istnienie katalogu o nazwie "dane" w bieżącym katalogu.
 
 ```TypeScript
-import fs from 'fs';
+import { existsSync } from "fs";
 
-if (fs.existsSync('./projekt')) {
-    console.log('Katalog "projekt" istnieje.');
-} else {
-    console.log('Katalog "projekt" nie istnieje.');
+if (existsSync("dane")) {
+  console.log("Katalog istnieje.");
+}
+else {
+  console.log("Katalog nie istnieje.");
 }
 ```
 
-W przypadku, gdy katalog "projekt" istnieje, otrzymamy w konsoli wiadomość "Katalog "projekt" istnieje.", a w przeciwnym wypadku "Katalog "projekt" nie istnieje.". Możesz również wykorzystać tę metodę w warunkach, na przykład:
+W tym przykładzie używamy operatora `if` do sprawdzenia, czy funkcja `existsSync` zwraca wartość `true`, co oznacza, że katalog istnieje. W przeciwnym razie, jeśli funkcja zwraca `false`, wyświetlana jest informacja, że katalog nie istnieje.
+
+## Głębszy zanurzenie
+
+Funkcja `existsSync` pochodzi z modułu `fs`, który dostarcza narzędzia do obsługi systemu plików w języku Node.js. Jest to funkcja synchroniczna, co oznacza, że jej wykonanie zatrzyma wykonywanie kodu do momentu zakończenia operacji sprawdzania. Inną opcją jest użycie funkcji `statSync`, która zwraca obiekt z informacjami o danym pliku lub katalogu, w tym informacje o istnieniu.
+
+W przypadku, gdy chcemy nie tylko sprawdzić istnienie katalogu, ale także jego zawartość, możemy zastosować pętlę `forEach` i funkcję `readdirSync` z modułu `fs`. Funkcja `readdirSync` zwraca tablicę zawierającą nazwy wszystkich plików i katalogów w danym katalogu, a pętla `forEach` pozwala na wykonywanie określonych działań dla każdego elementu w tej tablicy.
 
 ```TypeScript
-fs.existsSync('./projekt') ? console.log('Katalog "projekt" istnieje.') : console.log('Katalog "projekt" nie istnieje.');
+import { readdirSync } from "fs";
+
+readdirSync("dane").forEach(file => {
+  console.log(file); // Wyświetla nazwy plików i katalogów w katalogu "dane"
+});
 ```
-
-## Pogłębiona analiza
-
-Metoda `existsSync()` zwraca wartość logiczną typu `boolean`, więc możemy ją wykorzystać w warunkach jak w przykładach powyżej. Należy jednak pamiętać, że ta metoda jest synchroniczna, więc może przeszkadzać w wydajności naszej aplikacji w przypadku sprawdzania wielu katalogów.
-
-Jeśli chcesz dowiedzieć się więcej o zarządzaniu plikami i katalogami w TypeScript, możesz zapoznać się z dokumentacją dotyczącą modułu `fs` lub skorzystać z innych przydatnych zasobów, które znajdziesz w sekcji "Zobacz również" poniżej.
 
 ## Zobacz również
 
-- Dokumentacja dotycząca modułu `fs`: https://nodejs.org/api/fs.html
-- Artykuł o zarządzaniu plikami i katalogami w TypeScript: https://blog.logrocket.com/handling-files-with-node-js/
-- Wideo tutorial na temat operacji na plikach w TypeScript: https://www.youtube.com/watch?v=SctPZaDdXgY
+- [Dokumentacja funkcji existsSync w języku TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html)
+- [Moduł fs w języku Node.js](https://nodejs.org/api/fs.html)
+- [Poradnik dla początkujących w języku TypeScript](https://www.digitalocean.com/community/tutorials/typescript-basics-concepts-an-introduction-for-beginners)

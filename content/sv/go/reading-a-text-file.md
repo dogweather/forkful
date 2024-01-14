@@ -1,44 +1,48 @@
 ---
 title:    "Go: Läsa en textfil"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att kunna läsa en textfil är en grundläggande färdighet för alla programmerare. Det är ett sätt att hantera stora mängder data på ett enkelt sätt och det kan vara användbart för många olika programmeringsprojekt.
+Att läsa och bearbeta textfiler är en grundläggande uppgift inom programmering som kan vara användbar i många olika situationer. Genom att läsa en textfil med Go kan du hitta specifika data, analysera mönster eller till och med bygga en helt ny applikation.
 
-## Hur man läser en textfil i Go
+##Hur man gör det
 
-För att läsa en textfil i Go, behöver du först öppna filen med hjälp av funktionen `Open()` från paketet `os`. Sedan kan du använda `Scan()` funktionen från `bufio` paketet för att läsa in filen rad för rad. Nedan är ett exempel på kod som visar hur man läser en textfil och skriver ut innehållet på skärmen:
+För att läsa en textfil med Go kan du använda funktionen "os.Open" för att öppna filen och sedan skapa en "bufio.Scanner" för att läsa innehållet i filen. Här är ett exempel på hur du kan läsa en textfil rad för rad och skriva ut innehållet till konsolen:
 
 ```Go
 file, err := os.Open("textfil.txt")
 if err != nil {
-   panic(err)
+  panic(err)
 }
+defer file.Close()
+
 scanner := bufio.NewScanner(file)
+
 for scanner.Scan() {
-   fmt.Println(scanner.Text())
+  fmt.Println(scanner.Text())
 }
-file.Close()
+
+if err := scanner.Err(); err != nil {
+  panic(err)
+}
 ```
 
-Detta kodblock öppnar textfilen "textfil.txt", läser den rad för rad och skriver ut innehållet på skärmen. Om det finns några fel under läsningen kommer `Scanner` att returnera `false` och `err` variabeln kommer att innehålla det felmeddelandet.
+Ovanstående kod använder funktionen "os.Open" för att öppna filen "textfil.txt" och sedan en "bufio.Scanner" för att läsa rad för rad. För varje rad som läses skriver den ut innehållet till konsolen. Vi använder också "defer" för att stänga filen efter att vi är klara med den.
 
-## Djupdykning
+##Djupdykning
 
-När man läser en textfil i Go, är det viktigt att ha koll på filens struktur. Textfiler kan innehålla olika typer av data och det är viktigt att bara läsa in den data som är relevant för ditt projekt. Det kan också vara användbart att använda sig av `strings` paketet för att manipulera och söka igenom texten som läses in från filen.
+Förutom att läsa rad för rad kan vi också behandla innehållet i en textfil på andra sätt, som att separera strängar, hitta specifika ord eller tecken, och mycket mer. Genom att använda funktioner som "strings.Split" och "strings.Contains" kan vi bearbeta innehållet i filen på ett effektivt sätt.
 
-En annan aspekt att tänka på när man läser textfiler är hantering av teckenkodning. Om din textfil är i en annan teckenkodning än standard i Go (UTF-8), kan du behöva använda dig av `encoding` paketet för att konvertera teckenkodningen.
+En annan intressant funktion inom Go är "ioutil.ReadFile". Istället för att öppna och läsa filen manuellt, kan vi använda denna funktion för att läsa hela filinnehållet på en gång och sedan bearbeta det enligt våra behov.
 
-## See Also
+##Se även
 
-Här är några användbara länkar för att lära dig mer om hur man läser textfiler i Go:
-
-- [Go's officiella dokumentation om filer och hantering av data](https://golang.org/pkg/os/)
-- [Tutorial från Tutorialspoint om hur man läser en textfil i Go](https://www.tutorialspoint.com/how-to-read-a-file-line-by-line-using-go-language)
-- [En guide från Medium om hur man hanterar teckenkodning i Go](https://medium.com/@bnprashanth/working-with-file-contents-in-go-how-not-to-trip-246811aea58)
-
-Lycka till med att läsa textfiler i Go!
+- [Go Dokumentation: Paketet "os"](https://golang.org/pkg/os/)
+- [Go Dokumentation: Paketet "bufio"](https://golang.org/pkg/bufio/)
+- [Go Dokumentation: Paketet "strings"](https://golang.org/pkg/strings/)
+- [Go Dokumentation: Paketet "ioutil"](https://golang.org/pkg/ioutil/)

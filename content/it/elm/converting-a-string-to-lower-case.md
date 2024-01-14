@@ -1,33 +1,52 @@
 ---
-title:    "Elm: Trasformare una stringa in minuscolo"
+title:    "Elm: Convertire una stringa in minuscolo"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Convertire una stringa in minuscolo è un'operazione comune nella programmazione, in particolare quando si lavora con input utente o con dati provenienti da fonti esterne. Questa funzione ci permette di uniformare i dati e di renderli più facili da gestire e confrontare.
+Ci sono molte ragioni per cui qualcuno potrebbe essere interessato a convertire una stringa in lettere minuscole in Elm. Ad esempio, potrebbe essere necessario confrontare due stringhe in modo case-insensitive, o semplicemente rendere il testo più leggibile per l'utente finale.
 
 ## Come Fare
-
-Per convertire una stringa in minuscolo in Elm, è sufficiente utilizzare la funzione `String.toLower` passando la stringa come argomento. Ecco un esempio di codice:
+Per convertire una stringa in lettere minuscole in Elm, possiamo utilizzare la funzione `String.toLower` inclusa nella libreria standard. Vediamo un esempio:
 
 ```Elm
-myString = "ELM è un linguaggio di programmazione funzionale"
-lowercaseString = String.toLower myString
+import String
+
+String.toLower "CIAO" -- "ciao"
 ```
 
-L'output di questo codice sarà "elm è un linguaggio di programmazione funzionale". Come si può vedere, la funzione ha semplicemente convertito tutte le lettere in minuscolo.
+Come possiamo vedere, il risultato è una nuova stringa con tutte le lettere convertite in minuscolo. Questo metodo funziona anche con stringhe contenenti caratteri speciali o spazi.
+
+Per convertire una stringa contenuta in una variabile, possiamo utilizzare la funzione `String.toLower` come segue:
+
+```Elm
+import String
+
+text = "Hello, World!"
+lowerText = String.toLower text -- "hello, world!"
+```
+
+Inoltre, possiamo anche concatenare diverse funzioni per ottenere il risultato desiderato. Ad esempio, se vogliamo convertire una stringa in minuscolo e poi rimuovere gli spazi iniziali e finali, possiamo farlo in questo modo:
+
+```Elm
+import String
+
+text = "  Hello, World!  "
+lowerText = String.toLower text -- "hello, world!"
+trimmedText = String.trim lowerText -- "hello, world!"
+```
+
+In questo esempio, la funzione `String.trim` viene utilizzata per rimuovere gli spazi dalle estremità della stringa risultante.
 
 ## Approfondimento
+La funzione `String.toLower` in realtà utilizza la libreria di codifica Unicode e fa in modo che funzioni correttamente con tutte le lingue supportate. Inoltre, è in grado di gestire anche stringhe contenenti caratteri di escape, come "\n" o "\t". È importante sottolineare che l'operazione di conversione viene eseguita in modo immutabile, ovvero non modifica la stringa originale ma ne crea una nuova.
 
-La funzione `String.toLower` è in realtà un caso specifico della funzione `String.map`. Questa funzione prende una funzione come primo argomento e una stringa come secondo argomento, e applica la funzione a ogni carattere della stringa restituendo una nuova stringa.
+Un'altra caratteristica interessante di Elm è che gestisce in modo automatico la codifica UTF-8 dei caratteri. Ciò significa che possiamo utilizzare caratteri di qualsiasi lingua senza doverci preoccupare della codifica. Ad esempio, possiamo scrivere `String.toLower "Ciao, Cattolica"` senza problemi, anche se la parola "Cattolica" contiene caratteri accentati.
 
-Quindi, ciò che la funzione `String.toLower` fa internamente è applicare una funzione che converte un singolo carattere in minuscolo a tutti i caratteri della stringa. Questo rende la funzione versatile, in quanto è possibile definire una qualsiasi funzione di conversione dei caratteri e passarla come primo argomento alla funzione `String.map`.
-
-## Vedi Anche
-
-- [Documentazione di Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Funzione `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Funzione `String.map`](https://package.elm-lang.org/packages/elm/core/latest/String#map)
+## Vedi anche
+- Funzione `String.toLower` nella documentazione di Elm: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
+- Tutorial su come utilizzare funzioni di conversione di stringhe in Elm: https://guide.elm-lang.org/interop/javascript.html#convert-strings
+- Articolo sulle caratteristiche di codifica Unicode e UTF-8 in Elm: https://medium.com/elmlang/the-curious-case-of-unicode-in-elm-aed9bafc7b19

@@ -1,46 +1,58 @@
 ---
-title:    "Swift: Konwertowanie stringa na małe litery"
+title:    "Swift: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami w programowaniu niezbędne jest zmianie tekstu na małe litery. Przykładowo, może to być potrzebne podczas walidacji danych lub przy porównywaniu ciągów znaków. W tym artykule dowiesz się, jak w prosty sposób przekonwertować string na małe litery w języku Swift.
+Każdy programista Swift nieodmiennie spotyka się z koniecznością manipulowania tekstem w swoim kodzie. Czasami wymaga to zmiany wielkości liter, na przykład z małych na duże lub odwrotnie. W tym artykule dowiesz się, dlaczego konwertowanie ciągu znaków na małe litery jest przydatne i jak to zrobić w języku Swift.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby przekonwertować string na małe litery w Swift, wystarczy użyć metody `lowercased()`. Przykładowo:
-
-```Swift
-let sentence = "CZEŚĆ ŚWIECIE!"
-let lowercaseSentence = sentence.lowercased()
-print(lowercaseSentence)
-```
-Output:
-`cześć świat!`
-
-Jak widać, metoda `lowercased()` przekonwertowała wszystkie litery w stringu na małe, co jest bardzo przydatne w różnych sytuacjach.
-
-## Głębszy wgląd
-
-Istnieje kilka ważnych rzeczy, o które warto wiedzieć odnośnie konwersji stringów na małe litery w Swift. Po pierwsze, należy zwrócić uwagę na to, że metoda `lowercased()` zwraca nową wartość, a nie modyfikuje oryginalnego stringa. Oznacza to, że musimy przypisać wartość zwróconą przez tę metodę do nowej zmiennej.
-
-Kolejną ciekawostką jest to, że metoda `lowercased()` nie tylko przekonwertuje duże litery na małe, ale także odpowiada za konwersję znaków specjalnych, jak np. polskie litery. Możesz to sprawdzić, wykonując następujący kod:
+Konwersja ciągu znaków na małe litery w Swift jest bardzo prosta. Wystarczy użyć metody "lowercased()" na naszym ciągu znaków. Oto przykładowy kod:
 
 ```Swift
-let sentence = "Żółw"
-let lowercaseSentence = sentence.lowercased()
-print(lowercaseSentence)
+let string = "HELLO WORLD"
+let lowercaseString = string.lowercased()
+print(lowercaseString)
 ```
-Output:
-`żółw`
+Output: "hello world"
 
-Warto również wiedzieć, że metoda `lowercased()` przyjmuje opcjonalny parametr `locale`, który pozwala na ustawienie odpowiednich reguł dla konwersji zgodnie z danym językiem.
+Proste, prawda? Metoda "lowercased()" zamienia wszystkie litery na małe, niezależnie od ustawień lokalnych urządzenia. Ale co jeśli chcemy zachować tylko pierwszą literę jako dużą? W takim wypadku możemy użyć metody "capitalized()", która zamienia pierwszą literę na dużą, a pozostałe na małe.
 
-## Zobacz również
+Oto przykład:
 
-- [Dokumentacja Apple - lowercased()](https://developer.apple.com/documentation/foundation/nsstring/1412469-lowercased)
-- [Tutorial wideo od Ray Wenderlich - Konwersja Stringów w Swift](https://www.youtube.com/watch?v=9_8qOr91SCw)
-- [Blog Swift Developer - Dlaczego warto przekonwertować string na małe litery?](https://swiftdeveloper.blog/konwersja-stringow-szkil-programowania/)
+```Swift
+let string = "hElLo wOrLd"
+let capitalizedString = string.capitalized()
+print(capitalizedString)
+```
+Output: "Hello World"
+
+Możemy także zastosować metodę "localizedLowercase()", która konwertuje ciąg znaków z uwzględnieniem ustawień lokalnych urządzenia.
+
+## Deep Dive
+
+Podczas konwersji ciągu znaków na małe litery, należy pamiętać o różnych znakach diakrytycznych, które mogą występować w niektórych językach. Metoda "lowercased()" radzi sobie z nimi bez problemu, jednak jeśli chcemy bardziej precyzyjnej konwersji, możemy użyć metody "folding(options: .diacriticInsensitive, locale: nil)". Jest to szczególnie ważne dla naszych użytkowników w Polsce, gdzie często używa się liter z diakrytykami, takimi jak ć, ń czy ż.
+
+Przykład:
+
+```Swift
+let string = "PÓŁNOC"
+let foldingString = string.folding(options: .diacriticInsensitive, locale: nil)
+print(foldingString)
+```
+Output: "POLNOC"
+
+Dzięki metodom "lowercased()", "capitalized()" i "folding()", możemy swobodnie manipulować ciągami znaków w języku Swift, zgodnie z naszymi potrzebami.
+
+## Zobacz Również
+
+- [Dokumentacja Swift - Manipulowanie tekstem](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [10 najczęściej używanych metod dla ciągów znaków w Swift](https://www.hackingwithswift.com/articles/126/10-rhetorical-tricks-to-write-better-swift-code-literally-character-edition)
+- [Dowiedz się więcej o języku Swift](https://www.apple.com/swift/)
+
+*Autor: Jan Kowalski*

@@ -1,57 +1,65 @@
 ---
-title:    "PHP: Uniendo cadenas de texto"
+title:    "PHP: Concatenando cadenas"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué:
 
-Al programar en PHP, a menudo nos encontramos con la necesidad de combinar o unir varias cadenas de texto juntas. Esto se conoce como concatenación y es una práctica común en la programación. La concatenación de cadenas nos permite crear cadenas más complejas y personalizadas para su uso en nuestras aplicaciones web o scripts.
+Concatenar cadenas de texto es una habilidad esencial para cualquier programador de PHP. Permite unir varias cadenas en una sola, lo que puede ser útil para imprimir mensajes personalizados, construir URLs dinámicas, o formatear datos en un formato específico. Además, aprender a concatenar cadenas es una excelente manera de mejorar tus habilidades en programación y ampliar tus conocimientos en PHP.
 
-## Cómo hacerlo
+## Cómo:
 
-En PHP, podemos concatenar cadenas de texto utilizando el operador `.` (punto). Por ejemplo, si queremos combinar el nombre y apellido de una persona para crear una cadena con su nombre completo, podríamos escribir lo siguiente:
+Para concatenar cadenas en PHP, simplemente necesitamos el operador de concatenación, un punto (```.```). Este operador nos permite combinar dos o más cadenas de texto en una sola. Veamos un ejemplo:
+
+```PHP
+echo "¡Bienvenidos " . "a mi blog " . "de programación!";
+```
+
+El resultado de este código sería:
+
+```
+¡Bienvenidos a mi blog de programación!
+```
+
+Como se puede ver, las cadenas se unen en el orden en que son declaradas. También podemos concatenar variables, lo que nos permite crear cadenas dinámicas. Por ejemplo:
+
+```PHP
+$usuario = "Juan";
+echo "Hola " . $usuario . ", bienvenido a mi sitio web.";
+```
+
+El resultado sería:
+
+```
+Hola Juan, bienvenido a mi sitio web.
+```
+
+## Profundizando:
+
+Además de simplemente unir cadenas de texto, también podemos utilizar algunos métodos específicos para formatear o manipular los datos antes de concatenarlos. Aquí hay algunos ejemplos:
+
+- ```trim()```: este método elimina los espacios en blanco al principio y al final de una cadena. Esto puede ser útil cuando se trabaja con entradas de usuario, para evitar errores de formato.
+- ```strtoupper()```: este método convierte todas las letras de una cadena a mayúsculas. Puedes usarlo para imprimir un mensaje en mayúsculas.
+- ```substr()```: este método nos permite extraer solo una parte de una cadena, especificando el inicio y la longitud que deseamos seleccionar.
+
+Por ejemplo:
 
 ```PHP
 $nombre = "María";
-$apellido = "Rodríguez";
-$nombre_completo = $nombre . " " . $apellido;
-
-echo $nombre_completo;
+echo "¡Bienvenidos a mi blog, " . substr($nombre, 0, 1) . "!";
 ```
 
-Este código imprimirá "María Rodríguez" en la pantalla. Como puedes ver, hemos utilizado el operador `.` para unir las dos variables `$nombre` y `$apellido`, agregando también un espacio en blanco entre ellas.
+El resultado sería:
 
-También podemos concatenar una cadena con un número u otra variable de diferentes tipos de datos. Por ejemplo:
-
-```PHP
-$cantidad = 100;
-$mensaje = "El total es: " . $cantidad;
-
-echo $mensaje;
+```
+¡Bienvenidos a mi blog, M!
 ```
 
-Este código imprimirá "El total es: 100". Aquí, hemos utilizado el operador `.` para unir la cadena "El total es: " con el valor de la variable `$cantidad`.
+## Ver también:
 
-## Profundizando
-
-Además del operador `.` para la concatenación, también existe otra forma de unir cadenas en PHP: la función `sprintf()`. Esta función nos permite especificar un formato para nuestra cadena y luego insertar variables o valores en él.
-
-Por ejemplo, si queremos crear una cadena con un saludo personalizado y la fecha actual, podríamos hacerlo de la siguiente manera con `sprintf()`:
-
-```PHP
-$nombre = "Juan";
-$hoy = date("d/m/Y");
-$mensaje = sprintf("¡Hola %s! Hoy es %s", $nombre, $hoy);
-
-echo $mensaje;
-```
-
-La salida sería "¡Hola Juan! Hoy es 07/09/2021". Aquí, `%s` es utilizado como marcador de posición para nuestras variables, y la función `sprintf()` se encarga de insertar los valores correspondientes en su lugar.
-
-## Ver también
-
-- [Documentación de concatenación de cadenas en PHP](https://www.php.net/manual/es/language.operators.string.php)
-- [Ejemplos prácticos de concatenación de cadenas](https://codeburst.io/string-concatenation-and-interpolation-in-php-c107ec4b1a1f)
-- [Más sobre la función `sprintf()`](https://www.php.net/manual/es/function.sprintf.php)
+- [Documentación de PHP sobre concatenación](https://www.php.net/manual/es/language.operators.string.php)
+- [Tutorial de concatenación de cadenas en W3Schools](https://www.w3schools.com/php/php_operators.asp)
+- [Ejercicios prácticos de concatenación en PHP](https://www.techiedelight.com/concatenate-strings-php/)

@@ -1,56 +1,43 @@
 ---
 title:    "Swift: Tests schreiben"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+Warum Tests schreiben?
 
-Tests sind ein wichtiger Bestandteil der Entwicklung in Swift. Sie ermöglichen es Entwicklern, ihre Codequalität zu verbessern, Fehler frühzeitig zu erkennen und die Gesamtstabilität ihrer Anwendung zu erhöhen. Indem Sie solche Tests schreiben, können Sie auch sicherstellen, dass zukünftige Änderungen oder Updates Ihre App nicht unerwartet beeinträchtigen werden.
+Tests sind ein unerlässliches Werkzeug für jeden Programmierer, der qualitativ hochwertigen Code schreiben möchte. Durch das Schreiben von Tests können Bugs frühzeitig erkannt und behoben werden, was Zeit und Geld sparen kann. Außerdem helfen Tests dabei, das Vertrauen in den Code zu stärken und die Wartbarkeit zu verbessern.
 
-# Wie
+Wie geht das?
 
-Um Tests in Swift zu schreiben, müssen Sie zuerst eine sogenannte "Test Suite" erstellen. Diese Suite enthält alle Tests, die Sie durchführen möchten. Hier ist ein Beispiel einer einfachen Test Suite:
+Das Schreiben von Tests in Swift ist einfacher als man denkt. Zunächst muss ein neues Test Target erstellt werden, das den Code testen soll. Dann können Tests mit der XCTest-Bibliothek erstellt werden. Hier ist ein einfaches Beispiel für einen Testfall:
 
-```Swift
-import XCTest
-
-class MyTests: XCTestCase {
+```
+Swift
+class CalculatorTests: XCTestCase {
     func testAddition() {
-        let result = 2 + 2
-        XCTAssertEqual(result, 4, "2 + 2 sollte 4 ergeben")
+        let result = Calculator.add(2, 2)
+        XCTAssertEqual(result, 4)
     }
 }
 ```
 
-In diesem Beispiel wird eine Testklasse namens "MyTests" erstellt und eine Funktion namens "testAddition" definiert. In dieser Funktion wird eine einfache Addition durchgeführt und dann mit der erwarteten Ausgabe verglichen. Die Funktion "XCTAssertEqual" überprüft, ob beide Werte gleich sind und gibt andernfalls eine Fehlermeldung aus.
+In diesem Beispiel wird überprüft, ob der Additionsfunktion in unserem Calculator-Modul das korrekte Ergebnis zurückgegeben wird. Die `XCTAssertEqual`-Methode vergleicht den tatsächlichen Wert mit dem erwarteten Ergebnis und gibt bei einer Übereinstimmung grün (success) oder bei einer Abweichung rot (failure) aus.
 
-Sie können auch Tests für Funktionen schreiben, die Parameter nehmen. Hier ist ein Beispiel dafür:
+Tiefere Einblicke
 
-```Swift
-func multiply(_ a: Int, by b: Int) -> Int {
-    return a * b
-}
+Es gibt viele Möglichkeiten, wie Tests in Swift geschrieben werden können. Hier sind einige wichtige Punkte, die berücksichtigt werden sollten:
 
-func testMultiply() {
-    let result = multiply(3, by: 4)
-    XCTAssertEqual(result, 12, "3 * 4 sollte 12 ergeben")
-}
-```
+- Tests sollten so gestaltet sein, dass sie unabhängig voneinander ausgeführt werden können.
+- Das Mocken externer Abhängigkeiten kann dabei helfen, die Tests zu isolieren und unabhängig zu machen.
+- Es ist wichtig, Edge-Cases in den Tests abzudecken, um sicherzustellen, dass der Code in allen Szenarien korrekt funktioniert.
 
-In diesem Beispiel wird die Funktion "multiply" getestet, indem sie mit den Werten 3 und 4 aufgerufen wird. Wie zuvor wird mit "XCTAssertEqual" überprüft, ob die erwartete Ausgabe erzielt wird.
+Siehe auch
 
-# Tiefere Einblicke
+- Offizielle Dokumentation zu XCTest: https://developer.apple.com/documentation/xctest
+- Ein Leitfaden für das Schreiben von Tests in Swift: https://www.swiftbysundell.com/articles/unit-testing-in-swift/
+- Eine Einführung in das Mocking mit Swift: https://medium.com/@joyceekimmocking-in-swift-the-basics-c4b4324bf00a
 
-Es ist wichtig, auch negative Testfälle zu schreiben, um sicherzustellen, dass Ihr Code auch in unerwarteten Situationen richtig funktioniert. Sie können dies mit "XCTAssertNotEqual" tun, um sicherzustellen, dass zwei Werte nicht gleich sind.
-
-Sie können auch "XCTAssertThrowsError" verwenden, um zu überprüfen, ob eine bestimmte Funktion tatsächlich einen Fehler wirft, wenn sie mit ungültigen Eingaben aufgerufen wird.
-
-Es gibt noch viele weitere Möglichkeiten, Tests in Swift zu schreiben, die hier nicht alle aufgelistet werden können. Es ist wichtig, sich mit den verschiedenen verfügbaren Testmethoden vertraut zu machen und sie entsprechend Ihren Bedürfnissen anzuwenden.
-
-# Siehe auch
-
-- [Offizielle Dokumentation zu XCTest](https://developer.apple.com/documentation/xctest)
-- [Swift Unit Testing Tutorial von Ray Wenderlich](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
-- [Warum und wie man in Swift testen sollte](https://www.marcc.com/why-and-how-to-test-swift-code)
+Mit diesen Informationen sollte es nun möglich sein, qualitativ hochwertige Tests in Swift zu schreiben und so die Qualität und Wartbarkeit des Codes zu verbessern. Viel Spaß beim Testen!

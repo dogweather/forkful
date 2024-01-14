@@ -1,59 +1,55 @@
 ---
-title:    "C: 컴퓨터 프로그래밍에서 커맨드 라인 인자 읽기"
+title:    "C: 컴퓨터 프로그래밍: 명령 줄 인수 읽기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜:
+## 왜
 
-C 프로그래밍에서 명령 줄 인수를 읽는 방법에 대해 듣고 계시나요? 그렇다면, 이 블로그 포스트가 당신의 궁금증을 해결하는 데 도움이 될 것입니다! 명령 줄 인수는 프로그래밍에서 매우 중요한 역할을 수행하기 때문에 C 프로그램을 작성할 때 이해하는 것은 매우 중요합니다.
+프로그래밍을 하면서 커맨드 라인 인자를 읽는 방법은 매우 중요합니다. 커맨드 라인 인자를 사용하면 프로그램을 실행할 때 입력으로 값을 전달할 수 있습니다. 이를 통해 다양한 입력 값을 테스트하고 다른 용도로 사용할 수 있습니다.
 
-## 어떻게:
+## 방법
 
-명령 줄 인수를 읽는 방법은 매우 간단합니다. C 언어에서는 `main()` 함수의 인수로 `argc`와 `argv` 두 가지 변수를 사용하여 명령 줄 인수를 전달할 수 있습니다. `argc`는 인자의 수를 나타내는 정수이고, `argv`는 인수의 값을 나타내는 문자열 배열입니다.
-
-다음은 예제 코드와 결과 샘플입니다.
+커맨드 라인 인자를 읽는 방법은 매우 간단합니다. 먼저, main 함수의 매개변수로 argc와 argv를 선언해야 합니다. 이 매개변수는 각각 입력 값의 개수와 값들을 포함한 배열입니다. 아래는 간단한 예시 코드입니다.
 
 ```C
-#include <stdio.h>
-
 int main(int argc, char *argv[]) {
-    printf("인자의 수: %d\n", argc);
+    // 입력 값의 개수 출력
+    printf("Number of arguments: %d\n", argc);
 
+    // 입력 값들을 순서대로 출력
     for (int i = 0; i < argc; i++) {
-        printf("인자 %d: %s\n", i, argv[i]);
+        printf("Argument %d: %s\n", i, argv[i]);
     }
+
     return 0;
 }
 ```
 
-위 코드를 컴파일한 후에 다음과 같이 실행할 수 있습니다.
+이 코드를 컴파일하고 실행하면 다음과 같은 결과가 나타납니다.
 
-```
-./a.out apple banana orange
-```
-
-출력 결과는 다음과 같습니다.
-
-```
-인자의 수: 4
-인자 0: ./a.out
-인자 1: apple
-인자 2: banana
-인자 3: orange
+```bash
+$ gcc -o arguments arguments.c  # 컴파일
+$ ./arguments argument1 argument2 argument3  # 실행
+Number of arguments: 4
+Argument 0: ./arguments
+Argument 1: argument1
+Argument 2: argument2
+Argument 3: argument3
 ```
 
-위의 예제에서는 `argv[0]`에는 프로그램의 이름이 전달되고, 나머지 인자들은 순차적으로 `argv[1]`, `argv[2]`, `argv[3]`에 저장됩니다.
+위의 예시 코드에서 보이는 것처럼, argv 배열의 첫 번째 요소는 프로그램의 경로이고, 두 번째 요소부터는 입력된 값들이 순서대로 들어가게 됩니다.
 
-## 깊이 파헤치기:
+## 깊이 들어가기
 
-`argc`와 `argv` 변수는 프로그램이 실행될 때 자동으로 생성되고, 매개변수로 전달됩니다. 하지만 이 둘을 이용하여 프로그램이 원하는대로 명령 줄 인수를 처리하는 더욱 복잡한 방법도 구현할 수 있습니다.
+커맨드 라인 인자를 읽는 방법은 운영체제에 따라 약간의 차이가 있을 수 있지만, 기본적으로 위에서 보인 예시 코드와 같은 방식으로 사용할 수 있습니다. 또한, 프로그램을 실행할 때 입력값을 다르게 주어서 다양한 결과를 볼 수 있습니다.
 
-또한, C 언어에서는 `getopt()` 함수를 이용하여 더욱 유연하고 다양한 방식으로 명령 줄 인수를 읽을 수 있습니다. `getopt()` 함수를 사용하면 인수를 기존에 작성된 옵션과 매칭시키거나, 프로그램의 동작을 제어하는 데 사용할 수 있습니다.
+파일을 읽거나 다른 기능을 수행하기 위해 입력값을 사용하는 경우 커맨드 라인 인자를 사용하면 매우 유용합니다. 또한, 프로그램을 테스트하고 디버깅하는 데에도 유용하게 사용할 수 있습니다.
 
-## 참고:
+## 참고 자료
 
-만약 명령 줄 인수를 읽는 것에 대해 더 많은 정보를 필요로 한다면 다음 링크를 참조해보세요.
-
-- https://www.gnu.org/software/libc/manual/html_mono/libc.html#Argument-Syntax
+- [GeeksforGeeks: Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Tutorials Point: Command Line Arguments in C](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [Programiz: Command Line Arguments in C](https://www.programiz.com/c-programming/c-command-line-arguments)

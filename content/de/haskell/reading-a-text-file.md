@@ -1,44 +1,48 @@
 ---
-title:    "Haskell: Eine Textdatei lesen"
+title:    "Haskell: Einen Textdatei lesen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+# Warum Lesen einer Textdatei
 
-Das Lesen von Dateien ist ein grundlegender Teil der Programmierung in Haskell. Es ermöglicht uns, Daten aus externen Dateien in unsere Anwendungen zu integrieren und zu verarbeiten. Wenn Sie mehr über das Lesen von Textdateien in Haskell erfahren möchten, lesen Sie weiter!
+Das Lesen von Textdateien ist eine grundlegende Fähigkeit beim Programmieren. Es erlaubt uns, Daten aus externen Quellen zu importieren und sie in unsere Programme zu integrieren. In diesem Blog Post werde ich zeigen, wie wir Textdateien in Haskell lesen können und welche Vorteile es mit sich bringt.
 
-# Wie man
+## Wie man eine Textdatei liest
 
-Das Lesen einer Textdatei in Haskell ist einfach und intuitiv. Zuerst müssen wir die "Data.Text" Bibliothek importieren:
-
-```Haskell
-import Data.Text
-```
-
-Dann können wir die Funktion "readFile" verwenden, um die Datei zu lesen und ihren Inhalt in einer Variablen zu speichern:
+Zunächst müssen wir eine Textdatei erstellen, die wir lesen möchten. Dazu können wir in Haskell die `writeFile` Funktion verwenden, die eine Datei mit dem angegebenen Namen und Inhalt erstellt.
 
 ```Haskell
-inhalt <- readFile "datei.txt"
+writeFile "datei.txt" "Dies ist der Inhalt der Datei."
 ```
 
-Wir können den Inhalt dann weiterverarbeiten, indem wir z.B. eine Zeile ausgeben:
+Nun können wir die Datei mit der Funktion `readFile` einlesen und den Inhalt anzeigen lassen.
 
 ```Haskell
-putStrLn $ "Die erste Zeile der Datei lautet: " ++ head (lines inhalt)
+main = do
+    content <- readFile "datei.txt"
+    putStrLn content
 ```
 
-Dieses Beispiel zeigt, wie wir die Funktionen "readFile" und "lines" nutzen können, um den Text in einzelne Zeilen aufzuteilen.  Es gibt jedoch viele weitere Funktionen und Techniken, die beim Lesen von Textdateien in Haskell angewendet werden können.
+Dies werden wir in einem beliebigen Texteditor speichern und mit `runhaskell` ausführen. Der Inhalt der Datei wird dann in der Konsole ausgegeben.
 
-# Tiefentauchen
+## Tiefere Einblicke
 
-Haskell bietet eine Vielzahl von Funktionen und Bibliotheken, die das Lesen von Textdateien noch einfacher und flexibler machen. Zum Beispiel gibt es die Funktion "withFile", die es uns ermöglicht, eine Datei zu öffnen, zu verarbeiten und dann automatisch wieder zu schließen. Außerdem haben wir die Möglichkeit, mithilfe von regulären Ausdrücken Daten aus Textdateien zu extrahieren und zu filtern. 
+Beim Lesen einer Textdatei in Haskell können wir auch zusätzliche Funktionen verwenden, um den Inhalt zu verarbeiten. Zum Beispiel können wir die `lines` Funktion verwenden, um den Inhalt in separate Zeilen zu unterteilen. Oder die `words` Funktion, um den Text in einzelne Wörter zu zerlegen.
 
-Ein weiterer wichtiger Aspekt beim Lesen von Textdateien in Haskell ist die Behandlung von Zeichencodierungen. Standardmäßig wird UTF-8 verwendet, aber es gibt auch Funktionen, mit denen wir die Codierung ändern können, falls dies erforderlich ist.
+```Haskell
+main = do
+    content <- readFile "datei.txt"
+    let lines = lines content -- unterteilt den Inhalt in Zeilen
+    print lines -- gibt die einzelnen Zeilen aus
+```
 
-# Siehe auch
+Zudem können wir auch Filterfunktionen verwenden, um beispielsweise nur bestimmte Zeilen auszugeben oder zu verwerfen.
 
-- [Haskell Dokumentation zu Textdateien](https://www.haskell.org/tutorial/ascii-codes.html)
-- [Tutorial zum Lesen von Dateien mit Haskell](https://mmhaskell.com/blog/2017/4/14/reading-and-writing-files-in-haskell)
-- [Hackage: Text-Bibliothek](https://hackage.haskell.org/package/text)
+## Siehe auch
+
+- [Haskell Dokumentation zum Lesen von Dateien](https://www.haskell.org/tutorial/io.html#files-and-i-o)
+- [Einführung in die Haskell Programmierung](https://www.geeksforgeeks.org/introduction-to-haskell-programming-language/)
+- [Haskell Programmierbeispiele von Project Euler](https://projecteuler.net/problem=1)

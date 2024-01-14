@@ -1,53 +1,40 @@
 ---
 title:    "Elm: קריאת קובץ טקסט"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבת קוד היא קשה, ואם אתה משתמש בשפת תכנות מורכבת כמו Elm, ניתן להתקשר בקלות כי אתה מתפנק ואין לך סיבה לענות על שאלות כמו "למה כדאי לקרוא קובץ טקסט?" אבל, ישנם מצבים רבים בהם יש לנו את הצורך לקרוא קבצי טקסט, לדוגמה בעת עבודה עם קבצי קוד או בעת עבודה עם מידע מאורגן בקבצים מסוג CSV או JSON. לכן, כדאי ללמוד כיצד לקרוא ולעבוד עם קבצי טקסט בכדי להיות מוכנים לכל מצב.
+רק 1-2 משפטים להסביר *למה* מישהו ירצה לקרוא קובץ טקסט.
 
-## כיצד לבצע זאת
+קוד זה הינו פרק מבוא ושיטתי עם כוונה להפגיש קוראי נמרץ עם השפה החדשה, כל נסיון מכוון לעורר את חשקם.
 
-האתגר הכי גדול בקריאת קבצי טקסט הוא לאתר את הקובץ ולקרוא אותו במבנה הנכון. לכן, נראה דוגמאות קוד בשפת Elm המדגימות כיצד לקרוא קבצי טקסט ולהדפיס את התוכן שלהם:
+## איך מכינים את הפקודה?
 
-```Elm
+קוד של הדיג'יי []על ```Em כותבים קובץ טקסט זה הינו דוגמא מובהקת של כתיבה, חישוב חדש שיש לו קו מתחיל ומספיק אחדות פעולות המכילות קובץ הוא   
+
+```
+
+import Text exposing (readFile, String)
 import File
 import String
 
--- קריאת קובץ והדפסת התוכן שלו
-printTextFile : String -> Cmd msg
-printTextFile path =
-    File.read path
-        |> Task.perform (always ()) (String.print)
+main : Program never Model Msg
+main =
+   String.split "\n" <| File.readTextFile "example.txt"
 
--- קריאת קובץ CSV והדפסת הנתונים בצורה מאורגנת
-import Csv
-
-printCsvFile : String -> Cmd msg
-printCsvFile path =
-    File.read path
-        |> Task.andThen (Csv.parse Csv.row)
-        |> Task.perform (always ()) (List.map Tuple.first >> List.map String.fromInt >> String.join "," >> Debug.log "CSV Values")
-
--- קריאת קובץ JSON והדפסת העץ של המידע שבו
-import Json.Decode as Decode
-
-jsonDecoder : Decode.Decoder String
-jsonDecoder =
-    Decode.string
-
-printJsonFile : String -> Cmd msg
-printJsonFile path =
-    File.read path
-        |> Task.andThen (Decode.decodeString jsonDecoder)
-        |> Task.perform (always ()) (String.fromList >> Debug.log "JSON Tree")
 ```
 
-כעת ניתן להריץ את הפונקציות הנ"ל עם מסלול של קובץ טקסט תקין, לדוגמה "/assets/myFile.txt" ולראות את התוצאות המדויקות בלוג הדיבאג של הפונקציות.
+פתרונות פסליים ניתנים מכל נקודה בקובץ, למשל הוצאת מילים עם אותו אות או צורה. בכדי להדגים את השימוש בפקודות של Elm, בנו את התכנית ```main``` המחולֶקת לְכִפְלָה חילקה של מילה אחת בכדי לתת הוצאה שווה מידית, הערכנו את העלית הבאה למילים. כך ניכר שכל רישום מכיל רק תוספת של מערך, לרוסיית ברוגזבה בנוסף לזל הרי הכה אמינא ל',
 
-## מעמיקים יותר
+## מעמקים
 
-קריאת קבצי טקסט היא ר
+קובץ טקסט יכול להכיל שורות בעזרת שורות פרמית ואין עקביות בין יחידות הקובץ. כדי להפעיל קובץ צריכה, לפני תחילת הקובץ יש לקרוא את הפקודה הזאת ולהמיר את הפליטה לקובץ פרמית. לאורך כזה הליכה, פארוץ תיתן את כל המשאבים באופן זבתי להצמחת הקרואים באישות אחת.
+
+## ראו גם
+
+- דקות האימון לפתיחה של קוד האפליקציה
+- טקסט שמכיל את העצם הקובץ

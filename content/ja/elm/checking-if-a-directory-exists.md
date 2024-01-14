@@ -1,108 +1,34 @@
 ---
-title:    "Elm: ディレクトリが存在するかどうかをチェックする"
+title:    "Elm: ディレクトリが存在するかどうかを確認する"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-ディレクトリが存在するかどうかを確認することについて説明します。
+あるディレクトリが存在するかどうかをチェックすることが重要な理由は、プログラムが目的のファイルを正しく読み込むためです。もしファイルが存在しなければ、プログラムは意図しない動作をするかもしれません。 そのため、プログラマーはチェック機能を含めることで、プログラムの信頼性を高めることができます。
 
-## 方法
-私たちは、Elmでディレクトリが存在するかどうかをチェックするためにどのようにコードを書くことができるかを見ていきます。
-
+## ハウツー
 ```Elm
--- ディレクトリを確認するための関数
-checkDirectory : String -> Cmd Msg
-checkDirectory path =
-  Cmd.map DirectoryChecked (Directory.exists path)
+import File
 
--- メッセージの処理
-type Msg
-  = DirectoryChecked Bool
-  
--- サンプルで使用するパス
-samplePath : String
-samplePath = "/my/directory/"
-
--- チェックコマンドを実行
-CheckDirectory samplePath
+directoryExists : String -> Cmd msg
+directoryExists path =
+    File.exists path
+        |> Task.perform (\_ -> DirectoryExists) (\_ -> DirectoryDoesNotExist)
 ```
+このコード例では、`File.exists`を使って指定したパスのファイルが存在するかどうかをチェックしています。これはコマンドを返すため、`Task.perform`を使って結果を受け取る必要があります。もしファイルが存在すれば、`DirectoryExists`コマンドを実行し、そうでなければ`DirectoryDoesNotExist`コマンドを実行します。
 
-上記のコードでは、`checkDirectory`関数を使用して指定したパスのディレクトリが存在するかどうかをチェックし、`DirectoryChecked`メッセージを返します。`samplePath`を使用して`checkDirectory`関数にパスを渡し、`CheckDirectory`コマンドを実行することでテストすることができます。
+## 深堀り
+ディレクトリの存在をチェックする際、注意しなければならない点があります。それは、ディレクトリのパスは常に最後が`/`で終わるようにする必要があるということです。なぜなら、`File.exists`が内部的にディレクトリかどうかの判断を`String`の最後の文字が`/`であるかどうかで行うからです。
 
-```Elm
-module Main exposing (..)
+例えば、`File.exists "/Users/Bob/Documents"`を実行しても、ディレクトリが存在したとしても`DirectoryDoesNotExist`が返ってきてしまいます。これは渡したパスが `"/Users/Bob/Documents/"`のように最後が`/`で終わっていないためです。
 
-import Directory
-  exposing (exists)
+そのため、`directoryExists`関数を使う際は、常にパスの最後に`/`を付けておくようにしましょう。
 
+## 関連記事
 
-main : Program Never Model Msg
-main =
-  program 
-    { view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
-
--- View
-view : Model -> Html Msg
-view model =
-  div [] 
-    [ button [ onClick (CheckDirectory samplePath) ] [ text "ディレクトリを確認する" ]
-    , div [] [ text (if model.directoryExists then "ディレクトリが存在します" else "ディレクトリが存在しません") ]
-    ]
-
--- Update
-type Msg
-  = CheckDirectory String
-  | DirectoryChecked Bool
-  
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    CheckDirectory path ->
-      ( model, checkDirectory path )
-      
-    DirectoryChecked exists ->
-      ( { model | directoryExists = exists }
-      , Cmd.none
-      )
-
-
--- Subscriptions
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
--- Model
-type alias Model = 
-  { directoryExists : Bool
-  }
-
-initialModel : Model
-initialModel = 
-  { directoryExists = False
-  }
-  
--- Sample path
-samplePath : String
-samplePath = "/my/directory/"
-```
-
-上記のコードを実行すると、ボタンをクリックすることで指定したパスのディレクトリが存在するかどうかが判断され、その結果が表示されます。
-
-## ディープダイブ
-ディレクトリをチェックする方法は実はとてもシンプルです。Elmの標準ライブラリである`Directory`モジュールには`exists`関数が用意されており、引数にチェックしたいパスを与えることでディレクトリの存在を判断することができます。
-
-また、`exists`関数の戻り値は`Cmd Bool`であり、ディレクトリの存在を確認するためだけに使用されることができます。このため、コードの見通しを良くするために上記のように`DirectoryChecked`メッセージを定義しています。そのため、結果を返す必要がある場合でも`exists`関数を直接使用しても問題ありません。
-
-## その他の参考資料
-- [Elm Directory.exists documentation](https://package.elm-lang.org/packages/elm/core/latest/Directory#exists)
-- [Directory commands example](https://ellie-app.com/jYM5QrjEM3Ha1)
-- [Elm for Beginners tutorial](https://elmprogramming.com/elm-for-beginners/introduction.html) See Also
-  参考リンク：
-  
-  [Elmのはじめ方](https://elmprogramming.com/elm-for-beginners/int
+- Elm ドキュメント：https://guide.elm-lang.jp/core_libraries/file.html
+- Elm フォーラムのディレクトリ存在チェックに関するスレッド：https://discourse.elm-lang.org/t/elms-directory-exists-function/3941
+- Elm フォーラムのディレクトリ存在チェックの仕組みに関するスレッド：https://discourse.elm-lang.org/t/how-to-check-if-a-directory-exists/5693

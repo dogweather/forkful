@@ -1,43 +1,51 @@
 ---
 title:    "PHP: Leyendo un archivo de texto"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías aprender a leer archivos de texto en PHP?
+## ¿Por qué leer un archivo de texto?
 
-Si eres un programador PHP, es importante que sepas cómo leer archivos de texto para poder manipular y procesar datos en tus aplicaciones. Esto te permitirá crear scripts más dinámicos y eficientes que puedan leer y escribir información en archivos de texto.
+Leer un archivo de texto es una habilidad esencial en la programación, ya que nos permite acceder y manipular datos almacenados en formato texto. Además, es una de las operaciones más comunes en el desarrollo de aplicaciones web y de escritorio.
 
-## Cómo leer archivos de texto en PHP
+## Cómo leer un archivo de texto
 
-Leer un archivo de texto en PHP es bastante sencillo. Solo necesitas seguir unos pocos pasos:
+Para empezar a leer un archivo de texto en PHP, utilizamos la función `file_get_contents()`. Esta función toma como argumento la ruta del archivo y devuelve una cadena de texto con el contenido del archivo. Por ejemplo:
 
-```PHP
-// Abrir el archivo en modo lectura
-$file = fopen("miarchivo.txt", "r");
+```
+<?php
 
-// Leer el contenido del archivo
-// y guardarlo en una variable
-$file_content = fread($file, filesize("miarchivo.txt"));
+$texto = file_get_contents('archivo.txt');
 
-// Imprimir el contenido del archivo
-echo $file_content;
-
-// Cerrar el archivo
-fclose($file);
+echo $texto;
 ```
 
-El código anterior abre el archivo en modo lectura, lo guarda en una variable y lo imprime en pantalla. También es importante cerrar el archivo después de leerlo para liberar los recursos.
+Este código leerá el contenido del archivo llamado "archivo.txt" y lo imprimirá en la pantalla.
 
-## Profundizando en la lectura de archivos de texto en PHP
+Si queremos leer el archivo línea por línea, podemos utilizar la función `file()` en su lugar. Esta función devolverá un arreglo donde cada elemento es una línea del archivo. Por ejemplo:
 
-Se pueden realizar muchas operaciones interesantes con la lectura de archivos de texto en PHP. Por ejemplo, puedes leer solo una línea a la vez utilizando la función `fgets()`, o buscar una palabra específica dentro del archivo usando `strpos()`. También puedes leer archivos de texto en formato CSV y separar los datos en columnas utilizando `explode()`.
+```
+<?php
 
-También es importante entender que cuando lees un archivo de texto en PHP, el contenido se guarda en memoria y puede ser manipulado fácilmente. Por lo tanto, si deseas realizar cambios en el archivo, puedes escribir directamente en él utilizando la función `fwrite()`.
+$lineas = file('archivo.txt');
+
+foreach ($lineas as $linea) {
+    echo $linea;
+}
+```
+
+Este código imprimirá cada línea del archivo en una nueva línea.
+
+## Profundizando en la lectura de archivos de texto
+
+Además de las funciones mencionadas anteriormente, existen otras formas de leer archivos de texto en PHP, como utilizar la clase `SplFileObject` o la función `fopen()`. Es importante tener en cuenta que en cualquier caso, es necesario cerrar el archivo después de haberlo leído, utilizando la función `fclose()`.
+
+También hay que tener en cuenta algunos aspectos como la codificación del archivo y el manejo de errores al leer el archivo.
 
 ## Ver también
 
-- [PHP: fopen()](https://www.php.net/manual/es/function.fopen.php)
-- [PHP: fread()](https://www.php.net/manual/es/function.fread.php)
-- [PHP: fclose()](https://www.php.net/manual/es/function.fclose.php)
+- [Documentación oficial de PHP sobre lectura de archivos](https://www.php.net/manual/es/function.file-get-contents.php)
+- [Tutorial de código facilito sobre lectura de archivos de texto en PHP](https://codigofacilito.com/articulos/lectura-escritura-archivos-php)
+- [Ejemplo práctico de lectura de archivos de texto en PHP](https://www.anerbarrena.com/leer-archivo-con-php-2014/)

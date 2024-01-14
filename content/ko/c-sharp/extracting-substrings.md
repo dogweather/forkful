@@ -1,36 +1,33 @@
 ---
-title:    "C#: 부분 문자열 추출하기"
+title:    "C#: 부문 추출하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-서브스트링을 추출하는 작업에 참여하는 이유는 다양합니다. 예를 들어, 문자열에서 특정한 부분만을 추출하고 싶거나, 문자열을 다루는 자신만의 고유한 방식이 있는 경우 등이 있을 수 있습니다.
+# 왜 
 
-## 추출하는 방법
-서브스트링을 추출하는 것은 C#에서 매우 간단한 작업입니다. 문자열에서 특정한 위치부터 원하는 길이만큼을 추출하는 방법은 다음과 같습니다.
+자바 프로그래밍에서 substring을 추출하는 것이 유용한 이유는 다양합니다. 예를 들어, 문자열에서 필요한 정보만 추출하고 싶을 때 사용할 수 있습니다. 또는 문자열 파싱에 유용하게 사용할 수 있습니다. substring은 문자열을 조작하는 데 매우 유용한 기능입니다.
+
+## 어떻게 
+
+자바에서 substring을 추출하는 것은 매우 간단합니다. 아래 코드는 입력 문자열에서 일부를 추출하는 방법을 보여줍니다.
 
 ```C#
-string str = "안녕하세요! 반가워요.";
-string subStr = str.Substring(3, 5);
-Console.WriteLine(subStr);
+string input = "안녕하세요, 한국의 독자 여러분!";
+string result = input.Substring(5, 3); // 결과: "하세요"
+Console.WriteLine(result);
 ```
 
-출력 결과는 다음과 같을 것입니다.
+입력 문자열 "안녕하세요, 한국의 독자 여러분!"에서 시작 위치 5부터 3개의 문자를 추출하여 결과 변수에 할당합니다. 그리고 이를 출력하는 코드입니다.
 
-```
-녕하세요
-```
+## 깊이 파헤치기 
 
-서브스트링 추출에는 여러 가지 다른 방법도 있습니다. 예를 들어, 인덱스를 이용하여 문자열을 나누거나 특정한 조건을 만족하는 문자열만을 추출하는 등의 방법이 있습니다.
+substring은 문자열을 조작하는 데 매우 유용한 기능입니다. 그러나 실제로는 더 많은 기능을 가지고 있습니다. 예를 들어, 시작 위치를 지정하지 않고 문자열의 끝까지 추출할 수도 있습니다. 또한, 입력 문자열이 없는 경우 예외를 발생시키지 않고 빈 문자열을 반환합니다. 이러한 유용한 기능들을 잘 숙지하고 적절하게 활용하면 더욱 효율적인 코드를 작성할 수 있습니다.
 
-## 자세히 살펴보기
-서브스트링을 추출하는 작업은 문자열을 다루는 데 매우 중요한 역할을 합니다. 이 작업을 제대로 이해하고 활용할 수 있다면 문자열을 다루는 많은 작업에서 유용하게 사용할 수 있습니다.
+# See Also 
 
-또한, 서브스트링 추출과 관련된 다양한 기능을 더 알아보고 싶다면 C#의 공식 문서를 참고하는 것이 좋습니다.
-
-# 관련 자료
-- [C# 문자열 관련 문서](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/)
-- [서브스트링 추출 예제 코드](https://www.w3schools.com/cs/cs_strings_substring.asp)
-- [서브스트링의 활용 예제](https://www.geeksforgeeks.org/c-sharp-substring-method/)
+- [String.Substring 메서드 문서 (MSDN)](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring)
+- [C# 문자열 다루기 (네이버 블로그)](https://blog.naver.com/PostView.nhn?blogId=cjs12242&logNo=221781237609&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search)
+- [C# 자습서 - substring과 trim 사용 방법 (YouTube)](https://www.youtube.com/watch?v=mVvWbkvIhh8)

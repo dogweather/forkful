@@ -1,45 +1,45 @@
 ---
-title:    "C#: 从命令行参数中读取"
+title:    "C#: 阅读命令行参数"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-你可能已经听说过命令行参数，但是你可能不知道为什么需要使用它。命令行参数是一种向程序传递参数的方式，可以使程序更加灵活和可定制。继续阅读，了解更多关于如何在C#中读取命令行参数的信息。
+## 为什么要读取命令行参数
 
-## 为什么
+当我们使用命令行来运行程序，有时可能需要提供一些额外的信息来改变程序的行为。这些信息就是命令行参数。通过读取命令行参数，我们可以实现一个更加灵活和个性化的程序。
 
-阅读命令行参数的主要原因是为了使程序更加灵活和可定制。通过使用命令行参数，用户可以在运行程序时为其提供自定义的输入，而不是在程序代码中直接编写固定的参数。这可以使程序更加通用和可重用，同时也方便用户使用。接下来，我们将展示如何在C#中读取和使用命令行参数。
+## 如何读取命令行参数
 
-## 如何
-
-首先，我们需要使用命令行参数的命名空间 `System`。然后，在我们的程序中创建一个静态方法，用于读取命令行参数。在这个例子中，我们将接收一个字符串类型的参数，然后在控制台输出它。下面是一个简单的例子：
+在C#中，我们可以使用`args`数组来接收命令行参数。下面是一个示例代码：
 
 ```C#
-using System;
-
-public static void ReadCommandLineArgs(string arg)
+static void Main(string[] args)
 {
-    Console.WriteLine("你输入的参数是：" + arg);
+    if(args.Length < 2)
+    {
+        Console.WriteLine("请输入至少2个参数");
+        return;
+    }
+    // args[0]为程序名称，之后的参数依次存储在args数组中
+    Console.WriteLine("你的名字是：" + args[1]);
 }
 ```
 
-接下来，我们需要在控制台运行该程序，并在后面加上自定义的参数。在这个例子中，我们将在控制台输入 `dotnet run hello`。这样，我们的程序将以 `hello` 作为参数，并在控制台输出 `你输入的参数是：hello`。
+假设我们的程序名称为`HelloWorld.exe`，我们可以在命令行中使用以下命令来运行程序并传入参数：
 
-现在，我们已经成功读取并使用命令行参数了。在实际的项目中，我们可以根据需要获取并使用多个参数，使我们的程序更加灵活和可定制。
+```
+HelloWorld.exe John
+```
 
-## 深入了解
+这样，程序就会输出`你的名字是：John`。除了使用`args`数组，我们也可以使用`Environment.GetCommandLineArgs()`方法来获取参数。
 
-在C#中，我们可以使用 `Environment` 类来访问系统环境变量。这意味着我们可以通过命令行参数来修改程序的行为，例如通过设置 `DEBUG` 参数来打开调试模式。此外，我们也可以通过 `args` 属性来获取整个命令行参数的数组，使我们的程序具有更多的灵活性。
+## 深入了解命令行参数
 
-关于命令行参数还有很多更深入的知识，例如如何解析用户输入的参数以获得更复杂的功能。如果你对此感兴趣，建议继续深入学习这个主题。
+在实际开发中，读取命令行参数并不仅限于上面提到的简单示例。我们还可以使用其他方法来解析参数，例如使用第三方库来提供更多的功能。同时，也需要注意对参数的正确处理，避免出现不必要的错误。
 
-## 查看也可以
+## 同时参考
 
-如果你想进一步学习有关命令行参数的知识，请查看以下链接：
-
-- [C# 文档：System 命名空间](https://docs.microsoft.com/zh-cn/dotnet/api/system)
-- [C# 文档：Environment 类](https://docs.microsoft.com/zh-cn/dotnet/api/system.environment)
-- [C# 文档：args 属性](https://docs.microsoft.com/zh-cn/dotnet/api/system.environment.args)
-
-谢谢阅读！希望这篇文章能够帮助你理解并使用命令行参数。继续学习，掌握更多C#编程技巧吧！
+- [Microsoft docs - Command-line arguments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [C# Corner - Working with Command Line Arguments Using C#](https://www.c-sharpcorner.com/uploadfile/mahesh/working-with-command-line-arguments-in-C-Sharp/)

@@ -1,49 +1,45 @@
 ---
-title:    "C: Encontrar la longitud de una cadena"
+title:    "C: Encontrando la longitud de una cadena"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-¿Te has preguntado alguna vez cómo calcular la longitud de una cadena de texto en C? Puede parecer una pregunta simple, pero saber hacerlo puede ser muy útil en el desarrollo de programas. En este artículo, te explicaré por qué es importante saber cómo encontrar la longitud de una cadena y cómo puedes hacerlo de manera efectiva.
+En la programación, una tarea común es la de encontrar la longitud de una cadena de caracteres. Esto puede ser útil para muchas cosas, como validar la entrada de datos del usuario o manipular cadenas de manera eficiente. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en el lenguaje de programación C.
 
 ## Cómo hacerlo
 
-En C, una cadena de texto es simplemente una secuencia de caracteres delimitada por un valor especial, que es el caracter nulo. Pero encontrar la longitud de una cadena de texto no es tan sencillo como contar los caracteres. La función `strlen()` de la librería estándar de C puede ayudarte a obtener la longitud de una cadena. Aquí te dejo un ejemplo de cómo usarla:
+Para encontrar la longitud de una cadena en C, utilizaremos la función "strlen". Esta función se encuentra en la biblioteca estándar de C, por lo que no es necesario importar ninguna biblioteca adicional.
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-  char cadena[] = "Hola mundo";
-  int longitud = strlen(cadena);
+    // Definimos una cadena de caracteres
+    char str[] = "Hola Mundo!";
+    // Llamamos a la función strlen y almacenamos el resultado en una variable
+    int length = strlen(str);
+    // Imprimimos la longitud de la cadena
+    printf("La longitud de la cadena es: %d", length);
 
-  printf("La longitud de la cadena es %d\n", longitud);
-
-  return 0;
+    return 0;
 }
 ```
 
-En este ejemplo, estamos utilizando la función `strlen()` para calcular la longitud de la cadena `"Hola mundo"` y almacenar el resultado en la variable `longitud`. Luego, imprimimos en pantalla el resultado usando la función `printf()`.
-
-La salida de este programa sería:
-
-```
-La longitud de la cadena es 10
-```
+El resultado de este código sería: "La longitud de la cadena es: 11". Como se puede ver, la función strlen nos devuelve el número de caracteres en la cadena, incluyendo espacios y puntuación.
 
 ## Profundizando
 
-Ahora que ya sabes cómo usar la función `strlen()` para encontrar la longitud de una cadena de texto en C, es importante entender cómo funciona. Esta función recibe como parámetro una cadena de texto y recorre cada uno de sus caracteres hasta encontrar el valor nulo que indica el final de la cadena. Cada vez que encuentra un caracter, incrementa en 1 el valor de una variable interna que almacena la longitud de la cadena. Una vez que llega al caracter nulo, devuelve el valor de esa variable.
+Si te preguntas cómo funciona exactamente la función "strlen", aquí hay un poco más de información. La función recorre la cadena de caracteres hasta que encuentra el caracter nulo ('\0'), que indica el final de la cadena. Cada vez que recorre un caracter, aumenta el contador de longitud en 1. Al final, devuelve el valor del contador como resultado.
 
-Es importante tener en cuenta que la longitud de una cadena en C incluye todos los caracteres, incluyendo los espacios y los caracteres especiales. Además, si la cadena no está terminada con el valor nulo, la función `strlen()` podría seguir contando caracteres hasta que encuentra uno dentro de la memoria asignada a la variable. Esto podría causar comportamientos inesperados en tu programa.
+Una cosa importante a tener en cuenta es que la función "strlen" solo funciona con cadenas que terminan con el caracter nulo ('\0'). Si una cadena no tiene este caracter al final, la función podría seguir recorriendo la memoria y causar errores. Por lo tanto, siempre debemos asegurarnos de que nuestras cadenas estén correctamente formateadas.
 
 ## Ver también
 
-- [Documentación de la función `strlen()` en la biblioteca estándar de C](https://www.cplusplus.com/reference/cstring/strlen/)
-- [Cadenas de texto en C - Tutorial básico](https://www.programiz.com/c-programming/c-strings)
-
-¡Espero que este artículo te haya sido útil! Ahora ya sabes cómo encontrar la longitud de una cadena de texto en C. ¡Pero no te detengas aquí! Sigue explorando y aprendiendo nuevas funciones y técnicas de programación en C. ¡Hasta la próxima!
+- [Tutorial de strlen en C](https://www.programiz.com/c-programming/library-function/string.h/strlen)
+- [Explicación detallada sobre el funcionamiento de strlen](https://www.geeksforgeeks.org/strlen-function-in-c/)
+- [Otras funciones para trabajar con cadenas en C](https://en.cppreference.com/w/cpp/string/byte)

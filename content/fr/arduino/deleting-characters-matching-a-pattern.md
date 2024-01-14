@@ -1,48 +1,37 @@
 ---
-title:    "Arduino: Suppression de caractères correspondant à un motif"
+title:    "Arduino: Supprimer les caractères correspondant à un motif"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 # Pourquoi
+Il est parfois nécessaire de supprimer des caractères correspondant à un certain modèle dans un programme Arduino. Cela peut être utile lors de la manipulation de chaînes de caractères ou de données provenant de capteurs.
 
-Supprimer des caractères correspondants à un modèle peut être une tâche utile pour nettoyer et organiser les données dans un projet Arduino. Cela peut également être nécessaire lorsque vous travaillez avec des capteurs ou des modules qui renvoient des caractères non pertinents dans la transmission de données.
-
-# Comment faire
-
-Pour supprimer des caractères correspondants à un modèle en utilisant Arduino, vous pouvez suivre ces étapes simples:
-
-1. Tout d'abord, déclarez une chaîne de caractères pour stocker la valeur complète du message reçu par le capteur ou le module.
-```Arduino
-String message = "ABC123DE456FGH789";
+## Comment faire
+Voici un exemple de code pour supprimer les caractères "a" d'une chaîne de caractères en utilisant la fonction `removePattern()` :
 ```
+#include <String.h>
 
-2. Ensuite, déclarez une nouvelle chaîne de caractères pour stocker la valeur nettoyée, en utilisant la fonction `remove()` pour supprimer les caractères correspondants à un modèle spécifié. Dans notre exemple, nous voulons supprimer tous les chiffres de la chaîne.
-```Arduino
-String cleaned_message = message.remove('0','9');
+void setup() {
+  Serial.begin(9600);
+  String myString = "Bonjour, comment ça va?";
+  myString.removePattern("a");
+  Serial.println(myString);
+}
+
+void loop() {
+
+}
 ```
+Le résultat de ce code serait "Bonjour, comment ç v?"
 
-3. Enfin, imprimez la nouvelle chaîne de caractères pour voir le résultat.
-```Arduino
-Serial.println(cleaned_message);
-```
+## Plongée en profondeur
+Pour supprimer des caractères correspondant à un modèle, il faut utiliser la fonction `removePattern()` de la bibliothèque de chaînes de caractères `String.h`. Cette fonction prend en paramètre le modèle de caractères à supprimer, et peut être utilisée sur une chaîne de caractères existante ou sur une chaîne de caractères nouvellement créée.
 
-Lors de l'exécution de ce code, la sortie affichée sur le moniteur série sera: `ABCDEFGHI`.
-
-# Plongée profonde
-
-La fonction `remove()` est basée sur la fonction `substring()`, qui permet de supprimer une partie spécifique d'une chaîne de caractères. Cela signifie que vous pouvez également utiliser les mêmes paramètres que pour la fonction `substring()` pour définir un modèle de caractères à supprimer. Par exemple, si vous souhaitez supprimer tous les caractères après le quatrième caractère, vous pouvez utiliser la fonction `remove()` comme ceci:
-```Arduino
-String message = "This is a long message";
-String cleaned_message = message.remove(4);
-
-Serial.println(cleaned_message);
-```
-
-La sortie sera: `This`.
+Il est également possible d'utiliser des expressions régulières pour supprimer des caractères correspondant à un modèle plus complexe. Pour cela, il faut inclure la bibliothèque `regex.h` et utiliser la fonction `regexReplace()`.
 
 # Voir aussi
-
-- [Documentation officielle de la fonction `remove()` en anglais](https://www.arduino.cc/en/Tutorial/StringRemove)
-- [Exemples de la fonction `substring()` en anglais](https://www.arduino.cc/en/Reference/StringSubstring)
+- [Documentation officielle de la bibliothèque de chaînes de caractères pour Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/#stringremovepattern)
+- [Documentation officielle de la bibliothèque d'expressions régulières pour Arduino](https://www.arduino.cc/en/Reference/RegularExpression)

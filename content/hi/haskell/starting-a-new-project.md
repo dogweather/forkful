@@ -1,59 +1,29 @@
 ---
 title:    "Haskell: एक नया प्रोजेक्ट शुरू करना"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-Haskell: Kyo?
+# क्यों
 
-Haskell ek powerful aur functional programming language hai jo logic-based programming aur type systems ke sath aata hai. Hindi readers ke liye, Haskell programming language khud ko sikhne aur naye projects shuru karne ke liye ek accha sthan ho sakta hai. Agar aap logic aur optimization ke sath programming karna pasand karte hain, toh Haskell ek aapke liye perfect language ho sakta hai.
+क्या आप एक हिंदी भाषा में प्रोग्रामिंग सीखने के लिए उत्सुक हैं? काम के साथ साथ विभिन्न उद्देश्यों को पूरा करने के लिए प्रोग्रामिंग सीखने की जरूरत होती है। हैस्केल एक उच्च स्तरीय और शक्तिशाली प्रोग्रामिंग भाषा है जो कुशलता के साथ संलग्न किया जाता है। यदि आप विज्ञान और गणित से प्रेम करते हैं और एक नया प्रोजेक्ट शुरू करना चाहते हैं, तो हैस्केल आपके लिए एक उत्कृष्ट विकल्प हो सकता है।
 
-Haskell: Kaise Kare?
+# कैसे करें
 
-Haskell sikhna aur use karna kuch kathin ho sakta hai, lekin ek baar aap is par command hoga toh aapko iski power aur beauty ka ahsaas ho jayega. Yahan hum kuch basic steps discuss karenge jinhe follow kar ke aap apna pehla Haskell project shuru kar sakte hain:
+हैस्केल कोडिंग का शुरुआत करने के लिए आपको अपने सिस्टम में हैस्केल को स्थापित करना होगा। हैस्केल को स्थापित करने के लिए निम्नलिखित कदमों का पालन करें:
 
-1. Haskell compiler/interpreter download kare: Sabse pehle aapko ek Haskell compiler ya interpreter ki jarurat hogi. Yahan par GHC aur GHCi popular options hain. Aap inhe online download kar sakte hain ya phir apne system ke liye package manager ka use kar sakte hain.
-2. Text editor ya IDE setup kare: Haskell code ko likhne ke liye aapko ek text editor ya IDE ki jarurat hogi. Some popular options include Atom, Sublime Text, ya IntelliJ IDEA.
-3. Haskell syntax sikhe: Haskell ka syntax functional programming ki languages se thoda alag ho sakta hai. Aapko data types, functions, lists, aur lambdas ko sikhna hoga. Yahan par kuch basic examples hain:
+1. हैस्केल के [आधिकारिक वेबसाइट](https://www.haskell.org/) से आवश्यक फाइलों को डाउनलोड करें।
+2. फाइलों को अपने सिस्टम पर इंस्टॉल करें।
+3. कमांड प्रोंप्ट (Windows) या टर्मिनल (Mac और Linux) में हैस्केल को चलाएं।
+4. आप अब हैस्केल प्रोम्प्ट पर हैं और आप अब हैस्केल में कोडिंग कर सकते हैं।
+
+आप निम्नलिखित कोड का इस्तेमाल करके सक्षम होंगे जो आपके पहले हैस्केल कार्यक्रम को चलाएगा:
 
 ```Haskell
--- Basic data types
-x :: Int
-x = 5
-
-name :: String 
-name = "Haskell"
-
--- Functions
-add :: Int -> Int -> Int
-add x y = x + y
-
--- Lists
-nums :: [Int]
-nums = [1, 2, 3, 4, 5]
-
--- Lambdas
-double :: Int -> Int
-double = \x -> x * 2
+main :: IO ()
+main = putStrLn "नमस्कार दुनिया!"
 ```
 
-4. Sample project create kare: Ab aap ready hain apna pehla Haskell project shuru karne ke liye. Aap text editor ya IDE ka use kar ke kuch steps follow kar sakte hain:
-
-a. Ek folder create kare aur usme apne project ka naam rakhe.
-b. "Main.hs" naam se ek file create kare aur usme apna code likhe.
-c. Terminal ya command prompt par ja kar project directory par jaye.
-d. Compiler ko use kar ke code ko run kare aur output dekhe.
-
-Haskell: Deep Dive
-
-Haskell ki flexibility aur power isse ek ideal choice banati hai new projects shuru karne ke liye. Iske strong type system aur lazy evaluation ka use kar ke aap apne code ko optimize kar sakte hain. Iske alawa, Haskell ka concept of pattern matching aur higher order functions bhi isse ek unique aur effective language banate hain.
-
-Agar aap starting me kisi bhi programming language par practice karte hain, toh aapko patience aur dedication ki jarurat hoti hai. Haskell sikhna bhi iska ek example hai. Lekin agar aap iske basics aur principles ko samajh lete hain, toh aap isse apne code ko functional aur efficient banane ke liye use kar sakte hain.
-
-See Also
-
-- [Official Haskell Website] (https://www.haskell.org/)
-- [Learn You a Haskell for Great Good!] (http://learnyouahaskell.com/chapters)
-- [Haskell Tutorial] (https://www.tutorialspoint.com/haskell/)
-- [Haskell Programming - Wikibooks] (https://en.wikibooks.org/wiki/Haskell/Introduction)
+जब आप ऊपर दिए गए कोड को अपने संपादक में लिखेंगे और उसे save करेंगे, तो अपने सिस्टम पर चलाने के लिए उसे compile और run करें। अगर स

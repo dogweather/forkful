@@ -1,48 +1,37 @@
 ---
 title:    "Java: Umwandlung eines Strings in Kleinbuchstaben"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum es sinnvoll sein könnte, einen String in Java in Kleinbuchstaben umzuwandeln. Zum Beispiel kann es bei der Suche oder der Vergleichung von Strings helfen, wenn alle Buchstaben klein geschrieben sind. Auch bei der Eingabe von Benutzernamen oder Passwörtern kann es nützlich sein, diese in Kleinbuchstaben zu konvertieren, um mögliche Fehler zu vermeiden.
+Es gibt viele Gründe, warum Programmierer eine Zeichenkette in Kleinbuchstaben umwandeln möchten. Einer der häufigsten Gründe ist die Konsistenz bei der Überprüfung von Benutzereingaben in Formularen oder das Vergleichen von Texten, um sicherzustellen, dass sie gleich sind, unabhängig davon, ob die Groß- und Kleinschreibung unterschiedlich ist.
 
-## Wie geht das?
+## Wie mache ich das?
 
-Um einen String in Java in Kleinbuchstaben umzuwandeln, gibt es verschiedene Möglichkeiten. Die einfachste ist die Verwendung der eingebauten Methode `toLowerCase()`, die für jede String-Instanz verfügbar ist. Hier ist ein Beispielcode:
+Die Konvertierung einer Zeichenkette in Kleinbuchstaben ist in Java sehr einfach und erfordert nur eine einzige Methode: ```toLowerCase()```. Diese Methode nimmt die vorhandene Zeichenkette als Eingabe und gibt eine neue Zeichenkette in Kleinbuchstaben als Ausgabe zurück.
 
-```Java
-String input = "Hallo";
-String output = input.toLowerCase();
-System.out.println(output); // gibt "hallo" aus
+Hier ist ein Beispiel, wie dies in Java aussehen würde:
+
+```
+String text = "Programmieren ist toll!";
+String lowerCaseText = text.toLowerCase();
+System.out.println(lowerCaseText);
 ```
 
-Man kann auch die `toLowerCase()` Methode mit einer bestimmten `Locale` verwenden, um sicherzustellen, dass die Umwandlung nach den Regeln dieser Sprache erfolgt. Hier ist ein Beispiel mit der deutschen `Locale`:
+Die Ausgabe wäre: ```programmieren ist toll!```
 
-```Java
-String input = "Guten Morgen";
-String output = input.toLowerCase(Locale.GERMAN);
-System.out.println(output); // gibt "guten morgen" aus
-```
+## Tiefergehende Informationen
 
-Eine andere Möglichkeit ist die Verwendung der `String` Klasse `toLowerCase()` Methode, die optional eine `Locale` als Parameter akzeptiert. Hier ist ein Beispiel:
+Es gibt einige Aspekte, die bei der Konvertierung einer Zeichenkette in Kleinbuchstaben zu beachten sind. Zum Beispiel, wie sich diese Methode auf Sonderzeichen oder diakritische Zeichen auswirkt. In der Dokumentation von Java können Sie mehr über die ```toLowerCase()``` Methode und ihre Funktionalität erfahren.
 
-```Java
-String input = "Ich heiße Max";
-String output = input.toLowerCase(Locale.GERMAN);
-System.out.println(output); // gibt "ich heiße max" aus
-```
-
-## Tiefere Einblicke
-
-Bei der Verwendung der `toLowerCase()` Methode ist es wichtig zu beachten, dass sie eine neue `String` Instanz zurückgibt und den ursprünglichen `String` nicht ändert. Dies liegt daran, dass `String` Objekte in Java unveränderlich sind. Wenn man jedoch eine `String` Variable hat, die auf den ursprünglichen `String` zeigt, und den Wert ändern möchte, muss man sie auf die neue, konvertierte Instanz setzen.
-
-Ein weiteres wichtiges Detail ist, dass die `toLowerCase()` Methode, je nach `Locale`, unterschiedliche Ergebnisse erzeugen kann. Zum Beispiel gibt es im Deutschen die Buchstaben "ß" und "ss". In der deutschen `Locale` wird "ß" beim Umwandeln in Kleinbuchstaben zu "ss", während es in anderen Standard-`Locale`s möglicherweise nicht der Fall ist.
+Es ist auch wichtig zu wissen, dass diese Methode immer eine neue Zeichenkette als Ausgabe erzeugt und die ursprüngliche Zeichenkette unverändert lässt. Wenn Sie also die ursprüngliche Zeichenkette ebenfalls in Kleinbuchstaben ändern möchten, müssen Sie dies manuell tun oder die neue Zeichenkette als Ersatz verwenden.
 
 ## Siehe auch
 
-- [Java Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- [Java String Dokumentation](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-- [Java Locale](https://docs.oracle.com/javase/10/docs/api/java/util/Locale.html)
+- [Java-Dokumentation zu toLower()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java-Tutorial zu String-Manipulation](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+- [w3schools Java String toLower() Beispiel](https://www.w3schools.com/java/ref_string_tolower.asp)

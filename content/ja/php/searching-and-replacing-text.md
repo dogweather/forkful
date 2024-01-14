@@ -1,59 +1,48 @@
 ---
 title:    "PHP: テキストの検索と置換"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜテキストの検索と置換を行うのか？
+## なぜ
+テキストの検索と置換をするのに取り組む必要があるかを説明する1〜2文。
 
-テキストの検索と置換は、テキスト処理を行う上で非常に便利なツールです。例えば、複数のファイル内にある特定の文字列を一括で変更したい場合や、特定の部分文字列を別の文字列に置換したい場合などに有効です。プログラミングの世界では、テキスト処理はよく行われるタスクであり、PHPを使うことで簡単かつ効率的に処理することが可能です。
-
-# 方法：テキストの検索と置換の方法
-
-PHPでテキストの検索と置換を行うには、いくつかの方法があります。まずは、標準の`str_replace()`関数を使用する方法です。
+## 方法
+"```PHP ... ```"コードブロック内のコーディング例とサンプル出力を含む。
 
 ```
-// 検索文字列と置換文字列を指定
-$search = "Hello";
-$replace = "こんにちは";
-
-// テキストの置換を行う
-$text = "Hello World!";
-echo str_replace($search, $replace, $text);
-
-// 出力結果：こんにちは World!
+<?php
+// 文字列の置換
+$string = "こんにちは世界！";
+$new_string = str_replace("世界", "日本", $string);
+echo $new_string; // 出力: こんにちは日本！
+?>
 ```
 
-また、正規表現を使用してパターンマッチングを行うことで、より柔軟な検索と置換を行うことができます。
+## 基礎を深く掘り下げる
+テキストの検索と置換についてのより詳細な情報。
 
-```
-// パターンマッチングを行うために正規表現を使う
-$pattern = "/\d+/"; // 数字にマッチするパターン
+テキストの検索と置換は、文字列やパターンを特定の値に置き換えることによって、文字列の変更や修正を行うために使用される重要なプログラミング機能です。PHPで、テキストの検索と置換を行うためによく使用される関数は、`str_replace()`や`preg_replace()`です。これらの関数を使うことで、指定した文字列やパターンが含まれる部分を検索し、指定した値に置換することができます。
 
-// 検索文字列と置換文字列を指定
-$replace = "#";
+また、正規表現を使用することで、より複雑なテキストのパターンを検索し、置換することも可能です。正規表現を使用することで、より柔軟なテキスト処理が可能になります。
 
-// テキストの置換を行う
-$text = "abc123def456ghi";
-echo preg_replace($pattern, $replace, $text);
+テキストの検索と置換は、データベースやファイル処理などの多くの場面で役立つため、プログラマーにとって重要なスキルの一つです。この機能をマスターすることで、より効率的なコードを書くことができるようになります。
 
-// 出力結果：abc#def#ghi
-```
+## 参考記事
+- [PHPのドキュメンテーション：文字列の置換](https://www.php.net/manual/ja/function.str-replace.php)
+- [PHPのドキュメンテーション：正規表現による置換](https://www.php.net/manual/ja/function.preg-replace.php)
+- [正規表現チュートリアル](https://www.regular-expressions.info/)
+- [yenom/php-regular-expression-cheat-sheet](https://github.com/yenom/php-regular-expression-cheat-sheet)
 
-# 深堀り：テキストの検索と置換について
+## その他
+もしテキストの検索や置換で問題が発生した場合、上記の参考記事や正規表現チュートリアルを参考にして解決することができます。また、GitHub上で公開されている正規表現のチートシートも参考になりますので、ぜひ活用してみてください！
 
-テキストの検索と置換は、文字列処理における基本的な操作ですが、PHPではより高度な処理も可能です。例えば、ファイル内の特定の文字列を置換するだけでなく、正規表現を用いてパターンを指定することで、特定の条件を満たす文字列のみを置換することができます。また、配列内の文字列を一括で置換することもできます。
+___
+See Also
 
-さらに、PHPには多くの便利なテキスト処理関数が用意されており、それらを組み合わせることでより高度な処理を行うことができます。テキスト処理はプログラミングの世界では欠かせない重要なタスクであり、PHPを使うことで簡単に行うことができるということを覚えておきましょう。
-
-# 関連記事
-
-- [PHPユーザーズエントリー：文字列を検索して置換するための3つの方法](https://php-users-entry-example.com/replacing-text-php)
-- [PHP.net： `str_replace()`関数の公式ドキュメント](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP.net：正規表現を用いた文字列の置換についての公式ドキュメント](https://www.php.net/manual/en/function.preg-replace.php)
-
----
-さらに読みたい方は以下の記事をチェックしてみてください！
-
-- [PHPユーザーズエントリー： 配列内の特定の値を一括で置換する方法](https://php-users-entry-example.com/re
+- [PHP Manual: String Replacement](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP Manual: Replacement Using Regular Expressions](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regular Expressions Tutorial](https://www.regular-expressions.info/)
+- [yenom/php-regular-expression-cheat-sheet](https://github.com/yenom/php-regular-expression-cheat-sheet)

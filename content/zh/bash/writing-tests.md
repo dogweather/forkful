@@ -1,98 +1,57 @@
 ---
-title:    "Bash: 编写测试"
+title:    "Bash: 书写测试"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-编写测试是提高代码质量不可或缺的步骤。通过编写测试，您可以确保代码在未来的更改中仍然可靠运行，减少出错的可能性，并节省时间和精力。
+无论是新手还是有经验的程序员，编写测试都是非常重要的。通过编写测试，可以确保代码的质量和稳定性，并且在更改代码时可以快速发现错误。它也可以帮助提高团队的代码协作能力，并促进更好的代码架构。
 
-## 如何
+## 如何编写测试
 
-编写测试可以使用Bash编程语言轻松地实现。您可以按照以下步骤来编写测试：
-
-1. 首先，创建一个新的Bash脚本文件，例如`test.sh`。
-2. 在脚本中，使用`#!/bin/bash`来定义Bash解释器。
-3. 使用`echo`命令来打印测试的名称，例如`echo "测试1"`。
-4. 下面是一个示例代码块，它包含了一个简单的加法函数和测试它的功能。
+编写测试的第一步是设置测试环境。您可以使用Bash中的“mkdir”命令创建一个测试目录，如下所示：
 
 ```Bash
-#!/bin/bash
-
-# 定义加法函数
-function add {
-    echo "请输入两个数字："
-    read num1
-    read num2
-    sum=$((num1+num2)) # 使用双括号来执行加法运算
-    echo "总和是： $sum"
-}
-
-# 测试函数：测试加法函数的功能
-function test_add {
-    add # 调用add函数
-    if [ "$sum" -eq $((5+10)) ]; then # 使用条件语句来判断加法是否正确
-        echo "测试通过！"
-    else
-        echo "测试失败！"
-    fi
-}
-
-# 调用测试函数来运行测试
-test_add
+mkdir test
 ```
 
-5. 在终端中，使用`bash test.sh`来运行测试脚本。
-
-运行示例：
-
-```
-测试1
-请输入两个数字：
-5
-10
-总和是： 15
-测试通过！
-```
-
-## 深入探讨
-
-编写测试的关键是确保测试覆盖所有可能的代码路径。您可以使用不同的函数和条件语句来测试不同的代码功能。此外，您还可以使用`exit status`来检查是否有错误发生。
-
-例如，在前面的加法函数的例子中，我们可以修改`add`函数来检查输入的数字是否为0，并返回相应的`exit status`：
+接下来，您可以使用“cd”命令进入测试目录，并使用“touch”命令创建一个新的测试文件，如下所示：
 
 ```Bash
-function add {
-    echo "请输入两个数字："
-    read num1
-    read num2
-    if [ "$num1" -eq 0 ] || [ "$num2" -eq 0 ]; then # 检查输入的数字是否为0
-        echo "输入错误！"
-        return 1 # 返回exit status 1来表示错误
-    fi
-    sum=$((num1+num2)) # 使用双括号来执行加法运算
-    echo "总和是： $sum"
-    return 0 # 返回exit status 0来表示成功
-}
+cd test
+touch test.sh
 ```
 
-然后，在测试函数中，我们也需要修改来检查`add`函数的exit status：
+现在，您可以在“test.sh”文件中编写您的测试代码。下面是一个简单的例子，用于测试一个简单的加法函数，它接受两个数字作为参数并返回它们的和：
 
 ```Bash
-function test_add {
-    add # 调用add函数
-    if [ $? -eq 0 ]; then # 使用$?来获取上一个命令的exit status
-        echo "测试通过！"
-    else
-        echo "测试失败！"
-    fi
+# 创建一个加法函数
+add() {
+  result=$(expr $1 + $2)
+  echo $result
 }
+
+# 编写测试代码
+if [ $(add 2 3) -eq 5 ]; then
+  echo "测试通过！"
+else
+  echo "测试失败！"
+fi
 ```
 
-## 另请参阅
+您可以使用“source”命令运行此测试文件，并获得相应的输出。如果所有测试通过，则会打印出“测试通过！”的消息，否则将打印出“测试失败！”的消息。
 
-- [Bash程序设计教程](www.linuxforbeginners.info/batch_scripting)
-- [Bash编程入门](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Bash文档](https://www.gnu.org/software/bash/manual/html_node/index.html)
+## 深入了解编写测试
+
+编写测试并不是一件简单的事情，它需要仔细的思考和规划。重要的是要编写易于理解和维护的测试代码，并确保它们覆盖了所有可能的情况。您还可以使用Bash中的条件语句和循环来创建更复杂的测试用例。
+
+此外，也可以使用Bash中的“set -e”命令来设置测试的严格模式，这样在测试失败时会立即退出并返回错误码。这有助于及早发现错误并及时修复。
+
+## 参考链接
+
+- [Bash官方文档](https://www.gnu.org/software/bash/)
+- [测试驱动开发概述](https://www.agilealliance.org/glossary/tdd/)
+- [Bash中的条件语句和循环](https://www.shellscript.sh/conditions.html)

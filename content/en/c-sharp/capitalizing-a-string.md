@@ -1,45 +1,55 @@
 ---
 title:    "C# recipe: Capitalizing a string"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Capitalize a String in C#?
+## Why
 
-Capitalizing a string is a common task in many programming languages, including C#. It involves changing the case of the letters in a string so that the first letter is capitalized, while all other letters are lowercase. This can be useful for presenting data in a more visually appealing way or for following proper naming conventions in your code.
+Have you ever needed to convert a string to all uppercase or lowercase letters? Maybe you're creating a program that has specific naming conventions, or maybe you just want to manipulate user input. Whatever the reason may be, capitalizing a string is a common task in programming. In this blog post, we will explore how to capitalize a string in C#.
 
-## How To Capitalize a String in C#
+## How To
 
-To capitalize a string in C#, you can use the `ToUpper()` method from the `String` class. This method converts all characters in a string to uppercase, but to only capitalize the first letter, we can combine it with the `Substring()` method to get the first character and then use `ToUpper()` on just that character.
-
-```C#
-string myString = "hello world";
-myString = myString.Substring(0, 1).ToUpper() + myString.Substring(1).ToLower();
-
-Console.WriteLine(myString); // Outputs: Hello world
-```
-
-In this example, we first create a string with all lowercase letters. Then, we use `Substring()` to get the first character (at index 0) and change it to uppercase using `ToUpper()`. Next, we use `Substring()` again to get all other characters in the string starting from index 1, and use `ToLower()` to make them lowercase. Finally, we assign the new string back to `myString` and print it out to see the result.
-
-## Deep Dive into Capitalizing a String in C#
-
-In C#, strings are immutable, meaning they cannot be changed. This means that when we call the `ToUpper()` or `ToLower()` methods, they do not modify the existing string, but instead create a new string with the desired changes. That's why in the code example above, we had to assign the result of the method calls back to the original string.
-
-It's also worth noting that these methods use the current culture setting to determine the case of the characters. So depending on the culture of your system, the output of the capitalized string may vary. To override this behavior and use a specific culture, you can pass in a `CultureInfo` object as a parameter in the `ToUpper()` or `ToLower()` methods.
+In C#, there are several ways to capitalize a string. Let's take a look at a few examples:
 
 ```C#
-string myString = "hello world";
-myString = myString.Substring(0, 1).ToUpper(CultureInfo.InvariantCulture) + myString.Substring(1).ToLower();
+// Using the ToUpper() method to capitalize all letters in a string
 
-Console.WriteLine(myString); // Outputs: HELLO WORLD (culturally-invariant)
+string name = "john doe";
+string capitalized = name.ToUpper(); // JOHN DOE
+
 ```
+
+```C#
+// Using the ToLower() method to make all letters lowercase in a string
+
+string name = "JOHN DOE";
+string lowercase = name.ToLower(); // john doe
+```
+
+```C#
+// Using the CultureInfo class to capitalize the first letter in a string
+
+string name = "jane doe";
+CultureInfo culture = new CultureInfo("en-US");
+TextInfo textInfo = culture.TextInfo;
+string capitalized = textInfo.ToTitleCase(name); // Jane Doe
+```
+
+As you can see, there are different methods and techniques to capitalize a string in C#. Depending on the specific requirements of your program, you can choose which approach works best for you. It is also important to note that these methods do not change the original string, but rather return a new string with the desired capitalization.
+
+## Deep Dive
+
+Under the hood, the ToUpper() and ToLower() methods use the ASCII table to convert letters to uppercase or lowercase. Each letter has a corresponding numeric value, and by adding or subtracting a certain number, we can convert it to uppercase or lowercase respectively. The CultureInfo class uses a more sophisticated approach by taking into account language-specific rules for capitalization.
+
+It is also worth mentioning that the C# language provides a method called "capitalize" for strings, but this method is only available in certain versions of the .NET framework. Additionally, there are third-party libraries that offer more advanced functionality for capitalizing strings, such as handling special characters or multiple languages.
+
+In conclusion, capitalizing a string may seem like a simple task, but there are various methods and techniques that can be used. Knowing the differences between these approaches can help you choose the best option for your specific programming needs.
 
 ## See Also
 
-For more information about working with strings in C#, you may find the following resources helpful:
-
-- [String.ToUpper Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [String.ToLower Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [String.Substring Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- [C# Strings Tutorial (w3schools)](https://www.w3schools.com/cs/cs_strings.asp)
+- [Microsoft Documentation on ToUpper() method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+- [C# CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+- [Third-party library for capitalizing strings in C#](https://www.nuget.org/packages?q=capitalize%20string&sortOrder=relevance&page=0)

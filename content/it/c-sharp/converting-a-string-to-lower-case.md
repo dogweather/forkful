@@ -1,57 +1,46 @@
 ---
 title:    "C#: Convertire una stringa in minuscolo"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Convertire una stringa in minuscolo è una funzione fondamentale nella programmazione. Spesso può essere utile rimuovere la sensibilità alle maiuscole e minuscole per confrontare stringhe o per elaborare input dei dati in formato uniforme. In questo articolo, imparerai come eseguire questa operazione utilizzando il linguaggio di programmazione C#.
+La conversione di una stringa in lettere minuscole è un'operazione comune in programmazione. Spesso è utile per uniformare il formato dei dati o per facilitare le operazioni di ricerca. In questo articolo vedremo come eseguire questa operazione utilizzando il linguaggio di programmazione C#.
 
 ## Come fare
 
-Per convertire una stringa in minuscolo in C#, esistono diverse opzioni. La prima è utilizzare il metodo `ToLower()` della classe `String`, che restituisce una nuova stringa in minuscolo. Ad esempio:
+In C#, esistono diversi modi per convertire una stringa in lettere minuscole. Uno dei più semplici è utilizzare il metodo `ToLower()` della classe `string`. Ecco un esempio di codice che mostra come farlo:
 
-```C#
-string input = "CIAO A TUTTI";
-string output = input.ToLower();
-
-Console.WriteLine(output);
+```
+string myString = "CIAO A TUTTI";
+string lowerString = myString.ToLower();
+Console.WriteLine(lowerString);
 ```
 
-L'output di questo codice sarà `ciao a tutti`. 
+L'output di questo codice sarà "ciao a tutti". Come puoi vedere, il metodo `ToLower()` ha convertito tutte le lettere della stringa in minuscolo.
 
-Un'altra opzione è utilizzare il metodo `ToLowerInvariant()`, che esegue la conversione ignorando le impostazioni culturali del sistema operativo. Questo significa che funziona allo stesso modo su qualsiasi computer, indipendentemente dalla lingua o dalle impostazioni utilizzate. Esempio:
+Un'altra opzione per eseguire la conversione è utilizzare il metodo `ToUpperInvariant()`, che converte la stringa in lettere maiuscole utilizzando le regole invarianti della lingua inglese. Ad esempio:
 
-```C#
-string input = "HELLO WORLD";
-string output = input.ToLowerInvariant();
-
-Console.WriteLine(output);
+```
+string myString = "Ciao a tutti";
+string upperString = myString.ToUpperInvariant();
+Console.WriteLine(upperString);
 ```
 
-L'output sarà ancora una volta `hello world`. 
+L'output di questo codice sarà "CIAO A TUTTI". Questo metodo può essere utile se si vuole uniformare il formato delle stringhe senza dover gestire le differenze tra le lingue.
 
-Un'altra cosa importante da notare è che entrambi i metodi sopra descritti restituiranno una nuova stringa, piuttosto che modificare direttamente quella di input. Se si vuole fare una modifica diretta alla stringa originale, si possono utilizzare i metodi `ToLower()` e `ToLowerInvariant()` della classe `StringBuilder`. Esempio:
+## Approfondisci
 
-```C#
-StringBuilder sb = new StringBuilder("CIAO MONDO");
-sb.ToLower();
-Console.WriteLine(sb);
-```
+Oltre ai metodi `ToLower()` e `ToUpperInvariant()`, esistono altre tecniche per convertire una stringa in lettere minuscole in C#. Ad esempio, è possibile utilizzare il metodo `ToLower()` della classe `TextInfo`, che consente di gestire le differenze tra le lingue e i casi speciali come le lettere accentate. Inoltre, è possibile utilizzare espressioni regolari per convertire solo alcune parti della stringa in minuscolo.
 
-In questo caso, l'output sarà `ciao mondo`.
-
-## Approfondimento
-
-Esistono alcune differenze tra i metodi `ToLower()` e `ToLowerInvariant()`, a parte il fatto che il primo opera sulla classe `String` e il secondo su `StringBuilder`. La principale di queste è che `ToLower()` può essere influenzato dalle impostazioni culturali del sistema operativo, il che significa che la conversione potrebbe essere diversa a seconda del computer sul quale viene eseguito il codice.
-
-Ad esempio, se esegui il codice precedente su un computer con le impostazioni regionali italiane, l'output sarà `ciao mondo`. Tuttavia, se eseguito su un computer con impostazioni regionali inglesi, l'output sarà `ciao mondo`. 
-
-D'altro canto, il metodo `ToLowerInvariant()` produrrà sempre lo stesso output, indipendentemente dall'impostazione regionale del computer.
+In generale, è importante prestare attenzione alla lingua e alle regole di maiuscole/minuscole del testo che si sta elaborando per ottenere il risultato desiderato.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Microsoft su metodi di conversione delle stringhe in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- [Esempi di utilizzo di `ToLower()` e `ToLowerInvariant()`](https://www.c-sharpcorner.com/blogs/difference-between-tolower-tostring-and-tolowerinvariant-tostring) (in inglese)
+- [Metodo ToLower() della classe string (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+- [Metodo ToUpperInvariant() della classe string (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
+- [Metodo ToLower() della classe TextInfo (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.tolower)
+- [Espressioni regolari in C# (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

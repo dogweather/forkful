@@ -1,53 +1,82 @@
 ---
 title:    "C++: Konvertere en streng til små bokstaver"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Konvertering av en streng til små bokstaver er en vanlig oppgave i programmering. Dette kan være nyttig når man for eksempel skal sammenligne strenger eller behandle brukerinput. Derfor er det viktig å ha en god forståelse for hvordan dette gjøres i C++.
+Mange ganger i programmering, spesielt når vi jobber med tekstbehandling, kan det være nødvendig å konvertere en streng til små bokstaver. Dette kan være for å sammenligne strenger, behandle data eller bare for å følge konvensjoner. Uansett årsak, å være i stand til å konvertere en streng til små bokstaver er et nyttig verktøy å ha i programmeringsarsenalet ditt. I denne bloggen vil vi utforske hvordan du kan gjøre dette med C++.
 
 ## Hvordan gjøre det
 
-For å konvertere en streng til små bokstaver i C++, kan du bruke den innebygde funksjonen "tolower" fra standardbiblioteket. Denne funksjonen vil konvertere alle store bokstaver i en streng til små bokstaver. Her er et eksempel på hvordan dette kan gjøres:
+For å konvertere en streng til små bokstaver i C++, er det flere metoder du kan bruke. La oss se på noen eksempler:
 
 ```C++
-#include <iostream>
-#include <string>
-using namespace std;
+#include<iostream>
+#include<string>
 
 int main() {
-    string streng = "Hei på deg";
-    for (int i = 0; i < streng.length(); i++) {
-        // Bruk tolower-funksjonen for å konvertere hvert tegn
-        streng[i] = tolower(streng[i]);
-    }
-    cout << streng << endl;
-}
+    // Opprett en streng
+    std::string tekst = "HEST";
 
-// Output: hei på deg
+    // Bruk for-løkke for å iterere gjennom strengen
+    for (int i = 0; i < tekst.length(); i++) {
+        // Konverter hver bokstav til små bokstaver
+        tekst[i] = tolower(tekst[i]);
+    }
+
+    // Skriv ut resultatet
+    std::cout << tekst << std::endl;
+
+    return 0;
+}
 ```
 
-Her bruker vi en for-løkke for å gå gjennom hvert tegn i strengen og konvertere det ved hjelp av tolower-funksjonen. Det er viktig å merke seg at denne funksjonen kun fungerer for enkeltegnsstrenger, så hvis du ønsker å konvertere en hel setning, må du bruke en løkke som i eksempelet over.
+Output:
+```bash
+hest
+```
 
-## Dypdykk
-
-Mens tolower-funksjonen er den enkleste måten å konvertere en streng til små bokstaver på, er det også andre metoder du kan bruke. For eksempel kan du bruke transform-funksjonen fra "algorithm" -biblioteket for å konvertere en hel streng på en enkel måte. Det vil se slik ut:
+Her bruker vi for-løkke for å gå gjennom hver bokstav i strengen og bruke funksjonen `tolower` for å konvertere den til små bokstaver. Denne metoden er enkel og effektiv, men det er også andre metoder du kan bruke, for eksempel:
 
 ```C++
-// Inkluder "algorithm" -biblioteket
-#include <algorithm>
+#include<iostream>
+#include<string>
+#include<algorithm>
 
-// Bruk transform-funksjonen
-transform(streng.begin(), streng.end(), streng.begin(), ::tolower);
+int main() {
+    // Opprett en streng
+    std::string tekst = "HEST";
+
+    // Bruk transform-funksjonen for å konvertere til små bokstaver
+    transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+
+    // Skriv ut resultatet
+    std::cout << tekst << std::endl;
+
+    return 0;
+}
 ```
 
-I tillegg er det viktig å være oppmerksom på at tolower-funksjonen kun fungerer på ASCII-tegn. Hvis du arbeider med tegn utenfor ASCII-tabellen, kan du bruke funksjoner som towlower eller wctrans for å konvertere til små bokstaver.
+Output:
+```bash
+hest
+```
 
-## Se også
+Her bruker vi `transform`-funksjonen og `::tolower` som argument for å konvertere hele strengen til små bokstaver. Dette er en kortere og mer effektiv måte å gjøre det på.
 
-- [C++ string class](https://www.cplusplus.com/reference/string/string/)
-- [transform function](https://www.cplusplus.com/reference/algorithm/transform/)
-- [tolower function](https://www.cplusplus.com/reference/cctype/tolower/)
+## Dykker dypere
+
+Nå som vi har sett noen eksempler på hvordan vi kan konvertere en streng til små bokstaver, la oss se nærmere på noen viktige ting du bør huske på når du gjør dette:
+
+- Hvis strengen inneholder spesialtegn eller bokstaver med aksent, kan de ikke konverteres til små bokstaver på denne måten. Du må i stedet bruke funksjoner som `tolower` fra `locale`-biblioteket for å håndtere slike bokstaver.
+- Det finnes også andre biblioteker og metoder for å konvertere til små bokstaver, som `boost::to_lower` fra Boost-biblioteket. Det er verdt å utforske disse og finne den som fungerer best for ditt program.
+
+## Se Også
+
+- [C++ Strings](https://www.w3schools.com/cpp/cpp_strings.asp)
+- [tolower in C++](https://www.geeksforgeeks.org/tolower-function-in-c/)
+- [boost::to_lower](https://www.boost.org/doc/libs/1_72_0/doc/html/boost_algorithm/to_lower.html)

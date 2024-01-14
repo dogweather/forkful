@@ -1,40 +1,50 @@
 ---
 title:    "Elm recipe: Searching and replacing text"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Search and Replace Text in Elm?
 
-When working with code, it's inevitable that you will come across situations where you need to make changes to multiple lines of text at once. This is where the search and replace function comes in handy. Instead of manually going through each line, search and replace allows you to quickly and efficiently make changes to your entire codebase.
+Searching and replacing text is a common task in programming. It allows you to quickly make changes to your code without having to manually go through each line. In this blog post, we will explore how to perform search and replace operations in Elm, a functional programming language.
 
-## How To
+# How To Search and Replace Text in Elm
 
-To use the search and replace function in Elm, you will need to import the Text module. This module provides functions for manipulating strings, including the `replace` function. Let's take a look at how we can use this function to search and replace text within a string.
-
-First, we need to define a string with the text we want to make changes to. For this example, let's say we have the following string:
+To search and replace text in Elm, we will use the `String.replace` function. This function takes in three arguments: the text to search for, the replacement text, and the original string.
 
 ```
-let text = "Hello, world! This is a test string."
+Elm String.replace
 ```
 
-Next, we can use the `replace` function to replace the word "test" with "new" in our string. The `replace` function takes in three arguments: the string we want to search within, the text we want to replace, and the new text we want to replace it with. In this case, it would look like this:
+Let's say we have a string called `greeting` with the value "Hello World". If we want to replace "Hello" with "Hi", we can do so using the following code:
 
 ```
-let newText = replace "test" "new" text
+Elm
+greeting = "Hello World"
+greeting = String.replace "Hello" "Hi" greeting
 ```
 
-The value of `newText` would now be "Hello, world! This is a new string." This simple example shows how easy it is to use the search and replace function in Elm to make changes to text.
+The output of `greeting` will now be "Hi World".
 
-## Deep Dive
+We can also use regular expressions to search for patterns in our text. For example, if we want to replace all numbers in a string with the word "number", we can use this code:
 
-The `replace` function in the Text module is just one way to search and replace text in Elm. There are also other functions such as `replaceAll`, which replaces all instances of a given substring, and `replaceRegex`, which allows you to use regular expressions for more complex replacements.
+```
+Elm
+message = "I have 10 apples and 5 oranges"
+message = String.replace Regex.digit "number" message
+```
 
-Additionally, the Text module also provides functions for searching and replacing text within a specific index or range of the string. This gives you even more flexibility in making changes to your code.
+The output of `message` will now be "I have number apples and number oranges".
 
-## See Also
+# Deep Dive into String.replace
 
-- [Elm Text module documentation](https://package.elm-lang.org/packages/elm/core/latest/Text)
-- [Regular expressions in Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Free Elm tutorial for beginners](https://frontendmasters.com/courses/beginner-elm/)
+The `String.replace` function is part of the `String` module in Elm. It supports regular expressions, making it a powerful tool for searching and replacing text. The first argument of the function can be either a `String` or a `Regex` value. If it is a `String`, it will search for an exact match in the original string. If it is a `Regex`, it will search for a pattern in the original string.
+
+Another useful function in the `String` module is `String.replaceOnce`. This function works the same as `String.replace`, but it only replaces the first occurrence of the search string or pattern.
+
+# See Also
+- Official Elm Documentation: https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- Regular Expressions in Elm: https://elmprogramming.com/elm-regex.html
+- How to Manipulate Strings in Elm: https://dev.to/elmprogramming/how-to-manipulate-strings-in-elm-5a35

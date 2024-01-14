@@ -1,34 +1,41 @@
 ---
-title:    "Arduino: 匹配模式删除字符"
+title:    "Arduino: 删除匹配模式的字符"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要删除匹配模式的字符？这可能是因为你不希望某些特定的字符出现在你的文本或数据中，或者你想将它们替换为其他的字符。
+# 为什么删除匹配模式的字符
 
-怎么做：首先，你需要定义一个字符数组来存储你的文本或数据。然后，使用一个循环来遍历数组中的每个字符，使用if语句来判断是否与你想删除的模式相匹配，并使用字符串函数来删除匹配的字符。最后，你可以将修改后的文本或数据打印出来。
+当我们在使用Arduino编程时，经常会遇到需要删除字符的情况。有时候这些字符是我们不需要的，有时候是因为错误输入导致的。而删除匹配模式的字符可以帮助我们更快速地处理数据，提高我们的编程效率。
 
-```Arduino
-// 定义字符数组
-char text[] = "Hello World!";
+# 如何进行删除匹配模式的字符
 
-// 遍历字符数组并删除匹配的字符
-for (int i = 0; i < strlen(text); i++) {
-    // 如果字符与模式匹配，使用字符串函数删除字符
-    if (text[i] == 'e') {
-        text[i] = '';
-    }
+在Arduino中，我们可以使用函数和循环来删除匹配模式的字符。首先，我们需要定义一个字符串变量，然后使用for循环遍历这个字符串中的每一个字符。在循环中，我们可以使用if语句来判断字符是否符合我们的匹配模式，在符合的情况下使用remove()函数来删除这个字符。代码示例如下：
+
+```arduino
+// 定义字符串变量
+String sentence = "Hello World!";
+// 使用for循环遍历字符串
+for(int i=0; i<sentence.length(); i++){
+  // 判断字符是否为'o'
+  if(sentence.charAt(i) == 'o'){
+    // 使用remove()函数来删除匹配的字符
+    sentence.remove(i);
+  }
 }
-
-// 打印修改后的文本
-Serial.println(text);
+// 输出结果
+Serial.println(sentence); // 输出结果为 "Hell Wrld!"
 ```
 
-深入探讨：这种方法只能删除单个字符，如果你想要删除一整个字符串，可以使用字符串函数来替换要删除的部分。此外，你也可以使用正则表达式来匹配模式，从而实现更复杂的删除操作。
+# 深入了解删除匹配模式的字符
 
-## 参考资料
-- [Arduino字符串函数](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+当我们执行remove()函数来删除字符时，其实是通过将匹配的字符后面的所有字符往前移动一个位置，覆盖掉被删除的字符来实现。除了使用if语句来判断字符是否符合匹配模式外，我们也可以使用正则表达式（Regular Expression）来更精确地删除字符。同时，使用remove()函数来删除字符也会改变字符串的长度，所以在使用for循环遍历字符串时需要注意。
+
+# 查看更多信息
+
+- [Arduino String类文档](https://www.arduino.cc/reference/zh/language/variables/data-types/string/)
+- [Arduino 库参考：remove()](https://www.arduino.cc/reference/zh/language/variables/data-types/stringfunctions/remove/)
 - [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)
-
-参见：[Arduino字符串替换指南](https://www.arduino.cn/thread-87667-1-1.html)
+- [Arduino循环语句教程](https://www.arduino.cc/reference/zh/language/structure/control-structure/for/)

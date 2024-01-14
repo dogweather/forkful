@@ -1,60 +1,50 @@
 ---
-title:    "Javascript: Schreiben auf Standardfehler"
+title:    "Javascript: Schreiben auf den Standardfehler"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt des Programmierens gibt es viele verschiedene Arten, wie wir unsere Ergebnisse ausgeben können. Eine davon ist, das Schreiben nach Standard Error. Aber warum sollte man das überhaupt tun?
+Das Schreiben von Nachrichten an den Standardfehler ist ein wichtiger Bestandteil der Entwicklung in JavaScript. Durch die Verwendung von "console.error" können Entwickler Fehler und Warnungen in ihrem Code schnell und effizient identifizieren und beheben. Dies hilft dabei, die Qualität des Codes zu verbessern und mögliche Fehler zu vermeiden.
 
-Das Schreiben in den Standard Error ist wichtig, um Fehlermeldungen und andere wichtige Informationen anzuzeigen, die nicht Teil des normalen Programmausgangs sind. Diese Fehlermeldungen können dem Entwickler helfen, Schwachstellen in seinem Code zu identifizieren und zu beheben, um sicherzustellen, dass das Programm reibungslos funktioniert. Es ist auch hilfreich bei der Fehlersuche und Debugging.
+# Wie man es macht
 
-## Wie es geht
-
-Um Text in den Standard Error zu schreiben, können wir einfach die `console.error()` Funktion in Javascript verwenden. Hier ist ein Beispiel:
+Um eine Nachricht an den Standardfehler zu schreiben, verwenden wir die Methode "console.error" und übergeben ihr die Nachricht, die wir ausgeben möchten. Hier ist ein Beispiel:
 
 ```Javascript
-console.error("Es ist ein Fehler aufgetreten.");
+console.error("Es ist ein Fehler aufgetreten!");
+// Output: Es ist ein Fehler aufgetreten!
 ```
 
-Dieser Code wird den angegebenen Text in roter Schrift in der Konsole ausgeben, um zu zeigen, dass es sich um einen Fehler handelt. Hier ist ein Beispiel für die Ausgabe:
-
-```
-Es ist ein Fehler aufgetreten.
-```
-
-Diese Methode kann auch Variablen und andere Ausdrücke als Argumente akzeptieren. Hier ist ein weiteres Beispiel:
+Wir können auch mehrere Nachrichten gleichzeitig an den Standardfehler senden, indem wir sie durch Kommas trennen:
 
 ```Javascript
-let name = "Max";
-
-console.error("Der Name ist: " + name);
+console.error("Fehler beim Laden der Seite:", url);
+// Output: Fehler beim Laden der Seite: www.example.com
 ```
 
-Dieser Code wird den Wert der Variablen `name` in der Konsole ausgeben:
+# Tieferer Einblick
 
+Das Schreiben von Nachrichten an den Standardfehler ist ein wichtiger Bestandteil der Fehlerbehebung in JavaScript. Durch die Verwendung von "console.error" können wir nicht nur Fehler und Warnungen ausgeben, sondern auch Variablen und Objekte in einer lesbaren Form anzeigen lassen:
+
+```Javascript
+const num1 = 10;
+const num2 = 5;
+console.error("Das Ergebnis von " + num1 + " geteilt durch " + num2 + " ist:", num1/num2);
+// Output: Das Ergebnis von 10 geteilt durch 5 ist: 2
 ```
-Der Name ist: Max
+
+Außerdem können wir auch CSS-Styles auf die ausgegebenen Nachrichten anwenden, um wichtige Fehler hervorzuheben:
+
+```Javascript
+console.error("%cFehler: Seite nicht gefunden!", "color: red; font-size: 20px;");
+// Output: Fehler: Seite nicht gefunden! (in rot und größerer Schrift)
 ```
 
-Es ist wichtig zu beachten, dass das Schreiben in den Standard Error die Ausgabe nicht unterbricht oder das Programm zum Absturz bringt. Es ist einfach eine Möglichkeit, wichtige Informationen anzuzeigen, ohne die normale Programmausgabe zu beeinträchtigen.
+# Siehe auch
 
-## Tiefergehende Informationen
-
-Beim Schreiben in den Standard Error gibt es ein paar Dinge zu beachten. Zunächst ist es wichtig zu wissen, dass es verschiedene Arten von Fehlermeldungen gibt, die spezifische Funktionen erfüllen. Einige davon sind:
-
-- `console.warn()` - gibt eine Warnung aus, die darauf hinweist, dass etwas nicht ganz korrekt ist, aber das Programm trotzdem funktioniert.
-- `console.assert()` - gibt eine Fehlermeldung aus, wenn eine Bedingung nicht erfüllt ist.
-- `console.table()` - gibt ein Objekt oder Array als Tabelle formatiert aus.
-
-Darüber hinaus kann das Schreiben in den Standard Error nützlich sein, wenn wir mit Ausnahmen und Fehlerbehandlung arbeiten. Wir können bestimmte Fehlermeldungen auslösen und an bestimmten Stellen im Code gezielt Ausgaben machen, um uns bei der Fehlersuche zu helfen.
-
-Es ist auch wichtig zu beachten, dass das Schreiben in den Standard Error nicht der einzige Weg ist, um Fehlermeldungen anzuzeigen. Wir können auch `console.log()` verwenden, um Text in der Konsole auszugeben. Der Unterschied besteht darin, dass `console.error()` dafür ausgelegt ist, wichtige und kritische Informationen hervorzuheben, während `console.log()` für allgemeine Ausgaben verwendet werden kann.
-
-## Siehe auch
-
-- [JavaScript Fehlerbehandlung auf MDN](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/try...catch)
-- [So verwenden Sie die Konsole in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/console/)
-- [Grundlagen der Fehlerbehandlung in JavaScript](https://www.w3schools.com/js/js_errors.asp)
+- Die Dokumentation zu "console.error" von Mozilla Developer Network (https://developer.mozilla.org/de/docs/Web/API/Console/error)
+- Ein ausführliches Tutorial zum Schreiben von Nachrichten an den Standardfehler auf Codecademy (https://www.codecademy.com/en/forum_questions/53f505b2fb7721e6b600195c)

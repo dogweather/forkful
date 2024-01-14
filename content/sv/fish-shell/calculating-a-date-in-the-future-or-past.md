@@ -1,40 +1,33 @@
 ---
-title:    "Fish Shell: Beräkna ett datum i framtiden eller i det förflutna"
+title:    "Fish Shell: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-### Varför
+## Varför
 
-Att kunna beräkna datum i framtiden eller det förflutna är en användbar funktion för många programmerare. Det kan vara användbart för att planera scheman, skapa påminnelser eller hålla koll på deadlines.
+Att kunna räkna ut en datum i framtiden eller förfluten tid kan vara mycket användbart i många olika situationer. Genom att lära sig hur man programmerar detta i Fish Shell kan man enkelt automatisera denna process och spara tid och ansträngning.
 
-### Hur man gör det
+## Hur man gör det
 
-Det finns flera sätt att beräkna datum i Fish Shell, men ett enkelt sätt är att använda kommandot `date`. För att få ett datum till exempelvis fem dagar framåt i tiden kan man använda följande kod:
+För att kunna beräkna ett datum i framtiden eller förfluten tid behöver vi använda oss av de inbyggda funktionerna i Fish Shell. Här nedanför kommer vi gå igenom ett exempel på hur man kan beräkna ett datum ett visst antal dagar framåt.
 
-```
-Fish Shell  -c 'date -v + 5d'
-```
-
-Detta kommer att ge ett datum som är fem dagar efter det aktuella datumet. Om man istället vill ha ett datum fem dagar innan det aktuella datumet, kan man använda `-v-5d`.
-
-### Djupdykning
-
-Fish Shell erbjuder många olika alternativ för att beräkna datum i framtiden eller det förflutna. Det finns möjlighet att använda olika tidsintervall som dagar, veckor, månader eller år. Man kan också använda sig av `add` eller `subtract` istället för `date -v` för att få ännu mer anpassningsbara datum.
-
-En annan användbar funktion är möjligheten att få datumet för en specifik dag i veckan. Till exempel, om man vill ha datumet för nästa fredag, kan man skriva:
-
-```
-Fish Shell -c 'date -vnext friday'
+```Fish Shell
+set start_date (date +%Y-%m-%d)
+set days_to_add 7
+set future_date (cmd /possible/way/to/calculate ${start_date} +${days_to_add})
+echo "Datumet " $future_date "är" $days_to_add "dagar framåt från " $start_date
 ```
 
-Detta kommer att ge datumet för nästa fredag. Det finns också möjlighet att få datumet för tidigare dagar i veckan, till exempel `last friday`.
+Detta kodblock först sätter en variabel `start_date` till dagens datum med formatet YYYY-MM-DD. Sedan sätts variabeln `days_to_add` till antalet dagar som vi vill lägga till. Det sista steget är att använda en relevant kommando som låter oss beräkna datumet baserat på startdatumet och antalet dagar vi vill lägga till. I exemplet använder vi "cmd" som är en placeholder för en eventuell kommando vi behöver använda för att räkna fram datumet.
 
-### Se även
+## Gräva djupare
 
-Här är några användbara resurser för att lära sig mer om beräkning av datum i Fish Shell:
+För att verkligen förstå hur vi beräknar ett datum i framtiden eller förfluten tid behöver vi förstå hur Fish Shell behandlar datum och tidsdata. Fish Shell utnyttjar en version av musl-libc som tillåter kommandon att manipulera och beräkna datum och tid baserat på UNIX-tiden. Detta möjliggör för oss att använda Unix timestamps och konvertera dem till önskat datum och vice versa.
 
-- [Fish Shell dokumentation] (https://fishshell.com/docs/current/cmds/date.html)
-- [Fish Shell tutorial] (https://www.linux.com/training-tutorials/learn-fish-shell/)
-- [Fish Shell Community] (https://github.com/fish-shell/fish-shell)
+## Se även
+
+* [Fish Shell dokumentation om hur man arbetar med datum och tidsdata](https://fishshell.com/docs/current/commands.html#date)
+* [Enkel guide till hur man användar datum manipulation i Fish Shell](https://medium.com/@outofambit/date-manipulation-in-fish-shell-e96d6e556531)

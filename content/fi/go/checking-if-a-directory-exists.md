@@ -1,43 +1,49 @@
 ---
-title:    "Go: Tarkistetaan, onko hakemistoa olemassa"
+title:    "Go: Tarkistetaan onko hakemistoa olemassa"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Tarkistaa, onko hakemisto olemassa?
 
-Tiedostojen ja kansioiden hallinta on tärkeä osa ohjelmointia. Usein tarvitsemme tarkistamaan, onko tiettyä hakemistoa olemassa ja toimimaan sen mukaisesti. Tässä blogikirjoituksessa käsittelemme, miten tämä voidaan toteuttaa Go-kielellä.
+Hakemistojen tarkistaminen on tärkeä osa Go-ohjelmointia, sillä sen avulla voidaan varmistaa, että tarvittavat tiedostot ja hakemistot ovat olemassa ennen ohjelman suorittamista. Tämä välttää virheitä ja parantaa ohjelman suorituskykyä.
 
-## Miten tehdä
+## Kuinka: Koodiesimerkkejä ja tulosnäkymät "```Go ... ```" koodilohkoissa.
 
 ```Go
 package main
 
-import (
-	"os"
-	"fmt"
-)
+import "os"
+import "fmt"
 
 func main() {
-	_, err := os.Stat("hakemisto")
-
-	if err != nil {
-		fmt.Println("Hakemistoa ei löytynyt")
-		return
-	}
-
-	fmt.Println("Hakemisto löytyy")
+    // Tarkista, onko hakemisto olemassa
+    if _, err := os.Stat("/polku/hakemistoon/"); os.IsNotExist(err) {
+        fmt.Println("Hakemisto ei ole olemassa")
+    } else {
+        fmt.Println("Hakemisto on olemassa")
+    }
+    
+    // Luo uusi hakemisto
+    os.Mkdir("/polku/uuteen/hakemistoon/", 0755)
 }
 ```
 
-Koodissa luodaan hakemisto nimeltä "hakemisto" ja sitten tarkistetaan sen olemassaolo `os.Stat()` -funktion avulla. Funktio palauttaa osan ja virheen. Jos osa on `nil`, se tarkoittaa, että hakemisto on olemassa. Jos virhe ei ole `nil`, se tarkoittaa, että hakemistoa ei ole olemassa. Tässä tapauksessa tulostetaan "Hakemistoa ei löytynyt".
+Tuloste:
+```
+Hakemisto ei ole olemassa
+```
 
-## Syvemmälle
+## Syvempi sukellus: Tietoa hakemistojen tarkistamisesta
 
-`os.Stat()` -funktiossa käytetään `PathInfo` -rakennetta, joka palauttaa tiedot tiedostosta tai hakemistosta. Tätä rakennetta voidaan käyttää myös tiedoston koon, muokkauspäivän ja muiden tietojen tarkistamiseen. `os.Stat()` -funktio on myös hyödyllinen tiedostojen käsittelyssä ja siitä voidaan löytää lisätietoa Go:n dokumentaatiosta.
+Go-kielessä hakemiston olemassaolon tarkistaminen tapahtuu os-paketin `Stat()` ja `IsNotExist()` funktsioiden avulla. Ensimmäinen funktio tarkistaa tiedoston tai hakemiston tilan, kun taas toinen funktio palauttaa boolean-arvon `true` tai `false` riippuen siitä, onko tiedosto tai hakemisto olemassa.
+
+Jos hakemisto ei ole olemassa, se voidaan luoda `Mkdir()` tai `MkdirAll()` funktioilla. Ensimmäinen luo vain yhden tason hakemistoja, kun taas jälkimmäinen luo tarvittavan määrän alihakemistoja.
 
 ## Katso myös
 
-- [Go:n dokumentaatio - os paketti](https://golang.org/pkg/os/)
-- [Go Tutorial - Tiedostojen ja kansioiden käsittely](http://www.golangprograms.com/go-language/file-handling-in-go-language.html)
+- [Go os-paketin dokumentaatio](https://golang.org/pkg/os/)
+- [Go Mkdir() ja MkdirAll() dokumentaatio](https://golang.org/pkg/os/#Mkdir)
+- [Go-kielessä käytettävät Markdown-ominaisuudet](https://golang.org/cmd/gomarkdown/)

@@ -1,52 +1,85 @@
 ---
-title:    "C: Skriving av tester"
+title:    "C: Skriver tester"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å skrive tester er en viktig del av å være en effektiv C-programmerer. Tester hjelper deg med å identifisere feil og sikre at koden din fungerer som forventet. Det sparer deg for tid og frustrasjon i det lange løp.
+
+Når du jobber med å skrive kode, er det alltid viktig å forsikre deg om at koden din fungerer som den skal. Dette er spesielt viktig når du jobber på større og mer komplekse prosjekter. Ved å skrive tester for koden din, kan du oppdage og fikse eventuelle feil før de blir et større problem. Dette vil spare deg for mye tid og frustrasjon på lang sikt.
 
 ## Hvordan
-For å skrive tester i C, kan du bruke et testrammeverk som for eksempel Check eller CUnit. Her er et eksempel på en enkel testfunksjon som sjekker om to tall er like:
+
+Å skrive tester i C kan virke skremmende til å begynne med, men det er egentlig ikke så komplisert. La oss se på et eksempel: 
 
 ```C
 #include <stdio.h>
-#include "check.h"
 
-START_TEST(test_equal_numbers) {
-    int a = 5;
-    int b = 5;
-    ck_assert_int_eq(a, b);
+int addTwo(int a, int b) {
+  return a + b;
 }
-END_TEST
 
 int main() {
-    Suite *s = suite_create("My Suite");
-
-    TCase *tc_case = tcase_create("Equal Numbers Test");
-    tcase_add_test(tc_case, test_equal_numbers);
-    suite_add_tcase(s, tc_case);
-
-    SRunner *sr = srunner_create(s);
-    srunner_run_all(sr, CK_NORMAL);
-    int failed = srunner_ntests_failed(sr);
-    srunner_free(sr);
-    return (failed == 0) ? 0 : 1;
+  int result = addTwo(4, 3);
+  printf("Resultatet er: %d", result);
+  return 0;
 }
 ```
 
-Her har vi brukt Check-testrammeverket og definert en testfunksjon ved hjelp av `START_TEST` og `END_TEST` makroer. Inkluder check.h for å få tilgang til disse makroene. Deretter oppretter vi en test-suite og en test-case, og legger til testfunksjonen i test-case. Til slutt kjører vi alt ved hjelp av `srunner_run_all` og sjekker om det er noen feil. For å kjøre testene må vi også inkludere `-lcheck` flagg når vi kompilerer.
+Her har vi en enkel funksjon som legger sammen to tall og en main-funksjon som kaller på denne funksjonen og skriver ut resultatet. For å teste denne koden, kan vi skrive en enkel testfunksjon som ser slik ut:
+
+```C
+void test(int result) {
+  if (result == 7) {
+    printf("Testen besto!");
+  } else {
+    printf("Testen feilet!");
+  }
+}
+```
+
+Vi kaller deretter på denne testfunksjonen i main-funksjonen vår, rett etter at vi har beregnet resultatet. Slik ser koden vår ut nå:
+
+```C
+#include <stdio.h>
+
+int addTwo(int a, int b) {
+  return a + b;
+}
+
+void test(int result) {
+  if (result == 7) {
+    printf("Testen besto!");
+  } else {
+    printf("Testen feilet!");
+  }
+}
+
+int main() {
+  int result = addTwo(4, 3);
+  test(result);
+  printf("Resultatet er: %d", result);
+  return 0;
+}
+```
+
+Når vi nå kjører programmet vårt, vil vi få følgende resultat:
+
+```Shell
+Testen besto!
+Resultatet er: 7
+```
+
+Vi ser at testen vår blir kalt på og at programmet vårt fungerer som det skal. Dette er et enkelt eksempel, men prinsippet gjelder for alle typer koding og kan tilpasses til ulike situasjoner.
 
 ## Dypdykk
-Å skrive gode tester er en kunst, og det er noen ting du bør vurdere når du skriver tester. Her er noen tips:
 
-- Skriv tester som reflekterer brukerens forventninger til koden din
-- Sørg for å ha god testdekning og test alle mulige scenarioer
-- Hold testene dine oppdatert og legg til nye tester når du legger til ny funksjonalitet i koden din
+Når du skriver tester, er det viktig å huske på at de bør være så dekkende som mulig. Det betyr at du bør teste både positive og negative scenarioer for å forsikre deg om at koden din håndterer alle mulige situasjoner. Det kan også være lurt å skrive tester før du skriver koden, slik at du kan bruke testene som en veiledning i utviklingsprosessen.
 
 ## Se også
-- [Check-testrammeverket](https://libcheck.github.io/check/)
-- [CUnit-testrammeverket](https://github.com/mikesteele81/cunit)
-- [Generell informasjon om testing i C](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html)
+
+- [En grundig guide til enhetstesting i C](https://www.jeremymorgan.com/tutorials/c-programming/how-to-unit-test-in-c/)
+- [Tips for testing av C-kode](https://www.perforce.com/blog/qac/tips-testing-your-c-code)
+- [Hvordan planlegge effektive tester i C](https://mousebee.net/how-to-plan-an-effective-c-testing-strategy)

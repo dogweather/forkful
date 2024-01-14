@@ -1,45 +1,46 @@
 ---
 title:    "Python: Criando um arquivo temporário"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar arquivos temporários em Python
+## Porquê
 
-Se você está pensando em criar um arquivo temporário em Python, provavelmente está se perguntando qual é a vantagem disso. Afinal, por que adicionar essa etapa extra no seu código? Bem, existem algumas razões pelas quais criar um arquivo temporário pode ser útil.
+Criar um arquivo temporário é uma tarefa comum na programação. Ele permite que você armazene dados temporários que não são relevantes para o seu programa principal. Além disso, eles são automaticamente excluídos quando o programa termina, evitando a sobrecarga de armazenamento desnecessário.
 
-Criar um arquivo temporário é útil quando você precisa armazenar dados temporariamente durante a execução de um programa. Isso pode ser especialmente útil quando você está trabalhando com grandes quantidades de dados e quer evitar sobrecarregar a memória do seu computador. Ao criar um arquivo temporário, você pode armazenar esses dados temporários e, em seguida, excluí-los quando não for mais necessário. Isso também pode ser útil para evitar conflitos entre diferentes processos que estão sendo executados simultaneamente no seu computador.
+## Como Fazer
 
-## Como criar um arquivo temporário em Python
-
-Criar um arquivo temporário em Python é bastante simples. Você só precisa importar o módulo "tempfile" e usar a função "NamedTemporaryFile()". Veja um exemplo:
+Criar um arquivo temporário em Python é muito simples. Basta seguir estes passos:
 
 ```Python
 import tempfile
 
-#Criar arquivo temporário
-with tempfile.NamedTemporaryFile() as tmp:
-    # Escrever dados no arquivo
-    tmp.write(b"Informações de exemplo")
-    # Ler dados do arquivo
-    print(tmp.read())
+# Criando um arquivo temporário
+temp_file = tempfile.NamedTemporaryFile()
+
+# Escrevendo dados no arquivo
+temp_file.write("Olá mundo!")
+
+# Lendo dados do arquivo
+temp_file.seek(0)
+print(temp_file.read())
+
+# Fechando o arquivo
+temp_file.close()
 ```
 
-Esse código irá criar um arquivo temporário automaticamente e armazená-lo na variável "tmp". Você pode então usar o arquivo temporário como faria com qualquer outro arquivo em Python, gravando e lendo dados nele. Lembre-se de que, ao usar a função "NamedTemporaryFile()", você está criando um novo arquivo temporário que será excluído automaticamente quando o processo for encerrado.
+Saída: Olá mundo!
 
-## Mergulho profundo na criação de arquivos temporários em Python
+Neste exemplo, importamos o módulo "tempfile" e criamos um arquivo temporário chamado "temp_file" utilizando a função "NamedTemporaryFile()". Em seguida, escrevemos a frase "Olá mundo!" no arquivo e lemos o seu conteúdo utilizando a função "read()". Por fim, fechamos o arquivo para garantir que ele seja excluído após o programa ser encerrado.
 
-Embora o exemplo acima seja um bom ponto de partida para criar arquivos temporários em Python, existem algumas outras coisas que você deve saber. Por exemplo, se você precisar criar vários arquivos temporários no seu código, pode ser útil definir um diretório padrão para eles usando a função "tempfile.tempdir". Além disso, você também pode especificar o modo de abertura do arquivo temporário, assim como faria com qualquer outro arquivo em Python.
+## Mergulho Profundo
 
-Se você quiser ser ainda mais específico, pode usar a função "mktemp()" para criar um arquivo temporário com um nome personalizado. Isso pode ser útil quando você precisa acessar o arquivo temporário por meio de outro processo ou programa.
+Ao criar um arquivo temporário, é possível especificar alguns parâmetros como o modo (leitura, escrita ou ambos), o sufixo e o prefixo do arquivo. Além disso, é importante lembrar de fechar o arquivo quando ele não for mais necessário, pois isso garantirá que ele seja excluído corretamente.
 
-Lembre-se de que, embora os arquivos temporários sejam automaticamente excluídos quando o processo é encerrado, você também pode excluí-los manualmente usando a função "tmp.close()".
+## Veja Também
 
-## Veja também
-
-Aqui estão alguns links úteis para saber mais sobre a criação de arquivos temporários em Python:
-
-- Documentação oficial do módulo "tempfile": https://docs.python.org/3/library/tempfile.html
-- Tutorial sobre a criação de arquivos temporários em Python: https://www.geeksforgeeks.org/python-create-temporary-files-and-directories/
-- Exemplos de uso de arquivos temporários em Python: https://www.tutorialspoint.com/python/python_temporary_files.htm
+- [Documentação oficial do módulo "tempfile" em Python](https://docs.python.org/3/library/tempfile.html)
+- [Tutorial sobre arquivos temporários em Python](https://www.tutorialspoint.com/python3/python_files_io.htm)
+- [Artigo sobre como usar arquivos temporários em Python](https://realpython.com/working-with-files-in-python/)

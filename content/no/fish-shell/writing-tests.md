@@ -1,40 +1,56 @@
 ---
-title:    "Fish Shell: Å skrive tester"
+title:    "Fish Shell: Skrive tester"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du er en erfaren programmerer, så vet du at det å skrive kode bare er en del av jobben. Det å sikre at koden fungerer som den skal, er like viktig. Det er her testing kommer inn i bildet. Ved å skrive tester for din Fish Shell kode, kan du være trygg på at den vil fungere som forventet og unngå potensielle feil.
+Å skrive tester i programmering kan virke tidkrevende og unødvendig for mange, men det er faktisk en viktig del av å utvikle høykvalitetsprogrammer. Tester sikrer at koden fungerer som den skal, og gjør det enklere å finne og fikse feil.
 
-# Hvordan
+## Slik gjør du det
 
-For å skrive tester i Fish Shell, kan du bruke kommandoen `test`. Dette lar deg evaluere ulike uttrykk og gi en tilsvarende boolean-verdi som output.
+For å skrive tester i Fish Shell, må du først importere testrammen ved å legge til følgende linje i toppen av filen din:
 
-````Fish Shell
-test 1 -eq 1 # Output: True
-test "hello" = "world" # Output: False
-````
+```Fish Shell
+source ~/.config/fish/fish_test.fish
+```
 
-Du kan også bruke `not` for å invertere en boolean-verdi, og bruke parenteser for å gruppere uttrykk.
+Deretter kan du definere en test ved å bruke funksjonen "describe", etterfulgt av en beskrivelse av testen og en blokk med kode som skal testes:
 
-````Fish Shell
-test (1 -eq 1) and (2 -gt 1) # Output: True
-not test (1 -eq 1) # Output: False
-````
+```Fish Shell
+describe "Addisjon"
+    if [ (add 2 2) = 4 ]
+        pass
+    else
+        fail "'add 2 2' should equal 4"
+    end
+end
+```
 
-Ved å bruke disse enkle eksemplene som utgangspunkt, kan du bygge videre og skrive mer avanserte tester for din Fish Shell kode.
+For å kjøre testen, kan du bruke kommandoen "fish_test":
 
-# Dypdykk
+```Fish Shell
+fish_test
+```
 
-Nå som du har lært det grunnleggende, kan du gå videre til å utforske flere muligheter innenfor testing i Fish Shell. Du kan bruke kommandoen `test -s` for å sjekke om en fil eksisterer, og `test -z` for å sjekke om en variabel er tom. Ved å bruke disse verktøyene vil du kunne skrive tester for en rekke ulike situasjoner.
+Du vil se en oversikt over alle tester som ble kjørt, og om de ble bestått eller ikke.
 
-I tillegg kan du også bruke `set -x` for å dekke debugging i dine tester. Dette vil vise deg detaljert informasjon om hva som skjer i hvert trinn av din test, og gjøre det enklere å finne potensielle feil.
+## Dypdykk
 
-# Se Også
+Når du skriver tester, er det viktig å tenke på ulike scenarioer som kan føre til feil i koden din. Det kan også være lurt å bruke funksjoner som "setup" og "teardown" for å sette opp og rydde opp etter tester, slik at de ikke påvirker hverandre.
 
-- [Fish Shell dokumentasjon for testing](https://fishshell.com/docs/current/cmds/test.html)
-- [10 grunner til å skrive tester for din kode](https://dev.to/deepk/10-reasons-why-you-should-write-tests-for-your-code-3ipk)
-- [Hvordan unngå vanlige feil ved å skrive tester](https://medium.com/better-programming/how-to-avoid-common-testing-mistakes-57dc18ba56d1)
+Du kan også bruke eksterne tester ved å legge de i separate filer og importere dem i hovedtesten din ved å bruke funksjonen "source":
+
+```Fish Shell
+source ~/tests/addition_test.fish
+```
+
+Dette gjør det enklere å organisere og vedlikeholde tester, spesielt for større prosjekter.
+
+## Se også
+
+- [Fish Shell sin offisielle dokumentasjon om testing](https://fishshell.com/docs/current/tutorial.html#tut_testing)
+- [En guide til hvordan man skriver gode tester i Fish Shell (på engelsk)](https://medium.com/@seththompson/testing-in-fish-shell-6554cde79216)

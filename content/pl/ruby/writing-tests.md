@@ -1,43 +1,48 @@
 ---
 title:    "Ruby: Pisanie testów"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto pisać testy w programowaniu Ruby?
 
-W dzisiejszych czasach tworzenie testów w programowaniu jest niezbędną umiejętnością. Pozwala ono na pewniejsze i bezawaryjne działanie kodu, a także ułatwia późniejszą pracę w przypadku konieczności wprowadzania zmian lub naprawiania błędów. W tym artykule pokażemy, dlaczego warto pisać testy w języku Ruby oraz jak to zrobić w praktyce.
+Pisanie testów jest kluczowym elementem każdego projektu programistycznego. Pozwala ono zweryfikować poprawność kodu oraz uniknąć potencjalnych błędów w przyszłości. W przypadku języka Ruby, testy są niezwykle ważne ze względu na jego oparty na interpretacji charakter. Dzięki testom możemy upewnić się, że nasz kod działa poprawnie i uniknąć nieprzewidzianych problemów.
 
-## Jak to zrobić
+## Jak pisać testy w języku Ruby?
 
-Pisanie testów w Ruby jest bardzo proste dzięki narzędziu RSpec. Najpierw musimy zainstalować RSpec poprzez wykonanie polecenia `gem install rspec` w terminalu. Następnie, w swoim pliku projektowym, możemy stworzyć plik `spec.rb` i zacząć pisać nasze testy.
+Pisanie testów w języku Ruby jest bardzo proste i intuicyjne. Najpopularniejszym narzędziem używanym do tego celu jest framework RSpec. Poniżej przedstawiam przykładowy kod testowy wraz z komentarzami:
 
 ```Ruby
-# spec.rb
+# Importujemy potrzebne biblioteki
 require 'rspec'
-require_relative 'my_code' # plik z naszym kodem
+require 'calculator'
 
-describe "MyCode" do
-  it "should return the correct output" do
-    expect(MyCode.add(2, 3)).to eq(5)
-    expect(MyCode.multiply(5, 2)).to eq(10)
+# Tworzymy opis naszego testu
+describe Calculator do
+  # Tworzymy testową metodę "add" i definiujemy jej działanie
+  describe "#add" do
+    it "returns the sum of two numbers" do
+      # Tworzymy obiekt kalkulatora
+      calculator = Calculator.new
+      # Wywołujemy metodę add i przekazujemy jej dwa argumenty
+      result = calculator.add(2, 3)
+      # Sprawdzamy, czy wynik jest poprawny
+      expect(result).to eq(5)
+    end
   end
 end
 ```
 
-W tym przykładzie tworzymy testy dla dwóch metod `add` i `multiply`. Możemy uruchomić nasze testy wykonując polecenie `rspec spec.rb` w terminalu. Jeśli wszystkie testy przejdą pomyślnie, zobaczymy zielone znaczki oznaczające sukces. W przypadku, gdy któryś test nie przejdzie, zostanie wyświetlony błąd i łatwiej będzie nam go zlokalizować i naprawić.
+W powyższym kodzie mamy opisany test metody "add" z wykorzystaniem frameworka RSpec. Tworzymy obiekt klasy Calculator i używamy jej metody "add", a następnie sprawdzamy, czy otrzymany wynik jest zgodny z oczekiwanym. Takie podejście pozwala nam na szybkie i skuteczne testowanie naszego kodu.
 
-## Deep Dive
+## Głębszy wgląd w pisanie testów
 
-Testy pozwalają na sprawdzenie wszystkich możliwych przypadków działania naszego kodu. Dzięki temu możemy upewnić się, że kod działa nie tylko dla konkretnych wartości, ale także dla różnych typów danych lub w przypadku błędnych danych. Testy mogą również stanowić swojego rodzaju dokumentację naszego kodu, pokazując przykładowe użycie i oczekiwaną wartość.
+Pisanie testów w języku Ruby może być nie tylko prostym sposobem na zweryfikowanie poprawności kodu, ale również sposobem na ulepszenie procesu programowania. Częste wykonywanie testów podczas tworzenia aplikacji pozwala na szybsze wykrywanie błędów i unikanie problemów w przyszłości. Ponadto, dzięki testom, możemy łatwiej wprowadzać zmiany w kodzie i mieć pewność, że nie spowodują one żadnych nieoczekiwanych efektów.
 
-Kolejną zaletą pisania testów jest możliwość refaktoryzacji kodu. Gdy mamy już działający kod i przeprowadzimy zmiany, możemy uruchomić nasze testy, aby upewnić się, że nie wprowadziliśmy przypadkiem błędów.
+## Zobacz również
 
-Podsumowując, pisanie testów to nie tylko dobry zwyczaj, ale również umiejętność, która pozwala na tworzenie lepszego i bezawaryjnego kodu.
-
-## Zobacz też
-
-- [Oficjalna dokumentacja RSpec](https://rspec.info/)
-- [Tutorial o testowaniu w Ruby](https://www.rubyguides.com/2018/07/rspec-tutorial/)
-- [Kurs Ruby na Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- [RSpec - oficjalna dokumentacja](https://rspec.info/)
+- [Ruby on Rails - testowanie aplikacji](https://guides.rubyonrails.org/testing.html)
+- [Praktyczne przykłady testowania w języku Ruby](https://github.com/rspec/rspec-expectations/blob/master/Should.md)

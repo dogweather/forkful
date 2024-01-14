@@ -1,55 +1,54 @@
 ---
-title:    "Go: Supprimer les caractères correspondant à un motif"
+title:    "Go: Suppression de caractères correspondant à un motif"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Dans la programmation Go, la suppression de caractères correspondant à un motif peut être utile pour nettoyer une chaîne de caractères ou pour effectuer une recherche et un remplacement dans un fichier texte. Cela peut également être utilisé pour extraire des données spécifiques d'un texte.
+La suppression de caractères correspondants à un motif peut être utile lors de la manipulation de chaînes de caractères en Go. Cela peut vous aider à nettoyer et à formater des données avant de les utiliser dans votre programme.
 
 ## Comment faire
 
-Voici un exemple de code en Go pour supprimer tous les chiffres d'une chaîne de caractères :
+Voici un exemple simple de code en Go pour supprimer tous les caractères non alphabétiques d'une chaîne de caractères :
 
-```
-texte := "J'aime les 123 pommes"
-nouveauTexte := ""
-for _, caractere := range texte {
-    if caractere < '0' || caractere > '9' {
-        nouveauTexte += string(caractere)
-    }
+```Go
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	// Chaîne de caractères à traiter
+	str := "H3llo W0rld!"
+
+	// Expression régulière pour trouver les caractères non alphabétiques
+	re := regexp.MustCompile("[^a-zA-Z]")
+
+	// Suppression des caractères correspondants au motif
+	result := re.ReplaceAllString(str, "")
+
+	// Affichage du résultat
+	fmt.Println(result)
 }
-fmt.Println(nouveauTexte)
-```
-Output :
-
-```
-J'aime les pommes
 ```
 
-Vous pouvez également utiliser des expressions régulières pour supprimer des caractères spécifiques en utilisant le package `regexp` :
-
-```
-texte := "Mon adresse email est go@gmail.com"
-regExp := regexp.MustCompile("[^a-zA-Z@.]")
-nouveauTexte := regExp.ReplaceAllString(texte, "")
-fmt.Println(nouveauTexte)
-```
-
-Output :
-
-```
-Monadresseemailestgo@gmailcom
-```
+La sortie de ce programme sera `HelloWorld` car tous les caractères qui ne sont pas des lettres ont été supprimés. Vous pouvez également utiliser des motifs plus complexes pour correspondre à différentes conditions.
 
 ## Plongée en profondeur
 
-La suppression de caractères correspondant à un motif peut être réalisée de différentes manières en Go. En utilisant le package `strings`, vous pouvez aussi utiliser la méthode `Replace` pour remplacer un motif par une chaîne vide. Vous pouvez également utiliser les packages `bufio` et `os` pour effectuer une suppression dans un fichier texte.
+Pour comprendre en profondeur la suppression de caractères correspondants à un motif en Go, il est important de comprendre les expressions régulières. Les expressions régulières sont des modèles utilisés pour rechercher et manipuler des chaînes de caractères. En utilisant des expressions régulières, vous pouvez trouver et remplacer des motifs spécifiques dans une chaîne de caractères.
+
+La fonction `ReplaceAllString()` dans l'exemple ci-dessus utilise une expression régulière pour trouver les caractères non alphabétiques et les remplacer par une chaîne vide. Cela permet de nettoyer la chaîne de caractères en ne laissant que des lettres.
+
+Vous pouvez également utiliser des expressions régulières pour effectuer des tâches plus complexes, telles que la recherche et le remplacement de motifs spécifiques dans des chaînes de caractères plus longues. Cela peut être particulièrement utile lors de la manipulation de données provenant de sources externes.
 
 ## Voir aussi
 
-- [Documentation officielle Go](https://golang.org/doc/)
-- [Documentation sur les expressions régulières en Go](https://golang.org/pkg/regexp/)
-- [Blog de la communauté Go](https://blog.golang.org/)
+- Package regexp en Go: https://pkg.go.dev/regexp
+- Tutoriel sur les expressions régulières en Go: https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-fr
+- Exemples de motifs d'expressions régulières en Go: https://gobyexample.com/regular-expressions

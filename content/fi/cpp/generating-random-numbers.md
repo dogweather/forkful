@@ -1,56 +1,48 @@
 ---
-title:    "C++: Satunnaisten numeroiden luominen"
+title:    "C++: Satunnaislukujen generoiminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Satunnaisnumeroita kannattaa generoida
+## Miksi 
 
-On monia syitä, miksi ohjelmoijat haluavat generoida satunnaisia numeroita. Näihin kuuluvat esimerkiksi simulaatiot, pelit, salaus ja tilastolliset analyysit. Satunnaislukujen käyttö voi myös auttaa luomaan ennustettavuutta ja vähentämään mahdollisia tietoturvariskejä.
+Tervehdys kaikille! Oletko koskaan miettinyt, miksi C++ -ohjelmointikielellä tehdään satunnainen numeroiden generointi? Satunnaiset numerot ovat hyödyllisiä monissa ohjelmoinnin sovelluksissa, kuten peleissä ja salausalgoritmeissa. Joten älä huoli, tämä blogikirjoitus selittää kaiken tarvittavan.
 
-## Kuinka: Satunnaisnumerojen luominen C++:lla
+## Miten
 
-C++:lla on useita tapoja generoida satunnaisia numeroita. Yksi yleisimmistä tavoista on käyttää <code>rand()</code> -funktiota, joka antaa satunnaisen numeron väliltä 0 ja <code>RAND_MAX</code> (yleensä 32767) välillä. Alla on esimerkki, miten voit käyttää tätä funktiota C++:lla:
+Satunnaisien numeroiden generointi C++:lla on helppoa ja nopeaa! Käytämme siihen standardikirjaston <random> ja <iostream>. Alla olevassa koodiesimerkissä käytämme satunnaisen luvun generoimiseen seed-arvoa (siemen), jotta saamme erilaisia lukuja joka kerta suorittaessamme koodin.
 
-```C++
+````C++
 #include <iostream>
-#include <cstdlib> // sisältää rand() funktion
+#include <random>
 
 int main() {
-   int random_number = rand();
-   std::cout << random_number << std::endl; // tulostaa satunnaisen numeron
-   return 0;
+  // Alustetaan seed-arvo
+  std::random_device rd;
+  // Käytetään seed-arvoa generaattorissa
+  std::mt19937 mt(rd());
+  // Määritetään haluttu arvojen väli
+  std::uniform_int_distribution<int> dist(1, 10);
+
+  // Tulostetaan 10 satunnainen lukua
+  for (int i = 0; i < 10; i++) {
+    std::cout << dist(mt) << " ";
+  }
+
+  return 0;
 }
-```
+````
+Tämän koodiesimerkin tulostus voi esimerkiksi olla seuraavanlainen:
+5 9 6 3 10 1 4 2 7 8
 
-Tämä esimerkki tulostaa aina saman satunnaisen numeron, koska emme ole asettaneet alkuarvoa <code>rand()</code> -funktiolle. Voit muuttaa satunnaisen luvun alkuarvoa alla olevan esimerkin avulla:
+## Syvemmälle
 
-```C++
-#include <iostream>
-#include <cstdlib> // sisältää rand() funktion
-#include <ctime> // sisältää ajan funktion time()
-
-int main() {
-   // alustaa ajan satunnaisen numeron alkuarvoksi
-   srand(time(0));
-
-   int random_number = rand();
-   std::cout << random_number << std::endl; // tulostaa satunnaisen numeron
-   return 0;
-}
-```
-
-Nyt tulostettava satunnainen numero muuttuu joka kerta, kun koodi suoritetaan.
-
-## Syvemmälle: Satunnaislukujen generoiminen
-
-Satunnaislukujen generoiminen ei ole täysin satunnaista matematiikkaa, vaan se perustuu matemaattisiin algoritmeihin. Käytännössä nämä algoritmit luovat suuria numerojoukkoja, joista sitten valitaan satunnaisia lukuja. Mikäli algoritmi ei ole riittävän monimutkainen, satunnaisina pidettyjä lukuja voidaan ennustaa ja tietoturva on uhattuna.
-
-Toinen tärkeä tekijä on satunnaisuuden jakautuminen. Jos satunnaiset luvut eivät jakaannu tasaisesti, ne eivät ole todellista satunnaisuutta. Tämän takia C++ tarjoaa myös muita satunnaislukujen generointifunktioita, kuten <code>rand_r()</code>, <code>srand48()</code>, ja <code>drand48()</code>, jotka tarjoavat erilaisia algoritmeja ja jakaumia.
+Nyt kun tiedämme, kuinka generoida satunnaisia lukuja C++:lla, haluamme ehkä tietää, miten tämä tapahtuu taustalla. Generointi perustuu pseudo-satunnaislukugeneraattoriin, joka tuottaa lukuja tietyllä kaavalla seed-arvon perusteella. Seed-arvo puolestaan saadaan usein järjestelmän kellosta tai ruutupiirroksen tulemisesta. Näitä seed-arvoja yhdistämällä ja käyttämällä monimutkaisempia kaavoja, voidaan tuottaa näennäisesti satunnaisia lukuja. Kuitenkin näiden lukujen todellinen satunnaisuus riippuu käytetyistä kaavoista ja antureista.
 
 ## Katso myös
 
-- C++ <code>rand()</code> -funktion dokumentaatio: https://www.cplusplus.com/reference/cstdlib/rand/
-- Satunnaislukujen generoinnin parhaat käytännöt: https://www.geeksforgeeks.org/best-practices-for-random-number-generation-in-c/
-- Satunnaislukugeneraattoreiden vertailu: https://en.wikipedia.org/wiki/Comparison_of_random_number_generators
+- [C++:n random -kirjasto](https://en.cppreference.com/w/cpp/numeric/random)
+- [Satunnaislukugeneraattorit ja pseudosatunnaisuus](https://www.youtube.com/watch?v=4vJphRN3fFQ)
+- [Satunnaislukujen käyttö peleissä](https://www.gamasutra.com/view/feature/131500/random_number_generation_.php)

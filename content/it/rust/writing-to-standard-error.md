@@ -1,61 +1,59 @@
 ---
 title:    "Rust: Scrivere su standard error"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Scrivere a Standard Error in Rust
+## Perché
 
-Scrivere a standard error è un processo importante nel linguaggio di programmazione Rust. Spesso gli sviluppatori si trovano nella situazione in cui devono gestire output particolari o errori durante l'esecuzione del loro codice. Scrivere a standard error può aiutare a gestire questi casi in modo efficace e chiaro.
+Scrivere sullo stream di errore standard può essere utile per segnalare informazioni di debug o errori durante l'esecuzione del codice. Inoltre, può essere utile durante lo sviluppo di programmi in Rust per identificare il punto esatto in cui si verifica un errore.
 
-## Come Fare
+## Come fare
 
-Per scrivere a standard error in Rust, si può utilizzare il modulo `std::io` e la funzione`eprintln!()`:
+Per scrivere sullo stream di errore standard in Rust, è necessario utilizzare il modulo `std::io` e il suo metodo `eprintln!()`. In questo modo, è possibile scrivere su stdout un messaggio di errore utilizzando la sintassi di formattazione di Rust:
 
-````Rust
+```Rust
 use std::io;
 
 fn main() {
-    let name = "Mario";
-    let age = 30;
-    eprintln!("Ciao, mi chiamo {} e ho {} anni.", name, age);
+    eprintln!("Questo è un messaggio di errore: {}", "Errore 404");
 }
-````
-
-Output:
-
-```
-Ciao, mi chiamo Mario e ho 30 anni.
 ```
 
-Possiamo anche utilizzare la macro `format!()` per creare una stringa con il messaggio di errore e passarla alla funzione `eprintln!()`:
+Questo codice produrrà l'output `"Questo è un messaggio di errore: Errore 404"` nello stream di errore standard.
 
-````Rust
-use std::io;
+Un altro modo per scrivere su stderr in Rust è utilizzare il pacchetto `log`. Con questo approccio, è possibile gestire più tipi di messaggi di log, come `info`, `warn` e `error`. Di seguito un esempio di come utilizzare `log` per scrivere su stderr:
+
+```Rust
+use log::{error, info, warn};
 
 fn main() {
-    let x = 10;
-    let y = 0;
-    if y == 0 {
-        let msg = format!("Errore: tentativo di dividere {} per 0.", x);
-        eprintln!("{}", msg);
-    }
+    error!("Messaggio di errore");
+    info!("Informazioni di debug");
+    warn!("Attenzione!");
 }
-````
-
-Output:
-
 ```
-Errore: tentativo di dividere 10 per 0.
+
+L'output di questo codice sarà simile a questo:
+
+```sh
+[ERROR] Messaggio di errore
+[INFO] Informazioni di debug
+[WARN] Attenzione!
 ```
 
 ## Approfondimento
 
-Scrivere a standard error è uno dei modi per gestire gli errori in Rust. Questo rende più semplice e chiaro rilevare e gestire situazioni di errore durante l'esecuzione del codice. Inoltre, il linguaggio Rust ha un'ottima gestione degli errori incorporata, permettendo agli sviluppatori di personalizzare e gestire i messaggi di errore in modo efficace e strutturato.
+Mentre scrivere su stdout è la soluzione più semplice e veloce, ciò non garantisce che il messaggio sia effettivamente visualizzato per l'utente finale. Invece, scrivere su stderr assicura che il messaggio di errore sia sempre visualizzato, indipendentemente da eventuali flussi di output che potrebbero essere redirezionati.
 
-## Vedi Anche
+Inoltre, la scrittura su stderr è più efficiente rispetto a stdout, poiché non richiede alcuna formattazione o buffering del messaggio. Può quindi essere particolarmente utile in contesti ad alta frequenza di errori.
 
-- [Documentazione su std::io](https://doc.rust-lang.org/std/io/index.html)
-- [Gestione degli errori in Rust](https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html#propagating-errors)
-- [Rust by Example: std::io](https://doc.rust-lang.org/stable/rust-by-example/std_misc/io.html)
+Inoltre, con il pacchetto `log`, si ha la possibilità di configurare le diverse tipologie di messaggi di errore, consentendo una maggiore flessibilità nella gestione dei log.
+
+## Vedi anche
+
+- La documentazione di [std::io](https://doc.rust-lang.org/std/io/) per saperne di più su come scrivere su stderr in maniera efficiente.
+- La guida [Logging in Rust with log4rs](https://log4rs.rs/) per una gestione avanzata dei log utilizzando il pacchetto `log`.
+- Questo [tutorial su Rust](https://www.rust-lang.org/learn/get-started) per imparare i fondamenti del linguaggio.

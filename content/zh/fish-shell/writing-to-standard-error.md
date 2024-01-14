@@ -1,42 +1,41 @@
 ---
-title:    "Fish Shell: 写入标准错误"
+title:    "Fish Shell: 写入标准错误。"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要写到标准错误流
+## 为什么
 
-写入标准错误流是一种在命令行界面下记录错误信息的方式。当程序运行时出现错误，通常会将错误信息输出到标准错误流。这样可以方便程序员查看错误信息以及调试程序。通过学习如何写入标准错误流，你可以更有效地调试你的程序。
+有时候当你运行脚本时，你可能会遇到一些错误。将这些错误信息打印到终端屏幕上不方便，因为它可能会干扰你的其他输出。将这些错误信息写入标准错误流（standard error）可以让你更方便地处理这些错误信息。 
 
-## 如何写入标准错误流
+## 使用方法
 
-Fish Shell提供了一个有用的内置命令，用于将错误信息写入标准错误流。下面是一个简单的示例代码：
+编程时，可以使用Fish Shell来将错误信息写入标准错误流。以下是一个简单的例子： 
 
-```
-fish_err "这是一个错误信息"
-```
+```Fish Shell
+# 创建一个文件夹
+mkdir new_folder
 
-运行上面的代码，你会在终端上看到类似以下的输出：
-
-```
-这是一个错误信息
-```
-
-如果你想要输出更详细的错误信息，你可以在命令行中使用管道和重定向符号来捕获标准错误流的输出，如下所示：
-
-```
-ls -l file_name 2>&1 | grep "No such file or directory"
+# 如果文件夹已经存在，则将错误信息写入标准错误流
+if test $status -ne 0
+    echo "文件夹已经存在" >&2
+end
 ```
 
-这会将错误信息输出到标准输出流，并使用grep命令过滤出想要的内容。
+上面的代码中，`mkdir`命令将文件夹创建的结果保存在变量`$status`中。如果变量的值不等于0，那么说明创建失败，随后的`if`语句会将错误信息写入标准错误流中。 
 
-## 深入了解标准错误流
+## 深入了解 
 
-标准错误流是一种非常有用的调试工具。通过将错误信息输出到标准错误流，你可以轻松地定位程序中的错误，并更快地修复它们。除了上面提到的使用方法，你还可以使用Fish Shell的其他内置命令和功能来更高效地处理标准错误流。
+Fish Shell中有两个重要的输出流，分别是标准输出（standard output）和标准错误流。通过使用`&>`操作符，可以将标准输出和标准错误流合并为同一个流。这样做的好处是，不仅可以将错误信息打印到屏幕上，还可以将其保存在一个文件中方便以后查看。 
 
-## 参考资料
+## 参考链接
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [Fish Shell错误处理教程](https://fishshell.com/docs/current/tutorial.html#tut_errors)
-- [标准输入输出流详解](https://www.ruanyifeng.com/blog/2019/09/bash-redirection.html)
+- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
+- [了解标准输出和标准错误流](https://linux.cn/article-2800-1.html) 
+
+## 参见
+
+- [使用Fish Shell优化你的编程体验](https://linux.cn/article-11286-1.html)
+- [学习Fish Shell的使用技巧](https://linux.cn/article-12446-1.html)

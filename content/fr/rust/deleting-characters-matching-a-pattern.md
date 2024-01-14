@@ -1,67 +1,40 @@
 ---
-title:    "Rust: Suppression des caractères correspondant à un motif"
+title:    "Rust: Supprimer des caractères correspondant à un motif"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes développeur en Rust, vous savez déjà que ce langage de programmation est performant, sûr et moderne. Cependant, il existe toujours des cas où vous devrez manipuler des chaînes de caractères et éliminer certains caractères spécifiques. Dans ces situations, il peut être utile de savoir comment supprimer des caractères en utilisant des motifs (patterns) en Rust.
+La suppression de caractères correspondant à un modèle peut être utile dans une variété de scénarios de programmation. Cela peut inclure la mise en forme de données, la validation des entrées utilisateur et la manipulation de chaînes de caractères pour des fonctions spécifiques.
 
-## Comment faire
+# Comment faire
 
-Heureusement, Rust fournit un moyen simple et efficace de supprimer des caractères en utilisant la méthode `replace()`. Voici un exemple de code qui illustre comment supprimer toutes les voyelles d'une chaîne de caractères :
-
-```Rust
-fn main() {
-    let mut text = String::from("Bonjour tout le monde!");
-    let vowels = "aeiouyàâéèêëîïôùûü";
-
-    text = text.replace(vowels, "");
-
-    println!("{}", text);
-}
-```
-
-L'output de ce code sera `Bnjr tt l mnd!`. Comme vous pouvez le voir, toutes les voyelles ont été supprimées de la chaîne de caractères initiale.
-
-Voici un autre exemple qui montre comment supprimer des caractères spécifiques en utilisant un motif (pattern) :
+Pour supprimer des caractères correspondant à un modèle en Rust, vous pouvez utiliser la méthode **replace** de la structure de données **String**. Cela prendra deux paramètres: le modèle à supprimer et le caractère de remplacement. Voici un exemple de code montrant comment supprimer les espaces dans une chaîne de caractères:
 
 ```Rust
-fn main() {
-    let mut text = String::from("Hello World!");
-
-    for c in "Hdl" { // Les lettres H, d et l vont être supprimées
-        text = text.replace(c, "");
-    }
-
-    println!("{}", text);
-}
+let mut string = String::from("Salut les amis!");
+string.replace(" ", "");
+println!("{}", string);
 ```
 
-L'output sera `eo Wor!`. En utilisant cette méthode, vous pouvez facilement supprimer des caractères spécifiques d'une chaîne de caractères en Rust.
-
-## D plongée profonde
-
-La méthode `replace()` utilisée dans les exemples ci-dessus prend également en compte les expressions régulières pour les motifs (patterns) de caractères. Cela vous permet de faire des recherches plus complexes et de supprimer des caractères en fonction de motifs spécifiques.
-
-Par exemple, si vous voulez supprimer toutes les occurrences de nombres dans une chaîne de caractères, vous pouvez le faire en utilisant une expression régulière comme motif :
-
-```Rust
-fn main() {
-    let mut text = String::from("Il y a 18 chiens dans ce parc.");
-
-    text = text.replace(Regex::new(r"[0-9]").unwrap(), "");
-
-    println!("{}", text);
-}
+Cela produira la sortie suivante:
+```
+Salutlesamis!
 ```
 
-L'output sera `Il y a chiens dans ce parc.`. Comme vous pouvez le voir, toutes les occurrences de chiffres ont été supprimées de la chaîne de caractères.
+# Plongée en profondeur 
 
-## Voir aussi
+Pour comprendre plus en détail comment fonctionne la suppression de caractères correspondant à un modèle en Rust, il est important de comprendre comment les chaînes de caractères sont représentées en mémoire. En Rust, les chaînes de caractères sont stockées sous forme de vecteurs de caractères UTF-8. Chaque caractère est associé à un indice dans le vecteur, ce qui permet d'accéder rapidement à un caractère spécifique.
 
-- [Documentation officielle de Rust sur la méthode `replace()`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Tutoriel interactif pour apprendre Rust](https://www.rust-lang.org/learn)
-- [Exemples avancés de manipulation de chaînes de caractères en Rust](https://blog.logrocket.com/advanced-rust-string-manipulation-techniques/)
+Lorsque nous utilisons la méthode **replace**, Rust passe en revue chaque caractère de la chaîne et le compare au modèle donné. Si un caractère correspond, il est remplacé par le caractère de remplacement. Sinon, il est simplement ajouté à la nouvelle chaîne résultante. Cela peut sembler simple, mais c'est en fait un processus très efficace car les chaînes de caractères sont gérées en mémoire de manière optimisée en Rust.
+
+# Voir aussi
+
+Voici quelques liens utiles pour en savoir plus sur la suppression de caractères correspondant à un modèle en Rust:
+
+- Documentation officielle de Rust sur les chaînes de caractères: https://doc.rust-lang.org/std/string/struct.String.html
+- Tutoriel sur les chaînes de caractères en Rust: https://doc.rust-lang.org/book/ch08-02-strings.html
+- Exemples de manipulation de chaînes de caractères en Rust: https://www.tutorialspoint.com/rust/rust_strings.htm

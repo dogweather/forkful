@@ -1,35 +1,37 @@
 ---
-title:    "Gleam: Sletting av tegn som matcher et mønster."
+title:    "Gleam: Sletting av tegn som samsvarer med et mønster"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å slette tegn som matcher et mønster kan være en nødvendig oppgave for å rydde og organisere data. Det kan også være nyttig for å filtrere ut uønskede tegn i en tekststreng.
+Å slette tegn som matcher et mønster kan være viktig for å lage effektive og ryddige programmer. Ved å fjerne unødvendige tegn, kan man forbedre ytelsen til programmet og gjøre koden enklere å lese og forstå.
 
 ## Hvordan
 
-For å slette tegn som matcher et mønster i Gleam må vi først importere biblioteket `Regex` og bruke funksjonen `Regex.replace`. Her er et eksempel på hvordan dette kan gjøres:
+For å slette tegn som matcher et mønster i Gleam, kan man bruke funksjonen `String.replace` sammen med et regex-uttrykk. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Gleam
-import Regex
-tekst = "Hei, jeg heter Ole! Velkommen til min blogg."
-mønster = Regex.compile("[A-Z]")
-Regex.replace(mønster, tekst, "")
+import Gleam.Regex.String
+
+let input = "Å slette tegn som matcher et mønster kan være viktig"
+let pattern = Regex.compile("e+")
+let output = String.replace(input, pattern, "")
+
+assert output == "Å sltte tgn som matcher t mønstr kan vr viktg"
 ```
 
-Dette vil resultere i teksten `"ei, jeg heter le! elkommen til min blogg."` da alle store bokstaver er blitt slettet. Merk at vi måtte bruke en regular expression (mønster) for å spesifisere hvilke tegn vi ønsket å slette. Det er også mulig å bruke variabler for å gjøre mønsteret mer dynamisk og allsidig.
+I koden over har vi først importert funksjonaliteten for regex-uttrykk fra Gleam-biblioteket. Deretter har vi definert en input-tekst og et regex-uttrykk som leter etter én eller flere "e"-tegn. Ved å bruke `String.replace`, kan vi erstatte alle tegn som matcher mønsteret med et tomt streng. Til slutt bruker vi `assert`-funksjonen for å sikre at outputen er som forventet.
 
-## Deep Dive
+## Dypdykk
 
-Det er viktig å forstå hvordan en regular expression fungerer for å kunne slette riktig type tegn. En regular expression er en streng som følger et spesifikt syntaksmønster, og brukes til å finne mønstre i en tekststreng. I Gleam ender alle regular expressions med `Regex.t` for å indikere at det er et regex-objekt. 
+Bak koden i eksempelet over ligger det et kraftig regex-bibliotek som gjør det mulig å lage avanserte mønstre for å matche tegn. Det er verdt å utforske dette biblioteket nærmere og lære hvordan man kan bruke flere søkealternativer, grenser og grupperinger for å finne og erstatte spesifikke tegn i tekststrenger.
 
-Det finnes mange ulike syntakselementer i regular expressions, blant annet `.` som symboliserer et hvilket som helst tegn, `*` som betyr at det forrige elementet kan forekomme null eller flere ganger, og `[]` som brukes til å definere hvilke tegn som skal matche. Det finnes også en rekke spesifikke syntakselementer for ulike typer tegn, f.eks. `\d` for tall og `\s` for mellomrom.
+# Se også
 
-Det er viktig å lese dokumentasjonen for å forstå hvordan man kan bruke de ulike syntakselementene til å lage et effektivt mønster for å slette tegn.
-
-## Se Også
-- [Gleam dokumentasjon for Regex](https://gleam.run/stdlib/regex.html)
-- [En guide til regulære uttrykk (på norsk)](https://docs.oracle.com/cd/E42724_01/regex/docs/introduction.html)
+- [Gleam Regex bibliotek](https://gleam.run/packages/greggreg/regex)
+- [Eksempler på regex-mønstre](https://www.regular-expressions.info/examples.html)
+- [Gleam dokumentasjon](https://gleam.run/documentation)

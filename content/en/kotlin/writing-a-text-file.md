@@ -1,67 +1,49 @@
 ---
 title:    "Kotlin recipe: Writing a text file"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing a text file is a necessary skill for any programmer, as it allows for storing and organizing data in a readable format. In this blog post, we will explore the basics of writing text files in Kotlin and how it can improve your coding abilities.
+Writing a text file may seem like a simple task, but it is a fundamental skill for any programmer. From storing data to saving user inputs, text files are an essential part of developing any application.
 
 ## How To
+Writing a text file in Kotlin is a straightforward process. First, we need to import the `java.io` package to access the necessary classes and methods. Then, we can use the `FileWriter` and `BufferedWriter` classes to create and write to a text file. Let's take a look at an example:
 
-To begin writing a text file in Kotlin, we first need to create a `File` object and specify the name and path of the file we want to create:
-
-```Kotlin
-val file = File("myTextFile.txt")
 ```
+Kotlin
+import java.util.*
+import java.io.*
 
-Next, we need to use the `writeText()` function to add content to our file. This function takes in a `String` parameter, which will be written to the file:
+fun main() {
+    // Create a file object
+    val file = File("my_text_file.txt")
 
-```Kotlin
-file.writeText("This is the content of my text file.")
-```
+    // Open a FileWriter and BufferedWriter objects
+    val fw = FileWriter(file)
+    val bw = BufferedWriter(fw)
 
-We can also use the `appendText()` function to add more content to an existing text file:
+    // Write a string to the file
+    bw.write("This is a sample text file.")
 
-```Kotlin
-file.appendText("\nThis is a new line of text.")
-```
-
-To read the contents of a text file, we can use the `readText()` function:
-
-```Kotlin
-println(file.readText())
-```
-
-This will output the entire contents of the file. We can also use the `readLines()` function to retrieve the file content as a list of strings, with each line being a separate element in the list:
-
-```Kotlin
-val lines = file.readLines()
-for (line in lines) {
-  println(line)
+    // Close the BufferedWriter
+    bw.close()
 }
 ```
 
-Now that we have learned how to create, write to, and read from a text file in Kotlin, let's take a deep dive into the details.
+Running the code above will create a text file named `my_text_file.txt` and write the string "This is a sample text file." to it. We can also add the optional parameter `true` to the `FileWriter` object to append the text to an existing file instead of overwriting it.
 
 ## Deep Dive
+While the example above covers the basics of writing a text file in Kotlin, there are other ways to achieve the same result. For instance, we can use the `println()` function to write to a file, but this is not as efficient as using `BufferedWriter`. Additionally, when writing large amounts of data, using `BufferedWriter` would be the preferred method.
 
-When writing a text file in Kotlin, it is important to understand the different parameters and exceptions that may arise.
+It is also essential to handle exceptions when writing a text file. The `try-catch` block can be used to catch any potential errors and handle them accordingly.
 
-Firstly, the `writeText()` and `appendText()` functions both have an optional parameter `charset`, which allows you to specify the character encoding for your file. If not specified, it defaults to the system's default charset.
-
-Secondly, if the file you are trying to write to already exists, the `writeText()` function will overwrite the existing content, while the `appendText()` function will add the new content to the end of the file.
-
-Lastly, it is important to handle any potential exceptions that may occur when writing to a text file. These exceptions include `IOException` and `SecurityException`. It is recommended to use `try-catch` blocks when writing to files to ensure proper error handling.
+Another point to consider when working with text files is the character encoding. By default, Kotlin uses the system's default character encoding, but this can be changed by using the optional parameter `charset` in the `FileWriter` constructor.
 
 ## See Also
+- [Kotlin IO Basics](https://kotlinlang.org/docs/io.html)
+- [Writing To A File In Kotlin](https://www.programming-books.io/essential/kotlin/writing-a-text-file-cea98e7483cc4d6f8112eb4559f89fed)
 
-Here are some additional resources to help you further explore writing text files in Kotlin:
-
-- [Official Kotlin Documentation on Files](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Kotlin Text I/O Tutorial](https://play.kotlinlang.org/byExample/03_text_io/01_write_to_a_file)
-- [Handling Exceptions in Kotlin](https://www.baeldung.com/kotlin/exceptions-handling)
-
-Now that you have a better understanding of writing text files in Kotlin, go ahead and practice using these functions in your own projects! Happy coding!
+By following the steps outlined in this post, you should now have a good understanding of how to write a text file in Kotlin. Feel free to experiment with different approaches and explore other features of the `java.io` package to enhance your text file writing skills. Happy coding!

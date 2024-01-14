@@ -1,51 +1,59 @@
 ---
-title:    "C#: Vergleich von zwei Daten"
+title:    "C#: Vergleich von zwei Datumsangaben"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Das Vergleichen von zwei Datumsangaben ist für die Entwicklung von C#-Anwendungen unerlässlich. Es ermöglicht die Durchführung von Aufgaben wie Überprüfung von Ablaufdaten, Berechnung von Altersunterschieden und vieles mehr. In diesem Blogbeitrag werden wir uns ansehen, wie man in C# zwei Datumsangaben vergleichen kann.
 
-Die Vergleichung von zwei Daten ist ein häufiges Szenario in der Programmierung. Es kann nützlich sein, um zu überprüfen, ob zwei Ereignisse an verschiedenen Daten stattgefunden haben oder um die Dauer zwischen zwei Daten zu berechnen.
-
-# Wie Vergleicht Man Zwei Daten in C#
-
-Die Vergleichung von zwei Daten in C# kann auf verschiedene Weise durchgeführt werden, je nachdem was genau verglichen werden soll. Hier sind einige Beispiele:
+## Wie geht es
+Um zwei Datumsangaben zu vergleichen, benötigen wir das DateTime-Objekt in C#. Dieses Objekt stellt eine bestimmte Datum- und Zeitangabe dar. Nehmen wir an, wir haben zwei Datumsangaben, 1. Januar 2020 und 1. Januar 2021, die wir vergleichen möchten. Wir können dies folgendermaßen tun:
 
 ```C#
-// Vergleicht zwei Daten mit dem gleichen Tag und Jahr
-var date1 = new DateTime(2021, 09, 01);
-var date2 = new DateTime(2021, 09, 01);
-if(date1 == date2)
-{
-    Console.WriteLine("Die Daten sind identisch");
-}
+DateTime date1 = new DateTime(2020, 1, 1);
+DateTime date2 = new DateTime(2021, 1, 1);
 ```
+
+Die DateTime-Klasse verfügt über eine Methode namens CompareTo(), die verwendet werden kann, um zwei Datumsangaben miteinander zu vergleichen. Diese Methode gibt eine negative Zahl zurück, wenn das erste Datum kleiner als das zweite ist, eine positive Zahl, wenn es größer ist, und 0, wenn beide Datumsangaben gleich sind.
 
 ```C#
-// Vergleicht zwei Daten basierend auf ihrem Wert
-var date1 = new DateTime(2021, 09, 01);
-var date2 = new DateTime(2021, 09, 15);
-if(date1 < date2)
-{
-    Console.WriteLine("Die erste Daten liegt vor der zweiten Daten");
-}
+int result = date1.CompareTo(date2); // result = -1
 ```
+
+Alternativ können wir auch die logischen Operatoren <=, >=, < oder > verwenden, um zwei Datumsangaben zu vergleichen.
 
 ```C#
-// Vergleicht zwei Daten basierend auf der Differenz zwischen ihnen
-var date1 = new DateTime(2021, 09, 01);
-var date2 = new DateTime(2021, 09, 15);
-var difference = date1 - date2;
-Console.WriteLine($"Die Differenz zwischen den beiden Daten beträgt {difference.TotalDays} Tage");
+bool result = date1 <= date2; // result = true
 ```
 
-# Tiefer Einblick
+Ein weiteres nützliches Tool ist die Methode Equals(), die überprüft, ob zwei Datumsangaben gleich sind.
 
-Beim Vergleich von zwei Daten gibt es einige Dinge zu beachten. Zum Beispiel kann man zwischen den daten des gregorianischen und des julianischen Kalenders unterscheiden. Auch die Zeitzone kann eine Rolle spielen. Deshalb sollte man immer sicherstellen, dass man die richtigen Vergleichsbedingungen verwendet.
+```C#
+bool result = date1.Equals(date2); // result = false
+```
 
-# Siehe Auch
+## Tief einsteigen
+Beim Vergleichen von zwei Datumsangaben müssen wir auch die Zeitzone berücksichtigen. In C# können wir dies erreichen, indem wir die Methode ToLocalTime() verwenden, die die angegebene Zeit in die lokale Zeitzone konvertiert.
 
-- [MSDN: DateTime.CompareTo-Methode](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=net-5.0)
-- [C#-Handbuch: Vergleich und Sortierung](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/statements-expressions-operators/how-to-compare-strings)
+```C#
+DateTime date1 = new DateTime(2020, 1, 1, 10, 0, 0); // 1. Januar 2020 um 10:00 Uhr
+DateTime date2 = new DateTime(2020, 1, 1, 9, 0, 0); // 1. Januar 2020 um 9:00 Uhr
+bool result = date1.Equals(date2); // result = false
+bool result2 = date1.ToLocalTime().Equals(date2.ToLocalTime()); // result2 = true
+```
+
+Es ist auch wichtig zu beachten, dass DateTime-Objekte in C# unveränderlich sind, was bedeutet, dass sie nicht direkt bearbeitet werden können. Stattdessen wird bei Änderungen ein neues DateTime-Objekt erstellt.
+
+```C#
+DateTime date1 = new DateTime(2020, 1, 1);
+date1.AddDays(1); // date1 bleibt 1. Januar 2020
+DateTime date2 = date1.AddDays(1); // date2 ist 2. Januar 2020
+```
+
+## Siehe auch
+- [Microsoft-Dokumentation zu DateTime-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.datetime)
+- [C#-Tutorial: Datum und Zeit](https://www.tutorialspoint.com/de/csharp/csharp_date_time.html)
+- [Schwierigkeiten beim Vergleichen von Datum und Zeit in C#](https://stackoverflow.com/questions/8191576/unable-to-compare-datetime-values-in-c)

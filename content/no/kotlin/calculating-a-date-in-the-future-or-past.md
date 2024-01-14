@@ -1,40 +1,52 @@
 ---
-title:    "Kotlin: Beregning av datoer i fremtiden eller fortiden"
+title:    "Kotlin: Beregning av en dato i fremtiden eller fortiden"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
 
-Det kan være mange grunner til å måtte beregne en dato i fremtiden eller fortiden. Det kan være for å planlegge en reise, fødselsdag, eller for å sjekke når en kontrakt utløper. Hvordan man beregner disse datoene kan variere avhengig av behov, men heldigvis har Kotlin en rekke verktøy som gjør dette enkelt.
+Å beregne datoer i fremtiden eller fortiden er en viktig del av programmering. Enten det er for å opprette en kalenderfunksjon, planlegge fremtidige hendelser eller analysere historiske data, vil å kunne beregne datoer være nyttig for mange programmer.
 
 # Hvordan
 
+For å beregne en dato i fremtiden eller fortiden i Kotlin, kan du bruke en kombinasjon av Java's `LocalDate` og Kotlin's `plusDays` eller `minusDays` funksjoner. Her er et eksempel på å beregne datoen 10 dager frem i tid:
+
 ```kotlin
-// Legg til antall dager, måneder eller år til en given dato
-val startDato = LocalDate.now()
-val nyDato = startDato.plusDays(7) // 7 dager senere
-
-// Trekk fra antall dager, måneder eller år fra en gitt dato
-val forrigeDato = startDato.minusMonths(3) // 3 måneder senere
-
-// Spesifiser en dato ved å angi år, måned og dag
-val spesifikkDato = LocalDate.of(2022, Month.APRIL, 18) // 18. april 2022
-
-// Sjekk om en dato er før eller etter en annen dato
-val erFremtidig = startDato.isAfter(nyDato) // false
-val erFortidig = startDato.isBefore(forrigeDato) // true
+val today = LocalDate.now()
+val futureDate = today.plusDays(10)
+println("Datoen 10 dager frem i tid er: $futureDate")
 ```
 
-## Deep Dive
+Dette vil resultere i følgende utskrift:
 
-Beregning av datoer innebærer mer enn bare en enkel tillegg eller trekk fra antall dager. Det er viktig å ta hensyn til faktorer som skuddår, tidssoner og lokale nasjonale helligdager. Heldigvis har Kotlin et utvidet bibliotek for Java Time API som gjør dette enklere.
+`Datoen 10 dager frem i tid er: 2020-05-23`
 
-For å ta hensyn til skuddår, kan man bruke metoden `withDayOfYear()` som spesifikt beregner datoer basert på antall dager i året. Når det gjelder lokale helligdager, kan man bruke klassen `HolidayCalendars` som gir programmerere tilgang til standard kalendere fra forskjellige land og regioner.
+På samme måte kan du beregne en dato i fortiden ved hjelp av `minusDays` funksjonen. Her er et eksempel på å beregne datoen 5 dager tilbake i tid:
 
-## Se også
+```kotlin
+val today = LocalDate.now()
+val pastDate = today.minusDays(5)
+println("Datoen 5 dager tilbake i tid er: $pastDate")
+```
 
-- [Offisiell Kotlin dokumentasjon for Java Time API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-date-time/index.html)
-- [How to: Manipulate Time and Dates in Kotlin](https://www.baeldung.com/kotlin/dates-time-api)
-- [Java Time API tutorial på YouTube (engelsk)](https://www.youtube.com/watch?v=KEVQdUdOqzY)
+Dette vil resultere i følgende utskrift:
+
+`Datoen 5 dager tilbake i tid er: 2020-05-08`
+
+Det er også mulig å bruke andre tidsenheter som måneder og år ved hjelp av `plusMonths` og `plusYears` funksjoner.
+
+# Dypdykk
+
+Det er viktig å være oppmerksom på forskjellen mellom `plusDays` og `plus` funksjoner i Kotlin. Mens `plusDays` tar inn en `Int` verdi og legger til det angitte antallet dager, tar `plus` funksjonen inn et `TemporalAmount` objekt og kan dermed legge til år, måneder, dager og andre tidsenheter.
+
+Det er også viktig å være klar over at datoen som returneres fra disse funksjonene er en ny `LocalDate` objekt, og at den opprinnelige datoen forblir uendret. Du må lagre resultatet i en ny variabel eller tilordne det til den opprinnelige datoen for å endre den.
+
+# Se også
+
+- [Kotlin dokumentasjon for LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
+- [Java dokumentasjon for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Kotlin dokumentasjon for plusDays funksjonen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-temporal/plus-days.html)
+- [Kotlin dokumentasjon for plus funksjonen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-temporal/plus.html)

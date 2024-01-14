@@ -1,33 +1,43 @@
 ---
 title:    "Swift: Å starte et nytt prosjekt"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor starte et nytt Swift-prosjekt?
 
-Å starte et nytt programmeringsprosjekt kan virke skremmende og overveldende, spesielt for nybegynnere. Men det kan også være en spennende og givende opplevelse. Ved å ta på seg et nytt prosjekt, kan du utvide dine programmeringsferdigheter, løse problemer og kanskje til og med skape noe som andre kan dra nytte av. Så hvorfor ikke ta sjansen og starte et nytt prosjekt?
+Det finnes mange grunner til å starte et nytt Swift-prosjekt. Kanskje du har en god idé til en app eller programvare, eller kanskje du ønsker å utvide dine programmeringsferdigheter. Uansett årsak, å starte et nytt prosjekt kan være en spennende og givende opplevelse.
 
-# Hvordan gjøre det
+# Hvordan starte et nytt Swift-prosjekt?
 
-For å begynne et nytt prosjekt i Swift, må du følge noen enkle trinn. Først må du åpne Xcode og opprette et nytt prosjekt. Deretter må du velge et navn og sted for prosjektet ditt, samt hvilken type prosjekt du ønsker å lage. For eksempel kan du velge å lage en app for iOS, macOS eller watchOS. Når alt det er gjort, er du klar til å begynne å kode!
+For å starte et nytt Swift-prosjekt, trenger du først å ha Swift og Xcode installert på datamaskinen din. Deretter kan du følge disse enkle trinnene for å opprette et nytt prosjekt:
+
+1. Åpne Xcode og velg "Create a new Xcode project".
+2. Velg "Single View App" som prosjekttype og klikk "Next".
+3. Gi prosjektet ditt et navn og velg hvor du vil lagre det. Klikk "Create".
+4. Etter at prosjektet er opprettet, kan du begynne å skrive din første kode.
+
+Her er et eksempel på hvordan du kan skrive ut "Hello World" i Swift:
 
 ```Swift
-let name = "Verdens beste app" // Sett navnet på ditt prosjekt her
-print("Velkommen til \(name)!") // Viser en velkomstmelding med ditt prosjektnavn
+print("Hello World")
 ```
 
-Det er også viktig å planlegge prosjektet ditt før du begynner å kode. Dette kan hjelpe deg med å organisere og strukturere koden din på en mer effektiv måte. Husk å kommentere koden din godt, slik at du og andre kan forstå den senere. Og ikke vær redd for å prøve og feile - det er en del av læringsprosessen!
+Når du kjører dette programmet i Xcode, vil du se "Hello World" blir skrevet ut i konsolen. Dette er en enkel, men viktig start på ditt nye prosjekt.
 
-# Dypdykk
+# Dypdykk i å starte et nytt Swift-prosjekt
 
-Når du starter et nytt prosjekt, er det viktig å ha en god grunnleggende forståelse av Swift-språket. Dette inkluderer konsepter som variabler, konstanter, datatyper, betingelser og løkker. Det er også nyttig å kunne bruke Swifts innebygde funksjoner og klasser når du koder ditt prosjekt. Det finnes mange ressurser på nettet som kan hjelpe deg med å lære disse fundamentale konseptene.
+Nå som du har opprettet et nytt prosjekt og lært deg å skrive ut tekst i Swift, kan du begynne å utforske flere funksjoner og muligheter i språket. Her er noen ressurser som kan hjelpe deg i gang:
 
-En annen viktig del av å starte et nytt prosjekt er å lære å finne og bruke tredjepartsbiblioteker og pakker. Disse kan gi deg tilgang til ny funksjonalitet og effektive løsninger på problemer som du kanskje ikke kan løse på egen hånd.
+- [Swift Programming Language](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html): Den offisielle guiden til Swift fra Apple som tar deg gjennom grunnleggende konsepter og syntax.
+- [Ray Wenderlich - Swift Tutorials](https://www.raywenderlich.com/swift): En populær nettside med mange gode tutorials og kurs for Swift-programmering.
+- [Stack Overflow - Swift](https://stackoverflow.com/questions/tagged/swift): En svært aktiv forum hvor du kan stille spørsmål og få hjelp fra andre utviklere.
+
+Lykke til med ditt nye Swift-prosjekt!
 
 # Se også
 
-- [Offisiell Swift-dokumentasjon](https://docs.swift.org/swift-book/)
-- [Utdanningsressurser fra Apple](https://developer.apple.com/swift/resources/)
-- [Tips og triks for Swift-programmering](https://medium.com/swlh/swift-programming-tips-8759bc32b453)
+- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/): En interaktiv måte å lære seg Swift på, som er tilgjengelig både på iPad og Mac.
+- [Swift Weekly Brief](https://swiftweeklybrief.com/): En ukentlig nyhetsoppdatering om alt som skjer innenfor Swift-verdenen.

@@ -1,52 +1,41 @@
 ---
 title:    "C++: Drukowanie wyników debugowania"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Wiele razy, podczas programowania w C++, spotykamy się z problemami podczas wykonywania kodu. Nie zawsze wiemy, dlaczego program nie działa poprawnie lub zwraca nieoczekiwane wyniki. Właśnie w takich sytuacjach wypisywanie informacji diagnostycznych na konsolę może okazać się nieocenioną pomocą. Dzięki nim, będziemy mogli zobaczyć, co dzieje się w naszym programie i szybko znaleźć źródło problemu.
+Debugowanie jest kluczowym elementem w programowaniu. Wielu programistów używa różnych technik, aby znaleźć błędy w swoim kodzie. Jedną z tych technik jest drukowanie informacji debugujących, które mogą pomóc w zlokalizowaniu problemów. W tym blogu dowiesz się, jak z powodzeniem wykorzystać drukowanie informacji debugujących w swoim kodzie C++.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Istnieje kilka sposobów na wypisywanie informacji diagnostycznych podczas programowania w C++. Jednym z najprostszych jest użycie funkcji `cout` z biblioteki standardowej `iostream`. Wywołując tę funkcję, możemy przekazać jej dowolną wartość lub zmienną, a następnie wyświetlić ją na konsoli.
+Pierwszym krokiem jest dołączenie biblioteki <iostream> do swojego kodu. Następnie musisz użyć funkcji cout, aby wydrukować swoje dane debugowania. Na przykład:
 
 ```C++
 #include <iostream>
 
 int main() {
-  int a = 5;
-  std::cout << a << "\n";
+    int x = 5;
+    std::cout << "Wartość zmiennej x to: " << x << std::endl;
+    return 0;
 }
 ```
 
-W powyższym przykładzie, zmienna `a` zostanie wypisana na konsoli, dzięki czemu będziemy mogli sprawdzić jej wartość. Oprócz funkcji `cout`, możemy także skorzystać z funkcji `printf` z biblioteki `cstdio`, która pozwala nam na większą kontrolę nad formatem wyświetlania danych.
+Wyjście z powyższego kodu będzie wyglądać tak:
 
-## Rzucamy się głębiej
-
-Wypisywanie informacji diagnostycznych może być także przydatne, kiedy musimy monitorować działanie programu w różnych miejscach. W takim przypadku, możemy skorzystać z makra `DEBUG`, które pozwala nam na włączenie i wyłączenie trybu debugowania w zależności od ustawienia kompilatora.
-
-```C++
-#include <iostream>
-
-#ifdef DEBUG
-  #define DEBUG_LOG(x) do { std::cout << x << "\n"; } while (0)
-#else
-  #define DEBUG_LOG(x)
-#endif
-
-int main() {
-  int a = 5;
-  DEBUG_LOG("Wartość zmiennej a: " << a);
-  // reszta kodu
-}
+```
+Wartość zmiennej x to: 5
 ```
 
-Dzięki takiemu podejściu, możemy łatwo włączać i wyłączać wypisywanie informacji diagnostycznych w zależności od potrzeb.
+Możesz również dodać informacje debugujące w wielu miejscach w swoim kodzie, aby śledzić jak wartości zmiennych zmieniają się w różnych punktach programu.
 
-## Zobacz także
+## Głębsza analiza
 
-* [Podstawy języka C++](https://pl.wikipedia.org/wiki/C%2B%2B)
-* [Artykuł o debugowaniu w języku C++](https://programistamag.pl/debugowanie-w-c-co-warto-o-nim-wiedziec/)
+Drukowanie informacji debugujących jest szczególnie pomocne podczas śledzenia zmian wartości zmiennych w trakcie wykonywania programu. Może to pomóc zlokalizować błędy w logice lub algorytmach. Jednak należy pamiętać, że nadmiarowe informacje debugujące mogą utrudnić czytanie kodu i sprawić, że stanie się on mniej czytelny.
+
+## Zobacz również
+
+Jeśli jesteś zainteresowany poznaniem innych technik debugowania w C++, może spodobać Ci się również nasz artykuł o użyciu debuggera C++: [link do artykułu o debuggerze C++]. Możesz również przeczytać nasz artykuł o sposobach testowania kodu w C++: [link do artykułu o testowaniu w C++].

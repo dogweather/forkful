@@ -1,53 +1,35 @@
 ---
-title:    "Haskell: 「未来または過去の日付を計算する」"
+title:    "Haskell: 将来または過去の日付の計算"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-計算機で将来や過去の日付を計算する理由
+## Why
 
-人々が将来または過去の日付を計算する理由は様々です。例えば、誕生日パーティーや結婚式の日を計画する際に、将来の日付を知りたい場合があります。また、特定の日から何日後または何日前かを計算する必要がある場合もあります。計算機で日付を計算することにより、目的を達成するための便利なツールを手に入れることができます。
+日付の計算をするのには理由があります。例えば、将来の特定の日付の予定を知りたい、または過去の特定の日付を追跡したい場合があります。
 
-コーディングでの日付計算の方法
+## How To
 
-日付を計算するために、Haskellの標準モジュールである"Data.Time"を使用します。例として、今日の日付から10日後の日付を計算するコードを示します。
-
-```Haskell
+Haskellを使用して日付の計算をする方法は簡単です。```Haskell
 import Data.Time
-
--- 今日の日付を取得
-today :: IO Day
-today = getCurrentTime >>= return . utctDay
-
--- 日付を計算する関数
-calcDate :: Day -> Integer -> Day
-calcDate d n = addDays n d
-
--- 10日後の日付を計算
-main :: IO()
-main = do
-  d <- today
-  let futureDate = calcDate d 10
-  print futureDate
+import Data.Time.Calendar
+-- 明日の日付を計算する
+tomorrow :: IO ()
+tomorrow = do
+  today <- utctDay <$> getCurrentTime
+  let nextDay = addDays 1 today
+  putStrLn $ "Tomorrow's date is: " ++ show nextDay
 ```
+出力はコンソールに```Tomorrow's date is: 2021-10-13```のように表示されます。
 
-実行結果は次のようになります。
+## Deep Dive
 
-```Haskell
-2019-09-07
-```
+日付の計算には、まずData.Timeモジュールを使用してタイムゾーンを設定する必要があります。その後、特定の日付を表すData.Time.Calendarを使用して、日付に関する情報を取得する必要があります。addDays関数を使用することで、与えられた日数分だけ日付を加算または減算することができます。さらに、カレンダーの種類や時間帯などのパラメータを設定することもできます。
 
-ここでは、"getCurrentTime"関数を使用して今日の日付を取得し、"calcDate"関数を使用して指定した日数を加算しています。このように、Haskellでは日付の計算が簡単に行えるため、プロジェクトの開発や日常生活で役立てることができます。
+## See Also
 
-日付計算の深層へ
-
-上記の例では、日付を計算するために使われる主要な関数について紹介しましたが、実際にはより多くの詳細な機能が含まれています。たとえば、日付のフォーマットを変更したり、曜日や月の日数を取得したりすることもできます。また、"Data.Time.Calendar"や"Data.Time.Calendar.Julian"などの補助モジュールを使用することで、さらに複雑な日付計算を行うこともできます。興味のある方はぜひ詳しく調べてみてください。
-
-参考リンク
-
-- "Data.Time"モジュールのドキュメント: https://hackage.haskell.org/package/time/docs/Data-Time.html
-- "Data.Time.Calendar"モジュールのドキュメント: https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html
-- "Data.Time.Calendar.Julian"モジュールのドキュメント: https://hackage.haskell.org/package/time/docs/Data-Time-Calendar-Julian.html
-
-# 参考リンク
+* [Data.Timeモジュールのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+* [Data.Time.Calendarモジュールのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
+* [Haskellにおける日付の計算の応用例](https://qiita.com/nirasan/items/7425caff75750a0be048)

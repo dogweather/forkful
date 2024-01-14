@@ -1,46 +1,38 @@
 ---
-title:    "C#: デバッグ出力の表示"
+title:    "C#: デバッグ出力の印刷"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜデバッグ出力を行うのか
+デバッグ出力を行うことのメリットは多くあります。コーディング中に発生したエラーやバグを特定し、修正するために欠かせない作業です。通常、デバッグ出力は更に高度なデバッグ手法の一部として活用されることもあります。
 
-デバッグ出力を印刷することの利点について説明します。なぜデバッグ出力が役立つのか、そしてそれをどのように行うかを知ることで、よりスムーズで効率的なプログラミングを行うことができるようになります。
-
-## 方法
-
-デバッグ出力を印字する方法は簡単です。以下の例を参考にしてください。
+## デバッグ出力の使い方
+デバッグ出力を行うには、プログラムの中に出力するコードを記述する必要があります。以下にC#言語での例を示します。
 
 ```C#
-// デバッグ出力の例
-Console.WriteLine("Hello, world!");
+Console.WriteLine("Debug output:"); // 文字列の出力
+Console.Write("Variable value: "); // 改行しないで出力
+Console.WriteLine(variable); // 変数の値を出力
 ```
 
-上記のように、印字したいメッセージを``Console.WriteLine()``メソッドの引数として指定することで、コンソールにメッセージが印字されます。
+上記のコードを実行すると、コンソールに以下のように出力されます。
 
-また、変数の値などを確認したい場合には、``Console.WriteLine()``メソッドの引数に変数名を指定することもできます。
-
-```C#
-int age = 25;
-Console.WriteLine("私の年齢は" + age + "歳です。");
+```
+Debug output:
+Variable value: 5
 ```
 
-上記のように``+``演算子を使うことで、変数の値と文字列を結合することができます。
+このように、デバッグ出力を行うことで特定の箇所でのプログラムの動作を確認することができます。
 
-## ディープダイブ
+## デバッグ出力の深掘り
+デバッグ出力は、コードの実行中に特定の変数や情報を出力することができるため、エラーやバグの原因を特定するのに非常に役立ちます。また、コードの最適化やパフォーマンスの改善にも活用されることがあります。
 
-デバッグ出力を行うことで、プログラムの実行中に変数の値やメソッドの処理の流れなどを確認することができます。また、エラーが発生した際にもデバッグ出力を利用することで、原因を特定するのに役立ちます。
+しかし、注意しなければならないのは、デバッグ出力を多用するとプログラムの実行速度に影響を与える可能性があることです。そのため、デバッグ出力はデバッグ作業が終わったら削除することが推奨されます。
 
-しかし、デバッグ出力を多用しすぎると、ソースコードが読みづらくなったり、プログラムの実行速度が遅くなる場合があります。そのため、適度なデバッグ出力を行うことが重要です。
-
-## 参考リンク
-
-- [C#の基本構文](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/index)
-- [Visual Studioでデバッグ出力を行う方法](https://docs.microsoft.com/ja-jp/visualstudio/debugger/using-the-debugger)
-- [デバッグ出力のタイミングを選択する方法](https://www.atmarkit.co.jp/ait/articles/1407/17/news115.html)
-
-# 参考
-
-「デバッグ出力を活用しよう！」 (https://www.atmarkit.co.jp/ait/articles/1407/17/news115.html)
+# See Also
+- [C# デバッグの基本](https://docs.microsoft.com/ja-jp/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
+- [C# デバッグ出力の高度な活用方法](https://blogs.msdn.microsoft.com/jmstall/2006/09/24/writing-to-the-debug-window-from-an-extension/)
+- [C# デバッグのパフォーマンスへの影響について](https://docs.microsoft.com/ja-jp/contribute/how-to-write-high-performance-code?view=vs-2019&redirectedfrom=MSDN#performance-concepts)

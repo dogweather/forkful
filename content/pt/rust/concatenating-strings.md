@@ -1,58 +1,55 @@
 ---
-title:    "Rust: Concatenando strings"
+title:    "Rust: Unindo strings"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings em Rust?
+## Por que Concatenar Strings em Rust?
 
-Concatenar strings é uma habilidade importante em qualquer linguagem de programação, incluindo Rust. Isso permite que você combine múltiplas strings em uma só, tornando mais fácil a manipulação e exibição de informações para o usuário final. Além disso, concatenar strings também pode ser útil para lidar com entrada de dados e formatação de texto.
+A concatenação de strings é uma tarefa comum na programação, principalmente quando se trabalha com textos. Em Rust, essa ação pode ser feita de maneira eficiente e simples utilizando suas funcionalidades poderosas. Neste post, vamos explorar por que e como concatenar strings em Rust.
 
-## Como fazer em Rust
+## Como Fazer em Rust
 
-Em Rust, podemos utilizar a macro `format!` para concatenar strings de forma eficiente. Por exemplo:
+Para concatenar strings em Rust, utilizamos o operador `+` ou a macro `format!()`. Veja os exemplos abaixo:
 
-```Rust
-let nome = "João";
-let sobrenome = "Silva";
-let nome_completo = format!("{} {}", nome, sobrenome);
-println!("Seu nome completo é: {}", nome_completo);
 ```
-
-O código acima irá imprimir: `Seu nome completo é: João Silva`. Note que utilizamos `{}` para indicar onde as variáveis devem ser inseridas dentro da string.
-
-Além disso, também é possível utilizar o operador `+` para concatenar strings, porém essa abordagem é menos eficiente. Veja um exemplo:
-
-```Rust
-let mensagem = "Olá " + "mundo!";
+Rust let str1 = "Olá";
+let str2 = "mundo";
+let resultado = str1 + " " + str2;
+println!("{}", resultado);
 ```
+**Saída:** Olá mundo
+
+```
+Rust let num1 = 5;
+let str1 = format!("O número é {}", num1);
+println!("{}", str1);
+```
+**Saída:** O número é 5
+
+No primeiro exemplo, utilizamos o operador `+` para concatenar as strings `str1` e `str2`, e no segundo exemplo, utilizamos a macro `format!()` para inserir a variável `num1` dentro da string `str1`.
+
+Além disso, em Rust, é possível utilizar a função `push_str()` para adicionar uma string em outra já existente. Veja o exemplo abaixo:
+
+```
+Rust let mut cidade = "São";
+cidade.push_str(" Paulo");
+println!("{}", cidade);
+```
+**Saída:** São Paulo
 
 ## Mergulho Profundo
 
-Ao utilizar a macro `format!`, podemos realizar a formatação de strings de diferentes formas. Por exemplo:
+Assim como a maioria dos recursos em Rust, a concatenação de strings é uma operação segura e eficiente. Isso significa que, quando utilizamos os operadores `+` ou `push_str()`, o compilador irá verificar se há espaço suficiente na memória para a operação e evitar possíveis erros de acesso ou de memória.
 
-```Rust
-let valor = 10;
-let mensagem = format!("O dobro de {} é {}", valor, valor * 2);
-println!(mensagem); // Irá imprimir: O dobro de 10 é 20
-```
-
-Também é possível adicionar textos ou símbolos entre as strings concatenadas:
-
-```Rust
-let mensagem = format!("10 + 5 = {}", 10 + 5);
-println!(mensagem); // Irá imprimir: 10 + 5 = 15
-```
-
-E se precisarmos inserir valores que não sejam strings em uma string formatada, podemos utilizar a sintaxe `{:?}`:
-
-```Rust
-let valores = vec![1, 2, 3];
-println!("O vetor possui {:?} elementos.", valores); // Irá imprimir: O vetor possui [1, 2, 3] elementos.
-```
+Além disso, a macro `format!()` possui uma sintaxe semelhante ao `println!()`, permitindo a formatação de strings de forma mais elaborada e flexível. Também é importante ressaltar que todas essas opções são mais eficientes do que utilizar a função `String::new()` para criar uma nova string e, em seguida, adicionar as strings desejadas utilizando `push_str()`.
 
 ## Veja também
 
-- [Documentação sobre strings em Rust](https://doc.rust-lang.org/std/string/index.html)
-- [Tutorial sobre formatação de strings em Rust](https://www.geeksforgeeks.org/formatting-output-in-rust-programming-language/)
+Aqui estão alguns links que podem te ajudar a aprofundar seus conhecimentos em Rust:
+
+- Documentação Oficial sobre Strings: https://doc.rust-lang.org/std/string/index.html
+- Tutorial de Strings em Rust: https://www.rust-lang.org/learn/strings
+- Rust By Example - Manipulação de Strings: https://doc.rust-lang.org/rust-by-example/std/str.html

@@ -1,35 +1,45 @@
 ---
-title:    "Kotlin: Pisanie pliku tekstowego"
+title:    "Kotlin: Tworzenie pliku tekstowego"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Pisanie plików tekstowych jest nieodłączną częścią większości aplikacji. W tym artykule opowiemy o tym, jak w prosty sposób można pisać pliki tekstowe w języku Kotlin.
+
+Dlaczego warto pisać pliki tekstowe? Pisanie plików tekstowych jest ważną częścią programowania, ponieważ jest to metoda przechowywania danych w formacie czytelnym dla ludzi. Dzięki temu możemy łatwoedytować, odczytywać i udostępniać informacje. Pliki tekstowe są bardzo wygodnym sposobem na przechowywanie prostych danych, takich jak listy, informacje kontaktowe, ustawienia czy nawet proste bazy danych. W tym artykule dowiesz się, jak napisać plik tekstowy za pomocą języka Kotlin.
 
 ## Jak to zrobić
-Aby napisać plik tekstowy w języku Kotlin, musimy najpierw wybrać miejsce, w którym chcemy zapisać nasz plik. Następnie można użyć poniższego kodu, aby utworzyć nowy obiekt `File` i zapisać w nim nasz tekst:
+
 ```Kotlin
-val file = File("sciezka/do/pliku.txt")
-file.writeText("To jest przykładowy tekst, który zostanie zapisany w pliku txt")
+fun main() {
+    val file = File("moj_plik.txt") // Tworzy obiekt File dla pliku "moj_plik.txt"
+    file.writeText("To jest przykładowy tekst") // Zapisuje tekst do pliku
+    val text = file.readText() // Odczytuje tekst z pliku
+    println(text) // Wyświetla zawartość pliku
+}
 ```
 
-Jeśli chcemy dodać więcej tekstu do istniejącego pliku, możemy użyć metody `appendText()`:
-```Kotlin
-file.appendText("\n To jest kolejna linia tekstu")
+Output:
+```
+To jest przykładowy tekst
 ```
 
-Możemy również odczytać zawartość pliku za pomocą metody `readText()`:
-```Kotlin
-val fileContent = file.readText()
-```
-Powyższe przykłady powinny działać na większości systemów operacyjnych, jednak w przypadku problemów należy sprawdzić dostępne metody dla odpowiedniej platformy.
+W powyższym przykładzie najpierw tworzymy obiekt File dla pliku, którego chcemy użyć. Następnie, za pomocą funkcji `writeText()` zapisujemy wybrany przez nas tekst do pliku. W kolejnej linijce odczytujemy ten tekst z pliku i wypisujemy go na ekranie. Proste, prawda?
+
+Warto również pamiętać, że pliki tekstowe można również czytać i zapisywać w różnych kodowaniach, co jest szczególnie ważne przy pracach z językami, które używają znaków spoza standardowego kodowania ASCII.
 
 ## Głębsza analiza
-Pisanie plików tekstowych jest ważną umiejętnością dla programistów, ponieważ pozwala zapisywać i przechowywać dane wykorzystywane przez aplikacje. W języku Kotlin mamy dostęp do wielu przydatnych metod i funkcji, które ułatwiają pracę z plikami tekstowymi. Warto również pamiętać, że można wykorzystać mechanizm wyjątków w celu obsługi błędów działania na plikach.
+
+Pliki tekstowe są zapisywane w formacie ASCII, co oznacza, że można w nich przechowywać tylko znaki z podstawowego zestawu znaków. Aby przechowywać inne znaki, takie jak polskie litery, znaki diakrytyczne czy znaki specjalne, należy użyć odpowiedniego kodowania, na przykład UTF-8. 
+
+Istnieją różne metody zapisu i odczytu danych z plików tekstowych w języku Kotlin. Mogą to być między innymi funkcje `writeText()` i `readText()` jak pokazane powyżej, ale również inne metody, takie jak `bufferedWriter()` lub `inputStreamReader()`, które pozwalają na bardziej zaawansowane operacje na plikach.
+
+Podczas pisania plików tekstowych warto również pamiętać o bezpieczeństwie danych. Wrażliwe informacje należy zawsze szyfrować, aby uniemożliwić dostęp nieautoryzowanym osobom.
 
 ## Zobacz również
-1. Oficjalna dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/
-2. Przykładowe projekty na GitHubie wykorzystujące pisanie plików tekstowych w języku Kotlin: https://github.com/search?q=kotlin+write+text+file&type=Repositories
-3. Kotlin dla początkujących – kurs online: https://www.udemy.com/course/kotlin-dla-poczatkujacych/?referralCode=2CFA2D4A7C8FFA102FAC
+
+- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
+- [Kurs programowania w Kotlinie na Courserze](https://www.coursera.org/learn/kotlin-for-java-developers)
+- [Blog o języku Kotlin](https://blog.kotlin-academy.com/)

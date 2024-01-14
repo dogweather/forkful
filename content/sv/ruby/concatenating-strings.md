@@ -1,72 +1,69 @@
 ---
-title:    "Ruby: Sammanslagning av strängar"
+title:    "Ruby: Länka samman strängar"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanfoga strängar kan vara en användbar teknik för att skapa dynamiska utskrifter eller beskrivande texter i ditt Ruby-program. Genom att lära dig denna funktion kan du öka flexibiliteten i dina kod och skapa mer interaktiva användargränssnitt.
+Att sammanfoga, eller "concatenating", strängar är en praktisk funktion inom programmering som gör det möjligt att kombinera flera strängar till en enda. Detta kan vara användbart när vi behöver skapa dynamiska textsträngar eller när vi vill lägga till variabler i en sträng. Genom att lära sig hur man sammanfogar strängar kan man göra sina program mer flexibla och kraftfulla.
 
-## Så här gör du
+## Hur man gör
 
-För att sammanslå två strängar i Ruby, används plus-operanden (+) mellan dem. Till exempel:
+För att concatenating ska fungera måste vi använda ett operator som heter "plus", eller "+" på engelska. Om vi till exempel har två strängar, "Hej" och "världen", så kan vi använda "+" för att sammanfoga dem:
 
-```ruby
-sträng1 = "Hej"
-sträng2 = "Världen"
-
-sammanslagen_sträng = sträng1 + sträng2
-puts sammanslagen_sträng
+```Ruby
+"Hej" + "världen" # output: "Hej världen"
 ```
 
-Detta kommer att skriva ut "Hej Världen". Notera att när du lägger till en sträng till en annan, blir den slutgiltiga strängen längden av båda strängarna tillsammans.
+Här kombinerar vi helt enkelt de två strängarna till en enda längre sträng. Det är viktigt att notera att strängarna måste vara omgivna av citattecken för att concatenating ska fungera. Om en av strängarna är en variabel så måste vi också använda återkallning inom citattecknen för att värdet ska ersättas i den slutliga strängen:
 
-```ruby
-förnamn = "Sara"
-efternamn = "Nilsson"
+```Ruby
+name = "Sara"
 
-fullständigt_namn = förnamn + efternamn
-puts fullständigt_namn
+"Hej " + name # output: "Hej Sara"
 ```
 
-Detta kommer att skriva ut "SaraNilsson". För att lösa detta kan du lägga till ett mellanslag mellan strängarna.
+Vi kan också använda "+=" för att lägga till en sträng i en befintlig variabel:
 
-```ruby
-fullständigt_namn = förnamn + " " + efternamn
-puts fullständigt_namn
+```Ruby
+greeting = "Hej"
+name = "Sara"
+
+greeting += name # output: "Hej Sara"
 ```
 
-Detta kommer nu att skriva ut "Sara Nilsson".
+## Deep Dive
 
-## Djupdykning
+En viktig sak att notera är att när vi sammanfogar två strängar så skapas en helt ny sträng, och de ursprungliga strängarna påverkas inte. Detta är särskilt viktigt att komma ihåg när man arbetar med variabler och vill ändra ett värde utan att påverka det ursprungliga värdet. Till exempel:
 
-En annan användbar funktion vid sammanfogning av strängar är metoden `.concat()`. Den kan användas för att lägga till en sträng till en annan och är särskilt användbar när du arbetar med variabler som har tilldelats flera strängar.
+```Ruby
+greeting = "Hej"
+name = "Sara"
 
-```ruby
-sträng1 = "Det här är en"
-sträng2 = "konkatenerad sträng"
+new_greeting = greeting + name # output: "Hej Sara"
 
-sträng1.concat(" ", sträng2)
-puts sträng1
+puts new_greeting # output: "Hej Sara"
+puts greeting # output: "Hej"
 ```
 
-Detta kommer att skriva ut "Det här är en konkatenerad sträng".
+Vi kan också använda specialtecknet "<<" för att sammanfoga strängar, vilket gör att den ursprungliga strängen påverkas:
 
-En annan metod som är användbar för att sammanslå strängar är `.join()`. Den kan användas för att kombinera ett antal strängar eller array-element till en enda sträng.
+```Ruby
+greeting = "Hej"
+name = "Sara"
 
-```ruby
-namn = ["Anna", "Lisa", "Johan"]
+greeting << name # output: "HejSara"
 
-resultat = namn.join(" ")
-puts resultat
+puts greeting # output: "HejSara"
 ```
 
-Detta kommer att skriva ut "Anna Lisa Johan".
+Det är också bra att känna till att när vi sammanfogar strängar så kan vi också använda variabler som innehåller andra datatyper, såsom siffror. I så fall kommer siffrorna att konverteras till strängar och sammanfogas som vanligt.
 
-## Se även
+## Se också
 
-* [Officiell Ruby dokumentation om String Concatenation](https://ruby-doc.org/core-2.6/String.html#method-i-%2B)
-* [Ruby Guides om String Concatenation](https://www.rubyguides.com/2019/02/ruby-string-concatenation/)
-* [Lär dig mer om Ruby på Codeacademy](https://www.codecademy.com/learn/learn-ruby)
+- [Svensk Ruby-förening](https://www.ruby-lang.se/)
+- [Officiell Ruby-dokumentation för strängar](https://ruby-doc.org/core-2.7.1/String.html)
+- [Concatenating i andra programmeringsspråk](https://en.wikipedia.org/wiki/Concatenation_(programming))

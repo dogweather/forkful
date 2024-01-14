@@ -1,101 +1,58 @@
 ---
-title:    "Arduino: 阅读文本文件"
+title:    "Arduino: 读取文本文件"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要阅读文本文件？阅读文本文件可以帮助开发人员更有效地存储和处理数据。
+#为什么选择读取文本文件
+在Arduino编程中，读取文本文件是一个非常有用的功能。它可以帮助你在代码中储存大量的文本信息，从而提高程序的灵活性和可读性。读取文本文件还可以让你轻松地更新和修改代码中的文本内容，而不需要重新编译程序。
 
-如何：在Arduino编程中，使用`SD`库可以轻松地读取文本文件。首先，我们需要将SD卡插入到Arduino板的SD卡槽中。接下来，在我们的程序中，我们需要包含`SD`库并设置SD卡的引脚。然后，我们可以使用`SD.open()`函数来打开文本文件，使用`SD.read()`函数逐行读取文件中的数据，并使用`SD.close()`函数来关闭文件。最后，我们可以使用Serial监视器来查看读取到的数据。以下是一个简单的例子：
+#如何实现读取文本文件
+首先，我们需要使用Arduino的SD库来读取文本文件。然后，我们需要使用`File`对象来打开和读取文本文件。接下来，我们可以使用`read()`函数来读取文件中的每一个字符，并将其存储在一个数组或字符串中。最后，我们可以使用`while`循环来读取整个文件，直到所有的内容都被读取完毕。
 
 ```Arduino
 #include <SD.h>
-
-const int chipSelect = 10; //设置SD卡的引脚
 File myFile;
 
 void setup() {
-  Serial.begin(9600); //初始化串口
-  while (!Serial) {
-    ; //等待串口连接完成
+  Serial.begin(9600);
+  //初始化SD卡
+  if (!SD.begin(4)) {
+    Serial.println("SD卡失败！");
   }
-
-  Serial.print("查找SD卡...");
-  if (!SD.begin(chipSelect)) { //初始化SD卡
-    Serial.println("无法找到SD卡");
-    return;
+  //打开文件，参数为文件名和打开方式（只读）
+  myFile = SD.open("data.txt", FILE_READ);
+  //如果文件无法打开，则输出错误信息
+  if (!myFile) {
+    Serial.println("无法打开文件！");
   }
-  Serial.println("成功");
+  //读取文件中的字符，并逐个打印
+  while (myFile.available()) {
+    char c = myFile.read();
+    Serial.print(c);
+  }
+  //关闭文件
+  myFile.close();
 }
 
 void loop() {
-  myFile = SD.open("data.txt"); //打开文本文件
-  if (myFile) {
-    while (myFile.available()) { //当文件可用时
-      Serial.write(myFile.read()); //读取文件中的数据并输出到串口
-    }
-    myFile.close(); //关闭文件
-  } else {
-    Serial.println("无法打开文件");
-  }
+  //你的代码
 }
 ```
 
-输出：
+输出结果：
 ```
-1
-2
-3
-4
-5
-6
+这是一个测试文件。
 ```
 
-深入了解：除了使用`SD`库外，我们还可以使用`SPI`库来读取文本文件。`SPI`库允许我们通过SPI总线来访问SD卡，能够提高读取速度。我们可以使用`SPI.transfer()`函数来逐字节传输数据，并使用`digitalWrite()`函数来控制CS引脚。以下是一个示例：
+#深入了解读取文本文件
+除了使用`read()`函数，我们还可以使用`readString()`函数来读取整个文件中的一行文本内容。我们可以使用`indexOf()`和`substring()`函数来查找和提取特定内容，从而实现更加复杂的文本处理。
 
-```Arduino
-#include <SPI.h>
+另外，我们也可以在读取文本文件时进行错误检测，例如文件是否打开成功，文件是否存在等。这样可以让我们的程序更加健壮和稳定。
 
-File myFile;
-uint8_t b1;
-
-void setup() {
-  Serial.begin(9600); //初始化串口
-  while (!Serial) {
-    ; //等待串口连接完成
-  }
-
-  digitalWrite(SS, HIGH); //设置CS引脚为高电平
-  SPI.begin(); //初始化SPI总线
-  myFile = SD.open("data.txt"); //打开文本文件
-}
-
-void loop() {
-  while (myFile.available()) { //当文件可用时
-    b1 = myFile.read(); //读取一个字节的数据
-    Serial.write(b1); //输出到串口
-  }
-  myFile.close(); //关闭文件
-}
-```
-
-输出：
-```
-1
-2
-3
-4
-5
-6
-```
-
- 请注意，在使用`SPI`库时，我们需要手动设置CS引脚和初始化SPI总线。此外，使用`SPI`库也可以对SD卡进行更多的控制，如读取SD卡的状态和写入数据。更多关于SPI库的介绍，请参考[官方文档](https://www.arduino.cc/en/Reference/SPI)。
-
-## 参考文献：
-[Arduino - SD](https://www.arduino.cc/en/Reference/SD)\
-[Arduino - SPI](https://www.arduino.cc/en/Reference/SPI)
-
-## 参考链接：
-[官方文档 - SD](https://www.arduino.cc/en/Reference/SD)\
-[官方文档 - SPI](https://www.arduino.cc/en/Reference/SPI)
+#相关链接
+- Arduino SD库文档：https://www.arduino.cc/en/Reference/SD
+- `read()`函数文档：https://www.arduino.cc/en/Reference/FileRead
+- `readString()`函数文档：https://www.arduino.cc/en/Reference/FileReadString

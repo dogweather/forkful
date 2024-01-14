@@ -1,83 +1,63 @@
 ---
-title:    "C: Lendo argumentos de linha de comando"
+title:    "C: Lendo argumentos da linha de comando"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que
+## Por que ler argumentos da linha de comando é importante?
 
-Se você é um programador iniciante ou já tem alguma experiência em C, é provável que já tenha ouvido falar sobre argumentos de linha de comando. Eles podem parecer intimidadores no começo, mas são uma ferramenta poderosa e essencial na programação. Neste post, vamos discutir por que é importante entender como ler argumentos de linha de comando e como fazê-lo em C.
+Ler argumentos da linha de comando é uma tarefa essencial para qualquer programador em C. É uma forma de fornecer informações adicionais para o programa ser executado sem a necessidade de alterar o código fonte. Além disso, pode ajudar a tornar o código mais flexível e reutilizável.
 
-##Como Fazer
+## Como ler argumentos da linha de comando em C
 
-Ler argumentos de linha de comando é uma maneira eficiente de fornecer entradas para um programa sem a necessidade de recompilar o código toda vez que deseja alterá-las. Para isso, utilizamos a função `main()` e os parâmetros `argc` e `argv`. 
+O primeiro passo para ler argumentos da linha de comando em C é incluir a biblioteca padrão `stdio.h`, que contém a função `main()`. Em seguida, é necessário declarar os parâmetros `argc` e `argv` na assinatura da função `main()`. O `argc` representa o número de argumentos passados na linha de comando, enquanto o `argv` é um vetor que contém os argumentos em si.
 
-O `argc` é um inteiro que indica o número de argumentos passados na linha de comando, enquanto o `argv` é um vetor de strings que contém os próprios argumentos. Vamos ver um exemplo de código:
+Dentro do bloco `main()`, podemos utilizar um loop `for` para percorrer o vetor `argv` e imprimir cada argumento individualmente, como mostrado no exemplo abaixo:
 
-```
+```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  printf("O número de argumentos é: %d \n", argc);
-  printf("O primeiro argumento é: %s\n", argv[0]);
-  
-  return 0;
+    for (int i = 0; i < argc; i++) {
+        printf("Argumento %d: %s \n", i, argv[i]);
+    }
+    return 0;
 }
 ```
-Neste exemplo, utilizamos a função `printf()` para exibir o número de argumentos e o primeiro argumento passado na linha de comando. Note que `argv` é um vetor, então o primeiro elemento é acessado através de `argv[0]`.
 
-Agora, vamos compilar e executar o nosso programa com alguns argumentos na linha de comando:
-
-```
-$ gcc arg.c -o arg
-$ ./arg arg1 arg2 arg3
-```
-
-A saída será:
-```
-O número de argumentos é: 4
-O primeiro argumento é: ./arg
-```
-Note que o primeiro argumento é sempre o nome do programa em si.
-
-Podemos utilizar um loop para acessar todos os argumentos passados na linha de comando:
+Ao executar esse código com os argumentos "apple", "banana" e "orange" na linha de comando, teremos o seguinte resultado:
 
 ```
+Argumento 0: ./programa
+Argumento 1: apple
+Argumento 2: banana
+Argumento 3: orange
+```
+
+Além disso, é possível utilizar funções como `strcmp()` ou `atoi()` para realizar operações com os argumentos lidos. Consulte a seção "Deep Dive" para mais informações sobre essas funções.
+
+## Mergulho profundo em argumentos da linha de comando
+
+Ao usar a função `strcmp()`, podemos comparar os argumentos com strings específicas para executar ações diferentes no programa. Por exemplo, se quisermos executar uma função específica apenas quando o primeiro argumento for "maçã", podemos fazer o seguinte:
+
+```C
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, char *argv[]) {
-  for (int i = 1; i < argc; i++) {
-    printf("Argumento %d: %s\n", i, argv[i]);
-  }
-  
-  return 0;
+    if (strcmp(argv[1], "maçã") == 0) {
+        // Executa uma função específica
+    }
+    return 0;
 }
 ```
 
-Agora, se executarmos o programa com mais argumentos:
+Já a função `atoi()` pode ser útil para converter argumentos que foram passados como strings para valores numéricos. Isso pode ser útil quando precisamos realizar cálculos com esses argumentos.
 
-```
-$ ./arg arg1 arg2 arg3
-```
+## Veja também
 
-A saída será:
-```
-Argumento 1: arg1
-Argumento 2: arg2
-Argumento 3: arg3
-```
-
-##Aprofundamento
-
-Além de ler argumentos simples, é possível também passar argumentos com opções na linha de comando. Por exemplo, utilizando a opção `-a` para ativar uma funcionalidade específica do programa. Para isso, podemos utilizar a biblioteca padrão `getopt.h`.
-
-Outra funcionalidade interessante é a possibilidade de passar argumentos com valores. Por exemplo, na linha de comando podemos escrever `./programa -n 10`, indicando que o valor de `-n` é 10. Para isso, podemos utilizar a função `atoi()` para converter strings em inteiros.
-
-É importante lembrar que os argumentos passados na linha de comando são sempre lidos como strings, então cabe ao programador realizar as conversões necessárias de acordo com o tipo de dado desejado.
-
-##Veja Também
-
-- [Documentação oficial do C](https://devdocs.io/c/)
-- [Tutorial sobre argumentos de linha de comando em C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Exemplos de códigos com argumentos de linha de comando](http://zona-utopia.blogspot.com/2009/01/como-passar-argumentos-de-linha-de.html)
+- [Documentação oficial do GCC sobre argumentos da linha de comando](https://gcc.gnu.org/onlinedocs/gcc-3.4.4/cpp/Initial-processing.html)
+- [Tutorial em vídeo sobre como ler argumentos da linha de comando em C](https://www.youtube.com/watch?v=MH4nCJzWnsk)
+- [Exemplos de utilização de argumentos da linha de comando em C](https://www.programiz.com/c-programming/c-command-line-arguments)

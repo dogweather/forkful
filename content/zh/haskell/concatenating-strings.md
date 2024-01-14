@@ -1,61 +1,76 @@
 ---
 title:    "Haskell: 连接字符串"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在编程中，我们经常需要将字符串链接在一起来构建新的文本。这可以帮助我们创建动态和个性化的输出，例如打印欢迎信息或拼写语句。 在Haskell中，我们可以使用一种称为字符串拼接的方法来实现这一点。
+在函数式编程中，字符串的拼接是一个非常常见的任务。通过将多个字符串连接在一起，我们可以创建出更复杂的字符串来表示更复杂的信息。这对于创建用户界面、日志记录和文本数据处理等任务非常有用。在Haskell中，我们可以通过使用内置的```++```运算符或者使用```concat```函数来拼接字符串。
 
-## 如何
+## 如何操作
 
-首先，让我们来看一个简单的例子：
-
-```Haskell
-str1 = "Hello"
-str2 = "World"
-str3 = str1 ++ " " ++ str2
-print str3
-```
-
-输出将是 "Hello World"。 上面的示例中，我们使用了两个加号（++）来将字符串链接起来。注意，我们需要在每个字符串之间添加空格，以便最终输出中的单词之间有空格。
-
-我们还可以用字符串拼接来构建更复杂的字符串。例如：
+让我们来看一个简单的例子，下面的代码将会创建一个包含三个元素的字符串列表，并将这三个元素连接在一起，最终输出整个字符串。
 
 ```Haskell
-firstName = "John"
-lastName = "Doe"
-age = 25
-info = "My name is " ++ firstName ++ " " ++ lastName ++ " and I am " ++ show age ++ " years old."
-print info
+let strings = ["Hello ", "world", "!"]
+let result = concat strings
+print result
 ```
 
-输出将是 "My name is John Doe and I am 25 years old."。 在这个例子中，我们使用了show函数来将age变量转换为字符串。
+输出：
+
+```Haskell
+Hello world!
+```
+
+我们也可以使用```++```运算符来连接字符串：
+
+```Haskell
+let hello = "Hello "
+let world = "world"
+let exclamation = "!"
+print (hello ++ world ++ exclamation)
+```
+
+输出：
+
+```
+Hello world!
+```
+
+不仅如此，我们还可以使用列表推导式来实现更复杂的字符串拼接操作。例如，下面的代码会自动生成一个包含数字1到10的字符串，并通过```concat```函数将它们连接起来。
+
+```Haskell
+let numbers = [1..10]
+let strings = [show x | x <- numbers]
+let result = concat strings
+print result
+```
+
+输出：
+
+```
+12345678910
+```
+
+注意，我们必须先将数字转换为字符串，才能使用```concat```函数进行拼接。
 
 ## 深入探讨
 
-在Haskell中，字符串实际上是由字符组成的列表。 在字符串拼接中，Haskell将使用一种称为"++"操作符的函数来将两个字符串列表连接起来。 如果我们尝试通过普通的数学运算符（如加号）来连接字符串，Haskell将无法识别它并报错。
+在Haskell中，字符串其实是char类型的列表。因此，在拼接字符串时，我们实际上是在拼接列表。这也意味着我们可以使用列表的常用函数来处理字符串，例如```map```函数和```filter```函数。
 
-另外，如果我们想要将大量的字符串链接在一起，最好使用一个称为concat函数的内置函数。例如：
-
-```Haskell
-strList = ["Haskell", "is", "a", "functional", "programming", "language"]
-bigStr = concat strList
-print bigStr
-```
-
-输出将是 "Haskell is a functional programming language."。 concat函数可以将一个字符串列表作为输入，并将它们连接成一个大型字符串。这比使用多个“++”操作符更高效。
+另外，当我们想要拼接多个字符串时，使用```concat```函数会比使用```++```运算符更高效。因为当我们使用```++```运算符拼接两个字符串时，实际上是先创建了一个新的字符串，然后将两个字符串复制到这个新的字符串中。而使用```concat```函数则可以直接将列表中的所有字符串连接起来，减少了中间步骤，从而提高了性能。
 
 ## 查看更多
 
-了解更多关于Haskell中字符串拼接的知识： 
-- [Haskell教程](https://wiki.haskell.org/Tutorials)
-- [字符串拼接文档](https://www.haskell.org/hoogle/?hoogle=concat)
-- [使用Haskell来处理字符串](https://www.tutorialspoint.com/haskell/haskell_string_concatenation.htm)
-
-谢谢阅读！见一下！
+- [Haskell字符串拼接教程（英文）](https://www.haskell.org/tutorial/strings.html)
+- [Haskell列表操作教程（中文）](https://wiki.haskell.org/Sequence)
+- [更多关于Haskell的函数式编程教程（中文）](https://www.haskell.org/school/zh-cn/lessons.html)
 
 ## 参考资料
+
 - [Haskell Wiki](https://wiki.haskell.org/)
+- [Haskell语言官方网站](https://www.haskell.org/)

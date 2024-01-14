@@ -1,32 +1,36 @@
 ---
 title:    "Clojure: Convertire una stringa in minuscolo"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Converting una stringa in lowercase è un'operazione comune e utile quando si lavora con dati di input in formato testuale. Ciò permette di uniformare i dati e semplificare le operazioni di confronto e ricerca.
 
-Convertire una stringa in minuscolo è un'operazione utile quando si lavora con testi e si desidera uniformare il formato delle parole. Ciò può essere utile, ad esempio, quando si esegue il confronto tra due stringhe o si vuole essere certi che il testo inserito dall'utente sia sempre in minuscolo.
-
-## Come Fare
-
-Per convertire una stringa in minuscolo in Clojure, è possibile utilizzare la funzione `lower-case` del namespace `clojure.string`. Ecco un esempio di codice:
+## Come fare
+Per convertire una stringa in lowercase in Clojure, è possibile utilizzare la funzione `clojure.string/lower-case`. Di seguito un esempio di codice con il risultato di output:
 
 ```Clojure
-(require '[clojure.string :as str])
-
-(str/lower-case "CIAO AMICI") 
+(clojure.string/lower-case "CIAO AMICI")
 ```
 
-Questo codice produrrà l'output "ciao amici". La funzione `lower-case` prende come input una stringa e restituisce la stessa stringa con tutti i caratteri convertiti in minuscolo.
+Output: `ciao amici`
+
+È importante notare che la funzione `lower-case` può gestire sia stringhe alfanumeriche che caratteri speciali come accenti e simboli.
 
 ## Approfondimento
+La conversione di una stringa in lowercase può essere influenzata da diversi fattori, come la codifica dei caratteri e le impostazioni regionali del sistema in cui viene eseguito il codice. Inoltre, è possibile utilizzare il metodo `case` per gestire stringhe con più parole, come nel seguente esempio:
 
-La funzione `lower-case` utilizza l'Unicode Standard per gestire i diversi tipi di carattere. Ciò significa che in alcuni casi può essere imprevedibile la conversione di determinati caratteri speciali o accentati. Per una gestione più controllata delle conversioni, è possibile utilizzare la funzione `lower-case-locales` che prende in input una locale e una stringa e restituisce la stringa con i caratteri convertiti in minuscolo secondo le regole della locale specificata.
+```Clojure
+(clojure.string/lower-case (case "CIAO AMICI" :lower))
+```
 
-## Vedi Anche
+Output: `ciao amici`
 
-- [Documentation for clojure.string](https://clojuredocs.org/clojure.string/lower-case)
-- [Unicode Standard](https://www.unicode.org)
-- [Locale-specific mapping for lower-case](https://docs.oracle.com/javase/7/docs/api/java/text/Normalizer.html)
+Questo metodo può essere utile in situazioni in cui si desidera mantenere la prima lettera di ogni parola maiuscola, come nelle intestazioni di un documento.
+
+## Vedi anche
+- [Documentation for `clojure.string/lower-case`](https://clojuredocs.org/clojure.string/lower-case)
+- [Explanation of `case` in Clojure](https://clojuredocs.org/clojure.core/case)

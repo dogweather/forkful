@@ -1,51 +1,40 @@
 ---
-title:    "Elm: Översättning av titel: Omvandla en sträng till gemener"
+title:    "Elm: Omvandla en sträng till gemener"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener är en vanlig uppgift inom programmering, särskilt när man hanterar användarinmatning eller behöver göra jämförelser mellan olika strängar. Elm har inbyggda funktioner för att göra just detta, vilket gör det enkelt och effektivt att hantera gemener i sina program.
+Att konvertera en sträng till gemener är en vanlig uppgift inom programmering. Det är användbart om du till exempel vill jämföra två strängar utan att oroa dig för storleks- eller skiftlägesändringar. Med hjälp av Elm kan du enkelt lösa detta problem på ett effektivt sätt.
 
-## Så här gör du
+## Hur man gör
 
-För att konvertera en sträng till gemener i Elm, kan du använda funktionen `String.toLower` som tar in en sträng som argument och returnerar en ny sträng med gemener. Här är ett exempel:
-
-```elm
-strang = "Hej Världen"
-gemener = String.toLower strang
-
-elm repl
-> gemener
-"hej världen"
+```Elm
+toLowercase : String -> String
+toLowercase str =
+    String.toLower str
 ```
 
-Vi deklarerar en variabel `strang` med värdet "Hej Världen" och sedan använder vi funktionen `String.toLower` för att skapa en ny variabel `gemener` som innehåller den konverterade strängen. Med `elm repl` kan vi sedan testa vår kod och se att resultatet blir "hej världen".
+I denna enkla kod stycke, använder vi funktionen `toLower` från Elm's `String` modul för att konvertera en sträng till gemener. Vi skickar helt enkelt in vår önskade sträng som argument och funktionen returnerar en ny sträng med alla gemener. Här är ett exempel på hur vår funktion skulle fungera:
 
-Det är också möjligt att använda funktionen `String.toLower` på specifika delar av en sträng, istället för hela strängen. Detta gör man genom att använda funktionen `String.slice` för att välja vilka delar av strängen man vill konvertera. Här är ett exempel på detta:
-
-```elm
-strang = "Hej Världen"
-förstaTre = String.slice 0 3 strang
-gemener = String.toLower förstaTre
-
-elm repl
-> gemener
-"hej"
+```Elm
+toLowercase "Elm Programmering"
 ```
 
-Vi väljer första tre tecknen i vår ursprungliga sträng "Hej Världen" och konverterar enbart dessa till gemener. Resultatet blir "hej" i vår variabel `gemener`.
+Output:
+```Elm
+"elm programmering"
+```
 
-## Djupdykning
+## Djupdyka
 
-Under ytan använder sig funktionen `String.toLower` av en inbyggd funktion som heter `Char.toLower`. Denna funktion fungerar på ett liknande sätt men tar in enstaka tecken istället för en hel sträng. Det är denna funktion som används för att konvertera varje enskilt tecken i en sträng när vi använder `String.toLower`.
-
-En annan intressant aspekt är att funktionen `String.toLower` endast konverterar tecken som finns definierade i Unicode-standarder. Det betyder att vissa tecken från andra språk eller symboler kanske inte konverteras. Om man vill vara säker på att konvertera alla tecken till gemener i en sträng, kan man istället använda funktionen `String.foldr`. Detta ger lite mer kontroll över processen och gör det möjligt att anpassa konverteringen efter sina specifika behov.
+Att konvertera en sträng till gemener kan verka som en enkel uppgift, men det finns faktiskt flera saker att tänka på. Till exempel kan vissa språk ha specialtecken eller bokstäver med accenter som behöver angripas på ett annat sätt för att konvertera dem till gemener. I sådana fall kan det vara användbart att använda sig av en annan funktion från Elm's `String` modul, såsom `toLowerList` som hanterar mer komplexa fall av konvertering.
 
 ## Se även
 
-- Officiell dokumentation för `String`
-- Officiell dokumentation för `Char`
-- Officiell dokumentation för Unicode-standarder
+- [Elm's String Modul](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [String.toLower dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Elm Programmering för nybörjare](https://guide.elm-lang.org/)

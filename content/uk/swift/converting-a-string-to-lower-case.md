@@ -1,49 +1,44 @@
 ---
-title:    "Swift: Перетворення рядка в нижній регістр"
+title:    "Swift: Перетворення рядка на нижній регістр"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Конвертація рядка в нижній регістр є корисним навичкою для програмістів у різних сферах веб-розробки, додатків для мобільних пристроїв та багатьох інших випадків. Це дозволяє ефективно маніпулювати і обробляти дані, що дає змогу покращити якість програми або веб-сайту.
+У програмуванні дуже часто зустрічається необхідність конвертування тексту до нижнього регістру. Це може стати корисним, наприклад, для порівняння двох рядків.
 
 ## Як
 
-Конвертування рядка в нижній регістр в Swift дуже просте. Використовуючи вбудовану функцію `.lowercased()`, ми можемо легко змінити всі літери в рядку на нижній регістр. Нижче показана приклад коду та вихідний результат:
+Існує кілька шляхів конвертування рядка до нижнього регістру. Давайте розглянемо кілька прикладів:
 
 ```Swift
-let text = "Дивовижній Статті"
-let lowerCaseText = text.lowercased()
-
-print(lowerCaseText) // виведе: дивовижній статті
+let name = "ВАСИЛЬ"
+print(name.lowercased())
 ```
+Виводом буде `василь`.
 
-Також, можна використовувати цю функцію для конкретних символів замість всього рядка. Наприклад:
+За допомогою цього методу ми можемо швидко і просто перетворити будь-який рядок до нижнього регістру.
 
 ```Swift
-let text = "Дивовижній Статті"
-let lowerCaseFirstLetter = text.lowercased().first!
-
-print(lowerCaseFirstLetter) // виведе: д
+var message = "ПРИВЕТ, мой друг!"
+message = message.lowercased()
+print(message)
 ```
+Виводом буде `привет, мой друг!`.
 
-##Глибше
+## Детальний розбір
 
-Крім вбудованої функції `.lowercased()`, є інші способи конвертування рядка в нижній регістр в Swift. Наприклад, можна використовувати функцію `folding()`, яка виконує додаткову обробку рядка, наприклад, видаляє діакритичні знаки.
+Кодування рядка до нижнього регістру є важливим для багатьох завдань. Наприклад, при порівнянні двох рядків, ігноруючи регістр, ми отримаємо більш точне порівняння. Або ж при використанні пошуку тексту, конвертування до нижнього регістру дозволить знайти слово, незалежно від того, який регістр в ньому використовується.
 
-```Swift
-let text = "Дивовижній Статті"
-let convertedText = text.folding(options: .diacriticInsensitive, locale: .current)
+Також варто звернути увагу, що метод `lowercased()` нічого не змінює у вихідному рядку, а повертає новий рядок у нижньому регістрі. Це дозволяє зберегти вихідний рядок для подальшого використання.
 
-print(convertedText) // виведе: дивовижний статті
-```
+## Дивіться також
 
-Також можна використовувати метод `.replacingOccurrences()`, щоб замінити певні символи у рядку, і використати функцію `.uppercased()` для отримання рядка у верхньому регістрі.
+- [Apple документація про метод `lowercased()`](https://developer.apple.com/documentation/swift/string/2995369-lowercased/)
 
-## Дивись також
+- [How to Convert a String to Lowercase in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-lowercase-in-swift)
 
-- [Документація Apple про вбудовану функцію `lowercased()`](https://developer.apple.com/documentation/swift/string/1786942-lowercased)
-- [Підручник з основ Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
-- [Туторіал по роботі з рядками в Swift](https://learnappdevelopment.com/swift-strings/)
+- [Converting a String to Lowercase in Swift Tutorial](https://www.ioscreator.com/tutorials/convert-string-to-lowercase-swift)

@@ -1,41 +1,39 @@
 ---
-title:    "TypeScript: Kirjoittaminen standardivirheeseen"
+title:    "TypeScript: Ohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kirjoittaa standardivirheeseen
-Standardivirheen kirjoittaminen on tärkeä taito, jota jokaisen TypeScript-ohjelmoijan tulisi hallita. Se mahdollistaa virheiden ja tietojen seurannan ohjelman suorituksen aikana, mikä helpottaa ohjelmointivirheiden korjaamista ja ohjelman toimivuuden parantamista.
+## Miksi
 
-## Kuinka: Miten kirjoittaa standardivirheeseen
-Standardivirheeseen kirjoittaminen TypeScriptissä on helppoa. Ensiksi, käytä ```console.error``` -funktiota ja anna sille haluamasi virheilmoituksen viesti. Esimerkiksi:
-```
-TypeScript
-console.error("Tämä on virheilmoitus!");
-```
-Tuloksena saat seuraavan virheilmoituksen:
-```
-Tämä on virheilmoitus!
-```
-Voit myös lisätä tulostettavan muuttujien arvoja viestin mukaan, käyttämällä merkintöjä ```${variable}```. Esimerkiksi:
-```
-TypeScript
-let nimi = "Matti";
-console.error(`Tervetuloa ${nimi}!`);
-```
-Tuloksena saat seuraavan virheilmoituksen:
-```
-Tervetuloa Matti!
-```
-Nyt tiedät kuinka kirjoitat standardivirheeseen TypeScriptissä!
+Kirjoittaessa TypeScript-ohjelmaa voi ajoittain törmätä virheisiin, jotka eivät näy tavallisessa koodin suorituksessa. Tällöin on hyödyllistä kirjoittaa virhetiedot standardierroriin, jotta ne voidaan nähdä ja käsitellä erikseen.
 
-## Syvemmälle: Lisätietoa standardivirheeseen kirjoittamisesta
-Standardivirheeseen kirjoittaminen ei rajoitu vain virheilmoituksiin, vaan sitä voidaan käyttää myös ohjelman kulun seurantaan ja tietojen tulostamiseen. Tämä on hyödyllistä esimerkiksi suoritusaikana tapahtuvien muuttujien arvojen tarkistamiseen.
+## Miten tehdä
 
-Lisäksi, voit määrittää standardivirheeseen kirjoitettavan viestin tason, jolloin se näkyy erilaisten merkintöjen mukaan konsolissa. Tämä auttaa erilaisten virheiden tunnistamisessa ja korjaamisessa.
+Käytä `console.error()` -funktiota kirjoittaaksesi viestin standardierroriin. Esimerkiksi:
+
+```TypeScript
+let num = 10;
+
+if (num > 5) {
+  console.error("Luku on suurempi kuin 5!");
+}
+```
+
+Tämä koodi tulostaa virheen standardierroriin, joka voidaan nähdä konsolissa tai selaimen kehittäjätyökaluissa:
+
+`Luku on suurempi kuin 5!`
+
+## Syvempi sukellus
+
+Standardierrorin käyttö on hyödyllistä, koska se antaa mahdollisuuden eritellä ja käsitellä tiettyjä virheitä erikseen. Tällöin ohjelmaan voidaan lisätä lisälogiikkaa, joka käsittelee vain standardierroriin tulleet virheet.
+
+Lisäksi, standardierroria käytetään usein yhdessä muiden virheenkäsittelymekanismien, kuten `try/catch` -lohkojen kanssa, joiden avulla voidaan vielä paremmin hallita ohjelman suorituksessa mahdollisesti ilmeneviä virheitä.
 
 ## Katso myös
-- [TypeScript virheenkäsittely](https://www.typescriptlang.org/docs/handbook/error-handling.html)
-- [Standardivirhe sovilla](https://nodejs.org/api/console.html#console_console_error_data_args)
-- [Debuggaus virheet](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-errors)
+
+- [Virheenkäsittely TypeScriptissä](https://www.typescriptlang.org/docs/handbook/errors.html)
+- [Konsolin käyttö TypeScriptissä](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#new-for-typescript-23-log-error-warnings-on-standard-error)
+- [Standardierrorin merkitys ohjelmoinnissa](https://techterms.com/definition/standard_error)

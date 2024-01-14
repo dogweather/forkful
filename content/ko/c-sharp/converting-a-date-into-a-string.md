@@ -1,36 +1,64 @@
 ---
-title:    "C#: 날짜를 문자열로 변환하기."
+title:    "C#: 날짜를 문자열로 변환하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜:
+## 왜
 
-사람들이 날짜를 문자열로 변환하는 이유는 유용한 프로그래밍 기능 중 하나입니다. 문자열로 변환된 날짜를 사용하면 프로그램에서 날짜를 쉽게 출력할 수 있으며, 사용자에게 날짜 형식을 자유롭게 선택할 수 있도록 합니다.
+날짜를 문자열로 전환하는 것에 대해 생각한 적이 있습니까? 프로그래밍에서 날짜 형식을 사용하는 것은 꽤 흔하기 때문에, 많은 사람들은 날짜를 문자열로 변환하는 기술을 사용하게 됩니다. 이로 인해 코드를 읽는 데 도움이 될 수 있고, 데이터베이스나 파일과 같은 외부 소스와의 교류도 가능합니다.
 
-## 어떻게:
+## 방법
 
-날짜를 문자열로 변환하는 방법은 간단합니다. 먼저 ```C# DateTime```을 사용하여 날짜를 입력받아 변수에 저장합니다. 그런 다음 ```C# .ToString()``` 메서드를 사용하여 지정된 형식으로 날짜를 문자열로 변환합니다. 아래는 날짜를 문자열로 변환하는 예제 코드입니다.
+만약 여러분이 날짜를 문자열로 변환하는 법을 찾고 있다면, 당신은 운이 좋습니다. 우리는 여러분에게 C#에서 날짜를 문자열로 변환하는 쉬운 방법을 소개하겠습니다.
 
-```C#
-// 현재 날짜를 저장하는 변수
-DateTime now = DateTime.Now;
+```
+C# 
+DateTime date = new DateTime(2020, 6, 10);
 
-// yyyy/MM/dd 형식으로 날짜를 문자열로 변환
-string dateAsString = now.ToString("yyyy/MM/dd");
+// 가장 일반적인 날짜 형식으로 변환
+string dateString = date.ToString("d");
 
-// 출력 결과: 2021/07/20
-Console.WriteLine(dateAsString);
+// "6/10/2020" 출력
+Console.WriteLine(dateString);
+
+// 사용자 정의 형식으로 변환
+string customDateString = date.ToString("yyyy-MM-dd");
+
+// "2020-06-10" 출력
+Console.WriteLine(customDateString);
 ```
 
-위의 예제 코드에서 ```now.ToString("yyyy/MM/dd")``` 부분에서 ```yyyy/MM/dd```는 원하는 날짜 형식을 지정할 수 있습니다. 이를 다른 형식으로 바꾸면 다른 형태의 문자열로 변환될 수 있습니다. 예를 들어 ```now.ToString("MM/dd/yyyy")```는 07/20/2021과 같은 형식으로 날짜를 출력할 것입니다.
+위의 예제 코드를 보면, 우리는 굳이 날짜를 문자열로 변환하려면 `ToString()` 메서드를 사용하면 된다는 것을 알 수 있습니다. 이 메서드는 매개변수로 날짜를 문자열로 변환할 형식을 받게 되며, 날짜를 원하는 식으로 나타낼 수 있습니다.
 
-## 깊게 파헤치기:
+## 깊이 파고들기
 
-실제로 날짜를 문자열로 변환하는 프로세스는 영어로 된 표현이 나오기 쉽습니다. 하지만 ```C#```은 언어적 설정을 바꿀 수 있기 때문에 다양한 언어에서 동작할 수 있습니다. 또한 ```C# .ToString()``` 메서드는 다양한 기능을 제공하며 원하는 형식으로 날짜를 변환할 수 있도록 합니다. 예를 들어 특정 문화권에서 흔히 사용하는 날짜 형식을 변환하거나 날짜와 시간을 모두 출력하는 것도 가능합니다.
+`ToString()` 메서드는 날짜를 문자열로 변환하는 가장 일반적이면서도 간단한 방법입니다. 그러나, 여러분이 더 복잡한 형식의 날짜를 원한다면 어떨까요? 이를 위해서는 날짜 포매터를 생성해야 합니다. 날짜 포매터는 날짜를 문자열로 변환하기 위해 사용되는 클래스입니다. 아래는 `DateTime` 변수를 사용하여 날짜를 문자열로 변환하는 예제 코드입니다.
 
-## 참고자료:
+```
+C#
+DateTime date = new DateTime(2020, 6, 10);
 
-- [C# 날짜를 문자열로 변환하는 방법](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/how-to-convert-a-string-to-a-datetime)
-- [C# .ToString() 메서드 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime.tostring?view=net-5.0)
+// 날짜 포매터 생성
+DateTimeFormatter formatter = new DateTimeFormatter("yyyyMMdd");
+
+// 날짜를 문자열로 변환
+string dateString = formatter.Format(date);
+
+// "20200610" 출력
+Console.WriteLine(dateString);
+```
+
+위의 예제 코드에서 우리는 먼저 `DateTimeFormatter` 클래스를 사용하여 `yyyyMMdd` 형식의 날짜 포매터를 생성했습니다. 그리고 `Format()` 메서드를 사용하여 `DateTime` 변수를 문자열로 변환했습니다. 이렇게 하면 우리는 더 복잡한 날짜 형식을 원하는대로 나타낼 수 있습니다.
+
+## 관련 정보
+
+- [C# DateTime.ToString() 메서드 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime.tostring?view=netcore-3.1)
+- [C# DateTime 포맷 문자열 문서](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [C# DateTime 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=netcore-3.1)
+
+## 참고
+
+날짜를 문자열로 변환하는 것은 매우 유용한 기술입니다. 여러분이 날짜 형식을 사용하는 프로그래밍 작업을 할 때, 이 기술을 활용해보세요. 그리고 우리의 이 블로그 포스트를 참고해 주셔서 감사합니다!

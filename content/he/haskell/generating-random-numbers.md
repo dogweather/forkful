@@ -1,55 +1,46 @@
 ---
 title:    "Haskell: יצירת מספרים אקראיים"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-בעולם התכנות קיים צורך רב בשימוש במספרים אקראיים לפעמים. זאת יכולה להיות בשביל מיון נתונים או יצירת ניסויים. ב-Haskell, ניתן לתכנת בקלות ובפשטות אלגוריתמים ליצירת מספרים אקראיים.
+בעולם התכנות, פעולת ההגרלה (randomization) היא כלי חשוב ונפוץ. היא משמשת למגוון רב של מטרות, כגון בניית משחקים, יצירת תמונות מיוחדות, והגברת תחושת חשיבה יצירתית בתוכניות. בשפת Haskell, אפשר ליצור רצף מספרים אקראיים בקלות רבה ובמיוחד בעזרת ספריית `random`.
 
-## איך לעשות זאת
+## כיצד לעשות זאת
 
-המודול 'random' מאפשר לנו ליצור מספרים אקראיים בפשטות. תחילה, נצטרך לייבא את המודול:
+הנה דוגמא פשוטה לפונקציה המייצרת מספרים אקראיים באמצעות הספרייה `random`:
 
 ```Haskell
 import System.Random
+
+-- פונקציה המחזירה מספר שלם אקראי בין 1 ל-10
+randomInt :: IO Int
+randomInt = randomRIO (1,10)
 ```
 
-לאחר מכן, נוצר מחולל מספרים אקראיים עם הפונקציה 'random', אשר מקבלת טווח של מספרים ומחזירה מספר אקראי בתוך הטווח זה:
+הפונקציה `randomInt` משתמשת בפעולת ההגרלה `randomRIO` שמקבלת כפרמטרים שני מספרים שמגדירים תחום המספרים האקראיים המשתנים עליו הפונקציה תפעל. על מנת להשתמש בפונקציה `randomInt`, נצטרך להיות תחילה בחבילת `System.Random` ולהשתמש במושג של מונד Hellermonde. פתחו תוכניית Haskell חדשה ונגיד שם פעם `randomInt` כדי להיעזר בנוסחאת המתרגם הנ"ל.
+
+## למעמיקים
+
+במקום להשתמש בפונקציות מובנות כמו `randomRIO`, ניתן לבנות מחולל מספרים אקראיים משלנו בעזרת המודול `System.Random`.
 
 ```Haskell
-random :: (RandomGen g, Random a) => g -> (a, g)
+import System.Random
+
+-- מחולל מספרים אקראיים עם זריקת המזל
+random :: Int -> Int -> [Int]
+random seed range = map (`mod` range) $ iterate (nextSeed seed) seed
+  where
+    nextSeed :: Int -> Int -> Int
+    nextSeed seed = (3 * seed + 1) `mod` (2 ^ 31)
+
+-- פונקציה המוחזרת מספר שלם אקראי בטווח מסוים
+randomInt :: Int -> Int -> Int -> Int
+randomInt seed range index = random seed range !! index
 ```
 
-ניתן להגדיר טווח עם הפונקציה 'randomR', אשר מקבלת טווח של מספרים ומחזירה מספר אקראי בתוך הטווח זה:
-
-```Haskell
-randomR :: (RandomGen g, Random a) => (a, a) -> g -> (a, g)
-```
-
-לדוגמה, כדי ליצור מספר אקראי בין 1 ל-100 נוכל להשתמש בפקודות הבאות:
-
-```Haskell
-gen <- getStdGen
-let (num, newGen) = randomR (1, 100) gen
-putStrLn ("Your random number is: " ++ show num)
-```
-
-בכל פעם שנרצה ליצור מספר אקראי חדש, נוכל לעשות זאת עם המחולל שנוצר.
-
-## העמקה
-
-ב-Haskell, ניתן לייצר מספרים אקראיים לפי כל תבנית שנרצה, באמצעות פונקציות נוספות מתוך המודול 'random'. לדוגמה, ניתן לייצר מספרים אקראיים מתוך תבנית של רקע (כמו מערכת צבעים RGB):
-
-```Haskell
-randomRGB :: IO (Int, Int, Int)
-randomRGB = do
-  r <- randomRIO (0, 255)
-  g <- randomRIO (0, 255)
-  b <- randomRIO (0, 255)
-  return (r, g, b)
-```
-
-כמו כן, ניתן להשתמש במגוון פונקציות לשנות את
+המחולל `random` משתמש בזריקת המזל (random seed) כדי לייצר ר

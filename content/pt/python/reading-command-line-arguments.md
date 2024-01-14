@@ -1,50 +1,53 @@
 ---
 title:    "Python: Lendo argumentos da linha de comando"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos de linha de comando em Python?
+# Por que ler argumentos da linha de comando em Python?
 
-Ler argumentos de linha de comando é uma habilidade essencial para qualquer programador Python. Ao dominar essa técnica, você poderá tornar seus scripts e programas mais dinâmicos e interativos, permitindo que os usuários forneçam inputs diretamente ao executar o código.
+Ler argumentos da linha de comando em Python é uma habilidade essencial para qualquer programador. Isso permite que você crie programas mais interativos e versáteis, que podem ser executados com diferentes entradas a partir da linha de comando. Além disso, dominar a leitura de argumentos da linha de comando é um sinal de proficiência em Python e pode ajudá-lo a se destacar na comunidade de programação.
 
 ## Como fazer isso?
 
-Em python, podemos ler argumentos de linha de comando usando o módulo `sys` e a função `argv`. Primeiro, importamos o módulo `sys` em nosso código:
+Para ler argumentos da linha de comando em Python, você precisa importar o módulo `sys`. Em seguida, você pode acessar os argumentos fornecidos na linha de comando através da variável `argv`. O primeiro argumento sempre será o nome do seu código Python, seguido dos argumentos específicos que você deseja fornecer.
 
-```python
-import sys
-```
-
-Em seguida, podemos usar a função `argv` para acessar os argumentos fornecidos na linha de comando. Por exemplo, se executarmos o seguinte comando no terminal:
-
-```bash
-python my_script.py arg1 arg2
-```
-
-No código, podemos acessar os argumentos "arg1" e "arg2" da seguinte maneira:
+Aqui está um exemplo de como você pode ler dois argumentos da linha de comando e imprimir seu conteúdo:
 
 ```python
 import sys
 
-# Acessando o primeiro argumento
-print(sys.argv[1]) # output: "arg1"
+argumentos = sys.argv
 
-# Acessando o segundo argumento
-print(sys.argv[2]) # output: "arg2"
+print("Nome do script:", argumentos[0])
+print("Primeiro argumento:", argumentos[1])
+print("Segundo argumento:", argumentos[2])
+
 ```
 
-Vale ressaltar que os argumentos são armazenados como strings e podem ser convertidos para outros tipos de dados, se necessário. Além disso, o primeiro argumento sempre será o nome do arquivo do script, por isso é comum ignorá-lo e começar a acessar os argumentos a partir do índice 1.
+Ao executar esse código através da linha de comando com os argumentos "python blog.py post1 post2", você terá a seguinte saída:
 
-## Profundando no assunto
+```
+Nome do script: blog.py 
+Primeiro argumento: post1 
+Segundo argumento: post2
+```
 
-Além da função `argv`, o módulo `sys` também possui outras funções úteis para lidar com argumentos de linha de comando, como `stdin` e `stdout`. Além disso, podemos usar o módulo `argparse` para criar interfaces mais sofisticadas para lidar com argumentos e opções de linha de comando.
+Você pode acessar os argumentos da linha de comando como strings e usar como entrada para suas funções e algoritmos. Isso permite que seus programas sejam mais personalizáveis e dinâmicos.
 
-Outra dica importante é sempre tratar possíveis erros ao ler argumentos de linha de comando, como quando o usuário não fornece argumentos suficientes ou fornece argumentos inválidos.
+## Mergulho Profundo
+
+Ao ler argumentos da linha de comando, é importante considerar algumas práticas recomendadas. Aqui estão algumas dicas para ajudá-lo a lidar com argumentos da linha de comando em seus projetos Python:
+
+- Lembre-se de verificar a quantidade de argumentos fornecidos pelo usuário antes de tentar acessá-los. Você pode usar a função `len()` para verificar o comprimento da lista de argumentos.
+
+- Se você quiser fornecer opções ao usuário (como "ajuda" ou "versão"), pode usar o módulo `argparse` em vez de acessar os argumentos diretamente através da variável `argv`.
+
+- Seus argumentos podem conter espaços ou caracteres especiais que precisam ser tratados adequadamente. Você pode usar a biblioteca `shlex` para ajudá-lo a separar seus argumentos em uma lista segura.
 
 ## Veja também
 
-- [Documentação oficial do módulo sys](https://docs.python.org/3/library/sys.html)
-- [Documentação oficial do módulo argparse](https://docs.python.org/3/library/argparse.html)
-- [Tutorial em vídeo sobre argumentos de linha de comando em Python](https://www.youtube.com/watch?v=fAV7Kf5VjNM)
+- [Documentação oficial do Python sobre leitura de argumentos da linha de comando](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Guia de Prática Recomendada do Real Python sobre como lidar com argumentos da linha de comando](https://realpython.com/python-command-line-arguments/)

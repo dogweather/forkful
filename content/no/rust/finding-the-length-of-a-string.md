@@ -1,52 +1,53 @@
 ---
-title:    "Rust: Å finne lengden på en streng"
+title:    "Rust: Dette er tittelen på en artikkel om dataprogrammering: Å finne lengden av en streng."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Hvis du er en programmerer som er interessert i effektivitet og lavere minneforbruk, vil du kanskje lurer på hvorfor det er viktig å finne lengden av en streng i Rust. Å kunne finne lengden av en streng på en effektiv måte er en viktig ferdighet i Rust-programmering, spesielt når du håndterer store mengder data.
+Rust er et kraftig og effektivt programmeringsspråk som er stadig mer populært blant utviklere. Det er designet for å hjelpe deg med å skrive sikker og rask kode, og har også et sterkt fokus på parallell programmering. En av de grunnleggende oppgavene i enhver programmeringsoppgave er å finne lengden på en streng. I denne bloggposten lærer du hvordan du gjør akkurat det ved hjelp av Rust-programmeringsspråket. 
 
-## Slik gjør du det
+## Slik gjør du det 
 
-For å finne lengden av en streng i Rust, kan du bruke funksjonen `len()` fra `std::str` biblioteket. Her er et eksempel på hvordan dette kan gjøres:
+Først må du importere standardbiblioteket for å kunne jobbe med strenger i Rust: 
 
-```
-use std::str;
+```Rust 
+use std::str; 
+``` 
 
-fn main() {
-  let my_string = "Hei, verden!";
-  let length = len(my_string);
-  println!("Lengden av strengen er: {}", length);
-}
-```
+Deretter kan du bruke funksjonen "len" for å finne lengden på en streng: 
 
-Dette vil gi følgende utskrift:
+```Rust 
+let string = "Hei, verden!"; 
+let length = str::len(string); 
+println!("Lengden på strengen er {}", length); 
+``` 
 
-```
-Lengden av strengen er: 12
-```
+Output: 
+Lengden på strengen er 13 
 
-Du kan også bruke `.len()` metoden på en streng for å finne lengden:
+Du kan også bruke metoden "len" på en streng-verdi, uten å importere standardbiblioteket: 
 
-```
-fn main() {
-  let my_string = "Hei, verden!";
-  let length = my_string.len();
-  println!("Lengden av strengen er: {}", length);
-}
-```
+```Rust 
+let string = "Hei, verden!"; 
+let length = string.len(); 
+println!("Lengden på strengen er {}", length); 
+``` 
 
-Dette gir samme resultat som eksempelet ovenfor.
+Output: 
+Lengden på strengen er 13 
 
-## Utforske videre
+Merk at begge disse metodene tar hensyn til unicode-tegn, så den faktiske lengden på en streng kan variere avhengig av antall tegn i strengen. 
 
-Å finne lengden av en streng i Rust kan virke enkelt, men det er noen ting som er verdt å utforske videre. For eksempel, hvordan fungerer `len()` funksjonen egentlig og hvordan håndterer Rust forskjellige typer strenger? Du kan også se nærmere på ytelsesforskjeller mellom å bruke `.len()` metoden og `len()` funksjonen.
+## Dypdykk 
 
-## Se også
+I Rust er en streng en samling av utf8-bytes, mens en unicode kodepoeng kan bestå av en eller flere utf8-bytes. Dette betyr at en enkelt unicode karakter kan ha en annen bytelengde enn en vanlig ascii-karakter. Derfor er det viktig å være oppmerksom på dette når du jobber med strenger i Rust. Det anbefales også å bruke metoden "chars" for å iterere gjennom en streng og få tilgang til hver unicode karakter enkeltvis. 
 
-- [Rust Documentation: std::str](https://doc.rust-lang.org/std/str/index.html)
-- [Rust by Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [Strings in Rust: A Deep Dive](https://blog.logrocket.com/strings-in-rust-a-deep-dive/)
+## Se også 
+
+- [The Rust Programming Language](https://www.rust-lang.org) 
+- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/index.html) 
+- [Rust String Types](https://doc.rust-lang.org/std/string/struct.String.html)

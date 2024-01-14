@@ -1,53 +1,51 @@
 ---
-title:    "Java: 文字列の結合"
+title:    "Java: 文字列の連結"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列を連結するのか
+## なぜ
 
-Javaプログラミングで重要な概念の1つは、文字列を連結することです。文字列を連結することは、簡単なタスクのように見えますが、実際には非常に有用な方法です。この記事では、なぜ文字列を連結するのか、そしてどのようにするのかを紹介します。
+文字列を連結させることに関わる理由について説明します。Javaのプログラミングにおいて、文字列の連結は非常に重要な操作です。複数の文字列を一つに合体させることで、より複雑で役立つプログラムを作ることができます。また、出力したい文字列の形式を自由に設定することができます。
 
 ## 方法
 
-文字列を連結するには、Javaで組み込みのメソッドである`concat()`を使用します。このメソッドは、2つの文字列を結合し、新しい文字列を返します。以下の例では、`concat()`を使用して2つの文字列を結合し、それを新しい変数に代入しています。
+文字列を連結させるためには、文字列を加算演算子（+）で結合することができます。例えば、"Hello"と"World"を連結させる場合は次のように記述します。
 
 ```Java
 String str1 = "Hello";
 String str2 = "World";
 
-String combinedString = str1.concat(str2);
+String result = str1 + str2;
 
-System.out.println(combinedString);
+System.out.println(result); //output: HelloWorld
 ```
 
-出力は次のようになります。
-
-```
-HelloWorld
-```
-
-また、`+`演算子を使用することでも文字列を連結することができます。
+複数の文字列を連結させる場合は、文字列変数を区切り記号として文字列を加えたり、文字列ライブラリのメソッドを使用することができます。以下は、複数の文字列をスペースで区切って連結させる例です。
 
 ```Java
 String str1 = "Hello";
 String str2 = "World";
+String str3 = "from";
+String str4 = "Java";
 
-String combinedString = str1 + str2;
+String result = str1 + " " + str2 + " " + str3 + " " + str4;
 
-System.out.println(combinedString);
+System.out.println(result); //output: Hello World from Java
 ```
 
-出力は同じく`HelloWorld`になります。
+## 深堀り
 
-## 深く掘り下げる
+文字列を連結させる際に気をつける点として、文字列の連結回数や位置などによってパフォーマンスに影響があることが挙げられます。文字列変数に代入する求める文字列の数が少ない場合は、加算演算子を使用するのが適しています。しかし、大量の文字列を連結させる場合は、文字列ライブラリのStringBuilderクラスを使用することが推奨されています。StringBuilderクラスは、文字列を可変で格納することによってパフォーマンスを向上させることができます。
 
-文字列を連結する方法は単純ですが、そのバックグラウンドにはいくつかの重要な概念があります。Javaでは、文字列は不変（immutable）であるため、文字列を変更する場合は常に新しい文字列を作成する必要があります。そのため、`concat()`や`+`演算子を使用して文字列を連結すると、実際には新しい文字列オブジェクトが生成され、元の文字列は変更されません。このように、Javaではメモリの使用に注意する必要があります。
+## その他
 
-また、文字列を連結する際は、大量の文字列を結合するとパフォーマンスが低下する可能性があります。その場合、より効率的に文字列を連結するために、`StringBuilder`クラスを使用することをお勧めします。`StringBuilder`は可変（mutable）な文字列を扱うため、メモリの消費が少なく高速な文字列操作が可能です。
+もし文字列の連結についてもっと深く学びたい場合は、以下のリンクを参考にしてください。
 
-## 関連記事
+見出し：参考リンク
 
-- [Java String Concatenation](https://www.geeksforgeeks.org/java-string-concatenation/)
-- [StringBuilder Class in Java](https://www.baeldung.com/java-string-builder)
+- [Java公式ドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#concat-java.lang.String-)
+- [String, StringBuffer, StringBuilderの違い](https://zero5eight9.com/java-string/#i-3)
+- [Javaにおける文字列の扱い方](https://qiita.com/AkihiroTakamura/items/9a8ab575f16365700f88)

@@ -1,63 +1,41 @@
 ---
 title:    "Fish Shell: 日付を文字列に変換する"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付を文字列に変換することに興味がある人々はたくさんいますが、Fish Shellを使ったプログラミングを行い、日付をより柔軟に操作するためには、日付を文字列に変換する必要があります。この記事では、このプロセスを簡単にご紹介します。
+
+日付を文字列に変換することには、いくつかの理由があります。日付を文字列に変換することで、より柔軟性のあるデータ形式に変換することができます。また、文字列形式の日付により、日付データを他のアプリケーションやデータベースと簡単に共有することができます。
 
 ## 方法
-まず、`date`コマンドを使用して今日の日付を取得します。
 
-```
-Fish Shell » date +%D
-02/15/22
-```
+日付を文字列に変換するには、Fish Shellの組み込み機能である`date`コマンドを使用します。以下の例をご覧ください。
 
-その後、`string`コマンドを使用して上記の日付を文字列に変換します。
-
-```
-Fish Shell » echo (date +%D) | string split /;
-02 15 22
+```Fish Shell
+set today (date +%Y-%m-%d)
+echo $today
 ```
 
-この例では、`date`コマンドの出力をパイプで`string`コマンドに渡し、`split`オプションを使用してスラッシュ（/）で分割しました。これにより、月、日、年がそれぞれ個々の要素となる配列が作成されます。
+上記のコードでは、現在の日付を指定された形式で文字列として変数`today`に保存し、その値を出力しています。出力結果は`2021-10-30`のようになります。
 
-また、`string`コマンドを使用する際は、`replace`オプションを使用して特定の文字列を置き換えることもできます。
+また、日付を含めたより複雑な文字列に変換することもできます。例えば、以下のようなコードを使用して日付と曜日を含む文字列を作成できます。
 
-```
-Fish Shell » echo (date +%D) | string replace / -
-02-15-22
-```
-
-このように、`string`コマンドを使用することで、日付をより細かく操作することができます。
-
-## ディープダイブ
-日付を文字列に変換する際に、より詳細に理解したい方のために、少し深く掘り下げてみましょう。
-
-まず、`date`コマンドを使用する際に、`+%D`オプションを使用することで、月、日、年のフォーマットで日付を取得することができます。また、`+%d`オプションを使用することで、先頭にゼロをつけない日付を取得することができます。
-
-さらに、`string`コマンドを使用する際には、`find -r`オプションを使用することで、正規表現を使用して特定のパターンを検索することができます。
-
-```
-Fish Shell » echo (date +%D) | string find -r [0-9]+
-02 15 22
+```Fish Shell
+set today (date "+%Y年%m月%d日 %a")
+echo $today
 ```
 
-このように、このオプションを使用することで、より複雑な操作も可能になります。
+出力結果は、`2021年10月30日 土`となり、曜日まで含まれることがわかります。
 
-## 関連情報
-この記事では、日付を文字列に変換する方法についてご紹介しましたが、他にもFish Shellに関する素晴らしい情報がたくさんあります。ぜひ以下のリンクをご参照ください！
+## 掘り下げる
 
-* [公式ドキュメント](https://fishshell.com/docs/current/index.html)
-* [コミュニティフォーラム](https://github.com/fish-shell/fish-shell/issues)
-* [プラグイン](https://github.com/oh-my-fish/oh-my-fish)
-* [チュートリアル動画](https://www.youtube.com/watch?v=9hTcimZ-WvQ)
+`date`コマンドの具体的なオプションや書式については、[公式ドキュメント](https://fishshell.com/docs/current/cmds/date.html)を参照してください。さらに、日付や時刻に関するより詳細な情報を得たい場合には、[GNU Core Utilities](https://www.gnu.org/software/coreutils/)や[Date and Time Utilities](https://unixhelp.ed.ac.uk/CGI/man-cgi?date)などのリソースも参考になります。
 
----
-See Also
+## 関連情報を見る
 
-* [Date Command](https://www.unix.com/man-page/stev/1/date/)
-* [String Command](https://www.unix.com/man-page/stev/1/string/)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Core Utilities](https://www.gnu.org/software/coreutils/)
+- [Date and Time Utilities](https://unixhelp.ed.ac.uk/CGI/man-cgi?date)

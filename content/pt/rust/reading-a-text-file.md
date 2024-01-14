@@ -1,46 +1,60 @@
 ---
 title:    "Rust: Lendo um arquivo de texto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler arquivos de texto usando Rust?
+## Por que ler um arquivo de texto em Rust?
 
-Existem várias razões pelas quais alguém pode querer ler um arquivo de texto usando Rust. Isso pode ser importante, por exemplo, ao trabalhar com conjuntos de dados ou ao criar aplicativos que dependem de entradas externas. Além disso, ler arquivos de texto também pode ser útil para realizar tarefas básicas de manipulação de dados, como filtrar e classificar informações.
+Se você é um programador que está começando a aprender Rust ou já tem experiência com a linguagem, é importante entender como ler e manipular arquivos de texto. Isso pode ser especialmente útil para a entrada e saída de dados em aplicativos e scripts. Neste artigo, vamos mostrar como ler um arquivo de texto em Rust e explorar algumas técnicas avançadas para lidar com esse tipo de arquivo.
 
-## Como fazer isso?
+## Como fazer:
 
-Aqui estão algumas maneiras de ler arquivos de texto usando Rust.
+Para ler um arquivo de texto, primeiro precisamos importar a biblioteca padrão `std::fs::File` e a biblioteca `std::io::Read` que contém métodos para ler do arquivo. Então, podemos usar o método `read_to_string()` para ler todo o conteúdo do arquivo em uma string. Veja um exemplo abaixo:
 
-```
+```rust
 use std::fs::File;
-use std::io::{self, BufRead};
+use std::io::Read;
 
 fn main() {
-    // Abrindo o arquivo de texto
-    let file = File::open("arquivo.txt").unwrap();
-    let reader = io::BufReader::new(file);
+    let mut arquivo = File::open("exemplo.txt").expect("Não foi possível abrir o arquivo!"); // abre o arquivo
+    let mut conteudo = String::new(); // cria uma string vazia para armazenar o conteúdo do arquivo
+    arquivo.read_to_string(&mut conteudo).expect("Não foi possível ler o arquivo!"); // lê o conteúdo do arquivo e armazena na string
+    println!("{}", conteudo); // imprime o conteúdo do arquivo
+}
+```
 
-    // Lendo cada linha e imprimindo na tela
-    for line in reader.lines() {
-        println!("{}", line.unwrap());
+A saída para esse código seria o conteúdo do arquivo `exemplo.txt`. É importante lembrar que o método `read_to_string()` lê o arquivo inteiro de uma vez, então é preciso ter cuidado com arquivos muito grandes que possam causar problemas de desempenho.
+
+## Mergulho profundo:
+
+Além do método `read_to_string()`, existem outras formas de ler arquivos de texto em Rust. Uma delas é o método `read_line()`, que lê o arquivo linha por linha em um laço `while`. Veja um exemplo:
+
+```rust
+use std::fs::File;
+use std::io::BufReader;
+use std::io::prelude::*;
+
+fn main() {
+    let arquivo = File::open("exemplo.txt").expect("Não foi possível abrir o arquivo!"); // abre o arquivo
+    let leitor = BufReader::new(arquivo); // cria um leitor que lê o arquivo linha por linha
+    for linha in leitor.lines() { // itera sobre cada linha no arquivo
+        let linha = linha.expect("Não foi possível ler a linha!"); // transforma a linha em uma string
+        println!("{}", linha); // imprime a linha
     }
 }
 ```
 
-Este é um exemplo simples de como ler um arquivo de texto linha por linha usando Rust. O resultado será a impressão de cada linha do arquivo no console.
+Além disso, também é possível especificar o número máximo de bytes a serem lidos pelo método `read_to_string()` ou utilizar a biblioteca `std::io::BufRead` para ler o arquivo de forma mais eficiente.
 
-## Profundidade na leitura de arquivos de texto
+## Veja também:
 
-Além do método mencionado acima, existem outras maneiras de ler arquivos de texto usando Rust. Por exemplo, você também pode usar a biblioteca `std::fs` para ler todo o conteúdo do arquivo de uma só vez, ou usar a biblioteca `csv` para trabalhar especificamente com arquivos CSV.
+Aqui estão alguns links úteis para aprender mais sobre como ler arquivos de texto em Rust:
 
-Outro aspecto importante na leitura de arquivos de texto é considerar o uso de tratamento de erros adequado, para lidar com possíveis problemas como arquivos ausentes ou permissões insuficientes. Felizmente, Rust possui recursos embutidos para gerenciamento de erros, tornando essa tarefa mais fácil para os programadores.
+- [Documentação oficial sobre leitura de arquivos em Rust](https://doc.rust-lang.org/std/fs/struct.File.html#method.read_to_string)
 
-## Veja também
+- [Tutorial sobre leitura de arquivos em Rust](https://www.youtube.com/watch?v=zF34dRivLOw)
 
-- [Documentação oficial do Rust sobre I/O](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
-- [Guia de referência da biblioteca `std::fs`](https://doc.rust-lang.org/std/fs/)
-- [Pacote `csv` para trabalhar com arquivos CSV em Rust](https://github.com/BurntSushi/rust-csv)
-
-Esperamos que este artigo tenha sido útil para você entender melhor como ler arquivos de texto usando Rust. Continue explorando e aprendendo sobre a linguagem para aprimorar suas habilidades de programação!
+- [Exemplos de código em Rust para leitura de arquivos](https://github.com/bbkane/rust-examples/tree/master/src/file-io)

@@ -1,37 +1,51 @@
 ---
 title:    "Gleam: 텍스트 파일 작성하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+어떤 사람이 텍스트 파일을 작성하는 것에 참여해야 하는지를 설명하는 1-2 문장입니다.
 
-텍스트 파일을 작성하는 이유는 확실히 코드나 데이터를 구조화하고 저장하기 위해서입니다.
+일반적으로 프로그래밍을 할 때 우리는 데이터를 저장하고 관리하기 위해 파일을 사용합니다. 텍스트 파일은 그 중에서도 가장 간단하고 기본적인 형태의 파일입니다. 따라서 텍스트 파일을 작성하는 것은 프로그래밍에서 필수적인 기술입니다.
 
-## 어떻게 작성하는지
+# 어떻게
+코딩 예제와 "```Gleam ... ```" 코드 블록 내에서의 샘플 출력을 포함한 방법입니다.
 
-```Gleam
-import gleam/io
+먼저, Gleam 언어에서 텍스트 파일을 작성하기 위해 File 모듈을 불러와야 합니다. 그리고 원하는 파일 이름과 함께 File.open 함수를 호출합니다. 이제 File.write 함수를 사용하여 텍스트를 파일에 작성할 수 있습니다. 마지막으로, 작성이 끝난 후에는 File.close 함수를 호출하여 파일을 닫아줍니다.
 
-fn main() {
-  let text = "안녕하세요! 이것은 Gleam 블로그 글입니다."
-  let file = "blog.txt"
-  io.write_file(text, file)
-}
+아래는 간단한 예제 코드입니다. 코드를 이해한 후에는 자신만의 방식으로 응용할 수 있습니다.
+
+```
+import File
+
+// 파일 이름과 쓸 내용을 변수에 담습니다.
+let file_name = "my_file.txt"
+let content = "This is a text file."
+
+// 파일을 열고 내용을 씁니다.
+let file = File.open(file_name)
+File.write(file, content)
+
+// 파일을 닫습니다.
+File.close(file)
 ```
 
-위 코드를 사용하면 "blog.txt"라는 이름의 파일을 만들고 "안녕하세요! 이것은 Gleam 블로그 글입니다."라는 내용을 넣을 수 있습니다.
+위의 코드를 실행하면 파일이 생성되고 파일에 지정한 내용이 쓰여집니다.
 
-## 깊이 파헤치기
+# 딥 다이브
+텍스트 파일을 작성하는 더 깊은 정보입니다.
 
-텍스트 파일을 작성할 때는 파일을 열고 내용을 작성한 뒤, 파일을 닫는 일련의 과정이 필요합니다. 이 과정을 "I/O"라고 부릅니다. Gleam 라이브러리는 이러한 과정을 단순화하고 쉽게 사용할 수 있도록 도와줍니다.
+파일을 생성하고 쓰기만 하는 것이 아니라, 파일에 내용을 추가하고 읽는 등 여러 작업을 할 수도 있습니다. 이는 File 모듈에 포함된 다양한 함수를 사용하여 가능합니다.
 
-## 바로가기
+또한 Gleam은 다양한 데이터 유형을 다루는 데 강력한 기능을 제공합니다. 텍스트 파일을 작성할 때도 이러한 기능을 활용할 수 있습니다. 예를 들어, 반복문을 이용하여 여러 줄의 텍스트를 파일에 작성할 수 있습니다.
 
-[파일 입출력에 대한 자세한 설명](https://gleam.run/documentation/stdlib/io)을 확인해보세요.
+더 자세한 내용은 공식 문서를 참고하시기 바랍니다.
 
-## 같이 보기
-- [Gleam 공식 웹사이트](https://gleam.run/)
-- [Gleam 기초 프로그래밍 가이드](https://gleam.run/tutorial/getting-started)
-- [블로그 글 작성을 위한 Markdown 사용법](https://www.markdownguide.org/basic-syntax/)
+# 그 밖에
+"그 밖에"는 "See Also"로 번역하며 아래에 공식 문서와 같은 문서에 대한 링크 목록을 포함합니다.
+
+- 공식 Gleam 문서: https://gleam.run/
+- 파일 관련 함수: https://gleam.run/modules/gleam/file.html

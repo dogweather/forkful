@@ -1,39 +1,60 @@
 ---
-title:    "Gleam: Satunnaislukujen luominen"
+title:    "Gleam: Satunnaislukujen generoiminen."
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi osallistua satunnaislukujen generointiin?
 
-Usein ohjelmointitehtävissä tarvitaan satunnaislukuja, kuten arpajaisissa tai pelien simulaatioissa. Gleam tarjoaa helpon ja luotettavan tavan generoida satunnaislukuja, joten programmoijana sinun ei tarvitse huolehtia monimutkaisista laskukaavoista tai turvallisuusriskeistä.
+Satunnaislukujen generointi on olennainen osa monia ohjelmointitehtäviä. Se voi olla tarpeellista simuloinneissa, pelien kehittämisessä tai jopa tietoturvassa. Gleam-ohjelmointikieli tarjoaa helpon tavan generoida satunnaislukuja ja tässä blogikirjoituksessa kerromme tarkemmin miten se tapahtuu.
 
-## Miten
+## Kuinka tehdä se: Gleam-ohjelmointiesimerkkejä
 
-Gleamissa satunnaislukuja generoidaan `random` moduulin avulla. Ensimmäiseksi täytyy tuoda moduuli käyttöön koodissa:
+Gleam tarjoaa useita sisäänrakennettuja moduuleja satunnaislukujen generointiin. Yksi kätevä tapa tehdä se on käyttää `Random` -moduulia ja sen `int` -funktiota. Katsotaan esimerkiksi seuraavaa koodinpätkää, joka tulostaa satunnaisen luvun väliltä 1-100:
 
-```Gleam
-import random
+```
+Gleam import Random
+
+let random_number = Random.int(1, 100)
+
+Gleam.io.format("Random number: {}", [random_number])
 ```
 
-Sitten voidaan kutsua `random.int` funktiota, joka ottaa kaksi parametria: `min` ja `max`, ja palauttaa satunnaisen kokonaisluvun niiden väliltä.
+Tämän koodin tuloste voisi näyttää vaikkapa tältä:
 
-```Gleam
-let n = random.int(1, 10)
+```
+Random number: 42
 ```
 
-Tämä koodi generoi satunnaisen numeron väliltä 1 ja 10, ja tallentaa sen `n` muuttujaan. Voit muokata `min` ja `max` parametreja tarvittaessa. 
+Voit myös määrittää oman satunnaislukusi seedin, jolloin saat aina saman satunnaisluvun. Tämä voi olla hyödyllistä esimerkiksi testauksessa. Katso seuraavaa esimerkkiä:
 
-Gleamissa on myös muita hyödyllisiä funktioita kuten `random.float` ja `random.string`, jotka toimivat samalla periaatteella kuin `random.int`.
+```
+Gleam import Random
 
-## Syventyminen
+let random_number = Random.int(1, 100, seed: 123)
+Gleam.io.format("Random number with seed: {}", [random_number])
 
-Gleam käyttää Mersenne Twister -algoritmia satunnaislukujen generoimiseen, joka on yksi parhaiten tunnetuista ja testatuimmista satunnaislukualgoritmeista. Tämän ansiosta voit luottaa siihen, että Gleam generaattorit ovat luotettavia ja tuottavat tasaisesti jakautuneita lukuja.
+let same_random_number = Random.int(1, 100, seed: 123)
+Gleam.io.format("Same random number with seed: {}", [same_random_number])
+```
 
-On myös hyvä huomioida, että Gleamin satunnaislukujen generaattori käyttää aina samaa siemenarvoa koodin suorituksessa, joten jos haluat eri satunnaisia lukuja joka kerta, kannattaa käyttää jotain ulkoista arvoa kuten aikaleimaa tai käyttäjän antamaa syötettä siemenarvona.
+Tämän koodin tuloste näyttää siltä:
+
+```
+Random number with seed: 74
+Same random number with seed: 74
+```
+
+Tässä näet kuinka `Random` -moduulin avulla voit helposti generoida satunnaisia lukuja.
+
+## Syväsukellus: Lisätietoa satunnaislukujen generoinnista
+
+Satunnaislukujen generointiin liittyy monia matemaattisia algoritmeja ja näiden ymmärtäminen voi auttaa sinua luomaan tarkempia ja monipuolisempia satunnaislukugeneraattoreita. Gleam-documentation tarjoaa lisätietoa käytetyistä algoritmeista ja niiden toiminnasta, joten suosittelemme tarkastamaan sen syvempää ymmärrystä varten.
 
 ## Katso myös
 
-- [Gleamin virallinen dokumentaatio satunnaislukujen generoinnista](https://gleam.run/documentation/guides/random#overview)
-- [Mersenne Twister algoritmin selitys (englanniksi) ](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- Dokumentaatio satunnaislukujen generoinnista Gleam-ohjelmointikielellä: https://gleam.run/books/standard-library/Random.html
+- Lisätietoa Gleam-ohjelmointikielestä: https://gleam.run/
+- Valmiita satunnaislukuesimerkkejä ja -tehtäviä: https://www.educative.io/blog/code-random-number-generator

@@ -1,63 +1,58 @@
 ---
-title:    "Elm: Extracción de subcadenas"
+title:    "Elm: Extrayendo subcadenas"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué
 
-Extraer subcadenas es una habilidad útil en Elm que te permite manipular cadenas de texto de manera más precisa y eficiente. Esto es especialmente útil en aplicaciones web donde a menudo se necesita manipular y trabajar con grandes cantidades de texto.
+Extraer subcadenas es una habilidad esencial para manipular y procesar cadenas de texto en Elm. Permite a los programadores seleccionar partes específicas de una cadena y utilizarlas para realizar otras operaciones.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-Para extraer una subcadena de una cadena más grande en Elm, podemos usar la función `slice` que se encuentra en el modulo `String`.
-
-```Elm
-import String exposing (slice)
-
-nombre = "Juan Pérez"
-
-primerNombre = slice 0 4 nombre
-
---output: "Juan"
-```
-
-En este ejemplo, estamos extrayendo los primeros cuatro caracteres de la cadena `nombre` que contiene el nombre completo "Juan Pérez". Al usar `slice`, indicamos el índice inicial y el índice final de la subcadena que queremos extraer. En este caso, queremos los primeros cuatro caracteres, por lo que usamos 0 como índice inicial y 4 como índice final.
-
-También podemos usar valores negativos para indicar la posición final contando desde el final de la cadena. Por ejemplo, si queremos obtener los últimos cuatro caracteres del `nombre`, podemos escribir:
+Para extraer una subcadena en Elm, se puede utilizar la función `String.slice` que toma dos argumentos: el índice de inicio y el índice de fin de la subcadena. Por ejemplo:
 
 ```Elm
-ultimoNombre = slice -4 0 nombre
-
---output: "Pérez"
+String.slice 0 3 "Hola Mundo" -- devuelve "Hol"
 ```
 
-Además, podemos usar `slice` para obtener una subcadena de un índice en específico hasta el final de la cadena:
+También se puede utilizar la función `String.left` o `String.right` para extraer una cantidad específica de caracteres desde el inicio o el final de una cadena. Por ejemplo:
 
 ```Elm
-apellido = slice 5 (-1) nombre
-
---output: "Pérez"
+String.left 3 "Hola Mundo" -- devuelve "Hol"
+String.right 3 "Hola Mundo" -- devuelve "ndo"
 ```
 
-## Profundizando
-
-La función `slice` en Elm es una forma eficiente de trabajar con cadenas de texto más grandes. Es importante tener en cuenta que `slice` retorna una nueva cadena en lugar de modificar la cadena original. Esto significa que podemos guardar el resultado de `slice` en una nueva variable para usarla más adelante sin afectar la cadena original.
-
-Otra función útil relacionada con el manejo de subcadenas en Elm es `split`. Esta función nos permite separar una cadena en una lista de subcadenas usando un delimitador específico. Por ejemplo:
+Otra forma de extraer una subcadena es utilizando el operador `++` para concatenar una cadena vacía con la subcadena deseada. Por ejemplo:
 
 ```Elm
-frase = "Bienvenido a mi blog"
-
-palabras = split " " frase
-
---output: ["Bienvenido", "a", "mi", "blog"]
+"Hola Mundo" ++ "" -- devuelve "Hola Mundo"
+"Hola Mundo" ++ "do" -- devuelve "Hola Mundo"
 ```
 
-En este caso, usamos el espacio (" ") como delimitador para separar las palabras de la frase en una lista.
+##Profundizando
 
-## Ver también
+Además de las funciones mencionadas anteriormente, Elm también ofrece otras opciones para extraer subcadenas. Por ejemplo, se puede utilizar la función `String.take` para tomar una cantidad específica de caracteres desde el inicio de una cadena:
 
-- Documentación oficial de la función `slice` en Elm: https://package.elm-lang.org/packages/elm/core/latest/String#slice
-- Documentación oficial de la función `split` en Elm: https://package.elm-lang.org/packages/elm/core/latest/String#split
+```Elm
+String.take 5 "Hola Mundo" -- devuelve "Hola "
+```
+
+Otra opción es utilizar la función `String.drop` para eliminar una cantidad específica de caracteres desde el inicio de una cadena:
+
+```Elm
+String.drop 5 "Hola Mundo" -- devuelve " Mundo"
+```
+
+También se puede utilizar la función `String.split` para dividir una cadena en una lista de subcadenas basadas en un separador. Por ejemplo:
+
+```Elm
+String.split "," "Manzana,Plátano,Naranja" -- devuelve ["Manzana", "Plátano", "Naranja"]
+```
+
+##Ver también
+
+- [Documentación oficial de Elm sobre cadenas de texto](https://elm-lang.org/docs/strings)
+- [Guía de programación de Elm](https://www.elm-tutorial.org/es/)

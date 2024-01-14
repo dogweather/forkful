@@ -1,61 +1,48 @@
 ---
 title:    "PHP recipe: Extracting substrings"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Extracting Substrings Matters
+## Why
+Have you ever come across a situation where you need to extract a specific part of a larger string? Maybe you want to extract a username from an email address, or retrieve the last name from a full name. This is where extracting substrings come in handy.
 
-When working with large amounts of text data, it is often necessary to extract specific portions or substrings from strings. This can be useful for tasks such as data cleaning, data analysis, or data manipulation. In PHP, there are several built-in functions that make extracting substrings easy and efficient.
-
-# How To Extract Substrings in PHP
-
-To extract a substring in PHP, we can use the `substr()` function. This function takes in three parameters: the string to extract from, the starting index, and the length of the substring to extract.
+## How To
+Extracting substrings in PHP is a simple process that involves using built-in string functions. Let's take a look at some examples:
 
 ```
-<?php
-$string = "Hello World";
-$substring = substr($string, 0, 5);
-echo $substring;
-// Output: Hello
-?>
+// Extracting a username from an email address
+$email = "john.doe@example.com";
+$username = strstr($email, '@', true);
+echo $username; // Output: john.doe
+
+// Extracting a last name from a full name
+$name = "Jane Smith";
+$lastname = substr($name, strpos($name, " ") + 1);
+echo $lastname; // Output: Smith
 ```
 
-In the example above, we extracted the first 5 characters from the string "Hello World".
+In the first example, we used the `strstr()` function to find the position of the '@' symbol and then passed in a third parameter of `true` to return the part of the string before the '@' symbol. In the second example, we used the `substr()` function to extract the part of the string after the space.
 
-We can also use negative numbers as the starting index to extract substrings from the end of the string. For example, `substr($string, -5)` would extract the last 5 characters from the string.
-
-Another useful function for extracting substrings is `mb_substr()`. This function is similar to `substr()` but takes into account multibyte characters, making it more reliable for handling different languages.
+You can also use the `explode()` function to split a string into an array, using a specific delimiter.
 
 ```
-<?php
-$string = "안녕하세요";
-$substring = mb_substr($string, 0, 2, "UTF-8");
-echo $substring;
-// Output: 안녕
-?>
+// Extracting a street name from a full address
+$address = "123 Main St., City, State";
+$street = explode(",", $address)[0];
+echo $street; // Output: 123 Main St.
 ```
 
-# Deep Dive into Substring Extraction
+## Deep Dive
+There are a few things to keep in mind when extracting substrings in PHP. Firstly, PHP string functions are case-sensitive, so make sure you are using the right case when searching for a specific substring. Secondly, if a substring is not found, the functions will return `false`, so it's important to handle this scenario in your code. Lastly, substrings in PHP are zero-indexed, meaning the first character of a string is at position 0, the second character is at position 1, and so on.
 
-In addition to the built-in functions, PHP also has a powerful regular expression library for manipulating strings. This can be especially useful for extracting substrings based on specific patterns.
+There are many other string functions in PHP that can be used for extracting substrings, such as `str_replace()`, `preg_match()`, and `strtok()`. Experiment with different functions to find the one that works best for your specific situation.
 
-For example, we can use the `preg_match()` function to extract all numbers from a string using regular expressions.
+## See Also
+- [PHP: String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [W3Schools: PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp)
+- [PHP String Functions Cheat Sheet](https://www.unixtimestamp.com/php-cheat-sheet/php-string-functions.php)
 
-```
-<?php
-$string = "My phone number is 555-123-4567";
-$output = preg_match("/[0-9]+/", $string, $matches);
-echo $matches[0];
-// Output: 5551234567
-?>
-```
-
-Regular expressions allow for complex and precise substring extraction, making them a valuable tool in a developer's toolkit.
-
-# See Also
-
-- [PHP Manual on `substr()`](https://www.php.net/manual/en/function.substr.php)
-- [PHP Manual on `mb_substr()`](https://www.php.net/manual/en/function.mb-substr.php)
-- [PHP Manual on `preg_match()`](https://www.php.net/manual/en/function.preg-match.php)
+With the power of PHP string functions, you can easily extract specific parts of a string without having to manually manipulate it. This can save you time and effort in your programming tasks. Give it a try in your next project and see how it can benefit you. Happy coding!

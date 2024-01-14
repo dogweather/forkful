@@ -1,39 +1,35 @@
 ---
 title:    "Elm: Excluindo caracteres que correspondem a um padrão"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que
+## Por que?
 
-Às vezes, durante a programação em Elm, você pode se deparar com a necessidade de excluir caracteres que correspondam a um determinado padrão. Isso pode ser feito por uma variedade de razões, como limpar dados, filtrar informações ou realizar ações específicas com base nesses caracteres.
+Às vezes, em programação, nos deparamos com a necessidade de deletar caracteres que correspondem a um determinado padrão. Isso pode ser feito por diversos motivos, como por exemplo, por questões de segurança ou para a limpeza de dados.
 
-## Como fazer
+## Como fazer?
 
-Este processo é conhecido como "substituição de caracteres" e pode ser facilmente realizado usando o pacote `elm/regex`, que é amplamente utilizado para lidar com expressões regulares em Elm.
+Para deletar caracteres que correspondem a um padrão em Elm, podemos usar a função String.filter. Esta função recebe como argumento uma função que determina se um caractere deve ser mantido ou descartado. Vamos ver um exemplo:
 
 ```Elm
-import Regex exposing (replace, regex)
-
-string = "Olá! Este é um exemplo de texto com números 123 e símbolos!@#$"
-
-pattern = regex "[0-9!@#$]" -- Define o padrão de caracteres que serão excluídos
-
-resultado = replace pattern string "" -- Substitui os caracteres correspondentes por uma string vazia
-
--- O resultado seria: "Olá Este é um exemplo de texto com números e símbolos"
+let
+    string = "Olá, mundo!"
+    newString = String.filter (\c -> c /= ' ') string
+in
+    newString
 ```
 
-Neste exemplo, criamos uma string de exemplo e um padrão que contém todos os caracteres que desejamos excluir. Em seguida, usamos a função `replace` para substituir esses caracteres por uma string vazia, resultando em uma nova string sem os caracteres indesejados.
+Esse código vai deletar todos os espaços em branco da string "Olá, mundo!", resultando em "Olá,mundo!" como saída.
 
-## Aprofundando
+## Deep Dive
 
-Além de simplesmente substituir caracteres correspondentes por uma string vazia, o pacote `elm/regex` oferece uma ampla variedade de funções úteis para trabalhar com expressões regulares em Elm. Isso inclui encontrar correspondências, dividir strings em partes e substituir correspondências por outras strings.
-
-Para saber mais sobre como trabalhar com expressões regulares em Elm, verifique a documentação oficial do pacote [aqui](https://package.elm-lang.org/packages/elm/regex/latest/Regex) e o guia simples e prático [RegexOne](https://regexone.com/), que pode ser adaptado facilmente para o uso em Elm.
+A função String.filter é bastante útil para realizar ações específicas em nossas strings. Podemos usá-la em conjunto com outras funções, como por exemplo String.index ou String.slice para atingir um resultado mais específico. Além disso, fazer a limpeza de dados com esta função pode trazer maior segurança em nossos programas, evitando possíveis vulnerabilidades.
 
 ## Veja também
 
-- [Documentação oficial do pacote elm/regex](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- [Guia RegexOne para expressões regulares](https://regexone.com/)
+- [Documentação oficial do Elm](https://guide.elm-lang.org/core_language.html)
+- [Tutorial de Elm para iniciantes](https://medium.com/@murilomendonca/elm-guia-pr%C3%A1tico-para-iniciantes-e-interessados-bcri%C3%A7%C3%A3o-alem%C3%A3-943574f2cc37)
+- [Mais sobre a função String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)

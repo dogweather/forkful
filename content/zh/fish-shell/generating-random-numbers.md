@@ -1,70 +1,38 @@
 ---
 title:    "Fish Shell: 生成随机数"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：随机数在编程中是非常有用的，它可以用来模拟实际情况，进行测试，或者生成随机数据。
 
-Fish Shell是一种流行的命令行工具，它可以帮助我们快速简便地执行各种任务。其中之一就是生成随机数。随机数在编程中是非常重要的，它可以用于测试、加密等多种场景。让我们来学习如何在Fish Shell中生成随机数吧！
-
-## 如何操作
+如何使用Fish Shell生成随机数：
 
 ```Fish Shell
-# 生成随机整数
-echo (math --random 1 10)
-```
-输出：
-```
-7
+
+# 生成一个0-10的随机整数
+set random_number (math /dev/urandom 0 10)
+echo $random_number
+
+# 生成一个0-1的随机小数
+set random_decimal (math /dev/urandom 0 1)
+echo $random_decimal
+
+# 生成一个含有10个元素的随机数组
+set -l random_array (for i in (seq 1 10); math /dev/urandom 0 100; end)
+echo $random_array
+
 ```
 
-```Fish Shell
-# 生成指定长度的随机字符串
-echo (strings --random --count 8)
-```
-输出：
-```
-HkmxrqWv
-```
+深入了解随机数生成：
 
-```Fish Shell
-# 生成随机小数
-echo (math --random -0.5 0.5)
-```
-输出：
-```
-0.2438
-```
+生成随机数的关键是使用操作系统提供的随机设备/dev/urandom。Fish Shell中的math函数可以从该设备中获取随机数，参数如/dev/urandom表示随机设备，后面的0和10表示随机数的范围。随机数范围的设定可以根据需求自行调整。
 
-```Fish Shell
-# 生成随机字母
-echo (string --random --length 1 [a-z])
-```
-输出：
-```
-m
-```
+另外，可以使用for循环来生成随机数组，通过设置数组的长度和math函数的参数，我们可以方便地获取任意长度的随机数组。
 
-## 深入了解
+## 另请参阅
 
-Fish Shell中使用`math`和`strings`命令可以生成随机数。`math`命令可以生成随机整数和小数，而`strings`命令可以生成随机字符串。我们可以通过添加不同的参数来控制随机数的范围和类型。比如，使用`--count`参数来控制随机字符串的长度，使用`[a-z]`来指定随机字母的范围。
-
-此外，Fish Shell还提供了`base64`命令来生成随机的Base64编码，以及`random`命令来生成更复杂的随机数，如UUID。
-
-## 参考链接
-
-- [Fish Shell文档：生成随机数](https://fishshell.com/docs/current/cmds/math.html)
-- [Fish Shell教程：使用math命令生成随机数](https://linux.cn/article-8733-1.html)
-- [Fish Shell示例：使用strings生成随机字符串](https://jdhao.github.io/2020/01/22/fish_strings_command/)
-- [Fish Shell文档：base64命令](https://fishshell.com/docs/current/cmds/base64.html)
-- [Fish Shell文档：random命令](https://fishshell.com/docs/current/cmds/random.html)
-
-## 更多阅读
-
-如果你想深入学习Fish Shell的更多功能，可以参考以下链接：
-
-- [Fish Shell官网](https://fishshell.com/)
-- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
-- [《Fish Shell入门教程》](https://octoverse.github.io/zh/2016/06/26/fish/)
+- Fish Shell官方文档：https://fishshell.com/docs/current/
+- 随机数生成器：https://www.random.org/

@@ -1,33 +1,35 @@
 ---
-title:    "C#: String in Kleinbuchstaben umwandeln"
+title:    "C#: Umwandlung eines Strings in Kleinbuchstaben"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Konvertieren einer Zeichenfolge in Kleinbuchstaben scheint auf den ersten Blick eine einfache Aufgabe zu sein. Aber warum sollten wir überhaupt eine Zeichenfolge in Kleinbuchstaben umwandeln? Die Antwort ist einfach - Konsistenz und Vergleichbarkeit. Durch die Verwendung von Kleinbuchstaben in einer Zeichenfolge können wir Vergleiche zwischen verschiedenen Zeichenfolgen erleichtern, da Groß- und Kleinschreibung dabei keine Rolle spielen. Dies ist besonders nützlich, wenn wir Benutzereingaben überprüfen oder Datenbankabfragen durchführen.
+Das Konvertieren von einem String zu Kleinbuchstaben ist eine wichtige Funktion beim Programmieren, da es hilft, Konsistenz in der Formatierung von Texten zu bewahren. Zudem kann es auch bei der Überprüfung von Eingaben oder der Sortierung von Daten nützlich sein.
 
-## Wie geht das?
-
-In C# können wir eine Zeichenfolge mithilfe von `ToLower()` in Kleinbuchstaben konvertieren. Hier ist ein Beispielcode mit einer Beispielausgabe:
+# Wie geht man vor
 
 ```C#
-string name = "Johann";
-string lowerCaseName = name.ToLower();
-Console.WriteLine(lowerCaseName); // gibt "johann" aus
+string myString = "DIE Sonne SCHEINT!";
+string lowerCase = myString.ToLower();
+Console.WriteLine(lowerCase);
 ```
 
-In diesem Beispiel haben wir die Zeichenfolge "Johann" in Kleinbuchstaben konvertiert und in der Variable `lowerCaseName` gespeichert. Durch die Verwendung von `ToLower()` können wir sicherstellen, dass die Zeichenfolge unabhängig von der Eingabe des Benutzers immer in Kleinbuchstaben gespeichert wird.
+Das obige Beispiel zeigt, wie einfach es ist, einen String in Kleinbuchstaben umzuwandeln. Der String "myString" wird zuerst erstellt und enthält sowohl Groß- als auch Kleinbuchstaben. Dann verwenden wir die Methode "ToLower()", um den String in Kleinbuchstaben zu konvertieren. Der neue String wird in der Variablen "lowerCase" gespeichert und kann dann ganz einfach ausgegeben werden.
 
-## Tiefergehende Informationen
+Die Ausgabe des obigen Codes wird sein: "die sonne scheint!". Beachte, dass alle Buchstaben nun klein geschrieben sind.
 
-Bei der Konvertierung einer Zeichenfolge in Kleinbuchstaben gibt es einige Dinge zu beachten. In verschiedenen Sprachen gibt es unterschiedliche Regeln für die Groß- und Kleinschreibung, die bei der Konvertierung berücksichtigt werden müssen. Auch Akzente oder diakritische Zeichen können bei der Konvertierung eine Rolle spielen. Es ist wichtig, dies bei der Verwendung von `ToLower()` zu berücksichtigen, um unerwünschte Fehler zu vermeiden.
+# Tiefere Einblicke
 
-Eine weitere Möglichkeit, eine Zeichenfolge in Kleinbuchstaben umzuwandeln, ist die Verwendung der `string.ToLowerInvariant()` Methode. Diese Methode verwendet die invarianter Kultur, was bedeutet, dass sie nicht von aktuellen Spracheinstellungen oder regionalen Einstellungen beeinflusst wird. Dies kann besonders nützlich sein, wenn wir mit verschiedenen Sprachen arbeiten.
+Beim Konvertieren von einem String zu Kleinbuchstaben gibt es einige wichtige Dinge zu beachten. Zum Beispiel werden bei einigen Sprachen wie Türkisch bestimmte Buchstaben anders konvertiert, da sie ebenfalls Groß- und Kleinbuchstaben haben. Bei der türkischen Sprache ist es wichtig, die Methode "ToLowerCase()" mit dem Sprachparameter zu verwenden, um eine korrekte Konvertierung zu gewährleisten.
 
-## Siehe auch
+Außerdem gibt es verschiedene Methoden, um einen String in Kleinbuchstaben umzuwandeln, wie zum Beispiel "ToLowerInvariant()", "ToLowerInvariant(CultureInfo)" und "ToLowerInvariant(CultureInfo, TextInfo)". Jede dieser Methoden hat ihre eigenen Einsatzmöglichkeiten und sollte entsprechend ausgewählt werden.
 
-- [MSDN: ToLower Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolower)
-- [MSDN: ToLowerInvariant Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolowerinvariant)
+# Siehe auch
+
+- [Microsoft Dokumentation über die Methode "ToLower()"](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netcore-3.1)
+- [Tutorial über das Konvertieren von Strings zu Kleinbuchstaben in C#](https://www.c-sharpcorner.com/article/converting-string-from-uppercase-to-lowercase-case-in-C-Sharp/)
+- [Video-Tutorial über die Konvertierung von Strings zu Kleinbuchstaben in C#](https://www.youtube.com/watch?v=9EhUc9ytJhs)

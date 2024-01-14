@@ -1,34 +1,54 @@
 ---
-title:    "Elm: 产生随机数"
+title:    "Elm: 随机数生成"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：用1-2句话解释 *为什么* 有人会使用生成随机数技术。
+## 为什么
 
-随机数在计算机科学和编程中扮演着重要的角色。它们被用作密码学、模拟、游戏和其他许多应用程序中的关键元素。生成随机数可以帮助程序员创建更加多样化和实用的应用程序，从而为用户带来更好的体验。
+在编程中，生成随机数是非常有用的。它可以用来模拟真实世界的情况，也可以用来测试代码的可靠性。使用Elm编程语言，我们可以轻松的生成随机数来完成这些任务。
 
-如何：下面是一个例子，展示如何在Elm中使用内置的随机数生成函数：
+## 怎么做
+
+首先，我们需要在代码中导入`Random`模块。然后，在需要生成随机数的函数中，使用`Random.generate`函数，并在其中定义一个`Random`值生成器，它会使用`Random.map`函数将生成的随机数传递给我们需要的函数。下面是一个例子：
 
 ```Elm
-import Random 
+import Random
 
 -- 生成一个介于1到10之间的随机数
-randomNumber = 
-    Random.generate toString (Random.int 1 10)
-    
--- 输出结果将类似于 "5" 或 "9"   
+randomNumber : Int
+randomNumber =
+    Random.generate (Random.int 1 10) (\number -> number)
 ```
 
-深入探讨：生成随机数的实现和算法是非常复杂的，主要是因为计算机程序本质上是有序和可预测的。因此，为了生成真正的随机数，我们需要使用伪随机数算法，即通过一个称为"随机种子"的初始输入来生成一系列看似随机的数字。Elm内置了很多用于生成不同类型随机数的函数，如整数、浮点数、布尔值和字符。
+上面的例子中，我们使用`Random.int`函数来生成一个1到10之间的整数。你也可以根据自己的需要使用不同的随机数生成函数，比如`Random.float`来生成浮点数。一旦生成了随机数，我们就可以将其传递给一个函数，比如将其打印出来。在下面的代码块中，我们会将生成的随机数打印在页面上：
 
-值得注意的是，伪随机数算法可以重复地生成相同的随机数序列，因此在某些情况下可能会对安全性造成影响。为了解决这个问题，我们可以使用更具密码学安全性的随机数库，例如Elm的"elm-random-extra"扩展库。
+```Elm
+-- 打印随机数
+printRandomNumber : Int -> Html msg
+printRandomNumber num =
+    text (toString num)
 
-另外，对于需要精确控制随机数生成的应用程序，我们可以使用Random.Generator模块来定义自己的随机数生成器。这个模块提供了更强大的工具，让我们可以与自己编写的算法进行交互，从而实现定制化的随机数生成过程。
+view : Html msg
+view =
+    div []
+        [ h1 [] [ text "随机数生成器" ]
+        , button [ onClick (Random.generate (Random.int 1 10) printRandomNumber) ] [ text "生成随机数" ]
+        ]
+```
 
-请参考：
+运行代码后，每次点击按钮，就会生成一个新的随机数并将其打印在页面上。
 
-- Elm官方文档：https://guide.elm-lang.org/effects/random.html
-- "elm-random-extra"扩展库文档：https://package.elm-lang.org/packages/elm-community/random-extra/latest/
-- Random.Generator模块文档：https://package.elm-lang.org/packages/elm/random/latest/Random-Generator
+## 深入探讨
+
+在Elm中，随机数是通过一个`Seed`值来生成的。`Seed`值可以被理解为一个种子，它会影响随机数的生成过程。同一种子会生成相同的随机数，因此我们可以使用相同的种子来保证我们的代码可以复现。同时，`Seed`值也可以通过`Random.initialSeed`函数来手动创建，这样我们就可以在代码中使用预先设定好的种子来生成随机数。
+
+## 参考链接
+
+- [Elm官方文档: Random模块](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Elm入门随机数生成](https://www.hackingwithcodelondon.com/learn/elm/generating-random-numbers/)
+- [Elm随机数生成器原理](https://www.beyond-tinker.com/2017/05/generate-some-random-numbers-with-elm/)
+ 
+# 参见

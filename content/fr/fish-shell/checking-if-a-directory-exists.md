@@ -1,43 +1,36 @@
 ---
 title:    "Fish Shell: Vérifier si un répertoire existe"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Il est important de vérifier si un répertoire existe lors de la programmation en shell pour éviter les erreurs inattendues et assurer que le script s'exécute correctement.
+# Pourquoi
+
+Vous vous demandez peut-être pourquoi il est important de vérifier si un répertoire existe en programmation Fish Shell. Eh bien, cela peut être utile pour s'assurer qu'un répertoire nécessaire existe avant d'y accéder ou d'y effectuer une action.
 
 ## Comment faire
-Pour vérifier si un répertoire existe en utilisant Fish Shell, vous pouvez utiliser la commande `test -d` suivie du chemin du répertoire. Voici un exemple :
+
+Heureusement, vérifier si un répertoire existe en Fish Shell est assez simple. Utilisez simplement la commande `test` suivi de l'option `d` pour indiquer qu'il s'agit d'un répertoire, suivi du chemin du répertoire que vous souhaitez vérifier. Voici un exemple :
 
 ```Fish Shell
-test -d /chemin/vers/le/répertoire
+test d /chemin/vers/repertoire 
 ```
 
-Si le répertoire existe, la sortie sera `true`, sinon elle sera `false`.
+Si le répertoire existe, la sortie sera `true` et si ce n'est pas le cas, la sortie sera `false`.
 
-## Plongée en profondeur
-Lorsque la commande `test -d` est exécutée, elle recherche le répertoire spécifié et renvoie `true` si elle le trouve et `false` sinon. Cependant, si le répertoire n'est pas trouvé, une erreur peut être générée. Pour éviter cela, vous pouvez utiliser `if` et `else` pour gérer la sortie de la commande. Voici un exemple :
+## Plongeons plus en profondeur
+
+Si vous souhaitez obtenir une sortie plus détaillée, vous pouvez utiliser la commande `ls` pour lister le contenu du répertoire et le filtrer en fonction de l'option `d` pour les répertoires. Par exemple :
 
 ```Fish Shell
-if test -d /chemin/vers/le/répertoire
-    echo "Le répertoire existe !"
-else
-    echo "Le répertoire n'existe pas."
-end
+ls -d /chemin/vers/repertoire
 ```
 
-Vous pouvez également utiliser `not` pour inverser la sortie. Voici un exemple :
+La sortie sera une liste des répertoires contenus dans le répertoire spécifié.
 
-```Fish Shell
-if not test -d /chemin/vers/le/répertoire
-    echo "Le répertoire n'existe pas."
-else
-    echo "Le répertoire existe !"
-end
-```
+# Voir aussi
 
-## Voir aussi
-- [Documentation de test en Fish Shell] (https://fishshell.com/docs/current/cmds/test.html)
-- [Bash: Vérifier si un répertoire existe] (https://linuxize.com/post/bash-check-if-directory-exists/)
+- [Documentation Fish Shell sur la commande `test`](https://fishshell.com/docs/current/cmds/test.html)
+- [Documentation Fish Shell sur la commande `ls`](https://fishshell.com/docs/current/cmds/ls.html)

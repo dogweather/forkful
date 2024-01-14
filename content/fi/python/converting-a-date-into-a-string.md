@@ -1,50 +1,41 @@
 ---
-title:    "Python: Päivämäärän muuttaminen merkkijonoksi"
+title:    "Python: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi konvertoida päivämäärä merkkijonoksi?
+## Miksi
 
-On monia syitä miksi voit haluta konvertoida päivämäärän merkkijonoksi Python-ohjelmassa. Yksi mahdollinen syy voisi olla halu näyttää päivämäärä tietyn muodon mukaan esimerkiksi käyttäjälle selkeämmin tai tallentaaksesi sen tiedostoon.
+Jokainen ohjelmoija tietää, kuinka tärkeää on käsitellä päivämääriä oikein. Niitä käytetään erilaisissa sovelluksissa eri tarkoituksiin, kuten tapahtumien aikatauluttamiseen, tiedostojen luomiseen tai jopa laskutukseen. Usein päivämäärän esittäminen tekstillisessä muodossa on välttämätöntä ja tässä blogikirjoituksessa kerromme, kuinka voit muuntaa päivämäärän tekstimuotoon helposti Pythonissa.
 
-## Miten se tehdään?
+## Kuinka
+Eri ohjelmointikielissä on erilaisia tapoja käsitellä päivämääriä. Pythonin datetime-moduulilla on kuitenkin helppo muuttaa päivämäärä tekstimuotoon ```strftime()```-funktiolla. Alla on esimerkki koodista, joka muuntaa päivämäärän tekstimuotoon ja tulostaa sen:
 
-Pythonissa päivämäärän konvertoiminen merkkijonoksi on suhteellisen helppoa ja vaatii vain muutaman koodirivin. Voit käyttää strftime-funktiota, joka ottaa päivämäärän ja muodon määrittelyjoukon parametreina ja palauttaa päivämäärän merkkijonona halutussa muodossa. Katso esimerkki alla olevasta koodilohkosta:
+```python
+import datetime
 
-```Python
-from datetime import datetime
+päivämäärä = datetime.date(2021, 6, 1)
 
-# Luo datetime-objekti nykyisellä päivämäärällä
-today = datetime.now()
+päivämäärä_str = päivämäärä.strftime('%d.%m.%Y')
 
-# Konvertoi päivämäärän merkkijonoksi ISO-formaatissa
-iso_date = today.strftime("%Y-%m-%d")
-print(iso_date) # tulostaa: 2021-03-15
-
-# Konvertoi päivämäärän merkkijonoksi kellonajan kanssa
-datetime_string = today.strftime("%Y-%m-%d %H:%M:%S")
-print(datetime_string) # tulostaa: 2021-03-15 12:30:00
+print(päivämäärä_str)
 ```
+Tämä koodi tuottaa seuraavan tulosteen: ```01.06.2021```
 
-Ohjelman tulos näyttäisi tältä:
+Kuten huomaat, ```strftime()```-funktio käyttää merkkijonoa muodostaakseen päivämäärästä halutun muodon. Tarkemman luettelon käytettävissä olevista merkkijonoista voit löytää Pythonin virallisesta dokumentaatiosta.
 
-```
-2021-03-15
-2021-03-15 12:30:00 
-```
+## Syvähdyksellä
+Päivämäärän muuttaminen tekstimuotoon voi vaikuttaa yksinkertaiselta, mutta syvemmin diveeramalla voit huomata muutamia tärkeitä huomioitavia asioita.
 
-Voit myös muotoilla päivämäärän haluamallasi tavalla, esimerkiksi lisätä päivän nimen tai käyttää erilaisia aikavyöhykkeitä. strftime-funktiolla on paljon vaihtoehtoja, joten suosittelemme tarkistamaan Pythonin virallisen dokumentaation lisätietoja varten.
+Ensinnäkin, huomaa, että ```strftime()```-funktio käyttää nollapäällä aloitusta, mikä tarkoittaa, että jos päivät, kuukaudet tai tunnit ovat yksinumeroinen luku, niiden eteen tulee lisätä nolla. Tämä varmistaa, että päivämäärä esitetään aina samassa muodossa.
 
-## Syvä sukellus
+Toiseksi, on tärkeää huomioida, että mikä tahansa muotoon vaikuttava muutos tehdään alkuperäiselle päivämäärälle itselleen. Tämä tarkoittaa, että jos haluat muuttaa päivämäärän tekstiksi, mutta myös käyttää alkuperäistä päivämäärääsi jatkossa, sinun on luotava uusi muuttuja.
 
-Päivämäärän konvertoiminen merkkijonoksi on osa Pythonin datetime-moduulia, joka sisältää työkaluja päivämäärän ja kellonajan käsittelyyn. Moduulin avulla voit luoda datetime-objekteja ja suorittaa erilaisia toimintoja, kuten aritmeettisia operaatioita ja muutoksia aikavyöhykkeeseen.
-
-On myös tärkeää huomata, että päivämäärän muotoilu voi vaihdella kulttuureittain, joten on hyvä tarkistaa millaista formaattia haluat käyttää. Esimerkiksi, jos ohjelmaasi käyttävät myös ulkomaalaiset käyttäjät, on hyvä varmistaa että päivämäärän muoto on ymmärrettävä kaikille.
+Nämä ovat vain muutamia asioita, jotka on hyvä pitää mielessä päivämäärän muuntaessaan tekstimuotoon. Kannattaa tutustua tarkemmin Pythonin datetime-moduuliin löytääksesi muita hyödyllisiä toimintoja ja temppuja päivämäärän käsittelemiseen.
 
 ## Katso myös
-
-- Pythonin virallinen datetime-dokumentaatio: https://docs.python.org/fi/3/library/datetime.html
-- strftime-funktion muotoiluohjeet: https://strftime.org/
-- Lisätietoa aikavyöhykkeistä Pythonissa: https://pypi.org/project/pytz/
+- [Pythonin virallinen dokumentaatio datetime-moduulista](https://docs.python.org/3/library/datetime.html)
+- [DateFormat-paketin käyttö viimeisimmän päivämäärän generoinnissa](https://www.educba.com/dateformat-in-python/) 
+- [Päivämäärän esittäminen eri kielillä Pythonilla](https://stackabuse.com/how-to-format-dates-in-python/)

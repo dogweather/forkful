@@ -1,48 +1,39 @@
 ---
 title:    "Elixir: Tests schreiben"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Unit-Tests sind eine effektive Möglichkeit, um sicherzustellen, dass der Code, den wir schreiben, fehlerfrei funktioniert. Indem wir Tests schreiben, können wir vermeiden, dass Fehler und Bugs in unseren Programmen auftreten. Dadurch sparen wir Zeit und Mühe bei der Fehlersuche und können uns auf die Entwicklung neuer Features konzentrieren.
+## Warum?
 
-## Wie 
-Um mit Elixir Tests zu schreiben, müssen wir zunächst das Modul `ExUnit` importieren. In unserem Beispiel erstellen wir eine Funktion, die zwei Zahlen multipliziert und das Ergebnis zurückgibt.
+Tests sind ein unverzichtbarer Teil der Elixir Programmierung. Sie helfen dabei, Bugs zu vermeiden und ein stabiles und zuverlässiges Programm zu erstellen. Durch das Schreiben von Tests können Entwickler*innen sicherstellen, dass ihr Code korrekt funktioniert und alle Anforderungen erfüllt werden. Außerdem erleichtern Tests die Fehlerbehebung, da sie helfen, den Ursprung von Problemen schneller zu finden.
 
-```
-Elixir import ExUnit.Case 
-defmodule CalculatorTest do 
-  use ExUnit.Case 
-  test "multiplies two numbers" do 
-    assert Calculator.multiply(2, 2) == 4 
-  end 
+## Wie man Tests schreibt
+
+Die Erstellung von Tests in Elixir ist recht einfach. Zunächst muss man [`ExUnit`](https://hexdocs.pm/ex_unit/ExUnit.html) importieren, das das Testen in Elixir ermöglicht. Dann kann man mit der `@tag :test` Annotation Funktionen als Tests markieren. Innerhalb dieser Funktionen können verschiedene [`assert`](https://hexdocs.pm/ex_unit/ExUnit.Assertions.html#assert/2) Ansprüche verwendet werden, um das erwartete Verhalten des Codes zu überprüfen.
+
+```Elixir
+defmodule MyModuleTest do
+  use ExUnit.Case
+
+  @tag :test
+  def test_my_function do
+    assert 1 + 1 == 2
+    assert String.length("Hello") == 5
+  end
 end
 ```
 
-In dem obigen Beispiel sehen wir, dass wir eine eigene Testklasse `CalculatorTest` erstellen und darin eine Testfunktion definieren. Diese Funktion verwendet die `assert` Methode, um das erwartete Ergebnis (hier gleich 4) mit dem tatsächlichen Ergebnis unserer `Calculator.multiply` Funktion zu vergleichen.
+## Tiefer Einblick
 
-Wir können auch negative Tests schreiben, um sicherzustellen, dass unsere Funktionen auch in unerwarteten Situationen richtig funktionieren.
+Es gibt verschiedene Arten von Tests, die in Elixir geschrieben werden können, darunter Unit-Tests, Integrationstests und Funktionstests. Unit-Tests überprüfen einzelne Funktionen oder Module, während Integrationstests das Zusammenspiel von mehreren Komponenten testen. Funktionstests hingegen simulieren tatsächliches Benutzerverhalten und testen die Anwendung von außen.
 
-```
-Elixir import ExUnit.Case 
-defmodule CalculatorTest do 
-  use ExUnit.Case 
-  test "throws error for non-numeric input" do 
-    assert_raise ArithmeticError, fn -> Calculator.multiply(2, "hello") end 
-  end 
-end
-```
+Beim Schreiben von Tests ist es wichtig, auch unerwartete Fälle zu berücksichtigen und Randbedingungen zu testen. Hier können auch sogenannte [`property tests`](https://hexdocs.pm/stream_data/ExUnitProperties.html) helfen, die zufällige Werte generieren und so mögliche Bugs aufdecken können.
 
-In diesem Beispiel erwarten wir, dass unsere Funktion `Calculator.multiply` einen Fehler wirft, wenn wir versuchen, sie mit einer Zeichenkette anstatt einer Zahl aufzurufen.
+Siehe auch
 
-## Deep Dive
-Unit-Tests können auch dazu beitragen, den Code besser zu strukturieren und zu dokumentieren. Indem wir uns bewusst mit den verschiedenen Funktionen und Eingaben auseinandersetzen, können wir unseren Code verbessern und ihn leichter warten.
-
-Zudem ermöglicht Elixir es uns, Tests parallel auszuführen, was die Effizienz des Testprozesses erhöht. Auch die Integration von Tests in den Entwicklungsprozess ist sehr einfach und kann mithilfe von Continuous-Integration-Tools automatisiert werden.
-
-## Siehe auch 
-- [ExUnit Dokumentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir Testing mit ExUnit](https://medium.com/@diamondgfx/solid-testing-with-elixir-1779b6b3f678)
-- [Continuous-Integration-Tools für Elixir](https://medium.com/polynique/continuous-integration-for-elixir-phanthomjs-migrate-lint-test-1f427d21d41e)
+- [Elixir School: Testing](https://elixirschool.com/en/lessons/basics/testing/)
+- [Elixir Testing Tutorial](https://www.tutorialspoint.com/elixir/elixir_testing.htm)
+- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)

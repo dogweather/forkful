@@ -1,45 +1,46 @@
 ---
-title:    "Go: Mallille vastaavien merkkien poistaminen"
+title:    "Go: Kuvion mukaisen merkin poistaminen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Monissa ohjelmointiprojekteissa saattaa olla tarve poistaa tietynlaiset merkit tai merkkijonot tekstitiedostoista. Tämä voi johtua esimerkiksi tiedoston formatoinnista tai tietyn algoritmin vaatimuksista. Go-ohjelmointikielen avulla tämän tehtävän suorittaminen on helppoa ja tehokasta.
+Monesti Go-ohjelmoinnin aikana voi ilmetä tarve poistaa merkkejä tietyltä kaavalta. Tässä blogikirjoituksessa kerromme, miksi tällaista toimintoa saatetaan tarvita ja miten se voidaan toteuttaa.
 
 ## Miten
-
-Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa, käyttämällä Go-kielen `strings` ja `regexp` paketteja. Esimerkiksi, seuraava koodin avulla voit poistaa kaikki numerot `text` merkkijonosta:
+Go-ohjelmoinnissa merkkejä voidaan poistaa helposti erilaisten kaavojen avulla. Esimerkkikoodissa käytämme funktiota "ReplaceAllString" ja sen avulla poistamme kaikki pisteet merkkijonosta "abc.def.ghi". Alla näet koodin ja siihen liittyvän outputin:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "regexp"
-  "strings"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-  text := "Tervetuloa2020GoMaailmaan"
-  
-  r := regexp.MustCompile(`\d+`)
-  newText := r.ReplaceAllString(text, "")
+	// Luo uusi säännöllinen lauseke
+	re := regexp.MustCompile(`\.`)
 
-  fmt.Println(newText) // Tulostaa: "TervetuloaGoMaailmaan"
+	// Käytä ReplaceAllString funktiota poistaaksesi pisteet merkkijonosta
+	result := re.ReplaceAllString("abc.def.ghi", "")
+
+	// Tulosta lopputulos
+	fmt.Println(result)
+	
+	// Output:
+	// abcdefghi
 }
 ```
 
-## Syväsyvennys
-
-Yllä oleva esimerkki käyttää regulaaarilausekkeita poistamaan numerot merkkijonosta. `strings` ja `regexp` pakettien lisäksi Go-kieli tarjoaa myös muita vaihtoehtoja merkkien poistamiseen, kuten `bytes` paketin `Replace` -metodi ja `strings` paketin `ReplaceAll` ja `Trim` -metodit.
-
-Syvässä sukelluksessa voit myös oppia lisää regulaaarilausekkeista ja niiden käytöstä merkkijonojen muokkaamisessa. Näiden tietojen avulla voit luoda monimutkaisempia tapoja poistaa merkkejä, jotka vastaavat tietyä kaavaa.
+## Syvällinen tarkastelu
+Merkeillä poistaminen voi joskus olla tarpeellista esimerkiksi tietojen käsittelyssä tai merkkijonojen muokkaamisessa. Go-ohjelmoinnissa tähän on tarjolla monipuolisia työkaluja, kuten esimerkiksi säännölliset lausekkeet. Näiden avulla on mahdollista poistaa tai korvata merkkejä halutulla tavalla.
 
 ## Katso myös
+- [Go:n virallinen sivusto](https://golang.org/)
+- [Go-kieltä käsittelevä blogi](https://blog.golang.org/)
+- [Go-ohjelmoinnin opas](https://gobyexample.com/)
 
-- [Go-kirjasto: strings](https://golang.org/pkg/strings/)
-- [Go-kirjasto: regexp](https://golang.org/pkg/regexp/)
-- [Merkkijonojen poistaminen Go-kielen avulla](https://www.digitalocean.com/community/tutorials/how-to-manipulate-strings-in-go)
+Kiitos lukemisesta ja hauskoja Go-ohjelmointihetkiä!

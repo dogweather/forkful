@@ -1,72 +1,83 @@
 ---
-title:    "C++: Få den nåværende datoen"
+title:    "C++: Å få nåværende dato"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å få den nåværende datoen er en vanlig oppgave i programmering. Det kan være nyttig for å vise aktuell informasjon eller for å beregne tidsintervaller. Uansett formål, er det viktig å kunne få riktig dato i koden din.
+Å få den nåværende datoen er ofte en viktig del av å skrive programmer. Det kan være nyttig for å lage datostempel, eller for å overvåke og trekke ut data fra forskjellige dager.
 
-# Hvordan å få den nåværende datoen i C++
+## Hvordan
 
-Det finnes flere måter å få den nåværende datoen i C++ på, men den mest populære metoden er å bruke standard bibliotekfunksjoner. For å få den nåværende datoen, må du inkludere "ctime" biblioteket øverst i koden din.
-
-```C++
-#include <ctime>
-```
- 
-Deretter må du bruke funksjonen "time" fra biblioteket for å få den nåværende datoen som en struct av typen "tm". Denne structen inneholder informasjon om dager, måneder, år og klokkeslett.
+Det er flere måter å få tak i den nåværende datoen i C++. Den enkleste måten er å bruke standardbiblioteket, hvor vi kan bruke funksjonen `localtime` for å hente ut datoen i et strukturert format.
 
 ```C++
-time_t now = time(0);
-tm *current = localtime(&now);
-```
-
-For å hente ut den nåværende datoen, kan du bruke følgende funksjoner:
-
-- current->tm_mday: for å få dag nummeret
-- current->tm_mon + 1: for å få måneden (månedene er representert som tall fra 0 til 11, derfor legger vi til 1 for å få riktig måned)
-- current->tm_year + 1900: for å få året (året er representert som antall år siden 1900)
-- current->tm_hour: for å få timene
-- current->tm_min: for å få minuttene
-- current->tm_sec: for å få sekundene
-
-La oss se på et eksempel for å få den nåværende datoen og klokkeslettet:
-
-```C++
-// Får den nåværende datoen og klokkeslettet
 #include <iostream>
 #include <ctime>
 
-using namespace std;
-
 int main() {
-    // Får den nåværende datoen og klokkeslettet
+    // Henter ut tiden
     time_t now = time(0);
-    tm *current = localtime(&now);
-
-    // Printer ut datoen og klokkeslettet i ønsket format
-    cout << "Dato: " << current->tm_mday << "/" << current->tm_mon + 1 << "/" << current->tm_year + 1900 << endl;
-    cout << "Klokkeslett: " << current->tm_hour << ":" << current->tm_min << ":" << current->tm_sec << endl;
-
+    
+    // Konverterer tiden til en lesbar streng
+    char* dt = ctime(&now);
+    
+    // Skriver ut datoen
+    std::cout << "Dagens dato er: " << dt << std::endl;
+    
     return 0;
 }
 ```
 
 Output:
+
 ```
-Dato: 29/10/2021
-Klokkeslett: 22:35:00
+Dagens dato er: Mon Aug 23 14:28:42 2021
 ```
 
-# Dypdykk
+Vi kan også formatere datoen etter våre ønsker ved å bruke `strftime` funksjonen.
 
-Dato og klokkeslett kan også hentes ut ved hjelp av andre metoder som for eksempel "chrono" biblioteket eller ved å bruke systemspesifikke funksjoner. Det er viktig å merke seg at den nåværende datoen og klokkeslettet hentet med disse metodene kan variere avhengig av tidssone og systeminnstillinger.
+```C++
+#include <iostream>
+#include <ctime>
 
-# Se også
+int main() {
+    // Henter ut tiden
+    time_t now = time(0);
+    
+    // Konverterer tiden til en struktur
+    struct tm * timeinfo;
+    timeinfo = localtime(&now);
+    
+    // Setter opp ønsket format
+    char buffer[80];
+    strftime(buffer, 80, "%d/%m/%Y", timeinfo);
+    
+    // Skriver ut datoen
+    std::cout << "Dagens dato er: " << buffer << std::endl;
+    
+    return 0;
+}
+```
 
-- [C++ Date and Time functions](https://www.cplusplus.com/reference/ctime/)
-- [C++ Chrono Library](https://www.cplusplus.com/reference/chrono/)
-- [Systemspesifikke funksjoner for dato og tid i C++](https://en.cppreference.com/w/cpp/chrono)
+Output:
+
+```
+Dagens dato er: 23/08/2021
+```
+
+## Dykk ned
+
+For å forstå hvordan disse funksjonene fungerer, er det viktig å ha kunnskap om `time_t` og `struct tm`. `time_t` er en datatype som inneholder informasjon om tiden, mens `struct tm` er en struktur som inneholder de forskjellige elementene av datoen som år, måned og dag.
+
+`localtime` funksjonen tar inn en `time_t` verdi og konverterer den til en `struct tm` struktur. `ctime` funksjonen gjør om denne strukturen til en lesbar streng.
+
+`strftime` funksjonen bruker et formatstring til å konvertere datoen til en tilpasset streng. Du kan finne en liste over formatalternativer [her](https://www.cplusplus.com/reference/ctime/strftime/).
+
+## Se også
+
+- [C++ time library](https://www.cplusplus.com/reference/ctime/)
+- [C++ strftime function documentation](https://www.cplusplus.com/reference/ctime/strftime/)

@@ -1,42 +1,41 @@
 ---
 title:    "Gleam: 开始一个新项目"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新的项目？
+# 为什么
+在开始一个新项目之前，我们通常会问自己：为什么要做这个项目？最常见的原因是需要解决一个特定的问题或满足一个特定的需求。但除此之外，也有可能是想要学习新的编程语言或技术。不管是什么原因，开始一个新项目都是一个很棒的学习和成长的机会。
 
-开始一个新的项目可以带来许多好处，例如提高技能、扩展知识、实践新的想法和提升个人发展。Gleam是一种新兴的编程语言，它提供了强大的类型系统和并发机制，是一个理想的选择来开始一个新的项目。
-
-## 如何使用Gleam开始一个新的项目？
-
-首先，您需要安装Gleam编译器和运行时环境。然后，您可以使用Gleam的模块系统和函数式编程特性来设计和编写代码。下面是一个简单的Hello World程序示例：
+## 如何开始
+要开始一个新的Gleam项目，你首先需要安装Gleam编程语言。在安装完成之后，你可以新建一个文件，命名为"main.gleam"。接下来，你可以按照下面的代码示例来编写你的代码。
 
 ```Gleam
-// 定义一个模块
-pub fn hello() {
-    "你好，世界！"
-}
-
-// 调用hello函数并打印输出
+// 引入标准库中的io模块
 import gleam/io
 
-io.println(hello())
+// 定义一个函数，打印"你好，世界！"
+fn greet() {
+    io.print("你好，世界！")
+}
+
+// 调用函数
+greet()
 ```
 
-运行上述代码后，您将在控制台上看到输出：“你好，世界！”
+## 深入了解
+除了基本的代码编写，开始一个新项目还涉及到其他一些重要的方面。首先，你需要明确项目的目的和范围，确定需要用到的工具和技术。其次，你需要设计项目的架构和组织代码结构。最后，你需要制定一个合理的开发计划，以保证项目按时完成。
 
-## 深入探究开始一个新的项目
+# 参考资料
+如果你想了解更多关于使用Gleam编程语言开始一个新项目的信息，请参考以下链接：
 
-创建一个新的Gleam项目可以通过使用Gleam自带的项目管理工具 `gleam new` 来快速获取基础结构和依赖项。这将创建一个基本的项目结构，您可以在此基础上扩展和修改以满足您的需要。
+- 官方Gleam编程语言网站：https://gleam.run/
+- Github仓库：https://github.com/lpil/gleam
+- 官方文档：https://gleam.run/documentation/
+- 论坛：https://elixirforum.com/c/gleam
 
-您也可以在GitHub上找到许多优秀的Gleam项目和示例代码，这将帮助您更深入地了解Gleam的用法和功能。
-
-## 参考链接
-
-- 官方Gleam文档：https://gleam.run/
-- Gleam GitHub仓库：https://github.com/gleam-lang/gleam
-- Gleam社区常见问题解答：https://github.com/gleam-lang/gleam/discussions/categories/q-a
-- Gleam基础示例代码：https://github.com/gleam-lang/example
-- Gleam开源项目集合：https://github.com/gleam-lang/awesome-gleam
+# 参见
+- [如何使用Gleam编程语言创建一个简单的Web服务器](https://example.com/gleam-web-server)
+- [Gleam编程语言 vs. 其他函数式编程语言比较](https://example.com/gleam-vs-functional-languages)

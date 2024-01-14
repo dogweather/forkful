@@ -1,40 +1,76 @@
 ---
 title:    "Bash: Satunnaislukujen luominen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Satunnaislukujen generoiminen
 
-Sattumanvaraisten lukujen generointi voi olla hyödyllistä esimerkiksi silloin kun haluat testata koodiasi satunnaisilla syötteillä tai luoda arpajaisnumeroita. Se voi myös olla hauska tapa luoda erilaisia pelejä tai sovelluksia.
+Satunnaislukujen generoiminen on tärkeä osa monia ohjelmointiprojekteja, kuten pelin kehittämistä tai datan analysointia. Satunnaislukujen avulla voidaan simuloida tiettyjä tilanteita ja testata ohjelmien toimivuutta erilaisilla syötteillä.
 
-## Miten
+## Kuinka: Esimerkkejä koodista ja tulosteista
 
-Bashilla voit helposti generoida satunnaisia lukuja käyttämällä `$RANDOM` muuttujaa. Se palauttaa satunnaisen luvun väliltä 0-32767 joka kerta kun sitä kutsutaan.
-
-```Bash
-echo $RANDOM # Tulostaa esimerkiksi 19526
-```
-
-Voit myös rajoittaa luvun välille jota haluat käyttää. Esimerkiksi jos haluat satunnaisen luvun väliltä 1-10, voit käyttää seuraavaa koodia:
+Satunnaislukujen generoiminen on helppoa Bash-ohjelmoinnissa käyttäen ```$RANDOM``` -muuttujaa. Tämä muuttuja sisältää satunnaisen numeron välillä 0 ja 32767. Alla olevassa koodiesimerkissä generoidaan 10 satunnaista kokonaislukua ja tulostetaan ne ruudulle.
 
 ```Bash
-echo $((RANDOM % 10 + 1)) # Tulostaa satunnaisen luvun väliltä 1-10
+for i in {1..10}
+do
+  echo $RANDOM
+done
 ```
 
-## Syvempi syvennys
-
-Bashissa satunnaislukuja generoitaessa käytetään pohjalla Unixin `rand()` funktiota. Tämä funktio käyttää hyödykseen tietokoneen kellonajan tarkkaa alkuarvoa, jotta ei generoida kahta samaa satunnaislukua peräkkäin. Tämä takaa sen, että saamme todella satunnaisia lukuja.
-
-On myös hyvä huomata, että `$RANDOM` muuttuja palauttaa vain kokonaislukuja. Jos haluat generoida desimaalilukuja, voit käyttää apuna `awk` ohjelmaa. Esimerkiksi alla oleva koodi palauttaa satunnaisen desimaaliluvun väliltä 0-1:
+Tuloste:
 
 ```Bash
-echo | awk '{ srand(); print rand() }' # Tulostaa esimerkiksi 0.54342
+16096
+26525
+10594
+28066
+16216
+1281
+22208
+24028
+23583
+3361
 ```
 
-## Katso myös
+Käyttäjä voi myös itse määrittää haluamansa alku- ja loppuluvun käyttämällä ```$RANDOM``` -muuttujaa seuraavassa muodossa: ```$((min + $RANDOM % (max-min+1)))```. Alla olevassa esimerkissä käyttäjältä pyydetään syöttämään haluamansa väliluku, jonka jälkeen tulostetaan 5 satunnaista lukua tältä väliltä.
 
-- [The Linux Documentation Project: Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [GNU Bash Manuaali](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash-koodaus esimerkkejä](https://tldp.org/LDP/abs/html/sample-bashrc.html)
+```Bash
+echo "Anna alku- ja loppuluku:"
+read min max
+
+for i in {1..5}
+do
+  echo $(($min + $RANDOM % ($max-$min+1)))
+done
+```
+
+Esimerkkituloste:
+
+```Bash
+Anna alku- ja loppuluku:
+10 20
+14
+19
+13
+10
+18
+```
+
+## Syväsukellus: Lisätietoa satunnaislukujen generoimisesta
+
+Vaikka ```$RANDOM``` on kätevä tapa generoida satunnaisia lukuja Bash-ohjelmoinnissa, on hyvä ottaa huomioon muutamia seikkoja sen käytössä. Ensinnäkin, ```$RANDOM``` ei välttämättä ole täysin satunnainen, vaan sen sisäinen mekanismi kyseisen luvun generoimiseen perustuu tiettyyn algoritmiin. Tämä voi johtaa siihen, että samassa ohjelman suorituksessa generoidut luvut saattavat toistaa itseään.
+
+Toisekseen, ```$RANDOM``` -muuttuja on käyttäjäkohtainen, eli jokaisella käyttäjällä on oma satunnaislukunsa. Tämä tarkoittaa sitä, että jos useampi käyttäjä suorittaa samaa Bash-skriptiä samanaikaisesti, lukuja ei voida taata täysin satunnaisiksi.
+
+On myös mahdollista käyttää muita tapoja generoida satunnaislukuja Bash-ohjelmoinnissa, kuten käyttämällä OpenSSL-komentoa tai ulkoista satunnaislukugeneraattoria.
+
+## Katso myös:
+
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
+- [Bash Satunnaisluku Generaattori - GitHub-repositorio](https://github.com/robertsertic/bash-random)
+- [OpenSSL - virallinen dokumentaatio](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+- [Random.org - ulkoinen satunnaislukugeneraattori](https://www.random.org/)

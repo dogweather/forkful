@@ -1,40 +1,69 @@
 ---
-title:    "Haskell: Geração de números aleatórios"
+title:    "Haskell: Gerando números aleatórios"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios em Haskell?
+## Por que gerar números aleatórios é útil?
 
-Gerar números aleatórios é uma tarefa comum em muitos programas e linguagens de programação. Em Haskell, podemos usar funções nativas e bibliotecas específicas para gerar números aleatórios. Este processo pode ser útil para jogos, simulações, criptografia, entre outros.
+Gerar números aleatórios é uma ferramenta essencial para muitos programadores em Haskell. Com a capacidade de gerar números aleatórios, podemos criar jogos, realizar testes de software e simular processos estocásticos. Além disso, é uma ótima maneira de adicionar variedade e imprevisibilidade aos seus programas.
 
-## Como fazer
+## Como fazer em Haskell?
 
-Para gerar números aleatórios em Haskell, precisamos importar a biblioteca `System.Random`. Esta biblioteca possui uma função chamada `randomR` que recebe como parâmetro um intervalo e retorna um número aleatório dentro deste intervalo.
-
-Vamos dar uma olhada em um exemplo simples de como usar essa função:
+Para gerar números aleatórios em Haskell, usamos a função `randomR` do módulo `System.Random`. Esta função recebe dois parâmetros: um intervalo mínimo e máximo e retorna um número aleatório dentro deste intervalo. Aqui está um exemplo de como usá-lo:
 
 ```Haskell
 import System.Random
 
-n <- randomRIO (1, 10)
-print n -- output: 5
+main = do
+   -- Define o intervalo de 1 a 10
+   let min = 1
+   let max = 10
+   -- Gera um número aleatório
+   num <- randomRIO (min, max :: Int)
+   -- Imprime o número
+   putStrLn $ "O número aleatório é: " ++ show num
 ```
 
-Neste exemplo, importamos a função `randomRIO` da biblioteca `System.Random`. Em seguida, definimos uma variável `n` que irá receber o valor retornado pela função ao gerar um número aleatório entre 1 e 10. Por fim, imprimimos o valor de `n` na tela.
+A saída deste programa pode ser algo como:
 
-Além da função `randomR`, a biblioteca `System.Random` também possui outras funções úteis para gerar números aleatórios em Haskell, como `random`, `randomIO` e `randomRs`. Cada uma dessas funções tem seus próprios parâmetros e funcionalidades, portanto é importante ler a documentação da biblioteca para utilizá-las corretamente.
+```bash
+O número aleatório é: 7
+```
 
-## Aprofundando-se
+Além disso, também podemos gerar listas de números aleatórios usando a função `randomRs`, que é semelhante à função `randomR`, mas retorna uma lista de valores aleatórios. Aqui está um exemplo:
 
-A geração de números aleatórios em Haskell é baseada em geradores de números pseudoaleatórios (PRNGs). Isso significa que os números gerados não são verdadeiramente aleatórios, mas sim determinados por um algoritmo matemático que utiliza uma semente (seed) como entrada.
+```Haskell
+import System.Random
 
-É importante lembrar que, ao executar um programa com geração de números aleatórios, os resultados podem variar a cada execução, dependendo da semente utilizada. No entanto, é possível definir uma semente específica para obter os mesmos números aleatórios em diferentes execuções do programa, o que é útil para fins de testes e depuração.
+main = do
+   -- Define o intervalo de 1 a 10
+   let min = 1
+   let max = 10
+   -- Gera uma lista de 5 números aleatórios
+   nums <- take 5 . randomRs (min, max) <$> newStdGen
+   -- Imprime a lista
+   putStrLn $ "A lista de números aleatórios é: " ++ show nums
+```
 
-Além disso, é possível controlar o comportamento dos geradores de PRNGs em relação à geração de números repetidos ou sequências previsíveis. Para isso, podemos utilizar a função `setStdGen` para definir uma nova semente e alterar o estado do gerador.
+A saída deste programa pode ser algo como:
+
+```bash
+A lista de números aleatórios é: [4, 2, 9, 6, 8]
+```
+
+## Profundidade no mundo dos números aleatórios
+
+Embora a função `randomR` seja uma maneira simples e eficiente de gerar números aleatórios, ela possui algumas limitações. Por exemplo, os números gerados seguem uma distribuição uniforme, o que significa que cada número tem a mesma probabilidade de ser selecionado. Se quisermos uma distribuição diferente, podemos usar a função `random` e fornecer um gerador de números aleatórios como um parâmetro.
+
+Além disso, podemos usar a função `mkStdGen` para criar geradores de números aleatórios determinísticos, o que significa que cada vez que executarmos o programa, obteremos os mesmos números aleatórios. Isso pode ser útil para depuração e teste.
+
+Há também módulos como `System.Random.Shuffle` que fornecem maneiras mais avançadas de gerar números aleatórios, como embaralhar uma lista aleatoriamente usando uma semente.
 
 ## Veja também
-- [Documentação da biblioteca System.Random](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
-- [Tutorial sobre geração de números aleatórios em Haskell](https://wiki.haskell.org/Random)
-- [Artigo sobre geradores de números pseudoaleatórios](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+
+- [Documentação do módulo `System.Random`](https://hackage.haskell.org/package/random/docs/System-Random.html)
+- [Documentação do módulo `System.Random.Shuffle`](https://hackage.haskell.org/package/random-shuffle)
+- [Explicação sobre números aleatórios em Haskell](https://wiki.haskell.org/Random_vs._system-random)

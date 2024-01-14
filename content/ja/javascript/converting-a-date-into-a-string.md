@@ -1,36 +1,42 @@
 ---
 title:    "Javascript: 日付を文字列に変換する"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-日付を文字列に変換する理由は何でしょうか？日付を文字列に変換することで、プログラマーは日付データをデータベースに保存したり、ユーザーに見やすい形式で表示したりすることができます。
+## なぜ
+JavaScriptを使って日付を文字列に変換するのはなぜですか？
 
-## How To
-日付を文字列に変換する方法について、具体的なコード例を交えながら説明します。
+日付を文字列に変換することは、日付を見やすく表示したり、データベースに保存したり、あるいはその他の処理を行うために必要な場合があります。それでは、実際にどのように変換するのでしょうか？これから説明します。
+
+## 方法
 ```Javascript
-// 日付を取得
-const date = new Date();
-
-// フォーマットを指定して文字列に変換
-const dateString = `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`;
-
-// 結果を出力
-console.log(dateString);
-// 2021年8月10日
+const today = new Date();
+const stringDate = today.toDateString();
+console.log(stringDate); // "Fri Apr 30 2021"
 ```
-上記のコードでは、DateオブジェクトからgetFullYear、getMonth、getDateというメソッドを使用して、年月日をそれぞれ取得し、文字列として結合しています。
-また、このようにして得られる文字列はローカルのタイムゾーンに基づいています。もしUTCでの日付を表示したい場合は、getUTCFullYear、getUTCMonth、getUTCDateというメソッドを使用することができます。
 
-## Deep Dive
-日付を文字列に変換する際には、フォーマットを指定することが重要です。どのようなフォーマットを指定するかによって、表示される文字列が異なります。
-例えば、前述のコードでは`getFullYear()`を使用していますが、これは4桁の年を表示します。もし2桁の年を表示したい場合は、`getYear()`を使用することができます。
-その他にも、月や日の表示についても様々なオプションがあります。詳しい情報は[Dateオブジェクトのドキュメンテーション](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)を参照してください。
+上記のように、Dateオブジェクトを作成し、その`toDateString()`メソッドを使うことで、日付を文字列に変換することができます。このように、JavaScriptではDateオブジェクトを使うことで、日付を文字列に変換することができます。
 
-また、日付を文字列に変換する際には、タイムゾーンやロケールにも注意する必要があります。これらが異なる場合、日付の表示が異なる可能性があります。特に、国際的なアプリケーションを作成する場合は注意が必要です。
+また、日付のフォーマットを変更したい場合は、`toLocaleDateString()`メソッドを使うことができます。例えば、日本語ロケールでのフォーマットは次のようになります。
 
-## See Also
-- [Dateオブジェクトのドキュメンテーション](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [日付フォーマットの仕様についての記事](https://qiita.com/ykzn11/items/63eb6663a3f5a5720ed3)
+```Javascript
+const today = new Date();
+const stringDate = today.toLocaleDateString('ja-JP', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+console.log(stringDate); // "金曜日, 2021年4月30日"
+```
+
+さらに、任意のフォーマットで日付を表示させたい場合は、ライブラリを使うこともできます。例えば、Moment.jsやdate-fnsなどがあります。
+
+## ディープ・ダイブ
+Dateオブジェクトのメソッドを使うことで、日付を文字列に簡単に変換することができますが、裏側ではどのように処理されているのでしょうか？
+
+JavaScriptでは、Dateオブジェクトが内部的にはUnix時間（1970年1月1日からのミリ秒数）で日付を管理しています。そのため、Dateオブジェクトを使うことで、Unix時間を日付文字列に変換することができるのです。また、`toLocaleDateString()`メソッドを使うことで、ロケールに応じたフォーマットで日付を表示することができるのです。
+
+## その他の参考リンク
+
+[Dateオブジェクト - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+[Moment.js](https://momentjs.com/)
+[date-fns](https://date-fns.org/)

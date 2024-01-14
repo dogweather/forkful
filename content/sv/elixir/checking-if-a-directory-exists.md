@@ -1,33 +1,41 @@
 ---
 title:    "Elixir: Kontrollera om en mapp finns"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en mapp existerar kan vara en viktig del av att skriva effektiv och pålitlig kod. Det kan hjälpa till att undvika oönskade fel och störningar i ditt program, vilket i sin tur kan leda till en bättre användarupplevelse.
+Undrar du någonsin om en mapp existerar i ditt program? I denna bloggpost kommer vi att titta på hur du kan kontrollera om en mapp existerar i ditt Elixir-program och varför det kan vara användbart.
 
-## Så här gör du
+## Hur man gör
 
-För att kontrollera om en mapp (eller vilken fil som helst) existerar i Elixir, kan du använda funktionen `File.exists?/1`. Den tar in en sökväg som argument och returnerar `true` om mappen existerar och `false` om den inte gör det. Låt oss titta på ett exempel:
+För att kontrollera om en mapp existerar i ditt Elixir-program kan du använda funktionen `Path.exists?` från modulen `Path`. Här är ett exempel på hur du skulle använda den:
 
 ```Elixir
-iex> File.exists?("src/example_ex/dir")
-true
+# Skapa en sökväg för den mapp du vill kolla
+path = Path.join(["/hem", "användare", "bilder"])
+
+# Kontrollera om mappen existerar
+if Path.exists?(path) do
+  IO.puts "Mappen finns!"
+else
+  IO.puts "Mappen finns inte."
+end
 ```
 
-I exemplet ovan kontrollerar vi om mappen "dir" existerar inuti katalogen "example_ex" i vår projektstruktur. Om mappen existerar, returnerar funktionen `true`. Annars returnerar den `false`.
+I det här exemplet skapar vi först en sökväg för mappen "bilder" i användarens hemkatalog. Sedan använder vi `Path.exists?` för att kontrollera om den mappen verkligen existerar. Om den gör det, skriver vi ut "Mappen finns!", annars skriver vi ut "Mappen finns inte."
 
 ## Djupdykning
 
-När du använder `File.exists?/1` i ditt program finns det några saker att tänka på. För det första tar funktionen in en absolut sökväg som argument, så se till att specificera rätt sökväg för att undvika fel. Dessutom returnerar funktionen `true` även om filen inte är åtkomlig, så det kan vara användbart att även inkludera en kontroll för att se om filen är åtkomlig med funktionen `File.readable?/1`.
+För att förstå hur `Path.exists?` fungerar, behöver vi gå lite djupare och titta på dess implementering. Funktionen använder sig av operativsystemets `File.stat/1` för att få information om en fil eller mapp. Om `File.stat/1` returnerar en lista av metadata, vet vi att mappen eller filen existerar.
 
-När man arbetar med filer är det också bra att ha koll på andra funktioner som kan hjälpa till att hantera dem, som `File.mkdir/1` för att skapa en ny mapp, `File.touch/1` för att skapa en ny fil och `File.rm_rf/1` för att radera en hel katalog.
+Det är också värt att notera att `Path.exists?` betraktar alla typer av filer och mappar, inklusive symboliska länkar. Om du vill kontrollera om en symbolisk länk pekar till en giltig fil eller mapp kan du istället använda `File.read_link/1`.
 
 ## Se också
 
-- [File Modulen](https://hexdocs.pm/elixir/File.html)
-- [Tutorial: Elixir File System Basics](https://medium.com/@sascott_44494/elixir-file-system-basics-tutorial-4482edc1e312)
-- [Handling Files in Elixir](https://dev.to/somitjana/handling-files-in-elixir-2oek)
+- [`Path.exists?` i Elixir Dokumentation](https://hexdocs.pm/elixir/Path.html#exists?/1)
+- [`File.stat/1` i Elixir Dokumentation](https://hexdocs.pm/elixir/File.html#stat/1)
+- [`File.read_link/1` i Elixir Dokumentation](https://hexdocs.pm/elixir/File.html#read_link/1)

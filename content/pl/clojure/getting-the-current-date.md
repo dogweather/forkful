@@ -1,43 +1,43 @@
 ---
-title:    "Clojure: Dostęp do bieżącej daty"
+title:    "Clojure: Otrzymanie bieżącej daty"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać w języku Clojure?
+## Dlaczego
 
-Jeśli jesteś programistą lub programistką i interesują cię języki programowania, z pewnością słyszałeś/aś już o języku Clojure. Jest to język funkcyjny, działający na wirtualnej maszynie Javy. Dzięki swojej prostocie i wydajności, cieszy się coraz większą popularnością wśród programistów, szczególnie w dziedzinie programowania funkcyjnego.
+W dzisiejszych czasach skomputeryzowane systemy są wszechobecne i wiele aplikacji wymaga przetwarzania dat. W Clojure (języku programowania działającym na platformie JVM) pojawia się wiele przypadków, w których potrzebujemy aktualnej daty. W tym artykule dowiecie się, jak to zrobić w kilku prostych krokach.
 
-Ale dlaczego warto pisać w języku Clojure? Jedną z jego zalet jest możliwość tworzenia skalowalnych aplikacji, które łatwo utrzymać i rozwijać. Dodatkowo, Clojure oferuje bogate narzędzia i biblioteki, które ułatwiają pracę programistów. Jednym z popularnych zastosowań języka Clojure jest tworzenie aplikacji internetowych i systemów rozproszonych.
+## Jak to zrobić
 
-Jeśli chcesz poznać więcej o języku Clojure i spróbować swoich sił w programowaniu funkcyjnym, możesz zacząć od prostej, ale przydatnej operacji - pobierania aktualnej daty.
+Aby uzyskać aktualną datę w Clojure, możemy skorzystać z funkcji `(java.util.Date.)` i `(java.time.LocalDate/now)`. Pierwsza z nich zwróci obiekt typu `java.util.Date`, a druga obiekt typu `java.time.LocalDate`. Przykładowy kod w Clojure wyglądałby następująco:
 
-## Jak to zrobić w Clojure?
-
-```Clojure
-(ns read-date.core
-  (:require [clj-time.core :as time])) ; importujemy bibliotekę clj-time
-
-(defn get-current-date []
-  (let [current-date (time/today)] ; tworzymy zmienną z aktualną datą
-    (print current-date))) ; wyświetlamy datę w konsoli
-
-(get-current-date) ; wywołujemy naszą funkcję
+```
+Clojure
+(def aktualna-data (java.util.Date.)) ;; aktualna-data = Wed Oct 13 18:57:43 CEST 2021
+(def aktualna-data-local (java.time.LocalDate/now)) ;; aktualna-data-local = #object[xxx java.time.LocalDate]  (dokładna wartość zależy od aktualnej daty)
 ```
 
-Output:
+Obiekt `aktualna-data` jest typu `java.util.Date`, więc możemy z niego wyodrębnić konkretne informacje, np. dzień, miesiąc czy rok. Inaczej jest w przypadku obiektu `aktualna-data-local`, w którym możemy uzyskać dostęp do poszczególnych wartości używając odpowiednich metod, np. `(.getDayOfMonth aktualna-data-local)` zwróci bieżący dzień miesiąca. Przykładowy kod z wykorzystaniem tych informacji wyglądałby tak:
 
-#inst "2021-09-22T00:00:00.000-00:00"
+```
+Clojure
+(def dzien (.getDay aktualna-data)) ;; dzien = 13
+(def miesiac (.getMonth aktualna-data)) ;; miesiac = 10
+(def rok (.getYear aktualna-data)) ;; rok = 2021
+(def biezacy-dzien-miesiaca (.getDayOfMonth aktualna-data-local)) ;; biezacy-dzien-miesiaca = 13
+(def biezacy-miesiac (.getMonth aktualna-data-local)) ;; biezacy-miesiac = OCTOBER
+(def biezacy-rok (.getYear aktualna-data-local)) ;; biezacy-rok = 2021
+```
 
-Jak widać, pobranie aktualnej daty w języku Clojure jest bardzo proste i wymaga tylko kilku linii kodu. Dzięki bibliotece clj-time, możemy w łatwy sposób manipulować i formatować datę według swoich potrzeb.
+## Głębsza analiza
 
-## Głębsze zanurzenie
+W powyższych przykładach wykorzystaliśmy tylko podstawowe funkcje i metody dostępne w Clojure do uzyskania aktualnej daty. Jednak w zależności od potrzeb, możemy sięgnąć po więcej zaawansowanych rozwiązań, np. biblioteki `clj-time` lub `java.time.format.DateTimeFormatter`, która umożliwia formatowanie daty według własnych potrzeb. Również warto zapoznać się z dokumentacją dostępną na oficjalnej stronie Clojure, aby dowiedzieć się więcej na temat dostępnych funkcji i metod.
 
-Jeśli jesteś ciekawy/ciekawa, jak dokładnie funkcja (time/today) z biblioteki clj-time pobiera aktualną datę, możesz zajrzeć do jej źródłowego kodu. W bardziej zaawansowanym projekcie, warto również przeczytać więcej o obsłudze czasu w języku Clojure, np. wykorzystując bibliotekę java-time.
+## Zobacz także
 
-## Zobacz również
-
-- [Oficjalna dokumentacja języka Clojure](https://clojure.org/)
-- [Biblioteka clj-time](https://github.com/clj-time/clj-time)
-- [Przewodnik dla początkujących w języku Clojure](https://clojure.org/guides/getting_started)
+- Dokumentacja Clojure: https://clojure.org
+- Biblioteka clj-time: https://github.com/clj-time/clj-time
+- Dokumentacja java.time.format.DateTimeFormatter: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html

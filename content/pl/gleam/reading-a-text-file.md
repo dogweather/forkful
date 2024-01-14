@@ -1,41 +1,49 @@
 ---
-title:    "Gleam: Czytanie pliku tekstowego"
+title:    "Gleam: Odczyt pliku tekstowego"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy wiesz, że Gleam jest językiem programowania stworzonym z myślą o bezpieczeństwie i wydajności? Jeśli jesteś zainteresowany/a nauką tego języka, miejmy nadzieję, że nasz wpis pomoże Ci poszerzyć Twoją wiedzę o funkcji odczytu plików tekstowych!
+Istnieje wiele powodów, dla których warto nauczyć się czytać pliki tekstowe w języku programowania Gleam. Po pierwsze, jest to często wykorzystywane w różnych projektach i może okazać się niezbędne dla Twojej przyszłej pracy. Po drugie, umiejętność czytania plików tekstowych może pomóc w efektywnym przetwarzaniu danych i automatyzacji różnych zadań.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Gleam oferuje nam wiele różnych możliwości związanych z obsługą plików tekstowych. Jedną z najpopularniejszych i najprostszych jest funkcja `File.read_text`, która pozwala na odczytanie zawartości tekstu z dowolnego pliku. Możesz wywołać ją w następujący sposób:
-
-```Gleam
-let file = File.read_text("./plik.txt")
-```
-
-Wynikiem tej funkcji będzie wartość typu `Result` zawierająca zawartość pliku w postaci `Ok(text)` lub `Error(message)` w przypadku błędu.
-
-Możesz również użyć funkcji `File.read_text_to_string` do odczytania pliku bezpośrednio do zmiennej typu `String`. Przykładowy kod wyglądałby tak:
+Aby czytać pliki tekstowe w języku Gleam, należy użyć funkcji `File.read`. Przykładowy kod znajduje się poniżej:
 
 ```Gleam
-let text = File.read_text_to_string("./plik.txt")
+// Otwarcie pliku tekstowego do odczytu
+let file = File.open("tekst.txt", "r")
+
+// Wczytanie całego pliku jako jednego napisu
+let content = File.read(file, "all")
+
+// Wyświetlenie zawartości pliku tekstowego
+IO.println(content)
+
+// Zamknięcie pliku
+File.close(file)
 ```
 
-Pamiętaj, aby zawsze sprawdzać zwracaną wartość, ponieważ możesz nie mieć dostępu do pliku lub wystąpił inny błąd.
+W powyższym przykładzie w pierwszej linijce otwieramy plik tekstowy "tekst.txt" w trybie tylko do odczytu. Następnie wywołujemy funkcję `File.read`, która zwraca zawartość pliku jako napis. Ostatecznie zamykamy plik, aby zwolnić zasoby systemowe.
 
-## Pogłębione Wprowadzenie
+Przykładowy wynik działania powyższego kodu może wyglądać następująco:
 
-Funkcje opisane powyżej to tylko podstawowe sposoby odczytywania plików tekstowych w Gleam. Istnieją również inne funkcje, takie jak `File.read`, `File.read_lines` czy `File.read_until`, które pozwalają na bardziej zaawansowane operacje, na przykład odczytywanie pliku w poszczególnych liniach zamiast całej zawartości na raz.
+```
+To jest zawartość pliku tekst.txt
+```
 
-Dodatkowo, warto zaznajomić się z różnymi trybami otwierania plików, takimi jak `read`, `write` czy `append`, które pozwalają na dostosowanie sposobu odczytu do naszych potrzeb.
+## Głębsze zagłębienie
 
-Jeśli chcesz dowiedzieć się więcej na temat odczytywania plików tekstowych w Gleam, zalecamy zapoznanie się z oficjalną dokumentacją tego języka.
+Wczytywanie plików tekstowych nie jest jedynym sposobem na wykorzystanie funkcji `File.read`. Funkcja ta może być również użyta do wczytania wybranego fragmentu pliku, np. 10 pierwszych linii lub 100 ostatnich. Ponadto, można również zastosować różne tryby otwierania pliku, np. do zapisu lub do odczytu i zapisu na raz.
 
-## Zobacz Również
+Właściwe wykorzystanie funkcji `File.read` może znacznie ułatwić pracę z plikami tekstowymi w języku Gleam.
 
-* [Oficjalna Dokumentacja Gleam](https://gleam.run/documentation/)
-* [Repozytorium GitHub Gleam](https://github.com/gleam-lang/gleam)
+## Zobacz również
+
+- Dokumentacja Gleam: https://gleam.run/documentation/
+- Wprowadzenie do czytania i pisania plików tekstowych w języku Gleam: https://gleam.run/articles/file-reader-writer
+- Przykładowy projekt wykorzystujący funkcję `File.read`: https://github.com/gleam-lang/example-file-reader

@@ -1,50 +1,55 @@
 ---
 title:    "C# recipe: Extracting substrings"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Substring extraction is a common task in programming that can be used to manipulate and extract specific parts of a larger string. It can be especially useful when dealing with large amounts of data, such as in data processing applications or text parsing.
+## Why Extract Substrings?
 
-## How To
-To extract a substring in C#, we can use the `Substring()` method. This method takes in two arguments: the starting index of the substring and the length of the desired substring. For example:
+As a programmer, you may encounter situations where you need to manipulate strings in a certain way. One common task is extracting substrings, or smaller parts of a larger string. This can be useful in many scenarios, such as parsing user input or formatting data for output. Knowing how to extract substrings can make your code more efficient and improve the overall functionality of your program.
 
-```C#
-string myString = "Hello, world!";
-string mySubstring = myString.Substring(0, 5);
-Console.WriteLine(mySubstring);
+## How To Extract Substrings in C#
+
+To extract a substring in C#, you can use the `Substring()` method. This method takes in two parameters - the starting index and the length of the substring you want to extract. Here's an example of how you can use this method:
+
+```
+string sentence = "I love programming!";
+string substring = sentence.Substring(2,4);
+Console.WriteLine(substring);
 ```
 
-The code above will output `Hello`, since it starts at index 0 and takes a substring with a length of 5 characters. We can also use this method to extract multiple substrings from a single string:
+In this example, we are extracting the substring starting at index 2 (the third character) and with a length of 4 characters. The output would be "love", as it contains the four characters starting from index 2.
 
-```C#
-string myString = "This is a sentence.";
-string myFirstSubstring = myString.Substring(0, 4);
-string mySecondSubstring = myString.Substring(5, 2);
-string myThirdSubstring = myString.Substring(8, 1);
+You can also use the `Substring()` method without specifying a length, which will extract the remaining characters from the specified index to the end of the string. For example:
 
-Console.WriteLine(myFirstSubstring); // Outputs "This"
-Console.WriteLine(mySecondSubstring); // Outputs "is"
-Console.WriteLine(myThirdSubstring); // Outputs "a"
+```
+string sentence = "I love programming!";
+string substring = sentence.Substring(7);
+Console.WriteLine(substring);
 ```
 
-We can even use the `Substring()` method to extract a substring starting from the end of the string by using negative numbers. For example:
+The output would be "programming!".
 
-```C#
-string myString = "abcde";
-string mySubstring = myString.Substring(-3, 3);
+## Deep Dive into Substring Extraction
 
-Console.WriteLine(mySubstring); // Outputs "cde"
+It's important to note that the `Substring()` method does not modify the original string, but instead returns a new string. This means that if you want to alter the original string, you need to assign the substring to a new variable.
+
+Another useful method for extracting substrings is `Split()`. This method takes in a delimiter and returns an array of strings separated by that delimiter. For example:
+
+```
+string fruits = "apple, banana, orange";
+string[] fruitList = fruits.Split(',');
+Console.WriteLine(fruitList[0]); //Output: "apple"
 ```
 
-## Deep Dive
-Under the hood, the `Substring()` method uses the `String.Substring()` method from the .NET Framework class `System.String`. This method takes in a start index and a length, and creates a new string with the desired substring. It does this by creating a new character array with the desired length and copying the characters from the original string starting at the given index. Understanding how this method works allows us to use it more effectively and efficiently in our code.
-
-It's worth noting that the `Substring()` method does not modify the original string, instead it creates a new string with the extracted substring. This means that the original string remains unchanged, making this method a safe and convenient way to extract substrings without altering the original data.
+In this example, we used a comma as the delimiter to split the string into an array of fruits.
 
 ## See Also
-- Microsoft documentation for `Substring()` method: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring
-- C# String class: https://docs.microsoft.com/en-us/dotnet/api/system.string
-- Codecademy tutorial on string manipulation: https://www.codecademy.com/learn/learn-c-sharp/modules/learn-csharp-manipulating-strings
+
+To continue learning about manipulating strings in C#, check out these helpful resources:
+
+- [Microsoft Docs - Substring Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [Codecademy - String Manipulation in C#](https://www.codecademy.com/learn/learn-c-sharp/modules/csh-string-manipulation)
+- [C# Corner - Understanding Substring Method in C#](https://www.c-sharpcorner.com/article/understanding-substring-method-in-c-sharp/)

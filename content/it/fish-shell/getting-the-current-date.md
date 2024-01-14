@@ -1,44 +1,53 @@
 ---
-title:    "Fish Shell: Ottenere la data corrente"
+title:    "Fish Shell: Ottenere la data corrente."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Se stai scrivendo un programma che ha bisogno di conoscere la data attuale, come ad esempio un bot che pubblica messaggi giornalieri o una funzione di salvataggio automatico, avrai bisogno di un modo per ottenere la data corrente all'interno del tuo codice. In questo post, ti mostrerò come farlo utilizzando il Fish Shell!
+# Perché
 
-## Come Fare
-Per ottenere la data corrente utilizzando il Fish Shell, possiamo utilizzare il comando "date". Questo comando ci permette di visualizzare la data e l'orario attuale in diversi formati. Ecco un esempio:
+La data corrente è un'informazione importante per molti programmi e script. Può essere utilizzata per il registro degli eventi, il salvataggio dei file con il nome della data e molto altro ancora.
 
-```Fish Shell
-date
-```
+# Come Fare
 
-Questo ci darà un output simile a questo:
-
-```
-mer giu 16 14:30:00 CEST 2021
-```
-
-Possiamo anche specificare il formato desiderato utilizzando le opzioni del comando "date". Ad esempio, per ottenere la data nel formato "gg/mm/aaaa", possiamo utilizzare il seguente comando:
+Fish Shell è un'ottima scelta per ottenere la data corrente grazie alla sua sintassi semplice e alle sue funzioni integrate. Ecco un esempio di come ottenere la data corrente utilizzando la funzione `date` di Fish Shell:
 
 ```Fish Shell
-date +"%d/%m/%Y"
+date +%Y-%m-%d
 ```
+Output:
+`2021-09-18`
 
-Questo ci darà un output come questo:
+Usando la stringa di formattazione `%Y-%m-%d`, otteniamo la data corrente nel formato anno-mese-giorno. È possibile personalizzare il formato utilizzando diverse stringhe di formattazione, come `%H:%M:%S` per l'ora corrente o `%A` per il nome del giorno della settimana.
 
+Inoltre, Fish Shell supporta anche la funzione `now` che restituisce un oggetto `date` con la data e l'ora correnti. Possiamo quindi utilizzare altre funzioni associate all'oggetto `date`, ad esempio:
+
+```Fish Shell
+echo (now +%B)" "(now +%Y)
 ```
-16/06/2021
+Output:
+`settembre 2021`
+
+Questo esempio utilizza la funzione `echo` per stampare il mese e l'anno correnti.
+
+# Approfondimento
+
+Per coloro che vogliono approfondire il funzionamento della data in Fish Shell, c'è una serie di funzioni disponibili. Ad esempio, la funzione `date -r` consente di ottenere la data di ultima modifica di un file, mentre `date --universal` restituisce la data e l'ora universali in UTC.
+
+Inoltre, è possibile eseguire calcoli sulla data utilizzando il timestamp Unix, che rappresenta il numero di secondi trascorsi dal 1° gennaio 1970. Fish Shell offre la funzione `math`, che permette di eseguire operazioni matematiche, come ad esempio:
+
+```Fish Shell
+math "(%s - %s) / 60" (date -u +%s) (now -u +%s)
 ```
+Output:
+`1`
 
-## Approfondimento
-Il comando "date" utilizza il clock time del sistema per ottenere la data corrente. Ci sono anche altre opzioni disponibili per il formato della data, che puoi scoprire esplorando il manuale di Fish Shell. Inoltre, puoi anche utilizzare il comando "cal", che visualizza un calendario del mese corrente, per ottenere la data corrente in base al calendario.
+Questo esempio calcola la differenza in minuti tra la data corrente in UTC e il timestamp Unix della data di oggi in UTC.
 
-## Vedi anche
-- [Fish Shell - Documentazione ufficiale](https://fishshell.com/docs/current/index.html)
-- [Guida rapida alla riga di comando di Fish Shell](https://dev.to/lucpattyn/guida-rapida-alla-riga-di-comando-di-fish-shell-3ack)
-- [Come utilizzare Fish Shell come shell predefinita su macOS](https://www.micheledallatorre.com/fish-shell-per-macos/)
+# Vedi Anche
 
-Grazie per aver letto questo post e spero che ora tu sappia come ottenere la data corrente utilizzando il Fish Shell!
+- Documentazione ufficiale di Fish Shell su `date`: https://fishshell.com/docs/current/cmds/date.html
+- Guida su come formattare la data e l'ora in Fish Shell: https://www.freecodecamp.org/news/how-to-format-date-and-time-in-the-linux-terminal/
+- Spiegazione dettagliata sui timestamp Unix: https://en.wikipedia.org/wiki/Unix_time

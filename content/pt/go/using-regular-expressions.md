@@ -1,34 +1,45 @@
 ---
 title:    "Go: Utilizando expressões regulares"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que usar expressões regulares em Go?
 
-Se você é um programador Go, provavelmente já ouviu falar em expressões regulares. Mas por que alguém se incomodaria em aprender e usar essa ferramenta? A resposta é simples: expressões regulares são extremamente úteis quando se trata de localizar e manipular padrões de texto.
+As expressões regulares são uma poderosa ferramenta para manipulação de strings e padrões em código. Elas podem ser úteis em diversas situações, como validação de dados, busca e substituição de strings, e até mesmo na criação de parsers. Em Go, é possível utilizar a biblioteca built-in "regexp" para trabalhar com expressões regulares.
 
-## Como usar expressões regulares em Go
+## Como Usar
 
-Agora que já sabemos o porquê, vamos aprender a usar expressões regulares em Go. Primeiro, é necessário importar o pacote de expressões regulares com o comando `import "regexp"`. Em seguida, podemos usar a função `MatchString(pattern, input)` para procurar um padrão de texto específico em uma string. Por exemplo:
+Para utilizar expressões regulares em Go, primeiro é necessário importar a biblioteca "regexp". Em seguida, podemos utilizar a função "regexp.Compile" para compilar nossa expressão regular e retornar uma estrutura que pode ser utilizada para fazer a correspondência de padrões.
 
 ```Go
 import "regexp"
 
 func main() {
-    match, _ := regexp.MatchString("go", "Golang é uma ótima linguagem de programação!")
-    fmt.Println(match)
+  // Compila a expressão regular
+  re := regexp.MustCompile("h(o|i)s")
+
+  // Faz a correspondência com a string "his" 
+  fmt.Println(re.MatchString("his")) // true
+
+  // Faz a correspondência com a string "hers"
+  fmt.Println(re.MatchString("hers")) // true
+
+  // Não faz a correspondência com a string "hat"
+  fmt.Println(re.MatchString("hat")) // false
 }
 ```
 
-Neste exemplo, usamos a função `MatchString` para verificar se a string contém o padrão "go", e o resultado será `true` já que a string contém essa palavra. 
+## Aprofundamento
 
-## Aprofundando em expressões regulares
+Existem diversas opções e métodos disponíveis para trabalhar com expressões regulares em Go. Alguns desses métodos incluem "FindString", que encontra a primeira correspondência de padrão em uma string, e "FindAllString", que encontra todas as correspondências de padrão em uma string.
 
-Existem diversos recursos e opções disponíveis ao usar expressões regulares em Go. Por exemplo, podemos usar os caracteres `^` e `$` para delimitar o início e o fim de uma string. Também podemos usar o caractere `*` para indicar que um determinado padrão deve repetir 0 ou mais vezes. Há ainda muitas outras possibilidades, e é importante estudar a documentação oficial do pacote `regexp` para entender todas as opções disponíveis.
+Para uma lista completa dos métodos disponíveis, consulte a documentação oficial da biblioteca "regexp" em https://golang.org/pkg/regexp/.
 
 ## Veja também
-- [Documentação do pacote regexp em Go](https://golang.org/pkg/regexp/)
-- [Cheat sheet de expressões regulares em Go](https://yourbasic.org/golang/regexp-cheat-sheet/)
-- [Tutorial de expressões regulares em Go](https://www.calhoun.io/learning-golang-regexp/)
+
+- [Tutorial de Expressões Regulares em Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-pt)
+- [Documentação Oficial da Biblioteca "regexp"](https://golang.org/pkg/regexp/)
+- [Curso Gratuito de Expressões Regulares em Go](https://www.udemy.com/course/aprenda-expressoes-regulares-em-golang/)

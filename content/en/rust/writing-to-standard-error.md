@@ -1,37 +1,51 @@
 ---
 title:    "Rust recipe: Writing to standard error"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-In the world of programming, there are many different methods for displaying errors and messages to the user. One commonly used method is writing to standard error, also known as `stderr`. In this blog post, we will explore why writing to standard error can be a useful tool for Rust developers.
+When writing code, it is important to have robust error handling in order to ensure that your program runs smoothly and any potential issues are caught. Writing to standard error allows you to display error messages to the user, making it easier to understand and troubleshoot any errors that may occur.
 
-## How To 
-Writing to standard error in Rust is a simple process that can greatly improve the readability and usability of your code. Let's take a look at an example of how to write to `stderr` using the `eprintln!()` macro:
+## How To
 
-```Rust
-let error_message = "Something went wrong!";
-eprintln!("{}", error_message);
+To write to standard error in Rust, you can use the `eprintln!` macro. This macro works similarly to `println!`, but it prints to standard error instead of standard output. Let's take a look at an example:
+
+```rust
+fn main() {
+  let x = 10;
+  let y = 0;
+
+  if y == 0 {
+    eprintln!("Error: Cannot divide by 0");
+  } else {
+    let result = x / y;
+    println!("Result: {}", result);
+  }
+}
 ```
 
-This will print the message "Something went wrong!" to the standard error output. In comparison, using the `println!()` macro would print the message to the standard output. This may seem like a minor difference, but it can be very helpful when debugging your code.
+In this code, we are attempting to divide `x` by `y`. However, since `y` is 0, it will result in a division by 0 error. Instead of using `println!` to display the error message, we use `eprintln!` to print it to standard error. The output of this code will be:
 
-Another advantage of writing to standard error is that it provides a clearer separation between error messages and regular output. This can make it easier for users to identify and troubleshoot any issues that may arise.
+```
+Error: Cannot divide by 0
+```
 
-## Deep Dive 
-When writing to standard error, Rust uses the `std::io::stderr()` function to access the standard error stream. This function returns a `Stderr` type, which implements the `Write` trait. This means that we can use methods like `write()` and `flush()` to write to the standard error stream.
+## Deep Dive
 
-In some cases, you may also need to handle I/O errors when writing to standard error. To do this, you can use the `expect()` method, which returns a `Result` type that contains an `Err` value if an error occurs.
+While using `eprintln!` is a simple and effective way to print to standard error, there are other ways to accomplish this as well. For more advanced error handling, you can use the `std::io::Write` trait to write directly to standard error. You can also use the `std::io::stderr` function to get a handle to standard error and then use methods such as `write` or `writeln` to write to it.
 
-Additionally, it is important to note that writing to standard error is not limited to simple text messages. You can also write any type that implements the `Display` trait, such as structs or enums, to standard error using the `eprintln!()` macro.
+It is also worth noting that writing to standard error will result in a line break at the end of the message, while using `eprint!` will not include a line break. This can be useful if you want to display multiple error messages on the same line.
 
-## See Also 
+## See Also
 
-- [Official Rust documentation on `eprintln!()`](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Blog post on using `stderr` in Rust](https://blog.logrocket.com/using-stderr-in-rust/)
-- [Discussion on writing to standard error in Rust](https://www.reddit.com/r/rust/comments/6hmktw/writing_to_stderr_and_exiting_with_an_error_code/)
+For more information on writing to standard error in Rust, check out the following resources:
 
-Now that you understand the benefits and implementation of writing to standard error in Rust, you can confidently incorporate this useful tool into your development process. Happy coding!
+- [The Rust Standard Library](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+- [Rust By Example: Error Handling](https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/boxing_errors.html)
+- [The Rust Book: Standard Input and Output](https://doc.rust-lang.org/book/ch09-03-slices.html#using-an-io-project-for-more-than-just-development)
+
+Happy coding!

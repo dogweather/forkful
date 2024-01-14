@@ -1,66 +1,49 @@
 ---
-title:    "Arduino: Löschen von Zeichen mit übereinstimmendem Muster"
+title:    "Arduino: Löschen von Zeichen, die einem Muster entsprechen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum:
+## Warum
 
-Die Arbeit mit Arduino bietet unzählige Möglichkeiten, kreative Projekte umzusetzen. Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann dabei hilfreich sein, um Daten korrekt zu verarbeiten oder unerwünschte Zeichen zu entfernen.
+Wenn Sie ein Arduino-Entwickler sind, werden Sie sicherlich schon einmal auf die Aufgabe gestoßen sein, bestimmte Zeichenfolgen oder einzelne Zeichen aus einem Text oder einer Variablen zu löschen. Dies kann aus verschiedenen Gründen notwendig sein, zum Beispiel um unerwünschte Zeichen zu entfernen oder um Daten für die weitere Verarbeitung zu bereinigen. Hier erfahren Sie, wie Sie mit Ihrem Arduino ganz einfach Zeichen löschen können.
 
-Wie geht das?
+## Wie das geht
 
-Die folgenden Beispiele zeigen, wie man mit Arduino Schritt für Schritt Zeichen löschen kann, die einem vorgegebenen Muster entsprechen. Wir werden dabei die Funktion "String.replace()" verwenden, die es ermöglicht, Zeichen innerhalb eines Strings zu ersetzen.
-
-```Arduino
-// Beispieldaten
-String daten = "abcd_1234_xyz";
-String zielmuster = "_";
-
-// Zeichen löschen und neues Ergebnis ausgeben
-daten.replace(zielmuster, "");
-Serial.println(daten);  // Ausgabe: abcd1234xyz
-```
-
-Man sieht, dass das Zeichen "_" erfolgreich gelöscht wurde und nur noch die übrigen Zeichen in der Variablen "daten" enthalten sind.
-
-Man kann aber auch mehrere Zeichen auf einmal löschen, indem man einfach mehrere Strings als Argumente in der Funktion "replace()" verwendet.
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können Sie die `replace()`-Funktion verwenden. Sehen wir uns ein Beispiel an:
 
 ```Arduino
-// Beispieldaten
-String daten = "abc1f!g2h?i4j";
-String zielmuster1 = "1";
-String zielmuster2 = "!";
-String zielmuster3 = "?";
-
-// Zeichen löschen und neues Ergebnis ausgeben
-daten.replace(zielmuster1, "");
-daten.replace(zielmuster2, "");
-daten.replace(zielmuster3, "");
-Serial.println(daten);  // Ausgabe: abcfg2hij
+String text = "Hallo Arduino!";
+text.replace("a", "");
+Serial.println(text); // Ausgabe: Hllo Arduino!
 ```
 
-Hier wurden die Zeichen "1", "!" und "?" angegeben und erfolgreich aus der Variablen "daten" gelöscht. Dies kann besonders nützlich sein, wenn man bestimmte Sonderzeichen entfernen möchte.
+Hier haben wir die `replace()`-Funktion verwendet, um alle Vorkommen von "a" in unserem Text zu ersetzen. Der zweite Parameter ist dabei leer, sodass die Zeichen einfach gelöscht werden. Beachten Sie, dass die `replace()`-Funktion immer nur das erste Vorkommen des Musters löscht. Um alle Vorkommen zu entfernen, müssen Sie diese Funktion in einer Schleife ausführen.
 
-Tiefergehende Informationen:
-
-Das Löschen von Zeichen kann auch mithilfe von regulären Ausdrücken (Regular Expressions) realisiert werden. Dabei können Muster angegeben werden, die eine bestimmte Gruppe von Zeichen ersetzen oder löschen. Dies bietet vielfältige Möglichkeiten und erfordert jedoch etwas mehr Kenntnisse über reguläre Ausdrücke.
+Natürlich können Sie auch ganze Wörter oder längere Zeichenfolgen löschen. Dazu einfach die zu löschenden Zeichen oder Wörter als Parameter in die Funktion einsetzen.
 
 ```Arduino
-// Beispieldaten
-String daten = "abc1f!g2h?i4j";
-String zielmuster = "[0-9!]";  // regulärer Ausdruck für Zahlen und Sonderzeichen
-
-// Zeichen löschen und neues Ergebnis ausgeben
-daten.replace(zielmuster, "");
-Serial.println(daten);  // Ausgabe: abcfghij
+String text = "Hallo Arduino!";
+text.replace("ll", "l");
+Serial.println(text); // Ausgabe: Halo Arduino!
 ```
 
-Hier wird durch den regulären Ausdruck "[0-9!]" jede Zahl und jedes Sonderzeichen in der Variablen "daten" gelöscht. Dies ermöglicht es, noch gezielter und flexibler bestimmte Zeichen zu entfernen.
+## Tiefere Einblicke
 
-Siehe auch:
+Um zu verstehen, wie die `replace()`-Funktion arbeitet, werfen wir einen Blick unter die Haube. Diese Funktion basiert auf der `indexOf()`-Funktion, die die Position des ersten Vorkommens eines Musters in einem Text zurückgibt. Ist das Muster nicht enthalten, wird `-1` zurückgegeben. Mit dieser Information kann die `replace()`-Funktion dann das entsprechende Zeichen löschen.
 
-- [Arduino String Class Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino replace() Funktion](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Regular Expressions Tutorial](https://regexone.com/)
+Wenn Sie mehr Kontrolle über die Löschung von Zeichen haben möchten, können Sie auch die `remove()`-Funktion verwenden. Diese erwartet als Parameter die Startposition und die Anzahl der zu löschenden Zeichen.
+
+```Arduino
+String text = "Hallo Arduino!";
+text.remove(0, 5); // Entfernt die ersten 5 Zeichen
+Serial.println(text); // Ausgabe: Arduino!
+```
+
+## Siehe auch
+
+- `replace()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/replace/
+- `indexOf()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/indexof/
+- `remove()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/remove/

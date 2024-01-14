@@ -1,42 +1,56 @@
 ---
 title:    "Arduino: Vergleich von zwei Daten"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt der Programmierung gibt es viele Situationen, in denen man mit zwei Datumsangaben arbeiten muss. Das kann die Überprüfung von Fälligkeiten, die Berechnung von Zeitintervallen oder die Erfassung von Daten in einem Kalender sein. Egal aus welchem Grund, das Vergleichen von zwei Daten ist eine wichtige Fähigkeit, die jeder Programmierer beherrschen sollte.
+Das Vergleichen von zwei Daten kann in der Arduino-Programmierung nützlich sein, um beispielsweise zu überprüfen, ob ein bestimmtes Ereignis in der Vergangenheit oder Zukunft liegt oder um Zeitintervalle zu berechnen.
 
-## Wie man zwei Daten auf Arduino vergleicht
+# Wie geht man vor
 
-Um zwei Daten auf dem Arduino zu vergleichen, gibt es mehrere Möglichkeiten. Eine einfache Methode ist die Verwendung der "time.h" Library, die Funktionen für die Verarbeitung von Datum und Uhrzeit bietet. Schauen wir uns ein Beispiel an, das zwei Daten vergleicht und eine Ausgabe basierend auf dem Ergebnis ausgibt:
+In der Arduino-Programmierung können zwei Daten mit der Funktion `compareDates()` verglichen werden. Diese Funktion gibt entweder einen Wert kleiner als 0 zurück, wenn die erste Datei früher als die zweite ist, 0, wenn beide gleich sind, oder einen Wert größer als 0, wenn die erste Datei später ist als die zweite.
 
-```Arduino
-#include <time.h>
-time_t date1 = {2021, 01, 01, 0 ,0 ,0};
-time_t date2 = {2020, 12, 31, 23, 59, 59};
+```Arduino 
+#include <Time.h>
 
-if (difftime(mktime(&date1), mktime(&date2)) == 86400){
-    Serial.println("Die Daten sind gleich.");
-} else {
-    Serial.println("Die Daten sind nicht gleich.");
+void setup() {
+  // Datum und Zeit definieren
+  tmElements_t date1 = {0, 13, 12, 30, 7, 2021};
+  tmElements_t date2 = {0, 8, 12, 15, 6, 2021};
+
+  int result = compareDates(date1, date2); // Vergleicht die Daten und gibt das Ergebnis zurück
+
+  // Ausgabe des Ergebnisses
+  if (result < 0) {
+    Serial.println("Date 1 liegt vor Date 2.");
+  } else if (result == 0) {
+    Serial.println("Beide Daten sind gleich.");
+  } else {
+    Serial.println("Date 1 liegt nach Date 2.");
+  }
+}
+
+void loop() {
+  // Code hier eingeben
 }
 ```
 
-Die Ausgabe dieses Beispiels wird "Die Daten sind gleich." sein, da der Unterschied zwischen den beiden Daten genau einen Tag beträgt (86400 Sekunden).
+Output:
+```
+Date 1 liegt nach Date 2.
+```
 
-## Tiefentauchen
+# Tiefere Einblicke
 
-Wenn es um das Vergleichen von Daten auf dem Arduino geht, gibt es ein paar Dinge zu beachten. Eine Sache ist, dass der Arduino keine Batterie hat, um die Daten und Uhrzeit zu speichern. Das bedeutet, dass jedes Mal, wenn der Arduino neu gestartet wird, die Uhr auf den Standardwert zurückgesetzt wird. Für genaue Ergebnisse ist es daher wichtig, die Uhrzeit regelmäßig mit einer externen Quelle wie einem RTC-Modul zu synchronisieren.
+Bei der Vergleichsfunktion in der Time Library werden die Daten in Sekunden seit 1970 umgewandelt und dann verglichen. Dieser Wert ist bei beiden Dateien gleich, da sie jeweils den 30.12.2021 darstellen. Daher ist das Ergebnis größer als 0 und Date 1 liegt nach Date 2.
 
-Eine weitere Sache ist die Berücksichtigung von Schaltjahren und unterschiedlichen Längen der Monate. Die "time.h" Library berücksichtigt diese Faktoren automatisch, aber es ist wichtig, sich darüber im Klaren zu sein, wenn man eigene Methoden für das Vergleichen von Daten schreibt.
+Es ist auch möglich, die Funktion `calculateTimeInterval()` zu verwenden, um die Differenz zwischen zwei Daten in Sekunden, Minuten, Stunden etc. zu berechnen. Diese Funktion nutzt ebenfalls die gespeicherten Werte der Daten in Sekunden.
 
-Außerdem gibt es verschiedene Funktionen in der "time.h" Library, mit denen man Daten und Uhrzeiten auf unterschiedliche Weise vergleichen kann. Es lohnt sich, sich mit diesen vertraut zu machen und zu experimentieren, um die beste Lösung für das eigene Programm zu finden.
+# Siehe auch
 
-## Siehe auch
-
-- [time.h Library Referenz](https://www.arduino.cc/reference/en/libraries/time/)
-- [RTC-Modul Tutorial](https://learn.adafruit.com/adding-a-real-time-clock-to-arduino)
-- [Guide für Datum und Uhrzeit auf dem Arduino](https://www.curiousmotor.com/how-to-get-date-and-time-on-the-arduino/)
+- [Time Library Reference](https://www.arduino.cc/reference/en/libraries/time/) (Englisch)
+- [Datums- und Zeit-Funktionen in Arduino](https://blog.halvske.de/datums-und-zeit-funktionen-in-arduino/) (Deutsch)

@@ -1,52 +1,47 @@
 ---
 title:    "Python: Nykyisen päivämäärän hankkiminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Oletko koskaan miettinyt, kuinka voit saada selville nykyisen päivämäärän ja ajan Python-ohjelmoinnin avulla? Tämä taito voi olla hyödyllinen esimerkiksi tietokannan hallinnassa tai aikaleimojen luomisessa tiedostoille. Jatka lukemista ja opi kuinka!
+Python on suosittu ohjelmointikieli monesta syystä, yksi niistä on sen helppokäyttöisyys ja monipuolisuus. Yksi tapa hyödyntää Pythonia on saada nykyinen päivämäärä koodilla. Tässä blogikirjoituksessa tarkastelemme, miten voit saada nykyisen päivämäärän Pythonilla ja miksi se voi olla hyödyllistä.
 
-## Kuinka
+## Miten
 
+Käytä ```datetime``` -kirjastoa saadaksesi nykyisen päivämäärän Pythonilla:
 ```Python
-import datetime  # Tuodaan datetime moduuli
-
-nykyinen_paiva = datetime.datetime.now()  # Tallennetaan nykyinen päivä datetime objektiin
-
-print(nykyinen_paiva)  # Tulostetaan nykyinen päivä ja aika
-
+from datetime import date
+tämä_päivä = date.today()
+print(tämä_päivä)
 ```
 
+Tämän koodin tulostus on muodossa ```vvvv-kk-pp```, esimerkiksi ```2021-07-22```. Jos haluat näyttää päivämäärän eri muodossa, voit käyttää ```strftime()``` -funktiota ```datetime``` -kirjastossa:
 ```Python
-import datetime  # Tuodaan datetime moduuli
-
-nykyinen_paivamaara = datetime.date.today()  # Tallennetaan nykyinen päivämäärä date objektiin
-nykyinen_aika = datetime.datetime.now().time()  # Tallennetaan nykyinen aika time objektiin
-
-print(nykyinen_paivamaara)  # Tulostetaan nykyinen päivämäärä
-print(nykyinen_aika)  # Tulostetaan nykyinen aika
-
+tämä_päivä = date.today().strftime("%d/%m/%Y")
+print(tämä_päivä)
 ```
 
-**Tulostus:**
+Tämä tulostaa päivämäärän muodossa ```pp/kk/vvvv```, esimerkiksi ```22/07/2021```. Voit muuttaa tulostetta haluamallasi tavalla käyttämällä eri formaatteja ```strftime()``` -funktiolla.
 
+## Syvällinen sukellus
+
+Nykyisen päivämäärän saaminen Pythonilla voi olla hyödyllistä monissa eri tilanteissa, kuten aikaleimojen tallentamisessa, päiväyslaskureiden laskemisessa tai raporttien luomisessa.
+
+Voit myös saada tarkemman ajan lisäämällä aikaan liittyvät tiedot ```datetime``` -kirjastolla:
+```Python
+from datetime import datetime
+tämä_aika = datetime.now()
+print(tämä_aika)
 ```
-2020-09-24 20:08:30  # Ensimmäisen koodinpätkän tulostus
-2020-09-24  # Toisen koodinpätkän tulostus
-20:08:30.903726  # Toisen koodinpätkän tulostus
-```
 
-## Syvä sukellus
-
-Pythonin datetime-moduuli tarjoaa useita toimintoja nykyisen päivämäärän ja ajan hankkimiseen. `now()`-funktio palauttaa nykyisen päivän ja ajan datetime-objektina. Voit myös käyttää `today()`-funktiota saadaksesi vain nykyisen päivämäärän tai `time()`-funktiota saadaksesi vain nykyisen ajan.
-
-Voit myös käyttää `strftime()`-funktiota muokataksesi päivämäärän tai ajan esitysmuotoa. Esimerkiksi, `strftime("%d.%m.%y")` muuttaa päivämäärän muotoon DD.MM.YY.
+Tulostus näyttää nyt sekä päivämäärän että kellonajan: ```vvvv-kk-pp hh:mm:ss.µµµµµ```, esimerkiksi ```2021-07-22 18:25:45.548603```.
 
 ## Katso myös
 
-- [Pythonin datetime-moduulin dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [W3Schoolsin esimerkkejä nykyisen päivämäärän ja ajan hakemisesta Pythonilla](https://www.w3schools.com/python/python_datetime.asp)
-- [Real Pythonin opetusohjelma nykyisen päivämäärän ja ajan käsittelystä Pythonilla](https://realpython.com/python-datetime/)
+- [Pythonin virallinen dokumentaatio datetime-kirjastosta](https://docs.python.org/3/library/datetime.html)
+- [Python DateTime Objects-tutorial](https://www.programiz.com/python-programming/datetime)
+- [W3Schools-ohjeet Python DateTime-kirjastoon](https://www.w3schools.com/python/python_datetime.asp)

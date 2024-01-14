@@ -1,47 +1,54 @@
 ---
 title:    "Kotlin: Att hämta aktuellt datum"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att kunna hämta den aktuella datumen är en viktig del av många programmeringsprojekt. Genom att kunna få tillgång till den aktuella datumen kan du skapa dynamiska applikationer som kan användas för att registrera tider, schemalägga uppgifter eller bara för att visa användarna när de senast brukade din app. I denna bloggpost kommer jag att dela med mig av hur du kan hämta den aktuella datumen med hjälp av Kotlin.
+Att kunna hämta och använda den nuvarande datum i kod är en viktig del av många programmeringsprojekt. Det kan hjälpa till att hålla informationen i en applikation aktuell och hjälpa till att spåra aktiviteter och händelser över tid. Att lära sig att få den nuvarande datum i Kotlin är en viktig färdighet för alla som vill utveckla användbara program.
 
-## Så här gör du
+## Hur man gör
 
-Det finns flera olika sätt att hämta den aktuella datumen i Kotlin. Ett av de enklaste sätten är att använda funktionen `LocalDate.now()`, som returnerar den aktuella datumen som en instans av klassen `LocalDate`.
-
-```Kotlin
-val currentDateTime = LocalDate.now()
-println(currentDateTime)
-```
-
-Det här kommer att skriva ut den aktuella datumen i formatet `YYYY-MM-DD`, till exempel `2021-11-01`. Om du vill ha en annan formatering av datumet kan du använda funktionen `format()` och ange ett anpassat mönster.
+Det första steget för att få den nuvarande datum i Kotlin är att importera klassen `java.util.Calendar`. Sedan kan du använda den för att hämta datum, tid och tidszon. Här är ett exempel på hur du kan skriva en funktion för att hämta dagens datum i en sträng:
 
 ```Kotlin
-val currentDateTime = LocalDate.now()
-val formattedDate = currentDateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-println(formattedDate)
+import java.util.Calendar
+fun getCurrentDate(): String {
+    val calendar = Calendar.getInstance()
+    val day = calendar.get(Calendar.DAY_OF_MONTH)
+    val month = calendar.get(Calendar.MONTH)
+    val year = calendar.get(Calendar.YEAR)
+    return "$day/$month/$year"
+}
 ```
 
-Det här exempel kommer att skriva ut datumet i formatet `DD/MM/YYYY`, till exempel `01/11/2021`. Det finns också andra funktioner som `LocalTime.now()` och `LocalDateTime.now()` som kan användas för att hämta den aktuella tiden eller både datum och tid.
+För att få den nuvarande datumet i en viss tidszon, måste du först skapa en instans av klassen `java.util.TimeZone` med den tidszon du vill ha. Sedan använder du den instansen vid skapandet av en instans av `java.util.Calendar`. Här är ett exempel på hur man hämtar den nuvarande datumet i en specifik tidszon:
+
+```Kotlin
+import java.util.Calendar
+import java.util.TimeZone
+fun getCurrentDate(timezone: TimeZone): String {
+    val calendar = Calendar.getInstance(timezone)
+    val day = calendar.get(Calendar.DAY_OF_MONTH)
+    val month = calendar.get(Calendar.MONTH)
+    val year = calendar.get(Calendar.YEAR)
+    return "$day/$month/$year"
+}
+```
+
+Exempel på output från dessa funktioner:
+
+```10/5/2021``` för den första funktionen, och ```10/5/2021``` i GMT-tidszonen för den andra funktionen.
 
 ## Djupdykning
 
-Bakom kulisserna använder Kotlin funktioner från Javas `java.time`-paket för att hämta den aktuella datumen. Det betyder att du kan utnyttja alla dess funktioner och metoder för att manipulera datumen på olika sätt. Till exempel kan du använda `plusDays()`-funktionen för att lägga till antal dagar till det aktuella datumet.
+Det finns flera andra metoder och egenskaper som kan användas för att hämta och manipulera datumet i Kotlin. Några av de vanligaste inkluderar `calendar.add()`, `calendar.set()`, och `calendar.get()`. Genom att använda dessa metoder kan du till exempel lägga till eller dra bort en viss tid från ett datum eller sätta ett visst datum. Det kan vara användbart för att skapa en kalenderapplikation eller för att beräkna förloppet av en viss händelse.
 
-```Kotlin
-val currentDateTime = LocalDate.now()
-val tomorrowsDateTime = currentDateTime.plusDays(1)
-println(tomorrowsDateTime)
-```
+## Se också
 
-Det här kommer att skriva ut datumet för morgondagen. Genom att kombinera olika funktioner och metoder kan du skapa dynamiska applikationer som utnyttjar den aktuella datumen.
-
-# Se även
-
-- [Java - java.time-paketet](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin Standard Bibliotek - java.time-paketet](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/) 
-- [Kotlin - `LocalDate`-klassen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
+* [Kotlin Date and Time APIs](https://kotlinlang.org/docs/tutorials/kotlin-for-py/date-time.html)
+* [Java Calendar Class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+* [Kotlin Standard Library - Datetime Package](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-datetime/index.html)

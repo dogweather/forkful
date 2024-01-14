@@ -1,68 +1,27 @@
 ---
-title:    "Elm: Подання текстового файлу"
+title:    "Elm: Написання текстового файлу"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+##Чому
+Написання текстового файлу є важливим елементом для програмістів Elm, оскільки це дозволяє зберігати та документувати свій код для майбутніх проектів.
 
-Початкова мотивація комуствати текстовий файл в Elm полягає в тому, щоб створити структуроване і сумісне зі стандартами API для зберігання та обробки даних.
-
-## Як
+##Як
+Щоб написати текстовий файл у Elm, ви можете використовувати функцію `File.Text.write`, яка приймає два аргументи: шлях до файлу та вміст файлу. Наприклад, якщо ви хочете створити файл з назвою "hello.txt" зі словом "Hello" в ньому, ваш код буде виглядати так:
 
 ```Elm
-module Main exposing (main)
-
-import File
-import Html exposing (Html, text)
-import Task exposing (Task, andThen)
-
-main : Program () Model Msg
-main =
-    Html.program
-        { init = ((), loadDataFromFile)
-        , view = view
-        , update = update
-        , subscription = Sub.none
-        }
-
-type alias Model =
-    { text : String
-    }
-
-
-type Msg
-    = FileLoaded (Result File.Error String)
-
-loadDataFromFile : Model -> (Model, Cmd Msg)
-loadDataFromFile model =
-    (model, File.read "myfile.txt" FileLoaded)
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        FileLoaded result ->
-            case result of
-                Ok data ->
-                    ( { model | text = data }, Cmd.none )
-
-                Err error ->
-                    ( { model | text = "Error loading file." }, Cmd.none )
-
-view : Model -> Html Msg
-view model =
-    text model.text
+File.Text.write "hello.txt" "Hello"
 ```
+Цей код створить текстовий файл зі словом "Hello" у вашій поточній директорії проекту.
 
-В цьому прикладі ми імпортуємо модуль File, щоб отримати доступ до функції `read` для завантаження даних з файлу. Потім ми створюємо програму, яка викликає цю функцію в функції `loadDataFromFile` при запуску. Після того, як дані завантажено, ми оновлюємо модель і відображаємо текстовий файл за допомогою функції `text`.
+##Розглиблення
+У програмуванні Elm є кілька корисних функцій для написання текстових файлів. Наприклад, `File.Text.append` дозволяє додавати вміст до вже існуючого файлу, а `File.Text.read` дозволяє читати вміст файлу та використовувати його в додатку.
 
-## Глибокий пір
+Крім того, важливо пам'ятати про те, що при роботі з текстовими файлами потрібно піклуватися про їх правильне кодування, щоб уникнути проблем зі зчитуванням та записом кирилиці.
 
-Підходи до створення текстових файлів можуть варіюватися в залежності від вимог проекту. Деякі корисні підходи включають використання більш потужних модулів, наприклад `elm/parser` для читання та парсингу структурованого тексту, або `elm/html` для генерації HTML сторінок.
-
-## Дивитися також
-
-- [Туторіал по Elm](https://guide.elm-lang.org/)
-- [Документація по модулю File](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Модуль для парсингу тексту](https://package.elm-lang.org/packages/elm/parser/latest/)
+##Дивись також
+- [Офіційна документація Elm по роботі з файлами](https://guide.elm-lang.org/io/files.html)
+- [Інструкція з кодування кирилиці у Elm](https://thoughtbot.com/blog/how-to-do-unicode-in-elm)

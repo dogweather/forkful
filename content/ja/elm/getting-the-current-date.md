@@ -1,39 +1,38 @@
 ---
 title:    "Elm: 現在の日付を取得する"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-Elmを使って現在の日付を取得するのに、なぜあなたが参加する必要があるのか？理由をご紹介します。
+現在の日付を取得することの魅力をご存知ですか？Elmでプログラミングをする際に、現在の日付を取得する必要がある場合があります。その理由を紹介します。
 
 ## 方法
 
-エルムで現在の日付を取得するには、以下のコードを使用します。
-
 ```Elm
-import Date exposing (today)
+import Html exposing (text)
+import Time exposing (now)
 
 main =
-  date |> toString
+  now
+    |> Time.toUtc
+    |> Time.format "%Y/%m/%d"
+    |> text
 ```
 
-このコードを実行すると、現在の日付が出力されます。
+このように、`Time`をインポートし、`now`を使用して現在の日時を取得します。そして、`toUtc`を使ってUTC時間に変換し、`format`を使って表示形式を指定します。最後に、`text`を使ってHTMLに変換して表示します。
 
-今日の日付を取得するだけでなく、エルムには他の便利な日付関数もあります。例えば、特定の日付から何日後の日付を取得したり、日付をフォーマットしたりすることができます。
+このコードを実行すると、現在の日付が表示されます。例えば、2021年10月23日ならば、"2021/10/23"という形式で表示されます。
 
-## 詳細を掘り下げる
+## ディープダイブ
 
-エルムでは、日付を表すために「Date」モジュールを使用します。このモジュールには、日付を操作するための多くの便利な関数が含まれています。
+日付を取得する際には、タイムゾーンに注意する必要があります。例えば、上記のコードでは`toUtc`を使用してUTC時間に変換していますが、現在地のタイムゾーンに合わせて変換することも可能です。また、`format`を使って表示形式を自由に変更することができます。
 
-日付を取得する際には、ローカルタイムゾーンを考慮する必要があります。これを行うために、エルムでは「Time」モジュールを使用します。
+## 参考リンク
 
-また、エルムでは日付や時間を自由に演算することができます。これは型システムにより安全に行われるため、コードのバグを防ぐことができます。
-
-# See Also
-
-- [ElmのDateモジュールのドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm日本語ドキュメント](https://elm-lang.org/docs/ja)
-- [日付の操作におけるエルムの優れたパフォーマンスについてのブログ記事](https://effectivestudio.jp/prog/how-elm-works/)
+- [Official Elm Documentation - Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Learn Elm Programming - Getting the Current Date](https://elmbasics.com/getting-the-current-date)
+- [Elm Japan User Group](https://elmjapan.org/)

@@ -1,50 +1,61 @@
 ---
 title:    "Python: Écrire un fichier texte"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte en Python?
+## Pourquoi
 
-Écrire un fichier texte en Python est utile lorsque vous avez besoin de stocker des données de manière organisée et facilement accessible. Cela peut être utile dans de nombreux cas, tels que la création d'un fichier de configuration pour un programme ou la sauvegarde de données pour une analyse ultérieure.
+Écrire un fichier texte est une compétence essentielle pour tout programmeur Python. Les fichiers texte sont une façon pratique de stocker et de manipuler de grandes quantités de données de manière organisée. Dans cet article, nous allons discuter de l'importance d'écrire un fichier texte et de la façon de le faire efficacement en Python.
 
-## Comment faire pour écrire un fichier texte en Python?
+## Comment faire
 
-Voici un exemple simple de code Python pour créer un fichier texte et y écrire des données:
+Pour écrire un fichier texte en Python, nous allons utiliser la fonction `open()` qui ouvre un fichier et retourne un objet de type fichier. Nous devrons également spécifier le mode d'ouverture du fichier, qui peut être "w" pour l'écriture ou "a" pour l'ajout. Ensuite, nous pouvons utiliser la méthode `write()` pour écrire du contenu dans le fichier. Voici un exemple de code :
 
 ```python
-# Ouvrir le fichier en mode écriture
-fichier = open("nouveau-fichier.txt", "w")
-
-# Écrire des données dans le fichier
-fichier.write("Ceci est une première ligne dans mon fichier.")
-fichier.write("Et voici une deuxième ligne.")
-
-# Fermer le fichier
-fichier.close()
-
-# Vérifier le contenu du fichier
-print("Contenu du fichier:")
-fichier = open("nouveau-fichier.txt", "r")
-print(fichier.read())
-
-# Fermer le fichier
-fichier.close()
+# Ouverture du fichier en mode écriture
+with open("mon_fichier.txt", "w") as f:
+    # Écriture de texte dans le fichier
+    f.write("Bonjour tout le monde !\n")
+    f.write("Je suis un fichier texte écrit en Python.\n")
+    f.write("C'est si facile !")
 ```
 
-Cela créera un fichier texte nommé "nouveau-fichier.txt" dans le même dossier que votre code Python. Vous pouvez changer le nom et le chemin du fichier selon vos besoins.
+L'utilisation de la clause `with` garantit que le fichier sera fermé automatiquement après avoir été utilisé. Voici le contenu du fichier "mon_fichier.txt" après l'exécution du code ci-dessus :
+
+```
+Bonjour tout le monde !
+Je suis un fichier texte écrit en Python.
+C'est si facile !
+```
 
 ## Plongée en profondeur
 
-En écrivant un fichier texte en Python, il est important de noter que le mode d'ouverture du fichier peut avoir un impact sur le contenu existant. En utilisant le mode "w", le contenu précédent sera supprimé et écrasé par les nouvelles données. Cela peut être évité en utilisant le mode "a" pour ajouter du contenu à la fin du fichier.
+En plus de l'écriture du contenu, nous pouvons également spécifier le codage du fichier en utilisant l'argument `encoding` de la fonction `open()`. Cela est utile lorsque l'on travaille avec des caractères spéciaux ou des langues étrangères. De plus, nous pouvons utiliser la méthode `writelines()` pour écrire une liste de chaînes de caractères dans le fichier. Enfin, il est important de toujours fermer le fichier après avoir fini de l'utiliser en utilisant la méthode `close()`. Voici un exemple complet :
 
-Il est également possible d'écrire des données formatées en utilisant la fonction "format()" en Python pour rendre le fichier plus lisible et organisé.
+```python
+# Ouverture du fichier en mode écriture avec un codage spécifique
+with open("mon_fichier.txt", "w", encoding="utf-8") as f:
+    # Écriture d'une liste de chaînes de caractères dans le fichier
+    lines = ["Première ligne.\n", "Deuxième ligne.\n", "Troisième ligne.\n"]
+    f.writelines(lines)
+
+# Fermeture du fichier
+f.close()
+```
+
+Le contenu du fichier "mon_fichier.txt" est maintenant :
+
+```
+Première ligne.
+Deuxième ligne.
+Troisième ligne.
+```
 
 ## Voir aussi
 
-- [Documentation officielle Python pour l'écriture dans un fichier](https://docs.python.org/fr/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Tutoriel pour écrire un fichier texte en Python](https://www.geeksforgeeks.org/reading-writing-text-files-python/)
-- [Différentes façons d'écrire dans un fichier en Python](https://www.afternerd.com/blog/different-ways-to-create-file-in-python/)
-
-Merci d'avoir lu cet article sur l'écriture d'un fichier texte en Python. N'hésitez pas à explorer davantage et à utiliser cette compétence pour vos projets futurs. Bon codage!
+- [Documentation officielle Python pour les fichiers](https://docs.python.org/fr/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Tutoriel sur la manipulation de fichiers en Python](https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python)
+- [Chaîne Youtube : Programmer en Python](https://www.youtube.com/playlist?list=PLMS9Cy4Enq5JmIZtKE5OHJCI3jZfpASbR)

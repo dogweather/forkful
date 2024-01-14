@@ -1,54 +1,51 @@
 ---
 title:    "Gleam recipe: Writing to standard error"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing to standard error is an essential skill for any programmer as it allows for better debugging and error handling in your code. Standard error, also known as stderr, is a stream in your program that captures all error messages. By writing to stderr, you can easily identify and troubleshoot any issues that may arise during runtime.
+Writing to standard error is an essential part of programming, as it allows us to handle and display error messages. This is especially important in debugging and troubleshooting our code, allowing us to identify and fix issues in our programs.
 
 ## How To
 
-To write to standard error in Gleam, you can use the `io.fprintf` function. This function takes two arguments, the first being the stream you want to write to (in this case, stderr) and the second being the message you want to print. Let's look at an example:
+To write to standard error in Gleam, we can use the `gleam_io.console.err()` function. Let's take a look at an example:
 
 ```
-import io
-io.fprintf(stderr, "Oh no, an error occurred!")
+Gleam import gleam_io
+import gleam_result
+
+fn write_error() {
+  case gleam_io.console.err("Oops, something went wrong.") {
+    Ok(_) -> gleam_result.Ok("Error message successfully written to standard error.")
+    Error(err) -> gleam_result.Error(err)
+  }
+}
 ```
 
-This code will print the message "Oh no, an error occurred!" to standard error. You can also include variables in the message:
+In this code, we are using the `gleam_io.console.err()` function to write the message "Oops, something went wrong." to the standard error output. We then use a case statement to handle the result of this function. If it returns an `Ok` value, we can display a success message. Otherwise, if it returns an `Error` value, we can handle the error by returning the `Error` value.
+
+Now, let's run this code and see the output:
 
 ```
-import io
-let name = "John"
-io.fprintf(stderr, "Hello %s, there was an error.", name)
+$ gleam run write_error.gleam
+Oops, something went wrong.
 ```
 
-This will output "Hello John, there was an error." to stderr.
+As we can see, our error message was successfully written to standard error.
 
 ## Deep Dive
 
-It's important to note that writing to standard error will not cause your program to stop or crash. It simply prints the message to stderr and the program continues to run. This allows for better error handling as you can still see the output of your program even if an error occurs.
+When writing to standard error, it is important to keep in mind the purpose of our error messages. These messages should provide useful information to help us identify and fix issues in our programs. They should be clear, concise, and specific, avoiding jargon and technical terms that may be difficult for non-technical users to understand.
 
-Another important aspect to understand is that you can redirect stderr to a file or another stream. This can be useful if you want to save your error messages for later analysis or send them to a different location. To do this, you can use the `io.stderr` function to get the stderr stream. For example:
+Additionally, it is also important to handle errors properly and gracefully. This means using appropriate error handling techniques, such as `case` statements or `try` and `catch` blocks, to handle any potential errors that may occur.
 
-```
-import io
-let error_stream = io.stderr()
-io.fprintf(error_stream, "This error message will be written to a file.")
-```
-
-Now, let's say you want to redirect stderr to a file called "errors.log." You can do so by using shell redirection:
-
-```
-$ gleam run my_program > errors.log
-```
-
-This will send all stderr output to the "errors.log" file instead of printing it to the terminal.
+In Gleam, we can also use the `gleam_io.console.errn()` function to write an error message to standard error with a unique identifier. This can be helpful in situations where we need to track multiple error messages and identify them based on their unique identifiers.
 
 ## See Also
 
-- [Write to Standard Error in Gleam](https://gleam.run/documentation/std.html#write-to-stderr)
-- [Gleam IO Module](https://gleam.run/documentation/std.html#io-functions)
+- [Gleam Documentation on Writing to Standard Error](https://gleam.run/book/tour/errors.html#standard-error)
+- [Gleam Console Module](https://gleam.run/modules/gleam_io#gleam_io.console)

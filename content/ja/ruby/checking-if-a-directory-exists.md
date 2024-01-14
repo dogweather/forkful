@@ -1,36 +1,34 @@
 ---
-title:    "Ruby: ディレクトリが存在するかどうかを確認する"
+title:    "Ruby: ディレクトリが存在するかどうかを調べる"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ディレクトリが存在するかどうかを確認する必要がある理由は、プログラミングにおいてよくある作業のひとつです。あるディレクトリが存在するかどうかによって、プログラムの実行結果が変わることがあるため、ディレクトリの存在を確認することは重要です。
+ディレクトリが存在するかを確認することに取り組んだ方が良い理由は、コードを実行する前に予期しないエラーを防ぐことができるからです。プログラム内で特定のディレクトリにアクセスする必要がある場合、そのディレクトリが存在するかどうかを事前に確認することが重要です。
 
 ## 方法
 
-ディレクトリの存在を確認する方法は非常に簡単です。Rubyプログラミング言語では、`File.exist?`メソッドを使用します。このメソッドは引数として与えられたディレクトリが存在する場合は`true`、存在しない場合は`false`を返します。
+Rubyでは、ディレクトリが存在するかを確認するために`Dir.exist?`メソッドを使用します。例えば、`check_dir.rb`というファイル内で以下のコードを使用することで、`examples`というディレクトリが存在するかを確認することができます。
 
 ```Ruby
-directory = "/home/user/documents"
-if File.exist?(directory)
-  puts "#{directory}は存在します。"
+if Dir.exist?("examples")
+  puts "Directory exists"
 else
-  puts "#{directory}は存在しません。"
+  puts "Directory does not exist"
 end
 ```
 
-上記のコードでは、変数`directory`に存在すると仮定したディレクトリのパスを指定し、`File.exist?`メソッドを使用してそのディレクトリの存在を確認しています。結果は`/home/user/documentsは存在します。`と表示されるでしょう。
+もしディレクトリが存在する場合、`Directory exists`という出力が表示されます。しかし、もしディレクトリが存在しない場合、`Directory does not exist`という出力が表示されます。
 
-## ディープダイブ
+## 深堀り
 
-`File.exist?`メソッドは内部的には`File::Stat`クラスの`exist?`メソッドを呼び出しています。この`File::Stat`クラスはファイルやディレクトリの情報を保持するオブジェクトです。そして`exist?`メソッドは指定されたファイルやディレクトリが存在するかどうかを判定します。
+`Dir.exist?`メソッドは、ディレクトリが存在するかどうかを確認するだけではなく、指定したディレクトリ内にあるすべてのファイルやサブディレクトリも含めて確認することができます。さらに、`Dir.exist?`メソッドはディレクトリのパスを渡すこともでき、相対パスや絶対パスの両方で動作します。
 
-また、`File.exist?`メソッドはシンボルや文字列、パス名を引数として受け取ることができます。つまり、ディレクトリのパスを文字列で直接指定するだけでなく、変数やメソッドの戻り値を使用してディレクトリの存在を確認することができます。
+## 参考
 
-## 参考リンク
-
-[File.exist?メソッドのドキュメント(Rubyドキュメント)](https://docs.ruby-lang.org/ja/latest/method/File/s/exists%3F.html)  
-[File::Statクラスのドキュメント(Rubyドキュメント)](https://docs.ruby-lang.org/ja/latest/class/File=3a=3aStat.html)
+- [RubyのDirクラスドキュメント](https://docs.ruby-lang.org/en/2.7.0/Dir.html)
+- [Rubyの存在確認メソッド「Dir.exist?」を理解しよう](https://qiita.com/t0rkie/items/92ec4f6fc388b8dbd922)

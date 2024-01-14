@@ -1,48 +1,45 @@
 ---
 title:    "Ruby recipe: Starting a new project"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Are you thinking of starting a new project with Ruby? Well, there are plenty of reasons why you might want to! Perhaps you're looking to expand your coding skills, create a useful tool, or just have some fun. No matter what your motivation may be, starting a new project in Ruby can be a rewarding experience.
+Are you looking to start a new programming project? Well, look no further than Ruby! This dynamic and object-oriented language has become increasingly popular in recent years and is ideal for building web applications, scripting, and much more. Trust us, once you start coding in Ruby, you won't want to stop.
 
 ## How To
 
-To start a new project in Ruby, you'll need to have Ruby installed on your computer. Once that's taken care of, follow these steps:
+To start a new project in Ruby, all you need is a computer and a text editor. Let's walk through a simple example of creating a "Hello World" program.
 
-1. Create a new directory for your project.
-2. Open your terminal and navigate to the directory you just created.
-3. In your terminal, type `touch main.rb` to create a new Ruby file.
-4. Open the file in your preferred code editor.
-5. Start coding! Here's a simple hello world example to get you started:
+First, open your favorite text editor and create a new file with a .rb extension. This will tell your computer that it's a Ruby file. We'll name our file "hello_world.rb".
+
+Next, we'll write some code using the `puts` method. This method is used to output a string to the console. In this case, we want to print the phrase "Hello World!" so we'll type:
 
 ```Ruby
-# This is a basic hello world program in Ruby!
 puts "Hello World!"
 ```
 
-6. Save your file and run it in your terminal by typing `ruby main.rb`.
-7. You should see the output `Hello World!` in your terminal.
+Save the file and navigate to the directory where it is saved using your computer's command line. Then, run the following command to execute your program:
 
-And that's it! You've successfully started a new project in Ruby.
+```Ruby
+ruby hello_world.rb
+```
+
+You should see the output "Hello World!" printed to the console. Congratulations, you just created your first Ruby program!
 
 ## Deep Dive
 
-Now that you have the basics down, let's dive a little deeper into starting a new project in Ruby. One important thing to remember is to keep your code organized and maintain good coding practices. This will make your life easier in the long run.
+Starting a new project in Ruby is not only easy, but it also offers a wide range of flexibility. Ruby's syntax is simple and allows for quick development, making it an ideal choice for building prototypes and MVPs (Minimum Viable Products). It also has a vast library of third-party tools and gems, making it easy to add additional features and functionality to your project.
 
-Another key aspect to keep in mind is using efficient data structures and algorithms. This will help optimize your code and make it run faster. Be strategic in your approach and always think about the end goal of your project.
-
-Moreover, don't be afraid to ask for help! There is a vast community of Ruby developers who are always willing to help and share their knowledge. Don't hesitate to join online forums or attend coding events to network with other developers.
+Additionally, Ruby has a strong and supportive community, with many resources available for learning and troubleshooting. So if you ever find yourself stuck on a problem, don't worry - there are plenty of resources and people willing to help you out.
 
 ## See Also
 
-For more information on starting a new project with Ruby, check out these helpful links:
+For more information and resources on Ruby, check out the following links:
 
-- [Official Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
-- [Ruby on Rails Guides](https://guides.rubyonrails.org/)
-- [The Ruby Toolbox](https://www.ruby-toolbox.com/)
-
-Happy coding!
+- [Official Ruby website](https://www.ruby-lang.org/en/)
+- [Ruby on Rails](https://rubyonrails.org/)
+- [RubyGems](https://rubygems.org/)

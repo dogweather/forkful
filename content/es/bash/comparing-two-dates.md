@@ -1,40 +1,44 @@
 ---
 title:    "Bash: Comparando dos fechas"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por Qué Comparar Dos Fechas en Bash
+## ¿Por qué comparar dos fechas?
 
-Si estás aprendiendo a programar en Bash, es posible que te preguntes por qué es importante comparar dos fechas en un programa. La respuesta es simple: al comparar dos fechas, podemos determinar la relación entre ellas y tomar decisiones en nuestro código en consecuencia.
+Comparar dos fechas puede ser una tarea útil en la programación, ya que nos permite determinar la cantidad de tiempo transcurrido entre dos eventos, validar la información de una base de datos o simplemente ordenar datos cronológicamente. Saber cómo comparar correctamente dos fechas puede ahorrarnos tiempo y facilitar nuestro trabajo como desarrolladores.
 
-## Cómo Comparar Dos Fechas en Bash
+## Cómo hacerlo
+
+Para comparar dos fechas en Bash, podemos utilizar el comando `date`. Con la opción `-d` podemos especificar la fecha que queremos comparar en un formato específico. Por ejemplo, si queremos comparar dos fechas en formato `YYY-MM-DD`, podemos usar el siguiente código:
+
 ```Bash
-# Asignamos dos fechas a variables
-primera_fecha="2020-01-01"
-segunda_fecha="2021-01-01"
+date -d "2021-01-01" 
+date -d "2021-01-05"
+```
+Esto nos dará como resultado la cantidad de días de diferencia entre ambas fechas. Si queremos obtener información más detallada, podemos utilizar la opción `-u` para obtener el tiempo en UTC o `-I` para mostrar la diferencia en días, horas y minutos.
 
-# Comparamos las fechas utilizando el comando "test"
-if test "$primera_fecha" -lt "$segunda_fecha"
-then
-  echo "La primera fecha es anterior a la segunda fecha"
-elif test "$primera_fecha" -eq "$segunda_fecha"
-then
-  echo "Las fechas son iguales"
-else
-  echo "La segunda fecha es anterior a la primera fecha"
-fi
+```Bash
+date -d "2021-01-01" -d "2021-01-05" -u
+date -d "2021-01-01" -d "2021-01-05" -I
+```
+Nota: Ten en cuenta que la fecha más reciente debe ir en primer lugar en la comparación.
+
+## Profundizando en la comparación de fechas
+
+En Bash, las fechas se almacenan internamente como segundos desde la medianoche del 1 de enero de 1970. Esto significa que cuando comparamos dos fechas, en realidad estamos comparando dos números. Por lo tanto, para comparar fechas en Bash, debemos asegurarnos de que están en un formato que pueda ser convertido a segundos.
+
+Otra forma de comparar fechas es utilizando el comando `test` y las opciones `-nt` (más reciente) y `-ot` (más antiguo). Esto se utiliza principalmente para comparar la fecha de modificación de archivos.
+
+```Bash
+test archivo1 -nt archivo2
+test archivo1 -ot archivo2
 ```
 
-En este ejemplo, utilizamos el comando "test" para comparar las dos fechas. La opción "-lt" significa "menor que" y "-eq" significa "igual a". También podemos utilizar la opción "-gt" para "mayor que". Es importante tener en cuenta que debemos utilizar el formato "yyyy-mm-dd" al asignar fechas a variables en Bash.
+## Ver también
 
-## Profundizando en la Comparación de Fechas
-
-Cuando comparamos dos fechas en Bash, es importante tener en cuenta que estamos comparando cadenas de texto y no fechas en sí. Por lo tanto, debemos asegurarnos de que las fechas estén en el formato correcto (yyyy-mm-dd) para que la comparación sea precisa. También debemos tener en cuenta el orden en el que escribimos las fechas. Si escribimos "2020-01-01" y "2021-01-01", la primera fecha será considerada como anterior a la segunda fecha. Sin embargo, si escribimos "01-01-2020" y "01-01-2021", la primera fecha será considerada como posterior a la segunda fecha, ya que Bash interpreta las cadenas de izquierda a derecha.
-
-Otra consideración importante al comparar fechas en Bash es que los años, meses y días no necesariamente tienen la misma cantidad de dígitos. Por ejemplo, si escribimos "2020-12-01" y "2021-01-01", la primera fecha será considerada como anterior a la segunda fecha, aunque el mes y el día tienen más dígitos en la primera fecha.
-
-# Ver también
-- [Cómo trabajar con fechas en Bash](https://www.cyberciti.biz/faq/unix-linux-bash-date-formatting-previous-day/)
-- [Explicación detallada sobre cómo comparar fechas en Bash](https://www.baeldung.com/linux/comparing-dates-bash)
+- [Comparing Dates in Bash](https://www.baeldung.com/linux/bash-compare-dates)
+- [Bash Date Command](https://linuxize.com/post/bash-date-command/)
+- [Comparing and Sorting Dates in Bash](https://superuser.com/questions/926544/comparing-and-sorting-dates-in-bash)

@@ -1,37 +1,41 @@
 ---
-title:    "Python: デバッグ出力のプリント"
+title:    "Python: デバッグ出力の印刷"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜプリントデバッグ出力を使うのか
 
-デバッグ出力を印刷することによって、コードをより深く理解し、問題を特定することができます。
+プリントデバッグ出力は、エラーが発生したときに、コード内の特定の箇所で何が起きているかを知るための便利なツールです。デバッグのプロセスを追跡するのに役立ち、効率的な問題解決をサポートします。
 
-## 方法
-
-デバッグ出力を印刷するには、Pythonの組み込み関数である`print()`を使用します。以下は、例です。
+## プリントデバッグ出力を使う方法
 
 ```Python
-x = 5
-y = 10
-print("xの値は:", x)
-print("yの値は:", y)
+# 変数の値を確認するためのプリントデバッグ出力
+name = "山田太郎"
+age = 25
+print("名前：", name)
+print("年齢：", age)
 ```
 
-このコードを実行すると、以下のような出力が得られます。
-
+**出力:**
 ```
-xの値は: 5
-yの値は: 10
+名前： 山田太郎
+年齢： 25
 ```
 
-## 詳しく掘り下げる
+プリントデバッグ出力は、コード内のあらゆる箇所で使用することができます。変数の値を確認したり、特定の関数や条件文の出力をテストしたりすることができます。こうした方法で、コードを詳細にチェックし、問題の特定に役立てることができます。
 
-デバッグ出力をプリントすることによって、プログラムの実行中に変数の値を確認することができます。これは、コードのどこで問題が発生しているかを特定するのに役立ちます。また、デバッグ出力を使用して、条件分岐の結果やループの反復回数を確認することもできます。
+## プリントデバッグ出力の深い掘り下げ
 
-## 他に見る
+プリントデバッグ出力を使用するには、`print()`関数を使います。この関数は、指定したデータを文字列として出力することができます。また、出力するデータのフォーマットを変更することもできます。
 
-- [Pythonの組み込み関数`print()`のドキュメント](https://docs.python.org/ja/3/library/functions.html#print)
-- [Pythonのデバッグガイドライン](https://wiki.python.org/ja/moin/PythonDebuggingTips)
+さらに、Pythonでは`logging`モジュールを使うことで、より高度なデバッグ方法が可能です。これにより、出力レベルやフォーマットを細かく設定することができ、大規模なプロジェクトでも効率的なデバッグが行えます。
+
+## See Also
+
+- [Python 公式ドキュメンテーション- デバッグ方法](https://docs.python.org/ja/3.9/library/debug.html)
+- [Real Python - Debugging in Python](https://realpython.com/python-debugging-pdb/)
+- [Qiita - Pythonのprint文でデバッグするなんてヤダ！そんな貴方にloggingをお勧めします](https://qiita.com/nashinoda/items/be434a8836bb60264e1d)

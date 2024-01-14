@@ -1,36 +1,52 @@
 ---
 title:    "Java: 부분 문자열 추출하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 substring 추출을 사용해야 할까?
+## 왜
 
-substring 추출은 문자열을 다루는 프로그래밍에서 매우 유용한 기능입니다. 어떤 한 문자열에서 원하는 부분만을 추출하여 다른 문자열을 만들 수 있기 때문에 많은 상황에서 활용할 수 있습니다. 예를 들어, 한국어로 된 문자열에서 한 문장만을 추출하여 번역 프로그램에 사용하거나, 웹 스크래핑을 할 때 필요한 정보만을 추출하여 데이터를 가공하는 등 다양한 상황에서 유용하게 사용할 수 있습니다.
+문자열에서 하위 문자열을 추출하는 것이 중요한 이유는 다양합니다. 예를 들어, 사용자가 입력한 문자열에서 특정한 부분을 추출하면 보다 쉽게 처리하거나 해당 값을 다른 곳에서 사용할 수 있습니다. 또는 문자열에서 패턴을 찾기 위해 하위 문자열을 추출하는 등의 용도로 활용할 수 있습니다.
 
-# 방법: substring 추출하는 방법
+## 추출하는 방법
 
-Java에서 substring 추출하는 방법은 간단합니다. "```Java
-str.substring(beginIndex, endIndex)
-```"와 같이 사용하면 됩니다. 여기서 beginIndex는 추출하고자 하는 문자열의 시작 인덱스, endIndex는 끝 인덱스를 의미합니다. 또한 endIndex는 생략 가능하며 생략하는 경우 자동으로 문자열의 끝까지 추출하게 됩니다.
+우선 자바에서 문자열을 추출하기 위해선 `substring()` 함수를 사용해야 합니다. 이 함수는 첫 번째 인자로 추출할 문자열의 시작 위치를, 두 번째 인자로 추출할 문자열의 끝 위치를 전달합니다. 또한, `length()` 함수를 통해 문자열의 길이를 확인하여 시작 위치와 끝 위치를 조절할 수 있습니다.
 
-예를 들어, "Hello World"라는 문자열에서 "Hello"만을 추출하려면 "```Java
-str.substring(0, 5)
-```"와 같이 사용하면 됩니다. 이렇게 추출된 substring은 새로운 문자열 객체로 반환됩니다. 따라서 원본 문자열에는 변화가 없다는 것을 유의해야 합니다.
+아래는 간단한 예제 코드와 함께 `substring()` 함수의 사용 방법을 보여줍니다.
 
-# 딥 다이브: substring 추출의 깊은 이해
+```Java
+// 입력 문자열
+String str = "안녕하세요, 저는 자바 프로그래머입니다."
 
-substring 추출은 indexOf나 lastIndexOf와 함께 사용하여 문자열에서 특정 부분을 찾고 그 부분을 추출할 수 있는 강력한 기능입니다. 또한 substring 추출을 여러 번 연결하여 새로운 문자열을 만들 수도 있습니다. 예를 들어 "Hello World"라는 문자열에서 "o Wo"만을 추출하고 싶은 경우 "```Java
-str.substring(str.indexOf("o"), str.indexOf("d") + 1)
-```"와 같이 사용하면 됩니다. 이렇게 하면 "o"와 "d"의 인덱스를 찾아내어 그 사이에 있는 부분을 추출하게 됩니다.
+// "안녕하세요" 부분을 추출
+String greeting = str.substring(0, 5);
 
-또한 substring 추출은 정규 표현식과 결합하여 특정 패턴을 가진 문자열만을 추출할 수도 있습니다. 예를 들어, "Hello1World2"라는 문자열에서 숫자만을 추출하고 싶은 경우 "```Java
-str.substring(str.indexOf("\\d+"))
-```"와 같이 정규 표현식을 제공하여 추출할 수 있습니다.
+// "자바 프로그래머" 부분을 추출
+int length = str.length();
 
-# 참고 자료
+// 글자 수를 기준으로 추출
+String profession = str.substring(length-8, length);
+```
 
-- [Java String class documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java substring method documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Java regular expression tutorial](https://regexone.com/lesson/introduction_abcs)
+위의 코드를 실행하면 다음과 같은 결과가 나옵니다.
+
+```
+greeting: 안녕하세요
+profession: 자바 프로그래머
+```
+
+## 깊게 들어가기
+
+`substring()` 함수를 이용하여 문자열을 추출하는 방식은 간단하지만, 조금 더 깊게 들어가면 다음과 같은 사실들을 알 수 있습니다.
+
+1. 자바에서는 문자열을 `char`의 배열로 다루기 때문에, `substring()` 함수는 실제로는 인덱스로 접근하여 해당 부분을 추출하는 것입니다.
+2. 하위 문자열을 추출할 때, 문자열의 인덱스는 항상 0부터 시작합니다. 따라서 `substring()` 함수의 첫 번째 인자도 0 이상이어야 합니다.
+3. `substring()` 함수의 두 번째 인자를 생략하면, 시작 위치부터 문자열의 끝까지 추출됩니다. 즉, `length()` 함수를 사용하지 않고도 마지막 글자까지 추출할 수 있습니다.
+
+## 참고 자료
+
+- [Java String의 substring() 함수](https://www.w3schools.com/java/ref_string_substring.asp)
+- [Java 문자열 다루기](https://wikidocs.net/230)
+- [GeeksforGeeks: Extract a substring in Java](https://www.geeksforgeeks.org/extract-substring-java/)

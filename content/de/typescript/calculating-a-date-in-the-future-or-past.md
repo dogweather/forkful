@@ -1,45 +1,40 @@
 ---
-title:    "TypeScript: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:    "TypeScript: Berechnung eines Datums in der Zukunft oder Vergangenheit"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum 
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann in vielen Situationen nützlich sein. Zum Beispiel, um zu überprüfen, welcher Tag der Woche ein bestimmtes Datum fallen wird, oder um herauszufinden, wann ein wichtiger Termin in Bezug auf andere Termine liegt. Mit TypeScript können wir diese Berechnungen effizient und genau durchführen.
+Das Berechnen von Daten in der Zukunft oder Vergangenheit kann nützlich sein, um beispielsweise in einem Kalender die Termine für die nächsten Wochen oder Monate zu berechnen.
 
-## Wie man es macht
+# Wie 
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zunächst das Datum auswählen, von dem aus wir berechnen wollen. Dann müssen wir die Anzahl der Tage, Wochen, Monate oder Jahre angeben, die wir hinzufügen oder subtrahieren möchten. Anhand dieser Informationen können wir ein neues Datum erstellen.
+Die Berechnung von Daten in TypeScript ist relativ einfach. Zunächst müssen wir das `Date`-Objekt importieren. Dann können wir das aktuelle Datum durch die Verwendung von `new Date()` erhalten. Wir können auch ein spezifisches Datum angeben, indem wir die entsprechenden Parameter (Jahr, Monat, Tag) in die Klammern von `new Date()` einfügen. Anschließend können wir mithilfe von verschiedenen Methoden und Operatoren das gewünschte Datum in der Zukunft oder Vergangenheit berechnen.
 
-```TypeScript
-const startDatum = new Date(2021, 4, 25); // 25. Mai 2021
-const zukunftsDatum = new Date(startDatum.getFullYear() + 1, startDatum.getMonth() + 3, startDatum.getDate()); // 25. August 2022
-```
-
-In diesem Beispiel haben wir das Datum 25. Mai 2021 ausgewählt und dann ein neues Datum erstellt, das ein Jahr und drei Monate später liegt. Wir können auch negative Werte verwenden, um ein Datum in der Vergangenheit zu berechnen.
+Ein Beispiel, um das Datum von 7 Tagen in der Zukunft zu berechnen:
 
 ```TypeScript
-const startDatum = new Date(2021, 7, 12); // 12. August 2021
-const vergangenheitsDatum = new Date(startDatum.getFullYear() - 2, startDatum.getMonth() - 8, startDatum.getDate()); // 12. Dezember 2018
+import { Date } from 'ts-lib';
+let currentDate = new Date();
+let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 7);
+console.log(futureDate);
 ```
 
-In diesem Beispiel haben wir das Datum 12. August 2021 ausgewählt und dann ein neues Datum erstellt, das zwei Jahre und acht Monate zuvor liegt.
+Die Ausgabe sieht folgendermaßen aus:
 
-## Tiefer Einblick
-
-Bei der Berechnung von Datumswerten ist es wichtig zu beachten, dass die Monate in TypeScript bei 0 beginnen. Das heißt, der Januar ist Monat 0, der Februar ist Monat 1 usw. Deshalb haben wir in den obigen Beispielen die Monate um eins erhöht oder verringert, um das korrekte zukünftige oder vergangene Datum zu erhalten. 
-
-Außerdem können wir die berechneten Datumsobjekte auch in bestimmten Formaten ausgeben, indem wir die Methoden `getDate()`, `getMonth()` und `getFullYear()` verwenden. Zum Beispiel:
-
-```TypeScript
-const zukunftsDatum = new Date(2021, 0, 1);
-console.log(`Das berechnete Datum ist: ${zukunftsDatum.getDate()}.${zukunftsDatum.getMonth() + 1}.${zukunftsDatum.getFullYear()}`); // Das berechnete Datum ist: 1.1.2022
+```
+Sun Nov 21 2021 00:00:00 GMT+0200 (Eastern European Standard Time)
 ```
 
-## Siehe auch
+# Deep Dive 
 
-- Dokumentation zu JavaScript-Datumsobjekten: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Wie man mit TypeScript arbeitet: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
-- Ein Praxisbeispiel für die Verwendung von berechneten Datumswerten: https://dev.to/chrisachard/adventure-game-in-6502-assembly-ari
+Es gibt viele verschiedene Methoden und Operatoren, die beim Berechnen von Daten in der Zukunft oder Vergangenheit verwendet werden können. Beispielsweise können wir mithilfe des `set`-Operators das Datum direkt ändern oder mithilfe von `getTime()` eine Zeitstempel-basierte Berechnung durchführen. Es ist auch möglich, die verschiedenen Methoden und Operatoren zu kombinieren, um komplexe Berechnungen durchzuführen.
+
+# Siehe auch 
+
+- [Offizielle TypeScript-Dokumentation zu Date-Objekten](https://www.typescriptlang.org/docs/handbook/datetime.html)
+- [Tutorial: Das JavaScript Date-Objekt](https://www.w3schools.com/js/js_dates.asp)
+- [Beispiel für eine Datumsberechnung in TypeScript](https://dzone.com/articles/date-math-how-to-manipulate-date-strings-in-types)

@@ -1,60 +1,59 @@
 ---
-title:    "Haskell: Busca e substituição de texto"
+title:    "Haskell: Buscando e substituindo texto"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Fazer o processo de busca e substituição de texto é uma tarefa comum na programação. Ao aprender a realizar essa função em Haskell, você poderá escrever programas que lidam com manipulação de texto de forma mais eficiente e elegante.
+A tarefa de buscar e substituir texto é uma das tarefas mais comuns e úteis na programação, especialmente em linguagens funcionais como Haskell. Ao dominar essa habilidade, você poderá economizar tempo e aumentar sua produtividade na escrita de código.
 
-## Como Fazer
+## Como fazer
 
-Realizar busca e substituição de texto em Haskell é bastante simples. Primeiro, importe o módulo "Data.Text" para poder trabalhar com o tipo de dados "Text". Em seguida, utilize a função "replace" para fazer a substituição.
-
-```
-import Data.Text (replace)
-
-textoOriginal = "Olá, mundo!"
-novoTexto = replace "Olá" "Hello" textoOriginal
-
--- Saída: Hello, mundo!
-```
-
-Como pode ser visto no exemplo acima, a função "replace" recebe três parâmetros: o texto que será substituído, o texto substituto e o texto original. Caso o texto a ser substituído não seja encontrado no texto original, a função simplesmente retorna o texto original sem modificação.
-
-Para fazer a busca por um padrão em vez de uma string específica, pode-se utilizar a função "replaceWith", que recebe como parâmetros uma função de correspondência e o texto substituto. Por exemplo:
+Existem várias maneiras de buscar e substituir texto em Haskell, mas uma das maneiras mais simples é usando a função `replaceAll` da biblioteca `Data.Text`, que recebe uma lista de pares de texto: o texto a ser substituído e o texto substituto.
 
 ```
-import Data.Text (replaceWith)
+Haskell
+import Data.Text (unpack, replaceAll)
+import qualified Data.Text as T
 
-textoOriginal = "123 ABC"
-novoTexto = replaceWith (\_ -> "XYZ") textoOriginal
+-- uma string de exemplo
+texto = "Olá, mundo!"
 
--- Saída: XYZ XYZ
+-- substituindo "mundo" por "Haskell"
+novoTexto = replaceAll (T.pack "mundo") (T.pack "Haskell") (T.pack texto)
+
+unpack novoTexto -- imprime "Olá, Haskell!"
 ```
 
-Nesse caso, a função de correspondência apenas ignora o padrão encontrado e retorna sempre o texto substituto.
+Você também pode usar expressões regulares para realizar buscas e substituições em texto. A biblioteca `Data.Text.Regex` possui funções úteis para lidar com expressões regulares em Haskell. Aqui está um exemplo de como usar a função `subRegex` para substituir todas as ocorrências de números por asteriscos em uma string:
+
+```
+Haskell
+import Data.Text (unpack)
+import qualified Data.Text as T
+import Text.Regex.Posix (subRegex)
+
+-- uma string de exemplo
+texto = "Existem 123 coisas na lista."
+
+-- substituindo números por asteriscos
+novoTexto = subRegex (makeRegex "([0-9]+)") (unpack texto) "*"
+
+unpack novoTexto -- imprime "Existem * coisas na lista."
+```
 
 ## Aprofundando
 
-Ao trabalhar com strings, é importante ter em mente que elas são imutáveis em Haskell. Isso significa que toda vez que uma substituição é feita, um novo texto é criado em vez de modificar o texto original. Isso pode gerar uma sobrecarga de memória em programas que realizam múltiplas substituições.
+Além das funções mencionadas, há muitas outras maneiras de realizar buscas e substituições de texto em Haskell. Você pode explorar as inúmeras bibliotecas disponíveis na comunidade Haskell, como `Data.String.Utils` e `Data.List.Utils`, que possuem funções úteis para manipulação de strings.
 
-Para lidar com isso, é possível utilizar a função "foldl'" em conjunto com a função "replaceWith". Essa função realiza uma operação em cada elemento de uma lista e retorna o resultado final. No contexto de busca e substituição de texto, pode-se utilizar essa função para aplicar várias substituições em um mesmo texto sem criar múltiplos textos intermediários. Um exemplo seria:
+Se você estiver interessado em aprender mais sobre expressões regulares em Haskell, a documentação oficial da linguagem possui um bom tutorial sobre o assunto. Além disso, você pode explorar as funcionalidades de substituição de texto nas bibliotecas mencionadas, como `Data.Text.Regex`, para ter um melhor entendimento sobre como elas funcionam.
 
-```
-import Data.Text (replaceWith)
-import qualified Data.Text.Foldable as TF
+## Veja também
 
-textoOriginal = "ABC 123 D"
-novoTexto = TF.foldl' (\str pattern -> replaceWith (\_ -> "X") str) textoOriginal ["ABC", "123", "D"]
-
--- Saída: X X X
-``` 
-
-## Veja Também
-
-- [Documentação oficial do módulo Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Tutorial de busca e substituição de texto em Haskell](https://www.codewars.com/kata/search-and-replace-text-in-a-string-haskell/train/haskell)
-- [Funcionalidades do módulo Data.Text](https://mmhaskell.com/haskell-strings-and-text)
+- Documentação oficial sobre expressões regulares em Haskell (em inglês): https://www.haskell.org/onlinereport/regexps.html
+- Biblioteca `Data.Text.Regex` (em inglês): https://hackage.haskell.org/package/regex-base
+- Biblioteca `Data.String.Utils` (em inglês): https://hackage.haskell.org/package/missingh-1.4.0.1/docs/Data-String-Utils.html
+- Biblioteca `Data.List.Utils` (em inglês): https://hackage.haskell.org/package/list-utils-0.1.0/docs/Data-List-Utils.html

@@ -1,42 +1,33 @@
 ---
 title:    "Clojure: Utskrift av feilsøkingsutdata"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å skrive debugging utdata er en viktig del av programmering for å feilsøke problemer og forbedre koden din.
 
-Mens du arbeider med Clojure kode, kan du komme over situasjoner der noe ikke fungerer som forventet. Dette er ofte forvirrende og frustrerende, spesielt når det er vanskelig å finne feilen i koden. Ved å legge til debug-utskrift i koden din, kan du enkelt følge med på hva som skjer og finne feilen raskere. 
-
-## Hvordan
-
-For å legge til debug-utskrift i Clojure-koden din, kan du bruke funksjonen "println". Denne funksjonen tar en eller flere argumenter og skriver dem ut i konsollen. Her er et eksempel på hvordan du kan bruke den:
-
-```Clojure
-(defn add [x y]
-  (println "Legger sammen tallene:" x y)
-  (+ x y))
-  
-(add 5 3)
-```
-
-Output:
+## Slik gjør du det
+Noen ganger vil du se hva som skjer i koden din, og da kan du bruke ulike typer debugging utdata for å få mer informasjon. Her er et eksempel i Clojure:
 
 ```
-Legger sammen tallene: 5 3
-8
+(defn sum [a b]
+  (println "Adding numbers: " a " and " b)
+  (+ a b))
+
+(sum 2 3)
 ```
 
-Som du kan se, vil debug-utskriften bli vist i konsollen, noe som gjør det enkelt å følge med på hva som skjer i koden din. Du kan også legge til variabelnavnet for å få mer spesifikk informasjon om verdiene som blir brukt. 
+Dette vil skrive ut "Adding numbers: 2 and 3" og returnere 5. På denne måten kan du enkelt se hva som går inn i funksjonen og hva som kommer ut av den.
 
-## Dypdykk
+## Dykk dypere
+For mer avanserte debugging tilfeller, kan du bruke funksjonen ```(clojure.pprint/pprint <verdi>)``` for å skrive ut en objekts struktur. Dette er spesielt nyttig når du arbeider med komplekse datastrukturer.
 
-Det finnes flere måter å legge til debug-utskrift på i Clojure-koden din. En annen metode er å bruke "prn" funksjonen, som kan skrive ut datastrukturen til et objekt. Du kan også bruke "pr-str" funksjonen for å få en strengrepresentasjon av objektet. En annen nyttig funksjon for debugging er "pprint", som gir deg en mer lesevennlig utskrift av komplekse datastrukturer. 
-
-Husk også at du kan bruke betingede uttrykk i debug-utskrifter for å kontrollere når de blir aktivert. For eksempel kan du bruke "(when condition (println "Debug-utskrift"))" for å bare få utskriften når en spesiell betingelse er oppfylt. Dette kan bidra til å redusere mengden av debug-utskrifter og gjøre det enklere å følge med på hva som skjer i koden din. 
+En annen nyttig metode er å bruke logging-biblioteker som "log4j" eller "logback". Disse tillater deg å skrive ut til en loggfiler som du enkelt kan analysere senere.
 
 ## Se også
-
-- [Offisiell Clojure dokumentasjon](https://clojuredocs.org/quickref)
-- [Article about debugging in Clojure](https://www.braveclojure.com/debugging-clojure/)
+- [Clojure dokumentasjon: Debugging](https://clojure.org/guides/debugging)
+- [ClojureDox: clojure.pprint](https://clojuredox.org/clojure.pprint/pprint)
+- [Nextjournal: Debugging in Clojure](https://nextjournal.com/sdanisch/solving-the-almighty-clojure-debugging-issue)

@@ -1,43 +1,49 @@
 ---
-title:    "Haskell: 「テキストファイルの作成」"
+title:    "Haskell: テキストファイルを作成する"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラミング言語Haskellを使ってテキストファイルを書く理由は、コンピューターで文字を保存したり、データを処理したりするために必要です。
+テキストファイルを書くことに参加する理由は、Haskellプログラミングの基本的なスキルを学ぶためです。テキストファイルを書くことは、データのストレージや情報の共有に非常に重要です。また、Haskellプログラミングによって、コードの再利用性や読みやすさが向上します。
 
-## 作り方
+## ハウツー
 
-まず、テキストファイルを作成するために必要なライブラリをインポートします。
+テキストファイルを書くための基本的な手順は以下の通りです。
+
+1. `haskell`のモジュールをインポートする。
+2. テキストファイルのパスを指定する。
+3. テキストファイルを開くための関数`openFile`を使用する。
+4. `hPutStr`関数を使用して、ファイルに書き込むデータを指定する。
+5. ファイルを閉じるための`hClose`関数を使用する。
+
+以下のコードは、上記の手順を実装した例です。
+
 ```Haskell
 import System.IO
-```
 
-次に、ファイルを開き、内容を書き込みます。
-```Haskell
 main = do
-  let fileName = "sample.txt"
-  handle <- openFile fileName WriteMode
-  hPutStrLn handle "こんにちは、世界！"
-  hClose handle
+  let path = "sample.txt"
+  file <- openFile path WriteMode
+  hPutStr file "This is a sample text file."
+  hClose file
 ```
 
-最後に、このコードを実行すると、指定したファイルに文字列が書き込まれます。
+上記のコードを実行すると、`sample.txt`というファイルが作成され、その中に`This is a sample text file.`というテキストが書き込まれます。
 
-## 深堀り
+## ディープダイブ
 
-テキストファイルを作成する際には、ファイルを開いた後、必ず閉じる必要があります。これは、開いたファイルをクローズすることで、コンピューターのリソースを解放し、エラーが発生するリスクを減らすためです。
+テキストファイルを書くためには、さまざまなオプションや関数があります。ファイルを開く際には、読み書きのモードや文字コードを指定することができます。また、`hPutStrLn`関数を使用すれば、改行付きのテキストを書き込むこともできます。
 
-また、書き込む内容が複数行ある場合は、`hPutStrLn`ではなく`hPutStr`を使用して、改行を手動で挿入する必要があります。
+テキストファイルを上書きするのではなく、追記する場合は`AppendMode`を使用します。さらに、`withFile`関数を使用することで、ファイルを自動的に閉じることができます。
 
-## 関連リンク
+テキストファイルの書き方に関するさらなる詳細は、公式のHaskellドキュメントを参照してください。
 
-- [Haskell公式サイト](https://www.haskell.org/)
-- [Haskellのチュートリアル](http://learnyouahaskell.com/chapters)
-- [Haskellの構文ガイド](https://wiki.haskell.org/Syntax_in_functions)
-- [GitHubのHaskellリポジトリ](https://github.com/search?q=language%3AHaskell)
-- [Haskellコミュニティーのフォーラム](https://discourse.haskell.org/)
-- [Haskellでテキストファイルを読み書きする方法](https://qiita.com/PyYoshi/items/78798f66fd653575efc4)
+## その他のリンク
+
+- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskellでテキストファイルを読み書きする方法](https://qiita.com/sasaplus1/items/300fc9a819055afd2fa6)

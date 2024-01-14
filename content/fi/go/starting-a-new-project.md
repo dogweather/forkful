@@ -1,36 +1,44 @@
 ---
-title:    "Go: Uuden projektin aloittaminen"
+title:    "Go: Aloittaminen: Uuden projektin aloittaminen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi aloittaisit uuden projektin Go-kielellä? Go on moderni ohjelmointikieli, joka on suunniteltu erityisesti suurten ja skaalautuvien järjestelmien kehittämiseen. Sen tehokkuus, nopeus ja kyky käsitellä useita säikeitä tekevät siitä ihanteellisen valinnan monimutkaisiin projekteihin.
+Miksi aloittaa uusi projekti Go-kielellä? Go on moderni, tehokas ja helppokäyttöinen ohjelmointikieli, joka on erityisen hyvä ratkaisu suurten verkkopalveluiden kehittämiseen. Se tarjoaa myös monia hyödyllisiä työkaluja ja kirjastoja, jotka helpottavat ohjelmien rakentamista.
 
 ## Miten
 
-Aloittaminen Go-projektilla on helppoa ja nopeaa. Sinun tarvitsee vain asentaa Go-kääntäjä ja voit aloittaa kirjoittamisen. Tässä on yksinkertainen esimerkki, jossa tulostetaan "Hei maailma!" Go-koodilla:
+Aloittaminen Go:n kanssa on helppoa. Aloita luomalla uusi kansio ja avaa se terminaalissa. Kirjoita ensimmäiseksi `go mod init projektin_nimi`, jolloin Go luo projektillesi moduulin hallinnoimista varten. Seuraavaksi voit luoda uuden tiedoston `main.go` ja aloittaa kirjoittamaan koodia.
 
-```Go
-package main
-
-import "fmt"
+```
+Go import (
+  "fmt"
+)
 
 func main() {
-	fmt.Println("Hei maailma!")
+  fmt.Println("Tervetuloa Go:n maailmaan!")
 }
 ```
 
-Tämän koodin suorittaminen tulostaa "Hei maailma!" terminaaliin. Kuten näet, Go-koodi on helppolukuista ja ymmärrettävää.
+Tämän jälkeen voit suorittaa ohjelman komennolla `go run main.go` ja näet tulosteen terminaalissa. Näin olet luonut ensimmäisen Go-ohjelmasi!
 
-## Syväsukellus
+## Syvemmälle
 
-Aloittaessasi uutta Go-projektia, on tärkeää hahmottaa sen rakenne ja arkkitehtuuri. Tämä auttaa säilyttämään koodin selkeyden ja tehokkuuden. Hyvä tapa aloittaa on kirjoittaa pieniä toiminnallisuuksia, jotka voidaan sitten yhdistää isommaksi kokonaisuudeksi. Myös testien kirjoittaminen on tärkeää projektin laadun varmistamiseksi.
+Go-kielellä on monia työkaluja ja kirjastoja, jotka auttavat kehittämään tehokkaita ja luotettavia ohjelmia. Suosittelemme tutustumaan seuraaviin resursseihin:
+
+- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
+- [Awesome Go -listaus erilaisista Go-projekteista](https://github.com/avelino/awesome-go)
+- [Go:n oppimateriaalit ja esimerkkikoodit](https://github.com/golang/go/wiki/Learn%20to%20Program)
+- [Visual Studio Code ja sen Go-laajennus](https://code.visualstudio.com/docs/languages/go)
+
+Muista myös hyödyntää Go-koodisi versionhallintaa, kuten Git, ja jakaa projektejasi muiden kanssa esimerkiksi GitHubissa.
 
 ## Katso myös
 
-- [Go-kääntäjän asentaminen](https://golang.org/doc/install)
-- [Go-dokumentaatio](https://golang.org/doc/)
-- [Go-projektin aloittaminen](https://golang.org/doc/code.html)
+- [Go:n viralliset sivut](https://golang.org/)
+- [Go-kielestä suomeksi](https://github.com/melix/golang-suomi)
+- [Go:n käyttöohjeet ja tutoriaalit](https://golang.org/doc/tutorial/)

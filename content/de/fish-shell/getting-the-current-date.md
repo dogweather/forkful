@@ -1,41 +1,49 @@
 ---
-title:    "Fish Shell: Die aktuelle Datum abrufen"
+title:    "Fish Shell: Das aktuelle Datum erhalten"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Abrufen des aktuellen Datums in der Fish Shell mag auf den ersten Blick unbedeutend erscheinen, aber es kann sehr nützlich sein, wenn Sie Skripte schreiben, die mit zeitbasierten Aufgaben arbeiten. Zum Beispiel können Sie das aktuelle Datum verwenden, um Dateien oder Ordner mit dem entsprechenden Datum zu benennen oder um zu überprüfen, ob ein bestimmter Tag in der Zukunft liegt.
+Wenn Sie jemals ein Skript geschrieben haben, das auf die aktuelle Zeit oder das aktuelle Datum zugreifen musste, werden Sie verstehen, warum es wichtig ist, das Datum in der Fish Shell abzurufen. Das Datum ist eine grundlegende und häufig verwendete Information in der Programmierung und kann in vielen Situationen nützlich sein.
 
-## Wie man es macht
+## Wie es geht
 
-Um das aktuelle Datum in der Fish Shell abzurufen, verwenden Sie die `date`-Funktion. Geben Sie einfach `date` in Ihrem Terminal ein und sie wird das aktuelle Datum und die aktuelle Uhrzeit ausgeben.
-
-```Fish Shell
-date
-```
-Output: Sam 02. Okt 2021 12:00:00 CEST
-
-Sie können auch das Datum im gewünschten Format anzeigen lassen, indem Sie der `date` Funktion ein Formatmuster angeben. Zum Beispiel können Sie das Datum im ISO-Format `{YYYY}-{MM}-{DD}` anzeigen lassen, indem Sie `date {YYYY}-{MM}-{DD}` eingeben.
+Es gibt mehrere Möglichkeiten, in der Fish Shell auf das aktuelle Datum zuzugreifen. Eine Möglichkeit ist die Verwendung des `date`-Befehls. Geben Sie einfach `date` in der Shell ein und Sie erhalten das aktuelle Datum im Format "Wochentag Monat Tag Stunde:Minute: Sekunde Zeitzone Jahr". Sie können auch das `date`-Kommando mit verschiedenen Optionen verwenden, um das Format des Datums anzupassen.
 
 ```Fish Shell
-date {YYYY}-{MM}-{DD}
+$ date
+Fri Feb 19 15:23:31 EST 2021
 ```
-Output: 2021-10-02
 
-Sie können auch das Datum in anderen Sprachen anzeigen lassen, indem Sie der `date`-Funktion die entsprechende Landeskennung geben. Zum Beispiel wird `date %d.%m.%Y` das Datum im Format `02.10.2021` in deutscher Sprache anzeigen.
+Eine weitere Möglichkeit besteht darin, die `strftime`-Funktion zu verwenden, um das Datum in einem bestimmten Format auszugeben. Hier ist ein Beispiel, das das Datum im Format "Tag.Monat.Jahr" ausgibt:
 
 ```Fish Shell
-date %d.%m.%Y
+$ set datum (strftime "%d.%m.%y")
+$ echo $datum
+19.02.21
 ```
-Output: 02.10.2021
 
-## Tiefergehender Einblick
+Eine weitere nützliche Funktion ist `now`, mit der Sie das aktuelle Datum und die Uhrzeit in verschiedenen Formaten abrufen können.
 
-Die `date`-Funktion in der Fish Shell verwendet den Unix/Linux Befehl `date` unter der Haube, um das Datum abzurufen. Dadurch stehen Ihnen auch alle Optionen des `date` Befehls zur Verfügung, wenn Sie das Datum in einem bestimmten Format anzeigen lassen möchten. Verwenden Sie `man date` für weitere Informationen.
+```Fish Shell
+$ echo (now) # Gibt das aktuelle Datum und die Uhrzeit im ISO-Format aus
+2021-02-19T20:23:31
+$ echo (now '%H:%M') # Gibt die aktuelle Uhrzeit im Format Stunden:Minute aus
+20:23
+```
 
-See Also
+## Tiefere Einblicke
+
+Es gibt noch viel mehr Möglichkeiten, in der Fish Shell auf das aktuelle Datum zuzugreifen und es zu formatieren. Sie können beispielsweise die `tzselect`-Funktion verwenden, um die Zeitzone für das Datum festzulegen. Sie können auch Benutzervariablen verwenden, um das Datum in Ihrem Skript zu speichern und zu verwenden.
+
+Das aktuelle Datum ist auch nützlich, wenn Sie Skripte schreiben, die bestimmte Aktionen an bestimmten Tagen oder zu bestimmten Zeiten ausführen sollen. Sie können das Datum mit Bedingungen und Schleifen kombinieren, um komplexe Skripte zu erstellen.
+
+## Siehe auch
+
 - [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Unix/Linux Date Befehl](https://www.unix.com/man-page/linux/1/date/)
+- [Tutorial: Shell-Scripting im Fish Shell](https://dev.to/bameyrick/shell-scripting-in-fish-a-tutorial-2mek)
+- [Offizieller Fish Shell GitHub-Repository](https://github.com/fish-shell/fish-shell)

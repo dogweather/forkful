@@ -1,47 +1,48 @@
 ---
 title:    "Rust: 2つの日付を比較する"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Rust言語で日付を比較する方法
+今回は、Rustで2つの日付を比較する方法について説明します。2つの日付を比較することで、プログラムが日付に関するさまざまな処理を行うことができます。例えば、ある日付よりも未来の日付を特定する場合や、特定の期間内の日付を取得する場合などに役立ちます。
 
-## 起因
-日付を比較することは、プログラミングの中でも非常によく行われます。例えば、ブログの投稿日と更新日を比較して、最新の投稿を表示したり、有効期限を過ぎたイベントを非表示にしたりすることができます。しかし、Rust言語を使う場合、日付を比較する方法は他の言語とは少し異なります。そこで、今回はRust言語で日付を比較する方法についてご紹介します。
+## なぜ日付の比較が必要か？
 
-## 方法
-Rust言語では、日付を表すために`DateTime`というデータ型が用意されています。このデータ型は、`Chrono`というライブラリを使用することで利用することができます。まずは、`Chrono`ライブラリをプログラムに追加します。
+日付を比較することで、プログラムが日付に関する処理を行うことができます。また、特定の条件を満たす日付を取得することもできます。例えば、ある期間内の日付を取得する場合は、比較演算子を使って簡単にプログラムすることができます。
 
-```Rust
-extern crate chrono; // Chronoライブラリを追加
+## 日付の比較方法
 
-use chrono::{DateTime, Utc}; // データ型DateTimeとタイムゾーンのUtcを使用
-```
-
-次に、比較したい日付をそれぞれ`DateTime`のインスタンスとして作成し、そのインスタンスを比較演算子`<`、`>`、`=`で比較することで、日付の大小を判定することができます。
+比較演算子を使用することで、2つの日付を比較することができます。以下のようにコードを書くことで、日付の比較ができます。
 
 ```Rust
-let date1: DateTime<Utc> = Utc::now(); // 現在の日付を取得
-let date2: DateTime<Utc> = Utc.ymd(2020, 1, 1).and_hms(0, 0, 0); // 2020年1月1日を指定して作成
+use chrono::{DateTime, Utc};
 
-if date1 > date2 {
-    println!("date1 is later than date2");
-} else if date1 < date2 {
-    println!("date1 is earlier than date2");
+// 2つの日付を定義する
+let date1: DateTime<Utc> = Utc.ymd(2021, 4, 10).and_hms(12, 0, 0);
+let date2: DateTime<Utc> = Utc.ymd(2021, 4, 11).and_hms(12, 0, 0);
+
+// date1がdate2よりも未来の日付かどうかを比較する
+if date1 < date2 {
+    println!("date1はdate2よりも未来の日付です。");
 } else {
-    println!("Both dates are the same");
+    println!("date1はdate2よりも未来の日付ではありません。");
+}
+
+// 特定の期間内の日付を取得する
+if date1 > Utc::now() && date1 < date2 {
+    println!("date1は現在時刻とdate2の間の日付です。");
 }
 ```
 
-上記のコードでは、`Utc.ymd()`メソッドと`and_hms()`メソッドを使用して、年月日と時分秒を指定して`DateTime`のインスタンスを作成しています。また、`now()`メソッドを使用することで現在の日付を取得することができます。
+上記のコードでは、まずchronoライブラリを使用して日付を定義します。そして、比較演算子`<`や`>`を使って日付を比較します。実行すると、条件に合わせて適切なメッセージが表示されます。
 
-## 詳細を追う
-Rust言語では、比較演算子の他にも`DateTime`オブジェクトのメソッドを使用することで、日付の比較や計算を行うことができます。例えば、`date1.month()`や`date2.year()`などを使用することで、日付の特定の部分を取得することができます。また、`date1.succ()`や`date2.pred()`を使用することで、前後の日付を取得することもできます。
+## 日付の比較についてさらに詳しく
 
-詳しくは、Chronoライブラリの公式ドキュメントを参照してください。
+日付の比較では、時間単位まで比較することもできます。例えば、2つの日付が同じ日であっても、秒数が異なる場合には異なる日付として扱われます。また、タイムゾーンが異なる場合には、日付の比較を行う前に一度タイムゾーンを合わせる必要があります。
 
-## 関連情報
-- Chronoライブラリ公式ドキュメント: https://docs.rs/chrono/
-- Rust言語公式ドキュメント: https://www.rust-lang.org/ja/
-- 日付と時刻を扱うプログラムのコーディングにおける悩みとその解決策: https://tech.atguys.co.jp/tech-blog/date-and-time-in-programming/
+## See Also
+
+- [Rustで日付を扱う方法 (公式ドキュメント)](https://doc.rust-lang.org/std/time/)
+- [Rustでのタイムゾーンの扱い方 (Qiita)](https://qiita.com/raycorp/items/77302a4736e4a85f6975)

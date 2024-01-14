@@ -1,48 +1,37 @@
 ---
 title:    "Haskell: Odczytywanie pliku tekstowego"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego warto przeczytać plik tekstowy w Haskellu? To ważne pytanie, na które odpowiemy w tym artykule. Wraz z przykładami kodu i wyjścia programu, opiszemy jak można bez trudu odczytać plik tekstowy w języku Haskell.
+Pisanie programów może być przyjemnym i satysfakcjonującym sposobem spędzania czasu. Jednak czasami musimy też zmierzyć się z mniej przyjemnymi zadaniami, takimi jak czytanie dużych plików tekstowych. Dlatego warto poznać narzędzia, które ułatwią nam ten proces.
 
-## Jak
+## Jak to zrobić?
 
-Podstawowym krokiem do odczytania pliku tekstowego w Haskellu jest wykorzystanie funkcji `readFile`, która odczytuje zawartość pliku i zwraca jego zawartość jako string.
-
-```Haskell
-main = do
-    fileContents <- readFile "nazwa_pliku.txt"
-    putStrLn fileContents
-```
-
-Powyższy kod próbuje odczytać plik o nazwie "nazwa_pliku.txt" i wyświetla jego zawartość na ekranie.
-
-Możemy także wykorzystać funkcję `withFile`, która umożliwia bezpieczne odczytywanie pliku tekstowego. Dzięki temu, nie musimy martwić się o ewentualne problemy związane z otwieraniem lub zamykaniem pliku.
+W języku Haskell mamy dostęp do wielu przydatnych funkcji i bibliotek, które mogą pomóc nam w czytaniu plików tekstowych. W poniższym przykładzie wykorzystamy funkcję `readFile` oraz moduł `Data.Text`, aby wczytać i wyświetlić zawartość pliku.
 
 ```Haskell
-import System.IO
+import qualified Data.Text as T
 
 main = do
-    withFile "nazwa_pliku.txt" ReadMode (\handle -> do
-        fileContents <- hGetContents handle
-        putStrLn fileContents)
+  fileContent <- readFile "nazwa_pliku.txt"
+  let text = T.pack fileContent
+  putStrLn text
 ```
 
-Powyższy kod wykorzystuje `withFile`, aby otworzyć plik tekstowy w trybie "ReadMode", a następnie odczytuje jego zawartość za pomocą funkcji `hGetContents`. Na koniec, zawartość pliku jest wypisana na ekranie przy pomocy funkcji `putStrLn`.
+Po uruchomieniu powyższego kodu, w konsoli zostanie wyświetlona zawartość pliku tekstowego o nazwie "nazwa_pliku.txt".
 
-## Głębsza przeprawa
+## Głębsze wertowanie
 
-Oprócz podstawowych funkcji, Haskell oferuje także wiele narzędzi i bibliotek, które ułatwiają odczytywanie plików tekstowych. Na przykład, biblioteka "text" oferuje funkcje do konwertowania danych tekstu na wartości liczbowe oraz do tokenizacji tekstu.
+Istnieje wiele innych sposobów na czytanie plików tekstowych w Haskellu. Możemy użyć funkcji `hGetContents` zamiast `readFile`, aby uzyskać dostęp do zawartości pliku jako ciąg znaków, a nie obiektu `Text`. Możemy również skorzystać z funkcji `getLine` lub `getContents`, aby czytać plik wiersz po wierszu.
 
-Inną przydatną biblioteką jest "split", która umożliwia dzielenie tekstu na części za pomocą określonego separatora. Może to być bardzo przydatne w przypadku przetwarzania plików CSV.
+Ponadto, jeśli chcemy przetworzyć plik tekstowy z użyciem bardziej zaawansowanych narzędzi, możemy skorzystać z parserów tekstowych, takich jak Parsec czy Attoparsec.
 
 ## Zobacz też
 
-- [Dokumentacja funkcji `readFile`](https://hackage.haskell.org/package/base/docs/Prelude.html#v:readFile)
-- [Dokumentacja funkcji `withFile`](https://hackage.haskell.org/package/base/docs/System-IO.html#v:withFile)
-- [Biblioteka "text"](https://hackage.haskell.org/package/text)
-- [Biblioteka "split"](https://hackage.haskell.org/package/split)
+- [Dokumentacja `Data.Text`](https://hackage.haskell.org/package/text)
+- [Poradnik o czytaniu plików w Haskellu](http://learnyouahaskell.com/input-and-output#files-and-streams)

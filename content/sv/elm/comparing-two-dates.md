@@ -1,44 +1,40 @@
 ---
-title:    "Elm: Jämföra två datum"
+title:    "Elm: Jämföring av två datum"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I denna bloggpost ska vi prata om hur man jämför två datum i Elm-programmering och varför det är en användbar färdighet att ha. Att kunna jämföra datum är viktigt i många olika typer av applikationer, till exempel när man vill visa information baserat på ett specifikt datum eller sortera data baserat på datum.
+Att jämföra två datum är ett vanligt problem inom programmering när man arbetar med tidsbaserade applikationer. Det kan vara användbart för att sortera eller filtrera data, beräkna åldrar eller för att visa olika meddelanden baserat på datum.
 
-## Hur man jämför två datum i Elm
+## Hur man gör det
 
-För att jämföra två datum i Elm behöver vi använda funktionen `Date.compare`. Denna funktion tar in två datum som argument och jämför dem baserat på deras storlek. Om det första datumet är mindre än det andra returneras värdet `LT` (som står för "Less Than"), om det första datumet är större returneras `GT` (som står för "Greater Than") och om datumen är lika returneras `EQ` (som står för "Equal").
+För att jämföra två datum i Elm använder man funktionen `compare`, som tar två datum som argument och returnerar en `Order` typ. Den kan sedan användas för att avgöra om det första datumet är före, efter eller lika med det andra.
 
-Låt oss titta på ett exempel på hur man gör detta i Elm:
-
-```Elm
-Date.compare (Date.fromCalendarDate 2021 11 12) (Date.fromCalendarDate 2021 11 11)
+```
+Elm  2011-05-14 |>  compare  (2011-05-12) == GT
+Elm  2011-05-12 |>  compare  (2011-05-12) == EQ
+Elm  2011-05-10 |>  compare  (2011-05-12) == LT
 ```
 
-I detta exempel jämför vi två datum: 12 november 2021 och 11 november 2021. Eftersom 12 november är större än 11 november kommer funktionen `Date.compare` att returnera `GT`.
+Man kan också använda funktionen `max` och `min` för att välja det senaste respektive tidigaste datumet från en lista av datum.
 
-Man kan också använda funktionen `Date.compare` för att sortera en lista av datum, vilket gör det enklare att visa information i rätt ordning. Låt oss se ett exempel på detta:
-
-```Elm
-['2021-11-10', '2021-11-12', '2021-11-11']
-    |> List.map Date.fromIsoString
-    |> List.sort Date.compare
 ```
-
-I detta exempel använder vi `List.sort` för att sortera en lista av datumsträngar. Först konverterar vi dessa strängar till datum med hjälp av funktionen `Date.fromIsoString`. Sedan använder vi funktionen `Date.compare` för att jämföra datumen och sortera dem i rätt ordning. Slutresultatet blir en lista med datumen i stigande ordning: ['2021-11-10', '2021-11-11', '2021-11-12'].
+Elm  max [2011-05-11, 2011-05-12, 2011-05-13] == 2011-05-13
+Elm  max [] ==  Nothing
+```
 
 ## Djupdykning
 
-För de som är intresserade av att lära sig mer om hur man jämför datum i Elm, så finns det vissa saker att tänka på. För det första, när man använder funktionen `Date.compare`, så måste datumen vara av samma typ. Detta innebär att både datumen måste vara av typen `Date` eller båda måste vara av typen `Time`. Om man försöker jämföra en `Date` med en `Time` kommer funktionen att ge ett felmeddelande.
+När man jämför datum är det viktigt att vara medveten om att det inte bara handlar om att jämföra det faktiska datumet, utan också tiden och tidszonen. Om man till exempel jämför en tidzonavhängig datumtyp (som `Date`) med en tidszonberoende typ (som `Posix`), kan man få oönskade resultat. Det är därför viktigt att i sådana fall konvertera de två datumtyperna till samma format innan man jämför dem.
 
-En annan viktig sak att tänka på är att `Date.compare` inte tar hänsyn till tidszonen. Om man vill jämföra datumen inklusive tidszonen, så kan man använda funktionen `Date.toPosix` innan man jämför dem.
+Det finns också flera användbara funktioner för att göra mer komplexa jämförelser av datum, som `isSameDay`, `isBefore`, `isAfter` och `withinRange`. Dessa funktioner kan användas för att avgöra om två datum är samma dag, om ett datum är före eller efter ett annat eller om ett datum ligger inom en viss tidsperiod.
 
 ## Se även
 
-- Elm dokumentation för `Date.compare`: https://package.elm-lang.org/packages/elm/time/latest/Date#compare
-- Elm dokumentation för `List.sort`: https://package.elm-lang.org/packages/elm/core/latest/List#sort
-- Elm dokumentation för `Date.toPosix`: https://package.elm-lang.org/packages/elm/time/latest/Date#toPosix
+- [Elm dokumentation om Date](https://package.elm-lang.org/packages/elm/time/latest/Time#Date)
+- [Elm paket för att arbeta med datum](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)
+- [Blogginlägg om att arbeta med datum i Elm](https://terezka.cz/elm/date-utilities/)

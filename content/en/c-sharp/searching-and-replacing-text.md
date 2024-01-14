@@ -1,67 +1,54 @@
 ---
 title:    "C# recipe: Searching and replacing text"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever found yourself manually replacing text in a long document or code file? It can be a tedious and time-consuming task. Thankfully, there is a solution - searching and replacing text using C# programming. This allows you to quickly make changes to multiple sections of text in one go, saving you time and hassle.
+Searching and replacing text is an essential part of programming, especially when dealing with large amounts of data or code. It allows for efficient and quick changes to be made, saving time and increasing productivity. In this blog post, we will explore how to effectively search and replace text in C# programming language.
 
 ## How To
-
-To search and replace text in C#, we will use the `Replace()` method. This method takes in three arguments - the original string, the string to be replaced, and the new string. Here's an example of how we can use this method to replace all instances of "Hello" with "Hi" in a sentence:
-
-```C#
-string sentence = "Hello there, Hello world!";
-string newSentence = sentence.Replace("Hello", "Hi");
-Console.WriteLine(newSentence);
-```
-
-The output of this code will be: "Hi there, Hi world!". As you can see, all instances of "Hello" have been replaced with "Hi".
-
-We can also use this method to replace text in larger files. For example, let's say we have a text file with the following contents:
-
-```
-This is a sentence with the word apple.
-Another sentence with apple.
-```
-
-If we want to replace "apple" with "orange" throughout the file, we can use the following code:
+The first step in implementing a search and replace function is to identify the text you want to replace and the new text you want to replace it with. Then, we can use the `Replace()` method to replace the text within a given string. Let's take a look at an example:
 
 ```C#
-string fileContents = File.ReadAllText("data.txt"); //read file contents into a string
-string newFileContents = fileContents.Replace("apple", "orange"); //replace "apple" with "orange"
-File.WriteAllText("newData.txt", newFileContents); //write new file contents to a new file
+// defining the original string
+string originalString = "Hello World!";
+
+// using Replace() method to replace "World" with "Universe"
+string newString = originalString.Replace("World", "Universe");
+
+// output
+Console.WriteLine(newString);
+
+// output: Hello Universe!
 ```
 
-The output of this code will be a new file with the following contents:
+As you can see, the `Replace()` method takes two arguments - the text to be replaced and the new text to replace it with. The method then returns a new string with the changes. 
 
+We can also use the `Replace()` method to replace multiple occurrences of a string by using the overload that takes in a `char` or `string` array as the first argument. Let's see an example of that:
+
+```C#
+// defining the original string
+string originalString = "Programming is fun and challenging.";
+
+// using Replace() method to replace "fun" and "challenging" with "exciting"
+string newString = originalString.Replace(new string[] { "fun", "challenging" }, "exciting");
+
+// output
+Console.WriteLine(newString);
+
+// output: Programming is exciting and exciting.
 ```
-This is a sentence with the word orange.
-Another sentence with orange.
-```
+
+In this example, we pass in an array of strings containing the words we want to replace and the `Replace()` method takes care of replacing all the occurrences.
 
 ## Deep Dive
+While the `Replace()` method is a simple and straightforward way to replace text, it has its limitations. For instance, it is case-sensitive, meaning it will only replace text if the case matches exactly. It also replaces all occurrences of the given text, which may not always be desired. 
 
-The `Replace()` method is case-sensitive, which means that it will not replace instances of a string if the letter case does not match. For example, using the second code example above, if we wanted to replace "APPLE" with "orange", it would not work. To make the method case-insensitive, we can use the `StringComparison` enum and specify `IgnoreCase` as the comparison type.
-
-```C#
-string fileContents = File.ReadAllText("data.txt"); 
-string newFileContents = fileContents.Replace("apple", "orange", StringComparison.OrdinalIgnoreCase); 
-File.WriteAllText("newData.txt", newFileContents); 
-```
-
-This will now replace all instances of "apple" regardless of the letter case, resulting in the following output:
-
-```
-This is a sentence with the word orange.
-Another sentence with orange.
-```
+To overcome these limitations, we can use regular expressions for more advanced search and replace operations. Regular expressions allow us to specify patterns for matching and replacing text. They offer more flexibility and control over the replacement process. However, regular expressions can be complicated and may require some practice to master. 
 
 ## See Also
-
-- [C# Replace method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace)
-- [StringComparison enum documentation](https://docs.microsoft.com/en-us/dotnet/api/system.stringcomparison)
-- [String.Replace vs Regex.Replace in C#](https://stackoverflow.com/questions/2674071/string-replace-vs-regex-replace-in-c-sharp)
+- Microsoft Docs on `Replace()` method: https://docs.microsoft.com/en-us/dotnet/api/system.string.replace
+- Microsoft Docs on Regular Expressions in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference

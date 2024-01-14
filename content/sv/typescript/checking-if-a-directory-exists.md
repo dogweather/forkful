@@ -1,55 +1,43 @@
 ---
-title:    "TypeScript: Kontrollera om en mapp finns"
+title:    "TypeScript: Att kontrollera om en mapp finns"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När vi skriver kod, finns det många fall där vi behöver kontrollera om en mapp finns innan vi fortsätter med vår logik. Det kan vara för att skapa en ny mapp, läsa från en befintlig mapp eller helt enkelt för att säkerställa att vår kod fungerar korrekt. I denna blogginlägg, kommer vi att djupdyka i hur man på ett enkelt sätt kan kontrollera om en mapp finns med TypeScript.
+När man utvecklar en applikation eller ett program, kan det vara viktigt att kontrollera om en viss mapp existerar. Detta kan till exempel vara användbart när man ska spara filer eller läsa innehållet i en mapp.
 
-## Hur man gör det
+## Så här gör du
 
-För att kontrollera om en mapp finns i TypeScript, används Node.js fs modulen. Den tillhandahåller en metod som heter `existsSync`som returnerar `true` om mappen finns, annars returnerar den `false`. 
+För att kontrollera om en mapp existerar i ditt program i TypeScript, använder du dig av funktionen "existsSync" från modulen "fs". Här är ett exempel på hur du kan använda denna funktion:
 
 ```TypeScript
-import fs = require('fs');
+import { existsSync } from 'fs';
 
-if(fs.existsSync("./mappen")){
-    console.log("Mappen finns redan!");
+const directory = 'mapp1';
+
+if (existsSync(directory)) {
+  console.log('Mappen existerar.');
 } else {
-    console.log("Mappen finns inte.");
+  console.log('Mappen existerar inte.');
 }
-
 ```
 
-Output: 
-
-```
-Mappen finns inte.
-```
-
-Det första vi gör är att importera `fs`modulen från Node.js och använder sedan `existsSync`metoden för att kontrollera om en mapp med namnet "mappen" finns i vår projektmapp. Om mappen finns, kommer vi att få utskriften "Mappen finns redan", annars kommer vi att få utskriften "Mappen finns inte". 
-
-Det är viktigt att notera att `existsSync`metoden tar in en absolut sökväg eller en relativ sökväg till målmappen som ett argument. I exemplet ovan har vi använt en relativ sökväg genom att ange `./mappen`, vilket betyder att mappen ska finnas i samma mapp som vår körfil. Om du vill kontrollera en mapp i en annan plats, måste du ange den absoluta sökvägen till mappen istället. 
-
-En annan viktig punkt att komma ihåg när du använder `existsSync`metoden är att den är synkron, vilket betyder att koden kommer att vänta på att kontrollen ska slutföras innan den fortsätter med resten av logiken. Om du vill ha en asynkron kontroll, kan du använda `exists`metoden. 
+I detta exempel så kontrollerar vi om mappen "mapp1" existerar. Om så är fallet skriver vi ut "Mappen existerar." i konsolen, annars skriver vi ut "Mappen existerar inte.".
 
 ## Djupdykning
 
-`existsSync`metoden är mycket användbar när det gäller att kontrollera mappar i TypeScript, men det finns några saker att tänka på för att få den att fungera korrekt. 
+När man använder funktionen "existsSync" för att kontrollera om en mapp existerar, så returneras ett booleskt värde. Detta betyder att funktionen antingen returnerar "true" eller "false" beroende på om mappen existerar eller inte.
 
-•	Se till att den relativa eller absoluta sökvägen till mappen som du kontrollerar finns på rätt plats. Om du till exempel bara anger mappen som "mappen" men den egentligen befinner sig i en undermapp, kommer metoden att returnera `false` även om mappen faktiskt finns i projektet. 
+Det är också viktigt att notera att "existsSync" funktionen blockerar programmet tills kontrollen är klar. Detta kan påverka prestandan hos ditt program om du använder det på många olika mappar.
 
-•	För att undvika problem med att sökvägen inte hittas, är det en bra idé att använda Node.js `path`modulen för att skapa korrekta sökvägar. Så, istället för att manuellt ange sökvägen till mappen, kan du använda `path.join()`metoden för att bygga sökvägen baserat på den aktuella operativsystemet. 
+## Se även
 
-•	Se till att du har de nödvändiga behörigheterna för att kontrollera en mapp. Om du försöker kontrollera en mapp som du inte har åtkomst till, kommer `existsSync`metoden att kasta ett fel.
+För mer information och exempel på hur du kan använda "existsSync" funktionen, besök följande länkar:
 
-## Se också
-
-• [Node.js fs modulen](https://nodejs.org/api/fs.html) 
-• [Node.js path modulen](https://nodejs.org/api/path.html) 
-• [Mappstruktur i TypeScript](https://www.typescriptlang.org/docs/handbook/module-resolution.html#folder-structure) 
-
-```
+- [Node.js dokumentation för existsSync](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
+- [Exempelkod för hur man kontrollerar om en mapp existerar](https://stackabuse.com/checking-if-a-file-or-directory-exists-using-node-js/)
+- [En djupare förståelse för hur "existsSync" fungerar](https://medium.com/@yoniweisbrod/understanding-node-js-39-s-fs-exists-ffffc741802f)

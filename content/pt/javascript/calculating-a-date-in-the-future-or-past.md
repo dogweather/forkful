@@ -1,44 +1,41 @@
 ---
-title:    "Javascript: Calculando uma data no futuro ou passado"
+title:    "Javascript: Calculando uma data no futuro ou no passado"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Seja para agendar um evento ou criar uma função de lembrete, calcular uma data no futuro ou no passado é uma tarefa comum em programação. Isso pode ser útil para aplicações de calendário, aplicativos de reserva ou simplesmente para exibir uma data personalizada em um site. Se você está se perguntando como fazer isso em Javascript, este artigo irá te mostrar como.
+Calcular uma data no futuro ou passado é uma habilidade útil e necessária em muitos projetos de programação. Com a capacidade de manipular datas, os desenvolvedores podem obter informações valiosas e criar aplicações que lidam com tarefas relacionadas ao tempo.
 
-## Como fazer
+## Como
 
-Para calcular uma data no futuro ou no passado, precisamos dos seguintes elementos: uma data base, um intervalo de tempo e a operação a ser realizada (adição ou subtração). Podemos usar o objeto `Date()` em Javascript para criar uma data base e a função `setDate()` para alterar a data base de acordo com o intervalo de tempo.
+Para calcular uma data no futuro ou passado, primeiro precisamos ter uma data inicial para trabalhar. Isso pode ser obtido usando o objeto Date do Javascript, que representa um único momento no tempo. Podemos definir uma data específica usando a seguinte sintaxe:
 
-Por exemplo, vamos supor que queremos calcular a data daqui a 7 dias. Podemos fazer isso da seguinte maneira:
+``` Javascript
+// Definindo a data inicial para 1 de janeiro de 2022
+let data = new Date(2022, 0, 1); //O primeiro parâmetro é o ano, o segundo é o mês (começando em zero) e o terceiro é o dia
 
-````Javascript
-// criando uma data base
-let dataBase = new Date();
+// Função para adicionar dias a uma data
+function adicionarDias(dataInicial, dias) {
+    let dataFinal = new Date(); // Começamos com a data atual como ponto de partida
+    dataFinal.setDate(dataInicial.getDate() + dias); // Adicionamos os dias desejados à data inicial
+    return dataFinal; // Retorna a data final
+}
 
-// adicionando 7 dias à data base
-dataBase.setDate(dataBase.getDate() + 7);
-
-// exibindo a data final
-console.log(dataBase);
-````
-O código acima irá imprimir a data daqui a 7 dias a partir da data atual. Podemos também subtrair uma determinada quantidade de dias, semanas, meses ou anos da mesma maneira, utilizando a função `setDate()` com valores negativos.
-
-Além disso, podemos também utilizar a função `toLocaleDateString()` para formatar a data de maneira legível, de acordo com a localização do usuário.
+console.log(adicionarDias(data, 10)); // Saída: Wed Jan 11 2022 00:00:00 GMT-0500 (Eastern Standard Time)
+```
 
 ## Deep Dive
 
-Em casos mais complexos, como calcular uma nova data com base em uma data pré-existente ou considerando os diferentes números de dias de cada mês, é importante entender como os objetos `Date()` e o método `setDate()` funcionam em conjunto. 
+Ao calcular uma data no futuro ou passado, é importante ter em mente que o Javascript lida com datas usando o fuso horário local do computador. Isso pode causar problemas quando se trabalha com datas em diferentes fusos horários. Para evitar isso, é recomendável usar bibliotecas externas, como o Moment.js, que oferece uma ampla gama de funcionalidades para manipulação de datas.
 
-O objeto `Date()` em Javascript é representado por uma única contagem de tempo  em milissegundos, que começa na data `1 de janeiro de 1970 00:00:00 UTC`. A função `setDate()` utiliza essa contagem de tempo para calcular e alterar a data base de acordo com o intervalo especificado.
-
-Devido à complexidade do cálculo de datas, recomenda-se utilizar uma biblioteca de terceiros, como o Moment.js, para facilitar esse processo.
+Outro ponto importante a ser considerado ao manipular datas é o fato de que o objeto Date pode ser sensível ao ano bissexto. Para garantir resultados precisos, é importante levar em conta esse detalhe ao realizar cálculos com datas.
 
 ## Veja também
 
-- [Documentação oficial do objeto `Date()` em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Documentação oficial do método `setDate()` em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate)
-- [Biblioteca Moment.js para cálculo de datas em Javascript](https://momentjs.com/)
+- [Documentação do objeto Date do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Lidando com datas no Javascript - tutorial em vídeo em português](https://www.youtube.com/watch?v=Q7UEkFNO6Ao)

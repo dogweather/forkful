@@ -1,39 +1,62 @@
 ---
-title:    "Swift: Att få den aktuella datumet"
+title:    "Swift: Att få den aktuella datumen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att kunna få ut den aktuella datumet är en grundläggande funktion inom programmering som är användbar för en mängd olika program. Oavsett om det är för att visa användarens födelsedag, markera ett viktigt datum eller skapa en tidsstämpel för ett dokument, kan du enkelt få tillgång till det aktuella datumet i din kod med hjälp av Swift.
+Att få den nuvarande datumet kan vara en viktig del av att utveckla appar eller program. Det kan hjälpa till att hålla reda på när en viss händelse inträffade eller visa realtidsinformation.
 
 ## Hur man gör
 
-För att få det aktuella datumet i Swift kan du använda klassen `Date()`. Detta kommer att ge dig en instans av det aktuella datumet och tiden. För att sedan kunna manipulera datumen eller extrahera specifik information från det, behöver du använda klassen `DateComponents`. 
+För att få den nuvarande datumet, använd Swifts ```Date``` klass. Här är ett exempel på hur man skapar en instans av ```Date``` och få datumet ur den:
 
-```swift
-// Skapar en instans av det aktuella datumet och tiden
-let nu = Date()
-
-// Skapar en instans av DateComponents för att kunna få ut specifik information från datumet
-let komponenter = Calendar.current.dateComponents([.year, .month, .day], from: nu)
-
-// Extraherar information från instansen och lagrar den i variabler
-let år = komponenter.year
-let månad = komponenter.month
-let dag = komponenter.day
-
-print("Aktuellt datum: \(dag)/\(månad)/\(år)") // Output: Aktuellt datum: 30/12/2019
 ```
+let currentDate = Date()
+print(currentDate)
+```
+
+Output:
+
+2021-10-15 17:25:00 +0000
+
+För att få datumet i ett visst format, kan du använda ```DateFormatter``` klassen. Till exempel, om du vill ha datumet i ISO8601-formatet, kan du göra följande:
+
+```
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+let currentDate = formatter.string(from: Date())
+print(currentDate)
+```
+
+Output:
+
+2021-10-15
+
+Det finns många olika formatalternativ att välja mellan beroende på dina behov. Se till att kolla dokumentationen för ```DateFormatter``` för en komplett lista av formatalternativ.
 
 ## Djupdykning
 
-Genom att använda `Date()` och `DateComponents` kan du få tillgång till många olika funktioner och metoder för att hantera datum och tid i din kod. Du kan till exempel använda `date(byAdding: <komponenter>, to: <datum>)` för att lägga till eller dra ifrån en viss tid från ett datum eller `isDateInYesterday()` för att kolla om ett visst datum är gårdagens datum. Det finns också olika format för datum och tid som du kan använda dig av genom att använda `DateFormatter()`.
+En ```Date``` instans representerar en specifik punkt i tiden, precis som en punkt på en tidsaxel. Det är också möjligt att skapa en ```Date``` instans från en specifik tidpunkt. Till exempel, om du vill ha datumet för 1 januari 2021, kan du göra följande:
+
+```
+let calendar = Calendar.current
+let dateComponents = DateComponents(year: 2021, month: 1, day: 1)
+let specificDate = calendar.date(from: dateComponents)
+print(specificDate)
+```
+
+Output:
+
+2021-01-01 00:00:00 +0000
+
+Det finns också möjlighet att jämföra olika ```Date``` instanser för att se om de är efter, före eller samtidigt. Detta kan vara användbart för att sortera datum och hantera händelser som inträffar vid olika tidpunkter.
 
 ## Se även
 
-- [Apple Developer Documentation - Date()](https://developer.apple.com/documentation/foundation/date)
-- [Apple Developer Documentation - DateComponents()](https://developer.apple.com/documentation/foundation/datecomponents)
-- [Swift by Sundell - Working with dates and times in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)
+- [Swift Date and Time Tutorial](https://www.raywenderlich.com/5774132-swift-date-and-time-tutorial-getting-started)
+- [Apple Developer Documentation for Date](https://developer.apple.com/documentation/foundation/date)
+- [NSHipster article on Date](https://nshipster.com/date/)

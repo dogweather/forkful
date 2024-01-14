@@ -1,40 +1,67 @@
 ---
-title:    "C#: Affichage des sorties de débogage"
+title:    "C#: Affichage de la sortie de débogage"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un développeur, vous savez probablement à quel point il peut être frustrant de trouver des bugs dans votre code. L'une des façons les plus courantes de les repérer est d'utiliser des instructions de débogage. Dans cet article, nous allons jeter un coup d'œil à la façon d'imprimer des sorties de débogage en utilisant C#.
+L'impression de sortie de débogage est un outil précieux pour tout programmeur en C#. Cela permet de visualiser les valeurs des variables et de suivre le flux de votre code pendant l'exécution. Cela peut également aider à détecter et à résoudre rapidement les erreurs.
 
 ## Comment faire
 
-Pour imprimer des sorties de débogage en C#, vous pouvez utiliser la méthode `Debug.WriteLine()`. Cette méthode prend en paramètre une chaîne de caractères que vous souhaitez imprimer dans la console de débogage. Voici un exemple de code:
+```C#
+// Exemple de code pour imprimer une sortie de débogage
+string nom = "Jean";
+int age = 25;
+int somme = 10 + 5;
+
+// Imprimer les valeurs des variables
+Console.WriteLine($"Le nom est {nom}");
+Console.WriteLine($"L'âge est {age}");
+Console.WriteLine($"La somme est {somme}");
+
+// Sortie de débogage:
+// Le nom est Jean
+// L'âge est 25
+// La somme est 15
+```
+
+La première étape pour imprimer une sortie de débogage est de choisir les valeurs des variables que vous souhaitez afficher. Ensuite, utilisez la méthode `Console.WriteLine()` pour imprimer ces valeurs dans la console. Il est important de noter que `Console.WriteLine()` utilise le formatage de chaîne pour inclure les valeurs des variables dans le message à imprimer.
+
+Vous pouvez également utiliser la méthode `Console.Write()` pour imprimer les valeurs sans saut de ligne à la fin. Cela peut être utile si vous souhaitez imprimer plusieurs valeurs sur une seule ligne.
+
+## Plongée profonde
+
+Il est possible d'ajouter des informations supplémentaires à votre sortie de débogage en incluant des expressions booléennes et conditionnelles. Cela peut être utile pour imprimer des messages spécifiques en fonction de certaines conditions.
 
 ```C#
-int a = 5;
-int b = 10;
+// Exemple de code avec expressions booléennes et conditionnelles
+string ville = "Paris";
+int temp = 25;
 
-// Imprime les valeurs des variables a et b en utilisant la méthode Debug.WriteLine
-Debug.WriteLine($"La valeur de a est {a} et la valeur de b est {b}");
+if (temp > 30)
+{
+    Console.WriteLine($"Il fait vraiment chaud à {ville} aujourd'hui.");
+}
+else if (temp < 20)
+{
+    Console.WriteLine($"Il fait un peu frais à {ville} aujourd'hui.");
+}
+else
+{
+    Console.WriteLine($"Il fait beau à {ville} aujourd'hui.");
+}
+
+// Sortie de débogage:
+// Il fait beau à Paris aujourd'hui.
 ```
 
-Lorsque vous exécutez ce code, vous verrez la sortie suivante dans votre console de débogage:
-
-```
-La valeur de a est 5 et la valeur de b est 10
-```
-
-Vous pouvez également utiliser d'autres méthodes de la classe `Debug` telles que `Write()`, `WriteLineIf()` et `Fail()` en fonction de vos besoins.
-
-## Plongée en profondeur
-
-Lorsque vous utilisez des instructions de débogage, il est important de ne pas en abuser. Trop de sorties de débogage peuvent affecter les performances de votre application. Il est donc recommandé de les utiliser uniquement pour des parties critiques de votre code ou pour comprendre un comportement inattendu. De plus, vous pouvez utiliser la directive `#if DEBUG` pour n'exécuter ces instructions que dans votre environnement de développement et pas dans votre code de production.
+En utilisant des expressions booléennes et conditionnelles, vous pouvez personnaliser votre sortie de débogage en fonction du contexte de votre code. Cela peut vous aider à identifier les erreurs et à améliorer la compréhension de votre code.
 
 ## Voir aussi
 
-- Tutoriel Microsoft sur les instructions de débogage en C#: [lien](https://docs.microsoft.com/fr-fr/dotnet/core/tutorials/debugging-with-visual-studio)
-- Vidéo sur l'utilisation des instructions de débogage en C#: [lien](https://www.youtube.com/watch?v=5HnLlKXkQpM)
-- Utilisation de l'interface de débogage en C#: [lien](https://docs.microsoft.com/fr-fr/visualstudio/debugger/debugging-with-the-debug-interface)
+- [Documentation Microsoft sur l'impression de sortie de débogage en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/io/how-to-write-to-the-debug-window)
+- [Article sur la gestion des erreurs et des exceptions en C#](https://blog.goyello.com/2018/03/13/error-handling-and-exception-management-in-c-sharp/)

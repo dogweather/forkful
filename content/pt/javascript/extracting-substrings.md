@@ -1,48 +1,47 @@
 ---
-title:    "Javascript: Extraindo subcadeias"
+title:    "Javascript: Extraindo Substrings"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings é importante na programação Javascript?
+## Por que extrair substrings é importante em programação?
 
-Extrair substrings é uma habilidade essencial para qualquer programador de Javascript. Isso porque, muitas vezes, precisamos acessar apenas uma parte de uma string maior para realizar uma determinada tarefa. Essa técnica nos permite manipular e utilizar informações específicas de uma forma mais eficiente e precisa.
+Extrair substrings, ou seja, utilizar apenas parte de uma string, é uma habilidade essencial em programação. Isso pode ser útil para acessar informações específicas em uma grande string, para realizar operações em partes de um texto ou para formatar dados de entrada.
 
-## Como extrair substrings em Javascript
+## Como extrair substrings com Javascript
 
-Extrair substrings em Javascript é extremamente fácil e pode ser feito de diversas maneiras. Aqui estão alguns exemplos de como você pode fazer isso:
+Para extrair substrings em Javascript, podemos utilizar o método `substring()`. Ele recebe dois parâmetros: o índice inicial e o índice final da substring desejada. Por exemplo:
 
 ```Javascript
-// Exemplo 1: Usando o método slice()
-let string = "Javascript é incrível!";
-let substring = string.slice(0, 10);
-console.log(substring); // Output: Javascript
-
-// Exemplo 2: Usando o operador de acesso []
-let string = "Extrair substrings é uma tarefa importante.";
-let substring = string[0] + string[1] + string[2] + string[3] + string[4];
-console.log(substring); // Output: Extra
-
-// Exemplo 3: Usando o método substring()
-let string = "Aprender a extrair substrings é muito útil.";
-let substring = string.substring(17, 24);
-console.log(substring); // Output: substrings
+let string = "Este é um exemplo de string";
+let substring = string.substring(0,4);
+console.log(substring); //output: "Este"
 ```
 
-## Mergulhando mais fundo em substrings em Javascript
+É importante lembrar que o índice final não é incluído na substring, ou seja, no exemplo acima, a letra "u" (que está no índice 4) não é incluída.
 
-Existem muitas outras formas de extrair substrings em Javascript, como por exemplo utilizando os métodos substr(), match() e replace(). Além disso, é importante lembrar que você pode utilizar índices negativos para acessar caracteres de uma string de trás para frente.
+## Uma análise mais profunda sobre a extração de substrings
 
-É fundamental entender como esses diferentes métodos funcionam e em quais situações eles podem ser mais úteis. Por isso, é importante pesquisar e praticar diferentes formas de extrair substrings em Javascript.
+Além do método `substring()`, também podemos utilizar o método `slice()`, que funciona de maneira semelhante. A diferença é que o `slice()` pode receber índices negativos, que contam a partir do fim da string. Por exemplo:
+
+```Javascript
+let string = "Dados de exemplo";
+let substring = string.slice(-7); //retorna os últimos 7 caracteres
+console.log(substring); //output: "exemplo"
+```
+
+Outra forma de extrair substrings é utilizando a notação de colchetes `[ ]`, que nos permite acessar uma posição específica de uma string. Por exemplo:
+
+```Javascript
+let string = "Este é o exemplo final";
+let substring = string[7]; //pega o caractere no índice 7
+console.log(substring); //output: "o"
+```
 
 ## Veja também
 
-Aqui estão alguns links que podem te ajudar a aprofundar ainda mais seus conhecimentos sobre como extrair substrings em Javascript:
-
-- [Documentação do método slice()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Documentação do método substring()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Artigo sobre as diferentes formas de extrair substrings em Javascript](https://codeburst.io/5-different-ways-to-extract-a-substring-in-javascript-65079f2af730)
-- [Vídeo explicando como utilizar o método substr()](https://www.youtube.com/watch?v=52lkS7BGs-Q)
-
-Com esses recursos, você estará pronto para utilizar a técnica de extrair substrings em suas próximas tarefas de programação em Javascript. Espero que esse artigo tenha sido útil para você. Até a próxima!
+- [Documentação do método substring() em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Documentação do método slice() em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Como utilizar a notação de colchetes em strings em Javascript](https://www.w3schools.com/jsref/jsref_string_brackets.asp)

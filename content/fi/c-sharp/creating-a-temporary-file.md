@@ -1,49 +1,42 @@
 ---
 title:    "C#: Väliaikaisen tiedoston luominen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi luoda tilapäistiedosto?
 
-Tilapäistiedoston luominen on hyödyllinen ohjelmointitaito, jota voidaan käyttää monissa erilaisissa tilanteissa. Se tarjoaa mahdollisuuden tallentaa väliaikaisia tietoja, joita ei tarvita pitkäaikaiseen tallennukseen tai joita ei haluta pitää pysyvästi järjestelmässä. Tässä blogikirjoituksessa käsitellään tarkemmin, miksi haluat ehkä luoda tilapäistiedoston ja miten se voidaan tehdä C# -ohjelmointikielellä.
+Tilapäistiedostojen luominen on yleinen käytäntö C# -ohjelmoinnissa. Niitä käytetään usein tiedon tallentamiseen väliaikaisesti, esimerkiksi ohjelman suorituksen aikana. Tilapäistiedostoja voidaan myös käyttää tilapäisten prosessien väliaikaiseen tallentamiseen, jotka eivät tarvitse pysyvää tallennuspaikkaa.
 
-## Miten luoda tilapäistiedosto C# -kielellä
+## Kuinka tehdä se?
 
-Tilapäistiedoston luominen C# -ohjelmointikielellä on melko yksinkertaista. Se voidaan tehdä käyttämällä .NET Frameworkin luokkaa “Path” ja sen metodia “GetTempFileName()”.
+Tilapäistiedostojen luominen C# -ohjelmoinnissa on helppoa. Voit käyttää "Path.GetTempFileName()" -funktiota luodaksesi tilapäistiedoston ja tallentaa sen muuttujaan. Tämän jälkeen voit käyttää muuttujaa kirjoittaaksesi tai lukeaksesi tiedostoon tarvittavat tiedot.
 
 ```C#
 string tempFile = Path.GetTempFileName();
+Console.WriteLine(tempFile);
 ```
 
-Yllä oleva koodinpätkä luo tilapäistiedoston ja tallentaa sen polun ja nimen “tempFile” -muuttujaan. Voit sitten käyttää tätä muuttujaa käsitelläksesi tilapäistiedostoa haluamallasi tavalla.
+Tämä koodi luo tilapäistiedoston ja tulostaa sen polun konsoliin. Voit myös käyttää "File.WriteAllText()" ja "File.ReadAllText()" -funktioita kirjoittaaksesi ja lukemalla tiedostoon.
 
 ```C#
-Console.WriteLine("Tilapäistiedoston polku ja nimi: " + tempFile);
-
-//output
-//Tilapäistiedoston polku ja nimi: C:\Users\Käyttäjä\AppData\Local\Temp\tmp5DAF.tmp
+File.WriteAllText(tempFile, "Tämä on tilapäistiedostoon tallennettava teksti.");
+string text = File.ReadAllText(tempFile);
+Console.WriteLine(text);
 ```
 
-Yllä oleva koodinpätkä tulostaa tilapäistiedoston polun ja nimen konsoliin. Huomaathan, että tilapäistiedosto tallentuu oletusarvoisesti käyttäjän “Temp” -kansioon.
+Huomaa, että nämä esimerkit ovat vain yksinkertaisia tapoja käyttää tilapäistiedostoja. C# tarjoaa monia muitakin tapoja luoda, kirjoittaa ja lukea niitä.
 
-## Syvempi sukellus tilapäistiedoston luomiseen
+## Syvempi sukellus
 
-Vaikka tilapäistiedoston luominen onkin näin yksinkertaista C# -ohjelmointikielellä, on hyvä ymmärtää paremmin miksi ja kuinka se toimii. Tilapäistiedosto luodaan oletusarvoisesti käyttäjän “Temp” -kansioon, mutta sen sijaintia voidaan myös muuttaa tarvittaessa. Tiedoston tyyppi on myös “.tmp”, joka voi olla hyödyllinen tunnistaessaan sitä ohjelmassa.
+Tilapäistiedostojen luomisella on myös muita etuja. Yksi niistä on se, että ne poistetaan automaattisesti, kun ohjelma sulkeutuu. Tämä säästää tilaa ja estää turhien tiedostojen kertymisen järjestelmään.
 
-On myös tärkeää huomata, että tilapäistiedosto poistetaan automaattisesti, kun ohjelma suljetaan. Tämä tarkoittaa sitä, että et joudu huolehtimaan tilapäistiedostojen siivoamisesta manuaalisesti.
-
-## Lisätietoja tilapäistiedostoista
-
-Jos haluat tutustua tarkemmin tilapäistiedostojen luomiseen ja niiden käyttöön C# -ohjelmointikielessä, voit lukea lisää seuraavista lähteistä:
-
-- [Microsoft Docs - Tilapäisten tiedostojen luominen](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=netframework-4.8)
-- [C# Ylilauta - Tilapäisten tiedostojen luominen](https://ylilauta.org/c/16/t526940)
+Lisäksi tilapäistiedostot luodaan automaattisesti ainutkertaisella nimellä, joten ongelmat nimien kaksoiskäytön kanssa eivät ole mahdollisia. Tämä tekee tilapäistiedostoista turvallisempia käyttää kuin manuaalisesti luodut tiedostot.
 
 ## Katso myös
 
-- [Microsoft Docs - Path-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=netframework-4.8)
-- [GitHub - C# Tilapäistiedoston luominen](https://github.com/csharpprogramming/Csharp-Tilapäistiedoston-luominen)
-
-Tilapäistiedoston luominen C# -ohjelmointikielellä on hyödyllinen taito, jota kannattaa opetella ja ottaa käyttöön omassa koodauksessa. Toivottavasti tämä blogikir
+- [C# -opas](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [Tilapäisten tiedostojen opas](https://docs.microsoft.com/en-us/dotnet/standard/io/temporary-files)
+- [Path-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=net-5.0)

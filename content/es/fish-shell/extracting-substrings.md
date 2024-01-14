@@ -1,54 +1,53 @@
 ---
 title:    "Fish Shell: Extrayendo subcadenas"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué extraer subcadenas en Fish Shell?
+##¿Por qué extraer subcadenas en Fish Shell?
 
-Extraer subcadenas es una habilidad esencial para cualquier programador de Fish Shell. Esta práctica te permitirá manipular y trabajar con los datos de manera más eficiente y precisa. Además, ayuda a organizar y ordenar los datos de manera más efectiva. En resumen, extraer subcadenas es una herramienta invaluable para cualquier proyecto de programación.
+Extraer subcadenas en Fish Shell puede ser una tarea muy útil en la programación. Puede ayudarnos a manipular cadenas de texto más grandes y a obtener solo la información que necesitamos. Esto puede facilitar el procesamiento y manipulación de datos en nuestros scripts. En este artículo, te enseñaremos cómo extraer subcadenas utilizando Fish Shell.
 
-## Cómo extraer subcadenas en Fish Shell
+##Cómo hacerlo en Fish Shell
 
-La extracción de subcadenas en Fish Shell es sencilla y eficiente. Simplemente sigue estos pasos:
-
-1. Usa el comando `substr` seguido del índice de inicio y el número de caracteres que quieres extraer. Por ejemplo: 
+Para extraer una subcadena en Fish Shell, podemos utilizar el comando `string sub`. Este comando toma tres parámetros: la cadena original, la posición inicial y la longitud de la subcadena que queremos extraer. Por ejemplo, si queremos extraer los primeros 5 caracteres de la cadena "Hola mundo", podemos usar el siguiente código:
 
 ```Fish Shell
-substr "Hola mundo" 0 4
+string sub "Hola mundo" 1 5
 ```
 
-2. La salida será `Hola`, ya que hemos especificado un índice de inicio de 0 y un número de caracteres de 4.
-3. También puedes utilizar un número negativo para el índice de inicio, lo que indicará que se cuenta desde el final de la cadena. Por ejemplo:
+Esto nos dará como resultado la subcadena "Hola ".
+
+También podemos utilizar variables en lugar de cadenas fijas. Por ejemplo, podríamos tener una variable `nombre` con el valor "Juan" y una variable `apellido` con el valor "Pérez". Si queremos extraer la primera letra de cada variable y unirlo en una nueva cadena, podríamos hacerlo de la siguiente manera:
 
 ```Fish Shell
-substr "Hola mundo" -5 5
+set nombre "Juan"
+set apellido "Pérez"
+string sub $nombre 1 1  # resultado: "J"
+string sub $apellido 1 1  # resultado: "P"
+string join "" $nombre $apellido  # resultado: "JP"
 ```
 
-4. La salida será `mundo`.
-5. Si quieres extraer todo desde un índice específico hasta el final de la cadena, puedes omitir el último argumento. Por ejemplo:
+##Profundizando en la extracción de subcadenas
+
+El comando `string sub` también nos permite utilizar números negativos en la posición inicial y longitud. Si utilizamos un número negativo en la posición inicial, contará hacia atrás desde el final de la cadena. Si utilizamos un número negativo en la longitud, nos devolverá la subcadena desde el final de la cadena hasta la posición inicial especificada. Por ejemplo:
 
 ```Fish Shell
-substr "Hola mundo" 5
+string sub "Hola mundo" -3 -2  # resultado: "nd"
 ```
 
-6. La salida será `mundo`.
-7. También puedes utilizar la función `length` para especificar el número exacto de caracteres a extraer. Por ejemplo:
+También podemos usar comodines en lugar de posiciones y longitudes específicas. Por ejemplo, si queremos extraer todo el texto después de la primera coma en una cadena, podemos hacerlo así:
 
 ```Fish Shell
-substr "Hola mundo" 5 (length "mundo")
+string match -r "(.*),.*" "Juan, Pérez"  # resultado: "Pérez"
 ```
 
-8. La salida será `mundo`.
-9. Puedes utilizar la extracción de subcadenas en cualquier parte de un comando de Fish Shell, como en un bucle `for` o `while` para manipular los datos dentro de una cadena.
+Aquí, utilizamos la expresión regular `.*` para que coincida con cualquier carácter, luego especificamos la coma, y finalmente, utilizamos `.*` nuevamente para coincidir con cualquier carácter después de la coma.
 
-## Profundizando en la extracción de subcadenas
+##Véase también
 
-La extracción de subcadenas es un proceso esencial en la manipulación de datos en Fish Shell. Una comprensión profunda de esta técnica te permitirá crear comandos más eficientes y menos propensos a errores. Además, poder combinar la extracción de subcadenas con otras funciones y comandos de Fish Shell te dará un mayor control sobre tus datos.
-
-## Ver también
-
-- Documentación de Fish Shell sobre el comando `substr`: https://fishshell.com/docs/current/cmds/substr.html
-- Tutorial sobre la extracción de subcadenas en Fish Shell: https://dev.to/maxwell_dev/how-to-extract-substrings-in-fish-shell-11j7
-- Ejemplos prácticos de extracción de subcadenas en Fish Shell: https://superuser.com/questions/1165999/extract-part-of-string-in-fish-shell
+- Documentación oficial de Fish Shell sobre el comando `string sub`: https://fishshell.com/docs/current/cmds/string.html#string-sub
+- Tutorial de Fish Shell para principiantes: https://www.hostinger.es/tutoriales/tutorial-fish-shell/
+- Expresiones regulares en Fish Shell: https://fishshell.com/docs/current/cmds/string.html#string-match

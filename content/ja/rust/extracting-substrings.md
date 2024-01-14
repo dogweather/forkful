@@ -1,43 +1,31 @@
 ---
 title:    "Rust: 部分文字列の抽出"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-Rustでは、文字列から部分文字列を抽出する必要があるかもしれません。例えば、入力された文字列から特定の単語を検索したり、文字列の一部を取り出して表示したりする場合に便利です。この記事では、Rustで部分文字列を抽出する方法を紹介します。
+文字列から一部を抽出することは、プログラミングの世界では非常に一般的です。特に、テキスト処理やフォーマットの変換などのタスクを行う際には、文字列から特定のパターンや特定の位置の文字を取得する必要があります。そのため、Rustプログラミングでもよく使用される技術です。
 
-## 方法
-
-部分文字列を抽出するためには、文字列からの範囲を指定する必要があります。Rustでは、`[start..end]`という形式で範囲を指定することができます。例えば、`str[start..end]`とすることで、`start`から`end`までの文字列を抽出することができます。
-
-以下のコードは、文中から特定の単語を抽出する例です。
+## 作り方
 
 ```Rust
-let text = "こんにちは、私はRustを勉強中です";
-let keyword = "Rust";
-let start = text.find(keyword).unwrap(); // 検索したキーワードの開始位置を取得
-let end = start + keyword.len(); // キーワードの長さを加算
-let result = &text[start..end];
-
-println!("{}", result); // "Rust"が表示される
+let s = String::from("Hello Rust");
+let hello = &s[0..5];
+println!("{}", hello); //Output: Hello
 ```
 
-このコードでは、まず文字列から`Rust`という単語を検索し、その開始位置を`start`に保存します。その後、開始位置にキーワードの長さを加算して、`str[start..end]`で部分文字列を抽出します。
+リストの最初の文字から5文字目までの部分文字列を抽出する方法を示しています。
 
 ## 深堀り
 
-部分文字列を抽出する際に気を付けるポイントとしては、範囲指定の`end`が実際の文字列の長さを超えないようにすることです。そうでないと、実行時エラーが発生してプログラムが停止します。
+文字列から部分文字列を抽出する際、Rustではスライスと呼ばれる特殊なデータ型を使用します。スライスは、元の文字列データへの参照を保持するため、メモリを節約することができます。また、様々なメソッドを使用してスライスを操作することができるため、非常に柔軟に文字列の抽出が行えます。
 
-また、`[start..end]`の形式以外にも、`[start..]`という形式で"開始位置から最後まで"を表すこともできます。さらに、`[..end]`という形式で"最初から終了位置まで"を表すこともできます。
+## 参考リンク
 
-さらに、Rustの`str`型には便利なメソッドがいくつか用意されています。例えば、`contains()`を使うことで文字列が特定の文字列を含んでいるかどうかを確認できます。
-
-## 関連リンク
-
-- [The Rust Programming Language Documentation - Strings](https://doc.rust-lang.org/std/string/)
-- [Rust by Example - Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
-- [Rust Stringのつかいかた](https://qiita.com/r9d1003w/items/d7af39b51fe8574c4469)
-- [String型のメソッドまとめ](https://qiita.com/magicant/items/ca956fbba2364e67e40c)
+- [Rust公式ドキュメント] (https://doc.rust-lang.org/book/ch04-03-slices.html)
+- [Rustのスライスについて] (https://rust-jp.rs/tour-of-rust/data_types/slice.html)
+- [文字列処理のパフォーマンスについて] (https://blog.fujimura1ji.net/2018/04/19/string-processing-in-rust/)

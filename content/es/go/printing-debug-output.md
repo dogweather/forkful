@@ -1,41 +1,65 @@
 ---
 title:    "Go: Imprimiendo salida de depuración"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué imprimir información de depuración en Go?
+## Por qué imprimir la salida de depuración es importante en Go 
 
-Imprimir información de depuración (debug output) es una técnica común utilizada por los programadores para analizar y resolver problemas en su código. Al imprimir mensajes de depuración, podemos ver el estado de nuestras variables y comprender mejor lo que está sucediendo en nuestro programa, lo que nos ayuda a identificar errores y mejorar la calidad de nuestro código.
+Imprimir la salida de depuración es una herramienta crucial en el proceso de desarrollo en Go. Nos permite ver detalladamente información sobre el funcionamiento de nuestro código mientras se está ejecutando, lo que nos ayuda a identificar y corregir errores de manera más eficiente.
 
-## ¿Cómo hacerlo en Go?
+## Cómo imprimir la salida de depuración en Go
 
-En Go, podemos imprimir información de depuración utilizando la función `fmt.Println()`. Por ejemplo, si queremos imprimir el valor de una variable `numero`, podemos hacerlo de la siguiente manera:
-
-```Go
-numero := 10
-fmt.Println("El valor de la variable numero es:", numero)
-```
-
-Esto imprimirá en la consola el mensaje "El valor de la variable numero es: 10". También podemos imprimir valores de variables en línea utilizando la función `fmt.Printf()`, que nos permite formatear nuestros mensajes de una manera más específica. A continuación, un ejemplo:
+Para imprimir la salida de depuración en Go, utilizamos la función `fmt.Printf()` y pasamos la información que queremos imprimir como argumento. Por ejemplo:
 
 ```Go
-nombre := "Ana"
-edad := 25
-fmt.Printf("Hola, mi nombre es %s y tengo %d años.", nombre, edad)
+package main 
+
+import "fmt"
+
+func main() {
+   nombre := "Juan" 
+   edad := 25 
+
+   fmt.Printf("Hola %s, tienes %d años", nombre, edad)
+}
 ```
 
-Este código imprimirá en la consola el mensaje "Hola, mi nombre es Ana y tengo 25 años".
+El resultado de este ejemplo sería:
 
-## Un análisis profundo (Deep Dive)
+```
+Hola Juan, tienes 25 años
+```
 
-Más allá de la función `fmt.Println()`, Go también ofrece varias herramientas y métodos para imprimir información de depuración más detallada. Una de ellas es la función `log.Print()` del paquete `log`, que nos permite imprimir mensajes de depuración en archivos de registro (logs) que podemos revisar posteriormente para identificar problemas en nuestro código.
+## Profundizando en la salida de depuración en Go
 
-Además, también podemos utilizar estructuras como `fmt.Errorf()` y `panic()` para imprimir mensajes de error y detener la ejecución de nuestro programa en caso de un posible problema. También podemos utilizar el comando `go run --race` para encontrar posibles errores de concurrencia en nuestro código.
+Además de sólo imprimir valores, también podemos utilizar la función `fmt.Printf()` para imprimir información sobre el tipo de dato o el formato de un valor. Por ejemplo:
 
-## Consulta también (See Also)
+```Go
+package main 
 
-- ["Cómo escribir y usar variables en Go"](https://www.example.com/escribir-y-usar-variables-go)
-- ["Los mejores recursos y herramientas para depurar en Go"](https://www.example.com/recursos-depurar-go)
-- ["Consejos para mejorar la calidad de tu código en Go"](https://www.example.com/mejorar-calidad-codigo-go)
+import "fmt"
+
+func main() {
+   numero := 10
+   peso := 67.5
+
+   fmt.Printf("El tipo de dato de %d es %T\n", numero, numero)
+   fmt.Printf("El peso de una persona promedio es %.2f kg\n", peso)
+}
+```
+
+El resultado de este ejemplo sería:
+
+```
+El tipo de dato de 10 es int 
+El peso de una persona promedio es 67.50 kg 
+```
+
+## Ver también
+
+- [Documentación de fmt en la documentación oficial de Go](https://golang.org/pkg/fmt/)
+- [Tutorial de Go en español](https://www.tutorialesprogramacionya.com/goya/index.php?cat=49)
+- [Videos de introducción a Go en español](https://www.youtube.com/playlist?list=PLw8RQJQ8K1ySN6j9CmCu31r4UNUUMbcn0)

@@ -1,83 +1,43 @@
 ---
-title:    "Ruby: Hakeminen ja tekstin korvaaminen"
+title:    "Ruby: Tekstin etsiminen ja korvaaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaessa koodia on usein tarpeen muuttaa olemassa olevaa tekstiä. Tämä voi johtua esimerkiksi kirjoitusvirheistä tai tarpeesta päivittää tietyt tiedot projektille. Onneksi, Rubyssa on helppo käyttää tekstiä etsimään ja korvaamiseen tarvittavia toimintoja.
+Miksi joku haluaisi vaihtaa ja korvata tekstiä Ruby-ohjelmoinnilla? Yksinkertainen vastaus on tehokkuus ja tarkkuus. Kun työskentelet suurten tekstipohjaisten tiedostojen kanssa, manuaalinen tekstinhakeminen ja korvaaminen voi olla aikaa vievää ja altistaa virheille. Ruby-ohjelmoinnilla voit automatisoida tämän prosessin ja varmistaa, että kaikki vaihdetut tekstit ovat tarkkoja ja haluamasi.
 
-## Miten
+## Kuinka tehdä
 
-Käytämme `gsub`-metodia tekstinpätkien etsimiseen ja korvaamiseen. Tämä metodi toimii seuraavasti:
+Rubyilla on useita erilaisia ​​tapoja korvata tekstiä, mutta yleisimmin käytetty tapa on käyttää `gsub`-metodia. Tämä metodi korvaa kaikki parametrina annetut merkkijonot toisella merkkijonolla. Katso esimerkki alla:
 
+```Ruby
+string = "Tervetuloa Ruby-ohjelmointiin!"
+string.gsub!("Ruby", "Python")
+puts string
 ```
-Ruby
-text = "Tämä on esimerkki tekstistä"
-new_text = text.gsub("esimerkki", "uusi esimerkki")
+Tämä koodi korvaisi kaikki esiintymät merkkijonolla "Ruby" merkkijonolla "Python" ja tulostaisi "Tervetuloa Python-ohjelmointiin!".
 
-puts new_text
+Voit myös lisätä muuttujia `gsub`-metodiin, jotta koodi olisi joustavampi ja voit korvata erilaisia ​​tekstin osia. Esimerkiksi:
+
+```Ruby
+name = "Mika"
+string = "Hei, olen #name#, kiva tavata!"
+string.gsub!("#name#", name)
+puts string
 ```
+Tämä koodi tulostaisi "Hei, olen Mika, kiva tavata!".
 
-Tämä tuottaa seuraavan tulosteen:
+## Syvempi tarkastelu
 
-```
-"Uusi esimerkki tekstistä"
-```
+`gsub`-metodin lisäksi Rubyilla on myös muita tapoja vaihtaa tekstiä, kuten `sub`, `tr` ja `replace`-metodit. Näiden metodien käyttö riippuu tarkalleen mitä haluat saavuttaa ja millaisia ​​tekstiä haluat korvata.
 
-Kuten huomaat, `gsub`-metodi korvasi ensimmäisen parametrin esiintymät tekstissä toisella parametrilla. Voimme myös antaa kolmannen parametrin, joka rajoittaa korvausten määrää:
-
-```
-Ruby
-text = "1, 2, 3, 4, 5"
-new_text = text.gsub(",", "-", 2)
-
-puts new_text
-```
-
-Tulostus on seuraava:
-
-```
-"1-2-3, 4, 5"
-```
-
-Toinen hyödyllinen metodi on `gsub!`, joka muokkaa tekstiä suoraan sen sijaan, että palauttaisi uuden version. Esimerkiksi:
-
-```
-Ruby
-text = "Tämä on esimerkki tekstistä"
-text.gsub!("esimerkki", "uusi esimerkki")
-
-puts text
-```
-
-Tulostus:
-
-```
-"Uusi esimerkki tekstistä"
-```
-
-## Syvempi sukellus
-
-`gsub`-metodia voi käyttää myös säännöllisten lausekkeiden avulla. Tämä antaa mahdollisuuden etsiä ja korvata monimutkaisempia tekstinpätkiä. Esimerkiksi voimme korvata kaikki isot kirjaimet pienillä kirjaimilla seuraavalla tavalla:
-
-```
-Ruby
-text = "Tämä on ESIMERKKI tekstistä"
-new_text = text.gsub(/[A-Z]/, &:downcase)
-
-puts new_text
-```
-
-Tulostus:
-
-```
-"Tämä on ESIMERKKI tekstistä"
-```
+Kun käytät säännöllisiä lausekkeita `gsub`-metodin kanssa, voit myös käyttää tarkistustaulukoita tai korvauslohkoja. Tämä auttaa sinua suorittamaan korvauksia perustuen määrätyn säännön mukaisesti, jolloin prosessi on vieläkin tarkempi ja tehokkaampi.
 
 ## Katso myös
 
-- [Ruby Dojo's Regular Expressions](https://ruby-dojo.com/regular-expressions-in-ruby/)
-- [Ruby Documentation for String#gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Ruby-ohjelmointikielen perusteet](https://fi.wikipedia.org/wiki/Ruby)
+- [Ruby Regex Cheat Sheet](https://www.rubyguides.com/2015/06/ruby-regex-cheat-sheet/)

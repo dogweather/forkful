@@ -1,40 +1,40 @@
 ---
-title:    "Haskell: Utilizando expressões regulares."
+title:    "Haskell: Usando expressões regulares"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque Usar Expressões Regulares?
+## Por que utilizar expressões regulares em Haskell?
 
-Expressões regulares são um recurso poderoso na programação de computadores. Elas são usadas para busca e manipulação de texto de forma eficiente e concisa. Ao aprender a usar expressões regulares, você será capaz de lidar com uma variedade de tarefas de processamento de texto com facilidade e eficiência.
+Expressões regulares são uma ferramenta poderosa e versátil para manipulação de texto em Haskell. Elas permitem que você procure e faça substituições em padrões de texto com facilidade e eficiência. Se você trabalha com processamento de dados ou desenvolvimento web em Haskell, as expressões regulares certamente serão uma parte importante do seu trabalho.
 
-## Como Usar Expressões Regulares em Haskell
+## Como utilizar expressões regulares em Haskell
 
-Em Haskell, expressões regulares são suportadas pela biblioteca "Text.Regex.Posix", que deve ser importada no início do código:
-
-```Haskell
-import Text.Regex.Posix
-```
-
-Para utilizar uma expressão regular em uma string, podemos usar a função "matchRegexPOSIX", que recebe como argumentos a expressão regular e a string a ser verificada. Por exemplo, se quisermos verificar se uma string contém apenas números, podemos usar a seguinte expressão regular:
+Para utilizar expressões regulares em Haskell, é necessário importar o módulo `Text.Regex.Posix`. Em seguida, você pode usar a função `=~` para comparar uma string com um padrão de expressão regular. Por exemplo:
 
 ```Haskell
-matchRegexPOSIX "^[0-9]+$" "12345"
+"Hello World" =~ "Hello" :: Bool -- retorna True
 ```
 
-O resultado será "Just (0,5)" - indicando que a string é um match completo da expressão regular, começando no índice 0 e terminando no índice 5 (o índice da última letra +1). Caso a string não seja um match, o resultado será "Nothing".
+Você pode utilizar caracteres especiais para construir padrões mais complexos, como `[a-z]` para representar qualquer letra minúscula ou `+` para indicar que o caractere anterior pode aparecer uma ou mais vezes. Alguns exemplos de padrões de regex comuns são:
 
-Além do "matchRegexPOSIX", existem outras funções úteis para manipulação de strings com expressões regulares, como o "getAllTextMatches", que retorna todas as strings que dão match na expressão regular, e o "subRegex", que substitui partes da string que dão match na expressão regular por outra string.
+- `[0-9]` para encontrar qualquer dígito numérico
+- `[a-zA-Z]` para encontrar qualquer letra, tanto maiúscula quanto minúscula
+- `.` para encontrar qualquer caractere
+- `*` para indicar que o caractere anterior pode aparecer zero ou mais vezes
 
-## Mergulho Profundo em Expressões Regulares
+Além disso, é possível utilizar parênteses para agrupar padrões e fazer substituições com a função `subRegex`.
 
-Expressões regulares são baseadas em um conceito chamado de "autômatos finitos determinísticos". Essencialmente, elas funcionam como "máquinas" que leem e processam um texto de acordo com as regras definidas na expressão regular.
+## Aprofundando nas expressões regulares em Haskell
 
-Para criar suas próprias expressões regulares, é importante entender os metacaracteres e suas funções. Por exemplo, o "^" indica o início da string, o "$" indica o final, o "." representa qualquer caractere e o "+" indica uma ou mais repetições. Combinando esses e outros metacaracteres, é possível criar expressões regulares complexas para as mais diversas necessidades.
+Existem diversos recursos avançados para expressões regulares em Haskell, como a utilização de expressões regulares preguiçosas e expressões regulares com lookahead e lookbehind. Além disso, é possível utilizar funções como `matchRegex` e `splitRegex` para obter valores específicos de uma string baseados em um padrão de regex.
 
-## Veja Também
+É importante lembrar que as expressões regulares são sensíveis a maiúsculas e minúsculas, a menos que você use a opção `IgnoreCase`. Portanto, é preciso estar atento ao utilizar expressões regulares em suas aplicações.
 
-- [Haskell Wiki: Text/Regex](https://wiki.haskell.org/Text/Regex)
-- [Haskell Documentation: Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- [RegExr: Online Regular Expression Tester](https://regexr.com/)
+## Veja também
+
+- [Documentação oficial do módulo Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
+- [Tutorial de expressões regulares em Haskell](https://www.haskell.org/haskellwiki/Regular_expressions)
+- [Site para testar e verificar expressões regulares](https://regexr.com/)

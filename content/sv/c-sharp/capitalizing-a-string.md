@@ -1,53 +1,85 @@
 ---
-title:    "C#: Stor bokstavering av en sträng"
+title:    "C#: Konvertera en sträng till stora bokstäver"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att kapitalisera en sträng är en vanlig operation inom programmering och kan vara användbart när man vill ändra utseendet på en sträng eller för att följa visuella konventioner. Det är också en bra övning för nybörjare för att lära sig grundläggande programmeringskoncept som loopar och villkorliga uttryck.
+Att omvandla en sträng till att börja med en stor bokstav kan vara ett vanligt problem för många utvecklare. Oavsett om det är för formatering av användarinput eller för att följa estetiska konventioner, så kan det vara en användbar funktion att kunna implementera i ditt C#-program.
 
-# Så här gör man
+## Så här
 
-Kapitalisering av en sträng innebär att ändra första bokstaven i varje ord till versal, och resterande bokstäver till gemener. Detta kan åstadkommas på olika sätt beroende på programmeringsspråk, men i C# kan det göras med hjälp av "ToUpper" och "ToLower" metoder.
-
-En grundläggande kod för att kapitalisera en sträng i C# skulle se ut så här:
+För att göra detta i C#, finns det flera sätt att gå tillväga. Det enklaste sättet är att använda metoden `ToTitleCase` från `TextInfo`-klassen i .NET-ramverket. Nedan finns ett exempel som visar hur man kan använda denna metod för att omvandla en sträng till att börja med en stor bokstav.
 
 ```C#
-// Skapar en variabel för strängen som ska kapitaliseras
-string strängAttKapitalisera = "exempel sträng";
+using System;
+using System.Globalization;
 
-// Delar upp strängen i en array baserat på mellanslag
-string[] ord = strängAttKapitalisera.Split(' ');
-
-// Loopar igenom varje ord och kapitaliserar första bokstaven
-// Samt sätter resterande bokstäver till gemener
-for (int i = 0; i < ord.Length; i++)
+class Program
 {
-    ord[i] = char.ToUpper(ord[i][0]) + ord[i].Substring(1).ToLower();
+    static void Main(string[] args)
+    {
+        // Definiera en sträng
+        string str = "hej och välkommen";
+
+        // Skapa en instans av TextInfo-klassen
+        TextInfo myTI = new CultureInfo("sv-SE",false).TextInfo;
+
+        // Använd ToTitleCase-metoden för att omvandla strängen
+        string formattedStr = myTI.ToTitleCase(str);
+
+        // Skriv ut den omvandlade strängen
+        Console.WriteLine(formattedStr); // Resultat: Hej Och Välkommen
+    }
 }
-
-// Slår samman arrayen till en sträng igen
-string kapitaliseradSträng = string.Join(" ", ord);
-
-// Skriver ut resultatet
-Console.WriteLine(kapitaliseradSträng);
-// Output: Exempel Sträng
 ```
 
-Det finns också andra sätt att kapitalisera en sträng i C#, som att använda en "CultureInfo" för att hantera specifika tecken i olika språk eller använda "StringBuilder" för effektivare hantering av minnet.
+En annan metod är att använda `Substring`-funktionen för att ta den första bokstaven i strängen och omvandla den till en stor bokstav. Nedan finns ett exempel på hur detta kan göras.
 
-# Djupdykning
+```C#
+using System;
 
-Att kapitalisera en sträng kan ibland verka som en enkel operation, men det finns flera faktorer som kan påverka hur resultatet blir. En av dessa faktorer är skillnader i bokstavsuppsättningar för olika språk. Till exempel kan det vara svårt att korrekt kapitalisera en sträng på svenska eftersom vissa bokstäver, som "Å" och "Ö", inte har tydliga motsvarigheter i gemena och versala bokstäver.
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Definiera en sträng
+        string str = "hej och välkommen";
 
-En annan faktor är hantering av specialtecken som mellanslag eller interpunktion. Vissa programmeringsspråk har inbyggda funktioner för att hantera dessa, medan andra kräver att man implementerar dem själv.
+        // Ta den första bokstaven i strängen
+        string firstLetter = str.Substring(0, 1);
 
-# Se även
+        // Omvandla den första bokstaven till en stor bokstav
+        firstLetter = firstLetter.ToUpper();
 
-- [String.ToUpper Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
-- [String.ToLower Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netcore-3.1)
-- [CultureInfo Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
-- [StringBuilder Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netcore-3.1)
+        // Skapa en ny sträng med den uppdaterade första bokstaven
+        string formattedStr = firstLetter + str.Substring(1);
+
+        // Skriv ut den omvandlade strängen
+        Console.WriteLine(formattedStr); // Resultat: Hej och välkommen
+    }
+}
+```
+
+Det finns också andra kreativa sätt att lösa detta problem, beroende på hur din sträng är strukturerad.
+
+## Djupdykning
+
+Att omvandla en sträng till att börja med en stor bokstav kan vara en ganska enkel uppgift, men det finns också några viktiga saker du bör tänka på när du implementerar detta i ditt C#-program. Här är några tips som kan hjälpa dig att undvika vanliga problem:
+
+- Se till att din sträng är korrekt formaterad innan du börjar omvandla den. Detta betyder att ta bort eventuella extra mellanslag eller andra specialtecken som kan störa konverteringsprocessen.
+
+- Tänk på att vissa språk har specifika regler för hur bokstäver ska kapitaliseras. Till exempel så bör man se till att ord som "av", "eller" och "med" alltid börjar med en liten bokstav, medan andra ord bör börja med en stor bokstav.
+
+- Använd rätt kulturell kontext när du använder `ToTitleCase`-metoden. Detta hjälper till att säkerställa att omvandlingen görs på rätt sätt baserat på språket i din applikation.
+
+## Se också
+
+Här är några användbara resurser för att lära dig mer om hur man omvandlar en sträng till att börja med en stor bokstav i C#:
+
+- [Microsoft Dokumentation om ToTitleCase Method](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=netframework-4.8)
+- [C# - Strängmanipulation](https://www.w3schools.com/cs/cs_string_methods.asp)
+- [C# - Culture-Specific String Formatting](https://docs.microsoft.com

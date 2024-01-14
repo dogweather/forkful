@@ -1,45 +1,56 @@
 ---
 title:    "Rust: 文字列の長さを見つける"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-文字列の長さを求めることについて説明します。Rust言語を使用することで、より効率的で安全な方法で文字列の長さを取得することができます。
+Rustは強力なプログラミング言語で、高速で安全なソフトウェアを開発することができます。文字列の長さを求めることは、プログラミングにおいて非常に一般的なタスクであり、多くの場面で必要になります。Rustを使って文字列の長さを求める方法を学ぶことで、より効率的なコードを書くことができるようになります。
 
-## 方法
+# 方法
 
-まず、以下のように `str::len()` 関数を使用して文字列の長さを取得することができます。
-
-```Rust
-let str = "こんにちは、世界！";
-let length = str.len();
-println!("文字列の長さは{}です。", length);
-
-// 出力: 文字列の長さは9です。
-```
-
-また、バイト単位で長さを取得する場合は `str::as_bytes()` を使用することもできます。
+文字列の長さを求めるには、Rustの標準ライブラリにある`len()`メソッドを使います。下のコードでは、`len()`メソッドを使用して文字列の長さを求めています。
 
 ```Rust
-let str = "こんにちは、世界！";
-let bytes = str.as_bytes();
-println!("文字列の長さは{}バイトです。", bytes.len());
+let s = "Hello Rust!";
+let length = s.len();
 
-// 出力: 文字列の長さは24バイトです。
+println!("The length of the string is: {}", length);
+
+// 出力:
+// The length of the string is: 11
 ```
 
-さらに、`Utf8Iterator`を使用することで、マルチバイト文字を正しく処理しながら文字列の長さを取得することができます。しかし、これはより高度なトピックであり、詳細な説明は省きます。
+上のコードでは、まず変数`s`に文字列を格納し、`len()`メソッドで文字列の長さを取得しています。そして、`println!()`マクロを使って、文字列の長さを出力しています。このように、Rustでは非常に簡単に文字列の長さを求めることができます。
 
-## ディープダイブ
+# ディープダイブ
 
-Rustでは、文字列はUTF-8でエンコードされています。そのため、バイト数を文字列の長さとして単純に扱うことはできません。Rustの `str`型は、これらのマルチバイト文字を適切に処理するために、`Solidity` と呼ばれる特別なデータ型を使用しています。また、文字列の長さを取得する方法には、`bytes` メソッドや`chars` メソッドなどもありますが、それぞれのメソッドの違いや使用方法については、公式ドキュメントを参照することをお勧めします。 
+Rustの`len()`メソッドは、文字列のバイト数を返すため、日本語などのマルチバイト文字を含む文字列の場合、意図した結果が得られない可能性があります。そのため、マルチバイト文字を含む文字列の長さを求める場合は、`chars()`メソッドを使って、文字数を数える必要があります。下のコードでは、これらのメソッドを組み合わせて、文字数を数えています。
 
-## その他の参考
+```Rust
+let s = "こんにちは Rust!";
 
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Rustのドキュメント](https://doc.rust-lang.org/)
-- [Rustプログラミングの基本](https://www.oreilly.co.jp/books/9784873116002/)
-- [Effective Rust](https://rust-lang.github.io/edition-guide/rust-2018/index.html)
+// バイト数を取得
+let bytes = s.len();
+println!("バイト数: {}", bytes);
+
+// 文字数を取得
+let chars = s.chars().count();
+println!("文字数: {}", chars);
+
+// 出力:
+// バイト数: 19
+// 文字数: 10
+```
+
+文字数を数えるには、`chars()`メソッドを使って文字のイテレーターを取得し、`count()`メソッドで文字数を数えます。このように、Rustでは異なる言語にも対応した文字列の長さを求めることができます。
+
+# 関連リンク
+
+- [Rustの標準ライブラリのString型ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Rustの標準ライブラリのstr型ドキュメント](https://doc.rust-lang.org/std/primitive.str.html#method.len)
+- [Rust by ExampleのStringsチュートリアル](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- [Rust for BeginnersのStringsチュートリアル](https://github.com/LearningRust/strings)

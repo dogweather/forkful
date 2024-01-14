@@ -1,54 +1,58 @@
 ---
-title:    "Python: Tests schreiben"
+title:    "Python: Test schreiben"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Der Prozess des Testens ist ein wichtiger Teil des Programmierens. Es hilft dabei, Fehler in unserem Code zu erkennen und zu beheben, bevor wir ihn in Produktion bringen. Durch ein gutes Testing-Verständnis können wir die Qualität unseres Codes verbessern und damit auch die Benutzererfahrung. In diesem Artikel werden wir uns darauf konzentrieren, wie wir Tests in Python schreiben können, um sicherzustellen, dass unser Code fehlerfrei und zuverlässig ist.
+Beim Programmieren geht es nicht nur darum, funktionierenden Code zu schreiben, sondern auch darum, sicherzustellen, dass der Code zuverlässig ist und erwartungsgemäß funktioniert. Das Schreiben von Tests ist eine Möglichkeit, dieses Ziel zu erreichen.
 
-## Wie man Tests in Python schreibt
+## Wie geht man vor?
 
-Das Schreiben von Tests in Python ist eine relativ einfache Aufgabe. Wir verwenden dazu normalerweise das `unittest`-Modul, das Teil der Standardbibliothek von Python ist. Zunächst müssen wir unsere Tests in einer separaten Datei mit dem Namen `test_<name>.py` speichern. Dann importieren wir das `unittest`-Modul und definieren eine Klasse mit dem Namen `Test<name>` und erben von der Klasse `unittest.TestCase`. Innerhalb dieser Klasse können wir dann verschiedene Methoden definieren, die jeweils einen spezifischen Aspekt unseres Codes testen. Sehen wir uns an einem Beispiel an:
+Um Tests in Python zu schreiben, verwenden wir das Modul "unittest". Wir definieren eine Klasse, die von "unittest.TestCase" erbt, und fügen dann verschiedene Testfunktionen hinzu, die jeweils einen bestimmten Teil des Codes testen. Hier ist ein Beispiel für eine einfache Testsuite:
 
 ```Python
 import unittest
 
-# Unsere Klasse zum Testen der divide() Funktion
-class TestDivision(unittest.TestCase):
+class TestCalculator(unittest.TestCase):
+    def test_addition(self):
+        self.assertEqual(5+10, 15) # Testet, ob die Addition von 5 und 10 das erwartete Ergebnis 15 liefert
 
-    # Test, ob die divide() Funktion zwei Zahlen korrekt teilt
-    def test_divide(self):
-        self.assertEqual(divide(8, 2), 4)
+    def test_subtraction(self):
+        self.assertEqual(20-5, 15) # Testet, ob die Subtraktion von 20 und 5 das erwartete Ergebnis 15 liefert
 
-    # Test, ob die divide() Funktion eine Fehlermeldung ausgibt, wenn der zweite Parameter 0 ist
-    def test_divide_by_zero(self):
-        with self.assertRaises(ZeroDivisionError):
-            divide(10, 0)
-    
-    # Weitere Tests können hier hinzugefügt werden
-
-# Eine Funktion, die zwei Zahlen teilt
-def divide(x, y):
-    return x / y
-
-# Führt alle unsere Tests aus
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Wie im obigen Beispiel gezeigt, verwenden wir die `assertEqual()`-Methode, um zu überprüfen, ob die Ausgabe unserer `divide()`-Funktion mit dem erwarteten Wert übereinstimmt. Wir können auch die `assertRaises()`-Methode verwenden, um zu überprüfen, ob unsere Funktion eine erwartete Fehlermeldung ausgibt. Am Ende rufen wir `unittest.main()` auf, um alle unsere Tests auszuführen.
+Sie können die Tests ausführen, indem Sie das Skript ausführen. Wenn alle Tests erfolgreich sind, sehen Sie keine Ausgabe. Wenn jedoch ein Test fehlschlägt, wird eine Fehlermeldung angezeigt. Hier ist ein Beispiel:
 
-## Vertiefung
+```
+======================================================================
+FAIL: test_subtraction (__main__.TestCalculator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "my_test_file.py", line 9, in test_subtraction
+    self.assertEqual(20-5, 16)
+AssertionError: 15 != 16
 
-Das waren nur einige Grundlagen, wie man Tests in Python schreibt. Es gibt noch viele weitere Konzepte und Funktionen, die in diesem Bereich verwendet werden können. Zum Beispiel können wir das `mock`-Modul verwenden, um Testdaten zu simulieren, oder das `coverage`-Modul, um die Testabdeckung zu analysieren. Es ist auch wichtig zu beachten, dass Tests nicht nur für einzelne Funktionen geschrieben werden können, sondern auch für ganze Programme oder Module.
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
 
-Das Schreiben von Tests ist eine kontinuierliche und iterative Aufgabe. Es ist wichtig, sie regelmäßig auszuführen und auch neue Tests hinzuzufügen, um sicherzustellen, dass unser Code weiterhin fehlerfrei bleibt. Durch das Testen unseres Codes können wir auch die Lesbarkeit und Erweiterbarkeit verbessern, da wir uns darauf konzentrieren, einzelne Teile unseres Codes unabhängig voneinander zu testen und zu verbessern.
+FAILED (failures=1)
+```
+
+## Tief tauchen
+
+Tests ermöglichen es uns, unseren Code auf mehrere Arten zu testen und sicherzustellen, dass er in verschiedenen Szenarien funktioniert. Wir können z.B. "Edge Cases" testen, also unerwartete Eingaben, die unser Code möglicherweise nicht verarbeiten kann. Wir können auch "Mocking" verwenden, um bestimmte Teile des Codes zu simulieren und zu testen.
+
+Es gibt auch verschiedene Arten von Tests, wie z.B. Unit-Tests, Integrationstests und Funktionstests. Jede Art von Test hat ihre eigene Funktion und sollte in bestimmten Situationen verwendet werden.
 
 ## Siehe auch
 
-- [Die offizielle Dokumentation zu unittest](https://docs.python.org/de/3/library/unittest.html)
-- [Ein umfassendes Tutorial zu Python-Tests von Real Python](https://realpython.com/python-testing/)
-- [Ein Blog-Beitrag über das Testen von Python-Code mit Mocks](https://medium.com/python-pandemonium/python-mocking-you-are-a-tricksy-beast-6c4c9ededd78)
+- [Offizielle Python-Dokumentation zu "unittest"](https://docs.python.org/3/library/unittest.html)
+- [Ein Tutorial zu Tests in Python](https://realpython.com/python-testing/#types-of-python-tests)
+- [Ein Artikel über die Wichtigkeit von Tests in der Softwareentwicklung](https://www.toptal.com/qa/why-test-infrastructure-matters-in-developing-software)

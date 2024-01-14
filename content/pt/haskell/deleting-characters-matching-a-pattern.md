@@ -1,37 +1,40 @@
 ---
 title:    "Haskell: Excluindo caracteres que correspondem a um padrão"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que?
+## Por que
 
-Quando estamos trabalhando com grandes volumes de dados ou realizando tarefas repetitivas em nosso código Haskell, é comum nos depararmos com a necessidade de excluir determinados caracteres que correspondem a um determinado padrão. Nesses casos, a utilização de funções específicas para essa tarefa pode nos ajudar a otimizar nosso código e tornar nosso trabalho mais eficiente.
+Muitas vezes, durante a programação em Haskell, podemos nos deparar com a necessidade de deletar caracteres que correspondem a um determinado padrão em uma string ou lista. Isso pode ser útil em várias situações, como por exemplo limpar os dados de entrada ou manipular textos de forma mais eficiente. Neste artigo, vamos explorar como podemos fazer isso de forma simples e eficaz em Haskell. 
 
-##Como Fazer
+## Como Fazer
 
-Para excluir caracteres correspondentes a um padrão em Haskell, podemos utilizar a função `deleteBy` do módulo `Data.List`. Essa função recebe como parâmetros o predicado que define o padrão a ser correspondido e a lista na qual os caracteres serão excluídos. Vamos ver um exemplo:
+Em Haskell, podemos utilizar a função `filter` para filtrar elementos de uma lista ou string que atendam a um determinado critério. Vamos supor que queremos deletar todos os dígitos de uma string. Para isso, podemos utilizar a função `isDigit` da biblioteca `Data.Char`, que retorna `True` se o caractere é um dígito e `False` caso contrário. Podemos combinar essa função com a função `not`, que inverte o resultado booleano, para obter um filtro que retorna `True` apenas para caracteres não numéricos.
 
 ```Haskell
-import Data.List
+import Data.Char (isDigit)
 
--- criando uma lista de strings
-lista = ["abc1", "abc2", "abc3", "def1", "def2"]
-
--- excluindo as strings que começam com "abc"
-novaLista = deleteBy (\x y -> x `startsWith` y) "abc" lista
+stringSemNumeros = filter (\c -> not (isDigit c)) "Abc123deFg456"
 ```
 
-No exemplo acima, utilizamos a função `deleteBy` com uma função anônima que compara se o início de cada string é igual a "abc". O resultado da função será a nova lista `["def1", "def2"]`, pois as strings "abc1", "abc2" e "abc3" serão excluídas.
+O código acima irá retornar a string "AbcdeFg". O primeiro argumento da função `filter` é uma função lambda que verifica se o caractere não é um dígito, e o segundo é a string a ser filtrada. Assim, podemos usar essa técnica para deletar qualquer tipo de caractere que desejamos.
 
-## Mergulho Mais Profundo
+## Deep Dive
 
-Além da função `deleteBy`, existem outras maneiras de excluir caracteres correspondentes a um padrão em Haskell. Podemos utilizar funções como `filter` e `dropWhile` do módulo `Data.List`, ou mesmo criar nossas próprias funções personalizadas.
+Em Haskell, podemos usar a notação de lista para representar strings, por exemplo, "ler" pode ser representado como `['l', 'e', 'r']`. Além disso, podemos utilizar operações como `++` para concatenar strings, `[x | x <- string, p x]` para aplicar um filtro `p` em uma string `string` e `[x | x <- string, not (p x)]` para aplicar o inverso do filtro. Todos esses recursos foram usados no exemplo anterior.
 
-Além disso, é importante entender que a função `deleteBy` não modifica a lista original, mas sim retorna uma nova lista com as exclusões realizadas. Portanto, é importante atribuir o resultado da função a uma nova variável ou utilizá-lo de alguma forma em nosso código.
+Além disso, podemos usar funções de alta ordem para facilitar a criação de filtros mais complexos. Por exemplo, podemos utilizar a função `all` para verificar se todos os elementos da lista atendem a uma determinada condição. No nosso caso, podemos utilizar `all isDigit` para verificar se todos os caracteres da lista são dígitos. Combinando isso com a função `not`, podemos construir um filtro que retorna `True` apenas para strings que não contém dígitos.
+
+```Haskell
+stringSemNumeros = filter (\c -> not (all isDigit c)) ["Abc123" , "deFg456"]
+```
+
+O código acima irá retornar a lista ["Abc", "deFg"]. Assim, podemos ver que as possibilidades de utilização da função `filter` para deletar caracteres em Haskell são bastante versáteis.
 
 ## Veja Também
 
-- [Documentação da função `deleteBy`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteBy)
-- [Outras funções úteis para manipulação de listas em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Documentação da função `filter` em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:filter)
+- [Tutorial de Haskell no portal DevMedia](https://www.devmedia.com.br/aprendendo-haskell-com-ghci/25710)

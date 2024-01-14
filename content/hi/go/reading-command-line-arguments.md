@@ -1,31 +1,55 @@
 ---
-title:    "Go: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:    "Go: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-कमांड लाइन आर्ग्यूमेंट पढ़ना क्यों आवश्यक है? यह ब्लॉग पोस्ट हिंदी रीडर्स को कंप्यूटर प्रोग्रामिंग और ऐप्स डेवलपमेंट के बारे में जानकारी प्रदान करता है।
+# Kyon
+Command line arguments mein ruchi prakat karne ki wajah hai ki yeh Go programming language mein saral aur prabhavshali tarike se user input ko handle karti hai. Iska upyog command line utilities, scripting aur application development mein kiya ja sakta hai.
 
-## कैसे करें
-आप कभी-कभी किसी एप्प को चलाते समय टाइप किए गए आर्ग्यूमेंट्स पर ध्यान नहीं देते होंगे, लेकिन आर्ग्यूमेंट्स ऐप्लिकेशन डेवलपमेंट में बहुत उपयोगी होते हैं। आप इनका उपयोग करके अपने प्रोग्राम को दो बार बनाने से रोक सकते हैं और अपने एप्प को और उपयोगी और एफिसिएंट बना सकते हैं। इस पोस्ट में हम आपको कमांड लाइन आर्ग्यूमेंट्स को पढ़ने के लिए कुछ सरल और उपयोगी कोड दर्शाएंगे।
-
+# Kaise
+Command line arguments ko Go mein padhna bahut aasan hai. Pehle, hum `os` package ko import karenge.
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    arguments := os.Args
-    // पहला आर्ग्यूमेंट प्रोग्राम का नाम होता है तो उसे छोड़ दिए जाएंगे
-    for i := 1; i < len(arguments); i++ {
-        fmt.Println("आपके पास पढ़ने के लिए एक आर्ग्यूमेंट है:", arguments[i])
-    }
+import "os"
+```
+Fir, `os.Args` variable mein humare command line arguments store hote hain. Iska upyog hum `range` keyword ke saath use kar sakte hain.
+```Go
+for _, arg := range os.Args {
+    fmt.Println(arg)
 }
 ```
+Yahan, humne `_` underscore ko ignore kar diya hai kyunki humein `os.Args` ke pehle argument ko chhodkar baaki sabhi ko print karna hai. Is code ka sample output niche diya gaya hai:
+```
+go run main.go hello world
+hello
+world
+```
 
-आप इस कोड को देखकर समझ सकते हैं कि हमने कैसे गोलूप का उपयोग करके सभी आर्ग्यूमेंट्स को पढ़ा है जो टाइप किए गए हैं। इसमें हमने रेंज लूप का उपयोग किया है जिसके द्वारा हम सभी आर्ग्यूमेंट्स पर पृष्ठभूमि प्रिंट करते हैं। यदि आपको भी अपने आर्ग्यूमेंट्स पर पृष्ठभूमि प्रिंट करना हो तो आप भी इ
+# Gehri Jhalak
+Command line arguments padhne ke alawa, hum unhe manipulate bhi kar sakte hain. `flag` package ki madad se hum command line options aur flags ko bhi handle kar sakte hain.
+```Go
+import "flag"
+
+limit := flag.Int("limit", 10, "Set the limit for output")
+flag.Parse()
+
+for i, arg := range os.Args {
+    if i == *limit {
+        break
+    }
+    fmt.Println(arg)
+}
+```
+Yahan, hum `flag` package se `Int` method ka upyog karke `limit` flag ko set kar sakte hain. Ab, `flag.Parse()` se hum command line arguments ko parse kar sakte hain aur `*limit` se uski value prapt kar sakte hain. Is code ka sample output niche diya gaya hai:
+```
+go run main.go hello world -limit=1
+hello
+```
+
+# Dekhein Bhi
+- [Official Go documentation on command line arguments](https://golang.org/pkg/os/#pkg-variables)
+- [A tutorial on reading and parsing command line arguments in Go](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-golang)
+- [An in-depth article on working with flags in Go](https://blog.gopheracademy.com/advent-2014/advanced-flags/)
+- [Examples of using command line arguments in real-world applications](https://github.com/urfave/cli/wiki/Articles-%26-Talks)

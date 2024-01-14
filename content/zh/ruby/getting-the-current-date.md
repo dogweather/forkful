@@ -1,43 +1,44 @@
 ---
 title:    "Ruby: 获取当前日期"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么使用 Ruby 编程获取当前日期
 
-为了让我们的程序能够在特定的时间点执行特定的任务，获取当前日期是非常重要的。这样，我们就可以根据日期来做出相应的判断和操作。
+获取当前日期是编写任何程序时都可能需要的基本操作。无论是为了显示日期时间，还是为了计算时间差异，都需要准确地获取当前日期。Ruby 语言提供了简便的方法来获取当前日期，让你的编程更加高效和精确。
 
-## 如何获取当前日期
+## 如何使用 Ruby 获取当前日期
 
-原生的Ruby语言提供了一个非常方便的方法来获取当前日期，就是使用`Date.today`函数。让我们来看一个简单的例子：
-
-```Ruby
-current_date = Date.today
-puts current_date
-```
-这段代码将会打印出当前的日期，比如今天是2021年7月19日，那么程序将会输出`2021-07-19`。通过这个方法，我们可以轻松地获取当天的日期，并在程序中使用。
-
-如果你需要打印出更加易读的日期格式，可以使用`strftime`方法来指定日期的输出格式。例如，如果你想要打印出今天的日期和星期几，可以这样写：
+要获取当前日期，我们可以使用 Ruby 内置的 `Time`类，通过 `now`方法来获取。下面是一个简单的示例代码：
 
 ```Ruby
-current_date = Date.today
-puts current_date.strftime("%Y年%m月%d日 %A")
+time_now = Time.now
+puts "当前日期是：" + time_now.strftime("%m-%d-%Y")
 ```
-这段代码将会输出`2021年07月19日 Monday`，我们可以根据自己的需求自定义日期的输出格式。
+
+运行以上代码，你将得到类似于这样的输出：
+
+```
+当前日期是：05-22-2021
+```
+
+通过 `strftime`方法，我们可以指定日期的显示格式。上面的代码中，`%m-%d-%Y`表示月份-日期-年份的格式。
 
 ## 深入了解获取当前日期
 
-其实，`Date.today`方法只是`Date`类中众多日期相关的方法之一。如果你想要深入了解Ruby中关于日期的更多知识，可以参考以下链接：
+除了 `Time`类，Ruby 还提供了`Date`类来处理日期相关的操作。与`Time`类不同的是，`Date`类只关注日期部分，不包含时间信息。如果你只需要获取日期，而不需要时间，那么使用`Date`类会更加合适。
 
-- [Ruby文档-Date类](https://www.ruby-doc.org/core-2.7.2/Date.html)
-- [Ruby Date与Time的区别](https://www.rubyguides.com/2019/05/ruby-date-time-class/)
-- [Ruby中的日期和时间操作](https://www.digitalocean.com/community/tutorials/how-to-use-dates-and-times-in-ruby)
-- [Ruby中的时区操作](https://www.sitepoint.com/working-with-time-zones-in-ruby/)
+此外，`DateTime`类也是一个有用的类，它将日期和时间结合在一起。如果你需要同时获取日期和时间，可以考虑使用`DateTime`类。
+
+另外，如果你想要获取特定时区的当前日期，可以使用 `Time` 和 `DateTime` 的 `now`方法后面加上 `localtime`和 `now`参数，来指定时区。例如，`Time.now.localtime("+08:00")`将返回当前日期的东八区时间。
 
 ## 参考链接
 
-- [Ruby文档](https://www.ruby-lang.org/zh_cn/documentation/)
-- [Ruby中文社区论坛](https://ruby-china.org/)
-- [Ruby编程语言简介](https://zh.wikipedia.org/wiki/Ruby)
+- [Ruby Time类文档](https://ruby-doc.org/core-3.0.1/Time.html)
+- [Ruby Date类文档](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- [Ruby DateTime类文档](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html)
+
+# 参考链接

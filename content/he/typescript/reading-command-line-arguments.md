@@ -1,45 +1,43 @@
 ---
-title:    "TypeScript: קריאת ארגומנטים בשורת הפקודה"
+title:    "TypeScript: קריאת ארגומנטים מפניית הפקודה"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע
+## למה
+קריאת פרמטרי שורת הפקודה היא כלי עוצמתי לפיתוח תוכניות בטיפול בשורת הפקודה. זהו דרך קלה ויעילה לתקשר עם המשתמש ולקבל קלט משתמש בזמן אמת.
 
-קריאת פרמטרי שורת הפקודה בתוכנות TypeScript היא כלי חשוב ושימושי לכל מתכנת. בכתיבת קוד, עלינו להיות יכולים לטפל במגוון נתונים ומידע, וקריאת פרמטרי שורת הפקודה מספקת לנו זאת בצורה קלה ויעילה. הבלוג הזה ילמד אותך כיצד לקרוא פרמטרי שורת הפקודה ב TypeScript ולהשתמש בזה לתת את הביצוע הטוב ביותר לתוכניות שלך.
-
-# איך לעשות זאת
-
-קריאת פרמטרי שורת הפקודה ב TypeScript נעשית באמצעות ספריית `process`. נדרש להתחיל מייבוא שלה באמצעות הפקודה `import` ולאחר מכן אנו יכולים להשתמש בשיטות של הספרייה כדי לקבל את הפרמטרים שהועברו לתוכנית במהלך פעולת ההפעלה. הנה מספר דוגמאות שבהן אנו מקבלים פרמטרי שורת הפקודה ומדפיסים את התוצאה המבוקשת:
+## איך לעשות זאת
+נדגים את דרך הקריאה והשימוש בפרמטרי שורת הפקודה ב TypeScript, באמצעות שוואו קוד ופלט דוגמה שנמצאים בחסות שורת הפקודה.
 
 ```TypeScript
-// קורא פרמטר יחיד:
-const param = process.argv[2];
-console.log(param);
+// כדי לקרוא פרמטרי שורת הפקודה, נשתמש במשתנה process.argv המכיל את כל הפרמטרים הנמצאים בשורת הפקודה
+let argv = process.argv;
 
-// קורא פרמטר מספרי:
-const params = process.argv.slice(2);
-console.log(params);
+// נוכל לאתר ולקרוא את הפרמטרים על ידי אינדקס כגון argv[0], argv[1] וכו'
+// אינדקס 0 יהיה תמיד הנתיב לקובץ האקסקיוטבל של התוכנית
+// אינדקס 1 יהיה תמיד הפרמטר הראשון שנעבוד איתו
+// לדוגמה:
+console.log(argv[0]); // output: 'node'
+console.log(argv[1]); // output: 'app.js'
+console.log(argv[2]); // output: 'arg1'
+console.log(argv[3]); // output: 'arg2'
+console.log(argv[4]); // output: 'arg3'
 
-// קורא פרמטרים עם שם מפתח:
-const paramsObject = {};
-process.argv.forEach((item, index) => {
-    if (item.startsWith('--')) {
-        paramsObject[item.slice(2)] = process.argv[index + 1];
-    }
-});
-console.log(paramsObject);
-```
+// נוכל להשתמש גם בפקודת for לבדיקת כל הפרמטרים בצורה אוטומטית
+for (let i = 0; i < argv.length; i++) {
+  console.log(argv[i]); // output: איפה לקבל אותם וכיוון שכל פרמטר תתקבל כאגרגט, הכולל גם רווחים
+}
 
-הנה דוגמא להרצה של קוד הפקודה `ts-node app.ts hello world --user Bob` ופלט התוצאה שלה:
+// עכשיו נכין פונקציה שתכיל את כל המדריכים לפרמטרי שורת הפקודה בצורה ברוחב ובגובה שלהם כדי להפעיל את התוכנית בקוד
+function printHelp() {
+  console.log('Usage: node app.js <command> [<args>]');
+  console.log('Options:');
+  console.log('    -h, --help         Output usage information');
+  console.log('    -v, --version      Output the version number');
+}
 
-```bash
-hello
-[ 'hello', 'world', '--user', 'Bob' ]
-{ user: 'Bob' }
-```
-
-# עיון מעמיק
-
-בנוסף לפרמטרי שורת הפקודה הרגילים, ניתן גם לקרוא פרמטרים נוספים כגון כתובות אינטרנט ופעולות שונות עם המבנה `--` מובלד וערך אחריו. לדוגמא, ואנו מריצים את התוכנית הבאה `ts-node app.ts --url https://example.com --method POST --data '{"id":
+// אז תיהיה כמו כן ליצור פונקצית switch לפרמטרי שורת הפקודה
+// כדי להעב

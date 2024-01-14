@@ -1,47 +1,59 @@
 ---
 title:    "C++: Comparando duas datas"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Comparar duas datas é um processo comum em linguagens de programação, especialmente no desenvolvimento de aplicativos de gerenciamento de tarefas e agendas. Além disso, é útil ter essa habilidade para validar a entrada de datas em um programa.
+## Por que comparar datas em um programa C++?
 
-## Como Fazer
-Para comparar duas datas em C++, primeiro precisamos criar dois objetos de data e, em seguida, usar o operador de comparação (==, <, >) para verificar qual data é maior ou se são iguais. Por exemplo:
+Comparar datas é uma tarefa comum em programas de computador, especialmente em aplicativos relacionados a calendários, cronogramas ou eventos. Ao comparar duas datas, podemos determinar qual é a mais recente, qual é a mais antiga ou se elas são iguais. Isso é importante para garantir que nosso programa funcione corretamente e gere resultados precisos.
+
+## Como comparar duas datas em C++
+
+Para comparar duas datas em um programa C++, precisaremos usar algumas funções e operadores específicos. Vamos supor que temos duas variáveis do tipo `tm struct` que representam datas e queremos compará-las. Podemos fazer isso utilizando o operador de comparação `>` ou `<` para verificar se uma data é maior ou menor do que a outra.
 
 ```C++
-#include<iostream>
-#include<ctime>
-using namespace std;
+// Declaração das variáveis de data
+tm data1, data2;
 
-int main() {
-  time_t data1, data2;
-  data1 = time(0);   // atribui a data atual ao primeiro objeto
-  data2 = time(0) + 86400; //atribui a data de amanhã ao segundo objeto
+// Atribuição de valores às variáveis
+data1.tm_mday = 15;
+data1.tm_mon = 5;
+data1.tm_year = 2021;
 
-  if (data1 > data2) { //verifica se a primeira data é maior que a segunda
-    cout << "A primeira data é maior do que a segunda";
-  }
-  else if (data2 > data1) { //verifica se a segunda data é maior que a primeira
-    cout << "A segunda data é maior do que a primeira";
-  }
-  else { //caso as datas sejam iguais
-    cout << "As datas são iguais";
-  }
-  return 0;
+data2.tm_mday = 10;
+data2.tm_mon = 5;
+data2.tm_year = 2021;
+
+// Comparando as datas
+if (data1 > data2) {
+    // Data1 é mais recente que Data2
+    cout << "Data1 é mais recente que Data2";
+}
+else if (data1 < data2) {
+    // Data1 é mais antiga que Data2
+    cout << "Data1 é mais antiga que Data2";
+}
+else {
+    // As datas são iguais
+    cout << "Data1 e Data2 são iguais";
 }
 ```
+Saída:
+```
+Data1 é mais recente que Data2
+```
 
-Exemplo de saída: "A segunda data é maior que a primeira"
+## Mais informações sobre a comparação de datas
 
-## Aprofundando
-Para comparar duas datas com mais precisão, podemos usar a biblioteca `ctime` do C++. Ela fornece funções como `localtime` e `mktime` que nos permitem converter as datas em um formato mais legível e manipulável. Além disso, podemos usar a função `difftime` para obter a diferença em segundos entre duas datas.
+Além de usar os operadores de comparação `<` e `>`, também podemos usar a função `difftime()` para calcular a diferença entre duas datas em segundos. Essa função leva em consideração os anos bissextos e o número de segundos em cada mês.
 
-Um ponto importante a ser considerado ao comparar datas é o sistema de data usado pelo computador, que pode variar entre diferentes regiões ou sistemas operacionais. Portanto, é importante ter certeza de que o sistema de data está corretamente configurado antes de realizar as comparações.
+Podemos também fazer comparações mais precisas, como verificar se uma data é exatamente igual à outra, levando em consideração não apenas o dia, mês e ano, mas também a hora, minuto e segundo. Para isso, podemos usar a função `mktime()` para converter as variáveis `tm struct` em valores do tipo `time_t` e então compará-las usando o operador `==`.
 
 ## Veja também
-- [Documentação da biblioteca ctime](https://en.cppreference.com/w/cpp/header/ctime)
-- [Como formatar datas em C++](https://www.cplusplus.com/reference/ctime/strftime/)
-- [Validação de entrada de dados em C++](https://www.geeksforgeeks.org/validating-input-in-c-cabinets/)
+
+- [Documentação da linguagem C++ sobre a estrutura tm](https://www.cplusplus.com/reference/ctime/tm/)
+- [Tutorial sobre manipulação de datas em C++](https://www.geeksforgeeks.org/date-time-manipulations-in-c/)
+- [Exemplos de código de comparação de datas em C++](https://www.bitdegree.org/learn/date-and-time-in-c-plus-plus#comparing-time-t-vs-time-t-objects-in-c)

@@ -1,40 +1,50 @@
 ---
-title:    "Rust: Muuntamalla merkkijono pienaakkosiksi"
+title:    "Rust: Merkkijonon muuttaminen pienaakkosiksi"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Merkitys tekstin muuntamisessa pienempiin kirjaimiin
+## Miksi: Tekstinpätkän muuntaminen pienaakkosiksi Rustilla
 
-Rust on suosittu, nopea ja turvallinen ohjelmointikieli, joka tarjoaa monipuolisia ominaisuuksia kehittäjille. Yksi näistä ominaisuuksista on kyky muuttaa tekstiä pienemmiksi kirjaimiksi, eli muuntaa se pieniksi kirjaimiksi. Tässä blogikirjoituksessa kerromme, miksi ja miten voit muuntaa merkkijonon pienemmiksi kirjaimiksi käyttämällä Rustia.
+Useimmissa ohjelmointiprojekteissa on joskus tarve muuntaa käyttäjän antama syöte pienaakkosiksi. Tämä voi olla esimerkiksi käyttäjän kirjoittamien tietojen validointia varten tai yhtenäisen tietokannan tallennuksen varmistamiseksi. Pienaakkojen muuntaminen on yleinen tarve, ja Rust tarjoaa tehokkaita tapoja toteuttaa tämä.
 
-## Miten tehdä: Käytännön esimerkkejä ja tulosteet "```Rust ... ```"-koodilohkoissa
+## Miten: Esimerkkejä tekstinpätkän muuntamisesta pienaakkosiksi Rustilla
 
-Merkkijonon muuntaminen pienemmiksi kirjaimiksi on hyödyllinen taito, jota tarvitaan usein ohjelmoinnissa. Se voi auttaa esimerkiksi vertaamaan merkkijonoja ilman, että isot ja pienet kirjaimet vaikuttavat tulokseen. Voit käyttää Rustia muuttaaksesi merkkijonoja pienempiin kirjaimiin helposti ja tehokkaasti. Katso esimerkkikoodi ja tulosteet alla, miten tämä voidaan tehdä Rustilla:
+Rustilla on sisäänrakennettu toiminto, joka muuntaa merkkijonon pienaakkosiksi. Se käyttää Unicode-yhteensopivaa algoritmia ja tukee monenlaisia kielialueita. Alla on esimerkkejä koodista, joka käyttää tätä toimintoa:
 
-```
-Rust
-let teksti = "TÄMÄ ON MERKKIJONO";
-let pienet_kirjaimet = teksti.to_lowercase();
-println!("{}", pienet_kirjaimet);
-```
-
-Tuloste:
-```
-tämä on merkkijono
+```Rust
+let name = "Matti Meikäläinen";
+let name_lowercase = name.to_lowercase();
+println!("{}", name_lowercase); // tulostaa "matti meikäläinen"
 ```
 
-## Syvällinen sukellus: Lisätietoja merkkijonon muuntamisesta pienemmiksi kirjaimiksi
+Voit myös muuntaa vain tietyn osan merkkijonosta pienaakkosiksi käyttämällä `to_lowercase`-funktioon liitettyä `get`-metodia:
 
-Rustilla on sisäänrakennettu toiminto `to_lowercase()`, joka muuttaa merkkijonon pienemmiksi kirjaimiksi. Tämä toiminto käyttää Unicode-standardia muuntaessaan merkkijonon, joten se toimii hyvin eri kielillä ja merkistöillä. Lisäksi tämä toiminto ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden muunnetun merkkijonon.
+```Rust
+let message = "Terve! Nähdään Taas!";
+let lowercase = message[..6].to_lowercase(); // muuntaa vain "Terve!" pienaakkosiksi
+println!("{}", lowercase); // tulostaa "terve!"
+```
 
-On myös huomattava, että tätä toimintoa voidaan käyttää vain `strings::String`-tietotyypin kanssa, ei esimerkiksi `&str`-tietotyypin kanssa. Jos haluat käyttää sitä `&str`-tietotyypillä, voit ensin muuttaa merkkijonon `String`-muotoon ja sitten muuntaa sen pienemmiksi kirjaimiksi.
+Voit myös käyttää `to_lowercase`-funktiota osana `map`-korkeamman asteen toimintoa, joka käsittelee merkkijonoja vektorissa:
 
-Tietenkin on myös mahdollista muuttaa merkkijonon kirjainkoko manuaalisesti iteraation avulla ja käyttäen esimerkiksi `to_ascii_lowercase()`-toimintoa, mutta `to_lowercase()` on helpoin ja suositeltavin vaihtoehto.
+```Rust
+let fruits = ["Omena", "Banaani", "Appelsiini"];
+let lowercase_fruits = fruits
+    .iter()
+    .map(|x| x.to_lowercase())
+    .collect::<Vec<String>>(); // muuntaa kaikki hedelmien nimet pienaakkosiksi
+println!("{:?}", lowercase_fruits); // tulostaa ["omena", "banaani", "appelsiini"]
+```
+
+## Syväsukellus: Lisätietoa tekstinpätkän muuntamisesta pienaakkosiksi Rustilla
+
+Rustin `to_lowercase`-funktio käyttää `UnicodeSpecialCasing`-tietorakennetta muuntaakseen merkkijonon pienaakkosiksi. Tämä mahdollistaa myös erikoismerkkien, kuten Å ja Ä, muuntamisen oikein. Funktiota voidaan myös kutsua käyttämällä `chars`-iteraattoria, jolloin se käsittelee merkki kerrallaan ja mahdollistaa monimutkaisemmat muunnosprosessit.
 
 ## Katso myös
 
-- Rustin virallinen dokumentaatio `to_lowercase()`-funktiosta: https://doc.rust-lang.org/stable/std/string/trait.ToLowerCase.html
-- Artikkeli merkkijonon muuntamisesta pienemmiksi kirjaimiksi Rustilla: https://techblog.theslowloris.com/convert-a-string-to-lowercase-in-rust/
-- Kielenvaihto merkkijonon muuntamisessa Rustilla: https://blog.alexandergottlieb.com/rust-change-string-to-lower-unicode-case-c1b66eb96958
+- [Rustin virallinen dokumentaatio tekstinpätkän muuntamisesta pienaakkosiksi](https://doc.rust-lang.org/std/string/trait.From.html#method.to_lowercase)
+- [Crate `unicase`, joka tarjoaa lisämahdollisuuksia tekstin muuntamiseen eri kielialueilla](https://crates.io/crates/unicase)
+- [Esimerkkejä merkkijonon käsittelystä Rustilla](https://learnxinyminutes.com/docs/rust/)

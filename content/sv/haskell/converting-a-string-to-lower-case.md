@@ -1,42 +1,51 @@
 ---
-title:    "Haskell: Omvandla en sträng till små bokstäver"
+title:    "Haskell: Konvertera en sträng till gemener."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener (lower case) är en grundläggande uppgift inom programmering och kan vara användbar för att jämföra olika strängar eller för att formatera text på ett enhetligt sätt.
+Att konvertera en sträng till små bokstäver kan vara användbart i många olika situationer. Det kan till exempel vara användbart för att jämföra strängar eller för att se till att de visas korrekt på skärmen.
 
-## Så här gör du
+## Hur man gör det
 
-För att konvertera en sträng till gemener i Haskell används funktionen `toLower` från standardbiblioteket Data.Char. Funktionen tar en Char (tecken) som argument och returnerar tecknet i gemener.
+För att konvertera en sträng till små bokstäver i Haskell kan vi använda den inbyggda funktionen `map`. Detta gör vi genom att först definiera en funktion som konverterar en enskild bokstav till små bokstäver och sedan applicera denna funktion på varje bokstav i strängen med hjälp av `map`.
 
 ```Haskell
-import Data.Char (toLower)
+toLowerCase :: Char -> Char
+toLowerCase c = if c `elem` ['A'..'Z']
+                    then toEnum (fromEnum c + 32) :: Char
+                    else c
 
-convertToLower :: String -> String
-convertToLower str = map toLower str
-
--- Exempel: Konvertera strängen "Haskell är ett funktionellt programmeringsspråk"
--- till gemener.
-convertToLower "Haskell är ett funktionellt programmeringsspråk" 
--- Output: "haskell är ett funktionellt programmeringsspråk"
+map toLowerCase "HEJ" -- ger "hej" som output
 ```
 
-För att konvertera en hel sträng till gemener kan vi använda oss av funktionen `map` som tar en funktion och en lista som argument och applicerar funktionen på varje element i listan. I vårt fall är funktionen `toLower` som vi applicerar på varje tecken i strängen.
+Vi kan också använda följande kortare version med vanliga funktionskompositioner:
 
-Det är viktigt att notera att funktionen `toLower` bara konverterar bokstäverna i strängen och lämnar andra tecken (som siffror eller specialtecken) oförändrade. Om du vill konvertera hela strängen, inklusive andra tecken, kan du först använda `map` för att konvertera tecknen till bokstäver och sedan använda `toLower`.
+```Haskell
+toLowerCase :: String -> String
+toLowerCase = map toLower
 
-## Djupdyk
+toLowerCase "HELLO" -- ger "hello" som output
+```
 
-I de flesta programmeringspråk är det möjligt att konvertera en sträng till gemener med en inbyggd funktion. I Haskell är denna funktion `toLower` från standardbiblioteket Data.Char. Funktionen används ofta tillsammans med andra funktioner som `map` eller `filter` för att manipulera text på olika sätt.
+## Djupdykning
 
-Det är också värt att nämna att konvertering till gemener kan variera beroende på vilket språk eller alfabet som används. I Haskell finns det också en funktion `toLower` som tar två argument, det första är språket och det andra är tecknet som ska konverteras. Detta är särskilt användbart om man arbetar med flerspråkiga texter.
+En viktig aspekt att tänka på när man konverterar strängar till små bokstäver i Haskell är hantering av specialtecken och tecken med diakritiska eller akuta markeringar. Dessa tecken kan vara olika beroende på vilken teckenuppsättning som används. En lösning på detta problem är att använda funktionen `toCaseFold` från modulen `Data.Text`.
 
-See Also:
+```Haskell
+import Data.Text (toCaseFold)
 
-- [Learn You a Haskell for Great Good!: Print lady her letters](http://learnyouahaskell.com/modules#data-char)
-- [Haskell Language Report: Character and String Literals](https://www.haskell.org/onlinereport/basic.html#character-and-string-literals)
-- [Hackage: Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+toCaseFold "ÅÄÖ" -- ger "åäö" som output oavsett vilken teckenuppsättning som används
+```
+
+Det är också viktigt att notera att funktionerna `map` och `toLower` endast fungerar på tecken och inte hela strängar. För att konvertera en hel sträng kan vi använda `map` tillsammans med `unpack` och `pack` från `Data.Text`.
+
+## Se även
+
+- [Haskell Wiki: Strings](https://wiki.haskell.org/Strings)
+- [hackage: Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html) 
+- [hackage: Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)

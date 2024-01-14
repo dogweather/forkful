@@ -1,51 +1,48 @@
 ---
-title:    "Arduino: Korzystanie z wyrażeń regularnych"
+title:    "Arduino: Używanie wyrażeń regularnych"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto korzystać z wyrażeń regularnych?
 
-Jeśli jesteś programistą Arduino i chcesz zwiększyć swoją skuteczność w manipulowaniu tekstem, regular expressions są narzędziem, którego nie możesz przegapić. Pozwalają one na wygodne i precyzyjne filtrowanie oraz przetwarzanie danych, co jest szczególnie ważne w bardziej zaawansowanych projektach.
+Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu, zwłaszcza w języku Arduino. Pozwalają one na szybkie i skuteczne wyszukiwanie oraz manipulację tekstu. W tym artykule dowiesz się, dlaczego warto poznać wyrażenia regularne oraz jak można je wykorzystać w projektach związanych z Arduino.
 
-## Jak
+## Jak to zrobić?
 
-Programowanie Arduino przy użyciu regular expressions jest łatwe i intuicyjne. Wystarczy dodać bibliotekę ```ArduinoRE``` do swojego projektu oraz zapoznać się z podstawowymi wyrażeniami regularnymi. Poniżej przedstawiam przykład kodu, który wyświetla tylko cyfry w tekście otrzymanym z czujnika temperatury:
+Korzystanie z wyrażeń regularnych w Arduino jest bardzo proste. Wystarczy zaimportować bibliotekę "Regexp.h" do projektu i zadeklarować zmienną typu "Regexp" w poniższy sposób:
 
-```
-#include <ArduinoRE.h>
-#include <OneWire.h> 
-#include <DallasTemperature.h>
+```Arduino
+#include <Regexp.h> // importowanie biblioteki
 
-// Inicjalizacja czujnika temperatury
-OneWire oneWire(ONE_WIRE_BUS);
-DallasTemperature sensors(&oneWire);
-
-void setup() {
-  // Inicjalizacja komunikacji szeregowej
-  Serial.begin(9600);
-  // Przypisanie wyrażenia regularnego do zmiennej
-  String re = RE("@0-9");
-  // Zastosowanie wyrażenia regularnego do otrzymanego tekstu
-  String temp = RE(str(sensors.getTempCByIndex(0)));
-  // Wyświetlenie wyniku
-  Serial.println(temp);
-}
+Regexp regularna("wyrażenie"); // deklaracja zmiennej
 ```
 
-Output:
+Następnie można wykorzystać funkcje biblioteki, takie jak "match", "search" czy "replace", aby przeprowadzić operacje na tekście zgodnie z zadeklarowanym wyrażeniem. Przykładowy kod może wyglądać następująco:
 
+```Arduino
+// deklaracja zmiennej z tekstem
+String tekst = "Przykładowy tekst do przeszukania.";
+// deklaracja wyrażenia regularnego
+Regexp regularna("tekst do"); 
+// wywołanie funkcji "search" i przypisanie wyniku do zmiennej
+MatchResult wynik = regularna.search(tekst); 
 ```
-23.25
-```
 
-## Deep Dive
+W powyższym przykładzie, zmienna "wynik" przechowuje informacje o pierwszym wystąpieniu wyrażenia "tekst do" w stringu "tekst". Można je wykorzystać do dalszej manipulacji tekstu lub porównań.
 
-Warto zauważyć, że regular expressions mogą być również bardzo przydatne w walidacji danych pochodzących z różnych źródeł. Dzięki nim możemy sprawdzić, czy otrzymany tekst zawiera np. wymagane formatowanie lub znaki specjalne. W bibliotece ```ArduinoRE``` dostępnych jest wiele funkcji ułatwiających pracę z regular expressions, które warto wykorzystać.
+## Głębszy zanurzenie
 
-## Zobacz także
+Wykorzystanie wyrażeń regularnych w Arduino może być nie tylko przydatne, ale i niezbędne w niektórych projektach. Dzięki nim możliwe jest na przykład szybkie i efektywne filtrowanie danych z czujników lub analizowanie informacji z różnych źródeł.
 
-- [Dokumentacja biblioteki ArduinoRE](https://github.com/andrerogers/ArduinoRE)
-- [Podstawy wyrażeń regularnych w Arduino](https://www.arduino.cc/reference/en/language/functions/communication/regex/)
-- [Przykładowe projekty z użyciem regular expressions w Arduino](https://create.arduino.cc/projecthub/projects/tags/regular+expression)
+Istnieje wiele różnych wyrażeń regularnych, które można wykorzystać w zależności od potrzeb. Zachęcamy do eksperymentowania z nimi i poznawania coraz to nowszych możliwości.
+
+# Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych, polecamy zapoznanie się z poniższymi stronami:
+
+- [Dokumentacja biblioteki "Regexp.h"](https://github.com/arduino-libraries/Regexp)
+- [Artykuł na temat wyrażeń regularnych w języku Arduino](https://blog.arduino.cc/2019/02/14/creating-forms-using-regular-expressions/)
+- [Kurs z podstaw wyrażeń regularnych](https://www.freecodecamp.org/news/an-introduction-to-regex-in-javascript-for-absolute-beginners-5269d6f76409/)

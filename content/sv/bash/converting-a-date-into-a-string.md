@@ -1,48 +1,48 @@
 ---
-title:    "Bash: Omvandla en datum till en sträng"
+title:    "Bash: Omvandla ett datum till en sträng"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att konvertera en datum till en sträng är en vanlig uppgift inom Bash-programmering. Det kan behövas för att formatera datumet på ett visst sätt för att användas i en filnamn, loggfil eller annan rapportering.
+ Att konvertera ett datum till en sträng kan vara användbart i många olika program eller skript, särskilt när man behöver visa eller spara datumet på ett mer läsbart sätt.
 
-## Hur man gör det
+##Hur man gör det
 
-Det finns flera olika sätt att konvertera ett datum till en sträng inom Bash. Här är ett exempel på hur du kan göra det med hjälp av kommandot `date` och `printf`:
-
-```Bash
-datum=$(date +"%Y-%m-%d") # Hämtar aktuellt datum och lagrar det i variabeln datum.
-printf "Dagens datum är %s" "$datum" # Skriver ut värdet av variabeln datum till konsolen.
-```
-
-Output:
-```Bash
-Dagens datum är 2021-05-20
-```
-
-Det finns också möjlighet att använda `strftime` kommandot för att formatera datumet på ett visst sätt. Här är ett exempel på hur du kan använda det för att få fram den aktuella veckodagen:
+För att konvertera ett datum till en sträng i Bash kan man använda kommandot `date` följt av önskat datumformat och önskat datum. Till exempel, om vi vill konvertera dagens datum till formatet "DD/MM/YYYY", skulle kommandot se ut enligt följande:
 
 ```Bash
-dag=$(strftime "%A" $(date +"%s")) # Hämtar veckodagen från det aktuella datumet och lagrar det i variabeln dag.
-printf "Idag är det %s" "$dag" # Skriver ut värdet av variabeln dag till konsolen.
+date +"%d/%m/%Y"
 ```
 
-Output:
+Detta skulle ge oss ett resultat som ser ut som "06/02/2021".
+
+Om vi vill konvertera ett specifikt datum istället för dagens datum, kan vi ange det datum som ett argument efter `date`-kommandot. Till exempel:
+
 ```Bash
-Idag är det torsdag
+date +"%d/%m/%Y" 20/12/2020
 ```
 
-## Djupdykning
+Detta skulle ge oss resultatet "20/12/2020".
 
-När vi konverterar ett datum till en sträng, kan vi också inkludera tidsformatet. Detta kan göras genom att använda `%H:%M:%S` för att få ut timmar, minuter och sekunder i 24-timmars format. Om vi istället vill ha tiden i 12-timmars format med AM/PM-indikatorer kan vi använda `%I:%M:%S%p`.
+##Djupdykning
 
-Att konvertera ett datum till en sträng är också en viktig del av automatiserade uppgifter inom Bash-programmering. Genom att skapa ett skript som konverterar och inkluderar datumet i en fil eller loggfil, kan vi enkelt spåra när en uppgift utfördes.
+Det finns många olika format i vilka man kan konvertera datum till strängar med hjälp av `date`-kommandot. Här är några exempel på vanliga format och vad de betyder:
+
+- `%d` - Dag i månaden (t.ex. 06)
+- `%m` - Månad (t.ex. 02)
+- `%Y` - År (t.ex. 2021)
+- `%H` - Timme i 24-timmarsformat (t.ex. 15)
+- `%M` - Minut (t.ex. 30)
+- `%S` - Sekund (t.ex. 45)
+
+Det finns också många andra formatalternativ som du kan använda för att få mer specifika resultat. För en komplett lista över alla alternativ kan du titta i `date`-kommandots man-sida genom att köra kommandot `man date` i terminalen. Där kan du också se olika exempel på hur man kan använda `date` för att konvertera datum till olika format.
 
 ## Se även
 
-- [Bash-programmering för nybörjare](https://www.linuxjournal.com/content/bash-programming-beginners)
-- [Bash-kommandon för att hantera datum och tid](https://linuxize.com/post/bash-current-date-time/)
-- [Dokumentation för `date` och `strftime` kommandon](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [How to Use the date Command in Linux](https://linuxize.com/post/how-to-use-date-command-in-linux/)

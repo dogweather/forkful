@@ -1,48 +1,65 @@
 ---
-title:    "C: Omvandling av en sträng till gemener"
+title:    "C: Omvandla en sträng till gemener"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
+Att konvertera en sträng till små bokstäver kan vara användbart när man behöver jämföra strängar utan att behöva ta hänsyn till bokstavsstorlek. Det kan också vara till nytta i olika sorters textbehandlingsprogram eller för att enkelt formatera strängar på ett enhetligt sätt.
 
-Att konvertera en sträng till små bokstäver kan vara en viktig del av en programmörs arbete. Det gör det möjligt för användaren att ange input på olika sätt och få samma resultat. Det kan också vara användbart för att filtrera eller jämföra strängar i ett program.
-
-## Hur du gör det
-
-Du kan enkelt konvertera en sträng till små bokstäver i C genom att använda funktionen `tolower` från standard biblioteket `<ctype.h>`. Den här funktionen tar en karaktär som argument och returnerar den motsvarande små bokstaven om den är en stor bokstav, annars returnerar den bara samma karaktär. Här är ett exempel på hur det kan göras:
+## Hur gör man?
+För att konvertera en sträng till små bokstäver i C finns det flera olika metoder. En av de enklaste sätten är att använda standardfunktionen `tolower()` som finns i C-biblioteket <ctype.h>. Denna funktion tar en enskild bokstav som argument och returnerar en omvandlad version i små bokstäver.
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main(void) {
-    char input[] = "Hej VÄRLDEN!";
+int main() {
+    char str[] = "HEJ PÅ DIG";
+    int i = 0;
+
+    // Loopar genom varje tecken i strängen
+    while (str[i]) {
     
-    printf("Input: %s\n", input);
-    
-    // Loopa igenom strängen och konvertera varje karaktär
-    for (int i = 0; input[i] != '\0'; i++) {
-        input[i] = tolower(input[i]);
+        // Omvandlar tecknet till små bokstäver
+        str[i] = tolower(str[i]);
+        i++;
     }
-    
-    printf("Output: %s\n", input);
-    
+
+    printf("%s\n", str); // Output: hej på dig
+
     return 0;
 }
 ```
 
-Output: `hej världen!`
+En annan metod är att använda sig av standardfunktionen `strlwr()` som finns i <string.h>. Denna funktion tar en hel sträng som argument och omvandlar alla bokstäver i strängen till små bokstäver.
 
-## Fördjupning
+```C
+#include <stdio.h>
+#include <string.h>
 
-Vad händer egentligen i bakgrunden när du konverterar en sträng till små bokstäver? När du använder `tolower` funktionen, skickas karaktären till en specialfunktion som kallas för `locale-specific mapping`. Denna funktion används för att bestämma det korrekta motsvarande små bokstaven i det språk som användaren har valt för sitt system. Detta säkerställer att din kod fungerar korrekt för alla användare oavsett deras språkinställningar.
+int main() {
+    char str[] = "DAGEN IDAG";
+    
+    // Omvandlar hela strängen till små bokstäver
+    strlwr(str);
+
+    printf("%s\n", str); // Output: dagen idag
+
+    return 0;
+}
+```
+
+Observera att båda dessa metoder ändrar strängen permanent. Om man vill behålla den ursprungliga strängen kan man istället skapa en kopia och omvandla denna istället.
+
+## Djupdykning
+Bakom kulisserna använder dessa funktioner sig av ASCII-koderna för att utföra omvandlingen. Varje tecken har en unik ASCII-kod, och för bokstäverna A-Z finns det både en stor och en liten version av samma bokstav. Genom att manipulera ASCII-koderna kan man enkelt konvertera mellan olika bokstäver.
+
+Det är också möjligt att skriva en egen funktion för att konvertera en sträng till små bokstäver. Ett sätt att göra detta är att loopa genom varje tecken och använda sig av matematiska operationer för att identifiera och omvandla bokstäverna.
 
 ## Se även
-
-- [C Programlama Dili (Turkish): Case Sensitivity](https://www.turkcede.net/c-kucuk-buyuk-harf-duyarliligi/)
-
-- [The Basics of C Programming: Character Manipulation](https://www.youtube.com/watch?v=eUhLTLZusAM)
-
-- [C String Library Functions](https://www.programiz.com/c-programming/c-standard-library-functions/string-h)
+- [ASCII](https://sv.wikipedia.org/wiki/ASCII)
+- [tolower()](https://www.programiz.com/c-programming/library-function/ctype.h/tolower)
+- [strlwr()](https://www.programiz.com/c-programming/library-function/string.h/strlwr)

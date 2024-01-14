@@ -1,64 +1,38 @@
 ---
 title:    "Python: Skapa en tillfällig fil"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Att skapa en temporär fil kan vara användbart när du behöver utföra en kortlivad uppgift eller när du inte vill skriva till en permanent fil. Temporära filer kan också användas för att hålla känslig information säker, då de automatiskt raderas när de inte längre behövs.
 
-I programmering, finns det ofta ett behov av att skapa en temporär fil som endast behövs under en kort period av tid. Detta kan vara för att spara tillfälliga data eller för att utföra temporära beräkningar. Att använda temporära filer kan hjälpa till att hålla koden renare och minska risken för konflikter med andra filer. 
-
-## Så här gör du
-
-I Python kan du enkelt skapa en temporär fil med hjälp av modulen "tempfile". Här är ett exempel på hur du kan skapa en temporär fil och sedan skriva till den:
-
-```python
+## Hur man gör det 
+För att skapa en temporär fil i Python, används ```tempfile``` modulen. Först importerar man modulen: 
+```Python
 import tempfile
-
-# Skapa en temporär fil med namnet "temp_file"
-temp_file = tempfile.NamedTemporaryFile()
-
-# Skriv till filen
-temp_file.write(b"Det här är innehållet i min temporära fil.")
-
-# Stäng filen
-temp_file.close()
 ```
-
-Om du vill skapa en specifik temporär filtyp, till exempel en CSV-fil, kan du göra det genom att ange rätt suffix när du skapar den temporära filen:
-
-```python
-import tempfile
-
-# Skapa en temporär CSV-fil med namnet "temp_csv_file"
-temp_csv_file = tempfile.NamedTemporaryFile(suffix=".csv")
+Sedan kan man använda ```tempfile.NamedTemporaryFile()``` för att skapa en temporär fil, till exempel: 
+```Python
+with tempfile.NamedTemporaryFile() as tmp_file: 
+    print("Min temporary fil är: ", tmp_file.name)
 ```
-
-Om du vill läsa från en befintlig temporär fil kan du använda funktionen "open" och sedan stänga filen när du är klar:
-
-```python
-import tempfile
-
-# Skapa en temporär fil med namnet "temp_file"
-temp_file = tempfile.NamedTemporaryFile()
-
-# Läsa från filen
-with open(temp_file.name) as f:
-    content = f.read()
-
-# Stäng filen
-temp_file.close()
+Kör man koden ovan kommer man få följande output: 
 ```
+Min temporary fil är: /tmp/tmptcaf444e
+```
+Som default skapas en temporär fil i "tmp" mappen på datorn, men man kan också specificera en annan mapp. 
+```Python
+with tempfile.NamedTemporaryFile(dir = "/hem/användare/temp") as tmp_file: 
+    print("Min temporary fil är: ", tmp_file.name)
+```
+Om man kör koden ovan så kommer den temporära filen att skapas i "temp" mappen i användarens hemkatalog. 
 
-## Djupdykning
+## Djupdykning 
+Vad händer egentligen när man skapar en temporär fil i Python? När man använder ```tempfile``` modulen så skapas en fil på disk och dess namn returneras. När filen inte längre behövs, så stängs den automatiskt och tas bort från systemet. Om man behöver behålla filen längre än dess livslängd, så finns det möjlighet att flytta filen till en permanent plats genom att använda funktionen ```tmp_file.flush()``` och sedan använda ```shutil``` för att kopiera filen till en annan mapp.
 
-När du skapar en temporär fil med hjälp av "tempfile" modulen, skapas filen på en plattformsspecifik plats. Detta innebär att du inte behöver oroa dig för att ge filen ett unikt namn då det redan kommer att vara unikt baserat på platsen där det skapas.
-
-Du kan också använda "tempfile" modulen för att skapa temporära mappar genom att använda funktionen "mkdtemp" istället för "NamedTemporaryFile". Detta kan vara användbart om du behöver lagra flera temporära filer eller om du behöver en temporär plats att arbeta med.
-
-## Se även
-
-- [Dokumentation för Python Tempfile-modulen](https://docs.python.org/3/library/tempfile.html)
-- [Python grundläggande tutorial](https://www.pythonforbeginners.com/basics/python-tutorial-temporary-file)
-- [YouTube tutorial på att skapa temporära filer i Python](https://www.youtube.com/watch?v=6dSBskC3IeM)
+## Se även 
+- [Tempfile modulen dokumentation på Pythons hemsida](https://docs.python.org/3/library/tempfile.html)
+- [Datacamp tutorial om att skapa och hantera temporära filer i Python](https://www.datacamp.com/community/tutorials/working-temporary-files-python)

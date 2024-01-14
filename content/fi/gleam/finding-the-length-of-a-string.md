@@ -1,40 +1,45 @@
 ---
 title:    "Gleam: Merkkijonon pituuden löytäminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi selvittää merkkijonon pituuden? Merkkijonon pituuden löytäminen on tärkeä osa monien ohjelmien toimintaa. Se auttaa meitä muokkaamaan ja käsittelemään tekstiä, esimerkiksi jos haluamme varmistaa, että käyttäjän antama salasana on tarpeeksi pitkä.
+Miksi sinun kannattaisi selvittää merkkijonon pituus? Yksinkertaisesti siksi, että se on tärkeä osa monia ohjelmointitehtäviä, kuten merkkien laskemista ja tekstianalyysejä.
 
 ## Miten
 
-Käyttämällä Gleam-ohjelmointikieltä on helppoa löytää merkkijonon pituus. Voit tehdä sen helposti seuraavien esimerkkien ja koodilohkojen avulla.
+##### Gleamilla on helppo löytää merkkijonon pituus
 
 ```Gleam
-salasana = "salainen"
-pituus = String.length(salasana)
+let string = "Tämä on esimerkki merkkijonosta."
+let length = String.length(string)
+
+assert length == 31 // Varmista, että merkkijonon pituus on oikein
 ```
 
-Tässä ensimmäisessä rivissä luomme muuttujan, johon tallennamme merkkijonon "salainen". Sitten käytämme String.length-funktiota, joka laskee merkkijonon pituuden ja tallentaa sen muuttujaan "pituus". Voit kokeilla tätä itse ja näet, että pituus on 8.
+Tässä esimerkissä aloitamme määrittelemällä muuttujan "string", joka sisältää haluamamme merkkijonon. Sitten käytämme Gleamin funktiota "String.length" selvittääksemme merkkijonon pituuden.
+Lopuksi voimme käyttää "assert" -lauseketta varmistaaksemme, että oikea pituus on löydetty.
+
+Voit myös käyttää samaa funktiota suoraan tekstin sisällä, kuten tässä:
 
 ```Gleam
-nimi = "Matti"
-pituus = String.length(nimi)
+let length = String.length("Tämä on esimerkki merkkijonosta.")
 ```
 
-Tässä toisessa esimerkissä meillä on lyhyempi merkkijono, "Matti". Kun käytämme taas String.length-funktiota, pituus on nyt 5. Huomaatko, kuinka tärkeää on tarkistaa merkkijonon pituus, jotta voimme varmistaa, että se täyttää tarvittavat vaatimukset?
+## Syväluotaus
 
-## Syvä sukellus
+Funktiomme "String.length" toimii käyttäen UTF-8 -koodausta, joka mahdollistaa merkkien, kuten kirjainten ja emoji-merkkien, käyttämisen merkkijonossa. Se myös käyttää "grapheme clusters" -termiä, joka tarkoittaa merkkien yhdistelmää, joka muodostaa yhden grafeemin kirjautumisjärjestelmässä. Esimerkiksi "ä" voi olla yksi "grapheme cluster" tai kuuluu kahden erillisen merkin yhdistelmään.
 
-Gleam-ohjelmointikielen String-moduuli tarjoaa meille useita hyödyllisiä toimintoja merkkijonojen käsittelyyn. String.length on yksi näistä. Se käy läpi merkkijonon ja laskee kaikki merkit, jotka se sisältää. Tämä on hyödyllinen toiminto, jos haluatte esimerkiksi varmistaa, että käyttäjän antama nimi tai salasana on tarpeeksi pitkä tai haluatte lukea tiedostosta merkkijonoja ja tarkistaa niiden pituuden.
-
-Lisäksi Gleam tarjoaa myös muita hyödyllisiä funktioita, kuten String.concat, joka yhdistää kaksi tai useampaa merkkijonoa yhdeksi, ja String.slice, joka jakaa merkkijonon osiin haluamallamme tavalla. Näiden toimintojen avulla voimme käsitellä ja manipuloida merkkijonoja tehokkaasti.
+Gleamissa on myös muita hyödyllisiä merkkijonofunktioita, kuten "String.is_empty", joka tarkistaa onko merkkijono tyhjä ja "String.reverse", joka kääntää merkkijonon kirjaimet ylösalasin.
+Voit tutustua näihin funktioihin Gleamin virallisessa dokumentaatiossa.
 
 ## Katso myös
 
-- [Gleam-kielen dokumentaatio String-moduulista](https://gleam.run/documentation/stdlib/string/)
-- [Gleam-kurssi: Merkkijonot](https://gleam.run/courses/string/) (englanniksi)
-- [Merkkijonojen käsittely Gleamilla -artikkeli](https://medium.com/@josemendieta/coding-with-gleam-processing-strings-dd33da2b28cb) (englanniksi)
+- [Gleamin dokumentaatio](https://gleam.run/docs)
+- [Merkkijonojen käsittely Gleamilla](https://gleam.run/articles/strings)
+
+Kiitos lukemisesta ja onnea Gleamin käytössä!

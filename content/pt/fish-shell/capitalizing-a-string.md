@@ -1,59 +1,41 @@
 ---
-title:    "Fish Shell: Capitalizando uma string"
+title:    "Fish Shell: Maiúsculas em uma string"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em Fish Shell
+# Por que usar o Fish Shell para capitalizar strings?
 
-Quando se trabalha com dados em qualquer linguagem de programação, muitas vezes é necessário modificar o formato de uma string. Isso pode incluir deixar todas as letras maiúsculas ou minúsculas ou, em alguns casos, capitalizar apenas a primeira letra. Neste post, vamos falar especificamente sobre como capitalizar uma string em Fish Shell e como isso pode ser útil em seus projetos de programação.
+Se você está procurando uma forma simples e eficiente de capitalizar strings em seus scripts de programação, o Fish Shell pode ser a solução perfeita! Com sua sintaxe intuitiva e poderosas ferramentas de manipulação de strings, o Fish Shell torna o processo de capitalização de strings rápido e fácil.
 
-## Como fazer
+## Como capitalizar strings usando o Fish Shell
 
-Para capitalizar uma string em Fish Shell, podemos usar o comando `string capitalize` seguido pelo texto que desejamos capitalizar. Por exemplo, se quisermos capitalizar a string "exemplo", o código ficaria assim:
-
-```
-Fish Shell:
-
-string capitalize "exemplo"
-
-Saída:
-Exemplo
-```
-
-Também é possível capitalizar apenas a primeira letra de cada palavra em uma string. Para isso, usamos o comando `string capitalize -a`. Veja o exemplo abaixo:
+Para capitalizar uma string usando o Fish Shell, basta utilizar o comando `string capitalize` seguido da string que você deseja capitalizar. Veja um exemplo:
 
 ```
-Fish Shell:
-
-string capitalize -a "exemplo de texto"
-
-Saída:
-Exemplo De Texto
+Fish Shell> string capitalize "este é um exemplo"
+Este é um exemplo
 ```
 
-Caso queira fazer o contrário e deixar todas as letras em minúsculo, podemos usar o comando `string tolower`. Veja o exemplo:
+Além disso, você também pode utilizar o operador `|` para encadear comandos e capitalizar strings em um único comando:
 
 ```
-Fish Shell:
-
-string tolower "TEXTO EM CAIXA ALTA"
-
-Saída:
-texto em caixa alta
+Fish Shell> set my_string "este é um exemplo" | string capitalize
+Este é um exemplo
 ```
 
-Por fim, é importante lembrar que esses comandos também podem ser usados em variáveis, possibilitando a capitalização de dados dinâmicos em um script.
+## Deep Dive: Mais informações sobre a capitalização de strings
 
-## Aprofundando-se
+O comando `string capitalize` do Fish Shell utiliza a função `string capitalize` do próprio shell, que possui dois argumentos: a string a ser capitalizada e um valor booleano opcional para indicar se o restante da string deve ser convertido para letras minúsculas.
 
-Para entender melhor como a capitalização de strings funciona em Fish Shell, é importante entender que esse comando funciona usando as configuracoes de linguagem definidas no sistema operacional. Para alterar essas configuracoes, podemos acessar o arquivo `locale.conf`.
+Além disso, o Fish Shell também oferece outras ferramentas de manipulação de strings, como `string lower` e `string upper`, que permitem converter strings para letras minúsculas e maiúsculas, respectivamente.
 
-Além disso, se precisarmos capitalizar uma string com caracteres especiais, é importante ter atenção às configuracoes de codificação de caracteres, garantindo que os dados serão interpretados corretamente.
+Com esses recursos, é possível criar scripts mais robustos e eficientes em que a capitalização de strings é necessária.
 
-## Veja também
+# Veja também
 
-- [Documentação oficial do comando `string`](https://fishshell.com/docs/current/cmds/string.html)
-- [Tutorial sobre o uso de variáveis em Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_variables)
-- [Post sobre a manipulação de strings em Fish Shell](https://www.ostechnix.com/fish-shell-string-manipulation-tutorial/)
+- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/
+- Comunidade Fish Shell no Reddit: https://www.reddit.com/r/fishshell/
+- Exemplos práticos de utilização da manipulação de strings no Fish Shell: https://fishshell.com/docs/current/cmds/string.html

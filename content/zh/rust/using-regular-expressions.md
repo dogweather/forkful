@@ -1,54 +1,75 @@
 ---
 title:    "Rust: 使用正则表达式"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式？
+为什么使用正则表达式?
 
-Rust是一门强大的编程语言，它允许开发者灵活地创建各种应用程序。正则表达式是一种在Rust中非常有用的工具，它可以帮助我们处理和匹配复杂的文本模式。使用正则表达式，我们可以轻松地找出指定的文本、替换文本或者验证文本格式，大大提高了处理文本的效率。因此，如果你想要在Rust中处理文本，正则表达式是一个必备的工具。
+正则表达式是一种强大的文本匹配工具，它可以让开发者更有效地处理和搜索文本数据。无论是检索数据还是对文本进行格式化，正则表达式都是必不可少的工具。在Rust编程语言中，正则表达式也是极其有用的工具，可以帮助开发者更轻松地处理文本任务。
 
-## 如何使用正则表达式？
+## 如何使用
 
-要在Rust中使用正则表达式，首先需要引入正则表达式库。你可以在`cargo.toml`文件中添加如下代码来引入`regex`库：
+使用正则表达式的第一步是导入它们的模块。在Rust中，我们可以使用“regex”库来实现这一点。在代码中，我们需要首先使用`use`关键字导入这个库，并在代码之前添加`extern crate`宏。
 
-```Rust
-[dependencies]
-regex = "1.0"
 ```
-然后，你可以在代码中使用`regex`库提供的方法来创建正则表达式模式，并将其应用到指定的文本上。比如，我们想要匹配一个电子邮箱地址，可以按照以下步骤来实现：
+extern crate regex;
+use regex::Regex;
 
-1. 创建正则表达式模式：`let pattern = Regex::new(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")?;`
-2. 将模式应用到文本上：`let result = pattern.is_match("example123@email.com");`
-3. 检查匹配结果并进行相关操作：`if result { /* do something */ }`
+```
 
-使用正则表达式的过程可能会有些复杂，因此建议你多参考一些文档和示例代码来帮助理解。接下来，我们将深入探讨正则表达式的一些重要概念。
+接下来，我们可以使用`Regex::new()`函数来创建一个正则表达式。我们可以在函数中传入一个字符串作为正则表达式的模式，例如`Regex::new("a*b+")`会匹配所有以0个或多个a开头，且至少有一个b的字符串。
 
-## 深入了解正则表达式
+```
+let regex = Regex::new("a*b+").unwrap();
+```
 
-正则表达式由一系列的字符和特殊符号组成，它们可以帮助我们定义一个文本模式。在Rust中，正则表达式的模式使用`Regex`结构体来表示，它定义在`regex`库中。下面是一些常用的正则表达式特殊字符：
+一旦我们有了正则表达式，我们可以使用`is_match()`函数来检查一个字符串是否符合该表达式。如果符合，返回`true`，否则返回`false`。
 
-- `.`：匹配任意单个字符。
-- `|`：匹配多个模式中的一个。
-- `?`：可选项，匹配出现0次或1次的模式。
-- `+`：重复次数，匹配出现至少1次的模式。
-- `*`：重复次数，匹配出现任意次数的模式。
-- `^`：匹配文本的开始位置。
-- `$`：匹配文本的结束位置。
+```
+let name = "Rusty";
+if regex.is_match(name) {
+    println!("{} is a match!", name);
+} else {
+    println!("Sorry, {} is not a match.", name);
+}
+```
 
-除了以上的特殊字符外，正则表达式还支持更多的字符组合，用来表示更加复杂的文本模式。例如，`[a-zA-Z0-9]`可以匹配任意一个英文字母或数字。
+我们也可以使用`find()`函数来寻找符合表达式的部分字符串。它会返回一个`Option<Match>`类型，如果找到匹配项，就会返回包含匹配信息的`Some()`值，否则返回`None`。
 
-在使用正则表达式时，我们还需要注意一些常用的方法。比如，`is_match()`用于检查文本是否匹配模式，`find()`可以返回第一次匹配的位置，`replace_all()`可以将所有匹配的文本替换为指定的字符串。更多的方法可以参考官方文档。
+```
+let text = "This is a sample text with numbers 1234 and special characters!@#";
+let numbers = Regex::new(r"\d+").unwrap();
+for num in numbers.find_iter(text) {
+    println!("Found number: {}", num.as_str());
+}
+```
 
-# 查看更多
+最后，我们可以使用`replace_all()`函数来替换匹配的字符串。它会将符合表达式的部分字符串替换为我们指定的字符串。
 
-如果你想要学习更多关于Rust中使用正则表达式的内容，可以参考以下资源：
+```
+let sentence = "I love Rust and regex!";
+let love = Regex::new("love").unwrap();
+let result = love.replace_all(sentence, "adore");
+println!("{}", result);
+```
 
-- [Rust官方文档](https://doc.rust-lang.org/std/regex/)
-- [Rust Cookbook中关于正则表达式的示例代码](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
-- [Rust by Example中关于正则表达式的例子](https://doc.rust-lang.org/stable/rust-by-example/std/regex.html)
+## 深入了解
 
-# 参考资料
+正则表达式可以通过使用模式匹配符号来实现更复杂的匹配。例如，`[a-z]+`会匹配所有小写字母组成的字符串，`[A-Z]+`会匹配所有大写字母组成的字符串，`[a-zA-Z]+`会匹配所有大小写字母组成的字符串。
 
-- [正
+在Rust中，我们也可以使用`?`和`+`这样的符号来表示匹配模式的数量，例如，`a?`表示零个或一个a，`a+`表示一个或多个a，`a*`表示零个或多个a。
+
+正则表达式也可以使用捕获组来获取匹配的某些部分。在Rust中，我们可以使用圆括号`()`来创建捕获组。例如，`(abc)+`会匹配多个连续的“abc”字符串，并将它们作为一个捕获组返回。
+
+如果想要深入了解正则表达式的更多知识，可以参考下面这些链接：
+
+- [Rust中正则表达式的官方文档](https://doc.rust-lang.org/std/regex/index.html)
+- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [常用的Rust正则表达式操作示例](https://www.jianshu.com/p/29dfb6974afa)
+
+## 参考资料
+
+- [The Rust Programming Language](https

@@ -1,48 +1,45 @@
 ---
 title:    "Rust: Sökning och ersättning av text"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är ett vanligt problem vid programmering, och därför är det viktigt att ha en effektiv lösning för detta. Med Rusts inbyggda funktioner och kraftfulla strängbehandling kan du enkelt och pålitligt söka och ersätta text i dina kodfiler.
+Att söka och ersätta text är en vanlig uppgift inom programmering, särskilt när man behöver ändra stora mängder text på en gång. I denna bloggpost kommer vi att utforska hur man kan använda Rust för att effektivt söka och ersätta text.
 
-## Så gör du
+## Hur man gör det
 
-För att söka och ersätta text i en sträng i Rust, kan du använda `replace()` funktionen. Här är ett exempel på hur du kan använda den:
+För att söka och ersätta text i Rust finns det flera olika metoder som kan användas. En av de mest vanliga är användning av "replace" funktionen, som tar in två strängar - den text som ska sökas efter och den nya texten som ska ersätta den. Nedan följer ett exempel på hur detta kan implementeras i en Rust-kod:
 
-```rust
-let str = "Hej, jag heter Rust!";
-let ny_str = str.replace("Rust", "swärje");
+```Rust
+let text = "Detta är en text som ska sökas igenom.";
+let sök_text = "som ska";
+let ersättnings_text = "ska";
 
-println!("{}", ny_str); // Utskrift: Hej, jag heter swärje!
+let ny_text = text.replace(sök_text, ersättnings_text);
+println!("{}", ny_text);
+
 ```
 
-Låt oss bryta ner detta kodexempel för att förstå vad som händer. Först skapar vi en variabel `str` som innehåller en sträng, sedan använder vi `replace()` funktionen för att byta ut ordet "Rust" mot "swärje". Slutligen skriver vi ut den nya strängen med `println!()` funktionen.
+Detta skulle leda till följande output:
 
-Det är viktigt att notera att `replace()` funktionen returnerar en ny sträng, så om du vill behålla den ursprungliga strängen måste du tilldela resultatet till en ny variabel, som i exemplet ovan.
+```
+Detta är en text ska igenom.
+```
+
+Utöver "replace" finns det också andra användbara funktioner som "replace_range" och "replace_range_inclusive" som kan användas för mer specifika behov. Det är viktigt att läsa på dokumentationen för att hitta den bästa metoden för ditt visst användningsområde.
 
 ## Djupdykning
 
-Som standard söker `replace()` funktionen endast efter en matchning av det första förekommande mönstret. Men det finns också möjlighet att söka och ersätta alla förekommande mönster i strängen. Detta kan göras genom att använda en nyckelordet `replace_all()` istället för `replace()`.
+Om man vill utföra mer avancerade sök- och ersättningsoperationer finns det flera tredjepartsbibliotek som kan vara till hjälp. Ett exempel är "regex" biblioteket som tillåter användare att söka och ersätta text baserat på ett regex-mönster. Detta kan vara särskilt användbart för komplexa sökningar som involverar flera mönster.
 
-```rust
-let str = "Ha en bra dag!";
-let ny_str = str.replace_all("a", "å");
-
-println!("{}", ny_str); // Utskrift: Hå en brå dag!
-```
-
-Här ser vi att vi bytt ut alla förekomster av bokstaven "a" mot bokstaven "å" i den ursprungliga strängen.
-
-Det finns också möjlighet att göra avancerade sökningar med hjälp av reguljära uttryck genom att använda `regex_replace()` funktionen från regex biblioteket. Detta ger en ännu mer kraftfull lösning för att söka och ersätta text i dina kodfiler.
+Det finns också möjlighet att kombinera olika metoder och funktioner för att uppnå önskad funktionalitet. Att läsa på dokumentationen och experimentera med kodexempel är ett bra sätt att lära sig mer om sök- och ersättningsoperationer i Rust.
 
 ## Se även
 
-- [Rust dokumentation om strängar](https://doc.rust-lang.org/std/string/index.html)
-- [Regex biblioteket dokumentation](https://docs.rs/regex/latest/regex/)
-- [En guide till reguljära uttryck i Rust](https://rust-lang-nursery.github.io/regex/book/)
-
-Nu är du väl rustad för att söka och ersätta text i dina Rust-program! Lycka till med programmeringen! 🚀
+- Officiell dokumentation för "replace" funktionen i Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- Dokumentation för "regex" biblioteket: https://docs.rs/regex/1.5.4/regex/
+- En guide för att lära sig mer om regex i Rust: https://fasterthanli.me/articles/regex-boosted

@@ -1,41 +1,31 @@
 ---
 title:    "Haskell: 写入标准错误"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候我们在编程中可能会遇到一些错误。而这些错误信息可能并不是我们希望用户看到的，因此，我们需要一种方式来把这些错误信息输出到一个特定的地方，而不是直接显示给用户。这就是为什么我们需要写入标准错误输出流的原因。
+# 为何要将信息写入标准错误
 
-## 如何做
-在Haskell中，我们可以使用`stderr`函数来把错误信息输出到标准错误流。下面是一个示例代码：
+在Haskell编程中，有时候需要将错误信息打印到控制台，以便程序员可以及时发现错误并进行调试。使用标准错误来打印信息比起标准输出更为适合，因为它不会被管道或重定向所影响，从而保证了错误信息的有效传达。
 
-```Haskell
-import System.IO
+## 如何写入标准错误
 
-main = do
-  hPutStrLn stderr "这是一个错误信息。"
-```
-
-运行这段代码，我们会发现在控制台并没有打印出这个错误信息，而是在另一个地方。这就是标准错误流的作用。
-
-## 深入了解
-除了使用`hPutStrLn`函数，我们还可以使用`hPutStr`、`hPutChar`等函数来输出错误信息。同时，我们也可以使用`stderr`函数来获取标准错误流，然后进行一些其他操作。
-
-例如，我们可以使用`withFile`函数来将错误信息输出到一个文件中，而不是直接显示在控制台。代码示例如下：
+要在Haskell中将信息写入标准错误，可以使用hPutStrLn函数。它接受两个参数：句柄和字符串。句柄可以用来指定要写入的目标，而字符串就是要打印的信息。下面是一个例子：
 
 ```Haskell
-import System.IO
-
-main = do
-  withFile "error.txt" WriteMode $ \handle -> do
-    hPutStrLn handle "这是一个错误信息。"
+hPutStrLn stderr "这是一个错误信息"
 ```
 
-在这个例子中，我们使用`withFile`函数来创建一个文件句柄，然后将错误信息通过`hPutStrLn`函数输出到文件中。这样就能更方便地管理错误信息了。
+运行上面的代码，将会把"这是一个错误信息"打印到控制台的标准错误流中。
 
-## 参考链接
-- [Haskell标准库文档](https://hackage.haskell.org/package/base/docs/System-IO.html#g:3)
-- [Haskell错误处理](https://wiki.haskell.org/Error)
-- [Learn You a Haskell错误处理小节](http://learnyouahaskell.com/error-handling)
+## 深入了解标准错误
+
+标准错误是Haskell中一个非常有用的工具，它不仅可以用来打印错误信息，还可以用来打印警告信息或调试信息。通过使用hPutStrLn函数，我们可以很方便地在程序中指定要输出的信息流。此外，标准错误还可以与其他的错误处理机制结合使用，使程序更加健壮。
+
+# 查看更多
+
+- [Haskell标准库文档 - hPutStrLn函数](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Haskell教程 - 使用标准错误打印信息](https://www.tutorialspoint.com/haskell/haskell_standard_io.htm)
+- [Haskell语言参考 - 标准错误](https://www.haskell.org/onlinereport/haskell2010/haskellpa3.html#x8-490003.4)

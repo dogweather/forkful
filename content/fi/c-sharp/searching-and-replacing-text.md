@@ -1,52 +1,52 @@
 ---
-title:    "C#: Etsiminen ja tekstin korvaaminen"
+title:    "C#: Tekstin etsiminen ja korvaaminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Turhautuminen tekstiin tekemiseen
+Tervetuloa lukea blogia, joka kattaa suositun C# -ohjelmoinnin ja kuinka voit käyttää sitä tehokkaasti etsiäksesi ja korvataksesi tekstiä. Tekstintaulukon hakeminen ja korvaaminen on tärkeä osa ohjelmointia, joka säästää aikaa ja vaivaa manuaalisesta työstä. Tässä artikkelissa opit, miksi tekstintaulukon hakeminen ja korvaaminen on tärkeä, kuinka voit tehdä sen C# -ohjelmoinnissa ja syvällisempiä tietoja aiheesta.
 
-Tekstin etsiminen ja korvaaminen on yleinen ohjelmoinnin tehtävä, joka voi aiheuttaa turhautumista, varsinkin kun tekstiä on paljon tai se toistuu useassa tiedostossa. Onneksi C#:n avulla tämä tehtävä voidaan automatisoida, säästäen aikaa ja vaivaa.
+## Miksi
 
-## Kuinka tehdä: Koodiesimerkkejä ja tulosteita
+Jokainen ohjelmoija kohtaa tilanteen, jossa hänen täytyy etsiä ja korvata tiettyä tekstiä koodissaan. Se voi olla virheellinen koodinpätkä, vanhentunut muuttuja tai yksinkertaisesti tarve muuttaa tiettyä sanaa useista kohdista koodia. Tällöin tekstintaulukon hakeminen ja korvaaminen C# -ohjelmoinnissa tulee tarpeeseen ja säästää paljon aikaa ja vaivaa.
 
-Tekstin etsiminen ja korvaaminen C#:lla on suhteellisen helppoa käyttämällä "string" -luokan "Replace()" metodia. Esimerkiksi, jos haluat korvata kaikki sanan "kissa" tiedostossa "teksti.txt" sanalla "koira", seuraava koodi näyttää kuinka tämä tehdään:
+## Kuinka
 
-```C#
-string text = File.ReadAllText("teksti.txt");
-text = text.Replace("kissa", "koira");
-File.WriteAllText("teksti.txt", text);
-Console.WriteLine("Teksti korvattu onnistuneesti!");
-
-```
-
-Tulostuu: "Teksti korvattu onnistuneesti!"
-
-Tässä esimerkissä ensin luetaan tiedosto "teksti.txt" ja tallennetaan se muuttujaan "text". Sitten käytetään "Replace()" metodia korvaamaan kaikki esiintymät sanasta "kissa" sanalla "koira" muuttujassa "text". Lopuksi tallennetaan muuttuja takaisin tiedostoon "teksti.txt". Voit käyttää tätä metodia myös muissa tiedostotyypeissä, kuten CSV, XML tai JSON.
-
-Voit myös käyttää "Regex" luokkaa C#:ssa, jos haluat käyttää säännöllisiä lausekkeita tekstiin etsimiseen ja korvaamiseen. Esimerkiksi, alla oleva koodi korvaisi kaikki numerot tekstissä tyhjällä merkkijonolla:
+C# tarjoaa kätevän tavan etsiä ja korvata tekstiä koodissaan käyttämällä Replace-metodia. Tämä metodi etsii annetun merkkijonon ja korvaa sen toisella merkkijonolla. Seuraava koodinpätkä esittää, kuinka voit käyttää Replace-metodia:
 
 ```C#
-string text = "12345 HelloWorld";
-string pattern = @"[0-9]";
-string replacement = "";
-Regex rgx = new Regex(pattern);
-string result = rgx.Replace(text, replacement);
-Console.WriteLine(result);
-
+string teksti = "Tämä teksti sisältää sanaa vanha";
+string uusiTeksti = teksti.Replace("vanha", "uusi");
+Console.WriteLine(uusiTeksti);
 ```
 
-Tulostuu: " HelloWorld".
+Tulos:
 
-## Syvällinen tarkastelu: Lisätietoja tekstin etsimisestä ja korvaamisesta
+```
+Tämä teksti sisältää sanaa uusi
+```
 
-Vaikka "Replace()" metodi on kätevä ja helppokäyttöinen, siihen liittyy joitakin huomioitavia asioita. Ensinnäkin, korvaus tapahtuu vain, jos annettu merkkijono löytyy kokonaisuudessaan tekstistä. Toiseksi, metodi on case-sensitive, eli se ottaa huomioon kirjainten koolla eron. Jos sinun tarvitsee tehdä tapauksetonta korvaamista, voit käyttää "Replace()" metodia yhdessä "ToLower()" tai "ToUpper()" metodien kanssa, jotka muuttavat merkkijonon kirjaimet pieniksi tai suuriksi.
+Voit myös käyttää Replace-metodia haluamassasi tiedostossa. Seuraava koodinpätkä etsii ja korvaa tekstin tiedostossa "testi.txt" ja tallentaa uuden version "uusi.txt"-tiedostoon:
 
-Regex-luokalla on myös monia ominaisuuksia, kuten globaalin tapauksettomuuden määrittäminen, vain tiettyjen merkkien korvaaminen ja säännöllisten lausekkeiden käyttäminen tarkempaan hakuun ja korvaamiseen.
+```C#
+string tiedosto = "testi.txt";
+string uusiTiedosto = "uusi.txt";
+string teksti = File.ReadAllText(tiedosto);
+string uusiTeksti = teksti.Replace("vanha", "uusi");
+File.WriteAllText(uusiTiedosto, uusiTeksti);
+```
 
-## Katso myös: Lisää resursseja tekstien etsimisestä ja korvaamisesta C#:lla
+Tämä on vain yksi esimerkki siitä, kuinka voit etsiä ja korvata tekstin C# -ohjelmoinnissa. On tärkeää muistaa, että Replace-metodi on korkean prioriteetin operaatio, joka voi hidastaa ohjelman suorituskykyä, jos sitä käytetään liian suurissa tiedostoissa tai usein. Muista aina optimoida koodisi ja käyttää Replace-metodia harkiten.
 
-- [Microsoftin dokumentaatio Replace() metodista](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-- [Microsoftin dokumentaatio Regex-luokasta](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [C# Regex - Tutorialspoint](https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm)
+## Syvällinen sukellus
+
+C# tarjoaa myös muita tapoja etsiä ja korvata tekstiä koodissa, kuten Regex-luokan avulla. Regex on lyhenne sanoista "regular expression" eli säännöllinen lauseke. Se tarjoaa monipuolisemman tavan etsiä ja korvata tekstiä, mutta vaatii hieman enemmän ohjelmointitaitoja.
+
+Tärkeintä etsiessä ja korvattaessa tekstiä on ymmärtää, miten säännölliset lausekkeet toimivat. Ne määrittelevät tietyn kaavan, jota verrataan annettuun tekstiin. Seuraava koodinpätkä näyttää, kuinka voit etsiä ja korvata tekstiä käyttämällä säännöllisiä lausekkeita:
+
+```C#
+string teksti = "Tämä teksti sisältää sanaa vanha";
+string uusiTeksti = Regex.Replace(teksti, @"vana", "uusi");
+Console.WriteLine(u

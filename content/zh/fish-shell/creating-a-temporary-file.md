@@ -1,48 +1,61 @@
 ---
 title:    "Fish Shell: 创建临时文件"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用Fish Shell创建临时文件？
+## 为什么
 
-在编程中，我们经常需要处理各种类型的文件。有时候，我们需要创建临时文件来存储临时数据，以便在程序执行过程中使用。Fish Shell提供了一种简单而有效的方法来创建临时文件，使编程变得更加高效和简便。
+在编程的过程中，我们经常需要在临时文件中保存数据。这样可以帮助我们更有效地处理数据，并且可以在编程完成后自动删除这些临时文件，避免占用硬盘空间。
 
-## 如何使用Fish Shell创建临时文件？
+## 如何操作
 
-使用Fish Shell创建临时文件非常简单。只需按照以下几个步骤：
+为了在Fish Shell中创建临时文件，我们可以使用`mktemp`命令。下面是一个示例代码，展示如何使用该命令创建一个临时文件，并将数据写入其中：
 
-1. 在终端中打开Fish Shell。
-2. 使用“touch”命令创建一个空文件，例如：`touch temp.txt`。
-3. 使用“cat”命令将数据写入临时文件中，例如：`cat > temp.txt`。
-4. 输入想要写入临时文件的数据，然后按下“Ctrl + D”保存。
-5. 使用“rm”命令删除临时文件，例如：`rm temp.txt`。
+```Fish Shell
+# 创建临时文件
+set temp_file (mktemp)
 
-下面是一个示例代码，展示了如何使用Fish Shell创建临时文件并将数据写入其中：
-
-```
-Fish Shell中的临时文件示例：
-touch temp.txt
-cat > temp.txt
-这是临时文件中的数据
-Ctrl + D
-rm temp.txt
+# 将数据写入临时文件
+echo "这是一行数据" > $temp_file
 ```
 
-运行上述代码后，您将在当前工作目录下创建一个名为“temp.txt”的临时文件，并将数据“这是临时文件中的数据”写入其中。
+接下来，我们可以使用`cat`命令来查看临时文件中的数据：
 
-## 深入了解创建临时文件
+```Fish Shell
+cat $temp_file
+```
 
-除了上述简单的方法外，Fish Shell还提供了更多高级功能来创建临时文件。您可以使用“mktemp”命令来生成唯一的临时文件名，以防止文件名冲突。您也可以使用“tempfile”命令来生成更高级的临时文件名，包括路径和文件扩展名。
+输出结果应该是：
 
-另外，Fish Shell还提供了一些选项来控制临时文件的权限和位置。您可以使用“umask”命令来设置临时文件的默认权限，或使用“TMPDIR”变量来设置临时文件的默认位置。
+```
+这是一行数据
+```
 
-总的来说，Fish Shell为我们提供了一个简单而强大的工具来创建临时文件，使我们的编程工作变得更加高效和便捷。
+最后，我们可以使用`rm`命令来删除这个临时文件：
+
+```Fish Shell
+rm $temp_file
+```
+
+这样，我们就成功创建并删除了一个临时文件。
+
+## 深入了解
+
+除了`mktemp`命令之外，还有其他方法来在Fish Shell中创建临时文件。例如，使用`tempfile`命令可以直接在当前目录中创建一个临时文件，而不需要指定文件名。此外，我们还可以使用`mktemp -d`命令来创建一个临时目录，用来存放多个临时文件。
+
+另外，对于不同的操作系统，创建临时文件的路径也可能不同。如果需要跨平台使用，可以使用`os.tmpname()`函数来获取系统临时文件夹的路径。
 
 ## 参考链接
 
-- [Fish Shell官方文档](https://fishshell.com/docs)
-- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
-- [Fish Shell教程](https://www.tutorialspoint.com/unix_commands/fish.htm)
-- [Fish Shell创建临时文件教程](https://techoverflow.net/2018/02/24/how-to-create-a-temporary-file-in-fish-shell/)
+- [Fish Shell官方文档](https://fishshell.com/docs/current/)
+- [Linux手动创建临时文件](https://www.linuxidc.com/Linux/2019-08/159538.htm)
+- [Bash和Fish Shell中的临时文件管理](https://blog.csdn.net/rainbow_eagle/article/details/82765276)
+
+## 参见
+
+- [Fish Shell教程](https://www.purescript.org/learn/fish-shell.html)
+- [如何在Fish Shell中获取命令行参数](https://www.jianshu.com/p/ce8a3c7f3ebf)
+- [使用Fish Shell自定义命令提示符](https://brokenglass.io/tech-tutorials/fish-shell-prompt.html)

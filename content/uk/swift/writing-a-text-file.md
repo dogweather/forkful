@@ -1,44 +1,51 @@
 ---
 title:    "Swift: Написання текстового файлу"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Для чого
+## Чому 
 
-Написання текстового файлу є важливою складовою програмування на Swift. Це дозволяє зберігати дані, які можна використовувати в подальшій роботі з програмою.
+Ця стаття присвячена написанню текстового файлу в мові програмування Swift. Якщо ви хочете зберігати інформацію чи даниі в текстовому форматі, наприклад, список задач, то ця техніка буде корисною для вас.
 
-## Як це зробити
+## Як написати текстовий файл в Swift
 
-Для написання текстового файлу потрібно використовувати функцію `write(to: atomically: encoding:)`, де `to` - це шлях до файлу, `atomically` - вказує, чи файл має бути збережений атомарно, `encoding` - кодування, яке буде використовуватись для збереження тексту.
-
-Давайте розглянемо приклад коду, який демонструє написання текстового файлу:
+Для написання текстового файлу використовується спеціальний клас "FileHandle". Нижче наведено приклад коду та його вихідного результату:
 
 ```Swift
-let content = "Привіт! Це мій перший текстовий файл."
-let fileURL = URL(fileURLWithPath: "/Users/User/Documents/file.txt")
-    
+let fileName = "todoList.txt"
+let fileURL = DocumentManager.getDocumentsDirectory().appendingPathComponent(fileName)
+
+let todoList = """
+1. Зробити закупки
+2. Забронювати білети на поїздку
+3. Підготувати презентацію
+"""
+
 do {
-    try content.write(to: fileURL, atomically: false, encoding: .utf8)
-    print("Файл успішно збережено.")
+   try todoList.write(toFile: fileURL, atomically: true, encoding: .utf8)
+   print("Текстовий файл був успішно записано!")
 } catch {
-    print("Помилка при збереженні файлу: \(error)")
+    print("Помилка при записуванні файлу: \(error)")
 }
 ```
 
-Після виконання цього коду, у вашій папці "Documents" з'явиться файл з назвою "file.txt" і текстом "Привіт! Це мій перший текстовий файл.".
+Результат виконання цього коду буде текстовий файл з назвою "todoList.txt" з наступним вмістом:
 
-## Глибоке занурення
+```
+1. Зробити закупки
+2. Забронювати білети на поїздку
+3. Підготувати презентацію
+```
 
-Є декілька речей, про які варто пам'ятати при написанні текстових файлів на Swift:
+## Глибока аналітика написання текстових файлів
 
-- Функція `write(to: atomically: encoding:)` використовує блокування файлів, тому краще використовувати її у фоновому потоці.
-- Якщо ви хочете додати текст до вже існуючого файлу, вам потрібно використовувати функцію `append()`, а не `write(to:)`.
-- Для отримання тексту з текстового файлу використовуйте функцію `String(contentsOf: encoding:)`.
+Тепер, коли ви знаєте як написати текстовий файл в Swift, давайте розглянемо деякі глибші знання про цей процес. Перш за все, важливо знати, що ви можете використовувати різні кодування для збереження текстових файлів, наш приклад використовував `.utf8`. Також, важливо зазначити, що ви можете використовувати і інші методи запису до файлу, наприклад "append" чи "write(contentsOf:)".
 
-## Дивись також
+## Дивитися також
 
-- [Документація Swift по роботі з файлами](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID381)
-- [Стаття про роботу з текстовими файлами на Swift](https://www.hackingwithswift.com/example-code/strings/how-to-save-a-string-to-a-file-on-disk-with-write)
-- [Створення файлів на Swift](https://learnappmaking.com/write-text-files-swift-string-contents/)
+  - [Офіційна документація Apple про файловий менеджмент в Swift](https://developer.apple.com/documentation/foundation/file_management)
+  - [Стаття на Medium про роботу з файлами в Swift](https://medium.com/ios-os-x-development/ios-swift-read-write-text-file-12b4d686b3fa) 
+  - [Туторіал з YouTube про роботу зі зчитуванням та записом файлів в Swift](https://www.youtube.com/watch?v=lDk1Sgqbwjg)

@@ -1,52 +1,52 @@
 ---
-title:    "C: Att få nuvarande datum"
+title:    "C: Att få aktuellt datum"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna hämta aktuellt datum är en viktig del av många programmeringsprojekt. Genom att inkludera aktuellt datum i ditt program kan du till exempel analysera data över en viss tidsperiod eller visa användare när programmet senast har uppdaterats.
+Att kunna hämta och använda den aktuella datumet är en viktig del av många C-programmering projekt. Oavsett om det är för att visa datumet i en applikation eller för att utföra vissa beräkningar, är det viktigt att veta hur man gör detta korrekt. Läs vidare för att lära dig hur du kan implementera detta i dina C-program.
 
-## Hur man gör det
+## Hur man gör
 
-För att hämta aktuellt datum i C behöver vi använda standardbiblioteket `<time.h>`. Denna innehåller en mängd funktioner för att hantera tids- och datumdata.
-
-Vi kan börja genom att deklarera en variabel av typen `time_t`. Detta är en typedef för en integer-typ som representerar tiden sedan "epoch" (1 januari 1970). Vi kallar sedan på `time()`-funktionen, som tar emot en pekare till en `time_t`-variabel som parameter och fyller den med aktuell tid.
+För att hämta det aktuella datumet i C-programmering, används funktionen "time.h". Det finns två steg som behövs för att implementera detta: deklarera variabeln och anropa funktionen. Här är ett exempel på C-kod för att hämta det aktuella datumet:
 
 ```C
-time_t current_time;
-time(&current_time);
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    // Deklarera variabeln för aktuellt datum
+    time_t rawtime;
+    struct tm * timeinfo;
+
+    // Anropa funktionen för att hämta tiden
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    // Skriv ut tiden i läsbar format
+    printf("Aktuellt datum är: %s", asctime(timeinfo));
+
+    return 0;
+}
 ```
 
-Vi kan sedan använda `localtime()`-funktionen för att konvertera `time_t`-variabeln till en `struct tm` som innehåller separata fält för år, månad, dag osv.
+### Utmatning
 
-```C
-struct tm *local_time = localtime(&current_time);
-
-//Vi kan nu hämta det nuvarande året, månaden och dagen från structen och skriva ut det.
-printf("Aktuellt datum: %d-%d-%d", local_time->tm_year + 1900, local_time->tm_mon + 1, local_time->tm_mday);
 ```
-
-Output: Aktuellt datum: 2019-11-05
-
-För att få mer precision kan vi också använda funktionen `gettimeofday()`, som ger oss aktuell tid i mikrosekunder.
-
-```C
-struct timeval current_time;
-gettimeofday(&current_time, NULL);
-printf("Aktuell tid: %ld mikrosekunder", current_time.tv_usec);
+ Aktuellt datum är: Sat May 8 12:21:05 2021
 ```
-
-Output: Aktuell tid: 631724 mikrosekunder
 
 ## Djupdykning
+Nu när vi har sett hur man hämtar det aktuella datumet i C, låt oss ta en närmare titt på funktionen "time.h". Denna funktion innehåller flera andra användbara funktioner för datum och tid, inklusive "localtime" som används för att konvertera det råa datumet till ett mer läsbart format.
 
-För de som är intresserade av mer avancerad tidshantering finns det också möjlighet att använda funktionen `strftime()` för att konvertera tiden till en önskad strängformat. Det finns också möjlighet att använda `mktime()`-funktionen för att skapa en `time_t`-variabel från en `struct tm` med användardefinierade värden.
+En viktig sak att notera är att funktionen "time()" returnerar tiden i antal sekunder sedan 1 januari 1970. För att konvertera detta till ett mer meningsfullt format, används "localtime()" för att dela upp den totala tiden i timmar, minuter, sekunder och datum. Om du vill ha mer detaljerad information om dessa funktioner och hur man använder dem, kan du kolla in "time.h" dokumentationen.
 
-Se även
+## Se även
 
-- Mer information om `<time.h>`: https://www.tutorialspoint.com/c_standard_library/time_h.htm
-- Utförlig dokumentation om time.h-funktionerna: https://linux.die.net/man/3/time
-- En praktisk guide för att hantera tid i C: https://fresh2refresh.com/c-programming-tutorial/c-date-time/
+- [C Time Library Documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C Programming Tutorial: Date and Time](https://www.cprogramming.com/tutorial/c/lesson15.html)
+- [GeeksforGeeks: Date and Time functions in C with Examples](https://www.geeksforgeeks.org/date-time-functions-in-c-with-examples/)

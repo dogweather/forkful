@@ -1,44 +1,56 @@
 ---
 title:    "Ruby: Användning av reguljära uttryck"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför använda reguljära uttryck inom Ruby?
 
-I programmering, speciellt i Ruby, finns det ofta problem som kan lösas med hjälp av reguljära uttryck. Reguljära uttryck är ett sätt att söka och manipulera textsträngar på ett effektivt sätt. Detta kan vara en viktig färdighet att ha som programmerare, eftersom det kan hjälpa dig att skapa mer robusta och effektiva program.
+Att lära sig använda reguljära uttryck kan vara en kraftfull verktyg för att göra mer avancerad strängmatchning i Ruby. Det kan hjälpa dig att hitta mönster, ersätta delar av strängar och mycket mer. Det är också en vanlig teknik som används inom andra programmeringsspråk, vilket gör det användbart att kunna inom flera olika områden.
 
-## Så här gör du
+## Hur man använder reguljära uttryck inom Ruby
 
-För att använda reguljära uttryck i Ruby, måste du först importera "regexp" biblioteket genom att använda "require" kommandot. Sedan kan du skapa en ny instans av "Regexp" klassen och använda dess metoder för att söka eller matcha textsträngar. Här är ett exempel på hur du kan använda reguljära uttryck för att söka efter ett visst mönster i en textsträng:
-
-```Ruby
-req_str = "Hej där! Jag heter Ruby och jag älskar programmering."
-regex = Regexp.new("Ruby")
-resultat = regex.match(req_str)
-puts resultat[0] # output: "Ruby"
-```
-
-I exemplet ovan skapas en ny instans av "Regexp" klassen med hjälp av det sökta mönstret "Ruby". Metoden "match" används sedan för att hitta matchningar i textsträngen "req_str". Den första matchningen som hittas skrivs ut som resultat.
-
-## Djupdykning
-
-Reguljära uttryck kan uttryckas på olika sätt och använda olika syntaxer. Det finns också en mängd olika metoder som kan användas för att manipulera och extrahera information från textsträngar. Det är viktigt att lära sig grundläggande reguljära uttryckssyntaxer och öva för att bli bekväm med att använda dem.
-
-En annan användbar funktion av reguljära uttryck är att ersätta text i en sträng. Till exempel, om du vill byta ut ett visst ord i en mening, kan du använda metoden "gsub" för att byta ut det specifika ordet med ett annat ord. Här är ett exempel:
+För att använda reguljära uttryck inom Ruby behöver du en förståelse för olika metakaraktärer och hur man kombinerar dem för att skapa mönster. Här är ett enkelt exempel på hur man hittar ett specifikt ord i en sträng och ersätter det:
 
 ```Ruby
-str = "Jag älskar att lära mig nya programmeringsspråk."
-regex = Regexp.new("programmeringsspråk")
-str.gsub(regex, "kodningsspråk")
-puts str # output: "Jag älskar att lära mig nya kodningsspråk."
+str = "Hej, mitt namn är Ruby!"
+str.gsub!(/Ruby/, "Python")
+puts str
 ```
 
-Läs mer om reguljära uttryck i Ruby genom att kolla in dokumentationen och öva med fler exempel.
+Detta kommer att ge utmatningen "Hej, mitt namn är Python!" Den första delen av koden skapar en sträng som vi vill utföra matchning och ersättning på. Sedan använder vi `gsub!` metoden för att ersätta alla instanser av "Ruby" med "Python". Om vi istället bara ville byta ut den första instansen av "Ruby" kan vi använda `sub!` istället.
+
+Reguljära uttryck kan också användas för att hitta mönster i strängar, till exempel om en sträng innehåller ett visst antal siffror:
+
+```Ruby
+str = "Du har fått 5 nya meddelanden."
+if str[/(\d+) nya/]
+  puts "Det finns #{$1} nya meddelanden."
+end
+```
+
+Detta kommer att ge utmatningen "Det finns 5 nya meddelanden." Här använder vi `[]` metoden för att matcha strängen mot vårt mönster, som är ett eller flera siffror (`\d+`) följt av "nya". Den del av strängen som matchas sparas sedan i variabeln `$1`.
+
+## Djupdykning i reguljära uttryck
+
+Det finns många olika metakaraktärer och mönster som kan användas i reguljära uttryck, vilket gör dem väldigt mångsidiga. Här är några exempel på metakaraktärer som kan vara användbara att känna till:
+
+- `.` - matchar ett enda tecken
+- `*` - matchar noll eller flera instanser av det föregående mönstret
+- `+` - matchar en eller flera instanser av det föregående mönstret
+- `\d` - matchar en siffra
+- `^` - matchar början av en sträng
+- `$` - matchar slutet av en sträng
+- `()` - skapar en grupp för att spara matchade delar av strängen
+
+Det finns också olika modifierare som kan användas för att göra reguljära uttryck mer flexibla, till exempel `i` för att ignorera skiftlägeskänslighet och `m` för flerradsmatchning.
+
+Det finns mycket mer att lära sig om reguljära uttryck, men dessa grundläggande exempel bör hjälpa dig att komma igång. Tveka inte att utforska fler mönster och experimentera med dem för att få en ännu bättre förståelse för hur de fungerar.
 
 ## Se även
 
-- [Regexp klassen i Ruby dokumentationen](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [En grundläggande guide till reguljära uttryck i Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Öva reguljära uttryck med RegexOne](https://regexone.com/)
+- [Reguljära uttryck i Ruby](https://ruby-doc.org/core-2.7.2/Regexp.html)
+- [Reguljära uttryck Cheat Sheet](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Utmärkt Regex](https://www.excel-egenvard.com/) (en sida som hjälper till att visualisera och testa reguljära uttryck)

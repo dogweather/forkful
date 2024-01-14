@@ -1,67 +1,46 @@
 ---
-title:    "C: 텍스트 찾기 및 대체하기"
+title:    "C: 텍스트 검색과 대체"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 텍스트 검색 및 대체에 참여하는 이유를 설명하는 단락입니다.
+### 왜: 텍스트를 검색하고 대체하는 것에 참여하는 이유 
+텍스트 검색 및 교체는 프로그래머에게 매우 중요한 작업이다. 이를테면, 일반적으로 문제를 해결하거나 코드를 개선하는데에 사용된다. 따라서 이 작업을 효과적으로 수행하는 방법을 배우는 것은 매우 중요하다.
 
-C 프로그래밍은 컴퓨터 과학 분야에서 가장 널리 사용되는 프로그래밍 언어 중 하나입니다. 이 언어를 사용하면 파일에서 특정 문자열을 검색하고 새로운 문자열로 대체하는 기능을 쉽게 수행할 수 있습니다. 이러한 기능은 일상적으로 발생하는 문서 작업이나 코드 작성에서 매우 유용합니다.
+### 하는 방법: C 코드 블록 내에 코딩 예제와 샘플 출력 
+우리는 먼저 텍스트 검색 및 교체를 위해 가장 일반적으로 사용되는 두 가지 함수인 "strstr()"와 "strreplace()"를 살펴볼 것이다. 아래는 이 두 함수가 어떻게 작동하는지 보여주는 예제 코드이다.
 
-## 방법: 코드 블록 "```C ... ```" 내에 코딩 예제 및 샘플 출력을 포함합니다.
-
-우선, 텍스트 검색 및 대체 프로그램에서 가장 중요한 기능은 파일에서 특정 문자열을 찾는 것입니다. 이는 파일 내의 모든 문자열을 비교해야 함을 의미합니다. 이를 위해 우리는 파일을 열고 한 번에 한 줄씩 읽어 검색하며, 일치하는 문자열을 찾으면 새로운 문자열로 대체합니다. 이러한 기능을 가진 C 함수는 `fopen()` 과 `fgets()` 를 사용하여 파일을 열고 읽는 방법을 제공합니다.
-
-```C 
+```C
 #include <stdio.h>
 #include <string.h>
 
-// 파일에서 특정 문자열 찾기
-void searchAndReplace(FILE *file, char *search, char *replace){
-    char line[1000]; //줄의 최대 길이를 1000으로 가정
-    
-    while(fgets(line, 1000, file) != NULL){ //파일에서 한 줄씩 읽음
-        if(strstr(line, search) != NULL){ //일치하는 문자열 찾음
-            //일치하는 문자열을 새로운 문자열로 대체
-            char *pos = strstr(line, search); 
-            strcpy(pos, replace);
-            fputs(line, stdout); //대체된 문자열 출력
-        }
-    }
-}
+int main() {
+  char str1[] = "Hello, world!";
+  char str2[] = "world";
+  char newStr[] = "everyone";
 
-int main(){
-    FILE *file;
-    char search[] = "Hello";
-    char replace[] = "안녕하세요";
-    
-    file = fopen("input.txt", "r+"); //파일 열기
-    
-    if(file == NULL){ //파일 열기 실패시 오류 메세지 출력
-        perror("파일 열기 실패");
-        return 1;
-    }
-    
-    searchAndReplace(file, search, replace); //텍스트 검색 및 대체 함수 호출
-    
-    fclose(file); //파일 닫기
-    
-    return 0;
+  char *ptr = strstr(str1, str2);
+  if (ptr) {
+    strcpy(ptr, newStr);
+  }
+
+  printf("%s", str1);
+  return 0;
 }
 ```
 
-위의 코드는 `searchAndReplace()` 함수를 사용하여 파일 내에서 "Hello"라는 문자열을 찾아서 "안녕하세요"로 대체하는 예제입니다. 이 코드를 실행하면 아래와 같은 출력이 나옵니다.
+위 코드는 "strstr()" 함수를 사용하여 문자열에서 "world"를 검색하고, 만약 찾았다면 "strreplace()" 함수를 사용하여 "world"를 "everyone"으로 대체한다. 그리고 마지막으로 변경된 문자열을 출력한다.
 
-```
-안녕하세요, 오늘은 C 프로그래밍에 대해 배우고 있어요!
-오늘은 C 프로그래밍에 대해 배우고 있어요! 안녕하세요!
-```
+출력결과: Hello, everyone!
 
-이와 같이 파일 내의 모든 일치하는 문자열이 대체되었음을 확인할 수 있습니다.
+### 심층 분석: 텍스트 검색과 교체의 깊은 이해 
+텍스트 검색과 교체는 프로그래밍에서 매우 중요한 기술 중 하나이다. 하지만 실제로 이를 효과적으로 사용하기 위해서는 조금 더 깊은 이해가 필요하다. 예를 들어 왜 "strstr()" 함수에서 두 번째 인자로 전달된 문자열은 기존 문자열에 포함된 문자열이어야 하는지, 혹은 왜 "strcpy()" 함수를 사용하여 문자열을 복사하는지 등의 질문에 대한 답을 찾아보는 것이 중요하다.
 
-## 깊이 파고들기: 텍스트 검색 및 대체에 대한 깊이 있는 정보
+마지막으로, 텍스트 검색 및 교체 기술을 사용하여 작성한 코드는 매우 유용한 도구가 될 수 있다. 하지만 이를 사용할 때에는 어떤 입력값을 받는지, 어떤 예외 상황을 처리할 수 있는지 등에 대한 고려가 필요하다.
 
-텍스트 검색 및 대체는 프로그래밍에서 매우 기본적이고 중요한 기능입니다. 이를 통해 우리는 문자열을 더 쉽게 다룰 수 있으며, 코드 작성과 파일 처리를 훨씬 효율적으로 만들 수 있습니다.
-
-하지만 이러한 기능을 사용할 때 주의해야 할 문제점도 있습니다. 예를 들어, 대체하는 문자열이 원래 문자열보다 길 경우 메모리 문제가 발생할 수 있습니다. 이 문제를 해결하기 위해서는 올바른 크기의 메모리를 할당
+### 관련 링크 
+- [C Programming Tutorial - Searching and Replacing Strings](https://www.programiz.com/c-programming/library-function/string.h/strstr)
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [String Manipulation in C](https://www.geeksforgeeks.org/string-manipulations-in-c-with-examples/)

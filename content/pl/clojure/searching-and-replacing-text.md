@@ -1,56 +1,51 @@
 ---
-title:    "Clojure: Wyszukiwanie i zastępowanie tekstu"
+title:    "Clojure: Wyszukiwanie i zamiana tekstu"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami podczas pisania kodu, potrzebujemy szybkiego sposobu na zmianę tekstu w naszym kodzie. Może to być konieczne, jeśli zmieniliśmy nazwę zmiennej lub funkcji, lub chcemy zmienić pewne słowa na inne. Szukanie i zastępowanie tekstu może znacznie przyspieszyć ten proces, a w Clojure jest to proste do wykonania.
+Manipulowanie tekstem jest nieodłączną częścią programowania. Wiedza na temat wyszukiwania i zamiany tekstu jest kluczowa dla każdego programisty, który chce być efektywny w swojej pracy. W tym artykule dowiesz się, jak wykorzystać funkcje języka Clojure do efektywnego wyszukiwania i zamiany tekstu.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-W Clojure możemy użyć funkcji `clojure.string/replace` do wyszukania i zastąpienia tekstu. Podajemy tej funkcji trzy argumenty: string, który chcemy zmodyfikować, wyrażenie regularne (regular expression), które oznacza tekst, który chcemy wyszukać, oraz string, którym chcemy go zastąpić.
+W Clojure istnieje wiele sposobów na wyszukiwanie i zamianę tekstu. Kilka przykładowych metod pokazano poniżej:
 
-Niech naszym przykładem będzie zmiana nazwy zmiennej `liczba` na `numer` w poniższym kodzie:
+### Wyszukiwanie i zamiana tekstu w ciągu znaków
 
-```Clojure
-(def liczba 10)
+```
+Clojure (str/replace "Cześć, jak się masz?" #"masz" "ma się")
 ```
 
-Użyjemy funkcji `clojure.string/replace`, aby zamienić `liczba` na `numer`:
+Wynik: "Cześć, jak się ma?"
 
-```Clojure
-(ns replace-example.core
-  (:require [clojure.string :as str]))
+### Wyszukiwanie i zamiana tekstu w liście
 
-(def liczba 10)
-(str/replace "liczba" #"liczba" "numer")
-=> "numer"
+```
+Clojure (map #(str/replace % #"w" "ww") ["program" "kod" "komputery"])
 ```
 
-Jak widać, funkcja `clojure.string/replace` zwraca nowy string z zastąpionym tekstem.
+Wynik: ("programm" "kodd" "kompwwutery")
 
-## Głębsze zanurzenie
+### Wyszukiwanie i zamiana tekstu w mapie
 
-W powyższym przykładzie użyliśmy wyrażenia regularnego `"liczba"` jako tekstu, który chcemy zastąpić. Jednakże, wyrażenia regularne dają nam możliwość wykonywania bardziej zaawansowanych operacji wyszukania i zastępowania tekstu.
-
-Na przykład, jeśli chcemy zastąpić wszelkie wystąpienia liczby w naszym stringu na `numer`, możemy użyć wyrażenia regularnego `"[0-9]+"`. Fragment `"[0-9]+"` oznacza, że chcemy dopasować wszystkie cyfry w tekście, a `+` oznacza, że dopasowanie może wystąpić wielokrotnie.
-
-Zastosowanie tego wyrażenia regularnego wyglądać będzie następująco:
-
-```Clojure
-(def liczba 10)
-(str/replace "liczba 10" #"[0-9]+" "numer")
-=> "liczba numer"
+```
+Clojure (apply str/replace {"a" "b" "hello" "hi"} ["a hello" "b hello"])
 ```
 
-Widzimy tu, że wszystkie wystąpienia `10` zostały zastąpione przez `numer`.
+Wynik: "b hi"
 
-## Zobacz również
+## Głębsza Analiza
 
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych lub funkcji `clojure.string/replace`, możesz zapoznać się z poniższymi linkami:
+W przypadku bardziej złożonych zadań wyszukiwania i zamiany tekstu, funkcja `str/replace` może okazać się niewystarczająca. W takiej sytuacji warto zapoznać się z funkcjami takimi jak `re-seq`, `re-seq*` czy `re-find`, które pozwalają na bardziej precyzyjne wyszukiwanie i manipulowanie tekstu.
 
-- [Dokumentacja wyrażeń regularnych](https://regexr.com/)
-- [Dokumentacja funkcji clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
+Inną przydatną techniką jest wykorzystanie wyrażeń regularnych (ang. regular expressions), które pozwalają na bardzo dokładne określenie wzorców tekstu do wyszukania i zamiany. Dzięki nim można wykonać zaawansowane operacje, np. zmienić wielkość liter w całym tekście lub wyodrębnić określone elementy z ciągu znaków.
+
+## Zobacz Również
+
+- Oficjalna dokumentacja Clojure dotycząca wyszukiwania i zamiany tekstu: https://clojure.org/api/cheatsheet#re
+- Przewodnik po wyrażeniach regularnych w języku Clojure: https://clojuredocs.org/clojure.core/re-matches
+- Przykłady wykorzystania funkcji `re-find` i `re-seq` w Clojure: https://clojureverse.org/t/regular-expressions-regexp-in-clojure/4241

@@ -1,43 +1,45 @@
 ---
 title:    "Clojure: Skriver til standardfeil"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive til standard error kan være nyttig når du trenger å logge feil eller uventet oppførsel i koden din. Det lar deg skrive til en egen utgavestrøm som skiller seg fra standard utgang, og hjelper deg med å spore ned feil og feil i koden din.
+Når vi koder i Clojure, er det viktig å forstå hvordan man håndterer feil og unntak i programmet. Skriving til standard feil-output, eller standard error, er en vanlig metode for å informere om feil og utvikle feilsøkingsstrategier.
 
-## Slik gjør du det
+# Hvordan
 
-Å skrive til standard error i Clojure er enkelt. Du kan bruke funksjonen `println` med `>>` operatøren:
-
-```Clojure
-(println >> "Dette vil skrive til standard error")
-```
-
-Når du kjører koden din, vil teksten "Dette vil skrive til standard error" bli skrevet ut i din terminal eller konsoll, og ikke i din vanlige utgangsstrøm. Du kan også kombinere `println` med `err` funksjonen som refererer til standard error-strømmen:
+For å skrive til standard error i Clojure, kan vi bruke funksjonen `println` med `System/err` som argument. For eksempel:
 
 ```Clojure
-(println (err "Dette vil også skrive til standard error"))
+(println (System/err "Dette er en feilmelding."))
 ```
 
-Dette vil gi samme resultat som det første eksemplet.
-
-## Dypdykk
-
-For å få enda mer kontroll over skriving til standard error, kan du bruke `with-out-str` og `println-str` funksjonene sammen. `with-out-str` lar deg omdirigere utgangen din til en streng, i stedet for å skrive den ut i terminalen. Deretter kan du bruke `println-str` til å skrive ut strengen til standard error-strømmen:
+Output vil se slik ut:
 
 ```Clojure
-(with-out-str
-  (println-str "Dette vil skrives til standard error"))
+java.lang.Exception Dette er en feilmelding.
 ```
 
-Dette vil også omdirigere teksten til standard error-strømmen, noe som kan være nyttig hvis du ønsker å behandle utgangen på en annen måte. 
+Her blir feilmeldingen vår skrevet til standard error-output, og kan enkelt identifiseres ved å ha `java.lang.Exception` foran selve meldingen. Dette er nyttig for feilsøking, da vi kan se direkte i konsollen om det har oppstått noen uventede feil i koden vår.
 
-## Se også
+# Dypdykk
 
-- Clojure dokumentasjon for standard error: https://clojure.org/reference/java_interop#_standard_error
-- En tutorial om å logge i Clojure: https://lispcast.com/loggin-in-clojure/
-- En artikkel om feilhåndtering i Clojure: https://www.baeldung.com/clojure-error-handling
+Når vi skriver til standard error i Clojure, kan det også være nyttig å bruke makroen `with-out-str`. Denne makroen lar oss fange all output som normalt ville blitt skrevet til standard out, og isteden skrive det til en streng. Dette kan være nyttig når vi vil logge feilmeldinger til en fil, istedenfor å utskrive dem direkte i konsollen.
+
+For eksempel:
+
+```Clojure
+(with-out-str (println (System/err "Dette er en feilmelding.")))
+```
+
+Her vil feilmeldingen bli fanget og lagret i en streng, som vi kan håndtere på ønsket måte.
+
+# Se Også
+
+- [Offisiell Clojure Dokumentasjon](https://clojure.org/reference/java_interop)
+- [Why and How to Log Errors in Your Clojure Applications](https://www.luminusweb.net/docs/logging.md)
+- [Unleash the Power of Logging with Clojure](https://medium.com/@osteele/unleash-the-power-of-logging-with-clojure-8f4c66c9226a)

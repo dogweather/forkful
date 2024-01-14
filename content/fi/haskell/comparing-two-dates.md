@@ -1,46 +1,45 @@
 ---
-title:    "Haskell: Kahden päivämäärän vertailu"
+title:    "Haskell: Kahta päivämäärää vertailemalla"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahden päivämäärän välillä?
+# Miksi vertailla kahta päivämäärää?
 
-Päivämäärien vertaileminen on tärkeä osa monia ohjelmointitehtäviä, esimerkiksi tapahtumien järjestämistä tai aikapohjaista laskentaa. Tällaisissa tilanteissa on tärkeää pystyä vertailemaan kahta eri päivämäärää ja selvittämään, kumpi niistä on aikaisempi tai myöhempi. Onneksi Haskell tarjoaa helpon ja tehokkaan tavan käsitellä päivämääriä ja tehdä niiden vertailua.
+Päivämäärien vertaileminen on tärkeä osa ohjelmointia monessa tilanteessa. Se auttaa meitä muun muassa löytämään tietyn päivämäärän välissä olevia päiviä, vertailemaan tapahtumien aikajärjestystä ja laskemaan päivämäärien välisiä eroja. Haskell tarjoaa helpon ja tehokkaan tavan vertailla päivämääriä.
 
-## Miten vertailla kahden päivämäärän välillä Haskellilla?
+# Miten vertailla kahta päivämäärää Haskellilla?
 
-Jos haluat vertailla kahden päivämäärän välillä Haskellissa, ensimmäinen askel on tuoda käyttöön `Data.Time` -moduuli. Tämä moduuli tarjoaa paljon hyödyllisiä toimintoja päivämäärien käsittelyyn ja vertailuun.
-
-Tässä on esimerkki kahden päivämäärän vertailusta:
+Haskellissa päivämäärien vertaileminen tapahtuu DateTime-moduulin avulla. Aloita tuomalla moduuli ohjelmaasi ```import Data.Time```. Seuraavaksi voit luoda kaksi päivämäärämuuttujaa käyttämällä ```getCurrentTime```-funktiota ja muuntamalla sen päivämääräksi käyttämällä ```utctDay```-funktiota.
 
 ```Haskell
-import Data.Time
-
--- Luodaan kaksi päivämäärää "2020-01-20" ja "2020-02-10"
-date1 = fromGregorian 2020 1 20
-date2 = fromGregorian 2020 2 10
-
--- Vertaillaan päivämääriä käyttämällä toimintoa "compare"
-date1 `compare` date2
--- Output: LT (eli "Less Than")
-
--- Voit myös käyttää muita vertailutoimintoja, kuten "==" tai ">"
-date1 == date2
--- Output: False
+currentDate <- getCurrentTime
+let date1 = utctDay currentDate
+let date2 = utctDay currentDate
 ```
 
-Kuten esimerkistä nähdään, päivämäärien vertailu tapahtuu käyttämällä `compare` -funktiota, joka palauttaa `Ordering` -tyypin tuloksen. Tämä tarkoittaa, että päivämäärien vertailu on toteutettu verrattavissa olevien arvojen vertailun periaatteella.
+Huomaa, että tässä esimerkissä molemmat päivämäärät on asetettu samaksi. Voit vaihdella niitä tarpeesi mukaan.
 
-## Syvemmälle päivämäärien vertailuun
+Seuraavaksi käytä ```compare```-funktiota vertailemaan päivämääriä keskenään. Tämä funktio palauttaa tilauksen mukaisen arvon, joka kertoo, kumpi päivämäärä on suurempi.
 
-Päivämäärien vertailu perustuu niiden lukuarvoihin, ja sitä voi tehdä myös yksityiskohtaisemmin käyttämällä `Day` -tyypin sisäisiä funktioita. Esimerkiksi päivämäärän päivä-, kuukausi- ja vuosiluvut voi hakea ja vertailla erikseen.
+```Haskell
+let result = compare date1 date2
+```
+Tämä tarkoittaa sitä, että jos ```result``` on ```LT```, ensimmäinen päivämäärä on pienempi kuin toinen. Jos se on ```GT```, ensimmäinen päivämäärä on suurempi kuin toinen ja jos se on ```EQ```, molemmat päivämäärät ovat samat.
 
-Lisäksi päivämäärät voi muuntaa eri muotoihin, kuten merkkijonoiksi tai Unix-timestampeiksi. Tämä tarjoaa lisää mahdollisuuksia päivämäärien käsittelyyn ja vertailuun erilaisissa ohjelmointitehtävissä.
+Voit myös käyttää muita vertailufunktioita, kuten ```subtractDays``` ja ```addDays``` laskeaksesi päivämäärien välisen eron.
 
-## Katso myös
+# Syvempää tietoa päivämäärien vertailusta
 
-- [Data.Time -moduulin dokumentaatio](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Haskellin vertailuoperaattorit](https://www.tutorialspoint.com/haskell/haskell_operators.htm)
-- [Ohio State Universityn opetusvideo päivämäärien vertailusta Haskellissa](https://www.youtube.com/watch?v=v0EzLE19AFM)
+Haskelliin sisältyy myös muita hyödyllisiä funktioita päivämäärien vertailuun, kuten ```diffDays```, joka laskee päivien määrän kahden päivämäärän välillä, sekä ```isSameDay```, joka tarkistaa ovatko kaksi päivämäärää samat.
+
+On myös tärkeää muistaa aina käsitellä päivämäärät oikeassa muodossa, jotta vertailu toimii oikein. Esimerkiksi, jos päivämäärä on merkitty muodossa ```YYYY-MM-DD```, se ei välttämättä toimi, jos käytät erilaista muotoa, kuten ```DD/MM/YYYY```.
+
+# Katso myös
+
+- Haskellin Datetime-moduuli: https://hackage.haskell.org/package/datetime
+- Ohjeet päivämäärien käsittelystä Haskelissa: https://wiki.haskell.org/Date_and_time
+
+Kiitos lukemisesta ja onnea päivämäärien vertailun kanssa!

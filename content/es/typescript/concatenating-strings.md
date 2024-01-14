@@ -1,75 +1,48 @@
 ---
 title:    "TypeScript: Uniendo cadenas de texto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-La concatenación de cadenas es una herramienta fundamental en la programación TypeScript. Permite combinar diferentes cadenas de caracteres en una sola, lo que facilita la manipulación y presentación de datos. En este artículo veremos cómo usar la concatenación de cadenas en TypeScript y por qué es importante para cualquier programador.
+En programación, a menudo necesitamos combinar diferentes cadenas de texto en una sola, ya sea para mostrar información al usuario, para construir una URL o simplemente para crear un mensaje personalizado. La concatenación de cadenas es una función esencial que nos permite unir de manera efectiva diferentes valores de cadena en una única variable. 
 
-## Cómo
+## Cómo hacerlo
 
-La concatenación de cadenas en TypeScript se logra utilizando el operador "+" entre dos o más cadenas de caracteres. Veamos un ejemplo:
+La concatenación de cadenas se puede realizar de varias maneras en TypeScript. Una forma es utilizando el operador '+' para unir dos cadenas juntas. Por ejemplo: 
 
 ```TypeScript
 let nombre = "María";
-let apellido = "García";
-
-console.log(nombre + " " + apellido);
+let apellido = "González";
+let nombreCompleto = nombre + " " + apellido;
+console.log(nombreCompleto); //Salida: María González
 ```
 
-Este código imprimirá en la consola la cadena "María García". Como se puede ver, el operador "+" se utiliza para unir las dos variables "nombre" y "apellido" y agregar un espacio entre ellas.
+También podemos utilizar el método `.concat()` que nos permite unir múltiples cadenas en una sola:
 
-También es posible concatenar más de dos cadenas de caracteres. Por ejemplo:
+```TypeScript
+let mensaje = "Hola" 
+let saludo = mensaje.concat(" ", nombre, "!");
+console.log(saludo); //Salida: Hola María!
+```
+
+Otra opción es utilizar plantillas de cadena (string templates) para concatenar fácilmente diferentes valores en una sola cadena:
 
 ```TypeScript
 let edad = 25;
-
-console.log(nombre + " " + apellido + " tiene " + edad + " años.");
+let texto = `Tengo ${edad} años`;
+console.log(texto); //Salida: Tengo 25 años
 ```
-
-Este código imprimirá la cadena "María García tiene 25 años." Como se puede observar, además de las variables "nombre" y "apellido", también se ha concatenado la cadena " tiene " y la variable "edad".
-
-Es importante tener en cuenta que el operador "+" no solo se usa para concatenar cadenas de caracteres, sino también para convertir otros tipos de datos en una cadena. Por ejemplo:
-
-```TypeScript
-let numero = 11;
-
-console.log("El número " + numero + " es mi favorito.");
-```
-
-Este código imprimirá la cadena "El número 11 es mi favorito." Se ha convertido la variable "numero", que es un número, en una cadena al usar el operador "+".
 
 ## Profundizando
 
-En TypeScript, al igual que en otros lenguajes de programación, las cadenas de caracteres pueden ser concatenadas de izquierda a derecha o de derecha a izquierda. Por ejemplo:
-
-```TypeScript
-console.log(nombre + apellido); // Imprime "MaríaGarcía"
-console.log(apellido + nombre); // Imprime "GarcíaMaría"
-```
-
-En el primer caso, se ha concatenado la cadena "nombre" a la cadena "apellido", mientras que en el segundo caso se ha concatenado "apellido" a "nombre". Esto puede ser útil si se desean invertir el orden en el que se presentan los datos.
-
-Además del operador "+", también existe el método "concat()" que puede ser utilizado para concatenar cadenas en TypeScript. Este método es útil si se tienen muchas cadenas a unir, ya que se pueden agregar todas en una sola llamada. Por ejemplo:
-
-```TypeScript
-let saludo = "¡Hola! ";
-let idioma = "español";
-
-console.log(saludo.concat("¿Cómo estás? ", "Hablas ", idioma, "?"));
-```
-
-Este código imprimirá la cadena "¡Hola! ¿Cómo estás? Hablas español?".
+Es importante tener en cuenta que al concatenar cadenas en TypeScript, el resultado será siempre una nueva cadena, ya que las cadenas son inmutables (no se pueden modificar). Esto significa que no podemos cambiar la cadena original sino que creamos una nueva cada vez que realizamos una concatenación. También es importante considerar el tipo de datos de las cadenas que estamos uniendo, ya que si uno de ellos es un número, se convertirá automáticamente a una cadena.
 
 ## Ver también
 
-Si quieres profundizar más en la concatenación de cadenas en TypeScript, te recomendamos visitar los siguientes enlaces:
-
-- [Documentación oficial de TypeScript sobre concatenación](https://www.typescriptlang.org/docs/handbook/declarations.html#string-concatenation)
-- [Tutorial de concatenación de cadenas en TypeScript](https://www.geeksforgeeks.org/concatenation-of-strings-in-typescript/)
-- [Ejemplo de uso de concatenación en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-typescript)
-
-¡Esperamos que este artículo te haya sido útil y te motive a seguir explorando las funcionalidades de TypeScript! Recuerda siempre practicar y experimentar por tu cuenta para mejorar tus habilidades de programación. ¡Hasta la próxima!
+- [Documentación oficial de TypeScript sobre concatenación de cadenas](https://www.typescriptlang.org/docs/handbook/strings.html#string-concatenation)
+- [Tutorial de concatenación de cadenas en TypeScript](https://riptutorial.com/es/typescript/example/8060/concatenando-cadenas)
+- [Ejemplos de plantillas de cadena en TypeScript](https://www.tutorialsteacher.com/typescript/typescript-string-template)

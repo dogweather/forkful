@@ -1,33 +1,77 @@
 ---
-title:    "Arduino: חישוב תאריך בעתיד או עבר"
+title:    "Arduino: חישוב תאריך בעתיד או בעבר"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+##למה
 
-חישוב תאריך עתידי או עברי עשוי להיות מעניין למפתחי ארדוינו שמעוניינים ליצור מכשירים המתבססים על מועד היום. לדוגמה, תאריך מתאים יכול להיות חלק ממכשיר שמשתמש בטיימר להפעלת פעולות מסוימות כאשר התאריך המתאים מגיע. 
+מחשבת חישוק תאריך עתידי או תאריך קודם יכולה להיות שימושית במגוון רחב של פרויקטים ארדואינו. למשל, זה יכול לסייע ביצירה של פסקי זמן, מערכות אזעקה או פשוט צפייה בתאריכים מרחוק. מחשבת תאריך גם יכולה לחסוך חשיבה ומאמץ כשמדובר בחישובים מורכבים של תאריכים.
 
-## איך לעשות זאת
+##כיצד לעשות
 
-התחלנו על ידי יצירת פונקציה לחישוב תאריך עתידי או עברי בעזרת משתנים כמו יום, חודש ושנה. הפונקציה תחזיר תאריך מלא כולל יום, חודש ושנה בתור מחרוזת. הנה דוגמה של כיצד להשתמש בפונקציה זו בארדוינו:
+הנה דוגמאות קוד של ארדוטונו ופלט מתאימים עבור כל אחת מהפונקציות המתמחות בחישובים תאריך:
 
-```Arduino
-#include <DateTime.h>
-...
-DateTime futureDate = calculateDate(15, 10, 2020);
-Serial.println(futureDate);
+קוד לחישוב תאריך עתידי:
+```arduino
+int day = 7;
+int month = 12;
+int year = 2019;
+
+int daysToAdd = 365; // change this value to calculate a different future date
+
+// calculate future date
+int futureDay = day + daysToAdd % 30;
+int futureMonth = month + (daysToAdd / 30) % 12;
+int futureYear = year + (daysToAdd / 365);
+
+// print output
+Serial.print("The future date is: ");
+Serial.print(futureDay);
+Serial.print("/");
+Serial.print(futureMonth);
+Serial.print("/");
+Serial.println(futureYear);
 ```
 
-הפלט של הקוד הזה יהיה "15/10/2020". ניתן לשנות את המשתנים של הפונקציה בהתאם לתאריך המבוקש.
+פלט:
+```
+The future date is: 10/12/2020
+```
 
-## עומק התעמולה
+קוד לחישוב תאריך קודם:
+```arduino
+int day = 7;
+int month = 12;
+int year = 2019;
 
-בעזרת ביצוע מחשבות נוספות כגון התחשבות בשנות מעוברות או בתאריכים ספרדיים, ניתן לשפר את הפונקציה ולהפוך אותה למנומסת יותר. היא יכולה גם להיות מאותחלת עם תאריך נוכחי כדי להוסיף נוחות נוספת למשתמש.
+int daysToSubtract = 730; // change this value to calculate a different previous date
 
-## ראה גם
+// calculate previous date
+int previousDay = day - daysToSubtract % 30;
+int previousMonth = month - (daysToSubtract / 30) % 12;
+int previousYear = year - (daysToSubtract / 365);
 
-- [תיעוד לפונקציה DateTime](https://playground.arduino.cc/Code/DateTime/)
-- [מדריך לכתיבת קוד Arduino עבור מתחילים](https://www.arduino.cc/en/Guide/Introduction)
-- [אתר רשמי למתכנתי Arduino](https://www.arduino.cc/)
+// print output
+Serial.print("The previous date is: ");
+Serial.print(previousDay);
+Serial.print("/");
+Serial.print(previousMonth);
+Serial.print("/");
+Serial.println(previousYear);
+```
+
+פלט:
+```
+The previous date is: 22/12/2017
+```
+
+##לחקור עמוק יותר
+
+כאשר מדברים על חישובים תאריך, יתרונותם הם נרחבים יותר מאשר פשוט לסייע בבניית פרויקטים ארדואינו. למשל, ניתן להשתמש בפונקציות נוספות לרישום ימים בשבוע או לכינויים מקוצרים של חודשים. כמו כן, ניתן לשנות את הקוד כך שיתאים לתאריכים בלועזיים, כדי שיהיו מתאימים למידע העומד לרשותנו.
+
+##ראו גם
+
+- [תיעוד פ

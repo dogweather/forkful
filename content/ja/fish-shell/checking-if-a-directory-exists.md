@@ -1,64 +1,43 @@
 ---
-title:    "Fish Shell: ディレクトリが存在するかを確認する"
+title:    "Fish Shell: ディレクトリが存在するかどうかをチェックする"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜディレクトリの存在を確認するのか
 
-ディレクトリが存在するかどうかを確認することの重要性について説明します。
+ディレクトリを所有するかどうかを確認することは、ファイルやスクリプトを作成する上で非常に便利です。例えば、特定の場所にファイルを保存する前に、そのディレクトリが存在するかどうかを確認することができます。また、プログラムやスクリプトの実行時に、必要なディレクトリが存在しない場合は、それを作成することもできます。このように、ディレクトリの存在を確認することで、ファイルやスクリプトの作成や実行時のエラーを防ぐことができます。
 
-## ハウツー
+## 方法
 
-```Fish Shell```を使用したコーディングの例と、実際の出力を以下に示します。
+ディレクトリの存在を確認する方法は、シェルスクリプトで非常に簡単です。Fish Shellを使用して、以下のようにコマンドを入力します。
 
-### 例1：ディレクトリが存在する場合
-
-```
-if test -d /path/to/directory
-  echo "ディレクトリが存在します。"
+```Fish Shell
+if test -d [ディレクトリ名]
+  echo "ディレクトリは存在します"
+else
+  echo "ディレクトリは存在しません"
 end
 ```
 
-#### 出力
+上記のコマンドを入力すると、指定したディレクトリが存在するかどうかに応じて、それに応じたメッセージが表示されます。
 
-```
-ディレクトリが存在します。
-```
+## 深い調査
 
-### 例2：ディレクトリが存在しない場合
-
-```
-if test -d /path/to/nonexistent/directory
-  echo "ディレクトリは存在しません。"
-end
-```
-
-#### 出力
-
-```
-ディレクトリは存在しません。
-```
-
-## ディープダイブ
-
-ディレクトリが存在するかどうかを確認するコマンドは、```test -d```です。これは、指定されたパスがディレクトリである場合にのみ真を返します。このコマンドは、スクリプト内で条件分岐を行うために使用されることが多いです。
-
-また、```set -x```を使用して実行されるコマンドを表示することもできます。これにより、コマンドがどのように実行されているかを確認することができます。
+ディレクトリを確認するためのコマンドは、実際には一連のステップを実行しています。まず、「test -d」コマンドを使用して、指定されたディレクトリが実際に存在するかどうかを確認します。存在する場合は「true」、存在しない場合は「false」を返します。そして、この結果をif文で評価し、存在する場合は「echo」コマンドでメッセージを表示します。これにより、ディレクトリの存在を確認することができます。
 
 ## 参考リンク
 
-- [Fish Shell documentaion on test command](https://fishshell.com/docs/current/cmds/test.html)
-- [An article on conditional statements in Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-use-conditionals-in-fish-shell-scripting)
-- [A helpful video tutorial on basic Fish Shell commands](https://www.youtube.com/watch?v=pSKs57QA9ck)
+本記事では、Fish Shellを使用してディレクトリの存在を確認する方法を説明しました。より詳しい情報が必要な場合は、以下のリンクを参考にしてください。
 
-## この記事について
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [Linuxでディレクトリが存在するかどうかを確認する方法](https://www.linuxtechi.com/check-directory-exists-not-linux/)
+- [Fish Shellを使ってみよう](https://gemechu.me/using-fish-shell-works-kubernetes)
+ 
+## 他に見る
 
-この記事では、```Fish Shell```を使用してディレクトリが存在するかどうかを確認する方法について学びました。これは、スクリプト内で条件分岐を行う際に非常に便利です。さらに詳細を知りたい場合は、参考リンクの記事やチュートリアルを参考にしてください。
-
-## 関連記事
-
-- [Fish Shellの使い方入門](https://techacademy.jp/magazine/57547)
-- [Fish Shellでの変数と環境変数の設定方法](https://qiita.com/masashi127/items/641ff5d65e217224a325)
-- [Fish Shellの便利なプラグインまとめ](https://repsy.info/archives/1088)
+ - [Fish Shellを使ったファイルの作業について学ぶ](https://www.digitalocean.com/community/tutorials/work-with-files-in-fish-shell)
+ - [フロー制御を学ぶためのFish Shellチュートリアル](https://dev.to/itaiferber/flow-control-in-fish-shell-3ko7)
+ - [Fish Shellでのディレクトリの扱い方について知る](https://fishshell.com/docs/current/tutorial.html#tut_the_pwd_and_cd_commands)

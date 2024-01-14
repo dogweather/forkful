@@ -1,37 +1,44 @@
 ---
-title:    "Elm: Suppression des caractères correspondant à un motif"
+title:    "Elm: Supprimer les caractères correspondants à un modèle"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi: 
+## Pourquoi
 
-Supprimer des caractères correspondant à un modèle peut être utile lors de la manipulation de chaînes de caractères en Elm. Cela peut faciliter la recherche et le remplacement de certaines parties d'une chaîne, ce qui peut être particulièrement utile lors de la manipulation de données provenant de sources externes.
+Il peut être utile de supprimer des caractères correspondants à un motif lors de la programmation en Elm pour plusieurs raisons. Cela peut simplifier le traitement de données en éliminant des informations inutiles, ou permettre de réaliser des opérations plus complexes sur une chaîne de caractères.
 
-## Comment faire:
+## Comment faire
 
-Pour supprimer des caractères correspondant à un modèle en Elm, vous pouvez utiliser la fonction `String.filter` et la fonction `String.contains` pour vérifier si un caractère correspond au modèle spécifié. Voici un exemple de code qui montre comment supprimer tous les caractères non numériques d'une chaîne:
+Pour supprimer des caractères correspondants à un motif en Elm, nous pouvons utiliser la fonction `replace` de la bibliothèque `String`. Elle prend en paramètre le motif à remplacer ainsi que la chaîne de caractères à traiter. Voici un exemple de code :
 
 ```Elm
-import String exposing (contains, filter)
+import String
 
-myString = "Ce951ll5e 1e2lm"
-onlyNumbers = String.filter (\char -> contains char "0123456789") myString
+phrase = "Bonjour tout le monde!"
+nouvellePhrase = String.replace "tout le monde" "" phrase
 
--- Output: 9515212
+-- Resultat: "Bonjour !"
 ```
 
-Dans cet exemple, nous avons utilisé la fonction `filter` pour parcourir chaque caractère de la chaîne `myString` et la fonction `contains` pour vérifier si le caractère est un chiffre. Si c'est le cas, il sera inclus dans la chaîne `onlyNumbers`.
+Dans ce cas, la fonction a supprimé les caractères correspondants au motif "tout le monde" de la phrase d'origine, laissant ainsi une chaîne plus courte et plus concise en sortie.
 
-## Approfondissement:
+## Analyse approfondie
 
-En plus des fonctions `filter` et `contains`, il existe d'autres façons de supprimer des caractères correspondant à un modèle en Elm. Vous pouvez utiliser la fonction `String.dropWhile` pour supprimer tous les caractères jusqu'à ce qu'un certain modèle soit rencontré, ou utiliser la fonction `String.toUpper` pour convertir tous les caractères en majuscules. Vous pouvez également utiliser des expressions régulières avec la fonction `Regex.replace` pour supprimer ou remplacer des caractères correspondant à un modèle spécifique.
+Il est important de noter que la fonction `replace` de la bibliothèque `String` ne supprime que les caractères correspondants exactement au motif spécifié. Cela signifie que les caractères doivent être identiques, y compris la casse des lettres. De plus, il est également possible de supprimer plusieurs occurrences du motif en spécifiant un troisième paramètre optionnel correspondant au nombre d'occurrences à remplacer.
 
-Il est important de noter que toutes ces fonctions renvoient une nouvelle chaîne de caractères au lieu de modifier la chaîne existante. Cela garantit que votre code reste immuable et évite toute confusion ou erreur lors de la manipulation des données.
+Dans certains cas, il peut être utile de supprimer des caractères correspondant à un motif non seulement dans une chaîne de caractères, mais aussi dans une liste de chaînes. Pour ce faire, nous pouvons utiliser la fonction `map` pour appliquer la fonction `replace` à chaque élément de la liste.
 
-## Voir aussi:
+## Voir aussi
 
-- Documentation officielle d'Elm sur la manipulation de chaînes de caractères: https://guide.elm-lang.org/strings/
-- Tutoriel vidéo sur la manipulation de chaînes de caractères en Elm: https://www.youtube.com/watch?v=ob8UzQU6vMU
-- Bibliothèque Elm pour l'utilisation d'expressions régulières: https://package.elm-lang.org/packages/elm-community/regex/latest/
+Pour plus d'informations sur la fonction `replace` et d'autres fonctionnalités de la bibliothèque `String` en Elm, vous pouvez consulter la documentation officielle sur [le site de la communauté Elm](https://elm-lang.org/docs).
+
+Pour en savoir plus sur la programmation en Elm, vous pouvez également consulter les ressources suivantes :
+
+- [Le guide officiel Elm](https://guide.elm-lang.org/)
+- [La chaîne YouTube Elm France](https://www.youtube.com/channel/UCVqr5pepwpgFpiblbJwGSgQ)
+- [La bibliothèque open-source Elm](https://elm-lang.org/)
+
+N'hésitez pas à utiliser la fonction `replace` et à explorer toutes les possibilités qu'elle offre pour simplifier vos opérations sur les chaînes de caractères en Elm !

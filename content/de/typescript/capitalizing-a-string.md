@@ -1,47 +1,36 @@
 ---
-title:    "TypeScript: Großschreibung einer Zeichenkette"
+title:    "TypeScript: Ein String großschreiben"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Eine häufige Aufgabe beim Programmieren ist es, Strings in bestimmten Fällen groß zu schreiben. Dies kann zum Beispiel nützlich sein, um Benutzereingaben zu validieren oder um ein einheitliches Ausgabeformat zu gewährleisten.
+Das Capitalizing einer Zeichenfolge kann nützlich sein, um beispielsweise Anzeigen oder Überschriften in einer lesbaren Form darzustellen.
 
-## So geht's
-
-Die einfachste Möglichkeit, einen String in TypeScript groß zu schreiben, ist die Verwendung der integrierten Methode `toUpperCase()`. Diese Methode wandelt alle Buchstaben in Großbuchstaben um. Hier ist ein Beispiel:
+## Wie geht das
 
 ```TypeScript
-let name = "max mustermann";
-console.log(name.toUpperCase()); // Ausgabe: MAX MUSTERMANN
-```
-Eine weitere Möglichkeit ist die Verwendung von Regular Expressions. In der folgenden Funktion wird der erste Buchstabe eines Strings großgeschrieben, während alle weiteren Buchstaben klein bleiben:
+// Ein Beispiel einer Zeichenfolge, die wir capitalizen wollen
+let stringToCapitalize: string = "hallo welt";
 
-```TypeScript
-function capitalizeString(str: string) {
-    return str.replace(/\b\w/g, (l) => l.toUpperCase());
-}
+// Wir nutzen die eingebaute Methode "toUpperCase()" um die Zeichenfolge zu capitalizen
+let capitalizedString: string = stringToCapitalize.toUpperCase();
 
-console.log(capitalizeString("hallo welt")); // Ausgabe: Hallo Welt
+// Das erwartete Ergebnis wäre: "HALLO WELT"
+console.log(capitalizedString);
 ```
 
-## Tiefergehende Informationen
+## Tief einsteigen
 
-Die `toUpperCase()` Methode funktioniert nur mit lateinischen Buchstaben. Wenn Sie jedoch mit mehrsprachigen Strings arbeiten, kann das Ergebnis möglicherweise nicht das gewünschte sein. In diesem Fall bietet die `toLocaleUpperCase()` Methode eine Lösung. Diese Methode berücksichtigt sprachliche Besonderheiten und wandelt den String entsprechend um.
+Das Capitalizing einer Zeichenfolge ist in TypeScript einfach mit der Verwendung der eingebauten Methode "toUpperCase()" zu erreichen. Diese Methode kann auch auf einzelne Buchstaben oder Wortteile angewendet werden, indem man die entsprechenden Indizes angibt.
 
-Eine weitere wichtige Sache, die beachtet werden sollte, ist, dass Strings in TypeScript unveränderlich sind. Das bedeutet, dass Sie nicht einfach eine Methode auf einen String anwenden können, um diesen dauerhaft zu ändern. Stattdessen müssen Sie das Ergebnis der Methode einer neuen Variablen zuweisen. Zum Beispiel:
-
-```TypeScript
-let name = "max mustermann";
-let upperName = name.toUpperCase(); // neue Variable wird deklariert und Wert zugewiesen
-console.log(name); // Ausgabe: max mustermann
-console.log(upperName); // Ausgabe: MAX MUSTERMANN
-```
+Es gibt auch die Möglichkeit, eine benutzerdefinierte Funktion zu erstellen, die die Groß- und Kleinschreibung einer Zeichenfolge einheitlich formatiert. Dies kann besonders nützlich sein, wenn man mit Benutzereingaben arbeitet, bei denen die Groß- und Kleinschreibung nicht immer einheitlich ist.
 
 ## Siehe auch
 
-- [TypeScript String Dokumentation](https://www.typescriptlang.org/docs/handbook/2/strings.html)
-- [Regular Expressions in TypeScript](https://www.javascripttutorial.net/typescript/typescript-regular-expression/)
-- [String Manipulation in TypeScript](https://www.geeksforgeeks.org/string-manipulation-in-typescript/)
+- [Offizielles TypeScript-Handbuch zur Stringmanipulation](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [Codebeispiele zur string-Manipulation in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+- [Weitere nützliche Informationen zur Groß- und Kleinschreibung in JavaScript und TypeScript](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

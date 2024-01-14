@@ -1,36 +1,61 @@
 ---
-title:    "Bash: Å få gjeldende dato"
+title:    "Bash: Få gjeldende dato"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang lurt på hvordan datamaskinen din vet hvilken dato det er i dag? Eller hvordan du kan få den til å vise deg nåværende dato og tid i terminalen? I denne bloggposten vil vi introdusere deg for noen enkle kommandoer i Bash som gjør nettopp det.
+Å få den nåværende datoen kan virke som en enkel og fremfor alt unødvendig oppgave. Men som enhver programmerer vet, er nøyaktighet og effektivitet viktig i koding. Å kunne hente den nøyaktige datoen kan være avgjørende for å utføre en bestemt operasjon eller for å sikre at et program fungerer riktig.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å få nåværende dato og tid i terminalen, kan du bruke kommandoen `date`. Denne kommandoen vil vise deg dato og tid i det vanlige formatet, som for eksempel "Ons Jul 21 12:21:03 CEST 2021". Men hvis du ønsker å formatere utdataen på en annen måte, kan du legge til noen flagg etter kommandoen.
+For å få den nåværende datoen i Bash, kan du bruke kommandoen "date" sammen med ønsket format. For eksempel, for å få datoen i standard format, kan du skrive følgende i terminalen:
 
-La oss si at du ønsker å få ut kun dagnummeret og måneden på formatet DD/MM. Da kan du bruke følgende kommando: 
-
-```Bash 
-date +"%d/%m"
+```Bash
+date
 ```
 
-Dette vil gi deg et resultat som for eksempel "21/07". Du kan også legge til tidsinformasjon ved å bruke flagget `-I` og deretter velge hvilken format du vil ha på tiden. For eksempel vil `date -I="%H:%M"` vise tiden på formatet TT:MM, som for eksempel "12:25".
+Dette vil gi output som dette:
 
-Det finnes også en rekke andre flagg og formateringsalternativer som du kan lese om i `date` sin manual ved å kjøre kommandoen `man date` i terminalen.
+```Bash 
+Fre Aug 13 19:16:53 CEST 2021
+```
 
-## Dykk dypere
+Du kan også formatere utdataen ved å inkludere spesifikke flagg. For eksempel, for å få datoen i formatet "DD/MM/YYYY", skriver du:
 
-Når du kjører kommandoen `date`, henter den informasjon fra systemets innebygde klokke. Denne klokken er en del av maskinens hardware og holder styr på tiden uansett om den er koblet mot internett eller ikke. Et viktig poeng å merke seg er at denne klokken bruker UTC (koordinert universaltid) som standard, som kan være annerledes enn din lokaltidssone.
+```Bash
+date +'%d/%m/%Y'
+```
 
-Dette kan du se ved å kjøre kommandoen `date -u` som vil vise deg tiden i UTC. For å få datoen og tiden på din lokaltidssone, trenger du å legge til flagget `-Isetigen m "<din tidsone>"`, for eksempel `date -Isetigen m "Europe/Oslo"`. Dette vil konvertere tiden til din tidsone.
+Dette vil gi følgende output:
 
-## Se også
+```Bash
+13/08/2021
+```
 
-- [Bash-kommandoer for å håndtere dato og tid](https://www.tecmint.com/working-with-dates-time-in-linux-bash-scripts/)
-- [Eksempler på bruk av `date`-kommandoen](https://www.computerhope.com/unix/udate.htm)
-- [En oversikt over formatteringsalternativene til `date`-kommandoen](https://man7.org/linux/man-pages/man1/date.1.html)
+Det finnes en rekke ulike formateringsflagg du kan bruke for å få ønsket output. En fullstendig liste finner du [her](https://www.gnu.org/software/coreutils/manual/html_node/Examples-using-date.html#Examples-using-date).
+
+## Dypdykk
+
+Date-kommandoen henter faktisk ikke bare den nåværende datoen, men også klokkeslett og tidssone. Du kan også bruke den til å stille inn en fremtidig eller tidligere dato. For eksempel, for å få datoen 7 dager frem i tid, skriver du:
+
+```Bash
+date -d '+7 days'
+```
+
+Dette vil gi en output som dette:
+
+```Bash
+Lør 21 Aug 19:33:30 CEST 2021
+```
+
+I tillegg til å vise den nåværende datoen, kan datokommandoen også brukes til å endre systemets dato og klokkeslett. Dette kan være nyttig hvis du for eksempel skal teste et program på en bestemt dato eller tid.
+
+## Se Også
+
+- [GNU Coreutils - date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Linuxize - How To Get Current Date and Time in Bash](https://linuxize.com/post/bash-current-date-and-time/)
+- [TecMint - Basic Date and Time Management in Linux using 'date' Command](https://www.tecmint.com/date-command-examples/)

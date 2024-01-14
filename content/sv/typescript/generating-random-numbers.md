@@ -1,52 +1,49 @@
 ---
-title:    "TypeScript: Generering av slumpmässiga tal"
+title:    "TypeScript: Generera slumpmässiga nummer"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför generera slumpmässiga nummer
 
-Att generera slumpmässiga nummer är en vanlig uppgift inom programmering. Det kan användas för att skapa spel eller simuleringar, testa algoritmer och bidra till en bättre användarupplevelse.
+Att generera slumpmässiga nummer används ofta inom programutveckling för att skapa variation och realism i applikationer. Det kan till exempel användas för att simulera tärningskast eller spelresultat.
 
-## Hur man gör det
+## Hur man genererar slumpmässiga nummer i TypeScript
 
-Det finns olika sätt att generera slumpmässiga nummer i TypeScript beroende på vilka behov du har. Här är några exempel på hur man kan göra det:
+För att generera slumpmässiga nummer i TypeScript finns det flera metoder tillgängliga beroende på vilken typ av nummer som ska genereras. Här är några exempel med tillhörande kodblock:
 
-### Generera ett slumpmässigt heltal
-
-```TypeScript
-Math.floor(Math.random() * 10) // ger ett heltal mellan 0 och 9
-```
-
-### Generera ett slumpmässigt decimaltal
+Generera ett heltal mellan 1 och 10:
 
 ```TypeScript
-Math.random() // ger ett decimaltal mellan 0 och 1
+Math.floor(Math.random() * 10) + 1;
 ```
 
-### Generera ett slumpmässigt tal inom ett visst intervall
+Generera ett decimaltal mellan 0 och 1:
 
 ```TypeScript
-Math.floor(Math.random() * (max - min + 1)) + min // ger ett tal mellan min (inklusive) och max (inklusive)
+Math.random();
 ```
 
-### Generera ett slumpmässigt booleskt värde
+Generera ett slumpmässigt tal med hjälp av ett intervall:
 
 ```TypeScript
-Math.random() < 0.5 // ger antingen true eller false
+let min = 50;
+let max = 100;
+Math.floor(Math.random() * (max - min + 1)) + min;
 ```
 
-## Deep Dive
+För att få en bättre förståelse för hur koden fungerar kan du testa den i din konsol eller använda ett debugger-verktyg.
 
-En vanlig metod för att generera slumpmässiga tal är att använda en så kallad "pseudo-random number generator" (PRNG). Det är en algoritm som använder en startpunkt, även kallad "seed", för att generera en följd av nummer som ser ut att vara slumpmässiga. Det viktiga här är att seeden måste vara unik för att få en unik följd av nummer.
+## Djupare dykning i generering av slumpmässiga nummer
 
-En vanlig metod för att skapa en seed är att använda tiden som då det slumpmässiga numret genereras. På så sätt kommer den resulterande följden av nummer att vara unik för varje gång koden körs.
+Metoden Math.random() i TypeScript använder sig av en pseudo-slumpgenerator som genererar nummer baserat på en startpunkt, även kallad seed. Detta innebär att om samma seed används kommer samma sekvens av slumpmässiga nummer att genereras. För att förhindra detta kan du använda en extern slumpgenerator som seedar sig själv för varje anrop, exempelvis genom att använda tiden som seed.
 
-En annan viktig faktor att tänka på vid generering av slumpmässiga tal är att det inte finns någon "riktig" slump. PRNG-algoritmer är deterministiska och kommer alltid att producera samma följd av nummer med samma seed. Det är därför viktigt att använda en seed som är så nära slumpmässig som möjligt.
+En annan viktig aspekt att ta hänsyn till är att de flesta slumpgeneratorer genererar nummer med en viss fördelning, som vanligtvis är en jämnt fördelad fördelning. Detta innebär att det finns en större chans att ett nummer upprepas än att ett annat nummer genereras. Om du behöver en viss fördelning av nummer måste du använda en anpassad slumpgenerator eller skapa din egen algoritm.
 
 ## Se även
 
-- [TypeScript dokumentation om Math-objektet](https://www.typescriptlang.org/docs/handbook/global-objects.html#math)
-- [W3Schools tutorial om generering av slumpmässiga tal i TypeScript](https://www.w3schools.com/js/js_random.asp)
-- [Stack Overflow diskussion om bästa praxis för seedning av PRNG-algoritmer](https://stackoverflow.com/questions/42441247/what-is-the-best-practice-for-seeding-random-number-generator-in-javascript)
+- [Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Slumpmässiga tal i programmeringsspråket Python](https://www.python.org/dev/peps/pep-0524/)
+- [Den bästa metoden för att generera slumpmässiga nummer i Java](https://stackoverflow.com/questions/868522/random-number-generation-excluding-specific-values/869157#869157)

@@ -1,47 +1,49 @@
 ---
-title:    "Python: 将来または過去の日付の計算"
+title:    "Python: 未来または過去の日付の計算"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ日付を計算するのか
 
-日付の計算をするのは、将来や過去の特定の日付が知りたいときに便利です。
+日付を計算することは、将来や過去の日付を知るために非常に便利です。例えば、今日から1週間後の日付を計算することで、来週の予定を把握することができます。
 
 ## 方法
 
-```python
-# datetime モジュールをインポート
-import datetime 
+Pythonの「datetime」モジュールは、日付を計算するための便利なツールを提供しています。以下のコードを使うことで、指定した日数を加算・減算することができます:
 
-# 現在の日付を取得
-today = datetime.date.today() 
+```Python
+import datetime
 
-# 将来の日付を計算
-future_date = today + datetime.timedelta(days=30)
+# 今日の日付を取得
+today = datetime.date.today()
 
-# 過去の日付を計算
-past_date = today - datetime.timedelta(days=30)
+# 1週間後の日付を計算
+one_week = today + datetime.timedelta(days=7)
 
-# 結果を出力
-print("今日の日付: ", today) 
-print("将来の日付: ", future_date) 
-print("過去の日付: ", past_date)
+# 1週間前の日付を計算
+one_week_ago = today - datetime.timedelta(days=7)
+
+print("今日:", today)
+print("来週:", one_week)
+print("先週:", one_week_ago)
 ```
 
-出力結果:
+出力結果は以下のとおりになります:
 
-今日の日付: 2020-07-01
-将来の日付: 2020-07-31
-過去の日付: 2020-05-31
+```
+今日: 2021-05-01
+来週: 2021-05-08
+先週: 2021-04-24
+```
 
 ## ディープダイブ
 
-Pythonのdatetimeモジュールを使用することで、簡単に将来や過去の日付を計算することができます。また、日付の間隔を指定することもでき、例えば2週間後や3ヶ月前なども計算することができます。さらに、曜日や時間を考慮した計算も可能です。
+「datetime」モジュールの「timedelta」オブジェクトを使うことで、任意の日数を加算・減算することができます。また、日付の比較やフォーマットの変更など、日付の操作に関する様々な機能を提供しています。詳細な情報は、公式ドキュメントを参照してください。
 
-## 参考
+## 参考リンク
 
-- [Python datetimeモジュールのドキュメント](https://docs.python.org/ja/3/library/datetime.html)
-- [Pythonで日付と時間を操作する方法](https://www.javadrive.jp/python/date_manipulation/index1.html)
-- [Pythonの日付操作についてのチュートリアル](https://note.nkmk.me/python-datetime-time-timedelta/)
+- Python公式ドキュメント: https://docs.python.org/ja/3/library/datetime.html
+- Pythonの日付操作について学ぶ: https://note.nkmk.me/python-datetime-timedelta/

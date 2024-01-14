@@ -1,47 +1,47 @@
 ---
-title:    "Elixir: Usando expressões regulares"
+title:    "Elixir: Utilizando expressões regulares"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em Elixir?
+# Por que usar expressões regulares em Elixir? 
 
-Expressões Regulares (também conhecidas como RegEx) são uma ferramenta poderosa e versátil para manipulação de strings. Se você lida com dados textuais em sua programação, usar RegEx pode economizar tempo e tornar seu código mais eficiente.
+Expressões regulares são uma ferramenta poderosa e versátil para manipulação de texto. Em Elixir, elas são uma parte importante da linguagem e podem ser usadas para buscar, substituir e validar padrões em strings. Usar expressões regulares em seus programas pode tornar o seu código mais conciso e eficiente, permitindo que você realize tarefas complexas de forma mais simples.
 
-## Como utilizar Expressões Regulares em Elixir
+## Como usar expressões regulares em Elixir
 
-Em Elixir, para utilizar Expressões Regulares, primeiro é preciso importar o módulo Regex:
+Para utilizar expressões regulares em Elixir, é necessário utilizar o módulo `Regex`. Você pode iniciar uma expressão regular utilizando `Regex.new/1` e passando o padrão desejado como parâmetro, dentro de aspas duplas. Por exemplo:
 
-```
-import Regex
-```
-
-Em seguida, podemos usar a função `match?` para verificar se um padrão de RegEx é encontrado em uma string:
-
-```
-match?("Olá, mundo!", ~r/mundo/) # retorna true
+```Elixir
+regex = Regex.new("hello")
+"hello world" |> Regex.match?(regex) # true
+"goodbye" |> Regex.match?(regex) # false
 ```
 
-Também é possível extrair partes de uma string que correspondem a um padrão específico usando a função `scan`:
+O código acima cria uma expressão regular que irá buscar pelo padrão "hello" em uma string. Em seguida, utilizamos a função `match?/2` de `Regex` para verificar se a string fornecida corresponde ao padrão definido.
 
-```
-scan("A linguagem de programação Elixir é incrível", ~r/\w+/) # retorna ["A", "linguagem", "de", "programação", "Elixir", "é", "incrível"]
-```
+Você também pode utilizar grupos de captura em suas expressões regulares para extrair informações específicas de uma string. Basta utilizar parênteses para indicar os grupos e depois acessá-los utilizando `Regex.named_captures/1`. Veja um exemplo:
 
-## Explorando mais a fundo as Expressões Regulares
-
-As Expressões Regulares em Elixir são baseadas na sintaxe do módulo [PCRE](https://hexdocs.pm/elixir/Regex.html#content). Algumas funcionalidades avançadas incluem o uso de grupos de captura, substituições e retrovisor.
-
-Além disso, é possível utilizar os operadores `=~` e `!~` para comparar uma string com um padrão de RegEx:
-
-```
-"Elixir é incrível" =~ ~r/incrível/ # retorna true
-"Expressões Regulares são complicadas" =~ ~r/compl./ # retorna true
+```Elixir
+regex = Regex.new("My name is (.*).")
+"My name is John." |> Regex.named_captures(regex) # %{"John" => ["John"]}
 ```
 
-## Veja também
+Nesse caso, temos um grupo de captura que irá extrair o nome após a palavra "is". Para acessá-lo, usamos a função `named_captures/1` e passamos a expressão regular como argumento.
 
-- [Documentação oficial do módulo Regex em Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Tutorial de Expressões Regulares em Elixir](https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm)
-- [Guia de Expressões Regulares em PCRE](https://www.rexegg.com/regex-quickstart.html)
+## Aprofundando-se nas expressões regulares
+
+As expressões regulares em Elixir são baseadas na sintaxe PCRE (Perl Compatible Regular Expressions). Isso significa que elas compartilham muitas características com expressões regulares em outras linguagens, como Perl, Python e Ruby. Algumas funcionalidades que podem ser utilizadas em Elixir incluem:
+
+- Quantificadores: permitem especificar quantas vezes um padrão deve ser repetido, como `*` (zero ou mais vezes), `+` (uma ou mais vezes) e `?` (zero ou uma vez).
+- Classes de caracteres: permitem especificar conjuntos de caracteres que podem ser encontrados em uma determinada posição na string, como `[a-z]` (qualquer letra minúscula) ou `[0-9]` (qualquer dígito).
+- Âncoras: permitem especificar posições específicas na string, como `^` (início da linha) e `$` (fim da linha).
+
+Para mais informações sobre o uso de expressões regulares em Elixir, consulte a documentação oficial da linguagem.
+
+# Veja também
+
+- [Documentação oficial do Elixir sobre expressões regulares](https://hexdocs.pm/elixir/Regex.html)
+- [Tutorial sobre expressões regulares em Elixir](https://elixirschool.com/en/lessons/advanced/pattern-matching/#regular-expressions)

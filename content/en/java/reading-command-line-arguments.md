@@ -1,64 +1,57 @@
 ---
 title:    "Java recipe: Reading command line arguments"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+### Why
 
-As a Java programmer, you may have encountered situations where you need to pass arguments to your program. Understanding how to read command line arguments can greatly improve your productivity and make your programs more user-friendly.
+Have you ever wondered how programs like the Command Prompt or Terminal are able to take in specific instructions from users? That's because of the use of command line arguments, which can be incredibly useful for coding in Java. In this blog post, we'll dive into the world of command line arguments and how they can benefit your programming skills.
 
-## How To
-
-Reading command line arguments is a fairly simple process in Java. Here is a basic example of how to do it:
+### How To
+To read command line arguments in Java, we use the ```args``` parameter in the main method. Let's take a look at a simple example:
 
 ```Java
 public class CommandLineArgs {
 
-    public static void main(String[] args) {
-        
-        // Check if any arguments were passed
-        if (args.length > 0) {
-            System.out.println("The following arguments were passed:");
-            
-            // Loop through and print out each argument
-            for (String arg : args) {
-                System.out.println(arg);
-            }
-        } else {
-            System.out.println("No arguments were passed.");
-        }
-    }
+   public static void main(String[] args) {
+      
+      for (String arg : args) {
+         System.out.println(arg);
+      }
+   }
 }
 ```
 
-**Sample Output**
-
-If we run this program with the arguments "Hello" and "World", the output will be:
+This code creates a basic Java class with a main method that takes in an array of strings called ```args```. In the main method, we use a for loop to iterate through the ```args``` array and print out each argument. Now, let's compile and run this code with some arguments:
 
 ```
-The following arguments were passed:
+$ javac CommandLineArgs.java
+$ java CommandLineArgs Hello World!
+```
+
+The output would be:
+
+```
 Hello
-World
+World!
 ```
 
-You can also pass multiple arguments at once, separated by spaces.
+As you can see, the arguments we passed in (Hello and World!) were printed out in the same order that we entered them. This is just a simple example, but you can use command line arguments to create more complex programs that take in input from users.
 
-## Deep Dive
+### Deep Dive
+Now, let's take a deeper look at how command line arguments work. When we run a Java program with command line arguments, we are basically passing in data to the program. The ```args``` parameter is an array of strings, so each individual argument is stored as a string in the array. This allows us to manipulate and use the arguments in our code.
 
-To better understand the process of reading command line arguments, let's take a closer look at the code example above.
+One thing to note is that command line arguments are always passed in as strings, even if they were originally entered as numbers. This means we may need to convert the arguments to a different data type if we want to perform calculations or comparisons with them. We can do this using the respective wrapper class, such as ```Integer.valueOf()``` for converting to an integer.
 
-First, we create a public class named "CommandLineArgs". Then, within the "main" method, we check if any arguments were passed by using the "args.length" property. This property represents the number of arguments passed.
+Another thing to keep in mind is that the order of the arguments matters. The first argument entered will be at index 0 in the ```args``` array, the second argument will be at index 1, and so on. This can be helpful when we want to use certain arguments for specific purposes in our program.
 
-If there are arguments passed, we use a for-each loop to iterate through each argument and print it out. If no arguments were passed, we simply print out a message stating so.
+### See Also
 
-It's important to note that command line arguments are read as String arrays, so you can perform any necessary parsing or conversions as needed.
+* [Oracle Java Docs: Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+* [GeeksforGeeks: Command Line Arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
+* [Tutorialspoint: Java - Command Line Arguments](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)
 
-## See Also
-
-- [Oracle's documentation on Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [GeeksforGeeks tutorial on Command Line Arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
-- [Tutorialspoint's explanation of Main method and Command Line Arguments in Java](https://www.tutorialspoint.com/main-method-and-command-line-arguments-in-java)
-
-Reading command line arguments may seem like a small topic, but it can greatly enhance your abilities as a Java programmer. So the next time you encounter a situation where you need to pass arguments to your program, remember this post and use it as a reference. Happy coding!
+In conclusion, knowing how to read command line arguments in Java can greatly enhance your programming skills and allow you to create more interactive and useful programs. So next time you're using the Command Prompt or Terminal, remember the power and versatility of command line arguments in Java. Happy coding!

@@ -1,63 +1,41 @@
 ---
-title:    "Arduino: Odczytywanie pliku tekstowego"
+title:    "Arduino: Czytanie pliku tekstowego"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto czytać pliki tekstowe?
 
-Czy kiedykolwiek chciałeś/łaś, aby Twój projekt z Arduino mógł czytać pliki tekstowe? Może chciałeś/łaś użyć danych z zewnętrznego źródła lub po prostu przekazać instrukcje do swojego urządzenia? W tym wpisie pokażemy Ci, jak to zrobić!
+Czytanie plików tekstowych jest częstym zadaniem w programowaniu Arduino. Dzięki temu możesz wczytać dane z różnych źródeł, takich jak sensory lub urządzenia podłączone do Arduino. W ten sposób masz dostęp do informacji, które mogą pomóc w podejmowaniu decyzji lub sterowaniu innymi elementami Twojego projektu.
 
-## Jak To Zrobić
+# Jak to zrobić?
+
+Aby czytać pliki tekstowe w Arduino, możesz skorzystać z funkcji "File" i "FileReader". Najpierw musisz utworzyć obiekt "File" i podać nazwę pliku, który chcesz otworzyć. Następnie można utworzyć obiekt "FileReader" z użyciem obiektu "File" jako parametru. W tym momencie plik jest już otwarty i możesz użyć funkcji "readLine()", aby odczytać kolejne linie tekstu.
 
 ```Arduino
-#include <SD.h>
+// Utworzenie obiektu "File"
+File plik;
 
-File dataFile; // zmienna do przechowywania pliku tekstowego
+// Przypisanie nazwy pliku do obiektu "File"
+plik = SD.open("dane.txt");
 
-void setup() {
-  // inicjalizacja modułu SD
-  SD.begin(4);
+// Utworzenie obiektu "FileReader" z użyciem obiektu "File"
+FileReader czytnik(plik);
 
-  // otwarcie pliku tekstowego o nazwie "dane.txt" w trybie odczytu
-  dataFile = SD.open("dane.txt", FILE_READ);
-
-  // sprawdzenie, czy plik istnieje
-  if (dataFile) {
-    // odczytanie danych z pliku
-    while (dataFile.available()) {
-      // odczytanie i wyświetlenie kolejnych linii
-      Serial.println(dataFile.readStringUntil('\n'));
-    }
-    // zamknięcie pliku
-    dataFile.close();
-  }
-}
-
-void loop() {
-  // kod dla pętli głównej programu
-}
-```
-### Przykładowy plik "dane.txt":
-
-```
-Temperatura: 25°C
-Wilgotność: 50%
+// Odczyt kolejnych linii tekstu z pliku
+String linia = czytnik.readLine();
 ```
 
-### Oczekiwany output:
+# Pogłębiona analiza
 
-```
-Temperatura: 25°C
-Wilgotność: 50%
-```
+Istnieje wiele innych funkcji, które mogą być przydatne podczas czytania plików tekstowych w Arduino. Na przykład, funkcja "available()" zwraca ilość dostępnych bajtów do odczytania, a "read()" pozwala na odczyt pojedynczego znaku z pliku. Możliwości są niemal nieograniczone i warto eksperymentować z różnymi funkcjami, aby dostosować je do swoich potrzeb.
 
-## Deep Dive
+# Zobacz również
 
-Moduł SD w Arduino umożliwia dostęp do pamięci SD i obsługę plików. Funkcja `SD.open()` służy do otwarcia pliku z pamięci, przyjmuje ona dwa parametry: nazwę pliku oraz tryb - w tym przypadku `FILE_READ` dla odczytu. Następnie, za pomocą pętli `while` i funkcji `available()`, sprawdzamy, czy są dostępne kolejne dane w pliku. Służy do tego funkcja `readStringUntil()`, która odczytuje dane do napotkania określonego znaku - w tym przypadku do znaku nowej linii `\n`. Na koniec należy zamknąć plik za pomocą funkcji `close()`.
+Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w Arduino, możesz zajrzeć na poniższe strony:
 
-## Zobacz też
-
-- [Dokumentacja Arduino do obsługi modułu SD](https://www.arduino.cc/en/Reference/SD)
-- [Przykładowy projekt z wykorzystaniem czytania pliku tekstowego z pamięci SD](https://create.arduino.cc/projecthub/Andre_Julio/arduino-sd-card-temperature-and-humidity-log-1d616e)
+- [Dokumentacja Arduino dotycząca funkcji "File" i "FileReader"](https://www.arduino.cc/reference/en/libraries/sd-card-library/file/)
+- [Przykładowe projekty wykorzystujące czytanie plików tekstowych](https://www.arduinolab.net/arduino-sd-cards.php)
+- [Poradnik wideo na temat czytania i zapisywania danych z pliku na karcie SD z użyciem Arduino](https://www.youtube.com/watch?v=ml2Mw1IVYis)

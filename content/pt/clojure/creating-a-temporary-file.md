@@ -1,35 +1,57 @@
 ---
-title:    "Clojure: Gerando um arquivo temporário"
+title:    "Clojure: Criando um arquivo temporário"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que criar um arquivo temporário em Clojure?
 
-Criar arquivos temporários é uma prática comum em muitas linguagens de programação, incluindo Clojure. Esses arquivos são úteis quando precisamos armazenar informações temporárias durante a execução de um programa, como dados de cache ou logs.
+Neste artigo, vamos explorar a utilidade e a importância de criar arquivos temporários em um programa feito em Clojure. Veremos como isso pode facilitar o gerenciamento de arquivos e a organização do código. 
 
 ## Como criar um arquivo temporário em Clojure
 
-Para criar um arquivo temporário em Clojure, podemos usar a função `with-open`. Ela aceita dois argumentos: um path (caminho) para o arquivo e uma função que manipula esse arquivo.
+Para criar um arquivo temporário em Clojure, podemos utilizar a função `java.io.File/createTempFile`, que recebe dois parâmetros: o prefixo do nome do arquivo e o sufixo. Veja um exemplo abaixo:
 
+```Clojure
+(import java.io.File)
+
+(def temporary-file (File/createTempFile "exemplo-" ".txt"))
 ```
-(defn create-temp-file []
-  (with-open [temp-file (java.io.File/createTempFile "prefix-" ".log")]
-    (println "Arquivo temporário criado:" (.getName temp-file))))
+
+Ao executar esse código, será criado um arquivo temporário com o nome `exemplo-#####.txt`, onde `####` é um número gerado automaticamente pelo sistema operacional. Agora, podemos escrever no arquivo utilizando a função `clojure.java.io/copy`, como mostrado abaixo:
+
+```Clojure
+(require '[clojure.java.io :as io])
+
+(io/copy "Olá, mundo!" temporary-file)
 ```
 
-O código acima criará um arquivo temporário com o prefixo "prefix-" e a extensão ".log". A função `createTempFile` retorna um objeto File, que é então manipulado pela função dentro do `with-open`. No exemplo acima, apenas imprimimos o nome do arquivo temporário, mas podemos fazer qualquer operação que precisarmos dentro da função.
+O conteúdo "Olá, mundo!" será copiado para o arquivo temporário. Para ler o conteúdo do arquivo, podemos utilizar a função `slurp`:
 
-Ao final da execução do programa, o arquivo temporário será automaticamente excluído.
+```Clojure
+(slurp temporary-file)
+;; saída: "Olá, mundo!"
+```
 
-## Mais informações sobre a criação de arquivos temporários
+Podemos também especificar um diretório onde o arquivo temporário deve ser criado usando o parâmetro `:directory` na função `createTempFile`. Por exemplo:
 
-Em Clojure, podemos usar diferentes funções para criar arquivos temporários, como `temporary-file` e `temporary-file` do pacote `clojure.java.io`.
+```Clojure
+(def dir (File. "caminho/para/pasta"))
+(def temporary-file (File/createTempFile "exemplo-" ".txt" :directory dir))
+```
 
-Além disso, podemos especificar o local onde queremos que o arquivo temporário seja criado, passando um terceiro argumento para a função `createTempFile` com o caminho desejado.
+## Aprofundando-se na criação de arquivos temporários
+
+Os arquivos temporários são úteis em várias situações, como salvar dados temporários, gerar arquivos para processamentos específicos ou até mesmo fazer testes rápidos sem precisar criar um arquivo permanente. Além disso, eles são automaticamente excluídos pelo sistema operacional após o seu uso, evitando a sobrecarga de arquivos desnecessários no sistema. 
+
+Existem também outras opções de criação de arquivos temporários em Clojure, como a função `java.io.File/createTempFile` que permite especificar um prefixo, sufixo e um diretório para a criação do arquivo, e a função `java.nio.file.Files/createTempFile` que retorna um objeto `Path` em vez de um `File`.
+
+Não se esqueça de sempre excluir o arquivo temporário após o uso, utilizando a função `java.io.File/delete`, para evitar a sobrecarga de arquivos no sistema.
 
 ## Veja também
 
-- [Documentação oficial da função createTempFile](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-- [Pacote clojure.java.io](https://clojuredocs.org/clojure.java.io)
+- Documentação oficial do `java.io.File`: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html
+- Documentação oficial do `java.nio.file.Files`: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html
+- Tutorial sobre manipulação de arquivos em Clojure: https://clojure.org/guides/io

@@ -1,60 +1,52 @@
 ---
-title:    "C#: Buscar y reemplazar texto"
+title:    "C#: Buscando y reemplazando texto"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué
 
-Muchas veces, al escribir código en C#, es necesario realizar cambios en una gran cantidad de texto. Esto puede ser tedioso y propenso a errores si se hace manualmente. Es por eso que es importante conocer cómo realizar búsquedas y reemplazos de texto de manera eficiente en C#.
+En el mundo de la programación, a menudo nos encontramos con la necesidad de realizar cambios en grandes cantidades de texto. Ya sea para corregir errores, actualizar información o simplemente para hacer una tarea más eficiente, la búsqueda y reemplazo de texto es una habilidad esencial que todo programador debe tener en su arsenal.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-La forma más común de realizar búsquedas y reemplazos de texto en C# es utilizando el método `Replace()` en la clase `String`. Este método toma dos parámetros: el texto que se desea reemplazar y el texto con el que se desea reemplazarlo.
+La búsqueda y reemplazo de texto es una tarea sencilla, pero muy útil. En C#, hay varias formas de lograrlo, pero aquí te mostraremos una de las más comunes utilizando expresiones regulares.
 
-```C#
-string texto = "Hola, mi nombre es Juan.";
-
-Console.WriteLine(texto.Replace("Juan", "María"));
-
-// Output: Hola, mi nombre es María.
-```
-
-También es posible utilizar expresiones regulares para realizar búsquedas y reemplazos más avanzados. Estas son patrones que representan un conjunto de cadenas de texto y permiten buscar y manipular texto con mayor precisión.
+Primero, importaremos el namespace System.Text.RegularExpressions, donde se encuentran las herramientas necesarias para trabajar con expresiones regulares:
 
 ```C#
-string texto = "El número de teléfono de María es 123456789.";
-
-Console.WriteLine(Regex.Replace(texto, "[0-9]+", "XXXXXX"));
-
-// Output: El número de teléfono de María es XXXXXX.
+using System.Text.RegularExpressions;
 ```
 
-Otra forma de realizar búsquedas y reemplazos de texto es utilizando la clase `StringBuilder`. Esta clase permite construir y manipular cadenas de texto de manera eficiente.
+Luego, declararemos nuestra cadena de texto donde realizaremos la búsqueda y reemplazo. En este caso, utilizaremos una dirección de correo electrónico como ejemplo:
 
 ```C#
-StringBuilder texto = new StringBuilder("Mi nombre es Juan.");
-
-texto.Replace("Juan", "María");
-
-Console.WriteLine(texto.ToString());
-
-// Output: Mi nombre es María.
+string correo = "ejemplo@dominio.com";
 ```
 
-Es importante tener en cuenta que tanto en el método `Replace()` como en las expresiones regulares y la clase `StringBuilder`, las búsquedas y reemplazos son sensibles a mayúsculas y minúsculas. Para realizar búsquedas y reemplazos sin importar esto, se pueden utilizar los métodos `ToLower()` y `ToUpper()` en la clase `String`.
+Ahora, crearemos una expresión regular que nos permita encontrar y reemplazar el dominio de correo electrónico por uno nuevo. En este caso, utilizaremos una variable para almacenar el dominio original y otra para almacenar el nuevo dominio:
 
-## Profundizando
+```C#
+string dominioOriginal = "@dominio.com";
+string nuevoDominio = "@nuevodominio.com";
+```
 
-Además de las formas mencionadas anteriormente, existen otras formas de realizar búsquedas y reemplazos de texto en C#. Por ejemplo, se pueden utilizar otras clases como `File` y `Stream` para buscar y reemplazar texto en archivos.
+Una vez que tengamos nuestras variables preparadas, podemos utilizar el método Replace de la clase Regex para realizar el cambio en nuestra cadena de texto:
 
-También es posible utilizar bibliotecas externas como `OpenTK` y `SharpDX` para realizar búsquedas y reemplazos de texto en juegos y aplicaciones de gráficos.
+```C#
+correo = Regex.Replace(correo, dominioOriginal, nuevoDominio);
+```
 
-En resumen, es importante conocer las distintas herramientas disponibles en C# para realizar búsquedas y reemplazos de texto, y elegir la más adecuada para cada situación.
+¡Y listo! Nuestra dirección de correo electrónico ahora tiene un nuevo dominio. El resultado final será "ejemplo@nuevodominio.com". Puedes jugar con diferentes expresiones regulares y patrones de reemplazo para realizar cambios más complejos en tus cadenas de texto.
 
-## Ver también
+##Profundizando
 
-- [Microsoft Docs: Clase String](https://docs.microsoft.com/es-es/dotnet/api/system.string)
-- [Regex Class (Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.text.regularexpressions.regex)
-- [Clase StringBuilder (Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.text.stringbuilder)
+La utilización de expresiones regulares para buscar y reemplazar texto nos da una gran flexibilidad y nos permite realizar cambios en grandes cantidades de datos de una manera más eficiente. Existen muchas herramientas y técnicas que se pueden utilizar para trabajar con expresiones regulares en C#, así que te animamos a investigar y seguir aprendiendo sobre este tema.
+
+##Ver también
+
+- [Documentación de Microsoft sobre expresiones regulares en C#](https://docs.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Expresiones regulares en C# para principiantes](https://www.tutorialspoint.com/regular-expression-in-chash)
+- [Expresiones regulares en C# para buscar y reemplazar texto](https://www.codeproject.com/Articles/20348/Regular-Expressions-with-NET)

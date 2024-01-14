@@ -1,41 +1,40 @@
 ---
 title:    "Arduino: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wykorzystywanie argumentów wiersza poleceń w programowaniu Arduino może być bardzo przydatne w wielu sytuacjach. Dzięki nim możesz interaktywnie wpływać na działanie swojego programu, zmieniać jego parametry lub nawet przesyłać dane z zewnętrznych urządzeń.
+Czy kiedykolwiek zastanawiałeś się, jak można wpływać na działanie programów, wprowadzając różne argumenty z linii poleceń? Jeśli jesteś zainteresowany dowiedzeniem się, jak łatwo można osiągnąć ten cel, ten artykuł jest dla Ciebie!
 
 ## Jak to zrobić
 
-Aby odczytywać argumenty wiersza poleceń w programowaniu Arduino, wykorzystujemy funkcję `Serial.parseInt()`. Spójrz na poniższy przykład:
+Aby odczytać argumenty z linii poleceń w Arduino, należy użyć funkcji ```Arduino.args()```, która zwraca tablicę z argumentami przekazanymi do programu. Następnie można wykorzystać pętlę ```for``` do przejrzenia każdego argumentu i wykonania odpowiednich działań. Oto prosty przykład kodu:
 
-```Arduino
-void setup() {
-  Serial.begin(9600); // inicjalizacja komunikacji szeregowej z prędkością 9600 baud
-}
-
-void loop() {
-  if (Serial.available()) // sprawdzamy, czy dane są dostępne w linii szeregowej
-  {
-    int arg = Serial.parseInt(); // odczytujemy wartość argumentu i zapisujemy ją w zmiennej arg
-    Serial.println("Wczytano argument: " + String(arg)); // wyświetlamy wczytany argument
-  }
+```
+Arduino.args();
+for(int i=0; i<Arduino.args().length; i++){
+  Arduino.print("Argument " + i + ": " + Arduino.args()[i]);
 }
 ```
 
-W powyższym przykładzie, w momencie kiedy na linii szeregowej pojawi się jakaś wartość, zostanie ona odczytana i wyświetlona na monitorze szeregowym.
+Przy założeniu, że do programu przekazano 3 argumenty, kod ten wyświetli na monitorze szeregu argumentów wraz z ich numerami:
 
-## Deep Dive
+```
+Argument 0: pierwszy
+Argument 1: drugi
+Argument 2: trzeci
+```
 
-Funkcja `Serial.parseInt()` dzieli odczytaną linię na poszczególne słowa i próbuje przekonwertować je na liczby całkowite. W przypadku niepowodzenia zwracana jest wartość 0. Dzięki temu możemy sprawdzić, czy podana przez użytkownika wartość jest poprawną liczbą, a w razie potrzeby wykonać odpowiednie operacje na wczytanym argumencie.
+Zauważ, że aby uzyskać dostęp do tablicy argumentów, musimy wywołać funkcję ```Arduino.args()``` więcej niż raz, ponieważ wartość ta może ulec zmianie podczas działania programu.
 
-Ważnym aspektem jest również pamiętanie o zabezpieczeniu naszego programu w przypadku niepodania argumentu. Możemy to zrobić poprzez użycie warunku `if (Serial.available())` jak w przykładzie powyżej.
+## Dogłębna analiza
 
-## Zobacz też
+Odczytanie argumentów z linii poleceń może być przydatne w wielu sytuacjach, na przykład przy wykorzystaniu flag konfiguracyjnych lub wywoływaniu różnych funkcji w zależności od przekazanych argumentów. Dzięki temu będziemy mieć większą kontrolę nad działaniem naszych programów i łatwiej będzie je dostosowywać do różnych potrzeb.
 
-- [Dokumentacja funkcji Serial.parseInt()](https://www.arduino.cc/reference/en/language/functions/communication/serial/parseint/)
-- [Przykładowy projekt wykorzystujący argumenty wiersza poleceń w komunikacji między Arduino a komputerem](https://github.com/ArduinoPolska/serial-communication-with-arduino/tree/master/CommandlineArgs)
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o funkcji ```Arduino.args()```, polecamy zapoznać się z oficjalną dokumentacją Arduino oraz przeczytać artykuł "Tutorial: Odczytywanie argumentów z linii poleceń w Arduino" na stronie [WiFi for Beginners](https://www.jclerc.com/wififorb.php).

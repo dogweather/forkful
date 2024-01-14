@@ -1,82 +1,50 @@
 ---
-title:    "Gleam: Virheenkorjaustulosteen tulostaminen"
+title:    "Gleam: Vianmäärityksen tulostus"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi haluaisit tulostaa debug-tulosteita?
 
-Miksi kukaan edes harkitsisi debug-tulosteiden tulostamista Gleam-koodissa? Toki, jos kaikki koodissa toimii täydellisesti ja virheet ovat vain urbaanilegendoja, silloin ei tätä tarvitsekaan miettiä. Mutta jos kuitenkin jostain syystä (vai johtuuko sittenkin viallisesta kahvinkeittimestä?) ohjelman suoritukseen ilmestyy odottamattomia ongelmia, debug-tulosteiden printtaaminen voi helpottaa virheen etsimistä ja korjaamista.
+Tulostaminen debug-tulosteita on erittäin hyödyllistä kehittäessäsi ohjelmistoa Gleam-ohjelmointikielellä. Se auttaa sinua ymmärtämään koodisi toimintaa ja tunnistamaan mahdolliset virheet ja ongelmat.
 
-## Kuinka
+## Miten: Esimerkkejä koodista ja tulostuksista Gleam-koodilohkoissa
 
-Eli miten tulostat debug-tulosteita Gleam-koodissa? No, se on todella yksinkertaista! Sinun tarvitsee vain käyttää "`` `Gleam`` `" -koodilohkoa ja "`` `io`` `" -moduulia.
+Tulostaminen debug-tulosteita Gleamissa on hyvin yksinkertaista. Voit käyttää funktiota `debug.print` tulostamaan haluamasi viestin tai muuttujan arvon. Esimerkiksi:
 
-Tässä on esimerkki debug-tulosteen printtaamisesta:
+```
+Gleam debug.print("Tämä on debug-tulosteeni")
+```
+
+Voit myös tulostaa monimutkaisempia asioita, kuten tietorakenteita tai listoja. Esimerkiksi:
 
 ```
 Gleam
-import io
-pub fn main() {
-  io.debug("Debug-tuloste")
-}
+let lista = [1, 2, 3]
+debug.print("Lista: ", lista)
 ```
 
-Ja tässä on tulos:
+Tämä tuottaa seuraavan tulosteen: `Lista: [1, 2, 3]`
 
-```
-Debug-tuloste
-```
+Voit myös käyttää `debug.println`-funktiota, joka tulostaa viestin ja lisää siihen rivinvaihdon. Tämä helpottaa tulosteiden lukemista, varsinkin jos tulosteessa on useita rivejä.
 
-Kuten huomaat, "`` `io`` `" -moduuli tarjoaa `debug` -funktion, joka ottaa vastaan haluamasi tekstin parametrina ja printtaa sen terminaaliin. Lisäksi voit käyttää `debug` -funktiota myös muuttujien printtaamiseen, vain lisää muuttuja tekstin loppuun:
+## Syvällisemmin: Lisätietoja debug-tulostusten käytöstä
 
-```
-Gleam
-import io
-alias Show = io.debug
-pub fn main() {
-  let nimi = "Kalle"
-  Show("Tervehdys ", nimi)
-}
-```
+Tulostaminen debug-tulosteita voi auttaa sinua ratkaisemaan ongelmia ja kehittämään koodiasi. Voit esimerkiksi tulostaa muuttujien ja funktioiden arvoja, jotta voit varmistaa, että ne ovat oikein.
 
-Ja tässä tulos:
-
-```
-Tervehdys Kalle
-```
-
-## Syvemmälle
-
-Jos haluat mennä vielä syvemmälle debug-tulosteiden printtaamisessa, voit myös käyttää `inspect` -funktiota. Se näyttää tarkemman kuvauksen tulosteen sisällöstä, kuten esimerkiksi tietotyypin ja sen sisällön:
-
-```
-Gleam
-import io
-alias Show = io.inspect
-pub fn main() {
-  let numero = 42
-  let totuusarvo = true
-  let nimi = "Maikki"
-  Show(numero, totuusarvo, nimi)
-}
-```
-
-Ja tulos on:
-
-```
-{int, 42}
-{bool, true}
-{string, "Maikki"}
-```
-
-Tämäkin on yksi tapa tarkastella ohjelman suorituksessa esiintyviä muuttujia ja arvoja.
+Muista kuitenkin poistaa debug-tulosteet ennen kuin julkaiset koodisi tuotantoon. Ne voivat hidastaa ohjelmasi suoritusta ja paljastaa herkkiä tietoja.
 
 ## Katso myös
 
-Kun olet saanut debug-tulosteet printattua ja tulkitsemisesta on tullut sinulle arkipäivää, voit tutustua myös muihin Gleamin debuggausmahdollisuuksiin:
+- [Gleamin virallinen dokumentaatio debug-tulosteista](https://gleam.run/api/debug.html)
+- [Debuggaus Gleamissa - Tekniikoita ja vinkkejä](https://medium.com/@gleamlang/debugging-in-gleam-techniques-and-tips-c606d6d8837f)
+- [Vinkkejä Gleam-koodin testaamiseen ja debuggaamiseen](https://www.grabduck.com/s/Wd6u9zIypMvxUMKoGQKM)
 
-- [Virheiden käsittely](https://gleam.run/book/tutorials/error_handling.html)
-- [Loggauksen käyttöönotto](https://gleam.run/book/tutorials/logger.html)
-- [Debuggerin käyttöönotto](https://gleam.run/book/tutorials/debugger.html)
+---
+
+Katso myös:
+- [Miksi käyttää pattern matching Gleamissa?](https://www.exampleblogi.fi/pattern-matching-gleamissa)
+- [Rinnakkaisuuden hyödyntäminen Gleamissa](https://www.exampleblogi.fi/rinnakkaisuus-gleamissa)
+- [Gleamin standardikirjasto - hyödylliset moduulit koodisi kehittämiseen](https://www.exampleblogi.fi/gleam-standardikirjasto)

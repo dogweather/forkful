@@ -1,61 +1,50 @@
 ---
-title:    "Go: Vérification de l'existence d'un répertoire"
+title:    "Go: Vérifier si un répertoire existe"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vérifier si un répertoire existe peut sembler être une tâche simple, mais cela peut être une étape cruciale dans la création d'applications robustes en Go. Cela peut vous aider à gérer les erreurs et à vous assurer que votre code s'exécute correctement sans rencontrer des problèmes de non-existence de répertoires.
+L'objectif principal de tout programmeur est de s'assurer que son code fonctionne de manière fluide et sans problème. Une façon d'y parvenir est de vérifier si un répertoire existe avant de procéder à d'autres actions. Cela peut éviter des erreurs imprévues et contribuer à la stabilité du code.
 
 ## Comment faire
 
-Pour vérifier si un répertoire existe en utilisant Go, vous pouvez utiliser la fonction `os.Stat()` et vérifier si l'erreur renvoyée est `nil` ou non. Voici un exemple de code avec une sortie de démonstration :
+En utilisant le langage de programmation Go, il est possible de vérifier si un répertoire existe en utilisant la fonction `os.Stat()`. Cette fonction vérifie si un fichier ou un répertoire existe à partir du chemin d'accès fourni.
+
+Voici un exemple de code qui vérifie si un répertoire existe et imprime un message en conséquence :
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    // Définition du chemin du répertoire à vérifier
-    dirPath := "./mon_repertoire"
+	// Définir un chemin d'accès au répertoire à vérifier
+	dirPath := "./documents"
 
-    // Utilisation de la fonction os.Stat() pour vérifier si le répertoire existe
-    _, err := os.Stat(dirPath)
-
-    if os.IsNotExist(err) {
-        // Si l'erreur renvoyée est os.IsNotExist, alors le répertoire n'existe pas
-        fmt.Println("Le répertoire n'existe pas.")
-    } else {
-        // Sinon, le répertoire existe
-        fmt.Println("Le répertoire existe.")
-    }
+	// Vérifier si le répertoire existe
+	if _, err := os.Stat(dirPath); err != nil {
+		fmt.Println("Le répertoire n'existe pas")
+	} else {
+		fmt.Println("Le répertoire existe")
+	}
 }
-
 ```
 
-La sortie du code ci-dessus dépendra de l'existence ou non du répertoire spécifié. Voici un exemple de sortie pour un répertoire existant :
-
-```
-Le répertoire existe.
-```
-
-Et voici un exemple de sortie pour un répertoire inexistant :
-
-```
-Le répertoire n'existe pas.
-```
+Dans cet exemple, nous utilisons la fonction `os.Stat()` et vérifions si une erreur est renvoyée. Si c'est le cas, cela signifie que le répertoire n'existe pas et nous imprimons un message correspondant. Sinon, cela signifie que le répertoire existe et nous imprimons un autre message.
 
 ## Plongée en profondeur
 
-En plongeant en profondeur, il est important de noter que la fonction `os.Stat()` renverra une erreur `nil` même si le répertoire spécifié existe mais que l'utilisateur n'a pas les droits d'accès nécessaires. Si vous souhaitez vous assurer que le répertoire est à la fois existant et que vous avez les droits d'accès nécessaires, vous pouvez utiliser la fonction `os.Stat()` suivie de la fonction `os.IsPermission()` pour vérifier si l'erreur renvoyée est due à une autorisation insuffisante.
+Outre la fonction `os.Stat()`, il existe d'autres façons de vérifier si un répertoire existe en utilisant Go. Par exemple, la fonction `os.IsNotExist()` peut être utilisée pour vérifier si une erreur est due à un répertoire n'existant pas. De plus, il est également possible d'utiliser des opérations de fichier telles que `Readdir()` pour obtenir la liste des fichiers et répertoires existants et les comparer avec le chemin d'accès fourni.
 
-## Voir également
+## Voir aussi
 
-- La documentation officielle de la fonction `os.Stat()` en Go : https://golang.org/pkg/os/#Stat
-- Un exemple pratique de vérification de la présence d'un répertoire en utilisant Go : https://www.digitalocean.com/community/tutorials/how-to-use-the-new-go-error-handling-features-fr
+- Documentation officielle de Go sur la fonction `os.Stat()` : https://golang.org/pkg/os/#Stat
+- Tutoriel sur la vérification de l'existence d'un répertoire en Go : https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-go
+- Exemple de code utilisant la fonction `os.IsNotExist()` : https://gobyexample.com/error-handling

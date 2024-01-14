@@ -1,41 +1,48 @@
 ---
 title:    "Kotlin: Scrivere test"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere test è un'attività essenziale per garantire la qualità del codice. I test permettono di identificare e risolvere eventuali bug o errori prima che il codice venga messo in produzione, riducendo quindi il rischio di problemi nei programmi.
+Scrivere test di programmazione è un modo per garantire che il nostro codice funzioni correttamente e che eventuali aggiornamenti futuri non causino problemi inaspettati. Inoltre, aiuta ad identificare e risolvere bug durante lo sviluppo.
 
 ## Come fare
 
-Per scrivere test in Kotlin, è necessario utilizzare la libreria di testing standard di Kotlin, chiamata JUnit. Per prima cosa, è necessario importare la libreria nei file di codice in cui verranno scritti i test, utilizzando l'istruzione `import org.junit.Test`. Successivamente, è possibile utilizzare le annotazioni `@Test` prima di un metodo per indicare che quel metodo è un test.
+Per iniziare a scrivere test in Kotlin, possiamo utilizzare il framework di testing integrato in Android Studio o Koltin. Ad esempio, possiamo creare una semplice classe di test che verifica che il metodo di somma di due numeri funzioni correttamente:
 
-Un esempio di test scritto in Kotlin potrebbe essere il seguente:
-
-```
-Kotlin
+```Kotlin
+// Importiamo il framework di testing
 import org.junit.Test
 
+// Definiamo la classe di test
+class MyTestClass {
+
+// Definiamo il metodo di somma
+fun add(a: Int, b: Int): Int {
+return a + b
+}
+
+// Definiamo il test
 @Test
-fun testSum() {
-    val sum = calculateSum(2, 3)
-    assert(sum == 5)
+fun `test somma`() {
+// Usiamo il metodo assertEquals per verificare il risultato della somma
+assertEquals(expected = 5, actual = add(2, 3))
+}
 }
 ```
 
-In questo esempio, stiamo testando la funzione `calculateSum`, che dovrebbe restituire la somma di due numeri. Utilizziamo l'assert `assert(sum == 5)` per verificare che il valore della somma sia effettivamente 5. Se il test fallisce, significa che la nostra funzione non sta restituendo il risultato corretto e dobbiamo correggere il codice.
+Una volta eseguito il test, dovremmo ottenere una conferma che la somma funziona correttamente.
 
 ## Approfondimento
 
-Scrivere test efficienti e completi è un'attività importante e richiede una certa pratica. È importante testare tutti i possibili scenari e input di una funzione, per identificare eventuali bug o comportamenti inattesi. Ciò può richiedere sia l'utilizzo di input "validi" che "non validi", sia l'esecuzione di cicli di test ripetuti. Inoltre, è possibile utilizzare funzioni di setup e teardown per preparare l'ambiente di test e ripristinarlo dopo ogni test.
-
-Inoltre, è possibile utilizzare mock e stub per simulare componenti esterni e creare un ambiente di test isolato. Ciò può essere utile quando si vuole testare una funzione che dipende da altri moduli, senza coinvolgerli direttamente nei test.
+Scrivere test può sembrare una perdita di tempo, ma in realtà ci aiuta a scrivere codice più affidabile. Inoltre, ci consente di eseguire facilmente dei test di regressione in futuro per garantire che il nostro codice continui a funzionare come previsto.
 
 ## Vedi anche
 
-- [JUnit documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Kotlin Test](https://kotlinlang.org/docs/tutorials/ =>
-kotlin-for-py/test-labs.html)
+- [Documentazione ufficiale su testing in Kotlin](https://kotlinlang.org/docs/testing.html)
+- [Tutorial su come scrivere test in Kotlin](https://www.youtube.com/watch?v=2TqgsVBpzuA)
+- [Articolo su come il testing può migliorare la qualità del codice](https://medium.com/kotlinbrothers/the-importance-of-writing-tests-in-kotlin-44da09b8b31d)

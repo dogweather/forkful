@@ -1,48 +1,40 @@
 ---
 title:    "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi muuttaa päivämäärä merkkijonoksi?
+## Miksi: 
+Monet ohjelmoijat saattavat kysyä itseltään, miksi olisi hyödyllistä muuntaa päivämäärä merkkijonoksi. Tässä blogikirjoituksessa käymme läpi syitä ja annamme esimerkkejä siitä, miten tämä voidaan tehdä Kotlinilla.
 
-Päivämäärän muuttaminen merkkijonoksi on yleinen ohjelmointitarve monilla ohjelmointikielillä, mukaan lukien Kotlin. Tässä blogikirjoituksessa kerromme miksi päivämäärän muuttaminen merkkijonoksi on tärkeää ja kuinka se voidaan tehdä käyttämällä Kotlin-kieltä.
-
-## Miten tehdä se?
-
-Kotlinilla on joitain valmiita toimintoja päivämäärien muuttamiseksi merkkijonoksi. Yksinkertaisin tapa muuttaa päivämäärä merkkijonoksi on käyttää `SimpleDateFormat` -luokkaa.
+## Miten: 
+Muuntaessa päivämäärää merkkijonoksi, tarvitset ensin päivämäärän ja sitten haluamasi muotoilun. Esimerkiksi, jos haluat näyttää päivämäärän muodossa "dd/mm/yyyy", käytä seuraavaa koodia:
 
 ```Kotlin
-val date = Date()
-val sdf = SimpleDateFormat("dd-MM-yyyy")
-val dateString = sdf.format(date)
-println(dateString)
+val paivamaara = LocalDate.now()
+println(paivamaara.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
 ```
-Tämä koodi luo uuden `SimpleDateFormat` -olion ja määrittää muodon, jossa haluamme päivämäärän olevan. Voit määrittää haluamasi muodon käyttämällä `yy`, `yyyy`, `MM`, `dd` ja muita vastaavia symboleja. Lopuksi, `format` -metodilla voit muuttaa päivämäärän haluamasi muodon mukaiseksi merkkijonoksi.
+Tämän koodin tuloste riippuu siitä, mikä päivämäärä se suoritetaan. Jos esimerkiksi suoritat tämän koodin tänään, tuloste olisi "21/09/2021".
 
-Ulostulon tulisi näyttää esimerkiksi tältä: `09-10-2021`.
-
-Voit myös käyttää `DateTimeFormatter` -luokkaa, joka on saatavilla Kotlinin Java-kirjaston kautta.
+On myös mahdollista määrittää päivämäärä, jota haluat muuntaa merkkijonoksi, esimerkiksi:
 
 ```Kotlin
-val date = LocalDate.now()
-val dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-val dateString = date.format(dtf)
-println(dateString)
+val syntymapaiva = LocalDate.of(2000, 4, 15)
+println(syntymapaiva.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
 ```
 
-Tämä koodi luo uuden `DateTimeFormatter` -olion ja antaa sille halutun muodon, jota komennolla `ofPattern` ohjataan. Sitten voit käyttää `format` -metodia muuttaaksesi päivämäärän haluamasi muodon mukaiseksi merkkijonoksi.
+Tällöin tuloste olisi "15/04/2000".
 
-Ulostulon tulisi näyttää samalta kuin ensimmäisessä esimerkissä.
+## Syvempi sukellus: 
+Päivämäärän muuntaminen merkkijonoksi on hyödyllistä esimerkiksi silloin, kun haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle jollakin muulla kielellä kuin ohjelman käyttämällä.
 
-## Syvempi sukellus
+Koltinissa on myös muita tapoja muuntaa päivämäärä merkkijonoksi, kuten käyttää valmiita kirjastoja, kuten JodaTimen tai strftime-komentoa. On myös tärkeää huomioida, että päivämäärän muodon merkkijonoksi muuntaminen on tarpeen, jos päivämääräsi sisältää aikaa tai aikavyöhykettä.
 
-Jos haluat selventää tarkemmin miten päivämääriä käsitellään merkkijonoina, voit tutustua Java Date and Time API -dokumentaatioon. Sieltä löydät lisätietoa käytetyistä luokista, kuten `SimpleDateFormat` ja `DateTimeFormatter`, sekä muita vinkkejä päivämäärien muuttamiseksi merkkijonoiksi.
+## Katso myös: 
+- [Java 8 Date and Time API]{https://www.baeldung.com/java-8-date-time-intro}
+- [JodaTime]{https://github.com/JodaOrg/joda-time}
+- [strftime-komento]{https://strftime.org/}
 
-Lisäksi, jos käytät Kotlinia Android-sovelluskehityksessä, voit tutustua Androidin Date and Time API -ohjeisiin, jotka sisältävät myös hyödyllistä tietoa päivämäärien muuttamisesta merkkijonoiksi.
-
-# Katso myös
-
-- [Java Date and Time API -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Android Date and Time API -ohjeet](https://developer.android.com/reference/java/time/package-summary)
+Toivottavasti tämä kirjoitus auttoi sinua ymmärtämään, miksi ja miten päivämäärän muuntaminen merkkijonoksi voidaan tehdä Kotlinilla. Hyvää ohjelmointia!

@@ -1,63 +1,44 @@
 ---
-title:    "Fish Shell: Eine neue Programmierprojekt beginnen"
+title:    "Fish Shell: Ein neues Projekt starten"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum man sich entscheiden könnte, ein neues Projekt mit der Fish Shell zu starten. Vielleicht möchtest du deine Programmierfähigkeiten verbessern oder einfach nur eine neue Sprache ausprobieren. Die Fish Shell ist eine großartige Wahl für Anfänger und erfahrene Entwickler gleichermaßen.
+Als begeisterter Programmierer weißt du wahrscheinlich, wie wichtig es ist, sauberen und effizienten Code zu schreiben. Aber wusstest du, dass die Wahl der richtigen Shell auch einen großen Einfluss auf die Qualität deines Codes haben kann? In diesem Blog-Beitrag werden wir über die Verwendung von Fish Shell sprechen und warum es eine großartige Wahl für dein nächstes Projekt sein könnte.
 
-## Wie
+## Wie geht's 
 
-Die Fish Shell ist eine leistungsstarke und benutzerfreundliche Shell, die eine Vielzahl von Funktionen bietet. Wenn du ein neues Projekt starten möchtest, solltest du zuerst sicherstellen, dass du die Fish Shell auf deinem System installiert hast. Anschließend kannst du mit dem Erstellen eines neuen Verzeichnisses für dein Projekt beginnen. Hier ist ein Beispiel, wie du dies mit der Fish Shell machen kannst:
+Fish Shell ist eine benutzerfreundliche, moderne Shell, die für ihre Benutzerfreundlichkeit und Leistung bekannt ist. Sie bietet eine umfassende Autovervollständigungsfunktion, die dir dabei hilft, deine Befehle schneller zu tippen und Fehler zu vermeiden. Lass uns einen kurzen Blick darauf werfen, wie du Fish Shell installieren und verwenden kannst:
 
-```
-Fish Shell
-$ mkdir mein_projekt
-$ cd mein_projekt
-```
-
-Als nächstes solltest du ein Skript erstellen, in dem du dein Projekt ausführst. Dies kann auf unterschiedliche Weise erfolgen, abhängig von den Anforderungen deines Projekts. Hier ist ein Beispiel, wie du ein einfaches Skript mit der Fish Shell erstellen kannst:
-
-```
-Fish Shell
-$ touch mein_skript.fish
-$ nano mein_skript.fish
+```Fish Shell
+brew install fish # Installiere Fish Shell mit Homebrew
+fish_config # Öffne die Konfigurationsdatei von Fish Shell
 ```
 
-Mit dem Befehl `touch` erstellst du eine leere Datei mit dem Namen "mein_skript.fish". Anschließend kannst du mit dem Befehl `nano` den Texteditor öffnen und dein Skript schreiben. Hier ist ein einfaches Beispiel eines Skripts, das "Hallo Welt" ausgibt:
+Nachdem du Fish Shell erfolgreich installiert hast, kannst du mit dem Befehl `fish_config` auf die Fish Shell-Konfiguration zugreifen. Hier kannst du das Design und die Einstellungen der Shell an deine Bedürfnisse anpassen.
 
-```
-Fish Shell
-echo "Hallo Welt"
-```
+## Tiefentauchen
 
-Um dein Skript auszuführen, musst du es nur noch mit dem Befehl `source` aufrufen:
+Eine der besten Eigenschaften von Fish Shell ist seine umfassende Autovervollständigungsfunktion. Probieren wir mal aus, wie sie funktioniert:
 
-```
-Fish Shell
-$ source mein_skript.fish
+```Fish Shell
+ec# # Drücke die Tab-Taste, um `echo` auszuführen
 ```
 
-## Deep Dive
+Fish Shell vervollständigt automatisch den Befehl `echo` für dich. Aber das ist nicht alles, Fish Shell vervollständigt auch die Argumente, die du in deinem Befehl verwenden möchtest. Lass uns das mit einem weiteren Beispiel demonstrieren:
 
-Wenn du tiefer in die Funktionalität der Fish Shell eintauchen möchtest, gibt es viele Ressourcen online, die dir dabei helfen können. Du kannst zum Beispiel die offizielle Fish Shell-Dokumentation lesen oder auf Github nach hilfreichen Skripten suchen. Es gibt auch Online-Communities, wie zum Beispiel das Fish Shell-Forum, in denen du Fragen stellen und von anderen lernen kannst.
+```Fish Shell
+e#f "Hallo" # Drücke die Tab-Taste, um `echo "Hallo"` auszuführen
+```
 
-Es ist auch hilfreich, sich mit den verschiedenen Befehlen und Funktionen der Fish Shell vertraut zu machen. Hier sind einige Beispiele von nützlichen Befehlen, die dir bei deinem Projekt helfen könnten:
-
-- `ls` - Liste der Dateien und Verzeichnisse in einem ausgewählten Verzeichnis anzeigen
-- `cd` - Wechselt in ein anderes Verzeichnis
-- `cp` - Kopiert eine Datei oder ein Verzeichnis an einen anderen Ort
-- `mv` - Verschiebt eine Datei oder ein Verzeichnis an einen anderen Ort
-- `grep` - Durchsucht eine Datei nach einem bestimmten Text oder einem Muster
-- `cat` - Gibt den Inhalt einer Datei aus
-
-Es gibt noch viele weitere Befehle und Funktionen, die du erkunden und in deinem Projekt verwenden kannst. Indem du dich mit der Fish Shell vertraut machst, wirst du immer mehr Wege finden, wie du sie in deinem Projekt nutzen kannst.
+Wie du siehst, vervollständigt Fish Shell das Argument `"Hallo"` für dich. Dies macht das Schreiben von Befehlen viel einfacher und schneller.
 
 ## Siehe auch
 
-- [Offizielle Fish Shell-Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell auf Github](https://github.com/fish-shell/fish-shell)
-- [Fish Shell-Forum](https://fishshell.com/docs/current/index.html)
+- [Fish Shell offizielle Dokumentation] (https://fishshell.com/docs/current/index.html)
+- [Fish Shell Github-Repo] (https://github.com/fish-shell/fish-shell)
+- [Fish Shell Forum] (https://forum.fishshell.com/)

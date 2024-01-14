@@ -1,41 +1,52 @@
 ---
-title:    "Elixir: Leggere gli argomenti dalla riga di comando"
+title:    "Elixir: Lettura degli argomenti dalla linea di comando"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ci sono molte ragioni per cui potresti voler leggere gli argomenti dalla riga di comando in Elixir. Potresti essere un nuovo programmatore che vuole imparare un nuovo linguaggio, o fare parte di un team che sta migrando da un altro linguaggio, o forse hai una specifica necessità di lettura dei parametri per il tuo progetto. In ogni caso, conoscere come leggere gli argomenti dalla riga di comando in Elixir è un'abilità molto utile da avere.
+Molte volte nella programmazione, è necessario che il programma legga e utilizzi gli argomenti passati dalla riga di comando. Questi possono essere utili per passare informazioni al programma o per fornire opzioni diverse durante l'esecuzione. Leggere gli argomenti da riga di comando è un'operazione importante e fondamentale da conoscere per poter scrivere codice Elixir efficace.
 
 ## Come fare
 
-Per leggere gli argomenti dalla riga di comando, è necessario utilizzare la funzione `System.argv()` che restituisce una lista contenente tutti gli argomenti passati. Ad esempio, se eseguiamo il seguente codice in una riga di comando:
+Per leggere gli argomenti da riga di comando in Elixir, è necessario importare il modulo `OptionParser` e definire un'opzione da cercare. Ad esempio, se vogliamo leggere il primo argomento dalla riga di comando, possiamo definire il seguente codice all'interno di un blocco ```Elixir...```:
 
-```Elixir 
-args = System.argv()
-IO.inspect(args)
+```Elixir
+options = %{
+  argument: :string
+}
+
+OptionParser.parse(args, options)
 ```
 
-L'output sarà una lista contenente tutti gli argomenti della riga di comando.
+Dove `args` è l'array degli argomenti passati dalla riga di comando. Questo codice ci permette di leggere il valore del primo argomento utilizzando `parsed <option>`, dove `<option>` è il nome dell'opzione definita in `options`.
 
+### Esempio:
+
+Se il nostro programma viene chiamato da riga di comando come `elixir myprogram.exs hello`, il valore di `parsed :argument` sarà `"hello"`.
+
+Inoltre, se vogliamo leggere più di un argomento, possiamo semplicemente definire più opzioni all'interno di `options` e utilizzarle in seguito nello stesso modo.
+
+## Analisi approfondita
+
+Oltre a leggere gli argomenti passati dalla riga di comando, possiamo anche fornire opzioni con valori predefiniti in caso l'utente non li specifichi durante l'esecuzione. Possiamo farlo aggiungendo l'opzione `default <value>` dopo la definizione del tipo di dato di un'opzione. Inoltre, possiamo anche utilizzare `multi true` per consentire l'utilizzo di più opzioni con lo stesso nome.
+
+Ad esempio:
+
+```Elixir
+options = %{
+  first_name: {:string, default: "John"},
+  last_name: {:string, default: "Doe", multi: true}
+}
 ```
-[in: "input.txt", out: "output.txt", config: "config.json"]
-```
 
-Si noti che il primo elemento della lista sarà sempre il nome del file eseguibile Elixir, quindi i nostri argomenti iniziano dall'indice 1.
-
-Per accedere a un argomento specifico, possiamo utilizzare la notazione con parentesi quadrate e specificare l'indice dell'elemento desiderato. Ad esempio, se vogliamo accedere al secondo argomento (output.txt), possiamo scrivere `args[2]`.
-
-## Approfondimento
-
-Oltre alla funzione `System.argv()`, esistono anche altri modi per leggere gli argomenti dalla riga di comando in Elixir. Ad esempio, è possibile utilizzare il modulo `OptionParser` che permette di definire opzioni e argomenti specifici per il programma e di gestirli in modo più strutturato.
-
-Inoltre, è importante tenere presente che gli argomenti della riga di comando in Elixir sono passati come stringhe. Quindi, se hai bisogno di convertirli in un altro tipo di dato, come un intero o un booleano, sarà necessario utilizzare funzioni di conversione come `String.to_integer()` o `String.to_boolean()`.
+Ciò consentirà al programma di leggere l'argomento `--first_name` con un valore predefinito di `"John"` e l'argomento `--last_name` con un valore predefinito di `"Doe"`, ma anche, se specificato, di utilizzare più volte l'opzione `--last_name` per leggere più valori.
 
 ## Vedi anche
 
-- Documentazione ufficiale su `System.argv()`: https://hexdocs.pm/elixir/System.html#argv/0
-- Tutorial su `OptionParser`: https://elixirschool.com/en/lessons/advanced/command-line-args/
-- Conversione di stringhe in Elixir: https://hexdocs.pm/elixir/String.html#to_integer/1
+- Documentazione ufficiale di Elixir sulla gestione degli argomenti da riga di comando: https://hexdocs.pm/elixir/OptionParser.html
+- Un tutorial su come utilizzare gli argomenti da riga di comando in Elixir: https://medium.com/@sfogo/using-command-line-options-in-elixir-f318f188df
+- Una spiegazione più approfondita sul funzionamento di `OptionParser`: https://medium.com/@mattiaocchiuto/elixir-and-command-line-arguments-using-optionparser-ef22fda9fca6

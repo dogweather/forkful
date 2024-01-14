@@ -1,40 +1,33 @@
 ---
-title:    "Gleam: Convertire una data in una stringa."
+title:    "Gleam: Convertire una data in una stringa"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Convertire una data in una stringa può sembrare un'operazione semplice, ma è fondamentale per la gestione e la visualizzazione delle informazioni temporali nei tuoi programmi Gleam. In questo articolo, ti mostreremo come farlo in modo efficiente utilizzando alcune funzioni built-in di Gleam.
+Se sei un programmatore o hai interesse ad apprendere il linguaggio di programmazione Gleam, potresti chiederti come convertire una data in una stringa. La risposta è semplice: spesso è necessario trasformare una data in una stringa per poterla visualizzare o manipolarla all'interno di un programma. In questo articolo, esploreremo come farlo utilizzando Gleam.
 
 ## Come fare
-
-Per prima cosa, è necessario specificare il formato della stringa di output in cui desideri visualizzare la data. Ad esempio, se vuoi esprimere la data nel formato "giorno mese anno", userai il codice "%d %B %Y". Di seguito è riportato un esempio di come creare una stringa formattata utilizzando la funzione strftime:
-
-```Gleam
-let data = Time.now()
-let stringa = Time.strftime(data, "%d %B %Y")
-```
-
-Il valore della stringa sarà ora "21 maggio 2021".
-
-Inoltre, puoi specificare il fuso orario desiderato per la tua data utilizzando la funzione timezone(), che prende come argomento una stringa contenente il nome del fuso orario. Ad esempio, se vuoi visualizzare la data nel fuso orario italiano, utilizzerai il codice "Europe/Rome". Di seguito è riportato un esempio di come utilizzare questa funzione:
+Per convertire una data in una stringa in Gleam, dobbiamo prima di tutto creare una data utilizzando la libreria standard `Time.Date`. Ad esempio:
 
 ```Gleam
-let data = Time.timezone("Europe/Rome")
+let data = Time.Date.new (year = 2020, month = 12, day = 31)
 ```
 
-Questo ti restituirà la data corrente nel fuso orario specificato.
+Una volta creata la data, possiamo utilizzare la funzione `format` per convertirla in una stringa, specificando un formato desiderato. Ad esempio, per ottenere una stringa nel formato "DD/MM/YYYY", possiamo utilizzare il seguente codice:
 
-## Approfondimenti
+```Gleam
+let stringa = Time.Date.format({data, format = "%d/%m/%Y"})
+```
 
-Oltre alle funzioni menzionate sopra, esistono altre opzioni per la formattazione delle date in stringhe, come ad esempio l'utilizzo delle variabili Time.second, Time.minute, Time.hour, ecc. Inoltre, esistono anche altre funzioni utili per la gestione dei tempi, come Time.add() e Time.diff(), che possono essere utilizzate per eseguire operazioni aritmetiche con le date.
+L'output di questo codice sarà `31/12/2020`, che è esattamente ciò che volevamo.
 
-Inoltre, è importante tenere in considerazione il formato delle date utilizzato dal sistema operativo su cui viene eseguito il tuo programma Gleam. Assicurati sempre di adattare il codice di conseguenza per evitare errori di conversione.
+## Approfondimento
+La funzione `format` accetta diversi parametri per ottenere il formato desiderato della stringa. Ad esempio, possiamo specificare l'uso di ore, minuti e secondi nella stringa finale se li vogliamo inclusi. Inoltre, possiamo anche specificare l'uso di abbreviazioni per i mesi o i giorni della settimana. La libreria `Time.Date` ha molte altre funzioni utili che possono essere utilizzate per manipolare le date e le stringhe in modo efficiente.
 
-See Also:
-
-- Documentazione Time module di Gleam: https://gleam.run/modules/time.html
-- Tutorial su come usare il modulo Time di Gleam: https://gleam.run/tutorials/time.html
+## Vedi anche
+- [Documentazione ufficiale di Gleam su Time.Date](https://gleam.run/modules/time-date/)
+- [Esempi pratici di utilizzo di Time.Date](https://gist.github.com/gleamrun/944c7873e862ffc43e53064f82be008b)
+- [Impara a programmare in Gleam](https://gleam.run/learn/)

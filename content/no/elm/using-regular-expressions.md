@@ -1,35 +1,60 @@
 ---
 title:    "Elm: Å bruke regulære uttrykk"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være mange grunner til å bruke regulære uttrykk (også kjent som regex) i Elm-programmering. Regulære uttrykk er et kraftig verktøy for å søke, matche og manipulere tekststrenger. De kan være nyttige for å validere brukerinput, filtrere data, og generelt gjøre søk og erstatning i strenger mer effektive.
+I mange programmeringsspråk, inkludert Elm, kan vi oppleve å måtte behandle tekststrenger for å gjøre spesielle operasjoner. En måte å effektivt håndtere slike strenger er ved hjelp av regulære uttrykk (regular expressions). Dette er mønstre som lar oss søke etter og manipulere tekststrenger basert på visse kriterier. Med dette verktøyet kan vi enkelt finne og erstatte deler av tekst, eller til og med validerere inndata fra brukere. Hvis du vil bli en mer effektiv Elm-programmerer, er det absolutt verdt å lære om regulære uttrykk.
 
-## Hvordan bruke regulære uttrykk i Elm
+## Hvordan
 
-For å bruke regex i Elm, må du importere Regex-modulen og bruke funksjoner som `regex` og `match`. Her er et enkelt eksempel på hvordan du kan matche et uttrykk inne i en streng:
+For å bruke regulære uttrykk i Elm, må vi først importere Regex-modulen:
 
-```elm
+```Elm
 import Regex exposing (..)
-
-regex = regex "hund"
-
-match regex "Jeg elsker hunder" --> Ok "hund"
-match regex "Dette er en katt" --> Err (Regex.Find Nothing)
 ```
 
-Som du kan se vil `match` returnere en `Ok` verdi hvis det er en match, og en `Err` verdi hvis det ikke er noen match. Du kan også bruke en `Regex.replace` funksjon for å erstatte matched strenger med en annen verdi.
+Deretter kan vi bruke funksjoner som <code>find</code> og <code>replace</code> for å manipulere tekststrenger. La oss si at vi har en liste med e-postadresser og vi bare vil vise de som inneholder en bestemt domene:
 
-## Dypdykk i regulære uttrykk
+```Elm
+let
+    emails =
+        [ "test@test.com", "hello@world.com", "foo@bar.com" ]
+    
+    domain =
+        "world.com"
+    
+    filteredEmails =
+        List.filter (\email -> Regex.find (Regex.regex domain) email) emails
+in
+    filteredEmails
 
-Regulære uttrykk kan være komplekse og ha mange ulike syntaksregler. Det finnes ulike metoder for å bygge regex uttrykk, og det er viktig å forstå hvordan forskjellige symboler og metakarakterer brukes. Du kan lære mer om regulære uttrykk ved å lese Elm's offisielle dokumentasjon eller ved å utforske ulike eksempler og Regex generatorer online.
+-- Output:
+-- [ "hello@world.com" ]
+```
+
+Som du kan se, brukte vi <code>find</code> for å søke etter e-postadresser som inneholder "world.com". Det er også mulig å erstatte deler av tekststrenger med <code>replace</code> funksjonen. La oss si at vi ønsker å endre alle forekomster av "elm" til "Elm" i en tekststreng:
+
+```Elm
+let
+    text =
+        "dette er en tekst om elm-programmering"
+in
+    Regex.replace (Regex.regex "elm") (\_ -> "Elm") text
+
+-- Output:
+-- "dette er en tekst om Elm-programmering"
+```
+
+## Dypdykk
+
+Hvis du vil lære mer om regulære uttrykk i Elm, kan du sjekke ut dokumentasjonen på Elm sine nettsider. Der finner du en komplett oversikt over alle funksjoner og deres bruksområder. Det er også mange nyttige ressurser på nettet, som eksempler og tutorials, som kan hjelpe deg å forstå og mestre regulære uttrykk.
 
 ## Se også
 
-* [Elm Regex dokumentasjon](https://package.elm-lang.org/packages/elm/regex/latest)
-* [Regex101 - Online regex tester og generator](https://regex101.com/)
-* [RegExr - Interaktiv regex editor og tester](https://regexr.com/)
+- [Elm sin dokumentasjon om regulære uttrykk](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Tutorial om regulære uttrykk i Elm](https://www.elm-tutorial.org/en/05-advanced/01-regular-expressions.html)

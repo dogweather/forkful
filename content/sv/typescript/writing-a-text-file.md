@@ -1,49 +1,39 @@
 ---
 title:    "TypeScript: Skriva en textfil"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Ibland när vi programmerar i TypeScript kan vi behöva skapa en textfil för att lagra data eller information. Det kan vara användbart i många olika projekt och situationer, såsom att skapa en loggfil eller en databas för vår applikation. I denna bloggpost kommer vi att gå igenom varför det är användbart att kunna skriva till en textfil, samt hur man kan göra det på ett enkelt sätt.
+Att kunna skriva en textfil är en grundläggande färdighet inom programmering. Genom att lära sig denna färdighet kan man spara data och information på ett enkelt sätt och återanvända det i olika delar av ett program. Det är även en viktig del av att bygga och utveckla appar, webbsidor och andra applikationer.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva till en textfil i TypeScript behöver vi först importera modulen "fs" som står för "file system". Sedan kan vi använda funktionen "writeFileSync()" för att skapa och skriva till en textfil.
+För att skriva en textfil i TypeScript behöver du först skapa en variabel som pekar på en textfil. Detta görs genom att använda funktionen `createWriteStream` från modulen `fs`. När du har skapat din variabel kan du sedan använda metoden `write` för att skriva text till filen. Se nedanstående kodexempel för att få en bättre förståelse:
 
 ```TypeScript
-import * as fs from 'fs';
+import { createWriteStream } from "fs";
 
-fs.writeFileSync('mittExempel.txt', 'Detta är ett exempel på en textfil som har skapats med TypeScript.');
+// Skapar en variabel som pekar på textfilen 'textfil.txt'
+let textFil = createWriteStream("textfil.txt");
+
+// Skriver texten "Här är en exempeltext" till filen
+textFil.write("Här är en exempeltext");
+
+// Stänger filen och sparar ändringarna
+textFil.close();
 ```
 
-Först importeras "fs" modulen och sedan använder vi funktionen "writeFileSync()" för att skapa en fil med namnet "mittExempel.txt". Det andra argumentet i funktionen är den text som ska skrivas till filen. Om vi nu öppnar filen "mittExempel.txt" kommer vi se följande utskrift:
-
-Detta är ett exempel på en textfil som har skapats med TypeScript.
+När du har kört koden ovan så kommer en textfil med namnet "textfil.txt" att skapas i samma mapp som din kodfil. Du kan öppna filen för att se att texten har skrivits till den.
 
 ## Djupdykning
 
-Nu när vi vet hur man skriver till en textfil i TypeScript, låt oss titta på djupare aspekter av funktionen "writeFileSync()". Denna funktion tar som sagt emot två argument, förutom filnamnet så är det andra argumentet den text som ska skrivas till filen. Det finns även ett tredje argument som kan användas för att ställa in olika konfigurationer.
-
-En viktig sak att komma ihåg är att varje gång vi kör funktionen "writeFileSync()", skrivs den nya texten över den tidigare texten i textfilen. Om vi vill lägga till text istället för att skriva över den tidigare texten så kan vi använda oss av en "flagga" i det tredje argumentet.
-
-```TypeScript
-fs.writeFileSync('mittExempel.txt', 'Detta är en ny text som har lagts till.', { flag: 'a' });
-```
-
-I detta exempel har vi ställt in flaggan "a" som betyder att vi vill lägga till texten, istället för att skriva över den tidigare texten i filen. Därmed kommer resultatet vara:
-
-Detta är ett exempel på en textfil som har skapats med TypeScript.
-Detta är en ny text som har lagts till.
+För mer avancerade användare finns det olika metoder och tekniker för att skriva textfiler i TypeScript. Man kan till exempel använda sig av olika formatteringsverktyg för att göra textfilen mer läsbar, eller använda sig av loopar för att skriva större mängder data till filen. Det finns även andra moduler som kan importeras för att underlätta skrivandet av textfiler.
 
 ## Se även
 
-Här är några länkar till andra resurser där du kan lära dig mer om att skriva till textfiler i TypeScript:
-
-- [Dokumentation för File System-modulen](https://nodejs.org/api/fs.html)
-- [W3Schools tutorial för att skriva till filer i TypeScript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [StackOverflow fråga om att skriva till filer i TypeScript](https://stackoverflow.com/questions/2496710/nodejs-writing-to-a-file)
-
-Tack för att du läste denna bloggpost och jag hoppas att den varit till hjälp! Glöm inte att hålla dig uppdaterad med de senaste funktionerna och möjligheterna inom TypeScript.
+- [TypeScript Docs - fs Modulen](https://www.typescriptlang.org/docs/handbook/file-system-utility.html)
+- [Node.js Dokumentation - fs Modulen](https://nodejs.org/api/fs.html)

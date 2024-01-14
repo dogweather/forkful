@@ -1,51 +1,41 @@
 ---
-title:    "Swift: Pisanie do standardowego błędu"
+title:    "Swift: Pisanie do błędu standardowego"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto pisać do standardowego błędu w Swift?
 
-Każdy programista musi radzić sobie z błędami w swoim kodzie. W tym artykule dowiesz się, dlaczego warto zapisać błędy do standardowego wyjścia błędów (standard error) i jak to zrobić w języku Swift.
+Pisanie do standardowego błędu (stderr) jest ważnym elementem programowania w języku Swift. Jest to funkcja, która pozwala programistom wyświetlać informacje o błędach, ostrzeżeniach i innych komunikatach diagnostycznych w trakcie działania aplikacji. Dzięki temu możemy łatwiej zlokalizować i naprawić ewentualne problemy w naszym kodzie.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Aby zapisać błędy do standardowego wyjścia błędów w Swift, musisz wykorzystać funkcję `fputs()`. Przyjmie ona jako parametry napis z treścią błędu oraz `stderr`, który jest wskaźnikiem na strumień błędów. Poniższy kod pokazuje przykład użycia tej funkcji:
-
-```Swift
-let errorMessage = "Wystąpił błąd w działaniu programu."
-fputs(errorMessage, stderr)
-```
-
-Aby upewnić się, że błąd zostanie wyświetlony użytkownikowi, warto również wykorzystać instrukcję `exit(1)`, która zakończy działanie programu z kodem błędu. Poniższy kod jest pełnym przykładem obsługi błędu w języku Swift:
+Aby pisać do standardowego błędu w Swift, musimy użyć klasy `FileHandle`, która jest dostępna w bibliotece Foundation. Następnie, musimy ustawić standardowe wyjście na stderr, używając metody `standardError`, a następnie przekazać do niej dane, które chcemy wyświetlić za pomocą metody `write`.
 
 ```Swift
-func divide(_ x: Int, by y: Int) throws -> Int {
-    guard y != 0 else {
-        throw NSError(domain: "DivisionError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Nie można dzielić przez 0."])
-    }
-    return x/y
-}
+import Foundation
 
-do {
-    let result = try divide(10, by: 0)
-    print(result)
-} catch {
-    fputs(error.localizedDescription, stderr)
-    exit(1)
-}
+// Ustawienie standardowego wyjścia na stderr
+let standardError = FileHandle.standardError
+
+// Wyświetlenie komunikatu o błędzie
+let errorMessage = "Wystąpił błąd podczas działania aplikacji."
+let data = errorMessage.data(using: .utf8)
+standardError.write(data!)
 ```
 
-W przypadku błędu w dzieleniu przez 0, funkcja `fputs()` wypisze odpowiedni komunikat na standardowym wyjściu błędów, a następnie program zakończy działanie z kodem błędu 1.
+Po uruchomieniu powyższego kodu, w konsoli programistycznej zostanie wyświetlony komunikat o błędzie. Możemy również przekazywać do standardowego błędu inne informacje, takie jak wartości zmiennych czy numery linii, co ułatwia nam analizę problemu.
 
-## Głębszy zanurk
+# Czego jeszcze dowiesz się w trakcie zgłębiania tematu?
 
-Wykorzystanie standardowego wyjścia błędów jest szczególnie przydatne w przypadku większych projektów, gdzie może być konieczność obsługi wielu różnych typów błędów. W takich przypadkach warto stworzyć osobne typy dla różnych rodzajów błędów oraz wykorzystać instrukcję `do-catch` do ich obsługi.
+Podczas pisania do standardowego błędu możemy również korzystać z różnych formatów, takich jak HTML czy Unicode. W artykule dokładniej omówimy te możliwości oraz pokażemy przykładowe kody i ich output. Będziesz miał/miała również okazję przetestować działanie różnych metod i sprawdzić, jakie informacje można wyświetlać za pomocą standardowego błędu.
 
-## Zobacz także
+# Zobacz również
 
-- [Oficjalna dokumentacja Swift](https://swift.org/documentation/)
-- [Podręcznik programisty w języku Swift](https://docs.swift.org/swift-book/)
-- [Użycie NSError w celu obsługi błędów w języku Swift](https://developer.apple.com/documentation/foundation/nserror)
-- [Inne sposoby obsługi błędów w Swift](https://medium.com/@julesthebot/handling-errors-in-swift-3-d9b91e4f9d0b)
+Jeśli jesteś zainteresowany/a poznaniem innych funkcji języka Swift, zapraszamy do zapoznania się z naszymi innymi artykułami:
+
+- [Tworzenie i ulepszanie klas w Swift](https://www.example.com/tworzenie-i-ulepszanie-klas-swift)
+- [Obsługa wyjątków w Swift](https://www.example.com/obsluga-wyjatkow-swift)
+- [Przydatne narzędzia i biblioteki dla programistów Swift](https://www.example.com/narzedzia-biblioteki-swift)

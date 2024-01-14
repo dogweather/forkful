@@ -1,33 +1,42 @@
 ---
 title:    "Java: Uuden projektin aloittaminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projekti?
+## Miksi
 
-Monet meistä ovat intohimoisia Java-ohjelmoinnista ja haluavat aina löytää uusia haasteita ja oppia uusia taitoja. Aloittamalla uuden projektin voimme kehittää osaamistamme entisestään ja saada uusia onnistumisen elämyksiä.
+Aloitettavassa uudessa projektissa on mahdollisuus kehittää uusia taitoja ja ratkaista haastavia ongelmia. Se voi myös johtaa mielenkiintoisiin uusiin työmahdollisuuksiin ja mahdollistaa luovuuden ja omien ideoiden toteuttamisen.
 
-## Miten aloittaa uusi projekti?
+## Kuinka
 
-Ennen kuin aloitat uuden projektin, sinun tulisi miettiä tarkasti mitä haluat saavuttaa ja miksi. Kun tavoitteet ovat selvillä, voit aloittaa suunnittelun ja perehtyä tarvittaviin työkaluihin ja teknologioihin. Tässä on yksinkertainen esimerkki, miten voit luoda uuden Java-projektin Eclipse-kehitysympäristössä:
- 
+Aloittaminen projektin aloittaminen vaatii muutaman tärkeän askeleen suorittamisen. Ensimmäinen askel on määrittää projektin tavoite ja vaatimukset. Tämän jälkeen voit suunnitella käyttäen esimerkiksi UML-kaavioita ja luoda koodiraameja. Lopuksi voit aloittaa koodauksen käyttämällä alla olevia esimerkkejä.
+
 ```Java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Tervetuloa uuteen Java-projektiin!");
-    }
+public class HelloWorld {
+   public static void main(String[] args) {
+      System.out.println("Hei maailma!");
+   }
 }
 ```
-Päivitämme projektiamme ja lisäämme uusia ominaisuuksia projektin edetessä. Muista myös dokumentoida koodisi hyvin ja hyödyntää versionhallintaa, kuten Git, jotta voit palata takaisin aikaisempiin vaiheisiin tarvittaessa.
+
+Tämä yksinkertainen koodiesimerkki tulostaa konsoliin "Hei maailma!". Voit myös luoda muuttujia ja käyttää niitä koodissa:
+
+```Java
+int number = 5;
+System.out.println(number);
+```
+
+Tämä esimerkki tulostaa numeron 5 konsoliin. Näiden esimerkkien avulla voit aloittaa oman projektisi koodaamisen.
 
 ## Syvällinen sukellus
 
-Aloittaessa uuden projektin kannattaa myös miettiä, millaisia haasteita haluat kohdata ja miten voit laajentaa osaamistasi. Voit esimerkiksi kokeilla uusia design-pattern -ratkaisuja tai hyödyntää uusia Java-kirjastoja. Muista myös testata ja optimoida koodisi ja pyrkiä tekemään siitä mahdollisimman helppolukuista ja ymmärrettävää myös muille tiimin jäsenille.
+Ennen kuin aloitat uuden projektin, on hyvä tehdä syvällinen tutkimus ja perehtyä käytettävään teknologiaan ja työkaluihin. Voit myös tutkia jo olemassa olevia projekteja ja oppia niistä. On myös hyödyllistä tutustua parhaisiin käytäntöihin ja suunnittelumalleihin, jotka auttavat sinua luomaan laadukkaan ja kestävän projektin.
 
-# Katso myös
+## Katso myös
 
-- [Eclipse-kehitysympäristö](https://www.eclipse.org/downloads/)
-- [Git-versionhallinta](https://git-scm.com/)
-- [Java design patterns](https://www.javaworld.com/article/2072233/core-java/design-patterns-and-java.html)
+- [Java-aloittelijoiden opas](https://www.hackerrank.com/blog/java-getting-started-guide)
+- [UML-kaavioiden perusteet](https://www.tutorialspoint.com/uml/index.htm)
+- [Parhaat käytännöt Java-projektien suunnittelussa](https://www.javatpoint.com/java-best-practices)

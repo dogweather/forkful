@@ -1,60 +1,41 @@
 ---
 title:    "Python: Recherche et remplacement de texte"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont des tâches courantes en programmation et peuvent être utiles pour modifier rapidement de grandes quantités de données dans un fichier ou une chaîne de caractères. Cela peut également être utilisé pour automatiser des tâches répétitives ou pour corriger des erreurs de saisie.
+La recherche et le remplacement de texte sont des outils extrêmement utiles pour tout programmeur Python. Avec ces outils, vous pouvez facilement modifier de grandes quantités de texte dans vos scripts, ce qui peut vous faire gagner un temps précieux lors du développement.
 
 ## Comment faire
 
-La recherche et le remplacement de texte peuvent être réalisés en utilisant la méthode "replace()" disponible dans le langage de programmation Python. Voici un exemple de code :
+La recherche et le remplacement de texte sont réalisables en utilisant la méthode ```.replace()```. Cette méthode prend deux paramètres: le texte à rechercher et le texte de remplacement. Par exemple, si vous voulez remplacer tous les espaces par des tirets dans une chaîne de caractères, vous pouvez utiliser la ligne de code suivante:
 
 ```
-texte = "Bonjour tout le monde !"
-
-texte_modifie = texte.replace("Bonjour", "Hello")
-
-print(texte_modifie)
+texte_modifie = texte_original.replace(" ", "-")
 ```
 
-Output:
-```
-Hello tout le monde !
-```
+Dans cet exemple, nous avons défini la variable ```texte_original``` contenant notre texte et nous avons utilisé la méthode ```.replace()``` pour remplacer chaque espace par un tiret. Le nouveau texte modifié sera stocké dans la variable ```texte_modifie```.
 
-Dans cet exemple, nous avons remplacé le mot "Bonjour" par "Hello" dans la chaîne de caractères "Bonjour tout le monde !". La méthode replace() prend deux arguments : le texte à remplacer et le nouveau texte. Elle renvoie ensuite une nouvelle chaîne de caractères avec les modifications.
-
-## Plongée en profondeur
-
-Il convient de noter que la méthode replace() ne modifie pas la chaîne de caractères originale, mais en crée une nouvelle. Pour modifier la chaîne de caractères originale, il faut assigner la nouvelle chaîne de caractères à la variable d'origine.
-
-De plus, la méthode replace() ne prend en compte que le premier mot correspondant. Si vous souhaitez remplacer toutes les occurrences du mot, vous pouvez utiliser la méthode "replace()" en conjonction avec une boucle for. Voici un exemple :
+En plus de remplacer, vous pouvez également utiliser la méthode ```.find()``` pour rechercher un texte spécifique dans une chaîne de caractères. Cette méthode renverra l'index du premier caractère du texte recherché. Par exemple, si vous voulez trouver l'index du premier "e" dans une chaîne de caractères, vous pouvez utiliser la ligne de code suivante:
 
 ```
-texte = "Hello hello Hello hello"
-nouveau_texte = ""
-for i in texte.split():
-    if i == "Hello":
-        nouveau_texte = nouveau_texte + "Bonjour "
-    else:
-        nouveau_texte = nouveau_texte + i + " "
-print(nouveau_texte)
+index = texte_original.find("e")
 ```
 
-Output:
-```
-Bonjour Bonjour Bonjour Bonjour
-```
+Si le texte recherché n'est pas trouvé, la méthode renverra -1.
 
-Dans cet exemple, nous avons utilisé la méthode split() pour séparer la chaîne de caractères en une liste de mots. Nous parcourons ensuite cette liste avec une boucle for et nous remplaçons chaque occurrence du mot "Hello" par "Bonjour". Le nouveau texte est ensuite assigné à la variable "nouveau_texte".
+## Plongez plus profondément
+
+Il existe plusieurs paramètres optionnels que vous pouvez ajouter à la méthode ```.replace()``` pour personnaliser votre recherche et remplacement. Par exemple, vous pouvez spécifier le nombre maximum de remplacements à effectuer en ajoutant un troisième paramètre à la méthode. Vous pouvez également utiliser la méthode avec des chaînes de caractères plus complexes, telles que des expressions régulières, pour des remplacements plus avancés.
+
+De plus, il est important de noter que la méthode ```.replace()``` ne modifiera pas directement la chaîne de caractères d'origine. Elle renverra une nouvelle chaîne de caractères modifiée, qui peut être ensuite assignée à une nouvelle variable ou être utilisée directement.
 
 ## Voir aussi
 
-Consultez ces ressources pour en savoir plus sur la recherche et le remplacement de texte en Python :
-
-- [Documentation officielle Python sur les méthodes de chaînes de caractères](https://docs.python.org/fr/3/library/stdtypes.html#string-methods)
-- [Article sur le site Real Python : Python String Methods](https://realpython.com/python-strings/)
+- [Documentation officielle de Python sur la méthode .replace()](https://docs.python.org/fr/3/library/stdtypes.html#str.replace)
+- [Autres méthodes de recherche et de remplacement de texte en Python](https://www.tutorialspoint.com/python/string_replace.htm)
+- [Un guide complet sur les expressions régulières en Python](https://realpython.com/regex-python/)

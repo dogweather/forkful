@@ -1,56 +1,41 @@
 ---
 title:    "Arduino: Verificando se um diretório existe"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que 
+##Por que
 
-Se você está familiarizado com a programação Arduino, provavelmente já se deparou com a necessidade de verificar se um diretório existe em seu projeto. Isso pode ser importante para garantir que seu código funcione corretamente e evitar possíveis erros. Neste artigo, vamos explorar como verificar a existência de um diretório em seu código Arduino.
+Há muitos projetos de programação em que precisamos verificar se um diretório (ou pasta) existe antes de prosseguir com outras atividades. Isso pode ser necessário para garantir que um arquivo seja criado no local adequado ou para evitar erros em nosso código. Portanto, verificar a existência de um diretório é uma etapa importante na programação em Arduino.
 
-## Como fazer
+##Como fazer
 
-Para verificar se um diretório existe, precisamos usar a função `SD.exists()` da biblioteca SD. Esta função recebe como parâmetro o nome do diretório que desejamos verificar e retorna `true` se o diretório existir ou `false` caso contrário.
-
-Vamos ver um exemplo de código para entender melhor:
+Para verificar se um diretório existe em um código Arduino, podemos usar a função `exists()` da biblioteca SD. Primeiro, precisamos incluir essa biblioteca em nosso sketch:
 
 ```Arduino
 #include <SD.h>
+```
 
-// Definir o pino do cartão SD
-const int chipSelect = 10;
+Em seguida, podemos utilizar a função `exists()` passando o nome do diretório que queremos verificar como parâmetro. Por exemplo, se quisermos verificar se o diretório "meus_arquivos" existe, nosso código seria o seguinte:
 
-void setup() {
-  // Inicializar o cartão SD
-  SD.begin(chipSelect);
-
-  // Verificar se o diretório "logs" existe
-  if (SD.exists("/logs")) {
-    Serial.println("O diretório existe!");
-  } else {
-    Serial.println("O diretório não existe!");
-  }
-}
-
-void loop() {
-  // Seu código aqui
+```Arduino
+if(SD.exists("meus_arquivos")){
+  Serial.println("O diretório existe!");
+} else {
+  Serial.println("O diretório não existe!");
 }
 ```
 
-No exemplo acima, estamos usando o `SD.begin()` para inicializar o cartão SD e, em seguida, verificamos se o diretório "logs" existe usando a função `SD.exists()`. Caso o diretório exista, imprimimos uma mensagem na porta serial informando que ele existe.
+Se o diretório existir, a mensagem "O diretório existe!" será impressa no Monitor Serial. Caso contrário, a mensagem "O diretório não existe!" será exibida.
 
-Você pode adaptar esse código para suas próprias necessidades, alterando o nome do diretório ou adicionando outras verificações. Lembre-se de incluir a biblioteca SD no início do seu código.
+##Aprofundando
 
-## Mergulho profundo
+Quando usamos a função `exists()`, é importante lembrar que ela só verifica a existência de um diretório, e não de um arquivo. Para verificar se um determinado arquivo existe, podemos usar a função `open()`, também da biblioteca SD. Além disso, é importante mencionar que essa função só funciona se o cartão SD estiver presente e inicializado corretamente.
 
-Para realmente entender como o Arduino verifica se um diretório existe, precisamos ter um conhecimento básico de como os cartões SD funcionam. Um cartão SD é dividido em setores, que por sua vez são divididos em blocos. Cada bloco contém 512 bytes de informações e eles são acessados através de seus endereços lógicos.
+##Veja também
 
-A função `SD.exists()` usa o commando `CMD13` para verificar se o diretório existe. Esse comando envia um endereço lógico para o controlador do cartão SD e espera por uma resposta. Se o diretório existir, o controlador do cartão SD retornará uma resposta positiva, caso contrário, ele retornará uma resposta negativa.
-
-É importante notar que a função `SD.exists()` só verifica a existência de um diretório, não garante que ele esteja vazio. Portanto, se você quiser garantir que um diretório esteja vazio, precisará adicionar mais verificações ao seu código.
-
-## Veja também
-
+- [Tutorial: Como criar, ler e escrever em arquivos no Arduino](https://www.filipeflop.com/blog/arduino-criar-ler-escrever-arquivos-sd/)
 - [Documentação oficial da biblioteca SD](https://www.arduino.cc/en/Reference/SD)
-- [Tutorial de uso do cartão SD](https://blog.arduino.cc/2019/01/22/sd-card-shields-best-tips-for-the-best-uses/)
+- [Guia completo sobre uso de cartões SD com Arduino](https://www.arduino.cc/en/Guide/ArduinoSD)

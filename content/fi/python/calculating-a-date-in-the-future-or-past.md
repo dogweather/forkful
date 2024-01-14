@@ -1,43 +1,40 @@
 ---
 title:    "Python: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Laskelmoidessa päivämäärää tulevaisuudessa tai menneisyydessä kannattaa käyttää Python-ohjelmointia.
 
-Jos joskus olet halunnut tietää millainen päivämäärä on esimerkiksi kolme viikkoa tulevaisuudessa tai menneisyydessä, niin tämä blogipostaus on juuri sinulle! Opit kuinka voit laskea päivämääriä Python-ohjelmoinnin avulla.
+Python-ohjelmointikieli tarjoaa monipuolisia työkaluja päivämäärän laskemiseen tulevaisuudessa tai menneisyydessä. Tämä mahdollistaa käyttäjän helposti laskea erilaisia päivämääriä ja suunnitella tulevaisuuden tapahtumia tai tarkastella menneitä tapahtumia.
 
-## Kuinka tehdä
+## Miten: Esimerkkikoodi ja tuloste "```Python ...```" koodilohkoissa.
 
-Käytä tätä koodiesimerkkiä laskeaksesi päivämäärän esimerkiksi 2 viikkoa eteenpäin:
+Päivämäärän laskeminen Pythonilla on helppoa. Ensimmäiseksi on määriteltävä datetime-objekti, joka sisältää päivämäärän ja ajan. Tämän jälkeen käytetään timedelta-funktiota määrittämään päivämäärän lisäys tai vähennys tietty määrä päiviä, kuukausia tai vuosia.
+
+Esimerkiksi jos haluat laskea päivämäärän 30 päivää tulevaisuuteen nykyisestä päivämäärästä, voit käyttää seuraavaa koodia:
 
 ```Python
-import datetime
+from datetime import date, datetime, timedelta
 
-tänään = datetime.date.today()
-muutettu_päivä = tänään + datetime.timedelta(days=14)
+tanaan = date.today()
+tuleva_paiva = tanaan + timedelta(days=30)
 
-print(muutettu_päivä.strftime("%d/%m/%Y"))
+print("Päivämäärä 30 päivää tulevaisuudessa on", tuleva_paiva)
 ```
 
-Tämä koodi käyttää datetimen "today" -toimintoa määrittämään tämänhetkisen päivämäärän ja lisää siihen timedelta-funktion avulla kaksi viikkoa. Lopulta "strftime" -toiminto muuttaa päivämäärän muodon halutuksi.
+Tuloste näyttää päivämäärän 30 päivää nykyisen päivämäärän jälkeen muodossa "Päivämäärä 30 päivää tulevaisuudessa on [päivämäärä]".
 
-Tässä on esimerkki tulosteesta:
+## Syväsukellus: Tarkempaa tietoa päivämäärän laskemisesta tulevaisuudessa tai menneisyydessä.
 
-```
-17/06/2021
-```
+Python tarjoaa monipuolisia toimintoja päivämäärien laskemiseen. Timedelta-funktion lisäksi voidaan käyttää myös relativedelta-funktiota, joka mahdollistaa päivämäärän laskemisen myös kuukausien ja vuosien osalta. Lisäksi Python tarjoaa myös dateutil-kirjaston, joka sisältää monia valmiita toimintoja päivämäärien laskemiseen ja muokkaamiseen.
 
-Voit myös käyttää samaa koodia laskettaessa päivämäärää menneisyydessä. Vaihda vain timedelta-funktion päiviä negatiiviseksi luvuksi haluamasi päivien määrän perusteella.
+On myös tärkeää huomata, että Python-kieli käyttää Gregoriaanista kalenteria ja se ottaa huomioon karkausvuodet automaattisesti päivämäärä-laskelmia tehdessä.
 
-## Syvä sukellus
+## Katso myös:
 
-Jos haluat tietää lisää datetimien ja timedelta-funktion käytöstä, suosittelemme tutustumaan Pythonin viralliseen dokumentaatioon. Sieltä löytyy kattava tietopaketti näiden toimintojen käytöstä ja mahdollisuuksista.
-
-## Katso myös
-
-- [Pythonin virallinen dokumentaatio datetime-toiminnoista](https://docs.python.org/3/library/datetime.html)
-- [DateTime -toimintojen käyttö takautuvasti](https://www.saltycrane.com/blog/2008/06/how-to-find-date-time-difference-in/)
-- [Laskuri eri aikavyöhykkeiden välillä](https://timeanddate.com)
+- [Pythonin viralliset dokumentaatiot datetime-moduulista](https://docs.python.org/fi/3.9/library/datetime.html)
+- [Ohjeet datetime-toimintojen käyttämiseen](https://www.w3schools.com/python/python_datetime.asp)
+- [Dateutil-kirjaston dokumentaatiot](https://dateutil.readthedocs.io/en/stable/)

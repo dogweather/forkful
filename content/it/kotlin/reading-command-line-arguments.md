@@ -1,54 +1,57 @@
 ---
-title:    "Kotlin: Lettura degli argomenti della riga di comando"
+title:    "Kotlin: Lettura degli argomenti della linea di comando"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molte volte quando si scrive un programma, può essere utile ricevere input dall'utente durante l'esecuzione del codice. Una delle forme più comuni di input è il comando da riga di comando, che permette all'utente di fornire informazioni direttamente attraverso il terminale. In questa guida, impareremo come leggere questi comandi in Kotlin.
+Ciao lettori! Se siete appassionati di programmazione, probabilmente avete già sentito parlare delle opzioni di riga di comando (command line arguments). Ma perché dovreste interessarvi a questo argomento? La risposta è semplice: imparare come leggere e gestire correttamente i parametri di riga di comando vi aiuterà a creare applicazioni più efficienti e ottenere una maggiore flessibilità nel vostro codice. Quindi, se volete migliorare le vostre abilità di programmazione, continuate a leggere!
 
-## Come Fare
+## Come
 
-Prima di tutto, per leggere i comandi da riga di comando, è necessario aggiungere il seguente codice all'inizio del file Kotlin:
+Per iniziare, vediamo un esempio di codice in Kotlin che ci permette di leggere i parametri di riga di comando:
 
-```
+```Kotlin 
 fun main(args: Array<String>) {
-    // Il codice che legge i comandi vai qui
+    if (args.size > 0) {
+        println("Il primo parametro è: ${args[0]}")
+    } else {
+        println("Nessun parametro inserito.")
+    }
 }
 ```
 
-Questo creerà una funzione principale che accetta un array di stringhe come parametro, corrispondente ai comandi digitati dall'utente.
+Questo semplice programma ci mostrerà il primo parametro presente nella riga di comando, se presente. Eseguendolo con i seguenti comandi: 
 
-Per esempio, se vogliamo stampare il primo elemento del comando da riga di comando, useremo il seguente codice all'interno della funzione principale:
+- `kotlin Main.kt`  (senza argomenti) 
+- `kotlin Main.kt test` (con il parametro "test") 
 
-```
-println(args[0])
-```
+Otterremo rispettivamente i seguenti output: 
 
-Se l'utente digita "kotlin mioProgramma.kt argomento", questo codice stamperà "argomento", poiché è il primo elemento nell'array dei comandi.
+- "Nessun parametro inserito."
+- "Il primo parametro è: test"
 
-Possiamo anche usare un ciclo for per stampare tutti gli elementi del comando da riga di comando:
+Come potete notare, il parametro letto dalla riga di comando viene passato come un array alla funzione `main()` e possiamo accedervi utilizzando l'operatore di indice `[]`.
 
-```
-for (arg in args) {
-    println(arg)
-}
-```
-
-Questo ciclo stamperà ogni elemento del comando, uno alla volta.
+Se siete pronti a sperimentare un po' di più, potete provare a gestire gli errori in caso di parametri non validi o utilizzare librerie esterne come "argparser" per una gestione più avanzata dei comandi di riga.
 
 ## Deep Dive
 
-Oltre a stampare i comandi, possiamo anche utilizzare la funzione ```args.size``` per ottenere il numero di elementi nel comando da riga di comando. Possiamo anche convertire i comandi in tipi di dati diversi usando i metodi di conversione come ```toInt()``` e ```toDouble()```.
+Per una comprensione più completa dei parametri di riga di comando, è importante che comprendiate come sono strutturati. I parametri sono inseriti dopo il nome del programma da eseguire nella riga di comando, separati da spazi. Se il parametro contiene uno spazio, è necessario incluirlo tra virgolette. Inoltre, i comandi di riga di comando possono essere di diversi tipi, come opzioni, argomenti o a switch.
 
-Inoltre, possiamo aggiungere un'opzione per leggere un input dalla riga di comando fornito dall'utente mentre il programma è in esecuzione. Utilizzando la funzione ```readLine()```, possiamo assegnare il valore inserito dall'utente a una variabile per ulteriori elaborazioni.
+Le opzioni sono parametri che iniziano con un trattino singolo "-" o doppio "--" e possono essere seguite da un valore. Le opzioni di tipo switch non hanno alcun valore e vengono semplicemente attivate o disattivate. Gli argomenti, invece, non iniziano con un trattino e forniscono un valore specifico al programma.
 
-Con queste conoscenze, siamo pronti a utilizzare i comandi da riga di comando nei nostri programmi Kotlin!
+Sapere come identificare e distinguere i vari tipi di parametri di riga di comando vi aiuterà a utilizzarli in modo più efficace nei vostri progetti futuri.
 
-## Vedi Anche
+## Vedere anche
 
-- [Documentazione su args in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)
-- [Tutorial sull'uso dei comandi da riga di comando in Kotlin](https://www.jetbrains.com/help/idea/command-line-arguments.html)
-- [Esempi di programmi Kotlin che utilizzano i comandi da riga di comando](https://github.com/JetBrains/kotlin-examples/tree/master/stdlib/command-line-arguments)
+Per ulteriori informazioni sugli argomenti trattati in questo articolo, date un'occhiata a questi utili link:
+
+- [Documentazione di Kotlin](https://kotlinlang.org/docs/reference/command-line.html)
+- [Tutorial di command line arguments in Kotlin](https://www.javatpoint.com/kotlin-command-line-arguments)
+- [Libreria argparser per gestione avanzata di command line arguments](https://github.com/xenomachina/kotlin-argparser)
+
+Grazie per avermi seguito in questo viaggio alla scoperta dei command line arguments in Kotlin. Continuate a esplorare e a sperimentare per diventare sempre più esperti nella vostra programmazione! Arrivederci alla prossima!

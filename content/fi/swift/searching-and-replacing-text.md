@@ -1,40 +1,36 @@
 ---
 title:    "Swift: Tekstin etsiminen ja korvaaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi koodaajat usein turvautuvat tekstin etsimiseen ja korvaamiseen? Koska se on nopea ja tehokas tapa muuttaa useita tiedostoja kerralla. Se on myös kätevä tapa korjata virheitä tai päivittää vanhentuneita koodinpätkiä. Joten, olitpa aloittelija tai kokenut koodaaja, on tärkeää hallita tekstin etsiminen ja korvaaminen tekniikka.
 
-On monia syitä, miksi kehittäjät saattavat haluta suorittaa tekstinsyötön hakemista ja korvaamista. Ehkä he haluavat päivittää vanhan koodin uusimmalle Swift-versiolle, tai ehkä he haluavat nopeuttaa textinmuokkausta suurissa projekteissa. Riippumatta syystä, etsiminen ja korvaaminen voi säästää aikaa ja vaivaa ohjelmoinnin aikana.
-
-## Kuinka Tehdä
-
-Ensimmäinen vaihe tekstinsyötön hakemisessa ja korvaamisessa on käyttää *string* -metodia. Tässä esimerkissä etsimme kokonaisen lauseen ja korvaamme sen uudella sanalla.
+## Kuinka tehdä
+Etsimisen ja korvaamisen tekniikan hallitseminen Swiftissä on helppoa ja tehokasta. Ensinnäkin, tarvitset tekstin, jota haluat etsiä ja korvata. Voit käyttää `replacingOccurrences` -funktiota etsimään kaikki esiintymät ja korvaamaan ne haluamallasi tekstillä. Alla on esimerkki, jossa etsitään ja korvataan tekstin "he" muuttujassa `quote` olevalla tekstillä "she".
 
 ```Swift
-var teksti = "Tervetuloa maailmaan!"
-// Tulostaa "Tervetuloa kodinpitäjälle!"
-print (teksti.replacingOccurrences (tekstissä: "maailma", joka tapauksessa: "kodinpitäjä"))
+let quote = "He loves to code in Swift."
+let replacedQuote = quote.replacingOccurrences(of: "he", with: "she")
+print(replacedQuote)
 ```
+Tulostaa: "She loves to code in Swift."
 
-Tässä esimerkissä käytämme myös *if-statement*-lauseketta tarkistaaksemme, onko etsimäämme tekstiä olemassa. Jos se löytyy, se korvataan, muuten tulostuu alkuperäinen teksti.
+Voit myös käyttää `replacingCharacters` -funktiota, jotta voit tarkasti määrittää, mitkä merkit haluat korvata. Alla olevassa esimerkissä korvataan kaikki numerot merkillä "-".
 
 ```Swift
-var teksti = "Tervetuloa maailmaan!"
-if teksti.range (of: "uusi maailma") ei ole tyhjä {
-    teksti = teksti.replacingOccurrences (of: "maailma", with: "uusi maailma")
-}
-print (teksti)
+let numbers = "1234567"
+let replacedNumbers = numbers.replacingCharacters(in: numbers.startIndex...numbers.endIndex, with: "-")
+print(replacedNumbers)
 ```
+Tulostaa: "-------"
 
-## Syväitte
+## Syvällinen sukellus
+Swiftin tekstinkäsittelystä löytyy paljon muitakin toiminnallisuuksia, kuten `replacingOccurrences` -funktion erilaisia muunnelmia ja `String`-tyypin lisätoimintoja, jotka voivat tulla tarpeellisiksi tekstien muokkaamisessa. On myös tärkeää ymmärtää, että tekstiä voi etsiä ja korvata sekä `String`- että `NSMutableString`-tyypeissä. On hyvä tutustua dokumentaatioon, jotta voit löytää sinulle sopivimmat työkalut ja käytännöt.
 
-On tärkeää ymmärtää, että tekstinsyötön hakeminen ja korvaaminen ei ole rajoitettu vain "string" muuttujiin. Se voi myös toimia muilla tietotyypeillä, kuten *var*, *let*, ja *array*. Näin ollen se voi olla hyödyllinen monissa ohjelmointikohteissa.
-
-Lisäksi, voidaan myös käyttää eri versioita *replacingOccurrences ()* -metodista, kuten *replacingOccurrences (of: with: options:)-versio*, joka mahdollistaa tarkemman valvonnan korvausprosessissa.
-
-## Katso Myös
-
-http://stackoverflow.com/documentation/swift/527/string-manipulation#t=201703071442243159350
+## Katso myös
+- [Replacing characters in a string](https://developer.apple.com/documentation/foundation/nsstring/1413732-replacingcharacters)
+- [Replacing occurrences in a string](https://developer.apple.com/documentation/foundation/nsstring/1418337-replacingoccurrences)

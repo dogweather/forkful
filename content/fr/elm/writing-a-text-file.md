@@ -1,33 +1,37 @@
 ---
 title:    "Elm: Écrire un fichier texte"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire un fichier texte en Elm ?
+## Pourquoi
 
-Si vous êtes un programmeur Elm, vous savez peut-être déjà que le langage dispose de nombreuses fonctionnalités intéressantes pour créer des applications web. Mais saviez-vous qu'il peut également être utilisé pour écrire des fichiers texte ? Dans cet article, nous allons explorer l'utilité de cette fonctionnalité et comment l'utiliser efficacement dans vos projets.
+Si vous êtes nouveau dans le monde de la programmation, vous vous demandez peut-être pourquoi écrire un fichier texte en vaut la peine. En utilisant Elm, un langage de programmation fonctionnel, écrire un fichier texte peut sembler intimidant. Cependant, apprendre à écrire un fichier texte peut être un outil utile pour stocker et organiser des données, que ce soit pour une application ou pour votre propre usage.
 
-## Comment écrire un fichier texte en Elm
+## Comment faire
 
-L'écriture d'un fichier texte en Elm est assez simple et ne nécessite que quelques lignes de code. Tout d'abord, vous devrez importer le module `File` dans votre programme. Ensuite, utilisez la fonction `File.write` pour écrire le contenu de votre fichier texte. Voici un exemple de code :
+Pour écrire un fichier texte en Elm, vous aurez besoin d'utiliser la bibliothèque standard "File". Tout d'abord, importez cette bibliothèque dans votre code avec `import File`. Ensuite, vous pouvez créer une fonction pour écrire du contenu dans un fichier texte en utilisant la fonction `File.Write`.
 
-```Elm
-import File
+```
+import File exposing (Write)
 
-main =
-  File.write "mon_fichier.txt" "Ceci est un fichier texte écrit en Elm"
+writeToFile : String -> Cmd msg
+writeToFile content =
+  File.write "monFichier.txt" content
 ```
 
-Vous pouvez également utiliser la fonction `File.append` pour ajouter du contenu à un fichier existant. Il est important de noter que pour écrire des fichiers sur votre système, vous devrez exécuter votre programme Elm en tant qu'application en ligne de commande.
+La fonction `writeToFile` prend un contenu sous forme de chaîne de caractères et utilise la fonction `File.write` pour écrire ce contenu dans le fichier "monFichier.txt". Vous pouvez également utiliser la fonction `File.append` pour ajouter du contenu à un fichier existant. Il est important de noter que ces fonctions renvoient des valeurs de type "Cmd msg", ce qui signifie que vous devrez les utiliser dans un gestionnaire d'effets pour qu'elles fonctionnent correctement.
 
-## Plongeons plus en profondeur
+## Approfondissement
 
-En plus de simplement écrire du contenu dans un fichier texte, le module `File` offre également des fonctionnalités telles que la création, la suppression et la lecture de fichiers. Vous pouvez également spécifier l'encodage du fichier que vous écrivez en utilisant la fonction `File.writeWith`. De plus, le module `File` fonctionne de manière asynchrone, ce qui signifie que vous pourrez facilement gérer des tâches d'écriture de fichiers en parallèle avec d'autres tâches dans votre programme.
+Lorsque vous écrivez un fichier texte en Elm, il est important de garder à l'esprit les limites du langage. Par exemple, cela peut être délicat de travailler avec des caractères spéciaux ou d'utiliser des opérations simultanées pour écrire dans un fichier. De plus, il est important de gérer les erreurs potentielles, comme les autorisations d'écriture ou la présence d'un fichier avec le même nom.
 
 ## Voir aussi
 
-- La documentation officielle du module `File` en Elm : https://package.elm-lang.org/packages/elm/file/latest/
-- Un exemple pratique d'utilisation du module `File` : https://www.leveluptutorials.com/tutorials/elm-basics/writing-files/
-- Un article sur les différentes options d'écriture de fichiers en Elm : https://medium.com/@thebouv/managing-files-with-elm-part-1-the-file-53b98b2d82a9
+Maintenant que vous avez appris à écrire un fichier texte en Elm, vous pouvez également apprendre à le lire en utilisant la bibliothèque "File.Reader.Text". Vous pouvez également explorer les autres fonctionnalités de la bibliothèque File pour travailler avec différents types de fichiers à partir de votre code Elm. Pour plus de ressources sur l'écriture de fichiers en Elm, vous pouvez consulter les liens suivants:
+
+- [Documentation de la bibliothèque File d'Elm](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Tutoriel vidéo sur l'écriture de fichiers en Elm](https://www.youtube.com/watch?v=AEfxwtTSQds)
+- [Article de blog sur les meilleures pratiques pour écrire des fichiers en Elm](https://sporto.github.io/blog/2018/07/17/writing-files-in-elm.html)

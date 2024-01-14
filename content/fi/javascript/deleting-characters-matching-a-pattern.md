@@ -1,48 +1,33 @@
 ---
-title:    "Javascript: Sovitetun kaavan mukaisten merkkien poistaminen"
+title:    "Javascript: Kuvion mukaisten merkkien poistaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Monissa tilanteissa Javascript-ohjelmoijat joutuvat kohtaamaan tilanteen, jossa heidän täytyy poistaa merkkejä, jotka täyttävät tietyn kaavan. Tämä voi olla tarpeellista esimerkiksi käyttäjän tekstisyötön tarkistamisessa tai datan käsittelyssä.
 
-Joskus Javascript-ohjelmointia tehdessä saattaa olla tarpeen poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa esimerkiksi tiedon käsittelyssä tai tekstianalyysissä. Seuraavassa kerromme, miten tämä voidaan tehdä kätevästi Javascriptissä.
-
-## Miten tehdä
-
-Käytämme Javascriptissä sisäänrakennettua `replace()`-funktiota, jonka avulla voimme korvata merkkejä haluamillamme tiedoilla. Alla on esimerkki, jossa haluamme poistaa kaikki välilyönnit annetusta lauseesta ja tulostaa sen uudelleen muokattuna.
+## Miten
+Javascriptillä on erilaisia ​​metodeja ja funktioita, jotka mahdollistavat merkkien poistamisen kaavan perusteella. Yksi yleisimmin käytetyistä on `replace()`-funktio, joka ottaa vastaan kaksi parametria: poistettavan kaavan ja sen tilalle tulevan merkkijonon. Esimerkiksi seuraavalla koodilla voimme poistaa kaikki pisteet ja pilkut merkkijonosta:
 
 ```Javascript
-let lause = "Tämä on esimerkki lause";
-let uusiLause = lause.replace(/ /g, "");
-console.log(uusiLause);
+let teksti = "Tänään olemme juhlineet Suomen itsenäisyyttä.";
+let uusiTeksti = teksti.replace(/[,\.]/g, ""); // palauttaa "Tänään olemme juhlineet Suomen itsenäisyyttä"
+
+console.log(uusiTeksti);
 ```
 
-Tämä koodi tuottaisi seuraavan tulosteen:
+Koodissa käytetään ns. regular expression -kaavaa, joka merkitsee pilkkua tai pistettä (`[,\.]`) ja `g`-lipuketta, joka merkitsee, että kaavaa sovelletaan kaikkiin merkkeihin merkkijonossa. Tämän ansiosta kaikki pisteet ja pilkut poistetaan ja lopputulokseksi saadaan alkuperäinen teksti ilman niitä.
 
-`Tämäonesimerkkilause`
+## Syvällisempi tarkastelu
+`replace()`-funktion lisäksi Javascriptillä on muitakin käteviä metodeja, joilla voi poistaa merkkejä kaavan perusteella. `match()`-funktio esimerkiksi etsii annetusta merkkijonosta kaikki kaavan täyttävät merkit ja palauttaa ne taulukkona. `split()`-funktio puolestaan pilkkoo merkkijonon kaavan täyttävien merkkien kohdalta ja palauttaa siitä taulukon.
 
-Meidän täytyy ensin luoda uusi muuttuja `uusiLause`, johon tallennetaan alkuperäisestä lauseesta poistetut välilyönnit `replace()`-funktion avulla. Huomaa myös, että käytämme niin sanottua "regular expression" tai kaavatunnistetta `/ /g`, joka tarkoittaa kaikkia välilyöntejä (`" "`).
-
-Voit myös muokata tätä koodia poistamalla tai muuttamalla muuta merkkijonoa. Esimerkiksi voit korvata haluamasi merkkijonon tai kirjaimen toisella, tai poistaa kaikki numerot tekstimuuttujasta.
-
-## Syvä sukellus
-
-`replace()`-funktion käyttö voi olla hyödyllistä myös monimutkaisempien kaavojen avulla. Voit esimerkiksi rajata, mitkä merkit poistetaan tai korvataan halutuilla kaavatunnisteilla. Esimerkiksi seuraava koodi poistaisi kaikki merkit lauseesta, jotka eivät ole kirjaimia tai välilyöntejä:
-
-```Javascript
-let lause = "Tämä on esimerkki lause, jonka avulla poistamme välimerkkejä. Esim:!@#$%^&*()";
-let uusiLause = lause.replace(/[^a-z ]/gi, "");
-console.log(uusiLause);
-```
-
-Tämä vaihtaisi kaikki numerot, erikoismerkit ja jopa väliä symbolit tyhjiksi merkeiksi, jättäen vain alkuperäiset kirjaimet ja välilyönnit jäljelle. Tulostaisi siis:
-
-`Tämä on esimerkki lause jonka avulla poistamme välimerkkejä Esim `
+On myös mahdollista käyttää erilaisia ​​kaavojen yhdistelmiä ja käyttää hyväkseen erilaisia metodeja yhtäaikaisesti löytääkseen ja poistaakseen tietystä merkkijonosta kaikki halutut merkit.
 
 ## Katso myös
-
-- [MDN `replace()`-dokumentaatio](https://developer.mozilla.org/fi/docs/orphaned/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [W3Schools Regular Expressions Tutorial](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Javascript String Methods Cheat Sheet](https://www.freecodecamp.org/news/regex cheatsheet-with-examples/)
+- [MDN Web Docs: replace()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/replace) (englanniksi)
+- [MDN Web Docs: match()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/match) (englanniksi)
+- [MDN Web Docs: split()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/split) (englanniksi)
+- [RegExr](https://regexr.com/) - verkkosivu, jolla voi testata ja luoda regular expression -kaavoja

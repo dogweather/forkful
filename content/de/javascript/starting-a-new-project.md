@@ -1,29 +1,36 @@
 ---
-title:    "Javascript: Ein neues Projekt beginnen"
+title:    "Javascript: Eine neue Programmier-Projekt beginnen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## WarumEine neue Programmieraufgabe zu beginnen kann eine aufregende Herausforderung sein und eröffnet die Möglichkeit, neue Fähigkeiten zu erlernen und kreative Ideen umzusetzen.
+# Warum
 
-## Wie Aus eigener Erfahrung wissen wir, dass es manchmal schwierig sein kann, eine neue Programmieraufgabe zu beginnen. Daher wollen wir Ihnen einige Tipps geben, wie Sie erfolgreich ein neues Projekt angehen können:
+Wenn Sie bereit sind, Ihre Programmierfähigkeiten auf die nächste Stufe zu bringen, indem Sie ein neues Projekt starten, dann sind Sie hier genau richtig! Ein neues Projekt kann eine tolle Möglichkeit sein, um Ihre Kenntnisse zu erweitern und gleichzeitig etwas Kreatives zu schaffen.
+
+# Wie starte ich ein neues Projekt in Javascript
+
+Um ein neues Projekt in Javascript zu starten, gibt es einige wichtige Dinge zu beachten. Zunächst einmal brauchen Sie eine grundlegende Kenntnis der Programmiersprache sowie eine IDE oder einen Texteditor Ihrer Wahl. Dann brauchen Sie eine Idee für Ihr Projekt, sei es eine App, ein Spiel oder eine Webseite. Sobald Sie Ihre Idee haben, können Sie mit dem Codieren beginnen!
 
 ```Javascript
-// Schritt 1: Wählen Sie eine Programmiersprache, die Ihren Bedürfnissen und Kenntnissen entspricht
-const programmingLanguage = "Javascript";
-// Schritt 2: Skizzieren Sie Ihre Idee und erstellen Sie einen Plan, wie Sie sie umsetzen möchten
-const idea = "Eine interaktive Quiz-App für Kinder";
-const plan = "Verwenden Sie HTML, CSS und Javascript, um eine Benutzeroberfläche zu erstellen und eine Datenbank für die Fragen und Antworten zu erstellen.";
-// Schritt 3: Legen Sie eine Ordnerstruktur fest und erstellen Sie Dateien für Ihren Code
-// Schritt 4: Beginnen Sie mit dem Schreiben von Code und testen Sie ihn regelmäßig, um sicherzustellen, dass er wie erwartet funktioniert
-// Schritt 5: Verwenden Sie Online-Ressourcen wie Tutorials, Foren und Online-Kurse, um bei Problemen Hilfe zu finden
-// Schritt 6: Halten Sie Ihren Code sauber und gut kommentiert, um ihn leichter zu verstehen und zu warten
+// In diesem Beispiel erstellen wir eine einfache "Hello World" Anwendung
+console.log("Hallo Welt!"); 
 ```
+Die Ausgabe für dieses Beispiel sollte "Hallo Welt!" sein, welches in der Konsole angezeigt wird.
 
-## Tiefergehende Infos Um erfolgreich ein neues Projekt zu starten, ist es wichtig, eine klare Vision und einen durchdachten Plan zu haben. Eine gute Vorbereitung spart spätere Zeit und Mühe bei der Umsetzung. Außerdem ist es hilfreich, sich über bewährte Methoden, wie beispielsweise agile Entwicklung, im Vorfeld zu informieren. Zudem sollte man nicht davor zurückschrecken, sich Hilfe von erfahrenen Programmierern zu holen oder an Hackathons und Meetups teilzunehmen, um von anderen zu lernen und sich zu vernetzen.
+# Tiefer Einblick
 
-## Siehe auch
-- [9 Tipps für erfolgreiches Programmieren](https://www.ionos.de/digitalguide/websites/web-entwicklung/coding-tipps/)
-- [Agile Softwareentwicklung: Methoden und Prinzipien](https://t2informatik.de/blog/agile-softwareentwicklung-methoden-und-prinzipien/)
-- [Hackathons: Was sie sind und wie sie funktionieren](https://blog.fhstp.ac.at/hackathons-was-sie-sind-und-wie-sie-funktionieren)
+Bevor Sie mit dem Codieren beginnen, ist es wichtig, eine solide Struktur für Ihr Projekt zu haben. Dies umfasst die Planung von Variablen, Funktionen und Klassen, die Sie möglicherweise benötigen, sowie die Einhaltung von bewährten Praktiken und Konventionen. Eine weitere wichtige Sache ist es, sich Zeit zu nehmen, um Ihr Projekt zu verstehen und zu dokumentieren, damit es für andere Entwickler leichter verständlich ist.
+
+Ein weiterer wichtiger Aspekt bei der Erstellung eines neuen Javascript Projekts ist es, sich mit den neuesten Tools und Frameworks vertraut zu machen, um Ihre Entwicklung zu optimieren und effizienter zu gestalten. Denken Sie auch daran, regelmäßig zu testen und Fehler zu beheben, um sicherzustellen, dass Ihr Projekt reibungslos läuft.
+
+# Siehe auch
+
+Hier sind einige hilfreiche Links, die Ihnen beim Start eines neuen Javascript Projekts helfen können:
+
+- [Einführung in Javascript](https://developer.mozilla.org/de/docs/Learn/JavaScript/First_steps)
+- [10 Javascript Frameworks für die Entwicklung von Webanwendungen](https://www.codingame.com/blog/top-javascript-frameworks-for-web-development/)
+- [Best Practices für die Entwicklung in Javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [Javascript Test Frameworks](https://blog.bitsrc.io/the-top-6-javascript-testing-frameworks-in-2019-c41aea843831)

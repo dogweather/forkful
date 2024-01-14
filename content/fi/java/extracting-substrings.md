@@ -1,42 +1,37 @@
 ---
-title:    "Java: Alimerkkijonojen eristäminen"
+title:    "Java: Alimerkkijonojen erottaminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi aloittaa substringsien etsiminen Java-ohjelmoinnissa?
 
-Substringien eristäminen on tärkeä osa Java-ohjelmointia, joka voi auttaa sinua käsittelemään ja muokkaamaan merkkijonoja. Se on erittäin hyödyllinen taito, joka voi säästää sinut paljon aikaa ja vaivaa koodatessasi.
+Substringien etsiminen on tärkeä taito Java-ohjelmoijille, sillä se mahdollistaa tietyistä merkkijonoista tiettyjen osien erottamisen. Tämä voi olla erityisen hyödyllistä esimerkiksi tekstieditorin ohjelmoinnissa tai tietokantojen käsittelyssä.
 
-## Miten tehdä
+## Kuinka: Esimerkkejä substringien etsimisestä Java-koodia käyttäen
+
+Substringien etsiminen Java-koodissa on helppoa ja tehokasta käyttäen `substring()`-metodia. Tämä metodi ottaa vastaan kaksi parametria: aloituskohdan ja lopetuskohdan. Alla on esimerkki koodista, joka etsii substringin "maailma" merkkijonosta "Hei maailma!" ja tulostaa sen konsoliin.
 
 ```Java
-// Esimerkki 1: Merkkijonon jakaminen osiin
-String s = "Tämä on esimerkki";
-System.out.println(s.substring(0, 4)); // Tulostaa "Tämä"
-System.out.println(s.substring(5, 7)); // Tulostaa "on"
-
-// Esimerkki 2: Merkkijonon alku- ja loppuosien selvittäminen
-String s = "Hello World";
-System.out.println(s.substring(0, 5)); // Tulostaa "Hello"
-System.out.println(s.substring(6)); // Tulostaa "World"
+String sana = "Hei maailma!";
+String etsittava = sana.substring(4, 10);
+System.out.println(etsittava);
 ```
+Tämän koodin tulostus on "maailma", sillä se hakee merkkijonon indeksien 4 ja 10 välisen osan.
 
-#### Tuloste:
+## Syvällisempi sukellus: Lisätietoa substringien etsimisestä
 
-```Hello
-World
-```
+Java tarjoaa myös muita metodeja substringien etsimiseen, kuten `startsWith()` ja `endsWith()`, jotka tarkistavat, alkaako tai päättyykö merkkijono tietyllä osalla. Näiden metodien käyttö voi olla hyödyllistä, kun halutaan tarkistaa, onko merkkijono esimerkiksi lueteltu tietokannassa.
 
-## Syvällinen sukellus
+On myös tärkeää ymmärtää, että merkkijonot aloittavat indeksinumeroinnin aina 0:sta, joten esimerkiksi merkkijonon "Hei" indeksinumero on 0, ei 1.
 
-Substringien eristäminen on mahdollista Java-ohjelmoinnissa käyttämällä `substring()` -metodia, joka ottaa parametreikseen aloitus- ja lopetusindeksit. Tämä tarkoittaa, että voit aloittaa eristämisen mistä tahansa kohdasta merkkijonossa, esimerkiksi sanojen ja välilyöntien väliltä.
+# Katso myös: Hyödyllisiä linkkejä substringien etsimisen opetteluun
 
-On myös hyvä huomata, että merkkijonojen indeksointi alkaa aina nollasta, eli ensimmäinen merkki on indeksissä 0 ja toinen indeksissä 1 jne.
+- [Java substring() -dokumentaatio](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))
+- [Java String Methods -tutoriali](https://www.w3schools.com/java/java_ref_string.asp)
+- [Understanding Java Substring -artikkeli](https://www.baeldung.com/java-string-substring)
+- [Java for Beginners: Substrings -opasvideo](https://www.youtube.com/watch?v=z9d7MJ2oFZI)
 
-## Katso myös
-
-- [Java - String-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Java - Substringien eristäminen](https://www.geeksforgeeks.org/java-string-substring-method/)
-- [Java - Merkkijonon jäsentely](https://www.tutorialspoint.com/java/java_string_split.htm)
+Kiitos lukemisesta ja toivottavasti tämä opas auttaa sinua ymmärtämään paremmin substringien etsimistä Java-ohjelmoinnissa. Onnea tuleviin ohjelmointiprojekteihisi!

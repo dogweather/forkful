@@ -1,37 +1,71 @@
 ---
-title:    "Python: Lukemalla komentoriviparametrit"
+title:    "Python: Komentoriviparametrien lukeminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Luet tämän blogitekstin, koska haluat oppia lukemaan komentoriviargumentteja Pythonilla. Komentoriviargumentit ovat tärkeitä, koska ne mahdollistavat ohjelmiesi dynaamisen ja interaktiivisen toiminnan.
+Monet ohjelmat ovat ohjelmoitu ottamaan vastaan käyttäjän antamia argumentteja komentokehotteessa. Näitä argumentteja voidaan käyttää ohjelman toiminnan määrittämiseen ja sen avulla voidaan suorittaa erilaisia ohjelmointityökaluja. On tärkeää ymmärtää, miten lukea nämä komentorivin argumentit, jotta voit käyttää ohjelmia tehokkaasti.
 
-## Miten tehdä
+## Miten
 
-Komentoriviargumenttien lukeminen on yksinkertaista Pythonilla. Voit käyttää `sys` -kirjastoa ja sen `argv` -metodia. Alla on esimerkki koodi:
+Lue komentorivin argumentit Pythonissa käyttämällä `sys.argv` -moduulia. Tällä moduulilla voi käsitellä komentokehotteessa annetut argumentit ja käyttää niitä ohjelman suorituksessa.
 
 ```Python
 import sys
 
-args = sys.argv
-print("Komentoriviargumentit: ", args)
+# Tulostaa kaikki annetut argumentit
+for arg in sys.argv:
+    print(arg)
 ```
 
-Tämä koodi tulostaa kaikki annetut komentoriviargumentit. Voit myös käyttää indeksointia saadaksesi tietyn argumentin. Esimerkiksi `args[1]` tulostaisi ensimmäisen argumentin.
+Esimerkki antaa argumentteja käyttämällä `python` -komentoa komentokehotteessa. Käytä `python filename.py argument1 argument2 ...` komennota antaaksesi ohjelmalle argumentteja. Ohjelma tulostaa kaikki annetut argumentit.
 
-Voit myös antaa ohjelmalle komentoriviargumentteja suoraan suorittaessasi sitä. Esimerkiksi `python ohjelma.py argumentti1 argumentti2` antaisi ohjelmalle kaksi argumenttia `argumentti1` ja `argumentti2`.
+```
+python example.py Hello World!
+```
 
-## Syvempi sukellus 
+Output:
 
-Kommentoriviargumenttien lukemisen taustalla on käyttöjärjestelmäsi ydin. Käyttöjärjestelmäsi lähettää argumentit ohjelmalle suoritettaessa ja `sys.argv` kokoaa ne listaksi, josta ne voidaan helposti käsitellä Pythonilla.
+```
+example.py
+Hello
+World
+```
 
-Komentoriviargumentteja käytetään usein ohjelmien muokkaamiseen suorituksen aikana. Niitä voidaan myös käyttää ohjelmien konfigurointiin ja tiedostojen käsittelyyn.
+## Syvällisempi Tutustuminen
 
-## Katso myös 
+`sys.argv` -moduuli voidaan myös yhdistää muihin Pythonin moduuleihin, kuten `argparse` -moduuliin, joka antaa käyttäjän määrittää argumenttien tyypin ja käyttää niitä tiettyn tavalla.
 
-- [Pythonin virallinen dokumentaatio komentoriviargumenttien käsittelystä](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Komentoriviargumenttien käyttö OReillyn "Python Cookbook" -kirjassa](https://www.oreilly.com/library/view/python-cookbook/0596001673/ch13s08.html)
-- [Komentoriviargumenttien opas Real Python -sivustolla](https://realpython.com/command-line-interfaces-python-argparse/)
+```Python
+import argparse
+
+# Luo argparse -parseri
+parser = argparse.ArgumentParser(description='Laskee summan kahdelle numeroille.')
+
+# Lisää tarvittavat argumentit parseriin
+parser.add_argument('number1', type=int, help='Ensimmäinen numero')
+parser.add_argument('number2', type=int, help='Toinen numero')
+
+# Luo args -muuttuja, johon tallennetaan argumentit
+args = parser.parse_args()
+
+# Tulosta argumenttien antamien arvojen summa
+print(args.number1 + args.number2)
+```
+
+Tämä esimerkki ottaa vastaan kaksi numeroa komentorivolta ja laskee niiden summan. Argumenttien antamiseen tarvitaan `python` -komennon lisäksi myös ohjelman nimi sekä argumentit kuten `python example.py 5 10`.
+
+Output:
+
+```
+15
+```
+
+## Katso Myös
+
+- [Python `sys` -moduulin dokumentaatio](https://docs.python.org/3/library/sys.html)
+- [Python `argparse` -moduulin dokumentaatio](https://docs.python.org/3/library/argparse.html)

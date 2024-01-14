@@ -1,57 +1,45 @@
 ---
 title:    "C++: Lettura degli argomenti della riga di comando"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere un programma che prende in input degli argomenti da linea di comando può sembrare un'operazione banale, ma in realtà può essere molto utile per automatizzare alcune attività o creare programmi più dinamici ed interattivi. Leggendo questo articolo scoprirai come leggere gli argomenti dalla riga di comando e utilizzarli nell'esecuzione del tuo programma.
+Molti programmatori sono abituati a inserire dati di input in un programma attraverso un'interfaccia grafica. Tuttavia, ci sono molte ragioni per cui si potrebbe voler utilizzare anche gli argomenti della riga di comando come metodo di input. Ad esempio, si potrebbe voler scrivere uno script che può essere eseguito da una cronologia senza la necessità di un'interazione diretta dell'utente, o si potrebbe voler eseguire più istanze dello stesso programma con parametri diversi. In questo post, impareremo come leggere gli argomenti della riga di comando in un programma C++.
 
-## Come Fare
+## Come fare
 
-Per leggere gli argomenti dalla linea di comando in C++, abbiamo bisogno di utilizzare la funzione `main` e passare due parametri: `argc` (numero di argomenti) e `argv` (array degli argomenti). Ad esempio:
-
-```C++
-int main(int argc, char *argv[]) {
-  // inserire qui il codice per leggere gli argomenti
-}
-```
-
-L'argomento `argc` ci permette di sapere quanti argomenti sono stati inseriti mentre `argv` è un array di stringhe contenente i valori di ogni argomento. Possiamo quindi accedere a questi valori utilizzando gli indici dell'array, ad esempio `argv[0]` per il nome del programma e `argv[1]` per il primo argomento.
-
-Proviamo a scrivere un semplice programma che stampa gli argomenti inseriti dall'utente:
+Per leggere gli argomenti della riga di comando in C++, è necessario utilizzare una funzione chiamata `main()`. Questo è il punto di partenza di ogni programma C++ e riceve due parametri: `argc` e `argv`. `argc` contiene il numero di argomenti passati alla riga di comando, mentre `argv` è un array di puntatori a stringhe, dove ogni elemento contiene un argomento. Ecco un esempio di come utilizzare questi parametri per stampare tutti gli argomenti passati:
 
 ```C++
 #include <iostream>
 
-int main(int argc, char *argv[]) {
-  std::cout << "Hai inserito " << argc << " argomenti:" << std::endl;
-  for (int i = 0; i < argc; i++) {
-    std::cout << "  - " << argv[i] << std::endl;
-  }
+int main(int argc, char* argv[]) {
+    for(int i = 0; i < argc; i++) {
+        std::cout << argv[i] << std::endl;
+    }
+    return 0;
 }
 ```
 
-Se eseguiamo questo programma passando come argomenti "C++" e "programming", l'output sarà il seguente:
+Output:
 
-```bash
-$ ./programma C++ programming
-Hai inserito 3 argomenti:
-  - ./programma
-  - C++
-  - programming
+```
+./programma arg1 arg2 arg3
+arg1
+arg2
+arg3
 ```
 
 ## Approfondimento
 
-In realtà, la gestione degli argomenti da linea di comando è molto più complessa e può diventare una vera e propria sfida nella programmazione in C++. Ad esempio, dobbiamo gestire eventuali errori nell'inserimento degli argomenti o convertirli nel tipo di dato desiderato (poiché vengono sempre passati come stringhe).
+Esistono diverse funzioni utili per manipolare gli argomenti della riga di comando, come `std::stoi()` per convertire una stringa in un numero intero, `std::stof()` per convertire una stringa in un numero in virgola mobile e `std::istringstream` per convertire una stringa in un altro tipo di dato. Inoltre, è possibile utilizzare librerie come `getopt` per gestire in modo più avanzato gli argomenti della riga di comando e l'opzione `-h` per visualizzare una guida agli argomenti disponibile.
 
-Inoltre, può essere utile utilizzare librerie esterne come `boost` che offrono funzionalità avanzate per la gestione dei comandi da riga di comando.
+## Vedi anche
 
-## Vedi Anche
-
-- [Documentazione ufficiale di C++ sui parametri da linea di comando](https://en.cppreference.com/w/cpp/language/main_function)
-- [Tutorial su come gestire gli argomenti da linea di comando in C++](https://www.learncpp.com/cpp-tutorial/27-command-line-arguments/)
-- [Libreria `boost::program_options` per la gestione avanzata dei comandi da linea di comando](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)
+- [Documentazione ufficiale di C++](https://devdocs.io/cpp/)
+- [Un esempio di utilizzo di `getopt` in C++](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
+- [Funzioni di stringhe utili in C++](https://www.cplusplus.com/reference/string/string/)

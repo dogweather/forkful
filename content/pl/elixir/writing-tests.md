@@ -1,48 +1,60 @@
 ---
 title:    "Elixir: Pisanie testów"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w Elixirze
+## Dlaczego pisać testy w Elixirze?
 
-Testowanie kodu to niezwykle ważny element każdego projektu, a tworzenie testów w Elixirze może ułatwić proces weryfikacji kodu. Testy nie tylko pozwalają zidentyfikować błędy, ale również ułatwiają rozwój oprogramowania i dają poczucie pewności, że nasz kod działa poprawnie. Dlatego w dzisiejszym artykule opowiemy o tym, dlaczego warto pisać testy w Elixirze.
+Testowanie jest nieodłączną częścią procesu pisania oprogramowania. Odpowiednio napisane testy pomagają zapewnić jakość kodu oraz ułatwiają późniejszą pracę nad projektem. W przypadku języka Elixir, testowanie jest szczególnie ważne ze względu na jego funkcjonalności i składnię. 
 
-## Jak to zrobić
+## Jak pisać testy w Elixirze?
 
-Najważniejszym elementem pisania testów w Elixirze jest wykorzystanie specjalnej składni, czyli `ExUnit`. Jest to wbudowany framework do testowania w Elixirze, który oferuje wiele funkcji ułatwiających pisanie testów.
-
-Aby rozpocząć tworzenie testów, należy utworzyć nowy plik z rozszerzeniem `.exs` i umieścić w nim kod testów. Następnie należy zdefiniować moduł testowy poprzez użycie funkcji `defmodule` i wskazać, że wykorzystujemy `ExUnit` poprzez użycie funkcji `use ExUnit.Case`. Wtedy możemy rozpocząć definiowanie naszych testów.
-
-Przykładowy kod testu w Elixirze może wyglądać następująco:
+Pisanie testów w Elixirze jest bardzo łatwe i intuicyjne. Wystarczy użyć wbudowanych w język narzędzi, takich jak moduł `ExUnit`. Poniżej przedstawiamy przykładowy kod testów, który sprawdzi, czy funkcja `double/1` zwraca podwójną wartość liczby przekazanej jako argument.
 
 ```Elixir
-defmodule CalculatorTest do
+defmodule Testowanie do
   use ExUnit.Case
-
-  test "addition" do
-    result = Calculator.add(2, 2)
-    assert result == 4
+  
+  test "podwójna wartość" do
+    assert double(5) == 10
+  end
+  
+  def double(n) do
+    n * 2
   end
 end
-
 ```
 
-Wywołanie testów odbywa się poprzez wywołanie funkcji `mix test` w terminalu. Otrzymamy wtedy informację o ilości testów, które zostały przeprowadzone oraz czy testy zakończyły się sukcesem czy też nie. Jeśli testy zakończą się niepowodzeniem, otrzymamy również informacje o błędach oraz wskazówki, jak je poprawić.
+Po uruchomieniu testów, otrzymujemy następujący wynik:
 
-## Głębsza analiza
+```
+...
 
-Pisanie testów w Elixirze może być prostsze, dzięki zastosowaniu funkcji `setup` i `setup_all`. Funkcja `setup` służy do wykonania kodu przed każdym testem, natomiast `setup_all` wykonuje kod tylko jeden raz przed wszystkimi testami. Jest to przydatne, gdy chcemy wykonać pewne przygotowania tylko raz, a nie przed każdym testem.
+  1) test podwójna wartość (Testowanie)
+     testowanie.exs:5
+     Assertion with == failed
+     code: double(5) == 10
+     lhs:  10
+     rhs:  11
+     stacktrace:
+       testowanie.exs:5: (test)
 
-W Elixirze istnieje również możliwość tworzenia tzw. "mocków" czyli udawanych obiektów, które pomagają nam symulować różne scenariusze. Jest to szczególnie przydatne podczas testowania kodu, który korzysta z zewnętrznych zasobów, np. bazy danych czy plików.
+Finished in 0.02 seconds
+1 doctest, 1 failure
 
-Warto również wiedzieć, że Elixir oferuje możliwość testowania funkcji asynchronicznych, co jest niezwykle przydatne przy pracy z wątkami czy procesami.
+Randomized with seed 584660
+```
 
-# Zobacz również
+Dzięki temu, że test nie przeszedł, możemy ustalić, że nasza funkcja `double/1` powinna zwracać wartość `11`, a nie `10`.
 
-Jeśli chcesz dowiedzieć się więcej o pisaniu testów w Elixirze, polecamy zapoznać się z dokumentacją ExUnit oraz wykorzystywać przykłady testów dostępne w oficjalnych repozytoriach Elixir. Poniżej zamieszczamy kilka przydatnych linków:
+## Głębsze wgląd w pisanie testów
 
-- Dokumentacja ExUnit: https://hexdocs.pm/ex_unit/readme.html
-- Przykładowe testy: https://github.com/elixir-lang/elixir/tree/master/lib/ex_unit/test
-- Poradnik dotyczący pisania testów w Elixirze: https://elixirschool.com/pl/lessons/advanced/testing/
+Pisanie testów pozwala nam nie tylko sprawdzić poprawność kodu, ale również zapobiega błędom czy regresjom. W Elixirze istnieje wiele wbudowanych funkcji, takich jak `assert` czy `refute`, które pomagają w efektywnym testowaniu. Warto również zapoznać się z innymi użytecznymi narzędziami, takimi jak `Mock`, `ExVCR` czy `Property-Based Testing`. 
+
+## Zobacz też
+- [ExUnit - dokumentacja](https://hexdocs.pm/ex_unit/)
+- [Testing with Elixir - blog](https://medium.com/elixircasts/testing-with-elixir-920a421aad04)
+- [Elixir testing using Property-Based Testing - blog](https://essenceofcode.com/2018/02/16/elixir-testing-using-property-based-testing/)

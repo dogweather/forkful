@@ -1,40 +1,51 @@
 ---
 title:    "Elm: Convertendo uma data em uma string"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Quando estamos trabalhando com datas em nossos programas, muitas vezes precisamos convertê-las em formato de string para exibi-las ao usuário ou enviar por meio de chamadas de API. A linguagem de programação Elm oferece uma maneira fácil e eficiente para realizar essa conversão. Neste artigo, vamos explorar como converter uma data em formato de string usando Elm.
+Existem muitas situações em que precisamos converter uma data em uma string - seja para exibição na interface do usuário ou para manipulação de dados em um sistema. É uma tarefa bastante comum na programação e, neste artigo, vamos explorar como podemos realizar essa conversão em Elm.
 
 ## Como fazer
 
-Para converter uma data em uma string em Elm, podemos usar a função `Date.toString`. Ela recebe como parâmetros uma string de formato e um valor de data. Aqui está um exemplo de como usá-la:
+Para converter uma data em uma string em Elm, precisamos utilizar a função `toString` do pacote `Date`. Ela aceita uma data no formato `Date` e retorna uma string no formato `YYYY-MM-DD`.
 
-```Elm
-import Date
-
-myDate = Date.fromYMD 2020 07 26
-
-stringDate = Date.toString "dd/MM/yyyy" myDate
-
--- saída: "26/07/2020"
+```
+Elm pacote de data
+data = Date.fromCalendarDate 2022 1 5
+string = Date.toString data
 ```
 
-No exemplo acima, primeiro importamos o módulo `Date` para ter acesso à função `toString`. Então, criamos uma variável `myDate` com a data que queremos converter, usando a função `Date.fromYMD` para criar a data com o ano, mês e dia especificados. Em seguida, usamos a função `toString` para converter a data na variável `stringDate`, especificando o formato desejado como "dd/MM/yyyy". A partir disso, obtemos a string "26/07/2020" como resultado.
+O exemplo acima produzirá a seguinte string: `2022-01-05`.
 
-## Mergulho Profundo
+Também podemos especificar um formato personalizado para a string, utilizando a função `format` do pacote `Date`. Ela aceita um formato desejado, juntamente com a data, e retorna uma string com a data formatada de acordo com o padrão especificado.
 
-Uma das coisas interessantes sobre a função `Date.toString` é que ela aceita diferentes formatos de string como parâmetro. Por exemplo, podemos usar "yyyy-MM-dd" para obter a data no formato "2020-07-26" ou "MMM dd, yyyy" para obter "Jul 26, 2020". Além disso, podemos adicionar opções extras ao formato, como "EEEE" para obter o dia da semana completo ("Sunday") ou "EEE" para obter a forma abreviada ("Sun"). Você pode conferir a lista completa de opções de formato na documentação oficial da linguagem Elm.
+```
+Elm pacote de data
+data = Date.fromCalendarDate 2022 1 5
+string = Date.format "%d/%m/%Y" data
+```
 
-Além disso, podemos usar a função `Date.toIsoString` para obter a data em formato ISO 8601, que é amplamente utilizado em APIs. Essa função também aceita um objeto de configuração como parâmetro, permitindo-nos especificar opções adicionais, como se devemos incluir ou não o fuso horário na string.
+Este exemplo produzirá a seguinte string: `05/01/2022`.
+
+## Navegação profunda
+
+Ao converter uma data em uma string, também podemos realizar outras operações com a função `toDate` do pacote `Date`. Ela aceita uma string e um formato e retorna uma data no formato `Date`.
+
+```
+Elm pacote de data
+string = "2022-01-05"
+data = Date.fromString "%Y-%m-%d" string
+```
+
+Este exemplo produzirá a data `05/01/2022` no formato `Date`, que então pode ser utilizada para realizar operações como calcular o dia da semana ou compará-la com outras datas.
 
 ## Veja também
 
-Aqui estão alguns links úteis para saber mais sobre como converter datas em strings usando Elm:
-
-- Documentação oficial da função `Date.toString`: https://package.elm-lang.org/packages/elm/time/latest/Date#toString
-- Documentação oficial da função `Date.toIsoString`: https://package.elm-lang.org/packages/elm/time/latest/Date#toIsoString
-- Formatos de strings suportados pela função `Date.toString`: https://package.elm-lang.org/packages/elm/time/latest/Time#Format
+- Documentação do pacote `Date`: https://package.elm-lang.org/packages/elm/time/latest/
+- Tutorial de programação Elm: https://guide.elm-lang.org/
+- Discussões sobre Elm na comunidade brasileira: https://groups.google.com/g/elmbr

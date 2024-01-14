@@ -1,48 +1,50 @@
 ---
 title:    "Gleam: 获取当前日期"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：获取当前日期的原因
+为什么获取当前日期
 
-在编程中，获取当前日期是一项常见的任务。无论是在开发网站还是应用程序，都有可能需要使用当前日期来进行一些操作。比如，网站的登录页面可能需要显示最后一次登陆的日期，或者应用程序可能需要记录每天的数据统计。因此，获取当前日期在编程中是非常有用的。
+获取当前日期可能是在您的程序中非常重要的一个步骤。通过获取当前日期，您可以确保程序中使用的时间是最新的，从而避免出现错误或混乱。
 
-如何做到：示例代码和输出
+## 如何获取当前日期
 
-```Gleam
-// 导入日期库
-import gleam / date / Date
-
-// 获取当前日期
-let today = Date.current()
-
-// 输出当前日期
-IO.print("今天的日期是: ${Date.to_string(today)}")
-```
+在Gleam中获取当前日期非常简单。您只需要使用内置的DateTime模块中的函数就可以获取到当前日期的信息。
 
 ```Gleam
-// 导入日期库
-import gleam / date / Date
+import gleam/datetime
 
-// 获取当前日期和时间
-let now = Date.time()
+let current_date = datetime.now()
 
-// 输出当前时间
-IO.print("当前时间是: ${Date.to_string(now)}")
+// 输出例子：2021年10月3日，星期日
+datetime.format(current_date, "%Y年%m月%d日，%A")
 ```
 
-深入介绍：关于获取当前日期的更多信息
+现在您可以根据您的需求，使用不同的格式来获取当前日期，例如，如果您只需要年月日，可以使用如下代码：
 
-除了上面提到的简单示例，我们还可以通过日期库来获取更多关于当前日期的信息。例如，我们可以通过日期库中的函数来判断某一天是否是闰年，或者计算两个日期之间的天数差。这些功能都可以帮助我们更方便地使用当前日期，并且让我们的程序更加灵活。
+```Gleam
+import gleam/datetime
 
-参考资料
+let current_date = datetime.now()
 
-- Gleam 日期库文档：https://gleam.run/libraries/date/
-- 日期与时间在编程中的应用：https://zhuanlan.zhihu.com/p/55709226
-- 如何使用当前日期来生成文件名：https://www.cnblogs.com/yjf512/p/6462523.html
+// 输出例子：2021-10-03
+datetime.format(current_date, "%Y-%m-%d")
+```
 
-参见
+## 深入探讨获取当前日期
 
-#### 参考链接
+在Gleam中，DateTime模块提供了许多有用的函数来处理日期和时间。除了获取当前日期外，您还可以使用其他函数来进行日期的比较、转换以及格式化等操作。通过深入学习DateTime模块，您可以更加灵活地处理日期和时间，从而提高程序的效率。
+
+## 参考资料
+
+- [Gleam官方文档 - DateTime模块](https://gleam.run/documentation/standard-libraries/datetime)
+- [使用Gleam来处理日期和时间](https://medium.com/gleam-lang/using-gleam-to-handle-dates-and-times-3879f0110c44)
+- [Gleam社区论坛](https://forum.gleam.run/) 
+
+## 参见
+
+- [如何在Gleam中获取当前时间](https://github.com/user/guide-how-to-get-current-time)
+- [使用Gleam处理日期和时间的最佳实践](https://github.com/user/best-practices-for-handling-dates-and-times-in-gleam)

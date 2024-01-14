@@ -1,98 +1,48 @@
 ---
 title:    "Kotlin: Comparando duas datas"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas?
+## Por que comparar duas datas em Kotlin?
 
-Comparar duas datas é uma tarefa comum em programação, pois permite que os desenvolvedores determinem a diferença entre dois momentos específicos no tempo. Isso pode ser útil em muitos casos, como em aplicações de reserva de passagens ou em sistemas de gerenciamento de projetos.
+Comparar duas datas é uma tarefa comum em muitos aplicativos e programas. Por exemplo, pode ser necessário verificar se uma data de nascimento é maior que a data atual, ou se o prazo de um projeto já passou. Comparar datas permite que você crie lógicas e condições com base em valores de data, o que pode ser muito útil no desenvolvimento de aplicativos.
 
-## Como fazer?
+## Como comparar duas datas em Kotlin
 
-Codificar a comparação de duas datas em Kotlin é simples e pode ser feito utilizando os métodos da classe `LocalDate` e `ChronoUnit`. Primeiro, vamos criar duas instâncias da classe `LocalDate`, representando as datas que queremos comparar:
-
-```Kotlin
-val data1 = LocalDate.of(2021, 10, 1)
-val data2 = LocalDate.of(2021, 10, 10)
-```
-
-Agora, podemos utilizar o método `between` da classe `ChronoUnit` para determinar a diferença entre as datas em uma unidade específica, como dias, semanas ou meses:
-
-```Kotlin
-val diferencaDias = ChronoUnit.DAYS.between(data1, data2)
-val diferencaSemanas = ChronoUnit.WEEKS.between(data1, data2)
-val diferencaMeses = ChronoUnit.MONTHS.between(data1, data2)
-```
-
-O resultado da comparação será então armazenado em uma variável do tipo `Long`. O código completo seria algo como isso:
+Para comparar duas datas em Kotlin, você pode usar a classe `LocalDate`, que representa uma data sem hora e fuso horário. Vamos ver um exemplo de código:
 
 ```Kotlin
 import java.time.LocalDate
-import java.time.temporal.ChronoUnit
 
-fun main(args: Array<String>) {
-    val data1 = LocalDate.of(2021, 10, 1)
-    val data2 = LocalDate.of(2021, 10, 10)
+fun main() {
+    // criando duas datas
+    val data1 = LocalDate.of(2019, 5, 12)
+    val data2 = LocalDate.now()
 
-    val diferencaDias = ChronoUnit.DAYS.between(data1, data2)
-    val diferencaSemanas = ChronoUnit.WEEKS.between(data1, data2)
-    val diferencaMeses = ChronoUnit.MONTHS.between(data1, data2)
-
-    println("Diferença em dias: \${diferencaDias}")
-    println("Diferença em semanas: \${diferencaSemanas}")
-    println("Diferença em meses: \${diferencaMeses}")
+    // comparando as datas
+    if (data1.isAfter(data2)) {
+        println("Data 1 é depois da data 2")
+    } else {
+        println("Data 1 é antes ou igual à data 2")
+    }
 }
 ```
 
-A saída do código acima seria:
+Neste exemplo, nós criamos duas datas utilizando o método `of` da classe `LocalDate`, que recebe como parâmetros o ano, mês e dia. Em seguida, utilizamos o método `isAfter` para comparar se a data 1 é depois da data 2. Você também pode usar outros métodos, como `isBefore` e `isEqual`, para fazer diferentes tipos de comparações entre datas.
 
-```
-Diferença em dias: 9
-Diferença em semanas: 1
-Diferença em meses: 0
-```
+O resultado desse código seria a saída "Data 1 é antes ou igual à data 2", pois a data 1 é anterior à data atual.
 
-## Mais sobre a comparação de datas
+## Uma análise mais detalhada sobre a comparação de datas
 
-Além de determinar a diferença entre duas datas, também é possível comparar se uma data é anterior ou posterior a outra. Isso pode ser feito utilizando o método `isAfter` ou `isBefore` da classe `LocalDate`:
+Além dos métodos mencionados anteriormente, a classe `LocalDate` possui diversos outros métodos que podem ser úteis na comparação de datas, como `minusDays`, `plusWeeks`, entre outros. Além disso, você também pode utilizar a classe `LocalTime` para trabalhar com horas em suas comparações.
 
-```Kotlin
-val data1 = LocalDate.of(2021, 10, 1)
-val data2 = LocalDate.of(2021, 10, 10)
-
-val data1AntesData2 = data1.isBefore(data2)
-val data2AntesData1 = data2.isBefore(data1)
-
-println("Data1 é anterior a Data2: \${data1AntesData2}")
-println("Data2 é anterior a Data1: \${data2AntesData1}")
-```
-
-A saída seria:
-
-```
-Data1 é anterior a Data2: true
-Data2 é anterior a Data1: false
-```
-
-Também é possível comparar a igualdade entre duas datas utilizando o método `isEqual`:
-
-```Kotlin
-val data1 = LocalDate.of(2021, 10, 1)
-val data2 = LocalDate.of(2021, 10, 10)
-
-val datasIguais = data1.isEqual(data2)
-```
-
-A saída seria:
-
-```
-Datas são iguais: false
-```
+É importante lembrar que, para comparar datas e obter resultados precisos, é necessário levar em consideração o fuso horário e o calendário utilizado em cada data. Portanto, é importante estar atento a esses detalhes ao trabalhar com datas em seu código.
 
 ## Veja também
 
-- [Documentação do Kotlin sobre a classe LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
-- [Tutorial sobre como trabalhar com datas em Kotlin](https://www.baeldung.com/kotlin/dates)
-- [Vídeo no YouTube sobre comparação de datas em Kotlin](https://www.youtube.com/watch?v=iBE43XZy_eQ)
+- [Documentação do Kotlin sobre datas e horas](https://kotlinlang.org/docs/datetime.html)
+- [Tutorial de comparação de datas em Kotlin](https://www.baeldung.com/kotlin/comparing-dates)
+- [Lista de bibliotecas úteis para trabalhar com datas em Kotlin](https://www.baeldung.com/kotlin-date-time-libraries)

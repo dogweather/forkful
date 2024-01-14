@@ -1,47 +1,49 @@
 ---
 title:    "PHP: Buscando e substituindo texto"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que buscar e substituir texto é importante para programadores PHP?
 
-Se você está trabalhando com PHP, provavelmente já se deparou com a tarefa de encontrar e substituir texto em seus códigos. Esta é uma habilidade crucial para qualquer programador e pode economizar muito tempo e esforço durante o desenvolvimento. Neste post, vamos explorar algumas técnicas para buscar e substituir textos de forma eficiente em PHP.
+Você está trabalhando em um projeto PHP e de repente percebe que precisa mudar algumas informações que aparecem em várias partes do seu código. Em vez de procurar manualmente e alterar cada ocorrência, você pode simplesmente usar as funções de busca e substituição de texto em PHP para tornar esse processo mais eficiente e econômico. Em outras palavras, o recurso de busca e substituição de texto é uma ferramenta poderosa que ajuda a economizar tempo e esforço em projetos de programação em PHP.
 
-## Como fazer
+## Como usar as funções de busca e substituição de texto em PHP
 
-Aqui estão algumas maneiras de realizar a tarefa de substituir texto em PHP:
+Para buscar e substituir texto em PHP, você pode usar as funções `str_replace()` ou `preg_replace()`. Ambas as funções aceitam três parâmetros: a string de busca, a string de substituição e a string na qual a busca e substituição serão realizadas. Veja um exemplo de código:
 
-```
+```PHP
 <?php
+$texto = "Hoje é um lindo dia para programar em PHP.";
+$texto_novo = str_replace("lindo", "maravilhoso", $texto);
+echo $texto_novo;
+?>
 
-// Usando a função str_replace()
-$string = "Olá mundo!";
-echo str_replace("mundo", "amigos", $string); // Saída: Olá amigos!
-
-// Usando expressões regulares (regex)
-$string = "Meu nome é João";
-echo preg_replace("/João/", "José", $string); // Saída: Meu nome é José
+// Output: Hoje é um maravilhoso dia para programar em PHP.
 ```
-Note que ambas as opções são muito similares, mas a função `str_replace()` é mais simples e eficiente para casos em que não há necessidade de trabalhar com regex. Porém, se você precisa realizar um padrão mais complexo de busca e substituição, as expressões regulares são a melhor opção.
 
-## Mergulho profundo
+Você também pode usar expressões regulares no segundo parâmetro das funções `str_replace()` e `preg_replace()`, o que permite fazer substituições mais complexas e avançadas. Veja um exemplo de código usando a função `preg_replace()`:
 
-Agora, vamos explorar um pouco mais sobre como as expressões regulares funcionam no PHP. A função `preg_replace()` utiliza uma sintaxe similar a outras linguagens de programação, como JavaScript e Python. Você pode utilizar operadores como `+` para encontrar uma ou mais ocorrências e `*` para encontrar qualquer número de ocorrências. Por exemplo, `/[aeiou]+/` irá encontrar qualquer vogal repetida em uma palavra.
-
-Também é possível utilizar grupos de captura para retornar partes específicas da string original. Por exemplo, se você quiser substituir um e-mail por asteriscos, pode utilizar o seguinte código:
-```
+```PHP
 <?php
+$texto = "O número 2021 é um ano de renovação.";
+$texto_novo = preg_replace("/2021/", "2022", $texto);
+echo $texto_novo;
+?>
 
-$string = "Meu e-mail é joao@email.com";
-echo preg_replace("/(e-mail\sé\s)((\w+|-|\.)+)+(@)(((\w+|-)+\.))+(\w\w+)/", "$1***@***.$8", $string); // Saída: Meu e-mail é ***@***.com
+// Output: O número 2022 é um ano de renovação.
 ```
+
+## Aprofundando no uso das funções de busca e substituição de texto em PHP
+
+Além dos exemplos básicos de uso das funções de busca e substituição de texto em PHP, também é importante entender como funcionam as expressões regulares. Elas permitem realizar buscas mais precisas e substituições complexas em textos. Por exemplo, você pode usar quantificadores, próprios das expressões regulares, para especificar quantas vezes uma determinada palavra ou caractere deve ser substituído.
+
+Outra dica importante é o uso do parâmetro opcional `$count` nas funções `str_replace()` e `preg_replace()`. Ele conta o número de substituições realizadas na string e pode ser usado para acompanhar o progresso do processo de busca e substituição.
 
 ## Veja também
 
-Aqui estão alguns links úteis para aprender mais sobre buscas e substituições em PHP:
-
-- [Documentação do PHP: Função str_replace](https://www.php.net/manual/pt_BR/function.str-replace.php)
-- [Documentação do PHP: Função preg_replace](https://www.php.net/manual/pt_BR/function.preg-replace.php)
-- [Tutorial sobre expressões regulares em PHP](https://www.tutorialrepublic.com/php-tutorial/php-regular-expressions.php)
+- [Documentação oficial do PHP sobre a função str_replace()](https://www.php.net/manual/pt_BR/function.str-replace.php)
+- [Documentação oficial do PHP sobre a função preg_replace()](https://www.php.net/manual/pt_BR/function.preg-replace.php)
+- [Tutorial sobre expressões regulares em PHP](https://www.devmedia.com.br/expressoes-regulares-em-php/24012)

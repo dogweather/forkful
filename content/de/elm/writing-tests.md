@@ -1,33 +1,68 @@
 ---
 title:    "Elm: Tests schreiben"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich überhaupt Gedanken um das Schreiben von Tests machen? Es gibt mehrere Gründe, warum es wichtig ist, beim Programmieren Tests zu integrieren. Zum einen sorgen Tests dafür, dass der Code funktioniert und mögliche Fehler frühzeitig erkannt werden, bevor sie in der Produktion auftreten. Außerdem helfen sie dabei, den Code zu strukturieren und zu verbessern. Durch das Schreiben von Tests wird man sich bewusster über den eigenen Code und kann somit eine bessere Qualität gewährleisten.
 
-## Anleitung
-Die Programmiersprache Elm bietet eine einfache und effiziente Möglichkeit, Tests zu schreiben. Im folgenden Beispiel werden wir eine einfache Funktion testen, die die Länge eines String berechnet.
+Automatisierte Tests sind ein wichtiger Bestandteil der modernen Softwareentwicklung. Sie helfen dabei, potenzielle Fehler frühzeitig zu erkennen, die Stabilität und Qualität des Codes zu verbessern und Entwicklungszeit zu sparen. In diesem Artikel werden wir uns anschauen, warum es sich lohnt, Tests in Elm zu schreiben.
 
-```Elm
--- Beschreibung des Tests
-elmTest "Calculate length of string" |> \_ ->
-    -- Definieren eines String
-    let
-        input = "Hallo Welt"
-    in
-    -- Erwartete Ausgabe
-    Expect.equal (String.length input) 10
+## Wie geht das?
+
+Um Tests in Elm zu schreiben, müssen wir zunächst das Paket `elm-test` installieren. Dies können wir einfach über die Kommandozeile mit folgendem Befehl tun:
+
+`elm install elm-explorations/test`
+
+Anschließend können wir unsere Tests innerhalb einer `Tests.elm`-Datei schreiben. Hier ist ein einfaches Beispiel, bei dem wir die `String.reverse`-Funktion testen:
+
+```elm
+module Tests exposing (..)
+
+import Expect
+import String
+
+reverseTest =
+    String.reverse "Hello" == "olleH"
+        |> Expect.equal "Reverse of 'Hello' should be 'olleH'"
 ```
 
-In diesem Beispiel haben wir zuerst eine Beschreibung des Tests angegeben, um zu erklären, was genau getestet wird. Anschließend haben wir einen String definiert und die erwartete Ausgabe mit der Funktion `Expect.equal` festgelegt. Beim Ausführen des Tests sollte die Funktion die Länge des Strings berechnen und mit der angegebenen Ausgabe vergleichen. Falls beide Werte übereinstimmen, wird der Test bestanden.
+Um die Tests auszuführen, können wir in der Kommandozeile `elm-test` eingeben. Dabei wird unsere `Tests.elm`-Datei automatisch gefunden und die Ergebnisse der Tests ausgegeben.
 
-## Tiefenschärfe
-Beim Schreiben von Tests ist es wichtig, verschiedene Szenarien abzudecken und sicherzustellen, dass alle möglichen Fälle getestet werden. Elm bietet dafür verschiedene Funktionen, wie zum Beispiel `Expect.equal`, `Expect.notEqual` und `Expect.isTrue` für Vergleiche oder `Expect.throws` für das Testen von Fehlern. Auch die Verwendung von `describe` und `describeOnly` ermöglicht eine strukturierte Darstellung der Tests. Wenn man sich tiefer in das Thema einarbeiten möchte, empfehle ich die offizielle Dokumentation von Elm zur Testausführung.
+```
+elm-test
+
+======: TEST RUN :======
+oke. got "Reverse of 'Hello' should be 'olleH'"
+~~~~~~~~~~
+PASS :-)
+```
+
+
+
+## Tiefentauchen
+
+In der Regel schreiben wir Tests, um zu überprüfen, ob unsere Funktionen das tun, was wir von ihnen erwarten. Dabei können wir uns auf verschiedene Arten von Tests konzentrieren, wie zum Beispiel:
+
+- **Unit-Tests**: Diese testen einzelne Funktionen oder Module und überprüfen, ob sie die erwarteten Ergebnisse liefern.
+- **Integrationstests**: Diese testen die Zusammenarbeit von mehreren Funktionen oder Modulen und überprüfen, ob sie korrekt miteinander kommunizieren.
+- **End-to-End-Tests**: Diese simulieren die tatsächliche Benutzerinteraktion mit der Anwendung und überprüfen, ob alle Komponenten korrekt funktionieren.
+
+Es ist wichtig, einen ausgewogenen Mix aus diesen verschiedenen Arten von Tests zu haben, um eine umfassende Testabdeckung zu erreichen.
+
+Außerdem ist es hilfreich, die sogenannte "Arrange-Act-Assert"-Strategie (auch bekannt als "AAA") zu verwenden, um unsere Tests gut strukturiert und leicht nachvollziehbar zu machen. Dabei teilen wir unsere Tests in drei Abschnitte auf:
+
+- Arrange: Hier bereiten wir die erforderlichen Eingabedaten für unseren Test vor.
+- Act: Hier führen wir die Funktion aus, die wir testen möchten.
+- Assert: Hier vergleichen wir das erwartete Ergebnis mit dem tatsächlichen Ergebnis.
+
+Durch diese Struktur wird es einfacher, unsere Tests zu debuggen und zu verstehen, was bei fehlerhaften Tests schiefgelaufen ist.
 
 ## Siehe auch
-- {Link zu einer Website mit weiteren Informationen zum Schreiben von Tests}
-- {Link zu einem Video-Tutorial für das Schreiben von Tests in Elm}
-- {Link zu einem GitHub-Repository mit Beispielen für Tests in Elm}
+
+- [Offizielle Elm Test Dokumentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm Unit Testing Tutorial](https://www.codementor.io/@yehonathanbello5/elm-unit-testing-tutorial-dobr5ex9y)
+- [Ein Einführungsleitfaden für Integrationstests in Elm](https://blog.mediocregopher.com/2018/01/28/an-intro-guide-to-integration-testing-in-elm/)
+- [Automatisierte Tests in Elm mit Travis CI](https://thoughtbot.com/blog/elm-and-travis-ci)

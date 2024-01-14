@@ -1,64 +1,54 @@
 ---
-title:    "Swift: Wydrukuj dane diagnostyczne"
+title:    "Swift: Wydrukowanie wyjścia debugowania"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami, podczas pisania aplikacji w Swift, trudno jest nam zrozumieć, co właściwie dzieje się w naszym kodzie. Być może otrzymujemy nieoczekiwane wyniki, bądź aplikacja po prostu nie działa tak, jak tego chcemy. W takich momentach przydatne może okazać się wypisywanie wiadomości debugowania, aby dowiedzieć się, co dokładnie dzieje się w naszym kodzie. W tym artykule dowiesz się, dlaczego warto używać wypisywania debugowania i jak tego dokonać w języku Swift.
+Programiści często znajdują się w sytuacjach, gdzie muszą znajdować i naprawiać błędy w swoim kodzie. Jednym z najważniejszych narzędzi w takich sytuacjach jest wypisywanie danych debugujących. Pozwala to programiście na lepsze zrozumienie, co dzieje się w jego programie i szybsze znalezienie i naprawienie błędu.
 
 ## Jak To Zrobić
 
-Aby wypisać wiadomości debugowania w Swift, użyjemy funkcji `print()`. Przykładowo, jeśli mamy zmienną `x` i chcemy sprawdzić jej wartość, możemy użyć następującego kodu:
+W Swift, istnieje kilka metod, aby wyświetlić dane debugujące w konsoli.
 
-``` Swift
-let x = 5
-print("Wartość zmiennej x to: \(x)")
+#### Podstawowe użycie funkcji print()
+```Swift
+print("Hello, world!")
 ```
 
-Output tego kodu będzie wyglądał następująco:
-
-```
-Wartość zmiennej x to: 5
-```
-
-Możemy również wyświetlać więcej niż jedną zmienną w jednej linii, oddzielając je przecinkami, na przykład:
-
-``` Swift
-let a = "Hello"
-let b = "World"
-print("\(a), \(b)!")
+#### Wyświetlanie zmiennej
+```Swift
+let number = 5
+print("Liczba wynosi: \(number)")
 ```
 
-Output:
-
-```
-Hello, World!
-```
-
-Dodatkowo, możemy również wypisywać wartości złożone, takie jak tablice czy słowniki. W przypadku tablic, możemy użyć metody `joined()` aby je połączyć, na przykład:
-
-``` Swift
-let fruits = ["apple", "banana", "orange"]
-print("Moje ulubione owoce to: \(fruits.joined(separator: ", "))")
+#### Debugowanie warunków
+```Swift
+assert(number > 10, "Liczba musi być większa niż 10.")
 ```
 
-Output:
-
+#### Wyświetlanie danych kolekcji
+```Swift
+let fruits = ["jabłko", "banan", "pomarańcza"]
+print("Owoce: \(fruits)")
 ```
-Moje ulubione owoce to: apple, banana, orange
+
+#### Używanie funkcji debugPrint()
+```Swift
+debugPrint("Debugowanie") // wyświetli "Debugowanie"
 ```
 
-## Głębszy Wgląd
+## Głębsza Analiza
 
-Wypisywanie wiadomości debugowania może być bardzo przydatne podczas pisania aplikacji Swift. Jednak warto pamiętać, że częste używanie tej funkcji może spowolnić naszą aplikację. Dlatego powinniśmy używać jej tylko w trakcie testowania i debuggingu, a nie w finalnej wersji aplikacji.
+Funkcje print() i debugPrint() znajdują się w standardowej bibliotece języka Swift i są używane do wypisywania tekstu i wartości zmiennych. Istnieje także możliwość ustawienia poziomu debugowania w projekcie, co pozwala na wyświetlenie informacji debugujących tylko w trybie developerskim, a nie w wersji produkcyjnej aplikacji.
 
-Dodatkowo, funkcja `print()` może przybierać różne formy. Możemy na przykład wyświetlać debug output w konsoli, ale również zamieszczać go w plikach tekstowych czy zapisywać w dzienniku zdarzeń. To, w jaki sposób wypisujemy wiadomości, zależy od naszych potrzeb i preferencji.
+Inną przydatną funkcją jest breakpoint, który pozwala na zatrzymanie wykonywania kodu w określonym miejscu, co ułatwia debugowanie.
 
-## Zobacz również
+## Zobacz Również
 
-- [10 sposobów na debugowanie kodu w Swift](https://medium.com/swlh/10-ways-to-debug-code-in-swift-847769cf2e35)
-- [Oficjalna dokumentacja funkcji `print()` w Swift](https://developer.apple.com/documentation/swift/1541293-print)
-- [Poradnik: Debugowanie aplikacji w Xcode](https://www.raywenderlich.com/7489882-ios-debugging-cheatsheet-for-xcode-12)
+- [Debugging in Swift](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
+- [Using the Swift Debugger](https://docs.swift.org/swift-book/ReferenceManual/LLDBDebugging.html)
+- [How to Debug your Code in Swift](https://blog.usejournal.com/how-to-debug-your-code-in-swift-9cc8ccf847b)

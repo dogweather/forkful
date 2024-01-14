@@ -1,48 +1,78 @@
 ---
-title:    "C++: Transformando uma string em letras minúsculas"
+title:    "C++: Convertendo uma string para minúsculas"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-Em programação, muitas vezes precisamos manipular strings em nossos códigos. Uma das tarefas mais comuns é converter uma string para letras minúsculas. Isso pode ser útil, por exemplo, ao comparar duas strings ou ao validar a entrada do usuário. Neste artigo, vamos explorar como converter uma string para letras minúsculas em C++.
+
+Converter uma string para letras minúsculas é uma tarefa essencial em muitos projetos de programação. Isso nos permite padronizar e comparar strings de maneira mais fácil e eficiente.
 
 ## Como fazer
-Para converter uma string para letras minúsculas em C++, podemos utilizar a função `tolower` da biblioteca `<cctype>`. Ela recebe como parâmetro um caractere e retorna o seu equivalente em letra minúscula. Podemos então percorrer a string, caractere por caractere, e aplicar essa função a cada um deles. Veja um exemplo de código:
+
+Abaixo estão algumas maneiras de converter uma string para letras minúsculas usando a linguagem de programação C++.
+
+### Usando a função `transform` do STL
 
 ```C++
+// Cabeçalhos necessários
 #include <iostream>
-#include <cctype>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
-string converterParaMinusculas(string str) {
-  string resultado;
-  for (char c : str) {
-    resultado += tolower(c);
-  }
-  return resultado;
+int main() {
+    // String de exemplo
+    string palavra = "Exemplo";
+
+    // Usando a função transform para converter a string para letras minúsculas
+    transform(palavra.begin(), palavra.end(), palavra.begin(), ::tolower);
+
+    // Imprimindo a string modificada
+    cout << palavra;
+
+    return 0;
 }
 
-int main() {
-  string minhaString = "PROGRAMANDO EM C++";
-  cout << converterParaMinusculas(minhaString) << endl; // saída: programando em c++
-  return 0;
-}
+// Saída: exemplo
 ```
 
-Neste código, criamos uma função `converterParaMinusculas` que recebe uma string como parâmetro e retorna a mesma string com todas as letras minúsculas. Em seguida, na função `main`, criamos uma string com letras maiúsculas e usamos a função criada para convertê-la para letras minúsculas. Finalmente, imprimimos o resultado na tela.
+### Usando a função `tolower` do header `cctype`
 
-## Explorando mais a fundo
-Ao trabalhar com a função `tolower`, é importante lembrar que ela só funciona com caracteres individuais. Portanto, se a sua string contiver caracteres especiais, a conversão pode não ser feita corretamente. Além disso, ela só funciona com a tabela ASCII, então pode não funcionar com caracteres de outros idiomas.
+```C++
+// Cabeçalhos necessários
+#include <iostream>
+#include <string>
+#include <cctype>
 
-Uma alternativa é utilizar funções específicas para cada idioma, como a `tolower` da biblioteca `<locale>`, que tem suporte para caracteres unicode. Ou ainda, utilizar bibliotecas externas que fazem a conversão de forma mais abrangente.
+using namespace std;
 
-É importante também lembrar que a função `tolower` não altera a string original, apenas retorna uma string com as letras minúsculas. Portanto, é necessário atribuir o resultado a uma nova variável ou reatribuir à mesma variável, como fizemos no exemplo anterior.
+int main() {
+    // String de exemplo
+    string palavra = "Exemplo";
+
+    // Convertendo cada caractere da string para letras minúsculas
+    for (char& c : palavra) {
+        c = tolower(c);
+    }
+
+    // Imprimindo a string modificada
+    cout << palavra;
+
+    return 0;
+}
+
+// Saída: exemplo
+```
+
+## Mergulho profundo
+
+Existem algumas coisas importantes a serem consideradas ao converter uma string para letras minúsculas. Primeiro, é preciso ter cuidado ao escolher a função de conversão para garantir que ela funcione corretamente com a codificação de caracteres do seu projeto. Além disso, em alguns casos, espaços e pontuação podem não ser convertidos corretamente para suas formas minúsculas, então é importante verificar e tratar esses casos manualmente, se necessário.
 
 ## Veja também
-- [Tutorial de strings em C++](https://www.cplusplus.com/doc/tutorial/strings/)
-- [Documentação da função `tolower`](http://www.cplusplus.com/reference/cctype/tolower/)
-- [Biblioteca de função `tolower` da `<locale>`](http://www.cplusplus.com/reference/locale/tolower/)
+
+- [Referência da função `transform` do STL em cppreference.com](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [Referência da função `tolower` do header `cctype` em cppreference.com](https://en.cppreference.com/w/cpp/string/byte/tolower)

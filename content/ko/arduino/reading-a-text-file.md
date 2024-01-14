@@ -1,87 +1,70 @@
 ---
 title:    "Arduino: 텍스트 파일 읽기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트 파일을 읽는 방법에 대한 이해는 Arduino 프로그래밍의 기본적인 개념입니다. 이를 통해 더 많은 현실적인 응용 프로그램을 개발할 수 있으며, 데이터를 저장하고 처리하는 데 있어서도 매우 유용합니다. 
+텍스트 파일을 읽는 것이 왜 중요한지 궁금하셨나요? 이 블로그 포스트에서 우리는 Arduino에서 텍스트 파일을 읽는 방법과 그 이유를 자세히 알아보도록 하겠습니다.
 
-## 방법
+## How To
+
+Arduino에서 텍스트 파일을 읽기 위해서는 다음과 같은 단계를 따라야 합니다. 먼저, SD 카드 모듈을 사용하여 Arduino와 연결합니다. 그런 다음 SD 라이브러리를 사용하여 SD 카드에 액세스하여 파일을 열고 데이터를 읽습니다. 아래에 코드 예제와 함께 간단한 텍스트 파일을 읽는 예제를 살펴보겠습니다.
 
 ```Arduino
-/*
- Arduino에서 텍스트 파일 읽기 예제
-*/
+#include <SPI.h>
+#include <SD.h>
 
-// SD 카드 라이브러리 가져오기
-#include <SD.h> 
-
-// 사용할 핀 정의
-// MOSI, MISO, CLK 핀은 SD 카드 쉴드에 이미 연결되어 있음
-// 따라서 새로운 핀 번호를 사용해야 함
-const int SD_CS_PIN = 10; // CS 핀
-const int FILENAME_MAX_LEN = 20; // 읽을 파일 이름의 최대 길이
-char filename[20] = "data.txt"; // 읽을 파일의 이름
-
-File myFile; // 파일 객체 생성
+File myFile;
+// SD카드 모듈을 10번 핀에 연결합니다.
+const int chipSelect = 10;
+// 데이터를 저장할 문자열을 선언합니다.
+String data;
 
 void setup() {
-  // SD 카드 초기화
   Serial.begin(9600);
-  while (!Serial) {
-    continue;
+  // SD 카드와 연결될 수 있도록 10번 핀을 출력으로 설정합니다.
+  pinMode(chipSelect, OUTPUT);
+  // SD 카드를 초기화합니다.
+  if (!SD.begin(chipSelect)) {
+    Serial.println("SD 카드를 찾을 수 없습니다.");
+    while (1);
   }
-  Serial.println("Initializing SD card...");
-
-  // SD 카드에서 파일을 읽기 전에 핀 설정
-  pinMode(SD_CS_PIN, OUTPUT);
-
-  // SD 카드 라이브러리 초기화
-  if (!SD.begin(SD_CS_PIN)) {
-    Serial.println("SD card initialization failed!");
-    return;
+  Serial.println("SD 카드가 활성화되었습니다.");
+  // 텍스트 파일을 읽기 위해 "test.txt"를 엽니다.
+  myFile = SD.open("test.txt");
+  // 파일의 모든 데이터를 읽을 때까지 반복합니다.
+  while (myFile.available()) {
+    // 파일에서 문자를 읽고 data 변수에 추가합니다.
+    data += char(myFile.read());
   }
-  Serial.println("SD card initialized successfully!");
-
-  // 텍스트 파일 열기
-  myFile = SD.open(filename);
-
-  // 파일을 성공적으로 열었는지 확인
-  if (myFile) {
-    Serial.println("File opened successfully!");
-    
-    // 텍스트 파일에서 한 줄씩 읽어서 시리얼 모니터에 출력
-    while (myFile.available()) {
-      Serial.write(myFile.read());
-    }
-    
-    // 파일을 닫기 전에 시리얼 모니터에 메시지 출력
-    Serial.println();
-    Serial.println("File read successfully!");
-    
-    // 파일 닫기
-    myFile.close();
-  } else {
-    // 파일을 열 수 없는 경우 에러 메시지 출력
-    Serial.println("Could not open file!");
-  }
+  Serial.println("파일의 내용:");
+  // 읽은 데이터를 시리얼 모니터에 출력합니다.
+  Serial.println(data);
+  // 파일을 닫습니다.
+  myFile.close();
 }
 
 void loop() {
-  // 아무 작업도 수행하지 않음
+
 }
 ```
 
-위의 코드는 SD 카드에서 텍스트 파일을 읽어와 시리얼 모니터에 출력하는 간단한 예제입니다. 코드를 이해하고 해당 디바이스에 적합하게 수정하여 사용할 수 있습니다.
+### 예상 출력
+```
+SD 카드가 활성화되었습니다.
+파일의 내용:
+Arduino를 배우는 것은 재밌는 일이에요!
 
-## 딥 다이브
+```
 
-텍스트 파일을 읽는 과정에서 주의해야 할 몇 가지 사항이 있습니다. 첫째, 파일 이름은 반드시 20자 이내여야 합니다. 둘째, 시리얼 모니터에 출력하는 대신 다른 작업을 하도록 코드를 수정할 수 있습니다. 마지막으로, `SD.open()` 함수를 사용하여 파일을 열 때 파일 이름을 문자열로 전달해야 합니다.
+## Deep Dive
+텍스트 파일을 읽는 것은 다양한 프로젝트에서 매우 유용합니다. 만약 온도 센서와 연결되어 있는 Arduino가 있다면, 온도 값을 텍스트 파일로 저장하여 나중에 데이터를 분석할 수 있습니다. 또는 공중화장실의 사용량을 추적하는 시스템을 만들고 싶다면, 각각의 사용 기록을 텍스트 파일로 저장하여 관리할 수 있습니다. 텍스트 파일은 우리가 일상에서 사용하는 모든 회사에서도 중요한 역할을 합니다. 예를 들어, 고객의 정보를 데이터베이스에 저장할 때, 보통 텍스트 파일로 데이터를 먼저 읽은 후 데이터베이스에 저장합니다.
 
-## 참고 자료
-
-- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [Arduino에서 텍스트 파일 읽기](http://www.natekim.com/2014/09/arduino-read-text-file-code.html)
+## See Also
+- Arduino에서 SD 카드 모듈 사용하기: https://www.arduino.cc/en/Reference/SD
+- C++에서 텍스트 파일 읽는 방법: https://www.w3schools.com/cpp/cpp_files.asp
+- Arduino로 텍스트 파일에 데이터 저장하기: https://www.instructables.com/id/Arduino-Text-Files/

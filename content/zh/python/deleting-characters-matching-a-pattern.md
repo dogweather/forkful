@@ -1,45 +1,51 @@
 ---
-title:    "Python: 删除匹配模式的字符"
+title:    "Python: 删除符合模式的字符"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要删除匹配模式的字符
+## 为什么要删除匹配模式的字符？
 
-在编写Python程序时，有时候我们需要从字符串中删除特定模式的字符。这可能是因为我们想要清理数据，或者简化字符串。无论是什么原因，删除匹配模式的字符是一个有用的技巧，可以帮助我们更有效地处理数据。
+在编程过程中，经常需要对字符进行处理，其中一项重要的任务就是删除匹配特定模式的字符。这样做可以提高代码的可读性和效率，使得我们的程序更加精确和高效。此外，在大型项目中，删除匹配模式的字符也可以帮助我们快速地修改和更新多个文件。
 
-## 如何删除匹配模式的字符
-
-要删除一个字符串中匹配某个模式的字符，我们可以使用Python中内置的`re`库来实现。首先，我们需要将这个模式编译成一个正则表达式对象，然后使用`sub()`函数来替换匹配的字符。下面是一个简单的例子：
+## 如何实现删除匹配模式的字符？
 
 ```Python
-import re
+# 导入re模块，用于处理正则表达式。
+import re 
 
-# 定义模式
-pattern = r"[aeiou]+"
+# 定义一个字符串 s，包含我们想要操作的字符。
+s = "Hello, world! This is a test string with some numbers 123."
 
-# 将模式编译成正则表达式对象
-regex = re.compile(pattern)
+# 使用re.sub()方法，将匹配的字符替换为空字符串。
+# 在第一个括号中，我们可以定义匹配的模式，这里使用了正则表达式的元字符。
+# 第二个括号中，我们定义替换的字符串，这里为空字符串即删除。
+# 第三个括号中，我们指定操作的字符串，即s。
+new_s = re.sub("[^a-zA-Z]", "", s)
 
-# 定义一个字符串
-sentence = "Hello world!"
+# 打印输出结果，即只包含字母的字符串。
+print(new_s)
 
-# 使用`sub()`函数替换匹配的字符为空字符串
-result = regex.sub("", sentence)
-
-# 输出结果
-print(result)
-
-# 输出：Hll wrld!
+# 输出结果为："HelloworldThisisateststringwithsomenumbers"
 ```
 
-## 深入了解删除匹配模式的字符
+## 深入探讨删除匹配模式的字符
 
-在上面的示例中，我们使用了正则表达式模式中的方括号来匹配所有的元音字母。除了方括号之外，还有很多其他的正则表达式语法可以帮助我们更精确地匹配字符。例如，我们可以使用`.`来匹配任意字符，使用`+`来匹配出现1次或多次的字符，使用`*`来匹配出现0次或多次的字符。如果想要了解更多关于正则表达式的信息，可以参考[Python官方文档](https://docs.python.org/3/library/re.html)或者其他线上教程。
+删除匹配模式的字符时，我们需要使用正则表达式来指定匹配的规则。其中，[^a-zA-Z]表示匹配除了英文字母外的所有字符。除此之外，还可以使用更复杂的正则表达式来匹配不同形式的字符，满足不同的需求。
+
+参考资料： 
+- [Python正则表达式](https://www.runoob.com/python3/python3-reg-expressions.html)
+- [Python re模块官方文档](https://docs.python.org/3/library/re.html)
 
 ## 参考链接
 
-- [Python官方文档](https://docs.python.org/3/library/re.html)
 - [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)
-- [re库官方文档](https://docs.python.org/3/library/re.html)
+- [详解Python中的正则表达式](https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html)
+
+## 参考资料
+
+https://www.runoob.com/python/python-howto.html
+https://docs.python.org/3/howto/regex.html
+https://www.python.org/dev/peps/pep-0400/

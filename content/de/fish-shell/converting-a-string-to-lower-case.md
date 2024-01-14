@@ -1,38 +1,39 @@
 ---
-title:    "Fish Shell: Umwandeln einer Zeichenkette in Kleinbuchstaben"
+title:    "Fish Shell: Ein String in Kleinbuchstaben umwandeln"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Konvertieren einer Zeichenkette in Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung, insbesondere wenn es um die Benutzereingabe geht. Mit Fish Shell können Sie ganz einfach eine Zeichenkette in Kleinbuchstaben umwandeln, um sie weiter zu verarbeiten.
+Die Konvertierung von Zeichenketten in Kleinbuchstaben kann in der Programmierung oft nützlich sein, um zum Beispiel Vergleiche zwischen Zeichenketten zu erleichtern. In diesem Blog-Beitrag werden wir uns ansehen, wie dies mit der Fish Shell möglich ist.
 
-## Wie geht das?
+## Wie es geht
 
-Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, können Sie in Fish Shell die `string tolower` Funktion verwenden. Hier ist ein Beispielcode, der den Eingabetext in Kleinbuchstaben umwandelt und dann ausgegeben wird:
+Die Fish Shell bietet eine eingebaute Funktion namens "tolower", die eine Zeichenkette in Kleinbuchstaben konvertiert. Hier ist ein Beispiel, wie man diese Funktion verwenden kann:
 
-```
-set text "Hallo Welt"
-echo $text | string tolower
-```
-
-Dieses Ergebnis würde `hallo welt` ausgeben. Beachten Sie, dass die ursprüngliche Zeichenkette `Hallo Welt` unverändert bleibt, da Fish Shell Strings als unveränderbare Werte betrachtet.
-
-## Tiefer gehend
-
-Manchmal müssen Sie möglicherweise eine Zeichenkette in Kleinbuchstaben umwandeln und dann weiter damit arbeiten, ohne die ursprüngliche Zeichenkette beizubehalten. In diesem Fall können Sie die `set` Funktion verwenden, um den konvertierten Wert einer neuen Variablen zuzuweisen. Hier ist ein Beispielcode:
-
-```
-set text "Hallo Welt"
-set lowercase_text (echo $text | string tolower)
-echo $lowercase_text
+```Fish Shell
+set string "HALLO WELT"
+echo $string | tolower
 ```
 
-Dieses Ergebnis würde immer noch `hallo welt` ausgeben, aber die ursprüngliche Zeichenkette `Hallo Welt` würde nun durch `lowercase_text` ersetzt.
+Dies wird die Ausgabe "hallo welt" erzeugen. Wie man sehen kann, wird die Funktion einfach an die Zeichenkette angehängt, die man konvertieren möchte.
+
+## Tiefergehende Analyse
+
+Die Funktion "tolower" in der Fish Shell verwendet die Standardfunktion "tr" aus dem UNIX-Betriebssystem, um die Zeichenkettenkonvertierung durchzuführen. Der Funktionsaufruf sieht also in Wirklichkeit so aus:
+
+```Fish Shell
+set string "HALLO WELT"
+echo $string | tr '[:upper:]' '[:lower:]'
+```
+
+In diesem Fall ist "[:upper:]" eine Klassenbezeichnung für alle Großbuchstaben und "[:lower:]" für alle Kleinbuchstaben. Diese Methode kann auch auf andere Zeichenketten angewendet werden, zum Beispiel zum Konvertieren von allen Buchstaben in Großbuchstaben mit "[:lower:]" und "[:upper:]".
 
 ## Siehe auch
 
-- [Offizielle Fish Shell Dokumentation zur `string tolower` Funktion](https://fishshell.com/docs/current/cmds/string-tolower.html)
-- [Andere nützliche Fish Shell Befehle für die Zeichenkettenverarbeitung](https://fishshell.com/docs/current/commands.html#string-operations)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
+- [Tutorial zu Zeichenketten in der Programmierung](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-inbuilt-library-functions/)

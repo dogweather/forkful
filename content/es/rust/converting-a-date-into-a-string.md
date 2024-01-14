@@ -1,94 +1,39 @@
 ---
-title:    "Rust: Convirtiendo una fecha en una cadena"
+title:    "Rust: Convertir una fecha a una cadena de texto."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-En esta publicación aprenderemos cómo convertir una fecha en una cadena utilizando el lenguaje de programación Rust. Esta habilidad puede ser útil para diversas aplicaciones, como formatear fechas en un sistema de reservas o mostrar la fecha de publicación de un artículo en un blog. Entender cómo realizar esta conversión también puede servir como un ejercicio útil para comprender mejor el manejo de tipos de datos en Rust.
+## ¿Por qué convertir una fecha en una cadena?
+
+Convertir una fecha en una cadena es una tarea común en la programación, ya que a menudo se necesita mostrar una fecha en un formato legible para el usuario. En Rust, existen varias formas de realizar esta conversión, dependiendo de las necesidades específicas del proyecto.
 
 ## Cómo hacerlo
+
+Para convertir una fecha en una cadena en Rust, primero necesitamos importar el módulo "chrono", que proporciona funcionalidades para trabajar con fechas y horas. Luego, podemos utilizar el método "format" para convertir la fecha en una cadena con el formato deseado. Por ejemplo:
+
 ```Rust
-use std::time::SystemTime;
+use chrono::prelude::*;
 
 fn main() {
-    let now = SystemTime::now();
-    println!("{:?}", now); // muestra la fecha actual en formato Unix timestamp
-    // conversión a una cadena legible por humanos
-    let human_readable = now
-        .duration_since(SystemTime::UNIX_EPOCH)
-        .unwrap()
-        .as_secs();
-    println!("{}", human_readable); // muestra la fecha actual en segundos desde el 1 de enero de 1970
+    let fecha = Utc::now();
+    let fecha_string = fecha.format("%d/%m/%Y").to_string();
+    println!("{}", fecha_string);
 }
 ```
 
-En este ejemplo, utilizaremos la función `now()` de `SystemTime` para obtener la fecha actual y luego utilizaremos el método `duration_since()` de `SystemTime` para obtener la duración desde el 1 de enero de 1970 en segundos. Finalmente, utilizamos el método `as_secs()` para convertir esta duración en un número entero. Esta es una forma sencilla de obtener una cadena con la fecha actual en un formato fácilmente legible para los humanos.
+En este ejemplo, estamos utilizando el formato "%d/%m/%Y" que devuelve la fecha en formato día/mes/año. La salida sería algo como "22/10/2021". Podemos cambiar el formato según nuestras necesidades, utilizando distintas combinaciones de símbolos que se encuentran en la documentación de "chrono".
 
 ## Profundizando
-Si deseamos utilizar un formato de fecha específico en lugar de solo mostrar el número de segundos desde el 1 de enero de 1970, podemos utilizar la función `strftime()` del módulo `time` de Rust. Esta función nos permite especificar un formato personalizado utilizando códigos de formato para la fecha, la hora y otros elementos.
 
-```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
-use std::time::Duration;
-use std::time::Instant;
-use std::time::SystemTimeError;
+En el ejemplo anterior, utilizamos el módulo "Utc" para obtener la fecha y hora actuales en formato UTC (Tiempo Universal Coordinado). Sin embargo, también podemos trabajar con otras zonas horarias utilizando los módulos "Local" o "DateTime". Además, el módulo "chrono" proporciona muchas otras funcionalidades, como comparar fechas, sumar o restar días, entre otras.
 
-fn main() {
-    let now = SystemTime::now();
-    match now.duration_since(UNIX_EPOCH) {
-        Ok(n) => println!("Segundos desde 1 de enero de 1970: {}", n.as_secs()),
-
-        Err(err) => println!("Error: {}", err),
-    }
-    
-    let datetime = SystemTime::UNIX_EPOCH + Duration::from_secs(456); // crear una fecha utilizando el número de segundos
-    match datetime.duration_since(UNIX_EPOCH) {
-        Ok(n) => println!("Segundos desde 1 de enero de 1970: {}", n.as_secs()),
-
-        Err(err) => println!("Error: {}", err),
-    }
-
-    let parse_res = "1520430799".parse::<u64>();
-
-    let d = match parse_res  {
-        Ok(n) => {
-            let datetime = UNIX_EPOCH + Duration::from_secs(n);
-            match datetime.duration_since(UNIX_EPOCH) { // otros `datetime`
-                Ok(m) => println!("unix timestamp: {}", m.as_secs()),
-                Err(err) => println!("Error: {}", err),
-            }
-        },
-        Err(_) => println!("No puedo convertir a `u64`"),
-    };
-}
-```
-
-En el ejemplo anterior, utilizamos la función `strftime()` para mostrar la fecha actual en un formato específico:
-
-```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
-use std::time::Duration;
-
-fn main() {
-    let now = SystemTime::now();
-    let formatted = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
-    let datetime: u64 = formatted.to_string().parse().unwrap();
-    let datetime_str = datetime.to_string();
-    println!("\
-``ル::strftime('%a, %d %b %Y %H:%M:%S %Z', &chrono.unix(%d, %fs).to_rfc3339()),
-        s
-        s77777777777777777777777777777777777777777777777777777777777777777777777777777
-        7777s
-    );
-}
-```
-
-Esta es solo una forma de utilizar la función `strftime()` y hay muchos otros códigos de formato que se pueden utilizar para personalizar aún más el formato de la fecha.
+También es importante tener en cuenta que la librería "chrono" tiene un alto rendimiento y es segura para utilizar en hilos de ejecución simultánea. Esto significa que podemos usarla sin problemas en proyectos más complejos.
 
 ## Ver también
-- [Documentación oficial de `SystemTime`](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-- [Documentación oficial de `time`](https://docs.rs/time/0.2.19/time/)
-- [Tutorial de Rust: Manipulación de fechas](https://www.tutorialspoint.com/rust/rust_date_time.htm)
-- [Refer
+
+- [Documentación sobre el módulo "chrono" en Rust](https://docs.rs/chrono)
+- [Tutorial sobre cómo trabajar con fechas y horas en Rust](https://dev.to/deciduously/working-with-dates-and-times-in-rust-1bjp)
+- [Más información sobre la gestión de fechas y horas en Rust](https://learning-rust.github.io/docs/a14.date_and_time.html)

@@ -1,54 +1,55 @@
 ---
-title:    "Swift: Vérifier si un répertoire existe"
+title:    "Swift: Vérifier l'existence d'un répertoire"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque vous développez une application mobile ou un logiciel, vous devez souvent interagir avec le système de fichiers de l'appareil. Il peut être utile de vérifier si un dossier existe avant de tenter d'y accéder ou d'y enregistrer des fichiers. Cela permet d'éviter les erreurs et d'assurer un bon fonctionnement de votre application.
+Il peut y avoir plusieurs raisons pour vouloir vérifier si un répertoire existe en programmation Swift. Par exemple, cela peut être utile pour vérifier si un chemin d'accès existe avant de l'utiliser pour créer un fichier ou pour éviter les erreurs lors du chargement de données à partir d'autres sources.
 
 ## Comment faire
 
-Pour vérifier si un dossier existe en Swift, vous pouvez utiliser la méthode `fileExists(atPath:)` de la classe `FileManager`. Cette méthode prend en paramètre un chemin d'accès (string) vers le dossier que vous souhaitez vérifier et renvoie un booléen indiquant si le dossier existe ou non.
+Pour vérifier si un répertoire existe en Swift, nous pouvons utiliser la méthode `FileManager.default.fileExists` en passant le chemin d'accès du répertoire en tant qu'argument. Voici un exemple de code :
 
-```
-let manager = FileManager.default
-let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-let folderPath = documentDirectory.appending("/MonDossier")
-
-if manager.fileExists(atPath: folderPath) {
-    print("Le dossier existe")
+```Swift
+let directoryPath = "/Users/UserName/Documents/ExampleFolder"
+let fileManager = FileManager.default
+if fileManager.fileExists(atPath: directoryPath) {
+    print("Le répertoire existe")
 } else {
-    print("Le dossier n'existe pas")
+    print("Le répertoire n'existe pas")
 }
 ```
 
-Ce code utilise `NSSearchPathForDirectoriesInDomains` pour obtenir le chemin d'accès au dossier de documents de l'utilisateur, puis ajoute "/MonDossier" pour créer un chemin d'accès vers un dossier spécifique. Ensuite, il utilise `fileExists(atPath:)` pour vérifier si ce dossier existe et affiche le résultat dans la console.
+Si le répertoire existe, le programme affichera "Le répertoire existe". Sinon, il affichera "Le répertoire n'existe pas".
 
-## Approfondissement
+## Plongeons plus en profondeur
 
-Pour une vérification plus précise, vous pouvez utiliser la méthode `fileExists(atPath:isDirectory:)` qui prend en compte le type de fichier. Si vous utilisez `fileExists(atPath:)`, un fichier et un dossier avec le même nom seront considérés comme existants.
+Lorsque nous utilisons la méthode `fileExists`, il est important de noter que cela peut également renvoyer `true` si le chemin d'accès passé en argument correspond à un fichier. Pour s'assurer que nous vérifions bien l'existence d'un répertoire, nous pouvons ajouter une condition supplémentaire pour vérifier si le chemin d'accès correspond à un répertoire en utilisant la méthode `isDirectory` de `FileManager`. Voici un exemple de code mis à jour :
 
-Il est également possible de vérifier si un dossier existe à un chemin spécifique en utilisant `fileExists(atPath:)` sur le chemin complet. Par exemple :
+```Swift
+let directoryPath = "/Users/UserName/Documents/ExampleFolder"
+let fileManager = FileManager.default
+var isDirectory: ObjCBool = false
 
-```
-let manager = FileManager.default
-let temporaryDirectory = NSTemporaryDirectory()
-let folderPath = temporaryDirectory.appending("MonDossier")
-
-if manager.fileExists(atPath: folderPath, isDirectory: nil) {
-    print("Le dossier existe")
+if fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory) {
+    if isDirectory.boolValue {
+        print("Le répertoire existe")
+    } else {
+        print("Le répertoire n'existe pas")
+    }
 } else {
-    print("Le dossier n'existe pas")
+    print("Le répertoire n'existe pas")
 }
 ```
 
-En utilisant `temporaryDirectory`, le code vérifie si le dossier "MonDossier" existe dans le dossier temporaire de l'appareil.
+Cette fois, si le chemin d'accès passé en argument correspond à un fichier, le programme affichera "Le répertoire n'existe pas" même s'il existe un fichier à cet emplacement.
 
 ## Voir aussi
 
-- [Documentation officielle de Swift](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID444)
-- [Article sur la gestion des fichiers en Swift](https://www.hackingwithswift.com/read/0/10/basic-ios-workflows-reading-and-writing-files)
-- [Tutoriel vidéo sur la gestion des fichiers en Swift](https://www.youtube.com/watch?v=QMxKKzQqsW8)
+- [Documentation officielle Apple sur la méthode `fileExists`](https://developer.apple.com/documentation/foundation/filemanager/1413421-fileexists)
+- [Tutoriel sur la gestion des fichiers et répertoires en Swift](https://medium.com/flawless-app-stories/ios-filemanager-explained-delete-copy-and-move-files-and-directories-7e9fcbb3d267)
+- [Guide de la programmation en Swift](https://developer.apple.com/documentation/swift)

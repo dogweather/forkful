@@ -1,34 +1,37 @@
 ---
-title:    "TypeScript: स्ट्रिंग को उच्च अक्षरों में लिखना"
+title:    "TypeScript: एक स्ट्रिंग कैपिटलाइज़ करना"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-उच्च उच्चारण स्ट्रिंग को प्रशस्त करना हमारे तत्वों को ढेर सारा समय बचाता है और खास तौर पर हमें दोषों से बचाने में मदद करता है।
+व्यक्तियों को स्ट्रिंग को कैपिटलाइज़ करने में रुचि हो सकती है, जो उनके प्रोग्रामिंग उपकरणों को अधिक पढ़ने और समझने में मदद कर सकता है। इससे उनके प्रोग्राम को रोबोस्ट और आसान बनाने में मदद मिलती है।
 
 ## कैसे करें
 
-आप उपलब्ध "toUpperCase ()" फ़ंक्शन का उपयोग कर सकते हैं जो अपने पैरामीटर को बड़े अक्षरों में प्रवर्तित करता है। नीचे दिए गए उदाहरण को देखें।
+```
+टाइपस्क्रिप्ट द्वारा स्ट्रिंग कैपिटलाइज़ करने के लिए आप निम्नलिखित कोड उपयोग कर सकते हैं।
 
-```TypeScript
-var str = "hello world";
-console.log(str.toUpperCase());
+const str = "hello, world!";
+const capitalizedStr = str.toUpperCase();
+
+console.log(capitalizedStr); // output: HELLO, WORLD!
+
 ```
 
-आउटपुट:
-HELLO WORLD
+इस कोड में, हमने स्ट्रिंग वेरिएबल को बनाया है और उसे `toUpperCase()` फ़ंक्शन से लेकर उसे कैपिटलाइज़ किया है और फिर हमने कॉन्सोल में उसका आउटपुट प्रिंट किया है। इस तरह हम स्ट्रिंग को कैपिटलाइज़ कर सकते हैं।
 
-## गहराई में खूबसूरत नजरिया
+## गहराई में जाएं
 
-जब हम इस प्रक्रिया को गहराई से समझें, हम देखेंगे कि इस तकनीक से नहीं सिर्फ हम अपने कोड को सफेद करते हैं और उसे खास बनाते हैं, बल्कि हम बड़े अक्षरों को उस शब्द की अगार पर जोड़ कर सकते हैं। यह वाक्यांश को और अधिक असामान्य और स्पष्ट बनाता है।
+स्ट्रिंग को कैपिटलाइज़ करने के लिए अन्य तरीके भी मौजूद हैं, जैसे अपने कार्यों को सुधारने के लिए सामान्य लूपिंग रिक्त्सा का उपयोग करना। अधिक गहराई से जानने के लिए, आप निम्नलिखित लिंकों पर जा सकते हैं:
+
+- [JavaScript स्ट्रिंग प्रोटोटाइप कैपिटलाइज़िशन मेथड](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [क्यों और कैसे करें: स्ट्रिंग को कैपिटलाइज़ करना](https://www.digitalocean.com/community/tutorials/how-and-why-to-capitalize-strings-in-javascript)
+- [TypeScript स्ट्रिंग मैनिपुलेशन के लिए स्पेशल टाइप्स और फ़ंक्शन समूह](https://pawelgrzybek.com/typescript-string-manipulation-types-and-functions/) 
 
 ## देखें भी
 
-[JavaScript के साथ सीखें: वस्तुओं को प्रशस्त करना](https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/)
-
-[लफ्जों में कैपिटल कैसे करें: कई भाषाओं के साथ इस काम को करें](https://blog.usejournal.com/how-to-capitalize-words-in-multiple-languages-f1d13b0fbad7)
-
-[पत्र तथा परिचय मेंीं पत्री माहं छं|](https://www.cs.cornell.edu/~tomf/notes/cps104/twocases.html)
+- अन्य टाइपस्क्रिप्ट प्रोग्रामिंग

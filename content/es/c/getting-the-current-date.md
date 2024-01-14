@@ -1,61 +1,46 @@
 ---
 title:    "C: Obteniendo la fecha actual"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué obtener la fecha actual en programación?
+## ¿Por qué obtener la fecha actual es importante en la programación?
 
-Muchas veces en la programación, necesitamos trabajar con fechas para realizar diferentes tareas. Esto puede ser desde mostrar la fecha en un programa hasta realizar cálculos basados en fechas. En este artículo, te enseñaremos cómo obtener la fecha actual en C y cómo puedes usar esta información en tus proyectos.
+Al escribir programas, a menudo se requiere conocer la fecha actual. Ya sea para realizar cálculos, registrar eventos o simplemente para fines de organización, es vital poder obtener la fecha actual en un programa. Afortunadamente, en lenguaje C, existen funciones específicas que nos permiten obtener fácilmente la fecha actual. En esta entrada, aprenderemos cómo realizar esta tarea de manera eficaz y algunos detalles más profundos sobre cómo funciona.
 
-## Cómo obtener la fecha actual
+## ¿Cómo obtener la fecha en C?
 
-Para obtener la fecha actual en C, debemos usar la función `time()`. Esta función se encuentra en la biblioteca estándar de C `time.h` y nos devuelve la cantidad de segundos transcurridos desde el 1 de enero de 1970 a las 00:00 am UTC. Luego, podemos convertir esta cantidad de segundos a una estructura `tm` que contiene información sobre la fecha y hora actual.
+Para obtener la fecha en C, utilizaremos la función `time()` que se encuentra en la biblioteca `time.h`. Esta función devuelve un valor de tipo `time_t` que representa el número de segundos transcurridos desde el 1 de enero de 1970 a las 00:00:00 UTC. A continuación, se muestra un ejemplo de código que utiliza la función `time()` para obtener la fecha actual y luego la muestra por pantalla en un formato legible:
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Obtenemos el tiempo actual en segundos
-    time_t tiempo_actual = time(NULL);
+  // Obtenemos la fecha actual utilizando la función time()
+  time_t fecha_actual = time(NULL);
 
-    // Convertimos los segundos a la estructura tm
-    struct tm *fecha_actual = localtime(&tiempo_actual);
-    
-    // Imprimimos la fecha y hora actual en formato dd/mm/yyyy
-    printf("La fecha actual es: %02d/%02d/%d\n", fecha_actual->tm_mday, fecha_actual->tm_mon + 1, fecha_actual->tm_year + 1900);
+  // Utilizamos la función ctime() para convertir la fecha en un formato legible
+  printf("La fecha actual es: %s", ctime(&fecha_actual));
 
-    return 0;
+  return 0;
 }
 ```
 
-El output de este código sería:
+La función `ctime()` convierte la fecha actual en una cadena de caracteres con un formato como el siguiente: `Thu Jul 29 21:27:47 2021`. Si bien está en inglés, podemos utilizar otras funciones como `strftime()` para mostrar la fecha en un idioma específico. Estas son solo algunas de las posibilidades que nos brinda la biblioteca `time.h`.
 
-```
-La fecha actual es: 09/12/2021
-```
+## Profundizando en la obtención de la fecha en C
 
-## Inmersión en la obtención de la fecha actual
+Ahora que ya conocemos cómo obtener la fecha actual en C, es importante tener en cuenta algunos detalles sobre cómo funciona internamente. Como mencionamos anteriormente, la función `time()` devuelve un valor de tipo `time_t`, que se almacena en una variable.
 
-Ahora que sabemos cómo obtener la fecha actual, podemos profundizar un poco más en cómo funciona el proceso. Como mencionamos anteriormente, la función `time()` nos devuelve la cantidad de segundos transcurridos desde una fecha de referencia. Esto se conoce como "epoch time" y es una forma común de medir el tiempo en sistemas informáticos.
+Este valor representa el número de segundos transcurridos desde una fecha de referencia hasta la fecha actual. La fecha de referencia siempre es el 1 de enero de 1970 a las 00:00:00 UTC, también conocida como la "época de Unix". Debido a que los valores de tipo `time_t` son números enteros, pueden ser representados por un número binario de 32 bits (en sistemas de 32 bits) o de 64 bits (en sistemas de 64 bits). 
 
-Una vez que tenemos esta cantidad de segundos, podemos utilizar la función `localtime()` para convertirlos en una estructura `tm` que contiene las siguientes variables:
+La función `time()` llama a un reloj interno del sistema que continúa contando los segundos desde la época de Unix y devuelve ese valor. Por lo tanto, cada vez que llamamos a `time()`, obtenemos un valor diferente que representa la fecha y hora exacta en la que se realizó la llamada.
 
-- `tm_sec`: segundos desde el minuto (0-60).
-- `tm_min`: minutos desde la hora (0-59).
-- `tm_hour`: horas desde la medianoche (0-23).
-- `tm_mday`: día del mes (1-31).
-- `tm_mon`: meses desde enero (0-11).
-- `tm_year`: años desde 1900.
-- `tm_wday`: días desde domingo (0-6).
-- `tm_yday`: días desde enero 1 (0-365).
-- `tm_isdst`: horario de verano (1 si está en horario de verano, 0 si no, -1 si es desconocido).
+## Vea también
 
-De esta forma, podemos acceder a cada una de estas variables para obtener la información que necesitamos sobre la fecha y hora actual.
-
-## Ver también
-
-- [Documentación de la función time() en C](https://www.cplusplus.com/reference/ctime/time/)
-- [Tutorial de C en español](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [Documentación de la función `time()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Más información sobre la "época de Unix"](https://www.epochconverter.com/epoch/1970-01-01)
+- [Tutorial de programación en C en español](https://es.coursera.org/learn/programando-en-c)

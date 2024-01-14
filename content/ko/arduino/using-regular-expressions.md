@@ -1,59 +1,46 @@
 ---
-title:    "Arduino: 정규식을 사용하는 방법"
+title:    "Arduino: 정규 표현식 사용하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 정규 표현식을 사용해야 할까요?
 
-정규 표현식을 사용하는 이유는 무엇일까요? 아두이노 프로그래밍에서 정규 표현식을 사용하면 복잡한 문자열 패턴을 찾고 추출하는 것이 가능해집니다. 예를 들어, 센서에서 읽어온 값을 조건에 맞게 분리해낼 수 있습니다.
+정규 표현식은 알고리즘을 단순하게 만들어주는 강력한 도구입니다. 이를 사용하면 문자열의 패턴을 찾거나 바꿀 수 있어서 프로그래밍 작업을 더욱 쉽게 만들어줍니다.
 
-## 사용 방법
+# 방법: Arduino에서 정규 표현식 사용하기
 
-정규 표현식을 사용하는 첫 번째 단계는 아두이노에서 이를 지원하는 라이브러리를 불러오는 것입니다. ```Arduino.h``` 파일 안에 정규 표현식 라이브러리가 포함되어 있으므로, 이를 불러와야 합니다.
-
-다음으로, 코드에서 정규 표현식 객체를 생성하고, ```search()``` 메소드를 사용하여 패턴을 찾을 문자열을 지정합니다. 이후에는 정규 표현식을 사용하여 원하는 패턴을 찾고 출력하면 됩니다.
-
-예시 코드는 다음과 같습니다.
+정규 표현식을 사용하기 위해서는 `regex` 라이브러리를 설치해야 합니다. 다음의 코드를 통해 간단하게 설치할 수 있습니다.
 
 ```Arduino
-#include <Arduino.h> // 아두이노 라이브러리 불러오기
-
-void setup() {
-    Serial.begin(9600); // 시리얼 통신 설정
-}
-
-void loop() {
-    String stringToSearch = "Hello World!";
-    // Hello라는 패턴을 검색하기 위한 정규 표현식 객체 생성
-    Regex regexExpression = Regex("Hello");
-
-    if (regexExpression.search(stringToSearch)) {
-        Serial.println("패턴을 찾았습니다!");
-    } else {
-        Serial.println("패턴이 없습니다.");
-    }
-}
+#include <Regex.h>
 ```
 
-위 코드의 결과는 다음과 같습니다.
+이제 `regex` 라이브러리를 사용할 준비가 되었습니다! 아래의 예제를 통해 정규 표현식을 사용하는 방법을 알아보겠습니다.
 
+```Arduino
+#include <Regex.h>
+
+Regex pattern("my name is (.*)");
+
+String sentence = "Hello, my name is John.";
+
+// 패턴에 일치하는 부분을 찾아서 output에 저장
+String output = sentence.match(pattern).group(1);
+
+Serial.println(output); // "John" 출력
 ```
-패턴을 찾았습니다!
-```
 
-## 깊이 있는 이해
+위의 예제에서는 "my name is" 다음 오는 어떤 단어든지 패턴에 일치하는 부분을 찾아서 출력하는 코드입니다. 이처럼 정규 표현식을 사용하면 특정한 패턴에 따라 문자열을 바꾸거나 추출하는 작업이 쉬워집니다.
 
-정규 표현식은 일반 문자열 검색 패턴을 초과해 더 다양한 기능을 제공합니다. 방금 예시로 든 ```search()``` 메소드는 문자열에서 단순히 패턴을 찾아주는 것이지만, ```match()```, ```isMatch()```, ```replace()```, ```split()``` 등 다양한 메소드를 사용하여 문자열을 처리할 수 있습니다.
+# 더 깊이 들어가기
 
-정규 표현식을 사용하면 조건에 따라 원하는 패턴을 찾아내고 추출하거나, 문자열을 변경하거나, 분리할 수 있습니다. 또한, 기존 코드에서 조건문이나 반복문을 사용하지 않고도 더 간결하고 효율적인 코드를 작성할 수 있습니다.
+정규 표현식을 사용할 때 조심해야 할 점 중 하나는 정규 표현식의 문법입니다. 정규 표현식은 강력하지만 복잡하고 다양한 문법을 가지고 있기 때문에 사용하기 전에 충분한 연습이 필요합니다. 또한 정규 표현식을 잘 사용하는 방법을 익히기 위해서는 문제를 해결하는 과정에서 자주 사용해보는 것이 중요합니다.
 
-하지만 정규 표현식은 복잡한 문법을 가지고 있기 때문에 처음에는 어려울 수 있습니다. 하지만 연습과 경험을 통해 능숙하게 사용할 수 있습니다.
+# 또 보기
 
-## 또 다른 정보
-
-- [정규 표현식 문법 가이드](https://www.regular-expressions.info/)
-- [아두이노 공식 문서 - 정규 표현식 라이브러리](https://www.arduino.cc/reference/en/language/structures/strings/regex/)
-- [정규 표현식 사용 예시](https://www.arduino.cc/pro/tutorials/regular-expressions-in-arduino)
-- [정규 표현식 연습 문제 사이트](https://regexone.com/)
+- [정규 표현식 문법 가이드](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Arduino 레퍼런스 문서](https://www.arduino.cc/reference/en/)
+- [ROS에서 정규 표현식 사용하기](https://roboticsbackend.com/ros-regular-expression-how-to-use-it-in-robotics/)

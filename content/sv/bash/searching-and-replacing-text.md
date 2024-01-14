@@ -1,42 +1,47 @@
 ---
-title:    "Bash: Sökning och byte av text"
+title:    "Bash: Sökning och ersättning av text"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en viktig del av Bash-programmering. Genom att använda denna funktion kan du enkelt ändra texten i dina filer, batch-ändra filnamn och mycket mer.
+Har du någonsin behövt ändra text i en fil eller ett dokument? I så fall kan du dra nytta av Bash-progammeringens möjlighet att söka och ersätta text. Detta gör det möjligt att snabbt och effektivt ändra flera förekomster av en viss text utan att behöva göra det manuellt.
 
-## Så här gör du
+## Hur man gör det
 
-Det finns flera sätt att söka och ersätta text i Bash-programmering. Ett vanligt sätt är att använda kommandot `sed`, som står för "stream editor". Detta kommando kan användas för att söka efter ett visst mönster i en text och ersätta det med ett annat. Här är ett exempel:
+Så här fungerar det: För att söka och ersätta text i en fil med hjälp av Bash, använder man kommandot `sed`. Det står för "stream editor" och är utformat för att utföra operationer på filströmmar, vilket innebär att den kan tolka och ändra text i en fil utan att man behöver öppna och redigera den manuellt.
 
-```Bash
-sed 's/old_text/new_text/g' file.txt
-```
-Detta kommando kommer att byta ut alla förekomster av "old_text" till "new_text" i filen `file.txt`. Antalet förekomster som ersätts beror på flaggan "g", som står för "global replacement". Om du vill begränsa sökningen kan du använda flaggan "n" för att byta ut bara den första förekomsten.
+Eftersom sök- och ersättningstolet är enkelt att läsa och skriva, kan du använda `sed` för att göra avancerade ändringar i en fil med bara några få linjer kod.
 
-En annan vanlig metod för sökning och ersättning är att använda `grep` tillsammans med pipelines. Detta kommando söker efter ett mönster i en textfil och skriver ut alla rader som matchar detta mönster. Om vi vill ersätta det matchade mönstret kan vi använda `sed` tillsammans med pipelines. Här är ett exempel:
+Låt oss till exempel säga att du har en textfil med titlar på filmer, men du vill ändra en del av filmtiteln för att bättre beskriva innehållet. Du vill ändra "Star Wars: The Empire Strikes Back" till "Star Wars: Episode V - The Empire Strikes Back". Istället för att öppna filen och manuellt ändra varje förekomst av filmtiteln, kan du använda `sed` för att göra detta på bara ett par sekunder:
 
 ```Bash
-grep "search_pattern" file.txt | sed 's/search_pattern/replacement_text/g'
+sed -i 's/The Empire Strikes Back/Episode V - The Empire Strikes Back/g' filnamn.txt
 ```
 
-Dessa är bara två av många sätt att söka och ersätta text i Bash. Det finns många andra kommandon och metoder som kan användas beroende på dina specifika behov och situationer.
+Låt oss gå igenom vad som händer här:
+
+- `-i` - Detta flagga indikerar för `sed` att ändringarna ska göras direkt på den befintliga filen.
+- `s` - Detta står för "ersätt" och är kommandot som instruerar sed att söka efter en viss text och ersätta den med en annan.
+- 'The Empire Strikes Back' - Detta är den befintliga texten som ska ersättas.
+- 'Episode V - The Empire Strikes Back' - Detta är den nya texten som ska ersätta den befintliga.
+- `g` - Detta flagga indikerar för `sed` att alla förekomster av den befintliga texten ska ersättas, inte bara den första som hittas.
+
+Som en snabb editeringsanteckning måste du se till att det inte finns några mellanslag mellan flaggorna och texten som de är kopplade till, och att alla flaggor är omgivna av citattecken.
+
+Efter att ha kört detta kommando kommer du att se att filen nu har 'Episode V - The Empire Strikes Back' som filmtitel för hela filmen.
 
 ## Djupdykning
 
-Att söka och ersätta text kan vara en mycket kraftfull funktion i Bash-programmering, men det finns några viktiga saker att komma ihåg innan du börjar använda den.
+Förutom kommandon som vi använde ovan, finns det många andra flaggor och användningsområden för `sed`-kommandot. Du kan också använda Regex (reguljära uttryck) för att göra sökningen mer precist. Detta kan vara till hjälp om du behöver göra komplexa ändringar i en fil.
 
-För det första är det viktigt att förstå att sök- och ersättningsoperationer är fallkänsliga. Detta betyder att en liten skillnad i bokstäverna kan resultera i en misslyckad sökning eller ersättning. Se därför alltid till att ditt sökmönster är exakt det du letar efter.
-
-För det andra kan sök- och ersättningsoperationer påverka filer permanent. Det är därför viktigt att använda dessa kommandon med försiktighet. För att skydda dig, se alltid till att du har en säkerhetskopia av filen du arbetar med innan du börjar söka och ersätta text.
+En annan användbar funktion i `sed` är möjligheten att ändra endast en viss del av en fil. Istället för att ersätta allt innehåll av en viss fil kan du använda flaggan `c` för att ersätta allt innehåll mellan två specifika linjer i filen.
 
 ## Se även
 
-- [Bash Guide for Beginners](https://linuxcommand.org/tlcl.php)
-- [Linux.com's Bash Programming Tutorial](https://www.linux.com/tutorials/bash-scripting-tutorial/)
-- [The GNU sed Command](https://www.gnu.org/software/sed/manual/sed.html)
-- [The GNU grep Command](https://www.gnu.org/software/grep/manual/grep.html)
+- Kom igång med shell-scripting med Bash (https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- Den kompletta guiden för `sed`-kommandot (https://www.linode.com/docs/tools-reference/tools/sed-beginners-guide/)
+- Reguljära uttryck för Bash-programmerare (https://linuxacademy.com/blog/linux/regex-tips-tricks-for-the-bash-guru/)

@@ -1,61 +1,33 @@
 ---
-title:    "Rust: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स पढ़ना।"
+title:    "Rust: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+# क्यों
 
-Ham sabhi jante hain ki Rust ek powerful programming language hai jo performance, concurrency, aur memory safety ke liye famous hai. Command line arguments ko read karna bhi Rust ke programmers ke liye ek important skill hai, kyunki isse aap apne program ko dynamic bana sakte hain aur user input ke sath interact kar sakte hain. Isliye aaj hum command line arguments ko read karne ke bare mein baat karenge.
+डीप लर्निंग कोर्स में आप में से अधिकांश लोगों ने शायद सुना होगा कि यदि आप एक प्रोग्रामर बनना चाहते हैं तो आपको कमांड लाइन आर्ग्यूमेंट्स को पढ़ना चाहिए। लेकिन आपने इसमें से पूरा लाभ उठाना क्यों है? आइए हम इस ब्लॉग पोस्ट के माध्यम से इस सवाल का उत्तर दें।
 
-## Kaise Karein
+# कैसे करें
 
-Pehle hum `std::env::args()` function se arguments ko collect karenge. Fir hum `collect()` function ka use karke ise vector mein convert karenge. Iss vector mein hum chahe jitne bhi arguments ko store kar sakte hain. Yeh ek simple example hai:
+जैसा कि नाम से स्पष्ट है, कमांड लाइन आर्ग्यूमेंट्स एक प्रोग्राम को आपसे पारमेटर्स लिया जाता है जो आप अपने स्क्रिप्ट को बनाते समय देते हैं। ये धीरे-धीरे आपकी प्रोग्राम के आकार को बढ़ाते हैं और इससे आपकी प्रोग्राम स्पष्ट और दुरुस्त हो जाती है। आपको एक सामान्य प्रोग्राम को बनाने के लिए नीचे दिए गए उदाहरण को फॉलो करना होगा:
 
-```Rust
+```rust
 use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    println!("Pehla argument: {}", args[0]);
-    println!("Dusra argument: {}", args[1]);
-}
-```
-
-Agar hum terminal mein `cargo run hello world` command run karte hain, toh output yeh hoga:
-
-```
-Pehla argument: target/debug/command-line-args
-Dusra argument: hello
-```
-Fir hum `std::env::args_os()` function ka use karke arguments ko kisi aur type mein bhi read kar sakte hain, jaise ki `OsString` ya `CString`. Iske liye hume ek loop bhi use karna padega. Ek example is tarah se hai:
-
-```Rust
-use std::env;
-
-fn main() {
-    let args: Vec<_> = env::args_os().collect();
-
-    for argument in args {
-        let arg_str = argument.to_string_lossy();
-
-        println!("{}", arg_str);
+    for arg in args {
+        println!("{}", arg);
     }
 }
 ```
 
-Iss code mein hum `to_string_lossy()` function ka use kar rahe hain jisse hum `OsString` type ko `String` type mein convert kar sakte hain.
+यहां, हमने `std::env` लाइब्रेरी का उपयोग करके आर्ग्यूमेंट्स को संग्रहित किया है और उसकी मदद से हमें सभी आर्ग्यूमेंट्स को एक लूप के माध्यम से प्रिंट कर सकते हैं। ये आपको अपने प्रोग्राम में आर्ग्यूमेंट्स को कैसे पढ़े और उसका प्रयोग करें का एक अच्छा ज्ञान प्रदान करता है।
 
-## Gehri Jankari
+# गहराई में जाइए
 
-Command line arguments read karne ke liye, hume `std::env` module ka use karna padta hai. Iss module mein hume `args()` aur `args_os()` jaise functions milte hain. `std::env` module ke alawa bhi kuch third-party crates available hain, jaise ki `clap` aur `structopt`, jo command line argument parsing mein madad karte hain.
-
-Iss tarah se, command line arguments ko read karna Rust mein kaafi aasaan hai aur isse aap apne program ke flexibility aur user-friendly nature ko enhance kar sakte hain.
-
-## Dekhiye Bhi
-
-- [Official Rust documentation on `std::env` module](https://doc.rust-lang.org/std/env/index.html)
-- [`clap` crate for command line argument parsing](https://docs.rs/clap/2.33.3/clap/)
-- [`structopt` crate for defining CLI arguments as structs](https://docs.rs/structopt/0.3.21/structopt/)
+कमांड लाइन आर्ग्यूमेंट्स इस्तेमाल करना सीखना हर एक प्रोग्रामर के लिए बहुत आवश्यक है। डीप लर्निंग कोर्स में

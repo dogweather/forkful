@@ -1,47 +1,41 @@
 ---
-title:    "Ruby: Å finne lengden til en streng"
+title:    "Ruby: Å finne lengden av en streng"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Mange ganger i programmering, kan det være nyttig å finne lengden på en tekststreng. Dette kan være for å validere brukerinput, utføre beregninger eller rett og slett for å håndtere data på en mer effektiv måte. I denne bloggposten skal vi ta en titt på hvordan du kan finne lengden på en streng i Ruby.
+Hvorfor skulle noen bruke tid på å finne lengden til en streng? Du kan tenke at det er en enkel oppgave som ikke behøver så mye innsats, men faktum er at å kunne finne lengden til en streng er en viktig og nyttig ferdighet i programmering.
 
-# Hvordan du gjør det
+## Hvordan gjøre det
 
-I Ruby er det veldig enkelt å finne lengden på en streng. Du kan bruke `.length` eller `.size` metoden for å få lengden på en streng. La oss se på et eksempel:
+For å finne lengden til en streng i Ruby, kan du bruke en innebygd metode som heter `length`. La oss se på et eksempel:
 
-```Ruby
-string = "Hei, hvordan har du det?"
-
-puts string.length # Output: 23
-puts string.size # Output: 23
+```
+strek = "Hei, verden!"
+puts strek.length
 ```
 
-Som du ser, vil både `.length` og `.size` metoden returnere samme resultat. Det er bare to forskjellige måter å utføre samme operasjon på. Det er også viktig å merke seg at både `.length` og `.size` metoden vil også fungere på andre datatyper som strenger, for eksempel arrays og hashes.
+Dette vil gi følgende utskrift:
 
-En annen måte å få lengden på en streng er å bruke `string.count`, som vil telle antall forekomster av et spesifisert tegn eller en spesifisert gruppe av tegn i en streng. La oss se på et eksempel:
-
-```Ruby
-string = "Hei, hei, hei!"
-
-puts string.count('hei') # Output: 3
-puts string.count('i') # Output: 3
+```
+13
 ```
 
-Her teller vi bare antall ganger ordet "hei" eller bokstaven "i" forekommer i strengen vår.
+Her er `strek` variabelen som inneholder strengen "Hei, verden!". Når vi kaller på `length` metoden på streken variabelen, returnerer den lengden av strengen, som i dette tilfellet er 13 tegn.
 
-# Dykk dypere
+Du kan også bruke `size` metoden til å finne lengden av en streng. Begge disse metodene fungerer på samme måte og gir samme resultat.
 
-Nå som vi har en grunnleggende forståelse av hvordan vi finner lengden på en streng i Ruby, la oss se på noen andre viktige poeng å huske på. For det første vil både `.length` og `.size` metoden returnere et heltall. Dette betyr at vi ikke kan bruke dem på en tom streng eller en streng som ikke finnes.
+## Dypdykk
 
-En annen ting å huske på er hvordan Ruby håndterer Unicode-tegn. Dette vil variere avhengig av hvilken versjon av Ruby du bruker, så det er viktig å sjekke dokumentasjonen for riktig betydning av `.length` og `.size` metoden.
+Et viktig konsept å forstå når det kommer til å finne lengden av en streng er at indekseringen begynner på 0. Det betyr at det første tegnet i en streng får indeks 0, det andre får indeks 1, og så videre. Hvis du for eksempel vil finne lengden av strengen "Hei", vil `length` metoden gi deg 3 som resultat, siden det er tre tegn i strengen.
 
-# Se også
+Det er også verdt å merke seg at når du bruker Unicode-tegn i en streng, kan lengden til strengen bli annerledes enn antall tegn du faktisk ser på skjermen. Dette skyldes at Unicode-tegn har forskjellige størrelser, og derfor kan en streng med f.eks. emoji og vanlige bokstaver ha samme lengde, men forskjellig antall tegn.
 
-- [Ruby dokumentasjon for String Class](https://ruby-doc.org/core-2.7.2/String.html)
-- [Påvisning av antall forekomster i Ruby strenger](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+## Se også
 
-Takk for at du leste denne bloggposten om å finne lengden på en streng i Ruby. Vi håper det var nyttig for deg!
+- [Ruby dokumentasjon for `length` metoden](https://ruby-doc.org/core-3.0.0/String.html#method-i-length)
+- [Stack Overflow thread om forskjellen mellom `length` og `size` i Ruby](https://stackoverflow.com/questions/27347027/difference-between-length-and-size-of-an-array-in-ruby)

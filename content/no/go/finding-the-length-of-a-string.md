@@ -1,40 +1,44 @@
 ---
 title:    "Go: Å finne lengden av en streng"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan virke som en enkel oppgave å finne lengden til en streng i et programmeringsspråk som Go. Men i virkeligheten kan det være en viktig del av å skrive effektiv kode og håndtere riktig data. Denne artikkelen vil utforske hvorfor det er viktig å kunne finne lengden til en streng og hvordan man kan gjøre det på en effektiv måte.
+I Go-programmering trenger vi ofte å håndtere strenger, enten det er å lagre brukerinput eller behandle tekstlige data. En viktig del av dette er å kunne finne lengden på en streng, det vil si antall tegn den inneholder. Derfor er det viktig å lære hvordan man kan finne lengden til en streng i Go.
 
-## Hvordan Få Til
+## Slik gjør du det
 
-I Go er det flere måter å finne lengden til en streng på. Den enkleste måten er å bruke funksjonen `len` som returnerer antall bytes i en streng. For eksempel:
-
-```Go
-s := "Hei, verden!"
-fmt.Println(len(s)) // Output: 13 
-```
-
-En annen måte er å bruke `utf8.RuneCountInString` som teller antall Unicode-tegn i en streng. Dette er spesielt nyttig hvis man håndterer flerspråklige applikasjoner. For eksempel:
+Det er flere forskjellige måter å finne lengden på en streng i Go. En enkel metode er å bruke innebygde funksjoner som len() og utf8.RuneCountInString(). Begge disse funksjonene tar inn en streng som argument og returnerer antall tegn i strengen. Her er et eksempel på hvordan dette kan se ut i kode:
 
 ```Go
-s := "こんにちは世界"
-fmt.Println(utf8.RuneCountInString(s)) // Output: 7 
+// Lager en streng
+streng := "Hei, verden!"
+
+// Finner lengden på strengen ved hjelp av len() funksjonen
+lengde := len(streng)
+
+// Skriver ut resultatet
+fmt.Printf("Lengden av strengen er %d tegn", lengde) // Output: Lengden av strengen er 12 tegn
+
+// Finner lengden på strengen ved hjelp av utf8.RuneCountInString() funksjonen
+lengde2 := utf8.RuneCountInString(streng)
+
+// Skriver ut resultatet
+fmt.Printf("Lengden av strengen er %d tegn", lengde2) // Output: Lengden av strengen er 12 tegn
 ```
 
-Det er også mulig å konvertere en streng til en byte slice og deretter bruke `len` for å finne lengden, men dette kan føre til problemer hvis strengen inneholder ikke-ASCII-tegn.
+## Dybdeanalyse
 
-## Dykk Dypere
+Når man bruker len() funksjonen, teller den hvert tegn i strengen som én tegn. Dette betyr at også spesialtegn og mellomrom blir talt med. Utf8.RuneCountInString() funksjonen derimot, teller antall Unicode-tegn i strengen, noe som kan gi et annerledes resultat enn len() funksjonen hvis det er spesialtegn eller ikke-engelske bokstaver i strengen.
 
-Når det gjelder å finne lengden til en streng i Go, er det viktig å forstå forskjellen mellom bytes og Unicode-tegn. En ASCII-tegn bruker 1 byte, men et Unicode-tegn kan bruke opptil 4 bytes. Dette kan påvirke resultatet når man bruker `len` eller `utf8.RuneCountInString` funksjonene.
+Det finnes også en annen metode for å finne lengden på en streng, ved å bruke range-løkken. Denne løkken itererer gjennom hver rune i strengen og teller dem. Dette kan være en nyttig løsning hvis du trenger å behandle hver rune individuelt, men kan være mindre effektivt enn de innebygde funksjonene.
 
-Det kan også være nyttig å forstå hvordan Go håndterer Unicode-tegn og strenger, spesielt hvis man jobber med flerspråklige applikasjoner eller data.
+## Se også
 
-## Se Også
-
-- Offisiell Go dokumentasjon for `len` og `utf8.RuneCountInString`: https://pkg.go.dev/builtin#len and https://pkg.go.dev/unicode/utf8#RuneCountInString
-- "How to Work With Strings in Go": https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-go
-- "The Basics of Strings in Go": https://www.calhoun.io/the-basics-of-strings-in-go/
+- [Offisiell Go-dokumentasjon for strenger](https://golang.org/pkg/strings/)
+- [Tutorial om styring av strenger i Go](https://gobyexample.com/strings)
+- [Eksempel på hvordan range-løkken kan brukes til å finne strenglengde](https://golangbyexample.com/finding-length-of-string-golang/)

@@ -1,54 +1,56 @@
 ---
-title:    "Fish Shell: Calculando una fecha en el futuro o pasado"
+title:    "Fish Shell: Calculando una fecha en el futuro o pasado."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué 
 
-¿Alguna vez te has preguntado cómo puedes calcular la fecha de hoy en el futuro o en el pasado? Este artículo te mostrará cómo hacerlo con Fish Shell.
+A veces, necesitamos predecir una fecha futura o calcular una fecha en el pasado. Puede ser para planificar eventos, programar tareas o simplemente por curiosidad. ¡Afortunadamente, Fish Shell hace que esto sea fácil con su funcionalidad de cálculo de fecha! Sigue leyendo para aprender cómo hacerlo.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado, podemos utilizar el comando ``date`` de Fish Shell. Podemos especificar la cantidad de días, meses o años que queremos agregar o restar a la fecha actual.
-
-Por ejemplo, si queremos saber la fecha dentro de 5 días, podemos utilizar el siguiente comando:
+Para calcular una fecha en el futuro, usaremos el comando `date` seguido de un número y la unidad de tiempo deseada, como días, meses o años. Por ejemplo, para obtener la fecha de mañana, escribiremos:
 
 ```Fish Shell
-date -d "+5 days"
+date 1d
 ```
 
-Esto nos devolverá la fecha en el formato "año-mes-día". En este caso, si hoy es 17 de mayo de 2021, el resultado sería "2021-05-22".
-
-También podemos especificar una fecha específica como punto de partida. Por ejemplo, si queremos saber la fecha dentro de 3 meses a partir del 20 de abril de 2022, podemos utilizar el siguiente comando:
+Esto nos dará la fecha de mañana en el formato de día de la semana, mes y día. Si queremos una fecha específica, podemos usar el formato de "año-mes-día". Por ejemplo:
 
 ```Fish Shell
-date -d "2022-04-20 +3 months"
+date 2021-08-30
 ```
 
-El resultado sería "2022-07-20".
-
-Además de los días y meses, también podemos agregar o restar años a la fecha actual. Por ejemplo, si queremos saber la fecha de hoy en 5 años, podemos utilizar el siguiente comando:
+Esto nos dará la fecha del 30 de agosto de 2021. También podemos sumar o restar unidades de tiempo a fechas existentes. Por ejemplo:
 
 ```Fish Shell
-date -d "+5 years"
+date 2021-08-30 - 2w
 ```
+
+Esto nos dará la fecha 2 semanas antes del 30 de agosto de 2021. ¡Genial!
 
 ## Profundizando
 
-El comando ``date`` de Fish Shell utiliza la biblioteca de GNU coreutils para realizar los cálculos de fecha. Por lo tanto, podemos referirnos a la documentación de coreutils para obtener más información sobre cómo utilizar este comando y sus opciones.
+Fish Shell utiliza el formato de fecha "año-mes-día" para realizar cálculos. Si necesitas ayuda con el formato, siempre puedes consultar la página de manual de `date` escribiendo `man date` en tu terminal.
 
-También podemos realizar cálculos más complejos, como especificar una fecha y hora exactas, utilizando el formato de fecha ISO 8601 y la opción ``-d`` para especificar una fecha. Por ejemplo, si queremos saber la fecha y hora dentro de 2 horas a partir del 6 de junio de 2021 a las 9:30 am, podemos utilizar el siguiente comando:
+Además de calcular fechas en el futuro, Fish Shell también puede calcular fechas en el pasado. Para hacerlo, solo necesitamos escribir un número negativo antes de la unidad de tiempo deseada. Por ejemplo:
 
 ```Fish Shell
-date -d "2021-06-06T09:30:00 +2 hours"
+date -1y
 ```
 
-El resultado sería "2021-06-06T11:30:00".
+Esto nos dará la fecha de hace un año en el formato de "año-mes-día". También podemos realizar cálculos más complejos, como sumar o restar múltiples unidades de tiempo a la vez. Por ejemplo:
+
+```Fish Shell
+date 2021-08-30 + 2y - 1m + 3w - 5d
+```
+
+Esto nos dará la fecha 2 años después, 1 mes antes, 3 semanas después y 5 días antes del 30 de agosto de 2021.
 
 ## Ver también
 
-- [Documentación de coreutils](https://www.gnu.org/software/coreutils/manual/html_node/)
-- [Guía de referencia de Fish Shell](https://fishshell.com/docs/current/)
-- [Guía de formato de fecha ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Página de manual de `date`](https://fishshell.com/docs/current/cmds/date.html)
+- [Preguntas frecuentes sobre fechas en Fish Shell](https://github.com/fish-shell/fish-shell/wiki/FAQ#dates-and-time)

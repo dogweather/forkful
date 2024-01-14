@@ -1,49 +1,62 @@
 ---
 title:    "C: Generazione di numeri casuali"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+Perché Generare Numeri Casuali in C
 
-Generare numeri casuali può essere utile in molte situazioni, come nella scelta di un vincitore per un concorso o nella creazione di giochi e simulazioni. È importante comprendere il concetto di generazione di numeri casuali per poter applicare correttamente questa tecnica nel tuo codice.
+Se sei un programmatore C, probabilmente sai già che la generazione di numeri casuali è una funzionalità fondamentale per molte applicazioni, come giochi, simulazioni e crittografia. Ma perché dovresti voler generare numeri casuali in C? La risposta è semplice: i numeri casuali aggiungono un elemento di imprevedibilità e casualità alle tue applicazioni, rendendole più interessanti e realistiche.
 
-## Come fare
+Come Generare Numeri Casuali in C
 
-Ci sono diverse funzioni utilizzate in C per generare numeri casuali. Una di queste è la funzione rand() che restituisce un numero intero casuale nell'intervallo 0 e RAND_MAX. Per impostare un seed e ottenere numeri diversi ad ogni esecuzione, puoi utilizzare la funzione srand(). Di seguito puoi vedere un esempio di come utilizzare queste funzioni per generare dieci numeri casuali e stamparli a schermo:
+La generazione di numeri casuali in C può sembrare un compito complicato, ma in realtà è abbastanza semplice. Iniziamo con un semplice esempio di codice per generare un numero casuale tra 1 e 10.
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int main()
-{
-    int i, randomNum;
-    srand(time(0)); // impostiamo il seed utilizzando l'orario corrente
-    for(i = 0; i < 10; i++)
-    {
-        randomNum = rand();
-        printf("%d ", randomNum); // stampiamo il numero casuale generato
-    }
-    return 0;
-}
 ```
-**Output:**
-```bash
-1942500626 424238335 135497281 478931781 1334993101 419440389 57871710 1651009773 1189641421 367477592
+#include <stdio.h> 
+#include <stdlib.h> //libreria necessaria per usare la funzione rand()
+
+int main() 
+{ 
+   int numero; 
+   numero = rand()%10 + 1; //genera un numero casuale tra 1 e 10 
+   printf("Il numero casuale è: %d", numero); //stampa il numero casuale 
+   return 0; 
+} 
 ```
 
-Esistono anche altre funzioni utilizzabili per ottenere numeri casuali, come ad esempio la funzione rand_r() per generare numeri casuali in modo thread-safe.
+Se eseguiamo questo codice, otterremo un output simile a questo:
 
-## Approfondimento
+`Il numero casuale è: 7`
 
-La generazione di numeri casuali è un processo algoritmico che si basa su un valore di partenza (seed) e su un algoritmo di generazione. È importante che il valore di seed sia diverso ad ogni esecuzione per ottenere numeri casuali differenti. Per questo motivo, si utilizza spesso l'orario corrente come seed.
+Ovviamente, il numero puù variare ogni volta che il codice viene eseguito.
 
-Inoltre, è importante notare che i numeri generati non sono effettivamente casuali, ma seguono un algoritmo specifico. Per questo motivo, è possibile utilizzare diverse tecniche di analisi per verificare la "casualità" dei numeri generati.
+Deep Dive: Generazione di Numeri Casuali in C
 
-## Vedi anche
-- [Documentazione ufficiale di C sulla funzione rand()](https://www.gnu.org/software/libc/manual/html_node/Pseudorandom-Numbers.html)
-- [Tutorial su come generare numeri casuali in C](https://www.programiz.com/c-programming/examples/random-numbers)
-- [Approfondimenti sulla generazione di numeri casuali in C](https://www.geeksforgeeks.org/generating-random-number-range-c/)
+Ora che abbiamo visto un semplice esempio di come generare un numero casuale in C, vediamo più da vicino come funziona il processo. La funzione `rand()` è responsabile per la generazione dei numeri casuali in C. Questa funzione restituisce un numero intero casuale tra 0 e `RAND_MAX`, una costante definita nella libreria `stdlib.h`. Per controllare il range dei numeri casuali generati, dobbiamo utilizzare l'operatore `%` (modulo). Ad esempio, se vogliamo generare un numero casuale tra 1 e 100, dovremmo utilizzare `rand()%100 + 1`.
+
+Tuttavia, se eseguiamo il codice sopra più volte, noteremo che i numeri casuali generati sono sempre gli stessi. Questo perché la funzione `rand()` utilizza il seme predefinito di 1. Per ottenere numeri realmente casuali ogni volta che eseguiamo il codice, dobbiamo impostare il seme utilizzando la funzione `srand()` e un numero diverso ogni volta. Un metodo comune per fare ciò è utilizzare il valore del tempo di sistema come seme, utilizzando la funzione `time()` della libreria `time.h`.
+
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> //libreria necessaria per usare la funzione time()
+
+int main() 
+{ 
+   int numero; 
+   srand(time(NULL)); //imposta il seme utilizzando il valore del tempo di sistema 
+   numero = rand()%10 + 1; 
+   printf("Il numero casuale è: %d", numero); 
+   return 0; 
+} 
+```
+
+Ogni volta che eseguiamo il codice, otterremo un numero casuale differente, rendendo il risultato più verosimile.
+
+See Also
+
+- Guida alla Generazione di Numeri Casuali in C: https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/
+- Documentazione sulla Funzione rand(): https://en.cppreference.com/w/c/numeric/random/rand

@@ -1,101 +1,40 @@
 ---
 title:    "Arduino recipe: Writing tests"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests for Arduino Programming is Important
+## Why 
 
-When it comes to programming, we often hear the phrase "test early, test often." This advice holds true for Arduino programming as well. Writing tests for your Arduino code can help catch errors before they become bigger problems and ensure that your code runs smoothly. In this blog post, we will discuss the importance of writing tests for Arduino programming and how to do it effectively.
+Arduino programming is becoming increasingly popular among hobbyists and beginners due to its ease of use and versatile applications. However, as with any type of coding, it is important to ensure the reliability and functionality of your code. This is where writing tests comes in handy. Writing tests can help you catch errors and bugs before they become a major problem, making your Arduino projects more efficient and successful.
 
-## How To Write Tests for Arduino Programming
+## How To
 
-Writing tests for Arduino programming involves creating small programs that test the functionality of your Arduino code. These tests can be run on the actual Arduino board or via a simulation software such as Proteus. Let's take a look at a simple example to understand how it works.
+Writing tests in Arduino can be done using the built-in Arduino Unit Testing library. To begin, first download and install the library in your Arduino IDE. Once installed, you can start writing tests by creating a new tab in your Arduino sketch and naming it "test". Here is an example of a simple test case for a function that adds two numbers:
 
 ```Arduino
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-#include <Wire.h>
-#include <Keypad.h>
+#include <ArduinoUnit.h>
 
-// Create instance of LCD and Keypad
-LiquidCrystal_I2C lcd(0x27, 16, 2);
-const byte ROWS = 4;
-const byte COLS = 4;
-char keys[ROWS][COLS] = { 
-  {'1', '2', '3', 'A'},
-  {'4', '5', '6', 'B'},
-  {'7', '8', '9', 'C'},
-  {'*', '0', '#', 'D'}
-};
-byte rowPins[ROWS] = { 2, 3, 4, 5 };
-byte colPins[COLS] = { 6, 7, 8, 9 };
-Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-
-void setup() {
-  lcd.begin();
-  lcd.backlight();
-  lcd.print("Enter a number: ");
-}
-
-void loop() {
-  char key = keypad.getKey();
-  if (key != NO_KEY) {
-    lcd.setCursor(0, 1);
-    lcd.print(key);
-  }
+test(simpleAddition) {
+  int result = add(2, 3); // Call the function you want to test
+  assertEqual(5, result); // Check if the result is equal to the expected output
 }
 ```
 
-In this code, we have created a simple program that displays a message on an LCD and allows the user to enter a number using a keypad. To test this code, we can write a small program that inputs different numbers through the keypad and checks if the correct number is displayed on the LCD. For example:
+Once you have written your test cases, you can run them by clicking on the "Verify" button in your IDE. This will compile the tests and give you a detailed report of which tests passed and which ones failed. 
 
-```Arduino
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-#include <Wire.h>
-#include <Keypad.h>
+## Deep Dive
 
-// Create instance of LCD and Keypad
-LiquidCrystal_I2C lcd(0x27, 16, 2);
-const byte ROWS = 4;
-const byte COLS = 4;
-char keys[ROWS][COLS] = { 
-  {'1', '2', '3', 'A'},
-  {'4', '5', '6', 'B'},
-  {'7', '8', '9', 'C'},
-  {'*', '0', '#', 'D'}
-};
-byte rowPins[ROWS] = { 2, 3, 4, 5 };
-byte colPins[COLS] = { 6, 7, 8, 9 };
-Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+Writing tests not only helps catch bugs, but it also encourages you to write more modular and reusable code. By breaking down your code into smaller functions, you can easily test and debug each function individually. This also makes it easier to make changes or add new features without affecting the entire code base.
 
-void setup() {
-  lcd.begin();
-  lcd.backlight();
-  lcd.print("Enter a number: ");
-}
+Another benefit of writing tests is that it helps you understand your code better. As you write test cases, you are forced to think about all possible scenarios and inputs for your code, giving you a deeper understanding of how your code works.
 
-void loop() {
-  char key = keypad.getKey();
-  if (key != NO_KEY) {
-    lcd.setCursor(0, 1);
-    lcd.print(key);
-    if (key != '5') { // Change the test number here
-      // Test fails if input is not 5
-      lcd.setCursor(0, 1);
-      lcd.print("Test failed");
-    }
-  }
-}
-```
+Additionally, writing tests can save you time and effort in the long run. Instead of manually testing your code every time you make changes, you can simply run your test cases and ensure that everything is functioning as expected.
 
-In this example, we have added a check to see if the input is not 5. If it's not, then the test fails and displays a message on the LCD. Similarly, you can write different tests to cover all possible scenarios and ensure the correct functioning of your code.
+## See Also
 
-## Deep Dive into Writing Tests for Arduino Programming
-
-Writing tests for Arduino programming not only helps catch errors, but it also ensures that your code is modular, making it easier to debug and maintain. When writing tests, it's important to follow the best practices, such as keeping the tests in a separate folder and naming them according to the corresponding function or component. Additionally, it's helpful to include comments and descriptive function names to make the code more readable.
-
-Another important aspect of writing tests is to cover both positive and negative scenarios. This means testing the normal functioning of the code as well as testing for any potential errors or exceptions. This ensures that your code is reliable and can handle unexpected inputs or situations.
-
-Lastly, don't forget to regularly run your tests and update them as you make changes to your code. This
+- [Arduino Unit Testing Documentation](https://github.com/mmurdoch/arduinounit)
+- [How to Write Great Arduino Tests](https://blog.brickelectric.com/how-to-write-great-arduino-tests/)
+- [Top 5 Arduino Testing Tips for a Rock Solid Project](https://www.tentaclee.com/tutorials/arduino-testing-tips/)

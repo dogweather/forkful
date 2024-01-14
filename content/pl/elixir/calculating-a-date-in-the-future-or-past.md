@@ -1,44 +1,49 @@
 ---
 title:    "Elixir: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Czasami potrzebujemy wyliczyć datę w przyszłości lub przeszłości w naszych aplikacjach Elixir. Może to być na przykład w celu wyświetlenia przyszłych lub poprzednich wydarzeń kalendarzowych, planowania zadań lub ustawiania przypomnień. W tym artykule omówimy sposób wyliczania dat w przód lub w tył za pomocą Elixir.
+Obliczanie daty w przyszłości lub przeszłości jest niezbędnym elementem wielu aplikacji w dzisiejszych czasach. Mogą to być aplikacje do rezerwacji spotkań, wycieczek, lub nawet prostych powiadomień o ważnych wydarzeniach. Dlatego warto poznać podstawy programowania w Elixir, aby móc wygodnie i precyzyjnie obliczać daty.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Przykładowy kod:
-
-```Elixir
-date = Date.utc_today()
-in_5_days = Date.add(date, 5, :days)
-IO.puts in_5_days
-```
-
-W powyższym przykładzie użyliśmy funkcji `Date.add/3`, która dodaje określoną liczbę dni do aktualnej daty. Możemy również użyć innych jednostek, takich jak sekundy, minuty, godziny, tygodnie, miesiące czy lata. Funkcja ta zwraca nowy obiekt daty, więc musimy go wyswietlić za pomocą `IO.puts` lub przechowywać w zmiennej.
-
-Kod w poniższym bloku pomaga nam wyliczyć datę w przeszłości:
+Pierwszym krokiem jest zaimportowanie modułu `Date` i wykorzystanie funkcji `add` lub `sub`. Na przykład, jeśli chcemy dodać 2 dni do dzisiejszej daty:
 
 ```Elixir
-birthday = Date.from_iso8601("1990-03-15")
-years_ago = Date.add(birthday, -30, :years)
-IO.puts years_ago
+iex> Date.add(Date.utc_today(), 2)
+{:ok, ~U[2021-04-03]}
 ```
 
-W ten sposób możemy wyliczyć datę 30 lat wstecz od daty urodzin, której użyliśmy do zmienniej `birthday`.
+Możemy również podać datę źródłową i określić jednostkę czasu (np. dni, miesiące, lata):
 
-# Głębszy zanurzenie
+```Elixir
+iex> Date.add(~U[2021-04-01], 1, :month)
+{:ok, ~U[2021-05-01]}
+```
 
-Funkcja `Date.add/3` wykorzystuje kalendarz Gregoriański do obliczenia nowej daty, co może prowadzić do nieoczekiwanych wyników w przypadku dat przed wprowadzeniem tego kalendarza w roku 1582. W takich przypadkach lepiej jest skorzystać z funkcji `Calendar.DateTime.add/4` lub `Calendar.Date.add/3`, które pozwalają na wybieranie innego kalendarza, takiego jak Julian czy Islaamic.
+Jeśli chcemy odjąć pewną jednostkę czasu od daty, możemy wykorzystać funkcję `sub`, na przykład aby odjąć 5 lat od naszej daty źródłowej:
 
-Ponadto, jeśli potrzebujemy wyliczyć datę na podstawie innej jednostki czasu, na przykład dodając 36 godzin do obecnej daty, użyjemy funkcji `NaiveDateTime.add/3` lub `DateTime.add/3`. Pierwsza z nich obsługuje jedynie strefy czasowe UTC, podczas gdy druga bierze pod uwagę strefy czasowe i przeprowadza konwersję wewnętrznie.
+```Elixir
+iex> Date.sub(~U[2021-01-01], 5, :year)
+{:ok, ~U[2016-01-01]}
+```
 
-# Zobacz też
+## Deep Dive
 
-- Dokumentacja Elixir dla funkcji `Date.add/3` (https://hexdocs.pm/elixir/Date.html#add/3)
-- Dokumentacja Elixir dla modułu `Calendar` (https://hexdocs.pm/elixir/Calendar.html)
-- Wprowadzenie do dat i czasu w Elixir (https://michal.muskala.eu/2017/02/16/date-and-time.html)
+Podczas obliczania daty w przyszłości lub przeszłości warto pamiętać o różnicach w kalendarzu gregoriańskim i kalendarzu juliańskim. Kalendarz juliański używa starszego systemu obliczania czasu, więc daty mogą się różnić o jeden dzień. W Elixirze, możemy wybrać kalendarz, w którym obliczanie będzie przeprowadzone poprzez użycie opcji `calendar`:
+
+```Elixir
+iex> Date.add(~U[2021-01-01], 10, :year, calendar: Calendar.ISO)
+{:ok, ~U[2031-01-01]}
+```
+
+### Zobacz także
+
+- [Dokumentacja modułu Date](https://hexdocs.pm/elixir/Date.html)
+- [Porównanie kalendarzy gregoriańskiego i juliańskiego](https://www.timeanddate.com/calendar/gregorian-julian-switch.html)
+- [Inne funkcje pomocne przy obliczaniu dat w Elixirze](https://elixirschool.com/en/lessons/basics/ides-and-comments/)

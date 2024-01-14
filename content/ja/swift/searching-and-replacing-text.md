@@ -1,48 +1,64 @@
 ---
-title:    "Swift: テキストの検索と置換"
+title:    "Swift: テキストの検索と置き換え"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
+あなたがテキストを検索して置換する必要があるかもしれません。検索して置換することで、複数の文字列を効率的に変更することができます。これは、大規模なプロジェクトや複数のファイルで同じテキストを使用する場合に特に役立ちます。
+
 ## なぜ
 
-プログラミングを行う際、テキストの検索や置換を行うことは非常に重要です。それにより、コードの効率性や正確さを向上させることができます。
+テキストを検索して置換することで、手動で複数の箇所を変更する作業を省くことができます。これにより、時間と労力を節約することができます。
 
 ## 方法
 
-テキストの検索や置換を行う方法はいくつかありますが、その中でもSwiftの特徴である高速かつ簡単な方法を紹介します。まずは以下のように、文字列を変数に代入します。
+検索して置換する方法は非常に簡単です。まず、`replaceOccurrences(of:with:)`メソッドを使用して、変更したい文字列と変更後の文字列を指定します。次に、`options`パラメーターに`[]`を渡し、検索と置換を行う範囲を指定します。最後に、`replacingOccurrences(of:with:options:)`メソッドを使用して、実際に置換を行います。
+
+例えば、次のようにコードを書くことで、全ての"Hello"を"こんにちは"に置換することができます。
 
 ```Swift
-let text = "プログラミングは楽しいです"
+let originalString = "Hello, Swift!"
+let newString = originalString.replacingOccurrences(of: "Hello", with: "こんにちは", options: [])
+print(newString)
+
+// Output:
+// こんにちは, Swift!
 ```
 
-次に、文字列の中から「楽しい」を「楽しくない」に置換するコードを書いてみましょう。
+## 詳細を調べる
+
+検索して置換を行う時には、パターンマッチングを使用することもできます。これにより、より柔軟な検索が可能になります。例えば、次のように正規表現を使用して、全ての数字を"*"に置換することができます。
 
 ```Swift
-let newText = text.replacingOccurrences(of: "楽しい", with: "楽しくない")
-print(newText)
+let originalString = "1234abc"
+let regex = try NSRegularExpression(pattern: "[0-9]", options: [])
+let newString = regex.stringByReplacingMatches(in: originalString, options: [], range: NSRange(location: 0, length: originalString.count), withTemplate: "*")
+print(newString)
+
+// Output:
+// ****abc
 ```
 
-このコードを実行すると、コンソールに「プログラミングは楽しくないです」という結果が表示されます。
-
-## 深堀り
-
-上記のコードでは、単純に文字列の中から特定の単語を置換していますが、実際にはもっと複雑な検索や置換が必要になることもあります。そのためには、正規表現を使用することができます。正規表現とは、文字列のパターンマッチングを行うための表記法です。
-
-以下のコードでは、文字列中の全ての数字を「0」に置換する例を示しています。
+さらに、複数の条件を指定することもできます。例えば、次のように複数の単語を検索して一つの単語に置換することができます。
 
 ```Swift
-let text = "Swiftは3つのバージョンをリリースしました"
-let regex = try! NSRegularExpression(pattern: "[0-9]", options: NSRegularExpression.Options())
-let newText = regex.stringByReplacingMatches(in: text, options: [], range: NSMakeRange(0, text.count), withTemplate: "0")
-print(newText)
+let originalString = "The sky is blue and the grass is green."
+let replacements = ["sky": "ocean", "grass": "field"]
+for (word, replacement) in replacements {
+    let regex = try NSRegularExpression(pattern: word, options: [])
+    let newString = regex.stringByReplacingMatches(in: originalString, options: [], range: NSRange(location: 0, length: originalString.count), withTemplate: replacement)
+}
+print(newString)
+
+// Output:
+// The ocean is blue and the field is green.
 ```
 
-コンソールに「Swiftは0つのバージョンをリリースしました」という結果が表示されます。正規表現を使うことで、より柔軟な検索や置換を行うことができるようになります。
+## もっと詳しく知りたい場合は
 
-## 関連情報
+検索して置換に関する詳細を知りたい場合は、以下のリンクを参考にしてください。
 
-- [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Stringの検索と置換](https://qiita.com/Shino_t0m9r/items/970e9aa1876a07aea7f7)
-- [Swiftで正規表現を利用する方法とTips](https://qiita.com/chorook/items/9a03a222c3700694a4d5)
+- [Apple Developer Documentation: String and Text](https://developer.apple.com/documentation/swift/string_and_text)
+- [NSHipster: Regular Expressions](https://nshipster.com/nsregularexpression/)

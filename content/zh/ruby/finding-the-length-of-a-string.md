@@ -1,47 +1,47 @@
 ---
 title:    "Ruby: 寻找字符串的长度"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # 为什么
-想必大家在学习 Ruby 编程语言时都会遇到字符串（string）这个概念。字符串是一个基本的数据类型，它是由一系列字符组成的，可以理解为文字或者句子。在编程中，经常会遇到需要获取字符串的长度的情况。那么，为什么我们需要知道字符串的长度呢？
-
-获取字符串的长度对于处理用户输入、文本分析等任务都非常重要。有时候，我们可能需要限制用户输入的字符串长度，或者根据字符串的长度来进行分析和处理。因此，学习如何找到字符串的长度对于编程来说是非常有用的。
+在Ruby编程中，字符串是一种非常重要的数据结构。了解如何计算字符串的长度可以帮助我们更有效地处理和操作字符串，从而提升代码的质量和效率。
 
 # 如何做
-在 Ruby 中，要找到字符串的长度非常简单。我们可以使用 `.length` 方法来获取字符串的长度，方法的使用方法如下：
+```Ruby
+# 使用.length方法计算字符串的长度
+string = "你好，世界！"
+puts string.length
+# 输出：6
 ```
-Ruby
-
-    # 定义一个包含五个字符的字符串
-    my_string = "Hello"
-
-    # 使用 .length 方法来获取字符串的长度并输出
-    puts my_string.length
-    # 输出结果为 5
+```Ruby
+# 使用.size方法计算字符串的长度
+string = "Hello, world!"
+puts string.size
+# 输出：13
+```
+```Ruby
+# 使用.bytesize方法计算字符串的长度（针对特殊字符）
+string = "안녕하세요!"
+puts string.bytesize
+# 输出：15
 ```
 
-代码解释：
-- 在第二行，我们创建了一个变量 `my_string`，并赋值为字符串 "Hello"。
-- 然后我们使用 `.length` 方法来获取字符串的长度，方法前面加上 `puts` 表示输出。
-- 最后运行代码，就会在控制台输出字符串的长度，也就是 5。
+# 深入探究
+计算字符串的长度主要是通过计算字符串中的字符数来实现的。但是，在不同编码下，同样的字符可能会占据不同数量的字节。因此，我们可以使用不同的方法来计算字符串的长度，如示例中的`.length`、`.size`和`.bytesize`。
 
-除了 `.length` 方法，我们也可以使用 `.size` 方法来获取字符串的长度，使用方法和输出结果都是一样的。两种方法的区别在于，`.length` 方法是针对字符串类型的，而 `.size` 方法可以用于其他数据类型，比如数组、哈希等。
+此外，另一个值得注意的问题是空格和换行符也属于字符串的一部分，因此它们也会被计算在内。如果我们想要忽略这些特殊字符，可以使用`.strip`方法来去除字符串中的空格和换行符再计算长度。
 
-# 深入了解
-在 Ruby 中，字符串的长度是通过计算字符的个数来确定的。对于英文来说，一个字符就是一个字母，所以字符串 "Hello" 的长度就是 5。但是对于其他语言来说，并不一定是这样。比如中文中，一个汉字占据两个字符的位置，所以字符串 "你好" 的长度就是 4。所以在处理多语言的字符串时，我们需要注意这个差异。
+# 参考链接
+请参考以下链接来了解更多关于计算字符串长度的方法和技巧：
+- [Ruby String类文档](https://ruby-doc.org/core-2.6.3/String.html)
+- [Ruby中的字符编码及大小写转换](https://www.rubyguides.com/2018/07/ruby-string-encoding/)
+- [Ruby Strip方法文档](https://ruby-doc.org/core-2.6.3/String.html#method-i-strip)
 
-此外，在 Ruby 中，我们还可以使用 `[]` 来获取字符串中特定位置的字符。比如 `my_string[0]` 就可以获取字符串中的第一个字符。但是需要注意的是，Ruby 中的计数是从 0 开始的，所以第一个字符的位置是 0，第二个字符的位置是 1，依次类推。我们还可以使用 `[]` 来获取一段连续的字符，比如 `my_string[1,3]` 就可以获取从第一个字符开始的三个字符。
-
-在编程中，字符串的长度还有其他的应用场景，比如在循环中根据字符串的长度来判断结束条件，或者在排序算法中用来比较字符串的大小。学习字符串长度的相关知识，有助于我们更好地理解和运用字符串类型。
-
-# 参考资料
-- [Ruby字符串操作](http://www.runoob.com/ruby/ruby-string.html)
-- [Ruby教程-字符串和符号](https://www.w3cschool.cn/ruby/ruby-strings-symbols.html)
-- [Ruby中文文档-字符串篇](https://ruby-china.org/wiki/ruby-string)
-
-# 参见
-- [Ruby官方文档](https://www.ruby-lang.org/zh_cn/documentation/)
-- [Ruby中文社区](https://ruby-china.org/)
+# 查看更多
+如果您想深入了解Ruby事物，可以参考以下链接：
+- [Ruby编程基础知识](https://www.ruby-lang.org/zh_cn/documentation/)
+- [Ruby编程教程](https://www.runoob.com/ruby/ruby-tutorial.html)
+- [我的个人博客](https://www.example.com)

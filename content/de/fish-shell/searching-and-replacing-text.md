@@ -1,59 +1,48 @@
 ---
-title:    "Fish Shell: Textsuche und Ersetzung"
+title:    "Fish Shell: Suchen und Ersetzen von Text"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Wenn Sie häufig mit der Bearbeitung von Texten oder Code arbeiten, wissen Sie wahrscheinlich, wie nützlich die Funktion zum Suchen und Ersetzen ist. Mit der Fish Shell können Sie diese Aufgabe schnell und einfach erledigen. Lesen Sie weiter, um zu erfahren, wie Sie Text in der Fish Shell suchen und ersetzen können.
 
-Textsuche und -ersetzung ist ein grundlegender Bestandteil jedes Programmierers Werkzeugsatzes. Es ermöglicht uns, effizient wiederkehrende Aufgaben zu automatisieren und Fehler in unserem Code schnell zu beheben.
+## Wie geteilt
 
-## Wie
-
-Um in der Fish Shell Text zu suchen und zu ersetzen, verwenden wir das "sed"-Kommando. Dies ist ein mächtiges Tool, das speziell für die Textbearbeitung entwickelt wurde.
-
-Wir können das "sed"-Kommando in der Shell mit dem folgenden Format aufrufen:
+### Eine einfache Suche und Ersetzung durchführen
+Die Fish Shell bietet die Befehle `grep` und `sed` zur Textsuche und -ersetzung. Um nach einem bestimmten Begriff in einem Text zu suchen und ihn zu ersetzen, können Sie den folgenden Befehl verwenden:
 
 ```
-Fish Shell sed 's/zu_ersetzender_text/ersatz_text/'
+Fish Shell Code:
+
+grep -l "zu-ersetzen-wort" dateiname | xargs sed -i "s/zu-ersetzen-wort/ersatz-text/"
 ```
 
-Dieses Beispiel zeigt, wie wir den Text "zu_ersetzender_text" durch "ersatz_text" ersetzen können. Beachte, dass das ursprüngliche "sed"-Kommando nicht verändert wird, sondern dass eine neue Zeile mit dem Ersatztext ausgegeben wird.
+In diesem Beispiel wird das Wort "zu-ersetzen-wort" im angegebenen Dateinamen gesucht und durch "ersatz-text" ersetzt. Beachten Sie, dass das `-i` Flag in `sed` verwendet wird, um die Datei direkt zu ändern. Wenn Sie die Änderungen in einer neuen Datei speichern möchten, können Sie stattdessen das Flag `-c` verwenden.
 
-Wir können auch reguläre Ausdrücke verwenden, um mehrere Such- und Ersetzvorgänge auf einmal durchzuführen. Zum Beispiel können wir den folgenden Befehl verwenden, um alle Instanzen von "Hallo" in einer Datei durch "Guten Tag" zu ersetzen:
-
-```
-Fish Shell sed 's/Hallo/Guten Tag/g'
-```
-
-In diesem Beispiel verwenden wir den "g"-Flag, um alle Instanzen von "Hallo" in der Datei zu ersetzen, nicht nur die Erste.
-
-Um sicherzustellen, dass das "sed"-Kommando in der Fish Shell richtig funktioniert, können wir die Option "-i" verwenden, um die Änderungen direkt in der Originaldatei vorzunehmen, statt sie auf der Standardausgabe zu zeigen.
+### Die Laufzeitumgebung von Fish in vim einbinden
+Falls Sie den Texteditor vim verwenden, können Sie die Fish-Shell-Befehle auch direkt in vim verwenden, um Texte zu suchen und zu ersetzen. Fügen Sie einfach die folgenden Zeilen in Ihre vim-Konfigurationsdatei `~/.vimrc` ein:
 
 ```
-Fish Shell sed -i 's/Hallo/Guten Tag/g' datei.txt
+Fish Shell Code:
+
+" Die Laufzeitumgebung von Fish in vim einbinden
+function! RunFish(cmd)
+  let fish_output = system("fish -c '" . a:cmd . "'")
+  return trim(fish_output)
+endfunction
+command! -nargs=1 F run RunFish('<args>')
 ```
 
-Auf diese Weise können wir den Text in unserer Datei nach Bedarf bearbeiten.
+Nachdem Sie die Datei gespeichert haben, können Sie die Befehle `:F grep` und `:F sed` verwenden, um eine Suche oder Ersetzung auszuführen.
 
-## Eintauchen
+## Tiefentauchgang
+Die Fish Shell verwendet standardmäßig die `awk`-Sprache für Suche und Ersetzung, aber Sie können auch andere Sprachen wie `sed`, `perl` oder `grep` für komplexere Fälle verwenden. Sie können auch reguläre Ausdrücke verwenden, um die Suche und Ersetzung weiter zu verfeinern.
 
-Für fortgeschrittenere Anwendungsfälle können wir das "sed"-Kommando auch mit RegEx-Gruppen und Variablen kombinieren, um komplexe Such- und Ersetzvorgänge durchzuführen.
+Eine weitere nützliche Funktion der Fish Shell ist das "Fishing" - ein interaktives Such- und Ersetzungstool. Um es zu verwenden, führen Sie einfach den Befehl `fish_vi_mode` aus und drücken Sie dann `Ctrl-R`. Geben Sie Ihren Suchbegriff ein und anschließend die Eingabetaste, um durch das Dokument zu navigieren und ihn zu ersetzen.
 
-Zum Beispiel können wir in einer Datei alle Wörter, die mit "1" beginnen und eine beliebige Kombination aus Zahlen und Buchstaben haben, durch "One" ersetzen.
-
-Wir können dies mit dem folgenden Befehl erreichen:
-
-```
-Fish Shell sed -i 's/1([0-9a-zA-Z]+)/One\1/g' datei.txt
-```
-
-In diesem Beispiel verwenden wir eine RegEx-Gruppe (die Klammern), um den Teil der Zeichenfolge nach der "1" zu speichern. Dann verwenden wir eine Variable ("\1"), um diesen Teil in der Ausgabe des "sed"-Kommandos zu verwenden.
-
-Dies ermöglicht uns, bestimmte Teile des ursprünglichen Textes zu speichern und in der Ausgabe wiederverwendet zu werden, was uns eine große Flexibilität bei der Textsuche und -ersetzung bietet.
-
-## Siehe Auch
-
-- [Fish Shell-Dokumentation] (https://fishshell.com/docs/current/)
-- [Sed-Dokumentation] (https://www.gnu.org/software/sed/manual/sed.html)
+## Siehe auch
+- Fish Shell Dokumentation über `grep` und `sed`: https://fishshell.com/docs/current/commands.html#grep
+- vim Online-Hilfe zu Regulären Ausdrücken: https://vimhelp.org/pattern.txt.html

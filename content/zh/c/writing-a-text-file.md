@@ -1,46 +1,55 @@
 ---
-title:    "C: 编写文本文件。"
+title:    "C: 编写文本文件"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么要写文本文件?
 
-为什么我们会想要编写文本文件？因为文本文件是一种简单、可读性强的文件格式，它可以用来存储文本信息，并且可以轻松的被计算机与其他程序读取和处理。
+编程是一门强大的技能，它可以帮助我们完成各种各样的任务。其中一个任务就是编写文本文件。文本文件是一个存储文本信息的文件，它可以被电脑识别和读取。在这篇博文中，我们将讨论为什么要编写文本文件以及如何使用C语言来完成这个任务。
 
-# 如何做
+## 如何编写文本文件
 
-如果你想要编写一个文本文件，你可以使用C语言中的文件操作函数来帮助你实现这一目标。首先，你需要打开一个文件句柄来表示你要使用的文本文件。接下来，你可以使用 ‘fprintf’ 函数来将文本信息写入文件中，最后，记得在完成操作后关闭文件句柄。
+首先，让我们来看一下如何使用C语言编写文本文件。下面是一个简单的例子：
 
 ```C
 #include <stdio.h>
 
-int main() {
-    // 打开一个文件句柄来保存我们要写入的文本
-    FILE * file = fopen("example.txt", "w");
-
-    // 使用 fprintf 函数将文本信息写入文件中
-    fprintf(file, "这是一段文本信息。");
-
-    // 关闭文件句柄
-    fclose(file);
+int main()
+{
+    FILE *file = fopen("my_text_file.txt", "w"); //打开一个名为"my_text_file.txt"的文本文件
+    fprintf(file, "这是我写的第一行文本。\n"); //向文件中写入一行文本
+    fputs("这是我写的第二行文本。", file); //向文件中写入一行文本
+    fclose(file); //关闭文件
 
     return 0;
 }
 ```
 
-输出示例：
-```
-这是一段文本信息。
-```
+以上代码中，我们使用`fopen()`函数来打开一个文件，并使用`fprintf()`和`fputs()`函数将文本写入文件中。最后，使用`fclose()`函数来关闭文件。
 
-# 深入了解
+运行这段代码后，我们将会在我们的程序所在的文件夹中生成一个名为"my_text_file.txt"的文本文件。打开它，我们就能够看到我们写入的两行文本。
 
-在C语言中，你可以使用不同的文件操作函数来实现不同的文件操作，比如读取文本、追加文本等。同时，你也可以通过指定不同的文件打开模式来达成更多的操作，比如读写模式、追加模式等。了解这些函数与模式可以帮助你更好地使用文本文件来存储和操作文本信息。此外，你也可以使用文件指针来定位特定的位置，从而实现更灵活的文本操作。
+## 深入探讨文本文件的编写
 
-# 看看这些
+为了更好地理解文本文件的编写，让我们来深入探讨一下它的结构。文本文件通常由一系列字符组成，每个字符都由一个字节来表示。在C语言中，我们可以使用`char`类型来表示一个字符。
 
-* [关于C语言文件操作的详细指南](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-* [C语言中文文档-文件操作](https://zh.cppreference.com/w/c/io)
-* [关于Markdown的介绍与使用](https://www.jianshu.com/p/1e402922ee32)
+在编写文本文件时，我们需要注意一些特殊的字符，比如换行符`\n`、制表符`\t`等。这些字符在文本文件中都有着特殊的意义，它们可以帮助我们对文本进行格式化。
+
+除了使用`fprintf()`和`fputs()`函数来写入文本，我们还可以使用`fscanf()`和`fgets()`函数来读取文本文件中的内容，这在处理用户输入等情况时非常有用。
+
+## 查看与参考
+
+了解如何编写文本文件后，你可能会想进一步学习相关的内容。下面是一些我们推荐的文章和资源：
+
+- [C语言文本文件操作教程](https://www.runoob.com/cprogramming/c-file-io.html)
+- [C语言文件操作完全指南](https://www.ibm.com/developerworks/cn/linux/l-cn-fopen/)
+- [C语言标准库文件操作函数参考](https://zhuanlan.zhihu.com/p/108438772)
+
+## 见他处
+
+- [Markdown的用法和语法 (简体中文版)](https://www.jianshu.com/p/988243aef57c)
+- [C语言教程 (简体中文版)](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [C语言标准库参考 (简体中文版)](https://gcc.gnu.org/onlinedocs/gcc-4.8.5/libstdc++/api/a00046.html)

@@ -1,41 +1,52 @@
 ---
-title:    "C++: Cancellando caratteri che corrispondono a un modello."
+title:    "C++: Cancellazione di caratteri corrispondenti a uno schema"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Spesso nella programmazione, ci troviamo a dover manipolare stringhe di testo. Una delle operazioni più comuni è la rimozione di caratteri che corrispondono a un certo modello. In questo articolo, vedremo perché ci potrebbe essere la necessità di eliminare questi caratteri e come farlo in modo efficiente utilizzando il linguaggio di programmazione C++.
 
-## How To
-Per cancellare i caratteri corrispondenti a un pattern, dobbiamo utilizzare la classe std::regex di C++. Questa classe ci consente di creare un oggetto regex che rappresenta il nostro pattern. Possiamo quindi utilizzare il metodo std::regex_replace () per sostituire i caratteri corrispondenti nel nostro testo con una stringa vuota. 
+Spesso, durante lo sviluppo di un programma, può essere necessario eliminare caratteri specifici da una stringa. Ciò può essere utile, ad esempio, per la pulizia dei dati o per soddisfare determinati requisiti del codice.
+
+## Come fare
+
+Per eliminare caratteri corrispondenti a un determinato pattern all'interno di una stringa, possiamo utilizzare la funzione `erase()` in combinazione con il metodo `erase_if()` disponibile nella libreria `<algorithm>`. Ecco un esempio di codice in C++:
 
 ```C++
-#include <iostream>
-#include <regex>
-
-int main() {
-    std::string testo = "Ciao amici! Questa è una stringa di testo.";
-    std::regex pattern("a|o|i|u|e");
-    std::string nuovo_testo = std::regex_replace(testo, pattern, "");
-
-    std::cout << nuovo_testo << std::endl;
-}
+std::string str = "Ciao, come stai?";
+// elimina tutte le lettere maiuscole dalla stringa
+str.erase(std::remove_if(str.begin(), str.end(), ::isupper), str.end());
+// output: "iao, come stai?"
 ```
 
-L'output di questo codice sarà: "Cm! Qst è n strng d tst."
+In questo esempio, la funzione `erase()` viene utilizzata per eliminare ogni carattere della stringa che corrisponde alla condizione definita dalla funzione `remove_if()`. Quest'ultima, a sua volta, utilizza il parametro `::isupper` per verificare se il carattere è maiuscolo o meno.
 
-Dobbiamo notare che l'uso di regex consente di eliminare caratteri corrispondenti anche in posizioni diverse, come ad esempio vocali maiuscole o minuscole. Inoltre, possiamo definire pattern più complessi per soddisfare esigenze specifiche.
+## Approfondimento
 
-## Deep Dive
-Per una maggiore comprensione di come funzionino i regex in C++, è importante conoscere i diversi tipi di metodi disponibili. Oltre al metodo std::regex_replace (), possiamo anche utilizzare std::regex_search () per trovare il primo match del nostro pattern all'interno del testo e std::regex_match () per verificare se l'intera stringa corrisponde al nostro pattern.
+La funzione `erase_if()` ci permette di utilizzare qualsiasi tipo di condizione per eliminare i caratteri desiderati. Ad esempio, possiamo utilizzare una lambda expression per definire una condizione personalizzata:
 
-Inoltre, possiamo utilizzare anche sequenze di escape per caratterizzare determinati caratteri speciali all'interno dei pattern e ottenere risultati più precisi.
+```C++
+std::string str = "Lorem ipsum dolor sit amet";
+// elimina tutte le vocali dalla stringa
+str.erase(std::remove_if(str.begin(), str.end(), [](char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }), str.end());
+// output: "Lrm psm dlr st mt"
+```
+
+Nel codice sopra, la lambda expression controlla se il carattere corrente è una vocale e se lo è, viene eliminato dalla stringa.
+
+Inoltre, è possibile combinare più funzioni della libreria `<algorithm>` per ottenere risultati più complessi. Ad esempio, possiamo eliminare tutti i caratteri che non sono lettere o numeri dalla stringa utilizzando `remove_if()` in combinazione con la funzione `isalnum()`:
+
+```C++
+std::string str = "QWERTY#123";
+// elimina tutti i caratteri non alfanumerici dalla stringa
+str.erase(std::remove_if(str.begin(), str.end(), [](char c) { return !std::isalnum(c); }), str.end());
+// output: "QWERTY123"
+```
 
 ## Vedi anche
-Ecco alcuni link utili per ulteriori informazioni sui regex in C++:
 
-- [Documentazione di C++ regex](https://en.cppreference.com/w/cpp/regex)
-- [Tutorial su regex in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
-- [Esempi di utilizzo di regex in C++](https://www.tutorialspoint.com/cplusplus/cpp_regular_expressions.htm)
+- [Funzione `erase()` in C++](https://www.w3schools.com/cpp/cpp_strings_erase.asp)
+- [Confronto tra `remove_if()` e `erase_if()`](https://stackoverflow.com/questions/31540361/what-is-the-difference-between-stdremove-if-and-stderase-if)
+- [Introduzione alle lambda expressions in C++](https://www.freecodecamp.org/news/how-to-use-lambda-expressions-in-cpp/)

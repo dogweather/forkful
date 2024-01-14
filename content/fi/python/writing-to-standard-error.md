@@ -1,28 +1,31 @@
 ---
-title:    "Python: Kirjoittaminen standardivirheelle"
+title:    "Python: Kirjoittaminen standardivirheeseen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi kirjoittaisit koodissasi standard erroriin (virheenkäsittelyvirtaan)? Standard Error on tärkeä osa koodaamista, joka auttaa sinua parantamaan ohjelmasi virheenkäsittelyä. Se näyttää sinulle, mitä tarkalleen tapahtuu, kun ohjelmasi kohtaa virheen, ja auttaa sinua jäljittämään ja korjaamaan ne nopeasti ja tehokkaasti.
+## Miksi kirjoittaa standard erroriin?
 
-## Miten
+Kirjoittaminen standard erroriin on tärkeä osa Python-ohjelmointia, sillä se mahdollistaa virheiden hallinnan ja ohjelman sujuvan toiminnan. Näin voit tunnistaa ja korjata ongelmia koodissasi ja tehdä siitä entistä tehokkaampaa.
+
+## Kuinka kirjoittaa standard erroriin
+
 ```Python
 try:
-    # Koodi, joka voi aiheuttaa virheen
+    # Tähän kirjoitat koodisi, joka saattaa aiheuttaa virheitä
 except Exception as e:
-    # Kirjoittaa virheen standard erroriin
-    print("Virhe:", e, file=sys.stderr)
+    # Tässä voit kirjoittaa virheen tiedot standard erroriin
+    print("Virhe: ", e, file=sys.stderr)
 ```
 
-Koodin kirjoittaminen standard erroriin on yksinkertaista. Käytä vain ```print``` -funktiota ja anna sille toisena parametrina filen ```sys.stderr```. Tällä tavalla varmistat, että virhe ilmestyy standard erroriin eikä tulostaululle.
+Koodiblokin sisällä oleva `try-except`-rakenne mahdollistaa ohjelman suorituksen jatkumisen, vaikka koodin sisältämässä lohkossa tapahtuisi virhe. `except`-lohkon `print`-komento kirjoittaa virheen tiedot standard erroriin, jotta ne voidaan myöhemmin tarkastella ja korjata.
 
-## Syvällinen sukellus
-Jos haluat tarkempia tietoja ja hallintaa standard errorin käytöstä, voit käyttää Pythonin sisäistä ```traceback```-moduulia. Tämä moduuli auttaa sinua tulostamaan tarkemman virheviestin, joka sisältää virheen aiheuttaneen koodirivin ja tiedostonimen. Voit myös käyttää ```logging```-moduulia tallentaaksesi virheet tietokantaan tai lokitiedostoon.
+## Syvällisempi tarkastelu
+
+Standard error on yksi tapa hallita virheitä Pythonissa. Sitä käytetään yleensä yhdessä `try-except`-rakenteen kanssa, mutta voi myös kirjoittaa suoraan virheen tiedot `sys.stderr`-muuttujaan. Tämä auttaa säilyttämään koodin suorituksen hallinnassa ja välttää näkymättömiä virheitä.
 
 ## Katso myös
-- Virheenkäsittely Pythonissa: https://realpython.com/python-handling-errors/
-- Pythonin sys-moduuli: https://docs.python.org/3/library/sys.html
-- "traceback" -moduulin käyttö: https://docs.python.org/3/library/traceback.html
+- [Pythonin käyttöönotto]() - opas Pythonin asentamiseen ja käynnistykseen
+- [Pythonin virheiden hallinta]() - lisätietoja virheiden hallinnasta Pythonissa.

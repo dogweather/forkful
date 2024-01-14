@@ -1,38 +1,41 @@
 ---
-title:    "Javascript: 표준 에러로 쓰기"
+title:    "Javascript: 표준 오류 쓰기"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-왜 누군가는 에러를 입력하기 위해 코딩하는지 궁금하십니까? 자바스크립트 프로그래밍에서 "표준 에러"는 디버깅 및 오류 찾기에 있어서 매우 유용한 도구입니다. 에러를 입력하면 프로그래밍 과정에서 발생하는 문제를 빠르게 파악하고 해결할 수 있습니다.
 
-## 진행 방법
-에러를 입력하는 방법은 간단합니다. 자바스크립트 코드 내에서 "console.error()" 함수를 사용하면 표준 에러로 메시지를 출력할 수 있습니다. 예를 들어, 아래 코드를 실행하면 "에러 발생!" 이라는 메시지가 표준 에러로 출력됩니다.
+프로그래밍을 하는 데 있어서 디버깅은 항상 중요한 부분입니다. 특히 "standard error"라고 불리는 에러 출력을 다룰 때, 이를 적절히 다루는 것은 매우 중요합니다. 이 블로그 포스트에서는 "standard error"의 중요성과 이를 다루는 방법을 알아보겠습니다.
+
+## 방법
+
+자바스크립트에서 "standard error"를 다루는 가장 기본적인 방법은 `console.error()`를 사용하는 것입니다. 아래의 예시 코드를 참고해보세요.
 
 ```Javascript
-console.error("에러 발생!");
+console.error("에러 메시지");
 ```
 
-출력 결과는 다음과 같습니다.
+위 코드를 실행하면 콘솔에 "에러 메시지"가 출력됩니다. 이를 통해 우리는 가장 기본적인 방법으로 "standard error"를 다룰 수 있다는 것을 알 수 있습니다.
 
+## 깊게 파고들기
+
+`console.error()` 외에도 자바스크립트에서는 `process.stderr.write()`를 통해 "standard error"를 다룰 수 있습니다. 이 메소드는 첫 번째 매개변수로 에러 메시지를 전달받고, 해당 메시지를 "standard error"에 출력합니다. 아래의 예시 코드를 참고해보세요.
+
+```Javascript
+process.stderr.write("에러 메시지");
 ```
-> 에러 발생!
-```
 
-이렇게 간단한 코드만으로도 에러를 입력할 수 있으며, 이를 통해 프로그래밍에서 발생한 문제를 빠르게 파악할 수 있습니다.
+위 코드를 실행하면 콘솔에 "에러 메시지"가 출력됩니다. 이 메소드는 `console.error()`보다 좀 더 특수한 경우에 사용될 수 있습니다. 따라서 개발자는 상황에 맞게 적절한 방법을 선택하여 "standard error"를 다루어야 합니다.
 
-## 심층 탐구
-표준 에러는 여러 가지 방식으로 사용할 수 있습니다. 예를 들어, "console.error()" 함수를 사용하여 에러 메시지뿐만 아니라 변수의 값을도 출력할 수 있습니다. 또한 "try...catch" 문과 함께 사용하여 예외 처리를 할 수도 있습니다.
+## 더 많은 정보
 
-표준 에러는 프로그래밍에서 오류를 찾는 것뿐만 아니라, 프로그램의 실행 과정을 디버깅하는 데에도 매우 유용합니다. 따라서 프로그래밍을 하실 때에는 "console.error()" 함수를 적극적으로 활용하여 빠르고 신뢰성 있는 코드를 작성할 수 있도록 노력해보세요.
+"standard error"를 다루는 것은 개발자에게 필수적인 기술 중 하나입니다. 따라서 자바스크립트에서 이를 제대로 다루고 익숙하게 사용하는 것은 중요합니다. 더 많은 정보는 아래의 링크들을 참고해보세요.
 
-## 참조 자료
-- [MDN web docs - console.error()](https://developer.mozilla.org/ko/docs/Web/API/Console/error)
-- [W3Schools - console.error()](https://www.w3schools.com/jsref/met_console_error.asp)
-- [오류 출력 함수의 사용법](https://devpact.com/186)
-- [자바스크립트 디버깅을 위한 콘솔 활용하기](https://insertkim.com/javascript-dev-console/)
+## 또 다른 참고 자료
 
-## 참고
-[Taking Advantage of console.error() in JavaScript](https://medium.com/young-developer/taking-advantage-of-console-error-in-javascript-62c86dfb0e0a)
+- [MDN - console.error()](https://developer.mozilla.org/ko/docs/Web/API/Console/error)
+- [Node.js - process.stderr](https://nodejs.org/api/process.html#process_process_stderr)
+- [standard error로 디버깅하기](https://joshtronic.com/2016/02/29/debugging-with-stderr/) (영문)

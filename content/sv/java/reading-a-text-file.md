@@ -1,42 +1,63 @@
 ---
-title:    "Java: Läsning av en textfil"
+title:    "Java: Läsa en textfil"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför läsa en textfil?
+## Varför
+Att läsa från en textfil är en vanlig uppgift inom Java-programmering och är användbart för att hämta data och processa den i ditt program. Det kan vara användbart för saker som att läsa in en konfigurationsfil eller ett stort dataset.
 
-Inom programmering, är att läsa in data från en textfil ett viktigt koncept. Detta öppnar upp möjligheten att behandla och manipulera information från externa källor. Det kan också hjälpa till att organisera stora mängder data för enkel åtkomst och användning. Om du är nybörjare inom Java-programmering, är läsning av textfiler ett grundläggande verktyg som kan hjälpa dig att utveckla dina färdigheter.
-
-## Så här läser du en textfil i Java
-
-För att läsa en textfil i Java, behöver du först skapa en File-objekt. Detta görs genom att ange sökvägen till textfilen som en parameter i konstruktorn för File-klassen. Till exempel, om din textfil ligger i samma mapp som din Java-fil, kan du skapa din File-objekt på följande sätt:
-
+## Hur man gör det
+Här är ett enkelt exempel på hur man kan läsa från en textfil i Java och skriva ut innehållet:
 ```Java
-File file = new File("min_textfil.txt");
-```
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-Nästa steg är att skapa en Scanner-objekt och använda din File-objekt som parameter. Scanner används för att läsa informationen från filen och lagra den i variabler för vidare användning. För att läsa innehållet i din textfil, kan du använda följande kod:
-
-```Java
-Scanner scanner = new Scanner(file);
-while (scanner.hasNextLine()) {
-    String data = scanner.nextLine();
-    System.out.println(data);
+public class FileReader {
+	public static void main(String[] args) {
+		// Skapa en ny fil med sökvägen till den önskade textfilen
+		File file = new File("mitt-dataset.txt");
+		try {
+			// Skapa en Scanner för att läsa från filen
+			Scanner scanner = new Scanner(file);
+			// Loopa igenom alla rader i filen
+			while (scanner.hasNextLine()) {
+				// Läs in en rad
+				String line = scanner.nextLine();
+				// Skriv ut raden
+				System.out.println(line);
+			}
+			// Stäng scannern
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			// Om filen inte kan hittas, skriv ut ett felmeddelande
+			System.out.println("Filen kunde inte hittas!");
+		}
+	}
 }
 ```
 
-Ovanstående kod kommer att skriva ut varje rad av textfilen till konsolen. Du kan också använda olika metoder i Scanner-klassen för att läsa specifika datatyper, som int eller double.
+Om vi antar att vår textfil innehåller följande rader:
+```
+Hej
+Välkommen till Java-bloggen
+Detta är en textfil
+```
 
-## Djupdykning i läsning av textfiler
+Så kommer koden ovan att skriva ut följande i konsolen:
+```
+Hej
+Välkommen till Java-bloggen
+Detta är en textfil 
+```
 
-I vår kodexempel, använde vi metoden `hasNextLine()` för att kontrollera om det finns en ytterligare rad att läsa i filen. Detta kan vara användbart om du vill läsa filen rad för rad. Om du istället vill läsa hela filen som en sträng, kan du använda metoden `hasNext()` och `next()`.
-
-Du kan också använda en try-with-resources-sats för att automatiskt stänga din Scanner när du är klar med filen, vilket är en god praxis. Detta gör du genom att lägga till `try` och `catch` runt din kod och inom parentesen för try, skriva `Scanner scanner = new Scanner(file)`. När try-blocket är klart, kommer scanner automatiskt att stängas.
+## Djupdykning
+Det finns flera olika sätt att läsa från en textfil i Java, beroende på vad du vill åstadkomma. Du kan till exempel använda BufferedReader för att kunna läsa in texten rad för rad eller använda olika metoder för att processa filinnehållet som att hitta och ersätta textsträngar. Det är också viktigt att komma ihåg att stänga filen när du är klar med att läsa från den för att undvika problem med resursförvaltningen.
 
 ## Se även
-
-- Java Dokumentation för Scanner: https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
-- Att skriva till en textfil i Java: LINK
-- Att arbeta med filer och mappar i Java: LINK
+- [Java File IO tutorial](https://www.javatpoint.com/java-file-io)
+- [Java FileReader documentation](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
+- [How to Read a File in Java](https://www.w3schools.com/java/java_files_read.asp)

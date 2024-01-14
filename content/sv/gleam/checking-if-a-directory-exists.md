@@ -1,38 +1,39 @@
 ---
-title:    "Gleam: Kontrollera om en mapp existerar"
+title:    "Gleam: Kontrollera om en mapp finns"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att kontrollera om en mapp existerar är en vanlig uppgift för programmerare. Genom att kunna identifiera om en mapp finns eller inte kan man säkerställa att ens kod fungerar korrekt och undvika oväntade fel.
+# Varför
 
-## Hur man gör det
-Att kontrollera om en mapp existerar i Gleam är en relativt enkel process. Vi kan använda oss av den inbyggda standardmodulen `gleam/io/fs` för att få tillgång till funktionen `exists`, som tar in en sträng som representerar mappens sökväg. Om mappen finns returnerar funktionen `ok`, annars returneras `error` med en förklarande text.
+Att kolla om en mapp existerar är en vanlig uppgift för programmerare, särskilt när man arbetar med filsystemet i sina projekt. Det kan också hjälpa till att förhindra fel och krockar i koden. I denna bloggpost kommer vi att utforska hur du kan använda Gleam för att enkelt kolla om en mapp finns eller inte.
 
-```Gleam 
-// Importera standardmodulen
-import gleam/io/fs
+# Hur man gör det
 
-// Definiera sökvägen till mappen vi vill kontrollera
-let directory_path = "C:/Users/Username/Documents/Gleam_Project"
+För att kolla om en mapp existerar i Gleam, kan vi använda funktionen `Dir.exists()` som finns i `gleam/os` biblioteket. Den tar emot en `String` som representerar mappen som ska kollas och returnerar en `Bool` som indikerar om mappen existerar eller inte. Här är ett exempel på hur vi kan använda den funktionen:
 
-// Kontrollera om mappen existerar
-fs.exists(directory_path)
+```Gleam
+import gleam/os
 
-// Exempel på output:
-ok
+fn check_exists() {
+  let mapp = "./mina-filer/"
+  let finns_mapp = gleam/os.Dir.exists(mapp)
+  Gleam.IO.print("Mappen finns: ")
+  Gleam.IO.print(finns_mapp)
+}
+
+check_exists()
 ```
 
-## Djupdykning
-Några saker att tänka på när man kontrollerar om en mapp existerar är sökvägens format och eventuella felmeddelanden som kan returneras. Ofta behöver sökvägen anges i ett specifikt format för att funktionen ska fungera korrekt, och felmeddelanden kan ge värdefull information för att felsöka eventuella problem.
+I det här exemplet kollar vi om mappen "mina-filer" existerar och skriver sedan ut resultatet. Om mappen finns kommer "Mappen finns: true" att skrivas ut, annars kommer "Mappen finns: false" att skrivas ut.
 
-En annan viktig aspekt att tänka på är att funktionen `exists` endast kontrollerar om en mapp existerar, inte om den är åtkomlig eller om man har rättigheter att läsa eller skriva till den. Detta kan vara av betydelse beroende på vad man ska använda informationen för.
+# Djupdykning
 
-## Se även
-- [Dokumentation för Gleams standardmodul `gleam/io/fs`](https://gleam.run/docs/stdlib/fs/)
-- [Guide till Gleams grundläggande syntax](https://gleam.run/docs/guide/)
-- [Interaktiv Gleam-lärandemiljö](https://try.gleam.run/)
+I Gleam, som i många andra programmeringsspråk, är mappar faktiskt bara en typ av fil. Detta betyder att `Dir.exists()` funktionen även kan användas för att kolla om en fil existerar. Det är också viktigt att notera att funktionen inte utvärderar om en fil är tillgänglig eller inte, bara om den existerar eller inte. Om du behöver kolla om en fil är tillgänglig kan du använda funktionen `File.exists()` istället.
 
-För mer information om Gleam och dess möjligheter, besök [Gleams officiella hemsida](https://gleam.run/).
+# Se även
+
+- Officiell Gleam dokumentation: https://gleam.run/
+- Gleam GitHub repository: https://github.com/gleam-lang/gleam

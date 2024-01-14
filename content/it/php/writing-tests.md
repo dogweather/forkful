@@ -1,43 +1,40 @@
 ---
 title:    "PHP: Scrivere test"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché scrivere i test? 
-Scrivere test è una pratica essenziale per garantire la qualità del codice e prevenire bug in una applicazione. Con i test, è possibile identificare e correggere potenziali errori prima che raggiungano l'utente finale e ridurre al minimo il rischio di malfunzionamenti.
+## Perché
 
-## Come scrivere test in PHP
-Scrivere test in PHP è relativamente semplice grazie alla sua flessibilità e alle numerose librerie disponibili. Per iniziare, è importante comprendere i concetti di base dei test, come ad esempio il framework di testing scelto e l'organizzazione dei test in classi e metodi.
+Scrivere test è una pratica fondamentale per uno sviluppatore PHP professionista. Non solo aiuta a garantire il corretto funzionamento del codice, ma anche a facilitare il processo di debugging e a migliorare la qualità del software.
 
-Un esempio di codice per un test semplice in PHP potrebbe essere il seguente:
+## Come fare
+
+Per scrivere test in PHP, è necessario utilizzare un framework di testing come PHPUnit. Di seguito viene mostrato un esempio di codice di un test di unità per una semplice funzione di somma:
 
 ```PHP
-<?php
-use PHPUnit\Framework\TestCase;
-
-class CalculatriceTest extends TestCase {
-  public function testAddizione() {
-    $calc = new Calculatrice();
-    $risultato = $calc->somma(2,3);
+public function testSomma()
+{
+    $risultato = somma(2, 3);
     $this->assertEquals(5, $risultato);
-  }
 }
 ```
 
-Nell'esempio sopra, viene creato un nuovo oggetto di classe `Calculatrice` e viene eseguita una somma tra i numeri 2 e 3. Successivamente, viene utilizzato il metodo `assertEquals` per verificare che il risultato sia effettivamente uguale a 5.
+Questa funzione testa se la funzione "somma" restituisce correttamente il risultato atteso, ovvero 5, quando chiamata con gli argomenti 2 e 3. Il codice all'interno del blocco ```PHP ... ``` viene eseguito come codice PHP normale, ma le affermazioni come "assertEquals" sono metodi di PHPUnit specifici per i test.
 
-## Approfondimento sui test
-Scrivere test non riguarda solo la sintassi e la struttura, ma anche l'approccio e la strategia adottata. È importante capire cosa testare e come farlo. Una buona pratica è quella di scrivere test per ogni funzionalità della nostra applicazione e per ogni possibile scenario.
+## Deep Dive
 
-Inoltre, esistono diversi tipi di test che possono essere utilizzati in base alle esigenze, come ad esempio i test di unità, i test di integrazione e i test di accettazione. Ognuno di essi ha un obiettivo specifico e contribuisce a garantire la qualità del software.
+Scoprire tutte le funzionalità e i metodi disponibili in PHPUnit richiede del tempo e della pratica, ma ci sono alcune best practice da tenere a mente per scrivere test efficaci:
 
-È inoltre fondamentale ricordare che i test devono essere regolarmente eseguiti e mantenuti aggiornati per essere efficaci.
+- Scrivere test prima di scrivere il codice effettivo (TDD - Test Driven Development).
+- Testare tutte le funzionalità e i casi limite possibili.
+- Utilizzare nomi significativi per i test e gli output dei messaggi di errore per facilitare il debugging.
+- Rimuovere i test inutili o ridondanti per mantenere la suite di test snella e facile da mantenere.
 
-# Vedi anche
-- [Documentazione ufficiale di PHPUnit](https://phpunit.de/documentation.html)
-- [Tutorial sul testing PHP di TutsPlus](https://code.tutsplus.com/tutorials/test-driven-development-in-php-introduction--net-25796)
-- [Libreria Mockery per il mocking degli oggetti in PHP](https://github.com/mockery/mockery)
+## Vedi anche
 
-Grazie per aver letto questo articolo sui test in PHP! Continua ad approfondire questo argomento per migliorare le tue abilità di sviluppo e creare applicazioni di alta qualità. Buon coding!
+- [PHPUnit Documentation](https://phpunit.de/documentation.html)
+- [PHP Testing: Beginner's Guide](https://code.tutsplus.com/tutorials/php-testing-beginners-guide--net-5144)
+- [The Art of Unit Testing with Examples in PHP](https://www.amazon.com/Art-Unit-Testing-Examples/dp/1617291502)

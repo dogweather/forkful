@@ -1,66 +1,46 @@
 ---
-title:    "PHP: Usando expressões regulares"
+title:    "PHP: Utilizando expressões regulares"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em Programação PHP?
+## Por que utilizar expressões regulares em programação PHP?
+As expressões regulares são uma ferramenta poderosa para manipulação de texto em programas de PHP. Elas permitem que você procure por padrões específicos em uma string e faça alterações ou extrações com base neles. Se você trabalha com manipulação de strings em seu código, então as expressões regulares podem ser uma grande ajuda para tornar as coisas mais eficientes e eficazes.
 
-As Expressões Regulares são uma ferramenta poderosa para manipular e validar dados em uma aplicação PHP. Elas permitem que você procure, substitua ou valide padrões específicos em strings, economizando tempo e esforço no processamento de dados.
+## Como utilizar expressões regulares em PHP
+Para começar, certifique-se de que seu ambiente PHP esteja configurado com suporte para expressões regulares. Depois disso, a sintaxe básica é a seguinte:
 
-## Como usar Expressões Regulares em PHP
-
-Existem duas maneiras de usar Expressões Regulares em PHP: com a função preg_match() ou com o operador preg_replace(). Ambos os métodos requerem um padrão e uma string de entrada como parâmetros.
-
-Exemplo de uso com preg_match():
-
-```PHP
-$string = "Olá, eu sou um programador PHP";
-
-if (preg_match("/programador/", $string)) {
-  echo "Encontrou a palavra programador";
+```
+$padrao = "/regular expression/";
+$string = "exemplo de texto com padrão de correspondência";
+if (preg_match($padrao, $string)) {
+  echo "Padrão encontrado!";
 } else {
-  echo "Não encontrou a palavra programador";
+  echo "Padrão não encontrado.";
 }
 ```
 
-Exemplo de saída:
+Neste exemplo, o padrão "/regular expression/" é procurado na string "exemplo de texto com padrão de correspondência". Se houver correspondência, a mensagem "Padrão encontrado!" será exibida.
+
+Você também pode usar expressões regulares para substituir partes de uma string. Por exemplo:
 
 ```
-Encontrou a palavra programador
+$padrao = "/php/i";
+$string = "Eu amo programar em PHP!";
+$replaced = preg_replace($padrao, "JavaScript", $string);
+echo $replaced;
 ```
 
-Exemplo de uso com preg_replace():
+Neste caso, o padrão "/php/i" é substituído por "JavaScript" na string, resultando na mensagem "Eu amo programar em JavaScript!".
 
-```PHP
-$string = "Hoje é um lindo dia para programar";
+## Um mergulho mais profundo em expressões regulares
+As expressões regulares podem ser usadas para padrões mais complexos, como procurar por uma determinada quantidade de dígitos em um número de telefone ou extrair informações de um texto com formato específico. Existem muitos recursos disponíveis na documentação oficial do PHP para ajudá-lo a aprender mais sobre expressões regulares e como usá-las em diferentes cenários.
 
-$novaString = preg_replace("/programar/", "codificar", $string);
-echo $novaString;
-```
+## Veja também
+- [Documentação oficial das expressões regulares no PHP](https://www.php.net/manual/pt_BR/book.pcre.php)
+- [Tutorial de expressões regulares em PHP (em inglês)](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Exemplos práticos de utilização de expressões regulares em PHP (em português)](https://www.devmedia.com.br/introducao-ao-uso-de-expressoes-regulares-em-php/25337)
 
-Exemplo de saída:
-
-```
-Hoje é um lindo dia para codificar
-```
-
-## Mergulho Profundo em Expressões Regulares
-
-Além das funções preg_match() e preg_replace(), existem muitos metacaracteres e quantificadores que podem ser usados em Expressões Regulares para buscar padrões mais complexos. Alguns exemplos são:
-
-- . (ponto): representa qualquer caractere
-- * (asterisco): corresponde a zero ou mais ocorrências do padrão anterior
-- ^ (circunflexo): marca o início de uma string
-- $ (cifrão): marca o final de uma string
-
-É importante lembrar que os padrões são case-sensitive, a menos que a flag "i" seja usada após a expressão regular.
-
-Para mais informações e exemplos, consulte a [documentação oficial do PHP sobre Expressões Regulares](https://www.php.net/manual/pt_BR/book.pcre.php).
-
-## Veja Também
-
-- [Tutorial sobre Expressões Regulares em PHP](https://www.devmedia.com.br/expressoes-regulares-no-php-aprenda-a-utilizar/33517)
-- [Ferramenta Online para testar Expressões Regulares](https://regex101.com/)
-- [Exemplos Reais de Uso de Expressões Regulares em PHP](https://www.geeksforgeeks.org/real-life-examples-use-regular-expressions-python/)
+Com a devida prática e conhecimento, você poderá aproveitar ao máximo as expressões regulares em seus projetos de PHP. Elas podem economizar tempo e esforço na manipulação de strings e tornar seu código mais eficiente. Continue estudando e explorando o potencial das expressões regulares para dominar essa poderosa ferramenta em sua programação PHP.

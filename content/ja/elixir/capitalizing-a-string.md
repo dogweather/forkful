@@ -1,37 +1,41 @@
 ---
-title:    "Elixir: 文字列の先頭を大文字にする"
+title:    "Elixir: 文字列の大文字化"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-文字列を大文字に変換することの重要性や必要性について説明します。Elixirでこの機能を使用することで、コードの保守性や読みやすさが向上し、バグの発生を抑えることができます。
+文字列の大文字化を行うことの利点や重要性を知りたいですか？Elixirでの文字列処理は非常に便利です。大文字化は、データの整理や、見やすくするために活用されることがあります。
 
-## 使い方
+## 方法
 
-文字列を大文字に変換する方法はいくつかありますが、ここではElixirの組み込み関数である`String.capitalize/1`を紹介します。以下のコード例を参考にしてください。
+まずは、ElixirのString.capitalize/1関数を使い、大文字化したい文字列を引数として渡します。例えば、"elixir"という文字列を渡すと、"Elixir"という出力が得られます。
 
 ```Elixir
-string = "elixir programming"
-capitalized_string = String.capitalize(string)
-
-IO.puts(capitalized_string)
+String.capitalize("elixir")
+> "Elixir"
 ```
 
-出力結果:
+また、String.upcase/1関数を使うことで、すべての文字を大文字にすることができます。例えば、"hello"という文字列を渡すと、"HELLO"という出力が得られます。
 
+```Elixir
+String.upcase("hello")
+> "HELLO"
 ```
-Elixir programming
-```
 
-## 詳細について
+## ディープダイブ
 
-文字列を大文字に変換する方法は、プログラミング言語によって異なりますが、Elixirの`String.capitalize/1`はUnicodeに完全に準拠しているため、さまざまな言語や文字に対応することができます。また、`String.capitalize/1`は引数に指定した文字列を変更せず、新しい文字列を返すため、元の文字列を崩すことなく変換することができます。
+Elixirでは、String.capitalize/1やString.upcase/1のような文字列処理を行う関数が多く提供されています。これらの関数を組み合わせることで、柔軟な文字列処理が可能です。
+
+また、Elixirでは文字列だけでなく、リストやバイナリなど様々なデータ型の処理も行うことができます。さらにパターンマッチングや関数のパイプラインなどの機能を使うことで、より効率的なコードを書くことができます。
 
 ## 参考リンク
 
-- [Elixir公式ドキュメント - String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Elixir School - Capitalizing Strings](https://elixirschool.com/jp/lessons/basics/string#capitalizing-strings)
-- [Programming Phoenix - Strings and Binaries](https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/#code-reading-and-writing-binaries)
+- [Elixir 公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/basics/#strings)
+- [Elixirで楽しく文字列を処理しよう](https://qiita.com/hikiko_/items/8a9df2ef599014ffd848) 
+
+##参考資料

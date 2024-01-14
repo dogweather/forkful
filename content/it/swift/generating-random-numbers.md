@@ -1,41 +1,26 @@
 ---
 title:    "Swift: Generazione di numeri casuali"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Generare numeri casuali è un'abilità importante per i programmatori che vogliono creare applicazioni divertenti con una componente casuale, come un gioco mobile.
 
-L'utilizzo di numeri casuali è fondamentale in molti aspetti della programmazione, come nella creazione di giochi o nell'esecuzione di test casuali. Anche per scopi di sicurezza, è importante essere in grado di generare numeri casuali affidabili.
-
-## Come fare
-
-Per generare numeri casuali in Swift, è possibile utilizzare la funzione `arc4random_uniform` del framework `Foundation`. Questa funzione accetta un parametro intero e restituisce un numero intero casuale tra 0 e il parametro meno 1.
-
+## Come
+La funzione `random` in Swift permette di generare numeri casuali in modo semplice e rapido. Ecco un esempio:
+```Swift
+let randomNumber = Int.random(in: 1...10)
+print(randomNumber)
 ```
-Swift
-let random = arc4random_uniform(10)
-print(random)
-// Output: un numero casuale tra 0 e 9
-```
-
-In alternativa, è possibile utilizzare il metodo `random` della classe `Int` per generare un numero casuale compreso tra due valori specifici:
-
-```
-Swift
-let random = Int.random(in: 1...10)
-print(random)
-// Output: un numero casuale tra 1 e 10
-```
+Questo codice genererà un numero casuale compreso tra 1 e 10 e lo stamperà in console.
 
 ## Approfondimento
-
-La generazione di numeri casuali non è una semplice operazione e richiede una certa attenzione. In Swift, la funzione `arc4random_uniform` utilizza un generatore di numeri pseudo-casuali a 32 bit chiamato Mersenne Twister. Questo generatore è estremamente potente e la probabilità di ripetere lo stesso numero è molto bassa, tuttavia non è completamente casuale.
-
-Se è necessario una maggiore sicurezza nella generazione dei numeri casuali, è consigliabile utilizzare il framework `CryptoKit` introdotto in iOS 13 e macOS 10.15. Questo framework offre funzioni per la generazione di numeri casuali crittograficamente sicuri.
+La funzione `random` in Swift utilizza un generatore di numeri casuale a 32-bit e una distribuzione uniforme. Ciò significa che ogni numero ha la stessa probabilità di essere generato. Inoltre, è possibile utilizzare la funzione anche per generare numeri in virgola mobile o booleani.
 
 ## Vedi anche
-
-- [Docs: Generazione di numeri casuali in Swift](https://developer.apple.com/documentation/swift/int/2995600-random)
-- [Articolo: Generazione di numeri casuali in Swift con CryptoKit](https://www.hackingwithswift.com/example-code/system/how-to-generate-random-number-in-swift-using-cryptokit)
+- Documentazione ufficiale di Swift sulla funzione `random`: https://developer.apple.com/documentation/swift/int/2995645-random
+- Tutorial di Ray Wenderlich su come generare numeri casuali in Swift: https://www.raywenderlich.com/11053630-random-numbers-in-swift 
+- Altri metodi per generare numeri casuali in Swift: https://www.hackingwithswift.com/articles/68/how-to-generate-random-numbers-in-swift

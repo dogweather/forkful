@@ -1,41 +1,43 @@
 ---
-title:    "Bash: Ein String großschreiben"
+title:    "Bash: Großschreibung einer Zeichenkette"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-
-Ein häufiges Problem beim Programmieren in Bash ist es, Strings oder Zeichenketten korrekt zu formatieren. Oftmals müssen Wörter oder ganze Sätze großgeschrieben werden, sei es für die Darstellung in einer Benutzeroberfläche oder für die Weiterverarbeitung in einem Skript. In diesem Blogpost wollen wir uns die Möglichkeit anschauen, in Bash Strings zu großschreiben.
+## Warum
+Wenn Sie sich jemals gefragt haben, wie Sie Großbuchstaben in einem Bash-Skript verwenden können, dann sind Sie hier richtig! Hier werden wir besprechen, warum es wichtig sein könnte, eine Zeichenfolge zu capitalisieren und wie man es richtig macht.
 
 ## Wie geht das?
+Das Capitalizing von Strings in Bash ist eine einfache Aufgabe, die mit dem `tr` Befehl durchgeführt werden kann. Der `tr` Befehl steht für "Translate" und kann verwendet werden, um Zeichen in einer Zeichenfolge zu ändern. Hier folgt ein Beispiel, wie man eine Zeichenfolge in Großbuchstaben übersetzt:
 
-Um einen String in Bash zu großzuschreiben, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der internen `tr` Funktion:
+```Bash
+# Erstelle eine Variable mit einer Zeichenfolge
+string="hallo welt"
+ 
+# Verwende den `tr` Befehl, um die Zeichenfolge in Großbuchstaben zu übersetzen
+string_caps=$(echo $string |tr '[:lower:]' '[:upper:]')
 
-```bash
-echo "hallo welt" | tr '[:lower:]' '[:upper:]'
+# Gib das Ergebnis aus
+echo $string_caps # Output: HALLO WELT
 ```
 
-Dieses Beispiel wird den String "hallo welt" in "HALLO WELT" umwandeln. Der `tr` Befehl verwendet reguläre Ausdrücke, um bestimmte Zeichen oder Zeichengruppen zu ersetzen.
+Hier haben wir zunächst eine Variable mit der Zeichenfolge "hallo welt" erstellt. Dann wurde der `tr` Befehl verwendet, um alle Kleinbuchstaben in Großbuchstaben zu übersetzen. Schließlich wurde das Ergebnis mit dem `echo` Befehl ausgegeben.
 
-Eine andere Möglichkeit ist die Verwendung der `awk` Funktion, die es ermöglicht, das erste Zeichen jedes Wortes in Großbuchstaben zu setzen:
+## Deep Dive
+Der `tr` Befehl verwendet eine spezielle Syntax, um Zeichen in einer Zeichenfolge zu übersetzen. Hier ist ein Überblick über diese Syntax:
 
-```bash
-echo "hallo welt" | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1))substr($i,2)}1'
-```
+1. Der `tr` Befehl wird immer mit zwei Zeichensätzen verwendet. Der erste Satz ist der Satz, der übersetzt werden soll, und der zweite Satz ist der Satz, in den übersetzt werden soll.
+2. Der Befehl wird in der Form `tr '[zeichensatz1]' '[zeichensatz2]'` verwendet.
+3. Die einzelnen Zeichen in jedem Satz werden mit Doppelpunkten getrennt.
+4. Wenn ein Bindestrich (-) verwendet wird, bedeutet dies, dass alle Zeichen zwischen den angegebenen Zeichen übersetzt werden sollen.
 
-Dieses Beispiel wird die Ausgabe "Hallo Welt" erzeugen. Beachte, dass dies nur für die ersten Buchstaben jedes Wortes gilt, während alle anderen Buchstaben kleingeschrieben werden.
-
-## Tiefer Einblick
-
-Um zu verstehen, wie diese Methoden funktionieren, ist ein tieferer Einblick in die `tr` und `awk` Funktionen hilfreich.
-
-`tr` steht für "translate" und kann verwendet werden, um das Auftreten eines oder mehrerer Zeichen durch ein anderes Zeichen zu ersetzen. In unserem Beispiel verwenden wir reguläre Ausdrücke, um alle Kleinbuchstaben in Großbuchstaben zu übersetzen. Die Option `[:lower:]` gibt dabei alle Kleinbuchstaben an, während `[:upper:]` alle Großbuchstaben angibt, die als Ersatz verwendet werden.
-
-`awk` ist eine mächtige textbasierte Skriptsprache, die hauptsächlich für die Verarbeitung von Daten und Textdateien verwendet wird. Mit `awk` können wir die `toupper` Funktion verwenden, um das erste Zeichen in Großbuchstaben zu setzen, während `substr` verwendet wird, um den restlichen Teil des Wortes unverändert zu lassen.
+Eine vollständige Liste der verfügbaren Zeichensätze und deren Verwendung finden Sie in der [manpage](https://man7.org/linux/man-pages/man1/tr.1.html) zur `tr` Befehl.
 
 ## Siehe auch
+- [The `tr` Befehl in der Bash-Referenz](https://www.gnu.org/software/bash/manual/html_node/The-tr-Builtin.html)
+- [Eine Einführung in die Bash-Programmierung](https://www.tutorialspoint.com/unix/unix-shell.htm)
+- [Eine Übersicht über Linux-Befehle](https://www.linux.com/training-tutorials/linux-commands-beginners/)
 
-- [Bash Reference Manual - tr](https://www.gnu.org/software/bash/manual/html_node/The-tr-Builtin.html)
-- [GNU Awk User’s Guide - toupper](https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html#String-Functions)
+Danke fürs Lesen und viel Spaß beim Capitalizing Ihrer Strings mit Bash!

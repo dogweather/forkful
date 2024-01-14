@@ -1,47 +1,66 @@
 ---
 title:    "C: 임시 파일 만들기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-일시적인 파일을 만드는 것에 대해 사람들이 관심을 갖는 이유는 무엇일까요? 일시적인 파일은 프로그램에서 임시적인 데이터를 저장하는 데 사용됩니다. 예를 들어, 사용자가 프로그램을 실행하면 일시적인 파일에 작업 중인 데이터가 저장되어 프로그램을 종료할 때까지 유지됩니다. 이렇게 함으로써, 사용자는 필요할 때마다 프로그램을 재시작할 필요 없이 이전 상태를 복원할 수 있습니다.
+# 왜
 
-## 사용 방법
-다음은 C 언어를 사용하여 일시적인 파일을 만드는 간단한 예제 코드입니다. 아래 코드를 작성하고 실행하면 프로그램 폴더에 "temp.txt"라는 이름으로 일시적인 파일이 생성됩니다.
+임시 파일을 생성하는 것에 대해 1-2문장 정도의 이유를 설명합니다.
+
+임시 파일, 또는 임시 데이터를 사용하여 프로그램을 실행하면, 메모리에 부담이나 속도 저하 없이 데이터를 처리할 수 있습니다.
+
+# 사용 방법
+
+C 언어에서 임시 파일을 생성하는 방법을 예제 코드와 함께 설명합니다.
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    FILE *temp_file;
-    temp_file = tmpfile();
+    // 임시 파일 생성을 위한 파일 포인터 선언
+    FILE *tmp;
 
-    if (temp_file == NULL) {
-        printf("일시적인 파일을 만들 수 없습니다.");
-        return 1;
+    // 임시 파일 생성
+    tmp = tmpfile();
+    if (tmp == NULL) {
+        printf ("임시 파일을 생성하는데 실패하였습니다.\n");
+        exit(1);
     }
 
-    fprintf(temp_file, "이것은 일시적인 파일입니다.\n");
-    fclose(temp_file);
+    // 임시 파일에 데이터 쓰기
+    fputs("Hello, World!", tmp);
 
-    printf("일시적인 파일이 생성되었습니다.");
+    // 임시 파일에서 데이터 읽기
+    rewind(tmp);
+    char buffer[12];
+    fgets(buffer, 12, tmp);
+    printf("%s\n", buffer);
+
+    // 임시 파일 삭제
+    fclose(tmp);
+
     return 0;
 }
 ```
 
-이제 코드를 실행해 보면 "temp.txt" 파일에 "이것은 일시적인 파일입니다."라는 내용이 저장된 것을 볼 수 있습니다.
+위의 예제 코드를 실행하면 "Hello, World!"가 출력되는 것을 볼 수 있습니다.
 
-## 깊게 들어가기
-일시적인 파일을 만드는 방법에 대해 더 알아보겠습니다. 위에서 사용한 `tmpfile()` 함수는 일시적인 파일을 만드는 가장 쉬운 방법 중 하나입니다. 이 함수는 파일 포인터를 반환하는데, 파일 데이터가 가상 메모리에 저장되기 때문에 디스크 공간이 아낀다는 장점이 있습니다. 하지만 이 함수는 파일을 생성하고 닫는 과정을 알아서 처리하기 때문에 사용자가 입출력 함수를 사용할 필요가 없습니다.
+# 더 깊이 들어가기
 
-또 다른 방법으로는 `mkstemp()` 함수가 있습니다. 이 함수는 임시 파일을 생성하고 그 이름을 반환합니다. 사용자는 이 파일에 대해 직접 입출력을 수행해야 하며, 프로그램이 종료되면 파일도 삭제됩니다.
+임시 파일을 생성하는 과정에서 아래와 같이 다양한 옵션을 설정할 수 있습니다.
 
-더 깊게 들어가면, 일시적인 파일은 `unlink()` 또는 `remove()` 함수를 사용하여 삭제할 수 있습니다. 또한 일시적인 파일은 여러 개 생성될 수 있으며, 프로그램이 종료되면 시스템이 자동으로 이 파일들을 삭제합니다.
+- `tmpfile()` 함수를 사용하여 기본적인 임시 파일 생성
+- `tmpnam()` 함수를 사용하여 임시 파일의 파일명을 지정할 수 있음
+- `tmpfile_s()` 함수를 사용하여 보안적으로 안전한 임시 파일 생성
 
-## 참고 문서
-- [C언어 파일 관리 - 일시적인 파일 생성하기](https://dojang.io/mod/page/view.php?id=307)
-- [C언어 파일 API - 임시 파일](http://tcpschool.com/c/c_file_tmpfile)
-- [C언어 파일 API - 일시적인 파일 생성하기](http://tcpschool.com/c/c_file_create_tmpfile)
+이외에도 임시 파일의 특정 위치나 크기, 퍼미션 등을 설정할 수 있습니다.
+
+# 관련 링크 보기
+
+[임시 파일 생성 및 사용 방법](https://www.geeksforgeeks.org/tmpfile-tmpnam-and-tmpnam-s-functions-in-c-with-examples/) \
+[C 언어 입문자를 위한 무료 온라인 강좌](https://www.coursera.org/learn/c-programming) \
+[C 언어 공식 문서](https://en.cppreference.com/w/c)

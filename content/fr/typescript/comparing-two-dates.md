@@ -1,62 +1,65 @@
 ---
-title:    "TypeScript: Comparaison de deux dates"
+title:    "TypeScript: Comparer deux dates"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Comparer des dates est souvent une tâche courante dans la programmation, que ce soit pour vérifier si une date est antérieure ou postérieure à une autre, ou pour calculer le nombre de jours entre deux dates. Dans cet article, nous allons découvrir comment comparer facilement deux dates avec TypeScript.
+L'une des tâches les plus courantes en programmation est la comparaison de deux dates. Cela peut être utile pour déterminer si une date est antérieure ou postérieure à une autre, ou encore pour calculer la différence entre les deux.
 
 ## Comment faire
 
-Pour comparer deux dates avec TypeScript, nous allons utiliser les objets Date. Supposons que nous ayons deux dates à comparer, "8 mars 2021" et "10 juin 2021". Nous allons les définir comme objets Date dans notre code :
+Il existe plusieurs façons de comparer des dates en TypeScript. Voici quelques exemples de code avec leur sortie correspondante :
 
 ```TypeScript
-const date1 = new Date("2021-03-08");
-const date2 = new Date("2021-06-10");
-```
+//Création de deux dates
+const date1 = new Date(2020, 9, 1);
+const date2 = new Date(2020, 9, 5);
 
-Maintenant que nous avons nos deux dates, nous pouvons utiliser les opérateurs de comparaison standard pour les comparer :
-
-```TypeScript
+//Comparaison de dates simples avec "<" et ">"
 if (date1 < date2) {
-  console.log("La date 1 est antérieure à la date 2.");
-} else if (date1 > date2) {
-  console.log("La date 1 est postérieure à la date 2.");
+  console.log("La première date est antérieure à la seconde.");
 } else {
-  console.log("Les deux dates sont identiques.");
+  console.log("La première date est postérieure à la seconde.");
 }
-```
 
-Dans cet exemple, nous utilisons les opérateurs < (inférieur), > (supérieur) et === (égal) pour comparer les deux dates. Nous pouvons également utiliser les opérateurs <= (inférieur ou égal) et >= (supérieur ou égal).
-
-Nous pouvons également utiliser la méthode getTime() pour comparer des dates en millisecondes :
-
-```TypeScript
+//Comparaison de dates avec ".getTime()" qui renvoie un timestamp en millisecondes
 if (date1.getTime() < date2.getTime()) {
-  console.log("La date 1 est antérieure à la date 2.");
-} else if (date1.getTime() > date2.getTime()) {
-  console.log("La date 1 est postérieure à la date 2.");
+  console.log("La première date est antérieure à la seconde.");
 } else {
-  console.log("Les deux dates sont identiques.");
+  console.log("La première date est postérieure à la seconde.");
 }
+
+//Calcul de la différence de jours entre les deux dates
+const difference = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24);
+console.log("Il y a " + difference + " jours entre les deux dates.");
 ```
 
-## Deep Dive
+Sortie :
 
-Il est important de noter que les dates sont comparées en fonction de leur horodatage, et non en fonction de leur format d'affichage. De plus, les dates peuvent varier selon les fuseaux horaires, il est donc recommandé de toujours travailler avec des dates heure-locale.
-
-Pour calculer le nombre de jours entre deux dates, nous pouvons utiliser la méthode getTime() pour obtenir leur différence en millisecondes, puis la convertir en jours :
-
-```TypeScript
-const difference = Math.abs(date1.getTime() - date2.getTime());
-const jours = Math.floor(difference / (1000 * 60 * 60 * 24));
 ```
+La première date est antérieure à la seconde.
+La première date est antérieure à la seconde.
+Il y a 4 jours entre les deux dates.
+```
+
+## Plongée en profondeur
+
+En plus de ces méthodes de comparaison, il existe d'autres fonctions utiles pour travailler avec des dates en TypeScript. En voici quelques-unes :
+
+- `.getMonth()` : renvoie le mois de la date (0 pour janvier, 11 pour décembre)
+- `.getDay()` : renvoie le jour de la semaine (0 pour dimanche, 6 pour samedi)
+- `.getFullYear()` : renvoie l'année de la date
+- `.setDate()` : définit le jour de la date en spécifiant une valeur numérique
+- `.toLocaleDateString()` : renvoie une représentation de la date sous forme de chaîne de caractères selon la locale du navigateur
+
+Il est également possible de comparer des dates en utilisant des bibliothèques telles que "date-fns" ou "moment.js". Ces bibliothèques offrent des fonctions avancées pour travailler avec des dates et permettent de comparer des dates avec des critères plus précis (comme uniquement le jour ou le mois).
 
 ## Voir aussi
 
-- [Documentation officielle de TypeScript sur les objets Date](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
-- [Tutoriel sur la comparaison de dates en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-compare-dates-in-javascript)
-- [Article sur la manipulation de dates en TypeScript](https://blog.bitsrc.io/manipulating-dates-with-moment-js-and-typescript-714e24d644c2)
+- [Documentation sur les dates en TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#date-allows-a-date-type)
+- [Comparaison de dates en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Dates)
+- [Bibliothèque date-fns pour TypeScript](https://date-fns.org/docs/Getting-Started)

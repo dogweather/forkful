@@ -1,42 +1,68 @@
 ---
-title:    "Arduino: 패턴과 일치하는 문자 삭제"
+title:    "Arduino: 패턴에 일치하는 문자 삭제하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-캐릭터 패턴을 매칭하여 지우는 프로그래밍을 하는 이유는 무엇인가요? 이 기능을 배우면서 발생할 수 있는 실제 상황에 대해 간단히 설명해보겠습니다.
+Arduino 프로그래밍을 하는 동안 캐릭터를 삭제하는 것이 중요한 이유는 여러 가지 있습니다. 예를 들어, 우리는 입력된 데이터를 정제하거나 정렬하는 등의 목적으로 캐릭터를 삭제합니다. 혹은 우리가 만든 프로그램이 정해진 패턴의 문자를 제외한 다른 문자를 받아들이지 않도록 하기 위해서도 캐릭터 삭제를 하는 것이 중요할 수 있습니다.
 
-## 어떻게
+## 하기
 
-아두이노에서 캐릭터 패턴을 매칭하여 지우는 방법을 배우는 것은 매우 간단합니다. 아래의 예시 코드와 출럭을 통해 쉽게 이해해보세요.
+우선, 삭제하고자 하는 패턴을 정의해야 합니다. 이후에는 ```if```문을 사용하여 입력된 문자가 해당 패턴과 일치하는지를 확인합니다. 일치하지 않는 경우 해당 캐릭터를 출력하거나 다른 작업을 수행할 수 있습니다. 아래 예시 코드를 참고해주세요.
 
 ```Arduino
-// 캐릭터 패턴을 매칭하여 삭제하는 예시 코드
-String input = "Hello Arduino";
-String pattern = "Ard";
-String output = input.replace(pattern, "");
-Serial.println(output); // Output: Hello uino
+char input[] = "Hello123$&";
+char pattern[] = "123$&";
+
+//반복문을 통해 입력된 문자를 하나씩 확인합니다.
+for(int i = 0; input[i] != '\0'; i++){
+    //만약 입력된 문자가 패턴과 일치하지 않는 경우, 해당 문자를 출력합니다.
+    if(input[i] != pattern[i]){
+        Serial.println(input[i]);
+    }
+}
 ```
 
-위의 코드에서는 `replace()` 함수를 사용하여 원하는 패턴의 문자를 지우는 것이 포인트입니다. 위의 예시 코드에서는 `pattern` 변수에 `Ard` 라는 문자열을 지정하였기 때문에 `input` 변수에서 `Ard` 라는 문자가 포함된 경우에만 해당 문자열을 삭제합니다. 여러분이 원하는 다른 패턴의 문자를 삭제하고 싶다면 `Ard` 부분을 다른 문자열로 바꾸어주면 됩니다.
+위 코드를 실행하면 ```Hello```가 출력될 것이고, 패턴과 일치하지 않는 ```123$&```는 출력되지 않을 것입니다. 이렇게 함으로써 우리는 정해진 패턴의 캐릭터를 삭제할 수 있게 됩니다.
 
-## 깊이 파고들기
+## 깊게 파헤치기
 
-캐릭터 패턴을 매칭하여 삭제하는 기능을 더 깊게 이해하기 위해서는 문자열의 다양한 기능을 알아야 합니다. 예를들어 `replace()` 함수 외에도 `substring()`, `indexOf()` 등의 함수들을 사용하여 문자열을 조작할 수 있습니다. 또한 정규표현식을 사용하여 보다 정교한 패턴 매칭이 가능합니다.
+삭제하고자 하는 패턴이 복잡하거나 여러 개의 패턴에 대해 적용해야 할 경우에는 어떻게 해야 할까요? 이런 경우에는 정규표현식을 사용할 수 있습니다. 정규표현식은 복잡한 패턴을 간단하게 표현할 수 있게 해주는 도구입니다. 아래 예시 코드를 참고해주세요.
 
-## 더 알아보기
+```Arduino
+#include <regex.h>
 
-이번 포스트에서는 캐릭터 패턴 매칭 및 삭제에 대해 간단히 알아보았습니다. 아래의 링크들을 통해 관련된 더 많은 정보를 얻어보세요.
+char input[] = "Hello123$& World456^";
 
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 문서](https://www.arduino.cc/reference/en)
-- [정규표현식 가이드](https://regexone.com/)
- 
-## 참고 자료
+// 패턴 "Hello"와 "World"의 캐릭터를 제외한 모든 캐릭터를 삭제하기 위한 정규표현식입니다.
+char pattern[] = "[Hello]|[World]"; 
 
-- [Arduino String 라이브러리](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Replace 함수 문서](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Arduino 문자열 조작 관련 예시 코드](https://forum.arduino.cc/index.php?topic=412577.0)
+//정규표현식을 사용하기 위해 필요한 객체를 생성합니다.
+regex_t regex;
+
+//패턴을 컴파일합니다. 성공적인 경우 0을 반환합니다.
+int result = regcomp(&regex, pattern, 0);
+
+//만약 컴파일에 실패한 경우 에러 메시지를 출력합니다.
+if(result != 0){
+    char error_message[100];
+    regerror(result, &regex, error_message, sizeof(error_message));
+    Serial.println(error_message);
+}
+
+//패턴과 일치하지 않는 캐릭터를 삭제합니다.
+char new_string[100];
+regreplace(new_string, input, &regex, "");
+Serial.println(new_string);
+```
+
+위 코드를 실행하면 ```Hello World```만 남게 될 것입니다. 이처럼 정규표현식을 사용하면 복잡한 패턴을 효과적으로 삭제할 수 있습니다.
+
+## 이어서 보기
+
+- [](https://www.arduino.cc/en/Reference/String)
+- [](https://www.geeksforgeeks.org/regular-expressions-in-c-set-1-introduction-basics/)

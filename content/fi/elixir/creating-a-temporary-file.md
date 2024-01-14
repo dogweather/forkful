@@ -1,45 +1,51 @@
 ---
-title:    "Elixir: Väliaikaisen tiedoston luominen"
+title:    "Elixir: Tilapäistiedoston luominen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi luoda väliaikainen tiedosto Elixir-ohjelmoinnissa?
 
-Joskus ohjelman suorittamisen aikana on tarpeen tallentaa väliaikainen tiedosto, esimerkiksi väliaikaisen tiedon kanssa työskentelyyn tai muokattavan tiedoston varmuuskopiointiin. Tässä blogikirjoituksessa opit, miten voit luoda väliaikaisen tiedoston Elixir-ohjelmassa ja miksi se voi olla hyödyllistä.
+Väliaikaiset tiedostot ovat erittäin hyödyllisiä monissa tilanteissa ohjelmoinnissa, myös Elixirissä. Niitä voidaan käyttää esimerkiksi väliaikaisena tallennuspaikkana, kun käsitellään suuria tietomääriä tai kun halutaan luoda väliaikainen varmuuskopio.
 
-## Miten
+## Kuinka luoda väliaikainen tiedosto Elixirissä?
 
-Useimmissa tilanteissa väliaikaisen tiedoston luominen sujuu helposti käyttämällä ```File.open_temp/2``` -funktiota Elixirissä. Alla on esimerkkejä, joissa luodaan väliaikainen tiedosto nimeltä "temp.txt" ja kirjoitetaan siihen merkkijono "Tämä on väliaikainen tiedosto".
-
-```Elixir
-{:ok, file} = File.open_temp("temp.txt")
-IO.write(file, "Tämä on väliaikainen tiedosto")
-```
-
-Voit myös määrittää halutun hakemiston, johon väliaikainen tiedosto tallennetaan, seuraavasti:
+Väliaikaisen tiedoston luominen Elixirissä on hyvin yksinkertaista. Tässä esimerkissä käytämme `File`-moduulia ja `IO.write`-funktiota luomaan väliaikaisen tiedoston ja kirjoittamaan siihen tekstiä:
 
 ```Elixir
-{:ok, file} = File.open_temp("temp.txt", ["tmp"])
+# Luodaan väliaikainen tiedosto nimeltä "temp.txt" ja avataan se kirjoitustilassa
+{:ok, file} = File.open("temp.txt", [:write])
+
+# Kirjoitetaan tiedostoon tekstiä ja suljetaan se
+IO.write(file, "Tämä on väliaikainen tiedosto!")
+File.close(file)
+
+# Tulostetaan tiedoston sisältö konsoliin
+contents = File.read("temp.txt")
+IO.puts contents
+
 ```
 
-Kun olet valmis käsittelemään tiedostoa, voit sulkea sen normaalisti käyttämällä ```File.close/1``` -funktiota.
+Tämän koodin tuloste konsolissa näyttää seuraavalta:
 
-## Syvemmälle
-
-Elixirissä väliaikaiset tiedostot luodaan käyttämällä Erlangin ```:os.make_temp_dir/1``` ja ```:filelib.format_filename/2``` -funktioita. Näitä voidaan myös käyttää, jos haluat enemmän hallintaa väliaikaisten tiedostojen luomisessa.
-
-Voit määrittää halutun tiedostopäätteen ja hakemiston, jossa väliaikainen tiedosto tallennetaan, käyttämällä seuraavia argumentteja:
-
-```Elixir
-{:ok, file} = File.open_temp("temp", ["txt"], "tmp")
+```
+Tämä on väliaikainen tiedosto!
 ```
 
-Lisätietoja Elixirin väliaikaisten tiedostojen luomisesta löytyy [virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/File.html#open_temp/2).
+## Syvempi sukellus väliaikaisen tiedoston luomiseen
+
+Kuten yllä olevasta esimerkistä näemme, väliaikaisen tiedoston luominen Elixirissä on melko yksinkertaista. Kuitenkin on hyvä muistaa, että väliaikainen tiedosto on vain väliaikainen ja se tulee poistaa käytön jälkeen.
+
+Voit poistaa väliaikaisen tiedoston käyttämällä `File.rm`-funktiota. Jos haluat luoda väliaikaisen tiedoston tiettyyn kansioon, voit käyttää `File.cwd`-funktiota määrittääksesi haluamasi kansion.
+
+On myös hyvä muistaa, että kaikki väliaikaiset tiedostot eivät ole automaattisesti turvallisia käyttää ohjelmoinnissa. Joskus on parempi luoda ja käyttää väliaikaisia tiedostoja käyttöjärjestelmän osoittamassa väliaikaisessa kansion sijainnissa. Tällöin voit käyttää `System.tmpdir`-funktiota saadaksesi järjestelmän väliaikaisen kansion sijainnin.
 
 ## Katso myös
 
-- [Virallinen Elixir-dokumentaatio](https://hexdocs.pm/elixir/File.html#open_temp/2)
-- [Erlangin os.make_temp_dir/1 -funktio](http://erlang.org/doc/man/os.html#make_temp_dir-1)
-- [Erlangin filelib.format_filename/2 -funktio](http://erlang.org/doc/man/filelib.html#format_filename-2)
+- [Elixir File -dokumentaatio](https://hexdocs.pm/elixir/File.html)
+- [Elixir IO -dokumentaatio] (https://hexdocs.pm/elixir/IO.html)
+- [Elixir System -dokumentaatio](https://hexdocs.pm/elixir/System.html)
+
+Huomaa, että tämä on vain yksinkertainen esimerkki väliaikaisten tiedostojen käytöstä Elixir-ohjelmoinnissa. On tärkeää muistaa käyttää niitä varoen ja poistaa ne käytön jälkeen, jotta vältetään mahdolliset tietoturvariskit. Toivottavasti tämä artikkeli auttoi sinua ymmärtämään väliaikaisten tiedostojen toiminnan Elixirissä. Onnea ohjelmointiin!

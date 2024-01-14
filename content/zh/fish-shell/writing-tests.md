@@ -1,56 +1,52 @@
 ---
 title:    "Fish Shell: 编写测试"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么写测试
+## 为什么要编写测试
 
-在编写代码的过程中，有时候会出现一些意想不到的bug。而测试则可以帮助我们发现并修复这些问题，保证代码的质量和稳定性。因此，编写测试是一项非常重要的技能，可以帮助我们提升代码的可靠性和可维护性。
+编写测试是软件开发过程中至关重要的一步。它可以帮助开发者在编写代码之前就发现潜在的bug，并且可以确保代码在不断迭代中仍然保持稳定和可靠。编写测试还可以提高代码质量和可维护性，同时可以节省开发时间和成本。总的来说，编写测试是促进良好软件开发实践的关键一步。
 
-## 如何编写Fish Shell测试
+## 如何编写测试
 
-编写Fish Shell测试有几个重要的步骤：
-
-1. 编写测试文件：需要在项目中创建一个测试文件夹，并在其中创建一个具有 `.fish` 后缀的文件，命名为 `test_foo.fish`，其中 `foo` 是你想要测试的函数名。
-2. 导入测试框架：在测试文件的开头，使用 `source` 命令导入 `fish_tap` 测试框架。
-3. 编写测试用例：使用 `begin` 和 `end` 命令包裹测试用例，并在用例中使用 `ill` 命令来断言测试结果是否符合预期。
-4. 运行测试：在终端中使用 `fish test_foo.fish` 命令来运行测试文件，可以看到测试结果的输出。
-
-下面是一个简单的例子：
+编写测试可以使用Fish Shell中的`test`命令。下面是一个简单的示例，它测试一个字符串是否与预期的输出相匹配：
 
 ```Fish Shell
-source $fish_function_path[1]/fish_tap.fish
+# 定义要测试的字符串
+set str "Hello, world!"
 
-begin "sum函数"
-  set result (sum 1 2)
-  ill "结果应为3" $result
-end
+# 使用test命令进行匹配测试
+test "Expected output" = "$str"
+
+# 如果输出匹配，则test命令不会返回任何内容
+# 如果输出不匹配，则会返回错误信息
 ```
 
-运行后，如果测试通过，会显示 "1 of 1 tests passed"，如果测试失败，则会显示具体的错误信息。
+使用`test`命令可以轻松地编写各种各样的测试，例如测试文件是否存在、函数是否返回正确的值等等。编写测试还可以使用断言来确保代码的正确性，例如`assert`命令可以在测试失败时打印出详细的错误信息。
 
-## 深入了解编写Fish Shell测试
+## 深入了解编写测试
 
-除了基本的用法外，还有一些更高级的功能可以帮助我们编写更复杂的测试：
+编写测试的一个重要概念是覆盖率（coverage），它衡量代码中被测试到的程度。高覆盖率意味着代码被充分测试，低覆盖率可能表示还有一些未被发现的bug。因此，编写测试时应该尽量提高覆盖率。
 
-- 使用 `plan` 命令来规定测试用例的数量，防止测试漏掉某些用例。
-- 使用 `set_up` 和 `tear_down` 命令来在每个测试用例的前后执行一些初始化和清理操作。
-- 使用 `skip` 命令来跳过某个特定的测试用例。
-- 使用 `negative` 命令来测试函数的异常情况。
-- 使用 `require` 命令来在测试文件中引入其他的测试文件。
+另一个重要的概念是测试驱动开发（TDD），它强调在编写代码之前就先编写测试。TDD可以帮助开发者更早地发现问题并提高代码质量，但也需要更多的时间和精力。
 
-更详细的用法可以参考 `fish_tap` 的官方文档。
+最后，编写测试的一个关键点是持续集成（CI），它可以自动运行测试，并及时发现错误。持续集成可以帮助团队保持代码的稳定性和可靠性，高效完成项目。
 
-## 查看更多
+## 参考链接
 
-- [Fish Shell官方网站](https://fishshell.com)
-- [Fish Shell测试框架文档](https://github.com/fish-shell/fish-shell/blob/master/doc_src/test.md)
-- [Fish Shell测试示例](https://github.com/fish-shell/fish-shell/blob/master/tests/builtin_math_tests.fish)
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [Fish Shell test命令文档](https://fishshell.com/docs/current/cmds/test.html)
+- [了解测试覆盖率](https://www.qametrix.com/resources/what-is-test-coverage/)
+- [测试驱动开发简介](https://medium.com/@testobsessed/introduction-to-test-driven-development-tdd-fafb4b4fbb4e)
+- [持续集成介绍](https://www.thoughtworks.com/continuous-integration)
+- [Fish Shell的更多测试相关命令](https://fishshell.com/docs/current/commands.html#testing)
+- [如何构建高质量的软件：测试的重要性](https://www.codeproject.com/Articles/391492/The-Importance-of-Unit-Testing-For-Building-Softwar)
 
-# 参考链接
+## 请参考
 
-- [Fish Shell官方文档 - 测试](https://fishshell.com/docs/current/tutorial.html#testing)
-- [Fish Shell官方文档 - 关于测试框架](https://fishshell.com/docs/current/test.html)
-- [Fish Shell开发者指南 - 测试框架](https://fishshell.com/docs/current/developer.html#testing-framework)
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [Fish Shell中的函数编写入门指南](https://medium.com/@the__martian/fish-functions-made-easy-a-getting-started-guide-c308d255a88d)
+- [如何优雅地管道和重定向Fish Shell命令](https://medium.com/@the__martian/elegant-piping-and-redirection-in-fish-shell-6c3edbcd0c53)

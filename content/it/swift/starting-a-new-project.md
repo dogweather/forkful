@@ -1,38 +1,49 @@
 ---
 title:    "Swift: Iniziare un nuovo progetto"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
+Questo post è dedicato a tutti coloro che sono interessati a imparare Swift e ad avventurarsi nella creazione di un nuovo progetto di programmazione. Può essere un'ottima scelta per chi vuole sviluppare le proprie capacità di programmazione o per chi ha un'idea per un'applicazione da realizzare.
+
 ## Perché
 
-Se siete appassionati di programmazione e vi piace sperimentare con nuovi progetti, questo articolo è per voi! Imparerete come avviare un nuovo progetto in Swift e scoprirete alcune informazioni interessanti sulla programmazione in generale.
+Prima di iniziare un nuovo progetto, è importante avere una motivazione forte e ben definita. C'è sempre un'inevitabile curva di apprendimento quando si inizia a programmare in un nuovo linguaggio e affrontare le sfide del processo di sviluppo del software. Tuttavia, imparare Swift ha numerosi vantaggi, come l'accesso al vasto ecosistema di sviluppo di Apple, la possibilità di creare applicazioni native per iOS, macOS e altri dispositivi, e la possibilità di partecipare a una comunità di programmatori entusiasti e condividere idee e soluzioni.
 
-## Come Fare
+## Come fare
 
-Per iniziare un nuovo progetto in Swift, la prima cosa da fare è aprire Xcode e selezionare "Nuovo progetto" dalla schermata iniziale. Qui potete scegliere il tipo di progetto che volete creare, ad esempio un'applicazione per iOS o macOS.
-
-Una volta selezionato il tipo di progetto, vi verrà chiesto di dare un nome al progetto e di scegliere una posizione in cui salvare i file. Una volta fatto, cliccate su "Crea" e Xcode creerà automaticamente una struttura di base per il vostro progetto.
-
-Ora è il momento di cominciare a scrivere il vostro codice. Prova ad esempio a scrivere questo semplice codice Swift che stampa "Ciao, mondo!" sulla console.
+Per iniziare a scrivere codice Swift, è necessario avere un computer Apple e scaricare Xcode, l'IDE di sviluppo di Apple. Una volta installato Xcode, è possibile creare un nuovo progetto Swift selezionando "File" > "New" > "Project" e scegliendo il template che si desidera utilizzare. Ad esempio, per creare un'applicazione iOS, si può selezionare "App" > "iOS" > "Single View App". Xcode genera automaticamente una struttura di base con un file "ViewController.swift" e un file "Main.storyboard" per la visualizzazione dell'interfaccia utente.
 
 ```Swift
-print("Ciao, mondo!")
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Inserire qui il codice per l'inizializzazione
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+}
 ```
 
-Se avete seguito tutti i passaggi correttamente, dovreste vedere "Ciao, mondo!" apparire nella console in basso a destra dell'editor di Xcode.
+Per visualizzare l'output dell'applicazione, è possibile selezionare il dispositivo o il simulatore di iOS desiderato e cliccare sul pulsante "Run" nella barra degli strumenti di Xcode.
 
-## Approfondimenti
+## Approfondimento
 
-Ora che avete imparato come iniziare un nuovo progetto in Swift, è il momento di dare uno sguardo più approfondito alla programmazione in generale. Ecco alcuni consigli e risorse utili per diventare un programmatore migliore:
+Quando si crea un nuovo progetto Swift, è importante comprendere la struttura del codice generato da Xcode. Il file "Main.storyboard" contiene l'interfaccia utente dell'applicazione, mentre il file "ViewController.swift" contiene il codice per la logica dell'applicazione. È possibile aggiungere ulteriori file Swift al progetto, organizzando il codice in classi, strutture o enum in base alle esigenze.
 
-- Utilizzare progetti open-source per imparare i diversi stili di codifica e le buone pratiche di programmazione.
-- Leggere blog e forum di programmazione per restare sempre aggiornati sulle ultime novità e tendenze.
-- Praticare, praticare, praticare! La migliore maniera di imparare a programmare è scrivere tanto codice.
+Inoltre, è possibile utilizzare il debugger di Xcode per esaminare il flusso di esecuzione del programma e identificare eventuali errori o bug. Xcode offre anche una vasta documentazione e una guida passo passo, che possono essere utili per i principianti.
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione ufficiale di Swift](https://docs.swift.org/swift-book/)
-- [Sito ufficiale di Xcode](https://developer.apple.com/xcode/)
-- [Video tutorial di Swift su YouTube](https://www.youtube.com/playlist?list=PLbOhLDHuZ0GLd0Vi9tKcKGzn1L2ehjQZv)
+* [Guida introduttiva a Swift di Apple](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
+* [Documentazione di Xcode](https://developer.apple.com/documentation/xcode)
+* [Forum di supporto di Swift](https://forums.swift.org/)

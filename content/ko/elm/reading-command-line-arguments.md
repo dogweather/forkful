@@ -1,38 +1,26 @@
 ---
-title:    "Elm: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+title:    "Elm: 명령 줄 인수 읽기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-커맨드 라인 인자를 읽는 것을 읽습니다.
+
+다양한 언어를 배우고 있는 개발자라면 새로운 도구로 적응하는 과정을 두려워하지 않는 것이 중요합니다. 그리고 가장 강력한 도구 중 하나인 Elm을 배우는 것은 더 큰 가능성을 가질 수 있다는 것을 여러분에게 알려드립니다. 이번 포스트에서는 Elm으로 command line arguments를 읽는 방법에 대해 알아보겠습니다.
 
 ## 어떻게
-커맨드 라인 인자를 읽는 방법을 살펴보겠습니다. Elm에서는 `elm/core` 패키지의 `Platform.Cmd` 모듈을 통해 커맨드 라인 인자를 읽을 수 있습니다. 예를 들어, 다음 코드를 실행하면 사용자가 입력한 인자를 읽어와 출력할 수 있습니다.
 
-```elm
-import Platform.Cmd as Cmd
-import Console exposing (log)
+우선, Elm으로 코드를 작성하기 위해서는 Elm 설치가 필요합니다. 설치는 공식 사이트에서 제공하는 방법을 따라하면 쉽게 할 수 있습니다. 이후, command line arguments를 읽기 위해 `elm/cli`패키지를 사용할 수 있습니다. 아래 예제를 통해 코드와 출력을 확인해보세요.
 
-main =
-    Cmd.args
-        |> Cmd.map (\args -> log (List.head args))
-        |> Cmd.perform
-```
+```Elm
+import Cli
+import List exposing (head)
 
-위의 코드를 실행한 뒤 `elm reactor` 커맨드로 브라우저에서 확인해보면, 입력한 인자가 출력되는 것을 확인할 수 있습니다.
-
-```
-elm reactor --port=8000
-8000
-```
-
-더 많은 커맨드 라인 인자를 읽어오는 방법은 `elm/core` 패키지의 `Platform.Cmd` 모듈 문서를 참고하시기 바랍니다.
-
-## 깊게 파고들기
-커맨드 라인 인자를 읽는 것은 부하에 따라 존재하지 않을 수도 있습니다. 이는 웹 브라우저에서는 일반적으로 사용되지 않고, 대신 네이티브 컴파일러에서 주로 사용됩니다. 네이티브 모듈에서는 `elm/core` 패키지의 `Platform.Cmd` 모듈 대신 `Elm.Kernel.Cmd` 모듈을 사용하여 커맨드 라인 인자를 읽습니다.
-
-## 관련 링크
-- [Platform.Cmd 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- [Elm.Kernel.Cmd 모듈 코드](https://github.com/elm/kernel/blob/8f19754/cmd/src/Elm/Kernel/Cmd.js) (네이티브 모듈)
+main : Cli.Flags () -> Platform.Program () () Msg
+main flags =
+  case Cli.arguments () of
+    [first, second] ->
+      -- 첫번째와 두번째 argument를 불러와 출력합니다.
+      Cl

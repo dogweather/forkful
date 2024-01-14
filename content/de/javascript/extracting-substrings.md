@@ -1,69 +1,40 @@
 ---
-title:    "Javascript: Untersuchen von Teilstrings"
+title:    "Javascript: Substrings extrahieren"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
+#
 ## Warum
 
-Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit beim Programmieren in JavaScript. Es ermöglicht uns, bestimmte Teile eines Strings zu isolieren und damit einfacher zu manipulieren oder zu vergleichen.
+In der Welt der Programmierung ist es oft notwendig, einen Teil eines Textes zu isolieren und damit zu arbeiten. Wenn Sie jemals versucht haben, einen Teil eines Strings (Zeichenkette) aus einem Text in Javascript zu extrahieren, sind Sie sicherlich auf die Methode substring() gestoßen. Diese Methode ermöglicht es uns, einen Teil eines Strings zu extrahieren, basierend auf einem Start- und Endindex. Aber warum sollten wir diese Methode verwenden?
 
-## Wie Geht's
+Die Verwendung von substrings kann nützlich sein, um bestimmte Daten aus einem längeren Text zu extrahieren, z.B. eine Telefonnummer aus einem Textfeld in einem Formular. Mit der substring-Methode können wir auch verschiedene Teile eines Strings kombinieren, um einen neuen Text zu erstellen.
 
-Um einen Teilstring in JavaScript zu extrahieren, verwenden wir die `substring()` Methode. Diese Methode erwartet zwei Parameter: den Startindex und den Endindex des Substrings. Hier ist ein Beispiel:
+## Wie man substrings extrahiert
 
-```
-let string = "Hallo Welt";
-let substring = string.substring(6, 10);
-console.log(substring); // Ausgabe: "Welt"
-```
+Mit Javascript ist es sehr einfach, einen Substring aus einem String zu extrahieren. Dazu verwenden wir die Methode substring() und geben die gewünschten Start- und Endindizes innerhalb der Klammern an. Hier ist ein einfaches Beispiel:
 
-In diesem Beispiel haben wir den Teilstring "Welt" extrahiert, indem wir den Startindex auf 6 (das erste "W" im String) und den Endindex auf 10 (das "t" im String) gesetzt haben. Beachten Sie, dass der Endindex nicht in den Teilstring eingeschlossen wird.
-
-Sie können auch den Startindex weglassen, in diesem Fall extrahiert die Methode den Teilstring ab dem Startindex bis zum Ende des Strings:
-
-```
-let substring = string.substring(6);
-console.log(substring); // Ausgabe: "Welt"
+```Javascript
+var text = "Dies ist ein Beispieltext.";
+var substring = text.substring(5, 13);
+console.log(substring); // Ergebnis: "ist ein B"
 ```
 
-Durch das Weglassen des Endindex wird der Teilstring ab dem Startindex bis zum Ende des Strings extrahiert.
+In diesem Beispiel haben wir den Substring von Index 5 bis Index 13 extrahiert und ihn in der Variablen "substring" gespeichert. Wir können auch negative Indizes verwenden, um von hinten an den String zu zählen. Zum Beispiel würde der Index -1 den letzten Buchstaben des Strings auswählen.
 
-```
-let substring = string.substring(0, 5);
-console.log(substring); // Ausgabe: "Hallo"
-```
+Es gibt noch eine weitere Methode, die wir verwenden können, um Substrings zu extrahieren - slice(). Diese Methode funktioniert ähnlich wie substring(), hat aber einige unterschiedliche Verhaltensweisen, wenn negative Indizes verwendet werden.
 
-Es ist auch möglich, negative Indizes zu verwenden. In diesem Fall zählen wir von hinten, beginnend mit -1. Der letzte Index eines Strings wäre also -1, der vorletzte -2 usw.
+## Eine tiefere Erklärung
 
-```
-console.log(string.substring(-5)); // Ausgabe: "Welt"
-console.log(string.substring(-8, -6)); // Ausgabe: "Ha"
-```
+Beide Methoden, substring() und slice(), schneiden einen Teil eines Strings aus und geben ihn zurück. Der Hauptunterschied liegt darin, dass slice() in der Lage ist, negative Indizes zu verarbeiten und auch verwendet wird, um Arrays zu schneiden. Wenn wir nur einen Index angeben, wird die gesamte Zeichenkette ab diesem Index bis zum Ende zurückgegeben.
 
-## Tiefere Einblicke
+Eine weitere wichtige Sache zu beachten ist, dass sowohl substring() als auch slice() den Endindex nicht einschließen. Zum Beispiel würde die Angabe von 0 als Startindex und 3 als Endindex in beiden Methoden die ersten 3 Zeichen auswählen, aber nicht das vierte Zeichen.
 
-Eine Sache, auf die man achten sollte, ist, dass die `substring()` Methode immer einen neuen String zurückgibt. Dies bedeutet, dass der ursprüngliche String nicht verändert wird, auch wenn Sie eine Variable dafür verwenden.
+## Siehe auch
 
-```
-let string = "Hallo Welt";
-let substring = string.substring(6);
-console.log(string); // Ausgabe: "Hallo Welt"
-console.log(substring); // Ausgabe: "Welt"
-```
-
-Die `substring()` Methode ist auch nicht die einzige Möglichkeit, Teilstrings in JavaScript zu extrahieren. Die `slice()` Methode funktioniert ähnlich wie `substring()`, verwendet aber negative Indizes etwas anders und ermöglicht es uns, auch den Endindex einzuschließen.
-
-```
-console.log(string.slice(6)); // Ausgabe: "Welt"
-console.log(string.slice(-5)); // Ausgabe: "Welt"
-console.log(string.slice(6, 10)); // Ausgabe: "Welt"
-console.log(string.slice(6, -1)); // Ausgabe: "Wel"
-```
-
-## Siehe Auch
-
-- [MDN documentation on substring](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN documentation on slice](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Difference between substring and slice in JavaScript](https://dev.to/abdisalan_js/substring-vs-slice-in-javascript-dilemma-29og)
+- [substring() Methode in der MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [slice() Methode in der MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+- [Javascript String-Methoden in der MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/#methoden_der_String_instanzen)

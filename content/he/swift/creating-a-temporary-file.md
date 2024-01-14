@@ -1,37 +1,38 @@
 ---
 title:    "Swift: יצירת קובץ זמני"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## עבודה ב-Swift בשביל מתחילים: יצירת קובץ זמניים
 
-יצירת קובץ זמני נחשבת כלי חשוב בתכנות ב-Swift, מאחר וזהו דרך נוחה ובטוחה לשמור נתונים בזמן ריצת התוכנית.
+## Why:
+מתכנתים שמתחילים ללמוד Swift לעתים קרובות נתקלים בהצורך ליצור קבצים זמניים (temp files). אבל למה בעצם אפשר לצור קובץ זמני ומה יהיה השימוש שלו? קובץ זמני הוא קובץ שנוצר במטרה לפעול כדוגמאל מחזיק נתונים זמנית. כאשר הוא יוצר נדבק בקוד שלך ונמחק. השימוש התקין ב&amp; Swift בשביל קבצי זמןי היא כאשר אתה רוצה לבצע פעולה מסוימת על נתונים אך אין לך צורך לשמור אותם לתקופה ארוכה.
 
-## כיצד לעשות זאת
-
-אם ברצונכם ליצור קובץ זמני ב-Swift, תוכלו לעשות זאת בקלות עם הפונקציה `NSTemporaryDirectory()`. הנה דוגמה קצרה שתלמד אתכם איך ליצור קובץ זמני ולשמור בו נתונים:
-
+## How To:
 ```Swift
-let tempDirectoryPath = NSTemporaryDirectory()
-let tempFileURL = URL(fileURLWithPath: tempDirectoryPath).appendingPathComponent("myTempFile.txt")
-
-let dataToWrite = "Hello World!".data(using: .utf8)
-try? dataToWrite?.write(to: tempFileURL)
+func createTempFile() {
+    let filePath = NSTemporaryDirectory().stringByAppendingPathComponent("file.txt") // נתיב לקובץ בספריית הזמניים
+    let fileContent = "תוכן פעמונים קטן 😊" // יצירת התוכן של הקובץ כמחרוזת
+    do {
+        try fileContent.writeToFile(filePath, atomically: true, encoding: NSUTF8StringEncoding) // כתיבת התוכן לתוך הקובץ
+    } catch {
+        // איזה אירוע יכול לגרום לכשלון ביצירת הקובץ?
+        print(error)
+    }
+}
 ```
 
-ניתן לראות בדוגמא הזאת שאנו משתמשים בפונקציה `NSTemporaryDirectory()` כדי לקבל את הנתיב של התיקייה הזמנית, ואז משתמשים בפונקציה `URL(fileURLWithPath:)` כדי ליצור URL לקובץ זמני. לבסוף, אנו משתמשים בפונקציה `write(to:)` כדי לשמור את הנתונים בקובץ.
+כאשר תרצה לקרוא את תוכן הקובץ אתה יכול לעשות זאת כך:
+```Swift
+func readTempFile() {
+    let filePath = NSTemporaryDirectory().stringByAppendingPathComponent("file.txt") // נתיב לקובץ בספריית הזמניים
+    let fileContent = try? String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding) // קריאת התוכן מתוך הקובץ כמחרוזת
+    print(fileContent)
+}
+```
 
-## עיון מעמיק
-
-יצירת קובץ זמני ב-Swift יכולה להיות יעילה מאוד, מתוך כמה סיבות:
-
-- קבצים זמניים משמשים כדי לשמור נתונים שאינם דרושים לתקופה ארוכה, לכן ניתן למחוק אותם כשעולה צורך במקום לנהלם לאורך זמן.
-- ביצוע רשימת פעולות על קובץ זמני נחשב אחריות יותר, מכיוון שעם סיום התוכנית הכל נמחק. אין צורך לדאוג לכך שנתונים או תכנים יישארו במקום לאורך זמן ויכולים לגרום לבעיות בעתיד.
-
-## ראו גם
-
-- [מדריך: יצירת קובץ זמני ב-Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-a-temporary-file-in-swift)
-- [תיעוד: NSTemporaryDirectory()](https://developer.apple.com/documentation/foundation/1409296-nstemporarydirectory)
-- [תיעוד: URL(fileURLWithPath:)](https://developer.apple.com/documentation/foundation/url/312
+## Deep Dive:
+הוספתמייצבות ⌥ Opt במקרים של תקינה ריאלית, אלא אתה רוצה ליצור קובץ זמני זמני שבו אתה יכול לבדוק את התוכן שלו במהלך פיתוח האפליקציה שלך. אם אחר כך, אתה יכול להשתמש בקובץ זמני במטרה לבדוק ולבדוק תפוקת פיתוח שלך ולפר

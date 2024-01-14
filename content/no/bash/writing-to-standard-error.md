@@ -1,32 +1,45 @@
 ---
-title:    "Bash: Skriver til standardfeil"
+title:    "Bash: Skriver til standard error"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Å skrive til standardfeil (stderr) er en nyttig ferdighet for enhver som jobber med Bash-programmering. Dette kan hjelpe til med feilsøking og oppdage potensielle problemer i koden din.
+## Hvorfor
 
-##Slik gjør du det
-For å skrive til standardfeil i Bash kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å sende til stderr for eksempel:
-```Bash
-echo "Feil! Noe gikk galt." >&2 
-```
-Dette vil sende teksten "Feil! Noe gikk galt." til standardfeil i stedet for standardutgang. Merk at `>&2` blir brukt for å spesifisere at teksten skal sendes til stderr.
+Det å skrive til standard error i Bash programmering kan være svært nyttig for å feilsøke og fange feil i koden din. Det er en enkel måte å få mer informasjon om hva som går galt og hvor i koden det skjer.
 
-En annen måte å skrive til standardfeil på er å bruke `printf`-kommandoen sammen med ">&2" for å sende teksten til standardfeil. Et eksempel på dette er:
+## Hvordan du gjør det
+
+Å skrive til standard error i Bash er enkelt. Du bruker bare ">" eller "2>" i kommandoen din, etterfulgt av filbanen til loggfilen hvor du vil skrive feilmeldinger og annen informasjon. La oss si at du vil skrive en feilmelding til en fil kalt "error_log" i din nåværende mappe. Dette er hvordan koden din vil se ut:
+
 ```Bash
-printf "Feil! %s gikk galt." "En fil" >&2
+ls -l error_log 2> error_log
 ```
 
-##Dypdykk
-Når du skriver til standardfeil, er det viktig å huske på noen viktige punkter:
-- Standardfeil brukes vanligvis for feilmeldinger og informasjon om feil som oppstår under kjøring av et Bash-script.
-- Det er vanlig praksis å integrere skriving til standardfeil i feilhåndteringen av Bash-skript for å gjøre det enklere å finne og fikse eventuelle problemer.
-- Hvis du vil sende både standardutgang og standardfeil til samme fil, kan du bruke `2>&1` etter kommandoen for å kombinere begge.
+Dette vil skrive eventuelle feilmeldinger eller informasjon om kommandoen din til filen "error_log". Du kan også bruke ">>" for å legge til informasjon i en eksisterende fil, i stedet for å overskrive den.
 
-##Se også
-- [En omfattende guide til Bash-programmering på norsk](https://www.computerhope.com/unix/bash/index-nb.htm)
-- [En komplett referanse for Bash-kommandoer](https://ss64.com/bash/)
-- [En liste over vanlige feil i Bash-programmering og hvordan du kan unngå dem](https://www.linuxjournal.com/article/10950)
+```Bash
+mkdir new_folder 2>> error_log
+```
+
+I tillegg kan du også skrive til både standard output og standard error på samme tid ved å bruke "&>". For eksempel:
+
+```Bash
+ls -l &> output_and_error_log
+```
+
+Dette vil skrive både standard output og standard error til filen "output_and_error_log". Det kan være nyttig når du ønsker å samle all informasjon om en kommando på ett sted.
+
+## Dypdykk
+
+Når du skriver til standard error i Bash, bruker du egentlig bare det samme konseptet som når du skriver til standard output. Forskjellen er at standard error er der for å skrive ut feilmeldinger og informasjon om kommandoer som ikke lykkes, mens standard output er for å skrive ut normal informasjon. Det er derfor viktig å forstå forskjellen mellom disse to og vite når du skal bruke ">", "2>" eller "&>".
+
+Det er også verdt å nevne at standard error og standard output ikke nødvendigvis vil skrive ut i den rekkefølgen som kommandoene blir kjørt. Dette kan avhenge av hvordan programmet ditt er satt opp og hva slags informasjon som blir produsert.
+
+## Se også
+
+- [Bash skripting for nybegynnere](https://www.ntnu.no/wiki/display/itinfo/Bash+skripting+for+nybegynnere)
+- [Bash referanser](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Feilsøking og fangst av Bash feil](https://www.digitalocean.com/community/tutorials/how-to-debug-bash-scripts)

@@ -1,57 +1,64 @@
 ---
-title:    "Rust: Kombinering av strenger"
+title:    "Rust: Sammenstilling av strenger"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I denne bloggposten vil vi ta en titt på hvordan du kan slå sammen strenger i Rust. Dette er nyttig når du ønsker å kombinere tekst fra ulike kilder eller bygge komplekse strenger for utskrift eller til bruk i programmer.
+Å slå sammen eller "konkatenere" strenger er en vanlig og viktig oppgave i programmering. Dette betyr rett og slett å kombinere to eller flere strenger for å danne en lengre streng. Dette kan være nyttig for å lage dynamiske tekstbeskjeder, konstruere URL-er og mye mer.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-For å slå sammen strenger i Rust, kan du bruke operatøren `+` eller `format!` makroen. La oss se på et eksempel:
+I Rust kan du enkelt konkatenerere strenger ved å bruke operatoren "+" eller metoden ".push_str()". La oss se på noen eksempler:
 
-```Rust
-fn main() {
-    let navn = "Ole";
-    let alder = 30;
-    
-    let setning = navn + " er " + &alder.to_string() + " år gammel.";
-    println!("{}!", setning);
-}
+- Konkatenering med "+":
+
+```rust
+let navn = "Ole";
+let etternavn = "Nordmann";
+
+let fulltNavn = navn + " " + etternavn;
+
+println!("{}", fulltNavn); // Output: Ole Nordmann
 ```
 
-Dette vil gi følgende utskrift:
+- Konkatenering med ".push_str()":
 
-```
-Ole er 30 år gammel.
-```
+```rust
+let navn = "Kari";
+let etternavn = "Nordmann";
 
-Her bruker vi `+` operatøren til å kombinere strenger, men vi må konvertere alderen til en streng ved å bruke `.to_string()` metoden. Legg også merke til at vi bruker `&` for å få en referanse til alder-variabelen når vi slår den sammen med strengen.
+let mut fulltNavn = String::from(navn);
 
-For et enklere alternativ kan du bruke `format!` makroen slik:
+fulltNavn.push_str(" ");
+fulltNavn.push_str(etternavn);
 
-```Rust
-fn main() {
-    let navn = "Kari";
-    let alder = 25;
-    
-    let setning = format!("{} er {} år gammel.", navn, alder);
-    println!("{}!", setning);
-}
+println!("{}", fulltNavn); // Output: Kari Nordmann
 ```
 
-Dette vil også gi samme utskrift som ovenfor.
+I eksemplene over blir to strenger slått sammen for å danne en lengre streng, som deretter blir skrevet ut til konsollen. Det er viktig å merke seg at for å kunne endre en streng, må den deklareres som "mut" (mutabel) ved å bruke nøkkelordet "mut" foran variabelnavnet.
+
+Det finnes også andre metoder for å konkatenerere strenger, som for eksempel ".format()".
 
 ## Dypdykk
 
-Når du slår sammen strenger ved hjelp av `+` operatøren, vil Rust automatisk konvertere til `String` type. Dette betyr at det blir gjort ekstra arbeid under panseret for å kombinere strenger. Derfor kan det være mer effektivt å bruke `format!` makroen, spesielt hvis du har mange strenger som skal slås sammen.
+Rust har en mer effektiv måte å konkatenerere strenger på enn å bruke operatoren "+". Dette kalles "string formatting" og kan gjøres ved hjelp av makroen "format!".
 
-En annen viktig ting å merke seg er at når du bruker `+` operatøren, vil den forbruke de originale strengene som brukes i uttrykket. Dette betyr at de ikke kan brukes igjen senere i koden. Derfor er det viktig å bruke `format!` makroen eller `.to_string()` metoden hvis du trenger å beholde de originale strengene.
+```rust
+let farge = "rød";
+let vekt = 5.3;
+
+let resultat = format!("Denne boksen er {} og veier {} kg.", farge, vekt);
+
+println!("{}", resultat); // Output: Denne boksen er rød og veier 5.3 kg.
+```
+
+Denne metoden tillater også spesifisering av variabeltype og annen formatiering av strengen. Du kan lese mer om dette i Rusts offisielle dokumentasjon.
 
 ## Se også
 
-- [Rust dokumentasjon om slå sammen strenger](https://doc.rust-lang.org/std/string/struct.String.html#impl-Add%3C%26%27_%20str%3E)
-- [Rust makroer](https://doc.rust-lang.org/rust-by-example/metaprogramming/macros.html)
+- [Rust strenger](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Offisiell Rust dokumentasjon om "string formatting"](https://doc.rust-lang.org/std/fmt/)

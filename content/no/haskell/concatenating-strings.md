@@ -1,48 +1,40 @@
 ---
 title:    "Haskell: Sammenføyning av strenger"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
+Det å kombinere strenger er en grunnleggende, men likevel viktig del av Haskell-programmering. Ved å slå sammen to eller flere strenger, kan man lage nye, mer komplekse uttrykk som er nyttige i mange forskjellige programmeringsprosjekter.
+
 ## Hvorfor
 
-Å slå sammen strenger, eller "concatenate strings" som det kalles på engelsk, er en viktig del av programmering i Haskell. Det lar deg kombinere flere strenger til en enkelt streng, noe som kan være nyttig for å formatere tekst eller bygge dynamiske meldinger.
+Man kan ha mange grunner til å engasjere seg i å kombinere strenger i Haskell. Kanskje ønsker man å lage et program som genererer tekstbaserte meldinger basert på ulike variabler, eller kanskje trenger man å sette sammen ulike deler av en URL. Uansett hva motivasjonen er, er kunnskap om hvordan man konkatenere strenger avgjørende for å kunne utnytte Haskell til sitt fulle potensial.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-Det første du må gjøre er å importere "Data.List" biblioteket i Haskell-koden din. Dette vil gi deg tilgang til "concat" funksjonen, som lar deg slå sammen strenger.
-
-```Haskell
-import Data.List
-
-concat "Hei på deg" "Hvordan går det?" 
-```
-Output vil være "Hei, på deg Hvordan går det?"
-
-Hvis du vil legge til flere strenger, kan du bruke en liste med strenger og bruke "concat" på den. Her er et eksempel hvor vi slår sammen tre navn fra en liste:
+I Haskell finnes det flere måter å konkatenere strenger på. Den mest grunnleggende metoden er å bruke operatora `++`, som lager en ny streng ved å sette sammen to eksisterende strenger. For eksempel:
 
 ```Haskell
-navn = ["Per", "Pål", "Espen"]
-
-concat navn
+"Hello " ++ "World"  -- Resultat: "Hello World"
 ```
 
-Output vil være "PerPålEspen".
-
-## Gå i dybden
-
-I Haskell er strenger bare lister av tegn, så "concat" funksjonen fungerer ved å kombinere disse listene til en enkelt liste. Dette gjør det også mulig å bruke "concat" for å legge til enkelttegn i en streng.
+Man kan også bruke funksjonen `concat` for å konkatenere en liste av strenger. Dette er nyttig hvis man ønsker å sette sammen flere strenger i en lang liste. Et annet alternativ er å bruke funksjonen `intercalate`, som tar en streng som argument og setter sammen en liste av strenger med denne som separator. Her er et eksempel på begge disse metodene:
 
 ```Haskell
-concat ['H', 'a', 's', 'k', 'e', 'l', 'l']
+concat ["Hello ", "World"]  -- Resultat: "Hello World"
+intercalate ", " ["Hello", "World", "Haskell"]  -- Resultat: "Hello, World, Haskell"
 ```
 
-Output vil være "Haskell".
+Det finnes også egne funksjoner for å slå sammen strenger med mellomrom (`unwords`) og linjeskift (`unlines`).
 
-Det er også verdt å nevne at i Haskell er strenger "immutable", som betyr at de ikke kan endres etter at de er opprettet. Så når du slår sammen strenger, lager du egentlig en ny streng istedenfor å endre den opprinnelige.
+## Dykk dypere
+
+Når man konkatenere strenger i Haskell, er det viktig å være oppmerksom på at strenger håndteres på en litt annen måte enn andre datatype. Haskell bruker en strøm av laziness, som betyr at verdier ikke beregnes før de blir brukt. Dette gjelder også for strenger, som blir lagret som en liste av Unicode-tegn. Dette har konsekvenser når man kombinerer strenger, da dette kan føre til uventede resultat hvis man ikke er oppmerksom på hvordan Haskell håndterer strenger internt.
 
 ## Se også
 
-- [Haskell-tutorials på norsk](https://haskell-tutorials-no.readthedocs.io/nn/latest/index.html)
-- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)
+* [Offisiell dokumentasjon for strenger i Haskell](https://www.haskell.org/tutorial/strings.html)
+* [Leksjoner i Haskell fra Universitetet i Oslo](http://folk.uio.no/johangso/haskell/leksjoner/)
+* [Haskell-programmeringsmiljø i Norge](https://www.haskell.no/)

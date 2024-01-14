@@ -1,40 +1,38 @@
 ---
-title:    "Bash: テストの作成"
+title:    "Bash: テストの書き方"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
-プログラミングにおいてテストを書くことの重要性を理解するために、この記事を読むことをお勧めします。テストは、コードの品質を保証し、バグを見つけるのに役立ちます。
+## なぜ
+Bashのプログラミングを行う理由はたくさんありますが、テストを書くことの重要性は見過ごすことができません。テストを書くことで、コードの動作を確認し、バグを見つけることができます。それにより、より信頼性の高いコードを書くことができます。
 
-##方法
-まず、テストを書く前に、どのようなテストが必要かを明確にする必要があります。これには、以下のような種類のテストが含まれます。
-
-```Bash
-テストセットアップをインストールする
-テストを実行する
-```
-これらのテストを実行することで、コードの正しさを確認できます。さらに、以下のようなコードを使用して、期待される結果をチェックすることもできます。
+## 方法
+テストを書くことは、実際のコードと同じようにBashスクリプトを書くことができます。テストコードを書く基本的な方法は、以下のようになります。
 
 ```Bash
-テストするコードを入力
-期待される出力をチェックする
+# テストするコマンドを実行し、期待する出力を記録します
+OUTPUT=$(some_command)
+EXPECTED_OUTPUT="Hello World"
+
+# 出力が期待通りかどうかをテストする条件式を書きます
+if [[ $OUTPUT == $EXPECTED_OUTPUT ]]
+then
+  # テストが成功した場合は、コンソールに "Test Passed" と表示されます
+  echo "Test Passed"
+else
+  # テストが失敗した場合は、コンソールに "Test Failed" と表示されます
+  echo "Test Failed"
+fi
 ```
 
-##深堀り
-テストを書く際には、いくつかのベストプラクティスがあります。例えば、テストを書く前にコードをリファクタリングすることや、テストのカバレッジを高めることが重要です。また、CI/CDパイプラインにテストを組み込むことで、コードの品質を保証することもできます。
+## ディープダイブ
+テストを書く上で、より詳細な情報が欲しい場合は、"Bash Test Runner"や"ShUnit2"のようなツールを使用することができます。これらのツールは、テストコードの実行を自動化し、複数のテストケースを一度に実行することができます。また、"Assertions"と呼ばれる条件式を使用することで、より複雑なテストを行うことができます。
 
-##参考
-###CI/CDパイプラインにテストを組み込む
-[https://techplay.jp/column/556](https://techplay.jp/column/556)
-
-###テスト駆動開発とは
-[https://dev.classmethod.jp/qa/tdd/](https://dev.classmethod.jp/qa/tdd/)
-
-###テスト駆動開発におけるテストの書き方
-[https://www.atmarkit.co.jp/ait/articles/1909/06/news021.html](https://www.atmarkit.co.jp/ait/articles/1909/06/news021.html)
-
-##参考に
-CI/CDについて[https://www.redhat.com/ja/topics/devops/what-is-cicd](https://www.redhat.com/ja/topics/devops/what-is-cicd)
-テスト駆動開発について[https://www.atmarkit.co.jp/ait/articles/1909/23/news032.html](https://www.atmarkit.co.jp/ait/articles/1909/23/news032.html)
+## 参考リンク
+- [Bash Test Runner](https://github.com/bats-core/bats-core)
+- [ShUnit2](https://github.com/kward/shunit2)
+- [Bashの条件式を使用したテスト](https://linuxhint.com/bash_shell_testing/)
+- [BashのテストにおけるAssertionsの使用方法](https://stackabuse.com/introduction-to-bash-assertions/)

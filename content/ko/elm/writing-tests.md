@@ -1,56 +1,70 @@
 ---
 title:    "Elm: 테스트 작성하기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-왜 테스트를 작성하는 것에 참여해야 할까요? 테스트를 작성하면 코드를 안전하게 유지하는 데 도움이 됩니다. 또한 나중에 코드를 변경할 때 예상치 못한 부작용을 방지하는 데도 도움이 됩니다.
+테스트를 작성하는 것에 참여하는 이유는 무엇일까요? 테스트를 작성함으로써 코드의 신뢰성을 높이고 버그를 방지할 수 있습니다. 또한 작성한 테스트는 코드 수정 및 리팩토링 시 도움이 될 수 있습니다.
 
-## 작성 방법
+## 작성하는 방법
 
-```Elm
-module Main exposing (..)
+테스트를 작성하는 방법은 매우 간단합니다. 우선 ```elm-test``` 패키지를 설치해야 합니다. 그리고 코드에서 테스트할 함수를 불러오고, ```expect``` 함수를 사용하여 예상되는 결과를 입력하면 됩니다. 아래는 간단한 예제 코드입니다.
 
-import Html exposing (..)
+```elm
+module Example exposing (..)
+
 import Expect
+import Test
 
--- 테스트할 함수
-split string =
-    String.split " " string
+divide : Int -> Int -> Int
+divide a b =
+    a // b
 
-
--- 테스트 코드
-test_split =
-    describe "split 함수" <|
-        [ test "문자열을 분리할 수 있어야 함" <|
-            \_ ->
-                Expect.equal (split "Hello World") ["Hello", "World"]
-        , test "빈 문자열일 때 빈 리스트를 반환해야 함" <|
-            \_ ->
-                Expect.equal (split "") []
+tests =
+    describe "Divide function"
+        [ test "Correct result" <| \() ->
+            expect (divide 10 2) |> toEqual 5
+        , test "Zero division" <| \() ->
+            expect (divide 5 0) |> toEqual 0
         ]
+
+main =
+    Test.run tests
 ```
 
-위 코드는 `split` 함수를 테스트하는 예제입니다. `describe`로 함수의 이름을 지정하고, `test`로 해당 기능에 대한 단언문을 작성합니다. `Expect.equal`을 사용하여 예상되는 결과와 실제 결과를 비교해보는 것이 중요합니다.
+위 코드를 실행하면 아래와 같은 결과를 볼 수 있습니다.
 
-## 깊게 들어가기
+```
+Divide function
+❌ Correct result
+Expected 5, but got 10
 
-테스트를 작성할 때 고려해야 할 몇 가지 중요한 사항이 있습니다. 첫 번째로는 어떤 값을 테스트할 것인지 결정하는 것입니다. 가능한 모든 경우에 대해 테스트를 작성하는 것은 불가능하기 때문에 가장 중요한 기능을 포함해야 합니다. 그리고 기능을 테스트할 때는 모든 가능성을 다루도록 충분한 테스트 케이스를 작성해야 합니다.
+😁 Zero division
+Passed 0 out of 1 tests
+Ran 2 tests of 2 total
+```
 
-또한 테스트에서 예외 상황을 다루는 것도 중요합니다. 함수가 예외 상황일 때 적절한 예외를 발생시키는지 테스트하는 것이 좋습니다.
+예상한 결과와 일치하지 않는 경우 잘못된 값이 출력됩니다. 이렇게 테스트를 작성하면 코드 수정 시 예상한 결과와 다른 값이 나오는지 확인할 수 있습니다.
 
-마지막으로, 테스트를 작성하고 통과시킬 때는 매우 적극적으로 코드를 디버깅해야 합니다. 여러분의 함수가 테스트를 통과하도록 만드는 데에 집중하지 말고, 올바른 결과를 반환하도록 고치는 데 집중해야 합니다.
+## 더 깊게 들어가기
+
+테스트를 작성하는 더 깊은 내용은 여러 가지가 있습니다. 예를 들어, 테스트 케이스에서 임의의 값을 생성할 수 있는 ```Random``` 모듈을 사용할 수 있습니다. 또한 ```describe``` 함수를 사용하여 테스트 케이스를 그룹화하고, ```only``` 함수를 사용하여 특정 테스트 케이스만 선택적으로 실행할 수도 있습니다.
+
+더 많은 정보는 공식 Elm 문서를 참고하시기 바랍니다.
 
 ## 더 알아보기
 
-### Elm 테스트 시작하기
-https://guide.elm-lang.org/testing/
+이 글에서는 간단한 예제 코드를 통해 Elm에서 테스트를 작성하는 방법에 대해 알아보았습니다. 더 많은 정보를 알고 싶다면 아래의 링크들을 참고하시기 바랍니다.
 
-### Elm 테스트 관련 팁
-https://github.com/elm-community/elm-test#elm-test-tips
+#### 참고 링크
 
-### 테스트 시나리오 작성 방법
-https://thoughtbot.com/blog/dealing-with-asynchronous-ui-tests
+- https://guide.elm-lang.org/testing/
+- https://package.elm-lang.org/packages/elm-explorations/test/latest/
+- https://dev.to/petrbela/unit-testing-in-elm-4g86 (영문)
+- https://medium.com/@kristyjy/elm-unit-testing-for-side-effects-e1c5bf8be049 (영문) 
+
+## 더 알아보기

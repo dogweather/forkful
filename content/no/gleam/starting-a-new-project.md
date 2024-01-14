@@ -1,48 +1,36 @@
 ---
 title:    "Gleam: Å starte et nytt prosjekt"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor starte et nytt prosjekt?
 
-Hvorfor skulle noen ønske å begynne på et nytt prosjekt? Det kan være mange grunner, men noen vanlige er å forbedre eksisterende funksjonalitet, lære nye programmeringsspråk og teknikker, eller å skape noe som kan hjelpe andre eller gi en personlig utfordring. Uansett grunn, er det alltid spennende å starte på et nytt prosjekt og se hvor det fører deg.
+Å starte et nytt prosjekt kan være en spennende og givende opplevelse for en programmerer. Det gir muligheten til å utforske nye språk og teknologier, og å løse utfordrende problemer. Med Gleam, et relativt nytt programmeringsspråk, får du muligheten til å bygge på moderne konsepter som funksjonell programmering, og samtidig utnytte den kraftige typinferensen som gjør utviklingsprosessen raskere og tryggere.
 
-## Slik gjør du det
+# Slik kommer du i gang med Gleam
 
-Nå som du har bestemt deg for å starte et nytt prosjekt, la oss se på noen enkle kodestumper i Gleam for å komme i gang.
+For å starte et nytt Gleam-prosjekt, må du først sørge for at du har installert Gleam-kompilatoren på datamaskinen din. Deretter kan du følge disse enkle trinnene for å opprette et nytt prosjekt:
 
 ```Gleam
-pub struct Person(age, name) {
-  fn new(age, name) {
-    Person(age, name)
-  }
-}
-
-fn greet(person) {
-  "Hei " + person.name + " er " + person.age + " år gammel."
-}
-
-let person = Person.new(25, "Ole");
-greet(person)
+$ gleam new project navn
 ```
 
-Her har vi definert en enkel Person-struktur med en alder og navn. Deretter har vi en funksjon som tar inn en Person-struktur og bruker informasjonen til å lage en enkel tekststreng. Til slutt har vi opprettet en ny person og brukt greet-funksjonen til å skrive ut en hilsen.
+Dette vil opprette en ny mappe som heter "navn" og fylle den med et standardoppsett for et Gleam-prosjekt. Deretter må du navigere til prosjektets mappe og kjøre følgende kommando for å kjøre prosjektet:
 
-Dette er bare et eksempel på hvordan du kan starte å jobbe med Gleam. Det er mange flere muligheter og funksjoner du kan bruke i prosjektet ditt, så ikke nøl med å utforske!
+```Gleam
+$ gleam run
+```
 
-## Dypdykk
+Dette vil kompilere og kjøre prosjektet ditt, og du vil kunne se utdata på konsollen din. 
 
-Nå som du har lært det grunnleggende for å starte et nytt Gleam-prosjekt, la oss se på noen dypere detaljer. For å starte et prosjekt må du ha en grundig forståelse av Gleam-syntaxen og hvordan du kan bruke funksjonaliteten til å bygge noe unikt.
+# Dykk dypere inn i Gleam-prosjekter
 
-I tillegg er det viktig å forstå hvordan du kan organisere prosjektet ditt med riktige moduler og filstrukturer, og hvordan du kan integrere eventuelle avhengigheter du kanskje trenger.
+Når du har opprettet et nytt prosjekt, kan du begynne å dykke dypere inn i Gleam-verdenen. En god start er å utforske språkets syntaks og lære om dets konsepter som funksjoner, moduler og typer. Du kan også lese dokumentasjonen for å lære mer om hvordan du kan bruke Gleam til å bygge robuste og skalerbare applikasjoner.
 
-Det er også viktig å lese dokumentasjonen nøye for å forstå alle funksjoner og aspekter ved Gleam-programmeringsspråket.
+# Se også
 
-## Se også
-
-- Offisiell Gleam-dokumentasjon: https://gleam.run/
-- Gleam GitHub Repository: https://github.com/gleam-lang/gleam
-- Eksempler på Gleam-prosjekter: https://gleam.run/examples/
-- Gleam-samfunnets Slack-kanal: https://gleam-run.slack.com/
+- [Gleam-dokumentasjonen](https://gleam.run/)
+- [Gleam på GitHub](https://github.com/gleam-lang/gleam)

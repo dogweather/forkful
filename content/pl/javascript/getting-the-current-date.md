@@ -1,46 +1,47 @@
 ---
-title:    "Javascript: Uzyskiwanie aktualnej daty"
+title:    "Javascript: Pobieranie bieżącej daty"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać w języku JavaScript?
+# Dlaczego warto poznać bieżącą datę w programowaniu?
 
-Język JavaScript jest jednym z najpopularniejszych języków programowania na świecie. Jest on wykorzystywany w tworzeniu stron internetowych, aplikacji mobilnych oraz w wielu innych dziedzinach. Dzięki swojej prostocie i możliwości wykorzystania zarówno po stronie klienta, jak i serwera, JavaScript jest narzędziem niezbędnym dla każdego programisty. W tym artykule skupimy się na jednej z podstawowych funkcji języka - pobieraniu aktualnej daty.
+Każda aplikacja musi w jakiś sposób odzwierciedlać aktualną datę. Niezależnie od tego, czy jest to wyświetlanie daty w interfejsie użytkownika, obliczanie czasu trwania wydarzeń lub tworzenie notatek z dnia, programiści potrzebują mechanizmu, który umożliwi im dostęp do bieżącej daty. W tym wpisie na blogu dowiesz się, jak to zrobić za pomocą języka JavaScript.
 
-## Jak pobrać aktualną datę w języku JavaScript?
+## Jak uzyskać bieżącą datę w JavaScript
 
-Pobranie aktualnej daty w języku JavaScript jest bardzo proste i wymaga zaledwie kilku linijek kodu. W celu jej uzyskania, możemy wykorzystać obiekt Date, który reprezentuje aktualną datę i czas. Poniżej znajduje się przykładowy kod, który pozwoli nam pobrać aktualną datę:
+Istnieją różne sposoby na uzyskanie bieżącej daty w języku JavaScript. Jednym z najprostszych jest użycie obiektu `Date()`, który reprezentuje bieżącą datę i czas. Za pomocą metody `getDate()` możemy uzyskać numeryczną wartość dnia miesiąca, a dzięki metodzie `getMonth()` uzyskamy numeryczną wartość miesiąca, gdzie styczeń jest oznaczony jako 0, a grudzień jako 11. Poniższy przykład pokaże, jak to działa:
 
-```Javascript
-let currentDate = new Date();
-console.log(currentDate);
+```javascript
+const currentDate = new Date();
+console.log(currentDate.getDate()); // 22
+console.log(currentDate.getMonth()); // 7 (sierpień)
 ```
 
-Po uruchomieniu tego kodu w konsoli przeglądarki, powinniśmy otrzymać aktualną datę i czas w formacie `Date {Sat Sep 25 2021 15:48:38 GMT+0200 (Central European Summer Time)}`.
+Kolejną przydatną metodą jest `toLocaleDateString()`, która zwraca bieżącą datę w formacie lokalnym. Na przykład, dla urządzeń w Polsce wyświetli datę w formacie "dd.mm.rrrr". Poniższy kod pokazuje, jak to wygląda:
 
-Kod ten wykorzystuje wbudowaną funkcję konstruktora `new Date()`, która tworzy nowy obiekt Date, reprezentujący aktualną datę i czas. Możemy również wybrać konkretną datę i czas, podając odpowiednie parametry do funkcji konstruktora. Przykładowo, aby uzyskać datę 25 grudnia 2021 roku, możemy napisać `new Date(2021, 11, 25)` - pierwszy parametr to rok, drugi to miesiąc (licząc od 0, czyli 11 oznacza grudzień), a trzeci to dzień.
-
-Możemy również wykorzystać różne metody wbudowane w obiekt Date, aby otrzymać poszczególne elementy daty, takie jak dzień, miesiąc czy rok. Poniżej znajduje się przykładowy kod, który pozwala na uzyskanie aktualnego dnia i miesiąca:
-
-```Javascript
-let currentDate = new Date();
-let day = currentDate.getDay();
-let month = currentDate.getMonth();
-
-console.log("Dzień: " + day);
-console.log("Miesiąc: " + month);
+```javascript
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString()); // 22.08.2021
 ```
 
-W powyższym przykładzie wykorzystaliśmy metody `getDay()` i `getMonth()` do pobrania odpowiednio dnia tygodnia (licząc od 0, gdzie 0 oznacza niedzielę) i miesiąca (również licząc od 0, gdzie 0 oznacza styczeń).
+W celu uzyskania bardziej szczegółowych informacji, jakie metody udostępnia obiekt `Date()`, polecam zapoznać się z dokumentacją języka JavaScript.
 
-## Wiecej informacji o pobieraniu aktualnej daty w języku JavaScript
+## Głębszy zanurknięcie w temat
 
-Obiekt Date posiada wiele innych metod, dzięki którym możemy pobierać i manipulować datami i czasami. Dokładniejszą dokumentację możemy znaleźć na oficjalnej stronie języka JavaScript. Warto również zauważyć, że nie wszystkie przeglądarki obsługują wszystkie funkcje i metody związane z obiektem Date, więc warto sprawdzić jej dostępność przed wykorzystaniem.
+Podczas programowania często mamy do czynienia z różnymi strefami czasowymi. Dlatego też, warto mieć na uwadze, że obiekt `Date()` nie bierze pod uwagę strefy czasowej w której pracujemy, tylko zwraca datę i czas bieżącego urządzenia. Jeśli potrzebujemy zakodować odpowiednią strefę czasową, możemy użyć metody `toLocaleString()` z dodatkowym parametrem `timeZone`:
 
-## Zobacz także
+```javascript
+const options = { timeZone: 'Europe/Warsaw' };
+const currentDate = new Date();
+console.log(currentDate.toLocaleString('pl-PL', options)); // 22.08.2021, 17:30:00
+```
 
-- [Oficjalna dokumentacja języka JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
-- [Wprowadzenie do języka JavaScript](https://www.w3schools.com/js/)
-- [Funkcje konstruktora w obiekcie Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+Innym przydatnym zagadnieniem jest możliwość porównywania dat. W tym celu warto przekonwertować datę na wartość liczbującą dzięki metodzie `getTime()`, która zwraca ilość milisekund od 1 stycznia 1970 roku. Dzięki temu możemy łatwo porównywać dwie daty i wykonywać na nich odpowiednie operacje.
+
+# Zobacz również
+
+- [Dokumentacja języka JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference)
+- [Metody obiektu Date()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)

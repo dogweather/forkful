@@ -1,52 +1,42 @@
 ---
 title:    "Elixir: Å skrive en tekstfil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-**## Hvorfor**
+## Hvorfor skrive tekstfiler?
 
-Skriver du ofte tekstfiler som en del av din programmeringsoppgave? Hvis ja, så vil du få stor nytte av å lære å skrive tekstfiler i Elixir. I denne bloggposten vil jeg guide deg gjennom hvordan du kan gjøre akkurat det!
+Det kan virke unødvendig å skrive en tekstfil i koden din når du allerede har alle funksjonene og variablene du trenger i programmet ditt. Men å skrive en tekstfil kan være nyttig for å lagre informasjon eller kommunisere med andre programmer. Det er også en god måte å sikkerhetskopiere data på.
 
-**## Hvordan**
+## Slik gjør du det i Elixir
 
-For å skrive en tekstfil i Elixir, må du bruke `File.write/3`-funksjonen. La oss si at du ønsker å skrive en fil kalt "test.txt" med innholdet "Hei, verden!". Følgende eksempelkode viser hvordan du kan gjøre dette:
-
-```Elixir
-File.write("test.txt", "Hei, verden!")
-```
-
-Når du kjører koden, vil du se at en fil med navnet "test.txt" har blitt opprettet i samme mappe som filen du kjørte koden fra. Hvis du åpner filen, vil du se at den inneholder teksten "Hei, verden!".
-
-Du kan også legge til en valgfri tredje parameter i `File.write`-funksjonen som angir om filen skal erstattes hvis den allerede eksisterer. Sett denne parameteren til `:append` hvis du vil legge til tekst i slutten av en allerede eksisterende fil. Her er et eksempel:
+For å skrive en tekstfil i Elixir trenger vi bare å bruke `File.write/2` funksjonen og gi den to argumenter: filnavnet og innholdet vi ønsker å skrive. Her er et enkelt eksempel:
 
 ```Elixir
-File.write("test.txt", " verden!", :append)
+File.write("min_fil.txt", "Hei, verden!")
 ```
 
-Dette vil legge til " verden!" i slutten av "Hei," i filen "test.txt".
-
-**## Dypdykk**
-
-Nå som du vet hvordan du skriver en tekstfil i Elixir, la oss se på noen flere detaljer om denne funksjonen.
-
-For det første, hvis du prøver å skrive til en fil som er åpen i et annet program, vil du få en feilmelding. Elixir vil ikke la deg overskrive en fil som allerede er i bruk.
-
-En annen viktig ting å merke seg er at `File.write` returnerer en `:ok`-atom hvis skrivingen var vellykket, og en `{:error, reason}`-tuppel hvis noe gikk galt. Dette kan være nyttig å inkludere i logikken din for å håndtere eventuelle feil som kan oppstå.
-
-Til slutt kan du også skrive flerlinjede tekster ved å bruke `"""`-notationen eller ved å bruke `\n` for å lage linjeskift. Her er et eksempel på begge:
+Dette vil opprette en tekstfil med navnet "min_fil.txt" og skrive teksten "Hei, verden!" til den. Vi kan også bruke variabler eller funksjoner for å skrive variabel tekst eller informasjon fra vårt program.
 
 ```Elixir
-File.write("test.txt", """Hei,
-verden!""")
+tekst = "Dette er en tekst"
+farge = "rød"
+
+File.write("min_fil.txt", "#{tekst} i en #{farge} tekstfil")
 ```
 
-```Elixir
-File.write("test.txt", "Hei,\nverden!")
-```
+Dette vil skrive teksten "Dette er en tekst i en rød tekstfil" til filen vår. Og med funksjoner kan vi til og med skrive data fra vår Elixir applikasjon til en tekstfil for senere bruk eller analyse.
 
-**## Se også**
+## Dypdykk
 
-- [Elixir Dokumentasjon: File](https://hexdocs.pm/elixir/File.html)
-- [Elixir Kommunitet: Writing Text Files](https://elixirforum.com/t/writing-a-text-file-with-elixir/7447)
+Når vi åpner en tekstfil, vil vi se at innholdet vil bli skrevet på en enkel måte, uten noen formatering eller struktur. Vi kan imidlertid bruke Markdown i våre tekstfiler for å organisere og formatere innholdet vårt. Dette gjør det enklere å lese og forstå for både mennesker og andre programmer som skal lese filen.
+
+I tillegg kan vi også bruke `File.stream!/3` funksjonen for å skrive store mengder data til en tekstfil. Dette vil sørge for at vår program ikke bruker for mye minne og vil skrive dataene som en strøm istedenfor samlet.
+
+## Se også
+
+- Elixir Official Documentation: https://hexdocs.pm/elixir/
+- Understanding Elixir File I/O: https://dev.to/bohachevsky/understanding-elixir-file-i-o-2haf
+- Writing and Reading Text Files in Elixir: https://pragmaticstudio.com/tutorials/writing-and-reading-files-in-elixir

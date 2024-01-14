@@ -1,35 +1,45 @@
 ---
-title:    "Rust: 문자열 소문자로 변환하기"
+title:    "Rust: 문자열을 소문자로 변환하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 소문자로 변환하는 것이 왜 유용한지 궁금하신가요? 이 글에서는 이에 대한 이유와 그 방법에 대해 살펴보겠습니다. Rust 프로그래밍을 하시는 모든 분들에게 유익한 정보가 될 것입니다!
+# 왜
+
+문자열을 소문자로 변환하는 것에 대해 관심이 생기는 이유는 다양할 수 있습니다. 예를 들어, 대소문자를 구분하지 않고 문자열을 비교해야 할 때, 또는 특정 작업을 수행하기 위해 문자열의 양식을 통일해야 할 때 등이 있을 수 있습니다. 또는 간단히 문자열을 보기 좋게 표현하기 위해서도 사용될 수 있습니다. Rust는 이를 위한 간단하고 효율적인 방법을 제공하고 있으니 이번 글에서는 그 방법에 대해 알아보도록 하겠습니다.
 
 ## 어떻게
-문자열을 소문자로 변환하기 위해서는 Rust 언어에서 제공하는 `to_lowercase()` 메서드를 사용합니다. 먼저, 변환하고 싶은 문자열을 변수에 할당합니다. 그리고 해당 변수에 `to_lowercase()` 메서드를 호출하면 됩니다. 아래에 예시 코드와 예상되는 출력을 보여드리겠습니다.
+
+Rust에서 문자열을 소문자로 변환하기 위해서는 `to_lowercase()` 함수를 사용하면 됩니다. 이 함수는 `String` 타입의 문자열을 반환하며, 인자로는 변환하고자 하는 문자열의 참조자를 전달해주어야 합니다.
 
 ```Rust
-let string = String::from("HELLO");
-let lower_case_string = string.to_lowercase();
-println!("원래 문자열: {}", string);
-println!("변환된 문자열: {}", lower_case_string);
-```
-```text
-원래 문자열: HELLO
-변환된 문자열: hello
+fn main() {
+    let name = "RUST PROGRAMMING";
+    let lower_name = name.to_lowercase();
+    println!("{}", lower_name);
+}
 ```
 
-이렇게 간단하게 문자열을 소문자로 변환할 수 있습니다!
+위의 코드에서 `to_lowercase()` 함수를 이용해 `name` 변수에 할당된 문자열을 소문자로 변환하여 `lower_name` 변수에 저장했습니다. 그리고 `println!` 매크로를 이용해 변환된 소문자 문자열을 출력하도록 하였습니다. 이를 실행하면 다음과 같은 결과가 나타납니다.
 
-## 깊이 알아보기
-문자열을 소문자로 변환하는 방법에 대해 좀 더 깊이 알아보겠습니다. Rust에서는 이 작업을 수행하기 위해 `String` 타입의 `to_lowercase()` 메서드를 제공합니다. 이 메서드를 사용하면 문자열에 포함된 모든 문자를 대문자에서 소문자로 변환합니다. 그렇기 때문에 대/소문자를 구분하지 않고 문자열을 비교하고 싶을 때 유용하게 사용할 수 있습니다.
+```
+rust programming
+```
 
-또한, Unicode 문자에도 적용할 수 있다는 점이 매력적입니다. Rust의 `to_lowercase()` 메서드는 모든 언어의 문자에 대해 정확하게 작동합니다. 이는 Rust가 문자열을 관리하는 방식이 C로 부터 차용한 NFD (Normalization Form D)를 사용하기 때문입니다. 따라서 코드의 국제화와 문자열 처리가 중요한 프로젝트에서도 안정성을 보장할 수 있습니다.
+이와 같이 소문자로 변환된 결과를 얻을 수 있습니다.
 
-## 참고 자료
-- [Rust 공식 문서 (문자열)[https://doc.rust-lang.org/std/string/index.html]
-- [Rust by Example - 문자열 사용하기(https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
-- [Rust와 유니코드(https://www.rust-lang.org/ko-KR/learn/introducing-rust/unicode)
+## 깊게 들어가기
+
+Rust에서 문자열을 소문자로 변환하는 방법은 간단하지만, 실제로는 다소 복잡한 과정을 거칩니다. 특히, 영어 이외의 언어에서는 더욱 복잡한 경우가 있을 수 있습니다. Rust는 이를 해결하기 위해 내부적으로 `Unicode`와 관련된 기능을 활용하여 문자열을 변환합니다.
+
+예를 들어, 여러 언어에서 공백이나 기호 등을 포함한 문자열을 소문자로 변환해야 할 때, 이러한 문자들을 각각 모두 소문자로 변환하는 것이 아니라 해당 문자열의 `Unicode`를 고려하면서 정확하게 변환해줍니다. 또한, 다양한 언어 패턴과 규칙에 대해 자세히 알고 있어야만 정확한 변환 결과를 얻을 수 있습니다.
+
+따라서 Rust에서 문자열을 소문자로 변환할 때는 이러한 내부적인 과정을 고려해야 한다는 점을 명심하시길 바랍니다.
+
+# 관련 링크
+
+- [Rust 문자열 관련 공식 문서](https://doc.rust-lang.org/beta/std/string/struct.String.html#method.to_lowercase)
+- [Rust 문자열 타입과 메서드 소개](https://www.rprogramming.net/rust-string-tutorial/)
+- [Rust 표준 라이브러리](https://doc.rust-lang.org/std/index.html)

@@ -1,44 +1,73 @@
 ---
-title:    "Javascript: Verifica se una directory esiste."
+title:    "Javascript: Verifica se esiste una directory"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Spesso durante la programmazione, potresti trovarti nella necessità di verificare se una directory esiste o meno. Questa operazione è particolarmente utile nel caso in cui tu debba manipolare file all'interno di una directory o creare una nuova directory solo se quella desiderata non esiste già.
+
+Programmare in Javascript può essere un processo impegnativo e spesso ci si trova di fronte a problemi che richiedono di essere risolti. Uno di questi problemi può essere quello di controllare se una directory esiste. Questa operazione può essere utile per una serie di motivi, come ad esempio accedere a file o cartelle specifiche, o verificare se un utente ha i permessi necessari per accedere a quelle risorse.
 
 ## Come fare
-Nella programmazione Javascript, è possibile verificare l'esistenza di una directory utilizzando la funzione `fs.existsSync()` del modulo `fs`. Questa funzione prende come argomento il percorso della directory che si vuole verificare e restituisce un valore booleano (`true` se la directory esiste, `false` se non esiste). Vediamo un esempio pratico di come utilizzare questa funzione:
 
-```Javascript
-const fs = require('fs');
+Per controllare se una directory esiste, possiamo utilizzare la funzione `fs.existsSync()` del modulo File System di Node.js.
 
-// Verifica l'esistenza della directory "documents"
-if (fs.existsSync("./documents")) {
-  console.log("La directory 'documents' esiste già");
-} else {
-  console.log("La directory 'documents' non esiste");
+```
+const fs = require('fs'); 
+
+if (fs.existsSync('/percorso/della/directory')) { 
+    console.log('La directory esiste!'); 
+} else { 
+    console.log('La directory non esiste!'); 
 }
 ```
 
-Nell'esempio sopra, stiamo utilizzando la funzione `fs.existsSync()` per verificare se la directory "documents" esiste nella stessa cartella del file Javascript in cui stiamo lavorando. Per utilizzarla in un progetto reale, dovremmo cambiare il percorso del file in base alla nostra specifica esigenza.
+Questo semplice codice utilizza la funzione `fs.existsSync()` per verificare se la directory specificata esiste. Se la directory esiste, viene stampato un messaggio di conferma; altrimenti, viene stampato un messaggio di errore.
+
+Un'altra opzione è utilizzare la funzione `fs.stat()` per ottenere informazioni sulla directory e verificare se esiste o meno.
+
+```
+const fs = require('fs'); 
+
+fs.stat('/percorso/della/directory', (err, stats) => { 
+    if (err) { 
+        console.log('La directory non esiste!'); 
+    } else { 
+        console.log('La directory esiste!'); 
+        console.log(`Dimensioni: ${stats.size} bytes`); 
+        console.log(`Ultima modifica: ${stats.mtime}`); 
+    } 
+});
+```
+
+La funzione `fs.stat()` restituisce un oggetto `stats` contenente diverse informazioni sulla directory, come la sua dimensione e l'ultima data di modifica.
 
 ## Approfondimento
-Facciamo un passo indietro e analizziamo meglio la funzione `fs.existsSync()`. Come accennato in precedenza, questa funzione restituisce un valore booleano, ma come fa esattamente a determinare se la directory esiste o meno? Innanzitutto, è importante sottolineare che questa funzione fa parte del modulo `fs`, che fornisce un'interfaccia per interagire con il sistema di file del computer. Per poter utilizzare questa funzione, dobbiamo quindi prima importare il modulo tramite la keyword `require()`. Una volta importato, possiamo invocare la funzione e passare come argomento il percorso della directory che desideriamo verificare.
 
-```Javascript
+In alcuni casi, potrebbe essere necessario controllare se una directory specifica esiste all'interno di una directory principale. In questo caso, possiamo utilizzare la funzione `fs.readdir()` per elencare tutti i file e le directory presenti in una determinata directory.
+
+```
 const fs = require('fs');
-const path = require('path');
 
-function checkDirExists(directory) {
-  return fs.existsSync(path.join(__dirname, directory));
-}
+fs.readdir('/percorso/della/directory', (err, files) => {
+    if (err) {
+        console.log('Errore nella lettura dei file!');
+    } else {
+        if (files.includes('directory-cercata')) {
+            console.log('La directory esiste!');
+        } else { 
+            console.log('La directory non esiste!');
+        }
+    }
+});
 ```
 
-Nell'esempio sopra, stiamo definendo una funzione che prende come argomento il nome di una directory e utilizza la funzione `path.join()` per unire il percorso della directory passato come argomento con il percorso corrente della cartella in cui si trova il file Javascript. Questo ci permette di utilizzare la funzione indipendentemente dal percorso in cui ci troviamo. Infine, stiamo restituendo il valore booleano di `fs.existsSync()` utilizzando `path.join()`.
+La funzione `fs.readdir()` restituisce un array contenente tutti i nomi dei file e delle directory presenti nella directory specificata. Utilizzando la funzione `includes()`, possiamo verificare se tra questi nomi è presente la directory che stiamo cercando.
 
 ## Vedi anche
-- [Documentazione ufficiale di `fs.existsSync()`](https://nodejs.dev/learn/the-nodejs-fs-module#fs-existsync)
-- [Documentazione ufficiale di `path.join()`](https://nodejs.dev/learn/nodejs-path-module#nodejs-path-join)
-- [Guida all'utilizzo dei moduli in Node.js](https://nodejs.dev/learn/using-experimental-modules)
+
+- [Documentazione su `fs.existsSync()`](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Documentazione su `fs.stat()`](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
+- [Documentazione su `fs.readdir()`](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)

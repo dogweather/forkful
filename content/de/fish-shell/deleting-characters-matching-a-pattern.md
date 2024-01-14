@@ -1,41 +1,41 @@
 ---
-title:    "Fish Shell: Zeichen löschen, die einem Muster entsprechen."
+title:    "Fish Shell: Löschen von Zeichen, die einem Muster entsprechen."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Technik in der Fish Shell Programmierung. Mit dieser Funktion können Sie unerwünschte Zeichen in einer Datei oder einem String effizient entfernen.
+Der Fish Shell ist eine leistungsstarke Programmiersprache, die sich hervorragend für die Shell-Programmierung eignet. Beim Arbeiten mit der Fish Shell gibt es eine Vielzahl von Situationen, in denen man möglicherweise Zeichen löschen möchte, die einem bestimmten Muster entsprechen. In diesem Blog-Beitrag werden wir uns genauer damit befassen, warum man solche Aktionen durchführen möchte.
 
-## Wie man vorgeht
+## Wie es funktioniert
 
-Um Zeichen in der Fish Shell zu löschen, verwenden Sie das Befehlszeilentool "sed" in Kombination mit regulären Ausdrücken. Der folgende Code zeigt, wie Sie alle Leerzeichen aus einem String entfernen können:
+Um Zeichen, die einem bestimmten Muster entsprechen, in der Fish Shell zu löschen, gibt es mehrere Möglichkeiten. Eine gängige Methode ist die Verwendung des "string delete" Befehls. Dieser Befehl verwendet das Muster, das wir löschen möchten, und das zu löschende Zeichen. Hier ist ein Beispiel, wie wir den Befehl verwenden können:
 
 ```Fish Shell
-set str 'Fisch ist cool'
-set str (echo $str | sed 's/ //g')
-echo $str
+string delete "H" "Hello World"
 ```
-Output: `Fischtisull`
 
-In diesem Beispiel verwenden wir den Befehl "sed" mit dem Flag "s", das für "substitution" (Ersetzung) steht. Wir geben ein Leerzeichen und einen Schrägstrich ("/ ") an, um anzugeben, welches Zeichen wir ersetzen möchten. Nach dem zweiten Schrägstrich geben wir an, durch welches Zeichen wir das vorherige ersetzen wollen, in diesem Fall durch keinen Wert (" //"). Das Flag "g" steht für "global" und gibt an, dass alle übereinstimmenden Zeichen im String ersetzt werden sollen.
+Das Ergebnis wird sein: "ello World". Wie Sie sehen können, wird der Buchstabe "H" gelöscht und das restliche Wort bleibt erhalten.
 
-## Tiefere Einblicke
+Eine weitere Methode ist die Verwendung des "string replace" Befehls. Dieser Befehl verwendet ein ähnliches Format wie der "string delete" Befehl, jedoch ersetzt er das zu löschende Zeichen durch ein anderes Zeichen. Zum Beispiel können wir den Befehl verwenden, um alle Vokale in einem Wort zu löschen:
 
-Die Verwendung von regulären Ausdrücken in der Fish Shell bietet eine leistungsstarke Möglichkeit, Zeichenmuster zu identifizieren und zu bearbeiten. Hier sind einige der gängigsten Syntax-Elemente, die Sie bei der Arbeit mit regulären Ausdrücken verwenden können:
+```Fish Shell
+string replace "*?[aeiou]*" "Hello World" ""
+```
 
-- `.` steht für ein beliebiges Zeichen
-- `[]` gibt eine Liste von Zeichen an, die übereinstimmen sollen
-- `*` steht für Null oder mehr Wiederholungen des vorherigen Zeichens
-- `+` steht für eine oder mehr Wiederholungen des vorherigen Zeichens
-- `?` steht für Null oder eine Wiederholung des vorherigen Zeichens
+Das Ergebnis wird sein: "Hll Wrld". Das Sternchen (*) wird verwendet, um jedes beliebige Zeichen zu entsprechen, und das Fragezeichen (?) wird verwendet, um ein einzelnes Zeichen zu entsprechen.
 
-Es gibt noch viele weitere Möglichkeiten, reguläre Ausdrücke zu verwenden, um bestimmte Zeichenmuster zu finden oder zu ersetzen. Wir empfehlen Ihnen, weitere Tutorials zu diesem Thema zu lesen, um Ihr Verständnis zu vertiefen.
+## Tiefergehende Informationen
+
+Es gibt viele weitere Möglichkeiten, Zeichen zu löschen, die einem bestimmten Muster entsprechen, in der Fish Shell. Zum Beispiel können wir den "sed"-Befehl verwenden, um Zeilen in einer Datei zu löschen, die einem bestimmten Muster entsprechen. Oder wir können reguläre Ausdrücke verwenden, um komplexere Muster zu löschen.
+
+Es ist wichtig zu wissen, wie man Zeichen löscht, die einem bestimmten Muster entsprechen, da dies uns helfen kann, unsere Shell-Programme effizienter und effektiver zu gestalten. Es ermöglicht uns auch, Daten schneller und präziser zu verarbeiten.
 
 ## Siehe auch
 
-- [Fish Shell Dokumentation über reguläre Ausdrücke](https://fishshell.com/docs/current/index.html#regular-expressions)
-- [Tutorial zu regulären Ausdrücken in der Fish Shell](https://dev.to/hirmencedigimahi/fishing-for-patterns-using-regular-expressions-with-fish-shell-40l2)
-- [Weitere Beispiele für die Verwendung von regulären Ausdrücken in der Fish Shell](https://dev.to/d_danilm/fish-shell-regular-expressions-1hjm)
+- [Offizielle Fish Shell Website](https://fishshell.com/)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Einsteiger-Tutorial für die Fish Shell](https://medium.com/@vgasparyan1995/become-a-ninja-in-bullet-proof-shell-scripting-with-fish-shell-2148b9065929)

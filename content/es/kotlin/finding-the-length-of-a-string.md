@@ -1,53 +1,40 @@
 ---
-title:    "Kotlin: Encontrar la longitud de una cadena"
+title:    "Kotlin: Encontrando la longitud de una cadena"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## Por qué encontrar la longitud de una cadena
 
-A menudo, en programación, necesitamos saber la longitud de una cadena de texto. Ya sea para validar una entrada del usuario, realizar operaciones matemáticas o simplemente por fines de visualización, conocer la longitud de una cadena puede ser una tarea útil en muchos escenarios.
+En la programación, a menudo nos encontramos trabajando con cadenas de texto. Ya sea para validar datos o para manipularlos de alguna manera, es importante entender cómo trabajar con ellos. Una de las operaciones más comunes que se realizan en cadenas es determinar su longitud. En este post, aprenderemos por qué es importante encontrar la longitud de una cadena y cómo hacerlo en Kotlin.
 
 ## Cómo hacerlo
 
-En Kotlin, podemos encontrar la longitud de una cadena fácilmente utilizando la función `length()` que viene integrada en la clase `String`. Veamos un ejemplo práctico:
+La forma más sencilla de encontrar la longitud de una cadena en Kotlin es utilizando la propiedad `length`. Esta propiedad devuelve un valor entero que representa la cantidad de caracteres en la cadena. Veamos un ejemplo de cómo usarlo en un código:
 
-```Kotlin
-fun main() {
-    val frase = "Hola, ¿cómo estás?"
-    val longitud = frase.length()
-
-    println("La longitud de la frase es $longitud")
-}
+```kotlin
+val cadena = "Hola Mundo"
+val longitud = cadena.length
+println("La longitud de la cadena es: " + longitud) // output: La longitud de la cadena es: 10
 ```
 
-La salida de este código será:
+También podemos utilizar métodos de extensión como `count()` o `size()` para encontrar la longitud de una cadena. Estos métodos funcionan de manera similar a `length` y nos permiten ser más dinámicos en nuestra forma de codificar. Veamos otro ejemplo:
 
+```kotlin
+val cadena = "Me gusta programar"
+println(cadena.size) // output: 19
 ```
-La longitud de la frase es 18
-```
-
-También podemos utilizar la propiedad `length` directamente en la cadena, en lugar de llamar a la función `length()`, ya que en Kotlin las propiedades y las funciones son intercambiables para obtener valores.
-
-```Kotlin
-val longitud = frase.length
-```
-
-Por último, es importante mencionar que la función `length()` cuenta todos los caracteres de la cadena, incluyendo espacios en blanco, signos de puntuación, y acentos.
 
 ## Profundizando
 
-Si nos adentramos un poco más en la función `length()`, podemos descubrir que en realidad es una extensión de la clase `CharSequence`, la cual representa un conjunto de caracteres que se pueden acceder secuencialmente. Esto significa que también podemos obtener la longitud de otras clases como `StringBuilder`, `StringBuffer` y `CharArray`.
+Es importante tener en cuenta que, aunque `length` y otros métodos de extensión nos ayudan a encontrar la longitud de una cadena rápidamente, debemos tener en cuenta algunos detalles al trabajar con cadenas. Por ejemplo, en Kotlin, las cadenas se tratan como objetos inmutables, lo que significa que no se pueden cambiar una vez que se han creado. Si por alguna razón necesitamos modificar una cadena, deberemos crear una nueva. Esto puede afectar la cantidad de caracteres que se devuelven al utilizar la propiedad `length` o los métodos de extensión mencionados anteriormente.
 
-Además, la función `length()` en realidad es una delegación a la propiedad `size` de la clase `CharSequence`, lo que nos permite acceder al tamaño de una cadena sin necesidad de llamar a una función.
+También es importante mencionar que en Kotlin, los emojis y otros caracteres especiales pueden ocupar más de un carácter en una cadena. Esto afectará la longitud que se devuelve y debemos tenerlo en cuenta al manipular cadenas en nuestras aplicaciones.
 
-Por último, si necesitamos una manera más eficiente de obtener la longitud de una cadena, podemos utilizar el operador `count()` en lugar de la función `length()`. El uso de `count()` es especialmente útil en cadenas grandes, ya que evita la creación de una nueva instancia de `Int` para almacenar el valor de la longitud.
+## Ver también
 
-## Ver también 
-
-- [Documentación oficial de Kotlin sobre la clase `CharSequence`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/)
-- [Documentación oficial de Kotlin sobre la función `length()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
-- [Ejemplo práctico de uso de la función `length()`](https://www.programiz.com/kotlin-programming/strings#length)
-
-¡Con esto ya estás listo para utilizar la función `length()` en tus proyectos y obtener la longitud de tus cadenas de forma sencilla y eficiente! Espero que este artículo te haya sido útil. ¡Hasta la próxima!
+- [Documentación oficial de Kotlin sobre cadenas](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Cómo trabajar con cadenas en Kotlin](https://devexperto.com/cadenas-string-kotlin/)
+- [Operaciones básicas con cadenas en Kotlin](https://medium.com/@mauvuelles/operaciones-b%C3%A1sicas-con-cadenas-en-kotlin-adbd6974845e)

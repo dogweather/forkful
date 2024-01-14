@@ -1,36 +1,39 @@
 ---
-title:    "Elm: 문자열 대문자로 바꾸기"
+title:    "Elm: 문자열 대문자로 변환하기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-문자열을 대문자로 바꾸는 것에 대해 궁금하신가요? 이 글에서는 Elm 프로그래밍에서 문자열을 대문자로 바꾸는 이유와 그 방법에 대해 알려드릴 것입니다.
+문자열을 대문자로 변환하는 것에 대해 고민해 본 적이 있나요? 당신이 알기 원하는 것은 어떤 이유로 이 작업이 유용한지에 대한 것입니다. 그래서 오늘은 Elm 프로그래밍에서 문자열을 대문자로 변환하는 방법에 대해 알아보겠습니다.
 
-## 어떻게
+# 어떻게
 
-문자열을 대문자로 바꾸는 방법은 간단합니다. 다음과 같이 `String.toUpper` 함수를 사용하면 됩니다.
+이 작업을 수행하는 가장 쉬운 방법은 Elm의 String 라이브러리에 있는 `toUpper` 함수를 사용하는 것입니다.
 
-```Elm
+```Elm 
 import String
 
-Strign.toUpper "hello" -- "HELLO"
+String.toUpper "hello" -- "HELLO"
 ```
 
-위의 예시에서 `String.toUpper` 함수는 문자열을 대문자로 바꿔주는 역할을 합니다. 따라서 "hello"라는 문자열을 입력하면 "HELLO"라는 결과가 출력됩니다.
+`toUpper` 함수는 문자열을 모두 대문자로 변환하여 반환합니다. 위 예제에서는 "hello"라는 문자열이 대문자로 변환되어 "HELLO"가 출력됩니다.
 
-## 딥 다이브
+# 깊게 파헤치기
 
-문자열을 대문자로 바꾸는 방법을 더 자세히 알아보겠습니다. Elm에서는 기본적으로 `String` 라이브러리를 제공합니다. 따라서 `import` 구문을 사용하여 `String` 모듈을 불러와야 합니다.
+이 예제에서 사용한 `toUpper` 함수는 사실 `toUpper : String -> String`라는 타입 시그니처를 가지고 있습니다. 이는 `toUpper` 함수가 단일 문자열을 인수로 받아 대문자로 변환된 문자열을 반환한다는 것을 의미합니다.
 
-`String` 모듈에는 `toUpper` 함수 외에도 `toLower`, `endsWith`, `startsWith` 등 다양한 함수가 있습니다. 이들 함수들은 모두 문자열을 다루는데 유용합니다. 더 자세한 정보는 [Elm 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String)를 참고해주세요.
+또한, 이 함수는 인수로 받은 문자열 외에도 `foldl`이라는 또 다른 함수를 이용해 `toUpper`를 적용할 수 있는 리스트도 처리할 수 있습니다. 이를 통해 여러 문자열을 대문자로 변환하는 것도 가능합니다.
 
-## 더 알아보기
+# 더 알아보기
 
-자세한 내용을 알아보기 위해 다음의 링크들을 참고해주세요.
+이외에도 `String.split` 함수를 사용해 문자열을 분할하여 대문자로 변경하는 등 다양한 방법으로 문자열을 대문자로 변환할 수 있습니다. Elm의 String 라이브러리에는 문자열을 다루는 다양한 함수들이 많이 있기 때문에 많은 공부가 필요할 수도 있습니다. 하지만 한 번 익숙해지고 나면 문자열을 다루는 작업에서 매우 유용하게 사용할 수 있습니다.
 
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [Elm 코리아 커뮤니티 블로그](https://elm-korea.github.io/)
-- [Elm 코리아 Slack 커뮤니티](https://elm-korea.slack.com/)
+# 이어서 읽어보세요
+
+* [Elm 공식문서 - String 라이브러리](https://package.elm-lang.org/packages/elm/core/latest/String)
+* [Elm 공식문서 - 함수 연산자](https://guide.elm-lang.org/appendix/functions.html)
+* [코드스쿼드 블로그 - Elm 문자열 다루기](https://medium.com/@codesquad_yoda/elm-문자열-다루기-13545fd90dea)

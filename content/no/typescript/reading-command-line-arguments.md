@@ -1,78 +1,68 @@
 ---
-title:    "TypeScript: Lesing av kommandolinjeargumenter"
+title:    "TypeScript: Å lese kommandolinjeargumenter"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvorfor skulle noen bry seg om å lese kommandolinje-argumenter? Vel, svaret er enkelt - fordi det er en viktig del av å lage et robust og effektivt TypeScript-program. Når du har lært hvordan du kan lese og bruke disse argumentene, vil du kunne overraske brukerne dine med mer dynamiske og interaktive programmer.
+Hvis du noensinne har programmert i TypeScript før, vet du at det er en kraftig og fleksibel programmeringsspråk. En av de mange nyttige funksjonene i TypeScript er evnen til å lese kommandolinjeargumenter. Dette gjør det mulig for programmerere å interagere med sine programmer på en enkel og effektiv måte. I denne bloggposten vil vi utforske hvorfor det er viktig å kunne lese kommandolinjeargumenter og hvordan du kan gjøre det i TypeScript.
 
-## Hvordan
+## Hvordan gjøre det
 
-La oss se på et enkelt eksempel på hvordan du kan lese kommandolinje-argumenter i TypeScript:
-
-```TypeScript
-let args = process.argv.slice(2);
-console.log(`Første argument: ${args[0]}`);
-```
-
-Hvis du nå kjører programmet ditt fra kommandolinjen med argumentet "hello", vil du få følgende utskrift:
+Lesing av kommandolinjeargumenter i TypeScript er enkelt og kan gjøres ved hjelp av en innebygd Node.js modul kalt "process". Her er et eksempel på hvordan du kan lese og skrive ut en kommandolinjeargument i TypeScript:
 
 ```TypeScript
-Første argument: hello
+// Importer process modul
+import * as process from 'process';
+
+// Lagre kommandolinjeargumenter i et array
+let args: string[] = process.argv;
+
+// Skriv ut det første argumentet
+console.log(`Første kommandolinjeargument: ${args[0]}`);
 ```
 
-La oss nå ta en titt på hva som skjer i koden vår:
+Når du kjører denne koden i terminalen og legger til et argument etter filnavnet, vil det første argumentet bli skrevet ut.
 
-1. Vi bruker `process`-objektet til å få tilgang til informasjon om prosessen som kjører programmet vårt.
+```bash
+ts-node index.ts argument1
+```
 
-2. `process.argv` returnerer en liste over alle kommandolinje-argumentene som ble gitt da programmet ble kjørt.
+Output:
+```
+Første kommandolinjeargument: argument1
+```
 
-3. Vi bruker `slice`-metoden for å fjerne de to første elementene i listen, siden disse vanligvis er banen til node-installasjonen og filbanen til programmet vårt. Dette gjør at vi kun sitter igjen med de argumentene som ble gitt av brukeren.
-
-4. Til slutt bruker vi det første argumentet i listen for å skrive ut en beskjed i konsollen.
-
-Dette er en veldig enkel måte å lese kommandolinje-argumenter på, og det er mange flere muligheter for å håndtere disse argumentene på en mer avansert måte.
-
-## Deep Dive
-
-For å virkelig utnytte potensialet til å lese kommandolinje-argumenter, er det viktig å forstå forskjellen mellom opsjoner og parametere. Opsjoner er vanligvis korte flagg som kan legges til argumentene for å aktivere bestemte funksjoner i programmet. Parametere derimot, er nøkkelverdipar som gir mer spesifikk informasjon til programmet.
-
-Her er et eksempel på hvordan du kan implementere dette i koden din:
+Du kan også bruke "slice" metoden for å få et subsett av argumentene. For eksempel, hvis du vil ha alle argumentene bortsett fra det første (som i eksemplet ovenfor), kan du bruke følgende kode:
 
 ```TypeScript
-let args = process.argv.slice(2);
-let options = [];
-let params = {};
-
-for (let i = 0; i < args.length; i++) {
-  if (args[i].startsWith("--")) {
-    let option = args[i].substring(2);
-    options.push(option);
-  } else if (args[i].startsWith("-")) {
-    let option = args[i].substring(1);
-    options.push(option);
-  } else {
-    let [key, value] = args[i].split("=");
-    params[key] = value;
-  }
-}
-
-if (options.includes("help")) {
-  console.log("Hjelpemeny: ...");
-}
-
-if (params["name"]) {
-  console.log(`Hei, ${params["name"]}!`);
-}
+let subsetArgs: string[] = process.argv.slice(2);
 ```
 
-Dette er bare et eksempel på hvordan du kan håndtere de forskjellige typene kommandolinje-argumenter i programmet ditt. Det er mange flere strategier du kan bruke, avhengig av hva slags funksjonalitet du ønsker å implementere.
+Dette vil lagre alle kommandolinjeargumentene bortsett fra det første i variabelen "subsetArgs".
+
+## Dykk litt dypere
+
+Når du leser kommandolinjeargumenter i TypeScript, er det noen ting du bør være klar over. Først og fremst er det viktig å huske at argumentene alltid vil bli lagret som strenger, selv om du skriver inn tall. Derfor må du konvertere dem til riktig datatype hvis du trenger å bruke dem som noe annet enn en streng.
+
+En annen viktig ting å huske på er at argumentene ikke vil bli inkludert hvis du kjører programmet ditt fra en integrert utviklingsmiljø (IDE) som Visual Studio Code. For å få argumentene til å vises må du kjøre programmet ditt fra terminalen eller kommandolinjen.
+
+En god praksis når du leser kommandolinjeargumenter er å sjekke om brukeren har inkludert de riktige argumentene før du bruker dem. Dette kan gjøres ved hjelp av "length" metoden på "process.argv" arrayet.
+
+```TypeScript
+// Sjekk om det er minst to argumenter
+if (process.argv.length < 3) {
+    console.log("Feil: manglende argumenter, vennligst inkluder to argumenter");
+} else {
+    // Fortsett programmet
+}
+```
 
 ## Se også
 
-- [Kommandolinjebruk i TypeScript-prosjekter](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html#command-line-flags)
-- [Node.js-prosessobjektet](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
-- [Tydeligere kommandoer med strukturerte argumenter i TypeScript](https://auth0.com/blog/how-to-build-and-utilize-command-line-babel-with-node-js/)
+- [Node.js dokumentasjon om "process" modulen](https://nodejs.org/api/process.html)
+- [TypeScript dokumentasjon om kommandolinjeargumenter](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+- [Tutorialspoint artikkel om lesing av kommandolinjeargumenter i TypeScript](https://www.tutorialspoint.com/typescript/typescript_command_line.htm)

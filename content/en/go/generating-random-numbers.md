@@ -1,56 +1,58 @@
 ---
 title:    "Go recipe: Generating random numbers"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Generating random numbers is a common task in many programming languages, including Go. Random numbers can be used for a variety of purposes, such as creating encryption keys, simulating dice rolls, or shuffling data. Learning how to generate random numbers in Go can be useful for a wide range of applications.
+Generating random numbers is a key aspect of many programming languages, including Go. Random numbers are useful for a variety of applications, such as creating randomized games, simulations, and cryptographic key generation. By understanding how to generate random numbers in Go, you can add a useful tool to your programming arsenal.
 
 ## How To
 
-In Go, the `math/rand` package provides functions for generating pseudo-random numbers. These numbers are not truly random, but they are generated using a deterministic algorithm that gives the appearance of randomness. This package also allows for better control over the seed used for generating the numbers, which can be useful for testing purposes.
-
-To start generating random numbers in Go, we first need to import the `math/rand` package. Then, we can use the `Intn()` function to generate a random integer within a given range. For example, to generate a random number between 1 and 100, we can use the following code:
+Generating random numbers in Go is a straightforward process. The first step is to import the "math/rand" package, which contains functions for generating random numbers. Then, you can use the "Intn(n int)" function to generate an integer between 0 and n-1. For example, to generate a random number between 1 and 100, you would use the following code:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "math/rand"
+  "fmt"
+  "math/rand"
 )
 
 func main() {
-    // set seed for deterministic results (optional)
-    rand.Seed(42)
-    
-    // generate a random number between 1 and 100
-    num := rand.Intn(100) + 1
-    
-    fmt.Printf("Random number: %d\n", num) // output: Random number: 83
+  // Generate a random number between 1 and 100
+  num := rand.Intn(100) + 1
+  fmt.Println("Random number:", num)
 }
 ```
 
-In the above example, we use `Intn()` to generate a random integer within the range of 0 to 99, and then we add 1 to the result to get a range of 1 to 100. We can also use other variations of `Intn()` to generate different types of random numbers, such as signed integers or numbers within a specific range.
+The output of this code could be something like: "Random number: 67". Keep in mind that the result will be different each time you run the code, as it is a random number.
 
-Besides integers, we can also generate random float numbers using the `Float64()` function. Here's an example of generating a random float number between 0 and 1:
+If you want to generate a random number within a specific range, you can use the "Intn(max-min)+min" formula. For example, to get a random number between 10 and 20, you would use the following code:
 
 ```Go
-// generate a random float number between 0 and 1
-rand.Float64()
+// Generate a random number between 10 and 20
+num := rand.Intn(20-10) + 10
+```
+
+You can also generate randomized floating-point numbers using the "Float64()" function. This function will generate a number between 0 and 1. To get a random floating-point number between 0 and 10, you would use the following code:
+
+```Go
+// Generate a random floating-point number between 0 and 10
+randomNum := rand.Float64() * 10
 ```
 
 ## Deep Dive
 
-While the `math/rand` package is great for most general purpose applications, it's important to understand that the numbers generated are not truly random. They are generated using a mathematical algorithm, which means that the same seed will always result in the same sequence of numbers. This can be useful for testing or debugging purposes, but it's not ideal for security-related tasks such as generating encryption keys or generating unique identifiers.
+Random numbers may seem simple on the surface, but there is actually a lot of complexity behind how they are generated. Go uses a mathematical algorithm known as a pseudo-random number generator (PRNG) to generate random numbers. This algorithm takes a starting seed number and generates a sequence of numbers that appear to be random. However, the sequence is actually deterministic, meaning that the same starting seed will result in the same sequence of numbers.
 
-For more secure and truly random numbers, Go provides the `crypto/rand` package. This package uses system-specific entropy to generate random numbers, making them more unpredictable and secure. However, it's important to note that using this package can be slower and may not be necessary for all applications.
+In Go, the default PRNG is based on the linear congruential generator (LCG) method, which uses a linear equation to generate the next number in the sequence. While this method is fast and efficient, it does have some limitations in terms of the randomness of the numbers generated. For more advanced applications, you may need to use a different PRNG or even a true random number generator (TRNG) to ensure a higher level of randomness.
 
 ## See Also
 
-- [Go documentation on `math/rand` package](https://golang.org/pkg/math/rand/)
-- [Go documentation on `crypto/rand` package](https://golang.org/pkg/crypto/rand/)
-- [Random number generation in other programming languages](https://en.wikipedia.org/wiki/Random_number_generation)
+- [Go documentation on random numbers](https://golang.org/pkg/math/rand/)
+- [Article on randomness in Go](https://www.calhoun.io/creating-random-strings-in-go/)
+- [Go Playground with sample code](https://play.golang.org/p/TjS-vVRWQEI)

@@ -1,41 +1,37 @@
 ---
 title:    "Gleam: Säännöllisten lausekkeiden käyttö"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttäisimme säännöllisiä lausekkeita?
 
-On olemassa monia skenaarioita, joissa säännöllisiä lausekkeita (regular expressions) voidaan käyttää Gleam-ohjelmoinnissa. Esimerkiksi, jos haluat suodattaa tai korvata tiettyjä merkkijonoja, käsitellä tietokannan sisältöä tai validoida käyttäjän antamia syötteitä.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä Gleam-ohjelmoijille, koska ne mahdollistavat tietyn kaavan tai mallin määrittämisen merkkijonoille. Tämä on erityisen hyödyllistä, kun halutaan analysoida ja muokata suuria määriä tietoa, kuten tekstidokumentteja tai HTML-sivustoja. Säännölliset lausekkeet myös säästävät aikaa ja vaivaa, kun samanlaista toimintoa tarvitaan useaan kertaan koodissa.
 
-## Miten
+## Kuinka käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
 
-Gleamilla voidaan käyttää säännöllisiä lausekkeita käyttämällä Gleam Regex -moduulia. Esimerkiksi, jos haluat etsiä ja korvata kaikki vokaalit merkkijonossa, voit tehdä sen seuraavasti:
-
-```Gleam
-import gleam/regex
-
-let pattern = regex.compile(~pattern="[aeiou]")
-let result = regex.replace(~pattern, ~replacement="", ~subject="Hello World")
-```
-
-Tuloksena saadaan "Hll Wrld". Voit myös käyttää säännöllisiä lausekkeita suoraan merkkijonossa käyttämällä =~ operaattoria:
+Gleamilla on käytössä Perl-yhteensopivat säännölliset lausekkeet, jotka ovat helppokäyttöisiä ja joustavia. Voit aloittaa käyttämällä säännöllisiä lausekkeita "```re```" moduulista, joka on osa Gleam-ydintä. Alla on esimerkki koodista, joka hakee kaikki numerot merkkijonosta ja tulostaa ne:
 
 ```Gleam
-import gleam/regex
-
-let result = "Hello World" =~ "[aeiou]"
-
+let input_string = "Viisi merkkiä on enemmän kuin kolme."
+let numbers = re.find_all("\\d+", input_string)
+io.println(numbers)
 ```
 
-Tuloksena saadaan "true", jos kyseisen säännöllisen lausekkeen mukaan löytyy vastaava merkkijono, muuten "false".
+Tulos:
 
-## Syvemmälle
+```Gleam
+Some([|Some("Viisi"), None, None, Some("Kolme")|])
+```
 
-Säännölliset lausekkeet ovat voimakas työkalu, joka kulkee käsi kädessä Gleamin kanssa, koska molemmat muuttujat ovat staattisesti tyypitettyjä. Tämä tarkoittaa, että voit ennalta määrittää tiedon tyypin ja välttää mahdolliset bugeja koodissasi. Gleam Regex -moduulilla on myös monia muita hyödyllisiä funktioita, joita voit käyttää, kuten regex.split ja regex.match.
+## Syvempi sukellus säännöllisten lausekkeiden käyttöön
+
+Perusmuotojen lisäksi säännöllisillä lausekkeilla on paljon erilaisia ​​yksityiskohtia ja ominaisuuksia, jotka voivat tehdä niistä tehokkaita työkaluja tiedonkäsittelyyn. Voit esimerkiksi käyttää muuttujia ja summittaisia ilmauksia lisätaksonomian luomiseksi tai käyttää "```|```" -operaatiota etsimään useita erilaisia ​​merkkijonoja yhdellä kertaa. Tutustu Gleam-dokumentaatioon lisätietoja ja esimerkkejä erilaisista säännöllisten lausekkeiden käytöistä.
 
 ## Katso myös
 
-- Gleam Regex moduulin dokumentaatio: [https://gleam.run/modules/regex/](https://gleam.run/modules/regex/)
-- Säännöllisten lausekkeiden opetusohjelma Gleamille: [https://medium.com/swlh/regular-expressions-in-gleam-8521ba718e94](https://medium.com/swlh/regular-expressions-in-gleam-8521ba718e94)
+- [Säännöllisten lausekkeiden opas Gleam-docsissa](https://gleam.run/documentation/refs/regular_expressions)
+- [Säännölliset lausekkeet Perlissä](https://perldoc.perl.org/perlre.html)
+- [RegExr - työkalu säännöllisten lausekkeiden testaamiseen ja oppimiseen](https://regexr.com/)

@@ -1,42 +1,35 @@
 ---
 title:    "C#: Ottenere la data corrente"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte ragioni per cui potresti voler ottenere la data corrente all'interno del tuo programma in C#. Forse vuoi registrarla in un file di log o utilizzarla per calcolare il tempo trascorso tra due eventi del programma. Indipendentemente dalla tua motivazione, è un'operazione molto comune e fondamentale in molte applicazioni.
 
-Ci sono molte situazioni in cui potresti aver bisogno di ottenere la data corrente in un programma C#. Ad esempio, potresti voler registrare la data di un evento, calcolare la durata tra due date o semplicemente visualizzare la data in un formato specifico. Indipendentemente dal motivo, conoscere le basi per ottenere la data corrente è importante per uno sviluppatore di software.
-
-## Come
-
-Per ottenere la data corrente in C#, puoi utilizzare il metodo `DateTime.Now`:
+## Come farlo
+Per ottenere la data corrente in C#, puoi utilizzare la classe `DateTime`, che viene fornita dalla libreria standard di .NET. Vediamo un esempio di codice:
 
 ```C#
 DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate);
+Console.WriteLine("La data corrente è: " + currentDate.ToString("dd/MM/yyyy"));
 ```
 
-Questo codice crea una variabile `currentDate` di tipo `DateTime` e utilizza il metodo `Now` per assegnarvi l'ora corrente. Successivamente, stampa la data corrente utilizzando il metodo `WriteLine` della classe `Console`. L'output dovrebbe essere simile a "04/08/2021 16:20:30" a seconda dell'ora corrente.
+In questo esempio, stiamo creando una nuova istanza della classe `DateTime` e assegnando ad essa il valore corrente fornito dal metodo `Now`. Successivamente, stiamo stampando la data corrente nel formato "giorno/mese/anno" utilizzando il metodo `ToString()`.
 
-Se vuoi personalizzare il formato della data, puoi utilizzare il metodo `ToString()` e specificare il formato desiderato come parametro:
-
-```C#
-DateTime currentDate = DateTime.Now;
-string formattedDate = currentDate.ToString("dd/MM/yyyy");
-Console.WriteLine(formattedDate);
+Il risultato dell'esecuzione del codice dovrebbe essere simile a questo:
 ```
-
-Questo esempio stampa solo la data senza l'ora, utilizzando il formato "giorno/mese/anno". Ci sono molte altre opzioni di formato che puoi utilizzare, ad esempio per includere l'ora o i nomi dei mesi o dei giorni in lingua italiana.
+La data corrente è: 17/06/2021
+```
 
 ## Approfondimento
+La classe `DateTime` offre molti altri metodi utili per lavorare con date e orari. Ad esempio, è possibile utilizzare il metodo `AddDays()` per aggiungere o sottrarre una determinata quantità di giorni alla data corrente. Inoltre, è possibile utilizzare il metodo `ToString()` con diversi formati per ottenere la stringa della data desiderata.
 
-La classe `DateTime` offre molte altre funzionalità utili per lavorare con le date in C#. Ad esempio, puoi utilizzare il metodo `AddDays()` per aggiungere o sottrarre un determinato numero di giorni a una data specificata. Inoltre, puoi confrontare due date utilizzando gli operatori di confronto `>` e `<`.
-
-Per ulteriori informazioni e approfondimenti, puoi consultare la documentazione ufficiale di Microsoft sulla classe `DateTime` e su altri tipi correlati come `TimeSpan` per il calcolo della durata tra due date.
+Per ulteriori informazioni su come utilizzare la classe `DateTime` e le sue funzionalità, ti consiglio di consultare la documentazione ufficiale di Microsoft (link in fondo all'articolo).
 
 ## Vedi anche
-
-- Microsoft Docs: [DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
-- Microsoft Docs: [TimeSpan Struct](https://docs.microsoft.com/en-us/dotnet/api/system.timespan)
+- [Documentazione ufficiale di Microsoft su DateTime](https://docs.microsoft.com/it-it/dotnet/api/system.datetime?view=net-5.0)
+- [Tutorial su date e orari in C#](https://www.c-sharpcorner.com/article/dates-and-time-functions-in-c-sharp/)
+- [Esempi di formattazione di date in C#](https://www.programiz.com/csharp-programming/datetime-format)

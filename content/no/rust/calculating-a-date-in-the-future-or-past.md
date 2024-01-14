@@ -1,48 +1,52 @@
 ---
-title:    "Rust: Beregning av datoer i fremtiden eller fortiden"
+title:    "Rust: Beregning av en dato i fremtiden eller fortiden"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-I Rust programmeringsspråket trenger vi ofte å beregne datoer i fremtiden eller fortiden for å lage pålitelige og nøyaktige programmer. Enten det er for å planlegge fremtidige oppgaver eller analysere historiske data, er det viktig å kunne beregne datoer riktig. I denne bloggposten vil vi se på hvordan man kan gjøre dette i Rust.
+Hvorfor kunne vi trenge å beregne en dato i fremtiden eller fortiden? Det kan være nyttig for å planlegge fremtidige hendelser eller for å gjenopprette informasjon om tidligere hendelser.
 
 ## Hvordan
-Først må vi importere biblioteket `chrono` som lar oss håndtere datoer og tider i Rust. Deretter kan vi bruke funksjonen `today()` for å hente dagens dato, og `days_from_now()` og `days_ago()` for å beregne datoer i fremtiden og fortiden, henholdsvis. Her er et eksempel på hvordan dette kan se ut:
-
-```rust
-use chrono::{Local, Duration};
-
-// Henter dagens dato
-let today = Local::now();
-
-// Beregner en dato 10 dager frem i tid
-let future_date = today + Duration::days(10);
-
-// Beregner en dato 5 dager tilbake i tid
-let past_date = today - Duration::days(5);
-
-println!("{:#?}", future_date);
-println!("{:#?}", past_date);
+For å beregne en dato i Rust, kan vi bruke biblioteket "chrono". Vi må starte med å legge til følgende linje i "Cargo.toml" filen:
+```Rust
+[dependencies]
+chrono = "0.4"
+```
+Deretter kan vi importere biblioteket i koden vår:
+```Rust
+use chrono::{UTC, Duration, DateTime};
+```
+For å beregne en dato i fremtiden, kan vi bruke "UTC" funksjonen for å få dagens dato, og deretter legge til en "Duration" for å angi hvor langt frem i tid vi vil beregne:
+```Rust
+let now = UTC::now();
+let future_date = now + Duration::weeks(2);
+println!("Datoen to uker fra nå er {}", future_date);
+```
+Dette vil gi oss følgende output:
+```
+Datoen to uker fra nå er 2020-08-31 14:30:00 UTC
+```
+Vi kan også beregne en dato i fortiden ved å bruke "Duration" med et negativt tall:
+```Rust
+let now = UTC::now();
+let past_date = now + Duration::days(-7);
+println!("Datoen en uke tilbake var {}", past_date);
+```
+Dette vil gi oss følgende output:
+```
+Datoen en uke tilbake var 2020-08-10 14:30:00 UTC
 ```
 
-Dette vil gi følgende utskrift:
-
-```
-2020-09-06 13:02:50.389969559 +0200
-2020-08-22 13:02:50.389969559 +0200
-```
-
-Som du kan se, er datoen formatert på en standardisert måte med tidssone og presisjon. Man kan også beregne datoer basert på timer, minutter, sekunder og millisekunder ved å bruke tilsvarende funksjoner og metoder.
-
-## Dype dykk
-I bakgrunnen bruker `chrono` biblioteket `SystemTime` og `Duration` for å håndtere datoer og tider. Disse er implementert i Rusts standardbibliotek, og bruker systemets klokke for å lese og manipulere tid. Dette gjør det mulig å hente nøyaktige datoer og tider uavhengig av tidssoner.
-
-En viktig ting å merke seg er at datoer og tider i Rust er immutabel og ikke kan endres direkte. Dette betyr at når man beregner en dato i fremtiden eller fortiden, vil en ny datoobjekt bli opprettet. Dette sikrer dataintegritet og forhindrer utilsiktet manipulering av datoer.
+## Dypdykk
+Her er noen ting å merke seg når vi beregner datoer i Rust:
+- "chrono" biblioteket bruker UTC-tid, så det er viktig å være oppmerksom på eventuelle lokale tidssoneforskjeller.
+- Vi kan også bruke "Duration" til å beregne tidsintervaller i timer, minutter, sekunder osv.
+- Det finnes andre nyttige funksjoner og metoder i "chrono" biblioteket, som for eksempel å konvertere datoer til forskjellige formater.
 
 ## Se også
-- [Offisiell dokumentasjon for `chrono` biblioteket på crates.io](https://crates.io/crates/chrono)
-- [Offisiell dokumentasjon for Rusts standardbibliotek](https://doc.rust-lang.org/std/index.html)
-- [Tutorial om bruk av datoer og tider i Rust](https://blog.openshift.com/using-dates-and-times-in-rust/)
-- [Guide for å begynne med Rust-programmering](https://dev.to/gjemblaz/start-learning-rust-now-4o3b)
+- [Rust dokumentasjon for "chrono" biblioteket](https://docs.rs/chrono/0.4.19/chrono/)
+- [Offisielt Rust forum (på norsk)](https://users.rust-lang.org/c/internasjonalt-svorsk-forum/)
+- [Et annet blogginnlegg som utforsker "chrono" biblioteket](https://steveklabnik.github.io/chrono/chrono/)

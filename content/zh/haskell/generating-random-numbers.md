@@ -1,46 +1,63 @@
 ---
-title:    "Haskell: 生成随机数"
+title:    "Haskell: 生成随机数字"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：生成随机数是程序设计中常见的需求之一。它可以用于模拟实验、加密算法和游戏等多种应用。在Haskell中，有多种方法可以生成随机数，让我们来看看如何实现它。
+为什么：为什么会想要生成随机数？一句或两句话解释*为什么*有人会对生成随机数感兴趣。
 
-如何实现：Haskell提供了一个名为“random”的标准库来处理随机数。要使用它，首先我们需要导入它的模块，```:hs
+大多数编程语言都内置了生成随机数的功能，Haskell也不例外。生成随机数可以用于模拟实验、密码学和游戏开发等领域。无论你是想让程序变得更加有趣，还是想要测试某种假设，生成随机数都是一个有用的工具。
+
+## 如何使用
+
+在Haskell中，我们可以使用`random`模块来生成随机数。首先，我们需要导入该模块：
+
+```Haskell
 import System.Random
 ```
 
-使用“random”库的最基本方法是使用函数“randomR”，该函数可以生成指定范围内的随机数。例如，我们可以生成一个介于0到10之间的随机整数，示例代码如下：```:hs
-randomNumber <- randomRIO (0, 10)
-print randomNumber
--- 输出结果可能是：5
+接下来，我们可以使用`randomIO`函数来生成一个随机整数：
+
+```Haskell
+randomIO :: IO Int
 ```
 
-我们也可以使用“randomR”函数来生成随机的浮点数，在范围内生成随机数的代码如下：```:hs
-randomNumber <- randomRIO (0.0, 10.0)
-print randomNumber
--- 输出结果可能是：7.3421
+这个函数返回一个被包装在`IO`类型中的整数，因为生成随机数是一个需要IO操作的过程。所以我们可以用`<-`运算符来获取实际的整数值：
+
+```Haskell
+randInt <- randomIO
 ```
 
-除了“randomR”函数外，我们也可以使用“randomIO”函数来生成随机数。它会根据给定的类型，随机生成相应的值。示例如下：```:hs
-randomNum :: IO Int
-randomNum = randomIO
-randomString :: IO String
-randomString = randomIO
+我们也可以使用`randomRIO`函数来生成指定范围内的随机数。比如我们想要在1到10之间生成一个随机整数，可以这样写：
+
+```Haskell
+randInt <- randomRIO (1, 10)
 ```
 
-深入介绍：生成随机数的过程其实是依赖于一个随机数生成器。在Haskell中，我们可以自己定义一个随机数生成器，也可以使用系统提供的默认随机数生成器。使用系统默认的随机数生成器的代码如下：```:hs
-gen <- getStdGen
-randomRs (-10, 10) gen :: [Int]
+## 深入探讨
+
+生成随机数的过程其实是根据一个起始的种子值，通过一系列算法来计算出下一个随机数。Haskell中使用的是Mersenne Twister算法来生成随机数，这是一种伪随机数生成算法，也就是说它实际上并不是真正的随机数，但是在实践中可以满足我们的需求。
+
+每次重新启动程序后，`randomIO`都会生成相同的随机数，因为它使用的是程序启动时的默认种子。而`randomRIO`的种子则可以手动指定，这样每次生成的随机数就不会重复。比如我们可以使用当前时间作为种子：
+
+```Haskell
+import Data.Time.Clock
+
+currentTime <- getCurrentTime
+gen <- newStdGen currentTime
+randInt <- randomRIO (1,10) gen
 ```
 
-除了“randomR”和“randomIO”这两个常用的函数外，还有其他一些有用的函数可以用来生成随机数，例如“randomRs”、“randomRsIO”和“randomShuffle”等，有兴趣的读者可以自行探索。
+这样每次程序运行时，`currentTime`会作为一个新的种子，确保每次生成的随机数都不同。
 
-阅读详细文档：如果你想进一步了解Haskell中生成随机数的相关知识，可以阅读官方文档[Random](https://hackage.haskell.org/package/random)和[Tutorial](https://wiki.haskell.org/Random)来了解更多信息。
+## 参考链接
 
-同样，你也可以在[Real World Haskell](http://book.realworldhaskell.org/read/random-data-and-changes.html)和[Haskell tutorial](https://www.haskell.org/haskellwiki/Introduction)中找到关于随机数生成的更多内容。
+- [Haskell的random模块文档](https://hackage.haskell.org/package/random)
+- [Mersenne Twister算法介绍](https://en.wikipedia.org/wiki/Mersenne_Twister)
 
-另外，如果你想了解如何在Haskell中使用随机数来实现游戏，可以参考[这个教程](http://yannesposito.com/Scratch/en/blog/Haskell-video-game-chapter-1/)。
+## 参考链接
 
-另请参阅：还有其他一些库可以用来生成随机数，例如[mwc-random](https://hackage.haskell.org/package/mwc-random)和[random-fu](https://hackage.haskell.org/package/random-fu)，如果你对这方面的内容感兴趣，可以尝试使用它们。
+- [Haskell的随机模块文档](https://hackage.haskell.org/package/random)
+- [Mersenne Twister算法介绍](https://en.wikipedia.org/wiki/Mersenne_Twister)

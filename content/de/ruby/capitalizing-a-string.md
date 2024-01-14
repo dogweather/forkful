@@ -1,64 +1,50 @@
 ---
-title:    "Ruby: Einen String in Großbuchstaben umwandeln."
+title:    "Ruby: Großschreibung eines Strings"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Jeder, der schon einmal mit Strings in Ruby gearbeitet hat, weiß wie wichtig es ist, sie richtig zu formatieren. Eine gängige Anforderung dabei ist es, den ersten Buchstaben jedes Wortes in einem String groß zu schreiben. Dies kann aus ästhetischen oder aus Gründen der Lesbarkeit notwendig sein. In diesem Artikel werden wir uns genauer ansehen, wie man einen String in Ruby kapitalisiert.
+Das Kapitälisieren von Zeichenfolgen ist eine gängige Aufgabe in der Programmierung. Es kann hilfreich sein, um die Nutzerfreundlichkeit zu verbessern, bestimmte Datenformatierungen zu erstellen oder einfach nur um den Code lesbarer zu gestalten.
 
-## Wie funktioniert es?
+## Wie geht man vor
 
-Die einfachste Möglichkeit, einen String in Ruby zu kapitalisieren, ist die Verwendung der `capitalize` Methode. Diese Methode macht den ersten Buchstaben groß und den Rest des Strings klein.
+Um eine Zeichenfolge in Ruby zu kapitalisieren, kann man den Befehl `.capitalize` nutzen. Hier ein Beispiel:
 
 ```Ruby
 name = "max mustermann"
 puts name.capitalize
 ```
-Output: Max mustermann
 
-Wir können auch `capitalize!` verwenden, um den String direkt zu verändern:
+Dieser Code wird die Zeichenfolge "max mustermann" in "Max musterman" ändern.
 
-```Ruby
-name = "max mustermann"
-name.capitalize!
-puts name
-```
-Output: Max mustermann
-
-Wenn wir nur den ersten Buchstaben eines Satzes oder einer Phrase groß schreiben möchten, können wir die `upcase` Methode verwenden:
+Zusätzlich gibt es die Möglichkeit, die Methode `.upcase` zu nutzen, um alle Buchstaben in Großbuchstaben zu verwandeln, oder `.downcase`, um sie in Kleinbuchstaben zu ändern. Hier ist ein Beispiel:
 
 ```Ruby
-motto = "lebe wild und gefährlich"
-puts motto.upcase
+name = "Max Mustermann"
+puts name.upcase
+puts name.downcase
 ```
-Output: LEBE WILD UND GEFÄHRLICH
 
-## Tief Luftholen
+Die Ausgabe wird "MAX MUSTERMANN" und "max mustermann" sein.
 
-Es gibt verschiedene Möglichkeiten, einen String in Ruby zu kapitalisieren, je nachdem, wie komplex die Formatierung sein soll. Wenn wir unsere Strings auf bestimmte Weise formatieren wollen, können wir die `gsub` Methode verwenden und eine Regular Expression übergeben.
+## Tiefergehende Informationen
 
-Zum Beispiel, wenn wir den String "123 main street" so formatieren möchten, dass jeder erste Buchstabe in einem Wort großgeschrieben wird, können wir dies tun:
+In Ruby gibt es verschiedene Möglichkeiten, eine Zeichenfolge zu kapitalisieren. Die `.capitalize`-Methode ist eine einfache Möglichkeit, um die erste Buchstabe eines Satzes zu einem Großbuchstaben zu ändern. Wenn jedoch eine Zeichenfolge mehr als einen Satz enthält, wird nur der erste Buchstabe jedes Satzes geändert.
 
-```Ruby
-address = "123 main street"
-puts address.gsub(/\b\w/, &:upcase)
-```
-Output: 123 Main Street
+Um alle Wörter in einer Zeichenfolge zu kapitalisieren, kann die Methode `.titleize` verwendet werden. Diese Methode wird auch bestimmte Wörter wie "a" oder "the" ausschließen, es sei denn, sie sind der erste Teil des Satzes.
 
-Wir können auch `split` verwenden, um den String in einzelne Wörter zu zerlegen und dann jeden ersten Buchstaben groß zu schreiben:
-
-```Ruby
-address = "123 main street"
-formatted_address = address.split(" ").map(&:capitalize).join(" ")
-puts formatted_address
-```
-Output: 123 Main Street
+Außerdem gibt es die Möglichkeit, benutzerdefinierte Regeln für die Groß- und Kleinschreibung zu erstellen, indem man das `I18n`-Modul verwendet.
 
 ## Siehe auch
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.6/String.html)
-- [Ruby Regular Expressions](https://ruby-doc.org/core-2.6/Regexp.html)
-- [String transformation methods in Ruby](https://www.geeksforgeeks.org/string-transformation-methods-in-ruby/)
+Hier sind einige nützliche Links für weitere Informationen zum Thema Zeichenfolgenkapitalisierung in Ruby:
+
+[Offizielle Ruby-Dokumentation zur String-Klasse](https://ruby-doc.org/core-2.7.1/String.html)
+
+[Blog-Beitrag über verschiedene Methoden zur Zeichenfolgenkapitalisierung in Ruby](https://dzone.com/articles/14-ways-to-manipulate-a-ruby-string)
+
+[Tutorial zur Benutzung des I18n-Moduls in Ruby](https://guides.rubyonrails.org/i18n.html)

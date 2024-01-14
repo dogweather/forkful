@@ -1,41 +1,39 @@
 ---
 title:    "Swift: Creando un archivo temporal"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué crear un archivo temporal en Swift
+## Por qué
+Crear un archivo temporal en la programación puede ser útil en varias situaciones, como guardar datos temporalmente antes de ser procesados o para almacenar información que no requiere ser guardada permanentemente en el dispositivo.
 
-Crear archivos temporales es una práctica común en la programación en Swift, especialmente cuando se trabaja con grandes cantidades de datos. Estos archivos son útiles porque te permiten almacenar temporalmente información mientras se está ejecutando un programa, y luego se elimina después de su uso. Esto puede ser útil para evitar la sobrecarga de memoria y mantener tu código organizado.
-
-## Cómo crear un archivo temporal en Swift
-
-Para crear un archivo temporal en Swift, primero necesitas importar la librería `Foundation` en tu proyecto. Luego, puedes utilizar la función `NSTemporaryDirectory()` para obtener una ruta de acceso al directorio temporal en el dispositivo en el que se está ejecutando tu código.
+## Cómo
+Para crear un archivo temporal en Swift, utilizamos la clase `FileManager` y su método `temporaryDirectory`. Luego, podemos crear un archivo en ese directorio con el nombre y extensión que deseemos.
 
 ```Swift
-import Foundation
-let temporaryDir = NSTemporaryDirectory()
+let fileManager = FileManager.default
+let temporaryDirectory = fileManager.temporaryDirectory
+let temporaryFile = temporaryDirectory.appendingPathComponent("example.txt")
+
+// Sample output: file:///private/var/folders/fz/dcrm4jkd36ngp3g5z6__ty2h0000gn/T/example.txt
 ```
 
-A continuación, puedes crear un archivo temporal en ese directorio utilizando la función `FileManager.default`. Pasando la ruta de acceso al directorio temporal y un nombre de archivo único como parámetros.
+## Profundizando
+Para comprender mejor el proceso de creación de archivos temporales en Swift, es importante tener en cuenta que estos archivos están diseñados para ser utilizados solo temporalmente y pueden ser eliminados por el sistema operativo en cualquier momento. Por lo tanto, no se recomienda utilizarlos para almacenar información importante.
+
+Sin embargo, podemos especificar algunas opciones al crear un archivo temporal. Por ejemplo, podemos establecer la opción `isExpendable` en `true` para indicar que el archivo puede ser eliminado por el sistema en caso de que se necesite espacio en disco. También podemos utilizar la opción `deleteUponClose` para indicar que el archivo debe eliminarse automáticamente cuando se cierre.
 
 ```Swift
-let tempFileURL = URL(fileURLWithPath: temporaryDir).appendingPathComponent("miArchivoTemporal.txt")
+var options = [URLWritingOptionsKey : Any]()
+options[.isExpendable] = true
+options[.deleteUponClose] = true
+let temporaryFile = temporaryDirectory.appendingPathComponent("example.txt")
+FileManager.default.createFile(atPath: temporaryFile.path, contents: Data(), attributes: nil, options: options)
 ```
-
-Ahora, puedes escribir o leer información en tu archivo temporal utilizando las funciones de escritura y lectura de archivos en Swift. Una vez que hayas terminado de usar el archivo, asegúrate de eliminarlo utilizando la función `FileManager.default.removeItem(at: tempFileURL)` para liberar espacio en tu dispositivo.
-
-## Profundizando en la creación de archivos temporales
-
-Cuando utilizas la función `NSTemporaryDirectory()` para obtener la ruta de acceso al directorio temporal, debes tener en cuenta que este directorio puede cambiar en diferentes ejecuciones de tu código. Por lo tanto, siempre es importante verificar si el archivo existe antes de intentar escribir o leer información en él.
-
-Además, también puedes establecer una caducidad para tu archivo temporal utilizando la propiedad `isTemporary` en el objeto `URL`. Esto asegurará que el archivo se elimine automáticamente después de un cierto período de tiempo.
 
 ## Ver también
-
-Si deseas obtener más información sobre cómo trabajar con archivos en Swift, puedes consultar los siguientes recursos:
-
-- [Documentación oficial de Apple sobre gestión de archivos en Swift](https://developer.apple.com/documentation/foundation/file_management)
-- [Artículo en el blog de Ray Wenderlich sobre cómo trabajar con archivos en Swift](https://www.raywenderlich.com/276622-ios-files-and-folders-in-swift)
-- [Tutorial de Hacking with Swift sobre cómo crear, escribir y leer archivos en Swift](https://www.hackingwithswift.com/read/12/2/writing-to-disk-nsdata)
+- Documentación de Apple sobre FileManager: <https://developer.apple.com/documentation/foundation/filemanager>
+- Tutorial de Ray Wenderlich sobre archivos temporales en Swift: <https://www.raywenderlich.com/840-swift-tutorial-how-to-use-nsurlsession>
+- Código de ejemplo de creación de archivos temporales en Swift: <https://gist.github.com/yudai/609a94081814dd4f3159>

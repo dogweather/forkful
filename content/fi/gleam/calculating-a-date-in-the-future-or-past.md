@@ -1,36 +1,42 @@
 ---
-title:    "Gleam: Päivämäärän laskeminen tulevaisuudesta tai menneisyydestä"
+title:    "Gleam: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi laskisi tulevaisuuden tai menneisyyden päivämäärää?
+## Miksi
 
-Monissa tilanteissa voi olla tarpeen laskea tulevaisuuden tai menneisyyden päivämäärä, kuten tietyn tapahtuman ajankohta tai tietyn ajanjakson laskeminen. Gleamin Date-moduuli tarjoaa helpon tavan tehdä tällaisia laskelmia.
+Monissa ohjelmointiprojekteissa on tarve laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä. Tämän voi tehdä helposti Gleam-ohjelmointikielellä.
 
-## Miten: Esimerkkejä ja tulosteita koodia käyttäen
+## Kuinka
 
-Jos haluat laskea tietyn päivämäärän tietyn päivien määrän verran eteenpäin, voit käyttää ```Date.from_days(aloitus_päivä, päivien_määrä)``` -funktiota. Esimerkiksi, jos aloitus_päivä on 1. tammikuuta 2022 ja haluat laskea 10 päivää eteenpäin, koodi olisi: 
-
-```Gleam
-Date.from_days(1.january(2022), 10)
-```
-
-Tämä tulostaisi 11. tammikuuta 2022. Voit myös laskea päivämäärän tietyn ajanjakson verran taaksepäin käyttämällä ```Date.substract_days(päivämäärä, päivien_määrä)``` -funktiota. Esimerkiksi, jos haluat laskea 20 päivää taaksepäin 1. maaliskuuta 2022, koodi olisi:
+Gleamissa käytetään `gleam/time`-kirjastoa päivämäärien käsittelyyn. Voit aloittaa käyttämällä päivämäärän luomiseen tarvittavia funktioita ja antamalla niille halutut päivämäärät tai ajanjaksoja.
 
 ```Gleam
-Date.substract_days(1.march(2022), 20)
+import time
+
+// Luodaan tuleva päivämäärä 14 päivää nykyisestä päivästä
+let future_date = time.add_days(time.now(), 14)
+
+// Luodaan menneisyyden päivämäärä 7 päivää nykyisestä päivästä
+let past_date = time.subtract_days(time.now(), 7)
+
+// Tulostetaan luodut päivämäärät
+time.format(future_date, "d.m.YYYY") // 30.08.2021
+time.format(past_date, "d.m.YYYY") // 09.08.2021
 ```
 
-Tämä tulostaisi 9. helmikuuta 2022.
+Gleam tarjoaa myös muita funktioita, kuten `add_months` ja `subtract_months`, joiden avulla päivämääriin voi lisätä tai vähentää kuukausia.
 
-## Syvempi sukellus: Lisätietoa tulevaisuuden ja menneisyyden päivämäärien laskemisesta
+## Syvemmälle sukeltaminen
 
-Gleamin Date-moduuli tarjoaa myös muita hyödyllisiä funktioita, kuten ```Date.is_leap(year)``` -funktion, joka tarkistaa onko kyseessä karkausvuosi. Voit myös käyttää ```Date.diff(date1, date2)``` -funktiota laskeaksesi päivien määrän kahden päivämäärän välillä.
+Päivämäärien laskeminen tulevaisuudessa tai menneisyydessä voi tuntua aluksi vaikealta, mutta Gleamin `gleam/time`-kirjasto tekee siitä helpompaa. Kirjastosta löytyy myös muita hyödyllisiä funktioita, kuten `is_leap_year`, jolla voi tarkistaa onko vuosi karkausvuosi, sekä `is_before` ja `is_after`, jotka auttavat vertailemaan päivämääriä.
+
+On myös hyvä tietää, että Gleamissa päivämäärät ovat oliona, eli ne eivät ole muuttumattomia. Tämä tarkoittaa sitä, että niitä voi muokata käyttämällä erilaisia funktioita ja metodinviauttajia.
 
 ## Katso myös
 
-- Gleamin virallinen ohjelmointikielen tietosivusto: https://gleam.run/
-- Gleam Date-moduulin dokumentaatio: https://gleam.run/modules/date.html
-- Gleam-yhteisön keskustelufoorumi: https://elixirforum.com/c/gleam/25
+- Gleam `gleam/time` dokumentaatio: https://gleam.run/modules/time.html
+- Gleamin oppaat: https://gleam.run/book/index.html

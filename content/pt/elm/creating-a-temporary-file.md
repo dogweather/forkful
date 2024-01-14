@@ -1,47 +1,53 @@
 ---
 title:    "Elm: Criando um arquivo temporário"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que criar um arquivo temporário em Elm
+## Por que
 
-Muitas vezes, ao desenvolver um programa em Elm, pode ser necessário criar um arquivo temporário para armazenar informações temporárias. Isso pode ser útil em situações como upload de dados, manipulação de arquivos e outras tarefas que requerem o uso de arquivos temporários.
+Criar arquivos temporários é extremamente útil quando se está lidando com dados ou informações que são necessárias apenas temporariamente. Além disso, é uma boa prática para manter o código organizado e evitar conflitos com outros arquivos existentes.
 
-# Como criar um arquivo temporário em Elm
-Para criar um arquivo temporário em Elm, primeiro é necessário usar a função `File.tempFile` que aceita dois argumentos: um prefixo e um sufixo que serão usados ​​para gerar um nome único para o arquivo temporário.
+## Como fazer
 
-```
-Elm 0.19.0
+Para criar um arquivo temporário em Elm, usamos a função `File.temp` da biblioteca `elm/file`. Vamos criar um arquivo temporário chamado "temp.txt" e escrever algumas informações nele:
 
-File.tempFile "temp" ".txt"
-    |> Task.perform (log "Temporary file created")
+```Elm
+module Main exposing (main)
 
-```
+import File
+import Task
 
-Utilizamos a função `Task.perform` para executar a tarefa de criação do arquivo temporário e utilizar a função `log` para registrar o nome do arquivo gerado.
+main =
+    Task.perform (Result.either onError onSuccess) (File.temp "temp.txt")
 
-A saída do código acima será algo como:
+onError =
+    \error ->
+        Debug.log "Error" error
 
-`Temporary file created: temp_84251e.txt`
-
-Com isso, temos um arquivo temporário criado com prefixo "temp" e sufixo ".txt".
-
-# Mergulho profundo
-Ao criar um arquivo temporário em Elm, é importante lembrar que esse arquivo será excluído automaticamente assim que o programa for encerrado. Portanto, não é necessário realizar a exclusão manual do arquivo criado.
-
-Além disso, é possível especificar o diretório no qual o arquivo temporário será criado, utilizando a função `File.tempFileIn` que aceita três argumentos: o diretório, o prefixo e o sufixo.
-
-```
-Elm 0.19.0
-
-File.tempFileIn "path/to/directory" "temp" ".txt"
-    |> Task.perform (log "Temporary file created")
+onSuccess =
+    \file ->
+        File.write file "Este é um arquivo temporário criado em Elm."
 
 ```
 
-# Veja também
-- Para mais informações sobre a criação de arquivos em Elm: https://guide.elm-lang.org/interop/file.html
-- Documentação da função `File.tempFile`: https://package.elm-lang.org/packages/elm/file/latest/File#tempFile
-- Documentação da função `File.tempFileIn`: https://package.elm-lang.org/packages/elm/file/latest/File#tempFileIn
+Ao executar este código, um arquivo temporário será criado na pasta do projeto com o nome "temp.txt" e o conteúdo "Este é um arquivo temporário criado em Elm." será escrito nele.
+
+## Profundidade
+
+Ao criar um arquivo temporário em Elm, é possível especificar o diretório onde o arquivo deve ser criado e o prefixo do nome do arquivo. Por padrão, o diretório será a pasta do projeto e o prefixo será "temp-". Vamos ver um exemplo de como especificar esses parâmetros:
+
+```Elm
+Task.perform
+    (Result.either onError onSuccess)
+    (File.tempWith { directory = "tmp", prefix = "user-" } "info.txt")
+```
+
+Neste exemplo, estamos criando um arquivo temporário chamado "info.txt" na pasta "tmp" e com prefixo "user-". Outro parâmetro opcional é o sufixo, que por padrão é ".tmp". Assim, o arquivo temporário criado terá o nome "user-info.tmp".
+
+## Veja também
+
+* Documentação oficial da biblioteca `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
+* Outras maneiras de criar arquivos temporários em Elm: https://discourse.elm-lang.org/t/how-to-create-a-temporary-file/3475

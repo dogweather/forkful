@@ -1,49 +1,53 @@
 ---
 title:    "Clojure recipe: Finding the length of a string"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever wanted to know the length of a string in Clojure? Maybe you need to validate user input or manipulate data in a certain way. In this blog post, we'll explore how to find the length of a string in Clojure, and why it's a useful skill to have in your coding toolbox.
+
+In any programming language, strings are a fundamental data type that represents a sequence of characters. As a result, it is crucial to be able to determine the length of a string for various programming tasks such as data validation, string manipulation, and program efficiency. In this blog post, we will explore how to find the length of a string in Clojure and why it is an essential skill for any programmer.
 
 ## How To
-To find the length of a string in Clojure, we can use the `count` function. Let's look at an example:
+
+To find the length of a string in Clojure, we can use the built-in function `count`. This function takes in a collection and returns the number of elements in that collection. Since a string is essentially a collection of characters, we can use `count` to get its length.
 
 ```Clojure
-(count "Hello World") ; Output: 11
+(count "Hello World")
+; Output: 11
 ```
 
-In the above code, we use the `count` function to find the length of the string "Hello World". The output is 11, which is the number of characters in the string.
+In the example above, the string "Hello World" has 11 characters, including the space. The `count` function counts each character as an element and returns the total count.
 
-We can also use the `count` function on other data types, such as lists and vectors:
+We can also use `count` on an empty string or a string with no characters, and the output will be 0. This is because an empty string still counts as a collection.
 
 ```Clojure
-(count [1 2 3 4]) ; Output: 4
-(count '(1 2 3 4)) ; Output: 4
+(count "")
+; Output: 0
+
+(count " ")
+; Output: 1
 ```
 
-Notice that the output is the same for both lists and vectors, as they are both considered collections in Clojure.
-
-Another useful function for finding the length of a string is `str-length`. This function specifically counts the number of Unicode characters in a string, rather than just the number of characters. Here's an example:
+Another approach to finding the length of a string is by using the `length` function. This function takes in a string and returns the number of characters in that string.
 
 ```Clojure
-(str-length "こんにちは") ; Output: 5
+(length "Coding in Clojure")
+; Output: 17
 ```
 
-The Japanese word "こんにちは" contains 5 Unicode characters, but has a length of 15 if we use the `count` function.
+While `length` can also find the length of a string, it is usually not recommended over the `count` function. The reason for this is that `count` has better performance when dealing with large collections or complex data structures.
 
 ## Deep Dive
-Now that we know how to find the length of a string in Clojure, let's dive into some deeper information about this topic.
 
-First, it's important to note that the `count` function has a time complexity of O(1), which means it will always have the same execution time regardless of the length of the string. This is because the function simply reads the metadata of the string to retrieve its length, rather than looping through the string itself.
+Under the hood, the `count` function uses the `clojure.core/counted` protocol to determine the length of a given collection. This protocol is implemented in various data structures, allowing efficient and accurate counting operations.
 
-Another interesting point is that spaces and punctuation are also counted as characters in a string. This can be useful to keep in mind if you're trying to manipulate or compare strings in your code.
-
-Lastly, it's worth mentioning that Clojure also has a `empty?` function which can be used to check if a string is empty. This function returns `true` if the string has a length of 0, and `false` if it has a length greater than 0.
+In Clojure, strings are represented as Java objects, and the `count` function leverages the `java.lang.CharSequence` interface to count the characters in a string. The `count` function uses the `length` method from the `CharSequence` interface, making it highly efficient for string length calculations.
 
 ## See Also
-- Clojure string functions: https://clojuredocs.org/clojure.string
-- Introduction to Clojure: https://www.clojure.org/guides/learn/syntax
-- Clojure cheatsheet: https://clojure.org/api/cheatsheet
+
+- [ClojureDocs - count](https://clojuredocs.org/clojure.core/count)
+- [ClojureDocs - length](https://clojuredocs.org/clojure.core/length)
+- [ClojureDocs - counted protocol](https://clojuredocs.org/clojure.core/counted)

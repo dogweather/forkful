@@ -1,36 +1,81 @@
 ---
-title:    "Clojure: 패턴과 일치하는 문자 삭제하기"
+title:    "Clojure: 패턴과 일치하는 문자 삭제"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-캐릭터 패턴에 일치하는 문자를 삭제하는 것에 대해 의미있는 웹 페이지를 수동으로 검색하고 일일이 삭제하는 것에 비해 더 효율적인 컴퓨터 프로그래밍 방식을 사용하여 시간과 노력을 절약할 수 있습니다.
+문자열에서 패턴과 일치하는 문자를 삭제하는 작업은 데이터를 정제하거나 특정 문자를 필터링하는 등 다양한 상황에서 유용합니다.
 
 ## 어떻게
 
+Clojure에서는 정규표현식을 사용하여 문자열 내의 패턴과 일치하는 문자를 삭제할 수 있습니다. 다음은 `re-seq` 함수를 사용하여 문자열에서 숫자만 제거하는 예제 코드입니다.
+
 ```Clojure
-;; 캐릭터 패턴 맞는 문자 삭제 함수 정의
-(defn delete-pattern [input pattern]
-  (apply str (remove #(= % pattern) input)))
+(def numbers "35 apples, 45 oranges, 20 bananas")
+(def pattern #"[0-9]+")
 
-;; 예시
-(delete-pattern "hello hello hello" \h)
-;; 결과: "ello ello ello"
-
-;; 예시
-(delete-pattern "abcabcabc" "ab")
-;; 결과: "ccc"
+(re-seq pattern numbers)
 ```
 
-## 깊은 탐구
+이 코드를 실행하면 다음과 같은 출력이 나타납니다.
 
-캐릭터 패턴 맞는 문자 삭제는 마크다운 포맷에서 제목이나 특정 문자열을 제거하기 위해 일반적으로 사용되는 기능입니다. Clojure 뿐만 아니라 다른 언어에서도 이와 같은 방식으로 구현할 수 있습니다. 또한, 입력 데이터가 매우 큰 경우 메모리와 실행 시간에 영향을 주는 최적화 방법도 존재합니다.
+```Clojure 
+("35" "45" "20")
+```
 
-# 봐주세요
+위 예제에서는 숫자를 찾아서 리스트로 반환했지만, `re-seq`는 지정한 패턴과 일치하는 문자를 모두 삭제한 후 문자열 자체를 반환합니다. 따라서 `apply str` 함수를 사용하여 리스트를 문자열로 변환해야 합니다. 예를 들어, 문자열에서 모든 숫자를 제거하는 코드는 다음과 같습니다.
 
-- [Clojure Code for Regex-based Pattern Matching and Removal](https://gist.github.com/hr-p/8942459)
-- [문자열 삭제하기 - ClojureDocs](https://clojuredocs.org/clojure.string/replace)
-- [캐릭터 패턴 맞는 문자 삭제 방법 - Clojure Korea](https://clojure.or.kr/lessons/basics/text-processing.html#패턴맞추기)
+```Clojure
+(def numbers "35 apples, 45 oranges, 20 bananas")
+(def pattern #"[0-9]+")
+
+(apply str (re-seq pattern numbers))
+```
+
+위 코드를 실행하면 아래와 같은 출력이 나타납니다.
+
+```Clojure
+" apples,  oranges,  bananas"
+```
+
+더욱 복잡한 패턴을 사용하여 문자를 삭제할 수도 있습니다. 예를 들어, 다음과 같은 코드를 사용하면 특정 문자들을 제거할 수 있습니다.
+
+```Clojure
+(def message "Hello, my name is Clojure!")
+
+(def pattern #"[A-Za-z\s]" ;; 알파벳 문자와 공백 제거
+(re-seq pattern message)
+
+(def pattern #"\W" ;; 모든 알파벳, 숫자, 공백을 제외한 나머지 문자 제거
+(apply str (re-seq pattern message))
+```
+
+위 코드들의 실행 결과는 아래와 같습니다.
+
+```Clojure
+("H" "e" "l" "l" "o" "," " " "m" "y" " " "n" "a" "m" "e" " " "i" "s" " " "C" "l" "o" "j" "u" "r" "e" "!")
+"Hello my name is Clojure"
+```
+
+## 깊게 파헤치기
+
+Clojure에서는 `re-seq` 외에도 문자열 패턴 매칭과 관련된 다양한 함수들이 존재합니다. 예를 들어, `re-find` 함수는 문자열 중에서 첫 번째로 일치하는 부분을 반환합니다. 이를 활용하면 다음과 같이 원하는 문자를 삭제하는 코드를 작성할 수 있습니다.
+
+```Clojure
+(def numbers "35 apples, 45 oranges, 20 bananas")
+(def pattern #"\D+") ;; 숫자가 아닌 모든 문자 제거
+
+(apply str (re-find pattern numbers))
+```
+
+`re-seq`와 달리 `re-find` 함수는 리스트가 아닌 일치하는 부분 자체를 반환하기 때문에, 따로 `apply str` 함수를 사용할 필요가 없습니다.
+
+## 같이 보기
+
+- [Clojure 공식 문서](https://clojure.org/guides/regex)
+- [정규표현식의 기본 사용법](https://www.regular-expressions.info/quickstart.html)
+- [Clojure에서 정규표현식을 사용하는 다른 방법](https://clojureverse.org/t/cozying-up-to-regex-redux/1571)

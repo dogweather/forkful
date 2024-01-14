@@ -1,55 +1,42 @@
 ---
-title:    "Rust: Nykyisen päivämäärän haku"
+title:    "Rust: Päivämäärän hankkiminen tietokoneohjelmoinnissa"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Rust on hyvä valinta päivämäärän hankkimiseen?
 
-Haluatko lisätä nykyisen päivämäärän osaksi ohjelmaasi? Kuten monissa muissakin ohjelmointikielissä, Rustilla on myös helppo tapa saada nykyinen päivämäärä.
+Päivämäärän hankkiminen on yksi yleisimpiä askelmia ohjelmoinnissa, oli sitten kyseessä sivuston päivitys tai raportin luominen. Rustilla on monia etuja, kuten suorituskyky ja turvallisuus, jotka tekevät siitä hyvän valinnan päivämäärän hankkimiseen. Lisäksi Rustin laaja yhteisö tarjoaa paljon apua ja resursseja tässä prosessissa.
 
-## Miten
+## Miten hankitaan päivämäärä Rustilla?
 
-Voit käyttää `chrono` kirjastoa saadaksesi nykyisen päivämäärän Rust-ohjelmassa. Ensimmäiseksi sinun täytyy lisätä kirjasto projektisi `Cargo.toml` tiedostoon:
-````Rust
+Aloita asentamalla "chrono" kirjasto Cargo.toml tiedostoon: 
+```
 [dependencies]
 chrono = "0.4.19"
-````
+```
+Seuraavaksi tuo kirjasto käyttöön Rust koodiin: 
+```Rust
+use chrono::{Utc, Local, DateTime};
+```
+Voit nyt käyttää Utc ja Local rakenteita hankkimaan joko UTC tai paikallisen päivämäärän: 
+```Rust
+let current_utc = Utc::now();
+let current_local = Local::now();
+```
+Lopuksi voit tulostaa päivämäärän halutussa muodossa: 
+```Rust
+println!("Järjestelmän aikavyöhykkeen UTC-aika on {}", current_utc);
+println!("Paikallisaika on {}", current_local.format("%d.%m.%Y %H:%M:%S"));
+```
 
-Sitten voit luoda `Local` tyypin instanssin ja kutsua `now` metodia saadaksesi nykyisen päivämäärän:
-````Rust
-let current_date = chrono::Local::now();
-````
+## Syvä sukellus päivämäärän hankkimiseen Rustilla
 
-Voit myös säätää millisekuntien tarkkuutta seuraavasti:
-````Rust
-let current_date = chrono::Local::now().to_rfc3339();
-````
-
-Ohessa on esimerkki koodi, joka tulostaa nykyisen päivämäärän konsoliin:
-````Rust
-use chrono::Local;
-
-fn main() {
-    let current_date = Local::now();
-    println!("Today is {}", current_date.to_rfc3339());
-}
-````
-
-Tässä on esimerkkitulostus:
-````
-Today is 2021-05-20T13:48:17.354798+03:00
-````
-
-## Syvennys
-
-`chrono` kirjasto tarjoaa monia muita hyödyllisiä toimintoja päivämäärä- ja aikatyypeille. Voit esimerkiksi muuntaa aikoja toiseen aikavyöhykkeeseen tai laskostaa päivämääriä.
-
-Kannattaa myös huomata, että päivämäärät ja ajat ovat immuuneja `DateTime`-tyypeissä, mikä tarkoittaa sitä, että niitä ei voi muuttaa suoraan, vaan näiden operaatioiden tulos on uusi instanssi. Tämän avulla voidaan varmistaa, että päivämäärä- ja aikatieto pysyy muuttumattomana.
+Chrono-kirjasto tarjoaa paljon enemmän kuin vain päivämäärän hankkimisen. Voit esimerkiksi muuttaa päivämäärän haluttuun aikavyöhykkeeseen tai vertailla päivämääriä muihin aikoihin. Kirjastolla on myös käteviä toimintoja, kuten päivämäärien lisääminen ja vähentäminen. Syvemmän ymmärryksen saavuttamiseksi voit tutustua Chrono-dokumentaatioon tai liittyä Rustin yhteisöön saadaksesi apua.
 
 ## Katso myös
 
-- `chrono` kirjaston dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/ 
-- Rust-oppimateriaali suomeksi: https://rust.weblog.cm 
-- Rust-yhteisön virallinen sivusto: https://www.rust-lang.org/fi/
+- Chrono-dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/
+- Rustin yhteisö: https://www.rust-lang.org/en-US/community.html

@@ -1,36 +1,47 @@
 ---
-title:    "Clojure: 标准错误写入"
+title:    "Clojure: 写入标准错误"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么会有标准错误的编写
+## 为什么要写到标准错误
 
-在编程过程中，我们经常会遇到各种各样的错误。有时候，我们需要输出某些信息来帮助我们调试代码。这时，就可以使用标准错误的编写。通过将错误信息输出到标准错误流，我们可以在程序运行过程中及时地捕获错误信息，从而更有效地解决问题。
+编写到标准错误（standard error）是调试和测试中极其重要的一步。它允许程序员实时地观察代码的执行过程，并且能够捕捉到程序中出现的错误信息。这样可以帮助我们更快地定位和解决问题，提高代码质量。
 
-## 如何进行标准错误的编写
+## 如何做到
 
-标准错误的编写可以通过Clojure语言提供的`System/err`方法来实现。我们可以使用`println`函数来将想要输出的信息作为参数传入`System/err`，从而将错误信息输出到标准错误流。
+在Clojure中，我们可以使用`println`或`eprintln`函数来将信息输出到标准错误。下面是一个例子：
 
 ```Clojure
-(System/err (println "这是一条错误信息"))
+(eprintln "Hello world!")
 ```
 
-输出示例：
+程序会在运行时将`Hello world!`这条信息显示在终端中的标准错误流中。
+
+## 深入探讨
+
+除了简单的输出信息外，我们还可以将更复杂的信息结构化后输出到标准错误流中。比如，我们可以将信息封装为一个含有关键字的map，再使用`prn`函数将其输出。下面是一个例子：
+
+```Clojure
+(def error {:error-type "Runtime Error"
+            :error-message "Division by zero"
+            :error-line 5})
+
+(eprn error)
+```
+
+输出结果为：
 
 ```
-这是一条错误信息
+{:error-type "Runtime Error", :error-message "Division by zero", :error-line 5}
 ```
 
-## 深入了解标准错误的编写
+这样的结构化输出可以让我们更清晰地了解程序中出现的错误，方便调试和修复代码。此外，我们还可以使用`throw`函数将错误信息抛出到标准错误流中，让程序在遇到错误时停止执行。
 
-除了将错误信息输出到屏幕上，我们也可以将它们保存到日志文件中。通过设置Java虚拟机的`-XX:ErrorFile`参数，我们可以指定错误信息的输出路径和文件名。
+## 参考链接
 
-另外，我们也可以根据具体的需要，将不同等级的错误信息输出到不同的流中。例如，将重要的错误信息输出到标准错误流，而将普通的警告信息输出到标准输出流。
-
-# 参考资料
-
-- [Clojure官方文档 - System/err方法](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/System/err)
-- [Java命令行参数文档](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BGBJDEGD)
-- [深入理解标准输出与标准错误的区别](https://stackoverflow.com/questions/363863/what-is-the-difference-between-system-out-println-and-system-err-println)
+- [Clojure文档](https://clojure.org/)
+- [关于标准错误流的介绍](https://www.linuxnix.com/fixing-the-golang-standard-error-traping-improve-your-effectiveness/) 
+- [更多关于异常处理的方法](https://purelyfunctional.tv/guide/clojure-error-handling/)

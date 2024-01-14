@@ -1,44 +1,47 @@
 ---
 title:    "PHP: 比较两个日期"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要比较两个日期，这是一个常见的编程需求。比如，可以用来检查是否满足某个特定时间范围，或者计算两个日期之间的时间差。
+## 为什么比较两个日期？
 
-怎么做：首先，我们需要使用PHP中的内置函数`strtotime()`将日期字符串转换为UNIX时间戳，然后再用函数`date()`将时间戳转换为想要的日期格式。下面是一个示例代码：
+在编写一个复杂的网站或应用程序时，经常会遇到需要比较日期的情况。比如，检查用户的账户是否过期或者判断某个事件是否已经发生。比较两个日期可以帮助我们轻松实现这些功能。
+
+## 如何进行日期比较？
+
+比较日期通常会涉及到使用一些内置的PHP函数。首先，我们需要将两个日期都转换成时间戳，然后可以使用`if`语句来比较它们。下面是一个简单的例子：
 
 ```PHP
-<?php
-// 设置两个日期字符串
-$date1 = "2021-01-01";
-$date2 = "2021-02-01";
+$first_date = strtotime("2020-01-01");
+$second_date = strtotime("2020-02-01");
 
-// 将日期字符串转换为时间戳
-$time1 = strtotime($date1);
-$time2 = strtotime($date2);
-
-// 将时间戳格式化为想要的日期格式
-$date1_formatted = date("Y年m月d日", $time1);
-$date2_formatted = date("Y年m月d日", $time2);
-
-// 输出比较结果
-echo "日期 $date1_formatted 与 $date2_formatted 相差 " . $time2 - $time1 . " 秒";
+if($first_date < $second_date){
+  echo "第一个日期早于第二个日期";
+}else{
+  echo "第一个日期晚于或等于第二个日期";
+}
 ```
 
-运行以上代码，输出结果将会是：日期 2021年01月01日 与 2021年02月01日 相差 2678400 秒。
+上面的代码会输出`第一个日期早于第二个日期`，因为2020年1月1日早于2020年2月1日。
 
-深入了解：在比较两个日期时，我们需要考虑到不同的日期格式，比如年月日分别用什么字符表示。还有就是在计算时间差时，要考虑到闰年的情况。同时，PHP中也提供了其他函数如`date_diff()`、`DateTime`类等，可以帮助我们更方便地比较日期。在使用这些函数时，建议查阅官方文档以及相关教程，以避免错误。
+除了比较日期大小，我们还可以使用`date_diff()`函数来计算两个日期之间的差距，以便更精确地比较。
 
-## 参考链接
+## 深入了解日期比较
 
-- [PHP官方手册 - 日期处理](https://www.php.net/manual/zh/datetime.formats.comparison.php)
-- [PHP官方手册 - 时间戳与日期格式化](https://www.php.net/manual/zh/datetime.formats.relative.php)
-- [PHP官方手册 - 日期间隔与时间差](https://www.php.net/manual/zh/datetime.diff.php)
+在PHP中，时间戳是一个整数表示从1970年1月1日以来的秒数。这就是为什么我们需要在比较日期之前将它们转换成时间戳。当日期被转换成时间戳后，我们可以使用各种数学运算符来比较它们。
 
-## 参见
+此外，我们也可以使用`strtotime()`函数来将日期字符串转换成时间戳，这样就可以方便地在比较中使用。
 
-- [PHP中的日期和时间处理 - 开发者头条](https://toutiao.io/posts/id/15jdf0b)
-- [比较日期和时间 - 知乎](https://zhuanlan.zhihu.com/p/34201844)
-- [PHP中的日期处理 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2009/05/php_pitfalls_date_and_time_functions.html)
+## 参考资料
+
+- [PHP官方文档：日期和时间](https://www.php.net/manual/zh/book.datetime.php)
+- [W3School教程：PHP日期与时间](https://www.w3school.com.cn/php/php_date.asp)
+- [菜鸟教程：PHP日期和时间](https://www.runoob.com/php/php-date-time.html)
+
+# 参见
+
+- [PHP官方文档：时间戳](https://www.php.net/manual/zh/function.time.php)
+- [PHP官方文档：日期比较](https://www.php.net/manual/zh/function.date-compare.php)

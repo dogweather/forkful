@@ -1,63 +1,52 @@
 ---
 title:    "Rust recipe: Getting the current date"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In today's world, time is of the essence. Knowing the current date and time is crucial for many applications, whether it's for logging events or displaying real-time data. In this blog post, we'll explore how to get the current date in Rust programming language.
+
+Getting the current date may seem like a simple task, but it is an important feature in many programs. It allows for time-based functionality, such as scheduling tasks or displaying the current date to the user. In Rust, there are multiple ways to get the current date and it's important to understand how to do so efficiently. 
 
 ## How To
-To get the current date in Rust, we'll be using the standard library's `chrono` crate. First, we'll need to add this crate as a dependency in our `Cargo.toml` file. Simply add the following line:
+
+To get the current date in Rust, we can use the `chrono` crate. First, we need to add the following to our `Cargo.toml` file:
 
 ```
 [dependencies]
-chrono = "0.4.7"
+chrono = "0.4.11"
 ```
 
-Next, we'll import the `Local` function from the `chrono` crate as follows:
+Next, we can use the `chrono::Utc` method to get the current date in UTC format. We can then use `format()` to format the date in our desired way. Here's an example:
 
 ```
-use chrono::Local;
+use chrono::Utc;
+
+let current_date = chrono::Utc::today().format("%Y-%m-%d").to_string();
+println!("{}", current_date); // Output: 2020-08-13
 ```
 
-Now, we can use the `Local::now()` function to get the current date and time. Let's print the date in the following code snippet:
+We can also get the current date and time by using `Utc::now()` and formatting it accordingly. Here's another example:
 
 ```
-let current_date = Local::now().date();
-println!("Today's date is: {}", current_date);
-```
+use chrono::Utc;
 
-Running this code will give us the output:
-
-```
-Today's date is: 2021-09-19
-```
-
-We can also format the date in a specific way using the `format()` function provided by `chrono`. Let's say we want to display the date in the format of "Day, Month Date, Year". We can do so by using the following code:
-
-```
-let current_date = Local::now().date();
-let formatted_date = current_date.format("%A, %B %e, %Y");
-println!("{}", formatted_date);
-```
-
-The output for this code would be something like:
-
-```
-Sunday, September 19, 2021
+let current_datetime = chrono::Utc::now().format("%Y-%m-%d %H:%M:%S").to_string();
+println!("{}", current_datetime); // Output: 2020-08-13 12:30:45
 ```
 
 ## Deep Dive
-Under the hood, the `Local::now()` function uses the system's clock timezone. It then converts the time into UTC and calculates the date based on that. This ensures that the date remains accurate even if the system's clock timezone changes.
 
-The `format()` function uses formatting codes to specify how the date and time should be displayed. These codes are similar to those used in other languages like C, Python, and PHP.
+Internally, the `chrono` crate uses the `SystemTime` type to get the current date and time. This type is platform-dependent and provides sub-second precision. Additionally, `chrono` also handles time zones and daylight saving time, allowing for accurate and reliable date and time calculations.
 
-There are various other functions provided by `chrono` crate for working with dates and times, including creating custom time zones, parsing dates, and calculating time differences.
+When getting the current date in Rust, it's important to consider performance as well. One way to improve performance is by caching the date for a short period, rather than calling the `Utc::now()` method multiple times. This can help reduce unnecessary system calls and improve the overall efficiency of the program.
 
 ## See Also
-- [Official `chrono` crate documentation](https://docs.rs/chrono/)
-- [Rust Programming Language](https://www.rust-lang.org/)
 
-And there you have it, getting the current date in Rust is as simple as that! With the `chrono` crate, dealing with dates and times in Rust becomes much easier and hassle-free. Happy coding!
+Here are some helpful resources for further reading about getting the current date in Rust:
+
+- [Chrono crate documentation](https://docs.rs/chrono/0.4.11/chrono/)
+- [SystemTime API reference](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+- [Performance tips for working with time in Rust](https://blog.jan-ahrens.eu/2017/04/10/rust-performance-tip-1.html)

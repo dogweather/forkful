@@ -1,42 +1,52 @@
 ---
-title:    "Rust: Przetwarzanie daty na ciąg znaków"
+title:    "Rust: Konwertowanie daty na ciąg znaków"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto konwertować datę na ciąg znaków?
+## Dlaczego
 
-Konwersja daty na ciąg znaków może być niezbędna w wielu sytuacjach. Na przykład, jeśli pracujesz z danymi, które muszą być łatwe do odczytania przez użytkowników lub systemy zewnętrzne, konwersja na czytelny format jest niezbędna. Może to również pomóc w wyświetlaniu dat w różnych językach, zależnie od preferencji użytkownika.
+Konwersja daty na ciąg znaków jest często potrzebna w programowaniu, aby wyświetlić datę lub przetworzyć ją w innym formacie. W tym poście pokażemy Ci, jak łatwo wykonać tę operację w języku Rust.
 
-## Jak to zrobić w języku Rust?
-
-Aby skonwertować datę na ciąg znaków w Rust, najprostszym sposobem jest użycie funkcji "format!" z makrem "println!". Oto kilka przykładowych kodów i wyników:
+## Jak to zrobić
 
 ```Rust
-use chrono::NaiveDate;
-
+use chrono::{DateTime, Utc,format::strftime};
+ 
 fn main() {
-    let date = NaiveDate::from_ymd(2020, 06, 22);
-    let string_date = format!("{:?}", date.format("%d/%m/%Y"));
-    println!("Data jako ciąg znaków: {}", string_date);
+    let now: DateTime<Utc> = Utc::now();
+    // Konwersja daty na format ISO 8601
+    let iso_date_string = now.to_rfc3339();
+    println!("Data w formacie ISO: {}", iso_date_string);
+    // Konwersja daty na format DD-MM-YYYY
+    let custom_date_string = now.format("%d-%m-%Y").to_string();
+    println!("Data w formacie DD-MM-YYYY: {}", custom_date_string);
+    // Konwersja daty na własny format
+    let my_date_format = "%A, %d %B %Y, godzina %R";
+    let my_date_string = now.format(my_date_format).to_string();
+    println!("Moja własna data: {}", my_date_string);
 }
 ```
 
+Output:
 ```
-Data jako ciąg znaków: 22/06/2020
+Data w formacie ISO: 2020-08-31T15:28:42.873962981+00:00
+Data w formacie DD-MM-YYYY: 31-08-2020
+Moja własna data: poniedziałek, 31 sierpnia 2020, godzina 15:28
 ```
 
-W powyższym kodzie najpierw musimy zaimportować bibliotekę "chrono", która pomaga w manipulacji datami. Następnie definiujemy datę przy użyciu metody "from_ymd", a następnie korzystamy z metody "format" wraz z odpowiednim formatowaniem, aby uzyskać pożądany wygląd daty. W końcu, dzięki funkcji "format!", konwertujemy datę na ciąg znaków i wyświetlamy ją przy użyciu makra "println!".
+W powyższym kodzie wykorzystujemy bibliotekę `chrono`, która jest bardzo popularna w Rust do operacji na datach i godzinach. Najpierw importujemy niezbędne funkcje, a następnie tworzymy obiekt daty `now`, z którego będziemy korzystać. Następnie, korzystając z metody `to_rfc3339()` konwertujemy datę na format ISO 8601. W kolejnych liniach wykorzystujemy metodę `format()` do ustawienia własnego formatu wyjściowego. Możesz dowolnie modyfikować format, aby uzyskać pożądany wynik. Na końcu wyświetlamy wynik przy użyciu funkcji `to_string()`.
 
-## Wnikliwsze spojrzenie na konwersję daty na ciąg znaków
+## Deep Dive
 
-Warto również wspomnieć o możliwości wykorzystania biblioteki "chrono" do konwersji daty na ciąg znaków w konkretnym formacie, który odpowiada określonemu językowi czy lokalizacji. W tym przypadku, należy użyć metody "format_localized" zamiast "format", a następnie podać odpowiedni język lub lokalizację w parametrze metody.
+Rust oferuje wiele opcji konwersji daty na ciąg znaków, ponieważ jest to często wymagana operacja w programowaniu. Możesz również zmieniać strefę czasową lub przetwarzać daty i godziny w różnych strefach przy użyciu pojęcia `TimeZone`. Możesz również wykorzystać funkcję `strftime()` do zmiany formatu daty na inny niż standardowe dostępne w języku Rust.
 
-Ponadto, biblioteka "chrono" oferuje wiele innych przydatnych funkcji i metod związanych z manipulacją datami, więc warto ją pogłębienie badać, aby wykorzystać ją w pełni.
+Ważne jest, aby pamiętać, że konwersja daty na ciąg znaków może być czasochłonna, dlatego ważne jest, aby wybierać optymalne rozwiązania i nie wykonywać konwersji bez potrzeby. W przypadku przetwarzania dużej ilości danych lub powtarzając tego typu operacje, należy zwrócić uwagę na wydajność kodu.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja biblioteki "chrono" dotycząca konwersji daty na ciąg znaków: https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html
-- Przykładowe kody i wyjaśnienie konwersji daty na ciąg znaków w języku Rust: https://dev.to/maxime_chantry/date-time-and-duration-in-rust-527d
-- Wideo tutorial na temat konwertowania daty na ciąg znaków w Rust: https://www.youtube.com/watch?v=Ia6WC4nb4i8
+- Dokumentacja biblioteki `chrono`: https://docs.rs/chrono/0.4.19/chrono/
+- Blog post na temat użycia biblioteki `chrono` do operacji na datach i godzinach: https://blog.logrocket.com/working-with-dates-and-times-in-rust-using-chrono/
+- Kurs na temat języka Rust: https://www.rust-lang.org/learn

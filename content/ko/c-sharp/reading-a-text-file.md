@@ -1,42 +1,66 @@
 ---
 title:    "C#: 텍스트 파일 읽기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-텍스트 파일을 읽는 것은 프로그래밍에서 중요한 작업 중 하나입니다. 텍스트 파일은 우리가 일상에서 다루는 다양한 정보를 담고 있기 때문에, 텍스트 파일을 읽는 프로그램을 작성하는 것은 매우 유용합니다. 예를 들어, 주소록을 파일로 저장하고 이를 읽어와 특정 정보를 검색하거나, 로그 파일을 분석하여 시스템의 동작을 모니터링 할 수 있습니다.
+텍스트 파일을 읽는 것에 대해 왜 관심을 가질까? 텍스트 파일은 프로그램에서 많이 사용되는 기본적인 데이터 저장 방식입니다. 따라서 프로그래밍을 공부하는 데 있어서 텍스트 파일을 읽는 기술은 매우 중요합니다.
 
-## 어떻게
+## 어떻게?
 
-아래의 C# 코드 예제를 통해 텍스트 파일을 읽는 방법을 알아보겠습니다. 우선 `StreamReader` 클래스를 사용하여 파일을 열고, `ReadLine` 메서드를 이용하여 한 줄씩 읽어오도록 할 수 있습니다. 이후 `while` 루프를 사용하여 파일을 끝까지 읽은 다음, `Close` 메서드를 호출하여 파일을 닫아주면 됩니다.
+아래 예제 코드를 통해 C#에서 텍스트 파일을 읽는 방법을 알아보겠습니다.
 
 ```C#
+using System;
 using System.IO;
 
-StreamReader reader = new StreamReader("example.txt"); // 파일 열기
-string line;
-
-while((line = reader.ReadLine()) != null) // 파일 끝까지 읽기
+class Program
 {
-    Console.WriteLine(line); // 콘솔에 한 줄씩 출력
-}
+    static void Main()
+    {
+        // 텍스트 파일 경로 지정
+        string filePath = "sample.txt";
 
-reader.Close(); // 파일 닫기
+        // 파일을 읽기 위한 StreamReader 객체 생성
+        using (StreamReader sr = new StreamReader(filePath))
+        {
+            string line;
+
+            // 파일의 모든 내용을 한 줄씩 읽어서 출력
+            while ((line = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }
+}
 ```
 
-위의 코드를 실행하면 `example.txt` 파일에 있는 모든 내용을 콘솔에 출력하게 됩니다.
+위 코드를 실행하면 `sample.txt` 파일의 내용이 한 줄씩 출력됩니다. 만약 파일의 내용이 숫자일 경우, `int.Parse()` 함수를 사용하여 문자열을 정수형으로 변환할 수 있습니다.
 
-## 깊게 파고들기
+```C#
+// 파일의 내용을 정수형으로 변환하여 출력
+Console.WriteLine(int.Parse(line));
+```
 
-텍스트 파일을 읽는 것은 매우 간단하지만, 몇 가지 사소한 실수가 큰 오류를 발생시킬 수 있습니다. 예를 들어, 파일을 열고 사용한 뒤에 꼭 파일을 닫아주는 것을 잊어버리거나, 파일의 경로나 파일명을 잘못 입력하는 등의 실수가 발생할 수 있습니다. 또한 파일이 너무 크거나 잘못된 인코딩으로 작성되어 있는 경우에도 문제가 발생할 수 있습니다. 이러한 경우에는 예외처리를 추가하여 프로그램의 안정성을 높여야 합니다.
+## 깊게 들어가기
 
-또한, 텍스트 파일을 읽는 것 외에도 `StreamWriter` 클래스를 사용하여 새로운 텍스트 파일을 생성하고, `File` 클래스를 사용하여 파일을 복사하거나 삭제하는 등의 작업도 가능합니다.
+텍스트 파일을 읽는 방법에 대해 더 깊이 알아보겠습니다. `StreamReader` 클래스는 `Read()` 메서드를 제공하여 파일의 내용을 `char` 배열로 읽을 수 있습니다. 이를 활용하면 파일을 특정 바이트 수만큼 읽어서 처리할 수 있는 장점이 있습니다.
+
+또한, `File` 클래스의 `ReadAllLines()` 메서드를 사용하면 파일의 모든 내용을 한 번에 `string` 배열로 읽을 수 있습니다.
 
 ## 참고 자료
 
-- [`StreamReader` 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamreader?view=net-5.0)
-- [`File` 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.file?view=net-5.0)
-- [C# 파일 입출력 예제](https://www.csharpstudy.com/Tip/Tip-file-io.aspx)
+- [Microsoft Docs - StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=netcore-3.1)
+- [Microsoft Docs - File Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1)
+- [C#에서 텍스트 파일 다루기](https://twpower.github.io/65-read-and-write-file-in-csharp)
+
+## 관련 링크
+
+- [C#에서 텍스트 파일 쓰기](https://github.com/jaydenkoh/csharp-text-file-write-ko)
+- [C#으로 CSV 파일 다루기](https://github.com/jaydenkoh/csharp-csv-file-ko)
+- [C# 파일 입출력 강좌](https://csharpstudy01.tistory.com/10)

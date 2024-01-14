@@ -1,44 +1,46 @@
 ---
-title:    "Swift: Konvertera en sträng till små bokstäver"
+title:    "Swift: Omvandling av en sträng till gemener"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Stringar är en vanlig datatyp som används i Swift, och de kan innehålla en rad olika tecken och symboler. Ibland kan det vara användbart att konvertera en sträng till små bokstäver för att underlätta jämförelser och sökningar.
+# Varför
+I den här bloggposten kommer vi att titta på hur man konverterar en sträng till små bokstäver i Swift. Det är ett vanligt problem som ofta uppstår när man hanterar inmatning från användare eller jämför strängar i en applikation. Genom att konvertera en sträng till små bokstäver kan du enkelt uppnå enhetlighet och korrekta jämförelser.
 
-## Så här gör du
-För att konvertera en sträng till små bokstäver, kan du använda metoden `lowercased()`. Med denna metod kommer alla bokstäver i strängen att omvandlas till små bokstäver.
-
-```Swift
-let string1 = "SWIFT PROGRAMMERING"
-let lowercaseString = string1.lowercased()
-print(lowercaseString) // swift programmering
-```
-
-Du kan även använda metoden `capitalized`, som omvandlar den första bokstaven i varje ord till stor bokstav och resten av bokstäverna till små.
+# Hur man gör
+För att konvertera en sträng till små bokstäver kan du använda metoden `.lowercased()` på din sträng. Här är ett exempel:
 
 ```Swift
-let string2 = "välkommen till swift"
-let capitalizedString = string2.capitalized
-print(capitalizedString) // Välkommen Till Swift
+let originalString = "SWIFT ÄR KUL!"
+let lowercasedString = originalString.lowercased()
+print(lowercasedString)
 ```
 
-Om du endast vill omvandla den första bokstaven i strängen till stor bokstav, kan du använda metoden `prefix(1)` tillsammans med `capitalized`. 
+Output:
+```
+swift är kul!
+```
+
+# Djupdykning
+När du använder `.lowercased()`-metoden i Swift kommer alla bokstäver i strängen att konverteras till små bokstäver enligt Unicode-standarder. Det betyder att även bokstäver från andra språk än engelska kommer att konverteras till små bokstäver enligt deras Unicode-ekvivalenter.
+
+Om du vill begränsa konverteringen endast till engelska bokstäver kan du använda `.lowercased(with: Locale)`-metoden och specificera önskad lokal. Till exempel:
 
 ```Swift
-let string3 = "låt oss lära oss swift"
-let firstLetter = string3.prefix(1).capitalized
-print(firstLetter) // L
+let originalString = "SWIFT ÄR KUL!"
+let lowercasedString = originalString.lowercased(with: Locale(identifier: "en"))
+print(lowercasedString)
 ```
 
-## Deep Dive
-När du använder metoden `lowercased()` så omvandlas även alla specialtecken och unicode-tecken i strängen till små bokstäver. Detta kan vara användbart vid jämförelser där specialtecken inte spelar någon roll.
+Output:
+```
+swift är kul!
+```
 
-En annan viktig sak att tänka på är att metoden `lowercased()` inte bara tar hänsyn till de engelska alfabetet, utan den tar också hänsyn till andra språk där bokstäver kan skrivas på olika sätt. Till exempel, i tyska språket så åker diakritiska tecken såsom "ä", "ö" och "ü" bort vid konvertering till små bokstäver.
+Det är också värt att nämna att `.lowercased()`-metoden inte ändrar originalsträngen, utan skapar en ny sträng med de konverterade bokstäverna.
 
-## Se även
-- [Apple's dokumentation om `lowercased()`](https://developer.apple.com/documentation/swift/string/3126799-lowercased)
-- [En artikel om strängmanipulering i Swift](https://www.avanderlee.com/swift/string-manipulation-swift/)
-- [En tutorial om grundläggande Swift-programmering](https://blog.sundell.com/2020/01/22/basic-swift-programming-tutorials/)
+# Se även
+- [Dokumentation om `.lowercased()`-metoden](https://developer.apple.com/documentation/swift/string/1783473-lowercased)
+- [Unicode-språkkoder](https://www.unicode.org/cldr/charts/latest/supplemental/language_territory_information.html)

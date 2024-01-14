@@ -1,64 +1,59 @@
 ---
-title:    "C: Umwandeln eines Datums in einen String."
+title:    "C: Umwandlung eines Datums in einen String"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In der Informatik ist es oft notwendig, Daten in verschiedene Formate zu konvertieren. Eine häufige Aufgabe besteht darin, ein Datum in einen String umzuwandeln. In diesem Blog-Beitrag werden wir uns genauer ansehen, warum und wie man dies in der Programmiersprache C tun kann.
+Das Konvertieren von Datums- und Zeitangaben in Zeichenfolgen ist eine grundlegende Aufgabe in der Programmierung. Es erlaubt uns, Daten in einem für Menschen lesbareren Format auszugeben.
 
-# Wie geht das?
+## Wie funktioniert es?
 
-Der erste Schritt ist die Verwendung der Funktion `strftime()` aus der Standardbibliothek `<time.h>`. Diese Funktion erlaubt es uns, ein gegebenes Datum mithilfe eines spezifischen Formats in einen String umzuwandeln. Hier ist ein Beispiel:
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  time_t now = time(NULL);
-  char str[50];
-
-  strftime(str, sizeof(str), "%d-%m-%Y", localtime(&now));
-
-  printf("Heute ist der %s", str);
-  return 0;
-}
-```
-
-In diesem Code nutzen wir `strftime()`, um das aktuelle Datum zu formatieren und in die Variable `str` zu speichern. Das Format `"%d-%m-%Y"` gibt das Datum im Format "TT-MM-JJJJ" aus. Die Funktion `localtime()` gibt einen Zeiger auf eine `struct tm` zurück, die das aktuelle Datum und die Uhrzeit enthält.
-
-Wenn wir diesen Code ausführen, erhalten wir die Ausgabe "Heute ist der 25-04-2021". Natürlich gibt es viele andere Formatierungsoptionen, die je nach Bedarf genutzt werden können.
-
-# Tiefer ins Thema einsteigen
-
-Die Funktion `strftime()` kann nicht nur verwendet werden, um das aktuelle Datum zu formatieren, sondern auch um ein beliebiges Datum in einen String zu konvertieren. Dafür müssen wir die `struct tm` selbst initialisieren, anstatt die Funktion `localtime()` zu nutzen. Hier ist ein Beispiel, das das Datum des deutschen Einheitsfeiertags in einen String umwandelt:
+Um ein Datum in eine Zeichenfolge zu konvertieren, müssen wir zuerst die Funktion `sprintf()` aus der Standardbibliothek `<stdio.h>` verwenden. Diese Funktion ermöglicht es uns, ein Zeichen für Zeichen in einen string zu schreiben. Das folgende Beispiel zeigt, wie wir `sprintf()` verwenden können, um das aktuelle Datum in einer Zeichenfolge auszugeben:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  struct tm dTag = {
-    .tm_mday = 3,
-    .tm_mon = 10,
-    .tm_year = 0
-  };
-  char str[50];
+int main(){
+    // Aktuelles Datum und Uhrzeit abrufen
+    time_t now;
+    time(&now);
 
-  strftime(str, sizeof(str), "%A, %d. %B %Y", &dTag);
+    // Speicher für eine Zeichenfolge von 50 Zeichen reservieren
+    char date[50];
 
-  printf("Der deutsche Einheitsfeiertag ist dieses Jahr am %s", str);
-  return 0;
+    // Datum in die Zeichenfolge schreiben
+    sprintf(date, "Heute ist %s", ctime(&now));
+
+    // Zeichenfolge ausgeben
+    printf("%s", date);
+
+    return 0;
 }
 ```
 
-Dieser Code gibt den String "Der deutsche Einheitsfeiertag ist dieses Jahr am Montag, 03. Oktober 1" aus. Beachten Sie, dass das Jahr in der `struct tm` als Anzahl von Jahren seit 1900 angegeben wird.
+Die Ausgabe dieses Codes würde in etwas ähnlichem aussehen wie:
 
-# Siehe auch
+```
+Heute ist Sat Jun 20 15:33:28 2020
+```
 
-- [Dokumentation für die Funktion strftime()](https://www.cplusplus.com/reference/ctime/strftime/)
-- [Eine Liste mit allen verfügbaren Formatierungsoptionen](https://strftime.org/) (in Englisch)
-- [Weitere Informationen über die `struct tm`](https://www.cplusplus.com/reference/ctime/tm/) (in Englisch)
+Wie du sehen kannst, gibt `ctime()` ein vorgefertigtes Datum und Uhrzeitformat zurück, das wir dann mit `sprintf()` in unsere eigene Zeichenfolge einfügen können.
+
+## Tiefergehende Infos
+
+Die Funktion `sprintf()` verwendet einen sogenannten Format-String, um zu definieren, wie die Daten in die Zeichenfolge geschrieben werden sollen. In dem oben gezeigten Beispiel haben wir `%s` verwendet, um die Zeit und das Datum von `ctime()` in unsere Zeichenfolge zu schreiben. Es gibt jedoch viele andere Platzhalter, die wir nutzen können, z.B. `%d` für eine Ganzzahl oder `%f` für eine Fließkommazahl.
+
+Wenn du deine eigenen benutzerdefinierten Datumsformate erstellen möchtest, kannst du auch die Funktion `strftime()` aus der Standardbibliothek `<time.h>` verwenden. Diese Funktion arbeitet ähnlich wie `ctime()`, gibt aber ein Datum in einem von dir definierten Format zurück.
+
+## Siehe auch
+
+- [Die offizielle Dokumentation zu sprintf()](https://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Die offizielle Dokumentation zu strftime()](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Ein ausführlicher Artikel über das Formatieren von Datum und Uhrzeit in C](https://www.programiz.com/c-programming/c-date-time)
+
+Vielen Dank fürs Lesen und ich hoffe, dieser Beitrag hat dir geholfen, mehr über das Konvertieren von Daten in Zeichenfolgen in C zu erfahren. Bis zum nächsten Mal!

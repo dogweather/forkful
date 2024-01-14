@@ -1,37 +1,74 @@
 ---
-title:    "PHP: Päivämäärän hakeminen"
+title:    "PHP: Nykyisen päivämäärän saaminen."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet PHP-ohjelmoijat tietävät, että nykyisen päivämäärän saaminen on helppo tehtävä. Mutta miksi haluat tehdä tämän? On olemassa useita syitä, miksi saatat tarvita nykyistä päivämäärää ohjelmassasi. Yksi yleisimmistä on esimerkiksi kun haluat tallentaa käyttäjän viimeisimmän toiminnan päivämäärän tietokantaan. Tämä voi auttaa sinua seuraamaan käyttäjän toimintaa ja parantamaan sovelluksesi toiminnallisuutta.
+Monissa koodauksen projekteissa tarvitaan esimerkiksi ajankohtaista päivämäärää kirjauksia ja tapahtumia varten. PHP:ssa on valmiit toiminnot, joiden avulla tämä onnistuu helposti ja tarkasti.
 
 ## Miten
 
-PHP:llä on valmiina funktio, joka palauttaa nykyisen päivämäärän ja ajan. Tämä funktio on nimeltään "date()" ja sen avulla voit helposti näyttää haluamasi päivämäärän ja ajan muodossa. Tässä on esimerkki:
+### Perusversio
+
+Paras tapa saada nykyinen päivämäärä PHP:ssa on käyttää `date()`-funktiota. Se palauttaa merkkijonon, jossa on nykyinen päivämäärä ja aika halutussa muodossa.
 
 ```PHP
-$date = date('d.m.Y H:i:s');
-echo $date;
-```
-Tämä koodi tulostaa nykyisen päivämäärän ja ajan muodossa "päivä.kuukausi.vuosi tunti:minuutti:sekunti". Voit myös muuttaa muotoa antamalla "date()" -funktiolle eri parametreja. Esimerkiksi jos haluat näyttää vain päivämäärän, voit käyttää tätä koodia:
-
-```PHP
-$date = date('d.m.Y');
+$date = date("d.m.Y H:i:s");
 echo $date;
 ```
 
-## Syvempi sukellus
+Tulostaa esimerkiksi `27.08.2020 10:00:00`.
 
-"Date()" -funktion lisäksi PHP tarjoaa myös muita hyödyllisiä päivämäärän ja ajan manipulointiin tarkoitettuja funktioita, kuten "strtotime()" ja "DateTime". Voit myös helposti muuttaa päivämäärän muotoja käyttämällä "date_format()" -funktiota tai lisätä tai vähentää päiviä käyttämällä "date_add()" ja "date_sub()" -funktioita.
+### Eri paikkakuntien aikavyöhykkeet
 
-On myös tärkeää huomata, että nykyinen päivämäärä ja aika perustuu palvelimen aikaan. Jos haluat näyttää käyttäjälle tietyn aikavyöhykkeen mukaisen päivämäärän ja ajan, voit käyttää "date_default_timezone_set()" -funktiota.
+`date_default_timezone_set()`-funktiolla voidaan asettaa haluttu aikavyöhyke. Jos tämä jätetään pois, käytetään palvelimen aikavyöhykettä.
+
+```PHP
+date_default_timezone_set("Europe/Helsinki");
+
+$date = date("d.m.Y H:i:s");
+echo $date;
+```
+
+Tulostaa esimerkiksi `27.08.2020 13:00:00`, jos palvelin sijaitsee Helsingissä.
+
+### Unix-aikaleima
+
+PHP:n `time()`-funktio palauttaa Unix-aikaleiman, joka on sekuntien määrä kulunut vuodesta 1970. Tätä voi käyttää `date()`-funktion kanssa hankkimaan halutun päivämäärän.
+
+```PHP
+$time = time(); // esim. 1598545200
+$date = date("d.m.Y H:i:s", $time);
+echo $date;
+```
+
+Tulostaa esimerkiksi `27.08.2020 10:00:00`.
+
+## Syvenny
+
+PHP:n `date()`-funktio käyttää palvelimen asetettua aikavyöhykettä. Jos käytössäsi on esimerkiksi verkkosivusto, jota käyttävät käyttäjät ympäri maailman, olisi hyvä antaa käyttäjille mahdollisuus asettaa haluamansa aikavyöhyke. Tämä onnistuu esimerkiksi käyttämällä `DateTime`-luokkaa ja antamalla käyttäjän valita aikavyöhyke pudotusvalikosta.
+
+Esimerkiksi jos jokin tapahtuma järjestetään Chicago:ssa, mutta käyttäjä on Helsingissä, hän näkee tapahtuman ajankohdan oikeassa ajassa käyttäjän valitsemassa aikavyöhykkeessä.
+
+```PHP
+// Palvelimen aikavyöhyke
+$date = new DateTime();
+$date = $date->format("d.m.Y H:i:s");
+echo $date; // Palauttaa esim. 02.09.2020 08:00:00
+
+// Käyttäjän valitsema aikavyöhyke
+$user_timezone = "Europe/Helsinki";
+$date = new DateTime();
+$date->setTimezone(new DateTimeZone($user_timezone));
+$date = $date->format("d.m.Y H:i:s");
+echo $date; // Palauttaa esim. 02.09.2020 13:00:00
+```
 
 ## Katso myös
 
-- [PHP:n date()-funktion dokumentaatio](https://www.php.net/manual/en/function.date.php)
-- [PHP:n aika- ja päivämäärätoiminnot](https://www.php.net/manual/en/book.datetime.php)
-- [Date and Time - PHP The Right Way](https://phptherightway.com/#date_and_time)
+- PHP:n virallinen dokumentaatio: https://www.php.net/manual/en/function.date.php
+- Aikavyöhykkeiden lista: https://www.php.net/manual/en/timezones.php

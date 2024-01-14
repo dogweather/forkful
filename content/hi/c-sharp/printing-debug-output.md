@@ -1,43 +1,35 @@
 ---
 title:    "C#: डीबग आउटपुट प्रिंट करना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
 
-Debug output print karna aapke programming kaafi helpful ho sakta hai, kyunki ye aapko apne code mein kuch galtiyaan aur chhoti-chhoti problems ko dhoondne mein madad karega. Isse aap apne code ko debug karte samay aasani se track kar sakte hain aur sahi solutions nikal sakte hain.
+विकासकृतों में कभी-कभी हमारी कोडिंग में त्रुटियां हो जाती हैं। इन त्रुटियों को जानने और सुधार करने के लिए डिबग आउटपुट प्रिंट करना बहुत महत्वपूर्ण है।
 
-## Kaise
+## कैसे करें
 
-Debugging output print karna C# mein kaafi simple hai. Aap bas ek console application mein ye code add kar sakte hain:
-
-```C#
-Console.WriteLine("Debug output print karna hai");
-```
-
-Isse aapko apne code mein ye message print ho jayega. Aap apne code mein bhi variables aur different values ko print kar sakte hain, jisse aapko aur bhi detailed information milegi.
+डिबग आउटपुट प्रिंट करने के लिए हम लोगों को डिबग मोड में अपने कोड को लिखना होता है। इसमें हम कई तरह की डिबगिंग टेकनिक्स आवश्यकतापूर्ण होती हैं लेकिन सबसे आसानी से हम कंसोल पर अपने वेरिएबल्स को प्रिंट कर सकते हैं। नीचे दिए गए मदद से आपको पता चलेगा कि ऐसा कैसे किया जाता है:
 
 ```C#
-int a = 5;
-string b = "Hello World!";
-Console.WriteLine("a ki value = " + a);
-Console.WriteLine("b ki value = " + b);
+string name = "जॉन";
+int age = 25;
+Console.WriteLine("नाम: " + name);
+Console.WriteLine("आयु: " + age);
 ```
 
-Is tarah se aap apne code mein jo bhi information print karna chahte hain, kar sakte hain.
+### आउटपुट:
+नाम: जॉन
+आयु: 25
 
-## Deeper Dive
+## गहराई में जाएँ
 
-Debugging output print karna sirf code ki problems ko dhoondhne ke liye useful nahi hai, balki ye aapke code ki performance ko improve karne mein bhi madad karta hai. Aap apne code mein different stages par debug output print karke ye check kar sakte hain ki code ka kis part mein time zyada lag raha hai aur use optimize kar sakte hain.
+डिबग आउटपुट को प्रिंट करने से हमें अपने कोड की गहराई में जाने में मदद मिलती है। हम इसका उपयोग अपनी वॉरिएबल्स के स्थान पता लगाने, उनमें गलतियाँ ढूंढने और सुधार करने में करते हैं। इसके अलावा, हम किसी भी डिफ़ॉल्ट वैल्यू को भी पता लगा सकते हैं जो हमारे प्रोग्राम में से बग-फ्री करते हुए उत्पन्न होता है।
 
-Iske alawa, aap apne debugging output ko file mein bhi save kar sakte hain. Aisa karne se aapko apne code ka detailed log bhi mil jayega, jisse aap future mein bhi kisi problem ko solve karne mein help milegi.
+## देखें भी
 
-## Dekhiyega
-
-Agar aapko aur bhi C# programming ke tips aur tricks chahiye toh neeche diye gaye links ko check karein:
-
-- [MSDN: Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-in-visual-studio?view=vs-2019)
-- [C# Corner: Debugging in C#](https://www.c-sharpcorner.com/article/debugging-in-c-sharp/)
-- [TutorialsTeacher: Debugging in C#](https://www.tutorialsteacher.com/csharp/csharp-debugging)
+- [कंसोल एप्प्लिकेशन में डिबग आउटपुट प्रिंट करना](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/debug-by-using-in-console-applications)
+- [सीएसएस शब्दकोश: डिबग आउटपुट](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline)

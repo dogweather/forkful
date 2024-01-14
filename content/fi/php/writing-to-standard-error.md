@@ -1,43 +1,42 @@
 ---
-title:    "PHP: Kirjoittaminen vakiovirheeseen"
+title:    "PHP: Kirjoittaminen standardivirheelle"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Koodin kirjoittamisella standardivirheeseen on monia hyötyjä. Se auttaa kehittäjiä löytämään virheitä ja vianetsinnässä sekä parantamaan koodin suorituskykyä. Se myös auttaa kommunikoimaan järjestelmän tilasta käyttäjälle tai muille ohjelmille.
+Monet PHP-ohjelmoijat saattavat ihmetellä, miksi heidän pitäisi kirjoittaa standardeihin virheisiin. Tämä ominaisuus on kuitenkin erittäin hyödyllinen, kun halutaan kirjoittaa virheitä tai varoituksia ohjelman suorituksen aikana.
 
-## Kuinka kirjoittaa standardivirheeseen?
+## Miten
 
-Standardivirheeseen kirjoittaminen tapahtuu käyttäen PHP:ta `fwrite()`-funktiota, joka ottaa parametreina tiedostokahvan ja tekstirivin. Alla olevassa esimerkissä voit nähdä kuinka tulostaa virheilmoitus standardivirheeseen ja sulkea tiedostokahvan:
+Kun käytät PHP:ta, voit kirjoittaa virheilmoituksia standardiin virhevirtaan käyttämällä `error_log()`-funktiota. Tämä ei kuitenkaan ole aina tarpeellista, varsinkin jos sinulla on erilaiset loggausmenetelmät käytössä. Siksi voit ohjata virheilmoitukset standardiin virhevirtaan myös muuttamalla php.ini-tiedostoa. Tämä voidaan tehdä lisäämällä vaihtoehtoinen tie `log_errors`-asetukseen.
 
 ```PHP
-$stderr = fopen('php://stderr', 'w');
-$errorMessage = "Virhe: Tämä on virheellinen operandi";
-fwrite($stderr, $errorMessage);
-fclose($stderr);
+<?php
+// Ohjaa virheilmoitukset standardiin virhevirtaan
+ini_set('log_errors', 1);
+ini_set('error_log', '/var/log/php-error.log');
 ```
 
-Tämä tuottaa seuraavan tulosteen:
+Jos haluat mukauttaa virheilmoituksia enemmän, voit käyttää `error_reporting()`-funktiota määrittämään, mitkä virheet ja varoitukset haluat tallentaa.
 
+```PHP
+<?php
+// Tallenna vain tietyt virheet
+error_reporting(E_ERROR | E_WARNING);
 ```
-Virhe: Tämä on virheellinen operandi
-```
 
-## Syvällisempi katsaus
+## Syvempi sukellus
 
-Standardivirheeseen kirjoittamisella on tärkeä rooli ohjelmoinnissa. Se auttaa kehittäjiä havaitsemaan ja vianetsimään virheitä, sekä parantamaan ohjelman suorituskykyä. Kirjoittamalla virheilmoitukset standardivirheeseen, kehittäjä pystyy luomaan tehokkaan virheenkorjausprosessin ja parantamaan käytettävyyttä.
+Kirjoittaminen standardiin virhevirtaan voi auttaa sinua havaitsemaan ja korjaamaan ongelmia ohjelmasi suorituksen aikana. Voit myös käyttää `error_reporting()`-funktiota luomaan omia virhe- ja varoitusviestejä, jotta voit helpommin selvittää, missä osassa koodia virhe tapahtui.
 
-Kun kirjoitat virheitä standardivirheeseen, on tärkeää ottaa huomioon seuraavat asiat:
-
-1. Varmista, että voitot avataan ja suljetaan asianmukaisesti tiedostokahvalla `fwrite()`:n avulla, jotta virheet eivät jää roikkumaan tai tukkii muistia.
-2. Vältä käyttämästä yksityiskohtaisia virheilmoituksia käyttäjillemme. Sen sijaan kirjoita informatiivisia ja helppolukuisia virheilmoituksia, jotka auttavat kehittäjiä hahmottamaan ongelman nopeasti.
-3. Hyödynnä muuttujia, jotta voit kirjoittaa dynaamisia virheilmoituksia, jotka voivat sisältää tietoja ohjelman tilasta, kuten käyttäjän syöttämät tiedot tai muuttujien arvot.
+PHP:lla on myös useita tapoja tallentaa ja lukea virheilmoituksia, kuten käyttämällä `try`/`catch`-lohkoja tai `set_exception_handler()`-funktiota.
 
 ## Katso myös
 
-- [PHP: `write()`](https://www.php.net/manual/en/function.write.php)
-- [PHP: `fclose()`](https://www.php.net/manual/en/function.fclose.php)
-- [PHP: `fwrite()`](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP:n virheiden hallinta](https://www.php.net/manual/en/function.error-log.php)
+- [PHP-tietueiden loggaus](https://www.php.net/manual/en/book.syslog.php)
+- [Virhe- ja varoitusluokat PHPssa](https://www.php.net/manual/en/errorfunc.constants.php)

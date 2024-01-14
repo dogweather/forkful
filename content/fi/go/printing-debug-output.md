@@ -1,30 +1,36 @@
 ---
-title:    "Go: Virheenkorjaustulosteen tulostaminen"
+title:    "Go: Virheenkorjaustulostuksen tulostaminen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein ohjelmoijat käyttävät debug tulostusta ratkaistakseen ongelmia ohjelmassaan. Se tarjoaa tarkan kuvan siitä, mitä ohjelma tekee vaihe vaiheelta ja auttaa tunnistamaan mahdolliset virheet tai pitkäksi venyvät osat koodissa. 
+Debuggaustiedostojen tulostaminen on tärkeä osa ohjelmoinnin prosessia, koska se auttaa kehittäjiä havaitsemaan ja korjaamaan ohjelmien virheitä ja ongelmia. Se voi myös auttaa ymmärtämään ohjelman suorituskykyä ja varmistamaan, että se toimii odotetulla tavalla.
 
 ## Kuinka
 
-```Go
-// Esimerkki debug tulostuksesta
-fmt.Println("Ohjelma aloitetaan.")
-// Ohjelman aloitustuloste: Ohjelma aloitetaan.
+Go-kielessä debuggaustiedostojen tulostamiseen käytetään usein `fmt`-pakettia. Esimerkiksi, jos haluat tulostaa muuttujan arvon koodissa, voit käyttää seuraavaa koodia:
+
+```
+Go fmt.Println(nimi)
 ```
 
-Debug tulostuksen käyttö Go-kielessä on yksinkertaista. Käytetään fmt-pakettia ja sen Print-funktioita tulostamaan haluttu tieto konsoliin. Tämä voidaan tehdä koodin eri osissa, jotta saadaan selkeämpi kuva ohjelman toiminnasta. Tarvittaessa voidaan käyttää myös log-pakettia, joka tarjoaa lisää vaihtoehtoja tulostuksen hallintaan.
+Tämä tulostaa muuttujan "nimi" arvon konsoliin. Voit myös käyttää `fmt.Printf` funktiota, joka antaa sinun määrittää tarkemmin, miten haluat tulostaa tiedot. Esimerkiksi, jos haluat tulostaa muuttujan arvon numerona, voit käyttää seuraavaa koodia:
 
-## Syvempi syventyminen
+```
+Go fmt.Printf("%d", numero)
+```
 
-Debug tulostus voi myös olla hyödyllistä jäljittäessä virheitä, joita ei välttämättä näy muuten. Esimerkiksi jos ohjelma ei tulosta haluttua tulosta, voidaan tarkastella koodin osia ja lisätä tarvittaessa debug tulostuksia, jotta nähdään missä vaiheessa virhe tapahtuu. Myös muiden tietojen, kuten muuttujien arvojen, tulostaminen voi auttaa ratkaisemaan ongelmia.
+Tämä tulostaa numeron arvon konsolissa.
+
+## Syvällinen sukellus
+
+On tärkeää huomata, että debuggaustiedostojen tulostaminen voi hidastaa ohjelman suorituskykyä. Siksi on tärkeää käyttää sitä vain tarvittaessa ja poistaa ylimääräiset tulostukset lopullisesta koodista. Lisäksi on hyvä käyttää loggausmekanismeja, kuten `log`-pakettia, joka tarjoaa enemmän hallintaa ja joustavuutta debuggaustiedostojen tulostamisessa.
 
 ## Katso myös
 
-- [The Go Blog: Debugging with Print Statements](https://blog.golang.org/using-go)
-- [Go Documentation: fmt Package](https://golang.org/pkg/fmt/)
-- [Go Documentation: log Package](https://golang.org/pkg/log/)
+- [Go:n fmt-paketti](https://pkg.go.dev/fmt)
+- [Go:n log-paketti](https://pkg.go.dev/log)

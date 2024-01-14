@@ -1,51 +1,41 @@
 ---
 title:    "Rust: Extraction de sous-chaînes"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-#Pourquoi extraire des sous-chaînes en Rust?
+## Pourquoi
 
-Il est souvent nécessaire de travailler avec des chaînes de caractères dans un programme en Rust. Cela peut impliquer la manipulation de sous-chaînes, c'est-à-dire des parties d'une chaîne plus grande. Cela peut être utile pour analyser des données, filtrer des informations ou encore effectuer des opérations sur des nombres contenus dans une chaîne. Dans cet article, nous allons explorer pourquoi et comment extraire des sous-chaînes en Rust.
+Si vous êtes un développeur en quête de performance et d'efficacité, alors l'extraction de sous-chaînes (substrings) en Rust pourrait être la solution pour vous. Que vous travailliez sur des applications web, des services réseau ou des applications de bureau, Rust offre une approche moderne pour gérer les chaînes de caractères de manière efficace et concise.
 
-##Comment faire
+## Comment faire
 
-Pour extraire une sous-chaîne en Rust, nous allons utiliser la méthode `.get()` sur une chaîne de caractères. Cette méthode prend en paramètres les indices de début et de fin de la sous-chaîne que nous voulons extraire. Nous pouvons également utiliser la méthode `.char_indices()` pour obtenir les indices de chaque caractère de la chaîne, ce qui peut être utile pour déterminer les indices de début et de fin souhaités.
+Pour extraire des sous-chaînes en Rust, vous pouvez utiliser la méthode `substring` avec des indices de début et de fin. Par exemple, pour extraire une sous-chaîne de la chaîne `"Bonjour tout le monde"`, vous pouvez utiliser le code suivant :
 
-```
-let chaine = "Bienvenue en Rust!";
-let sous_chaine = chaine.get(11..,:);
-println!("{}", sous_chaine); // output: Rust!
-```
-
-Dans cet exemple, nous extrayons la sous-chaîne à partir de l'indice 11 (caractère "R") jusqu'à la fin de la chaîne. Nous utilisons également la méthode `println!()` pour afficher la sous-chaine à l'écran.
-
-##Approfondissement
-
-Il est important de noter que les indices de début et de fin utilisés par la méthode `.get()` sont inclusifs, ce qui signifie que le caractère à l'indice de fin sera également inclus dans la sous-chaîne résultante. De plus, il est recommandé d'utiliser les méthodes `.is_char_boundary()` et `.len()` pour s'assurer que les indices que nous passons sont valides et ne coupent pas des caractères.
-
-Voici un autre exemple d'extraction de sous-chaîne en spécifiant les indices de manière plus précise :
-
-```
-let chaine = "Bonjour à tous !";
-let indices = chaine.char_indices();
-let (mut debut, mut fin) = (0, 0);
-for (i, c) in indices {
-    if c == 'à' {
-        debut = i;
-    } else if c == '!' {
-        fin = i;
-    }
-}
-let sous_chaine = chaine.get(debut..fin+1);
-println!("{}", sous_chaine); // output: à tous !
+```Rust
+let chaine = "Bonjour tout le monde";
+let sous_chaine = chaine.substring(8, 14);
+println!("La sous-chaîne est : {}", sous_chaine);
 ```
 
-Dans cet exemple, nous parcourons tous les indices de la chaîne jusqu'à trouver le caractère "à" et le caractère "!". Nous utilisons ensuite ces indices pour extraire la sous-chaîne souhaitée.
+Cela produira la sortie suivante :
 
-##Voir aussi
+```
+La sous-chaîne est : tout le
+```
 
-- [La documentation sur les méthodes de chaînes en Rust](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Exemples de manipulation de chaînes en Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html)
-- [Un tutoriel sur les méthodes de chaînes en Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)
+Vous pouvez également utiliser des méthodes telles que `chars` et `bytes` pour extraire des caractères et des octets spécifiques d'une chaîne.
+
+## Exploration en profondeur
+
+Le fait que les chaînes de caractères en Rust soient des types natifs rend l'extraction de sous-chaînes plus efficace et plus performante que d'autres langages de programmation. De plus, grâce à l'utilisation de la vérification des limites à la compilation, les erreurs comme le débordement de tampon sont évitées, ce qui rend votre code plus sûr et plus robuste.
+
+En outre, l'extraction de sous-chaînes en Rust peut être effectuée à l'aide de différentes méthodes telles que `chars` et `bytes` pour une plus grande flexibilité dans la gestion des chaînes de caractères.
+
+## Voir aussi
+
+- [Documentation sur les chaînes de caractères en Rust](https://doc.rust-lang.org/std/string/index.html)
+- [Exemples de manipulation de chaînes de caractères en Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html)
+- [Comparaison des chaînes de caractères en Rust et en C++](https://stackoverflow.com/questions/29316755/string-manipulation-performance-comparison-rust-vs-c11)

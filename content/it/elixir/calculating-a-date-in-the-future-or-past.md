@@ -1,45 +1,44 @@
 ---
-title:    "Elixir: Calcolare una data nel futuro o nel passato"
+title:    "Elixir: Calcolare una data nel futuro o nel passato."
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perchè
+## Perché 
 
-In questa guida, esploreremo come calcolare una data nel futuro o nel passato utilizzando il linguaggio di programmazione Elixir. Questa abilità è essenziale per creare applicazioni che richiedono la gestione di eventi futuri o passati.
+Calcolare una data nel futuro o nel passato può essere utile in diversi contesti di programmazione, come ad esempio nella creazione di reminder o nella gestione di eventi temporizzati. Elixir offre una semplice e potente sintassi per svolgere questo tipo di operazioni, rendendo il processo veloce ed efficiente.
 
-##Come Fare
+## Come fare
 
-Per calcolare una data nel futuro o nel passato, dobbiamo prima utilizzare la libreria di Elixir "Calendar" e importare il modulo "NaiveDateTime". In seguito, possiamo utilizzare la funzione "DateTime.add" per aggiungere una certa quantità di tempo ad una data esistente. Ad esempio, se vogliamo calcolare la data tra 2 settimane da oggi, possiamo usare il seguente codice:
+In Elixir, è possibile calcolare una data nel futuro o nel passato utilizzando il modulo `Timex`. Questo modulo fornisce una serie di funzioni per lavorare con date e orari, tra cui `add`, che ci permette di aggiungere un certo numero di giorni, mesi o anni a una data specifica.
 
-```Elixir
-date = NaiveDateTime.utc_now()
-future_date = DateTime.add(date, [weeks: 2])
+Ecco un esempio di codice che ci permette di calcolare la data di oggi più 3 giorni in futuro utilizzando il modulo `Timex`:
+
+```
+Elixir -  Code Block
+
+import Timex
+
+today = Timex.now()
+future_date = Timex.add(today, 3, :days)
+
+IO.puts "La data di oggi è #{today} e tra 3 giorni sarà #{future_date}."
 ```
 
-Se vogliamo calcolare una data nel passato, invece, possiamo utilizzare la funzione "DateTime.subtract". Ad esempio, per calcolare la data della scorsa settimana, possiamo usare il seguente codice:
+Il codice sopra descritto utilizza la funzione `now` di `Timex` per ottenere la data di oggi e poi la funzione `add` per aggiungere 3 giorni alla data ottenuta. Infine, con la funzione `IO.puts`, visualizziamo la data di oggi e quella calcolata per il futuro.
 
-```Elixir
-date = NaiveDateTime.utc_now()
-past_date = DateTime.subtract(date, [weeks: 1])
-```
+Il modulo `Timex` offre anche altre funzioni utili per il calcolo di date nel futuro o nel passato, come ad esempio `subtract` per sottrarre giorni, mesi o anni e `shift` per spostare una data in avanti o indietro di una certa quantità di tempo.
 
-Ovviamente, possiamo utilizzare anche altre unità di tempo come giorni, mesi o anni per calcolare la data desiderata.
+## Approfondimento
 
-##Deep Dive
+In Elixir, le date vengono rappresentate utilizzando il formato ISO 8601, che consiste in una combinazione di anno, mese e giorno. Inoltre, le funzioni del modulo `Timex` sono progettate per gestire anche i fusi orari in modo efficace, garantendo la corretta gestione dei fusi orari quando si lavora con date e orari.
 
-Per un maggiore controllo sul calcolo delle date nel futuro o nel passato, possiamo anche utilizzare la funzione "DateTime.change". Questa funzione ci permette di cambiare una particolare unità di tempo in una data specifica. Ad esempio, possiamo impostare la data di un evento per il prossimo anno utilizzando il seguente codice:
+Oltre al modulo `Timex`, Elixir offre anche altri strumenti utili per lavorare con date e orari, come ad esempio il modulo `Calendar`, che fornisce funzioni per ottenere informazioni dettagliate su una determinata data, come il giorno della settimana o il numero della settimana.
 
-```Elixir
-date = NaiveDateTime.utc_now()
-next_year = DateTime.change(date, year: 2022)
-```
+## Vedi anche
 
-Inoltre, possiamo anche utilizzare la funzione "DateTime.diff" per calcolare la differenza tra due date e ottenere il tempo trascorso tra di esse.
-
-##Vedi Anche
-
-- Documentazione ufficiale per la libreria Calendar: https://hexdocs.pm/elixir/Calendar.html
-- Guida su come usare il modulo NaiveDateTime: https://elixirschool.com/it/lessons/specifics/date-formats
-- Tutorial sull'utilizzo delle funzioni DateTime in Elixir: https://elixircasts.io/working-with-dates-and-times-in-elixir/
+- [Documentazione ufficiale di Elixir su Timex](https://hexdocs.pm/timex/)
+- [Tutorial sull'utilizzo dei moduli di date in Elixir](https://www.codedrome.com/elixir-date-manipulation/)
+- [Altri strumenti utili per lavorare con le date in Elixir](https://medium.com/@kevinlamping/beyond-timex-going-deeper-with-dates-in-elixir-195b715d8c10)

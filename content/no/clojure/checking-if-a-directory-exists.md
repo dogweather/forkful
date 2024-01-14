@@ -1,37 +1,35 @@
 ---
 title:    "Clojure: Sjekke om en mappe eksisterer"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger, i utviklingen av et Clojure program, kan det være viktig å vite om en bestemt mappe eksisterer eller ikke. Dette kan være nyttig for å unngå feil og for å håndtere ulike scenarioer.
+
+Når vi programmerer i Clojure, er det viktig å være sikker på at vi sjekker eksistensen av en mappe før vi bruker den i programmet vårt. Dette sikrer at programmet vårt kjører feilfritt og unngår unødvendige feil.
 
 ## Hvordan
-For å sjekke om en mappe eksisterer i Clojure, kan du bruke funksjonen `fs/exists?`. Denne funksjonen tar inn en streng som representerer banen til mappen du ønsker å sjekke. For eksempel:
+
+Det er viktig å bruke funksjonen ```clojure(fs/file? <dir>)``` for å sjekke om en mappe eksisterer eller ikke. Denne funksjonen returnerer en sann eller falsk verdi, avhengig av om mappen finnes eller ikke. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
 
 ```Clojure
-(fs/exists? "/home/bruker/dokumenter")
+(if (fs/file? "min/mappe")
+  (println "Mappen eksisterer!")
+  (println "Mappen eksisterer ikke!"))
 ```
-Dette vil returnere `true` dersom mappen eksisterer, og `false` dersom den ikke eksisterer.
-
-Du kan også sjekke om en mappe eksisterer relativt til din nåværende arbeidsmappe. Dette kan gjøres ved å bruke funksjonen `fs/exists?` sammen med `io/resource`. For eksempel:
-
-```Clojure
-(fs/exists? (io/resource "bilder/logg.png"))
-```
-
-Dette vil returnere `true` eller `false` avhengig av om mappen eksisterer eller ikke.
 
 ## Dypdykk
-Når du bruker `fs/exists?`, bruker Clojure faktisk Java-koen `java.io.File` for å sjekke mappen. Dette betyr at dersom du har flere operativsystemer som utviklingsmiljø (for eksempel Linux og Windows), kan du oppleve forskjellig oppførsel når du bruker `fs/exists?`.
 
-Dette skyldes forskjeller i hvordan disse operativsystemene representerer baner. For eksempel vil Windows bruke en `\` for å skille mapper i en bane, mens Linux vil bruke `/`.
+Når vi bruker funksjonen ```clojure(fs/file? <dir>)```, er det viktig å merke seg at den også vil returnere en sann verdi hvis det er en fil med samme navn som mappen vi sjekker for. Dette kan føre til unødvendige feil i koden vår. Derfor er det viktig å være spesifikk og sikre at vi kun sjekker for mapper.
 
-Det er også viktig å merke seg at `fs/exists?` kun sjekker om en mappe eksisterer, og ikke om du har tilgang til den. For å sjekke tilgang, kan du bruke funksjonen `fs/can-access?`.
+En annen ting å huske på er at denne funksjonen ikke sjekker for eventuelle undermapper som kan eksistere inne i mappen vi sjekker. Dette kan være en potensiell kilde til feil, så det er viktig å inkludere sjekker for undermapper hvis det er nødvendig.
+
+Det kan også være lurt å vurdere å bruke funksjonen ```clojure(fs/directory? <dir>)```, som spesifikt sjekker om en gitt filbane er en mappe eller ikke.
 
 ## Se også
-- [Clojure Docs - fs/exists?](https://clojuredocs.org/clojure.java.io/exists_q)
-- [Clojure Docs - io/resource](https://clojuredocs.org/clojure.java.io/resource)
-- [Clojure Docs - fs/can-access?](https://clojuredocs.org/clojure.java.io/can-access_q)
+
+* [Clojure FileSystem Dokumentasjon](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
+* [Clojure FileSystem Operations](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
+* [Checking for a file or directory in Clojure](https://brianhicks.github.io/2015/04/20/jvm-clojure-file-operations/)

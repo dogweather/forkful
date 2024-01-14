@@ -1,30 +1,46 @@
 ---
 title:    "Elixir: Skriva en textfil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva en textfil är en grundläggande aspekt av programmering och Elixir gör detta enklare än någonsin. Genom att lära dig hur man skriver en textfil kan du spara information och data för senare åtkomst och användning i dina Elixir program.
+Att skriva en textfil är en viktig del av programmering eftersom det låter oss lagra information på ett enkelt och strukturerat sätt. Det är också ett bra sätt att lära sig grundläggande färdigheter som filhantering och datalagring.
 
-## Hur man gör det
+## Hur du gör det
 
-För att börja skriva en textfil i Elixir behöver du först skapa en ny fil på din dator och ge den ett namn med .txt-tillägget. För att skriva till denna fil använder du funktionen `File.write/2` och anger filens namn som första argument och innehållet du vill skriva som andra argument. Till exempel:
+För att skriva en textfil i Elixir, behöver du först öppna en ny fil med hjälp av `File.open` funktionen. Du kan också ange parametrar som filens namn och läget för att skriva eller läsa. 
 
+```Elixir 
+File.open(“minfil.txt”, [:write]) 
 ```
-Elixir
-File.write("ny_fli.txt", "Det här är ett exempel på en textfil som skrivs med Elixir.")
+
+Nästa steg är att använda `IO.write` funktionen för att faktiskt skriva in text i filen. Du kan antingen skriva en hårdkodad sträng eller använda variabler för att skriva dynamiskt innehåll. 
+
+```Elixir 
+IO.write(file, “Hej världen!”)
+IO.write(file, variabel) 
 ```
-Detta kommer att skapa en ny fil med namnet "ny_fil.txt" och skriva innehållet i filen som texten "Det här är ett exempel på en textfil som skrivs med Elixir."
 
-## Djupdykning
+När du är klar med att skriva in allt innehåll i filen, måste du stänga den med `File.close` funktionen. Detta är viktigt för att spara eventuella ändringar och frigöra resurser som används av filen. 
 
-När du skriver en textfil med Elixir finns det några användbara argument du kan använda för att anpassa din fil. Du kan till exempel ange options för att välja om du vill skriva över befintliga filer eller om du vill lägga till innehållet i slutet av filen istället för i början. Du kan också använda `File.write!/2` för ett mer detaljerat felmeddelande om något går fel vid skrivning av filen.
+```Elixir 
+File.close(file) 
+```
 
-## Se även
+Om du vill lägga till mer text i filen, kan du öppna den igen med `File.open` och använda läget `:append` istället för `:write`. Du kan också lägga till fler rader med hjälp av `IO.puts` eller `IO.write`. 
 
-- [Officiell Elixir Dokumentation för textfilhantering](https://hexdocs.pm/elixir/File.html#write/2)
-- [En guide om hur man skriver textfiler med Elixir](https://www.thebookofjoel.com/writing-files-elixir)
-- [Ett StackOverflow inlägg om att läsa och skriva filer med Elixir](https://stackoverflow.com/questions/7624354/read-write-files-in-elixir)
+## Djupdykning 
+
+När du skriver en textfil är det viktigt att du gör dig bekant med kodningsspråket som du använder. Elixir använder sig av Unicode, vilket betyder att du kan använda specialtecken och emojis i dina filer. Detta är särskilt användbart när du behöver skriva flerspråkiga eller mer visuella texter. 
+
+Några saker att tänka på när du skriver en textfil i Elixir är att se till att du öppnar och stänger den korrekt, använda rätt läge för dina behov och vara medveten om Unicode-kodning.
+
+## Se också
+
+- Elixir dokumentation: https://elixir-lang.org/getting-started/introduction.html
+- Codecademy kurser för Elixir: https://www.codecademy.com/learn/learn-elixir
+- Gör det själv övningar på Exercism: https://exercism.io/tracks/elixir

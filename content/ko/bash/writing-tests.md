@@ -1,46 +1,43 @@
 ---
-title:    "Bash: 테스트 작성하기"
+title:    "Bash: 프로그래밍 테스트 작성"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 테스트 코드를 작성해야 하는가?
+"## 왜 테스트를 작성해야 하는가?"
 
-테스트 코드를 작성하는 것은 소프트웨어 개발 과정에서 매우 중요한 요소입니다. 테스트 코드는 소프트웨어의 안정성과 품질을 보증하기 위해 필수적입니다. 또한 버그를 빠르게 발견하고 수정할 수 있도록 도와줍니다.
+테스트 작성은 중요합니다. 우리가 처음부터 완벽한 코드를 작성할 수 없기 때문입니다. 따라서 테스트를 작성함으로써 버그를 미리 예방하고 코드의 안정성을 확보할 수 있습니다. 또한, 테스트를 작성함으로써 코드를 수정하거나 업데이트할 때 실수를 최소화할 수 있습니다.
 
-## 어떻게 작성할까요?
+"## 작성 방법"
 
-테스트 코드를 작성하기 위해서는 적절한 형식을 사용해야 합니다. 바로 Bash 프로그래밍 언어를 사용하는 것입니다. 아래 예제 코드를 참고하여 어떻게 테스트 코드를 작성하는지 알아보세요.
+테스트를 작성하는 가장 기본적인 방법은 `assert` 문을 이용하는 것입니다. 이 문장은 특정 조건이 참인지 검사하고, 만약 조건이 참이 아니라면 에러를 발생시킵니다. 아래는 간단한 숫자 계산을 테스트하는 예제 코드입니다.
 
 ```Bash
 #!/bin/bash
 
-# 함수 정의
-function addNums {
-  res=$(($1 + $2))
-  echo $res
+# 숫자 더하기 함수
+function add(){
+  echo $(($1 + $2))
 }
 
-# 테스트 케이스 1
-result=$(addNums 3 5)
-echo $result # 결과: 8
-
-# 테스트 케이스 2
-result=$(addNums 10 2)
-echo $result # 결과: 12
+# 테스트 코드
+assert $(add 2 3) -eq 5
+assert $(add 5 10) -eq 15
+assert $(add 0 0) -eq 0
 ```
 
-위 코드에서는 `addNums`라는 함수를 정의하고, 이를 테스트하는 두 가지 케이스를 작성하였습니다. 테스트 케이스의 입력과 예상 출력을 정의한 후, 실제 함수의 결과와 비교하여 정확성을 검증하는 방식입니다.
+위의 코드에서 `assert` 문은 각각의 `add` 함수 호출 결과가 예상한 값과 일치하는지를 검사합니다. 만약 일치하지 않는다면 스크립트는 에러를 발생시키고, 일치한다면 아무런 메시지도 출력하지 않습니다.
 
-## 깊이 파헤쳐보기
+"## 더 깊게 알아보기"
 
-테스트 코드를 작성하는 것은 소프트웨어의 신뢰성과 안정성을 보장하기 위해 매우 중요합니다. 테스트를 통해 버그를 빠르게 발견하고 수정할 수 있으며, 미래에 발생할 수 있는 문제를 미리 예방할 수도 있습니다.
+테스트 작성에는 `assert` 문 외에도 다양한 기법과 도구들이 있습니다. 예를 들어, 리눅스 커널에는 `kselftest`라는 테스트 유틸리티가 내장되어 있어서, 리눅스 운영체제의 다양한 부분들을 자동으로 테스트할 수 있습니다. 또한, `bashunit`이나 `shunit2`와 같은 테스트 프레임워크를 이용하면 보다 구조적이고 효율적인 테스트를 작성할 수 있습니다.
 
-또한 테스트 코드를 작성하면 코드의 가독성도 높아지며, 다른 개발자와 협업하는 과정에서도 유용하게 사용될 수 있습니다. 테스트 코드를 작성한다는 것은 소프트웨어 개발 과정에서 중요한 역할을 담당하는 것이라고 할 수 있습니다.
+"## 관련 자료"
 
-## 참고자료
-
-- The Bash Guide - https://www.gnu.org/software/bash/manual/html_node/index.html
-- The Art of Command Line - https://github.com/jlevy/the-art-of-command-line/blob/master/README-ko.md
-- Bash Shell Scripting Tutorial - https://bash.cyberciti.biz/guide/Main_Page
+- [assert 문서 (GNU Bash)](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
+- [쉘 스크립팅 테스팅 (Mozilla Developer Network)](https://developer.mozilla.org/ko/docs/Learn/Scripting/Bash/Testing)
+- [kselftest 사용 예제 (코드죽음을 부르는 방패)](https://kldp.org/node/63124)
+- [bashunit (GitHub)](https://github.com/kward/shunit2)
+- [shunit2 (GitHub)](https://github.com/rocky/bashunit)

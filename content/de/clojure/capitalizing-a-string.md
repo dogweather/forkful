@@ -1,41 +1,30 @@
 ---
-title:    "Clojure: Eine Zeichenkette großschreiben."
+title:    "Clojure: Eine Zeichenkette in Großbuchstaben umwandeln."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Warum sollte man sich mit der Großschreibung von Zeichenketten beschäftigen? Ganz einfach: Es ist eine grundlegende Funktion, die in vielen Programmen und Anwendungen verwendet wird. Durch das Verständnis dieser Funktion können Sie Ihre Programmierfähigkeiten erweitern und effizientere Code schreiben.
+Es gibt viele Gründe, warum man eine Zeichenkette in Großbuchstaben umwandeln möchte. Zum Beispiel kann es nützlich sein, wenn man mit Benutzereingaben arbeitet und sicherstellen möchte, dass bestimmte Worte oder Sätze immer in Großbuchstaben erscheinen. Es kann auch hilfreich sein, um Strings in Sortieralgorithmen zu vergleichen, da Groß- und Kleinschreibung normalerweise anders behandelt werden.
 
-## Anleitung
+##Wie geht das?
 
-Die Funktion "capitalize" in Clojure wird verwendet, um den ersten Buchstaben einer Zeichenkette in einen Großbuchstaben zu ändern. Hier ist ein Beispiel:
-
-```Clojure
-(capitalize "hallo welt")
-```
-Die Ausgabe davon wäre "Hallo Welt". Auch Sonderzeichen und Zahlen werden dabei berücksichtigt:
+In Clojure gibt es eine praktische Funktion namens `clojure.string/upper-case`, die eine Zeichenkette in Großbuchstaben konvertiert. Schauen wir uns ein Beispiel an:
 
 ```Clojure
-(capitalize "123abc!@#")
+(clojure.string/upper-case "hallo welt")
 ```
-Die Ausgabe wäre "123abc!@#".
+Dies würde die Ausgabe "HALLO WELT" erzeugen. Einfach, oder?
 
-## Tiefergehende Informationen
+##Tiefergehende Informationen
 
-In Clojure ist die Funktion "capitalize" eher einfach und unkompliziert. Sie arbeitet jedoch nicht nur mit einzelnen Wörtern, sondern auch mit ganzen Sätzen:
+Es gibt einige Dinge zu beachten, wenn man Strings in Großbuchstaben umwandelt. Zum Beispiel wird die Funktion `clojure.string/upper-case` Umlaute und Sonderzeichen nicht korrekt umwandeln. In solchen Fällen ist es ratsam, die Funktion `clojure.string/replace` zu verwenden und individuelle Ersetzungsregeln für diese Zeichen zu definieren.
 
-```Clojure
-(capitalize "ich liebe es, Clojure zu programmieren.")
-```
-Die Ausgabe davon wäre "Ich liebe es, Clojure zu programmieren." Es ist wichtig zu beachten, dass die Funktion "capitalize" nur den ersten Buchstaben des Satzanfangs ändert und alle anderen Buchstaben bleiben unverändert.
+##Siehe auch
 
-## Siehe auch
-
-Hier sind einige nützliche Links, um mehr über das Großschreiben von Zeichenketten in Clojure zu erfahren:
-
-- Dokumentation für die capitalize-Funktion von Clojure: https://clojuredocs.org/clojure.core/capitalize
-- Ein Tutorial für grundlegende Clojure-Funktionen, einschließlich capitalize: https://www.tutorialspoint.com/clojure/clojure_basic_functions.htm
-- Eine Einführung in die Programmierung mit Clojure: http://www.learn-clojure.com/
+- [Die offizielle Dokumentation zu `clojure.string`](https://clojuredocs.org/clojure.string)
+- [Eine praktische Anleitung zur Arbeit mit Strings in Clojure](https://www.braveclojure.com/strings/)
+- [Clojure Cheat Sheet mit nützlichen String-Funktionen](https://clojure.org/api/cheatsheet)

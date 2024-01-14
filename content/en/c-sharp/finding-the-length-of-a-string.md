@@ -1,52 +1,65 @@
 ---
 title:    "C# recipe: Finding the length of a string"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever needed to know the length of a string in your C# program? Whether you're building a simple text processing application or a complex data manipulation tool, being able to determine the length of a string can be a valuable skill to have. In this blog post, we will explore why it is important to know the length of a string and how to go about finding it in your C# code.
+Have you ever needed to know the length of a string in your C# programming? Whether it's for validation, manipulation, or just curiosity, finding the length of a string is a common task that every developer should know how to do.
 
 ## How To
-
-To find the length of a string in C#, we will be using the built-in `Length` property of the `string` class. Let's take a look at an example of how this can be implemented in your code:
+Finding the length of a string in C# is a simple and straightforward task. First, we need to declare a variable of type `string` and assign it a value.
 
 ```C#
-string message = "Hello World!";
-int length = message.Length;
+string myString = "Hello World!";
+```
+
+Next, we can use the `Length` property of the string class to get the length of our string.
+
+```C#
+int length = myString.Length;
+```
+
+We can then use this value however we need in our code. For example, we can output it to the console to verify the length.
+
+```C#
 Console.WriteLine("The length of the string is: " + length);
 ```
 
-In this example, we have a string variable named `message` with the value "Hello World!". We then use the `Length` property to get the length of the string and assign it to an `int` variable named `length`. Finally, we use `Console.WriteLine` to display the length to the console. 
+The output will be:
 
-The output of this code would be: `The length of the string is: 12`.
-
-You can also use the `Length` property directly in operations, such as checking if a string has a certain length:
-
-```C#
-string message = "Hello World!";
-if (message.Length > 10)
-{
-    Console.WriteLine("The string is longer than 10 characters.");
-}
+```
+The length of the string is: 12
 ```
 
-In this example, we use the `Length` property to check if the string has more than 10 characters. If it does, we print a message to the console. 
+Now, let's try it with an empty string.
+
+```C#
+string emptyString = "";
+int length = emptyString.Length;
+Console.WriteLine("The length of the string is: " + length);
+```
+
+The output will be:
+
+```
+The length of the string is: 0
+```
+
+As we can see, the `Length` property also works for empty strings, returning a value of 0.
 
 ## Deep Dive
+The `Length` property of the string class is a built-in function that returns the number of characters in the string. It is a read-only property, meaning that we cannot assign a different value to it.
 
-Internally, the `Length` property uses the `Length` property of the underlying `char` array of the string. This means that `Length` returns the number of `char`s in the string, not the number of bytes. This is important to keep in mind when working with Unicode characters, as they often require more than one byte to encode.
+Additionally, the `Length` property only counts the number of characters in a string. It does not take into account any special characters or white spaces. For example, if we have a string with a whitespace at the end, the `Length` property will still only count the number of characters in the string.
 
-It is also worth noting that the `Length` property is a read-only property, so you cannot set it manually. It is automatically calculated based on the contents of the string.
+There are also other useful string methods that we can use in conjunction with the `Length` property. For instance, we can use the `Substring()` method to extract a part of the string based on the length value. We can also use the `IndexOf()` method to find the position of a specific character within the string, which can be useful if we need to manipulate the string in different ways.
 
-Additionally, the `Length` property does not include the terminating null character of a string, so the actual length of the string may be one character longer than the `Length` value.
+Overall, understanding how to find the length of a string is fundamental to C# programming and can be a useful skill in solving various coding problems.
 
 ## See Also
-
-- [Microsoft Docs - String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
-- [C# String Length](https://www.w3schools.com/cs/cs_string_length.asp)
-- [C# String Class](https://www.c-sharpcorner.com/programming/introduction-to-string-class-in-C-Sharp)
-
-Thank you for reading this blog post on finding the length of a string in C#! Remember to practice this skill in your own code and check out the additional resources for more in-depth information. Happy coding!
+- [String.Length Property in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.8)
+- [String.Substring Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=netframework-4.8)
+- [String.IndexOf Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.indexof?view=netframework-4.8)

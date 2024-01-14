@@ -1,51 +1,48 @@
 ---
 title:    "Gleam: Tworzenie pliku tymczasowego"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto tworzyć tymczasowe pliki w Gleamie?
 
-Tworzenie plików tymczasowych jest ważną częścią programowania w Gleam. Czy to do testowania kodu, czy do przechowywania danych, pliki tymczasowe są nieodłącznym elementem projektów. W tym artykule omówimy, dlaczego warto tworzyć pliki tymczasowe przy pomocy języka Gleam.
+Tworzenie tymczasowych plików jest ważnym aspektem programowania w Gleamie, ponieważ pozwala to na dynamiczne i efektywne przetwarzanie danych. W tym artykule przedstawimy Ci dokładnie dlaczego i jak tworzyć tymczasowe pliki w Gleamie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Tworzenie plików tymczasowych w języku Gleam jest proste i wygodne. Możemy to zrobić przy pomocy modułu `File.Temporary` oraz funkcji `open_temporary_file`. Poniżej przedstawimy kod przykładowy oraz wynik działania w blokach kodu ```Gleam...```.
+Kodowanie przykładów zwróci nam lepsze zrozumienie procesu tworzenia tymczasowego pliku w Gleamie. Poniżej znajduje się przykład kodu, który wykorzystuje moduł `gleam/file` do utworzenia tymczasowego pliku, zapisania do niego danych i odczytania ich.
 
 ```Gleam
-import File.Temporary
-import File
+import gleam/file
 
-fn main() {
-  // Tworzenie pliku tymczasowego
-  let result = File.Temporary.open_temporary_file()
-  case result {
-    Ok(file) -> {
-      // Zapisanie tekstu do pliku
-      let text = "Ten tekst zostanie zapisany w pliku tymczasowym"
-      File.write(file.handle, text)
-      // Odczytanie tekstu z pliku
-      let output = File.read_to_string(file.handle)
-      // Wyświetlenie tekstu na ekranie
-      IO.print(output)
-      // Zamknięcie pliku
-      File.close(file.handle)
-    }
-    Err(error) -> IO.print("Wystąpił błąd: {error}")
-  }
-}
+// Tworzenie nowego tymczasowego pliku
+let tempfile = file.temp()
+
+// Zapisywanie danych do tymczasowego pliku
+file.write(tempfile, "To jest zawartość tymczasowego pliku.")
+
+// Odczytanie danych z tymczasowego pliku
+let data = file.read(tempfile)
+
+// Wyświetlenie zawartości tymczasowego pliku
+assert Ok("To jest zawartość tymczasowego pliku.", data)
 ```
 
-Output:
-```
-Ten tekst zostanie zapisany w pliku tymczasowym
-```
+Wynikiem wykonania tego kodu będzie utworzenie tymczasowego pliku o losowej nazwie w folderze, w którym został uruchomiony kod.
 
 ## Głębszy wgląd
-Tworzenie plików tymczasowych jest nie tylko przydatne, ale również wygodne. Umożliwia to tworzenie testów dla naszego kodu oraz przechowywanie danych w sposób tymczasowy. Jednak należy pamiętać, że pliki tymczasowe są usuwane po zakończeniu działania programu, więc nie powinny być używane do przechowywania danych na stałe.
+
+Tworzenie tymczasowych plików jest bardzo przydatne, ponieważ pozwala na tymczasowe przechowywanie danych, które nie są potrzebne na stałe. Są one wykorzystywane przede wszystkim do tymczasowych operacji, takich jak przetwarzanie plików, komunikacja z innymi modułami itp. Ważne jest również, aby po zakończeniu pracy z tymczasowym plikiem, w odpowiedni sposób go usunąć, aby nie zajmował niepotrzebnego miejsca na dysku.
+
+W przypadku gdy potrzebujemy utworzyć tymczasowy folder zamiast pliku, możemy wykorzystać funkcję `file.temp_dir()` zamiast `file.temp()`. Wszystkie pozostałe operacje (zapis, odczyt i usunięcie) wykonujemy w podobny sposób jak w przypadku pliku.
+
+## Zobacz również
+
+Teraz, gdy poznałeś podstawy tworzenia tymczasowych plików w Gleamie, zapraszamy do zapoznania się z innymi modułami dostępnymi w języku, takimi jak `gleam/http` czy `gleam/db`. Możesz również sprawdzić ten przykład aplikacji wykorzystującej tymczasowe pliki: [link do przykładowej aplikacji]. Zachęcamy także do eksperymentowania z różnymi sposobami wykorzystania tymczasowych plików w swoim kodzie.
 
 ## Zobacz też
 
-- Dokumentacja modułu `File.Temporary` w języku Gleam: [link](https://gleam.run/modules/file/temporary/)
-- Przykłady użycia `File.Temporary`: [link](https://github.com/gleam-lang/gleam_stdlib/blob/master/standard/library/file/temporary/tests/file.temporary.test.gleam)
+- [Dokumentacja modułu gleam/file](https://gleam.run/modules/file.html)
+- [Przykładowa aplikacja wykorzystująca tymczasowe pliki](https://github.com/username/appname)

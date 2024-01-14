@@ -1,58 +1,77 @@
 ---
 title:    "Elm recipe: Creating a temporary file"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why: The Importance of Creating Temporary Files in Elm
+## Why
 
-Creating temporary files may seem like a minor task in programming, but it can actually be incredibly useful. Temporary files allow you to store data temporarily while your program is running, and then easily delete them once they are no longer needed. This can be particularly helpful when working with large amounts of data or when you need to perform complex operations.
+Have you ever needed to create a temporary file in your Elm program? Maybe you're building an app that needs to generate a file for a user to download or you're working with an API that requires a temporary file for uploading data. Whatever the reason may be, knowing how to create a temporary file in Elm can be a useful skill to have in your programming arsenal.
 
-## How To: Creating Temporary Files in Elm
+## How To
 
-To create a temporary file in Elm, we will use the [elm/file](https://package.elm-lang.org/packages/elm/file/latest/) package. First, we need to import it into our program:
+Creating a temporary file in Elm is relatively straightforward using the `File` module provided by the `elm/file` package. First, let's import the necessary modules and define our initial model:
 
-```elm
+```Elm
 import File
+import File.Selector as Selector
+import File.System as System
+
+type alias Model =
+    { tempFile : Maybe File.Ref
+    , errorMsg : Maybe String
+    }
 ```
 
-Next, let's create a temporary storage object that we can use to save our data:
+Next, we'll need to add a button to our view that will trigger the creation of our temporary file:
 
-```elm
-storage : File.Temp
-storage = File.temp()
+```Elm
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick CreateTempFile ] [ text "Create Temporary File" ] ]
 ```
 
-The `File.temp()` function will generate a unique temporary file name and create a new file with that name in your system's temporary directory. We can then use this file to store our data, like so:
+Now, we can define our `Msg` type and update function to handle the creation of the temporary file:
 
-```elm
-myData : String
-myData = "This is my temporary data!"
+```Elm
+type Msg
+    = CreateTempFile
+    | TempFileCreated (Result String File.Ref)
 
-File.writeString storage myData
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        CreateTempFile ->
+            ( model, Cmd.fileSelect TempFileCreated "text/plain" )
+
+        TempFileCreated (Ok fileRef) ->
+            let
+                msg =
+                    case System.write "This is a temporary file." fileRef of
+                        System.WriteSuccess ->
+                            TempFileCreated (Ok fileRef)
+
+                        System.WriteFail err ->
+                            TempFileCreated (Err "Error writing to temporary file.")
+            in
+            ( { model | tempFile = Just fileRef }, Cmd.fileSystem msg )
+
+        TempFileCreated (Err err) ->
+            ( { model | errorMsg = Just err }, Cmd.none )
 ```
 
-This will write the string `myData` to the temporary file. Once we are finished using the file, we can then delete it by calling the `remove` function:
+In the `CreateTempFile` message, we use the `fileSelect` command to prompt the user to select a location for the temporary file. This will trigger the `TempFileCreated` message with the result of the file selection. If successful, we use the `File.System.write` function to write some text to the file and update our model accordingly.
 
-```elm
-File.remove storage
-```
+## Deep Dive
 
-And that's it! Now you can easily create and manage temporary files in your Elm programs.
+Under the hood, the `File.System` module uses the browser's native `File` and `FileWriter` APIs to create the temporary file. It also takes care of file permissions and ensures that the file is properly deleted once it is no longer needed.
 
-## Deep Dive: Understanding the Temporary File Creation Process
-
-Behind the scenes, the `File.temp()` function is using a combination of [random numbers](https://en.wikipedia.org/wiki/Random_number_generation) and [time stamps](https://en.wikipedia.org/wiki/Unix_time) to generate a unique file name. This ensures that each temporary file created is unique and won't overwrite any existing files.
-
-The `File.temp()` function also allows you to specify a file extension, if desired. This can be useful for organizing your temporary files or indicating the type of data stored in the file.
-
-You may also want to consider setting a time limit for how long your temporary files will exist. This can prevent the build-up of old files and free up storage space.
+It's important to note that temporary files can only be created on the client-side, so this functionality will not work in server-side Elm applications.
 
 ## See Also
 
-Here are some helpful links for further reading on creating temporary files in Elm:
-
-- [Elm File Package Documentation](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Using Random Numbers in Elm](https://elmprogramming.com/elm-generate-random-number.html)
-- [Understanding Unix Time Stamps](https://www.epochconverter.com/)
+- [Elm File Package](https://package.elm-lang.org/packages/elm/file/latest/)
+- [File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API)

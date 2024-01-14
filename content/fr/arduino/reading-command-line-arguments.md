@@ -1,48 +1,86 @@
 ---
-title:    "Arduino: La lecture d'arguments en ligne de commande."
+title:    "Arduino: Lecture des arguments de ligne de commande"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Pour ceux qui cherchent à étendre leurs connaissances sur la programmation Arduino, la lecture des arguments en ligne de commande peut être une compétence utile à apprendre. Cela vous permet de contrôler votre programme via la ligne de commande, en donnant des arguments spécifiques pour personnaliser son comportement.
+Lors de la programmation d'Arduino, il est souvent nécessaire de recevoir des données d'entrée provenant de l'utilisateur ou d'un autre appareil. Les arguments de ligne de commande permettent aux utilisateurs de spécifier ces données au moment de l'exécution du programme, ce qui peut être utile dans de nombreuses situations.
 
 ## Comment faire
 
-La lecture des arguments en ligne de commande est assez simple à mettre en œuvre dans un programme Arduino. Tout d'abord, vous devez inclure la bibliothèque `Arduino.h` dans votre code, qui contient les fonctions nécessaires pour lire les arguments. Ensuite, vous pouvez utiliser la fonction `argsRead()` pour lire les arguments lors de l'exécution du programme. Voici un exemple de code avec un argument nommé "led" qui prend une valeur numérique :
+Pour lire les arguments de ligne de commande dans un programme Arduino, il faut utiliser la fonction `processCommand()` qui analyse et extrait les arguments. Elle retourne le nombre d'arguments présents ainsi que les valeurs sous forme de chaînes de caractères.
+
+Voici un exemple de code montrant comment utiliser la fonction `processCommand()` et afficher les valeurs des arguments :
 
 ```Arduino
-#include <Arduino.h>
+#include <stdio.h>
 
-void setup(){
-  Serial.begin(9600);
+void setup() {
+  Serial.begin(9600); // initialise la communication série
 }
 
-void loop(){
-  int led = argsRead("led").toInt();
-  Serial.println("Valeur de l'argument 'led' : ");
-  Serial.println(led);
+void loop() {
+  int numberOfArguments; // variable pour stocker le nombre d'arguments
+  char* argumentValues[10]; // tableau pour stocker les valeurs des arguments
+
+  // Définit les valeurs des arguments
+  char input[] = "1 2 3 4 5";
+  
+  // Appelle la fonction processCommand() en lui passant l'entrée en tant que paramètre
+  numberOfArguments = processCommand(input, argumentValues);
+
+  // Affiche le nombre d'arguments présents
+  Serial.println("Nombre d'arguments : " + String(numberOfArguments));
+
+  // Affiche les valeurs des arguments
+  for (int i = 0; i < numberOfArguments; i++) {
+    Serial.println("Argument " + String(i + 1) + " : " + argumentValues[i]);
+  }
+
+  delay(1000);
+}
+
+// Fonction processCommand() qui analyse les arguments de ligne de commande
+int processCommand(char* input, char* values[]) {
+  int argumentCount = 0; // variable pour stocker le nombre d'arguments actuels
+  char* currentArgument = strtok(input, " "); // extrait le premier argument (jusqu'à l'espace)
+
+  // tant qu'il y a un argument
+  while (currentArgument != NULL) {
+    values[argumentCount] = currentArgument; // ajoute l'argument actuel au tableau des valeurs
+    argumentCount++; // incrémente le nombre d'arguments actuels
+    currentArgument = strtok(NULL, " "); // extrait le prochain argument
+  }
+
+  return argumentCount; // retourne le nombre d'arguments présents
 }
 ```
 
-Si vous entrez "arduino-cli -p COM3 -- led=5" dans la ligne de commande, vous verrez l'impression suivante dans le moniteur série :
+### Exemple de sortie :
 
 ```
-Valeur de l'argument 'led':
-5
+Nombre d'arguments : 5
+Argument 1 : 1
+Argument 2 : 2
+Argument 3 : 3
+Argument 4 : 4
+Argument 5 : 5
 ```
 
-## Approfondir
+## Plongée en profondeur
 
-Il y a plusieurs choses à prendre en compte lors de la lecture des arguments en ligne de commande pour les programmes Arduino. Tout d'abord, assurez-vous de prendre en compte les différentes valeurs possibles pour chaque argument, en utilisant des conditions ou des boucles pour gérer les cas spécifiques. De plus, vous pouvez utiliser des boucles pour traiter plusieurs arguments en même temps, en utilisant des noms d'arguments différents. Enfin, vous pouvez également utiliser des commandes conditionnelles pour définir des valeurs par défaut pour les arguments, au cas où ils ne seraient pas inclus dans la ligne de commande.
+Il est important de noter que la fonction `processCommand()` peut prendre en charge un nombre limité d'arguments (dans notre exemple, 10). Si plus d'arguments sont présents, ils ne seront pas pris en compte.
+
+De plus, cette fonction ne peut lire que des arguments de type chaîne de caractères. Si vous avez besoin de lire des entiers, floats ou d'autres types de données, vous devrez utiliser des fonctions de conversion appropriées telles que `atoi()` ou `atof()`.
+
+Il est également possible de spécifier des options ou des flags dans les arguments de ligne de commande, qui peuvent être utiles pour modifier le comportement du programme. Cependant, leur gestion peut être complexe et peut nécessiter l'utilisation d'une librairie dédiée.
 
 ## Voir aussi
 
-Pour en savoir plus sur la lecture des arguments en ligne de commande dans Arduino, voici quelques liens utiles :
-
-- [Documentation officielle d'Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/argsread/)
-- [Guide pour les débutants sur la lecture des arguments en ligne de commande](https://maker.pro/arduino/tutorial/how-to-read-command-line-arguments-arduino)
-
-J'espère que cet article vous a été utile pour comprendre comment lire les arguments en ligne de commande dans vos programmes Arduino. Bonne programmation !
+- [Documentation officielle Arduino sur les arguments de ligne de commande](https://www.arduino.cc/en/Main/CommandLineArguments)
+- [Tutoriel sur les arguments de ligne de commande pour Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-cli-process-command-line-arguments-5aadd1)
+- [Article sur l'utilisation de librairies pour gérer les options et flags dans les arguments de ligne de commande Arduino](https://www.mathertel.de/Arduino/argscan/argscan.ino)

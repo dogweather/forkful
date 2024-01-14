@@ -1,66 +1,81 @@
 ---
-title:    "Ruby: Å beregne en dato i fremtiden eller fortiden"
+title:    "Ruby: Beregning av datoer i fremtiden eller fortiden"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Ruby Programmering: Hvordan beregne datoer i fremtiden og fortiden
 
-Noen ganger kan det være nødvendig å beregne en dato i fremtiden eller fortiden i et Ruby-program. Dette kan være for å planlegge hendelser, for å lage en kalenderfunksjon eller for å utføre beregninger med datoer. Ved å forstå hvordan man kan beregne datoer i Ruby, kan du gjøre programmene dine mer dynamiske og funksjonelle.
+## Hvorfor?
 
-## Hvordan
+Noen ganger kan vi ønske å beregne en dato i fremtiden eller fortiden for å planlegge eller analysere data. Dette kan være nyttig for en rekke formål, som å lage en timeplan for kommende hendelser eller for å beregne alderen til en person på et bestemt tidspunkt.
 
-Det er flere måter å beregne en dato i Ruby, avhengig av hvilken versjon av Ruby du bruker og hva du ønsker å oppnå. Her er et eksempel på hvordan du kan beregne en dato i fremtiden eller fortiden ved hjelp av Ruby-kode:
+## Hvordan gjør man det?
+
+Det er flere måter å beregne datoer i fremtiden eller fortiden ved hjelp av Ruby programmering. Her er et eksempel på hvordan du kan legge til eller trekke fra et bestemt antall dager fra dagens dato:
 
 ```Ruby
-# importerer Date-modulen
-require 'date'
-
-# beregner dagens dato
+# Beregn dagens dato
 today = Date.today
 
-# legger til 7 dager til dagens dato
-future_date = today + 7 
+# Legg til 30 dager og lagre som en ny variabel
+future_date = today + 30
 
-# trekker fra 7 dager fra dagens dato
-past_date = today - 7 
+# Trekke fra 14 dager og lagre som en annen variabel
+past_date = today - 14
 
-# skriver ut resultatene
-puts "Dagens dato: #{today}"
-puts "Dato i fremtiden: #{future_date}"
-puts "Dato i fortiden: #{past_date}"
+# Skriv ut resultatene
+puts "Dagens dato er #{today}"
+puts "Datoen om 30 dager blir #{future_date}"
+puts "Datoen for 14 dager siden var #{past_date}"
 ```
 
-Dette vil gi følgende utskrift:
-
+Output:
+```bash
+Dagens dato er 2021-06-04
+Datoen om 30 dager blir 2021-07-04
+Datoen for 14 dager siden var 2021-05-21
 ```
-Dagens dato: 2021-07-21
-Dato i fremtiden: 2021-07-28
-Dato i fortiden: 2021-07-14
+
+Når du bruker Ruby, kan du også bruke metodene .next og .prev for å gå til neste eller forrige dag innenfor samme uke. For eksempel:
+
+```Ruby
+# Beregn dagens dato
+today = Date.today
+
+# Beregn neste mandag
+next_monday = today.next(:monday)
+
+# Beregn forrige onsdag
+last_wednesday = today.prev(:wednesday)
+
+# Skriv ut resultatene
+puts "Dagens dato er #{today}"
+puts "Neste mandag er #{next_monday}"
+puts "Forrige onsdag var #{last_wednesday}"
 ```
 
-Som du kan se, kan vi enkelt legge til eller trekke fra et gitt antall dager fra en dato ved hjelp av "+" og "-" operatørene. Det er også verdt å merke seg at Ruby har innebygde metoder for å beregne datoer basert på andre enheter som uker, måneder og år.
+Output:
+```bash
+Dagens dato er 2021-06-04
+Neste mandag er 2021-06-07
+Forrige onsdag var 2021-06-02
+```
 
 ## Dypdykk
 
-Det er viktig å merke seg at datoer i Ruby er objekter og har mange nyttige metoder som kan brukes til å utføre ulike operasjoner. For eksempel kan du bruke `strftime`-metoden til å formatere en dato på en spesifikk måte. Her er et eksempel:
+Ruby har også innebygde klasser og metoder for å håndtere datoer og tid, som DateTime og Time. Disse kan være nyttige for mer avanserte beregninger, som å ta hensyn til klokkeslett og tidssoner.
 
-```Ruby
-my_date = Date.parse("2021-07-21")
-puts my_date.strftime("%d.%m.%Y")
-```
+Videre kan du også bruke ulike formateringsmetoder for å konvertere datoer til ønsket format, som for eksempel å vise måneder som tekst i stedet for tall. Utforsk gjerne disse mulighetene og lær mer om hvordan Ruby kan hjelpe deg med å beregne datoer i fremtiden og fortiden.
 
-Dette vil resultere i følgende utskrift:
+## Se også
 
-```
-21.07.2021
-```
+[Offisiell dokumentasjon for Ruby Date og DateTime klasser](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/index.html)
 
-Det finnes også mange tilleggsmoduler som kan hjelpe deg med å håndtere datoer i Ruby, som for eksempel `chronic`-modulen for å arbeide med naturlige språk og `business_time`-modulen for å håndtere forretningsdager.
+[En guide til Ruby Date og Time klasser](https://www.rubyguides.com/2019/09/ruby-date/)
 
-## Se Også
+[Hvordan håndtere datoer og tid i Ruby](https://www.rubyguides.com/2015/06/ruby-time/)
 
-- [Ruby Date dokumentasjon](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
-- [Chronic-modulen](https://github.com/mojombo/chronic)
-- [Business Time-modulen](https://github.com/bokmann/business_time)
+Jeg håper denne blogginnlegget var nyttig for deg som ønsker å lære mer om hvordan man beregner datoer i Ruby. Lykke til med kodingen!

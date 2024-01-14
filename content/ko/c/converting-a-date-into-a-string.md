@@ -1,50 +1,40 @@
 ---
 title:    "C: 날짜를 문자열로 변환하기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+누군가는 날짜를 문자열로 변환하는 것을 왜 하지w 면서 궁금할 수 있습니다. 이 글에서 우리는 이러한 변환의 중요성과 이를 어떻게 할 수 있는지를 살펴보겠습니다.
 
-날짜를 문자열로 변환하는 과정이 왜 필요한지 궁금하지 않으신가요? C 프로그래밍을 할 때 여러분들은 날짜 데이터를 다루어야 하는 경우가 있을 수 있습니다. 이럴 때 날짜를 문자열로 변환하는 것은 데이터를 더 직관적으로 이해할 수 있게 해주기 때문입니다.
-
-## 어떻게
-
+## 어떻게 할까요
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // 현재 시간을 구하는 코드
-    time_t curr_time;
-    time(&curr_time);
-
-    // 날짜를 문자열로 변환하는 과정
-    char date_string[100];
-    struct tm * time_info;
-    time_info = localtime(&curr_time);
-    strftime(date_string, sizeof(date_string), "%A, %B %d, %Y", time_info);
-
-    // 출력
-    printf("%s", date_string);
-
+int main(void){
+    // 현재 시간을 구하는 함수인 time() 함수를 사용합니다.
+    time_t t = time(NULL);
+    // 관습적인 형식인 RFC 822 형식으로 시간을 변환합니다.
+    char buffer[26];
+    strftime(buffer, 26, "%a, %d %b %Y %H:%M:%S %z", localtime(&t));
+    // 결과를 출력합니다.
+    printf("오늘은 %s 입니다.\n", buffer);
     return 0;
 }
-
-// 결과
-// Monday, November 01, 2021
+```
+```bash
+> 오늘은 Thu, 02 Sep 2021 17:49:35 +0900 입니다.
 ```
 
-위 예제 코드에서 우리는 `strftime()` 함수를 사용하여 날짜를 원하는 형식대로 문자열로 변환할 수 있습니다. `strftime()` 함수는 시간 정보를 나타내는 `struct tm` 구조체와 변환하고자 하는 형식을 인자로 받아서 문자열로 변환해 줍니다. 변환할 수 있는 형식은 여러 가지가 있으며 [공식 문서](https://www.cplusplus.com/reference/ctime/strftime/)를 참고해 주시기 바랍니다.
+프로그래밍 언어 C에서 날짜와 시간은 시스템에서 제공하는 시간 함수를 사용하여 관리됩니다. 그 중에서도 `time()` 함수는 주로 현재 시간을 구하는데 사용됩니다. 이 함수를 이용해서 얻어낸 시간은 숫자 형태이기 때문에 보통 사람이 읽기 쉬운 형태인 문자열로 변환하게 됩니다. 이때, `strftime()` 함수를 사용하여 원하는 형식으로 변환할 수 있습니다. 이 함수는 다양한 형식의 문자열을 제공하며, 직접 형식을 지정해줄 수도 있습니다. 위 코드에서는 RFC 822 형식을 사용한 예시를 보여줍니다.
 
-## 깊이 들어가기
+## 깊이 파보기
+프로그래밍에서 날짜와 시간은 아주 중요한 요소 중 하나입니다. 이를 변환하는 방법을 알아보는 것만으로도 많은 것을 배울 수 있습니다. 날짜와 시간은 시스템에서 제공하는 시간 함수를 이용하여 얻어낼 수 있으며, 문자열로 변환하고 싶다면 `strftime()` 함수를 사용하면 됩니다. 이 함수를 더 자세히 알기 위해서는 날짜와 시간에 관한 더 깊은 지식이 필요합니다. 이를 확장하고 싶다면 다른 프로그래밍 언어에서도 제공하는 시간 함수를 살펴보며 비교해보는 것도 좋을 것 같습니다.
 
-`strftime()` 함수를 이용하여 날짜를 문자열로 변환하려면 `struct tm` 구조체의 멤버 변수를 적절한 형식으로 작성해 주어야 합니다. 예를 들어 `%B`를 사용하면 월을 영문으로 출력해 줍니다. 만약 한국어로 출력하고 싶다면 `setlocale(LC_ALL, "ko_KR.UTF-8")`와 같이 `setlocale()` 함수를 사용하여 로케일을 설정해 주어야 합니다.
-
-또한 `strftime()` 함수를 사용하여 현재 시간 뿐만 아니라 지정한 날짜의 문자열을 출력할 수도 있습니다. 해당하는 날짜를 `struct tm` 구조체에 저장한 뒤 파라미터로 넘겨주면 됩니다.
-
-## 참고 자료
-
-- [strftime() 함수 문서](https://www.cplusplus.com/reference/ctime/strftime/)
-- [setlocale() 함수 문서](https://www.cplusplus.com/reference/clocale/setlocale/)
+# 참고
+## 링크들
+1. [C언어 날짜와 시간 함수 - 나무위키](https://namu.wiki/w/C%EC%96%B8%EC%96%B4%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%84%20%ED%95%A8%EC%88%98)
+2. [C 날짜와 시간 처리 - GeeksforGeeks](https://www.geeksforgeeks.org/c-date-time-processing/)

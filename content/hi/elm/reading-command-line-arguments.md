@@ -1,34 +1,61 @@
 ---
-title:    "Elm: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:    "Elm: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट पढ़ना।"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-हालांकि प्रोग्रामिंग में अनेक सारे तरीके हैं लेकिन कभी-कभी हमें टर्मिनल से विभिन्न विषयों पर डाटा प्राप्त करने की आवश्यकता होती है। इसके लिए हमें "कमांड लाइन आर्ग्यूमेंट्स" जानने की आवश्यकता होती है जो बहुत उपयोगी हो सकता है। इस लेख में हम समझेंगे कि ये आर्ग्यूमेंट्स होते क्या हैं और उन्हें कैसे पढ़ा जा सकता है।
+कई बार एक प्रोग्रामर को अपने एलम प्रोग्राम को त्वरित और आसान बनाने की जरूरत होती है, जो स्क्रिप्ट की स्थापना या अन्य उपयोगों के अनुसार गुणवत्ता को सुनिश्चित करता है। इसके लिए आमतौर पर, यह प्रोग्रामर के प्रोग्राम में सक्रिय तरीकों से डेटा प्रक्रिया और वितरण की जांच करने के लिए आवश्यक होता है।
 
 ## कैसे करें
 
-अगर आपने पहले से ही एल्म (Elm) प्रोग्रामिंग भाषा का प्रयोग किया है, तो आपने मालूम हो सकता है कि हम किसी भी डेटा टाइप को "वूरप का स्थिर निर्देशांक" (Command-Line argument) के रूप में पास कर सकते हैं। जिसे सीधे टर्मिनल से हम input ले सकते हैं और किसी विषय पर विभिन्न फंक्शनलिटी को दर्शाने का काम कर सकते हैं। नीचे देय गए उदाहरण में, हम एक पेज़ (page) को print स्क्रीन पर दिखाने का प्रयास करेंगे:
+एलम में कमांड लाइन तर्कों को पढ़ने के लिए बहुत सरल है। सबसे पहले, हम `Platform` और `Platform.Cmd` मॉड्यूल को आवश्यकतानुसार आवृत्त करेंगे। फिर, हम `Html.programWithFlags` के साथ आसानी से अपने काम को भक्तिभाव देने हेतु वर्ग संज्ञा को स्थापित कर सकते हैं।
 
 ```Elm
-cmdPage arg = (arg, address) --> Browser.document
-  {
-    init = const
-      { title = "आपके वेबपेज की ज़रूरतों के साथ अनुप्रयोग"
-      , body = EL.text document (List.singleton dispatch programmodel)
-      }
-  , update = const
-      (( address, _) = programmodel) answ
-        case (cmd arg, answ) of
-          (Before, _) -> { programmodel | text = arg }
-          (Done, _) -> { programmodel | text = "" }
-          _ -> model
-  , done = const Nothing
-  , view = const view
-  }
-view model = el [] [EL.p [] [EL.text (toString model.text)]]
+import Platform
+import Platform.Cmd
+
+main =
+    Html.programWithFlags
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
 ```
-उपरोक्त कोड आपको अपने टर्मिनल पर कुछ लगभग "प्रयासशुन काल्पनिक" (Approx: "Experimental scenario") के समान दिख रहे होंगे। यदि आप किसी अन्य विषय पर उपनिएषित (implement) करते हैं, तो आप जो भी input को डाट
+
+इसके बाद, हम `Browser.element` के साथ अपनी वेब पेज को संज्ञानात्मक और बंद कर सकते हैं।
+
+```Elm
+type alias Model =
+    {}
+
+init : (Model, Cmd msg)
+init =
+    ( {}, Cmd.none )
+
+type Msg
+    = ...
+
+update : Msg -> Model -> (Model, Cmd msg)
+update msg model =
+    case msg of
+        ...
+
+view : Model -> Html Msg
+view model =
+    ...
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
+```
+
+प्रोग्राम को पिनकोड करने पर कोड  `Browser.element` के साथ अपने लंबाई और चौड़ाई प्रदर्शित करेगा, ` init` स्थानापन्न के साथ बंद एक स्वचालित तरीके से अपने प्रोग्राम को स्वतंत्र नमूना संदूल और `update` मॉड्यूल के लिए `view` का प्रदर्शन करता है।
+
+## डीप डाइव
+
+अगर आपको उस स्थान पर एक आग की आँटि या एक अन्य प्रकार की बातान्यायन्ता के साथ एक प्रोग्राम के

@@ -1,40 +1,36 @@
 ---
 title:    "Gleam: Znajdowanie długości ciągu znaków"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często zdarza się, że w trakcie programowania musimy wyznaczyć długość ciągu znaków. Jest to istotny element w wielu aplikacjach i niezbędny w wielu przypadkach, dlatego warto nauczyć się, jak w łatwy sposób znaleźć długość ciągu przy użyciu języka Gleam.
+W tym wpisie dowiesz się, dlaczego jest ważne znalezienie długości łańcucha w języku programowania Gleam. Poznasz również przykładowy kod i wyniki jego wykonania.
 
 ## Jak to zrobić
 
-Aby znaleźć długość ciągu w języku Gleam, możemy skorzystać z funkcji `String.length/1`. Przyjmuje ona jako argument ciąg znaków, którego długość chcemy znaleźć. Poniżej znajduje się przykładowy kod z użyciem tej funkcji:
+```Gleam let string = "Witaj, świecie!"``` 
+```Gleam let length = String.length(string)```
+```Gleam IO.print("Długość łańcucha to ", length)```
 
-```Gleam
-let str = "To jest przykładowy ciąg znaków"
-let length = String.length(str)
+Wynik:
+```
+Długość łańcucha to 14
 ```
 
-W powyższym przykładzie zmienna `length` będzie przechowywać długość ciągu, czyli w tym przypadku wartość 32. Aby wyświetlić wynik, możemy skorzystać z funkcji `Debug.show/1`:
+Możemy użyć funkcji `String.length()` aby znaleźć długość dowolnego łańcucha w języku Gleam. Jest to przydatne, jeżeli chcemy sprawdzić, czy łańcuch spełnia wymaganą liczbę znaków przed przetwarzaniem go dalej w kodzie.
 
-```Gleam
-let str = "To jest przykładowy ciąg znaków"
-let length = String.length(str)
-Debug.show(length)
-```
+## Głębsza analiza
 
-Po uruchomieniu tego kodu w konsoli otrzymamy wynik `32`.
+Funkcja `String.length()` zwraca liczbę znaków w danym łańcuchu, włączając w to spacje, przecinki i inne znaki. Jeśli chcemy zignorować spacje, możemy użyć funkcji `String.trim()`, aby usunąć je z łańcucha przed obliczeniem długości.
 
-## Deep Dive
-
-Warto zauważyć, że funkcja `String.length/1` zwraca liczbę bajtów w ciągu, a nie liczbę znaków. W przypadku języków z alfabetem ASCII (np. angielski) nie ma to większego znaczenia, ponieważ jeden znak to jeden bajt. Jednak w przypadku języków z alfabetami rozszerzonymi, może to wpłynąć na otrzymany wynik. Na przykład, w języku polskim litera `ą` zajmuje dwa bajty, więc ciąg "ąą" będzie miał długość 4, pomimo że składa się tylko z dwóch liter.
+Pamiętaj, że długość łańcucha jest różna dla różnych języków. Na przykład, w języku polskim litera "ą" może zostać zliczona jako dwa znaki, co może wpłynąć na wynik funkcji `String.length()`.
 
 ## Zobacz także
 
 - Dokumentacja języka Gleam: https://gleam.run/
-- Funkcja String.length/1 w dokumentacji: https://gleam.run/std.html#String.length-function
-
-Dzięki tym prostym przykładom możemy łatwo i szybko znaleźć długość ciągu znaków w języku Gleam. Zastosowanie tej funkcji może okazać się bardzo przydatne w wielu projektach. Zapraszamy do kontynuowania nauki języka Gleam i odkrywania jego możliwości.
+- Funkcje dla typu `String`: https://gleam.run/docs/std-lib/string
+- Kodeks postępowania dla programistów w języku Gleam: https://gleam.run/contributors-guide/code-of-conduct

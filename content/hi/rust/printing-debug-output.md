@@ -1,52 +1,31 @@
 ---
-title:    "Rust: डिबग आउटपुट प्रिंट करना"
+title:    "Rust: डेबग आउटपुट प्रिंट करना"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+Hindi Translation: "Rust Programming - Debug Output क्यों और कैसे?"
 
-Debug output print karne ka matalab hota hai ki hum apne code me koi problem solve karne ka prayas kar rahe hai. Isse hum apne code ke samasye ka samadhan khoj sakte hai aur behtar code likh sakte hai.
+## क्यों
 
-## Kaise Karein
+अगर आप किसी भी programming language में दुर्भाग्य से ठीक debugging कर रहे हैं, तो संरचित कोड के साथ प्रिंट किया गया debug output आपकी समस्या को हल करने में मदद कर सकता है। रस्ट में, हम प्रिंट मैक्रो का उपयोग करके आसानी से debug output बना सकते हैं।
 
-Agar aap apne Rust project me debug output print karna chahte hain, to aap ye steps follow kar sakte hain:
+## कैसे
 
-```Rust
-fn main() {
-  // `println!` macro ka use karke hello world print karein
-  println!("Hello World!");
-}
-```
-
-Ab hum is code ko compile karke run karenge, to humein output me `Hello World!` milega.
-
-Agar hum variables ya khali string print karna chahte hain, to hum ye code ka use kar sakte hain:
+रस्ट में, हम `"println!"` मैक्रो का उपयोग करके debug output प्रिंट कर सकते हैं। यह मैक्रो हमें अपने वेरिएबल के डेटा टाइप को आइडेंटिफाई करने की अनुमति देता है और उसके अनुसार विशेष फॉर्मेटिंग करता है। नीचे दिए गए कोड ब्लॉक में आप एक स्पंश उदाहरण देख सकते हैं:
 
 ```Rust
-fn main() {
-  let name = "John";
-  // `println!` macro ka use karke variable print karein
-  println!("My name is {}", name);
-}
+let num: i32 = 42;
+println!("यह एक संख्या है: {}", num);
 ```
+आपके डेटा टाइप के अनुसार, आप झेला सकते हो जैसे `i32` पेरामीटर और उसके अनुसार फॉर्मैट कर सकते हो। आप अपनी आसानी से custom फॉर्मैटिंग भी यूज कर सकतें हो।
 
-Is output me humein `My name is John` milega.
+## गहराई में जाएं
 
-Is tarah se hum apne code me debug output print kar sakte hain aur apne code ki samasyao ka samadhan nikal sakte hain.
+अब जब आप जानते हो, कैसे हम debug output प्रिंट कर सकते हैं रस्ट में, यह आपके लिए फायदेमंद होगा कि हम debug लीवल का उपयोग करके और अपने output को हमेशा सक्रिय या इनैक्टिव रख सकते हैं। गहराई में जाने से, आप अपने कोड में गलतियों को पकड़ने और सुधार करने में मदद मिलेगी।
 
-## Gehri Jankari
+## इसके अलावा
 
-Debug output print karne ke liye Rust me hum `println!` macro ka use karte hain. Ye macro humein string, variables ya expressions ka output print karne me madad karta hai.
-
-Hum `println!` ke sath dusre options bhi use kar sakte hain jaise ki `eprintln!` (standard error stream me print karta hai), `print!` (newline ki jaga space use karta hai), `eprint!` (standard error stream me space ki jaga print karta hai).
-
-Iske alawa, hum `format!` macro ka bhi use kar sakte hain jise hum apne code me custom formatting ke liye use kar sakte hain.
-
-## See Also
-
-Is article ke padhne ke bad, aap Rust ke debug output print karne ke bare me puri tarah samajh gaye hain. Agar aap aur jankari chahte hain toh, aap in resources par visit kar sakte hain:
-
-- Official Rust documentation on formatting: https://doc.rust-lang.org/std/fmt/
-- Rust by Example: Debugging and Printing: https://doc.rust-lang.org/stable/rust-by-example/hello/print.html
+अधिक जानने के लिए, आप रस्ट की विस्तृत डॉक्यूमेंटेशन पढ़ सकते हो जो debug output के बारे में अधिक गहराई

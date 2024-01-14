@@ -1,40 +1,34 @@
 ---
 title:    "Javascript: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
+Osoby programujące często potrzebują wyliczyć datę w przyszłości lub w przeszłości, na przykład dla tworzenia aplikacji kalendarza lub do obsługi wydarzeń cyklicznych.
 
-Kalkulowanie daty w przyszłości lub przeszłości może być niezwykle przydatne w wielu różnych projektach i aplikacjach. Pozwala to na dynamiczne określanie dat i wyświetlanie ich w odpowiednich formatach, co ułatwia użytkownikom korzystanie z programu. 
-
-## Jak to zrobić?
-
-Aby obliczyć datę w przyszłości lub przeszłości, musimy skorzystać z wbudowanych funkcji w języku Javascript. W pierwszej kolejności, musimy zadeklarować zmienną przechowującą datę, którą chcemy manipulować. Następnie, używając funkcji `getDate()`, `getMonth()` i `getFullYear()`, możemy odczytać odpowiednio dzień, miesiąc i rok z podanej daty. Następnie, aby dodać lub odjąć odpowiednią liczbę dni, miesięcy lub lat, możemy użyć funkcji `setDate()`, `setMonth()` i `setFullYear()`. 
-
-Poniżej przedstawione są dwa przykładowe kodu wraz z wynikami:
-
+## Jak to zrobić
 ```Javascript
-// Obliczanie daty w przyszłości
-let dzisiaj = new Date();
-dzisiaj.setDate(dzisiaj.getDate() + 7); // dodaje 7 dni
-console.log(dzisiaj); // wyświetli datę z za 7 dni
+// Wyliczenie daty 30 dni w przyszłości od aktualnej daty
+const now = new Date();
+const futureDate = new Date(now.setDate(now.getDate() + 30));
+console.log(futureDate);
 
-// Obliczanie daty w przeszłości
-let dzisiaj = new Date();
-dzisiaj.setFullYear(dzisiaj.getFullYear() - 2); // odejmuje 2 lata
-console.log(dzisiaj); // wyświetli datę sprzed 2 lat
+// Wyliczenie daty 60 dni w przeszłości od aktualnej daty
+const pastDate = new Date(now.setDate(now.getDate() - 60));
+console.log(pastDate);
+```
+Przykładowy output:
+```
+Thu Dec 19 2019 21:33:32 GMT+0100 (czas środkowoeuropejski standardowy)
+Sat Nov 30 2019 21:33:32 GMT+0100 (czas środkowoeuropejski standardowy)
 ```
 
-## Deep Dive
+## Głębsze zanurzenie
+Aby wyliczyć datę w przyszłości lub przeszłości, warto wykorzystać wbudowane w Javascript funkcje Date() oraz setDate(). Istnieją również biblioteki, takie jak moment.js, które ułatwiają operacje na datach. Ważne jest też pamiętanie o sposobie działania przesuwania dat w przód i wstecz, ponieważ można łatwo popełnić błąd i otrzymać niewłaściwy wynik.
 
-Obliczanie daty w przyszłości lub przeszłości może być bardziej skomplikowane, gdy musimy uwzględnić różne formaty wyjściowe lub uwzględnić różne strefy czasowe. W takim przypadku, warto skorzystać z zewnętrznych bibliotek, takich jak `moment.js`, które umożliwiają łatwe manipulowanie datą i obsługę stref czasowych. 
-
-W przypadku, gdy potrzebujemy obliczyć datę w przeszłości lub przyszłości od podanej przez użytkownika, musimy najpierw odpowiednio sformatować wprowadzoną przez niego datę i wykonać konwersję na obiekt typu `Date`. Następnie, za pomocą wspomnianych wcześniej funkcji, możemy dodać lub odjąć odpowiednią liczbę dni, miesięcy lub lat.
-
-## Zobacz również
-
-- [Dokumentacja języka Javascript wraz z opisem wbudowanych funkcji dotyczących daty](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Oficjalna strona biblioteki moment.js](https://momentjs.com/)
-- [Przewodnik po manipulacji datami w Javascript](https://www.sitepoint.com/manipulating-dates-times-javascript/)
+## Zobacz też
+- [Dokumentacja Javascript Date()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)

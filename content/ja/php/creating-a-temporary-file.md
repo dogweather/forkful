@@ -1,41 +1,48 @@
 ---
 title:    "PHP: 一時ファイルの作成"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ一時ファイルを作成するのか
+## なぜプログラムで一時ファイルを作成するのか？
 
-一時ファイルを作成することは、コンピュータープログラミングにおいて非常に便利です。一時ファイルは、プログラム実行中に一時的にデータを保存するために使用されます。例えば、ファイルで作業をするためにプログラムを実行する際、一時ファイルを使用して作業中のデータを保存することができます。
+一時ファイルを作成することは、プログラムの実行中に一時的にデータを保存するための非常に便利な方法です。データを一時ファイルに保存することで、本当のファイルに書き込む前にプログラムをテストすることができます。また、一時ファイルを使用することで、不必要なデータの保持を防ぎ、プログラムのパフォーマンスを改善することができます。
 
-# 作成する方法
+## 作り方
 
 ```PHP
-$temp_file = tmpfile(); //一時ファイルを作成
-fwrite($temp_file, "Hello World"); //一時ファイルにデータを書き込む
-fseek($temp_file, 0); //一時ファイルの先頭に移動
-echo fread($temp_file, filesize($temp_file));//一時ファイルからデータを読み取り、出力する
-fclose($temp_file); //一時ファイルを閉じる
+// ランダムな一時ファイル名を生成
+$temp_filename = tempnam(sys_get_temp_dir(), "temp");
+
+// ファイルにデータを書き込む
+$data = "これは一時ファイルに書き込んだデータです。";
+file_put_contents($temp_filename, $data);
+
+// ファイルからデータを読み取り
+echo file_get_contents($temp_filename);
+
+// ファイルの削除
+unlink($temp_filename);
 ```
 
-上記のコードは、```tmpfile()```関数を使用して一時ファイルを作成し、```fwrite()```関数を使用してデータを書き込み、```fseek()```関数を使用してファイルの先頭に移動し、```fread()```関数を使用してデータを読み取り、最後に```fclose()```関数を使用してファイルを閉じる方法を示しています。
+### 出力結果：
 
-このように、一時ファイルを作成する方法は非常に簡単です。しかし、一時ファイルを使用する際には注意しなければならない点もあります。
+```
+これは一時ファイルに書き込んだデータです。
+```
 
-# 一時ファイルの深堀り
+## ディープダイブ
 
-一時ファイルを使用する際には、いくつかの注意点があります。一時ファイルは作成された際に自動的に削除されるわけではなく、プログラマー自身が明示的に削除する必要があります。また、セキュリティの観点から、一時ファイルには機密情報を保存しないように注意する必要があります。
+プログラムで一時ファイルを作成する方法は様々ありますが、一番よく使用される方法は`tempnam()`関数を使用することです。この関数は、指定されたディレクトリにランダムなファイル名で一時ファイルを作成することができます。また、`sys_get_temp_dir()`という関数を使用することで、システムの一時ディレクトリを取得することができます。
 
-さらに、一時ファイルを作成する際には、ファイル名をランダムに生成することが推奨されています。これは、複数のプログラムが同じファイル名を使用して競合することを防ぐためです。
+しかし、プログラムが終了すると作成した一時ファイルは自動的に削除されるため、一時ファイルを保持する場合には`unlink()`関数を使用して明示的に削除する必要があります。
 
-一時ファイルは、プログラミングにおいて非常に便利なツールですが、注意しなければならない点もあります。プログラマーとして、しっかりと一時ファイルを使いこなせるようにしましょう。
+## See Also
 
-# 参考リンク
-
-- [PHPマニュアル - tmpfile()](https://www.php.net/manual/ja/function.tmpfile.php)
-- [PHPマニュアル - fwrite()](https://www.php.net/manual/ja/function.fwrite.php)
-- [PHPマニュアル - fseek()](https://www.php.net/manual/ja/function.fseek.php)
-- [PHPマニュアル - fread()](https://www.php.net/manual/ja/function.fread.php)
-- [PHPマニュアル - fclose()](https://www.php.net/manual/ja/function.fclose.php)
-- [エンジニアのためのWebセキュリティ入門](https://employment.en-japan.com/engineerhub/entry/2017/08/10/110000)
+- [PHP: `tempnam()`関数](https://www.php.net/manual/ja/function.tempnam.php)
+- [PHP: `sys_get_temp_dir()`関数](https://www.php.net/manual/ja/function.sys-get-temp-dir.php)
+- [PHP: `file_put_contents()`関数](https://www.php.net/manual/ja/function.file-put-contents.php)
+- [PHP: `file_get_contents()`関数](https://www.php.net/manual/ja/function.file-get-contents.php)
+- [PHP: `unlink()`関数](https://www.php.net/manual/ja/function.unlink.php)

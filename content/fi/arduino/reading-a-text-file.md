@@ -1,36 +1,55 @@
 ---
-title:    "Arduino: Tekstitiedoston lukeminen"
+title:    "Arduino: Tiedostotyyppien lukeminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia hyödyllisiä ja mielenkiintoisia tapoja käyttää Arduino-mikrokontrolleria, ja yksi niistä on tiedostojen lukeminen. Tässä blogikirjoituksessa kerromme, miksi Arduino-ohjelmoijan kannattaa oppia lukemaan tiedostoja ja miten se tehdään.
+Arduino-ohjelmointi on hauska ja koukuttava harrastus, joka antaa käyttäjille mahdollisuuden toteuttaa omia ideoitaan ja projektejaan. Yksi tärkeä osa Arduino-ohjelmointia on tiedostojen lukeminen, joka antaa mahdollisuuden käsitellä ja tallentaa dataa helposti. Tämä blogipostaus tarjoaa opastusta tiedostojen lukemiseen Arduino-ohjelmoinnissa suomenkielisille lukijoille.
 
 ## Miten
 
-Tiedoston lukeminen Arduinossa on melko yksinkertaista. Se vaatii vain muutaman rivin koodia, ja voit käyttää samaa koodia lukemaan erilaisia tiedostomuotoja, kuten txt, csv ja xml. Alla on esimerkki koodista, joka lukee tekstitiedoston ja tulostaa sen sisällön sarjamonitorille:
+Kun käytetään Arduinoa tiedostojen lukemiseen, tulee ensin avata haluttu tiedosto. Tämän voi tehdä käyttämällä `SD.open()` komentoa, joka ottaa parametrinä tiedoston nimen.
 
 ```Arduino
-File tiedosto = SD.open("tiedosto.txt"); // Avaa tiedosto
-while (tiedosto.available()) { // Käy läpi tiedosto niin kauan kuin siinä on sisältöä
-    Serial.println(tiedosto.read()); // Tulosta tiedoston sisältö seriaportille
-}
-tiedosto.close(); // Sulje tiedosto
+File tiedosto = SD.open("tiedostonimi.txt");
+
 ```
 
-Tämä koodi käyttää SD-korttikirjastoa, joten sinun täytyy ensin asentaa se Arduino IDE:hen. Voit muuttaa koodia tarpeen mukaan, esimerkiksi voit tallentaa tiedoston sisällön muuttujaan ja käsitellä sitä edelleen.
+Tämän jälkeen tiedosto voidaan lukea rivi kerrallaan `tiedosto.readln()` komennolla ja tallentaa muuttujaan. Esimerkiksi seuraavassa koodissa luetaan tiedosto ja tulostetaan sen sisältö sarjaliikenteen avulla:
 
-## Syvemmälle
+```Arduino
+File tiedosto = SD.open("tiedostonimi.txt");
+if (tiedosto) {
+  while (tiedosto.available()) {
+    Serial.println(tiedosto.readln());
+  }
+  tiedosto.close();
+}
+```
 
-Tiedostojen lukeminen Arduinossa avaa mahdollisuuksia monille eri projekteille. Voit esimerkiksi tallentaa järjestelmän tilaa tai kerätä tietoja erilaisista antureista ja tallentaa ne tiedostoon myöhempää käyttöä varten. Voit myös käyttää tiedostoja laajentamaan laitteesi toimintoja tarvitsematta muuttaa koodia.
+Kun tiedosto on luettu loppuun, se tulee sulkea komennolla `tiedosto.close()`, jotta resursseja ei jää suorituksen ajaksi käyttämättä.
 
-Kannattaa myös huomata, että Arduinolla on rajoitettu tallennustila, joten sinun kannattaa olla tarkkana tiedostojen koon kanssa ja poistaa tarpeettomat tiedostot säännöllisesti.
+## Syväsukellus
+
+Arduino tukee myös tiettyjä tiedostojen manipulointiin liittyviä komentoja, esimerkiksi `tiedosto.seek()` komennolla voi siirtyä haluttuun kohtaan tiedostossa. Tiedostojen lukeminen ja kirjoittaminen on myös mahdollista käyttäen `SPI` kirjastoa, mikä mahdollistaa nopeamman tiedonsiirron.
+
+Käyttäjän tulee aina muistaa tarkistaa, että tiedosto on avattu onnistuneesti, ennen kuin yritetään lukea tai kirjoittaa siihen. Tiedostojen käsittelyyn liittyy myös muistinhallintaan liittyviä haasteita, joten on tärkeää avata ja sulkea tiedosto aina tarvittaessa.
 
 ## Katso myös
 
-Tässä blogikirjoituksessa käytiin läpi vain yksi tapa lukea tiedostoja Arduinossa. Voit tutkia lisää tiedostojen käsittelyyn liittyviä toimintoja SD-korttikirjastosta ja etsiä muita tapoja lähestyä tiedostojen lukemista. Löydät myös paljon hyödyllisiä resursseja ja esimerkkikoodeja Arduino-yhteisöltä ja foorumeilta.
+- [Arduino tiedostojen käsittely](https://www.arduino.cc/en/Reference/SD)
+- [SPI kirjasto Arduino](https://www.arduino.cc/en/Reference/SPI)
+- [Arduino tiedostojärjestelmät](https://www.arduino.cc/en/Reference/FSTruncate)
+- [Arduino tiedoston avaaminen uudestaan](https://www.arduino.cc/en/Reference/Remove)
 
-Lopuksi, muista olla varovainen tiedostojen kanssa ja varmista, että ymmärrät mitä koodisi tekee ennen kuin tallennat tiedostoja. Onnea koodaukseen!
+
+
+
+
+
+
+####### Katso myös

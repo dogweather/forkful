@@ -1,66 +1,53 @@
 ---
 title:    "C# recipe: Printing debug output"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Debugging is an essential part of programming, and one of the most common methods to assist in this process is by using print statements to output information. It may seem simple, but understanding how to effectively print debug output can greatly improve the efficiency and accuracy of your code.
+Have you ever come across a bug in your code and spent hours trying to figure out where it went wrong? Or maybe you just wanted to better understand the flow of your program. Whatever the reason may be, printing debug output is a useful tool for any programmer.
 
 ## How To
 
-Printing debug output in C# is a straightforward process using the `Console` class. First, we need to import the `System` namespace in our code. Then, we can use the `WriteLine()` method to display text in the console. Let's take a look at a sample code:
-
-```C#
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        string name = "John";
-        int age = 30;
-        Console.WriteLine("Name: " + name);
-        Console.WriteLine("Age: " + age);
-    }
-}
-```
-
-In this example, we create a variable called `name` and assign it a value of "John". We also have another variable called `age` with a value of 30. By using the `Console.WriteLine()` method, we can output the values of these variables in the console. The output will be:
+To print debug output in C#, all you need is the `Debug` class from the `System.Diagnostics` namespace. This class provides useful methods for printing debug output, such as `Debug.WriteLine()` and `Debug.Assert()`. Let's look at an example:
 
 ```
-Name: John
-Age: 30
+C# using System.Diagnostics;
+
+int num = 5;
+Debug.WriteLine("The value of num is: " + num);
 ```
 
-This allows us to quickly check the values of our variables and see if they are correct, without disrupting the flow of our program.
+This will print the following output to the console:
+
+```
+The value of num is: 5
+```
+
+You can also use the `Debug.Assert()` method to check for a certain condition in your code. For example:
+
+```
+C# using System.Diagnostics;
+
+int num = 10;
+Debug.Assert(num < 5, "num should be less than 5");
+```
+
+If the condition is not met, the program will halt and an error message will be displayed. This can be useful for catching any unexpected values or behaviors in your code.
 
 ## Deep Dive
 
-Printing debug output goes beyond just displaying values of variables. It can also be used to track the flow of your program and identify any errors. For example, let's say we have a function that calculates the average of two numbers:
+Printing debug output is not just limited to printing variables. You can also use it to print out messages or information about the flow of your program. For example, you can add `Debug.WriteLine()` statements at different points in your code to see the order in which they are executed.
 
-```C#
-static double CalculateAverage(double num1, double num2)
-{
-    double average = (num1 + num2) / 2;
-    Console.WriteLine("Calculating average...");
-    Console.WriteLine("First number: " + num1);
-    Console.WriteLine("Second number: " + num2);
-    Console.WriteLine("Average: " + average);
-    return average;
-}
-```
+Another useful feature is the ability to enable or disable debug output based on build configurations. This allows you to easily turn off debug output in production code without having to remove any code manually.
 
-By adding these debug output statements, we can not only see the output of our function, but also the values of the parameters and the calculated average. This can be extremely helpful in identifying any errors and understanding the logic of our code.
+Additionally, you can use logging frameworks such as log4net or NLog to handle your debug output in a more organized and customizable way. These frameworks also provide options for writing to files or databases, which can be useful for debugging in a production environment.
 
 ## See Also
 
-Here are some helpful resources to further explore printing debug output in C#:
-
-- [Microsoft Docs - How to: Debug in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
-- [Stack Overflow - What is debugging?](https://stackoverflow.com/questions/217187/what-is-debugging)
-- [C# Programming Guide - Using the Console class](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/using-the-console-class)
-
-Now that you know the basics of printing debug output, go ahead and try it out in your own code. Happy debugging!
+- [Debug Class (System.Diagnostics)](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=netcore-3.1)
+- [Debugging Techniques in Visual Studio for C#](https://docs.microsoft.com/en-us/visualstudio/debugger/features-and-ways-to-debug-in-visual-studio?view=vs-2019)
+- [log4net Tutorial for C# Logging](https://stackify.com/log4net-guide-dotnet-logging/)

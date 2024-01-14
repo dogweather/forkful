@@ -1,43 +1,80 @@
 ---
-title:    "C: Rechercher et remplacer du texte"
+title:    "C: Recherche et remplacement de texte"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-La fonction de recherche et de remplacement de texte est essentielle pour les programmeurs C qui souhaitent automatiser la tâche fastidieuse de modifier des chaînes de caractères dans leur code. Que vous ayez besoin de corriger des fautes de frappe, de remplacer un terme par un autre ou de modifier un format, cette fonction peut vous faire gagner un temps précieux.
+Si vous êtes un programmeur en C, vous savez probablement que la recherche et le remplacement de texte sont des tâches courantes dans le développement de logiciels. Que ce soit pour corriger des erreurs de frappe ou pour mettre à jour du code obsolète, il est important de savoir comment effectuer cette opération de manière rapide et efficace. Dans cet article, nous allons expliquer pourquoi la recherche et le remplacement de texte sont si importants dans le langage C et comment les effectuer correctement.
 
-## Comment faire
+# Comment faire
 
-Pour utiliser la fonction de recherche et de remplacement de texte en C, vous devez inclure la bibliothèque string.h dans votre code. Ensuite, utilisez la fonction strcpy() pour copier la chaîne de caractères d'origine dans une nouvelle variable, puis utilisez la fonction strstr() pour rechercher la sous-chaîne cible dans la chaîne d'origine. Enfin, utilisez la fonction strcpy() à nouveau pour remplacer la sous-chaîne par la nouvelle valeur.
+La recherche et le remplacement de texte peuvent être accomplis en utilisant plusieurs fonctions du langage C. La première et la plus basique est la fonction `strstr()`, qui recherche une chaîne de caractères dans une autre chaîne de caractères. Par exemple, si vous voulez trouver et remplacer le mot "Hello" dans une chaîne de caractères, vous pouvez utiliser la fonction `strstr()` pour le localiser et `strcpy()` pour le remplacer par un autre mot.
 
 ```
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  char str1[100] = "Bonjour tout le monde!";
-  char str2[] = "tout le monde";
-  char str3[] = "python";
-
-  // Remplacez "tout le monde" par "C" dans la chaîne d'origine
-  strcpy(str1, strstr(str1, str2), str3);
-
-  printf("%s", str1);
-  return 0;
+int main()
+{
+    char str[50] = "Hello World";
+    char *ptr;
+    ptr = strstr(str, "Hello");
+    
+    if (ptr != NULL)
+    {
+        strcpy(ptr, "Bonjour");
+    }
+    
+    printf("%s", str);
+    
+    return 0;
 }
 
-// Output: "Bonjour C!"
+//Output: Bonjour World
 ```
 
-## Plongée en profondeur
+Une autre fonction utile pour la recherche et le remplacement de texte est `strtok()`, qui vous permet de séparer une chaîne de caractères en sous-chaînes en utilisant un délimiteur spécifié. Cela peut être utile si vous voulez remplacer certains mots dans une phrase, mais pas d'autres. Par exemple, si vous voulez remplacer le mot "Hello" par "Bonjour", mais pas le mot "Hello" dans "Hello world", vous pouvez utiliser `strtok()` pour séparer la phrase en sous-chaînes et remplacer seulement celles qui sont nécessaires.
 
-L'utilisation de la fonction de recherche et de remplacement de texte peut sembler simple, mais il y a quelques pièges à éviter. Par exemple, si la sous-chaîne cible est trouvée plusieurs fois dans la chaîne d'origine, seule la première occurrence sera remplacée. De plus, si la sous-chaîne cible est plus longue que la chaîne d'origine, cela peut entraîner des problèmes de mémoire. Voilà pourquoi il est important de toujours vérifier la longueur des chaînes avant de les remplacer.
+```
+#include <stdio.h>
+#include <string.h>
 
-## Voir aussi:
+int main()
+{
+    char str[50] = "Hello my name is John. Hello world.";
+    char *ptr;
+    ptr = strtok(str, " ");
+    
+    while (ptr != NULL)
+    {
+        if (strcmp(ptr, "Hello") == 0)
+        {
+            strcpy(ptr, "Bonjour");
+        }
+        
+        ptr = strtok(NULL, " ");
+    }
+    
+    printf("%s", str);
+    
+    return 0;
+}
 
-- [Documentation officielle de la fonction strstr() en C] (https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/strstr.htm)
-- [Guide pratique sur la manipulation des chaînes de caractères en C] (https://www.programiz.com/c-programming/c-strings)
-- [Exemples de code pour la fonction de recherche et de remplacement de texte] (https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+//Output: Bonjour my name is John. Bonjour world.
+```
+
+# Plongée en profondeur
+
+En plus des fonctions de chaînes de caractères mentionnées ci-dessus, il existe des fonctions plus avancées pour la recherche et le remplacement de texte en utilisant des expressions régulières, telles que `regcomp()` et `regexec()`. Ces fonctions sont plus complexes à utiliser, mais elles offrent une plus grande flexibilité pour les cas où vous devez rechercher et remplacer du texte avec des motifs spécifiques.
+
+Il est également important de noter que la gestion mémoire est un aspect crucial de la recherche et du remplacement de texte en C. Assurez-vous de libérer toute mémoire allouée dynamiquement, telle que des pointeurs retournés par les fonctions `malloc()` et `strdup()`.
+
+# Voir aussi
+
+- [Documentation C string.h](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Guide des expressions régulières en C](https://www.gnu.org/savannah-checkouts/non-gnu/linkat/docs/glibc-regex/v2.5/regex.html)
+- [Gestion mémoire en C](https://www.geeksforgeeks.org/memory-layout-of-c-program/)

@@ -1,63 +1,61 @@
 ---
-title:    "Javascript: Jämföring av två datum"
+title:    "Javascript: Jämförelse av två datum"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att jämföra två datum är en vanlig uppgift inom programmering, speciellt när det kommer till hantering av tidsbaserade data eller funktioner. Genom att förstå hur man kan jämföra två datum i Javascript kan du effektivt hantera och manipulera dina tidsdata.
+Att jämföra två datum kan vara en bra programmeringsfärdighet att ha, eftersom det kan hjälpa dig att avgöra om ett datum är tidigare, senare eller samma som ett annat datum. Detta är särskilt användbart när du arbetar med tidsberoende data eller vill göra datumbaserade beräkningar.
 
-## Så här gör du
+## Hur man gör
 
-För att jämföra två datum i Javascript, använd följande syntax:
-
-```Javascript
-var datum1 = new Date("2021-01-01");
-var datum2 = new Date("2021-01-05");
-
-// Jämför datum1 med datum2
-if (datum1 > datum2) {
-    console.log("Datum 1 är senare än datum 2");
-} else if (datum1 < datum2) {
-    console.log("Datum 2 är senare än datum 1");
-} else {
-    console.log("Datumen är lika");
-}
-```
-
-Resultatet av detta kodblock beror på de specifika datumen som används. Om datum1 är senare än datum2 kommer "Datum 1 är senare än datum 2" att skrivas ut i konsolen. Om datum2 är senare kommer "Datum 2 är senare än datum 1" att skrivas ut. Om de båda datumen är exakt samma kommer "Datumen är lika" att skrivas ut.
-
-För att jämföra datum baserat på en specifik tidsenhet, som till exempel enbart år eller månad, kan du använda de inbyggda metoder som finns tillgängliga för Date-objektet. Här är ett exempel på hur du jämför två datum baserat på enbart år:
+För att jämföra två datum i Javascript kan du använda metoden `getTime()` som returnerar antalet millisekunder som förflutit sedan 1 januari 1970. Genom att använda denna metod kan du få en numerisk representation av varje datum och sedan jämföra dem.
 
 ```Javascript
-// Skapa två datum som bara tar hänsyn till år
-var datum1 = new Date("2020-01-01");
-var datum2 = new Date("2021-01-01");
+let date1 = new Date("2021-10-10");
+let date2 = new Date("2021-10-12");
 
-// Jämför år med hjälp av inbyggda metoder
-if (datum1.getFullYear() > datum2.getFullYear()) {
-    console.log("Datum 1 är senare än datum 2");
-} else if (datum1.getFullYear() < datum2.getFullYear()) {
-    console.log("Datum 2 är senare än datum 1");
+// Jämför date1 och date2
+if (date1.getTime() > date2.getTime()) {
+  console.log("date1 är senare än date2");
+} else if (date1.getTime() < date2.getTime()) {
+  console.log("date1 är tidigare än date2");
 } else {
-    console.log("Datumen är lika");
+  console.log("date1 och date2 är samma datum");
 }
+
+// Output: date1 är tidigare än date2
 ```
 
-I detta fall kommer "Datum 2 är senare än datum 1" att skrivas ut eftersom datum2 är ett år senare än datum1.
+Om du vill jämföra datum baserat på år, månad eller dag, kan du använda andra metoder som `getFullYear()`, `getMonth()` och `getDate()` på varje datum och sedan jämföra resultaten.
 
-## Djupdykning
+```Javascript
+let date1 = new Date("2021-10-10");
+let date2 = new Date("2021-10-12");
 
-Vid jämförelse av två datum är det viktigt att förstå hur Javascript hanterar tidszoner och sommartider. Datum-objektet i Javascript lagrar datumet som ett värde i millisekunder från 1 januari 1970 00:00:00 UTC, vilket gör det enkelt att jämföra datum oavsett tidszon. Men när datumet ska visas ut till användaren, justeras det för lokala tidszoner, vilket kan påverka resultatet av jämförelser.
+// Jämför år på date1 och date2
+if (date1.getFullYear() > date2.getFullYear()) {
+  console.log("date1 är senare år än date2");
+} else if (date1.getFullYear() < date2.getFullYear()) {
+  console.log("date1 är tidigare år än date2");
+} else {
+  console.log("date1 och date2 är samma år");
+}
 
-Sommartid kan också påverka jämförelser av datum då en timme kan adderas eller subtraheras beroende på tidszon och datumets position inom sommartiden.
+// Output: date1 och date2 är samma år
+```
 
-För att undvika dessa problem är det viktigt att noga hantera tidszoner och sommartid när du jämför datum i Javascript.
+## På djupet
+
+Att jämföra datum kan vara lite knepigt eftersom det finns många faktorer att ta hänsyn till, som till exempel årsskiften och skottår. Det är viktigt att förstå hur `getTime()`-metoden fungerar och att vara konsekvent med vilket datumformat du använder för att få exakta resultat.
+
+Ett annat tips är att konvertera datumen till samma tidszon för att undvika felaktiga jämförelser på grund av tidszoners skillnader.
 
 ## Se även
 
-- [Mozilla Developer Network - Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Javascript Date Objects](https://www.w3schools.com/js/js_dates.asp)
-- [Date.prototype.getFullYear()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear)
+- How to Work with Dates in JavaScript: https://www.w3schools.com/js/js_dates.asp
+- Date.prototype.getTime(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime
+- Date.prototype.getFullYear(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear

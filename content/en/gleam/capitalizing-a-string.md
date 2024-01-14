@@ -1,77 +1,44 @@
 ---
 title:    "Gleam recipe: Capitalizing a string"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Capitalizing a string may seem like a simple task, but it can have a big impact on the readability and organization of your code. By properly capitalizing your strings, you can ensure that your code is easy to understand and maintain, making your programming experience more efficient and enjoyable.
+Have you ever encountered a situation where you needed to capitalize a string in your code? Perhaps you are formatting user input or displaying data in a specific format. Whatever the reason may be, knowing how to capitalize a string in Gleam can come in handy. In this blog post, we will explore how to accomplish this task in a few simple steps.
 
 ## How To
 
-To capitalize a string in Gleam, there are a few different approaches you can take depending on your specific needs. Here are three examples using different methods:
+To capitalize a string in Gleam, we will be using the `String.capitalize` function. This function takes in a string as its argument and returns a capitalized version of that string.
+
+Let's take a look at an example where we want to capitalize the first letter of a name:
 
 ```Gleam
-// Method 1: Using the standard library function "String.capitalise"
-
-import gleam/string
-
-let string = "hello world"
-let capitalized = string |> string.capitalise
-
-"Capitalized string: {{capitalized}}"
-
-// Output:
-// Capitalized string: Hello world
+import gleam/String
+main =
+  let name = "jane"
+  String.capitalize(name)
 ```
+
+The output of this code will be `"Jane"`, with the first letter capitalized. Similarly, we can also capitalize every letter in a string by using the `String.to_uppercase` function:
 
 ```Gleam
-// Method 2: Using pattern matching and recursion
-
-fn capitalize(string) {
-  case string {
-    "" -> ""
-    string ~ initial_char = capitalize(string)
-      -> String.to_upper_case([initial_char]) <> string
-  }
-}
-
-"Capitalized string: {{capitalize("hello world")}}"
-
-// Output:
-// Capitalized string: Hello world
+import gleam/String
+main =
+  let sentence = "this is a sentence."
+  String.to_uppercase(sentence)
 ```
 
-```Gleam
-// Method 3: Using a for loop and saving the new string in a variable
-
-import gleam/unicode
-
-let string = "hello world"
-let chars = List.to_array(Unicode.characters(string))
-let mut capitalized = ""
-for char in chars {
-  let capitalized_char = char |> Unicode.to_upper_case |> Char.to_string
-  capitalized = capitalized ++ capitalized_char
-}
-
-"Capitalized string: {{capitalized}}"
-
-// Output:
-// Capitalized string: Hello world
-```
+The output of this code will be `"THIS IS A SENTENCE."` Note that this function does not just capitalize the first letter, but every letter in the string.
 
 ## Deep Dive
 
-As you may have noticed with the above examples, capitalizing a string involves more than just converting lowercase letters to uppercase. Depending on the language and context, different rules and considerations may apply. Some languages have specific conventions for capitalization, such as capitalizing proper names or the first letter of a sentence. In some cases, accents or diacritics may also play a role in the capitalization process.
-
-Additionally, when working with non-English languages, capitalization may require more complex logic and handling of different character sets. Gleam's standard library provides functions for working with Unicode characters, making it easier to handle these situations.
-
-By diving deeper into the nuances of capitalizing a string, you can improve the accuracy and reliability of your code in various scenarios.
+Behind the scenes, the `String.capitalize` function is using the `String.to_list` function to convert the string into a list of characters. It then uses the `List.head` function to get the first element in the list, which is then mapped to uppercase using the `Char.to_upper` function. Finally, the list is converted back to a string using the `String.from_list` function.
 
 ## See Also
 
-- [Gleam documentation on strings](https://gleam.run/documentation/stdlib/strings/)
-- [Unicode handling in Gleam](https://gleam.run/documentation/std/unicode/)
+- Gleam String module documentation: https://gleam.run/documentation/std-lib/string/
+- Capitalizing a string in Elixir: https://elixirschool.com/en/lessons/basics/string/#functions-and-modules

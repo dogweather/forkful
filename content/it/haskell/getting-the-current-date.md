@@ -1,44 +1,42 @@
 ---
 title:    "Haskell: Ottenere la data corrente"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore Haskell, potresti essere curioso di sapere come ottenere la data corrente nel tuo codice. La data è un'informazione importante che viene spesso utilizzata in applicazioni e software. Inoltre, imparare a gestire le date correttamente può aiutarti a scrivere codice più robusto e affidabile.
+Se sei un appassionato di programmazione o stai imparando il linguaggio Haskell, potresti voler sapere come ottenere la data corrente nel tuo codice. Ci sono molte ragioni per cui potresti voler usare questa funzione, ad esempio per registrare gli orari delle tue attività o per gestire gli eventi in base alla data corrente.
 
 ## Come fare
 
-Una delle prime cose da fare per ottenere la data corrente in Haskell è importare il modulo ```Data.Time```. Questo modulo contiene diverse funzioni per lavorare con date e orari.
+Per ottenere la data corrente in Haskell, puoi utilizzare la funzione `getCurrentTime` dalla libreria `Data.Time`. Ecco un esempio di codice:
 
-```
+```Haskell
 import Data.Time
-```
 
-Una delle funzioni più utilizzate è ```getCurrentTime``` che restituisce un oggetto ```UTCTime``` contenente l'ora e la data corrente. Per utilizzare questa funzione, è necessario utilizzare la monade ```IO``` e l'operatore ```/``` per dividere l'oggetto ```UTCTime``` in singole componenti come giorno, mese, anno, ora, minuti e secondi.
-
-```
-main :: IO ()
 main = do
-  now <- getCurrentTime
-  let (year, month, day) = toGregorian $ utctDay now
-      (hour, minute, second) = timeToTimeOfDay $ utctDayTime now
-  putStrLn $ "La data corrente è " ++ show day ++ "/" ++ show month ++ "/" ++ show year ++
-              " e l'ora è " ++ show hour ++ ":" ++ show minute ++ ":" ++ show second
+  currentTime <- getCurrentTime
+  print currentTime
 ```
 
-L'esempio di codice sopra restituirà qualcosa del genere: ```La data corrente è 9/7/2021 e l'ora è 14:30:25```.
+Questo codice importerà la libreria necessaria e poi utilizzerà la funzione `getCurrentTime` per ottenere la data e l'ora correnti. Il risultato verrà quindi stampato a schermo.
+
+L'output sarà qualcosa del genere:
+
+```
+2021-10-02 14:30:00.123456789 UTC
+```
 
 ## Approfondimento
 
-Oltre alla funzione ```getCurrentTime```, il modulo ```Data.Time``` offre molte altre opzioni per gestire le date e gli orari. Ad esempio, puoi convertire una data in diversi formati, aggiungere o sottrarre un periodo di tempo da una data, o calcolare la differenza tra due date.
+Esistono diversi modi in cui puoi ottenere la data corrente in Haskell, a seconda del formato desiderato. Ad esempio, potresti voler ottenere solo il giorno, il mese o l'anno corrente invece della data completa come nell'esempio sopra.
 
-Inoltre, se stai lavorando con fusi orari, il modulo ```Data.Time.LocalTime``` può essere utile. Questo modulo aggiunge funzioni per gestire le date e gli orari in modo locale, tenendo conto dei fusi orari.
+Inoltre, la funzione `getCurrentTime` restituisce un'informazione più precisa di quella mostrata sopra, ma per motivi di spazio e semplicità, abbiamo troncato il risultato nell'esempio. Se vuoi, puoi approfondire la documentazione della libreria `Data.Time` per scoprire tutte le opzioni disponibili e come utilizzarle correttamente.
 
 ## Vedi anche
 
-- [Documentazione del modulo Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Documentazione del modulo Data.Time.LocalTime](https://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html)
-- [Tutorial sulle date e gli orari in Haskell](https://www.schoolofhaskell.com/user/marcina/date-and-time)
+- [Documentazione ufficiale di Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+- [Tutorial su come utilizzare le date in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time)

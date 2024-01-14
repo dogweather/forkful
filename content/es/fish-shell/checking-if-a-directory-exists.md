@@ -1,41 +1,41 @@
 ---
-title:    "Fish Shell: Comprobar si existe un directorio"
+title:    "Fish Shell: Comprobando si existe un directorio"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-A menudo, cuando estamos escribiendo un script en Fish Shell, necesitamos verificar si un determinado directorio existe antes de continuar con nuestro código. Esto puede ser útil para asegurarnos de que estamos trabajando con la estructura de archivos adecuada o para evitar errores en nuestro código.
+Comprobar si un directorio existe puede ser una tarea importante en la programación de Fish Shell. Esta acción nos permite verificar si un directorio específico existe antes de intentar realizar alguna operación en él, lo cual puede ahorrar tiempo y evitar errores en nuestro código.
 
 ## Cómo hacerlo
 
-En Fish Shell, podemos usar la función `test` para verificar si un directorio existe. Veamos un ejemplo:
+Para comprobar si un directorio existe en Fish Shell, utilizamos el comando `test` seguido del indicador `-d` y la ruta del directorio que queremos verificar. Por ejemplo:
 
+```Fish Shell
+test -d /home/usuario/documentos 
 ```
-if test -d ~/Documentos
-    echo "El directorio Documentos existe"
+
+Si el directorio existe, este comando nos devolverá un valor `verdadero` (true) y si no existe, nos devolverá un valor `falso` (false).
+
+También podemos utilizar la sintaxis abreviada `[[ -d directorio ]]` para realizar la misma acción en una sola línea. Ejemplo:
+
+```Fish Shell
+if [[ -d /home/usuario/documentos ]]
+  echo "El directorio existe"
 end
 ```
 
-En este código, estamos usando la opción `-d` de `test` para chequear si el directorio `~/Documentos` existe. Si es así, el mensaje "El directorio Documentos existe" se imprimirá en la terminal.
+## Profundizando
 
-También podemos usar la función `test` directamente en una línea de código, como en este ejemplo:
+En el código mencionado anteriormente, utilizamos el indicador `-d` para comprobar si un directorio existe. Sin embargo, también existen otros indicadores que podemos utilizar con el comando `test` para realizar diferentes comprobaciones, como por ejemplo `-f` para verificar si un archivo existe y `-e` para comprobar si un archivo o directorio existe.
 
-```
-test -d ~/Documentos && echo "El directorio Documentos existe"
-```
-
-Aquí, estamos usando el operador lógico `&&` para imprimir el mensaje solo si el directorio existe.
-
-## Deep Dive
-
-La función `test` también nos permite realizar otras verificaciones en un directorio, como comprobar si tiene permisos de lectura, escritura o ejecución. Por ejemplo, si queremos asegurarnos de que el usuario actual tenga permisos de escritura en un directorio antes de crear un archivo en él, podemos usar la opción `-w` de `test` en nuestra condición.
-
-También es importante tener en cuenta que la función `test` devuelve un código de salida diferente dependiendo del resultado de la verificación. Si la condición se cumple, la salida es `0`, y si no, es `1`. Podemos utilizar estos códigos de salida en nuestras condiciones para realizar acciones específicas en caso de éxito o fallo.
+Además, se pueden combinar comandos `test` utilizando los operadores lógicos `&&` (y), `||` (o) o `!` (no) para realizar acciones más complejas.
 
 ## Ver también
 
-- [Fish Shell documentation for `test` command](https://fishshell.com/docs/current/cmds/test.html)
-- [Tutorial de Fish Shell en español](https://www.genbeta.com/desarrollo/fish-shell-tutorial-instalar-configurar-utilizar)
+- [Documentación de test en Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+- [Uso de comandos lógicos en Fish Shell](https://fishshell.com/docs/current/tutorial.html#logical-operators)
+- [Tutorial de inicio rápido de Fish Shell](https://fishshell.com/docs/current/tutorial.html)

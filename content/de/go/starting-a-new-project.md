@@ -1,19 +1,20 @@
 ---
 title:    "Go: Ein neues Projekt beginnen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum jemand ein neues Projekt aufsetzen möchte. Vielleicht möchtest du deine Fähigkeiten als Entwickler verbessern, eine neue Idee ausprobieren oder einfach nur Spaß haben. Was auch immer dein Grund ist, das Wichtigste ist, dass du motiviert bist und dich auf die Herausforderung einlässt.
+Möglicherweise hast du schon von der Programmiersprache Go gehört, aber warum lohnt es sich, ein neues Projekt damit zu starten? Go ist eine moderne und effiziente Sprache, die für ihre einfache Syntax und ihre Unterstützung für parallele Programmierung bekannt ist. Mit seinen robusten Tools und Bibliotheken eignet es sich ideal für die Entwicklung von Cloud-Anwendungen und skalierbaren Systemen.
 
-## Wie geht es
+## Wie geht's
 
-Um ein neues Projekt in Go zu starten, gibt es ein paar wichtige Schritte zu befolgen:
+Um loszulegen, benötigst du zunächst die Go-Entwicklungsumgebung, die einfach über die offizielle Webseite heruntergeladen werden kann. Nach der Installation kannst du ein neues Projekt erstellen, indem du einen neuen Ordner erstellst und die folgenden Befehle ausführst:
 
-```Go 
+```Go
 package main
 
 import "fmt"
@@ -23,27 +24,14 @@ func main() {
 }
 ```
 
-Ausgabe:
-
-`Hallo, Welt!`
-
-1. Installiere die aktuellste Version von Go auf deinem Computer.
-2. Lege einen Ordner für dein Projekt an und wechsle in diesen Ordner.
-3. Initialisiere dein Projekt mit dem Befehl `go mod init <project_name>`.
-4. Erstelle eine `main.go` Datei in deinem Projektordner.
-5. Schreibe deinen Code und führe ihn mit dem Befehl `go run main.go` aus.
+Dieser Code erstellt ein neues Programm, das "Hallo, Welt!" ausgibt. Du kannst den Code ausführen, indem du in dem Ordner den Befehl `go run main.go` eingibst. Du solltest dann die Ausgabe "Hallo, Welt!" auf dem Bildschirm sehen.
 
 ## Tiefer Einblick
 
-Jetzt, wo du weißt, wie du ein neues Projekt in Go starten kannst, gibt es noch ein paar weitere Dinge, die du beachten solltest:
-
-- Verwende eine Versionskontrolle wie Git, um dein Projekt zu verwalten.
-- Nutze Go Modules, um Abhängigkeiten zu verwalten und ein sauberes Projektstruktur zu gewährleisten.
-- Schreibe Tests für deinen Code, um sicherzustellen, dass alles wie erwartet funktioniert.
-- Nutze Go's Standardbibliothek und Pakete von Drittanbietern, um deine Entwicklung effizienter zu gestalten.
+Wenn du bereit bist, ein größeres Projekt mit Go zu starten, solltest du dir zuerst die offizielle Dokumentation ansehen. Diese bietet eine detaillierte Anleitung für die Sprache, ihre Funktionen und die Verwendung verschiedener Bibliotheken. Darüber hinaus gibt es eine aktive Community von Go-Nutzern, die dir helfen können, wenn du auf Probleme stößt oder Unterstützung bei der Entwicklung benötigst.
 
 ## Siehe auch
 
-- [Offizielle Go Dokumentation](https://golang.org/doc/)
-- [Go Tutorial auf Deutsch](https://www.programmierenlernen24.de/go-tutorial/)
-- [GitHub Repository mit Beispielcode](https://github.com/example/example_project)
+- Offizielle Go-Website: https://golang.org/
+- Go-Dokumentation: https://golang.org/doc/
+- Gophers Slack-Community: https://gophers.slack.com/

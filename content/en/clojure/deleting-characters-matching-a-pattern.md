@@ -1,55 +1,40 @@
 ---
 title:    "Clojure recipe: Deleting characters matching a pattern"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Are you tired of manually deleting unwanted characters in your code? Or do you need to clean up data by removing certain patterns? Then learning how to delete characters matching a pattern in Clojure might be the solution you've been looking for. 
+Have you ever found yourself with a string of text that contains unwanted characters? Maybe you need to clean up user input or remove a specific formatting style. Whatever the reason may be, knowing how to delete characters matching a pattern can come in handy for a variety of situations.
 
 ## How To
+To delete characters matching a pattern in Clojure, we can use the `clojure.string/replace` function. This function takes in a string, a regular expression pattern, and either a replacement string or a function to manipulate the matched substring.
 
-Deleting characters matching a pattern in Clojure is a simple and efficient process. All you need is the `remove` function and a regular expression.
-
-```
-Clojure (def data "Hello World!")
-     => #'user/data
-(remove #"o" data)
-     => "Hell Wrld!"
-```
-
-In the above example, we use the `remove` function to delete all instances of the character "o" from the string "Hello World!". Let's break down the code:
-
-- `remove`: This function takes two arguments, a predicate function and a collection. In this case, we use a regular expression as the predicate function.
-- `"#"`: This symbol indicates that we are using a regular expression.
-- `"o"`: This is the pattern we want to match and remove from the string.
-- `data`: This is the string we want to manipulate.
-
-You can use any regular expression as a pattern to match and delete characters from a string. Let's see another example:
+Let's say we have a string that contains a mix of uppercase and lowercase letters and we want to remove all the lowercase letters. We can do so by using the `#"[a-z]"` regular expression pattern, which matches any lowercase letter. Our code would look like this:
 
 ```
-Clojure (def data [1 2 3 4 5])
-     => #'user/data
-(remove #"(2|4)" data)
-     => (1 3 5)
+(clojure.string/replace "HeLlOwOrLd" #"[a-z]" "")
 ```
 
-In this example, we use a regular expression that matches either the number 2 or 4 and removes them from the vector.
+The output of this would be `"HLOWOLD"`, with all lowercase letters removed.
+
+We can also use a function to manipulate the matched substring. For example, if we wanted to replace every occurrence of the letter "e" with "3", we could use the following code:
+
+```
+(clojure.string/replace "Hello world" #"e" (fn [match] "3"))
+```
+
+The output of this would be `"H3llo world"`. Pretty cool, right?
 
 ## Deep Dive
+Now let's dive a bit deeper into what's happening behind the scenes. In the first example, we used the empty string as the replacement, essentially deleting the matched characters. Similarly, we could also use the `#"[a-z]"` pattern to replace lowercase letters with an empty string, resulting in the same output.
 
-Now, let's take a deeper look at the syntax and functionality of the `remove` function.
+In the second example, we used a function to manipulate the matched substring. This function takes in the matched substring and returns the replacement string. In this case, we simply returned the string "3" for every "e" that was found.
 
-The syntax of the `remove` function is `(remove pred coll)`, where `pred` is the predicate function and `coll` is the collection.
-
-The `remove` function traverses the collection from left to right, passing each element to the predicate function. If the result of the predicate function is truthy, the element is removed from the collection. The remaining elements are then returned as a new collection.
+Keep in mind that the `replace` function creates a new string, leaving the original string untouched. This can be useful if you need to preserve the original string for later use.
 
 ## See Also
-
-To learn more about regular expressions and how to use them in Clojure, check out these resources:
-
-- [Regular Expressions in Clojure - official documentation](https://clojuredocs.org/clojure.core/re-pattern)
-- [Mastering Regular Expressions in Clojure - blog post](https://blog.marc-andre.ca/2018/08/22/mastering-regular-expressions-in-clojure/)
-- [Clojure's Regular Expression Library - guide](https://www.braveclojure.com/regular-expressions/)
+- Official Clojure documentation on `clojure.string/replace`: https://clojuredocs.org/clojure.string/replace
+- Regular expressions tutorial: https://www.regular-expressions.info/tutorial.html

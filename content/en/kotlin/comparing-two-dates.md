@@ -1,49 +1,57 @@
 ---
 title:    "Kotlin recipe: Comparing two dates"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Comparing dates is a common task in software development, especially when working with data that involves time-sensitive information. By comparing dates, we can determine the order of events or calculate the time difference between two events. In this blog post, we will be exploring how to compare two dates in Kotlin and the different ways to achieve this.
+
+When working with dates in a Kotlin program, it is often necessary to compare two different dates. This could be for tasks such as checking if a certain date has passed or determining which of two dates is earlier. By understanding how to compare dates in Kotlin, you can ensure that your program accurately handles all types of date comparisons.
 
 ## How To
-In Kotlin, there are multiple ways to compare two dates. Let's start with the most straightforward method using the built-in `compareTo()` function. This function returns an integer value to represent the relationship between two dates. If the first date is before the second date, it will return a negative number. If the second date is before the first date, a positive number is returned. And if both dates are equal, it will return 0.
 
-To use the `compareTo()` function, we first need to create two `LocalDate` objects representing our dates. Then, we can call the function on one date and pass in the other date as a parameter. Let's see this in action:
+To compare two dates in Kotlin, we will use the `compareTo()` method. This method is available on the `LocalDate` class and allows us to compare two dates based on their chronological order. Let's see this in action with some code examples:
 
 ```Kotlin
-val date1 = LocalDate.of(2021, 9, 10)
-val date2 = LocalDate.of(2021, 9, 15)
+// Create two date objects
+val date1 = LocalDate.of(2021, 10, 10)
+val date2 = LocalDate.of(2021, 10, 11)
 
+// Compare the dates using the compareTo() method
 val result = date1.compareTo(date2)
-println(result) // Output: -5
+
+// Output: -1, which means that date 1 comes before date 2
+println(result)
 ```
 
-In this example, we can see that the first date (`date1`) is before the second date (`date2`) as the result is a negative number.
+In this example, we create two `LocalDate` objects, `date1` and `date2`, representing October 10th and 11th of 2021. We then use the `compareTo()` method to compare them, which returns an integer value representing the chronological order of the dates. In this case, -1 is returned, indicating that `date1` comes before `date2`.
 
-Another way to compare dates is by using the `isBefore()` and `isAfter()` functions. These functions return a Boolean value, indicating whether one date is before or after the other. Let's take a look at an example:
+We can also use the `compareTo()` method to compare dates based on equality. Let's see this with another example:
 
 ```Kotlin
-val date1 = LocalDate.of(2021, 9, 10)
-val date2 = LocalDate.of(2021, 9, 15)
+// Create two date objects
+val date1 = LocalDate.of(2021, 4, 1)
+val date2 = LocalDate.of(2021, 4, 1)
 
-val before = date1.isBefore(date2)
-val after = date1.isAfter(date2)
+// Compare the dates using the compareTo() method
+val result = date1.compareTo(date2)
 
-println(before) // Output: true
-println(after) // Output: false
+// Output: 0, which means that date 1 and date 2 are equal
+println(result)
 ```
 
-Here, we can see that `before` is set to `true` since `date1` is before `date2` while `after` is set to `false` as `date1` is not after `date2`.
+In this example, both `date1` and `date2` are representing the same date, April 1st of 2021. When we use the `compareTo()` method to compare them, it returns 0, indicating that the two dates are equal.
 
 ## Deep Dive
-So far, we have only compared dates based on their chronological order, but there are other elements that we can take into consideration as well. For example, we might want to compare two dates based on the time or time zone. In these cases, we can use the `isBefore()` and `isAfter()` functions, passing in a `ChronoLocalDateTime` object representing both the date and time, or a `ChronoZonedDateTime` object representing both the date and time in a specific time zone.
 
-We can also compare dates based on specific fields, such as year, month, or day of the month, using the `isBefore()` and `isAfter()` functions with a `ChronoLocalDate` object. This allows us to be more specific in our comparisons and extract only the information we need.
+Under the hood, the `compareTo()` method is using the `compareTo()` method from the `Comparable` interface. This interface allows objects to be compared and sorted based on their natural order. In the case of `LocalDate` objects, this order is chronologically. If you want to compare dates based on a different criteria, you can also use the `compare()` method from the `Comparator` interface.
+
+Additionally, the `compareTo()` method in Kotlin also accounts for different time zones and daylight savings time. This ensures that your date comparisons are accurate and take into consideration the potential differences in time zones.
 
 ## See Also
-- [Kotlin - Comparing Dates](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-comparable/compareTo.html)
-- [Java 8 LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Java 8 ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
+
+- [Official Kotlin documentation on LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [Java documentation on the Comparable interface](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html)
+- [Java documentation on the Comparator interface](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)

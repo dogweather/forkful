@@ -1,43 +1,58 @@
 ---
-title:    "Gleam: Oppretting av en midlertidig fil"
+title:    "Gleam: Opprette en midlertidig fil"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lage midlertidige filer kan være en nyttig funksjon når du jobber med programmering. Det kan hjelpe deg med å lagre midlertidige data, behandle store mengder informasjon og sikre at dataene dine ikke går tapt underveis.
+Det å opprette midlertidige filer kan være nyttig når du jobber med Gleam programmeringsspråket. Midlertidige filer kan for eksempel brukes for å lagre midlertidig data mens du jobber med et prosjekt, eller for å teste forskjellige deler av koden din uten å endre den originale koden. 
 
-## Slik gjør du det
+## Hvordan
 
-Hvis du bruker Gleam, kan du enkelt opprette en midlertidig fil ved hjelp av følgende kode:
-
-```Gleam
-
-File.create_temporary("/sti/til/fil", "txt")
-
-```
-
-Dette vil lage en midlertidig fil med et tilfeldig generert navn og en "txt" -utvidelse i den angitte stien. Du kan deretter jobbe med denne filen som du vil, og når du er ferdig, slette den med følgende kode:
+For å opprette en midlertidig fil i Gleam, kan du bruke følgende kode:
 
 ```Gleam
-
-File.delete("/sti/til/fil.txt")
-
+let tmp_file = File.temporary()
+// tmp_file inneholder nå en midlertidig fil
 ```
 
-Dette vil slette filen og frigjøre all plass den opptar.
+Du kan også velge å gi filen et navn og en filtype ved å endre på koden, som vist under:
 
-## Dyp dykk
+```Gleam
+let tmp_file = File.temporary("mitt_navn.txt")
+// tmp_file inneholder nå en midlertidig fil med navnet "mitt_navn.txt"
+```
 
-Du kan også endre navnet og utvidelsen til den midlertidige filen ved å bruke funksjonene "set_name" og "set_extension" på filobjektet. Du kan også spesifisere en annen midlertidig mappe for å lagre filen ved å bruke "set_directory" -funksjonen.
+For å skrive data til den midlertidige filen, kan du bruke `File.write` funksjonen, som vist under:
 
-Sørg for å håndtere eventuelle feil som kan oppstå under opprettelsen eller slettingen av en midlertidig fil, for å unngå problemer med programmet ditt.
+```Gleam
+File.write(tmp_file, "Dette er data som skal skrives til filen")
+```
 
-## Se også
+For å lese data fra den midlertidige filen, kan du bruke `File.read` funksjonen, som vist under:
 
-- [Gleam File Modulen](https://gleam.run/mod/file/)
-- [Gleam Dokumentasjon](https://gleam.run/)
+```Gleam
+let data = File.read(tmp_file)
+// data inneholder nå data som er lest fra den midlertidige filen
+```
 
-Takk for at du leste! Vi håper dette hjalp deg med å lære mer om å opprette midlertidige filer i Gleam. Lykke til med kodingen!
+Når du er ferdig med å bruke den midlertidige filen, kan du slette den ved å bruke `File.delete` funksjonen, som vist under:
+
+```Gleam
+File.delete(tmp_file)
+// Den midlertidige vil nå bli slettet fra systemet
+```
+
+## Dypdykk
+
+Når du oppretter en midlertidig fil i Gleam, blir den lagret i et midlertidig filsystem som er spesifikt for programmet ditt. Dette betyr at filen bare vil være tilgjengelig mens programmet kjører. Når programmet avsluttes, vil den midlertidige filen bli slettet automatisk.
+
+Det er viktig å huske på at midlertidige filer bare bør brukes for midlertidig lagring av data. De bør ikke brukes som en permanent løsning for å lagre viktig informasjon eller data.
+
+## Se Altså
+
+- [Gleam offisiell dokumentasjon om midlertidige filer](https://gleam.run/articles/temporary-files/)
+- [En tutorial om midlertidige filer i Gleam](https://smockle.com/en/resources/creating-temporary-files-in-gleam)

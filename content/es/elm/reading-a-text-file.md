@@ -1,51 +1,43 @@
 ---
-title:    "Elm: Leyendo un archivo de texto."
+title:    "Elm: Leyendo un archivo de texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué 
+## ¿Por qué leer un archivo de texto en Elm?
 
-Existen muchas razones por las cuales es importante leer un archivo de texto al programar en Elm. Una de ellas es que te permite acceder y manipular grandes cantidades de datos almacenados en un mismo archivo de forma eficiente y estructurada. También es una herramienta útil para el manejo de archivos en la web, como por ejemplo en la carga de archivos de configuración o de datos para una aplicación.
+Leer un archivo de texto en Elm puede ser una tarea útil para aquellos que deseen manipular archivos en su programa o aplicación. Puede ser una forma de cargar datos externos o guardar información importante. A continuación, se presentan algunos ejemplos de cómo leer un archivo de texto en Elm.
 
-## Cómo 
+## Cómo hacerlo
 
-Para leer un archivo de texto en Elm, se utiliza la función `Text.fromFile`, la cual toma como parámetro la ruta del archivo y devuelve un objeto `Task Text` que representa una "tarea" a ser realizada en un futuro. Esta tarea se puede encadenar con otras acciones utilizando la función `Task.andThen` y finalmente se puede ejecutar utilizando la función `Task.attempt`, que devuelve un `Task Never ()` que debe ser ejecutado con la función `Cmd.execute`.
-
-A continuación se muestra un ejemplo de código que lee un archivo de texto y muestra su contenido en la consola:
+Para leer un archivo de texto en Elm, se puede utilizar el paquete `elm/file` que proporciona funciones para leer y escribir archivos. Primero, se deberá importar este paquete en el código:
 
 ```Elm
-import Text exposing (Text)
-import Task exposing (Task)
-import Cmd exposing (Cmd)
-
-main =
-  Text.fromFile "path/to/file.txt"
-    |> Task.andThen handleResult
-    |> Task.attempt never
-
-handleResult : Text -> Task Never ()
-handleResult text =
-  text
-    |> Debug.log "Texto leido:"
-    |> Cmd.log
-
-never : Never
-never =
-  Debug.crash "Tarea nunca debería ser ejecutada"
+import File
 ```
 
-El resultado de este código será imprimir en la consola el contenido del archivo de texto leído.
+Luego, se deberá utilizar la función `File.read` y pasarle como parámetro el nombre del archivo a leer:
 
-## Profundizando 
+```Elm
+File.read "mi_archivo.txt"
+```
 
-La función `Text.fromFile` es capaz de manejar archivos con diferentes tipos de codificación, como UTF-8, UTF-16 o ISO-8859-1, utilizando la opción `Text.Encoding` que se le puede pasar como un segundo parámetro. También es posible especificar un tamaño máximo de lectura de caracteres en la opción `Text.limit`, lo cual es útil en caso de archivos muy grandes para evitar errores de memoria.
+Esta función devolverá un `Task` que contiene el contenido del archivo en forma de `String`. Para obtener el contenido, se deberá realizar una decodificación utilizando la función `getValue`:
 
-Además, es importante tener en cuenta que la función `Text.fromFile` devuelve un objeto `Task Text`, el cual puede representar tanto un éxito como un fallo. Por lo tanto, es necesario utilizar la función `Task.attempt`, que maneja ambos casos y devuelve un objeto `Task Never ()` en caso de éxito o un `Task Http.Error ()` en caso de fallo.
+```Elm
+decodedFile = Task.attempt getValue (File.read "mi_archivo.txt")
+```
 
-## Ver también 
+Finalmente, se podrá manipular el contenido del archivo según sea necesario.
 
-- [Documentación oficial de la función `Text.fromFile` en Elm](https://package.elm-lang.org/packages/elm/core/latest/Text#fromFile)
-- [Tutorial sobre manejo de archivos en Elm](https://elmprogramming.com/file-reading-and-writing.html)
-- [Ejemplo de lectura de archivos en Elm en conjunto con el framework Phoenix](https://medium.com/@drupalmujica/reading-files-in-elm-from-your-phoenix-framework-546870980a5b)
+## Profundizando en la lectura de archivos de texto
+
+Para aquellos que deseen una explicación más detallada sobre cómo leer un archivo de texto en Elm, se recomienda revisar la documentación oficial del paquete `elm/file`. Allí se pueden encontrar más ejemplos y diferentes maneras de leer y escribir archivos en Elm.
+
+## Ver también
+
+- Documentación oficial del paquete `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
+- Tutorial sobre cómo leer y escribir archivos en Elm: https://guide.elm-lang.org/interop/file_system.html
+- Ejemplos de lectura y escritura de archivos en Elm: https://github.com/lucamug/elm-files-example/tree/master/src

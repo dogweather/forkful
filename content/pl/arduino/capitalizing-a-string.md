@@ -1,53 +1,34 @@
 ---
-title:    "Arduino: Zamiana tekstu na dużą literę"
+title:    "Arduino: Zmiana wielkości liter w ciągu znaków"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
+Niezależnie od tego, czy jesteś początkującym czy doświadczonym programistą Arduino, z pewnością wszyscy już spotkaliśmy się z problemem zmiany wielkości liter w tekście. Może to być potrzebne w celu poprawnego wyświetlenia danych lub po prostu dla estetyki wyglądu. W tym wpisie dowiesz się, jak w prosty sposób zastosować funkcję do zmiany wielkości liter na platformie Arduino.
 
-Każdy programista wie, jak ważne jest prawidłowe formatowanie tekstu w aplikacjach. Często zdarza się, że konieczne jest zmienienie normalnego tekstu na duże litery, na przykład do wyświetlenia tytułu. W takiej sytuacji nie chcemy przepisywać całego tekstu ręcznie, ale skorzystać z prostego sposobu, którym jest zaprogramowanie kapitalizacji ciągu znaków. W tym artykule dowiesz się, jak to zrobić przy użyciu Arduino.
-
-## Jak to zrobić?
-
-Aby zaprogramować kapitalizację ciągu znaków w Arduino, będziemy potrzebować funkcji dostępnej w bibliotece "string" o nazwie "toUpperCase()". Sprawdźmy, jak wykorzystać tę funkcję w praktyce:
+## Jak To Zrobić
+Do zmiany wielkości liter w tekście na platformie Arduino można użyć wbudowanej funkcji `toUpperCase()`. Należy jednak pamiętać, że funkcja ta działa tylko dla znaków ASCII i dotyczy tylko liter łacińskich. Poniżej przedstawiony jest przykład kodu, który używa tej funkcji:
 
 ```Arduino
-#include <string.h>
-
-void setup() {
-  Serial.begin(9600);
-  // Tworzymy zmienną typu string z naszym tekstem
-  String tekst = "to jest przykładowy tekst";
-  
-  // Wyświetlamy wartość zmiennej "tekst"
-  Serial.println(tekst);
-  
-  // Korzystając z funkcji "toUpperCase()" zamieniamy wszystkie litery na duże
-  String kapitalizowany_tekst = tekst.toUpperCase();
-  
-  // Wyświetlamy wartość zmiennej "kapitalizowany_tekst"
-  Serial.println(kapitalizowany_tekst);
-}
-
-void loop() {
-  // puste
-}
+String napis = "Cześć świat!";
+String napis_wielkie_litery = napis.toUpperCase();
 ```
 
-Po wgraniu tego kodu na płytę Arduino i otwarciu monitora szeregowego, powinniśmy zobaczyć w nim nasz tekst wyświetlony dwukrotnie - raz w oryginalnej formie, a następnie w wersji z wszystkimi literami zamienionymi na duże.
+Powyższy kod przypisuje zmiennej `napis_wielkie_litery` wartość napisu `CZEŚĆ ŚWIAT!`, ponieważ funkcja `toUpperCase()` zamienia wszystkie litery na wielkie. Można również wyświetlić ten napis na monitorze szeregowym Arduino, używając funkcji `Serial.println()`:
 
-## Głębszy zanurzenie
+```Arduino
+Serial.println(napis_wielkie_litery);
+```
 
-Funkcja "toUpperCase()" dostępna w bibliotece "string" działa na podstawie standardu ASCII. Oznacza to, że zamieniane są tylko litery z alfabetu łacińskiego, a cyfry, znaki specjalne czy litery z innych alfabetów pozostają bez zmian. 
+Output: `CZEŚĆ ŚWIAT!`
 
-Funkcja ta również działa na podstawie znaków Unicode, co oznacza, że może poprawnie kapitalizować litery z różnych alfabetów (na przykład greckiego czy hebrajskiego). 
+## Głębszy Rzut Oka
+W przypadku, gdy używasz znaków spoza ASCII lub innych systemów kodowania, istnieją inne sposoby na zmianę wielkości liter. Możesz na przykład utworzyć tablicę znaków i używać pętli `for` w celu zmiany wielkości poszczególnych znaków. Możesz również poszukać gotowych bibliotek, które pomogą w szybszej i bardziej zaawansowanej zmianie wielkości liter.
 
-Warto również pamiętać, że funkcja ta działa w sposób nie-destruktywny, czyli nie zmienia oryginalnego ciągu znaków, tylko tworzy nowy ciąg zawierający wartość po kapitalizacji.
-
-## Zobacz również
-
-- Dokumentacja biblioteki "string" z funkcją "toUpperCase()": https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
-- Strona z kodem Unicode: http://unicode.org/charts/pdfs/Unicode-9.0/U90-10A0.pdf
-- Poradnik programowania w Arduino: https://wiki.arcbotics.com/index.php?title=Programming_an_Arduino&Language=pl
+## Zobacz Również
+- [Funkcja toUpperCase() na stronie Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- [Biblioteka TextReader](https://www.arduinolibraries.info/libraries/text-reader)
+- [ASCII – Wikipedia](https://pl.wikipedia.org/wiki/ASCII)

@@ -1,65 +1,58 @@
 ---
-title:    "C: स्ट्रिंग को लोअर केस में बदलना"
+title:    "C: लोअर केस में स्ट्रिंग को कनवर्ट करना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-कभी-कभी हमें C में स्ट्रिंग को लोअर केस में कन्वर्ट करने की आवश्यकता होती है। आइए जानते हैं कि इसके पीछे का कारण क्या है।
+चलिए देखें कि क्यों हम एक स्ट्रिंग को निचले अक्षर में बदलने में दिलचस्पी रखते हैं।
 
 ## कैसे करें
 
-हम स्ट्रिंग को लोअर केस में कन्वर्ट करने के लिए निम्नलिखित तरीके का प्रयोग कर सकते हैं।
+इस समस्या को हल करने के लिए, हम स्ट्रिंग को निचले अक्षर में बदलने के लिए एक फ़ंक्शन का निर्माण करेंगे। यहां हम `tolower()` फ़ंक्शन का उपयोग करेंगे जो दो तरीकों से काम कर सकता है:
 
 ```C
-// पहला तरीका - स्ट्रिंग के हर चरण को एससीआई वर्ग के लिए योजना नाम और परामिति मूल्य डालकर घुमाते हुए लोअर केस में बदलें
 #include <stdio.h>
 #include <ctype.h>
 
-int main()
-{
-    char str[] = "Hello World!";
-    for (int i = 0; str[i] != '\0'; i++)
-    {
+// Function to convert a string to lower case
+void toLower(char *str){
+    // Loop through each character in the string
+    for(int i=0; str[i] != '\0'; i++){
+        // Convert each character to lower case using tolower() function
         str[i] = tolower(str[i]);
     }
+}
+
+int main(){
+    // Sample string
+    char str[] = "Hello World";
+    
+    // Call toLower() function
+    toLower(str);
+    
+    // Print the converted string
     printf("%s", str);
+    
     return 0;
 }
-// आउटपुट - hello world!
 
-// द्वितीय तरीका - स्ट्रिंग को सबसे पहले स्कैन करें और उसके चरण को उसी स्वरूप में बदलें, सिर्फ उसका अंतिम अक्षर को छोड़कर
-#include <stdio.h>
-#include <string.h>
-
-void lowercase(char *str)
-{
-    int len = strlen(str);
-    for (int i = 0; i < len - 1; i++)
-    {
-        if ('A' <= str[i] && str[i] <= 'Z')
-        {
-            str[i] += ' ';
-        }
-    }
-}
-
-int main()
-{
-    char str[] = "Hello World!";
-    lowercase(str);
-    printf("%s", str);
-    return 0;
-}
-// आउटपुट - hello world!
+// Output: hello world
 ```
 
-## गहराई में
+## गहराई में जाएं
 
-स्ट्रिंग को लोअर केस में कन्वर्ट करने के लिए, हम यह कर सकते हैं कि हम स्ट्रिंग के हर अक्षर को उसके एससीआई वर्ग के टेबल की मदद से उर्द्धता करते हुए लोअर केस में बदल देते हैं। इसके अलावा, हम स्ट्रिंग को मैपिंग डेटा संरचना के रूप में भी इस्तेमाल कर सकते हैं। जिससे हम स्वस्कालन के साथ-साथ मोडलिंग तरीके को भी अपना सकते हैं।
+इस समस्या को हल करने के लिए एक साधारण फ़ंक्शन का इस्तेमाल करने के अलावा, हम एक `tolower()` के जानकारी का भी उपयोग कर सकते हैं। यह एक सामान्य लाइब्रेरी फ़ंक्शन है जो दिए गए अक्षर को निचले अक्षर में बदलता है। यदि आप अपनी स्वयं की फ़ंक्शन बनाना चाहते हैं, तो आपको उपरोक्त उदाहरण की तरह फ़ंक्शन में एक लूप जोड़ना होगा जो दिया गया स्ट्रिंग प्रोसेस करेगा।
+
+अधिक जानकारी के लिए, आप ये लिंक्स देख सकते हैं:
+
+स्ट्रिंग्स: https://www.geeksforgeeks.org/string-manipulation-c-2/
+tolower() फ़ंक्शन: https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm
 
 ## देखें भी
 
-- [स्ट्रिंग को अपर केस में क
+लिखाबधोक फ़ंक्शन: https://www.geeksforgeeks.org/strlwr-function-string-h/
+कुंजी धारक देवनागरी समस्या: https://www.tutorialspoint.com/keyboard_arrow_upward.html

@@ -1,47 +1,41 @@
 ---
 title:    "Arduino: Verwendung von regulären Ausdrücken"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Arduino-Programmierung gibt es viele Möglichkeiten, um Daten zu verarbeiten. Eine sehr leistungsstarke und effiziente Methode ist die Verwendung von regulären Ausdrücken. Diese ermöglichen es uns, bestimmte Muster in Zeichenketten zu erkennen und zu manipulieren. Warum sollte man also reguläre Ausdrücke verwenden? Ganz einfach: Sie sparen Zeit und schreiben weniger Code. Mit weniger Code können Sie auch die Performance Ihrer Anwendung verbessern.
+Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, um Textmuster in Programmierprojekten zu erkennen und zu manipulieren. Sie können dabei helfen, komplexe Aufgaben wie Datenvalidierung, Suchen und Ersetzen von Text und die Aufteilung von Zeichenketten zu lösen. Für alle, die programmieren, sind reguläre Ausdrücke ein wichtiges Konzept, das das Schreiben effizienter und robusterer Programme ermöglicht.
 
-## Wie
+## Wie geht es
 
-Um reguläre Ausdrücke in Ihrem Arduino-Code zu verwenden, müssen Sie zunächst die Bibliothek <i>regex.h</i> in Ihr Projekt einbinden. Dann können Sie mit der Funktion <i>regex_match()</i> ein Muster in einer Zeichenkette suchen. Hier ist ein Beispiel, in dem wir prüfen, ob eine E-Mail-Adresse gültig ist:
+Um reguläre Ausdrücke in Ihrem Arduino-Code zu verwenden, müssen Sie die Bibliothek "Regex" einbinden. Dann können Sie reguläre Ausdrücke mit der Funktion "match()" anwenden. Schauen wir uns ein Beispiel an, in dem wir eine Telefonnummer aus einer Zeichenkette extrahieren:
 
-```
-#include <regex.h>
+```Arduino
+#include <Regex.h>
 
-void setup() {
-  Serial.begin(9600);
-  String email = "beispiel@mail.de";
-  
-  if (regex_match(email, regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(com|de|net)$"))) {
-    Serial.println("Gültige E-Mail-Adresse");
-  } else {
-    Serial.println("Ungültige E-Mail-Adresse");
-  }
-}
+String text = "+49 1234 567890";
+Regex phonePattern("([+])(\\d{2})(\\s)(\\d{4})(\\s)(\\d{6})");
 
-void loop() {
-  
+if (text.match(phonePattern)) {
+  String extractedPhone = phonePattern.matched(0); // Extrahiert die gesamte Telefonnummer
+  String countryCode = phonePattern.matched(1); // Extrahiert die Ländervorwahl
+  String areaCode = phonePattern.matched(2); // Extrahiert die Ortsvorwahl
+  String localNumber = phonePattern.matched(3); // Extrahiert die lokale Nummer
 }
 ```
 
-Das Ergebnis dieser Code-Schnipsel wird "Gültige E-Mail-Adresse" sein, da das angegebene Muster mit der gegebenen E-Mail-Adresse übereinstimmt. Natürlich können Sie die regulären Ausdrücke auch für komplexere Aufgaben verwenden, wie beispielsweise das Extrahieren von Zahlen aus einer Zeichenkette.
+In diesem Beispiel sehen wir, dass wir zuerst die Bibliothek "Regex" einbinden und dann eine Zeichenkette definieren, in der wir eine Telefonnummer suchen möchten. Mit Hilfe des regulären Ausdrucks können wir die Telefonnummer in mehrere Teile aufteilen und die einzelnen Komponenten extrahieren. Dies kann besonders nützlich sein, wenn Sie Daten aus verschiedenen Quellen in Ihrem Code verarbeiten müssen. Mit regulären Ausdrücken können Sie auch verschiedene Bedingungen festlegen, um sicherzustellen, dass die gesuchten Muster genau übereinstimmen.
 
-## Deep Dive
+## Tiefer Einblick
 
-Reguläre Ausdrücke können komplex werden, je nachdem welche Muster wir suchen möchten. Es gibt verschiedene Symbole und Operatoren, die uns dabei helfen können, unsere gewünschte Logik zu definieren. Zum Beispiel können wir Klammern verwenden, um Teile eines Musters zusammenzufassen und somit die Suche zu vereinfachen. Auch Quantifizierer wie <i>+</i> oder <i>*</i> können unseren regulären Ausdruck flexibler und leistungsfähiger machen.
-
-Es gibt auch Möglichkeiten, unsere Ausdrücke zu optimieren, indem wir beispielsweise den Suchbereich mit der Funktion <i>regex_search()</i> einschränken oder mit der Option <i>icase</i> Groß- und Kleinschreibung ignorieren. Es gibt viele Ressourcen im Internet, die weitere Informationen und Tipps zu regulären Ausdrücken bieten.
+Während reguläre Ausdrücke sehr nützlich sind, gibt es einige Punkte, die Sie bei der Verwendung von regulären Ausdrücken in Ihrem Arduino-Code beachten sollten. Erstens benötigen reguläre Ausdrücke mehr Ressourcen als herkömmliche String-Manipulationstechniken. Wenn Sie also in einem speicherbegrenzten Projekt arbeiten, sollten Sie die Verwendung von regulären Ausdrücken sorgfältig abwägen. Zweitens müssen Sie bei der Verwendung von Variablen in Ihrem regulären Ausdruck auf die richtige Datentypzuweisung achten, da dies die Leistung beeinflussen kann. Schließlich sollten Sie, wenn Sie regelmäßig komplexe oder anspruchsvolle Muster erkennen müssen, erwägen, einen speziellen regulären Ausdruck-Parser zu verwenden, der in der Regel eine bessere Leistung bietet.
 
 ## Siehe auch
 
-- Die offizielle Dokumentation zu <i>regex.h</i>: https://www.arduino.cc/reference/en/language/functions/regex/
-- Ein Tutorial zu regulären Ausdrücken auf arduino.cc: https://www.arduino.cc/reference/en/language/functions/regex/
-- Ein interaktives Tool zum Testen von regulären Ausdrücken: https://regex101.com/
+* [Offizielle Dokumentation zur Regex-Bibliothek für Arduino](https://github.com/arduino-libraries/Regex)
+* [Regex-Tutorial für Anfänger](https://www.regular-expressions.info/tutorial.html)
+* [Alternativen zur Verwendung regulärer Ausdrücke in Arduino](https://arduino.stackexchange.com/questions/2996/alternative-to-using-string-regex-match-in-arduino)

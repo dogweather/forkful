@@ -1,42 +1,36 @@
 ---
-title:    "C: Rozpoczęcie nowego projektu"
+title:    "C: Rozpoczynanie nowego projektu"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Chęć nauki, rozwinięcia umiejętności programowania i stworzenia czegoś nowego to tylko niektóre z powodów, dla których warto zaangażować się w rozpoczęcie nowego projektu w języku C. C jest wszechstronnym językiem programowania, który może być używany w wielu dziedzinach, takich jak tworzenie systemów operacyjnych, aplikacji mobilnych, gier i wielu innych.
+Rozpoczęcie nowego projektu w programowaniu C może być interesującym wyzwaniem dla wielu osób. Jest to świetny sposób na rozwijanie swoich umiejętności w języku C i tworzenia własnych aplikacji. Ponadto, może to również być szansa na realizację swoich pomysłów i wykorzystanie swojej kreatywności.
 
-## Jak to zrobić?
+## Jak zacząć
 
-Rozpoczęcie nowego projektu w języku C jest łatwe i wymaga tylko kilku prostych kroków. Najpierw należy zainstalować kompilator C na komputerze. Następnie należy utworzyć nowy folder dla projektu i stworzyć w nim plik z rozszerzeniem ".c". W tym pliku należy napisać kod za pomocą składni języka C. Poniżej znajduje się przykładowy kod, który wypisze napis "Witaj świecie!" na ekranie:
+Aby rozpocząć nowy projekt w programowaniu C, należy najpierw ustalić cel i zakres projektu. Następnie możesz przejść do pisania kodu, używając narzędzi takich jak edytor tekstu lub środowisko programistyczne. Poniżej przedstawiam przykładowy kod w języku C, który wyświetla komunikat "Hello world!" na ekranie:
 
 ```C
 #include <stdio.h>
 
-int main() {
-   printf("Witaj świecie!\n");
-   return 0;
+int main(){
+    printf("Hello world!");
+    return 0;
 }
 ```
 
-Po napisaniu kodu, należy go skompilować i uruchomić, aby zobaczyć jego działanie. Następnie można kontynuować pracę nad projektem i dodawać kolejne funkcjonalności.
+Po napisaniu i skompilowaniu kodu, powinieneś zobaczyć na ekranie wyjście "Hello world!". To tylko prosty przykład, ale pokazuje podstawy pisania w języku C.
 
-## Głębsze zagłębienie się
+## Głębszy zanurzenie
 
-Rozpoczęcie nowego projektu w języku C wymaga także uważnego planowania i organizacji. Ważne jest, aby określić cel projektu i zrozumieć potrzebne narzędzia i technologie, które należy wykorzystać. Dobrą praktyką jest także dzielenie kodu na mniejsze funkcje, aby ułatwić jego późniejszą rozbudowę i utrzymanie.
-
-Warto także pamiętać o dokumentowaniu kodu, aby ułatwić zrozumienie dla innych programistów oraz dla siebie w przyszłości. Można to zrobić za pomocą komentarzy lub narzędzi do generowania dokumentacji.
+Jeśli chcesz pogłębić swoją wiedzę na temat rozpoczynania nowych projektów w programowaniu C, warto zapoznać się z dokumentacją języka, kursami online lub książkami. Pamiętaj, że regularnie wykonywanie zadań i pisane kodu jest najlepszym sposobem na naukę i doskonalenie się w danym języku.
 
 ## Zobacz również
 
-Jeśli interesuje Cię więcej informacji na temat rozpoczynania projektów w języku C, polecamy następujące materiały:
-
-- [Poradnik dla początkujących programistów C](https://www.learn-c.org/)
-- [Dokumentacja języka C od Microsoft](https://docs.microsoft.com/en-us/cpp/c-language/?view=msvc-160)
-- [Książka "Język ANSI C" - K&R](https://pl.qwe.wiki/wiki/The_C_Programming_Language)
-- [Kurs online na platformie edX](https://www.edx.org/course/introduction-to-c)
-
-Teraz jesteś gotowy, aby rozpocząć swoją przygodę z programowaniem w języku C! Pamiętaj, że nie ma lepszego sposobu na naukę niż tworzenie własnych projektów. Baw się dobrze i nie zapomnij się od czasu do czasu zatrzymać i podziwiać swoje osiągnięcia. Powodzenia!
+- [Dokumentacja języka C](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html)
+- [Kursy online z programowania w języku C](https://www.codecademy.com/learn/learn-c)
+- [Książki o programowaniu w języku C](https://www.goodreads.com/list/show/189819.Top_Rated_C_Programming_Books)

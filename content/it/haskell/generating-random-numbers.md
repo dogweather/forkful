@@ -1,45 +1,39 @@
 ---
 title:    "Haskell: Generazione di numeri casuali"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Generare numeri casuali è un'operazione molto utile in programmazione, permette di creare simulazioni, giochi e test di stress per il nostro codice. In Haskell, abbiamo la libreria "random" che ci permette di generare facilmente numeri casuali.
+Generare numeri casuali è spesso utile nei programmi perché può imitare il comportamento della vita reale. Ad esempio, un gioco di ruolo potrebbe utilizzare numeri casuali per determinare il risultato di un'azione dei giocatori.
 
-## Come Fare
+## Come fare
 
-Per utilizzare la libreria "random" dobbiamo importare il modulo nel nostro codice:
+Per generare numeri casuali in Haskell, è possibile utilizzare la funzione `randomRIO` del modulo `System.Random`. La sintassi è la seguente:
 
-'```Haskell
-import System.Random
+``` Haskell
+randomRIO :: (Random a, RandomGen g) => (a, a) -> g -> (a, g)
 ```
 
-Una volta che abbiamo importato il modulo, possiamo utilizzare le sue funzioni per generare numeri casuali. Ad esempio, per generare un numero intero casuale compreso tra 1 e 10, possiamo utilizzare la funzione "randomR":
+In questo modo, è possibile specificare un intervallo di numeri e Haskell restituirà un numero casuale all'interno di quell'intervallo. Ad esempio, se volessimo generare un numero casuale compreso tra 1 e 10, potremmo scrivere:
 
-'```Haskell
-randomR (1, 10) :: IO Int
->>> 5
+``` Haskell
+randomRIO (1, 10) :: IO Int
 ```
 
-Notiamo che il tipo di ritorno è "IO Int", poiché la generazione di numeri casuali coinvolge l'input/output (IO) del sistema.
+Il tipo di dato `IO Int` indica che la funzione restituisce un valore di tipo `Int` all'interno del contesto di `IO`. Ciò significa che la funzione deve essere eseguita all'interno di un'azione di `IO` per ottenere il risultato.
 
-Possiamo anche generare più di un numero casuale utilizzando la funzione "randomRs" e specificando il numero di numeri che vogliamo ottenere:
+## Approfondimento
 
-'```Haskell
-randomRs (1, 10) 5 :: IO [Int]
->>> [4, 9, 2, 7, 10]
-```
+La funzione `randomRIO` utilizza il tipo di dati `RandomGen` per generare numeri casuali. Questo tipo rappresenta un generatore di numeri casuali ed è un'istanza di `Random`. Ciò significa che Haskell ha un'implementazione predefinita di come generare numeri pseudo-casuali.
 
-## Approfondimenti
+Per generare numeri casuali effettivi, è possibile utilizzare il modulo `System.Random.TF` che implementa il generatore di numeri casuali di tipo Mersenne Twister. Ciò consente di generare sequenze di numeri casuali più complesse e affidabili.
 
-La libreria "random" utilizza un concetto chiamato "generatore di numeri casuali" per generare i nostri numeri. Possiamo specificare un seme di inizializzazione per il generatore, in modo da ottenere risultati riproducibili. Possiamo anche utilizzare la funzione "random" per generare numeri casuali di qualsiasi tipo, non solo interi.
+## Vedi anche
 
-Uno dei modi più comuni per utilizzare la generazione di numeri casuali in Haskell è attraverso la creazione di generatori infiniti, che possono essere utilizzati per creare sequenze infinite di numeri casuali. Questo può essere particolarmente utile per le simulazioni o per i giochi.
-
-## Vedi Anche
-
-- [Haskell Random Documentation](https://hackage.haskell.org/package/random)
-- [Learn You a Haskell - Randomness](http://learnyouahaskell.com/input-and-output#randomness)
+- [Documentazione di randomRIO](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html#v:randomRIO)
+- [Documentazione di System.Random.TF](http://hackage.haskell.org/package/random-1.2.0/docs/System-Random-TF.html)
+- [Esempi pratici di utilizzo della generazione di numeri casuali in Haskell](https://www.codementor.io/@arpitbhayani/generating-random-number-in-haskell-and-its-uses-oq97cs5ff)

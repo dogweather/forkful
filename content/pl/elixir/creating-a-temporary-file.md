@@ -1,37 +1,41 @@
 ---
-title:    "Elixir: Tworzenie pliku tymczasowego"
+title:    "Elixir: Tworzenie tymczasowego pliku."
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Tworzenie tymczasowych plików jest powszechne w wielu językach programowania, w tym w Elixirze. Często używamy ich do przechowywania danych tymczasowych, takich jak wygenerowane raporty lub chwilowe pliki cache. Może to również być przydatne przy tworzeniu testów lub konfiguracji aplikacji.
+Tworzenie tymczasowego pliku może być niezbędne w wielu przypadkach programowania w Elixir. Może być to przydatne do przechowywania danych tymczasowych lub do testowania kodu. Jednak niektórzy programiści mogą nie być pewni, jak stworzyć i korzystać z tymczasowych plików w Elixir. W tym artykule dowiesz się jak to zrobić.
 
 ## Jak to zrobić
 
-Aby utworzyć tymczasowy plik w Elixirze, musimy użyć funkcji `File.open/2` z pierwszym argumentem jako nazwą pliku i flagą `[:temporary]`. Poniżej znajduje się przykładowy kod, który utworzy tymczasowy plik o nazwie `temp.txt` w katalogu bieżącego użytkownika:
+Jedną z najprostszych metod tworzenia tymczasowego pliku jest użycie funkcji `Path.join/2` i `File.write!/2`. Sprawdźmy to na przykładzie:
 
-```elixir
-File.open("temp.txt", [:write, :temporary])
+```Elixir
+file_name = Path.join(["/tmp", "example.txt"])
+content = "To jest przykładowy tekst który zostanie zapisany w pliku."
+File.write!(file_name, content)
 ```
 
-Możemy również dodać opcję `:delete` do listy flag, aby określić, że plik ma zostać usunięty po zamknięciu. Ten przykład wykorzystuje blok `File` do automatycznego zamknięcia pliku po zakończeniu:
+W powyższym kodzie tworzymy zmienną `file_name`, która zawiera ścieżkę do pliku "/tmp/example.txt". Następnie tworzymy zmienną `content`, która zawiera tekst, który chcemy zapisać w pliku. W ostatnim kroku używamy funkcji `write!/2` aby zapisać zawartość zmiennej `content` do pliku o nazwie podanej w zmiennej `file_name`.
 
-```elixir
-File.open("temp.txt", [:write, :temporary, :delete], fn file ->
-  IO.puts(file, "To jest zawartość tymczasowego pliku.")
-  IO.puts("Plik zostanie automatycznie usunięty po zamknięciu.")
-end)
+Możesz również wykorzystać funkcję `Tempfile.open/2` aby stworzyć tymczasowy plik w wybranym przez Ciebie miejscu. Wykorzystajmy to w innym przykładzie:
+
+```Elixir
+file = Tempfile.open("example.txt", "/tmp")
+IO.puts(file.path)
 ```
 
-## Dogłębna analiza
+W powyższym kodzie, funkcja `Tempfile.open/2` tworzy tymczasowy plik o nazwie "example.txt" w folderze "/tmp". Następnie używamy funkcji `IO.puts/2` aby wyświetlić ścieżkę do tego pliku w konsoli.
 
-W Elixirze istnieje wiele różnych flag, które można przechwycić przy tworzeniu tymczasowego pliku. Na przykład, możemy użyć flagi `[:read, :write]` do utworzenia pliku, który można jednocześnie czytać i zapisywać. Inną przydatną opcją jest `[:binary]`, która umożliwia zapisywanie i odczytywanie danych binarnych.
+## Ciekawostki
 
-Ponadto, funkcja `File.open/2` przyjmuje również blok funkcji jako trzeci argument, co umożliwia automatyczne zamknięcie pliku po jego użyciu. To zapewnia bezpieczne i niezawodne tworzenie tymczasowych plików.
+W przypadku gdy chcesz stworzyć tymczasowy plik w obecnym folderze, użyj funkcji `Tempfile.tmpfile/0`. Pamiętaj również, że plik zostanie automatycznie usunięty po tym, jak zostanie zamknięty.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o tworzeniu tymczasowych plików w Elixirze, zapoznaj się z dokumentacją [File.open/2](https://hexdocs.pm/elixir/File.html#open/2) oraz [File](https://hexdocs.pm/elixir/File.html) modułami. Możesz również przeczytać [ten artykuł](https://blog.lelonek.me/elixir-how-to-create-temporary-in-memory-file-analyze-csv-and-then-delete-it-f8cfcefe920e) o tworzeniu i usuwaniu tymczasowych plików w pamięci.
+- Dokumentacja Elixir - [Tworzenie tymczasowych plików](https://hexdocs.pm/elixir/File.html#write!/2)
+- Blog o Elixir - [Przetwarzanie plików tymczasowych w Elixir](https://dev.to/craftninja/processing-temporary-files-in-elixir-2ke6)

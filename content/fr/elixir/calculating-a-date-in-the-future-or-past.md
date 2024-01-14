@@ -1,42 +1,46 @@
 ---
 title:    "Elixir: Calculer une date dans le futur ou le passé"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-
-La manipulation de dates est une tâche fréquente en programmation, et Elixir offre de puissantes fonctionnalités pour cela. Que vous cherchiez à calculer une date dans le futur ou dans le passé, apprendre à utiliser ces fonctions peut grandement faciliter le développement de votre application.
+#Pourquoi
+Travailler avec des dates peut être un aspect important de la programmation dans de nombreux projets. Que ce soit pour planifier des événements, pour des rappels ou pour des opérations bancaires, il est souvent nécessaire de calculer une date dans le futur ou dans le passé. Dans cet article, nous allons découvrir comment le faire efficacement en utilisant le langage de programmation Elixir.
 
 ## Comment faire
+Pour calculer une date dans le futur ou dans le passé en Elixir, nous allons utiliser le module `Calendar` qui fournit des fonctions utiles pour travailler avec les dates et les heures.
 
-La librairie `Calendar` d'Elixir contient plusieurs fonctions utiles pour manipuler les dates. Voici quelques exemples de codes:
+Pour commencer, nous devons d'abord importer ce module en utilisant l'instruction `import Calendar` en haut de notre fichier. Ensuite, nous pouvons utiliser la fonction `add` pour ajouter un nombre spécifié de jours à une date donnée. Par exemple, si nous souhaitons calculer la date dans deux semaines à partir d'aujourd'hui, nous pouvons utiliser le code suivant :
 
 ```Elixir
-# Pour calculer une date dans le futur en utilisant une unité de temps spécifique:
-iex> Calendar.DateTime.add!(~U[2020-01-01T00:00:00], 1, :week)
-~U[2020-01-08T00:00:00]
+import Calendar
+today = Date.today()
+date_dans_deux_semaines = add(today, 14)
+IO.puts date_dans_deux_semaines
+```
+La sortie de ce code sera la date dans deux semaines à partir d'aujourd'hui au format `YYYY-MM-DD`. Nous pouvons également utiliser la fonction `subtract` pour calculer une date dans le passé en soustrayant un certain nombre de jours à une date donnée.
 
-# Pour calculer une date dans le passé en utilisant un intervalle de temps:
-iex> Calendar.DateTime.subtract(~U[2020-01-01T00:00:00], {3, :days})
-~U[2019-12-29T00:00:00]
+Mais que se passe-t-il si nous souhaitons calculer une date en tenant compte des années bissextiles ? Dans ce cas, nous pouvons utiliser la fonction `adjust` qui prend également en compte le fait que le nombre de jours dans une année peut varier. Par exemple, pour calculer la date dans un an à partir d'aujourd'hui, nous pouvons utiliser le code suivant :
 
-# Pour obtenir le nombre de jours entre deux dates:
-iex> Calendar.days_between(~D[2020-01-01], ~D[2020-01-05])
-5
+```Elixir
+import Calendar
+today = Date.today()
+date_dans_un_an = adjust(today, years: 1)
+IO.puts date_dans_un_an
 ```
 
-Il est également possible de manipuler les dates en utilisant le type `NaiveDateTime` qui ne prend pas en compte les fuseaux horaires. La documentation complète de la librairie `Calendar` peut être trouvée [ici](https://hexdocs.pm/elixir/Calendar.html).
+La sortie de ce code sera la date dans un an à partir d'aujourd'hui, en prenant en compte les années bissextiles.
 
 ## Plongée en profondeur
+Si nous voulons aller encore plus loin dans la manipulation des dates en Elixir, nous pouvons également utiliser le module `Timex` qui étend les fonctionnalités du module `Calendar` en incluant des fonctions plus avancées telles que la prise en compte des fuseaux horaires, la conversion entre différents formats de date, et bien plus encore.
 
-En plus des opérations de base, il existe des fonctions plus avancées pour calculer des dates dans le futur ou dans le passé. Par exemple, vous pouvez utiliser `DateTime.now/0` pour obtenir la date et l'heure actuelles et les utiliser pour calculer une date dans le futur ou dans le passé. Vous pouvez également utiliser `DateTime.to_unix/1` pour convertir une date en un timestamp Unix.
+Pour utiliser `Timex`, nous devons d'abord l'ajouter dans notre fichier `mix.exs` en tant que dépendance, puis exécuter `mix deps.get` dans notre terminal pour installer le package. Ensuite, nous pouvons importer le module en utilisant `import Timex` et utiliser les fonctions telles que `shift` pour calculer une date en fonction d'un décalage spécifié, ou `parse` pour convertir une chaîne de caractères en date.
 
-Pour une compréhension plus approfondie de la manipulation des dates en Elixir, consultez cet article de blog [ici](https://bob.so/blog/working-with-dates-in-elixir/).
+Pour plus d'informations sur le module `Timex`, vous pouvez consulter sa documentation officielle.
 
 ## Voir aussi
-
-- [Documentation d'Elixir sur la manipulation des dates](https://hexdocs.pm/elixir/Calendar.html)
-- [Article de blog sur la manipulation des dates en Elixir](https://bob.so/blog/working-with-dates-in-elixir/)
-- [Article de blog sur l'utilisation de librairies tierces pour la manipulation des dates en Elixir](https://ashleydawson.github.io/2017/elixir-date-time/)
+- [Documentation officielle du module Calendar](https://hexdocs.pm/elixir/Calendar.html)
+- [Documentation officielle du module Timex](https://hexdocs.pm/timex)
+- [Article sur la manipulation des dates en Elixir](https://www.dreamingechoes.com/manipulating-dates-in-elixir/) from Dreaming Echoes

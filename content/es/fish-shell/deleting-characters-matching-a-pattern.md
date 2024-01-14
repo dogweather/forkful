@@ -1,42 +1,52 @@
 ---
 title:    "Fish Shell: Eliminando caracteres que coinciden con un patrón"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué borrar caracteres que coinciden con un patrón?
+## Por qué
 
-Si eres programador y utilizas el Fish Shell, es posible que alguna vez te hayas encontrado con la tarea de eliminar caracteres que coinciden con un patrón determinado. Ya sea porque necesitas limpiar datos o por motivos de seguridad, la eliminación de caracteres en un archivo o texto puede ser una tarea útil. En este artículo, veremos cómo llevar a cabo esta tarea de forma sencilla utilizando Fish Shell.
+Eliminar ciertos caracteres de un patrón puede ser útil en situaciones en las que se desea limpiar o formatear datos de manera rápida y eficiente. También puede ser útil al trabajar con archivos de texto o al escribir scripts para procesar datos.
 
 ## Cómo hacerlo
 
-Primeramente, debemos abrir una terminal y acceder al Fish Shell. Una vez allí, podemos utilizar el comando "sed" seguido del patrón que deseamos buscar y el archivo o texto donde realizar la búsqueda. Por ejemplo:
+Para eliminar caracteres que coincidan con un patrón en Fish Shell, se puede utilizar el comando `string sub` seguido del patrón y el texto en el que se desea realizar la eliminación. Por ejemplo:
 
 ```Fish Shell
-sed 's/patrón//' archivo.txt
+# Original text
+set texto "Hola, soy un texto con caracteres no deseados!#@+@#-"
+echo $texto
+
+# Eliminar caracteres no deseados
+set newText (string sub '*[@!#$^-]' $texto)
+echo $newText
 ```
 
-Esto eliminará todas las ocurrencias del patrón en el archivo "archivo.txt". Si deseamos eliminar solamente la primera coincidencia, podemos utilizar el flag "-n" seguido del comando "p" (impresión), de la siguiente manera:
+Esto producirá la siguiente salida:
 
-```Fish Shell
-sed -n 's/pattern//' archivo.txt
+```
+Hola, soy un texto con caracteres no deseados!#@+@#-
+Hola, soy un texto con caracteres *
 ```
 
-También es posible utilizar un patrón más complejo para buscar y eliminar caracteres. Por ejemplo, si queremos borrar todos los números en un texto, podemos utilizar el siguiente comando:
-
-```Fish Shell
-sed 's/[0-9]//g' archivo.txt
-```
-
-Este comando busca todas las ocurrencias de números (0-9) y las elimina. El flag "g" significa que se aplicará a todas las coincidencias en cada línea del archivo.
+El comando `string sub` utiliza expresiones regulares para buscar y reemplazar patrones en un texto determinado. En el ejemplo anterior, el patrón utilizado es `*[@!#$^-]`, lo que significa que cualquier caracter que sea una letra, un número o un símbolo de puntuación será eliminado.
 
 ## Profundizando
 
-"sed" es una herramienta muy útil para realizar cambios en archivos o textos mediante patrones. Además de eliminar caracteres, también podemos utilizarlo para reemplazar caracteres o agregar texto en lugares específicos. Para conocer más opciones y comandos avanzados, puedes consultar la documentación oficial de Fish Shell o buscar tutoriales en línea.
+El patrón utilizado en el ejemplo anterior es solo uno de muchos que se pueden utilizar al eliminar caracteres en Fish Shell. Algunos otros patrones comunes incluyen:
+
+- `[0-9]` para eliminar todos los números
+- `[A-Z]` para eliminar todas las letras mayúsculas
+- `[a-z]` para eliminar todas las letras minúsculas
+- `[^a-z]` para eliminar todo excepto las letras minúsculas
+- `[^0-9]` para eliminar todo excepto los números
+
+Además, el comando `string sub` también puede combinarse con otros comandos como `find` para restringir la búsqueda de patrones a archivos específicos.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de sed en línea de comandos](http://linuxcommand.org/lc3_adv_sed.php)
-- [Tutorial avanzado de sed por Andrea Aime](https://aime2-j average.blogspot.com/2012/01/sed-basics-and-more.html)
+- [Documentación de Fish Shell string substitution](https://fishshell.com/docs/current/cmds/string-sub.html)
+- [Introducción a las expresiones regulares en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_regex)
+- [Guía completa de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_regex_full)

@@ -1,69 +1,59 @@
 ---
-title:    "C: L'écriture des tests"
+title:    "C: Écrire des tests"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire des tests en C?
 
-Si vous programmez en C, vous savez probablement déjà l'importance de tester votre code. Mais pourquoi devriez-vous vous soucier d'écrire des tests ? Eh bien, les tests vous permettent de valider votre code à différentes étapes du développement, ce qui vous aide à vous assurer qu'il fonctionne correctement et qu'il n'y a pas de bugs cachés. De plus, les tests peuvent vous faire économiser du temps à long terme en identifiant rapidement les erreurs lors de la modification du code.
+Écrire des tests dans un programme en C peut sembler fastidieux et chronophage, mais c'est en réalité une étape importante dans le processus de développement. Les tests permettent de vérifier le bon fonctionnement de votre code et de détecter d'éventuels bugs avant même que le programme ne soit déployé. Cela permet non seulement d'économiser du temps et des efforts, mais aussi de garantir un meilleur niveau de qualité pour votre code.
 
-## Comment Faire
+## Comment procéder?
 
-L'écriture de tests en C peut sembler intimidante, mais ne vous inquiétez pas, c'est plus facile que vous ne le pensez. Tout d'abord, vous devez avoir une bonne compréhension de la structure du code que vous souhaitez tester. Ensuite, vous pouvez utiliser des assertions, comme ```assert()```, pour vérifier les conditions prédéfinies dans le code. Les assertions sont très utiles pour détecter rapidement les erreurs lors de l'exécution du code.
-
-Par exemple, si vous écrivez une fonction de tri en C, vous pourriez vouloir tester si la fonction fonctionne correctement pour différents types de données, comme les entiers ou les caractères. Dans ce cas, vous pourriez utiliser des assertions pour vérifier si le tableau trié est dans le bon ordre.
+Écrire des tests en C peut sembler intimidant pour les débutants, mais en réalité, il suffit de suivre quelques étapes simples. Tout d'abord, définissez les fonctionnalités que vous souhaitez tester. Ensuite, créez des conditions d'assertion pour chaque fonctionnalité, en vous assurant de couvrir tous les cas possibles. Enfin, exécutez vos tests et vérifiez leur validité en comparant les résultats avec ceux que vous attendez. Voici un exemple de code pour vous aider à comprendre le processus :
 
 ```C
 #include <stdio.h>
 #include <assert.h>
 
-// Fonction de tri basique pour trier des entiers en ordre croissant 
-void tri(int tableau[], int taille) {
-    int temp;
-    for(int i = 0; i < taille-1; i++) {
-        for(int j = i+1; j < taille; j++) {
-            if(tableau[i] > tableau[j]) {
-                temp = tableau[i];
-                tableau[i] = tableau[j];
-                tableau[j] = temp;
-            }
-        }
-    }
+// Fonction à tester
+int additionner(int a, int b)
+{
+    return a + b;
 }
 
-// Fonction de test pour vérifier si le tri fonctionne correctement
-void test_tri() {
-    int tableau[5] = {5, 2, 7, 1, 3};
-    int tableau_attendu[5] = {1, 2, 3, 5, 7};
-    
-    // Utilisation de l'assertion pour vérifier si le tableau est trié correctement
-    assert(tri(tableau, 5) == tableau_attendu);
-    
-    printf("Le test a réussi, le tableau est trié correctement !\n");
+// Fonction de test
+void test_additionner()
+{
+    // Vérifier si 2+2 est égal à 4
+    assert(additionner(2,2) == 4);
+    // Vérifier si 5+3 est égal à 8
+    assert(additionner(5,3) == 8);
+
+    // Ajoutez autant de tests que nécessaire pour couvrir tous les cas possibles
 }
 
-int main() {
-    // Appel de la fonction de test
-    test_tri();
+// Fonction principale
+int main()
+{
+    // Appeler la fonction de test
+    test_additionner();
+    printf("Tous les tests ont été validés avec succès!");
     return 0;
 }
 ```
-Output:
 
-``` 
-Le test a réussi, le tableau est trié correctement ! 
-```
+Dans cet exemple, nous définissons une fonction `additionner` et vérifions si elle retourne les résultats attendus grâce à la fonction `assert`. Vous pouvez ensuite ajouter autant de fonctions de test que vous le souhaitez pour couvrir toutes les fonctionnalités de votre programme.
 
-## Deep Dive
+## Approfondissement
 
-Lors de l'écriture de tests, il est important de s'assurer que vous testez toutes les parties importantes de votre code. Cela peut sembler fastidieux, mais cela peut vous éviter des problèmes majeurs à l'avenir. Vous pouvez également utiliser des outils de test automatiques, tels que Unity ou CppUTest, pour faciliter l'écriture et l'exécution de tests en C.
+Il existe également d'autres outils de test disponibles en C, tels que la bibliothèque `ctest` ou les framework de test unitaire comme `check` ou `CppUTest`. Ces outils peuvent faciliter le processus de test en vous permettant de créer des cas de test plus complexes et de générer des rapports détaillés sur les résultats. De plus, il est important de garder à l'esprit que les tests ne doivent pas être considérés comme une tâche secondaire, mais plutôt comme une partie intégrante du cycle de développement.
 
-De plus, il est important de toujours garder à l'esprit que les tests ne garantissent pas la perfection de votre code. Les tests sont un outil pour vous aider à identifier et à résoudre les erreurs, mais ils ne peuvent pas remplacer une bonne compréhension et une conception solide de votre code.
+## Voir aussi
 
-## Voir Surtout
-
-* [Testing in C - GeeksforGeeks](https://www.geeksforgeeks.org/testing-in-c/)
-* [Introduction to Unit Testing in C - CodeProject](https://www.codeproject.com/Articles/857253/Introduction-to-Unit-Testing-in-C)
-* [Unity - Unit Testing Framework for C](https://www.throwtheswitch.org/unity)
+- [Tutoriel sur les tests en C](https://www.tutorialspoint.com/cprogramming/cprogramming_unit_testing.htm)
+- [Documentation sur la bibliothèque ctest](https://libcest.sourceforge.io/)
+- [Framework de test unitaire check](https://libcheck.github.io/check/index.html)
+- [CppUTest framework](https://cpputest.github.io/)

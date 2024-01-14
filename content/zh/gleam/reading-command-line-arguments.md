@@ -1,35 +1,73 @@
 ---
 title:    "Gleam: 读取命令行参数"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
+什么是命令行参数？为什么要阅读命令行参数？命令行参数是指在运行程序时通过命令行输入的各种设置和指令。通过阅读命令行参数，程序可以根据用户的需求来执行不同的操作，使得程序更加灵活和定制化。
+
 ## 为什么
 
-阅读命令行参数是编程中的常见任务，它允许我们以不同的方式使用相同的代码，使程序更加灵活和通用。了解如何读取命令行参数可以帮助开发人员轻松地调整程序的行为，使其适用于不同的情况。
+阅读命令行参数可以让程序具有更强的可定制性，允许用户通过命令行输入不同的参数来改变程序的行为。这使得程序可以适应不同的需求和场景，提高程序的使用性和效率。
 
-## 如何做
+## 如何
 
-在Gleam中，要读取命令行参数非常简单。首先，在您的代码中导入Gleam的`command`模块，然后使用`command.read()`函数来读取参数。让我们来看一个例子：
+要在Gleam中读取命令行参数，可以使用标准库中的`gleam_io`模块。首先，我们需要导入`gleam_io`模块，然后使用`gleam_io.arguments`函数来获取传入的命令行参数。代码示例如下：
 
 ```
-Gleam importio
-import command
+use gleam_io
+
 fn main() {
-  args = command.read()
-  io.println("Hello, " ++ args[0] ++ "!")
+  arguments = gleam_io.arguments()
+
+  case arguments {
+    Ok(args) -> gleam_io.println("您输入的参数为：", args)
+    Err(err) -> gleam_io.println("出错了：", err)
+  }
 }
 ```
 
-在这个例子中，我们导入了Gleam的`importio`模块，然后使用`command.read()`读取命令行参数，将其存储在`args`变量中。接下来，我们使用`io.println()`函数打印出`args`中的第一个参数，也就是我们在命令行中传入的第一个参数。假设我们在命令行中传入`"World"`作为参数，那么上面的代码将打印出`"Hello, World!"`。
+输出示例（假设程序命名为`demo.gleam`）：
 
-## 深入探讨
+```
+$ gleam run demo.gleam --option1 --option2=value
+您输入的参数为：["--option1", "--option2=value"]
+```
 
-除了通过`command.read()`来读取所有的命令行参数外，您还可以使用`command.read_name()`来读取指定的参数。例如，假设我们只想读取第二个参数，我们可以使用`command.read_name(1)`来读取它。此外，您还可以使用`command.has_name()`来检查是否存在指定的命令行参数。
+## 深入了解
+
+在Gleam中，命令行参数以字符串列表的形式存储在`gleam_io.arguments()`函数返回的结果中。如果需要解析参数的具体值，可以使用`gleam_parsec`模块中的函数来实现。例如，如果想要获取`--option2`参数的值，可以使用`gleam_parsec.option()`函数来解析此参数。代码示例如下：
+
+```
+use gleam_io
+use gleam_parsec
+
+fn main() {
+  arguments = gleam_io.arguments()
+
+  case arguments {
+    Ok(args) -> {
+      case gleam_parsec.option("--option2", args) {
+        Ok(value) -> gleam_io.println("您输入的--option2参数的值为：", value)
+        Err(err) -> gleam_io.println("出错了：", err)
+      }
+    }
+    Err(err) -> gleam_io.println("出错了：", err)
+  }
+}
+```
+
+输出示例（假设程序命名为`parse_option.gleam`）：
+
+```
+$ gleam run parse_option.gleam --option1 --option2=value
+您输入的--option2参数的值为：value
+```
 
 ## 参考链接
 
-- Gleam官方文档：https://gleam.run/
-- Gleam Github仓库：https://github.com/gleam-lang/gleam
-- 关于命令行参数更多的信息：https://en.wikipedia.org/wiki/Command-line_interface
+- `gleam_io`标准库模块：https://gleam.run/stdlib/gleam_io.html
+- `gleam_parsec`标准库模块：https://gleam.run/stdlib/gleam_parsec.html
+- Gleam文档：https://gleam.run/

@@ -1,37 +1,42 @@
 ---
-title:    "Elixir: Puoliksi luodut merkit, jotka vastaavat kaavaa"
+title:    "Elixir: Kaavan mukaiset merkkien poistaminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Poistaminen toistuvia merkkejä vastaavista malleista voi olla hyödyllistä, kun halutaan käsitellä tekstiä tai merkkijonoja tietyllä tavalla. Tämä voi parantaa suorituskykyä ja tehdä koodista helpommin ymmärrettävää.
+Monesti ohjelmointia tehdessä saattaa tulla tarve poistaa merkkejä tietyllä kaavalla. Tämä voi johtua esimerkiksi tietokannan käsittelyssä tai tekstinmuokkauksessa. Tässä blogikirjoituksessa käymme läpi, kuinka voit poistaa merkkejä Elixir-ohjelmointikielellä.
 
-## Kuinka tehdä
+## Kuinka
 
-Tässä esimerkissä näytämme, kuinka poistaa kaikki numerot merkkijonosta käyttämällä Elixirin `String.replace/3` funktiota.
+Elixirillä on käytössä "String" moduuli, joka sisältää erilaisia toimintoja merkkijonojen käsittelyyn. Yksi niistä on "replace" funktio, jota voidaan käyttää poistamaan merkkejä kaavalla.
 
-```Elixir
-string = "Abc123Def456Ghi789"
-only_letters = String.replace(string, ~r/\d/, "")
-IO.puts only_letters
-
-// Output: AbcDefGhi
+```
+iex> String.replace("Tervetuloa", "e", "")
+"Trvtuloa"
 ```
 
-Käytämme `~r`-muodostetta luomaan säännöllisen lausekkeen, joka vastaa kaikkia numeroita. Sitten annamme `String.replace` -funktiolle säännöllisen lausekkeen sekä tyhjän merkkijonon, joka poistaa kaikki vastaavat numerot. Lopuksi tulostamme uuden merkkijonon.
+Tässä esimerkissä käytämme "replace" funktiota poistamaan kaikki "e" kirjaimet merkkijonosta "Tervetuloa". Lopputuloksena saamme merkkijonon "Trvtuloa".
 
-Tämä toimii myös, jos haluat poistaa tiettyjä merkkejä tai merkkijonoja. Esimerkiksi, jos haluat poistaa kaikki pilkut merkkijonosta, voit käyttää säännöllistä lauseketta `~r/,/` ja antaa tyhjän merkkijonon `String.replace` -funktiolle.
+Voimme myös käyttää "replace" funktiota RegExp regexp-moduulin kanssa, jotta voimme määrittää tarkemman kaavan poistolle. Esimerkiksi seuraavassa koodissa poistamme kaikki numerot merkkijonosta:
 
-## Syväsukellus
+```
+iex> String.replace_regex("1234 Elixir", ~r/[0-9]/, "")
+" Elixir"
+```
 
-Elixirin String-moduulilla on muitakin hyödyllisiä funktioita, kuten `String.split/3`, joka jakaa merkkijonon annetun säännöllisen lausekkeen perusteella. Voit myös käyttää `String.replace/4`-funktiota, jolloin voit määrittää montako vastaavaa merkkiä haluat korvata.
+## Syventävä tarkastelu
 
-Elixirin säännöllisillä lausekkeilla on myös monia muita käyttötapoja, kuten merkkijonojen validointi ja tiedon hakeminen. Jos haluat oppia lisää säännöllisistä lausekkeista ja niiden käytöstä, suosittelemme tutustumaan Elixirin virallisiin dokumentaatioihin.
+Elixirillä on myös muita tapoja poistaa merkkejä. Voit käyttää esimerkiksi "String.trim" funktiota poistamaan merkkejä merkkijonon alusta ja lopusta. Voit myös muokata merkkijonoa käyttämällä "String.uppercase" ja "String.downcase" funktioita, jotka muuttavat merkistön kirjainten koon halutuksi.
+
+Elixirillä on myös erillisiä kirjastoja, kuten "Stringex" ja "ExString", jotka tarjoavat lisää toimintoja merkkijonojen käsittelyyn.
 
 ## Katso myös
 
-- [Elixirin viralliset dokumentaatiot säännöllisistä lausekkeista](https://hexdocs.pm/elixir/Regex.html)
-- [Regex101 - verkkotyökalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/r/AcBkgC/1)
+- [Elixir String moduuli](https://hexdocs.pm/elixir/String.html)
+- [Elixir RegExp moduuli](https://hexdocs.pm/elixir/RegExp.html)
+- [Stringex kirjasto](https://hexdocs.pm/stringex/)
+- [ExString kirjasto](https://github.com/devonestes/ex_string)

@@ -1,55 +1,37 @@
 ---
-title:    "Javascript: Att omvandla ett datum till en sträng"
+title:    "Javascript: Omvandla ett datum till en sträng"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När man arbetar med datum och tid i Javascript, så är det ofta nödvändigt att konvertera ett datum till en sträng - detta kan handla om att visa datumet i ett visst format eller att jämföra datum och tider. Att kunna konvertera ett datum till en sträng är en viktig färdighet för alla Javascript-utvecklare.
+I denna bloggpost kommer vi att utforska hur man konverterar ett datum till en sträng i Javascript. Att kunna konvertera datum är en viktig färdighet inom programmering och är användbar för att få befintliga datum till mer lättlästa format.
 
-## Hur man gör det
+## Så här
 
-Det finns flera sätt att konvertera ett datum till en sträng i Javascript. En vanlig metod är att använda `toLocaleString()` -funktionen som finns inbyggd i JavaScript Date objektet. Denna funktion tar ett argument för önskat språk och returnerar datumet som en sträng baserad på det språket. Ett exempel på hur man skulle använda `toLocaleString()` för att konvertera ett datum till en sträng på svenska skulle se ut såhär:
+Först måste vi förstå hur Javascript hanterar datum. Datum lagras som siffror i millisekunder från Unix epoch-tiden, som är den 1 januari 1970 00:00:00 UTC. För att konvertera detta till en läsbar sträng, måste vi använda inbyggda metoder.
 
-```javascript
-let datum = new Date();
-let sträng = datum.toLocaleString("sv-SE");
-console.log(sträng);
-// Output: torsdag 16 juli 2020 11:45:13
+För att konvertera ett datum till en sträng kan vi använda toLocaleDateString() metoden som finns tillgänglig för alla datumobjekt i Javascript. Vi kan också ange olika parametrar för att få det i olika format, till exempel:
+
+```Javascript
+const datum = new Date();
+console.log(datum.toLocaleDateString("sv-SE")); // 4/3/2020
+console.log(datum.toLocaleDateString("sv-SE",{ weekday: 'long' })); // torsdag
+console.log(datum.toLocaleDateString("sv-SE",{ year: 'numeric', month: 'long', day: 'numeric' })); // april 3, 2020
 ```
 
-Notera att strängen som returneras är baserad på det aktuella datumet och tiden vid körning av koden.
-
-En annan metod för att konvertera ett datum till en sträng är att använda `toString()` -funktionen. Denna funktion returnerar också ett datum som en sträng, men i ett fast format oavsett vilket språk eller geografisk plats som används.
-
-```javascript
-let datum = new Date();
-let sträng = datum.toString();
-console.log(sträng);
-// Output: Thu Jul 16 2020 11:45:13 GMT+0200 (Central European Summer Time)
-```
-
-Notera att formatet på den returnerade strängen kan variera beroende på användarens inställningar och browser.
+Som du kan se så kan vi använda olika parametrar för att få önskat datumformat baserat på vårt behov.
 
 ## Djupdykning
 
-Även om `toLocaleString()` och `toString()` är två vanliga metoder för att konvertera ett datum till en sträng, så finns det fler sätt att göra det på. Om man vill ha mer kontroll över formatet på den returnerade strängen, så kan man använda `getDate()`, `getMonth()` och `getFullYear()` -funktionerna för att hämta det önskade datumet, månaden och året och sedan kombinera dem i en sträng på det önskade sättet. Ett exempel på detta skulle kunna se ut såhär:
+För att korrekt kunna konvertera ett datum till en sträng, är det viktigt att förstå olika tidszoner och hur de kan påverka resultatet. När ett datum skapas i Javascript, kommer det att representera tidpunkten i den lokala tidszonen på användarens enhet. Detta innebär att konverteringen av datum till sträng kommer att följa samma tidszon.
 
-```javascript
-let datum = new Date();
-let dag = datum.getDate();
-let månad = datum.getMonth() + 1;
-let år = datum.getFullYear();
-let sträng = dag + "/" + månad + "/" + år;
-console.log(sträng);
-// Output: 16/7/2020
-```
-
-Genom att använda dessa inbyggda funktioner och metoder i Javascript, så kan man enkelt konvertera ett datum till en sträng på det sätt som passar bäst för ens egna behov.
+För att undvika problem med tidszoner, kan vi använda metoden toUTCString() som kommer att konvertera datumet till UTC-tiden och sedan använda toLocaleDateString() metoden för att få det i önskat format enligt den lokala tidszonen.
 
 ## Se även
 
-- [MDN web docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [JavaScript.info - Date and time](https://javascript.info/date)
+* [Javascript Date Object documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [Understanding Dates and Times in Javascript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)

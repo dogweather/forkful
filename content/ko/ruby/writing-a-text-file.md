@@ -1,56 +1,35 @@
 ---
-title:    "Ruby: 텍스트 파일 작성하기"
+title:    "Ruby: 텍스트 파일 쓰기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Ruby 프로그래밍 블로그/텍스트 파일 쓰는 법
-
+Ruby에서 텍스트 파일을 작성하는 활동을 즐기는 이유에 대해 알아보겠습니다.
 
 ## 왜
 
-텍스트 파일을 쓰는 이유는 여러 가지가 있습니다. 대표적으로 데이터를 보관하거나, 프로그램을 실행시키는 도중에 임시적인 정보를 저장하기 위해 사용됩니다. 또한, 소스 코드나 텍스트 문서를 저장하는 용도로도 많이 활용됩니다.
+텍스트 파일은 깨끗하고 정리된 형식으로 데이터를 저장할 수 있기 때문에, 프로그래밍에서 매우 유용합니다. 또한 코드 관리를 위해 자주 사용되며, 긴 코드 라인을 여러 개로 나누어 작업을 편리하게 만들어 줍니다.
 
-## 쓰는 방법
+## 방법
 
-텍스트 파일을 쓰기 위해서는 Ruby의 File 클래스를 사용해야 합니다. 아래는 간단한 예시 코드입니다:
+텍스트 파일을 작성하는 가장 간단한 방법은 Ruby의 `File` 클래스를 사용하는 것입니다. 아래 코드를 참고하세요.
 
 ```Ruby
-# 쓰기용 파일을 열기 위해 File.open 메소드를 사용합니다.
-File.open("text_file.txt", "w") do |file|
-    # 파일에 문자열을 쓰는 메소드는 write입니다.
-    file.write("안녕하세요, 여러분!")
-    # 여러 줄을 한 번에 쓰고 싶다면 puts 메소드를 사용할 수 있습니다.
-    file.puts("이번에는")
-    file.puts("여러 줄도")
-    file.puts("한 번에 작성해보세요!")
-end
+# 새로운 파일 만들기
+file = File.new("new_file.txt", "w")
 
-# 쓴 내용을 읽어와 출력해봅시다.
-puts File.read("text_file.txt")
+# 파일에 쓰기
+file.puts("Hello, world!")
+file.close
+
+# 기존 파일 열기
+file = File.open("existing_file.txt", "a")
+
+# 파일에 쓰기
+file.puts("Hello, Ruby!")
+file.close
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다:
-
-```
-안녕하세요, 여러분!
-이번에는
-여러 줄도
-한 번에 작성해보세요!
-```
-
-## 깊게 들어가기
-
-위에서 소개한 코드는 가장 기본적인 텍스트 파일 쓰기 방법입니다. 하지만 여러분은 파일을 여는 모드를 다르게 설정하거나, StringIO 클래스를 사용하여 메모리에 임시 파일을 생성하고 사용할 수도 있습니다. 또한, 파일을 읽는(read) 메소드와 쓰는(write) 메소드뿐만 아니라, 파일을 닫는(close) 메소드도 알아두는 것이 좋습니다.
-
-## 더 알아보기
-
-* [Ruby File 클래스 공식 문서](https://ruby-doc.org/core-2.5.1/File.html)
-* [Ruby StringIO 클래스 공식 문서](https://ruby-doc.org/stdlib-2.5.1/libdoc/stringio/rdoc/StringIO.html)
-* [파일 입출력에 대한 자세한 설명](https://www.rubyguides.com/2015/05/working-with-files-ruby/) 
-
-## 더 보기
-
-* [Markdown 언어에 대한 자세한 설명](https://daringfireball.net/projects/markdown/syntax)
-* [이전에 작성한 Ruby 프로그래밍 블로그/텍스트 파일 읽는 법](https://github.com/nereusong/ruby_programming_blog/blob/master/reading-text-file.md)
+위 코드에서 `File.new`를 사용하여 새로운 파일을 만들고, `File.open`으로 기존 파일을 열 수 있습니다. `"w"`나 `"a"`와 같은 파라미터는 파일을 쓰기 또는 추가하기 위해 열었는지를 나타냅니다. `puts` 메서드를 사용하여 파일에 내용을 쓸 수 있습니다. 이를 통해 텍스트 파일을 생성하고 내용을 쉽게 작성할 수 있습니다. 또한 `clo

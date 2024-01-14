@@ -1,41 +1,49 @@
 ---
 title:    "Swift: Sammenslåing av strenger"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Så hvorfor ville noen ønske å sette sammen strenger (concatenate strings)? Vel, dette er en vanlig oppgave i programmering når man trenger å kombinere flere tekststykker for å lage en lengre streng. Dette kan være nyttig når man skal lage en beskjed eller e-post, eller når man trenger å formatere data på en spesifikk måte. Ved å lære å sette sammen strenger i Swift, kan du gjøre programmeringen din mer effektiv og praktisk.
+Å slå sammen strenger er en viktig del av mange programmeringsoppgaver, spesielt når det kommer til å håndtere tekstdata. Dette kan være nyttig når du ønsker å kombinere forskjellige tekststrukturer eller legge til dynamisk generert tekst i et program. Ved å lære å slå sammen strenger i Swift, vil du kunne utføre komplekse tekstmanipulasjoner og bygge mer robuste programmer.
 
-##Slik gjør du det
+## Hvordan
 
-La oss se på et enkelt eksempel ved hjelp av Swift-kodeblokker. Vi skal sette sammen navn og etternavn til en fullstendig navnsammenstilling. Først må vi opprette to variabler som inneholder navnet og etternavnet:
+For å slå sammen strenger i Swift, kan du bruke operatøren "+" for å kombinere to eksisterende strenger til en ny. For eksempel, hvis du ønsker å slå sammen en fornavn og etternavn, kan du skrive følgende kode:
 
 ```Swift
-let navn = "Jenny"
+let fornavn = "Marie"
 let etternavn = "Johansen"
+let fulltNavn = fornavn + etternavn
 ```
 
-Deretter kan vi bruke operatoren "+" (pluss) til å kombinere disse to tekstene i en ny variabel som heter "fulltNavn":
+Her vil verdiene av variablene "fornavn" og "etternavn" kombineres og lagres i "fulltNavn" variabelen. Du kan også slå sammen flere strenger samtidig ved å bruke operatøren flere ganger. For eksempel, hvis du ønsker å legge til et mellomrom og en ekstra streng, kan du gjøre følgende:
 
 ```Swift
-let fulltNavn = navn + " " + etternavn
+let fornavn = "Marie"
+let mellomrom = " "
+let etternavn = "Johansen"
+let fulltNavn = fornavn + mellomrom + etternavn
 ```
 
-I dette eksempelet har vi også inkludert et mellomrom mellom navn og etternavn, slik at det fullstendige navnet blir formatert riktig.
+Resultatet vil bli "Marie Johansen". Du kan også bruke operatøren på en kombinasjon av variabler og konstante verdier.
 
-Etter å ha kjørt denne koden, vil verdien av "fulltNavn" være "Jenny Johansen". Kodeblokkene ovenfor viser bare et enkelt eksempel, men det er mange forskjellige måter å sette sammen strenger på, avhengig av behovene dine. Du kan for eksempel også bruke en "append" -funksjon eller bruke variabler sammen med en streng for å oppnå ønsket resultat.
+## Dypdykk
 
-##Dypdykk
+Når du slår sammen strenger, er det viktig å være klar over datatyper. Hvis du for eksempel prøver å slå sammen en streng og et tall, vil dette ikke fungere, da datatypene er forskjellige. Du kan imidlertid konvertere tall til strenger ved å bruke Swifts "String" -type, for eksempel:
 
-Når det gjelder å sette sammen strenger i Swift, er det noen viktige ting å huske på. For det første, når en streng blir satt sammen med en annen streng eller variabel, blir begge verdiene konvertert til strenger før de slås sammen. Dette betyr at du kan kombinere forskjellige datatyper (som tall og strenger) ved å konvertere dem til strenger først.
+```Swift
+let alder = 27
+let alderTekst = String(alder) // alderTekst vil nå være en streng som sier "27"
+```
 
-En annen ting å huske på er at hvis du setter sammen mange lange strenger, kan dette ha en negativ innvirkning på ytelsen til koden din. Dette er fordi å sette sammen strenger er en ressurskrevende operasjon, spesielt når det gjøres mange ganger i en løkke. Derfor kan det være lurt å begrense bruken av strykning til de tilfellene der det er absolutt nødvendig.
+Du kan også formatere strenger ved hjelp av "String(format:" %d ",)" funksjonen for å lage ønsket utgang. Det finnes også en rekke andre funksjoner og metoder for å arbeide med og manipulere strenger, som du kan utforske nærmere i Swifts offisielle dokumentasjon.
 
-##Se også
+## Se Også
 
-* [Swift Offisiell Nettside](https://swift.org/)
-* [Hvordan bruke variabler i Swift](https://www.appcoda.com/swift-variables/)
-* [Swift String Dokumentasjon](https://developer.apple.com/documentation/swift/string)
+- Swift dokumentasjon: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Video tutorial om å slå sammen strenger: https://youtu.be/llZEtOQODlI
+- I dybden artikkel om strenger i Swift: https://www.hackingwithswift.com/articles/140/what-is-a-string-in-swift

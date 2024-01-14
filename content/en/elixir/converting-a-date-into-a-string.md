@@ -1,53 +1,40 @@
 ---
 title:    "Elixir recipe: Converting a date into a string"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-### Why
+## Why
 
-If you're new to Elixir programming, you may be wondering why converting a date into a string is an important skill to have. However, as you start building more complex applications, you'll likely encounter situations where you need to manipulate dates and display them in a specific format. Converting a date into a string allows you to customize the way dates are presented and make your applications more user-friendly.
+Have you ever needed to display a date in a certain format in your Elixir program? Converting a date into a string is a common task in programming, and in this blog post, we will explore how to do this using Elixir.
 
-### How To
+## How To
 
-Converting a date into a string in Elixir is a fairly straightforward process. Let's look at an example using the `DateTime` module from the `Ecto` library:
-
-```Elixir
-# Import the DateTime module
-import DateTime
-
-# Set a date
-date = ~D[2021-01-01]
-
-# Convert the date into a string using DateTime.to_string/1
-date_string = DateTime.to_string(date)
-
-# Output: "2021-01-01 00:00:00"
-IO.puts(date_string)
-```
-
-In this example, we first import the `DateTime` module and then set a date using the `~D` sigil. Next, we use the `DateTime.to_string/1` function to convert the date into a string. One thing to note is that the output of `DateTime.to_string/1` will include the time as well, even if the original date did not have a time component.
-
-If you want to customize the format of the string, you can use the `to_string!/2` function and specify a format as the second argument. For example:
+Converting a date into a string can be achieved using the `~D` sigil. This sigil formats a date according to the ISO 8601 standard. Let's take a look at an example:
 
 ```Elixir
-# Output: "January 01, 2021"
-date_string = DateTime.to_string!(date, "{Month} {0} {YYYY}")
+~D[2021-07-22]
 ```
 
-The format string uses specifiers to define how the date should be formatted. For a full list of specifiers, you can refer to the official Elixir documentation for the `DateTime` module.
+This sigil will output the date as a string in the format `yyyy-mm-dd`. In this case, the output will be `2021-07-22`.
 
-### Deep Dive
+You can also specify a different format using the `strftime` function. For example:
 
-Under the hood, `DateTime.to_string/1` uses the `:calendar.format_time/2` function to convert the date into a string. This function uses the `:calendar.local_time_zone/0` to determine the timezone of the date and adjust it accordingly. If you need to convert a date into a string without adjusting for timezones, you can use `:calendar.universal_time/1` instead.
+```Elixir
+~D[2021-07-22] |> DateTime.to_erl |> :os.date("MM dd, yyyy")
+```
 
-Additionally, Elixir also provides the `NaiveDateTime` module which handles dates and times without considering the timezone. This can be useful for cases where you want to perform date calculations without worrying about timezones.
+This will output the date in the format `MM dd, yyyy`, which in this case would be `07 22, 2021`.
 
-### See Also
+## Deep Dive
 
-If you want to dive deeper into date and time manipulation in Elixir, check out these resources:
+Behind the scenes, the `~D` sigil uses the `DateTime` module to convert the date into a string. This module provides several functions for working with dates and times in Elixir. The `to_erl` function is used to convert the Elixir date into an Erlang date, which is then passed to the `strftime` function for formatting.
+
+Additionally, the `DateTime` module also has functions for parsing and manipulating dates and times, making it a useful tool for any date-related operations in your Elixir programs.
+
+## See Also
 
 - [Elixir DateTime module](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir NaiveDateTime module](https://hexdocs.pm/elixir/NaiveDateTime.html)
-- [Elixir Calendar module](https://hexdocs.pm/elixir/Calendar.html)
+- [Erlang strftime format](http://erlang.org/doc/man/os.html#date-1)

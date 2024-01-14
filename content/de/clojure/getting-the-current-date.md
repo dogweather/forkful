@@ -1,55 +1,43 @@
 ---
-title:    "Clojure: Aktuelles Datum erhalten"
+title:    "Clojure: Das Abrufen des aktuellen Datums"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+# Warum
 
-Das Abrufen des aktuellen Datums kann für verschiedene Anwendungsfälle nützlich sein, wie z.B. das Erstellen von Zeitstempeln in Logs, die Berechnung von Alter oder die Planung von wiederkehrenden Aufgaben.
+Das Abrufen des aktuellen Datums ist in der Programmierung eine nützliche Aufgabe und kann in verschiedenen Anwendungsfällen erforderlich sein. Zum Beispiel können wir das Datum in einer Anwendung anzeigen, um die Aktualität von Daten zu überprüfen oder in einer monatlichen Berichtsfunktion verwenden.
 
-## Wie es geht
+# Wie es gemacht wird
 
-In Clojure gibt es verschiedene Möglichkeiten, das aktuelle Datum zu erhalten. Eine einfache Möglichkeit ist die Verwendung der Funktion `today`, die in der Bibliothek `clj-time` enthalten ist.
+Um das aktuelle Datum in Clojure zu bekommen, verwenden wir die Funktion ` (java.util.Date.)` . Diese Funktion erstellt ein Objekt vom Typ `java.util.Date` , das das aktuelle Datum und die Uhrzeit enthält.
 
-```Clojure
-(use 'clj-time.core)
-(today)
+```
+Clojure (java.util.Date.)
 ```
 
-Dies gibt das aktuelle Datum als `org.joda.time.LocalDate`-Objekt zurück, das weiter verwendet werden kann, um das Datum in einem bestimmten Format auszugeben.
+Das obige Beispiel gibt das aktuelle Datum und die Uhrzeit als Objekt zurück. Um das Datum lesbarer zu machen, können wir die ` (format)` Funktion verwenden.
 
-```Clojure
-(local-date-string (today) "dd.MM.yyyy")
-;; Output: "12.04.2021"
+```
+Clojure (format (java.text.SimpleDateFormat. "dd.MM.yyyy") (java.util.Date.))
 ```
 
-Alternativ kann das aktuelle Datum mit der eingebauten Funktion `now` abgerufen werden, die einen `java.util.Date` zurückgibt.
+Dies gibt das Datum in dem Format "TT.MM.JJJJ" aus (zum Beispiel 10.09.2021).
 
-```Clojure
-(now)
+# Tiefentauchen
+
+Es gibt viele Möglichkeiten, das Datum in Clojure weiter zu manipulieren oder es in verschiedene Formate zu konvertieren. Eine Möglichkeit ist die Verwendung der ` (clj-time)` Bibliothek, die eine einfachere und flexiblere Art und Weise bietet, mit Datum und Zeit in Clojure zu arbeiten. Zum Beispiel können wir das gleiche Beispiel wie oben mit dieser Bibliothek wie folgt schreiben:
+
+```
+Clojure (require 'clj-time.core)
+Clj (d/in (clj-time.core/today) (clj-time.core/formatter "dd.MM.yyyy"))
 ```
 
-Die Rückgabe kann dann mit der Funktion `format` in ein bestimmtes Datumsformat umgewandelt werden.
+Dies gibt das gleiche Ergebnis wie das vorherige Beispiel zurück. Mit dieser Bibliothek können wir auch das Datum nach unseren Wünschen manipulieren, z.B. indem wir eine bestimmte Anzahl von Tagen oder Monaten hinzufügen oder abziehen.
 
-```Clojure
-(format (now) "dd.MM.yyyy")
-;; Output: "12.04.2021"
-```
+# Siehe auch
 
-## Tiefentauchen
-
-Im Hintergrund arbeitet Clojure mit dem Joda-Time-Framework, das eine umfangreiche Unterstützung für Datum und Zeit bietet, einschließlich Zeitzonen und Ära. Das `clj-time`-Paket bietet eine bequeme Abstraktion für die Verwendung in Clojure.
-
-Es ist auch möglich, das aktuelle Datum mit verschiedenen Zeitangaben zu kombinieren, z.B. um das Datum und die Uhrzeit zu erhalten.
-
-```Clojure
-(local-date-time (now))
-```
-
-## Siehe auch
-
-- Joda-Time Dokumentation: https://www.joda.org/joda-time/
-- Clojure-Docs für `clj-time`: https://cljdoc.org/d/clj-time/clj-time/0.15.2/doc/readme
-- Offizielles Clojure-Tutorial: https://clojure.org/guides/getting_started
+- Dokumentation zur Funktion ` (java.util.Date.)`: https://clojuredocs.org/clojure.java/javadoc/clojure.java.api/. Date
+- Dokumentation zur ` (clj-time)` Bibliothek: https://github.com/clj-time/clj-time

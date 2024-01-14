@@ -1,56 +1,42 @@
 ---
 title:    "Elixir: Oppretting av en midlertidig fil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
 
-Å lage midlertidige filer kan være en nyttig teknikk når du jobber med Elixir-programmer. Disse filene kan brukes til å lagre midlertidig data som trengs for å fullføre en handling, og kan deretter slettes når de ikke lenger er nødvendige. I denne bloggposten vil vi utforske hvordan man kan lage midlertidige filer i Elixir og hva deres formål er.
+Å opprette midlertidige filer er en vanlig oppgave i programmering. Disse filene brukes ofte til å lagre midlertidig data som bare vil være relevant for en kort periode. Dette kan inkludere midlertidige lagringssteder for nedlastede filer, midlertidige datagenereringer eller midlertidige bufferområder for prosesser. I Elixir vil du ofte møte behovet for å opprette midlertidige filer når du jobber med dataoverføring, filbehandling og webskraping.
 
-# Hvordan lage midlertidige filer
+##Slik gjør du det
 
-Det finnes flere måter å lage midlertidige filer på, avhengig av hva slags data du ønsker å lagre og hvordan den skal brukes. Vi vil ta en titt på tre forskjellige metoder som kan være nyttige for ulike scenarioer.
+Å opprette en midlertidig fil i Elixir er en enkel prosess ved hjelp av standardbiblioteket. Først må du importere `File`-modulen ved å inkludere `:file` i modulen. Deretter kan du bruke `tempfile/2`-funksjonen til å opprette en midlertidig fil. Denne funksjonen tar inn et filnavn og en liste over alternativer som argumenter. Her er et eksempel på hvordan du kan bruke `tempfile/2`-funksjonen:
 
-Først må vi importere Elixir-modulen `File` som lar oss håndtere filer. For å lage en midlertidig fil, bruker vi funksjonen `temp_file/0` og lagrer det i en variabel.
-
-```Elixir
-temp_file = File.temp_file
+```
+import File
+{tempfile, filepath} = tempfile("my_temp_file.txt", [:temp_dir, "path/to/temp/dir/"])
 ```
 
-Dette vil opprette en fil i operativsystemets midlertidige mappe og returnere stien til filen. Vi kan deretter bruke denne variabelen til å skrive data til filen ved hjelp av funksjonen `write/2` og lese fra filen ved hjelp av funksjonen `read/1`.
+I dette eksempelet opprettes en midlertidig fil med navnet "my_temp_file.txt" i mappen "path/to/temp/dir/". Merk at du også kan legge til andre alternativer som `[:prefix, "temp_"]` for å gi filnavnet et prefiks, eller `[:suffix, "_temp"]` for å legge til et suffiks. Når filen er opprettet, returnerer funksjonen en tuple med filobjektet og stien til filen.
 
-```Elixir
-File.write(temp_file, "Dette er en midlertidig fil.")
-IO.puts(File.read(temp_file))
+For å lese og skrive til den midlertidige filen, kan du bruke `File.read/1` og `File.write/2`-funksjonene. Her er et eksempel på hvordan du kan lese fra og skrive til den midlertidige filen:
+
+```
+File.read(filepath)
+|> Enum.each(fn line -> IO.puts(line) end)
+
+File.write(filepath, "Dette er en midlertidig fil")
 ```
 
-Output:
-```
-Dette er en midlertidig fil.
-```
+Når du er ferdig med å bruke den midlertidige filen, må du slette den ved å bruke `File.rm/1`-funksjonen. Dette er viktig for å unngå å fylle opp disken med unødvendige midlertidige filer.
 
-En annen måte å lage en midlertidig fil på er å bruke funksjonen `temp_file/2` som lar deg spesifisere et navn for filen i tillegg til å opprette en fil i ønsket mappe.
+##Dypdykk
 
-```Elixir
-user_file = File.temp_file("bruker_", ".txt", "/bruker/arkiv")
-```
+I Elixir kan du også bruke `tempfile/3`-funksjonen for å opprette en midlertidig fil i en spesifikk mappe og med et bestemt prefiks og suffiks. Du kan også bruke `tempfile!/2`-funksjonen hvis du vil få en feilmelding hvis filen ikke kan opprettes. Utover dette har Elixir også mange andre nyttige funksjoner for filbehandling, inkludert `File.stat/1` for å få informasjon om en fil og `File.rename/2` for å endre navnet på en fil.
 
-Denne koden vil opprette en fil med navnet "bruker_" og ".txt" som suffiks i mappen "/bruker/arkiv".
-
-En tredje tilnærming er å bruke `File.open/2` som lar deg spesifisere at filen skal være midlertidig ved å sette parameteren `[:temporary, true]`. Dette vil slette filen når den er lukket og kan være nyttig når du kun trenger å bruke filen i en kort periode.
-
-# Dykk dypere
-
-I tillegg til de tre metodene vi har tatt en titt på, finnes det flere funksjoner og alternativer du kan utforske når du jobber med midlertidige filer. For eksempel kan du spesifisere filens lese- og skrive-tilgang ved hjelp av `temp_file/2` eller bruke `File.unlink/1` for å slette en midlertidig fil manuelt.
-
-Et viktig punkt å merke seg er at midlertidige filer vil bli slettet automatisk når programmet avsluttes, men det kan være nyttig å slette dem manuelt for å rydde opp etter seg.
-
-# Se også
+##Se også
 
 - [Elixir File modul dokumentasjon](https://hexdocs.pm/elixir/File.html)
-- [Offisiell Elixir nettside](https://elixir-lang.org/)
-- [Elixir Community Forum](https://elixirforum.com/)
-
-Nå burde du være klar til å begynne å lage midlertidige filer i dine Elixir-prosjekter. Fortsett å utforske og prøv ut forskjellige metoder for å se hva som fungerer best for deg. Lykke til!
+- [Elixir Tempfile prosjekt på Github](https://github.com/lsm/elixir-tempfile)

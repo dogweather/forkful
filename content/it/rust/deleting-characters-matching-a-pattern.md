@@ -1,58 +1,40 @@
 ---
-title:    "Rust: Eliminare i caratteri corrispondenti a un modello"
+title:    "Rust: Eliminazione dei caratteri corrispondenti a un modello."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-La cancellazione di caratteri che corrispondono a un certo pattern può essere un'operazione molto utile in alcune situazioni, come ad esempio nel processo di pulizia dei dati o nella gestione delle stringhe. In questo articolo vi spiegherò come farlo utilizzando il linguaggio di programmazione Rust.
+Cancellare i caratteri corrispondenti a un determinato modello può sembrare un'operazione inutile, ma in realtà può essere molto utile per pulire i dati o per migliorare il processo di analisi dei dati in un progetto Rust.
 
-## Come Fare
+# Come fare
 
-Per prima cosa, dobbiamo importare la libreria Regex di Rust per poter utilizzare le espressioni regolari. Possiamo farlo nel nostro codice con la seguente linea:
-
-```Rust
-use regex::Regex;
-```
-
-Successivamente, dobbiamo creare un oggetto Regex che rappresenti il pattern da cercare. Possiamo farlo utilizzando il metodo `new` e passando come parametro una stringa contenente l'espressione regolare. Ad esempio, se vogliamo cancellare tutte le vocali da una stringa, possiamo usare il seguente codice:
+Per cancellare i caratteri che corrispondono a un pattern in Rust, possiamo utilizzare il metodo `trim_matches()` della libreria standard. Ad esempio, se vogliamo rimuovere tutti i caratteri `x` da una stringa, possiamo utilizzare il seguente codice:
 
 ```Rust
-let re = Regex::new("[aeiou]").unwrap();
+let stringa = "ciaoxxxmondo";
+let stringa_pulita = stringa.trim_matches('x');
+println!("{}", stringa_pulita); //stamperà "ciaomondo"
 ```
 
-Ora che abbiamo il nostro oggetto Regex, possiamo utilizzarlo per sostituire i caratteri corrispondenti al pattern con una stringa vuota, utilizzando il metodo `replace_all` e passando come secondo parametro una stringa vuota. Ad esempio, possiamo sostituire le vocali nella stringa "ciao mondo" con il seguente codice:
+In questo esempio, il carattere `x` viene rimosso dalla stringa e il risultato viene assegnato alla variabile `stringa_pulita`. Successivamente viene stampata la stringa pulita, senza i caratteri eliminati.
+
+# Approfondimento
+
+Il metodo `trim_matches()` accetta un parametro di tipo `char` che corrisponde al carattere o al pattern che vogliamo eliminare dalla stringa. È possibile utilizzare anche più di un carattere all'interno delle parentesi per eliminare più caratteri corrispondenti. Ad esempio, se volessimo eliminare sia la lettera `x` che la lettera `y` dalla stringa, potremmo scrivere il seguente codice:
 
 ```Rust
-let result = re.replace_all("ciao mondo", "");
+let stringa = "ciaoxxxmondo";
+let stringa_pulita = stringa.trim_matches(['x', 'y']);
+println!("{}", stringa_pulita); //stamperà "ciaomondo"
 ```
 
-Il valore della variabile `result` sarà ora "c mnd". Possiamo stampare il risultato a schermo utilizzando il metodo `println`:
+In questo caso, viene restituita una stringa senza i caratteri `x` e `y` eliminati.
 
-```Rust
-println!("{}", result);
-```
+# Vedi anche
 
-E otterremo il seguente output:
-
-```
-c mnd
-```
-
-## Deep Dive
-
-L'utilizzo delle espressioni regolari ci permette di specificare pattern più complessi e di utilizzare dei "wildcard" per effettuare sostituzioni più avanzate. Ad esempio, possiamo utilizzare il simbolo `.` per indicare qualsiasi carattere e il simbolo `+` per indicare una o più ripetizioni del carattere precedente. Quindi, se volessimo cancellare tutti i numeri presenti in una stringa, possiamo utilizzare il seguente pattern:
-
-```
-[0-9]+
-```
-
-Utilizzando l'esempio di prima, se aggiungiamo il pattern "[0-9]" alla nostra espressione regolare, il risultato finale sarà "c mndo".
-
-## Vedi Anche
-
-- [Documentazione della libreria Regex di Rust](https://docs.rs/regex/)
-- [Espressioni regolari in Rust](https://danielkeep.github.io/tlborm/book/recipes/regex.html)
-- [Tutorial sulle espressioni regolari in Rust](https://riptutorial.com/rust/example/4409/basic-regular-expressions)
+- [Documentazione del metodo `trim_matches()`](https://doc.rust-lang.org/std/primitive.str.html#method.trim_matches)
+- [Esempi di utilizzo di `trim_matches()`](https://github.com/rust-lang/rust/issues/15015)

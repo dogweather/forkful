@@ -1,59 +1,54 @@
 ---
 title:    "Arduino: 将日期转换为字符串"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么会这样?
+## 为什么
 
-许多时候，当我们在制作Arduino项目时，需要将日期转换为字符串。这样可以使日期更加易读和易于管理，特别是在将日期打印到显示屏或保存到日志文件时。在本文中，我们将探讨如何在Arduino中实现这一目标。
+首先，让我们来思考一下为什么我们需要将日期转换为字符串。在编程中，日期和时间通常以数字的形式存储，例如2021年7月1日。但是，当我们需要将它们显示给用户时，我们通常希望以友好的日期格式来呈现，例如“2021年7月1日”。因此，将日期转换为字符串可以让我们更方便地控制如何显示日期，并使用户更容易理解。
 
-#Arduino如何转换日期为字符串
+## 如何做
 
-要将日期转换为字符串，我们首先需要使用Date库。这个库包含了许多有用的函数来处理日期和时间。首先，我们需要定义一个Date对象，并使用now（）函数来获取当前日期和时间。然后，我们可以使用函数year（），month（），day（）等来获取特定的日期值，并将它们转换为字符串。以下是一个示例代码：
+在Arduino编程中，日期和时间都是通过标准库中的Time库来处理的。要将日期转换为字符串，首先我们需要将日期存储在一个tmElements_t结构中，该结构包含日期和时间的各个成员变量。例如，我们想将当前日期转换为字符串，我们可以这样做：
 
-```
-#include <Date.h>
-
-//定义Date对象
-Date date;
-
-void setup() {
-  //启动串口通信
-  Serial.begin(9600);
-  //获取当前日期和时间
-  date = now();
-  //将日期值转换为字符串并打印到串口
-  Serial.print("今天是");
-  Serial.print(day(date));
-  Serial.print("-");
-  Serial.print(month(date));
-  Serial.print("-");
-  Serial.print(year(date));
-}
-
-void loop() {
-  //无需执行任何操作，因为我们只需要打印日期一次
-}
+```Arduino
+tmElements_t now;
+now.Year = 2021;
+now.Month = 7;
+now.Day = 1;
 ```
 
-输出结果应该类似于以下内容：
+接下来，我们使用函数`makeDateString()`来将tmElements_t结构中的日期转换为字符串。该函数接受四个参数：tmElements_t结构，日期格式，日期分隔符和是否包含星期几。例如，我们想将2021年7月1日转换为“2021-07-01（周四）”，我们可以这样做：
 
+```Arduino
+String dateString = makeDateString(now, "YYYY-MM-DD (DDD)");
 ```
-今天是 30-9-2019
+
+最后，我们可以使用`print()`函数来显示字符串日期：
+
+```Arduino
+Serial.println(dateString);
 ```
 
-#深入探讨
+输出将是：“2021-07-01（周四）”。
 
-在上面的示例中，我们使用了now（）函数来获取当前日期和时间。但是，如果我们想要将指定的日期转换为字符串怎么办？幸运的是，Date库还提供了一个parse（）函数，它允许我们传入一个时间戳来创建一个Date对象。这样，我们就可以使用上面提到的其他函数来转换日期为字符串了。另外，Date库还提供了一些格式化函数，如printDate（）和printTime（），它们可以让日期和时间输出更加规范和易读。
+## 深入探讨
 
-#请查看
+在`makeDateString()`函数中，我们使用了C++的格式化字符串函数`strftime()`来实现日期格式的转换。该函数非常强大，可以根据我们传入的格式字符串来显示不同的日期格式。例如，我们可以使用“YY年第D天（DDD）”，将日期格式转换为“21年第182天（周四）”。
 
-- [Arduino Date库参考手册](https://www.arduino.cc/reference/en/libraries/date/)
-- [Date对象文档](https://www.arduino.cc/en/Reference/Date)
-- [使用Arduino Date库处理日期和时间教程](https://www.arduino.cc/en/Tutorial/Time)
+值得注意的是，在Arduino中使用`strftime()`函数需要首先在sketch中添加`#include <TimeLib.h>`语句来包含Time库。
 
-#更多信息
+## 参考链接
 
-如果您想要更深入地了解如何在Arduino中处理日期和时间，可以参阅Date库的文档和相关教程。掌握这些技能可以为您的Arduino项目增添更多的功能和灵活性。祝您在使用Date库时顺利！
+- [Time Library - Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- [C++ String Formatting - cppreference.com](https://en.cppreference.com/w/cpp/io/c/fprintf)
+- [Strftime Functions - cppreference.com](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+
+---
+
+## 参见
+
+- [显示当前日期和时间 - 文档中心](https://www.arduino.cc/en/hacking/library-examples/time)

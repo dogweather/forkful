@@ -1,69 +1,46 @@
 ---
 title:    "Haskell recipe: Concatenating strings"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+# Why
+Concatenating strings is a powerful tool in any programming language, and Haskell is no exception. By joining two or more strings together, we can create longer and more complex strings that can be used in a variety of ways. Whether you need to generate dynamic text, format data, or build URLs, understanding how to concatenate strings is an important skill for any Haskell programmer.
 
-Concatenating strings is an essential task in any programming language, and Haskell is no exception. String concatenation allows you to combine multiple strings together to form a larger string, making it useful for creating messages, formatting text, or building complex data structures.
-
-## How To 
-
-To concatenate strings in Haskell, you can use the `++` operator. Let's look at an example:
+# How To
+To concatenate strings in Haskell, we use the `++` operator. Let's take a look at an example:
 
 ```Haskell
-concatStrings :: String -> String -> String
-concatStrings str1 str2 = str1 ++ str2
+str1 = "Hello"
+str2 = "World"
+concatStr = str1 ++ str2
 
-main = do
-  let greeting = "Hello, "
-  let name = "John"
-  let message = concatStrings greeting name
-  putStrLn message
+print concatStr
 ```
 
-Running this code will result in the following output:
-
-```
-Hello, John
-```
-
-In this example, we first declared a function called `concatStrings` that takes in two string parameters and uses the `++` operator to concatenate them. Then, in our `main` function, we declared two variables with strings as their values. We then used our newly created function to combine these two strings, and finally printed the result using the `putStrLn` function.
-
-You can also use the `concat` function from the `Data.List` module to concatenate a list of strings. Let's see how this works in code:
+In this code, we have two strings - "Hello" and "World" - and we use the `++` operator to combine them into one string. When we print out the `concatStr` variable, we get the output: "HelloWorld". We can also concatenate multiple strings at once by using the `++` operator in between each string.
 
 ```Haskell
-import Data.List
+str1 = "I"
+str2 = "love"
+str3 = "coding"
+concatStr = str1 ++ str2 ++ str3
 
-names :: [String]
-names = ["John", "Jane", "Adam"]
-
-greeting :: String
-greeting = "Hello, "
-
-message :: String
-message = concat [greeting, concat names]
-
-main = do
-  putStrLn message
+print concatStr
 ```
 
-The output of this code will be:
+This time, the output would be: "Ilovecoding".
 
-```
-Hello, JohnJaneAdam
-```
+We can also use the `++` operator with string literals, variables, and even functions that return strings. The possibilities are endless!
 
-In this example, we first imported the `Data.List` module to gain access to the `concat` function. Then, we created a list of strings called `names` and declared two strings, `greeting` and `message`. Using the `concat` function, we combined the `greeting` string with the `names` list, resulting in a single string that we then printed using the `putStrLn` function.
+# Deep Dive
+Under the surface, Haskell uses the `append` function to concatenate strings. This function takes in two strings and returns a new string that is the result of concatenating them. Thus, when we use the `++` operator, we are essentially using the `append` function behind the scenes.
 
-## Deep Dive 
+It's important to note that concatenation in Haskell is not just limited to strings. We can also use it with other data types such as lists and numbers. However, when concatenating numbers, we need to first convert them into strings using the `show` function.
 
-In Haskell, strings are simply lists of characters, which explains why we were able to use the `concat` function to combine multiple strings. However, when using the `++` operator, Haskell checks the entire length of the first string before appending the second string, which can be inefficient for large strings. To avoid this, you can use the `Text` data type from the `Data.Text` module. The `Text` data type provides much faster string manipulation compared to the standard `String` type.
-
-## See Also 
-
-- [Haskell String Manipulation](https://www.tutorialspoint.com/haskell_data_types/haskell_strings.htm)
-- [Real World Haskell: Strings](http://book.realworldhaskell.org/read/strings.html)
-- [Haskell Documentation: Data.List](https://www.haskell.org/hoogle/?hoogle=Data.List&scope=set:simple)
+# See Also
+- [Haskell Official Documentation](https://www.haskell.org/documentation/)
+- [Concatenation in Haskell](https://wiki.haskell.org/Concatenation)
+- [Haskell String Tutorial](https://www.tutorialspoint.com/haskell/haskell_strings.htm)

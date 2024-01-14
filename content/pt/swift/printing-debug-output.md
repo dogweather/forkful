@@ -1,47 +1,37 @@
 ---
 title:    "Swift: Imprimindo saída de depuração"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que imprimir saída de depuração?
 
-Ao escrever um código em Swift, é comum encontrar erros ou bugs que afetam a funcionalidade do seu aplicativo. Ao imprimir informações de depuração (debug output), você pode ter uma visão mais clara do que está acontecendo no seu código e assim, facilitar a identificação e correção desses erros.
+Então você está construindo um aplicativo incrível com Swift, mas de repente ele começa a apresentar bugs indesejados. Como encontrar a causa desses bugs? Bem, é aí que entra a saída de depuração. Imprimir mensagens do código pode fornecer informações valiosas sobre o que está acontecendo nos bastidores e ajudar a encontrar e corrigir erros.
 
 ## Como fazer
 
-Para imprimir informações de depuração em Swift, você pode utilizar a função "print()" seguida dos valores ou variáveis que deseja imprimir. Por exemplo:
+Existem algumas maneiras de imprimir saída de depuração no Swift. A maneira mais comum é usar a função `print()`, que recebe um ou mais parâmetros e imprime o conteúdo na janela de console. Veja um exemplo abaixo:
 
-```
-let numero = 5
-print("O número é: \(numero)")
-```
-
-A saída para este código seria: "O número é: 5", mostrando que a variável "numero" tem o valor 5. É importante notar que você também pode imprimir textos e variáveis juntos, utilizando o operador de concatenação ("\( )").
-
-## Toques avançados
-
-Existem algumas maneiras mais avançadas de imprimir informações de depuração em Swift. Uma delas é utilizar a função "dump()" que permite imprimir a estrutura completa de um objeto ou variável. Por exemplo:
-
-```
-dump(numeros)
+```Swift
+let num1 = 5
+let num2 = 10
+print("A soma de \(num1) e \(num2) é \(num1 + num2)")
 ```
 
-A saída para este código seria algo similar a:
+Este código imprimirá a seguinte saída no console:
 
-```
-▿ 5 elementos
-- 1 : 2
-- 2 : 5
-- 3 : 7
-- 4 : 9
-- 5 : 10
-```
+`A soma de 5 e 10 é 15`
 
-Esta função é útil quando você precisa ver todos os valores de uma lista, dicionário ou outro objeto complexo.
+Além disso, o Xcode possui uma ferramenta de depuração integrada que permite visualizar variáveis, valores e até mesmo rastros de pilha enquanto o código está sendo executado. Isso pode ser muito útil para encontrar problemas em tempo real.
+
+## Mergulho aprofundado
+
+A opção de personalizar a função `print()` é o que torna a saída de depuração tão poderosa. Você pode imprimir valores de diferentes tipos de dados, formatar strings e também criar suas próprias funções de depuração com base nas necessidades do seu projeto. Além disso, o uso do log de depuração é uma boa prática para ajudar a manter um código limpo e organizado.
 
 ## Veja também
 
-- Veja mais sobre a função `print()` na documentação oficial da Apple: https://developer.apple.com/documentation/swift/stream/1407783-print
-- Para saber mais sobre a função `dump()`, acesse: https://developer.apple.com/documentation/swift/debug/2884813-dump
+- [Documentação do Xcode: Debugging with Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html)
+- [Dicas para saída de depuração no Swift](https://medium.com/@morio/debugging-tips-in-swift-705a27d9ce86)
+- [Blog da Swift: Introdução à saída de depuração](https://www.swiftbysundell.com/posts/introduction-to-debugging-in-swift)

@@ -1,30 +1,45 @@
 ---
 title:    "Go: Generering av tilfeldige tall"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Å generere tilfeldige tall er en vanlig oppgave i mange programmeringsoppgaver. Enten det er for å lage et spill, teste algoritmer eller for å sikre sikkerheten i kryptografi, er muligheten til å generere tilfeldige tall essensiell. I denne bloggposten vil vi utforske hvordan vi kan generere tilfeldige tall i Go-programmeringsspråket.
 
-Generering av tilfeldige tall er en viktig del av programmering, spesielt i spill og simuleringer. Det kan legge til en tilfeldig og uforutsigbar faktor som gjør programmene mer realistiske og interessante.
+## Hvordan
+For å generere tilfeldige tall i Go, kan vi bruke pakken "math / rand". Først må vi importere denne pakken i koden vår ved å legge til "import (" math / rand ")" øverst i filen.
 
-# Hvordan
+Deretter kan vi bruke "rand.Intn (n)" for å generere et tilfeldig tall mellom 0 og n-1. Hvis vi for eksempel vil generere et tilfeldig tall mellom 1 og 10, kan vi bruke "rand.Intn (10) + 1". Vi kan også bruke "rand.Float64 ()" for å generere et tilfeldig desimaltall mellom 0 og 1.
 
-For å generere tilfeldige tall i Go, kan vi bruke pakken "math/rand". Først må vi importere pakken ved å skrive ```import "math/rand"```, deretter må vi sette en "seed" for å sikre at tallene blir generert på en tilfeldig måte. Dette kan gjøres ved å bruke funksjonen ```rand.Seed(seed)```, der "seed" er en hvilken som helst integer verdi.
+La oss se på et eksempel på hvordan dette kan se ut i praksis:
 
-For å generere et tilfeldig tall innenfor et bestemt område, kan vi bruke ```rand.Intn(n)```, der "n" er det øvre grensen for det genererte tallet. For eksempel, for å generere et tilfeldig tall mellom 1 og 10, kan vi skrive ```rand.Intn(10)+1```.
+```Go
+package main
 
-Hvis vi ønsker å generere et tilfeldig flyttall, kan vi bruke ```rand.Float64()```, som vil gi et tall mellom 0 og 1. For å få et tall innenfor et bestemt område, kan vi multiplisere resultatet med differansen mellom de to tallene, og deretter legge til det minste tallet. For eksempel, for å få et flyttall mellom 5 og 10, kan vi skrive ```rand.Float64()*(10-5)+5```.
+import ("fmt"
+        "math/rand")
 
-# Dypdykk
+func main () {
+  num := rand.Intn (10) + 1
+  fmt.Println ("Det tilfeldige tallet er:", num)
+}
+```
+Output:
+```
+Det tilfeldige tallet er: 7
+```
 
-Det er viktig å huske at tilfeldige tall som genereres av datamaskiner ikke er helt tilfeldige, men basert på algoritmer. Derfor kan de ikke brukes til sikkerhetsformål, som for eksempel kryptering. Det er også viktig å sette en ny "seed" for hver gang vi ønsker å generere nye tilfeldige tall, ellers vil sekvensen være den samme hver gang programmet kjører.
+## Dypdykk
+Å generere tilfeldige tall kan virke enkelt, men det er faktisk en kompleks oppgave. Det er fordi datamaskiner er deterministiske og dermed ikke i stand til å generere helt tilfeldige tall av seg selv. I stedet bruker de algoritmer som bruker en "seed" som starter punktet for å generere tallsekvensen.
 
-En annen viktig ting å huske på er at hvis du skal bruke tilfeldige tall i en løkke, må du sette "seed" utenfor løkken. Dette vil sikre at tallene blir generert på en annen måte i hver iterasjon.
+I Go bruker "math / rand" pakken en algoritme som kalles Mersenne Twister for å generere tilfeldige tall. Denne algoritmen er designet for å være svært effektiv og har en stor periode, noe som betyr at den kan generere mange forskjellige tall før den gjentar sekvensen.
 
-# Se Også
+Det er også viktig å merke seg at datamaskiner ikke er i stand til å generere ekte tilfeldighet. Derfor bør tilfeldige tall som brukes i sikkerhetsrelaterte oppgaver, som kryptografi, hentes fra eksterne kilder som for eksempel en fysisk tilfeldig tallgenerator.
 
-- https://www.golangprograms.com/how-to-generate-random-number.html
-- https://gobyexample.com/random-numbers
-- https://golang.org/pkg/math/rand/
+## Se Også
+* [Offisiell Go-dokumentasjon om å generere tilfeldige tall](https://golang.org/pkg/math/rand/)
+* [En artikkel om noen av de vanligste måtene å generere tilfeldige tall i programmering](https://www.baeldung.com/java-random)
+* [En artikkel som diskuterer de begrensningene og risikoene ved generering av tilfeldige tall på datamaskiner](https://www.random.org/randomness/)

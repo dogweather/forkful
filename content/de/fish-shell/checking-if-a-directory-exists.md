@@ -1,38 +1,47 @@
 ---
-title:    "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
+title:    "Fish Shell: Überprüfen, ob ein Verzeichnis existiert"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-In vielen Programmiersprachen ist es eine gängige Praxis, zu prüfen, ob ein Verzeichnis existiert, bevor es verwendet wird. Dies gilt besonders für Skriptsprachen wie die Fish Shell, die häufig zur Automatisierung von Aufgaben verwendet wird. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man in Fish Shell überprüfen kann, ob ein Verzeichnis vorhanden ist.
+Das Überprüfen, ob ein bestimmtes Verzeichnis existiert, ist ein wichtiger Schritt in der Entwicklung von Skripten oder Programmen. Es kann helfen, Fehler und unnötige Arbeit zu vermeiden, indem es sicherstellt, dass bestimmte Bedingungen erfüllt sind, bevor der Code ausgeführt wird.
 
-## Wie
+## Wie man es macht
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können wir das `test` -Kommando in Kombination mit der `-d`-Option verwenden. In der Fish Shell sieht der Code dafür folgendermaßen aus:
-
-```Fish Shell
-test -d /Pfad/zum/Verzeichnis
-```
-
-Wenn das Verzeichnis existiert, gibt das `test`-Kommando einen Exit-Code 0 zurück, andernfalls einen Exit-Code 1. Dies können wir verwenden, um bedingte Anweisungen in unserem Code auszuführen. Hier ist ein Beispiel, das eine Nachricht ausgibt, wenn das Verzeichnis existiert:
+Um in Fish Shell zu überprüfen, ob ein Verzeichnis existiert, müssen wir den Befehl `test` verwenden, der verschiedene Tests auf Dateien und Verzeichnisse ausführen kann.
 
 ```Fish Shell
-if test -d /Pfad/zum/Verzeichnis
-  echo "Das Verzeichnis existiert."
+if test -d "Pfad/zum/Verzeichnis"
+    echo "Das Verzeichnis existiert!"
+else
+    echo "Das Verzeichnis existiert nicht!"
 end
 ```
 
-## Deep Dive
+Beim Ausführen dieses Codes wird entweder "Das Verzeichnis existiert!" oder "Das Verzeichnis existiert nicht!" ausgegeben, je nachdem, ob das Verzeichnis vorhanden ist oder nicht.
 
-Bevor wir ein Verzeichnis überprüfen, ist es wichtig zu verstehen, dass existierende und lesbare Verzeichnisse nicht dasselbe sind. Ein Verzeichnis kann existieren, aber aufgrund von Berechtigungen nicht lesbar sein. Um sicherzustellen, dass das Verzeichnis nicht nur existiert, sondern auch lesbar ist, können wir auch die `-r`-Option verwenden.
+## Tiefer Einblick
 
-Eine weitere Möglichkeit, ein Verzeichnis zu überprüfen, besteht darin, die Fish Shell-eigene Funktion `is_dir` zu verwenden. Diese Funktion liefert einen booleschen Wert zurück und kann auch mit absoluten oder relativen Pfaden verwendet werden.
+Der `test`-Befehl wird unter der Haube von Fish Shell durch den Befehl `test` des Betriebssystems ausgeführt, der die Dateiattribute überprüft und je nach Ergebnis eine Wahrheitswert zurückgibt. Mit der Option `-d` überprüfen wir speziell, ob es sich bei dem angegebenen Pfad um ein Verzeichnis handelt.
+
+Es ist auch möglich, mehrere Bedingungen in einer Zeile zu überprüfen, indem `&&` für "und" und `||` für "oder" verwendet werden. Zum Beispiel:
+
+```Fish Shell
+if test -d "Pfad/zum/Verzeichnis" && test -e "Pfad/zum/Datei"
+    echo "Beide existieren!"
+else
+    echo "Eines existiert nicht!"
+end
+```
+
+In diesem Beispiel wird überprüft, ob sowohl das angegebene Verzeichnis als auch die angegebene Datei existieren. Nur wenn beide Bedingungen erfüllt sind, wird "Beide existieren!" ausgegeben, ansonsten "Eines existiert nicht!".
 
 ## Siehe auch
 
-- [Fish Shell-Testkommando](https://fishshell.com/docs/current/commands.html#test)
-- [Fish Shell-is_dir Funktion](https://fishshell.com/docs/current/cmds/is_dir.html)
-- [Check if Directory exists in Fish Shell](https://unix.stackexchange.com/questions/346525/check-if-directory-exists-in-fish-shell)
+- [Fish Shell Dokumentation zu `test`](https://fishshell.com/docs/current/cmds/test.html)
+- [Dokumentation des Betriebssystems zum `test`-Befehl](https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html)
+- [Einführung in Fish Shell](https://fishshell.com/docs/current/tutorial.html)

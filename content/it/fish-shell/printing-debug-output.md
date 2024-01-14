@@ -1,45 +1,83 @@
 ---
-title:    "Fish Shell: Stampa della produzione di debug"
+title:    "Fish Shell: Stampa dell'output di debug"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Immagina di essere bloccato nella risoluzione di un problema complesso di programmazione e di non sapere dove sia l'errore. Ecco dove entra in gioco la stampa dell'output di debug. Stampando l'output di debug, puoi ottenere informazioni preziose sullo stato delle variabili, sui passaggi del tuo codice e sulle eventuali eccezioni lanciate. Questo può aiutarti a individuare il problema e risolverlo più rapidamente.
+Stampare il debug output è un importante strumento nella programmazione, che ci aiuta a identificare e risolvere eventuali errori nel nostro codice. Con l'utilizzo della shell Fish, possiamo rendere questo processo ancora più semplice e veloce.
 
-## Come Fare
+## Come Fare 
 
-La stampa dell'output di debug in Fish Shell è molto semplice. Innanzitutto, assicurati di avere la versione più recente di Fish Shell installata sul tuo sistema. All'interno del tuo codice, puoi utilizzare il comando "echo" seguito dalla variabile o dall'espressione che desideri stampare. Ad esempio:
+Utilizzando il comando "echo" nella shell Fish possiamo facilmente stampare il debug output dei nostri programmi. Possiamo anche utilizzare la funzione "debug", che offre maggiori opzioni e strumenti per gestire il nostro output di debug.
 
-```
-Fish Shell
+Iniziamo con un semplice esempio di codice che stampa una stringa di debug:
 
-set variable "nome" "Marco"
-echo $name
-```
-
-Questo esempio stamperà il valore della variabile "nome", che in questo caso è "Marco". Puoi anche utilizzare il comando "printf" per stampare più variabili o espressioni in una sola riga. Ad esempio:
-
-```
-Fish Shell
-
-set var1 "pesci"
-set var2 "gufi"
-printf "Mi piacciono i %s e gli %s!" $var1 $var2
+```Fish Shell
+echo "Debug output: Hello, world!"
 ```
 
-Questo esempio stamperà "Mi piacciono i pesci e i gufi!".
+Il risultato di questo comando sarà:
 
-## Approfondimento
+```Fish Shell
+Debug output: Hello, world!
+```
 
-La stampa dell'output di debug è utile non solo per trovare errori, ma anche per capire meglio il funzionamento del tuo codice. Puoi utilizzare i comandi "echo" e "printf" anche all'interno di cicli e di blocchi condizionali per vedere come le variabili cambiano al variare delle iterazioni o delle condizioni.
+Possiamo anche aggiungere più variabili o espressioni alla nostra stringa di debug:
 
-Puoi anche utilizzare la variabile di sistema "status" per stampare il codice di uscita del tuo comando. Questo ti aiuta a capire se il tuo codice ha avuto successo o se è stato interrotto da un errore.
+```Fish Shell
+set nome "Marco"
+set cognome "Rossi"
+echo "Debug output: Ciao, $nome $cognome"
+```
+
+Il risultato sarà:
+
+```Fish Shell
+Debug output: Ciao, Marco Rossi
+```
+
+Possiamo anche utilizzare la funzione "debug" per avere un maggiore controllo sull'output di debug. Ad esempio, possiamo specificare un ID univoco per ogni messaggio di debug, in modo da poterli distinguere più facilmente e gestirli in modo più efficiente.
+
+```Fish Shell
+debug '123' "Questo è un messaggio di debug con ID 123."
+debug '456' "E questo è un altro messaggio con ID 456."
+```
+
+Il risultato sarà:
+
+```Fish Shell
+[123]: Questo è un messaggio di debug con ID 123.
+[456]: E questo è un altro messaggio con ID 456.
+```
+
+## Deep Dive
+
+Oltre ai semplici esempi di codice sopra, è possibile utilizzare la funzione "debug" per aggiungere ulteriori argomenti e opzioni, come la stampa dell'ora o il salvataggio dell'output in un file di log.
+
+Ad esempio, possiamo utilizzare l'opzione "-p" per stampare anche l'ora in cui viene eseguito il comando di debug:
+
+```Fish Shell
+debug -p "Oggi è il: (date)"
+```
+
+Il risultato sarà:
+
+```Fish Shell
+[1614886828]: Oggi è il: gio feb  4 21:00:28 CET 2021
+```
+
+Inoltre, possiamo specificare un file di log dove salvare tutti i nostri output di debug:
+
+```Fish Shell
+debug -l "file_di_log.txt" "Questo messaggio sarà salvato nel file di log."
+```
 
 ## Vedi Anche
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Guida di riferimento rapido di Fish Shell](https://hackernoon.com/a-quick-guide-to-fish-the-friendly-interactive-shell-5a3ae1da8b9b)
-- [Articolo su come utilizzare la stampa di debug per migliorare il tuo codice](https://levelup.gitconnected.com/debugging-with-print-statements-like-a-pro-67bd11a09224?source=your_stories_page-------------------------------------)
+- [Documentazione ufficiale della funzione "debug" in Fish Shell] (https://fishshell.com/docs/current/commands-debug.html)
+- [Tutorial su come utilizzare il debug output in Fish Shell] (https://www.journaldev.com/32281/fish-shell-debug)
+- [Articolo su come il debug output può aiutarti nella programmazione] (https://www.freecodecamp.org/news/a-guide-to-debugging-in-fish-shell/)

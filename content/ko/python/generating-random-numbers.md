@@ -1,46 +1,48 @@
 ---
 title:    "Python: 랜덤 숫자 생성"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 무작위 숫자를 생성할까요?
+## 왜 무작위 숫자 생성에 참여해야 하는가?
 
-무작위 숫자를 생성하는 것은 다양한 목적과 상황에서 인간에게 도움이 될 수 있습니다. 예를 들어, 데이터 분석, 통계학, 머신러닝, 게임 등에서 무작위 숫자는 매우 중요한 요소입니다. 무작위 숫자를 생성하는 것은 다양한 분야에서 활용도가 높기 때문에 프로그래밍에서도 중요한 개념입니다.
+우리 주위에는 많은 예측 가능한 패턴이 있습니다. 하지만 예측 불가능한 숫자를 필요로 할 때가 있습니다. 예를 들어 무작위 번호 생성은 보안 및 보안 검증에 사용될 수 있습니다. 또한 테스트 및 실험을 할 때 무작위 숫자를 사용하여 특정 상황에서 무엇이 발생할 수 있는지 알 수 있습니다.
 
-## 어떻게 하나요?
-
-파이썬에서 무작위 숫자를 생성하는 방법은 다양합니다. 여기에서는 `random` 라이브러리를 사용하는 방법을 소개합니다. 이 라이브러리에는 다양한 함수가 존재하며, 각각 다른 종류의 무작위 숫자를 생성할 수 있습니다.
+## 무작위 숫자 생성하는 방법
 
 ```Python
-import random
+# numpy 라이브러리를 불러옵니다
+import numpy as np
 
-# 0 이상 1 미만의 무작위 실수 생성
-print(random.random())
-
-# 1 이상 10 미만의 무작위 정수 생성
-print(random.randint(1, 10))
-
-# 주어진 리스트에서 무작위로 요소 선택
-fruits = ['apple', 'banana', 'orange', 'grape']
-print(random.choice(fruits))
+# 0과 1 사이에서 무작위 숫자 3개를 생성합니다
+random_nums = np.random.rand(3)
+print(random_nums)
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+이 코드를 실행하면 다음과 같은 결과가 나옵니다:
+
+[0.37672483 0.55425849 0.16253995]
+
+또는 다음과 같이 범위를 지정하여 숫자를 생성할 수도 있습니다:
 
 ```Python
-0.7933903119969373
-5
-orange
+# 1부터 10 사이에서 무작위 숫자 5개를 생성합니다
+random_nums = np.random.randint(low=1, high=10, size=5)
+print(random_nums)
 ```
 
-## 딥 다이브
+이 코드를 실행하면 다음과 같은 결과가 나옵니다:
 
-무작위 숫자를 생성하는 알고리즘에는 여러 가지가 있지만, 대표적으로 유사난수 생성기라는 것이 있습니다. 이는 사람이 무작위로 선택하는 것처럼 보이지만 실제로는 일정한 규칙에 따라 생성된 숫자들을 사용하는 것입니다. 또한, 컴퓨터에서 완전한 무작위 숫자를 생성하는 것은 불가능합니다. 그러나 충분히 무작위에 가까운 숫자를 생성할 수 있기 때문에 다양한 분야에서 활용됩니다.
+[4 8 2 7 9]
 
-# 또 보기
+## 무작위 숫자 생성에 대해 더 알아보기
 
-- [Python 랜덤 모듈 공식 문서](https://docs.python.org/3/library/random.html)
-- [파이썬 랜덤화에 대한 이야기](https://realpython.com/python-random/)
-- [컴퓨터에서 완전한 난수를 만들 수 있을까요?](https://physics.stackexchange.com/questions/326534/can-a-computer-generate-true-random-numbers)
+무작위 숫자 생성은 컴퓨터 과학에서 중요한 역할을 합니다. 이를 통해 다양한 알고리즘 및 시뮬레이션을 구현할 수 있습니다. 그리고 무작위 숫자 생성은 여러 분야에서 다양한 연구 및 응용프로그램에 사용됩니다. 하지만 무작위성의 개념 자체는 상대적이기 때문에 무작위 숫자를 생성하는 알고리즘은 항상 완벽하게 무작위하지는 않습니다. 따라서 항상 신뢰할 수 있는 라이브러리 및 메서드를 사용하는 것이 중요합니다.
+
+## 참고 링크
+
+- [numpy 라이브러리 문서](https://numpy.org/doc/)
+- [Python 무작위 숫자 생성 함수](https://docs.python.org/3/library/random.html)
+- [무작위 숫자 생성의 이해](https://www.geeksforgeeks.org/understanding-python-random-number-generator/)

@@ -1,46 +1,35 @@
 ---
-title:    "Ruby: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Ruby: Musterübereinstimmende Zeichen löschen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung hilfreich sein, um unerwünschte Zeichen aus einem String zu entfernen oder um bestimmte Teile des Strings zu ändern. Dies kann für eine bessere Datenverarbeitung oder zur Validierung von Eingaben nützlich sein.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Ruby-Programmierung sehr nützlich sein, um bestimmte Textabschnitte oder Zeichenketten zu entfernen. Dies kann zum Beispiel bei der Datenbereinigung oder bei der Manipulation von Textdateien hilfreich sein.
 
-## Anleitung
+## How To
 
-Um Zeichen, die einem bestimmten Muster entsprechen, in Ruby zu löschen, können Sie die Methode `gsub` verwenden. Diese Methode durchsucht den String nach dem angegebenen Muster und ersetzt alle übereinstimmenden Zeichen durch einen leeren String, wodurch sie effektiv gelöscht werden.
-
-```Ruby
-"abc123def456".gsub(/[0-9]/, "") # "abcdef"
-```
-
-In diesem Beispiel wird das Muster `/[0-9]/` verwendet, um alle Zahlen im String zu löschen. Sie können das Muster jedoch an Ihre spezifischen Bedürfnisse anpassen, um andere Zeichen zu entfernen.
-
-Ein weiteres Beispiel ist die Verwendung der Methode `delete`, die ähnlich wie `gsub` funktioniert, aber nur einzelne Zeichen anstelle von Mustern entfernt.
+Um in Ruby Zeichen zu löschen, die einer bestimmten Bedingung entsprechen, verwenden wir die "gsub" Methode zusammen mit einem regulären Ausdruck. Dieser reguläre Ausdruck definiert das Muster, nach dem wir suchen möchten. In folgendem Beispiel entfernen wir alle Leerzeichen aus einer Zeichenkette:
 
 ```Ruby
-"Ruby is awesome!".delete("a") # "Rby is wesome!"
+text = "Dies ist ein Beispieltext"
+text.gsub(/\s+/, "")
+#Output: "DiesisteinBeispieltext"
 ```
 
-Wie Sie sehen können, kann die Methode `delete` verwendet werden, um bestimmte Zeichen aus dem String zu entfernen. Beachten Sie jedoch, dass die Reihenfolge der Zeichen in der `delete` Methode keine Rolle spielt, während sie für `gsub` wichtig ist.
+Der reguläre Ausdruck `/\s+/` sucht nach einem oder mehreren aufeinanderfolgenden Leerzeichen und ersetzt diese durch einen leeren String. Wir können auch andere Zeichen oder Zeichenkombinationen löschen, indem wir den regulären Ausdruck entsprechend ändern.
 
-## Tiefen-Eintauchen
+## Deep Dive
 
-Beim Löschen von Zeichen in Ruby ist es wichtig zu beachten, dass diese Methoden Strings nicht ändern, sondern eine neue Version des Strings zurückgeben, in der die gewünschten Zeichen gelöscht wurden. Wenn Sie den aktualisierten String speichern und weiterverwenden möchten, müssen Sie ihn einer Variablen zuweisen.
+Für diejenigen, die tiefer in die Welt der regulären Ausdrücke eintauchen möchten, gibt es zahlreiche Möglichkeiten, Zeichen zu löschen, die einem bestimmten Muster entsprechen. Zum Beispiel können wir den regulären Ausdruck mit Zeichenklassen wie `\d` für Zahlen oder `\w` für alphanumerische Zeichen kombinieren, um spezifischere Muster anzugeben. Wir können auch Optionen wie "global" oder "ignore case" verwenden, um das Verhalten des regulären Ausdrucks anzupassen.
 
-Eine weitere nützliche Methode ist `sub`, die nur die erste Übereinstimmung im String ersetzt und den Rest unverändert lässt. Dies kann hilfreich sein, wenn Sie nur bestimmte Teile eines Strings ändern möchten.
-
-```Ruby
-"Hello World!".sub("World", "Ruby") # "Hello Ruby!"
-```
-
-Eine tiefergehende Erklärung von regulären Ausdrücken und Mustern könnte hier den Rahmen sprengen, aber es gibt zahlreiche Ressourcen online, die helfen können, diese leistungsfähigen Werkzeuge besser zu verstehen und anzuwenden.
+Ein hilfreiches Werkzeug zum Experimentieren und Testen von regulären Ausdrücken ist die Online-Plattform Rubular (https://rubular.com/). Hier können wir unsere regulären Ausdrücke eingeben und sofort sehen, welche Zeichen damit übereinstimmen und welche gelöscht werden würden.
 
 ## Siehe auch
 
-- Reguläre Ausdrücke in Ruby: https://www.ruby-lang.org/de/documentation/quickstart/4/
-- Vergleich von `gsub`, `delete` und `sub`: https://www.rubyguides.com/2019/10/ruby-gsub-method/
-- Tipps und Tricks für die Verwendung von regulären Ausdrücken in Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
+- Ruby Dokumentation zu regulären Ausdrücken: https://ruby-doc.org/core-2.7.1/Regexp.html
+- Einführung in reguläre Ausdrücke: https://www.rubyguides.com/2015/06/ruby-regex/
+- Weitere Anwendungsmöglichkeiten von regulären Ausdrücken in Ruby: https://medium.com/@rubylearning/ruby-regexes-739ce7d7f444

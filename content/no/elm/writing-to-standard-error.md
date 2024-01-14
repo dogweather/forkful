@@ -1,36 +1,39 @@
 ---
 title:    "Elm: Skriver til standardfeil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Det kan være mange grunner til å skrive til standard error under programmering. Det kan være nyttig for debugging og feilsøking, og kan også hjelpe med å identifisere potensielle problemer i koden din.
+Når du skriver kode, er det viktig å håndtere feil og feilretting på en effektiv måte. En måte å gjøre dette på er å skrive til standardfeil (standard error) i stedet for standard utgang (standard output). Dette hjelper deg med å identifisere og håndtere feil på en strukturert måte.
 
-## Hvordan gjøre det
+# Hvordan
 
-Å skrive til standard error i Elm er enkelt og kan gjøres ved å bruke funksjonen `Debug.crash`. For eksempel, hvis du vil skrive ut en feilmelding, kan du gjøre følgende:
-
-```Elm
-Debug.crash "Det har oppstått en feil."
-```
-
-Dette vil resultere i at `"Det har oppstått en feil."` blir skrevet ut i standard error.
-
-## Dypdykk
-
-Å skrive til standard error kan også være nyttig når du trenger å se på verdier eller variabler under kjøring av programmet ditt. For å gjøre dette, kan du bruke funksjonen `Debug.log`. For eksempel, hvis du vil se på verdien av en variabel `x`, kan du gjøre følgende:
+For å skrive til standardfeil i Elm, kan du bruke funksjonen "Debug.crash" sammen med en feilmelding som parameter. Dette vil skrive ut feilmeldingen til standardfeil når programmet ditt kjører. Se eksemplet nedenfor:
 
 ```Elm
-Debug.log "Variabel x" x
+Debug.crash "Noe gikk galt!"
 ```
 
-Dette vil skrive ut `"Variabel x"` og verdien av `x` i standard error. Dette kan være til hjelp når du prøver å finne ut hvorfor koden din ikke fungerer som forventet.
+Dette vil gi følgende utgang når programmet kjøres:
 
-## Se også
+```
+-- ERROR ------- noe gikk galt --------
+```
 
-- Offisiell Elm dokumentasjon for Debug: [https://package.elm-lang.org/packages/elm/core/latest/Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- En gjennomgang av debugging i Elm: [https://guide.elm-lang.org/debugging/](https://guide.elm-lang.org/debugging/)
-- Elm live programmering fra Interaktiv Elm-bloggen: [https://terezka.github.io/interaktiv-elm/](https://terezka.github.io/interaktiv-elm/)
+Dette gjør det enkelt å identifisere hvor og når en feil oppstår mens du kjører koden din.
+
+# Dypdykk
+
+Når du skriver til standardfeil i Elm, vil feilene dine vises i en strukturert og lett lesbar måte. Dette gjør det lettere å diagnostisere og løse problemer. I tillegg vil standardfeil også skrive ut verdifulle detaljer om kontekst og stack-trace, som kan hjelpe deg med å forstå hva som forårsaker feilen.
+
+Å skrive til standardfeil er spesielt nyttig når du håndterer feil i produksjonsmiljøet ditt. Ved å logge feil til standardfeil, kan du enkelt spore og identifisere problemer som brukere møter, og potensielt løse dem raskere.
+
+# Se Også
+
+- Offisiell Elm dokumentasjon for Debug Module: https://package.elm-lang.org/packages/elm/core/latest/Debug
+- Artikkel om Debugging i Elm: https://dev.to/marinantonio/debugging-in-elm-3ol0
+- Elm Slack Channel: https://elmlang.slack.com/

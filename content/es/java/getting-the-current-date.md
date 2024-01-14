@@ -1,53 +1,67 @@
 ---
 title:    "Java: Obteniendo la fecha actual"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué obtener la fecha actual? 
 
-Obtener la fecha actual puede parecer una tarea simple, pero es una parte esencial de cualquier programa o aplicación que trabaje con fechas y horarios. Saber cómo obtener la fecha actual en Java puede ayudar a garantizar la precisión y eficiencia en tus proyectos.
+Obtener la fecha actual es una tarea común y necesaria en la programación en Java. Puede ser útil para mostrar la fecha y hora en una aplicación, para realizar cálculos con fechas o simplemente para registrar cuándo se realizó una acción. A continuación, te mostraré cómo obtener la fecha actual en Java.
 
-## Cómo hacerlo
+## Cómo obtener la fecha actual en Java 
 
-Hay varias formas de obtener la fecha actual en Java, pero una de las maneras más sencillas es utilizando la clase `java.util.Date`. Para ello, primero debes importarla al comienzo de tu código:
+Para obtener la fecha actual en Java, utilizaremos la clase `java.util.Date` y `java.util.Calendar`. Ambas clases tienen métodos para obtener la fecha y hora actual en diferentes formatos. Veamos un ejemplo utilizando ambas clases y su salida en la consola.
 
 ```Java
 import java.util.Date;
-```
-
-Luego, puedes crear una nueva instancia de `Date` y utilizar el método `toString()` para mostrar la fecha actual en formato de cadena de caracteres:
-
-```Java
-Date date = new Date();
-System.out.println(date.toString());
-```
-
-La salida de este código sería algo como: `Mon Feb 22 17:34:12 CST 2021`.
-
-Otra forma de obtener la fecha actual es utilizando la clase `java.util.Calendar` y su método `getInstance()`. Al igual que antes, primero debes importar la clase:
-
-```Java
 import java.util.Calendar;
+
+public class FechaActual {
+    public static void main(String[] args) {
+
+        // Obtener la fecha actual utilizando Date
+        Date fecha = new Date();
+        System.out.println("Fecha actual: " + fecha);
+
+        // Obtener la fecha actual utilizando Calendar
+        Calendar calendario = Calendar.getInstance();
+        System.out.println("Fecha actual: " + calendario.getTime());
+    }
+}
 ```
 
-Luego, puedes utilizar el método `getInstance()` para crear una instancia de `Calendar` y obtener la fecha actual en un objeto `Date`:
+Con este código, obtenemos la fecha actual en dos formatos diferentes. La salida en la consola será similar a la siguiente:
+
+```
+Fecha actual: Mon Oct 18 12:20:36 CEST 2021
+Fecha actual: Mon Oct 18 12:20:36 CEST 2021
+```
+
+Como se puede ver, ambos métodos nos devuelven la fecha y hora actual en formato de `String`. Sin embargo, podemos personalizar el formato utilizando `SimpleDateFormat`, que nos permite especificar un patrón de formato para mostrar la fecha.
 
 ```Java
-Calendar cal = Calendar.getInstance();
-Date date = cal.getTime();
-System.out.println(date.toString());
+// Personalizar formato con SimpleDateFormat
+SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+System.out.println("Fecha actual: " + formato.format(fecha));
 ```
 
-La salida de este código sería la misma que en el ejemplo anterior.
+La salida ahora será similar a la siguiente:
 
-## Profundizando
+```
+Fecha actual: 18/10/2021 12:20:36
+```
 
-Aunque en este artículo hemos visto dos formas de obtener la fecha actual en Java, existen otras opciones como la clase `java.time.LocalDate` y el paquete `java.time` en general, que ofrece una amplia gama de funcionalidades para trabajar con fechas. También es importante tener en cuenta que en la mayoría de los casos es necesario tener en cuenta la zona horaria, ya que la fecha y hora pueden variar dependiendo del lugar en el que se encuentre el usuario. Tener en cuenta estos detalles puede ayudar a evitar posibles errores en tu código.
+## Profundizando en la obtención de la fecha actual
+
+Ambas clases, `Date` y `Calendar`, tienen métodos para obtener no solo la fecha actual, sino también la hora, la zona horaria, el día de la semana, el año y mucho más. También hay clases adicionales para trabajar con fechas, como `SimpleDateFormat` o `DateTimeFormatter` que nos permiten formatear y parsear fechas en diferentes formatos.
+
+También es importante tener en cuenta que a partir de Java 8, se introdujo la clase `LocalDate` en el paquete `java.time` que nos ofrece más opciones y una manipulación más sencilla de fechas.
 
 ## Ver también
 
-- [Documentación de Java: Clase Date](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Date.html)
-- [Documentación de Java: Paquete time](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/time/package-summary.html)
-- [Tutorial de programación en Java: Fechas](https://www.tutorialesprogramacionya.com/javaya/detalleconcepto.php?punto=51&codigo=51&inicio=45)
+- [Documentación de la clase Date en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Documentación de la clase Calendar en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Tutorial de Java SimpleDateFormat](https://www.programiz.com/java-programming/library/simpledateformat)
+- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

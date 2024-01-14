@@ -1,39 +1,45 @@
 ---
-title:    "PHP: 문자열 대문자로 변환하기"
+title:    "PHP: 스트링 대문자화하기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열의 첫 글자를 대문자로 변경하는 것에 대해 알아보겠습니다. 이 기능은 문자열을 이쁘게 포맷하거나 특정한 목적에 맞추기 위해 사용될 수 있습니다.
+문자열을 대문자로 바꾸는 것에 참여하는 이유는 그것이 쉽고 간단한 방법이라서입니다.
 
-## 어떻게
+## 방법
 
-PHP에서 문자열의 첫 글자를 대문자로 변경하기 위해서는 다음과 같은 코드를 사용할 수 있습니다.
-
-```PHP
-$string = "hello world";
-echo ucfirst($string); // Output: Hello world
-```
-
-우리는 우선 대문자로 변경할 문자열을 변수에 저장한 뒤 `ucfirst()` 함수를 이용해 첫 글자를 대문자로 변경합니다.
-
-## 깊이 파헤치기
-
-PHP에서 많은 문자열 함수들 중 `ucfirst()` 함수는 대문자로 첫 글자를 변경해주는 기능을 가지고 있습니다. 하지만 이 함수는 첫 글자가 영문자일 경우에만 동작하기 때문에 유니코드 문자열이나 이모지를 처리하는 데에는 적합하지 않습니다. 이를 해결하기 위해서는 `mb_convert_case()` 함수를 사용할 수 있습니다.
-
-예를 들어, 다음과 같은 문자열을 대문자로 변경해보겠습니다.
+우리는 `strtoupper()` 함수를 사용하여 문자열을 대문자로 바꿀 수 있습니다.
 
 ```PHP
+<?php
 $string = "안녕하세요";
-echo mb_convert_case($string, MB_CASE_TITLE, "UTF-8"); // Output: 안녕하세요
+echo strtoupper($string);
 ```
 
-`mb_convert_case()` 함수의 첫 번째 파라미터에는 대문자로 변경할 문자열이 입력되고, 두 번째 파라미터에는 `MB_CASE_TITLE` 상수를 지정해주어야 합니다. 마지막으로 문자열의 인코딩을 지정해주어야 하는데, 위 예제에서는 한글을 사용하기 때문에 `UTF-8`을 지정해주었습니다.
+결과:
 
-## 관련 자료
+```
+안녕하세요
+```
 
-- [PHP 문자열 함수 문서](https://www.php.net/manual/en/ref.strings.php)
-- [PHP mb_convert_case 함수 문서](https://www.php.net/manual/en/function.mb-convert-case.php)
+위와 같이 함수를 사용하면 간단하게 문자열을 대문자로 바꿀 수 있습니다.
+
+## 심층 분석
+
+`strtoupper()` 함수는 PHP 내장 함수로, 문자열을 모두 대문자로 바꿔줍니다. 이 함수는 인자로 만들어진 문자열을 받으며, 반환 값으로 대문자로 변환된 문자열을 리턴합니다.
+
+또한, 이 함수는 UTF-8 문자열을 지원하므로 언어에 관계없이 모든 문자를 대문자로 변환할 수 있습니다.
+
+이 함수는 대소문자를 구분하지 않고 문자를 비교하기 때문에, 인자로 들어온 문자열이 이미 대문자로 되어 있어도 결과는 동일할 것입니다.
+
+`strtoupper()` 함수를 이용해서 간단하게 문자열을 대문자로 바꿀 수 있지만, 자세히 보면 모든 문자를 대문자로 변환하기 때문에 적절한 상황에서만 사용하시기를 권장합니다.
+
+## 더 알아보기
+
+- PHP 공식 문서: http://php.net/manual/en/function.strtoupper.php
+- PHP 문자열 변환 함수 비교: https://www.fldtrace.com/php/08-string-functions.html
+- PHP 대문자 변환 함수 비교: https://www.techiedelight.com/php-uppercase-functions/

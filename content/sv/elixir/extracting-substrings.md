@@ -1,40 +1,43 @@
 ---
 title:    "Elixir: Extrahering av delsträngar"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att extrahera substrängar är ett användbart verktyg inom Elixir-programmering. Det kan hjälpa dig att enkelt bearbeta och manipulera textsträngar för att lösa olika problem.
+I många programmeringsprojekt måste vi hantera textsträngar på olika sätt. Ibland kan vi behöva extrahera delar av en sträng för att få ut specifik information eller anpassa den på ett särskilt sätt. I Elixir finns det ett antal inbyggda funktioner som hjälper oss att hantera detta.
 
-## Hur man gör det
+## Så här gör du
 
-Först och främst måste du ha en textsträng som du vill extrahera en del av. För att göra detta använder vi funktionen `String.slice/3`. Denna funktion tar in tre argument: den ursprungliga strängen, startindex och slutindex för den del du vill extrahera. Till exempel om vi bara vill ha de första tre tecknen ur strängen "Hejsan!", kan vi skriva:
-
-```Elixir
-String.slice("Hejsan!", 0, 3)
-```
-
-Detta returnerar "Hej" som output. Notera att index i Elixir börjar på 0, så "H" har index 0, "e" har index 1 och så vidare.
-
-Vi kan också använda oss av funktionen `String.split/2` för att dela upp en sträng baserat på ett visst tecken eller mönster. Till exempel kan vi dela upp strängen "Hej, detta är en Elixir-bloggpost" baserat på kommatecknet, genom att skriva:
+För att extrahera substrängar i Elixir kan du använda funktionen `String.slice/3`. Den tar tre argument: den ursprungliga strängen, startpositionen och slutpositionen för den del av strängen som du vill extrahera. Låt oss se på ett exempel:
 
 ```Elixir
-String.split("Hej, detta är en Elixir-bloggpost", ",")
+str = "Välkommen till Elixir-världen!"
+String.slice(str, 11, 17)
 ```
 
-Detta returnerar en lista med två strängar: "Hej" och "detta är en Elixir-bloggpost".
+Detta kommer att returnera "Elixir", som är substrängen som börjar på position 11 och slutar på position 17.
 
-## Deep Dive
+Om du vill extrahera en del av strängen från en visst position till slutet av strängen kan du använda funktionen `String.slice/2`, som endast tar två argument - den ursprungliga strängen och startpositionen. Låt oss se ett exempel på detta:
 
-Det finns många andra användbara funktioner för att extrahera substrängar i Elixir, såsom `String.replace/3` för att ersätta delar av en sträng med något annat och `String.trim/1` för att ta bort onödiga mellanslag från början och slutet av en sträng.
+```Elixir
+str = "Jag älskar programmering!"
+String.slice(str, 11)
+```
 
-Något att tänka på är att vanliga strängoperationer i Elixir returnerar alltid en ny sträng, istället för att modifiera den ursprungliga strängen. Detta säkerställer att vårt program är robust och inte riskerar att ändra på oförutsägbara sätt.
+Detta kommer att returnera "programmering!", eftersom vi inte specificerar någon slutposition och därmed returnerar strängen från position 11 till slutet av strängen.
+
+## Djupdykning
+
+När det gäller strängar i Elixir finns det en mängd inbyggda funktioner som du kan använda för att bearbeta och manipulera dem. När du extraherar en substräng, se till att utgå från startposition 0, inte 1. Detta beror på att Elixir behandlar strängar som listor av tecken. Till exempel, om vi har en sträng som "Hello world!" kommer varje tecken i strängen att representeras som en element i listan.
+
+En annan viktig sak att komma ihåg är att positioner i Elixir alltid är noll-indexerade, vilket innebär att den första positionen är 0, inte 1. Detta är viktigt att tänka på eftersom det kan påverka hur du specificerar start- och slutpositioner när du extraherar substrängar.
 
 ## Se även
 
-- [Elixir Dokumentation: String](https://hexdocs.pm/elixir/String.html)
-- [Elixir Skolan: Strängmanipulering](https://elixir-skolan.org/grundlaeggande-begrepp/strangmanipulering.html)
-- [Elixir Forum: Substring Extraction](https://elixirforum.com/t/substring-extraction/1689)
+- Officiell dokumentation för `String.slice/3`: https://hexdocs.pm/elixir/String.html#slice/3
+- En handledning om strängmanipulering i Elixir: https://elixir-lang.org/getting-started/string-interpolation-and-manipulation.html
+- Mina andra blogginlägg om Elixir: [länk], [länk], [länk]

@@ -1,43 +1,46 @@
 ---
 title:    "Haskell: 디버그 출력하기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-디버그 출력을 사용하는 이유는 프로그램을 디버깅하는 데 도움이 됩니다. 코드의 각 부분에서 어떤 값을 추적하고 문제를 해결하는 데 도움이 됩니다.
+디버그 출력을 하는 이유는 무엇일까요? 프로그램을 작성할 때 걸리는 시간과 노력을 절약할 수 있습니다.
 
-## 사용 방법
+## 하는 법
 
-다음은 Haskell에서 디버그 출력을 사용하는 방법의 예시입니다. 코드 블록 "```Haskell ...```" 안에 코딩 예시와 결과를 제공합니다.
+아래의 코드 블록을 보고 디버그 출력을 하는 방법을 익혀보세요!
 
-```
-main = do
-  putStrLn "Hello World"
-  putStrLn "Debug output: 1"
-  putStrLn "Debug output: 2"
-```
-
-출력:
-```
-Hello World
-Debug output: 1
-Debug output: 2
+```Haskell
+-- 기초 예제
+x = 5
+y = 10
+z = x + y
+putStrLn $ "x의 값은 " ++ show x ++ "입니다."
+putStrLn $ "y의 값은 " ++ show y ++ "입니다."
+putStrLn $ "x와 y를 더한 값은 " ++ show z ++ "입니다."
 ```
 
-## 깊이 들어가기
+## 깊게 들어가보기
 
-디버그 출력에 대해 더 자세한 정보를 알아보겠습니다. 디버그 출력을 추가하면 프로그램의 각 부분에서 어떤 값을 확인할 수 있습니다. 이를 통해 코드의 흐름을 이해하고 문제를 찾는 데 도움이 됩니다. 또한, 디버그 출력은 프로그램의 성능을 평가하고 최적화하는 데도 사용할 수 있습니다.
+디버그 출력에 대해 더 자세한 정보를 알고 싶다면 아래의 링크를 참고하세요. 이는 더 많은 디버깅 기술을 익힐 수 있도록 도움이 될 것입니다.
 
-## 참고 자료
+### 링크:
 
-- Haskell 디버깅 가이드: https://hackage.haskell.org/package/base-4.16.0.0/docs/Debug-Trace.html
-- 디버그 출력을 사용하는 이유: https://www.freecodecamp.org/news/how-to-debug-in-haskell/
-- 디버그 출력을 제거하는 방법: https://stackoverflow.com/questions/11758420/how-can-i-remove-trace-outputs-in-the-haskell-file
+- [Haskell 디버깅 기술](https://www.haskell.org/haskellwiki/Debugging)
+- [Haskell 디버깅을 위한 GHC 디버거 사용하기](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugger.html)
+- [Haskell의 디버그 출력 및 디버거 기능 사용하기](https://www.fpcomplete.com/blog/2018/02/debugging-haskell/) 
 
-## 참고자료
+## 자세히 알아보기
 
-- 인터랙티브 Haskell 튜토리얼: https://www.tutorialspoint.com/compile_haskell_online.php
-- Haskell 입문서: http://joyceho.github.io/t1r1/
+- [Haskell 디버깅에 대한 좋은 접근 방법](https://taylor.fausak.me/2014/03/05/good-approach-to-debugging-in-haskell/)
+- [Haskell의 디버그 출력을 남기는 방법](https://www.linuxjournal.com/content/practical-haskell-debugging-techniques)
+- [Haskell의 디버깅: 명령형 디버거의 대안](https://www.fpcomplete.com/blog/2011/10/haskell-no-debugger-no-problem-introducing-the-trace-monad) 
+
+## 관련 자료
+
+- [Markdown 사용법](https://www.markdownguide.org/basic-syntax/)
+- [Haskell 공식 홈페이지](https://www.haskell.org/)

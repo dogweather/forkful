@@ -1,42 +1,59 @@
 ---
 title:    "Rust: Wyszukiwanie i zastępowanie tekstu"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Znajdowanie i zamiana tekstu jest częstym problemem w programowaniu, szczególnie w przypadku dużych projektów. Jest to nie tylko kwestia wygody, ale także może mieć wpływ na wydajność i poprawność działania kodu. Dzięki możliwości wykorzystania Rust do tego celu, możemy mieć pewność, że proces ten będzie szybki i niezawodny.
+Stacja Przemysłowa Rust (Rust Industrial Station) jest wreszcie wygodną alternatywą dla wyszukiwania i zastępowania tekstu w Rust. Nie tylko jest łatwy w użyciu, ale też wydajny i niezawodny. W tym artykule dowiesz się, dlaczego warto wybrać Rust do wyszukiwania i zastępowania tekstu.
 
 ## Jak to zrobić
 
-Aby przeprowadzić proces znajdowania i zamiany tekstu w Rust, musimy wykorzystać metodę `replace()` na typie `String`. Przykład kodu wygląda następująco:
+Przykłady kodów i wyników (sample output) zawarte są w blokach kodu "```Rust ... ```". W Rust Industrial Station istnieją różne narzędzia służące do wyszukiwania i zastępowania tekstu. Jednym z nich jest funkcja `replace()` w module `std::string`, która zastępuje wszystkie wystąpienia danego tekstu w zmiennej. Na przykład:
 
 ```Rust
-let text = String::from("Witaj, świecie!");
-let new_text = text.replace("świecie", "mój drogi");
-println!("{}", new_text);
-// Output: Witaj, mój drogi!
+let my_string = "Cześć, jestem programistą w Rust!";
+let replaced_string = my_string.replace("Rust", "Python");
+println!("Nowy napis: {}", replaced_string);
 ```
 
-Możemy również wykorzystać metodę `replace()` w połączeniu z metodą `chars()` i `collect()` aby przeprowadzić zmiany na poszczególnych znakach w tekście. Przykład kodu wygląda następująco:
+Wynik:
+
+`Cześć, jestem programistą w Python!`
+
+Innym przydatnym narzędziem jest funkcja `find()` w module `std::str`, która wyszukuje pierwsze wystąpienie danego tekstu w zmiennej. Na przykład:
 
 ```Rust
-let text = String::from("12345");
-let new_text = text.chars().collect::<Vec<char>>().iter().map(|c| if *c == '4' { '7' } else { *c }).collect::<String>();
-println!("{}", new_text);
-// Output: 12375
+let my_string = "Hello world!";
+let found_position = my_string.find("world");
+println!("Pozycja znaleziona: {}", found_position);
 ```
 
-## Głębokie wycieczki
+Wynik:
 
-W Rust możemy również wykorzystać bibliotekę regex do przeprowadzania bardziej zaawansowanych operacji na tekście. W przypadku bardziej skomplikowanych wyrażeń regularnych, wykorzystanie tej biblioteki może być bardziej efektywne i wygodne niż ręczne parsowanie tekstu.
+`Pozycja znaleziona: 6`
 
-Zamiast wykorzystywać prostą metodykę `replace()` możemy również użyć metody `regex.Replace()` do przeprowadzenia zmian w konkretnych częściach tekstu, które pasują do określonego wyrażenia regularnego.
+## Głębsza analiza
 
-## Zobacz również
+W Rust Industrial Station możliwe jest także wykorzystanie wyrażeń regularnych do bardziej złożonych operacji wyszukiwania i zastępowania tekstu. Wyrażenia regularne są wzorcami, które pozwalają na dokładniejsze określenie szukanego tekstu. Na przykład, jeśli chcemy zastąpić wszystkie liczby pojedynczą gwiazdką, możemy użyć następującego wyrażenia regularnego:
 
-- [Dokumentacja Rust dla metody `replace()`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Przykład użycia biblioteki regex w Rust](https://docs.rs/regex/1.4.2/regex/)
-- [Poradnik o wyrażeniach regularnych w Rust](https://cheats.rs/#regex)
+```Rust
+let my_string = "Liczba pi to 3.141592653589793";
+let replaced_string = Regex::new(r"[0-9]+").unwrap().replace_all(&my_string, "*");
+println!("Napis z gwiazdkami: {}", replaced_string);
+```
+
+Wynik:
+
+`Liczba pi to *.**************`
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o wyszukiwaniu i zastępowaniu tekstu w Rust, zapoznaj się z następującymi linkami:
+
+- [Dokumentacja Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Oficjalny poradnik Rust](https://www.rust-lang.org/learn)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)

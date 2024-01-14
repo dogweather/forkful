@@ -1,50 +1,37 @@
 ---
-title:    "Swift: Das Schreiben einer Textdatei"
+title:    "Swift: Erstellen einer Textdatei"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich überhaupt die Mühe machen, eine Textdatei zu schreiben? Nun, Textdateien sind ein grundlegender Bestandteil der Entwicklung, da sie es Programmierern ermöglichen, Daten zu speichern und zu verarbeiten. Sie können auch für die Dokumentation von Code oder als Teil von Programmen verwendet werden.
+Warum sollte man sich überhaupt mit dem Schreiben von Textdateien in Swift beschäftigen? Nun, Textdateien sind ein häufig verwendetes Datenformat, das es ermöglicht, Informationen in einem menschenlesbaren Format zu speichern. Sie sind auch ein wichtiger Bestandteil bei der Verarbeitung von Daten in Software.
 
-## Wie geht man vor?
+## Wie geht das
 
-Das Schreiben einer Textdatei ist in Swift relativ einfach. Zunächst muss man eine Dateipfad-Variable erstellen, die auf den Speicherort der Textdatei verweist. Anschließend kann man den Inhalt der Datei mit einer Schleife durchlaufen und die Zeilen einzeln in die Datei schreiben. Hier ist ein Beispiel:
+Um eine Textdatei in Swift zu schreiben, können wir die Methode `write(to:atomically:)` verwenden. Zuerst müssen wir jedoch eine Instanz der `String` Klasse erstellen, welche den Inhalt der Datei beinhalten wird. Dann können wir diese Instanz der `write(to:atomically:)` Methode übergeben, um die Datei zu erstellen. Hier ist ein Beispielcode:
 
 ```Swift
-let path = "/Users/Benutzer/Desktop/Beispiel.text"
-
-do {
-    let text = "Das ist ein Beispieltext"
-    
-    // Öffnet die Datei im Schreibmodus
-    let file = try FileHandle(forWritingAtPath: path)
-    
-    // Fügt den Text an das Ende der Datei an
-    file?.seekToEndOfFile()
-    file?.write(text.data(using: .utf8)!)
-    
-    // Schließt die Datei
-    file?.closeFile()
-    
-    print("Datei erfolgreich geschrieben.")
-} catch {
-    print("Fehler beim Schreiben der Datei.")
-}
+let meinText = "Dieser Text wird in eine Datei geschrieben."
+let dateiURL = URL(fileURLWithPath: "meineDatei.txt")
+try meinText.write(to: dateiURL, atomically: true)
 ```
 
-Diese Beispielcode erstellt eine Textdatei mit dem Namen "Beispiel.text" auf dem Desktop und fügt den Text "Das ist ein Beispieltext" am Ende der Datei hinzu. Durch die Verwendung von "FileHandle" und "seekToEndOfFile() " wird sichergestellt, dass der Inhalt immer am Ende der Datei hinzugefügt wird.
+Wenn wir nun die Datei öffnen, werden wir den Inhalt sehen, den wir in `meinText` gespeichert haben:
 
-## Tiefer Einblick
+```
+Dieser Text wird in eine Datei geschrieben.
+```
 
-Es gibt noch viele andere Möglichkeiten, Textdateien in Swift zu erstellen und zu bearbeiten. Einige nützliche Funktionen sind zum Beispiel "write(toFile:atomically:encoding:)" zum Schreiben des Inhalts einer String-Variablen in eine Datei oder "contents(atPath:)" zum Lesen des Inhalts einer Textdatei in eine String-Variable.
+## Tiefere Einblicke
 
-In der offiziellen Swift-Dokumentation finden Sie weitere Informationen zum Manipulieren von Dateien und Verzeichnissen mit Swift.
+Es gibt noch einige weitere Optionen und Methoden, die wir verwenden können, um Textdateien in Swift zu schreiben. Zum Beispiel können wir die `write(to:atomically:encoding:)` Methode verwenden, um das Encoding der Datei anzupassen, oder die `appendingPathComponent()` Methode, um eine Datei in einem bestimmten Verzeichnis zu erstellen. Auch können wir die Lese- und Schreibberechtigungen für die Datei angeben. Tiefere Informationen und Beispiele dazu finden Sie in der offiziellen Swift Dokumentation.
 
 ## Siehe auch
 
-- [Apple Documenation zu Datei-Handhabung mit Swift](https://developer.apple.com/documentation/foundation/filehandle)
-- [Tutorial zu Datei-Handhabung in Swift](https://developer.apple.com/tutorials/swift4/files/)
-- [Weitere Ressourcen zum Schreiben von Textdateien in Swift](https://www.hackingwithswift.com/example-code/system/how-to-write-to-a-file-in-the-documents-directory)
+- Offizielle Swift Dokumentation zur `String` Klasse und dem Schreiben von Dateien: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID310
+- Ein [Tutorial](https://www.ralfebert.de/ios/tutorials/write-file/) zur Verwendung der `write(to:atomically:encoding:)` Methode in Swift
+- Die Dokumentation zur `URL` Klasse in Swift: https://developer.apple.com/documentation/foundation/url

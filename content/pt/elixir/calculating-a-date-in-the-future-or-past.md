@@ -1,57 +1,51 @@
 ---
-title:    "Elixir: Calculando uma data no futuro ou no passado"
+title:    "Elixir: Calculando uma data no futuro ou passado"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que calcular datas no futuro e no passado em Elixir?
+## Por que realizar cálculos de datas com Elixir?
 
-Se você está construindo um aplicativo de planejamento ou precisa automatizar tarefas relacionadas a datas, calcular datas no futuro e no passado pode ser uma tarefa importante. Com Elixir, podemos facilmente adicionar ou subtrair dias, meses ou anos a uma data específica. Neste post, vamos explorar como fazer isso de maneira eficiente e precisa.
+Calcular datas no futuro ou no passado pode ser uma necessidade comum em muitos aplicativos ou sistemas. Com a linguagem de programação Elixir, essa tarefa pode ser realizada de forma simples e eficiente. Neste artigo, discutiremos como podemos usar Elixir para calcular datas em nosso código.
 
-## Como calcular datas no futuro e no passado em Elixir
+## Como Fazer?
 
-Para calcular datas no futuro ou no passado em Elixir, o primeiro passo é converter a data em um formato específico. Para isso, usaremos o módulo `Calendar`. Vamos supor que queremos obter a data daqui a 30 dias a partir de hoje. O código ficaria assim:
+Para realizar cálculos de datas em Elixir, é necessário primeiro entender o formato de datas usado pela linguagem. Elixir usa o formato ISO 8601, que é um padrão internacional para representar datas e horários.
 
-```Elixir
-today = Calendar.DateTime.now()
-future_date = Calendar.DateTime.add(today, 30, :days)
+Para calcular uma data no futuro ou no passado, podemos usar a função `DateTime.add` e especificar o número de dias, semanas, meses ou anos que queremos adicionar ou subtrair. Por exemplo:
+
+```elixir
+DateTime.add(~U[2021-09-01 09:00:00], 7, :days)
 ```
 
-No código acima, usamos a função `Calendar.DateTime.now()` para obter a data atual e armazená-la em uma variável. Em seguida, usamos a função `Calendar.DateTime.add()` para adicionar 30 dias a essa data atual. O terceiro argumento `:days` indica que estamos adicionando dias, mas você também pode adicionar meses, anos, horas, minutos, segundos, entre outros. A saída seria algo como `~N[2021-07-01 20:24:15]` dependendo da data e hora atuais.
+Este código adicionará 7 dias à data especificada e retornará o resultado em formato ISO 8601.
 
-Para calcular uma data no passado, podemos usar a função `Calendar.DateTime.subtract()`. Por exemplo, se quisermos obter a data de 30 dias atrás, o código ficaria assim:
+Outra opção é usar a função `Date.add` se estivermos interessados apenas na data e não no horário. Esta função funciona da mesma forma que `DateTime.add` mas retorna apenas o formato de data. Por exemplo:
 
-```Elixir
-today = Calendar.DateTime.now()
-past_date = Calendar.DateTime.subtract(today, 30, :days)
+```elixir
+Date.add(~D[2021-09-01], 2, :months)
 ```
 
-E a saída seria algo como `~N[2021-05-31 20:24:15]`.
+Este código adicionará 2 meses à data especificada e retornará o resultado em formato ISO 8601.
 
-## Aprofundando no cálculo de datas em Elixir
+Podemos também realizar cálculos com intervalos de tempo usando a função `Timex.Interval`. Por exemplo, se quisermos calcular uma data 1 ano e 6 meses depois da data atual, podemos fazer da seguinte forma:
 
-O módulo `Calendar` oferece várias funções úteis para trabalhar com datas em Elixir. É importante notar que as datas são manipuladas como termos, e não como strings ou números. Isso significa que devemos usar o `~N` suffix para indicar que estamos trabalhando com um termo de data.
-
-Além disso, podemos usar a função `Calendar.DateTime.to_date()` para converter uma data para um formato mais legível. Por exemplo:
-
-```Elixir
-date = Calendar.DateTime.now()
-format_date = Calendar.DateTime.to_date(date)
+```elixir
+Timex.add(Timex.now, Timex.Interval.from_months(18))
 ```
 
-A saída seria `~D[2021-06-30]`.
+Esta função adicionará 18 meses à data atual e retornará o resultado em formato ISO 8601.
 
-Você também pode adicionar ou subtrair datas com mais precisão, usando a função `days_difference()`. A seguinte função retorna o número de dias entre duas datas:
+## Mergulho Profundo
 
-```Elixir
-def days_difference(date1, date2) do
-  diff = Calendar.DateTime.diff(date1, date2)
-  Calendar.DateTime.to_gregorian_days(diff)
-end
-```
+Além das funções mencionadas, Elixir também possui outras ferramentas úteis para cálculos de datas. Uma delas é o módulo `Calendar`, que nos permite obter informações específicas sobre uma data, como o dia da semana ou o número de dias em um mês específico.
 
-## Veja também
+Além disso, Elixir também possui bibliotecas externas, como o `Timex`, que fornece funcionalidades adicionais para manipulação de datas e horários. Ele oferece uma sintaxe mais amigável para cálculos de datas e possui uma documentação abrangente para facilitar o uso.
 
-- [Documentação oficial do módulo `Calendar`](https://hexdocs.pm/elixir/Calendar.html)
-- [Manipulando datas em Elixir com o módulo `Calendar`](https://dev.to/eiri/manipulating-dates-in-elixir-using-the-calendar-module-4l8b)
+## Veja Também
+
+- [Documentação do Elixir sobre cálculos de datas](https://hexdocs.pm/elixir/Calendar.html)
+- [Documentação do Timex](https://hexdocs.pm/timex/readme.html)
+- [ISO 8601](https://pt.wikipedia.org/wiki/ISO_8601)

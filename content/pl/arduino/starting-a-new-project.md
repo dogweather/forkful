@@ -1,38 +1,50 @@
 ---
 title:    "Arduino: Rozpoczynanie nowego projektu"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Istnieje wiele powodów, dla których ludzie decydują się na rozpoczęcie projektu z wykorzystaniem Arduino. Może to być z powodu zainteresowania elektroniką lub programowaniem, chęci stworzenia czegoś samodzielnie lub po prostu rozrywki. Bez względu na motywację, Arduino jest doskonałym sposobem na naukę i eksperymentowanie z elektroniką.
+Wiele osób może zastanawiać się, dlaczego warto zaangażować się w rozpoczęcie nowego projektu z użyciem Arduino. Jedną z głównych przyczyn jest to, że Arduino jest niesamowitym narzędziem do nauki programowania, elektroniki i robotyki. Może być również świetnym sposobem na rozwijanie swoich umiejętności technicznych i tworzenie ciekawych urządzeń.
 
-## Jak zacząć?
+## Jak to zrobić
 
-Pierwszym krokiem jest oczywiście nabycie zestawu Arduino i podstawowych komponentów elektronicznych, takich jak rezystory, diody LED i przewody. Możesz także pobrać i zainstalować środowisko programistyczne Arduino IDE. Następnie możesz zacząć się zapoznawać z podstawami języka Arduino, takimi jak zmienne, funkcje i pętle. Warto także zapoznać się z dokumentacją i przykładami dostępnymi na oficjalnej stronie Arduino. Pamiętaj, że praktyka czyni mistrza, więc nie bój się eksperymentować i tworzyć własne projekty.
+Aby rozpocząć nowy projekt z Arduino, potrzebne będą następujące kroki:
+
+1. Zakup zestawu startowego Arduino lub wszystkich niezbędnych komponentów.
+2. Zainstaluj oprogramowanie Arduino IDE na swoim komputerze.
+3. Podłącz płytkę Arduino do komputera za pomocą kabla USB.
+4. Wybierz odpowiedni model Arduino i port komunikacyjny w Arduino IDE.
+5. Napisz kod w języku Arduino i przetestuj go, używając wbudowanego emulatora lub wbudowanej diody LED.
+6. Po zakończeniu kodowania, przełącz się na tryb wgrania i prześlij kod na płytkę Arduino.
+7. Sprawdź, czy projekt działa zgodnie z oczekiwaniami.
+
+Poniższy kod przykładu demonstruje, jak zaprogramować Arduino, aby zapalić diodę LED przez 1 sekundę:
 
 ```Arduino
 void setup() {
-  // Kod w tej funkcji jest wykonywany tylko raz przy uruchomieniu układu
-  pinMode(ledPin, OUTPUT); // Ustawienie pinu 13 jako wyjście
+    pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
-  // Kod w tej funkcji jest wykonywany w pętli
-  digitalWrite(ledPin, HIGH); // Włączenie diody LED
-  delay(1000); // Pauza na 1 sekundę
-  digitalWrite(ledPin, LOW); // Wyłączenie diody LED
-  delay(1000); // Pauza na 1 sekundę
+    digitalWrite(LED_PIN, HIGH); // włącz diodę
+    delay(1000); // poczekaj 1 sekundę
+    digitalWrite(LED_PIN, LOW); // wyłącz diodę
+    delay(1000); // poczekaj 1 sekundę
 }
 ```
 
+Po wgraniu tego kodu na płytkę Arduino, dioda powinna zapalić się i gaśnieć co 1 sekundę.
+
 ## Głębsze zanurzenie
 
-Gdy już nauczysz się podstaw, możesz poszerzyć swoją wiedzę o różne moduły i czujniki kompatybilne z Arduino, takie jak moduł Bluetooth czy czujnik temperatury. Możesz także uczyć się nowych języków programowania, takich jak Python i Processing, które są również kompatybilne z Arduino. Pamiętaj, że Arduino to tylko narzędzie, a możliwości są nieograniczone. Możesz tworzyć projekty związane z Internetem rzeczy, robotyką, automatyzacją i wiele więcej.
+Ponieważ Arduino jest tak wszechstronnym narzędziem, możliwości tworzenia projektów są praktycznie nieograniczone. Możesz tworzyć proste projekty, takie jak automatycznie uruchamiany przekaźnik lub termometr, a także bardziej zaawansowane, takie jak roboty czy oświetlenie zintegrowane w inteligentnym domu. W Internecie można znaleźć wiele tutoriali, projektów i przydatnych informacji, które pomogą Ci rozpocząć przygodę z Arduino.
 
 ## Zobacz także
-- Oficjalna strona Arduino: https://www.arduino.cc/
-- Przykłady projektów z wykorzystaniem Arduino: https://create.arduino.cc/projecthub
-- Forum dyskusyjne dla użytkowników Arduino: https://forum.arduino.cc/
+
+- [Oficjalna strona Arduino](https://www.arduino.cc/)
+- [Artykuły dla początkujących w języku polskim](https://flychip.pl/constats/arduino/%20arduino-artykuly-dla-poczatkujacych)
+- [Seria tutoriali na YouTube "Arduino w pigułce"](https://www.youtube.com/playlist?list=PLjeI44aoEiBiCq8KYbOrlCIO5Nu2q-wkk)

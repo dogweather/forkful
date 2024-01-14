@@ -1,55 +1,49 @@
 ---
-title:    "Arduino: Strings verbinden"
+title:    "Arduino: Zeichenketten verbinden"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Arduino-Programmierung ist die Verkettung von Zeichenketten (Strings) eine häufige Aufgabe. Es ermöglicht Ihnen, mehrere Zeichenketten zu einer einzelnen zusammenzufügen, was sehr nützlich sein kann, wenn Sie zum Beispiel Daten aus verschiedenen Sensoren kombinieren möchten. In diesem Blog-Beitrag werden wir uns ansehen, wie man Zeichenketten in Arduino verketten kann und warum es wichtig ist, dies zu wissen.
+Das Zusammenfügen oder Verketten von Zeichenfolgen ist ein wichtiges Konzept in der Arduino-Programmierung, da es ermöglicht, verschiedene Zeichenfolgen miteinander zu kombinieren und so komplexe Ausgaben zu erzeugen.
 
-## Wie geht man vor?
+## How To
 
-Um Zeichenketten in Arduino zu verketten, verwenden wir den Operator "+" zwischen den einzelnen Zeichenketten. Schauen wir uns ein Beispiel an:
-
-```Arduino
-String name = "Max";
-String greeting = "Hallo " + name;
-Serial.println(greeting);
-```
-
-Die Ausgabe dieses Codes wäre "Hallo Max". Wie Sie sehen können, haben wir die Zeichenkette "Max" an die Zeichenkette "Hallo " angehängt, um eine neue Zeichenkette zu bilden.
-
-Dieser Prozess kann auch mit mehr als zwei Zeichenketten durchgeführt werden. Schauen wir uns ein weiteres Beispiel an:
+Um Zeichenfolgen in Arduino zu verketten, nutzen wir den "+" Operator. Schauen wir uns ein Beispiel an:
 
 ```Arduino
-String noun = "Apfel";
-String verb = "essen";
-String sentence = "Ich mag " + noun + " " + verb + "!";
-Serial.println(sentence);
+String firstName = "Max";
+String lastName = "Mustermann";
+String fullName = firstName + " " + lastName;
+Serial.println(fullName);
 ```
 
-Die Ausgabe dieses Codes wäre "Ich mag Apfel essen!". Wie Sie sehen können, können wir mehrere Zeichenketten in einer einzigen Zeichenkette verketten, indem wir einfach den "+" Operator verwenden.
+Dieses Beispiel würde die Zeichenfolge "Max Mustermann" ausgeben. Beachte, dass wir den "+" Operator zwischen den einzelnen Zeichenfolgen setzen. Dadurch werden sie miteinander verbunden.
 
-## Tiefer Einblick
-
-Das Verketten von Zeichenketten kann auch mit anderen Datentypen wie Zahlen und Variablen durchgeführt werden. Schauen wir uns ein Beispiel an:
+Eine weitere Möglichkeit ist die Verwendung der `concat()` Funktion. Diese erlaubt die Verkettung von mehr als zwei Zeichenfolgen und wird wie folgt genutzt:
 
 ```Arduino
-int num1 = 5;
-int num2 = 10;
-String result = "Die Summe von " + String(num1) + " und " + String(num2) + " ist " + String(num1 + num2) + "!";
-Serial.println(result);
+String name = "John";
+String middleName = "F.";
+String lastName = "Kennedy";
+name.concat(" ").concat(middleName).concat(" ").concat(lastName);
+Serial.println(name);
 ```
 
-Die Ausgabe dieses Codes wäre "Die Summe von 5 und 10 ist 15!". Hier haben wir die Zahlen in Zeichenketten umgewandelt, um sie mit anderen Zeichenketten zu verketten.
+Dieses Beispiel würde die Zeichenfolge "John F. Kennedy" ausgeben.
 
-Es ist auch wichtig zu beachten, dass die Verkettung von Zeichenketten in Arduino nicht so effizient ist wie in anderen Programmiersprachen wie C++. Wenn Sie viele Zeichenketten verketten müssen, könnte dies die Leistung des Programms beeinträchtigen. In diesem Fall sollten Sie eine andere Technik, wie z.B. das Verwenden von Zeichenarrays, in Betracht ziehen.
+## Deep Dive
+
+Um Zeichenfolgen effizient zu verketten, ist es wichtig zu verstehen, wie dieses Konzept im Hintergrund funktioniert. In Arduino werden Zeichenfolgen als Objekte der Klasse `String` behandelt. Der "+" Operator wird von dieser Klasse überschrieben, um Zeichenfolgen zu verketten.
+
+Es ist jedoch wichtig zu beachten, dass das Verketten von Zeichenfolgen auf diese Weise nicht die performanteste Methode ist, da jedes Mal ein neues Objekt erstellt werden muss. Für Programme mit vielen Zeichenfolgen kann dies zu einer Verschwendung von Speicher führen. Eine bessere Alternative ist die Verwendung von Zeichenarrays und Funktionen wie `strcat()`.
 
 ## Siehe auch
 
-- [Arduino-Referenz](https://www.arduino.cc/reference/en/language/variables/data-types/string/concatenation/)
-- [Tutorial: Verkettung von Strings in Arduino](https://www.hackster.io/Aritro/string-concatenation-in-arduino-c0fd8f)
+Hier sind einige weitere hilfreiche Ressourcen zum Thema "Concatenating Strings" in der Arduino-Programmierung:
 
-Vielen Dank, dass Sie unseren Blog-Beitrag über das Verketten von Zeichenketten in Arduino gelesen haben. Wir hoffen, dass er Ihnen geholfen hat, ein besseres Verständnis dafür zu bekommen, wie man diese häufige Aufgabe in Ihren zukünftigen Projekten umsetzen kann. Bleiben Sie dran für weitere nützliche Arduino-Tutorials und Tipps!
+- (https://www.arduino.cc/en/Reference/StringObject)
+- (https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)

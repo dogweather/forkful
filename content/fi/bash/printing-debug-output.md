@@ -1,32 +1,43 @@
 ---
-title:    "Bash: Virhettä korjaavan tulostaminen"
+title:    "Bash: Vianetsinnän tulostus"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää tulostusvirheiden hienosäätöä?
+# Miksi printata debuggaus-tulosteita?
 
-Bash-ohjelmoinnissa tulostusvirheiden hienosäätö on tärkeä työkalu ohjelmointiprosessissa. Se auttaa löytämään ja korjaamaan virheitä sekä parantamaan koodin suorituskykyä. Tulostusvirheiden avulla voit saada lisätietoja siitä, mitä koodi tekee ja missä kohtaa se saattaa epäonnistua.
+Monet kehittäjät käyttävät debuggausta osana ohjelmointiprosessiaan, mutta miksi sitten pitäisi printata debug-tulosteita? Näihin tulosteisiin on helppo lisätä koodin seurantaa ja vianmääritystä, joten ne voivat olla erittäin hyödyllisiä kehitystyössä.
 
-## Kuinka tulostusvirheitä käytetään
+# Näin teet sen:
 
-Tulostusvirheiden käyttö Bashissa on yksinkertaista ja se voidaan tehdä käyttämällä `echo`-komennon `-e`-kytkintä yhdessä `printf`-komennolla. Voit lisätä `echo`-komennolle haluamasi tekstin ja `printf`-komentoon voit lisätä muuttujia tai muita dynaamisia elementtejä. Esimerkki koodista, joka tulostaa "Debug: Hello World!" näyttää tältä:
+Useimmissa ohjelmointikielissä on erityisiä komentoja tai funktioita, jotka mahdollistavat debug-tulosteiden printtaamisen. Bashissa voidaan käyttää komentoa "echo" tai "printf" tulostamiseen. Alla on Bash-esimerkki ja sen tuloste:
 
 ```Bash
-echo -e "Debug: Hello World!"
+# Määritetään muuttuja
+nimi="Matti Meikäläinen"
+# Printataan muuttujan sisältö
+echo "Tervehdys $nimi!"
 ```
 
-Tulostusvirheen sijaan voit myös käyttää `set -x`-komentoa koko skriptissä, jolloin kaikki komennot ja niiden tulokset näyvät terminaalissa suorituksen aikana.
+Tulostus: Tervehdys Matti Meikäläinen!
 
-## Syvemmälle tulostusvirheisiin
+# Syvempi sukellus:
 
-Tulostusvirheiden tulostaminen voi auttaa sinua paitsi löytämään virheitä myös ymmärtämään paremmin koodisi toimintaa. Kun lisäät `echo`-komennolle lisätietoa, kuten muuttujien arvoja tai suoritettuja komentoja, voit helpommin seurata ohjelman suorittamista ja nähdä missä kohdassa jokin saattaa mennä pieleen.
+Debug-tulosteet voi myös formatoida ja lisätä niihin muuta tietoa kuten aikaleimoja ja muuttujien arvoja. Tämä auttaa paremman ymmärryksen ja jäljittämisen kanssa. Alla on esimerkki, jossa käytetään "printf" ja siihen lisätään aikaleima ja muuttujan arvo:
 
-Lisäksi tulostusvirheet auttavat myös kommunikoimaan muille kehittäjille, jos koodi on jaettu projektiin. He voivat nähdä, mitä koodi tekee ja missä kohtaa se saattaa kaatua tai toimia odottamattomasti.
+```Bash
+# Määritetään muuttuja
+numero=42
+# Printataan muuttujan sisältö formatoiden
+printf "Muuttujan arvo on %s ja aika on %(%H:%M:%S)T" "$numero" `date +%s`
+```
 
-## Katso myös
+Tulostus: Muuttujan arvo on 42 ja aika on 11:34:56
 
-- [Bashin dokumentaatio tulostusvirheistä](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-- [Ohjeet virheiden hienosäätöön Bashissa](https://linuxhint.com/debugging_shell_scripts_bash/)
-- [Vinkkejä ja niksejä Bashin käyttöön](https://www.hostinger.fi/opas/linux-bashin-kaytto/)
+# Katso myös:
+
+- [Bashin echo-komennon dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
+- [Bashin printf-komennon dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
+- [Bash-debuggaus vinkkejä ja temppuja](https://dev.to/thiago641/debugging-utilities-cheatsheet-for-bash-1hbc)

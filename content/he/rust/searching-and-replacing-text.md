@@ -1,47 +1,43 @@
 ---
-title:    "Rust: חיפוש והחלפת טקסטים."
+title:    "Rust: חיפוש והחלפת טקסט"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
+מחפשים ומחליפים טקסט היא פעולה חשובה בתוך תהליך התכנות וכתיבת קוד. היא מאפשרת לנו לשנות את הטקסט שלנו באופן מהיר ויעיל, ולהתאים את הקוד לצרכים שלנו. כאשר נעבוד עם שפת תכנות כמו ראסט (Rust), החיפוש וההחלפה של טקסט יכולה להיות כלי חשוב לכתיבת קוד יעיל וחדשני.
 
-כאשר אנו עובדים עם קוד בשפת ראסט, נתקלים לעיתים קרובות בצורך לחלף טקסט בקוד שלנו. לדוגמה, אם אנו רוצים לשנות את שם המשתנה או להחליף כמה פסקאות בקוד. המעבדה והזמן שתוקצה בניסיון לחפש ולהחליף בקוד גדול ומסורבל הן מעוררות מאוד. לכן, חיפוש והחלפה של טקסט הוא כלי חיוני עבור הקודם שנשתמש בכדי לשפר ולסדר את הקוד שלנו בצורה יעילה ומהירה.
-
-## איך לעשות זאת
-
-לחיפוש והחלפת טקסט יש תפקיד חשוב בתהליך השיפור של הקוד שלנו. ראסט מציעה שתי מתודות פנימיות לחיפוש והחלפת טקסט: `replace()` ו-`replace_range()`. 
+## כיצד לעשות זאת
+עבור מטרת המדריך הזה, אנחנו נשתמש בספריית המובנית std::fs של ראסט כדי לקרוא ולבצע פעולות על קבצי טקסט. נתחיל עם פונקציות פשוטות שמאפשרות לנו לחפש ולהחליף טקסט בקבצים, ולאחר מכן נעבור לפונקציות מתקדמות יותר כדי להתאים את החיפוש וההחלפה לצרכים שלנו.
 
 ```Rust
-let mut text = "Hello, world!".to_string();
+use std::fs::File;
+use std::io::{self, prelude::*, BufReader, BufWriter};
 
-// חיפוש והחלפה של מחרוזת מסוימת
-let new_text = text.replace("world", "Rust");
-println!("{}", new_text); // "Hello, Rust!"
+fn main() -> io::Result<()> {
+    // קריאת הקובץ המקורי
+    let input_file = File::open("input.txt")?;
+    let reader = BufReader::new(input_file);
 
-// חיפוש והחלפה של פסקה מסוימת במחרוזת
-let new_text = text.replace_range(7..12, "Rust");
-println!("{}", new_text); // "Hello, Rust!"
+    // כתיבת הפלט המוחלף לקובץ חדש
+    let output_file = File::create("output.txt")?;
+    let mut writer = BufWriter::new(output_file);
+
+    // חיפוש והחלפה של הטקסט
+    for line in reader.lines() {
+        // מבצע חיפוש והחלפה בכל טור של הקובץ
+        let replaced_line = line?.replace("Rust", "תכנות");
+        // כתיבת הטור המוחלף לקובץ החדש
+        writer.write_all(replaced_line.as_bytes())?;
+        writer.write_all(b"\n")?;
+    }
+    Ok(())
+}
 ```
 
-בנוסף, ניתן להשתמש גם בספקים (patterns) של רגולריים (regex) כדי להרחיב את האפשרויות של חיפוש והחלפת טקסט בראסט. נבין את כל האפשרויות במקרים שונים באמצעות הקוד הבא:
+כמו שאתם רואים, אנו משתמשים בפונקציות כמו `read_to_string()` ו `replace()` של ספריית std::fs כדי לקרוא ולערוך טקסט בקבצים.
 
-```Rust
-use regex::Regex;
-
-let text = "The quick brown fox jumps over the lazy dog.";
-
-// אימות אם מחרוזת מתחילה באות גדולה
-let cap_regex = Regex::new(r"^[A-Z]").unwrap();
-println!("Starts with capital? {}", cap_regex.is_match(text)); // true
-
-// חיפוש והחלפה של מילה במחרוזת
-let word_regex = Regex::new(r"fox").unwrap();
-let new_text = word_regex.replace(text, "elephant");
-println!("{}", new_text); // "The quick brown elephant jumps over the lazy dog."
-
-// חיפוש והחלפת מספרים במחרוזת
-let num_regex = Regex::new(r"\d+").unwrap();
-let new_text = num_regex.replace_all(text, "123");
-println!("{}", new_text); // "The quick brown fox
+## Deep Dive
+לחפש ולהחליף טקסט הוא עניין מעניין ומאתגר בתוך עולם תכנות. בנוס

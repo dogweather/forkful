@@ -1,59 +1,48 @@
 ---
 title:    "Elixir recipe: Starting a new project"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Are you looking to start a new programming project and want to explore a functional programming language? Look no further than Elixir! This powerful language, built on top of the Erlang virtual machine, offers a myriad of features and benefits that make it a great choice for both new and experienced developers.
+Starting a new programming project can seem like a daunting task, but with Elixir, it can be a breeze. This functional programming language offers features such as concurrency and fault tolerance, making it a powerful choice for building robust and scalable applications.
 
 ## How To
 
-To get started with a new Elixir project, first make sure you have the language installed on your system. You can easily do this by following the installation instructions on the official Elixir website.
+To create a new Elixir project, you will first need to have Elixir installed on your computer. Once that is done, you can follow these simple steps:
 
-Next, create a new project directory and navigate into it. In this directory, you can initialize a new Elixir project by running the following command:
+1. Open your terminal and navigate to the directory where you want to create your project.
+2. Type `mix new [project name]` and press enter. This will create a new project with the name you specified.
+3. Navigate into the project directory using `cd [project name]`.
+4. You will see a few files and folders already created for you, such as `lib` for your source code and `test` for your tests.
+5. To run your project, use the command `mix run -e [module_name]`, where `[module_name]` is the name of the module containing your `main` function.
+6. You can also use `mix test` to run your tests.
 
-```
-mix new my_project
-```
+Let's try a simple example. Create a new project called "hello_world" using `mix new hello_world`. Then open the `lib` folder and create a new file named `greeting.ex`. Paste the following code inside the file:
 
-This will set up a basic project structure for you, complete with a `mix.exs` file for managing dependencies and configurations. From here, you can start writing your code in `.ex` files using your preferred text editor.
-
-Let's take a look at a simple example of how to define and call a function in Elixir:
-
-```
-defmodule Calculator do
-  def add(a, b) do
-    a + b
+```elixir
+defmodule Greeting do
+  def hello do
+    IO.puts "Hello world!"
   end
 end
-
-IO.puts(Calculator.add(2, 3))
 ```
 
-In this example, we define a new module called `Calculator` and a function within it called `add`, which takes two parameters and returns their sum. We then use `IO.puts` to print out the result of calling this function with the values 2 and 3. Running this code will output `5` to the console.
-
-But that's just scratching the surface of what Elixir can do. There are many more features and concepts to explore, such as pattern matching, concurrency with processes and OTP, and the powerful Phoenix web framework.
+Save the file and then go back to your terminal. Run the command `mix run -e Greeting.hello` and you should see "Hello world!" printed on the screen.
 
 ## Deep Dive
 
-Now that you have a basic understanding of how to get started with an Elixir project, let's dive deeper into some key aspects of the language.
+Now that you have created a new project and run your first Elixir code, let's take a deeper look at what's going on behind the scenes. When you run `mix new [project name]`, Elixir will generate a `mix.exs` file. This is an Elixir script that defines your project and its dependencies.
 
-One of the great things about Elixir is its robust standard library, which includes modules for tasks like string manipulation, data structures, and networking. You can easily import these modules into your projects and take advantage of their functionality.
+Inside the `lib` folder, you will also find a `hello_world.ex` file. This is your application's entry point, where you can define your `main` function and add any other code you need to run your project.
 
-Another important aspect of Elixir is its emphasis on immutability and functional programming. This means that variables cannot be reassigned, and most functions do not have side effects. In addition, Elixir offers powerful tools for working with collections of data, such as the `Enum` and `Stream` modules.
-
-Finally, it's worth mentioning the powerful tooling and community support available for Elixir. The `mix` build tool offers features like dependency management and code formatting, while the Elixir forums and Slack channels are great places to ask questions and learn from others.
+Elixir also comes with a built-in testing framework called ExUnit. The `test` folder contains a file named `hello_world_test.exs` where you can write tests for your code.
 
 ## See Also
 
-For more information on getting started with Elixir, check out these resources:
-
-- Official Elixir website: https://elixir-lang.org/
-- Elixir School: https://elixirschool.com/
-- Elixir Forum: https://elixirforum.com/
-- Elixir Slack: https://elixir-slackin.herokuapp.com/
-
-Happy coding!
+- [Official Elixir website](https://elixir-lang.org/)
+- [Elixir tutorials on ElixirSchool](https://elixirschool.com/)
+- [Elixir forums on ElixirForum](https://elixirforum.com/)

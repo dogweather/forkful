@@ -1,52 +1,44 @@
 ---
 title:    "Rust: Escrevendo um arquivo de texto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto com Rust?
+## Por que escrever um arquivo de texto é importante em Rust?
 
-Escrever um arquivo de texto pode ser útil em uma variedade de situações, como salvar dados gerados em um programa ou criar um arquivo de configuração para uma aplicação. Com Rust, é possível utilizar o tipo de dado `File` para criar e manipular arquivos de texto de forma eficiente e segura.
+Rust é uma linguagem de programação cada vez mais popular, conhecida por sua segurança, velocidade e eficiência. Quando se trata de manipulação de arquivos, Rust oferece uma ótima opção com sua biblioteca padrão. Neste post, vamos explorar como escrever um arquivo de texto em Rust e entender por que isso pode ser útil em seu projeto.
 
 ## Como fazer
 
-Para começar, é necessário importar o módulo `std::fs`, que contém as funções para trabalhar com arquivos. Em seguida, utilizamos a função `create` para criar um novo arquivo e atribuí-lo a uma variável:
+Escrever um arquivo de texto em Rust é um processo simples. Primeiro, é necessário importar a biblioteca `std::fs`, que é responsável por manipular arquivos. Em seguida, abra o arquivo com a função `File::create()` e forneça o caminho desejado e o nome do arquivo. Em seguida, é preciso usar o método `write()` para escrever o conteúdo no arquivo. Por fim, salve as alterações com o método `flush()` e feche o arquivo usando o método `close()`. Um exemplo completo pode ser visto abaixo:
 
 ```Rust
-use std::fs;
+use std::fs::File;
 
-let arquivo = fs::File::create("arquivo.txt").expect("Não foi possível criar o arquivo!");
+fn main() {
+    let mut file = File::create("arquivo.txt").expect("Falha ao criar o arquivo!");
+    file.write(b"Olá, leitor! Este é um exemplo de arquivo de texto criado com Rust.")
+        .expect("Falha ao escrever no arquivo!");
+    file.flush().expect("Falha ao salvar alterações!");
+}
 ```
 
-Agora, podemos utilizar a função `write` para escrever conteúdo no arquivo recém-criado. Essa função espera como parâmetro um slice de bytes, que pode ser criado a partir de uma string utilizando o método `as_bytes`:
+Ao executar esse código, um arquivo chamado `arquivo.txt` será criado no diretório do projeto, contendo o texto fornecido no método `write()`. 
 
-```Rust
-use std::fs;
-use std::io::Write;
+## Mergulho profundo
 
-let arquivo = fs::File::create("arquivo.txt").expect("Não foi possível criar o arquivo!");
-arquivo.write("Olá, mundo!".as_bytes()).expect("Não foi possível escrever no arquivo!");
-```
+A biblioteca `std::fs` também oferece outras funcionalidades para manipulação de arquivos, como ler, renomear e excluir arquivos. Além disso, é possível especificar o modo de abertura do arquivo, como somente leitura, escrita ou leitura e escrita. Também é importante mencionar que é possível trabalhar com arquivos binários usando a biblioteca `std::io` em conjunto com `std::fs`.
 
-Além de escrever, também é possível ler dados de um arquivo utilizando a função `read_to_string`:
-
-```Rust
-use std::fs;
-
-let mut arquivo = fs::File::open("arquivo.txt").expect("Não foi possível abrir o arquivo!");
-let mut conteudo = String::new();
-arquivo.read_to_string(&mut conteudo).expect("Não foi possível ler o arquivo!");
-
-println!("{}", conteudo); // imprime "Olá, mundo!"
-```
-
-## Aprofundando mais
-
-Escrever um arquivo de texto envolve utilizar diferentes conceitos da linguagem Rust, como a gestão de erros (`Result`), tipos de dados (`File`), módulos e funções. Em casos mais complexos, também pode ser necessário utilizar o tipo `Path` para trabalhar com caminhos de arquivos. É importante entender esses conceitos para escrever um código robusto e eficiente.
+Além disso, existem bibliotecas externas disponíveis na comunidade Rust que podem ajudar a simplificar ainda mais o processo de manipulação de arquivos, como a biblioteca `stdext` e a `io_utils`. Ambas oferecem funções adicionais e melhorias em relação à biblioteca padrão.
 
 ## Veja também
 
-- [Documentação oficial do módulo `std::fs`](https://doc.rust-lang.org/std/fs/index.html)
-- [Tutorial: Escrita e leitura de arquivos em Rust](https://danielkeep.github.io/tlborm/book/preface.html)
-- [Exemplo de manipulação de arquivos em Rust](https://github.com/lynn/HelloRust/blob/master/files/src/main.rs)
+- Documentação oficial do Rust sobre manipulação de arquivos: [https://doc.rust-lang.org/std/fs/index.html](https://doc.rust-lang.org/std/fs/index.html)
+
+- Biblioteca externa `stdext`: [https://crates.io/crates/stdext](https://crates.io/crates/stdext)
+
+- Biblioteca externa `io_utils`: [https://crates.io/crates/io_utils](https://crates.io/crates/io_utils)
+
+Com esse conhecimento, você estará pronto para manipular arquivos em seus projetos Rust de forma eficiente e segura. Experimente e divirta-se programando em Rust!

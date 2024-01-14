@@ -1,46 +1,59 @@
 ---
 title:    "Rust recipe: Extracting substrings"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Rust is a popular systems programming language known for its strong performance and memory safety guarantees. One of the many useful features it offers is the ability to easily extract substrings from strings. In this blog post, we will explore how to use this feature and why it can be beneficial in our code.
+
+One of the most fundamental tasks in string manipulation is extracting substrings. This process involves taking a small portion of a larger string and manipulating it separately. Extracting substrings can be useful in a variety of scenarios, such as parsing data or formatting strings for display.
 
 ## How To
-To extract a substring in Rust, we can use the `get()` method from the `str` type. This method takes two arguments - the starting index and the ending index of the substring. Let's take a look at an example:
+
+In Rust, there are a few different ways to extract substrings from a string. Let's look at some examples using the built-in `String` type.
+
+First, we can use the `slice` method to extract a substring from a specific range of indices in the string:
 
 ```Rust
-let original_string = "Rust programming is awesome!";
-let substring = original_string.get(5..15);
-println!("{}", substring); // Output: programming
+let my_string = String::from("Hello, world!");
+let substring = &my_string[0..5]; // Will contain "Hello"
 ```
 
-In this example, we used the `get()` method to extract the substring "programming" from the original string. The indices are inclusive on the starting index but exclusive on the ending index, meaning the character at the ending index is not included in the substring. Additionally, the indices are 0-based, so the first character in the string has an index of 0.
-
-We can also use the `get()` method to extract characters at a specific index without specifying an ending index. Let's see how:
+Alternatively, we can use the `split_off` method to split the string into two parts, keeping the original string and returning the extracted substring as a new string:
 
 ```Rust
-let name = "John";
-let first_letter = name.get(0..1);
-println!("{}", first_letter); // Output: J
+let mut my_string = String::from("Hello, world!");
+let substring = my_string.split_off(5); // Will return " world!" and modify my_string to only contain "Hello"
 ```
 
-Another way to extract substrings in Rust is by using the `split_at()` method. This method takes an index as an argument and returns two substrings - one from the beginning of the string to the specified index, and another from the index to the end of the string. Here's an example:
+We can also use regular expressions to extract a substring that matches a specific pattern. This requires the `regex` crate, which can be added to your project's `Cargo.toml` file.
 
 ```Rust
-let sentence = "I love Rust programming";
-let (first_part, second_part) = sentence.split_at(7);
-println!("{} and {}", first_part, second_part); // Output: I love and Rust programming
+use regex::Regex;
+
+let my_string = String::from("Hello, world!");
+let re = Regex::new(r"world").unwrap();
+let matches: Vec<Match> = re.find_iter(&my_string).collect(); // Will find all instances of "world" in the string
+let substring = &my_string[matches[0].start()..matches[0].end()]; // Will contain "world"
 ```
 
 ## Deep Dive
-Rust's ability to extract substrings is made possible by its ownership and borrowing system. The `get()` and `split_at()` methods return a `&str` type, which is a borrowed reference to the original string. This means that the extracted substring is still referencing the original string, so no data is unnecessarily copied in memory.
 
-It's also worth noting that the `get()` method returns an `Option<&str>`, which means it could potentially return `None` if the specified indices are out of bounds. This allows us to handle any potential errors gracefully in our code.
+Under the hood, Rust uses byte indexing for strings rather than character indexing. This means that the indices we use to extract substrings must correspond to valid byte indices. For example, if we were to try to extract a substring using the indices `0..3` from the string "नमस्ते" (which contains the Hindi characters for "hello"), we would get an error because those indices do not correspond to valid byte indices for that string.
+
+To get around this, we can use the `char_indices` method to iterate over both the bytes and characters in a string, and use the character indices instead of the byte indices to extract substrings.
+
+```Rust
+let my_string = String::from("नमस्ते");
+let mut char_indices = my_string.char_indices();
+char_indices.next(); // Skips the first byte index, since it does not correspond to a valid character index
+let substring = &my_string[char_indices.next().unwrap().0..char_indices.next().unwrap().0]; // Will contain "मस"
+```
 
 ## See Also
-- The Rust Programming Language book: https://doc.rust-lang.org/book/
-- Official Rust website: https://www.rust-lang.org/
-- Rust subreddit: https://www.reddit.com/r/rust/
+
+- [Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust Regex Crate](https://crates.io/crates/regex)
+- [Unicode Support in Rust](https://doc.rust-lang.org/std/string/struct.String.html#unicode-support)

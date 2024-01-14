@@ -1,40 +1,55 @@
 ---
 title:    "Ruby: Gerando números aleatórios"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios?
+##Por que?
 
-Gerar números aleatórios é uma habilidade essencial para qualquer programador, especialmente aqueles que trabalham com jogos, simulações ou criptografia. Isso permite criar um elemento de aleatoriedade em um programa, tornando-o mais dinâmico e interessante. Além disso, é uma ótima maneira de aprender e praticar as habilidades de programação.
+Gerar números aleatórios é uma habilidade fundamental em programação, especialmente em jogos ou em tarefas que exigem aleatoriedade. Ao entender como gerar números aleatórios, você pode adicionar um elemento imprevisível aos seus programas e torná-los mais dinâmicos e divertidos.
 
-## Como fazer isso em Ruby?
+##Como fazer?
 
-Gerar números aleatórios em Ruby é muito simples. Basta usar o método `rand()` e especificar o intervalo de números que você deseja. Por exemplo, para gerar um número aleatório entre 1 e 100, você pode usar o seguinte código:
+Felizmente, a linguagem Ruby possui uma função embutida para gerar números aleatórios - o método `rand`. Este método pode ser usado de diferentes maneiras, dependendo do tipo de número aleatório que você deseja gerar.
 
-```Ruby
-numero_aleatorio = rand(1..100)
-puts numero_aleatorio # Saída: 47
-```
+###Números Inteiros
 
-Você também pode usar `rand()` sem especificar um intervalo, o que irá gerar um número aleatório entre 0 e 1. Ou você pode usar `rand(n)`, onde `n` é um número inteiro, para gerar um número aleatório entre 0 e `n-1`.
-
-Outra maneira de gerar números aleatórios em Ruby é usando a classe `Random`, que oferece mais controle e opções para gerar números aleatórios. Por exemplo:
+Para gerar um número inteiro aleatório entre dois números específicos, podemos usar o método `rand(x..y)`, onde "x" é o menor número e "y" é o maior número. Por exemplo, se quisermos gerar um número aleatório entre 1 e 10, podemos usar o seguinte código:
 
 ```Ruby
-numero_aleatorio = Random.new.rand(5...10)
-puts numero_aleatorio # Saída: 7
+num = rand(1..10)
+puts num # Exemplo de output: 7
 ```
 
-## Mergulho profundo
+###Números Decimais
 
-A geração de números aleatórios pode parecer simples, mas há muito mais acontecendo nos bastidores do que você imagina. Quando usamos `rand()` ou `Random`, na verdade estamos usando um algoritmo computacional que é repetível e determinístico, o que significa que os mesmos números serão gerados a menos que você altere a "semente" ou ponto de partida.
+Se quisermos gerar um número decimal aleatório entre 0 e 1, podemos usar o método `rand`. No entanto, este método não aceita parâmetros e simplesmente gera um número aleatório com muitos dígitos após a vírgula. Para limitar o número de dígitos, podemos usar o método `round` para arredondar o número para o número de casas decimais desejado. Aqui está um exemplo:
 
-Além disso, a aleatoriedade é um conceito complexo e muitas vezes difícil de alcançar em computação. Existem até mesmo bibliotecas especializadas em gerar números realmente aleatórios, como o `SecureRandom`, para serem usados em aplicações de criptografia.
+```Ruby
+num = rand.round(2)
+puts num # Exemplo de output: 0.79
+```
 
-## Veja também
+###Números Aleatórios de uma determinada lista
 
-- [Documentação do método `rand()`](https://ruby-doc.org/core/Kernel.html#method-i-rand)
-- [Documentação da classe `Random`](https://ruby-doc.org/core/Random.html)
-- [Documentação do módulo `SecureRandom`](https://ruby-doc.org/stdlib-2.6.1/libdoc/securerandom/rdoc/SecureRandom.html)
+Além de gerar números aleatórios dentro de um intervalo específico, podemos também gerar números aleatórios de uma determinada lista. Para fazer isso, podemos criar uma matriz com os números que queremos e usar o método `sample` para selecionar um número aleatório dessa lista. Aqui está um exemplo:
+
+```Ruby
+numeros = [3, 8, 12, 19, 25]
+num = numeros.sample
+puts num # Exemplo de output: 12
+```
+
+##Aprofundando-se
+
+Agora que já sabemos como gerar números aleatórios em Ruby, é importante entender como funciona o processo por trás desses números. O método `rand` usa um algoritmo chamado de "Gerador de Números Aleatórios Pseudoaleatórios" (PRNG, na sigla em inglês). Este algoritmo usa uma "semente" (um número inicial) e gera uma sequência de números aparentemente aleatórios, mas que podem ser reproduzidos se a mesma semente for usada.
+
+A semente padrão do método `rand` é baseada no tempo atual, o que significa que cada vez que o programa é executado, uma semente diferente é usada e uma sequência diferente de números é gerada. No entanto, também podemos especificar uma semente personalizada, o que permitirá que a mesma sequência de números aleatórios seja gerada sempre que o programa for executado.
+
+##Veja também
+
+- [Tutorial: Ruby for Absolute Beginners (em português)](https://www.ruby-lang.org/pt/documentation/quickstart/)
+- [Documentação oficial do método `rand`](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-rand)
+- [Artigo: Entendendo a geração de números aleatórios em Ruby (em inglês)](https://www.rubyguides.com/2020/05/pseudo-random-number-ruby/)

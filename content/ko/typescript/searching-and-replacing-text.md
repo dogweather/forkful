@@ -1,70 +1,40 @@
 ---
 title:    "TypeScript: 텍스트 검색 및 교체"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트를 검색하고 바꾸는 작업에서 이점을 얻을 수 있기 때문에 왜 이 작업을 수행하는지 알아보겠습니다. 텍스트 검색 및 교체는 반복적이고 반복적인 작업을 자동화하는 데 도움이 되므로 개발자의 생산성을 향상시키는 데 도움이 됩니다. 또한 텍스트 검색 및 교체는 오류를 찾고 수정하는 데 유용하며, 대규모 코드베이스에 대한 수정 작업을 빠르고 쉽게 수행할 수 있게 해줍니다.
+자바스크립트 개발자이거나 TypeScript에 익숙한 한국 분들은, 문자열 내부에서의 검색과 대체는 코드 작업 중 매우 중요한 부분입니다. 이를 통해 문자열 내부에 있는 특정 값들을 한 번에 바꿀 수 있고, 코드 작성이 더욱 효율적으로 이루어 집니다.
 
-## 하우투
+## 어떻게
 
-먼저, `replace()` 메소드를 사용하여 간단한 문자열 검색과 교체를 수행하는 방법을 알아보겠습니다.
-
-```TypeScript
-const str = "안녕하세요, TypeScript 학습 중입니다.";
-const newStr = str.replace("TypeScript", "JavaScript");
-
-console.log(newStr);
-// 출력: 안녕하세요, JavaScript 학습 중입니다.
-```
-
-문자열에 대한 정규식을 사용하여 더 복잡한 검색 및 교체 작업을 수행할 수도 있습니다.
+먼저, 우리는 `replace()` 메서드를 이용하여 문자열 내부의 값들을 쉽게 바꿀 수 있습니다. 아래 예제를 살펴보세요.
 
 ```TypeScript
-const str = "Posts?posts=123&sort=popular";
-const newStr = str.replace(/posts/gi, "articles");
-
-console.log(newStr);
-// 출력: articles?articles=123&sort=popular
+const str = "안녕하세요! 저는 TypeScript 개발자입니다.";
+const newStr = str.replace("TypeScript", "자바스크립트");
+console.log(newStr); // "안녕하세요! 저는 자바스크립트 개발자입니다." 
 ```
 
-다음은 `replaceAll()` 메소드를 사용하여 모든 일치하는 문자열을 한 번에 교체하는 방법입니다.
+해당 메서드는 첫 번째 매개변수로 원하는 값을, 두 번째 매개변수로 바꿀 값을 전달해줍니다. 만약 바꾸고 싶은 모든 값을 한 번에 바꾼다면, 정규표현식을 사용하여 아래와 같은 코드를 작성할 수 있습니다.
 
 ```TypeScript
-const str = "apple, apple, apple";
-const newStr = str.replaceAll("apple", "orange");
-
-console.log(newStr);
-// 출력: orange, orange, orange
+const str = "안녕하세요! TypeScript는 너무 재밌어요. TypeScript를 사용하면서 즐거운 하루 보내세요!";
+const newStr = str.replace(/TypeScript/g, "자바스크립트");
+console.log(newStr); // "안녕하세요! 자바스크립트는 너무 재밌어요. 자바스크립트를 사용하면서 즐거운 하루 보내세요!"
 ```
 
-## 딥 다이브
+위 예제에서 `/g`는 "global" 옵션을 의미하며, 모든 해당 값들에 일괄적으로 적용됩니다.
 
-텍스트 검색 및 교체 작업을 보다 정교하게 제어하고 싶다면 정규식을 배우는 것이 좋습니다. 정규식은 특정 문자열 패턴을 찾고 교체하는 데 사용되는 표현식입니다.
+## 심화 분석
 
-예를 들어, 다음과 같은 문자열이 있다고 가정해봅시다.
-
-```
-I'm learning TypeScript! It's super fun!
-```
-
-만약 `super` 대신 `extremely`으로 바꾸고 싶다면 정규식을 사용하여 다음과 같이 작성할 수 있습니다.
-
-```TypeScript
-const str = "I'm learning TypeScript! It's super fun!";
-const newStr = str.replace(/super/gi, "extremely");
-
-console.log(newStr);
-// 출력: I'm learning TypeScript! It's extremely fun!
-```
-
-위 예시에서는 정규식의 `g`와 `i` 플래그를 사용했습니다. `g`는 전역 검색을 의미하며, `i`는 대소문자를 구분하지 않는 검색을 의미합니다.
+`replace()` 메서드는 해당 문자열 일부분만 바꾸는 것이 아니라, 전체 문자열에서 모든 해당 값들을 찾아 한 번에 바꾸기 때문에 매우 유용합니다. 또한 정규표현식을 사용하면 더욱 다양한 패턴을 검색하고 대체할 수 있습니다.
 
 ## 참고 자료
 
-- [JavaScript replace() 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [정규식 소개](https://proglib.io/p/regex/)
-- [정규식으로 문자열 검색 및 교체하기](https://www.digitalocean.com/community/tutorials/how-to-use-regex-to-search-for-match-patterns-in-strings-in-javascript-ko)
+- [MDN Web Docs | String.replace()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs | 자바스크립트 정규표현식 가이드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)

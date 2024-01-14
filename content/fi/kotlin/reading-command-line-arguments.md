@@ -1,45 +1,46 @@
 ---
-title:    "Kotlin: Komentoriviparametrien lukeminen"
+title:    "Kotlin: Lukeminen komentoriviparametreista"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi lukea komentorivin argumentit?
 
-Command line argumenttien lukeminen on hyödyllinen taito jokaiselle Kotlin-kehittäjälle. Se mahdollistaa käyttäjän syöttämien tietojen hyödyntämisen ohjelmassa, mikä voi parantaa sen käytettävyyttä ja tehokkuutta.
+Komentorivin argumentit ovat tärkeä osa jokapäiväistä ohjelmoinnin maailmaa. Ne antavat ohjelman suorittajalle mahdollisuuden antaa lisäohjeita suoritettavalle ohjelmalle ilman, että koodiä joutuu muokkaamaan. Tämä tarkoittaa, että ohjelman käyttäjä voi muokata ohjelman toimintaa ilman tarvetta ohjelmointitaitoihin.
 
-## Kuinka
+## Miten lukea komentorivin argumentit?
 
-Command line argumenttien lukeminen Kotlinissa on helppoa. Se tehdään `main`-funktion parametrin `args` avulla. Alla on esimerkki:
+Kotlinilla on helppo lukea ja käsitellä komentorivin argumentteja. Käytämme tähän tarkoitukseen `args` muuttujaa, joka sisältää listan kaikista komentorivin argumenteista.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    for(argument in args) {
-        println(argument)
+    if (args.isNotEmpty()) {
+        for (arg in args) {
+            println(arg)
+        }
+    } else {
+        println("No arguments passed!")
     }
 }
-
 ```
 
-Tämän esimerkin avulla kaikki komentoriville syötetyt argumentit tulostetaan näytölle.
+Jos esimerkiksi suorittaisimme tämän ohjelman komentoriviltä seuraavasti: `kotlinc main.kt && kotlin Main abc def`, saisimme seuraavan tulosteen:
 
-Esimerkiksi, jos annetaan seuraava komento:
+```
+abc
+def
+```
 
-`kotlin MyProgram argumentti1 argumentti2`
+Kun olemme saaneet `args` listan, voimme käsitellä ja käyttää argumentteja haluamallamme tavalla.
 
-Ohjelman tulostus näyttäisi tältä:
+## Syvempi sukellus komentorivin argumenttien lukemiseen
 
-`argumentti1 argumentti2`
-
-## Deep Dive
-
-Vaikka esimerkissämme käyttäjien syöttämät komentoriviparametrit tulostetaan vain näytölle, niitä voidaan käyttää monin eri tavoin ohjelmassa. Esimerkiksi, jos ohjelma tarvitsee tietyn tiedoston nimen, sen voi antaa komentorivillä parametrina ja lukea ohjelmassa `args`-muuttujasta.
-
-Argumenttien lukemisessa tulee kuitenkin olla varovainen, sillä ne voivat aiheuttaa erilaisia ongelmia kuten virheitä ja tietoturvariskejä. On tärkeää tarkistaa, että käyttäjälle syötetyt argumentit ovat oikeassa muodossa ja että ne eivät aiheuta haittaa ohjelmalle.
+Komentorivin argumentteja voidaan lukea myös järjestelmän ympäristömuuttujista, mikä tekee niistä entistä monipuolisempia. Näitä muuttujia voidaan muokata esimerkiksi `.bashrc` tai `.bash_profile` tiedoston kautta, jolloin ohjelmoija voi antaa oletusarvoja komentorivin argumenteille. Tämä tekee ohjelmasta joustavamman ja helpommin räätälöitävän käyttäjälle.
 
 ## Katso myös
 
-- [Official Kotlin Documentation on Command Line Arguments](https://kotlinlang.org/docs/tutorials/command-line.html#argument-parsing)
-- [Blogikirjoitus "Reading Command Line Arguments in Kotlin"](https://www.baeldung.com/kotlin/command-line-arguments)
-- [Stack Overflow viestiketju aiheesta "How to Read Command Line Arguments in Kotlin"](https://stackoverflow.com/questions/39855581/how-to-read-command-line-arguments-in-kotlin)
+- [Kotlinin virallinen dokumentaatio komentorivin argumenteista](https://kotlinlang.org/docs/reference/compiler-plugins.html)
+- [Kuinka luoda komentorivipohjainen ohjelma Kotlinilla](https://www.raywenderlich.com/7258573-command-line-programs-on-the-jvm-with-kotlin)
+- [Kotlinin ohjeet hakasulkujen käytöstä kertakäyttöisten komentorivin argumenttien kanssa](https://kotlinlang.org/docs/reference/compiler-plugin-reference.html#target-jvmargs)

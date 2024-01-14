@@ -1,38 +1,50 @@
 ---
-title:    "Haskell: Escribiendo un archivo de texto"
+title:    "Haskell: Escribir un archivo de texto"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué escribir un archivo de texto
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador de Haskell. Al utilizar archivos de texto, podemos almacenar y acceder a grandes cantidades de datos de manera eficiente, lo que es fundamental en muchas aplicaciones informáticas.
+Escribir un archivo de texto puede ser una tarea muy útil para cualquier programador en Haskell. Además de permitir la persistencia de datos en el tiempo, también es una forma eficiente de compartir información con otros usuarios o sistemas. ¡Aprende cómo hacerlo en este post!
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en Haskell, primero debemos asegurarnos de importar el módulo System.IO. Luego, podemos utilizar la función writeFile para crear y escribir en un archivo de texto. Veamos un ejemplo:
+Antes de empezar, necesitarás importar el módulo `System.IO` en tu código Haskell. Este módulo contiene las funciones necesarias para trabajar con archivos.
 
+Para escribir un archivo de texto, primero debes abrir un `Handle` utilizando la función `openFile`. Esta función recibe dos parámetros: el nombre del archivo que deseas crear y el modo en el que se abrirá (escritura, lectura, etc).
+
+Una vez que tienes un `Handle`, puedes utilizar la función `hPutStrLn` para escribir una línea de texto en el archivo. Puedes utilizar esta función cuantas veces necesites para escribir todo el contenido deseado en el archivo.
+
+Finalmente, debes cerrar el `Handle` utilizando la función `hclose` una vez que hayas terminado de escribir en el archivo.
+
+Un ejemplo completo de cómo escribir un archivo de texto en Haskell sería el siguiente:
+
+```
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-    let mensaje = "¡Hola, mundo!"
-    writeFile "mi-archivo.txt" mensaje
+    archivo <- openFile "mi_archivo.txt" WriteMode
+    hPutStrLn archivo "¡Hola a todos!"
+    hPutStrLn archivo "Este es un archivo de texto creado en Haskell."
+    hPutStrLn archivo "¡Espero que les guste!"
+    hClose archivo
+```
 ```
 
-Al ejecutar este código, se creará un archivo de texto llamado "mi-archivo.txt" en el mismo directorio donde se encuentra nuestro archivo Haskell. El contenido del archivo será "¡Hola, mundo!".
-
-Para escribir en archivos de texto ya existentes, podemos utilizar la función appendFile, que agregará el texto al final del archivo en lugar de sobrescribirlo.
+El resultado de este código sería un archivo de texto llamado "mi_archivo.txt" que contiene las tres líneas de texto especificadas.
 
 ## Profundizando
 
-Si queremos tener más control sobre cómo se escriben los archivos de texto, podemos utilizar la función openFile en lugar de writeFile. Esta función nos permite especificar el modo en que se abrirá el archivo, ya sea para escribir, leer o una combinación de ambos. También podemos especificar cómo se manejarán los errores en caso de que ocurran.
-
-Además, podemos utilizar la función hPutStrLn para escribir una línea específica en el archivo, en lugar de escribir todo el contenido de una vez.
+Escribir un archivo de texto puede ser un poco más complejo que solo utilizar las funciones mencionadas anteriormente, ya que pueden surgir algunos problemas como errores al abrir o cerrar el `Handle`, o manejo de excepciones. Sin embargo, con práctica y estudio podrás dominar esta habilidad en no tiempo.
 
 ## Ver también
 
-- [Documentación del módulo System.IO en Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Tutorial de Haskell en español](https://haskell-es.github.io/tutorial/)
-- [Ejemplos prácticos de escritura de archivos de texto en Haskell](https://wiki.haskell.org/How_to_write_a_Haskell_program)
+Si quieres aprender más sobre cómo trabajar con archivos en Haskell, te recomendamos revisar la documentación oficial del módulo `System.IO` y practicar con diferentes ejemplos. ¡Buena suerte en tus futuros proyectos! 
+
+* [Documentación oficial del módulo `System.IO`](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
+* [Tutorial sobre archivos en Haskell](https://www.fpcomplete.com/haskell/tutorial/io)

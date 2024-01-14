@@ -1,36 +1,52 @@
 ---
-title:    "Arduino: Usuwanie znaków pasujących do wzoru"
+title:    "Arduino: Usuwanie znaków pasujących do wzorca"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu, szczególnie ze złożonymi danymi, ​​musimy usuwać znaki, które pasują do pewnego wzoru. Może być to potrzebne do filtrowania błędnych danych lub transformowania danych do pożądanego formatu. W tym artykule dowiesz się, jak łatwo usuwać znaki pasujące do wzoru za pomocą Arduino.
+Dlaczego ktoś powinien usuwać znaki pasujące do wzorca? Istnieje wiele sytuacji, w których niektóre znaki w ciągu znaków są niepożądane lub niepotrzebne, a usunięcie ich jest pożądane. Przykładowo, w przypadku niektórych urządzeń komunikacyjnych, niektóre znaki muszą zostać usunięte, aby zapewnić poprawną transmisję danych.
 
 ## Jak to zrobić
 
-Do usuwania znaków pasujących do wzoru możemy użyć funkcji `replace()` w Arduino. Spójrzmy na prosty przykład, w którym chcemy usunąć z tekstu wszystkie znaki niebędące liczbami.
+
+Aby usunąć znaki pasujące do określonego wzorca, można użyć pętli for w połączeniu z instrukcją if, aby sprawdzić każdy znak w ciągu znaków. Jeśli ten znak pasuje do wzorca, można go pominąć lub zastąpić innym znakiem. Przykładowy kod w języku Arduino wyglądałby następująco:
 
 ```Arduino
-String tekst = "jakiś tekst 1234 5678";
-tekst.replace("tekst", ""); // usuwa słowo "tekst"
-tekst.replace(/[^\d]/g, ""); // usuwa wszystkie znaki niebędące liczbami
-Serial.println(tekst); // wyświetli "1234 5678"
+// Pobranie ciągu znaków z portu komunikacyjnego
+String receivedString = Serial.readString();
+
+// Przejście przez każdy znak w ciągu znaków
+for (int i = 0; i < receivedString.length(); i++) {
+
+  // Sprawdzenie, czy dany znak pasuje do wzorca
+  if (receivedString[i] == 'a') {
+
+    // Jeśli pasuje, można go pominąć lub zastąpić innym znakiem
+    receivedString.remove(i,1);
+  }
+}
+
+// Wyświetlenie zmodyfikowanego ciągu znaków
+Serial.println(receivedString);
 ```
 
-W powyższym przykładzie, wykorzystujemy funkcję `replace()` do usunięcia słowa "tekst" z naszego tekstu, a następnie wykorzystujemy wyrażenie regularne `/[^\d]/g`, które oznacza "każdy znak niebędący cyfrą", aby usunąć wszystkie znaki niebędące liczbami.
+Przykładowe wyjście:
 
-## Pogłębione zagadnienia
+```
+Przykładowy ciąg znaków: "Zdanie z niechcianym znakiem a!"
+Po usunięciu znaku: "Zdnie z niechnim znkiem a!"
+```
 
-Wszystkie argumenty użyte w przykładzie wcześniej, są opcjonalne. Jeśli chcemy wyciąć znaki pasujące do wzoru, możemy przekazać pusty łańcuch do funkcji `replace()`, jak w przypadku słowa "tekst". Jeśli chcemy tylko usunąć znaki pasujące do wzoru, musimy przekazać drugi argument, który określa, przez co mają być one zastąpione. W naszym przypadku, przekazaliśmy pusty łańcuch. Jeśli chcesz bardziej zaawansowanego przetwarzania tekstu, warto zapoznać się z wyrażeniami regularnymi i funkcjami zawartymi w bibliotece `String` w Arduino.
+## Głębsze omówienie
 
-## Zobacz także
+W języku Arduino można również użyć funkcji replace() lub remove() do usunięcia znaków pasujących do wzorca. W przypadku bardziej skomplikowanych wzorców można także wykorzystać wyrażenia regularne za pomocą biblioteki Regexp.
 
-Jeśli jesteś zainteresowany innymi podstawowymi manipulacjami tekstu w Arduino, warto przeczytać o podstawowych funkcjach takich jak `substring()` czy `concat()`. Możesz także spróbować zaimplementować algorytmy przeszukiwania tekstu, takie jak algorytm Knutha-Morrisa-Pratta. Poniżej znajdują się przydatne linki do tych zagadnień:
+## Zobacz też
 
-- [Dokumentacja funkcji String w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Wyrażenia regularne w Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Alfabetyczna lista funkcji String w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Tutorial o algorytmie Knutha-Morrisa-Pratta w języku C](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+1. [Arduino String reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. [Regexp library for Arduino](https://github.com/aequerd/RegExp)
+3. [Arduino String Functions](https://www.tutorialspoint.com/arduino/arduino_strings.htm)

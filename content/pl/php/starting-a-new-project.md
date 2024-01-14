@@ -1,42 +1,63 @@
 ---
-title:    "PHP: Rozpoczęcie nowego projektu"
+title:    "PHP: Rozpoczynanie nowego projektu"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Rozpoczynanie nowego projektu w PHP może być interesującym wyzwaniem dla programistów. Jest to świetny sposób na rozwijanie umiejętności programowania oraz tworzenie wyjątkowych i użytecznych aplikacji.
+ 
+Stworzenie nowego projektu programistycznego może przynieść wiele korzyści, takich jak rozwoje umiejętności programowania, budowanie portfolio oraz spełnienie osobistych celów. W tym blogu dowiecie się jak rozpocząć nowy projekt w PHP oraz jakie kroki należy podjąć, aby osiągnąć sukces.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest oczywiście zapoznanie się z podstawami języka PHP. Polecam użyć środowiska programistycznego takiego jak PhpStorm, które pomoże w tworzeniu i debugowaniu kodu. Poniżej przedstawiono przykładowy kod wraz z wynikiem jego uruchomienia:
+Przed rozpoczęciem nowego projektu warto zapoznać się z podstawowymi zasadami programowania w PHP. Poniżej przedstawiam przykładowe kody oraz wyniki wyświetlające funkcje języka.
 
 ```PHP
-<?php
-// Definiowanie zmiennej
-$name = "Jan";
-// Wyświetlanie tekstu z wykorzystaniem zmiennej
-echo "Witaj, " . $name . "!"; 
-?>
+// Tworzenie zmiennej
+$imie = "Jan";
+
+// Wyświetlenie komunikatu
+echo "Witaj " . $imie;
+// Wynik: Witaj Jan
 ```
 
-Wynik:
+```PHP
+// Pętla for
+for($i = 1; $i <= 10; $i++){
+    echo $i . ", "; 
+}
+// Wynik: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
 ```
-Witaj, Jan!
+
+```PHP
+// Funkcja zwracająca sumę dwóch liczb
+function suma($a, $b){
+    $wynik = $a + $b;
+    return $wynik;
+}
+
+// Wywołanie funkcji
+echo suma(2, 3);
+// Wynik: 5
 ```
 
-Kolejnym krokiem jest wybranie odpowiedniego frameworka, jeśli planujesz tworzyć większą aplikację PHP. Popularnymi frameworkami są na przykład Laravel, Symfony czy CodeIgniter. Pamiętaj również o bezpieczeństwie swojej aplikacji – używaj filtrów i zapytań przy pobieraniu danych z bazy.
+Kolejnym krokiem jest zapoznanie się z podstawowymi narzędziami potrzebnymi do stworzenia projektu w PHP, takimi jak edytor kodu, platforma do tworzenia baz danych oraz frameworki.
 
-## Deep Dive
+## Dogłębna wiedza
 
-Przed rozpoczęciem projektu warto zastanowić się również nad strukturą kodu. Dzielenie kodu na funkcje i klasy może ułatwić późniejsze modyfikacje i rozbudowę aplikacji. Pamiętaj również o odpowiedniej dokumentacji – jest to kluczowe dla zrozumienia kodu przez innych programistów oraz utrzymania przejrzystości.
+Podczas tworzenia nowego projektu warto pamiętać o kilku ważnych kwestiach. Przede wszystkim należy wybrać odpowiednie narzędzia, które będą odpowiednie dla naszych potrzeb. Dobrym pomysłem jest także zapoznanie się z najlepszymi praktykami programowania i dbanie o czytelność kodu.
 
-Rozpoczynanie nowego projektu w PHP może być czasami trudne i wymagać sporej ilości pracy. Warto jednak pamiętać, że każdy nowy projekt to szansa na rozwój i naukę nowych umiejętności.
+Następnie należy zdefiniować cel swojego projektu i zaplanować jego wykonanie. Warto także przemyśleć architekturę projektu i dobór odpowiednich wzorców projektowych.
+
+Ważnym aspektem jest również testowanie i debugowanie kodu, aby uniknąć potencjalnych błędów i poprawić jego wydajność. Nie należy także zapominać o dokumentacji kodu, która ułatwi pracę nad projektem w przyszłości.
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja języka PHP](https://www.php.net/manual/en/)
-- [Poradnik PHP dla początkujących](https://www.w3schools.com/php/)
-- [Najpopularniejsze frameworki PHP](https://www.codeinwp.com/blog/popular-php-frameworks/)
+- [Oficjalna dokumentacja PHP](https://www.php.net/manual/en/index.php)
+- [10 najważniejszych zasad programowania w PHP](https://www.entrepreneur.com/article/308189)
+- [Narzędzia przydatne podczas tworzenia projektów w PHP](https://codecondo.com/must-have-php-tools-for-people-who-code/)
+- [Podstawy frameworka Laravel](https://laravel.com/docs/8.x)
+- [Podstawy baz danych MySQL](https://www.mysqltutorial.org/)
+- [Wzorce projektowe w PHP](https://designpatternsphp.readthedocs.io/en/latest/)

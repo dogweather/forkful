@@ -1,35 +1,32 @@
 ---
 title:    "Gleam: 寻找字符串的长度"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-在编程中，经常会遇到需要知道字符串的长度的情况。例如，你可能需要对用户输入的字符串进行验证，或者在处理文本数据时需要知道其长度。因此，掌握如何找到字符串的长度是非常重要的。
+为什么：在编程中，我们经常需要使用字符串来存储和处理文本数据。了解如何找到字符串的长度是非常重要的，因为它可以帮助我们更有效地操作数据。
 
-## 如何
-在Gleam中，我们可以使用`String.length`函数来寻找字符串的长度。让我们来看一个例子：
+怎么做：下面是在Gleam中找到字符串长度的代码示例和输出结果，你可以通过运行这些代码来学习如何实现这个功能。
 
 ```Gleam
-let my_string = "Hello, world!"
-let length = String.length(my_string)
+fn main() {
+  let string = "Hello World";
+  let length = string.length();
 
-// 输出: 13
+  io.print("字符串长度为：");
+  io.print(length);
+}
+
+// 输出结果：
+// 字符串长度为： 11
 ```
 
-以上代码中，我们首先定义了一个字符串`my_string`，然后使用`String.length`函数来找到它的长度，并将结果赋值给变量`length`。最后，我们打印出`length`的值，即字符串的长度。简单吧！
+深入分析：在Gleam中，我们可以使用`string.length()`函数来找到字符串的长度。这个函数会返回一个整数值，表示字符串中字符的个数。需要注意的是，中文字符在Gleam中算作一个字符长度。
 
-## 深入了解
-在编程中，字符串的长度实际上是指其包含的字符的个数。这些字符可以是字母、数字、符号或空格等。不同的编程语言可能会有不同的方法来求取字符串的长度，但在Gleam中，我们可以直接使用`String.length`函数来快速求取。
+另外，我们也可以通过遍历字符串的每一个字符来手动获取长度。不过，使用`string.length()`函数更加简单和高效。
 
-值得注意的是，Unicode编码的字符所占的字节数可能会不同，这也决定了不同字符的长度会有所差异。另外，一些特殊字符如换行符`\n`可能会占用多个字节，这也会影响最终的字符串长度。因此，在实际编程过程中，我们应该充分考虑这些情况，以确保我们得到了准确的字符串长度。
-
-## 参考资料
-- [Gleam字符串操作文档](https://gleam.run/articles/strings.html)
-- [Unicode编码介绍](https://www.unicode.org/standard/what.html)
-- [UTF-8编码介绍](https://zh.wikipedia.org/wiki/UTF-8)
-
-## 参见
-- [Gleam官方文档](https://gleam.run/)
-- [Gleam编程语言介绍](https://gleam.run/articles/intro.html)
+See Also（相关链接）：
+- Gleam官方文档：https://gleam.run/
+- 字符串处理相关方法：https://gleam.run/book/core-modules.html#string

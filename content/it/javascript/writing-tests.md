@@ -1,35 +1,50 @@
 ---
 title:    "Javascript: Scrivere test"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Scrivere Test: 
-Scrivere test è una pratica essenziale per ogni sviluppatore Javascript. Questo processo aiuta a garantire che il codice sia robusto, funzioni correttamente e sia resistente a eventuali modifiche future. Inoltre, i test consentono di individuare eventuali bug e problemi di compatibilità in modo tempestivo, risparmiando tempo e risorse allo sviluppatore. 
+## Perché
 
-## Come Scrivere Test: 
-Per scrivere test efficaci, è necessario utilizzare un framework di test come Jest o Mocha. Di seguito è riportato un esempio di come utilizzare Jest per testare una semplice funzione Javascript:
+Scrivere test è un processo cruciale nel mondo della programmazione. Non solo aiuta a identificare eventuali errori nel codice e a garantire che tutto funzioni correttamente, ma anche a documentare il funzionamento del codice e a facilitarne la manutenzione.
+
+## Come fare
+
+Per scrivere test efficaci, è necessario avere familiarità con alcuni concetti chiave come le asserzioni, le funzioni di test e l'uso di librerie di test. Ecco un esempio di come si potrebbe scrivere un semplice test utilizzando la popolare libreria di test Jest:
 
 ```Javascript
-// Funzione da testare
-function somma(a, b) {
-  return a + b;
-}
+// Importa la libreria di test Jest
+const jest = require('jest');
 
-// Test
-test('La somma di 2 e 3 deve essere uguale a 5', () => {
-  expect(somma(2, 3)).toBe(5);
+// Definisci una funzione di test
+const add = (num1, num2) => {
+  return num1 + num2;
+};
+
+// Utilizza la funzione di test per asserire il comportamento atteso
+test('La somma di 2 e 3 dovrebbe essere 5', () => {
+  expect(add(2, 3)).toBe(5);
 });
 ```
 
-L'output di questo test sarà "Passato", indicando che la funzione di somma funziona correttamente.
+Output atteso:
 
-## Approfondimento: 
-Esistono diversi tipi di test che si possono scrivere per il proprio codice Javascript, come i test unitari, di integrazione e di accettazione. È importante capire la differenza tra questi tipi di test e utilizzarli a seconda delle proprie esigenze. Inoltre, è possibile utilizzare strumenti come il code coverage per assicurarsi che tutti i rami del codice siano coperti dai test.
+```
+Test Suites: 1 passed, 1 total
+Tests: 1 passed, 1 total
+Snapshots: 0 total
+Time: 0.567s
+Ran all test suites.
+```
 
-## Vedi Anche: 
-- [Jest](https://jestjs.io/)
-- [Mocha](https://mochajs.org/)
-- [Introduzione ai Test Javascript](https://www.toptal.com/javascript/guida-ai-test-javascript)
-- [Guida Step-by-Step ai Test Unitari con Jest e Vue](https://medium.com/front-end-weekly/unit-testing-vue-components-with-jest-and-vue-test-utils-f5d349fce81f)
+## Approfondimento
+
+Scrivere test può sembrare un'attività poco utile o addirittura noiosa, ma in realtà ha molti vantaggi. Nel processo di sviluppo del software, i test possono aiutarci a individuare errori e bug fin dalle prime fasi, evitando così il rischio di doverli individuare e risolvere in fase di produzione. Inoltre, i test permettono di mantenere un codice ben strutturato e documentato, facilitandone la manutenzione nel lungo termine.
+
+## Vedi anche
+
+- [Documentazione Jest](https://jestjs.io/docs/en/getting-started)
+- [Guida completa a scrivere test in JavaScript](https://www.toptal.com/javascript/guide-to-e2e-testing-nodejs)
+- [Tutorial di test con Jest e React](https://www.valentinog.com/blog/jest/)

@@ -1,67 +1,48 @@
 ---
-title:    "Elm: Creare un file temporaneo"
+title:    "Elm: Creazione di un file temporaneo"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché creare file temporanei con Elm
 
-Creare un file temporaneo può essere utile per gestire dati temporanei o per la creazione di file di backup durante il processo di programmazione.
+Creare file temporanei può essere utile per svariati motivi, come ad esempio la gestione di dati temporanei o la creazione di file di backup durante la modifica di un progetto. Inoltre, con Elm è possibile creare file temporanei in modo semplice e sicuro grazie alla sua natura funzionale e al controllo degli effetti collaterali.
 
-## Come fare
+## Come creare un file temporaneo con Elm
 
-Per creare un file temporaneo in Elm, possiamo utilizzare la funzione `File.temp` del modulo `File.System`. Dovremo specificare il percorso in cui vogliamo creare il file temporaneo e il suo contenuto. Ad esempio:
+Per creare un file temporaneo con Elm, è necessario utilizzare la libreria `elm/file` che permette di gestire l'accesso ai file di sistema. Innanzitutto, è necessario definire un modello che rappresenti il file temporaneo, ad esempio:
 
-```Elm
-import File.System as File
-
-myTempFile : File.File
-myTempFile =
-  File.temp "/percorso/file/temporaneo" "Contenuto del file temporaneo"
+```elm
+type alias TempFile =
+    { name : String
+    , content : String
+    }
 ```
 
-Possiamo poi utilizzare la funzione `File.write` per scrivere o aggiungere ulteriori contenuti al file temporaneo. Infine, possiamo eliminare il file temporaneo utilizzando la funzione `File.delete`.
+Successivamente, è possibile utilizzare la funzione `tempFile` per creare il file temporaneo:
 
-Ora vediamo un esempio completo di creazione e utilizzo di un file temporaneo:
-
-```Elm
-import File.System as File
-
--- creiamo un file temporaneo con il percorso "/documents/temp.txt" e scriviamo "Ciao!" al suo interno
-tempFile : File.File
-tempFile =
-  File.temp "/documents/temp.txt" "Ciao!"
-
--- aggiungiamo una nuova riga al file temporaneo
-File.write tempFile "Come stai?"
-
--- stampiamo il contenuto del file temporaneo
-main : Program Never String
-main =
-  File.read tempFile
-    |> Result.map (\content -> "Il contenuto del file temporaneo è: " ++ content)
-    |> Result.withDefault "Impossibile leggere il file temporaneo."
-    |> Debug.log
-
--- eliminiamo il file temporaneo
-File.delete tempFile
+```elm
+tempFile : String -> String -> Cmd Msg
+tempFile fileName tempData =
+    Cmd.map FileCreated (File.tempFile fileName tempData)
 ```
 
-Output:
+Infine, è possibile gestire la ricezione del file temporaneo tramite il `Msg` corrispondente:
 
+```elm
+type Msg
+    = FileCreated (Maybe File.Result)
 ```
-Il contenuto del file temporaneo è: Ciao!
-Come stai?
-```
 
-## Approfondimento
+## Approfondimenti sulla creazione di file temporanei
 
-Creare un file temporaneo può sembrare una semplice operazione, ma può nascondere alcune sfide. Ad esempio, bisogna assicurarsi di eliminare correttamente il file temporaneo una volta che non ne abbiamo più bisogno, in modo da non occupare inutilmente spazio di archiviazione sul nostro dispositivo. Inoltre, dobbiamo gestire eventuali potenziali errori durante la creazione o la scrittura del file temporaneo.
+Per ottenere maggior controllo sulla creazione di file temporanei con Elm, è possibile utilizzare la funzione `tempFileWith` che permette di specificare alcune opzioni aggiuntive, come il percorso in cui salvare il file temporaneo o le autorizzazioni di lettura e scrittura.
 
-Per ulteriori informazioni sulla gestione dei file in Elm, si consiglia di consultare la documentazione ufficiale del modulo `File.System`.
+Inoltre, è possibile utilizzare la libreria `elm/random` per generare nomi casuali di file, così da evitare di sovrascrivere eventuali file esistenti.
 
-## Vedi anche
-
-- [Documentazione ufficiale del modulo `File.System`](https://package.elm-lang.org/packages/elm/file/latest/File-System)
-- [Esempio di utilizzo del modulo `File.System`](https://github.com/elm/file/tree/latest/examples)
+# Vedi anche
+- [Documentazione ufficiale della libreria elm/file](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Esempio di creazione di file temporanei con Elm](https://gist.github.com/evancz/2bfcba262f318fbd5895ab0f0a4d5120)
+- [Libreria elm/random per la generazione di nomi casuali](https://package.elm-lang.org/packages/elm/random/latest/)

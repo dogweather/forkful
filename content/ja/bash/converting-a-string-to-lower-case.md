@@ -1,29 +1,53 @@
 ---
 title:    "Bash: 「文字列を小文字に変換する」"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を小文字に変換することに興味を持つ理由は何でしょうか？実際にコードを書いていると、大文字や小文字が異なる場合に影響を受ける場合があります。例えば、ユーザー名の入力をバリデーションする場合、大文字、小文字の区別なく判定する必要があります。それでは、実際に文字列を小文字に変換する方法を見ていきましょう。
 
-## 方法
-まず、コードブロック内にBashのコードを記述します。
+文字列を小文字に変換することの利点の一つは、入力を簡単に正規化することができることです。たとえば、ユーザーが大文字で入力した場合でも、テキスト処理やデータベース検索などで期待通りに結果を得ることができます。これにより、プログラミングの作業がスムーズになります。
+
+## 使い方
+
 ```Bash
-# 文字列を変数に格納
-string="Hello, World!"
+# 変数に文字列を代入
+str="Hello World"
+
 # 文字列を小文字に変換
-lower_case="$(echo "$string" | tr '[:upper:]' '[:lower:]')"
+lower_str=${str,,}
 
-# 変換後の文字列を出力
-echo "変換後の文字列は: $lower_case" # 変換後の文字列は: hello, world!
+# 結果を表示
+echo $lower_str
+
+# 出力: hello world
 ```
-このように、トランスレーター（tr）コマンドを使用して、変数内のすべての大文字を小文字に変換します。この方法を使えば、簡単に文字列を小文字に変換することができます。
 
-## ディープダイブ
-もしもっと深く掘り下げることに興味があるなら、文字列を小文字に変換するメソッドの内部的な動作を理解することができます。Bashでは、変数に格納された文字列の各文字をアクセスすることができます。そのため、ループを使用して各文字をチェックし、大文字であれば小文字に変換するコードを実装することもできます。しかし、これはより複雑なコードになりますので、基本的な方法を使用することをお勧めします。
+上記の例では、変数に代入された文字列を小文字に変換し、出力する方法を示しています。変換には、```${variable,,}```の形式を使用します。
 
-## もっと見る
-- [Bashドキュメント](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bashのチュートリアル](https://guide.bash.academy/)
+## 深堀り
+
+文字列を小文字に変換する方法には、2つの主な方法があります。1つは、上記の例で使用した```${variable,,}```を使用する方法です。もう1つは、Bashのビルトインコマンドである```tr```を使用する方法です。
+
+```Bash
+# 変数に文字列を代入
+str="Hello World"
+
+# trコマンドを使用して小文字に変換
+lower_str=$(echo $str | tr '[A-Z]' '[a-z]')
+
+# 結果を表示
+echo $lower_str
+
+# 出力: hello world
+```
+
+上記の例では、パイプを使って変数に代入された文字列を```tr```コマンドに渡し、文字を小文字に変換しています。この方法は、文字列内に特定の文字が含まれている場合に有用です。
+
+## See Also
+
+Markdownの基本 - https://www.markdownguide.org/basic-syntax/
+
+BashのString Manipulation - https://www.tldp.org/LDP/abs/html/string-manipulation.html#LOWERUPPER

@@ -1,41 +1,61 @@
 ---
-title:    "Python: '미래나 과거의 날짜 계산하기'"
+title:    "Python: 미래나 과거의 날짜 계산하기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-미래 또는 과거의 날짜를 계산하는 데 참여하는 이유를 1-2문장으로 설명합니다.
 
-주요 이유 중 하나는 일정을 관리하기 위해서 일 수 있습니다. 예를 들어, 휴가나 예약을 하기 위해서 특정 날짜를 알아야 합니다. 따라서 날짜를 계산하는 기능은 매우 유용합니다.
+날짜를 미래나 과거로 계산하는 것이 유용한 이유는 많습니다. 예를 들어, 생일이나 기념일을 계산할 때, 미래의 일정을 계획할 때, 또는 미래의 일정을 확인할 때 등 다양한 상황에서 날짜를 계산해야 할 수 있습니다.
 
-## 방법
-아래의 Python 코드 블록을 사용하여 코드 예제와 출력을 보여줍니다.
-```Python
-# datetime 모듈 불러오기
+## 어떻게
+
+다음과 같은 코드 블록을 사용하여 파이썬에서 날짜를 계산하는 방법을 알아보겠습니다.
+
+```python
+# 현재 날짜를 가져오기
 import datetime
 
-# 오늘 날짜 생성
 today = datetime.date.today()
-print("Today's date is:", today)
+print('오늘의 날짜:', today)
 
-# 미래의 날짜 계산
+# 지정된 날짜 만들기
+birthday = datetime.date(1990, 8, 25) # 생일을 년, 월, 일 순서로 입력
+print('생일:', birthday)
+
+# 날짜의 요일 확인하기
+print('생일의 요일:', birthday.strftime('%A'))
+
+# 미래의 날짜 계산하기
 future_date = today + datetime.timedelta(days=30)
-print("30 days from today will be:", future_date)
+print('30일 후의 날짜:', future_date)
 
-# 과거의 날짜 계산
+# 과거의 날짜 계산하기
 past_date = today - datetime.timedelta(days=365)
-print("One year ago, it was:", past_date)
+print('일년 전의 날짜:', past_date)
 ```
 
-위의 예제 코드에서는 `datetime` 모듈을 사용하여 날짜를 계산하는 방법을 보여줍니다. `timedelta`를 사용하면 일수를 추가하거나 빼서 날짜를 계산할 수 있습니다.
+위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
 
-## 심층 분석
-미래 또는 과거의 날짜를 계산하는 것은 시간을 다루는 프로그래밍에서 중요한 요소입니다. 파이썬의 `datetime` 모듈은 이러한 날짜 계산을 더 쉽게 만들어줍니다. 또한 `timedelta`를 사용하면 더 정확한 계산이 가능하며, 다양한 날짜 형식을 다룰 수 있습니다.
+```
+오늘의 날짜: 2021-09-10
+생일: 1990-08-25
+생일의 요일: Saturday
+30일 후의 날짜: 2021-10-10
+일년 전의 날짜: 2020-09-10
+```
 
-그러나 너무 많은 날짜 계산을 하면 복잡해질 수 있으므로 코드를 잘 정리하고 주석을 추가하는 것이 좋습니다.
+## 깊이 파헤치기
 
-## 관련 자료
-- 파이썬 datetime 모듈 공식 문서: https://docs.python.org/3/library/datetime.html
-- 파이썬 timedelta 객체에 관한 자세한 설명: https://realpython.com/python-datetime/#timedelta-objects
+파이썬에서는 날짜와 관련된 다양한 기능을 제공합니다. `datetime` 라이브러리를 사용하면 현재 날짜를 가져오는 것은 물론, 지정된 날짜를 생성하고 리눅스 시간표현식과 호환되는 날짜로 변환할 수도 있습니다. 또한 `timedelta`를 사용하면 미래나 과거의 날짜를 손쉽게 계산할 수 있습니다.
+
+파이썬에서 날짜와 관련된 더 많은 기능을 알아보고 싶다면 공식 문서를 참고해 보세요. 더 많은 예제 코드와 자세한 설명을 볼 수 있습니다.
+
+## 이어보기
+
+- [파이썬 공식 문서: 날짜 및 시간](https://docs.python.org/3/library/datetime.html)
+- [The Python datetime Module: A Beginner's Guide](https://realpython.com/python-datetime/)
+- [Python Datetime Module: Manipulate Dates and Times Effortlessly](https://dbader.org/blog/python-datetime-timezone)
+- [Python Tips: Working with Dates and Times](https://www.programiz.com/python-programming/datetime)

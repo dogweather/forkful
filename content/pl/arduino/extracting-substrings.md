@@ -1,60 +1,41 @@
 ---
-title:    "Arduino: Wycinanie podciągów"
+title:    "Arduino: Wydobywanie podciągów"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto ekstrahować podłańcuchy w programowaniu Arduino?
 
-Istnieje wiele powodów, dla których możesz chcieć wyodrębnić podciągi w swoim programie Arduino. Jest to przydatna umiejętność w wielu projektach, takich jak przetwarzanie danych lub wyświetlanie informacji w różnych formatach. Przeczytaj dalej, aby dowiedzieć się, jak można to zrobić w prosty sposób.
+Podłańcuchy, czyli fragmenty tekstu znajdujące się wewnątrz większego tekstu, mogą być bardzo przydatne w programowaniu Arduino. Mogą one zawierać cenne informacje, takie jak numery seryjne, hasła lub adresy IP, które można wykorzystać w dalszej części programu. Dzięki ekstrahowaniu podłańcuchów można precyzyjnie wybierać i wykorzystywać tylko potrzebne informacje, co znacznie ułatwia programowanie i zwiększa jego efektywność.
 
-## Jak to zrobić
+# Jak to zrobić w Arduino?
 
-Aby wyodrębnić podciągi w Arduino, możesz wykorzystać poniższy kod jako przykład:
+W celu ekstrahowania podłańcuchów w programowaniu Arduino, można skorzystać z funkcji substring (). Jest to funkcja, która pozwala na wybieranie określonych znaków z danego tekstu. Przykład kodu wyglądałby następująco:
 
-```
-ArduinoString phrase = "Witaj, świecie!";
-ArduinoString subphrase = phrase.substring(7, 13);
-Serial.println(subphrase);
-```
+```arduino
+// przykładowy tekst
+String tekst = "Hello World!";
 
-W takim przykładzie, używamy obiektu `ArduinoString` do przechowywania naszego pierwotnego ciągu. Następnie, za pomocą funkcji `substring()`, wybieramy podciąg z 7. do 13. pozycji (licząc od zera). Wynik zostaje zapisany w nowym obiekcie `subphrase`. W tym przypadku, otrzymamy na wyjściu tylko słowo "świecie". 
+// wybranie podłańcucha "World"
+String podlancuch = tekst.substring(6, 11);
 
-Można również wykorzystać funkcję `indexOf()` aby znaleźć pozycję określonego znaku lub podciągu wewnątrz innego ciągu. Przykładowo:
+// wyświetlenie wybranego podłańcucha
+Serial.println(podlancuch);
 
-```
-ArduinoString phrase = "To jest przykładowy ciąg.";
-int position = phrase.indexOf("przykładowy");
-Serial.println(position);
+// output: World
 ```
 
-Tutaj, posiadając zmienną `position`, możemy ustalić, na którym miejscu znajduje się słowo "przykładowy" w naszym pierwotnym ciągu (w tym przypadku będzie to pozycja 7).
+W powyższym przykładzie funkcja substring () została wykorzystana do wybrania tekstu znajdującego się pomiędzy 6 a 11 znakiem, czyli słowo "World". Funkcja ta również pozwala na wybieranie podłańcucha z pewnym odstępem, np. co drugi znak.
 
-## Deep Dive
+# Pogłębione informacje o ekstrahowaniu podłańcuchów
 
-Funkcje `substring()` i `indexOf()` mogą przyjmować różne argumenty, co pozwala na bardziej elastyczne wyodrębnianie podciągów. Na przykład, w `substring()`, możesz podać tylko jedną liczbę jako argument, co spowoduje wyodrębnienie podciągu od tej pozycji do końca pierwotnego ciągu:
+Funkcja substring () jest bardzo przydatna, ale warto zauważyć, że operuje ona na obiektach typu String, a nie na zwykłych tablicach znaków. W związku z tym, w celu wykorzystania tej funkcji w programach Arduino, należy zadeklarować zmienne typu String.
 
-```
-ArduinoString phrase = "Wyodrębnij mnie!";
-ArduinoString subphrase = phrase.substring(10);
-Serial.println(subphrase);
-```
+Jedną z zalet funkcji substring () jest to, że można jej używać również do łączenia kilku tekstów w jeden. W tym celu wystarczy zastosować odpowiednie argumenty, np. substring (tekst1.length (), tekst1.length () + tekst2.length ()), co spowoduje połączenie tekstów "tekst1" i "tekst2".
 
-W tym przypadku, na wyjściu otrzymamy "mnie!".
+# Zobacz również
 
-Funkcja `indexOf()` może również odnaleźć więcej niż jeden wystąpienie danego znaku lub podciągu. W tym celu, użyj argumentu opcjonalnego `offset`, który określa od którego miejsca w ciągu należy rozpocząć szukanie. Przykładowo:
-
-```
-ArduinoString phrase = "To jest przykładowy ciąg.";
-ArduinoString subphrase = phrase.substring("jest", 10);
-Serial.println(subphrase);
-```
-
-W tym przypadku, używając opcjonalnego argumentu `offset`, możemy wyodrębnić podciąg od słowa "jest" do piątego wystąpienia znaku spacji.
-
-## Zobacz również
-
-- Dokumentacja dla funkcji `substring()` w Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
-- Dokumentacja dla funkcji `indexOf()` w Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/
-- Przykładowy projekt wykorzystujący wyodrębnianie podciągów w Arduino: https://create.arduino.cc/projecthub/mrmyj/the-simplest-and-smallest-gesture-controlled-glider-e6b448
+- Dokumentacja funkcji substring () w języku Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
+- Przykładowe projekty wykorzystujące ekstrahowanie podłańcuchów w programowaniu Arduino: https://www.electronicshub.org/projects/arduino-substring-function-tutorial/

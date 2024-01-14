@@ -1,38 +1,48 @@
 ---
 title:    "Fish Shell: Tekstin etsiminen ja korvaaminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Haluatko tehostaa tekstien etsimistä ja korvaamista Fish Shellin avulla? Näytämme sinulle, miten voit helposti suorittaa tämän tehtävän.
+Miksi sinun kannattaa etsiä ja korvata tekstiä Fish Shell -kielellä? Etsiminen ja korvaaminen on välttämätöntä, kun haluat muokata tai päivittää suuria määriä tekstiä helposti ja nopeasti. Fish Shell tarjoaa käteviä työkaluja tähän tarkoitukseen, joten voit säästää aikaa ja vaivaa muokkausprosessissa.
 
-## Kuinka tehdä
+## Miten
 
-Fish Shellilla on monipuolisia työkaluja, jotka helpottavat tekstien etsimistä ja korvaamista. Voit käyttää "sed" komentoa, joka korvaa tekstiä tiedostoissa tai komentorivin tulosteissa. Voit myös käyttää "grep" komentoa, joka etsii tiettyä tekstiä tiedostoista. Käytännön esimerkkejä ovat:
-
-```
-Fish Shell sed -komento:
-$sed -i 's/vanha teksti/uusi teksti/g' tiedosto.txt
-```
+Fish Shell -kielellä tekstien etsiminen ja korvaaminen on erittäin yksinkertaista. Voit käyttää komentoa ```sed```, joka löytyy useimpien Linux-jakeluiden mukana. Se toimii seuraavasti:
 
 ```
-Fish Shell grep -komento:
-$grep "hakusana" tiedosto.txt
+sed 's/vanhateksti/uusiteksti/g' tiedosto.txt
 ```
 
-Nämä komennot korvaavat tai etsivät haluamaasi tekstiä "tiedosto.txt" nimisessä tiedostossa. Voit lisäksi käyttää erilaisia vaihtoehtoja ja laajennuksia näihin komentoihin, jolloin voit esimerkiksi muokata useita tiedostoja samanaikaisesti.
+Tämä komento etsii ja korvaa kaikki esiintymät "vanhateksti" tekstillä "uusiteksti" tiedostossa "tiedosto.txt". Jos haluat korvata vain tietyt esiintymät, voit lisätä numeron tai kirjaimen komennon loppuun:
 
-## Syväsukellus
+```
+sed 's/vanhateksti/uusiteksti/2g' tiedosto.txt
+```
 
-Fish Shellin tekstien etsiminen ja korvaaminen saattaa vaikuttaa haastavalta aluksi, mutta sen käyttäminen helpottuu nopeasti. Voit löytää lisätietoa Fish Shellin dokumentaatiosta, josta saat tarkempia ohjeita komentojen käyttöön.
+Tämä korvaa vain toisen esiintymän, mutta jättää muut ennalleen. Voit myös käyttää erilaisia säännöllisiä lausekkeita etsiäksesi ja korvataksesi tiettyjä tekstin osia. Esimerkiksi, voit käyttää ```/d```-toimintoa poistaaksesi rivejä, jotka sisältävät halutun sanan:
 
-Suosittelemme myös tutustumaan muihin Fish Shellin käteviin työkaluihin, kuten "awk" ja "tr", jotka voivat olla hyödyllisiä tekstien käsittelyssä.
+```
+sed '/poistettavasana/d' tiedosto.txt
+```
+
+Voit myös käyttää komentoa ```grep``` etsiäksesi tiettyjä tekstin osia ja komentoa ```awk``` muokataksesi niitä. Tässä on muutamia esimerkkejä:
+
+```
+grep 'etsittäväsana' tiedosto.txt
+awk '{print $1}' tiedosto.txt
+```
+
+## Syvällinen sukellus
+
+Fish Shell tarjoaa monia työkaluja tekstien etsimiseen ja korvaamiseen, joten suosittelemme tutkimaan niitä ja löytämään itsellesi sopivan tavan. Voit myös käyttää Regex-säännöllisiä lausekkeita tarkempiin haku- ja korvausmalleihin. Ota aikaa oppia ja kokeilla eri vaihtoehtoja, jotta voit optimoida prosessisi ja tehdä siitä mahdollisimman tehokkaan.
 
 ## Katso myös
 
-- Fish Shellin dokumentaatio: https://fishshell.com/docs/current/
-- "sed" ja "grep" komentojen opas: https://www.ostechnix.com/beginners-guide-to-sed-linux-command-line-tool/
-- "awk" ja "tr" komentojen opas: https://www.geeksforgeeks.org/basic-shell-programming-using-awk-tr-command/
+- Fish Shell -dokumentaatio: https://fishshell.com/docs/current/index.html
+- Sed-opetusohjelma: https://www.cs.helsinki.fi/u/vahakang/tiedotekniikka/sed.html
+- Regex-opetusohjelma: https://regexone.com/

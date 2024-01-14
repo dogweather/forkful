@@ -1,69 +1,54 @@
 ---
 title:    "Rust: Comparaison de deux dates"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi comparer deux dates en Rust
+## Pourquoi
 
-De nos jours, la programmation est devenue un incontournable dans presque tous les domaines et langages de programmation. Il est donc important de comprendre pourquoi il est utile de comparer deux dates en Rust.
+Comparer deux dates peut sembler simple au premier abord, mais en réalité cela peut être un défi de taille en programmation. Heureusement, le langage de programmation Rust offre des fonctionnalités puissantes pour faciliter cette tâche. Dans cet article, nous allons explorer comment comparer efficacement deux dates en utilisant Rust.
 
 ## Comment faire
 
-Dans Rust, il existe différentes méthodes pour comparer des dates. L'une des plus simples est d'utiliser la méthode `cmp()` qui renvoie un résultat de type `Ordering`. Voici un exemple de code pour comparer deux dates en Rust :
+Pour commencer, nous allons déclarer deux variables de type `Date` en utilisant la bibliothèque `chrono` de Rust :
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+let date1 = chrono::NaiveDate::from_ymd(2021, 1, 1);
+let date2 = chrono::NaiveDate::from_ymd(2020, 12, 31);
+```
 
-// Obtenir la date actuelle
-let now = SystemTime::now();
+Maintenant que nous avons deux dates, nous pouvons utiliser la méthode `cmp` pour les comparer. Cette méthode retourne une valeur `Ordering` qui peut être `Less`, `Equal` ou `Greater`, selon que la première date est antérieure, égale ou postérieure à la seconde.
 
-// Convertir en timestamp
-let timestamp_now = now.duration_since(UNIX_EPOCH).expect("Cannot create timestamp").as_secs();
-
-// Dates à comparer
-let date1 = "2020-01-01";
-let date2 = "2020-05-01";
-
-// Convertir en timestamp
-let timestamp_date1 = convert_to_timestamp(date1);
-let timestamp_date2 = convert_to_timestamp(date2);
-
-// Comparaison en utilisant la méthode cmp()
-let result = timestamp_date1.cmp(&timestamp_date2);
-
-// Afficher le résultat
-if result == Ordering::Less {
-  println!("La date 1 est antérieure à la date 2");
-} else if result == Ordering::Greater {
-  println!("La date 2 est antérieure à la date 1");
-} else {
-  println!("Les deux dates sont identiques");
-}
-
-// Fonction pour convertir une date en timestamp
-fn convert_to_timestamp(date: &str) -> u64 {
-  let date_time = format!("{} 00:00:00", date).parse::<DateTime<Utc>>().expect("Incorrect date format");
-  date_time.timestamp() as u64
+```Rust
+let comparison = date1.cmp(&date2);
+match comparison {
+    Ordering::Less => println!("La première date est antérieure à la seconde."),
+    Ordering::Equal => println!("Les deux dates sont égales."),
+    Ordering::Greater => println!("La première date est postérieure à la seconde."),
 }
 ```
 
-La sortie de ce code sera :
+La sortie de ce code sera "La première date est postérieure à la seconde." car 2021 est une année ultérieure à 2020.
 
+## Plongeons plus en profondeur
+
+Maintenant que nous savons comment comparer deux dates en utilisant Rust, il est important de comprendre la structure interne de ces dates. En Rust, les dates sont représentées en utilisant le système de calendrier proleptique grégorien, ce qui signifie qu'elles peuvent représenter des dates allant jusqu'à des milliards d'années dans le passé ou dans le futur.
+
+De plus, la bibliothèque `chrono` fournit également des méthodes utiles pour manipuler et formater des dates, comme la méthode `format`, qui nous permet de convertir une date en une chaîne de caractères selon un format spécifique.
+
+```Rust
+let date_string = date1.format("%d/%m/%Y").to_string();
+println!("La date au format jour/mois/année est : {}", date_string);
 ```
-La date 1 est antérieure à la date 2
-```
 
-De plus, Rust offre également la possibilité de comparer des dates en utilisant des opérateurs de comparaison tels que `==`, `!=`, `<`, `>`, etc.
-
-## Plongez plus profondément
-
-Comparer deux dates peut sembler simple, mais il est important de comprendre comment les dates sont traitées par le langage. En Rust, les dates sont stockées sous forme de timestamps, qui représentent le nombre de secondes depuis le 1er janvier 1970 à minuit UTC. Cela permet une manipulation plus facile et plus précise des dates.
-
-De plus, Rust dispose d'une bibliothèque dédiée pour gérer les dates et le temps, appelée `chrono`. Cette bibliothèque offre des fonctionnalités avancées pour manipuler et comparer des dates en Rust.
+La sortie sera "La date au format jour/mois/année est : 01/01/2021".
 
 ## Voir aussi
 
-- [Documentation officielle de Rust sur les comparaisons de dates](https://doc.rust-lang.org/std/cmp/trait.Ord.html)
-- [Documentation officielle de la bibliothèque `chrono`](https://docs.rs/chrono/0.3.0/chrono/)
+- [Documentation officielle de Rust sur les méthodes de comparaison de dates](https://doc.rust-lang.org/std/primitive.struct.Date.html#method.cmp)
+- [Guide de référence de la bibliothèque Chrono pour Rust](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [Tutoriel sur les manipulations de dates en Rust](https://opensource.com/article/18/9/manipulating-dates-rust)
+
+Merci d'avoir lu cet article sur la comparaison de dates en Rust ! N'hésitez pas à consulter les liens ci-dessus pour en apprendre davantage sur ce sujet.

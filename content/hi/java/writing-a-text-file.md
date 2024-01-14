@@ -1,53 +1,47 @@
 ---
-title:    "Java: टेक्स्ट फ़ाइल लिखना।"
+title:    "Java: टेक्स्ट फाइल लिखना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
-टेक्स्ट फाइल लिखने को कुछ कारणों से लोगों को संलग्न करना चाहिए।
+## आखिर क्यों:
 
-## कैसे करें
-कॉडिंग उदाहरण और " ```जावा ... ```" कोड ब्लॉक के भीतर नमूना आउटपुट।
+क्या आपने कभी सोचा है कि कोडिंग क्यों इतनी महत्त्वपूर्ण है? यह आसान और सरल तरीका है अधिकतम प्रोग्रामिंग क्षमता खोलने का। यह आपको न केवल जानकारी सीमा में बंद रखता है, बल्कि आपको हर कार्य को पूरी तरह से कस्टमाइज करने का भी स्वतंत्रता देता है।
 
-```java
-// टेक्स्ट फाइल बनाने का उदाहरण
+## कैसे करें:
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+कोडिंग के कई अभ्यास हो सकते हैं, लेकिन सामान्य रूप से एक पूर्ण प्रोग्राम के रूप में उन्हे संगठित करना बहुत अधिक अपरिचित हो सकता है। एक प्रैक्टिकल उदाहरण के रूप में, हम आपको आज आवश्यकता पड़ने पर टेक्स्ट फ़ाइल (text file) को कैसे लिखें और इसकी उपयोगिता के बारे में बताएंगे। 
 
-public class TextFileExample {
-   public static void main(String[] args) {
-      try {
-         File myFile = new File("myTextFile.txt");
-         if (myFile.createNewFile()) {
-            System.out.println("तकनीकी सफलता।");
-         } else {
-            System.out.println("फाइल पहले से मौजूद है।");
-         }
-         FileWriter myWriter = new FileWriter("myTextFile.txt");
-         myWriter.write("यह एक पाठ फाइल है।");
-         myWriter.close();
-         System.out.println("फाइल सफलतापूर्वक लिखी गई।");
-      } catch (IOException e) {
-         System.out.println("तकनीकी त्रुटि हुई।");
-         e.printStackTrace();
-      }
-   }
+````java
+// टेक्स्ट फ़ाइल बनाना
+
+import java.io.*;
+
+public class TextFileWriter {
+
+    public static void main(String[] args){
+    // फ़ाइल का नाम और स्थान निर्दिष्ट करें
+        String fileName = "myFile.txt";
+        String filePath = "C:\\Users\\User\\Desktop";
+
+        try{
+            // टेक्स्ट फ़ाइल बनाने के लिए FileWriter का उपयोग करें
+            FileWriter fileWriter = new FileWriter(filePath + "\\" + fileName);
+            // टेक्स्ट लिखें
+            fileWriter.write("यह एक उदाहरण पाठ फ़ाइल है।");
+            // फ़ाइल बंद करें
+            fileWriter.close();
+            System.out.println("फ़ाइल सफलतापूर्वक लिखी गई!");
+
+        } catch(IOException e){
+            System.out.println("अशुभ, कुछ गलत हो गया।");
+            e.printStackTrace();
+        }
+    }
 }
-```
 
-आउटपुट:
+````
 
-```
-टेक्स्ट फ़ाइल सफलतापूर्वक लिखी गई।
-```
-
-## गहराई में जाएं
-टेक्स्ट फाइल बनाने के लिए `java.io.File` का उपयोग किया जाता है। इसके अलावा, फाइल लिखने के लिए `java.io.FileWriter` का उपयोग किया जाता है। एक नई फाइल बनाने के लिए `createNewFile()` विधि का उपयोग किया जाता है। यह `IOException` को उठाता है यदि फाइल पहले से मौजूद है। फाइल खोलने, लिखने और सफलतापूर्वक बंद करने के लिए `FileWriter.write()` और `FileWriter.close()` विधियों का उपयोग किया जाता है। आप अपनी फाइल को अन्य तरीकों से भी संपादित कर सकते हैं, जैसे कि `java.io.BufferedWriter` का उपयोग करके लंबी फाइलों को लिखने के लिए।
-
-# देखें भी
-- [Java और टेक्स्ट फाइलों के आसपास](https://www.tutorialspoint.com/java/java_files_io.htm)
-- [Java में फ़ाइल को लिखना, पढ़ना,
+उपरोक्त कोड स्निपेट में, हम `FileWriter` कक्षा के उपयोग से आसानी से एक टेक्स्ट फ़ाइल लिख सकते हैं। हम `write ()` फ़ंक्शन का उपयोग करके फ़ाइल में सामग्री लिख सकते हैं

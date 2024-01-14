@@ -1,58 +1,56 @@
 ---
 title:    "Javascript: Znajdowanie długości ciągu znaków"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego?
 
-Dlaczego powinniśmy zwracać uwagę na długość ciągu w języku Javascript? W wielu przypadkach, stosowanie operacji na długości ciągu jest niezbędne do poprawnego wykonania złożonych skryptów. Może być również przydatne do walidacji danych wprowadzonych przez użytkownika lub do analizy tekstu.
+Dlaczego warto nauczyć się znajdować długość ciągu znaków w Javascript? Jest to podstawowa umiejętność, która jest niezbędna do pracy z tekstem w dowolnej aplikacji. Pozwala ona na wykonywanie różnych operacji, takich jak sprawdzanie warunków, wycinanie fragmentów tekstu czy tworzenie nowych ciągów. W tym artykule pokażemy Ci jak to zrobić krok po kroku.
 
-## Jak to zrobić
+# Jak To Zrobić?
 
-Aby uzyskać długość ciągu w języku Javascript, możemy wykorzystać metodę `length` na zmiennej zawierającej nasz ciąg. Poniższy przykład pokazuje jak wygląda to w praktyce:
-
-```Javascript
-let ciag = "To jest nasz ciąg tekstu";
-console.log(ciag.length);
-```
-
-Output: 26
-
-Jeśli chcemy pobrać długość ciągu bez uwzględniania spacji, możemy użyć metody `trim` aby usunąć białe znaki na początku i końcu ciągu, a następnie zastosować metodę `length`. Przykład:
+Aby znaleźć długość ciągu znaków w Javascript, możesz skorzystać z wbudowanej funkcji `length()`. Przykładowy kod można zapisać w następujący sposób:
 
 ```Javascript
-let ciag = "To jest nasz ciąg tekstu";
-console.log(ciag.trim().length);
+let str = "To jest przykładowy ciąg znaków.";
+console.log(str.length); // Wyświetli 32
 ```
 
-Output: 22
+W powyższym przykładzie deklarujemy zmienną `str` oraz przypisujemy do niej ciąg znaków. Następnie za pomocą funkcji `length()` wyświetlamy długość tego ciągu. Jak widać, ten prosty kod pozwala na znalezienie długości ciągu w Javascript.
 
-## Głębsza analiza
-
-Poza podstawowym użyciem, warto zapoznać się z dodatkowymi metodami związanymi z długością ciągów w języku Javascript. Jedną z nich jest metoda `substr`, która pozwala na pobranie określonej liczby znaków z danego ciągu, zaczynając od określonego indeksu. Przykład:
+Możemy również wykorzystać pętlę `for` do przejrzenia wszystkich znaków w danym ciągu i wyliczenia jego długości. Poniższy przykład pokazuje jak to zrobić:
 
 ```Javascript
-let ciag = "To jest nasz ciąg tekstu";
-console.log(ciag.substr(3, 8));
+let str = "Jestem programistą Javascript.";
+let length = 0;
+
+for (let i = 0; i < str.length; i++) {
+  length++;
+}
+
+console.log(length); // Wyświetli 31
 ```
 
-Output: jest nasz
+W tym przypadku deklarujemy zmienną `length`, która będzie zliczać ilość znaków, następnie za pomocą pętli `for` przechodzimy przez wszystkie znaki w ciągu i zwiększamy wartość zmiennej `length` za każdym razem, gdy znajdziemy nowy znak. Po zakończeniu pętli wyświetlamy wartość zmiennej, która w tym przypadku jest równa długości ciągu.
 
-Kolejną przydatną metodą jest `split`, która umożliwia podzielenie ciągu na tablicę, wykorzystując określony separator. Przykład:
+# Deep Dive
+
+Gdy już nauczysz się podstaw znajdowania długości ciągu znaków w Javascript, możesz przejść dalej i poznać kilka ciekawych rzeczy na ten temat. Na przykład, chciałbyś być w stanie obliczyć długość tylko wybranych części ciągu? Możesz to zrobić za pomocą metody `substring()` i funkcji `length()` jak w poniższym przykładzie:
 
 ```Javascript
-let ciag = "To,jest,nasz,ciąg,tekstu";
-console.log(ciag.split(","));
+let str = "Javascript jest super!";
+let part = str.substring(0, 10); // Wybieramy pierwsze 10 znaków z ciągu
+console.log(part.length); // Wyświetli 10 
 ```
 
-Output: ["To", "jest", "nasz", "ciąg", "tekstu"]
+Powyższy kod najpierw wybiera pierwsze 10 znaków z ciągu `str` za pomocą metody `substring()`, a następnie za pomocą funkcji `length()` wylicza ich długość. Możesz eksperymentować i zmieniać wartości w metodzie `substring()` aby wybierać różne części ciągu i sprawdzać ich długość.
 
-W przypadku potrzeby uzyskania dostępu do poszczególnych znaków ciągu, możemy również skorzystać z notacji nawiasów kwadratowych i indeksów wewnątrz nich, np. `ciag[3]` zwróci znak znajdujący się na 4. pozycji w ciągu.
+# Zobacz też
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o manipulacji tekstu w Javascript, polecamy przeczytać artykuły w poniższych linkach:
 
-- [Dokumentacja MDN - String length](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/String/length)
-- [Dokumentacja MDN - String substr](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/String/substr)
-- [Dokumentacja MDN - String split](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/String/split)
+- [W3Schools - String Length](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [Mozilla Developer Network - String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

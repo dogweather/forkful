@@ -1,69 +1,79 @@
 ---
 title:    "Clojure recipe: Reading command line arguments"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-One of the fundamental ways of interacting with a program is through the command line. Being able to pass arguments to a program allows for a more dynamic and customizable experience for the user.
+As a beginner in Clojure, understanding how to read command line arguments is an essential skill for developing command line applications. Knowing how to access and manipulate these arguments can greatly improve the functionality and flexibility of your programs.
 
-## How To
+## How To 
 
-Reading command line arguments in Clojure is a simple but powerful task. All command line arguments are passed to the `clojure.main` function as a vector of strings in the `*command-line-args*` variable.
-
-```Clojure
-(defn main 
-  [& args]
-  (println "Hello" (first args))) ; Passing the first argument to the println function
-```
-**Output:** `Hello [first argument]`
-
-Arguments can also be passed directly to a specific namespace and function using the `-m` flag.
-
-```Clojure
-(ns my-app.core
-  (:gen-class))
-
-(defn -main 
-  [& args]
-  (println "Hello" (first args)))
+To start off, let's take a look at a basic Clojure program that reads command line arguments and prints them out. Open up your preferred command line interface and type in the following commands:
 
 ```
+Clojure -M -e "(println *command-line-args*)"
+```
 
-**Command Line:** `clj -m my-app.core [argument]`
+Press enter and you should see an output that looks something like this:
 
-**Output:** `Hello [argument]`
+```
+["-M" "-eval" "(println *command-line-args*)"]
+```
+
+What this does is it prints out the arguments that were passed in when running the program. In this case, we passed in the -M flag which tells Clojure to load modules before executing the program. This is why we see it as the first argument followed by the -eval flag and the code to be evaluated.
+
+But what if we want to do more than just print out the arguments? We can use the "get" function to access a specific argument at a particular index. Let's take a look at an example:
+
+```
+Clojure -M -e "(println (get *command-line-args* 2))"
+```
+
+Here, we are telling Clojure to print out the argument at index 2, which in this case is the code to be evaluated. The output should be:
+
+```
+"(println *command-line-args*)"
+```
+
+Now, let's dive deeper into reading command line arguments.
 
 ## Deep Dive
 
-The `clojure.main` function is the entry point for all command line arguments. It also provides the option to load a specific namespace and function using the `-m` flag, as shown in the previous example. However, for more complex scenarios, the `tools.cli` library can be used to handle command line arguments.
-
-The `tools.cli` library allows for the creation of customizable and flexible command line interfaces. It provides options for specifying required and optional arguments, setting default values, and parsing flags and options. Below is a simple example using `tools.cli`.
-
-```Clojure
-(ns my-app.core
-  (:require [clojure.tools.cli :refer [cli]]))
-
-(defn -main 
-  [& args]
-  (let [[options args banner]
-        (cli args
-          ["-n" "--name NAME" "Your name"]
-          ["-a" "--age AGE" "Your age (default: 24)"])]
-    (printf "Hello, my name is %s and I am %d years old!" 
-            (:name options)
-            (or (:age options) 24))))
+In addition to using the "get" function, we can also use the "nth" function to access a specific argument at an index. This is helpful when you have a larger number of arguments and need to access a specific one without counting them manually.
 
 ```
+Clojure -M -e "(println (nth *command-line-args* 1))"
+```
 
-**Command Line:** `clj -m my-app.core -n John -a 30`
+In this example, we are printing out the argument at index 1, which in this case is the -eval flag. The output should be:
 
-**Output:** `Hello, my name is John and I am 30 years old!`
+```
+"-eval"
+```
+
+Another useful function for reading command line arguments is the "subs" function. This allows us to extract a substring from a larger string, which can be helpful if our arguments include words or phrases. Let's take a look:
+
+```
+Clojure -M -e "(println (subs (nth *command-line-args* 0) 1 3))"
+```
+
+Here, we are printing out a substring of the first argument, starting at index 1 and ending at index 3. The output should be:
+
+```
+"-M"
+```
+
+By utilizing these functions, we can easily access and manipulate command line arguments to improve the functionality of our programs.
 
 ## See Also
 
-- [Official Clojure Documentation](https://clojure.org/reference/repl_and_main#_command_line_arguments)
-- [Clojure Docs: tools.cli](https://clojuredocs.org/clojure.tools.cli)
-- [Clojure CLI Tools Tutorial](https://github.com/clojure/tools.cli#clojure-cli-tools-tutorial)
+To learn more about Clojure and its functions, check out these helpful resources:
+
+- [Official Clojure website](https://clojure.org)
+- [Clojure cheat sheet](https://clojure.org/api/cheatsheet)
+- [Clojure for the Brave and True](https://www.braveclojure.com)
+
+Happy coding!

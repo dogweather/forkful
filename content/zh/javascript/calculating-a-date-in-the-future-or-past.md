@@ -1,49 +1,43 @@
 ---
-title:    "Javascript: 在计算机编程中，这是一篇关于“计算未来或过去日期”的文章。"
+title:    "Javascript: 计算未来或过去的日期"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-如果你是一位喜欢编程的朋友，那么你可能经常会遇到需要计算未来或过去日期的问题。这其中涉及到许多项目，比如计划旅行日期、制定任务截止日期等。在这篇文章中，我们将深入了解如何使用Javascript编程来轻松计算未来或过去的日期。
+# 为什么要计算未来或过去的日期？
 
-## Why
-为什么要计算未来或过去的日期？对于需要制定时间计划和任务安排的人来说，计算日期是一项非常重要的技能。例如，如果你计划出国旅行，你需要知道何时预订机票和酒店，何时安排签证申请等。通过计算日期，你可以更有效地管理自己的时间，并确保计划顺利进行。因此，学习如何用Javascript编程来计算日期将是非常有用的。
+计算未来或过去的日期对于编程具有很大的实用性，可以帮助我们创建具有时间限制的应用程序或提醒功能。例如，在日历应用程序中，我们可以使用编程来计算未来某一天的日期并提醒用户。因此，学习如何计算日期是非常必要的。
 
-## How To
-```javascript
-// 计算未来日期的函数
-function calculateFutureDate(days) {
-  let today = new Date();
-  let futureDate = new Date(today.getTime() + days * 24 * 60 * 60 * 1000); // 将天数转换为毫秒数，再加到现在的日期中
-  return futureDate;
-}
+## 如何做？
 
-let futureDate = calculateFutureDate(10); // 计算10天后的日期
-console.log(`10天后的日期是: ${futureDate}`);
-
-// 计算过去日期的函数
-function calculatePastDate(days) {
-  let today = new Date();
-  let pastDate = new Date(today.getTime() - days * 24 * 60 * 60 * 1000); // 将天数转换为毫秒数，再从现在的日期中减去
-  return pastDate;
-}
-
-let pastDate = calculatePastDate(5); // 计算5天前的日期
-console.log(`5天前的日期是: ${pastDate}`);
-
-// 输出:
-// 10天后的日期是: Tue Apr 20 2021 09:53:46 GMT+0800 (China Standard Time)
-// 5天前的日期是: Thu Apr 15 2021 09:53:46 GMT+0800 (China Standard Time)
+```Javascript
+// 计算未来的日期，比如在当前日期上加上7天，并输出格式为"月/日/年"
+let date = new Date();
+let futureDate = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000); // 获取当前日期并加上7天的毫秒数
+// 使用内置函数获取月、日、年，并用字符串拼接的方式输出
+console.log(`${futureDate.getMonth() + 1}/${futureDate.getDate()}/${futureDate.getFullYear()}`);
+// 输出结果： 6/17/2021
 ```
 
-## Deep Dive
-在Javascript中，我们可以使用Date对象来表示日期和时间。它有一些内置的方法，比如getTime()来获取当前日期的毫秒数，getDay()来获取当前日期是星期几等。我们可以利用这些方法来计算日期。
+```Javascript
+// 计算过去的日期，比如在当前日期上减去30天，并输出格式为"月/日/年"
+let date = new Date();
+let pastDate = new Date(date.getTime() - 30 * 24 * 60 * 60 * 1000); // 获取当前日期并减去30天的毫秒数
+// 使用内置函数获取月、日、年，并用字符串拼接的方式输出
+console.log(`${pastDate.getMonth() + 1}/${pastDate.getDate()}/${pastDate.getFullYear()}`);
+// 输出结果： 5/18/2021
+```
 
-在计算未来日期时，我们首先需要获取当前的日期，然后通过将未来的天数转换为毫秒数，再加到当前日期中来得到未来的日期。同样，在计算过去日期时，我们需要获取当前的日期，然后通过将过去的天数转换为毫秒数，再从当前日期中减去来得到过去的日期。
+## 深入探讨
 
-除了利用内置的方法来计算日期，我们还可以使用第三方库，比如Moment.js来更方便地处理日期和时间。它提供了许多实用的方法，可以让我们更轻松地计算日期和时间。
+在Javascript中，我们可以使用Date对象和其内置方法来计算日期。在计算日期之前，我们需要先获取当前日期，这可以通过使用new Date()来实现。然后，我们可以使用Date对象的方法来获取月、日、年等信息，并在计算未来或过去的日期时，根据需要加上相应的毫秒数。最后，我们可以使用字符串拼接的方式来输出日期的格式。
 
-## See Also
-- [MDN: Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+此外，我们还可以使用第三方库如moment.js来方便地计算日期。
+
+# 参考链接
+
+- [阮一峰的《Javascript Date 对象》](https://wangdoc.com/javascript/types/date.html)
+- [MDN Web Docs中文版的Date对象文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [moment.js官方文档](https://momentjs.com/docs/)

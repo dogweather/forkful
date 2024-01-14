@@ -1,63 +1,47 @@
 ---
 title:    "Ruby: 将字符串转换为小写"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+### 为什么
 
-许多程序员都会遇到一种情况，在编程过程中需要将一个字符串转换为小写字母，那么为什么我们需要这样做呢？通过将字符串转换为小写字母，我们可以统一处理用户输入的不同大小写形式，从而方便进行字符串比较和匹配。
+为什么有时候我们会需要将字符串转换成小写呢？可能是为了方便比较字符串，或者是为了统一格式。无论出于什么目的，掌握如何将字符串转换成小写在编程中是非常有用的技能。
 
-## 如何操作
+### 如何
 
-要将字符串转换为小写字母，在Ruby中有一个非常简单的方法，那就是使用 `.downcase` 方法。
+首先，我们需要定义一个字符串，例如`my_string = "HELLO WORLD"`
 
-```Ruby
-string = "RUBY"
-puts string.downcase
-
-# 输出结果为
-ruby
-```
-
-除了使用 `.downcase` 方法外，我们也可以使用 `.scan` 方法结合正则表达式来将字符串中的大写字母全部替换为小写字母。
+要将字符串转换成小写，我们可以使用`.downcase`方法，如下所示：
 
 ```Ruby
-string = "Hello WORLD!"
-puts string.scan(/[A-Z]/).join("").downcase
-
-# 输出结果为
-helloworld
+my_string.downcase
 ```
 
-## 深入探讨
+运行以上代码，你会得到输出`"hello world"`。可以看到，所有的大写字母都被转换成了小写字母。
 
-当我们调用 `.downcase` 方法时，Ruby会将字符串中所有的大写字母转换为小写字母，并返回一个新的字符串对象，原来的字符串不会被改变。这也是Ruby中的**不可变对象**（immutable object）的概念，意味着我们无法直接修改原始的字符串，而是会创建一个新的字符串对象进行操作。
-
-此外，如果我们使用 `.downcase!` 方法，那么原始的字符串会被直接改变。下面是一个示例：
+如果要将字符串的第一个字母转换成小写，可以使用`.capitalize`方法。如下所示：
 
 ```Ruby
-string = "Hello WORLD!"
-string.downcase!
-puts string
-
-# 输出结果为
-hello world!
+my_string.capitalize
 ```
 
-## 参考资料
+运行以上代码，你会得到输出`"Hello world"`。可以看到，只有第一个字母被转换成了小写。
 
-在探讨字符串转换为小写字母的过程中，我们也涉及到了正则表达式的使用，以及Ruby中的不可变对象的概念。下面是一些相关的参考资料，供大家进一步学习和探索：
+### 深入探讨
 
-- Ruby官方文档：[`.downcase`](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)、[`.downcase!`](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase-21)、[`.scan`](https://ruby-doc.org/core-2.7.1/String.html#method-i-scan)
-- [Ruby正则表达式教程](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-- [Ruby中的不可变对象](https://www.rubyguides.com/2018/11/ruby-objects-mutable-immutability/)
-- [惰性求值（lazy evaluation）](https://www.geeksforgeeks.org/lazy-evaluation-in-ruby/)
-- [为什么Ruby中的字符串是不可变的？](https://stackoverflow.com/questions/5604852/why-are-ruby-strings-immutable/5605571#5605571)
+在Ruby中，字符串转换成小写的方法非常多，每种方法都有不同的用处。例如，除了使用`.downcase`和`.capitalize`方法，我们还可以使用`.swapcase`方法来将字符串中的大写字母转换成小写，小写字母转换成大写。另外，`.downcase!`和`.capitalize!`方法可以直接修改原字符串，而不是返回一个新的字符串。学习并掌握不同的方法，可以让我们更加灵活地处理字符串。
 
-## 另请参阅
+### 参考资料
 
-- [Ruby中的其他字符串操作方法](https://www.rubyguides.com/2019/01/ruby-string-methods/)
-- [Ruby编程语言入门指南](https://zhuanlan.zhihu.com/p/25329549)
-- [Ruby编程语言基础入门教程](https://www.runoob.com/ruby/ruby-tutorial.html)
+- [Ruby Doc: String](https://ruby-doc.org/core-3.0.1/String.html)
+- [How to convert a string to lowercase in Ruby](https://www.digitalocean.com/community/tutorials/how-to-convert-a-string-to-lowercase-in-ruby)
+- [5 Ways to convert Strings to lowercase in Ruby](https://coderwall.com/p/jekapg/5-ways-to-convert-strings-to-lowercase-in-ruby)
+
+### 参见
+
+- 字符串操作教程
+- Ruby基础教程
+- [Ruby 入门指南 – 基础部分](https://ruby-china.org/wiki/ruby-beginner-guide#Step_6_23)

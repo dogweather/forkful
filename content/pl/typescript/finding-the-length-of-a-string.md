@@ -1,52 +1,39 @@
 ---
-title:    "TypeScript: Znajdując długość ciągu znaków"
+title:    "TypeScript: Obliczanie długości ciągu znaków"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Dlaczego
 
-Często podczas programowania, jeden z problemów z jakimi możemy się spotkać to konieczność znalezienia długości ciągu znaków. Może to być potrzebne do walidacji danych czy też do manipulacji tekstem. W tym artykule dowiecie się jak w prosty sposób można znaleźć długość ciągu znaków w języku TypeScript.
+Dlaczego powinieneś/chciałbyś szukać długości stringa? Może planujesz stworzyć aplikację, która będzie wyświetlać pewien tekst, ale musisz wiedzieć, ile znaków ten tekst zawiera? Albo może chcesz zaimplementować funkcję, która będzie liczyć słowa w danym zdaniu? W obu tych przypadkach znajomość długości stringa jest niezbędna.
 
-## Jak to zrobić
-
-Aby znaleźć długość ciągu znaków w TypeScript, możemy wykorzystać wbudowaną funkcję `length`.
+## Jak To Zrobić
 
 ```TypeScript
-let string = "Programowanie w TypeScript jest super!";
-console.log(string.length); // Output: 36
+let str: string = "To jest przykładowy string";
+console.log(str.length);
 ```
+Ten prosty kawałek kodu w TypeScript pozwala nam wyświetlić długość stringa "To jest przykładowy string", która wynosi 26. Do uzyskania długości stringa używamy "length" po kropce, tak samo jak przy tablicach.
 
-W powyższym przykładzie stworzyliśmy zmienną `string` zawierającą nasz ciąg znaków, a następnie wywołaliśmy na niej funkcję `length`, która zwróciła nam długość ciągu.
-
-Możemy również wykorzystać tę funkcję w połączeniu z metodą `toString()` aby znaleźć długość dowolnego obiektu typu `string`.
+Możemy także ustawić zmienną na daną długość stringa i wyświetlić ją w naszej aplikacji:
 
 ```TypeScript
-let username = "John";
-console.log(username.toString().length); // Output: 4
+let str: string = "Długość tego zdania to";
+console.log(str.length + "znaki.");
 ```
+Output: Długość tego zdania to 26 znaki.
 
 ## Deep Dive
 
-Funkcja `length` zwraca liczbę znaków w ciągu, a nie indeks ostatniego znaku. Liczenie zaczyna się od zera, więc ostatni znak będzie miał indeks o jeden mniejszy niż wartość zwrócona przez funkcję `length`.
+Istnieją różne sposoby na liczenie długości stringa w TypeScript. Możemy użyć metody "length" jak w przykładzie powyżej lub możemy skorzystać z funkcji "string.length", która również zwraca długość stringa. 
 
-```TypeScript
-let string = "To jest przykład";
-console.log(string.length); // Output: 16
-console.log(string[15]); // Output: d (to jest ostatni znak)
-console.log(string[16]); // Output: undefined
-console.log(string[string.length - 1]); // Output: d (również ostatni znak)
-```
+Warto również pamiętać, że w TypeScript każdy znak jest traktowany jako osobny element w stringu, nawet jeśli jest to znak specjalny lub emoji. Dlatego też długość stringa może się różnić w zależności od ilości znaków.
 
-Funkcja `length` nie jest dostępna dla typów danych opartych na obiektach, takich jak `Object` czy `Array`. Jeśli chcemy znaleźć długość tablicy, musimy wykorzystać pole `length`.
+## Zobacz też
 
-```TypeScript
-let array = [1, 2, 3, 4, 5];
-console.log(array.length); // Output: 5
-```
-
-## Zobacz również
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
-- [Funkcja length() w języku JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/length)
+- [Dokumentacja TypeScript na temat stringów](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN web docs - String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Porównanie długości stringów w TypeScript](https://stackoverflow.com/questions/15499609/compare-length-of-two-strings-with-typescript)

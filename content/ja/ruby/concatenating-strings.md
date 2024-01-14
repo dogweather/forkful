@@ -1,82 +1,66 @@
 ---
-title:    "Ruby: 文字列の結合"
+title:    "Ruby: 文字列の連結"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-文字列の結合をする理由はたくさんあります。例えば、あなたがコンピュータサイエンスの学生である場合、そのスキルを使ってあなたの最後のプロジェクトを完成するかもしれません。また、あなたがプログラミング初心者であれば、文字列の結合は基本的なスキルであり、より高度なプログラミングにつながる重要な概念です。
+文字列を連結するとは、複数の文字列を組み合わせて1つの文字列にすることです。これができると、より複雑な文字列や文を作成することができます。
 
 ## 方法
 
-Rubyでは、文字列を結合するための簡単な方法があります。その方法の一つは、`+`演算子を使用することです。例えば、以下のように書くことで2つの文字列を結合することができます。
-
 ```Ruby
-str1 = "Hello "
-str2 = "World!"
-puts str1 + str2
+first_name = "Satoshi"
+last_name = "Tanaka"
+
+full_name = first_name + " " + last_name
+puts full_name
 ```
 
-この例では、`Hello `という文字列と`World!`という文字列が結合され、出力は`Hello World!`となります。
+この例では、`+`演算子を使用して`first_name`、スペース、`last_name`を連結することで、`full_name`を作成しています。コードを実行すると、全体の名前が`Satoshi Tanaka`と出力されます。
 
-また、`<<`演算子も使って文字列の結合をすることができます。例えば、以下のコードを見てみましょう。
+## 深堀り
 
-```Ruby
-str1 = "Happy"
-str1 << " "
-str1 << "New Year!"
-puts str1
-```
-
-この例では、`<<`演算子を使って単語ごとに文字列を結合しています。出力は`Happy New Year!`となります。
-
-さらに、Rubyでは`concat`メソッドを使っても文字列を結合することができます。以下のコードを見てみましょう。
+Rubyでは、他にも文字列を連結する方法があります。例えば、`<<`演算子を使用することもできます。
 
 ```Ruby
-str1 = "I"
-str2 = " love"
-str3 = " Ruby"
-str1.concat(str2, str3)
-puts str1
+first_name = "Satoshi"
+last_name = "Tanaka"
+
+full_name = first_name << " " << last_name
+puts full_name
 ```
 
-この例では、`concat`メソッドを使って3つの文字列を結合しています。出力は`I love Ruby`となります。
-
-## ディープダイブ
-
-また、`<<`演算子や`concat`メソッドの代わりに`+=`演算子を使っても文字列を結合することができます。例えば、以下のコードを見てみましょう。
+このコードを実行しても同じ出力結果が得られますが、`<<`演算子はより効率的に文字列を連結することができます。また、`+=`演算子を使用すれば、元の変数を更新しながら文字列を連結することもできます。
 
 ```Ruby
-str1 = "Hello"
-str2 = "World!"
-str1 += " " + str2
-puts str1
+first_name = "Satoshi"
+last_name = "Tanaka"
+
+first_name += " "
+first_name += last_name
+puts first_name
 ```
 
-この例では、単語ごとに`+=`演算子を使って文字列を結合しています。出力は`Hello World!`となります。
-
-また、Rubyでは文字列の結合の際に、変数の型を気にする必要はありません。例えば、以下のようなコードを実行してみると、
+また、文字列内に変数を含めることもできます。
 
 ```Ruby
-num = 42
-str = "The answer is " + num + "."
-puts str
+name = "Satoshi"
+
+puts "こんにちは、私の名前は#{name}です。"
 ```
 
-エラーが発生します。このコードでは、`num`という整数を文字列に結合しようとしていますが、Rubyでは異なる型の変数を結合することはできません。しかし、次のように書くことでエラーを回避することができます。
+このように、文字列を連結する方法はさまざまですが、どの方法を選択しても同じ結果を得ることができます。
 
-```Ruby
-num = 42
-str = "The answer is " + num.to_s + "."
-puts str
-```
+## 詳しくは
 
-`to_s`メソッドを使うことで、整数の`num`を文字列に変換してから結合することができます。出力は`The answer is 42.`となります。
+Rubyでは、文字列の連結についてさらに詳しく学ぶことができます。例えば、文字列を配列に変換してから連結する方法や、特殊文字を使用して文字列を整形する方法などがあります。究極的には、自分にとって最も理解しやすい方法で文字列を連結することが重要です。
 
-## その他にも参考になるリンク
+## 参考リンク
 
-- [Ruby公式ドキュメント](https://www.ruby-lang.org/ja/documentation/)
-- [Ruby学習サイト「ドットインストール」](https://dotinstall.com/lessons/basic_ruby_v3)
-- [Ruby入門書
+- [Rubyの文字列操作](https://www.techscore.com/blog/2016/12/21/ruby%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E6%93%8D%E4%BD%9C/)
+- [Ruby Wing](https://rubywing.com/string/)
+- [Rubyリファレンスマニュアル](https://docs.ruby-lang.org/ja/latest/doc/spec=2fcall=3f.html#gseq2697)

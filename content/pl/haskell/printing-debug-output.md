@@ -1,65 +1,53 @@
 ---
-title:    "Haskell: Wyświetlanie informacji o debugowaniu"
+title:    "Haskell: Wydrukowanie wyników debugowania"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Kiedy pracujesz z programami w Haskellu, istnieje wiele sposobów na odłuszczenie błędów i problemów. Jednym ze sposobów jest wyświetlanie informacji debugowania, które pomagają zrozumieć, co dzieje się podczas wykonywania Twojego kodu. W tym artykule dowiesz się, dlaczego warto używać wydruku informacji debugowania i jak to zrobić.
+Debugowanie jest ważnym krokiem w procesie programowania. Dzięki wyświetlaniu komunikatów debugowych można łatwiej zrozumieć działanie programu i naprawić ewentualne błędy. W tym artykule dowiesz się, dlaczego warto wyświetlać komunikaty debugowe podczas pisania kodu w języku Haskell.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wyświetlić informacje debugowania w Haskellu, użyj funkcji `print`. Przykładowo:
-
-```Haskell
--- Stwórzmy prostą funkcję, która odwraca listę
-reverseList :: [a] -> [a]
-reverseList [] = []
-reverseList (x:xs) = (reverseList xs) ++ [x]
-
--- Wydrukujmy odwróconą listę
-main = do
-    let list = [1,2,3]
-    print $ reverseList list
-
--- Wynik: [3,2,1]
-```
-
-Powyższy kod wykorzystuje funkcję `print` aby wyświetlić odwróconą listę. Warto zauważyć, że wynik jest wypisywany w nawiasach kwadratowych, ponieważ `print` automatycznie jednoelementowe listy wypisuje w ten sposób.
-
-Możesz również użyć funkcji `trace` z modułu `Debug.Trace`, aby wyświetlić dodatkowe informacje w trakcie wykonania funkcji. Przykładowo:
+W języku Haskell najczęściej do wyświetlania komunikatów debugowych używa się funkcji `print`. Przykładowe użycie tej funkcji wygląda następująco:
 
 ```Haskell
-import Debug.Trace
-
--- Stwórzmy funkcję, która sprawdza czy podana liczba jest nieparzysta
-isOdd :: Int -> Bool
-isOdd x = trace ("Sprawdzam czy " ++ show x ++ " jest nieparzyste") $ x `mod` 2 == 1
-
--- Wywołajmy z funkcję z liczbą 3
+main :: IO ()
 main = do
-    let num = 3
-    print $ isOdd num
-
--- Wynik:
--- Sprawdzam czy 3 jest nieparzyste
--- True
+  let x = 10
+  print x
 ```
 
-W powyższym przykładzie wykorzystaliśmy funkcję `trace`, aby wyświetlić komunikat informujący o tym, że sprawdzana jest nieparzystość danej liczby.
+W tym kodzie zmienna `x` zostanie wyświetlona w konsoli, co umożliwi nam sprawdzenie jej wartości w trakcie działania programu. Można także wyświetlić więcej niż jedną zmienną, po prostu przekazując je jako kolejne argumenty funkcji `print`:
 
-## Głębszy wgląd
+```Haskell
+main :: IO ()
+main = do
+  let x = 10
+      y = "Hello"
+  print x y
+```
 
-Wydrukowanie informacji debugowania w Haskellu może być bardzo pomocne w procesie odłuszczania błędów. Dzięki niemu możesz śledzić wartości zmiennych i wykonywane operacje, co pozwala lepiej zrozumieć, co dzieje się w Twoim programie.
+Wynikiem będzie wyświetlenie wartości `x` i `y` w kolejności, w jakiej zostały przekazane do funkcji `print`.
 
-Ważne jest również, aby pamiętać o usuwaniu informacji debugowania przed udostępnieniem swojego kodu. Nie chcemy przecież dzielić naszych "brudnych" kodów z innymi, prawda?
+## Dogłębne wgląd
 
-## Zobacz też
+Wyświetlanie komunikatów debugowych jest szczególnie przydatne w przypadku bardziej skomplikowanych programów, gdzie trudno od razu rozpoznać źródło błędu. Można również skorzystać z funkcji `show` do wyświetlania bardziej skomplikowanych typów danych, takich jak listy czy krotki. Przykładowo:
 
-1. Oficjalna dokumentacja Haskell: https://www.haskell.org/documentation/
-2. Moduł Debug.Trace: https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html
-3. Przykłady użycia funkcji print i trace: https://www.tutorialspoint.com/run-haskell-programs-online.php?pid=0
+```Haskell
+main :: IO ()
+main = do
+  let list = [1,2,3]
+  print ("Lista: " ++ show list)
+```
 
-Dziękujemy za przeczytanie tego artykułu na temat wyświetlania informacji debugowania w Haskellu. Mamy nadzieję, że dzięki tym wskazówkom twoje doświadczenie z programowaniem w Haskellu będzie jeszcze lepsze!
+Wynikiem będzie wyświetlenie tekstu "Lista: [1,2,3]". Dzięki tej funkcjonalności można łatwiej analizować struktury danych i znaleźć ewentualne błędy.
+
+## Zobacz także
+
+- [Debugowanie w języku Haskell](https://medium.com/@yfujii01/debugging-haskell-code-b7ebf47b6673)
+- [Funkcja `print` w dokumentacji języka Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:print)
+- [Tutorial o funkcji `show`](https://www.haskell.org/tutorial/numbers.html)

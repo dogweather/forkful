@@ -1,66 +1,44 @@
 ---
-title:    "Haskell: Lesing av kommandolinje-argumenter"
+title:    "Haskell: Å lese kommandolinje-argumenter"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Har du noen gang lurt på hvordan du kan gjøre programmet ditt mer fleksibelt ved å ta imot argumenter fra kommandolinjen? I denne blogginnlegget vil vi utforske hvordan man kan lese kommandolinjeargumenter i Haskell.
+# Hvorfor lese kommandolinjeargumenter i Haskell?
 
-# Hvordan
-Det første vi må gjøre er å importere System.Environment modulen i Haskell. Dette gir oss tilgang til funksjoner som lar oss lese kommandolinjeargumentene. Vi kan deretter bruke funksjonen `getArgs` for å få en liste med alle argumentene som ble gitt til programmet.
+Noen ganger vil du kanskje at Haskell-programmet ditt skal kunne ta imot argumenter direkte fra kommandolinjen. Dette kan være nyttig hvis du ønsker å kjøre det samme programmet flere ganger med forskjellige inputverdier, eller hvis du trenger å spesifisere bestemte innstillinger for programmet ditt.
 
+## Slik gjør du det
+
+For å lese kommandolinjeargumenter i Haskell, må du importere modulet `System.Environment` og bruke funksjonen `getArgs`. Dette gjør det mulig å få tilgang til en liste med alle argumentene som er angitt i kommandolinjen når programmet kjøres.
+
+La oss se på et eksempel:
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn $ "Antall argumenter: " ++ show (length args)
-    mapM_ putStrLn args
+    putStrLn ("Kommandolinje argumentene er: " ++ show args)
 ```
+I dette eksempelet bruker vi `putStrLn` for å skrive ut teksten "Kommandolinje argumentene er:" etterfulgt av argumentene som blir angitt når programmet kjøres. `show` funksjonen brukes for å konvertere argumentlisten til en streng.
 
-I dette eksempelet bruker vi `mapM_` for å skrive ut hvert argument på en ny linje. `args` er en liste over strenger, så vi bruker `putStrLn` for å skrive ut hver streng. Med `length` funksjonen kan vi også telle antall argumenter som ble gitt til programmet.
-
-For å kjøre programmet med noen argumenter, kan du åpne terminalen og skrive:
-
-```bash
-runhaskell <filnavn>.hs argument1 argument2 argument3
-```
-
-Dette vil skrive ut:
+Når vi kjører dette programmet med følgende kommandolinje: `runhaskell arguments.hs argument1 argument2`, vil følgende output bli produsert:
 
 ```
-Antall argumenter: 3
-argument1
-argument2
-argument3
+Kommandolinje argumentene er: ["argument1","argument2"]
 ```
+Som du kan se, returnerer `getArgs` funksjonen en liste med strenger som inneholder de angitte argumentene.
 
-# Dypdykk
-Nå som vi har en grunnleggende forståelse for hvordan vi kan lese kommandolinjeargumenter, la oss se på noen mer detaljerte funksjoner.
+## Dypdykk
 
-Som vi så i eksempelet over, er `getArgs` en funksjon som gir oss en liste av argumenter som ble gitt til programmet. Men hva om vi kun er interessert i å lese det første argumentet? Da kan vi bruke funksjonen `getProgName` som vil gi oss navnet på programmet vårt, og deretter bruke `head` funksjonen for å få det første argumentet.
+For å gjøre prosessen med å lese kommandolinjeargumenter enda mer fleksibel, kan du bruke funksjonen `System.Console.GetOpt` for å definere ulike alternativer og flagg som kan angis i kommandolinjen. Dette kan være spesielt nyttig hvis du har et komplisert program med flere konfigurasjonsalternativer.
 
-```Haskell
-import System.Environment
-
-main = do
-    progName <- getProgName
-    firstArg <- head <$> getArgs
-    putStrLn $ "Programnavn: " ++ progName
-    putStrLn $ "Første argument: " ++ firstArg
-```
-
-Dette vil skrive ut:
-
-```
-Programnavn: filnavn.hs
-Første argument: argument1
-```
-
-En annen nyttig funksjon er `lookupEnv` som lar oss sjekke om et miljøvariabel er satt. Dette kan være nyttig hvis vi vil ha noe programatisk logikk basert på om en variabel er satt eller ikke. For eksempel kan vi ha en variabel `DEBUG_MODE` som vi kan sjekke for å bestemme om programmet skal skrive ut mer detaljert informasjon.
+Du kan også bruke `System.Environment.lookupEnv` funksjonen for å lese miljøvariabler som kan være nyttige for å konfigurere programmet ditt.
 
 # Se også
-- [Haskells dokumentasjon for System.Environment modulen](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
-- [Bruk av kommandolinjeargumenter i et Haskell-prosjekt](https://www.fpcomplete.com/haskell/tutorial/args/)
+
+- [System.Environment dokumentasjon](https://hackage.haskell.org/package/base/docs/System-Environment.html)
+- [System.Console.GetOpt dokumentasjon](http://hackage.haskell.org/package/base-4.12.0.0/docs/System-Console-GetOpt.html)
+- [Haskell Command Line Argument Parser](https://github.com/pcapriotti/optparse-applicative)

@@ -1,46 +1,57 @@
 ---
 title:    "TypeScript: Comprobando si existe un directorio."
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías verificar si un directorio existe?
+## Por qué
 
-Si estás trabajando en un proyecto de TypeScript que involucra la manipulación de archivos y directorios, es posible que necesites verificar si un directorio existe antes de realizar ciertas operaciones. Esto puede ayudarte a evitar errores y asegurarte de que tu código se esté ejecutando correctamente.
+Verificar si un directorio existe es una tarea importante en la programación. A veces, antes de crear un nuevo directorio o realizar operaciones en un directorio específico, es necesario asegurarse de que realmente existe. De esta manera, podemos evitar errores y problemas en nuestro código.
 
 ## Cómo hacerlo
 
-En TypeScript, puedes verificar si un directorio existe utilizando el método `exists` de la clase `fs` (file system). Este método toma como parámetro el path del directorio que quieres verificar y devuelve un valor booleano que indica si el directorio existe o no.
+Para comprobar si un directorio existe en TypeScript, podemos utilizar la función `readdir()` del módulo `fs`. Esta función se encarga de leer el contenido de un directorio y devuelve un array con los nombres de los archivos y subdirectorios que contiene.
 
 ```TypeScript
-import * as fs from "fs";
+import fs from 'fs';
 
-if (fs.exists("ruta/al/directorio")) {
-    console.log("¡El directorio existe!");
+const directory = './ejemplo';
+
+fs.readdir(directory, (err, files) => {
+  if (err) {
+    console.log(`El directorio ${directory} no existe.`);
+  } else {
+    console.log(`El directorio ${directory} existe y contiene los siguientes archivos:`);
+    for (const file of files) {
+      console.log(file);
+    }
+  }
+});
+```
+
+Si el directorio no existe, `readdir()` devolverá un error, por lo que podemos utilizar una sentencia `if` para manejar este caso y mostrar un mensaje al usuario. En caso de que el directorio exista, podemos iterar sobre el array de archivos y mostrarlos en consola.
+
+## Profundizando
+
+Además de utilizar la función `readdir()`, también podemos utilizar el método `existsSync()` del módulo `fs` para comprobar si un directorio existe. Este método devuelve un valor booleano `true` si el directorio existe y `false` si no existe.
+
+```TypeScript
+import fs from 'fs';
+
+const directory = './ejemplo';
+
+if (fs.existsSync(directory)) {
+  console.log(`El directorio ${directory} existe.`);
 } else {
-    console.log("El directorio no existe");
+  console.log(`El directorio ${directory} no existe.`);
 }
 ```
 
-## Una mirada más profunda
-
-Al utilizar el método `exists`, es importante tener en cuenta que puede devolver `false` incluso si el directorio existe. Esto puede suceder si tu aplicación no tiene permisos para acceder al directorio. Por lo tanto, es recomendable utilizar también el método `access` de la clase `fs` para verificar si tienes permisos de acceso al directorio antes de intentar acceder a él.
-
-```TypeScript
-import * as fs from "fs";
-
-fs.access("ruta/al/directorio", (error) => {
-    if (error) {
-        console.log("No tienes permisos de acceso al directorio");
-    } else {
-        console.log("Puedes acceder al directorio");
-    }
-})
-```
+Es importante tener en cuenta que esta función bloquea la ejecución del código hasta que se complete la comprobación, lo que puede ser un problema en aplicaciones en tiempo real. Por lo tanto, es recomendable utilizar `readdir()` en su lugar.
 
 ## Ver también
 
-- [Documentación de fs.exists en TypeScript](https://www.typescriptlang.org/docs/handbook/filesystem.html#exists)
-- [Documentación de fs.access en TypeScript](https://www.typescriptlang.org/docs/handbook/filesystem.html#access)
-- [Tutorial de TypeScript para trabajar con archivos y directorios](https://www.digitalocean.com/community/tutorials/typescript-working-with-files-and-directories)
+- [Documentación de Node.js sobre el módulo fs](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [Método readdir() en TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/file-system-utilities.html#readdir)

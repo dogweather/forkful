@@ -1,53 +1,45 @@
 ---
 title:    "C recipe: Converting a string to lower case"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In programming, strings are a common way to represent text data. However, depending on the application, it may be necessary to convert all characters in a string to lower case. This can be useful for tasks such as sorting or data processing. In this blog post, we will explore how to convert a string to lower case in the C programming language.
+There are various reasons why someone may need to convert a string to lower case in C programming. One common scenario is when working with user input, as it ensures that the input is in a consistent format for manipulation and comparison purposes.
 
 ## How To
-First, let's take a look at the code for converting a string to lower case in C.
+In C programming, the standard library function `tolower()` can be used to convert a character to lower case. However, this function only works on a single character at a time. To convert an entire string to lower case, we can use a loop to iterate through each character and apply the `tolower()` function. Here is an example:
 
-```
+```C
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
 int main() {
-  char string[] = "Hello World!";
+  char string[] = "CoNvErT mE TO lOwEr CaSe!";
+  int i;
   
-  // Convert to lower case
-  for (int i = 0; i < strlen(string); i++) {
-    string[i] = tolower(string[i]);
+  for (i = 0; string[i] != '\0'; i++) { // Loop through each character
+    string[i] = tolower(string[i]); // Convert to lower case
   }
   
-  printf("%s", string);
+  printf("%s", string); // Output the converted string
   return 0;
 }
 ```
 
-In the above code, we first include the necessary header files for string manipulation and character conversion. Next, we declare a string variable and initialize it with the text "Hello World!". Then, we use a for loop to iterate through each character in the string and use the `tolower()` function from the `ctype.h` library to convert it to lower case. Finally, we print the modified string to the console.
-
-The output of this code will be:
-
-```
-hello world!
-```
-
-Simple, right? Now that we have a basic understanding of the code, let's dive a little deeper into how it works.
+### Sample Output:
+`convert me to lower case!`
 
 ## Deep Dive
-In C, characters are represented by their ASCII codes, which are numeric values assigned to each character. The `tolower()` function takes in an ASCII code and returns the corresponding lower case character. So when we pass in the ASCII code for the character 'H', which is 72, the function returns 104, which is the ASCII code for 'h'. This process is repeated for each character in the string, effectively converting it to lower case.
+In C programming, strings are represented as arrays of characters. Each character is stored in a sequential memory location. This means that by manipulating the characters in the array, we can change the entire string. 
 
-It is important to note that this method will only work for strings that are composed solely of alphabetic characters. If the string contains other characters such as numbers or symbols, they will not be affected by the conversion.
+In the example above, we used the `tolower()` function from the `ctype.h` library. This function takes in a character as an argument and returns the lowercase equivalent. It does this by checking the ASCII value of the character and subtracting 32 from it if it is an uppercase letter (since the ASCII values for uppercase letters are 32 more than their lowercase counterparts).
 
-There are also other methods for converting a string to lower case, such as using the `strlwr()` function from the `string.h` library. However, it is not recommended to use this function as it is not considered safe due to its potential to cause buffer overflows.
+It is important to note that the `tolower()` function only works for the standard ASCII characters. If you are working with non-ASCII character sets, you may need to use a different method for converting to lower case.
 
 ## See Also
-- Wikipedia: [ASCII](https://en.wikipedia.org/wiki/ASCII)
-- GeeksforGeeks: [String Character Conversions in C/C++](https://www.geeksforgeeks.org/c-programming-string-character-conversions/)
-
-In conclusion, converting a string to lower case in C can be achieved with a simple for loop and the `tolower()` function. It is a useful technique to know when manipulating text data in a program. Thanks for reading!
+- [ASCII character set](https://en.wikipedia.org/wiki/ASCII)
+- [ctype.h library](https://www.cplusplus.com/reference/cctype/)
+- [Converting strings to upper case in C](https://www.geeksforgeeks.org/convert-string-uppercase-keeping-string-unchanged/)

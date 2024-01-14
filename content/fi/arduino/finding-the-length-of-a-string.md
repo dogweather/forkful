@@ -1,62 +1,44 @@
 ---
 title:    "Arduino: Merkkijonon pituuden löytäminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Kaksi tärkeää syytä miksi Arduino-ohjelmoijan olisi hyödyllistä osata löytää merkkijonon pituus, ovat pystyäkseen käsittelemään tekstipohjaista dataa ja tehokkaamman koodaamisen mahdollistaminen.
+## Miksi
 
-##Miten tehdä: 
+Joissakin Arduino-projekteissa saattaa olla tarvetta selvittää merkkijonon pituus. Esimerkiksi tekstiä tulostava laite voi tarvita tietoa siitä, kuinka monta merkkiä merkkijonossa on, jotta teksti tulostuu halutun mittaiseksi. Tässä blogikirjoituksessa käymme läpi kuinka voit helposti selvittää merkkijonon pituuden Arduino-ohjelmoinnissa.
 
-Esimerkki 1: Koodinpätkä, jokavälillä käsetellään kovakoodattua arvoa ja toisessa osassa käytetään String-metodia ```length ()``` merkkijonon pituuden löytämiseksi. Tämä koodi toimii kuin komento, mutta se on paljon joustavampi ja voit lisätä myöhemmin lisäominaisuuksia tarpeesi mukaan.
+## Kuinka tehdä
 
-```
-Arduino code
-int myString = "This is a string"; 
-int stringLength = myString.length(); // Laskee merkkijonon pituuden 
-```
+Merkkijonon pituuden selvittäminen Arduino-ohjelmoinnissa onnistuu käyttämällä `strlen()`-funktiota. Tämä funktio löytyy Arduino String-kirjastosta ja se laskee annetun merkkijonon sisältämien merkkien määrän. Alla olevassa esimerkissä luomme ja tulostamme merkkijonon pituuden.
 
-Tulostus esimerkki 1:
-```
-16 
-```
-Esimerkki 2: Tässä koodissa käytetään for-silmukkaa laskeakseen merkkijonon pituuden, sen sijaan että käytettäisiin String-metodia. Tämä on hyvä tapa ymmärtää, miten String-metodi toimii takana käsin.
+```Arduino
+#include <string.h>
 
-```
-Arduino code
-int myString = "This is a string";
-int stringLength = 0;
+void setup() {
+  Serial.begin(9600); // alustetaan sarjaportti
+  String s = "Tämä on teksti"; // luodaan merkkijono
+  int len = s.length(); // käytetään strlen()-funktiota selvittää merkkijonon pituus
+  Serial.println(len); // tulostetaan pituus sarjaporttiin
+}
 
-for(int i = 0; myString[i] != '\0'; i++){ // Jatkaa, kunnes merkkijonon lopussa
-  stringLength++; // Lisää yhden pituuteen joka kerta kun kierros loppuu
+void loop() {
+
 }
 ```
 
-Tulostus esimerkki 2:
-```
-16
-```
+Yllä olevan koodin tuloste on `15`, koska merkkijonossa "Tämä on teksti" on 15 merkkiä. Voimme myös tulostaa merkkijonon pituuden suoraan käyttämällä `s.length()`-funktiota sen sijaan, että tallentaisimme sen muuttujaan.
 
-## Syvemmältä:
+Arduino String-kirjasto tarjoaa myös muita hyödyllisiä funktioita merkkijonon käsittelyyn, kuten `charAt()`, joka antaa pääsyn tiettyyn merkkiin merkkijonossa.
 
-Merkkijonon pituuden löytäminen on tärkeä taito Arduino-ohjelmoijille, koska se mahdollistaa paremman hallinnan tekstipohjaisessa datassa ja auttaa tehokkaamman koodaamisen saavuttamisessa. On myös tärkeää huomata, että merkkijonojen pituus voidaan löytää myös C++-kielen avulla, jota Arduino käyttää.
+## Syvemmälle
 
-```
-C++ code void loop() { 
-  String myString = "This is a string"; // Asettaa string "muuttujaan"
-  Serial.println(myString.length()); // Tulostaa stringin pituuden 
-}
-```
+Merkkijonot ovat erittäin tärkeitä ohjelmoinnissa ja usein joudumme käsittelemään niitä eri tavoin. Arduino String-kirjasto tarjoaa monipuoliset työkalut merkkijonon manipulointiin ja käsittelyyn. Joitakin muita hyödyllisiä funktioita ovat esimerkiksi `substring()`, jolla voidaan ottaa osa merkkijonosta, ja `replace()`, jolla voidaan korvata merkkijonon osia. Kannattaa tutustua tarkemmin näihin funktioihin ja löytää niiden avulla uusia tapoja käsitellä merkkijonoja.
 
-Mikäli käytetään C++-kieltä, ei voida käyttää String-metodia ```length()```, koska se on Arduino-kirjaston sisäinen funktio. Tällöin voidaan käyttää algoritmia, joka etsii merkkijonon lopun erikoismerkin ('\0') ja laskee tätä ennen olevien merkkien määrän.
+## Katso myös
 
-Ymmärtämällä miten merkkijonojen pituuden löytäminen toimii, voi Arduino-ohjelmoija saavuttaa paremman hallinnan tekstimassassa ja pystyy koodaamaan tehokkaammin.
-
-# Katso myös:
-
-- [Arduino String-metodit](https://www.arduino.cc/en/Reference/StringObject)
-- [C++ merkkijonojen pituuden laskeminen](https://www.geeksforgeeks.org/program-find-string-length-without-using-length-function/)
-- [Arduino C++ oppimateriaali](https://programmingelectronics.com/learn-arduino-c-programming-for-arduino-c/)
-
-Kiitos kun luit tämän blogipostauksen! Toivottavasti se auttoi sinua ymmärtämään merkkijonojen pituuden löytämisen tärkeyden Arduino-ohjelmoinnissa. Onnea ja hauskoja koodailuhetkiä!
+- [String-tiedon tyypit Arduino-ohjelmoinnissa](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Esimerkkejä String-kirjaston käytöstä](https://www.arduino.cc/en/Tutorial/StringConstructorExample)
+- [Käyttöohjeet Arduino String-kirjastolle](https://github.com/arduino-libraries/String/blob/master/README.md)

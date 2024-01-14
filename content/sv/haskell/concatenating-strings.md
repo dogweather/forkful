@@ -1,54 +1,41 @@
 ---
 title:    "Haskell: Sammanslagning av strängar"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Sammanfogning av strängar är en vanlig operation i många programmeringsspråk, inklusive Haskell. Det gör det möjligt för oss att skapa en större sträng genom att kombinera flera mindre delar. Det kan vara användbart när vi vill skapa dynamiska strängar baserat på variabler eller olika delar av en sträng.
+Att konkatenera strängar är en viktig del i programmering eftersom det tillåter oss att kombinera olika bitar av text till en enda sträng. Det här kan vara användbart när vi till exempel vill skapa en textbaserad användargränssnitt eller lägga till variabelvärden i en sträng.
 
-# Hur man gör det
+## Så här gör du
 
-För att sammanfoga strängar i Haskell kan vi använda funktionen `++`. Den tar två strängar som argument och returnerar en ny sträng som innehåller båda strängarna sammanfogade.
+För att konkatenera strängar i Haskell, behöver vi använda operatören "++". Det här operatören tillåter oss att kombinera två strängar till en enda sträng. Till exempel:
 
-```Haskell 
-sträng1 ++ sträng2 
+```Haskell
+para :: String
+para = "Jag älskar " ++ "att programmera."
 ```
 
-Se till att ha ett mellanslag mellan `++` och strängarna för att skapa en tydlig separation mellan dem i den nya strängen.
+Det här kommer att ge oss en sträng som ser ut såhär: "Jag älskar att programmera."
 
-Vi kan också använda funktionen `concat` för att sammanfoga flera strängar samtidigt. I följande exempel, sätter vi strängarna i en lista och använder `concat` för att slå samman dem till en enda sträng.
+## Djupdykning
 
-```Haskell 
-concat ["Hej", "på", "dig"] 
+I Haskell, kan vi även använda "++" operatören för att konkatenera flera strängar samtidigt. Till exempel:
 
--- Output: Hej på dig
+```Haskell
+strängar :: [String]
+strängar = ["Jag", "älskar", "att", "programmera."]
+para :: String
+para = concat strängar
 ```
 
-# Djupdykning
+Här skapar vi en lista med strängar och använder sedan "concat" för att konkatenera dem till en enda sträng. Det här är särskilt användbart när vi vill kombinera ett stort antal strängar på ett effektivt sätt.
 
-I Haskell är strängar faktiskt listor av tecken, vilket gör att vi kan använda många listfunktioner för att manipulera och sammanfoga dem. Till exempel kan vi använda `map` funktionen för att applicera en funktion på varje tecken i en sträng. I följande exempel, konverterar vi varje tecken till versaler med hjälp av `toUpper` funktionen från `Data.Char` modulen.
+## Se även
 
-```Haskell 
-import Data.Char (toUpper)
-
-map toUpper "hej på dig!" 
-
--- Output: HEJ PÅ DIG!
-```
-
-Vi kan också använda listkomprehension för att sammanfoga flera strängar baserat på villkor. I följande exempel, filtrerar vi bort alla mellanslag från två strängar innan vi sammanslår dem.
-
-```Haskell 
-[str1 ++ str2 | c1 <- str1, c2 <- str2, c1 /= ' ', c2 /= ' '] 
-
--- Exempel: ["hejdå", "påsurban"]
-```
-
-# Se även
-
-- [Haskell String Functions](https://www.tutorialspoint.com/haskell/haskell_string_functions.htm)
-- [A Gentle Introduction to Haskell](https://www.haskell.org/tutorial/strings.html)
-- [Haskell Wiki - String](https://wiki.haskell.org/String)
+- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)
+- [Haskell for Dummies](https://www.dummies.com/programming/haskell)
+- [Haskell Tutorial](https://www.tutorialspoint.com/haskell/index.htm)

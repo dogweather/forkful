@@ -1,65 +1,37 @@
 ---
 title:    "C++: Affichage des résultats de débogage"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 # Pourquoi
 
-Lorsque vous programmez en C++, vous vous retrouvez souvent confronté à des bogues ou des erreurs qui peuvent être difficiles à trouver et à résoudre. C'est ici qu'entre en jeu l'impression de sortie de débogage. En ajoutant des instructions d'impression de débogage à votre code, vous pouvez facilement suivre l'exécution de votre programme et trouver les erreurs plus rapidement.
+Dans la programmation, nous sommes souvent confrontés à des bugs et des erreurs qui peuvent être difficiles à résoudre. C'est là qu'imprimer des informations de débogage peut s'avérer très utile. En affichant des messages à des points clés de notre code, nous pouvons mieux comprendre ce qui se passe et trouver une solution plus rapidement.
 
-# Comment Faire
+# Comment faire
 
-Pour afficher des informations de débogage, nous utilisons la fonction `cout` de la bibliothèque standard de C++. Cela nous permet d'imprimer des valeurs de variables, des messages ou tout autre contenu dans la console pendant l'exécution du programme.
-
-Voici un exemple de code C++ utilisant `cout` pour imprimer le contenu d'une variable:
+L'impression de messages de débogage peut sembler simple, mais il y a certaines bonnes pratiques à suivre pour en tirer le meilleur parti. Voici un exemple de code en C++ utilisant la fonction cout pour imprimer un message de débogage :
 
 ```C++
 #include <iostream>
 
 int main() {
-    int age = 25;
-    std::cout << "Mon age est: " << age << "\n";
+    int x = 10;
+    std::cout << "La valeur de x est : " << x << std::endl;
     return 0;
 }
 ```
 
-La sortie de ce programme sera:
+La sortie de ce code serait : "La valeur de x est : 10". En utilisant des messages clairs et en les imprimant à des endroits stratégiques de notre code, nous pouvons mieux suivre son exécution et identifier les erreurs plus facilement.
 
-```
-Mon age est: 25
-```
+# Plongée en profondeur
 
-Nous pouvons également utiliser `cout` pour imprimer des messages explicatifs pour nous aider à comprendre l'exécution de notre programme. Par exemple:
+Il existe différentes façons d'imprimer des messages de débogage, notamment en utilisant des macros telles que assert ou des outils de débogage intégrés dans des IDE tels que GDB. Il est également important de garder à l'esprit que trop de messages de débogage peuvent rendre notre code plus lent. Il est donc préférable de les utiliser avec parcimonie et de les supprimer avant de publier notre code final.
 
-```C++
-#include <iostream>
+# Voir aussi
 
-int main() {
-    int a = 5;
-    int b = 2;
-    std::cout << "La somme de " << a << " et " << b << " est: " << (a + b) << "\n";
-    return 0;
-}
-```
-
-La sortie de ce programme sera:
-
-```
-La somme de 5 et 2 est: 7
-```
-
-# Approfondissement
-
-Outre l'impression de valeurs de variables et de messages, nous pouvons également utiliser `cout` pour afficher des informations sur l'état de l'exécution de notre programme. Par exemple, nous pouvons imprimer le numéro de ligne où nous utilisons `cout` pour suivre l'ordre d'exécution de notre code.
-
-De plus, nous pouvons utiliser l'opérateur `<<` pour concaténer plusieurs variables ou messages dans une seule instruction `cout`. Cela peut être utile lorsque nous souhaitons suivre plusieurs informations en même temps.
-
-L'impression de sortie de débogage peut également être utile lorsque nous travaillons avec des boucles ou des fonctions récursives, où nous pouvons imprimer les valeurs de variables à chaque itération pour suivre le flux d'exécution de notre code.
-
-# Voir Aussi
-
-- [C++ Debugging Techniques](https://www.tutorialspoint.com/cplusplus/cpp_debugging_techniques.htm)
-- [Using cout for debugging](https://www.learncpp.com/cpp-tutorial/27-using-cout-for-debugging/)
-- [Debugging C++ Code Using GDB](https://www.guru99.com/c-dbg-debugging.html)
+- [Débogage en C++: Tout ce que vous devez savoir](https://www.educative.io/blog/cpp-debugging-tutoricls)
+- [Débogage efficace en C++](https://baptiste-wicht.com/posts/2012/08/debugging-technique.html)
+- [Guide du débogueur pour les développeurs C++](https://devblogs.microsoft.com/cppblog/a-developers-guide-to-visual-studio-debugging/)

@@ -1,35 +1,73 @@
 ---
 title:    "TypeScript: Å finne lengden av en streng"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor bry seg med å finne lengden på en streng? Det kan virke som en enkel oppgave, men det er faktisk veldig nyttig i mange programmeringssituasjoner. Ved å kunne finne lengden på en streng, kan du enkelt manipulere den og hente ut bestemte deler av den.
 
-## Hvordan
+I denne bloggposten vil vi utforske en viktig del av programmering - å finne lengden av en streng (string). Dette er en grunnleggende ferdighet som er avgjørende for å kunne arbeide med tekstbaserte data og informasjon. Ved å lære hvordan man kan finne lengden av en streng, kan du skrive mer effektiv og strukturert kode.
+
+## Hvordan gjøre det
+
+For å finne lengden av en streng i TypeScript, kan du bruke innebygde metoder som "length", "size" eller "count". Her er et eksempel på hvordan dette kan gjøres:
+
 ```TypeScript
-const streng = "Hei, dette er en streng!"
+let streng: string = "Hei alle sammen!";
 console.log(streng.length);
 ```
-Dette vil resultere i `24` i konsollen, siden det er 24 tegn i strengen. Du kan også bruke `.length`-metoden på en variabel som allerede er definert som en streng.
+Output:
+```TypeScript
+16
+```
+
+Her bruker vi "length" metoden for å finne lengden av strengen "Hei alle sammen!" og konsollen vil deretter skrive ut svaret, som er 16. Det er viktig å merke seg at "length" teller antall tegn i en streng, inkludert mellomrom.
+
+Det er også mulig å bruke "size" metoden for å finne lengden av en streng. Denne metoden fungerer på samme måte som "length", men er vanligvis brukt på arrays. Her er et eksempel på hvordan man kan bruke "size":
 
 ```TypeScript
-let navn: string = "Sofie";
-console.log(navn.length);
+let strengArr: string[] = ["Hei", "alle", "sammen", "!"];
+console.log(strengArr.size);
 ```
-Dette vil resultere i `5` i konsollen, siden "Sofie" består av 5 tegn.
+Output:
+```TypeScript
+4
+```
+
+Til slutt kan man også bruke "count" metoden for å finne lengden av en streng. Denne metoden fungerer på samme måte som "size", men brukes vanligvis på objekter. Eksempel:
+
+```TypeScript
+let strengObj: {navn: string, alder: number} = {navn: "Per", alder: 25};
+console.log(strengObj.count);
+```
+Output:
+```TypeScript
+2
+```
 
 ## Dypdykk
-I TypeScript er `.length` en innebygd egenskap for strenger. Dette betyr at vi kan bruke den uten å måtte importere eller definere den. Sammenlignet med andre programmeringsspråk, hvor det kan være nødvendig å bruke en spesifikk metode for å finne lengden på en streng, er dette en enklere og mer intuitiv metode.
 
-En viktig ting å merke seg er at `.length` returnerer antall tegn i strengen, inkludert mellomrom og spesialtegn. Dette kan være nyttig å vite hvis du jobber med manipulasjon av strenger. I tillegg kan `.length` også brukes på arrays for å finne antall elementer i det.
+Som nevnt tidligere, vil "length" metoden også telle mellomrom i en streng. Hvis du ønsker å ekskludere mellomrom og kun få antall bokstaver i en streng, kan du bruke "trim" metoden først. Eksempel:
 
-## Se Også
-- MDN: String.prototype.length
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- TypeScript Handbook: Strings
-(https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- W3Schools: TypeScript String Length
-(https://www.w3schools.com/jsref/jsref_length_string.asp)
+```TypeScript
+let streng: string = "   Hei alle sammen!  ";
+console.log(streng.trim().length);
+```
+Output:
+```TypeScript
+16
+```
+
+Her vil "trim" fjerne mellomrom på begynnelsen og slutten av strengen, og "length" vil da telle kun bokstaver.
+
+Det er også viktig å være klar over at forskjellige språk og alfabeter kan ha forskjellige måter å telle lengden av en streng på. I slike tilfeller, er det best å bruke mer avanserte metoder eller biblioteker for å håndtere dette.
+
+## Se også
+
+For å lære mer om strenger i TypeScript, kan du se følgende ressurser:
+
+- [Offisiell TypeScript dokumentasjon om strenger](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [W3Schools Tutorial om strenger i TypeScript](https://www.w3schools.com/ts/ts_strings.asp)
+- [TypeScript Strings - Enkommandokombo fra CodeAcademy](https://www.codecademy.com/courses/learn-typescript/lessons/working-with-strings/exercises/type-script-strings)

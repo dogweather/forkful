@@ -1,36 +1,38 @@
 ---
-title:    "Gleam: Lesing av tekstfil"
+title:    "Gleam: Lese en tekstfil"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
 
-Å lese tekstfiler er en viktig del av mange programmeringsoppgaver. Det kan være nyttig for å hente data fra eksterne kilder, analysere tekstbaserte filer som CSV eller XML, eller bare for å få en bedre forståelse av hvordan tekstbehandling fungerer. Uansett hva årsaken er, kan du med Gleam gjøre dette raskt og enkelt.
+Lurer du på hvorfor du bør engasjere deg i å lese en tekstfil? Vel, tekstfiler er en essensiell del av nesten alle programmer. De inneholder viktig informasjon som input og output, konfigurasjonsinnstillinger og mye mer. Å lære å lese og behandle tekstfiler er derfor en viktig ferdighet for enhver programmerer.
 
-## Hvordan
+# Hvordan gjøre det
 
-Det første trinnet for å lese en tekstfil med Gleam er å åpne filen. Dette gjøres ved å bruke funksjonen `gleam/io.open()` med filnavnet som argument. Deretter kan du lese filen linje for linje ved å bruke en `while`-løkke. Inne i løkken brukes funksjonen `gleam/io.read_line()` for å lese en linje om gangen, og med `gleam/io.print()` kan du skrive ut linjene på skjermen. Ta en titt på følgende kodeeksempel:
+Ved hjelp av Gleam-programmeringsspråket, kan du enkelt lese og behandle tekstfiler. La oss se på et enkelt eksempel på å lese en tekstfil og skrive ut innholdet:
 
 ```Gleam
-let file = gleam/io.open("tekstfil.txt")
-while line = gleam/io.read_line(file) {
-  gleam/io.print(line)
-}
-gleam/io.close(file)
+import gleam/file
+
+file := file.read("tekstfil.txt")
+
+// skriver ut innholdet i tekstfilen
+file |> io.print
 ```
 
-Dette eksempelet vil åpne en tekstfil med navnet "tekstfil.txt" og skrive ut hver linje på skjermen. Du kan også bruke `gleam/io.read_all()` for å lese hele filen som en enkelt streng, dersom det er ønskelig.
+Dette er et enkelt eksempel, men det viser hvordan du kan lese en tekstfil og skrive ut innholdet ved hjelp av Gleam. Du kan også bruke forskjellige funksjoner og metoder for å behandle og manipulere tekstinnholdet etter behov.
 
-## Dypdykk
+# Dypdykk
 
-Gleam tilbyr også flere nyttige funksjoner for å håndtere tekstfiler. For eksempel kan du bruke `gleam/string.split()` for å dele en tekstfil i forskjellige deler basert på et gitt skilletegn, som komma eller pipe. Dette kan være nyttig når du jobber med CSV-filer.
+Når du leser en tekstfil, er det viktig å være klar over kodingen og formateringen av filen. Noen tekstfiler kan være skrevet med forskjellige kodinger som Unicode eller UTF-8, og det er viktig å være oppmerksom på dette for å sikre at innholdet leses riktig.
 
-En annen nyttig funksjon er `gleam/string.trim()`, som fjerner tomrom rundt en streng. Dette kan være nyttig når du leser og behandler data fra en tekstfil, da det ofte kan være uønskede mellomrom eller linjeskift i tekstfiler.
+I tillegg bør du også være oppmerksom på formateringen av tekstinnholdet. Noen tekstfiler kan ha linjeskift, tabulatorer eller andre spesielle tegn som kan påvirke lesingen og behandlingen av innholdet. Det er derfor viktig å være nøye med å håndtere formateringen riktig for å unngå feil i koden.
 
 # Se også
 
-- [Gleam dokumentasjon om I/O](https://gleam.run/articles/io)
-- [Offisiell Gleam nettside](https://gleam.run/)
-- [Gleam på GitHub](https://github.com/gleam-lang/gleam)
+- Gleam dokumentasjon: https://gleam.run/
+- Lesing av filer i Gleam: https://gleam.run/articles/working-with-files/
+- Eksempler på tekstbehandling i Gleam: https://github.com/gleam-lang/gleam-by-example/blob/master/8_reading_writing_files.md

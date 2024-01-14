@@ -1,63 +1,79 @@
 ---
 title:    "Javascript recipe: Concatenating strings"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself wanting to create a single string from two or more smaller strings? This is where concatenating strings comes in handy. By combining strings, you can create a new string that includes all the desired content. In this blog post, we will dive into the world of concatenating strings in Javascript and explore why it is a useful technique for web development.
+When writing JavaScript code, you may often come across a situation where you need to combine two or more strings together to form a longer string. This process is called concatenation and it is an important concept in string manipulation. By understanding how to concatenate strings, you can better manipulate and display data in your code.
 
 ## How To
 
-Concatenating strings in Javascript is a simple process that involves using the "+" operator to combine two or more strings. Let's take a look at an example:
+To concatenate strings in JavaScript, you can use the "+" operator. Let's take a look at a simple example:
 
-```Javascript
-let firstName = "John";
-let lastName = "Smith";
-let fullName = firstName + " " + lastName;
+```
+// Define two string variables
+let greeting = "Hello";
+let name = "John";
 
-console.log(fullName); // Output: John Smith
+// Concatenate the two strings
+let message = greeting + " " + name;
+
+// Output the final message
+console.log(message);
 ```
 
-In this example, we have defined two variables `firstName` and `lastName` and assigned them the values "John" and "Smith" respectively. We then use the "+" operator to concatenate these two strings together, adding a space in between to create a full name. By using the `console.log()` function, we can see the output of the new string "John Smith" in the console.
+In the above code, we first defined two string variables, "greeting" and "name." Then, using the concatenation operator "+", we combined the two strings with a space in between to form the message "Hello John." Finally, by using the "console.log()" function, we are able to output the final message.
 
-Concatenation is not limited to just two strings, you can combine as many strings as you need. Let's see another example:
+You can also concatenate strings using the "concat()" method. This is particularly useful if you have more than two strings to concatenate. Take a look at the following example:
 
-```Javascript
-let welcome = "Hello ";
-let name = "Emily";
-let message = welcome + name + "! Welcome to our website.";
+```
+// Define three string variables
+let first = "I";
+let second = "love";
+let third = "coding!";
 
-console.log(message); // Output: Hello Emily! Welcome to our website.
+// Concatenate the three strings using the concat() method
+let sentence = first.concat(" ", second, " ", third);
+
+// Output the final sentence
+console.log(sentence);
 ```
 
-In this example, we have concatenated three strings together to create a personalized message.
-
-It is also possible to concatenate strings with numbers by first converting the numbers to strings using the `toString()` method. Here is an example:
-
-```Javascript
-let num1 = 5;
-let num2 = 4;
-let sum = num1.toString() + num2.toString();
-
-console.log(sum); // Output: 54
-```
+This code will output the sentence "I love coding!" by combining the three strings with spaces in between using the concat() method. 
 
 ## Deep Dive
 
-Behind the scenes, when we use the "+" operator to concatenate strings, JavaScript converts them to strings if they are not already. This is known as type coercion. This means that we can also concatenate strings with other data types such as numbers and booleans.
+It's important to note that the "+" operator in JavaScript not only concatenates strings, but it can also concatenate other data types such as numbers and booleans. However, when used with non-string data types, it will convert them into strings before concatenation. For example:
 
-It is important to note that the order of the strings matters when concatenating. In the first example, if we had written `fullName = lastName + " " + firstName;` our output would have been "Smith John". The order in which the strings are combined will determine the final output.
+```
+// Concatenating strings with numbers
+let result = "The answer is: " + 5;
+console.log(result); // Output: The answer is: 5
 
-Another thing to keep in mind is the use of spaces when concatenating strings. In the third example, we have to manually add a space after "Hello" to ensure the correct output. Otherwise, our message would have been "HelloEmily! Welcome to our website.".
+// Concatenating strings with booleans
+let statement = "I am " + true;
+console.log(statement); // Output: I am true
+```
+
+In addition, you can also use template literals to concatenate strings in a more efficient way. Template literals use backticks (`) instead of single or double quotes and allow you to include variables or expressions directly in the string without using the "+" operator. For example:
+
+```
+// Template literals example
+let product = "apple";
+let price = 2.99;
+let quantity = 3;
+let totalPrice = `You bought ${quantity} ${product}s for a total of $${quantity * price}.`;
+console.log(totalPrice); // Output: You bought 3 apples for a total of $8.97.
+```
+
+In the above code, we used template literals to concatenate multiple strings and expressions to form the final totalPrice message.
 
 ## See Also
 
-Now that you understand the basics of concatenating strings in Javascript, you may want to explore some other related topics:
-
-- [W3Schools - JavaScript String Concat() Method](https://www.w3schools.com/jsref/jsref_concat_string.asp)
-- [MDN Web Docs - Working with Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Strings)
-
-Happy coding!
+- [MDN Web Docs: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [W3Schools: JavaScript String Concatenation](https://www.w3schools.com/js/js_string_concat.asp)
+- [FreeCodeCamp: A beginner's guide to JavaScript's string concatenation operator](https://www.freecodecamp.org/news/beginner-guide-javascript-string-concatenation-operator/)

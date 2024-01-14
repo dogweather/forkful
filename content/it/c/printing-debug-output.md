@@ -1,47 +1,44 @@
 ---
-title:    "C: Stampa output di debug"
+title:    "C: Stampa dell'output di debug"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Scopriamo insieme perché è importante stampare l'output di debug nel tuo codice in C. 
 
-L'output di debug è una delle tecniche più utilizzate nel mondo della programmazione per individuare e risolvere eventuali errori o bug nel codice. È un modo semplice e veloce per verificare il funzionamento di un programma e identificare eventuali problemi.
+Stampare l'output di debug è un'importante pratica di programmazione che aiuta a identificare e risolvere errori nel tuo codice. Quando si sta sviluppando un programma in C, è inevitabile incontrare degli errori lungo il cammino. Invece di dieci puzzolenti cerca di capire dove hai sbagliato, la stampa dell'output di debug può aiutarti a individuare il problema più facilmente e ad affrontarlo in modo efficiente.
 
 ## Come fare
-
-Per stampare l'output di debug in C, è necessario utilizzare la funzione "printf" inserendo il messaggio desiderato tra le virgolette. Ad esempio:
-
-```C
-printf("Il valore della variabile x è %d", x);
-```
-
-Nell'esempio sopra, il messaggio stampato includerà il valore attuale della variabile "x". Questo può essere molto utile per controllare il valore delle variabili in diversi punti del programma e individuare eventuali errori.
-
-È anche possibile utilizzare gli statement "if" per attivare o disattivare l'output di debug in base a determinate condizioni. Ad esempio:
+Ecco un esempio di codice in C che utilizza la funzione `printf()` per stampare l'output di debug:
 
 ```C
-if (debug == 1) {
-  printf("Sto controllando la variabile y: %d", y);
+#include <stdio.h>
+
+int main()
+{
+  int num = 42;
+  printf("Il valore della variabile num è %d\n", num); //la stringa di format è %d
+  return 0;
 }
 ```
 
-In questo caso, l'output di debug verrà attivato solo se la variabile "debug" ha il valore di 1, permettendo di limitare la quantità di informazioni stampate durante l'esecuzione del programma.
+In questo codice, stiamo stampando il valore della variabile `num` utilizzando la stringa di formato `%d` all'interno della funzione `printf()`. Ciò significa che il valore della variabile verrà stampato nel punto in cui la stringa di formato è presente nella print statement.
+
+Il risultato dell'esecuzione di questo codice sarà:
+
+```
+Il valore della variabile num è 42
+```
 
 ## Approfondimento
+La funzione `printf()` utilizza diverse stringhe di formato per stampare tipi di dati diversi. Ad esempio, `%d` è utilizzato per stampare numeri interi, `%f` per numeri decimali a virgola mobile, `%c` per caratteri e così via. È importante utilizzare la stringa di formato corretta per il tipo di dato che si desidera stampare, altrimenti si otterranno risultati imprevisti.
 
-Esistono diverse opzioni per personalizzare l'output di debug in C, come ad esempio l'utilizzo di diversi tipi di formattazione per i dati, l'utilizzo di colori o la stampa di informazioni aggiuntive come il nome della funzione o il numero di riga.
-
-Inoltre, è possibile utilizzare librerie specifiche per il debugging, come ad esempio "gdb" per effettuare una debug più approfondita a livello di codice.
+Inoltre, la stampa dell'output di debug dovrebbe essere usata solo durante lo sviluppo e non dovrebbe essere mantenuta nel codice finale. È consigliabile utilizzare preprocessor macros, come `#ifdef DEBUG`, per controllare se la stampa dell'output di debug è abilitata o meno durante la fase di sviluppo.
 
 ## Vedi anche
-
-Per saperne di più sull'uso dell'output di debug in C, ecco alcuni articoli e risorse utili:
-
-- [Debugging in C: How to Print Debug Output](https://www.programiz.com/c-programming/c-debugging-output)
-- [Using a Debugger](https://www.learn-c.org/en/Debugging)
-- [C Debugging with GNU Debugger (GDB)](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)
-- [Official GNU Debugger (GDB) Documentation](https://sourceware.org/gdb/current/)
-
-Buon debugging!
+- [Funzioni di input/output standard in C](https://www.geeksforgeeks.org/input-output-libraries-c/)
+- [Printf e Scanf in C: tutorial su come leggere e scrivere su console](https://stackoverflow.com/questions/142508/how-do-i-discard-unwanted-space-characters-during-scanning)
+- [Come utilizzare le macro di preprocessor in C](https://www.tutorialspoint.com/cprogramming/c_preprocessors.htm)

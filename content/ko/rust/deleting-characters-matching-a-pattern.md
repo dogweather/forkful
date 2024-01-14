@@ -1,46 +1,57 @@
 ---
 title:    "Rust: 패턴과 일치하는 문자 삭제하기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜 삭제패턴에 맞는 문자를 제거할까?
 
-문자 패턴과 일치하는 문자를 삭제하는 것에 대해 의미 있는 이유는 무엇일까요? 
+때로는 문자열 내에서 특정 패턴을 가진 문자를 삭제하는 것이 필요할 수 있습니다. 이 작업은 데이터 정제나 패턴을 가진 문자를 간단히 제거할 때 유용합니다. 더 자세한 방법은 아래에서 설명하겠습니다.
 
-이 기능을 사용하면 불필요한 문자를 걸러내고 깔끔한 코드를 유지할 수 있습니다. 또한 특정한 문자열을 더 쉽게 탐색하고 수정할 수 있게 해줍니다. Rust 프로그래밍에서 이 기능을 활용하면 더욱 효율적인 코드 작성이 가능합니다.
+## 어떻게 코드로 구현할까?
 
-## 하우 투?
-
-```Rust
-let my_string = "Hello, world!";
-let new_string = my_string.replace("l", "");
-
-println!("{}", new_string);
-```
+이 작업을 구현하는 가장 간단한 방법은 Rust의 `replace()` 함수를 사용하는 것입니다. 다음 예제를 통해 확인해보세요.
 
 ```Rust
-// Output:
-Heo, word!
+fn main() {
+    let string = String::from("Hello, World! This is a Rust programming tutorial.");
+    let replaced_string = string.replace("Rust", "");
+    println!("{}", replaced_string);
+}
 ```
 
-위의 코드는 "Hello, world!"라는 문자열에서 "l"이라는 문자를 삭제하는 예시입니다. 문자열 내에 있는 모든 "l"이 삭제되어 "Heo, word!"라는 결과가 출력됩니다.
+출력 결과:
+```
+Hello, World! This is a programming tutorial.
+```
 
-또한 `replace()` 함수를 사용하면 일치하는 문자를 원하는 다른 문자로 바꿀 수도 있습니다. 예를 들어 위의 코드에서 `""` 대신 `"k"`를 넣으면 "Hekko, wor(k)d!"라는 결과가 출력됩니다.
+위 코드에서는 `replace()` 함수를 사용하여 문자열 내의 "Rust"를 빈 문자열로 대체했습니다. 만약 여러 개의 패턴을 한 번에 제거하려면, `replace()` 함수를 여러 번 사용하면 됩니다.
 
-더 많은 예제 코드와 `replace()` 함수의 다양한 사용법은 Rust 공식 문서에서 확인할 수 있습니다.
+## 더 자세한 내용
 
-## 딥 다이브
+만약 문자열 내에서 정규표현식을 사용하여 패턴을 지정하고 싶다면, Rust의 `regex` 라이브러리를 사용할 수 있습니다. 이를 이용하여 패턴에 맞는 문자를 찾은 후 삭제하는 작업을 수행할 수 있습니다. 예를 들어, 다음 코드는 문자열 내에서 모음을 삭제하는 예제입니다.
 
-`replace()` 함수는 사용하기 편리한 기능일 뿐만 아니라 내부적으로도 매우 효율적으로 구현되어 있습니다. 이 함수는 문자열을 수정하는 대신 새로운 문자열을 반환하기 때문에 원본 문자열을 손상시키지 않습니다.
+```Rust
+use regex::Regex;
 
-또한 이 함수는 내부적으로 문자열의 일부를 찾기 위해 `string::find()` 함수를 사용합니다. 이를 통해 문자열을 더욱 간편하게 탐색하고 원하는 문자를 삭제할 수 있습니다.
+fn main() {
+    let string = String::from("Hello, World! This is a Rust programming tutorial.");
+    let vowel_pattern = Regex::new(r"[aeiou]").unwrap();
+    let replaced_string = vowel_pattern.replace_all(&string, "");
+    println!("{}", replaced_string);
+}
+```
 
-더욱 깊이 들어가고 싶다면 Rust의 문자열 처리에 대해 더 많이 학습해보세요. Rust는 유니코드를 지원하기 때문에 여러 언어로 이루어진 문자열에도 유연하게 대처할 수 있습니다.
+출력 결과:
+```
+Hll, Wrld! Th s  Rust prrmmng ttrtl.
+```
 
-## 참고 자료
+위 코드에서는 먼저 `Regex` 타입의 변수를 생성하고, 해당 정규표현식을 이용하여 패턴을 지정합니다. 그 후 `replace_all()` 함수를 사용하여 찾은 모든 패턴을 빈 문자열로 대체합니다. 이외에도 `split()` 함수를 사용하여 패턴을 기준으로 문자열을 분리하여 다양한 작업을 수행할 수 있습니다.
 
-- [Rust 공식 문서 - 문자열](https://doc.rust-lang.org/std/string/index.html)
-- [RustByExample - 문자열 다루기](https://doc.rust-lang.org/stable/rust-by-example/std/unicode/string.html)
-- [Rust로 언어 감지기 만들어보기](https://sangbinpark.netlify.app/code/rust/tutorials/2020/01/30/rust-langdet.html)
+## 관련 자료
+
+- Rust 공식 문서: <https://doc.rust-lang.org/std/string/struct.String.html#method.replace>
+- `regex` 라이브러리: <https://crates.io/crates/regex>

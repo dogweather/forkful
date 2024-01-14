@@ -1,42 +1,37 @@
 ---
-title:    "Swift: Extrahera delsträngar"
+title:    "Swift: Utvinna delsträngar"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Idag ska vi prata om en grundläggande, men otroligt användbar, funktion i Swift-programmering - att extrahera substrängar. Substrängar är delar av en sträng som kan användas för att manipulera och bearbeta text på ett enkelt sätt. Låt oss titta närmare på varför det är viktigt och hur man gör det i Swift!
+I Swift programmering kan man ofta behöva extrahera delar av en textsträng för att utföra olika operationer. Det kan vara allt från att ändra formatet på en textsträng till att söka efter specifika ord. Men varför är det nödvändigt att extrahera substrängar? Det kan bero på olika anledningar, som att göra det lättare att hantera data eller att förenkla vissa algoritmer.
 
-## Hur man gör det
+## Så här gör du
 
-För att extrahera en substräng från en befintlig sträng, kan du använda funktionen `substring (with: Range)` i Swift. Låt oss anta att vi har en sträng som heter `helloWorld` och vi vill få tag på ordet "hello" från den. Vi kan använda följande kod för att göra det:
+För att extrahera en substräng i Swift använder man metoden `substring`. Den accepterar två parametrar - det första är startindex för substrängen och det andra är längden på substrängen. Här är ett exempel på hur man extraherar en substräng från en befintlig textsträng:
 
-```Swift
-let helloWorld = "helloWorld"
-let hello = helloWorld.substring(with: 0..<5)
-print(hello) // Output: hello
+```Swift 
+let text = "Hej världen!"
+let startIndex = text.index(text.startIndex, offsetBy: 4)
+let endIndex = text.index(text.endIndex, offsetBy: -1)
+let substring = text.substring(with: startIndex ..< endIndex)
 ```
-
-I det här exemplet använder vi `substring (with: Range)` -funktionen för att extrahera en del av vår `helloWorld` -sträng. Vi använder sedan en halvöppen räckvidd för att ange vilka delar av strängen vi vill ha. I detta fall vill vi ha de första fem tecknen, dvs "hello".
+Detta kommer att resultera i att variabeln `substring` innehåller den nya textsträngen "världen". Notera att `offsetBy` används för att specificera startindexet och slutindexet för substrängen.
 
 ## Djupdykning
 
-Nu har vi sett hur vi kan extrahera en enkel substräng från en sträng. Men det finns mycket mer vi kan göra med substrängar i Swift. Här är några saker att tänka på:
+Nu när vi har sett hur man extraherar en substräng, låt oss gå in lite djupare på ämnet. Först och främst är det viktigt att förstå att index i Swift inte alltid matchar teckenpositionerna i en textsträng. Detta beror på att Swift använder Unicode och vissa tecken kan ha flera representationer. Därför är det viktigt att använda Swifts inbyggda funktioner för att räkna ut korrekta indexvärden när man extraherar substrängar.
 
-- Du kan också använda funktionen `substring (from:)` för att extrahera en substräng från en viss position till slutet av strängen.
-- För att hitta en viss substräng i en sträng kan du använda funktionen `range (of:)`.
-- Om du vill ersätta en del av en sträng med en annan substräng kan du använda funktionen `replacingOccurrences (of: with:)`.
-
-Det finns många fler sätt att använda substrängar i Swift, men dessa exempel ger dig en bra utgångspunkt för hur du kan använda dem i dina egna projekt.
+En annan viktig sak att komma ihåg är att substrängar delar referens med den ursprungliga textsträngen. Detta innebär att förändringar i substrängen också påverkar den ursprungliga textsträngen och vice versa. Om du behöver en helt ny textsträng, använd istället `substring(with: Range<String.Index>)`.
 
 ## Se även
 
-Här är några resurser som kan vara användbara för att lära dig mer om substrängar och andra Swift-funktioner:
+Här är några resurser som kan vara till hjälp när du arbetar med substrängar i Swift:
 
-- [Swift Programming Language dokumentation](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Swift API-dokumentation](https://developer.apple.com/documentation/swift)
-- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/)
-
-Tack för att du läste! Nu är du redo att ta dina Swift-programmeringskunskaper till nästa nivå genom att utnyttja substrängar. Lycka till!
+- [Officiell Swift dokumentation om substrängar](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295) (på engelska)
+- [En guide på svenska om Swift textsträngar och Unicode](https://habr.com/en/post/257099/) (engelsk översättning finns tillgänglig)
+- [En tutorial på svenska om hur man extraherar och manipulerar substrängar i Swift](https://cocoacasts.com/how-to-work-with-strings-in-swift/)

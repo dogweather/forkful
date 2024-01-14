@@ -1,33 +1,29 @@
 ---
-title:    "PHP: डायरेक्टरी मौजूद है कि नहीं जाँच"
+title:    "PHP: डायरेक्ट्री का अस्तित्व जांच करना"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-"Kyu: Directory ki upasthiti jaanch karna kyu zaruri hai?"
+## क्यों
+किसी डायरेक्टरी की मौजूदगी को जांचने में शामिल होने के लिए क्यों कोई लोग रुचि रखते हैं।
 
-"Directory ki upasthiti ko jaanch karna keval tab zaruri hai jab hume apne computer system mein koi naya file ya folder banana hai. Agar hum ek existent directory mein naya file ya folder banaayenge, toh hume pata hona chahiye ki woh directory upasthit hai ya nahi, nahi toh humari file ya folder bhi create nahi hogi."
-
-"Kaise: Directory ki upasthiti jaanch karne ka tarika"
-
-"```PHP
-<?php
-$directory = 'foldername/';
-// Yeh function directory ki upasthiti ko check karega
-if (is_dir($directory)) {
-    echo 'Directory upasthit hai'; // Output: Directory upasthit hai
+## कैसे करें
+```PHP
+// दिए गए डायरेक्टरी पथ को जांचें कि क्या वह मौजूद है
+$dir = "किसी/डायरेक्टरी/का/पथ";
+if (is_dir($dir)){
+  echo "यह एक मौजूदा डायरेक्टरी है";
 } else {
-    echo 'Yeh directory upasthit nahi hai';
+  echo "यह एक मौजूदा डायरेक्टरी नहीं है";
 }
-?>
-```"
+```
 
-"Deep Dive: Directory ki upasthiti ko check karne ki puri jaankari"
+उपरोक्त कोड अतिरिक्त कीमत को आमतौर पर देता है, खासतौर से जब स्क्रिप्ट पर विभिन्न डाइरेक्टरी पथों के साथ काम करना हो। यदि डाइरेक्टरी मौजूद है, तो यह एक च्विस्ता भावना देता है कि आप उस प्रिस्ताव के साथ आगे बढ़ सकते हैं।
 
-"Directory ko check karne ke liye, hum is_dir() function ka istemaal karte hain. Yeh function hume boolean value (true or false) return karta hai. Agar directory upasthit hai toh true return hoga, aur agar directory upasthit nahi hai toh false return hoga. Iske alawa, hume is_link() function ka istemaal karke symlink (symbolic link) ko check kar sakte hain."
+## गहराई से विचार करना
+क्या डायरेक्टरी के मौजूद होने के लिए सरल `is_dir()` फ़ंक्शन के अलावा अन्य विकल्प हैं? यह आपके कोड को अधिक पारदर्शी बनाने के लिए और सुरक्षा सुनिश्चित करने के लिए जोड़ सकते हैं। आप फाइल या डायरेक्टरी के नाम को अगर मौजूद नहीं है, तो मौजूद नहीं है या त्रुटि के साथ कीवर्ड जैसे `@file_exists()` और `fileatime()` का उपयोग कर सकते हैं। इन विकल्पों को अपने कोड में शामिल करने से पहले सुनिश्चित करें कि आप हमेशा त्रुटि को हथियाने के लिए `error_reporting()` और `try-catch` दोनों का कर्य करते हैं। 
 
-"See Also: Inhe bhi zaroor padhe"
-
-- [PHP manual: is_dir() function](https://www.php.net/manual/en/function.is-dir.php)
-- [PHP manual: is_link() function](https://www.php.net/manual/en/function.is-link.php)
+## इसके अलावा देखें
+- [PHP डोकियोंमेंटेशन डाइरेक्टरी जांचना](https://www.php

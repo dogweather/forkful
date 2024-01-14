@@ -1,65 +1,42 @@
 ---
-title:    "Arduino: 문자열 결합"
+title:    "Arduino: 문자열 연결하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 연결하는 것에 참여하는 이유는 여러가지가 있습니다. 예를 들어, 여러 개의 변수를 한 번에 출력해야 할 때나, 문자열로 표시된 정보를 정렬해서 사용할 때가 있습니다.
+스트링 연결을 수행하는 이유는 여러 개의 문자열을 하나로 합치기 위해서입니다. 이를 통해 더 큰 문장을 만들 수 있으며, 다양한 문자열 조합을 통해 더 다양한 기능을 만들 수 있습니다.
 
-## 하우 투
+## 코딩하기
 
-본문에서는 문자열을 연결하는 여러 가지 방법을 소개하겠습니다. 우선, **+** 연산자를 사용하는 방법부터 살펴보겠습니다.
-
-```Arduino
-String first = "Hello";
-String second = "World";
-String result = first + second;
-```
-
-위 코드에서 result 변수에는 "HelloWorld"가 저장됩니다. 이는 각각의 문자열을 더하는 것과 동일한 결과를 가져옵니다.
-
-또한, Arduino에서는 **concat()** 함수를 사용하여 문자열을 연결할 수 있습니다.
+스트링 연결은 간단한 코드로도 가능합니다. 아래의 예제 코드를 살펴보세요.
 
 ```Arduino
-String first = "Hello";
-String second = "World";
-first.concat(second);
+String name = "길동";
+String language = "아두이노";
+String introduction = "안녕하세요, 제 이름은 " + name + "이고, 저는 " + language + "를 배우고 있습니다.";
+Serial.println(introduction);
 ```
 
-위 코드에서 first 변수에는 "HelloWorld"가 저장됩니다. 이는 first 변수에 second 변수를 연결하는 것과 동일한 결과를 가져옵니다. 이 방법은 첫 번째 문자열에 두 번째 문자열을 연결하는 것이기 때문에, 첫 번째 문자열에 값을 바로 연결하는 것보다 효율적입니다.
+코드의 결과는 다음과 같이 출력됩니다.
 
-또한, 여러 개의 변수를 한 번에 연결할 수도 있습니다.
-
-```Arduino
-String first = "Hello";
-String second = "World";
-String third = "!";
-first = first + second + third;
+```
+안녕하세요, 제 이름은 길동이고, 저는 아두이노를 배우고 있습니다.
 ```
 
-위 코드에서 first 변수에는 "HelloWorld!"가 저장됩니다. 이렇게 여러 개의 변수를 한 번에 연결할 수 있습니다.
+## 심층적으로 살펴보기
 
-때로는 문자열과 숫자를 함께 연결해야 할 때도 있습니다. 이 경우에는 앞서 살펴본 방법과는 조금 다른 방법을 사용해야 합니다.
+스트링 연결을 할 때에는 몇 가지 주의할 점이 있습니다. 첫 번째는 데이터 타입을 일치시켜야 한다는 점입니다. 예를 들어, 숫자를 스트링과 연결할 경우 숫자를 스트링으로 변환해야 합니다. 또한, 많은 스트링을 연결할 경우 메모리를 많이 사용하게 되어 성능이 저하될 수 있습니다.
 
-```Arduino
-String text = "The value of number is: ";
-int number = 5;
-String result = text + String(number);
-```
+더 자세한 정보를 원하신다면, 아래의 링크들을 확인해보세요.
 
-위 코드에서 result 변수에는 "The value of number is: 5"가 저장됩니다. 이는 text 문자열과 number 변수를 함께 연결한 결과입니다. 이를 위해 **String()** 함수를 사용하여 숫자를 문자열로 변환해야 합니다.
+## 관련 링크
 
-## 딥 다이브
+- [Arduino String 연산자](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
 
-문자열을 연결하는 것은 간단한 작업처럼 보일 수 있지만, 실제로는 문자에 대한 메모리 공간을 예약하고 변수를 연결하는 과정이 숨어있을 수 있습니다. 따라서 문자열을 많이 연결하게 되면 메모리 부족과 관련된 문제가 발생할 수 있습니다. 따라서 문자열을 연결할 때에는 신중하게 생각해야 합니다.
+- [Arduino Forum의 스트링 연산에 관한 토론](https://forum.arduino.cc/index.php?topic=526899.0)
 
-## 더 알아보기
-
-아래의 링크들을 참고하여 더 많은 정보를 얻을 수 있습니다.
-
-- [Arduino 공식 사이트](https://www.arduino.cc/)
-- [Official Arduino Reference - String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [How to concatenate strings in Arduino](https://techtutorialsx.com/2016/10/15/arduino-how-to-concatenate-strings/)
+- [스택오버플로우의 "아두이노를 사용하여 스트링 연결하기"](https://stackoverflow.com/questions/36915696/concatenate-strings-using-arduino)

@@ -1,38 +1,40 @@
 ---
-title:    "Bash: Démarrer un nouveau projet"
+title:    "Bash: Lancer un nouveau projet"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi
 
-Si vous êtes intéressé par la programmation et que vous êtes curieux de créer de nouveaux projets, alors cet article est pour vous. Nous allons parler de Bash, un langage de programmation polyvalent et populaire, et comment il peut être utilisé pour démarrer un nouveau projet. Alors, pourquoi devriez-vous vous lancer dans la création d'un nouveau projet en utilisant Bash ? Tout simplement parce que cela peut être un moyen simple et efficace de réaliser vos idées de manière rapide et efficace.
+Vous êtes peut-être un programmeur débutant, ou peut-être que vous êtes un expert en informatique qui cherche un nouveau défi. Quelle que soit votre raison, vous avez décidé qu'il est temps de démarrer un nouveau projet Bash et de découvrir tout ce que ce langage de script a à offrir.
 
-## Comment faire
+# Comment faire
 
-Pour commencer à programmer en Bash, il vous suffit d'ouvrir votre terminal et de saisir la commande ```Bash```. Cela ouvrira un environnement de ligne de commande où vous pourrez écrire, sauvegarder et exécuter votre code. Par exemple, si vous voulez écrire un script qui affiche "Bonjour!" à l'écran, vous pouvez utiliser cette syntaxe :
+Commençons par les bases. Pour écrire un script Bash, vous devez d'abord ouvrir un éditeur de texte et créer un nouveau fichier avec l'extension ".sh". Ensuite, vous devez donner à votre script les permissions d'exécution en utilisant la commande "chmod + x" suivie du nom de votre fichier.
 
-```Bash
-echo "Bonjour!"
+Ensuite, vous pouvez commencer à écrire votre script en utilisant les éléments de base de la programmation Bash tels que les commentaires, les variables et les boucles. Voici un exemple de script Bash simple qui imprime le message "Bonjour, il fait beau aujourd'hui !" :
+
 ```
-
-Vous pouvez également créer des variables et définir des conditions pour votre code. Voici un exemple d'un script qui demande à l'utilisateur son nom et lui souhaite la bienvenue :
-
-```Bash
-echo "Quel est votre nom ?"
-read nom
-echo "Bonjour $nom, bienvenue sur notre projet !"
+# Ceci est un commentaire
+message="Bonjour, il fait beau aujourd'hui !"
+echo $message
 ```
+Lorsque vous exécutez ce script, vous devriez voir le message s'afficher dans votre terminal.
 
-Comme vous pouvez le voir, Bash est un langage très simple à utiliser, mais il offre également une grande flexibilité pour réaliser des tâches plus complexes. Vous pouvez également trouver de nombreux tutoriels en ligne pour vous aider à en apprendre davantage sur ce langage.
+Maintenant que vous avez les bases, vous pouvez explorer davantage en apprenant à utiliser des commandes telles que "cd", "ls" et "grep". Vous pouvez également découvrir comment créer des fonctions et des scripts interactifs pour améliorer vos compétences en Bash.
 
-## Plongée profonde
+# Plongée en profondeur
 
-Maintenant que vous savez comment créer des scripts en Bash, vous pouvez plonger plus profondément dans le développement de votre projet. Vous pouvez utiliser des commandes Bash pour effectuer des tâches telles que la gestion de fichiers, l'automatisation de processus, et même la création de pages web. Bash est également compatible avec de nombreux autres langages de programmation, ce qui vous permet de combiner ses fonctionnalités avec celles d'autres langages pour créer des projets plus complexes et plus puissants.
+Si vous souhaitez vraiment maîtriser Bash, il est important de comprendre les principes de base de la programmation, comme les structures de contrôle, les fonctions et les variables. Cela vous aidera à écrire des scripts plus efficaces et plus lisibles.
 
-## Voir aussi
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/)
-- [Tutoriels Bash sur YouTube](https://www.youtube.com/results?search_query=tutoriel+bash)
-- [Liste de scripts Bash utiles](https://github.com/awesome-lists/awesome-bash)
-- [Guide de démarrage rapide de Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+Il est également important de savoir comment utiliser les arguments de ligne de commande et les structures de données telles que les tableaux et les dictionnaires. Ceci est particulièrement utile si vous souhaitez créer des scripts plus complexes et polyvalents.
+
+Enfin, pour tout projet Bash, il est important de garder votre code bien organisé et commenté pour faciliter la maintenance et la collaboration. N'hésitez pas à consulter des ressources en ligne telles que des tutoriels et des forums communautaires pour en apprendre davantage et améliorer vos compétences.
+
+# Voir aussi
+
+- [Tutoriel Bash par OpenClassrooms](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/42004-titre-du-chapitre)
+- [Forums du site LinuxCommand](https://www.linuxcommand.org/tlcl.php)
+- [Documentation officielle de GNU Bash](https://www.gnu.org/software/bash/manual/bash.html#Bash-Features)

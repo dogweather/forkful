@@ -1,68 +1,65 @@
 ---
-title:    "PHP: Einen Textdatei schreiben"
+title:    "PHP: Das Schreiben einer Textdatei"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Textdateien sind eine grundlegende Methode zur Speicherung von Informationen in der Programmierung. Sie sind einfach zu erstellen und flexibel genug, um für verschiedene Zwecke verwendet zu werden. In diesem Blogbeitrag werde ich zeigen, wie man mit PHP eine Textdatei erstellt und bearbeitet, sowie einige Tipps und Tricks für den Umgang mit Textdateien.
+Das Schreiben von Textdateien ist eine grundlegende Fähigkeit, die jeder PHP-Programmierer beherrschen sollte. Ob Sie Daten von einer externen Quelle speichern oder einfach nur eine einfache Ausgabedatei erstellen möchten, das Schreiben von Textdateien ist eine wichtige Fähigkeit, die sowohl in kleinen als auch in großen Projekten nützlich sein kann.
 
-## How To
+## Wie geht das?
 
-### Datei erstellen
-
-Um eine Textdatei mit PHP zu erstellen, müssen wir die Funktion `fopen()` verwenden. Diese Funktion öffnet eine Datei mit dem angegebenen Namen und gibt einen Dateizeiger (file pointer) zurück, der zum Lesen und Schreiben verwendet werden kann. Wir können `fopen()` folgendermaßen verwenden:
+Das Schreiben von Textdateien in PHP ist relativ einfach. Alles, was Sie tun müssen, ist eine neue Datei zu erstellen und sie mit Text zu füllen. Hier ist ein Beispiel dafür, wie man eine Datei mit dem Namen "test.txt" erstellt und einen einfachen Text hineinschreibt:
 
 ```PHP
-$datei = fopen("textdatei.txt", "w");
+<?php
+    // Öffnen oder erstellen Sie eine Datei zum Schreiben
+    $datei = fopen("test.txt", "w") or die("Kann Datei nicht öffnen!");
+
+    // Schreiben Sie den Text in die Datei
+    $text = "Dies ist ein Beispieltext.";
+    fwrite($datei, $text);
+
+    // Schließen Sie die Datei
+    fclose($datei)
+?>
 ```
 
-Der erste Parameter ist der Name der Datei, die erstellt werden soll, und der zweite Parameter ist der Modus `w` (write), der besagt, dass wir in die Datei schreiben wollen. Wenn die Datei bereits existiert, wird sie überschrieben, ansonsten wird eine neue Datei erstellt.
+Wenn Sie nun die Datei öffnen, werden Sie den geschriebenen Text darin sehen.
 
-### Inhalt schreiben
+## Tiefentauchen
 
-Um Inhalt in die Textdatei zu schreiben, können wir die Funktion `fwrite()` verwenden. Diese Funktion erwartet als erstes Argument den Dateizeiger und als zweites Argument den Inhalt, der geschrieben werden soll. Wir können auch den Ausgabeoperator `.` verwenden, um mehrere Zeilen an Inhalt zusammenzufügen. Ein Beispiel:
+Natürlich gibt es noch viele weitere Funktionen und Optionen zum Schreiben von Textdateien in PHP. Sie können beispielsweise auch mehrere Zeilen in eine Datei schreiben oder die Datei in verschiedenen Modi öffnen (z.B. zum Anhängen von Text an eine bestehende Datei). Hier ist ein Beispiel für das Schreiben von mehreren Zeilen in eine Datei:
 
 ```PHP
-fwrite($datei, "Hallo Welt!" . PHP_EOL);
-fwrite($datei, "Dies ist eine Beispieltextdatei.");
+<?php
+    // Öffnen oder erstellen Sie eine Datei zum Schreiben
+    $datei = fopen("test.txt", "w") or die("Kann Datei nicht öffnen!");
+
+    // Definieren Sie den Text als Array von Zeilen
+    $text = array(
+        "Dies ist die erste Zeile.",
+        "Dies ist die zweite Zeile.",
+        "Und dies ist die dritte Zeile."
+    );
+
+    // Schreiben Sie jede Zeile in die Datei
+    foreach($text as $zeile){
+        fwrite($datei, $zeile . "\n");
+    }
+
+    // Schließen Sie die Datei
+    fclose($datei);
+?>
 ```
 
-Der `PHP_EOL`-Konstante fügt einen Zeilenumbruch (End of Line) ein, damit jede Zeile einen eigenen Absatz bildet.
-
-### Datei schließen
-
-Es ist wichtig, die Textdatei nach dem Schreiben zu schließen, damit alle Änderungen gespeichert werden. Dazu verwenden wir die Funktion `fclose()`, die wir mit dem Dateizeiger als Argument aufrufen können.
-
-```PHP
-fclose($datei);
-```
-
-## Deep Dive
-
-#### Dateipfade und Berechtigungen
-
-Beim Erstellen einer Textdatei mit `fopen()` können wir auch einen absoluten oder relativen Pfad als ersten Parameter übergeben. Der absolute Pfad gibt den genauen Speicherort der Datei auf dem Server an, während der relative Pfad sich auf das aktuelle Verzeichnis bezieht. Wir sollten immer sicherstellen, dass wir die richtigen Berechtigungen für den Ordner haben, in dem die Datei gespeichert wird, damit die Textdatei erfolgreich erstellt werden kann.
-
-#### Weitere Modus-Optionen
-
-Neben dem `w`-Modus, den wir beim Erstellen der Textdatei verwendet haben, gibt es noch weitere Optionen, die wir beim Öffnen der Datei angeben können:
-
-- `r`: Liest die Datei (Standardwert, wenn kein Modus angegeben ist)
-- `r+`: Liest und schreibt in die Datei, aber lässt die Datei an ihrem ursprünglichen Speicherort
-- `w+`: Überschreibt die Datei, falls sie bereits existiert, oder erstellt eine neue Datei
-- `a`: Hängt den Inhalt am Ende der Datei an, ohne sie zu überschreiben
-- `a+`: Liest und schreibt in die Datei, aber hängt den Inhalt am Ende der Datei an
-
-#### Fehlerbehandlung
-
-Beim Schreiben in eine Datei besteht immer die Möglichkeit, dass ein Fehler auftritt. Wir können dieses Problem mit der Funktion `error_get_last()` behandeln, die den letzten Fehler zurückgibt, der in der aktuellen PHP-Ausführung aufgetreten ist. So können wir sicherstellen, dass unsere Textdatei korrekt erstellt wurde und alle Inhalte erfolgreich geschrieben wurden.
+Wenn Sie die Datei öffnen, werden Sie nun alle drei Zeilen sehen.
 
 ## Siehe auch
 
-- [PHP Dokumentation zu fopen()](https://www.php.net/manual/de/function.fopen.php)
-- [PHP Dokumentation zu fwrite()](https://www.php.net/manual/de/function.fwrite.php)
-- [PHP Dokumentation zu fclose()](https://www.php.net/manual/de/function.fclose.php)
-- [Einleitung in die Datei- und Verzeichnisfunktionen in PHP](https://www.php-kurs.com/datei-und-verzeichniszugriff-in-php.htm)
+- Die PHP [fopen](https://www.php.net/manual/de/function.fopen.php) Funktion
+- Die PHP [fwrite](https://www.php.net/manual/de/function.fwrite.php) Funktion
+- Mehr zum Thema "Textdateien schreiben" finden Sie in der offiziellen PHP-Dokumentation unter [Writing to files](https://www.php.net/manual/en/function.fwrite.php)

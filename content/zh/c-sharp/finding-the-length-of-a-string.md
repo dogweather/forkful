@@ -1,35 +1,44 @@
 ---
-title:    "C#: 寻找字符串的长度"
+title:    "C#: 计算字符串的长度"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：寻找字符串的长度是编程中常见的任务之一，它可以帮助程序员更有效地处理字符串数据。
+## 为什么
 
-如何：在C#中，我们可以使用内置的Length属性来获取字符串的长度。下面是一个简单的示例代码：
+在编写C#程序时，有时候我们会遇到需要知道字符串长度的情况。比如，我们可能需要验证用户输入的密码是否符合要求，或者需要截取字符串的一部分。在这些情况下，找到字符串的长度就变得非常重要。
 
-```C#
-string str = "Hello World!";
-Console.WriteLine(str.Length);
-```
+## 如何做
 
-输出：12
-
-深入探讨：字符串的长度实际上是指字符串中字符的数量。在C#中，每个字符占用一个字节，所以字符串的长度也可以理解为它占用的字节数。同时，我们也可以使用其他方法来计算字符串的长度，例如使用Split方法，来获取字符串中单词的数量。
+要找到字符串的长度，我们可以使用C#内置的`Length`属性。例如，假设我们有一个名为`str`的字符串变量，我们可以使用以下代码来找到它的长度：
 
 ```C#
-string sentence = "I love coding";
-string[] words = sentence.Split(' ');
-Console.WriteLine(words.Length);
+int length = str.Length;
 ```
 
-输出：3
+我们也可以在控制台输出字符串的长度，让我们来看一个完整的例子：
 
-另外，值得注意的是，字符串的长度是可以改变的。当我们对字符串进行增删改操作时，长度也会相应改变。
+```C#
+string str = "你好世界";
+int length = str.Length;
+Console.WriteLine("字符串 “{0}” 的长度为 {1}。", str, length);
+```
 
-查看也可以发现：这篇博文介绍了如何在C#中获取字符串的长度，希望能够帮助您更好地处理字符串数据。如果您想进一步了解字符串的相关知识，可以参考以下链接：
+输出会是：
 
-- [C#字符串操作指南](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/strings/)
-- [字符串长度的含义和计算方式](https://www.samlewis.me/2019/06/08/string-length/)
-- [如何处理不同编码方式的字符串长度](https://coderwall.com/p/m9pjna/c-sharp-string-length)
+```
+字符串 “你好世界” 的长度为 4。
+```
+
+## 深入探讨
+
+在C#中，字符串是一个类，而不是基本数据类型。这意味着字符串变量实际上是一个指向字符串对象的引用。而该字符串对象包含一个`Length`属性，用于存储字符串的实际长度。
+
+另外值得注意的是，`Length`属性返回的值是一个`int`类型。这意味着，如果我们想要获取一个字符串的最大长度，我们需要确保返回的值不会超过`int`类型的最大值。
+
+## 参考资料
+
+- [String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
+- [C#字符串操作指南](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

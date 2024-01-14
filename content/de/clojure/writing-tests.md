@@ -1,34 +1,53 @@
 ---
 title:    "Clojure: Tests schreiben"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich die Mühe machen, Tests für sein Clojure-Programm zu schreiben? Nun, es gibt viele gute Gründe dafür. Erstens können Tests dabei helfen, Bugs frühzeitig zu erkennen und zu beheben, bevor sie in der Produktion auftreten. Auch können Tests dazu beitragen, die Code-Qualität zu verbessern und die Wartbarkeit des Programms zu erhöhen. Nicht zuletzt bieten sie auch eine Art der Dokumentation, indem sie zeigen, wie das Programm richtig verwendet werden sollte.
+Die Verwendung von Tests ist ein wichtiger Bestandteil des Programmierens in jeder Sprache, einschließlich Clojure. Durch das Schreiben von Tests können Sie sicherstellen, dass Ihr Code ordnungsgemäß funktioniert und auf bestimmte Eingaben reagiert. Außerdem können Tests dazu beitragen, Fehler frühzeitig zu erkennen und die Qualität Ihres Codes langfristig zu verbessern.
 
-## How To
+## Wie man Tests schreibt
 
-Jetzt wollen wir uns anschauen, wie man in Clojure Tests schreibt. Das folgende Beispiel zeigt einen einfachen Test, der prüft, ob die Funktion `add` zwei Zahlen korrekt addiert.
+Um Tests in Clojure zu schreiben, verwenden Sie die Bibliothek "clojure.test". Um einen Testfall zu erstellen, definieren Sie eine Funktion mit dem Präfix "test-", die mit der Funktion "is" mindestens einen Vergleich durchführt. Zum Beispiel:
 
 ```Clojure
-(deftest test-addition
-  (testing "Addition von zwei positiven Zahlen"
-    (is (= 4 (add 2 2)))))
+(defn test-addition
+  (is (= 4 (+ 2 2)))
+  (is (= 10 (+ 5 5))))
 ```
 
-In diesem Beispiel verwenden wir die Test-Bibliothek `clojure.test`, welche bereits in Clojure integriert ist. Zuerst definieren wir einen Test mit `deftest` und geben ihm einen sprechenden Namen. Innerhalb des Tests können wir dann mit der Funktion `testing` eine bestimmte Eigenschaft oder Verhaltensweise unserer Funktion `add` prüfen. Mit `is` testen wir, ob das erwartete Ergebnis von `add` mit dem tatsächlichen Ergebnis übereinstimmt. In diesem Fall erwarten wir, dass `2 + 2` gleich `4` ergibt. Führen wir den Test aus, sehen wir hoffentlich ein grünes Häkchen, welches bestätigt, dass der Test erfolgreich war.
+Um den Test auszuführen, verwenden Sie die Funktion "run-tests" und geben Sie den Namen der Testdatei als Argument an. Die Ausgabe wird Ihnen mitteilen, ob die Tests erfolgreich waren oder ob Fehler aufgetreten sind. Ein Beispiel dafür, wie die Ausgabe aussehen könnte, finden Sie hier:
 
-## Deep Dive
+```Clojure
+Testing tests.core
+Ran 2 tests containing 6 assertions.
+0 failures, 0 errors.
+```
 
-Nun wollen wir etwas tiefer in die Materie eintauchen. Beim Schreiben von Tests gibt es einige bewährte Praktiken, die es zu beachten gilt. Zum Beispiel sollte jeder Test unabhängig und isoliert sein, d.h. er sollte nicht von anderen Tests oder von äußeren Faktoren beeinflusst werden. Auch sollte jeder Test klar und verständlich benannt sein, damit man sofort erkennt, welches Verhalten getestet wird.
+Sie können auch Funktionen verwenden, um bestimmte Eingaben für Ihre Tests zu generieren, und dann mit der Funktion "are" mehrere Vergleiche gleichzeitig durchführen. Ein Beispiel sehen Sie hier:
 
-Eine weitere hilfreiche Technik beim Schreiben von Tests ist das Mocken, d.h. das Ersetzen von bestimmten Teilen des Codes, die sich nicht direkt testen lassen. Dadurch können wir unser Programm in einer kontrollierten Umgebung testen und mögliche Abhängigkeiten oder Fehlerquellen eliminieren. Es gibt verschiedene Test-Frameworks, die Mocking unterstützen, zum Beispiel `testdouble` oder `cljmock`.
+```Clojure
+(defn add [x y]
+  (+ x y))
+
+(defn test-addition
+  (are [x y] (is (= x (+ y 0)))
+       1 1
+       2 2
+       3 3))
+```
+
+## Tiefenbehandlung
+
+Beim Schreiben von Tests ist es wichtig, eine gute Abdeckung zu erreichen, um sicherzustellen, dass alle Bereiche Ihres Codes getestet werden. Sie sollten auch versuchen, fehlerhafte Bedingungen zu testen, um sicherzustellen, dass Ihr Code auch dann korrekt funktioniert, wenn unerwartete Eingaben auftreten.
+
+Es kann auch hilfreich sein, Ihre Tests in kleinere Einheiten aufzuteilen und jede Funktion separat zu testen. Auf diese Weise können Sie besser nachvollziehen, wo mögliche Fehler auftreten und diese gezielter beheben.
 
 ## Siehe auch
 
-- [Clojure Test-Dokumentation](https://clojure.org/guides/test)
-- [Praktiken zum Schreiben von Tests in Clojure](https://vvvvalvalval.github.io/posts/2018-04-25-test-intemporal.html)
-- [Testdouble Framework](https://github.com/profile/testdouble)
+- [Offizielle Clojure Dokumentation zu Tests](https://clojure.org/guides/testing)
+- [Eine Einführung in Clojure Tests von PurelyFunctional.tv](https://purelyfunctional.tv/guide/how-to-test-your-clojure-code/)

@@ -1,50 +1,55 @@
 ---
-title:    "Python: Usando expressões regulares"
+title:    "Python: Utilizando expressões regulares"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar Expressões Regulares?
+## Por que usar expressões regulares?
 
-Expressões regulares são uma ferramenta poderosa para buscar e manipular padrões de texto em programas Python. Com elas, é possível realizar tarefas como validação de dados, extração de informações específicas e substituição de caracteres. Se você deseja otimizar seu código e automatizar tarefas repetitivas, aprender Expressões Regulares é fundamental.
+Expressões regulares são uma das ferramentas mais poderosas do Python para processamento de texto. Com elas, você pode encontrar padrões em strings, fazer substituições e até mesmo validar entradas de usuários. Em resumo, é uma forma extremamente eficiente de lidar com texto em suas aplicações.
 
-## Como Utilizar Expressões Regulares em Python
+## Como usar expressões regulares no Python
 
-Para utilizar Expressões Regulares em Python, é necessário importar o módulo `re`. Este módulo contém várias funções que permitem criar e operar com expressões regulares.
+Usar expressões regulares no Python é fácil e simples. Primeiro, é necessário importar o módulo `re`:
 
-Vamos supor que temos uma lista de e-mails e queremos validar se eles estão em um formato correto. Podemos utilizar a função `match()` para verificar se um e-mail começa com um conjunto de caracteres específicos e possui um "@" e um domínio válido.
-
-```
+```Python
 import re
-
-emails = ["joao@gmail.com", "maria@outlook.com", "pedro@hotmail.com"]
-
-for email in emails:
-    if re.match(r"[A-Za-z0-9]+@([A-Za-z0-9]+\.)+[A-Za-z]+", email):
-        print(f"{email} é um e-mail válido!")
-    else:
-        print(f"{email} é um e-mail inválido!")
 ```
 
-Neste exemplo, utilizamos uma expressão regular que verifica se o e-mail começa com uma combinação de letras e números, seguido de um "@" e um domínio formado por letras e números, seguido de um ponto e mais letras. Com isso, podemos validar facilmente se os e-mails da lista estão em um formato correto.
+Em seguida, podemos utilizar a função `search()` para encontrar um padrão específico em uma string:
 
-## Aprofundando-se em Expressões Regulares
+```Python
+# Encontrar a palavra "expressão" em uma string
+texto = "Estudando expressões regulares no Python"
+padrao = re.search("expressão", texto)
+print(padrao.group()) # Saída: expressão
+```
 
-As Expressões Regulares em Python seguem uma sintaxe específica para definir padrões de texto. Alguns dos símbolos comumente utilizados são:
+Outra forma comum de utilizar expressões regulares é através da função `sub()`, que permite substituir um padrão por outro valor:
 
-- `.` : representa qualquer caractere.
-- `+` : representa a ocorrência de um ou mais caracteres.
-- `*` : representa a ocorrência de zero ou mais caracteres.
-- `[]` : utiliza-se para criar uma lista de possíveis caracteres.
-- `()` : é utilizado para agrupar padrões.
+```Python
+# Substituir todos os números em uma string por asteriscos
+texto = "12345 abc 67890"
+novo_texto = re.sub("[0-9]", "*", texto)
+print(novo_texto) # Saída: ***** abc *****
+```
 
-É importante lembrar que o uso de símbolos e metacaracteres pode variar dependendo da necessidade e do padrão que se deseja buscar.
+## Aprofundando nas expressões regulares
 
-Também é possível utilizar outras funções como `search()` e `findall()` para buscar padrões em textos mais complexos. Para uma lista completa das funções disponíveis e suas aplicações, consulte a documentação oficial do módulo `re` em [Python.org](https://docs.python.org/pt-br/3/library/re.html).
+As expressões regulares do Python são baseadas em uma linguagem chamada Regex, que possui uma sintaxe própria para encontrar e manipular padrões em uma string. Algumas das principais sequências especiais do Regex são:
+
+- `\d`: encontra qualquer dígito
+- `\w`: encontra qualquer caractere alfanumérico
+- `[a-z]`: encontra qualquer letra minúscula
+- `+`: encontra uma ou mais ocorrências
+- `*`: encontra zero ou mais ocorrências
+- `?`: encontra zero ou uma ocorrência
+
+Além disso, é possível utilizar parênteses para agrupar padrões e utilizar métodos como `split()` e `findall()` para manipular as strings encontradas.
 
 ## Veja também
 
-- [Expressões Regulares em Python: O Guia Definitivo](https://www.devmedia.com.br/expressoes-regulares-em-python-o-guia-definitivo/40657)
-- [Aprenda Python: Expressões Regulares](https://www.youtube.com/watch?v=K8L6KVGG-7o)
-- [Documentação oficial do módulo `re` em Python.org](https://docs.python.org/pt-br/3/library/re.html)
+- [Documentação oficial do módulo `re`](https://docs.python.org/3/library/re.html)
+- [Tutorial de expressões regulares no Python](https://www.treinaweb.com.br/blog/o-que-sao-expressoes-regulares-e-como-usa-las-em-python/)

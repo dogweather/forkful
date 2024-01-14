@@ -1,61 +1,51 @@
 ---
-title:    "C: 서브스트링 추출"
+title:    "C: 부분 문자열 추출하기"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 추출할까요?
 
-서브스트링 추출을 하는 이유는 기존의 문자열에서 일부분을 추출하여 다른 형식으로 사용할 수 있기 때문입니다. 예를 들어, 전화번호를 입력받을 때 하이픈이 포함된 문자열을 추출하여 번호만 가져올 수 있습니다.
+C 언어를 배우는 과정에서 많은 경우에 문자열에서 일부분을 추출하는 것이 필요하게 됩니다. 이것을 효율적으로 처리할 수 있으면 더 많은 데이터를 다루는 프로그래밍에 유용합니다.
 
-## 방법
+## 추출하는 법
 
-서브스트링을 추출하는 방법은 간단합니다. 우선, 추출하고자 하는 문자열의 시작 위치와 길이를 지정해야 합니다. 다음은 C 프로그래밍 언어를 사용하여 서브스트링을 추출하는 간단한 예시입니다.
+문자열에서 일부분을 추출하는 방법은 다양합니다. 가장 간단한 방법은 하나의 문자를 추출하는 것입니다. 다음과 같은 코드를 사용할 수 있습니다.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    // 서브스트링을 추출할 문자열
-    char str[] = "Hello World!";
-    // 추출할 시작 위치
-    int start = 6;
-    // 추출할 길이
-    int length = 5;
-    // 추출할 서브스트링을 저장할 버퍼
-    char substr[6];
+    char str[] = "Hello, World!";
+    char ch;
 
-    // str에서 start 위치부터 length 길이만큼 문자를 추출하여 substr에 저장
-    strncpy(substr, str + start, length);
+    // 문자열에서 'W' 추출
+    ch = str[7];
 
-    // 출력
-    printf("%s\n", substr);  // World
+    printf("추출한 문자는 %c입니다.", ch);
 
     return 0;
 }
 ```
 
-위 코드에서 `strncpy` 함수를 사용하여 `str`에서 `start` 위치부터 `length` 길이만큼의 문자를 `substr`에 저장하였습니다. 이렇게 하면 `substr`에는 `%s`를 사용하여 출력할 수 있는 서브스트링이 저장됩니다.
+출력 결과는 다음과 같습니다.
 
-## 딥 다이브
+```
+추출한 문자는 W입니다.
+```
 
-서브스트링을 추출하는 방법은 `strncpy` 함수 외에도 여러 가지가 있습니다. 예를 들어, `strchr` 함수를 사용하면 문자열에서 특정 문자의 위치를 찾을 수 있습니다. 이를 이용해 서브스트링의 시작 위치를 찾아 `strncpy` 함수로 추출하는 것도 가능합니다.
+이외에도 다양한 방법으로 문자열에서 일부분을 추출할 수 있습니다. `strcpy()` 함수를 사용하여 substring을 새로운 문자열로 복사하는 방법이 있습니다. 또는 `strncpy()` 함수를 사용하여 원하는 길이만큼 문자열을 복사할 수도 있습니다.
 
-또한, 서브스트링 추출은 문자의 대소문자를 구분하기 때문에 `strncasecmp` 함수를 사용하면 대소문자를 무시하고 서브스트링을 추출할 수도 있습니다.
+## 깊게 파고들기
 
-## 또 다른 참고 자료
+C 언어에서 문자열에서 일부분을 추출하는 과정은 유용하지만 관련해서 몇 가지 주의할 점이 있습니다. 예를 들어, 추출하려는 substring의 인덱스가 문자열의 길이보다 크면 오류가 발생할 수 있습니다. 따라서 항상 문자열의 길이를 먼저 확인하는 것이 좋습니다. 또한 제대로 추출된 substring이 원하는 값과 일치하는지도 확인하는 것이 중요합니다.
 
-- [C 프로그래밍 언어 도서](https://www.hanbit.co.kr/store/books/category_list.html?cate_cd=001)
-- [C 언어를 위한 프로그래밍 입문](http://www.tcpschool.com/c/)
-- [C 프로그래밍 언어 공식 문서](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
+또 다른 중요한 주의점은 메모리 관리입니다. 문자열에서 일부분을 추출한 후 새로운 문자열로 복사하면서 메모리가 낭비될 수 있습니다. 따라서 메모리 관리에 유의하여 코드를 작성하는 것이 중요합니다.
 
----
+# 이 외에도 알아보기
 
-## 참고하세요
-
-- [서브스트링(Substring)](https://ko.wikipedia.org/wiki/%EC%84%9C%EB%B8%8C%EC%8A%A4%ED%8A%B8%EB%A7%81)
-- [strncpy 함수](https://www.cplusplus.com/reference/cstring/strncpy/)
-- [strchr 함수](https://www.cplusplus.com/reference/cstring/strchr/)
-- [strncasecmp 함수](https://www.cplusplus.com/reference/cstring/strncasecmp/)
+- [프로그래밍 언어 C](https://ko.wikipedia.org/wiki/C)
+- [문자열 관련 함수](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

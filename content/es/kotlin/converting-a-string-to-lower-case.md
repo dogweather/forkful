@@ -1,40 +1,53 @@
 ---
 title:    "Kotlin: Convirtiendo una cadena a minúsculas"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué convertir una cadena a minúsculas?
+## Por qué
 
-A veces, en la programación, necesitamos tratar con cadenas en diferentes formatos. Una tarea común es convertir una cadena a minúsculas, lo que puede ser útil para fines de comparación o visualización. En Kotlin, hay una función integrada para hacer esta conversión de forma rápida y sencilla. En esta entrada del blog, te explicaré cómo usar esta función y también profundizaré en cómo funciona detrás de escena.
+Convertir una cadena de texto a minúsculas puede ser necesario en varios casos, como en la validación de entradas de usuario o en la comparación de strings sin importar mayúsculas y minúsculas. También puede ser una buena práctica de programación para mantener consistencia en tus datos.
 
-## Cómo hacerlo en Kotlin
+## Cómo hacerlo
 
-En Kotlin, podemos usar la función "toLowerCase()" para convertir una cadena a minúsculas. Aquí hay un ejemplo de cómo usarlo:
-
-```Kotlin
-val cadenaMayusculas = "ESTA ES UNA CADENA EN MAYÚSCULAS"
-val cadenaMinusculas = cadenaMayusculas.toLowerCase()
-println(cadenaMinusculas)
+La forma más sencilla de convertir una cadena de texto a minúsculas en Kotlin es utilizando el método ```toLowerCase()```.
 ```
-El resultado de este código será "esta es una cadena en mayúsculas". Ahora, si queremos hacer el cambio en la misma cadena original sin crear una nueva variable, podemos usar la función "toLowerCase()" directamente en la cadena:
-
-```Kotlin
-var cadena = "CONVERTIR ESTA CADENA"
-cadena = cadena.toLowerCase()
-println(cadena)
+val nombre = "JUAN"
+val nombreMin = nombre.toLowerCase()
+// Output: juan
 ```
-El resultado de este código será "convertir esta cadena".
+Ten en cuenta que este método devuelve una nueva cadena de texto, por lo que deberás asignarla a una nueva variable o reemplazar la cadena existente.
 
-## Inmersión profunda
+Otra opción es utilizar la función de extensión ```toLowerCase()``` en un objeto String:
+```
+val apellido = "PÉREZ"
+val apellidoMin = apellido.toLowerCase()
+// Output: pérez
+```
+También puedes utilizar el operador de asignación ```+=``` para concatenar el método ```toLowerCase()``` al final de la cadena:
+```
+var direccion = "AVENIDA LA PAZ"
+direccion += direccion.toLowerCase()
+// Output: AVENIDA LA PAZavenida la paz
+```
 
-Detrás de escena, la función "toLowerCase()" utiliza el estándar de codificación Unicode para hacer la conversión de minúsculas. Reconoce los caracteres en mayúsculas y los sustituye por sus equivalentes en minúsculas.
+## Profundizando
 
-Además, es posible que hayas notado que en los ejemplos anteriores usamos la palabra reservada "val" en lugar de "var" para declarar nuestras variables. Esto se debe a que en Kotlin, las cadenas se tratan como objetos inmutables, lo que significa que no podemos cambiar su valor después de su inicialización.
+El método ```toLowerCase()``` utiliza la localización del sistema para realizar la conversión de mayúsculas a minúsculas. Esto significa que si estás utilizando el código en una región donde el idioma principal sea diferente del español, puede haber diferencias en cómo se realizan las conversiones. Puedes evitar esto utilizando la función de extensión ```toLowerCase(Locale)```, donde puedes especificar la localización que deseas utilizar.
+
+Otra función útil es ```capitalize()```, que convierte la primera letra de la cadena a mayúscula:
+```
+val deporte = "fútbol"
+val deporteCap = deporte.capitalize()
+// Output: Fútbol
+```
+
+Si necesitas realizar operaciones con una cadena en minúsculas, se recomienda convertir la cadena original a minúsculas en lugar de utilizar el método ```toLowerCase()``` cada vez. Esto puede mejorar el rendimiento en casos de grandes cantidades de datos.
 
 ## Ver también
 
-- Documentación oficial de Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Guía de estilo de strings en Kotlin: https://kotlinlang.org/docs/reference/coding-conventions.html#strings
-- Tutoriales de Kotlin en español: https://www.danielprimo.io/tag/kotlin/
+- [Documentación oficial de Kotlin sobre las funciones toLowerCase() y capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Más funciones de manejo de cadenas de texto en Kotlin](https://www.geeksforgeeks.org/kotlin-string-functions/)
+- [Ejemplos de uso de cadenas de texto en Kotlin](https://beginnersbook.com/2018/03/kotlin-strings/)

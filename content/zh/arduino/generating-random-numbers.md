@@ -1,51 +1,48 @@
 ---
 title:    "Arduino: 生成随机数"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用随机数
+<div id="why"></div>
 
-随机数在编程中扮演着重要的角色，它们可以帮助我们解决许多问题，例如生成密码、模拟随机事件等。通过使用 Arduino，我们可以轻松地生成随机数来解决这些问题。
+## 为什么
 
-# 如何生成随机数
+生成随机数可能听起来并不是很有用，但它实际上在编程中有很多实际的应用。比如，你可以用它来创建抽奖程序、游戏随机事件或者测试程序。这篇博文将向你展示如何在Arduino中生成随机数，以及一些关于随机数的深入知识。
 
-要在 Arduino 中生成随机数，我们需要使用 `random(min, max)` 函数。这个函数可以帮助我们指定随机数的范围，如果只想要一个随机数，可以将 `min` 和 `max` 设置为相同的值。下面是一个简单的例子：
+<div id="how-to"></div>
 
-```Arduino
-int randomNumber = random(1, 10);
-```
+## 如何生成随机数
 
-这将在 1-10 的范围内生成一个随机数，并将其存储在 `randomNumber` 变量中。我们可以使用 `Serial.println(randomNumber)` 将随机数打印出来，如下所示：
+要在Arduino中生成随机数，你需要使用`random()`函数。这个函数接受两个参数：最小值和最大值。比如，如果你想要生成一个1-10之间的随机数，你可以使用以下代码：
 
 ```Arduino
-int randomNumber = random(1, 10);
-Serial.println(randomNumber);
+int randomNumber = random(1, 11);
 ```
 
-这将输出类似于 `6` 的随机数。
-
-我们还可以使用 `randomSeed(seed)` 函数来设置随机数的种子，这可以帮助我们在每次运行代码时生成不同的随机数。例如，我们可以使用 `analogRead(A0)` 来采集模拟引脚 A0 的值，并将其作为种子，如下所示：
+要注意的是，`random()`函数只能生成整数类型的随机数。如果你想要生成小数类型的随机数，你可以将`random()`函数的输出除以一个小数，比如`10.0`。
 
 ```Arduino
-randomSeed(analogRead(A0));
-int randomNumber = random(1, 10);
-Serial.println(randomNumber);
+float randomNumber = random(1, 11) / 10.0;
 ```
 
-这将在每次运行代码时，都使用不同的种子来生成随机数。
+Arduino也提供了一些其他的函数来帮助你生成随机数，比如`randomSeed()`函数用于设置随机数的种子，`randomBytes()`函数用于生成随机字节。更多关于这些函数的信息可以参考Arduino官方文档。
 
-# 深入探讨
+<span id="deep-dive"></span>
 
-Arduino 中生成随机数的方法是通过使用伪随机数生成器（PRNG）来实现的。PRNG 是一种算法，它可以根据一个称作“种子”的初始值生成一个看似随机的序列。因此，当我们使用 `randomSeed()` 函数来设置种子时，就会影响到 `random()` 函数生成的随机数。
+## 深入探究随机数
 
-但是，有时候我们并不需要真正的随机数，而只需要一些“看起来像”随机数的序列。这种情况下，我们可以使用 `random()` 函数来生成伪随机数。
+随机数的本质是不可预测性，它是通过随机事件来生成的。在计算机中，这个随机事件是通过一个种子(seed)值来确定的。种子值是一个数字，它作为一个起点来生成随机数序列。如果你使用的是同样的种子值，你将会得到同样的随机数序列。
 
-另外，如果需要更高质量的随机数，我们也可以使用外部的随机数源，例如熵源芯片或随机数生成器模块。
+这就是为什么我们在生成随机数时需要使用`randomSeed()`函数来提供一个随机的种子值。通常，我们使用当前时间作为种子值来产生更加随机的序列。你也可以使用其他特殊的种子值来产生特定的序列，比如使用Arduino板上的电量读数。
 
-# 参考资料
+随机数也是伪随机的，它们实际上是通过一个算法来生成的，而不是真正的随机事件。这就意味着，如果你使用相同的种子值，你将会得到相同的随机数序列。但是，对于大多数应用来说，伪随机数已经足够随机。
 
-- [Arduino Docs - Random](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Sparkfun - Random Numbers](https://learn.sparkfun.com/tutorials/random-numbers/all)
-- [Adafruit - Generating Random Numbers with Arduino](https://learn.adafruit.com/make-it-snow-machine/random-numbers)
+<div id="see-also"></div>
+
+## 参考链接
+
+- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/random-numbers/)
+- [Java随机数生成原理](https://www.javatpoint.com/how-to-generate-random-number-in-java) (注意：Arduino使用的随机数生成算法可能不同于Java)

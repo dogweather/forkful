@@ -1,34 +1,43 @@
 ---
-title:    "PHP: 计算未来或过去的日期"
+title:    "PHP: 未来或过去的日期计算"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-计算未来或过去的日期可以帮助我们更好地计划和组织日常生活。它可以帮助我们记住重要的日期，例如生日或纪念日，也可以帮助我们安排未来的活动，例如旅行或会议。
+# 为什么要计算未来或过去的日期？
 
-## 怎样操作
-要计算未来或过去的日期，我们可以使用PHP中的[date()](https://www.php.net/manual/en/function.date.php)函数。该函数接受两个参数，第一个参数为日期格式，第二个参数为可选的时间戳。下面是一个计算未来日期的示例：
+在编程中，计算日期在某些情况下是非常有用的。例如，计算未来或过去的日期可以帮助我们制定日程安排或跟踪任务的完成时间。此外，我们也可以通过计算日期来处理生日、节假日等重要日期。
+
+## 如何进行日期计算
+
+要编写一个能够计算未来或过去的日期的PHP程序，我们需要了解日期相关的一些函数和概念。首先，我们需要使用date()函数来获取当前日期和时间。然后，我们可以使用strtotime()函数来将日期转换为Unix时间戳，这使得日期计算更加容易。最后，我们可以使用date()函数来格式化我们想要的日期输出。
+
+下面是一个简单的代码示例，用于计算未来5天后的日期，并将日期格式化为“年-月-日”的形式：
 
 ```PHP
-<?php
-$date = date("Y-m-d", strtotime("+1 week"));
-echo "明天的日期是：" . $date;
-?>
+$current_date = date("Y-m-d");
+$future_date = strtotime("+5 days", strtotime($current_date));
+$formatted_date = date("Y-m-d", $future_date);
+
+echo "未来5天的日期是：" . $formatted_date;
 ```
 
-这将输出：明天的日期是：2021-01-21。我们可以通过更改strtotime()函数中的第二个参数来计算不同的日期，例如"+2 weeks"表示两周后。
+输出结果应该为：“未来5天的日期是：年-月-日”。
 
-要计算过去的日期，我们可以使用"-1 week"来代替"+1 week"。通过这种方法，我们可以轻松地计算未来或过去任意时间段的日期。
+## 深入挖掘日期计算
 
-## 深入探讨
-PHP中的日期和时间函数非常强大，它们可以让我们以各种不同的方式操作日期和时间。使用PHP的[date_default_timezone_set()](https://www.php.net/manual/en/function.date-default-timezone-set.php)函数可以设置默认的时区，这在计算跨时区的日期时非常有用。另外，PHP还有许多其它有用的日期和时间函数，例如strtotime()、mktime()等。
+日期计算涉及到许多概念，例如时区、夏令时等。在PHP中，我们可以使用date_default_timezone_set()函数来指定日期的时区，默认情况下是服务器的时区。此外，我们还可以使用date()函数的第二个参数来指定日期的格式，例如“j”表示日， “m”表示月， “Y”表示年，等等。
 
-要了解更多关于PHP日期和时间函数的信息，请参考官方文档：[PHP Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+当涉及到夏令时时，我们需要使用date("I")来检查给定的日期是否在夏令时期间。如果是，则需要将夏令时的偏移（通常为1小时）加到结果中。
 
 ## 参考资料
-- [PHP date() function](https://www.php.net/manual/en/function.date.php)
-- [PHP strtotime() function](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP mktime() function](https://www.php.net/manual/en/function.mktime.php)
-- [PHP date_default_timezone_set() function](https://www.php.net/manual/en/function.date-default-timezone-set.php)
+
+- PHP日期和时间函数手册：http://php.net/manual/en/book.datetime.php
+- PHP时区列表：http://php.net/manual/en/timezones.php
+
+# 参考资料
+
+- PHP日期和时间函数手册：http://php.net/manual/en/book.datetime.php
+- PHP时区列表：http://php.net/manual/en/timezones.php

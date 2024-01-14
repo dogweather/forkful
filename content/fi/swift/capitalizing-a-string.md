@@ -1,38 +1,43 @@
 ---
-title:    "Swift: Merkkijonon suurennus"
+title:    "Swift: Kielen Tekstit kirjoittaminen."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+Why: Miksi haluat aloittaa merkkijonon isolla kirjaimella?
 
-Miksi olisit kiinnostunut muuttamaan merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi? Tässä blogikirjoituksessa kerromme syyn ja näytämme, kuinka voit tehdä sen helposti Swift-ohjelmoinnissa.
+On monia mahdollisia syitä capitalizing eli merkkijonon aloitus isolla kirjaimella, kuten ulkoasusta huolehtiminen, tiettyjen ohjelmointistandardien noudattaminen tai käyttäjän syötteen käsittely. Seuraavassa kerromme miten voit tehdä sen kätevästi Swiftillä.
 
-# Kuinka tehdä se
+How To: koodiesimerkkien ja tulostusten esittely * ``` Swift ... ``` * koodilohkoissa.
 
-Jos haluat muuttaa merkkijonon ensimmäisen kirjaimen isoksi, voit käyttää Swiftin sisäänrakennettua "capitalized" -metodia. Alla olevassa esimerkissä muutamme merkkijonon "swift" isoksi kirjaimeksi ja tulostamme sen konsoliin.
+Mitä tahansa syötettä saatkin käyttäjältä, on tärkeää huolehtia että se näyttää hyvältä ja seurata ohjelmointistandardeja. Tässä yksinkertainen koodi, joka ottaa käyttäjän syötteen ja muuttaa sen isoksi kirjaimeksi:
 
 ```Swift
-let word = "swift"
-let capitalizedWord = word.capitalized 
-print(capitalizedWord)
-
-// Tulostus: Swift
+let userInput = "hei, mitä kuuluu?"
+print(userInput.capitalized) // Tulostaa: Hei, mitä kuuluu?
 ```
 
-# Syvällinen sukellus
+Toinen vaihtoehto on käyttää extensioneja, jotka ovat Swift-kielen tapa lisätä uusia toimintoja olemassa oleviin tietotyyppeihin. Seuraava koodiesimerkki käyttää extensionia String-tietotyypille capitalizing-toiminnon suorittamiseen:
 
-Tämä "capitalized" -metodi perustuu Unicode-säännöstöön, joka määrittelee, miten eri merkkejä käsitellään ja käytetään ohjelmoinnissa. Tässä tapauksessa se tarkoittaa, että ensimmäinen merkki muutetaan isoksi ja muut merkit säilyvät ennallaan.
+```Swift
+extension String {
+    func capitalized() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+}
 
-On myös hyvä huomata, että tämä metodi toimii vain ensimmäisen kirjaimen kanssa, eikä se muuta muita kirjaimia, vaikka ne olisivatkin pienikirjaimisia. Esimerkiksi merkkijono "swiFT" muuttuisi "SwiFT".
+let userInput = "moi, mitä kuuluu?"
+print(userInput.capitalized()) // Tulostaa: Moi, mitä kuuluu?
+```
 
-# Katso myös
+Deep Dive: Syvempää tietoa merkkijonon capitalizingista.
 
-Lisätietoja Unicode-säännöstöstä ja sen käytöstä Swift-ohjelmoinnissa löydät seuraavilta verkkosivuilta:
+Vaikka yksinkertaisimmassa mallissa, jossa käytettiin vain "capitalized" metodia, tulos näytti hyvältä, se ei välttämättä vastaa kaikkia ohjelmointistandardeja. Esimerkiksi, jos syötteessä on yli yksi sana, sen ensimmäisen kirjaimen pitäisi olla isolla mutta muiden sanojen ei. Tämän takia toisessa koodiesimerkissä käytettiin prefix- ja dropFirst-metodeja varmistaen että vain ensimmäinen sana capitalizoidaan.
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Unicode Consoritumin virallinen sivusto](https://home.unicode.org/)
-- [Hacking with Swift -blogikirjoitus aiheesta](https://www.hackingwithswift.com/articles/79/how-to-capitalize-the-first-letter-of-a-string)
+Footer (See Also): Katso myös.
 
-Toivottavasti tämä blogikirjoitus auttoi sinua ymmärtämään, miksi ja kuinka voit käyttää "capitalized" -metodia Swiftissä. Kiitos lukemisesta!
+- Lisää tietoa String-tietotyypistä: https://developer.apple.com/documentation/swift/string
+- Toimintojen lisääminen olemassa oleviin tietotyyppeihin: https://docs.swift.org/swift-book/LanguageGuide/Extensions.html
+- Ohjelmointistandardit Swiftissä: https://swift.org/documentation/api-design-guidelines/

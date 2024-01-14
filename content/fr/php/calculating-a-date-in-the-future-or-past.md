@@ -1,43 +1,49 @@
 ---
-title:    "PHP: Calculer une date dans le futur ou le passé"
+title:    "PHP: Calcul d'une date dans le futur ou le passé."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Calculer une date dans le futur ou le passé est une compétence importante pour tout programmeur PHP. Cela peut être utile lors de la création d'applications de planification ou de la gestion de données historiques.
+Il y a plusieurs raisons pour lesquelles vous pourriez avoir besoin de calculer une date dans le futur ou le passé en PHP. Par exemple, vous pourriez être en train de créer une application de réservation ou de planification, ou tout simplement besoin de suivre des dates pour une tâche spécifique.
 
-## Comment faire
+# Comment Faire
 
-Pour calculer une date dans le futur ou le passé, vous pouvez utiliser la fonction `date()` en PHP. Cette fonction prend deux paramètres : le format de la date souhaitée et le timestamp de la date de référence.
-
-Voici un exemple de code pour calculer la date 7 jours dans le futur :
+Pour calculer une date dans le futur ou le passé en PHP, vous pouvez utiliser la fonction `strtotime()` en lui passant une chaîne de date et une date de référence en tant que paramètres. Par exemple:
 
 ```PHP
-$date = date("Y-m-d", strtotime("+7 days"));
-echo $date; // Output: 2021-10-04
+$future_date = strtotime('next week');
+echo date('d/m/Y', $future_date); // outputs: 16/03/2020
+$past_date = strtotime('last month');
+echo date('d/m/Y', $past_date); // outputs: 01/02/2020
 ```
 
-Et voici un exemple pour calculer la date 1 mois dans le passé :
+Vous pouvez également ajouter ou soustraire des valeurs à la date de référence en utilisant des codes spécifiques. Par exemple:
 
 ```PHP
-$date = date("Y-m-d", strtotime("-1 month"));
-echo $date; // Output: 2021-08-04
+$future_date = strtotime('+2 years');
+echo date('d/m/Y', $future_date); // outputs: 14/03/2022
+$past_date = strtotime('-3 days');
+echo date('d/m/Y', $past_date); // outputs: 09/03/2020
 ```
 
-Vous pouvez également spécifier différents formats de date selon vos besoins, tels que `d-m-Y` pour avoir la date au format jour-mois-année.
+# Plongeons Plus Profondément
 
-## Plongée en profondeur
+Pour une flexibilité et une précision supplémentaires, vous pouvez également utiliser la classe `DateTime` de PHP pour calculer des dates. Voici un exemple:
 
-Lorsque vous utilisez la fonction `date()` pour calculer une date dans le futur ou le passé, il est important de comprendre comment fonctionnent les timestamps. En PHP, le timestamp est un entier qui représente le nombre de secondes écoulées depuis le 1er janvier 1970 à minuit.
+```PHP
+$date = new DateTime();
+$date->modify('+2 weeks');
+echo $date->format('d/m/Y'); // outputs: 30/03/2020
+```
 
-En utilisant cette valeur comme point de référence, la fonction `strtotime()` peut calculer une date en ajoutant ou en soustrayant un nombre spécifié de secondes au timestamp actuel.
+De plus, vous pouvez utiliser différentes options de formatage telles que `createFromFormat()` ou `diff()` pour des calculs de dates plus complexes. Il est important de noter que le format par défaut de `DateTime` est `Y-m-d H:i:s`, qui peut être modifié en utilisant la méthode `setDate()`.
 
-De plus, vous pouvez également spécifier une date de référence différente en utilisant la fonction `strtotime()` et en passant deuxième paramètre contenant un autre timestamp.
+# Voir Aussi
 
-## Voir aussi
-
-- [Documentation PHP sur la fonction date()](https://www.php.net/manual/fr/function.date.php)
-- [Documentation PHP sur la fonction strtotime()](https://www.php.net/manual/fr/function.strtotime.php)
+- [Documentation officielle de PHP sur la fonction strtotime()](https://www.php.net/manual/fr/function.strtotime.php)
+- [Tutoriel sur la classe DateTime en PHP](https://www.tutorialspoint.com/php/php_date_time.htm)
+- [Guide complet sur la manipulation des dates en PHP](https://www.sitepoint.com/managing-dates-times-php/)

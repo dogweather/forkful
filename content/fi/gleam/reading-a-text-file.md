@@ -1,37 +1,37 @@
 ---
-title:    "Gleam: Tiedoston lukeminen"
+title:    "Gleam: Tiedostotiedoston lukeminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lukea tiedostot tekstipohjaisessa ohjelmointikielessä?
+## Miksi lukea tekstitiedostoa Gleam-ohjelmoinnilla?
 
-Monet ohjelmoijat ovat tottuneet käyttämään graafisia käyttöliittymiä, mutta tekstipohjaiset ohjelmointikielet, kuten Gleam, voivat tarjota tehokkaan ja nopean tavan lukea ja käsitellä tiedostoja. Tämä voi olla hyödyllistä esimerkiksi tiedon jalostamisessa tai suurten tietomäärien käsittelyssä.
+Jos olet Gleam-ohjelmoija ja haluat käsitellä andataa tekstimuodossa, luettaessa tekstitiedostoa voi olla erittäin hyödyllistä. Tämä blogikirjoitus opastaa sinua lukemaan tekstitiedostoja Gleam-ohjelmointikielen avulla ja antaa sinulle vinkkejä siitä, miten tämän teet.
 
-## Näin tehdään: Lukeminen tiedostosta Gleamilla
+## Miten lukea tekstitiedosto Gleam-ohjelmoinnilla?
 
-Tekstipohjaiset ohjelmointikielet käyttävät usein samanlaista syntaksia tiedostojen lukemiseen. Gleamissa tämä tapahtuu ```File``` kirjaston avulla. Esimerkiksi jos haluamme lukea tekstikentän sisällön txt-tiedostosta nimeltä "tiedosto.txt", voimme käyttää seuraavaa koodia:
-
-```Gleam
-let tiedoston_sisalto = File.read("tiedosto.txt")
-```
-
-Tämän jälkeen voimme käsitellä tiedoston sisältöä haluamallamme tavalla. Voimme esimerkiksi tulostaa sen konsoliin:
+Lukeminen tekstiideltiedostoja Gleamilla on helppoa! Käytä vain ```File``` -moduulia ja sen ```open``` -funktiota avataksesi tiedoston ja ```read_line``` -funktiota lukemaan sen sisällön rivi kerrallaan. Tässä on esimerkki:
 
 ```Gleam
-let tiedoston_sisalto = File.read("tiedosto.txt")
-Console.log("Tiedoston sisältö:", tiedoston_sisalto)
+import File
+
+let file = File.open("tiedosto.txt")
+for line in File.read_line(file) {
+  io.println(line)
+}
+
 ```
 
-Tämän koodin ajamisen jälkeen näemme konsolissa tekstikentän sisällön. Huomaa, että voimme myös käyttää ```File``` kirjaston erilaisia funktioita, kuten ```File.exists()``` tarkistaaksemme, onko tiedosto olemassa ennen sen lukemista.
+Tämä koodi avaa tiedoston nimeltä "tiedosto.txt" ja tulostaa sen sisällön konsoliin.
 
-## Syvemmälle: Tiedostojen lukeminen Gleamilla
+## Syväsukellus: miten tiedostot luetaan Gleamilla?
 
-Gleamilla on monia erilaisia tapoja lukea tiedostoja, jotka tarjoavat lisää joustavuutta ja vaihtoehtoja erilaisten tiedostojen lukemiseen. Näihin kuuluvat esimerkiksi ```File.read_to_string()```, joka palauttaa tiedoston sisällön merkkijonona, ja ```File.read_to_data()```, joka palauttaa tiedoston sisällön binäärimuodossa. Voit myös tarkistaa Gleam-oppaasta tai dokumentaatiosta lisätietoja eri kirjastoista ja niiden käytöstä tiedostojen lukemiseen.
+Tiedostojen lukeminen tapahtuu useimmiten kahdessa vaiheessa: tiedoston avaaminen ja sen sisällön lukeminen. Avaa tiedosto käyttämällä ```File.open``` -funktiota ja anna sille tiedoston nimi kirjoitettuna lainausmerkeissä. Sitten voit lukea tiedoston sisällön käyttämällä ```read_line``` -funktiota, joka lukee tiedoston rivit yksi kerrallaan kunnes pääsee tiedoston loppuun. Voit myös käyttää muita funktioita, kuten ```read_all``` ja ```read_binary``` riippuen siitä, miten haluat käsitellä tiedoston sisältöä.
 
-# Katso myös
+## Katso myös
 
-- Gleam dokumentaatio: https://gleam.run
-- Gleam-opas: https://gleam.run/book/getting-started.html
-- File-kirjasto: https://gleam.run/modules/gleam_io/file.html
+- [Gleam-kielen virallinen verkkosivusto](https://gleam.run/)
+- [Gleam-kielen dokumentaatio](https://gleam.run/documentation/)
+- [Gleam-kielen Github-repositorio](https://github.com/gleam-lang/gleam)

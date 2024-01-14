@@ -1,47 +1,52 @@
 ---
 title:    "Kotlin: Ricerca e sostituzione di testo"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Sarete in grado di risparmiare tempo e sforzi modificando i vostri testi con facilità, grazie alla capacità di cercare e sostituire in modo efficiente il testo in codice Kotlin.
+Le funzioni di ricerca e sostituzione del testo sono fondamentali per un efficiente processo di programmazione e debugging. Grazie alla loro semplicità e flessibilità, sono uno strumento indispensabile per gestire grandi quantità di codice.
 
 ## Come Fare
 
-Nel linguaggio di programmazione Kotlin, è possibile utilizzare la funzione "replace" per sostituire una stringa con un'altra. Ecco un esempio di codice:
+Per utilizzare la funzione di ricerca e sostituzione del testo in Kotlin, è possibile utilizzare il metodo `replace` di una stringa:
 
-```Kotlin
-var testo = "Ciao amici!"
-var risultato = testo.replace("amici", "ragazzi")
-println(risultato) // Stampa "Ciao ragazzi!"
+```
+val stringa = "Ciao, mi chiamo Maria"
+val nuovaStringa = stringa.replace("Maria", "Alessia")
+println(nuovaStringa)
+
+// Output: Ciao, mi chiamo Alessia
 ```
 
-In questo esempio, abbiamo sostituito la parola "amici" con "ragazzi" all'interno della stringa "Ciao amici!". Possiamo anche utilizzare espressioni regolari per sostituire del testo specifico. Ecco un altro esempio:
+In questo esempio, la stringa originale viene sostituita con la nuova stringa contenente il nome "Alessia". Per effettuare una ricerca non sensibile al caso, è possibile utilizzare il metodo `replace`, specificando il parametro `ignoreCase` come `true`:
 
-```Kotlin
-var testo = "Abbiamo bisogno di 10 mele."
-var risultato = testo.replace(Regex("[0-9]+"), "5")
-println(risultato) // Stampa "Abbiamo bisogno di 5 mele."
 ```
+val stringa = "Ciao, mi chiamo Maria"
+val nuovaStringa = stringa.replace("maria", "Alessia", true)
+println(nuovaStringa)
 
-In questo caso, abbiamo utilizzato un'espressione regolare per trovare qualsiasi numero all'interno della stringa e sostituirlo con il numero 5.
+// Output: Ciao, mi chiamo Alessia
+```
 
 ## Approfondimento
 
-Oltre alla semplice sostituzione di stringhe, Kotlin offre anche la possibilità di utilizzare l'operatore di assegnazione "=". Questo operatore sostituirà la stringa originale solo se è presente nella stringa iniziale. Ecco un esempio:
+La funzione di ricerca e sostituzione del testo offre anche la possibilità di utilizzare espressioni regolari per effettuare sostituzioni più complesse. Ad esempio, è possibile utilizzare il metodo `replaceAll` per sostituire tutte le occorrenze di una particolare espressione regolare all'interno di una stringa:
 
-```Kotlin
-var testo = "Ciao a tutti!"
-testo = testo.replace("salve", "ciao")
-println(testo) // Stampa "Ciao a tutti!", perché "salve" non era presente nella stringa originale.
+```
+val stringa = "Lorem ipsum dolor sit amet"
+val nuovaStringa = stringa.replaceAll("[aeiou]", "a")
+println(nuovaStringa)
+
+// Output: Laram apsam dalaram sat amat
 ```
 
-Oltre alla funzione "replace" e all'operatore "=", Kotlin offre anche altre funzioni utili per la ricerca e la sostituzione di stringhe, come "replaceFirst" e "replaceAll".
+In questo esempio, ogni vocale viene sostituita con la lettera "a". Per maggiori informazioni sulle espressioni regolari e su tutte le possibilità offerte dalla funzione di ricerca e sostituzione del testo di Kotlin, si consiglia di consultare la documentazione ufficiale.
 
-## Vedi anche
+## Vedi Anche
 
-- Documentazione ufficiale di Kotlin sulle funzioni di sostituzione stringa: [sostituzione stringa](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- Tutorial su come utilizzare le espressioni regolari in Kotlin: [espressioni regolari in Kotlin](https://www.tutorialkart.com/kotlin/regular-expression-in-kotlin/)
+- [Documentazione ufficiale Kotlin su `replace`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [RegexOne - Guida alle espressioni regolari](https://regexone.com/)

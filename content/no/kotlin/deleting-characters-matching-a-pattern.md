@@ -1,39 +1,54 @@
 ---
-title:    "Kotlin: Sletting av tegn som passer mønsteret"
+title:    "Kotlin: Slette tegn som matcher et mønster"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å slette tegn som stemmer overens med et mønster kan være en nyttig ferdighet å ha som utvikler når man jobber med tekstbehandling eller datafiltrering. Det kan hjelpe deg med å rydde opp i uønskede tegn og lage en renere tekst.
+Noen ganger kan det være nyttig å fjerne spesifikke tegn fra en streng i Kotlin. Dette kan være for å formatere data eller for å oppfylle bestemte krav til input i en applikasjon.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-Så, hvordan kan du slette disse tegnene? Her er et enkelt eksempel i Kotlin som viser hvordan du kan bruke en regex (regulær uttrykk) for å finne og slette tegn som matcher et spesifikt mønster fra en tekststreng:
+For å fjerne tegn som matcher et bestemt mønster i en streng, kan du bruke metoden `replace` og en Regular Expression (Regex) i Kotlin. La oss si at vi vil fjerne alle bokstaver fra en streng:
 
 ```Kotlin
-val tekst = "I dag er det en fin dag å være programmerer!"
-
-val nyTekst = tekst.replace(Regex("[aeiou]"), "") // Dette vil fjerne alle vokaler fra teksten
-
-println(nyTekst) // Resultat: "dg r dt n fn dg å vr prgrmmrr!"
+var tekst = "Dette er en tekst med ulike bokstaver"
+tekst = tekst.replace(Regex("[a-zA-Z]"), "")
+println(tekst)
 ```
 
-I dette eksempelet bruker vi `replace`-metoden og en regex for å finne og erstatte alle vokaler i teksten med et tomt tegn, noe som i praksis fjerner dem. Dette kan være nyttig for å fjerne uønskede tegn eller bokstaver fra en tekststreng.
+Output:
+```
+        
+             
+        
 
-## Dypdykk
 
-Regex, eller regulære uttrykk, er et kraftig verktøy for å søke, finne og erstatte tekst. Det lar deg opprette et mønster som kan matche visse tegn eller tegnkombinasjoner i en tekststreng. I eksempelet over brukte vi `[aeiou]` for å matche alle vokaler, men du kan også lage mer komplekse mønstre ved å bruke ulike tegn og operatører.
+## Fordypning
 
-Hvis du ønsker å lære mer om regex, kan du sjekke ut disse ressursene:
+La oss gå litt dypere inn i hva som skjer i koden over. Metoden `replace` tar imot to parametere: et Regular Expression mønster og en ny verdi. I dette tilfellet bruker vi `[a-zA-Z]` som betyr alle bokstaver fra A-Z (både stor og liten). Denne koden vil dermed fjerne alle bokstaver og output blir en tom streng.
 
-- [Kotlin regex-dokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Regex101](https://regex101.com/), et nettsted som lar deg teste og eksperimentere med regex
-- [Regex Tutorial on JavaTpoint](https://www.javatpoint.com/kotlin-regex), en trinnvis guide for å lære det grunnleggende i regex i Kotlin
+Men hva om vi vil beholde noen bokstaver og fjerne resten? Da kan vi legge til de bokstavene vi vil beholde i mønsteret med et `|` mellom dem. For eksempel, hvis vi vil beholde A, E og I, men fjerne resten av bokstavene, kan vi bruke dette mønsteret: `[a-ei-z]`. Da vil koden se slik ut:
+
+```Kotlin
+var tekst = "Dette er en tekst med ulike bokstaver"
+tekst = tekst.replace(Regex("[a-ei-z]"), "")
+println(tekst)
+```
+
+Output:
+```
+A E I           
+             
+```
+
+Som du kan se, er bokstavene A, E og I beholdt, mens resten er fjernet.
 
 ## Se også
 
-- [Kotlin string operations](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-string-templates)
-- [Kotlin documentation](https://kotlinlang.org/docs/reference/) for mer informasjon om andre nyttige funksjoner og biblioteker tilgjengelig i Kotlin.
+- [Metoden `replace` dokumentasjon i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Regex i Kotlin: A complete guide](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [Kotlin Strings: A Complete Guide](https://kotlinlang.org/docs/reference/basic-types.html#strings)

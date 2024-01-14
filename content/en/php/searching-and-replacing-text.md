@@ -1,67 +1,58 @@
 ---
 title:    "PHP recipe: Searching and replacing text"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Searching and replacing text is a crucial part of any programming language, and PHP is no exception. Whether you are trying to fix typos or make large-scale changes to your code, having the ability to easily find and replace text can save you time and frustration. In this blog post, we will explore the various ways you can search and replace text in PHP.
 
-## How To
-Let's dive right into some coding examples to see how we can search and replace text in PHP. We will be using the `str_replace()` function, which takes three parameters: the text we want to replace, the replacement text, and the string we want to make the changes in.
+Searching and replacing text is an essential task for any programmer. Whether you're fixing typos, updating large datasets, or implementing new features, the ability to quickly and accurately find and replace specific words or phrases is crucial in the world of programming.
 
-```
-<?php
+## How To 
 
-// Simple example of replacing text
-$text = "Hello, World!";
-echo str_replace("World", "Universe", $text);
-// Output: Hello, Universe!
+To begin, let's take a look at the ```str_replace()``` function in PHP, which is used to search and replace text within a string. This function takes in three parameters: the search value, the replace value, and the string to search within.
 
-// Case sensitive example
-$text = "Hello, world!";
-echo str_replace("World", "Universe", $text);
-// Output: Hello, world! (no changes made)
-
-// Replacing multiple instances of text
-$text = "Hello, World, Hello!";
-echo str_replace("Hello", "Hi", $text);
-// Output: Hi, World, Hi!
-
-// Replacing text in arrays
-$names = ["John", "Jane", "Bob"];
-$names = str_replace("John", "Jack", $names);
-print_r($names);
-// Output: Array ( [0] => Jack [1] => Jane [2] => Bob )
+```PHP
+echo str_replace("Hello", "Hola", "Hello world!"); 
 ```
 
-As you can see, the `str_replace()` function is versatile and can be used in various scenarios. It is also worth mentioning that there is a case-insensitive version of this function, `str_ireplace()`, which works the same way but ignores capitalization.
+This code will replace all instances of "Hello" with "Hola" within the string "Hello world!", resulting in the output "Hola world!".
+
+But what if we want to replace only the first instance of a word within a string? We can use the optional fourth parameter, ```$count```, to specify the maximum number of replacements.
+
+```PHP
+echo str_replace("Hey", "Hi", "Hey there Hey!", $count);
+echo "\n";
+echo $count;
+```
+
+This code will output "Hi there Hey!" and return a value of 1 for ```$count```. This can be useful when working with large datasets and wanting to limit the number of replacements made.
+
+We can also use ```str_replace()``` to replace multiple words or phrases at once. Simply pass in arrays for the search and replace values.
+
+```PHP
+$search = array("Hello", "World");
+$replace = array("Hola", "Mundo");
+echo str_replace($search, $replace, "Hello World!");
+```
+
+This code will output "Hola Mundo!".
 
 ## Deep Dive
-If you want more control over the replacement process, you can use the `preg_replace()` function, which utilizes regular expressions. This allows for more complex patterns to be searched and replaced. Let's take a look at an example:
 
-```
-<?php
+Now that we've covered the basics of ```str_replace()```, let's take a deeper dive into its functionality.
 
-// Using preg_replace() with regex
-$text = "I love cats and dogs!";
-echo preg_replace("/cats|dogs/", "good boys", $text);
-// Output: I love good boys and good boys!
+One important aspect to keep in mind is that ```str_replace()``` is case-sensitive. For example, if we have a string that contains the word "hello" and we use ```str_replace()``` to replace "Hello", it will not replace the lowercase "hello".
 
-// Replacing only the first occurrence
-$text = "Hello, Hello, Hello!";
-echo preg_replace("/Hello/", "Hi", $text, 1);
-// Output: Hi, Hello, Hello!
-```
+In addition, the search value and replace value can be either arrays or strings. This means we can use ```str_replace()``` to replace multiple words or phrases with multiple other words or phrases.
 
-Regular expressions may seem intimidating at first, but once you get the hang of it, they can be incredibly useful for finding and replacing text in PHP.
+Another useful function to know is ```str_ireplace()```, which is case-insensitive. This means that it will replace words regardless of case, making it more versatile in some cases.
 
 ## See Also
-For more information on searching and replacing text in PHP, check out these resources:
 
-- [PHP Manual on str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP Manual on preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regular Expressions in PHP](https://www.w3schools.com/Php/php_regex.asp)
+For more information on searching and replacing text in PHP, check out the official PHP documentation on ```str_replace()``` and ```str_ireplace()```.
 
-Now you have the tools to efficiently search and replace text in your PHP code. Happy coding!
+- [PHP: str_replace - Manual](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP: str_ireplace - Manual](https://www.php.net/manual/en/function.str-ireplace.php)

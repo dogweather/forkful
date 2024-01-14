@@ -1,30 +1,31 @@
 ---
 title:    "Gleam: Skriva en textfil"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva en textfil är en grundläggande del av programmering. Det är ett sätt att lagra och manipulera data på ett strukturerat sätt. Det är också ett vanligt sätt att samla och sammanställa information för senare användning.
 
-## Hur man gör det
-För att skriva en textfil i Gleam, börja med att skapa en ny fil med önskat namn och filtyp ".gleam". Du kan sedan använda funktionen "file.write" för att skriva innehållet i filen. Till exempel:
+Att skriva en textfil är en viktig del av programmering eftersom det ger möjlighet att lagra information som kan användas senare i programmet. Det är också ett sätt att skapa strukturerad och läsbar kod.
 
-```Gleam
-let filnamn = "mitt_dokument.txt"
-let innehåll = "Det här är en textfil som har skapats med Gleam."
-file.write(filnamn, innehåll)
+## Hur man gör
+
+Att skriva en textfil i Gleam är en enkel process. Först behöver du skapa en variabel som representerar din textfil och sedan använda funktionen "write_file" för att skriva innehållet till filen. Här är ett exempel på hur det kan se ut i Gleam:
+
+```
+file := "mina_dagar.txt"
+write_file(file, "Måndag")
 ```
 
-Det här enkla exemplet skapar en fil med namnet "mitt_dokument.txt" och innehåller texten "Det här är en textfil som har skapats med Gleam."
+Detta kommer att skapa en textfil med namnet "mina_dagar.txt" och skriva in ordet "Måndag" i filen. Du kan också använda variabler eller andra datastrukturer som innehåll i din textfil.
 
-## Fördjupning
-När du skriver en textfil i Gleam, finns det flera saker att tänka på. Först och främst måste du ha rätt åtkomsträttigheter för att kunna skriva till filer på din dator. Du kan också använda funktionen "file.append" för att lägga till mer information i en befintlig textfil istället för att skriva över allt innehåll.
+## Djupdykning
 
-Det är också viktigt att tänka på vad som händer om en fil redan finns med det filnamn du försöker använda. I Gleam finns det inbyggda funktioner för att hantera fel och undvika att eventuella befintliga filer skrivs över.
+När du skapar en textfil i Gleam, kan du också använda olika funktioner för att manipulera filen. Till exempel kan du använda "read_file" för att läsa innehållet i en befintlig fil, eller "append" för att lägga till mer information till en befintlig fil. Gleam har också stöd för att skriva till olika filformat, som CSV eller JSON.
 
-## Se också
-- [Gleam dokumentation om filer](https://gleam.run/documentation/guides/files.html)
-- [Tutorial om grundläggande filhantering i Gleam](https://elixirnation.io/really-simple-file-handling-in-gleam)
-- [Diskussion om filhantering i Gleam community](https://github.com/gleam-lang/stdlib/issues/178)
+## Se även
+
+- [Gleam dokumentation - Filsystem](https://gleam.run/docs/standard-library/fs.html)
+- [Lär dig Grundläggande Programmering med Gleam (video på svenska)](https://www.youtube.com/watch?v=CPI-TtPZhSE)

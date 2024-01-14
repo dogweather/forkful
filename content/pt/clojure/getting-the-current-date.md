@@ -1,55 +1,70 @@
 ---
-title:    "Clojure: Obtendo a data atual."
+title:    "Clojure: Obtendo a data atual"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que utilizar a data atual em programas Clojure?
+## Por que obter a data atual?
 
-Muitos programas requerem a utilização da data atual, seja para registro de logs, agendamento de tarefas ou até mesmo para exibir ao usuário. Com o Clojure, é possível obter a data atual de forma simples e eficiente.
+Há muitas razões pelas quais você pode precisar obter a data atual em um programa Clojure. Pode ser para registrar o horário de uma transação, criar um calendário dinâmico ou simplesmente exibir a data em um formato específico. Independentemente do motivo, é um conceito útil para entender e implementar em seus projetos.
 
-## Como Obter a Data Atual em Clojure
+## Como fazer:
 
-Utilizar a data atual em programas Clojure é fácil, basta seguir os seguintes passos:
-
-1. Importe a biblioteca `java.util.Date`
-2. Utilize a função `now` da biblioteca `java-time` para obter a data atual
-3. Converta a data para o formato desejado utilizando a função `format` da biblioteca `java-time`
-
-Veja um exemplo de código abaixo:
+Para obter a data atual em Clojure, podemos usar a função nativa `java.util.Date`. Vamos dar uma olhada em alguns exemplos:
 
 ```
-(ns meu-programa.data
-  (:import [java.util Date]))
-  
-(require '[java-time :as time])
+;; Importar a classe java.util.Date
+(import 'java.util.Date)
 
-(defn get-data-atual []
-  (let [data-atual (Date.) ;; obtém a data atual
-        data-formatada (time/format data-atual "dd/MM/yyyy")] ;; converte a data para o formato desejado
-    data-formatada)) ;; retorna a data formatada
+;; Obter a data atual
+(Date.)
 
-(get-data-atual) ;; retorna a data atual no formato "dd/MM/yyyy"
+;; Saída: #inst "2021-08-20T07:10:35.901-00:00"
+
+;; Armazenar a data atual em uma variável
+(def data-atual (Date.))
+
+;; Saída: #inst "2021-08-20T07:10:35.901-00:00"
+
+;; Converter a data para uma string no formato dd-MM-yyyy
+(str (.getDay data-atual) "-" (.getMonth data-atual) "-" (.getYear data-atual))
+
+;; Saída: "20-8-2021"
 ```
 
-Output:
+Podemos ver que, ao usar a função `Date.`, obtemos um objeto `java.util.Date`, que contém todas as informações sobre a data atual. Podemos então usar outras funções para manipular essas informações e exibi-las da maneira desejada.
+
+## Profundidade:
+
+Enquanto `java.util.Date` é uma maneira conveniente de obter a data atual, ela não é a mais recomendada. Isso porque essa classe é mutável, o que significa que os valores podem ser alterados depois de criados, o que pode levar a resultados imprevisíveis. Além disso, essa classe está obsoleta e foi substituída pela classe `java.time`.
+
+Para obter a data atual de maneira mais eficiente e segura, é recomendado usar a função `java.time.LocalDate/now`, que retorna um objeto da classe `java.time.LocalDate`. Vamos ver um exemplo:
+
 ```
-"28/10/2021" ;; data atual no formato "dd/MM/yyyy"
+;; Importar a classe java.time.LocalDate
+(import 'java.time.LocalDate)
+
+;; Obter a data atual
+(LocalDate/now)
+
+;; Saída: #object[java.time.LocalDate 0x18051e85 "2021-08-20"]
+
+;; Armazenar a data atual em uma variável
+(def data-atual (LocalDate/now))
+
+;; Saída: #object[java.time.LocalDate 0x1aa5d7aa "2021-08-20"]
+
+;; Converter a data para uma string no formato dd-MM-yyyy
+(str (.getDayOfMonth data-atual) "-" (.getMonthValue data-atual) "-" (.getYear data-atual))
+
+;; Saída: "20-8-2021"
 ```
 
-## Mergulho Profundo: Entendendo o Código
+Podemos ver que, ao usar `java.time.LocalDate/now`, obtemos um objeto `java.time.LocalDate` imutável, que contém informações precisas sobre a data atual. Além disso, essa classe possui muitas funções úteis para manipulação de datas, tornando-a uma opção mais robusta.
 
-Vamos explorar um pouco mais sobre como obter a data atual em Clojure. No código acima, utilizamos a função `now` da biblioteca `java-time` para obter a data atual. Essa função retorna um objeto `Instant`, que representa um momento específico no tempo.
-
-Em seguida, utilizamos a função `format`, também da biblioteca `java-time`, para converter o objeto `Instant` em uma string no formato desejado. No exemplo acima, utilizamos o formato "dd/MM/yyyy", mas é possível utilizar outros formatos, como "yyyy-MM-dd" ou "MM/dd/yyyy".
-
-É importante lembrar que a função `format` retorna uma string, por isso é necessário utilizar aspas na hora de definir a variável `data-formatada`.
-
-# Veja Também
-
-- [Documentação oficial do java-time](https://clojure.github.io/java-time/)
-- [Tutorial sobre como utilizar datas em Clojure](https://clojure.org/guides/dates)
-- [Outras bibliotecas úteis para manipulação de datas em Clojure](https://cljdoc.org/search?q=topic:date)
-
-Agora você já sabe como obter a data atual em programas Clojure. Esperamos que este artigo tenha sido útil e que você possa utilizá-lo em seus projetos futuros. Até a próxima!
+## Veja também:
+- [Aprenda Clojure em 15 minutos](https://dev.to/abhi1010/learn-clojure-in-15-minutes-2bb1)
+- [Documentação oficial de Clojure](https://clojure.org/documentation)
+- [JavaDoc da classe java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

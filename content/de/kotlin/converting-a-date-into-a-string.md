@@ -1,55 +1,36 @@
 ---
-title:    "Kotlin: Eine Datumsumwandlung in eine Zeichenkette"
+title:    "Kotlin: Eine Datum in einen String umwandeln."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Umwandeln von Datumsangaben in Zeichenketten ist ein häufiges Problem in der Programmierung. Es kann hilfreich sein, um Daten für die Benutzeranzeige oder für die Speicherung in Datenbanken zu formatieren.
+Es gibt viele Gründe, warum man ein Datum in eine Zeichenfolge konvertieren möchte. Zum Beispiel kann man so ein Datum leichter als Teil einer größeren Zeichenfolge verwenden oder es auf eine bestimmte Art und Weise formatieren, um es für bestimmte Zwecke zu nutzen.
 
-## Wie geht das?
+# Anleitung
 
-Um ein Datum in eine Zeichenkette umzuwandeln, können wir die vordefinierte Funktion `toString()` verwenden. Diese Funktion nimmt das gewünschte Datumsobjekt als Argument und gibt eine formatierte Zeichenkette zurück.
-
-```Kotlin
-// Beispielausgabe
-val date = Date(1625716061000) // Erstellt ein neues Datum mit dem Zeitstempel 1625716061000
-println(date.toString()) // 2021-07-08
-```
-
-Alternativ können wir auch das `DateFormatter`-Objekt verwenden, um ein benutzerdefiniertes Datumsformat zu erstellen.
+Die Konvertierung eines Datums in eine Zeichenfolge ist in Kotlin sehr einfach. Zunächst muss das Datum in das entsprechende Datumsobjekt umgewandelt werden. Dann kann man die Funktion `format()` verwenden, um das Datum in eine Zeichenfolge mit dem gewünschten Format umzuwandeln. Hier ist ein Beispielcode:
 
 ```Kotlin
-// Beispielausgabe
-val date = Date(1625233177000) // Erstellt ein neues Datum mit dem Zeitstempel 1625233177000
-val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy") // Erstellt einen benutzerdefinierten Datumsformat
-println(date.format(formatter)) // 02.07.2021
+val date = Date()
+val dateFormat = SimpleDateFormat("dd.MM.yyyy")
+val dateString = dateFormat.format(date)
+println(dateString)
 ```
 
-## Tiefere Einblicke
+Der Output wäre dann in diesem Fall beispielsweise "29.09.2021".
 
-Bei der Umwandlung von Datum in Zeichenkette ist Vorsicht geboten, da das gewählte Format je nach Land oder Region unterschiedlich sein kann. Daher ist es wichtig, das richtige `Locale` zu verwenden, um sicherzustellen, dass das Datum korrekt formatiert wird.
+# Tiefergehende Informationen
 
-```Kotlin
-// Beispielausgabe
-val date = Date(1625300400000) // Erstellt ein neues Datum mit dem Zeitstempel 1625300400000
-val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.GERMANY) // Verwendet das Locale Deutschland
-println(date.format(formatter)) // 03.07.2021
-```
+In Kotlin gibt es verschiedene Möglichkeiten, ein Datum in eine Zeichenfolge umzuwandeln. Man kann zum Beispiel auch die Funktion `toString()` verwenden, die standardmäßig das Datum im ISO-8601-Format zurückgibt. Außerdem gibt es zahlreiche verschiedene Formate, die man für die Funktion `format()` verwenden kann. Diese können zum Beispiel Monatsnamen oder Wochentage enthalten.
 
-Zusätzlich können wir auch Zeitzonen angeben, um das Datum in verschiedenen Zeitzonen korrekt darzustellen.
+Es ist auch wichtig zu beachten, dass bei der Konvertierung eines Datums in eine Zeichenfolge die aktuelle Zeitzone des Geräts berücksichtigt wird. Um sicherzustellen, dass das richtige Datum ausgegeben wird, sollte man die Zeitzone manuell festlegen oder auf UTC umstellen.
 
-```Kotlin
-// Beispielausgabe
-val date = Date(1625739600000) // Erstellt ein neues Datum mit dem Zeitstempel 1625739600000
-val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm", Locale.US) // Verwendet das Locale USA und fügt Uhrzeit hinzu
-formatter.withZone(ZoneId.of("Europe/Berlin")) // Gibt das Datum in der Zeitzone von Berlin aus
-println(date.format(formatter)) // 08.07.2021 14:00
-```
+# Siehe auch
 
-## Siehe auch
-
-- [Java ZoneDateTime Klasse](https://www.javatpoint.com/java-zoneddatetime)
-- [Kotlin Datums- und Zeitzonen-API](https://kotlinlang.org/docs/datetime.html)
+- [Dokumentation zur Funktion `format()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-java-date/format.html)
+- [Ein Tutorial zur Datumsformatierung in Kotlin](https://www.baeldung.com/kotlin-datetime-format)
+- [Weitere Informationen über das Datumsobjekt in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)

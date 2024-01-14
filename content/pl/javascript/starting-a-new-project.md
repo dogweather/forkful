@@ -1,58 +1,58 @@
 ---
 title:    "Javascript: Rozpoczynanie nowego projektu"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego zacząć nowy projekt w Javascript?
+## Dlaczego zacząć nowy projekt?
 
-Zaangażowanie w projektowanie w Javascriptzie może przynieść wiele korzyści. Jest to jedna z najpopularniejszych języków programowania, co oznacza, że istnieje wiele źródeł nauki i dostępnych narzędzi. Możesz używać Javascriptu w wielu różnych obszarach, takich jak tworzenie stron internetowych, aplikacji mobilnych czy nawet w internecie rzeczy (IoT).
+Tworzenie nowych projektów w języku Javascript może być bardzo satysfakcjonujące i wciągające. Jest to również świetny sposób na rozwijanie swoich umiejętności programistycznych oraz wykorzystanie swojej kreatywności. Dzięki temu można również poszerzać swoje portfolio i zwiększyć swoje szanse na znalezienie pracy w przyszłości.
 
-## Jak zacząć?
+## Jak to zrobić?
 
-Pierwszym krokiem jest oczywiście zainstalowanie środowiska programistycznego lub edytora kodu, który będzie dla ciebie wygodny. Jednym z najpopularniejszych wyborów jest Visual Studio Code, ale można wybrać również inne narzędzia, takie jak Atom, Sublime Text czy WebStorm.
-
-Następnie warto zapoznać się z podstawami języka, takimi jak zmienne, pętle czy funkcje. Poniżej przedstawiam kilka przykładów kodu Javascript z wyjaśnieniami:
-
-### Deklaracja zmiennych
+Język Javascript jest bardzo popularny i używany przez wiele firm i organizacji, więc znajomość tego języka jest bardzo wartościowa. Jeśli chcesz zacząć nowy projekt w Javascript, oto kilka kroków, które mogą Ci pomóc:
 
 ```Javascript
-// Deklaracja zmiennych "let" i "const"
-let x = 5; // Zmienna "let" może zmieniać wartość
-const y = 10; // Zmienna "const" jest stała i nie może zostać zmieniona
-```
+// Tworzenie pustego projektu w VSCode
+npm init
 
-### Pętla "for"
+// Dodawanie zależności np. React
+npm install react react-dom
 
-```Javascript
-// Pętla "for" wyświetlająca liczby od 1 do 10
-for (let i = 1; i <= 10; i++) {
-  console.log(i);
-}
-```
+// Importowanie biblioteki React
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-### Funkcje
-
-```Javascript
-// Funkcja zwracająca sumę dwóch liczb
-function sum(a, b) {
-  return a + b;
+// Tworzenie komponentu w React
+function App() {
+  return (
+    <div>
+      <h1>Witaj na mojej stronie!</h1>
+    </div>
+  )
 }
 
-// Wywołanie funkcji i przypisanie wyniku do zmiennej
-let result = sum(5, 10);
-console.log(result); // Wynik: 15
+// Renderowanie komponentu na stronie
+ReactDOM.render(<App />, document.getElementById('root'));
+
+// Używanie innych bibliotek i frameworków do tworzenia projektu
+import Bootstrap from 'bootstrap';
+import JQuery from 'jquery';
 ```
 
-## Głębszy zanurzenie
+## Tylko niebo jest ograniczeniem
 
-Po zapoznaniu się z podstawami języka, warto zgłębić swoją wiedzę i poznać bardziej zaawansowane zagadnienia, takie jak programowanie obiektowe czy zastosowanie bibliotek i frameworków. Dzięki temu będziesz miał możliwość tworzenia bardziej zaawansowanych i profesjonalnych projektów.
+Rozpoczęcie projektu w języku Javascript to nie tylko nauka konkretnych funkcji i bibliotek, ale również możliwość eksperymentowania i rozwijania swojej kreatywności. Można wykorzystać właściwości języka Javascript, takie jak animacje czy interaktywne efekty, aby nadać swojemu projektowi unikalny wygląd. Możesz również użyć różnych narzędzi, takich jak React lub Angular, aby stworzyć aplikację internetową lub nawet mobilną.
 
-Nie bój się również szukać pomocy i rad u doświadczonych programistów, na forach internetowych lub w specjalistycznych grupach na portalach społecznościowych. Programowanie to proces ciągłego uczenia się, więc nie zrażaj się, jeśli napotkasz trudności.
+>Uwaga: Należy pamiętać, że skupienie się na jednym projekcie na raz może być bardziej efektywne niż rozpoczynanie wielu na raz.
 
-# Zobacz również
+## Zobacz także
 
-- [MDN Web Docs](https://developer.mozilla.org/pl/docs/Web/JavaScript) - oficjalna dokumentacja języka Javascript.
-- [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript) - darmowy interaktywny kurs programowania w Javascript.
-- [Wes Bos](https://wesbos.com/) - blog i kursy poświęcone językowi Javascript od doświadczonego programisty.
+Jeśli chcesz dowiedzieć się więcej o rozpoczynaniu projektów w języku Javascript, polecamy zapoznać się z poniższymi linkami:
+
+- [Dokumentacja React](https://pl.reactjs.org/docs/getting-started.html)
+- [Dokumentacja Angular](https://angular.io/docs)
+- [Kursy wideo na Udemy](https://www.udemy.com/topic/javascript/)
+- [Strona programowania w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)

@@ -1,44 +1,36 @@
 ---
-title:    "Haskell: Scrivere all'errore standard"
+title:    "Haskell: Scrivere su errore standard"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere in Haskell è una pratica comune tra i programmatori funzionali. Una delle azioni più comuni che si possono eseguire durante lo sviluppo in Haskell è la scrittura sullo standard error. Ma perché dovremmo farlo?
-
-Scrivere su standard error può essere utile in situazioni in cui si vogliono visualizzare informazioni di debug, errori o messaggi di avviso. Questo ci permette di tenere separati i messaggi di debug dai normali output del programma.
+Scrivere su standard error è un'abilità fondamentale per qualsiasi programmatore Haskell. Ci permette di visualizzare informazioni importanti durante l'esecuzione del codice e di risolvere problemi di debugging in modo più efficace.
 
 ## Come fare
 
-Per scrivere su standard error in Haskell, possiamo usare la funzione `hPutStrLn` dal modulo `System.IO`. Ecco un esempio di codice che stampa un messaggio di debug sulla console di errore:
+Per scrivere su standard error in Haskell, segue questi semplici passaggi:
 
-```Haskell
-import System.IO
+  1. Importa il modulo `System.IO` nella sezione `import` del tuo codice.
+  ```
+  import System.IO
+  ```
+  2. Usa la funzione `hPutStrLn` per scrivere una stringa su standard error.
+  ```
+  hPutStrLn stderr "Questo è un messaggio di errore."
+  ```
+  3. Ricorda di compilare il tuo codice usando il flag `-threaded` per evitare problemi di buffering.
 
-hPutStrLn stderr "Questo è un messaggio di debug."
-```
+## Deep Dive
 
-L'output sarà:
+La funzione `hPutStrLn` accetta due argomenti: il primo è il canale di output su cui scrivere (in questo caso `stderr` per standard error), mentre il secondo è la stringa che vogliamo scrivere. Se si desidera scrivere più di una riga su standard error, è possibile utilizzare la funzione `hPutStr` per scrivere una stringa senza un carattere di nuova linea alla fine.
 
-```
-Questo è un messaggio di debug.
-```
-
-In questo modo possiamo visualizzare informazioni importanti sullo stato del nostro programma senza dover interrompere il flusso normale di output.
-
-## Approfondimento
-
-Scrivere su standard error può essere utile anche in situazioni in cui si vuole gestire gli errori in modo diverso dal solito. Per esempio, possiamo utilizzare la funzione `hPutStrLn` per scrivere gli errori su un file di log anziché sulla console di errore.
-
-Inoltre, è possibile gestire i messaggi di errore in modo più preciso utilizzando la funzione `hPutStr` anziché `hPutStrLn`. In questo modo, possiamo stampare solo una parte del messaggio sugli errori anziché tutto il testo.
+Inoltre, è possibile sostituire `stderr` con `stdout` per scrivere sulla standard output invece che standard error.
 
 ## Vedi anche
 
-- [Documentazione di Haskell su System.IO](https://www.haskell.org/onlinereport/stdlibrary.html#filesystem)
-
-- [Tutorial su Come usare Haskell con file di testo](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)
-
-- [Guida su Gestione degli errori in Haskell](https://mmhaskell.com/blog/2017/9/22/handling-errors-in-haskell)
+- [Haskell Documentation on System.IO](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.14.0.0/System-IO.html)
+- [Writing to Standard Error in Haskell](https://rosettacode.org/wiki/Writing_to_standard_error#Haskell)

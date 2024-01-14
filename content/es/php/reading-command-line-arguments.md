@@ -1,54 +1,45 @@
 ---
-title:    "PHP: Leyendo argumentos de línea de comandos"
+title:    "PHP: Leyendo argumentos de línea de comando"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías leer argumentos de línea de comandos?
+## Por qué leer argumentos de línea de comandos en PHP
 
-Si estás aprendiendo programación en PHP, es importante conocer cómo leer y utilizar argumentos de línea de comandos. Estos argumentos son útiles para pasar información a través de la línea de comandos y pueden ser usados en diversas situaciones, como la ejecución de scripts desde una terminal o la creación de scripts de automatización. En esta publicación, te mostraremos cómo leer argumentos de línea de comandos en PHP y cómo pueden ser útiles en tu trabajo diario como programador.
+Muchos programadores de PHP se preguntan si leer argumentos de línea de comandos es realmente necesario en sus proyectos. La verdad es que esta habilidad puede ser muy útil en situaciones en las que necesitamos interactuar con nuestro programa desde la terminal. En este artículo, te mostraremos por qué es importante aprender a leer argumentos de línea de comandos en PHP y cómo hacerlo de manera eficiente.
 
-## Cómo hacerlo
+## Cómo leer argumentos de línea de comandos en PHP
 
-Para leer argumentos de línea de comandos en PHP, se utilizan las variables predefinidas `$argv` y `$argc`. `$argv` es un arreglo que contiene los argumentos pasados a través de la línea de comandos, mientras que `$argc` contiene el número total de argumentos. Veamos un ejemplo simple:
-
-```PHP
-<?php
-// recibe 2 argumentos desde la línea de comandos
-// php script.php argumento1 argumento2
-
-echo "El primer argumento es: " . $argv[1]; // imprime "argumento1"
-echo "El segundo argumento es: " . $argv[2]; // imprime "argumento2"
-
-```
-
-Puedes ver cómo podemos acceder a los argumentos a través del arreglo `$argv` y utilizarlos en nuestras operaciones. También puedes utilizar un bucle `foreach` para recorrer todos los argumentos pasados. Además, puedes utilizar funciones como `count()` para verificar el número total de argumentos antes de realizar alguna acción.
-
-Otro ejemplo útil es la utilización de argumentos en variables de entorno. En este caso, pasamos la información a través de la línea de comandos y luego la asignamos a una variable para su uso en nuestro script. Veamos un ejemplo:
+En PHP, leer argumentos de línea de comandos es bastante sencillo. Podemos acceder a estos argumentos a través de la variable global $argv, que nos devuelve un array con todos los argumentos pasados al programa. Veamos un ejemplo:
 
 ```PHP
 <?php
-// ejecutamos desde la terminal
-// NOMBRE="Juan" php script.php
+// Supongamos que ejecutamos nuestro programa así: php mi_programa.php argumento1 argumento2
+// $argv se vería así: ["mi_programa.php", "argumento1", "argumento2"]
 
-// asignamos el valor del argumento a una variable de entorno
-$nombre = $_ENV["NOMBRE"];
+// Podemos acceder a los argumentos directamente por su índice en el array
+$primer_argumento = $argv[1]; // "argumento1"
+$segundo_argumento = $argv[2]; // "argumento2"
 
-echo "¡Hola" . $nombre . "! Bienvenido a mi script.";
+// También podemos recorrer todos los argumentos usando un bucle foreach
+foreach ($argv as $argumento) {
+  echo $argumento . PHP_EOL; // Imprimiría todos los argumentos en líneas separadas
+}
 
+// Podemos hacer lo que queramos con estos argumentos, como realizar operaciones o llamar a otras funciones
+?>
 ```
 
-Este es un ejemplo sencillo, pero puedes utilizar esta técnica para pasar nombres de archivos, rutas de archivos o cualquier otra información necesaria para tu script.
+Como podemos ver, es muy sencillo acceder a los argumentos de línea de comandos en PHP y utilizarlos a nuestro favor.
 
-## Inmersión Profunda
+## Profundizando en la lectura de argumentos de línea de comandos en PHP
 
-Si quieres profundizar en la lectura de argumentos de línea de comandos en PHP, una de las funciones más útiles que puedes utilizar es `getopt()`. Esta función te permite obtener argumentos con nombres específicos, lo que hace que tu código sea más legible y fácil de usar. También puedes especificar opciones y argumentos requeridos o permitir que algunos sean opcionales. Puedes encontrar más información sobre la función `getopt()` en la [documentación oficial de PHP](https://www.php.net/manual/es/function.getopt.php).
+Aunque ya hemos mostrado cómo leer estos argumentos, hay algunos detalles a tener en cuenta al usarlos en nuestros programas. Por ejemplo, si queremos pasar argumentos que contengan espacios, debemos incluirlos entre comillas al ejecutar el programa (por ejemplo, php mi_programa.php "argumento con espacios"). Además, en caso de que solo necesitemos acceder a un subconjunto de los argumentos, podemos utilizar la función array_slice() para obtener solo los elementos que nos interesen del array $argv.
 
-## Ver También
+## Ver también
+- [Documentación oficial de PHP sobre reading command line arguments](https://www.php.net/manual/es/features.commandline.args.php)
+- [Tutorial de PHP CLI para principiantes](https://www.freecodecamp.org/news/how-to-create-a-php-cli-tutorial-for-beginners/)
 
-- [Documentación oficial de PHP sobre argumentos de línea de comandos](https://www.php.net/manual/es/features.commandline.php)
-- [Tutorial de DigitalOcean sobre argumentos de línea de comandos en PHP](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-php)
-- [Video tutorial sobre cómo utilizar argumentos de línea de comandos en PHP](https://www.youtube.com/watch?v=xq-wO8X_6n0)
-
-¡Hasta aquí llega nuestra guía sobre cómo leer argumentos de línea de comandos en PHP! Esperamos que te haya sido útil y que puedas utilizar esta técnica en tus proyectos futuros. Recuerda que la práctica hace al maestro, así que no dudes en experimentar y descubrir nuevas formas de utilizar argumentos de línea de comandos en tu código. ¡Feliz programación!
+Esperamos que este artículo te haya sido útil para entender la importancia de leer argumentos de línea de comandos en PHP y cómo hacerlo de manera efectiva. ¡Practica y experimenta con ellos en tus próximos proyectos!

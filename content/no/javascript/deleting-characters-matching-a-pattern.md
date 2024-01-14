@@ -1,40 +1,41 @@
 ---
 title:    "Javascript: Slette tegn som matcher et mønster"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor: Sletting av tegn som matcher et mønster i Javascript
 
-Å slette tegn som matcher et bestemt mønster er en viktig del av programmering, spesielt innenfor JavaScript. Dette kan være nyttig når man for eksempel ønsker å filtrere uønskede tegn i en streng eller behandle brukerinput på en sikker måte. Uten denne funksjonen ville det vært mye vanskeligere å manipulere tekst i en programmeringskontekst.
+Å slette tegn som matcher et visst mønster kan være en nyttig funksjon i Javascript-programmering. Dette kan hjelpe i å rydde opp i tekststrenger eller filtrere ut uønskede tegn. For eksempel kan det være nyttig å slette alle tall fra en tekststreng for å bare beholde bokstaver. Å vite hvordan man kan utføre denne handlingen kan også bidra til å lære mer om tekstbehandling i Javascript.
 
-## Hvordan
+# Hvordan: Eksempler på kode og forventet resultat
 
-For å slette tegn som matcher et mønster i JavaScript, kan man bruke en rekke forskjellige metoder. En av de mest effektive er ved å bruke den globale replace() metoden. Denne metoden tar to argumenter: et søkeuttrykk og et erstatningsuttrykk. For eksempel, hvis vi ønsker å slette alle tall fra en streng, kan vi bruke følgende kode:
+For å slette tegn som matcher et mønster, kan man bruke den innebygde metoden "replace()" i Javascript. Denne metoden tar inn to parametre, det første er mønsteret man ønsker å matche, og det andre er det nye tegnet man ønsker å erstatte den matchende teksten med. Denne metoden returnerer en ny streng med de ønskede endringene.
 
 ```Javascript
-let tekst = "Jeg har 5 bananer og 3 epler";
-let nyTekst = tekst.replace(/[0-9]/g, "");
-console.log(nyTekst);
+// Eksempel:
+let tekst = "Jeg liker å spise frukt og grønnsaker";
+let nyTekst = tekst.replace(/[a-z]/gi, ""); 
+// Her vil nyTekst være "J S"
+
+// Eksempel med tall:
+let tall = "123456789";
+let nyTall = tall.replace(/[0-9]/g, ""); 
+// Her vil nyTall være en tom streng
 ```
 
-I dette eksempelet bruker vi en regulær uttrykk, [0-9], for å finne alle tall i vår tekststreng. Den globale flagget (g) sørger for at alle forekomster av tegnene erstattes, ikke bare den første. Deretter bruker vi en tom streng som erstatning, slik at alle tallene slettes fra teksten. Resultatet av koden vil være:
+I dette eksempelet bruker vi "replace()" metoden og et regelmessig uttrykk (regular expression) for å matche alle små bokstaver (a-z) uavhengig av om de er store eller små (gi flagget). Det betyr at alle små og store bokstaver i teksten vil bli slettet og bare hovedbokstavene blir igjen.
 
-```Javascript
-Jeg har  bananer og  epler
-````
+# Dypdykk: Mer informasjon om sletting av characters som matcher et mønster
 
-Det finnes også andre metoder for å slette tegn som matcher et mønster i JavaScript, som for eksempel slice(), substring() og substr(). Men replace() er den mest fleksible og kraftfulle metoden for denne oppgaven.
+Å bruke regelmessige uttrykk (regular expressions) til å matche et mønster er en kraftig funksjon i Javascript. Dette åpner for forskjellige muligheter til å utføre avanserte manipulasjoner av tekststrenger. I det første eksempelet brukte vi "g" flagget i det regelmessige uttrykket, som står for global. Dette gjør at metoden vil søke etter alle forekomster av mønsteret i hele teksten. Hvis vi bare ønsker å slette det første treffet, kan vi bruke "i" flagget for å gjøre det case-insensitive, eller "m" flagget for å søke i flere linjer.
 
-## Dypdykk
+Et annet viktig konsept å forstå er escape-tegn (backslash) når man jobber med regelmessige uttrykk. Hvis tekststrengen inneholder spesielle tegn som også brukes i regelmessige uttrykk, må disse escapes for å unngå å endre funksjonaliteten. For eksempel, hvis vi vil matche parenteser ( ) i teksten, må vi bruke backslash foran dem: /\\(\\)/.
 
-Når man jobber med å slette tegn som matcher et mønster i JavaScript, er det viktig å være klar over forskjellen mellom et søkeuttrykk og et erstatningsuttrykk. Søkeuttrykket definerer hvilke tegn som skal slettes, mens erstatningsuttrykket definerer hva som skal erstatte disse tegnene. Det finnes også mange andre nyttige metoder og funksjoner som kan brukes sammen med replace() for å oppnå mer spesifikke resultater.
+# Se også
 
-I tillegg er det verdt å merke seg at replace() returnerer en ny tekststreng og at den originale teksten ikke endres. Dette kan være viktig å huske på hvis man jobber med store mengder tekst og ønsker å unngå unødvendige ressurser og tidsbruk.
-
-## Se også
-
-- [MDN - String replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN - Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools - String replace()](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [MDN Web Docs: replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools: Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [Eloquent JavaScript: Regular Expressions](https://eloquentjavascript.net/09_regexp.html)

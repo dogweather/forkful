@@ -1,43 +1,52 @@
 ---
 title:    "Bash: Łączenie ciągów znaków"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Dlaczego
 
-Konkatenacja ciągów znaków jest jedną z podstawowych operacji w programowaniu, przydatną przy łączeniu różnych fragmentów tekstu w jeden wspólny ciąg. Jest to szczególnie przydatne w Bashu, gdyż pozwala na tworzenie dynamicznych i interaktywnych skryptów. Dzięki konkatenacji możliwe jest tworzenie spójnych i czytelnych komunikatów dla użytkownika oraz automatyzacja niektórych zadań.
+Łączenie łańcuchów jest częstym zadaniem w programowaniu Bash. Jest to przydatna technika, która pozwala na budowanie bardziej złożonych programów, łącząc ze sobą różne elementy tekstu. 
 
-## Jak to zrobić
+##Jak to zrobić
 
-Aby połączyć dwa lub więcej ciągów znaków w Bashu, należy użyć operatora konkatenacji `+` lub kombinacji znaku `+=`. Poniżej znajdują się przykłady z użyciem obu metod:
+Aby połączyć dwa łańcuchy w Bash, użyj operatora `+` lub `+=`. Na przykład: 
 
-```Bash
-# Operator +
-imie="Marcel"
-zawolanie="Cześć" + $imie
-echo $zawolanie # Wyświetli "Cześć Marcel"
-
-# Kombinacja +=
-imie="Magda"
-zawolanie="Witaj"
-zawolanie += " $imie!"
-echo $zawolanie # Wyświetli "Witaj Magda!"
+```Bash 
+name="Jan"
+echo "Witaj, " + $name
 ```
 
-W pierwszym przykładzie użyty został operator `+` do połączenia dwóch zmiennych zawierających ciągi znaków. W drugim przykładzie użyta została kombinacja `+=`, która dodaje wartość zmiennej po prawej stronie operatora do zmiennej po lewej stronie.
+Wynik: `Witaj, Jan`
 
-Pamiętaj, że w przypadku konkatenacji liczb, operator `+` będzie działał jako operator dodawania, a nie konkatenacji.
+##Głębszy wywód
 
-## Głębszy zanurzenie
+Łączenie łańcuchów jest możliwe dzięki tzw. "konkatenacji", czyli po prostu łączeniu elementów w jedną całość. W Bash nie musimy używać specjalnych funkcji czy metod, po prostu dodajemy jeden łańcuch do drugiego. 
 
-Konkatenacja jest jednak tylko jedną z wielu możliwych manipulacji na ciągach znaków w Bashu. W celu dokładniejszego poznania tych operacji, warto zgłębić wiedzę o funkcjach takich jak `printf` czy `sed`. Dzięki nim, możliwe jest m.in. formatowanie i modyfikacja ciągów znaków oraz bardziej zaawansowane operacje. Możesz znaleźć więcej informacji o tym w [dokumentacji Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html). 
+Warto również pamiętać, że połączenie dwóch liczb w Bash również jest możliwe poprzez ich "konkatenację". Jednak wynikiem takiego działania będzie zawsze również liczba, a nie nowy łańcuch. Na przykład: 
 
-## Zobacz również
+```Bash 
+number1=1
+number2=2
+echo $number1 + $number2
+```
 
-Jeśli chcesz poszerzyć swoją wiedzę na temat programowania w Bashu, zapraszamy do zapoznania się z poniższymi linkami:
+Wynik: `3`
 
-- [Oficjalna strona Bash](https://www.gnu.org/software/bash/)
-- [Strefa Bash w serwisie Wikipedia](https://pl.wikipedia.org/wiki/Bash)
-- [Kurs programowania w Bashu na Codecademy](https://www.codecademy.com/learn/learn-bash)
+Oprócz tego, pamiętaj, aby w Bash używać pojedynczych cudzysłowów przy łączeniu łańcuchów, aby uniknąć niepożądanych działań. Na przykład: 
+
+```Bash 
+word1="hello"
+word2="world"
+echo $word1 + $word2
+```
+
+Wynik: `hello + world`
+
+##Zobacz także
+
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/)
+- [Polecenia Bash](https://www.tutorialspoint.com/unix_commands/bash.htm)
+- [Konkatenacja łańcuchów w Bash](https://linuxhint.com/concatenate_strings_bash/)

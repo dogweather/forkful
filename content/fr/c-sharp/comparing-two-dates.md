@@ -1,51 +1,66 @@
 ---
-title:    "C#: Comparer deux dates"
+title:    "C#: Comparaison de deux dates"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Avez-vous déjà eu besoin de comparer deux dates dans votre code C# ? Peut-être que vous deviez vérifier si une date était antérieure ou postérieure à une autre, ou peut-être que vous deviez calculer la différence entre les deux. Comparer des dates est une tâche courante en programmation et il est important de comprendre comment le faire correctement. Dans cet article, nous allons explorer les différentes façons de comparer des dates en C# et comment obtenir les résultats souhaités.
+
+Il est fréquent en programmation de devoir comparer deux dates. Cela peut servir dans de nombreuses situations, par exemple pour vérifier si une date est antérieure ou ultérieure à une autre, pour trier une liste de dates ou pour filtrer des données par rapport à une date donnée. Connaitre les différentes manières de comparer deux dates en langage C# peut donc s'avérer très utile.
 
 ## Comment faire
-Il existe plusieurs façons de comparer des dates en C#. La première méthode consiste à utiliser les opérateurs de comparaison tels que "<" (inférieur à) et ">" (supérieur à). Par exemple, si nous voulons vérifier si une date est antérieure à une autre, nous pouvons utiliser l'opérateur "<" comme ceci :
+
+Il existe plusieurs façons de comparer deux dates en C#. La plus simple consiste à utiliser la méthode `Compare` de la structure `DateTime`. Cette méthode prend deux paramètres de type `DateTime` et renvoie un entier, qui sera négatif si la première date est antérieure à la seconde, positif si elle est ultérieure et 0 si les deux dates sont identiques.
+
 ```C#
-if(date1 < date2)
-{
-    // Date 1 est antérieure à Date 2
-}
+// Comparaison de deux dates
+DateTime date1 = new DateTime(2020, 10, 1);
+DateTime date2 = new DateTime(2020, 10, 2);
+int resultat = date1.CompareTo(date2);
+
+Console.WriteLine(resultat); // Sortie : -1
 ```
-De plus, C# possède également des méthodes intégrées pour une comparaison plus précise des dates. Par exemple, la méthode `Compare` de l'objet `DateTime` renvoie un entier indiquant si une date est antérieure, égale ou postérieure à une autre date. Voici un exemple de son utilisation :
+
+Une autre méthode couramment utilisée pour comparer deux dates est `Equals`, également présente dans la structure `DateTime`. Cette méthode prend également un paramètre de type `DateTime` et renvoie un booléen, qui sera `true` si les deux dates sont identiques et `false` sinon.
+
 ```C#
-int result = DateTime.Compare(date1, date2);
-if(result < 0)
-{
-    // Date 1 est antérieure à Date 2
-}
-else if(result == 0)
-{
-    // Dates égales
-}
-else
-{
-    // Date 1 est postérieure à Date 2
-}
+// Comparaison de deux dates
+DateTime date1 = new DateTime(2020, 10, 1);
+DateTime date2 = new DateTime(2020, 10, 2);
+bool resultat = date1.Equals(date2);
+
+Console.WriteLine(resultat); // Sortie : false
 ```
-Enfin, nous pouvons également utiliser la classe `TimeSpan` pour calculer la différence entre deux dates en termes de jours, heures, minutes, etc. Voici un exemple :
+
+Il est également possible d'utiliser les opérateurs de comparaison (`==`, `!=`, `<`, `>`, `<=`, `>=`) avec des dates en C#, mais attention à prendre en compte l'heure, les minutes, les secondes et les millisecondes si celles-ci sont importantes dans votre comparaison.
+
 ```C#
-TimeSpan diff = date2 - date1;
-Console.WriteLine(diff.TotalDays); // Affiche la différence en jours
+// Comparaison de deux dates avec des opérateurs
+DateTime date1 = new DateTime(2020, 10, 1, 12, 30, 0);
+DateTime date2 = new DateTime(2020, 10, 1, 12, 30, 30);
+bool resultat = date1 <= date2;
+
+Console.WriteLine(resultat); // Sortie : true
 ```
 
 ## Plongée en profondeur
-Il est important de noter que lors de la comparaison de dates en C#, la précision peut varier en fonction de la résolution de votre horloge système. Cela signifie que si vous devez comparer des dates avec une précision supérieure à la milliseconde, vous devrez utiliser une méthode différente, par exemple en utilisant des fonctions de date spécifiques de votre base de données.
 
-Un autre point à garder à l'esprit est que les dates doivent être dans la même plage de temps pour être comparées correctement. Par exemple, si vous comparez une date qui utilise le calendrier grégorien et une date qui utilise le calendrier julien, vous obtiendrez un résultat incorrect.
+En C#, les dates sont des valeurs structurées et non pas des objets, ce qui signifie qu'elles sont passées par valeur et qu'une nouvelle copie est créée à chaque fois qu'on les assigne à une autre variable. Cela peut entrainer des problèmes de comparaison si l'heure, les minutes, les secondes ou les millisecondes doivent être prises en compte. Pour éviter cela, il est recommandé d'utiliser la méthode `DateTime.Date` qui permet de n'avoir que la date sans l'heure.
 
-Enfin, il est recommandé de toujours utiliser la méthode `Compare` ou `CompareTo` pour comparer des dates en C# plutôt que d'utiliser les opérateurs de comparaison. Ces méthodes offrent une plus grande précision et sont plus adaptées aux différentes cultures et langues.
+```C#
+// Comparaison de deux dates en utilisant Date
+DateTime date1 = new DateTime(2020, 10, 1, 12, 30, 0);
+DateTime date2 = new DateTime(2020, 10, 1, 15, 45, 0);
+int resultat = date1.Date.CompareTo(date2.Date);
+
+Console.WriteLine(resultat); // Sortie : 0
+```
+
+Il est également important de mentionner que les dates en C# peuvent être affectées par le fuseau horaire du système. Il est donc recommandé d'utiliser la structre `DateTimeOffset` pour gérer les dates et les heures en fonction du fuseau horaire.
 
 ## Voir aussi
-- [Documentation officielle de C# sur les comparaisons de dates](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/types/how-to-compare-dates)
-- [Blog de Stack Overflow sur la comparaison de dates en C#](https://stackoverflow.com/questions/630664/comparing-dates-in-c-sharp)
-- [Article de CodeProject sur le calcul de différence entre deux dates en C#](https://www.codeproject.com/Articles/168662/Calculating-Difference-between-Two-Dates-in-Csharp)
+
+- [Documentation officielle de la structure DateTime en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=netcore-3.1)
+- [Tutoriel pour gérer les dates et heures en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/datetime/)

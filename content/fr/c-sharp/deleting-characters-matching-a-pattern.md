@@ -1,47 +1,43 @@
 ---
-title:    "C#: Suppression des caractères correspondant à un motif"
+title:    "C#: Supprimer les caractères correspondant à un motif"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi supprimer des caractères correspondant à un modèle?
 
-Il peut être utile de supprimer des caractères correspondant à un motif dans un programme C#. Cela peut aider à nettoyer des données ou à simplifier les recherches de texte dans une application.
+Supprimer des caractères correspondant à un modèle peut être utile dans différentes situations en programmation. Par exemple, cela peut être nécessaire pour nettoyer des données ou pour simplifier des chaînes de caractères avant de les utiliser dans d'autres opérations. En général, cette opération permet de mieux gérer et manipuler les données dans un projet de programmation.
 
-## Comment faire
+## Comment faire?
 
-Il existe plusieurs façons de supprimer des caractères correspondant à un motif en utilisant C#. La méthode la plus simple est d'utiliser la classe Regex et sa fonction Replace, qui permet de remplacer des morceaux de chaîne par une chaîne vide.
+Voici un exemple de code en C# qui montre comment supprimer des caractères correspondant à un modèle :
 
-````C#
-string text = "Bonjour, je suis un exemple de texte contenant des chiffres : 123456";
-string pattern = "[0-9]"; // sélectionne tous les chiffres de 0 à 9
-string result = Regex.Replace(text, pattern, "");
-Console.WriteLine(result);
-// Output : "Bonjour, je suis un exemple de texte contenant des chiffres : "
-````
+```C#
+string originalString = "ab123cd456ef";
+string pattern = @"[a-z]|\d+";
+string result = Regex.Replace(originalString, pattern, "");
+Console.WriteLine(result); // Résultat : 123456
+```
 
-Une autre méthode consiste à utiliser la méthode Remove de la classe StringBuilder, ce qui peut être plus efficace lorsque l'on manipule de grandes chaînes de caractères.
+Dans cet exemple, nous utilisons la classe Regex pour rechercher et remplacer tous les caractères correspondant au modèle spécifié. La variable "originalString" contient la chaîne de caractères initiale, le modèle dans la variable "pattern" correspond à n'importe quel caractère alphabétique ou à un nombre d'un ou plusieurs chiffres. Le résultat final est stocké dans la variable "result" et affiché dans la console avec la méthode WriteLine.
 
-````C#
-string text = "Supprimer ces lettres : abcdefg";
-string pattern = "[a-g]"; // sélectionne les lettres de a à g
-StringBuilder sb = new StringBuilder(text);
-Regex r = new Regex(pattern);
-foreach (Match match in r.Matches(text))
-{
-    sb.Remove(match.Index, 1); // supprime la lettre correspondant au match
-}
-Console.WriteLine(sb);
-// Output : "Supprimer ces lettres : "
-````
+Il est important de noter que la classe Regex nécessite l'utilisation de l'espace de noms "System.Text.RegularExpressions" pour fonctionner correctement. De plus, le modèle peut être modifié et adapté en fonction de vos besoins.
 
-## Profondeur d'analyse
+## Plongeons plus en profondeur
 
-Lors de la suppression de caractères correspondant à un motif, il est important de comprendre clairement quel motif est recherché et comment il est sélectionné. Les expressions régulières permettent de sélectionner des motifs complexes, tandis que les méthodes de manipulation de chaînes plus basiques peuvent être plus efficaces pour des remplacements simples.
+En plus des exemples de code, il est également important de comprendre ce qui se passe en coulisse lors de la suppression de caractères correspondant à un modèle. La classe Regex utilise des expressions régulières (ou RegEx) pour identifier et manipuler les données. Les expressions régulières sont des chaînes de caractères spéciales qui définissent un modèle à rechercher dans une autre chaîne de caractères.
+
+Par exemple, dans notre code précédent, le modèle [a-z]|\d+ signifie :
+- [a-z] : correspond à n'importe quel caractère alphabétique
+- \d+ : correspond à un ou plusieurs chiffres
+
+En combinant ces deux modèles avec le symbole "ou" (|), nous indiquons à la classe Regex de rechercher à la fois les caractères alphabétiques et les chiffres, ce qui entraîne la suppression de ces caractères dans le résultat final.
 
 ## Voir aussi
 
-- [L'utilisation des expressions régulières en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Manipuler des chaînes avec C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/strings/)
-- [La classe Regex en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+Pour en savoir plus sur les expressions régulières et l'utilisation de la classe Regex en C#, voici quelques liens utiles :
+- [Documentation officielle de Microsoft sur les expressions régulières en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Tutoriel Codecademy sur les expressions régulières en C#](https://www.codecademy.com/fr/learn/learn-regular-expressions/modules/learn-regular-expressions-net/cheatsheet)
+- [Tutoriel vidéo sur YouTube sur l'utilisation de la classe Regex en C#](https://www.youtube.com/watch?v=EnF1A4R8N6Y)

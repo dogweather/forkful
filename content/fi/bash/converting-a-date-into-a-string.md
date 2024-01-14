@@ -1,36 +1,50 @@
 ---
-title:    "Bash: Päivämäärän muuttaminen merkkijonoksi"
+title:    "Bash: Päivämäärän muuntaminen merkkijonoksi"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+#"## Miksi"
 
-Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Päivämäärän muuntaminen merkkijonoksi on hyödyllistä esimerkiksi silloin, kun haluat tallentaa päivämäärän tietokantaan tai käyttää sitä tiedostojen nimissä.
+Tervetuloa blogiimme, jossa kerromme kuinka muuttaa päivämäärä merkkijonoksi käyttäen Bash-ohjelmointia. Tässä artikkelissa käymme läpi, miksi tämä prosessi olisi hyödyllinen ja annamme käytännön esimerkkejä sen toteuttamiseen.
 
-## Miten
+#"## Miten tehdä"
 
-Seuraavassa on esimerkki kuinka voit muuttaa päivämäärän merkkijonoksi Bash-skriptillä:
+Muuttaminen päivämäärä merkkijonoksi voi olla hyödyllistä monissa ohjelmointiprojekteissa. Se voi auttaa visualisoimaan päivämääriä selkeämmin, helpottaa tiedostojen nimeämistä ja tehdä päivämäärän käsittelemisestä yleisesti ottaen helpompaa. Alla esittelemme, kuinka voit tehdä tämän Bash-ohjelmointikielellä käyttämällä muutamia käteviä komentoja.
 
 ```Bash
-# Asetetaan muuttuja muuttamaan päivämäärä tietyssä muodossa
-date="2020-04-15"
+# Asetetaan päivämäärä muuttujaan
+date=2021-08-15
 
-# Muutetaan päivämäärä merkkijonoksi muodossa "Päivä-Kuukausi-Vuosi"
-new_date=$(date -d "$date" +'%d-%m-%Y')
+# Muutetaan päivämäärä merkkijonoksi käyttämällä "date" komentoa
+string_date=$(date -d $date +"%d/%m/%Y")
 
-# Tulostetaan uusi muotoiltu päivämäärä
-echo $new_date
+# Tulostetaan muutettu merkkijono
+echo $string_date
+
 ```
 
-Tämän esimerkkiskriptin tulos on "15-04-2020".
+Tämä esimerkki muuntaa päivämäärän formaattiin "päivä/kuukausi/vuosi" ja tulostaa sen terminaaliin. Voit muokata komentoja, jotta ne vastaavat omaa tarvettasi. Esimerkiksi voit muuttaa päivämäärän formaattia tai lisätä siihen ajan.
 
-## Syväluotaus
+#"## Syvemmälle"
 
-Bash tarjoaa monia tapoja muuttaa päivämäärä eri muotoihin. Käytetyt vaihtoehdot skriptissä ovat "-d" ja "+%". "-d" antaa Bashille tiedon, että kyseessä on päivämäärä, ja "+%" määrittelee muokkauksen tyylin. Voit löytää täydellisen listan näistä muokkausvaihtoehdoista Bashin virallisilta dokumentaatioilta. On myös tärkeää huomata, että tuloksen muodostamisessa käytetyt välimerkit voivat vaihdella käytetyn kielen mukaan. Esimerkiksi Suomessa käytetään "Päivä-Kuukausi-Vuosi"-muotoa, kun taas Yhdysvalloissa käytetään yleisesti "Kuukausi-Päivä-Vuosi"-muotoa.
+Kun muutat päivämäärän merkkijonoksi Bashissa, käytät todennäköisesti "date" komentoa ja sen avulla saatavilla olevia muotoilumerkkejä. Voit esimerkiksi muuttaa päivämäärää käyttäen "d" merkkiä, jota seuraa merkkijono, joka määrittää halutun formaatin. Alla on muutamia esimerkkejä näistä merkkijonoista ja niiden tulostamista formaateista:
 
-## Katso myös
+- %a: päivän nimi lyhyessä muodossa (esim. ma, ti)
+- %A: päivän nimi pitkässä muodossa (esim. maanantai, tiistai)
+- %b: kuukauden nimi lyhyessä muodossa (esim. tammi, helmi)
+- %B: kauden nimi pitkässä muodossa (esim. tammikuu, helmikuu)
+- %m: kuukauden numero kahdella numerolla (esim. 08)
+- %d: päivämäärän numero kahdella numerolla (esim. 15)
+- %Y: vuosiluku neljällä numerolla (esim. 2021)
+- %T: aika 24-tuntisena kelloaikana (esim. 15:30:00)
 
-- [Bashin viralliset dokumentaatiot](https://www.gnu.org/software/bash/manual/bash.html)
-- [Päivämäärän muotoilu Bashissa](https://www.baeldung.com/linux/bash-date-format)
+Voit käyttää näitä merkkejä yhdistämällä ne haluamallasi tavalla saadaksesi halutun muodon.
+
+#"## Katso myös"
+
+- Bashin "date" komennon dokumentaatio: https://www.gnu.org/software/coreutils/manual/html_node/Date-conversion-specifiers.html
+- Toisenlaisia Bashin päivämäärän muuntoesimerkkejä: https://bash.cyberciti.biz/guide/Relational_operators
+- Bashin Python-yhteysohjelman avulla voit tehdä päivämäärän muunto-operaatioita: https://github.com/eliben/code-for-blog/blob/master/2018/python-bash-bench/pipe_cmd_to_py_bench.sh

@@ -1,43 +1,40 @@
 ---
-title:    "TypeScript: Calcolare la lunghezza di una stringa"
+title:    "TypeScript: Trova la lunghezza di una stringa"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Trovare la lunghezza di una stringa è un'operazione fondamentale nella programmazione TypeScript. Sapere quanto è lunga una stringa può essere utile in molte situazioni, come ad esempio per validare l'input degli utenti o per manipolare i dati all'interno del codice.
+Trovare la lunghezza di una stringa è una delle operazioni più comuni quando si lavora con dati di testo. Sapere come farlo in TypeScript ti aiuterà a gestire meglio le stringhe nei tuoi progetti e a scrivere codice più efficace.
 
-## Come Fare
+## Come fare
 
-Per trovare la lunghezza di una stringa in TypeScript, possiamo utilizzare il metodo `length` sul nostro oggetto stringa. Ad esempio:
-
-```TypeScript
-const stringa = "Ciao mondo!";
-console.log(stringa.length); // Output: 11
-```
-
-Il metodo `length` restituisce il numero di caratteri all'interno della stringa, compresi gli spazi e i segni di punteggiatura.
-
-Possiamo anche utilizzare un ciclo `for` per scorrere ogni carattere della stringa e contare manualmente la sua lunghezza. Ad esempio:
+In TypeScript, per trovare la lunghezza di una stringa, possiamo utilizzare il metodo `length` che è disponibile su tutte le istanze di `string`. Vediamo un esempio:
 
 ```TypeScript
-const stringa = "Ciao mondo!";
-let lunghezza = 0;
-for (let i = 0; i < stringa.length; i++) {
-  lunghezza++;
-}
-console.log(lunghezza); // Output: 11
+let testo = "Questo è un esempio";
+console.log(testo.length); // Output: 18
 ```
+
+Come puoi vedere, il valore ottenuto è corretto, poiché conta anche gli spazi vuoti tra le parole. Possiamo anche utilizzare questa funzione in combinazione con altre, come `slice` per estrarre una parte della stringa e quindi trovare la lunghezza di quella sottostringa. Vediamo un altro esempio:
+
+```TypeScript
+let testo = "Questo è un esempio";
+let sottostringa = testo.slice(9, 15);
+console.log(sottostringa.length); // Output: 6
+```
+
+In questo caso, il valore ottenuto è 6, poiché abbiamo estratto una parte della stringa composta da 6 caratteri.
 
 ## Approfondimento
 
-Esistono diverse tecniche per ottimizzare il calcolo della lunghezza di una stringa in TypeScript. Una di queste è l'utilizzo del metodo `charCodeAt()` per ottenere il codice ASCII di ogni carattere e sommarlo alla lunghezza totale.
+Oltre al metodo `length`, TypeScript ci offre altre opzioni per manipolare e ottenere informazioni sulla lunghezza delle stringhe. Possiamo utilizzare ad esempio il concetto di *array-like* per trattare una stringa come un array di caratteri e quindi utilizzare metodi come `join` o `reverse`. Inoltre, possiamo anche utilizzare regExp per cercare specifici caratteri o parole all'interno di una stringa e ottenere la loro lunghezza.
 
-Inoltre, è importante tenere presente che in TypeScript le stringhe possono contenere non solo caratteri, ma anche elementi di tipo "surrogate pair", che occupano due posizioni nella stringa e devono essere considerati nella lunghezza totale.
+## Vedi anche
 
-## Vedi Anche
-
-- Documentazione TypeScript su stringhe: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
-- Tutorial su come calcolare la lunghezza di una stringa in JavaScript: https://www.w3schools.com/js/js_string_length.asp
+- [Documentazione ufficiale di TypeScript sulle stringhe](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Tutorial su come manipolare le stringhe in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+- [Espressioni regolari in TypeScript](https://medium.com/@basarat/typescript-string-only-regular-expression-2183f4a85256)

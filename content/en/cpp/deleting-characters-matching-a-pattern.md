@@ -1,17 +1,20 @@
 ---
 title:    "C++ recipe: Deleting characters matching a pattern"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-We often come across scenarios where we need to manipulate strings in our C++ code. One common task is deleting characters that match a certain pattern. This could be to remove unwanted characters from user input or to clean up data before processing it. In this blog post, we will explore how to delete characters matching a pattern in C++.
+There are many situations where deleting characters matching a pattern can be useful in programming. Some examples include sanitizing user input, removing irrelevant or sensitive data from a string, or simply cleaning up messy data.
 
 ## How To
 
-To delete characters matching a pattern in C++, we can use the `erase()` function from the `string` library. This function takes in two parameters - the starting index and the number of characters to be deleted. Let's take a look at an example:
+To delete characters matching a pattern in C++, we can use the `erase()` function from the `string` library. This function takes in two parameters - the starting index and the number of characters to be deleted. We can also use the `find()` function to locate the index of the first occurrence of the pattern in the string.
+
+Here's an example code block showing how to delete all occurrences of the letter "a" from a string:
 
 ```C++
 #include <iostream>
@@ -20,36 +23,29 @@ To delete characters matching a pattern in C++, we can use the `erase()` functio
 using namespace std;
 
 int main() {
-    string str = "He1lo #World!";
-
-    //Deleting the '#'
-    str.erase(5, 1);
-
-    //Deleting all the numbers
-    for (int i = 0; i < str.length(); i++) {
-        if (isdigit(str[i])) {
-            str.erase(i, 1);
-            i--; //As the string length decreases, so should the index
-        }
+    string str = "apples and oranges are my favorite fruits";
+    
+    // Deleting all occurrences of "a"
+    int index = 0;
+    while ((index = str.find("a", index)) != string::npos) {
+        str.erase(index, 1);
     }
-
-    cout << str << endl; //Expected output: Hello World!
-    return 0;
+    
+    cout << str << endl;
+    // Output: pples nd ornges re my fvorite fruits
 }
 ```
 
-In the above example, we use the `erase()` function to delete the `#` symbol and then loop through the string to delete all the numbers. Note that we have to decrement the index in our loop so that we don't skip over any characters.
-
 ## Deep Dive
 
-The `erase()` function in C++ is actually an overloaded function. This means that it can take in different types of parameters depending on our needs. In the example above, we passed in the starting index and the number of characters to be deleted. However, we can also pass in an iterator to specify the starting and ending points for deletion.
+The `erase()` function modifies the original string by deleting the specified characters. This can be a useful feature, but it also means that we need to be careful when using it. If we need to preserve the original string, we can make a copy and perform the deletion on the copy instead.
 
-Another important fact to note is that the `erase()` function returns a new string, which means that the original string is not modified. If we want to modify the original string, we can use the `replace()` function instead, which also has similar parameters as `erase()`.
+We can also use the `replace()` function to replace characters matching a pattern with a different character or string. This function takes in three parameters - the starting index, the number of characters to be replaced, and the replacement string.
+
+There are also other ways to delete characters matching a pattern, such as using regular expressions or custom algorithms. It's important to carefully consider the specific needs of your program and choose the most efficient and effective method for your situation.
 
 ## See Also
 
-- [C++ Reference - string::erase](https://en.cppreference.com/w/cpp/string/basic_string/erase)
-- [C++ Reference - string::replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
-- [GeeksforGeeks - Delete a character from a string in C++](https://www.geeksforgeeks.org/how-to-remove-a-character-from-string-in-cpp/)
-
-By utilizing the `erase()` function in C++, we can easily delete characters matching a pattern from our strings. It is a useful tool to have in our programming arsenal and can come in handy in many situations.
+- [C++ string library](https://www.cplusplus.com/reference/string/)
+- [Using erase() and replace() in C++](https://www.geeksforgeeks.org/clear-erase-and-swap-in-cpp-stl/)
+- [Regular expressions in C++](https://www.geeksforgeeks.org/regular-expression-regex-in-c/)

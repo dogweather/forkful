@@ -1,49 +1,62 @@
 ---
 title:    "Haskell: 读取命令行参数"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么？
 
-编程语言Haskell是一种广受欢迎的函数式编程语言，在处理命令行参数时也有其独特的优势。通过阅读这篇博文，你将学习如何在Haskell中读取命令行参数，从而更有效地处理命令行输入。
+命令行参数是在Haskell编程中经常使用的重要概念。通过读取命令行参数，我们可以让我们的程序更具有灵活性，让它们能够以不同的方式运行。阅读本文可以帮助您学习如何在Haskell中读取命令行参数，并将其应用到您的编程项目中。
 
-## 如何操作
+## 如何
 
-在Haskell中读取命令行参数非常简单。首先，你需要导入System.Environment模块来访问命令行参数函数。接下来，使用getArgs函数来接收命令行参数，并将其存储在一个列表中。例如：
+要读取命令行参数，我们需要使用一个名为"System.Environment"的Haskell模块。首先，我们需要在程序的顶部导入这个模块，如下所示：
 
 ```Haskell
 import System.Environment
+```
+
+接下来，我们可以使用"getArgs"函数来读取命令行参数。"getArgs"函数将返回一个名为"IO [String]"的操作，其中"IO"表示它包含"IO"操作，并且返回值是一个字符串列表。因此，我们可以通过以下方式来读取命令行参数：
+
+```Haskell
+args <- getArgs
+```
+
+这个"args"变量就是我们读取到的命令行参数列表。我们可以通过使用"!!"运算符来访问特定的参数，该运算符接受一个索引值作为参数。例如，如果我们想要访问第一个命令行参数，我们可以使用"args !! 0"来获取它。
+
+下面是一个完整的示例程序，它将打印出用户提供的第一个和第二个命令行参数：
+
+``` Haskell
+import System.Environment
 
 main = do
-  args <- getArgs
-  putStrLn ("Welcome to Haskell, " ++ head args ++ "!")
+    args <- getArgs
+    putStrLn ("The first argument is: " ++ args !! 0)
+    putStrLn ("The second argument is: " ++ args !! 1)
 ```
 
-假设你的程序命名为hello.hs，当你在命令行中执行以下命令时：
+如果我们在命令行中使用"runhaskell"命令运行这个程序，并且提供两个参数，比如"abc"和"123"，那么程序将会输出以下内容：
 
-```bash
-$ runhaskell hello.hs Tony
+``` 
+The first argument is: abc
+The second argument is: 123
 ```
 
-它将输出：
+## 深入了解
 
-```bash
-Welcome to Haskell, Tony!
-```
+除了"getArgs"函数，"System.Environment"模块还提供了其他一些函数来帮助我们处理命令行参数。例如，我们可以使用"getProgName"函数来获取程序的名称，使用"getEnv"函数来获取环境变量的值，使用"lookupEnv"函数来查找特定的环境变量，等等。您可以在官方文档中找到更多关于这些函数的信息。
 
-## 深入探索
+## 参考链接
 
-除了使用getArgs函数来读取命令行参数外，Haskell还提供了其他几种方法。例如，你可以使用getProgName函数来获取当前程序的名称，使用getEnv函数来读取环境变量，使用getArgsAndInitialize函数来读取命令行参数并初始化一个GUI应用程序等等。在学习Haskell的过程中，掌握这些技巧将会对你有很大的帮助。
+- [Official documentation for "System.Environment" module](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
+- [Haskell Tutorial - Getting Command Line Arguments](https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm)
+- [Haskell入门教程-获取命令行参数](https://studygolang.com/articles/27729)
+- [Haskell中使用命令行参数](https://www.yuque.com/bhdy/blog/xd1zft)
 
-## 参考资料
+## 请参阅
 
-- [Haskell官方文档：System.Environment模块](https://www.haskell.org/documentation/#system-environment-module)
-- [Haskell命令行参数教程](https://wiki.haskell.org/Command_line_argument)
-- [Haskell命令行参数实用例子](https://denisrosset.com/2017/04/29/command-line-arguments-haskell.html)
-
-## 参见
-
-- [Haskell官网](https://www.haskell.org/)
-- [Haskell中文社区](https://haskell.ctolib.com/)
+- [Haskell编程指南](https://www.haskell.org/tutorial/)
+- [Haskell命令行工具集合](https://github.com/cli-guidelines/cli-guidelines)
+- [Haskell编程入门](https://learnxinyminutes.com/docs/zh-cn/haskell-cn/)

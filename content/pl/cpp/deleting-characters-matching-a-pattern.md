@@ -1,50 +1,70 @@
 ---
-title:    "C++: Usuwanie znaków pasujących do wzorca"
+title:    "C++: Usuwanie znaków odpowiadających wzorcowi"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto usuwać znaki pasujące do wzorca?
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Jest to umiejętność, która może otworzyć wiele drzwi i zapewnić wiele możliwości dla naszej kariery zawodowej. W tym wpisie dowiesz się, jak usuwać znaki odpowiadające wzorcowi w języku C++, co jest ważną umiejętnością dla każdego programisty.
+Czy zdarzyło Ci się kiedyś napisać program, który musiałby przetwarzać duże ilości tekstowych danych? Jeśli tak, prawdopodobnie zdajesz sobie sprawę, jak ważne jest wydajne zarządzanie i przetwarzanie tego tekstu. Często zdarza się, że musimy usunąć pewne znaki, które są zbędne lub niepożądane dla naszego programu. W takiej sytuacji, warto poznać narzędzia, które pomogą nam w tym zadaniu.
 
-## Jak To Zrobić
+# Jak to zrobić?
 
-Aby usunąć znaki odpowiadające określonemu wzorcowi, możemy skorzystać z funkcji "erase" w języku C++. Funkcja ta jest dostępna dla obiektów typu "string" i pozwala nam na usunięcie znaków z zadanego zakresu, który możemy określić przy użyciu iteratorów. Poniżej przedstawiony jest prosty przykład kodu, który usuwa z ciągu znaki odpowiadające wzorcowi "abc".
+Jednym ze sposobów na usuwanie znaków pasujących do wzorca jest użycie metody `erase` z biblioteki `algorithm` w języku C++. Poniżej przedstawiam przykładowy kod, który usuwa wszystkie spacje z tekstu:
 
 ```C++
 #include <iostream>
+#include <algorithm>
 #include <string>
 
-using namespace std;
-
 int main() {
-   string str = "defabcghi";
-   
-   // Usuwanie znaków odpowiadających wzorcowi "abc"
-   str.erase(str.begin()+3, str.end());
-   
-   // Wyświetlenie wyniku
-   cout << str; // wyświetli "def"
-   
-   return 0;
+
+    std::string tekst = "To jest tekst z niepotrzebnymi        spacjami.";
+    
+    // użycie metody erase z biblioteki algorithm
+    tekst.erase(std::remove(tekst.begin(), tekst.end(), ' '), tekst.end());
+    
+    std::cout << tekst;
+
+    return 0;
 }
 ```
 
-W powyższym przykładzie mamy zmienną "str", która przechowuje ciąg znaków "defabcghi". Następnie używamy funkcji "erase" i przekazujemy jej jako argumenty iteratory na początek i koniec zakresu, który chcemy usunąć. W tym przypadku zaczynamy od 4. znaku (począwszy od 0) i usuwamy wszystkie znaki do końca ciągu. Wynikiem jest ciąg znaków "def".
+Po uruchomieniu tego kodu, wyjściem będzie: `Tojesttekstzniepotrzebnymispacjami.` Warto jednak zauważyć, że metoda ta usuwa nie tylko spacje, ale również wszystkie inne podane przez nas znaki.
 
-## Deep Dive
+# Głębszy zanurzenie
 
-Funkcja "erase" jest bardzo użyteczna i pozwala na wiele różnych możliwości manipulacji ciągami znaków. Możemy również określić tylko jeden iterator, który wskazuje na pozycję, od której chcemy zacząć usuwać. W takim przypadku wszystkie znaki po tym iteratorze zostaną usunięte. Możemy także określić tylko liczbę znaków do usunięcia, a funkcja "erase" sama znajdzie iterator na odpowiedniej pozycji i usunie dane znaki.
+Aby bardziej zrozumieć działanie metody `erase`, warto przyjrzeć się jej definicji. Metoda ta przyjmuje dwa argumenty - iterator na początek i koniec fragmentu, który chcemy usunąć. W powyższym przykładzie użyliśmy metody `remove`, która jako pierwszy argument przyjmuje iterator na początek naszego tekstu, a jako drugi - iterator na jego koniec. Następnie, metoda `erase` usuwa wszystkie elementy pomiędzy tymi iteratorami.
 
-Ponadto, funkcja "erase" ma również wersję z 3 argumentami, w których możemy podać iterator na początek zakresu, iterator na koniec zakresu oraz iterator na miejsce, od którego chcemy wstawić nowe znaki. Dzięki temu możemy skrócić ciąg znaków, ale także dodać do niego nowe znaki na wybranej pozycji.
+Ciekawą alternatywą dla tej metody jest użycie `regex`, czyli wyrażeń regularnych, które pozwalają nam znacznie bardziej precyzyjnie wybierać znaki do usunięcia. Poniżej przedstawiam przykładowy kod wykorzystujący wyrażenia regularne do usunięcia wszystkich cyfr z tekstu:
 
-## Zobacz także
+```C++
+#include <iostream>
+#include <regex>
 
-Jeśli chcesz dowiedzieć się więcej o funkcji "erase" i manipulacji ciągami znaków w języku C++, polecamy zapoznać się z poniższymi źródłami:
+int main() {
 
-- [Dokumentacja funkcji "erase" na stronie cplusplus.com](https://www.cplusplus.com/reference/string/string/erase/)
-- [Tutorial z wyjaśnieniem funkcji "erase" na stronie learncpp.com](https://www.learncpp.com/cpp-tutorial/learn-cpp-without-introducing-stl/)
+    std::string tekst = "123To 4jest 56tekst 789z cyframi000.";
+    
+    // stworzenie wyrażenia regularnego dopasowującego cyfry
+    std::regex cyfry("\\d");
+    
+    // użycie metody regex_replace z biblioteki regex
+    // drugi argument określa znaki zastępujące cyfry
+    tekst = std::regex_replace(tekst, cyfry, "");
+    
+    std::cout << tekst;
 
-Dzięki tej umiejętności będziesz w stanie szybko i sprawnie manipulować ciągami znaków w swoich programach. Życzymy powodzenia w dalszej nauce programowania!
+    return 0;
+}
+```
+
+Wyjściem z tego kodu będzie: `To jest tekst z cyframi.` Ważne jest jednak, aby zwrócić uwagę na wydajność tego rozwiązania - wyrażenia regularne mogą być bardzo uciążliwe dla procesora, więc w przypadku dużej liczby danych lepiej jest skorzystać z innego narzędzia.
+
+# Zobacz także
+
+- [Dokumentacja biblioteki algorithm - metoda erase](https://cppreference.com/w/cpp/algorithm/erase)
+- [Dokumentacja biblioteki regex - metoda regex_replace](https://cppreference.com/w/cpp/regex/regex_replace)
+- [Poradnik wideo o usuwaniu znaków z tekstu w języku C++](https://www.youtube.com/watch?v=tOyy6OuqlB0)

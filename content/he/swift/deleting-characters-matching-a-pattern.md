@@ -1,30 +1,39 @@
 ---
-title:    "Swift: מחיקת תווים התואמים תבנית"
+title:    "Swift: מחיקת תווים התואמים לתבנית"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-למה למשתמש למחוק תווים שמתאימים לתבנית? טיפ קצר על המוטיבציה לביצוע פעולה זו.
+
+מחיקת תווים המתאימים לתבנית היא כלי שימושי לכותבי קוד שרוצים להסיר תווים מוותרים או מיותרים מטקסט. זה יכול לשפר את ביצועי התוכנית ולהפחית את גודל הקוד ולשמור על קוד נקי יותר.
 
 ## איך לעשות זאת
-למחוק תווים מתאימים לתבנית ניתן להשתמש בפונקציות כגון `removeAll(where:)` או `filter()`. כאן תוכלו למצוא דוגמאות של קוד בשפת Swift עם תוצאות דוגמא לבירור.
+
+כדי למחוק תווים המתאימים לתבנית באמצעות Swift, ניתן להשתמש בפונקציה `replacingOccurrences(of:with:)`. פונקציה זו מקבלת שני מחרוזות כפרמטרים - התבנית שברצונך למחוק והמחרוזת שאתה רוצה להחליף בה. ניתן גם להוסיף פרמטר `options` כדי להתאים את ההתאמה לתנאים שונים. לדוגמה:
 
 ```Swift
-// דוגמאות למחיקת תווים מתאימים לתבנית לפי אורך התווים
-var words = ["apple", "banana", "orange", "watermelon", "kiwi"]
-words.removeAll { $0.count < 6 }
-// תוצאה: ["banana", "watermelon"]
-
-var numbers = [1, 2, 3, 4, 5, 6]
-let evenNumbers = numbers.filter { $0 % 2 == 0 }
-// תוצאה: [2, 4, 6]
+let originalString = "מחרוזת עם תווים מוותרים!!!"
+let modifiedString = originalString.replacingOccurrences(of: "[א-ת]", with: "", options: .regularExpression)
+print(modifiedString)
 ```
+תוצאה:
+`מחרוזת עם תווים מוותרים`
 
-## לצוף עמוק
-מחיקת תווים מתאימים לתבנית היא טכניקה שימושית לעיבוד מידע באופן יעיל ומהיר. ניתן להיעזר בתכנות פונקציות ופעולות חדשות כדי להתאים את המחיקה לצרכי המשתמש. כמו כן, ניתן להשתמש בפונקציות נוספות כדי לשפר את הביצועים ולהגביר את היעילות של הקוד.
+## מקורות נוספים
 
-## ראו גם
-- [מסמך רשמי של פונקציות בשפת Swift](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)
-- [דוגמאות מאתר Stack Overflow עם פתרון למחיקת תווים על פי תבנית בSwift](https://stackoverflow.com/questions/26580123/whats-the-best-way-to-remove-all-of-character-from-a-string/40804963#40804963)
+כדי ללמוד עוד על כיצד למחוק תווים המתאימים לתבנית ב-Swift, ניתן לעיין במסמכים הבאים:
+
+- [מדריך לפונקצית replacingOccurrences באתר Apple](https://developer.apple.com/documentation/foundation/nsstring/1411940-replacingoccurrences)
+
+- [מדריך לתבניות ב-regular expressions באתר regex101](https://regex101.com/)
+
+- [וידאו הדרכה על מחיקת תווים בעזרת regular expressions בעזרת לשונית swift של Siraj Raval](https://www.youtube.com/watch?v=sgdH5sPx1TU)
+
+## ראה גם
+
+- [מדריך לפונקציית substring ב-Swift](https://github.com/sagishahar/swift-blog/blob/master/Blogs/substring/substring.md)
+
+- [מדריך לתבניות ב-Swift בעזרת `CharacterSet`](https://github.com/sagishahar/swift-blog/blob/master/Blogs/character-set/character-set.md)

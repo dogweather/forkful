@@ -1,42 +1,60 @@
 ---
-title:    "TypeScript: Ausgabe von Fehlerbehebung drucken"
+title:    "TypeScript: Ausgabe von Debug-Informationen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Drucken von Debug Output ist in der Programmierung ein nützliches Tool, um Fehler und Probleme in unserem Code zu identifizieren. Es kann uns dabei helfen, unsere Entwicklungsgeschwindigkeit zu verbessern und Bugs effizienter zu beheben.
+Manchmal kann es schwierig sein, Fehler in unserem Code zu finden und zu verstehen, was genau falsch läuft. Hier kommen die sogenannten "Debug-Ausgaben" ins Spiel. Durch das gezielte Ausgeben von Informationen während der Laufzeit unseres Programms können wir besser nachvollziehen, was passiert und somit Fehler identifizieren und beheben. 
 
-## How To
+## So geht's
 
-Das Drucken von Debug Output mit TypeScript ist einfach und kann uns wertvolle Einblicke in unseren Code geben. Zunächst müssen wir den TypeScript Compiler installieren, falls wir ihn noch nicht haben. Anschließend können wir unsere Datei mit dem flag ```--watch``` kompilieren, um Änderungen im Code sofort zu sehen. Wir können auch die Option ```--outFile output.js``` verwenden, um unseren Code in eine einzige Datei zu kompilieren.
-
-Einmal kompiliert, können wir Debug Output mit dem Befehl ```console.log()``` ausgeben. Wir können Variablen, Funktionsaufrufe oder einfach nur Text ausgeben. Hier ist ein Beispiel:
+Um Debug-Ausgaben in TypeScript zu machen, können wir die Funktion `console.log()` verwenden. Diese Funktion gibt die übergebenen Werte in der Konsole unseres Browsers oder Terminals aus. Hier ist ein Beispiel:
 
 ```TypeScript
-let name = "Max";
-function greet(name) {
-  return "Hallo " + name + "!";
-}
+let num1 = 5;
+let num2 = 10;
+console.log("Die Summe von " + num1 + " und " + num2 + " ist " + (num1 + num2));
 
-console.log(greet(name));
+// Output: Die Summe von 5 und 10 ist 15
 ```
 
-Die Ausgabe wird ```Hallo Max!``` sein. Indem wir das ```console.log()``` in verschiedenen Teilen unseres Codes verwenden, können wir den Ablauf und den Wert von Variablen verfolgen und so Fehler leichter identifizieren.
+Wir können auch Objekte oder Arrays als Parameter an `console.log()` übergeben, um auch deren Inhalte auszugeben.
+```TypeScript
+let person = { name: "Max", alter: 26 };
+console.log(person);
 
-## Deep Dive
+// Output: { name: "Max", alter: 26 }
+```
 
-Es gibt verschiedene Möglichkeiten, um Debug Output zu nutzen. Wir können beispielsweise das NPM Paket ```debug``` verwenden, um unsere Log-Nachrichten zu formatieren und zu filtern. Wir können auch Breakpoints in unserem Code setzen und den Debugger in unserer IDE verwenden, um Schritt für Schritt durch unseren Code zu gehen und den Wert von Variablen zu überprüfen.
+### Tipp: Conditional Debugging
+Manchmal möchten wir Debug-Ausgaben nur unter bestimmten Umständen sehen, zum Beispiel nur wenn eine Bedingung erfüllt ist. Dafür können wir `console.log()` in eine `if`-Anweisung einbinden:
+```TypeScript
+let num3 = 15;
+if (num3 > 10) {
+  console.log("Die Zahl ist größer als 10.");
+}
 
-Andere nützliche Werkzeuge sind die ```console.assert()``` Funktion, um unsere Annahmen im Code zu überprüfen, und ```console.table()```, um komplexe Datenstrukturen in einer übersichtlichen Tabelle auszugeben.
+// Output: Die Zahl ist größer als 10.
+```
 
-Beim Drucken von Debug Output ist es auch wichtig, darauf zu achten, dass wir unsere Log-Nachrichten später leicht identifizieren können. Wir können dazu eine eindeutige ID oder eine bestimmte Syntax in unseren Nachrichten verwenden, um sie später zu filtern und zu finden.
+## Tiefer gehen
 
-## Siehe auch
+Neben der einfachen Verwendung von `console.log()` gibt es noch weitere Methoden, um Debug-Ausgaben zu machen. Dazu gehört zum Beispiel `console.error()`, um Fehlermeldungen auszugeben, oder `console.table()`, um Tabellen auszugeben. Eine vollständige Liste aller Methoden findet ihr in der offiziellen [Dokumentation von `console`](https://developer.mozilla.org/de/docs/Web/API/Console). 
 
-- [TypeScript Dokumentation] (https://www.typescriptlang.org/docs/)
-- [NPM Debug Paket] (https://www.npmjs.com/package/debug)
-- [Visual Studio Code Debugger] (https://code.visualstudio.com/docs/editor/debugging)
-- [Übersicht von Debugging-Tools für TypeScript] (https://stackify.com/node-js-debugging-tools/)
+Eine weitere nützliche Methode ist `console.assert()`, mit der wir überprüfen können, ob eine Bedingung wahr oder falsch ist und ggf. eine Fehlermeldung ausgeben können. Hier ist ein Beispiel:
+```TypeScript
+let num4 = 8;
+console.assert(num4 % 2 === 0, "Die Zahl ist keine gerade Zahl.");
+
+// Output: Assertion failed: Die Zahl ist keine gerade Zahl.
+```
+
+## Sieh auch
+
+- [Dokumentation von `console`](https://developer.mozilla.org/de/docs/Web/API/Console)
+- [Video Tutorial: Debugging in TypeScript](https://www.youtube.com/watch?v=HhUJkw7-hmQ)
+- [Artikel: 5 Debugging-Tipps für TypeScript](https://www.sitepoint.com/debug-typescript/)

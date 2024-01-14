@@ -1,46 +1,61 @@
 ---
 title:    "Python: Extraction de sous-chaînes"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Pourquoi:
 
-L'extraction de sous-chaînes (ou sous-strings en anglais) est une compétence essentielle en programmation Python. Cela permet aux développeurs de découper une chaîne de caractères en de plus petites parties, ce qui peut être utile dans de nombreuses situations, notamment dans la manipulation de données ou la création de fonctions réutilisables.
+Extraction de sous-chaînes en Python
 
-## Comment faire
+Si vous travaillez avec des chaînes de caractères en Python, vous avez peut-être remarqué que parfois vous devez extraire une sous-chaîne à partir d'une chaîne plus grande. Cela peut être utile lors de la manipulation de données ou de la création de fonctions pour traiter les chaînes de manière spécifique. Dans cet article, nous allons explorer comment extraire des sous-chaînes en Python.
 
-Pour extraire une sous-chaîne en Python, il suffit d'utiliser la notation de tranche (slice en anglais). Voici un exemple de code qui illustre comment extraire une sous-chaîne à partir d'une chaîne de caractères :
+Comment faire:
 
-```python
-chaine = "Bonjour tout le monde"
-sous_chaine = chaine[8:13]
+Pour extraire une sous-chaîne en Python, nous pouvons utiliser la méthode `slice()` ou l'opérateur de tranche `[:]`. Par exemple, supposons que nous avons la chaîne de caractères "Bonjour à tous" et que nous voulons extraire la sous-chaîne "à tous". Nous pouvons le faire en utilisant la méthode `slice()` de cette façon:
+
+ ```
+ phrase = "Bonjour à tous"
+ sous_chaine = phrase.slice(8, 14)
+ print(sous_chaine)
+ ```
+
+Cela nous donnera la sortie suivante:
+
+`à tous`
+
+Nous pouvons également utiliser l'opérateur de tranche `[:]` de cette façon:
+
+ ```
+ phrase = "Bonjour à tous"
+ sous_chaine = phrase[8:14]
+ print(sous_chaine)
+ ```
+
+Cela nous donnera la même sortie que précédemment. L'opérateur de tranche utilise les mêmes indices que la méthode `slice()`, mais est plus concis et pratique à utiliser.
+
+Deep Dive:
+
+La méthode `slice()` prend en compte trois arguments: `start`, `end` et `step`. `start` représente l'indice de départ de la sous-chaîne, `end` représente l'indice de fin et `step` représente le pas. Le pas est optionnel et par défaut, il est égal à 1. Cela signifie que la sous-chaîne extraite comprendra tous les caractères entre les indices `start` et `end`. Cependant, si nous spécifions un pas différent de 1, nous pouvons obtenir une sous-chaîne avec chaque n-ème caractère.
+
+Par exemple, si nous voulons extraire tous les autres caractères de la chaîne "Bonjour à tous", nous pouvons utiliser un pas de 2 de cette manière:
+
+```
+phrase = "Bonjour à tous"
+sous_chaine = phrase.slice(0, 14, 2)
 print(sous_chaine)
 ```
 
-Dans cet exemple, nous avons utilisé la notation de tranche pour extraire la sous-chaîne "tout" à partir de la chaîne d'origine. La notation de tranche fonctionne comme ceci : `chaine[début:fin]`, où `début` est l'indice du premier caractère de la sous-chaîne et `fin` est l'indice du dernier caractère + 1.
+La sortie sera alors:
 
-La notation de tranche peut également prendre un troisième paramètre facultatif, qui représente le pas (step en anglais). Cela permet d'extraire des caractères en sautant un certain nombre de caractères entre chaque indice. Voici un exemple qui illustre cette fonctionnalité :
+`Bno àtu`
 
-```python
-chaine = "Exemple de chaîne"
-sous_chaine = chaine[0:13:2]
-print(sous_chaine)
-```
+Cela peut être utile dans certaines situations spécifiques.
 
-Dans cet exemple, le résultat serait "Eexml d", car nous avons sauté un caractère sur deux à chaque tranche.
+Voir aussi:
 
-## Plongée en profondeur
-
-En plus de la notation de tranche, Python offre d'autres méthodes pour extraire des sous-chaînes, telles que la méthode `split()` qui permet de séparer une chaîne en plusieurs morceaux en utilisant un séparateur spécifié, ou la méthode `find()` qui renvoie l'indice de la première occurrence d'une sous-chaîne donnée.
-
-Il est également important de prendre en compte la manipulation des indices lorsque l'on extrait des sous-chaînes en Python, car les indices commencent à partir de 0 et le premier indice est inclus tandis que le dernier indice n'est pas inclus. Il est donc essentiel de bien comprendre comment fonctionne la notation de tranche afin d'éviter des erreurs dans votre code.
-
-## Voir aussi
-
-Voici quelques liens utiles pour en savoir plus sur l'extraction de sous-chaînes en Python :
-
-- [Documentation officielle Python pour la notation de tranche](https://docs.python.org/fr/3/library/stdtypes.html#textseq)
-- [Article de Real Python sur l'extraction de sous-chaînes](https://realpython.com/python-strings/#slicing-strings)
-- [Vidéo YouTube sur l'utilisation de la notation de tranche en Python](https://www.youtube.com/watch?v=ajrtAuDg3yw)
+- https://www.geeksforgeeks.org/python-string-slice/
+- https://www.tutorialspoint.com/python/string_slice.htm
+- https://www.programiz.com/python-programming/methods/string/slice

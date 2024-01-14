@@ -1,40 +1,44 @@
 ---
-title:    "Gleam: Umwandlung eines Datums in einen String"
+title:    "Gleam: Ein Datum in einen String umwandeln"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Konvertieren von Datum in einen String ist eine grundlegende Programmieraufgabe, die in vielen Anwendungen erforderlich ist. Zum Beispiel kann es verwendet werden, um ein Datum in einem bestimmten Format auf einer Website anzuzeigen oder um ein Datum in einer Datenbank zu speichern. Die Verwendung von Gleam ermöglicht es Entwicklern, diese Aufgabe auf einfache und effiziente Weise zu erledigen.
+Die Umwandlung von Datum zu String ist in der Programmierung ein häufiger Bedarf. Es ermöglicht, ein Datum visuell in einem Format darzustellen, das für den Benutzer leichter lesbar ist. In diesem Blogbeitrag werden wir sehen, wie man dies mit der Programmiersprache Gleam erreichen kann.
 
 ## Wie geht das?
 
-```Gleam
-// Erstellen eines Datums
-let date = Date.create(2021, 3, 20)
+Um ein Datum in String umzuwandeln, gibt es ein eingebautes Modul in Gleam namens `gleam/time`. Innerhalb dieses Moduls gibt es die Funktion `format_date`, die genau das tut, wonach wir suchen. Schauen wir uns ein Beispiel an:
 
-// Konvertieren in einen String
-let string = date |> Date.to_string
+```
+Gleam
+import gleam/time
+import gleam/string
+import gleam/stdio.{stdout, println}
 
-// Ausgabe: "2021-03-20T00:00:00Z"
+let date_to_convert = time.date(2021, 10, 20)
+let converted_date = time.format_date("%d.%m.%Y", date_to_convert)
+stdout
+|> println(converted_date)
 ```
 
-Die `Date`-Bibliothek in Gleam enthält die Funktion `to_string`, die ein Datum in das ISO-8601-Format konvertiert. Dies ist ein Standardformat, das von vielen Systemen unterstützt wird.
+Ausgabe: `20.10.2021`
 
-Um ein Datum in einem bestimmten Format anzuzeigen, kann der `to_string`-Funktion ein Argument übergeben werden, z.B. `Date.to_string(date, "%d.%m.%Y")` würde das Datum im Format "20.03.2021" ausgeben.
+Hier haben wir das Datum "20. Oktober 2021" als `date_to_convert` definiert und dann die Funktion `format_date` verwendet, um es in das gewünschte Format umzuwandeln. Das erste Argument, `"%d.%m.%Y"`, gibt an, wie das Datum dargestellt werden soll. In diesem Fall steht `%d` für den Tag, `%m` für den Monat und `%Y` für das Jahr. Die Reihenfolge und das Format kann je nach Belieben geändert werden. Wir haben dann die Variable `converted_date` definiert, die den konvertierten String enthält. Schließlich haben wir die Ausgabe mit der `stdout`-Funktion auf der Konsole ausgegeben.
 
-Weitere nützliche Funktionen der `Date`-Bibliothek sind z.B. `now`, um das aktuelle Datum und die aktuelle Uhrzeit zu erhalten, oder `parse`, um einen String in ein Datum zu konvertieren.
+Dies ist nur ein einfaches Beispiel, aber es zeigt, wie einfach es ist, ein Datum in einen String umzuwandeln. Gleam bietet auch Funktionen, um die Zeitzone und die Uhrzeit zu berücksichtigen, falls das benötigt wird.
 
-## Tiefergehende Informationen
+## Tiefer eintauchen
 
-Die `Date`-Bibliothek basiert auf dem `Calendar`-Modul, das wiederum auf der bekannten `calendar`-Bibliothek in Erlang aufbaut. Dies ermöglicht es Gleam, komplexe Zeitberechnungen durchzuführen und Zeitstempel in verschiedenen Zeitzonen korrekt zu verarbeiten.
+In diesem Abschnitt können wir uns noch genauer damit beschäftigen, wie die `format_date`-Funktion funktioniert und welche anderen Optionen es gibt. Die vollständige Dokumentation für das `gleam/time`-Modul kann hier gefunden werden: [https://gleam.run/modules/gleam/time.html](https://gleam.run/modules/gleam/time.html)
 
-Es ist auch möglich, benutzerdefinierte Zeit- und Datumsformate mithilfe der `strf`-Funktion zu erstellen, die die Erlang-Funktion `strftime` verwendet. Mit dieser Funktion können Entwickler ihre Datums- und Zeitangaben auf ihre spezifischen Anforderungen und Präferenzen zuschneiden.
+Es ist auch wichtig zu beachten, dass Gleam auf der Programmiersprache Erlang aufbaut, die bereits eine eingebaute Funktion hat, um ein Datum in String zu konvertieren. Dies bedeutet, dass, falls Gleam in Zukunft nicht mehr verwendet wird, das Wissen über die Nutzung von `format_date` auch auf andere Programmiersprachen übertragen werden kann.
 
 ## Siehe auch
 
-- [Offizielle Date-Bibliothek in Gleam](https://gleam.run/lib/date)
-- [Erlang calendar library](https://erlang.org/doc/man/calendar.html)
-- [ISO-8601 Date and Time format](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Dokumentation für das 'gleam/time'-Modul](https://gleam.run/modules/gleam/time.html)
+- [Erlang 'calendar'-Modul](https://erlang.org/doc/man/calendar.html)

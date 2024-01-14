@@ -1,59 +1,52 @@
 ---
-title:    "Clojure: Att börja ett nytt projekt"
+title:    "Clojure: Att påbörja ett nytt projekt"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att starta ett nytt projekt i Clojure kan vara en spännande utmaning för programmerare. Med sin funktionella programmeringstil och möjlighet till interaktiv utveckling, är Clojure ett kraftfullt verktyg som kan hjälpa till att lösa komplexa problem på ett effektivt sätt.
+Att starta ett nytt projekt i Clojure kan vara ett spännande och givande upplevelse. Det är ett funktionellt programmeringsspråk som är mycket populärt bland utvecklare på grund av sin flexibilitet, skalbarhet och robusthet. Genom att lära sig Clojure får du inte bara en bättre förståelse för programmeringsprinciper, utan du kan också bygga kraftfulla och effektiva applikationer.
 
-# Så här gör du
+## Hur man gör
 
-För att komma igång med ett nytt projekt i Clojure, behöver du först och främst installera Clojure på din dator. Sedan kan du använda ett byggverktyg som Leiningen för att skapa ett nytt projekt. Här är en exempelkod som visar hur du kan skapa ett nytt projekt med namnet "hello-world":
+För att börja med ett nytt Clojure-projekt, behöver du först installera Leiningen - ett byggverktyg som används för att skapa, bygga och hantera projekt i Clojure. När Leiningen är installerat kan du skapa ett nytt projekt genom att öppna terminalen och köra följande kommando:
 
-```Clojure
-lein new app hello-world
+```Clojure 
+lein new app my-project
 ```
 
-När projektet är skapat kan du navigera till dess mapp i din terminal och köra följande kommando för att starta en interaktiv REPL-miljö:
+Detta skapar en ny mapp som heter "my-project" som innehåller grundläggande filer och struktur för ditt projekt. Sedan kan du öppna projektet i din favoriteditor och börja koda!
 
-```Clojure
-lein repl
+Här är ett exempel på en enkel "Hello World!" applikation skriven i Clojure:
+
+```Clojure 
+(ns hello-world.core
+  (:gen-class))
+
+(defn -main [& args]
+  (println "Hej världen!"))
 ```
 
-Nu kan du börja skriva och testa din kod direkt i REPL-miljön. För att avsluta REPL-miljön kan du använda kommandot "exit" eller trycka på "Ctrl + D" på tangentbordet.
+Efter att ha kört koden får du följande utmatning:
 
-Ett enkelt program för att skriva ut "Hello, world!" i Clojure kan se ut så här:
-
-```Clojure
-(defn hello-world [] 
-    (println "Hello, world!"))
+```
+Hej världen!
 ```
 
-När du är färdig med ditt projekt kan du bygga det genom att köra följande kommando:
+Det finns många resurser tillgängliga för att lära dig mer om Clojure-programmering. En bra resurs är officiella dokumentationen på Clojure.org. Det finns också många community-forum och Q&A-sidor som Stack Overflow där du kan få hjälp och stöd från andra utvecklare.
 
-```Clojure
-lein uberjar
-```
+## Djupdykning
 
-Detta kommer att skapa en körbar JAR-fil som du kan använda för att köra ditt program utanför REPL-miljön.
+Att starta ett nytt Clojure-projekt kan också innebära att välja rätt ramverk eller bibliotek beroende på dina specifika behov. Clojure har ett aktivt ekosystem med många populära verktyg som Leiningen och Boot för att hantera projekt och bibliotek, Compojure för webbutveckling, och Datomic för databashantering.
 
-# Djupdykning
+En annan viktig aspekt är att förstå de funktionella programmeringskoncepten som används i Clojure, som till exempel immutability och rekursivitet. Ju mer du lär dig om dessa principer, desto bättre blir du på att skriva effektiv och skalbar kod.
 
-När du startar ett nytt projekt i Clojure, kan det vara bra att ha en tydlig struktur för ditt projekt. En vanlig hierarki för ett Clojure-projekt ser ut så här:
+## Se också
 
-- src (för programkod)
-- test (för testfall)
-- resources (för konfigurationsfiler eller andra resurser som behövs av din kod)
-- target (där de kompilerade filerna hamnar)
-- project.clj (projektets konfigurationsfil)
-
-Det är också viktigt att planera och tänka på vilka dependencies (beroenden) som ditt projekt behöver. Du kan lägga till dependencies i din projekt.clj-fil och Leiningen kommer att hämta dem åt dig när du bygger ditt projekt.
-
-# Se även
-
-- [Clojure.org](https://clojure.org/)
-- [Clojure Dokumentation](https://clojure.org/documentation)
-- [Leiningen](https://leiningen.org/)
+- Officiell Clojure dokumentation på Clojure.org
+- Clojure community-forum på Reddit
+- Clojure-taggen på Stack Overflow för frågor och svar
+- Clojure Style Guide för en konsekvent kodningsstil

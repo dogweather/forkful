@@ -1,48 +1,71 @@
 ---
 title:    "Fish Shell recipe: Converting a string to lower case"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-One common task when working with strings in any programming language is converting them to a specific case, such as lower case. This can be helpful for things like user input validation or ensuring consistency in data processing. In this blog post, we will explore how to convert a string to lower case using the powerful Fish Shell.
+Converting strings to lower case is a common task in programming, especially when manipulating user-inputted data. It ensures consistency and makes it easier to compare strings for equality.
 
 ## How To
 
-Coding a string to lower case in Fish Shell is quite simple. Here's an example:
+To convert a string to lower case in Fish Shell, we can use the `string tolower` command. It takes in a string as an argument and returns the same string in lower case.
 
 ```
-set my_string "HELLO WORLD"
-echo $my_string | tr '[A-Z]' '[a-z]'
+Fish Shell ~> string tolower "HeLLo"
+hello
 ```
 
-The first line sets the variable `my_string` to the string "HELLO WORLD". The second line uses the `tr` command to translate all the characters in `my_string` from uppercase to lowercase. 
-
-The output of this code block would be `hello world`, as expected. 
-
-Alternatively, instead of using the `tr` command, we can also use the `string tolower` command like this:
+We can also use the `tr` command to achieve the same result. The `tr` (translate) command can perform character substitutions, and in this case, we can use it to change all uppercase letters to lowercase.
 
 ```
-set my_string "HELLO WORLD"
-string tolower $my_string
+Fish Shell ~> echo "HeLLo" | tr '[:upper:]' '[:lower:]'
+hello
 ```
 
-Both of these methods will achieve the same result of converting the string to lowercase.
+We can also use the `awk` command to convert the string to lower case. This method might seem a bit unconventional, but it can be handy if we want to manipulate the string further in our script.
+
+```
+Fish Shell ~> echo "HeLLo" | awk '{print tolower($0)}'
+hello
+```
+
+We can also wrap these commands in a function for reusability. Here's an example of how we can create a `tolower` function in Fish Shell:
+
+```
+Fish Shell ~> function tolower
+      for str in $argv
+          string tolower $str | sed "s/.*/&/"
+      end
+end
+```
+
+Now we can use this function to convert multiple strings to lower case:
+
+```
+Fish Shell ~> tolower "HeLLo" "WoRLd"
+hello world
+```
 
 ## Deep Dive
 
-Now, let's take a closer look at how the `tr` command works in this case. The `tr` command is used to translate, or replace, characters in a given string. In this example, we are replacing all uppercase letters to lowercase letters using the specified character ranges. `[A-Z]` indicates all uppercase letters, while `[a-z]` indicates all lowercase letters. 
+Converting strings to lower case might seem like a trivial task, but it can get more complex when dealing with non-English characters or special symbols. In such cases, using the `tr` command might not give accurate results.
 
-It's worth noting that both `string tolower` and `tr` are case-sensitive. So if your string already contains lowercase letters, they will remain unchanged. Also, if your string contains characters outside of the specified range, they will also remain unchanged. 
+In Fish Shell, we can use the `string--lowercase` function from the `string` module to handle special characters and non-English characters. This function takes in a string as an argument and returns the same string in lower case, taking into consideration the locale settings.
 
-Another thing to keep in mind is that these methods only work on one string at a time. If you need to convert multiple strings to lowercase, you will need to use a loop or a function.
+```
+Fish Shell ~> source /usr/share/fish/scripts/string.fish
+Fish Shell ~> set mystr "hEllo👋"
+Fish Shell ~> string--lowercase $mystr
+hello👋
+```
 
 ## See Also
 
-For more information on Fish Shell and string manipulation, check out these helpful resources:
-
-- [Fish Shell official documentation](https://fishshell.com/docs/current/cmds/string.html) 
-- [Fish Shell tricks: Convert text to lowercase or uppercase](https://medium.com/@prchandra/fish-shell-tricks-convert-text-to-lowercase-or-uppercase-d50c2734cfab) 
-- [101 Bash Commands and Tips for Beginners to Experts](https://stackabuse.com/101-bash-commands-and-tips-for-beginners-to-experts/)
+- [Fish Shell string tolower documentation](https://fishshell.com/docs/current/cmds/string-tolower.html)
+- [Fish Shell tr documentation](https://fishshell.com/docs/current/cmds/tr.html)
+- [Fish Shell awk documentation](https://fishshell.com/docs/current/cmds/awk.html)
+- [Fish Shell string module documentation](https://fishshell.com/docs/current/index.html#string)

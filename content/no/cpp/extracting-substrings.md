@@ -1,54 +1,81 @@
 ---
-title:    "C++: Utvinning av delstrenger"
+title:    "C++: Uttrekking av undertekster"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å trekke ut substringer, eller delstrenger, fra en større tekst er en nyttig teknikk når du jobber med å manipulere tekst i et program. Dette kan være nyttig for å filtrere og bearbeide data, samt å lage mer dynamiske og interaktive tekstbaserte applikasjoner.
+Mange programmerere har støtt på behovet for å hente subtstrenger fra en større tekststreng. Dette kan være nyttig for å behandle data eller for å søke i en tekst etter en spesifikk informasjon. Det kan også være en del av en større algoritme eller funksjon. Uansett årsak, er evnen til å ekstrahere substrings viktig i programmering.
 
 ## Slik gjør du det
 
-For å trekke ut en delstreng fra en tekst, kan du bruke funksjonen `substr()`. Denne funksjonen tar to argumenter: startposisjonen og lengden på delstrengen. Her er et enkelt eksempel som viser hvordan du kan bruke `substr()`:
+For å ekstrahere substrings i C++, må man bruke noen innebygde funksjoner som finnes i C++-biblioteket. Først må man inkludere "string" biblioteket ved å bruke #include kommandoen:
 
 ```C++
-#include <iostream>
-using namespace std;
+#include <string>
+```
 
-int main() {
-    string tekst = "Dette er en lang tekst";
-    // Trekker ut delstreng fra posisjon 5 til og med 8
-    string resultat = tekst.substr(5, 4);
-    // Skriver ut resultatet på skjermen
-    cout << resultat << endl;
+Deretter kan man bruke funksjonen "substr()" som tar inn to parametere - startindeksen og lengden på substringen. Her er et eksempel:
 
-    return 0;
+```C++
+// Opprett en tekststreng
+string tekst = "Dette er en tekststreng";
+
+// Ekstraher en substring fra startindeks 11 og lengde 5
+string substring = tekst.substr(11, 5);
+
+// Skriv ut resultatet
+cout << substring << endl;
+
+// Output: "tekst"
+```
+
+Man kan også bruke funksjonen "find()" til å finne indeksen til en spesifikk substring, og deretter bruke "substr()" til å ekstrahere den. Her er et eksempel:
+
+```C++
+// Finn startindeksen til substringen "er"
+int indeks = tekst.find("er");
+
+// Ekstraher en substring fra startindeksen og lengden 6
+substring = tekst.substr(indeks, 6);
+
+// Skriv ut resultatet
+cout << substring << endl;
+
+// Output: "er en"
+```
+
+## Dypdykk
+
+I tillegg til å bruke de innebygde funksjonene "substr()" og "find()", kan man også implementere sin egen substring-funksjon. Dette er nyttig dersom man ønsker å tilpasse funksjonen til et spesifikt formål eller ønsker å forbedre ytelsen. Om man bruker en "for loop" til å søke gjennom tekststrengen og hente ut karakterer i en gitt range, kan man lage en funksjon som dette:
+
+```C++
+string substring(string tekst, int start, int lengde){
+
+    // Opprett et objekt for den ekstraherte substringen
+    string substring = "";
+
+    // Gå gjennom hver karakter i teksten
+    for (int i = start; i < start + lengde; i++){
+        
+        // Legg til karakteren i substringen
+        substring += tekst[i];
+    }
+
+    // Returner den ekstraherte substringen
+    return substring;
 }
+
+// Eksempel på bruk
+string resultat = substring("Dette er en tekststreng", 11, 5);
+
+// Output: "tekst"
 ```
-
-Dette vil resultere i utskriften "er en" på skjermen. Fra posisjon 5 i teksten, som er "e", blir de neste 4 bokstavene trekt ut.
-
-Det er viktig å merke seg at startposisjonen i `substr()`funksjonen begynner på 0, ikke 1. Dette betyr at for å trekke ut første del av teksten, må du bruke startposisjonen 0 og lengden 1.
-
-## Dykk dypere
-
-Når du arbeider med substrings, er det viktig å være klar over at de er en del av den opprinnelige teksten. Dette betyr at endringer i substrings vil påvirke den opprinnelige teksten. For eksempel:
-
-```C++
-string tekst = "Dette er en lang tekst";
-string resultat = tekst.substr(5, 4);
-// Endrer første bokstaven i resultatet til stor bokstav
-resultat[0] = 'E';
-cout << tekst << endl;
-```
-
-Dette vil resultere i utskriften "Dette Er en lang tekst" på skjermen. Den første bokstaven i delstrengen "er en" ble endret til stor bokstav, og dette påvirket også den opprinnelige teksten.
-
-En annen ting å merke seg er at lengden på substrings også kan påvirke resten av teksten. Hvis du for eksempel har en tekst "Hva skjer?" og trekker ut "Hva", vil resten av teksten bli forkortet til " skjer?". Dette kan være viktig å tenke på når du arbeider med substrings.
 
 ## Se også
 
-* [cplusplus.com reference for substr() function](http://www.cplusplus.com/reference/string/string/substr/)
-* [Tutorialspoint article on substrings in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [String-funksjoner i C++](https://www.geeksforgeeks.org/cpp-string-class-and-its-applications/)
+- [Hva er substrings](https://en.wikipedia.org/wiki/Substring)

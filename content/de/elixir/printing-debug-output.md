@@ -1,61 +1,63 @@
 ---
-title:    "Elixir: Debug-Ausgabe drucken"
+title:    "Elixir: Druck von Debug-Ausgabe"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich überhaupt die Mühe machen, Debugging-Ausgaben in der Elixir Programmierung zu verwenden? Nun, es gibt mehrere Gründe dafür. Zum Beispiel können sie beim Testen und Verstehen des Codes sehr nützlich sein, vor allem wenn es um komplexe Funktionen oder Berechnungen geht. Sie dienen auch als Hilfsmittel bei der Fehlersuche und können dabei helfen, schwierige Bugs schneller zu finden und zu beheben.
+Debugging ist ein wichtiger Teil des Programmierens und das Drucken von Debug-Ausgaben kann dabei eine sehr nützliche Methode sein. Es hilft dabei, den Code während der Entwicklung zu verstehen, Fehler zu finden und zu beheben.
 
 ## Wie
 
-Um Debugging-Ausgaben in Elixir zu erstellen, gibt es verschiedene Möglichkeiten. Eine einfache Methode besteht darin, das `IO.inspect/2` Modul zu verwenden. Dieses Modul ermöglicht es uns, den aktuellen Wert einer Variablen oder eines Ausdrucks zu drucken. Hier ist ein Beispiel, wie das aussehen könnte:
+Es gibt verschiedene Möglichkeiten, um Debug-Ausgaben in Elixir zu drucken. Die einfachste Möglichkeit ist die Verwendung der `IO`-Funktion `inspect/2`, die eine lesbare Darstellung von Datenstrukturen zurückgibt. Zum Beispiel:
 
 ```Elixir
-list = ["Elixir", "ist", "großartig"]
-IO.inspect(list)
+IO.inspect(["Hello", "World"])
 ```
 
-Die Ausgabe wäre dann:
-
-```
-["Elixir", "ist", "großartig"]
-```
-
-Wir können auch einzelne Elemente des Arrays ausgeben, indem wir den Index angeben:
+Dies gibt die Ausgabe `"["Hello", "World"]"` zurück. Die Funktion kann auch mit Modulen und Funktionen verwendet werden, um Informationen über diese auszugeben. Zum Beispiel:
 
 ```Elixir
-IO.inspect(list[0])
+IO.inspect(Enum, pretty: true)
 ```
 
-Die Ausgabe wäre dann:
+Dies gibt eine hübsch formatierte Ausgabe aller Funktionen im Modul `Enum` zurück.
 
-```
-"Elixir"
-```
-
-Es ist auch möglich, den Debug-Modus einzuschalten, indem wir der Ausgabe ein `":debug"` hinzufügen. Das kann vor allem bei komplexen Datenstrukturen hilfreich sein:
+Eine weitere nützliche Funktion für das Drucken von Debug-Ausgaben ist `IO.puts/2`, die einfach eine Zeichenkette ohne Formatierung druckt. Zum Beispiel:
 
 ```Elixir
-IO.inspect(data, label: ":debug")
+IO.puts("This is a debug message")
 ```
 
-Die Ausgabe würde dann eine detailliertere Darstellung der Datenstruktur enthalten.
+Dies wird einfach die Zeichenkette `"This is a debug message"` ausgeben.
 
-Es gibt auch noch andere Methoden, wie `IO.puts/2` oder `IO.write/2`, die verwendet werden können, um Debugging-Ausgaben zu erstellen. Jede Methode hat ihre spezifischen Vorteile und sollte je nach Situation ausgewählt werden.
+Es ist auch möglich, eigene formatierte Debug-Ausgaben zu erstellen, indem man die `~p`- und `~s`-Formatierungsoptionen verwendet. Zum Beispiel:
 
-## Tiefer Einblick
+```Elixir
+name = "John"
+age = 25
+IO.puts(~p"Name: #{name} - Age: #{age}")
+```
 
-Es gibt einige Dinge zu beachten, wenn es darum geht, Debugging-Ausgaben zu erstellen. Zum einen sollten wir sicherstellen, dass wir sie nur in der Entwicklungsphase verwenden und sie nicht in den produktiven Code gelangen lassen. Debugging-Ausgaben können die Leistung der Anwendung beeinträchtigen und sollten daher nicht im productiven Einsatz verwendet werden.
+Dies wird die Ausgabe `"Name: \"John\" - Age: 25"` erzeugen.
 
-Wir können auch beliebige Werte als Ausgabe verwenden, wie z.B. einfache Strings oder auch Ausdrücke, die uns wichtige Informationen liefern können. Zusätzlich können wir auch der `IO.inspect/2` Funktion zusätzliche Parameter übergeben, wie z.B. `:label` oder `:depth`, um die Ausgabe an unsere Bedürfnisse anzupassen.
+## Tiefeneintauchen
 
-Ein weiterer wichtiger Aspekt ist die Verwendung von Debugging-Ausgaben in Kombination mit Tests. Sie können uns helfen, den Code zu verstehen und zu überprüfen, ob er wie erwartet funktioniert.
+Beim Drucken von Debug-Ausgaben ist es wichtig, zu beachten, dass zu viele Ausgaben den Code unordentlich machen und hemmen können. Daher sollte man genau überlegen, welche Informationen ausgegeben werden sollen. Es ist auch möglich, die Ausgabe von Debug-Ausgaben anhand von Umgebungsvariablen oder Kompilierungsoptionen zu steuern. Zum Beispiel:
+
+```Elixir
+if System.get_env("DEBUG") == "true" do
+  IO.puts("This is a debug message")
+end
+```
+
+Dies wird nur dann eine Debug-Ausgabe drucken, wenn die Umgebungsvariable `DEBUG` auf `true` gesetzt ist.
 
 ## Siehe auch
 
-- Offizielle Elixir Dokumentation zu IO: https://hexdocs.pm/elixir/IO.html
-- Elixir School: https://elixirschool.com/de/lessons/basics/io/
-- Elixir Forum Thread zu Debugging-Ausgaben: https://elixirforum.com/t/debugging-ausgaben-in-elixir/17040
+- Offizielle Elixir Dokumentation zu Debugging: https://elixir-lang.org/getting-started/debugging.html
+- Elixir Forum Diskussion über die Verwendung von Debug-Ausgaben: https://elixirforum.com/t/elixir-forum-diskussion
+- Elixir School Tutorial über Debug-Ausgaben: https://elixirschool.com/de/lessons/basics/io-debugger/

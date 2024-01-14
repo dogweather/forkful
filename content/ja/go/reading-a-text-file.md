@@ -1,57 +1,61 @@
 ---
 title:    "Go: テキストファイルの読み込み"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜファイルを読み込むのか
-ファイルを読み込むことは、コンピュータープログラミングにおいて非常に重要です。テキストファイルは、データを保存するための一般的な方法であり、これを読み込むことで、プログラムは外部からデータを得ることができます。
+## なぜ
 
-## 方法：ファイルを読み込む方法
-ファイルを読み込むためには、Go言語においては「os」パッケージの「Open」メソッドを使用します。これにより、ファイルをオープンし、その内容を「bufio」パッケージの「Scanner」を使用して読み取ることができます。以下は、ファイルを読み込むサンプルコードです。
+テキストファイルを読み込むことは、プログラミングで非常に重要です。例えば、CSVファイルを読み込んでデータを処理するなど、さまざまな用途でテキストファイルが使用されます。この記事では、Go言語で簡単にテキストファイルを読み込む方法を紹介します。
+
+## 方法
+
+まずは`os`パッケージをimportし、`Open()`関数を使って対象のテキストファイルを開きます。次に、`bufio`パッケージを使ってバッファリングし、`Scanner`を使ってテキストファイルを1行ずつ読み込みます。`Scan()`を使用して読み込んだデータを文字列として取得し、`Split()`を使ってスペースごとに分割します。最後に、必要な処理を行うことができます。以下にサンプルコードを示します。
 
 ```Go
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
+
 func main() {
-    // ファイルをオープン
     file, err := os.Open("sample.txt")
     if err != nil {
-        log.Fatal(err)
+        fmt.Println(err)
+        return
     }
     defer file.Close()
 
-    // Scannerを使用してファイルを読み取る
     scanner := bufio.NewScanner(file)
-    // 1行ずつ読み込む
     for scanner.Scan() {
-        fmt.Println(scanner.Text())
+        line := scanner.Text() // 1行ずつ読み込み
+        words := strings.Split(line, " ") // スペースごとに分割
+        // 必要な処理を行う
+        fmt.Println(words)
     }
-    // エラー処理
+
     if err := scanner.Err(); err != nil {
-        log.Fatal(err)
+        fmt.Println(err)
+        return
     }
 }
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+以上のコードを実行すると、テキストファイルの内容がスペースごとに分割され、出力されることがわかります。
 
-```
-Hello, world!
-This is a sample text file.
-```
+## 深堀り
 
-このように、ファイルを読み込むことで、テキストファイルに含まれるデータをプログラム内で使用することができます。
+テキストファイルを読み込む際には、ファイルのエンコーディングにも注意が必要です。`Scanner`はデフォルトでUTF-8のエンコーディングを使用するため、別のエンコーディングを使用しているファイルを読み込む場合は、`bufio.NewReader()`を使って`Reader`を作成し、`SetEncoding()`を使って適切なエンコーディングを指定する必要があります。
 
-## 深堀り：テキストファイルの読み込みについて
-テキストファイルを読み込む際には、ファイルの形式に注意する必要があります。例えば、UTF-8でエンコードされたファイルを読み込む場合、適切な文字コードを指定する必要があります。また、ファイルの終端を判別するために、改行コードを使用する方法もあります。
+また、テキストファイルの最後に改行があるかどうかも確認する必要があります。`bufio`パッケージの`ScanLines()`を使うことで、改行を無視することができます。
 
-さらに、大きなファイルを読み込む際には、メモリ管理に注意する必要があります。大量のデータを一度に読み込むと、メモリ不足によってプログラムがクラッシュする可能性があります。そのため、データ量が多い場合は、ファイルを分割して読み込むなどの工夫が必要になります。
+## 参考リンク
 
-# 参考リンク
-- [Go言語でファイルを読み込む方法](https://qiita.com/tenntenn/items/1c7bb0ed95701b0ae6d5)
-- [Go言語標準パッケージドキュメント](https://golang.org/pkg/)
-- [テキストファイルの改行コードについて](https://wa3.i-3-i.info/word1187.html)
-
-# これらも参考にしたい
-- [Go言語におけるテキストファイルの扱い方](https://medium.com/@matryer/golang-advent-calendar-day-seventeen-how-to-open-a-file-abae55987bc2)
-- [テキストファイルを使うのに便利なGo言語のパッケージ](https://blog.golang.org/strings)
+- [Go Documentation: os package](https://golang.org/pkg/os/)
+- [Go Documentation: bufio package](https://golang.org/pkg/bufio/)
+- [Go Documentation: strings package](https://golang.org/pkg/strings/)

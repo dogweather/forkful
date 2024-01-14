@@ -1,36 +1,36 @@
 ---
-title:    "Gleam: Utilizzando le espressioni regolari"
+title:    "Gleam: Utilizzo delle espressioni regolari"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-#Perché
-Le espressioni regolari (o regex) sono uno strumento fondamentale per i programmatori per effettuare ricerche e manipolazioni di testo avanzate. Sono utili in molte situazioni, come il parsing di dati, la validazione di input utente e la sostituzione di testo in un documento.
+## Perché
 
-#Come Usarle
-Per utilizzare le espressioni regolari in Gleam, è necessario importare il modulo `gleam/regex` e utilizzare la funzione `regex.match` per cercare una corrispondenza all'interno di una stringa. Ecco un esempio di come cercare un numero di telefono in un testo utilizzando una regex:
+Se sei un programmatore o uno sviluppatore web, molto probabilmente hai sentito parlare di regular expressions o espressioni regolari. Queste sono sequenze di caratteri che ti permettono di cercare e manipolare testi in modo efficiente. Ma perché dovresti usarle? In breve, le regular expressions sono uno strumento potente per trovare e sostituire testo in una stringa e possono aiutarti a risparmiare tempo e sforzi nei tuoi progetti di programmazione.
+
+## Come usare le regular expressions in Gleam
+
+Se vuoi imparare come utilizzare le regular expressions in Gleam, sei nel posto giusto! Cominciamo con un esempio semplice: vogliamo trovare tutte le parole che iniziano con la lettera "c" in una stringa. Per farlo, dobbiamo utilizzare la funzione `Regex.match()` e fornirla con la regola di ricerca e la stringa su cui applicarla. Vediamo un esempio pratico:
 
 ```Gleam
 import gleam/regex
 
-let testo = "Il mio numero di telefono è 555-123-4567."
-let regex = regex.regex("\\d{3}-\\d{3}-\\d{4}")
-let risultato = regex.match(testo)
-
-debug(risultato)  // Output: Some("\\d{3}-\\d{3}-\\d{4}")
+let regex = Regex.match("c[a-z]*", "Gusto italiano per il coding")
+Match.regex(regex) == Ok(["coding"])
 ```
 
-Come si può notare, la funzione `regex.regex` accetta una stringa contenente la regex desiderata. Utilizzando `\\d` si indica una cifra e `{n}` indica quante volte deve essere ripetuta quella parte della regex. Nel nostro esempio, `{3}` viene usato per indicare che si vogliono 3 cifre consecutive. Per maggiori informazioni sulle regex, si consiglia di consultare la sezione di "Deep Dive".
+In questo esempio, abbiamo specificato la regola "c[a-z]*", che indica che la parola deve iniziare con "c" seguito da qualsiasi numero di lettere minuscole. Il risultato è una lista con la parola che ha trovato corrispondenza, nel nostro caso "coding".
 
-#Deep Dive
-Le espressioni regolari sono composte da una serie di simboli e caratteri che aiutano a creare pattern di testo da cercare. Alcuni esempi di simboli comunemente usati sono `*` per indicare qualsiasi carattere, `+` per indicare uno o più ripetizioni di un carattere e `[]` per indicare un set di caratteri da cercare.
+## Approfondimento sulle regular expressions
 
-Inoltre, è possibile utilizzare gli operatori `|` per indicare alternative all'interno della regex e `()` per raggruppare parti della regex. Ad esempio, la regex `\\d{3}-?\\d{3}-\\d{4}` corrisponderà sia a numeri di telefono con o senza il trattino dopo i primi 3 numeri.
+Ora che hai visto un esempio pratico di come utilizzare le regular expressions in Gleam, puoi approfondire il tuo studio su questo argomento. Ci sono molte funzioni disponibili nella libreria `Regex` di Gleam, come ad esempio `split()`, `replace()` e `find()`, che puoi utilizzare per effettuare ricerche ancora più complesse. Inoltre, puoi creare regole personalizzate utilizzando espressioni regolari avanzate e caratteri speciali.
 
-Utilizzare le espressioni regolari può richiedere un po' di pratica e sperimentazione per ottenere il pattern desiderato, ma una volta padroneggiate sono uno strumento molto potente per manipolare testo.
+Le regular expressions possono sembrare un po' complicate all'inizio, ma una volta che hai compreso i concetti base, potrai sfruttarne appieno il potenziale e semplificare notevolmente il tuo lavoro di programmazione.
 
-#Vedi Anche
-- Documentazione ufficiale Gleam sul modulo `gleam/regex`: https://gleam.run/modules/regex
-- Guida completa alle espressioni regolari: https://www.regular-expressions.info/
-- Tool online per testare ed esplorare le regex: https://regex101.com/
+## Vedi anche
+
+* Documentazione della libreria Regex di Gleam: https://gleam.run/modules/regex
+* Tutorial sulle regular expressions in Gleam: https://gleam.run/tutorials/regex
+* Cheatsheet delle regular expressions: https://www.rexegg.com/regex-quickstart.html

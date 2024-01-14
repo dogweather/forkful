@@ -1,55 +1,40 @@
 ---
-title:    "C#: Jonojen yhdistäminen"
+title:    "C#: Merkkijonojen yhdistäminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Yhteenveto merkkijonojen yhdistämisen tärkeydestä 
+Merkkijonojen yhdistäminen on oleellinen osa ohjelmoinnin perusteita. Kun ohjelma toimii, se olisi kyettävä tulostamaan tietoa käyttäjälle selkeässä muodossa. Tätä varten sinun täytyy pystyä yhdistämään erilaisia merkkijonoja ja muuttujia saadaksesi haluamasi lopputuloksen. Näin voit luoda selkeämmän ja helpommin luettavan koodin.
 
-Ohjelmoinnissa on useita tilanteita, joissa haluamme yhdistää merkkijonoja yhdeksi kokonaisuudeksi. Tätä kutsutaan merkkijonojen konkatenoimiseksi ja se on tarpeellinen työkalu monissa sovelluksissa. Joten miksi meidän pitäisi käyttää tätä toimintoa? 
-
-Merkkijonokonkatenaatiolla pystymme luomaan dynaamisia tekstipohjaisia sovelluksia, kuten lomakkeita, käyttäjäystävällisiä käyttöliittymäelementtejä ja paljon muuta. Kun yhdistämme erillisiä merkkijonoja, voimme luoda räätälöityjä tulosteita käyttäen muuttujia ja ehtolauseita. Se myös auttaa tekstin muotoilun hallinnassa, sillä haluamme usein lisätä välejä tai muita erikoismerkkejä merkkijonoihin. Nämä ovat vain muutamia syitä, miksi merkkijonokonkatenaatio on tärkeää ohjelmoinnissa.
-
-## Miten se tehdään: 
+## Miten tehdä: Esimerkkejä koodista ja tulosteista "```C#...```" koodinmuotoimuksessa
+Merkkijonojen yhdistäminen C#:ssa tapahtuu käyttämällä "+" -merkkiä ja kahden merkkijonon väliin asetettuja muuttujia. Esimerkiksi jos haluat tulostaa tervehdys viestin jonka käyttäjä voi määrittää, voit käyttää seuraavaa koodia:
 
 ```C#
-// Yhdistetään kolme merkkijonoa
-string esimerkkiMerkkijono1 = "Tervetuloa ";
-string esimerkkiMerkkijono2 = "ohjelmointiblogiin! ";
-string esimerkkiMerkkijono3 = "Täällä opit kaiken tarvittavan C# -kielestä.";
-
-// Käytetään konkatenaatiota yhdistämään merkkijonot yhdeksi
-string tulos = esimerkkiMerkkijono1 + esimerkkiMerkkijono2 + esimerkkiMerkkijono3;
-
-// Tulostetaan tulos tekstinä
-Console.WriteLine(tulos);
-
-// Tuloste: Tervetuloa ohjelmointiblogiin! Täällä opit kaiken tarvittavan C# -kielestä.
+string nimi = "Milla";
+Console.WriteLine("Hei " + nimi + ", tervetuloa ohjelmaan!");
 ```
- 
-Kuten näemme esimerkissä, käytämme plus -merkkiä (+) yhdistämään merkkijonoja toisiinsa. Voimme myös käyttää muuttujia ja muita arvoja konkatenaation aikana, mikä tekee siitä erittäin monipuolisen työkalun. Muista myös lisätä välilyöntejä ja muita merkkejä tarvittaessa.
+Tuloste: Hei Milla, tervetuloa ohjelmaan!
 
-Voit myös käyttää `String.Concat()` -funktiota yhdistämään useampia merkkijonoja kerrallaan. Esimerkiksi:
+Voit myös käyttää .Format-metodia yhdistääksesi merkkijonoja C#:ssa. Se näyttää tältä:
 
 ```C#
-// Yhdistetään neljä merkkijonoa
-string osa1 = "Tämä ";
-string osa2 = "on ";
-string osa3 = "koko ";
-string osa4 = "lause.";
-
-// Käytetään Concat() -funktiota yhdistämään merkkijonot
-string tulos = String.Concat(osa1, osa2, osa3, osa4);
-
-// Tulostetaan tulos tekstinä
-Console.WriteLine(tulos);
-
-// Tuloste: Tämä on koko lause.
+string kaupunki = "Helsinki";
+int vuosi = 2021;
+Console.WriteLine(string.Format("Tervetuloa kaupunkiin {0} ja tervetuloa vuoteen {1}!", kaupunki, vuosi));
 ```
+Tuloste: Tervetuloa kaupunkiin Helsinki ja tervetuloa vuoteen 2021!
 
-## Syventyvä tarkastelu
+## Syväkatsaus: Lisätietoja merkkijonojen yhdistämisestä
+C#:ssa on tärkeää tietää, miten eri tietotyypit toimivat yhdessä. Kun yhdistät esimerkiksi muuttujan ja merkkijonon, muuttujan arvo muutetaan automaattisesti merkkijonoksi. Voit myös käyttää string.Intepret-metodia muuntaaksesi muuttujan arvon merkkijonoksi.
 
-Merkkijonokonkatenaatio on erittäin tärkeä osa ohjelmoinnin perusteita ja se löytyy useimmista ohjelmointikielistä. C# -kielellä meillä on kuitenkin muitakin vaihtoehtoja konkatenaation lisäksi. Voimme esimerkiksi käyttää `StringBuilder`-luokkaa, joka tarjoaa tehokkaamman tavan yhdistää useita merkkijonoja. Tämä on hyödyllistä, jos meidän täytyy yhdistää paljon merkkijonoja, sillä se vähentää muistin käyttöä ja nopeuttaa koodin suoritusta. 
+Toinen tärkeä osa merkkijonojen yhdistämistä on varmistaa, että muuttujien ja merkkijonojen oikea muotoilu on otettu huomioon. Tämä voi sisältää esimerkiksi välilyöntien lisäämisen tai käyttäjän syötteen validoinnin.
 
-Toinen asia, jota kann
+Oikean muotoilun lisäksi on myös tärkeää puhdistaa merkkijonoja ennen niiden yhdistämistä. Voit esimerkiksi käyttää string.Trim-metodia poistamaan ylimääräiset välilyönnit tai string.ToLower-metodia muuttamaan tekstin pieniksi kirjaimiksi.
+
+## Katso myös
+- Microsoftin ohjeet merkkijonojen yhdistämisestä C#:ssa https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=netframework-4.8
+- C# -tyyppien muunnos https://www.tutorialspoint.com/csharp/csharp_type_casting.htm
+- Merkkijonojen muotoilu C#:ssa https://www.tutorialsteacher.com/csharp/csharp-string-format

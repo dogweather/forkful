@@ -1,66 +1,36 @@
 ---
-title:    "Fish Shell: Å opprette en midlertidig fil"
+title:    "Fish Shell: Lage en midlertidig fil"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å lage en midlertidig fil kan være nyttig i mange situasjoner når man koder i Fish Shell. Det kan hjelpe med å organisere data eller midlertidig lagre informasjon som skal brukes senere.
+Når du skriver programmer, er det ofte behov for å opprette midlertidige filer for å lagre midlertidig informasjon som ikke er nødvendig å lagre permanent på datamaskinen din. Dette kan være nyttig for å behandle store datasett eller for å utføre komplekse oppgaver uten å overskride grenser for tilgjengelig minne. Å opprette midlertidige filer kan også være nyttig når du ønsker å opprettholde sikkerheten og rensligheten til filene dine ved bare å beholde de filene som er nødvendige for det endelige programmet.
 
 ## Hvordan
 
-For å lage en midlertidig fil i Fish Shell, kan du bruke `mktemp` kommandoen. Dette vil lage en unik og sikker fil i `/tmp` mappen. Du kan også angi et navn eller filtype ved å bruke `-p` og `-t` argumentene. Her er et eksempel på hvordan du kan bruke `mktemp` kommandoen:
+Fish Shell har en innebygd funksjon for å opprette midlertidige filer. Denne funksjonen er veldig enkel å bruke og krever minimal mengde kode.
 
-```
-Fish Shell:
-mktmep tempfil
-
-```
-
-Dette vil lage en fil med navnet `tempfil` i `/tmp` mappen. Du kan også spesifisere en bestemt filtype ved å bruke `-t` argumentet. For eksempel:
-
-```
-Fish Shell:
-mktemp -t ".txt" tempfil
-
+```Fish Shell
+set filename (mktemp)  # Opprett en midlertidig fil og lagre den under variabelen "filename"
+echo "Dette er en midlertidig fil" > $filename  # Skriv tekst til den midlertidige filen
+cat $filename  # Vis innholdet i den midlertidige filen
+rm $filename  # Slett den midlertidige filen
 ```
 
-Dette vil lage en tekstfil med navnet `tempfil` i `/tmp` mappen. Du kan også spesifisere en annen plassering for den midlertidige filen ved å bruke `-p` argumentet. For eksempel:
+Det første trinnet er å bruke kommandoen "mktemp" for å opprette en unik og midlertidig fil. Denne filen vil være tom når den først blir opprettet. Deretter kan du bruke variabelen til å utføre ulike operasjoner på den midlertidige filen. I dette eksempelet vises hvordan du skriver tekst til filen, viser innholdet og til slutt sletter filen ved å bruke kommandoen "rm".
 
-```
-Fish Shell:
-mktemp -p "~/Desktop" tempfil
+## Dypdykk
 
-```
+Når du oppretter en midlertidig fil, vil den bli lagret i en midlertidig katalog som er spesifisert i miljøvariabelen "TMPDIR". Du kan sjekke denne variabelen ved å kjøre kommandoen "echo $TMPDIR" i terminalen. Hvis du ikke allerede har en miljøvariabel satt for "TMPDIR", vil den bli lagret i /tmp-katalogen som standard.
 
-Dette vil lage en midlertidig fil med navnet `tempfil` på skrivebordet ditt.
-
-## Dykk dypere
-
-For mer avansert bruk av `mktemp` kommandoen, kan du bruke `-d` argumentet for å lage en midlertidig mappe i stedet for en fil. Dette er nyttig når du trenger å lagre flere filer midlertidig og organisere dem i en mappe. For eksempel:
-
-```
-Fish Shell:
-mktemp -d tempmappe
-
-```
-
-Dette vil lage en mappe med navnet `tempmappe` i `/tmp` mappen. Du kan også bruke `--tmpdir` argumentet for å spesifisere en annen plassering for den midlertidige mappen.
-
-En annen nyttig funksjon ved å bruke `mktemp` er muligheten til å lage flere midlertidige filer eller mapper på en gang. Du kan bruke `*` som et jokertegn for å lage flere filer eller mapper med lignende navn. For eksempel:
-
-```
-Fish Shell:
-mktemp tempfil*
-
-```
-
-Dette vil lage to midlertidige filer med navnene `tempfil1` og `tempfil2` i `/tmp` mappen.
+En annen god praksis ved å opprette midlertidige filer er å legge til et kort identifikasjonsnummer i filnavnet. Dette sikrer at filen er enestående og unngår eventuelle konflikter hvis du oppretter flere midlertidige filer i samme program.
 
 ## Se også
 
-- [Fish Shell dokumentasjon for mktemp kommandoen](https://fishshell.com/docs/current/commands.html#mktemp)
-- [Linux Dokumentasjon Project om temporary files](https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/tmp.html)
-- [Eksempelkoder og bruk av mktemp kommandoen i Fish Shell](https://github.com/jorgebarron/FishShell-TemporaryFiles)
+- [The mktemp command in Fish Shell](https://fishshell.com/docs/current/cmds/mktemp.html)
+- [How to create a temporary file in Bash](https://linuxhint.com/create_temporary_file_bash/)
+- [Creating and removing temporary files](https://askubuntu.com/questions/634796/creating-and-removing-temporary-files)

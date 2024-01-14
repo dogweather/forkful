@@ -1,51 +1,47 @@
 ---
 title:    "Elm recipe: Getting the current date"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As programmers, we are often faced with the task of displaying the current date in our applications. This could be for a variety of reasons such as displaying the date on a website, generating a timestamp for a user action, or simply for logging purposes. Whatever the reason may be, it is a fundamental task that we need to know how to accomplish. In this blog post, we will explore how to get the current date in Elm and discuss why it is important.
+Have you ever needed to display the current date in your Elm program? Whether it's for a simple reminder or a more complex feature, getting the current date is an essential task for many programs.
 
 ## How To
+Getting the current date in Elm is actually quite straightforward. We'll be using the `Time` library, which provides functions for working with date and time. Let's take a look at a simple example:
 
-To get the current date in Elm, we can use the `Date.now` function from the `elm/time` package. The `Date.now` function returns a `Time` value representing the current time in milliseconds. We can then use this value to format the date in any way that we need.
+```Elm
+import Time exposing (today, Date)
 
-Let's take a look at an example of how we can get the current date in Elm and format it as a string:
-
-```
-import Html exposing (text)
-import Time exposing (..)
-
-currentTime : Time
-currentTime = Date.now 
-
--- Format the date as a string
-formattedDate : Time -> String
-formattedDate time =
-    time
-        |> utcToZoned Time.zone
-        |> Time.format "%b %d, %Y"
-
-main =
-    text (formattedDate currentTime)
+-- get today's date
+currentDate : Date
+currentDate = today
 ```
 
-This code uses the `utcToZoned` function to convert the `Time` value into our local timezone and then uses the `Time.format` function to format it as a string in the format we desire. In this case, we have used the "%b %d, %Y" format, which will give us a result like "Sep 10, 2021". 
+In this example, we import the `today` and `Date` functions from the `Time` library. We can then use the `today` function to get the current date, which is a `Date` type. We can then store it in a variable called `currentDate` for future use.
 
-We can also use other formatting options to get the date in different formats. For example, we can use "%Y-%m-%d" to get the date in the format "2021-09-10". You can explore the different formatting options in the `Time` module documentation.
+But what if we want to display the current date in a specific format, such as "Monday, October 04, 2021"? We can use the `format` function from the `Date` module to achieve this. Here's an example:
+
+```Elm
+import Time exposing (today, Date)
+import Date exposing (format)
+
+-- get today's date and format it
+currentDate : String
+currentDate = today
+    |> format "%A, %B %d, %Y"
+```
+
+In this example, we use the `format` function to specify the format we want our date to be in. We use `%A` to get the full weekday name, `%B` for the full month name, `%d` for the day of the month, and `%Y` for the full year. The result will be stored in the `currentDate` variable.
 
 ## Deep Dive
+Behind the scenes, the `Date` type in Elm is actually a representation of a date in the ISO-8601 format (e.g. "2021-10-04"). This makes working with dates in Elm much easier, as there are no concerns about different date formats or time zones.
 
-Getting the current date may seem like a simple task in Elm, but there are some important things to keep in mind. First, the `Date.now` function returns a `Time` value, which is a type alias for an integer representing the number of milliseconds since the Unix epoch (January 1, 1970). This means that the `Date.now` function is not specific to Elm and is a standard JavaScript function.
-
-Another thing to keep in mind is that the `Date.now` function will return the current time in UTC. This means that if you want to display the date in your local timezone, you will need to convert it using the `utcToZoned` function as shown in the previous example.
-
-Lastly, it is worth noting that the `Date.now` function is not affected by changes in the system clock. This means that if a user changes the date or time on their device, it will not affect the result of the `Date.now` function. 
+The `Time` library also provides functions for comparing dates, adding or subtracting time, and converting between time zones. This can be incredibly useful for more complex programs that need to handle different time zones or perform calculations with dates.
 
 ## See Also
-- Elm documentation for the `elm/time` package: https://package.elm-lang.org/packages/elm/time/latest
-- MDN Web Docs for the `Date.now` function in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now
-- Moment.js library for formatting dates in JavaScript: https://momentjs.com/
+- [Elm Date module documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Elm Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Elm programming language website](https://elm-lang.org/)

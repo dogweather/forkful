@@ -1,42 +1,50 @@
 ---
 title:    "Java: Lesen von Befehlszeilenargumenten"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In vielen Java-Programmen ist es wichtig, Eingabe von Benutzern zu verarbeiten, z.B. beim Ausführen von Funktionen oder beim Übergeben von Werten an eine Anwendung. Eine praktische Methode, um dies zu erreichen, ist die Verwendung von Befehlszeilenargumenten. Diese ermöglichen es einem Benutzer, Werte oder Optionen beim Ausführen eines Programms anzugeben. Daher ist es wichtig zu wissen, wie man Befehlszeilenargumente in Java liest, um eine reibungslose Interaktion mit dem Benutzer zu gewährleisten.
+Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit in der Java-Programmierung. Es ermöglicht es Entwicklern, ihre Programme mit unterschiedlichen Parametern auszuführen und so flexibler zu gestalten.
 
-## Anleitung
+## Wie man es macht
 
-Um Befehlszeilenargumente in Java zu lesen, müssen wir zuerst die **args**-Parameter in der main-Methode verwenden. Diese Parameter enthalten ein Array von Strings, das die eingegebenen Argumente des Benutzers enthält. Wir können dann auf die einzelnen Argumente zugreifen, indem wir eine Schleife durch das Array erstellen oder auf bestimmte Indizes zugreifen, um spezifische Argumente zu erhalten.
+Das Lesen von Befehlszeilenargumenten ist einfach und kann mit nur wenigen Zeilen Java-Code erreicht werden. Zuerst müssen Sie die `args`-Variable in Ihrer `main`-Methode deklarieren und dann können Sie darauf zugreifen, um die übergebenen Argumente zu erhalten. Ein Beispiel sieht folgendermaßen aus:
 
-Hier ist ein Beispielcode, der die Eingabe eines Benutzers bei der Ausführung eines Programms erwartet und das erste Argument zurückgibt:
-
-```
+```Java
 public static void main(String[] args) {
-    if (args.length > 0) {
-        System.out.println("Das erste Argument lautet: " + args[0]);
+    System.out.println("Das erste Argument ist: " + args[0]);
+    System.out.println("Das zweite Argument ist: " + args[1]);
+}
+```
+
+Wenn Sie dieses Programm mit den Befehlszeilenargumenten "Hallo" und "Welt" ausführen, sollte die Ausgabe folgendermaßen aussehen:
+
+```Java
+Das erste Argument ist: Hallo
+Das zweite Argument ist: Welt
+```
+
+Sie können auch überprüfen, wie viele Argumente übergeben wurden, indem Sie auf die Länge der `args`-Variable zugreifen. Hier ist ein weiteres Beispiel:
+
+```Java
+public static void main(String[] args) {
+    if (args.length < 3) {
+        System.out.println("Es wurden nicht genügend Argumente übergeben.");
     } else {
-        System.out.println("Es wurden keine Argumente eingegeben.");
+        System.out.println("Das dritte Argument ist: " + args[2]);
     }
 }
 ```
 
-Wenn der Benutzer beispielsweise "java MeinProgramm Hallo Welt" in der Befehlszeile eingibt, wird die Ausgabe "Das erste Argument lautet: Hallo" sein.
+## Tiefer ins Detail gehen
 
-Beachten Sie, dass Befehlszeilenargumente immer als Strings übergeben werden, unabhängig davon, ob der Benutzer eine Zahl oder einen anderen Datentyp eingegeben hat. Daher müssen wir möglicherweise die Strings in den gewünschten Datentyp konvertieren, bevor wir sie in unserem Code verwenden.
-
-## Vertiefung
-
-Es ist auch möglich, Flags oder Optionen als Befehlszeilenargumente zu verwenden. Diese werden üblicherweise mit dem Präfix "-" oder "--" angegeben und können anschließend in unserem Code abgefragt werden. Zum Beispiel können wir die Option "-h" als Hilfe-Flag verwenden, um dem Benutzer Informationen über die verschiedenen möglichen Argumente zu geben.
-
-Ein weiteres nützliches Feature ist die Verwendung von javadoc-Tags in unserem Code, um die wichtigsten Befehlszeilenargumente zu dokumentieren. Auf diese Weise kann der Benutzer einfach die Parameterliste in der Dokumentation des Programms überprüfen, um zu sehen, welche Argumente unterstützt werden und was sie bewirken.
+Obwohl das Lesen von Befehlszeilenargumenten einfach ist, gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen die Argumente korrekt in der richtigen Reihenfolge übergeben werden, um darauf zugreifen zu können. Auch ist es wichtig, die Länge der `args`-Variable zu überprüfen, um sicherzustellen, dass ausreichend Argumente übergeben wurden. Es gibt auch Möglichkeit, benannte Argumente zu verwenden, aber das ist etwas fortgeschrittener.
 
 ## Siehe auch
 
-- [Java-Befehlszeilenargumente](https://www.javatpoint.com/command-line-arguments-in-java)
-- [Using Command-Line Arguments in Java](https://www.baeldung.com/java-command-line-arguments)
-- [Creating Java Documentation with Javadoc](https://www.oracle.com/java/technologies/javase/javadoc-tool.html)
+- Java Tutorials: Lesen von Befehlszeilenargumenten (https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- Stack Overflow: Wie man Befehlszeilenargumente in Java liest (https://stackoverflow.com/questions/890966/how-to-read-command-line-arguments)

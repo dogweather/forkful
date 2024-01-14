@@ -1,63 +1,45 @@
 ---
-title:    "Bash: Å finne lengden av en streng"
+title:    "Bash: Å finne lengden til en streng"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å finne lengden på en streng kan være en nyttig ferdighet å ha i Bash-programmering. Det lar deg enkelt håndtere og analysere tekstdata, noe som kan være nyttig for å løse ulike problemer og automatisere oppgaver.
+Å finne lengden på en streng er en vanlig oppgave når man jobber med Bash-programmering. Det kan være nyttig å vite lengden på en streng for å kunne utføre ulike operasjoner på den, som for eksempel sjekke om den er tom eller begrense antall tegn som skal vises. I denne blogginnlegget skal vi se på hvordan man kan finne lengden på en streng i Bash, med praktiske eksempler.
 
 ## Hvordan
 
-For å finne lengden på en streng i Bash, kan du bruke kommandoen `expr length` etterfulgt av en streng i anførselstegn. Her er et eksempel på hvordan du kan finne lengden på strengen "Hei verden!":
+Det finnes flere måter å finne lengden på en streng i Bash på. En av de enkleste måtene er å bruke parameterutvidelsen `${#string}`. Her er et eksempel:
 
 ```Bash
-len=`expr length "Hei verden!"`
-echo "Lengden på strengen er $len"
+string="Hei alle sammen!"
+echo "Lengden på strengen er: ${#string}"
 ```
 
-Dette vil resultere i følgende output:
+Dette vil gi følgende output: 
+
+```
+Lengden på strengen er: 17
+```
+
+En annen metode er å bruke kommandoen `expr length string`:
 
 ```Bash
-Lengden på strengen er 12
+string="Hei alle sammen!"
+echo "Lengden på strengen er: $(expr length "$string")"
 ```
 
-Du kan også bruke for-løkker og `printf`-kommandoen til å finne lengden på en hel liste med strenger. Her er et eksempel:
+Dette vil gi samme output som det første eksempelet.
 
-```Bash
-strenger=("Hei" "verden" "!" "Dette" "er" "en" "liste" "av" "strenger")
+## Dypdykk
 
-for str in ${strenger[@]}
-do
-    len=`printf "%s" "$str" | wc -m`
-    echo "Lengden på $str er $len"
-done
-```
+Det er viktig å merke seg at både `expr` og parameterutvidelsen `${#string}` kun fungerer på en enkelt streng. Hvis strengen inneholder mellomrom, vil disse metodene kun telle tegnene før det første mellomrommet. Hvis du trenger å finne lengden på en streng som inneholder mellomrom, kan du bruke `echo -n string | wc -c`. `-n` flagget i `echo` kommandoen gjør at det ikke blir lagt til et nytt linjeskift etter strengen, mens `wc -c` teller antall tegn.
 
-Output for dette blir:
+## Se også
 
-```Bash
-Lengden på Hei er 3
-Lengden på verden er 6
-Lengden på ! er 1
-Lengden på Dette er 5
-Lengden på er er 2
-Lengden på en er 2
-Lengden på liste er 5
-Lengden på av er 2
-Lengden på strenger er 8
-```
-
-## Deep Dive
-
-For å virkelig forstå hvordan `expr length` fungerer, må vi se på hvordan Bash behandler strenger og tekstdata. Når du gir en streng til `expr length`, vil kommandoen skille alle tegnene i strengen og telle antall tegn.
-
-Men hva med mellomrom? Du lurer kanskje på hvorfor "Hei verden" ble talt som 12 tegn når det egentlig er 11 tegn. Dette skyldes at Bash også teller mellomrom som et tegn, så selv om du ikke ser mellomrommet, blir det likevel talt.
-
-## Se Også
-
-- [Linuxize: How to Get the Length of a String in Bash](https://linuxize.com/post/how-to-get-the-length-of-a-string-in-bash/)
-- [The Linux Command Line: Expressions](http://linuxcommand.org/lc3_lts0070.php)
-- [Bash Hackers Wiki: Internal Variable: $IFS](https://wiki.bash-hackers.org/syntax/words#word_splitting)
+- [Bash dokumentasjon - parameterutvidelse](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Bash dokumentasjon - expr kommando](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html#Shell-Arithmetic)
+- [wc kommando dokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html)

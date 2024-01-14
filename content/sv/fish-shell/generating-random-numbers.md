@@ -1,38 +1,61 @@
 ---
-title:    "Fish Shell: Generering av slumpmässiga tal"
+title:    "Fish Shell: Generera slumpmässiga nummer"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att generera slumpmässiga nummer kan vara användbart för en rad olika ändamål. Det kan användas för att skapa slumpmässiga lösenord, testa program, eller bara för roligt och underhållning.
+
+Att kunna generera slumpmässiga nummer är en användbar färdighet i programmering. Det kan användas för att skapa unika ID-nummer, slumpmässiga lösenord eller för att simulera slumpmässiga händelser i spel eller tester. Det finns flera olika sätt att generera slumpmässiga nummer och i denna bloggpost kommer vi att fokusera på hur man gör det med Fish Shell.
 
 ## Hur man gör det
-Att generera slumpmässiga nummer i Fish Shell är enkelt. Du behöver bara använda kommandot "echo" och "shuf" för att skapa en lista med slumpmässiga nummer. Här är ett exempel på kod:
+
+Att generera slumpmässiga nummer i Fish Shell är enkelt. Först måste vi definiera en variabel som kommer att hålla det slumpmässiga numret. Sedan kan vi använda inbyggda funktionen `rand` för att generera ett slumpmässigt nummer mellan 0 och 1. Om vi vill ha ett heltal istället för ett decimaltal, kan vi använda `ceil` för att avrunda uppåt.
 
 ```Fish Shell
-echo (seq 1 10 | shuf) 
+set random_number (rand)
+echo $random_number
+# Output: 0.346784
+set random_integer (ceil $random_number)
+echo $random_integer
+# Output: 1
 ```
 
-Detta kommando kommer att skapa en lista med slumpmässiga nummer från 1 till 10. Du kan ändra antalet nummer och gränserna för att passa dina behov.
-
-Här är ett exempel på hur utmatningen från koden kan se ut:
+Vi kan också ange ett intervall för det slumpmässiga numret med hjälp av `math` funktionen. Om vi vill generera ett nummer mellan 1 och 10, kan vi göra det så här:
 
 ```Fish Shell
-1 9 8 5 4 10 7 3 2 6 
+set random_number (math "(rand * (10 - 1)) + 1")
+echo $random_number
+# Output: 4.375
+set random_integer (ceil $random_number)
+echo $random_integer
+# Output: 5
 ```
+
+Det finns flera andra sätt att generera slumpmässiga nummer och det beror på vad som behövs för din specifika användning. Med hjälp av dessa grundläggande exempel, kan du anpassa och experimentera för att hitta det bästa sättet för ditt projekt.
 
 ## Djupdykning
-Den grundläggande metoden som används för att generera slumpmässiga nummer i Fish Shell är "shuf". Detta kommando har flera olika flaggor och alternativ som kan anges för att anpassa outputen. Till exempel kan du använda flaggan "-n" för att bestämma hur många slumpmässiga nummer som ska genereras, eller flaggan "-r" för att använda ett befintligt intervall eller lista.
 
-Det finns också andra funktioner som kan användas för att skapa slumpmässiga nummer, såsom "jot" och "awk". Dessa kan ge än mer avancerade möjligheter och resultaten kan skräddarsys för specifika ändamål.
+Om du vill ha lite mer kontroll över dina slumpmässiga nummer, kan du använda `math` funktionen och inbyggda variabler som `$status` och `$pid` för att skapa ett unikt nummer varje gång. Här är ett exempel på hur du kan göra det:
+
+```Fish Shell
+set seed (math "(status + pid)")
+set random_number (math "(rand * 10) * $seed")
+echo $random_number
+# Output: 6.642
+set random_integer (ceil $random_number)
+echo $random_integer
+# Output: 7
+```
+
+Som du kan se är det möjligt att skapa mer komplexa slumpmässiga nummer med hjälp av olika variabler och funktioner som finns tillgängliga i Fish Shell. Det finns också flera andra metoder som du kan använda för att generera slumpmässiga nummer som du kan utforska och lära dig mer om.
 
 ## Se även
-Här är några andra användbara länkar för att lära dig mer om hur du genererar slumpmässiga nummer i Fish Shell:
 
-- [Fish Shell dokumentation om shuf](https://fishshell.com/docs/current/cmds/shuf.html)
-- [Slumpmässiga nummer i Fish Shell - en snabbguide](https://medium.com/@devguy96/generating-random-numbers-in-fish-shell-cfc059c05d62)
-- [Guide för att skapa lösenord med Fish Shell](https://dev.to/danboterhoven/creating-passwords-in-fish-shell-linux-k36)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
 
-Tack för att du läste! Ha så kul med att skapa slumpmässiga nummer i Fish Shell! 🎲
+- [How to Generate Random Numbers in Bash](https://linuxhint.com/generate_random_number_bash/)
+
+- [Generating Random Numbers in Python](https://realpython.com/python-random/)

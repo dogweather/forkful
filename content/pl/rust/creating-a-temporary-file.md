@@ -1,42 +1,55 @@
 ---
 title:    "Rust: Tworzenie pliku tymczasowego"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Stworzenie tymczasowego pliku może być niezbędne w wielu programach. Na przykład, gdy musimy tymczasowo przechowywać dane, które będą wykorzystane później w kodzie lub gdy musimy zapisać dane tymczasowo, aby nie przeciążać pamięci.
+
+Wielu programistów często musi tworzyć tymczasowe pliki w swoich projektach. Jest to często stosowane w celu zapisania danych, tymczasowego przechowywania informacji lub tworzenia kopii zapasowych. W tym blogu przeprowadzimy Cię przez proces tworzenia tymczasowych plików w języku Rust.
 
 ## Jak to zrobić
-Tworzenie tymczasowych plików w języku Rust jest bardzo proste. Możemy użyć modułu "tempfile", który jest już zaimplementowany w standardowej bibliotece języka. W poniższym kodzie pokazane są dwa przykłady tworzenia tymczasowych plików.
+
+Tworzenie tymczasowych plików w języku Rust jest proste i wygodne. Wystarczy użyć funkcji `tempfile` z biblioteki standardowej i przekazać jej nazwę pliku. Poniżej znajduje się kod przykładowy, który tworzy tymczasowy plik o nazwie "plik.txt" i zapisuje w nim ciąg znaków "Witaj, świecie!".
 
 ```Rust
 use std::fs::File;
-use tempfile::NamedTempFile;
+use std::io::prelude::*;
+use std::path::Path;
+use std::io::Error;
 
-// Tworzenie pustego tymczasowego pliku
-let temp_file = NamedTempFile::new().unwrap();
-// Wypisanie ścieżki do utworzonego pliku
-println!("{}", temp_file.path().display()); 
+fn main() {
+  // Tworzenie tymczasowego pliku
+  let mut temp_file = tempfile::tempfile().unwrap();
 
-// Tworzenie tymczasowego pliku z danymi
-let mut data = Vec::new();
-data.push(b"Hello, world!");
-let temp_file2 = NamedTempFile::new().unwrap();
-File::create(temp_file2.path()).unwrap().write_all(&data).unwrap();
-// Wypisanie zawartości utworzonego pliku
-let mut output = Vec::new();
-File::open(temp_file2.path()).unwrap().read_to_end(&mut output).unwrap();
-println!("{}", String::from_utf8(output).unwrap());
+  // Zapisywanie tekstu do pliku
+  let text = "Witaj, świecie!";
+  temp_file.write_all(text.as_bytes()).unwrap();
+
+  // Przeczytanie tekstu z pliku
+  let mut buffer = String::new();
+  temp_file.read_to_string(&mut buffer).unwrap();
+
+  println!("{}", buffer); // Output: Witaj, świecie!
+
+  // Usuwanie tymczasowego pliku
+  let path = Path::new("plik.txt");
+  match std::fs::remove_file(path) {
+    Ok(_) => println!("Plik usunięty"),
+    Err(e) => println!("Błąd: {}", e),
+  }
+}
 ```
 
-Powyższy kod najpierw importuje moduł "fs::File", który jest odpowiedzialny za operacje na plikach oraz moduł "tempfile::NamedTempFile", dzięki któremu możemy tworzyć tymczasowe pliki. Pierwszy przykład tworzy pusty tymczasowy plik i wypisuje jego ścieżkę, a drugi tworzy tymczasowy plik z danymi i wypisuje jego zawartość. W obu przypadkach możemy zauważyć, że korzystając z modułu "NamedTempFile", nie musimy martwić się o usuwanie tymczasowego pliku - jest on automatycznie usuwany po zakończeniu działania programu.
-
 ## Deep Dive
-Moduł "tempfile" oferuje nam wiele różnych metod do tworzenia i operowania na tymczasowych plikach. Na przykład, możemy ustawić prefix i suffix dla nazwy tymczasowego pliku lub określić, w jakim katalogu ma być utworzony. Możemy również w łatwy sposób skonfigurować tymczasowy plik, aby miał określony rozmiar lub aby był buforowany w pamięci. Istnieją również inne moduły, takie jak "memmap", który oferuje bardziej zaawansowane operacje na tymczasowych plikach.
 
-## Zobacz także
-- [Dokumentacja modułu "tempfile" (język angielski)](https://doc.rust-lang.org/tempfile/tempfile/index.html)
-- [Dokumentacja modułu "memmap" (język angielski)](https://docs.rs/memmap/0.7.0/memmap/)
-- [Artykuł "Creating Temporary Files in Rust" (język angielski)](https://medium.com/@yfinkelstein/creating-temporary-files-in-rust-360f9f65636#:~:text=Creating%20temporary%20files%20in%20Rust%20is%20very%20simple.&text=Let's%20take%20a%20brief%20tour,the%20standard%20library's%20module%20tempfile%20)
+Funkcja `tempfile` zwraca strukturę `NamedTempFile`, która reprezentuje tymczasowy plik w systemie plików. Plik ten jest automatycznie usuwany, gdy jest zamknięty lub gdy struktura jest zwalniana (jest to zaimplementowane w metodzie `Drop`).
+
+Warto również zauważyć, że funkcja `tempfile` jest bezpieczna do wielowątkowego użytku, więc nie musisz martwić się o ryzyko wyścigów między wątkami.
+
+## Zobacz również
+
+- [Dokumentacja funkcji tempfile](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
+- [Przykładowe projekty wykorzystujące bibliotekę tempfile](https://crates.io/search?q=tempfile)

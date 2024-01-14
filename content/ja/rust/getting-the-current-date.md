@@ -1,57 +1,76 @@
 ---
-title:    "Rust: 「現在の日付の取得」"
+title:    "Rust: 現在の日付を取得する"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-Rustプログラミングを始めたばかりの人にとって、日付を取得することは重要なスキルです。そして、その他のプログラミング言語と比べて、Rustは特に日付を取得するのに便利です。今日はRustで現在の日付を取得する方法を詳しくご説明します。
+## なぜ
+
+現在の日付を取得することの重要性を説明するために、 この Rust プログラミングのブログ記事があります。
 
 ## 方法
-まずは、標準ライブラリの一つである`std::time`をインポートしましょう。
+
+日付を取得するには、標準ライブラリの `chrono` モジュールを使用します。まずは `Local` というタイムゾーンを指定します。
 
 ```Rust
-use std::time;
+use chrono::{Local, Datelike};
+
+let local = Local::today();
 ```
 
-次に、`time::SystemTime`を使って、現在の日付データを取得することができます。
+その後、 `Local` のメソッドを使用することで、現在の日付や特定の要素を取得することができます。
 
 ```Rust
-let now = time::SystemTime::now();
+// 現在の日付を取得
+let today = local.date();
+
+// 年を取得
+let year = local.year();
+
+// 月を取得
+let month = local.month();
+
+// 日を取得
+let day = local.day();
+
+// 曜日を取得
+let weekday = local.weekday();
 ```
 
-そして、`now`をフォーマットして、任意の形式で日付を出力することができます。
+また、指定した形式に日付をフォーマットすることもできます。
 
 ```Rust
-println!("今日の日付は{:?}", now);
-// 出力: 今日の日付はOk(2021-09-21 12:30:00)
+// "YYYY-MM-DD" 形式でフォーマット
+let formatted_date = today.format("%Y-%m-%d");
 ```
 
-また、フォーマットを変更することもできます。例えば、`strftime`を使ってフォーマットを指定することができます。
+下記がサンプルコードの出力結果になります。
 
-```Rust
-println!("今日の日付は{}", now.strftime("%Y年%m月%d日").unwrap());
-// 出力: 今日の日付は2021年09月21日
+```
+年：2021
+月：12
+日：31
+曜日：金
+フォーマットした日付：2021-12-31
 ```
 
 ## ディープダイブ
-さらに、`SystemTime`には、現在の日付と比較するメソッドもあります。例えば、`elapsed`メソッドを使うと、現在の日付からどれだけ時間が経過したかを取得することができます。
 
-```Rust
-let prev_time = time::SystemTime::now();
-// 1秒待機
-std::thread::sleep(std::time::Duration::from_secs(1));
-let elapsed = prev_time.elapsed().unwrap();
-println!("1秒経過しましたか？: {}", now > elapsed);
-// 出力: 1秒経過しましたか？: true
-```
+`chrono` モジュールは、より複雑な日付操作を行うことも可能です。例えば、日付の比較や加算、減算、フォーマット、タイムゾーンの変更などができます。
 
-`elapsed`メソッド以外にも、様々なメソッドがありますので、ぜひ参考にしてみてください。
+また、`NaiveDate` や `DateTime` といった、より詳細な日付オブジェクトを使用することもできます。詳細な情報は [公式ドキュメント](https://docs.rs/chrono/) を参照してください。
 
-## おわりに
-今日は、Rustで現在の日付を取得する方法をご紹介しました。日付の取得だけでなく、現在の日付からどれだけ時間が経過したかを計算することもできます。Rustなら、簡単に日付を取得することができるので、ぜひ試してみてください！
+## 参考文献
+
+- [Rust プログラミング言語公式サイト](https://www.rust-lang.org/ja/)
+- [chrono モジュールのドキュメント](https://docs.rs/chrono/)
+- [Rust での日付操作のためのライブラリ一覧](https://lib.rs/date)
+- [Rust の標準ライブラリのドキュメント (chrono は `time` モジュールに含まれます)](https://doc.rust-lang.org/std/time/index.html)
 
 ## 関連リンク
-- [Rust標準ライブラリの日付取得のドキュメント](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-- [Rustで日付をフォーマットする方法](https://stackoverflow.com/questions/47425190/format-timestamp-in-rust-language)
+
+- [Rust の日付操作に関する質問/回答サイト (Stack Overflow)](https://stackoverflow.com/questions/tagged/rust+datetime)
+- [Rust における時刻と時間に関する知識 (Qiita)](https://qiita.com/enechange/items/3918008d6a399d8a2751)
+- [Rust での日付操作のベストプラクティス (Medium)](https://medium.com/better-programming/a-guide-to-working-with-dates-time-in-rust-750acdfe88a9)

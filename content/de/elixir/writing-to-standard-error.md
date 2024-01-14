@@ -1,54 +1,42 @@
 ---
-title:    "Elixir: Schreiben auf die Standardfehlerausgabe"
+title:    "Elixir: Schreiben auf Standardfehler"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Warum sollte jemand sich mit dem Schreiben von Standardfehlern beschäftigen? Nun, beim Debuggen von Elixir Code ist es oft hilfreich, Fehlermeldungen direkt auf dem Bildschirm auszugeben, anstatt sie in einer Log-Datei zu suchen. Das Schreiben zu standard error kann dieses Prozess erleichtern und beschleunigen.
+Das Schreiben auf die Standardfehlerausgabe ist eine wichtige Technik in der Elixir-Programmierung. Es ermöglicht uns, Fehlermeldungen und andere wichtige Informationen während der Ausführung unseres Codes zu sehen. Dies kann uns helfen, Fehler schnell zu erkennen und zu beheben.
 
-# How To
+## Wie es geht
 
-In Elixir gibt es mehrere Methoden, um zu standard error zu schreiben. Die einfachste Möglichkeit ist die Verwendung der `IO.puts/2` Funktion, die eine Nachricht an den Fehlerstrom sendet.
-
-```Elixir
-IO.puts(:stderr, "Dies ist eine Fehlermeldung.")
-```
-
-Dies wird die Nachricht "Dies ist eine Fehlermeldung." direkt auf dem Bildschirm ausgeben. Beachte, dass der erste Parameter `:stderr` ist, um anzugeben, dass die Nachricht an den Fehlerstrom gesendet werden soll.
-
-Eine andere Möglichkeit ist die Verwendung von `IO.write/2`, um eine binäre Nachricht an den Fehlerstrom zu senden.
+Um etwas auf die Standardfehlerausgabe zu schreiben, können wir die `IO.puts/2`-Funktion verwenden und als ersten Parameter den Stream `:stderr` angeben. Zum Beispiel:
 
 ```Elixir
-IO.write(:stderr, "Dies ist eine binäre Nachricht.")
+IO.puts(:stderr, "Das ist ein Beispiel für die Standardfehlerausgabe.")
 ```
 
-Es ist auch möglich, das `:stderr`-Token zu verwenden, anstatt den Fehlerstrom explizit zu benennen.
+Dies wird die angegebene Nachricht auf die Standardfehlerausgabe schreiben, die oft als roter Text in der Konsole angezeigt wird. Wir können auch Variablen anstatt von harten Coded-Text verwenden, um mehr Kontrolle über unsere Ausgabe zu haben. Zum Beispiel:
 
 ```Elixir
-IO.puts(:stderr, "Dies ist eine andere Fehlermeldung.")
+error = "Divisionsfehler"
+IO.puts(:stderr, "Ein #{error} ist aufgetreten.")
 ```
 
-# Deep Dive
+Dies wird eine Meldung wie "Ein Divisionsfehler ist aufgetreten." auf die Standardfehlerausgabe schreiben.
 
-In Elixir gibt es verschiedene Optionen für das Schreiben zu standard error. Eine Alternative zur `IO.puts/2` Funktion ist die Verwendung der `Logger.error/3` Funktion, die benutzerdefinierte Fehlermeldungen mit zusätzlichen Metadaten ausgeben kann.
+## Tiefergehende Informationen
 
-```Elixir
-Logger.error("Ein Fehler ist aufgetreten.", %{
-  function: :my_function,
-  line: 12,
-  module: :my_module
-})
-```
+Neben der `IO.puts/2`-Funktion gibt es auch die `IO.write/2`-Funktion, die verwendet werden kann, um Rohdaten auf die Standardfehlerausgabe zu schreiben. Diese Funktion ist nützlich für die Ausgabe von Fehlerdetails oder anderen speziellen Daten, die in einem bestimmten Format dargestellt werden müssen.
 
-Dies wird eine Fehlermeldung mit der Nachricht "Ein Fehler ist aufgetreten." und den zusätzlichen Metadaten auf dem Bildschirm ausgeben.
+Es ist auch möglich, mit dem `IO.ANSI`-Modul die Farbe der Ausgabe auf der Standardfehlerausgabe zu ändern. Dies kann helfen, wichtige Informationen hervorzuheben und das Lesen von Fehlermeldungen einfacher zu machen.
 
-Man muss jedoch auch beachten, dass das Schreiben zu standard error nicht immer die beste Wahl ist. Wenn es darum geht, Fehler in Produktionsumgebungen zu beheben, ist es oft besser, eine Log-Datei zu verwenden, um alle Fehler an einem zentralen Ort zu erfassen und zu überwachen.
+## Siehe auch
 
-# Siehe auch
+Hier sind einige Links, die Ihnen helfen können, mehr über das Schreiben auf die Standardfehlerausgabe in Elixir zu erfahren:
 
-- Offizielle Elixir-Dokumentation zu `IO`
-- Artikel "Debugging in Elixir" von Elixir School
-- Blogbeitrag "Fehlerbehandlung in Elixir" von DevInsider
+- Offizielle Dokumentation für die `IO`-Module: https://hexdocs.pm/elixir/IO.html
+- Erlang-Referenz für das `:stderr`-Modul: http://erlang.org/doc/man/tty.html#out_3
+- Einleitung in ANSI-Terminalcodes: https://en.wikipedia.org/wiki/ANSI_escape_code

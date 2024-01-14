@@ -1,35 +1,42 @@
 ---
-title:    "Fish Shell: 正規表現の使用"
+title:    "Fish Shell: 正規表現の使い方"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-正規表現を使用する理由を説明するためには、テキストのパターンを検索、マッチング、および抽出することができることが重要です。これは、テキスト処理やデータのクリーニングに役立ちます。正規表現を使用することで、より速く、正確にデータを処理することができます。
+## なぜ正規表現を使うのか？
 
-## 使い方
-正規表現を使用するには、Fish Shellで簡単に実装することができます。以下のコードブロックを参考にしてください。
+正規表現は特定のパターンに一致する文字列を検索・置換するための強力なツールです。テキスト処理やデータ検索など、様々な場面で使われています。
 
-```Fish Shell
-# 正規表現パターンを定義
-set pattern "Fish Shell"
+## 正規表現を使う方法
 
-# テキスト内のパターンを検索する
-grep -o $pattern sample_text.txt
+正規表現を使うには、まずFish Shellで`grep`コマンドを使います。例えば、あるファイル内のメールアドレスを検索したい場合は、次のように入力します。
 
-# マッチングした文字列を抽出する
-echo "Fish Shell is amazing!" | grep -o $pattern
+```
+Fish Shell:
+grep --color -E '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}' test.txt
 ```
 
-上記のコードは、サンプルのテキストファイルから"Fish Shell"というパターンを検索し、マッチングした文字列を抽出します。
+上記の例では、`grep`コマンドの`-E`オプションを使って正規表現モードを有効にしています。`[a-z0-9._%+-]+`はメールアドレスのローカル部分を、`[a-z0-9.-]+\.[a-z]{2,}`はドメイン部分を表しています。
 
-## 深部の探求
-正規表現をより詳しく学ぶためには、パターンやメタキャラクター、クォンティファイアなどの基本的な概念を理解する必要があります。また、正規表現エンジンを扱う方法や、さまざまな言語での使用方法なども学ぶことができます。
+実行すると、`test.txt`ファイル内からメールアドレスのパターンに一致する行がカラー表示で出力されます。
 
-See Also (関連リンク):
+## 正規表現の深層へ
 
-- [Fish Shellドキュメント](https://fishshell.com/docs/current/)
-- [正規表現チュートリアル (英語)](https://www.regular-expressions.info/tutorial.html)
-- [正規表現の基礎 (日本語)](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
-- [正規表現の基礎解説 (日本語)](https://www.ibm.com/developerworks/jp/linux/library/l-regularexpressions/index.html)
+正規表現を使う上で重要なポイントは、パターンの記述です。例えば、`[0-9]`と書くと、1文字だけ数字にマッチしますが、`[0-9]+`と書くと連続する数字にマッチします。また、`*`や`?`などのメタ文字を使うことでパターンの組み合わせをさらに自由にカスタマイズすることができます。
+
+さらに、`|`パイプを使うことで複数のパターンのいずれかにマッチさせることもできます。正規表現を使いこなすためには、パターンとメタ文字の使い方を熟知することが重要です。
+
+## 別の参考文献
+
+- [Fish Shellの公式ドキュメント](https://www.fishshell.com/docs/current/scripting.html#regular-expressions)
+- [正規表現チートシート](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [正規表現ビルダー](https://regexr.com/)
+
+## リンク
+
+- [grepコマンドのドキュメント](https://www.gnu.org/software/grep/manual/grep.html)
+- [正規表現の基礎](https://www.w3schools.com/python/python_regex.asp)
+- [よく使われる正規表現パターンの例](https://www.geeksforgeeks.org/important-regular-expressions/)

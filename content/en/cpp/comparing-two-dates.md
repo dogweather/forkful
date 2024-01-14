@@ -1,56 +1,56 @@
 ---
 title:    "C++ recipe: Comparing two dates"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Comparing Two Dates is Useful
+##Why
+As a programmer, you may often come across situations where you need to compare two dates. It could be for sorting purposes or to check if a certain event has occurred before or after another event. In this blog post, we will discuss why comparing two dates is important and how to do it in C++, followed by a deep dive into the intricacies of date comparison.
 
-As a programmer, you may wonder why comparing two dates is a necessary skill. The answer is simple: in many programming tasks, you may need to compare dates to determine the chronological order of events or to check if a certain date falls within a specific range. Learning how to compare dates in C++ will not only come in handy for everyday programming tasks but also improve your overall coding skills.
-
-## How To Compare Dates in C++
-
-To compare two dates in C++, we use the `std::chrono` library which provides various data types for representing time points and durations. The code below shows a simple example of comparing two dates using this library:
+##How To
+To compare two dates in C++, we will first need to create two objects of the `std::chrono::time_point` class. This class represents a point in time and can hold different units of time, such as seconds, minutes, hours, etc. Let's see an example:
 
 ```C++
-#include <iostream>
-#include <chrono>
+// Defining two time points
+std::chrono::time_point start = std::chrono::steady_clock::now();
+std::chrono::time_point end = std::chrono::steady_clock::now();
 
-int main() {
-
-    // Create two date objects
-    std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point date2 = std::chrono::system_clock::now() + std::chrono::hours(24);
-
-    // Compare the two dates
-    if (date1 < date2) {
-        std::cout << "Date 1 is before Date 2." << std::endl;
-    } else if (date1 == date2) {
-        std::cout << "Date 1 is equal to Date 2." << std::endl;
-    } else {
-        std::cout << "Date 1 is after Date 2." << std::endl;
-    }
-
-    return 0;
+// Comparing the two time points
+if (start > end) {
+    std::cout << "Start time is greater than end time." << std::endl;
+} else if (end > start) {
+    std::cout << "End time is greater than start time." << std::endl;
+} else {
+    std::cout << "Start time and end time are equal." << std::endl;
 }
 ```
 
-**Sample Output:**
+In this example, we have used the `std::chrono::steady_clock` class to get the current time and assign it to our `start` and `end` time points. We then use simple `if` statements to compare the two time points and print the appropriate message. 
+
+Another way to compare dates is by using the `std::chrono::duration` class. This class represents a duration of time and can be used to find the difference between two time points. Let's see an example:
+
+```C++
+// Defining two time points
+std::chrono::time_point start = std::chrono::steady_clock::now();
+std::chrono::time_point end = std::chrono::steady_clock::now();
+
+// Finding the duration between the two time points
+auto duration = std::chrono::duration_cast<std::chrono::hours>(end - start).count();
+
+// Printing the duration in hours
+std::cout << "The duration between start and end time is: " << duration << " hours." << std::endl;
 ```
-Date 1 is before Date 2.
-```
 
-As seen in the code, we use the `<` and `==` operators to compare the two dates. The `<` operator checks if the first date is chronologically before the second date, while the `==` operator checks if the two dates are exactly the same. We can also use other comparison operators like `>` and `!=` to compare dates in C++.
+In this example, we have used the `std::chrono::duration_cast` function to find the duration between the two time points in hours. This function takes in the desired time unit as a template parameter and returns the duration in that unit.
 
-## Deep Dive into Comparing Dates in C++
+##Deep Dive
+Comparing two dates may seem like a simple task, but it can get tricky when taking into consideration time zones, daylight saving time, and leap years. It is important to make sure that the time points we are comparing are in the same time zone and that any changes in daylight saving time are accounted for.
 
-One important thing to note when comparing dates in C++ is that the `std::chrono` library does not support direct comparison between `time_point` and `string` data types. Therefore, we need to first convert the dates to a common data type, such as `int` or `double`, before comparing them. We can do this by using the `std::chrono::duration` function, which calculates the elapsed time between two time points.
+When comparing dates, we should also pay attention to the precision of our time points. For example, if we need to compare dates up to the millisecond, then we should use `std::chrono::time_point<std::chrono::milliseconds>` instead of just `std::chrono::time_point`.
 
-Another important aspect to consider when comparing dates is the time zone and daylight saving time. These factors can affect the accuracy of the comparison, so it is essential to take them into account when working with dates.
-
-## See Also
-
-- [Comparing dates in C++](https://www.geeksforgeeks.org/compare-two-dates-c/)
-- [std::chrono library reference](https://en.cppreference.com/w/cpp/chrono)
-- [Time and date in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+##See Also
+- [C++ Reference for time_point](https://en.cppreference.com/w/cpp/chrono/time_point)
+- [C++ Reference for duration](https://en.cppreference.com/w/cpp/chrono/duration)
+- [Comparison operators in C++](https://www.geeksforgeeks.org/relational-operators-in-c-cpp/)

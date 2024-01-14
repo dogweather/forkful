@@ -1,41 +1,58 @@
 ---
-title:    "Bash: Estrazione di sottostringhe"
+title:    "Bash: Estrazione di sottostringhe."
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se stai lavorando con il linguaggio di programmazione Bash, potresti avere la necessità di estrarre delle sottostringhe da una stringa più grande. Ciò può essere necessario per lavorare con dati formattati in modo specifico o per svolgere varie attività di manipolazione dei dati. In questa guida, esploreremo come estrarre delle sottostringhe in Bash e perché potrebbe essere utile farlo.
+L'estrazione di sottostringhe è una parte importante della programmazione Bash perché può aiutare a manipolare e gestire i dati in modo più efficiente. È particolarmente utile quando si lavora con grandi quantità di testo o file, rendendo il processo più veloce ed efficace.
 
 ## Come Fare
 
-Per estrarre delle sottostringhe in Bash, è possibile utilizzare il comando `cut`. Questo comando può essere utilizzato per estrarre porzioni specifiche di una stringa, basandosi su un delimitatore specifico. Ad esempio, se avessimo una stringa formattata come "Nome_Cognome", possiamo utilizzare il seguente comando per estrarre solo il nome:
+L'estrazione di sottostringhe in Bash è un processo semplice che richiede l'utilizzo del comando `echo` e di alcuni caratteri speciali.
+
+Ecco un esempio di come estrarre una sottostringa da una variabile:
 
 ```Bash
-stringa="Mario_Rossi"
-echo $stringa | cut -d _ -f 1
+frase="Benvenuto nel mio blog post!"
+echo ${frase:9:4} 
 ```
 
-In questo caso, il delimitatore specificato è l'underscore (_) e l'opzione `-f` indica quale campo della stringa estrarre.
+Questa sintassi utilizza i due punti per indicare l'inizio e la lunghezza della sottostringa che vogliamo estrarre. In questo esempio, estraiamo i caratteri dalla posizione 9 per una lunghezza di 4, quindi l'output sarà "nel mio".
 
-Possiamo anche utilizzare il comando `grep` per estrarre delle sottostringhe in base a un determinato pattern. Ad esempio, se avessimo una stringa formattata come "Nome_Comune_Eta", possiamo utilizzare il seguente comando per estrarre solo l'età:
+Se invece vogliamo estrarre una sottostringa a partire dalla fine della variabile, possiamo utilizzare una sintassi simile:
 
 ```Bash
-stringa="Mario_Roma_30"
-echo $stringa | grep -o '[0-9]*$'
+echo ${frase: -8} 
 ```
 
-In questo caso, il pattern specificato con l'opzione `-o` indica di estrarre solo i numeri alla fine della stringa.
+In questo caso, il segno meno indica l'estrazione dalla fine e l'output sarà "blog post!".
 
 ## Approfondimento
 
-Ci sono molte altre opzioni e utilizzazioni possibili per estrarre delle sottostringhe in Bash, come l'utilizzo di espressioni regolari o l'estrazione di sottosequenze di caratteri. Inoltre, è possibile utilizzare i comandi `sed` e `awk` per svolgere compiti simili. Sperimenta con questi comandi e vedi quali funzionano meglio per le tue esigenze.
+Oltre alla semplice estrazione di una sottostringa da una variabile, il comando `sed` può essere utilizzato per estrarre sottostringhe da file di testo.
+
+Ad esempio, se vogliamo estrarre una sottostringa da un file di testo basata su un modello di ricerca, possiamo utilizzare questo comando:
+
+```Bash
+sed -n '/modello/p' file.txt
+```
+
+Questo restituirà tutte le righe del file che contengono il modello cercato.
+
+Inoltre, possiamo anche utilizzare `grep` per estrarre sottostringhe basate su un modello di ricerca, ad esempio:
+
+```Bash
+grep modello file.txt
+```
+
+Questo restituirà tutte le righe del file che contengono il modello cercato.
 
 ## Vedi Anche
 
-- [Documentazione di Bash su `cut`](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [Maggiori informazioni su `grep`](https://www.gnu.org/software/grep/manual/grep.html)
-- [Tutorial su `sed`](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-- [Introduzione ad `awk`](https://www.digitalocean.com/community/tutorials/how-to-use-the-awk-language-to-manipulate-text-in-linux)
+- [Guida alla formattazione dei testi in Bash](https://www.linuxnix.com/text-formatting-in-bash/)
+- [Tutorial di estrazione di sottostringhe in Bash](https://www.tecmint.com/extract-string-from-variable-shell-script/)
+- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)

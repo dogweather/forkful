@@ -1,52 +1,45 @@
 ---
-title:    "Ruby: Testien kirjoittaminen"
+title:    "Ruby: Testausten kirjoittaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Testien kirjoittaminen on tärkeä osa Ruby-ohjelmointia, koska se varmistaa koodin toimivuuden ja vähentää bugin riskiä. Lisäksi testit helpottavat uusien ominaisuuksien lisäämistä ja muutosten tekemistä olemassa olevaan koodiin.
+Testien kirjoittamiseen on monia syitä, mutta tärkein niistä on luottamuksen rakentaminen omaan koodiin. Testien avulla voit varmistaa, että koodisi toimii odotetulla tavalla ja vähentää mahdollisten virheiden riskiä. Lisäksi testien avulla on helpompi havaita ja korjata bugeja ennen kuin ne pääsevät tuotantoon.
 
-## Kuinka
+## Miten
 
-Testien kirjoittaminen Rubyssa on helppoa. Voit aloittaa luomalla tiedoston, jossa on ".rb" pääte, jolloin Ruby tulkitsee sen skriptiksi. Seuraavassa esimerkissä luomme yksinkertaisen toiminnallisen testin, joka tarkistaa, että luku 2 on pienempi kuin luku 5.
+Testaaminen Rubyssa tapahtuu yleisimmin käyttämällä RSpec-kirjastoa. RSpec on testikirjasto, joka mahdollistaa selkeän ja helpon testien kirjoittamisen. Katso alla oleva esimerkki siitä, kuinka voit käyttää RSpec-kirjastoa testien kirjoittamiseen:
 
 ```Ruby
-require "minitest/autorun"
-
-class Testi < Minitest::Test
-  def testi_tarkistus
-    assert(2 < 5, "2 ei ole pienempi kuin 5")
+# Esimerkki testiluokasta
+describe Calculator do
+  # Esimerkki testin nimestä ja toiminnasta
+  it "palauttaa oikean summan" do
+    # Alustetaan muuttujat
+    numero1 = 5
+    numero2 = 10
+    # Kutsutaan funktiota
+    summa = Calculator.summaa(numero1, numero2)
+    # Vertaillaan funktiosta saatua tulosta odotettuun
+    expect(summa).to eq(15)
   end
 end
 ```
 
-Jos suoritat tämän skriptin, voit odottaa näkeväsi seuraavan tulosteen:
-
-```
-Run options: --seed 45432
-
-# Running:
-
-2)
-
-Finished in 0.000672s, 2980.3551 runs/s, 2980.3551 assertions/s.
-
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
-```
-
-Tuloste kertoo, että testi suoritettiin onnistuneesti, koska tulos oli 1, mikä tarkoittaa, että yksi testi suoritettiin ja yksi väite tehtiin. Tämä tarkoittaa, että väite "2 < 5" oli tosi.
+Testien kirjoittamisessa kannattaa noudattaa DRY-periaatetta eli välttää turhien samanlaisten testien kirjoittamista. Lisäksi testien tulee olla erillään muusta koodista, jotta ne eivät vaikuta koodin toimintaan.
 
 ## Syvällinen sukellus
 
-Testit voivat olla hyvin monimutkaisia ja niillä voi olla erilaisia käyttötarkoituksia. Jotkut testit voivat tarkistaa, että koodi toimii oikein erilaisilla syötteillä, kun taas toiset voivat tarkistaa, että koodi toimii odotetulla tavalla virheellisillä syötteillä. On myös tärkeää tietää, että testien on oltava riippumattomia toisistaan ja niiden on oltava selkeitä ja ymmärrettäviä.
+Testien kirjoittamisessa on tärkeää miettiä, mitä haluat testata ja mitä haluat jättää testien ulkopuolelle. Testien tulee kattaa tärkeimmät osat koodista ja niiden tulee olla selkeitä ja ymmärrettäviä. On myös tärkeää muistaa päivittää testejä, kun teet muutoksia koodiin.
 
-Testien kirjoittaminen alusta alkaen kannattaa, koska se auttaa varmistamaan, että koodi toimii oikein ja vähentää tarvetta käyttää paljon aikaa vianetsintään myöhemmin. On myös suositeltavaa kirjoittaa testit ennen varsinaisen koodin kirjoittamista, jotta voit varmistaa, että koodisi täyttää kaikki vaatimukset.
+Lisäksi testien kirjoittamisessa kannattaa hyödyntää myös muita kirjastoja, kuten FactoryGirlia, joka mahdollistaa testidatan luomisen helpommin. Muista myös, että testien kirjoittaminen on jatkuva prosessi ja niitä kannattaa päivittää ja parannella ajan myötä.
 
 ## Katso myös
 
-- [Official Ruby Testing Guide](https://ruby-doc.org/core-3.0.0/doc/tutorial/ruby_with_selenium_and_junit.html)
-- [RSpec - BDD Test Framework for Ruby](https://rspec.info/)
-- [Capybara - Integration Testing Tool for Web Applications](https://github.com/teamcapybara/capybara)
+- [RSpec-kirjaston kotisivu](http://rspec.info/)
+- [FactoryGirl-kirjaston dokumentaatio](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md)
+- [The RSpec Book](https://pragprog.com/book/achbd/the-rspec-book)

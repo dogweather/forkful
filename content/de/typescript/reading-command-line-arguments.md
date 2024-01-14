@@ -1,77 +1,54 @@
 ---
 title:    "TypeScript: Lesen von Befehlszeilenargumenten"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der in TypeScript programmieren möchte. Es ermöglicht es uns, unsere Programme interaktiver und flexibler zu gestalten, indem wir es Benutzern ermöglichen, Eingaben direkt in der Kommandozeile zu machen. Hier erfährst du, wie du in TypeScript Befehlszeilenargumente lesen kannst.
+Das Lesen von Befehlszeilenargumemten ist ein wichtiger Bestandteil der TypeScript-Programmierung. Es ermöglicht es, Variablen und Einstellungen direkt beim Start des Programms anzugeben, anstatt sie zuvor im Code festzulegen. Dadurch wird das Programm flexibler und kann für verschiedene Zwecke verwendet werden.
 
-## Wie das geht
+## Wie
 
-Um Befehlszeilenargumente in TypeScript zu lesen, verwenden wir das `process` Modul. Wir können es in unser Programm mit dem folgenden Code importieren:
+Um Befehlszeilenargumente in TypeScript zu lesen, können wir das Argumentenarray `process.argv` verwenden. Dieses enthält alle vom Benutzer beim Start des Programms angegebenen Argumente. Zum Beispiel:
 
 ```TypeScript
-import * as process from 'process';
+const argument1 = process.argv[2];
+const argument2 = process.argv[3];
+
+console.log(argument1); // Ausgabe: Wert des ersten Arguments
+console.log(argument2); // Ausgabe: Wert des zweiten Arguments
 ```
 
-Um auf die Befehlszeilenargumente zuzugreifen, rufen wir einfach `process.argv` auf. Diese Eigenschaft gibt ein Array von Strings zurück, wobei der erste Eintrag den Pfad zur Node.js Installation und der zweite Eintrag den Pfad zur ausgeführten Datei enthält. Die folgenden Einträge enthalten dann die übergebenen Befehlszeilenargumente.
-
-Beispiel:
+Es ist jedoch zu beachten, dass das erste Element von `process.argv` immer der Pfad zum ausführbaren Programm ist und die Argumente erst ab dem zweiten Element starten. Um dies zu berücksichtigen, sollten wir das Array mit `slice(2)` verkleinern, um die tatsächlichen Argumente zu erhalten.
 
 ```TypeScript
-// node main.ts hello world
-console.log(process.argv);
-// Ausgabe: ["/usr/local/bin/node", "main.ts", "hello", "world"]
+const argumente = process.argv.slice(2);
 ```
 
-Wir können auch überprüfen, ob bestimmte Befehlszeilenargumente vorhanden sind, indem wir `process.argv` durchsuchen oder die `includes()` -Methode verwenden.
+## Tiefergehende Informationen
 
-Beispiel:
+Neben dem Lesen von einfachen Argumentenwerten, können wir auch mit komplexeren Argumenten umgehen, wie zum Beispiel mit Flaggen. Diese kennzeichnen bestimmte Eigenschaften oder Einstellungen des Programms und können als `true` oder `false` interpretiert werden.
 
 ```TypeScript
-// node main.ts --debug
-console.log(process.argv.includes('--debug'));
-// Ausgabe: true
+const flag = process.argv.includes("--flag");
+
+if (flag) {
+  // Flagge ist vorhanden
+  // Führe entsprechende Aktion aus
+}
 ```
 
-## Tiefer Einblick
-
-Neben dem Zugriff auf die übergebenen Befehlszeilenargumente können wir auch mithilfe des `yargs` Moduls, das eine benutzerfreundlichere API bietet, komplexe Befehlszeilenoptionen verarbeiten.
-
-Wir können das `yargs` Modul mit dem folgenden Code installieren und importieren:
+Es ist auch möglich, optionale Argumente zu definieren, indem wir in unserem Programm verschiedene Fälle abfragen. Zum Beispiel könnten wir ein Argument definieren, welches eine Datei als Eingabe erwartet. Ist dieses Argument nicht vorhanden, könnten wir stattdessen eine Standarddatei verwenden.
 
 ```TypeScript
-npm install yargs
-import * as yargs from 'yargs';
-```
-
-Dann können wir `yargs` verwenden, um unsere Befehlszeilenargumente mit verschiedenen Optionen zu verarbeiten und beispielsweise Standardwerte festzulegen.
-
-Beispiel:
-
-```TypeScript
-const argv = yargs
-    .option('name', {
-        alias: 'n',
-        default: 'World',
-        describe: 'The name to greet'
-    })
-    .option('greeting', {
-        alias: 'g',
-        default: 'Hello',
-        describe: 'The greeting to use'
-    })
-    .argv;
-
-console.log(`${argv.greeting}, ${argv.name}!`);
-// node main.ts --greeting="Bonjour" --name="Monde"
-// Ausgabe: Bonjour, Monde!
+const eingabedatei = process.argv[2] || "standarddatei.txt";
 ```
 
 ## Siehe auch
 
-- [Dokumentation zum `process` Modul in Node.js](https://nodejs.org/api/process.html)
-- [Dokumentation zum `yargs` Modul](https://www.npmjs.com/package/yargs)
+- [Dokumentation zu process.argv von Node.js](https://nodejs.org/api/process.html#process_process_argv)
+- [Artikel über Befehlszeilenargumente in TypeScript](https://hackernoon.com/command-line-arguments-in-typescript-9db33c92bdc4)
+- [Einführung in die TypeScript-Programmierung auf Deutsch](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

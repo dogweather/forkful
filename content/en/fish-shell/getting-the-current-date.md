@@ -1,52 +1,58 @@
 ---
 title:    "Fish Shell recipe: Getting the current date"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In this blog post, we'll be discussing how to get the current date using Fish Shell. By knowing how to do this, you can easily keep track of what day it is and use it in your scripting tasks.
+
+There are many reasons why someone might want to get the current date in their Fish Shell programming. One common use case is to include the date in file names or log entries for organization and tracking purposes.
 
 ## How To
-To get the current date in Fish Shell, we'll be using the `date` command. This command can display the current date in various formats depending on the options passed to it. Let's take a look at some examples:
 
-```Fish Shell
-# Display the date in the default format
-$ date
-Mon Jul 29 14:56:40 EDT 2019
+To get the current date in Fish Shell, use the `date` command followed by the desired format. Here are a few examples:
 
-# Display the date in ISO-8601 format
-$ date -I
-2019-07-29
+```
+Fish Shell:
 
-# Display only the current year
-$ date +%Y
-2019
+# Date in YYYY-MM-DD format
+date "+%F"
 
-# Display only the current month
-$ date +%m
-07
+# Date in Month DD, YYYY format
+date "+%B %d, %Y"
 
-# Display only the current day
-$ date +%d
-29
-
-# Display the date in a custom format
-$ date +"%A, %B %d, %Y"
-Monday, July 29, 2019
+# Date in Day of Week, Month DD, YYYY HH:MM format
+date "+%A, %B %d, %Y %H:%M"
 ```
 
-As you can see, the `date` command is quite versatile and can be used in various ways to get the current date. You can also use it in your scripts to dynamically generate file names or timestamps.
+Sample output for the above commands would be:
+
+```
+2019-09-09
+September 09, 2019
+Monday, September 09, 2019 09:45
+```
+
+In the `date` command, the `+` sign indicates that we are specifying a custom output format. The following characters represent different date and time elements, such as `%Y` for the year in four digits and `%H` for the hour in 24-hour format. You can find a full list of these characters in the Fish Shell documentation.
 
 ## Deep Dive
-For those who want to dive deeper into getting the current date in Fish Shell, it's worth mentioning that the `date` command is actually a wrapper around the `strftime()` function. This function is used to format dates and times in different ways and is available in many programming languages.
 
-You can also use the `date` command to display the date in different time zones by passing the `-u` flag followed by a specific time zone, such as `GMT` or `UTC`.
+Behind the scenes, Fish Shell uses the `strftime` function from the standard C library to format the date and time. This function takes a string as input and replaces certain characters with their corresponding date and time elements. It also provides additional options for things like local time and time zone.
 
-For more information about the `date` command and its options, you can use the built-in `help` command in Fish Shell or refer to the [official documentation](https://fishshell.com/docs/current/cmds/date.html).
+If you want to get the current date and time in a different time zone, you can use the `TZ` environment variable. For example, to get the date and time in Eastern Standard Time, you can do:
+
+```
+Fish Shell:
+
+# Date and time in Eastern Standard Time
+TZ=EST date "+%F %H:%M"
+```
+
+This would output something like `2019-09-09 04:45`, indicating that in EST, it is currently 4:45 AM. This is a useful tool for remote team collaboration or for tracking events happening in different time zones.
 
 ## See Also
-- [Fish Shell documentation on `date` command](https://fishshell.com/docs/current/cmds/date.html)
-- [strftime() function documentation](https://www.cplusplus.com/reference/ctime/strftime/)
-- [List of time zone abbreviations](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+- [Fish Shell date documentation](https://fishshell.com/docs/current/cmds/date.html)
+- [Fish Shell strftime man page](https://man.archlinux.org/man/strftime.3.en)

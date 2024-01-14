@@ -1,76 +1,49 @@
 ---
-title:    "TypeScript: Kahden päivämäärän vertailu"
+title:    "TypeScript: Kahden päivämäärän vertaaminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi vertailla kahta päivämäärää?
 
-Vertailemalla kahta päivämäärää voit helposti tarkistaa, kumpi päivä on aikaisempi tai myöhempi. Tämä voi olla erityisen hyödyllistä esimerkiksi projekteissa, joissa on tarvetta järjestellä päivämääriä tai tarkistaa, onko jokin tapahtuma jo tapahtunut.
+Päivämäärien vertailu on tärkeä osa ohjelmointia, koska se mahdollistaa tietojen analysoinnin ja lajittelun perustuen ajanjaksoihin. Tämä on erityisen hyödyllistä esimerkiksi tilastodataa käsiteltäessä tai ohjelman toimintaa kontrolloitaessa ajallisesti.
 
-## Miten tehdä vertailu TypeScriptillä?
+## Kuinka toteuttaa päivämäärän vertailu TypeScriptillä
 
-Vertailu kahta päivämäärää TypeScriptillä on helppoa ja nopeaa. Seuraavassa koodiesimerkissä näytetään, miten voit verrata kahta päivämäärää ja tulostaa sen jälkeen tulos konsoliin.
+Vertaamalla kahta päivämäärää TypeScriptillä seuraamme yksinkertaista logiikkaa: ensin luodaan kaksi Date-objektia ja sitten vertaillaan niitä halutulla tavalla.
 
 ```TypeScript
-// Määritellään kaksi päivämäärää
-const date1: Date = new Date("2021-01-01");
-const date2: Date = new Date("2020-12-31");
+// luodaan kaksi Date-objektia
+let date1 = new Date("2021-01-01");
+let date2 = new Date("2021-01-15");
 
-// Verrataan päivämääriä ja tarkistetaan, kumpi on aikaisempi
+// vertaillaan päivämääriä
 if (date1 < date2) {
-  console.log("Päivämäärä 1 on aikaisempi kuin päivämäärä 2");
-} else if (date1 > date2) {
-  console.log("Päivämäärä 1 on myöhempi kuin päivämäärä 2");
+  console.log("Date1 on aiempi kuin Date2");
+} else if (date2 < date1) {
+  console.log("Date2 on aiempi kuin Date1");
 } else {
   console.log("Päivämäärät ovat samat");
 }
 ```
 
-Tulostus konsoliin:
-
+Tulostus: 
 ```
-Päivämäärä 1 on aikaisempi kuin päivämäärä 2
-```
-
-## Syvemmälle kahteen päivämäärään vertailuun
-
-Päivämäärien vertaileminen TypeScriptillä perustuu niiden sisältämiin millisekunteihin. Tämän vuoksi vertailun tulos voi olla yllättävä, jos päivämäärät ovat saman päivän sisällä, mutta niiden millisekunnit eroavat toisistaan. Hyvä tapa välttää tämä on käyttää Date-objektin `setHours`, `setMinutes`, `setSeconds` ja `setMilliseconds` -metodeja, jotka asettavat tunnit, minuutit, sekunnit ja millisekunnit haluttuihin arvoihin.
-
-Esimerkiksi jos haluat verrata päivämäärää 2021-01-01 kello 12:00 ja päivämäärää 2021-01-01 kello 12:30, mutta haluat huomioida vain päivämäärän ja tunnin erot, voit käyttää seuraavaa koodia:
-
-```TypeScript
-// Määritellään kaksi päivämäärää
-const date1: Date = new Date("2021-01-01 12:00:00");
-const date2: Date = new Date("2021-01-01 12:30:00");
-
-// Asetetaan minuutit, sekunnit ja millisekunnit nollaan
-date1.setMinutes(0);
-date1.setSeconds(0);
-date1.setMilliseconds(0);
-
-date2.setMinutes(0);
-date2.setSeconds(0);
-date2.setMilliseconds(0);
-
-// Verrataan päivämääriä ja tulostetaan tulos konsoliin
-if (date1 < date2) {
-  console.log("Päivämäärä 1 on aikaisempi kuin päivämäärä 2");
-} else if (date1 > date2) {
-  console.log("Päivämäärä 1 on myöhempi kuin päivämäärä 2");
-} else {
-  console.log("Päivämäärät ovat samat");
-}
+Date1 on aiempi kuin Date2
 ```
 
-Tulostus konsoliin:
+Tässä esimerkissä luomme kaksi Date-objektia käyttämällä uutta-komennon avainsanaa ja sitten vertailemme niitä if-else lauseiden avulla.
 
-```
-Päivämäärät ovat samat
-```
+## Päivämäärän vertailun syvällisempi tarkastelu
+
+Päivämäärien vertailussa voidaan käyttää erilaisia operaattoreita, kuten <, >, <=, ja >=, riippuen siitä, millaista vertailua halutaan tehdä. Toisinaan on myös tarpeen tarkastella päivämääriä tietyn ajanjakson sisällä, jolloin voidaan käyttää esimerkiksi Date.prototype.getTime() -metodia.
+
+Lisäksi TypeScriptillä on käytössä neljä erilaista päivämäärän luokkaa: Date, DateTime, Time ja DateTimeOffset. Jokaisella näistä on omat ominaisuutensa ja metodinsa, jotka mahdollistavat päivämäärien vertailun halutulla tavalla.
 
 ## Katso myös
 
-- [Date MDN -dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Type
+- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Docs: Date](https://www.typescriptlang.org/docs/handbook/utility-types.html#date)
+- [Stack Overflow: How to compare two dates in TypeScript](https://stackoverflow.com/questions/42012021/how-to-compare-two-dates-in-typescript)

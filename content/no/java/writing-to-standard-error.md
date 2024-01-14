@@ -1,42 +1,46 @@
 ---
-title:    "Java: Å skrive til standardfeil"
+title:    "Java: Skrive til standard feil."
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Mange programmerere føler seg kanskje litt skremt når de hører uttrykket "skrive til standard-error", men det er en viktig del av Java programmering og kan være nyttig i mange situasjoner. Det er en enkel måte å debugge og finne feil i koden din, og det er spesielt nyttig når du jobber med større prosjekter. I denne bloggposten vil vi gå gjennom hvorfor og hvordan man skriver til standard-error i Java.
+Å skrive til standard error er en viktig del av å være en effektiv Java-programmerer. Det lar deg enkelt identifisere og håndtere feil i koden din, noe som bidrar til å gjøre programmet ditt mer robust og pålitelig.
 
-## Hvordan
+##Slik gjør du det
 
-For å skrive til standard-error i Java, må vi bruke System.err.println() funksjonen. Dette vil skrive ut teksten som en feilmelding i konsollen, noe som gjør det enkelt å skille mellom "normale" utskrifter og feilmeldinger. La oss se på et enkelt eksempel:
+Vi kan skrive til standard error ved å bruke `System.err.println()` metoden i Java. La oss se et eksempel:
 
 ```Java
-System.err.println("Dette er en feilmelding.");
-System.out.println("Dette er en vanlig utskrift.");
+public class StandardErrorDemo {
 
+    public static void main(String[] args) {
+        int result = divide(10, 0);
+        System.err.println("Resultatet er: " + result);
+    }
+
+    public static int divide(int num1, int num2) {
+        return num1 / num2;
+    }
+}
 ```
 
-Output:
-```
-Dette er en feilmelding.
-Dette er en vanlig utskrift.
-```
+Når du kjører dette programmet, vil du få følgende utskrift i standard error-konsollen:
+`java.lang.ArithmeticException: division by zero`
 
-Som du kan se, blir teksten som er skrevet til standard-error vist med røde bokstaver i konsollen, noe som gjør det lett å identifisere som en feilmelding. Dette er spesielt nyttig når man skal feilsøke og finne ut hvor feilene i koden ligger.
+Her ser vi at programmet krasjet på grunn av et forsøk på å dele med null, og feilen ble skrevet ut i standard error-konsollen. Dette gjør det enkelt for oss å identifisere og håndtere feil i koden vår.
 
-Det er også mulig å skrive til standard-error i try-catch klosser ved hjelp av e.printStackTrace() funksjonen. Dette vil skrive ut en fullstendig stakksporing av feilen, noe som ofte er veldig nyttig for å identifisere årsaken til feilen.
+##Dypdykk
 
-## Dypdykk
+Å skrive til standard error er spesielt nyttig når du jobber med flertrådede applikasjoner. Standard out og standard error er separate strømmer, så ved å skrive feilmeldinger til standard error sørger vi for at de ikke blandes sammen med annen utskrift, noe som kan gjøre feilsøkingen mer utfordrende.
 
-Nå som vi vet hvordan man skriver til standard-error, la oss dykke dypere inn i hvorfor dette kan være nyttig. Når man jobber med større prosjekter, kan koden bli veldig kompleks og det kan være vanskelig å finne ut hvor en feil kommer fra. Ved å skrive til standard-error, kan man plassere feilmeldinger på bestemte steder i koden for å identifisere hvilke deler som forårsaker problemer. Dette gjør det mye lettere å debugge og løse problemene.
+Det er også verdt å merke seg at standard error-konsollen vanligvis blir vist i rødt i konsollvinduet, noe som gjør det lettere å legge merke til feilmeldingene.
 
-Det er også viktig å vite at standard-error er beregnet på å håndtere feil i koden, ikke vanlig utdata. Derfor bør man bare bruke System.err.println() funksjonen når man har en faktisk feil i koden, og ikke som erstatning for vanlige utskrifter.
+##Se også
 
-## Se også
-
-- [Java - Exception Handling](https://www.w3schools.com/java/java_try_catch.asp)
-- [Debugging in Java](https://www.baeldung.com/java-debugging)
-- [System.err and System.out in Java](https://howtodoinjava.com/java/system-err-and-system-out-in-java/)
+- Java Error Handling: https://www.geeksforgeeks.org/exception-handling-in-java/
+- Writing to Standard Error in Java: https://www.baeldung.com/java-write-to-standard-error
+- The Benefits of Using Standard Error in Java: https://stackify.com/java-error-handling-best-practices/

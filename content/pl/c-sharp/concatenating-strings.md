@@ -1,69 +1,60 @@
 ---
-title:    "C#: Konkatenacja ciągów znaków"
+title:    "C#: Łączenie ciągów znaków"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Czy kiedykolwiek zastanawiałeś się, dlaczego w C# korzystamy z operacji łączenia stringów? Może wydaje się to oczywiste, ale warto poznać dokładniej mechanizm działania tego procesu.
+# Dlaczego warto znać łączenie ciągów w C#?
 
-## Jak to zrobić
+Ciągi znaków są powszechnie wykorzystywane w programowaniu, szczególnie w języku C#. Czy kiedykolwiek zastanawiałeś się, dlaczego są one tak ważne i dlaczego warto znać technikę łączenia ciągów? W tym artykule dowiesz się, dlaczego warto poznać tę funkcję i jak z niej skorzystać w praktyce.
+
+## Jak używać metody *Concat* w C#
+
+Metoda *Concat* jest wykorzystywana do łączenia dwóch lub więcej ciągów znaków w jeden. Jest to bardzo przydatna funkcja, ponieważ pozwala na tworzenie bardziej czytelnych i zwięzłych wiadomości dla użytkownika. Oto przykładowy kod w języku C# wykorzystujący metodę *Concat*:
+
 ```C#
-string firstName = "Anna";
-string lastName = " Kowalska";
-string fullName = firstName + lastName;
-
-Console.WriteLine(fullName);
-
-/* Output: Anna Kowalska */
-```
-Łączenie stringów jest jedną z podstawowych operacji, które możemy wykonywać w języku C#. Jest to prosta metoda łączenia dwóch lub więcej stringów w jeden, co jest nie tylko wygodne, ale także często niezbędne w programowaniu.
-
-### Wykorzystanie operatora "+" do konkatenacji
-Pierwszym sposobem na łączenie stringów jest wykorzystanie operatora "+" między dwoma stringami. 
-```C#
-string hello = "Cześć";
-string name = "Ania";
-string greeting = hello + " " + name;
-
-Console.WriteLine(greeting);
-
-/* Output: Cześć Ania */
-```
-Operator "+" działa podobnie jak w przypadku dodawania liczb, ale w taki sposób łączy ze sobą ciągi tekstowe. Kolejność nie ma znaczenia, możemy łączyć stringi z udziałem innych zmiennych.
-
-### Metoda Concat()
-Innym sposobem na łączenie stringów jest użycie metody Concat(). Jest to funkcja wbudowana w język C#, która przyjmuje pojedynczy lub wiele argumentów i zwraca połączony string.
-```C#
-string part1 = "Cześć";
-string part2 = "Ania";
-
-string greeting = string.Concat(part1, " ", part2);
-Console.WriteLine(greeting);
-
-/* Output: Cześć Ania */
-```
-Metoda Concat() może być przydatna, gdy chcemy połączyć więcej niż dwa stringi lub gdy mamy już przygotowane fragmenty tekstu, które chcemy połączyć.
-
-### StringBuilder
-Jeśli w programie potrzebujemy często łączyć stringi, zamiast wykorzystywać operator "+" lub metodę Concat(), warto skorzystać z klasy StringBuilder. Budowanie stringu przy użyciu tej klasy jest bardziej wydajne, ponieważ nie tworzy ona nowego obiektu przy każdym złączeniu, tylko modyfikuje już istniejący.
-```C#
-StringBuilder sb = new StringBuilder("Cześć");
-sb.Append(" Ania");
-sb.Append("!");
-string greeting = sb.ToString();
-Console.WriteLine(greeting);
-
-/* Output: Cześć Ania! */
+string message1 = "Witaj";
+string message2 = "Czy jesteś gotowy na naukę?";
+string result = string.Concat(message1, " ", message2);
+Console.WriteLine(result);
 ```
 
-## Głębszy zanurzenie
-W języku C# stringi są traktowane jako niemodyfikowalne, co oznacza, że po ich utworzeniu nie można zmienić wartości pojedynczych znaków. Dlatego też przy łączeniu stringów tworzone są nowe obiekty zawierające połączone wartości. W przypadku większej ilości łączeń może to wpłynąć na wydajność naszego programu.
+W powyższym przykładzie metoda *Concat* jest wykorzystana do połączenia dwóch ciągów znaków "Witaj" i "Czy jesteś gotowy na naukę?". Wynikiem działania programu będzie wyświetlenie wiadomości "Witaj Czy jesteś gotowy na naukę?".
 
-Dlatego też, gdy wymagamy wydajnego łączenia stringów, warto skorzystać z klasy StringBuilder, która nie tworzy nowych obiektów przy każdym złączeniu.
+Możemy również wykorzystać metodę *Concat* do łączenia więcej niż dwóch ciągów:
+
+```C#
+string firstName = "Jan";
+string lastName = "Kowalski";
+string course = "Podstawy programowania";
+string result = string.Concat(firstName, " ", lastName, " jest zapisany na kurs: ", course);
+Console.WriteLine(result);
+```
+
+W tym przypadku, wynikiem działania programu będzie wyświetlona wiadomość "Jan Kowalski jest zapisany na kurs: Podstawy programowania". Jak widać, metoda *Concat* umożliwia nam tworzenie bardziej czytelnych i sensownych wiadomości dla użytkownika.
+
+## Dogłębne spojrzenie na łączenie ciągów
+
+W języku C# istnieje wiele różnych metod łączenia ciągów, takich jak *Concat*, *Join* czy *Format*. Metoda *Concat* jest najprostszą z nich, ponieważ po prostu łączy dwa lub więcej ciągów w jeden. Natomiast metoda *Join* pozwala na łączenie ciągów z wykorzystaniem separatora, co może być przydatne w niektórych sytuacjach.
+
+Metoda *Format* jest bardziej zaawansowana i pozwala na łączenie ciągów oraz wstawianie zmiennych w wyznaczonych miejscach. Oto przykład kodu wykorzystującego metodę *Format*:
+
+```C#
+string firstName = "Magda";
+string lastName = "Nowak";
+int age = 25;
+string result = string.Format("Witaj, jestem {0} {1} i mam {2} lat.", firstName, lastName, age);
+Console.WriteLine(result);
+```
+
+Wynikiem tego kodu będzie wyświetlenie wiadomości "Witaj, jestem Magda Nowak i mam 25 lat.". Jak widać, metoda *Format* pozwala na wykorzystanie zmiennych wewnątrz ciągu znaków, co daje większą swobodę w tworzeniu wiadomości.
 
 ## Zobacz także
-- [Dokumentacja C# - konkatenacja stringów](https://docs.microsoft.com/pl-pl/dotnet/csharp/whats-new/csharp-6#string-interpolation)
-- [Podstawowe operacje na stringach w C#](https://devstyle.pl/2019/03/04/metody-i-operatory-stringow-csharp/)
-- [Porównanie wydajności konkatenacji stringów w C#](https://en.it1352.com/article/fb72035c453e40a08ad4e4efc4ccece6.html)
+
+Jeśli interesuje Cię więcej zagadnień związanych z programowaniem w języku C#, zapoznaj się z poniższymi artykułami:
+
+- [10 Najważniejszych funkcji języka C#](http://example.com)
+- [Kontrola przepływu w C# – jak tworzyć efektywny kod](http://example.com)
+- [Tworzenie i wykor

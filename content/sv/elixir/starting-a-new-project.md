@@ -1,54 +1,47 @@
 ---
-title:    "Elixir: Ett nytt projekt påbörjas"
+title:    "Elixir: Att starta ett nytt projekt"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att starta ett nytt projekt i Elixir kan vara en spännande utmaning för dig som programmerare. Genom att använda funktionell programmering och koncept som "actor concurrency" kan du skapa skalbara och robusta applikationer.
+Om du är en programmerare som söker en modern, robust och skalbar språk för att starta ett nytt projekt, då är Elixir det perfekta valet för dig. Med ett funktionellt programmeringssätt och stöd för samtidig körning (concurrency), kan Elixir hjälpa dig att bygga snabba och pålitliga applikationer.
 
-## Så här gör du
+## Så här gör man
 
-För att starta ett nytt projekt i Elixir behöver du först installera Elixir och dess tillhörande pakethanterare Hex. Sedan kan du följa dessa steg för att skapa ett nytt projekt:
+Det första steget för att starta ett Elixir-projekt är att installera språket på din dator. Det finns flera olika sätt att göra det, men det enklaste är att använda en "version manager" som asdf eller kerl. När du har installerat Elixir kan du skapa ett nytt projekt med kommandot `mix new <projektnamn>`. Detta kommer att skapa en grundstruktur för ditt projekt med nödvändiga filer och mappar.
 
-```Elixir
-# Skapa en ny mapp för ditt projekt
-mkdir min_awesome_app
-cd min_awesome_app
+För att bygga din applikation kan du använda `mix compile` kommandot. Detta kommer att kompilera alla dina Elixir-filer till byte code för att sedan kunna köras.
 
-# Initiera en ny Elixir applikation
-mix new min_awesome_app
+När ditt projekt är byggt kan du köra det med `mix run` kommandot. Detta kommer att starta din applikation och du kan börja testa och utveckla den.
 
-# Gå in i projektmappen
-cd min_awesome_app
+### Exempel
 
-# Starta Elixir interaktiv miljö
-iex -S mix
-```
+Här är ett exempel på hur en enkel "Hello World" applikation skulle se ut i Elixir:
 
-Om du nu skriver `HelloWorld.hello()`, så bör du få ut "Hello world!" som output.
-
-## Djupdykning
-
-När du har skapat ditt projekt kan du börja leka runt med Elixirs syntax och skapa dina egna funktioner och moduler. Här är ett grundläggande exempel på hur du kan definiera en klass och ett objekt i Elixir:
-
-```Elixir
-defmodule Person do
-  def new(name) do
-    %{name: name}
+```elixir
+defmodule Hello do
+  def say(msg) do
+    IO.puts "Hej " <> msg
   end
 end
 
-person = Person.new("John")
-person.name # Skriver ut "John"
+Hello.say("världen") # Hej världen
 ```
 
-Genom att förstå koncept som "pattern matching" och "pipe operator" kan du skapa effektiva och eleganta lösningar i Elixir. Studera även hur "supervisors" fungerar för att hantera fel och hålla din applikation igång.
+## Djupdykning
+
+Ett av de största fördelarna med Elixir är dess stöd för samtidighet (concurrency) och distribuerade system. Genom att använda Elixir's inbyggda "actor model", som kallas för "processer", kan du bygga skalbara och tåliga applikationer.
+
+Elixir's standardbibliotek har också ett stort utbud av funktioner och moduler som kan hjälpa dig att bygga applikationer för webben, databaser och mycket mer.
+
+En annan stor fördel med Elixir är dess gemenskap. Det finns ett stort antal resurser online, inklusive handledningar, dokumentation och en aktiv Slack-kanal för att hjälpa dig om du stöter på problem eller behöver råd.
 
 ## Se även
 
-- Officiell Elixir hemsida: https://elixir-lang.org/
-- Elixir School (på svenska): https://elixirschool.com/sv/
-- Awesome Elixir lista med användbara bibliotek och verktyg: https://github.com/h4cc/awesome-elixir
+- Officiell Elixir-hemsida: https://elixir-lang.org/
+- Elixir's dokumentation: https://hexdocs.pm/elixir/
+- Elixir Forum: https://elixirforum.com/

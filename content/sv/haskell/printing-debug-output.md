@@ -1,63 +1,36 @@
 ---
-title:    "Haskell: Utmatning av felsökningsinformation"
+title:    "Haskell: Utskrift av felsökningsutdata"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva kod i Haskell kan vara en utmaning, men med rätt verktyg och tekniker kan det bli mycket effektivare. En viktig del av det är att skriva ut debuggutdata för att underlätta felsökning och förståelse av programmet.
+Att skriva ut debug-utdata är ett viktigt verktyg för att felsöka och förstå vad som händer i ens program. Det kan hjälpa dig att hitta fel och förbättra prestandan på din kod.
 
 ## Hur man gör det
-Ett enkelt sätt att skriva ut debuggutdata är med funktionen `debug` från paketet `Debug.Trace`. Detta paket är en del av Haskell-plattformen, så det behöver inte installeras separat.
-
-Det första steget är att importera paketet:
+För att skriva ut debug-utdata i Haskell, använder man funktionen "trace" från "Debug.Trace" biblioteket. Detta gör det möjligt att skriva ut värden eller uttryck i din kod vid olika punkter i programmets körning.
 
 ```Haskell
 import Debug.Trace
-```
 
-Sedan kan vi använda `debug` genom att tillhandahålla en sträng med önskad utskrift och det värde som vi vill undersöka:
-
-```Haskell
+-- Exempel på användning
 let x = 5
-debug "Värdet på x är:" x
-```
+trace ("x är " ++ show x) x
 
-Detta kommer att skriva ut följande när koden körs:
-
-```
-Värdet på x är: 5
-```
-
-Vi kan också använda `debug` för att spela in flera värden, till exempel:
-
-```Haskell
-let y = 10
-debug "Värdet på x är:" x
-debug "Värdet på y är:" y
-```
-
-Vilket ger oss följande resultat:
-
-```
-Värdet på x är: 5
-Värdet på y är: 10
+-- Output: "x är 5"
 ```
 
 ## Djupdykning
-För att göra debuggning ännu mer effektivt kan vi använda funktionen `traceShow` från samma paket. Denna funktion tar en sträng och ett värde som argument och returnerar samma värde, vilket gör det möjligt att använda den i uttryck.
+När du använder "trace" funktionen är det viktigt att notera att det alltid kommer att returnera en IO-action, även om värdet du skriver ut inte är av typen IO. Detta är viktigt att komma ihåg för att undvika oönskade effekter i din kod.
 
-Ett exempel på detta är:
-
-```Haskell
-let x = 5
-let y = traceShow "Värdet på x är:" x + 5
-```
-
-Detta ger oss värdet 10 för y, men också utskriften `Värdet på x är: 5`. På så sätt kan vi enkelt spåra värdet på variabler i våra uttryck.
+Dessutom kan det vara bra att använda en funktion som "Debug.Trace.traceShow" istället för "trace" om du behöver skriva ut värden av typer som inte är instansierade med "show" klassen. Detta kommer att använda funktionen "Debug.Trace.traceShowId" istället för att bygga en "String" representation av värdet.
 
 ## Se även
-- [Haskell-dokumentation för Debug.Trace](https://www.haskell.org/hoogle/?hoogle=debug)
-- [En introduktion till Haskell-debuggning](https://www.fpcomplete.com/blog/2017/10/haskell-debugging-introduction)
-- [Debugging i Haskell med ghci](https://mmhaskell.com/blog/2019/2/4/debugging-in-haskell-with-ghci)
+- [Haskell - Debugging](https://www.haskell.org/c/documentation.html#debugging)
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
+- [Debugging Purely Functional Code in Haskell](https://timothycrosley.github.io/what-is-functional-programming/exploring-side-effects.html#debugging)
+
+## Källor
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)

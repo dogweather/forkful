@@ -1,55 +1,47 @@
 ---
-title:    "Haskell: Trova la lunghezza di una stringa"
+title:    "Haskell: Trovare la lunghezza di una stringa."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Una delle attività più comuni nella programmazione è trovare la lunghezza di una stringa. Questa è una competenza fondamentale che viene utilizzata in molti contesti, sia nella scrittura di script di base che nello sviluppo di applicazioni complesse. In questo articolo, esploreremo come trovare la lunghezza di una stringa utilizzando Haskell.
+Trovare la lunghezza di una stringa è un'operazione comune durante la programmazione. Sapere come farlo in Haskell può aiutare a rendere il tuo codice più efficiente e leggibile.
 
-## Come
+## Come fare
 
-Per trovare la lunghezza di una stringa in Haskell, possiamo utilizzare la funzione `length`. Questa funzione accetta una stringa come input e restituisce un numero intero che rappresenta la sua lunghezza.
+Per trovare la lunghezza di una stringa in Haskell, puoi utilizzare la funzione predefinita `length`. Ad esempio:
 
-```
-Haskell
-length "Ciao mondo"  
--- Output: 10
+```Haskell
+length "ciao" -- output: 4
 ```
 
-Un altro modo per trovare la lunghezza di una stringa è utilizzando la funzione `fromIntegral` insieme alla funzione `length`. Questo ci permette di ottenere un numero in virgola mobile anziché un numero intero.
+Se vuoi avere maggior controllo sul processo di calcolo della lunghezza, puoi scrivere la tua funzione utilizzando una ricorsione. Ecco un esempio:
 
-```
-Haskell
-fromIntegral (length "Ciao mondo")  
--- Output: 10.0
-```
+```Haskell
+length' :: String -> Int
+length' [] = 0
+length' (_:xs) = 1 + length' xs
 
-## Deep Dive
-
-In Haskell, una stringa è una sequenza di caratteri racchiusi tra doppi apici. Quando utilizziamo la funzione `length`, viene effettuata una scansione dei caratteri della stringa e viene contata ogni carattere trovato. Questo processo è molto efficiente e la funzione `length` è in grado di gestire stringhe di qualsiasi lunghezza.
-
-Un'importante considerazione durante l'utilizzo della funzione `length` è che essa conta anche gli spazi bianchi. Questo significa che se abbiamo una stringa come "Ciao mondo", la funzione `length` restituirà 10 come output, poiché conta anche lo spazio tra le due parole. Possiamo evitare questo problema rimuovendo gli spazi bianchi con la funzione `filter`.
-
-```
-Haskell 
-length (filter (/= ' ') "Ciao mondo")  
--- Output: 9
+length' "ciao" -- output: 4
 ```
 
-Inoltre, è possibile utilizzare la funzione `show` per visualizzare la lunghezza della stringa insieme ad altre informazioni.
+## Approfondimento
 
+Per capire meglio come funziona la funzione `length` in Haskell, dobbiamo guardare all'implementazione di base. La funzione `length` è definita come segue:
+
+```Haskell
+length :: [a] -> Int
+length [] = 0
+length (_:xs) = 1 + length xs
 ```
-Haskell 
-"La lunghezza della stringa è " ++ show (length "Ciao mondo")  
--- Output: "La lunghezza della stringa è 10"
-```
+
+In questo caso, `[a]` rappresenta una lista di elementi di tipo generico `a`. La funzione utilizza la ricorsione per scorrere la lista e conta ogni elemento utilizzando 1 come base e sommando 1 ogni volta che viene trovato un nuovo elemento. Quando la lista è vuota, il conteggio termina restituendo 0.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
-- [Tutorial sulle stringhe in Haskell](https://wiki.haskell.org/Strings)
-- [Esempi di codice per lavorare con le stringhe in Haskell](https://www.geeksforgeeks.org/haskell-string/)
-- [Una panoramica delle funzioni di base in Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Basic.html)
+- [Documentazione Hackage per la funzione `length`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#g:5)
+- [Tutorial su come utilizzare la ricorsione in Haskell](https://www.tutorialspoint.com/haskell/haskell_recursion.htm)
+- [Un esempio di utilizzo della funzione `length` in un programma Haskell](https://www.geeksforgeeks.org/haskell-length-function/)

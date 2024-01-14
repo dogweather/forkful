@@ -1,49 +1,47 @@
 ---
 title:    "Rust: Encontrando o comprimento de uma string"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que?
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, especialmente quando se lida com entrada de usuário ou processamento de dados. Saber como realizar essa tarefa em Rust é essencial para programadores que desejam dominar a linguagem.
+Encontrar o comprimento de uma string é uma tarefa comum em programação, especialmente quando se trabalha com entradas de usuário ou manipulação de texto. Em Rust, a linguagem de programação de sistema moderna, essa tarefa é feita de forma eficiente e segura, graças às suas características únicas.
 
 ## Como fazer
 
-Encontrar o comprimento de uma string em Rust é simples e pode ser feito de várias maneiras. A forma mais simples é usando o método `len()` da struct `String`. Veja um exemplo abaixo:
+Para encontrar o comprimento de uma string em Rust, podemos usar o método `len` da estrutura `String`. Este método retorna o número de bytes presentes na string, o que pode ser diferente do número de caracteres dependendo dos caracteres utilizados.
+
+Vamos dar uma olhada em um exemplo para ilustrar isso:
 
 ```Rust
-let string = String::from("Rust é incrível!"); // Cria uma string
-let length = string.len(); // Chama o método "len()" para encontrar o comprimento
-println!("O comprimento da string é: {}", length); // Imprime o resultado
+let minha_string = String::from("Olá, mundo!");
+
+println!("Minha string tem o comprimento de {} bytes.", minha_string.len());
 ```
 
-O código acima irá retornar o comprimento da string, que é 18. Outra forma de encontrar o comprimento é usando a função `len()` da biblioteca padrão. Veja um exemplo abaixo:
+A saída deste código será "Minha string tem o comprimento de 13 bytes.", uma vez que a string contém 13 caracteres, mas 15 bytes. Isso ocorre porque os caracteres acentuados em UTF-8 ocupam mais de 1 byte.
+
+## Dando um mergulho mais profundo
+
+Uma coisa interessante sobre o método `len` é que ele também pode ser usado para iterar em uma string. Por exemplo:
 
 ```Rust
-let string = "Rust é incrível!"; // Cria uma string
-let length = string.len(); // Chama a função "len()" para encontrar o comprimento
-println!("O comprimento da string é: {}", length); // Imprime o resultado
+let minha_string = String::from("Olá, mundo!");
+
+for i in 0..minha_string.len() {
+    println!("Índice: {}, Caractere: {}", i, minha_string.chars().nth(i).unwrap());
+}
 ```
 
-Novamente, o resultado será 18. Além disso, também é possível encontrar o comprimento de uma string em bytes usando o método `as_bytes()` da struct `String`. Veja um exemplo abaixo:
+Este código irá imprimir todos os caracteres da string, juntamente com o seu índice.
 
-```Rust
-let string = String::from("Rust é incrível!"); // Cria uma string
-let bytes = string.as_bytes(); // Converte a string em um vetor de bytes
-let length = bytes.len(); // Usa o método "len()" para encontrar o comprimento
-println!("O comprimento da string em bytes é: {}", length); // Imprime o resultado
-```
+É importante notar que o `len` só pode ser usado com strings em Rust se elas forem do tipo `String` e não do tipo `&str`. Isso ocorre porque `&str` não possui um tamanho conhecido em tempo de compilação.
 
-## Deep Dive
+## Veja também
 
-Ao lidar com strings em Rust, é importante entender que a linguagem possui dois tipos básicos de string: a `String` e a `&str`. A diferença entre eles é que a `String` é uma string em propriedade, ou seja, a linguagem é responsável por alocar e liberar a memória necessária para a string, enquanto a `&str` é um tipo de referência que aponta para uma string existente em algum lugar do código.
-
-Quando se trata de encontrar o comprimento de uma string, ambas as formas mencionadas anteriormente (usando `len()` ou `as_bytes()`) funcionam para as duas variantes. Entretanto, vale ressaltar que o método `len()` da `&str` é mais eficiente do que o da `String`, pois a `&str` já possui o seu comprimento armazenado em sua struct.
-
-## Ver também
-
-- [Documentação da struct `String` em Rust](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Tutorial oficial de Rust sobre strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Vídeo explicativo sobre strings em Rust](https://www.youtube.com/watch?v=hwciPnhT9hw)
+- Documentação oficial do método `len` em Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.len
+- Um guia completo para strings em Rust: https://doc.rust-lang.org/book/ch08-02-strings.html
+- Mais sobre UTF-8 e como ele funciona em Rust: https://doc.rust-lang.org/std/string/struct.String.html#examples

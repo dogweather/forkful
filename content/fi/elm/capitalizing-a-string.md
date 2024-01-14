@@ -1,31 +1,44 @@
 ---
-title:    "Elm: Merkkijonon kirjoitustapaa muuttaminen"
+title:    "Elm: Merkkijonon ensimmäisen kirjaimen suurennus"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi muuttaa merkkijonon kirjainkoon suuremmaksi? Elm-ohjelmointikielen avulla tämä on helppoa ja nopeaa toteuttaa.
+Joskus tarvitsemme päästä käsiksi käyttäjän syöttämiin tietoihin ja muokata niitä ohjelmassamme. Tämä koskee myös merkkijonoja, joiden suuri- tai pienikirjaimisuus voi olla tärkeä merkityksen kannalta. Tässä blogikirjoituksessa opimme miten voi muuttaa merkkijonon kirjainten kokoa Elm-ohjelmointikielessä.
 
-## Miten tehdä
+## Miten
 
-Käytännönläheinen koodiesimerkki osoittaa, kuinka yksinkertaisesti voit muuttaa merkkijonon kirjainkoon Elmissä:
+Usein haluamme muuttaa merkkijonon ensimmäisen kirjaimen suureksi kirjaimeksi ja muokata sen sisältöä. Alla on esimerkki, jossa muutamme "hei" merkkijonon "Hei" merkkijonoksi käyttämällä Elm:n `String`-moduulia:
 
-```Elm 
-capitalizedString = String.toUpper "kirjoitettu pienillä"
+```
+Elm.String.capitalize "hei" -- palauttaa "Hei"
 ```
 
-Tämä koodi muuttaa merkkijonon "kirjoitettu pienillä" kaikki kirjaimet isoiksi ja tallentaa ne uuteen muuttujaan "capitalizedString". Voit myös muuttaa vain yhden kirjaimen kerrallaan käyttämällä `String.toUpper` funktiota ja antamalla sen parametrina kyseisen kirjaimen.
+Voit myös käyttää `toUpper` ja `toLower` funktioita muuttaa koko merkkijono suuriksi tai pieniksi kirjaimiksi:
 
-## Syvemmät tiedot
+```
+import String exposing (toUpper, toLower)
 
-Elm tarjoaa useita erilaisia toimintoja merkkijonon käsittelyyn, mukaan lukien myös muutokseen kirjainkoossa. Voit esimerkiksi yhdistää useita merkkijonoja yhteen käyttämällä `++` operaattoria, tai etsiä tietyn merkkijonon osan toisesta merkkijonosta käyttämällä `String.contains` funktiota.
+toUpper "moikka" -- palauttaa "MOIKKA"
+toLower "MOIKKA" -- palauttaa "moikka"
+```
 
-Elmissä merkkijonojen käsittely on nopeaa ja tehokasta, mutta on myös tärkeää pitää mielessä, että kaikki merkkijonot ovat kiinteitä arvoja eivätkä muutu suorituksen aikana. Näin ollen esimerkiksi muuttaessa merkkijonon kirjainkoko suuremmaksi, uusi merkkijono luodaan sen sijaan, että alkuperäistä muutettaisiin.
+## Syventyminen
+
+Elm-ohjelmointikielessä on myös muita tapoja muuttaa merkkijonon kirjainten kokoa. Voit esimerkiksi käyttää `map` funktiota ja `String.toUpper` tai `String.toLower` funktioita muuttaaksesi kaikki merkkijonon kirjaimet haluamaasi kokoon. Alla on esimerkki, jossa muutamme "moikka" merkkijonon "MOIKKA" merkkijonoksi käyttämällä `map` funktiota:
+
+```
+import String exposing (map, toUpper, toLower)
+
+map toUpper "moikka" -- palauttaa "MOIKKA"
+```
 
 ## Katso myös
 
-- [Elm dokumentaatio merkkijonojen käsittelystä](https://guide.elm-lang.org/strings/)
-- [Muita hyödyllisiä ohjelmointikieliä suomen kielellä](https://www.codingame.com/platforms/codingame-rust/)
+- [Elm:n String-moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm:n map funktio](https://package.elm-lang.org/packages/elm/core/latest/List#fromList)
+- [Elm:n ohjelmointikieleen tutustuminen](https://guide.elm-lang.org/index.html)

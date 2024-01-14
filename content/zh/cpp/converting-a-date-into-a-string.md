@@ -1,51 +1,49 @@
 ---
 title:    "C++: 将日期转换为字符串"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：将日期转换为字符串是编程中常见的任务，因为它允许我们在输出日期数据时更加灵活和清晰。
+## 为什么
+转换日期为字符串是一项非常常见的编程任务，适用于许多不同的场景。例如，当您需要在日志中记录时间戳时，或者需要将日期显示在用户界面上，转换日期为字符串都是必需的。
 
-如何做：下面提供了一个简单的C++示例来介绍如何将日期转换为字符串，并展示了编译后的输出结果：
+## 如何
+要将日期转换为字符串，您可以使用strftime函数。该函数需要两个参数，第一个参数是格式字符串，用于指定要将日期转换成的格式，第二个参数是您想要转换的日期值。例如，假设我们有一个名为“today”的日期变量，它存储的是今天的日期。我们想要将它转换为“May 23, 2021”的字符串格式。我们可以使用以下代码来实现：
 
 ```C++
-#include <iostream>
-#include <string>
+#include <iostream> 
 #include <ctime>
 
-int main() {
-    struct tm * timeinfo;
-    time_t now;
-    char buffer [80];
-    time (&now);
-    timeinfo = localtime (&now);
-    strftime (buffer,80,"Today is %A, %B %d, %Y.",timeinfo);
-    std::string str(buffer);
-    std::cout << str << std::endl;
-    return 0;
+int main() 
+{ 
+    time_t today = time(0); // 获取当前日期
+    char str[50]; // 用于存储转换后的字符串
+    strftime(str, 50, "%B %d, %Y", localtime(&today)); // 转换日期为字符串
+    std::cout << str; // 输出结果：May 23, 2021
+    
+    return 0; 
 }
 ```
 
-编译并运行以上代码，输出结果将会是：
+## 深入探讨
+在上面的示例中，我们使用了“%B %d, %Y”格式字符串来指定转换后的日期格式。您可以根据自己的需要选择不同的格式字符串来转换日期。下面是一些常用的格式代码：
 
-```
-Today is Thursday, August 12, 2021.
-```
+- %B - 月份的全称
+- %b - 月份的缩写
+- %d - 日期，带前导零
+- %m - 月份，带前导零
+- %Y - 年份，4位数
+- %y - 年份，2位数
+- %H - 小时，24小时制
+- %I - 小时，12小时制
+- %M - 分钟
+- %S - 秒
 
-深入了解：以上示例中，我们使用了C++中的ctime和string库来实现日期转换。其中，ctime库中的time函数可以获取当前的日期和时间数据，然后使用结构体tm来存储并进一步处理这些数据。最后，使用函数strftime将日期数据格式化为我们想要的字符串格式。
+要了解更多关于strftime函数的详细信息，您可以查看C++的官方文档。
 
-除了上面的方法，还有其他一些实现日期转换为字符串的方式，比如使用C++11中新增的日期时间库等。在实际应用中，可以根据实际需求来选择最适合的方法。
-
-另外，处理日期和时间数据也需要考虑到时区、小时制等因素，对于跨时区或多语言环境下的日期输出，还需要额外的处理。总的来说，日期转换为字符串是一个相对底层的操作，一般应该由底层库或框架来实现，而在高层应用中则直接使用这些底层方法即可。
-
-##参考链接：
-
-- [C++ Date & Time Tutorial](https://www.cplusplus.com/reference/ctime/)
-- [C++11 Date & Time Library](https://en.cppreference.com/w/cpp/chrono)
-- [How to convert date to string in C++](https://www.bogotobogo.com/cplusplus/special_functions/split_join.php)
-- [Formatting Date and Time in C++](https://www.techiedelight.com/formatting-date-time-cpp/)
-
-**另请参阅：**
-
-[如何在C++中处理时区和多语言环境的日期输出](https://blog.example.com/handle-date-timezone-multilanguage-cpp)
+## 参考资料
+- [strftime函数文档](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [C++ 日期和时间](https://www.cplusplus.com/reference/ctime/)
+- [C++ 中文学习站](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)

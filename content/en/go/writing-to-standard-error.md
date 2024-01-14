@@ -1,52 +1,54 @@
 ---
 title:    "Go recipe: Writing to standard error"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As programmers, we are always striving to write clean and efficient code. But what about when our code encounters an error? This is where writing to standard error comes in. By printing error messages to the standard error output, we can easily identify and troubleshoot any issues our code may encounter.
+If you're new to the world of Go programming, you may have come across the concept of writing to standard error. But what exactly is standard error and why would you want to use it in your code?
+
+In short, standard error is a stream that is used to display error messages or output in a terminal or console. It's a useful tool for debugging and troubleshooting, as it allows you to differentiate between regular output and potential issues within your code.
 
 ## How To
 
-Writing to standard error in Go is a simple process. First, we need to import the "os" package, which allows us to access the standard error output stream. Then, we can use the "fmt" package to format and print our error message to the standard error stream. Let's take a look at an example:
+To demonstrate how writing to standard error works in Go, let's take a look at a simple code example:
 
 ```
 package main
 
 import (
-  "fmt"
-  "os"
+    "fmt"
+    "os"
 )
 
 func main() {
-  _, err := os.Open("nonexistentfile.txt")
-  if err != nil {
-    fmt.Fprintln(os.Stderr, "Error opening file:", err)
-  }
+    fmt.Println("This is a regular output")
+
+    fmt.Fprint(os.Stderr, "This is an error message")
 }
 ```
 
-In this example, we are attempting to open a non-existent file. If an error occurs, we use the "fmt.Fprintln()" function to print our error message to the standard error stream. The "os.Stderr" parameter specifies that we want to print to the standard error output instead of the standard output.
+In this example, we are using the `fmt` package to print a regular output to the terminal using `Println`. We then use `Fprint` from the same package to print an error message to the standard error stream, denoted by `os.Stderr`.
 
-Running this code will produce the following output:
-
-```
-Error opening file: open nonexistentfile.txt: no such file or directory
-```
-
-As you can see, our error message is printed to the standard error stream, allowing us to quickly identify and handle the issue.
+Executing this code will result in the regular output being printed as normal, but the error message will appear in red text in the terminal, indicating that it is coming from the standard error stream.
 
 ## Deep Dive
 
-Writing to standard error can be useful for more than just printing error messages. It can also be used to log important information and debug our code. By printing to the standard error stream, we can keep our standard output clean and focused on the intended output of our program.
+Now that you understand the basics of writing to standard error, let's dive a bit deeper into how it works.
 
-One thing to keep in mind when writing to standard error is that it is typically used for printing unformatted messages. This means that we should avoid using any colors or special formatting in our error messages, as it may not be properly displayed depending on the terminal being used.
+In Go, the `os` package provides access to standard input, output, and error streams. The standard error stream, `os.Stderr`, is a `File` type and can be used like any other file to read or write data.
+
+If you're dealing with errors in your code, it's best practice to print them to the standard error stream instead of the standard output. This will ensure that any issues are clearly separated from regular output and can easily be identified during debugging.
 
 ## See Also
 
-- [Golang "os" package documentation](https://golang.org/pkg/os/)
-- [Golang "fmt" package documentation](https://golang.org/pkg/fmt/)
-- [Writing to standard error in Go tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-variables-and-strings-in-go)
+To learn more about standard error and how to use it effectively in your Go code, check out these resources:
+
+- [The official Go documentation on package os](https://golang.org/pkg/os/)
+- [A tutorial on standard input, output, and error in Go](https://www.calhoun.io/what-is-stdin-stdout-and-stderr-in-linux/)
+- [A blog post discussing error handling in Go](https://blog.golang.org/error-handling-and-go)
+
+Now that you have a better understanding of writing to standard error in Go, you can incorporate it into your code for better error handling and troubleshooting. Happy coding!

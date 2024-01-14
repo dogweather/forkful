@@ -1,32 +1,72 @@
 ---
 title:    "Bash: Scrivere test"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché 
-Scrivere test è fondamentale per garantire la qualità e la funzionalità del codice. I test ci permettono di individuare e risolvere errori in maniera efficiente, garantendo una maggiore stabilità e affidabilità del nostro programma.
+## Perché
 
-## Come fare 
-Per scrivere test in Bash, è necessario utilizzare il comando `assert`. Possiamo usare questo comando per verificare se un'asserzione sia vera o falsa. Se l'asserzione è vera, il programma continuerà a eseguire il codice. Se l'asserzione è falsa, il programma terminerà con un errore. Ecco un esempio di come utilizzare `assert` in uno script Bash: 
-```Bash 
-#Definiamo una funzione che vogliamo testare 
-function somma() { 
-   local a=$1 
-   local b=$2 
-   return $(($a + $b)) 
-} 
+Scrivere test è un'attività fondamentale per garantire la qualità del codice e ridurre gli errori. I test permettono di verificare il corretto funzionamento delle parti di un programma e di individuare eventuali problemi in modo rapido ed efficiente.
 
-#Chiamiamo la funzione e confrontiamo il risultato con l'output atteso 
-assert "somma 2 3" "5" 
-``` 
-Nell'esempio sopra, stiamo testando la funzione `somma`, che dovrebbe ritornare la somma dei due parametri passati. Se il risultato della funzione corrisponde a 5, il test passerà con successo. In caso contrario, il test fallirà e saranno mostrati i dettagli dell'errore.
+## Come fare
 
-## Approfondimento 
-Scrivere test efficaci è un processo che richiede tempo e dedizione. È importante pianificare quali parti del codice testare e scrivere test che coprano tutti gli scenari possibili. Inoltre, è importante essere in grado di interpretare i risultati dei test e di utilizzare gli errori per migliorare il codice. In generale, è sempre meglio scrivere troppi test che troppi pochi. 
+Per scrivere test in Bash, è possibile utilizzare il comando `test` o la sintassi `[[...]]`. Ecco un esempio di un semplice test utilizzando il comando `test`:
 
-## Vedi anche 
-- [Documentazione di `assert` di Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#index-assert)
-- [Guida su come scrivere test efficaci in Bash](https://david.rothlis.net/bash/how-to-write-tests.html)
-- [Esempi di test in Bash](https://github.com/sstephenson/bats/tree/master/examples)
+```
+#!/bin/bash
+
+# Dichiarazione di due variabili
+x=5
+y=8
+
+# Test sulla variabile x: è uguale a 5?
+if test $x -eq 5; then
+  echo "La variabile x è uguale a 5"
+fi
+
+# Test sulla variabile y: è diversa da 10?
+if test $y -ne 10; then
+  echo "La variabile y è diversa da 10"
+fi
+```
+
+Ecco l'output del codice sopra riportato:
+
+```
+La variabile x è uguale a 5
+La variabile y è diversa da 10
+```
+
+Un altro modo per scrivere test in Bash è utilizzare la sintassi `[[...]]`, che offre più opzioni di confronto e supporta anche le espressioni regolari. Ecco un esempio utilizzando `[[...]]`:
+
+```
+#!/bin/bash
+
+# Dichiarazione di una variabile
+stringa="Questo è un esempio di test stringa"
+
+# Test sulla variabile stringa: contiene la parola "esempio"?
+if [[ "$stringa" =~ "esempio" ]]; then
+  echo "La stringa contiene la parola 'esempio'"
+fi
+```
+
+Output:
+
+```
+La stringa contiene la parola 'esempio'
+```
+
+## Approfondimento
+
+Per scrivere test più avanzati in Bash, è possibile utilizzare la libreria `shunit2`, che permette di scrivere test automatizzati con una struttura più complessa. Questo è utile soprattutto nei progetti più grandi e complessi, dove è necessario testare molteplici funzionalità del codice.
+
+È inoltre importante tenere in considerazione l'approccio alla scrittura dei test in Bash in modo corretto, seguendo le buone pratiche di sviluppo. Ad esempio, è necessario scegliere i giusti punti di controllo e implementare i corretti meccanismi di gestione degli errori.
+
+## Vedi anche
+
+- [Sintassi di base di Bash](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Guida alla scrittura di test in Bash](https://www.ibm.com/developerworks/library/l-bash-test/)
+- [Libreria Shunit2 per test automatizzati](https://github.com/kward/shunit2)

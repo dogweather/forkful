@@ -1,55 +1,47 @@
 ---
 title:    "Elm: 比较两个日期"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+在现代生活中，我们经常需要比较两个日期。可能是为了确定哪个日期更旧，或者计算两个日期之间的时间间隔。使用Elm编程语言可以轻松地比较日期，并且它具有强大的类型安全性和纯函数的特性，使得代码更加可靠和易于维护。
 
-在编程世界中，时间和日期是非常重要的概念，我们经常需要比较不同的日期。 Elm是一种流行的函数式编程语言，它提供了很多方便的方法来比较和操作日期。 在本篇博文中，我们将深入探讨如何在Elm中比较两个日期。
-
-## 如何进行比较
-
-在Elm中，我们可以使用Date.compare函数来比较两个日期。让我们来看一个简单的例子：
+## 如何使用
+比较两个日期的最简单方法是使用```Date.compare```函数。下面是一个示例代码，展示如何使用它来比较两个日期，并根据结果输出相应的信息。
 
 ```Elm
-Date.compare (Date.fromCalendarDate 2021 12 31) (Date.fromCalendarDate 2022 01 01)
+firstDate = Date.fromYYMMDD 2021 10 10
+secondDate = Date.fromYYMMDD 2021 10 15
+
+case Date.compare firstDate secondDate of
+    LT -> "第一天早于第二天"
+    GT -> "第一天晚于第二天"
+    EQ -> "两个日期相同"
 ```
 
-这个函数将返回一个比较值，如果第一个日期早于第二个日期，返回-1，如果相等则返回0，如果第一个日期晚于第二个日期，返回1。
+输出结果为：```"第一天早于第二天"```，因为第一天比第二天早5天。
 
-我们也可以使用Date.lt，Date.eq和Date.gt来比较两个日期，分别代表小于、等于和大于。
+## 深入讨论
+如果你需要更详细的比较结果，可以使用```Date.compareWith```函数。该函数返回一个```ComparisonResult```类型的结果，包含了比较结果的详细信息。下面是一个例子：
 
 ```Elm
-Date.lt (Date.fromCalendarDate 2021 12 31) (Date.fromCalendarDate 2022 01 01) {- 返回True -}
-Date.eq (Date.fromCalendarDate 2021 12 31) (Date.fromCalendarDate 2022 01 01) {- 返回False -}
-Date.gt (Date.fromCalendarDate 2021 12 31) (Date.fromCalendarDate 2022 01 01) {- 返回False -} 
+firstDate = Date.fromYYMMDD 2021 10 10
+secondDate = Date.fromYYMMDD 2021 10 15
+
+case Date.compareWith firstDate secondDate of
+    Date.Equal -> "两个日期相同"
+    Date.LessThan -> "第一天早于第二天"
+    Date.GreaterThan -> "第一天晚于第二天"
 ```
 
-我们也可以比较两个日期的时间差，使用Date.subtract函数：
+除了这些基本函数外，Elm社区还开发了许多日期比较相关的包，例如```justinmimbs/date-extra```包提供了更多的日期比较函数，而```elm-chronology```包则提供了更复杂的日期解析和操作功能。你可以根据自己的需求选择使用。
 
-```Elm
-Date.subtract (Date.fromCalendarDate 2022 01 01) (Date.fromCalendarDate 2021 12 31)
-{- 返回Duration.fromDays 1 -}
-```
-
-还有许多其他有用的函数来比较和操作日期，请查阅Elm官方文档了解更多信息。
-
-## 深入探讨
-
-在Elm中，日期是不可变的数据类型，也就是说一旦创建，就无法修改。这样的设计使得日期的比较更加简单和可靠，因为我们不需要考虑可能的副作用。而且，使用Elm的类型系统，我们可以避免很多常见的日期错误（例如比较不同格式的日期）。
-
-另外，Elm中的Date模块也提供了许多有用的函数来处理日期对象，例如获取年份、月份、日期等等。
-
-## 参考链接
-
-- [Elm官方文档：Date模块](https://package.elm-lang.org/packages/elm/time/latest/Time-Date)
-- [Elm官方文档：Function模块](https://elm-lang.org/docs/syntax#functions)
-- [Elm官方文档：Module模块](https://elm-lang.org/docs/syntax#modules)
-
-## 参见
-
-- [Elm官方文档：Time模块](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm官方文档：Duration模块](https://package.elm-lang.org/packages/elm/time/latest/Time-Duration)
-- [Elm官方文档：Time感兴趣指南](https://guide.elm-lang.org/effects/time.html)
+## 查看更多
+如果你想了解关于Elm日期比较的更多信息，可以查看下面的链接：
+- [Elm官方文档关于Date的介绍](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Elm时间和日期操作教程](https://guide.elm-lang.org/effects/time.html)
+- [justinmimbs/date-extra：更多日期比较函数](https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/)
+- [elm-chronology：复杂的日期操作包](https://package.elm-lang.org/packages/the-sett/elm-chronology/latest/)

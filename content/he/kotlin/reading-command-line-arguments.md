@@ -1,52 +1,39 @@
 ---
-title:    "Kotlin: קריאת ארגומנטים בשורת הפקודה"
+title:    "Kotlin: קריאת ארגומנטים מפקודת הפקודה"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
 
-קריאת פרמטרי שורת הפקודה היא כלי חשוב בכתיבת תוכניות עם שפת קוטלין. היא מאפשרת לנו לקבל קלט מהמשתמש ישירות מפקודת הטרמינל ולהשתמש בו בתוך התוכנית שלנו. זה מאפשר לנו להתאים את פעולת התוכנית לפי הקלט שנקבל וליצור חוויית משתמש טובה יותר.
+כאשר מפתחים אפליקציות בקוטלין, ייתכן שנזדקק לקבל קלט מהמשתמש על מנת להתאים את התוכנית לצרכיו המיוחדים. דרך שכה נפוצה לעשות זאת היא על ידי קריאת פרמטרים שיועברו כארגומנטים בשורת הפקודה. מאמר זה ילמד את הקוראים כיצד לקרוא פרמטרים מקו הפקודה בעזרת קוד קוטלין.
 
-## איך לעשות זאת:
+## כיצד לעשות זאת
 
-תוכניות בקוטלין משתמשות בקלות רבה בפרמטרים של שורת הפקודה. כדי לקרוא אותם בקלות, אנו משתמשים באובייקט ה-mutableMap שבתוך מחלקת ה-main- של התוכנית שלנו. בקלות אנו מקבלים את כל הפרמטרים כמחרוזת ואנו יכולים לעבד אותם בקלות. תוכלו לראות דוגמא לעיבוד פרמטרים בקוד שלמטה:
+קריאת פרמטרים מקו הפקודה בקוטלין היא פשוטה ונוחה כאשר משתמשים בספרית המובנית של קוטלין. נלמד כיצד לכתוב קוד ולהשתמש בספרית זו במטרה לקרוא פרמטרים מתוך פקודת הפתיחה של הביצוע.
 
-```Kotlin
-fun main(args: Array<String>) {
-    val commandArgs = mutableMapOf<String, String>()
+````Kotlin
+fun main(args : Array<String>) {
+    // Take the first argument and display it
+    if (args.size > 0) println("The first argument is ${args[0]}")
+}
+````
+
+בקוד זה, אנו משתמשים במשתנה `args` המכיל את כל הפרמטרים שהועברו לנו כארגומנטים בשורת הפקודה. כדי לקבל גישה לפרמטרים אלו, אנו משתמשים באינדקס (מיקום) שלהם במערך, ולכן התוכן של הפרמטר הראשון נמצא במיקום `args[0]`.
+
+````Kotlin
+fun main(args : Array<String>) {
+    // Take all the arguments and display them
     for (arg in args) {
-        if (arg.startsWith("--")) {
-            val (argName, argValue) = arg.split("=")
-            commandArgs[argName.substring(2)] = argValue
-        }
+        println("Argument: $arg")
     }
-    
-    println("שם: ${commandArgs["שם"]}")
-    println("גיל: ${commandArgs["גיל"]}")
 }
-```
+````
 
-פנקס עבודות מחולל פקודות יחסוך לנו את הכתיבה של קבועת-גיל ארוכה ומשוכללת ויוצר אותה באופן אוטומטי כאשר נכתוב קוד בפנקס ונפעילו. ניתן להוסיף פרמטרים נוספים בפנקס שניתן יהיה לגשת אליהם בסדר מסוים או לקבל ערך באמצעות הפונקציה readLine ולהכניס את הפרמטרים לבד.
+בקוד זה, אנו משתמשים בלולאת `for` על מנת לעבור על כל הפרמטרים במערך ולהציג כל אחד מהם בנפרד.
 
-```Kotlin
-@Parameters(autoNameDetection = true)
-data class JobResult(val logFile: String, val user: Boolean)
+## אינפורמציה מפורטת
 
-fun main(args: Array<String>) {
-    val cmd = args
-        .map { it.name to it }
-        .toMap()
-    
-    val jobResult = JobResult(
-        cmd["--name"] ?: error("Although arg --name is mandatory it does not happen."),
-        cmd["--user"] != null
-    )
-    
-    println("שם קובץ לוג: ${jobResult.logFile}")
-    println("משתמש: ${jobResult.user}")
-}
-```
-
-## מעמד מעמ
+קריאת פרמטרים מקו הפקודה בקוטלין כוללת התמודדות עם מספר דברים נוספים, כגון טיפוסי הפרמטרים, כיצד לעשות טיפול בפרמטרים שיימצאו מימין לפקוד

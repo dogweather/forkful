@@ -1,58 +1,51 @@
 ---
 title:    "Elixir: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto spróbować czytać argumenty wiersza poleceń w Elixirze?
+## Dlaczego
 
-Czytanie i przetwarzanie argumentów wiersza poleceń może być niezwykle przydatnym umiejętnością dla programistów w Elixirze, ponieważ pozwala na interakcję z naszym programem za pomocą argumentów podanych podczas uruchamiania. Pozwala to na dostosowanie i personalizację naszych programów, a także na ustawienie pewnych opcji i flag w zależności od potrzeb.
+Dlaczego powinieneś interesować się czytaniem argumentów wiersza poleceń? Jeśli piszesz w języku Elixir, umiejętność czytania argumentów z wiersza poleceń jest niezbędna do tworzenia aplikacji wiersza poleceń lub do programów, które wymagają podawania parametrów przy uruchamianiu. W tym artykule dowiesz się, jak w łatwy sposób czytać argumenty wiersza poleceń w Elixir.
 
-# Jak to zrobić?
+## Jak to zrobić
 
-Czytanie argumentów wiersza poleceń w Elixirze jest bardzo łatwe i sprowadza się do użycia funkcji `System.argv/1`, która zwraca listę argumentów przekazanych przy uruchamianiu naszego programu. W poniższym przykładzie wykorzystamy tę funkcję i wyświetlimy na ekranie każdy podany argument:
-
-```Elixir
-defmodule CommandArgs do
-  def print_args() do
-    args = System.argv()
-    Enum.each(args, fn arg ->
-      IO.puts("Podano argument: #{arg}")
-    end)
-  end
-end
-
-CommandArgs.print_args()
-```
-
-Po uruchomieniu programu z argumentami, na przykład `elixir command_args.exs argument1 argument2`, otrzymamy następujący wynik:
-
-```bash
-Podano argument: argument1
-Podano argument: argument2
-```
-
-Możemy także przetwarzać i wykorzystywać poszczególne argumenty w naszym programie, na przykład korzystając z funkcji `List.first/1` i `List.last/1`:
+Pierwszym krokiem jest zaimportowanie modułu `OptionParser`, który jest częścią standardowej biblioteki Elixir. Następnie możesz zdefiniować listę opcji, które chcesz obsługiwać przy uruchamianiu aplikacji. Na przykład, jeśli chcesz móc przekazać opcję `-f` w celu wyświetlenia pliku, możesz to zrobić w następujący sposób:
 
 ```Elixir
-# przykładowa funkcja, która odczytuje dwa argumenty i zwraca ich sumę
-defmodule AddArgs do
-  def add_args() do
-    arg1 = System.argv() |> List.first() |> String.to_integer()
-    arg2 = System.argv() |> List.last() |> String.to_integer()
-    arg1 + arg2
-  end
-end
-
-IO.puts("Wynik dodawania: #{AddArgs.add_args()}")
+OptionParser.parse(argv, switches: [force: :boolean])
 ```
 
-# W głębi tematu
+Argument `argv` zawiera listę argumentów wiersza poleceń przekazanych do aplikacji. Następnie możesz użyć funkcji `force` zwracanej przez `OptionParser.parse` w celu sprawdzenia, czy opcja `-f` została podana:
 
-Podczas czytania argumentów wiersza poleceń warto wiedzieć, że funkcja `System.argv/1` zwraca listę napisów (stringów) i należy pamiętać, aby dopasować typ danych odpowiednio do potrzeb. Warto także zwrócić uwagę na obecność argumentów specjalnych, takich jak opcje z prefiksem `-` lub flagi z prefiksem `--`, które mogą mieć różne znaczenia i być wykorzystywane przez różne programy. Możemy także wykorzystać bibliotekę `OptionParser`, aby upewnić się, że nasz program odczyta i przetworzy argumenty poprawnie.
+```Elixir
+if force do
+  IO.puts("Wyświetlam plik...")
+end
+```
 
-# Zobacz także
+Innym przykładem jest przekazywanie wartości liczbowych jako argumentów. Pozwala to na dynamiczne generowanie danych przy uruchamianiu aplikacji. Możesz to zrobić poprzez określenie parametru jako typu `:positive_integer` w liście opcji:
 
-- [Dokumentacja Elixir - System.argv/1](https://hexdocs.pm/elixir/System.html#argv/1)
-- [Biblioteka OptionParser](https://hexdocs.pm/OptionParser/OptionParser.html)
+```Elixir
+OptionParser.parse(argv, switches: [count: :positive_integer])
+```
+
+A następnie wyświetlić liczbę określoną jako `count`:
+
+```Elixir
+IO.puts("Generuję #{count} losowych liczb...")
+```
+
+## Deep Dive
+
+Podczas czytania argumentów z wiersza poleceń można również określić domyślne wartości dla opcji lub przekazać funkcję do wywołania, jeśli opcja zostanie podana. Możesz również użyć `OptionParser.on_unknown_option` do obsługi nieznanych opcji. Jest to przydatne, gdy chcesz umożliwić użytkownikom podawanie własnych opcji, ale chcesz mieć kontrolę nad obsługa nieznanych przypadków.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o modułach lub innych funkcjonalnościach języka Elixir, przeczytaj więcej na poniższych stronach:
+
+- [Dokumentacja języka Elixir](https://elixir-lang.org/docs.html)
+- [Moduł OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Artykuł o działaniach wiersza poleceń w Elixir](http://erlangenbies.github.io/post/cli-in-elixir/)

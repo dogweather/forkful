@@ -1,38 +1,41 @@
 ---
-title:    "Gleam: Encontrando la longitud de una cadena"
+title:    "Gleam: Encontrar la longitud de una cadena"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
-Calcular la longitud de una cadena de texto es una tarea común en la programación y es esencial para muchos programas y aplicaciones. Al saber la cantidad de caracteres en una cadena, podemos validar entradas, formatear datos y realizar otras operaciones importantes.
+## Por qué
 
-# Cómo hacerlo
-Para encontrar la longitud de una cadena en Gleam, podemos utilizar la función `length` seguida de la cadena a la que queremos medir su longitud. Por ejemplo:
+En programación, a menudo necesitamos saber la longitud de una cadena de texto para realizar ciertas operaciones. Ya sea para determinar cuántos caracteres contiene una palabra o para generar un error si la cadena es demasiado larga, encontrar la longitud de una cadena es una habilidad básica y útil en cualquier lenguaje de programación. En Gleam, este proceso es sencillo y eficiente.
 
-```Gleam
-let cadena = "¡Hola Mundo!"
-let longitud = length(cadena)
+## Cómo hacerlo
 
-// Salida: 12
-```
-
-En este ejemplo, asignamos la cadena "¡Hola Mundo!" a una variable llamada `cadena` y luego utilizamos la función `length` para obtener su longitud, que es 12. 
-
-También podemos usar `length` directamente en una cadena sin asignarla primero a una variable:
+La función `string.length/1` es la forma más común de encontrar la longitud de una cadena en Gleam. Simplemente le pasamos la variable que contiene nuestra cadena y nos devuelve un número que representa la cantidad de caracteres. Veamos un ejemplo:
 
 ```Gleam
-let longitud = length("Gleam es un lenguaje de programación funcional")
-// Salida: 45
+let name = "Juan"
+let length = string.length(name)
 ```
+El valor de `length` sería `4`, ya que hay cuatro caracteres en la cadena "Juan".
 
-# Profundizando
-En Gleam, la función `length` utiliza la función de la biblioteca estándar `String.length`, que es una función de orden superior que toma una cadena y devuelve su longitud como un número entero. Esta función también se encarga de manejar correctamente los caracteres Unicode, por lo que puede manejar cadenas con caracteres especiales.
+También podemos usar una cadena directamente en la función sin necesidad de asignarla a una variable primero:
 
-Una cosa importante a tener en cuenta es que `length` solo cuenta los *caracteres*, no los bytes o puntos de código. Esto significa que un solo carácter podría ocupar más de un byte, por lo que la longitud de una cadena puede ser mayor de lo esperado si se utilizan caracteres especiales o emojis.
+```Gleam
+let length = string.length("Hola!")
+```
+En este caso, `length` sería `5`, ya que hay cinco caracteres en la cadena "Hola!".
 
-# Ver también
-- [Documentación oficial de la función `length`](https://gleam.run/documentation/standard-library/string.html#length)
-- [Cálculo de longitud de cadena en otros lenguajes de programación](https://stackoverflow.com/questions/42962822/how-does-the-length-function-in-other-languages-count-characters-in-a-string)
-- [Guía para entender y trabajar con caracteres Unicode](https://www.smashingmagazine.com/2021/07/guide-understanding-programming-unicode/)
+## Profundizando
+
+Detrás de escena, la función `string.length/1` cuenta la cantidad de bytes que componen la cadena, en lugar de simplemente contar los caracteres visuales. Esto significa que algunas letras pueden tener más de un byte y, por lo tanto, pueden afectar la longitud de una cadena.
+
+También es importante tener en cuenta que diferentes lenguajes pueden tener diferentes longitudes de cadena debido a la codificación de caracteres utilizada. Por ejemplo, una cadena en chino puede tener una longitud diferente a la misma cadena en inglés debido a la forma en que se codifican los caracteres en cada idioma.
+
+## Ver también
+
+- Documentación oficial de Gleam sobre `string.length/1`: https://gleam.run/docs/stdlib/string#length
+- Un tutorial sobre operaciones básicas de cadenas en Gleam (en inglés): https://gleam.run/articles/strings
+
+¡Con esta información, ya estás listo para utilizar la función `string.length/1` en tus proyectos Gleam! Recuerda tener en cuenta la codificación de caracteres y elegir la mejor forma de trabajar con cadenas según tus necesidades específicas. ¡Feliz programación!

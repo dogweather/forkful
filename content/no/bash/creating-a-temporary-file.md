@@ -1,31 +1,65 @@
 ---
-title:    "Bash: Oppretting av midlertidig fil"
+title:    "Bash: Oppretting av en midlertidig fil"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor?
+# Hvorfor
 
-Når du jobber med Bash-programmering, kan det være veldig nyttig å kunne opprette midlertidige filer. Disse filene opprettes og brukes midlertidig mens programmet kjører, og slettes deretter automatisk når programmet er ferdig. Dette kan være nyttig for å lagre midlertidige data, behandle store filer eller for å unngå overbelastning av systemet med unødvendige filer.
+Å opprette en midlertidig fil er et vanlig programmeringsteknikk som kan være nyttig når man jobber med å lagre midlertidige data eller behandle store mengder informasjon. Det kan også brukes for å sikre at programmet ditt fungerer som det skal ved å teste det med forskjellige datasett.
 
-# Slik oppretter du en midlertidig fil
+# Hvordan
 
-For å opprette en midlertidig fil i Bash, kan du bruke kommandoen "mktemp". Denne kommandoen genererer en unik filnavn og oppretter en tom fil med dette navnet. Du kan også spesifisere en prefiks eller suffiks for filnavnet. Se et eksempel nedenfor:
+For å opprette en midlertidig fil i Bash, kan du bruke kommandoen "mktemp". Dette vil automatisk generere en unik filnavn og opprette en tom fil med dette navnet. For eksempel:
 
 ```Bash
-filnavn=$(mktemp testfile.XXX)
-echo $filnavn
+mktemp
 ```
 
-Dette vil opprette en tom fil med navnet "testfile.XXX", der XXX er en tilfeldig kombinasjon av bokstaver og tall. Hvis du ønsker å endre prefikset eller suffikset, kan du legge til det som et argument til "mktemp" kommandoen.
+Dette vil produsere følgende utgang:
+
+```Bash
+/tmp/tmp.x6W2VVJi
+```
+
+Du kan også spesifisere et prefiks for filnavnet ved å bruke "-p" flagget. For eksempel:
+
+```Bash
+mktemp -p myfiles
+```
+
+Dette vil produsere følgende utgang:
+
+```Bash
+myfiles/tmp.p2hNDHAY
+```
+
+Du kan også angi en filtype ved hjelp av "-t" flagget. For eksempel:
+
+```Bash
+mktemp -t .txt
+```
+
+Dette vil produsere følgende utgang:
+
+```Bash
+/tmp/tmp.JR5j9Fpp.txt
+```
 
 # Dypdykk
 
-Det er viktig å merke seg at "mktemp" ikke oppretter filen på et trygt og sikkerhetsmessig måte. Derfor er det viktig å følge noen sikkerhetsprinsipper når du bruker midlertidige filer. For eksempel kan du sette begrensninger på hvem som har tilgang til filen, eller begrense skrivetilgangen til andre brukere. Du kan også spesifisere at filen skal slettes ved en gitt hendelse, som for eksempel ved avslutningen av programmet.
+Når du oppretter en midlertidig fil, vil det genererte filnavnet være unikt og tilfeldig. Dette sikrer at filen ikke vil kollidere med andre filer som allerede eksisterer eller som kan bli opprettet senere. Det er også viktig å slette den midlertidige filen når den ikke lenger trengs, for å unngå rot og hindre at personlige data lekkes.
 
-# Se også
+For å slette den midlertidige filen, kan du bruke "rm" kommandoen og spesifisere navnet på filen. For eksempel:
 
-- https://linux.die.net/man/1/mktemp
-- https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html
-- https://bash.cyberciti.biz/guide/Cleaning_Up_Temp_Files
+```Bash
+rm /tmp/tmp.x6W2VVJi
+```
+
+En annen fordel med å bruke midlertidige filer er at de er automatiske slettes når systemet blir startet på nytt, noe som hjelper til å frigjøre plass på harddisken.
+
+# Se Også
+- [Bash dokumentasjon](https://www.gnu.org/software/bash/)
+- [mktemp dokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)

@@ -1,54 +1,43 @@
 ---
 title:    "Bash: Tests schreiben"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Tests sind eine wichtige Komponente in der Softwareentwicklung. Sie helfen dabei, Bugs frühzeitig zu erkennen und die Qualität des Codes zu verbessern. Durch das Schreiben von Tests können Entwickler:innen sicherstellen, dass ihr Code wie erwartet funktioniert und auch bei zukünftigen Änderungen stabil bleibt.
+Tests zu schreiben ist ein wichtiger Teil des Programmierens. Sie helfen uns, unsere Codes zu überprüfen und zu verbessern, bevor wir sie in die Produktion schicken. Auch können Tests helfen, mögliche Fehler frühzeitig zu erkennen und zu beheben, was uns Zeit und Mühe ersparen kann. Deshalb ist es wichtig, sich mit dem Thema Tests vertraut zu machen und sie in unsere Entwicklungspraxis zu integrieren.
 
-## So geht's
+## Wie geht man vor?
 
-Um Tests in Bash zu schreiben, kannst du das Bats-Testing-Framework verwenden. Bats steht für "Bash Automated Testing System" und bietet eine einfache und effektive Möglichkeit, Tests in Bash-Skripten zu schreiben.
-
-Folgende Schritte helfen dir dabei, Bats in dein Projekt zu integrieren:
-
-1. Installiere Bats über folgenden Befehl: `npm install -g bats`
-2. Erstelle einen Ordner mit dem Namen "tests" oder "specs" in deinem Projektverzeichnis.
-3. Schreibe deine Tests in diesem Ordner mit der Dateiendung ".bats".
-
-Ein einfaches Beispiel für einen Test mit Bats könnte wie folgt aussehen:
+Um Tests zu schreiben, nutzen wir in der Regel sogenannte Testframeworks, wie zum Beispiel **Bash Automated Testing System (BATS)** oder **shUnit2**. Diese ermöglichen es uns, Testfälle zu schreiben und auszuführen, um die Funktionen unserer Codes zu prüfen. Hier ist ein Beispiel, wie wir die BATS-Testframework in einem Bash-Script verwenden können:
 
 ```Bash
-#!/usr/bin/env bats
+#!/bin/bash
 
-@test "1 plus 1 equals 2" {
-  result=$(($1 + $2))
-  [ $result -eq 2 ]
+@test "Funktionsname muss richtig formatiert sein" {
+  result="$(./script.sh test)"
+  [ "$result" == "Success" ]
+}
+
+@test "Wiegen in Kilogramm sollte richtig berechnet werden" {
+  result="$(./script.sh weight)"
+  [ "$result" == "5 kg" ]
 }
 ```
 
-Führe den Test aus, indem du den Befehl `bats tests/test_example.bats` in deiner Konsole ausführst. Das Ergebnis sollte wie folgt aussehen:
+In diesen Testfällen überprüfen wir, ob die Funktionen "Funktionsname" und "Wiegen" unseres Skripts die erwarteten Ergebnisse liefern. Wir testen sie, indem wir das Skript mit verschiedenen Parametern ausführen und die Ausgabe mit den erwarteten Ergebnissen vergleichen.
 
-```
- ✓ 1 plus 1 equals 2
+## Tiefer tauchen
 
-1 test, 0 failures
-```
+Tests zu schreiben erfordert ein gutes Verständnis unserer Codes und ihrer Funktionen. Deshalb sollten wir beim Schreiben von Tests auch auf die Einhaltung von Best Practices achten. Zum Beispiel sollten wir sicherstellen, dass unsere Tests unabhängig voneinander und wiederholbar sind. Auch ist es wichtig, verschiedene Szenarien abzudecken und Grenzfälle zu testen, um sicherzustellen, dass unsere Codes robust und fehlerfrei sind.
 
-Herzlichen Glückwunsch, du hast erfolgreich deinen ersten Test in Bash geschrieben!
-
-## Tiefer eintauchen
-
-Das Bats-Framework bietet viele nützliche Funktionen, um Tests noch effektiver zu gestalten. Zum Beispiel kannst du mit der Funktion `skip` Tests überspringen oder mit der Funktion `setup` vor jedem Test eine Aktion ausführen.
-
-Außerdem ermöglicht Bats das Testen von Ausgaben, die auf die Standardausgabe oder den Standardfehler streamen. Mit der Funktion `run` kannst du ein Skript ausführen und dann mit der Funktion `result` überprüfen, ob die erwartete Ausgabe zurückgegeben wurde.
-
-Eine detaillierte Dokumentation und weitere Beispiele findest du auf der offiziellen Bats-Website: [https://github.com/bats-core/bats-core](https://github.com/bats-core/bats-core)
+Ein weiterer wichtiger Aspekt ist es, unsere Tests regelmäßig auszuführen und die Ergebnisse zu überprüfen. Wenn wir Änderungen an unserem Code vornehmen, müssen wir auch unsere Tests anpassen oder neue hinzufügen, um sicherzustellen, dass alle Funktionen weiterhin ordnungsgemäß arbeiten.
 
 ## Siehe auch
 
-- [Bats GitHub Repository](https://github.com/bats-core/bats-core)
-- [Offizielle Bats Dokumentation](https://bats-core.readthedocs.io/en/latest/)
+- [Bash Automated Testing System (BATS)](https://github.com/bats-core/bats-core)
+- [shUnit2](https://github.com/kward/shunit2)
+- [Test-Driven Development (TDD) in Bash](https://blog.dcycle.com/blog/2014-07-13/test-driven-development-tdd-bash/)

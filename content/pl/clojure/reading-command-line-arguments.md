@@ -1,41 +1,52 @@
 ---
-title:    "Clojure: Odczytywanie argumentów linii poleceń"
+title:    "Clojure: Odczytanie argumentów wiersza poleceń"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zdarzyło Ci się korzystać z wiersza poleceń w swoich programach w Clojure? Jeśli tak, to wiesz, jakie to może być przydatne narzędzie. Ale czy wiesz, dlaczego warto nauczyć się czytać argumenty z wiersza poleceń? Ten artykuł odpowie na to pytanie.
+Programowanie w Clojure może wydawać się złożone i trudne do nauki dla wielu osób. Jednak znajomość podstawowych funkcji i narzędzi może sprawić, że praca z tym językiem stanie się łatwiejsza i bardziej efektywna. W tym artykule dowiesz się, dlaczego warto poznać jak czytać argumenty wiersza poleceń.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Oto prosty przykład kodu w Clojure, który czyta argumenty z wiersza poleceń i wypisuje je na ekran:
+W języku Clojure, argumenty wiersza poleceń można odczytać z użyciem funkcji `*command-line-args*`. Najpierw należy zaimplementować tę funkcję w swoim kodzie, aby móc uzyskać dostęp do argumentów wpisanych podczas uruchamiania programu. Następnie można je wykorzystać w celu manipulacji i przetwarzania danych w naszej aplikacji.
 
-```Clojure
-(def args (rest *command-line-args*)
-(dorun (map println args)))
-```
-
-Dzięki tej funkcji, gdy uruchomisz program z argumentami, np. `clojure.exe program.clj argument1 argument2`, zobaczysz na ekranie:
+Poniżej znajdziesz przykładowy kod wykorzystujący funkcję `*command-line-args*` do wyświetlenia argumentów wpisanych przez użytkownika oraz sumowania liczb przekazanych jako argumenty:
 
 ```Clojure
-argument1
-argument2
+(defn read-command-line-args []
+  (println "Wprowadzone argumenty:")
+  (let [args *command-line-args*]
+    (doseq [arg args]
+      (println arg))
+    (let [num-args (count args)
+          sum (apply + (map #(Integer/parseInt %) args))]
+      (println "Suma argumentów wynosi:" sum))))
+
+(read-command-line-args)
 ```
 
-To tylko jedno z wielu zastosowań czytania argumentów z wiersza poleceń. Możesz na ich podstawie wykonać różne operacje, przekazać je do innych funkcji, czy też ustawić różne opcje dla programu.
+Dla przykładu, jeśli wprowadzimy wiersz poleceń `lein run 1 2 3`, to otrzymamy następujący wynik:
 
-## Glebokie zanurzenie
+```Clojure
+Wprowadzone argumenty:
+1
+2
+3
+Suma argumentów wynosi: 6
+```
 
-Zanim przystąpisz do czytania argumentów z wiersza poleceń, dobrze jest zrozumieć, jak są one przekazywane do Twojego programu. Każdy argument jest oddzielony od innych spacją i jest traktowany jako odrębny ciąg znaków. To oznacza, że jeśli chcesz, aby Twój program rozpoznawał argumenty z nawiasami lub cudzysłowami, musisz odpowiednio je obsłużyć.
+## Deep Dive
 
-Możesz również dodać do swojego programu opcję obsługi błędów w przypadku, gdy użytkownik nie podał żadnych argumentów, albo podał ich za dużo. W ten sposób Twój program będzie bardziej niezawodny i odpowiednio reagować na różne przypadki.
+Jedną z głównych zalet czytania argumentów wiersza poleceń jest możliwość dostosowania działania naszej aplikacji bez konieczności zmiany kodu. W ten sposób, za pomocą różnych argumentów, użytkownik może wywoływać różne funkcje lub przekazywać różnego rodzaju dane do aplikacji.
 
-## Zobacz także
+W języku Clojure można również korzystać z biblioteki `clojure.tools.cli` w celu łatwiejszej obsługi argumentów wiersza poleceń. Dzięki niej możemy używać flag, opcji i argumentów pozycyjnych w naszych aplikacjach w bardziej przejrzysty i elastyczny sposób.
 
-Jeśli chcesz dowiedzieć się więcej o czytaniu argumentów z wiersza poleceń w Clojure, polecam przeczytać te artykuły:
+## Zobacz również
 
-- [Czytanie argumentów w Clojure](https://clojure.org/reference/deps_and_cli#_command_line_arguments) 
-- [Argumenty z wiersza poleceń w akcji](https://www.braveclojure.com/functional-programming/)
+- Oficjalna dokumentacja do Clojure: (https://clojure.org/)
+- Przewodnik po języku Clojure: (https://www.braveclojure.com/getting-started/)
+- Dokumentacja biblioteki `clojure.tools.cli`: (https://clojure.github.io/tools.cli/)

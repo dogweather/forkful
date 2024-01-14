@@ -1,57 +1,62 @@
 ---
-title:    "Go: 使用正则表达式"
+title:    "Go: 请使用正则表达式"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用正则表达式
+# 为什么使用正则表达式？
 
-正则表达式是一种功能强大的工具，它能够帮助我们在Go编程中进行字符串匹配和搜索。它们可以帮助我们更有效地处理文本，提高代码的可读性和灵活性。
+正则表达式是一种强大的模式匹配工具，能够帮助我们快速有效地处理字符串。它们可以用于验证输入、搜索文本、替换字符串等多种场景。使用正则表达式可以大大提高代码的效率和可读性。
 
-# 如何使用正则表达式
+# 如何使用正则表达式？
+
+下面是一个简单的示例，演示如何使用Go语言中内置的正则表达式包进行字符串匹配：
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // 创建一个正则表达式对象
-    re := regexp.MustCompile(`\d{2}-\d{2}-\d{4}`)
+	re := regexp.MustCompile(`(\d{4})-(\d{2})-(\d{2})`)     // 定义一个正则表达式
+	str := "今天是2020-01-01，明天是2020-01-02"        // 要匹配的字符串
 
-    // 定义一个待匹配的字符串
-    text := "今天是2021年07月21日，明天是22-07-2021。"
+	// 查找所有匹配项并返回存放在二维数组中
+	result := re.FindAllStringSubmatch(str, -1)
 
-    // 使用FindAllString匹配所有符合要求的字符串
-    result := re.FindAllString(text, -1)
-
-    // 打印结果
-    fmt.Println(result)
-    // Output: [22-07-2021]
+	// 遍历二维数组，打印匹配到的日期
+	for _, match := range result {
+		fmt.Println(match[0])
+	}
 }
 ```
 
-在上面的例子中，我们创建了一个正则表达式对象(`re`)，它可以匹配日期格式`dd-dd-dddd`。然后，我们使用`FindAllString`方法，传入待匹配的字符串和`-1`作为最大匹配次数，获得了符合要求的所有日期字符串。最后，打印结果`[22-07-2021]`。
+这段代码中，我们首先定义了一个正则表达式，它可以匹配形如“xxxx-xx-xx”格式的日期。然后我们用`FindAllStringSubmatch()`函数来查找符合该模式的所有匹配项，并将它们以二维数组的形式返回。最后，我们遍历这个二维数组，并打印出匹配到的日期。
+
+输出结果为：
+
+```
+2020-01-01
+2020-01-02
+```
 
 # 深入了解正则表达式
 
-正则表达式由各种字符和操作符组合而成，可以用来匹配、替换或提取字符串中的某一部分。它们具有非常灵活的语法，可以应用于各种不同的文本处理场景。在Go语言中，使用正则表达式需要引入`regexp`包，并通过`Regexp`结构体来创建正则表达式对象。这些对象提供了一系列方法来进行匹配、搜索和替换操作，包括`MatchString`、`FindString`和`ReplaceAllString`等。想要深入了解更多关于Go中正则表达式的知识，可以参考以下资料：
+正则表达式的语法非常灵活，其功能还远远不止于此。如果你想要更深入地了解正则表达式的使用方法，可以参考下面这些资源：
 
-- [Go中文网正则表达式教程](https://studygolang.com/articles/21364)
-- [Go语言中正则表达式的使用](https://www.cnblogs.com/fightfordream/p/5107984.html)
-- [Go官方文档中正则表达式的介绍](https://golang.org/pkg/regexp/)
+- [Go语言官方文档中关于正则表达式的介绍](https://golang.org/pkg/regexp/)
+- [在Go语言中使用正则表达式的技巧和经验](https://blog.golang.org/regular-expressions)
+- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [正则表达式在线测试工具](https://regex101.com/)
+- [正则表达式练习网站](https://regexone.com/)
 
-# 参考资料
+# 参考链接
 
+- [Go语言官方网站](https://golang.org/)
 - [Go语言中文网](https://studygolang.com/)
-- [Go官方文档](https://golang.org/doc/)
-- [Go语言中文社区](https://learnku.com/go)
-- [Go中文网社区](https://golangtc.com/)
-
-# 参见
-
-- [学习Go语言中的正则表达式](https://www.raywenderlich.com/4422425-regular-expressions-tutorial-for-go-getting-started)
+- [Go语言中国社区](https://sanyuesha.com/category/golang)

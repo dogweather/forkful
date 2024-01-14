@@ -1,64 +1,65 @@
 ---
 title:    "Haskell recipe: Reading a text file"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Text files are a common and important way of storing data in many programming languages, including Haskell. Whether you are creating a simple text-based game or processing large amounts of information, knowing how to read and manipulate text files can greatly enhance your skills as a Haskell programmer.
+If you're new to Haskell programming or just looking to expand your knowledge, you may be wondering why you would even want to learn how to read a text file. After all, isn't that the job of a word processing program? However, being able to read and manipulate text files is an essential skill for any programmer. Whether it's for data analysis, file processing, or building a text-based application, knowing how to read text files in Haskell will open up a whole new world of possibilities.
 
 ## How To
 
-Assuming you have basic knowledge of Haskell and its syntax, let's dive into how to read a text file. First, we need to import the necessary library, `System.IO`, which contains functions for handling input and output operations.
+Reading a text file in Haskell is a simple process that can be accomplished with just a few lines of code. First, we'll need to import the necessary module:
 
 ```Haskell
 import System.IO
 ```
 
-Next, we need to create a file object using the `openFile` function, which takes in two parameters: the path to the file and the mode in which we want to open it. The modes available are `ReadMode`, `WriteMode`, `AppendMode`, and `ReadWriteMode`.
+Next, we'll define a function that takes in a file name as an argument and returns the contents of the file as a string:
 
 ```Haskell
-file <- openFile "sample.txt" ReadMode
+readFileContents :: FilePath -> IO String
+readFileContents filename = do
+    handle <- openFile filename ReadMode
+    contents <- hGetContents handle
+    hClose handle
+    return contents
 ```
 
-Once we have our file object, we can use the `hGetContents` function to read the entire contents of the file as a string.
+In the above code, we use the `openFile` function to open the file in read mode and assign it to the `handle` variable. Then, we use the `hGetContents` function to read the contents of the file and assign it to the `contents` variable. Finally, we use the `hClose` function to close the file and return the contents.
+
+Now, let's test our function by reading the contents of a sample text file called "example.txt":
 
 ```Haskell
-fileData <- hGetContents file
+main :: IO ()
+main = do
+    contents <- readFileContents "example.txt"
+    putStrLn contents
 ```
 
-We can also use the `hGetLine` function to read a single line from the file.
+If we run this code, the output in our terminal will be the contents of our text file:
 
-```Haskell
-line <- hGetLine file
 ```
-
-Finally, we need to close the file to avoid any potential memory leaks using the `hClose` function.
-
-```Haskell
-hClose file
-```
-
-To see the output of our file reading, we can simply print the `fileData` or `line` variable to the console.
-
-```Haskell
-print fileData
--- or
-print line
+This is an example text file.
+It contains multiple lines of text
+which we will be able to read and manipulate.
 ```
 
 ## Deep Dive
 
-To take our file reading skills to the next level, it's important to understand how text files are read in Haskell. When we use the `openFile` function, it returns a `Handle` data type, which represents the connection between our program and the file.
+Reading a text file may seem like a simple task, but there are some important things to keep in mind when working with text files in Haskell. The first thing to note is that when reading a file, the contents are returned as a string. This means that any manipulation or processing we want to do on the contents will need to be done using string functions and operations.
 
-The `hGetContents` and `hGetLine` functions use lazy evaluation, meaning that they don't read the entire contents of the file at once. Instead, they return a promise to provide the data when needed. This allows us to process large files without overloading our system's memory.
+Another thing to consider is that reading a file can be dangerous if proper error handling is not implemented. For example, if we try to read a file that does not exist, our program will throw an error and crash. To prevent this, we can use the `catch` function from the `Control.Exception` module to catch any potential errors and handle them appropriately.
 
-Another important thing to note is that the `Handle` object is immutable, meaning we can't change the file pointer once it's created. However, we can use the `hSeek` function to change the position of the file pointer if needed.
+Finally, it's important to remember to always close the file after reading its contents. If we leave a file open, it can lead to potential memory leaks and affect the performance of our program.
 
 ## See Also
 
-- [Official Haskell documentation on file I/O](https://www.haskell.org/onlinereport/io.html)
-- [Learn You a Haskell for Great Good! - File I/O](http://learnyouahaskell.com/input-and-output#files-and-streams)
-- [Haskell for Mac - File I/O Tutorial](https://www.haskellformac.com/blog/file-io-tutorial/)
+- [Haskell I/O documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+- [Learn You a Haskell for Great Good! - I/O](http://learnyouahaskell.com/input-and-output)
+- [Haskell Crash Course - File I/O](https://www.codementor.io/@bjarkis/formatted-text-output-in-haskell-via-fprintf-n9q4fwnwz)
+
+Now that you know how to read a text file in Haskell, you can start exploring all the different ways you can use this skill in your coding projects. Happy coding!

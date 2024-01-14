@@ -1,30 +1,38 @@
 ---
-title:    "C#: Konvertere en streng til små bokstaver"
+title:    "C#: Konvertering av streng til små bokstaver"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det er ofte nyttig å kunne konvertere en streng til små bokstaver når du jobber med tekstbehandling i et program. Dette gjør det enklere å sammenligne tekst eller søke etter bestemte ord, uavhengig av om de er skrevet med store eller små bokstaver.
 
-## Hvordan gjøre det
-For å konvertere en streng til små bokstaver i C#, kan du bruke metoden `ToLower()` på en `string`-variabel. Her er et eksempel på hvordan dette kan gjøres:
+Det å konvertere en streng til små bokstaver er en vanlig oppgave i programmering, spesielt når man jobber med tekstbehandling. Dette kan være nyttig for å sammenligne strenger eller lage mer leselige utskrifter. Å kunne gjøre dette effektivt er derfor viktig for enhver utvikler.
+
+## Hvordan
+
+Å konvertere en streng til små bokstaver er veldig enkelt i C#. Det finnes flere metoder som kan brukes, men her er en metode som er spesielt effektiv og enkel å implementere:
 
 ```C#
-string tekst = "DEtte er En TEksT";
-string konvertertTekst = tekst.ToLower();
+string text = "HEI, Dette ER EN TEKST";
 
-Console.WriteLine(konvertertTekst); // output: dette er en tekst
+// Konverterer til små bokstaver ved hjelp av ToLower() metoden
+string converted = text.ToLower();
+
+Console.WriteLine(converted);
 ```
+Output: "hei, dette er en tekst"
 
-Som du kan se, vil metoden `ToLower()` automatisk konvertere alle bokstavene i strengen til små bokstaver. Dette gjør det enkelt å sammenligne denne strengen med andre strenger eller søke etter spesifikke ord.
+Denne metoden bruker ToLower() metoden for å konvertere alle bokstaver i teksten til små bokstaver. Dette gjør det mulig å sammenligne strenger selv om de har forskjellige former av bokstaver. For eksempel vil "hei" og "HEI" være like etter konverteringen.
 
 ## Dypdykk
-Når du bruker `ToLower()`-metoden, er det viktig å være klar over at den vil tilpasse seg språkinnstillingene til datamaskinen din. Dette betyr at hvis datamaskinen er satt til å bruke en annen skrift enn latin, vil metoden også konvertere bokstaver fra dette skriftet til små bokstaver.
 
-Det er også verdt å merke seg at `ToLower()` bare vil konvertere bokstavene i selve strengen. Dette betyr at eventuelle tall, spesialtegn eller mellomrom ikke vil bli påvirket. Hvis du ønsker å konvertere hele strengen til små bokstaver, kan du bruke `ToLowerInvariant()`-metoden i stedet.
+Å konvertere en streng til små bokstaver virker kanskje enkelt, men det er noen viktige ting å huske på. For det første vil denne metoden bare konvertere standard engelske bokstaver til små bokstaver. Dette betyr at bokstaver med aksenter eller andre spesielle tegn vil ikke bli konvertert riktig.
 
-## Se også
-- [Microsoft dokumentasjon for ToLower-metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netcore-3.1)
-- [Guide til å jobbe med strenger i C#](https://www.tutlane.com/tutorial/csharp/csharp-string-methods)
+I tillegg er det viktig å være oppmerksom på at konverteringen vil bare endre tegn som er en del av alfabetet. Dette betyr at tall, spesielle tegn og mellomrom ikke vil bli endret. Derfor er det viktig å være forsiktig når man bruker denne metoden og å kontrollere alle tegn i strengen man ønsker å konvertere.
+
+## Se Også
+
+- [C# String.ToLower Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+- [C# String Comparison and Culture (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-comparison-and-culture)

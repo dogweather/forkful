@@ -1,59 +1,41 @@
 ---
-title:    "Arduino: Convertendo uma data para uma string"
+title:    "Arduino: Convertendo uma data em uma string"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em string?
+## Por que converter uma data em uma string no Arduino?
 
-Quando se trabalha com programação em Arduino, pode ser necessário converter uma data em formato de string, para poder exibi-la de maneira legível para o usuário ou para enviar por meio de comunicação serial. Isso é especialmente útil para projetos que envolvem registro de dados ou monitoramento de tempo.
+Você pode se perguntar por que alguém se daria ao trabalho de converter uma data em uma string no Arduino. A resposta é simples: para facilitar a leitura e manipulação de datas em projetos de programação.
 
-## Como fazer:
+## Como fazer isso no Arduino
+
+Para converter uma data em uma string no Arduino, você precisará usar a biblioteca "Arduino Time". Primeiro, defina o fuso horário da sua localização utilizando a função `setTimeZone()`. Em seguida, use a função `now()` para obter a data e hora atual. Por fim, utilize a função `strftime()` para converter a data em uma string seguindo a formatação desejada.
 
 ```Arduino
 #include <Time.h>
-
-// Definir um objeto para a data e hora
-tmElements_t tm;
-
-// Atribuir valores para a data e hora
-tm.Day = 30;
-tm.Month = 10;
-tm.Year = 2021;
-tm.Hour = 14;
-tm.Minute = 30;
-tm.Second = 0;
-
-// Converter e exibir a data e hora em formato de string
-char stringData[11];
-sprintf(stringData, "%02d/%02d/%04d", tm.Day, tm.Month, tm.Year);
-char stringHora[6];
-sprintf(stringHora, "%02d:%02d", tm.Hour, tm.Minute);
-Serial.print("Data: ");
-Serial.println(stringData);
-Serial.print("Hora: ");
-Serial.println(stringHora);
-
+void setup() {
+  setTimeZone(-5); //definir fuso horário
+  time_t now = now(); //obter data e hora atual
+  char dateStr[20]; //definir uma variável para armazenar a data em formato de string
+  strftime(dateStr, 20, "%Y-%m-%d %H:%M:%S", now); //converter a data em string com a formatação desejada
+  Serial.println(dateStr); //imprimir a data na porta serial
+}
+void loop() {}
 ```
 
-**Saída:**
+O código acima irá imprimir a data e hora atual no formato "YYYY-MM-DD HH:MM:SS". Você pode alterar a formatação de acordo com suas necessidades, utilizando diferentes caracteres para representar os elementos da data e hora.
 
-```
-Data: 30/10/2021
-Hora: 14:30
-```
+## Aprofundando-se na conversão de datas em strings
 
-## Detalhes mais profundos:
+Além de facilitar a leitura e manipulação de datas em projetos de programação, converter uma data em uma string também permite que você armazene datas em formatos compatíveis com bancos de dados ou outros sistemas. Por exemplo, ao utilizar a formatação "YYYY-MM-DD", você pode facilmente ordenar as datas em ordem crescente ou decrescente.
 
-Ao converter uma data em string, é importante ter em mente o formato desejado para a exibição. No exemplo acima, utilizamos o formato "DD/MM/YYYY" para a data e "HH:MM" para a hora, mas é possível alterar de acordo com as necessidades do projeto.
-
-Também é importante ter cuidado ao trabalhar com datas e horários, pois o formato pode variar de acordo com a localização e fuso horário. Para isso, é recomendável utilizar bibliotecas como "Time" ou "Timezone" para facilitar o gerenciamento de datas e horários em diferentes regiões.
-
-Além disso, é possível adicionar informações adicionais à string, como o dia da semana ou o nome do mês em vez do número correspondente. Isso pode ser útil para deixar a exibição mais clara para o usuário final.
+Existem também outras funções disponíveis na biblioteca "Arduino Time" para manipular datas, como `day()`, `month()`, `year()`, `hour()`, `minute()` e `second()`, que retornam os elementos específicos da data e hora em formato de inteiro. Isso pode ser útil para realizar cálculos ou condições baseadas em datas.
 
 ## Veja também:
 
-- [Documentação da biblioteca Time para Arduino](https://www.arduino.cc/en/Reference/time) 
-- [Tutorial de uso da biblioteca Timezone para Arduino](https://learn.adafruit.com/using-ntp-on-feather-rtc-setting-dst/examples-adding-timezone-to-ntp) 
-- [Exemplo de conversão de data e hora em string no Arduino](https://www.instructables.com/Arduino-Data-Logging-With-Date-and-Time/)
+- Documentação da biblioteca "Arduino Time": https://arduino.github.io/Arduino/api/Time/
+- Tutorial sobre como utilizar a biblioteca "Arduino Time": https://randomnerdtutorials.com/arduino-time-library-keep-track-time-arduino/
+- Outras bibliotecas para lidar com datas e horas no Arduino: https://www.arduinolibraries.info/categories/time

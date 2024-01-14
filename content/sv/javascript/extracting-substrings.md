@@ -1,47 +1,58 @@
 ---
-title:    "Javascript: Extrahering av substränger"
+title:    "Javascript: Extrahera substrängar"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I Javascript, liksom i många andra programmeringsspråk, finns det en funktion för att extrahera en delsträng från en befintlig sträng. Detta är användbart när man vill manipulera eller förändra en del av en större textsträng.
+Ibland när vi arbetar med textsträngar i våra JavaScript-program vill vi endast extrahera en del av strängen, istället för hela strängen. Det kan bero på att vi behöver ett specifikt ord eller en del av en datingsträng. Genom att lära oss hur man extraherar substrängar kan vi göra våra program mer flexibla och kraftfulla.
 
-## Hur du gör det
+## Så här gör du
 
-För att extrahera en delsträng i Javascript använder man metoden `substring()` och anger start- och slutindex för den delsträng man vill få ut. Till exempel:
-
-```Javascript
-var str = "Hej, det här är en textsträng.";
-var delstrang = str.substring(4, 11);
-
-console.log(delstrang); // Output: det här
-```
-
-Här extraherar vi delsträngen "det här" från den ursprungliga strängen baserat på dess indexposition. Det är viktigt att komma ihåg att indexpositionen börjar på 0, vilket betyder att första tecknet i en sträng har indexposition 0.
-
-I vissa fall kanske du inte känner till exakta indexpositioner och istället vill extrahera delsträngar baserat på ett visst mönster. I ett sådant fall kan man använda metoden `substr()` som tar in en startposition och antal tecken som argument. Se nedanstående exempel:
+Först måste vi bestämma vilken del av strängen som vi vill extrahera. Detta kan göras genom att använda antingen index eller en söksträng. Om du bestämmer dig för att använda index, tänk på att den första bokstaven i en sträng har indexet 0.
 
 ```Javascript
-var str = "Välkommen till min blogg!";
-var delstrang = str.substr(10, 9);
+const str = "Hej detta är en sträng."
+console.log(str.substring(4,7)) // Output: detta
+console.log(str.substring(5)) // Output:  är en sträng.
+console.log(str.slice(-9, -1)) // Output: n sträng
+console.log(str.substr(4)) // Output: detta är en sträng. 
+``` 
 
-console.log(delstrang); // Output: under min
+Du kan också använda en söksträng för att extrahera en del av en sträng. I exemplet nedan använder vi `indexOf()` för att hitta indexet för den sökta texten, vilket sedan används i `substring()`.
+
+```Javascript
+const str = "Lorem ipsum dolor sit amet"
+const search = "dolor"
+const index = str.indexOf(search)
+console.log(str.substring(index, index+search.length)) // Output: dolor
 ```
 
-Här extraherade vi delsträngen "under min" från den ursprungliga strängen baserat på mönstret av 9 tecken som börjar vid indexposition 10.
+För att göra det ännu enklare finns det också metoder som `includes()`, `startsWith()` och `endsWith()` som kan användas tillsammans med `substring()` för att extrahera delar av en sträng baserat på kompletterande villkor.
 
 ## Djupdykning
 
-Förutom `substring()` och `substr()` finns det också en metod som heter `slice()` som också kan användas för att extrahera delsträngar. Syntaxen är liknande som för `substring()` men `slice()` kan också ta in negativa index vilket är användbart om man vill extrahera delsträngar bakifrån.
+Det är också möjligt att extrahera delar av en sträng baserat på ett regex-mönster. `match()`-metoden kan användas för att matcha texten mot ett regex-mönster och returnera en array med matchande delar av strängen.
 
-En annan användbar funktion i samband med delsträngar är `indexOf()` som returnerar indexpositionen för en viss text inom en sträng. Detta kan vara användbart för att hitta start- och slutindex för en delsträng för att sedan kunna använda `substring()` för att extrahera den.
+```Javascript
+const str = "Detta är en text med en specifik del som vi vill extrahera."
+const regex = /specifik del/
+const match = str.match(regex)
+console.log(match[0]) // Output: specifik del
+```
+
+Vi kan också använda en modifierare för att göra matchningen global eller fallkänslig.
+
+```Javascript
+const str = "Detta är Testtext"
+console.log(str.match(/test/gi)) // Output: Test
+```
 
 ## Se även
 
-- [MDN - substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN - substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [MDN - slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN - indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+- [substr() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [substring() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [match() - MDN webbdokumentation](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/String/match)

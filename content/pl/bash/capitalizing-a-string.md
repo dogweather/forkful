@@ -1,40 +1,33 @@
 ---
-title:    "Bash: Formatowanie napisu"
+title:    "Bash: Zapisywania wielkich liter w ciągu znaków"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Witaj w naszym pierwszym wpisie na blogu poświęconym programowaniu w Bashu! Dzisiejszym tematem będzie zmiana pierwszej litery w zdaniu na wielką. Możesz się zastanawiać, po co w ogóle musielibyśmy zmieniać wielkość liter w tekście? Otóż, może się to przydać podczas pisania skryptów, gdzie chcemy aby wyświetlana informacja była bardziej czytelna lub po prostu podkreślić jakieś ważne słowo w zdaniu.
+Cześć, programowanie to fascynująca dziedzina, będąca połączeniem sztuki, nauki i logiki. W tym wpisie chciałbym opowiedzieć o jednym z elementów języka Bash - mianowicie o konwersji ciągu znaków na wielkie litery. Możliwe, że niektórzy z Was zastanawiają się po co ta umiejętność i właśnie o tym chcę Was przekonać.
 
 ## Jak to zrobić
 
-Aby zmienić pierwszą literę zdania na wielką, możemy skorzystać z wbudowanej funkcji `tr` w Bashu. Spójrzmy na przykładowy kod poniżej:
+Aby przekonwertować napis na duże litery w Bashu, możemy użyć wbudowanej funkcji "tr" (od ang. translate). Wywołujemy ją w terminalu w następujący sposób:
 
-```bash
-sentence="to jest przykładowe zdanie"
-capitalized_sentence=$(echo "$sentence" | tr '[:lower:]' '[:upper:]')
-echo $capitalized_sentence
+```Bash
+echo "tekst" | tr a-z A-Z
 ```
 
-W powyższym kodzie tworzymy zmienną `sentence`, która zawiera nasze zdanie. Następnie przy użyciu funkcji `echo` i `tr` tworzymy nową zmienną `capitalized_sentence`, która zawiera to samo zdanie, ale z pierwszą literą zmienioną na wielką. W końcu wyświetlamy nasze nowe zdanie za pomocą funkcji `echo`.
-
-Po uruchomieniu tego kodu, powinniśmy zobaczyć wyjście `To jest przykładowe zdanie`, gdzie pierwsza litera została zmieniona na wielką. Proste, prawda?
+W miejsce słowa "tekst" wstawiamy nasz napis, który chcemy przekonwertować. W wyniku otrzymujemy ten sam napis, ale z wszystkimi literami zamienionymi na duże.
 
 ## Głębsza analiza
 
-Chcesz wiedzieć, w jaki sposób dokładnie działa funkcja `tr` i dlaczego musimy podać argument `[:lower:]` i `[:upper:]`? Otóż, `tr` jest używane do transliteryzacji, czyli zamiany jednego zestawu znaków na inny. W naszym przypadku, `tr` zamienia wszystkie znaki w pierwszym argumencie (tutaj `[:lower:]` - wszystkie małe litery) na odpowiadające im znaki w drugim argumencie (tutaj `[:upper:]` - wszystkie wielkie litery).
+Powyższy przykład to tylko jedna z metod konwersji napisu na wielkie litery w Bashu. Istnieje także możliwość skorzystania z funkcji "awk", która działa podobnie do "tr". Wykorzystując to narzędzie możemy nawet ustalić precyzyjne parametry konwersji, na przykład zamieniając tylko pierwszą literę w każdym słowie lub pomijając specjalne znaki.
 
-Ciekawostką jest fakt, że funkcja `tr` nie tylko działa na literach, ale także na innych zestawach znaków. Możemy na przykład zmienić wszystkie cyfry w tekście na gwiazdki, korzystając z `tr -s '[:digit:]' '*'`.
+## Zobacz również
 
-## Zobacz także
+Jeśli chcesz poznać więcej o konwersji ciągów znaków na wielkie litery w języku Bash, polecam Ci zapoznać się z poniższymi artykułami:
 
-Jeśli chcesz dowiedzieć się więcej o funkcji `tr` lub o innych przydatnych funkcjach w Bashu, polecamy poniższe linki:
-
-- https://www.linuxtechi.com/change-case-string-using-tr-command-linux/
-- https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/
-- https://www.shell-tips.com/bash/math-arithmetic-calculation-in-bash/
-
-Dziękujemy za przeczytanie naszego wpisu na temat zmieniania wielkości liter w Bashu. Mamy nadzieję, że ten mały trik okaże się dla Ciebie przydatny w przyszłych projektach!
+- [Dokumentacja funkcji "tr" w Bashu](https://www.gnu.org/software/bash/manual/html_node/Program-Output.html)
+- [Tutorial na temat manipulowania tekstem w Bashu](https://ryanstutorials.net/linuxtutorial/cheatsheetbash.php)
+- [Sekcja poświęcona ciągłom znaków w kursie programowania w Bashu](http://www.tldp.org/LDP/abs/html/string-manipulation.html)

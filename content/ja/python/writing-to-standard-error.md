@@ -1,38 +1,46 @@
 ---
-title:    "Python: 「標準エラーへの書き込み」"
+title:    "Python: 標準エラーに書き込む"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ: なぜ標準エラー出力に書き込むのか
-Pythonプログラミングにおいて、時には標準エラー出力に書き込むことは非常に重要です。例えば、プログラム実行中にエラーが発生した場合、そのエラーを把握することができます。また、特定の情報をユーザーに表示するのではなく、ログファイルに書き込むことでプログラムのデバッグが容易になります。
+# なぜ標準エラーに書き込むか
+Pythonプログラミングでよく使用される関数の1つに、標準エラーへの書き込みがあります。この機能を使うことで、コードのデバッグやエラーの追跡が容易になります。では、どのようにして標準エラーへ書き込み、使用することができるのでしょうか。
 
-## 方法: 標準エラー出力に書き込む方法
-Pythonでは、```sys```モジュールを使用することで標準エラー出力に書き込むことができます。まず、```sys```モジュールをインポートし、```stderr```オブジェクトを取得します。次に、```write()```メソッドを使用してエラーメッセージを書き込みます。最後に、```stderr.flush()```メソッドを呼び出して、バッファを空にします。
+## 方法
+例を交えながら標準エラーへの書き込み方法を紹介します。
 
 ```Python
 import sys
-
-# 標準エラー出力に書き込み
-sys.stderr.write("エラーが発生しました")
-# バッファを空にする
-sys.stderr.flush()
+sys.stderr.write("エラーが発生しました！")
 ```
 
-出力結果:
+上記の例では、Pythonの標準モジュールであるsysをインポートし、stderr属性を用いてエラーメッセージを書き込んでいます。このようにすることで、エラーが発生した直接的な原因を特定し、修正することができます。
+
+また、より詳細なエラーメッセージを書き込むこともできます。
+
+```Python
+import sys
+sys.stderr.write("エラーが発生しました！詳細：{}".format(error))
 ```
-エラーが発生しました
-```
 
-## 深堀り: 標準エラー出力についての詳細情報
-標準エラー出力には、プログラムの実行中に発生したエラーメッセージだけでなく、デバッグ情報や警告メッセージを書き込むこともできます。また、```sys.stderr```オブジェクトには、```write()```メソッド以外にも```writelines()```メソッドがあり、複数のメッセージを一度に書き込むことができます。さらに、標準エラー出力はリダイレクトすることができず、常にコンソールに表示されるため、重要な情報を見逃す心配がありません。
+ここで、errorには具体的なエラー内容が格納されています。
 
-## 参考リンク
-- Pythonドキュメント: https://docs.python.org/ja/3/library/sys.html
-- プログラム実行中に標準エラー出力を読む方法: https://note.nkmk.me/python-subprocess-stderr-stdout-redirect/
-- 標準エラー出力と標準出力の違い: https://techacademy.jp/magazine/8655
+## 深堀り
+標準エラーへ書き込むことで、コードのデバッグ以外にもさまざまな用途があります。例えば、コンソールやログファイルにエラーメッセージを出力することで、プログラムの実行中に発生したエラーを追跡し、必要な情報を収集することができます。
 
-# 参考になるリンク
-- Pythonの```sys```モジュールについて説明された日本語記事: https://university.sincere.jp/2019/12/python-sys-モジュールについて/
-- プログラム実行中にエラーが発生した場合のログ出力方法: https://qiita.com/tamikura@github/items/8495d9126a715cc812e5
+また、標準エラーへの書き込みは、コードを実行している環境やシステムによって異なる場合があるため、環境によらずエラーを取得することができます。
+
+# もっと詳しく知りたい方へ
+標準エラーへの書き込みに関するさらに詳しい情報は、以下のリンクを参考にしてください。
+
+- [Pythonドキュメント - sysモジュール](https://docs.python.org/ja/3.8/library/sys.html)
+- [Pythonチュートリアル - ファイル入力と出力](https://docs.python.org/ja/3.8/tutorial/inputoutput.html)
+- [Pythonプログラミングの基礎 - エラーハンドリング](https://python.keicode.com/advanced/errors.php)
+
+# もっと詳しく見る
+- [Python標準ライブラリモジュール - sys](https://docs.python.org/ja/3.8/library/sys.html)
+- [Python公式チュートリアル - 入出力](https://docs.python.org/ja/3.8/tutorial/inputoutput.html)
+- [Pythonエラーハンドリング入門](https://python.civic-apps.com/try-except/)

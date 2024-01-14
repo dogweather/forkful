@@ -1,32 +1,30 @@
 ---
 title:    "Gleam: Scrivere su standard error"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere a standard error in Gleam
+## Perché
 
-Se stai sviluppando un'applicazione in Gleam, potresti chiederti perché dovresti scrivere a standard error. La risposta è semplice: scrivere a standard error può aiutarti a identificare facilmente gli errori e a risolverli più rapidamente durante il processo di debug.
+Scrivere al flusso di errore standard (standard error) è una tecnica di debugging molto utile quando si sviluppa in Gleam. Questo è perché i messaggi di errore sono spesso più informativi e dettagliati rispetto ai meri messaggi di output. Inoltre, è possibile gestire questo tipo di output in modo diverso rispetto all'output standard, rendendo più facile identificare e risolvere eventuali problemi nel codice.
 
-## Come scrivere a standard error in Gleam
+## Come fare
 
-Per scrivere a standard error in Gleam, è sufficiente utilizzare la funzione `io.fprintf` e specificare `stderr` come primo argomento. Ad esempio:
+Per scrivere al flusso di errore standard in Gleam, è sufficiente utilizzare la funzione `stderr.write/1` e passare come argomento la stringa o il valore che si desidera visualizzare. Ecco un esempio di codice:
 
 ```Gleam
-let error_message = "Qualcosa è andato storto"
-io.fprintf(stderr, "Errore: %@", [error_message])
+let message = "Questo è un messaggio di errore"
+stderr.write(message)
 ```
+L'output di questo codice sarà "Questo è un messaggio di errore" stampato al flusso di errore standard. Oltre alle stringhe, è possibile passare anche altri tipi di dati come argomento alla funzione, come ad esempio record, tuple o liste.
 
-Questo codice scriverà l'errore nella console e sarà visibile in rosso per evidenziare che si tratta di un errore.
+## Approfondimento
 
-## Approfondimento su come e quando scrivere a standard error
-
-Scrivere a standard error è particolarmente utile quando si desidera tracciare gli errori durante il debug di un'applicazione o quando si vogliono fornire informazioni dettagliate agli utenti su cosa è andato storto. In Gleam, gli errori vengono sollevati quando si verifica un errore di tipo `Error` che può essere catturato con il costrutto `try ... catch`.
+In Gleam, il flusso di errore standard è gestito dal modulo `stderr`, che offre una varietà di funzioni per scrivere e formattare l'output. È possibile utilizzare la funzione `stderr.format/2` per formattare l'output utilizzando il sintassi di interpolazione delle stringhe, o la funzione `stderr.write_line/1` per scrivere automaticamente una nuova riga dopo l'output. Inoltre, è possibile utilizzare la funzione `stderr.write_bytes/1` per scrivere dati binari direttamente al flusso di errore standard.
 
 ## Vedi anche
 
-Per ulteriori informazioni su come gestire gli errori in Gleam, puoi consultare la documentazione ufficiale:
-- [Gestione degli errori in Gleam](https://gleam.run/book/tour/error-handling.html)
-- [Funzione `io.fprintf` nella libreria standard di Gleam](https://gleam.run/modules/gleam_io#fwrite)
-- [Esempi di gestione degli errori in Gleam](https://github.com/gleam-lang/gleam/blob/main/examples/error_handling.gleam)
+- [Documentazione di Gleam su stderr](https://gleam.run/book/stdlib.html#stderr)
+- [Esempi di utilizzo di stderr in Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/log/Log.gleam)

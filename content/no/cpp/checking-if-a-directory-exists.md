@@ -1,48 +1,48 @@
 ---
 title:    "C++: Sjekke om en mappe eksisterer"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du jobber med programmering, kan det være viktig å kunne sjekke om en mappe eksisterer eller ikke. Dette kan være nyttig for å sikre at filene du trenger for koden din er tilgjengelige, eller for å håndtere unntakstilstander der mappen ikke finnes.
+Det er ofte nyttig å sjekke om en mappe eksisterer i et C++ program. Dette kan være nyttig for å håndtere filer og lagre data på en organisert måte. I tillegg kan det bidra til å unngå feil og krasj i programmet. I dette blogginnlegget vil vi utforske hvordan man kan sjekke om en mappe eksisterer i et C++ program.
 
-## Hvordan du gjør det
+## Hvordan
 
-Sjekk om en mappe eksisterer kan gjøres ved hjelp av en funksjon eller metode i C++. Vi vil bruke følgende kode for å sjekke om en mappe med navnet "mappe" eksisterer eller ikke:
+Det første vi må gjøre er å inkludere "filesystem" biblioteket i programmet vårt. Dette gjøres ved å bruke "include" kommandoen:
+
+```C++
+#include <filesystem>
+```
+
+Deretter definerer vi en variabel for mappen vi vil undersøke, for eksempel "myFolder". Vi kan deretter bruke "std::filesystem::exists" funksjonen for å sjekke om denne mappen eksisterer eller ikke. Dette vil returnere en boolsk verdi, som vi kan bruke til å utføre ulike handlinger i programmet vårt. Her er et eksempel på hvordan dette kan se ut:
 
 ```C++
 #include <iostream>
 #include <filesystem>
-namespace fs = std::filesystem;
 
 int main() {
-    fs::path sti = fs::current_path() / "mappe";
-    if (fs::exists(sti) && fs::is_directory(sti)) {
-        std::cout << "Mappen eksisterer!";
+    std::filesystem::path myFolder = "/path/to/my/folder";
+    if (std::filesystem::exists(myFolder)) {
+        std::cout << "Mappen eksisterer!" << std::endl;
     } else {
-        std::cout << "Mappen eksisterer ikke!";
+        std::cout << "Mappen eksisterer ikke!" << std::endl;
     }
+
     return 0;
 }
 ```
 
-Dette vil legge til mappenavnet på den nåværende banen, og deretter sjekke om mappen eksisterer og om det faktisk er en mappe. Hvis begge betingelsene er oppfylt, vil du få en melding som sier "Mappen eksisterer!", ellers vil du få "Mappen eksisterer ikke!".
+Dette eksempelet vil skrive ut enten "Mappen eksisterer!" eller "Mappen eksisterer ikke!" avhengig av om mappen eksisterer eller ikke.
 
-## Dypdykk
+## Deep Dive
 
-La oss se nærmere på funksjonene vi brukte i kodeeksempelet:
-
-- `current_path()` gir oss banen til den nåværende mappen. Vi bruker dette til å legge til mappenavnet for å få stien til mappen vi vil sjekke.
-- `exists()` sjekker om en fil eller mappe eksisterer på den angitte banen.
-- `is_directory()` sjekker om det på den spesifiserte banen er en mappe.
-
-En annen måte å sjekke om en mappe eksisterer på er å bruke `filesystem::status(sti).type()`, som vil returnere en verdi som informerer om typen fil eller mappe på den angitte banen. Hvis dette er lik `filesystem::file_type::directoy`, betyr det at mappen eksisterer.
+Når vi bruker "std::filesystem::exists" funksjonen, vil det sjekkes om mappen eksisterer og returnere en boolsk verdi. Men hva skjer egentlig bak kulissene? Funksjonen bruker Win32 GetFileAttributes eller POSIX operating system lstat funksjoner for å hente informasjon om en gitt fil eller mappe. Deretter brukes en rekke forskjellige flagg for å bestemme om filen eller mappen eksisterer eller ikke. Dette gir en effektiv måte å sjekke om en mappe eksisterer i et C++ program.
 
 ## Se også
 
-- Reference dokumentasjon for `std::filesystem` biblioteket: https://en.cppreference.com/w/cpp/filesystem
-- Eksempler på håndtering av unntakstilstander når en mappe ikke eksisterer: https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exist-using-standard-c-c11-c
-- Ekstra informasjon om filsystemnettverket i C++: https://www.cgpprogramming.com/manual/004_File_I_O/
+- [std::filesystem::exists dokumentasjon](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [C++ Filesystem biblioteket](https://en.cppreference.com/w/cpp/filesystem)

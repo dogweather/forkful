@@ -1,53 +1,40 @@
 ---
-title:    "Elm: Opprettelse av midlertidig fil"
+title:    "Elm: Opprette en midlertidig fil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å lage midlertidige filer er en viktig del av programmering, spesielt når man jobber med store og komplekse prosjekter. Ved å opprette midlertidige filer kan vi enkelt lagre og organisere data underveis i programmet, og deretter slette dem når de ikke lenger er nødvendige. Dette kan bidra til å forbedre ytelsen og effektiviteten i koden vår.
+Det å opprette midlertidige filer kan være nyttig når man trenger å lagre data midlertidig for senere å slette dem, eller når man ønsker å lagre data som bare skal være tilgjengelig under en bestemt kjøring av programmet. Dette kan bidra til å holde filsystemet mer organisert og ryddig.
 
-## Hvordan
+# Hvordan
 
-Å opprette en midlertidig fil i Elm er enkelt og intuitivt. Vi kan bruke funksjonen "Filsystem.create" for å opprette en fil med ønsket navn og innhold. Her er et eksempel på hvordan dette kan se ut i koden vår:
-
-```Elm
-import Filsystem exposing (create)
-
-tmpFile = create "midlertidig_fil.txt" "Dette er innholdet i filen"
-
--- Output:
-{ ok = True
-, name = "midlertidig_fil.txt"
-, content = "Dette er innholdet i filen"
-, error = Nothing
-}
-```
-
-Nå har vi opprettet en midlertidig fil med navnet "midlertidig_fil.txt" og lagt til innholdet "Dette er innholdet i filen". Som du kan se i output, får vi også informasjon om filen, som om det var en suksess eller om det var en feil.
-
-For å slette en midlertidig fil, kan vi bruke funksjonen "Filsystem.delete". Her er et eksempel på hvordan dette kan gjøres:
+For å opprette en midlertidig fil i Elm, kan vi bruke funksjonen `File.temp` fra `elm/file`-pakken. Denne funksjonen tar inn en `String` som navn på filen, og retunerer en `Cmd Msg` som kan bli sendt til Elm sin runtime for å opprette filen.
 
 ```Elm
-import Filsystem exposing (delete)
+import File exposing (temp)
+import Task
 
-result = delete "midlertidig_fil.txt"
-
--- Output:
-{ ok = True, error = Nothing }
+createTempFile : Cmd Msg
+createTempFile =
+    temp "min_temp_fil.txt"
+        |> Task.perform NewTempFileCreated
 ```
 
-Nå har vi slettet filen og får en bekreftelse på at det ble gjort uten noen feil.
+Når kommandoen `createTempFile` blir kjørt, vil det bli opprettet en midlertidig fil med navnet "min_temp_fil.txt". Vi bruker `Task.perform` for å håndtere resultatet av `temp`-funksjonen, og sender en `Msg` tilbake til vår Elm applikasjon.
 
-## Dypdykk
+# Dypdykk
 
-Det kan være nyttig å vite litt mer om hvordan midlertidige filer fungerer bak kulissene. Når vi oppretter en midlertidig fil, blir en tom fil opprettet i vårt operativsystem sin midlertidige mappe. Denne mappen varierer avhengig av hvilket operativsystem du bruker. Deretter kan vi lese og skrive til filen som vanlig.
+Når man oppretter en midlertidig fil i Elm, vil filen bli lagret i et midlertidig område på operativsystemet. Hvor dette området er avhenger av hvilket operativsystem man bruker, og kan være forskjellig fra gang til gang. Det er derfor viktig å ikke anta at midlertidige filer vil bli lagret på et bestemt sted.
 
-En annen viktig ting å være klar over er at midlertidige filer ikke er ment å være permanente. De blir slettet automatisk av operativsystemet når vi lukker programmet vårt eller datamaskinen vår.
+Det er også viktig å huske på at midlertidige filer ikke vil bli slettet automatisk når programmet avsluttes. Det er programmererens ansvar å slette filene når man er ferdig med å bruke dem, ved å sende en `Cmd` som utfører en sletteoperasjon.
 
-## Se også
+# Se også
 
-- [Offisiell dokumentasjon for Filsystem-modulen](https://package.elm-lang.org/packages/elm/core/latest/Filsystem)
-- [Mer informasjon om midlertidige filer og deres bruksområder](https://en.wikipedia.org/wiki/Temporary_file)
+- [Dokumentasjon for elm/file-pakken](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Offisiell Elm nettside](https://elm-lang.org/)
+- [Elm community Slack-kanal](https://elmlang.slack.com/)
+- [Elm Norge - Facebook-gruppe](https://www.facebook.com/groups/1061660403920568/)

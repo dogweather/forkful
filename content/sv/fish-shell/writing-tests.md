@@ -1,46 +1,40 @@
 ---
-title:    "Fish Shell: Skrivande av tester"
+title:    "Fish Shell: Skapa tester"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att skriva tester är en viktig del av programmering eftersom det hjälper till att säkerställa att din kod fungerar på önskat sätt. Detta minskar risken för buggar och fel i din slutliga produkt.
+## Varför
 
-##Så här
-För att skriva tester i Fish Shell, använd kommandot "test". Detta tillåter dig att köra olika typer av tester, såsom jämförelser mellan olika värden eller köra kommandon och kontrollera deras utfall.
+Att skriva tester kan verka tidskrävande och onödigt, men det kan faktiskt förenkla och förbättra ditt programmeringsarbete på lång sikt. Genom att skriva tester kan du hitta och åtgärda buggar i koden innan de når produktion och minska risken för felaktig funktionalitet.
 
-Exempelvis kan vi skriva ett test för att se om en viss fil existerar i det nuvarande mappen:
+## Hur man gör
 
-```Fish Shell 
-test -e filnamn.txt 
+Att skriva tester i Fish Shell är inte svårt, det är bara några få steg som behöver följas. Först och främst behöver du installera Fish Shell om du inte redan har det. Sedan kan du börja skriva tester genom att följa syntaxen nedanför:
+
+```Fish Shell
+# Skapa en enkel testfunktion
+function test
+  echo "Detta är ett test" # förväntat resultat
+  echo "Detta är ett test" > /dev/null # jämför utskrift med förväntat resultat
+end 
+
+# Kör testet genom att köra kommandot nedan
+test
 ```
-Denna kod kommer att returnera en sanningsvärdet beroende på om filen finns eller inte. Om filen existerar kommer testet att returnera "true", annars blir resultatet "false".
 
-Du kan också använda "test" kommandot för att jämföra värden. Till exempel, om vi vill testa om en variabel är större än en annan:
+Om testet går igenom kommer du inte att få någon utskrift alls. Men om det finns något problem kommer du att få ett felmeddelande. Detta gör det enklare för dig att upptäcka och åtgärda buggar i ditt kod.
 
-```Fish Shell 
-test $a -gt 10
-```
-Denna kod kommer att returnera "true" om variabeln "a" är större än 10, annars blir resultatet "false".
+## Djupdykning
 
-##Djupdykning
-För att skriva effektiva tester, är det viktigt att förstå de olika jämförelseoperatorerna som finns tillgängliga i Fish Shell. Här är några av de vanligaste jämförelseoperatorerna du kan använda:
+För att skriva effektiva tester är det viktigt att förstå konceptet bakom enhetstester. Enhetstester är små tester som testar en specifik del av koden för att säkerställa att det fungerar som det ska. Det är också viktigt att skriva realistiska tester som testar olika scenarion för att få en bättre täckning av koden.
 
-- -eq: lika med
-- -ne: inte lika med
-- -gt: större än
-- -lt: mindre än
-- -ge: större än eller lika med
-- -le: mindre än eller lika med
+Det finns också andra typer av tester som integrationstester och acceptanstester, som båda kan hjälpa till att säkerställa en buggfri och fungerande kodbas. Det är också viktigt att kontinuerligt köra tester och uppdatera dem när koden förändras för att säkerställa att testerna fortfarande är relevanta och korrekta.
 
-Du kan också kombinera flera tester med hjälp av "&&" (och) och "||" (eller) för att skapa mer komplexa tester och ge olika utfall för olika scenarier.
+## Se även
 
-Ett annat tips för att skriva tester är att använda kommentarer för att dokumentera dina tester. Detta kommer att hjälpa dig att förstå vad varje test gör och varför det behövs om du behöver återkomma till dem i framtiden.
-
-##See Also
-- [Fish Shell test command documentation](https://fishshell.com/docs/current/commands.html#test)
-- [A Beginner's Guide to Writing Tests](https://www.freecodecamp.org/news/writing-tests/) 
-- [10 Reasons Why You Should Write Tests](https://medium.com/@searls/10-reasons-why-you-should-write-tests-d41c6b65fd9d)
-- [Using Fish Shell for Automated Testing](https://www.linkedin.com/pulse/automated-testing-fish-shell-daniel-holden/)
+- [Fish Shell testing dokumentation](https://fishshell.com/docs/current/tutorial.html#testing)
+- [Enhetstestning med Fish Shell](https://spin.atomicobject.com/2020/12/14/unit-testing-fish-shell/)
+- [Introduktion till enhetstestning](https://www.freecodecamp.org/news/what-unit-testing-is-and-how-to-start-with-fish-shell/)

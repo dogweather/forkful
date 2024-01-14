@@ -1,50 +1,38 @@
 ---
-title:    "Elm: Używanie wyrażeń regularnych"
+title:    "Elm: Korzystanie z wyrażeń regularnych"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto wykorzystywać wyrażenia regularne
+## Dlaczego
 
-Wyrażenia regularne są bardzo przydatne w programowaniu, ponieważ pozwalają łatwo i szybko przeprowadzić operacje na tekście. Mogą być wykorzystywane do walidacji danych wejściowych, wyszukiwania wzorców w tekście czy też modyfikacji łańcuchów znaków.
+Jeśli jesteś programistą Elm i potrzebujesz narzędzia do manipulowania i przetwarzania tekstu, to wyrażenia regularne są niezbędnym elementem w Twoim zestawie narzędzi. Pozwalają one na szybkie i precyzyjne porównywanie, wyszukiwanie i modyfikowanie tekstów, co znacznie ułatwia pracę w wielu projektach.
 
 ## Jak to zrobić
 
- W Elmie możemy używać wyrażeń regularnych dzięki wbudowanemu modułowi `Regex`. Przed przystąpieniem do pracy musimy dodać poniższy fragment kodu na początku pliku:
+Aby zacząć korzystać z wyrażeń regularnych w Elm, musisz najpierw zaimportować moduł "Regex". Następnie możesz używać funkcji "Regex.find" lub "Regex.replace" z odpowiednimi parametrami, aby przetwarzać tekst według określonych wzorców.
 
-```elm
-import Regex exposing (..)
+```Elm
+import Regex
+
+-- znajdź wszystkie wystąpienia liczb w tekście
+Regex.find (Regex.regex "\\d+") "Lorem ipsum 123 dolor sit amet." 
+-- zwraca: [ (3,6) ] - indeksy początku i końca znalezionego wzorca
+
+-- zamień wszystkie wystąpienia liczb na "X"
+Regex.replace (Regex.regex "\\d+") (\\_ -> "X") "Lorem ipsum 123 dolor sit amet."
+-- zwraca: "Lorem ipsum X dolor sit amet."
 ```
 
-### Wyszukiwanie wzorców w tekście
-Aby znaleźć określony wzorzec w tekście, należy użyć funkcji `Regex.find` i przekazać jako argumenty wyrażenie regularne oraz tekst, w którym chcemy szukać. Przykładowy kod:
+## Głębsze zagłębianie się
 
-```elm
-text = "Witaj, to jest przykładowy tekst"
-pattern = Regex.regex "przykładowy"
-Regex.find pattern text
-```
+Wyrażenia regularne w Elm są oparte na silniku przeznaczonym dla języka JavaScript, co oznacza, że większość wyrażeń regularnych będzie działać podobnie w obu tych językach. Jednak Elm wykorzystuje statyczne typy, co pozwala na bardziej ścisłą i bezpieczną pracę z tekstami.
 
-W powyższym przykładzie, funkcja `Regex.find` zwróci listę wyników, w których odnaleziono wzorzec `przykładowy` w tekście.
+Szczegółowe informacje na temat wyrażeń regularnych w Elm można znaleźć w oficjalnej dokumentacji: https://package.elm-lang.org/packages/elm/regex/1.0.0/Regex
 
-### Walidacja danych wejściowych
-Wyrażenia regularne mogą być również wykorzystane do walidacji danych wejściowych, na przykład w formularzach. Możemy sprawdzić czy przekazane przez użytkownika dane spełniają określone kryteria, na przykład czy numer telefonu został podany w poprawnym formacie. Przykładowy kod:
+## Zobacz również
 
-```elm
-input = "123456789"
-pattern = Regex.regex "[0-9]{9}"
-Regex.contains pattern input
-```
-
-W powyższym przykładzie, funkcja `Regex.contains` zwróci wartość `True`, jeśli przekazany numer telefonu składa się z dokładnie 9 cyfr.
-
-## Głębsze spojrzenie
-
-Wyrażenia regularne posiadają wiele zaawansowanych możliwości i składni, na które warto się przyjrzeć. Należy również pamiętać, że w Elmie wyrażenia regularne są niezmiennicze, co oznacza, że po utworzeniu nie mogą zostać zmienione.
-
-## Zobacz też
-
-- Dokumentacja modułu Regex w Elm: https://package.elm-lang.org/packages/elm/regex/latest/
-- Przykładowe wyrażenia regularne w Elmie: https://korban.net/programming/elm-regexp-cheatsheet/
-- Wideo tutorial o wyrażeniach regularnych w Elmie: https://www.youtube.com/watch?v=OvDaxWi5gi8
+* https://medium.com/@dovalina/using-regular-expressions-in-elm-5ecbd757c8a6 - artykuł omawiający szczegółowo funkcje "Regex.find" i "Regex.replace"
+* https://www.regextester.com/ - narzędzie online do testowania wyrażeń regularnych

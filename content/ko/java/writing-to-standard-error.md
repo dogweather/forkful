@@ -1,56 +1,34 @@
 ---
-title:    "Java: 표준 오류에 쓰는 방법"
+title:    "Java: 표준 오류에 쓰는 것"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+왜: 왜 누군가가 표준 오류로 쓰기에 참여할까요? 보통, 표준 오류는 프로그래밍 오류나 디버깅을 위해 사용됩니다. 표준 오류를 올바르게 사용하는 것은 오류를 파악하고 수정하는 데 있어서 매우 유용합니다.
 
-일반적으로, Java 프로그래밍에서는 우리가 기본적으로 출력을 표준 출력으로 하게됩니다. 하지만 때로는, 표준 오류를 통해 출력하는 것이 더 효과적일 수도 있습니다. 이 글에서는 왜 우리가 표준 오류에 쓰는 것이 유용할 수 있는지 알아보고, 그 방법을 살펴볼 것입니다.
+### 왜
 
-## 어떻게
+Java 프로그래밍에서 표준 출력과 표준 오류는 중요하게 사용되는 개념입니다. 표준 출력은 보통 콘솔 창이나 파일 등에 출력되는 결과를 의미합니다. 하지만 표준 오류는 오류나 예외 메시지를 의미합니다. 따라서, 표준 오류를 사용하여 오류나 버그를 파악하고 디버깅할 수 있습니다.
 
-표준 오류에 쓰는 방법은 매우 간단합니다. 아래의 코드를 보세요:
+### 어떻게 사용하나요
 
-```Java
-public class Main {
-
-  public static void main(String[] args) {
-    System.err.println("이것은 표준 오류로 출력됩니다.");
-  }
-  
-}
-```
-
-위 코드를 실행하면, "이것은 표준 오류로 출력됩니다."라는 메시지가 표준 오류로 출력됩니다. 표준 오류는 표준 출력과는 별도의 채널이기 때문에, 출력 결과가 따로 분리되어서 보여지게 됩니다.
-
-## 깊이 파고들기
-
-표준 오류를 사용하면, 오류 메시지와 관련된 정보를 더욱 쉽게 파악할 수 있습니다. 예를 들어, 아래 코드를 보세요:
+만약 우리가 예기치 못한 오류나 예외 상황을 처리하고 싶다면, 우리는 표준 오류를 사용해야 합니다. 이를 위해서는 `System` 클래스에 있는 `err` 필드를 사용하면 됩니다. 예를 들어, 아래와 같이 사용할 수 있습니다.
 
 ```Java
-public class Main{
-
-  public static void main(String[] args) {
-    try {
-      int result = divide(10, 0);
-      System.out.println("결과: " + result);
-    } catch (ArithmeticException e) {
-      System.err.println("나누기 오류 발생: " + e.getMessage());
-    }
-  }
-  
-  public static int divide(int num1, int num2) {
-    return num1 / num2;
-  }
-  
-}
+System.err.println("이것은 예외 메시지입니다.");
 ```
 
-위 코드를 실행하면, "나누기 오류 발생: / by zero"라는 메시지가 표준 오류로 출력됩니다. 이렇게 표준 오류를 사용하면, 프로그램에서 발생한 오류에 대한 정보를 바로 확인할 수 있어 디버깅에 더욱 유용합니다.
+위 코드를 실행하면, 표준 오류로 메시지가 출력될 것입니다. 이를 통해 우리는 예외 상황이 발생했음을 알 수 있고, 이를 처리할 수 있습니다.
 
-## 관련 자료
+### 깊게 살펴보기
 
-- [Java 표준 출력과 오류에 쓰기](https://www.baeldung.com/java-write-to-file)
-- [Java 입출력 표준 입력, 출력, 오류](https://codechacha.com/ko/java-io-standards/)
+`print` 메소드와는 달리, `println` 메소드는 메시지 끝에 줄바꿈 문자를 붙여 출력합니다. 따라서 `System.err.println()`으로 오류 메시지를 출력하면, 콘솔 창에 나타날 때 훨씬 더 직관적인 결과를 볼 수 있습니다. 또한 `System.err`은 `PrintStream` 클래스의 인스턴스이므로, 다양한 출력 메소드를 활용할 수 있습니다.
+
+### 참고 자료
+
+- [Java 공식 문서 - System 클래스](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java 공식 문서 - PrintStream 클래스](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [Java 표준 오류에 대한 더 자세한 설명](https://www.edureka.co/community/391/what-is-standard-error-in-java)
+- [Java 프로그래밍의 표준 출력과 표준 오류](https://www.geeksforgeeks.org/standard-output-streams-in-java/)

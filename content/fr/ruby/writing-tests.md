@@ -1,49 +1,47 @@
 ---
-title:    "Ruby: Écrire des tests."
+title:    "Ruby: Écriture de tests"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi écrire des tests en Ruby ?
 
-Si vous êtes un développeur de logiciels, vous savez à quel point il est important de s'assurer que notre code fonctionne correctement. La meilleure façon de garantir cela est d'écrire des tests. Les tests nous aident à détecter les erreurs dès le début du processus de développement et à nous assurer que notre code continue de fonctionner correctement au fur et à mesure que nous apportons des modifications. Cela nous fait gagner du temps et nous permet de fournir un code de meilleure qualité à nos utilisateurs. 
+La rédaction de tests unitaires est essentielle pour un code propre et fiable en Ruby. En écrivant des tests, vous vous assurez que votre code fonctionne correctement, vous permettant ainsi de détecter et de corriger les erreurs avant qu'elles ne deviennent de gros problèmes.
 
-## Comment faire
+## Comment écrire des tests en Ruby
 
-Ecrire des tests en Ruby est assez simple. Nous allons vous montrer comment le faire en utilisant l'outil de test par défaut, MiniTest. Voici un exemple de test pour une classe simple "Car" :
+Il existe plusieurs frameworks pour écrire des tests en Ruby, tels que RSpec ou MiniTest. Voici un exemple de test en utilisant RSpec :
 
-```Ruby
-require 'minitest/autorun'
+```ruby
+require 'rspec'
 
-class CarTest < Minitest::Test
-  def setup
-    @car = Car.new('Ferrari', 'Red')
+# Définition de la méthode "add" pour ajouter deux nombres
+def add(a, b)
+  a + b
+end
+
+# Spécifications pour la méthode "add"
+RSpec.describe 'add' do
+  it 'ajoute deux nombres' do
+    expect(add(3, 7)).to eq(10)
   end
-
-  def test_get_name
-    assert_equal 'Ferrari', @car.name
-  end
-
-  def test_get_color
-    assert_equal 'Red', @car.color
+  
+  it 'retourne le bon résultat avec des nombres négatifs' do
+    expect(add(-5, 2)).to eq(-3)
   end
 end
 ```
 
-Dans cet exemple, nous importons le framework de tests MiniTest et créons une classe de test pour notre classe "Car". Dans la méthode "setup", nous initialisons une instance de la classe "Car" avec une marque et une couleur. Ensuite, nous écrivons deux méthodes de test pour vérifier que notre code fonctionne correctement. La méthode "assert_equal" vérifie si la valeur donnée est égale à la valeur attendue. Si les deux valeurs sont égales, le test passe.
+Dans cet exemple, nous définissons une méthode "add" qui ajoute deux nombres. Puis, nous utilisons RSpec pour tester cette méthode en vérifiant si elle retourne le bon résultat pour différentes entrées. Avec ce genre de tests, nous pouvons être sûrs que notre code fonctionne correctement.
 
-## Plongée profonde
+## Une plongée plus profonde
 
-Maintenant que nous savons comment écrire des tests en Ruby, il est important de comprendre comment écrire des tests efficaces. Voici quelques bonnes pratiques à suivre :
+En écrivant des tests en Ruby, vous pouvez également utiliser des mocks et des stubs pour simuler des objets et des interactions avec d'autres parties de votre code. Cela permet de tester des parties spécifiques de votre code sans dépendre de systèmes externes. Les tests vous permettent également de documenter votre code et de faciliter sa maintenance en cas de modifications futures.
 
-- Écrivez des tests dès le début du processus de développement pour détecter les erreurs le plus tôt possible.
-- Testez toutes les fonctionnalités de votre code, même les plus petites.
-- Utilisez des données de test réalistes pour vous assurer que vos tests représentent bien les cas d'utilisation réels.
-- Utilisez des noms de méthodes et des descriptions de test clairs et cohérents pour faciliter la lecture et la compréhension des tests ultérieurement.
-- Toujours corriger les erreurs détectées par les tests avant de déployer votre code.
+# Voir aussi
 
-## Voir aussi
-
-- [Documentation de MiniTest](https://ruby-doc.org/stdlib-2.6.3/libdoc/minitest/rdoc/MiniTest.html)
-- [Guide complet pour écrire des tests en Ruby](https://www.rubyguides.com/2018/07/ruby-testing-minitest/)
+- [Documentation RSpec](https://rspec.info)
+- [Documentation MiniTest](https://github.com/seattlerb/minitest)
+- [Article sur l'importance des tests en Ruby](https://medium.com/@adrianstelmasik/why-testing-is-important-for-ruby-projects-8e83dac177a0)

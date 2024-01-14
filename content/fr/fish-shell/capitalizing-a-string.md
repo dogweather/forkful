@@ -1,55 +1,61 @@
 ---
-title:    "Fish Shell: Mettre en majuscule une chaîne de caractères"
+title:    "Fish Shell: Capitaliser une chaîne de caractères"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi capitaliser une chaîne de caractères en Fish Shell?
+## Pourquoi
 
-Capitaliser une chaîne de caractères est utile lorsque vous avez besoin de modifier la casse d'un texte pour une présentation ou un traitement spécifique. Par exemple, si vous souhaitez afficher un nom en majuscules ou si vous avez besoin de rechercher une chaîne de caractères en ignorant la casse, la capitalisation peut être très pratique.
+L'utilisation de la fonction de capitalisation de chaîne est un moyen pratique d'améliorer la lisibilité des données dans Fish Shell. Elle permet de convertir automatiquement les lettres d'une chaîne en majuscules, ce qui peut être utile dans de nombreuses situations de programmation.
 
-## Comment faire en Fish Shell?
+## Comment faire
 
-La méthode la plus simple pour capitaliser une chaîne de caractères en Fish Shell est d'utiliser la commande "string capitalize" comme suit:
-
-```Fish Shell
-string capitalize "Bonjour le Monde!"
-```
-
-Cela renverra la chaîne de caractères "Bonjour Le Monde!" avec la première lettre de chaque mot en majuscule.
-
-Vous pouvez également utiliser la fonction "upper" et "lower" pour mettre en majuscule ou minuscule l'ensemble de la chaîne de caractères:
+Pour capitaliser une chaîne en Fish Shell, il suffit d'utiliser la syntaxe suivante :
 
 ```Fish Shell
-set phrase "Je suis un programmeur"
-echo $phrase | upper
-Je suis un programmeur
-
-echo $phrase | lower
-je suis un programmeur
+set my_string "Bonjour le monde"
+echo $my_string | tr '[:lower:]' '[:upper:]'
 ```
 
-Fish Shell dispose également d'une commande "string title" qui capitalise automatiquement la première lettre de chaque mot:
+Cela utilisera la commande `tr` pour convertir toutes les lettres de la chaîne en majuscules. Vous pouvez également utiliser la commande `printf` pour obtenir le même résultat :
 
 ```Fish Shell
-string title "le monde est petit"
-Le Monde Est Petit
+set my_string "Bonjour le monde"
+printf "%s" $my_string | tr '[:lower:]' '[:upper:]'
 ```
+
+Dans les deux cas, la sortie sera "BONJOUR LE MONDE". Il est également possible d'utiliser la fonction `capitalize` qui fait partie du paquet Fish "string" :
+
+```Fish Shell
+set my_string "Bonjour le monde"
+string capitalize $my_string
+```
+
+La sortie sera également "BONJOUR LE MONDE". Toutefois, il convient de noter que la fonction `capitalize` ne prend pas en compte les caractères spéciaux et ne convertira que les lettres en majuscules.
 
 ## Plongée en profondeur
 
-Si vous souhaitez personnaliser votre capitalisation en fonction de certains critères, vous pouvez utiliser la fonction "string replace" pour remplacer des lettres spécifiques par leur équivalent en majuscule ou en minuscule. Par exemple:
+La capitalisation de chaîne n'est pas limitée aux seules lettres de l'alphabet, elle peut également être utilisée pour les caractères spéciaux et les chiffres. Par exemple :
 
 ```Fish Shell
-string replace -r "i" "I" "J'ai un chien"
-J'aI un chIen
+set my_string "Bonjour le monde !"
+echo $my_string | tr '[:lower:]' '[:upper:]'
 ```
 
-Ici, toutes les occurrences de "i" dans la phrase "J'ai un chien" ont été remplacées par "I".
+La sortie sera "BONJOUR LE MONDE !". Vous pouvez également capitaliser uniquement le premier caractère d'une chaîne en utilisant la fonction `read` :
+
+```Fish Shell
+set my_string "Salut tout le monde"
+set -l first_char (string index -i $my_string 1)
+string capitalize $first_char; string sub $my_string 2 -1
+```
+
+La sortie sera "Salut tout le monde".
 
 ## Voir aussi
 
-- La documentation officielle de Fish Shell pour plus d'informations sur les commandes et fonctions liées à la manipulation de chaînes de caractères: https://fishshell.com/docs/current/cmds/string.html
-- Un tutoriel sur les bases de Fish Shell: https://devdocs.io/fish/
-- Un guide complet sur l'utilisation de Fish Shell pour la programmation: https://fishshell.com/docs/current/index.html
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/2.7/)
+- [La liste complète des fonctions de chaîne de Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
+- [Un guide détaillé sur l'utilisation de Fish Shell](https://linoxide.com/linux-command/run-linux-command-shell-script-fish-shell/)

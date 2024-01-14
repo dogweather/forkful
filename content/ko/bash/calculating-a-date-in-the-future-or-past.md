@@ -1,59 +1,45 @@
 ---
-title:    "Bash: 미래 또는 과거 날짜 계산하기"
+title:    "Bash: 미래나 과거의 날짜 계산하기"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-어떤 이유로 미래나 과거의 날짜 계산에 관심을 가질까요? 우리는 우리의 일정을 관리하고, 중요한 날짜를 쉽게 추적하고, 장기적으로 계획할 수 있도록 미래나 과거의 날짜를 계산합니다.
+날짜를 미래나 과거로 계산하는 프로그래밍을 하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 생일이나 기념일의 투표 일정이나 약속 등을 계획할 때 유용하게 사용할 수 있습니다.
 
-## 어떻게 하나요
+## 사용 방법
 
-우리는 Bash 스크립트를 사용하여 쉽게 미래와 과거의 날짜를 계산할 수 있습니다. 아래의 Bash 코드 블럭을 살펴봅시다.
+날짜를 계산하는 방법은 매우 간단합니다. 먼저 `date` 명령어를 사용하여 현재 시간과 날짜를 확인합니다. 그리고 나서 `date` 옵션을 설정하여 원하는 날짜를 지정해줍니다. 예를 들어, 다음과 같은 명령어를 입력하면 내일의 날짜를 확인할 수 있습니다.
 
 ```Bash
-# 현재 날짜 출력
-echo "현재 날짜: $(date)"
-
-# 1일 후의 날짜 계산하기
-echo "1일 후의 날짜: $(date -d "+1 day")"
-
-# 1주 후의 날짜 계산하기
-echo "1주 후의 날짜: $(date -d "+1 week")"
-
-# 1개월 후의 날짜 계산하기
-echo "1개월 후의 날짜: $(date -d "+1 month")"
-
-# 특정 날짜를 기준으로 x일 후의 날짜 계산하기
-echo "9월 25일로부터 3일 후의 날짜: $(date -d "25 Sep + 3 day")"
-
-# 특정 날짜를 기준으로 x주 후의 날짜 계산하기
-echo "9월 1일로부터 2주 후의 날짜: $(date -d "1 Sep + 2 week")"
-
-# 현재 날짜와 비교하여 이전인지 이후인지 확인하기
-if [[ $(date -d "1 Sep") < $(date) ]]
-then
-	echo "현재 날짜보다 이전입니다."
-fi
+date -d "tomorrow"
 ```
 
-위의 예제들은 각각 특정 날짜를 기준으로 미래의 날짜를 계산하는 방법을 보여줍니다. 여러분은 이를 응용하여 프로그램을 작성하고, 여러분이 원하는 대로 날짜를 계산할 수 있습니다.
+만약 미래나 과거의 특정 날짜를 계산하려면, 추가적으로 `+`나 `-`를 사용하여 해당 날짜를 지정해주면 됩니다. 예를 들어, 30일 전의 날짜를 계산하려면 다음과 같이 입력하면 됩니다.
 
-## 자세히 살펴보기
+```Bash
+date -d "-30 days"
+```
 
-우리는 `date` 명령어를 사용하여 날짜를 출력하고, `-d` 플래그를 사용하여 특정 날짜를 기준으로 날짜를 계산합니다. 이를 통해 우리는 1일, 1주, 1개월과 같은 단위를 사용하여 미래나 과거의 날짜를 쉽게 계산할 수 있습니다.
+또한, 시간 단위를 지정하여 계산하는 것도 가능합니다. 예를 들어, 1시간 30분 전의 날짜와 시간을 계산하려면 다음과 같이 입력하면 됩니다.
 
-또한 우리는 날짜를 비교하여 특정 날짜의 이후인지 이전인지를 확인할 수도 있습니다. 여러분은 이를 활용하여 유효한 날짜인지를 확인하고, 날짜 간의 차이를 계산하는 등 다양한 용도로 사용할 수 있습니다.
+```Bash
+date -d "-1 hour -30 minutes"
+```
 
-## 더 알아보기
+## 깊이있게 알아보기
 
-- [Bash Script를 배워보세요](https://www.codecademy.com/learn/learn-bash)
-- [리눅스 명령어: date 사용법](https://www.howtoforge.com/linux-date-command/)
-- [Bash Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
+Bash에서 날짜를 계산하는 데에는 여러 가지 옵션을 사용할 수 있습니다. 위에서는 `date` 명령어를 사용하였지만, `cal`이나 `calcurse` 등의 다른 명령어를 사용하여도 같은 결과를 얻을 수 있습니다.
 
-## 참고 자료
+또한, `date` 명령어는 여러 가지 옵션을 지정하여 사용할 수 있습니다. 예를 들어, 원하는 형식으로 날짜를 출력하고 싶을 때는 `-u` 옵션을 사용하여 UTC 시간을 출력하거나, `-I` 옵션을 사용하여 ISO 8601 형식으로 출력할 수 있습니다.
 
-- [ Bash 리눅스의 date 명령어로 날짜 다루기](https://velog.io/@daesoeng/%EB%B0%B0%EC%9B%8C%EB%A3%A8%ED%81%AC-date-%EC%84%A4%EC%A0%95%EC%9E%90-%ED%8C%8C%EC%BB%A4)
-- [리눅스 날짜(date, time
+더 나아가서, Bash에서는 날짜를 계산할 때마다 자주 사용되는 변수들도 정의되어 있습니다. `date` 명령어에서 `-d` 옵션을 사용한 경우 해당 날짜가 `$1`, `$2` 등의 변수로 저장되어 있습니다. 이를 활용하여 반복문과 조건문 등을 사용하여 보다 복잡한 계산도 가능합니다.
+
+## 관련 정보
+
+* [Unix Man Page - date](https://www.unix.com/man-page/linux/1/date/)
+* [GNU Coreutils - Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+* [TLDP - Date and Time Calculation](https://tldp.org/LDP/abs/html/datecalc.html)

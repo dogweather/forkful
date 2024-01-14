@@ -1,15 +1,16 @@
 ---
 title:    "C++: Znajdowanie długości ciągu znaków"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Często w procesie programowania musimy operować na ciągach znaków, a jedną z podstawowych informacji o nich jest ich długość. Dlatego znajomość sposobu znajdowania długości napisów jest ważną umiejętnością dla każdego programisty.
+Jednym z najważniejszych zadań programistów jest manipulacja i przetwarzanie danych. W przypadku pracy z tekstami, często musimy znać długość danego ciągu znaków. Właśnie dlatego znajomość sposobu obliczenia długości stringa jest niezbędna dla każdego programisty.
 
 ## Jak to zrobić
+Obliczenie długości stringa w C++ jest bardzo proste. Wystarczy skorzystać z funkcji `length()` lub `size()`, które zwracają liczbę znaków w podanym stringu. Poniżej znajdują się przykłady kodu pokazujące wykorzystanie tych funkcji oraz ich wynik.
 
 ```C++
 #include <iostream>
@@ -18,47 +19,42 @@ Często w procesie programowania musimy operować na ciągach znaków, a jedną 
 using namespace std;
 
 int main() {
-    string napis = "Witaj świecie!";
-    // Najprostszy sposób: użycie funkcji wbudowanej length()
-    cout << "Długość napisu: " << napis.length() << endl;
-
-    // Możemy także użyć pętli for do przejrzenia wszystkich znaków i zliczenia ich ilości
-    int dlugosc = 0;
-    for (char& c : napis)
-        dlugosc++;
-    cout << "Długość napisu: " << dlugosc << endl;
-
-    // Inna metoda to użycie iteratora do przejścia przez napis i zliczenia znaków
-    int licznik = 0;
-    for (string::iterator it = napis.begin(); it != napis.end(); ++it)
-        licznik++;
-    cout << "Długość napisu: " << licznik << endl;
-
-    // Wreszcie, możemy też użyć funkcji wbudowanej strlen() z biblioteki cstring
-    // Wymaga ona jednak przekonwertowania napisu do formatu char*
-    char napis2[] = "Witaj świecie!";
-    cout << "Długość napisu: " << strlen(napis2) << endl;
-
+    string tekst = "Cześć, to jest przykładowy tekst.";
+    cout << "Długość tekstu to: " << tekst.length() << endl;
+    cout << "Długość tekstu to: " << tekst.size() << endl;
+    
     return 0;
 }
+
+/* Wynik:
+Długość tekstu to: 31
+Długość tekstu to: 31
+*/
 ```
 
-**Output:**
+Podobnie jak wiele innych funkcji, `length()` i `size()` mogą być także wywoływane na obiektach typu `std::string`, dlatego też możemy skrócić nasz kod do bardziej czytelnego zapisu:
+
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string tekst = "Cześć, to jest przykładowy tekst.";
+    cout << "Długość tekstu to: " << tekst.length() << endl;
+    
+    return 0;
+}
+
+/* Wynik:
+Długość tekstu to: 31
+*/
 ```
-Długość napisu: 15
-Długość napisu: 15
-Długość napisu: 15
-Długość napisu: 15
-```
 
-**Uwaga:** Należy pamiętać, że funkcja wbudowana length() jest dostępna tylko w przypadku typu string, dlatego w przypadku użycia innych typów danych, jak na przykład char* lub int, musimy korzystać z innych metod.
+## Wgląd w to jak to działa
+Aby zrozumieć w jaki sposób funkcje `length()` i `size()` działają, musimy zagłębić się w mechanizm stringa w C++. W przypadku typu `std::string`, mamy do czynienia z obiektem, który zawiera zarówno adres przechowujący dane, jak i informację o ich długości. W momencie wywołania funkcji `length()` lub `size()`, kompilator pobiera informację o długości zapisaną w obiekcie stringa i ją zwraca. Jest to bardzo wydajne i szybkie rozwiązanie, ponieważ funkcje te nie muszą przeliczać długości za każdym razem.
 
-## Bardziej wnikliwe spojrzenie
-
-Długość napisu jest tak naprawdę ilością pamięci zajmowanej przez poszczególne znaki w danym napisie. Dlatego też, w przypadku użycia funkcji length() dla typu string, program najpierw musi zliczyć wszystkie znaki w nim zawarte, a następnie zwrócić ich ilość. W przypadku użycia pętli for lub iteratora, program wykonuje to samo zadanie, ale musi przejrzeć całego napis i zliczyć wszystkie znaki. Dlatego też, metody te mogą być nieco wolniejsze w porównaniu do funkcji length().
-
-## Zobacz także
-
-- [C++ String Length - GeeksforGeeks](https://www.geeksforgeeks.org/length-of-string-in-cpp/)
-- [C++ Standard Library: Strings](https://www.learncpp.com/cpp-tutorial/char-arrays-and-c-style-strings/)
-- [C++ strchr, strlen, strcpy, strcmp functions](https://www.programiz.com/cpp-programming/library-function/cstring/strchr)
+## Zobacz również
+- [Dokumentacja C++: std::string](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Porównanie funkcji length() i size() w std::string](https://stackoverflow.com/questions/2848897/c-what-is-the-difference-between-size-and-length)

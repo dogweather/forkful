@@ -1,40 +1,35 @@
 ---
 title:    "Gleam: Капіталізація рядка"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+## Для чого: 
 
-Збільшення першої літери рядка є однією з найпоширеніших операцій при роботі з текстовими даними. Використання цієї функції може допомогти вам поліпшити вигляд тексту та зробити його більш зрозумілим.
+У програмуванні часто виникає потреба змінити регістр окремих символів у рядку. Наприклад, для виведення імен користувачів у капіталізованій формі. В цьому випадку функція capitalise допоможе зробити це ефективно та швидко.
 
-## Як
+## Як використовувати:
 
-```Gleam
-let text = "це рядок для збільшення першої літери"
-
-let capitalized = String.capitalize(text)
-
-// Результат: "Це рядок для збільшення першої літери"
-```
+Для початку потрібно імпортувати модуль `strings` та виконати наступну команду:
 
 ```Gleam
-// Можна також використовувати цю функцію для збільшення першої літери окремих слів в реченні
-
-let sentence = "це просте речення для прикладу"
-
-let capitalized = String.capitalize_words(sentence)
-
-// Результат: "Це Просте Речення Для Прикладу"
+capitalised_string = strings.capitalise("hello world")
 ```
 
-## Глибокий погляд
+Результатом цього буде рядок `Hello world`, з першою буквою у верхньому регістрі.
 
-Функція `capitalize` використовує мовні налаштування, щоб визначити, які символи повинні бути великими, а які - малими. Таким чином, вона працює коректно незалежно від мови, в якій написаний рядок.
+## Глибше копті специфікації:
 
-## Дивись також
+Функція `capitalise` приймає рядок як аргумент та повертає його копію з першою буквою кожного слова у верхньому регістрі. Також, вона ігнорує решту символів у рядку, залишаючи їх у незмінному стані.
 
-- [Документація Gleam String модуля](https://gleam.run/play/?code=delegate%20String%20%7B%0A%20%20capitalize%20%3A%20Utf8String%20-%3E%20Utf8String%0A%20%20capitalize_words%20%3A%20Utf8String%20-%3E%20Utf8String%0A%7D%0A%0Aexternal%20String.capitalize%20%3A%20Utf8String%20-%3E%20Utf8String%20-%3E%20String.normalize%0Aexternal%20String.capitalize_words%20%3A%20Utf8String%20-%3E%20Utf8String%20-%3E%20String.normalize%0A%0Afn%20String.capitalize%20str%20%7B%0A%20%20delegate%20str%0A%7D%0A%0Afn%20String.capitalize_words%20str%20%7B%0A%20%20delegate%20str%20%7C%3E%20String.split_words%20%7C%3E%20List.map%20String.capitalize%20%7C%3E%20String.join_words%0A%7D%0A%0AString.capitalize%20%22hello%20world%22%0A%0AString.capitalize_words%20%22hello%20world%22)
-- [Відеоурок з навчання основам Gleam](https://www.youtube.com/watch?v=g05QlRR9yrg)
-- [Gleam проект на GitHub](https://github.com/gleam-lang/gleam)
+## Дивись також:
+
+* Офіційна документація для функції capitalise: https://gleam.run/modules/strings.html#capitalise
+* Приклади використання рядкових функцій у Gleam: https://medium.com/@gleam_language/working-with-strings-in-gleam-8a0305742baf
+* Онлайн гайд з Gleam для початківців: https://github.com/gleam-lang/gleam/blob/master/docs/getting_started.md
+
+## Спостерігайте за оновленнями:
+
+Ви можете слідкувати за оновленнями щодо мови програмування Gleam на офіційному сайті: https://gleam.run/ або у соціальних мережах Gleam Twitter: https://twitter.com/gleamlang та Gleam subreddit: https://www.reddit.com/r/gleamlang/.

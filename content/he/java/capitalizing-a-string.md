@@ -1,39 +1,50 @@
 ---
-title:    "Java: המרה של מחרוזת לאותיות ראשיות"
+title:    "Java: שינוי טקסט לאותיות רישיות"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+בעולם התכנות, ייתכן שתתקלו במצבים בהם תרצו להחליט כיצד תרצו להציג מחרוזת מסוימת. אחת הדרכים הנפוצות היא לכתוב את המחרוזת באותיות גדולות. אתם יכולים לעשות זאת בכמה שורות קוד פשוטות ב-Java ונביא לכם דוגמאות במאמר זה.
 
-ישנם מגוון רחב של מקרים בתכנות שבהם נדרש להגדיל מחרוזת. זה יכול להיות בכדי לאתחל רשימת מחרוזות, להציג טקסט באופן ממוסכם, או לצורך סידור מידע. לפני שניכנס לאיך לעשות זאת, נראה למה אנחנו משתמשים בתהליך זה.
+## כיצד לכתוב מחרוזת באותיות גדולות
 
-## איך לכתוב קוד
+השימוש במתודה `toUpperCase()` יכול לעזור לנו להגדיל את האותיות שבתוך מחרוזת בקלות. כדי להשתמש במתודה זו, נצטרך להפעיל אותה על המחרוזת שאנו רוצים להגדיל ולשמור את התוצאה במשתנה חדש. לדוגמא:
 
-להלן דוגמאות לכתיבת קוד בשפת ג'אווה עם פלט של מחרוזות מוגדלות בתוך "```Java ... ```" בלוקי קוד:
+```Java
+String word = "hello";
+String capitalizedWord = word.toUpperCase();
 
-```
-// קוד כתיבה פשוט להגדלת מחרוזת באמצעות פונקציית substring ו-toUpperCase
-String str = "hello";
-String capStr = str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-System.out.println(capStr);
-```
-
-פלט: `Hello`
-
-```
-// קוד כתיבה מתקדם להגדלת מחרוזת באמצעות פונקציית StringBuilder והמרת התו הראשון לאות גדולה
-String str = "hello";
-StringBuilder sb = new StringBuilder(str);
-sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
-System.out.println(sb);
+System.out.println(capitalizedWord);
 ```
 
-פלט: `Hello`
+Output:
+```
+HELLO
+```
 
-## חקירה מעמיקה
+ניתן להשתמש גם במתודה `toUpperCase()` על משתני מחרוזת ישירות, ללא צורך בשמירת התוצאה במשתנה נוסף. לדוגמא:
 
-כעת, נכנס לעומק להבין כיצד פעולת הגדלת מחרוזות בעזרת שפת ג'אווה עובדת. כאשר אנחנו משתמשים בפונקצייה substring, נפעיל אותה על המחרוזת המקורית ונכניס אליה את התו הראשון שהופך לאות גדולה ואת התווים היתרים באותיות קטנות על ידי השתמשות בפונקציית toLowerCase. בכל פעם שנרצה להגדיל מחרוזת חדשה, נצטרך לבצע מחרוזת חדשה ולעשות כל הפעויות מחדש.
+```Java
+String word = "world";
 
-בניגוד לכך, כאשר אנחנו משתמשים בפונקציית StringBuilder, אנחנו יוצרים אובייקט חדש שמכיל את המחרוזת המקורית ואנחנו יכולים לשנות ישירות את ההפניה לתו הראשון של המחרוזת כדי לעש
+System.out.println(word.toUpperCase());
+```
+
+Output:
+```
+WORLD
+```
+
+## מקורות חומרים
+
+על מנת להעמיק בנושא זה, נוכל להציץ בקישורים הבאים:
+- [מדריך על `toUpperCase()` מתוך תיעוד Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [סטאק אוברפלוו - דיון על השימוש במתודה `toUpperCase()`](https://stackoverflow.com/questions/2151175/how-to-capitalize-the-first-character-of-each-word-in-a-string) 
+
+## ראו גם
+
+- [נושא המרת מחרוזת לאותיות גדולות בפייתון](https://www.geeksforgeeks.org/python-string-capitalize/)
+- [פתרון תרגיל בשימוש במתודה `toUpperCase()` בלולאה ב-Java](https://www.baeldung.com/java-string-uppercase)

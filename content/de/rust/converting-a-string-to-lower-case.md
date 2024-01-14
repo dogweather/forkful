@@ -1,47 +1,50 @@
 ---
-title:    "Rust: Eine Zeichenfolge in Kleinbuchstaben umwandeln"
+title:    "Rust: Ausgaben eines Strings in Kleinbuchstaben umwandeln"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Konvertieren von Zeichenketten in Kleinbuchstaben ist eine häufig benötigte Funktion in der Programmierung. Es kann hilfreich sein, um Benutzereingaben zu standardisieren oder um Vergleiche zwischen Zeichenketten durchzuführen.
+Es gibt viele Gründe, warum man eine Programmiersprache wie Rust erlernen sollte. Einer davon ist die Fähigkeit, effizient und sicher zu programmieren. Eine häufige Aufgabe in der Programmierung ist die Konvertierung von Strings in Kleinbuchstaben. Dies kann hilfreich sein, wenn man beispielsweise Benutzereingaben in einer Datenbank speichern möchte oder bestimmte Vergleiche von Strings durchführen muss. In diesem Blog-Beitrag werden wir uns ansehen, wie man dies in Rust macht.
 
-## Wie geht man vor
+## Wie
 
-In Rust kann man eine Zeichenkette ganz einfach in Kleinbuchstaben umwandeln, indem man die `to_lowercase()` Methode aufruft. Hier ist ein Beispiel:
-
-```Rust
-let name = "Max Mustermann";
-let lower_case_name = name.to_lowercase();
-println!("Name in Kleinbuchstaben: {}", lower_case_name);
-// Output: Name in Kleinbuchstaben: max mustermann
-```
-
-## Tiefergehende Informationen
-
-Beim Konvertieren von Zeichenketten in Kleinbuchstaben gibt es ein paar Dinge zu beachten. Zum einen unterstützt Rust Unicode-Zeichen, daher kann es vorkommen, dass manche Zeichen bei der Konvertierung nicht einfach nur in einen Kleinbuchstaben umgewandelt werden, sondern dort gibt es spezifische Regeln. Zum anderen kann es bei manchen Zeichenketten zu unerwartetem Verhalten kommen, zum Beispiel wenn sie nicht in einer kompatiblen Codierung vorliegen.
-
-Um diese Probleme zu vermeiden, gibt es in Rust die `fold()` Methode, die eine Funktion als Parameter annimmt, um spezielle Regeln für die Konvertierung festzulegen. Hier ist ein Beispiel:
+Um eine Zeichenkette in Rust in Kleinbuchstaben zu konvertieren, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung der `to_lowercase()`-Funktion, die Teil der Standardbibliothek von Rust ist. Hier ist ein Beispiel:
 
 ```Rust
-let name = "üÖä";
-let lower_case_name = name.fold(String::new(), |mut s, c| {
-    // Für jedes Zeichen der Zeichenkette wird nun diese Funktion aufgerufen
-    // Hier verwenden wir eine Library-Funktion, um Umlaute in Kleinbuchstaben umzuwandeln
-    for lower_c in c.to_lowercase() {
-        s.push(lower_c);
-    }
-    s
-});
-println!("Name in Kleinbuchstaben: {}", lower_case_name);
-// Output: Name in Kleinbuchstaben: uoae
+let my_string = String::from("Hallo Welt");
+let lower_case_string = my_string.to_lowercase();
+
+println!("{}", lower_case_string);
+
+// Ausgabe: hallo welt
 ```
+
+Wie man sieht, müssen wir zunächst eine Zeichenkette erstellen und dann die `to_lowercase()`-Funktion darauf anwenden. Das Ergebnis wird in `lower_case_string` gespeichert und schließlich ausgegeben. Einfach, oder?
+
+Eine weitere Möglichkeit ist die Verwendung der `chars()`-Methode und der `map()`-Funktion. Hier ist ein Beispiel, das die gleiche Aufgabe erfüllt:
+
+```Rust
+let my_string = String::from("Hallo Welt");
+let lower_case_string = my_string.chars().map(|c| c.to_lowercase().next().unwrap()).collect::<String>();
+
+println!("{}", lower_case_string);
+
+// Ausgabe: hallo welt
+```
+
+Bei dieser Methode wird die Zeichenkette in einzelne Zeichen aufgeteilt, dann wird `to_lowercase()` auf jedes Zeichen angewendet und schließlich werden die Zeichen wieder zu einer Zeichenkette zusammengefügt.
+
+## Deep Dive
+
+Wenn wir uns tiefer mit dem Konzept der Konvertierung von Zeichenketten in Rust beschäftigen wollen, können wir uns anschauen, wie Rust mit Unicode umgeht. Unicode ist ein internationaler Standard für die Codierung von Schriftzeichen. In Rust wird jeder `char`-Typ intern als UTF-8 codiert, was bedeutet, dass jedes Zeichen eine bestimmte Anzahl von Bytes belegt.
+
+Dies hat Auswirkungen auf die Konvertierung von Zeichenketten in Kleinbuchstaben, da einige Zeichen möglicherweise mehr als ein einzelnes Byte in UTF-8 belegen. Dies kann zu Problemen führen, wenn man versucht, eine Zeichenkette in einzelne Zeichen aufzuteilen oder zu manipulieren. Deshalb verwenden wir in unseren Beispielen die `chars()`-Methode, um sicherzustellen, dass jedes Zeichen ordnungsgemäß behandelt wird.
 
 ## Siehe auch
 
-- [Rust Dokumentation über die `to_lowercase()` Methode](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- [Rust Dokumentation über die `fold()` Methode](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold)
-- [Unicode Standard über Konvertierung in Kleinbuchstaben](https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt)
+- Offizielle Rust-Dokumentation zu `to_lowercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
+- Weitere Informationen zu Unicode in Rust: https://doc.rust-lang.org/std/primitive.char.html#method.to_lowercase

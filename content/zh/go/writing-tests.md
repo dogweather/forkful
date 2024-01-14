@@ -1,45 +1,80 @@
 ---
 title:    "Go: 编写测试"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么写测试？
 
-为什么会有人想要写测试？虽然写测试会花费一些额外的时间和精力，但是它也有很多好处。首先，测试可以帮助我们发现代码中的bug，从而减少在生产环境出现问题的可能性。其次，它也可以让我们更加自信地对代码进行修改和重构，因为我们可以通过测试来保证修改不会对功能造成影响。
+很多开发人员都觉得写测试很繁琐，浪费时间。但实际上，写测试对于保证代码的质量和可靠性至关重要。它可以帮助我们在开发过程中发现潜在的问题，提高代码的稳定性和可维护性。因此，学习如何写测试是每个程序员都应该掌握的技能。
 
-## 如何进行测试
+## 如何编写测试
 
-在Go语言中，编写测试非常容易。我们只需要在代码所在的目录下创建一个名为`*_test.go`的文件，并在其中编写测试代码。比如，如果我们有一个名为`calculator.go`的文件，我们就可以在同一个目录下创建一个名为`calculator_test.go`的文件来编写测试代码。
-
-下面是一个简单的例子：
+Go语言内置了一个非常强大的测试框架，让我们可以轻松编写和运行测试。下面的示例将演示如何使用Go来编写一个简单的测试。
 
 ```Go
+// main.go
+
+package main
+
+import "fmt"
+
+// Add函数，用于返回两个整数的和
+func Add(x, y int) int {
+	return x + y
+}
+
+func main() {
+	fmt.Println(Add(2, 3))
+	fmt.Println(Add(-5, 10))
+}
+```
+
+```Go
+// main_test.go
+
 package main
 
 import "testing"
 
+// 测试Add函数
 func TestAdd(t *testing.T) {
-	result := add(3, 5)
-	if result != 8 {
-		t.Errorf("Expected 8, got %d", result)
+	result := Add(2, 3)
+	if result != 5 {
+		t.Errorf("Add(2, 3) expected to be 5, got %d", result)
 	}
 }
 ```
 
-在这个例子中，我们使用内置的`testing`包来编写了一个名为`TestAdd`的测试函数。我们在这个函数中调用了`add`函数，并对返回值进行断言，如果不等于预期的结果，就会报错。
+运行测试：
 
-运行测试代码的方法也很简单，我们只需要在终端中使用`go test`命令就可以了。如果所有的测试都通过了，就会输出`ok`；如果有任何一个测试失败，就会输出详细的错误信息。
+```
+$ go test
+```
+
+输出结果：
+
+```
+$ go test
+PASS
+ok      _/Users/username/Go/src/project       0.005s
+```
+
+我们可以看到，测试通过了。如果我们把Add函数中的加号改成减号，那么测试就不会通过，从而可以发现我们的代码存在问题。
 
 ## 深入了解测试
 
-测试是一个非常广泛的话题，它涵盖了很多不同的概念和技术。在学习如何编写测试的基础之后，我们可以进一步了解一些高级的测试技术，比如表格驱动测试、mock测试等。我们还可以学习如何使用第三方的测试框架来编写更加复杂的测试。
+除了基础的单元测试外，Go还提供了一些其他类型的测试，比如性能测试和压力测试。同时，Go还支持用表格驱动测试的方式来简化测试代码。除此之外，我们还可以使用断言等技巧来使测试代码更加简洁和有意义。
 
-如果想要深入了解测试，可以阅读官方的测试文档和各种教程。同时，也可以参考其他开源项目的测试代码来学习别人是如何编写测试的。
+## 参考资料
 
-## 参考链接
+- [Go语言官方文档：测试](https://golang.org/pkg/testing)
+- [Go语言测试入门](https://www.jianshu.com/p/795db8cbf25c)
+- [深入理解Go语言中的测试技术](https://www.cnblogs.com/slmmb/p/8682602.html)
 
-- [Go官方测试文档](https://golang.org/pkg/testing/)
-- [Go语言中文网的测试教程](https://studygolang.com/subject/2)
-- [Go语言学习之路的测试系列文章](https://github.com/overnote/golang-learning/blob/master/learn-go-with-tests/README.md)
+# 参见
+
+- [Go语言官方文档](https://golang.org/)
+- [Go语言中文网](http://docscn.studygolang.com/)

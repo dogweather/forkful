@@ -1,48 +1,59 @@
 ---
 title:    "Ruby: Slette tegn som matcher et mønster"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Noen ganger i programmering kan man komme over situasjoner der man trenger å fjerne visse tegn fra en tekststreng. Dette kan være for å rydde opp i data eller for å filtrere ut uønsket informasjon. Ved å lære å slette tegn som matcher et mønster, kan man effektivt håndtere slike situasjoner.
+Noen ganger kan det være nødvendig å slette bestemte tegn eller bokstaver i en streng. Dette kan være for å gjøre teksten mer lesbar eller for å filtrere ut uønsket innhold. Ved å lære hvordan man kan slette tegn og bokstaver som matcher et gitt mønster, kan man effektivt forenkle og filtrere teksten.
 
 ## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster i Ruby, kan man bruke metoden `.gsub!` som står for "global substitution". Denne metoden tar imot to argumenter: det første er mønsteret som skal matches, og det andre er hva som skal erstatte det matchede mønsteret.
-
-La oss si at vi har en variabel `tekst` som inneholder følgende tekststreng: "Jeg elsker å spise sushi!". Hvis vi ønsker å fjerne alle vokaler fra denne teksten, kan vi bruke `.gsub!` som følger:
+Det er flere måter å slette tegn og bokstaver som matcher et mønster i Ruby på. En enkel metode er å bruke metoden `delete!`, som endrer strengen direkte istedenfor å returnere en ny streng. Dette sparer minne og forbedrer ytelsen.
 
 ```Ruby
-tekst.gsub!(/[aeiou]/i, "")
+# Fjerner alle tall fra strengen
+string = "42 er et flott tall"
+string.delete!("0-9")
+puts string #=> " er et flott tall"
 ```
 
-Her angir vi mønsteret `[aeiou]`, som betyr alle små eller store vokaler, og det tomme strengsargumentet betyr at vi vil erstatte disse vokalene med ingenting. Outputen vil da bli:
-
-`Jg lskr å spr ssh!`
-
-Hvis vi ønsker å erstatte disse vokalene med et annet tegn, for eksempel en stjerne, kan vi gjøre det ved å endre det andre argumentet til `*`.
+En annen metode er å bruke `gsub!` som står for "global substitution". Denne metoden tillater å erstatte alle forekomster av et mønster med et nytt tegn eller en tom streng.
 
 ```Ruby
-tekst.gsub!(/[aeiou]/i, "*")
+# Fjerner alle vokaler fra strengen
+string = "Hei, jeg liker å synge"
+string.gsub!("a|e|i|o|u|y", "")
+puts string #=> "H, jg lkr å sng"
 ```
 
-Nå vil outputen bli:
+## Dypere innsikt
 
-`J*g*l*v * *sp*s* s*sh*!`
+I Ruby kan man bruke såkalte "regular expressions" eller regEx for kort, for å spesifisere mønstre som skal matches. Dette åpner opp for stor fleksibilitet og presisjon når det kommer til å slette bokstaver og tegn. For eksempel kan man bruke regEx for å slette bokstaver som kommer etter et bestemt tegn.
 
-## Dypdykk
+```ruby
+# Fjerner alle bokstaver etter "g" i en streng
+string = "Jeg elsker koding"
+string.gsub!(/g.*/, "")
+puts string #=> "Jeg elsker"
+```
 
-I eksemplene ovenfor brukte vi `/.gsub!`-metoden med metakarakteret `i` for å gjøre søket case-insensitive. Dette betyr at den også vil matche store bokstaver. Hvis man ønsker å begrense søket til kun små bokstaver, kan man utelate metakarakteret `i`.
+Det er også mulig å bruke regEx for å slette spesifikke sekvenser av bokstaver eller tegn.
 
-Man kan også bruke `.gsub`-metoden i stedet for `.gsub!`. Forskjellen er at `.gsub` vil returnere en ny tekststreng med endringene, mens `.gsub!` vil endre den eksisterende tekststrengen direkte.
+```ruby
+# Fjerner "el" hvor som helst i strengen
+string = "Jeg elsker elger"
+string.gsub!("el", "")
+puts string #=> "Jg sker gr"
+```
 
-Det er også mulig å bruke andre mønstre, for eksempel `[0-9]` for tall eller `[!@#$%^&*()]` for spesialtegn.
+RegEx kan virke komplisert i begynnelsen, men med øvelse vil man raskt bli mer komfortabel med å bruke det for å slette bokstaver og tegn som matcher bestemte mønstre.
 
 ## Se også
 
-- Ruby regex tutorial: https://www.rubyguides.com/2015/06/ruby-regex/
-- Ruby String class documentation: https://ruby-doc.org/core-2.7.2/String.html
-- Regular Expressions cheat sheet: https://www.shortcutfoo.com/app/dojos/ruby-regex/cheatsheet
+- [Ruby's `delete!` metode](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete-21)
+- [Ruby's `gsub!` metode](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub-21)
+- [Introduction to Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

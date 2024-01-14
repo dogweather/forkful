@@ -1,47 +1,41 @@
 ---
-title:    "Gleam: Das Verfassen einer Textdatei"
+title:    "Gleam: Schreiben einer Textdatei"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Schreiben von Textdateien ist ein wesentlicher Bestandteil des Programmierens. Es ermöglicht Ihnen, wichtige Informationen in einem für Menschen lesbaren Format zu speichern und zu organisieren.
 
-## So geht's
-Um eine Textdatei in Gleam zu schreiben, verwenden Sie die `File`-Bibliothek. Zunächst müssen Sie die Datei öffnen und eine `File`-Instanz erstellen, die Sie zum Schreiben verwenden können.
+Das Schreiben von Textdateien ist eine grundlegende Fähigkeit in der Programmierung, die es ermöglicht, Daten in einer lesbaren Form zu speichern und zu verarbeiten.
 
-```
-Gleam import File
+## Wie geht das?
 
-File.open("meine_datei.txt", "w") |file| {
-    // Fügen Sie den Inhalt hinzu, den Sie in die Datei schreiben möchten
-    file.write("Dies ist ein Beispieltext.");
-}
+Das Erstellen einer Textdatei in Gleam ist ziemlich einfach. In den folgenden Beispielen verwenden wir die Funktion `File.write` aus dem Modul `gleam/io`.
+
+```Gleam
+let result = File.write("mein_text.txt", "Dies ist ein Beispieltext.")
 ```
 
-Nachdem Sie den Inhalt hinzugefügt haben, müssen Sie die Datei schließen, um sicherzustellen, dass die Änderungen gespeichert werden.
+Dieses Beispiel würde eine Datei mit dem Namen "mein_text.txt" im aktuellen Ordner erstellen und den gegebenen Text in die Datei schreiben. Um zu überprüfen, ob die Datei erfolgreich erstellt wurde, können wir `result` in der Konsole ausgeben.
 
-```
-File.close("meine_datei.txt")
-```
-
-Sie können auch jederzeit auf den Inhalt einer bereits vorhandenen Datei zugreifen und diesen bearbeiten. Verwenden Sie dazu die `File.read`-Funktion, um den Inhalt der Datei auszulesen, und die `File.write`-Funktion, um den Inhalt zu ändern oder etwas Neues hinzuzufügen.
-
-```
-File.read("meine_datei.txt") |content| {
-    // Bearbeiten Sie den Inhalt hier
-    let neuer_inhalt = content ++ "Noch mehr Text";
-    // Schreiben Sie die Änderungen zurück in die Datei
-    File.write("meine_datei.txt", neuer_inhalt);
-}
+```Gleam
+debug
+  result
 ```
 
-## Tiefergehende Informationen
-Beim Schreiben von Textdateien ist es wichtig zu beachten, dass bestimmte Zeichen oder Zeichenfolgen eine spezielle Bedeutung haben können. Möglicherweise müssen Sie diese Zeichen entsprechend kodieren, um sicherzustellen, dass der Inhalt richtig gespeichert wird.
+Die Ausgabe sollte `Ok` sein, um anzuzeigen, dass die Datei erfolgreich erstellt wurde.
 
-Eine weitere wichtige Überlegung ist die Unterstützung für verschiedene Zeichensätze. Es ist wichtig zu wissen, welcher Zeichensatz in Ihrer Datei verwendet wird, um Probleme mit der Darstellung von Sonderzeichen oder der Umwandlung in einen anderen Zeichensatz zu vermeiden.
+## In die Tiefe
+
+Beim Schreiben von Textdateien in Gleam gibt es einige zusätzliche Dinge zu beachten. Hier sind einige nützliche Tipps und Tricks:
+
+- Wenn die Datei bereits existiert, wird der vorhandene Inhalt durch den neuen Inhalt überschrieben.
+- Um mehrere Zeilen zu schreiben, können Sie den `\n` Zeilenumbruch verwenden.
+- Sie können auch Variablen oder komplexere Datentypen in die Datei schreiben, indem Sie die Funktion `to_string` verwenden.
 
 ## Siehe auch
-- Die offizielle Gleam-Dokumentation zur `File`-Bibliothek: https://gleam.run/documentation/index.html#file
-- Eine Einführung in das Schreiben von Textdateien in Gleam: https://medium.com/@username/writing-text-files-in-gleam-123456789
+
+- [Gleam Dokumentation](https://gleam.run/documentation/)
+- [Gleam Datei Eingabe/Ausgabe Modul](https://gleam.run/modules/io/)

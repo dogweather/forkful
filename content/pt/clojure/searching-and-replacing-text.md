@@ -1,65 +1,41 @@
 ---
 title:    "Clojure: Buscando e substituindo texto"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
+Se você já trabalhou com qualquer tipo de texto, provavelmente já precisou fazer uma tarefa repetitiva de substituição. Felizmente, com algumas ferramentas simples do Clojure, é possível automatizar esse processo e economizar muito tempo. Neste artigo, vamos explorar como utilizar as funções nativas do Clojure para pesquisar e substituir texto em suas strings.
 
-Muitas vezes, quando estamos escrevendo código, precisamos fazer mudanças rápidas e sistemáticas em um trecho de texto. É aí que a funcionalidade de busca e substituição se torna essencial. Neste artigo, vamos aprender como usar essa funcionalidade em Clojure e como ela pode facilitar nossas tarefas de programação.
-
-## Como fazer
-
-Para fazer busca e substituição em Clojure, podemos usar a função `clojure.string/replace` que recebe três argumentos: a string original, o que queremos procurar e o que queremos substituir. Vejamos alguns exemplos de como usar essa função:
+## Como
+A função básica para substituir texto no Clojure é a `replace` do namespace `clojure.string`. Vamos dar uma olhada em um exemplo simples de como utilizá-la:
 
 ```Clojure
-(clojure.string/replace "Olá, mundo!" "mundo" "Portugal")
-;; saída: "Olá, Portugal!"
+(require '[clojure.string :as str])
 
-(clojure.string/replace "Gosto de programar em Clojure" "e" "ar")
-;; saída: "Garstar de programar em Clarjar"
-
-(clojure.string/replace "Fico ansioso pelo próximo release." "ansioso" "empolgado")
-;; saída:"Fico empolgado pelo próximo release."
+(str/replace "Olá, mundo!" #".*n.*" "m8")
 ```
 
-Além disso, podemos usar expressões regulares como argumento de busca. Por exemplo, se quisermos substituir todas as vogais em uma string por um ponto de exclamação, podemos fazer o seguinte:
+A saída deste código será `m8`, já que a regex que utilizamos para pesquisar é `".*n.*"`, que significa que qualquer caractere pode aparecer antes e depois da letra `n`.
+
+Podemos também passar uma função como argumento para `replace` que será usada para alterar o texto encontrado pela nossa regex:
 
 ```Clojure
-(clojure.string/replace "O que você está fazendo?" #"[aeiou]" "!")
-;; saída: "O q!! v!cê !stá f!!z!nd!!"
+(str/replace "Esta é uma string qualquer" #"[aeiou]" (fn [x] (str/upper-case x)))
 ```
 
-É importante lembrar que a função `replace` retorna uma cópia da string original com as alterações desejadas. Ela não modifica a string original, portanto, é necessário armazenar o resultado em uma nova variável.
+Neste exemplo, a saída será `EstA É UmA strIng quAlquEr`, já que utilizamos uma função anônima para transformar todas as vogais encontradas em vogais maiúsculas.
 
-## Aprofundando
+## Deep Dive
+A função `replace` é uma ótima ferramenta para substituição de texto simples, mas se você precisar de mais controle sobre o processo, pode utilizar as funções `replace-first` e `replace-nth` do mesmo namespace.
 
-A função `replace` pode ser usada não apenas em strings, mas também em qualquer tipo de sequência, como vetores e listas. Também podemos usar outras funções de Clojure para filtrar e mapear os elementos antes de fazer a substituição. Por exemplo, se tivermos uma lista de nomes e quisermos adicionar um sobrenome a todos eles, podemos fazer o seguinte:
-
-```Clojure
-(def nomes ["Ana" "João" "Carlos"])
-
-(map #(str % " Silva") nomes)
-;; saída: ("Ana Silva" "João Silva" "Carlos Silva")
-```
-
-Podemos combinar essa técnica com a função `replace` para adicionar o sobrenome apenas aos nomes que começam com a letra "A":
-
-```Clojure
-(map #(str % " Silva") (filter #(.startsWith % "A") nomes))
-;; saída: ("Ana Silva")
-```
-
-Também é possível usar a função `replace` para remover caracteres indesejados, como espaços em branco, de uma string. Por exemplo, se tivermos a seguinte string: "Eu gosto de programar em Clojure", e quisermos remover todos os espaços em branco, podemos fazer o seguinte:
-
-```Clojure
-(clojure.string/replace "Eu gosto de programar em Clojure" #"\s" "")
-;; saída: "EugostodeprogramaremClojure"
-```
+A função `replace-first` substitui apenas a primeira ocorrência do texto encontrado pela regex, enquanto `replace-nth` substitui a n-ésima ocorrência. Além disso, você também pode utilizar regex e strings como argumentos para as funções `replace-first` e `replace-nth`, permitindo fazer substituições específicas em diferentes partes do texto.
 
 ## Veja também
+[Documentação oficial do Clojure sobre strings](https://clojuredocs.org/clojure.string)
 
-- Documentação oficial de `clojure.string/replace`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace
-- Tutorial sobre expressões regulares em Clojure: https://clojuredocs.org/clojure.core/re-seq
-- Outras funções úteis de manipulação de strings em Clojure: https://clojuredocs.org/clojure.string
+[Tutorial de strings do Clojure](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
+
+[Exemplos de uso avançado da função `replace` no Clojure](https://techdocs.io/blog/2016/11/03/sed-like-string-replace-in-clojure)

@@ -1,74 +1,54 @@
 ---
-title:    "Rust: Luodaan väliaikainen tiedosto"
+title:    "Rust: Väliaikaisen tiedoston luominen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi luoda väliaikainen tiedosto?
+## Miksi luoda väliaikainen tiedosto?
 
-Monissa ohjelmointiprojekteissa saattaa tulla tarve luoda väliaikainen tiedosto. Tämä voi johtua esimerkiksi tietojen tallentamisesta, puskuroinnista tai muista teknisistä syistä. Rustin avulla tämä prosessi voidaan tehdä nopeasti ja turvallisesti. Seuraavassa esittelemme kuinka väliaikaisten tiedostojen luonti onnistuu Rustilla.
+Väliaikaiset tiedostot ovat tarpeellisia monissa tilanteissa, kun ohjelmassa tarvitaan väliaikaista tallennustilaa esimerkiksi tiedon käsittelyssä. Niitä voidaan käyttää esimerkiksi uuden tiedoston luomisessa, väliaikaisessa tiedon tallentamisessa tai jopa testaamisessa. Rustin avulla väliaikaisen tiedoston luominen on suoraviivaista ja tehokasta.
 
-## Kuinka luoda väliaikainen tiedosto
+## Näin luodaan väliaikainen tiedosto Rustissa
 
-Väliaikaisten tiedostojen luonti Rustilla on helppoa. Käytämme siihen Rustin standardikirjaston `tempfile`-kirjastoa. Alla esimerkki koodista, joka luo väliaikaisen tiedoston ja kirjoittaa siihen "Tervetuloa Rust-maailmaan!".
-
-```Rust
-use std::io::Write;
-use tempfile::NamedTempFile;
-
-fn main() {
-    // Luodaan väliaikainen tiedosto nimellä "tervetuloa.txt"
-    let mut file = NamedTempFile::new("tervetuloa.txt").unwrap();
-
-    // Kirjoitetaan teksti tiedostoon
-    writeln!(file, "Tervetuloa Rust-maailmaan!").unwrap();
-
-    // Näytetään tiedoston polku
-    println!("Tiedoston polku: {}", file.path().display());
-}
-```
-
-Sama koodi suoritettuna tulostaa seuraavan:
-
-```
-Tiedoston polku: /tmp/tervetuloa.txt
-```
-
-Kun ohjelma sulkeutuu, väliaikainen tiedosto poistuu automaattisesti.
-
-## Syvempi sukellus
-
-`tempfile`-kirjasto tarjoaa monia erilaisia toimintoja väliaikaisten tiedostojen hallintaan. Voit esimerkiksi määrittää tiedoston sijainnin, nimen ja jopa laajennoksen. Alla oleva koodi luo väliaikaisen tiedoston nimellä "tervetuloa.png" ja tallentaa sen sijaintiin `/tmp/kuvat`.
+Väliaikaisen tiedoston luomiseksi tarvitsemme `std::fs::File` -moduulin ja `tempfile`-paketin, jotka voidaan lisätä Rust projektiin `Cargo.toml` -tiedostossa. Tämän jälkeen voimme käyttää `tempfile::tempfile()` -funktiota luomaan uuden väliaikaisen tiedoston ja avata sen kirjoitus- ja lukuoikeuksilla:
 
 ```Rust
-use tempfile::Builder;
+// Lisätään tarvittavat moduulit
+use std::fs::File;
+use tempfile::tempfile;
 
-fn main() {
-    // Luodaan väliaikainen tiedosto nimellä "tervetuloa.png" sijaintiin "/tmp/kuvat"
-    let file = Builder::new()
-        .prefix("tervetuloa")
-        .suffix(".png")
-        .tempfile_in("/tmp/kuvat")
-        .unwrap();
+// Luodaan väliaikainen tiedosto
+let temp_file = tempfile().expect("Väliaikaisen tiedoston luominen epäonnistui");
 
-    // Näytetään tiedoston polku
-    println!("Tiedoston polku: {}", file.path().display());
-}
+// Avataan tiedosto kirjoitus- ja lukuoikeuksilla
+let mut file = File::tempfile_in(temp_file.path()).expect("Tiedoston avaaminen epäonnistui");
 ```
 
-Tämä koodi printtaa:
+Voimme myös määrittää väliaikaisen tiedoston nimen ja polun käyttämällä `tempfile::Builder`:ia:
 
-```
-Tiedoston polku: /tmp/kuvat/tervetuloaab18e8f4-1c33-4705-9a41-4f97826cecce.png
+```Rust
+// Luodaan väliaikainen tiedoston polku
+let temp_path = tempfile::Builder::new()
+               .prefix("my_temp_file")
+               .suffix(".txt")
+               .tempfile()
+               .expect("Väliaikaisen tiedoston luominen epäonnistui")
+               .into_temp_path();
+
+// Avataan tiedosto kirjoitus- ja lukuoikeuksilla
+let mut file = File::create(&temp_path).expect("Tiedoston avaaminen epäonnistui");
 ```
 
-Halutessasi voit myös säätää tiedoston oikeuksia ja sen käyttömahdollisuuksia `tempfile::Builder`-olion avulla.
+## Sydän syvällä – tarkempi tarkastelu väliaikaisen tiedoston luomisesta
+
+Väliaikainen tiedosto luodaan käyttämällä `tempfile::tempfile()` -funktiota, joka palauttaa `Result<NamedTempFile, TempPath>` -tyypin. Tämän jälkeen voimme käyttää `NamedTempFile` -tyypin metodien avulla tiedoston ominaisuuksien muokkaamiseen.
+
+Rustissa väliaikaisten tiedostojen käyttö on turvallista, sillä tiedostot poistetaan automaattisesti, kun `NamedTempFile` -tyyppi on käsitelty loppuun ja se poistetaan muistista. Tämä säästää käyttäjän päänvaivaa manuaalisesta tiedoston poistamisesta.
 
 ## Katso myös
 
-- [tempfile-kirjaston dokumentaatio](https://docs.rs/tempfile/)
-- [Rustin virallinen opas](https://rust-lang.github.io/rustup/index.html)
-- [Tempfile-kirjaston lähdekoodi GitHubissa](https://github.com/Stebalien/tempfile)
-
-Kiitos kun luit tämän artikkelin ja toivottavasti se auttoi sinua ymmärtämään väliaikaisten tiedostojen luontia Rustilla! Onnea ohjelmointiin.
+- [std::fs::File dokumentaatio](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [tempfile crate dokumentaatio](https://docs.rs/tempfile/3.1.0/tempfile/)
+- [std::path::Path dokumentaatio](https://doc.rust-lang.org/std/path/struct.Path.html)

@@ -1,19 +1,36 @@
 ---
 title:    "Go: Rozpoczynanie nowego projektu"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Pisanie kodu w języku Go może być fascynującym doświadczeniem dla każdego programisty. Dzięki swojej prostocie i wydajności, Go jest coraz popularniejszy wśród firm i programistów. Tworzenie nowego projektu w Go może być idealnym sposobem na rozpoczęcie przygody z tym językiem.
+Zastanawiałeś się kiedykolwiek, dlaczego warto zacząć nowy projekt w technologii Go? W tym artykule podpowiemy Ci dlaczego warto i jak zacząć programowanie w Go.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Pierwszym krokiem jest oczywiście zainstalowanie Go na swoim komputerze. Możesz to zrobić, ściągając i instalując oficjalny pakiet ze strony golang.org. Następnie, aby rozpocząć nowy projekt, musisz stworzyć folder, w którym będziesz przechowywać wszystkie swoje pliki Go. Wewnątrz tego folderu utwórz plik o nazwie "main.go", który będzie zawierał twój kod. 
+Aby zacząć kodowanie w Go, musisz najpierw zainstalować odpowiednie narzędzia. Poniżej przedstawiamy przykład instalacji dla systemu Windows:
 
-Aby zacząć pisać w Go, musisz mieć podstawową wiedzę na temat struktury języka. Na przykład, w Go nie ma pojęcia klas, zamiast tego, używa się struktury, aby zdefiniować dane i metody. Możesz rozpocząć od napisania podstawowej funkcji "main", która będzie punktem wejścia do twojego programu. Poniżej znajduje się przykładowy kod wyświetlający "Hello World!" w Go:
+```Go
+go get -u golang.org/dl/go1.15.2.windows-amd64.msi
+```
+
+Po zainstalowaniu Go, możesz utworzyć nowy projekt za pomocą polecenia:
+
+```Go
+go mod init [nazwa projektu]
+```
+
+Następnie możesz utworzyć plik z kodem i uruchomić go za pomocą polecenia:
+
+```Go
+go run [nazwa pliku]
+```
+
+W przykładzie poniżej tworzymy prosty program, który wypisuje powitanie na konsoli:
 
 ```Go
 package main
@@ -21,20 +38,28 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello World!")
+    fmt.Println("Cześć! Witaj w świecie Go!")
 }
 ```
 
-Po napisaniu swojego kodu, możesz go uruchomić, przechodząc do folderu z plikiem "main.go" w terminalu i wpisując polecenie "go run main.go". Powinien wyświetlić się tekst "Hello World!".
+Po uruchomieniu programu, powinno pojawić się na ekranie wyjście:
 
-# Głębszy zanurzenie
+Cześć! Witaj w świecie Go!
 
-Rozpoczęcie nowego projektu w Go może być też dobrym sposobem na naukę nowych funkcji i możliwości tego języka. Możesz na przykład zapoznać się z pakietem "fmt", który jest odpowiedzialny za formatowanie danych w Go. Możesz także spróbować stworzyć strukturę danych i metody, aby lepiej zrozumieć, jak działają w Go.
+## Dogłębna analiza
 
-Warto również uważnie przeczytać dokumentację Go oraz śledzić wiadomości i aktualizacje na oficjalnych stronach i forach zajmujących się tym językiem. Dzięki temu będziesz miał możliwość lepszego zrozumienia języka i wykorzystania jego możliwości w swoim projekcie.
+Teraz, gdy już wiesz jak zacząć kodowanie w Go, możesz zagłębić się w szczegóły tworzenia nowego projektu. Pierwszym krokiem będzie zapoznanie się z dokumentacją języka Go, która dostępna jest na oficjalnej stronie: https://golang.org/doc/.
 
-# Zobacz także
+Następnie musisz zapoznać się z podstawowymi konceptami języka, takimi jak typy danych, pętle, funkcje czy struktury. Możesz to zrobić poprzez dokładne przejrzenie przykładów dostępnych w dokumentacji.
 
-- Oficjalna strona języka Go: https://golang.org/
-- Dokumentacja języka Go: https://pkg.go.dev/
-- Śledź aktualizacje języka na forum: https://forum.golangbridge.org/
+Kolejnym krokiem będzie nauka korzystania z narzędzi i środowiska programistycznego. Warto zapoznać się z edytorem kodu, który posiada wsparcie dla Go, na przykład Visual Studio Code.
+
+Podczas pisania kodu w Go ważne jest również stosowanie dobrych praktyk programistycznych i dbałość o wydajność. W sieci można znaleźć wiele artykułów i poradników dotyczących tych tematów.
+
+## Zobacz też
+
+- Dokumentacja języka Go: https://golang.org/doc/
+- Oficjalny kurs na stronie Go: https://tour.golang.org/welcome/1
+- Poradnik dla początkujących w Go: https://golangbot.com/learn-golang-series/
+- Poradnik dotyczący wydajności w Go: https://stackimpact.com/docs/performance-go/
+- Zbiór przydatnych narzędzi dla programistów Go: https://github.com/golang/go/wiki/Tools

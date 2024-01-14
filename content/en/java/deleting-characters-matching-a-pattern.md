@@ -1,61 +1,51 @@
 ---
 title:    "Java recipe: Deleting characters matching a pattern"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-There may come a time in your Java programming journey where you need to quickly and efficiently delete characters that match a specific pattern in a string. This could be for data cleaning, text manipulation, or even security purposes. In this blog post, we will discuss how to do this in Java and provide some tips for a deeper understanding of the topic.
+Deleting characters matching a pattern is a common task in programming, especially when working with strings. This technique allows us to remove unwanted characters from a string, making our programs cleaner and more efficient.
 
 ## How To
 
-Let's start with the basics. To delete characters matching a pattern in Java, we will use the `replaceAll()` method from the `String` class. This method takes two parameters: the regex pattern and the replacement string. The regex pattern is used to match the characters we want to delete, and the replacement string is used to replace those characters with nothing (essentially deleting them).
-
-Here's an example of using `replaceAll()` to delete all vowels from a string:
+To delete characters matching a pattern in Java, we can use the `replaceAll()` method from the `String` class. This method takes in two parameters: a regex pattern and a replacement string.
 
 ```Java
-String str = "Hello World";
-str = str.replaceAll("[aeiou]", ""); // deletes all lowercase vowels
-System.out.println(str); // prints "Hll Wrld"
+String text = "Hello, world! This is a test string.";
+// Remove all punctuation from the string
+String result = text.replaceAll("[^a-zA-Z0-9 ]", "");
+System.out.println(result);
+// Output: Hello world This is a test string
 ```
 
-As you can see, the `replaceAll()` method takes a regex pattern as a string. In this case, we used a character class to match any lowercase vowel. We can also use literal strings as the pattern, like so:
+In this example, we used a regex pattern `[^a-zA-Z0-9 ]` to match all non-alphanumeric characters and spaces. The `^` symbol negates the character class, making it match everything except the characters inside the brackets. Then, we replaced those characters with an empty string, effectively deleting them from the original string.
+
+We can also use the same method to delete specific characters from a string. Let's say we want to remove all the vowels from a string.
 
 ```Java
-String str = "1-800-CALL-NOW";
-str = str.replaceAll("-", ""); // deletes all hyphens
-System.out.println(str); // prints "1800CALLNOW"
+String name = "John Doe";
+// Remove vowels from the string
+String result = name.replaceAll("[aeiouAEIOU]", "");
+System.out.println(result);
+// Output: Jhn D
 ```
 
-If we want to delete characters that are not included in a specific pattern, we can use the `^` symbol at the beginning of the character class. For example, if we want to delete all non-numeric characters from a string, we can use the following code:
-
-```Java
-String str = "(555) 123-4567";
-str = str.replaceAll("[^0-9]", ""); // deletes all non-numeric characters
-System.out.println(str); // prints "5551234567"
-```
+As you can see, the `replaceAll()` method is a powerful tool for deleting characters matching a pattern in a string.
 
 ## Deep Dive
 
-While the `replaceAll()` method is great for simple string substitutions, it can be more complex when it comes to deleting Unicode characters or special characters. In these cases, we can use the `replace()` method from the `StringBuilder` class.
+Under the hood, the `replaceAll()` method uses the `Pattern` and `Matcher` classes from the `java.util.regex` package. These classes allow us to create and manipulate regular expressions in Java.
 
-The `replace()` method takes two parameters: the starting index and the ending index for the characters we want to replace. We can also chain multiple calls to this method to delete multiple patterns within a string. Here's an example:
+The `Pattern` class represents a compiled regular expression, while the `Matcher` class is responsible for matching the pattern against a given input string. The `Matcher` class also has methods like `find()` and `replaceFirst()` that we can use instead of `replaceAll()` if we only want to replace the first match in a string.
 
-```Java
-String str = "Hello, world!";
-StringBuilder sb = new StringBuilder(str);
-sb.replace(7, 13, ""); // deletes "world"
-sb.replace(0, 6, ""); // deletes "Hello, "
-str = sb.toString();
-System.out.println(str); // prints "!"
-```
-
-In this example, we first delete the substring "world" by specifying the starting and ending indices. Then, we delete the remaining characters by specifying the starting and ending indices again. The final string is an empty string, indicating that we successfully deleted all matching patterns.
+Regular expressions can be complex, with a wide range of symbols and special characters that have specific meanings. It's essential to have a good understanding of regular expressions before using them in your code.
 
 ## See Also
 
-- [Java String replaceAll() method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
-- [Java StringBuilder replace() method](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#replace-int-int-java.lang.String-)
-- [Regex tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+- [Java Regular Expressions tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

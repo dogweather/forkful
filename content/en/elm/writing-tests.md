@@ -1,70 +1,38 @@
 ---
 title:    "Elm recipe: Writing tests"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When it comes to software development, testing is crucial for ensuring the quality and functionality of your code. Writing tests not only helps catch bugs and errors, but it also serves as a form of documentation for your code. In the long run, writing tests can save you time and headaches by avoiding potential issues before they arise. 
+Writing tests for your Elm code may seem like an unnecessary hassle at first, but it can actually save you time and effort in the long run. Not only do tests help catch bugs and errors early on, they also act as a safety net when making changes to your codebase.
 
 ## How To
 
-To start writing tests in Elm, you will need to import the `Test` module.
+To start writing tests in Elm, you'll first need to set up your project with the `elm-test` package. Then, you can use the `test` and `expect` functions to define your tests. Let's look at an example:
 
-```
-import Test exposing (Test, test)
-```
-Next, you can use the `test` function to create a test case. For example, if you want to test a function that adds two numbers, you can write the following test case:
-
-```
-addTest : Test
-addTest =
-   test "adding two numbers" <|
-      \() ->
-         expect (add 2 3) toEqual 5
-
+```Elm
+test "addition test" : 
+    expect (1 + 1) toBe 2
 ```
 
-In this code, the `test` function takes two arguments - a description of what is being tested and a function that defines the test. The `expect` function is used to define the expected output of the test.
-
-To actually run the tests, you can use the `Test` module's `run` function:
-
-```
-tests : Test
-tests =
-  describe "Calculator tests"
-    [ addTest
-    , subtractTest
-    ]
-
-main : Program Never
-main =
-  Test.run tests
-```
-
-This will produce an output similar to the following:
-
-```
-Calculator tests
-  - adding two numbers: OK
-  - subtracting two numbers: FAILED
-
-```
+In this test, we use the `expect` function to assert that the result of `1 + 1` is equal to 2. We can also use `toBeTrue` and `toBeFalse` to check for boolean values, and `toEqual` for more complex data types like lists or records.
 
 ## Deep Dive
 
-When writing tests, it is important to cover as many edge cases as possible to ensure the reliability of your code. Elm's built-in `expect` function can handle different types of expectations such as equality, inequality, and exceptions. You can also group related tests together using the `describe` function.
+There are a few key things to keep in mind when writing tests in Elm. One is to make sure your tests are independent and idempotent - meaning they can be run in any order and multiple times without changing the result. Another is to think about what your tests are actually testing, and not just repeating the logic of your code.
 
-Additionally, Elm also provides the `fuzz` function to generate random test cases for greater coverage. This is particularly useful for testing functions that take in unexpected inputs.
-
-Another helpful feature is Elm's ability to use modules within tests. This allows you to write tests for private or helper functions within your code.
+You can also use the `testProperty` function to create randomized property-based tests, which can help catch edge cases in your code. And don't forget to include tests for any error cases or edge cases that may arise.
 
 ## See Also
 
-For more information and examples on writing tests in Elm, check out these resources:
+Here are some links for further reading on writing tests in Elm:
 
-- Official Elm Testing Guide: https://guide.elm-lang.org/testing/
-- Elm Test package documentation: https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- Testing Elm Applications with elm-test: https://thoughtbot.com/blog/testing-elm-applications-with-elm-test
+- [Elm documentation on testing](https://guide.elm-lang.org/testing/)
+- [Property-based testing in Elm](https://dev.to/andrewMacmurray/property-based-testing-in-elm-52kj)
+- [Idiomatic Elm testing](https://dev.to/jessicabrys/idiomatic-elm-testing-the-elm-test-path-198o)
+
+Happy testing!

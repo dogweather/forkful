@@ -1,48 +1,50 @@
 ---
-title:    "Swift: Encontrar la longitud de una cadena"
+title:    "Swift: Encontrando la longitud de una cadena"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-A veces, en la programación, es necesario saber cuántos caracteres tiene una cadena de texto. Ya sea para validar una entrada de usuario o para realizar alguna operación en base a la longitud de la cadena, saber la cantidad de caracteres es una habilidad esencial en programación.
+# Por qué encontrar la longitud de una cadena en Swift es útil
 
-## Cómo hacerlo
-Para encontrar la longitud de una cadena de texto en Swift, podemos utilizar la propiedad `count` que está disponible en todas las cadenas. Esta propiedad nos devuelve la cantidad de caracteres de la cadena como un número entero.
+Si eres programador en Swift, es probable que hayas tenido que trabajar con cadenas de texto en tus proyectos. Ya sea para validar una entrada de usuario, formatear datos o simplemente manejar texto en general, encontrar la longitud de una cadena es una tarea común. Aunque parezca algo sencillo, conocer la longitud de una cadena puede ser de gran utilidad en la programación. En este post, te mostraremos cómo puedes encontrar la longitud de una cadena en Swift y por qué es importante.
 
-```Swift
-let cadena = "¡Hola, mundo!"
-print(cadena.count) // Output: 13
-```
+## Cómo hacerlo en Swift
 
-También podemos utilizar la función `characters.count` en versiones anteriores de Swift.
+En Swift, una cadena de texto se representa con el tipo de dato `String`. Para encontrar su longitud, podemos usar la propiedad `count`, que devuelve un entero con el número de caracteres en la cadena. Veamos un ejemplo:
 
 ```Swift
-let cadena = "¡Hola, mundo!"
-print(cadena.characters.count) // Output: 13
+let nombre = "María"
+print(nombre.count)
 ```
 
-Si queremos encontrar la longitud de una cadena que contiene emojis o caracteres Unicode, es importante tener en cuenta que estos caracteres pueden tener más de un código Unicode. Por lo tanto, la función `count` o `characters.count` nos devolverá la cantidad de códigos Unicode, no la cantidad de caracteres visibles.
-
-## Profundizando
-En Swift, las cadenas de texto son almacenadas como una colección de caracteres Unicode. Esto significa que cada caracter tiene un valor numérico asociado, conocido como código Unicode. Al utilizar la propiedad `count` o `characters.count`, estamos contando la cantidad de códigos Unicode dentro de la cadena.
-
-Si queremos obtener la cantidad de caracteres visibles en una cadena que contiene emojis o caracteres Unicode, podemos utilizar la función `countByEnumerating(collecion: Collection)` de la siguiente manera:
+La salida de este código sería `5` ya que la cadena contiene cinco caracteres. Pero, ¿qué pasa si la cadena incluye caracteres especiales o emojis? En ese caso, la propiedad `count` seguirá devolviendo el número total de caracteres, incluyendo los especiales. Por ejemplo:
 
 ```Swift
-let cadena = "¡Hola, 🌎!"
-var contador = 0
-cadena.countByEnumeratingCharacters(in: cadena.characters) { (caracter, _, _) in
-    contador += 1
-}
-print(contador) // Output: 7
+let mensaje = "¡Hola! ¿Cómo estás? 😀"
+print(mensaje.count)
 ```
 
-En este ejemplo, la función `countByEnumeratingCharacters` itera sobre cada caracter en la cadena y aumenta el contador en uno por cada caracter. Esto nos devuelve el resultado deseado de 7 caracteres visibles en lugar de 9 códigos Unicode.
+En este caso, la salida sería `19`.
+
+## Profundizando en la longitud de una cadena
+
+Ahora que sabemos cómo encontrar la longitud de una cadena en Swift, es importante tener en cuenta que este valor puede variar dependiendo del contexto. Por ejemplo, si tenemos una cadena que contiene espacios, la propiedad `count` solo contará los caracteres visibles, sin incluir los espacios en blanco. Además, también es importante mencionar que Swift maneja las cadenas de texto como una colección de caracteres individuales, lo que significa que los emojis y otros caracteres especiales son considerados como un solo elemento.
+
+También es importante mencionar que Swift nos permite acceder a elementos individuales de una cadena utilizando su índice. Por ejemplo, si queremos obtener el primer carácter de una cadena, podemos hacerlo de la siguiente manera:
+
+```Swift
+let palabra = "Hola"
+print(palabra[palabra.startIndex])
+```
+
+La salida de este código sería `H`, ya que el índice `startIndex` representa el primer elemento de la cadena (en este caso, la letra `H`).
 
 ## Ver también
-- [Documentación oficial de Swift sobre propiedades de cadenas](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID299)
-- [Artículo sobre códigos Unicode en Swift](https://www.globalnerdy.com/2019/02/11/understanding-unicode-in-swift/)
 
-¡Eso es todo! ¡Ahora puedes encontrar fácilmente la longitud de cualquier cadena de texto en Swift!
+- [Documentación oficial de Swift sobre el tipo de dato String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial sobre el uso de cadenas de texto en Swift](https://www.raywenderlich.com/141107/swift-tutorial-strings-characters-2)
+- [Ejemplos prácticos de manipulación de cadenas en Swift](https://www.hackingwithswift.com/quick-start/strings/how-to-loop-through-letters-in-a-string-using-while)
+
+¡Con estos conocimientos podrás manipular cadenas de texto en Swift de una manera más efectiva! Recuerda que la propiedad `count` es tu mejor aliada para obtener la longitud de una cadena y que puedes acceder a sus elementos individuales utilizando índices. ¡Sigue practicando y mejorando tus habilidades de programación en Swift!

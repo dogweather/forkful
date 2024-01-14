@@ -1,47 +1,48 @@
 ---
 title:    "Rust: Gerando números aleatórios"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que gerar números aleatórios em Rust?
+## Por que usar geração de números aleatórios em Rust?
 
-A geração de números aleatórios é uma importante habilidade de programação em muitos projetos, desde jogos até simulações e testes. Em Rust, a geração de números aleatórios pode ser realizada usando a biblioteca padrão "rand", permitindo aos programadores gerar valores aleatórios com facilidade e eficiência. Neste artigo, vamos discutir por que e como gerar números aleatórios em Rust.
+A geração de números aleatórios é uma técnica importante em muitos tipos de programas, como jogos, simulações e criptografia. Em Rust, existem várias maneiras de gerar números aleatórios, oferecendo flexibilidade e segurança ao mesmo tempo.
 
-## Como fazer isso em Rust
+## Como fazer isso em Rust?
 
-Para começar, precisamos importar a biblioteca "rand" em nosso código, usando o comando `use`:
+A maneira mais simples de gerar números aleatórios em Rust é usando a biblioteca padrão `rand`. Primeiro, importamos a biblioteca em nosso código:
 
-```
+```Rust
 use rand::Rng;
 ```
 
-Em seguida, podemos usar a função `thread_rng()` da biblioteca "rand" para obter uma instância do gerador de números aleatórios do sistema:
+Agora, podemos usar a função `thread_rng()` para gerar um gerador de números aleatórios seguro e inicializá-lo com o método `fill()` para gerar um número aleatório:
 
-```
+```Rust
 let mut rng = rand::thread_rng();
+let random_number: u32 = rng.fill();
 ```
 
-Agora, podemos gerar um número inteiro aleatório entre 0 e 100 usando o método `gen_range()` do gerador de números aleatórios:
+Podemos especificar o tipo de número que queremos gerar, como no exemplo acima, onde definimos `u32` para gerar um número inteiro de 32 bits.
 
-```
-let random_number = rng.gen_range(0, 101);
-println!("O número aleatório gerado é {}", random_number);
+Também é possível gerar números aleatórios em um intervalo específico, usando o método `gen_range()`:
+
+```Rust
+let random_number: u8 = rng.gen_range(1..=10);
 ```
 
-Este é apenas um exemplo simples; a biblioteca "rand" oferece muitas outras funções e métodos para gerar diferentes tipos de valores aleatórios, incluindo booleanos, floats e até valores de caracteres. Vale a pena explorar a documentação desta biblioteca para descobrir quais opções estão disponíveis e como utilizá-las em seus projetos.
+Este exemplo irá gerar um número aleatório entre 1 e 10, incluindo esses números.
 
 ## Mergulho profundo
 
-Embora gerar números aleatórios possa parecer uma tarefa simples, há muitas considerações profundas que entram em jogo quando se trata de implementá-la corretamente. Isso inclui questões de segurança e aleatoriedade verdadeira, que são especialmente importantes em aplicações críticas. Felizmente, a biblioteca "rand" é projetada para lidar com essas questões, oferecendo algoritmos de alta qualidade e seguros para gerar números aleatórios.
+Em Rust, a geração de números aleatórios é feita por meio de um gerador de números pseudoaleatórios (PRNG), que é um algoritmo que produz uma sequência de números que parecem ser aleatórios, mas são gerados de maneira determinística.
 
-Uma das técnicas mais comuns para gerar números aleatórios é a "semente" do gerador de números aleatórios. A semente é um valor único que é usado para inicializar o gerador de números aleatórios, permitindo que ele crie um fluxo aparentemente aleatório de valores. Existem muitas maneiras de gerar sementes, incluindo utilizar informações do sistema, como a hora atual, ou até mesmo o movimento do mouse do usuário.
-
-No entanto, é importante lembrar que a semente do gerador de números aleatórios deve ser alterada com frequência em projetos que exigem verdadeira aleatoriedade, para evitar padrões repetidos nos valores gerados. A biblioteca "rand" possui um método chamado `reseed()` que permite atualizar a semente em tempo de execução, garantindo uma geração adequada de valores aleatórios.
+A biblioteca `rand` possui vários tipos de PRNG disponíveis, como `StdRng` e `SmallRng`, que oferecem diferentes níveis de segurança e velocidade. Além disso, é possível fornecer uma semente para o gerador de números aleatórios, o que torna os resultados ainda mais imprevisíveis.
 
 ## Veja também
 
-- [Documentação oficial da biblioteca "rand"](https://doc.rust-lang.org/rand/)
-- [Tutorial sobre a geração de números aleatórios em Rust](https://www.rust-lang.org/learn/get-started#random-numbers)
-- [Exemplos de uso da biblioteca "rand" em projetos reais](https://github.com/rust-random/rand/tree/master/examples)
+- Documentação oficial da biblioteca `rand`: https://crates.io/crates/rand
+- Exemplo de uso da geração de números aleatórios em um jogo em Rust: https://blog.logrocket.com/create-a-game-in-rust-and-ggez-part-1/
+- Mais informações sobre geradores de números pseudoaleatórios: https://docs.rs/rand/latest/rand/trait.Rng.html

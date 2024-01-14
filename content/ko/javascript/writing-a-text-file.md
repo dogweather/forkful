@@ -1,32 +1,47 @@
 ---
 title:    "Javascript: 텍스트 파일 작성하기"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜?
 
-텍스트 파일 작성에 참여해야 하는 이유를 설명하는 1-2 문장.
+텍스트 파일을 작성하는 것은 프로그래머가 프로그램을 작성할 때 중요한 부분입니다. 이는 코드를 구성하고 보관하기 위해 필요한 정보를 담고 있는 파일이며, 나중에 코드를 다시 사용하거나 다른 사람과 공유할 수 있도록 합니다.
 
-텍스트 파일은 프로그래밍에서 널리 사용되는 파일 형식입니다. 우리는 일상적으로 웹 페이지, 앱, 게임 등 다양한 소프트웨어를 사용하며 자연스럽게 많은 텍스트 파일들을 볼 수 있습니다. 따라서 프로그래머라면 반드시 텍스트 파일을 작성할 줄 알아야 합니다. 또한 텍스트 파일을 작성하는 것은 우리가 쓰는 언어에서 매우 중요한 스킬 중 하나입니다. 그것은 우리가 다른 사람들과 의사소통하고 협업하기 위해서 필요한 것이기 때문입니다. 그리고 가끔씩은 우리가 작성한 코드를 다른 사람들에게 공유하고 싶을 때도 있을 수 있습니다. 그래서 지금부터는 어떻게 텍스트 파일을 작성할 수 있는지 알아보겠습니다.
+## 방법
 
-## 어떻게
-
-다음은 텍스트 파일을 작성하는 간단한 예제 코드입니다. 코드 블록은 ```Javascript ...``` 형식으로 사용하시면 됩니다.
+먼저, 텍스트 파일을 작성하기 위해 우리는 Javascript XMLHttpRequest 객체를 사용할 것입니다. 이 객체는 서버로부터 데이터를 가져올 수 있도록 해주는 기능을 제공합니다. 아래는 간단한 예제 코드입니다.
 
 ```Javascript
-// "hello.txt"라는 파일에 "Hello, world!" 라는 내용을 작성하는 코드
-var fs = require('fs');
-fs.writeFileSync("hello.txt", "Hello, world!");
+// XMLHttpRequest 객체 생성
+var xhttp = new XMLHttpRequest();
+// 파일을 열기 위한 GET 요청 보내기
+xhttp.open("GET", "textfile.txt", true);
+// 파일을 불러오기
+xhttp.onreadystatechange = function() {
+    // 서버로부터 응답이 오면 데이터를 출력하기
+    if (this.readyState == 4 && this.status == 200) {
+        // 파일에서 읽은 데이터를 변수에 저장
+        var data = this.responseText;
+        // 데이터 출력
+        console.log(data);
+    }
+};
+// 요청 보내기
+xhttp.send();
 ```
 
-만약 프로그램을 실행하셨다면 지정한 파일에 "Hello, world!" 라는 내용이 작성된 것을 확인하실 수 있을 것입니다. 위의 예제 코드에서도 보시다시피, 우리는 파일을 작성할 때 내용뿐만 아니라 파일의 이름도 지정해주어야 합니다. 이렇게 쉽게 텍스트 파일을 작성할 수 있습니다.
+위의 예제 코드에서는 XMLHttpRequest 객체를 생성하고, GET 요청을 보내서 파일을 불러온 뒤, 서버로부터 응답이 오면 데이터를 출력하는 방식으로 작성됩니다. 이것은 파일을 읽기 위해 필요한 가장 기본적인 방법입니다.
 
-하지만 우리가 텍스트 파일을 더 깊이 다뤄볼 필요도 있습니다. 텍스트 파일을 작성할 때는 다양한 인코딩 방식을 고려해야 합니다. 만약 파일이 다른 사람에게 공유된다면 그 사람도 우리가 사용한 코드와 똑같은 인코딩 방식을 사용해야 하기 때문입니다. 또한 우리가 작성한 파일은 다른 용도로도 활용될 수 있습니다. 예를 들어, 우리가 작성한 데이터들을 추출하거나, 특정 단어나 문구를 검색하기 위해서도 사용될 수 있습니다. 따라서 우리는 다양한 인코딩 방식에서 파일을 작성하는 방법을 배워야 합니다.
+## 깊이 파고들기
 
-## 깊게 파헤치기
+텍스트 파일을 작성하는 것은 간단한 작업처럼 보일 수 있지만, 더 깊이 들어가보면 더 복잡한 작업이 될 수 있습니다. 예를 들어, 우리는 파일을 읽기 전에 먼저 파일의 존재 여부를 확인해야 합니다. 또는 파일을 작성하는 도중에 오류가 발생했을 때 이를 처리하는 방법도 생각해야 합니다. 이런 작업을 위해 사용할 수 있는 여러 가지 방법이 있기 때문에 깊게 공부하고 습득하는 것이 중요합니다.
 
-텍스트 파일을 작성할 때 다양한 인코딩 방식뿐만 아니라, 운영체제에 따라서도 파일이 다르게 저장될 수 있습니다. 예를 들어 Windows 운영체제의 경우 줄 바꿈이 ```\r\n``` 이고, Mac 운영체제의 경우 ```\n``` 입니다. 이렇게 미묘한 차이로 인해 파일을 제대로 읽거나 쓸 수 없는 경우가 있습니다. 따라서 우리는 운영체제마다 다른 파일 저장 방식을 이해하고, 그에 따라서 우리의 코드를 수정할 수 있어야 합니다.
+## 참고 자료
 
-또한 파일 작성에 사용하는 함수들은 다양한 옵션들이 존재하며, 이 옵션들을 제대로 이해하고 사용할 수 있어야 합니다. 예를 들어, 파일의 내용을 이
+- [MDN: XMLHttpRequest](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest)
+- [W3Schools: Ajax - Load the JSON data from a file](https://www.w3schools.com/js/js_ajax_intro.asp)
+- [TechSight: How to read and write files in JavaScript](https://www.techsight.nl/programming/javascript/read-and-write-files-with-javascript/)
+- [Tutorials Teacher: JavaScript File Handling](https://www.tutorialsteacher.com/javascript/javascript-file-handling)

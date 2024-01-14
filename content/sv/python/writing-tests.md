@@ -1,60 +1,42 @@
 ---
-title:    "Python: Skriva tester"
+title:    "Python: Att skriva tester"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är en viktig del av att utveckla pålitlig och hållbar kod. Genom att skriva tester för din kod kan du säkerställa att den fungerar korrekt och minska risken för buggar och felaktig funktionalitet i ditt program.
+Att skriva tester är en avgörande del av att utveckla programvara. Det hjälper till att kontrollera att ens kod fungerar korrekt och undvika buggar som kan orsaka problem i framtiden. Det sparar också tid och resurser genom att tillåta snabbare upptäckt och åtgärd av fel.
 
-## Hur du gör
+## Hur man gör det
 
-Att skriva tester i Python är enkelt och följer ett standardiserat format. Du kan använda inbyggda testbibliotek som pytest eller unittest, eller till och med skapa dina egna anpassade testramar. Nedan följer ett exempel på hur du kan skriva och köra tester för en funktion som adderar två tal:
+För att skriva tester i Python används vanligtvis ett ramverk som heter "pytest". Detta ramverk tillhandahåller lättanvända funktioner för att definiera och köra tester. Nedan följer ett exempel på hur man skapar och kör en enkel testfunktion i pytest:
 
+```Python
+def add(x, y):
+    return x + y
+
+def test_add():
+    assert add(2, 3) == 5
 ```
 
-# Importera testbiblioteket unittest
-import unittest
+I detta exempel definieras en funktion för att lägga till två tal och en testfunktion som verifierar att resultatet är korrekt. Det "assert" uttalandet i testfunktionen kontrollerar om det förväntade resultatet är lika med det faktiska resultatet. Om det är sant passerar testet, annars misslyckas det. För att köra testerna, kan du använda följande kommando i terminalen:
 
-# Definiera funktionen som du vill testa
-def add(a, b):
-    return a + b
-
-# Skapa en testklass som ärver från unittest.TestCase
-class TestAddFunction(unittest.TestCase):
-
-    # Skapa ett testfall för att säkerställa att addition av två positiva tal fungerar korrekt
-    def test_positive_numbers(self):
-        result = add(2, 3) # Anropa funktionen med två tal som ska adderas
-        self.assertEqual(result, 5) # Använd assertEqual för att jämföra resultatet med förväntat värde
-
-# Kör testerna genom att köra unittest-modulen
-if __name__ == '__main__':
-    unittest.main()
-
+```Python
+pytest -v
 ```
 
-Utmatningen från dessa tester bör se ut så här:
-
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-
-OK
-```
-
-Det här betyder att testet lyckades och inga felaktigheter upptäcktes. Om testet misslyckades skulle det ge en tydlig varning om vilket test som gick fel och vad som förväntades.
+Resultatet kommer att visa hur många tester som passerades och eventuellt också vilka som misslyckades.
 
 ## Djupdykning
 
-Att skriva tester är inte bara ett sätt att kontrollera att din kod fungerar korrekt, det kan också hjälpa dig att förbättra ditt kodskrivande. Genom att tänka på hur din kod ska testas när du skriver den, tvingar du dig själv att skriva mer läsbar och modulär kod. Dessutom kan du alltid återkomma till dina tester när du gör förändringar i koden för att se till att inget har gått sönder.
+När det kommer till att skriva tester, finns det flera olika typer av tester som kan användas för att säkerställa kodens kvalitet. En typ är enhetstester som testar enskilda funktioner eller moduler. En annan typ är integreringstester som testar interaktionen mellan flera komponenter i systemet.
 
-Det finns många andra tekniker och konventioner för att skriva tester som du kan utforska för att bli en bättre programvarutillverkare. Att skriva tester är en ovärderlig färdighet som du bör omfamna för att förbättra din kodning.
+Det är också viktigt att tänka på vilka scenarier och gränsvärden som bör testas för att upptäcka potentiella problem i koden. Det är också en bra idé att kontinuerligt skriva och köra tester under utvecklingsprocessen för att undvika att samla på sig en stor mängd testfall i slutet.
 
 ## Se även
 
-- [En introduktion till enhetstester i Python](https://realpython.com/python-testing/)
-- [Implementering av enhetstester i ett Python-projekt](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
+ - [Dokumentation för pytest](https://docs.pytest.org/en/stable/index.html)
+ - [En guide till enhetstestning i Python](https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest)

@@ -1,40 +1,38 @@
 ---
-title:    "Arduino: Borrando caracteres que coincidan con un patrón"
+title:    "Arduino: Eliminando caracteres que coinciden con un patrón"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué borrar caracteres que coinciden con un patrón en Arduino?
 
-Cuando trabajamos en proyectos con Arduino, podemos encontrarnos con la necesidad de eliminar caracteres que coincidan con un patrón específico de una cadena de texto. Esto es especialmente útil cuando queremos obtener datos específicos de una señal o sensor.
+Borrar caracteres que coinciden con un patrón puede ser útil en muchas situaciones. Por ejemplo, si estás trabajando con un sensor que envía datos en un formato específico y solo necesitas ciertos valores, puedes borrar los caracteres que no necesitas antes de almacenar o procesar los datos.
 
-## Cómo hacerlo
+## Cómo hacerlo en Arduino
 
-La función ```.remove(pattern)``` en Arduino nos permite eliminar caracteres que coincidan con un patrón en una cadena. Por ejemplo, si tenemos una señal de temperatura de un sensor que se ve así: "Temp: 25C", y solo queremos obtener el valor numérico, podemos usar esta función para eliminar la palabra "Temp: " y solo obtener "25C". Veamos un ejemplo de código:
+Borrar caracteres que coinciden con un patrón en Arduino es bastante sencillo. Primero, definimos una cadena de texto que contenga los datos que queremos limpiar. Luego, utilizamos la función `replace()` para reemplazar los caracteres que coinciden con un patrón con una cadena vacía. Por último, imprimimos la cadena resultante para verificar que se hayan eliminado los caracteres no deseados.
 
-```Arduino
-String temp = "Temp: 25C";
-temp.remove("Temp: ");
-Serial.println(temp);  // Output: 25C
+```arduino
+String datos = "12/03/2021#Datos de Temperatura#27.8#35.2";
+datos.replace("#Datos de Temperatura#", "");
+Serial.println(datos);
 ```
 
-En este caso, el patrón "Temp: " es eliminado de la cadena original "Temp: 25C" y solo se muestra el valor numérico restante.
+La salida de este ejemplo sería: `12/03/2021#27.8#35.2`, donde hemos eliminado la cadena "#Datos de Temperatura#".
 
-## Profundizando
+## Profundizando en el borrado de caracteres por coincidencia de patrón
 
-La función ```.remove()``` también acepta expresiones regulares como patrones, lo que nos da más flexibilidad al momento de eliminar caracteres. Por ejemplo, si queremos eliminar todas las letras de una cadena, podemos usar el patrón ```[a-zA-Z]+``` de esta manera:
+La función `replace()` acepta dos parámetros: el carácter o patrón que queremos reemplazar y el carácter o cadena por el que lo queremos reemplazar. Podemos utilizar esta función varias veces para eliminar múltiples patrones en una cadena de texto.
 
-```Arduino
-String str = "Hola123";
-str.remove("[a-zA-Z]+");
-Serial.println(str);  // Output: 123
-```
+Además, existe otra función llamada `replaceAll()` que simplemente reemplaza todas las coincidencias de un patrón sin importar su posición en la cadena.
 
-Además, es importante tener en cuenta que esta función solo elimina los caracteres que coincidan con el patrón, no los reemplaza con nada. Por lo tanto, en el ejemplo anterior, los caracteres eliminados simplemente son eliminados y no se reemplazan con ningún otro carácter.
+Otra forma de borrar caracteres por coincidencia de patrón es utilizando expresiones regulares. Esto puede ser útil cuando el patrón es más complejo o cuando queremos hacer reemplazos más específicos.
 
 ## Ver también
 
-- [Documentación oficial de la función .remove() en Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove/)
-- [Tutorial de expresiones regulares en Arduino](https://www.arduino.cc/reference/es/language/structure/further-syntax/regular-expressions/)
-- [Video explicativo sobre el uso de expresiones regulares en Arduino](https://www.youtube.com/watch?v=9XaJhiWQmCA)
+- [Tutorial de Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
+- [Documentación oficial de la función `replace()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Documentación oficial de la función `replaceAll()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replaceall/)
+- [Expresiones regulares en Arduino](https://playground.arduino.cc/Code/Regexp)

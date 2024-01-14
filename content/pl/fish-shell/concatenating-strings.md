@@ -1,44 +1,61 @@
 ---
 title:    "Fish Shell: Łączenie ciągów znaków"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wiele z nas może się zastanawiać, dlaczego w ogóle warto poświęcać czas na łączenie ciągów tekstowych w programowaniu. Jednakże konkatenacja stringów jest niezbędnym elementem wielu aplikacji i pozwala na tworzenie bardziej zaawansowanych, interaktywnych programów. W tym artykule dowiecie się, dlaczego łączenie stringów jest tak ważne w świecie programowania.
+Zarówno dla nowych, jak i doświadczonych programistów, operowanie na łańcuchach znaków jest nieodłączną częścią codziennej pracy. Jest to jedna z najważniejszych umiejętności, ponieważ pozwala na łączenie różnych fragmentów tekstu w jedną spójną całość. W tym artykule dowiesz się, dlaczego warto poznać technikę łączenia stringów w języku Fish Shell.
 
 ## Jak to zrobić
 
-Zanim przejdziemy do wyjaśnienia, dlaczego, najpierw musimy zrozumieć, jak można połączyć stringi w języku Fish Shell. Istnieją różne metody, ale najprostszym sposobem jest użycie operatora "+" lub funkcji string.join. Przykładowy kod wyglądałby tak:
+Aby połączyć dwa lub więcej łańcuchów znaków w języku Fish Shell, wystarczy użyć operatora plus (+) lub polecenia string bult-in join. Poniżej znajdziesz przykładowy kod oraz wynik działania:
 
 ```Fish Shell
-set nazwa "Jan"
-set nazwisko "Kowalski"
+set first_name "Jan"
+set last_name "Kowalski"
 
-echo $nazwa" "$nazwisko
-
-lub
-
-echo (string join " " $nazwa $nazwisko)
+echo $first_name" "$last_name
 ```
-Output: Jan Kowalski
+Wynik: "Jan Kowalski"
 
-W pierwszym przykładzie użyliśmy operatora "+" do połączenia dwóch zmiennych zawierających imię i nazwisko. W drugim przykładzie wykorzystaliśmy funkcję string.join, która przyjmuje jako argument separator oraz listę elementów do połączenia. W obu przypadkach uzyskaliśmy ten sam wynik.
+```Fish Shell
+string join -s " " $first_name $last_name
+```
+Wynik: "Jan Kowalski"
 
-## Deep Dive (Głębsze informacje)
+Jak widać, można łączyć nie tylko stałe ciągi znaków, ale także zmienne przechowujące tekst. W przypadku użycia operatora plus należy pamiętać o dodaniu spacji pomiędzy łańcuchami, aby połączone słowa nie tworzyły jednego wyrazu.
 
-Konkatenacja stringów jest jednym z podstawowych zadań w programowaniu. Polega ona na łączeniu dwóch lub więcej ciągów tekstowych w jeden, dłuższy ciąg. W Fish Shell, stringi są traktowane jako tablice, co oznacza, że można na nich wykonywać operacje takie jak w Pythonie czy Ruby.
+## Głębsze zagadnienia
 
-Istnieje jednak pewna różnica w tym języku. W Fish Shell, stringi są reprezentowane przez pojedyncze znaki, a nie przez obiekty, co oznacza, że nie można wywoływać na nich metod. W przypadku funkcji, takiej jak string.join, która działa na obiektach typu tablica, musimy najpierw zamienić stringi na tablice za pomocą funkcji string split.
+Poza dodawaniem spacji, możliwe jest także wykorzystanie innych separatorów w poleceniu string join. Wystarczy zmienić wartość opcji -s, na przykład:
 
-Należy również pamiętać, że konkatenacja ciągów jest wykonywana od lewej do prawej. Jeśli więc chcemy zachować kolejność fragmentów naszego tekstu, musimy uważnie przemyśleć kolejność elementów przed połączeniem.
+```Fish Shell
+string join -s ", " "jabłka" "banany" "gruszki"
+```
+Wynik: "jabłka, banany, gruszki"
 
-## Zobacz również
+Dodatkowo, w języku Fish Shell można również łączyć łańcuchy znaków z innymi wartościami, takimi jak liczby czy listy. Połączone ciągi będą automatycznie konwertowane w odpowiedni sposób. Przykłady:
 
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+```Fish Shell
+set age 25
 
-- [Tutorial wideo o konkatenacji stringów w Fish Shell](https://www.youtube.com/watch?v=uXfchXoNBgM) 
+echo "Mam " $age " lat."
+```
+Wynik: "Mam 25 lat."
 
-- [Inne przydatne funkcje Fish Shell](https://opensource.com/article/17/5/fish-shell)
+```Fish Shell
+set fruits (jabłka banany gruszki)
+
+echo "Lubię jeść: " (string join ", " $fruits)
+```
+Wynik: "Lubię jeść: jabłka, banany, gruszki"
+
+## Zobacz także
+
+- Dokumentacja języka Fish Shell: https://fishshell.com/docs/current/index.html
+- Przewodnik po podstawowych operacjach na stringach: https://fishshell.com/docs/current/tutorial.html#tutorial-strings
+- Wprowadzenie do konstrukcji języka Fish Shell: https://medium.com/@eemeliheinonen/fish-is-a-strongly-typed-language-85c76cfbcb26

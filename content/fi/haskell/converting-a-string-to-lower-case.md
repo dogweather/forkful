@@ -1,45 +1,30 @@
 ---
-title:    "Haskell: Muuttaminen merkkijonoksi pieniksi kirjaimiksi"
+title:    "Haskell: Merkkijonon muuntaminen pienaakkosiksi"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisimme muuttaa merkkijonon pieniksi kirjaimiksi? Tämä on hyödyllinen ohjelmointitekniikka, jota voidaan käyttää esimerkiksi alkuperäisten merkkijonojen vertailussa. Lisäksi, pieniksi muutetut merkkijonot ovat usein helpompia käsitellä ja yhdentää yhtenäisesti koodissa.
+Olet ehkä kuullut termistä "muuntaa merkkijono pienemmiksi kirjaimiksi" tai olet saattanut törmätä tähän tehtävään jossain Haskell-koodissa. Tässä blogipostauksessa käymme läpi miksi ja miten merkkijonoa kannattaa muuttaa pienemmiksi kirjaimiksi Haskellissa.
 
-## Miten tehdä
+## Kuinka
 
-Käytämme Haskellin `map` -funktiota, joka ottaa parametrinaan muunnosfunktion ja listan. Tässä tapauksessa haluamme muuttaa merkkijonon jokaisen merkin pieneksi, joten käytämme `toLower` -funktiota, joka löytyy Data.Char -moduulista. Alla on esimerkki koodista ja sen tulosteesta.
+String-tyyppi Haskellissa on immutaabeli, mikä tarkoittaa, että sitä ei voi muokata suoraan. Tämä tarkoittaa, että kun haluamme muuttaa merkkijonon kirjaimet pienemmiksi, meidän täytyy luoda uusi merkkijono, jossa alkuperäinen merkkijono on muuttunut. Tämä onnistuu käyttämällä `map`-funktiota, joka ottaa argumenteikseen muunnoksen funktiokutsun sekä merkkijonon. Muunnoksena toimii `toLower`-funktio, joka muuttaa merkkijonon kirjaimet pienemmiksi. Esimerkiksi:
 
 ```Haskell
-import Data.Char
-
-toLowerString :: String -> String
-toLowerString str = map toLower str
-
-main = do 
-  let str = "Tämä on MERKKIJONO."
-  print $ "Alkuperäinen merkkijono: " ++ str
-  print $ "Muutettu pieniksi kirjaimiksi: " ++ toLowerString str
- 
+map toLower "Tämä On MerkkiJono"  -- Output: "tämä on merkkijono"
 ```
 
-Tuloste:
+Huomaa, että tämä toimii vain ASCII-koodatulle tekstille. Jos haluat muuntaa myös kansainvälisiä merkkejä, kannattaa käyttää `Data.Text`-moduulin tarjoamia funktioita, kuten `Data.Text.toLower`.
 
-```bash
-Alkuperäinen merkkijono: Tämä on MERKKIJONO.
-Muutettu pieniksi kirjaimiksi: tämä on merkkijono.
-```
+## Syvempi Sukellus
 
-## Syvempi sukellus
+Käyttämällä `map`-funktiota voimme muuntaa merkkijonon kirjaimet pienemmiksi, mutta miten se oikeastaan toimii taustalla? Haskellissa on paljon tapoja käsitellä listoja, ja `map` on yksi niistä. Se ottaa listan ja muuntaa jokaisen listan elementin käyttäen sille määriteltyä funktiota. Tässä tapauksessa `map` käy läpi jokaisen merkin merkkijonossa ja käyttää sille `toLower`-funktiota.
 
-Haskellissa on useita tapoja muuttaa merkkijono pieneksi kirjainsarjaksi, kuten `map` -funktion lisäksi myös `foldr` -funktio. Tämä antaa enemmän joustavuutta muunnoksen tekemiseen erilaisten muunnosfunktioiden avulla.
+## Katso Myös
 
-Erityisesti on hyvä huomata, että `map` -funktio muuttaa merkkijonon jokaisen merkin erikseen ja palauttaa listan, kun taas `foldr` -funktio yhdistää arvot yhdeksi lopulliseksi arvoksi. Tämä voi vaikuttaa suorituskykyyn ja muistinkäyttöön suurten merkkijonojen kanssa.
-
-## Katso myös
-
-- [Haskellin `map` ja `foldr` funktiot](https://www.tutorialspoint.com/haskell/haskell_list_comprehension.htm)
-- [Haskellin Data.Char -moduuli](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [Data.Text -moduulin dokumentaatio](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Listan operaattorit Haskellissa](https://wiki.haskell.org/List_operators)

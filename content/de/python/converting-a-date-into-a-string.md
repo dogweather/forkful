@@ -1,39 +1,37 @@
 ---
-title:    "Python: Eine Datum in einen String umwandeln"
+title:    "Python: Umwandlung eines Datums in einen String"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Konvertieren von Dateien in Strings kann sehr hilfreich sein, wenn Sie Daten in einem bestimmten Format speichern oder anzeigen möchten. Zum Beispiel könnten Sie die aktuelle Datum in einem Textdokument oder in einer Benutzeroberfläche anzeigen lassen.
 
-Die Konvertierung von einem Datum in einen String ist ein wichtiger Schritt in der Python Programmierung, da sie es ermöglicht, Daten in menschenlesbarer Form darzustellen. Dies ist besonders nützlich, wenn man Daten in einer Datei speichern oder sie für die Ausgabe auf der Konsole formatieren möchte.
-
-## Wie geht das?
-
-Um ein Datum in einen String umzuwandeln, gibt es in Python verschiedene Methoden, je nach dem gewünschten Format. Hier ist ein Beispiel, wie man das aktuelle Datum in dem Format "Tag, Monat Jahr" ausgeben kann:
+## Wie man es macht
+Das Konvertieren eines Datums in einen String kann in Python leicht mit der `strftime()` Funktion erreicht werden. Diese Funktion nimmt zwei Argumente an: ein Format, in dem das Datum angezeigt werden soll, und das Datum selbst. Zum Beispiel:
 
 ```Python
 import datetime
 
-current_date = datetime.datetime.now()
-date_string = current_date.strftime("%d. %B %Y")
+# aktuelles Datum abrufen
+heute = datetime.datetime.now()
 
-print(date_string) # output: 22. April 2021
+# Datum in gewünschtes Format konvertieren
+datum_str = heute.strftime("%d.%m.%Y")
+
+# Ausgabe des Datums als String
+print(datum_str) # 10.05.2021
 ```
 
-Dieses Beispiel verwendet die Methode `strftime()` (String from time) aus dem `datetime` Modul. Mit dem `%d` werden die Tageszahl, mit `%B` der Monatsname und mit `%Y` das Jahr ausgegeben. Es gibt noch viele weitere Parameter, die verwendet werden können, um das Datum in verschiedenen Formaten darzustellen. Eine ausführliche Liste und Erklärung findet man in der offiziellen [Python-Dokumentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
+Hier haben wir die aktuelle Zeit in das Format "Tag.Monat.Jahr" konvertiert. Es gibt viele verschiedene Optionen für das Formatieren eines Datums, je nachdem, welche Informationen Sie angezeigt haben möchten. Eine vollständige Liste der Formatierungsoptionen finden Sie in der [offiziellen Python-Dokumentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
 
-Es ist auch möglich, das Datum als String zu formatieren, ohne das `datetime` Modul zu verwenden, indem man die `str()` Funktion verwendet. Hierbei ist es jedoch wichtig, dass das Datum bereits als `datetime` Objekt vorliegt, da die `str()` Funktion nur die Darstellung des Objekts ändert und nicht das Objekt selbst konvertiert.
+## Tieferer Einblick
+Die `strftime()` Funktion basiert auf der `datetime` Klasse in Python. Diese Klasse bietet viele hilfreiche Methoden zum Arbeiten mit Datums- und Zeitinformationen. Sie können zum Beispiel auch die `strptime()` Funktion verwenden, um einen String in ein Datum umzuwandeln, oder die `timedelta` Klasse, um verschiedene Zeitintervalle zu berechnen.
 
-## Tiefergehende Informationen
-
-Das `datetime` Modul bietet noch viele weitere Funktionen und Methoden, die für die Arbeit mit Datumsangaben verwendet werden können. Zum Beispiel gibt es die Möglichkeit, Zeitzonen zu berücksichtigen oder mit Datumsdifferenzen zu arbeiten. Es lohnt sich hier, etwas mehr Zeit zu investieren und sich mit den unterschiedlichen Möglichkeiten auseinanderzusetzen, um das Arbeiten mit Datumsangaben in Python noch effizienter zu gestalten.
-
-Ein weiterer wichtiger Punkt bei der Konvertierung von Datum zu String ist die Lokalisierung. Je nach Spracheinstellung des Systems oder der Anwendung kann es sein, dass die Namen von Wochentagen oder Monaten anders ausgegeben werden. Um hier konsistent zu bleiben, kann das `locale` Modul verwendet werden, um die gewünschte Spracheinstellung anzugeben.
+Eine weitere wichtige Sache zu beachten ist, dass das Konvertieren eines Datums in einen String davon abhängen kann, in welcher Sprache und Region Sie arbeiten. In diesem Fall können Sie das Modul `locale` verwenden, um die richtige Formatierung für das gewünschte Land zu erhalten.
 
 ## Siehe auch
-
-- [Python-Dokumentation zu `datetime`](https://docs.python.org/3/library/datetime.html)
-- [Weitere Beispiele für die Konvertierung von Datum zu String in Python](https://www.w3schools.com/python/python_datetime.asp)
-- [Informationen zur Lokalisierung in Python](https://docs.python.org/3/library/locale.html)
+- [Python-Datums- und Zeitmodul](https://docs.python.org/3/library/datetime.html)
+- [Formatierungsoptionen für `strftime()`](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)

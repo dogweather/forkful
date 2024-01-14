@@ -1,39 +1,46 @@
 ---
 title:    "Clojure: Vérifier si un répertoire existe"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Il peut être utile de vérifier si un répertoire existe avant d'effectuer des opérations de création ou de suppression de fichiers pour éviter toute erreur ou conflit potentiel. Cela peut également aider à la gestion et l'organisation des fichiers dans un projet ou un système.
+Dans le monde de la programmation, il est essentiel de pouvoir vérifier si un dossier existe avant de travailler avec celui-ci. Cela permet de s'assurer que notre code fonctionnera correctement et évite les erreurs et les bugs potentiels.
 
-## Comment Faire
+# Comment faire
 
-Pour vérifier si un répertoire existe en utilisant Clojure, nous pouvons utiliser la fonction `file-seq`, qui renvoie une séquence de fichiers et de sous-répertoires dans un répertoire donné. Ensuite, nous pouvons utiliser la fonction `some` pour itérer à travers cette séquence et vérifier si le répertoire que nous recherchons existe.
+La bonne nouvelle est que grâce à Clojure, il est très facile de vérifier si un dossier existe. Utilisons la fonction ```clojure (.exists (file "nom_dossier"))``` pour vérifier si le dossier nommé "nom_dossier" existe ou non. Cette fonction renverra une valeur booléenne (true ou false) en fonction du résultat de la vérification.
 
-```Clojure
-;; Vérifier si un répertoire existe 
-(defn check-dir-exist [dir]
-    (some #(= (:name %) dir) (file-seq (file "."))))
-  
-;; Exemple d'utilisation
-(check-dir-exist "documents")
-;; => true
-(check-dir-exist "images")
-;; => false
+Voici un exemple de code pour illustrer cela :
 
+```clojure
+(def dossier (file "test"))
+(.mkdir dossier)
+(.exists dossier) ; renverra true car le dossier "test" vient d'être créé
 ```
 
-## Deep Dive
+Et voici le résultat de l'execution du code :
 
-Il est important de noter que la méthode utilisée ci-dessus n'est pas la seule façon de vérifier si un répertoire existe en Clojure. Il existe également d'autres fonctions qui peuvent être utilisées, telles que `file?`, qui vérifie si un fichier ou un répertoire existe à un chemin spécifique, et `files`, qui renvoie une liste de tous les fichiers et répertoires dans un répertoire donné.
+```clojure
+true
+```
 
-Il est également important de prendre en compte les différentes exceptions qui peuvent survenir lors de la vérification d'un répertoire, telles que les permissions insuffisantes ou les chemins invalides. Il est recommandé de gérer ces exceptions de manière appropriée afin de garantir le bon fonctionnement de votre code.
+En utilisant cette fonction, nous pouvons facilement implémenter des conditions pour gérer les cas où le dossier existe ou n'existe pas.
 
-## Voir aussi
+# Plongée en profondeur
 
-- [Documentation officielle de Clojure sur les répertoires et les fichiers](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Guide du débutant en Clojure](https://www.clojure.org/guides/getting_started)
-- [Gestion des exceptions en Clojure](https://www.braveclojure.com/exceptions/)
+En creusant un peu plus, nous pouvons également explorer d'autres méthodes utiles pour travailler avec des dossiers en Clojure, telles que :
+
+- ```clojure (.listFiles (file "nom_dossier"))``` : renvoie une liste de tous les fichiers contenus dans le dossier spécifié.
+- ```clojure (.list (file "nom_dossier"))``` : renvoie une liste de tous les fichiers et sous-dossiers contenus dans le dossier spécifié.
+- ```clojure (.delete (file "nom_dossier"))``` : supprime le dossier spécifié.
+
+Grâce à ces fonctions, nous pouvons facilement gérer et manipuler les dossiers dans notre code en utilisant Clojure.
+
+# Voir aussi
+
+- Document officiel sur les fonctions de manipulation de fichiers en Clojure : https://clojure.org/reference/java_interop#_manipulating_files
+- Tutoriel sur la manipulation de fichiers en Clojure : https://www.baeldung.com/clojure-files

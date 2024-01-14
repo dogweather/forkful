@@ -1,33 +1,43 @@
 ---
-title:    "PHP: Creazione di un file temporaneo"
+title:    "PHP: Creare un file temporaneo"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché creare un file temporaneo in PHP
+## Perché
 
-Creare un file temporaneo in PHP può essere utile per una varietà di ragioni. Ad esempio, potresti voler archiviare dati temporanei durante l'esecuzione di uno script, o creare un file temporaneo per eseguire alcune operazioni e poi eliminarlo. Inoltre, i file temporanei possono essere utili per gestire risorse di sistema come database o cache.
+Creare un file temporaneo può sembrare un'operazione superflua, ma in realtà è di fondamentale importanza per ottimizzare il lavoro dei programmatori PHP. I file temporanei sono utilizzati per archiviare dati temporanei o dati di backup, senza dover creare file permanenti. In questo modo, si può evitare un carico eccessivo di spazio di archiviazione e lavorare in modo più veloce ed efficiente.
 
-## Come creare un file temporaneo in PHP
+## Come fare
 
-Per creare un file temporaneo in PHP, possiamo utilizzare la funzione `tempnam ()`, che accetta due parametri: il percorso della directory in cui creare il file e un prefisso opzionale per il nome del file. Ad esempio:
+Per creare un file temporaneo in PHP, è possibile utilizzare la funzione `tmpfile()`. Questa funzione restituisce un puntatore a un file temporaneo aperto in modalità di lettura e scrittura. Ecco un esempio di codice:
 
 ```PHP
-$temp_file = tempnam("/tmp", "prefix_");
-echo "Il file temporaneo creato è: " . $temp_file;
+// Apriamo il file temporaneo
+$file = tmpfile();
+
+// Scriviamo qualcosa all'interno del file
+fwrite($file, "Questo è un file temporaneo!");
+
+// Leggiamo il contenuto del file
+echo fread($file, 1024);
+
+// Chiudiamo e cancelliamo il file
+fclose($file);
 ```
 
-Questo codice creerà un file temporaneo con il prefisso "prefix_" nella directory "/tmp" e restituirà il percorso completo del file appena creato.
+L'output di questo codice sarà "Questo è un file temporaneo!". Come si può notare, la creazione e la gestione di un file temporaneo in PHP è molto semplice e non richiede molti sforzi.
 
-## Approfondimento sulla creazione di file temporanei in PHP
+## Approfondimento
 
-Il file temporaneo creato con la funzione `tempnam ()` è un file vuoto che può essere utilizzato per salvare dati temporanei. Tuttavia, è importante notare che questo file non viene automaticamente eliminato dopo l'esecuzione dello script. Per eliminare il file temporaneo, è necessario utilizzare la funzione `unlink ()`.
+Oltre alla funzione `tmpfile()`, esistono anche altre opzioni per creare un file temporaneo in PHP, come ad esempio le funzioni `tempnam()` e `sys_get_temp_dir()`. Inoltre, per gestire i file temporanei in modo più efficiente, è consigliato utilizzare la classe `SplTempFileObject` che fornisce metodi aggiuntivi per la gestione di file temporanei.
 
-Inoltre, è possibile specificare una directory diversa da "/tmp" per la creazione del file temporaneo utilizzando la costante predefinita `sys_get_temp_dir ()`. Questa costante restituirà il percorso della directory temporanea di sistema predefinita sulla piattaforma in uso.
+È importante tenere presente che i file temporanei vengono eliminati automaticamente quando lo script PHP termina o quando il file viene chiuso. Inoltre, è possibile specificare un percorso di salvataggio per i file temporanei, se si vuole che essi non vengano cancellati alla fine dello script.
 
-## See Also
+## Vedi anche
 
-- Documentazione PHP su [tempnam()](https://www.php.net/manual/it/function.tempnam.php)
-- Documentazione PHP su [unlink()](https://www.php.net/manual/it/function.unlink.php)
-- Articolo su [gestione dei file temporanei in PHP](https://www.html.it/pag/4423/gestione-dei-file-temporanei-in-php/)
+- [Documentazione PHP per la funzione `tmpfile()`](https://www.php.net/manual/en/function.tmpfile.php)
+- [Documentazione PHP per la classe `SplTempFileObject`](https://www.php.net/manual/en/class.spltempfileobject.php)
+- [Guida su come gestire i file temporanei in PHP](https://www.phpzag.com/how-to-handle-temporary-file-in-php/)

@@ -1,64 +1,56 @@
 ---
-title:    "Arduino: Utilisation des expressions régulières"
+title:    "Arduino: Utiliser des expressions régulières"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Les expressions régulières sont un outil utile pour faciliter vos projets Arduino. En utilisant des expressions régulières, vous pouvez rechercher et manipuler efficacement des chaînes de caractères dans votre code. Cela peut vous aider à simplifier des tâches telles que la validation des entrées utilisateur ou la recherche de motifs spécifiques dans des données.
+Si vous êtes un programmeur Arduino, vous connaissez probablement l'importance de la manipulation de données. Mais saviez-vous qu'il existe un outil puissant pour vous aider à traiter les données plus efficacement? Les expressions régulières, ou "regex", sont un moyen efficace de rechercher et de manipuler des données en utilisant des motifs spécifiques. Dans cet article, nous allons explorer pourquoi les regex sont utiles pour les programmeurs Arduino.
 
 ## Comment faire
+Les expressions régulières utilisent des motifs pour correspondre à des chaînes de caractères spécifiques. Elles peuvent être utilisées pour vérifier si une chaîne correspond à un motif donné ou pour extraire des informations d'une chaîne de caractères. Voyons quelques exemples pratiques en utilisant des __codes Arduino__.
 
-Pour utiliser des expressions régulières dans vos projets Arduino, vous devez d'abord inclure la bibliothèque "Regex" dans votre code. Voici un exemple de code qui recherche une adresse IP valide dans une chaîne de caractères :
+- Vérifier si une adresse e-mail est valide:
 
 ```Arduino
-#include <Regex.h>
+String email = "john@example.com";
 
-Regex IP_regex("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+");
+// Recherche d'un motif correspondant à une adresse e-mail valide
+bool isValid = regexMatch(email, "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$");
 
-String input = Serial.readString();
-
-if(IP_regex.match(input)){
-  Serial.print("Adresse IP valide trouvée : ");
-  Serial.println(IP_regex.last());
-}
-else{
-  Serial.println("Aucune adresse IP valide trouvée.");
+if (isValid) {
+  Serial.println("Cette adresse e-mail est valide!");
+} else {
+  Serial.println("Cette adresse e-mail n'est pas valide!");
 }
 ```
 
-Dans cet exemple, nous utilisons la fonction `match()` de la bibliothèque Regex pour vérifier si la chaîne de caractères saisie par l'utilisateur contient une adresse IP valide. Nous pouvons également utiliser des expressions régulières pour extraire des parties spécifiques d'une chaîne de caractères en utilisant la fonction `captured()`.
-
-Voici un autre exemple qui extrait le nom de famille d'une chaîne de courriel :
+- Extraire le code postal à partir d'une adresse:
 
 ```Arduino
-#include <Regex.h>
+String address = "123 Main Street, Seattle, WA 98101";
 
-Regex email_regex("[a-zA-Z]+\@");
+// Recherche d'un motif correspondant à un code postal
+reMatchResult result = regexExec(address, "[0-9]{5}");
 
-String email = "johndoe@example.com";
-
-if(email_regex.match(email)){
-  Serial.print("Nom de famille trouvé : ");
-  Serial.println(email_regex.captured(email));
-}
-else{
-  Serial.println("Adresse courriel invalide.");
-}
+Serial.print("Le code postal est: ");
+Serial.println(result.match);
 ```
 
-Ce ne sont que quelques exemples de l'utilisation des expressions régulières dans vos projets Arduino. Vous pouvez également les utiliser pour valider des numéros de téléphone, des adresses postales, ou pour rechercher des motifs spécifiques dans des données.
+En utilisant les expressions régulières, vous pouvez effectuer des tâches complexes de manipulation de données en quelques lignes de code seulement. N'hésitez pas à expérimenter avec différents motifs pour voir leurs effets sur vos données.
 
 ## Plongée en profondeur
+Si vous êtes curieux d'en savoir plus sur les expressions régulières, il y a plusieurs concepts clés à comprendre:
 
-Les expressions régulières suivent un ensemble de règles spécifiques pour correspondre à des motifs dans une chaîne de caractères. Si vous souhaitez en savoir plus sur ces règles, vous pouvez consulter des ressources telles que [cette page](https://www.regular-expressions.info/) ou [celle-ci](https://openclassrooms.com/fr/courses/1603881-apprenez-a-programmer-en-c/1609274-decouvrez-les-expressions-regulieres).
+- Les caractères spéciaux, comme `$`, `+` et `{}`, ont des significations spécifiques en regex et doivent être échappés avec un `\` pour être traités comme des caractères normaux.
+- Les ensembles de caractères, définis entre `[]`, permettent de rechercher des caractères spécifiques, comme `[A-Z]` pour correspondre à n'importe quelle lettre majuscule.
+- Les quantificateurs, comme `+` et `*`, contrôlent le nombre de fois qu'un motif doit se répéter pour être une correspondance valide.
 
-Vous pouvez également utiliser des sites tels que [Regex101](https://regex101.com/) pour tester vos expressions régulières et voir à quoi elles correspondent dans une chaîne de caractères.
+Pour en savoir plus sur les expressions régulières, vous pouvez consulter ces ressources supplémentaires:
 
 ## Voir aussi
-
-- [Documentation de la bibliothèque Regex pour Arduino](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Tutoriel sur l'utilisation des expressions régulières dans Arduino](https://lastminuteengineers.com/regex-tutorial-arduino-esp32/)
-- [Exemples de projets Arduino utilisant des expressions régulières](https://create.arduino.cc/projecthub/search?q=regex)
+- [Tutoriel Regex pour les débutants](https://regexone.com/)
+- [Documentation officielle sur les expressions régulières](https://www.regular-expressions.info/)
+- [Bibliothèque Regex pour Arduino](https://github.com/bblanchon/ArduinoRegexp)

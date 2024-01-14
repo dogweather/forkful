@@ -1,45 +1,35 @@
 ---
-title:    "Swift: З'єднання рядків"
+title:    "Swift: Об'єднання рядків"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Vurobymozh
+## Чому
 
-## Зрозуміло, що виконавці Swift повинні знати, як зберігати та опрацьовувати рядки, але чому потрібно з'єднувати рядки?
-Конкатенація рядків дозволяє з'єднувати кілька окремих рядків в один більший, що може бути корисним для створення зрозумілого та структурованого коду.
+Конкатенація рядків є важливою частиною програмування Swift, оскільки вона дозволяє об'єднувати рядкові значення для більш зручної обробки даних.
 
-## Як зробити конкатенацію рядків у Swift
-```
-let firstName = "Марія"
-let lastName = "Петренко"
+## Як
 
-let fullName = firstName + " " + lastName
-print(fullName) // виведе: Марія Петренко
+```Swift
+let firstName = "Анна"
+let lastName = "Коваль"
+let fullName = firstName + " " + lastName // виводиться "Анна Коваль"
 ```
 
-Це простий приклад використання оператора '+' для з'єднання двох рядків. Також можна використовувати метод `append()` для додавання рядків до існуючого.
-
-```
-var message = "Привіт, "
-let name = "Олександр"
-message.append(name)
-print(message) // виведе: Привіт, Олександр
+```Swift
+let temperature = "20"
+let unit = "градусів Цельсія"
+let weatherInfo = "Сьогодні температура становить \(temperature) \(unit)" // виводиться "Сьогодні температура становить 20 градусів Цельсія"
 ```
 
-## Глибше занурення в конкатенацію рядків
-Конкатенація рядків у Swift є досить простою та важливою частиною програмування. Важливо пам'ятати, що при з'єднанні чисел та рядків потрібно використовувати типи даних `String(describing:)` або `String(format:)` для коректного перетворення.
+## Глибше дослідження
 
-Для більш складних додавань рядків можна використовувати шаблони рядків (string interpolation), які дозволяють вставляти значення змінних прямо у рядок.
+Конкатенація рядків може бути корисною для об'єднання даних з різних джерел або для створення динамічних рядків. Також, в програмуванні Swift є багато інших способів об'єднання рядків, таких як використання оператора `+` або методу `append`.
 
-```
-let age = 25
-let message = "Мені \(age) років"
-print(message) // виведе: Мені 25 років
-```
+## Подивіться також
 
-## Дивіться також
-- [Офіційна документація Swift про конкатенацію рядків](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID310)
-- [Стаття про оператор "+" у Swift](https://learnappmaking.com/concatenate-strings-swift-how-to/)
-- [Відео урок з основ Swift, включаючи конкатенацію рядків](https://www.youtube.com/watch?v=Hv3vdVoT41g)
+- [Офіційна документація Swift для конкатенації рядків](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Туторіал на YouTube з прикладами конкатенації рядків в Swift](https://www.youtube.com/watch?v=GBb2p6BgOto)
+- [Стаття з корисними порадами щодо конкатенації рядків у Swift](https://www.infragistics.com/community/blogs/b/news/posts/swift-and-string-concatenation)

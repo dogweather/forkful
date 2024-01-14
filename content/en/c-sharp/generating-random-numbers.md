@@ -1,80 +1,39 @@
 ---
 title:    "C# recipe: Generating random numbers"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Random numbers are a vital component in many programming tasks, such as generating unique IDs, shuffling data, or incorporating randomness in simulations. In this blog post, we will delve into how to generate random numbers in C# and explore some underlying concepts.
+## Why Generate Random Numbers?
 
-## How To
-In C#, the built-in `Random` class can be used to generate random numbers. Let's first create an instance of the `Random` class:
+Generating random numbers is a crucial part of many computer programs and applications. Whether it's for creating randomized game elements, generating secure passwords, or conducting scientific simulations, having the ability to generate random numbers is essential. In this blog post, we will explore the basics of generating random numbers in C# and how to use it in your code.
 
-```C#
-Random random = new Random();
-```
+## How To Generate Random Numbers in C#
 
-This instance allows us to access the methods for generating random numbers. Here are some examples:
-
-### Generating a random integer
-To get a random integer within a specific range, we can use the `Next()` method, which takes two arguments: the inclusive lower bound and the exclusive upper bound. For example, to generate a random number between 1 and 10, we can use:
+C# has a built-in class called "Random" that allows us to generate random numbers. To begin, we must first instantiate a Random object and then call its "Next" method. Let's take a look at an example:
 
 ```C#
-int num = random.Next(1, 11); // returns a number between 1 and 10
+Random random = new Random(); //instantiates a Random object
+int randomNumber = random.Next(1, 101); //generates a random number between 1 and 100
+Console.WriteLine(randomNumber); //outputs the generated random number
 ```
 
-### Generating a random double
-For generating a random `double` between 0 and 1, we can use the `NextDouble()` method:
+The code above will generate a random integer between 1 and 100 and print it to the console. Keep in mind that the "Next" method takes in two parameters, the first being the minimum value (inclusive) and the second being the maximum value (exclusive). This means that the range of generated numbers will start at the minimum value and end at the maximum value - 1.
 
-```C#
-double rand = random.NextDouble(); // returns a decimal value between 0 and 1
-```
+## Deep Dive into Generating Random Numbers
 
-### Shuffling elements in a list
-The `Random` class also provides a convenient `Next()` overload for shuffling elements in a `List<T>`. It takes no arguments and returns a random number that can be used as the index for shuffling. For example:
+The Random class in C# uses a pseudo-random number generator (PRNG) algorithm to generate numbers. This algorithm uses a seed value to produce a sequence of seemingly random numbers. The seed value can be supplied by the programmer or it can be left to the system to generate a seed using the current time.
 
-```C#
-List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
-numbers.OrderBy(x => random.Next()).ToList();
-// this will shuffle the elements in the list
-```
-
-### Sample Output
-To demonstrate the results of our random number generation, let's use the `Console` class to print out some examples:
-
-```C#
-int num1 = random.Next(1, 11); 
-int num2 = random.Next(1, 11);
-int num3 = random.Next(1, 11);
-Console.WriteLine($"Three random numbers are: {num1}, {num2}, {num3}");
-double rand1 = random.NextDouble();
-double rand2 = random.NextDouble();
-double rand3 = random.NextDouble();
-Console.WriteLine($"Three random decimals are: {rand1}, {rand2}, {rand3}");
-```
-
-Output:
-``` 
-Three random numbers are: 3, 6, 9
-Three random decimals are: 0.714601275, 0.029753846, 0.524246478
-```
-
-## Deep Dive
-Behind the scenes, the `Random` class generates pseudorandom numbers based on a seed value. The seed value is used to initialize a mathematical algorithm that produces a sequence of numbers that appears random. Each time we create a new instance of `Random`, a different seed value is used, resulting in a different sequence of numbers.
-
-### Controlling the seed value
-If we want to have a predictable sequence of random numbers, we can pass in a specific seed value when creating our `Random` instance. This can be useful for testing or debugging purposes.
-
-```C#
-int seed = 12345; // seed value can be any integer
-Random random = new Random(seed);
-```
-
-### Avoiding predictable patterns
-Since the `Random` class generates pseudorandom numbers, there is a possibility of repeating patterns if the seed values are predictable. To avoid this, we can use a more sophisticated algorithm for generating random numbers, such as the `RNGCryptoServiceProvider` class.
+It's important to note that the sequence of numbers generated by a PRNG is not truly random and can be predicted or repeated. However, for most applications, this level of randomness is sufficient. If you need true random numbers, then you can use external sources such as hardware devices that generate random numbers.
 
 ## See Also
+
+Here are some helpful resources for further reading and learning about generating random numbers in C#:
+
 - [Microsoft Docs: Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random)
-- [C# Random Numbers](https://www.c-sharpcorner.com/UploadFile/mahesh/RandomNumbers11142005003143AM/RandomNumbers.aspx)
-- [Generating Random Numbers in C#](https://www.c-sharpcorner.com/blogs/magic-of-generating-random-numbers-in-c-sharp1)
+- [GeeksforGeeks: Random Number Generation in C#](https://www.geeksforgeeks.org/random-number-generation-in-c-sharp/)
+- [C# Corner: Random Number Generation using Random Class](https://www.c-sharpcorner.com/article/random-number-generation/)
+
+Now that you have a basic understanding of how to generate random numbers in C#, go ahead and start implementing it in your own projects. Happy coding!

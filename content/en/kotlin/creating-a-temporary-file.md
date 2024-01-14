@@ -1,54 +1,51 @@
 ---
 title:    "Kotlin recipe: Creating a temporary file"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Creating temporary files is a common practice in programming, especially when dealing with large amounts of data or when temporary storage is needed. These files are used to store information temporarily during the execution of a program and are typically deleted once the program has finished running. In Kotlin, creating temporary files is a simple and efficient process that can be useful in various scenarios.
+Creating temporary files is a common practice in programming, especially when working with large or sensitive data. Temporary files serve as a temporary storage location for data that is only needed for a short period of time, allowing for efficient data management and avoiding the clutter of permanent files. In this blog post, we will discuss how to create a temporary file using Kotlin.
 
 ## How To
 
-To create a temporary file in Kotlin, we can use the `createTempFile()` function from the `kotlin.io` package. This function takes in a prefix for the file name, an optional suffix, and a parent directory (default is the temporary directory of the operating system) as parameters. Let's take a look at an example:
+To create a temporary file in Kotlin, we can use the `kotlin.io` library's `createTempFile()` function. This function takes in two parameters - the prefix and suffix of the temporary file name.
 
-```Kotlin
-val tempFile = createTempFile(prefix = "temp", suffix = ".txt")
-println(tempFile.absolutePath)
+```Kotlin 
+import java.io.File
+
+fun main() {
+    // Creating a temporary file with prefix "temp" and suffix ".txt"
+    val tempFile = File.createTempFile("temp", ".txt")
+    
+    // Writing data to the temporary file
+    tempFile.writeText("This is a temporary file.")
+    
+    // Reading data from the temporary file
+    println("Temporary file content: ${tempFile.readText()}")
+    
+    // Deleting the temporary file
+    tempFile.delete()
+}
 ```
 
-Running this code would create a temporary file with the name "tempXXXXXX.txt" (where XXXXXX is a random string of characters) in the default temporary directory, and the absolute path to this file would be printed to the console. We can also specify the parent directory where we want the file to be created:
+The above code will create a temporary file named "tempXXX.txt" (where XXX is a sequence of numbers) in the default temporary directory, which can be accessed through `File.createTempFile()` function's `parentFile` parameter. Here, the prefix "temp" is optional and can be omitted.
 
-```Kotlin
-val parentDir = File("/Users/username/temp/")
-val tempFile = createTempFile(prefix = "temp", suffix = ".txt", directory = parentDir)
-println(tempFile.absolutePath)
 ```
-
-In this example, the file would be created in the specified directory instead of the default temporary directory. We can also specify only the prefix or suffix, or even omit both and let the function generate a random name for us.
-
-After we have created the temporary file, we can use it like any other file. For example, we can write data to it using the `writeText()` function, and read data from it using the `readText()` function:
-
-```Kotlin
-tempFile.writeText("This is a temporary file.")
-println(tempFile.readText())
+Temporary file content: This is a temporary file.
 ```
-
-The output would be: "This is a temporary file."
-
-Once our program has finished running, the temporary file will be deleted automatically.
 
 ## Deep Dive
 
-Under the hood, the `createTempFile()` function uses the `File.createTempFile()` method from the Java standard library, which in turn uses the `File.createTempFile()` method from the underlying operating system. This means that the behavior of temporary files may differ depending on the operating system your code is running on.
+Behind the scenes, the `createTempFile()` function creates a unique temporary file in the default temporary directory, using the `File.createTempFile()` method from the `java.io` package. The prefix and suffix provided are used to generate a unique filename, but they do not necessarily appear in the actual name of the temporary file.
 
-Additionally, the `createTempFile()` function returns a `File` object, which can be used to perform various operations on the temporary file, such as renaming or deleting it.
+There are also alternative ways to create a temporary file in Kotlin, such as using the `TemporaryFile` class from the `io.temporal written` library or creating a `File` object with a temporary directory as its location.
 
 ## See Also
 
-If you're interested in learning more about temporary files in Kotlin, check out these resources:
-
-- [Kotlin `createTempFile()` documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
-- [Java `createTempFile()` documentation](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String,%20java.io.File))
-- [Understanding Temporary Files in Java](https://www.baeldung.com/java-temporary-files)
+- [Kotlin createTempFile() function documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [Java createTempFile() method documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [Kotlin TemporaryFile library on GitHub](https://github.com/temporalio/written/blob/master/temporalio-utils/src/main/kotlin/io/temporal/written/TemporaryFile.kt)

@@ -1,57 +1,64 @@
 ---
 title:    "C: חישוב תאריך בעתיד או בעבר"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-מחשבת לתוכנן ולחשב תאריכים בעתיד או בעבר עשויה להיות מורכבת ומאתגרת, אבל היא יכולה להיות מאוד שימושית בשביל מטרות שונות. למשל, ניתן להשתמש בחישובי תאריכים כדי לתכנן את השימוש ביחסי הזמן באפליקציות או ליצור ולנהל לוח זמנים.
+# מדוע
 
-## איך לעשות זאת
-קוד C מכיל מספר כלים חזקים כדי לנהל תאריכים. ניתן להשתמש בפונקציות כמו mktime כדי להמיר תאריכים ולדעת את היום של השבוע, או ניתן לבנות פונקציות משלנו שתבצע את החישוב לפי הצורך. הנה דוגמאות קוד בשפת C עם פלט דוגמה:
+בתכנות C יש לנו את היכולת לחשב תאריך בעתיד או בעבר. רוב מטרות החישוב הן לצורך יישום מערכת לוח שנה או לאפשר למשתמש להכניס תאריך כמו חלק מפקודה. 
 
-```C
+# כיצד לבצע את החישוב?
+
+האלגוריתם הבסיסי לחישוב תאריך נעשה על ידי מציאת השנה, החודש והיום המבוקשים והוספת או החלפה של ימים, חודשים או שנים כאשר נדרש. הנה דוגמה של קוד C שמבצע חישוב של תאריך בעתיד:
+
+```
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+int main() 
+{
+   // הגדרת משתנים לשנה, חודש ויום הנוכחיים
+   int year = 2021;
+   int month = 6;
+   int day = 3;
 
-int main() {
-    // Getting today's date
-    time_t today = time(NULL);
-    printf("Today's date is: %s\n", ctime(&today));
+   // הדפסת התאריך הנוכחי
+   printf("תאריך היום הוא: %d/%d/%d \n", day, month, year);
 
-    // Calculating one month from today
-    struct tm *future_date;
-    future_date = localtime(&today);
-    future_date->tm_mon += 1;
-    mktime(future_date);
-    printf("One month from today will be: %s\n", asctime(future_date));
+   // הוספת 10 ימים לתאריך הנוכחי
+   day = day + 10;
 
-    // Calculating one year and two months ago
-    struct tm *past_date;
-    past_date = localtime(&today);
-    past_date->tm_year -= 1;
-    past_date->tm_mon -= 2;
-    mktime(past_date);
-    printf("One year and two months ago was: %s\n", asctime(past_date));
+   // טיפול בחודשים העוברים על 30 יום בלבד
+   if (day > 30) 
+   {
+      day = day - 30;
+      month = month + 1;
+   }
 
-    return 0;
+   // טיפול בחודשים העוברים על 12 חודשים בלבד
+   if (month > 12) 
+   {
+      month = month - 12;
+      year = year + 1;
+   }
+
+    // הדפסת תאריך חדש עם השינויים
+   printf("תאריך החל מעכשיו הוא: %d/%d/%d \n", day, month, year);
+   
+   return 0;
 }
 ```
 
+פלט התכנית:
+
 ```
-Output:
-Today's date is: Sun Aug 01 2021
-
-One month from today will be: Wed Sep 01 2021
-
-One year and two months ago was: Fri May 01 2020
+תאריך היום הוא: 3/6/2021
+תאריך החל מעכשיו הוא: 13/6/2021
 ```
 
-## חקירה מעמיקה
-חישובי תאריכים יכולים להיות מאוד מורכבים והם עשויים להעלות אתגרים בעתידות כמו איחודי קיץ או חודשי ספטמבר. אבל עם הידע המתאים והכלים הנכונים, ניתן לנהל בקלות תאריכים בשפת C כדי להתמודד עם כל משימה כזו.
+כמו כן, ניתן לעשות את החישוב באופן הפוך ולחשב תאריך בעבר על ידי חיסור ימים, חודשים או שנים.
 
-למידע נוסף ולדוגמאות נוספות על חישובי תאריכים בשפת C, אנו ממליצים לשים עין על הקישורים הבאים:
+# חפירה מעמיקה
 
-- [מדריך לפונקציות ת
+בכדי להיות נמצאי ודיוקניים יותר בחישובי התאריך, ניתן להשתמש בספריות ופונקציות מתקדמות של C כמו למשל `strptime()` ו `localtime()` אשר מאפשרות לנו להתאים תאריך ו

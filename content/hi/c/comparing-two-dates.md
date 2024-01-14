@@ -1,67 +1,67 @@
 ---
-title:    "C: दो तारीखों की तुलना करना"
+title:    "C: दो तारीखों का तुलना करना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्यों
 
-Aaj ke samay mein dino aur tarikhon ka apne rojana jeevan mein mehatva hai. Kabhi kabhi hume do alag-alag tarikhon ka tulna karna hota hai, jaise ki kisi event ki shuruat aur antar ya apne janm din aur current date ka antar. Aise samay mein, hume dono dates ka samanta ya antar jaanna jaroori hai. Isliye, do dino ko compare karne ke liye ek aasan aur sahi tarika sikhna zaroori hai.
+दो तारीखों को तुलना करने से पहले, हमें उन्हें विभिन्न मानों में परिवर्तित करना पड़ता है। यह काम एक सामान्य कार्य हो सकता है, लेकिन यह हमारे प्रोग्राम के लिए जरूरी हो सकता है।
 
-## Kaise Karein
+## कैसे करें
 
-Coding mein dates ko compare karne ke liye, hume pahle se jana hua "struct tm" ka use karna hota hai. Yeh ek date aur time ko store karne ke liye pre-defined data structure hai. Chaliye, ek simple example ke through dekhte hai kaise hum struct tm ka use kar sakte hai:
-
-```C
+```
+C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    struct tm start_date , end_date;
-
-    // Start Date
-    start_date.tm_year = 2020;
-    start_date.tm_mon = 8;
-    start_date.tm_mday = 12;
-
-    // End Date
-    end_date.tm_year = 2021;
-    end_date.tm_mon = 8;
-    end_date.tm_mday = 12;
-
-    // Comparing dates
-    if (difftime(mktime(&end_date), mktime(&start_date)) > 0)
-    {
-        printf("Start Date is before End Date\n");
+// Function to compare two dates
+int compareDates(int day1, int month1, int year1, int day2, int month2, int year2) {
+    
+    // Convert dates into time structure
+    struct tm date1 = { .tm_mday = day1, .tm_mon = month1 - 1, .tm_year = year1 - 1900 };
+    struct tm date2 = { .tm_mday = day2, .tm_mon = month2 - 1, .tm_year = year2 - 1900 };
+    
+    // Convert dates into time_t format
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+    
+    // Compare the time_t values
+    if (time1 < time2) {
+        return -1; // Date 1 is before Date 2
+    } else if (time1 > time2) {
+        return 1; // Date 1 is after Date 2
+    } else {
+        return 0; // Both dates are same
     }
-    else if (difftime(mktime(&end_date), mktime(&start_date)) < 0)
-    {
-        printf("End Date is before Start Date\n");
-    }
-    else
-    {
-        printf("Both dates are equal\n");
-    }
+}
 
+int main() {
+    // Input first date
+    int day1, month1, year1;
+    printf("Enter first date (DD/MM/YYYY): ");
+    scanf("%d/%d/%d", &day1, &month1, &year1);
+    
+    // Input second date
+    int day2, month2, year2;
+    printf("Enter second date (DD/MM/YYYY): ");
+    scanf("%d/%d/%d", &day2, &month2, &year2);
+    
+    // Compare dates
+    int result = compareDates(day1, month1, year1, day2, month2, year2);
+    
+    if (result == -1) {
+        printf("%d/%d/%d is before %d/%d/%d", day1, month1, year1, day2, month2, year2);
+    } else if (result == 1) {
+        printf("%d/%d/%d is after %d/%d/%d", day1, month1, year1, day2, month2, year2);
+    } else {
+        printf("%d/%d/%d is equal to %d/%d/%d", day1, month1, year1, day2, month2, year2);
+    }
+    
     return 0;
 }
 ```
 
-Output:
-```
-Start Date is before End Date
-```
-
-Jaise ki aap dekh sakte hai, humne pehle start date aur end date ko struct tm ke variable mein store kiya. Fir difftime() function ka use karke dono dates ka antar calculate kiya. Agar diffrence positive aata hai, toh start date end date se pehle hai aur agar negative aata hai, toh end date start date se pehle hai.
-
-Is tarah se, aap kisi bhi date ko compare kar sakte hai. Refer karein is link [struct tm](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm) aur [difftime()](https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm) ke liye aur jaaniye iske aur bhi functions.
-
-## Gehri Khurak
-
-Dates ko compare karna code likhte waqt kaafi important hota hai. Aapko pehle se start date aur end date ka pata hona zaroori hai varna aap galat output receive kar sakte hai. Saath hi, sahi format mein date ko store karna bhi zaroori hai. Isliye, dhyan se code likhe aur apne code ko test karein alag-alag inputs ke saath.
-
-## Dekhiye Bhi
-
-Agar aapko C programming aur dates ko compare karne mein aur bhi jankaari chahiye toh dekhiye is link [Comparison of dates and times in C](https://www.codingunit.com/comparison-of-dates-and-times-in-c) ko. Ismein aur bhi saare concepts aur techniques bataye gaye hai. Happy coding!
+यहां हमने दो छोटे से कार्य किए हैं। पहले, हमने दो समय संरचनाओं में तारीखों को संकलित किया है, और फिर हमने उन्हें time_t फॉर्मेट में बदल दिया है। समय संरचना structure तक पहुंच प्राप्त करने के बाद, हम समय संरचना structure का उपयोग समय संरचना structure को time_t फॉर्मेट में कन्वर्ट करने के लिए करते हैं। कृपया ध्यान दें कि माह के लिए मान - 1 का उपयोग हमारे सम

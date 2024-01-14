@@ -1,70 +1,62 @@
 ---
-title:    "Rust: Imprimiendo salida de depuración"
+title:    "Rust: Imprimir salida de depuración"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué imprimir mensajes de depuración en Rust?
+## Por qué
 
-Imprimir mensajes de depuración es una técnica comúnmente utilizada por los programadores para ayudar a identificar y solucionar errores en su código. En Rust, esto es especialmente importante debido a su enfoque en la seguridad y la ausencia de errores. Imprimir mensajes de depuración es una forma efectiva de comprender qué está sucediendo en tu código y encontrar posibles errores.
+Imprimir resultados de depuración (debug output) es una herramienta vital en la programación en Rust. Ayuda a los desarrolladores a identificar errores, resolver problemas y entender el flujo del programa.
 
-## Cómo imprimir mensajes de depuración
+## Cómo hacerlo
 
-Para imprimir mensajes de depuración en Rust, podemos utilizar la macro `println!`. Esta macro acepta un string como argumento y puede contener placeholders para variables que deseamos imprimir. Dentro de los placeholders, se utiliza un signo de exclamación (!) después del tipo de dato para indicar que queremos imprimir el valor en su forma depurada.
+Para imprimir resultados de depuración en un programa Rust, podemos utilizar la macro `println!()`. Esta macro toma una cadena de texto como argumento y puede imprimir cualquier valor que se le pase.
 
-```Rust
+```
+Rust
 fn main() {
-    let nombre = "Juan";
-    let edad = 25;
-    println!("Hola, mi nombre es {} y tengo {} años", nombre, edad);
-}
-```
-**Output:**
-```
-Hola, mi nombre es "Juan" y tengo 25 años
-```
-
-También podemos utilizar la macro `dbg!`, que funciona de manera similar a `println!` pero además de imprimir el valor de la variable, también imprime su nombre y tipo de dato. Esta macro es útil para imprimir múltiples variables a la vez.
-
-```Rust
-fn main() {
-    let num1 = 10;
-    let num2 = 20;
-    let resultado = num1 + num2;
-    dbg!(num1, num2, resultado);
+  let numero = 42;
+  println!("El número es: {}", numero);
 }
 ```
 
-**Output:**
+La salida de este programa sería `El número es: 42`.
+
+La macro `println!()` también acepta múltiples argumentos separados por comas y podemos utilizar el formato de impresión para personalizar la salida. Por ejemplo:
+
 ```
-[src/main.rs:5] num1 = 10
-[src/main.rs:6] num2 = 20
-[src/main.rs:7] resultado = 30
-```
-
-## Profundizando en la impresión de mensajes de depuración
-
-Además de las macros `println!` y `dbg!`, Rust también cuenta con la macro `eprintln!` que se utiliza para imprimir mensajes de error. También es posible utilizar el operador `?` para imprimir mensajes de depuración en un contexto de error. Esto es útil para ver la cadena de errores y su causa.
-
-Rust también ofrece una forma de controlar qué mensajes de depuración se imprimen durante la compilación. Esto se puede hacer mediante el uso del nivel de depuración `debug!` y la funcion `println!` se imprimirán:
-
-```Rust
-#[cfg(debug_assertions)]
+Rust
 fn main() {
-    let nombre = "Juan";
-    let edad = 25;
-    println!("Hola, mi nombre es {} y tengo {} años", nombre, edad);
-}
+  let nombre = "Juan";
+  let edad = 29;
+  let altura = 1.80;
 
-#[cfg(not(debug_assertions))]
-fn main() {
-    // codigo en producción
+  println!("¡Hola {}, tienes {} años y mides {:.2} metros!", nombre, edad, altura);
 }
 ```
 
-# Ver también
+La salida sería `¡Hola Juan, tienes 29 años y mides 1.80 metros!`.
 
-- [Documentación de Rust sobre la macro `dbg!`](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Artículo sobre depuración de errores en Rust](https://www.freecodecamp.org/news/how-to-debug-rust-programs/)
-- [Tutorial sobre macros en Rust](https://dev.to/pedantic_programmer/macros-in-rust-1n1f)
+## Profundizando
+
+Además de `println!()`, también podemos utilizar la macro `eprintln!()` para imprimir errores en la consola. Esta macro funciona de la misma manera que `println!()`, pero la salida se imprime en la salida de errores en lugar de la salida estándar.
+
+Otra forma de imprimir resultados de depuración es utilizando la función `dbg!()`. Esta función toma un valor como argumento y lo imprime junto con su nombre y ubicación en el código. Por ejemplo:
+
+```
+Rust
+fn main() {
+  let numero = 42;
+  dbg!(numero);
+}
+```
+
+La salida sería `(src/main.rs:3) numero = 42`.
+
+## Ver también
+
+- [La documentación oficial de Rust sobre macros de impresión](https://doc.rust-lang.org/std/macro.println.html)
+- [Un tutorial de Impresión de Depuración en Rust](https://www.educative.io/blog/rust-debugging)
+- [Una guía para usar la macro `dbg!()` en Rust](https://www.baeldung.com/rust-console-printing)

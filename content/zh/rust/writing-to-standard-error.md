@@ -1,40 +1,50 @@
 ---
-title:    "Rust: 写入标准错误"
+title:    "Rust: 向标准错误输出编写 (Xiàng biāozhǔn cuòwù shūchū biānxíe)"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：编写标准错误信息是非常重要的，因为它可以帮助程序员调试和诊断程序中的错误。它可以提供更详细的信息，帮助开发者更快地定位和解决bug，从而提高程序的质量和可靠性。
+## 为什么
 
-如何进行：使用Rust中的"```eprintln!()```"宏来将信息输出到标准错误流中。注意，与"```println!()```"不同，"```eprintln!()```"会在每次输出后自动换行。下面是一个简单的示例：
+写作标准错误信息可能是一项令人生畏的任务，但它却是一个重要的编程技能。当程序出现错误时，标准错误信息可以帮助我们快速定位问题并进行调试。在Rust编程中，使用标准错误信息可以让我们更加有效地发现和修复错误，提高代码质量，从而使我们的程序更加健壮可靠。
+
+## 如何使用
+
+在Rust中，我们可以使用`std::io::stderr`模块来向标准错误流输出信息。让我们来看一个简单的示例：
 
 ```Rust
+use std::io::Write;
+
 fn main() {
-    let x = 10;
-    let y = 5;
-    if x > y {
-        eprintln!("x是大于y的。"); // 输出到标准错误流中
-    }
+    let error_msg = "This is an error message written to standard error.";
+    let mut stderr = std::io::stderr();
+
+    writeln!(stderr, "{}", error_msg).expect("Failed to write to stderr");
 }
 ```
 
-输出结果：
+在这个示例中，我们首先导入`std::io::Write`模块，它提供了写入流的功能。然后，我们定义一个字符串变量`error_msg`，它是我们想要输出的错误信息。接着，我们通过`std::io::stderr`函数创建一个标准错误流的实例，并使用`writeln!`宏来输出错误信息到流中。最后，我们使用`expect`方法来检查是否出现了错误。
 
+运行上面的代码，你会在控制台看到以下输出：
+
+```sh
+This is an error message written to standard error.
 ```
-x是大于y的。
-```
 
-深入探讨：除了使用"```eprintln!```"宏来输出信息到标准错误流外，还可以使用"```eprint!()```"宏来输出，它不会自动换行。另外，还可以使用"```writeln!()```"宏来输出带有格式化字符串的信息到标准错误流，使用方法与"```eprintln!```"相同。同时，还可以通过"```std::io::stderr```"来获取标准错误流的句柄，然后使用"```write!()```"宏来写入任意信息。
+正如你所见，错误信息被输出到了标准错误流中。除了使用`writeln!`宏，我们还可以使用`write!`宏来向标准错误流输出信息，不同之处在于`writeln!`会在字符串的末尾自动添加换行符。
 
-另外，标准错误流也可以被重定向到其他的输出，如文件或控制台。通过使用"```std::fs::File::create()```"来创建一个文件句柄，然后使用"```std::io::stderr().redirect()```"来重定向标准错误流到该文件。这样，程序运行时的错误信息将会被输出到指定的文件中。
+## 深入讨论
 
-类似地，也可以使用"```std::io::stdout().redirect()```"来重定向标准输出流，或者使用"```std::io::Error::redirect()```"来同时重定向标准错误流和标准输出流到同一个文件中。
+在Rust中，我们可以使用`std::io::stderr`函数来获取标准错误流的实例，它返回一个`Stderr`结构体。这个结构体实现了`Write` trait，使得我们可以像操作其他写入流一样来操作标准错误流。
 
-请注意，重定向标准错误流会影响到整个程序，因此建议只在必要时使用。否则，将会影响到其他可能依赖标准错误流的部分。
+除了使用`writeln!`和`write!`宏，我们还可以使用`write_all`和`flush`方法来向标准错误流输出信息。`write_all`方法可以一次性写入一个完整的字符串，而`flush`方法则可以强制刷新流，将缓冲区中的数据输出到终端。
+
+另外，我们还可以使用`fmt::Display`和`fmt::Debug` trait来格式化输出信息。这两个trait可以帮助我们将变量转换为可打印的字符串，方便我们输出更复杂的错误信息。
 
 ## 参考链接
 
-- [Rust文档：标准库](https://doc.rust-lang.org/std/index.html)
-- [Rust文档：标准错误流](https://doc.rust-lang.org/std/io/struct.Stderr.html)
-- [Rust官方博客：标准输出和错误流](https://blog.rust-lang.org/2015/04/30/Rust-STD-IO.html)
+- [Rust标准库文档](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+- [使用标准错误信息调试Rust程序](https://doc.rust-lang.org/book/ch09-00-error-handling.html#to-panic-or-not-to-panic)
+- [标准库中的写入流功能](https://doc.rust-lang.org/std/io/trait.Write.html)

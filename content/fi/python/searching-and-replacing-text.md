@@ -1,54 +1,49 @@
 ---
 title:    "Python: Tekstin etsiminen ja korvaaminen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Ai, miksi kukaan haluaisi vaivautua tekstien hakemiseen ja korvaamiseen? No, yksinkertaisesti sanottuna tämä yksi pieni toiminto voi säästää valtavasti aikaa ja vaivaa, kun työskennellään suurten tekstimäärien kanssa. Ajattele esimerkiksi, jos sinun tarvitsee muuttaa saman sanan tai lauseen useammasta dokumentista tai kooditiedostosta. Se olisi melko tylsää ja aikaavievää tehdä manuaalisesti, mutta tekstien hakemisen ja korvaamisen avulla voit tehdä sen helposti ja nopeasti!
+Tekstin etsiminen ja korvaaminen on yleinen tehtävä ohjelmoinnissa, jota tarvitaan usein esimerkiksi tiedostojen tai tietokantojen käsittelyssä. Se voi myös säästää paljon aikaa ja vaivaa manuaalisen tekstikorjauksen sijaan.
 
-## Kuinka tehdä tekstien haku ja korvaaminen Pythonilla
-
-Aloitetaan yksinkertaisella esimerkillä, jossa muutamme vanhan yrityksen nimen uudeksi. Käytämme tässä esimerkissä Pythonin `replace()` -funktiota, jonka avulla voimme etsiä ja korvata tekstiä annetuista merkkijonoista.
-
-*Esimerkkikoodi:*
+# Kuinka
 
 ```Python
-vanha_nimi = "Vanha jäätelötehdas"
-uusi_nimi = vanha_nimi.replace("Vanha", "Uusi")
-
-print(uusi_nimi)
+# Luo muuttuja teksti, jossa on haluttu teksti
+teksti = "Tervetuloa blogiimme, rakkaat lukijat!"
+# Korvaa "rakkaat" sanalla "arvostetut"
+korjattu_teksti = teksti.replace("rakkaat", "arvostetut")
+# Tulosta korjattu teksti
+print(korjattu_teksti)
 ```
 
-*Tuloste:*
+Tuloste: Tervetuloa blogiimme, arvostetut lukijat!
 
-`Uusi jäätelötehdas`
+# Syväsukellus
 
-Yllä olevassa koodiesimerkissä ensin määritämme muuttujan `vanha_nimi`, joka sisältää vanhan yrityksen nimen. Sitten käytämme `replace()` -funktiota ja annamme sille kaksi parametria: etsittävän merkkijonon ja korvaavan merkkijonon. Tulosteessa näemme, että uusi nimi on korvattu vanhan nimen kanssa.
+Tekstin etsiminen ja korvaaminen tapahtuu usein käyttäen string-metodia "replace()". Tämä metodi ottaa kaksi argumenttia: etsittävän tekstin ja uuden tekstin, jolla halutaan korvata. Metodi palauttaa uuden stringin, jossa etsittävä teksti on korvattu halutulla tekstillä.
 
-Mutta mitä jos haluamme muuttaa useamman kuin yhden sanan? Voimme käyttää samaa `replace()` -funktiota esimerkiksi muuttaaksemme kaikki huonoja käytäntöjä sisältävät dokumentit "huonoista käytännöistä" "hyviksi käytännöiksi".
-
-*Esimerkkikoodi:*
+Esimerkiksi jos halutaan korvata kaikki esiintymät stringissä "Hello World" sanalla "Hei Maailma", niin se tapahtuu käyttämällä replace()-metodia seuraavasti:
 
 ```Python
-dokumentti = "Tämä dokumentti sisältää paljon huonoja käytäntöjä, jotka on muutettava hyviksi käytännöiksi."
-uusi_dokumentti = dokumentti.replace("huonoja käytäntöjä", "hyviä käytäntöjä")
-
-print(uusi_dokumentti)
+# Luo muuttuja teksti, jossa on haluttu teksti
+teksti = "Hello World, Hello World"
+# Korvaa "Hello" sanalla "Hei"
+korjattu_teksti = teksti.replace("Hello", "Hei")
+# Tulosta korjattu teksti
+print(korjattu_teksti)
 ```
 
-*Tuloste:*
+Tuloste: Hei World, Hei World
 
-`Tämä dokumentti sisältää paljon hyviä käytäntöjä, jotka on muutettava hyviksi käytännöiksi.`
+Kuten huomataan, replace()-metodia voidaan käyttää myös useamman sanan korvaamiseen. Jos halutaan korvata vain tietyt esiintymät, voi käyttää myös toista string-metodia "split()", jolloin string jaetaan osiin halutun kohdan perusteella ja uusi string luodaan halutun tekstin ympärille. 
 
-Hienoa! Huomaat varmasti, kuinka nopeasti voimme muuttaa useita merkkijonoja kerralla.
+# Katso myös
 
-## Syväsukellus
-
-Nämä ovat vain muutamia esimerkkejä tekstien hakemisesta ja korvaamisesta Pythonilla. Mutta Pythonilla on paljon muutakin tarjottavaa tähän toimintoon liittyen. Voit esimerkiksi käyttää regular expression -kirjastoa (`re`) monimutkaisempien haku- ja korvaustoimintojen suorittamiseen. Voit myös käyttää `sub()` -funktiota, joka antaa sinun määrittää korvaussäännöt samassa muodossa kuin Pythonin `dictionary`-rakenne.
-
-Voit myös käyttää tekstieditorityökaluja, kuten Sublime Text ja Notepad++, joilla on sisäänrakennettuja toimintoja tekstien hakemiseen ja korvaamiseen. Monissa tekstieditoreissa voit myös käyttää regular expressioneja näissä toiminnoissa.
-
-Joten on selvää, että tekstien hakeminen ja korvaaminen Pythonilla on erittäin hyödyllinen taito ja sen avulla voit
+- [Pythonin replace()-metodi](https://www.w3schools.com/python/ref_string_replace.asp)
+- [String-metodit Pythonissa](https://www.w3schools.com/python/python_ref_string.asp)
+- [Python-opas suomeksi](https://pythonworld.fi/)

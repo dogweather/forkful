@@ -1,50 +1,48 @@
 ---
 title:    "Elm recipe: Generating random numbers"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As programmers, we often need to use random numbers in our applications. Whether it's for creating game mechanics or generating unique IDs, random numbers can add an element of unpredictability and complexity to our code. Elm offers a simple and elegant way to generate random numbers, making it a popular choice among developers.
+
+Generating random numbers may seem like a trivial task in programming, but it actually has a variety of practical applications. Whether you need to simulate a dice roll in a game or generate a unique user ID for a web application, having the ability to create random numbers can be a useful tool in your programming arsenal.
 
 ## How To
-Generating random numbers in Elm is easy and straightforward. The `Random` library comes built-in with the language, so there's no need to install any external packages. To begin, we'll create a simple program that generates a random number between 1 and 100.
 
-```
-module Main exposing (main)
+Luckily, in Elm, generating random numbers is a simple and straightforward process. Let's take a look at a few examples using the `Random` module.
 
-import Html exposing (text)
-import Random exposing (..)
+To generate a random integer between 1 and 10, we can use the `int` function and specify the range:
 
-main = 
-  text (String.fromInt (generateRandomNum 1 100))
+```Elm
+import Random
 
-generateRandomNum min max =
-  Random.int min max
+Random.int 1 10
 ```
 
-In this code, we first import the `Html` and `Random` libraries. Then, in the `main` function, we call the `generateRandomNum` function, which takes in the range of numbers we want our random number to fall within. Finally, we use `text` and `String.fromInt` to display the generated random number on our webpage.
+This will return a `Random.Generator Int` type, which can be used in various ways depending on your application. To actually get the random number, we can use the `generate` function and provide a seed value (which can be any number):
 
-To generate a list of random numbers, we can use the `list` function from the `Random` library. For example, if we want to create a list of 10 random numbers between 1 and 100, we can modify our code as follows:
+```Elm
+import Random
 
-```
-main = 
-  text (String.fromList (generateRandomList 10 1 100))
-
-generateRandomList num min max =
-  Random.List.generate num (Random.int min max)
+Random.generate (Random.int 1 10) 123
 ```
 
-This `generateRandomList` function takes in the number of random numbers we want, along with the range, and uses the `Random.List.generate` function to create a list of random numbers.
+This will return a `Result` type, which we can then handle in our code to retrieve the random number.
+
+For more complex cases, we can also generate random floats, booleans, and even lists of values using the `float`, `bool`, and `list` functions respectively. By utilizing these functions and providing different ranges and seed values, we can generate a wide range of random numbers to suit our needs.
 
 ## Deep Dive
-Under the hood, Elm uses a `Random.Generator` to create random numbers. This generator works by taking in a seed value and producing a new value based on this seed. Each time we call a random number function, we are essentially creating a new generator with a new seed.
 
-Additionally, we can use the `Random.step` function to manually manipulate the generator and control the randomness of the numbers being generated. This can be useful for creating reproducible results or creating specific distribution patterns.
+To understand how generating random numbers works in Elm, we need to take a closer look at the `Random` module. This module relies on a concept called pseudo-randomness, which uses algorithms to produce unpredictable sequences of numbers. Specifically, Elm uses the Mersenne Twister algorithm to generate random numbers.
+
+Another important aspect to consider is the use of seed values. In programming, a seed is an initial value that is used as a starting point for generating random numbers. The same seed will always produce the same sequence of random numbers. This is helpful for debugging and testing purposes, as we can provide a constant seed for consistent results.
+
+However, if we want truly random numbers, we can use `Time.now` as our seed value. This function will use the current time as the seed, resulting in a new sequence of random numbers each time the code is run.
 
 ## See Also
-- [Elm Random library documentation](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Generating random numbers in Elm blog post](https://dev.to/sophiabrandt/generating-random-numbers-in-elm-42p9)
 
-With the simple and efficient random number generation capabilities of Elm, we can add an extra layer of complexity and fun to our applications. So go ahead, try it out and see what kind of random numbers you can generate!
+- Official Elm documentation on the `Random` module: https://package.elm-lang.org/packages/elm/random/latest/
+- A tutorial on using random numbers in Elm: https://elmprogramming.com/random-numbers.html

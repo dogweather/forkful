@@ -1,67 +1,67 @@
 ---
 title:    "Python recipe: Printing debug output"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Debugging is an essential part of the programming process, and printing debug output is a crucial tool for developers. It allows us to quickly identify and understand any errors or issues in our code, making the debugging process more efficient and effective.
+We've all been there - spending hours or even days debugging our code, trying to pinpoint where the error lies. Sometimes we just can't figure it out on our own, and that's where printing debug output comes in handy. By printing out specific values or steps in our code, we can get a better understanding of what is happening and therefore, find the source of the issue more quickly.
 
 ## How To
-
-Printing debug output in Python is a simple process. We use the built-in `print()` function to display information to the console. Let's take a look at some coding examples.
+To print debug output in Python, we can use the `print()` function. Let's say we have a function that is supposed to calculate the average of a list of numbers. But for some reason, it's not giving us the correct answer. We can use `print()` to see what's going on inside the function.
 
 ```Python
-# Basic debug output
-print("Debug output: Hello World!")
+def calculate_average(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    average = total / len(numbers)
+    return average
 
-# Debugging variable values
-x = 5
-y = "Debug"
-print("x =", x)
-print("y =", y)
-
-# Debugging multiple variables
-print("x =", x, "and y =", y)
-
-# Debugging using string formatting
-print(f"x = {x} and y = {y}")
-
-# Debugging in a loop
-for i in range(1, 5):
-print("Debug output:", i)
+nums = [5, 10, 15]
+print(calculate_average(nums))
 ```
 
-The code above will produce the following output:
+Running the code above will output `10.0`, which is the incorrect average of the numbers in our list. Now let's add some `print()` statements to see what values our variables are taking on during each iteration of the loop.
+
+```Python
+def calculate_average(numbers):
+    total = 0
+    for num in numbers:
+        print("Current total:", total)
+        print("Current number:", num)
+        total += num
+    average = total / len(numbers)
+    return average
+
+nums = [5, 10, 15]
+print(calculate_average(nums))
+```
+
+This time, we will get a more detailed output that shows us the value of `total` and `num` in each iteration of the loop. This can help us pinpoint where the issue lies - maybe we are not adding the numbers correctly or our list is not being read properly.
 
 ```
-Debug output: Hello World!
-x = 5
-y = Debug
-x = 5 and y = Debug
-x = 5 and y = Debug
-Debug output: 1
-Debug output: 2
-Debug output: 3
-Debug output: 4
+Current total: 0
+Current number: 5
+Current total: 5
+Current number: 10
+Current total: 15
+Current number: 15
+10.0
 ```
 
-As you can see, printing debug output is a simple process that can provide valuable information while debugging your code. 
+By adding `print()` statements strategically, we have successfully debugged our code and found the issue.
 
 ## Deep Dive
+There are a few different ways we can use the `print()` function for debugging purposes. We can print out variables, steps in our code, or even specific messages to give us more information. Additionally, we can format our output using string formatting or the `repr()` function to get more detailed information about our variables.
 
-While the `print()` function is the most common and straightforward way to print debug output, there are other options available. 
-
-One useful method is using the `logging` module. This module allows for more advanced logging, such as adding timestamps and logging to files instead of just printing to the console. It also allows for different levels of logging, making it easier to organize and filter debug output.
-
-Another option is using the `pdb` debugger, which allows for stepping through code and inspecting variable values at any point. This can be helpful for more complex debugging scenarios.
+For more advanced debugging, we can also use the `logging` module in Python, which gives us more control over what we want to print and when. This can be particularly useful for larger projects and complex code.
 
 ## See Also
+For more information on printing debug output, check out these resources:
 
-- [Python Official Documentation on Debugging](https://docs.python.org/3/library/debugging.html)
-- [Python `logging` Module Documentation](https://docs.python.org/3/library/logging.html)
-- [Python `pdb` Debugger Documentation](https://docs.python.org/3/library/pdb.html)
-
-Debugging is an essential skill for any programmer, and printing debug output is a valuable tool to have in your arsenal. By following the simple steps outlined in this article, you'll be well on your way to becoming a successful debugger. Happy coding!
+- [Real Python - Using print statements for debugging](https://realpython.com/python-print/)
+- [Python Docs - Logging](https://docs.python.org/3/library/logging.html)
+- [Python Debugging Techniques](https://www.safaribooksonline.com/library/view/python-debugging-techniques/0596000472/ch01.html)

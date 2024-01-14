@@ -1,47 +1,40 @@
 ---
 title:    "PHP: Pisanie testów"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego testowanie jest ważne w programowaniu?
+## Dlaczego
 
-Testowanie jest nieodłączną częścią procesu pisania oprogramowania. Dzięki testom możemy upewnić się, że nasz kod działa poprawnie i uniknąć późniejszych błędów i problemów. To także pomaga w utrzymaniu jakości kodu oraz ułatwia współpracę między programistami. W tym artykule dowiesz się, dlaczego warto pisać testy w PHP i jak to zrobić.
+Pisanie testów jest niezbędnym krokiem w procesie tworzenia oprogramowania. Testy pomagają weryfikować poprawność kodu oraz zabezpieczają przed błędami, co jest szczególnie ważne w większych projektach zespołowych. W tym blogu pokażemy Ci, jak pisać testy w języku PHP i dlaczego jest to ważna umiejętność dla każdego programisty.
 
-## Jak pisać testy w PHP?
+## Jak to zrobić
 
-Pierwszym krokiem jest wybranie odpowiedniego narzędzia do testowania. W PHP najpopularniejszym jest framework PHPUnit, który oferuje wiele przydatnych funkcji do tworzenia testów. Następnie należy przygotować plik z testami, który będzie zawierał funkcje testujące poszczególne części kodu. Oto prosty przykład testu w PHPUnit:
+Testy są często pisane przy użyciu frameworka PHPUnit, który jest dostępny za darmo i łatwy w użyciu. Poniżej przedstawiamy przykładowy kod testu wykorzystującego ten framework.
 
 ```PHP
-class CalculatorTest extends PHPUnit_Framework_TestCase {
-
-    public function testAddition() {
+<?php
+class CalculatorTest extends PHPUnit_Framework_TestCase
+{
+    public function testAdd()
+    {
         $calculator = new Calculator();
-
-        // Oczekiwane wyniki
-        $expected = 6;
-
-        // Wywołanie metody z klasy i zapisanie wyniku
-        $result = $calculator->add(2, 4);
-
-        // Porównanie wyników
-        $this->assertEquals($expected, $result);
+        $result = $calculator->add(2, 2);
+        $this->assertEquals(4, $result);
     }
 }
 ```
 
-W tym przykładzie tworzymy klasę testową i w jej metodzie `testAddition` sprawdzamy, czy metoda `add` klasy `Calculator` działa poprawnie. Następnie wywołujemy tę metodę i porównujemy oczekiwany wynik z otrzymanym. W przypadku niezgodności, test zostanie zakończony niepowodzeniem.
+W powyższym przykładzie tworzymy test dla klasy Calculator, która posiada metodę add. Korzystając z PHPUnit, przetestowaliśmy jej działanie dla dwóch liczb i sprawdziliśmy, czy zwróci prawidłowy wynik. Dzięki temu mamy pewność, że nasza klasa działa poprawnie.
 
-## Głębszy zanurzenie w temat testowania
+## Wnikliwa analiza
 
-Testy mogą przybierać różne formy, w zależności od potrzeb i rodzaju projektu. Możemy testować pojedyncze metody, klasy, a nawet całe aplikacje. Warto także pamiętać o różnych typach testów, takich jak testy jednostkowe, integracyjne czy akceptacyjne. Każdy z nich ma swoje zadanie i pomaga w utrzymaniu jakości kodu.
+Pisanie testów nie tylko zapewnia nam bezpieczeństwo przed błędami, ale także pomaga w lepszym zrozumieniu kodu. Podczas tworzenia testów musimy przeanalizować funkcjonalność danej klasy lub metody, co pozwala nam na głębsze zrozumienie jej działania. Ponadto, testy są nieodłączną częścią TDD (Test Driven Development), dzięki czemu cały proces tworzenia oprogramowania staje się bardziej kontrolowany i efektywny.
 
-Pamiętaj również o zasadzie Arrange-Act-Assert, czyli przygotowaniu danych, wykonaniu kodu i sprawdzeniu wyniku. To pomaga w utrzymaniu czytelności testów i ułatwia znajdowanie błędów.
+## Zobacz również
 
-## Zobacz także
-
-- [Oficjalna dokumentacja PHPUnit](https://phpunit.de/documentation.html)
-- [Wprowadzenie do testowania w PHP](https://code.tutsplus.com/pl/tutorials/an-introduction-to-testing-in-php--net-35043)
-- [5 powodów, dla których warto pisać testy](https://phptherightway.com/#testing)
-- [PHPUnit dla początkujących](https://www.twilio.com/blog/2017/09/getting-started-with-phpunit.html)
+- [Dokumentacja PHPUnit](https://phpunit.de/documentation.html)
+- [Wprowadzenie do TDD](https://codemag.com/article/0901081/Test-Driven-Development-A-Breather-in-the-Continuous-Change)
+- [Podręcznik programisty PHP](http://php.net/manual/pl/)

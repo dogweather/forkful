@@ -1,55 +1,48 @@
 ---
-title:    "PHP: 发现字符串的长度"
+title:    "PHP: 寻找字符串的长度"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+在编写PHP程序时，经常会遇到需要计算字符串长度的情况。知道字符串的长度可以帮助我们更有效地处理和操作数据，因此掌握如何计算字符串长度是非常重要的。
 
-在编写PHP程序时，经常会遇到需要确定字符串长度的情况。这是因为字符串是使用最频繁的数据类型之一，掌握如何找到字符串长度可以帮助程序员更有效地操作和处理字符串。
-
-## 如何操作
-
-PHP提供了一个内建的函数`strlen()`来计算字符串的长度。让我们来看一个简单的例子：
-
+## 如何
+计算字符串长度的最简单方法是使用内置函数`strlen()`。让我们来看一个简单的例子：
 ```PHP
 <?php
-    $str = "Hello world!";
-    echo strlen($str);
+$string = "Hello World";
+$length = strlen($string);
+echo $length; // 输出：11
 ?>
 ```
-输出结果为：12
+这里，我们首先定义一个字符串变量，然后使用`strlen()`函数来获取它的长度，并将长度存储在变量`$length`中，最后使用`echo`语句将长度输出到屏幕上。
 
-在这个例子中，我们定义了一个字符串变量`$str`，然后使用`strlen()`函数来计算它的长度，并用`echo`语句输出结果。
-
-除了直接使用`strlen()`函数，还可以通过将字符串转换成数组，然后使用数组的`count()`函数来计算字符串的长度。例如：
-
+我们也可以使用循环来计算字符串长度，例如：
 ```PHP
 <?php
-    $str = "This is a string";
-    $arr = str_split($str);
-    echo count($arr);
+$string = "Hello World";
+$length = 0;
+for($i = 0; $string[$i] != NULL; $i++) {
+    $length++;
+}
+echo $length; // 输出：11
 ?>
 ```
-输出结果为：16
+在这个例子中，我们使用一个循环来遍历字符串中的每个字符，并通过计数器`$length`来记录字符的数量。当循环结束时，计数器的值就是字符串长度。
 
-## 深入了解
+## 深入探讨
+在PHP中，字符串的长度实际上是指字符串中包含的字节数。这也意味着，如果字符串中包含多字节字符（如中文），那么它的长度将大于实际字符数。
 
-当我们使用`strlen()`函数来计算字符串的长度时，函数实际上是通过对字符串中的每个字符进行计数来确定长度的。所以，这意味着`strlen()`函数也可以用来计算字符串中特定字符的数量。例如：
-
-```PHP
-<?php
-    $str = "Hello World!";
-    echo strlen($str) - strlen("l");
-?>
-```
-输出结果为：10
-
-这个例子中，我们用字符串的总长度减去字符串中字母"l"的数量，来得到字符串中除"l"外其他字符的数量。这显示了`strlen()`函数的灵活性。
+另外，`strlen()`函数也适用于数组和对象。当传入数组时，它将返回数组元素的数量，当传入对象时，它将返回对象属性的数量。
 
 ## 参考链接
+- [PHP `strlen()`函数文档](https://www.php.net/manual/zh/function.strlen.php)
+- [PHP 字符串处理指南](https://www.php.net/manual/zh/book.strings.php)
+- [逐字符地检索字符串](https://www.php.net/manual/zh/function.mb-substr.php)
 
-- [PHP字符串函数手册 - strlen()](https://www.php.net/manual/zh/function.strlen)
-- [PHP数组函数手册 - count()](https://www.php.net/manual/zh/function.count)
-- [PHP字符串转换成数组 - str_split()](https://www.php.net/manual/zh/function.str-split)
+## 参见
+- [PHP 数组长度如何计算](https://www.example.com/p/array-length-php)
+- [如何处理多字节字符的字符串长度](https://www.example.com/p/string-length-multibyte-php)

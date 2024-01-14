@@ -1,44 +1,57 @@
 ---
 title:    "Swift recipe: Getting the current date"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In any programming language, being able to retrieve the current date is a fundamental function. Whether it’s for displaying the date on a UI or for data manipulation, having the current date is essential for many applications. In Swift, getting the current date is simple and can be done with just a few lines of code.
+Have you ever needed to know the current date in your Swift program? Whether you're building a scheduling app or simply displaying the current date in a user interface, getting the current date is a common task in programming.
 
 ## How To
-To get the current date in Swift, we will be using the `Date` class from the `Foundation` framework. Here’s a basic example of how to retrieve the current date and print it to the console:
+Fortunately, Swift makes it easy to get the current date with just a few lines of code and some built-in functions. Let's take a look at how to get the current date and format it in various ways.
 
 ```Swift
-// Import Foundation framework
+// Import the Foundation framework
 import Foundation
 
-// Create an instance of Date using the current date and time
+// Get the current date and assign it to a Date variable
 let currentDate = Date()
 
-// Create an instance of DateFormatter to format the date
+// Print the current date in the format "Month Day, Year"
 let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "MMMM dd, yyyy"
+let formattedDate = dateFormatter.string(from: currentDate)
+print(formattedDate) // Output: March 23, 2021
 
-// Set the date format to MM/dd/yyyy
-dateFormatter.dateFormat = "MM/dd/yyyy"
+// Get the current date and time in the format "Month Day, Year - Hour:Minutes"
+dateFormatter.dateFormat = "MMMM dd, yyyy - HH:mm"
+let formattedDateTime = dateFormatter.string(from: currentDate)
+print(formattedDateTime) // Output: March 23, 2021 - 18:23
 
-// Convert the date to a string
-let stringDate = dateFormatter.string(from: currentDate)
+// Get the current day of the week
+let calendar = Calendar.current
+let weekDay = calendar.component(.weekday, from: currentDate)
+print(weekDay) // Output: 3 (corresponding to Tuesday)
 
-// Print the date to the console
-print(stringDate) // Output: "01/01/2020"
 ```
 
-The `DateFormatter` class allows us to format the date in any way we want. In the example above, we used the `dateFormat` property to specify the format we want to use. You can change the format to suit your needs, such as displaying the time along with the date, or using a different date format.
+The first step is to import the Foundation framework, which contains the Date and DateFormatter classes. Then, we use the Date class to get the current date and assign it to a variable. Notice that Swift automatically assigns the current date and time as the default value, so we don't need to specify any parameters.
+
+Next, we use the DateFormatter class to format the current date in the desired format. In our first example, we set the date format to "MMMM dd, yyyy", which stands for the full month name (March), the day of the month (23), and the four-digit year (2021).
+
+In our second example, we add the time to the date format by using "HH:mm". Notice that we use two "H" characters for the hour (24-hour format) and two "m" characters for the minutes.
+
+Finally, we can use the Calendar class to get more specific information about the current date, such as the day of the week. In our example, we use the "weekday" component to get a number corresponding to Tuesday (3).
 
 ## Deep Dive
-Under the hood, the `Date` class represents a specific point in time that is independent of time zones or calendars. It uses the UTC (Coordinated Universal Time) time zone to ensure consistency across different devices and regions. This means that no matter where you are in the world, the same `Date` object will always represent the same point in time.
+Behind the scenes, Swift is using the Foundation framework's NSCalendar and NSDateFormatter classes to get the current date and format it. These classes are based on the Gregorian calendar, which is the most widely used calendar system in the world.
 
-It’s important to note that getting the current date is not the same as getting the current time. The `Date` class stores the current date and time accurate to the millisecond, but it does not include information about the current time zone. If you want to know the current time in your local time zone, you will need to use the `TimeZone` class in conjunction with the `Date` class.
+Additionally, we can manipulate the current date using the DateComponents class to get specific components (year, month, day, etc.) and modify them as needed.
 
 ## See Also
 - [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
 - [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Apple Developer Documentation - TimeZone](https://developer.apple.com/documentation/foundation/timezone)
+- [Apple Developer Documentation - Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [NSHipster - Dates and Times in Swift](https://nshipster.com/dateformatter/)

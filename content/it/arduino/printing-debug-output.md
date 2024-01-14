@@ -1,72 +1,34 @@
 ---
 title:    "Arduino: Stampa dell'output di debug"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Spesso quando si programma su Arduino, può essere utile visualizzare informazioni di debug durante l'esecuzione del codice. Ciò consente di avere un maggiore controllo sul funzionamento del programma e di individuare eventuali errori.
+Spesso durante lo sviluppo di progetti Arduino, è necessario comprendere cosa sta accadendo all'interno del nostro codice. Qui entra in gioco l'uso della stampa dell'output di debug. Con la stampa di output di debug, è possibile ottenere informazioni dettagliate sul comportamento del nostro codice e utilizzarle per risolvere eventuali errori o problemi.
 
 ## Come fare
 
-Per stampare output di debug su Arduino, è possibile utilizzare la funzione "Serial.println()". Questa funzione invia una stringa di testo al monitor seriale, che può essere visualizzata utilizzando il software di monitoraggio seriale come il monitor seriale dell'IDE di Arduino o un programma come PuTTY.
+Per stampare l'output di debug su Arduino, è necessario utilizzare la funzione `Serial.println()`. Questa funzione accetta come parametro un valore o una stringa da stampare sulla console seriale. Vediamo un esempio di come utilizzarla:
 
 ```Arduino
-void setup() {
-  // Inizializza la comunicazione seriale a una velocità di 9600 baud
-  Serial.begin(9600); 
-}
-
-void loop() {
-  // Stampa la stringa "Hello World!" nel monitor seriale
-  Serial.println("Hello World!"); 
-  delay(1000); // Aspetta un secondo
-}
-```
-### Esempio di output:
-```
-Hello World!
-Hello World!
-Hello World!
+int valore = 5;
+Serial.println("Il valore è: ");
+Serial.println(valore);
 ```
 
-In più, il monitor seriale può essere utilizzato per inviare valori numerici o variabili come parte della stringa di testo.
-
-```Arduino
-int temperature = 25;
-float humidity = 65.5;
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  // Stampa la temperatura e l'umidità attuali nel monitor seriale
-  Serial.println("La temperatura è: " + String(temperature) + "°C");
-  Serial.println("L'umidità è: " + String(humidity) + "%");
-  delay(1000);
-}
-```
-### Esempio di output:
-```
-La temperatura è: 25°C
-L'umidità è: 65.5%
-```
-
-Inoltre, è possibile utilizzare la funzione "Serial.print()" per stampare senza una nuova riga alla fine di ogni chiamata, utile per la formattazione di output più complesse.
+Questa sequenza di codice stamperà sulla console seriale la stringa "Il valore è: " seguita da un'altra riga contenente il valore della variabile `valore`, che in questo caso è 5.
 
 ## Approfondimento
 
-Una delle funzioni più utili del monitor seriale è la possibilità di visualizzare i valori delle variabili durante l'esecuzione del programma. Questo può aiutare a individuare problemi o a verificare se le variabili stanno assumendo i valori corretti.
+La funzione `Serial.println()` è particolarmente utile quando si lavora con sensori o moduli esterni. Ad esempio, si può utilizzare per visualizzare i valori letti da un sensore di temperatura o per verificare il corretto funzionamento di un modulo.
 
-Oltre alle funzioni "Serial.print()" e "Serial.println()", ci sono anche altre funzioni utili per il debug, come "Serial.write()" che invia byte di dati al monitor seriale e "Serial.read()" che legge byte del monitor seriale.
-
-Inoltre, il monitor seriale può essere impostato per visualizzare diverse informazioni, come timestamp delle chiamate delle funzioni o l'utilizzo della memoria, utilizzando le impostazioni disponibili nell'IDE di Arduino.
+È possibile utilizzare anche la funzione `Serial.print()` che ha la stessa funzionalità di `Serial.println()`, ma non aggiunge un carattere di ritorno a capo automaticamente alla fine della stampa. Inoltre, è possibile specificare il numero di cifre dopo la virgola da stampare utilizzando la funzione `Serial.println(valore, numeroCifre);`.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Arduino sulla comunicazione seriale](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Tutorial di Adafruit sul monitor seriale di Arduino](https://learn.adafruit.com/arduino-tips-tricks-and-techniques/serial-console-output)
-- [Guida di SparkFun su come leggere e scrivere sul monitor seriale di Arduino](https://learn.sparkfun.com/tutorials/terminal-basics/arduino-serial-monitor)
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Tutorial su come utilizzare la stampa di output di debug su Arduino](https://www.arduino.cc/en/Tutorial/Foundations/PrintDebugging)

@@ -1,48 +1,55 @@
 ---
-title:    "C#: Rozpoczynanie nowego projektu"
+title:    "C#: Rozpoczęcie nowego projektu"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zastanawiasz się, dlaczego warto zacząć nowy projekt w C#? Jest wiele powodów, dla których warto rozważyć ten język programowania. C# jest silnie typowany i ułatwia pracę z obiektami, co sprawia, że jest wygodny w użyciu dla początkujących programistów. Ponadto, jest to język wykorzystywany w wielu branżach, dzięki czemu zdobycie w nim umiejętności otwiera wiele możliwości zawodowych.
+Rozpoczęcie nowego projektu może być wyzwaniem, ale może również być źródłem wielkiej satysfakcji. Możesz zacząć tworzyć coś zupełnie nowego, wykorzystując swoje umiejętności programistyczne i kreatywność.
 
-## Jak zacząć
+## Jak to zrobić
 
-Jeśli zdecydujesz się na rozpoczęcie nowego projektu w C#, będzie Ci potrzebne odpowiednie środowisko programistyczne. Jedną z możliwości jest Visual Studio, narzędzie stworzone przez Microsoft specjalnie na potrzeby programowania w C#. Po zainstalowaniu Visual Studio, możesz już zacząć pisać swój kod.
+Aby rozpocząć nowy projekt w C#, musisz mieć zainstalowane oprogramowanie Visual Studio. Następnie możesz utworzyć nowy projekt, wybierając odpowiednią opcję z menu "File". Możesz wybrać różne szablony projektów, w zależności od swoich potrzeb.
+
+W poniższym przykładzie stworzymy prosty kalkulator, który będzie dodawał dwie liczby wprowadzone przez użytkownika.
 
 ```C#
-// Przykładowy kod w C#
-
 using System;
 
-namespace HelloWorld
+namespace Calculator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Witaj świecie!");
+            Console.WriteLine("Wprowadź pierwszą liczbę:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Wprowadź drugą liczbę:");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            int result = num1 + num2;
+
+            Console.WriteLine("Wynik dodawania: " + result);
+            Console.ReadKey();
         }
     }
 }
 ```
 
-Skompiluj i uruchom ten program, a zobaczysz w konsoli wyświetloną frazę "Witaj świecie!".  Przykład ten pokazuje podstawową strukturę programu w C#. Pamiętaj, że podczas pisania kodu podpowiedzi i sugestie mogą Ci pomóc, więc nie bój się ich używać.
+Po uruchomieniu programu, zostaniemy poproszeni o podanie dwóch liczb, a następnie zostanie wyświetlony wynik dodawania.
 
-## Głębsza analiza
+## Głębsze zanurzenie
 
-Zacząć nowy projekt w C# to dopiero początek. Ważne jest, aby znać podstawowe pojęcia i konstrukcje języka, takie jak zmienne, pętle czy instrukcje warunkowe. Dobrym pomysłem jest też zapoznać się z mechanizmem dziedziczenia, który jest jedną z najważniejszych cech obiektowości języka C#.
+Zanim zaczniesz tworzyć nowy projekt, warto spędzić nieco czasu na odpowiednim zaplanowaniu. To ważne, abyś miał jasne cele, wiedział jakie funkcjonalności chcesz zaimplementować i jakie struktury danych wykorzystać.
 
-Aby napisać solidny i wydajny kod, konieczne jest również poznanie dobrych praktyk programistycznych, takich jak pisane testów jednostkowych czy wykorzystywanie wzorców projektowych. Nie zapominaj też o dokumentacji swojego kodu - pomoże to Tobie i innym programistom w przyszłej pracy nad projektem.
+Kolejnym ważnym krokiem jest tworzenie czystego i czytelnego kodu. Dzięki temu łatwiej będzie Ci się orientować w swoim projekcie, a także będzie łatwiej wprowadzać późniejsze zmiany.
 
-## Zobacz także 
+## Zobacz także
 
-Sprawdź poniższe linki, aby dowiedzieć się więcej o programowaniu w C#:
-
-- [Dokumentacja języka C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
-- [Oficjalna strona Visual Studio](https://visualstudio.microsoft.com/pl/)
-- [Przewodnik po wzorcach projektowych w C#](https://refactoring.guru/pl/design-patterns/csharp)
-- [Kurs wprowadzenia do C# na platformie Udemy](https://www.udemy.com/course/csharp-dla-poczatkujcych/?referralCode=2B4E2A6AD7F8B7971671)
+- [Podstawowe pojęcia w programowaniu w języku C#](https://4programmers.net/Artykuly/Podstawy_programowania_w_C_Sharp)
+- [Jak wykonać pierwszy krok w programowaniu w języku C#](https://devstyle.pl/2016/03/29/1-krok-programowanie-w-jezyku-c/)
+- [Tworzenie i uruchamianie nowego projektu w Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/get-started/tutorial-console?view=vs-2019)

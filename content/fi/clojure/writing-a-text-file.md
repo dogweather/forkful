@@ -1,46 +1,38 @@
 ---
 title:    "Clojure: Tekstitiedoston kirjoittaminen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Teksti-tiedoston kirjoittaminen on olennainen osa ohjelmointia. Se mahdollistaa ohjelmoijille tallentaa ja jakaa tietoa koodin toiminnasta ja tarkoituksesta.
+Miksi kirjoittaa tekstitiedostoa? Tekstiedostot ovat erittäin hyödyllisiä työkaluja, kun haluat tallentaa tietoa tekstimuodossa. Ne ovat myös hyvä tapa tallentaa ja jakaa koodia, jotta sen muokkaaminen ja ylläpitäminen olisi helpompaa.
 
 ## Miten
 
-Ohjelmointikyselyn aloittaminen on helppoa Clojurella. Aloita avaamalla tekstieditori ja kirjoittamalla seuraava koodinpätkä:
-
 ```Clojure
-(defn teksti-tiedosto [teksti]
-  (spit "tiedosto.txt" teksti))
+;; Luodaan uusi tiedosto nimeltä "tekstitiedosto.txt"
+(def tiedosto (io/file "tekstitiedosto.txt"))
+
+;; Kirjoitetaan tekstiä tiedostoon
+(with-open [stream (io/writer tiedosto)]
+    (.write stream "Tämä on tekstiä!"))
+
+;; Suljetaan tiedosto
+(.close stream)
 ```
 
-Tämä luo funktion nimeltä "teksti-tiedosto", joka ottaa parametrinaan tekstin ja tallentaa sen "tiedosto.txt" -tiedostoon. Voit kutsua tätä funktiota seuraavasti:
+Kun avaat "tekstitiedosto.txt" tiedoston, näet sen sisältävän tekstin "Tämä on tekstiä!". Voit myös käyttää `(.writeLine stream "Tämä on eri rivi!")` lisätäksesi tekstin eri riveille.
 
-```Clojure
-(teksti-tiedosto "Hei, tämä on teksti-tiedosto.")
-```
+## Syvällinen sukellus
 
-Tämän pitäisi luoda tiedosto nimeltä "tiedosto.txt" ja tallentaa siihen annettu teksti. Voit nyt avata tiedoston ja tarkistaa, että se tallennettiin oikein.
+Tekstitiedoston luominen ja kirjoittaminen on erittäin hyödyllistä, mutta on tärkeää muistaa myös tiedoston sulkeminen käytön jälkeen. Tämä estää mahdolliset muutokset tiedostoon ja vapauttaa resursseja.
 
-## Syvällisempi sukellus
-
-Clojurella on monia eri tapoja kirjoittaa teksti-tiedostoja, mutta yksi yleisimmin käytetyistä on "spit" -funktio, jonka käytimme esimerkissä. Tämä funktio ottaa ensimmäisenä parametrinaan tiedoston nimen ja toisena parametrinaan tallennettavan tekstin.
-
-Voit myös käyttää "slurp" -funktiota lukeaksesi tekstitiedoston sisällön ja "with-open" -lauseketta avataksesi ja sulkeaksesi tiedoston automaattisesti.
-
-```Clojure
-(defn lue-tiedosto [tiedosto]
-  (slurp tiedosto))
-
-(with-open [tiedosto (reader "tiedosto.txt")]
-  (println (lue-tiedosto tiedosto)))
-```
+Voit myös käyttää `(.flush stream)` ennen tiedoston sulkemista, jotta kaikki voimassa olevat muutokset kirjoitetaan tiedostoon.
 
 ## Katso myös
-- [Clojure dokumentaatio](https://clojure.org/index)
-- [Clojure rekisteröinti](https://clojuredocs.org/)
-- [Clojure-kurssit](https://www.clojuristuksenkeltainenkirja.fi/kurssit)
+
+- [Clojure io -kirjasto](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Tekstitiedoston kirjoittaminen ohjeet](https://clojure.org/guides/io)

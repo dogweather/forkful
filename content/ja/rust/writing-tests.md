@@ -1,21 +1,26 @@
 ---
-title:    "Rust: テストを書く"
+title:    "Rust: テストの書き方"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜテストを書くのか
+プログラミングにおいて、私たちは常に正しいコードを書くことを目指しています。しかし、実際の開発ではバグが発生することもあります。テストを書くことで、コードの正しさを確認し、バグを発見しやすくすることができます。さらに、テストを書くことでコードの品質が向上し、今後の変更や追加に対しても安心してコードを変更することができます。
 
-Rustプログラミングを行う人々にとって、テストを書くことの重要性は言うまでもありません。しかし、それでもなぜテストを書く必要があるのでしょうか？それは、テストによってコードが期待通りに動作することを確認できるからです。テストを書くことによって、バグの早期発見やコードの品質向上など、さまざまなメリットが得られます。
+##テストの書き方
+テストを書くには、以下のような手順を踏みます。
 
-## 方法
-
-まずは、実際にRustでテストを書く方法を見てみましょう。以下のコードは、2つの数値を加算するシンプルな関数をテストするものです。
-
+1. テスト用のRustプロジェクトを作成する
 ```Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
+cargo new myproject --lib
+```
+
+2. `src/lib.rs`ファイルにテストしたいコードを記述する
+```Rust
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
 
 #[cfg(test)]
@@ -24,25 +29,30 @@ mod tests {
 
     #[test]
     fn test_add() {
-        assert_eq!(add(3, 5), 8);
+        assert_eq!(add(2, 3), 5);
     }
 }
 ```
+ `add`関数を`pub`で公開し、テスト用の`tests`モジュール内でテストを定義します。`assert_eq`マクロを使うことで、テストが成功したかどうかを確認します。
 
-上記のコードは、`add`関数に対して`assert_eq`マクロを使用し、期待する結果と実際の結果が一致するかをテストしています。もしテストが失敗した場合は、エラーメッセージを通してどの部分のコードに問題があるかを特定することができます。
+3. テストを実行する
+```Rust
+cargo test
+```
+ターミナルには以下のような出力が表示されるでしょう。
+```text
+running 1 test
+test tests::test_add ... ok
 
-## ディープダイブ
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
 
-テストを書く際に注意すべきポイントはいくつかあります。まず、バグを防ぐためにテストカバレッジを高めることが重要です。また、テストコードも品質を保つためにきちんとメンテナンスする必要があります。さらに、ユニットテストや統合テストなど、適切な種類のテストを選択することも重要です。
+##テストの深掘り
+テストを書く際には、テストカバレッジやTDD（Test Driven Development）など、さまざまなテスト手法があります。また、`#[should_panic]`や`#[ignore]`といったアトリビュートを使用することで、より複雑なテストケースを作成することもできます。
 
-## その他のリソース
+しかし、テストを書くにあたって最も大切なのは、コードが読みやすいことです。テストを読めば、そのコードがどのような動作をするかがわかるようにすることが重要です。また、テストを書くことで多くのバグを未然に防ぐことができます。テストはプログラムの信頼性を高めるために欠かせないものです。
 
-- [Rustでのテストの書き方](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [テスト駆動開発入門](https://tdd.coding-guidelines.com/rust/)
-- [Rustのテスト実行時にカバレッジを取得する方法](https://blog.ymgyt.io/entry/2021/04/25/235926)
-
-## 関連リンク
-
-- [Rust公式ドキュメント：テスト](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust公式ブログ：テスト駆動開発入門](https://blog.rust-lang.org/2021/08/13/TDD-with-Rust.html)
-- [テストツール：cargo test](https://doc.rust-lang.org/cargo/commands/cargo-test.html)
+##See Also
+- [Official Rust Testing Documentation](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rust Test Tutorial: Getting Started with Writing Tests](https://www.youtube.com/watch?v=aHyxqJdY4zo)
+- [The Red, Green, Refactor Cycle of Test Driven Development](https://medium.com/@amlcurran/the-red-green-refactor-cycle-of-test-driven-development-ee98d973b4d9)

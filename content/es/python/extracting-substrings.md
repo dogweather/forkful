@@ -1,72 +1,50 @@
 ---
 title:    "Python: Extrayendo subcadenas"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Extraer subcadenas es una habilidad esencial en la programación de Python, ya que nos permite manipular y obtener información específica de una cadena de texto. Esto es especialmente útil en la limpieza y organización de datos, y en el procesamiento de texto.
+Extraer subcadenas es una habilidad útil en la programación de Python ya que nos permite manipular y obtener información específica de una cadena de texto. Esto es especialmente útil en proyectos de procesamiento de lenguaje natural o manejo de grandes conjuntos de datos.
 
 ## Cómo hacerlo
 
-Existen varias formas de extraer subcadenas en Python, pero una de las más comunes es utilizando el método `substring()` en una cadena de texto.
+Para extraer una subcadena de una cadena de texto en Python, podemos utilizar el método `substring()` o la sintaxis de rebanado `string[índice_inicio:índice_fin]`. Veamos un ejemplo de cada método:
 
-```Python
-cadena = "¡Hola Mundo!"
-subcadena = cadena.substring(1, 4)
-print(subcadena)
-```
-El código anterior imprimirá "ola", ya que estamos extrayendo los caracteres desde la posición 1 hasta la 4 de la cadena original. Tener en cuenta que la posición inicial es 0 y no 1.
+````Python
+# Método substring - Extraer los primeros 5 caracteres de una cadena
+cadena = "Hola mundo"
+subcadena = cadena.substring(0,5)
+print(subcadena) # Salida: Hola
 
-Otra forma de extraer subcadenas es utilizando la notación de "rebanadas" (`slicing notation`). En este caso, especificaremos la posición inicial y final, separadas por dos puntos.
+# Sintaxis de rebanado - Extraer los últimos 5 caracteres de una cadena
+cadena = "Hola mundo"
+subcadena = cadena[7:12]
+print(subcadena) # Salida: mundo
+````
 
-```Python
-cadena = "Python es increíble"
-subcadena = cadena[0:6]
-print(subcadena)
-```
+También podemos usar expresiones regulares para extraer subcadenas que cumplan con un patrón específico. Por ejemplo, si queremos encontrar todas las palabras con más de 5 letras en una cadena, podemos usar la función `findall()` del módulo `re`:
 
-Este código imprimirá "Python", ya que estamos seleccionando desde la posición 0 hasta la 6 (no incluyendo la 6) de la cadena original.
+````Python
+import re
 
-También podemos utilizar números negativos para representar posiciones desde el final de la cadena.
-
-```Python
-cadena = "¡Bienvenidos a Python!"
-subcadena = cadena[-7:-1]
-print(subcadena)
-```
-
-Este código nos dará como resultado "Python", ya que estamos seleccionando desde la posición -7 hasta la -1 (no incluyendo la -1) a partir del final de la cadena.
+cadena = "Bienvenidos al mundo de la programación"
+patron = r"\b\w{6,}\b" # Expresión regular para encontrar palabras con más de 5 letras
+subcadenas = re.findall(patron, cadena)
+print(subcadenas) # Salida: ['Bienvenidos', 'programación']
+````
 
 ## Profundizando
 
-Además de la extracción básica de subcadenas, también podemos utilizar otras funciones y métodos para dividir cadenas en subcadenas más pequeñas. Por ejemplo, podemos utilizar el método `split()` para dividir una cadena en una lista de subcadenas, utilizando un separador específico.
+Al extraer subcadenas en Python, es importante tener en cuenta que los índices se cuentan desde 0 y que el índice final especificado en la sintaxis de rebanado no se incluirá en la subcadena resultante. También podemos utilizar números negativos en la sintaxis de rebanado para contar desde el final de la cadena.
 
-```Python
-cadena = "manzana, banana, pera, sandía"
-subcadenas = cadena.split(", ")
-print(subcadenas)
-```
-
-El resultado será una lista con las subcadenas "manzana", "banana", "pera" y "sandía".
-
-También podemos utilizar expresiones regulares para definir patrones específicos y extraer subcadenas que cumplan con dichos patrones.
-
-```Python
-import re
-
-cadena = "El código es 1234 y la contraseña es 5678"
-patron = "\d{4}"
-subcadenas = re.findall(patron, cadena)
-print(subcadenas)
-```
-
-El resultado será una lista con las subcadenas "1234" y "5678", ya que estamos buscando secuencias de 4 dígitos en la cadena original.
+Además, si tratamos de acceder a un índice que está fuera del rango de la cadena, obtendremos un error `IndexError`.
 
 ## Ver también
 
-- Documentación oficial de Python: https://www.python.org/
-- Tutorial de subcadenas en W3Schools: https://www.w3schools.com/python/python_strings.asp
-- Guía de expresiones regulares en Python: https://docs.python.org/3.8/howto/regex.html
+- Documentación oficial de Python sobre `str.substring()`: https://docs.python.org/es/3/library/stdtypes.html#str.substring
+- Tutorial de programación en Python por SoloLearn: https://www.sololearn.com/Course/Python/
+- Ejemplos de expresiones regulares para Python: https://regexone.com/references/python

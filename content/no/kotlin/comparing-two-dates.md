@@ -1,40 +1,49 @@
 ---
-title:    "Kotlin: Sammenligning av to datoer"
+title:    "Kotlin: Sammenligner to datoer"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å sammenligne to datoer kan være en viktig oppgave innenfor programmering, spesielt når man skal håndtere data og beregne forskjeller mellom to tidspunkter. Dette kan være nyttig for å lage alarmer, tidsbaserte beregninger og mye mer. I denne bloggposten vil jeg vise deg hvordan du kan sammenligne to datoer i Kotlin.
+# Hvorfor
 
-## Hvordan
-For å sammenligne to datoer i Kotlin kan vi bruke metoden `isEqual` fra `LocalDate`-klassen. Denne metoden sammenligner to datoer og returnerer en boolean-verdi som indikerer om de er like eller ikke. La oss se på et eksempel hvor vi sammenligner to forskjellige datoer:
+Mange programmerere står ofte overfor en utfordring når de trenger å sammenligne to datoer. Dette kan være for å sjekke om en hendelse har skjedd etter en annen eller for å beregne tidsforskjellen mellom to hendelser. Uansett årsaken, er det viktig å vite hvordan man effektivt kan sammenligne to datoer i Kotlin.
 
+# Hvordan gjør man det
+
+Sammenligning av datoer i Kotlin kan gjøres på flere måter, men den mest effektive måten er ved hjelp av `LocalDate` og `ChronoUnit` klassene. Følgende er et eksempel på hvordan man kan sammenligne to datoer og finne tidsforskjellen mellom dem:
 ```Kotlin
-val dato1 = LocalDate.of(2021, 8, 10)
-val dato2 = LocalDate.of(2021, 8, 15)
+val dato1 = LocalDate.of(2021, Month.AUGUST, 15)
+val dato2 = LocalDate.now()
 
-if(dato1.isEqual(dato2)) {
-    println("Datoene er like.")
-else {
-    println("Datoene er forskjellige.")
+// Sjekker om dato2 er etter dato1
+if (dato2.isAfter(dato1)) {
+    println("Dato 2 kommer etter dato 1")
 }
+
+// Beregner tidsforskjellen i dager mellom dato2 og dato1
+val dager = ChronoUnit.DAYS.between(dato1, dato2)
+println("Det er $dager dager mellom dato1 og dato2")
 ```
 
-Dette ville gi oss utskriften `Datoene er forskjellige.` siden datoene ikke er like.
+I dette eksempelet bruker vi `LocalDate` og `ChronoUnit` for å sammenligne datoer og finne tidsforskjellen mellom dem. Dette er en enkel og effektiv måte å sammenligne datoer på i Kotlin.
 
-Vi kan også sammenligne datoer basert på forskjellige kriterier, for eksempel år, måned eller dag. Dette kan gjøres ved å bruke metodene `isEqual`, `isBefore` og `isAfter` fra `LocalDate`-klassen.
+# Dypdykk
 
-## Deep Dive
-Når det kommer til å sammenligne datoer, er det flere ting man må ta hensyn til. For eksempel kan man stå overfor problemer med forskjellige tidssoner eller tidsformater. Derfor er det viktig å være bevisst på hvilken metode man bruker for å sammenligne datoer, og å sørge for at man håndterer alle mulige scenarioer på en riktig måte.
+Hvis du ønsker en mer avansert måte å sammenligne datoer på, kan du også bruke `ZonedDateTime` klassen. Denne klassen lar deg sammenligne datoer i forskjellige tidssoner og utføre mer komplekse manipulasjoner. Her er et eksempel på hvordan du kan bruke `ZonedDateTime` for å finne tidsforskjellen mellom to datoer:
+```Kotlin
+val dato1 = ZonedDateTime.of(2021, Month.DECEMBER.value, 1, 0, 0, 0, 0, ZoneId.of("Europe/Oslo"))
+val dato2 = ZonedDateTime.of(2022, Month.JANUARY.value, 1, 0, 0, 0, 0, ZoneId.of("Asia/Tokyo"))
 
-En annen ting man må være oppmerksom på er hvilken datoklasse man bruker. I eksemplet over brukte vi `LocalDate`-klassen, men det finnes også andre klasser som kan brukes, som `ZonedDateTime` eller `Instant` for å håndtere tidssoner og tidsformater på en mer presis måte.
+// Beregner tidsforskjellen i timer mellom dato2 og dato1
+val timer = ChronoUnit.HOURS.between(dato1, dato2)
+println("Det er $timer timer mellom dato1 og dato2")
+```
 
-Det er også verdt å merke seg at det finnes mange nyttige biblioteker og funksjoner tilgjengelig for å håndtere datoer og tid i Kotlin, som for eksempel `java.time`-pakken, Joda-Time og ThreeTen-BP. Det kan være nyttig å utforske disse ressursene for å finne den beste tilnærmingen til å håndtere datoer i ditt eget prosjekt.
+Som du kan se, å bruke `ZonedDateTime` gir flere muligheter og fleksibilitet når man sammenligner datoer.
 
-## Se Også
-- [API-dokumentasjon for `LocalDate.isEqual()`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#isEqual-java.time.chrono.ChronoLocalDate-)
-- [Kotlin sin `java.time`-pakke](https://kotlinlang.org/docs/reference/datetime-overview.html)
-- [Joda-Time biblioteket](https://www.joda.org/joda-time/)
-- [ThreeTen-BP biblioteket](https://www.threeten.org/threetenbp/)
+# Se også
+
+- [Kotlin Dokumentasjon](https://kotlinlang.org/docs/home.html)
+- [Kotlin Reference for Date and Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-date-time/index.html)

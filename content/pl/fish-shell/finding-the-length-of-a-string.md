@@ -1,39 +1,31 @@
 ---
 title:    "Fish Shell: Znajdowanie długości ciągu znaków"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak policzyć długość tekstu w swoim kodzie? Może chcesz poznać długość nazwy pliku lub ścieżki, lub po prostu sprawdzić, czy łańcuch znaków jest wystarczająco długi? W tym artykule dowiecie się, jak w prosty sposób wykonać tę czynność w środowisku Fish Shell.
+Dlaczego ktoś powinien zajmować się szukaniem długości ciągu znaków? Proste - jest to podstawowa umiejętność w programowaniu, której często używamy w różnych sytuacjach. Może to być przydatne, na przykład, w weryfikowaniu poprawności wprowadzonych danych lub w manipulowaniu tekstem w specyficzny sposób.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Zacznijmy od zdefiniowania zmiennej przechowującej nasz tekst. W tym przypadku będzie to "Hello World!". Następnie użyjmy wbudowanej funkcji `string length` (długość łańcucha) i przekażmy jako parametr naszą zmienną tekstową:
-
-```Fish Shell
-set text "Hello World!"
-string length $text
-```
-
-To powinno zwrócić wynik 12, ponieważ nasz tekst składa się z 12 znaków. Możemy również odwoływać się do konkretnych znaków w tekście za pomocą `string sub` (dóbr znaku) i `count` (licznika). Na przykład, jeśli chcemy poznać długość tylko pierwszych 5 znaków, możemy to zrobić w ten sposób:
+Zanim przejdziemy do głębszych wód, spójrzmy najpierw na prosty kod, który pomoże nam znaleźć długość ciągu znaków. W przypadku Fish Shell, możemy tego dokonać za pomocą funkcji `strlen`:
 
 ```Fish Shell
-set text "Hello World!"
-string length (string sub -c 0 5 $text)
+set string "To jest przykładowy ciąg znaków"
+echo (strlen $string)
 ```
 
-To zwróci wynik 5, ponieważ liczy tylko pierwsze 5 znaków.
+Po uruchomieniu powyższego kodu, otrzymamy wynik 32, co jest dokładną długością naszego ciągu znaków. Proste prawda?
 
 ## Deep Dive
 
-W Fish Shell, funkcja `string length` wykorzystuje wewnętrzne narzędzia systemowe do obliczania długości tekstu. Jest ona bardzo szybka i wydajna, więc nie musisz się martwić o wpływ na wydajność swojego kodu.
-
-Ponadto, funkcja `string length` jest bardzo przydatna w wielu różnych kontekstach. Możesz jej użyć w skryptach, wykorzystać w funkcjach, czy nawet w interaktywnej sesji Fish Shell.
+Jeśli jesteś ciekaw, jak dokładnie działa funkcja `strlen` w Fish Shell, poniżej znajdziesz krótkie wyjaśnienie. Tak naprawdę, ta funkcja jest dostępna w języku C i została zaprojektowana tak, aby zliczać każdy znak w ciągu, aż nie napotka znaku zakończenia, czyli `NULL`. W Fish Shell, `NULL` jest oznaczony za pomocą pojedynczego znaku spacji, dlatego też wywołanie `strlen` na zmiennej zawierającej tekst zakończony spacją, zwróci długość bez spacji.
 
 ## Zobacz także
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/string.html#string-length
-- Przydatne funkcje Fish Shell: https://fishshell.com/docs/current/index.html#builtin-functions
-- Blog Fish Shell: https://fishshell.com/blog/
+
+- Dokumentacja funkcji `strlen`: https://fishshell.com/docs/current/cmds/strlen.html
+- Poradnik na temat manipulacji tekstem w Fish Shell: https://fishshell.com/docs/current/tutorial.html#manipulating-text

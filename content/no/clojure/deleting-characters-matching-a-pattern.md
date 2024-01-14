@@ -1,45 +1,61 @@
 ---
 title:    "Clojure: Sletting av tegn som matcher et mønster"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man jobber med programmering, er det ofte nødvendig å manipulere tekststrenger for å få ønsket resultat. En nyttig funksjon i Clojure for dette er "remove", som lar oss slette deler av en tekststreng basert på et gitt mønster. Dette kan være nyttig for å rydde opp i data eller for å filtrere ut uønskede tegn.
+Å slette tegn som matcher et mønster er en vanlig oppgave i programmering. Det kan hjelpe deg med å forenkle og rydde opp i dataene dine, og gjøre dem mer leselige og effektive å arbeide med. I Clojure er det flere måter å håndtere dette på, avhengig av dine spesifikke behov og preferanser.
 
 ## Hvordan
 
-For å slette tegn som matcher et gitt mønster, kan vi bruke "remove" funksjonen på følgende måte:
+En av de mest brukte funksjonene for å slette tegn som matcher et mønster er `re-seq`. Denne funksjonen tar et regulært uttrykk og en streng som argumenter, og returnerer en liste med delstrenger som matcher mønsteret.
 
-```Clojure
-(remove #"[a-z]" "Hello123") ; => "123"
+```Clojure 
+(re-seq #"[aeiou]" "Hei på deg!")
+;;=> ("e" "i" "å" "e")
+
+(re-seq #"\d+" "I dag er det 17. mai.")
+;;=> ("17")
+
+(re-seq #"[a-z]+" "Han er anonym123.")
+;;=> ("anonym")
 ```
 
-Her vil funksjonen fjerne alle små bokstaver fra tekststrengen "Hello123" og returnere "123". Dette er fordi #-prefikset forteller Clojure at vi bruker et regulært uttrykk for å definere mønsteret vi vil slette.
+Dette er nyttig hvis du bare ønsker å slette spesifikke typer tegn, som vokaler, tall eller bokstaver. Men hva om du vil slette mer komplekse mønstre? En annen tilnærming er å bruke `clojure.string/replace-first` og `clojure.string/replace`. Disse funksjonene tar henholdsvis et mønster og en erstatning, og en streng som argumenter, og returnerer en ny streng med det første, eller alle, forekomster av mønsteret erstattet med erstatningen.
 
-Vi kan også bruke "remove" på en liste med strenger, for eksempel:
+```Clojure 
+(require '[clojure.string :as str])
+(str/replace-first "Hvem er kongen av feltet?" #"feltet" "tronen")
+;;=> "Hvem er kongen av tronen?"
 
-```Clojure
-(remove #"[0-9]" ["Hello123" "987World"]) ; => ("Hello" "World")
+(str/replace "Peter Parker" #"P[a-z]+" "")
+;;=> " "
+
+(str/replace "0000-1111-2222-3333" #"\d" "X" 4)
+;;=> "XXXX-1111-2222-3333"
 ```
-
-Dette vil returnere en liste med strenger der alle tall er slettet fra hver streng.
 
 ## Dypdykk
 
-Når vi bruker "remove" funksjonen, endres ikke den opprinnelige tekststrengen eller listen vi bruker som input. Funksjonen returnerer en ny kopi av teksten med de ønskede tegnene slettet. Dette er viktig å huske på når vi jobber med store mengder data, for å unngå utilsiktede endringer.
+Hvis du trenger mer avansert funksjonalitet, kan du også bruke `clojure.string/replace-first` og `clojure.string/replace` sammen med `clojure.string/replace-matcher`. Dette vil tillate deg å tilpasse den nye strengen basert på et `re-matcher` objekt som returneres av `replace-matcher`, noe som gir deg enda mer kontroll over prosessen.
 
-Vi kan også kombinere flere mønstre ved å bruke "or" operator i det regulære uttrykket, for eksempel:
+```Clojure 
+(require '[clojure.string :as str])
+(defn transform-matcher [matcher]
+  (let [current (apply str (str/replace-matcher matcher))
+        next (str/replace current #"mølle" "foss")]
+    (clojure.string/replace-first next #"verden" "jorden")))
 
-```Clojure
-(remove #"[a-z]|[A-Z]" "Hello123World") ; => "123"
+(str/replace "Jeg elsker å se på møllen i verden." #"\w+" transform-matcher)
+;;=> "Jeg elsker å se på fossen i jorden."
 ```
-
-Dette vil fjerne både små og store bokstaver fra tekststrengen "Hello123World".
 
 ## Se også
 
-- [Clojure Docs for Remove](https://clojuredocs.org/clojure.core/remove)
-- [Regulære uttrykk i Clojure](https://clojure.org/guides/learn/regular_expressions)
+- Offisiell dokumentasjon for `re-seq`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-seq
+- Offisiell dokumentasjon for `clojure.string/replace-first` og `clojure.string/replace`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace-first
+- Offisiell dokumentasjon for `clojure.string/replace-matcher`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace-matcher

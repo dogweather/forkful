@@ -1,75 +1,57 @@
 ---
-title:    "PHP: Überprüfen, ob ein Verzeichnis existiert"
+title:    "PHP: Überprüfen, ob ein Verzeichnis existiert."
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Funktion in der PHP-Programmierung. Es ermöglicht es uns, sicherzustellen, dass unsere Dateien an den richtigen Speicherort gespeichert werden und dass unser Programm fehlerfrei bleibt.
+Beim Programmieren ist es oft wichtig zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist. Das kann aus verschiedenen Gründen notwendig sein, zum Beispiel um sicherzustellen, dass ein Skript auf die benötigten Dateien zugreifen kann oder um eine bestimmte Aktion nur dann auszuführen, wenn das Verzeichnis existiert.
 
-## Wie geht man vor?
+## Wie
 
-Die Überprüfung eines Verzeichnisses in PHP ist relativ einfach und kann mit wenigen Codezeilen erreicht werden. Sehen wir uns ein Beispiel an:
+Um in PHP zu überprüfen, ob ein Verzeichnis existiert, kann die Funktion `is_dir()` verwendet werden. Diese Funktion erwartet als Parameter den Pfad zu dem Verzeichnis, das überprüft werden soll. Wenn das Verzeichnis existiert, gibt die Funktion `true` zurück, andernfalls `false`.
 
-```
-<?php
-// Verzeichnisname festlegen
-$verzeichnis = "meinVerzeichnis";
-
-// Überprüfen, ob das Verzeichnis existiert
-if (file_exists($verzeichnis)) {
-   echo "Das Verzeichnis $verzeichnis existiert bereits.";
+```PHP
+// Beispiel: Überprüfung des Verzeichnisses "bilder"
+if (is_dir("bilder")) {
+    echo "Das Verzeichnis existiert.";
 } else {
-   echo "Das Verzeichnis $verzeichnis existiert noch nicht.";
+    echo "Das Verzeichnis existiert nicht.";
 }
-?>
+
+// Ausgabe: "Das Verzeichnis existiert."
 ```
 
-Verwenden Sie die Funktion `file_exists()`, um festzustellen, ob das Verzeichnis existiert. Wenn die Bedingung erfüllt ist, wird die erste Ausgabe ausgeführt, wenn nicht, dann die zweite.
+Eine andere Möglichkeit ist die Verwendung der Funktion `file_exists()`, die sowohl für Dateien als auch für Verzeichnisse funktioniert. Diese Funktion gibt ebenfalls `true` oder `false` zurück.
 
-Sie können auch die Funktion `is_dir()` verwenden, um zu überprüfen, ob es sich bei dem angegebenen Pfad um ein Verzeichnis handelt. Hier ist ein Beispielcode:
-
-```
-<?php
-// Verzeichnisname festlegen
-$verzeichnis = "meinVerzeichnis";
-
-// Überprüfen, ob es sich um ein Verzeichnis handelt
-if (is_dir($verzeichnis)) {
-   echo "Der angegebene Pfad ist ein Verzeichnis.";
+```PHP
+// Beispiel: Überprüfung des Verzeichnisses "dokumente"
+if (file_exists("dokumente")) {
+    echo "Das Verzeichnis existiert.";
 } else {
-   echo "Der angegebene Pfad ist kein Verzeichnis.";
+    echo "Das Verzeichnis existiert nicht.";
 }
-?>
+
+// Ausgabe: "Das Verzeichnis existiert nicht."
 ```
 
-## Tiefere Einblicke
+## Deep Dive
 
-Es ist auch möglich, mithilfe der Funktion `scandir()` alle Dateien und Unterverzeichnisse in einem Verzeichnis aufzulisten. Hier ist ein Beispielcode:
+Wenn du tiefer in das Thema einsteigen möchtest, gibt es noch weitere Funktionen, die dir bei der Überprüfung von Verzeichnissen helfen können. Zum Beispiel gibt es die Funktion `scandir()`, die eine Liste aller Dateien und Verzeichnisse in einem bestimmten Pfad zurückgibt. Somit kannst du nicht nur überprüfen, ob ein Verzeichnis existiert, sondern auch auf die einzelnen Dateien und Verzeichnisse zugreifen.
 
+```PHP
+// Beispiel: Auflistung aller Dateien und Verzeichnisse in "bilder"
+$files = scandir("bilder");
+
+// Ausgabe: Array mit den Datei- und Verzeichnisnamen
+print_r($files);
 ```
-<?php
-// Verzeichnisname festlegen
-$verzeichnis = "meinVerzeichnis";
-
-// Liste aller Dateien und Unterverzeichnisse ausgeben
-$files = scandir($verzeichnis);
-
-// Ausgabe formatieren
-foreach ($files as $file) {
-   echo $file . "<br>";
-}
-?>
-```
-
-Dieser Code scannt das angegebene Verzeichnis und gibt eine Liste aller darin enthaltenen Dateien und Verzeichnisse aus.
 
 ## Siehe auch
 
-- "How to Create, Rename, Move and Delete Directories in PHP" (https://www.w3schools.com/php/php_ref_directory.asp)
-- "PHP Filesystem Functions" (https://www.php.net/manual/en/ref.filesystem.php)
-- "Handling File Uploads with PHP" (https://www.tutorialspoint.com/php/php_file_uploading.htm)
-
-Mithilfe dieser Funktionen und Beispiele können Sie in der PHP-Programmierung problemlos überprüfen, ob ein Verzeichnis existiert. Wir hoffen, dass dieser Artikel hilfreich war und Ihre Programmierung erleichtert!
+- [PHP Dokumentation - Verzeichnisse](https://www.php.net/manual/de/book.filesystem.php)
+- [Codebeispiel: Dateien oder Verzeichnisse umbenennen mit PHP](https://www.tutdepot.com/change-the-name-of-file-or-folder-with-php/)
+- [Video Tutorial: Einführung in PHP-Verzeichnisfunktionen](https://www.youtube.com/watch?v=hvGHLjkD7co)

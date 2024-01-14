@@ -1,59 +1,43 @@
 ---
-title:    "Javascript: 「デバッグ出力のプリント」"
+title:    "Javascript: デバッグ出力のプリント"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜデバッグ出力をプリントするのか
 
-デバッグ出力をプリントするメリットは一言で言えば、コードをデバッグすることがより簡単になることです。デバッグ出力をプリントすることによって、どのような値が変数に格納されているのかを確認することができます。
+デバッグ出力をプリントすることによって、コードの実行を追跡することができ、問題を特定して修正することができます。
 
-## 方法
-
-デバッグ出力をプリントするには、デバッガーのような特別なツールを使用する必要はありません。代わりに、`console.log()`メソッドを使用してコンソールにメッセージをプリントすることができます。
-
-例えば、以下のコードを考えてみましょう。
+## プリントの方法
 
 ```Javascript
-let name = "John";
-let age = 30;
-console.log("Name: " + name);
-console.log("Age: " + age);
-```
-
-上記のコードを実行すると、コンソールには以下のような出力が得られます。
-
-```
-Name: John
-Age: 30
-```
-
-このように、`console.log()`メソッドを使用することで、変数の値を確認することができます。
-
-## ディープダイブ
-
-デバッグ出力をプリントする際には、変数の値だけでなく、コードの特定の箇所での動作を確認することもできます。例えば、条件分岐の処理を確認したい場合は、以下のようにコードを書くことができます。
-
-```Javascript
-let number = 10;
-if (number > 5) {
-  console.log("Number is greater than 5.");
-} else {
-  console.log("Number is less than or equal to 5.");
+function calculateSum(num1, num2) {
+    console.log("引数: " + num1 + ", " + num2);
+    let sum = num1 + num2;
+    console.log("合計: " + sum);
+    return sum;
 }
+
+calculateSum(5, 3);
 ```
 
-これにより、条件分岐の結果を確認することができます。
+出力:
 
 ```
-Number is greater than 5.
+引数: 5, 3
+合計: 8
 ```
 
-また、デバッグ出力をプリントすることで、コードのどの部分が実行されているのかを把握することもできます。これにより、どのようなロジックでプログラムが動作しているのかを理解することができます。
+## プリントの深層
+
+デバッグ出力をプリントすることによって、コードの実行中に発生したエラーや予期しない動作を特定することができます。プリントする情報を適切に選択することで、効率的にバグを修正できます。また、デバッグ出力をプリントすることで、他の開発者とコードの挙動を共有することもできます。
 
 ## 参考リンク
 
-- [console.log()メソッドのドキュメント | MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/Console/log)
-- [console.log():デバッグモード中の変数の表示 | Codecademy（英語）](https://www.codecademy.com/articles/console-log)
-- [デバッグ出力 | Codecademy（英語）](https://www.codecademy.com/articles/debugging-output)
+[デバッグ出力のプリント方法（英語）](https://www.w3schools.com/jsref/met_console_log.asp)
+
+[JavaScriptのデバッグ方法（英語）](https://blog.teamtreehouse.com/how-to-debug-javascript-with-chrome-developer-tools)
+
+[デバッグのベストプラクティス（英語）](https://stackify.com/getting-started-with-debugging-javascript/)

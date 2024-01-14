@@ -1,48 +1,44 @@
 ---
-title:    "C: Virheenjäljitystulosteiden tulostaminen"
+title:    "C: Virheenjäljitely tulostus"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Miksi kirjoittaa debuggauksen tulosteita C-ohjelmoinnissa? Usein koodatessamme törmäämme ongelmiin, jotka vaativat lisäselvitystä ja syvempää ymmärrystä koodin toiminnasta. Tulostamalla debuggauksen tulosteita voimme tarkastella muuttujien ja funktioiden arvoja, jolloin voimme helpommin paikantaa virheitä ja korjata niitä.
+Debug-tulostuksen tulostaminen on tärkeä osa C-ohjelmointia, joka auttaa ohjelmoijia tunnistamaan ja korjaamaan ohjelman virheitä ja ongelmia. Se on myös hyödyllistä, kun halutaan seurata ohjelman suorituksen kulkua ja tarkistaa, että ohjelma toimii odotetulla tavalla. Eli jos haluat olla tehokas C-ohjelmoija, sinun tulisi oppia tulostamaan debug-outputia.
 
-# Kuinka
+## Miten
 
-Alla on esimerkkejä C-koodista, jossa tulostetaan debuggauksen tulosteita. Jokainen koodilohko sisältää esimerkin sekä siihen liittyvän tulosteen.
+Tulostamisen perusmuoto C-kielellä on `printf()` -funktio. Se ottaa ensimmäisenä parametrinaan merkkijonon, joka määrittelee mitä ja miten tulostetaan. Seuraavat parametrit ovat muuttujia, jotka haluat tulostaa. Tässä on yksinkertainen esimerkki:
 
 ```C
-// Muuttujan arvon tulostaminen
-int my_number = 10;
-printf("muuttujan my_number arvo on %d", my_number);
+#include <stdio.h>
 
-// Tulosteen tuottaminen funktiosta
-int square(int x) {
-    return x * x;
+int main()
+{
+    int x = 10;
+    int y = 5;
+    
+    printf("x = %d, y = %d\n", x, y);
+    
+    return 0;
 }
-int result = square(5);
-printf("tuloksen arvo on %d", result);
-```
-
-Tulosteen tulos:
 
 ```
-muuttujan my_number arvo on 10
-tuloksen arvo on 25
-```
 
-# Syvällinen kuvaus
+Tässä koodissa käytetään `%d` -konversiosymbolia, joka tarkoittaa, että ohjelma tulostaa arvot käyttäen kokonaislukumuotoa. Voit käyttää myös muita konversiosymboleja, kuten `%f` liukuluvuille, `%c` merkeille ja `%s` merkkijonoille. Lisäksi voit käyttää `\n` -merkkiä uuden rivin lisäämiseen.
 
-Tulostamalla debuggauksen tulosteita työskentely koodin kanssa tulee helpommaksi ja tehokkaammaksi. Tulosteet auttavat meitä ymmärtämään koodin suoritusta ja löytämään virheitä nopeammin. Niillä voidaan myös testata erilaisia arvoja ja funktioiden paluuarvoja.
+## Syväsukellus
 
-Debuggauksen tulosteet voivat myös auttaa meitä selventämään monimutkaista koodia ja toimimaan oppimisen välineenä. Voimme tarkastella, mitä koodi tekee vaihe vaiheelta ja nähdä, kuinka muuttujien arvot muuttuvat koodin suorituksen aikana.
+Tulostamisen lisäksi on olemassa muitakin tapoja käyttää debug-tulostusta, kuten virheilmoitusten ja varoitusten tulostaminen. Voit myös tulostaa tietoja muistiin varattujen alueiden sisällöstä ja ohjelman suorituksen aikana käytössä olevista muuttujista. Tämä voi auttaa tunnistamaan esimerkiksi muistin vuotokohtia ja muita suorituskykyongelmia.
 
-Tulosteet ovat myös tärkeitä silloin, kun ohjelmointikieli ei tarjoa debuggausmahdollisuuksia tai kun haluamme tarkastella tiettyä osaa koodista. Ne ovat siis erittäin hyödyllisiä työkaluja kehittäessämme C-ohjelmia.
+Lisäksi on tärkeää huomata, että kun ohjelmasi on valmis ja toimii odotetulla tavalla, sinun tulisi poistaa kaikki debug-tulostukset. Tämä on tärkeää, jotta ohjelmasi suorituskyky ei kärsisi tarpeettomasta tulostamisesta.
 
-# Katso myös
+## Katso myös
 
-- [C-kielen virallinen dokumentaatio](https://devdocs.io/c/)
-- [Vinkkejä ja niksejä C-ohjelmointiin](https://www.programiz.com/c-programming)
-- [Debuggauksen perusteet C:ssä](https://www.geeksforgeeks.org/debugging-in-c/)
+- [The Use of Debugging in C](https://www.programiz.com/c-programming/c-debugging)
+- [Debugging and Diagnostics in C](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+- [Debugging in C: Tips and Tricks](https://www.cprogramming.com/debugging/debugging-tips.html)

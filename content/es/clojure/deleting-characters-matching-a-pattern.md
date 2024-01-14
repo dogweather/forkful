@@ -1,44 +1,40 @@
 ---
-title:    "Clojure: Eliminando caracteres que coinciden con un patrón."
+title:    "Clojure: Eliminando caracteres que coinciden con un patrón"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-A veces, cuando se trabaja con cadenas de texto en un programa, es posible que se necesite eliminar ciertos caracteres que coinciden con un patrón específico. La solución a este problema es utilizar la función "subs" en Clojure para eliminar los caracteres de una cadena de texto según un patrón determinado.
+# Por qué
+En el mundo de la programación, a menudo nos encontramos con la necesidad de filtrar o manipular cadenas de texto. Una de las tareas comunes en este sentido es la eliminación de caracteres que coinciden con un patrón específico. En este post, hablaremos sobre cómo hacer esto utilizando Clojure.
 
 ## Cómo hacerlo
-Para utilizar la función "subs" en Clojure, simplemente se debe utilizar la siguiente sintaxis:
+Para eliminar caracteres que coinciden con un patrón en Clojure, utilizamos la función `clojure.string/replace` y le pasamos el patrón y la cadena de texto que queremos manipular. Veamos un ejemplo en código:
 
-```Clojure
-(subs string start end?)
+```clojure
+(require '[clojure.string :as str])
+
+(str/replace "Hola mundo!" #"o" "") ; salida: "Hla mund!"
 ```
 
-donde "string" es la cadena de texto en la que se va a trabajar, "start" es el índice del primer carácter a eliminar y "end" (opcional) es el índice del último carácter a eliminar.
+En este ejemplo, usamos la función `replace` para eliminar todas las letras "o" de la cadena "Hola mundo!". El símbolo `#""` antes de la letra "o" indica que estamos buscando un patrón y no solo un carácter específico. Podemos también especificar un patrón más complejo utilizando expresiones regulares.
 
-Por ejemplo, si queremos eliminar los caracteres del 2 al 5 de una cadena de texto, se utilizaría la siguiente función:
-
-```Clojure
-(subs "abcdefg" 2 5)
+```clojure
+(str/replace "123abc456def" #"\d+" "") ; salida: "abcdef"
 ```
 
-La salida de este código sería la cadena de texto "adfg", ya que se han eliminado los caracteres del índice 2 al 5.
-
-También es posible utilizar patrones más complejos con el uso de expresiones regulares. Por ejemplo, si se desea eliminar todos los dígitos de una cadena de texto, se puede utilizar la siguiente función:
-
-```Clojure
-(subs "abc123def456" #"\d") ;#"\d" es una expresión regular que representa cualquier dígito
-```
-
-La salida de este código sería la cadena de texto "abcdef", ya que se han eliminado todos los dígitos de la cadena original.
+En este caso, utilizamos `\d+` como patrón, que representa cualquier secuencia de uno o más dígitos numéricos. La función `replace` eliminó entonces todos los números de la cadena original.
 
 ## Profundizando
-La función "subs" en Clojure utiliza índices para determinar qué caracteres deben ser eliminados de una cadena de texto. Estos índices comienzan en 0, por lo que el primer carácter de una cadena de texto tiene un índice de 0 y el último carácter tiene un índice de (n-1), donde n es la longitud de la cadena.
+La función `replace` utiliza internamente la función `clojure.string/replace-first`, que solo reemplaza la primera ocurrencia del patrón encontrado en la cadena. Sin embargo, podemos usar la función `replace` con un tercer parámetro opcional para especificar cuántas ocurrencias queremos reemplazar.
 
-También es importante tener en cuenta que la función "subs" no modifica la cadena de texto original, sino que devuelve una nueva cadena con los caracteres eliminados. Por lo tanto, es importante asignar el resultado de la función a una nueva variable o imprimirlo para ver el resultado.
+```clojure
+(str/replace "111222333" #"2" "4" 2) ; salida: "111444333"
+```
 
-## Ver también
-- [La documentación oficial de Clojure para la función "subs"](https://clojuredocs.org/clojure.core/subs)
-- [Un tutorial sobre expresiones regulares en Clojure](https://www.youtube.com/watch?v=WIoUtNS7n1A)
-- [Ejemplo de uso de la función "subs" en un programa en Clojure](https://github.com/learn-clojure/Learn-Clojure/blob/master/4._Strings.md#excercise-18)
+En este caso, le dijimos a la función `replace` que solo reemplace las dos primeras ocurrencias del patrón "2" por "4". Además, si queremos eliminar los caracteres que no coinciden con el patrón en lugar de reemplazarlos por uno nuevo, podemos simplemente pasar una cadena vacía como segundo parámetro.
+
+# Ver también
+- [Documentación de Clojure: clojure.string](https://clojuredocs.org/clojure.string)
+- [Expresiones regulares en Clojure](https://clojuredocs.org/clojure.repl/doc/clojure.repl/source-fn)

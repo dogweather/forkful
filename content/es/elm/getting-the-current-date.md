@@ -1,52 +1,51 @@
 ---
 title:    "Elm: Obteniendo la fecha actual"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué obtener la fecha actual en Elm
 
-El obtener la fecha actual es una tarea común en muchos programas. Puede ser útil para registrar eventos, calcular el tiempo transcurrido o simplemente mostrar la fecha a los usuarios.
+Obtener la fecha actual puede ser una tarea importante en cualquier aplicación. Ya sea que estés creando un calendario, una tarea programada o simplemente mostrando la fecha en una página, es útil saber cómo obtener y mostrar la fecha actual en Elm.
 
-## Cómo
+## Cómo hacerlo
 
-Para obtener la fecha actual en Elm, podemos utilizar la función `cálcularFecha`, que devuelve un objeto de tipo `Date` con la fecha actual.
-
-```Elm
-import Date exposing (..)
-
-fechaActual : Date
-fechaActual = calcularFecha
-```
-
-Si queremos mostrar la fecha en nuestro programa, podemos usar la función `toString`, que convierte la fecha en una cadena de texto legible para los humanos.
+En Elm, podemos obtener la fecha actual utilizando la función `now` del módulo `Time`. Esta función devuelve un objeto `Posix` que contiene información sobre la fecha y la hora actuales.
 
 ```Elm
-import Date exposing (..)
+import Time exposing (now)
 
-fechaActual : String
-fechaActual = Date.toString fechaActual
+date = now
 ```
 
-Esto mostrará la fecha en el formato "AAAA-MM-DD". Si queremos personalizar el formato, podemos usar la función `mapToString` y pasarle una función que define cómo queremos que se muestre la fecha.
+El resultado de esta función será algo como esto: `Posix 2134567890`. Este número representa el número de segundos desde el 1 de enero de 1970. Pero, para nuestro propósito, necesitamos convertirlo en un formato más legible.
 
 ```Elm
-import Date exposing (..)
+date = now |> Time.toMillis |> Time.millisToPosix
 
-fechaActual : String
-fechaActual = Date.mapToString (\d -> (toString d.yyyy) ++ "/" ++ (toString d.mm) ++ "/" ++ (toString d.dd)) fechaActual
+-- Resultado: Posix 161 887 334 912
 ```
 
-Esto mostrará la fecha en el formato "YYYY/MM/DD".
+Podemos utilizar la función `millisToPosix` para convertir el resultado en milisegundos, lo que nos dará una fecha con un formato más fácil de leer.
 
 ## Profundizando
 
-La función `calcularFecha` utiliza la hora del sistema en el que se está ejecutando el programa para determinar la fecha actual. Esto significa que si cambiamos la hora del sistema, la fecha actual también cambiará.
+Ahora que sabemos cómo obtener la fecha actual en Elm, podemos profundizar un poco más en el tema. El módulo `Time` también ofrece una función llamada `localZone` que nos permite obtener la zona horaria local del usuario.
 
-También podemos obtener la fecha y hora actual con la función `calcularFechaYHora`, que nos devuelve un objeto de tipo `DateTime` que contiene tanto la fecha como la hora.
+```Elm
+import Time exposing (localZone)
 
-## Véase también
+zone = localZone
+```
 
-- Documentación oficial de Elm sobre el módulo Date: https://package.elm-lang.org/packages/elm/time/latest/
-- Tutorial de programación en Elm: https://elmprogramming.com/
+El resultado de esta función será un `TimeZone` que contiene información como el nombre y la diferencia horaria con respecto a UTC.
+
+También podemos utilizar la función `Zone.fromUtc offset` para convertir una fecha y hora en UTC a la zona horaria local del usuario.
+
+## Ver también
+
+- Documentación del módulo `Time` de Elm: https://package.elm-lang.org/packages/elm/time/latest
+- Ejemplo de cómo obtener la fecha actual en Elm: https://ellie-app.com/c2Nvd5yZnKta1
+- Cómo mostrar la fecha actual en una página web con Elm: https://medium.com/@codebyanthony/displaying-the-date-and-time-with-elm-b292fde274fa

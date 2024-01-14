@@ -1,42 +1,46 @@
 ---
-title:    "Swift: Skriving av tester"
+title:    "Swift: Å skrive tester"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av å være en effektiv Swift-programmerer. Testene dine hjelper deg å sikre at koden din oppfyller forventningene dine, og kan også bidra til å oppdage feil og feil før de når produksjonsmiljøet ditt. Det kan også bidra til å forbedre koden din, ved å tvinge deg til å tenke gjennom forskjellige scenarioer og mulige feilsituasjoner.
+Å skrive tester er en viktig del av Swift-programmering. Det hjelper oss med å sikre at koden vår fungerer som den skal, og det kan også hjelpe oss med å identifisere og rette feil før de kommer til produksjon.
 
 ## Hvordan
 
-For å skrive tester i Swift, må du bruke Swifts innebygde testrammemverk, XCTest. Her er et eksempel på hvordan du kan skrive en enkel test for en kalkulatorfunksjon:
+Det er flere ulike måter å skrive tester på i Swift. En enkel måte er å bruke "Assert" metoden, som lar oss teste om et uttrykk er sant eller falskt.
 
 ```Swift
-import XCTest
+let x = 5
+assert(x == 5, "x should equal 5")
+```
 
-class CalculatorTests: XCTestCase {
-    func testAddition() {
-        let calculator = Calculator()
-        let result = calculator.add(2, 3)
-        XCTAssertEqual(result, 5, "Resultatet burde være 5")
-    }
+Denne koden sjekker om verdien av "x" er lik 5, og returnerer en feilmelding hvis det ikke stemmer.
+
+Vi kan også bruke "XCTest" rammeverket for å skrive mer omfattende tester. Her er et eksempel på en test som sjekker om en "Person" objekt har riktig navn og alder:
+
+```Swift
+func testPerson() {
+    let person = Person(name: "Lars", age: 25)
+    XCTAssertEqual(person.name, "Lars")
+    XCTAssertEqual(person.age, 25)
 }
 ```
 
-Dette eksempelet importerer XCTest og oppretter en testklasse som arver fra XCTestCase. Deretter defineres en testfunksjon som oppretter en kalkulator og utfører en addisjon. Til slutt bruker vi XCTest for å validere om resultatet er det forventede svaret.
-
-Når du kjører denne testen, bør du se en grønn hake som indikerer at testen passerte. Hvis den mislykkes, vil du se en rød X og feilmeldingen. Dette er et enkelt eksempel, men du kan bruke de samme prinsippene for å skrive tester for mer komplekse funksjoner og klasser.
+Denne testen bruker "XCTAssertEqual" metoden for å sammenligne verdien av personens navn og alder med forventede verdier. Hvis testen feiler, vil den gi oss en feilmelding som hjelper oss med å identifisere årsaken til feilen.
 
 ## Dypdykk
 
-Det er mange måter å skrive tester på i Swift, avhengig av hva slags applikasjon du utvikler og hva som er viktig for deg å teste. Noen av de vanligste bruksområdene inkluderer enhetstesting, funksjonell testing og integrasjonstesting. Enhets- og funksjonell testing fokuserer på å teste enkeltkomponenter eller funksjoner, mens integrasjonstesting tester hvordan de forskjellige delene av koden din fungerer sammen.
+I tillegg til å sjekke for riktige resultater, er det også viktig å skrive tester som dekker feil og unntakshåndtering. Dette kan gjøres ved å bruke "XCTAssertThrowsError" metoden, som lar oss teste om en bestemt blokk av kode kaster en feil.
 
-En annen viktig aspekt ved å skrive tester er å sørge for at de er pålitelige og utfører nøyaktige og detaljerte tester. Det kan være lurt å bruke testdatabaser og mock-objekter for å sikre at testene dine ikke påvirkes av eksterne faktorer.
+Det er også viktig å skrive klare og godt strukturerte tester. Dette kan gjøres ved å følge prinsipper som "Arrange, Act, Assert", der vi først setter opp testmiljøet, deretter utfører en handling og til slutt sjekker resultatet.
 
 ## Se også
 
-- [The Beginner's Guide to Swift Testing](https://www.raywenderlich.com/7109-the-beginners-guide-to-swift-testing)
-- [XCTest documentation](https://developer.apple.com/documentation/xctest)
-- [Writing Tests in Swift](https://medium.com/swift-programming/writing-tests-in-swift-f1921e3945a3)
+- [Swift Testing with XCTest](https://www.raywenderlich.com/960290-swift-testing-tutorial-getting-started)
+- [Best Practices for Writing Swift Tests](https://medium.com/@gonzalezreal/best-practices-for-writing-swift-tests-9bc9b1a1de8c)
+- [Unit Testing in Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)

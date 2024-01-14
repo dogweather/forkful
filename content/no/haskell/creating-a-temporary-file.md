@@ -1,45 +1,44 @@
 ---
-title:    "Haskell: Oppretting av en midlertidig fil"
+title:    "Haskell: Lage en midlertidig fil"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange ganger, i programmering, kan det være nødvendig å opprette midlertidige filer for å håndtere ulike data eller buffer. Dette kan være nyttig når du trenger å lagre data midlertidig mens du arbeider med et større prosjekt, eller når du trenger å skrive data til en fil før du sender den til en annen enhet. Opprettelse av midlertidige filer kan være en effektiv måte å organisere og håndtere data på, og i Haskell kan du gjøre dette ved hjelp av noen enkle funksjoner.
 
-Noen ganger, når du koder, kommer du på et behov for å opprette midlertidige filer i programmet ditt. Dette kan være for å lagre midlertidige data, for testing, eller bare for å få en oversikt over hva som skjer i programmet. Uansett hva grunnen måtte være, kan Haskell gjøre dette enkelt for deg ved å bruke "System.IO" biblioteket.
-
-## Slik gjør du det
-
-For å opprette en midlertidig fil i Haskell, må du importere "System.IO" biblioteket og bruke funksjonen "openTempFile". Denne funksjonen tar to argumenter, en sti og et prefiks. Stien angir hvor filen skal opprettes, og prefikset vil bli lagt til det midlertidige filnavnet for å unngå navnekonflikter.
+## Hvordan
+Å opprette en midlertidig fil i Haskell er enkelt. Du må først importere "System.IO.Temp" -modulen og bruke funksjonen "withSystemTempFile". Dette vil opprette en midlertidig fil i systemets midlertidige katalog og returnere filbanen og håndtaket til filen. Se et eksempel nedenfor:
 
 ```Haskell
-import System.IO
+import System.IO.Temp
 
-main = do
-  (tmpFile, tmpHandle) <- openTempFile "." "temp"
-  putStrLn $ "Midlertidig fil opprettet på sti " ++ tmpFile
+main = withSystemTempFile "tempFile.txt" $ \filepath handle -> do
+  hPutStrLn handle "Dette er en midlertidig fil."
+  putStrLn $ "Filbanen er: " ++ filepath
 ```
 
-I dette eksempelet, vil en midlertidig fil med navnet "temp[random tall]" bli opprettet i samme mappe som koden kjøres fra. Vi bruker "putStrLn" funksjonen for å skrive ut stien til filen, så vi kan se hvor den er plassert.
+Dette vil skrive teksten til filen og skrive ut filbanen til midlertidig fil. Når programmet er ferdig, vil filen automatisk bli slettet fra systemet.
 
-Etter at du har gjort de nødvendige endringene til den midlertidige filen, må du lukke håndteringsobjektet for filen med "hClose". Dette vil slette den midlertidige filen automatisk.
+I tillegg kan du bruke funksjonen "withTempDirectory" for å opprette en midlertidig katalog i stedet for en fil. Dette kan være nyttig for å håndtere større mengder data eller filer.
 
 ```Haskell
-main = do
-  (tmpFile, tmpHandle) <- openTempFile "." "temp"
+import System.IO.Temp
 
-  -- Etter å ha gjort endringer til den midlertidige filen
-  hClose tmpHandle
+main = withTempDirectory "tempDir" $ \dirpath -> do
+  let filename = "tempFile.txt"
+  let filepath = dirpath ++ "/" ++ filename
+  writeFile filepath "Dette er en midlertidig fil i en midlertidig katalog."
+  putStrLn $ "Filbanen er: " ++ filepath
 ```
 
 ## Dypdykk
+Begge funksjonene "withSystemTempFile" og "withTempDirectory" tar også en "prefix"-parameter, som lar deg spesifisere et fornavn for filen eller katalogen som opprettes. Standardprefixen er "tmp", men du kan endre dette til noe som er mer meningsfullt for ditt program.
 
-Når du bruker "openTempFile" funksjonen, vil Haskell generere et unikt nummer for å legge til på slutten av filnavnet for å sikre at det er unikt og ikke vil krasje med andre filer. Dette nummeret genereres ved hjelp av "getRandom" funksjonen fra "System.Random" biblioteket.
+I tillegg kan du bruke "withTempFile" og "withTempDirectory" i stedet for "withSystemTempFile" og "withTempDirectory" hvis du vil spesifisere en annen katalog enn systemets midlertidige katalog. Dette kan være nyttig når du jobber med flere operativsystemer eller ønsker større kontroll over hvor filen/katalogen blir opprettet.
 
-En annen ting å merke seg er at hvis stien du oppgir ikke er gyldig, vil den midlertidige filen bli opprettet i det midlertidige meldomainnet "System.IO.tmpdir", som vanligvis er satt til "/tmp" på Unix-systemer.
-
-## Se også
-
-- ["System.IO" Hackage dokumentasjon](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- ["System.Random" Hackage dokumentasjon](https://hackage.haskell.org/package/random-1.2.1/docs/System-Random.html)
+## Se Også
+- Les mer om "System.IO.Temp" -modulen i Haskell-dokumentasjonen: https://hackage.haskell.org/package/temporary
+- Utforsk andre nyttige moduler i Haskell for å arbeide med filer: https://hackage.haskell.org/packages/search?terms=file

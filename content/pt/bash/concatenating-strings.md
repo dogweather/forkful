@@ -1,47 +1,74 @@
 ---
-title:    "Bash: Unindo strings"
+title:    "Bash: Concatenando strings"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que concatenar strings no Bash?
 
-Concatenar strings é uma parte importante da linguagem de programação Bash e é usada para combinar múltiplas strings em uma única string. Essa habilidade pode ser muito útil ao escrever scripts ou programas em Bash, especialmente quando se lida com entrada de dados ou impressão de saída.
+O Bash é uma linguagem de programação bastante utilizada no desenvolvimento de scripts e automatização de tarefas no Linux. Uma das funções mais básicas e importantes em qualquer linguagem de programação é a capacidade de manipular strings. E uma das maneiras de fazer isso no Bash é através da concatenação de strings.
 
-## Como fazer
+Quando trabalhamos com programação, muitas vezes precisamos juntar duas ou mais strings para formar uma nova, seja para apresentar uma informação ao usuário ou para realizar alguma operação específica. Através da concatenação de strings, podemos unir várias partes de texto em uma única string, facilitando assim o nosso trabalho de programação.
 
-Para concatenar strings em Bash, usamos o operador `+` ou um ponto para unir as strings. Vamos dar uma olhada em alguns exemplos de código:
+## Como fazer a concatenação de strings no Bash?
+
+Para realizar a concatenação de strings no Bash, utilizamos o operador de concatenação de strings `+` entre as duas strings que queremos juntar. Veja abaixo um exemplo de código que demonstra como fazer isso:
 
 ```Bash
-# Concatenando duas strings usando o operador +
 string1="Olá"
-string2="mundo"
-string3=$string1" "$string2 # Note o espaço entre as aspas
-echo $string3 # Saída: Olá mundo
-
-# Concatenando duas strings usando um ponto
-nome="Maria"
-sobrenome="Silva"
-nomecompleto=$nome.$sobrenome # Note a falta de espaço entre as aspas
-echo $nomecompleto # Saída: Maria.Silva
+string2="Mundo!"
+concatenado="$string1 $string2"
+echo $concatenado
 ```
 
-Também podemos usar o formato `${string1}${string2}` para concatenar strings e especificar uma ordem específica.
+Output:
 
-**Nota:** É importante notar que a ordem de concatenar as strings é importante. Ao usar o operador `+`, a primeira string especificada será a primeira na saída, enquanto ao usar um ponto, a última string especificada será a primeira na saída.
+```
+Olá Mundo!
+```
 
-## Mergulho profundo
+Neste exemplo, declaramos duas variáveis, `string1` e `string2`, que contém as strings que desejamos unir. Em seguida, utilizamos o operador `+` entre elas e atribuímos o resultado a uma nova variável chamada `concatenado`. Por fim, utilizamos o comando `echo` para imprimir o valor da variável `concatenado` na tela.
 
-Existem algumas outras coisas que devemos ter em mente ao concatenar strings em Bash:
+Além do operador `+`, também é possível fazer a concatenação de strings utilizando o operador `+=`, como mostrado no exemplo abaixo:
 
-- As strings não podem conter espaços em branco ao redor do operador `+` ou do ponto.
-- Podemos usar variáveis vazias para concatenar uma string simplesmente deixando um lado do operador em branco, como em `echo $string1" "$string2`.
-- Podemos usar diferentes tipos de aspas para criar e imprimir strings, mas é preciso ficar atento às diferenças de comportamento. As aspas simples, por exemplo, ignoram variáveis e comandos dentro delas, enquanto as aspas duplas expandem essas variáveis e comandos.
-- Podemos também concatenar variáveis com strings fixas, como em `echo "Bem-vindo, "$nome`.
+```Bash
+string1="O"
+string2="Bash"
+string1+=" "
+string1+="$string2"
+echo $string1
+```
+
+Output:
+```
+O Bash
+```
+
+## Mergulho profundo na concatenação de strings
+
+Além de unir duas ou mais strings, também é possível usar a concatenação para formatar strings e inserir variáveis dentro delas. Veja um exemplo:
+
+```Bash
+nome="Fulano"
+sobrenome="da Silva"
+mensagem="Olá, meu nome é $nome $sobrenome."
+echo $mensagem
+```
+
+Output:
+
+```
+Olá, meu nome é Fulano da Silva.
+```
+
+Neste caso, a variável `mensagem` recebe as strings "Olá, meu nome é" e as variáveis `nome` e `sobrenome` juntas através do operador `+`. Dessa forma, podemos criar mensagens personalizadas e dinâmicas de acordo com as variáveis que possuímos.
+
+Além disso, é possível utilizar caracteres especiais, como `\n` para quebrar linhas, e `\t` para tabulação, dentro das strings concatenadas.
 
 ## Veja também
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial de concatenação de strings em Bash](https://www.shell-tips.com/bash/string-concatenation-in-bash/)
-- [Exemplos práticos de concatenação de strings em Bash](https://www.cyberciti.biz/faq/bash-string-concatenation/)
+- Documentação oficial do Bash: https://www.gnu.org/software/bash/manual/bash.html
+- Tutorial de Bash para iniciantes: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+- Lista de comandos e operadores do Bash: https://opensource.com/downloads/bash-cheat-sheet

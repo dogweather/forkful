@@ -1,44 +1,40 @@
 ---
 title:    "Elm: Konvertere en dato til en streng"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Det er ofte nødvendig å konvertere en dato til en streng når man arbeider med programmering. Dette er spesielt viktig dersom man ønsker å vise datoen til brukeren på en leselig måte, for eksempel på et nettsted eller en applikasjon. I dette blogginnlegget vil vi utforske hvordan du kan konvertere en dato til en streng ved hjelp av Elm-programmeringsspråket.
+Å konvertere en dato til en streng er en vanlig oppgave når man jobber med webutvikling. Dette kan være nyttig for å vise datoen på en mer lesbar måte eller for å lagre datoen i en database. I denne bloggposten vil jeg vise deg hvordan du kan gjøre dette enkelt ved å bruke Elm-programmeringsspråket.
 
 ## Hvordan gjøre det
 
-Det første trinnet i å konvertere en dato til en streng er å bruke Elm sin innebygde funksjon `Date.toLocalString`. Denne funksjonen tar inn en dato og returnerer en formatering av datoen i henhold til brukerens lokale innstillinger. Her er et eksempel på hvordan du kan bruke denne funksjonen i din Elm-kode:
+For å konvertere en dato til en streng i Elm, må du først importere DateTime-pakken ved å legge til følgende linje øverst i fila:
 
 ```Elm
-import Date 
-
-dateToString : Date.Date -> String
-dateToString date =
-    Date.toLocalString date |> Result.withDefault "Ugyldig dato"
+import DateTime
 ```
 
-I dette eksempelet bruker vi funksjonen `Date.toLocalString` til å konvertere `date` til en streng. Vi pakker også inn funksjonen i en `Result` for å håndtere eventuelle feil som kan oppstå under konverteringen.
-
-Her er et eksempel på hvordan denne funksjonen kan brukes i praksis:
+Deretter kan du bruke funksjonen `toString` fra DateTime-modulen for å konvertere datoen til en streng. Her er et eksempel på hvordan du kan gjøre dette:
 
 ```Elm
-date = Date.fromCalendarDate 2020 8 5
-dateToString date
+DateTime.toString DateTime.sunday -- "Søndag"
 ```
 
-Dette vil returnere strengen "05.08.2020" i en norsk lokal innstilling.
+Du kan også spesifisere ønsket format for datoen ved å bruke funksjonen `fromDate`. Her er et eksempel der datoen er satt til 1. januar 2021 og formatet er satt til "dd/mm/åååå":
 
-## Dykk dypere
+```Elm
+DateTime.fromDate 2021 1 1
+  |> Result.map (DateTime.format "dd/mm/åååå") -- "01/01/2021"
+```
 
-For de som ønsker å lære mer om hvordan Elm håndterer datoer og konverteringer, kan det være nyttig å se på hvordan funksjonen `Date.toLocalString` er implementert i kildelistedatabasen til Elm. Der kan man se at den bruker standardbibliotekets funksjon `Date.toLocaleString` og håndterer eventuelle feil som kan oppstå.
+Som du kan se, er det ganske enkelt å konvertere en dato til en streng ved hjelp av Elm.
 
-Man kan også eksperimentere med forskjellige innstillinger og formateringer ved å endre argumentene som sendes til `Date.toLocalString`.
+## Dypdykk
+Dersom du ønsker å lære mer om hvordan Elm behandler datoer og tider, kan du sjekke ut DateTime-pakken sin dokumentasjon på [Elm Packages](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/DateTime). Her finner du en oversikt over alle funksjonene som er tilgjengelige for å manipulere og konvertere datoer og tider.
 
 ## Se også
-
-- `Date` modulen i Elm standardbiblioteket: https://package.elm-lang.org/packages/elm-lang/core/latest/Date
-- Elm fellesskapets kilder til prosjekter og ressurser: https://elm-lang.org/resources
+- [Elm Packages](https://package.elm-lang.org/)
+- [Offisiell Elm dokumentasjon](https://guide.elm-lang.org/)

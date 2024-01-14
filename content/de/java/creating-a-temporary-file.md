@@ -1,47 +1,53 @@
 ---
 title:    "Java: Erstellen einer temporären Datei"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Es gibt viele Gründe, warum man im Java-Programmierbereich temporäre Dateien erstellen könnte. Die häufigsten Gründe sind Speichern von temporären Daten, Erstellen von temporären Backups und Testen von Dateifunktionen.
 
-Es gibt viele Gründe, warum man als Java-Programmierer temporäre Dateien erstellen möchte. Beispielsweise können sie verwendet werden, um vorübergehende Daten zu speichern, die nicht dauerhaft im System gespeichert werden müssen. Oder sie können als Zwischenspeicher für Daten verwendet werden, die später in eine permanente Datei geschrieben werden sollen. Kurz gesagt, temporäre Dateien sind nützlich, um effizienter mit Daten umzugehen.
-
-## Wie es gemacht wird
-
-Das Erstellen einer temporären Datei in Java ist relativ einfach. Es gibt verschiedene Möglichkeiten, je nachdem, welches JDK (Java Development Kit) verwendet wird. Im Folgenden wird ein Beispiel mit dem aktuellen JDK 11 gezeigt:
+## Wie man eine temporäre Datei erstellt
+Das Erstellen einer temporären Datei in Java ist einfach. Zunächst importieren wir die Klasse `java.io.File`, die im Package `java.io` zu finden ist. Dann definieren wir den Dateipfad und den Dateinamen, den wir für unsere temporäre Datei verwenden möchten.
 
 ```Java
-// Erstelle eine temporäre Datei im Standard-Temp-Verzeichnis
-File tempFile = File.createTempFile("demo", ".txt");
+import java.io.File;
 
-// Schreibe Daten in die temporäre Datei
-BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-writer.write("Dies ist ein Beispieltext.");
-writer.close();
-
-// Lesen und Ausgabe der Daten aus der temporären Datei
-BufferedReader reader = new BufferedReader(new FileReader(tempFile));
-String line = reader.readLine();
-System.out.println("Inhalt der temporären Datei: " + line);
-
-// Löschen der temporären Datei
-tempFile.delete();
+// Define file path and name
+String filePath = "C:\\temp";
+String fileName = "temp-file.txt";
 ```
 
-Das obige Beispiel erstellt eine temporäre Textdatei im Standard-Temp-Verzeichnis des Betriebssystems und schreibt einen Beispieltext hinein. Anschließend wird der Inhalt der Datei ausgelesen und in der Konsole ausgegeben. Am Ende wird die Datei wieder gelöscht.
+Als nächstes erstellen wir eine Instanz der Klasse `File` und übergeben die Pfade und den Dateinamen als Parameter.
 
-## Tiefer Einblick
+```Java
+// Create File instance
+File tempFile = new File(filePath, fileName);
+```
 
-Das `File`-Objekt, das mit der `createTempFile()`-Methode erstellt wird, enthält zusätzliche Informationen über die erstellte temporäre Datei. Beispielsweise kann mit der Methode `getAbsolutePath()` der vollständige Pfad zur Datei abgerufen werden.
+Um die temporäre Datei tatsächlich zu erstellen, rufen wir die Methode `createNewFile()` auf, die eine `IOException` werfen kann. Daher müssen wir diese in einem `try-catch`-Block behandeln.
 
-Es ist auch möglich, ein eigenes temporäres Verzeichnis anzugeben, in dem die Datei erstellt werden soll, indem man den zweiten Parameter der `createTempFile()`-Methode verwendet. Außerdem können optionale Dateiattribute wie Lese- oder Schreibberechtigungen mit der `setExecutable()`-Methode gesetzt werden.
+```Java
+try {
+    // Create temp file
+    tempFile.createNewFile();
+    System.out.println("Temporary file created: " + tempFile.getAbsolutePath());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 
-Es ist wichtig zu beachten, dass temporäre Dateien nicht automatisch gelöscht werden. Sie müssen vom Programmierer manuell gelöscht werden, wenn sie nicht mehr benötigt werden. Dies kann mit der `delete()`-Methode des `File`-Objekts erfolgen.
+Wenn die Datei erfolgreich erstellt wurde, erhalten wir als Ausgabe den absoluten Pfad zu unserer temporären Datei.
+
+## Tiefere Einblicke
+Das Erstellen von temporären Dateien kann manchmal mehr als nur das einfache Erstellen einer Datei erfordern. Hier sind einige weitere Dinge, die man beachten sollte:
+
+- Es ist wichtig sicherzustellen, dass die temporäre Datei nicht bereits existiert, bevor sie erstellt wird. Ansonsten kann dies zu Konflikten oder Fehlermeldungen führen.
+- Nach der Verwendung sollten temporäre Dateien auch wieder gelöscht werden, um Speicherplatz zu sparen.
+- Es gibt auch die Möglichkeit, eine temporäre Datei in einem speziellen Ordner zu erstellen, den Java automatisch verwaltet. Dazu muss man lediglich die Methode `createTempFile()` verwenden und den Ordner festlegen.
 
 ## Siehe auch
-
-- [Dokumentation zur `File`-Klasse von Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
-- [Beispiel für das Arbeiten mit temporären Dateien von Baeldung](https://www.baeldung.com/java-temporary-files)
+- [Java Dokumentation: java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Tutorial: Verwenden von temporären Dateien in Java](https://www.baeldung.com/java-temporary-file)

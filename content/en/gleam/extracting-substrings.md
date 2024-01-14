@@ -1,69 +1,51 @@
 ---
 title:    "Gleam recipe: Extracting substrings"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever come across a long string of text and needed to extract specific parts of it? Maybe you needed just the first few characters or a specific section in the middle. Extracting substrings can save you time and effort by allowing you to isolate the desired information without having to manipulate the entire string.
+At some point in your coding journey, you may come across a situation where you need to extract a specific part of a string or text. This could be for various reasons such as data manipulation, formatting, or validation. The good news is, Gleam has a built-in function that makes this process quick and easy!
 
 ## How To
 
-To extract substrings in Gleam, we will use the `string` module's `slice` function. This function takes in a string, a starting index, and an ending index, and returns the substring between those indices.
+To extract substrings in Gleam, we will be using the `substring` function. This function takes in three parameters: the input string, the starting index, and the ending index. Let's take a look at a simple example:
 
 ```
-Gleam code
-import string
+let input = "Hello, world!"
+let substring = substring(input, 7, 11)
 
-let text = "Hello, world!"
-
-let first = string.slice(text, 0, 5)
-// output: Hello
-
-let middle = string.slice(text, 7, 12)
-// output: world
+IO.println(substring) // Output: "world"
 ```
 
-We can also use negative indices to count from the end of the string. For example, using `-1` as the ending index will return the last character of the string.
+In the above code, we have an input string of "Hello, world!" and we use the `substring` function to extract the part of the string that starts at index 7 (which is the letter "w") and ends at index 11 (which is the letter "d"). The output will be the substring "world".
+
+You can also use variables for the starting and ending indexes, making the `substring` function even more useful. For example:
 
 ```
-Gleam code
-let last = string.slice(text, -1, -4)
-// output: ld!
+let input = "Hello, world!"
+let start = 7
+let end = 11
+let substring = substring(input, start, end)
+
+IO.println(substring) // Output: "world"
 ```
 
-The `slice` function also allows for partial ranges. If only the starting index is provided, it will return the substring from that index till the end of the string.
+In the above code, we use variables for the starting and ending indexes, making it easier to manipulate the substring extraction based on different inputs.
 
-```
-Gleam code
-let end = string.slice(text, 7)
-// output: world!
-```
+It's important to note that the `substring` function is zero-indexed, meaning that the first character in the string has an index of 0. Keep this in mind when determining the starting and ending indexes for your substring.
 
 ## Deep Dive
 
-It's important to note that the `slice` function is inclusive of the starting index but exclusive of the ending index. This means that the character at the ending index will not be included in the substring.
+The `substring` function in Gleam is actually a wrapper for the `slice` function in the standard library. The `slice` function takes in the same parameters as `substring`, but it returns a list of characters instead of a string.
 
-We can also use variables or functions as the indices for more dynamic substring extraction. For example, we can create a function that takes in a string and returns a substring of the first three characters.
-
-```
-Gleam code
-import string
-
-fn first_three_chars(text) {
-  string.slice(text, 0, 3)
-}
-
-let text = "Gleam is a powerful language!"
-
-let result = first_three_chars(text)
-// output: Gle
-```
+This means that you can also use pattern matching and list manipulation techniques to work with your substrings. For example, you can match on the returned list and extract specific elements from the list, or you can use methods such as `list.to_string` to convert the list back into a string.
 
 ## See Also
-- [Gleam string module documentation](https://gleam.run/documentation/std-lib/string/)
-- [Gleam slicing tutorial](https://gleam.run/tutorials/strings/#slicing)
 
-Happy coding!
+- Official Gleam documentation on the `substring` function: https://gleam.run/documentation/stdlib/substring
+- Official Gleam documentation on the `slice` function: https://gleam.run/documentation/stdlib/slice
+- Learn more about pattern matching in Gleam: https://gleam.run/documentation/guides/pattern-matching

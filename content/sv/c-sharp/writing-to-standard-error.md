@@ -1,36 +1,45 @@
 ---
 title:    "C#: Skriva till standardfel"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att skriva till standardfelutmatningen (standard error) är ett sätt för en programmerare att få diagnosinformation eller felmeddelanden från sitt program. Detta kan vara till stor hjälp vid felsökning och debugging.
+# Varför
 
-## Hur man gör
-För att skriva till standardfelutmatningen i C# kan du använda metoden `Console.Error.WriteLine()`. Detta kommer att skriva ut en sträng till standardfelutmatningen. Här är ett exempel på hur det kan se ut i din kod:
+Att skriva till standarderror, även känt som STDERR, är en kraftfull metod för att hantera fel i ditt C#-programmeringsprojekt. Genom att lära dig hur man skriver till STDERR kan du identifiera och korrigera problem i din kod snabbt och effektivt.
+
+# Hur man
+
+För att skriva till STDERR i C# använder du metoden "Console.Error.Writeline ()". Det är viktigt att komma ihåg att det är en del av "Console.Error" -klassen, inte "Console" -klassen.
 
 ```C#
+// Exempel på kod som skriver ett felmeddelande till stardarderror
 try
 {
-    // Kod som potentiellt kan orsaka ett fel
+    // Kod som kan leda till ett exception
 }
-catch (Exception ex)
+catch (Exception e)
 {
-    Console.Error.WriteLine($"Ett fel inträffade: {ex.Message}");
+    // Skriver felmeddelande till standarderror
+    Console.Error.WriteLine("Ett fel inträffade: " + e.Message);
 }
 ```
 
-I detta exempel skickar vi ett felmeddelande till standardfelutmatningen om det skulle uppstå ett undantag i vårt program. Detta kan hjälpa oss att identifiera och åtgärda problemet.
+Användningen av "Console.Error.Writeline ()" är snarlik "Console.Writeline ()", förutom att det skriver till standarderror istället för standardoutput. Detta innebär att det kommer att visas i din terminal eller command line istället för i själva programmet.
 
-Det är också viktigt att komma ihåg att standardfelutmatningen är bättre lämpad för felmeddelanden, medan standardutmatningen (standard output) bör användas för vanliga utskrifter. Att blanda samman dessa kan leda till otydlig och svårläst kod.
+Ett annat användbart sätt att använda "Console.Error.Writeline ()" är vid felhantering. Genom att skriva felmeddelanden till standarderror kan du enkelt diagnostisera och lösa problem i ditt program, vilket sparar tid och frustration.
 
-## Fördjupning
-Det finns också andra metoder för att skriva till standardfelutmatningen, såsom `Console.Error.Write()` och `Console.Error.WriteLineAsync()`. Om du vill läsa mer kan du kolla in Microsofts officiella dokumentation på ämnet.
+# Djupdykning
 
-Att lära sig hur man skickar information till standardfelutmatningen är en viktig del av att skriva robust och felsäker kod. Detta gör att du kan få värdefull information om eventuella fel i ditt program och enklare åtgärda dem.
+Att skriva till standarderror är en viktig del av felsökning i C#-programmering. Det är också ett bra sätt att separera utdata från felmeddelanden i din kod. Genom att skriva felmeddelanden till standarderror kan du se en tydlig åtskillnad mellan vad som förväntas vara utdata och eventuella felmeddelanden.
 
-## Se också
-- [Console class (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/console-class)
-- [Standard Error (stderr)](https://www.gnu.org/software/libc/manual/html_node/Error-Output.html)
+En annan fördel med att skriva till standarderror är att det är lätt att omdirigera det till en loggfil eller annan destination. Detta är särskilt användbart vid felsökning av distribuerade system där du inte har tillgång till den faktiska terminalen där programmet körs.
+
+Kort sagt är det en bra praxis att använda "Console.Error.Writeline ()" för att hantera fel och felsökning i ditt C#-projekt. Det kan göra din kod renare och mer lättläst, vilket är viktigt för både dig och dina medutvecklare.
+
+# Se även
+
+- [Console Class (Microsoft)](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+- [Writing to Standard Error (Microsoft)](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=net-5.0#writing-to-standard-error)

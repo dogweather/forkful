@@ -1,68 +1,61 @@
 ---
 title:    "C recipe: Reading a text file"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Reading a text file is a fundamental task in any programming language, including C. It allows us to access and manipulate the contents of a file, which is essential for many programs. Understanding how to read a text file in C can greatly increase your efficiency and productivity as a programmer.
+Reading a text file may seem like a simple task, but it is an essential skill for any programmer. It allows you to access and manipulate data from external sources, making your programs more dynamic and versatile. In this post, we will explore how to read a text file in C programming.
 
 ## How To
-
-To read a text file in C, we will first need a *FILE* pointer, which is a special type of variable used to store information about a file. We can declare it using the *fopen()* function, which takes two parameters: the name of the file and the mode in which we want to open it. The mode "r" indicates that we want to open the file for reading.
-
-```C
-FILE *fp;
-fp = fopen("text.txt", "r");
-```
-
-Next, we can use the *fscanf()* function to read data from the file. This function works similarly to the *scanf()* function used for reading input from the console, except that it takes an additional parameter, the file pointer.
+To read a text file in C, we will use the `fopen()` function to open the file and the `fgets()` function to read the contents of the file line by line. Let's take a look at an example:
 
 ```C
-int num;
-fscanf(fp, "%d", &num);
-```
+#include <stdio.h>
 
-We can also use a *while* loop to iterate through the file until we reach the end, using the *feof()* function to check for the end of the file.
+int main() {
+    FILE *file;
+    char line[100];
 
-```C
-while(!feof(fp)){
-    char str[100];
-    fgets(str, 100, fp); // read a line from the file
-    printf("%s", str); // print the line to the console
+    file = fopen("data.txt", "r"); // open the file in read mode
+    if (file == NULL) { // check if the file exists
+        printf("File not found.\n");
+        return 1;
+    }
+
+    while (fgets(line, 100, file) != NULL) { // read each line of the file
+        printf("%s", line); // print the line to the console
+    }
+
+    fclose(file); // close the file
+    return 0;
 }
 ```
 
-To close the file, we use the *fclose()* function, which takes the file pointer as a parameter.
+In the above code, we first declare a `FILE` variable and a character array to store the lines of the file. Then, we use the `fopen()` function to open the file in read mode. If the file is successfully opened, we use a `while` loop to read each line of the file using `fgets()`. Finally, we close the file using `fclose()`.
 
-```C
-fclose(fp);
-```
-
-The sample code above reads an integer from the file and then prints out all the lines until the end of the file is reached. You can try it out by creating a *text.txt* file with some numbers and strings in it.
-
-**Sample output:**
+Let's say our `data.txt` file contains the following lines:
 
 ```
-123
 Hello
-World
+World!
+```
+
+The output of our program will be:
+
+```
+Hello
+World!
 ```
 
 ## Deep Dive
+Now, let's take a deeper look at the `fopen()` and `fgets()` functions. The `fopen()` function takes two arguments - the name of the file and the mode in which it will be opened. The mode can be "r" for read, "w" for write, "a" for append, and more. It also returns a `FILE` pointer which can be used to access the file.
 
-In C, a text file is a sequence of characters stored in a file on the disk. To read the file, we need to specify the path to the file, which can either be the absolute path or the relative path to the current working directory. The file must also exist in that path, or else an error will occur.
-
-Text files in C are treated as streams of characters, which means that we can manipulate them just like we do with input from the console. For example, we can use the *sscanf()* function to read data from a string, which is useful for parsing data from a file with a specific format.
-
-Another essential concept to understand when reading a text file in C is *buffering*. When we read a file, the data is not read directly from the disk but is instead buffered in memory. This allows for faster reading and manipulation of the data. However, we need to be careful when modifying the file in the program, as the changes will not be reflected in the file until it is closed and reopened.
+The `fgets()` function takes three arguments - the character array to store the line, the size of the array, and the `FILE` pointer. It reads the file line by line until it reaches the end of the file (EOF) and returns `NULL`. This allows us to use it in a `while` loop to read the entire file.
 
 ## See Also
-
-- [fopen() function](https://www.geeksforgeeks.org/fopen-for-an-existing-file-in-write-mode/)
-- [fscanf() function](https://www.tutorialspoint.com/c_standard_library/c_function_fscanf.htm)
-- [Buffering in C](https://www.geeksforgeeks.org/buffering-in-c/)
-- [sscanf() function](https://www.geeksforgeeks.org/sscanf-in-c/)
-- [File Input/Output in C](https://www.programiz.com/c-programming/c-file-input-output)
+- [C File Input/Output](https://www.programiz.com/c-programming/c-file-input-output)
+- [C Standard Library - File Input/Output](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Opening and Closing Files in C](https://www.codingunit.com/c-tutorial-file-io-using-text-files)

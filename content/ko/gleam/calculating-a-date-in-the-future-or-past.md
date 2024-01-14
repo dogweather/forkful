@@ -1,47 +1,44 @@
 ---
-title:    "Gleam: 미래 또는 과거의 날짜 계산하기"
+title:    "Gleam: 미래 또는 과거의 날짜 계산"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
-날짜를 미래나 과거로 계산하는 것에 대해 왜 관심을 가질까요? 나중에 특정 날짜에 기념일이나 중요한 일정이 있을 수 있고, 그 날짜를 미리 계산하고 알아두는 것이 유용할 수 있습니다.
+# 왜?
 
-## 계산 방법
-지금부터는 Gleam 프로그래밍 언어로 날짜를 계산하는 방법을 소개하겠습니다. 먼저 현재 날짜를 알아내는 함수를 사용하여 오늘의 날짜를 구하고, 이를 변수에 저장합니다. 그 후에 이 변수를 이용하여 미래나 과거의 날짜를 계산하고 출력할 수 있습니다.
+일정을 계산하면서 년, 월, 일이 나타난 날짜를 찾는 것은 일상적인 일입니다. 그러나 지난 날짜나 미래의 날짜 계산은 도대체 어떤 이유 때문에 필요할까요? 수업 시간표, 여행 계획, 사업 계획 등 다양한 상황에서 과거나 미래의 날짜를 계산하고 싶을 수 있습니다.
+
+# 어떻게
+
+우리는 Gleam에서 간단한 코드를 작성하여 날짜 계산 기능을 구현할 수 있습니다. 먼저 `date` 모듈을 불러오고, `date_diff` 함수를 사용하여 과거나 미래의 날짜와 현재 날짜 사이의 일수 차이를 계산합니다. 그리고 `add` 함수를 사용하여 계산한 일수만큼 더하거나 빼 줌으로써 원하는 날짜를 얻을 수 있습니다. 아래는 예시 코드와 출력 결과입니다.
 
 ```Gleam
-import Time.Date
+import date
 
-fn main() {
-  let today = Date.today()
-  let future_date = Date.add_days(today, 7)
-  let past_date = Date.sub_days(today, 14)
+let past_date = date.add(date.now(), date_diff(-7))
+let future_date = date.add(date.now(), date_diff(14))
 
-  io.println("오늘: {}", today)
-  io.println("일주일 후: {}", future_date)
-  io.println("14일 전: {}", past_date)
-}
+IO.print("7 days ago: " ++ past_date)
+IO.print("14 days from now: " ++ future_date)
 ```
 
-위의 코드를 실행하면, 다음과 같은 출력을 볼 수 있습니다.
+**출력 결과:**
 
 ```
-오늘: 2021-04-28
-일주일 후: 2021-05-05
-14일 전: 2021-04-14
+7 days ago: 2021-11-15T22:12:33Z
+14 days from now: 2021-12-06T22:12:33Z
 ```
 
-## 깊이 들어가기
-날짜를 계산하는 방법에 대해 깊이 있는 정보를 알고 싶다면, Gleam 공식 문서에서 Time.Date 모듈을 자세히 살펴보는 것을 추천합니다. 이 모듈은 다양한 날짜 계산 함수를 제공하고 있으며, 파라미터를 추가하여 더 복잡한 계산도 가능합니다. 또한 이 모듈을 사용하여 현재 시간과 날짜를 다루는 것도 가능합니다.
+# 깊게 들어가기
 
-## 참고 자료
-- [Gleam 공식 문서 - Time.Date 모듈](https://gleam.run/documentation/stdlib/time.date/)
-- [Gleam 프로그래밍 언어 소개 (한국어)](https://gleam.run/documentation/getting-started-korean/)
-- [Date 계산 관련 함수들 (영어)](https://gleam.run/playground/2014)
+더 복잡한 날짜 계산을 할 때는 `date.add` 함수 대신 `add_duration` 함수를 사용해도 됩니다. 이 함수는 `Duration` 타입의 값을 인자로 받아 계산된 날짜를 반환합니다. 또한 `date.compare` 함수를 사용하면 두 날짜를 비교하여 어느 날짜가 더 빠른지 혹은 더 늦은지 판단할 수 있습니다.
 
-## 참고 자료
-- [Gleam 공식 문서 - Time.Date 모듈](https://gleam.run/documentation/stdlib/time.date/)
-- [Gleam 프로그래밍 언어 소개 (한국어)](https://gleam.run/documentation/getting-started-korean/)
-- [Date 계산 관련 함수들 (영어)](https://gleam.run/playground/2014)
+또한 `date.Format` 모듈을 사용하면 날짜를 원하는 형식으로 출력할 수 있습니다. `date.Fromat.to_string` 함수를 사용하여 날짜와 특정 형식을 인자로 넘겨주면 원하는 포맷의 날짜 문자열을 얻을 수 있습니다.
+
+# 나아가서
+
+- [Gleam 공식 문서](https://gleam.run/documentation/)
+- [Gleam 날짜 관련 모듈](https://gleam.run/documentation/stdlib/date/)
+- [공식 Gleam 커뮤니티](https://gleam.run/community/)

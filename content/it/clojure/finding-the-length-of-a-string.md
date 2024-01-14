@@ -1,35 +1,40 @@
 ---
-title:    "Clojure: Trova la lunghezza di una stringa"
+title:    "Clojure: Trovare la lunghezza di una stringa."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Solo 1-2 frasi per spiegare *perché* qualcuno dovrebbe impegnarsi a trovare la lunghezza di una stringa. 
 
-A volte nella programmazione, è necessario sapere quanti caratteri ci sono in una stringa. Può essere utile per la validazione dei dati, per il conteggio di parole o per altre operazioni sulle stringhe. Sapere come trovare la lunghezza di una stringa può aiutare a semplificare il processo di codifica e fornire risultati più precisi.
+Perché vorresti sapere la lunghezza di una stringa? Forse stai creando un programma per elaborare testi o hai bisogno di validare l'input dell'utente. In ogni caso, la conoscenza della lunghezza di una stringa è un'operazione fondamentale nella programmazione.
 
 ## Come fare
-Di seguito sono riportati alcuni esempi di codice in Clojure che mostrano come trovare la lunghezza di una stringa e l'output che ci si può aspettare.
+
+Per trovare la lunghezza di una stringa in Clojure, è possibile utilizzare la funzione `count` che conta il numero di elementi all'interno di una sequenza. Se si passa una stringa alla funzione `count`, restituirà il numero di caratteri nella stringa. Ecco un esempio di codice:
 
 ```Clojure
-(.length "Ciao!")
-;; Output: 5
-```
-```
-(count "Hello world")
-;; Output: 11
+(def stringa "Ciao a tutti!")
+(count stringa)
 ```
 
-Questi esempi utilizzano rispettivamente il metodo `.length` e la funzione `count` per trovare la lunghezza delle stringhe fornite come argomento.
+L'output sarà: `13`, poiché ci sono 13 caratteri nella stringa.
 
 ## Approfondimento
-Trovare la lunghezza di una stringa può sembrare un'operazione semplice, ma ci sono alcuni aspetti da tenere in considerazione. Ad esempio, alcuni caratteri speciali o emoji possono essere rappresentati con più di un byte, quindi la loro lunghezza nella stringa potrebbe non corrispondere al numero di caratteri visibili. Inoltre, ci sono metodi per trovare la lunghezza di una stringa che possono essere più efficienti di altri a seconda delle circostanze.
 
-Per maggiori informazioni sull'argomento, si consiglia di esplorare la documentazione ufficiale di Clojure sulle stringhe e di fare qualche esperimento con diversi tipi di stringhe per comprendere meglio come funziona la lunghezza.
+È importante ricordare che in Clojure la lunghezza di una stringa viene restituita come intero e non come una nuova stringa contenente il numero di caratteri. Inoltre, la funzione `count` può essere utilizzata su qualsiasi sequenza, non solo su stringhe.
+
+Se si vuole ottenere il risultato come una stringa, è possibile utilizzare la funzione `str` per convertire il risultato in una stringa. Ad esempio:
+
+```Clojure
+(def stringa "Ciao a tutti!")
+(str (count stringa))
+```
+
+L'output sarà: `"13"`.
 
 ## Vedi anche
-- Documentazione ufficiale di Clojure sulle stringhe: https://clojuredocs.org/clojure.core/clojure.string
-- Tutorial su Clojure per principianti: https://clojure.org/guides/getting_started
-- Esempi di esercizi pratici per la lunghezza delle stringhe in Clojure: https://www.codewars.com/kata/search/find%20length%20of%20string/language/Clojure
+
+- Documentazione ufficiale di Clojure sulla funzione `count`: https://clojuredocs.org/clojure.core/count
+- Guida introduttiva alla programmazione in Clojure: https://cognitect.com/learn-clojure/

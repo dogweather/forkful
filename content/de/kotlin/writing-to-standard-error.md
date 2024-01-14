@@ -1,50 +1,49 @@
 ---
-title:    "Kotlin: Schreiben auf Standardfehler"
+title:    "Kotlin: Schreiben auf den Standardfehler"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt der Programmierung gibt es unzählige Möglichkeiten, um einen Code zu schreiben und auszuführen. Eine dieser Möglichkeiten ist das Schreiben von Standardfehlern. Es mag zwar nicht sofort offensichtlich erscheinen, warum jemand diese Methode nutzen würde, aber es gibt definitiv Situationen, in denen dies von großem Nutzen sein kann.
+Ein wichtiger Aspekt der Programmierung ist die Fehlerbehandlung. Es wird oft empfohlen, das Standardfehler-Ausgabegerät (auch bekannt als Standardfehler-Stream) zu nutzen, um Fehler und Ausnahmen effektiv zu verfolgen und zu handhaben.
 
-Das Schreiben von Standardfehlern ermöglicht es Entwicklern, Fehlermeldungen direkt an den Nutzer oder das Fehlerprotokoll zu übermitteln. Dies kann bei der Fehlerbehebung und der Verbesserung der Benutzererfahrung sehr hilfreich sein. In dieser Anleitung werde ich zeigen, wie man in Kotlin einfach Standardfehler schreiben kann.
+# Wie es geht
 
-## Wie
-
-Um eine Nachricht an den Standardfehler zu senden, kann die ```System.err.println()``` Funktion verwendet werden. Diese Funktion erwartet einen String als Parameter und gibt diesen an den Standardfehler weiter. Hier ist ein einfaches Beispiel:
+Die Verwendung des Standardfehler-Streams in Kotlin ist sehr einfach. Wir können die `System.err` Variable verwenden, um auf den Standardfehler-Stream zuzugreifen und dann die `println()` Funktion verwenden, um unsere Fehlermeldungen auszugeben.
 
 ```Kotlin
-System.err.println("Dies ist eine Fehlermeldung")
-```
-
-Die Ausgabe wird dann im Fehlerprotokoll angezeigt und kann über die Konsole oder eine Log-Datei eingesehen werden.
-
-Es ist auch möglich, eine gesamte Exception an den Standardfehler zu senden, indem man die ```System.err.println()``` Funktion in einem try-catch Block verwendet. Hier ist ein Beispiel:
-
-```Kotlin
-try {
-    // Code, der möglicherweise einen Fehler verursacht
-} catch (e: Exception) {
-    System.err.println(e)
+fun main() {
+    val num = 0
+    try {
+        val result = 10 / num
+        println(result)
+    } catch (e: ArithmeticException) {
+        System.err.println("Fehler: Division durch 0")
+    }
 }
 ```
 
-Dieser Code fängt eine Exception ab und gibt sie an den Standardfehler weiter, wodurch genaue Informationen über den aufgetretenen Fehler erhalten werden.
+Der obige Code versucht, die Division von 10 durch die Variable `num` durchzuführen, die den Wert `0` hat. Dies führt zu einer `ArithmeticException`, die wir in der `catch`-Klausel behandeln. Dort geben wir eine Fehlermeldung über den Standardfehler-Stream aus, um den Benutzer auf die Ausnahme aufmerksam zu machen.
 
-## Deep Dive
+Wenn wir dieses Programm ausführen, erhalten wir die folgende Ausgabe auf dem Standardfehler-Stream:
 
-Nun, da Sie wissen, wie man Nachrichten und Exceptions an den Standardfehler sendet, ist es wichtig, zu verstehen, wie diese Informationen in der Regel verarbeitet werden. Üblicherweise wird der Standardfehler vom Betriebssystem oder der Laufzeitumgebung verwendet, um Fehlermeldungen zu speichern und anzuzeigen..
+```
+Fehler: Division durch 0
+```
 
-Beispielsweise kann eine IDE wie IntelliJ IDEA den Standardfehler nutzen, um Fehlermeldungen während der Entwicklung anzuzeigen. In Produktionsumgebungen kann der Standardfehler als Teil eines Fehlerprotokolls verwendet werden, um Entwicklern Informationen über auftretende Probleme zu geben.
+Auf diese Weise können wir effektiv Fehler und Ausnahmen verfolgen und behandeln, um unsere Anwendungen robuster zu machen.
 
-Es ist auch wichtig zu beachten, dass der Standardfehler nicht immer separat angezeigt wird. In einigen Fällen werden sowohl die Standardausgabe als auch der Standardfehler zusammen angezeigt. Es ist daher ratsam, bei der Ausgabe an den Standardfehler deutlich zu machen, dass es sich tatsächlich um einen Fehler handelt.
+# Tiefere Einblicke
 
-## Siehe auch
+Eine Sache, die Sie beachten sollten, ist, dass der Standardfehler-Stream ein eigenständiger Stream ist, der unabhängig vom Standardausgabestream arbeitet. Dies bedeutet, dass Ausgaben auf dem Standardfehler-Stream und dem Standardausgabestream getrennt verarbeitet und angezeigt werden.
 
-Für weitere Informationen über Kotlin und das Schreiben von Standardfehlern empfehle ich folgende Links:
+Eine weitere wichtige Sache ist, dass der Standardfehler-Stream normalerweise rot dargestellt wird, um auf kritische Fehler hinzuweisen, während der Standardausgabestream normalerweise schwarz dargestellt wird. Dies macht es für den Benutzer einfacher, zwischen normalen Programmausgaben und Fehlermeldungen zu unterscheiden.
 
-- [Offizielle Kotlin Dokumentation](https://kotlinlang.org/docs/reference/)
-- [Tutorial zur Fehlerbehandlung in Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)
-- [Kotlin Code Samples](https://kotlinlang.org/docs/tutorials/getting-started.html#examples)
+# Siehe auch
+
+- [Offizielle Kotlin Dokumentation zu System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-output-stream-writer/system.-err.html)
+- [Medium-Artikel zum Umgang mit Fehlern in Kotlin](https://medium.com/swlh/handling-errors-in-kotlin-131b1b6ed075)
+- [Stack Overflow Thread zum Thema Fehlerbehandlung in Kotlin](https://stackoverflow.com/questions/51871622/kotlin-exceptions-how-to-deal-with-exceptions-in-kotlin)

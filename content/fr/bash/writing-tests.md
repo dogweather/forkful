@@ -1,55 +1,54 @@
 ---
-title:    "Bash: Écrire des tests"
+title:    "Bash: Écriture des tests"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Écrire des tests dans un programme Bash peut sembler fastidieux, mais c'est en fait une étape essentielle pour garantir la qualité et la fiabilité de votre code. En écrivant des tests, vous pouvez vérifier si votre code fonctionne comme prévu et détecter des erreurs potentielles avant de les déployer en production. Cela permet également de faciliter la maintenance et les mises à jour ultérieures du code.
+Ecrire des tests peut sembler fastidieux pour certains, mais cela peut faire la différence entre un code fonctionnel et un code bugué. En écrivant des tests, vous vous assurez que votre code fonctionne correctement et vous épargnez des heures de débogage par la suite.
 
 ## Comment faire
+Ecrire des tests dans Bash peut sembler intimidant au premier abord, mais heureusement, le processus est assez simple. Vous pouvez utiliser des commandes telles que `echo` et `exit` pour contrôler le flux de votre script et vérifier si les résultats correspondent à ce que vous attendez.
 
-Pour écrire des tests dans un programme Bash, il existe trois techniques principales : les tests automatisés avec des commandes intégrées, l'utilisation de fichiers de test et l'utilisation d'un outil dédié comme Bash Automated Testing System (BATS).
+Voici un exemple de script pour tester une fonction qui calcule la somme de deux nombres :
 
-### Tests automatisés avec des commandes intégrées
+```Bash
+#!/bin/bash
 
-La manière la plus simple et la plus courante d'écrire des tests dans un programme Bash est d'utiliser les commandes intégrées telles que `test` ou `[[ ]]`. Ces commandes permettent de vérifier des conditions et de retourner un code de sortie en fonction du résultat du test. Par exemple, le test `[[ "$var" == "hello" ]]` vérifiera si la variable `var` est égale à "hello" et retournera un code de sortie de 0 (succès) si c'est le cas ou 1 (échec) sinon.
-
-### Utilisation de fichiers de test
-
-Une autre technique consiste à créer des fichiers de test séparés contenant une série de commandes Bash à exécuter pour vérifier la sortie de votre programme. Ces fichiers de test peuvent être exécutés manuellement ou automatiquement à l'aide d'un outil tel que `xtrace` ou `expect`.
-
-### Utilisation de BATS
-
-Bash Automated Testing System (BATS) est un outil spécialement conçu pour faciliter l'écriture de tests dans des programmes Bash. Il utilise des tests au format `tap` (Test Anything Protocol) et permet une gestion plus avancée des rapports de test et des erreurs. Pour utiliser BATS, il suffit d'installer l'outil et d'écrire vos tests dans un fichier `*.bats` en utilisant une syntaxe spécifique.
-
-Voici un exemple d'un fichier de test BATS :
-
-```
-## Test unitaire pour la fonction de multiplication
-@test "Multiplication de 4 par 2 devrait être égal à 8" {
-    run multiplication 4 2
-    [[ $status -eq 0 ]]
-    [[ $output == "8" ]]
+# Définir une fonction pour calculer la somme
+function somme() {
+    local somme=$(( $1 + $2 ))
+    echo "La somme de $1 et $2 est égale à $somme."
 }
 
-@test "Multiplication de 7 par 0 devrait être égal à 0" {
-    run multiplication 7 0
-    [[ $status -eq 0 ]]
-    [[ $output == "0" ]]
-}
+# Appeler la fonction et stocker le résultat dans une variable
+resultat=$(somme 5 7)
+
+# Vérifier si le résultat est correct
+if [ "$resultat" == "La somme de 5 et 7 est égale à 12." ]; then
+    echo "Test réussi !"
+else
+    echo "Erreur : résultat inattendu."
+fi
 ```
 
-Ce fichier contient deux tests pour une fonction de multiplication qui prend deux nombres en entrée et retourne leur produit. Le code `run` exécute la fonction avec les arguments fournis et stocke le code de sortie dans la variable `$status` et la sortie de la fonction dans la variable `$output`. Les commandes `[[ ]]` sont utilisées pour vérifier si le code de sortie et la sortie correspondent aux valeurs attendues.
+Lorsque vous exécutez ce script, vous devriez obtenir l'output suivant :
+
+```
+La somme de 5 et 7 est égale à 12.
+Test réussi !
+```
 
 ## Plongée en profondeur
+Il existe plusieurs façons d'écrire des tests dans Bash, y compris l'utilisation de la commande `test` ou de l'opérateur `[[ ]]` pour vérifier des conditions. Vous pouvez également créer des fichiers de tests séparés pour les différentes parties de votre code.
 
-Pour écrire des tests efficaces dans un programme Bash, il est important de comprendre les différentes techniques de test et leurs limites. Par exemple, bien que les tests automatisés avec des commandes intégrées soient faciles à mettre en place, ils sont limités en termes de complexité et peuvent manquer de fiabilité dans certains cas. Les fichiers de test offrent une plus grande flexibilité, mais peuvent être plus difficiles à maintenir. L'utilisation de BATS peut sembler plus complexe au départ, mais elle offre des fonctionnalités plus avancées et une meilleure gestion des rapports de test.
+Il est important de couvrir plusieurs scénarios possibles dans vos tests, en utilisant des valeurs extrêmes et en vérifiant les erreurs. Vous pouvez également utiliser des outils tels que `bash-test` pour automatiser le processus de création de tests.
+
+N'oubliez pas que les tests doivent être écrits avec le même soin et la même attention que votre code, car ils font partie intégrante de votre processus de développement.
 
 ## Voir aussi
-
-- [Guide de démarrage pour écrire des tests dans un programme Bash](https://www.linux.com/training-tutorials/writing-bash-tests/)
-- [Documentation officielle de BATS](https://github.com/sstephenson/bats)
-- [Comment écrire des tests de qualité dans un programme Bash](https://www.shellcheck.net/blog/category_linux.html)
+- [Bash Test Driven Development (TDD)](https://spin.atomicobject.com/2016/06/02/bash-tdd/)
+- [Bash Testing Techniques](https://www.cloudbees.com/blog/advanced-bash-techniques-testing)
+- [bash-test](https://github.com/bahamas10/bash-test)

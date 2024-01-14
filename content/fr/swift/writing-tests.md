@@ -1,57 +1,51 @@
 ---
-title:    "Swift: Écriture des tests"
+title:    "Swift: Écrire des tests"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi écrire des tests en Swift?
 
-La mise en place de tests est un aspect essentiel de la programmation en Swift. Les tests sont un moyen efficace de s'assurer que le code fonctionne correctement et qu'il ne présente pas de bogues. Ils permettent également de garantir que les modifications apportées au code n'ont pas d'impact négatif sur les fonctionnalités existantes.
+Lorsque vous développez des applications en Swift, vous vous assurez que votre code fonctionne correctement est essentiel. Cependant, avec le passage du temps et la mise à jour fréquente de votre code, il peut être difficile de s'assurer que toutes les fonctionnalités précédemment implémentées fonctionnent toujours comme prévu. C'est ici que les tests entrent en jeu. Les tests vous permettent de vérifier régulièrement que votre code fonctionne comme prévu, ce qui peut vous faire économiser beaucoup de temps et de frustrations à long terme.
 
-## Comment faire 
+## Comment écrire des tests en Swift?
 
-Pour commencer à écrire des tests en Swift, il suffit de suivre ces étapes simples : 
+Ecrire des tests en Swift est relativement simple. Tout d'abord, vous devez créer un nouveau fichier de test dans votre projet Xcode en utilisant le modèle "Unit Test Case Class". Ensuite, utilisez les fonctionnalités de test incluses dans la bibliothèque de test de Swift, tels que `XCTAssert` pour vérifier les résultats attendus de votre code. Voici un exemple de test utilisant `XCTAssert`:
 
-1. Créez une classe de test en utilisant la notation ```class NomDeVotreClasseDeTest: XCTestCase```
-2. Ajoutez des méthodes de test en utilisant la notation ```func nomDeVotreMethodeDeTest()```
-3. Dans chaque méthode de test, utilisez le mot-clé ```XCTAssert``` pour vérifier si une condition est vraie ou fausse. Par exemple : ```XCTAssert(nomDeLaFonctionATester() == true)```
-4. Exécutez vos tests en sélectionnant Product > Test dans le menu ou en appuyant sur ```Cmd + U```
-
-Voici un exemple de code de test en Swift : 
-
-```
-class AdditionTests: XCTestCase {
-    
-    // Test si l'addition de 2 nombres fonctionne correctement 
-    func testAddition() {
-        let a = 5
-        let b = 7
-        XCTAssertEqual(a + b, 12)
-    }
-    
-    // Test si l'addition de 3 nombres fonctionne correctement 
-    func testAdditionTriple() {
-        let a = 3
-        let b = 9
-        let c = 4
-        XCTAssertEqual(a + b + c, 16)
-    }
+```Swift
+func testAddition() {
+    let result = add(2, 3)
+    XCTAssertEqual(result, 5, "Result should be 5")
 }
 ```
 
-Lors de l'exécution de ces tests, vous devriez voir une ligne verte indiquant que les tests ont réussi ou une ligne rouge indiquant qu'ils ont échoué avec une description de l'erreur.
+Cet exemple vérifie si la fonction `add` renvoie correctement la somme de deux nombres. Si la valeur renvoyée est différente de 5, le test échouera.
 
-## Approfondissement 
+Vous pouvez également utiliser des `XCTAssert` pour vérifier l'exactitude des résultats, comme dans l'exemple suivant:
 
-Il existe plusieurs types de tests en Swift qui peuvent être utilisés pour différents cas de figure. Parmi ceux-ci, on retrouve les tests unitaires qui permettent de tester une petite partie du code, les tests d'intégration qui vérifient si les différentes parties du code fonctionnent ensemble, et les tests d'interface utilisateur qui permettent de s'assurer que l'interface fonctionne correctement.
+```Swift
+func testString() {
+    let string = "Bonjour"
+    XCTAssertFalse(string.isEmpty, "String should not be empty")
+}
+```
 
-Il est également important de savoir comment écrire des tests efficaces en utilisant des outils tels que des mocks ou des stubs. Les mocks sont des objets simulés qui remplacent les dépendances du code testé, tandis que les stubs sont des objets avec des valeurs fixes qui remplacent certaines parties du code.
+Ce test vérifie si la chaîne de caractères n'est pas vide, et échouera si elle est vide.
 
-Enfin, il est bon de noter que les tests doivent être écrits au fur et à mesure que le code est développé et qu'ils doivent être exécutés régulièrement pour s'assurer que le code reste fonctionnel.
+## Plongée profonde
 
-## Voir aussi 
+Pour écrire des tests efficaces, il est important de connaître les principes de base de l'écriture de code propre en Swift. Cela inclut l'utilisation de variables et de fonctions clairement nommées, ainsi que la division du code en morceaux logiques et bien documentés. En outre, il est important d'écrire des tests de manière régulière, plutôt que de les considérer comme une tâche après-coup.
 
-- [Les bases du développement iOS en Swift](https://openclassrooms.com/fr/courses/4478271-decouvrez-les-bases-du-developpement-ios-en-swift)
-- [Guide de démarrage en développement iOS avec Swift](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
-- [Documentation officielle de tests en Swift](https://developer.apple.com/documentation/uikit/testing_with_xcode)
+Un autre aspect important à considérer est la gestion des erreurs dans vos tests. La gestion des erreurs est une pratique courante en programmation, et il est important de tester vos fonctions pour vous assurer qu'elles réagissent correctement aux erreurs potentielles.
+
+Enfin, il est utile d'utiliser des outils tels que Xcode Code Coverage pour mesurer la couverture de vos tests. Cela vous permet de voir quels parties de votre code ne sont pas couvertes par des tests, vous aidant à améliorer la qualité de vos tests.
+
+# Voir aussi
+
+Pour en savoir plus sur l'écriture de tests en Swift, consultez les ressources suivantes:
+
+- [Documentation officielle de tests en Swift](https://developer.apple.com/documentation/xctest)
+- [Article sur les tests en Swift de Xcodereleases.com](https://xcodereleases.com/learn-testing-swift/)
+- [Vidéo de WWDC sur les tests en Swift](https://developer.apple.com/videos/play/wwdc2015/406/)

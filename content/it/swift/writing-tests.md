@@ -1,38 +1,47 @@
 ---
 title:    "Swift: Scrivere test"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
-Scrivere test è un aspetto importante della programmazione in Swift e può portare a molteplici vantaggi. In primo luogo, aiuta a verificare che il codice funzioni correttamente, evitando potenziali bug e fornendo maggiore affidabilità nel lungo termine. Inoltre, aiuta a documentare il codice e a facilitare il processo di debug in caso di errori.
+## Perché
 
-##Come Fare
-Il modo più semplice per scrivere test in Swift è utilizzando il framework di testing integrato, XCTest. Con questo framework, è possibile scrivere test che verificano se una determinata parte di codice produce i risultati desiderati. Ad esempio, se si vuole testare una funzione che calcola l'area di un rettangolo, il codice potrebbe apparire così:
+Scrivere test è un'attività fondamentale per garantire la qualità del codice e per facilitare il processo di debug. In questo articolo, esploreremo i motivi per cui è importante scrivere test e come farlo in Swift. 
 
-```Swift
-func calcolaArea(base: Double, altezza: Double) -> Double {
-    return base * altezza
+## Come Fare
+
+Per scrivere test in Swift, è necessario utilizzare il framework integrato XCTest. Iniziamo con un esempio di test di una funzione che verifica se un numero è pari o dispari:
+
+```
+Swift func isEven(number: Int) -> Bool {
+    if number % 2 == 0 {
+        return true
+    } else {
+        return false
+    }
 }
 
-// Test
-let valoreAspettato = 20.0 // risultato atteso con base = 4 e altezza = 5
-let risultato = calcolaArea(base: 4, altezza: 5)
+Swift func testIsEven() {
+    // Given
+    let number = 6
 
-if risultato == valoreAspettato {
-    print("Test Passato")
-} else {
-    print("Test Fallito")
+    // When
+    let result = isEven(number: number)
+
+    // Then
+    XCTAssert(result == true, "Expected result to be true")
 }
 ```
 
-In questo modo, si può assicurare che la funzione calcola correttamente l'area del rettangolo.
+Nell'esempio sopra, utilizziamo la funzione `XCTAssert` per confrontare il valore di `result` con il valore atteso. Se il risultato è diverso da quello previsto, il test fallirà. Ciò ci permette di verificare facilmente se la nostra funzione `isEven` sta producendo il risultato corretto. 
 
-##Profondità del Test
-Esistono anche altri aspetti da considerare quando si scrivono test in Swift. È importante testare sia i casi positivi (quando il codice funziona correttamente) che i casi negativi (quando si verificano errori o eccezioni). Inoltre, è necessario garantire che i test siano facili da eseguire e mantenere. Ciò potrebbe significare dividere il codice in funzioni più piccole e testarle individualmente anziché testare una grande porzione di codice in una sola volta.
+## Deep Dive
 
-##Vedi Anche
-- [XCTest - Documentazione di Apple](https://developer.apple.com/documentation/xctest)
-- [Test Driven Development in Swift - Medium](https://medium.com/swift-programming/test-driven-development-in-swift-994b1a83b7c8)
-- [Introduzione al Testing in Swift - Ray Wenderlich](https://www.raywenderlich.com/709-introduction-to-testing-in-swift)
+Quando si scrivono test, è importante assicurarsi di coprire tutte le possibili situazioni e i potenziali errori nel codice. Ciò significa che è necessario scrivere test per i casi limite e per tutte le condizioni possibili. Inoltre, è importante mantenere i test aggiornati in modo che riflettano sempre il funzionamento corrente del codice. Questo ci aiuta a trovare e risolvere eventuali bug in modo più rapido e a garantire che il codice continui a funzionare come previsto anche dopo le modifiche. 
+
+## Vedi Anche
+- [Documentazione XCTest di Apple](https://developer.apple.com/documentation/xctest)
+- [Guida all'Unit Testing in Swift](https://www.raywenderlich.com/9607-ios-unit-testing-and-ui-testing-tutorial)
+- [Tutorial di Test-Driven Development in Swift](https://www.appcoda.com/test-driven-development-tutorial/)

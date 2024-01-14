@@ -1,26 +1,56 @@
 ---
-title:    "C: Tulevan tai menneen päivämäärän laskeminen"
+title:    "C: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi laskuri-ohjelmiin?
 
-Monissa ohjelmoinnin projekteissa saattaa olla tarve laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä. Tämä voi olla hyödyllistä esimerkiksi aikataulujen suunnittelussa tai tapahtumien ennustamisessa. C-kieli tarjoaa useita tapoja laskea päivämääriä, joten se on hyvä kieli oppia perusajatuksista.
+Laskuri-ohjelmat ovat erittäin käteviä työkaluja, kun haluat laskea päivämäärän tulevaisuudessa tai menneisyydessä. Tämä voi auttaa sinua esimerkiksi suunnittelemaan tulevia tapahtumia tai tarkistamaan menneitä tapahtumia. C-ohjelmointikielellä voit luoda omia laskuri-ohjelmia ja lisätä niihin erilaisia toimintoja ja ominaisuuksia haluamallasi tavalla.
 
-## Miten
+## Miten tehdä laskuri-ohjelma C:llä
 
-Päivämäärien laskeminen C-kielellä vaatii muutaman perusasian ymmärtämistä. Ensinnäkin, päivämäärät tallennetaan yleensä taulukkoina, jotka sisältävät päivä, kuukausi ja vuosi. Tätä voidaan esittää myös numeroina, esimerkiksi 29.6.2021 on sama kuin 29, 6, 2021. 
+C-ohjelmointikielellä voit luoda laskuri-ohjelman, joka laskee päivämäärän tietyn määrän päiviä eteenpäin. Tämä voidaan tehdä käyttämällä päivämäärän-aikamoduulia "time.h". Alla on esimerkki koodista, joka laskee päivämäärän 100 päivää eteenpäin ja tulostaa sen muodossa "pp.kk.vvvv".
 
-Kun halutaan laskea päivämäärä tulevaisuudessa, voidaan käyttää C:n sisäänrakennettuja funktioita, kuten `mktime` ja `localtime`. Nämä funktiot tarvitsevat syötekenttiä, kuten vuoden, kuukauden ja päivän, ja palauttavat arvoja, jotka edustavat päivämäärän ajanjaksoa. Esimerkiksi `mktime` voi ottaa yksinkertaisen päivämäärän, kuten 1.1.2022 ja laskea sille vastaavan ajanjakson, joka voidaan sitten tuoda esille esimerkiksi `printf`-funktion avulla.
+```C
+#include <stdio.h>
+#include <time.h>
 
-## Syvällinen sukellus
+int main() {
+  // Alustetaan tarvittavat muuttujat
+  struct tm date = {0}; // Tietue päivämäärälle
+  int days_to_add = 100; // Haluttu päivien määrä
+  // Asetetaan nykyinen päivämäärä käytettäväksi
+  time_t now = time(NULL);
+  // Käytetään nykyistä päivämäärää lähtökohtana
+  date = *localtime(&now);
+  // Lisätään haluttu määrä päiviä eteenpäin
+  date.tm_mday += days_to_add;
+  // Muutetaan päivämäärä aikaleimaksi
+  time_t new_date = mktime(&date);
+  // Tulostetaan päivämäärä muodossa "pp.kk.vvvv"
+  printf("Päivämäärä 100 päivää eteenpäin: %d.%d.%d\n", date.tm_mday, date.tm_mon + 1, date.tm_year + 1900);
+  return 0;
+}
+```
 
-Päivämäärien laskeminen C-kielellä voi olla monimutkaisempaa kuin vain yksittäisten funktioiden käyttöä. Jos haluat tarkempia päivämääriä, voit käyttää C:n aikandrakennuspaketteja, kuten `time.h`. Näillä pakkauksilla voit määrittää aikavälejä ja käyttää monimutkaisempia laskutoimituksia päivämäärien kanssa. Tämä voi auttaa sinua luomaan tarkempia ja täsmällisempiä päivämääriä, jotka sopivat tarkoitukseesi täydellisesti.
+Tämän esimerkkikoodin tulostus näyttää seuraavalta:
+
+```
+Päivämäärä 100 päivää eteenpäin: 19.12.2021
+```
+
+## Syvällisempi sukellus päivämäärän laskemiseen
+
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen voi tuntua monimutkaiselta, mutta C:n "time.h" -moduulin avulla se on melko yksinkertaista. Voit myös lisätä ohjelmaasi muita toimintoja, kuten päivämäärän tarkistamisen tai syötteen kysymisen käyttäjältä.
+
+On myös hyvä huomata, että "time.h" -moduuli käyttää aikaleimoina UNIX-aikaa, joka on sekuntien määrä, joka on kulunut vuodesta 1970 tiettyyn päivämäärään. Siksi laskettu päivämäärä on riippuvainen käyttämäsi laitteen ajasta ja päivämäärä voi olla virheellinen, jos laitteesi aika on asetettu väärin.
 
 ## Katso myös
 
-- [C-kielen perusteet] (https://www.tut.fi/~jl6592/Tie-23500/kieli/c.html)
-- [Time and Date -toimintojen opetusohjelma C-kielessä] (https://www.programiz.com/c-programming/c-date-time)
-- [C:n ajanjaksojen ja päivämäärien käsittelyn opas] (https://www.gnu.org/software/libc/manual/html_node/Time-Types.html)
+- [C-ohjelmoinnin perusteet](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli))
+- [time.h -moduulin dokumentaatio](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Aikaleima ja UNIX-aika](https://fi.wikipedia.org/wiki/Aikaleima)
+- [C-ohjelmiin liittyvät artikkelit ja oppaat](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli)#Kirjallisu

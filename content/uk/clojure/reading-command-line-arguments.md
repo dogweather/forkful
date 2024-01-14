@@ -1,37 +1,54 @@
 ---
 title:    "Clojure: Читання аргументів командного рядка"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Програмування з використанням командного рядка є незамінним і іноді необхідним навичкою для кожного розробника. Читати аргументи командного рядка в Clojure дозволяє збільшити ефективність і функціональність вашої програми.
+Читання аргументів командного рядка може бути корисним для розробників, які хочуть створити програми з можливістю взаємодії з користувачем. Це дозволяє передавати дані або налаштування програми безпосередньо через командну строку.
 
 ## Як
 
 ```Clojure
-(defn -main
-  [& args]
-  (println "Аргументи командного рядка:")
-  (println args))
+(defn read-cmd-args []
+    "Функція для зчитування аргументів командного рядка"
+    (let [cmd-args (rest *command-line-args*)]
+        (println "Аргументи командного рядка:" cmd-args)))
+
+(read-cmd-args)
 ```
 
-Приклад виводу:
+Приклад входу: `lein run arg1 arg2`
 
+Вихід: `Аргументи командного рядка: (arg1 arg2)`
+
+## Глибоке занурення
+
+Для більш складних програм, можливо, буде потрібно зчитувати аргументи командного рядка як числа або булеві значення. Для цього можна використовувати функцію `parse-int` або `parse-bool` з програми `clojure.edn` для перетворення аргументів у відповідні типи даних.
+
+```Clojure
+(require '[clojure.edn :as edn])
+
+(defn read-cmd-args []
+    "Функція для зчитування аргументів командного рядка"
+    (let [cmd-args (rest *command-line-args*)
+          int-arg-1 (edn/parse-int (first cmd-args))
+          bool-arg-2 (if (= (second cmd-args) "true") (edn/parse-bool "true") (edn/parse-bool "false"))]
+        (println "Числовий аргумент:" int-arg-1)
+        (println "Булевий аргумент:" bool-arg-2)))
+
+(read-cmd-args)
 ```
-Аргументи командного рядка:
-["file.txt" "-o" "out.txt"]
-```
 
-Аргументи командного рядка можна отримати за допомогою ключового слова ```& args``` в функції ```-main```. Далі вони можуть бути оброблені з використанням різних функцій Clojure, наприклад ```nth```, ```rest```, ```last```.
+Приклад входу: `lein run 10 true`
 
-## Глибокий занурення
+Вихід: `Числовий аргумент: 10` та `Булевий аргумент: true`
 
-Докладніше про читання командних аргументів можна дізнатись в документації Clojure. Також знання про парсинг і маніпулювання аргументами командного рядка може бути корисним при роботі з бібліотеками або написанні скриптів.
+## Дивіться також
 
-## Дивись також
-
-- [Документація Clojure](https://clojuredocs.org/clojure.core)
-- [Стаття про роботу з аргументами командного рядка в Clojure](https://gist.github.com/amalagaura/a5f1d7b70a502c819c05)
+- [The Clojure Programming Language](https://clojure.org/)
+- [Command-Line Arguments in Clojure - Baeldung](https://www.baeldung.com/clojure-command-line-arguments)
+- [Working with Command Line Arguments in Clojure - Mindful Dev Mag](https://mindfuldevmag.com/clojure/working-with-command-line-arguments-in-clojure/)

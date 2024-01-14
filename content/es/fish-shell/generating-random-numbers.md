@@ -1,43 +1,41 @@
 ---
 title:    "Fish Shell: Generando números aleatorios"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Generar números aleatorios es una técnica útil en la programación para simular situaciones aleatorias y probar la funcionalidad de un programa. También puede utilizarse en juegos y aplicaciones de entretenimiento.
+Generar números aleatorios es una práctica común en la programación, ya que puede ayudar a realizar pruebas, crear juegos o simplemente agregar una pequeña dosis de imprevisibilidad a tu código.
 
 ## Cómo hacerlo
 
-Para generar números aleatorios en Fish Shell, podemos utilizar el comando `rand`. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, podemos escribir:
+Para generar números aleatorios en Fish Shell, puedes utilizar la función `random` junto con la operación de expansión `{}` para especificar el rango de números que quieres obtener.
 
-```Fish Shell
-rand 1 10
+```
+Fish Shell
+
+# Generar un número aleatorio entre 1 y 10
+set rand_number (random 1 10)
+
+# Imprimir el número generado
+echo "Mi número aleatorio es {}rand_number"
 ```
 
-Esto nos dará un número aleatorio cada vez que ejecutemos el comando. También podemos utilizar variables para almacenar los números aleatorios y utilizarlos en nuestro código. Ejemplo:
+El resultado de este código será un número aleatorio entre 1 y 10, que se imprimirá en la terminal cuando ejecutes el script.
 
-```Fish Shell
-set numero (rand 1 10)
-echo "Tu número aleatorio es $numero"
-```
+## Profundizando
 
-Podemos utilizar el comando `seq` para generar una secuencia de números aleatorios. Por ejemplo, si queremos generar 5 números aleatorios entre 1 y 100, podemos escribir:
+Existen diferentes formas de generar números aleatorios en Fish Shell, dependiendo de tus necesidades. Por ejemplo, si necesitas un número decimal en lugar de un número entero, puedes utilizar la función `math` junto con `random` para obtener un número con decimales. También puedes utilizar la bandera `-l` para obtener un número aleatorio en una línea diferente cada vez que se ejecute el script.
 
-```Fish Shell
-seq (rand 1 100) 5
-```
+Además, puedes utilizar los comandos `seq` o `shuf` en combinación con `random` para generar una secuencia de números aleatorios o mezclar una lista de números específicos.
 
-## Inmersión profunda
-
-La generación de números aleatorios en Fish Shell utiliza el algoritmo `xorshift64`, el cual es un generador de números pseudoaleatorios. Esto significa que, aunque los números pueden parecer aleatorios, en realidad siguen un patrón determinado por el algoritmo.
-
-También es importante destacar que la semilla utilizada para generar los números aleatorios puede ser especificada mediante el uso del comando `srand`. Esto nos permite obtener los mismos números aleatorios en ejecuciones futuras del programa, siempre y cuando utilicemos la misma semilla.
+¡Experimenta con diferentes combinaciones y descubre cómo puedes incorporar números aleatorios en tus proyectos de programación!
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell sobre números aleatorios](https://fishshell.com/docs/current/cmds/rand.html)
-- [Generando números aleatorios con el comando seq en Fish Shell](https://www.mankier.com/1/seq)
-- [Algoritmo xorshift en Wikipedia (en inglés)](https://en.wikipedia.org/wiki/Xorshift)
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Lista de comandos de Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Guía de iniciación rápida en Fish Shell](https://fishshell.com/docs/current/tutorial.html)

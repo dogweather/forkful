@@ -1,77 +1,28 @@
 ---
 title:    "Ruby: Convirtiendo una cadena a minúsculas"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué Convertir una Cadena a Minúsculas en Ruby?
+## ¿Por qué convertir una cadena a minúsculas en Ruby? 
+La mayoría de las veces, es necesario manipular y procesar cadenas en un programa. Converting a lowercase unikely erá útil si se desea realizar una comparación case-insensitive o si se necesita tener consistentemente una cadena en minúsculas para su procesamiento.
 
-Convertir una cadena de texto a minúsculas es una tarea común en la programación. Puede ser útil para comparar cadenas sin importar las mayúsculas y minúsculas o para formatear la salida del texto. En Ruby, hay varias formas de lograr esto, lo cual veremos en esta publicación.
+## Cómo hacerlo: 
+El proceso para convertir una cadena a minúsculas en Ruby es muy sencillo. Simplemente se utiliza el método `downcase` en la cadena deseada. Aquí hay un ejemplo de código y su salida correspondiente: 
+```Ruby 
+cadena = "¡HOLA MUNDO!" 
+puts cadena.downcase 
+``` 
+Salida: `¡hola mundo!`
 
-## Cómo Hacerlo
+## Profundizando:
+Ahora, profundizando un poco más en el proceso de conversión de cadenas a minúsculas en Ruby: el método `downcase` crea una nueva cadena con todos los caracteres en minúsculas. Esto significa que la cadena original no se modificará, pero se puede asignar a una variable para usarla en el futuro. Además, si hay caracteres no alfabéticos en la cadena, se mantendrán en su estado original. Por ejemplo, si se tiene una cadena con un símbolo o un número, estos caracteres no se convertirán a minúsculas. 
 
-En Ruby, hay dos métodos principales para convertir una cadena a minúsculas: `downcase` y `capitalize`. Veamos un ejemplo de cada uno:
+Es importante tener en cuenta que el método `downcase` solo funciona en caracteres ASCII, no en caracteres Unicode. Por lo tanto, si se trabaja con idiomas que usan caracteres especiales, este método puede no funcionar como se espera.
 
-```ruby
-# Método downcase
-cadena = "Hola MUNDO"
-puts cadena.downcase # salida: hola mundo
-
-# Método capitalize
-cadena = "Hola MUNDO"
-puts cadena.capitalize # salida: Hola mundo
-```
-
-Como puedes ver, `downcase` convierte todas las letras de la cadena a minúsculas, mientras que `capitalize` solo convierte la primera letra a mayúscula y el resto a minúsculas.
-
-También puedes usar el método `swapcase`, que convierte las letras mayúsculas en minúsculas y viceversa:
-
-```ruby
-cadena = "HoLa MuNdO"
-puts cadena.swapcase # salida: hOlA mUnDo
-```
-
-Otra opción es utilizar el método `downcase!` que modifica la cadena original en lugar de crear una nueva:
-
-```ruby
-cadena = "Hola MUNDO"
-cadena.downcase!
-puts cadena # salida: hola mundo
-```
-
-## Profundizando
-
-Aunque los métodos mencionados anteriormente son los más comunes, también hay otras formas para convertir una cadena a minúsculas en Ruby. Una de ellas es utilizando la librería `i18n`, que permite convertir cadenas a una variedad de formatos de capitalización, incluyendo el inglés y el español.
-
-Puedes instalar la librería con el siguiente comando:
-
-```
-gem install i18n
-```
-
-Y luego importarla en tu código:
-
-```ruby
-require 'i18n'
-```
-
-A continuación, puedes utilizar el método `transliterate` para obtener la versión en minúsculas de una cadena:
-
-```ruby
-cadena = "CÓMO CONVERTIR UNA CADENA A MINÚSCULAS EN RUBY"
-puts I18n.transliterate(cadena) # salida: cómo convertir una cadena a minúsculas en ruby
-```
-
-Otra opción interesante es utilizar expresiones regulares para convertir una cadena a minúsculas. Este enfoque puede ser útil si quieres reemplazar ciertos caracteres con otros, además de convertir a minúsculas. Por ejemplo, si quieres cambiar todos los espacios en blanco por guiones bajos, puedes hacerlo de la siguiente manera:
-
-```ruby
-cadena = "Esto es un ejemplo"
-puts cadena.downcase.gsub(/\s/, '_') # salida: esto_es_un_ejemplo
-```
-
-## Consulta También
-
-- [Documentación oficial de Ruby sobre métodos de cadena](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ejemplo de uso de i18n en Ruby](https://www.rubyguides.com/2018/07/ruby-i18n-gem/)
-- [Expresiones regulares en Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
+## Ver también: 
+- [Documentación oficial de Ruby sobre el método `downcase`](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
+- [Ejemplos adicionales de código para convertir cadenas a minúsculas en Ruby](https://www.rubyguides.com/2015/05/ruby-string-methods/)
+- [Artículo sobre el manejo de cadenas en Ruby](https://www.rubyguides.com/2019/03/ruby-strings/)

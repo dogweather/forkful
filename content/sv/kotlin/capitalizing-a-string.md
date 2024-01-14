@@ -1,57 +1,70 @@
 ---
-title:    "Kotlin: Stora bokstäver i en sträng"
+title:    "Kotlin: Att göra en sträng stor bokstav"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna konvertera en sträng till stora bokstäver kan vara användbart i många situationer. Det kan hjälpa till att förbättra läsbarheten av texten eller användas för att jämföra strängar.
+Att skriva kod handlar inte bara om att skapa fungerande program, det handlar också om att göra koden lätt att läsa och förstå. Att kapitalisera en sträng kan vara ett sätt att förbättra läsbarheten och göra koden mer lättförståelig.
 
 ## Hur man gör
 
-Det finns olika sätt att få en sträng att börja med stora bokstäver. En av de enklaste metoderna är att använda inbyggda funktionen ".capitalize()". Denna funktion kommer att returnera en kopia av strängen med första bokstaven stor, och resten av bokstäverna oförändrade som visas nedan:
+Att kapitalisera en sträng i Kotlin är en enkel process som kan utföras på flera olika sätt. Ett sätt är att använda inbyggda funktionen "capitalize()". Till exempel:
 
 ```Kotlin
-val name = "swedish"
-println(name.capitalize())
-// Output: Swedish
+val str = "hej alla"
+val capitalizedStr = str.capitalize()
+
+println(capitalizedStr)
+// Output: "Hej alla"
 ```
 
-En annan metod är att använda ".toUpperCase()" som kommer att konvertera hela strängen till stora bokstäver:
+En annan möjlighet är att använda en for-loop för att iterera över varje bokstav i strängen och omvandla den första bokstaven till en stor bokstav. Till exempel:
 
 ```Kotlin
-val country = "sWeDeN"
-println(country.toUpperCase())
-// Output: SWEDEN
-```
+val str = "hej alla"
+val chars = str.toCharArray()
 
-Det finns också möjlighet att använda en anpassad funktion för att konvertera en sträng till stora bokstäver, som visas nedan:
-
-```Kotlin
-fun capitalizeString(str: String): String{
-    var result = ""
-    for (char in str){
-        result += char.toUpperCase()
+for (i in chars.indices) {
+    if (i == 0) {
+        chars[i] = chars[i].toUpperCase()
     }
-    return result
 }
 
-val text = "hello world"
-println(capitalizeString(text))
-// Output: HELLO WORLD
+val capitalizedStr = String(chars)
+
+println(capitalizedStr)
+// Output: "Hej alla"
 ```
 
-## Deep Dive
+Det finns också möjlighet att använda en förlängningsfunktion, som är en funktion som utökar funktionaliteten för en befintlig typ. Till exempel:
 
-Det finns flera saker att tänka på när man konverterar en sträng till stora bokstäver. En sak är att det finns skillnader i beteendet hos vissa bokstäver beroende på språket. Till exempel, i det svenska alfabetet är "å", "ä" och "ö" bokstäverna efter "z", medan i det engelska alfabetet är de bokstäverna efter "a". Detta kan leda till olika utmaningar när man hanterar strängar på olika språk.
+```Kotlin
+fun String.capitalizeFirstLetter(): String {
+    if (isNotEmpty()) {
+        return substring(0, 1).toUpperCase() + substring(1)
+    }
+    return this
+}
 
-En annan sak att tänka på är att konvertera en sträng till stora bokstäver kan påverka prestandan om det görs på många olika strängar i en loop. Att använda inbyggda funktioner som ".capitalize()" är oftast mer effektivt än att skriva en egen funktion.
+val str = "hej alla"
+val capitalizedStr = str.capitalizeFirstLetter()
 
-Det finns också möjlighet att konvertera en sträng till små bokstäver med ".toLowerCase()", vilket kan vara användbart för att jämföra strängar oberoende av storlek på bokstäver.
+println(capitalizedStr)
+// Output: "Hej alla"
+```
+
+## Fördjupning
+
+Det finns flera saker att tänka på när man kapitaliserar en sträng. En viktig aspekt är att koden ska vara så effektiv som möjligt, särskilt om man behöver kapitalisera stora mängder data. Det är också viktigt att ta hänsyn till internationella tecken och brytpunkter för korrekt kapitalisering i olika språk.
+
+En annan viktig aspekt är hantering av specialfall, som till exempel förkortningar som behöver kapitaliseras på ett visst sätt. Det är också viktigt att se till att den ursprungliga strängen inte ändras av misstag, utan endast den kapitaliserade versionen av strängen.
 
 ## Se även
 
-- *Kotlin Standard Library: Strings* (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- *Kotlin String Functions* (https://www.tutorialkart.com/kotlin/kotlin-string-functions/)
+- [Kotlin String API reference](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [GeeksforGeeks tutorial on string manipulation in Kotlin](https://www.geeksforgeeks.org/string-manipulation-in-kotlin/)
+- [Official Kotlin documentation on extension functions](https://kotlinlang.org/docs/reference/extensions.html)

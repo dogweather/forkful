@@ -1,36 +1,52 @@
 ---
 title:    "Kotlin: Lecture d'un fichier texte"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Lire des fichiers texte est une tâche courante dans la programmation et est utile pour stocker et récupérer des données. En apprenant à lire des fichiers texte en Kotlin, vous pourrez améliorer vos compétences en programmation et gagner du temps lors de la manipulation de données.
+## Pourquoi lire un fichier texte
 
-## Comment
-Pour lire un fichier texte en Kotlin, vous pouvez utiliser la fonction `readText()` avec comme paramètre le nom du fichier à lire. Par exemple, si vous avez un fichier texte nommé "monfichier.txt", le code suivant vous permettra de lire le fichier et d'afficher son contenu :
+Lire un fichier texte est une tâche commune dans la programmation. Cela peut être utile pour stocker des données, lire des configurations ou lire des fichiers de log. Dans cet article, nous allons apprendre comment lire un fichier texte en utilisant Kotlin.
 
-```Kotlin
-val contenu = readText("monfichier.txt")
-println(contenu)
+## Comment le faire
+
+Pour lire un fichier texte en Kotlin, nous allons utiliser la bibliothèque standard `java.io.File`. Tout d'abord, nous devons créer une instance du fichier que nous voulons lire :
+
+```
+val file = File("mon_fichier.txt")
 ```
 
-Si vous voulez lire uniquement certaines lignes du fichier, vous pouvez utiliser la fonction `readLines()` en spécifiant le numéro des lignes à lire. Par exemple, pour afficher seulement la première et la troisième ligne d'un fichier, vous pouvez utiliser le code suivant :
+Ensuite, nous pouvons utiliser la fonction `readText()` pour lire le contenu du fichier en tant que chaîne de caractères :
 
-```Kotlin
-val lignes = readLines("monfichier.txt")
-
-println(lignes[0]) //affiche la première ligne
-println(lignes[2]) //affiche la troisième ligne
+```
+val contenu = file.readText()
 ```
 
-## Plongée Profonde
-En plus des fonctions `readText()` et `readLines()`, il existe d'autres façons de lire un fichier texte en Kotlin, comme en utilisant la fonction `forEachLine()` qui vous permet de lire le fichier ligne par ligne et d'effectuer une action sur chaque ligne.
+Nous pouvons également spécifier un encodage en utilisant un paramètre facultatif :
 
-De plus, il est important de noter que lors de la lecture d'un fichier texte, vous devez faire attention aux exceptions qui peuvent se produire. Par exemple, le fichier peut être introuvable ou il peut y avoir un problème de permission d'accès au fichier.
+```
+val contenu = file.readText(Charsets.UTF_8)
+```
 
-## Voir Aussi
-- [Documentation officielle Kotlin sur les entrées/sorties de fichiers](https://kotlinlang.org/docs/tutorials/kotlin-for-py/input-output.html)
-- [Tutoriel Kotlin : lecture et écriture de fichiers](https://www.tutorialkart.com/kotlin/kotlin-read-write-files-using-filewriter-bufferedwriter/)
-- [Exemples de lecture de fichiers en Kotlin](https://www.programiz.com/kotlin-programming/examples/read-file)
+Et voilà ! Nous avons maintenant le contenu de notre fichier texte stocké dans la variable `contenu`.
+
+## Plongée en profondeur
+
+La fonction `readText()` que nous avons utilisée fait en fait appel à la fonction `readBytes()` de la classe `File` pour lire le contenu en tant qu'octets. Ensuite, cette fonction utilise le décodeur par défaut du système pour convertir ces octets en une chaîne de caractères. Cela peut être spécifié avec le paramètre facultatif que nous avons vu précédemment.
+
+Il est également possible de lire le fichier ligne par ligne en utilisant la fonction `forEachLine()` :
+
+```
+file.forEachLine { line ->
+    // faire quelque chose avec chaque ligne
+}
+```
+
+Il est important de noter que la classe `File` peut lever des exceptions lors de la lecture d'un fichier. Il est donc recommandé d'utiliser une structure de try-catch lors de la lecture d'un fichier.
+
+## Voir aussi
+
+- Documentation officielle de la bibliothèque standard Kotlin : https://kotlinlang.org/docs/reference/stdlib.html#file-handling
+- Tutoriel vidéo sur la lecture de fichiers en Kotlin : https://www.youtube.com/watch?v=Fb7AWWIzYIo

@@ -1,49 +1,33 @@
 ---
-title:    "Elm: Sprawdzanie czy istnieje ścieżka katalogu"
+title:    "Elm: Sprawdzanie istnienia folderu"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
+Jeśli jesteś programistą Elm i często pracujesz z plikami i katalogami, możesz zainteresować się sprawdzeniem, czy dany katalog istnieje. Jest to ważna umiejętność, ponieważ pozwala na uniknięcie błędów w kodzie i zapewnia bezpieczeństwo w obsłudze plików.
 
-Sprawdzanie, czy istnieje katalog, jest bardzo ważne w programowaniu, ponieważ umożliwia nam wykonywanie różnych operacji na plikach i folderach na naszym systemie. Może to być przydatne, na przykład, gdy tworzymy aplikację typu menedżer plików lub gdy chcemy zabezpieczyć nasz kod przed błędami wynikającymi z braku istniejącego katalogu.
+## Jak to zrobić
+Aby sprawdzić istnienie katalogu, możesz skorzystać z funkcji `dirExists`, która sprawdza, czy podana ścieżka wskazuje na istniejący katalog. Przykład kodu wyglądałby następująco:
 
-# Jak to zrobić
-
-Sprawdzanie czy istnieje katalog w Elm jest łatwe i wymaga użycia funkcji `Dir.doesExist`, która sprawdza, czy dany katalog istnieje i zwraca odpowiedni wynik w postaci typu `Maybe Bool`. 
-
-```elm
-Dir.doesExist "ścieżka/do/katalogu"
-    |> Task.attempt HandleResult
+```Elm
+dirExists : FilePath -> Task x Bool
 ```
 
-W powyższym przykładzie używamy funkcji `Dir.doesExist` do sprawdzenia, czy podana ścieżka do katalogu istnieje. Następnie, używając funkcji `Task.attempt`, wykonujemy asynchroniczne zadanie i obsługujemy jego wynik w funkcji `HandleResult`. 
+Jeśli `Task` zwróci wartość `True`, oznacza to, że dany katalog istnieje. Możesz również przetestować to na przykładowym kodzie i wyświetlić wynik za pomocą poniższego kodu:
 
-```elm
-type alias Model =
-    { isDirectoryExisting : Maybe Bool
-    , error : Maybe Error
-    }
-
-HandleResult result =
-    case result of
-        Ok isExisting ->
-            { model | isDirectoryExisting = Just isExisting }
-
-        Err error ->
-            { model | error = Just error }
+```Elm
+dirExists "/home/user/Documents"
+    |> andThen (\result -> Html.text (toString result))
 ```
 
-Funkcja `HandleResult` odpowiada za obsługę wyników zadania `Dir.doesExist`. W przypadku sukcesu przekazujemy wynik do modelu, a w przypadku wystąpienia błędu, przypisujemy go do pola `error` w modelu.
+W tym przypadku wartość `True` zostanie wyświetlona na stronie. W przypadku, gdy ścieżka będzie nieprawidłowa lub katalog nie istnieje, zostanie wyświetlona wartość `False`.
 
-# Dogłębna analiza
-
-W Elm, sprawdzenie czy istnieje katalog jest wykonywane za pomocą wywołania funkcji `Dir.doesExist` z biblioteki `elm/file`. Ta funkcja wywołuje odpowiednie API systemowe (na przykład `stat()` w systemie Unix) w celu sprawdzenia, czy dany katalog istnieje.
-
-Warto również zwrócić uwagę, że funkcja `Dir.doesExist` jest funkcją asynchroniczną, co oznacza, że zwróci wartość w postaci typu `Task` zamiast wartości bezpośrednio. Dzięki temu, aplikacja nie zostanie zablokowana podczas oczekiwania na wynik.
+## Głębszy zanurzenie
+Funkcja `dirExists` jest implementowana przy użyciu biblioteki [elm/file](https://package.elm-lang.org/packages/elm/file/latest/) i wykorzystuje moduł `FileSystem`. Istnieje jednak inny sposób na sprawdzenie istnienia katalogu, a mianowicie przy użyciu funkcji `list` oraz komparatora `isDir`, która zwraca tylko katalogi znajdujące się w danym folderze.
 
 ## Zobacz również
-
-* [Dokumentacja funkcji `Dir.doesExist`](https://package.elm-lang.org/packages/elm/file/latest/Dir#doesExist)
-* [Funkcja `Task.attempt`](https://package.elm-lang.org/packages/elm/core/latest/Task#attempt)
+- [Dokumentacja elm/file](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Przykładowy kod wideo elm/file](https://www.youtube.com/watch?v=2WNOFDjZgus)

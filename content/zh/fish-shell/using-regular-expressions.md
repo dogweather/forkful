@@ -1,30 +1,35 @@
 ---
 title:    "Fish Shell: 使用正则表达式"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 为什么
 
-使用正则表达式可以有效地筛选和操作文本数据。它是一种强大的工具，可以使编程更加高效和便捷。
+在使用鱼壳（Fish Shell）编程时，正则表达式是一种非常有用的工具。它可以帮助我们在文本中快速搜索、匹配和替换特定的模式。通过学习如何使用正则表达式，您可以提高编程效率，并且在处理文本数据时更加灵活。
 
 ## 如何使用
 
-在Fish Shell中，我们可以使用`grep`命令来使用正则表达式进行文本匹配，例如：
+要在鱼壳中使用正则表达式，您首先需要在终端中输入命令 `fish_config` 来打开 Fish Shell 的配置页面。然后，选择 “Key Bindings” 选项，找到对应终端的快捷键，并将其修改为 `<Ctrl-R>`。这个快捷键将在 Fish Shell 中启用“历史命令”的功能。
+
+现在，您可以按下 `<Ctrl-R>` 来搜索最近使用过的命令。但是，如果您想要更进一步，以模糊的字符来搜索命令，可以使用正则表达式进行匹配。以下是一个简单的例子：
 
 ```Fish Shell
-grep "hello" test.txt
+2-5
+grep -i "fish" ~/Documents/data.csv
+cat ~/.bash_profile
 ```
 
-这将会在`test.txt`文件中匹配所有包含"hello"的文本，并将结果显示在终端中。
+输入 `<Ctrl-R>` 后，在输入栏中输入 `\d` 并按下回车键。这将匹配包含数字“2”、“3”、“4”或“5”的命令。您也可以使用其他字符来进行匹配，如 `.*` 表示任意字符。
 
-## 深入了解
+## 深入探讨
 
-正则表达式的语法非常灵活，可以满足多种不同的匹配需求。它可以用于提取特定格式的文本，也可以用于替换或操作文本。有许多不同的元字符和修饰符可以使用，可以根据实际需求灵活运用。
+正则表达式有很多不同的字符和用法，以适应不同的匹配需求。例如，用括号 `()` 来表示一个组，用 `|` 来实现或逻辑，用 `[]` 来表示字符的范围，用 `{n,m}` 来表示字符的重复次数等等。如果您想要进一步了解如何使用这些字符来构建复杂的模式匹配，请参考正则表达式的官方文档或在线教程。
 
-## 见下文
+## 看看这些
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [Regex Tutorial教程](https://regexone.com/)
-- [正则表达式在线测试工具](https://regexr.com/)
+- Fish Shell 官方文档：https://fishshell.com/docs/current/
+- 学习正则表达式：https://regexone.com/
+- 使用 Fish Shell 中的文本处理命令：https://fishshell.com/docs/current/index.html#fish-string

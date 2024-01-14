@@ -1,54 +1,51 @@
 ---
 title:    "Python: Escrevendo testes"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Escrever Testes em Python?
+## Por que escrever testes é importante?
 
-Escrever testes é uma parte essencial do processo de desenvolvimento de software. Eles ajudam a garantir que nosso código esteja funcionando corretamente e que eventuais alterações não causem problemas em outras partes do programa. Além disso, testes bem escritos podem facilitar a identificação e correção de bugs.
+Escrever testes é uma parte crucial do processo de programação em Python. Testes garantem que o código funcione corretamente e evitam que bugs sejam introduzidos no sistema. Eles também facilitam a identificação e correção de erros, economizando tempo e esforço no longo prazo.
 
-## Como Escrever Testes em Python
+## Como escrever testes em Python
 
-Para escrever testes em Python, usamos a biblioteca integrada `unittest`. Ela nos permite criar uma classe de testes com métodos que realizam as verificações necessárias. Aqui está um exemplo de um teste simples:
+Para escrever testes em Python, é importante seguir algumas etapas básicas. Primeiro, importe o módulo `unittest` para utilizar suas funções de teste. Em seguida, crie uma classe para o seu teste usando a sintaxe `class TestXXXX(unittest.TestCase)`. Dentro da classe, escreva métodos de teste usando a sintaxe `def test_func():` seguida de asserções para verificar se o resultado está correto. Por fim, execute os testes usando o método `unittest.main()`.
+
+Um exemplo de código de teste pode ser visto abaixo:
 
 ```Python
 import unittest
 
-def multiply(x, y):
-    return x * y
+class TestCalculadora(unittest.TestCase):
+    def test_soma(self):
+        resultado = 2+2
+        self.assertEqual(resultado, 4)
 
-class TestMultiply(unittest.TestCase):
+    def test_subtracao(self):
+        resultado = 10-5
+        self.assertEqual(resultado, 5)
 
-    def test_multiply(self):
-        result = multiply(5, 7)
-        self.assertEqual(result, 35)
+    def test_multiplicacao(self):
+        resultado = 3*4
+        self.assertEqual(resultado, 12)
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-O que estamos fazendo aqui é criar uma classe `TestMultiply` que herda da classe `TestCase` da biblioteca `unittest`. Dentro desta classe, temos um método `test_multiply` que realiza a multiplicação de dois números utilizando a função `multiply` e depois verifica se o resultado é igual a 35 usando o método `assertEqual` fornecido pela biblioteca.
+O código acima cria uma classe `TestCalculadora` e três métodos de teste para verificar as operações de soma, subtração e multiplicação. Ao executar o arquivo, o resultado será `OK`, indicando que os testes passaram.
 
-Para executar nossos testes, usamos `unittest.main()` dentro de um bloco `if __name__ == '__main__'`. Isto nos permite executar os testes apenas quando o arquivo está sendo executado diretamente (e não quando ele é importado por outro arquivo).
+## Adentrando mais profundamente no tema
 
-Este é apenas um exemplo básico, mas a biblioteca `unittest` possui muitas outras funcionalidades úteis, como a criação de mocks e o agrupamento de testes em suites.
+Existem diferentes tipos de testes que podem ser escritos em Python, como testes unitários, testes de integração e testes de aceitação. Cada tipo de teste tem seu propósito específico e é importante entender essas diferenças para garantir uma cobertura adequada dos testes. Além disso, existem ferramentas como o `coverage` que podem ser usadas para verificar a cobertura dos seus testes.
 
-## Aprofundando em Escrever Testes
+Também é importante lembrar que testes devem ser escritos de forma independente e não devem depender de outros testes para funcionar corretamente. Eles também devem ser atualizados conforme o código muda, garantindo que os testes ainda sejam relevantes e precisos.
 
-Escrever testes de qualidade pode ser um desafio, mas vale a pena o esforço. Aqui estão algumas dicas para garantir que seus testes sejam efetivos:
+## Veja também
 
-- Escreva casos de teste para diferentes cenários, incluindo casos de sucesso e falha.
-- Use nomes significativos para seus testes para facilitar a identificação de problemas.
-- Reduza a duplicação de código nos seus testes para torná-los mais fáceis de manter.
-- Não se esqueça de testar os cenários de erro da sua aplicação.
-- Ao encontrar um bug, escreva um teste para reproduzi-lo e, em seguida, corrija-o. Isso ajudará a evitar a reintrodução do erro no futuro.
-
-Além disso, é importante lembrar que os testes não devem ser uma reflexão exata do seu código. Eles devem focar nos comportamentos e resultados esperados, e não em como o código é implementado.
-
-## Veja Também
-
-- [Documentação oficial do unittest em Python](https://docs.python.org/3/library/unittest.html)
-- [Pytest: uma alternativa ao unittest em Python](https://docs.pytest.org/en/latest/)
-- [Artigo: Por que escrever testes em Python?](https://medium.com/@alinecumarian9/porque-escrever-testes-em-python-f50984d8aa46)
+- [Python.org: Unittest](https://docs.python.org/3/library/unittest.html)
+- [Python.org: Cobertura de testes](https://coverage.readthedocs.io/en/coverage-5.5/)
+- [Testes unitários vs testes de integração vs testes de aceitação](https://medium.com/meritt/testes-unit%C3%A1rios-vs-testes-de-integra%C3%A7%C3%A3o-vs-testes-de-aceita%C3%A7%C3%A3o-de061a4e8d5e)

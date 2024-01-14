@@ -1,50 +1,51 @@
 ---
-title:    "C#: 프로그래밍에 대한 기사의 제목: 테스트 작성"
+title:    "C#: 테스트 작성"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 테스트를 작성해야 할까요?
 
-우리는 모두 프로그래밍을 할 때 작성한 코드가 올바르게 동작하는지 확신하기를 원합니다. 그 신뢰를 얻는 하나의 방법은 코드 품질을 보장하는 테스트를 작성하는 것입니다. 이 글에서는 C#에서 쉽고 강력한 테스트를 작성하는 방법을 배우게 될 것입니다.
+소프트웨어 개발에 있어서 테스트는 매우 중요합니다. 테스트는 코드의 작동을 검증하고 버그를 발견하는 데에 도움이 되며 코드의 안정성과 신뢰성을 보장하는 데에도 중요합니다. 따라서 테스트를 작성하는 것은 개발자로서의 책임 중 하나이며, 최종 사용자에게 더 나은 사용 경험을 제공하기 위한 필수적인 작업입니다.
 
-## 어떻게
+## 어떻게 테스트를 작성할 수 있을까요?
+
+테스트를 작성하는 데에는 여러 가지 방법이 있지만, C# 언어를 사용하여 테스트를 작성하는 것이 가장 효율적입니다. 아래의 예제 코드를 통해 C# 언어를 사용하여 테스트를 어떻게 작성하는지 알아보도록 하겠습니다.
 
 ```C#
-using System;
-using NUnit.Framework;
-
-[TestFixture]
-public class Calculator
+// 예제 코드
+[TestClass]
+public class CalculatorTests
 {
-    [Test]
-    public void Sum_SimpleValues_ReturnsTotal()
+    [TestMethod]
+    public void Add_TwoPositiveNumbers_ReturnsCorrectSum()
     {
-        var calculator = new Calculator();
-        var result = calculator.Sum(5, 10);
+        // Arrange
+        Calculator calculator = new Calculator();
 
-        Assert.AreEqual(15, result);
-    }
-}
+        // Act
+        int result = calculator.Add(2, 3);
 
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine("Tests passed successfully.");
+        // Assert
+        Assert.AreEqual(5, result);
     }
 }
 ```
 
-위 코드는 간단한 덧셈 계산을 수행하는 `Calculator` 클래스의 테스트를 보여줍니다. `NUnit` 프레임워크를 사용하여 `TestFixture`로 테스트 클래스를 정의하고, `Test` 어트리뷰트를 사용하여 각 테스트 메서드를 정의합니다. 이 코드는 `Calculator` 클래스의 `Sum` 메서드가 예상대로 동작하는지 확인합니다. 테스트를 실행하면 `Tests passed successfully.`라는 메시지가 나타나며, 모든 테스트가 성공했음을 알 수 있습니다.
+위 코드에서는 Calculator 클래스의 Add 메서드를 테스트하는 예제입니다. 이를 실행하면, Assert문에서 기대한 결과와 실제 결과가 일치하는지를 확인하여 테스트의 성공 여부를 결정합니다.
 
-## 깊이 파고들기
+## 깊이있게 들어가보기
 
-테스트를 작성하는 것은 시간과 노력이 드는 작업입니다. 하지만 이렇게 함으로써 코드를 더 안전하고 예측 가능하게 만들 수 있습니다. 테스트를 작성하는 것은 코드의 결함을 미리 발견하고 수정하는 데 도움이 됩니다. 또한 코드 변경이나 리팩토링을 진행할 때 기존 기능들이 영향을 받지 않는지 확인하는 데 도움을 줍니다. 테스트를 작성하는 것은 프로그래밍에서 꼭 필요한 습관 중 하나입니다.
+위의 예제 코드에서 사용된 TestClass, TestMethod, Assert는 C# 단위 테스트 프레임워크인 NUnit에서 제공하는 속성 및 메서드입니다. C# 단위 테스트 프레임워크는 테스트를 작성하고 실행할 수 있는 강력한 도구이며, 애플리케이션의 기능을 테스트하는 데 필요한 다양한 기능과 유용한 오류 추적 기능을 제공합니다.
 
-## 더 읽을거리
+또한, 테스트를 작성할 때는 모든 코드 조각에 대해 각각의 테스트를 작성하는 것이 중요합니다. 이를 통해 특정 코드 부분에서 발생하는 버그를 쉽게 추적하고 수정할 수 있습니다. 또한, 테스트를 작성하고 실행하는 데에 드는 시간과 노력은 애플리케이션의 신뢰성을 보장하는 데 더 큰 도움이 되므로, 이는 개발 프로세스에 있어서 매우 중요한 부분입니다.
 
-- [NUnit으로 유닛 테스트 작성하기](https://www.twilio.com/blog/unit-testing-c-sharp-nunit)
-- [XUnit 프레임워크로 테스트 자동화하기](https://stackify.com/xunit-basics-patterns-and-parallel-testing/)
-- [TDD를 사용하여 코드 작성 및 품질 향상하기](https://stackoverflow.blog/2019/10/03/using-tdd-code-quality-improve/)
+## 더 알아보기
+
+이제 위의 예제를 참고하여 C# 언어를 사용하여 테스트를 작성하는 방법을 배웠습니다. 하지만 더 많은 기능과 테스트 작성 패턴에 대해서는 아래의 링크를 참고하시기 바랍니다.
+
+- [NUnit 공식 홈페이지](https://nunit.org/)
+- [C# 단위 테스트 프레임워크 사용법](https://docs.microsoft.com/ko-kr/dotnet/core/testing/)
+- [단위 테스트의 중요성 알아보기](https://www.pluralsight.com/blog/software-development/ignoring-unit-testing-wont-make-go-away)

@@ -1,59 +1,50 @@
 ---
 title:    "Python: Leyendo argumentos de línea de comando"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberías leer argumentos de línea de comandos en Python?
+# Por qué leer argumentos de línea de comandos en Python?
 
-Los argumentos de línea de comandos son una forma útil de interactuar con un programa de Python directamente desde la terminal. Al leer y utilizar argumentos de línea de comandos, puedes personalizar la ejecución de tu programa y realizar tareas específicas sin tener que modificar el código fuente. A continuación, te mostramos cómo hacerlo en Python.
+Antes de sumergirnos en cómo leer argumentos de línea de comandos en Python, es importante entender por qué es una habilidad útil para cualquier programador. Leer argumentos de línea de comandos nos permite interactuar con nuestro programa directamente desde la terminal, lo que facilita la pruebas y depuración de nuestro código. Además, nos permite crear aplicaciones más dinámicas que puedan ser personalizadas por el usuario a través de los argumentos de la línea de comandos.
 
 ## Cómo hacerlo
 
-1. Importa el módulo `argparse` en tu programa Python:
+Para leer argumentos de línea de comandos en Python, utilizamos el módulo `sys` y su función `argv`. Por ejemplo, si queremos obtener el primer argumento que dio el usuario al ejecutar nuestro programa, podemos usar `sys.argv[1]`, ya que el primer elemento de la lista `argv` contiene el nombre del archivo que está siendo ejecutado.
+
 ```Python
-import argparse
+import sys
+
+# Obtener el primer argumento
+primer_argumento = sys.argv[1]
+
+print(f"El primer argumento es: {primer_argumento}")
 ```
-2. Define los argumentos de línea de comandos que deseas utilizar, indicando su nombre y tipo de dato:
+
+Si el usuario ejecuta nuestro programa con el comando `python programa.py argumento1`, veremos en la terminal la siguiente salida:
+
+```
+El primer argumento es: argumento1
+```
+
+Podemos también obtener más de un argumento utilizando un bucle `for` y el resto de los elementos de la lista `argv`.
+
 ```Python
-parser = argparse.ArgumentParser(description='Programa para calcular el área de un triángulo')
-parser.add_argument('base', type=int, help='Longitud de la base del triángulo')
-parser.add_argument('altura', type=int, help='Altura del triángulo')
-```
-3. Lee los argumentos introducidos por el usuario utilizando el método `parse_args()`:
-```Python
-args = parser.parse_args()
-```
-4. Utiliza los argumentos en tu programa de la forma que desees. Por ejemplo, para calcular el área del triángulo con los argumentos introducidos:
-```Python
-area = (args.base * args.altura) / 2
-print('El área del triángulo es:', area)
-```
-5. Ejecuta tu programa desde la terminal, proporcionando los argumentos requeridos:
-```
-python mi_programa.py 10 5
-```
-Output:
-```
-El área del triángulo es: 25
+import sys
+
+# Obtener todos los argumentos
+for argumento in sys.argv[1:]:
+    print(argumento)
 ```
 
 ## Profundizando
 
-La función `argparse.ArgumentParser()` acepta varios parámetros opcionales que te permiten personalizar aún más tus argumentos de línea de comandos. Algunos de los parámetros más útiles son:
+Al leer argumentos de línea de comandos, es importante validar y limpiar los datos antes de utilizarlos en nuestro código. También es posible utilizar el módulo `argparse` para crear argumentos con nombre y manejar errores de forma más organizada y profesional. Además, este módulo permite agregar descripciones y documentación a nuestros argumentos, lo que hace que nuestro programa sea más amigable para el usuario.
 
-- `description`: una breve descripción del programa que se incluirá en la ayuda.
-- `add_argument()`: permite agregar argumentos personalizados con su nombre, tipo de dato y opciones adicionales, como ayuda y valores predeterminados.
-- `parse_args()`: además de utilizar `args = parser.parse_args()` para leer los argumentos introducidos, también se puede utilizar `parser.parse_known_args()` para permitir argumentos desconocidos.
-- `set_defaults()`: te permite establecer valores predeterminados para tus argumentos si no se proporcionan en la línea de comandos.
+# Ver también
 
-Puedes encontrar información completa sobre los diferentes parámetros y métodos de la función `argparse` en la documentación oficial de Python.
-
-## Ver también
-
-- [Documentación oficial de Python sobre `argparse`](https://docs.python.org/es/3/library/argparse.html)
-- [Tutorial en español sobre cómo leer argumentos de línea de comandos en Python](https://platzi.com/blog/argparse-command-line-python/)
-- [Ejemplos de uso de `argparse` en Python](https://pymotw.com/2/argparse/)
-
-¡Ahora que sabes cómo leer argumentos de línea de comandos en Python, puedes utilizarlos en tus programas para hacerlos más interactivos y versátiles! ¡Diviértete programando y sigue aprendiendo!
+- [Documentación oficial de Python sobre el módulo `sys`](https://docs.python.org/es/3/library/sys.html)
+- [Documentación oficial de Python sobre el módulo `argparse`](https://docs.python.org/es/3/library/argparse.html)
+- [Tutorial de Real Python sobre cómo usar argumentos de línea de comandos en Python](https://realpython.com/command-line-interfaces-python-argparse/)

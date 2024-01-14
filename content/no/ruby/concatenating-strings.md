@@ -1,49 +1,77 @@
 ---
-title:    "Ruby: Sammenføyning av strenger"
+title:    "Ruby: Sammenslåing av strenger"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I Ruby, som i mange andre programmeringsspråk, er det ofte nødvendig å kombinere eller sette sammen flere strenger av tekst. Dette kan være for å lage en komplett setning eller for å bygge en kompleksere datastruktur. Uansett årsak, er sammenslåing av strengestrukturene en vanlig oppgave i programmering, og derfor er det viktig å lære hvordan det gjøres.
+Å kombinere, eller konkatenere, strenger er en nødvendig og vanlig oppgave i Ruby-programmering. Ved å samle sammen separate strenger kan du lage mer komplekse uttrykk og variabler. Dette gjør koden din mer dynamisk og funksjonell.
 
 ## Hvordan
 
-Det å sette sammen strenger i Ruby er enkelt og intuitivt. Det kan gjøres ved å bruke en spesiell operator, kalt "concatenation operator", som består av to pluss-symboler (```+```). La oss ta en titt på et eksempel:
+For å konkatenere strenger i Ruby, kan du bruke "+" operatøren. La oss si vi har to forskjellige navn som vi vil kombinere til en ny streng:
 
 ```Ruby
-navn = "Jenny"
-alder = 26
-puts "Hei, mitt navn er " + navn + " og jeg er " + alder.to_s + " år gammel."
+navn1 = "Hans"
+navn2 = "Grete"
 ```
 
-Dette vil gi følgende utskrift:
+Vi kan enkelt kombinere disse to strengene ved hjelp av "+":
 
-```
-Hei, mitt navn er Jenny og jeg er 26 år gammel.
+```Ruby
+navn3 = navn1 + navn2
+puts navn3
+
+# Output: HansGrete
 ```
 
-Her legger vi sammen tre forskjellige strenger: "Hei, mitt navn er ", navnet som er lagret i variabelen ```navn```, og til slutt " og jeg er " fulgt av alderen, som er konvertert fra en ```Integer``` til en ```String``` ved hjelp av ```.to_s``` metoden.
+Som du ser, blir strengene direkte satt sammen uten mellomrom eller komma. Men du kan også legge til disse ekstra tegnene hvis du vil ha det med:
+
+```Ruby
+navn3 = navn1 + " " + navn2
+puts navn3
+
+# Output: Hans Grete
+```
+
+Du kan også bruke "<<" operatøren for å legge til en streng til en eksisterende variabel. Dette gjør at koden din blir mer effektiv og lesbar:
+
+```Ruby
+fullt_navn = "Hans"
+fullt_navn << " "
+fullt_navn << "Grete"
+puts fullt_navn
+
+# Output: Hans Grete
+```
 
 ## Dypdykk
 
-For å forstå hvordan sammenslåing av strenger fungerer i Ruby, er det viktig å vite at en streng i seg selv er en objekttype. Dette betyr at vi kan bruke forskjellige metoder og operasjoner på strenger for å endre eller manipulere dem.
-
-En streng i Ruby er egentlig en samling av tegn, hvor hvert tegn har en numerisk verdi kalt en "ASCII code". Når vi bruker concatenation operator på strenger, vil Ruby se på hver enkelt karakter og legge dem sammen i riktig rekkefølge for å danne en ny streng.
-
-En annen måte å sammenslå strenger på er ved hjelp av metoden ```.concat```. Denne metoden tar inn en annen streng og legger den til på slutten av den første strengen. Dette gjør det mulig å kombinere flere strenger på en enklere måte. La oss se på et eksempel:
+I Ruby kan du også bruke .concat metoden for å konkatenere strenger. Denne metoden legger til strenger til en eksisterende variabel uten å lage en ny:
 
 ```Ruby
-navn = "Jenny"
-etternavn = " Olsen"
-navn.concat(etternavn)
+navn = "Hans"
+navn.concat " Grete"
+puts navn
+
+# Output: Hans Grete
 ```
 
-Dette vil gi oss strengen "Jenny Olsen" som output. Her brukes metoden ```.concat``` til å legge til etternavnet på slutten av navnet.
+En annen nyttig metode for å konkatenere strenger er .strip, som lar deg fjerne alle white spaces rundt strenger. Dette er spesielt nyttig når du jobber med brukerinndata eller hvis du vil ha en mer ryddig utskrift:
+
+```Ruby
+navn1 = " Hans "
+navn2 = "Grete"
+fullt_navn = navn1.strip.concat(navn2)
+puts fullt_navn
+
+# Output: HansGrete
+```
 
 ## Se også
 
-- [Ruby-dokumentasjon: Strenger](https://www.ruby-lang.org/no/documentation/quickstart/3/)
-- [Concatenating Strings in Ruby](https://www.techotopia.com/index.php/Concatenating_Strings_in_Ruby)
+- [Ruby String documentation](https://ruby-doc.org/core-2.6/String.html)
+- [Ruby Tips - Concatenating Strings](https://blog.appsignal.com/2018/07/31/ruby-magic-concatenating-strings.html)

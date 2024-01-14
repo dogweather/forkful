@@ -1,46 +1,49 @@
 ---
 title:    "Python: Escrevendo para o erro padrão"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em Python?
+## Por que escrever para o erro padrão
 
-Quando se programa em Python, é importante saber como lidar com erros. Um erro comum é o erro de sintaxe, que pode interromper a execução do programa. Escrever para o erro padrão permite que o programador visualize informações importantes sobre o erro e tome medidas necessárias para corrigi-lo.
+Escrever para o erro padrão é uma habilidade importante em programação Python. Ao escrever mensagens de erro corretas, você pode garantir que os usuários do seu programa possam identificar e resolver problemas com mais facilidade, melhorando a experiência geral do usuário.
 
-## Como fazer:
+## Como fazer
 
-Os seguintes exemplos de código mostram como escrever para o erro padrão em Python:
+Para escrever para o erro padrão em Python, você precisará usar a função `print` combinada com o parâmetro `file=sys.stderr`. Aqui está um exemplo simples:
 
+```Python
+print("Houve um erro!", file=sys.stderr)
 ```
-# Exemplo 1:
+
+Isso imprimirá a mensagem "Houve um erro!" no console, indicando que ocorreu um erro. Você pode personalizar sua mensagem de erro como quiser e até mesmo incluir informações adicionais para ajudar os usuários a identificar o problema.
+
+```Python
+print("O valor inserido é inválido. Insira um número positivo.", file=sys.stderr)
+```
+
+Isso imprimirá a mensagem "O valor inserido é inválido. Insira um número positivo." no console, indicando que um valor inválido foi inserido pelo usuário.
+
+## Mergulho profundo
+
+Ao escrever para o erro padrão, é importante ter em mente que as mensagens devem ser claras e concisas. Evite usar gírias ou terminologia técnica que possa confundir os usuários. É sempre útil incluir informações específicas sobre o erro, como a linha de código onde ocorreu, para que os usuários possam corrigi-lo mais facilmente.
+
+Além disso, você também pode usar a função `Exception` para criar e imprimir mensagens de erro personalizadas. Aqui está um exemplo:
+
+```Python
 try:
-  # Código que pode gerar um erro
+  num = int(input("Digite um número: "))
+  if num < 0:
+    raise Exception("O número deve ser positivo.")
 except Exception as e:
-  # Escrever mensagem de erro no erro padrão
-  print("Ocorreu um erro:", e, file=sys.stderr)
-  
-# Exemplo 2:
-# Mostrar uma mensagem de erro e encerrar o programa
-print("Não é possível executar esta operação!", file=sys.stderr)
-sys.exit()
+  print(e, file=sys.stderr)
 ```
 
-### Resultado:
+Isso criará uma exceção personalizada com a mensagem "O número deve ser positivo." se o usuário inserir um número negativo.
 
-```
-Não é possível executar esta operação!
-```
+## Veja também
 
-## Mergulho profundo:
-
-Em Python, o erro padrão é representado pelo objeto `sys.stderr`. Ao usar a função `print()` com o argumento `file=sys.stderr`, é possível imprimir uma mensagem de erro para o erro padrão. Isso é útil para informar ao usuário do programa sobre um erro e também para depurar problemas em código.
-
-Para escrever em outros arquivos, basta substituir `sys.stderr` pelo nome ou caminho do arquivo desejado.
-
-## Veja também:
-
-- [Documentação oficial do Python sobre tratamento de erros](https://docs.python.org/3/tutorial/errors.html)
-- [Tutorial do Real Python sobre tratamento de erros em Python](https://realpython.com/python-exceptions/)
-- [Vídeo explicativo sobre tratamento de erros em Python](https://www.youtube.com/watch?v=NIWwJbo-9_8)
+- [Documentação da função `print`](https://docs.python.org/3/library/functions.html#print)
+- [Documentação do objeto `Exception`](https://docs.python.org/3/tutorial/errors.html)

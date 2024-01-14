@@ -1,69 +1,42 @@
 ---
-title:    "Rust: Começando um novo projeto"
+title:    "Rust: Iniciando um novo projeto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto com Rust?
+## Por que começar um novo projeto em Rust?
+Muitos programadores estão optando por utilizar a linguagem Rust em seus projetos por sua grande performance, segurança e facilidade de uso. Além disso, a comunidade ao redor de Rust é altamente ativa e sempre disposta a ajudar, tornando-o uma excelente escolha para começar um novo projeto.
 
-Se você é um programador que está sempre em busca de ferramentas poderosas e eficientes, então o Rust é uma linguagem que definitivamente deve estar no seu radar. Com sua sintaxe limpa e moderna, Rust oferece segurança de memória e concorrência sem comprometer o desempenho. Se você está procurando iniciar um novo projeto, aqui estão algumas razões pelas quais você deve considerar o Rust.
+## Como iniciar um projeto em Rust
+Para iniciar um projeto em Rust, é necessário seguir alguns passos básicos:
 
-## Como começar um novo projeto com Rust?
+1. Instale o Rust em sua máquina através do [site oficial](https://www.rust-lang.org/pt-BR/tools/install).
+2. Crie um novo diretório para o seu projeto e navegue até ele através do terminal.
+3. Dentro do diretório, inicialize o projeto utilizando o comando `cargo init`.
+4. O Cargo é o gerenciador de pacotes e build system de Rust, ele irá criar automaticamente o arquivo `Cargo.toml` que contém as informações do projeto e o arquivo `main.rs` que é onde será escrito o código inicial do projeto.
 
-A primeira coisa que você precisa fazer é instalar o compilador de Rust e suas ferramentas relacionadas. Você pode fazer isso seguindo as instruções detalhadas em seu site oficial. Depois de instalar, você pode iniciar um novo projeto usando o gerenciador de pacotes Cargo. Basta digitar o seguinte comando em seu terminal:
-
-```Rust
-cargo new nome_do_projeto
-```
-
-Este comando irá criar uma nova pasta com o nome do seu projeto e gerar os arquivos básicos necessários. Agora você está pronto para começar a codificar em Rust!
-
-Um dos principais recursos do Rust é o sistema de propriedade, que garante que seu código seja seguro e sem erros. Isso é especialmente útil para projetos grandes e complexos, pois ajuda a evitar muitos bugs comuns. Aqui está um exemplo de código que utiliza o sistema de propriedade para garantir a segurança de memória:
+Agora, você está pronto para começar a programar em Rust!
 
 ```Rust
 fn main() {
-  let mut vetor = vec![1, 2, 3];
-
-  for numero in &vetor {
-    println!("{}", numero);
-  }
-
-  vetor.push(4); // Isso irá gerar um erro de compilação, pois estamos tentando modificar um vetor imutável
+    println!("Olá Mundo!");
 }
 ```
 
-Com o Rust, você também pode escrever código concorrente sem se preocupar com condições de corrida. Aqui está um exemplo de um programa que usa threads para imprimir números de 0 a 9, em ordem aleatória:
+É possível compilar o código utilizando o comando `cargo build` e depois executá-lo com o comando `./target/debug/nome_do_projeto`. Alternativamente, você pode utilizar o comando `cargo run` para compilar e executar o código de uma só vez.
 
-```Rust
-use std::thread;
-use std::time::Duration;
-use rand::Rng;
+## Mais sobre iniciar um projeto em Rust
+É importante conhecer algumas das melhores práticas ao iniciar um novo projeto em Rust. Algumas dicas incluem:
 
-fn main() {
-  let mut threads = vec![];
+- Utilizar o gerenciador de dependências do Cargo para adicionar bibliotecas externas ao projeto.
+- Utilizar o sistema de tipos de Rust para garantir a segurança do código.
+- Utilizar a ferramenta de formatação automática `rustfmt` para manter um código limpo e legível.
 
-  for i in 0..10 {
-    threads.push(thread::spawn(move || {
-      thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(1..10)));
-      println!("{}", i);
-    }));
-  }
-
-  for thread in threads {
-    thread.join().unwrap();
-  }
-}
-```
-
-## Aprofundando-se em um novo projeto com Rust
-
-Rust é uma linguagem relativamente nova, mas está crescendo rapidamente em popularidade. Existem muitos recursos disponíveis on-line onde você pode aprender mais sobre a linguagem e como usá-la em seus projetos. Além disso, a comunidade de Rust é extremamente ativa e acolhedora, então você sempre pode pedir ajuda e aprender com outros programadores.
-
-Outro aspecto importante a ter em mente é que, como o Rust é uma linguagem de baixo nível, pode ser um pouco mais difícil de aprender do que linguagens de alto nível como Python ou JavaScript. No entanto, os benefícios de desempenho e segurança de memória que ele oferece fazem valer a pena investir tempo para se familiarizar com ele.
+Com essas dicas em mente, você pode começar a explorar as diversas possibilidades que Rust oferece para o desenvolvimento de aplicações rápidas, seguras e confiáveis.
 
 ## Veja também
-
-- [Site oficial do Rust](https://www.rust-lang.org/pt-BR/)
-- [Documentação do Cargo](https://doc.rust-lang.org/cargo/)
-- [Comunidade Rust Brasil](https://www.rust-br.org/)
+- [Site oficial de Rust](https://www.rust-lang.org/pt-BR/)
+- [Documentação oficial de Rust](https://doc.rust-lang.org/stable/)
+- [Repositório oficial do Cargo](https://github.com/rust-lang/cargo)

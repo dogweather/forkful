@@ -1,35 +1,44 @@
 ---
 title:    "Bash: Skriva tester"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva tester är ett viktigt steg i utveckling av Bash-program. Det hjälper till att identifiera eventuella felaktigheter och säkerställa att koden fungerar korrekt. Dessutom kan tester hjälpa till att upptäcka problem i tidigt skede och förbättra kodens kvalitet.
+Att skriva tester är en viktig del av att utveckla programvara. Det hjälper till att upptäcka och förebygga fel samt säkerställa att koden fungerar som den ska. Genom att skriva tester ökar även möjligheten att snabbt identifiera problem och undvika kostsamma buggar i produktion.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva tester i Bash använder man kommandot `test`, även känt som `[`. Det tar emot villkor och returnerar en sann eller falsk utvärdering beroende på om villkoret är uppfyllt eller inte. Här är ett exempel på hur man kan använda `test` för att kontrollera om ett nummer är större än ett annat:
+För att börja skriva tester i Bash behöver du först skapa en fil med filändelsen ".sh". Sedan använder du formatet ```Bash ... ``` för att skriva din testkod. Nedan är ett exempel på en enkel testfil som kontrollerar om ett visst kommando finns tillgängligt eller inte:
 
 ```Bash
-if [ $nummer1 -gt $nummer2 ]; then
-  echo "$nummer1 är större än $nummer2"
+#!/bin/bash
+
+# Kontrollera om kommandot "ls" är tillgängligt
+if command -v ls >/dev/null 2>&1
+then
+  echo "Kommandot ls finns tillgängligt."
 else
-  echo "$nummer1 är inte större än $nummer2"
+  echo "Kommandot ls finns inte tillgängligt."
+  exit 1
 fi
 ```
-I detta exempel använder vi flaggan `-gt` för att jämföra två numeriska värden. Det finns många andra flaggor som kan användas för att jämföra olika typer av data, såsom strängar och filer. Det är viktigt att notera att `test` är inte bara begränsat till att användas i `if`-satser, utan kan också användas för att kontrollera villkor i andra situationer.
+
+När du kör testet ovan kommer du antingen få ut "Kommandot ls finns tillgängligt." eller "Kommandot ls finns inte tillgängligt." beroende på om kommandot är installerat på ditt system eller inte.
 
 ## Djupdykning
 
-Det finns många aspekter av att skriva tester i Bash som kan utforskas mer. Till exempel kan man använda `-a` och `-o` flaggorna för att skapa komplexa villkor genom att kombinera flera testuttryck. Man kan också använda `let` för att utföra enklare matematiska uttryck i testkommandot.
+Att skriva tester i Bash handlar inte bara om att kontrollera om vissa kommandon finns tillgängliga. Det kan också innebära att skriva mer avancerade testfall där man simulerar olika scenarier och kontrollerar resultatet av dessa. Det är också viktigt att använda variabler och funktioner för att göra testerna mer dynamiska och skalbara.
 
-Vid skrivning av tester är det också viktigt att välja lämpliga villkor för att säkerställa att de är tillförlitliga och ger tydliga resultat. Det är också rekommenderat att använda variabler för att göra testerna mer flexibla och återanvändbara.
+En annan viktig aspekt av att skriva tester i Bash är att använda verktyg som automatiskt kan köra testerna och ge feedback på eventuella problem. Ett bra exempel på ett sådant verktyg är "Bats", som specifikt är utformat för att testa Bash-skript.
 
 ## Se även
 
-- [Bash-testkommandot](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
-- [Så här skriver du tester i Bash-skript](https://dev.to/codebyamir/how-to-write-tests-for-your-bash-scripts-54b3)
-- [Bash Shell Scripting](https://www.howtogeek.com/67469/the-beginners-guide-to-shell-scripting-the-basics/)
+Här är några användbara resurser för att lära dig mer om att skriva tester i Bash:
+
+- [Bash-testskript - Dokumentation från Linux-biblioteket](https://linuxconfig.org/bash-test-scripts)
+- [Funktioner och variabler i Bash - En grundläggande guide](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html)
+- [Bats - Automatiserade tester för Bash-skript](https://github.com/sstephenson/bats)

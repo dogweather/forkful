@@ -1,36 +1,57 @@
 ---
 title:    "Ruby: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Programowanie w języku Ruby może być nie tylko przyjemne, ale też niezwykle przydatne. Jednym z ważnych aspektów programowania jest umiejętność czytania argumentów wiersza poleceń. W tym artykule dowiecie się, dlaczego jest to istotne i jak tego dokonać.
+Czy kiedykolwiek zastanawiałeś się, jak programy mogą odczytać informacje podane z poziomu wiersza poleceń? To właśnie dzięki obsłudze argumentów wiersza poleceń możliwe jest wywoływanie programów z różnymi opcjami i wartościami. W tym artykule dowiesz się, jak w prosty sposób w Ruby odczytać argumenty z wiersza poleceń.
 
-## Jak
+## Jak to zrobić
 
-Aby czytać argumenty wiersza poleceń w języku Ruby, musimy skorzystać z wbudowanej klasy ```ARGV```. Wystarczy, że zadeklarujemy ją w naszym kodzie i będzie ona przechowywać wszystkie podane przez użytkownika argumenty w postaci tablicy. Poniżej przedstawiamy prosty przykład:
+Aby odczytać argumenty z wiersza poleceń w Ruby, należy skorzystać z metody ARGV. Jest to tablica zawierająca wszystkie argumenty podane przy wywoływaniu programu. Przyjrzyjmy się prostemu przykładowi kodu:
 
-```
-# Pobieranie pierwszego argumentu
-arg1 = ARGV[0]
-
-# Pobieranie drugiego argumentu
-arg2 = ARGV[1]
+```Ruby
+ARGV.each do |arg|
+  puts arg
+end
 ```
 
-W powyższym przykładzie deklarujemy dwie zmienne - ```arg1``` i ```arg2```, które przyjmują odpowiednio pierwszy i drugi argument przekazany przez użytkownika. Dzięki temu możemy wykorzystać je w naszym programie i przetwarzać zgodnie z naszymi potrzebami.
+Ten kod wypisze na ekranie wszystkie argumenty podane przy uruchomieniu programu. Jeśli na przykład nasz program nazywa się "test.rb" i uruchomiliśmy go z argumentami "hello world", otrzymamy na wyjściu:
 
-## Deep Dive
+```
+hello
+world
+```
 
-Klasa ```ARGV``` posiada wiele metod, które ułatwiają nam pracę z argumentami wiersza poleceń. Jedną z nich jest metoda ```length```, która zwraca liczbę podanych argumentów. Możemy więc w prosty sposób sprawdzić, czy użytkownik podał odpowiednią ilość argumentów, jakiego oczekujemy w naszym programie. Inną przydatną metodą jest ```shift```, która usuwa pierwszy element z tablicy i zwraca go jako wynik. Dzięki temu możemy sobie poradzić z niestandardowym ułożeniem argumentów, a następnie przetworzyć je w odpowiedniej kolejności.
+Zauważ, że wielkość liter jest zachowana, więc jeśli chcemy, aby nasze programy odczytywały argumenty niezależnie od ich wielkości, należy odpowiednio to przewidzieć w kodzie.
 
-## Zobacz również
+Możemy również przypisać każdy argument do zmiennej, aby móc nimi manipulować. Przykładowo:
 
-- [Dokumentacja klasy ARGV w Ruby](https://ruby-doc.org/core-2.7.1/ARGV.html)
-- [Tutorial: Reading Command Line Arguments in Ruby](https://www.rubyguides.com/2012/02/ruby-command-line-args/)
-- [Ruby Command Line Parameters](https://www.tutorialspoint.com/ruby/ruby_command_line_parameters.htm)
+```Ruby
+first_arg = ARGV[0]
+puts first_arg
+```
 
-Dzięki umiejętności czytania argumentów wiersza poleceń możemy znacznie ułatwić sobie pracę w języku Ruby. Będziemy mogli tworzyć bardziej zaawansowane programy, które będą dostosowywać się do potrzeb użytkownika. Warto więc zrozumieć tę umiejętność i wykorzystywać ją w swoim codziennym programowaniu.
+Ten kod wypisze tylko pierwszy argument, czyli "hello".
+
+## Głębszy zanurzanie się w temat
+
+Warto wspomnieć, że ARGV traktuje każde słowo oddzielone spacjami jako oddzielny argument. Jeśli chcemy przyjąć jako argument całe zdanie, musimy zawrzeć je w cudzysłowie. Na przykład:
+
+```Ruby
+`puts ARGV[0]
+```
+
+Jeśli uruchomimy ten kod z argumentami "hello world", otrzymamy na wyjściu "hello", ale jeśli uruchomimy z argumentem "hello world" (bez cudzysłowów), otrzymamy na wyjściu tylko "hello", a drugi argument zostanie zignorowany.
+
+Spróbuj również poeksperymentować z różnymi opcjami wiersza poleceń, na przykład "-i" lub "--version", aby lepiej zrozumieć jak ARGV działa.
+
+## Zobacz także
+
+- [Dokumentacja Ruby o ARGV](https://ruby-doc.org/core-2.7.0/ARGV.html)
+- [Przykładowy kod odczytujący argumenty z wiersza poleceń w Ruby](https://gist.github.com/cadecairos/8554681)
+- [Inne możliwości manipulacji argumentami wiersza poleceń w Ruby](https://medium.com/rubycademy/from-the-command-line-to-a-ruby-program-e7a2e13604a3)

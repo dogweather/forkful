@@ -1,78 +1,67 @@
 ---
 title:    "Bash recipe: Reading a text file"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-When working with Bash programming, it is common to encounter text files that need to be read and manipulated. Knowing how to properly read a text file is an essential skill for any programmer, as it allows for efficient processing and extraction of data.
+Reading a text file is an essential skill for any Bash programmer. It allows you to access and manipulate the data stored in a file, giving you more control and flexibility in your scripts. Whether you're working with log files, configuration files, or user input, knowing how to read a text file is a valuable tool in your toolbox.
 
 ## How To
-
-To begin, let's create a simple text file called "example.txt" with the following contents:
-
-```
-Hello
-World
-```
-
-To read this file in Bash, we will use the `cat` command. The `cat` command is used to display the contents of a file and can be used as follows:
-
-```Bash
-cat example.txt
-```
-
-Running this command will output the contents of the file, like this:
+Reading a text file in Bash is a straightforward process. The first step is to open the file using the `cat` command. This will display the contents of the file in the terminal. For example, let's say we have a file named `data.txt` that contains the following text:
 
 ```
 Hello
 World
 ```
 
-This is a simple way to read a text file, but what if we want to store the data from the file in a variable? We can use the `$( )` notation to assign the output of a command to a variable. For example:
+To read this file, we would use the following command:
 
-```Bash
-my_variable=$(cat example.txt)
+```
+cat data.txt
 ```
 
-Now the contents of the file will be stored in the `my_variable` variable. We can verify this by using the `echo` command to display the variable:
-
-```Bash
-echo $my_variable
-```
-
-The output will be:
+This will output the contents of the file as follows:
 
 ```
 Hello
 World
 ```
 
-We can also use the `read` command to read a text file line by line. This is useful when dealing with larger files. For example, we can use the `while` loop to loop through each line of the file and perform some action on each line. Here's an example:
-
-```Bash
-while read line; do
-    echo $line
-done < example.txt
-```
-
-This will output each line of the file separately, like this:
+Alternatively, we could use the `less` command to read the file. Unlike `cat`, `less` allows us to scroll through the file if it's longer than one page. We can use the arrow keys or the spacebar to navigate through the file. To exit `less`, press the `q` key.
 
 ```
-Hello
-World
+less data.txt
+```
+
+We can also use the `head` command to read the first few lines of a file, or the `tail` command to read the last few lines.
+
+```
+head data.txt
+tail data.txt
 ```
 
 ## Deep Dive
+Reading a text file in Bash involves more than just displaying its contents in the terminal. We can also capture the output of a command into a variable using the `$(command)` syntax. We can then use the variable in our script to perform further operations on the file's contents.
 
-When working with text files in Bash, it's important to note the difference between reading the file with `cat` and `read`. When using `cat`, the entire file is read at once and stored in memory, which can be problematic for large files. However, when using `read`, only one line is read at a time, allowing for more efficient processing of large files.
+For example, let's say we want to count the number of lines in our `data.txt` file. We can use the `wc -l` command to achieve this. This command will output the number of lines in a given file.
 
-There are also many useful options available for the `cat` and `read` commands, such as skipping lines or reading from a specific position in the file. It's worth exploring these options to see how they can improve your text file reading experience in Bash.
+```
+lines=$(wc -l < data.txt)
+echo "The number of lines in data.txt is $lines"
+```
+
+We can also use the `grep` command to extract specific information from a file. For instance, if our `data.txt` file contains both "Hello" and "World" on separate lines, we can use `grep` to filter only the lines containing "Hello."
+
+```
+grep "Hello" data.txt
+```
+
+This will output `Hello` as the only line in the terminal.
 
 ## See Also
-
-- [Bash Scripting Tutorial - Reading Files](https://linuxconfig.org/bash-scripting-tutorial-part-2-reading-and-writing-data)
-- [How to Read a Text File in Bash](https://www.baeldung.com/linux/read-text-file-bash) 
-- [Bash Beginners Guide - Reading and Writing Files](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+- [Introduction to Bash scripting](https://www.shellscript.sh/)
+- [Bash guide for beginners](https://linuxize.com/post/bash-scripting-tutorial-for-beginners/)
+- [Bash scripting cheatsheet](https://devhints.io/bash)

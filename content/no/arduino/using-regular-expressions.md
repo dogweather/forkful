@@ -1,48 +1,63 @@
 ---
-title:    "Arduino: Bruk av regulære uttrykk"
+title:    "Arduino: Å bruke regulære uttrykk"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang følt at koden din blir for rotete og vanskelig å lese? Eller at du trenger å søke gjennom store tekstfiler for spesifikke mønstre? Da er regular expressions et nyttig verktøy for å forenkle arbeidsflyten din som Arduino-programmerer.
+Hvis du driver med Arduino programmering, har du sannsynligvis vært borti en situasjon der du trenger å filtrere eller sortere data som kommer inn fra sensorer eller annet utstyr. Dette kan være en tidkrevende og kjedelig jobb hvis du må gjøre det manuelt. Den gode nyheten er at det finnes en måte å automatisere denne prosessen ved hjelp av såkalte regulære uttrykk, også kalt regex.
 
-## Hvordan
+Regulære uttrykk er en måte å søke og manipulere tekststrenger på basert på et sett med regler og mønstre. Dette kan være svært nyttig for å finne og behandle spesifikke deler av en tekststreng, for eksempel tall, bokstaver eller spesielle tegn.
 
-Å bruke regular expressions i Arduino er ganske enkelt. Først må du legge til biblioteket "Regex" i din Arduino-IDE. Deretter kan du bruke funksjonene fra dette biblioteket til å søke etter spesifikke mønstre i en tekststreng.
+## Hva du trenger
 
-La oss si at du har en tekststreng som inneholder et tall og du bare er interessert i dette tallet. Du kan bruke regular expressions til å filtrere ut dette tallet ved å bruke følgende kode:
+For å kunne bruke regulære uttrykk i Arduino programmering, trenger du en kunnskapsrik tekstredigerer som støtter regex, for eksempel Visual Studio Code eller Sublime Text. Du vil også trenge å installere regex-biblioteket for Arduino, som er tilgjengelig på nettet.
 
-```
-Arduino ...
-#include <regex>
-```
-```
-regex reg("([0-9]+)"); // lager et mønster for å matche tall
-String streng = "Dette er en tekststreng med 123 et tall i den";
-match_results<String::const_iterator> resultater; 
-// lagrer resultatet av søket i en variabel
-if (regex_search(streng, resultater, reg)) {
-    for (int i = 0; i < resultater.size(); ++i) {
-        Serial.println(resultater[i].str().c_str()); // skriver ut det matchende tallet
-    }
-}
+## Hvordan bruke regular expressions
+
+For å bruke regulære uttrykk i Arduino programmering, trenger du først å inkludere regex-biblioteket i koden din ved å legge til følgende linje øverst i koden:
+
+```Arduino
+#include <regex.h>
 ```
 
-Dette vil skrive ut "123" i Serial Monitor. Du kan også bruke regular expressions med variabler som temperatursensorer eller knapper, for å filtrere ut spesifikke verdier fra sensordata.
+Deretter kan du definere et regulært uttrykk ved hjelp av følgende syntaks:
 
-## Dypdykk
+```Arduino
+regex_t regex;
+```
 
-Regular expressions kan bli enda mer kraftfulle ved å bruke såkalte "metakarakterer". Dette er spesielle symboler som representerer flere tegn samtidig. For eksempel kan du bruke "." for å matche ett hvilket som helst tegn eller "*" for å matche hvilken som helst mengde av et visst tegn.
+Du kan deretter bruke regex-funksjonene til å søke og manipulere tekststrenger basert på det definerte uttrykket. For eksempel kan du bruke funksjonen "regcomp" til å kompilere regulære uttrykk, og "regexec" til å utføre søk og manipulasjon på tekststrenger.
 
-Du kan også bruke uttrykk som "[]", som representerer en gruppe av tegn. For eksempel [a-z] vil matche alle små bokstaver, mens [0-9] vil matche alle tall.
+```Arduino
+regex_t regex;
 
-Det finnes også en rekke nyttige funksjoner i dette biblioteket, som regex_replace() for å erstatte tekst og regex_match() for å sjekke om en streng matcher et gitt mønster.
+// Kompilerer uttrykket
+int status = regcomp(&regex, "^H\\w+", 0);
+
+// Utfører søk i en tekststreng
+status = regexec(&regex, "Hei alle sammen!", 0, NULL, 0);
+```
+
+Output fra eksempelet over vil bli "Hei" siden uttrykket leter etter et ord som starter med en H og følges av en eller flere bokstaver.
+
+## Grunnleggende regex mønstre
+
+I tillegg til syntaksen som er nevnt over, er det også flere mønstre og regler du kan bruke i regulære uttrykk for å gjøre søkene dine mer spesifikke og nøyaktige. Her er noen av de vanligste mønstrene som kan være nyttige i Arduino programmering:
+
+- \d - Søker etter tall (0-9)
+- \w - Søker etter bokstaver (a-z, A-Z)
+- \s - Søker etter mellomrom
+- ^ - Starter et søk fra begynnelsen av en tekststreng
+- $ - Slutter søket ved slutten av en tekststreng
+
+Det finnes også mange flere mønstre og regler som kan være nyttige i ulike situasjoner, så det kan være lurt å gjøre litt research og prøve deg frem for å bli mer kjent med regex.
 
 ## Se også
 
-- [Arduino Regex-bibliotek](https://www.arduino.cc/reference/en/libraries/regex/)
-- [RegExr](https://regexr.com/), et nyttig verktøy for å teste og eksperimentere med regular expressions
-- [Dokumentasjon for Regular Expressions](https://www.regular-expressions.info/), mer informasjon om hvordan du bruker regular expressions i ulike programmeringsspråk
+- [Regex tutorial for Arduino](https://howtomechatronics.com/tutorials/arduino/regex-tutorial-regular-expressions/)
+- [Official Arduino regex library](https://arduino.github.io/arduino-cli/0.25/libraries/regex/docs/regex.html)
+- [Regular expression basics](https://www.regular-expressions.info/tutorial.html)

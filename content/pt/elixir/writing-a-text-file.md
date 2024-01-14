@@ -1,31 +1,55 @@
 ---
 title:    "Elixir: Escrevendo um arquivo de texto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em Elixir?
+# Por que escrever um arquivo de texto em Elixir?
 
-Escrever um arquivo de texto é uma tarefa comum em muitas linguagens de programação, e Elixir não é exceção. Ao escrever um arquivo de texto, você pode armazenar informações importantes que seu programa precisa acessar, como dados de configuração ou mensagens de erro. Além disso, os arquivos de texto são uma forma simples e acessível de compartilhar informações com outros programas ou usuários.
+Escrever um arquivo de texto em Elixir pode ser útil em diversas situações, como armazenar dados, gerar relatórios ou criar logs. Além disso, é uma ótima habilidade para aprender no desenvolvimento de aplicações em Elixir.
 
-## Como fazer isso em Elixir?
+## Como fazer
 
-Para escrever um arquivo de texto em Elixir, você pode usar a função `File.write/2`. Veja um exemplo de código abaixo:
+Para escrever um arquivo de texto em Elixir, podemos utilizar a função `File.write/2`. Esta função recebe dois argumentos: o primeiro é o nome do arquivo e o segundo é o conteúdo que desejamos escrever. Veja um exemplo abaixo:
 
-```elixir
-# Cria um arquivo chamado "dados.txt" e escreve a string "Olá mundo!" nele
-File.write("dados.txt", "Olá mundo!")
+```Elixir
+File.write("arquivo.txt", "Este texto será escrito no arquivo.")
 ```
 
-Este código criará um arquivo chamado "dados.txt" no diretório atual e escreverá a string "Olá mundo!" nele. Você também pode adicionar opções adicionais para personalizar como e onde o arquivo será criado, como por exemplo o modo de escrita e as permissões do arquivo. Consulte a documentação oficial para mais detalhes.
+Podemos usar também a função `IO.write/2` para escrever em um arquivo. A diferença é que ela exige que o arquivo esteja aberto em modo de escrita antes de ser chamada. Veja um exemplo:
 
-## Profundidade na escrita de arquivos de texto em Elixir
+```Elixir
+file = File.open("arquivo.txt", [:write])
+IO.write(file, "Este texto também será escrito no arquivo.")
+```
 
-Existem muitas nuances e detalhes a serem considerados ao escrever arquivos de texto em Elixir. Por exemplo, você precisa garantir que o arquivo exista antes de tentar escrever nele, caso contrário você receberá um erro. Além disso, é importante considerar o desempenho ao escrever grandes quantidades de dados em um arquivo. Você também pode querer lidar com possíveis erros ou exceções que possam ocorrer durante o processo de escrita. Para se aprofundar neste tópico, confira a documentação oficial sobre manipulação de arquivos em Elixir.
+O resultado será o mesmo em ambos os casos: o arquivo "arquivo.txt" conterá o texto "Este texto será escrito no arquivo. Este texto também será escrito no arquivo.".
 
-## Veja também
+## Mergulho profundo
 
-- Documentação oficial sobre manipulação de arquivos em Elixir: https://hexdocs.pm/elixir/File.html
-- Artigo da Elixir School sobre manipulação de arquivos: https://elixirschool.com/pt/lessons/advanced/files/
-- Tutorial em vídeo sobre escrita de arquivos de texto em Elixir: https://www.youtube.com/watch?v=UoVpQQ69iCg
+Ao escrever um arquivo de texto em Elixir, é importante lembrar de fechá-lo após sua utilização. Isso pode ser feito utilizando a função `File.close/1`. Por exemplo:
+
+```Elixir
+file = File.open("arquivo.txt", [:write])
+IO.write(file, "Este texto será escrito no arquivo.")
+File.close(file)
+```
+
+Outra coisa importante é que o conteúdo será sempre adicionado ao final do arquivo, caso ele já exista. Se o arquivo não existir, ele será criado automaticamente.
+
+Também é possível controlar a posição onde o conteúdo será adicionado com a função `File.position/2`. Esta função recebe como argumento o arquivo e um número, que indica a posição em bytes onde o conteúdo será inserido. Por exemplo:
+
+```Elixir
+file = File.open("arquivo.txt", [:write])
+File.position(file, 10)
+IO.write(file, "Texto inserido na décima posição.")
+```
+
+O texto "Texto inserido na décima posição." será escrito após os primeiros 10 bytes do arquivo.
+
+# Veja também
+
+- [Documentação oficial do Elixir sobre a escrita de arquivos](https://hexdocs.pm/elixir/File.html)
+- [Tutorial sobre a manipulação de arquivos em Elixir](https://culttt.com/2017/12/20/working-files-elixir-elixir-alchemy/)

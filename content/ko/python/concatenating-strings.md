@@ -1,44 +1,78 @@
 ---
-title:    "Python: 문자열 연결하기"
+title:    "Python: 문자열 합치기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 연결하는 것의 가장 좋은 이유는 여러 문자열을 하나의 문자열로 결합하여 보다 간결하고 읽기 쉬운 코드를 만들 수 있다는 것입니다. 또한 이미 존재하는 문자열을 수정하지 않고 새로운 문자열을 생성할 수 있어서 불변성(Immutability)을 유지할 수 있습니다.
+문자열을 연결하는 것에 참여하는 이유는 간단합니다. 여러 개의 문자열을 하나의 문자열로 결합하면 유용한 출력을 만들 수 있습니다. 문자열을 대/소문자로 변환하거나 여러 개의 문자열을 추출하여 새로운 문장을 만드는 등 다양한 용도로 사용할 수 있습니다.
 
-## 사용 방법
+## 하는 방법
 
-```python
-s1 = "안녕하세요, "
-s2 = "저는 "
-s3 = "파이썬 프로그래머입니다."
-message = s1 + s2 + s3
+우선, 파이썬의 문자열 연결 기능 중 하나인 `+` 연산자를 사용하여 여러 개의 문자열을 결합할 수 있습니다.
 
-print(message)
+```Python
+string_1 = "안녕하세요, "
+string_2 = "저는 "
+string_3 = "파이썬 프로그래머입니다."
+result = string_1 + string_2 + string_3
+
+print(result)
 ```
-결과:
+
+출력 결과는 다음과 같습니다.
+
 ```
 안녕하세요, 저는 파이썬 프로그래머입니다.
 ```
 
-문자열을 연결하기 위해서는 "+" 연산자를 사용하면 됩니다. 이때, 모든 변수가 문자열이어야 하며, 다른 데이터 타입일 경우 에러가 발생합니다. 또한, 문자열 뿐만 아니라 변수, 숫자, 함수 등 다양한 값들을 연결할 수 있습니다.
+또는 `join()` 메서드를 사용하여 리스트의 문자열을 결합할 수도 있습니다.
 
-## 깊이 파헤치기
+```Python
+languages = ["HTML", "CSS", "JavaScript"]
 
-파이썬에서 문자열은 불변성 데이터 타입으로 존재합니다. 따라서, 두 문자열을 연결하면 새로운 메모리 공간에 새로운 문자열을 생성하게 됩니다. 이러한 방식은 메모리를 효율적으로 사용하는데 도움이 됩니다. 또한, 이러한 불변성 특성 때문에 문자열을 수정할 수 없기 때문에 의도치 않은 코드 수정을 방지할 수 있습니다.
+result = ", ".join(languages)
 
-## 더 많은 정보
+print(result)
+```
 
-- [문자열 관련 파이썬 공식 문서](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [파이썬 문자열 연산자](https://www.w3schools.com/python/python_operators.asp)
-- [파이썬 문자열 표현방식](https://realpython.com/python-string-formatting/)
-- [파이썬 문자열 처리 관련 라이브러리](https://realpython.com/python-regex/)
-- [파이썬 문자열과 리스트의 차이점](https://www.geeksforgeeks.org/python-difference-between-list-and-string/)
-- [유튜브: 파이썬 문자열 연결하기](https://www.youtube.com/watch?v=DorjPR8Z0E4)
+출력 결과는 다음과 같습니다.
+
+```
+HTML, CSS, JavaScript
+```
+
+## 더 들어가기
+
+파이썬의 문자열 연결 기능은 단순히 두 개의 문자열을 결합하는 것을 넘어서 다양한 기능을 제공합니다. 예를 들어, `*` 연산자를 사용하여 문자열을 반복할 수 있고 `in` 연산자를 사용하여 문자열 속에 특정 단어가 있는지 확인할 수 있습니다.
+
+또한 f-string을 사용하면 변수를 문자열에 포함시켜서 동적인 문장을 만들 수 있습니다. 이를 통해 보다 복잡한 출력과 코드를 만들 수 있습니다.
+
+```
+name = "Jane"
+age = 25
+
+print(f"저의 이름은 {name}이고, 나이는 {age}살입니다.")
+```
+
+출력 결과는 다음과 같습니다.
+
+```
+저의 이름은 Jane이고, 나이는 25살입니다.
+```
 
 ## 참고
 
-이 블로그 포스트에서는 파이썬 3 버전을 기준으로 작성되었습니다.
+다른 문자열 작업에 대해 자세히 알고 싶다면 다음 링크를 참고해 보세요.
+
+- [Python 문자열 관련 문서](https://docs.python.org/ko/3/library/stdtypes.html#string-methods)
+- [파이썬 f-string 소개](https://realpython.com/python-f-strings/)
+- [Join() 메서드 상세 설명](https://www.w3schools.com/python/ref_string_join.asp)
+
+## 참고하기
+
+- [파이썬 공식 문서](https://www.python.org/)
+- [Codecademy Python 강의](https://www.codecademy.com/learn/learn-python)

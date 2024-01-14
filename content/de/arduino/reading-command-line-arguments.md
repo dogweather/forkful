@@ -1,67 +1,38 @@
 ---
 title:    "Arduino: Lesen von Befehlszeilenargumenten"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Warum sollte man sich mit dem Lesen von Befehlszeilenargumenten beschäftigen? Nun, dieses Wissen ist sehr hilfreich, wenn man komplexe Programme schreibt, die auf externe Eingaben reagieren müssen. Es ermöglicht dem Programmierer, die Flexibilität und Interaktion mit dem Benutzer zu verbessern.
 
-In diesem Blog-Post erfahren Sie, warum es wichtig ist, Befehlszeilenargumente in der Arduino-Programmierung zu verstehen und wie Sie diese in Ihrem Code nutzen können.
+## How To
+Das Lesen von Befehlszeilenargumenten in Arduino ist relativ einfach. Zuerst muss man ein Objekt der Klasse Serial beginnen, um die serielle Kommunikation zwischen dem Arduino und einem Computer oder einem anderen Gerät zu ermöglichen. Dann können die Befehlszeilenargumente mithilfe der Funktion `Serial.readStringUntil()` gelesen werden, die eine Zeichenkette bis zu einem angegebenen Trennzeichen zurückgibt.
 
-# Wie man Befehlszeilenargumente in Arduino liest
+Hier ist ein Beispielcode, der demonstriert, wie man Befehlszeilenargumente mit dem Arduino liest:
 
-Die Befehlszeilenargumente sind Parameter, die beim Starten eines Programms übergeben werden und es Ihnen ermöglichen, Ihr Programm je nach Bedarf anzupassen. In Arduino können Befehlszeilenargumente über die Funktion ```Serial.readString()``` gelesen werden.
-
-Hier ist ein Beispielcode, der einen Befehlszeilenparameter mit dem Namen "message" erwartet und diesen dann auf dem seriellen Monitor ausgibt:
-
-```Arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  if (Serial.available()) {
-    String message = Serial.readStringUntil('\n'); // liest den Befehlszeilenparameter bis zur Zeilenumbruch-Zeichenfolge ('\n')
-    Serial.println("Empfangene Nachricht: " + message);
-  }
-}
+```
+Arduino initialisieren .....
+Serial.begin(9600);     // Starten der seriellen Kommunikation
+String input = Serial.readStringUntil('\n');     // Lesen der Argumente bis zur Zeilenumbruch
+Serial.print("Die Eingabe war: ");
+Serial.println(input);    // Ausgabe der Eingabe über die serielle Schnittstelle
 ```
 
-Wenn wir nun das Programm starten und im seriellen Monitor "message:Hallo!" eingeben, wird "Empfangene Nachricht: Hallo!" ausgegeben.
+Wenn Sie nun "Hello World" über die serielle Schnittstelle senden, wird die Ausgabe "Die Eingabe war: Hello World" erscheinen.
 
-# Tiefgehende Informationen zum Lesen von Befehlszeilenargumenten
+## Deep Dive
+Um tiefer in die Materie einzusteigen, ist es wichtig zu wissen, dass Befehlszeilenargumente meistens als Zeichenketten (Strings) gelesen werden müssen und dann entsprechend in andere Datentypen umgewandelt werden müssen, je nachdem, wie sie im Programm verwendet werden sollen.
 
-Um Befehlszeilenargumente effektiv nutzen zu können, ist es wichtig zu verstehen, wie sie strukturiert sind. Befehlszeilenargumente bestehen aus einem Namen, gefolgt von einem Doppelpunkt und dem Wert des Parameters. Bei mehreren Befehlszeilenargumenten werden diese durch ein Leerzeichen getrennt.
+Es ist auch hilfreich, sicherzustellen, dass die eingegebenen Argumente gültig sind, um unerwartete Fehler zu vermeiden. Dies kann durch die Verwendung von Bedingungen und Vergleichen erreicht werden.
 
-In unserem Beispielcode wäre "message" der Name des Parameters und "Hallo!" der Wert.
+Ein weiterer wichtiger Aspekt ist das Verständnis der Position der Befehlszeilenargumente im Programmablauf. Der Code muss so gestaltet sein, dass die Argumente im richtigen Moment gelesen und verarbeitet werden, um die gewünschten Ergebnisse zu erzielen.
 
-Es ist auch möglich, Befehlszeilenargumente in einem Array zu speichern, um sie später in Ihrem Code zu verwenden. Hier ist ein Beispiel, wie dies umgesetzt werden kann:
-
-```Arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  if (Serial.available()) {
-    String message = Serial.readStringUntil('\n'); // liest den Befehlszeilenparameter bis zur Zeilenumbruch-Zeichenfolge ('\n')
-
-    // Teilt den String an dem Doppelpunkt
-    int colonIndex = message.indexOf(':');
-    String parameterName = message.substring(0, colonIndex); // extrahiert den Namen des Parameters
-    String parameterValue = message.substring(colonIndex + 1); // extrahiert den Wert des Parameters
-
-    Serial.println("Parametername: " + parameterName);
-    Serial.println("Parametervalue: " + parameterValue);
-  }
-}
-```
-
-Wenn wir nun im seriellen Monitor "message:Hallo!" eingeben, wird "Parametername: message" und "Parametervalue: Hallo!" ausgegeben.
-
-# Siehe auch
-
-- [Serial.readString()](https://www.arduino.cc/reference/de/language/functions/communication/serial/readstring/)
-- [String-Methoden in Arduino](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
-- [Befehlszeilenargumente erklärt in einfachen Worten](https://www.howtogeek.com/435288/what-are-command-line-arguments-and-how-do-you-use-them/)
+## Siehe auch
+1. [Arduino Serial Communication](https://www.arduino.cc/en/Tutorial/SerialCommunication)
+2. [String Manipulation in Arduino](https://www.arduino.cc/en/Tutorial/String) 
+3. [Understanding Command Line Arguments](https://www.gnu.org/software/libc/manual/html_node/Command_002dLine-Arguments.html)
+4. [C++ String Library](https://www.cplusplus.com/reference/string/string/)

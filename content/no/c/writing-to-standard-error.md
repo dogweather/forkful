@@ -1,54 +1,39 @@
 ---
-title:    "C: Skrive til standardfeil"
+title:    "C: Å skrive til standardfeil"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Skriving til standardfeilsøkingskanaler, som standard error, er en viktig del av C-programmering. Det lar utviklere fange og feilsøke potensielle feil i programmet sitt.
+Å skrive til standard error er en viktig del av å lage programmer i C. Det tillater oss å kommunisere med brukeren og gi verdifulle feilmeldinger som kan hjelpe med å finne og rette feil i koden vår.
 
-## Hvordan
+## Slik gjør du det
 
-Skriving til standard error i C-programmering er enkelt og krever bare en linje med kode som sender en melding til denne kanalen.
-
-```C
-fprintf(stderr, "Feil oppstod: Dette er bare et eksempel.");
-```
-
-Dette eksempelet bruker fprintf-funksjonen til å sende meldingen "Feil oppstod: Dette er bare et eksempel" til standard error. Det er viktig å merke seg at vi bruker "stderr" som et argument for å sikre at meldingen faktisk blir sendt til standard error og ikke en annen kanal.
-
-For å kunne bruke fprintf, må du også inkludere <stdio.h> biblioteket i koden din ved å skrive følgende linje på toppen:
+Du kan enkelt skrive til standard error ved hjelp av funksjonen `fprintf`. Denne funksjonen lar deg skrive en formatert melding til en valgt fil, i dette tilfellet standard error. For eksempel:
 
 ```C
-#include <stdio.h>
+fprintf(stderr, "En feil har oppstått: %s\n", error_message);
 ```
 
-Når programmet kjøres, vil meldingen bli sendt til standard error, og hvis det oppstår en feil, vil denne meldingen bli inkludert i feilmeldingen som vises. Her er et eksempel på hvordan dette kan se ut når programmet kjøres:
+I dette eksempelet skriver vi en feilmelding med en variabel verdi til standard error ved hjelp av stedsholderen `%s`. Dette gjør det enklere for oss å gi mer spesifikk informasjon til brukeren om hva som gikk galt.
 
-```
-Feil oppstod: Dette er bare et eksempel.
-```
-
-## Dypdykk
-
-Å forstå hvordan man bruker standard error er viktig for å kunne feilsøke C-programmer. Ved å sende meldinger til denne kanalen, kan utviklere få informasjon om hvor og når feil oppstår i koden deres.
-
-Det er også viktig å merke seg at andre kanaler som standard output (stdout) også kan brukes til å sende meldinger, men standard error er spesielt nyttig for å skille mellom vanlig programutgang og feilinformasjon.
-
-I tillegg til å bruke fprintf-funksjonen, kan du også bruke perror-funksjonen for å få en mer detaljert feilmelding. Denne funksjonen analyserer en global variabel som kalles "errno" og gir en forklaring på feilen som har oppstått. For eksempel:
+Det er også viktig å merke seg at standard error ofte brukes sammen med standard output når vi ønsker å gi ut data til brukeren. Vi kan bruke `fprintf` på samme måte, men med `stdout` som filnavn. For eksempel:
 
 ```C
-if (fopen("filnavn.txt", "r") == NULL) {
-    perror("Åpne filen");
-}
+fprintf(stdout, "Resultatet er: %d\n", resultat);
 ```
 
-Dette vil skrive ut en feilmelding hvis det oppstår en feil under åpningen av filen "filnavn.txt".
+## Dykk dypere
+
+Å skrive til standard error kan også være nyttig når vi ønsker å logge informasjon eller feilmeldinger i våre programmer. Ved å omdirigere standard error til en fil, kan vi lagre detaljert informasjon om kjøringen av vårt program og bruke det senere for feilsøking eller analyse.
+
+Vi kan også bruke `fprintf` til å skrive til forskjellige filer samtidig, ved å gi flere filnavn som argumenter. Dette kan være spesielt nyttig når vi ønsker å skrive til både standard error og en loggfilsamtidig.
 
 ## Se også
 
-- <https://www.programiz.com/c-programming/library-function/stdio.h/printf>
-- <https://www.tutorialspoint.com/c_standard_library/stdio_h.htm>
-- <https://www.gnu.org/software/libc/manual/pdf/libc.pdf>
+- [fprintf function in C](https://www.programiz.com/c-programming/library-function/stdio.h/fprintf) 
+- [Standard error in C](https://www.geeksforgeeks.org/standard-error-c/) 
+- [Debugging C programs with standard error](https://stackoverflow.com/questions/5146656/debugging-c-programs-with-standard-error)

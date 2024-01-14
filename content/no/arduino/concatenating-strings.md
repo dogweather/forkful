@@ -1,68 +1,42 @@
 ---
 title:    "Arduino: Sammenstilling av strenger"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å slå sammen strenger (informatikk begrep for å kombinere to eller flere tekststrenger) i Arduino programmering kan være nyttig for å opprette mer kompleks utskrift og meldinger. Ved å bruke denne funksjonen i koden din, kan du også gi dynamiske og personlige meldinger fra enheten din.
+Å konkatener strenger (å sette sammen to eller flere strenger til en lengre streng) i Arduino-programmering kan være nyttig når du trenger å lage en mer kompleks tekst eller melding. Det kan også gjøre koden mer effektiv og enklere å lese og forstå.
 
-# Hvordan
+## Hvordan
 
-Kombinering av strenger i Arduino er enkelt å gjøre ved å bruke funksjonen `String.concat()`. Denne funksjonen lar deg kombinere to eller flere strenger sammen, og skrive ut dem som én komplett streng. Her er et eksempel:
+For å konkatener strenger i Arduino, bruker du "+" -operatøren for å kombinere to strenger. Du kan også bruke flere "+" -operatører for å kombinere flere strenger.
 
-```arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  String navn = "John";
-  String beskjed = "Hei " + navn + ", velkommen til Arduino-verdenen!";
-  Serial.println(beskjed);
-}
+```Arduino
+String navn = "Ole";
+String alder = "25";
+String beskjed = "Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel.";
+Serial.println(beskjed);
 ```
 
-I dette eksempelet blir strengen `navn` kombinert med teksten "Hei" og teksten ", velkommen til Arduino-verdenen!". Dette vil resultere i en utskrift som sier "Hei John, velkommen til Arduino-verdenen!".
+Dette vil gi følgende output: "Hei, mitt navn er Ole og jeg er 25 år gammel."
 
-Du kan også legge til flere variabler og tekst sammen. For eksempel, hvis du vil inkludere et tall i meldingen din, kan du gjøre det på denne måten:
+## Dypdykk
 
-```arduino
-void setup() {
-  Serial.begin(9600);
-}
+Når du bruker "+" -operatøren for å konkatenerere strenger, må du være oppmerksom på datatype-konvertering. Hvis du bruker forskjellige datatyper i strengene, kan det føre til uventede resultater.
 
-void loop() {
-  int alder = 25;
-  String beskjed = "Gratulerer med " + String(alder) + "-årsdagen!";
-  Serial.println(beskjed);
-}
+Du kan også bruke funksjonen `concat()` for å konkatenerere strenger. Denne funksjonen gjør det mulig å konkatenerere flere strenger samtidig.
+
+```Arduino
+String instruksjon = "Har du " + XXX + "Når du bruker " + YYY + "merk at dette kan føre til uønskede resultater.";
+Serial.println(instruksjon.concat("spørsmål om dette."));
 ```
 
-I dette eksempelet blir tallet `alder` først konvertert til en streng ved å bruke `String()` funksjonen, og deretter kombinert med teksten "Gratulerer med" og teksten "-årsdagen!". Dette vil resultere i en utskrift som sier "Gratulerer med 25-årsdagen!".
+Dette vil gi følgende output: "Har du spørsmål om dette? Når du bruker merk at dette kan føre til uønskede resultater."
 
-# Dykk dypere
+## Se også
 
-I tillegg til å bruke `String.concat()` funksjonen, kan du også bruke operatøren `+` for å kombinere strenger. Dette er det samme som å bruke `String.concat()` funksjonen, men i en kortere form. Her er et eksempel:
-
-```arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int antall = 15;
-  String beskjed = "Du har " + String(antall) + " nye meldinger.";
-  Serial.println(beskjed);
-}
-```
-
-I dette eksempelet blir tallet `antall` først konvertert til en streng, og deretter kombinert med teksten "Du har" og teksten "nye meldinger.". Dette vil resultere i en utskrift som sier "Du har 15 nye meldinger.".
-
-# Se også
-
-* [String.concat() referanse](https://www.arduino.cc/reference/en/language/functions/string/functions/concat/)
-* [Arduino opplæring om strenger](https://www.arduino.cc/en/Tutorial/StringConstructors)
-* [Arduino Community Forum](https://forum.arduino.cc/) for å lære mer og få hjelp fra andre Arduino-entusiaster.
+- [Official Arduino Language Reference - Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [How to Concatenate Strings in Arduino](https://maker.pro/arduino/projects/concatenate-strings-arduino)

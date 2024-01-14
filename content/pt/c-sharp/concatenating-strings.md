@@ -1,44 +1,50 @@
 ---
 title:    "C#: Concatenando strings"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a concatenação de strings em C#
+## Por que
 
-Ao escrever um programa ou aplicação em C#, muitas vezes nos deparamos com a necessidade de combinar diferentes textos em uma única string. Isso pode ser útil para criar mensagens personalizadas, gerar relatórios ou formatar dados de maneira mais legível. Nesses casos, a concatenação de strings é a solução perfeita.
+Você pode se perguntar por que alguém iria se preocupar em concatenar strings em C#. A resposta é simples: para combinar diferentes pedaços de texto em uma única sequência.
 
-## Como fazer a concatenação de strings em C#
+## Como fazer
 
-Existem várias formas de combinar strings em C#, mas a maneira mais simples é utilizar o operador "+" entre duas ou mais variáveis de texto. Veja o exemplo abaixo:
+Concatenar strings em C# é simples e pode ser feito de várias maneiras. Uma forma é usando o operador "+" para combinar duas strings, como no exemplo abaixo:
 
 ```C#
-string saudacao = "Olá, ";
-string nome = "João";
+string saudacao = "Olá ";
+string nome = "Maria";
 string mensagem = saudacao + nome;
-Console.WriteLine(mensagem); // Saída: "Olá, João"
+
+Console.WriteLine(mensagem); // Saída: Olá Maria
 ```
 
-Também é possível fazer a concatenação de strings utilizando o método `Concat()` da classe `String`. Dessa forma, podemos combinar mais de duas strings de uma só vez. Confira:
+Outra maneira é usando o método `Concat` da classe `String`:
 
 ```C#
-string primeiroNome = "Maria";
-string sobrenome = "Silva";
-string apelido = "Mary";
-string nomeCompleto = String.Concat(primeiroNome, sobrenome, apelido);
-Console.WriteLine(nomeCompleto); // Saída: "MariaSilvaMary"
+string primeiraPalavra = "Olá";
+string segundaPalavra = "mundo";
+
+string frase = String.Concat(primeiraPalavra, " ", segundaPalavra);
+
+Console.WriteLine(frase); // Saída: Olá mundo
 ```
 
-## Uma análise mais profunda sobre a concatenação de strings
+Também é possível usar a classe `StringBuilder` para concatenar strings de forma mais eficiente, especialmente se você estiver fazendo muitas operações de concatenação em um grande pedaço de texto.
 
-Quando utilizamos o operador "+" para concatenar strings, o compilador do C# converte automaticamente o código em uma chamada ao método `Concat()`. Isso significa que, na prática, não há diferença entre as duas formas de concatenação apresentadas no tópico anterior.
+## Deep Dive
 
-É importante ressaltar que, apesar de ser uma operação básica, a concatenação de strings pode afetar o desempenho de seu código, especialmente quando estamos lidando com grandes quantidades de texto. Nesses casos, é recomendado utilizar a classe `StringBuilder` em vez do operador "+". Isso porque, em cada concatenação feita com o operador, o compilador cria uma nova string na memória, o que pode ser bastante custoso.
+Ao concatenar strings em C#, é importante lembrar que as strings são imutáveis, o que significa que elas não podem ser alteradas depois de criadas. Quando você "concatena" duas strings, na verdade está criando uma nova string com o conteúdo combinado das duas.
 
-Com a classe `StringBuilder`, é possível adicionar novos caracteres à mesma string sem precisar alocar memória a todo momento. Dessa forma, o processo de concatenação é mais eficiente e rápido.
+Por exemplo, ao usar o operador "+", se você estiver lidando com grandes pedaços de texto, é possível que muitas cópias desnecessárias das strings sejam criadas na memória, o que pode afetar a performance do seu programa. É por isso que usar a classe `StringBuilder` pode ser mais rápido e mais eficiente em termos de memória.
 
-## Veja também
+## See Also
 
-- [Documentação oficial do C# sobre concatenação de strings (em inglês)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/string-concatenation)
-- [Artigo sobre otimização de performance em operações com strings em C# (em português)](https://www.codigofonte.com.br/artigos/performance-de-codigo-em-net-otimizacao-deu-string-vish)
+Para saber mais sobre a concatenação de strings em C#, confira os links abaixo:
+
+- [Documentação oficial do C# sobre strings](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/)
+- [Tutorial sobre strings em C#](https://www.tutorialsteacher.com/csharp/csharp-string)
+- [Artigo sobre a classe StringBuilder](https://www.c-sharpcorner.com/article/string-vs-stringbuilder-what-to-use-choose/)

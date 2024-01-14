@@ -1,57 +1,51 @@
 ---
 title:    "C++: Sammanslagning av strängar"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att slå ihop strängar (engelska: concatenating strings) är en viktig del av programmering eftersom det tillåter dig att skapa mer dynamiska och flexibla applikationer. Genom att kombinera flera strängar kan du skapa mer komplexa uttryck och anpassa ditt program efter olika situationer.
+Att sammanslå strängar, även kallat konkatinering, är en vanlig teknik inom C++ programmering. Det kan användas för att skapa mer dynamiska och anpassningsbara textutmatningar i ditt program.
 
-## Så här gör du
+## Hur man gör det
 
-För att slå ihop strängar i C++ behöver du använda en speciell operator som heter " + ". Denna operator tillåter dig att kombinera två strängar och skapa en ny, längre sträng.
-
-Låt oss titta på ett exempel:
+I C++ finns det två olika sätt att sammanslå strängar: med hjälp av betingade operationer (+=) eller med en särskild funktion som heter strängkonkatinering. Här är ett exempel på hur man kan använda båda metoderna:
 
 ```C++
-#include <iostream>
-using namespace std;
+//Betingad operation
+string förnamn = "Lisa";
+string efternamn = "Andersson";
+förnamn += efternamn;
+cout << förnamn << endl;
 
-int main() {
-    // Definiera två variabler med strängar
-    string förnamn = "Anna";
-    string efternamn = "Andersson";
-
-    // Slå ihop strängarna och lagra resultatet i en ny variabel
-    string namn = förnamn + " " + efternamn;
-
-    // Skriv ut resultatet
-    cout << "Namn: " << namn;
-
-    return 0;
-}
-
-// Output: Namn: Anna Andersson
+//Strängkonkatinering
+string förnamn = "Lisa";
+string efternamn = "Andersson";
+string namn = förnamn.append(efternamn);
+cout << namn << endl;
 ```
 
-Som du kan se i exemplet ovan kombinerade vi två strängar "förnamn" och "efternamn" med hjälp av " + "-operatorn. Observera att vi även använde en extra sträng med ett mellanslag mellan förnamn och efternamn för att skapa en korrekt namnsträng.
+Det första exemplet använder betingad operation för att sammanslå strängarna "Lisa" och "Andersson" och lagra resultatet i variabeln "förnamn". Det andra exemplet använder strängkonkatinering för att göra samma sak, men lagrar resultatet i en ny variabel "namn". Båda kodexemplen ger samma utmatning: "LisaAndersson".
 
 ## Djupdykning
 
-När du slår ihop strängar i C++ så görs det genom att skapa en ny string-objekt som har en längre storlek än de enskilda strängarna. Detta görs automatiskt av kompilatorn, så du behöver inte oroa dig för det.
+När man sammanslår strängar i C++ är det viktigt att förstå att de olika metoderna har olika egenskaper. Betingad operation lägger till strängar på slutet av en befintlig sträng medan strängkonkatinering faktiskt skapar en helt ny sträng. Detta kan påverka prestandan i ditt program, speciellt om du sammanslår strängar inuti en loop.
 
-En viktig sak att komma ihåg är att om du vill uppdatera en sträng efter att den redan har skapats måste du använda funktionen "append()". Detta gör det möjligt att lägga till strängar till en befintlig sträng utan att skapa en ny.
+Det finns också vissa aspekter av sammansättning av strängar som man bör vara medveten om:
 
-## Se även
+- Strängkonkatinering är effektivare när man behöver sammanslå flera strängar
+- Det är viktigt att ha rätt datatyp på variablerna när man använder betingad operation, annars kan det leda till oförutsedda resultat
+- Olika programmeringsplattformar kan ha olika sätt att hantera specialtecken och teckentabeller när man sammanslår strängar, se till att ha koll på detta om ditt program behöver skriva ut specialtecken
 
-- [C++ Strings](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [String Concatenation in C++](https://www.geeksforgeeks.org/concatenation-of-strings-in-cpp/)
-- [C++ String Manipulation](https://www.tutorialspoint.com/cpp_standard_library/cpp_string_manipulation.htm)
+## Se också
 
-## Se även
+Om du vill lära dig mer om sammanslagning av strängar i C++, kolla gärna på dessa länkar:
 
-- [C++ Strängar](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [Strängslagning i C++](https://www.geeksforgeeks.org/concatenation-of-strings-in-cpp/)
-- [C++ Strängmanipulering](https://www.tutorialspoint.com/cpp_standard_library/cpp_string_manipulation.htm)
+- [C++ String Concatenation Guide (engelska)](https://www.techiedelight.com/concatenate-strings-cpp/)
+- [C++ String Concatenation Tutorial (engelska)](https://www.programiz.com/cpp-programming/string-concatenation)
+- [C++ String Concatenation - All You Need to Know (engelska)](https://www.educba.com/string-concatenation-in-cpp/)
+
+Lycka till med din strängkonkatinering!

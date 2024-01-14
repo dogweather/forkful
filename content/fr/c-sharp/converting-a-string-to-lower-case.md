@@ -1,46 +1,33 @@
 ---
-title:    "C#: Convertir une chaîne de caractères en minuscules"
+title:    "C#: Convertir une chaîne en minuscules"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
+La conversion d'une chaîne de caractères en minuscules peut être utile dans de nombreuses situations, notamment pour faciliter la comparaison de chaînes ou pour l'affichage de données dans un format plus lisible.
 
-Dans la programmation, il est courant d'avoir besoin de manipuler du texte. Parfois, nous avons besoin de modifier le format du texte pour des raisons spécifiques. L'une de ces modifications peut être de convertir une chaîne de caractères en lettres minuscules. Dans cet article, nous allons explorer pourquoi cela est utile et comment le faire en utilisant le langage de programmation C#.
-
-## Comment faire 
-
-Pour convertir une chaîne de caractères en lettres minuscules en utilisant C#, nous allons utiliser la méthode `ToLower()` de la classe `String`. Cette méthode retourne une nouvelle chaîne de caractères avec toutes les lettres en minuscules. Voyons un exemple concret :
+## Comment faire
+Voici un exemple de code en C# pour convertir une chaîne de caractères en minuscules :
 
 ```C#
-string text = "EXEMPLE DE TEXTE";
-string convertedText = text.ToLower();
-
-Console.WriteLine(convertedText);
+string originalString = "Bonjour tout le monde!";
+string lowerCaseString = originalString.ToLower();
+Console.WriteLine(lowerCaseString);
 ```
 
-La sortie de ce code sera "exemple de texte". Nous avons créé une nouvelle chaîne de caractères en assignant le résultat de la méthode `ToLower()` à une variable et en l'affichant à l'aide de `Console.WriteLine()`.
-
-Nous pouvons également utiliser cette méthode pour modifier directement une chaîne de caractères existante :
-
-```C#
-string text = "EXEMPLE DE TEXTE";
-text = text.ToLower();
-
-Console.WriteLine(text);
-```
-
-Dans ce cas, la sortie sera également "exemple de texte". Cela peut être utile si nous voulons remplacer le texte d'origine par le texte en minuscules.
+La sortie de ce code sera "bonjour tout le monde!" car toutes les lettres ont été converties en minuscules.
 
 ## Plongée en profondeur
+Lorsque vous utilisez la méthode .ToLower() en C#, il y a quelques points à prendre en compte. Tout d'abord, cette méthode est sensible à la culture, ce qui signifie que la manière dont elle convertit les lettres dépendra de la culture du système sur lequel elle est exécutée. Par exemple, en français, la lettre "I" sera convertie en "i" alors qu'en turc, elle sera convertie en "ı".
 
-Il est important de noter que la méthode `ToLower()` utilise les règles de casse actuelles du système d'exploitation en cours d'exécution. Par exemple, si vous utilisez Windows, la conversion sera différente de celle sur un système d'exploitation basé sur Linux.
+De plus, la méthode .ToLower() ne convertira que les lettres et ignora les caractères spéciaux tels que les accents, les cédilles ou les trémas. Par exemple, la chaîne "École" sera convertie en "école".
 
-De plus, cette méthode ne prend pas en compte les caractères spéciaux ou accents. Par exemple, le caractère "É" ne sera pas converti en "é". Si vous avez besoin d'une conversion plus précise, vous pouvez utiliser la méthode `ToLowerInvariant()` qui utilise les règles de casse invariantes, peu importe le système d'exploitation.
+Enfin, il est important de noter que la méthode .ToLower() ne modifie pas la chaîne d'origine mais renvoie une nouvelle chaîne convertie en minuscules.
 
 ## Voir aussi
-
-- [Documentation officielle de la méthode `ToLower()` en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolower?view=net-5.0)
-- [Différence entre `ToLower()` et `ToLowerInvariant()` en C#](https://stackoverflow.com/questions/450472/string-tolower-vs-string-tolowerinvariant)
-- [Guide complet sur la manipulation des chaînes de caractères en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/strings/)
+- [Méthode String.ToLower() en C# (Microsoft Documentation)](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolower)
+- [Méthodes de comparaison de chaînes en C# (Blog BetterProgramming)](https://betterprogramming.pub/string-comparison-methods-in-c-77da3d5080b8)
+- [Guide complet pour les méthodes ToLower() et ToUpper() en C# (Blog DaedTech)](https://daedtech.com/string-case-comparison-methods-in-csharp/)

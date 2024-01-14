@@ -1,47 +1,54 @@
 ---
 title:    "Arduino: 현재 날짜 가져오기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 현재 날짜를 얻는 것에 참여해야 하는 이유
-현재 날짜를 올바르게 추적하는 것은 매우 중요합니다. 소셜 미디어에 게시물을 할 수 있을 뿐만 아니라 일일 업무 계획을 작성하거나 프로젝트 일정을 관리하기 위해서도 현재 날짜를 알고 있어야 합니다.
+## 왜: 
 
-# 어떻게: 날짜 정보를 얻는 방법
-아두이노 보드를 사용하면 현재 날짜 정보를 얻는 것이 매우 간단합니다. 아래의 코드 블록을 참조하여 현재 날짜를 출력해 보세요.
+현재 날짜를 얻는 것이 중요한 이유는 무엇일까요? 우리는 날짜를 보고 일정을 계획하고, 시간을 지키고, 그리고 다가오는 일정을 준비하기 위해 필요합니다. 또한, 특정 날짜에 따라서 특별한 코드 동작을 하게 할 수도 있습니다.
 
-```Arduino
-#include <RTClib.h> // RTC 라이브러리 불러오기
-RTC_DS1307 rtc; // RTC 객체 생성
+## 코딩하기:
 
-void setup()
-{
-  Serial.begin(9600); // 시리얼 통신 시작
-  rtc.begin(); // RTC 시계 시작
+```arduino
+#include <RTClib.h> 
+
+RTC_DS3231 rtc;  //RTC 라이브러리 사용
+
+void setup () { 
+//RTC 라이브러리 초기화
+rtc.begin(); 
+
+//날짜, 시간 설정
+rtc.adjust(DateTime(yyyy, mm, dd, hh, mm, ss));
+
+//현재 날짜를 출력
+Serial.print(rtc.now().day(), DEC);
+Serial.print('/');
+Serial.print(rtc.now().month(), DEC);
+Serial.print('/');
+Serial.print(rtc.now().year(), DEC);
 }
 
-void loop()
-{
-  DateTime now = rtc.now(); // 현재 날짜 정보를 now 변수에 저장
-  Serial.print(now.day(), DEC); // 현재 날짜 정보 중 일 출력
-  Serial.print('/'); // 슬래시로 구분
-  Serial.print(now.month(), DEC); // 현재 날짜 정보 중 월 출력
-  Serial.print('/'); // 슬래시로 구분
-  Serial.print(now.year(), DEC); // 현재 날짜 정보 중 년도 출력
-  Serial.println(); // 개행
-  delay(1000); // 1초 대기
+void loop () {
+  //코드를 반복적으로 실행
 }
 ```
 
-만약 시리얼 모니터 상에서 월과 년도의 출력이 10 미만의 수로 표시되는 경우, 필요에 따라 `Serial.print()` 함수를 사용하여 앞에 0을 추가할 수 있습니다.
+위의 코드는 현재 RTC 모듈을 사용하여 날짜를 얻는 방법을 단계별로 보여줍니다. 먼저 RTC 라이브러리를 사용하여 모듈을 초기화하고, 원하는 날짜 및 시간을 설정합니다. 그리고 `rtc.now()` 함수를 사용하여 현재 날짜를 출력할 수 있습니다.
 
-# 깊이 들어가기: 현재 날짜 정보에 대한 더 깊은 이해
-아두이노에서 현재 날짜 정보를 얻는 것은 RTC (Real Time Clock) 모듈을 사용함으로써 가능합니다. RTC 모듈에는 시계 동작에 필요한 일반적인 하드웨어 구성 요소가 포함되어 있으며, 아두이노와 연결되어 사용됩니다.
+## 깊이 이해하기:
 
-RTC 모듈에는 시계에 필요한 일반적인 하드웨어 요소 외에도 NVRAM (Non-Volatile Random Access Memory), 배터리 등이 포함되어 있습니다. NVRAM은 정보를 저장하고, 배터리는 정전이나 전원 공급 문제가 발생했을 때 정보가 지워지지 않도록 합니다. 따라서 RTC 모듈을 사용하면 전원이 꺼져도 시계가 멈추지 않고 계속 작동합니다.
+현재 날짜를 얻는 방법은 매우 다양한데, RTC 모듈을 사용하는 것이 가장 간편한 방법입니다. RTC 모듈은 시스템 전원이 꺼진 상태라도 시간과 날짜 정보를 유지할 수 있기 때문에 정확한 날짜를 얻을 수 있습니다. 또한 RTC 모듈을 사용하면 매번 사용자가 날짜를 설정하지 않아도 되기 때문에 편리합니다.
 
-# 관련 항목
-- RTC 모듈을 사용한 실시간 시계 작성하기: https://www.arduino.cc/en/Tutorial/BuiltInExamples/Melody
-- RTC 사용 예제: https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/using-the-rtc
-- RTC 모듈 구매링크: https://www.aliexpress.com/wholesale?SearchText=RTC+module
+## 더 자세한 정보:
+
+먼저 RTC 모듈을 사용하기 전에 반드시 라이브러리를 설치해야 합니다. 또한 RTC 모듈의 핀 배치 등 자세한 정보는 아두이노 공식 문서나 관련 인터넷 자료들을 참고하시면 도움이 됩니다.
+
+## 더 알아보기:
+
+- [아두이노 공식 문서 - RTC 라이브러리 사용하기](https://www.arduino.cc/en/Reference/RTC)
+- [아두이노 포럼 - RTC 모듈에 관한 질문과 답변](https://forum.arduino.cc/index.php?board=2.0)
+- [Adafruit Industries - RTC 모듈 관련 가이드](https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout)

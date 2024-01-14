@@ -1,48 +1,47 @@
 ---
-title:    "PHP: 패턴과 일치하는 문자 삭제"
+title:    "PHP: 패턴과 일치하는 문자 삭제하기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열에서 특정 패턴과 일치하는 문자를 삭제하는 작업은 프로그래밍에서 자주 사용되는 기술입니다. 이 글에서는 이 작업을 하는 이유를 소개하겠습니다.
 
-## 어떻게
-우선, 지우고싶은 패턴을 정규표현식으로 표현해야 합니다. 예를 들어, 다음과 같은 문자열이 있다고 가정해봅시다.
+캐릭터 패턴매칭을 삭제하는 것의 장점은 굉장히 다양합니다. 이를 통해 코드를 더 깔끔하고 효율적으로 만들 수 있으며, 추후에 수정이나 유지보수를 더욱 쉽게 할 수 있습니다.
 
-```PHP
-$string = "Programming is fun, but regex can be tricky!";
-```
+## 방법
 
-만약 `regex`와 일치하는 문자를 모두 지우고 싶다면 다음과 같이 코드를 작성할 수 있습니다.
+캐릭터 패턴매칭을 삭제하는 방법은 굉장히 간단합니다. ```preg_replace()``` 함수를 사용하여 해당 패턴을 찾고, 삭제하고자하는 문자열을 빈 문자열로 대체하면 됩니다.
+
+먼저, 삭제하고자하는 특정한 패턴을 설정해줍니다. 예를 들어, a부터 z까지의 소문자를 모두 삭제하고 싶다면 아래와 같이 정규표현식을 작성합니다.
 
 ```PHP
-$new_string = preg_replace('/regex/', '', $string);
+$pattern = '/[a-z]/';
 ```
 
-결과는 다음과 같을 것입니다.
+그리고 이를 ```preg_replace()``` 함수에 적용합니다.
 
 ```PHP
-"Programming is fun, but can be tricky!";
+$result = preg_replace($pattern, '', $string);
 ```
 
-만약 `regex`와 `but`을 지우고 싶다면 다음과 같이 코드를 작성하면 됩니다.
+마지막으로, 실제 문자열을 출력해보면 설정한 패턴에 해당하는 문자가 모두 삭제된 것을 확인할 수 있습니다.
 
 ```PHP
-$new_string = preg_replace('/(regex|but)/', '', $string);
+echo $result;
+// 원래 문자열: "안녕하세요, PHP 프로그래밍"
+// 출력 결과: "안녕하세요프로그래밍"
 ```
 
-결과는 다음과 같을 것입니다.
+## 딥 다이브
 
-```PHP
-"Programming is fun, can tricky!";
-```
+캐릭터 패턴매칭을 삭제하는 기능은 정규표현식 사용법을 알고 있다면 더욱 쉽게 사용할 수 있습니다. 정규표현식을 사용하여 더 복잡한 패턴을 지정할 수 있고, 옵션을 설정하여 대소문자를 구분할지 여부 등을 결정할 수 있습니다.
 
-## 더 깊은 내용
-정규표현식을 사용하면 매우 유용한 문자열 작업을 할 수 있습니다. 하지만 정규표현식을 제대로 이해하지 못하면 예기치 않은 결과를 얻을 수도 있습니다. 그래서 정규표현식을 사용할 때 반드시 주의해야 합니다. 또한, PHP에서 제공하는 `preg_replace()` 함수의 다양한 옵션과 활용 방법도 알고 있어야 합니다.
+또한, ```preg_replace()``` 함수 이외에도 ```substr()``` 함수를 사용하여 문자열의 특정 부분을 삭제하는 방법도 있습니다. 이는 정규표현식에 익숙하지 않은 사용자에게 더 쉬운 대안이 될 수 있습니다.
 
-## 또 보기
-- [정규표현식 소개 - 생활코딩](https://opentutorials.org/module/1650/10205)
-- [PHP preg_replace() 함수 - w3schools](https://www.w3schools.com/php/func_regex_preg_replace.asp)
-- [정규표현식 연습 사이트 - regex101](https://regex101.com/)
+## 더 알아보기
+
+- PHP 정규표현식 사용법: https://www.php.net/manual/kr/function.preg-replace.php
+- PHP 문자열 함수: https://www.php.net/manual/kr/ref.strings.php
+- 정규표현식 기초: http://www.nextree.co.kr/p4327/

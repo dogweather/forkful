@@ -1,50 +1,47 @@
 ---
 title:    "Clojure: 编写文本文件"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在进行编程时，有时候我们需要把数据保存到文件中，以便之后进行读取。编写文本文件是一种简单、高效的方法来存储和处理数据。
+为什么要写一个文本文件？作为一个Clojure程序员，你可能经常遇到需要存储数据或者在程序中导入外部数据的情况。一个文本文件是最简单、最基础的数据存储格式，使用Clojure可以简单地创建和读取这样的文件。
 
-## 如何进行
+## 如何实现
 
-首先，我们需要导入Clojure中用于文件操作的库。
-
-```Clojure
-(require '[clojure.java.io :as io])
-```
-
-然后，我们可以使用`spit`将数据写入文件。
+要在Clojure中创建一个文本文件，我们可以使用`spit`函数，它接受文件名和要写入的数据两个参数。让我们先来创建一个空文本文件：
 
 ```Clojure
-(def data "这是一段用于示例的文本。")
-
-(spit "sample.txt" data)
+(spit "test.txt" "")
 ```
 
-这将在当前目录下创建一个名为“sample.txt”的文本文件，并将数据写入其中。
-
-如果我们将`data`设为一个集合的形式，就可以很方便地将多行文本写入文件。
+我们也可以向文本文件中写入内容，比如一个字符串：
 
 ```Clojure
-(def data ["这是第一行文本。"
-           "这是第二行文本。"
-           "这是第三行文本。"])
-
-(spit "sample.txt" data)
+(spit "test.txt" "这是一个测试文件。")
 ```
 
-## 深入探讨
+接下来，我们可以使用`slurp`函数来读取文本文件中的内容：
 
-在Clojure中，除了`spit`外，我们还可以使用更多的函数来写入文本文件。例如，`spit`使用的是UTF-8编码，如果需要使用其他编码，可以使用`spit*`函数，并提供编码类型作为第三个参数。
+```Clojure
+(slurp "test.txt") ; => "这是一个测试文件。"
+```
 
-在写入文本文件时，也可以指定一个可选参数`:append true`来追加数据到文件末尾，而不是覆盖整个文件。此外，如果需要读取文本文件的全部内容，可以使用`slurp`函数。
+## 深入了解文本文件
 
-更多关于文件操作的信息，请参考Clojure官方文档。
+在Clojure中，我们可以使用字符串作为文本文件的主要数据类型。但是，也有一些库可以帮助我们更高效地处理和分析文本文件，比如[enlive](https://github.com/cgrand/enlive)和[clj-pdf](https://github.com/clj-pdf/clj-pdf)。
+
+同时，我们也可以使用Clojure的文件操作函数，比如`file-seq`和`walk`来遍历文件系统中的文本文件。
 
 ## 参考资料
-- https://clojure.org/reference/reader#writer
-- https://github.com/clojure/clojure/blob/master/src/clj/clojure/java/io.clj
+
+- [Clojure文档](https://clojure.org/)
+- [Clojure Cookbook - Writing Data to Files](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/03_local-io/3-06_data-to-files.md)
+- [How to Create and Read a Text File in Clojure](https://www.dummies.com/programming/how-to-create-and-read-a-text-file-in-clojure/)
+
+## 参看
+
+- [(原文档) https://your-clojure-cookbook.com/basic-filesystem/read-write-strings/write-to-file/](https://your-clojure-cookbook.com/basic-filesystem/read-write-strings/write-to-file/)

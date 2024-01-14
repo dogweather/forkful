@@ -1,38 +1,35 @@
 ---
-title:    "Haskell: Konkatenacja ciągów znakowych"
+title:    "Haskell: Łączenie łańcuchów znaków"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##Dlaczego
+## Dlaczego
 
-Czsto podczas pisania kodu w Haskellu, programici potrzebuj concatenacji napisów (czyli łączenia kilku osobnych napisów w jeden). Ten prosty sposb jest używany w wielu aplikacjach, na przykład do tworzenia komunikatów dla użytkownika lub wypisywania tekstu na ekranie.
+Istnieją wiele różnych powodów, dla których programiści używają konkatencji łańcuchów w swoich projektach Haskell. Jednym z najważniejszych jest możliwość łączenia różnych fragmentów tekstu w jeden logicznie spójny tekst, co może być niezbędne w przypadku tworzenia, na przykład, generowanych dynamicznie raportów lub komunikatów użytkownikowi.
 
-##Jak to zrobić
+Jednak konkatencja łańcuchów może również być wykorzystywana w celach czysto estetycznych, w celu poprawienia czytelności kodu, dzięki użyciu jednego ciągu zamiast wielu oddzielnych fragmentów. W końcu, pisanie krótszego i bardziej przejrzystego kodu jest zawsze korzystne.
 
-Aby połączyć dwa napisy w Haskellu, można użyć funkcji `++`. Na przykład, jeśli mamy dwa napisy: "Witaj" i "świecie", można je połączyć za pomocą następującego kodu:
+## Jak to zrobić
 
-```Haskell
-concatenatedString = "Witaj" ++ "świecie"
-```
-
-Po uruchomieniu tego kodu, zmienna `concatenatedString` będzie zawierać napis "Witajświecie". Można również połączyć więcej niż dwa napisy, dodając kolejne `++` między nimi.
+Konkatencja łańcuchów w Haskell jest wykonywana za pomocą operatora `++`. Możemy użyć go do łączenia łąńcuchów, na przykład:
 
 ```Haskell
-longString = "To jest" ++ "bardzo" ++ "długi" ++ "napis"
+"Pierwszy łańcuch " ++ "Drugi łańcuch"
 ```
 
-Rezultatem tego kodu będzie napis "To jestbardzodługinapis".
+Operator `++` może również być wykorzystany do łączenia łańcuchów z innymi typami danych, takimi jak Int czy Bool. Jednak należy pamiętać, że typy muszą być zgodne, w przeciwnym razie Haskell nie będzie w stanie wykonać operacji.
 
-Warto również zauważyć, że funkcja `++` działa na dowolnych typach danych, nie tylko na napisach. Można ją wykorzystać do łączenia list, np. `[1, 2] ++ [3, 4]` da nam listę `[1, 2, 3, 4]`.
+## Głębszy wgląd
 
-##Głębsze wyjaśnienie
+W przypadku przekazywania do operatora `++` więcej niż dwóch argumentów, Haskell będzie wykonywał wewnątrz zagnieżdżane wykonania, co oznacza, że ​​najpierw zostaną połączone pierwsze dwa argumenty, a następnie wynik będzie połączony z kolejnym argumentem i tak dalej.
 
-W Haskellu napisy są reprezentowane jako listy znaków, więc używanie funkcji `++` jest w istocie po prostu łączeniem dwóch list. Może to być nieco nieintuicyjne dla początkujących programistów, którzy oczekują, że funkcja łącząca napisy będzie działać podobnie jak w innych językach programowania.
+Ponadto, operator `++` można również zapisywać w ten sposób: `[Łańcuch 1, Łańcuch 2, ..., Łańcuch n] ++ [Łańcuch (n+1), Łańcuch (n+2), ..., Łańcuch m]`, co jest szczególnie przydatne, gdy chcemy połączyć wiele łańcuchów w jednym miejscu.
 
-Ponadto, w Haskellu istnieje również funkcja `concat`, która może być użyta do łączenia list. Jednak, w przeciwieństwie do `++`, `concat` działa tylko na listach list (czyli lista list znaków), a nie na pojedynczych elementach. W większości przypadków jednak, funkcja `++` jest wystarczająca do łączenia napisów.
+## Zobacz także
 
-##Zobacz również
-
-[Oficjalna dokumentacja dla funkcji `++`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:-43--43-) [Oficjalna dokumentacja dla funkcji `concat`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:concat) [Inne przydatne funkcje dla napisów w Haskellu](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Dokumentacja Haskell o konkatencji łańcuchów](https://www.haskell.org/tutorial/strings.html#concatenation)
+- [Kalkulator Haskell dla konkatencji łańcuchów](https://www.haskell.org/hoogle/?hoogle=concat)
+- [Przykład użycia operatora ++](https://stackoverflow.com/questions/27078498/how-to-concatenate-two-string-in-haskell)

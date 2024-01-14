@@ -1,42 +1,43 @@
 ---
-title:    "Ruby: Att påbörja ett nytt projekt"
+title:    "Ruby: Börja ett nytt projekt"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att starta ett nytt programmeringsprojekt kan verka överväldigande, men det kan också vara en spännande utmaning. Oavsett om det är för att förbättra dina färdigheter, lösa ett problem eller bara utforska en ny teknologi, kan detta vara en givande och lärorik upplevelse.
 
-Att starta ett nytt Ruby-projekt kan vara en spännande utmaning. Det ger dig möjligheten att utforska nya idéer, förbättra dina programmeringskunskaper och bygga något unikt. Dessutom kan det leda till nya karriärmöjligheter och en ökad förståelse för programmering.
+## Så här gör du
+För att starta ett nytt Ruby-projekt, följ dessa enkla steg:
 
-## Hur du gör
+1. Se till att du har Ruby installerat på din dator.
+2. Öppna en terminal eller kommandotolk.
+3. Skapa en ny mapp för ditt projekt.
+4. Gå till den nya mappen genom att skriva "cd" följt av mappens namn.
+5. Skapa en ny Ruby-fil genom att skriva "touch example.rb".
+6. Öppna filen i en texteditor som är kompatibel med Ruby.
+7. Börja koda! Du kan använda "puts" för att skriva ut text och använda olika Ruby-metoder för att manipulera data.
 
-För att börja ett nytt Ruby-projekt behöver du ha en fungerande Ruby-installation på din dator. Om du redan har det, kan du hoppa över detta steg. Annars behöver du gå till Rubys officiella hemsida och hämta en lämplig version för ditt operativsystem.
-
-När du har installerat Ruby, kan du börja skriva kod. Arbeta i en texteditor eller en Ruby-IDE (integrerad utvecklingsmiljö) för att göra det lättare och effektivare. Här är ett exempel på hur du skapar en första "Hello World"-applikation:
+Här är ett enkelt exempel på hur du kan använda en metod för att beräkna summan av två tal:
 
 ```Ruby
-puts "Hej världen!"
+def sum(a, b)
+  a + b
+end
+
+puts sum(3, 4)
+
+# Output: 7
 ```
 
-När du kör denna kod, kommer du att se "Hej världen!" som utskrift på skärmen. Det är enkelt, eller hur?
-
-Nu, när du är bekväm med grunderna, kan du börja bygga mer avancerade projekt med olika funktioner och sammanhang. Kolla in dokumentationen för Ruby eller sök på internet för att lära dig mer om olika funktioner och användningsområden.
-
 ## Djupdykning
+Att starta ett nytt Ruby-projekt gör det möjligt för dig att utforska många olika koncept och tekniker inom programmering. Ett bra sätt att lära sig mer är att göra research och experimentera med olika lösningar på problem. Du kan också lära dig mycket genom att läsa andras kod och delta i online-communityn för Ruby-programmering.
 
-Att starta ett nytt Ruby-projekt handlar inte bara om att skriva kod, det handlar också om att ha en tydlig plan och struktur för din applikation. Här är några tips för en lyckad projektstart:
+När du startar ett projekt är det viktigt att du planerar och organiserar det på ett strukturerat sätt. Detta inkluderar att välja ett lämpligt namn för ditt projekt, skapa en tydlig struktur för din kod och dokumentera din process.
 
-- Skapa en lista över specifika mål för ditt projekt och försök att bryta ner dem i mindre delar för att göra uppgiften mer hanterbar.
-- Använd versioneringshantering (t.ex. Git) för att hålla ordning på kodförändringar och samarbeta med andra utvecklare.
-- Testa din kod regelbundet för att upptäcka och åtgärda fel.
-- Dokumentera din kod för att underlätta för andra att förstå och bidra till ditt projekt.
-
-Kom också ihåg att inte ge upp om du stöter på problem eller utmaningar under projektets gång. Ta en paus, sök efter lösningar och be om hjälp från andra i gemenskapen. Att bygga relationer och nätverka med andra utvecklare kan vara till stor hjälp när du startar ett nytt projekt.
-
-## Se även
-
-- [Officiell Ruby hemsida](https://www.ruby-lang.org/sv/)
-- [Ruby dokumentation](https://ruby-doc.org/)
-- [Ruby gemenskapen på Reddit](https://www.reddit.com/r/ruby/)
-- [Ruby on Rails tutorial](https://guides.rubyonrails.org/getting_started.html)
+## Se också
+- [Officiell Ruby-dokumentation](https://www.ruby-lang.org/sv/documentation/)
+- [Ruby Tutorial för nybörjare](https://www.ruby-lang.org/sv/documentation/tutorials/)
+- [Ruby-forum för frågor och diskussioner](https://www.ruby-forum.com/)

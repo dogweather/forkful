@@ -1,27 +1,39 @@
 ---
-title:    "Haskell: Skriver en tekstfil"
+title:    "Haskell: Å skrive en tekstfil"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å skrive en tekstfil kan virke som en enkel oppgave, men det er faktisk en veldig nyttig ferdighet å ha som programmerer. Det kan hjelpe deg med å lagre og organisere informasjon, samt å automatisere prosesser. I tillegg kan det være nyttig når du jobber med større programmeringsprosjekter.
+Hvis du er en programmerer eller en nybegynner som ønsker å lære et funksjonelt programmeringsspråk, kan Haskell være et bra alternativ. En av de mange tingene du kan gjøre i Haskell er å skrive tekstfiler. I denne artikkelen vil vi utforske hvorfor og hvordan du kan gjøre dette.
 
 ## Hvordan
-For å skrive en tekstfil i Haskell, kan du bruke en funksjon kalt `writeFile`. Denne funksjonen tar inn en filsti og en string som argumenter, og skriver stringen til filen på den angitte filstien. Her er et eksempel på hvordan du bruker `writeFile` i Haskell:
+La oss starte med et enkelt eksempel på hvordan du kan skrive en tekstfil i Haskell. Vi vil bruke hovedfunksjonen "main" som starter programmet vårt og "writeFile" som lar oss skrive en ny fil.
 
-```
-writeFile "example.txt" "Dette er en tekstfil skrevet i Haskell."
+```Haskell
+main = do
+  writeFile "hello.txt" "Hei, verden!"
 ```
 
-Denne koden vil lage en fil kalt "example.txt" og skrive stringen "Dette er en tekstfil skrevet i Haskell." til filen.
+Når du kjører dette programmet, vil du få en ny fil som heter "hello.txt" med innholdet "Hei, verden!". Dette er et enkelt eksempel, men du kan gjøre mer avansert tekstbehandling ved å bruke innebygde funksjoner og biblioteker.
 
 ## Dypdykk
-Det finnes flere forskjellige måter å skrive en tekstfil på i Haskell, inkludert å bruke `putStrLn` og `print` funksjoner. Disse funksjonene kan brukes til å skrive informasjon til en fil ved å sende den til terminalen. I tillegg kan du også bruke ulike filbehandlingsfunksjoner som `openFile` og `closeFile` for å skrive til og lukke en tekstfil. Det er også mulig å lese og manipulere tekstfiler i Haskell ved å bruke funksjoner som `readFile` og `lines`.
+Nå som vi har sett et enkelt eksempel på hvordan skrive en tekstfil, la oss ta en dypere titt på hvordan dette fungerer. Først og fremst må du importere "System.IO" biblioteket for å bruke funksjonen "writeFile". Deretter kan du bruke "do" notasjon for å kjøre flere IO-operasjoner i en sekvens.
+
+```Haskell
+import System.IO
+
+main = do
+  handle <- openFile "hello.txt" WriteMode
+  hPutStrLn handle "Hei, verden!"
+  hClose handle
+```
+
+I dette eksempelet åpner vi en fil i "WriteMode" og tildeler det til en "handle" variabel. Deretter bruker vi "hPutStrLn" for å skrive teksten til filen og til slutt lukker vi filen med "hClose".
 
 ## Se også
-- [Write to a file in Haskell](https://www.tutorialspoint.com/write-to-a-file-in-haskell)
-- [Haskell File I/O](https://ryanmccarthy.gitlab.io/haskell-file-io/)
-- [File handling in Haskell](https://wiki.haskell.org/File_handling)
+- [Dokumentasjon for Haskell I/O](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [LæreHaskell - En ressurs for å lære Haskell på norsk](https://www.larehaskell.nu/)
+- [Offisiell Haskell-nettside](https://www.haskell.org/)

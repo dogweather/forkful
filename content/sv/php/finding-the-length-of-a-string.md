@@ -1,48 +1,34 @@
 ---
-title:    "PHP: Att hitta längden på en sträng"
+title:    "PHP: Hitta längden på en sträng"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande uppgift inom programmering, oavsett vilket språk du använder. Det är viktigt att förstå hur man gör detta för att kunna manipulera och behandla texter på ett korrekt sätt.
+Att hitta längden på en sträng är en viktig del av programmering. Det gör det möjligt för oss att hantera och manipulera textdata på ett effektivt sätt. Oavsett om du bygger en enkel hemsida eller en komplex webbapplikation, kommer du förmodligen att behöva arbeta med stränglängder i ditt PHP-programmeringsprojekt.
 
-## Hur man gör det
+## Hur man gör
 
-Det finns flera sätt att hitta längden på en sträng i PHP, men det enklaste sättet är att använda funktionen `strlen()`. Den tar in en sträng som parameter och returnerar längden på strängen som en heltalsvärde.
-
-```PHP
-<?php
-$text = "Detta är en teststräng";
-echo strlen($text); // Output: 22
-?>
-```
-
-Du kan också använda en annan inbyggd funktion, `mb_strlen()`, som tar hänsyn till flera bytes och kan användas för att räkna längden på unicode-tecken. Användningen av `mb_strlen()` är densamma som `strlen()` och den returnerar också ett heltal.
+Att hitta längden på en sträng i PHP är väldigt enkelt med hjälp av den inbyggda funktionen `strlen()`. Detta är en standardfunktion som finns tillgänglig i alla installationer av PHP. För att använda den, behöver du bara ge den en sträng som argument inom paranteserna och sedan skriva ut resultatet. Se ett exempel nedan:
 
 ```PHP
-<?php
-$text = "Äpple";
-echo mb_strlen($text); // Output: 5
+<?php 
+$string = "Hej från Sverige";
+echo strlen($string);
+//Output: 16
 ?>
 ```
+Som du kan se i exemplet ovan, är längden på strängen "Hej från Sverige" 16 tecken. Detta inkluderar både mellanslag och specialtecken.
 
 ## Djupdykning
 
-Strängar i PHP är egentligen array-liknande objekt, vilket innebär att du kan manipulera dem på olika sätt. Det finns också flera inbyggda funktioner för att arbeta med strängar, inklusive `substr()` som du kan använda för att klippa ut en del av en sträng utifrån dess längd.
+Om du gräver djupare in i detta koncept, kommer du att upptäcka att `strlen()` funktionen använder sig av en internt räknad variabel för att mäta längden på en sträng. Det betyder att denna funktion är snabb och effektiv, även för större strängar. Det är också värt att nämna att `strlen()` inte räknar antalet tecken utan utgår från bytes, vilket är viktigt att komma ihåg om du arbetar med speciella teckenkodningar som till exempel UTF-8.
 
-```PHP
-<?php
-$text = "Hej världen";
-echo substr($text, 0, 3); // Output: Hej
-?>
-```
+## Se också
 
-Det är också viktigt att vara medveten om skillnaden mellan byte och tecken när det gäller att hitta längden på en sträng. I PHP räknas varje tecken inom en sträng som ett byte, men vissa tecken kan ta upp flera bytes. Det är därför det är viktigt att använda rätt funktion för att få den korrekta längden på strängen.
-
-## Se även
-
-- [PHP strängfunktioner](https://www.w3schools.com/php/php_ref_string.asp)
-- [PHP: Strängar](https://www.php.net/manual/en/language.types.string.php)
+- [PHP Manual: strlen()](https://www.php.net/manual/en/function.strlen.php)
+- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [W3Schools: PHP String Length](https://www.w3schools.com/php/func_string_strlen.asp)

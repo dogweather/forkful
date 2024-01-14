@@ -1,42 +1,48 @@
 ---
 title:    "Bash: Usuwanie znaków pasujących do wzoru"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami w trakcie programowania zdarza się, że musimy usunąć część tekstu lub znaków z pewnego wzorca. Jest to bardzo przydatne, szczególnie gdy pracujemy z dużymi zestawami danych lub plikami tekstowymi. W tym blogu dowiesz się, jak usunąć znaki odpowiadające pewnemu wzorcowi za pomocą poleceń Bash.
+Czy kiedykolwiek zdarzyło Ci się potrzebować usunięcia wszystkich znaków dopasowujących do danego wzorca? Nie martw się, nie jesteś w tym sam. Dlatego w tym poście pokażemy, jak usunąć znaki dopasowujące do wzorca za pomocą języka Bash.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Pierwszym krokiem jest otwarcie terminala i przejście do katalogu, w którym znajduje się plik lub zestaw danych, z którym chcemy pracować. Następnie, wykorzystując polecenie `sed`, użyjemy flagi `-e` wraz z wyrażeniem regularnym, aby wskazać wzorzec, który chcemy usunąć. Na przykład, jeśli chcemy usunąć wszystkie wystąpienia słowa `test` z pliku tekstowego `test.txt`, wpiszemy następującą komendę w terminalu:
+Sprawdźmy najpierw jaki jest składnią usuwania znaków dopasowujących do wzorca w Bash. W prosty sposób możemy to zrobić za pomocą znaku odwróconego ukośnika `\` oraz gwiazdki `*`. Na przykład, jeśli chcemy usunąć wszystkie znaki "a" z ciągu znaków, możemy użyć poniższej komendy:
 
-```
-sed -e 's/test//g' test.txt
-```
-
-W powyższym przykładzie `sed` będzie działać na pliku `test.txt` i usunie wszystkie wystąpienia słowa `test` z tekstu.
-
-Jeśli chcesz usunąć konkretne znaki lub symbole, możesz skorzystać z flagi `-i`, która spowoduje zmianę bezpośrednio w pliku. Na przykład, jeśli chcemy usunąć wszystkie kropki z pliku `sample.txt`, wykonamy polecenie:
-
-```
-sed -i 's/\.//g' sample.txt
+```Bash
+echo "Jakieś słowo z wieloma literami a" | tr -d 'a'
 ```
 
-W ten sposób `sed` usunie wszystkie kropki z pliku `sample.txt`, a zmiany zostaną zapisane bezpośrednio w pliku.
+W wyniku otrzymamy:
+
+```
+Jkieś słowo z wielom lterimi
+```
+
+W przypadku, gdy chcemy usunąć znaki dopasowujące do konkretnego wzorca, możemy użyć polecenia `grep` w połączeniu z potokiem danych. Na przykład, jeśli chcemy usunąć wszystkie liczby z tekstu, możemy użyć poniższej komendy:
+
+```Bash
+echo "Czy 1 chcesz 2 nauczyć się 3 kodować?" | grep -oE '[0-9]*' | tr -d '\n'
+```
+
+W wyniku otrzymamy:
+
+```
+Czy chcesz nauczyć się kodować?
+```
+
+Opcja `-o` w poleceniu `grep` pozwala na wyświetlenie tylko dopasowanych fragmentów tekstu, a `-E` umożliwia użycie wyrażeń regularnych.
 
 ## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej o poleceniu `sed` i wyrażeniach regularnych, warto zapoznać się z dokumentacją i przetestować różne kombinacje. Istnieje wiele flag, które można wykorzystać w poleceniu `sed`, aby zmienić jego zachowanie. Na przykład, można użyć flagi `-n` w celu wyłączenia domyślnego wyjścia i wyświetlić tylko zmienione linie lub wykorzystać flagę `-r` w celu użycia wyrażeń regularnych rozszerzonych.
+Jeśli chcesz dowiedzieć się więcej na temat usuwania znaków dopasowujących do wzorca w języku Bash, możesz przejrzeć dokumentację dla polecenia `tr` lub `grep`. Istnieje wiele opcji i możliwości, które mogą być przydatne w różnych sytuacjach. Polecamy również zapoznać się z wyrażeniami regularnymi, ponieważ są one bardzo przydatne w usuwaniu znaków dopasowujących do określonego wzorca.
 
 ## Zobacz także
-
-Jeśli jesteś zainteresowany dalszym zgłębianiem wiedzy na temat edytowania tekstu za pomocą poleceń Bash, warto sprawdzić te polecane artykuły:
-
-- [Jak edytować pliki w terminalu za pomocą sed na Linuxie](https://www.linux.com/topic/desktop/replace-text-terminal-sed-command/)
-- [Podstawy wyrażeń regularnych w programowaniu Bash](https://devconnected.com/regular-expressions-in-bash-examples/#h-why-use-regular-expressions)
-- [Dokumentacja polecenia sed](https://www.gnu.org/software/sed/manual/sed.html)
-
-Dzięki tym zasobom będziesz miał możliwość jeszcze lepiej poznać polecenie `sed` i wykorzystać jego pełen potencjał. Zacznij eksperymentować i wykorzystuj je w swoim codziennym programowaniu!
+- [Dokumentacja dla polecenia `tr`](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Dokumentacja dla polecenia `grep`](https://www.gnu.org/software/grep/manual/grep.html)
+- [Wyrażenia regularne - poradnik w języku polskim](https://kursjs.pl/kurs/regex/regular-expression-introduction.php)

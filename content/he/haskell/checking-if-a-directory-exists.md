@@ -1,54 +1,46 @@
 ---
-title:    "Haskell: בדיקת קיום תיקייה"
+title:    "Haskell: עיבוד מחשב - בדיקת קיום תיקייה"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-### מדוע: למה לבדוק אם תיקייה קיימת
+## למה
 
-כשאנו פותחים יישומים או כתובות קוד ב-Haskell, אנו צריכים לוודא שהתיקיות שאנו משתמשים בהם קיימים כדי למנוע מטעויות ליבוד. בדיקת קיומו של תיקייה היא צעד חשוב בבנית יישומים יציבים וקוד מסודר.
+ברוך הבא לפוסט החדש שלנו למדריך תכנות Haskell עבור קוראיינו הישראלים האוהבים תכנות ועולם הפרוגרמינג! הפוסט היום יעסוק באיך לבדוק האם תיקייה קיימת באמצעות השפה התכנותית Haskell. אנו נסביר למה זה חשוב ואיך ניתן לעשות את זה בפשטות.
 
-### איך לבדוק אם תיקייה קיימת
+## איך לבדוק האם תיקייה קיימת
 
-המודול System.Directory מכיל פונקציה פשוטה לבדיקת קיום תיקייה בשם doesDirectoryExist. לפני שנשתמש בפונקציה זו, נצטרך לייבא את המודול על ידי הוספת השורה הבאה לראש הקובץ: 
+בכדי לבדוק האם תיקייה קיימת באמצעות Haskell, אנו נשתמש בפונקציית `doesDirectoryExist` מהספרייה `System.Directory`. הנה דוגמא לקוד המבצע את הבדיקה ומחזיר את התוצאה:
 
 ```Haskell
 import System.Directory
-``` 
 
-ניצור כעת פונקציה שתבצע את הבדיקה ותחזיר תוצאת בוליאנית (אמת או שקר) בהתאם לקיום התיקייה:
+-- בדיקה האם התיקייה "documents" קיימת
+doesExist <- doesDirectoryExist "documents"
+-- בדיקת התוצאה
+if doesExist
+  then putStrLn "התיקייה קיימת!"
+  else putStrLn "התיקייה לא קיימת."
+```
+
+כפי שאתם רואים, הפונקציה מחזירה משתנה בוליאני שמציין האם התיקייה קיימת או לא. אתם יכולים להשתמש בתנאי IF כדי להתאים את התגובה של התוכנית לתוצאה.
+
+## מעמקים
+
+אם תרצו לפתוח תיקייה קיימת או ליצור תיקייה חדשה אם היא לא קיימת, תוכלו להשתמש בפונקציה `createDirectoryIfMissing` מהספרייה `System.Directory`.
 
 ```Haskell
-checkDirectory :: String -> IO Bool
-checkDirectory path = do
-  exists <- doesDirectoryExist path
-  return exists
+import System.Directory
+
+-- פתיחת תיקייה קיימת או יצירת תיקייה חדשה אם היא לא קיימת
+createDirectoryIfMissing False "documents"
 ```
 
-לאחר מכן, נוכל לקרוא לפונקציה ולהעביר אליה את הנתיב של התיקייה שברצוננו לבדוק:
+כפי שאתם רואים, ניתן להשתמש בארגומנט בוליאני כדי להגדיר אם ליצור את התיקייה רק אם היא לא קיימת.
 
-```Haskell
-main :: IO ()
-main = do
-  let path = "/Users/username/Documents"
-  exists <- checkDirectory path
-  if exists
-    then putStrLn "התיקייה קיימת!"
-    else putStrLn "התיקייה לא קיימת!"
-```
+## ראו גם
 
-פלט:
-
-```
-התיקייה קיימת!
-```
-
-### להעמקה
-
-כעת נשתקף את הקוד לעומק יותר. פונקצית doesDirectoryExist מחזירה את התוצאה של פקודת המערכת stat על הנתיב שניתן כפרמטר. התוצאה היא מסדרה של סימני מחרוזת שתיארים את התכולה של התיקייה, כולל הגדרות להרשאות התיקייה ותאריך השינוי האחרון. אם התוצאה מתאימה לתיקייה שקיימת, הפונקציה תחזיר True, אחרת תחזיר False.
-
-### ראו גם
-
-- [מדריך למודול System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [מדריך לפקודת המ
+- [Haskell Documentation על הפונקציה `doesDirectoryExist`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/directory-1.3.6.1/System-Directory.html#v:doesDirectoryExist)
+- [Haskell Documentation על הפונקציה `createDirectoryIfMissing`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/directory-1.3.6.

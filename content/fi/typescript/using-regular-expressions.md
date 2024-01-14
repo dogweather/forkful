@@ -1,74 +1,45 @@
 ---
 title:    "TypeScript: Säännöllisten lausekkeiden käyttö"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttäisit säännöllisiä lausekkeita?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat hyödyllisiä ohjelmoinnissa, sillä ne mahdollistavat tietyn muotoisten merkkijonojen hakemisen ja/tai muokkaamisen. Ne ovat erityisen käteviä, jos sinun täytyy löytää useita samanlaisia merkkijonoja ja suorittaa tiettyjä toimenpiteitä niiden kanssa.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä ohjelmoijille, jotka haluavat tehdä tarkkoja hakuja ja muutoksia merkkijonoissa. Ne ovat hyödyllisiä esimerkiksi tiedonkäsittelyssä, tietokantakyselyissä ja minkä tahansa tekstin käsittelyssä, jossa halutaan löytää ja muokata tietyt merkkijonot.
 
 ## Kuinka käyttää säännöllisiä lausekkeita TypeScriptissä
 
-TS (TypeScript) tarjoaa sisäänrakennetun `RegExp` -luokan, joka mahdollistaa säännöllisten lausekkeiden käytön.
-
-### Perustoiminnallisuudet
+Säännölliset lausekkeet on helppo luoda TypeScriptissä käyttämällä RegExp -luokkaa. Alla on esimerkki säännöllisen lausekkeen luomisesta ja sen käyttämisestä merkkijonossa:
 
 ```TypeScript
-// Luodaan säännöllinen lauseke, joka etsii kaikki "koira" -sanat
-let regex = /koira/g;
-
-// Testataan, sisältyykö säännöllisen lausekkeen vastine sanaan "koiranpentu"
-console.log(regex.test("Tämä on söpö koiranpentu")); 
-//Output: true
-
-// Palautetaan kaikki säännöllisen lausekkeen vastineet merkkijonosta "minä rakastan koiria ja kissoja"
-console.log("minä rakastan koiria ja kissoja".match(regex)); 
-//Output: ['koira', 'koira']
-
-// Vaihdetaan kaikki säännöllisen lausekkeen vastineet sanalla "kissa"
-console.log("minä rakastan koiria ja kissoja".replace(regex, "kissa"));
-//Output: "minä rakastan kissoja ja kissoja"
+const sana = "Hello World";
+const lauseke = /Hello/;
+const tulos = sana.match(lauseke);
+console.log(tulos); // tulostaa ["Hello"]
 ```
 
-### Erikoismerkit
+Tässä esimerkissä luomme säännöllisen lausekkeen, joka etsii merkkijonosta "Hello". Käytämme sitten `.match()` -metodia löytääksemme kaikki esiintymät sanaa "Hello". Tulos tulee olemaan taulukko, joka sisältää kaikki löydetyt esiintymät.
+
+Voit myös käyttää säännöllisiä lausekkeita muiden merkkijonomuokkausmetodien kanssa, kuten `.replace()` ja `.split()`.
 
 ```TypeScript
-// Käyttäjätunnuksen validointi (vain pienet kirjaimet ja numerot, 3-15 merkkiä pitkä)
-let regex = /^[a-z\d]{3,15}$/;
-
-// Testataan käyttäjätunnus "kissakisu88"
-console.log(regex.test("kissakisu88")); 
-//Output: true
-
-// Testataan käyttäjätunnus "Koira1234"
-console.log(regex.test("Koira1234")); 
-//Output: false, koska isoja kirjaimia
-
-// Testataan käyttäjätunnus "ma"
-console.log(regex.test("ma")); 
-//Output: false, koska liian lyhyt
-
-// Testataan käyttäjätunnus "käyttäjä12"
-console.log(regex.test("käyttäjä12")); 
-//Output: false, koska välissä on erikoismerkkiä
-
-// Vaihdetaan kaikki mainitut erikoismerkit pisteeksi
-let regex = /[\-\_\+\.\@\=]/g;
-console.log("kissa-sika+ankka@maa.fi".replace(regex, ".")); 
-//Output: "kissa.sika.ankka.maa.fi"
+const sana = "Hello World";
+const korvattu = sana.replace(/Hello/, "Hei");
+console.log(korvattu); // tulostaa "Hei World"
 ```
 
-## Syvällinen sukellus säännöllisiin lausekkeisiin
+## Syvemmälle säännöllisiin lausekkeisiin
 
-Säännölliset lausekkeet ovat erittäin monipuolisia ja niihin kuuluu paljon erilaisia erikoismerkkejä ja sääntöjä. Niiden käyttöön kannattaa tutustua perusteellisesti, jotta saat kaiken irti niiden tarjoamasta toiminnallisuudesta. Tässä muutamia hyödyllisiä resursseja:
+Säännölliset lausekkeet ovat paljon monimutkaisempia kuin tässä käsiteltiin. Ne sisältävät joukon sääntöjä ja määrityksiä, jotka auttavat sinua suodattamaan haluamasi tiedot. Voit luoda esimerkiksi säännöllisiä lausekkeita, jotka etsivät tietyn pituisia sanoja, tiettyjä merkkejä tai jopa monimutkaisia mallipohjia. Niitä käyttämällä voit tehdä tarkkoja hakuja ja muutoksia haluamallasi tavalla.
 
-- [TypeScript: Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [MDN: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regular Expressions 101](https://regex101.com/)
+Jos haluat oppia lisää säännöllisistä lausekkeista ja niiden käytöstä TypeScriptissä, suosittelemme lukemaan virallisen dokumentaation [RegExp osion](https://www.typescriptlang.org/docs/handbook/regular-expressions.html).
 
 ## Katso myös
 
-- [TypeScriptin viralliset sivut](https://www.typescriptlang.org/)
-- [TypeScriptin opas suomeksi](https://www.freecodecamp.org/news/learn-typescript-in-5-minutes-13
+- [Ana Bellin opas säännöllisiin lausekkeisiin Pythonissa](https://www.youtube.com/watch?v=K8L6KVGG-7o)
+- [Mastering Regular Expressions -kirja](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Säännölliset lausekkeet Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [FreeCodeCampsin opas säännöllisiin lausekkeisiin](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/)

@@ -1,31 +1,48 @@
 ---
 title:    "Java: Virheenkorjaustulosteen tulostaminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Kun työskentelet ohjelmointitehtävien parissa, voi olla hyödyllistä käyttää debuggausta tulostamaan tietoja ohjelman suorituksen aikana. Tämä auttaa sinua havaitsemaan mahdollisia virheitä ja tarkistamaan, mitä koodisi tekee vaiheittain.
 
-Joskus ohjelmoijana saattaa olla tarpeen tulostaa debug-viestejä koodiin. Tämä auttaa selvittämään mahdollisia virheitä ja seuraamaan ohjelman suoritusta vaiheittain.
-
-## Kuinka tehdä
-
-Käyttämällä System.out.println()-metodia voit tulostaa haluamasi viestin koodiisi. Esimerkiksi:
+## Miten
+Debuggauksen tulostaminen Java-koodissa on helppoa. Käytämme siihen ```System.out.println()``` -metodia, joka tulostaa haluamamme tiedot konsolille. Seuraavassa esimerkissä näytämme, kuinka voit tulostaa tekstiä ja muuttujan arvon konsolille:
 
 ```Java
-int x = 5;
-System.out.println("Muuttujan x arvo on: " + x);
+String nimi = "Juha";
+System.out.println("Tervehdys " + nimi);
 ```
+Tulostus: Tervehdys Juha
 
-Tämä tulostaisi konsoliin seuraavan viestin: "Muuttujan x arvo on: 5". Voit myös käyttää lisää muuttujia tai tekstiä haluamasi viestin tulostamiseen.
+Voimme myös tulostaa muuttujien arvoja ja laskutoimituksia käyttämällä debuggausta. Esimerkiksi:
 
-## Syvällinen tarkastelu
+```Java
+int a = 5;
+int b = 3;
+System.out.println("Summa: " + (a + b));
+```
+Tulostus: Summa: 8
 
-On tärkeää käyttää debug-tulostuksia harkiten ja vain silloin, kun se on tarpeen. Liiallinen debug-viestien tulostaminen voi hidastaa ohjelman suoritusta ja tehdä koodista sekavan. Voit myös käyttää erilaisia debug-tasoja ja ehtolausekkeita, jotta voit helposti hallita tulosteiden määrää ja sisältöä.
+Voit myös käyttää debuggausta tarkistamaan ehtoja ja if-lauseiden toimintaa. Alla olevassa esimerkissä tulostamme tekstin vain, jos ehto täyttyy:
+
+```Java
+int ikä = 18;
+if(ikä >= 18) {
+    System.out.println("Voit äänestää!");
+}
+```
+Tulostus: Voit äänestää!
+
+## Syventyvä tieto
+On tärkeää huomata, että debuggausta käytetään vain kehitysvaiheessa ja se poistetaan ennen kuin ohjelma julkaistaan. Koodi, jossa on debug-tulostuksia, voi hidastaa ohjelman suoritusta ja aiheuttaa turhaa tietoliikennettä. Siksi on tärkeää poistaa kaikki debug-tulostukset ennen ohjelman julkaisemista.
+
+On myös erittäin suositeltavaa käyttää kirjastoa, kuten Log4j, debug-tulostusten hallitsemiseen ja poistamiseen helposti. Näin voit helposti ottaa debuggaustulostukset käyttöön tai poistaa ne halutessasi, ilman että sinun tarvitsee muuttaa koodia.
 
 ## Katso myös
-
 - [Java Debugging Tutorial](https://www.baeldung.com/java-debugging)
-- [Debugging Techniques in Java](https://www.geeksforgeeks.org/debugging-techniques-in-java/)
-- [Debugging with System.out.println()](https://www.codejava.net/java-core/the-java-language/debugging-with-system-out-println)
+- [How to Debug Java Code in Eclipse](https://www.guru99.com/debugging-in-java-eclipse-tutorial.html)
+- [Log4j Documentation](https://logging.apache.org/log4j/2.x/manual/index.html)

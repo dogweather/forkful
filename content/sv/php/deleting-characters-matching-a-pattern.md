@@ -1,34 +1,40 @@
 ---
 title:    "PHP: Radera tecken som matchar ett mönster"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att ta bort tecken som matchar ett visst mönster är en vanlig uppgift inom PHP-programmering och kan hjälpa till att rensa och strukturera data eller filtrera ut oönskad information.
 
-## Så här gör du
-För att ta bort tecken som matchar ett visst mönster i en sträng, kan du använda funktionen `preg_replace()` i PHP. Detta gör det enkelt att ersätta eller ta bort specifika tecken baserat på ett givet mönster.
+Att ta bort tecken som matchar ett visst mönster är en användbar funktion inom programmering när man behöver rengöra data eller filtrera ut vissa tecken från en textsträng.
 
+## Hur man gör det
+
+För att ta bort tecken som matchar ett visst mönster kan vi använda oss av PHP-funktionen `preg_replace()`. Den tar emot tre argument - mönstret att matcha, det sträng som vi vill söka igenom och det vi vill ersätta det matchade mönstret med. Här är ett exempel:
+
+```PHP
+$original_string = "Denna mening innehåller 4 siffror: 1234";
+$pattern = '/\d/'; // här är mönstret för att matcha alla siffror
+$replacement = ''; // här är vad vi vill ersätta siffrorna med, i detta fall ingenting
+$new_string = preg_replace($pattern, $replacement, $original_string);
+
+echo $new_string; // Output: Denna mening innehåller  siffror: 
 ```
-<?php
-$string = "Hello123 World!";
-echo preg_replace("/[0-9]/","",$string); // Output: HelloWorld!
-?>
-```
 
-I detta exempel använder vi `[0-9]` som mönster, vilket betyder att alla siffror från 0 till 9 kommer att tas bort från strängen och ersättas med ett tomt värde.
+Notera att vi använder sig av en så kallad "regex" (regular expression) för att definiera mönstret. Det finns många olika regex-mönster som kan matcha olika typer av tecken i en sträng. En bra resurs för att lära sig mer om dessa mönster är [RegExr](https://regexr.com/).
 
-## Fördjupning
-Det finns många olika sätt att använda `preg_replace()` för att ta bort tecken baserat på ett visst mönster. Här är några vanliga användningsområden:
+## Djupdykning
 
-- Ta bort alla bokstäver och behålla endast siffror: `preg_replace("/[A-Za-z]/","",$string)`
-- Ta bort alla specialtecken: `preg_replace("/[^\w\s]/","",$string)`
-- Ta bort alla mellanslag: `preg_replace("/\s/","",$string)`
+När vi använder `preg_replace()` så blir det nya strängen den ursprungliga strängen minus alla tecken som matchar det definierade mönstret. Om vi vill ta bort alla tecken utom siffror kan vi använda oss av regex-mönstret `/\D/`, där `\D` representerar alla icke-numeriska tecken.
 
-Kom ihåg att du kan använda ett brett spektrum av mönster och kombinera dem för olika effekter. Du kan också använda olika funktioner, till exempel `preg_match()` för att hitta matchande tecken eller `preg_replace_callback()` för att ersätta tecken med din egen anpassade funktion.
+Vi kan också använda oss av andra strängfunktioner, som `str_replace()`, för att ta bort specifika tecken eller teckenkombinationer. Det är viktigt att ha koll på vilka tecken som finns i den ursprungliga strängen och vilka som ska tas bort för att undvika oönskade resultat.
 
-## Se också
-- [PHP: preg_replace - Manual](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regular Expressions - Tizag Tutorials](https://www.tizag.com/regexTutorial/)
+## Se även
+
+Här är några användbara länkar för att lära dig mer om att ta bort tecken som matchar ett visst mönster i PHP:
+
+- [PHP - Manipulating Strings](https://www.w3schools.com/php/php_ref_string.asp)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [PHP.net - preg_replace Documentation](https://www.php.net/manual/en/function.preg-replace.php)

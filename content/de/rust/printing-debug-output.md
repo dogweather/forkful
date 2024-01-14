@@ -1,72 +1,49 @@
 ---
 title:    "Rust: Debug-Ausgabe drucken"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Programmiersprachen kann es manchmal schwierig sein, den Überblick zu behalten und Probleme zu lösen. Das Debugging von Code kann eine herausfordernde Aufgabe sein, aber zum Glück gibt es einige Tools, die uns dabei unterstützen können, den Fehler in unserem Code zu finden und zu beheben. Eine Möglichkeit, dies zu erreichen, ist das Drucken von Debug-Ausgaben.
+Das Drucken von Debug-Ausgaben ist eine nützliche Technik, um Probleme in Ihrem Rust-Code zu erkennen und zu beheben. Durch das Ausgeben von Informationen können Sie den genauen Ablauf Ihres Programms verfolgen und Fehler schneller finden. In dieser Anleitung erfahren Sie, wie Sie Debug-Ausgaben in Rust erstellen können.
 
-## Wie geht das?
+## Wie es geht
 
-In Rust gibt es verschiedene Möglichkeiten, Debug-Ausgaben zu erstellen. Eine davon ist die Verwendung der `println!()`-Makro, die wir in unserem Code einbinden können, um bestimmte Variablen oder Ausdrücke auf der Konsole auszugeben. Schauen wir uns ein Beispiel an:
+Um Debug-Ausgaben in Rust zu erstellen, verwenden Sie die `println!` -Makrofunktion. Dieses Makro nimmt ein Formatierungszeichenfolge als Eingabe und ermöglicht es Ihnen, Variablenwerte innerhalb der Zeichenfolge anzuzeigen.
 
 ```Rust
 fn main() {
     let name = "Max";
     let age = 25;
-    
-    println!("Der Name des Nutzers ist {} und sein Alter beträgt {}", name, age);
+
+    println!("Mein Name ist {} und ich bin {} Jahre alt.", name, age);
 }
 ```
 
-Dieser Code verwendet die `println!()`-Makro, um den Inhalt der Variablen `name` und `age` auf der Konsole auszugeben. Die Ausgabe sieht folgendermaßen aus:
+Die Ausgabe dieses Programms wäre: `Mein Name ist Max und ich bin 25 Jahre alt.`
 
-```
-Der Name des Nutzers ist Max und sein Alter beträgt 25
-```
+## Tiefer Einblick
 
-Wir können auch beliebige Ausdrücke innerhalb der `println!()`-Makro verwenden und diese werden dann entsprechend ausgewertet und ausgegeben. Hier ist ein weiteres Beispiel:
+Die `println!` -Funktion verwendet das Konzept der "String Interpolation", um Variablenwerte in die Ausgabe einzufügen. Es ersetzt Platzhalter wie `{}` in der Formatierungszeichenfolge mit den entsprechenden Werten der Variablen. Sie können auch spezifizieren, welcher Variablentyp ausgegeben werden soll, indem Sie ein `:` und den entsprechenden Datentyp nach dem Platzhalter angeben.
 
 ```Rust
 fn main() {
-    let num1 = 5;
-    let num2 = 10;
-    
-    println!("Das Ergebnis von {} + {} ist {}", num1, num2, num1 + num2);
+    let pi = 3.141592653;
+    let precision = 3;
+
+    println!("Eine Näherung von Pi mit {precision} Nachkommastellen beträgt: {pi:.precision$}", precision=precision, pi=pi);
 }
 ```
 
-Die Ausgabe wird wie folgt aussehen:
+Die Ausgabe wäre:`Eine Näherung von Pi mit 3 Nachkommastellen beträgt: 3.142`
 
-```
-Das Ergebnis von 5 + 10 ist 15
-```
-
-Ein weiteres nützliches Tool für das Drucken von Debug-Ausgaben ist die `dbg!()`-Makro, die uns den Wert einer Variablen oder eines Ausdrucks zusammen mit dem Namen der Variablen und der Datei und Zeilennummer, in der die Makro verwendet wird, ausgeben kann. Hier ist ein Beispiel:
-
-```Rust
-fn main() {
-    let num = 50;
-    
-    dbg!(num);
-}
-```
-
-Die Ausgabe wird folgendermaßen aussehen:
-
-```
-[src/main.rs:4] num = 50
-```
-
-## Tiefere Einblicke
-
-Zusätzlich zu den oben genannten Methoden gibt es noch einige andere Möglichkeiten, Debug-Ausgaben in Rust zu erstellen, die nützlich sein können, wenn man komplexeren Code debuggen muss. Dazu gehören das Drucken von Debug-Ausgaben in Unit Tests, die Verwendung von Format-Strings in der `println!()`-Makro und die Nutzung von externen Logging-Bibliotheken wie `log` und `env_logger`.
+Weitere nützliche Makros für Debug-Ausgaben sind `eprintln!` (Ausgabe auf Standardfehler), `dbg!` (Ausgabe einer Variablen zusammen mit ihrem Wert) und `dbg!` (Ausgabe eines Hinterlegungsbereichs).
 
 ## Siehe auch
 
-- [Rust Dokumentation: Formatierung von Strings](https://doc.rust-lang.org/std/fmt/index.html)
-- [Rust Cookbook: Debug-Ausgaben erstellen](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/logging.html#output-debug-statements)
-- [offizielles Rust Forum: Empfehlungen zur Auswahl einer Logging-Bibliothek](https://users.rust-lang.org/t/logging-libraries-a-survey/22369)
+- [The Rust Programming Language - Debugging](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+- [Rust By Example - Printing](https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html)
+- [Official Rust Documentation - Formatting Macros](https://doc.rust-lang.org/std/fmt/#formatting-macros)

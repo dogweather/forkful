@@ -1,79 +1,42 @@
 ---
-title:    "Kotlin: Viimeistäminen merkkijonoja"
+title:    "Kotlin: Merkkijonojen yhdistäminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi yhdistää merkkijonoja?
+## Miksi
 
-Merkkijonojen yhdistäminen on tärkeä osa ohjelmointia, koska se mahdollistaa erilaisten tietojen yhdistämisen yhdeksi kokonaisuudeksi. Esimerkiksi voit yhdistää etunimen ja sukunimen yhteen merkkijonoon luodaksesi kokonaisen nimen. Tämä helpottaa tietojen käsittelyä ja esittämistä käyttäjälle.
+Stringien yhdistäminen on tärkeä osa ohjelmointia, sillä se mahdollistaa erilaisten tiedon esittämisen yhtenä kokonaisuutena. Se on erityisen hyödyllistä silloin, kun halutaan tulostaa tekstiä, jossa on dynaamisia osia, kuten muuttuvia muuttujia.
 
-## Kuinka: Esimerkkejä koodilla ja tulosteilla
+## Miten tehdä
 
-Yhdistäminen onnistuu helposti Kotlinissa käyttämällä "plus" merkkiä (+) merkkijonojen välissä. Tässä esimerkissä yhdistämme etu- ja sukunimen yhteen ja tulostamme lopputuloksen konsoliin:
+Stringien yhdistäminen on helppoa Kotlinissa. Se voidaan tehdä käyttämällä plus-merkkiä (`+`) kahden merkkijonon välissä, tai käyttämällä `.plus()`-funktiota.
 
 ```Kotlin
-val etunimi = "Matti"
+val etunimi = "Maija"
 val sukunimi = "Meikäläinen"
-val kokonimi = etunimi + sukunimi
-println(kokonimi)
+
+val nimi = etunimi + sukunimi
+val tervehdys = "Hei, " + etunimi + " " + sukunimi + "!"
+
+println(nimi) // tulostaa "MaijaMeikäläinen"
+println(tervehdys) // tulostaa "Hei, Maija Meikäläinen!"
 ```
 
-Tuloste:
+## Syvällinen sukellus
+
+Kotlinissa merkkijonojen yhdistäminen tehdään tehokkaasti taustalla käyttämällä `StringBuilder`-luokkaa. Tämä tarkoittaa sitä, että merkkijonon yhdistämisen suorituskyky on erittäin hyvä ja tehokas. Se myös mahdollistaa merkkijonojen yhdistämisen ketjutetusti, eli useamman merkkijonon yhdistämisen yhdellä kertaa.
 
 ```Kotlin
-MattiMeikäläinen
+val alkusanat = "Olen" + " " + "Maija" + "."
+val tervehdys = "Hei,".plus(" " + alkusanat).plus("Mukava nähdä sinua!")
+
+println(tervehdys) // tulostaa "Hei, Olen Maija. Mukava nähdä sinua!"
 ```
-
-Voit myös yhdistää merkkijonoja suoraan tulostamisen yhteydessä. Tässä esimerkissä tulostamme tervehdyksen, jossa käytämme merkkijonojen yhdistämistä:
-
-```Kotlin
-val etunimi = "Liisa"
-println("Hei $etunimi, tervetuloa!")
-```
-
-Tuloste:
-
-```Kotlin
-Hei Liisa, tervetuloa!
-```
-
-## Syvällinen tarkastelu: Yhdistämisen detaljit
-
-Kotlinissa on mahdollista yhdistää eri tyyppisiä tietoja, kuten merkkijonoja ja muuttujia, käyttämällä "plus" merkkiä (+). Tämä tekee koodista joustavaa ja helppolukuista. Huomaa myös, että Kotlinissa on mahdollista yhdistää useita merkkijonoja kerralla. Esimerkiksi:
-
-```Kotlin
-val tulostus1 = "Hello"
-val tulostus2 = "World!"
-val yhdistetty = tulostus1 + tulostus2
-println(yhdistetty)
-```
-
-Tuloste:
-
-```Kotlin
-Hello World!
-```
-
-Voit myös käyttää "plus" merkkiä yhdistääksesi merkkijonoja muihin datatyyppisiin, kuten numeromuuttujiin. Kotlin hoitaa automaattisesti muunnoksen merkkijonoksi. Esimerkiksi:
-
-```Kotlin
-val numero = 42
-val teksti = "Vastaus on: " + numero
-println(teksti)
-```
-
-Tuloste:
-
-```Kotlin
-Vastaus on: 42
-```
-
-Yhdistämisen lisäksi Kotlinissa on myös muita tapoja manipuloida merkkijonoja, kuten vaihtaa niiden järjestystä, poistaa tai lisätä merkkejä sekä muuttaa ne isoihin tai pieniin kirjaimiin. Kannattaa kokeilla erilaisia vaihtoehtoja ja löytää itselleen sopivin tapa käsitellä merkkijonoja.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio merkkijonojen yhdistämisestä.](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Kotlinin String-interpolation lisätietoja merkkijonojen yhdistämisestä.](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-- [Ohjelmointiopas: Merkkijonojen yhdistäminen ja manipulointi Kotlinissa.](https://programiz.com/kotlin-programming/string)
+- [Official Kotlin documentation on String concatenation](https://kotlinlang.org/docs/reference/basic-types.html#string-concatenation)
+- [Java String Builder vs String Concatenation](https://stackoverflow.com/questions/15365227/java-stringbuilder-vs-string-concatenation)

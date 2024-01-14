@@ -1,17 +1,19 @@
 ---
-title:    "C++: Tekstitiedoston lukeminen"
+title:    "C++: Tiedostotekstin lukeminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tekstitiedoston lukeminen on tärkeää
+## Miksi
 
-Tekstitiedostojen lukeminen on tärkeä osa ohjelmoinnin oppimista, koska se antaa mahdollisuuden käsitellä suuria määriä tietoa helposti ja tehokkaasti. Se on myös tärkeää, jos ohjelmasi tarvitsee käsitellä käyttäjältä saatuja syötteitä tai tallentaa tietoa tiedostoon.
+Tekstitiedostojen lukeminen voi olla tarpeellista ohjelmistokehityksessä, sillä usein ohjelmat hyödyntävät tietoa, joka on tallennettu ulkoiseen tiedostoon. Lue lisää, miksi tämä taito on tärkeä ohjelmoijille.
 
-## Miten tekstitiedoston lukeminen tapahtuu
+## Miten
 
-Tekstitiedoston lukeminen C++:ssa tapahtuu käyttämällä ifstream-luokkaa ja sen avulla saatavilla olevia funktioita. Seuraavassa on yksinkertainen esimerkki, joka lukee tekstitiedoston ja tulostaa sen sisällön konsoliin:
+Tekstitiedoston lukeminen C++:lla on yksinkertaista käyttämällä stream-kirjastoa. Käytämme `ifstream`-luokkaa, joka mahdollistaa tiedostojen lukemisen. Alla on esimerkki koodista, joka lukee tekstitiedostosta ja tulostaa sen sisällön konsoliin:
+
 ```C++
 #include <iostream>
 #include <fstream>
@@ -19,30 +21,42 @@ Tekstitiedoston lukeminen C++:ssa tapahtuu käyttämällä ifstream-luokkaa ja s
 using namespace std;
 
 int main() {
-    ifstream myfile("tiedosto.txt"); // Avaa tiedosto lukutilaan
-    if (myfile.is_open()) { // Tarkistaa, että tiedosto on avattu onnistuneesti
-        string line;
-        while (getline(myfile, line)) { // Lukee tiedoston sisällön rivi kerrallaan
-            cout << line << endl; // Tulostaa rivin konsoliin
-        }
-        myfile.close(); // Sulkee tiedoston
+    // Avataan tekstitiedosto
+    ifstream file("tiedosto.txt");
+    // Tarkistetaan, että tiedosto avattiin onnistuneesti
+    if (!file.is_open()) {
+        cout << "Tiedoston avaaminen epäonnistui.";
+        return 1;
     }
-    else { // Jos tiedoston avaaminen epäonnistuu
-        cout << "Tiedoston avaaminen epäonnistui" << endl;
+
+    // Luetaan tekstitiedoston sisältö ja tulostetaan se konsoliin
+    string line;
+    while (getline(file, line)) {
+        cout << line << endl;
     }
+
+    // Suljetaan tiedosto
+    file.close();
     return 0;
 }
 ```
 
-Tämä koodi lukee tiedoston "tiedosto.txt" sisällön ja tulostaa sen konsoliin. Voit käyttää getline-funktiota myös lukemaan tiettyä riviä tiedostosta tai käyttää seekg-funktiota siirtymään haluttuun kohtaan tiedostossa.
+### Tuloste:
 
-## Syvällinen sukellus tekstitiedoston lukemiseen
+```
+Tervetuloa lukemaan meidän blogiamme!
+Tänään opimme, kuinka luetaan tekstitiedostoja käyttäen C++:aa.
+Toivottavasti tämä auttaa sinua tulevissa projekteissasi!
+```
 
-Tekstitiedoston lukeminen perustuu stream-conceptiin, jossa tiedoston sisältöä käsitellään virtana ja käytetään erilaisia funktioita tiedon käsittelyyn. Käytännössä ifstream-luokka toimii virtana, josta tiedoston sisältöä luetaan ja käsitellään.
+## Syväluotaus
 
-Tiedoston lukemisessa on myös hyvä ottaa huomioon virheiden käsittely. Esimerkiksi jos tiedostoa ei löydy tai tiedoston lukeminen epäonnistuu jostain muusta syystä, on hyvä käyttää try-catch -lohkoa virheiden välttämiseksi ja ohjelman kaatumisen estämiseksi.
+Tekstitiedostojen lukeminen on tärkeä taito ohjelmointia opetellessa, sillä se avaa mahdollisuuden käsitellä suurta määrää dataa ulkoisista lähteistä. Tiedostojen lukeminen C++:lla on myös nopeaa ja tehokasta.
+
+Tämä esimerkki käyttää `getline()`-funktiota lukeakseen tiedoston rivit yksi kerrallaan. `getline()` palauttaa jokaisella kutsulla seuraavan rivin, kunnes se saavuttaa tiedoston lopun tai tapahtuu virhe.
+
+On myös mahdollista lukea tiedostoja merkki kerrallaan käyttämällä `get()`-funktiota. Tämä antaa enemmän kontrollia tiedoston lukemiseen, mutta on hieman monimutkaisempi vaihtoehto. Suosittelemme kuitenkin käyttämään `getline()`-funktiota, joka on helpompi ja yleisemmin käytetty vaihtoehto. 
 
 ## Katso myös
-- [C++ ofstream-luokka](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [C++ tiedon käsittely stream-conceptin avulla](https://www.geeksforgeeks.org/cpp-programming-language/)
-- [Tekstitiedoston lukeminen Pythonilla](https://realpython.com/read-write-files-python/)
+- [Techtopia: Tiedostojen käsittely C++:lla](https://www.techtopia.com/index.php/C++_kirjaston_fstream_avulla_tehtyjen_tiedostojen_luku)
+- [Cplusplus.com: ifstream - tiedostojen lukeminen](http://www.cplusplus.com/reference/fstream/ifstream/)

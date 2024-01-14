@@ -1,54 +1,35 @@
 ---
-title:    "Clojure: 正規表現を使用する"
+title:    "Clojure: 「正規表現の使用」"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-正規表現を使用する理由は何でしょうか？正規表現は、文字列を操作する際に非常に便利なツールです。特定のパターンを持つ文字列を検索・置換することができるため、データの前処理やバリデーションなど、様々な場面で役立ちます。
+正規表現を使用する理由は何でしょうか？正規表現は、テキストのパターンマッチングや検索を行うための強力なツールです。テキスト処理やデータ抽出を行う際に役立つため、プログラミングの世界では広く使用されています。
 
-## 方法
+## 使い方
 
-正規表現をClojureでどのように使用するかを見ていきましょう。まずは```re-matches```関数を使用して、文字列が特定のパターンを満たしているかどうかを確認してみましょう。
-
-```Clojure
-;; 文字列が数字のみで構成されているかどうかを調べる
-(re-matches #"\d+" "1234") ;; => "1234"
-(re-matches #"\d+" "abcde") ;; => nil
-```
-
-次に、```re-find```関数を使用して、文字列内の特定のパターンにマッチする部分を抽出することができます。
+正規表現を使用するには、まず「re」ライブラリをClojureプログラムにインポートする必要があります。例えば、文字列からメールアドレスを抽出することを考えてみましょう。
 
 ```Clojure
-;; 文字列から数字の部分だけを抽出する
-(re-find #"\d+" "今日は1月13日です") ;; => "1"
+(require '[clojure.string :as str])
+(require '[clojure.repl :refer [source]])
+(def email "example@email.com")
+(str/split email #"@") ; => ["example" "email.com"]
 ```
 
-さらに、正規表現を使用して文字列を分割することも可能です。```re-seq```関数を使用することで、指定したパターンにマッチする部分で文字列を分割することができます。
+上記のコードでは、「re」ライブラリの「split」関数を使用し、メールアドレスを「@」で区切って配列として返しています。また、Clojureの文字列処理ライブラリである「clojure.string」を使用し、文字列からメールアドレスの部分を取得しています。
 
-```Clojure
-;; 文字列を空白で分割する
-(re-seq #"\s+" "Hello World") ;; => ("Hello" "World")
-```
+## ディープダイブ
 
-## 深堀り
+正規表現には様々な特殊文字が存在します。例えば、「^」は文字列の先頭を表し、「$」は文字列の末尾を表します。これらの特殊文字を組み合わせることで、パターンをより詳細に指定することができます。また、正規表現では量指定子を使用し、特定の文字やパターンの出現回数を指定することができます。
 
-正規表現では、様々な表記方法やオプションがあります。例えば、大文字小文字を区別せずに検索する```(?i)```オプションや、一致した部分を置換する際に置換元の文字列を使用する```$&```表記などがあります。
+Clojureでは、「#””」という記法を使用することで、正規表現を文字列として直接指定することができます。これにより、パターンの作成がより柔軟になります。
 
-また、正規表現では文字クラスを使用することで、特定の文字の範囲を指定することもできます。例えば、アルファベットの小文字を表す```[a-z]```や数字を表す```[0-9]```などがあります。
+## 関連リンクを見る
 
-さらに、正規表現ではグループ化を行うこともできます。これにより、一致した部分を後で取り出すことができるようになります。例えば、ハイフンで区切られた郵便番号を取り出す場合は、```(\d{3})-(\d{4})```のようにグループ化を行って後からそれぞれの部分を取り出すことができます。
-
-## 参考文献
-
-- [正規表現チートシート](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Clojure正規表現ドキュメント](https://clojure.org/reference/regular_expressions)
-- [正規表現クックブック](https://github.com/leventov/Kleene-s-Music-and-Dance-of-Regexes/blob/master/StackOverflow%20questions/Regexes%20cookbook.md#coding)
-
-## 参考になるリンク
-
-- [正規表現メソッド一覧](https://clojuredocs.org/clojure.string/supported-functions)
-- [正規表現テストするサイト](https://regexr.com/)
-- [正規表現チュートリアル動画](https://www.youtube.com/watch?v=sa-TUpSx1JA)
+- [Clojureで正規表現を使う方法](https://qiita.com/SunaharaKawakami/items/86a9dcb546a817a59b4f)
+- [正規表現レファレンス](http://clojure.github.io/spec.alpha/)

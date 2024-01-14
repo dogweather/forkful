@@ -1,70 +1,51 @@
 ---
 title:    "Haskell: Extrahering av delsträngar"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I många programmeringsspråk finns det inbyggda funktioner för att extrahera delsträngar från en huvudsträng. Men varför skulle man vilja göra det? Det finns flera bra anledningar:
-
-- Skapa en underserie av data som endast innehåller relevanta delar
-- Manipulera data och sedan återansluta det till den ursprungliga strängen
-
-Haskell har också funktioner för att extrahera delsträngar, och i den här bloggposten ska vi utforska hur man kan använda dem.
+I Haskell-programmering finns det olika metoder för att hantera textsträngar. En av de vanligaste är att extrahera delsträngar, vilket innebär att ta en del av en befintlig sträng och använda den på olika sätt. Detta är användbart för att göra manipulationer eller sökningar i en textsträng. I denna bloggpost kommer vi att utforska hur man kan extrahera delsträngar i Haskell.
 
 ## Så här gör du
 
-För att börja med behöver vi en sträng som vi vill extrahera delar av. Låt oss säga att vi har en sträng som representerar en e-postadress:
+För att extrahera delsträngar i Haskell använder vi funktionen "take" och "drop" från språkets standardbibliotek. Dessa funktioner tar in en integervariabel och en sträng som argument och returnerar antingen början eller slutet av strängen, beroende på vilken funktion som används.
 
-```
-myString = "example@blogpost.com"
-```
+För att ta en del av en sträng kan vi använda funktionen "take" tillsammans med ett positivt tal som anger hur många tecken vi vill ta. Till exempel, om vi vill ta de första fyra tecknen i strängen "Hej" kan vi använda följande kod:
 
-Vi kan nu använda funktionen `take` för att hämta en del av strängen. Den tar två argument - antalet tecken vi vill hämta och själva strängen. Vi kan till exempel hämta bara användarnamnet från e-postadressen:
-
-```
-take 7 myString
+```Haskell
+take 4 "Hej"
 ```
 
-Output:
-```
-"example"
+Detta skulle resultera i en ny sträng "Hej".
+
+På samma sätt kan vi använda funktionen "drop" för att ta bort en del av en sträng. Till exempel, om vi vill ta bort de två första tecknen i strängen "Hej" kan vi använda följande kod:
+
+```Haskell
+drop 2 "Hej"
 ```
 
-Om vi istället vill hämta domännamnet kan vi använda funktionen `drop`, som tar samma argument men hämtar det som ligger kvar efter de antal tecken vi angivit:
+Detta skulle resultera i en ny sträng "j".
 
-```
-drop 8 myString
-```
+Vi kan också kombinera funktionerna "take" och "drop" för att få ett specifikt intervall av tecken från en sträng. Till exempel, om vi vill ta de tre mittersta tecknen i strängen "katten" kan vi använda följande kod:
 
-Output:
-```
-"blogpost.com"
+```Haskell
+(take 3 (drop 1 "katten"))
 ```
 
-Vi kan också kombinera dessa två funktioner för att extrahera en del av en sträng. Låt oss säga att vi endast är intresserade av domänändelsen:
-
-```
-drop 14 (take 17 myString)
-```
-
-Output:
-```
-".com"
-```
+Detta skulle ge oss strängen "att".
 
 ## Djupdykning
 
-För att kunna extrahera delsträngar behöver man förstå hur man manipulerar listor i Haskell. Både `take` och `drop` fungerar på listor, och det är därför de används för att hämta delar av strängar. För att lära dig mer om listmanipulation i Haskell kan du kolla in dessa resurser:
+För mer komplicerade fall av extrahering av delsträngar i Haskell, kan vi använda funktionen "splitAt" som tar in två integervariabler och en sträng som argument. Den delar strängen på positionen som anges av det första talet och returnerar två nya strängar som resultat.
 
-- [Haskell.org Tutorial: Lists](https://wiki.haskell.org/Lists)
-- [Learn You a Haskell: Starting Out - Lists](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
-- [Real World Haskell: Lists and tuples](http://book.realworldhaskell.org/read/functional-programming.html#functional-lists)
+Vi kan också använda funktionen "subSeq" från paketet "text", som tar in start- och slutindex och en sträng som argument och returnerar en delsträng mellan dessa index.
 
 ## Se även
 
-- [Haskell.org: Text manipulation functions](https://www.haskell.org/hoogle/?hoogle=text+manipulation)
-- [Haskell.org Tutorial: Strings](https://wiki.haskell.org/Strings)
-- [Haskell Wikibook: String processing](https://en.wikibooks.org/wiki/Haskell/String_processing)
+- [Haskell Wiki: Strings](https://wiki.haskell.org/Strings)
+- [Haskell String tutorial](https://thehaskelltutorial.com/string/)
+- [Learn You a Haskell for Great Good! - Strings](http://learnyouahaskell.com/starting-out#ready-set-go)

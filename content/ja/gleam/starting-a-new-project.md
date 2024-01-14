@@ -1,46 +1,34 @@
 ---
-title:    "Gleam: 新しいプロジェクトを開始する."
+title:    "Gleam: 新しいプロジェクトを始める"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
+Japanese Translation:
+
 ## なぜ
 
-新しいプロジェクトを始める理由は様々です。例えば、最新の技術を試したい、新しいアプリケーションを作成したい、または自分のスキルを向上させたいというような理由があります。Gleamは非常に人気のあるプログラミング言語ですので、新しいプロジェクトを始めるのに最適な選択肢です。
+新しいプロジェクトを始める理由を説明するための1-2文。
 
-## 作り方
+## 方法
 
-新しいGleamプロジェクトを始める方法は簡単です。まず、Gleamの公式ウェブサイトからインストールガイドを参照して、コンピューターにGleamをインストールする必要があります。次に、以下のガイドに従って新しいプロジェクトを作成することができます。
-
-```Gleam
-$ gleam new my_project
-$ cd my_project
-```
-
-これにより、新しいプロジェクト用のフォルダが作成され、必要なファイルが自動的に生成されます。次に、新しいプロジェクトを実行するためのコンパイルコマンドを入力します。
+コーディングの例と```Gleam ...```コードブロック内の出力を示します。
 
 ```Gleam
-$ gleam build
+import Gleam.Include.String
+
+// "Hello, world!"
+"こんにちは、世界！" |> String.to_upper
 ```
 
-これにより、コンパイルが実行され、新しいプロジェクトの実行可能ファイルが生成されます。最後に、実行可能ファイルを実行します。
+## 詳細情報
 
-```Gleam
-$ ./my_project
-```
+新しいプロジェクトを始める方法についての詳細情報を提供します。
 
-これで、新しいGleamプロジェクトが作成され、実行されました！
+## 参考リンク
 
-## 深い掘り下げ
-
-新しいプロジェクトを始めるということは、新しいアプリケーションを作成するということです。Gleamは関数型言語なので、コードの表現力が高く、簡潔で読みやすいコードを書くことができます。また、Elixirと同様に、Gleamは並列処理をサポートしていますので、大規模なプロジェクトにも対応することができます。
-
-また、Gleamには優れたコミュニティがあり、フレンドリーな開発者が多数いますので、新しいプロジェクトを始めるときに質問や相談をすることができます。
-
-## See Also
-
-- [Gleam公式ウェブサイト](https://gleam.run/)
-- [Gleamのドキュメント](https://gleam.run/getting-started/)
-- [Gleamのコミュニティフォーラム](https://elixirforum.com/c/gleam)
-- [ElixirとGleamの違いの解説記事](https://devato.com/elixir-vs-gleam/)
+- [Gleam公式サイト](https://gleam.run/)
+- [Gleamチュートリアル](https://gleam.run/tour/)
+- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)

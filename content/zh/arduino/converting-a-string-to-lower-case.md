@@ -1,31 +1,77 @@
 ---
 title:    "Arduino: 将字符串转换为小写"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-为什么要将一个字符串转换为小写？这个操作在程序设计中非常常见，它可以帮助我们统一字符串的格式，使得数据处理更加准确和方便。
+在编写Arduino程序时，有时会需要将字符串转换为小写格式，以满足特定的需求。例如，当需要比较两个字符串时，为了避免大小写造成的差异，就需要将它们都转换成小写。
 
-## 如何做
+## 如何做到
 
-在Arduino中，实现字符串转换为小写非常简单。我们可以使用Arduino的内置函数`toLowerCase()`来实现。下面是一个例子：
+要将字符串转换为小写格式，可以使用Arduino的`toLowerCase()`函数。该函数接受一个字符串参数，并返回一个新的字符串，其中所有的字符均转换为小写。
 
-```Arduino
-String str = "TESt";
-str.toLowerCase();
-Serial.println(str); // 输出为 "test"
+```
+Arduino String str = "HELLO WORLD";
+Arduino String lowerStr = str.toLowerCase();
 ```
 
-我们首先定义一个字符串变量，并赋值为"TESt"。然后使用`toLowerCase()`函数将其转换为小写。最后，我们使用串口监视器输出该变量，可以看到它已经成功转换为小写了。
+下面是一个完整的示例程序，在串口监视器中打印出转换前后的字符串：
 
-## 深入探究
+```
+void setup() {
+  Serial.begin(9600);
+}
 
-要深入理解字符串转换为小写的原理，我们需要了解ASCII编码。在ASCII编码表中，大写字母和小写字母的ASCII码是相差32的。因此，我们可以通过修改字符串中每个字符的ASCII码来将其转换为小写。Arduino的`toLowerCase()`函数就是基于这一原理实现的。
+void loop() {
+  String str = "Hello World";
+  Serial.println(str);
+
+  String lowerStr = str.toLowerCase();
+  Serial.println(lowerStr);
+
+  delay(1000);
+}
+```
+
+输出结果如下所示：
+
+```
+Hello World
+hello world
+```
+
+## 深入了解
+
+在Arduino中，字符串是使用C语言的`char`数组来表示的。而C语言本身并没有直接的函数来将字符串转换为小写格式，所以Arduino的`toLowerCase()`函数实际上是实现了以下的算法：
+
+```
+// 遍历字符串的每个字符
+for (int i = 0; i < str.length(); i++) {
+  // 获取当前字符的ASCII码
+  int ascii = str.charAt(i);
+
+  // 如果是大写字母，则加上32转换为小写
+  if (ascii >= 65 && ascii <= 90) {
+    ascii += 32;
+  }
+
+  // 将转换后的ASCII码重新赋值给原来的字符
+  str.setCharAt(i, ascii);
+}
+```
+
+因此，如果需要在Arduino以外的环境中使用类似的功能，可以参考这段代码来实现字符串转换为小写的功能。
 
 ## 参考链接
 
-- [Arduino官方文档：String类](https://www.arduino.cc/reference/en/language/variables/data-types/stringclass/)
-- [ASCII编码表](https://www.asciitable.com/)
+- [Arduino官方文档 - toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/tolowercase/)
+- [C语言字符串基础知识](https://www.cprogramming.com/tutorial/c/lesson9.html)
+
+## 参见
+
+- [字符串比较指南](https://example.com/string-comparison)
+- [如何在Arduino中处理字符串](https://example.com/arduino-string-processing)

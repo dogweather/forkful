@@ -1,53 +1,45 @@
 ---
-title:    "TypeScript: Sammenligning av to datoer"
+title:    "TypeScript: Sammenligner to datoer."
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du arbeider med programmering i TypeScript, kan du enkelt støte på situasjoner der du må sammenligne to forskjellige datoer. Dette kan være nyttig for å finne ut om en dato kommer før eller etter en annen, eller for å beregne tiden mellom to datoer. Ved å lære hvordan du kan sammenligne datoer i TypeScript, vil du kunne håndtere disse situasjonene mer effektivt og nøyaktig.
+En viktig del av å programmere er å kunne sammenligne og manipulere datoer. Dette er spesielt nyttig når du jobber med forskjellige tidsbaserte data og funksjoner. Ved å kunne sammenligne to datoer, kan du enkelt sortere, filtrere og gjøre beregninger på dataene dine.
 
 ## Hvordan
 
-For å sammenligne to datoer i TypeScript, kan du bruke innebygde funksjoner og metoder som er tilgjengelige i JavaScript. Her er et eksempel på hvordan du kan sammenligne to datoer og få ut en boolean-verdi som svar:
+TypeScript er et populært programmeringsspråk som kombinerer de nyttige funksjonene i JavaScript med statisk typetilordning. Å sammenligne datoer i TypeScript er enkelt og kan gjøres ved å bruke de innebygde Date-objektene.
+
+For å sammenligne to datoer, må du først opprette et nytt Date-objekt for hver av datoene du ønsker å sammenligne. Deretter kan du bruke de forskjellige metoder og egenskaper til Date-objektet for å sammenligne dem. Her er et eksempel på hvordan du kan sammenligne to datoer for å se hvilken som kommer først:
 
 ```TypeScript
-let dato1 = new Date('2020-01-01');
-let dato2 = new Date('2020-02-02');
+let dato1 = new Date("2021-01-01");
+let dato2 = new Date("2021-01-05");
 
-let erDato1FørDato2 = dato1 < dato2;
+if (dato1 < dato2) {
+  console.log("Dato1 kommer først.");
+} else if (dato2 < dato1) {
+  console.log("Dato2 kommer først.");
+} else {
+  console.log("Datoene er like.");
+}
 
-console.log(erDato1FørDato2); // Output: true
+// output: Dato1 kommer først.
 ```
 
-I dette eksempelet oppretter vi to forskjellige datoobjekter og sammenligner dem ved å bruke `<` operatøren. Hvis dato1 er før dato2, vil boolean-verdien bli satt til `true`, ellers vil den være `false`.
-
-En annen måte å sammenligne datoer på er å bruke deres numeriske verdi. Datoer i JavaScript er lagret som millisekunder siden 1. januar 1970. Derfor kan vi konvertere en dato til denne numeriske verdien og sammenligne den med en annen ved å bruke `getTime()` -metoden. Her er et eksempel:
-
-```TypeScript
-let dato1 = new Date('2020-01-01');
-let dato2 = new Date('2020-02-02');
-
-let dato1NumeriskVerdi = dato1.getTime();
-let dato2NumeriskVerdi = dato2.getTime();
-
-let erDato1FørDato2 = dato1NumeriskVerdi < dato2NumeriskVerdi;
-
-console.log(erDato1FørDato2); // Output: true
-```
-
-Du kan også bruke andre innebygde metoder som `getFullYear()`, `getMonth()` og `getDate()` for å få ut spesifikke deler av datoene og sammenligne dem.
+Her bruker vi de logiske operatorerne < og > for å sammenligne datoene. Du kan også bruke == og != for å sjekke om to datoer er like.
 
 ## Deep Dive
 
-Når du sammenligner to datoer i TypeScript, er det viktig å være oppmerksom på tidssoner. Datoer kan være forskjellige avhengig av hvilken tidssone du er i, og dette kan påvirke resultatene dine når du sammenligner dem. For å unngå feil, kan det være lurt å konvertere alle datoer til UTC før du sammenligner dem.
+Når du sammenligner datoer, er det viktig å være klar over at de kan være på forskjellige formater og tidssoner. Dette kan føre til uventede resultater hvis du ikke tar hensyn til dette. Ved å bruke metoden getTime() på et Date-objekt, kan du få ut tiden i millisekunder siden 1. januar 1970. Dette gjør det enklere å sammenligne datoer uavhengig av format og tidssone.
 
-En annen ting å være oppmerksom på er at JavaScript (og derfor også TypeScript) har noen begrensninger når det kommer til å håndtere datoer. For eksempel vil datoer før 1. januar 1970 ikke bli håndtert riktig av de innebygde metodene. Dette kan føre til uventede resultater når du sammenligner datoer som ligger før denne datoen.
+Det er også verdt å merke seg at når du oppretter et Date-objekt, vil det automatisk bli satt til dagens dato og tid hvis ingen argumenter blir gitt. Derfor er det viktig å opprette Date-objekter med de riktige datoene og tidene du ønsker å sammenligne.
 
 ## Se også
 
-- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Docs: Date](https://www.typescriptlang.org/docs/handbook/datetime.html)
-- [W3Schools: JavaScript Dates](https://www.w3schools.com/js/js_dates.asp)
+- [TypeScript dokumentasjon om Date-objekter](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [W3Schools guide til dato og tid i JavaScript](https://www.w3schools.com/js/js_dates.asp)

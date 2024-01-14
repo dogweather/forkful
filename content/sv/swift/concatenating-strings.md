@@ -1,53 +1,57 @@
 ---
 title:    "Swift: Sammanslagning av strängar"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Många gånger när man programmerar behöver man kombinera olika strängar för att skapa en längre sträng med önskat innehåll. Detta kan göras genom att använda tekniken för att konkatenera strängar.
+Att sammanfoga strängar (även kallat "concatenation") är en vanlig operation inom Swift-programmering. Det används för att kombinera flera strängar till en enda sträng, vilket kan vara användbart för att skapa dynamiska texter eller för att enklare hantera data. I detta blogginlägg ska vi titta närmare på hur man utför denna operation.
 
-## Hur man gör det
+## Hur man gör
 
-För att sätta ihop två strängar i Swift kan man använda sig av operatorn "+" eller metoden "append". Här nedanför finns ett enkelt exempel på dessa två metoder.
-
-```Swift
-let förnamn = "Anna"
-let efternamn = "Andersson"
-
-// Använda operatorn "+" för att konkatenera strängar
-let namn1 = förnamn + efternamn
-print(namn1) // Resultat: AnnaAndersson
-
-// Använda metoden "append" för att lägga till strängar till en tom sträng
-var namn2 = ""
-namn2.append(förnamn)
-namn2.append(efternamn)
-print(namn2) // Resultat: AnnaAndersson
-```
-
-Som du kan se ovan behöver man använda en tom sträng om man vill använda metoden "append". Om man inte sätter förnamnet till en variabel utanför textblocket kan man helt enkelt bara lägga till den direkt i metoden.
+För att sammanfoga strängar i Swift kan man använda operatorn `+` eller metoden `append()`.
 
 ```Swift
-// På ett enklare sätt
-var namn = ""
-namn.append("Anna")
-namn.append("Andersson")
-print(namn) // Resultat: AnnaAndersson
+let firstName = "Johan"
+let lastName = "Svensson"
+
+let fullName = firstName + " " + lastName // Output: "Johan Svensson"
+
+var bio = "Jag heter "
+bio.append(firstName)
+bio.append(" och jag är en stolt programmerare.") // Output: "Jag heter Johan och jag är en stolt programmerare."
 ```
 
-Man kan även använda sig av eller kombinera fler olika metoder för att konkatenera strängar. Till exempel kan man använda metoden "joined(separator:)" för att lägga till ett separator-tecken mellan strängarna.
+Som du kan se i exemplet ovan används `+` för att enkelt sammanfoga flera strängar och `append()` för att lägga till en ny sträng i slutet av en befintlig sträng. Det är också möjligt att använda `+=` för att lägga till en sträng i slutet av en annan sträng. Notera att alla dessa metoder återskapar inte den befintliga strängen, utan skapar en ny sträng som innehåller de sammanslagna strängarna.
 
-## Fördjupning
+## Djupdykning
 
-När man konkatenerar strängar så skapas en helt ny sträng och de ursprungliga strängarna förlorar sin betydelse. Det är därför viktigt att tänka på prestandan när man konkatenerar flera strängar, särskilt om man hanterar stora datamängder.
+När man sammanfogar strängar i Swift använder man sig av en process som kallas för "string interpolation". Detta innebär att man kan inkludera variabler och uttryck i en sträng genom att använda sig av `\( )` som ett slags placeholder.
 
-En annan viktig faktor att tänka på är korrektheten av konkateneringsoperationen. Om man hanterar olika språk kan det finnas fall där speciella tecken eller diakritiska tecken inte hanteras korrekt på grund av encoding-problem.
+```Swift
+let age = 30
+let sentence = "Jag är \(age) år gammal." // Output: "Jag är 30 år gammal."
+```
+
+För att undvika att behöva använda `+` flera gånger för att sammanfoga flera strängar, kan man också använda sig av `joined()` metoden.
+
+```Swift
+let fruits = ["äpple", "banan", "apelsin"]
+let sentence = "Min favoritfrukt är \(fruits.joined(separator: ", "))" // Output: "Min favoritfrukt är äpple, banan, apelsin"
+```
+
+En annan användbar metod för att sammanfoga strängar är `string(from:)`, som kan användas för att omvandla andra datatyper till strängar.
+
+```Swift
+let price = 99.99
+let priceString = String(format: "%.2f kr", price) // Output: "99.99 kr"
+```
 
 ## Se även
 
-- [Swift documentation - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Hacking with Swift - How to concatenate strings easily](https://www.hackingwithswift.com/articles/141/how-to-concatenate-strings-easily)
-- [CodeNugget - How to concatenate strings in Swift](https://codenu.gg/concatenate-strings-swift/)
+- [Swift.org: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Apple Developer: String Cheatsheet](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+- [Hacking with Swift: How to concatenate strings to make one joined string](https://www.hackingwithswift.com/example-code/strings/how-to-concatenate-strings-to-make-one-joined-string)

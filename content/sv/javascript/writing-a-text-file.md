@@ -1,52 +1,59 @@
 ---
-title:    "Javascript: Skapa en textfil"
+title:    "Javascript: Att skriva en textfil"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför?
+# Varför
+Att skriva en textfil kan vara ett användbart verktyg för programmerare när de behöver lagra textbaserad information på ett korrekt och strukturerat sätt. Det kan också användas för att skapa små databaser eller för att spara konfigurationsinställningar för en applikation.
 
-Att skriva en textfil är en grundläggande färdighet inom programmering. Genom att kunna skapa och manipulera textfiler kan du spara och hantera data på ett enkelt och effektivt sätt. Det är också ett viktigt steg för att kunna bygga mer avancerade applikationer i framtiden.
+# Så här gör du
+För att skriva en textfil i Javascript, behöver vi först skapa ett nytt objekt av typen "File". Detta går att göra på flera sätt, men ett av de vanligaste är att använda "fs" (File System) modulen. Vi behöver först inkludera modulen genom att skriva `const fs = require('fs');` i början av vårt program.
 
-## Hur man gör det
-
-För att skriva en textfil i Javascript, kan du använda följande kod:
+Nästa steg är att öppna en fil genom att använda `fs.open()` funktionen. Vi anger sökvägen till filen som den första parametern och skriver sedan "w" som andra parameter för att ange att vi vill skriva data till filen. Sedan kan vi skriva vår text till filen med hjälp av `fs.write()` funktionen. Till exempel:
 
 ```Javascript
-var fs = require('fs'); // Importera filsystemet modulen
+const fs = require('fs'); 
 
-// Skapa en ny textfil
-var data = "Detta är innehållet i min textfil";
-fs.writeFile('minfil.txt', data, function (err) {
-  // Om det finns något fel, logga det i konsolen
-  if (err) console.log(err);
-  // Annars, bekräfta att filen har skapats
-  else console.log('Textfilen har skapats!');
+fs.open('textfil.txt', 'w', (err, file) => {
+  if (err) throw err;
+  fs.write(file, 'Det här är en textfil som skapats med hjälp av Javascript!', (err) => {
+    if (err) throw err;
+    console.log('Textfilen har skapats!');
+  });
 });
 ```
 
-I det här exemplet importerar vi först `fs` modulen för att kunna hantera filsystemet. Sedan använder vi `writeFile` funktionen för att skapa en ny textfil med namnet `minfil.txt` och lägger till innehållet `Detta är innehållet i min textfil`. I den tredje parametern ber vi om en callback-funktion som kommer att köras när filen har skapats. Om det finns några fel loggar vi dem i konsolen, annars bekräftar vi att filen har skapats.
+När detta är klart, behöver vi stänga vår fil genom att använda `fs.close()` funktionen. Det är också viktigt att hantera eventuella fel genom att använda `throw` eller `console.log` för att undvika problem med vår textfil.
 
-För att läsa innehållet i en textfil, kan vi använda följande kod:
+# Deep Dive
+Utöver att bara skriva en enkel textfil, finns det flera andra funktioner som kan användas för att manipulera textfiler i Javascript. Till exempel kan vi läsa en textfil genom att använda `fs.readFile()` funktionen och sedan skriva ut innehållet i konsolen.
 
 ```Javascript
-fs.readFile('minfil.txt', 'utf8', function(err, data) {
-  // Om det finns något fel, logga det i konsolen
-  if (err) console.log(err);
-  // Annars, skriv ut innehållet i filen
-  else console.log(data);
+const fs = require('fs');
+
+fs.readFile('textfil.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
 });
 ```
 
-I det här exemplet använder vi `readFile` funktionen för att läsa innehållet i `minfil.txt` textfilen som skapades tidigare. Vi specificerar också en `utf8` parameter för att säkerställa att vi får ut korrekt teckenkodning. I callback-funktionen loggar vi antingen eventuella fel eller skriver ut innehållet i filen.
+Vi kan också få information om en fil, som till exempel dess storlek, genom att använda `fs.stat()` funktionen.
 
-## Djupdykning
+```Javascript
+const fs = require('fs');
 
-Nu när du har lärt dig grunderna i att skriva och läsa textfiler i Javascript, kan du gå djupare genom att utforska fler möjligheter som finns med filhantering i Javascript. Till exempel, lära dig att skapa, flytta, radera och hantera mappar, eller finputsa dina färdigheter i att läsa och skriva olika typer av datafiler som CSV eller JSON.
+fs.stat('textfil.txt', (err, stats) => {
+  if (err) throw err;
+  console.log(`Storlek: ${stats.size} bytes`);
+});
+```
 
-## Se också
+Det finns också andra funktioner som `fs.appendFile()` för att lägga till data till en befintlig fil, eller `fs.rename()` för att ändra namnet på en fil.
 
-- [Filhantering i Node.js](https://nodejs.dev/learn/file-system-core-modules)
-- [Läsa och skriva textfiler i Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Hantera JSON-data i Javascript](https://www.w3schools.com/js/js_json.asp)
+# Se också
+- [Node.js API: File System](https://nodejs.org/api/fs.html)
+- [W3Schools: Node.js File System Module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Web Dev Simplified: How To Read And Write Text Files In Node.js](https://www.youtube.com/watch?v=5a0xGinNObo)

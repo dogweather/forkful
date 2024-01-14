@@ -1,45 +1,38 @@
 ---
 title:    "Python: Väliaikaisen tiedoston luominen"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi 
- 
-Kuinka moni teistä on törmännyt tilanteeseen, jossa tarvitsee käyttää väliaikaista tiedostoa? Ehkä ohjelman täytyy tallentaa tietoja hetkeksi, mutta lopulta ne hävitään tai korvataan uusilla. Tässä blogipostissa käsittelemme kuinka luodaan väliaikainen tiedosto Python-ohjelmoinnissa ja miksi se on hyötyllistä. 
+## Miksi
 
-## Kuinka 
+Temporary files eli väliaikaiset tiedostot ovat erittäin hyödyllisiä ohjelmoinnissa, sillä ne tarjoavat tilapäisen säilytyspaikan tiedoille, jotka eivät tarvitse pysyvää tallennusta. Niitä käytetään esimerkiksi väliaikaisen datan tallentamiseen, väliaikaisiin muutoksiin tiedostoihin tai tilapäiseen tallennukseen, jota ei tarvita ohjelman käytön jälkeen.
 
-Väliaikaisen tiedoston luominen Pythonissa on helppoa. Voit käyttää `tempfile` -kirjastoa ja sen `TemporaryFile` -funktiota luodaksesi väliaikaisen tiedoston. Katso esimerkki alla: 
+## Miten
 
-```Python 
-import tempfile 
+Tempfile-moduuli tarjoaa Pythonissa luokan TemporaryFile, joka mahdollistaa helpon väliaikaisten tiedostojen luomisen ja käytön. Alla on esimerkkikoodi, joka näyttää, kuinka luodaan ja kirjoitetaan väliaikaiseen tiedostoon ja lopuksi tulostetaan sen sisältö.
 
-# Luodaan väliaikainen tiedosto
-with tempfile.TemporaryFile() as temp:
-  # Kirjoitetaan dataa tiedostoon
-  temp.write(b"Tämä on väliaikainen tiedosto")
-  # Siirrytään tiedoston alkuun
-  temp.seek(0)
-  # Luetaan tiedoston sisältö ja tulostetaan se
-  print(temp.read())
+```Python
+import tempfile
 
-# Tiedosto on nyt automaattisesti suljettu ja poistettu 
+with tempfile.TemporaryFile() as tmp:
+  tmp.write(b"Tervetuloa lukemaan blogikirjoitusta!")
+  tmp.seek(0)
+  print(tmp.read().decode())
 ```
 
-Tässä esimerkissä käytämme `tempfile.TemporaryFile()` -funktiota luomaan väliaikainen tiedosto, joka tallentaa bittijonon `b"Tämä on väliaikainen tiedosto"`. Käytämme sitten `seek(0)` -funktiota siirtyäksemme tiedoston alkuun ja `read()` -funktiota lukeaksemme tiedoston sisällön ja tulostamme sen näytölle. Lopuksi tiedosto suljetaan automaattisesti `with` -lauseen avulla ja se poistetaan. 
+Tämä tulostaa: "Tervetuloa lukemaan blogikirjoitusta!"
 
-## Syvällisempi sukellus 
+## Syvällinen sukellus
 
-`tempfile` -kirjastossa on muitakin hyödyllisiä funktioita väliaikaisten tiedostojen luomiseen, kuten `NamedTemporaryFile()` joka luo nimetyn väliaikaisen tiedoston, `TemporaryDirectory()` joka luo väliaikaisen hakemiston ja `mktemp()` joka luo yksittäisen väliaikaisen tiedoston nimen.
+TemporaryFile-luokassa on useita hyödyllisiä ominaisuuksia, kuten mahdollisuus määrittää tiedoston tila (käyttämällä vaihtoehtoa "w+"), alustamisesta vastaavan koodin suorittaminen (käyttämällä "suffix" ja "prefix" -parametreja) ja automaattinen poistaminen ohjelman sulkeutuessa (käyttämällä "delete=True" -parametria).
 
-Voit myös määrittää, että väliaikainen tiedosto poistetaan vasta kun ohjelma sulkeutuu, käyttämällä `delete=False` -parametria `TemporaryFile()` ja `NamedTemporaryFile()` funktioissa.
+TemporaryFile-luokassa on myös mahdollista määrittää, mihin hakemistoon väliaikainen tiedosto tallennetaan. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan väliaikaisesti tallentaa tiedosto johonkin tiettyyn kansioon, kuten käyttäjän tilapäinen hakemistoon ("tempfile.gettempdir()" -funktiolla).
 
-Väliaikaisia tiedostoja voi käyttää moniin eri tarkoituksiin, kuten tiedostojen tallentamiseen väliaikaisesti, testaamiseen, ja turvallisuussyistä, sillä ne poistuvat automaattisesti käytön jälkeen.
+## Katso myös
 
-# Katso myös 
-
-- [Pythonin virallinen tempfile-dokumentaatio](https://docs.python.org/3/library/tempfile.html)
-- [RealPythonin opas väliaikaisten tiedostojen käyttämiseen Pythonissa](https://realpython.com/python-tempfile/) 
-- [Codecademyn artikkeli väliaikaisista tiedostoista Pythonissa](https://www.codecademy.com/articles/temporary-files-in-python)
+- [Pythonin tempfile-moduulin dokumentaatio](https://docs.python.org/3/library/tempfile.html)
+- [Tietoa väliaikaisten tiedostojen käytöstä Unixissa](https://www.geeksforgeeks.org/unix-temporary-files/)
+- [Tutorial väliaikaisten tiedostojen käytöstä Pythonissa](https://betterprogramming.pub/handling-temporary-files-in-python-1f21f6bacd60)

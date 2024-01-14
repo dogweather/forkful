@@ -1,58 +1,55 @@
 ---
-title:    "Ruby: Generierung zufälliger Zahlen"
+title:    "Ruby: Zufallszahlen generieren"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Als Programmierer hat man oft eine Aufgabe oder ein Problem, bei dem es hilfreich ist, zufällige Zahlen zu generieren. Dies kann zum Beispiel bei einer Simulation oder beim Testen von Funktionen nützlich sein. In diesem Blog-Beitrag lernen Sie, wie Sie in Ruby zufällige Zahlen generieren können.
 
-## Wie man Zufall in Ruby verwendet
-Um zufällige Zahlen in Ruby zu erzeugen, müssen Sie zunächst das "random" Modul importieren. Dieses Modul enthält alle nötigen Funktionen für die Erzeugung von Zufallszahlen.
+Generieren von zufälligen Zahlen ist ein Schlüsselelement im Ruby Programmieren. Es ermöglicht Entwicklern, sichere Passwörter, zufällige Zahlencodes oder eine Vielzahl von anderen Anwendungen zu erstellen, die zufällige Zahlen benötigen.
+
+## Wie man es macht
+
+Es gibt mehrere Möglichkeiten, um in Ruby zufällige Zahlen zu generieren. Eine davon ist die `rand`-Funktion, die eine zufällige Gleitkommazahl zwischen 0 und 1 zurückgibt.
 
 ```Ruby
-require 'random'
+rand # 0.8301278610310736
+rand # 0.5720940406395727
+rand # 0.9699427929522021
 ```
 
-Als nächstes können Sie mit der `rand` Funktion eine zufällige Zahl im Bereich von 0 bis 1 erzeugen.
+Man kann auch die `rand`-Funktion mit einem Argument verwenden, um eine zufällige Ganzzahl in einem bestimmten Bereich zu generieren.
 
 ```Ruby
-puts rand # Output: 0.242426
+rand(10) # 4
+rand(10) # 8
+rand(10) # 2
 ```
 
-Um eine zufällige Ganzzahl im Bereich von 1 bis 10 zu erzeugen, können Sie die `rand` Funktion mit einer Range verwenden.
+Um eine zufällige Zahl zwischen zwei bestimmten Werten zu erstellen, kann man die Formel `rand(max-min) + min` verwenden.
 
 ```Ruby
-puts rand(1..10) # Output: 8
-```
-
-Sie können auch die `rand` Funktion mehrmals aufrufen, um mehrere Zufallszahlen zu generieren.
-
-```Ruby
-puts rand(1..10) # Output: 6
-puts rand(1..10) # Output: 2
-puts rand(1..10) # Output: 9
-```
-
-Wenn Sie eine zufällige Zahl mit Nachkommastellen benötigen, können Sie die `rand` Funktion mit einer Gleitkommazahl multiplizieren.
-
-```Ruby
-puts rand(1.0..10.0) # Output: 3.872
-```
-
-Um eine zufällige Zahl aus einer bestimmten Liste auszuwählen, können Sie die `sample` Funktion verwenden.
-
-```Ruby
-liste = [1, 2, 3, 4, 5]
-puts liste.sample # Output: 4
+rand(10-5) + 5 # 8
+rand(10-5) + 5 # 9
+rand(10-5) + 5 # 6
 ```
 
 ## Tiefergehende Informationen
-Wenn Sie sich für die Details der Zufallsgenerierung in Ruby interessieren, können Sie sich die Dokumentation des "random" Moduls ansehen. Dort finden Sie Funktionen wie `seed` und `srand`, mit denen Sie den generierten Zufallszahlen eine bestimmte Ausgangsbasis geben können.
 
-Darüber hinaus bietet Ruby auch das "SecureRandom" Modul an, das für Anwendungen verwendet werden sollte, bei denen Sicherheit von höchster Priorität ist, wie zum Beispiel beim Generieren von Passwörtern.
+Die `rand`-Funktion verwendet standardmäßig den Systemzeitstempel als Seed, um pseudo-zufällige Zahlen zu generieren. Das Seed kann jedoch auch manuell gesetzt werden, indem man `srand` mit einer beliebigen Zahl als Argument aufruft.
+
+```Ruby
+srand(12345)
+rand # 0.45676654043610995
+rand # 0.6420109550311959
+rand # 0.8807432638651273
+```
+
+Man kann auch einen Seed-Generator wie die `SecureRandom`-Klasse verwenden, um sicherere und zufälligere Zahlen zu generieren.
 
 ## Siehe auch
-- [Ruby Dokumentation zum "random" Modul](https://ruby-doc.org/core-3.0.0/Random.html)
-- [Ruby Dokumentation zum "SecureRandom" Modul](https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html)
+
+- [Offizielle Ruby Dokumentation zur `rand`-Funktion](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-rand)
+- [Blog-Beitrag zur Verwendung von SecureRandom in Ruby](https://www.gitarts.com/blog/use-secure-random-in-ruby-to-generate-unpredictable-random-numbers/)

@@ -1,47 +1,53 @@
 ---
 title:    "C#: Leggere gli argomenti della riga di comando"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore di C#, probabilmente hai già lavorato con variabili e costanti all'interno del tuo codice. Ma cosa succede quando vuoi passare dei dati direttamente da riga di comando? Sapere come leggere gli argomenti della riga di comando può rendere il tuo codice più flessibile e versatile.
+Molte volte nella programmazione è necessario creare un programma che possa essere personalizzato dall'utente. Una delle migliori e più semplici opzioni per farlo è l'utilizzo degli argomenti da riga di comando. Continua a leggere per scoprire come farlo in C#!
 
 ## Come fare
 
-Per leggere gli argomenti della riga di comando in C#, dovrai utilizzare la classe `Environment` e il metodo `GetCommandLineArgs()`. Vediamo un esempio:
+Per leggere gli argomenti da riga di comando in C#, è necessario utilizzare la classe `Environment`. All'interno della classe, c'è un array chiamato `GetCommandLineArgs()` che restituisce tutti gli argomenti passati al programma al momento dell'esecuzione. Di seguito un esempio di codice che stampa tutti gli argomenti passati al programma:
 
 ```C#
-static void Main(string[] args)
+using System;
+
+namespace CommandLineArgs
 {
-    string[] commandLineArgs = Environment.GetCommandLineArgs();
-    foreach (string arg in commandLineArgs)
+  class Program
+  {
+    static void Main(string[] args)
     {
-        Console.WriteLine(arg);
+      // Loop attraverso tutti gli argomenti e stamparli
+      for(int i = 0; i < args.Length; i++)
+      {
+        Console.WriteLine(args[i]);
+      }
     }
+  }
 }
 ```
 
-Nel codice sopra, utilizziamo il metodo `GetCommandLineArgs()` per ottenere un array di stringhe contenente tutti gli argomenti passati in input, incluso il nome del programma. Successivamente, utilizziamo un ciclo `foreach` per stampare ogni argomento sulla console.
-
-Supponiamo che il tuo programma si chiami `programma.exe` e vogliamo passare l'argomento `foo` da riga di comando. L'output del codice sopra sarà il seguente:
+Se si esegue il programma con l'argomento `dotnet run arg1 arg2`, l'output sarà:
 
 ```
-programma.exe
-foo
+arg1
+arg2
 ```
 
-Se vuoi accedere agli argomenti senza includere il nome del programma, puoi semplicemente utilizzare `args[1]` nell'esempio sopra.
+Si noti che il primo argomento è sempre il percorso del programma stesso.
 
 ## Approfondimento
 
-Oltre a leggere gli argomenti della riga di comando, è possibile anche modificare e gestire gli argomenti prima di utilizzarli nel tuo codice. Ad esempio, puoi aggiungere nuovi argomenti utilizzando il metodo `Environment.SetCommandLineArgs()`.
-
-Inoltre, è importante notare che gli argomenti della riga di comando possono essere sensibili alla maiuscole e minuscole su sistemi operativi diversi. Se vuoi assicurarti che i tuoi argomenti vengano sempre interpretati nello stesso modo, è possibile utilizzare il metodo `String.Compare()` con il parametro `StringComparison.InvariantCultureIgnoreCase`.
+Esistono vari modi per gestire e utilizzare gli argomenti da riga di comando. Ad esempio, è possibile utilizzare librerie esterne come `CommandLineParser` per semplificare la gestione degli input e per impostare argomenti opzionali. Inoltre, è possibile utilizzare gli argomenti da riga di comando per specificare file di input o output per i programmi o per passare informazioni sensibili come password. Esplora e sperimenta con varie soluzioni per vedere quali funzionano meglio per te e per i tuoi progetti.
 
 ## Vedi anche
 
-- [Documentazione di Microsoft su Environment.GetCommandLineArgs()](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs)
-- [Tutorial su Channel9 di C# Reading Command Line Arguments](https://channel9.msdn.com/Blogs/Seth-Juarez/C-Reading-Command-Line-Arguments)
+- [Documentazione ufficiale di Microsoft su Environment.GetCommandLineArgs Method](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
+- [Libreria CommandLineParser su GitHub](https://github.com/commandlineparser/commandline)
+- [Esempi di progetti con argomenti da riga di comando su GitHub](https://github.com/topics/command-line-arguments)

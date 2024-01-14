@@ -1,44 +1,44 @@
 ---
-title:    "Rust: Generando números aleatorios"
+title:    "Rust: Generación de números aleatorios"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué usar Rust para generar números aleatorios?
+## Por qué
+Generar números aleatorios es una tarea común en la programación y puede ser útil en una variedad de aplicaciones, desde juegos hasta pruebas de rendimiento. Aprender a generar números aleatorios en Rust puede ser beneficioso para ampliar tus habilidades de programación y explorar el lenguaje en profundidad.
 
-La generación de números aleatorios es una tarea común en la programación, ya sea para juegos, simulaciones o criptografía. En este artículo, exploraremos cómo generar números aleatorios de manera eficiente y confiable en Rust, un lenguaje de programación moderno y potente.
-
-## Cómo hacerlo
-
-La generación de números aleatorios en Rust es muy sencilla gracias al módulo `rand` incluido en la biblioteca estándar. Para comenzar, importamos el módulo con la siguiente línea de código:
+## Cómo
+Para generar números aleatorios en Rust, puedes utilizar la función `rand::random()` de la biblioteca estándar. Esta función devuelve un número aleatorio de cualquier tipo que implemente el trait `Rand`, como `u32` o `f64`. A continuación se muestra un ejemplo de cómo generar un número aleatorio entre 1 y 10 y mostrarlo en pantalla:
 
 ```Rust
-use rand::Rng;
+use rand::Rng; // Importar la trait Rng
+
+fn main() {
+    let num = rand::random::<u32>() % 10 + 1; // Generar número aleatorio entre 1 y 10
+    println!("{}", num); // Imprimir número en pantalla
+}
 ```
 
-Luego, podemos generar un número aleatorio utilizando el generador `thread_rng()` y especificando un rango como parámetro. Por ejemplo, si queremos generar un número entre 1 y 10, podemos hacerlo de la siguiente manera:
+La función `Rng::gen_range()` también puede ser utilizada para generar números aleatorios en un rango específico. Por ejemplo, para generar un número aleatorio entre 50 y 100:
 
 ```Rust
-let num = thread_rng().gen_range(1..=10); //genera un número aleatorio entre 1 y 10
+use rand::Rng; // Importar la trait Rng
+
+fn main() {
+    let mut rng = rand::thread_rng(); // Crear un nuevo generador de números aleatorios
+    let num = rng.gen_range(50, 101); // Generar número aleatorio entre 50 y 100
+    println!("{}", num); // Imprimir número en pantalla
+}
 ```
 
-También podemos generar un vector de números aleatorios utilizando la función `gen()` del generador. Por ejemplo, si queremos 5 números aleatorios entre 1 y 100, podemos hacerlo de esta forma:
+## Deep Dive
+La función `rand::random()` utiliza el generador de números aleatorios `ThreadRng` que se inicializa utilizando una semilla única basada en el tiempo actual. Esto significa que si la función se llama varias veces en un corto período de tiempo, es probable que los números generados sean muy similares. Una solución para este problema es crear un generador de números aleatorios personalizado y utilizarlo en lugar de `ThreadRng`.
 
-```Rust
-let nums = thread_rng().gen::<i32>(); //genera un vector de 5 números aleatorios
-```
-
-## Profundizando
-
-Para entender mejor cómo funciona la generación de números aleatorios en Rust, es útil conocer los algoritmos utilizados detrás de escena. En Rust, se utilizan dos algoritmos principales: `Xorshift` y `Hc128`.
-
-El algoritmo `Xorshift` es muy rápido y se utiliza para generaciones de números aleatorios simples. Funciona a través de una operación XOR entre un valor inicial y un número constante, y luego se utiliza ese resultado como el valor inicial para la próxima generación. Sin embargo, este algoritmo no garantiza valores completamente aleatorios, por lo que no es adecuado para usos criptográficos.
-
-Por otro lado, el algoritmo `Hc128` es más lento pero ofrece una mejor aleatoriedad. Este algoritmo utiliza un generador más complejo basado en operaciones de desplazamiento y rotación en un espacio de 128 bits. Aunque es más adecuado para usos criptográficos, puede ser un poco excesivo para tareas simples de generación de números aleatorios.
+Además, la biblioteca `rand` también proporciona varios algoritmos de generación de números aleatorios más complejos, como el generador `Isaac64`, que utiliza el algoritmo ISAAC diseñado para ser utilizado en aplicaciones criptográficas. Estos algoritmos pueden ser útiles en casos donde se requieren mayores niveles de aleatoriedad y seguridad.
 
 ## Ver también
-
-- Documentación oficial del módulo `rand` de Rust: https://doc.rust-lang.org/rand/rand/index.html
-- Ejemplos de generación de números aleatorios en Rust: https://github.com/rust-lang-nursery/rand/tree/master/rand/examples
-- Artículo sobre el uso de la generación de números aleatorios en criptografía: https://medium.com/@joshuaduffy/how-cryptographically-secure-are-rand-and-os-rand-in-rust-939d5458f0
+- Documentación oficial de Rust sobre la biblioteca `rand`: https://doc.rust-lang.org/rand/
+- Tutorial sobre cómo generar números aleatorios en Rust: https://dev.to/itnext/generating-random-numbers-in-rust-12ae
+- Ejemplos de uso de la biblioteca `rand` en proyectos reales: https://github.com/rust-random/rand/tree/master/examples

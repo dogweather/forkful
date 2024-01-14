@@ -1,48 +1,46 @@
 ---
-title:    "Swift: Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:    "Swift: Tulevien tai menneiden päivämäärien laskeminen tietokoneohjelmoinnissa"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Laskeminen tulevaan tai menneeseen päivämäärään on hyödyllistä
+## Miksi
 
-Laskeminen tulevaan tai menneeseen päivämäärään voi olla hyödyllistä esimerkiksi silloin, kun haluat automaattisesti päivittävän aikataulun tai tehdä aikavertailuja. Se voi myös auttaa sinua muistamaan tärkeitä tapahtumia tulevaisuudessa tai tarkistamaan menneitä tapahtumia.
+Usein meillä on tarve laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä, esimerkiksi tapahtumaa tai lomamatkaa suunnitellessamme. Onneksi Swift tarjoaa helpon tavan laskea päivämäärä tulevaisuudessa tai menneisyydessä olevan annetun päivän perusteella.
 
-# Kuinka: Koodiesimerkkejä laskemisesta tulevaan tai menneeseen päivämäärään Swift-ohjelmointikielellä
+## Miten
 
-Seuraavassa esimerkissä lasketaan tulevaa päivämäärää 30 päivää nykyisestä päivästä käyttämällä DateComponents-luokkaa ja Calendar-luokkaa:
-
-```Swift
-let currentDate = Date()
-var dateComponents = DateComponents()
-dateComponents.day = 30
-let futureDate = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-print(futureDate)
-```
-
-Tämä tulostaisi "Optional(2020-03-23 08:03:01 +0000)", eli päivämäärä olisi 30 päivää nykyisestä päivästä.
-
-Voit myös laskea menneen päivämäärän samaa logiikkaa käyttäen, mutta käyttämällä negatiivista arvoa päivien määrässä:
+Lasketaan ensin tuleva päivämäärä käyttäen `DateComponents` ja `Calendar` rakenteita. Näitä rakenteita voidaan käyttää määrittelemään päivämäärä komponenttien kuten vuosi, kuukausi ja päivä perusteella. Esimerkiksi, jos haluat laskea päivämäärän 10 päivää tulevaisuudessa, voit käyttää seuraavaa koodia:
 
 ```Swift
-let currentDate = Date()
+let calendar = Calendar.current
 var dateComponents = DateComponents()
-dateComponents.day = -30
-let pastDate = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-print(pastDate)
+dateComponents.day = 10
+let futureDate = calendar.date(byAdding: dateComponents, to: Date())!
 ```
 
-Tämä tulostaisi "Optional(2020-01-22 08:03:01 +0000)", eli päivämäärä olisi 30 päivää sitten nykyisestä päivästä.
+Tämä koodi lisää 10 päivää nykyiseen päivämäärään ja tallentaa sen `futureDate` muuttujaan.
 
-# Syvempi sukellus: Lisää tietoa päivämäärän laskemisesta tulevaisuuteen tai menneisyyteen
+Vastaavasti voit myös laskea menneisyyden päivämäärän käyttämällä negatiivista arvoa `dateComponents.day` komponentissa.
 
-DateComponents-luokka mahdollistaa laskemisen muilla aikayksiköillä, kuten vuosilla, kuukausilla, tunneilla ja minuuteilla. Voit myös käyttää manya muita vaihtoehtoja, kuten päivämäärän vertailua ja päivämäärämuodostusta DateInterval-luokan avulla.
+```Swift
+dateComponents.day = -5
+let pastDate = calendar.date(byAdding: dateComponents, to: Date())!
+```
 
-On kuitenkin tärkeää huomata, että päivämäärämuutosten laskeminen voi olla monimutkaista ottaen huomioon aikavyöhykkeet ja kesäaika. On tärkeää olla varovainen näitä asioita käsitellessä.
+Tämä koodi vähentää 5 päivää nykyisestä päivämäärästä ja tallentaa sen `pastDate` muuttujaan.
 
-# Katso myös
+## Syvällisempi tutustuminen
 
-- Swiftin päivämäärä- ja aikatyökalut: https://developer.apple.com/documentation/foundation/date
-- Opas aikavyöhykkeisiin Swiftissä: https://www.swiftbysundell.com/basics/timezones-in-swift/
-- Esimerkkejä päivämäärän laskemisesta Swiftillä: https://nemecek.be/blog/149/p/date-components-add-subtract-dates-reference-guide
+Voit myös määrittää muita komponentteja, kuten vuotta, kuukautta tai tuntia, `dateComponents` rakenteessa ja lisätä tai vähentää niitä samalla tavalla `Calendar` rakenteen avulla.
+
+On myös tärkeää huomata, että `dateComponents` rakenteella määritetyt päivämäärät ovat aina paikallisia, eli ne perustuvat käyttäjän nykyiseen aikavyöhykkeeseen. Voit kuitenkin asettaa eri aikavyöhykkeen `Calendar` rakenteen `timeZone` ominaisuuden avulla.
+
+## Katso myös
+
+- [Apple Developer Documentation: Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [Apple Developer Documentation: DateComponents](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Swift by Sundell: Working with dates in Swift](https://www.swiftbysundell.com/basics/dates/)
+- [Hacking with Swift: How to work with dates and times using DateComponents](https://www.hackingwithswift.com/articles/181/how-to-work-with-dates-and-times-using-datecomponents)

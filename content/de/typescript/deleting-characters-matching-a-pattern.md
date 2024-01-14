@@ -1,37 +1,51 @@
 ---
-title:    "TypeScript: Entfernen von Zeichen, die einem Muster entsprechen"
+title:    "TypeScript: Löschen von Zeichen, die einem Muster entsprechen."
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen basierend auf einem bestimmten Muster kann hilfreich sein, um unerwünschte Teile aus einem Text zu entfernen oder um einen String in ein gewünschtes Format zu bringen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung sehr hilfreich sein, um unerwünschte Zeichen oder Daten zu entfernen. Zum Beispiel kann dies nützlich sein, um Eingaben von Benutzern zu überprüfen oder um Daten in einem bestimmten Format zu halten.
 
-## Wie geht man vor?
+## Wie geht man vor
 
-Die Funktion ```replace()``` in TypeScript ermöglicht es einem, ein Zeichen oder Muster in einem String zu identifizieren und durch ein anderes zu ersetzen. Zum Beispiel kann eine Telefonnummer, die in einem Text enthalten ist, durch ein leeres Zeichen gelöscht werden, um nur die Zahlen zurückzulassen.
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, kann man die `replace()` Methode in TypeScript verwenden. Diese Methode ermöglicht es, einen regulären Ausdruck als erstes Argument zu übergeben, um zu definieren, welche Zeichen ersetzt werden sollen. Als zweites Argument gibt man dann den Ersatztext an, der anstelle der übereinstimmenden Zeichen eingefügt werden soll. Hier ist ein Beispiel:
 
 ```TypeScript
-const string = "Meine Telefonnummer ist 123-456-7890" 
+const string = "Hello World!";
+const pattern = /[eo]/g;
+const newString = string.replace(pattern, "");
 
-const neueTelefonnummer = string.replace(/-/g, "")
-
-console.log(neueTelefonnummer) // Ausgabe: Meine Telefonnummer ist 1234567890
+console.log(newString); // Hll Wrld!
 ```
 
-Die ```replace()``` Funktion verwendet verschiedene Parameter, um das gewünschte Muster zu identifizieren und zu ersetzen. Indem man die Flagge "g" hinzufügt, wird die Funktion auf globaler Ebene angewendet, d.h. alle übereinstimmenden Zeichen werden ersetzt.
+In diesem Beispiel wird der reguläre Ausdruck `/[eo]/g` verwendet, um alle Vorkommen der Zeichen "e" und "o" im String "Hello World!" zu löschen. Der zweite Parameter ist ein leerer String `""`, was bedeutet, dass die übereinstimmenden Zeichen einfach durch nichts ersetzt werden.
 
-## Eintauchen in die Details
+## Tiefergehende Informationen
 
-Beim Löschen von Zeichen ist es wichtig zu beachten, dass die ```replace()``` Funktion nur das erste Zeichen oder Muster in einem String ersetzt. Um alle Vorkommen zu entfernen, muss die "g" Flagge verwendet werden. Zusätzlich können auch reguläre Ausdrücke verwendet werden, um noch spezifischere Muster zu identifizieren und zu ersetzen.
+Die `replace()` Methode akzeptiert auch eine Funktion als zweites Argument, anstatt eines einfachen Ersatztexts. Diese Funktion wird für jede Übereinstimmung aufgerufen und erlaubt es, den Ersatztext basierend auf der Übereinstimmung individuell zu generieren. Hier ist ein Beispiel:
 
-Eine weitere Möglichkeit ist die Verwendung von Type Guards in TypeScript. Diese ermöglichen es einem, ein Zeichen oder eine Gruppe von Zeichen innerhalb eines Strings zu überprüfen und gegebenenfalls zu löschen oder zu ersetzen. Zum Beispiel kann man mithilfe von Type Guards sicherstellen, dass die Telefonnummer in unserem Beispiel nur aus Zahlen besteht und alle anderen Zeichen gelöscht werden.
+```TypeScript
+const string = "Hello World!";
+const pattern = /[eo]/g;
+const newString = string.replace(pattern, (match, offset, fullString) => {
+  if (match === "e") {
+    return "a";
+  }
+  if (match === "o") {
+    return "u";
+  }
+});
 
-Das Löschen von Zeichen basierend auf einem Muster ist in TypeScript eine einfache und effektive Möglichkeit, die Verarbeitung von Texten zu verbessern.
+console.log(newString); // Hallo Warld!
+```
+
+In diesem Beispiel wird die Funktion verwendet, um für jede Übereinstimmung einen individuellen Ersatztext zu generieren. So wird das "e" durch ein "a" und das "o" durch ein "u" ersetzt.
 
 ## Siehe auch
 
-- [TypeScript Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Using Type Guards in TypeScript](https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-guards)
+- [Dokumentation der replace() Methode in der offiziellen TypeScript Dokumentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-replace)
+- [Tutorial zu regulären Ausdrücken in TypeScript](https://www.tutorialspoint.com/typescript/typescript_regular_expressions.htm)

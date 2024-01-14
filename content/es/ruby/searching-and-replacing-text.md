@@ -1,43 +1,33 @@
 ---
-title:    "Ruby: Buscando y remplazando texto"
+title:    "Ruby: Buscando y reemplazando texto"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué deberías aprender a buscar y reemplazar texto en Ruby?
 
-La búsqueda y reemplazo de texto es una herramienta útil para los programadores de Ruby. Permite encontrar y sustituir cadenas de texto en un archivo o documento de manera eficiente, ahorrando tiempo y esfuerzo.
+La búsqueda y el reemplazo de texto son habilidades esenciales para cualquier programador de Ruby. Aprender a realizar estas funciones te ayudará a ahorrar tiempo y esfuerzo al manipular grandes cantidades de datos. Además, te permitirá ser más eficiente y productivo en tu trabajo.
 
-##Cómo hacerlo
+## Cómo hacerlo:
 
-Para realizar una búsqueda y reemplazo de texto en Ruby, podemos utilizar el método `gsub` en un objeto de tipo `String`. Este método toma dos parámetros: la cadena de texto que deseamos reemplazar y la cadena de texto con la que queremos sustituirla. Por ejemplo:
-
-```Ruby
-texto = "Hola mundo!"
-texto.gsub("mundo", "Ruby") # resultado: "Hola Ruby!"
-```
-
-También podemos utilizar expresiones regulares para realizar una búsqueda y reemplazo más avanzada. Por ejemplo, podemos utilizar la expresión regular `\d+` para reemplazar todos los números en una cadena de texto con un asterisco `*`.
+Para buscar y reemplazar texto en Ruby, puedes utilizar el método `gsub()` de la clase `String`. Este método toma dos parámetros: la cadena de texto que deseas buscar y la cadena de texto por la que quieres reemplazarla. Aquí hay un ejemplo de cómo utilizarlo:
 
 ```Ruby
-texto = "Tengo 29 años."
-texto.gsub(/\d+/, "*") # resultado: "Tengo * años."
+mi_cadena = "Hola, mundo!"
+mi_cadena.gsub!("mundo", "amigos")
+puts mi_cadena
 ```
 
-##Profundizando
+El output de este código sería: `Hola, amigos!`. Como puedes ver, la cadena original se ha modificado con el nuevo texto. También puedes utilizar el método `sub()` para buscar y reemplazar solo la primera coincidencia.
 
-La búsqueda y reemplazo de texto en Ruby también nos permite utilizar bloques de código para realizar una sustitución más compleja. Por ejemplo, podemos convertir todas las palabras en una cadena de texto a mayúsculas mediante el uso del método `gsub!`. Este método toma un bloque como parámetro y nos permite modificar directamente el objeto original. Por ejemplo:
+## Profundizando:
 
-```Ruby
-texto = "Hola mundo!"
-texto.gsub!(/\w+/, &:upcase) # resultado: "HOLA MUNDO!"
-```
+La búsqueda y el reemplazo de texto en Ruby pueden ser aún más poderosos si utilizas expresiones regulares. Estas expresiones te permiten buscar patrones en lugar de una cadena de texto literal. Por ejemplo, si quisieras buscar y reemplazar todas las letras "a" seguidas de una "b" en una cadena, podrías utilizar la siguiente expresión regular: `a(b)+`, donde el signo "+" indica que la "b" puede aparecer una o más veces.
 
-Otro método útil es `sub`, que funciona de manera similar a `gsub` pero solo reemplaza la primera ocurrencia de la cadena de texto que proporcionamos. También podemos utilizar un bloque para realizar una sustitución más avanzada.
+Además, también puedes utilizar el modificador `i` para hacer la búsqueda insensible a mayúsculas o minúsculas. Esto significa que si buscas la letra "a" con este modificador, también se coincidirán "A" o "a".
 
-## Ver también
+## Véase también:
 
-- [La documentación oficial de Ruby sobre el método `gsub`](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Tutorial de búsqueda y reemplazo en Ruby](https://www.rubyguides.com/2019/07/ruby-gsub-method/)
-- [Ejemplos de uso de expresiones regulares en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+Para seguir aprendiendo sobre las expresiones regulares en Ruby, te recomendamos revisar la documentación oficial de Ruby y probar diferentes patrones de búsqueda y reemplazo en tu código. También puedes explorar la librería `regexp` para obtener más funciones avanzadas. ¡Buena suerte en tu aprendizaje de buscar y reemplazar texto en Ruby!

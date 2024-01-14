@@ -1,39 +1,56 @@
 ---
 title:    "TypeScript: 读取命令行参数"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么阅读命令行参数是必要的？
+## 为什么要读取命令行参数？
 
-当我们在编写一些复杂的程序时，有时候需要用户提供一些额外的信息来指定程序的行为。这时，命令行参数就起到了关键的作用。通过阅读命令行参数，我们可以让程序更加灵活、可定制化，并且能够满足不同用户的需求。
+读取命令行参数是一项非常有用的技能，特别是对于那些经常需要从命令行操作的开发人员来说。通过读取命令行参数，您可以在程序运行时向程序传递不同的参数，从而改变程序的行为。这样可以提高程序的灵活性和可定制性，使得程序可以更好地满足不同的需求。
 
-## 如何阅读命令行参数
+## 如何读取命令行参数？
 
-阅读命令行参数可以通过使用process.argv数组来实现。下面的例子展示了如何使用TypeScript来读取命令行参数，并输出对应的结果：
+为了读取命令行参数，我们可以使用process对象提供的argv属性。这个属性返回一个字符串数组，其中包含了在命令行中输入的所有参数。下面是一个示例代码，展示了如何读取命令行参数并打印出来：
 
 ```TypeScript
-// 导入process模块
-import process from 'process';
-
-// 使用process.argv数组来读取命令行参数
-const arguments = process.argv;
-
-// 输出第二个命令行参数
-console.log(`Hello ${arguments[2]}!`);
+const args = process.argv;
+args.forEach(arg => console.log(arg));
 ```
 
-假设以上代码保存为`app.ts`，在命令行中执行`ts-node app.ts John`，将会输出`Hello John!`。可以看到，我们可以通过在命令行中输入不同的参数来对程序进行定制，而无需修改程序的源代码。
+假设我们在命令行中输入了以下命令： `node index.ts arg1 arg2 arg3`，那么上面的例子代码将会输出以下内容：
 
-## 深入了解命令行参数
+```
+node
+index.ts
+arg1
+arg2
+arg3
+```
 
-除了使用`process.argv`数组外，我们还可以使用`commander`模块来更加灵活地读取命令行参数。`commander`模块提供了更加强大的功能，例如支持命令行参数的选项设置、帮助信息的生成等。通过学习`commander`模块，我们可以更加深入地了解命令行参数的使用方法。
+我们可以通过使用数组的`slice()`方法来获取我们想要的参数，比如从第三个参数开始。下面是一个更复杂的示例，展示了如何读取命令行参数并把它们转换成数字：
+
+```TypeScript
+const args = process.argv.slice(2);
+const numArgs = args.map(arg => parseInt(arg, 10));
+console.log(numArgs);
+```
+
+如果我们输入了命令 `node index.ts 5 10 15`，那么上面的代码将会输出以下内容：
+
+```
+[5, 10, 15]
+```
+
+## 深入了解读取命令行参数
+
+除了使用argv属性外，还可以使用第三方库来处理命令行参数，比如yargs库。这个库提供了更多的功能，比如解析命令行参数并提供帮助文档和错误处理。如果您需要更复杂的命令行参数处理，可以考虑使用这个库。
+
+此外，还可以通过使用TS命令行工具来简化读取命令行参数的过程。这个工具可以自动生成带有类型检查的命令行参数解析器，减少开发人员的工作量。
 
 ## 参考链接
 
-- [TypeScript官方文档](https://www.typescriptlang.org/docs/handbook/command-line-arguments.html)
-- [Node.js进程文档](https://nodejs.org/dist/latest-v14.x/docs/api/process.html#process_process_argv)
-- [commander模块文档](https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md)
-
-## 参考链接
+- [TypeScript命令行工具](https://github.com/TypeStrong/ts-command-line)
+- [yargs库](https://github.com/yargs/yargs)
+- [process.argv文档](https://nodejs.org/api/process.html#process_process_argv)

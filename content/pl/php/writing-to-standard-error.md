@@ -1,43 +1,42 @@
 ---
 title:    "PHP: Pisanie do standardowego błędu"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Dlaczego: Kiedy i dlaczego zapisywać błędy do standardowego wyjścia w języku PHP?
+## Dlaczego Programować w PHP Jest Podstawą 
 
-Często w procesie programowania spotykamy się z różnego rodzaju błędami, awariami i wyjątkami. Zamiast ignorować je lub wyświetlać jedynie dla nas, warto jest pomyśleć o zapisywaniu tych informacji do standardowego wyjścia. Dzięki temu możemy dokładniej monitorować nasze aplikacje, debugować problemy oraz sprawić, by nasze programy działały bardziej wydajnie. W tym artykule dowiesz się, kiedy i dlaczego warto zapisywać błędy do standardowego wyjścia w języku PHP.
+W dzisiejszych czasach, większość stron internetowych jest zbudowana w oparciu o język PHP. Jest to język programowania, który jest prosty w nauce i bardzo wydajny. Jednym z podstawowych elementów programowania w PHP jest wyjście do standardowego błędu (ang. standard error). W tym artykule dowiesz się, dlaczego jest to ważna umiejętność dla każdego programisty PHP.
 
-## Dlaczego
+## Jak Wykorzystać Wyjście do Standardowego Błędu 
 
-Zapisywanie błędów do standardowego wyjścia jest przydatne z wielu powodów. Po pierwsze, pozwala nam kontrolować i śledzić błędy, które mogą występować w naszych aplikacjach. Dzięki temu możemy szybko wychwycić potencjalne problemy i naprawić je zanim staną się większymi wyzwaniami. Ponadto, zapisywanie błędów do standardowego wyjścia umożliwia nam monitorowanie wydajności naszych programów i identyfikowanie obszarów, które mogą wymagać optymalizacji.
-
-## Jak to zrobić
-
-Aby zapisać błędy do standardowego wyjścia w języku PHP, możemy skorzystać z funkcji `fwrite`. Przykładowy kod wykorzystujący tę funkcję wyglądałby następująco:
+Aby wywołać wyjście do standardowego błędu w PHP, używamy funkcji `fwrite()` w połączeniu z `STDERR` jako pierwszym parametrem. Poniżej znajduje się przykładowy kod, który wypisuje "Błąd!" do standardowego błędu:
 
 ```PHP
 <?php
-// Ustawienie pliku, do którego chcemy zapisać błędy
-$logFile = fopen("error-log.txt", "a") or die("Nie można otworzyć pliku!");
-
-// Zapisanie błędu do pliku
-fwrite($logFile, "Błąd: Nie można połączyć się z bazą danych!");
-
-// Zakończenie sesji zapisu do pliku
-fclose($logFile);
-?>
+fwrite(STDERR, "Błąd!");
 ```
 
-W powyższym przykładzie przy użyciu funkcji `fopen` ustawiamy plik, do którego będziemy zapisywać błędy. Następnie, korzystając z funkcji `fwrite`, zapisujemy informację o błędzie do wybranego pliku. Na koniec musimy jeszcze zamknąć sesję zapisu do pliku przy pomocy funkcji `fclose`.
+Gdy to wykonamy, zobaczymy następujący wynik:
 
-## Wszystko na temat zapisywania błędów do standardowego wyjścia
+```
+Błąd!
+```
 
-Zapisywanie błędów do standardowego wyjścia to nie tylko prosty sposób na kontrolowanie i monitorowanie naszych aplikacji, ale także ważna umiejętność, którą warto posiąść. Warto pamiętać, że zapisywanie błędów do standardowego wyjścia nie jest jedynym sposobem na ich obsługę, ale jest to jedna z najbardziej przydatnych technik, zwłaszcza w trakcie debugowania aplikacji.
+Mamy teraz kontrolę nad wyjściem do standardowego błędu, dzięki czemu możemy wyświetlać własne komunikaty o błędach w naszym kodzie lub informować o wyjątkach w naszej aplikacji.
 
-## Zobacz również
+## Głębsze Zanurzenie 
 
-- [Dokumentacja PHP na temat funkcji fwrite](https://www.php.net/manual/en/function.fwrite.php)
-- [Przykładowy tutorial na temat zapisywania błędów w PHP](https://www.codecademy.com/articles/php-error-logs)
-- [Artykuł o różnych sposobach obsługi błędów w języku PHP](https://www.freecodecamp.org/news/handling-errors-in-php-b5f67549f809/)
+Wyjście do standardowego błędu jest szczególnie przydatne w sytuacjach, gdy nie chcemy zamieszać naszego wyjścia standardowego (ang. standard output). Dzięki temu mamy możliwość oddzielenia komunikatów o błędach od zwykłych danych wyświetlanych dla użytkownika. Dodatkowo, dzięki wykorzystaniu wyjścia do standardowego błędu, nie przerywamy działania naszej aplikacji w przypadku wystąpienia błędu.
+
+Warto również pamiętać, że wyjście do standardowego błędu jest również wykorzystywane przez system operacyjny w celu wyświetlenia komunikatów o błędach. Dzięki temu, jeśli nasza aplikacja generuje wyjście do standardowego błędu, możemy również z łatwością śledzić i diagnozować problemy.
+
+## Zobacz Również 
+
+- [Dokumentacja PHP o funkcji fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [Poradnik o wyjściu do standardowego błędu na GeeksforGeeks](https://www.geeksforgeeks.org/php-fwrite-stderr/)
+- [Artykuł o znaczeniu wyjścia do standardowego błędu na Medium](https://medium.com/@lasseebert/php-stderr-e5471d50243f)
+
+Dzięki wyjściu do standardowego błędu, możemy ułatwić sobie nie tylko diagnostykę naszej aplikacji, ale także zarządzanie błędami w naszym kodzie PHP. Mam nadzieję, że ten artykuł był pomocny dla Ciebie i będziesz w stanie wykorzystać tę umiejętność w swoim codziennym programowaniu. Powodzenia!

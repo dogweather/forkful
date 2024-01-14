@@ -1,39 +1,37 @@
 ---
-title:    "Javascript: Tekstitiedoston lukeminen"
+title:    "Javascript: Tiedoston lukeminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tekstittiedoston lukemisella on monia käytännön sovelluksia ohjelmoinnissa. Se voi tarjota tietoa, jota tarvitaan tietokannan luomiseen, tiedon tallentamiseen tai yksinkertaisesti tiedon näyttämiseen käyttäjälle.
 
-## Kuinka tehdä
-```Javascript
-const fs = require('fs');  // Tuodaan "fs" moduuli käyttöön
+Tekstilukemisen taito on tärkeä monille ohjelmoijille, erityisesti jos he työskentelevät tiedostojen kanssa. Natiivi JavaScript-kielen avulla voit helposti lukea ja käsitellä tekstiä sisältäviä tiedostoja.
 
-// Luetaan tiedosto "example.txt" ja tulostetaan sen sisältö
-fs.readFile('example.txt', 'utf8', (err, data) => {  
-  if (err) throw err;
-  console.log(data);  
-})
-```
+## Kuinka
 
-Tässä esimerkissä käytämme Node.js:ssä olevaa "fs" moduulia lukemaan tekstittiedoston käyttäen `readFile`-funktiota. Tämä funktio ottaa kolme parametria: tiedoston nimen, merkistötyypin ja virheenkäsittelyfunktion. Koodin suorituksen jälkeen tulostetaan tekstittiedoston sisältö konsoliin.
+Tekstilukemisen avaaminen JavaScriptillä on yksinkertaista. Voit käyttää esimerkiksi readFile-metodia, joka on saatavilla Node.js: ssä. Tämä metodi avaa ja lukee tiedoston sisällön ja palauttaa sen merkkijonona.
 
 ```Javascript
-// Luodaan uusi tekstittiedosto "newfile.txt"
-fs.writeFile('newfile.txt', 'Tämä on uusi tekstittiedosto!', 'utf8', (err) => {
+const fs = require('fs');
+const data = fs.readFile('tekstitiedosto.txt', 'utf8', (err, data) => {
   if (err) throw err;
-  console.log('Tiedosto luotu!');
-})
+  console.log(data);
+});
 ```
 
-Tässä käytämme `writeFile`-funktiota luomaan uuden tekstittiedoston. Tämä funktio ottaa neljä parametria: tiedoston nimen, sisällön, merkistötyypin ja virheenkäsittelyfunktion. Koodin suorituksen jälkeen luodaan uusi tekstittiedosto nimellä "newfile.txt", jossa on sisältönä "Tämä on uusi tekstittiedosto!".
+Tämä antaa meille tiedoston sisällön, joka voidaan tallentaa muuttujaan ja käsitellä halutulla tavalla. Voit myös käyttää HTML5 FileReader API -sovellusta, jos haluat tehdä tämän selaimessa.
 
-## Syventävä tieto
-Tekstittiedoston lukeminen on vain yksi osa tiedonkäsittelyä ohjelmoinnissa. On myös tärkeää huomata, että tiedostojen lukeminen ja kirjoittaminen voi olla hidas prosessi ja voi hidastaa ohjelman suoritusta. Siksi on hyvä idea oppia käyttämään muistia ja taulukoita tietojen säilyttämiseen ja käsittelyyn sen sijaan, että jatkuvasti luodaan ja muokataan tekstittiedostoja.
+## Syväsukellus
+
+Kun haluat lukea tekstiä sisältäviä tiedostoja, on tärkeää ottaa huomioon tiedostomuoto ja mahdolliset virheet, jotka voivat ilmetä. Esimerkiksi jos tiedostosi on iso, saatat kohdata suorituskykyongelmia. Voit myös ajaa erilaisia operaatioita tiedoston kanssa, kuten tiedostojen yhdistämisen tai liittämisen.
+
+On myös tärkeää ottaa huomioon tiedoston koodaus, sillä eri kielet käyttävät erilaisia koodaustyyppejä. Sinun on varmistettava, että tiedoston sisältämä teksti muunnetaan oikein sen koodauksesta riippuen.
 
 ## Katso myös
-- [Node.js "fs" moduuli](https://nodejs.org/api/fs.html)
-- [Tutorial: Reading and Writing Files in Node.js](https://stackabuse.com/reading-and-writing-files-in-node-js/)
+
+- [Node.js - tiedostojen lukeminen](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- [HTML5 FileReader API -sovellus](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+- [Tiedoston koodauksen huomioiminen JavaScriptillä](https://www.w3docs.com/snippets/javascript/how-to-detect-the-text-encoding-of-a-file.html)

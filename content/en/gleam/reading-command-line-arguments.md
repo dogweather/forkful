@@ -1,59 +1,61 @@
 ---
 title:    "Gleam recipe: Reading command line arguments"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Command line arguments are an essential part of any programming language, allowing users to provide input to a program directly from the terminal. In this blog post, we will explore how to read and handle these arguments in Gleam, a modern and functional programming language.
+Have you ever encountered a program that requires you to enter certain information through the command line when you run it? You may have seen something like `node index.js --name="John" --age=25`. These are known as command line arguments and they allow you to provide input to a program without having to manually enter it while it is running. But have you ever wondered how to read these arguments in the program itself? In this blog post, we'll dive into the world of command line arguments in Gleam and learn how to read and utilize them in your programs.
 
 ## How To
-First, we need to define command line arguments in our `main` function. This is done by using the `argv` function from the `gleam/io` module. Here's an example of a simple `main` function with command line arguments:
+
+Reading command line arguments in Gleam is a fairly straightforward process. First, we need to import the `command` module which provides functions for working with command line arguments. We can do this by adding the following code at the top of our Gleam file:
 
 ```Gleam
-import gleam/io
+import gleam/command
+```
 
-pub fn main(_args: List(String)) {
-  let args = _args
+Next, we can use the `arguments` function from the `command` module to get a list of all the arguments passed in when running our program. Let's take a look at an example:
 
-  // rest of your program
+```Gleam
+fn main() {
+    arguments = command.arguments()
+    // do something with the arguments
 }
 ```
 
-Once we have defined our `args` variable, we can use it to access the command line arguments in our program. The `args` variable is a list of strings, with each element representing a command line argument passed by the user.
-
-Let's look at an example of a program that reads in two command line arguments and prints them out:
+The `arguments` variable will now contain a list of all the arguments passed in, including the program name itself. We can access individual arguments by their index in the list, for example `arguments[1]` would give us the first argument after the program name. We can also use the `length` function to find out the total number of arguments passed in. Let's see how we can use this to print out all the arguments in our program:
 
 ```Gleam
-import gleam/io
-
-pub fn main(args: List(String)) {
-  let first_arg = args[0]
-  let second_arg = args[1]
-
-  gleam/io.println(first_arg)
-  gleam/io.println(second_arg)
+fn main() {
+    arguments = command.arguments()
+    
+    for argument in arguments {
+        io.println("Argument: " ++ argument)
+    }
+    
+    io.println("Total arguments: " ++ command.length(arguments))
 }
 ```
 
-If we run this program with `gleam run my_program.gleam first second` in the terminal, the output will be:
-
+If we run this program with the arguments `node index.js hello world`, we would get the following output:
 ```
-first
-second
+Argument: node
+Argument: hello
+Argument: world
+Total arguments: 3
 ```
 
 ## Deep Dive
-In addition to using the `argv` function, there are other functions in the `gleam/io` module that can be useful for handling command line arguments. For example:
 
-- `length(args)` - to get the number of command line arguments passed
-- `slice(start, end, args)` - to create a sublist of command line arguments
-- `starts_with(prefix, args)` - to check if a command line argument starts with a given prefix
+Now that we know the basics of reading command line arguments, let's take a deeper look at the process. As mentioned earlier, the `arguments` function returns a list of all the arguments passed in, including the program name itself. This means that the first element in the list will always be the program name, followed by the actual arguments.
 
-Additionally, Gleam also has the `gleam/env` module which can be useful for accessing environment variables, which can be used as command line arguments as well.
+Additionally, the arguments will be treated as strings by default, but we can use functions like `to_int` or `to_float` to convert them to a different data type if needed. We can also use pattern matching to handle specific argument patterns and perform different actions based on the input.
 
 ## See Also
-- [Gleam docs on handling command line arguments](https://gleam.run/book/tutorials/commandline_arguments.html)
-- [Learn Gleam](https://github.com/gleam-lang/learn-gleam)
-- [Gleam Community Forum](https://community.gleam.run/)
+
+- [Gleam documentation: Command line arguments](https://gleam.run/book/tutorials/command_line_arguments.html)
+- [Command module in the Gleam standard library](https://gleam.run/modules/command.html)
+- [How to read command line arguments in Node.js](https://stackabuse.com/how-to-read-command-line-arguments-in-node-js/)

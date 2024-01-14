@@ -1,50 +1,49 @@
 ---
-title:    "Haskell: 미래 또는 과거 날짜 계산하기"
+title:    "Haskell: 미래나 과거의 날짜 계산하기"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-Haskell로 미래나 과거의 날짜를 계산하는 게 중요한 이유는 데이터 분석, 비즈니스 로직 등 다양한 프로그래밍 분야에서 날짜 계산이 필수적이기 때문입니다. 또한 Haskell은 강력한 함수형 프로그래밍 언어로, 날짜 계산과 같은 작업을 빠르고 정확하게 처리할 수 있습니다.
+우리는 모두 인생에서 날짜를 계산하는 일에 많은 시간을 투자하게 됩니다. 결혼식, 생일, 회의 등 여러 가지 이유로 우리는 특정 날짜와 시간을 계산하고 그에 따라 행동을 취하곤 합니다. 하지만 종종 우리는 미래나 과거의 날짜를 정확하게 계산하는 것이 필요할 때가 있습니다. 이럴 때 우리는 흔히 사용하는 프로그래밍 언어 중 하나인 Haskell을 사용하여 날짜를 계산할 수 있습니다.
 
-## 어떻게
+# 방법
 
-Haskell에서 날짜를 계산하는 방법은 다양하지만, 가장 기본적인 방법은 `Data.Time` 모듈을 사용하는 것입니다. 먼저 `import Data.Time` 문을 추가해야 합니다. 그리고 `UTCTime`과 `addUTCTime` 함수를 사용하여 날짜 계산을 할 수 있습니다. 아래는 오늘 날짜로부터 1년 후의 날짜를 계산하는 예제 코드입니다.
+우선, 미래 또는 과거의 특정 날짜를 계산하기 위해 필요한 라이브러리를 임포트해야 합니다.
 
 ```Haskell
 import Data.Time
-
--- 오늘 날짜를 가져옴
-today :: IO UTCTime
-today = getCurrentTime
-
--- 1년 후의 날짜를 계산
-oneYearLater :: IO UTCTime
-oneYearLater = do
-    -- 오늘 날짜를 가져옴
-    now <- today
-    -- 1년을 추가하여 계산
-    let future = addUTCTime (365 * 24 * 60 * 60) now
-    return future
-
-main = do
-    -- 1년 후의 날짜 출력
-    res <- oneYearLater
-    putStrLn $ show res
 ```
 
-위 코드는 `2020-07-22 06:14:16 UTC`와 같은 형식으로 출력될 것입니다.
+그 다음, 아래와 같은 함수를 사용하여 특정 날짜를 계산할 수 있습니다.
 
-## 심층 탐구
+```Haskell
+addDays :: Integer -> Day -> Day
+```
 
-Haskell에서 날짜를 계산하는 방법에는 더 많은 것이 있습니다. 예를 들어 `TimeSpan` 라이브러리를 사용하면 시간 단위를 자유롭게 조절할 수 있습니다. 또한 `UTCTime`과 `DiffTime` 데이터 타입의 사용 방법을 익히는 것도 중요합니다. 더 자세한 내용은 공식 문서나 블로그 등을 참고하시기 바랍니다.
+여기서 Integer는 미래나 과거에 더할 날짜의 수이며, Day는 계산하고자 하는 날짜입니다. 예를 들어, 만약 우리가 현재 날짜에서 3일 후의 날짜를 계산하고 싶다면 아래와 같이 코딩할 수 있습니다.
 
-## 관련 자료
+```Haskell
+addDays 3 (fromGregorian 2021 9 24)
+```
 
-- [Haskell 공식 문서](https://www.haskell.org/documentation/)
-- [Real World Haskell 블로그](https://www.realworldhaskell.org/)
-- [Haskell Reddit 커뮤니티](https://www.reddit.com/r/haskell/)
-- [Haskell Time 라이브러리 문서](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [TimeSpan 라이브러리 GitHub 페이지](https://github.com/jship/TimeSpan)
+위의 코드를 실행하면 2021년 9월 24일로부터 3일 후인 2021년 9월 27일이 계산되게 됩니다.
+
+# 딥 다이브
+
+더 많은 기능을 알고 싶다면 아래 레퍼런스를 참고하시기 바랍니다.
+
+→ [Haskell의 Data.Time 라이브러리 문서](https://hackage.haskell.org/package/time-1.11.1/docs/Data-Time.html)
+
+→ [Haskell의 날짜 계산 관련 함수 설명](https://hackage.haskell.org/package/time-1.11.1/docs/Data-Time.html#g:9)
+
+→ [더 많은 예제 코드와 출력 결과는 여기서 확인하세요.](https://github.com/miraeyes/haskell-dates)
+
+# 같이 보기
+
+→ [Haskell 학습을 위한 코딩 향상 방법](https://miraeyes.github.io/learning-haskell/)
+
+→ [데이터 구조를 이용한 Haskell 코딩 팁](https://miraeyes.github.io/haskell-data-structures/)

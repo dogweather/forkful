@@ -1,55 +1,32 @@
 ---
 title:    "Gleam: Schreiben auf Standardfehler"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Schreiben von Fehlermeldungen ist eine wichtige Fähigkeit für jeden Programmierer, da es die Zuverlässigkeit und Fehlerbehebung von Programmen verbessert.
+Das Schreiben von Standardfehler (auch bekannt als stderr) während des Programmierens kann sehr nützlich sein, um Fehlermeldungen anzuzeigen oder um den Fortschritt von Programmen zu verfolgen. Es ist eine wichtige Methode, um Debugging zu erleichtern und die Benutzererfahrung zu verbessern.
 
-## Wie funktioniert es?
-
-Die Verwendung der `write_stderr` Funktion in Gleam ermöglicht es, Fehlermeldungen an die Standardfehlerausgabe zu übergeben. Hier ist ein Beispielcode in Gleam:
+# Wie geht das?
 
 ```Gleam
-import gleam/log
-
-let message = "Ein Fehler ist aufgetreten!"
-
-log.write_stderr(message)
+let name = "Max"
+log.error("Hello {name}!", name)
 ```
 
-Die Ausgabe sieht wie folgt aus:
+In diesem Beispiel wird der Name "Max" an die Standardfehlerausgabe gesendet und die Fehlermeldung "Hello Max!" wird angezeigt. Durch die Verwendung von log.error und der Platzhalter "{name}" können wir dynamisch Werte in die Fehlermeldung einfügen.
 
-```
-Ein Fehler ist aufgetreten!
-```
+# Tiefer Einblick
 
-## Tiefer Eintauchen
+Das Schreiben von Standardfehler kann auch für das Logging nützlich sein, insbesondere wenn mehrere Ebenen von Fehlermeldungen angezeigt werden müssen. Es kann auch bei der Verwendung von Tests hilfreich sein, um festzustellen, welche Teile des Codes nicht wie erwartet funktionieren.
 
-Es gibt verschiedene Gründe, warum das Schreiben von Fehlern an die Standardfehlerausgabe sinnvoll ist. Zum einen ermöglicht es eine effektive Fehlerbehandlung, da Fehlermeldungen direkt auf der Konsole angezeigt werden und somit leichter zu erkennen sind. Zum anderen kann die Standardfehlerausgabe auch für Debugging-Zwecke genutzt werden, um spezifische Informationen zu bestimmten Aspekten des Programms zu erhalten.
+Es ist wichtig zu beachten, dass das Schreiben von Standardfehler die Leistung des Programms beeinträchtigen kann, daher sollte es sparsam eingesetzt werden. Außerdem ist es wichtig, die Fehlermeldungen sorgfältig zu gestalten, damit sie leicht verständlich und hilfreich für den Benutzer sind.
 
-In Gleam können auch Formatierungsoptionen wie Farben und Zeilenumbrüche verwendet werden, um die Lesbarkeit von Fehlermeldungen zu verbessern. Hier ist ein Beispielcode:
+# Siehe auch
 
-```Gleam
-import gleam/log
-
-let message = "Dies ist eine [red]Error-Nachricht[/] mit einem\nZeilenumbruch."
-
-log.write_stderr(message)
-```
-
-Und die Ausgabe sieht so aus:
-
-```
-Dies ist eine Error-Nachricht mit einem
-Zeilenumbruch.
-```
-
-## Siehe auch
-
-- Offizielle Dokumentation zu Gleam: [https://gleam.run/](https://gleam.run/)
-- "Einführung in die Fehlerbehandlung in Gleam" (Englisch): [https://gleam.run/book/case\_studies/logging\_errors.html](https://gleam.run/book/case_studies/logging_errors.html)
-- "Debugging von Gleam-Code" (Englisch): [https://gleam.run/blog/debugging.html](https://gleam.run/blog/debugging.html)
+- [Offizielle Gleam-Dokumentation zu log.error](https://gleam.run/book/getting-started/using-stdio-for-debugging.html)
+- [Weitere nützliche Gleam-Ressourcen](https://gleam.run/community.html)
+- [Beispielprojekte für die Verwendung von Gleam](https://github.com/gleam-lang/awesome-gleam)

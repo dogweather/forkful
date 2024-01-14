@@ -1,40 +1,53 @@
 ---
 title:    "Elixir: Merkkijonojen yhdistäminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää merkkijonojen yhdistämistä Elixir-ohjelmoinnissa?
 
-Miksi koodaajat haluavat yhdistää merkkijonoja? Yhdistäminen on hyödyllinen toiminto, kun haluat luoda uusia merkkijonoja olemassa olevista tiedoista tai muokata olemassa olevia merkkijonoja. Se on myös välttämätöntä, kun haluat rakentaa dynaamisen käyttöliittymän tai tulostaa monimutkaisia ​​viestejä.
+Merkkijonot ovat tärkeä osa ohjelmointia, sillä ne mahdollistavat tekstipohjaisten tietojen käsittelyä. Merkkijonojen yhdistäminen eli konkatenointi onkin hyödyllinen taito, jota tarvitaan usein Elixir-ohjelmoinnissa. Se mahdollistaa eri muuttujien ja osien yhdistämisen yhdeksi merkkijonoksi, jota voidaan käyttää esimerkiksi tulostukseen tai tallentamiseen. Seuraavassa osiossa kerromme, miten merkkijonojen yhdistämistä voi toteuttaa Elixirissä.
 
-## Näin teet sen
+## Miten tehdä merkkijonojen yhdistäminen Elixirissä
 
-Elixirissä merkkijonojen yhdistäminen tehdään `<>` operaattoria käyttämällä. Esimerkiksi:
+Merkkijonojen yhdistäminen Elixirissä onnistuu käyttämällä operaattoria `<>` tai `++`. Ensimmäinen yhdistää kaksi merkkijonoa yhdeksi, kun taas jälkimmäinen yhdistää listan merkkijonoja yhdeksi merkkijonoksi. Lisäksi Elixirissä voi käyttää myös `interpolate` -funktiota, joka yhdistää merkkijonon ja muuttujan arvon.
 
-```Elixir
-"Hello" <> " " <> "World"
-```
-
-tulostaa merkkijonon "Hello World". Huomaa, että `<>` voi yhdistää sekä merkkijonoja että muita tietotyyppejä, kuten numeroita, listoja ja karttoja.
-
-Toinen tapa on käyttää `concat` funktiota, joka ottaa vastaan ​​kaksi tai useampia parametreja. Esimerkiksi:
+Esimerkiksi:
 
 ```Elixir
-concat("Hello", " ", "World")
+nimi = "Matti"
+tervehdys = "Hei " <> nimi
+IO.puts tervehdys
 ```
 
-tulostaa saman merkkijonon "Hello World".
+Tulostaa:
 
-## Syvempää tietoa
+```
+Hei Matti
+```
 
-Elixirin merkkijonojen yhdistäminen on tehokkaampaa kuin monilla muilla kielillä, koska merkkijonan sisäinen rakenne on binääri. Tämä tarkoittaa, että Elixir tallentaa merkkijonot muistissa binääripuuna, mikä mahdollistaa nopean yhdistämisen ja muokkaamisen. Lisäksi Elixirin vakiofunktio `++` käyttää samaa binäärihyppytekniikkaa lisätietojen lisäämiseksi olemassa olevaan merkkijonoon.
+```Elixir
+kaupungit = ["Helsinki", "Tampere", "Turku"]
+kaupunkilista = "Suomen kaupungit: " ++ kaupungit
+IO.puts kaupunkilista
+```
 
-On myös tärkeää huomata, että merkkijonojen yhdistäminen ei ole aina tehokkain tapa luoda uusia merkkijonoja. Kun yhdistät useita merkkijonoja, Elixir luo uuden binääripuun jokaisen yhdistämisen yhteydessä. Tämä voi aiheuttaa nopeuden laskun, jos yhdisteitä on paljon. Tässä tapauksessa on suositeltavaa käyttää `StringBuilder` -moduulia, joka mahdollistaa tehokkaan merkkijonojen luomisen ja muokkaamisen.
+Tulostaa:
+
+```
+Suomen kaupungit: [Helsinki, Tampere, Turku]
+```
+
+Yhdistämisen lisäksi Elixirissä on myös muita hyödyllisiä merkkijonojen käsittelytoimintoja, kuten `String.upcase` ja `String.downcase`, jotka muuttavat merkkijonon kirjaimet ylä- tai alakirjaimiksi.
+
+## Syvällisempi sukellus merkkijonojen yhdistämiseen
+
+Merkkijonojen yhdistämisen lisäksi Elixirissä on myös muita tapoja käsitellä merkkijonoja, kuten `String.replace` ja `String.split`. Tämä antaa enemmän mahdollisuuksia tehdä monimutkaisempia merkkijonojen käsittelyjä. Lisäksi Elixirissä voi käyttää myös `Sigil` -syntaksia, joka mahdollistaa merkkijonojen luomisen erikoismerkkien avulla.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio merkkijonon yhdistämisestä](https://hexdocs.pm/elixir/String.html#module-concatenation)
-- [Chris McCordin blogiartikkeli merkkijonon yhdistämisestä Elixirissä](https://dev.to/elixirprogrammer/three-ways-to-concatenate-strings-in-elixir-269a)
-- [Packt Pub -artikkeli merkkijonon yhdistämisestä Elixirissä](https://www.packtpub.com/books/content/working-strings-elixir)
+- Elixir merkkijonojen dokumentaatio: https://hexdocs.pm/elixir/String.html
+- Elixir merkkijonojen operointi: https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#strings
+- Elixir Sigil-syntaksin opas: https://elixir-lang.org/getting-started/sigils.html

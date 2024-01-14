@@ -1,72 +1,45 @@
 ---
-title:    "Javascript: Att Kontrollera Om En Katalog Finns"
+title:    "Javascript: Kontrollera om en katalog finns"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Det är viktigt att ha en funktion som kan kontrollera om en mapp finns eller inte, eftersom detta kan hjälpa till att förhindra felaktig kodning och minska risken för buggar.
+Att kontrollera om en katalog finns på din dator kan vara en viktig del av att skriva effektiv kod. Genom att kontrollera om en katalog existerar kan du till exempel undvika att skriva över viktig data eller skapa onödiga kataloger.
 
-## Hur man gör
+## Så här
 
-```Javascript
-if (fs.existsSync(path)) {
-  console.log('Mappen finns');
-} else {
-  console.log('Mappen finns inte');
-}
-```
-
-Koden ovan använder den inbyggda Node.js-funktionen `fs.existsSync()` för att kontrollera om en mapp existerar. Funktionen tar in sökvägen till mappen som ett argument och returnerar `true` om mappen finns och `false` om den inte gör det. Sedan kan vi använda en `if`-sats för att utföra en handling beroende på resultatet.
-
-I följande exempel ber vi användaren att ange en sökväg och sedan kontrollerar vi om den mappen existerar eller inte.
+För att kontrollera om en katalog finns på din dator kan du använda dig av följande kod i Javascript:
 
 ```Javascript
 const fs = require('fs');
-const readline = require('readline');
+const path = 'Sökväg/till/din/katalog';
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-rl.question('Ange sökvägen till mappen: ', (path) => {
-  if (fs.existsSync(path)) {
-    console.log('Mappen finns');
-  } else {
-    console.log('Mappen finns inte');
-  }
-
-  rl.close();
+// Kontrollera om katalogen existerar
+fs.access(path, (error) => {
+    if (error) {
+        console.log("Katalogen existerar inte");
+    } else {
+        console.log("Katalogen existerar");
+    }
 });
 ```
 
-Om användaren anger en sökväg till en befintlig mapp kommer programmet att skriva ut "Mappen finns". Om användaren anger en sökväg till en mapp som inte existerar kommer programmet att skriva ut "Mappen finns inte".
+I det här  exempel används modulen "fs" för att läsa filesystemet och funktionen "access" för att kontrollera om den specifika sökvägen finns. Om katalogen inte existerar kommer en felmeddelande att visas, annars kommer ett meddelande som bekräftar att katalogen finns.
 
 ## Djupdykning
 
-Node.js tillhandahåller en mängd olika sätt att kontrollera om en mapp existerar. En annan metod är att använda `fs.stat()` som returnerar information om en fil eller mapp och ger en felkod om det inte går att hämta informationen.
+En vanligt användning av att kontrollera om en katalog finns är att undvika att råka skriva över viktig data. Till exempel om du skapar en mapp för att lagra användarens personliga dokument, kan du först kontrollera om katalogen redan existerar istället för att skriva över befintlig data. 
 
-```Javascript
-fs.stat(path, (err, stats) => {
-  if (err) {
-    console.log(err);
-  } else {
-    // Om stats är undefined betyder det att mappen inte finns
-    if (stats === undefined) {
-      console.log('Mappen finns inte');
-    } else {
-      console.log('Mappen finns');
-    }
-  }
-});
-```
+En annan användning är att skapa en ny katalog om den inte redan finns. Till exempel, om du vill lagra användarens bilder i en specifik mapp, kan du först kontrollera om katalogen finns och om inte, skapa den.
 
-Det finns också paket som Fs-Extra som erbjuder mer avancerade funktioner för att kontrollera om en mapp existerar.
+Att kontrollera om en katalog finns är också ett sätt att förbättra prestandan i din kod. Genom att undvika onödiga operationer, som att skapa en katalog som redan existerar, kan du spara tid och resurser. 
 
 ## Se även
 
-- [Node.js fs modul](https://nodejs.org/api/fs.html)
-- [Fs-Extra paket](https://www.npmjs.com/package/fs-extra)
+- [Modulen "fs" i Node.js dokumentation](https://nodejs.org/api/fs.html)
+- [Tutorial om "fs" modulen på W3Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Användbar information om att jobba med filer och kataloger i Javascript](https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-file-system-module)

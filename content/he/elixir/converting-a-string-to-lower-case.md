@@ -1,38 +1,44 @@
 ---
-title:    "Elixir: המרת מחרוזת לאותיות קטנות"
+title:    "Elixir: המרת סטרינג לאותיות קטנות"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-מה הייתה הסיבה ששיקפצת לכתוב פוסט על כיצד להמיר מחרוזת לאותיות קטנות ב-Elixir? כי אנחנו משתמשים הרבה במחרוזות בתכנות, ולכן ישנן מגוון תרגילים ומצבים כאשר יש בידינו מחרוזות שכדאי להמיר אותן לאותיות קטנות. בפוסט הזה נלמד כיצד לעשות את זה בקלות עם השפת תכנות Elixir.
+אחד הדברים הכי נפלאים בלימוד שפת תכנות הוא היכולת לממש תוכניות פשוטות שמשפרות את חיי היום יום שלנו. פעולה נפוצה בתכנות היא להמיר טקסט לאותיות קטנות, ובכתיבת פוסט זה נכיר את אופן העבודה עם כלי שיתוף מידע הזה במטרה ללמוד כיצד להמיר מחרוזת לאותיות קטנות בשפת אליקסיר.
 
-## איך לעשות
+## כיצד לעשות זאת
 
-בקוד הבא תמצאו דוגמאות של כיצד להמיר מחרוזת לאותיות קטנות ב-Elixir:
+### חלק א: התקנת הכלי
+כדי להמיר מחרוזת לאותיות קטנות באמצעות אליקסיר, עלינו להתקין את החבילה `String` במכשיר שלנו. ניתן לעשות זאת באמצעות שורת הקוד הבאה:
 
 ```Elixir
-# המרת מחרוזת לאותיות קטנות באמצעות הפונקציה String.downcase
-String.downcase("Hello World!") #=> "hello world!"
+mix deps.get String
+```
+ 
+### חלק ב: השתמש בפונקציית `downcase`
+עם החבילה `String` מותקן במכשיר שלנו, נוכל להשתמש בפונקציית `downcase` כדי להמיר מחרוזת לאותיות קטנות. תחילה, נאתחל מספר מחרוזות כדי לבדוק את הפונקציה:
 
-# המרת מחרוזת לאותיות קטנות באמצעות אופרטור ה-shorthand ^=
-^"Hello World!" = String.downcase("HELLO WORLD!") #=> true
-
-# בדיקה האם מחרוזת נמצאת רק באותיות קטנות על ידי שימוש בפונקציות Enum.all ו-CString.is_lower
-lower_string = "hello world!"
-Enum.all?(CString.is_lower, lower_string) #=> true
+```Elixir
+iex> str1 = "Hello World!"
+iex> str2 = "I love Elixir"
 ```
 
-## Deep Dive
+כעת, נדרוס את הפונקציה `downcase` ונעביר את המחרוזות שלנו כפרמטר:
 
-הפונקציה String.downcase משמשת כדי להמיר מחרוזת לאותיות קטנות ללא התייחסות לשפת קוד. זאת אומרת שהיא תהיה תואמת לכל שפה, לא רק Elixir. בנוסף, יש לשים לב שהפונקציה מחזירה מחרוזת חדשה ולא משתנה את המחרוזת המקורית.
+```Elixir
+iex> String.downcase(str1)
+"hello world!"
+iex> String.downcase(str2)
+"i love elixir"
+```
 
-כרגע, String.downcase תואמת לאותיות הלטיניות בלבד. אם ברצונכם להמיר מחרוזת של אותיות גדולות לאותיות קטנות בכל השפות, אתם יכולים להשתמש בפונקציות כמו Unicode.downcase או Casing.lowercase_string.
+כפי שאתם רואים, הפונקציה `downcase` מחזירה את המחרוזות שתורגמו לאותיות קטנות.
 
-## ראו גם
+### חלק ג: השתמש בפונקציית `String.downcase`
+בנוסף לפונקציה `downcase`, ישנה פונקציית `String.downcase` שמבצעת את אותה פעולה. שימוש בפונקציית זו הוא יתר על כן שהיא נותנת מענה למקרים יותר מסובכים.
 
-- [String.downcase documentation](https://hexdocs.pm/elixir/String.html#downcase/2)
-- [Unicode.downcase documentation](https://hexdocs.pm/elixir/Unicode.html#downcase/1)
-- [Casing.lowercase_string documentation](https://github.com/expede/elixir-casing#libraryname)
+לדוגמה, ננסה לשנות את המחרוזת `"Hello World!"` לאותיות קטנות באמ

@@ -1,64 +1,59 @@
 ---
-title:    "Rust: Komantoriviparametrien lukeminen"
+title:    "Rust: Komentoriviparametrien lukeminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tervetuloa lukemaan Rust-ohjelmoinnin blogipostausta Suomenkielisille lukijoille! Tässä artikkelissa käsittelemme komentoriviparametrien lukemista ja kuinka se voidaan tehdä Rustilla.
+Miksi lukisin komentoriviparametreja? Ensinnäkin, lukemalla komentoriviparametreja pystytään antamaan ohjelmalle tarkempia ja monipuolisempia ohjeita sen suorittamiseen. Tämä on erityisen hyödyllistä silloin, kun halutaan suorittaa sama ohjelma erilaisilla asetuksilla.
 
-## Miten
+## Kuinka
 
-Komentoriviparametrien lukeminen on tärkeä osa monia ohjelmia, joilla on käyttäjän kanssa vuorovaikutusta. Onneksi Rustilla tämä on helppoa, sillä kielessä on valmiiksi sisäänrakennettu crate (kirjasto) nimeltä `std::env`, joka tarjoaa toimintoja komentoriviparametrien lukemiseen.
-
-Alla on esimerkki koodista, joka lukee ja tulostaa komentoriviparametrit:
+Komentoriviparametrien lukeminen Rustilla on helppoa ja suoraviivaista. Alla on esimerkki, jossa luodaan pieni ohjelma, joka tulostaa annetun nimen.
 
 ```Rust
 use std::env;
 
 fn main() {
-    // Haetaan komentoriviparametrit ja tallennetaan ne muuttujaan `args`
     let args: Vec<String> = env::args().collect();
-
-    // Tulostetaan komentoriviparametrit yksi kerrallaan
-    for arg in args.iter() {
-        println!("{}", arg);
+    if args.len() > 1 {
+        println!("Hei, {}!", args[1]);
+    } else {
+        println!("Hei maailma!");
     }
 }
 ```
 
-Kun suoritamme tämän koodin komentorivillä, esimerkiksi komennolla `rustc args.rs && ./args hello world`, saamme seuraavan tulosteen:
+Oletetaan, että koodi on tallennettu tiedostoon nimeltä `tervehdys.rs`. Voimme suorittaa ohjelman antamalla komentorivillä esimerkiksi seuraavanlaisen komennon:
 
 ```
-./args
-hello
-world
+rustc tervehdys.rs
+./tervehdys Jesse
 ```
 
-Mikäli haluamme ottaa huomioon myös komentorivin ensimmäisen argumentin, joka on yleensä itse suoritettava tiedosto, voimme käyttää `skip()`-funktiota. Alla oleva koodi suorittaa saman tehtävän kuin edellinen, mutta jättää ensimmäisen argumentin huomioimatta:
+Tämän tuloksena ohjelma tulostaa:
 
-```Rust
-use std::env;
-
-fn main() {
-    // Haetaan komentoriviparametrit ja tallennetaan ne muuttujaan `args`
-    let args: Vec<String> = env::args().skip(1).collect();
-
-    // Tulostetaan komentoriviparametrit yksi kerrallaan
-    for arg in args.iter() {
-        println!("{}", arg);
-    }
-}
+```
+Hei, Jesse!
 ```
 
-## Syväsukellus
+Jos taas komentorivillä ei anneta nimeä, ohjelma tulostaa:
 
-Komentoriviparametrien lukeminen Rustilla tapahtuu siis `std::env` -craten avulla. Tämä kirjasto tarjoaa myös muita hyödyllisiä toimintoja, kuten `current_dir()`, joka palauttaa ohjelman nykyisen työhakemiston polun. Lisätietoa tästä kirjastosta löytyy Rustin virallisesta dokumentaatiosta.
+```
+Hei maailma!
+```
+
+Koodissa käytetään `std::env` kirjastoa, joka tarjoaa toiminnallisuuden komentoriviparametrien lukemiseen. Tässä tapauksessa yksi komentoriviparametri tallennetaan `args` vektoriin. Jos annettuja parametreja on enemmän kuin yksi, tulostetaan ensimmäinen parametri `args` vektorista. Muussa tapauksessa tulostetaan oletusviesti.
+
+## Syventävä tarkastelu
+
+Komentoriviparametrit voivat olla hyödyllisiä monessa eri tilanteessa. Esimerkiksi ohjelman käyttöä voidaan muokata riippuen annetuista parametreista, tai ohjelma voi tulostaa lisätietoa tietyn parametrin avulla. Rust tarjoaa paljon erilaisia tapoja lukea komentoriviparametreja ja niiden käsittelyyn on monia erilaisia lähestymistapoja.
 
 ## Katso myös
 
-- [Rustin virallinen dokumentaatio - std::env](https://doc.rust-lang.org/std/env/index.html)
-- [Rust by Example - Command Line Arguments](https://doc.rust-lang.org/stable/rust-by-example/std_misc/arg.html)
-- [Rust in Peace - Parsing Command Line Arguments in Rust](https://www.rustinpeace.org/parsing_command_line_arguments_in_rust.html)
+- [Rustin virallinen dokumentaatio komentoriviparametrien lukemisesta](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Rustin ohjelmointikielen opas](https://github.com/github.com/jmajava/ohjelmointikielet/blob/master/rust)
+- [Komentoriviparametrit Tietokoneen perusteet -kurssilla](https://painovoima.org/ruben/cli-argumentit.html)

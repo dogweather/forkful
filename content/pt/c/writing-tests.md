@@ -1,53 +1,59 @@
 ---
 title:    "C: Escrevendo testes"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante na programação
+## Por que escrever testes é importante?
 
-Escrever testes é uma parte essencial do processo de desenvolvimento de software. É uma forma de garantir que seu código esteja funcionando corretamente e de identificar possíveis erros antes que seu código seja disponibilizado ao público. Além disso, escrever testes ajuda a documentar seu código e a entender melhor seu funcionamento.
+Escrever testes é uma prática essencial para garantir a qualidade e a estabilidade de um código em C. Testes bem escritos podem ajudar a encontrar e corrigir erros antes mesmo deles impactarem um programa em produção. Além disso, testes bem estruturados podem funcionar como uma documentação viva do código, facilitando o entendimento e a manutenção do mesmo.
 
-## Como escrever testes em C
+## Como escrever testes em C?
 
-Aqui estão algumas dicas para escrever testes em C:
+Para escrever testes em C, é necessário utilizar uma biblioteca de testes, como a "cmocka", por exemplo. Esta biblioteca fornece funções e macros para facilitar a escrita e execução de testes.
+
+Um exemplo de teste utilizando a biblioteca "cmocka" seria o seguinte:
 
 ```C
-#include <stdio.h>
+#include <stdarg.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <cmocka.h>
 
-// Função que retorna a soma de dois números
-int soma(int a, int b){
-  return a + b;
+// Função a ser testada
+int somar(int a, int b){
+    return a + b;
 }
 
+// Exemplo de teste
+void teste_somar(){
+    assert_int_equal(somar(2,3), 5); // Verifica se a soma de dois números é igual ao esperado
+}
+
+// Função main para rodar os testes
 int main(){
-  // Testando a função soma
-  int resultado = soma(5, 7);
-  printf("Resultado da soma: %d\n", resultado);
-  return 0;
+    const struct CMUnitTest tests[] = {
+        cmocka_unit_test(teste_somar), // Adiciona o teste criado à lista de testes
+    };
+    
+    return cmocka_run_group_tests(tests, NULL, NULL); // Executa os testes e retorna o resultado
 }
 ```
 
-Executando o código acima, teremos a seguinte saída:
+Este é apenas um exemplo simples de como escrever testes utilizando a biblioteca "cmocka". Existem outras bibliotecas e formas de escrever testes em C, porém o conceito básico é o mesmo: criar funções de teste que verifiquem se o código se comporta como esperado em diferentes situações.
 
-```C
-Resultado da soma: 12
-```
+## Aprofundando nos testes em C
 
-Para escrever testes mais aprofundados, você pode utilizar bibliotecas de testes como a [check](https://libcheck.github.io/check/). Essas bibliotecas oferecem funções e macros úteis para criar testes mais robustos e organizados.
+Uma boa prática ao escrever testes em C é seguir o padrão "Given-When-Then", que significa "Dado-Quando-Então", em tradução livre. Neste padrão, o teste é dividido em três partes: a preparação do código (Given), execução da função a ser testada (When) e verificação dos resultados (Then). Isso ajuda a manter os testes organizados e fáceis de entender.
 
-## Aprofundando nos testes
+Outra dica importante é testar tanto os casos positivos (quando o código deve funcionar corretamente) quanto os casos negativos (quando o código deve falhar). Isso garante uma cobertura maior dos testes e ajuda a encontrar possíveis erros em situações inesperadas.
 
-Além de simplesmente testar o resultado de uma função, é importante também testar diferentes cenários e casos de uso. Por exemplo, se sua função de soma só aceita números inteiros, é importante testar também com números decimais ou com valores muito grandes ou muito pequenos.
-
-Outra dica é criar testes para identificar possíveis erros de lógica no código ou condições de contorno. Isso pode ajudar a prevenir erros futuros.
-
-Além disso, é importante ter uma boa cobertura de testes, ou seja, testar o máximo de funções e cenários possíveis. Isso garante uma maior confiabilidade no seu código e facilita a identificação de problemas em caso de alterações futuras.
+Além disso, é importante lembrar de manter os testes atualizados sempre que for feita alguma mudança no código. Caso contrário, os testes podem se tornar obsoletos e não cumprir mais seu papel de garantir a qualidade do código.
 
 ## Veja também
 
-- [Documentação da biblioteca check em português](https://libcheck.github.io/check/doc/check_html/check_23.html)
-- [Tutorial sobre testes em C](https://www.tutorialspoint.com/unit_testing_with_cppunit/)
-
-Escrever testes é uma prática que pode parecer trabalhosa e desnecessária no início, mas que traz muitos benefícios no longo prazo. Não deixe de implementar essa etapa importante no desenvolvimento do seu código em C.
+- [Documentação da biblioteca "cmocka"](https://cmocka.org/)
+- [Outras bibliotecas de testes em C](https://www.toolsie.com/2017/08/28/CppUnit-GTest-CMocka-UNITY-example/)
+- [Explicação detalhada do padrão "Given-When-Then"](https://blog.novoda.com/code-quality-tdd-flow-8/)

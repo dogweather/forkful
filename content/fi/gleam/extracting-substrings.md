@@ -1,43 +1,50 @@
 ---
-title:    "Gleam: Tekstin erottaminen alimerkkijonoista"
+title:    "Gleam: Alimerkkijonojen erottaminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi sinun kannattaisi käyttää Gleam-ohjelmointikieltä ja oteaineiden erottelua
+## Miksi: Miksi haluaisit erottaa tekstipätkiä?
 
-Gleam on innovatiivinen ja kasvava ohjelmointikieli, joka on suunniteltu erityisesti web-sovellusten ja pilvipalveluiden kehittämiseen. Oteaineiden erottelu on tärkeä osa monia ohjelmointitöitä, kuten tekstikäsittelyä, hakualgoritmeja ja tietojen analysointia. Gleam tarjoaa helpon ja tehokkaan tavan erottaa ja käsitellä oteaineita koodissasi.
+Erillisten tekstipätkien erottaminen on tärkeä osa ohjelmointia monessa tilanteessa. Se voi helpottaa tiettyjen tietojen löytämistä tekstimuotoisista tiedostoista tai helpottaa koodin jäsentämistä paloiksi. Gleam-ohjelmointikielellä on kätevä tapa tehdä tämä: substr (erottaminen). Tässä artikkelissa tarkastelemme tarkemmin, miten substr toimii ja miten sitä voi käyttää.
 
-## Miten tehdä: **Oteaineiden erottaminen Gleamilla**
+## Miten: Koodiesimerkkejä ja esimerkkipäätulo "```Gleam ... ```" koodilohkoissa.
 
+### Esimerkki 1:
 ```Gleam
-let text = "Tervetuloa Gleam ohjelmointikieleen"
-
-let substring = String.slice(text, 11, 16)
-//substring = "Gleam"
+"Hello Gleam!"
+|> String.substr(6,5)
 ```
 
-Yllä olevassa esimerkissä määritämme muuttujan "text", joka sisältää tekstirivin. Sitten käytämme String.slice-funktiota erottaaksemme oteaineen 11. ja 16. merkin välillä. Lopuksi tallennamme oteaineen muuttujaan "substring". Tästä voit helposti soveltaa oteaineiden erottelua omassa koodissasi.
+Tulostaa: "Gleam"
 
-Voit myös erottaa oteaineita yksittäisistä sanoista käyttämällä split-funktiota:
-
+### Esimerkki 2:
 ```Gleam
-let text = "Tervetuloa,Gleam,ohjelmointikielen,maailmaan"
-
-let words = String.split(text, ",")
-//words = ["Tervetuloa", "Gleam", "ohjelmointikielen", "maailmaan"]
+"123456789"
+|> String.substr(3,2)
 ```
 
-## Syvällinen sukellus: **Gleamin oteaineiden erottelu**
+Tulostaa: "34"
 
-Gleamissa oteaineiden erottelu perustuu String-moduuliin, joka tarjoaa useita hyödyllisiä funktioita, kuten slice, split ja trim. Voit myös käyttää Regular Expressions -säännöllisiä lausekkeita oteaineiden erotteluun käyttämällä Regex-moduulia.
+### Esimerkki 3:
+```Gleam
+"Kissat ovat ihania"
+|> String.substr(7,5)
+```
 
-Lisäksi Gleamin ohjelmointiympäristö tarjoaa vankan virheenkäsittelyjärjestelmän, joka auttaa sinua välttämään yleisiä virheitä oteaineiden erottelussa, kuten väärästä merkkijonosta tai virheellisistä erottelupisteistä johtuvia ongelmia.
+Tulostaa: "ovat "
 
-## Katso myös:
+Kuten näet esimerkeistä, substr ottaa parametreikseen merkkijonon, josta halutaan erottaa osa, sekä aloitus- ja lopetuskohdan. Lopputulos on uusi merkkijono, joka sisältää vain halutun osan alkuperäisestä merkkijonosta. Tämä on erittäin hyödyllinen, jos haluat esimerkiksi lukea tiettyjä merkkitietoja tiedostosta tai haluat jäsentää koodiasi erillisiksi osiksi.
 
-- [Gleamin virallinen verkkosivusto](https://gleam.run/)
-- [Gleamin ohjelmointikielen dokumentaatio](https://gleam.run/documentation/)
-  - [String-moduulin dokumentaatio](https://gleam.run/documentation/std/string)
-  - [Regex-moduulin dokumentaatio](https://gleam.run/documentation/std/regex)
+## Syvempää tietoa erottavista tekstipätkistä
+
+Gleam-ohjelmointikielessä on myös muita tapoja erottaa tekstipätkiä. Yksi vaihtoehto on käyttää Erlangin standardikirjaston funktiota `string:substr`, joka toimii samalla tavalla kuin Gleamin `String.substr`. Lisäksi on olemassa myös `binary:part`-funktio, joka pystyy käsittelemään myös muita tietotyyppejä, kuten binäärejä.
+
+On myös hyvä huomata, että substr ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon. Tämä on tärkeää muistaa, jos haluat esimerkiksi käyttää substr sijoittamaan uutta tietoa merkkijonoon.
+
+## Katso myös
+
+- Gleam dokumentaatio: https://gleam.run/
+- Erlang string- ja binary-moduulit: http://erlang.org/doc/man/string.html http://erlang.org/doc/man/binary.html

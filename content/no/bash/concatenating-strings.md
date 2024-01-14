@@ -1,62 +1,73 @@
 ---
-title:    "Bash: Sammenføyning av strenger"
+title:    "Bash: Sammenslåing av strenger"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å kombinere eller "concatenate" strenger er en viktig del av Bash-programmering. Det lar deg sette sammen to eller flere tekststrenger for å danne en lengre streng. Dette kan være nyttig for å lage dynamiske meldinger, bygge filnavn, og mye mer.
+Å kombinere strenger i Bash-programmering kan være nyttig for å lage dynamiske og fleksible skript som kan håndtere variabelt innhold. Det kan også være en effektiv måte å formatere utdata på.
 
-# Hvordan
+## Hvordan
 
-Det er flere måter å kombinere strenger på i Bash. Den enkleste og mest intuitive måten er å bruke operatorer.
+For å kombinere strenger i Bash, bruker du konkatineringsoperatøren "=". Dette vil sette sammen to strenger side om side og danne en lengre streng.
 
-```Bash
-streng1="Hei,"
-streng2="verden!"
-streng3="$streng1 $streng2"
-echo $streng3 # Output: Hei, verden!
-```
-
-I dette eksemplet definerer vi to separate strenger, "Hei," og "verden!" og deretter kombinerer vi dem ved å bruke operatorer og lagrer det i en ny streng, "streng3". Når vi bruker "echo" kommandoen for å skrive ut "streng3" vil vi få "Hei, verden!" som output.
-
-En annen måte å kombinere strenger på er å bruke "printf" kommandoen.
+Et eksempel på dette kan være å kombinere to strenger som inneholder navn og alder. Vi begynner med å definere variablene:
 
 ```Bash
-navn="Karoline"
-printf "Hei, %s!" $navn # Output: Hei, Karoline!
+navn="Marius"
+alder="25 år gammel"
 ```
 
-Her bruker vi "printf" kommandoen til å lage en dynamisk melding, i dette tilfellet en hilsen til Karoline. Vi bruker "%s" for å spesifisere hvor i meldingen variabelen $navn skal plasseres.
-
-# Dypdykk
-
-I Bash er det også mulig å kombinere strenger ved hjelp av "+= "operator. Dette lar deg legge til en ny streng i en allerede definert strengvariabel.
+Deretter bruker vi konkateneringsoperatøren for å sette sammen de to strengene og lagre dem i en ny variabel:
 
 ```Bash
-melding="Jeg elsker"
-melding+=" å kode i Bash!"
-echo $melding # Output: Jeg elsker å kode i Bash!
+info="$navn er $alder."
+echo $info
 ```
 
-En annen nyttig måte å kombinere strenger på er ved hjelp av "here string" konstruksjonen.
+Output vil være:
+
+```
+Marius er 25 år gammel.
+```
+
+Det er også mulig å kombinere flere strenger sammen ved å bruke flere konkateneringsoperatører, som vist i dette eksemplet:
 
 ```Bash
-lesennavn()
-{
-    read -d \n -r melding
-}
-
-lesennavn <<< "Navnet mitt er Karoline, og jeg elsker å kode i bash!"
-echo $melding # Output: Navnet mitt er Karoline, og jeg elsker å kode i Bash!
+fornavn="Eline"
+etternavn="Lund"
+epost="@example.com"
 ```
 
-Her bruker vi "read" kommandoen for å lese en "herestring" og lagre det i variabelen "melding". Slik kan vi ta i mot innspill fra en bruker og deretter kombinere den med andre strenger.
+Vi kan da kombinere disse for å lage en e-postadresse ved å bruke flere konkateneringsoperatører:
 
-# Se også
+```Bash
+epostadresse="$fornavn$etternavn$epost"
+echo $epostadresse
+```
 
-- [Bash - kombinere strenger](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [GNU Bash Manual - 3.5.7 Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [Linuxize - Bash - herestring](https://linuxize.com/post/bash-heredoc/)
+Output vil være:
+
+```
+ElineLund@example.com
+```
+
+## Dykk dypere
+
+I Bash er det flere måter å kombinere strenger på, som for eksempel ved bruk av "printf" kommandoen eller ved å bruke "here" dokumenter. Det er også viktig å være oppmerksom på at det finnes forskjellige måter å håndtere spesialtegn og mellomrom mellom strenger på.
+
+For å lære mer om å kombinere strenger i Bash, kan du utforske disse ressursene:
+
+- [The Bash man page](https://linux.die.net/man/1/bash)
+- [Bash Guide for Nybegynnere](https://www.pa.msu.edu/~abtajora/BashProgABS-guide.pdf)
+- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash Concatenation - Manipulating Strings in Bash](https://jimshaver.net/2019/02/22/bash-concatenation-manipulating-strings-in-bash/)
+
+## Se også
+
+- [Bash Arrays - Working with Arrays in Bash](https://github.com/mariusbrataas/bash-arrays)
+- [Bash IF...ELSE - How to Use Conditional Statements in Bash](https://github.com/mariusbrataas/bash-if-else)
+- [Bash Loops - How to Use For, While, and Until Loops in Bash](https://github.com/mariusbrataas/bash-loops)

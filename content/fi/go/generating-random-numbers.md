@@ -1,61 +1,58 @@
 ---
 title:    "Go: Satunnaislukujen generointi"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää satunnaislukugeneraattoria Go-koodauksessa?
 
-Monissa ohjelmoinnin tehtävissä, erityisesti pelikehityksessä ja tietoturvassa, tarvitaan satunnaisia numeroita. Näiden lukujen generoiminen voi auttaa lisäämään monimuotoisuutta ja arvaamattomuutta ohjelmiin. 
+Satunnaislukujen generoiminen on usein välttämätöntä monissa ohjelmointitehtävissä, kuten pelien kehittämisessä tai tietokantojen täyttämisessä testausta varten. On tärkeää tietää, kuinka generoida satunnaislukuja oikein Go-kielellä, jotta voidaan varmistaa ohjelmiston luotettavuus ja suorituskyky.
 
-## Kuinka tehdä
+## Kuinka tehdä se?
 
-Go-kielellä satunnaisia numeroita voidaan luoda käyttämällä "rand" -paketin "Intn" -funktiota. Tämä funktio ottaa parametrina kokonaisluvun ja palauttaa satunnaisen luvun väliltä 0 ja parametrina annetun luvun väliltä. Esimerkiksi jos haluamme generoida satunnaisen luvun väliltä 1-10, voimme käyttää seuraavaa koodia:
+Go-kielellä satunnaislukujen generoiminen on helppoa. Alla on esimerkki koodista, joka generoi 5 satunnaislukua välillä 1-10 ja tulostaa ne näytölle:
 
-```Go 
-
+```
 package main
 
 import (
-    "fmt"
-    "math/rand"
-    "time"
+	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
-    rand.Seed(time.Now().UnixNano())
-    num := rand.Intn(10) + 1
-    fmt.Println("Satunnainen luku 1-10 välillä:", num)
+	// Aseta satunnaisgeneraattorin siemen millisekuntikellon nykyisen ajan mukaan
+	rand.Seed(time.Now().UnixNano())
+
+	// Generoi 5 satunnaislukua välillä 1-10 ja tulosta ne
+	for i := 0; i < 5; i++ {
+		fmt.Println(rand.Intn(10) + 1)
+	}
 }
 ```
 
-Koodissa käytetään myös "Seed" -funktiota, joka asettaa satunnaislukugeneraattorin lähtöarvon ajassa olevaan nanosekuntiin, jotta jokainen kerta koodin suorittamisen yhteydessä saadaan erilaisia satunnaisia lukuja.
+Esimerkkitulos:
 
-Jos haluamme luoda satunnaisia desimaalilukuja, voimme käyttää "Float64" -funktiota, joka palauttaa satunnaisen luvun väliltä 0 ja 1. Esimerkiksi:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "math/rand"
-    "time"
-)
-
-func main() {
-    rand.Seed(time.Now().UnixNano())
-    num := rand.Float64()
-    fmt.Println("Satunnainen desimaaliluku välillä 0-1:", num)
-}
+```
+8
+3
+10
+4
+6
 ```
 
-## Syväsukellus
+## Syvemmälle satunnaislukujen generointiin
 
-Satunnaislukugeneraattori Go-kielessä perustuu aina lähtöarvoon, joka määritetään "Seed" -funktiolla. Tämän vuoksi, jos käytämme samaa lähtöarvoa, saamme aina samat satunnaiset luvut. Tämän välttämiseksi voimme vaihdella lähtöarvoa käyttämällä esimerkiksi ajan sijasta esimerkiksi ohjelman suoritusaikaa.
+Satunnaislukugeneraattorit käyttävät matemaattisia algoritmeja tuottamaan pseudo-satunnaisia numeroita. Nämä algoritmit perustuvat yleensä johonkin muuttujaan, kuten ajanhetkeen tai ohjelman suorituskertojen määrään, jotta jokainen generoitu satunnaisluku olisi erilainen. Tämä varmistaa, että luvut eivät toista samaa kaavaa ja näin ollen ovat mahdollisimman satunnaisia.
+
+On tärkeää huomata, että satunnaislukugeneraattorit eivät varmasti tuota täysin satunnaisia lukuja. Lopputuloksena on aina jonkinlainen kaava tai toistumisen mahdollisuus. Tästä syystä satunnaislukujen käyttöön tietoturvan kannalta kriittisissä sovelluksissa tulisi käyttää erikoistuneempia työkaluja.
 
 ## Katso myös
 
-- Go:n virallinen dokumentaatio satunnaislukujen generoimiseen: https://golang.org/pkg/math/rand/
-- Satunnaislukujen käyttö tietoturvassa: https://www.ssh.com/vulnerability/random-number-generator/
-- Satunnaislukujen merkitys pelikehityksessä: https://www.gamedesigning.org/learn/randomness/
+- [Go:n virallinen satunnaislukugeneraattori-paketti](https://golang.org/pkg/math/rand/)
+- [Satunnaislukujen käyttö tietoturvassa](https://www.schneier.com/academic/random.html)
+- [Satunnaislukugeneraattorien vertailu ja arviointi](https://csrc.nist.gov/Projects/Random-Bit-Generation/Documentation-and-Software)
+- [Avoimen lähdekoodin satunnaislukugeneraattori Go-kielelle](https://github.com/gofrs/uuid)

@@ -1,26 +1,54 @@
 ---
 title:    "Elixir: 编写文本文件"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么编写文本文件
-编写文本文件是编程中非常常见的一项任务。通过编写文本文件，我们可以在程序中存储数据、配置设置、记录日志等等。无论你是初学者还是有经验的开发者，学习如何编写文本文件都是非常有用的。让我们来看看如何在Elixir中编写文本文件吧！
+为什么：每个程序员都知道，文本文件是编程中不可或缺的一部分。它们是存储代码，文档和配置信息的基本方式。因此，学习如何编写文本文件对于在计算机科学领域工作的人来说是必要的。
 
-## 如何编写文本文件
-要在Elixir中编写文本文件，我们可以使用File模块。首先，我们需要打开一个文本文件，并以写入模式 (`:write`) 打开它，这样我们就可以向其中写入数据。接下来，我们可以使用`IO.write`函数将数据写入文件中。让我们来看一个例子：
+如何：首先，我们可以使用Elixir标准库中的File模块来创建和打开文本文件。我们可以使用File.open/2函数来打开文件，第一个参数是文件名，第二个参数是打开的模式。例如，要创建一个名为“example.txt”的文件并写入一些文本，我们可以按照以下方式编写代码：
 
 ```Elixir
-file = File.open("example.txt", [:write])
-IO.write(file, "这是一行文本。")
+File.open("example.txt", [:write], fn(file) ->
+  IO.write(file, "Hello World!")
+end)
 ```
 
-在上面的代码中，我们打开了一个名为`example.txt`的文件，并使用`IO.write`函数写入了一行文本到文件中。最后，我们需要通过调用`File.close`函数来关闭文件，这样就会将更改保存到文件中。现在，如果我们打开`example.txt`文件，就会看到其中已经写入了一行文本。
+这将在当前目录下创建一个“example.txt”文件，并将“Hello World!”文本写入该文件。我们还可以使用File.write/2函数来直接写入文本，如下所示：
 
-## 深入研究
-编写文本文件可能会涉及到更复杂的操作，比如创建文件夹、重命名文件、删除文件等等。幸运的是，在Elixir中我们可以轻松地完成这些任务。我们可以使用`File.mkdir`函数来创建文件夹，使用`File.rename`函数来重命名文件，使用`File.rm`函数来删除文件。我们也可以使用`IO.binwrite`函数来写入二进制数据到文件中。
+```Elixir
+File.write("example.txt", "Hello World!")
+```
 
-## 参考链接
-- [Elixir File模块文档](https://hexdocs.pm/elixir/File.html)
-- [Elixir IO模块文档](https://hexdocs.pm/elixir/IO.html)
+深入探讨：除了创建和写入文本文件，我们还可以使用File.read/1函数来读取现有的文本文件。该函数接受一个文件名作为参数，并返回文件的内容。例如，我们可以按照以下方式读取“example.txt”文件的内容：
+
+```Elixir
+content = File.read("example.txt")
+```
+
+然后，我们可以使用IO.puts/1函数将文件内容打印到控制台上：
+
+```Elixir
+IO.puts(content)
+```
+
+另外，我们还可以使用File.close/1函数来关闭打开的文件，并释放资源。这对于处理大量的文件操作是非常重要的。完整的代码示例如下：
+
+```Elixir
+File.open("example.txt", [:write], fn(file) ->
+  IO.write(file, "Hello World!")
+end)
+
+content = File.read("example.txt")
+IO.puts(content)
+
+File.close("example.txt")
+```
+
+另一件值得注意的事情是在处理文本文件时，我们应该小心处理编码格式。Elixir中的File模块可以使用Unicode编码，因此我们可以使用String.to_charlist/1函数来正确处理文件中的Unicode字符。
+
+另外，我们也可以使用Erlang标准库中的File.IO模块来实现更多高级的文件操作，如文件复制，重命名，删除等。这可以通过在文件名前添加“:file.”前缀来调用，例如“File.IO.copy/2”。
+
+见下文： - [Elixir官方文档: File模块](https://hexdocs.pm/elixir/File.html) - [Elixir官方文档: String模块](https://hexdocs.pm/elixir/String.html) - [Elixir官方文档: Erlang标准库: File模块](https://erlang.org/doc/man/file.html)

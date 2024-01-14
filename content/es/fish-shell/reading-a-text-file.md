@@ -1,38 +1,53 @@
 ---
-title:    "Fish Shell: Leyendo un archivo de texto"
+title:    "Fish Shell: Leyendo un archivo de texto."
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué leer un archivo de texto
+## ¿Por qué leer un archivo de texto en Fish Shell?
 
-Si eres nuevo en la programación, es posible que te preguntes por qué deberías dedicar tiempo a aprender a leer archivos de texto. La respuesta es simple: los archivos de texto son una forma común y útil de almacenar información en la mayoría de los lenguajes de programación. Saber cómo leerlos te permitirá trabajar con una amplia gama de datos y realizar tareas importantes en tus programas.
+Hay muchas razones por las cuales puede ser útil leer un archivo de texto en Fish Shell. Por ejemplo, puedes querer extraer información específica de un archivo de configuración o de un archivo de registro. También puedes utilizar esta técnica para realizar tareas de mantenimiento en el sistema o para automatizar ciertas tareas. En este artículo, te mostraremos cómo leer un archivo de texto en Fish Shell de manera fácil y eficiente.
 
 ## Cómo hacerlo
 
-La Shell de Pescado (Fish Shell) tiene un comando incorporado para leer archivos de texto: `cat`. Puedes usarlo de la siguiente manera:
+Para leer un archivo de texto en Fish Shell, podemos utilizar el comando ```cat```. Este comando muestra el contenido de un archivo de texto en la terminal. Por ejemplo, si queremos leer el archivo "info.txt", podemos escribir lo siguiente en la terminal:
 
 ```Fish Shell
-cat nombre_del_archivo.txt
+cat info.txt
 ```
 
-Esto mostrará el contenido del archivo de texto en la terminal. Si quieres guardar esa información en una variable, puedes hacerlo de la siguiente manera:
+Esto mostrará todo el contenido del archivo "info.txt" en la terminal. También podemos usar el comando ```head``` o ```tail``` para mostrar solo las primeras o últimas líneas del archivo, respectivamente. Por ejemplo:
 
 ```Fish Shell
-variable=$(cat nombre_del_archivo.txt)
+head info.txt
 ```
 
-Ahora puedes usar la variable en tu programa para realizar operaciones con su contenido.
+Esto mostrará solo las primeras 10 líneas del archivo. Si queremos especificar cuántas líneas mostrar, podemos usar la opción ```-n``` seguido del número de líneas que queremos mostrar. Por ejemplo:
+
+```Fish Shell
+head -n 5 info.txt
+```
+
+Esto mostrará solo las primeras 5 líneas del archivo. De manera similar, podemos usar la opción ```-n``` con ```tail``` para mostrar las últimas líneas del archivo.
 
 ## Profundizando
 
-Además del `cat`, también puedes usar otros comandos de la Shell de Pescado para leer archivos de texto. Por ejemplo, `head` te permite ver las primeras líneas de un archivo, `tail` te muestra las últimas líneas, y `less` te permite navegar por todo el contenido del archivo.
+Cuando leemos un archivo de texto en Fish Shell, podemos usar diferentes comandos para manipular el contenido del archivo. Por ejemplo, podemos usar el comando ```grep``` para buscar una cadena de texto específica en el archivo. También podemos usar otros comandos como ```sed``` o ```awk``` para realizar modificaciones en el contenido del archivo.
 
-También es importante tener en cuenta que puedes especificar opciones con estos comandos para realizar acciones específicas. Por ejemplo, puedes usar `head -n 5` para ver solo las primeras 5 líneas del archivo.
+Además, también podemos usar el símbolo de redirección ```>``` para escribir el contenido del archivo en un nuevo archivo o ```>>``` para añadir el contenido al final de un archivo existente. Por ejemplo:
+
+```Fish Shell
+cat info.txt >> new_info.txt
+```
+
+Esto copiará el contenido del archivo "info.txt" y lo añadirá al final del archivo "new_info.txt". 
+
+¡Con estos comandos, puedes leer y manipular fácilmente archivos de texto en Fish Shell!
 
 ## Ver también
 
-- [Tutorial de la Shell de Pescado](https://fishshell.com/docs/current/tutorial.html)
-- [Documentación oficial de la Shell de Pescado](https://fishshell.com/docs/current/index.html)
-- [Guía de inicio rápido de la Shell de Pescado](https://fishshell.com/docs/current/tutorial.html#tut_quickstart)
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [10 comandos útiles de Fish Shell](https://www.ostechnix.com/10-fish-shell-commands-for-linux-beginners/)
+- [Tutorial de Fish Shell](https://www.hostinger.es/tutoriales/comando-fish-shell/)

@@ -1,60 +1,57 @@
 ---
-title:    "Gleam: Lendo um arquivo de texto."
+title:    "Gleam: Lendo um arquivo de texto"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+## Porquê
 
-Ler arquivos de texto é uma tarefa básica em muitos programas, especialmente ao lidar com entrada de dados e geração de relatórios. Ao aprender a ler um arquivo de texto em Gleam, você poderá expandir suas habilidades de programação e criar aplicativos mais robustos e dinâmicos.
+Existem muitas razões para querer aprender a ler arquivos de texto em Gleam. Se você é um desenvolvedor de software, pode ser necessário analisar dados de arquivos de texto para seu aplicativo ou projeto. Se você é um estudante ou entusiasta de programação, pode querer aprender uma nova linguagem de programação e entender como ela manipula arquivos de texto. Seja qual for o motivo, este post vai te ensinar como ler arquivos de texto em Gleam.
 
-## Como fazer:
+## Como Fazer
 
-Para ler um arquivo de texto em Gleam, você precisa seguir estes passos:
+Para começar a ler arquivos de texto em Gleam, você precisará seguir alguns passos básicos:
 
-1. Abra o arquivo usando a função `File.open()` e passe o caminho do arquivo como argumento:
-   ```
-   let file = File.open("caminho/do/arquivo.txt")
-   ```
-2. Leia o conteúdo do arquivo usando o método `read()`:
-   ```
-   let content = file.read()
-   ```
-3. Feche o arquivo usando o método `close()`:
-   ```
-   file.close()
-   ```
-4. Faça o parse do conteúdo do arquivo usando as funções apropriadas, como `String.split()` ou `String.to_int()`.
+1. Importe o módulo `gleam/text/file` no seu código.
+2. Use a função `file.open` para abrir o arquivo que deseja ler.
+3. Use a função `file.read` para ler o conteúdo do arquivo.
+4. Feche o arquivo usando a função `file.close` para evitar vazamentos de recursos.
 
-Aqui está um exemplo completo de como ler um arquivo de texto e imprimir seu conteúdo:
+Aqui está um exemplo de código que lê um arquivo de texto chamado "exemplo.txt" e imprime seu conteúdo na tela:
 
 ```
-Gleam import String
+Gleam import /gleam/text/file as file
 
-let file = File.open("caminho/do/arquivo.txt")
-let content = file.read()
-file.close()
-
-let lines = String.split(content, "\n")
-for line in lines {
-  let words = String.split(line, " ")
-  for word in words {
-    println(word)
-  }
+result <- file.open("exemplo.txt")
+case result {
+  Ok(file) ->
+    content <- file.read(file)
+    file.close(file)
+    io.println(content)
+  Error(err) ->
+    io.format("Erro ao ler o arquivo: {}", [err])
 }
 ```
 
-A saída deste exemplo será uma lista de todas as palavras encontradas no arquivo.
+O código acima primeiro usa a função `file.open` para abrir o arquivo "exemplo.txt". Em seguida, ele usa a função `file.read` para ler o conteúdo do arquivo e armazená-lo na variável `conteúdo`. Finalmente, o arquivo é fechado usando a função `file.close` e o conteúdo é impresso na tela usando a função `io.println`. Se ocorrer algum erro durante este processo, ele será tratado pelo bloco `Error` e uma mensagem de erro será impressa.
 
-## Mergulho profundo:
+## Mergulho Profundo
 
-Ao ler um arquivo de texto em Gleam, é importante levar em consideração o tamanho e o formato do arquivo. Um arquivo muito grande pode afetar o desempenho do seu aplicativo, por isso é importante usar métodos como `File.read_chunk()` ao lidar com arquivos grandes. Além disso, é possível também especificar o modo de leitura do arquivo ao abri-lo, como `File.open("caminho/do/arquivo.txt", "r+")` se você precisar ler e escrever no arquivo.
+Além das funções básicas mencionadas acima, o módulo `gleam/text/file` também possui uma variedade de outras funções que podem ser úteis ao ler arquivos de texto. Algumas delas incluem:
 
-Outro ponto importante a se considerar é o encoding do arquivo. Certifique-se de usar o método correto ao fazer o parse do conteúdo do arquivo, como `String.to_utf8()` ou `String.to_bytes()`.
+- `file.read_line`: lê uma única linha do arquivo;
+- `file.read_all_lines`: lê todas as linhas do arquivo e as armazena em uma lista;
+- `file.read_as_binary`: lê o arquivo como uma sequência de bytes;
+- `file.read_as_binary_line`: lê uma única linha do arquivo como uma sequência de bytes.
 
-## Veja também:
+Certifique-se de explorar a documentação do módulo para saber mais sobre essas e outras funções.
 
-- [Documentação oficial do módulo File em Gleam (em inglês)](https://gleam.run/modules/standard-lib/file.html)
-- [Tutorial de leitura de arquivos em Gleam (em inglês)](https://blog.gleam.run/reading-files-in-gleam/)
-- [Exemplos práticos de uso de arquivos em Gleam (em inglês)](https://github.com/gleam-lang/gleam/blob/master/examples/files/src/files.gleam)
+## Veja Também
+
+- Documentação do módulo `gleam/text/file`: [link](https://gleam.run/modules/gleam/text/file/)
+- Tutorial de Gleam: [link](https://gleam.run/tour/)
+- Outros exemplos de código em Gleam: [link](https://github.com/lpil/gleam/tree/master/examples)
+
+Esperamos que este post tenha sido útil para você aprender como ler arquivos de texto em Gleam. Se você tiver alguma dúvida ou sugestão, não hesite em deixar um comentário abaixo ou entrar em contato com a comunidade Gleam. Obrigado pela leitura!

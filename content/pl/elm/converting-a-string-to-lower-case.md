@@ -1,45 +1,39 @@
 ---
-title:    "Elm: Zamiana ciągu znaków na małe litery"
+title:    "Elm: Przekształcanie ciągu znaków na małe litery"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Konwertowanie stringów na małe litery jest częstym zadaniem w programowaniu. Jest to przydatne w wielu przypadkach, na przykład gdy chcemy porównać dwa stringi bez uwzględniania wielkości liter. W języku Elm istnieje wbudowana funkcja `String.toLower`, która wykonuje dokładnie to. W tym artykule dowiesz się, jak ją wykorzystać.
+ Kiedy pracujesz z danymi tekstowymi w programowaniu, często musisz operować na różnych formach rodzajów liter. Jedną z najważniejszych funkcji jest konwersja całego tekstu na małe litery. Dzięki temu możesz łatwiej porównywać lub szukać dany wyraz w tekście. W Elm istnieje wbudowana funkcja, która umożliwia szybką konwersję tekstu na małe litery. W tym wpisie dowiesz się jak to zrobić.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby skonwertować string na małe litery, wystarczy wywołać funkcję `String.toLower` na danym stringu. Na przykład:
+Konwersja tekstu na małe litery w Elm jest bardzo prosta. Wykorzystujemy do tego funkcję `String.toLower`, która jest dostępna w standardowej bibliotece języka.
 
-```elm
-String.toLower "WITAJ!" --> "witaj!"
+```Elm
+import String
+
+String.toLower "ELM Programowanie" -- wynik: "elm programowanie"
 ```
 
-Funkcja ta zwraca nowy string zawierający wszystkie litery w małej formie. Można ją również wykorzystać do konwersji pojedynczych liter:
+Jak widzisz, funkcja ta przyjmuje jako argument tekst i zwraca tekst w formacie wszystkich małych liter. Ważne jest również, aby zauważyć, że nie jesteśmy ograniczeni tylko do konwersji liter w języku angielskim. Funkcja ta będzie działać również dla tekstu w innych językach.
 
-```elm
-String.toLower "A" --> "a"
+```Elm
+String.toLower "Żółta Świeca" -- wynik: "żółta świeca"
 ```
 
-Jeśli chcesz dodatkowo usunąć również akcenty ze stringa, możesz skorzystać z funkcji `String.normalize` przed użyciem `String.toLower`:
+## Głębszy zanurzenie
 
-```elm
-String.toLower (String.normalize "Źdźbło") --> "zdzblo"
-```
+Aby lepiej zrozumieć jak funkcja `String.toLower` działa, warto zapoznać się z pojęciem kodowania znaków. W skrócie, każda litera ma swoją odpowiednią liczbę w tabeli znaków, a funkcja `String.toLower` przekształca te liczby na odpowiednie ciągi znaków reprezentujące małe litery. Dzięki temu możemy uzyskać spójność przy porównywaniu i przetwarzaniu tekstu.
 
-Aby sprawdzić, czy dwa stringi są równe bez względu na wielkość liter, można po prostu przekonwertować je oba na małe litery i porównać:
+Jednym z problemów, które może się pojawić, jest brak wsparcia dla specjalnych znaków lub znaków spoza standardowego kodowania. W takim przypadku można użyć funkcji `String.foldl` w celu zdefiniowania własnego algorytmu konwersji na potrzeby swojego projektu.
 
-```elm
-(String.toLower "Kot") == (String.toLower "KOT") --> True
-```
+## Zobacz również
 
-## Głębsze zagadnienia
-
-Funkcja `String.toLower` działa poprawnie dla większości języków, jednak w niektórych przypadkach może być potrzebna bardziej zaawansowana obróbka stringów, na przykład usuwanie akcentów czy usuwanie spacji i innych znaków specjalnych. W takich sytuacjach warto wykorzystać bibliotekę `String.Extra`, która oferuje bardziej zaawansowane funkcje do obsługi stringów.
-
-## Zobacz także
-
-- Dokumentacja funkcji `String.toLower`: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
-- Biblioteka `String.Extra`: https://package.elm-lang.org/packages/elm-community/string-extra/latest/
+- [Oficjalna dokumentacja funkcji String.toLower w Elm](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Przykładowe projekty w Elm na stronie webowej GitHub](https://github.com/topics/elm)
+- [Kurs programowania w języku Elm na platformie Udemy](https://www.udemy.com/course/elm-programming/)

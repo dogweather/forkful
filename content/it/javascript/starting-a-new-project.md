@@ -1,51 +1,44 @@
 ---
-title:    "Javascript: Avviare un nuovo progetto"
+title:    "Javascript: Iniziare un nuovo progetto"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molti di noi amano il mondo della programmazione per il suo potere di creare cose nuove e interessanti. Iniziamo spesso nuovi progetti per esprimere la nostra creatività e mettere in pratica le nostre idee. Ma perché mai dovremmo iniziare un nuovo progetto?
+Sei un appassionato di tecnologia e hai una passione per la programmazione? Allora sicuramente ti sarà capitato di avere un'idea per un nuovo progetto da realizzare. In questo post ti spiegheremo perché devi assolutamente iniziare questo nuovo progetto e come farlo nel migliore dei modi.
 
-## Come Fare
+## Come Iniziare
 
-Per iniziare un nuovo progetto, dovremmo prima avere un'idea chiara di ciò che vogliamo realizzare. Potrebbe essere un'applicazione web o un gioco, ma la cosa importante è avere un'idea ben definita. Una volta che avete la vostra idea, potete seguire questi semplici passaggi per iniziare il progetto:
+Il primo passo per iniziare un nuovo progetto di programmazione è avere una buona idea. Questo può sembrare ovvio, ma è fondamentale avere un'idea ben precisa per avere una guida durante tutto il processo di sviluppo. Una volta che hai un'idea chiara del tuo progetto, è importante scegliere il linguaggio di programmazione più adatto. In questo caso, noi ti consigliamo di utilizzare Javascript, uno dei linguaggi più utilizzati e versatili.
+
+Per iniziare a scrivere il tuo codice, devi avere un ambiente di sviluppo installato sul tuo computer. Puoi utilizzare un editor di testo semplice o una più avanzata IDE come Visual Studio Code. Una volta che hai l'ambiente pronto, è il momento di scrivere il tuo primo programma. Eccone un esempio:
 
 ```Javascript
-// Creare un nuovo progetto
+// Questo è un commento in Javascript
 
-// 1. Creare una nuova cartella per il progetto
-mkdir nome-del-progetto
+// Dichiarazione di una variabile 
+let nome = "Mario";
+let cognome = "Rossi";
 
-// 2. Entrare nella cartella
-cd nome-del-progetto
-
-// 3. Inizializzare un nuovo package.json
-npm init
-
-// 4. Installare le dipendenze necessarie
-npm install nome-dipendenza
-
-// 5. Creare il file index.js
-touch index.js
-
-// 6. Iniziare a codificare!
+// Stampa dei valori delle variabili 
+console.log("Ciao " + nome + " " + cognome);
 ```
 
-Una volta che avete seguito questi passaggi, siete pronti per iniziare a codificare il vostro progetto!
+L'output di questo programma sarà: "Ciao Mario Rossi".
+
+Questo è solo un esempio molto semplice di come iniziare a scrivere codice in Javascript. Per imparare a programmare in modo più approfondito, puoi consultare una vasta gamma di risorse online come tutorial, corsi e documentazione ufficiale. Inoltre, è importante avere una buona familiarità con i concetti fondamentali della programmazione, come le variabili, i cicli e le funzioni.
 
 ## Approfondimento
 
-Quando si inizia un nuovo progetto, è importante avere una buona organizzazione e struttura del codice. Ciò ci aiuterà a mantenere il progetto pulito e facile da gestire in futuro. Alcune buone pratiche da seguire includono l'utilizzo di moduli e funzioni, l'aggiunta di commenti per spiegare il codice e la separazione delle diverse parti del progetto in file separati.
+Ora che hai le basi per iniziare un nuovo progetto di programmazione, è importante dedicare del tempo per fare una ricerca approfondita sulla tua idea. Devi capire quali strumenti e librerie possono aiutarti a realizzare il tuo progetto in modo più efficiente, e quali problemi potresti incontrare lungo il percorso. Inoltre, è fondamentale avere un piano di lavoro ben strutturato per organizzare al meglio i tuoi obiettivi e le tue scadenze.
 
-Oltre all'organizzazione, è anche importante considerare il testing del codice per assicurarsi che funzioni correttamente. Ci sono molti strumenti disponibili per il testing del codice Javascript, come Jest o Mocha.
-
-Infine, non dimenticate di utilizzare uno strumento di controllo di versione, come Git, per tenere traccia delle modifiche e facilitare la collaborazione con altri sviluppatori.
+Infine, non dimenticare di utilizzare il controllo di versione, come Git, per tenere traccia delle modifiche apportate al tuo codice e poter tornare a una versione precedente in caso di necessità.
 
 ## Vedi Anche
 
-- [10 passaggi per iniziare un nuovo progetto Javascript](https://itnext.io/10-senza-tempo-per-iniziare-un-nuovo-progetto-javascript-1fbf5f213441)
-- [10 consigli per creare un progetto Javascript pulito e organizzato](https://medium.com/@lermanmauno/10-trucchi-per-creare-un-progetto-javascript-ordinato-pulito-dce3c35f3dd4)
-- [Come ottenere il massimo dal testing del codice Javascript](https://www.freecodecamp.org/news/come-ottenere-il-massimo-dallo-testing-del-codice-javascript-ea378ce8be30/)
+- [Introduzione a Javascript](https://developer.mozilla.org/it/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [Tutorial su Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
+- [Corso di programmazione su Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)

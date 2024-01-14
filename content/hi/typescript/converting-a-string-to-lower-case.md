@@ -1,29 +1,42 @@
 ---
-title:    "TypeScript: स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
+title:    "TypeScript: स्ट्रिंग को निचले अक्षर में बदलना"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
-कोई भी व्यक्ति एक स्ट्रिंग को लोअर केस में बदलने में रुचि रखता होगा क्योंकि इससे उनकी कोडिंग प्रोसेस को सरल बनाने में मदद मिलती है।
+## क्यों
+
+स्ट्रिंग को लोअर केस में कनवर्ट करने के फायदे हैं कि यह इसे विभिन्न प्रोग्रामिंग कार्यों में उपयोग करने के लिए बनाता है, जैसे कि स्ट्रिंग में खोज करना या स्ट्रिंग को विशेष पात्रों के साथ तुलना करना।
 
 ## कैसे करें
-टाइपस्क्रिप्ट में एक स्ट्रिंग को लोअर केस में बदलने के लिए निम्नलिखित कोड का उपयोग कर सकते हैं:
 
 ```TypeScript
-let string = "HELLO";
-let lowerCaseString = string.toLowerCase();
-
-console.log(lowerCaseString); // output: hello
+let str: string = "Hello World";
+console.log(str.toLowerCase());
 ```
 
-इस उदाहरण में, हमने `toLowerCase()` फ़ंक्शन का उपयोग करके स्ट्रिंग को लोअर केस में बदल दिया है।
+आउटपुट:
+```
+hello world
+```
 
-## गहराई में डूबना
-स्ट्रिंग को लोअर केस में बदलने के पीछे कारण यह है कि यह उपयोगकर्ताओं को पूरे स्ट्रिंग को छोटे अक्षरों में प्रदर्शित करने से बचाता है। यदि हमें केस सेंसिटिव स्ट्रिंग के साथ काम करना हो, तो हमें स्ट्रिंग को केस सेंसिटिव बनाने के लिए स्ट्रिंग को स्ट्रिंग को पहले लोअर केस बनाने के लिए लोअर केस में बदलने की जरूरत होती है।
+यहां हमने `toLowerCase()` एक बिल्ट-इन मेथड का उपयोग करके स्ट्रिंग को लोअर केस में कनवर्ट किया। हम `str` स्ट्रिंग के लिए `toLowerCase()` के सिर्फ एक आगे प्रोटोटाइप मेथड को बनाएंगे और उसे इससे कॉल करेंगे। लेकिन `toLowerCase()` का असली का काम यह है कि यह किसी भी स्ट्रिंग को लोअर केस में कनवर्ट करेगा।
+
+## गहराई में जाएं
+
+जब हम एक स्ट्रिंग को `toLowerCase()` के साथ कॉल करते हैं, तो यह स्ट्रिंग को लोअर केस में कनवर्ट कर देता है। इस कारण से, हम अलग-अलग प्रकार के मामलों को लोअर केस में देख सकते हैं। इसकी एक उदाहरण के लिए, हम विशेष पात्रों की तुलना कर सकते हैं, जैसे कि:
+
+```TypeScript
+let str1: string = "hello";
+let str2: string = "Hello";
+
+console.log(str1.toLowerCase() === str2.toLowerCase()); // true
+```
+
+यहां हमने स्ट्रिंग `str1` को `toLowerCase()` के साथ कॉल किया और उसे `str2` के साथ तुलना किया। दोनों स्ट्रिंग लोअर केस में हैं, इसलिए यह समान माने जाएंगे। इसी तरह, हम खोज भी सकते हैं और स्ट्रिंग को उसके समान खोज से मेल खाते हैं।
 
 ## देखें भी
-- टाइपस्क्रिप्ट स्ट्रिंग: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
-- `toLowerCase()` फ़ंक्शन: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-- कास्टिंग टाइपस्क्रिप्ट स्ट्रिंग: https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions
+
+- [String.prototype.toLowerCase() जावास्क्रिप्ट डाक रसीद।](https://developer.mozilla

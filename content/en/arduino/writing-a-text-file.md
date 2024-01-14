@@ -1,63 +1,49 @@
 ---
 title:    "Arduino recipe: Writing a text file"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why 
+As Arduino programmers, we often use text files to store and retrieve data in our projects. Whether it's saving sensor readings or creating a simple user interface, writing a text file can be a useful and efficient way to store information. In this blog post, we will explore how to write a text file using Arduino programming. 
 
-Whether you're a beginner or an experienced programmer, learning how to write a text file with Arduino can be a useful skill to have. Text files allow you to store and retrieve data, making your projects more versatile and dynamic. They also provide a simple way to communicate with other devices or systems.
-
-## How To
-To write a text file with Arduino, you'll need to follow these steps:
-
-1. Start by connecting your Arduino board to your computer.
-
-2. Open the Arduino IDE and create a new sketch.
-
-3. Next, we'll need to include the SD card library. This library allows us to read and write files on an SD card. In the **setup()** function, add the following code:
+## How To 
+To write a text file using Arduino, you will need to use the SD (Secure Digital) library. This library allows us to access a microSD card and read and write files on it. Here is a simple example of how to write a text file using Arduino:
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
-```
 
-4. Initialize the SD card by calling the **begin()** function. This function takes in the pin number for the SD card's chip select (CS) pin. In most cases, this will be pin 53.
-
-```Arduino
-SD.begin(53);
-```
-
-5. Now, we can open a file to write data to. The **open()** function takes in three parameters: the file name, the mode to open the file in, and the SD card chip select pin. The mode we'll be using is **FILE_WRITE**, which allows us to write data to the file. For example, to open a file named "data.txt" we would use the following code:
-
-```Arduino
-File myFile = SD.open("data.txt", FILE_WRITE, 53);
-```
-
-6. Once the file is open, we can write data to it using the **println()** function. This function takes in the data to be written as a parameter. For example, let's write the string "Hello World" to our file:
-
-```Arduino
-myFile.println("Hello World");
-```
-
-7. Don't forget to close the file once you're done writing data. This is important as it ensures that all data is properly saved. To do this, simply call the **close()** function on the file object.
-
-```Arduino
+//Initialize microSD card
+if (!SD.begin(4)) {
+	Serial.println("Initialization failed!");
+	return;
+}
+//Create and open a new text file
+File myFile = SD.open("myFile.txt", FILE_WRITE);
+//Write data to the file
+myFile.println("This is a text file written using Arduino!");
+//Close the file
 myFile.close();
 ```
 
-8. Congratulations, you have successfully written data to a text file with Arduino! You can now use the same steps to write other types of data, such as sensor readings or user inputs, to a file.
+The `FILE_WRITE` mode in the `open()` function allows us to write to the file, while the `println()` function writes a line of text to the file. In this example, the file was named "myFile.txt", but you can choose any name you want.
 
-## Deep Dive
-When writing a text file with Arduino, it's important to keep in mind that the SD card has limited space. Depending on the size of the SD card, you may need to be selective about the data you write.
+To check if the text file was successfully written, you can use a microSD card reader and open the file on your computer. You should see the text we wrote in the file "This is a text file written using Arduino!".
 
-It's also worth noting that the **open()** function has additional modes that can be used besides **FILE_WRITE**. For example, **FILE_APPEND** allows you to append data to an existing file without overwriting it, while **FILE_READ** allows you to read data from a file.
+## Deep Dive 
+Now, let's dive deeper into the process of writing a text file with Arduino. It's important to note that the SD library has a limitation when it comes to file sizes - the maximum file size is 2GB. 
 
-In addition, you can also create directories within the SD card using the **mkdir()** function. This can help organize your files and make it easier to retrieve specific data.
+When creating a new file, we use the `open()` function as shown in the example above. This function takes in two parameters - the file name and the mode. The mode argument defines how we want to interact with the file - whether we want to read, write, or both. Some of the common mode options are `FILE_READ`, `FILE_WRITE`, and `FILE_APPEND` which allows us to append new data to the end of the file without overwriting the existing data.
 
-## See Also
-To learn more about writing text files with Arduino, check out these useful resources:
+After creating the file, we can use the `write()` function to write individual characters or `println()` to write full lines of text. Once we are done writing, we need to close the file using the `close()` function to ensure all data is saved to the file before we access it again.
 
-- [Arduino SD Library Reference](https://www.arduino.cc/en/reference/SD)
-- [Instructables: How to Write SD Card Program Using Arduino](https://www.instructables.com/id/ARDUINO-How-to-write-a-text-file-on-a-SD-card/)
-- [Hackster: How to Save Data to a CSV File on an SD Card With Arduino](https://www.hackster.io/RonaldoOvermeire/how-to-save-data-to-a-csv-file-on-an-sd-card-with-arduino-1487d7)
+## See Also 
+For more information on writing text files using Arduino, you can check out these resources: 
+- [Arduino - SD Library](https://www.arduino.cc/en/reference/SD)
+- [Tutorial: How to Write a Text File to an SD Card using Arduino](https://randomnerdtutorials.com/guide-for-writing-a-text-file-to-an-sd-card-using-arduino/) 
+- [How to Save Data to an SD Card using Arduino](https://www.makerguides.com/arduino-sd-card-write-text-file-example/)
+
+Now that you know how to write a text file using Arduino, you can use this knowledge in your own projects. Happy coding!

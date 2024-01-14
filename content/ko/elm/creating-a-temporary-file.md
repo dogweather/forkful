@@ -1,42 +1,35 @@
 ---
-title:    "Elm: 임시 파일 생성하기"
+title:    "Elm: 임시 파일 만들기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
-당신은 개발을 할 때 임시 파일을 만드는 일에 관심이 있을 수 있습니다. 이는 여러분이 프로그램을 디버깅하거나 중간 결과를 저장하는 데에 도움이 되기 때문입니다.
+## 왜?
+왜 임시 파일을 생성하는 것에 참여해야 할까요? 여러분은 여러분의 프로그램에서 일시적으로 데이터를 저장해야 할 때 임시 파일이 유용할 수 있습니다. 예를 들어 큰 데이터를 처리하는 중에 중간 결과를 저장하거나, 다른 애플리케이션과 데이터를 공유하려는 경우에 유용합니다.
 
-## 하는 법
-임시 파일을 생성하는 것은 매우 간단합니다. 우리는 `File.withTempFile` 함수를 사용할 것입니다. 이 함수는 두 가지 인수를 받습니다. 첫 번째 인수는 임시 파일의 이름을 지정하는데 사용될 문자열로서 일반적으로 `".tmp"`와 같이 확장자를 포함하게 될 것입니다. 두 번째 인수는 파일을 다루기 위한 콜백 함수입니다. 이 콜백 함수는 임시 파일에 대해 액션을 수행합니다.
-
-``` Elm
+## 어떻게?
+다음은 Elm을 사용하여 임시 파일을 생성하는 간단한 예제 코드입니다:
+```Elm
 import File
 
-File.withTempFile ".tmp" (\tempFile ->
-    -- 여기에서 임시 파일에 대한 액션을 수행합니다.
-    -- 예를 들어, 파일에 내용을 쓰거나 읽을 수 있습니다.
-)
+createTempFile : String -> Cmd msg
+createTempFile content =
+  File.create "temp.txt" content
+
+main : Program () Model Msg
+main =
+  init ()
+    |> Task.perform (always Cmd.none) (createTempFile "Temporary data")
 ```
+`createTempFile` 함수는 `temp.txt` 파일을 생성하고 `content`를 파일에 씁니다. 이제 우리는 임시 파일을 사용할 준비가 되었습니다!
 
-위의 예제에서, 우리는 `withTempFile` 함수를 사용하여 새로운 임시 파일의 경로를 지정하고 그 파일을 다루기 위한 콜백 함수를 정의하였습니다.
+## 깊이 파고들기
+임시 파일을 생성할 때 주의해야 할 몇 가지 사항이 있습니다. 첫째, 임시 파일이 생성되는 위치를 지정하는 것이 중요합니다. Elm은 브라우저에서 실행되므로, 우리는 브라우저의 제한된 파일 시스템 내에만 임시 파일을 생성할 수 있습니다. 또한 임시 파일은 프로그램이 종료되면 자동으로 삭제됩니다. 따라서 우리는 임시 파일이 아닌 다른 파일에 저장할 데이터는 사용하기 적절하지 않습니다.
 
-## 깊게 파고들기
-우리는 `withTempFile` 함수를 사용하는 대신에 `File.TempFile` 모듈을 통해 임시 파일을 만들 수도 있습니다. 이 모듈은 더 많은 유연성을 제공합니다. 예를 들면, 우리는 `File.TempFile.with` 함수를 사용하여 임시 파일을 생성할 때 사용될 디렉토리를 지정할 수도 있습니다. 또한, 우리는 `File.TempFile.cleanup` 함수를 사용하여 생성된 임시 파일들을 정리할 수 있습니다.
-
-``` Elm
-import File.TempFile as TempFile
-
-TempFile.with ".tmp" (\tempFile ->
-    -- 여기에서 임시 파일에 대한 액션을 수행합니다.
-    -- 예를 들어, 파일에 내용을 쓰거나 읽을 수 있습니다.
-) |> TempFile.cleanup
-```
-
-## 더 알아보기
-임시 파일을 만드는 것 외에도, `File.TempFile` 모듈은 임시 파일 및 디렉토리를 적절히 관리하고 처리하기 위한 다양한 함수들을 제공합니다. 더 많은 정보를 알아보고 싶다면 [공식 문서](https://package.elm-lang.org/packages/elm/file/latest/File-TempFile)를 참고해주세요.
-
-# 참고자료
-- [withTempFile 함수 공식 문서](https://package.elm-lang.org/packages/elm/file/latest/File#withTempFile)
-- [File.TempFile 모듈 공식 문서](https://package.elm-lang.org/packages/elm/file/latest/File-TempFile)
+## 또 다른 자료
+- [Elm 공식 문서 - 파일 다루기](https://guide.elm-lang.org/interop/file.html)
+- [링크: 파일 API에 대한 MDN 문서](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- [링크: 브라우저의 파일 시스템에 대한 MDN 문서](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem)
+- [링크: Elm 프로그래밍 언어 공식 페이지](https://elm-lang.org/)

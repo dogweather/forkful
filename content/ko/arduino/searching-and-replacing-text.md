@@ -1,33 +1,42 @@
 ---
-title:    "Arduino: 텍스트 검색 및 대체"
+title:    "Arduino: 텍스트 검색 및 대치하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+# 왜: 텍스트를 검색하고 대체하는 작업을 하는 이유
+텍스트를 검색하고 대체하는 작업은 우리가 일상에서 흔히 사용하는 작업입니다. 컴퓨터에서 더 쉽고 빠르게 이 작업을 할 수 있도록 아두이노 프로그래밍을 배워보세요.
 
-텍스트를 검색하고 교체하는 것에 관심을 가지는 이유는 간단합니다. 프로그래밍에서 많은 양의 코드를 작성하다 보면, 일부 텍스트를 일괄적으로 수정해야 할 때가 많기 때문입니다. 이를 자동화하기 위해 검색 및 교체 기능을 사용하면 작업 효율성을 대폭 높일 수 있습니다.
-
-# 사용 방법
-
-아두이노에서 텍스트를 검색하고 교체하는 방법은 간단합니다. ```StrReplace()``` 함수를 사용하여 특정 문자열을 다른 문자열로 교체할 수 있습니다. 예를 들어, 코드의 문자열 "hello"를 "안녕하세요"로 변경하려면 다음과 같이 작성할 수 있습니다.
-
-```Arduino
-String text = "hello world";
-text.replace("hello", "안녕하세요");
+## 어떻게: 아두이노 프로그래밍에서 텍스트 검색과 대체하는 방법
+아두이노에서 엔터 키를 누르면 특정 문자열을 검색하고 다른 문자열로 대체하는 프로그램을 작성해보겠습니다. 코드 블록은 Arduino 문법이 적용되어 있습니다.
+```
+Arduino.setup()
+{
+    String input = Serial.readString();
+    // 입력된 문자열을 읽어옴
+    String search = "apple";
+    // 찾을 문자열
+    String replace = "orange";
+    // 대체할 문자열
+    input.replace(search, replace);
+    // 입력된 문자열에서 "apple"을 "orange"로 대체
+    Serial.println(input);
+    // 대체된 문자열을 시리얼 모니터로 출력
+}
 ```
 
-위 코드를 실행하면 ```text``` 변수에는 "안녕하세요 world"라는 수정된 문자열이 저장됩니다.
+위와 같이 코드를 작성하고 업로드하면 시리얼 모니터에서 원하는 문자열을 검색하고 대체하는 작업을 할 수 있습니다. 예를 들어, 아두이노와 컴퓨터를 연결하고 시리얼 모니터에 "I love apple"이라는 문장을 입력하면 "I love orange"라는 문장이 출력됩니다.
 
-# 깊게 파헤치기
+## 깊이 파고들기: 텍스트 검색과 대체에 대해 더 알아보기
+위 코드에서는 단순히 "apple"을 "orange"로 대체하도록 작성하였지만, 더욱 복잡한 코드를 작성하여 여러 개의 문자열을 한 번에 검색하고 대체할 수도 있습니다. 또한 특정 문자열 패턴을 이용해 대체할 수도 있습니다. 아두이노에서 사용 가능한 여러 가지 문자열 함수를 배우면 더 다양한 방법으로 텍스트 검색과 대체를 할 수 있습니다.
 
-텍스트를 검색하고 교체하는 방법은 다양한 방법으로 사용할 수 있습니다. 예를 들어, 만약 코드 내에서 동일한 변수 이름이 여러 번 사용되어 다른 값을 가지고 있다면, 이를 일괄적으로 수정하기 위해 검색 및 교체 기능을 사용할 수 있습니다.
-
-또한 ```regex``` 라이브러리를 사용하여 정규표현식을 통해 특정 패턴을 가진 문자열을 검색하고 교체할 수도 있습니다. 정규표현식을 사용하면 더욱 복잡한 검색과 교체를 할 수 있으며, 작업의 유연성이 높아집니다.
+## 더 알아보기
+- [아두이노 공식 사이트](https://www.arduino.cc/)
+- [아두이노 텍스트 함수 공식 문서](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [아두이노 프로그래밍을 위한 한국어 강좌](http://www.hwain.net/study/arduino/index.php#p_lang)
+- [아두이노 커뮤니티 사이트](https://playground.arduino.cc/)
 
 # 참고 자료
-
-- [Arduino 언어 레퍼런스](https://www.arduino.cc/reference)
-- [위키백과: 정규표현식](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D)
-- [OpenClassrooms: 정규표현식 기초](https://openclassrooms.com/en/courses/4307276-use-regular-expressions-in-programming-languages/4317586-regular-expressions-the-basics)
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet(Korean)

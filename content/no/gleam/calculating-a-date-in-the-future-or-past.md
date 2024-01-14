@@ -1,36 +1,36 @@
 ---
-title:    "Gleam: Beregning av dato i fremtid eller fortid"
+title:    "Gleam: Beregning av en dato i fremtiden eller fortiden"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Vil du kunne planlegge fremtiden din ved å beregne datoer i fremtiden eller i fortiden? Eller lurer du på hvordan du kan få Gleam-programmet ditt til å gjøre det for deg? Denne bloggposten vil gi deg en enkel forklaring og noen eksempler på hvordan du kan gjøre det.
+# Hvorfor
+Å beregne en dato i fremtiden eller fortiden er en viktig oppgave for mange programmerere. Det kan være nyttig for å tilpasse funksjonalitet basert på bestemte datoer, planlegge tidsavhengige oppgaver eller for å lage tidsrelaterte grafer og analyser. Å lære hvordan man kan gjøre dette i Gleam kan åpne opp for flere kreative løsninger og optimalisere arbeidsflyten din.
 
-## Hvordan
-For å beregne en dato i fremtiden eller fortiden i Gleam, kan du bruke funksjonen `Calendar.date_add`. Denne funksjonen tar inn en dato og et antall dager, uker, måneder eller år du vil legge til eller trekke fra. La oss si at vi ønsker å beregne datoen som er fem dager fra i dag:
+# Slik gjør du det
+For å beregne en dato i fremtiden eller fortiden i Gleam, kan du bruke funksjonene `add_days`, `add_weeks`, `add_months` og `add_years` fra biblioteket `Time.Date`. Disse funksjonene tar inn en `Time.Date`-verdi og et heltall som angir antall dager, uker, måneder eller år du vil legge til eller trekke fra. Her er et eksempel på hvordan du kan bruke disse funksjonene:
 
-```Gleam
-let today = Calendar.today()
-let future_date = Calendar.date_add(today, Calendar.Duration.Day(5))
+```
+Gleam
+let initial_date = Time.Date.new(2021, 8, 10)
+let date_in_10_days = Time.Date.add_days(initial_date, 10)
+let date_in_2_weeks = Time.Date.add_weeks(initial_date, 2)
+let date_in_3_months = Time.Date.add_months(initial_date, 3)
+let date_in_5_years = Time.Date.add_years(initial_date, 5)
+
+IO.println(date_in_10_days) // 2021-08-20
+IO.println(date_in_2_weeks) // 2021-08-24
+IO.println(date_in_3_months) // 2021-11-10
+IO.println(date_in_5_years) // 2026-08-10
 ```
 
-Dette vil gi oss datoen som er fem dager etter `today`. Du kan også bruke negative tall for å beregne en dato i fortiden. Her er et eksempel hvor vi søker etter datoen som var to uker siden:
+# Dykk dypere
+Når du beregner en dato i fortiden eller fremtiden, må du ta hensyn til skuddår og tidszoner. I Gleam kan du bruke funksjonen `Time.Date.from_gregorian_date` for å lage en dato ved hjelp av en gregoriansk dato og tidsone. Dette kan være nyttig hvis du for eksempel arbeider med internasjonale datoer og behøver å konvertere til riktig tidsone før du beregner en dato.
 
-```Gleam
-let today = Calendar.today()
-let past_date = Calendar.date_add(today, Calendar.Duration.Week(-2))
-```
+En annen viktig ting å huske på er at en dato i Gleam er uavhengig av klokkeslett og tidssone, noe som betyr at du kun kan beregne datoer, ikke datoer og klokkeslett samtidig. Hvis du har behov for å beregne datoer og klokkeslett, kan du bruke funksjonene `Time.DateTime.from_gregorian_datetime` og `Time.DateTime.add_duration`.
 
-For å få en bedre forståelse av hvordan denne funksjonen fungerer, kan du også prøve å bruke den med andre enheter som måneder og år.
-
-## Dypdykk
-For å beregne en mer nøyaktig dato, kan du også bruke `Calendar.date_add` med en tidsperiode i stedet for en bestemt dato. Dette er nyttig hvis du for eksempel ønsker å finne ut hvilken dag det vil være fem måneder fra nå. Du kan også bruke `Calendar.date_subtract` for å beregne datoen i fortiden ved hjelp av en tidsperiode.
-
-Merk at disse funksjonene tar hensyn til skuddår og andre kalenderjusteringer, slik at du alltid får en nøyaktig dato.
-
-## Se også
-* [Offisiell Gleam-dokumentasjon for `Calendar`-modulen](https://gleam.run/built-in-types-and-modules/calendar)
-* [Eksempler på funksjonskall for `Calendar.date_add`](https://github.com/gleam-lang/gleam/blob/v0.13.0/examples/date_add.gleam)
-* [Eksempler på funksjonskall for `Calendar.date_subtract`](https://github.com/gleam-lang/gleam/blob/v0.13.0/examples/date_subtract.gleam)
+# Se også
+- [Gleam dokumentasjon for Time.Date](https://gleam.run/modules/gleam_time.html#date)
+- [Tutorial: Beregne forskjellen mellom to datoer i Gleam](https://medium.com/@gleamlang/tutorial-calculating-the-difference-between-two-dates-in-gleam-6b6c651d1313)

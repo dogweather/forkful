@@ -1,45 +1,59 @@
 ---
-title:    "Haskell: Pilkkoen alimerkkijonoja"
+title:    "Haskell: Osien erottelu"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi kannattaa tutkia alamerkkijonojen erottelua Haskellilla?
+Olet ehkä kuullut puhuttavan "merkkijonojen erottamisesta" tai "merkkijonojen jakamisesta" ohjelmoinnissa. Tiedät kuitenkin, että jos olet kokenut Haskell-ohjelmoija, tämä ei välttämättä kuulosta niin yksinkertaiselta. Miksi sitten haluaisit erottaa merkkijonoja osiin? Onko se todella niin tärkeä taito?
 
-Kaikissa ohjelmoinnin kielissä on tärkeää olla tehokas ja suorituskykyinen, ja tämä pätee myös Haskellissa. Yksi tapa parantaa koodin tehokkuutta on alamerkkijonojen erottelu, joka voi helpottaa esimerkiksi merkkijonojen käsittelyä ja analysointia. Seuraavassa osiossa kerron tarkemmin, miten alamerkkijonojen erottelu tapahtuu Haskellilla.
+Haskellissa merkkijonojen erottaminen on välttämätöntä monissa tilanteissa. Se voi auttaa sinua löytämään tietyn osan merkkijonosta, suorittamaan tietyn toiminnon tietyllä osalla tai tarkistamaan, onko merkkijonossa tietty merkkijonoyhdistelmä. Joten haluatko tietää, miten tämä tehdään? Lue eteenpäin!
 
-## Kuinka tehdä
+## Kuinka
 
-Alamerkkijonojen erottelu Haskellilla on hyvin helppoa! Käytämme funktiota "take" ja "drop" yhdessä "pack" ja "unpack" funktioiden kanssa.
-
-```Haskell
-> take 5 (unpack "tervetuloa")
-"terve"
-```
-
-Yllä olevassa esimerkissä otamme ensimmäiset viisi merkkiä merkkijonosta "tervetuloa" käyttämällä "take" funktiota. Samaan aikaan käytämme "unpack" funktiota muuttaaksemme merkkijonon listaksi merkeistä. Näin voimme käsitellä merkkijonoja helposti listoina.
-
-Käänteinen prosessi, eli alamerkkijonon poistaminen, tapahtuu käyttämällä "drop" funktiota.
+Aloitetaan yksinkertaisesta tilanteesta. Kuvitellaan, että meillä on merkkijono "Tämä on esimerkki merkkijonosta". Haluamme erottaa tämän merkkijonon kolmeen osaan: "Tämä on", "esimerkki" ja "merkkijonosta". Tämä voidaan tehdä hyödyntämällä haskellia sisäänrakennettua "words" -funktiota. Esimerkiksi seuraavassa koodissa erotamme merkkijonon ja tulostamme jokaisen sanan omalle rivilleen:
 
 ```Haskell
-> drop 5 (unpack "tervetuloa")
-"tuloa"
+let str = "Tämä on esimerkki merkkijonosta"
+let wordList = words str
+print wordList
 ```
 
-Kaiken kaikkiaan alamerkkijonojen erottelu on yksinkertaista ja tehokasta Haskellilla!
+Tämä tuottaa seuraavan tuloksen:
 
-## Syväsukellus
+```
+["Tämä", "on", "esimerkki", "merkkijonosta"]
+```
 
-Voi olla hyödyllistä ymmärtää tarkemmin, miten "take" ja "drop" funktiot toimivat alamerkkijonojen erottelussa. "take" funktio ottaa ensimmäiset "n" elementtiä listalta ja palauttaa uuden listan niistä. "drop" funktio taas poistaa ensimmäiset "n" elementtiä listalta ja palauttaa uuden listan niiden jälkeen.
+Mutta mitä jos haluamme erottaa merkkijonon tietyn merkkijonon perusteella? Esimerkiksi haluamme erottaa merkkijonosta vain "esimerkki" ja "merkkijonosta". Tämä voidaan tehdä käyttämällä "split"-funktiota kirjastosta "Data.List.Split". Seuraava esimerkki näyttää kuinka tämä voidaan tehdä:
 
-"pack" funktio puolestaan muuttaa merkkijonon listaksi merkeistä, kun taas "unpack" tekee päinvastaisen. Tämä on hyödyllistä, sillä listoja on helpompi käsitellä ja manipuloida kuin yksittäisiä merkkejä.
+```Haskell
+import Data.List.Split
 
-Voit lukea lisää näistä ja muista merkkijonoihin liittyvistä funktioista [Haskellin dokumentaatiosta](https://hackage.haskell.org/package/base/docs/Data-List.html#v:take) ja [Learn You a Haskellasta](http://learnyouahaskell.com/starting-out#texas-ranges).
+let str = "Tämä on esimerkki merkkijonosta"
+let subStrs = splitOn " " str
+print subStrs
+```
+
+Tämä antaa meille tuloksen:
+
+```
+["Tämä", "on", "esimerkki", "merkkijonosta"]
+```
+
+Kuten näet, annettu merkkijono on jaettu välilyöntien perusteella osiin.
+
+## Pohdintaa
+
+Merkkijonojen erottamiseen on monia erilaisia tapoja Haskellissa. Edellä mainittujen esimerkkien lisäksi voit myös käyttää "break"-funktiota, joka jakaa merkkijonon tietyn ehdon (esimerkiksi välimerkin) perusteella. Voit myös käyttää haskellin syntaksin ominaisuuksia, kuten listojen hajauttamista, helpottamaan merkkijonojen erottamista.
+
+Muista myös, että merkkijonot ovat muuttumattomia haskellissa, joten merkkijonojen erottamisen sijasta aina luodaan uusi merkkijono, joka sisältää vain halutun osan alkuperäisestä merkkijonosta.
+
+Tarpeen mukaan voit myös itse luoda omia funktioita merkkijonojen erottamiseen. Tämä voi auttaa sinua parantamaan ymmärrystäsi haskellin syntaksista ja toiminnasta.
 
 ## Katso myös
 
-- [Haskellin dokumentaatio merkkijonoista](https://hackage.haskell.org/package/base/docs/Data-String.html)
-- ["Take" ja "drop" funktioiden selitykset](https://hackage.haskell.org/package/base/docs/Data-List.html#v:take)
+- [Haskellin "words"-funktion dokumentaatio] (https://hackage.haskell.org/package/base/docs/P

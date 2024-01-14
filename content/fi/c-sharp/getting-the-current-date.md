@@ -1,47 +1,63 @@
 ---
-title:    "C#: Saamalla nykyinen päivämäärä"
+title:    "C#: Päivämäärän hakeminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Päivämäärä Tiedetään C#: llä
+## Miksi hankkia nykyinen päivämäärä?
 
-On monia käyttötarkoituksia, miksi haluamme tietää nykyisen päivämäärän ohjelmoimalla C#:lla. Se voi auttaa meitä seuraamaan aikaa, jolloin jotain tiettyä tapahtumaa tapahtui tai se voi olla osa laskentatoimintoa. Riippumatta syystä, tässä blogikirjoituksessa opimme, kuinka saada nykyinen päivämäärä käyttämällä C#:a.
+Tiedon hankkiminen nykyisestä päivästä on tärkeä osa C# ohjelmointia. On hyödyllistä tietää tarkka päivämäärä ja aika esimerkiksi laskelmien tai loki-tietueiden tallennusta varten.
 
-## Kuinka Saada Nykyinen Päivämäärä
+## Kuinka hankkia nykyinen päivämäärä
 
-Voit saada nykyisen päivämäärän C#:lla käyttämällä DateTime-luokkaa. Tämä luokka tarjoaa useita eri menetelmiä ja ominaisuuksia, joilla voimme käsitellä päivämääriä ja aikoja. Tässä on esimerkki koodista, jossa laskemme nykyisen päivämäärän määrän päivinä ja tulostamme sen konsoliin:
+Hankkia nykyisen päivämäärän C# koodissa on yksinkertaista käyttämällä `DateTime` rakennetta. Alla on esimerkki koodista, joka tulostaa nykyisen päivämäärän ja ajan konsoliin:
 
 ```C#
-// Luodaan uusi DateTime-objekti, joka säilyttää nykyisen päivämäärän ja ajan
-DateTime nykyinenPäivämäärä = DateTime.Now;
-
-// Lasketaan nykyisen päivämäärän määrä päivinä
-int määräPäivät = nykyinenPäivämäärä.Day;
-
-// Tulostetaan tulos konsoliin
-Console.WriteLine("Nykyinen päivämäärä: " + määräPäivät + " päivää");
+DateTime currentDate = DateTime.Today;
+Console.WriteLine("Nykyinen päivämäärä: " + currentDate);
 ```
 
-Tämän koodin tulostus näyttäisi tältä:
+Tämä koodi tuottaa seuraavan tulosteen:
 
 ```
-Nykyinen päivämäärä: 21 päivää
+Nykyinen päivämäärä: 22.9.2021 00:00:00
 ```
 
-Tämä on vain yksi esimerkki siitä, kuinka voimme käyttää DateTime-luokkaa nykyisen päivämäärän saamiseen. Voimme myös käyttää muita luokan ominaisuuksia, kuten Month ja Year, saadaksemme lisätietoa päivämäärästä.
+Käyttämällä `DateTime` rakennetta voidaan myös hankkia tietoa vain päivämäärästä tai ajasta erikseen. Esimerkiksi:
 
-## Syvällisempi Sukellus
+```C#
+DateTime currentDate = DateTime.Now;
+Console.WriteLine("Nykyinen ajankohta: " + currentDate.TimeOfDay);
+```
 
-Tarjoamamme esimerkki käsittelee vain yksinkertaista tapaa saada nykyinen päivämäärä C#:lla. Voimme kuitenkin käyttää DateTime-luokkaa myös melko monimutkaisiin päivämäärämanipulaatioihin, kuten eri aikavyöhykkeiden käyttämiseen ja päivämäärien muuntamiseen eri muotoihin.
+Tämä koodi tuottaa seuraavan tulosteen:
 
-DateTime-luokassa on myös muita hyödyllisiä ominaisuuksia, kuten AddDays(), AddMonths() ja AddYears(), joilla voimme lisätä päivämääriin aikoja. Voimme myös käyttää ToString() -metodia saadaksemme päivämäärän haluamaamme muotoon.
+```
+Nykyinen ajankohta: 17:09:45.1234567
+```
 
-DateTime-luokan käyttö on tärkeää monissa C#-ohjelmoinnissa ja voi säästää paljon aikaa ja vaivaa päivämäärän käsittelyssä.
+## Syvällisempi tarkastelu
 
-## Katso Myös
+`DateTime` rakenne sisältää myös muita hyödyllisiä ominaisuuksia, kuten mahdollisuuden lisätä tai vähentää päiviä, tunteja tai minuutteja nykyisestä päivästä.
 
-- [DateTime-luokan dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0)
-- [Ohjelmointiopas C#:lle](https://www.tutorialspoint.com/csharp/index.htm)
-- [C# DateTime-esimerkkejä](https://www.programiz.com/csharp-programming/datetime)
+Esimerkiksi jos haluamme lisätä yhden päivän nykyiseen päivämäärään, voimme käyttää `AddDays()` metodia:
+
+```C#
+DateTime currentDate = DateTime.Today;
+Console.WriteLine("Huomenna on: " + currentDate.AddDays(1));
+```
+
+Tämä koodi tulostaa seuraavan päivän päivämäärän:
+
+```
+Huomenna on: 23.9.2021 00:00:00
+```
+
+`DateTime` rakenteen avulla pystytään myös vertailemaan päivämääriä ja aikoja. Lisäksi se sisältää muun muassa metodeja aikavyöhykkeiden hallintaan ja päivämäärien muotoiluun.
+
+## Katso myös
+
+- [C# DateTime luokka](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [C# Time and Date -ohje](https://www.c-sharpcorner.com/blogs/time-and-date-c-sharp-programming1)

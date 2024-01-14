@@ -1,58 +1,51 @@
 ---
-title:    "Elixir: テキストの検索と置換"
+title:    "Elixir: テキストを検索して置換する"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を検索して置換することに関わる理由は、プログラマーがテキストデータを操作する必要があるからです。たとえば、データベースやファイルから特定の文字列を見つけて、別の文字列に置き換える必要がある場合があります。
+文章の検索や置換をする理由は様々ありますが、Elixirであればパターンマッチングを使用することで、より高速かつ柔軟なテキストの検索と置換が可能です。
 
-## やり方
+## 方法
 
-文字列の検索と置換は、Elixirの`String.replace`関数を使用することで簡単に行うことができます。以下のように、検索する文字列と置換する文字列を指定するだけで、新しい文字列が作成されます。
+まずは、Elixirのパターンマッチングを使用して文字列の中から特定のパターンを検索する方法を見ていきましょう。以下のコードを見てください。
 
-```Elixir
-original_string = "こんにちは、世界"
-replaced_string = String.replace(original_string, "世界", "Elixir")
-
-IO.puts(replaced_string)
-
-# 出力: こんにちは、Elixir
 ```
-
-また、正規表現を使用することで、より柔軟な検索と置換を行うこともできます。正規表現は`Regex`モジュールを使用して作成できます。
-
-```Elixir
-original_string = "Elixirはとても便利です"
-replaced_string = String.replace(original_string, ~r/(Elixir)/, "これ")
-
-IO.puts(replaced_string)
-
-# 出力: これはとても便利です
-```
-
-## ディープダイブ
-
-検索と置換をより詳しく理解するためには、文字列のパターンマッチングや正規表現の仕組みを学ぶことが重要です。
-
-文字列を比較する際に使用されるパターンマッチングは、文字列の部分一致を検索するために使用できます。例えば、以下のように、文字列が特定のパターンを含むかどうかを調べることができます。
-
-```Elixir
-original_string = "こんにちは、世界"
-
-if String.contains?(original_string, "世界") do
-  IO.puts("世界が含まれています")
+Elixir case "Elixir is a powerful and functional programming language" do 
+  {String.contains?("Elixir"), "Found Elixir!"} 
+  {_, "Elixir not found"} 
 end
-
-# 出力: 世界が含まれています
 ```
 
-正規表現は、さまざまなパターンにマッチする機能を持つ強力なツールです。正規表現を使用することで、繰り返し構造や文字列の一部を動的に指定することができます。正規表現の詳細については、Elixirの公式ドキュメントを参照してください。
+このコードでは、`String.contains?`という関数を使用して、「Elixir」というパターンを検索しています。もし文字列内に「Elixir」が含まれている場合、`{String.contains?("Elixir"), "Found Elixir!"}`のパターンにマッチし、「Found Elixir!」というメッセージが返されます。もし文字列内に「Elixir」が含まれていない場合、`{_, "Elixir not found"}`のパターンにマッチし、「Elixir not found」というメッセージが返されます。
 
-## See Also
+次に、パターンにマッチした文字列を置換する方法を見てみましょう。以下のコードを見てください。
 
-- [Elixirの公式ドキュメント](https://elixir-lang.org/getting-started/string-pattern-matching-and-replacing.html)
-- [正規表現についての詳細な説明](https://qiita.com/jnchito/items/c7e6fcf579e757d4dbce)
-- [正規表現の練習問題](https://tutorial.math.lamar.edu/files/livedocs/m8007/exercises/exaexchexregexpr.aspx)
+```
+Elixir "Elixir is a powerful and functional programming language" 
+|> String.replace("Elixir", "Ruby")
+```
+
+このコードでは、`String.replace`という関数を使用して「Elixir」という文字列を「Ruby」という文字列に置換しています。コンソールには「Ruby is a powerful and functional programming language」という文字列が出力されます。
+
+## 深堀
+
+Elixirでのテキストの検索と置換では、パターンマッチングの他にも様々な方法があります。例えば、正規表現を使用することでより柔軟な検索を行うことができます。また、`Regex`モジュールを使用することでさらに高度なテキスト処理を行うことも可能です。
+
+さらに、Elixirはコンパイル時に構文解析を行うため、処理速度が非常に高速です。これにより、大量のテキストを効率的に処理することができます。
+
+## 参考文献
+
+- [Elixir 公式ドキュメント - String](https://hexdocs.pm/elixir/String.html)
+- [Elixir 公式ドキュメント - Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Elixir 公式ドキュメント - パターンマッチング](https://elixir-lang.org/getting-started/pattern-matching.html)
+
+## 関連リンク
+
+- [Elixir: パターンマッチング入門](https://dev.to/ryuujo/elixir-how-to-use-pattern-matching-11kf)
+- [Elixirで正規表現を使いこなす](https://qiita.com/torudai/items/cd877b8fd9e8070a6a5d)
+- [Elixirにおける文字列操作の際のパフォーマンス改善方法](https://qiita.com/shuma/items/dab8a1bd6b4adb5c0381)

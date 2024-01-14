@@ -1,57 +1,47 @@
 ---
 title:    "C: Convertendo uma data em uma string"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Ao longo do desenvolvimento de um programa em C, pode ser necessário converter uma data em formato string. Isso pode ser útil para mostrar informações ao usuário em um formato legível ou para armazenar dados em um formato mais fácil de manipular. Neste artigo, vamos explorar a conversão de data para string em C e como isso pode ser útil em seus projetos.
+Converter uma data em uma string é uma tarefa comum em muitos programas de computador. Isso permite que os usuários visualizem as datas em um formato mais compreensível e de acordo com suas preferências.
 
 ## Como fazer
 
-Para converter uma data em string em C, vamos utilizar a função `strftime()` da biblioteca `time.h`. Esta função permite converter uma estrutura de dados `struct tm` em uma string no formato desejado. Veja um exemplo de código:
+Existem diferentes abordagens para converter uma data em uma string na linguagem de programação C. Aqui estão dois exemplos:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  // Pegando a data e hora atual
-  time_t current_time;
-  time(&current_time);
+    time_t t = time(NULL); // obter data e hora atual
+    char str[100]; // armazenar string aqui
 
-  // Convertendo para struct tm
-  struct tm *time_info = localtime(&current_time);
+    // usando strftime()
+    strftime(str, 100, "%d/%m/%Y", localtime(&t));
+    printf("Data atual em formato string: %s\n", str);
 
-  // Convertendo para string
-  char date_string[50];
-  strftime(date_string, sizeof(date_string), "%d/%m/%Y %H:%M:%S", time_info);
+    // usando sprintf()
+    sprintf(str, "%d de %B de %Y", localtime(&t)->tm_mday, localtime(&t)->tm_mon+1, localtime(&t)->tm_year+1900);
+    printf("Data atual em formato string: %s\n", str);
 
-  // Imprimindo a data convertida
-  printf("A data e hora atual é: %s\n", date_string);
-  
-  return 0;
+    return 0;
 }
 ```
 
-Este código irá imprimir a data e hora atual em formato de string. No caso, a saída será: "A data e hora atual é: 15/04/2021 13:45:32". Vamos analisar o trecho de código que faz a conversão:
-
-```C
-strftime(date_string, sizeof(date_string), "%d/%m/%Y %H:%M:%S", time_info);
-```
-
-O primeiro parâmetro é o array de caracteres onde a string será armazenada. O segundo é o tamanho da string, que deve ser grande o suficiente para armazenar a data e o tempo formatados. O terceiro é o formato da string que queremos, neste caso, dia, mês, ano, hora, minuto e segundo. Por fim, o último parâmetro é a estrutura de dados `struct tm` que contém a data e hora que queremos converter.
+Aqui, usamos as funções `strftime()` e `sprintf()` para formatar a data de maneiras diferentes. A função `strftime()` aceita três argumentos: uma string para armazenar a data, o tamanho máximo da string e o formato da data. O formato é definido usando símbolos especiais, como "%d" para o dia, "%m" para o mês e "%Y" para o ano. A função `sprintf()` segue uma abordagem semelhante, mas usa `printf()` para formatar a data e, em seguida, armazena o resultado na string.
 
 ## Mergulho profundo
 
-É importante entender a estrutura de dados `struct tm` para conseguir utilizar a função `strftime()` corretamente. Ela contém informações sobre a data e hora em vários campos, como dia, mês, ano, hora, minuto e segundo. Além disso, também possui campos para fuso horário, dia da semana, entre outros.
-
-Outras funções da biblioteca `time.h` também podem ser úteis, como `localtime()` para converter um objeto `time_t` em `struct tm`, e `mktime()` para converter uma estrutura `struct tm` em `time_t`.
+Para nos aprofundarmos um pouco mais no processo de converter datas em strings, podemos explicar brevemente como as datas são armazenadas em um programa. Dates são armazenados em um formato numérico, conhecido como "timestamp". Isto é, o número de segundos decorridos desde 1º de janeiro de 1970, 00:00:00 UTC. Quando precisamos exibir essa data para os usuários, usamos funções de formatação, como `strftime()`, para converter o timestamp em uma string legível.
 
 ## Veja também
 
-- [Documentação oficial da biblioteca time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Tutorial de C sobre data e hora](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Exemplos de códigos em C](https://www.programiz.com/c-programming/examples)
+- Documentação oficial da função strftime() do C: https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html
+- Documentação oficial da função sprintf() do C: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html#Formatted-Output-Functions
+- Tutorial sobre conversão de datas para strings em C: https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm

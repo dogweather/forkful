@@ -1,56 +1,40 @@
 ---
-title:    "Haskell: Att hitta längden på en sträng"
+title:    "Haskell: Att hitta längden på en sträng."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att hitta längden på en sträng är en vanlig uppgift när man programmerar. Det kan vara användbart när man vill göra vissa beräkningar eller när man behöver veta hur många tecken en användare har skrivit in.
+Att hitta längden på en sträng kan vara användbart när man arbetar med text i Haskell. Det kan hjälpa till att bestämma storleken på en sträng eller att kontrollera om en sträng är tom.
 
-# Hur man gör det
+## Så här gör du
 
-Att hitta längden på en sträng är enkelt med hjälp av Haskell. Nedan följer ett enkelt exempel på hur man gör det:
-
-```Haskell
--- Skapa en funktion som tar emot en sträng och returnerar längden
-längd :: String -> Int
-längd sträng = length sträng  -- Använd den inbyggda funktionen "length"
-
--- Använd funktionen för att hitta längden på en sträng
-main = do
-  let sträng = "Hej, världen!"
-  putStrLn $ "Längden på strängen \"" ++ sträng ++ "\" är " ++ show (längd sträng) ++ " tecken."
-```
-
-Output:
-```
-Längden på strängen "Hej, världen!" är 13 tecken.
-```
-
-# Djupdykning
-
-När vi använder funktionen "length" för att hitta längden på en sträng kommer den att räkna antalet tecken inklusive mellanslag och specialtecken. Om man endast vill räkna bokstäverna i en sträng kan man använda sig av funktionen "filter". Här är ett exempel på hur man kan göra det:
+För att hitta längden på en sträng i Haskell kan du använda funktionen `length`. Den accepterar en sträng som argument och returnerar längden på strängen som en heltalsvärd.
 
 ```Haskell
--- Skapa en funktion som endast tar med bokstäver i längden
-bokstäver :: String -> Int
-bokstäver sträng = length $ filter (\x -> isLetter x) sträng  -- Använd "filter" och "isLetter" från Data.Char för att hitta bokstäverna
-
--- Använd funktionen för att hitta antalet bokstäver i en sträng
-main = do
-  let sträng = "Hello, world!"
-  putStrLn $ "Antalet bokstäver i strängen \"" ++ sträng ++ "\" är " ++ show (bokstäver sträng) ++ "."
+-- Exempel på att hitta längden på en sträng
+length "Hej hej!" -- output: 8
+length "Jag älskar Haskell" -- output: 17
 ```
 
-Output:
-```
-Antalet bokstäver i strängen "Hello, world!" är 10.
+Funktionen `length` är inbyggd i Haskell, så du behöver inte importera några externa bibliotek för att använda den.
+
+## Djupdykning
+
+Om du vill utforska längdberäkningen ytterligare kan du titta på dess implementering i Haskell. Funktionen `length` är rekursiv och går igenom varje tecken i strängen tills den når slutet. Detta beräknar sedan längden genom att lägga till 1 för varje tecken i strängen.
+
+```Haskell
+-- Implementation av length funktionen
+length :: [a] -> Int
+length [] = 0 -- basfall, en tom sträng har längden 0
+length (x:xs) = 1 + length xs -- rekursivt kall, lägger till 1 för varje tecken i strängen
 ```
 
-# Se även
+## Se även
 
-- [Haskell.org](https://www.haskell.org)
-- [Data.Char-modulens dokumentation](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
-- [Exempel på funktioner i Haskell](https://wiki.haskell.org/Function)
+- [Haskell för nybörjare (på svenska)](https://www.haskell.org/svenska.html)
+- [Officiell Haskell-dokumentation](https://www.haskell.org/documentation/)
+- [Rekursion i Haskell](https://wiki.haskell.org/Recursion)

@@ -1,34 +1,51 @@
 ---
-title:    "PHP: Trovare la lunghezza di una stringa"
+title:    "PHP: Trova la lunghezza di una stringa"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Trovare la lunghezza di una stringa è un'operazione comune nella programmazione PHP. Conoscere e utilizzare questa funzione può rendere il tuo codice più efficiente e maneggevole.
+Scrivere codice PHP può sembrare intimidatorio per molte persone, ma una delle cose più utili che puoi imparare è come trovare la lunghezza di una stringa. Questa abilità ti consentirà di manipolare i dati in modo più efficace e di creare script più robusti.
 
 ## Come fare
 
-Per trovare la lunghezza di una stringa in PHP, puoi utilizzare la funzione `strlen()`. Questa funzione accetta una stringa come parametro e restituisce il numero di caratteri all'interno della stringa. Ecco un esempio di codice:
+Per ottenere la lunghezza di una stringa in PHP, è possibile utilizzare la funzione `strlen()`. Questa funzione accetta una stringa come input e restituisce il numero di caratteri all'interno della stringa. Ecco un esempio di codice PHP che utilizza `strlen()`:
 
 ```PHP
-$my_string = "Ciao a tutti!";
-echo strlen($my_string);
-
-// Output: 13
+$stringa = "Ciao mondo!";
+echo strlen($stringa); // Output: 11
 ```
 
-In questo esempio, la stringa "Ciao a tutti!" ha una lunghezza di 13 caratteri e viene stampata a schermo. Puoi anche utilizzare la funzione `strlen()` per controllare la lunghezza di una variabile stringa dinamicamente, ad esempio in un loop.
+Come puoi vedere, la funzione `strlen()` è semplice da usare e restituisce immediatamente il risultato desiderato. È importante notare che `strlen()` considera anche gli spazi e i caratteri speciali nella stringa.
+
+Se vuoi conoscere la lunghezza di una stringa ma escludere gli spazi, puoi utilizzare la funzione `trim()` prima di `strlen()`, in questo modo:
+
+```PHP
+$stringa = "   Ciao mondo!   ";
+echo strlen($stringa); // Output: 17 (considerando gli spazi)
+$stringa = trim($stringa);
+echo strlen($stringa); // Output: 11 (senza gli spazi)
+```
 
 ## Approfondimento
 
-La funzione `strlen()` conta i caratteri all'interno di una stringa in modo sensibile al caso, il che significa che anche le lettere maiuscole e minuscole sono considerate come caratteri separati. Inoltre, i caratteri speciali e gli spazi sono inclusi nella conteggio della lunghezza. Questa funzione è molto utile per la manipolazione di stringhe, ad esempio per validare la lunghezza di una password o controllare che un input utente non superi una certa lunghezza.
+È importante comprendere che `strlen()` restituisce il numero di byte nella stringa, non il numero di caratteri. Questo potrebbe causare problemi con le stringhe che contengono caratteri speciali multibyte, come quelli utilizzati nella lingua italiana.
+
+Per risolvere questo problema, puoi utilizzare la funzione `mb_strlen()` che considera il numero corretto di caratteri multibyte nella stringa. Questa funzione accetta un parametro aggiuntivo per specificare il set di caratteri utilizzato, che di solito è `UTF-8` per il codice PHP. Ecco un esempio di utilizzo di `mb_strlen()`:
+
+```PHP
+$stringa = "Ciao";
+echo strlen($stringa); // Output: 4 (considerando solo i byte)
+echo mb_strlen($stringa, "UTF-8"); // Output: 4 (considerando anche i caratteri multibyte)
+```
+
+È importante tenere presente che `mb_strlen()` è più lenta rispetto a `strlen()`, quindi utilizzala solo quando hai a che fare con caratteri multibyte.
 
 ## Vedi anche
 
-- Documentazione ufficiale di PHP `strlen()`: https://www.php.net/manual/en/function.strlen.php
-- Esempi di utilizzo di `strlen()`: https://www.w3schools.com/php/func_string_strlen.asp
-- Tutorial sulle operazioni di base sulle stringhe in PHP: https://www.hostinger.it/tutorial/php-string/
-- Video di spiegazione sulla funzione `strlen()`: https://www.youtube.com/watch?v=D1g-9Pg6HZw&ab_channel=FisrtStepsWebDevelopment
+- [Documentazione PHP su strlen()](https://www.php.net/manual/en/function.strlen.php)
+- [Documentazione PHP su trim()](https://www.php.net/manual/en/function.trim.php)
+- [Documentazione PHP su mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)

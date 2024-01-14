@@ -1,35 +1,41 @@
 ---
-title:    "Ruby: Usuwanie znaków pasujących do wzorca."
+title:    "Ruby: Usuwanie znaków pasujących do wzorca"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Czasami w procesie tworzenia aplikacji lub skryptów w języku Ruby, możemy napotkać na sytuację, w której chcielibyśmy usunąć określone znaki z ciągu znaków. Może to być potrzebne do filtrowania danych lub wielu innych zastosowań. W tym artykule pokażemy jak w prosty sposób usunąć znaki pasujące do określonego wzorca.
 
-Dlaczego ktoś mógłby chcieć usuwać znaki pasujące do pewnego wzoru w swoim kodzie? Przyczyny mogą być różne - może chcemy oczyścić dane z niepożądanych znaków, lub zamienić pewne ciągi znaków na inne.
+## Jak To Zrobić
+Aby usunąć znaki pasujące do wzorca w Ruby, możemy skorzystać z metody `gsub` lub `delete`. Poniżej przedstawiam przykładowy kod, który pokaże jak usunąć znaki `a` z podanego ciągu.
 
-## Jak to zrobić
-
-```Ruby
-# Tworzymy przykładowy ciąg znaków
-string = "To jest przykladowy ciag znakow!!!"
-
-#Korzystając z metody `gsub` i wyrażenia regularnego, możemy usunąć wszystkie znaki nie będące literami lub spacjami
-new_string = string.gsub(/[^a-zA-Z\s]/,"")
-
-puts new_string #=> "To jest przykladowy ciag znakow"
-
-# W powyższym przykładzie, wyrażenie regularne /[^a-zA-Z\s]/ oznacza "wszystkie znaki, które nie są literami albo spacjami".
-
+```ruby
+string = "ruby to język programowania"
+filtered_string = string.gsub("a", "")
+puts filtered_string
+# wyjście: ruby to jzyk programowni
 ```
 
-## Dogłębna analiza
+Jest to prosta i szybka metoda usuwania znaków pasujących do wzorca. Możemy również zastosować to samo rozwiązanie do usuwania wielu znaków na raz.
 
-Wykorzystanie wyrażeń regularnych pozwala nam na precyzyjne określenie wzorców, których szukamy w ciągu znaków. Możemy na przykład wykorzystać różne znaki specjalne, które ułatwią nam wyszukanie dokładnie tych znaków, które chcemy usunąć. Przykładowo, zamiast `[a-zA-Z\s]` możemy użyć `[0-9]`, aby usunąć wszystkie cyfry z naszego ciągu znaków.
+```ruby
+string = "1,2,3 are numbers"
+filtered_string = string.gsub(/[0-9]/, "")
+puts filtered_string
+# wyjście: , are numbers
+```
 
-## Zobacz także
+Powyższy przykład wykorzystuje wyrażenia regularne, aby usunąć wszystkie cyfry z podanego ciągu.
 
-- Dokumentacja Ruby o wyrażeniach regularnych: https://ruby-doc.org/core-2.7.1/Regexp.html 
-- Przykładowy kod usuwający znaki specjalne: https://www.rubyguides.com/2015/05/working-with-strings-in-ruby/#remove-all-punctuation
-- Wyrażenia regularne w praktyce: https://www.rubyguides.com/2015/06/ruby-regex/
+## Przyjrzyjmy Się Temu Bliżej
+Metoda `gsub` może przyjmować wyrażenie regularne lub pojedynczy znak jako pierwszy argument. Możemy również wykorzystać dodatkowe opcje, takie jak ignorowanie wielkości liter czy podanie domyślnego znaku do zastąpienia. Możliwości są szerokie i warto eksperymentować z różnymi kombinacjami.
+
+## Zobacz Również
+Jeśli chcesz dowiedzieć się więcej na temat usuwania znaków pasujących do wzorca w Ruby, zobacz poniższe linki:
+
+- Dokumentacja Ruby: https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub
+- Darmowy kurs Ruby: https://www.codecademy.com/learn/learn-ruby
+- Wspólnota Ruby w Polsce: https://rubyonrails.pl/

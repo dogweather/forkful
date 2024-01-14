@@ -1,71 +1,62 @@
 ---
 title:    "Arduino: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 Arduino 프로그래밍을 읽어야 하는지
 
-아두이노 프로그래밍은 다양한 코딩 기술을 배워야하기 때문에 간혹 복잡하고 어려울 수 있습니다. 하지만 이러한 코딩 기술 중 하나인 커맨드 라인 인수 읽기는 아두이노 프로그래밍의 중요한 부분이며 프로그래밍을 더욱 효과적으로 만들어 줍니다. 따라서 커맨드 라인 인수 읽기에 대해 배우는 것은 아두이노 프로그래밍을 더욱 재미있게 만드는데 도움이 됩니다.
+커맨드 라인 인자를 읽는 것은 Arduino 프로그래밍에서 매우 유용합니다. 이 기능을 사용하면 사용자의 입력을 읽어 프로그램에 대해 더 많은 제어를 할 수 있습니다.
 
-## 한 번에 알아보는 방법
+## 어떻게
 
-커맨드 라인 인수를 읽는 가장 간단한 방법은 ```Arduino``` 명령어에 ```String[]``` 배열을 매개변수로 전달하는 것입니다. 예를 들면, 다음 코드를 실행해보세요.
+아래의 예제 코드를 통해 커맨드 라인 인자를 읽는 방법을 알아보겠습니다. 이 코드는 사용자가 입력한 인자를 숫자로 변환하고, 그 값을 시리얼 모니터에 출력합니다.
 
 ```Arduino
+int numberOne;
+int numberTwo;
+
 void setup() {
-    Serial.begin(9600);
-    while(!Serial) {}
-    String[] args = {"arg1", "arg2", "arg3"};
-    Serial.println(args[0]);
-    Serial.println(args[1]);
-    Serial.println(args[2]);
+  Serial.begin(9600);     // 시리얼 통신 시작
+  while (!Serial) {}      // 시리얼 통신이 연결될 때까지 대기
+  numberOne = atoi(argv[1]);   // 첫 번째 인자를 정수로 변환하여 numberOne 변수에 저장
+  numberTwo = atoi(argv[2]);   // 두 번째 인자를 정수로 변환하여 numberTwo 변수에 저장
+  Serial.print("The sum of the two numbers is: ");    // 출력
+  Serial.println(numberOne + numberTwo);    // 두 수의 합을 계산하여 출력
 }
 
 void loop() {
-  
+
 }
 ```
 
-위의 코드를 실행하면 아래와 같은 결과를 볼 수 있습니다.
+사용자가 아래와 같은 입력을 준다고 가정해 봅시다.
 
-```
-arg1
-arg2
-arg3
-```
+`123 456`
 
-직접 코드를 작성하여 커맨드 라인 인수를 입력할 수도 있지만, 좀 더 효율적인 방법은 시리얼 모니터를 사용하여 커맨드 라인 인수를 입력하는 것입니다. 시리얼 모니터로 입력한 커맨드 라인 인수는 Serial 변수를 통해 읽을 수 있습니다.
+이 입력은 첫 번째 인자가 123 이고 두 번째 인자가 456 인 것을 의미합니다. 따라서 출력은 아래와 같을 것입니다.
 
-```Arduino
-#include <String.h>
-String[] args = {"arg1", "arg2", "arg3"};
+`The sum of the two numbers is: 579`
 
-void setup() {
-  Serial.begin(9600);
-  while(!Serial) {}
-  if(Serial.available() > 0) {
-    String inputArgs = Serial.readStringUntil('\n');
-    args = inputArgs.split(',');
-    for(int i = 0; i < args.length; i++) {
-      Serial.println(args[i]);
-    }
-  }
-}
+## 더 깊게 들어가기
 
-void loop() {
-  
-}
-```
+커맨드 라인 인자를 읽는 방법에 대해 더 자세히 알아보겠습니다. 먼저 `Serial.begin()` 함수를 통해 시리얼 통신을 시작합니다. 이 함수는 아두이노와 컴퓨터 간의 통신을 위한 설정을 해줍니다. 그 다음 `while` 루프를 사용하여 시리얼 통신이 연결될 때까지 대기합니다. 이렇게 함으로써 이후의 코드에서 시리얼 통신을 사용할 수 있게 됩니다.
 
-위의 코드를 실행하고 시리얼 모니터에 ```arg1,arg2,arg3```를 입력해보세요. 입력한 커맨드 라인 인수가 배열로 출력되는 것을 확인할 수 있습니다.
+`atoi()` 함수는 문자열을 정수로 변환해주는 역할을 합니다. 위의 예제에서는 두 번째 인자까지만 변환을 해주지만, 인자가 더 많을 수도 있습니다. 이 경우 `argc` 변수를 사용하여 인자의 개수를 알 수 있습니다. `argv` 변수는 각 인자를 배열로 저장하고 있습니다. 따라서 `argv[0]` 은 프로그램 이름, `argv[1]`은 첫 번째 인자, `argv[2]`는 두 번째 인자를 나타낼 것입니다.
 
-## 더 깊이 들어가보기
+이렇게 하여 커맨드 라인 인자를 읽고 사용자의 입력에 따라 프로그램에 더 많은 제어를 할 수 있게 됩니다.
 
-커맨드 라인 인수를 읽기 위해 사용할 수 있는 여러 가지 함수와 방법이 있습니다. 자세한 내용은 [Arduino 공식 웹사이트](https://www.arduino.cc/reference/en/language/functions/communication/serial/)를 참조하세요. 또한 커맨드 라인 인수를 활용한 다양한 예제 코드를 [Github](https://github.com/search?q=arduino+command+line+arguments)에서 찾아볼 수 있습니다.
+## 더 알아보기
 
-## 관련 링크
+커맨드 라인 인자를 읽는 방법에 대해 더 자세히 알아보고 싶다면 아래의 링크를 참고해보세요.
 
-- [Arduino 공식 웹사이트](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [GitHub에서 커맨드 라인 인수 관련 예제 코드 검색](https://github.com/search?q=arduino+command+line+arguments&type=Repositories)
+[Arduino 공식 문서](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+
+[Serial 통신에 대한 자세한 설명](https://learn.sparkfun.com/tutorials/serial-communication/all)
+
+# 더 알아보기
+
+- [Arduino 공식 문서](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+- [Serial 통신에 대한 자세한 설명](https://learn.sparkfun.com/tutorials/serial-communication/all)

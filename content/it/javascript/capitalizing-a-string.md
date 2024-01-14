@@ -1,45 +1,43 @@
 ---
-title:    "Javascript: Rendere maiuscola una stringa"
+title:    "Javascript: Capitalizzare una stringa"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Capitare una stringa può essere utile quando si vuole dare enfasi o risalto ad una determinata parola o frase all'interno di un testo. Inoltre, è una buona pratica di codifica per garantire la coerenza nei dati di input.
+##Perché
+In JavaScript, capitalizzare una stringa è importante per assicurarsi che il testo sia corretto e leggibile. Inoltre, alcune funzioni e librerie potrebbero richiedere che le stringhe siano in maiuscolo o in minuscolo per funzionare correttamente.
 
-## Come
-Per capitalizzare una stringa in Javascript, possiamo utilizzare il metodo `.toUpperCase()` che converte tutti i caratteri della stringa in lettere maiuscole. Possiamo anche utilizzare il modulo `toLocaleUpperCase()` per gestire eventuali caratteri speciali o accenti.
+##Come Fare
+Per capitalizzare una stringa in JavaScript, è possibile utilizzare il metodo "toUpperCase()" per convertire tutti i caratteri in maiuscolo:
 
-```Javascript
-var str = "ciao a tutti!";
-
-console.log(str.toUpperCase());
-// Output: CIAO A TUTTI!
-
-console.log(str.toLocaleUpperCase());
-// Output: CIAO A TUTTI!
+```javascript
+let stringa = "ciao mondo";
+console.log(stringa.toUpperCase()); // Output: CIAO MONDO
 ```
 
-## Approfondimento
-È importante notare che questi metodi non modificano direttamente la stringa originale, ma ne restituiscono una nuova versione con i caratteri capitalizzati. Per modificare la stringa originale, possiamo assegnare la nuova stringa a una variabile o utilizzare il metodo `.replace()` per sostituire la stessa stringa con la versione capitalizzata.
+Invece, per convertire tutti i caratteri in minuscolo, si può utilizzare il metodo "toLowerCase()" :
 
-```Javascript
-// Utilizzando una variabile:
-var str = "Ciao a tutti!";
-var newStr = str.toUpperCase();
-
-console.log(str); // Output: Ciao a tutti!
-console.log(newStr); // Output: CIAO A TUTTI!
-
-// Utilizzando il metodo .replace():
-var str = "Ciao a tutti!";
-str = str.replace(str, str.toUpperCase());
-
-console.log(str); // Output: CIAO A TUTTI!
+```javascript
+let stringa = "CIAO MONDO";
+console.log(stringa.toLowerCase()); // Output: ciao mondo
 ```
 
-## Vedi anche
-- [Metodo toUpperCase() su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Metodo replace() su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Modulo I18n su Javascript](https://www.i18next.com/)
+È anche possibile capitalizzare solo la prima lettera di una stringa utilizzando il metodo "charAt()" insieme ad altri metodi di stringa:
+
+```javascript
+let stringa = "ciao mondo";
+console.log(stringa.charAt(0).toUpperCase() + stringa.slice(1).toLowerCase()); // Output: Ciao mondo
+```
+
+##Approfondimento
+È importante notare che i metodi "toUpperCase()" e "toLowerCase()" non modificano la stringa originale, ma ne restituiscono una nuova. Inoltre, questi metodi non solo lavorano con le lettere dell'alfabeto ma anche con caratteri speciali, numeri e spazi.
+
+Inoltre, è possibile capitalizzare una stringa utilizzando espressioni regolari o creando una funzione personalizzata. Ci sono diverse librerie JavaScript disponibili che offrono funzioni avanzate per la manipolazione delle stringhe, come "lodash" e "string.js".
+
+##Vedi Anche
+- https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+- https://lodash.com/
+- https://stringjs.com/

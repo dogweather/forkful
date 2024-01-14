@@ -1,50 +1,29 @@
 ---
-title:    "Clojure: 文字列の長さを見つける"
+title:    "Clojure: 「文字列の長さを求める」"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # なぜ
-
-文字列の長さを見つけることに取り組むのかを説明するために、しばらくお付き合いください。
+文字列の長さを求めることに関心を持つ理由について説明します。
 
 ## 方法
-
-文字列の長さを見つけるには、 `count` 関数を使用する必要があります。以下のように、文字列を `count` 関数に渡して、文字の数を数えることができます。
-
 ```Clojure
-(count "こんにちは") ; 出力結果: 5
+; 文字列を定義
+(def s "こんにちは！")
+; 文字列の長さを求める
+(count s)
 ```
+このコードを実行すると、**6**という値が返されます。これは、文字列の長さが6であることを示しています。Clojureは文字列を文字のリストとして扱うので、count関数を使用することでリストのサイズを取得することができます。
 
-これにより、カウント結果として `5` が返されます。同じ方法を使用して、変数に文字列を割り当ててから、その変数を `count` 関数に渡すこともできます。
+## 詳細
+文字列の長さを求めることは、プログラミングにおいて非常に一般的なタスクの一つです。文字列を操作する際に必要な情報を提供する上で非常に重要な機能です。Clojureでは、count関数を使用することで簡単に文字列の長さを取得することができますが、内部的には文字列をリストとして扱っていることに注意する必要があります。
 
-```Clojure
-(def greet "こんにちは")
-(count greet) ; 出力結果: 5
-```
-
-## ディープダイブ
-
-`count` 関数は、リストやベクターなどのコレクションに対しても使用することができます。リストを例にとると、リストに含まれる要素の数を数えるのに便利な方法です。例えば、次のようなリストがあるとします。
-
-```Clojure
-(def animals ["犬" "猫" "ウサギ" "ハムスター"])
-```
-
-このリストに対して、 `count` 関数を使用すると、以下のようになります。
-
-```Clojure
-(count animals) ; 出力結果: 4
-```
-
-また、 `count` 関数は `nil` の場合にも適用することができます。 `nil` は、値が存在しないことを示す特別なシンボルです。
-
-```Clojure
-(count nil) ; 出力結果: 0
-```
-
-## 参考
-
-- [Clojureユーザーズガイド - 文字列](https://clojure.or.jp/document/guides/learn/read-string)
-- [Clojure標準ライブラリ - count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count)
+## 参考リンク
+- [Clojureの公式ドキュメント](https://clojure.org/reference/strings)
+- [Clojureでの文字列操作について](https://clojure.or.jp/doc/strings.html)
+- [文字列操作のTips集](https://qiita.com/katsuyoshi_yz/items/7af5f4b21ff12507e684)
+- [Clojureでの数値変換と文字列長の関係](https://qiita.com/ironista444/items/503cebc97f788a30d576)
+- [テキスト処理についてのClojureチュートリアル](https://clojure.or.jp/doc/about_text_processing.html)

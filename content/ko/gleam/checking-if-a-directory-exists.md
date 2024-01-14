@@ -1,35 +1,40 @@
 ---
-title:    "Gleam: 디렉토리가 존재하는지 확인하는 방법"
+title:    "Gleam: 디렉토리의 존재 여부 확인하기"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 (Why)
 
-프로그래밍을 하다보면, 디렉토리가 존재하는지 확인하는 일이 많이 발생합니다. 이 과정에서 디렉토리가 없는 경우 에러를 방지하고, 디렉토리가 있는 경우 추가적인 작업을 수행할 수 있습니다. 
+디렉터리(Directory)가 존재하는지 확인하는 것이 왜 중요할까요? 여러분은 실제로 파일이 있는지 없는지를 빠르게 알고, 파일 시스템에 전체적인 사용을 파악하는 것이 매우 중요합니다.
 
-## 하우 투
+# 어떻게 (How To)
 
-```Gleam
-let my_dir = "/path/to/directory"
+우리는 ```Gleam`` 프로그래밍 언어를 사용하여 파일이 존재하는지 확인하는 방법을 알아보겠습니다. 먼저, 다음과 같이 ```fs``` 라이브러리를 이용하여 파일이 존재하는지 확인할 수 있습니다.
 
-if Filesystem.exists(my_dir) {
-  // 디렉토리가 존재할 때 수행할 코드
-  io.println("디렉토리가 존재합니다: " ++ my_dir)
+```
+Gleam use fs
+
+let path = "existed_directory"
+
+if fs.exists(path) {
+    Gleam.io.print("디렉터리가 존재합니다.")
 } else {
-  // 디렉토리가 존재하지 않을 때 수행할 코드
-  io.println("디렉토리가 존재하지 않습니다.")
+    Gleam.io.print("디렉터리가 존재하지 않습니다.")
 }
 ```
 
-위 예제는 파일 시스템 모듈의 `exists` 함수를 사용하여 디렉토리가 존재하는지 확인하는 방법을 보여줍니다. 파일 시스템 모듈은 기본 라이브러리이기 때문에 별도로 가져오거나 설치할 필요가 없습니다.
+위의 예제를 실행하면 "디렉터리가 존재합니다." 또는 "디렉터리가 존재하지 않습니다." 라는 결과를 얻을 수 있습니다.
 
-## 딥 다이브
+# 딥 다이브 (Deep Dive)
 
-디렉토리가 존재하는지 확인하는 과정에서 파일 시스템의 여러 다른 함수들을 이용할 수 있습니다. `exists` 함수는 단순히 디렉토리가 존재하는지 여부만을 확인하지만, 파일의 존재 여부를 확인하는 함수(`Filesystem.file_exists`)나 새로운 디렉토리를 만드는 함수(`Filesystem.mkdir`) 등 다양한 함수를 이용할 수 있습니다.
+자세한 내용을 알고 싶다면, 다음의 링크를 참조해주세요.
 
-## 참고
+- [Gleam ```fs``` 라이브러리 문서](https://gleam.run/stdlib/fs.html)
 
-- [Gleam 공식 문서 - 파일 시스템 모듈](https://gleam.run/documentation/standard_library/#filesystem)
-- [Gleam 공식 문서 - 파일 시스템 관리](https://gleam.run/documentation/guides/file_system_management/)
+# 관련 링크 (See Also)
+
+- [Gleam 공식 홈페이지](https://gleam.run)
+- [Gleam 튜토리얼 (한국어 번역)](https://github.com/myungjaeyu/gleam-tutorial-kr)

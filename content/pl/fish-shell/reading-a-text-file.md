@@ -1,67 +1,49 @@
 ---
-title:    "Fish Shell: Odczytywanie pliku tekstowego"
+title:    "Fish Shell: Odczyt pliku tekstowego"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Czy kiedykolwiek chciałeś lub musiałeś przeczytać plik tekstowy przy użyciu powłoki Fish Shell? Ten prosty przewodnik pokaże Ci, jak to zrobić oraz dlaczego jest to przydatna umiejętność. Czytanie plików tekstowych jest niezwykle ważne w programowaniu, ponieważ pozwala nam na przeglądanie i przetwarzanie danych w łatwy sposób.
+Czy kiedykolwiek miało miejsce, że potrzebowałeś przeczytać plik tekstowy w języku programowania Shell? Może chciałeś znaleźć najlepszy sposób na szybkie i skuteczne przetworzenie danych w pliku tekstowym? W tym blogu przedstawimy Ci możliwości czytania plików tekstowych za pomocą języka programowania Fish Shell, który jest jednym z najbardziej użytecznych i intuicyjnych narzędzi do automatyzacji w systemach Unix.
 
-## Jak
+# Jak To Zrobić
 
-Zacznijmy od załadowania pliku, który chcemy przeczytać. W tym przykładzie użyjemy polecenia `cat` do wyświetlenia zawartości pliku "tekst.txt":
+```Fish Shell``` jest potężnym narzędziem do przetwarzania danych tekstowych, dzięki swojej wygodnej i elastycznej składni. Możesz użyć polecenia ```cat``` aby wyświetlić zawartość pliku tekstowego. Na przykład:
 
-```Fish Shell
-cat tekst.txt
+```fish
+cat mojplik.txt
 ```
 
-To polecenie wyświetli całą zawartość pliku tekstowego w oknie terminala. Jeśli chcesz wyświetlić tylko kilka pierwszych linijek, możesz użyć polecenia `head`:
+Możesz również używać operatora przekierowania ```>``` aby zapisać wynik polecenia do nowego pliku tekstowego, np.:
 
-```Fish Shell
-head -n 5 tekst.txt
+```fish
+ls > zawartosc.txt
 ```
 
-W ten sposób wyświetlimy tylko pierwsze 5 linijek pliku. Podobnie, jeśli chcesz wyświetlić tylko kilka ostatnich linijek, możesz użyć polecenia `tail`:
+W ten sposób możesz przetwarzać i analizować dane w plikach tekstowych w prosty i wydajny sposób.
 
-```Fish Shell
-tail -n 3 tekst.txt
+# Głębsza Analiza
+
+Jeśli chcesz uzyskać więcej informacji na temat przetwarzania plików tekstowych w języku Fish Shell, możesz skorzystać z opcji ```read``` wraz z poleceniem ```while```. Na przykład, jeśli chcesz wyświetlić każdą linię pliku tekstowego, możesz użyć poniższego kodu:
+
+```fish
+while read liniatext; do
+	echo $liniatext
+done < mojplik.txt
 ```
 
-Ten przykład wyświetli ostatnie 3 linijki pliku. Inną przydatną funkcją jest wyszukiwanie słów lub fraz w pliku tekstowym. Możemy to zrobić za pomocą polecenia `grep`:
+W tym przykładzie, polecenie ```while``` będzie powtarzać się, dopóki nie przeczyta wszystkich linii z pliku tekstowego. Wtedy polecenie ```echo``` wyświetli linię tekstu na ekranie.
 
-```Fish Shell
-grep "słowo" tekst.txt
-```
+# Zobacz Również
 
-Ten przykład wyświetli wszystkie linijki, w których występuje słowo "słowo". Jako że jest to tylko wprowadzenie do czytania plików tekstowych w Fish Shell, zapraszam do eksperymentowania z innymi poleceniami i opcjami.
+W przypadku gdy chcesz poznać więcej możliwości czytania i przetwarzania plików tekstowych za pomocą języka Fish Shell, polecamy przeczytanie dokumentacji Fish Shell oraz innych dostępnych materiałów, takich jak:
 
-## Deep Dive
+- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [Przewodnik po języku Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Oficjalne forum użytkowników Fish Shell](https://github.com/fish-shell/fish-shell/discussions)
 
-Powyższe przykłady pokazały podstawowe sposoby czytania plików tekstowych w Fish Shell. Możesz jednak również użyć bardziej zaawansowanych technik, takich jak przekierowanie danych. Na przykład, aby wyświetlić zawartość pliku tekstowego w innym pliku, możesz użyć polecenia `tee`:
-
-```Fish Shell
-cat tekst.txt | tee nowy_plik.txt
-```
-
-Ten przykład wyświetli zawartość pliku "tekst.txt" i jednocześnie zapisze ją do nowego pliku "nowy_plik.txt".
-
-Fish Shell oferuje również wiele opcji i funkcji, aby pomóc w przetwarzaniu dużych plików tekstowych. Na przykład, jeśli chcesz wyświetlić tylko określoną część pliku, możesz użyć polecenia `less`:
-
-```Fish Shell
-less tekst.txt
-```
-
-Polecenie to pozwala na przewijanie i przeszukiwanie dużych plików. Więcej informacji na temat tego polecenia można znaleźć w dokumentacji Fish Shell.
-
-## Zobacz także
-
-Teraz, gdy już wiesz jak czytać pliki tekstowe w Fish Shell, możesz wykorzystać tę umiejętność w swoim kodzie. Poniżej znajdują się przydatne linki, które mogą Ci pomóc w dalszym zgłębianiu tej tematyki:
-
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial o czytaniu plików tekstowych w Fish Shell](https://likegeeks.com/fish-shell-scripts/)
-- [Poradnik poświęcony czytaniu i przetwarzaniu danych w Fish Shell](http://wooll.blog/2015/08/reading-and-processing-files-in-fish-shell/)
-- [Przydatne polecenia do przetwarzania danych w Fish Shell](https://fishshell.unixwitch.me/fish/include-fish/page.html)
-
-Dziękuję za przeczytanie! Mam nadzieję, że ten artykuł był dla Ciebie przydatny!
+Dzięki temu, możesz skorzystać w pełni z możliwości, jakie oferuje język Fish Shell w zakresie przetwarzania plików tekstowych. Pozwoli Ci to zaoszczędzić czas i zwiększyć wydajność Twoich codziennych zadań.

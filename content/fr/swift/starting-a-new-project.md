@@ -1,52 +1,45 @@
 ---
 title:    "Swift: Commencer un nouveau projet"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Comme nous le savons tous, la technologie évolue à un rythme effréné. Chaque jour, de nouveaux outils et langages de programmation apparaissent, offrant de nouvelles possibilités et fonctionnalités pour les développeurs. C'est pourquoi il est important de rester à jour et de se familiariser avec ces nouveaux outils. Dans cet article, nous allons aborder Swift, un langage de programmation développé par Apple pour créer des applications pour ses produits, tels que l'iPhone, l'iPad et le Mac.
+Si vous êtes un amateur de programmation ou un développeur chevronné, vous avez probablement déjà entendu parler de Swift. Cette langage de programmation open-source développé par Apple est de plus en plus populaire pour ses performances, sa simplicité et sa polyvalence. Mais pourquoi devriez-vous vous lancer dans un nouveau projet en utilisant ce langage ? Eh bien, la réponse est simple : Swift est en constante évolution et il offre des fonctionnalités modernes qui peuvent faciliter grandement votre processus de développement.
 
 ## Comment faire
 
-Commençons par les bases de Swift. Tout d'abord, vous devez avoir un ordinateur avec Xcode installé, l'IDE officiel pour le développement d'applications iOS et macOS. Ensuite, vous pouvez créer un nouveau projet en sélectionnant "Nouveau projet" dans le menu Fichier. Choisissez "Single View App" comme modèle et nommez-le comme vous le souhaitez.
-
-Voici un exemple de code pour afficher "Bonjour le monde" dans la console:
+La première étape pour démarrer un nouveau projet en Swift est évidemment de télécharger et d'installer le compilateur. Une fois que vous avez installé Xcode, l'environnement de développement intégré d'Apple, vous pouvez commencer à coder en Swift. Voici un exemple de code pour afficher un simple "Bonjour !" à l'écran :
 
 ```Swift
-let message = "Bonjour le monde"
-print(message)
+print("Bonjour !")
 ```
 
-Si vous avez un iPhone ou un iPad, vous pouvez également exécuter votre application sur votre appareil et voir le message s'afficher sur l'écran.
-
-Maintenant, passons à quelque chose de plus avancé. Avec Swift, vous pouvez également créer des interfaces utilisateur en utilisant SwiftUI, une nouvelle approche déclarative pour la création d'interfaces utilisateur. Voici un exemple de code pour créer un bouton avec un texte et une action:
+Vous pouvez également utiliser Swift en dehors de Xcode, en tant que langage de script. Voici un exemple de script qui génère un nombre aléatoire entre 1 et 10 :
 
 ```Swift
-struct ContentView: View {
-    var body: some View {
-        Button(action: {
-            print("Button tapped!")
-        }) {
-            Text("Cliquez ici")
-        }
-    }
-}
+#!/usr/bin/env swift
+
+import Foundation
+
+let random = Int.random(in: 1...10)
+print("Le nombre aléatoire est : \(random)")
 ```
+
+Ce ne sont là que deux exemples parmi tant d'autres de ce que vous pouvez faire avec Swift. N'hésitez pas à explorer et découvrir toutes les possibilités offertes par ce langage.
 
 ## Plongée en profondeur
 
-Maintenant que vous avez les bases de Swift, vous pouvez commencer à explorer toutes les fonctionnalités de ce langage puissant. Vous pouvez apprendre comment créer des variables, utiliser des boucles et des conditions, et même intégrer des fonctionnalités de réalité augmentée à vos applications. Le développement avec Swift vous offre de nombreuses possibilités créatives pour créer des applications uniques et innovantes.
+Maintenant que vous avez une idée de base de la façon dont Swift fonctionne, passons à la création d'un nouveau projet en utilisant ce langage. Tout d'abord, il est important de bien planifier et de définir vos objectifs avant de commencer à coder. Prenez le temps de réfléchir à la structure et à l'architecture de votre projet, ainsi qu'aux différentes fonctionnalités que vous souhaitez inclure.
+
+Ensuite, vous devrez choisir un modèle de projet adapté à vos besoins dans Xcode. Vous pouvez choisir le modèle "Single View App" pour créer une application simple avec une seule vue, ou le modèle "Tabbed App" si votre projet nécessite plusieurs onglets. N'hésitez pas à explorer les différents modèles disponibles pour trouver celui qui convient le mieux à votre projet.
+
+Une fois que vous avez créé votre projet, vous pouvez commencer à coder en utilisant la syntaxe claire et concise de Swift. N'oubliez pas de tester régulièrement votre code et de le commenter pour faciliter la compréhension et la maintenance à long terme.
 
 ## Voir aussi
 
-Maintenant que vous avez une idée de comment démarrer un projet en utilisant Swift, voici quelques ressources supplémentaires pour vous aider à approfondir vos connaissances sur ce langage de programmation:
-
-- [Documentation officielle de Swift](https://developer.apple.com/documentation/swift)
-- [Cours gratuit sur Swift proposé par Apple](https://www.apple.com/swift/playgrounds/)
-- [Swift for Beginners sur Ray Wenderlich](https://www.raywenderlich.com/1352671-swift-tutorial-for-beginners-1-expressions-variables-and-constants)
-- [Communauté Swift sur Reddit](https://www.reddit.com/r/swift/)
-
-Alors n'hésitez pas à plonger dans le monde de Swift et à découvrir tout ce que ce langage a à offrir. Bon codage !
+- [Documentation officielle de Swift](https://docs.swift.org)
+- [Tutoriels de raywenderlich sur Swift](https://www.raywenderlich.com/swift)

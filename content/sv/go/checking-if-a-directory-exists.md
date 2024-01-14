@@ -1,50 +1,61 @@
 ---
-title:    "Go: Kontroll av existensen för en mapp"
+title:    "Go: Kontrollera om en mapp finns"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Att kontrollera om en mapp existerar är en viktig del av filhanteringen när man programmerar i Go. Det ger en möjlighet att hantera och navigera bland filer och mappar på ett effektivt sätt. 
 
-I Go-programmering, är det viktigt att kunna kontrollera om en mapp existerar i ditt system. Detta kan vara användbart när du skriver program som behöver läsa eller skriva filer på en specifik plats.
-
-## Så här gör du
-
-För att kontrollera om en mapp finns i ditt system, kan du använda `os.Stat` funktionen i Go. Detta låter dig hämta filinformation för en given sökväg. Om sökvägen är en mapp, kommer `os.Stat` funktionen att returnera ett `os.FileInfo` objekt. Annars, om sökvägen inte är en mapp, kommer det att returnera ett fel.
-
-Här är ett exempel på hur du kan använda `os.Stat` för att kontrollera om en mapp existerar:
+## Hur man gör 
+Det enklaste sättet att kontrollera om en mapp existerar är att använda Go's inbyggda "os" paket. För att göra detta behöver du bara importera paketet och sedan använda funktionen "Stat" för att söka efter mappen. Om mappen existerar returneras en nil error, annars returneras ett felmeddelande. Nedan finns ett kodexempel på hur detta kan göras: 
 
 ```Go
-package main
-
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	path := "mappen/som/du/vill/kontrollera"
-	
-	_, err := os.Stat(path)
-	
-	if err != nil {
-		fmt.Println("Mappen finns inte!")
-	} else {
-		fmt.Println("Mappen finns!")
-	}
+    if _, err := os.Stat("/path/to/directory"); err == nil {
+        fmt.Println("Mappen existerar.")
+    } else if os.IsNotExist(err) {
+        fmt.Println("Mappen existerar inte.")
+    } else {
+        fmt.Println("Annat fel uppstod.")
+    }
 }
 ```
 
-Om mappen finns, kommer outputen att vara "Mappen finns!". Annars, kommer outputen att vara "Mappen finns inte!".
+När koden körs och mappen existerar kommer utskriften att vara "Mappen existerar." Om mappen inte existerar kommer utskrift att vara "Mappen existerar inte." Om det uppstår något annat fel kommer felmeddelandet att skrivas ut. 
 
-## Djupdykning
+## Djupdykning 
+För en mer robust kontroll av mappen kan man använda sig av "os.FileInfo" objektet som returneras av funktionen "Stat". Detta objekt innehåller mer information om mappen som till exempel storlek och ändringsdatum. Om man bara är intresserad av att kontrollera om mappen är en mapp (och inte en fil) kan man använda funktionen "IsDir" på "FileInfo" objektet. Här är ett exempel på hur man kan göra det: 
 
-När du använder `os.Stat` för att kontrollera om en mapp existerar, är det viktigt att notera att funktionen bara kontrollerar om den angivna sökvägen existerar. Det betyder att om en fil med samma namn som mappen finns i samma plats, kommer `os.Stat` att returnera felmeddelandet "permission denied" istället för att indikera att mappen inte finns.
+```Go
+import (
+    "fmt"
+    "os"
+)
 
-En annan sak att tänka på är att även om `os.Stat` låter dig kontrollera om en mapp existerar, kommer det inte automatiskt att skapa mappen om den inte finns. Detta är något du måste göra manuellt med hjälp av `os.Mkdir` funktionen.
+func main() {
+    if fileInfo, err := os.Stat("/path/to/directory"); err == nil {
+        if fileInfo.IsDir() {
+            fmt.Println("Mappen är en mapp.")
+        } else {
+            fmt.Println("Mappen är en fil.")
+        }
+    } else if os.IsNotExist(err) {
+        fmt.Println("Mappen existerar inte.")
+    } else {
+        fmt.Println("Annat fel uppstod.")
+    }
+}
+```
 
 ## Se även
-
-- [os.Stat dokumentation](https://golang.org/pkg/os/#Stat)
-- [os.Mkdir dokumentation](https://golang.org/pkg/os/#Mkdir)
+- [Go os paket dokumentation](https://golang.org/pkg/os/)
+- [Go filepath paket dokumentation](https://golang.org/pkg/path/filepath/)
+- [Go's "if err != nil" idiom](https://blog.golang.org/error-handling-and-go)

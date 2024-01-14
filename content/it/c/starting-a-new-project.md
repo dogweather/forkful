@@ -1,39 +1,63 @@
 ---
-title:    "C: Avviare un nuovo progetto."
+title:    "C: Iniziando un nuovo progetto"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ci sono molte ragioni per le quali qualcuno potrebbe decidere di iniziare un nuovo progetto di programmazione in C. Potresti voler imparare un nuovo linguaggio di programmazione, espandere le tue conoscenze o semplicemente divertirti creando qualcosa di nuovo.
+Uno dei motivi più comuni per iniziare un nuovo progetto in C è per sviluppare un'applicazione o un sistema che richiede prestazioni ottimali e una gestione efficiente delle risorse di sistema. Inoltre, C è ancora molto utilizzato nelle applicazioni di sistema, nei sistemi operativi e nelle reti.
 
-## Come procedere
+## Come fare
 
-Per iniziare un nuovo progetto in C, devi prima avere un ambiente di sviluppo pronto. Puoi utilizzare un IDE come Visual Studio o CLion o semplicemente un editor di testo e il compilatore GCC.
-
-Una volta che hai il tuo ambiente pronto, puoi creare un file ".c" e iniziare a scrivere il codice. Ecco un esempio di una semplice funzione per stampare "Ciao, mondo!" a schermo:
+Iniziamo esaminando un esempio di codice in C per stampare la frase "Ciao, mondo!" sul terminale:
 
 ```C
 #include <stdio.h>
 
-int main() {
-  printf("Ciao, Mondo!");
-  return 0;
+int main()
+{
+    printf("Ciao, mondo!");
+    return 0;
 }
 ```
 
-Dopo aver scritto il tuo codice, devi compilare il file utilizzando il compilatore GCC. Utilizzando il comando "gcc nomefile.c -o nomefileCompilato", otterrai un file eseguibile che puoi avviare sul tuo computer.
+Nel codice sopra, stiamo includendo la libreria standard "stdio.h" per poter utilizzare la funzione di stampa "printf". All'interno della funzione "main", utilizziamo la funzione "printf" per stampare la stringa desiderata e terminate il programma con "return 0". Il risultato del programma sarà la stampa della frase "Ciao, mondo!" sul terminale.
+
+Ora esaminiamo un esempio più complesso che coinvolge l'utilizzo di variabili e operatori matematici per calcolare l'area di un cerchio. 
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    // Dichiarazione delle variabili
+    double r, area;
+    const double pi = 3.14159;
+
+    // Input
+    printf("Inserisci il raggio del cerchio: ");
+    scanf("%lf", &r);
+
+    // Calcolo dell'area
+    area = pi * r * r;
+
+    // Output
+    printf("L'area del cerchio con raggio %lf è: %lf", r, area);
+    return 0;
+}
+```
+
+Nel codice sopra, dichiariamo due variabili, "r" per il raggio e "area" per il risultato del calcolo. Utilizziamo inoltre la parola chiave "const" per dichiarare una costante, in questo caso il valore di π. Utilizziamo quindi la funzione "scanf" per acquisire un valore da input dell'utente e, tramite l'operatore matematico "*", calcoliamo l'area del cerchio e la salviamo nella variabile "area". Infine, utilizziamo nuovamente la funzione "printf" per stampare il risultato sul terminale.
 
 ## Approfondimento
 
-Iniziare un nuovo progetto in C può sembrare un po' intimidatorio, ma ci sono molte risorse disponibili per aiutarti. Assicurati di leggere la documentazione ufficiale di C e di utilizzare comunità online come Stack Overflow per risolvere eventuali problemi che incontrerai.
-
-Inoltre, è importante avere una buona comprensione dei concetti fondamentali del linguaggio C, come le variabili, gli array e le strutture dati. Con una buona base, sarai in grado di creare progetti più complessi e soddisfacenti.
+Prima di iniziare un nuovo progetto in C, è importante avere una conoscenza approfondita del linguaggio e delle sue caratteristiche. Inoltre, è consigliato utilizzare un editor di testo specializzato per la scrittura di codice, come ad esempio Visual Studio Code o Sublime. Inoltre, è possibile utilizzare un debugger per individuare eventuali errori nel codice e una libreria di standard per poter utilizzare funzioni predefinite.
 
 ## Vedi anche
 
+- [Tutorial di C su Programiz](https://www.programiz.com/c-programming)
 - [Documentazione ufficiale di C](https://devdocs.io/c/)
-- [GCC - Documentazione di riferimento](https://gcc.gnu.org/)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/c)
+- [Esercizi e soluzioni di Programmazione in C](https://www.w3resource.com/c-programming-exercises/)

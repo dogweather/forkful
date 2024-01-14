@@ -1,39 +1,54 @@
 ---
-title:    "Elm: Cálculo de uma data no futuro ou no passado"
+title:    "Elm: Calculando uma data no futuro ou passado"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que calcular uma data futura ou passada em Elm?
 
-Calcular datas no futuro ou no passado pode ser útil em muitas situações, como em um programa de calendário ou em uma aplicação de controle financeiro.
+Calcular datas futuras ou passadas pode ser útil em uma variedade de situações de programação, como a criação de calendários ou agendas, agendamento de eventos e outras aplicações relacionadas ao tempo. Com o Elm, é possível realizar esses cálculos com facilidade, graças às suas funções de manipulação de datas.
 
-## Como fazer
+# Como fazer em Elm
+
+Para calcular uma data futura ou passada em Elm, primeiro precisamos importar o módulo Date e a função addDays. Dessa forma, podemos adicionar um determinado número de dias a uma data específica e obter uma nova data resultante. Por exemplo, para calcular uma data 30 dias no futuro, podemos fazer o seguinte:
 
 ```Elm
--- Função para calcular uma data no futuro ou passado
-calcularData : Int -> Int -> Date
-calcularData dias tipo =
-    if tipo == 1 then
-        Date.init |> Date.addDays dias
-    else
-        Date.init |> Date.subDays dias
+import Date exposing (..)
+import Date.Extra exposing (addDays)
+
+dataAtual = Date.fromIsoString "2021-07-10"
+dataFutura = addDays 30 dataAtual
 ```
 
-Exemplo de entrada: `calcularData 30 1`
+Neste exemplo, definimos uma data atual e, em seguida, adicionamos 30 dias a ela usando a função addDays. Isso resulta na data "2021-08-09".
 
-Saída: `2021-08-05`
+Também podemos usar o mesmo método para calcular uma data passada, simplesmente alterando o sinal do número de dias para um valor negativo. Por exemplo, para calcular uma data 30 dias no passado, podemos fazer o seguinte:
 
-Exemplo de entrada: `calcularData 15 0`
+```Elm
+import Date exposing (..)
+import Date.Extra exposing (addDays)
 
-Saída: `2021-07-20`
+dataAtual = Date.fromIsoString "2021-07-10"
+dataPassada = addDays -30 dataAtual
+```
 
-## Mergulho mais profundo
+Isso resultará na data "2021-06-10".
 
-Calcular datas no futuro ou no passado pode ser feito de diversas maneiras, dependendo da linguagem de programação que você está usando. No caso de Elm, utilizamos a função `Date.addDays` para adicionar dias a uma data existente e `Date.subDays` para subtrair dias. Também é possível utilizar outras funções, como `Date.addMonths` e `Date.addYears`, para calcular datas em um período maior.
+# Mais detalhes sobre cálculos de data em Elm
 
-## Veja também
+Além de adicionar dias a uma data, existem outras funções úteis no módulo Date para manipular datas em Elm. Algumas delas incluem:
 
-- https://guide.elm-lang.org/
-- https://package.elm-lang.org/packages/elm/time/latest/
+- `addMonths`: adiciona um determinado número de meses a uma data
+- `addYears`: adiciona um determinado número de anos a uma data
+- `subtract`: subtrai uma outra data de uma data específica
+
+É importante notar que todas essas funções retornam um novo valor de data, em vez de alterar o valor original. Isso garante uma programação mais segura e evita efeitos colaterais indesejados.
+
+Além disso, o módulo Date também possui funções para obter informações sobre uma data, como o dia da semana, o último dia do mês e assim por diante. Consulte a documentação oficial do Elm para obter mais detalhes sobre essas funções.
+
+# Veja também
+- Documentação oficial do módulo Date em Elm: https://package.elm-lang.org/packages/elm-lang/core/latest/Date
+- Exemplos de cálculos de data em Elm: https://ellie-app.com/new
+- Tutorial sobre manipulação de data em Elm: https://programmingwithmosh.com/elm/elm-dates/

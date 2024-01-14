@@ -1,39 +1,45 @@
 ---
 title:    "Bash: Pisanie do standardowego błędu"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W dzisiejszych czasach, coraz więcej osób decyduje się na naukę programowania. Jednym z bardzo ważnych elementów znajdujących się w językach programowania jest standardowe wyjście błędu (ang. standard error). W tym artykule dowiesz się, dlaczego warto poznać i umiejętnie korzystać z tego elementu w języku Bash.
+Niektórzy z was mogli zadać sobie pytanie: "Po co pisać na standardowe wyjście błędu w Bash?" Cóż, odpowiedź jest prosta - pisanie na standardowe wyjście błędu jest bardzo przydatne w niektórych sytuacjach. Jest to sposób na informowanie użytkownika o błędach lub ostrzeżeniach związanych z wykonywanym kodem. Dzięki temu możemy łatwiej debugować nasze skrypty i uniknąć nieprzewidzianych problemów.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby napisać do standardowego wyjścia błędu, wystarczy użyć polecenia "echo" oraz przekierować wyjście do strumienia błędów (ang. stderr). Przykład:
+Aby pisać na standardowe wyjście błędu w Bash, musimy użyć polecenia `echo` wraz z opcją `-e` oraz przekierować jego wynik na standardowe wyjście błędu. Przykładowy kod może wyglądać tak:
 
-```Bash
-echo "Ten tekst pojawi się na standardowym wyjściu błędu" >&2
 ```
-
-Output:
-
-```sh
-Ten tekst pojawi się na standardowym wyjściu błędu
+#!/bin/bash
+echo -e "To jest błąd!" >&2
 ```
+W powyższym przykładzie, komenda `echo` jest użyta do wypisania informacji na standardowe wyjście błędu, a dzięki przekierowaniu wyniku na `>&2`, wiadomość ta nie pojawi się na standardowym wyjściu.
 
-W powyższym przykładzie widzimy, że używając przekierowania ">&2", nasz tekst pojawi się na standardowym wyjściu błędu zamiast na standardowym wyjściu (ang. stdout).
+Natomiast jeśli chcemy przetestować nasz kod, możemy go uruchomić i przetestować na przykład tak:
 
-## Dogłębna analiza
+```
+./script.sh 2> error.log
+```
+W ten sposób przekierowujemy standardowe wyjście błędu do pliku `error.log`, który zawierać będzie nasz komunikat.
 
-W języku Bash standardowe wyjście błędu (stderr) jest odrębnym strumieniem danych, który jest wykorzystywany do wypisywania informacji o błędach w czasie wykonania programu. To bardzo ważne narzędzie podczas debugowania skryptów i aplikacji, ponieważ umożliwia nam wychwycenie błędów i szybką interwencję.
+## Głębszy wgląd
 
-W przypadku, gdy nie przekierujemy wyjścia błędu do strumienia stderr, informacje o błędach będą wyświetlane na standardowym wyjściu, co może utrudnić nam zlokalizowanie błędu w naszym kodzie.
+Istnieje również inny sposób na pisanie na standardowe wyjście błędu w Bash - używając polecenia `printf`. Ta komenda jest bardziej rozbudowana i pozwala nam na bardziej zaawansowane formatowanie tekstu. Przykładowy kod wyglądałby tak:
+
+```
+#!/bin/bash
+printf "%s\n" "To jest błąd!" >&2
+
+```
+Kod ten wyświetli to samo co przykład z użyciem `echo`, ale daje nam więcej możliwości w zakresie formatowania tekstu. Więcej informacji na temat `printf` można znaleźć w dokumentacji Bash.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o standardowym wyjściu błędu w Bash, zapoznaj się z poniższymi artykułami:
-
-- [Bash: Przekierowanie wejścia i wyjścia](https://linux.die.net/Bash-Beginners-Guide/moreadvanced.html)
-- [Przekierowanie strumieni w Bash](https://www.tutorialspoint.com/unix/unix-i-o-redirections.htm)
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html) 
+- [Przekierowanie standardowego wyjścia błędu](https://www.tldp.org/LDP/abs/html/io-redirection.html#ERRORREDIR) 
+- [Polecenie printf w Bash](https://www.tutorialspoint.com/unix_command/printf.htm)

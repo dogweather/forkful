@@ -1,54 +1,42 @@
 ---
-title:    "C: Sökning och byte av text"
+title:    "C: Sökning och ersättning av text."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en viktig funktion inom programmering för att enkelt kunna ändra delar av texten i vår kod. Det är också ett effektivt sätt att göra massor av ändringar på en gång istället för att manuellt gå igenom varje enskild rad.
+Att söka och ersätta text är en viktig funktion inom programmering som hjälper oss att snabbt och enkelt göra ändringar i stora mängder av text. Det kan vara användbart för att fixa fel i koden eller för att snabbt uppdatera namn och variabler.
 
-## Hur man gör
+## Så här
 
-För att söka och ersätta text i C-programmering, använder vi oss av en inbyggd funktion som heter `str_replace()`. Denna funktion tar emot tre parametrar:
-
-- En pekare till den sträng som vi vill utföra sökningen och ersättningen på
-- En sträng som vi vill söka efter
-- En sträng som vi vill ersätta söksträngen med
-
-Här är ett exempel på hur vi kan använda denna funktion för att söka och ersätta text i en sträng:
+För att söka och ersätta text i C-programmering, använder vi funktionen "str_replace", som tar in en sträng att söka efter, en sträng att ersätta den med och en sträng att söka igenom. Här är ett exempel som söker efter ordet "hello" och ersätter det med "hej":
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-   char str[] = "Hej alla programmerare! Välkommen till min blogg.";
-
-   // Söker efter "alla" och ersätter med "ni"
-   str_replace(str, "alla", "ni");
-
-   printf("%s", str);
-   
-   return 0;
+int main(void) {
+  char str[] = "Hello world!";
+  char sök[] = "hello";
+  char ersätt[] = "hej";
+  
+  char *resultat = str_replace(str, sök, ersätt);
+  printf("%s", resultat); // Output: Hej world!
+  
+  return 0;
 }
-
-// Output: Hej ni programmerare! Välkommen till min blogg.
 ```
-
-Som ni kan se har strängen "alla" blivit ersatt med "ni" i den ursprungliga strängen. Detta visar hur kraftfullt det kan vara att kunna göra massor av ändringar med bara en funktion.
 
 ## Djupdykning
 
-När vi kallar på `str_replace()`-funktionen, så sker sökningen och ersättningen endast på en kopia av den ursprungliga strängen. Detta betyder att den ursprungliga strängen förblir oförändrad. Om vi vill att ändringarna ska göras permanent på den ursprungliga strängen, måste vi istället tilldela resultatet av funktionen till den ursprungliga strängen.
+Vid sökning och ersättning av text är det viktigt att vara medveten om vissa saker. Funktionen "str_replace" är fallkänslig, vilket betyder att den kommer att skilja mellan stora och små bokstäver. Så om vi i exemplet ovan skulle söka efter "Hello" istället för "hello", skulle ingenting ändras eftersom det inte finns en matchning.
 
-Funktionen `str_replace()` är även fallkänslig, vilket innebär att den tar hänsyn till versaler och gemener vid sökningen och ersättningen. Om vi vill att sökningen och ersättningen ska vara oberoende av storlek på bokstäver, kan vi använda oss av en inbyggd funktion som heter `strcasse()` för att konvertera bägge strängarna till samma fall innan vi anropar `str_replace()`.
-
-Nu när ni har förstått grunderna för att söka och ersätta text i C-programmering, så finns det en hel del mer avancerade tekniker och funktioner som ni kan utforska för att bli ännu effektivare i era textmanipuleringsuppgifter.
+Det är också viktigt att vara uppmärksam på att "str_replace" endast ersätter första matchningen av den sökta strängen. Så om vi skulle ha flera upprepningar av "hello" i vår sträng, skulle bara den första ersättas. Om vi vill ersätta alla förekomster, kan vi använda en loop för att upprepa funktionen för varje förekomst.
 
 ## Se även
 
-- [C-stringar](https://www.w3schools.in/c-tutorial/c-strings/)
-- [C Standardbiblioteket](http://www.cplusplus.com/reference/cstring/)
-- [Officiell C-dokumentation](https://www.open-std.org/jtc1/sc22/wg14/)
+- [Funktionen "str_replace" i C](https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm)
+- [Mer information om att söka och ersätta text i C](https://www.geeksforgeeks.org/c-program-find-replace-word-string/)

@@ -1,61 +1,55 @@
 ---
 title:    "Kotlin recipe: Checking if a directory exists"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In Kotlin, checking if a directory exists is a common task when working with files and directories. This can be useful in a variety of scenarios, such as checking the existence of a directory before creating a new one, or making sure that a certain directory path is valid before attempting to access it.
+When working with files and directories, it's important to first check if a directory exists before attempting to perform any operations on it. This ensures that your code runs smoothly and avoids any potential errors.
 
 ## How To
-To check if a directory exists in Kotlin, we can use the `exists()` function from the `java.io.File` class. This function returns a boolean value, `true` if the directory exists and `false` if it does not.
+To check if a directory exists in Kotlin, we can use the `exists()` method from the `java.io.File` class. This method returns a Boolean value, `true` if the directory exists and `false` if it doesn't.
+
+Let's take a look at an example:
 
 ```Kotlin
-val directory = File("~/Documents/blog-posts")
-if (directory.exists()) {
-    println("The directory exists!")
-} else {
-    println("The directory does not exist.")
-}
+// Import the java.io package
+import java.io.*
 
-// Output: The directory exists!
+// Create a File object for the directory we want to check
+val directory = File("/home/user/documents")
+
+// Call the exists() method on the File object
+println(directory.exists())
+
+// Output: true
 ```
 
-We can also use the `isDirectory()` function to check if the file path refers to a directory. This can be useful if we want to make sure that the path we are checking is specifically a directory and not a regular file.
+In this example, we import the `java.io` package and create a `File` object for the directory we want to check, which in this case is `/home/user/documents`. Then, we call the `exists()` method on the `directory` object and print the result, which is `true` since the directory does exist.
+
+We can also use the `exists()` method to check if a file exists. Here's an example:
 
 ```Kotlin
-val filePath = File("~/Downloads/prices.csv")
-if (filePath.exists()) {
-    if (filePath.isDirectory()) {
-        println("The path is a directory.")
-    } else {
-        println("The path is not a directory.")
-    }
-} else {
-    println("The path does not exist.")
-}
+// Create a File object for the file we want to check
+val file = File("/home/user/documents/sample.txt")
 
-// Output: The path is not a directory.
+// Call the exists() method on the File object
+println(file.exists())
+
+// Output: false
 ```
+
+In this example, we have a `File` object for a file that does not exist, so the `exists()` method returns `false`.
 
 ## Deep Dive
-In Kotlin, the `exists()` function is actually inherited from the `java.io.File` class, which means it is available not just for directories but also for regular files. This can be a bit confusing, so it is important to also use the `isDirectory()` function to differentiate between the two.
+Under the hood, the `exists()` method makes use of the `java.io.FileSystem` class which contains platform dependent methods for manipulating files and directories. It uses these methods to check for the existence of the specified directory or file.
 
-We can also use `listFiles()` function to get an array of `File` objects representing the contents of the directory. This can be useful if we want to further manipulate the files and directories within the specified directory.
-
-```Kotlin
-val directory = File("~/Documents/blog-posts")
-if (directory.exists() && directory.isDirectory()) {
-    val directoryContents = directory.listFiles()
-    println("The contents of the directory are: ${directoryContents.joinToString(", ") { it.name }}")
-} else {
-    println("The directory does not exist or is not a directory.")
-}
-
-// Output: The contents of the directory are: blog-post1, blog-post2, blog-post3
-```
+Additionally, it's important to note that the `exists()` method is just a simple check for existence and does not necessarily guarantee that the directory or file is accessible or readable. Other factors such as permissions and file locking could still prevent file operations from being successful.
 
 ## See Also
-- Official Kotlin documentation for `java.io.File`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/
-- Tutorial on working with files and directories in Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_working_with_files.htm
+- [Official Kotlin Documentation on File Handling](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
+- [Kotlin File Operations Tutorial](https://www.baeldung.com/kotlin-file-operations)
+
+By using the `exists()` method, we can ensure that our code is running efficiently and avoid any potential errors when working with files and directories. Try it out in your next Kotlin project!

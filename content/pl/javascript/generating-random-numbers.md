@@ -1,40 +1,41 @@
 ---
 title:    "Javascript: Generowanie losowych liczb"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego generowanie losowych liczb jest ważne?
 
-Generowanie losowych liczb jest nieodłączną częścią wielu programów i aplikacji. Może ono być wykorzystane do symulowania przypadkowych zdarzeń, generowania unikalnych identyfikatorów czy też do tworzenia gier. W tym artykule dowiesz się, jak w łatwy sposób generować losowe liczby w języku Javascript.
+Generowanie losowych liczb jest ważną częścią wielu programów i gier, ponieważ pozwala na stworzenie różnorodnych przebiegów i wyborów, co sprawia, że cały proces jest bardziej interesujący dla użytkowników. Może być również przydatne w testowaniu i debugowaniu kodu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Do wygenerowania losowej liczby w Javascript możemy wykorzystać metodę `Math.random()`, która zwraca wartość z przedziału od 0 do 1. Jednakże, chcąc uzyskać liczbę w konkretnym przedziale, musimy wykonać kilka dodatkowych kroków. Przykładowo, jeśli chcemy wygenerować liczbę całkowitą z przedziału od 1 do 10, możemy skorzystać z poniższego kodu:
+Najprostszym sposobem na wygenerowanie losowej liczby w języku JavaScript jest użycie funkcji `Math.random()`, która zwraca wartość z zakresu od 0 do 1. Aby uzyskać liczbę z większego zakresu, można użyć funkcji `Math.floor()` lub `Math.ceil()`. Na przykład, aby wygenerować liczbę całkowitą z zakresu od 1 do 10, można użyć poniższego kodu:
 
-```Javascript
-// Funkcja generująca losową liczbę całkowitą z przedziału od 1 do 10
-function randomInRange() {
-  return Math.floor(Math.random() * 10) + 1;
-}
-
-// Przykładowe wywołanie funkcji
-console.log(randomInRange()); // wypisze np. 5, 9, 2, itp. 
+```javascript
+Math.floor(Math.random() * 10) + 1;
 ```
 
-W powyższym przykładzie, funkcja `randomInRange()` wykorzystuje metodę `Math.floor()` do zaokrąglenia wygenerowanej liczby w dół oraz dodaje 1, aby uzyskać liczbę z przedziału od 1 do 10. Podobnie, możemy wykorzystać metodę `Math.ceil()` do zaokrąglenia w górę lub metodę `Math.round()` do zaokrąglenia do najbliższej liczby całkowitej.
+Można również utworzyć funkcję, która będzie zwracała losową liczbę z dowolnego zakresu, np.:
 
-Możliwości jest wiele, np. możemy generować losowe liczby zmiennoprzecinkowe, losowe znaki czy też wykorzystać argumenty typu `min` i `max` dla większej elastyczności. Warto również pamiętać, że każde wywołanie funkcji `Math.random()` będzie zwracać inną wartość.
+```javascript
+function randomInRange(min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-## Głębszy wgląd
+randomInRange(1, 10); // zwróci losową liczbę z zakresu od 1 do 10
+```
 
-Istnieje wiele algorytmów generowania liczb losowych, a wybranie odpowiedniego zależy od naszych potrzeb. Jednym z powszechnych sposobów jest wykorzystanie wyniku poprzedniego wywołania funkcji `Math.random()` jako naszego "ziarna" (ang. seed). Możemy również wykorzystać biblioteki i narzędzia, takie jak lodash, do generowania bardziej złożonych lub unikalnych liczb.
+## Wnikliwa analiza
 
-Dobrze zaprojektowana funkcja generująca losowe liczby musi również uwzględniać szybkość i bezpieczeństwo. W przypadku aplikacji, które wymagają zapewnienia losowości w celach kryptograficznych, należy skorzystać z dedykowanych bibliotek lub wbudowanych w język funkcji.
+Generowanie losowych liczb w języku JavaScript może być trudne, ponieważ funkcja `Math.random()` używa tzw. "generatora liczb pseudolosowych", który w rzeczywistości nie generuje prawdziwie losowych liczb. Zamiast tego, jest to algorytm, który używa pewnych danych wejściowych, aby wyprodukować "losowe" liczby.
 
-## Zobacz też
+Jest to istotne, ponieważ oznacza to, że nie można polegać na funkcji `Math.random()` do celów związanych z bezpieczeństwem lub kryptografią. Jeśli potrzebujesz prawdziwej losowości, musisz skorzystać z zewnętrznej biblioteki lub API.
 
-- [Dokumentacja Math.random() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random)
-- [Biblioteka lodash](https://lodash.com/docs/4.17.15#random)
-- [Generator liczb losowych w kryptografii](https://pl.wikipedia.org/wiki/Generator_liczb_losowych#Kryptograficzne_generatory_liczb_losowych)
+## Zobacz także
+
+- Dokumentacja Math.random() w języku JavaScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random
+- Sposoby generowania losowych liczb w języku JavaScript: https://medium.freecodecamp.org/how-to-generate-random-numbers-in-javascript-c39744c45e8a
+- Wpływ generatorów liczb pseudolosowych na bezpieczeństwo w języku JavaScript: https://stackoverflow.com/questions/5651789/is-math-random-math-random-a-bad-way-to-generate-random-values

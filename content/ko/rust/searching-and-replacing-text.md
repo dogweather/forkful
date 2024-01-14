@@ -1,48 +1,46 @@
 ---
-title:    "Rust: 텍스트 검색과 교체"
+title:    "Rust: 텍스트 검색과 바꾸기"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트 검색 및 교체에 참여하는 이유를 간단히 설명합니다.
+텍스트를 검색하고 바꾸는 것에 관심이 있는 이유는 다양할 수 있습니다. 예를 들어, 여러 줄의 코드에서 일부 특정 값을 변경하고 싶거나, 메모장이나 워드 문서에서 특정 단어를 모두 찾아 바꾸고 싶을 때 사용할 수 있습니다. 언제든 필요한 경우, 텍스트를 쉽고 효율적으로 변경할 수 있도록 할 수 있습니다.
 
-텍스트 검색 및 교체는 프로그래밍에서 중요한 작업입니다. 우리는 종종 많은 양의 텍스트를 처리해야하며, 때로는 바꿔야 할 단어나 구문이 있을 수 있습니다. 따라서 검색 및 교체 기능은 오류를 줄이고 작업 효율성을 높이는 데 도움이 될 수 있습니다.
+## 하는 방법
 
-## 사용 방법
-
-아래에는 텍스트를 검색하고 대체하는 Rust 코드의 예가 있습니다.
+우선, Rust 언어를 사용하여 텍스트를 검색하고 바꾸는 기본적인 방법을 알아보겠습니다. 다음의 코드 블럭을 참고해주세요.
 
 ```Rust
-let text = "Hello, world!";
-let replaced_text = text.replace("world", "Rust");
-println!("{}", replaced_text);
+use std::fs;
+use regex::Regex;
+
+let contents = fs::read_to_string("sample.txt")
+    .expect("파일을 읽을 수 없습니다.");
+
+let re = Regex::new(r"Hello|world").unwrap();
+let result = re.replace_all(&contents, "안녕하세요");
+println!("{}", result);
 ```
 
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다:
+위 코드는 전체 파일에서 "Hello" 또는 "world"라는 단어를 찾아 "안녕하세요"로 바꾸는 간단한 예제입니다.
+
+위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
 
 ```
-Hello, Rust!
+안녕하세요, 안녕하세요. 오늘은 안녕하세요.
 ```
 
-이 예제에서 ```replace``` 메소드는 기존 문자열에서 특정 부분을 대체하는 데 사용됩니다. 이 외에도 Rust에는 다양한 텍스트 검색 및 교체 기능이 있으며, 이를 활용하여 다양한 문자열 작업을 더욱 쉽게 수행할 수 있습니다.
+위의 예제는 Rust 표준 라이브러리와 `regex` 라이브러리를 사용하여 텍스트를 검색하고 바꾸는 방법을 보여줍니다. `regex`는 정규식을 사용하여 더 복잡한 규칙을 적용할 수 있도록 도와줍니다.
 
-## 깊게 파헤치기
+## 깊게 파고들기
 
-텍스트 검색 및 교체 기능의 깊은 내용을 살펴보겠습니다. Rust에서는 텍스트를 처리하는 데 사용되는 ```String``` 타입이 있으며, 여기에는 텍스트를 다루는 데 유용한 다양한 메소드가 포함되어 있습니다. 아래는 몇 가지 중요한 메소드에 대한 설명입니다:
+검색하고 바꾸는 기능에 대해 더 많은 정보를 알고 싶은 경우에는 공식 문서를 참조하는 것이 가장 좋습니다. 또는 Rust 사용자 커뮤니티에서 다른 개발자들의 팁과 트릭을 공유하는 게시글을 찾아볼 수도 있습니다.
 
-- ```replace()``` : 기존 문자열의 특정 부분을 대체합니다.
-- ```trim()``` : 문자열의 앞뒤 공백을 제거합니다.
-- ```split()``` : 문자열을 특정 구분자를 기준으로 나누어서 벡터에 저장합니다.
-- ```to_lowercase()``` : 문자열을 소문자로 변환합니다.
-- ```contains()``` : 특정 문자열이 포함되어 있는지 여부를 확인합니다.
+## 또한 참고해주세요
 
-위의 메소드들을 활용하면 다양한 텍스트 처리 작업을 쉽게 수행할 수 있습니다. 각 메소드에 대한 자세한 설명은 공식 Rust 문서에서 확인할 수 있습니다.
-
-## 더 보기
-
-- [Rust 공식 문서](https://doc.rust-lang.org/std/string/struct.String.html)
-- [온라인 Rust 커뮤니티](https://users.rust-lang.org/)
-- [Rust 프로그래밍 입문 동영상 강좌](https://www.youtube.com/playlist?list=PLVvjrrRCBy2JSHf9tGxGKJ-bYAN_uDCUL)
+- [Rust 공식 문서](https://www.rust-lang.org/learn)
+- [Rust 커뮤니티 포럼](https://users.rust-lang.org/)

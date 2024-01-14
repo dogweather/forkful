@@ -1,54 +1,52 @@
 ---
 title:    "Gleam: Kahden päivämäärän vertailu"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kahta päivämäärää?
+Blogi: Miksi vertailla kahta päivämäärää
 
-Vertailemalla kahta päivämäärää voit selvittää, kumpi päivämäärä on suurempi tai pienempi ja kuinka monta päivää niiden välillä on.
+Olet ehkä huomannut, että usein ohjelmissa täytyy verrata kahta eri päivämäärää. Tämä voi johtua esimerkiksi siitä, että haluat tarkistaa, onko tietty tapahtuma jo tapahtunut vai ei. Gleam-kielinen vertailu tarjoaa helpon ja tehokkaan tavan tehdä tämä.
 
-## Kuinka tehdä?
+## Miten
 
-Vertailemalla kahta päivämäärää voit käyttää "compare_dates" -toimintoa ja antaa sille kaksi päivämäärää. Tämän jälkeen voit verrata saatuja tuloksia ja saada selville onko ensimmäinen päivämäärä pienempi, suurempi vai yhtä suuri kuin toinen päivämäärä.
-
-```Gleam
-compare_dates(Date.from_yyyy_mm_dd(2021, 10, 5), Date.from_yyyy_mm_dd(2021, 10, 15))
-```
+Vertailu kahden päivämäärän välillä Gleamilla onnistuu käyttämällä `Date.compare` -funktiota. Tämä funktio ottaa kaksi päivämäärää parametreinä ja palauttaa yhtäsuuruusoperaattorin arvon (-1, 0 tai 1) vertailemalla niiden päivämääräarvoja.
 
 ```
-Date.same // false
-Date.before // true
-Date.after // false
+Gleam -koodiesimerkki:
+
+let date_1 = Date.new({ year: 2021, month: 9, day: 15 })
+let date_2 = Date.new({ year: 2021, month: 9, day: 20 })
+
+let result = Date.compare(date_1, date_2)
+
+gleam_assert.equal(result, -1)
 ```
 
-## Syvemmälle aiheeseen
+Tässä esimerkissä olemme luoneet kaksi eri päivämäärää ja vertailleet niitä käyttämällä `Date.compare` -funktiota. Koska `date_1` on pienempi kuin `date_2`, funktio palauttaa arvon -1.
 
-Vertailemalla päivämääriä Gleamissa voit myös selvittää kuinka monta päivää niiden välissä on. Voit käyttää tähän "days_between_dates" -toimintoa ja antaa sille kaksi päivämäärää.
+## Syvempi sukellus
 
-```Gleam
-days_between_dates(Date.from_yyyy_mm_dd(2021, 10, 5), Date.from_yyyy_mm_dd(2021, 10, 15))
-```
+Gleamilla on myös muita käteviä toimintoja, joita voi käyttää vertailemaan päivämääriä. `Date.is_before` ja `Date.is_after` -funktiot tarkistavat, onko kyseinen päivämäärä ennen vai jälkeen toista.
 
 ```
-10 // päivien määrä
+Gleam-koodiesimerkki:
+
+let date_3 = Date.new({ year: 2021, month: 9, day: 1 })
+
+let result_1 = Date.is_before(date_3, date_1)
+let result_2 = Date.is_after(date_3, date_2)
+
+gleam_assert.equal(result_1, true)
+gleam_assert.equal(result_2, false)
 ```
 
-Voit myös vertailla päivämääriä sekä kellonaikoja käyttäen "compare_dates_times" -toimintoa ja antaa sille kaksi päivämäärää sekä niiden kellonajat.
+Tässä esimerkissä olemme tarkistaneet, onko `date_3` ennen `date_1` ja jälkeen `date_2`. Koska `date_3` sijoittuu näiden kahden päivämäärän välille, `Date.is_before` -funktio palauttaa arvon true ja `Date.is_after` arvon false.
 
-```Gleam
-compare_dates_times(DateTime.from_yyyy_mm_dd_hh_mm_ss_ms(2021, 10, 5, 10, 30, 0, 0), DateTime.from_yyyy_mm_dd_hh_mm_ss_ms(2021, 10, 5, 12, 30, 0, 0))
-```
+## Katso myös
 
-```
-DateTime.same // false
-DateTime.before // true
-DateTime.after // false
-```
-
-# Katso myös
-
-- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation)
-- [Kuinka käsitellä päivämääriä Gleamissa](https://blog.gleam.run/comparing-and-manipulating-dates-in-gleam/)
-- [Kuinka käyttää Gleamia suuremmissa projekteissa](https://gleam.run/configuration-and-projects)
+- Gleam-virallinen dokumentaatio: https://gleam.run/
+- Vertailu ja yhtäsuuruusoperaattori: https://gleam.run/book/compare.html
+- Päivämääräarvot Gleamissa: https://gleam.run/book/date.html

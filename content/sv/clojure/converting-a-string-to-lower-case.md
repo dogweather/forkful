@@ -1,32 +1,39 @@
 ---
-title:    "Clojure: Konvertera en sträng till små bokstäver"
+title:    "Clojure: Omvandla en sträng till små bokstäver"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till gemener (lower case) är en vanlig uppgift inom programmering, och kan ofta vara nödvändigt för att uppnå önskat resultat. Genom att lära sig denna teknik, kan du enklare hantera och manipulera strängar i dina Clojure-program.
 
-## Hur
-För att konvertera en sträng till gemener i Clojure, kan vi använda funktionen "lower-case". Här är ett exempel på hur man använder denna funktion:
+Att konvertera en sträng till gemena bokstäver kan vara användbart i många situationer, som att jämföra strängar eller för att säkerställa enhetlighet i data.
 
-```Clojure
-(lower-case "HEJ")
-```
+## Så här gör du
 
-Detta kommer att returnera strängen "hej" som output. Om du behöver ändra en hel mening till gemener, kan du använda funktionen "lower-case-first". Här är ett exempel på hur man använder den:
+För att konvertera en sträng till gemena bokstäver i Clojure, kan du använda funktionen `clojure.string/lower-case`. Den tar emot en sträng som argument och returnerar en ny sträng med alla bokstäver i små bokstäver. Till exempel:
 
 ```Clojure
-(lower-case-first "VÄLKOMMEN till Sverige!")
+(clojure.string/lower-case "HEJ") ;; => "hej"
+(clojure.string/lower-case "Ha En Bra Dag") ;; => "ha en bra dag"
 ```
 
-Detta kommer att returnera strängen "vÄLKOMMEN till sverige!". Som du kan se, konverterar funktionen bara den första bokstaven till gemener.
+Du kan också använda `clojure.string/lower-case` för att konvertera en hel rad av text till gemena bokstäver, som i exemplet nedan:
+
+```Clojure
+(def text "Välkommen Till Clojure") ;; definerar en variabel "text" med en sträng
+(clojure.string/lower-case text) ;; konverterar strängen till gemena bokstäver och returnerar "välkommen till clojure"
+```
 
 ## Djupdykning
-När vi använder funktionen "lower-case" eller "lower-case-first", är det viktigt att tänka på att Unicode i Clojure hanterar diakritiska tecken på ett annat sätt. Till exempel, om vi konverterar strängen "Åsa" till gemener, kommer den att returnera "åSA" eftersom bokstaven "Å" har en annan position i Unicode än bokstaven "A". För att undvika detta kan vi använda funktionen "string/upper-case" innan vi konverterar till gemener, för att först se till att alla diakritiska tecken är på rätt plats.
+
+När du konverterar en sträng till gemena bokstäver i Clojure används Unicode-standarden, vilket innebär att alla unicode-tecken som har en gemensam gemena bokstav kommer att konverteras. Detta gör att funktionen `clojure.string/lower-case` är mer pålitlig och mångsidig jämfört med andra språk där konvertering av bokstäver kan vara svårt. Dessutom kan du i Clojure hantera flerspråkig text utan problem.
 
 ## Se även
-- [Clojure dokumentation för lower-case](https://clojuredocs.org/clojure.string/lower-case)
-- [Fler funktioner för strängmanipulering i Clojure](https://clojuredocs.org/clojure.string)
-- [Kurs i Clojure-programmering](https://www.coursera.org/learn/clojure) (på svenska)
+
+Här är några användbara länkar för dig som vill lära dig mer om hur man arbetar med strängar i Clojure:
+
+- [Clojure String Functions](https://clojuredocs.org/clojure.string)
+- [Clojure for the Brave and True - Strings](https://www.braveclojure.com/basic-types/#Strings)
+- [Clojure Cookbook - Working with Strings](https://clojure-cookbook.neotyk.com/strings.html#working-with-strings)

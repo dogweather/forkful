@@ -1,52 +1,43 @@
 ---
-title:    "Fish Shell: Encontrando o comprimento de uma string."
+title:    "Fish Shell: Encontrando o comprimento de uma sequência de caracteres"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Porquê
 
-Encontrar o comprimento de uma string é uma tarefa comum na programação e pode ser extremamente útil em várias situações. Através do uso da Fish Shell e algumas técnicas simples, você pode facilmente obter o comprimento de uma string em seu código.
+Encontrar o tamanho de uma string é uma tarefa comum no desenvolvimento de aplicações. Saber como fazer isso pode economizar tempo e evitar erros de código desnecessários. Além disso, é uma habilidade básica que todo programador deve dominar.
 
-## Como fazer
+## Como Fazer
 
-Para encontrar o comprimento de uma string, você pode usar o comando `count`. É importante lembrar que o índice de início de uma string é 1, ao invés de 0 como em outras linguagens de programação.
+Usando o Fish Shell, é fácil encontrar o tamanho de uma string usando a função `string length`seguida da string desejada entre parênteses. Veja um exemplo:
 
-```Fish Shell
-count "Hello World"
+```
+Fish Shell string length example
+echo (string length "Hello world")
+
 ```
 
-Saída: 11
+O resultado deste código será 11, pois a string "Hello world" tem 11 caracteres. É importante notar que, enquanto a string entre aspas é obrigatória, os parênteses podem ser omitidos se a string for a única entrada para a função.
 
-Você também pode usar a função `string length` para obter o comprimento de uma string.
+```
+Fish Shell string length example
+echo (string length "I am learning Fish Shell!")
 
-```Fish Shell
-string length "Hello World"
 ```
 
-Saída: 11
+O resultado deste código será 26, pois a string tem 26 caracteres.
 
-## Mergulho profundo
+## Deep Dive
 
-É importante entender que o comando `count` conta o número de caracteres em uma string, incluindo espaços em branco e pontuações. Se você quiser encontrar o número de palavras em uma string, pode usar o comando `wc` em conjunto com o filtro `words`.
+Ao usar a função `string length`, é possível perceber que ela não conta apenas letras, mas também espaços, números e caracteres especiais. Além disso, se a string contiver acentos ou caracteres Unicode, eles também serão contados no resultado.
 
-```Fish Shell
-echo "Este é um exemplo de string" | wc -w | awk '{print $1}'
-```
-
-Saída: 6
-
-Além disso, se você quiser encontrar o número de linhas em uma string, pode usar o comando `wc` em conjunto com o filtro `lines`.
-
-```Fish Shell
-echo "Este é um exemplo de string" | wc -l | awk '{print $1}'
-```
-
-Saída: 1
+No entanto, é importante notar que, dependendo da codificação de caracteres utilizada, um caractere Unicode pode ser contado como mais de um caractere. Isso pode afetar o comprimento total da string e deve ser considerado ao usar a função `string length`.
 
 ## Veja também
 
-- Documentação oficial da Fish Shell: https://fishshell.com/docs/current/index.html
-- Tutorial do Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Fórum da Fish Shell: https://github.com/fish-shell/fish-shell/issues
+- Documentação oficial do Fish Shell sobre a função `string length`: https://fishshell.com/docs/current/cmds/string_length.html
+- Tutorial sobre como usar o Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Lista de funções do Fish Shell: https://fishshell.com/docs/current/commands.html

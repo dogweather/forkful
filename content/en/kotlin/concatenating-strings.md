@@ -1,58 +1,69 @@
 ---
 title:    "Kotlin recipe: Concatenating strings"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why 
+## Why 
 
-String concatenation is an essential skill in any programming language, including Kotlin. It allows us to combine different strings to create a new one, which is a common task when developing any application. Whether you are building a simple text editor or a complex mobile app, understanding how to concatenate strings is crucial.
+In many programming languages, including Kotlin, strings are one of the most commonly used data types. They allow us to store and manipulate text in our code, making it more readable and interactive for users. One way to manipulate strings is by concatenating them, which simply means combining two or more strings into one.
 
-# How To
+## How To
 
-Concatenating strings in Kotlin is straightforward, thanks to its built-in functions and operators. Let's look at some examples:
+To concatenate strings in Kotlin, we can use the plus operator (+) or the "plus" function. Let's take a look at some examples:
 
-```Kotlin
+```
 // Using the plus operator
+val firstName = "John"
+val lastName = "Doe"
+val fullName = firstName + " " + lastName
+println(fullName) // Output: John Doe
+
+// Using the "plus" function
 val str1 = "Hello"
 val str2 = "World"
-val combinedString = str1 + " " + str2
-println(combinedString) // Output: Hello World
+val str3 = str1.plus(" ").plus(str2)
+println(str3) // Output: Hello World
+```
 
-// Using the plusAssign operator
-val str3 = "Good"
-val str4 = "bye"
-str3 += " " + str4
-println(str3) // Output: Good bye
+In addition to using the plus operator and "plus" function, we can also use the "format" function to concatenate strings in a more structured way. Here's an example:
 
-// Using the concatenation operator with variables and strings
-val name = "John"
+```
+// Using the "format" function
 val age = 25
-val message = "My name is $name and I am $age years old."
-println(message) // Output: My name is John and I am 25 years old.
+val name = "Alice"
+val message = "Hello, my name is %s and I am %d years old".format(name, age)
+println(message) // Output: Hello, my name is Alice and I am 25 years old
 ```
 
-As you can see, there are a few ways to concatenate strings in Kotlin. You can use the plus operator (+) or the plusAssign operator (+=) to combine two strings. Additionally, the concatenation operator (${}) allows us to use variables and strings in the same statement. 
+## Deep Dive 
 
-# Deep Dive
+When concatenating strings, it is important to keep in mind that both operands must be strings. If one of the operands is not a string, the compiler will automatically convert it to one. This allows us to concatenate not only strings, but also other data types such as integers and booleans.
 
-In Kotlin, strings are immutable, meaning they cannot be changed once created. When we concatenate two strings using the plus operator, a new string is allocated in memory, which can affect performance, especially when dealing with large strings. To avoid this, we can use the StringBuilder class, which allows us to modify strings without creating new objects.
+In addition, Kotlin also provides the "toString" function which converts any data type into a string. This can be useful when concatenating an Integer or Boolean with a string. Here's an example:
 
-```Kotlin
-val str1 = "Hello"
-val str2 = "World"
-val builder = StringBuilder()
-builder.append(str1)
-builder.append(" ")
-builder.append(str2)
-val combinedString = builder.toString()
-println(combinedString) // Output: Hello World
+```
+// Using the "toString" function
+val num = 10
+val message = "The number is " + num.toString()
+println(message) // Output: The number is 10
 ```
 
-Another important thing to note is that when we use the plus operator, the compiler will convert it to a call to the StringBuilder class, making it the preferred method for concatenation. However, for simpler scenarios, the plus operator can be more readable and concise.
+It is also possible to omit the plus operator or "plus" function and simply use string interpolation, denoted by the $ symbol, to concatenate strings in Kotlin. Here's an example:
 
-# See Also
-- [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Difference Between plus and plusAssign Operators](https://kotlinlang.org/docs/reference/operator-overloading.html)
-- [Java vs Kotlin String Concatenation](https://www.baeldung.com/kotlin-string-concatenation-vs-string-builder)
+```
+val firstName = "Lisa"
+val age = 30
+val message = "Hi, my name is $firstName and I am $age years old"
+println(message) // Output: Hi, my name is Lisa and I am 30 years old
+```
+
+## See Also 
+
+For more information about strings and concatenation in Kotlin, check out these resources:
+
+- [Kotlin Strings and Characters](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin in Action](https://www.manning.com/books/kotlin-in-action)
+- [Official Kotlin Documentation](https://kotlinlang.org/docs/home.html)

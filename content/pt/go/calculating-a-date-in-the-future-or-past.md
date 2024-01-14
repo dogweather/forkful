@@ -1,68 +1,51 @@
 ---
-title:    "Go: Calculando uma data no futuro ou passado"
+title:    "Go: Calculando uma data no futuro ou passado."
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que calcular uma data no futuro ou no passado?
 
-Calcular uma data no passado ou no futuro é uma habilidade importante em programação. Pode ser usada para criar agendas, agendamentos de eventos, lembretes e muito mais. Aprender a calcular datas em Go pode tornar seu código mais dinâmico e funcional.
+Calcular datas futuras ou passadas pode ser útil em programas que lidam com agendamentos, prazos ou qualquer outra situação que envolva datas. Por exemplo, pode ser necessário agendar uma tarefa para um dia específico no futuro ou calcular quantos dias faltam até uma data de entrega.
 
-## Como Fazer
+## Como fazer?
 
-Existem algumas maneiras de calcular uma data no futuro ou no passado em Go. A maneira mais simples é usar a função `AddDate()` do pacote "time". Veja um exemplo abaixo:
+Calcular uma data no futuro ou no passado é bastante simples em Go. Primeiro, precisamos definir a data base que usaremos como referência. Podemos fazer isso criando um novo objeto `time.Time` e definindo sua data através do método `time.Date(ano, mês, dia, hora, minuto, segundo, nanossegundo, fuso horário)`.
 
 ```Go
-import "fmt"
-import "time"
-
 func main() {
-    data := time.Now()  // Obtém a data atual
-    novoData := data.AddDate(1, 2, 3)  // Adiciona 1 ano, 2 meses e 3 dias à data atual
-    fmt.Println(novoData)  // Imprime a nova data calculada
+	// Definindo a data base para 01 de janeiro de 2021
+	base := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+
+	// Calculando a data de 15 dias no futuro
+	futuro := base.AddDate(0, 0, 15)
+
+	// Calculando a data de 1 ano e 6 meses no passado
+	passado := base.AddDate(-1, -6, 0)
+
+	// Imprimindo as datas calculadas
+	fmt.Println("Data futura:", futuro)
+	fmt.Println("Data passada:", passado)
 }
 ```
 
-A saída desse código será "novoData: 2023-03-06 14:37:08.120899 +0000 UTC m=+0.000160354", representando a data atual adicionada com 1 ano, 2 meses e 3 dias.
+O código acima irá imprimir:
 
-Você também pode usar a função `Sub()` para subtrair uma quantidade de tempo de uma data específica. Veja um exemplo:
-
-```Go
-import "fmt"
-import "time"
-
-func main() {
-    data := time.Now()  // Obtém a data atual
-    dataAntiga := data.Sub(time.Hour * 24 * 7)  // Subtrai uma semana da data atual
-    fmt.Println(dataAntiga)  // Imprime a data calculada
-}
+```
+Data futura: 2021-01-16 00:00:00 +0000 UTC
+Data passada: 2019-06-01 00:00:00 +0000 UTC
 ```
 
-A saída deste código será "dataAntiga: 2022-07-16 14:37:08.120899 +0000 UTC m=+0.000160354", representando a data atual subtraída de uma semana.
+## Aprofundando mais
 
-## Mergulho Profundo
+Além do método `time.AddDate()`, podemos também usar outros métodos como `time.Add()`, que nos permite adicionar uma quantidade específica de horas, minutos, segundos ou nanossegundos a uma data base. Também temos o método `time.Sub()` que nos permite obter a diferença entre duas datas.
 
-Para calcular uma data específica com mais precisão, é possível usar a estrutura `time.Time` e suas funções associadas, como `Date()` e `Seconds()`. Além disso, é possível trabalhar com fuso horários e criar datas personalizadas a partir de strings.
+Uma coisa importante a se ter em mente é que Go lida com datas e horas utilizando o fuso horário de UTC (Tempo Universal Coordenado). Portanto, se você estiver em um fuso horário diferente, é necessário converter a data para UTC antes de fazer qualquer cálculo.
 
-A função `Parse()` é extremamente útil nesses casos, pois permite que você converta uma string em um valor de data. Veja um exemplo:
+## Veja também
 
-```Go
-import "fmt"
-import "time"
-
-func main() {
-    dataString := "05/03/2025 18:30"  // Data e hora em formato de string
-    formato := "02/01/2006 15:04"  // Formato da data e hora, de acordo com o layout da string
-    data, _ := time.Parse(formato, dataString)  // Converte a string em um valor de data
-    fmt.Println(data)  // Imprime a data convertida
-}
-```
-
-A saída deste código será "2025-05-03 18:30:00 +0000 UTC", representando a data e hora fornecidas na string de acordo com o layout especificado.
-
-## Veja Também
-
-- [Pacote "time" em Go](https://golang.org/pkg/time/)
-- [Documentação do pacote "time" em Português](https://github.com/GoBrasil/time)
-- [Exemplos de cálculo de datas em Go](https://yourbasic.org/golang/add-time-date-millisecond-minute-hour/)
+- Documentação oficial de `time` em Go: https://golang.org/pkg/time/
+- Artigo sobre manipulação de datas e horas em Go: https://www.callicoder.com/golang-manipulating-dates-times/
+- Exemplos de cálculos de datas em Go: https://gobyexample.com/time

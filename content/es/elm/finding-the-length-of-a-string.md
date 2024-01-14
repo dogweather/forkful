@@ -1,38 +1,58 @@
 ---
-title:    "Elm: Encontrando la longitud de una cadena"
+title:    "Elm: Encontrando la longitud de una cadena."
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Si eres nuevo en la programación, encontrar la longitud de una cadena de texto puede parecer una tarea sencilla. Sin embargo, esta habilidad es esencial ya que es una de las funciones más utilizadas en Elm y en la mayoría de los lenguajes de programación. Saber cómo encontrar la longitud de una cadena de texto te permitirá manipular y trabajar con datos de manera más eficiente.
+Cuando estamos programando, encontramos muchas situaciones en las que necesitamos conocer la longitud de una cadena de texto. Ya sea para validar una entrada de usuario, formatear datos o realizar cálculos, encontrar la longitud de una cadena es una tarea común y esencial en la programación. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en Elm.
 
 ## Cómo hacerlo
 
-En Elm, se puede encontrar la longitud de una cadena de texto utilizando la función `String.length`. Esta función toma una cadena como argumento y devuelve un entero que representa la cantidad de caracteres en esa cadena. Veamos un ejemplo:
+En Elm, podemos encontrar la longitud de una cadena utilizando la función `String.length` que se encuentra en el módulo `String`. Para usarla, debemos declarar el módulo con la palabra clave `import` y luego llamar a la función con la cadena como argumento. Veamos un ejemplo en código:
 
-```
-Elm: String.length "Hola" -- devuelve 4
+```Elm
+import String
+
+miCadena = "Hola mundo"
+longitud = String.length miCadena
+
+-- La salida será: 11
 ```
 
-En este ejemplo, la función `String.length` toma la cadena "Hola" como argumento y devuelve el número 4, que es la cantidad de caracteres en la cadena. También podemos usar esta función en conjunto con otras funciones, como `String.slice` para obtener una porción de una cadena y luego encontrar la longitud de esa porción. Por ejemplo:
+En este ejemplo, primero importamos el módulo `String` y luego declaramos una cadena llamada `miCadena`. Por último, utilizamos la función `String.length` con la cadena como argumento y almacenamos su resultado en la variable `longitud`. Como resultado, obtendremos la longitud de la cadena, que en este caso será 11, ya que la cadena contiene 11 caracteres.
 
-```
-Elm: String.length (String.slice 0 3 "Hola Mundo") -- devuelve 3
+También podemos usar la función `length` directamente en una cadena sin necesidad de importar el módulo `String`:
+
+```Elm
+miOtraCadena = "¡Hola a todos!"
+longitud = length miOtraCadena
+
+-- La salida será: 14
 ```
 
-En este caso, la función `String.slice` devuelve la palabra "Hola" y luego la función `String.length` encuentra la longitud de esa palabra, que es 3.
+En este ejemplo, también obtenemos la longitud de una cadena pero sin importar ningún módulo, ya que `length` es una función incluida por defecto en Elm.
 
 ## Profundizando
 
-Para aquellos que quieren saber más acerca de cómo encontrar la longitud de una cadena de texto en Elm, es importante tener en cuenta que los caracteres unicode se consideran un solo carácter. Esto significa que si tienes una cadena con caracteres como "á" o "ñ", la función `String.length` tomará esto en cuenta y devolverá la cantidad correcta de caracteres.
+Cuando utilizamos la función `String.length` en una cadena que contiene caracteres especiales, puede haber algunas diferencias en la salida. Esto se debe a que en Elm, cada carácter se cuenta individualmente, incluyendo los acentos y caracteres especiales. Por ejemplo:
 
-Además, también se puede encontrar la longitud de una cadena de texto utilizando el método `String.split` para dividir la cadena en una lista y luego encontrar la longitud de esa lista. Otra opción es utilizar la biblioteca `elm-lang/core` que ofrece más funciones útiles para trabajar con cadenas de texto.
+```Elm
+cadena = "¡Hola ñoños!"
+longitud = String.length cadena
+
+-- La salida será: 13
+```
+
+En este caso, aunque la cadena parece tener 11 caracteres, la función `String.length` cuenta cada carácter individualmente, incluyendo la "ñ", por lo que el resultado será 13.
+
+Otra cosa importante a tener en cuenta es que esta función solo funciona con cadenas de texto y no con otros tipos de datos como enteros o listas. En esos casos, se debe utilizar otra función específica para obtener la longitud.
 
 ## Ver también
 
-- [Documentación de Elm sobre `String.length`](https://package.elm-lang.org/packages/elm-lang/core/latest/String#length)
-- [Documentación de Elm sobre `String.split`](https://package.elm-lang.org/packages/elm-lang/core/latest/String#split)
-- [Biblioteca `elm-lang/core`](https://package.elm-lang.org/packages/elm-lang/core/latest/)
+- Documentación oficial de la función [String.length](https://package.elm-lang.org/packages/elm/core/latest/String#length)
+- [Tutorial básico de Elm](https://elmprogramming.com/)
+- [Guía de comandos en línea de Elm](https://guide.elm-lang.org/)

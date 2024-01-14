@@ -1,46 +1,47 @@
 ---
 title:    "PHP: 使用正则表达式"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：使用正则表达式可以帮助程序员更快速有效地处理文本和数据。无论是在网站开发中替换特定字符，还是在文档处理中提取特定信息，正则表达式都是一个非常强大的工具。
+## 为什么要使用正则表达式？
 
-使用方法：
+正则表达式是一种强大的工具，它可以帮助我们快速而准确地匹配和提取文本中的模式。它们在PHP编程中非常有用，可以提高代码的效率和可读性。
+
+## 如何使用正则表达式
+
+正则表达式在PHP中是通过regex函数来实现的。首先，我们需要使用正则表达式的模式来指定我们要匹配的文本模式。然后，我们可以使用preg_match()函数来执行匹配，并返回结果。
 
 ```
-PHP // PHP代码块
-$pattern = '/^[a-z]+$/'; //匹配小写字母
-$input = 'hello';
-if(preg_match($pattern, $input)){ //使用preg_match函数进行匹配
-  echo 'Match found'; //输出结果
-}
+<?php
+$pattern = '/[0-9]+/';
+$text = "I have 2 apples and 3 oranges.";
+ 
+preg_match($pattern, $text, $matches);
+ 
+print_r($matches);
+?>
+```
+输出：
+```
+Array
+(
+    [0] => 2
+)
 ```
 
-在这个例子里，我们通过使用正则表达式的模式匹配功能来判断输入是否为小写字母，如果是，就输出“Match found”。这个简单的例子展示了正则表达式的基本用法，通过定义模式来匹配字符串，可以很容易地实现对特定文本的处理。
+在上面的例子中，我们使用正则表达式来匹配字符串中的第一个数字，并将结果存储在$matches数组中。我们可以使用preg_match_all()函数来匹配字符串中的所有数字，并将它们存储在一个二维数组中。
 
-深入了解：
+## 深入了解正则表达式
 
-正则表达式是由特殊字符和文本字符组成的模式，用来匹配字符串中的部分或全部内容。在PHP中，我们可以使用内置函数preg_match()来对字符串进行匹配，还可以使用preg_replace()来替换掉匹配的内容。除了基本的匹配功能，正则表达式还有很多高级的用法，比如捕获组、量词和特殊符号等。熟练掌握这些功能，可以让你在处理文本和数据时事半功倍。
+正则表达式由一系列特殊字符和普通字符组成，可以用来匹配特定的文本模式。它们也拥有许多不同的模式修饰符，可以更改匹配的方式。了解正则表达式的语法，可以帮助我们轻松地构建复杂的模式，并提高匹配的准确性。
 
-也许你会觉得正则表达式的语法很复杂，但是一旦熟悉了它的工作原理，你就会发现它是一个非常有用的工具。所以，不要害怕挑战，大胆地使用正则表达式吧！
+除了preg_match()和preg_match_all()函数，PHP还提供了其他用于操作字符串的函数，如preg_replace()和preg_split()。正则表达式也可以与这些函数一起使用，以实现更强大的文本处理功能。
 
-相关链接：
+## 请参考
 
-- PHP官方文档：https://www.php.net/manual/en/book.pcre.php
-- 正则表达式教程：https://www.regular-expressions.info/
-- PHP正则表达式30分钟入门教程：https://www.php.net/manual/en/regexp.tutorial.php
-
-参考链接：
-
-正则表达式的用法十分广泛，无法在这篇文章中覆盖所有内容。如果你想更深入地学习正则表达式，可以参考以下资源：
-
-- 《精通正则表达式》（英文原版）：https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/
-- 《PHP和正则表达式》（英文原版）：https://learning.oreilly.com/library/view/php-regular-expressions/9781849511046/
-- 《PHP正则表达式指南》：https://www.php.net/manual/en/reference.pcre.pattern.syntax.php
-
-查看更多：
-
-- 正则表达式在线测试工具：https://regexr.com/
-- PHP正则表达式速查手册：https://www.php.net/manual/en/regexp.reference.php
+- [PHP正则表达式函数文档](https://www.php.net/manual/en/ref.pcre.php)
+- [正则表达式30分钟入门教程](https://regexr.com/)
+- [正则表达式基础知识](https://www.regular-expressions.info/tutorial.html)

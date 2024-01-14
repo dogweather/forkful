@@ -1,43 +1,62 @@
 ---
 title:    "Elixir: Uuden projektin aloittaminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi aloittaa uusi projekti?
 
-Jos olet innokas ohjelmoija ja haluat haastaa itsesi uuden kielen parissa, Elixir voi olla juuri sinulle sopiva valinta. Elixir on funktionaalinen ohjelmointikieli, joka yhdistää korkean suorituskyvyn ja samanaikaisen ohjelmoinnin helposti luettavaan syntaksiin, joten se on loistava työkalu uuden projektin aloittamiseen.
+Monilla kehittäjillä tulee aika ajoin tarve aloittaa uusi projekti. Tämä voi johtua esimerkiksi uuden teknologian käytön halusta tai vanhan projektin päivittämisen tarpeesta. Elixir on suosittu ohjelmointikieli, joka tarjoaa monia etuja ja ominaisuuksia uuden projektin luomiseen.
 
-## Kuinka aloittaa
+## Miten: Esimerkkejä koodin kirjoittamisesta
 
-Elixirin asentaminen on helppoa, ja voit tehdä sen suoraan komentoriviltä. Kun asennus on valmis, voit aloittaa uuden projektin seuraavasti:
-
-```Elixir
-mix new project_name
-```
-
-Tämä luo uuden kansiovakion nimeltä `project_name`, jossa on joitakin valmiita tiedostoja, kuten `mix.exs` ja `lib` kansio, jotka sisältävät projektisi koodin. Voit nyt aloittaa kirjoittamaan omaa koodiasi ja kääntää sen ajettavaan muotoon käyttämällä `mix` -komennon muunnelmia.
+Jos olet kiinnostunut aloittamaan uuden projektin Elixirillä, tässä on muutama esimerkki miten voit aloittaa. Ensinnäkin, voit luoda uuden Elixir-projektin käyttämällä "mix new" -komentoa. Tämä luo uuden kansiojrakenteen projektillesi ja sisältää tarvittavat alustavat tiedostot. Voit myös käyttää "mix new <nimi>" -komentoa, jonka avulla voit antaa projektillesi nimen.
 
 ```Elixir
-mix compile # Kääntää projektin koodin
-mix run-iex # Käynnistää interaktiivisen Elixir konsolin
+mix new projekti
+...
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/projekti.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/projekti_test.exs
 ```
 
-Voit myös suorittaa yksittäisiä tiedostoja käyttäen `elixir` komentoa, esimerkiksi:
+Kun projekti on luotu, voit aloittaa koodaamisen! Voit käyttää Elixirin ominaisuuksia, kuten moduleita ja funktioita, helposti ja sujuvasti. Tässä esimerkissä luomme yksinkertaisen funktion, joka kertoo "Hei maailma!".
 
 ```Elixir
-elixir script.exs
+defmodule Hei do
+  def hei_maailma do
+    IO.puts "Hei maailma!"
+  end
+end
 ```
 
-## Syvempi sukellus
+Kun suoritat tämän funktion, näet tuloksen:
 
-Elixir perustuu Erlang-virtuaalikoneeseen (BEAM), joten se hyödyntää sen ominaisuuksia, kuten saumoja (processes), joiden avulla voit käsitellä samanaikaisia prosesseja ilman manuaalista säiehallintaa. Tämä tekee Elixirista erinomaisen valinnan esimerkiksi web-sovellusten taustaprosessien hallintaan.
+```Elixir
+iex> Hei.hei_maailma
+Hei maailma!
+:ok
+```
 
-Lisäksi Elixir tarjoaa laajan valikoiman valmiita kirjastoja ja työkaluja, jotka helpottavat projektisi kehittämistä. Yhteisö on myös erittäin aktiivinen ja ystävällinen, joten apua ja neuvoja löytyy aina tarvittaessa.
+## Syvällisemmin: Tietoa uuden projektin aloittamisesta
+
+Aloittaessasi uuden projektin Elixirillä, on hyvä pitää mielessä muutamia asioita. Ensinnäkin, voit käyttää "mix" -työkalua moniin toimintoihin, kuten testien suorittamiseen ja koodin kääntämiseen. Lisäksi voit käyttää Ecto-kirjastoa tietokantayhteyksiin ja Phoenix-kehystä web-sovellusten luomiseen.
+
+On myös tärkeää suunnitella projektisi rakennetta ja miettiä mitä toiminnallisuuksia se tarvitsee. Elixirin modulaarinen rakenne mahdollistaa projektin helpomman hallinnan ja ylläpidon. Kannattaa myös tutustua Elixirin syntaksiin ja käytäntöihin, jotta voit hyödyntää sen tarjoamia ominaisuuksia täysimääräisesti.
 
 ## Katso myös
 
-- [Elixirin viralliset sivut](https://elixir-lang.org/)
-- [Elixirin dokumentaatio](https://hexdocs.pm/elixir)
-- [Elixirin yhteisöfoorumi](https://elixirforum.com/)
+- [Elixirin virallinen sivusto](https://elixir-lang.org/)
+- [Elixirin dokumentaatio](https://hexdocs.pm/elixir/)
+- [Ecto-dokumentaatio](https://hexdocs.pm/ecto/Ecto.html)
+- [Phoenix-dokumentaatio](https://hexdocs.pm/phoenix/overview.html)

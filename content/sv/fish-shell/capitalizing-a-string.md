@@ -1,49 +1,39 @@
 ---
-title:    "Fish Shell: Kapitalisera en sträng"
+title:    "Fish Shell: Stora en sträng"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna konvertera en sträng till versaler är en vanlig uppgift inom programmering, och det kan vara användbart i många olika kontexter. Oavsett om du vill formatera utskrifter, filtrera data eller manipulera text, kan det vara användbart att kunna konvertera en sträng till versaler.
+Att använda sig av en "Fish Shell" för att omvandla en sträng till stora bokstäver kan vara otroligt användbart när man vill få en enhetlig presentation av text. Det kan också hjälpa till att förbättra läsbarheten och minska risken för felaktig stavning.
 
-## Hur man gör det
+## Så här gör du
 
-Det finns några olika sätt att konvertera en sträng till versaler i Fish Shell. Ett sätt är att använda inbyggda kommandon som `sed` eller `tr` för att manipulera strängen. Till exempel kan du använda `tr` för att konvertera alla tecken i en sträng till versaler genom att skriva:
+För att omvandla en sträng till stora bokstäver i Fish Shell, använd kommandot `string toupper`. Detta kommando tar in en sträng som argument och returnerar samma sträng med alla bokstäver omvandlade till stora bokstäver.
 
-```
-Fish Shell code block:
-
-echo "hej, mina vänner!" | tr '[:lower:]' '[:upper:]'
+```Fish Shell
+string toupper "hej!" # output: "HEJ!"
 ```
 
-Output:
+Om du vill spara resultatet av detta kommando i en variabel kan du använda dig av följande syntax:
 
-```
-HEJ, MINA VÄNNER!
-```
+`set STORED_STRING (string toupper "hej!")`
 
-En annan metod är att använda ett inbyggt kommando som heter `capitalize`, som automatiskt konverterar den första bokstaven i varje ord till en versal bokstav. Till exempel:
-
-```
-Fish Shell code block:
-
-echo "välkommen till fish shell" | capitalize
-```
-
-Output:
-
-```
-Välkommen Till Fish Shell
-```
+Nu kan du använda variabeln `STORED_STRING` för att använda den omvandlade strängen i ditt skript.
 
 ## Djupdykning
 
-I Fish Shell finns det flera inbyggda kommandon som kan hjälpa dig att konvertera strängar till versaler. Du kan även använda andra programmeringsspråk som till exempel Python eller Perl för att utföra samma uppgift. Det är viktigt att förstå hur dessa kommandon fungerar för att kunna utföra mer avancerade operationer med strängar.
+Även om det kan verka som en enkel funktion, så finns det faktiskt en hel del som händer bakom kulisserna när du omvandlar en sträng till stora bokstäver i Fish Shell.
 
-## Se även
+När du kör kommandot `string toupper`, letar Fish efter din aktuella "locale" (språkkonfiguration) och använder sig av den för att avgöra vilka tecken som ska omvandlas. Varje språk har sina egna regler för vilka tecken som ska ses som små eller stora bokstäver.
 
-- [Fish Shell dokumentation](https://fishshell.com/)
-- [Fish Shell Cookbook](https://fishshell.com/docs/current/index.html#cookbook)
+En annan intressant funktion är att du kan använda `string toupper` för att omvandla textfiler på din dator. Om du kör kommandot `string toupper < test.txt`, kommer innehållet i filen "test.txt" att skrivas ut med alla bokstäver som stora bokstäver.
+
+## Se också
+
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [En guide till Fish Shell för nybörjare](https://www.makeuseof.com/tag/use-fish-shell-macos-terminal/) 
+- [Fish Shell kommandon för effektivare programmering](https://opensource.com/article/20/1/fish-shell)

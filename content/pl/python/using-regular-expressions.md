@@ -1,54 +1,51 @@
 ---
 title:    "Python: Używanie wyrażeń regularnych"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto poznać wyrażenia regularne?
+# Dlaczego warto używać wyrażeń regularnych w Pythonie?
 
-Wyrażenia regularne są potężnym narzędziem w programowaniu, które pomaga w wyszukiwaniu, wyciąganiu i manipulowaniu tekstem. Dzięki nim, można znacznie przyspieszyć pracę z dużymi plikami tekstowymi, a także przetwarzać dane w bardziej skomplikowany sposób niż przy użyciu prostych funkcji. Poznaność z wyrażeniami regularnymi jest niezbędna dla każdego programisty, który zajmuje się obróbką tekstową.
+Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu. Pozwalają one na szybkie i skuteczne przetwarzanie tekstów w celu znalezienia wzorców i dopasowania ich do określonych reguł. W Pythonie są one często wykorzystywane do operacji na stringach, takich jak walidacja danych, wyciąganie fragmentów tekstu czy zmiana formatowania. Dzięki nim nasz kod staje się bardziej czytelny i efektywny.
 
 ## Jak używać wyrażeń regularnych w Pythonie?
 
-Najpierw, należy zaimportować moduł re odpowiedzialny za obsługę wyrażeń regularnych: 
+Aby korzystać z wyrażeń regularnych w Pythonie, musimy najpierw zaimportować moduł "re". Następnie możemy wykorzystać różne metody tego modułu do operacji na wyrażeniach. Przykładowo, jeśli chcemy sprawdzić czy dany string zawiera tylko cyfry, możemy napisać:
 
 ```Python
 import re
+
+my_string = "456789"
+pattern = r"^\d+"
+if re.match(pattern, my_string):
+    print("String zawiera tylko cyfry")
+else:
+    print("String zawiera inne znaki niż cyfry")
 ```
 
-Aby wyszukać dopasowanie dla danego wzorca, używamy funkcji `re.search()`:
-
-```Python
-result = re.search(r"pla+y", "python")
+Output:
+```
+String zawiera tylko cyfry
 ```
 
-Następnie, możemy sprawdzić czy dopasowanie zostało znalezione oraz wyświetlić dopasowany fragment tekstu:
+W tym przykładzie używamy metody `match` i przekazujemy jej nasze wyrażenie jako pierwszy argument, a string jako drugi argument. Znak `^` oznacza początek stringa, a `\d` oznacza dowolną cyfrę. Dodatkowo wykorzystujemy znak `+` aby dopasować jeden lub więcej wystąpień cyfr. 
 
-```Python
-if result:
-    print("Znaleziono dopasowanie dla słowa 'python'")
-    print("Dopasowany fragment tekstu:", result.group())
-```
+## Głębszy wgląd w użycie wyrażeń regularnych
 
-**Output:**
-```
-Znaleziono dopasowanie dla słowa 'python'
-Dopasowany fragment tekstu: python
-```
+Wyrażenia regularne oferują wiele możliwości i funkcji, które pozwalają na bardzo precyzyjne dopasowywanie wzorców. Istnieje wiele różnych operatorów, które można wykorzystać, aby zwiększyć skuteczność naszych wyrażeń. Przykładowo, operator `*` oznacza zero lub więcej wystąpień danego znaku, a operator `?` oznacza zero lub jedno wystąpienie. Możemy także grupować wyrażenia w nawiasach, aby zwiększyć czytelność kodu i ułatwić jego modyfikację.
 
-Wyrażenia regularne posiadają również specjalne znaki, które pozwalają na bardziej zaawansowane wyszukiwanie. Na przykład, `+` oznacza jeden lub więcej wystąpień danego znaku, `?` oznacza zero lub jedno wystąpienie, a `*` oznacza zero lub więcej wystąpień. 
+Dodatkowo, wyrażenia regularne pozwalają nam na wykorzystywanie tzw. symboli specjalnych, które umożliwiają nam dopasowanie do określonych kategorii znaków, takich jak cyfry, litery czy znaki interpunkcyjne. 
 
-Należy pamiętać również o znaku `r` przed wzorcem, który oznacza, że jest on interpretowany jako znaki tekstowe bez specjalnych znaczeń.
+Jedną z zalet wyrażeń regularnych jest również możliwość wykorzystania tzw. wyrażeń zwrotnych. Pozwalają one na zapisanie części wyrażenia w grupie i ponowne wykorzystanie jej w kodzie za pomocą odpowiedniego oznaczenia. Jest to szczególnie przydatne, gdy chcemy np. podmienić w stringu określone znaki lub je usunąć. 
 
-## Wskazówki i ciekawostki dotyczące wyrażeń regularnych
+## Zobacz także
 
-- Aby dokonać dopasowania z uwzględnieniem wielkości liter, należy dodać flagę `re.IGNORECASE` do funkcji `re.search()`.
-- Można również użyć wyrażeń regularnych w funkcji `sub()` do zastępowania tekstów, na przykład: `re.sub(r"ko+t", "kot", "kot kotek")` zwróci tekst "kot kotek", ponieważ zastąpi wszystkie wystąpienia słowa "kot" z uwzględnieniem dodatkowego znaku "k".
-- Aby sprawdzić, czy dany ciąg znaków jest całkowicie dopasowany do danego wzorca, należy użyć znaków `^` na początku wzorca oraz `$` na końcu, na przykład: `r"^[a-z]$"` będzie dopasowane do pojedynczej małej litery.
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w Pythonie, polecamy zapoznać się z poniższymi źródłami:
 
-# Zobacz również
+- [Oficjalna dokumentacja Pythona](https://docs.python.org/3/library/re.html)
+- [Tutorial na stronie Real Python](https://realpython.com/regex-python/)
+- [Kurs online na Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
 
-- [Oficjalna dokumentacja Pythona dotycząca wyrażeń regularnych](https://docs.python.org/3/library/re.html)
-- [10 przykładów zastosowań wyrażeń regularnych w Pythonie](https://realpython.com/regex-python/)
-- [Szczegółowy kurs wyrażeń regularnych w Pythonie](https://regexone.com/references/python)
+Warto także kontynuować eksperymentowanie z wyrażeniami i praktykować ich użycie w swoich projektach. Z czasem opanujesz tę użyteczną umiejętność i będziesz w stanie z łatwością wykorzystywać wyrażenia regularne w swoim kodzie.

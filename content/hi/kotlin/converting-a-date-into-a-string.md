@@ -1,30 +1,34 @@
 ---
-title:    "Kotlin: तारीख को स्ट्रिंग में रूपांतरण करना"
+title:    "Kotlin: एक तारीख को एक स्ट्रिंग में रूपांतरण करना"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-आजकल समय के साथ-साथ हर काम को ऑनलाइन लेकर जाना जाता है, और इसमें तिथि की स्ट्रिंग में बदलने की जरूरत पड़ती है। यह ब्लॉग पोस्ट हिंदी रीडर्स के लिए कोटलिन प्रोग्रामिंग में तारीख को स्ट्रिंग में बदलने से संबंधित है।
+कोतलिन प्रोग्रामिंग भाषा का उपयोग डेटा को प्रबंधन करने और उसको अलग-अलग फॉर्मेट्स में प्रदर्शित करने के लिए किया जाता है। इसलिए, अक्सर डेटा को श्रृंखला में देखने के लिए उपयोगकर्ता उसे स्ट्रिंग में रूपांतरित करते हैं।
 
 ## कैसे करें
 
 ```Kotlin
-val date = Date()
-val sdf = SimpleDateFormat("dd-MM-yyyy")
-val dateString = sdf.format(date)
-println(dateString)
+import java.text.SimpleDateFormat
+import java.util.*
+
+fun main() {
+    val currentDate = Date() // वर्तमान दिनाँक बनाएं
+    val sdf = SimpleDateFormat("dd/MM/yyyy") // डेट प्रारूप में परिवर्तन करने के लिए समझदार प्रारूप
+    val dateAsString = sdf.format(currentDate) // डेट को स्ट्रिंग में बदलें
+    println(dateAsString) // परिणाम छापें: "26/03/2021"
+}
 ```
 
-इस कोड से आप तारीख को स्ट्रिंग में बदल सकते हैं। यहाँ हमने `SimpleDateFormat` का उपयोग किया है जो की तारीख को चाहे जिस फॉर्मेट में बदल सकता है। और आप अपनी इच्छानुसार फॉर्मेट भी चयन कर सकते हैं। यहाँ हमने dd-MM-yyyy चयन किया है जिससे तारीख को दिन, माह और साल के अनुसार स्ट्रिंग में बदला गया है। 
+## गहराई में जाइए
 
-## गहराई में जाएं
-
-यदि आप अपनी कोडिंग को अधिक प्रोफेशनल और शास्त्रीय बनाना चाहते हैं, तो आप इस विषय में गहराई में जाना चाहेंगे। तारीख को स्ट्रिंग में बदलने के लिए `SimpleDateFormat` के अलग-अलग मेथड्स भी हैं जैसे `format`, `parse`, `getTime` आदि। इन सब के अलावा आप दिन, माह, साल, सप्ताह का नाम आदि भी स्ट्रिंग में बदल सकते हैं। 
+अब, जब आप डेट को स्ट्रिंग में बदलते हैं, कोटलिन आपको कई समझदार प्रारूप की सुविधाएं प्रदान करता है। आप यह निर्णय ले सकते हैं कि आप डेट को किस प्रारूप में तथा किस भाषा में देखना चाहते हैं। आप इसके अलावा डेट ऑब्जेक्ट पर अनेक फंक्शन भी लागू कर सकते हैं जिससे आप अपने डेटा को और भी अधिक मुक्त रूप से संभाल सकते हैं।
 
 ## देखें भी
 
-- [Kotlin Strings and String Interpolation](https://www.javatpoint.com/kotlin-strings)
-- [Working with Dates and Times in Kotlin](https://www.bezkoder.com/kotlin-date-time/)
+- [कोटलिन समझदार डेट प्रारूप और भाषाओं की एक व्याख्या](https://medium.com/kotlin-conf-hunt/smart-date-formatting-and-locale-in-kotlin-d7806a6a4700) 
+- [जावा डेट प्रारूप के साथ कोटलिन स्ट्रिंग परिवर्तन](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-kotlin.-time/string.html)

@@ -1,40 +1,39 @@
 ---
 title:    "Ruby: Skriva tester"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför: Anledningar till att skriva tester i Ruby
-Att skriva tester är en viktig del av utvecklingen inom Ruby-programmering. Genom att skapa tester för din kod kan du säkerställa att den fungerar som tänkt och undvika potentiella buggar och problem i framtiden. Tester hjälper också till att förbättra kodens kvalitet och öka dess tillförlitlighet.
+## Varför
 
-## Så här: Exempel och kodblock för att skriva tester i Ruby
-För att skapa ett test i Ruby behöver du först installera biblioteket "minitest". Detta kan göras genom att öppna din terminal och skriva "gem install minitest". Från och med Ruby 1.9 är "minitest" inbyggt i språket.
+Att skriva tester är en viktig del av utvecklingsprocessen för programvara. Genom att skriva tester kan du säkerställa att din kod fungerar korrekt och att eventuella buggar upptäcks tidigt. Det hjälper också till att förbättra kvaliteten på din kod och gör det enklare att göra ändringar i framtiden.
 
-När du har "minitest" installera kan du skapa en ny fil för ditt test. Låt oss säga att vi har en funktion som lägger till två tal, vi kan skapa ett test för den funktionen som nedan:
+## Så här gör du
+
+För att skriva tester i Ruby behöver du använda ramverket RSpec. Detta verktyg erbjuder en enkel och elegant syntax för att skapa tester. Här är ett exempel på hur du kan skriva ett test för en metod som lägger till två tal:
 
 ```Ruby
-# Importera "minitest" biblioteket
-require 'minitest/autorun'
-
-# Skapa en klass för vårt test
-class TestAddition < Minitest::Test
-  def test_adding_numbers
-    # Använda metoden "assert_equal" för att kontrollera om funktionen returnerar rätt värde
-    assert_equal 10, add(5, 5)
+describe "add method" do
+  it "returns the sum of two numbers" do
+    expect(add(2, 3)).to eq(5)
   end
-end 
+end
 ```
 
-I exemplet ovan använder vi "assert_equal" metoden för att jämföra det förväntade resultatet (10) med det faktiska resultatet av funktionen "add". Om de inte matchar kommer testet att misslyckas och du behöver fixa din kod.
+I detta exempel skapas en beskrivning av "add method" och ett testfall för att säkerställa att metoden returnerar rätt summa. Den inbyggda metoden "expect" används för att definiera förväntat resultat och "eq" används för att jämföra den faktiska summan.
 
-## Djupdykning: Mer information om att skriva tester i Ruby
-När du skapar tester i Ruby bör du följa principerna för "Test-driven development" (TDD). Detta innebär att du skriver tester innan du skriver din kod för att säkerställa att den är testbar och uppfyller de förväntade resultaten.
+## Djupdykning
 
-Du kan också utforska andra bibliotek för att skriva tester i Ruby, som "RSpec" och "Cucumber", som erbjuder mer avancerade funktioner för testning.
+För att skriva effektiva tester är det viktigt att ha en bra förståelse för din kod och dess syfte. Det är också en bra idé att skriva tester innan du börjar koda, så att du har en klar bild av vad din kod ska göra.
 
-## Se även:
-- [Minitest dokumentation](https://rubydoc.info/gems/minitest)
-- [En guide till TDD i Ruby](https://www.codewithjason.com/test-driven-development-ruby-using-minitest/)
-- [RSpec dokumentation](https://rspec.info/)
-- [Cucumber dokumentation](https://cucumber.io/)
+En annan viktig aspekt av att skriva tester är att testa olika scenarion. Till exempel kan du skriva tester för olika inmatningsvärden eller förväntade fel för att se hur din kod hanterar dem.
+
+Slutligen är det viktigt att kontinuerligt uppdatera och underhålla dina tester. Som din kod utvecklas och förändras måste även dina tester göras för att återspegla eventuella ändringar.
+
+## Se även
+
+- [RSpec dokumentation](https://www.rubydoc.info/gems/rspec-core/)
+- [Ruby on Rails: Testing Overview](https://guides.rubyonrails.org/testing.html)
+- [The importance of testing in software development](https://blog.newrelic.com/engineering/effective-test-driven-development/)

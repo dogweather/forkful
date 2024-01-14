@@ -1,49 +1,33 @@
 ---
-title:    "Swift: Kirjoittaminen standardivirheeseen"
+title:    "Swift: Tavanomaisen virheen kirjoittaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardi virhe?
+## Miksi kirjoittaisin standardivirheeseen?
 
-Useimmat Swift-ohjelmoijat eivät maksele kovin paljon huomiota standardi virheeseen, koska se ei ole yhtä näkyvä kuin vaikkapa konsolin tulostus. Kuitenkin kirjoittaminen standardi virheeseen voi olla hyödyllistä monenlaisissa tilanteissa, kuten virheen käsittelyssä tai debuggaamisessa. Standardi virhe voi auttaa ymmärtämään miksi ohjelma ei toimi odotetusti ja missä kohtaa siinä on virhe. Se voi myös auttaa löytämään koodin mahdollisia haavoittuvuuksia.
+Kirjoittaminen standardivirheeseen on tehokas tapa hallita ohjelmien tuottamaa tietoa ja virheilmoituksia. Se auttaa kehittäjiä selvittämään ongelmia ja korjaamaan koodissa olevia virheitä.
 
-## Miten kirjoittaa standardi virhe?
+## Miten kirjoitat standardivirheeseen?
 
-Jos haluat kirjoittaa koodisi standardi virheeseen Swiftillä, sinun tulee käyttää print-funktiota ja ohjata tulostus standardi virheeseen käyttämällä file-parametria. Alla on esimerkki koodista ja sen tekemästä tulosteesta:
+Voit kirjoittaa standardivirheeseen käyttämällä Swiftin "print()" -funktiota ja lisäämällä siihen "FileHandle.standardError" -parametrin. Tämä ohjaa tulosteen standardivirheeseen sen sijaan, että se tulostettaisiin konsoliin.
 
-```Swift
-func divide(number1: Int, number2: Int) throws {
-    if number2 == 0 {
-        throw DivisionError.divideByZero
-    }
-    print("Tulos: \(number1/number2)", to: &standardError)
-}
-
-enum DivisionError: Error {
-    case divideByZero
-}
-
-do {
-    try divide(number1: 10, number2: 0)
-} catch {
-    print("Virhe: \(error)", to: &standardError)
-}
 ```
+Swift
+print("Tämä on virheilmoitus", to: FileHandle.standardError)
+```
+Tämän koodin suorittamisen jälkeen näet virheilmoituksen standardivirheessä sen sijaan, että se tulostuisi konsoliin.
 
-Tuloste: Virhe: divideByZero
+## Syväkatsaus: Tietoa kirjoittamisesta standardivirheeseen
 
-Kuten huomaat, olemme ohjanneet tulostuksen standardi virheeseen käyttämällä "&standardError". Tämä tulostaa virheen aina kun se ilmenee.
+Kun kirjoitat standardivirheeseen, se auttaa sinua tunnistamaan ja korjaamaan ohjelman virheitä. Tämä johtuu siitä, että ohjelmat käsittelevät standardivirhettä eri tavalla kuin konsoliin tulostettavaa tietoa. Lisäksi voit määrittää erilaisia virheettömiä tapauksia, jolloin virheilmoitusta ei tulosteta standardivirheeseen.
 
-## Syvempi sukellus
-
-Standardi virhe tukee myös muita muotoiluja, kuten string-muotoilua, jonka avulla voimme tulostaa enemmän tietoa virheestä. Tämä kannattaa erityisesti evaluointivaiheessa, kun yritämme löytää mahdollisia virheitä ohjelmastamme.
-
-Myös standardi virheestä lukeminen on mahdollista tietyin edellytyksin, yleispätevin tapa on käyttää fileprivate set-mallia muuttujalle, jonka tyyppi on:`FileHandle.standardError`. Tämän avulla voimme lukea standardi virheestä, jos tarvitsemme tätä tietoa ohjelmamme suorituksen aikana.
+Standardivirheeseen kirjoittamisen hyödyntäminen auttaa myös kehittäjiä ohjelmien kehityksessä, koska sitä voidaan käyttää myös muutosten jäljittämiseen ja testaamiseen.
 
 ## Katso myös
 
-- Virallinen Swift-dokumentaatio: https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
-- Hieno blogipostaus, jossa käydään läpi standardi virheen käyttöä: https://www.swiftbysundell.com/articles/the-power-of-swifts-error-handling/
-- Hyödyllisiä vinkkejä ja temppuja standardi virheen käsittelyyn: https://medium.com/flawless-app-stories/a-closer-look-at-throwing-functions-in-swift-10a36243a5c1
+- [Swiftin dokumentaatio standardivirheestä](https://developer.apple.com/documentation/swift/filehandle/standarderror)
+- [Ohjeet virheiden käsittelystä Swiftissä](https://www.swiftbysundell.com/basics/error-handling/)
+- [Keskusteluohjelma-aihe virheiden käsittelystä Swiftissä](https://forums.swift.org/t/behind-the-swift-error-handling-model/2221)

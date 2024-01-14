@@ -1,53 +1,41 @@
 ---
-title:    "Kotlin: Tulostaminen virheenkorjaustulosteita"
+title:    "Kotlin: Virhetulostuksen tulostaminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä siihen, miksi ohjelmoijat käyttävät debug-tulostusta. Se voi auttaa tunnistamaan virheitä ja koodin suoritushäiriöitä, sekä helpottaa ohjelman toiminnan seuraamista ja testausta. Se on myös hyvä tapa kommunikoida koodin toimintaa muille kehittäjille.
+Usein koodin kehittämisen yhteydessä törmäämme erilaisiin virheisiin ja ongelmakohtiin. Yksi tapa selvittää näitä ongelmia on käyttää "debug output" -tulostusta, joka auttaa meitä ymmärtämään, mitä koodi oikeasti tekee ja miksi tietty virhe tapahtuu.
 
-## Kuinka tehdä se
+## Miten
 
-Debug-tulostuksen tekeminen Kotlinissa on helppoa. Voit hyödyntää `println()` -funktiota tulostamaan haluamasi viestin konsoliin. Voit myös käyttää `Log.d()` -funktiota, joka tulostaa viestin logiin, mikä on kätevää mobiilisovellusten kehittäjille. Katso esimerkkikoodi alla:
-
-```Kotlin
-val viesti = "Tämä on debug-tulostus"
-println(viesti) // tulostaa "Tämä on debug-tulostus"
-Log.d("Tagi", viesti) // tulostaa viestin logiin Tagi-tunnisteella
-```
-
-Tämän lisäksi voit myös käyttää `if`-lausekkeita tulostuksen ehtona, mikä voi auttaa hallitsemaan debug-tulostuksia eri tilanteissa. Katso esimerkkikoodi alla:
+Debug output -tulostusta voidaan käyttää Kotlinissa yksinkertaisesti println()-funktiolla. Tämä tulostaa halutun muuttujan arvon tai tekstin terminaaliin. Esimerkiksi:
 
 ```Kotlin
-val luku = 5
-
-// tulostaa "Luku on 5" vain, jos muuttuja luku on suurempi kuin 3
-if(luku > 3) {
-    println("Luku on $luku")
-}
+var x = 5
+println(x)
 ```
+
+Tämä tulostaisi terminaaliin "5". Voit myös käyttää tulostukseen useampia muuttujia tai tekstiä yhdistämällä niitä plussa-merkillä:
+
+```Kotlin
+var x = 5
+var y = 10
+println("x:n arvo on " + x + " ja y:n arvo on " + y)
+```
+
+Tämä tulostaisi "x:n arvo on 5 ja y:n arvo on 10" terminaaliin.
 
 ## Syvempi sukellus
 
-Debug-tulostus on yksi tärkeimmistä työkaluista ohjelmoijan työssä. Se voi auttaa havaitsemaan ja korjaamaan mahdollisia virheitä koodissa ja helpottaa koodin analysointia ja testausta. Tärkeintä on osata käyttää sitä oikein ja järkevästi, jotta siitä on hyötyä.
+Debug output -tulostus voi olla erittäin hyödyllinen työkalu koodin kehittämisessä ja virheiden etsimisessä. Kannattaa kuitenkin muistaa, että joskus tulostamalla kaikki mahdolliset muuttujat ja tekstit, koodistamme saattaa tulla hyvin epäselvää ja vaikeasti luettavaa. Siksi on tärkeää harkita tarkasti, mitä haluamme tulostaa ja missä vaiheessa koodia.
 
-Tässä muutamia vinkkejä debug-tulostuksen käyttämiseen:
-
-- Käytä kuvaavia viestejä: Muista lisätä tulostusviestiin tarvittavat tiedot, jotta se olisi selkeä ja informatiivinen.
-- Hyödynnä ehtolausekkeita: Käytä `if`-lausekkeita rajoittaaksesi tulostuksia vain tietyissä tilanteissa.
-- Ole harkitsevainen: Varmista, että tulostusviestit eivät ole liian runsaita ja häiritse ohjelman suoritusta.
+Voit myös käyttää Kotlinin logging-kirjastoa, joka tarjoaa monipuolisempia mahdollisuuksia debug output -tulostukseen. Tämä kirjasto tarjoaa esimerkiksi eri tasoisia lokitiedostoja, joihin voit tallentaa tiettyjä virheilmoituksia ja tarkastella niitä myöhemmin.
 
 ## Katso myös
 
-- Kotlinin virallinen debuggausopas: https://kotlinlang.org/docs/tutorials/debugging.html 
-- Java Debugging with IntelliJ IDEA: https://www.youtube.com/watch?v=j9ojlNmcpfM 
-- Debugging Basics for Android Development: https://developer.android.com/studio/debug/ 
-
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttaa sinua kehittämään debug-tulostukseen liittyviä taitoja Kotlinissa. Muista käyttää sitä viisaasti ja seuraa muita jännittäviä Kotlin-opetuksia tulevissa blogikirjoituksissamme.
-
-### Katso myös
-
-Käy kurkkaamassa muita kiinnostavia Kotlin-artikkeleita suomen kielellä suositussa Kotlin-blogissamme: https://kotlinblogi.com/
+- [Kotlinin virallinen dokumentaatio debug output -tulostuksesta](https://kotlinlang.org/docs/reference/basic-types.html#print-and-debug)
+- [Kotlinin logging-kirjasto](https://github.com/Kotlin/kotlin-logging)

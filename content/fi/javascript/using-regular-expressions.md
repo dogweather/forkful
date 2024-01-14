@@ -1,46 +1,46 @@
 ---
 title:    "Javascript: Säännöllisten lausekkeiden käyttö"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat hyödyllisiä ohjelmoinnissa, jos haluat tarkistaa tai muokata tekstiä tietyllä tavalla. Ne ovat erityisen hyödyllisiä, kun haluat löytää tai korvata tietynlaisia merkkijonoja, kuten puhelinnumeroita tai sähköpostiosoitteita.
+Säännölliset lausekkeet ovat tehokas työkalu JavaScript-ohjelmoijille, jotka haluavat hakea ja manipuloida merkkijonoja. Ne voivat auttaa sinua lyhentämään koodin määrää ja tehostamaan suorituskykyä. 
 
-## Näin käytät säännöllisiä lausekkeita
+## Miten aloittaa
 
-Säännöllisten lausekkeiden käyttö Javascriptissa tapahtuu RegExp-olion avulla. Voit luoda uuden säännöllisen lausekkeen kirjoittamalla sen sisältämän merkkijonon välissä etukenoinen kauttalainen (\) ja käyttämällä sille haluamiasi Englannin aakkosia. Esimerkiksi, haluaisit löytää kaikki "koira" -sanalla alkavat lauseet, voit käyttää säännöllistä lauseketta `/^koira/`.
-
-```Javascript
-// Luodaan säännöllinen lauseke
-var regex = /^koira/;
-
-// Testataan lauseke ja tallennetaan tulos muuttujaan
-var result = regex.text("Koirat haukkuvat kovaa");
-console.log(result); // output: true
-```
-
-Tässä esimerkissä käytämme `text()`-metodia säännöllisen lausekkeen tarkistamiseen. Jos haluamme korvata löydetyt merkkijonot uudella tekstillä, voimme käyttää `replace()`-metodia. Voimme myös käyttää luomiamme ryhmiä (`()`-merkit) säännöllisessä lausekkeessa, ja käyttää niitä myöhemmin korvaamisessa.
+Säännöllisillä lausekkeilla on erityinen syntaksi, joka mahdollistaa merkkijonojen hakemisen ja muokkaamisen. Yksinkertainen esimerkki on hakea kaikki sanat, jotka alkavat kirjaimella "a".
 
 ```Javascript
-// Esimerkki ryhmien käytöstä
-var regex = /^(koira)o/;
+let merkkijono = "Aloitetaan koodaus säännöllisillä lausekkeilla.";
 
-// Korvataan löydetyt merkkijonot ryhmän ensimmäisellä sanalla
-var result = "Koirat ja kissat".replace(regex, "$1ira"); 
-console.log(result); // output: Koira ja kissat
+let haku = merkkijono.match(/\ba\w*/g);
+
+console.log(haku);
+// Output: ["Aloitetaan", "a", "säännöllisillä"]
 ```
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+Ensimmäisellä rivillä luomme muuttujan ja määritämme siihen merkkijonon, josta haluamme hakea sanoja. Toisella rivillä käytämme `match`-metodia säännölliselle lausekkeelle ja tallennamme tuloksen muuttujaan `haku`. Lopuksi tulostamme tuloksen konsoliin.
 
-Säännöllisissä lausekkeissa on monia muita hyödyllisiä ominaisuuksia, kuten metakaraktereita ja kvantorimerkkejä. Metakaraktereilla voidaan esimerkiksi tarkistaa tietynlaisia merkkejä, kuten numerot (`\d`) tai välilyönnit (`\s`). Kvantorimerkkien avulla voidaan määrittää, kuinka monta kertaa jokin merkki tai ryhmä esiintyy, kuten `+` (yksi tai useampi) tai `?` (nolla tai yksi).
+## Syvällinen sukellus
 
-Jos haluat oppia lisää säännöllisistä lausekkeista ja niiden käytöstä Javascriptissa, suosittelen tutustumaan MDN:n sivuille tai katsomaan opetusvideoita YouTubesta.
+Säännölliset lausekkeet koostuvat erikoismerkeistä ja merkkipaljastimista, joiden avulla voit luoda monimutkaisempia hakuja. Alla on muutamia yleisiä esimerkkejä.
+
+- `.`: Mikä tahansa merkki paitsi uusi rivi
+- `^`: Merkkijonon alku
+- `$`: Merkkijonon loppu
+- `[]`: Määritä merkkijono, jonka haluat hakea
+- `[-]`: Määritä merkkijonoalue, jonka sisältä haluat hakea
+- `\w`: Pienet ja isot kirjaimet sekä numerot
+- `\W`: Kaikki muu kuin `\w`
+
+Katso lisää esimerkkejä ja tarkempaa syventymistä [MDN:n sivulta](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 ## Katso myös
 
-- [MDN: Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3schools: Javascript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
-- [JavaScript.info: Säännölliset lausekkeet](https://javascript.info/regexp-introduction)
+- [RegExp Objektin dokumentaatio](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Regex101 - Työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)
+- [JavaScript Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript)

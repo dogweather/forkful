@@ -1,34 +1,41 @@
 ---
 title:    "Java: तारीख को स्ट्रिंग में रूपांतरण करना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-कभी-कभी हमें तारीखों को स्ट्रिंग में रूपांतरित करने की जरूरत होती है, जैसे कि उपयोगकर्ताओं को प्रदर्शित करने के लिए या डेटा को सहेजने के लिए। अगर आप जानते हैं कि इस प्रक्रिया को कैसे किया जाता है, तो आप अपने कोड को बेहतर ढंग से लिख सकते हैं और सिस्टम को सुदूर भविष्य में परिवर्तनों के लिए तैयार कर सकते हैं।
+कभी-कभी हमें अपने जावा प्रोग्राम में तिथि को स्ट्रिंग में रूपांतरित करने की आवश्यकता हो सकती है। इसके लिए हमें `SimpleDateFormat` का उपयोग करना पड़ता है।
 
-## कैसे
+## कैसे करें
 
-जावा कोड में तारीख को स्ट्रिंग में रूपांतरित करने के लिए हम `SimpleDateFormat` क्लास का इस्तेमाल कर सकते हैं। यहां हम एक उदाहरण प्रकाशित कर रहे हैं जो वर्तमान तारीख को "yyyy/MM/dd" फॉर्मेट में स्ट्रिंग में रूपांतरित करता है।
+यहां हम `SimpleDateFormat` का उपयोग करके एक तारीख स्ट्रिंग में रूपांतरित करने का एक छोटा सा उदाहरण दिखाएंगे:
 
-```Java
-Date date = new Date();
-SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-String dateString = formatter.format(date);
-System.out.println(dateString);
+``` Java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateFormatExample {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String dateString = formatter.format(date);
+        
+        System.out.println(dateString); // Output: 25/11/2021
+    }
+}
 ```
 
-आउटपुट: 2021/08/05
+यहां हमने `SimpleDateFormat` का एक ऑब्जेक्ट बनाया और इसके उपयोग से वर्तमान तारीख को `dd/MM/yyyy` फॉर्मेट में स्ट्रिंग में रूपांतरित कर लिया है। आप चाहें तो अपनी इच्छानुसार इस फॉर्मेट को बदल सकते हैं। इसके अलावा आप अन्य फॉर्मेट भी लागू कर सकते हैं जैसे `yyyy-MM-dd` या `hh:mm:ss`। 
 
-## डीप डाइव
+## गहराई में जाएं
 
-इस `SimpleDateFormat` क्लास को इस्तेमाल करने से पहले, हमें प्रथम तारीख के डेटा प्रकार को तय करना होता है, जैसे कि "dd/mm/yyyy" या "mm/dd/yyyy"। विभिन्न तारीख फॉर्मेट के लिए विभिन्न अक्षर उपलब्ध हैं, जो आप यहां देख सकते हैं। आप भी `Locale` पैरामीटर को इस्तेमाल कर सकते हैं जब आप स्ट्रिंग कोड को प्रकरण के दौरान उपयोग कर रहे हैं।
+साल-महीने-दिन के अलावा आप `SimpleDateFormat` का उपयोग करके अन्य तारीख प्रकारों को भी स्ट्रिंग में रूपांतरित कर सकते हैं। जैसे कि समय (`hh:mm:ss`) या समय और तारीख दोनों का एक साथ (`dd/MM/yyyy hh:mm:ss`)। भी साथ ही आप `SimpleDateFormat` के साथ अपनी खुद की फॉर्मेट भी निर्दिष्ट कर सकते हैं। यहां आप `SimpleDateFormat` की डॉक्यूमेंटेशन पढ़ कर अधिक जानकारी प्राप्त कर सकते हैं। 
 
-## देखें भी
+## इससे जुड़े अन्य लेख
 
-- [SimpleDateFormat क्लास की जानकारी] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [अधिक तारीख स्ट्रिंग फॉर्मेट विकल्प] (https://www.technicalkeeda.com/java-tutorials/java-simpledateformat-format-examples)
-
-# देखें भी
+- [Java में `SimpleDateFormat` का उपयोग कैसे करें?](https://www.geeksforgeeks.org/java-setting-date-format/)
+- [कैसे Java में तारीखों का समय निर्धारित करें](https://www.javatpoint

@@ -1,17 +1,18 @@
 ---
-title:    "Go: Znajdowanie długości ciągu znaków"
+title:    "Go: Znajdowanie długości łańcucha znaków"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Znalezienie długości ciągu znaków jest jednym z podstawowych zadań programowania. W Go jest to prosta i wydajna operacja, która może być używana w wielu różnych przypadkach.
+Znalezienie długości ciągu znaków może być niezbędne w wielu różnych aplikacjach w języku programowania Go. Na przykład, możemy chcieć sprawdzić długość hasła wprowadzonego przez użytkownika, aby upewnić się, że jest wystarczająco długie i bezpieczne. W tym artykule dowiesz się, jak obliczyć długość ciągu znaków w języku Go.
 
 ## Jak to zrobić
 
-Aby znaleźć długość ciągu znaków w Go, możemy użyć wbudowanej funkcji `len()`, która zwraca ilość elementów w danym typie zmiennej. W przypadku stringów, ta funkcja będzie zwracać liczbę bajtów, a nie liczność znaków.
+Obliczenie długości ciągu znaków w Go jest bardzo proste. Możemy użyć funkcji `len()` do pobrania długości ciągu. Następnie możemy wypisać lub użyć długości w inny sposób w naszym kodzie. Oto przykładowy kod:
 
 ```Go
 package main
@@ -19,21 +20,36 @@ package main
 import "fmt"
 
 func main() {
-	str := "Cześć, Jak się masz?"
-	fmt.Println(len(str))
+  name := "Poland"
+  fmt.Println("Długość ciągu znaków dla słowa", name, "to", len(name))
 }
 ```
 
-Output: `20`
+Powyższy kod najpierw deklaruje zmienną `name`, która zawiera ciąg znaków "Poland". Następnie wyświetla komunikat, który oblicza długość ciągu znaków dla słowa "Poland". Wynik wynosi 6, ponieważ słowo "Poland" składa się z sześciu znaków.
 
-Funkcja ta jest bardzo prosta w użyciu, a jej działanie jest szybkie i efektywne. Jednak trzeba pamiętać, że działa ona na podstawie liczby bajtów, więc jeśli używamy znaków z kodowania ASCII (jednobajtowego), to wszystko będzie działać poprawnie. Jednak w przypadku używania znaków z kodowania UTF-8 (wielobajtowego), to długość stringa może nie być równa liczbie znaków.
+Możemy również użyć funkcji `len()` w pętli for w celu ustalenia liczby iteracji. Oto przykład:
 
-## Deep Dive
+```Go
+package main
 
-Dla osób, które chcą wiedzieć więcej o działaniu funkcji `len()` na stringach w Go, warto wspomnieć, że jest ona obsługiwana przez pakiet `unicode/utf8`. Ten pakiet zawiera różne funkcje, takie jak `RuneCount()`, które pozwalają na dokładne obliczenie ilości znaków w stringu, a nie tylko bajtów. Używanie tych funkcji jest szczególnie ważne w przypadku pracy z różnymi językami i alfabetami.
+import "fmt"
 
-## Zobacz także
+func main() {
+  sentence := "To jest zdanie"
+  for i := 0; i < len(sentence); i++ {
+    fmt.Println("Iteracja", i+1, "wyświetla:", sentence[i])
+  }
+}
+```
 
-- [Dokumentacja funkcji len() w pakiecie `unicode/utf8`](https://golang.org/pkg/unicode/utf8/#RuneCount)
-- [Krótki kurs języka Go dla początkujących](https://go-tour-pl.appspot.com/)
-- [Społeczność języka Go w Polsce](https://golang.org.pl/)
+W powyższym przykładzie, pętla for będzie wykonywać się przez tyle iteracji, ile wynosi długość ciągu znaków w zmiennej `sentence`. W każdej iteracji, zostanie wyświetlony kolejny znak ze zmiennej `sentence`. Spróbuj zmienić wartość w zmiennej `sentence` i zobacz, jak będzie to wpływać na liczbę iteracji i wyświetlane znaki.
+
+## Głębsza analiza
+
+Funkcja `len()` w rzeczywistości zwraca liczbę bajtów w danym ciągu znaków, a nie liczbę samej długości. W przypadku ciągów znaków ASCII, liczba bajtów będzie odpowiadała liczbie znaków, ale w przypadku innych systemów znaków, ta liczba może się różnić. Dlatego oznacza to, że w przypadku niektórych aplikacji, szczególnie tych związanych z bezpieczeństwem, musimy dokładnie zrozumieć, co oznacza liczenie bajtów zamiast samej długości.
+
+## Zobacz również
+
+- Dokumentacja Go o funkcji `len()`: https://golang.org/ref/spec#Length_and_capacity
+- Przykłady zastosowań funkcji `len()`: https://www.golangprograms.com/go-program-to-find-length-of-string.html
+- Przydatne informacje o systemach znaków: https://godoc.org/golang.org/x/text/encoding

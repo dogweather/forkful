@@ -1,66 +1,38 @@
 ---
 title:    "Python: Scrivere test"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test è importante per i programmatori
-
-Scrivere test è una parte fondamentale dello sviluppo software e permette ai programmatori di garantire che il loro codice funzioni correttamente. I test aiutano a identificare eventuali errori o bug nel codice e consentono di effettuare modifiche e miglioramenti con maggior sicurezza.
+## Perché scrivere test è importante in Python
+Scrivere test è un componente fondamentale della programmazione in Python. I test ci aiutano a verificare che il nostro codice funzioni correttamente e ci permettono di identificare eventuali errori o bug. Inoltre, ci aiutano a sviluppare codice più robusto e manutenibile nel tempo. 
 
 ## Come scrivere test in Python
-
-Per scrivere test in Python, è necessario prima importare il modulo `unittest`. Questo modulo fornisce una serie di metodi e classi utili per il testing. Di seguito è riportato un esempio di codice in Python che mostra come creare una classe di test usando il modulo `unittest`, testare una semplice funzione `add()` e stampare l'output del test:
+Per iniziare a scrivere test in Python, dobbiamo utilizzare il modulo di testing integrato, chiamato `unittest`. Con questo modulo, possiamo definire delle classi di test che controllano il comportamento del nostro codice. Di seguito, un esempio di un test per una semplice funzione di addizione:
 
 ```Python
-# Import the unittest module
 import unittest
 
-# Create a subclass of Testcase in the unittest module
-class TestAdd(unittest.TestCase):
-
-    # Define a method to test the add() function
-    def test_add(self):
-        # Test for a correct addition
-        self.assertEqual(add(2, 3), 5)
-        
-# Define the add() function
 def add(x, y):
     return x + y
 
-# Run the tests
-if __name__ == "__main__":
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 5), 4)
+
+if __name__ == '__main__':
     unittest.main()
 ```
 
-Output:
+Nell'esempio sopra, abbiamo definito una classe di test chiamata `TestAdd` che eredita dalla classe `unittest.TestCase`. All'interno di questa classe, abbiamo definito un metodo chiamato `test_add` che contiene gli assert per verificare che la nostra funzione `add` funzioni come previsto. Infine, abbiamo utilizzato `unittest.main()` per eseguire i nostri test.
 
-```
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-
-OK
-```
-
-Questo è solo un esempio semplice, ma è possibile scrivere test più complessi per coprire una varietà di scenari e input.
-
-## Approfondimento su scrivere test
-
-Scrivere test può richiedere un po' di tempo e sforzo aggiuntivo, ma alla fine può risparmiare molto tempo e frustrazione. È importante capire quando e come scrivere test efficaci per ottenere i migliori risultati. Alcuni consigli utili per scrivere test includono:
-
-- Testare sia le funzioni che le classi
-- Concentrarsi sul testing delle parti più critiche e complesse del codice
-- Assicurarsi di testare tutti i casi possibili, inclusi casi limite e errori di input
-- Utilizzare nomi di test significativi e ben strutturati per rendere il debugging più semplice
-- Aggiornare regolarmente i test in base alle modifiche apportate al codice
-
-Inoltre, ci sono diversi tipi di test che possono essere scritti e combinati per ottenere una copertura più completa del codice, come i test di unità, i test di integrazione e i test di regressione.
+## Approfondimento su come scrivere test in Python
+Oltre alla semplice sintassi per scrivere test, esistono anche diverse pratiche consigliate da seguire quando si scrivono test in Python. Alcune di queste includono l'organizzazione dei test in moduli separati, l'utilizzo di tecniche di test-driven development e l'uso di strumenti di code coverage per identificare il codice non testato. Inoltre, ci sono anche diversi framework di testing di terze parti che possono aiutarci a scrivere test più avanzati e completi.
 
 ## Vedi anche
-
-Per ulteriori informazioni su come scrivere test efficaci in Python, si consiglia di leggere i seguenti articoli:
-
-- [Test-Driven Development con Python](https://www.obeythetestinggoat.com/pages/book.html#toc)
-- [Introduzione al testing del software con Python](https://realpython.com/python-testing/)
-- [Il modulo unittest di Python](https://docs.python.org/3/library/unittest.html)
+- [Documentazione ufficiale di `unittest`](https://docs.python.org/3/library/unittest.html)
+- [Python Testing with pytest](https://realpython.com/python-testing/)
+- [The Hitchhiker's Guide to Python Testing](https://docs.python-guide.org/writing/tests/)

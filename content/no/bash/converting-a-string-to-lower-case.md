@@ -1,38 +1,55 @@
 ---
-title:    "Bash: Konvertering av streng til små bokstaver"
+title:    "Bash: Å konvertere en streng til små bokstaver"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I dagens digitale verden er det viktigere enn noen gang å kunne behandle tekst og data på en effektiv og nøyaktig måte. En vanlig programmeringsoppgave er å konvertere en streng (string) til små bokstaver (lower case), og dette kan ha mange fordeler. Det gjør at vi kan sammenligne tekst på en enklere måte, og det gir en mer konsistent og lesbar tekststruktur. I denne bloggposten vil vi se nærmere på hvordan man kan konvertere en streng til små bokstaver i Bash.
+Det kan være mange grunner til å ønske å konvertere en tekststreng til små bokstaver. Kanskje du jobber med et program som forventer at alle navn skal være på samme format, eller kanskje du ønsker å sammenligne to strenger uavhengig av store eller små bokstaver. Uansett årsak, så er det enkelt å gjøre i Bash-programmering.
 
 ## Hvordan
 
-Det finnes flere måter å konvertere en streng til små bokstaver i Bash, men den enkleste og mest effektive metoden er å bruke kommandoen "tr -s '[:upper:]' '[:lower:]'". La oss se på et eksempel:
+Den enkleste måten å konvertere en tekststreng til små bokstaver i Bash er ved å bruke kommandoen `tr`. Her er et eksempel på hvordan man kan gjøre dette:
 
 ```Bash
-original_string="DETTE ER EN STRENG"
-lower_case_string=$(echo $original_string | tr -s '[:upper:]' '[:lower:]')
-echo $lower_case_string
-```
-Output:
-```Bash
-dette er en streng
+original_string="Hei PÅ DEG"
+lowercase_string=$(echo "$original_string" | tr '[:upper:]' '[:lower:]')
+echo "$lowercase_string"
 ```
 
-Her bruker vi først en variabel for å lagre en string med store bokstaver, og deretter bruker vi kommandoen "tr" for å konvertere bokstavene til små. Dette gjøres ved å bruke en "[:upper:]" for å spesifisere at vi vil endre store bokstaver, og en "[:lower:]" for å spesifisere at vi vil endre til små bokstaver. Ved å bruke "-s" flagget, vil kommandoen også fjerne eventuelle duplikater av bokstaver.
+I dette eksempelet oppretter vi først en variabel kalt `original_string` som inneholder teksten vi ønsker å konvertere. Deretter bruker vi `tr`-kommandoen til å konvertere alle store bokstaver til små bokstaver. Det gjør vi ved å bruke parameteren `[:upper:]` for å angi hvilke bokstaver vi ønsker å konvertere, og `[:lower:]` for å angi hvilken formatt vi ønsker å konvertere dem til. Til slutt lagrer vi resultatet i en ny variabel kalt `lowercase_string` og skriver den ut ved hjelp av `echo`-kommandoen.
+
+Dersom man ønsker å bare konvertere en enkeltstreng i Bash, kan man også bruke kommandoen `tr` alene uten å lagre resultatet i en variabel. Her er et eksempel på hvordan man kan gjøre det:
+
+```Bash
+echo "Hei PÅ DEG" | tr '[:upper:]' '[:lower:]'
+```
+
+Dette vil skrive ut teksten "hei på deg" til terminalen.
 
 ## Dypdykk
 
-For de som er interessert i litt mer teknisk informasjon, bruker "tr" kommandoen faktisk det som kalles for et "translation table". Dette er en tabell som inneholder to kolonner, en for de bokstavene du vil endre og en for hva du vil endre de til. Når kommandoen blir kjørt, sjekker den hver bokstav i stringen og ser om den finnes i den første kolonnen i tabellen. Hvis den finnes, vil den bli erstattet med bokstaven i den andre kolonnen.
+I tillegg til å bruke `tr`-kommandoen, finnes det også andre måter å konvertere en tekststreng til små bokstaver i Bash. Her er to eksempler:
 
-Det finnes også andre måter å konvertere strings til lower case i Bash, som for eksempel ved hjelp av "sed" kommandoen eller ved å bruke "awk" kommandoen med "tolower" funksjonen. Det viktigste er å velge en metode som er mest effektiv og passer best til ditt spesifikke brukstilfelle.
+```Bash
+# Ved hjelp av variabel subtring
+original_string="Hei PÅ DEG"
+lowercase_string="${original_string,,}"
+echo "$lowercase_string"
+
+# Ved hjelp av triggere
+original_string="Hei PÅ DEG"
+shopt -s extglob
+lowercase_string="${original_string//[![:alnum:]]/_}"
+echo "$lowercase_string"
+```
+
+I det første eksempelet bruker vi en variabel substring for å konvertere teksten, og i det andre eksempelet bruker vi triggere for å fjerne alle tegn som ikke er små bokstaver eller tall fra teksten. Begge disse eksemplene vil gi samme resultat som det første eksempelet med `tr`-kommandoen.
 
 ## Se også
 
-- [Bash Manual - tr command](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Bash Manual - sed command](https://www.gnu.org/software/sed/manual/sed.html)
-- [Bash Manual - awk command](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Bash-programmering: Introduksjon](http://www.example.com)
+- [Bash-programmering: Variabler](http://www.example.com)

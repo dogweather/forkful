@@ -1,47 +1,62 @@
 ---
 title:    "Ruby: 生成随机数"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-随机数生成是编程中经常用到的工具，它可以帮助我们创建虚拟的数据，用于测试和模拟。此外，它也被用于游戏开发、加密和随机化算法。
+
+在编程中，生成随机数是一种非常有用的技巧。它可以帮助我们创建各种各样的应用程序，从简单的游戏到复杂的密码生成器。使用随机数，我们可以增加程序的多样性，并且让它们更具有趣味性和随机性。继续阅读，了解如何在Ruby中生成随机数！
 
 ## 如何操作
-有几种方法可以在Ruby中生成随机数，我们将通过下面的代码块来介绍它们：
+
+在Ruby中，生成随机数非常容易。我们可以使用内置的rand方法来生成介于0到1之间的伪随机数。例如，以下代码将生成一个随机数并打印在屏幕上：
 
 ```Ruby
-# 生成范围内的随机整数
-puts rand(1..10)
-
-# 生成0-1之间的随机小数
-puts rand()
-
-# 给定种子生成随机数
-srand(1234)
-puts rand(1..10)
+puts rand
 ```
 
-以下是输出结果的示例：
+如果我们想要生成一个介于0和10之间的随机整数，我们可以使用rand方法的参数来指定范围。例如：
 
-```
-5
-0.7688192234080053
-9
+```Ruby
+puts rand(10)
 ```
 
-我们可以使用rand方法来生成范围内的随机整数，可以使用rand方法不指定范围来生成0-1之间的随机小数，也可以使用srand方法给定一个种子来生成可预测的随机数。
+我们还可以使用range来生成一个随机整数。例如，生成介于1到100之间的随机整数：
 
-## 深入探索
-随机数生成是一个很有意思的话题，它涉及到伪随机数算法、种子以及如何创建真正的随机数。Ruby中的rand方法实际上是一个伪随机数算法，它根据可以预测的种子来生成一系列的数字。因此，在某些情况下，为了避免数据重复，我们可以使用srand方法来指定一个不同的种子。而要创建真正的随机数，则需要依靠硬件设备，比如随机数发生器。
+```Ruby
+puts rand(1..100)
+```
 
-## 参考资料
-- http://ruby-doc.org/core-2.7.1/Random.html
-- https://www.rubyguides.com/2019/10/ruby-random/ 
-- https://ruby-doc.org/stdlib-2.6.3/libdoc/securerandom/rdoc/SecureRandom.html
+我们也可以生成随机字符串。首先，让我们创建一个包含所有可能字符的数组：
 
-## 参见
-- [Ruby文档](https://ruby-china.org/wiki/ruby-manual)
-- [Ruby社区](https://ruby-china.org/)
-- [Ruby on Rails](https://rubyonrails.org/)
+```Ruby
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+```
+
+然后，我们可以使用随机数来选择一个随机字符并重复多次以生成字符串：
+
+```Ruby
+puts letters[rand(26)] * 6
+```
+
+以上代码将生成一个6位随机字符串。您可以根据需要调整重复次数。
+
+## 深度挖掘
+
+实际上，计算机并不真正产生随机数。它使用的是一个称为伪随机数生成器的算法。这个算法通过使用一个种子值来生成一系列的随机数。种子值可以是任何数字，但通常都会使用当前的时间戳作为种子，因为它是每次运行程序时都会变化的。
+
+这意味着，如果您在程序中多次调用相同的种子值，它将返回相同的随机数序列。因此，要产生不重复的随机数，我们需要使用不同的种子值。
+
+现在您可能会想，为什么不只使用每次运行程序时都会变化的时间戳作为种子值？这是因为伪随机数生成器需要一个大的种子空间，以避免生成重复的随机数序列。
+
+## 另请参阅
+
+- [Ruby官方文档](https://www.ruby-lang.org/en/documentation/)
+- [Ruby编程入门](https://www.ruby-lang.org/zh_cn/documentation/quickstart/)
+- [随机数生成器的工作原理](https://www.geeksforgeeks.org/how-does-rand-function-works-in-c/)
+
+## 见您下一篇博客！

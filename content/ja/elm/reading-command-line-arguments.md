@@ -1,83 +1,77 @@
 ---
-title:    "Elm: コンピュータプログラミングの記事タイトル：コマンドライン引数の読み取り"
+title:    "Elm: コマンドライン引数の読み込み"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-Elmプログラミングをしている皆さん、こんにちは！
+## なぜ
 
-今回は、コマンドライン引数の読み取りについてご紹介します。コマンドライン引数とは、コンピュータプログラムに渡されるデータのことを指します。例えば、コマンドラインからファイル名を指定してプログラムを実行する場合、そのファイル名がコマンドライン引数として渡されます。
+コマンドライン引数を読み込むことの重要性は、プログラムの実行時に柔軟性を持たせることができるためです。例えば、異なるオプションを指定することで、プログラムの動作を変えることができます。これにより、同じプログラムでも様々な状況に対応できるようになります。
 
-それでは早速、なぜコマンドライン引数を読み取る必要があるのか、そしてどのように読み取るのかを見ていきましょう！
+## 方法
 
-## なぜ読み取る必要があるのか
-
-コマンドライン引数を読み取ることで、プログラムの柔軟性を高めることができます。例えば、異なるファイル名やパスを指定したり、オプションを追加したりすることで、プログラムをより多くの状況に対応できるようになります。
-
-また、コマンドライン引数を使用することで、プログラムを実行する際に毎回コードを修正する必要がなくなります。コンピュータプログラムは、人間が入力ミスをすることなく同じ引数を渡して実行することができます。
-
-## 読み取り方の例
-
-では、実際にコマンドライン引数を読み取ってみましょう。以下のElmコードをご覧ください。
+Elmでは、`Command-line-args`モジュールを使用してコマンドライン引数を読み取ることができます。まずは、以下のコードを ```Elm elm - 代わりに ``` で使用できるようにファイルに保存します。
 
 ```Elm
-import Platform exposing (worker)
-import Task
-import Tuple
+import Platform exposing (..)
+import CommandlineArgs
 
-main : Program Never Model Msg
 main =
-  let
-    workerConfig =
-      worker
-      { init = init
-      , update = update
-      , subscriptions = subscriptions
-      }
-  in
-    Platform.worker workerConfig
+    program
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = always Sub.none
+        }
 
-init : () -> ( Model, Cmd Msg )
+-- コマンドライン引数の取得
+init : () -> (Model, Cmd Msg)
 init _ =
-  ( Model "", Task.succeed NoOp )
+    (Model "default value", Cmd.none)
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    UpdateUsername newUsername ->
-      ( Model newUsername, Cmd.none )
+-- コマンドライン引数の更新
+type Msg = UpdateArgs CommandlineArgs.Result
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
+update : Msg -> Model -> (Model, Cmd Msg)
+update (UpdateArgs result) _ =
+    case result of
+        Ok value ->
+            (Model value, Cmd.none)
 
+        Err error ->
+            -- エラー処理を行う
+            (Model "エラーが発生しました", Cmd.none)
+
+-- ビューの表示
 type alias Model =
-  String
+    String
 
-type Msg
-  = UpdateUsername String
-
-type Msg =
-
-| NoOp
-
-main : () -> Program Never Model Msg
-main =
-  Html.program
-  { init = init
-  , update = update
-  , view = view
-  , subscriptions = subscriptions
-  }
+view : Model -> Html Msg
+view model =
+    text model
 ```
 
-このコードでは、`init`関数でコマンドライン引数を読み取り、`Model`にセットしています。その後、`update`関数で受け取ったユーザー名を新しいモデルに更新しています。そして、`view`関数で最終的に画面に表示されるようになっています。
+コマンドライン引数は、次のような形で指定します。
 
-コマンドラインからプログラムを実行するときは、`elm reactor`コマンドを使用します。その後、`http://localhost:8000/index.html?username=john`のように、コマンドライン引数として`username=john`を指定してアクセスすることで、画面に`john`というユーザー名が表示されることが確認できるでしょう。
+```bash
+elm ファイル名 引数1 引数2 ...
+```
 
-## ディープダイブ
+上記のコードでは、`init`関数でデフォルト値として`"default value"`が設定されています。`update`関数では、指定された引数を取得して`Model`を更新しています。
 
-コマンドライン引数を読み取る方法は様々あります。例えば、`Elm.Command`モジュールを使用する方法や、`Platform.programWithFlags`を使用する方法があります。また、コマンドライン引数の中には数字や複数のオプションを含んでいる場合もあるので、それらを処理する必要があります。
+## 深堀り
 
-さらに深く掘り下げる
+`Command-line-args`モジュールでは、様々なオプションを使用することができます。例えば、デフォルト値や必須項目の指定、オプションの詳細な定義などができます。詳細な使い方は[公式ドキュメント](https://package.elm-lang.org/packages/tixxit/command-line-args/latest/)を参照してください。
+
+## 参考リンク
+
+- [公式ドキュメント](https://package.elm-lang.org/packages/tixxit/command-line-args/latest/)
+- [GitHubレポジトリ](https://github.com/tixxit/command-line-args)
+- [コマンドライン引数の解析方法について](https://qiita.com/bananaumai/items/f87ee226b0fba2c10a9e)
+- [Command Line Parsing in Elm](https://medium.com/hackervalleys/command-line-parsing-in-elm-13558a55d34e)
+
+## もっと知りたい場合は？
+
+Elmでは、コマンドライン引数だけでなく様々な機能を備えたモジュールが提供されています。興味がある方は、[Elmパッケージ一覧](https://package.elm-lang.org/)をチェックしてみてください。

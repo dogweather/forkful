@@ -1,54 +1,52 @@
 ---
 title:    "Kotlin recipe: Starting a new project"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project can seem daunting, but it is the first step towards creating something innovative and impactful. Whether you are a seasoned developer looking for a new challenge or a beginner looking to improve your skills, starting a new project is a great way to sharpen your coding abilities and showcase your creativity.
+Starting a new project in any programming language can be both exciting and daunting. It allows you to create something from scratch and bring your ideas to life. With Kotlin, a modern, concise, and powerful language, you can take your project to new heights. So, let's dive into the hows of starting a new Kotlin project.
 
 ## How To
 
-To begin, let's create a simple Kotlin project that prints "Hello, world!" to the console. Open your preferred code editor and create a new Kotlin file. In this example, we will name it "HelloWorld.kt".
+Kotlin provides a smooth and straightforward process for starting a new project. First, you need to set up your development environment with the latest version of IntelliJ IDEA. Once that's done, follow these steps to create a new Kotlin project:
 
-```
-Kotlin
-fun main(args: Array<String>) {
-    println("Hello, world!")
+1. Open IntelliJ IDEA and click on "New Project"
+2. Select "Kotlin" as the primary language for your project and click "Next"
+3. Choose the project boilerplate that best suits your needs: "Kotlin/JVM" for a project that runs on the Java Virtual Machine, "Kotlin/JS" for a project that runs on JavaScript, or "Kotlin/Multiplatform" for a project that can run on multiple targets
+4. Give your project a name and choose a project location
+5. Click "Finish" and voila, your new Kotlin project is ready to go!
+
+To get you started, here's a simple Kotlin program that prints "Hello World!" to the console:
+
+```Kotlin
+fun main() {
+    println("Hello World!")
 }
 ```
 
-Now, let's dive into the code. The first line begins with the keyword "fun" which declares a function. In Kotlin, "main" is the entry point for our program. The "args" parameter allows us to pass command-line arguments to our program if needed. We then use the "println" function to output our desired message to the console. 
-
-Next, we need to compile and run our program. In the terminal, navigate to the directory where your "HelloWorld.kt" file is located and run the following commands:
+And the output should be:
 
 ```
-Kotlin
-//compile the program
-kotlinc HelloWorld.kt -include-runtime -d HelloWorld.jar
-
-//run the program
-java -jar HelloWorld.jar
+Hello World!
 ```
-
-If all goes well, you should see "Hello, world!" printed in the console. Congratulations, you have created your first Kotlin project!
 
 ## Deep Dive
 
-Now that we have successfully created a Hello World program, let's take a deeper look at starting a new project in Kotlin. When starting a new project, it is important to choose a suitable code editor, understand the project structure, and familiarize yourself with the Kotlin syntax.
+Now that you have a basic understanding of how to start a new Kotlin project, let's take a deeper dive into some key aspects. One important element to consider is the project structure. Kotlin projects typically follow a similar structure to Java projects, with source code located in the "src" folder and build files in the root directory. However, the main difference is that Kotlin files end with the ".kt" extension instead of ".java".
 
-First, you can use any code editor for Kotlin, such as IntelliJ IDEA, Android Studio, or Visual Studio Code. These editors offer robust support for Kotlin, including code completion, debugging, and more.
-
-Next, let's examine the project structure. Unlike Java, which requires a specific directory structure, Kotlin is more flexible. However, a typical project structure for Kotlin would include a "src" directory that contains subdirectories for your source code and resources, a "lib" directory for external libraries, and a "build" directory for generated files.
-
-Finally, it is essential to understand Kotlin's syntax, which is similar to Java with a few improvements. One such improvement is the use of the "var" and "val" keywords for declaring variables. "var" is used for variables that can be reassigned, while "val" is used for variables that are immutable.
-
-With these basics in mind, you are now ready to start exploring the vast possibilities of Kotlin!
+Another crucial aspect is adding external dependencies to your project. Kotlin has excellent interoperability with Java, which means you can use any Java library in your Kotlin project. The most common way to add dependencies is by using the built-in dependency management tool, Gradle. You can also use Maven or manually add the .jar files to your project.
 
 ## See Also
 
-- [Kotlin Documentation](https://kotlinlang.org/docs/getting-started.html)
-- [Kotlin Koans - Interactive Exercises to Learn Kotlin](https://play.kotlinlang.org/koans/overview)
-- [Kotlin Bootcamp for Programmers - A Free Online Course by Google](https://developer.android.com/courses/kotlin-bootcamp/overview)
+To learn more about Kotlin and how to start a new project, check out these useful resources:
+
+- [Official Kotlin website](https://kotlinlang.org/)
+- [Kotlin Tutorials](https://kotlinlang.org/docs/tutorials/)
+- [Kotlin Koans - interactive learning exercises](https://kotlinlang.org/docs/tutorials/koans.html)
+- [Kotlin Playground - try out code snippets in your browser](https://play.kotlinlang.org/)
+
+So, what are you waiting for? Start your new Kotlin project today and see what you can create!

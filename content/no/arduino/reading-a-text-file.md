@@ -1,49 +1,68 @@
 ---
-title:    "Arduino: Lesing av en tekstfil."
+title:    "Arduino: Lese en tekstfil"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å lese tekstfiler kan være nyttig når man ønsker å hente informasjon fra en ekstern kilde, som for eksempel en sensor eller en database. Dette gjør det mulig å oppdatere variabler og data i et Arduino-program uten å måtte endre selve koden.
+Hvis du er en Arduino-entusiast og er interessert i å lese tekstfiler, så er dette blogginnlegget perfekt for deg. Her vil vi gå gjennom hvordan du enkelt kan lese tekstfiler ved hjelp av Arduino og gi deg en grundig forståelse av dette konseptet.
 
-## Slik gjør du det
+## Hvordan
 
-Det første trinnet for å lese en tekstfil i Arduino er å opprette en File-variabel ved hjelp av `File` objektet. Dette kan gjøres ved å bruke `open()` metoden og angi filnavnet. Etter dette kan man bruke `read()` metoden til å lese data fra filen og lagre den i en variabel. Her er et eksempel på hvordan man kan lese data fra en tekstfil og skrive den ut på serielinjen:
+For å lese en tekstfil ved hjelp av Arduino, må du bruke funksjonene "open" og "read" i SD-biblioteket. Først må du initialisere SD-kortet ved hjelp av funksjonen "begin", og deretter åpner du filen ved hjelp av "open" funksjonen. Deretter kan du bruke "read" funksjonen til å lese hver linje av teksten og lagre den i en variabel.
 
 ```Arduino
 #include <SD.h>
 
-File myFile;
-char data;
-
-void setup() {
-  Serial.begin(9600);
-  SD.begin(4);
-  myFile = SD.open("data.txt");
-  while (myFile.available()) {
-    data = myFile.read();
-    Serial.print(data);
+void setup()
+{
+  Serial.begin(9600); // Initialiserer seriell kommunikasjon
+  Serial.print("Initializing SD card...");
+  
+  if(!SD.begin(10)) // Initialiserer SD-kortet på pin 10
+  {
+    Serial.println("Initialization failed!");
+    return;
   }
-  myFile.close();
+  
+  Serial.println("Initialization done.");
+
+  File myFile = SD.open("tekstfil.txt"); // Åpner tekstfilen "tekstfil.txt"
+
+  if(myFile) // Sjekker om filen er åpen
+  {
+    while(myFile.available()) // Leser hver linje i filen
+    {
+      Serial.write(myFile.read()); // Skriver ut linjen til seriell monitor
+    }
+    myFile.close(); // Lukker filen
+  }
+
+  else // Hvis filen ikke åpnet
+  {
+    Serial.println("Error opening file!");
+  }
 }
 
-void loop() {
-
+void loop()
+{
+  // Ingenting her
 }
 ```
 
-Dette eksempelet viser hvordan man kan lese innholdet fra filen "data.txt" som ligger på SD-kortet. Hver gang en ny karakter er lest, blir den skrevet ut på serielinjen. Husk å lukke filen når du er ferdig med å lese for å forhindre eventuelle problemer med SD-kortet.
+Når du kjører koden og åpner seriell monitoren, vil du kunne se innholdet i tekstfilen "tekstfil.txt" skrevet ut.
 
-## Dypdykk
+## Deep Dive
 
-Når man leser en tekstfil i Arduino, blir filen lest en byte om gangen. Dette betyr at man må vite hvilken type data man leser fra filen, for eksempel om det er tall eller bokstaver. Det er også viktig å sørge for at fila er formatert riktig, slik at dataene kan leses riktig.
+Når du leser en tekstfil ved hjelp av Arduino, må du vite at hver linje i teksten blir lagret som en streng. Derfor må du bruke funksjonen "readString" hvis du ønsker å lese en hel linje om gangen. Du kan også bruke andre funksjoner som "readInt" eller "readLong" for å lese tall fra teksten.
 
-En annen ting å huske på er at Arduino har begrenset RAM, så det kan være lurt å ikke lese for mye data på en gang for å unngå å fylle opp minnet. Man kan også bruke `available()` metoden for å sjekke om det er mer data å lese fra filen før man fortsetter å lese.
+Det er også viktig å merke seg at når du leser en tekstfil, starter filpekeren på begynnelsen av filen for hver iterasjon. Dette betyr at hvis du vil lese en bestemt del av filen, må du først bruke funksjonen "seek" for å flytte filpekeren til riktig posisjon.
 
 ## Se også
 
-- [Arduino SD Library](https://www.arduino.cc/en/Reference/SD)
-- [SD.h Library Documentation](https://www.arduino.cc/en/Reference/SD)
+- [Arduino SD bibliotek](https://www.arduino.cc/en/Reference/SD)
+- [Eksempelkode for å lese tekstfiler](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadASCIIString)
+- [Forbundet API for å lese tekstfiler](https://www.arduino.cc/en/Reference/API)

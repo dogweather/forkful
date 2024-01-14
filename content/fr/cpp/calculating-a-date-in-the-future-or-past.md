@@ -1,68 +1,68 @@
 ---
-title:    "C++: Calcul d'une date dans le futur ou dans le passé"
+title:    "C++: Calculer une date dans le futur ou le passé"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles on pourrait vouloir calculer une date dans le futur ou le passé en utilisant un programme en C++. Peut-être avez-vous besoin de planifier un événement ou une tâche, ou peut-être êtes-vous simplement curieux de savoir quel jour de la semaine tombera une date spécifique dans quelques années.
+La conception d'une fonction de calcul de date dans le futur ou dans le passé peut être utile pour les programmeurs qui travaillent sur des applications ou des sites Web nécessitant des fonctionnalités de réservation de rendez-vous, de planification de tâches ou de suivi du temps. Elle peut également être utile pour tous les utilisateurs souhaitant planifier des événements à l'avance.
 
-## Comment Faire
+## Comment faire
 
-La première étape pour calculer une date dans le futur ou le passé est de choisir une date de référence. Pour cet exemple, nous allons utiliser la date d'aujourd'hui et l'afficher en utilisant la bibliothèque de dates et d'heures de la norme C++.
+La programmation d'une telle fonction peut sembler complexe, mais grâce à quelques connaissances de base en C++, elle peut être facilement réalisée. Voici un exemple de code pour calculer la date dans le futur avec une entrée de l'utilisateur pour le nombre de jours à ajouter :
 
 ```C++
 #include <iostream>
 #include <ctime>
+using namespace std;
 
-int main()
-{
-  // Obtenir la date actuelle et l'assigner à une variable tm
-  time_t now = time(0);
-  tm *date_actuelle = localtime(&now);
-  
-  // Afficher la date en utilisant strftime()
-  char date_string[11];
-  strftime(date_string, 11, "%d/%m/%Y", date_actuelle);
-  std::cout << "Date actuelle: " << date_string << std::endl;
-  
-  return 0;
+int main() {
+    // Demander à l'utilisateur un nombre de jours à ajouter
+    int nbJours;
+    cout << "Entrez le nombre de jours à ajouter : ";
+    cin >> nbJours;
+
+    // Récupérer la date actuelle
+    time_t now = time(0);
+
+    // Convertir en structure tm pour obtenir le jour, le mois et l'année actuels
+    tm *ltm = localtime(&now);
+
+    // Ajouter le nombre de jours à la date actuelle
+    ltm->tm_mday += nbJours;
+
+    // Convertir en temps depuis l'époque
+    now = mktime(ltm);
+
+    // Convertir en structure tm pour obtenir la nouvelle date
+    ltm = localtime(&now);
+
+    // Afficher la nouvelle date
+    cout << "La date dans " << nbJours << " jours sera le : ";
+    cout << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year << endl;
+
+    return 0;
 }
 ```
 
-Maintenant que nous avons la date actuelle, nous pouvons utiliser les fonctions de la bibliothèque de dates et d'heures pour calculer une date dans le futur ou le passé en ajoutant ou en soustrayant un nombre de jours.
+Voici un exemple de sortie avec une entrée de 7 jours :
 
-```C++
-// Calculer une date dans le futur en ajoutant 10 jours
-tm date_future = *date_actuelle;
-date_future.tm_mday += 10;
-mktime(&date_future); // mise à jour de date_future pour qu'elle soit correctement formatée
+> Entrez le nombre de jours à ajouter : 7
+> La date dans 7 jours sera le : 6/6/2021
 
-// Afficher la date dans le futur en utilisant à nouveau strftime()
-char date_future_string[11];
-strftime(date_future_string, 11, "%d/%m/%Y", &date_future);
-std::cout << "Dans 10 jours, nous serons le " << date_future_string << std::endl;
+Pour calculer une date dans le passé, il suffit de soustraire le nombre de jours à la date actuelle.
 
-// Calculer une date dans le passé en soustrayant 5 jours
-tm date_past = *date_actuelle;
-date_past.tm_mday -= 5;
-mktime(&date_past);
+## Plongée profonde
 
-// Afficher la date dans le passé
-char date_past_string[11];
-strftime(date_past_string, 11, "%d/%m/%Y", &date_past);
-std::cout << "Il y a 5 jours, nous étions le " << date_past_string << std::endl;
-```
+Derrière les lignes de code ci-dessus se cachent des concepts qui méritent une explication plus détaillée. Premièrement, la fonction `time()` renvoie le temps actuel en secondes depuis l'époque (1er janvier 1970). Ensuite, la structure `tm` est utilisée pour stocker les informations sur la date, telles que le jour, le mois et l'année. La fonction `localtime()` convertit ensuite le temps en utilisant le fuseau horaire local de l'utilisateur pour remplir cette structure. Enfin, la fonction `mktime()` convertit la structure `tm` en un nouveau temps, en utilisant à nouveau le fuseau horaire local de l'utilisateur.
 
-## Approfondissement
+De plus, ce code suppose que l'utilisateur entrera un nombre positif pour les jours, mais une validation supplémentaire peut être ajoutée pour s'assurer qu'un nombre valide est entré.
 
-Le calcul de dates dans le futur ou le passé peut sembler simple, mais il existe en réalité de nombreuses complications à prendre en compte. Par exemple, comment gérer les années bissextiles ou les différents calendriers utilisés dans différents pays ? Il est également important de connaître les limites de la bibliothèque de dates et d'heures de la norme C++, en particulier en ce qui concerne les dates antérieures à 1900.
+## Voir aussi
 
-Si vous êtes intéressé par une approche plus avancée pour calculer des dates, vous pouvez également vous renseigner sur la librairie "Boost Date Time" qui offre une fonctionnalité plus complète pour travailler avec des dates et des heures en C++.
-
-## Voir Aussi
-
-- [Documentation de la bibliothèque de dates et d'heures de la norme C++](https://devdocs.io/cpp/header/chrono) 
-- [Documentation de la librairie "Boost Date Time"](https://www.boost.org/doc/libs/1_61_0/doc/html/date_time.html)
+- [Calcul de durée en C++](https://www.geeksforgeeks.org/program-to-calculate-the-duration-between-two-dates-in-c-cpp/)
+- [Convertir entre les différents formats de date en C++](https://www.learntodayonline.com/convert-between-different-date-formats-in-c/)
+- [Gestion du temps en C++](https://www.cplusplus.com/reference/ctime/)

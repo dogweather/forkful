@@ -1,31 +1,46 @@
 ---
-title:    "C#: Odnajdywanie długości ciągu znaków"
+title:    "C#: Znalezienie długości ciągu znaków"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Długość ciągu znaków jest jedną z podstawowych operacji w programowaniu. Znajomość tej funkcji jest niezbędna do prawidłowej manipulacji tekstami w C#.
+Długość ciągu znaków to ważny aspekt wielu programów i aplikacji. Może ona pomóc nam w określeniu ilości tekstu, który jest wyświetlany, lub ustaleniu, czy użytkownik wprowadził wymaganą ilość znaków, na przykład w formularzach internetowych. W tym artykule dowiesz się, jak znaleźć długość ciągu znaków w języku C#.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Obliczenie długości ciągu znaków w C# jest proste i wymaga użycia metody `Length` na zmiennej typu `string`. Przykładowy kod wraz z oczekiwanym wynikiem przedstawiono poniżej:
+Aby znaleźć długość ciągu znaków, możemy skorzystać z metody `Length` dostępnej w klasie `String`. Przyjmując za przykład ciąg znaków "Cześć!", możemy zapisać to w następujący sposób:
 
 ```C#
-string name = "Karolina";
-int length = name.Length;
-Console.WriteLine(length); // Output: 8
+string powitanie = "Cześć!";
+int dlugosc = powitanie.Length;
+
+Console.WriteLine("Długość ciągu 'Cześć!' to: " + dlugosc);
 ```
 
-Powyższy przykład pokazuje, że długość ciągu znaków obejmuje wszystkie znaki, w tym spacje i znaki specjalne.
+Wynikiem działania tego kodu będzie wyświetlenie na ekranie wartości `6`, ponieważ ciąg "Cześć!" składa się z 6 znaków, wliczając w to również spacje.
 
-## Wnikliwe spojrzenie
+Możemy również wprowadzić ciąg znaków poprzez odczytanie go od użytkownika. W tym celu użyjemy metody `ReadLine` w klasie `Console`, a następnie wykorzystamy metodę `Length` do wyświetlenia długości wprowadzonego ciągu:
 
-Długość ciągu znaków może być używana do wielu różnych celów w programowaniu. Może służyć do walidacji długości wprowadzonego przez użytkownika hasła lub imienia, a także do obliczania ilości znaków w plikach tekstowych. W przypadku konieczności pracy z dłuższymi tekstami, może być wykorzystana w pętlach do podziału tekstu na mniejsze fragmenty.
+```C#
+Console.WriteLine("Wprowadź dowolny ciąg znaków:");
+string ciag = Console.ReadLine();
+int dlugosc = ciag.Length;
 
-## Zobacz także
-- [Dokumentacja Microsoft dotycząca długości ciągów znaków w C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1)
-- [Przydatne porady dla początkujących programistów C#](https://blog.codersclan.net/pl/powtorka-byc-programista-csharp/)
-- [Rozwiązania dla trudności związanych z manipulacją ciągami znaków](https://davidwalsh.name/string-from-file)
+Console.WriteLine("Długość wprowadzonego ciągu to: " + dlugosc);
+```
+
+## Deep Dive
+
+Długość ciągu znaków jest określana na podstawie liczby elementów w tym ciągu, a nie na podstawie znaków. Oznacza to, że spacje, interpunkcja i inne specjalne znaki również są uwzględniane w obliczeniach długości.
+
+Ponadto, długość ciągu może również zostać zmieniona za pomocą metody `Substring`. Pozwala to na wybór konkretnych fragmentów ciągu, co ma wpływ na długość. Na przykład, jeśli wykorzystamy metodę `Substring` na ciągu "Cześć!", wybierając tylko pierwsze 4 znaki, otrzymamy nowy ciąg "Cześ", którego długość wyniesie 4.
+
+## Zobacz Również
+
+- Dokumentacja Microsoft dla metody `Length` w klasie `String`: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.length?view=net-5.0
+- Wideo tutorial na temat szukania długości ciągu w języku C#: https://www.youtube.com/watch?v=ro4-gtOmCxQ
+- Przykłady użycia metody `Length` w języku C#: https://www.techonthenet.com/csharp/strings/length.php

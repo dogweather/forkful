@@ -1,43 +1,59 @@
 ---
 title:    "Go: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego obliczanie daty w przeszłości lub przyszłości jest ważne w programowaniu Go? 
 
-Obliczanie daty w przyszłości lub przeszłości może być bardzo przydatne w wielu sytuacjach, na przykład w aplikacjach związanych z kalendarzami lub w systemach rezerwacji. Dzięki tej umiejętności możliwe jest łatwe zarządzanie datami i przewidywanie wydarzeń.
+Obliczanie daty w przeszłości lub przyszłości jest ważnym elementem programowania w dowolnym języku, w tym również w Go. Może to być niezbędne w celu wyświetlenia informacji o określonym dniu, czy też do zaplanowania działań na przyszłość. Dzięki możliwościom języka Go, obliczanie dat jest proste i wygodne, co jeszcze bardziej zachęca do jego wykorzystania.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-W języku Go istnieje wiele sposobów na obliczenie daty w przyszłości lub przeszłości. Jednym z najprostszych jest użycie funkcji `AddDate()` z pakietu `time`. Przykładowe użycie tej funkcji wyglądałoby tak:
+Aby obliczyć datę w przeszłości lub przyszłości w języku Go, wystarczy wykorzystać strukturę czasu (time) oraz funkcje z pakietu time. Przykładem może być obliczenie daty 7 dni temu i 7 dni w przód:
 
+```Go
+// importowanie pakietu time
+import "time"
+
+// obliczenie daty 7 dni temu
+pastDate := time.Now().AddDate(0, 0, -7)
+
+// obliczenie daty 7 dni w przód
+futureDate := time.Now().AddDate(0, 0, 7)
+
+// wyświetlenie wyników
+fmt.Println("Data 7 dni temu: ", pastDate.Format("2006-01-02"))
+fmt.Println("Data 7 dni w przód: ", futureDate.Format("2006-01-02"))
 ```
-go func main() {
-    now := time.Now()
-    past := now.AddDate(0, -3, 0)
-    future := now.AddDate(0, 6, 0)
 
-    fmt.Println("Dzisiaj:", now.Format("02-01-2006"))
-    fmt.Println("Trzy miesiące temu:", past.Format("02-01-2006"))
-    fmt.Println("Sześć miesięcy w przyszłości:", future.Format("02-01-2006"))
-}
+W powyższym kodzie, wykorzystano funkcję `AddDate()` do dodawania lub odejmowania określonej liczby lat, miesięcy i dni do bieżącej daty. Wyświetlanie wyników odbyło się z wykorzystaniem funkcji `Format()`, która pozwala na wyświetlenie daty w wybranym formacie, w tym przypadku `2006-01-02`.
+
+Możliwości obliczania daty w przeszłości lub przyszłości w języku Go są naprawdę szerokie i warto wykorzystać je do ułatwienia swojej pracy.
+
+## Głębsze zagłębienie
+
+W języku Go istnieje również możliwość obliczania daty na podstawie podawanej liczby sekund. Do tego celu służy funkcja `Unix()` z pakietu time. Przykładem może być obliczenie daty 1000 sekund od teraz:
+
+```Go
+// importowanie pakietu time
+import "time"
+
+// obliczenie daty 1000 sekund od teraz
+futureDate := time.Now().Add(time.Second * 1000)
+
+// wyświetlenie wyniku
+fmt.Println("Data 1000 sekund od teraz: ", futureDate.Format("2006-01-02 15:04:05"))
 ```
 
-To tylko prosty przykład, ale pokazuje wykorzystanie funkcji `AddDate()` w praktyce. W celu obliczenia daty w dowolnie wybranej przyszłości lub przeszłości, należy zmienić wartości przekazywane do funkcji.
+Wynik powyższego kodu będzie zawierać nie tylko datę, ale również godzinę, ponieważ wykorzystano większy zakres danych w funkcji `Format()`.
 
-## Głębsza analiza
+Zapoznając się z dokumentacją języka Go, można znaleźć także wiele innych funkcji do obliczania daty w przeszłości lub przyszłości, np. wykorzystanie strefy czasowej, uwzględnianie dni roboczych, itp. Warto zapoznać się z nimi, aby precyzyjnie dostosować obliczenia do swoich potrzeb.
 
-W języku Go istnieje jeszcze więcej możliwości związanych z obliczaniem dat. Można na przykład wykorzystać pakiet `time.Parse()` do przetwarzania danych otrzymanych z użytkownika lub zapisanych w pliku. Innym sposobem może być użycie funkcji `Add()` zamiast `AddDate()` w celu precyzyjniejszego ustawienia daty i czasu. Istnieje również możliwość pobrania aktualnego czasu w różnych strefach czasowych za pomocą funkcji `Now()` z pakietu `time` i użycia funkcji `SetLocation()` w celu zmiany strefy czasowej.
+# Zobacz również
 
-Warto również zwrócić uwagę na różnicę między funkcjami `Add()` i `AddDate()` oraz pamiętać o uwzględnieniu lat przestępnych w przypadku obliczania daty w dłuższym przedziale czasowym.
-
-## Zobacz także
-
-Poniżej znajduje się lista przydatnych zasobów dotyczących obliczania dat w języku Go:
-
-- Dokumentacja `time` na oficjalnej stronie Go: https://pkg.go.dev/time
-- Przykłady wykorzystania funkcji `time` w praktyce: https://golangdocs.com/golang-time-now-add-date-and-format-time
-- Innym ciekawym sposobem na obliczanie dat w Go może być wykorzystanie pakietu `dateparse`: https://github.com/araddon/dateparse
-- Wnikliwe omówienie poszczególnych funkcji z pakietu `time`: https://yourbasic.org/golang/time-date-time-format-parse-string-output/
+- Dokumentacja pakietu time w języku Go: https://golang.org/pkg/time/
+- Poradnik obliczania dat w języku Go: https://www.calhoun.io/working-with-dates-and-times-in-go/
+- Przewodnik po strefach czasowych w języku Go: https://blog.golang.org/go-slices-usage-and-internals

@@ -1,61 +1,37 @@
 ---
-title:    "Kotlin: Tests schreiben."
+title:    "Kotlin: Tests schreiben"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Tests sind ein wichtiger Bestandteil des Softwareentwicklungsprozesses, da sie sicherstellen, dass unser Code korrekt funktioniert und potenzielle Fehler identifizieren. Durch das Schreiben von Tests können wir auch sicherstellen, dass Änderungen an unserem Code oder neuen Funktionen keine unerwarteten Auswirkungen haben.
+Tests sind ein unverzichtbarer Bestandteil einer qualitativ hochwertigen Softwareentwicklung. Sie dienen dazu, Fehler frühzeitig zu erkennen, die Funktionalität einer Anwendung zu überprüfen und sicherzustellen, dass zukünftige Änderungen die bestehende Funktionalität nicht beeinträchtigen. Durch das Schreiben von Tests können Entwickler Zeit und Geld sparen, indem sie potenzielle Probleme im Voraus identifizieren und beheben.
 
-## Wie man Tests schreibt
+## How To
 
-Um in Kotlin Tests zu schreiben, verwenden wir das in der Standardbibliothek enthaltene `kotlin.test` Paket. Hier ist ein Beispiel, wie wir eine einfache Funktion `add` testen können, die zwei Zahlen addiert:
-
-```Kotlin
-fun add(x: Int, y: Int): Int {
-  return x + y
-}
-```
+Um in Kotlin Tests zu schreiben, müssen Sie zuerst das Testframework JUnit in Ihrem Projekt hinzufügen. Anschließend können Sie Tests erstellen, indem Sie eine Funktion mit dem Annotation "@Test" erstellen und die zu testende Funktionalität innerhalb dieser Funktion aufrufen. Hier ist ein Beispiel für eine einfache Funktion, die addieren kann:
 
 ```Kotlin
 @Test
-fun testAdd() {
-  val result = add(2, 2)
-  assertEquals(4, result)
+fun addTest() {
+    val result = add(2, 3)
+    assertTrue(result == 5)
 }
 ```
 
-In diesem Codeblock importieren wir das `kotlin.test` Paket und verwenden die `@Test` Annotation, um unseren Testfall zu definieren. In der Testfunktion rufen wir dann unsere `add` Funktion auf und überprüfen mit der `assertEquals` Funktion, ob das Ergebnis 4 ist.
+Zuerst wird die Funktion "addTest" mit der Annotation "@Test" gekennzeichnet. Dann wird die add-Funktion aufgerufen und das Ergebnis mit der Funktion "assertTrue" überprüft, ob es der erwarteten Summe entspricht.
 
-Hier ist ein weiteres Beispiel, wie wir das `kotlin.test` Paket verwenden können, um einen Testfall für eine Funktion zu schreiben, die eine Liste sortiert:
+## Deep Dive
 
-```Kotlin  
-fun sortList(list: List<Int>): List<Int> {
-  return list.sorted()
-}
-```
+Beim Schreiben von Tests ist es wichtig, verschiedene Szenarien und Randfälle zu berücksichtigen, um sicherzustellen, dass die Anwendung in allen Fällen korrekt funktioniert. Auch ist es von Vorteil, Assertions zu verwenden, um sicherzustellen, dass die tatsächlichen Ergebnisse mit den erwarteten übereinstimmen. Zusätzlich können Mock-Objekte verwendet werden, um externe Abhängigkeiten zu simulieren und isolierte Tests durchzuführen.
 
-```Kotlin
-@Test
-fun testSortList() {
-  val unsortedList = listOf(3, 5, 1, 2, 4)
-  val sortedList = sortList(unsortedList)
-  assertEquals(listOf(1, 2, 3, 4, 5), sortedList)
-}
-```
-
-Wir verwenden die `@Test` Annotation erneut, um unseren Testfall zu definieren. Dann erstellen wir eine Liste mit unsortierten Zahlen und übergeben sie an unsere `sortList` Funktion. Mit der `assertEquals` Funktion überprüfen wir, ob die zurückgegebene Liste tatsächlich sortiert ist.
-
-## Tiefergehende Informationen zu Tests
-
-Es gibt verschiedene Arten von Tests, die in der Softwareentwicklung verwendet werden können, wie z.B. Unittests, Integrationstests und End-to-End-Tests. Unittests testen einzelne Funktionen oder Klassen, während Integrationstests die Zusammenarbeit mehrerer Komponenten überprüfen. End-to-End-Tests simulieren die tatsächliche Benutzerinteraktion mit der Anwendung.
-
-Beim Schreiben von Tests ist es wichtig, den Code so einfach wie möglich zu halten und nur auf die gewünschte Funktionalität zu testen. Durch das Schreiben von sauberem und verständlichem Testcode können wir sicherstellen, dass unsere Tests leichter zu warten und zu verstehen sind.
+Ein weiterer wichtiger Aspekt ist die kontinuierliche Integration (CI). Durch die Integration von Tests in den CI-Prozess können Entwickler sicherstellen, dass ihre Code-Änderungen nicht die bestehende Funktionalität beeinträchtigen und die Anwendung weiterhin zuverlässig bleibt.
 
 ## Siehe auch
 
-- [Die offizielle Kotlin Test Dokumentation](https://kotlinlang.org/api/latest/kotlin.test/)
-- [Der Nutzen von Tests für die Softwarequalität](https://www.codecentric.de/wissen/automatisierte-tests-sind-unverzichtbar-fuer-die-softwarequalitaet/) (auf Deutsch)
-- [Best Practices für das Schreiben von Tests in Kotlin](https://medium.com/swlh/how-to-write-tests-in-kotlin-3b222441feb5) (auf Englisch)
+- [JUnit documentation] (https://junit.org/junit5/docs/current/user-guide/)
+- [Kotlin Test documentation] (https://kotlinlang.org/docs/tutorials/getting-started.html)
+- [Test Driven Development (TDD) in Kotlin] (https://developer.android.com/training/testing/tdd)

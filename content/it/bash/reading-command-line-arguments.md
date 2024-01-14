@@ -1,51 +1,38 @@
 ---
-title:    "Bash: Lettura dei parametri della riga di comando"
+title:    "Bash: Lettura degli argomenti della riga di comando"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché Leggere gli Argomenti della Riga di Comando
 
-Se sei un programmatore o un appassionato di tecnologia, probabilmente hai già sentito parlare di Bash. Bash è un linguaggio di scripting utilizzato principalmente in sistemi operativi Unix e Linux. Ciò significa che Bash è uno strumento potente per automatizzare le attività quotidiane su un computer. Una delle sue funzionalità principali è la capacità di leggere e interpretare gli argomenti della riga di comando. In questo articolo esploreremo come farlo.
+Leggere gli argomenti della riga di comando è un'abilità fondamentale per ogni programmatore Bash. Essi permettono di rendere il nostro codice più flessibile e permettono agli utenti di passare facilmente input al nostro script. Continua a leggere per scoprire come farlo!
 
-## Come farlo
+## Come Leggere gli Argomenti della Riga di Comando
 
-Per leggere gli argomenti della riga di comando in Bash, puoi utilizzare la variabile `$@`, che contiene tutti gli argomenti passati al programma quando viene eseguito. Ad esempio, se il tuo programma Bash si chiama `script.sh` e lo esegui con il comando `./script.sh arg1 arg2`, la variabile `$@` conterrà i valori `arg1` e `arg2`. Puoi quindi utilizzare questi valori all'interno del tuo script come preferisci.
-
-Un esempio di codice Bash per leggere gli argomenti della riga di comando potrebbe essere il seguente:
+Per leggere gli argomenti della riga di comando in Bash, è necessario utilizzare la variabile speciale "$1" che rappresenta il primo argomento passato dopo il nome dello script. Ad esempio, supponiamo di avere uno script chiamato "hello.sh" a cui viene passato il nome di una persona come argomento:
 
 ```Bash
 #!/bin/bash
 
-# Legge e stampa tutti gli argomenti della riga di comando
-for arg in $@; do
-  echo $arg
-done
+echo "Ciao $1!"
 ```
+Se eseguiamo questo script con il comando `./hello.sh Mario`, il risultato sarà `Ciao Mario!`. Possiamo anche passare più argomenti e accedervi utilizzando le variabili "$2", "$3", e così via.
 
-Se esegui questo script con il comando `./script.sh uno due tre`, otterrai l'output seguente:
+Inoltre, possiamo utilizzare la variabile "$@" per accedere a tutti gli argomenti passati, invece di doverli specificare uno per uno.
 
-```
-uno
-due
-tre
-```
+## Approfondimenti su come Leggere gli Argomenti della Riga di Comando
 
-Puoi anche specificare un argomento specifico utilizzando l'operatore `[]` e indicando la posizione desiderata. Ad esempio, se vuoi ottenere solo il secondo argomento, puoi utilizzare la sintassi `$@[2]`. Inoltre, puoi anche verificare se sono stati passati argomenti nella riga di comando utilizzando la variabile `$#`, che contiene il numero totale di argomenti.
+Oltre all'uso delle variabili speciali, esistono anche alcune opzioni che possiamo utilizzare per gestire gli argomenti della riga di comando in modo più flessibile. Ad esempio, possiamo utilizzare l'opzione "-e" per accedere agli argomenti tramite indici anziché assegnarli a delle variabili.
 
-## Approfondimento
+Possiamo anche utilizzare l'opzione "-h" per mostrare un messaggio di aiuto agli utenti che passano argomenti errati o non passano alcun argomento.
 
-Esistono anche altre opzioni per leggere e manipolare gli argomenti della riga di comando in Bash. Ad esempio, puoi utilizzare l'operatore `shift` per spostare gli argomenti e ottenere solo quelli che ti interessano. Inoltre, puoi utilizzare il comando `getopts` per gestire opzioni e argomenti più complessi nella riga di comando.
+Per maggiori informazioni su queste opzioni e altre, consulta la documentazione ufficiale di Bash.
 
-Inoltre, è importante tenere presente che gli argomenti della riga di comando possono contenere spazi o caratteri speciali. Per gestire questo, puoi utilizzare le virgolette doppie o singole intorno agli argomenti nella riga di comando. Ad esempio, se il tuo argomento contiene uno spazio come `arg with space`, puoi utilizzare `./script.sh "arg with space"` nella riga di comando.
+## Vedi Anche
 
-## Vedi anche
-
-Per ulteriori informazioni su come leggere e gestire gli argomenti della riga di comando in Bash, puoi consultare questi siti:
-
-- [Bash Scripting Tutorial - Command Line Parameters](https://ryanstutorials.net/bash-scripting-tutorial/bash-parameters.php)
-- [Linuxize - Understanding Bash Command Line Arguments](https://linuxize.com/post/understanding-bash-command-line-arguments/)
-- [The Linux Documentation Project - Command Line Parameters](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-
-Ora che conosci le basi, puoi iniziare a sfruttare al massimo la potenza degli argomenti della riga di comando in Bash per automatizzare le tue attività quotidiane. Buon coding!
+- Documentazione ufficiale di Bash: https://www.gnu.org/software/bash/manual/bash.html
+- Tutorial su come scrivere script Bash: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+- Esempi di script Bash per principianti: https://linuxconfig.org/bash-scripting-tutorial-for-beginners

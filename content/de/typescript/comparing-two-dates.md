@@ -1,35 +1,62 @@
 ---
 title:    "TypeScript: Vergleich von zwei Daten"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum 
-Das Vergleichen von zwei Daten ist eine grundlegende Funktion in der Webentwicklung. Es ermöglicht uns, zu überprüfen, ob ein Datum vor oder nach einem anderen liegt, was nützlich sein kann, wenn wir zum Beispiel Geburtstage oder Ablaufdaten überprüfen müssen. In diesem Blogbeitrag werden wir einen Einblick in die Verwendung von TypeScript zur Vergleich von zwei Daten erhalten.
+## Warum
 
-# Wie geht man vor?
-Um zwei Daten in TypeScript zu vergleichen, können wir die `Date`-Klasse und ihre entsprechenden Methoden nutzen. Schauen wir uns ein Beispiel an:
-```
-TypeScript
-let date1 = new Date(2021, 11, 31);
-let date2 = new Date(2021, 5, 15);
+Das Vergleichen von zwei Daten ist ein häufiges Szenario in der Programmierung. Es kann hilfreich sein, um festzustellen, ob eine bestimmte Aktion ausgeführt werden soll oder um die Reihenfolge von Ereignissen zu bestimmen. In diesem Blogbeitrag werden wir uns ansehen, wie man mit TypeScript zwei Daten vergleichen kann.
 
-if(date1 > date2){
-    console.log("date1 liegt nach date2");
+## So geht's
+
+Um zwei Daten in TypeScript zu vergleichen, müssen wir zunächst sicherstellen, dass diese in einem geeigneten Format vorliegen. Zum Beispiel können wir sie als `Date` Objekte deklarieren oder sie aus einem String parsen. Sobald wir eine `Date` Variable haben, können wir die vergleichenden Operatoren verwenden, um sie miteinander zu vergleichen. Schauen wir uns ein Beispiel an:
+
+```TypeScript
+// Deklaration von zwei Datum Variablen
+let date1: Date = new Date("2021-01-01");
+let date2: Date = new Date("2021-02-01");
+
+// Vergleich der Daten
+if (date1 < date2) {
+    console.log("date1 ist früher als date2");
+} else if (date1 > date2) {
+    console.log("date1 ist später als date2");
 } else {
-    console.log("date2 liegt nach date1");
+    console.log("date1 und date2 sind gleich");
 }
+
+// Ausgabe: date1 ist früher als date2
 ```
-Die Ausgabe dieses Codes wird `date1 liegt nach date2 ` sein, da der Monat 11 nach dem Monat 5 liegt.
 
-# Tiefergehende Informationen
-Bei der Verwendung von `Date` in TypeScript gibt es einige wichtige Punkte zu beachten. Zum einen gibt es Unterschiede zwischen `new Date()` und `Date.now()`. Die erste Methode gibt die aktuelle Zeit und das Datum zurück, während die zweite Methode die Anzahl der Millisekunden seit dem 1. Januar 1970 zurückgibt.
+In diesem Beispiel haben wir zwei `Date` Objekte erstellt und diese unter Verwendung des `<` und `>` Operators verglichen. Je nach Ergebnis geben wir eine entsprechende Nachricht aus.
 
-Zusätzlich ist es wichtig zu beachten, dass die Monate in TypeScript von 0 bis 11 gezählt werden, was bedeutet, dass 0 für Januar und 11 für Dezember steht.
+Es ist auch möglich, die `getTime()` Methode zu verwenden, um die Millisekunden seit dem 1. Januar 1970 (auch als Unix-Zeit bekannt) zu erhalten und diese miteinander zu vergleichen. Hier ist ein weiteres Beispiel:
 
-Für eine detailliertere Erklärung und weitere Beispiele zur Verwendung von `Date` in TypeScript, empfehlen wir die offizielle Dokumentation von TypeScript zu konsultieren.
+```TypeScript
+// Deklaration von zwei Datum Variablen
+let date1: Date = new Date("2021-01-01");
+let date2: Date = new Date("2021-02-01");
 
-# Siehe auch
-- Offizielle TypeScript-Dokumentation zu `Date`: https://www.typescriptlang.org/docs/handbook/declaration-files/DeepDive.html#declaring-dates
-- Beispielcode zum Vergleich von Daten: https://www.typescriptlang.org/docs/handbook/declaration-files/DeepDive.html#declaring-dates
+// Vergleich der Daten
+if (date1.getTime() < date2.getTime()) {
+    console.log("date1 ist früher als date2");
+} else if (date1.getTime() > date2.getTime()) {
+    console.log("date1 ist später als date2");
+} else {
+    console.log("date1 und date2 sind gleich");
+}
+
+// Ausgabe: date1 ist früher als date2
+```
+
+## Tiefergehende Informationen
+
+Es gibt noch viele weitere Möglichkeiten, um Daten in TypeScript zu vergleichen, wie zum Beispiel das Verwenden von `getTimezoneOffset()` oder `getFullYear()` Methoden. Es ist wichtig, das geeignete Vergleichsverfahren basierend auf den Anforderungen der Anwendung auszuwählen. Außerdem müssen möglicherweise auch Zeitzone und andere Faktoren berücksichtigt werden.
+
+## Siehe auch
+
+- [Das Date Objekt in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#the-date-object)
+- [Vergleichsoperatoren in TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#comparison-operator-behavior)

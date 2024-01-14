@@ -1,56 +1,41 @@
 ---
-title:    "Fish Shell: Usuwanie znaków pasujących do wzoru."
+title:    "Fish Shell: Usuwanie znaków pasujących do wzoru"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Każdy programista, który korzysta z powłoki Fish, może natknąć się na sytuację, w której chce usunąć znaki pasujące do wzoru. Może to być przydatne przy wykonywaniu operacji na plikach lub manipulacji tekstem.
+Czasami w naszych skryptach powłoki potrzebujemy usunąć pewne znaki, które pasują do określonego wzorca. Jest to szczególnie przydatne w przypadku operacji na tekście. W tym artykule przedstawimy, jak to zrobić w powłoce Fish Shell.
 
 ## Jak to zrobić
 
-Do usunięcia znaków pasujących do wzoru w shellu Fish możemy wykorzystać komendę `string replace` w połączeniu z poleceniem `contains`. Przykładowy kod wykorzystujący te dwa polecenia może wyglądać następująco:
+W Fish Shell istnieje wbudowana funkcja `string delete`, która pozwala na usunięcie znaków pasujących do podanego wzorca. Przykładowe wywołanie wygląda następująco:
 
-```
-string replace 'tekst do zmodyfikowania' (contains --regex 'wzór') ''
-```
-
-W powyższym kodzie podmieniamy pasujące do wzoru znaki na pusty ciąg znaków, co w efekcie usuwa je z tekstu. W poniższych przykładach znajdziesz różne możliwości wykorzystania tej kombinacji poleceń.
-
-### Usuwanie znaków w nazwach plików
-
-Załóżmy, że mamy folder zawierający pliki z rozszerzeniem `.txt` i chcemy usunąć z ich nazw litery `a`. W tym celu możemy skorzystać z poniższego kodu:
-
-```
-for file in *.txt
-    set new_name (string replace $file (contains --regex 'a') '')
-    mv "$file" "$new_name"
-end
+```Fish Shell
+set my_string "Hello World"
+string delete -ra "l" $my_string
 ```
 
-W ten sposób za pomocą pętli `for`, dla każdego pliku z rozszerzeniem `.txt`, zmieniamy jego nazwę, usuwając z niej wszystkie wystąpienia litery `a`.
+W tym kodzie wywołujemy `string delete`, z opcją `-ra` oznaczającą "wszystkie znaki", a następnie podajemy wzorzec, który chcemy usunąć, w tym przypadku jest to litera "l". Podajemy również zmienną zawierającą nasz tekst, czyli "Hello World". Wywołanie to spowoduje usunięcie wszystkich wystąpień litery "l" z tekstu i wyświetlenie wyniku, który w tym przypadku będzie brzmiał "Heo Word".
 
-### Wycinanie znaków z nazw plików
+Jeśli chcemy usunąć znaki tylko z określonej pozycji w tekście, możemy wykorzystać opcję `-i`, np:
 
-W przypadku gdy chcemy usunąć z nazw plików określony fragment, możemy wykorzystać również wyrażenie regularne w poleceniu `contains`. Przykładowo, jeśli nasze pliki mają nazwy w formacie `numer_[nazwa].txt` oraz `numer_`, a my chcemy usunąć z tych nazw tylko część z numerem oraz nawiasami kwadratowymi, możemy wykorzystać poniższy kod:
-
-```
-for file in *.txt
-    set new_name (string replace $file (contains --regex '[\d+]_\[(.*)\]') '$1')
-    mv "$file" "$new_name"
-end
+```Fish Shell
+set my_string "Hello World"
+string delete -ia 0..3 $my_string
 ```
 
-W efekcie po wykonaniu tego kodu, nasze pliki będą miały nazwy w formacie `nazwa.txt`.
+Tym razem usuniemy znaki z pozycji 0 do 3, czyli "Hell" zostanie zamienione na pusty ciąg znaków, a wynikiem będzie "o World".
 
-## Głębszy wgląd
+## Deep Dive
 
-W poradniku skupiliśmy się na prostych przypadkach usunięcia znaków pasujących do wzoru, ale możliwości wykorzystania polecenia `string replace` w połączeniu z `contains` są znacznie szersze. Dzięki wyrażeniom regularnym możemy precyzyjnie kontrolować, które znaki mają zostać usunięte, co daje nam dużą elastyczność w manipulacji tekstem.
+Funkcja `string delete` w Fish Shell jest bardzo użyteczna, ponieważ umożliwia nam dokładne kontrolowanie, które znaki chcemy usunąć. Pamiętajmy jednak, że gdy podajemy opcję `-ra`, wszystkie wystąpienia wzorca zostaną usunięte. Jeśli chcemy usunąć tylko jedno wystąpienie, musimy określić konkretną pozycję lub użyć opcji `-i` i podać zakres pozycji.
 
 ## Zobacz też
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Polecenie `string replace`](https://fishshell.com/docs/current/cmds/string.html#replace)
-- [Polecenie `contains`](https://fishshell.com/docs/current/cmds/contains.html)
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+- Przewodnik po Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Opis funkcji `string delete`: https://fishshell.com/docs/current/cmds/string.html#string-delete

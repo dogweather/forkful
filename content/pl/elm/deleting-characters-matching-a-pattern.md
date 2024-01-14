@@ -1,34 +1,42 @@
 ---
-title:    "Elm: Usuwanie znaków pasujących do wzorca"
+title:    "Elm: Usuwanie znaków pasujących do wzoru"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Często zdarza się, że w trakcie programowania musimy usuwać znaki z danego ciągu według określonego wzoru. W tym artykule dowiesz się, jak można to zrobić w języku programowania Elm.
+# Dlaczego usuwanie znaków pasujących do wzoru jest ważne w programowaniu Elm?
 
-## Jak to zrobić
-Aby usunąć znaki pasujące do określonego wzoru, można użyć funkcji `String.filter` w Elm. Przyjmie ona dwa argumenty - funkcję `pred` (wyrażenie lambda), która będzie testować, czy dany znak pasuje do wzoru, oraz ciąg znaków, z którego chcemy usunąć niepożądane znaki.
+Usuwanie znaków pasujących do wzoru jest ważne, ponieważ pozwala nam na efektywne przetwarzanie i filtrację tekstu w naszym kodzie. Jest to użyteczne w wielu przypadkach, na przykład gdy chcemy usunąć niepożądane znaki lub tylko pozostawić część tekstu.
 
-```Elm
-myString = "123 Elm Programming"
-filteredString = String.filter (\c -> c >= "0" && c <= "9") myString -- zwróci "123"
+## Jak to zrobić?
+
+Aby usunąć znaki pasujące do wzoru w Elm, musimy użyć funkcji `String.filter`. Przykładowy kod wyglądałby następująco:
+
+```Elm 
+text = "To jest przykładowy tekst do przefiltrowania" 
+filteredText = String.filter (\c -> not (c == "i")) text 
 ```
 
-W powyższym przykładzie, wykorzystując wyrażenie lambda, tworzymy funkcję `pred`, która sprawdza, czy dany znak jest cyfrą za pomocą warunku `(c >= "0" && c <= "9")`. Następnie, przekazując tę funkcję i oryginalny ciąg znaków do funkcji `String.filter`, uzyskujemy wynikowy ciąg z samymi cyframi.
+W tym przykładzie, każdy znak "i" jest usuwany z tekstu, a wynikiem jest "To jest przykładowy tekst do przeflterowana".
 
-## Głębszy zanurzenie
-Powyższa metoda jest prosta i wygodna, ale nie jest idealna w przypadku bardziej złożonych wzorców. Jeśli chcemy na przykład usunąć wszystkie spacje i znaki przestankowe z ciągu, możemy użyć funkcji `String.toUpper` w połączeniu z funkcją `String.toList`:
+Możemy również użyć bardziej złożonych wzorów, przekazując funkcję warunkową do funkcji `filter`. Na przykład, jeśli chcielibyśmy usunąć wszystkie liczby z tekstu, możemy użyć następującego kodu:
 
 ```Elm
-myString = "To be, or not to be"
-filteredString = myString |> String.toList |> List.filter (\c -> c /= " " && (c < "a" || c > "z")) |> String.fromList
--- zwróci "TOBEORNOTTOBE"
+text = "Tekst z liczbami: 1, 2, 3, 4" 
+filteredText = String.filter (\c -> not (String.isDigit c)) text
 ```
 
-Wykorzystując funkcję |> (znana także jako pipe operator) możemy przekazać kolejne funkcje do wynikowego ciągu. W powyższym przykładzie, spacje i znaki przestankowe zostają usunięte, a wszystkie litery są zamienione na duże.
+W rezultacie, otrzymamy "Tekst z liczbami:".
+
+## Głębszy wgląd
+
+Funkcja `String.filter` jest jedną z wielu przydatnych funkcji w modułach `String` w Elm. Inne przydatne funkcje do przetwarzania tekstu to `String.map` i `String.split`. Warto także wspomnieć, że te funkcje działają na zasadzie niezmienialności - zwracają kopię zmienionego tekstu, a nie zmieniają oryginalnego tekstu.
+
+Ponadto, warto pamiętać o wydajności przy używaniu funkcji `String.filter`, ponieważ każda iteracja przez znaki jest wykonywana osobno.
 
 ## Zobacz także
-- Dokumentacja funkcji `String.filter` w Elm: https://package.elm-lang.org/packages/elm/core/1.0.5/String#filter
-- Przykłady użycia i wyjaśnienia operatora |> w języku Elm: https://guide.elm-lang.org/appendix/operator_precedence.html# |>
+
+- Dokumentacja Elm o [modułach tekstowych](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Przekształcaj i filtrowaj tekst z [Elm Exercise](https://elm-exercises.github.io/transform-string/)

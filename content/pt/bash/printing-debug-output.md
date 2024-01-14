@@ -1,42 +1,54 @@
 ---
 title:    "Bash: Imprimindo saída de depuração"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de debug?
-Imprimir saída de debug é uma ferramenta essencial para identificar e corrigir erros em seus programas Bash. Ao imprimir mensagens de depuração, você pode rastrear o fluxo de execução do seu código e identificar onde algo está dando errado.
+## Por que
+
+Você já se deparou com um código que simplesmente não estava funcionando e se perguntou onde estava o erro? Ou talvez você tenha feito várias alterações em uma parte do seu programa e não conseguiu identificar qual alteração causou o problema? Bem, é aí que o debug output se torna útil. Ele permite que você imprima informações durante a execução do seu código, facilitando a identificação de erros e problemas.
 
 ## Como fazer
-Para imprimir saída de debug em Bash, utilize o comando `echo` seguido da mensagem que deseja imprimir. Por exemplo:
+
+Para imprimir um debug output em Bash, você pode utilizar o comando `echo` seguido da informação que deseja imprimir. Por exemplo:
 
 ```Bash
-echo "Iniciando loop"
+echo "Variável x = $x"
 ```
 
-Isso irá imprimir a mensagem "Iniciando loop" no terminal. Para imprimir variáveis, basta utilizar a sintaxe `$variavel`, por exemplo:
+Você também pode utilizar o redirecionamento de saída (`>` ou `>>`) para gravar o output em um arquivo:
 
 ```Bash
-nome="João"
-echo "O nome é $nome"
+echo "Erro: não foi possível abrir o arquivo" >> erros.log
 ```
 
-Isso irá imprimir a mensagem "O nome é João". Você também pode utilizar o comando `printf` para imprimir saída de debug, que oferece mais opções de formatação. Por exemplo:
+Outra opção é utilizar o comando `printf` para formatar a saída:
 
 ```Bash
-idade=25
-printf "Eu tenho %d anos" "$idade"
+printf "O valor de x é %.2f" $x
 ```
 
-Isso irá imprimir a mensagem "Eu tenho 25 anos". Além disso, você pode utilizar o comando `set -x` no início do seu código para que todas as linhas sejam impressas como saída de debug.
+## Deep Dive
 
-## Mergulho profundo
-Além de imprimir mensagens de depuração, você também pode utilizar outras técnicas para tornar a depuração mais eficaz. Por exemplo, você pode utilizar o comando `set -e` para que seu programa pare automaticamente caso encontre algum erro, o que pode ajudar a identificar o exato ponto onde o problema está ocorrendo.
+Além dos exemplos mencionados acima, existem outras maneiras de imprimir debug output em Bash. Por exemplo, você pode utilizar o comando `set -x` para ativar o modo de debug, que exibirá todas as linhas do seu código antes de serem executadas. Este modo pode ser desativado utilizando `set +x`.
 
-Também é possível utilizar o comando `trap` para capturar sinais e imprimir mensagens de erro específicas, facilitando o entendimento do processo de depuração.
+Também é possível criar funções personalizadas para imprimir debug output. Isso pode ser útil para imprimir informações específicas em determinados pontos do seu código. Por exemplo:
+
+```Bash
+debug() {
+   if [ "$DEBUG" == "true" ]; then
+      echo "$@"
+   fi
+}
+
+# Utilizando a função
+debug "Variável y = $y"
+```
 
 ## Veja também
-- [Depuração com Bash](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Debugging-Bash)
-- [Saída de depuração em Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
-- [Comandos de controle de execução do Bash](https://tiswww.case.edu/php/chet/bash/bashref.html#Using-Set)
+
+- [Guia de referência rápida do Bash](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Documentação do comando echo](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)
+- [Artigo sobre debugging em Bash](https://bash-prompt.net/guides/debugging-bash-scripts/)

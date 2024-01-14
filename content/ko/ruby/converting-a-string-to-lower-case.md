@@ -1,39 +1,36 @@
 ---
 title:    "Ruby: 문자열을 소문자로 변환하기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-문자열을 소문자로 변환하는 작업은 프로그래밍에서 매우 유용합니다. 이를 통해 사용자로부터 입력 받은 문자열을 일관된 소문자 형태로 처리할 수 있으며, 데이터베이스에서 검색을 할 때도 대/소문자 구분 없이 원하는 결과를 얻을 수 있습니다.
+Ruby 프로그래밍을 하다보면 종종 문자열을 입력 받아서 소문자로 변환해야 할 때가 있습니다. 이런 경우를 위해 문자열을 소문자로 변환하는 방법을 배우는 것이 매우 중요합니다.
 
-## 어떻게
+# 어떻게
 
-```Ruby
-str = "Hello, World!"
-puts str.downcase
-```
-
-출력: hello, world!
-
-위 예제는 `String` 클래스의 `downcase` 메소드를 사용하여 문자열을 소문자로 변환하는 간단한 방법을 보여줍니다.
+Ruby에서 문자열을 소문자로 변환하는 방법은 간단합니다. 다음과 같이 `downcase` 메소드를 이용하면 됩니다.
 
 ```Ruby
-str = "안녕하세요"
-puts str.downcase
+string = "HELLO, WORLD"
+puts string.downcase
 ```
 
-출력: 안녕하세요
+출력 결과는 `hello, world`가 됩니다.
 
-다른 언어와 달리 루비에서는 한글을 사용해도 `downcase` 메소드가 제대로 동작합니다. 이는 루비가 유니코드를 기본적으로 지원하기 때문인데, 유니코드를 다루는 데 있어서는 루비가 다른 언어보다 우수한 성능을 발휘합니다.
 
-## 깊게 파고들기
+# 깊게 파헤치기
 
-문자열을 소문자로 변환하는 방법은 간단하지만, 내부적으로 어떻게 동작하는지 알아볼까요? 루비에서는 `String` 클래스의 `downcase` 메소드를 호출하면, 해당 문자열의 유니코드를 순회하며 대문자를 소문자로 변환하는 과정을 거칩니다. 이 과정에서는 원래 문자열은 그대로 두고, 복사된 새로운 문자열을 반환합니다.
+`downcase` 메소드는 문자열 내 모든 알파벳을 소문자로 변환합니다. 예를 들어, `HELLO123`은 `hello123`으로 변환됩니다. 또한, 한글의 경우에도 올바르게 변환해줍니다.
 
-## 참고하기
+하지만 한 가지 주의할 점이 있습니다. 문자열 내 숫자나 특수 문자는 그대로 유지됩니다. 예를 들어 `THESE ARE NUMBERS: 123`은 `these are numbers: 123`으로 변환되지 않으며 그대로 `THESE ARE NUMBERS: 123`으로 출력됩니다.
 
-- [루비 안내서: 문자열 변환하기](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)
-- [루비와 유니코드](https://guides.rubyonrails.org/active_support_core_extensions.html#unicode)
+# 참고 자료
+
+- [Ruby String Methods](https://www.rubyguides.com/2019/05/ruby-string-methods/)
+- [Ruby Official Documentation - String#downcase](https://ruby-doc.org/core-2.6/String.html#method-i-downcase)
+- [Ruby String Interpolation](https://www.rubyguides.com/2016/04/ruby-string-interpolation/)
+- [Ruby on Rails Tutorial: Learn Ruby on Rails](https://www.railstutorial.org/book)

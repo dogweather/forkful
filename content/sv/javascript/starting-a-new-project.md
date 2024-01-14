@@ -1,38 +1,54 @@
 ---
-title:    "Javascript: Att börja ett nytt projekt"
+title:    "Javascript: Att påbörja ett nytt projekt"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att starta ett nytt programmeringsprojekt kan vara en spännande och givande upplevelse. Det ger dig möjligheten att utveckla dina färdigheter, utforska nya tekniker och skapa något som är helt ditt eget. Oavsett om det är för att bygga en ny app, en hemsida eller ett dataspel, finns det många goda skäl att ta steget och börja ett nytt projekt.
 
-## Hur man gör
-Att starta ett nytt projekt i Javascript kan verka överväldigande i början, men det behöver det inte vara. Här är några enkla steg för att komma igång:
+Att starta ett nytt projekt kan vara både utmanande och inspirerande för en Javascript programmerare. Det ger dig möjlighet att utveckla dina färdigheter, lära dig nya tekniker och skapa något unikt och kreativt. Dessutom kan det vara ett sätt att lösa problem eller uppfylla ett behov som du eller andra har. I denna bloggpost kommer vi att titta på hur man kan påbörja ett nytt projekt i Javascript och ge några tips för att göra processen smidigare.
 
-1. Välj en textredigerare eller utvecklingsmiljö som passar dig. Exempelvis Visual Studio Code, Atom eller Sublime Text.
-2. Skapa en mapp för ditt projekt och öppna den i din utvecklingsmiljö.
-3. Skapa en HTML-fil och koppla på en Javascript-fil.
-4. Skriv din Javascript-kod i den nya filen och spara den.
-5. Öppna din HTML-fil i webbläsaren och se resultatet av din kod.
+## Så här
 
-Här är ett enkelt exempel på kod som skriver ut "Hej världen" i konsolen:
+För att starta ett nytt Javascript projekt kan du följa dessa enkla steg:
+
+1. Definiera målet: Först och främst måste du definiera vad du vill uppnå med ditt projekt. Ska det vara ett webbaserat spel, en webbapplikation eller en enkel hemsida?
+
+2. Välj en utvecklingsmiljö: Det är viktigt att välja en lämplig utvecklingsmiljö för ditt projekt. Du kan använda olika redigerare eller IDE:er som Visual Studio Code, Sublime Text eller Atom.
+
+3. Sätt upp en versionhantering: Att använda ett versionhanteringssystem som Git kan hjälpa dig att hålla koll på dina projektfiler och göra det lättare att samarbeta med andra.
+
+4. Skapa grundläggande filer och mappstruktur: Börja med att skapa en index.html fil där du kan lägga till din HTML-kod och en style.css fil för din CSS. Skapa också en mappstruktur för ditt projekt och håll filerna organiserade.
+
+5. Lär dig grundläggande Javascript: Om du inte redan är bekant med Javascript, ta dig tid att lära dig de grundläggande koncepten och syntaxen. Detta kommer att hjälpa dig att skapa interaktivitet och funktionalitet i ditt projekt.
+
+6. Använd externa bibliotek och ramverk: För att göra ditt liv som programmerare lättare kan du använda externa bibliotek och ramverk som jQuery, React eller Angular.
+
+Här är ett exempel på hur man kan skriva en enkel "Hello World!" skript i Javascript:
 
 ```Javascript
-console.log("Hej världen!");
+Var hälsning = "Hello World!";
+Console.log(hälsning);
 ```
 
+Output: Hello World!
+
 ## Djupdykning
-Att starta ett nytt projekt handlar inte bara om att skriva kod, det handlar också om att ha en plan och organisera ditt arbete på ett effektivt sätt. Här är några tips för att få en bra start på ditt projekt:
 
-1. Bestäm vad du vill uppnå med ditt projekt och skriv ner dina mål.
-2. Gör en lista med de funktioner eller uppgifter som du vill inkludera.
-3. Skapa ett flödesschema för ditt projekt för att hjälpa dig att visualisera och planera dess struktur.
-4. Använd versionshantering (t.ex. Git) för att hålla koll på dina ändringar och samarbeta med andra.
-5. Ta regelbundna pauser och planera dina uppgifter för att undvika överbelastning och hålla dig motiverad.
+Att starta ett nytt projekt kan vara överväldigande och det är lätt att fastna i detaljer. Här är några tips som kan hjälpa dig att hålla igång och göra processen smidigare:
 
-## Se också
-- [JavaScript för nybörjare: en introduktion](https://www.javascript.com/learn/javascript-for-beginners)
-- [Hur man använder Git](https://www.atlassian.com/git/tutorials/what-is-version-control)
-- [Visual Studio Code: Guide för nybörjare](https://code.visualstudio.com/docs/setup/setup-overview)
+- Planera och bryt ner projektet i mindre delar: Det hjälper dig att hålla fokus och undvika att bli överväldigad av projektet som helhet.
+
+- Använd debuggning och testning: Testa din kod ofta och använd debugger för att hitta och lösa problem snabbt. Det kan spara dig mycket tid och frustration i slutändan.
+
+- Sök hjälp och lär av andra: Ta hjälp av olika online-resurser, guider, videos och forum för att få tips och råd från andra programmerare. Detta kan även hjälpa dig att hitta nya sätt att lösa problem.
+
+## Se även
+
+- [10 Tips för att starta ett nytt Javascript projekt](https://www.dynatrace.com/blog/best-practices-for-starting-a-new-javascript-project/)
+
+- [En djupdykning i att starta ett nytt Javascript projekt](https://blog.usejournal.com/dive-into-javascript-3aef6b804145)
+
+- [Kom igång med Javascript](https://www.javascript.com/learn)

@@ -1,42 +1,29 @@
 ---
-title:    "Elixir: 「日付を文字列に変換する」"
+title:    "Elixir: 日付を文字列に変換する"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ Elixir で日付を文字列に変換するのか？
+記事の目的: この記事では、Elixirで日付を文字列に変換する方法について説明します。日付を文字列に変換する理由については、ほとんどのプログラマーにとっては非常に基本的な操作ですが、Elixirの強力な機能を活用するために必要なスキルです。
 
-Elixir は日付を効率的に操作できる強力なプログラミング言語です。日付を文字列として扱うことで、データの整理や検索を簡単に行うことができます。
-
-## 使い方
-
-日付を文字列に変換するには、Elixirの標準ライブラリである `DateTime` モジュールを使用します。以下のコードを参考にしてください。
+方法: まずは、"DateTime.to_string/2"というElixirの関数を使用して、日付を文字列に変換する方法をご紹介します。
 
 ```Elixir
-# 日付の設定
-date = ~D[2021-01-01]
-# 文字列に変換
-string = DateTime.format(date, "%B %e, %Y")
-# 出力
-IO.puts(string)
+iex> DateTime.to_string({{2020, 12, 25}, {23, 59, 59}}, "yyyy/MM/dd HH:mm:ss")
+"2020/12/25 23:59:59"
 ```
 
-この例では、`%B %e, %Y` というフォーマットを使用していますが、`DateTime` モジュールはさまざまなフォーマットをサポートしています。詳細については `DateTime` モジュールの公式ドキュメントを参照してください。
+このように、日付を表すタプルとフォーマット文字列を引数として渡すことで、指定した形式の文字列が返されます。詳細なフォーマットの指定方法については、Elixirの公式ドキュメントを参照してください。
 
-## 詳細な説明
+Deep Dive: では、より詳細に日付を文字列に変換する方法について見ていきましょう。まず、"DateTime"モジュールにはさまざまな便利な関数が用意されており、例えば、"DateTime.from_naive"を使用することで、タイムゾーンを考慮せずに日付を表すタプルを作成することができます。
 
-`DateTime` モジュールの `format` 関数を使用することで、日付を任意のフォーマットに変換することができます。`format` 関数は2つの引数を取ります。最初の引数は `DateTime` オブジェクトであり、変換したい日付を表します。2つ目の引数はフォーマット文字列であり、変換したい日付の並び順や表示形式を指定するために使用します。
+また、Elixirでは、日付を自由に操作することができる "NaiveDateTime" という型も用意されています。この型には、"NaiveDateTime.to_string/2"という関数があり、文字列に変換する場合に便利です。
 
-例えば、`%B` は月の名前（例： January）、`%e` は日（例： 1）、`%Y` は年（例： 2021）を表します。フォーマット文字列を組み合わせることで、好みの表記を作ることができます。
+See Also（参考）:
 
-また、`DateTime` モジュールには `to_string` 関数もあります。こちらは日付を ISO 8601 形式の文字列に変換します。使用例は次の通りです。
+- Elixir 公式ドキュメント: https://hexdocs.pm/elixir/DateTime.html
+- Elixir School: https://elixirschool.com/ja/lessons/basics/dates/
 
-```Elixir
-DateTime.to_string(~U[2021-01-01 00:00:00])
-```
-
-## 関連リンク
-
-- `DateTime` モジュールの公式ドキュメント: https://hexdocs.pm/elixir/DateTime.html
-- ISO 8601 形式についての詳細: https://ja.wikipedia.org/wiki/ISO_8601
+この記事が、Elixirで日付を文字列に変換する方法を簡単に理解するのに役立てば嬉しいです。Elixirを少しでも深く理解するために、ぜひ以上の参考リンクも活用してください。

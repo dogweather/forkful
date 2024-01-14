@@ -1,17 +1,20 @@
 ---
-title:    "C++: Convirtiendo una cadena a minúsculas"
+title:    "C++: Convertir una cadena a minúsculas"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-Existen muchas situaciones en las que es necesario convertir una cadena de texto a minúsculas en un programa de C++. Por ejemplo, si queremos comparar dos cadenas de texto sin importar si están en mayúsculas o minúsculas, necesitamos asegurarnos de que ambas estén en el mismo formato. También puede ser útil en situaciones en las que se desee cambiar el formato de una cadena de texto para que sea más fácil de procesar.
+Convertir una cadena de texto a minúsculas es una tarea común en la programación de C++. Puede ser útil en situaciones donde se necesita estandarizar las entradas del usuario o cuando se necesita comparar cadenas de texto sin importar las mayúsculas y minúsculas.
 
 ## Cómo hacerlo
 
-Convertir una cadena de texto a minúsculas en C++ es muy sencillo. Utilizando la función `tolower` de la biblioteca `cctype`, podemos convertir cada carácter de la cadena a su equivalente en minúscula. Aquí hay un ejemplo de cómo hacerlo:
+Para convertir una cadena de texto a minúsculas en C++, se puede utilizar la función integrada `tolower()` que se encuentra en la librería `<cctype>`. Esta función toma como parámetro un carácter y devuelve su equivalente en minúsculas. Por lo tanto, para convertir una cadena a minúsculas, se debe aplicar esta función a cada carácter de la cadena utilizando un bucle.
+
+Un ejemplo de código podría ser el siguiente:
 
 ```C++
 #include <iostream>
@@ -20,28 +23,37 @@ Convertir una cadena de texto a minúsculas en C++ es muy sencillo. Utilizando l
 using namespace std;
 
 int main() {
-    string texto = "Esto es una CADENA de TEXTO";
+    string texto;
+    cout << "Ingresa una cadena de texto: ";
+    getline(cin, texto);
 
-    for (char& c : texto) {
-        c = tolower(c);
+    // convertir todos los caracteres a minúsculas
+    for(int i = 0; i < texto.length(); i++) {
+        texto[i] = tolower(texto[i]);
     }
 
-    cout << texto << endl;
+    cout << "La cadena en minúsculas es: " << texto << endl;
 
     return 0;
 }
 ```
 
-Este ejemplo utiliza un bucle `for` para recorrer cada caracter de la cadena de texto y luego, utilizando la función `tolower`, convertirlo a minúscula. El resultado de este programa sería: `esto es una cadena de texto`.
+**Salida:**
+
+```
+Ingresa una cadena de texto: Hola Mundo!
+
+La cadena en minúsculas es: hola mundo!
+```
 
 ## Profundizando
 
-La función `tolower` pertenece a la biblioteca `cctype` la cual contiene un conjunto de funciones para la manipulación de caracteres en C++. Esta función recibe como parámetro un caracter de tipo `int` y devuelve su equivalente en minúscula. Es importante destacar que esta función solamente transforma caracteres que son letras, por lo que cualquier otro caracter no será modificado.
+El proceso de convertir una cadena de texto a minúsculas puede parecer simple, pero hay ciertos aspectos a considerar para obtener un resultado preciso. Por ejemplo, la función `tolower()` solo funciona con caracteres individuales, por lo que si se desea convertir una cadena de texto con caracteres especiales como letras acentuadas, se debe utilizar una librería externa o implementar un algoritmo personalizado.
 
-Por otro lado, es necesario mencionar que esta función también tiene un homólogo para convertir caracteres a mayúsculas, llamado `toupper`. Ambas funciones son muy útiles en la manipulación de cadenas de texto.
+Además, hay que tener en cuenta que en C++, los caracteres se representan en ASCII, por lo que al convertir una letra mayúscula a minúscula, se obtendrá un número diferente en la tabla ASCII. Por ejemplo, la letra "A" en mayúscula tiene un código ASCII de 65 y en minúscula tiene un código de 97. Esto puede afectar a la comparación de cadenas de texto en algunos casos.
 
 ## Ver también
 
-- [Guía completa de la biblioteca cctype en C++](https://www.cplusplus.com/reference/cctype/)
-- [Cómo comparar cadenas de texto sin tener en cuenta mayúsculas o minúsculas en C++](https://www.geeksforgeeks.org/case-conversion-in-string-in-c/)
-- [Ejemplos de uso de la función tolower en C++](https://www.guru99.com/cpp-conversion-tolower-toupper-islower.html)
+- [Función tolower() en cplusplus.com](https://www.cplusplus.com/reference/cctype/tolower/)
+- [Ejemplo de C++ para convertir una cadena a minúsculas](https://www.geeksforgeeks.org/uppercase-string-lowercase-string-cc/)
+- [Artículo sobre el alfabeto ASCII](https://en.wikipedia.org/wiki/ASCII)

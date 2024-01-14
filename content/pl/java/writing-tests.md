@@ -1,41 +1,53 @@
 ---
 title:    "Java: Pisanie testów"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne?
+## Dlaczego pisać testy? 
 
-Pisanie testów jest niezwykle ważne w procesie tworzenia oprogramowania. Dzięki testom, możemy upewnić się, że nasz kod działa tak, jak powinien i zapewnić jego niezawodność. Testy pozwalają nam również na wykrycie błędów wcześnie i naprawienie ich przed pojawieniem się w produkcyjnym środowisku. W tym artykule dowiesz się, dlaczego warto pisać testy i jak to zrobić w języku Java.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki nim możemy upewnić się, że nasz kod działa poprawnie i nie powoduje błędów. Testy są również pomocne w utrzymaniu jakości i niezawodności naszej aplikacji. 
 
-## Jak pisać testy w języku Java?
+## Jak to zrobić?
 
-Pisanie testów w języku Java jest prostsze, niż mogłoby się wydawać. Wystarczy użyć wbudowanej biblioteki JUnit, która pozwala nam na szybkie i łatwe pisanie testów jednostkowych. Poniżej znajdziesz przykładowy kod testu jednostkowego w języku Java:
+Aby napisać testy w języku Java, możemy skorzystać z narzędzia JUnit. Poniżej przedstawiam prosty przykład testu jednostkowego wraz z oczekiwanym wynikiem: 
 
 ```Java
-import org.junit.*;
-import static org.junit.Assert.*;
-
 public class CalculatorTest {
 
     @Test
-    public void testAddition() {
+    public void addTest() {
         Calculator calculator = new Calculator();
-        int result = calculator.add(2, 3);
-        assertEquals(5, result);
+        int result = calculator.add(2, 2);
+        int expected = 4;
+        assertEquals(expected, result);
     }
+    
 }
 ```
 
-W powyższym przykładzie tworzymy obiekt klasy Calculator, a następnie wywołujemy metodę add, która dodaje dwie liczby i zwraca wynik. Przy użyciu metody assertEquals, porównujemy zwrócony wynik z oczekiwaną wartością.
+```Java
+public class Calculator {
 
-## Deep Dive: Wskazówki dla piszących testy
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+}
+```
 
-Przy pisaniu testów warto pamiętać o kilku ważnych zasadach. Po pierwsze, każdy test powinien sprawdzać tylko jedną funkcjonalność lub metodę. W ten sposób łatwiej będzie nam zlokalizować błąd, jeśli test zawiedzie. Po drugie, nazwy metod powinny być czytelne i opisowe, aby w łatwy sposób określić, co dany test sprawdza. Po trzecie, warto używać anotacji dostępnych w bibliotece JUnit, takich jak @BeforeEach i @AfterEach, aby wykonywać pewne akcje przed i po każdym teście.
+W powyższym przykładzie tworzymy klasę `Calculator` zawierającą metodę `add`, a następnie w klasie `CalculatorTest` tworzymy test jednostkowy, który sprawdza, czy wynik dodawania jest poprawny. Po uruchomieniu testu, oczekujemy, że wynik będzie równy oczekiwanemu. W ten sposób możemy weryfikować poprawność działania naszych metod.
+
+## Deep Dive
+
+Pisanie testów wymaga znajomości różnych typów testów i narzędzi. Musimy mieć pewną wiedzę na temat testów jednostkowych, integracyjnych oraz interfejsów programistycznych (API). Dobrą praktyką jest również wykorzystywanie narzędzi do automatyzacji testów, takich jak Selenium czy Cucumber. 
+
+Należy pamiętać, że testy powinny być pisane na początku procesu tworzenia oprogramowania, a nie na końcu jako ostatnia czynność. W ten sposób możemy uniknąć problemów z wykryciem błędów w późniejszych etapach.
 
 ## Zobacz również
 
-* [Dokumentacja JUnit](https://junit.org/junit5/docs/current/user-guide/)
-* [Słowo kluczowe "assert" w języku Java](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html)
-* [Przykłady testów jednostkowych w języku Java](https://www.baeldung.com/junit-5)
+- [Tutorial wideo - Jak napisać testy w języku Java](https://www.youtube.com/watch?v=KN3P0xQnEXE)
+- [Dokumentacja JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [Podstawy pisania testów w języku Java](https://www.baeldung.com/java-testing-tools)

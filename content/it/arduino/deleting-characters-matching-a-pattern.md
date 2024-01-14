@@ -1,40 +1,44 @@
 ---
-title:    "Arduino: Cancellare caratteri corrispondenti a un modello"
+title:    "Arduino: Eliminazione di caratteri corrispondenti a un pattern"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
+Cancellare i Caratteri Corrispondenti a un Modello con Arduino
+
 ## Perché
 
-Ci sono molte ragioni per cui potresti voler eliminare dei caratteri corrispondenti a un determinato pattern in un programma Arduino. Talvolta hai bisogno di pulire i dati che arrivano da una sorgente esterna o semplicemente di manipolare dei dati in entrata prima di elaborarli.
+A volte può essere necessario cancellare i caratteri in una stringa che corrispondono a un certo modello. Questo potrebbe essere utile, ad esempio, quando si ricevono dati da un sensore e si desidera rimuovere una parte della stringa che non è rilevante per il progetto. In questa guida, mostrerò come è possibile fare ciò utilizzando Arduino.
 
-## Come
+## Come Fare
 
-Per eliminare dei caratteri corrispondenti a un pattern in Arduino, puoi utilizzare la funzione "replace" della libreria String. Ad esempio, se vogliamo eliminare tutti gli spazi vuoti " " da una stringa, possiamo utilizzare il seguente codice:
+Per prima cosa, dobbiamo dichiarare una variabile di tipo `String` per contenere i nostri dati:
 
 ```Arduino
-String testo = "Questo è un esempio.";
-testo.replace(" ", "");
-Serial.println(testo);
+String data = "5-10-2021";
 ```
 
-L'output di questo codice sarà "Questoèunesempio.".
+Successivamente, dobbiamo utilizzare la funzione `replace`, che sostituirà ogni occorrenza del modello con la stringa vuota, eliminando così i caratteri corrispondenti. Nel nostro esempio, vogliamo eliminare tutti i trattini:
 
-Ci sono anche altre funzioni utili per eliminare caratteri, come "remove", "trim", "substring" e "toCharArray". È importante prestare attenzione ai tipi di dati che stai manipolando e utilizzare le funzioni appropriate per evitare errori.
+```Arduino
+data.replace("-", "");
+```
 
-## Deep Dive
+Infine, possiamo stampare il risultato:
 
-La funzione "replace" accetta due parametri, il primo è il carattere o il pattern da cercare, mentre il secondo è il carattere o la stringa che lo sostituirà. Puoi anche specificare il numero massimo di occorrenze da sostituire aggiungendo un terzo parametro.
+```Arduino
+Serial.println(data);
+```
 
-Inoltre, è possibile utilizzare espressioni regolari per eliminare caratteri in base a un particolare pattern. Questo può essere molto utile quando si deve gestire grandi quantità di dati e si vuole automatizzare il processo di eliminazione dei caratteri indesiderati.
+L'output sarà `5102021`, senza alcun trattino. Ovviamente, è possibile personalizzare il modello da cercare e il testo di sostituzione in base alle proprie esigenze.
 
-## Vedi anche
+## Approfondimento
 
-- [Tutorial sulle espressioni regolari in Arduino](https://www.arduino.cc/reference/en/)
+La funzione `replace` è basata sulla libreria `String`, che utilizza delle espressioni regolari per effettuare la ricerca dei pattern. Ciò significa che la sua implementazione è abbastanza sofisticata e consente di utilizzare molti modelli diversi per la ricerca e la sostituzione dei caratteri. I più curiosi possono approfondire questo argomento per scoprire tutte le opzioni disponibili.
 
-- [Documentazione della libreria String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+## Vedi Anche
 
-- [Esempi di codice per la manipolazione di stringhe in Arduino](https://www.arduino.cc/en/Tutorial/StringConstructors)
-
-Con questi strumenti e conoscenze, sarai in grado di gestire facilmente la manipolazione dei caratteri in Arduino. Buon hacking!
+- [Documentazione ufficiale sulla funzione replace di Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Tutorial sulle espressioni regolari con Arduino](https://www.makerguides.com/arduino-regular-expressions/)

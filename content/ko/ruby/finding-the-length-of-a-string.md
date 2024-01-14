@@ -1,31 +1,34 @@
 ---
-title:    "Ruby: 문자열의 길이를 찾는 방법"
+title:    "Ruby: 문자열의 길이 찾기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
 
-스트링의 길이를 찾는 것에 참여하는 이유는 여러 가지가 있을 수 있습니다. 한 가지는 프로그래밍에서 자주 사용되는 기본적인 작업이기 때문입니다. 또 다른 이유는 길이를 찾는 방법이 상황에 따라 다르기 때문입니다. 이 게시물에서 우리는 루비에서 스트링의 길이를 찾는 방법에 대해 알아보겠습니다.
+문자열의 길이를 찾는 것이 유용한 이유는 여러 가지가 있습니다. 예를 들어, 문자열의 길이를 알면 문자열을 작업하는 데 필요한 반복 및 조건문의 횟수를 정확하게 파악할 수 있습니다. 또한 문자열의 길이를 알면 문자열에서 특정 부분을 추출하는 등의 작업을 더 쉽게 할 수 있습니다.
 
-## 어떻게
+# 방법
 
-스트링의 길이를 찾는 방법은 간단합니다. 먼저 길이를 찾으려는 스트링의 변수 이름을 정의합니다. 그리고 `length` 메소드를 사용합니다. 아래의 코드는 이 과정을 나타냅니다.
+문자열의 길이를 찾는 방법은 간단합니다. `length` 메소드를 사용하면 됩니다. 아래는 간단한 예제 코드입니다.
 
 ```Ruby
-string = "안녕하세요"
-puts string.length
+str = "안녕하세요!"
+puts str.length
 ```
 
-위의 코드를 실행하면 출력 결과는 `5`가 됩니다. 왜냐하면 해당 스트링에는 다섯 개의 문자가 있기 때문입니다. 이제 우리는 스트링의 길이를 찾는 방법을 알게 되었습니다.
+위 코드를 실행하면 문자열 "안녕하세요!"의 길이, 즉 6이 출력됩니다. 이처럼 `length` 메소드는 문자열의 길이를 반환해주는 간단하고 유용한 메소드입니다.
 
-## 딥 다이브
+# 깊게 들어가기
 
-스트링의 길이를 찾는 방법에 대한 딥 다이브에서는 `length` 메소드를 좀 더 자세히 살펴보겠습니다. 이 메소드는 문자열의 인덱스를 반환합니다. 즉, 스트링의 첫 번째 문자의 인덱스는 `0`이며, 두 번째 문자의 인덱스는 `1`이며, 이런 식으로 스트링의 모든 문자의 인덱스를 차례대로 반환합니다. 따라서 스트링의 길이는 `length` 메소드가 반환하는 인덱스의 마지막 값보다 1이 더 작습니다.
+실제로 `length` 메소드는 어떻게 동작하는 걸까요? 우선, 모든 Ruby 객체는 메소드를 호출할 수 있습니다. 따라서 문자열 역시 `length` 메소드를 호출할 수 있습니다. 그렇다면 어떤 일이 벌어질까요?
 
-## 참고
+사실 Ruby에서는 문자열을 내부적으로 배열로 처리합니다. 즉, 문자열의 각 문자가 배열의 요소가 되는 것입니다. 따라서 `length` 메소드를 호출하면 배열의 크기를 반환하는 것과 같은 방식으로 동작합니다.
 
-- [루비 공식 문서 - 문자열의 길이](https://ruby-doc.org/core/String.html#method-i-length)
-- [루비의 String 클래스](https://www.rubyguides.com/ruby-tutorial/string/)
-- [루비 스트링 핸드북](https://launchschool.com/books/ruby/read/strings)
+# 관련 자료
+
+- [Ruby 문서: String 클래스](https://ruby-doc.com/core-2.5.0/String.html)
+- [Ruby 모범 사례: 문자열 다루기](https://github.com/bbatsov/ruby-style-guide#strings)
+- [Ruby 문자열 관련 기능 더 알아보기](https://www.rubyguides.com/ruby-tutorial/string/#string-size)

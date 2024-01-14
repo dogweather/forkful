@@ -1,40 +1,58 @@
 ---
 title:    "Swift: 임시 파일 만들기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜?
 
-*왜* 누군가가 임시 파일을 만드는 것에 참여해야 하는지에 대한 짧은 설명입니다.
+종종 우리는 임시 파일이 필요합니다. 이 게시글에서 우리는 왜 임시 파일을 만들어야 하는지에 대해 이야기하고, 그 과정에서 우리는 임시 파일을 만드는 방법과 관련된 깊은 지식을 탐구할 것입니다.
 
-파일을 만들어서 작업을 수행할 때, 때로는 일시적이고 임시적인 파일이 필요합니다. 이 임시 파일은 코드에서 만든 임시 데이터를 저장하는 데 사용될 수 있으며, 작업이 완료되면 삭제됩니다.
+## 만드는 방법
 
-# 하우 투
+임시 파일을 만드는 가장 간단한 방법은 `FileManager` 클래스의 `createFile(atPath:)` 메소드를 사용하는 것입니다. 다음은 간단한 예제 코드입니다:
 
 ```Swift
-// 임시 파일을 만드는 간단한 예제
-let tempFile = NSTemporaryDirectory().appending("temporaryFile.txt")
-FileManager.default.createFile(atPath: tempFile, contents: "Some temporary data".data(using: .utf8), attributes: nil)
+let fileName = "tempFile.txt"
+let tempDir = NSTemporaryDirectory()
+let tempFile = tempDir.appending(fileName)
 
-// 임시 파일 데이터 읽기
-let fileContents = try String(contentsOfFile: tempFile)
+let message = "Hello, world!"
 
-// 임시 파일 삭제
-try FileManager.default.removeItem(atPath: tempFile)
+do {
+    try message.write(toFile: tempFile, atomically: true, encoding: .utf8)
+    print("임시 파일이 생성되었습니다.")
+}
+catch {
+    print("에러 발생: \(error.localizedDescription)")
+}
 ```
 
-# 딥 다이브
+위의 코드에서 우리는 `NSTemporaryDirectory()`를 사용하여 시스템의 임시 디렉토리 경로를 가져오고, `append()` 메소드를 사용하여 파일 이름을 추가합니다. 그리고 `write(toFile:)` 메소드를 사용하여 문자열을 파일에 작성합니다. 마지막으로, `do-catch` 블록을 사용하여 에러 처리를 해줍니다.
 
-임시 파일은 오래 지속되지 않는 데이터를 저장할 때 유용합니다. 예를 들어, 파일을 만들고 텍스트 데이터를 저장한 다음, 다른 작업에서 그 데이터를 사용하는 것과 같은 경우입니다. 임시 파일은 특히 인터넷에서 데이터를 다운로드하거나 파일을 압축하고 해제하는 등의 작업을 할 때 유용합니다.
+위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다:
 
-임시 파일의 사용에는 주의할 점도 있습니다. 중요한 데이터를 임시 파일에 저장해서는 안 됩니다. 또한, 임시 파일은 작업을 완료한 후 적절히 삭제해야 합니다.
+```
+임시 파일이 생성되었습니다.
+```
 
-# 참고
+만약 에러가 발생하면 에러 메시지를 출력하고, 임시 파일을 생성하지 않습니다.
 
-[Swift FileManager 클래스 문서](https://developer.apple.com/documentation/foundation/filemanager)
+## 깊게 살펴보기
 
-[Swift 파일 읽기 및 쓰기 예제](https://www.hackingwithswift.com/read/12/3/files-and-folders-101-swifts-built-in-filemanager)
+임시 파일을 만드는 방법에 대해 더 깊이 알아보겠습니다. 우리가 사용한 `NSTemporaryDirectory()` 메소드는 시스템의 임시 디렉토리 경로를 제공해주지만, 우리는 `FileManager` 클래스의 다른 메소드를 사용하여 다른 디렉토리에 임시 파일을 만들 수도 있습니다. 또한, 우리는 파일의 속성을 설정하거나, 추가적인 작업을 수행할 수도 있습니다.
 
-[Swift 프로그래밍 가이드: 파일 관리](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
+임시 파일을 생성하는 또 다른 방법은 `TemporaryFile` 라이브러리를 사용하는 것입니다. 이 라이브러리는 임시 파일을 만드는 것 뿐만 아니라, 파일의 속성을 설정하고, 파일을 삭제하는 작업을 쉽게 수행할 수 있도록 도와줍니다.
+
+더 많은 정보를 원하신다면, [공식 문서](https://developer.apple.com/documentation/foundation/filemanager)와 [TemporaryFile 라이브러리의 GitHub 페이지](https://github.com/pdsr/temporary-file)를 참고하세요.
+
+## 또 다른 살펴보기
+
+- [How to Create and Delete a Temporary File in Swift](https://www.codementor.io/@ritikgupta/creating-a-temporary-file-dyznzxo0w)
+- [Temporary Files in Swift](https://medium.com/@dynamic_cast/temporary-files-in-swift-590879a07e9f)
+
+## 참고
+
+[문법 가이드](https://www.markdownguide.org/basic-syntax/)를 참고하세요.

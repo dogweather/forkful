@@ -1,30 +1,58 @@
 ---
-title:    "Ruby: Tulostettavan virheenkorjaustulosteen tekeminen"
+title:    "Ruby: Vianjäljitystulosteiden tulostaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Moni kehittäjä joutuu jossain vaiheessa tekemään buginetsintää koodissaan. Tällöin debuggaus eli virheiden etsiminen ja korjaaminen on tärkeää. Yksi hyödyllinen työkalu tässä prosessissa on debug-tulostus eli debug output. Se auttaa selvittämään, mitä koodi tekee ja missä vaiheessa virheitä esiintyy. 
+Miksi tulostaa debugataustietoa?
+
+Tulostamalla debugataustietoja voit tarkastella koodisi toimintaa tarkemmin ja selvittää mahdollisia virheitä koodissasi. Tämä on erittäin hyödyllistä, kun koodi ei toimi odotetusti tai haluat varmistaa, että kaikki muuttujat ja arvot muuttuvat oikein.
 
 ## Miten
 
-Debug-tulostuksen luominen Ruby-ohjelmassa on helppoa. Ensimmäisenä on asetettava halutut tulostustekstit koodiin esimerkiksi puts-metodilla:
+Tässä esimerkissä tulostamme yksinkertaisen "Hello World" viestin Rubyllä käyttämällä ```puts```-metodia:
 
 ```Ruby
-puts "Tämä on debug-tulostus"
+puts "Hello World!"
 ```
 
-Tämän jälkeen suoritetaan ohjelma ja katsotaan debug-tulostuksen sisältöä. Tulostus löytyy tavallisesti ohjelman suorituksen rinnalla tai sen jälkeen. 
+Tämä koodi tulostaa tekstin "Hello World!" terminaaliin, jolloin voit varmistaa, että koodi toimii oikein.
 
-## Syväkatsaus
+Voit myös tulostaa muuttujien arvoja käyttämällä ```puts```-metodia. Esimerkiksi:
 
-Debug-tulostus voi sisältää monenlaisia tietoja, kuten muuttujien arvoja ja suoritettuja if-lausekkeita. Tämä auttaa havaitsemaan virheitä ja ymmärtämään, miten koodi toimii. On myös mahdollista käyttää erilaisia debuggaustyökaluja, kuten byebug- tai pry-gemmejä, jotka tarjoavat vielä tarkempia tietoja ohjelman suorituksen aikana.
+```Ruby
+x = 5
+puts "Muuttujan x arvo on: #{x}"
+```
+
+Tämä tulostaa tekstin "Muuttujan x arvo on: 5" terminaaliin.
+
+## Syvempi sukellus
+
+Rubyllä on myös muita tapoja tulostaa debugataustietoja. Voit käyttää esimerkiksi ```p```-metodia, joka tulostaa kaiken tiedon halutusta muuttujasta tai objektista.
+
+```Ruby
+x = 5
+p x
+```
+
+Tämä tulostaa muuttujan x kaiken tiedon, esimerkiksi sen tyyppin, arvon ja muut ominaisuudet.
+
+Voit myös käyttää ```.inspect```-metodia tulostamaan muuttujan tai objektin tarkka sisältö. Esimerkiksi:
+
+```Ruby
+arvoja = [1, 2, 3]
+arvoja.inspect
+```
+
+Tämä tulostaa kaikki arvot, jotka sisältyvät muuttujaan "arvoja".
 
 ## Katso myös
 
-- Debuggaus Rubyssa: https://www.ruby-lang.org/fi/documentation/tutorials/ruby-in-your-palm/part-iv/debugging/
-- Byebug-gemin käyttöönotto: https://rubygems.org/gems/byebug
-- Pry-gemin käyttöönotto: https://rubygems.org/gems/pry
+- [Ruby:n virallinen dokumentaatio](https://ruby-lang.org/en/documentation/)
+- [Ruby:n debuggausvinkit](https://www.rubyguides.com/2016/10/ruby-debugging/)
+- [Ruby Debugging Tools -opas](https://airbrake.io/blog/ruby-exception-handling/debugging-tools-ruby)

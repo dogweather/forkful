@@ -1,35 +1,55 @@
 ---
 title:    "Javascript: Excluindo caracteres que correspondem a um padrão"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
-
-Às vezes, em programação, precisamos lidar com dados que possuem caracteres extras ou desnecessários que podem atrapalhar nosso código. Nesses casos, é útil e eficiente remover esses caracteres e deixar apenas o que realmente importa. A exclusão de caracteres que correspondem a um padrão é uma maneira de limpar e organizar nossos dados de forma mais eficaz.
+## Por que
+Às vezes, em programação, pode ser necessário remover caracteres que correspondam a um determinado padrão em uma string. Isso pode ser útil para limpeza de dados ou para transformar uma string em outro formato específico. Neste post, vamos explorar como podemos fazer isso em Javascript.
 
 ## Como fazer
-
-Para deletar caracteres que correspondem a um padrão em Javascript, podemos usar a função "replace", que substitui caracteres especificados por um novo valor. Primeiro, definimos uma variável com nosso texto original e, em seguida, usamos o método "replace" especificando o padrão que queremos excluir e o valor vazio, que representa nada, para que os caracteres sejam removidos. Aqui está um exemplo de código:
+Para remover caracteres que correspondam a um padrão em uma string, podemos usar a função `replace()` do Javascript. Essa função aceita dois parâmetros: o padrão que desejamos encontrar e o que queremos substituir por esse padrão. Vamos dar uma olhada em um exemplo:
 
 ```Javascript
-let texto = "Este é um exemplo de texto com caracteres desnecessários!";
-texto = texto.replace(/[^a-zA-Z ]/g, "");
+let meuTexto = "Olá, meu nome é João!";
+meuTexto = meuTexto.replace(/[aeiou]/g, '');
+console.log(meuTexto);
+
+// Output: "Ol, m nm é J!"
 ```
 
-Neste exemplo, usamos a expressão regular /[^a-zA-Z ]/g para especificar que queremos excluir todos os caracteres que não são letras ou espaços em branco. O modificador "g" garante que todos os caracteres correspondentes sejam substituídos. O resultado do código acima seria: "Este é um exemplo de texto com caracteres desnecessários". Agora nosso texto está limpo e sem os caracteres indesejados.
+Neste exemplo, usamos a expressão regular `/[aeiou]/g` como o padrão a ser encontrado e substituído. Basicamente, isso significa que estamos procurando por qualquer vogal na string e as substituindo por uma string vazia, fazendo com que essas vogais sejam removidas.
 
-## Mergulho Profundo
+Outra maneira de remover caracteres que correspondam a um padrão é usando a mesma função `replace()`, mas desta vez fornecendo uma função como segundo parâmetro. Vamos ver outro exemplo:
 
-Existem muitas outras maneiras de excluir caracteres que correspondem a um padrão em Javascript. Podemos usar outras expressões regulares, como "\W", que exclui todos os caracteres não alfanuméricos, ou podemos usar o método "split", que divide uma string em um array usando um separador especificado e, em seguida, juntar os elementos do array novamente em uma string sem os caracteres indesejados.
+```Javascript
+let meuTexto = "Hoje é um lindo dia para aprender Javascript!";
+meuTexto = meuTexto.replace(/[A-Z]/g, function(match) {
+  return match.toLowerCase();
+});
+console.log(meuTexto);
 
-Também é importante lembrar que existem casos em que queremos manter alguns caracteres, mesmo se eles corresponderem ao padrão. Nesses casos, podemos usar grupos de captura em nossas expressões regulares e referenciá-los no valor de substituição.
+// Output: "hoje é um lindo dia para aprender javascript!"
+```
 
-A exclusão de caracteres que correspondem a um padrão pode ser muito útil em situações em que precisamos limpar nossos dados ou manipular strings de uma maneira específica. Conhecer as diferentes maneiras de fazer isso em Javascript pode melhorar nossa eficiência e tornar nosso código mais organizado.
+Neste caso, estamos usando a expressão regular `/[A-Z]/g` para encontrar todas as letras maiúsculas na string e substituí-las por sua versão minúscula usando uma função de callback.
+
+## Profundidade
+A função `replace()` do Javascript pode não ser apenas usada para substituir caracteres, mas também para executar outras ações, como por exemplo, acesso a grupos de captura em expressões regulares. Ao usar grupos de captura, podemos transformar nossa string de várias maneiras. Por exemplo:
+
+```Javascript
+let telefone = "Meu número é (55) 12345-6789";
+let novoTelefone = telefone.replace(/\((\d{2})\) (\d{5})-(\d{4})/, '$2 $3');
+console.log(novoTelefone);
+
+// Output: "12345 6789"
+```
+
+Neste exemplo, estamos usando grupos de captura para extrair apenas os dígitos correspondentes ao código de área e ao número de telefone, que são os grupos 2 e 3, respectivamente. Então, na função de substituição, estamos retornando apenas esses grupos, o que resulta em um novo número de telefone formatado de maneira diferente.
 
 ## Veja também
-
-- [Guia de expressões regulares em Javascript](https://www.regular-expressions.info/javascript.html)
-- [Documentação do método replace em Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Blog post sobre o uso de grupos de captura em expressões regulares em Javascript](https://javascript.plainenglish.io/a-simple-introduction-to-javascript-regular-expressions-for-beginners-ad61338e74dc?sk=7e35aa74925681e1796c022ce2b65ba3)
+- [Documentação oficial do Javascript: String.prototype.replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Expressões regulares em Javascript](https://www.regular-expressions.info/javascript.html)
+- [Guia completo de Expressões Regulares em Javascript](https://javascript.info/regular-expressions)

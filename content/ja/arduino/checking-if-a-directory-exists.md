@@ -1,46 +1,35 @@
 ---
 title:    "Arduino: ディレクトリが存在するかどうかを確認する"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+ディレクトリが存在するかどうかを確認することは、Arduinoプログラミングで非常に重要です。デバイスやセンサーからのデータを保存するために、正しいフォルダーにアクセスする必要があります。そのため、ディレクトリの存在をチェックすることは、データ管理や正しいプログラムの実行にとって必要不可欠です。
 
-プログラミングをする上で、ディレクトリが存在するかどうかを確認する必要がある場合があります。たとえば、ファイルを読み込む際には、そのファイルが存在するかどうかを確認する必要があります。そのため、ディレクトリが存在するかどうかを確認する機能は非常に重要です。
+## 方法
+Arduinoでは、ディレクトリをチェックするための便利な関数が用意されています。それは「SD.exists（）」です。以下の例では、SDカードに「sample.txt」というファイルが存在するかどうかをチェックしています。
 
-## 使い方
-
-まず、ディレクトリが存在するかどうかを確認するためには、次のようなコードを使用します。
-
-```Arduino
-#include <SD.h>
-
-File directory = SD.open("/directory"); // ディレクトリを開く
-
-if (!directory) { // ディレクトリが存在しない場合
-  Serial.println("ディレクトリは存在しません");
-}
-
-directory.close(); // ディレクトリを閉じる
 ```
-このコードでは、`SD`ライブラリを使用してディレクトリを開き、その後、`if`条件によってディレクトリが存在しない場合にメッセージを表示します。
-
-もしディレクトリが存在する場合は、次のようにコードを変更してメッセージを表示させることができます。
-
-```Arduino
-if (directory) { // ディレクトリが存在する場合
-  Serial.println("ディレクトリは存在します");
+Arduino ...
+if(SD.exists("sample.txt")){
+  Serial.println("sample.txt exists in the SD card.");
+}
+else{
+  Serial.println("sample.txt does not exist.");
 }
 ```
+
+上記のコードを実行すれば、シリアルモニターに「sample.txt exists in the SD card.」というメッセージが表示されるはずです。
 
 ## ディープダイブ
+SD.exists（）関数は、ファイルではなくディレクトリをチェックすることもできます。SDカード内にフォルダーがあるかどうかをチェックするには、「SD.exists（「/ samplefolder」）」のように、フォルダーパスを指定します。
 
-ディレクトリが存在するかどうかを確認するには、`SD.open()`関数を使用します。この関数を使用すると、ディレクトリを開くことができます。開いたディレクトリは、`File`オブジェクトとして定義されます。
+また、SD.exists（）関数は、複数のファイルやフォルダーを一度にチェックすることもできます。たとえば、「SD.exists（「/ samplefolder / sample1.txt」、「/ samplefolder / sample2.txt」、「/ samplefolder2」）」のように、引数に複数のパスを指定できます。
 
-`File`オブジェクトは、ファイルやディレクトリに対して行う操作を管理するオブジェクトです。`SD.open()`を使用してディレクトリを開いた後は、`if`条件を用いて、オブジェクトが空でないことを確認することで、ディレクトリが存在するかどうかを判断することができます。
-
-## See Also
-
-- [SD ライブラリの使用方法](https://www.arduino.cc/en/Reference/SD)
-- [Arduino 公式ウェブサイト](https://www.arduino.cc/)
+## 参考リンク
+- [SD.exists() - Arduino Reference](https://www.arduino.cc/reference/en/libraries/sd/sdexists/)
+- [How to Check if a File Exists Using Arduino](https://maker.pro/arduino/tutorial/how-to-check-if-a-file-exists-using-arduino)
+- [Arduino File Input and Output Tutorial](https://www.arduino.cc/en/Tutorial/Files)

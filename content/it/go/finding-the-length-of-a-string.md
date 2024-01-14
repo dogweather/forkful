@@ -1,52 +1,43 @@
 ---
-title:    "Go: Trova la lunghezza di una stringa"
+title:    "Go: Trovare la lunghezza di una stringa"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Una delle funzionalità fondamentali della programmazione è la capacità di manipolare facilmente le stringhe. La lunghezza di una stringa è un concetto importante e spesso richiesto nelle applicazioni. In questa guida, scopriremo come trovare la lunghezza di una stringa utilizzando il linguaggio di programmazione Go.
+Trovare la lunghezza di una stringa è spesso un'attività fondamentale nella programmazione. Conoscere la lunghezza di una stringa è utile per molteplici ragioni, come ad esempio la validazione dei dati inseriti dall'utente o la manipolazione di stringhe in operazioni più complesse.
 
-## Come
+## Come fare
 
-Il calcolo della lunghezza di una stringa in Go è estremamente semplice grazie alla funzione integrata `len()`. Basta inserire la stringa all'interno delle parentesi della funzione e il risultato sarà il numero di caratteri presenti nella stringa.
+In Go, per trovare la lunghezza di una stringa possiamo utilizzare la funzione predefinita `len()`. Questa funzione accetta come argomento una stringa e restituisce il numero di caratteri presenti all'interno della stringa. Vediamo un esempio pratico:
 
 ```Go
-package main
-
-import (
-    "fmt"
-)
-
-func main() {
-    str := "Ciao mondo!"
-    fmt.Println(len(str))
-}
-
-// Output: 11
+stringa := "Ciao mondo"
+lunghezza := len(stringa)
+fmt.Println(lunghezza)
 ```
 
-In questo semplice esempio, abbiamo dichiarato una variabile `str` contenente la stringa "Ciao mondo!". La `len()` funzione restituisce il valore 11, cioè il numero di caratteri presenti nella stringa.
+In questo esempio, la variabile `lunghezza` conterrà il valore 10, poiché la stringa "Ciao mondo" è composta da 10 caratteri.
+
+Possiamo anche utilizzare la funzione `len()` per trovare la lunghezza di una stringa contenuta all'interno di una variabile di tipo `slice`. In questo caso, la funzione restituirà il numero di elementi contenuti all'interno della `slice`:
+
+```Go
+slice := []string{"pomodoro", "patata", "carota"}
+lunghezza := len(slice)
+fmt.Println(lunghezza)
+```
+
+Nell'esempio sopra, la lunghezza della `slice` sarà di 3 elementi.
 
 ## Approfondimento
 
-È importante notare che la funzione `len()` conta il numero di byte all'interno della stringa e non il numero di caratteri visibili. Questo significa che alcuni caratteri speciali possono essere rappresentati da più di un byte, causando una differenza tra il numero di caratteri visibili e il numero di byte contati dalla funzione `len()`.
+Oltre alla funzione `len()`, possiamo anche utilizzare il package `"strings"` di Go per avere maggiori opzioni per la manipolazione di stringhe. Ad esempio, il metodo `Count()` di questo package ci permette di trovare il numero di occorrenze di una determinata sottostringa all'interno di una stringa più grande.
 
-Inoltre, la funzione `len()` può anche essere utilizzata per ottenere la lunghezza di altre strutture di dati, come ad esempio gli array.
+## Vedere anche
 
-```Go
-strArr := [3]string{"Ciao", "mondo", "!"}
-fmt.Println(len(strArr))
-
-// Output: 3
-```
-
-In questo esempio, abbiamo una variabile `strArr` contenente un array di stringhe con tre elementi. Anche in questo caso, la funzione `len()` restituisce il numero di elementi presenti nell'array.
-
-## Vedi anche
-
-- [Documentazione ufficiale Go sulla funzione `len()`](https://golang.org/ref/spec#Length_and_capacity)
-- [Esempi di codice per la funzione `len()` in Go](https://gobyexample.com/length)
-- [Guida alla programmazione in Go per principianti](https://medium.com/tech-jobs-academy/beginner-guide-programming-in-go-golang-a8e063dd9117)
+- Documentazione ufficiale Go: https://golang.org/pkg/strings/
+- Tutorial sulla manipolazione di stringhe in Go: https://www.callicoder.com/golang-strings-tutorial/
+- Altro esempio pratico su come trovare la lunghezza di una stringa in Go: https://yourbasic.org/golang/find-string-length/

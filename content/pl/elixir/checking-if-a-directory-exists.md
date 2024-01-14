@@ -1,45 +1,57 @@
 ---
-title:    "Elixir: Sprawdzanie, czy istnieje katalog."
+title:    "Elixir: Sprawdzanie czy istnieje folder"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Sprawdzanie istnienia katalogu jest ważnym elementem w programowaniu w Elixir. Pozwala na upewnienie się, czy dany katalog istnieje przed wykonaniem operacji na nim. Jest to szczególnie przydatne w przypadku tworzenia plików lub przetwarzania danych w istniejącym katalogu.
+Często w trakcie pisania aplikacji w Elixirze chcemy upewnić się, czy dany katalog istnieje przed wykonaniem operacji na plikach wewnątrz niego. Warto więc poznać, jak w prosty sposób można sprawdzić, czy dany katalog istnieje w naszym systemie plików.
 
 ## Jak to zrobić
 
-Można to zrobić przy pomocy funkcji `File.stat/1`, która przyjmuje ścieżkę do katalogu jako argument i zwraca informacje o pliku. Jeśli katalog istnieje, funkcja zwróci `%File.Stat{}` z odpowiednimi wartościami, w przeciwnym razie zostanie zgłoszony błąd.
+Sprawdzenie, czy dany katalog istnieje w Elixirze jest bardzo proste. Należy skorzystać z funkcji `:file.cwd/0`, która będzie zwracać aktualną ścieżkę do katalogu roboczego, i porównać ją z poszukiwanym katalogiem. Kod będzie wyglądał następująco:
 
-```Elixir
-File.stat("moj_katalog/") 
-# => %File.Stat{dev: 234881026, ino: 562949953594879, mode: 16877, nlink: 3, uid: 501, gid: 20, rdev: 0, size: 96, blksize: 4096, blocks: 0, atime: {2019, 1, 29, 15, 19, 13}, mtime: {2019, 1, 29, 15, 19, 13}, ctime: {2019, 1, 29, 15, 19, 13}}
+```
+# Wczytanie biblioteki :file
+:file.cwd()
+
+# Sprawdzenie, czy katalog "images" znajduje się w aktualnym katalogu roboczym
+if :file.cwd() == "images" do
+  IO.puts "Katalog 'images' istnieje."
+else
+  IO.puts "Katalog 'images' nie istnieje."
+end
 ```
 
-W powyższym przykładzie, katalog "moj_katalog/" istnieje, więc funkcja zwraca informacje o nim.
+Output dla powyższego kodu będzie wyglądał następująco:
 
-Jeśli chcemy sprawdzić tylko istnienie katalogu, możemy skorzystać z metody `File.dir?/1`, która zwraca wartość logiczną (true/false).
-
-```Elixir
-File.dir?("moj_katalog/") 
-# => true
+```
+Katalog 'images' nie istnieje.
 ```
 
-W przypadku, gdy katalog nie istnieje, funkcja zwróci `false`.
+## Głębszy wgląd
 
-```Elixir
-File.dir?("nieistniejacy_katalog/") 
-# => false
+Warto również wiedzieć, że funkcja `:file.cwd/0` zwraca ciąg znaków, a niebezpiecznie jest polegać na konkretnych ścieżkach w kodzie. Lepiej jest wykorzystać funkcję `:file.expand_path/1`, aby przekonwertować ścieżkę na absolutną. W ten sposób nasz kod będzie bardziej niezawodny.
+
+```
+# Wczytanie biblioteki :file
+:file.cwd()
+
+# Przekonwertowanie ścieżki na absolutną
+:file.expand_path("images")
+
+# Sprawdzenie, czy katalog "images" znajduje się w aktualnym katalogu roboczym
+if :file.cwd() == "images" do
+  IO.puts "Katalog 'images' istnieje."
+else
+  IO.puts "Katalog 'images' nie istnieje."
+end
 ```
 
-## Głębszy przegląd
+## Zobacz również
 
-Sprawdzanie istnienia katalogu może być również przydatne w przypadku tworzenia aplikacji webowych. Możemy wykorzystać tę funkcję do sprawdzenia, czy istnieje katalog dla konkretnego użytkownika, a następnie wykorzystać go do zapisu plików lub przetwarzania danych. Możemy również dodać warunki, które będą wyświetlać komunikat o błędzie lub prosić użytkownika o utworzenie katalogu w razie jego braku.
-
-## Zobacz też
-
-- Dokumentacja Elixir: [https://hexdocs.pm/elixir/File.html#stat/1](https://hexdocs.pm/elixir/File.html#stat/1)
-- Przykładowe wykorzystanie funkcji `File.stat/1` w aplikacji webowej: [https://github.com/elixir-lang/plug/blob/master/lib/plug/multipart.ex#L72](https://github.com/elixir-lang/plug/blob/master/lib/plug/multipart.ex#L72)
-- Poradnik o obsłudze plików i katalogów w Elixir: [https://elixir-lang.org/getting-started/file-operations.htm/](https://elixir-lang.org/getting-started/file-operations.html)
+- [Dokumentacja Elixir: :file.cwd/0](https://hexdocs.pm/elixir/File.html)
+- [Dokumentacja Elixir: :file.expand_path/1](https://hexdocs.pm/elixir/File.html#expand_path/1)

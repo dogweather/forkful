@@ -1,44 +1,47 @@
 ---
-title:    "Python: Affichage des sorties de débogage"
+title:    "Python: Imprimer des sorties de débogage"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Lors de la programmation en Python, il y a souvent des moments où l'on se retrouve face à des bugs ou des erreurs difficiles à résoudre. Dans de tels cas, il est utile de pouvoir imprimer des informations de débogage pour mieux comprendre ce qui se passe dans notre code. Cela peut être particulièrement utile lors de la recherche de problèmes dans des boucles ou des fonctions.
+
+Pourquoi quelqu'un serait-il intéressé par l'affichage de résultats de débogage ? Lorsque nous programmons en Python, il y a parfois des erreurs qui se produisent et la seule façon de les résoudre est de comprendre ce qui se passe dans notre code. C'est là que l'affichage de résultats de débogage entre en jeu. En affichant à l'écran des informations sur les variables, les valeurs et les actions du programme, nous pouvons facilement repérer où se situe le problème et le corriger rapidement.
 
 ## Comment faire
-Il existe plusieurs façons d'imprimer des informations de débogage en Python. La méthode la plus courante est d'utiliser la fonction `print()`. Voici un exemple simple :
+
+Pour afficher des résultats de débogage en Python, il existe deux options principales : la fonction `print()` et le module `logging`.
 
 ```Python
-x = 5
-print("La valeur de x est :", x)
+# Exemple utilisant la fonction print()
+age = 25
+print("Mon âge est :", age)
+
+# Output : Mon âge est : 25
+
+# Exemple utilisant le module logging
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+age = 25
+logging.debug("Mon âge est : %s", age)
+
+# Output : DEBUG:root:Mon âge est : 25
 ```
 
-Cela imprimera "La valeur de x est : 5" dans la console. Nous pouvons également utiliser la méthode `format()` pour rendre le code plus lisible :
-
-```Python
-x = 5
-print("La valeur de x est : {}".format(x))
-```
-
-Nous pouvons également imprimer plusieurs variables en même temps en utilisant la notation par virgule :
-
-```Python
-x = 5
-y = 10
-print("La valeur de x est : {}, la valeur de y est : {}".format(x, y))
-```
-
-Cela imprimera "La valeur de x est : 5, la valeur de y est : 10" dans la console. En plus de ces méthodes, Python offre également les modules `logging` et `pdb` pour une gestion plus avancée des informations de débogage.
+Dans les deux cas, nous obtenons le même résultat affiché à l'écran, mais le module `logging` offre des fonctionnalités plus avancées telles que la gestion des niveaux de débogage et l'enregistrement des résultats dans un fichier.
 
 ## Plongée en profondeur
-L'impression de données de débogage peut également être utile lors de la mise en place de conditions de débogage, où certaines parties du code ne seront exécutées que si cette condition est remplie. Cela peut être utile pour tester différentes parties du code ou pour trouver des erreurs spécifiques.
 
-Il est important de noter que l'impression de données de débogage peut être coûteuse en termes de performances, surtout si elle est utilisée dans des boucles. Il est donc recommandé de ne l'utiliser que pendant le processus de développement et de la supprimer avant de déployer le code en production.
+L'affichage de résultats de débogage peut être très utile, mais il est important de ne pas en abuser. Trop d'affichages peuvent rendre le programme difficile à lire et à comprendre. Il est donc important de les utiliser judicieusement et de les supprimer une fois que le problème est résolu.
+
+De plus, le module `logging` offre des fonctionnalités de formatage pour personnaliser l'affichage des résultats de débogage. On peut également utiliser des paramètres tels que `exc_info=True` pour afficher des informations sur les erreurs et les exceptions.
 
 ## Voir aussi
-- [Documentation Python sur l'impression de données de débogage](https://docs.python.org/fr/3/library/functions.html#print)
-- [Article sur l'utilisation de `logging` en Python](https://medium.com/@mohammadbasha/understanding-python-logging-module-part-i-loggers-handlers-and-formatters-998cc9db5690)
-- [Guide sur l'utilisation de `pdb` pour le débogage en Python](https://realpython.com/python-debugging-pdb/)
+
+- [Documentation officielle de Python sur le débogage](https://docs.python.org/fr/3/library/logging.html)
+- [Guide du débogage en Python sur RealPython](https://realpython.com/python-debugging-pdb/)
+
+Merci d'avoir lu cet article sur l'affichage de résultats de débogage en Python. J'espère qu'il vous a été utile dans votre parcours de programmation !

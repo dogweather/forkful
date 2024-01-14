@@ -1,53 +1,54 @@
 ---
-title:    "Rust: Lettura degli argomenti da riga di comando."
+title:    "Rust: Lettura degli argomenti della riga di comando"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ci sono molte situazioni in cui un programma deve essere in grado di ricevere input dinamici dall'utente. I comandi da riga di comando sono uno dei modi più comuni per questo. In questo articolo, impareremo come leggere gli argomenti da riga di comando in Rust.
+La lettura degli argomenti della riga di comando è un'operazione fondamentale per qualsiasi programmazione su Rust. Non solo è utile per la comunicazione con l'utente, ma può anche fornire informazioni importanti per il corretto funzionamento del programma.
 
 ## Come fare
 
-Per leggere gli argomenti da riga di comando in Rust, dobbiamo utilizzare la libreria `std::env`. Questa libreria ci permette di accedere agli argomenti passati al programma attraverso la funzione `std::env::args()`. Vediamo un esempio di come utilizzarla:
+Per leggere gli argomenti della riga di comando in Rust, è necessario utilizzare la libreria standard `std::env`. Questo modulo fornisce la funzione `args` che restituisce un iterator sugli argomenti della riga di comando. Ad esempio, se vogliamo stampare tutti gli argomenti passati al nostro programma, possiamo utilizzare il seguente codice:
 
 ```Rust
 use std::env;
 
 fn main() {
-    // Ottieni gli argomenti da riga di comando
     let args: Vec<String> = env::args().collect();
-    // Stampa il primo argomento
-    println!("Il primo argomento è: {}", args[1]);
-}
-```
 
-Se eseguiamo questo programma da riga di comando con un argomento, ad esempio `./programma argomento`, il risultato sarà `Il primo argomento è: argomento`.
-
-Inoltre, possiamo utilizzare il metodo `len()` sulla nostra lista di argomenti per controllare quanti argomenti sono stati passati. Possiamo anche ciclare su tutti gli argomenti utilizzando un ciclo `for`:
-
-```Rust
-// Controlla se ci sono almeno 2 argomenti presenti
-if args.len() > 1 {
-    // Itera su tutti gli argomenti tranne il primo (il primo è il nome del programma)
-    for arg in args.iter().skip(1) {
-        println!("Argomento: {}", arg);
+    for arg in args {
+        println!("{}", arg);
     }
 }
 ```
 
-Questo è solo un esempio di come leggere gli argomenti da riga di comando in Rust, ma ci sono molte altre funzionalità della libreria `std::env` che possono essere utilizzate.
+Proviamo a eseguire questo programma con alcuni argomenti:
+
+```bash
+$ cargo run hello world
+```
+
+L'output sarà:
+
+```
+example
+hello
+world
+```
+
+Come possiamo vedere, il primo argomento è sempre il nome del programma stesso, seguito dagli argomenti passati dall'utente. Inoltre, possiamo utilizzare il metodo `len` sul vettore degli argomenti per ottenere il numero totale di argomenti passati.
 
 ## Approfondimento
 
-Oltre alla funzione `args()`, la libreria `std::env` ci offre anche altre utili funzioni, come ad esempio `current_dir()` per ottenere la directory corrente del programma o `var()` per accedere alle variabili d'ambiente.
+Oltre alla funzione `args`, il modulo `std::env` offre anche altre utili funzioni per la gestione degli argomenti della riga di comando. Ad esempio, possiamo utilizzare il metodo `current_exe` per ottenere il percorso del programma in esecuzione, o il metodo `var` per ottenere il valore di una variabile di ambiente specifica. È anche possibile modificare le variabili di ambiente utilizzando i metodi `set_var` e `remove_var`.
 
-Inoltre, la libreria `std::env` ci permette anche di passare argomenti al programma quando viene eseguito da un altro programma, ad esempio da un altro programma Rust o da uno script bash.
+Inoltre, è possibile utilizzare la libreria esterna `clap` per gestire in modo più strutturato e flessibile gli argomenti della riga di comando.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di `std::env`](https://doc.rust-lang.org/std/env)
-- [Tutorial su come leggere gli argomenti da riga di comando in Rust](https://www.tutorialspoint.com/rust/rust_command_line_arguments.htm)
-- [Esempi di utilizzo dei comandi da riga di comando in Rust](https://blog.knoldus.com/command-line-programming-in-rust-an-introduction/)
+- Documentazione ufficiale di `std::env`: https://doc.rust-lang.org/std/env/
+- Documentazione di `clap`: https://docs.rs/clap/3.0.0-beta.3/clap/

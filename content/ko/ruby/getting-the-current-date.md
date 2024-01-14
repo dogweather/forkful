@@ -1,40 +1,49 @@
 ---
 title:    "Ruby: 현재 날짜 가져오기"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-날짜를 얻는 것에 대해 관심이 있다면 가장 먼저 의심스러워 할 수 있습니다. 그러나 현재 날짜를 알고 있음으로써 업무와 일정을 관리하는 데 도움이 될 수 있으며, 프로그래밍에서도 여러 유용한 일을 할 수 있습니다.
+왜 현재 날짜를 얻는 것에 관심을 가져야 할까요? 현재 날짜를 사용하면 프로그래밍을 할 때 많은 기능을 추가할 수 있습니다. 예를 들어, 실제 시간과 날짜를 기반으로 작업을 스케줄링하거나 사용자에게 정확한 시간을 보여주는 기능을 구현할 수 있습니다.
 
 ## 방법
 
-루비에서 현재 날짜를 얻는 방법은 꽤 간단합니다. 우선, Date 라이브러리를 require 해주어야 합니다. 그 다음으로는 Date.today를 호출하면 현재 날짜가 얻어집니다. 아래는 이 과정을 보여주는 코드 예시입니다.
+1. Ruby의 빌트인 함수를 사용하여 현재 날짜와 시간을 얻을 수 있습니다.
 
 ```Ruby
-require 'date'
+current_date = Time.now
+puts current_date
+```
+출력결과: 2021-09-22 12:00:00
 
-current_date = Date.today
-puts "Today's date is #{current_date}"
+2. 특정 형식으로 날짜를 출력하고 싶다면 `strftime` 메서드를 사용할 수 있습니다.
+
+```Ruby
+current_date = Time.now
+puts current_date.strftime("%m/%d/%Y")
+```
+출력결과: 09/22/2021
+
+3. 날짜와 시간을 세분화하여 따로 변수에 저장할 수도 있습니다.
+
+```Ruby
+year = current_date.year
+month = current_date.month
+day = current_date.day
+hour = current_date.hour
+minute = current_date.minute
+second = current_date.second
 ```
 
-위 코드를 실행하면 아래와 같은 결과가 나올 것입니다.
+## Deep Dive
 
-```
-Today's date is 2021-08-05
-```
+날짜와 시간은 컴퓨터에서 숫자로 나타내는 것이 일반적입니다. Ruby에서도 마찬가지로 1970년 1월 1일 자정부터 현재까지 경과한 초를 나타내는 숫자로 날짜와 시간을 나타냅니다. 이를 "Epoch Time"이라고 부릅니다. Ruby에서는 `Time` 클래스의 `now` 메서드를 사용하여 현재 날짜와 시간의 Epoch Time을 가져올 수 있습니다. 이 값을 이용하여 날짜와 시간을 계산하거나 서로 다른 시간대를 변환할 수도 있습니다.
 
-위에서는 현재 날짜를 년-월-일 형식으로 출력하도록 설정하였지만, 이 외에도 다양한 방법으로 날짜를 얻을 수 있습니다. 예를 들어, strftime 메서드를 사용하면 년, 월, 일 등 다양한 요소를 원하는 형식으로 출력할 수 있습니다.
+## 더 읽어보기
 
-## 깊게 파고들기
-
-다음으로 가장 기본적인 형태의 날짜 객체인 Date 클래스에 대해 좀 더 자세히 알아보겠습니다. Date 클래스는 기본적으로 연, 월, 일 정보를 가지고 있습니다. 이를 가지고 추가적인 작업을 할 수 있으며, Date 클래스는 여러 유용한 메서드를 제공합니다. 이를 통해 날짜 계산, 요일 확인, 윤년 여부 등 다양한 작업을 할 수 있습니다.
-
-Date 클래스의 메서드들을 자세히 알아보려면 루비 공식 문서를 참고하는 것을 추천드립니다.
-
-## See Also
-
-- [Date 라이브러리 문서](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
-- [루비 공식 문서](https://www.ruby-lang.org/ko/documentation/)
+* [Ruby Time 클래스](https://ruby-doc.org/core-3.0.0/Time.html)
+* [Ruby의 strftime 메서드 사용법](https://www.tutorialspoint.com/ruby-time-strftime-method)

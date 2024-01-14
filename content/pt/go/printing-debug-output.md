@@ -1,47 +1,42 @@
 ---
-title:    "Go: Imprimindo saída de depuração"
+title:    "Go: Impressão de saída de depuração"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir mensagens de depuração em seu código Go
+## Por que imprimir saída de depuração em Go
 
-Muitas vezes, durante o desenvolvimento de um programa, nos deparamos com erros ou bugs que podem ser difíceis de identificar e corrigir. É aí que entra a impressão de mensagens de depuração. Ao imprimir informações específicas sobre o estado do programa em determinados pontos do código, podemos entender melhor o que está acontecendo e assim, encontrar e corrigir os problemas de forma mais eficiente.
+Debugging, ou depuração, é uma parte essencial do processo de desenvolvimento de software. Ao imprimir saída de depuração, podemos visualizar o fluxo do nosso código e encontrar erros e problemas mais facilmente. Isso nos ajuda a entender melhor o funcionamento do nosso programa e a resolver problemas de forma mais eficiente.
 
-## Como imprimir mensagens de depuração em Go
+## Como imprimir saída de depuração em Go
 
-Para imprimir mensagens de depuração em Go, podemos utilizar a função `fmt.Printf()`, que funciona de maneira semelhante ao `printf()` em linguagens como C e Java.
+Para imprimir saída de depuração em Go, podemos usar a função `fmt.Printf()` ou `fmt.Println()`. Vamos supor que temos uma variável `nome` que queremos imprimir para fins de depuração. Podemos fazer isso da seguinte maneira:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-  nome := "Maria"
-  fmt.Printf("Olá, %s! Seu nome possui %d letras.", nome, len(nome))
-}
+nome := "João"
+fmt.Printf("O valor da variável nome é: %s\n", nome)
 ```
 
-Neste exemplo, usamos o verbo `%s` para especificar que o valor da variável `nome` deve ser substituído na mensagem, e `%d` para o tamanho do nome de Maria. A saída seria:
+O `%s` é um especificador de formato que indica que queremos imprimir uma string. Podemos usar outros especificadores de formato, dependendo do tipo de dado que queremos imprimir. Por exemplo, `%d` para inteiros e `%f` para números de ponto flutuante.
 
+Além disso, podemos usar a função `fmt.Sprintf()` para atribuir a saída de depuração a uma variável, ao invés de imprimir diretamente na tela:
+
+```Go
+debug := fmt.Sprintf("O valor da variável nome é: %s", nome)
+//fazer algo com a string debug
 ```
-Olá, Maria! Seu nome possui 5 letras.
-```
 
-Também é possível utilizar `fmt.Print()` para imprimir mensagens sem formatação ou `fmt.Println()` para adicionar uma quebra de linha no final.
+## Deep Dive: Mais informações sobre a impressão de saída de depuração
 
-## Profundando na impressão de mensagens de depuração
+Além das funções `fmt.Printf()` e `fmt.Println()`, Go também possui outras ferramentas úteis para imprimir saída de depuração. Por exemplo, podemos usar a biblioteca `log` para imprimir mensagens de log em diferentes níveis de severidade. Isso pode ser útil para depurar problemas em diferentes partes do código.
 
-Além de simplesmente imprimir valores de variáveis, também podemos utilizar mensagens de depuração em Go para verificar se determinados trechos do código estão sendo executados corretamente. Um exemplo seria imprimir uma mensagem logo antes e após uma condição ser testada ou um laço de repetição ser executado.
-
-Outra forma útil de utilizar mensagens de depuração é imprimir os valores de retorno de funções em diferentes pontos do programa para entender melhor o fluxo de execução.
-
-Também podemos usar a função `fmt.Sprintf()` para criar strings formatadas e armazená-las em uma variável, em vez de imprimi-las diretamente na tela. Isso pode ser útil ao imprimir várias informações juntas em uma única mensagem de depuração.
+Outra ferramenta útil é o pacote `spew`, que fornece funções para imprimir estruturas de dados complexas de forma bastante legível e organizada. Isso pode ser especialmente útil quando estamos lidando com dados grandes e complexos.
 
 ## Veja também
 
-- [Documentação oficial do pacote fmt em Go](https://golang.org/pkg/fmt/)
-- [Ótimos recursos para ajudar na depuração de código em Go](https://medium.com/swlh/debugging-go-code-5-tips-and-tricks-b309c9f44d26)
-- [Vídeo tutorial sobre impressão de mensagens de depuração em Go](https://www.youtube.com/watch?v=CF9S4QZuV30)
+- [A documentação oficial sobre as funções de impressão de formato em Go](https://golang.org/pkg/fmt/)
+- [Um tutorial sobre depuração em Go usando a função `fmt.Printf()`](https://www.calhoun.io/how-to-debug-go-code-with-printf/)
+- [O pacote `log` em Go](https://golang.org/pkg/log/)
+- [O pacote `spew` em Go](https://github.com/davecgh/go-spew)

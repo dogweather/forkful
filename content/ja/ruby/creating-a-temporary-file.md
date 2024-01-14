@@ -1,38 +1,56 @@
 ---
-title:    "Ruby: 一時ファイルの作成"
+title:    "Ruby: 「一時ファイルの作成」"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-一時ファイルを作成するのは、プログラマーにとって便利な方法です。例えば、一時的にデータを保存し、後で必要に応じて処理するために使用することができます。
+
+あなたがプログラミングを学んでいるならば、おそらく一度は一時ファイルを作成する必要性に遭遇したことがあるでしょう。一時ファイルは、プログラムがデータを保存するための一時的な場所です。ここでは、Rubyを使って一時ファイルを作成して保存する方法をご紹介します。
 
 ## 作り方
-一時ファイルを作成するためには、Rubyの標準ライブラリであるtempfileを使用することで簡単に実現できます。以下のようなコードを使用することで、一時ファイルを作成することができます。
+
+一時ファイルを作成するには、`Tempfile`クラスを使います。まずは、必要なライブラリを読み込みます。
 
 ```Ruby
 require 'tempfile'
-
-# 一時ファイルを作成
-temp_file = Tempfile.new('example')
-
-# ファイルにデータを書き込む
-temp_file.write('This is an example file.')
-
-# ファイルを閉じる
-temp_file.close
-
-# 作成したファイルを読み込む
-puts File.read(temp_file.path)
 ```
 
-上記のコードを実行すると、新しい一時ファイルが作成され、指定したデータが書き込まれます。また、閉じた後もファイルを読み込むことができます。
+次に、`Tempfile.new`メソッドを使って一時ファイルを作成します。このメソッドは、引数にファイル名のプレフィックスを取ります。その後、ファイルを編集するために`open`メソッドを使います。
 
-## ディープダイブ
-一時ファイルを作成する際には、いくつかのオプションがあります。例えば、一時ファイルが削除されるタイミングを制御することができます。また、一時ファイルをバイナリモードで作成することも可能です。詳しくは、公式ドキュメントを参照してください。
+```Ruby
+tempfile = Tempfile.new('sample')
+tempfile.open
+```
 
-## See Also
-- [RubyのTempfileに関する公式ドキュメント](https://ruby-doc.org/stdlib-2.6.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [一時ファイルを扱う際のベストプラクティス](https://rubyplus.com/articles/3341-Managing-Temporary-Files-in-Ruby)
-- [一時ファイルを作成する際のセキュリティ上の注意点](https://owasp.org/www-project-cheat-sheets/cheatsheets/Insecure_Example_Temporary_File)
+ファイルに書き込むには、`puts`メソッドを使います。
+
+```Ruby
+tempfile.puts "Hello, World!"
+```
+
+最後に、`close`メソッドを使ってファイルを閉じます。
+
+```Ruby
+tempfile.close
+```
+
+これで、一時ファイルが作成され、"Hello, World!"という文字列が書き込まれます。
+
+## 深堀
+
+一時ファイルを作成するときには、ファイルのオープンやクローズを手動で行う必要はありません。`Tempfile.open`メソッドを使うと、ファイルをオープンしてブロック内の処理が終了した後に自動的にクローズします。
+
+また、作成した一時ファイルのパスを取得するには、`tempfile.path`メソッドを使います。その他のオプションや詳細な使い方については、公式ドキュメントを参照してください。
+
+## さらに詳しく知りたい方へ
+
+ここでは、一時ファイルを作成する方法について簡単に説明しましたが、実際には様々な方法があります。他にも、ファイルを削除する方法やファイルのモードを指定する方法など、さらに詳しく知りたい方は以下のリンクを参考にしてください。
+
+- [Rubyドキュメント - Tempfileクラス](https://docs.ruby-lang.org/ja/latest/class/Tempfile.html)
+- [一時ファイルの作成方法 | TechAcademyマガジン](https://techacademy.jp/magazine/32801)
+- [一時ファイルを作成する方法 | Qiita](https://qiita.com/sukepachi/items/cabf9b1f368cc1531311)
+
+## 関連記事を見る

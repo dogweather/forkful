@@ -1,48 +1,52 @@
 ---
 title:    "Bash recipe: Writing to standard error"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-When writing scripts in Bash, it is important to properly manage errors and display relevant information to the user. This is where writing to standard error comes in. By sending error messages to standard error, instead of standard output, it allows for more efficient error handling and helps to differentiate between regular output and errors. 
+When writing Bash scripts, it is important to have a way to communicate errors or important information to the user. This is where writing to standard error comes in. By utilizing this feature, you can ensure that your script is robust and can handle unexpected errors or situations.
 
-## How To 
+## How To
 
-To write to standard error in Bash, you can simply use the `>&2` notation after your command. This redirects the output of the command to standard error instead of standard output. For example: 
-
-```Bash
-ls -l /fake/directory >&2
-```
-
-This will display the error message "ls: cannot access '/fake/directory': No such file or directory" to standard error instead of the usual output of the `ls` command. 
-
-You can also use the `echo` command to directly print messages to standard error. For example: 
+To write to standard error in Bash, you can use the `>&2` syntax after the `echo` command. This redirects the output of the `echo` command to standard error instead of standard output. Let's take a look at an example:
 
 ```Bash
-echo "Error: Invalid input" >&2
+#!/bin/bash
+
+# This script will output a message to standard error
+echo "This is a sample error message" >&2
 ```
 
-This will print the error message "Error: Invalid input" to standard error. 
+If we run this script, we will see that the output is directed to standard error:
+
+```Bash
+$ ./script.sh
+This is a sample error message
+```
+
+We can also use the `printf` command to write to standard error:
+
+```Bash
+#!/bin/bash
+
+# This script will use printf to output to standard error
+printf "%b\n" "This is a sample error message" >&2
+```
 
 ## Deep Dive
 
-Standard error, also known as `stderr`, is a type of output stream that is used to display error messages and diagnostic information in Bash. It is typically used by programs to communicate any errors or issues encountered during execution. By default, stderr is set up to display error messages to the user, while regular output is displayed through standard output (`stdout`). 
+You may be wondering why we need to use `>&2` to redirect output to standard error instead of just using `echo` or `printf` without it. The reason is that standard error is a separate output stream from standard output. This means that while standard output is typically used for regular program output, standard error is specifically designed for error messages and important information.
 
-In Bash, both standard error and standard output can be redirected to different places using the `>&` notation. You can redirect stderr to a file or ignore it altogether by using `2>/dev/null`. 
+By writing to standard error instead of standard output, we can differentiate between regular output and error messages, allowing us to better handle and troubleshoot issues in our Bash scripts.
 
-It is important to note that not all errors are sent to standard error. Some programs may send errors to `stdout` instead. To solve this, you can use pipes to separate regular output from error messages. For example: 
+## See Also
 
-```Bash
-ls -l /fake/directory 2>&1 | grep "ls: cannot access"
-```
+Here are some additional resources and examples for writing to standard error in Bash:
 
-This will redirect the error message to standard output, which will then be piped to `grep` to search for the specific error message. 
-
-## See Also 
-
-- [Bash Guide for Beginners: Redirections](https://linuxconfig.org/bash-guide-for-beginners-redirections)
-- [Bash Hackers Wiki: Standard error](https://wiki.bash-hackers.org/howto/redirection_tutorial#standard_error)
-- [Linux Journal: Standard Output and Standard Error](https://www.linuxjournal.com/content/standard-output-and-standard-error)
+- [Bash output and redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) by GNU
+- [Linux Journal article on standard output and error](https://www.linuxjournal.com/content/working-both-sides-pipes) by Linux Journal
+- [Bash error handling](https://linuxize.com/post/bash-error-handling/) by Linuxize

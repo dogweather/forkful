@@ -1,52 +1,63 @@
 ---
-title:    "C: Leyendo argumentos de línea de comandos."
+title:    "C: La lectura de argumentos de línea de comandos"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué leer argumentos de línea de comando en C?
+## Por qué
 
-Si eres un programador en C, es posible que hayas oído hablar de los argumentos de línea de comando, pero ¿sabes realmente por qué son importantes? En este artículo, exploraremos los argumentos de línea de comando y por qué es valioso para los programadores conocer cómo leerlos.
+Si estás leyendo esto, es probable que estés buscando cómo leer argumentos de línea de comandos en tus programas de C. Puede parecer una tarea tediosa y poco útil, pero en realidad es una habilidad muy valiosa para cualquier programador serio.
 
-## Cómo leer argumentos de línea de comando en C
+## Cómo hacerlo
 
-En C, hay dos formas básicas de recibir datos del usuario: desde el teclado y desde argumentos de línea de comando. Para leer argumentos de línea de comando, se utilizan los parámetros de la función `main()`. Estos parámetros son `argc`, que corresponde al número de argumentos, y `argv`, que es un array que almacena los argumentos.
+Para leer argumentos de línea de comandos en C, necesitamos utilizar la función `main()`, ya que es el punto de entrada de nuestro programa. La firma de esta función es la siguiente:
 
-Veamos un ejemplo de cómo leer argumentos de línea de comando y mostrarlos en la pantalla:
+```C
+int main(int argc, char *argv[])
+```
+
+Donde `argc` es un entero que representa el número de argumentos de línea de comandos y `argv` es un array de strings que contienen los argumentos en sí. Ahora, veamos un ejemplo de cómo podemos utilizar esto para mostrar los argumentos ingresados por el usuario:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
+    int i;
 
-    // Iterar a través de los argumentos y mostrarlos en la pantalla
-    for(int i = 0; i < argc; i++) {
-        printf("Argumento %d: %s\n", i, argv[i]);
+    printf("Los argumentos de la línea de comandos son:\n");
+
+    for (i = 0; i < argc; i++) {
+        printf("%s\n", argv[i]);
     }
 
     return 0;
 }
 ```
 
-Si compilamos y ejecutamos este código con los siguientes argumentos: `./arguments hola mundo`, obtendremos la siguiente salida:
+Si compilamos y ejecutamos este programa con los argumentos "hola mundo", obtendremos la siguiente salida:
 
 ```
-Argument 0: ./arguments
-Argument 1: hola
-Argument 2: mundo
+Los argumentos de la línea de comandos son:
+./programa
+hola
+mundo
 ```
 
-En este ejemplo, `argc` será igual a 3 (hay tres argumentos) y `argv` almacenará los argumentos `hola` y `mundo` en las posiciones 1 y 2.
+Como podemos ver, el primer argumento siempre es el nombre del programa en sí.
 
-## Profundizando en la lectura de argumentos de línea de comando en C
+## Buceo profundo
 
-Además de leer los argumentos y mostrarlos en la pantalla, es posible realizar acciones más complejas con ellos. Por ejemplo, podrías utilizar un argumento para determinar qué acción debe realizar tu programa, o incluso utilizarlos para leer un archivo externo.
+Además de los argumentos ingresados por el usuario, también tenemos la opción de proporcionar argumentos predeterminados cuando ejecutamos nuestro programa desde el terminal. Esto se puede hacer añadiendo argumentos después del nombre del programa, separados por un espacio. Por ejemplo, si ejecutamos `./programa arg1 arg2`, `argc` será igual a 3 y `argv` contendrá los strings "arg1" y "arg2" además del nombre del programa.
 
-También es importante tener en cuenta las rutinas de comprobación de errores al leer argumentos de línea de comando. Si no se proporcionan suficientes argumentos o si se ingresan argumentos inválidos, tu programa podría terminar con un error. Por lo tanto, es importante implementar una lógica de control para evitar estos problemas.
+También es importante tener en cuenta que los argumentos de línea de comandos se pasan como strings, lo que significa que si queremos trabajar con números, tendremos que convertirlos mediante funciones como `atoi()` o `strtol()`.
 
-# Ver también
+Además, aunque la mayoría de las veces solo necesitamos leer argumentos desde la línea de comandos, también podemos escribir en ellos utilizando la función `sprintf()`, por ejemplo.
 
-- [Documentación oficial de argumentos de línea de comando en C](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
-- [Tutorial de programación en C para principiantes](https://www.programiz.com/c-programming)
-- [Introducción a la línea de comando de Linux para programadores](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+## Ver también
+
+- [Documentación de la función `main()` en C](https://www.tutorialspoint.com/cprogramming/c_main_function.htm)
+- [Convertir strings a enteros en C](https://www.geeksforgeeks.org/converting-strings-numbers-cc/)
+- [Cómo utilizar la función `sprintf()` en C](https://www.includehelp.com/c-programs/sprintf-function-in-c-programming.aspx)

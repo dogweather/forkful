@@ -1,67 +1,45 @@
 ---
 title:    "Haskell: Leyendo argumentos de línea de comando"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué leer argumentos de la línea de comandos?
 
-Leer argumentos de línea de comandos es una habilidad esencial para cualquier programador en Haskell. Esto te permitirá crear programas más flexibles y personalizables, y te ahorrará tiempo en la ejecución de tu código.
+Hay muchas razones por las que alguien podría querer aprender a leer argumentos de la línea de comandos en Haskell. Los argumentos de la línea de comandos permiten a los usuarios proporcionar información y datos adicionales al programa, lo que lo hace más dinámico y personalizable.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comandos en Haskell, necesitarás utilizar la función `getArgs` del módulo `System.Environment`. Esta función toma como entrada una lista de cadenas de texto que representan los argumentos introducidos en la línea de comandos al ejecutar nuestro programa.
-
-Veamos un ejemplo sencillo de cómo utilizar `getArgs` para imprimir los argumentos introducidos:
+Para leer argumentos de la línea de comandos en Haskell, primero necesitamos importar el módulo "System.Environment". Luego, podemos utilizar la función "getArgs" para obtener una lista de todos los argumentos pasados al programa.
 
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn ("Los argumentos introducidos fueron: " ++ (show args))
+    putStrLn "Los argumentos que has pasado son:"
+    putStrLn $ show args
 ```
 
-Si ejecutas este programa desde la línea de comandos con los argumentos `Hola Mundo`, la salida será:
+Si ejecutamos este código con el comando `runhaskell args.hs argumento1 argumento2`, obtendremos la siguiente salida:
 
 ```
-Los argumentos introducidos fueron: ["Hola","Mundo"]
+Los argumentos que has pasado son:
+["argumento1","argumento2"]
 ```
 
-## Profundizando
+Podemos acceder a cada argumento individualmente a través de su índice en la lista, por ejemplo, `args !! 0` para el primer argumento. También podemos utilizar patrones de asignación para asignar valores directamente a variables.
 
-Ahora que sabemos cómo utilizar `getArgs`, podemos explorar algunas funciones adicionales del módulo `System.Environment`. Por ejemplo, la función `getProgName` nos permite obtener el nombre del programa que se está ejecutando. Podemos utilizar esta función para imprimir un mensaje personalizado basado en el nombre del programa:
+## Deep Dive
 
-```Haskell
-import System.Environment
+Además de la función "getArgs", también podemos utilizar la función "getProgName" para obtener el nombre del programa y la función "getEnv" para obtener variables de entorno específicas. También podemos utilizar la función "lookupEnv" para verificar la existencia de una variable de entorno antes de intentar acceder a ella.
 
-main = do
-    progName <- getProgName
-    putStrLn ("Bienvenido al programa " ++ progName)
-```
-
-Si ejecutas este programa desde la línea de comandos con el nombre `miPrograma`, la salida será:
-
-```
-Bienvenido al programa miPrograma
-```
-
-También podemos utilizar la función `lookupEnv` para obtener el valor de una variable de entorno específica. Por ejemplo, si queremos obtener el valor de la variable `HOME`, podemos hacer lo siguiente:
-
-```Haskell
-import System.Environment
-
-main = do
-    home <- lookupEnv "HOME"
-    case home of
-        Just val -> putStrLn ("El valor de HOME es " ++ val)
-        Nothing -> putStrLn "La variable HOME no está definida"
-```
-
-Si la variable `HOME` está definida en tu sistema, imprimirá su valor. De lo contrario, imprimirá un mensaje informándonos de que la variable no está definida.
+Podemos manipular y procesar los argumentos de la línea de comandos de muchas maneras diferentes, como filtrar y transformar la lista de argumentos para obtener solo ciertos valores o utilizar patrones de coincidencia para realizar acciones específicas basadas en los argumentos proporcionados. ¡Las posibilidades son infinitas!
 
 ## Ver también
 
-- [Documentación del módulo System.Environment](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Tutorial de Haskell en Español](https://www.haskell-es.com/)
+- [Documentación oficial sobre System.Environment](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
+- [Tutorial de programación en Haskell](https://www.tutorialspoint.com/haskell/index.htm)
+- [Ejemplos de programas Haskell](https://wiki.haskell.org/Example_code)

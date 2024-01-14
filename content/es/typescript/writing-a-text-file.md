@@ -1,54 +1,39 @@
 ---
-title:    "TypeScript: Escribiendo un archivo de texto."
+title:    "TypeScript: Redactando un archivo de texto"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué escribir un archivo de texto?
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador ya que permite almacenar y organizar información de manera estructurada. Además, es una buena práctica mantener comentarios y notas dentro de los archivos de código para facilitar su comprensión y colaboración en equipo.
+Escribir un archivo de texto es una tarea común en la programación, ya que permite almacenar y manipular datos de una manera sencilla y organizada. Además, los archivos de texto son compatibles con una amplia variedad de lenguajes de programación, por lo que aprender a escribirlos es una habilidad valiosa para cualquier desarrollador.
 
-## Cómo
+## Cómo escribir un archivo de texto en TypeScript
 
-Para escribir un archivo de texto en TypeScript, primero debemos crear una instancia de la clase "WriteStream" del módulo "fs" (file system). Luego, utilizando el método "write()", podemos escribir nuestro texto dentro del archivo. Por último, debemos cerrar el archivo con el método "close()" para que se guarde correctamente.
-
-```TypeScript
-import * as fs from "fs";
-
-// creando una instancia de WriteStream y especificando el nombre del archivo
-let archivo = fs.createWriteStream("ejemplo.txt");
-
-// escribiendo texto en el archivo
-archivo.write("Este es un ejemplo de cómo escribir un archivo de texto en TypeScript.");
-
-// cerrando el archivo
-archivo.close();
-```
-
-El código anterior creará un archivo de texto llamado "ejemplo.txt" y escribirá el texto especificado dentro de él.
-
-## Profundizando
-
-Además de escribir texto simple, también podemos utilizar el módulo "fs" para realizar otras funciones útiles al escribir un archivo de texto. Por ejemplo, podemos utilizar el método "appendFile()" para agregar texto a un archivo ya existente sin borrar su contenido anterior. También podemos utilizar el método "writeFileSync()" para escribir texto de manera sincrónica, lo que asegura que el archivo se guarde completamente antes de continuar con el código.
+Para escribir un archivo de texto en TypeScript, primero debemos importar el módulo `fs` que nos permitirá realizar operaciones de escritura en el sistema de archivos. Luego, podemos utilizar la función `writeFile` de este módulo para crear un nuevo archivo y escribir el contenido deseado. Veamos un ejemplo:
 
 ```TypeScript
-import * as fs from "fs";
+import { writeFile } from 'fs';
 
-// agregando texto al archivo "ejemplo.txt" sin borrar su contenido anterior
-fs.appendFile("ejemplo.txt", "\nEste texto se agregará en una nueva línea.", (error) => {
-    if (error) {
-        console.log(error);
-    }
+// Crear un nuevo archivo
+writeFile('mi_archivo.txt', 'Hola Mundo!', (err) => {
+  if (err) throw err;
+  console.log('Archivo creado exitosamente.');
 });
-
-// escribiendo texto de manera sincrónica con writeFileSync
-fs.writeFileSync("ejemplo.txt", "Este texto se guardará completamente antes de continuar con el código.");
 ```
 
-Si deseamos escribir un archivo de texto con caracteres especiales como acentos o símbolos, podemos especificar la codificación "utf-8" en el método "createWriteStream()" para asegurarnos de que nuestro archivo se guarde correctamente.
+En este ejemplo, utilizamos la función `writeFile` para crear un archivo llamado `mi_archivo.txt` y escribir el texto "Hola Mundo!" dentro de él. La función también toma una función de devolución de llamada que nos permite manejar cualquier error que pueda ocurrir durante la escritura del archivo.
+
+## Un vistazo más profundo
+
+Ahora que ya conocemos los conceptos básicos de cómo escribir un archivo de texto en TypeScript, podemos profundizar un poco más en su funcionamiento. En primer lugar, es importante tener en cuenta que al utilizar la función `writeFile`, se sobrescribirá cualquier archivo existente con el mismo nombre. Si deseamos agregar contenido a un archivo existente, podemos utilizar la función `appendFile` en su lugar.
+
+Además, podemos especificar la codificación del archivo que estamos escribiendo utilizando un tercer parámetro en ambas funciones mencionadas anteriormente. Por defecto, se utiliza la codificación `utf-8`, pero si necesitamos trabajar con caracteres especiales podemos especificar una diferente.
 
 ## Ver también
 
-- [Documentación de Node.js para el módulo "fs"](https://nodejs.org/api/fs.html)
-- [Más información sobre la codificación "utf-8"](https://es.wikipedia.org/wiki/UTF-8)
+- [Documentación de Node.js sobre el módulo `fs`](https://nodejs.org/api/fs.html)
+- [Tutorial de TypeScript para principiantes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Guía de Markdown en español](https://markdown.es/)

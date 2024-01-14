@@ -1,57 +1,45 @@
 ---
 title:    "Rust: Utilizando expresiones regulares"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares en Rust? 
-Las expresiones regulares son una herramienta poderosa para manipular y buscar patrones en cadena de caracteres. En Rust, su uso está ampliamente extendido en la programación ya que ofrece una sintaxis simple y eficiente para trabajar con cadenas de texto.
+## ¿Por qué usar expresiones regulares en Rust?
+Las expresiones regulares son una herramienta poderosa y versátil que permite buscar y manipular patrones de texto de manera eficiente. En Rust, las expresiones regulares se pueden utilizar para validar entradas de usuario, buscar cadenas de texto en archivos o realizar transformaciones de datos.
 
-## Cómo utilizar expresiones regulares en Rust
-Para utilizar expresiones regulares en Rust, primero debemos importar la biblioteca `regex` en nuestro proyecto.
+## Cómo usar expresiones regulares en Rust
+Para usar expresiones regulares en Rust, primero debemos importar el módulo `regex` de la biblioteca estándar. Luego, podemos crear un objeto de expresión regular con el patrón que deseamos buscar.
 
-```
-Rust
-use regex::Regex;
-```
+```Rust
+use std::regex::Regex;
 
-Una vez importada la biblioteca, podemos crear una expresión regular utilizando la macro `regex!` y especificando el patrón que queremos buscar.
+fn main() {
+    let re = Regex::new(r"\d{2}/\d{2}/\d{4}").unwrap();
 
-```
-Rust
-let re = regex!("[a-z]+");
-```
-En este ejemplo, estamos creando una expresión regular que busca patrones de letras minúsculas en una cadena de texto. Ahora, podemos utilizar esta expresión regular para buscar coincidencias en una cadena utilizando el método `find`.
+    let text = "Hoy es 12/05/2021";
 
-```
-Rust
-let text = "Hola Mundo";
-let result = re.find(text);
-
-println!("{:?}", result); // imprimirá Some(0..4)
-```
-
-El método `find` devuelve un `Option<Match>` que contiene la posición de la primera coincidencia encontrada en la cadena de texto, en este caso, "Hola". Si no se encuentra ninguna coincidencia, el método devuelve `None`.
-
-También podemos utilizar el método `captures` para obtener todas las coincidencias encontradas en la cadena junto con sus grupos de captura.
-
-```
-Rust
-let text = "Mr. John Doe, Mrs. Jane Doe";
-let re = regex!(r"Mr.|Mrs.");
-
-for captures in re.captures_iter(text) {
-    println!("{}", captures.get(0).unwrap().as_str()); // imprimirá Mr. y Mrs.
+    if re.is_match(text) {
+        println!("Se encontró una fecha en el texto");
+    } else {
+        println!("No se encontró una fecha en el texto");
+    }
 }
 ```
 
-## Profundizando en el uso de expresiones regulares en Rust
-Las expresiones regulares en Rust son compatibles con Unicode, lo que significa que pueden ser utilizadas para buscar patrones en diferentes idiomas y conjuntos de caracteres. También ofrecen funcionalidades avanzadas como la posibilidad de utilizar grupos de captura y expresiones regulares con nombres.
+En este ejemplo, estamos buscando un patrón de fecha en el texto `Hoy es 12/05/2021`. Con la ayuda de la expresión regular `\d{2}/\d{2}/\d{4}`, podemos encontrar cualquier fecha en formato "dd/mm/yyyy".
 
-Además, es importante tener en cuenta que las expresiones regulares en Rust son inmutables, lo que significa que una vez creadas, no se pueden modificar. Esto asegura un mejor rendimiento y evita errores en la manipulación de las expresiones.
+La biblioteca `regex` también ofrece métodos como `find` y `replace` para buscar y reemplazar patrones en una cadena de texto.
+
+## Deep Dive: Más información sobre el uso de expresiones regulares en Rust
+Rust utiliza el motor de expresiones regulares de la biblioteca PCRE (Perl Compatible Regular Expressions). Esto significa que podemos utilizar la misma sintaxis y funciones que usamos en Perl u otros lenguajes compatibles con PCRE.
+
+Además, Rust también proporciona una macro `regex!` que nos permite compilar expresiones regulares en tiempo de compilación, lo que puede mejorar el rendimiento en comparación con la construcción de expresiones regulares en tiempo de ejecución.
+
+Otra característica interesante de las expresiones regulares en Rust es el soporte para CAPTURAS, que nos permite extraer partes específicas de una cadena de texto que coinciden con un patrón determinado.
 
 ## Ver también
-- [Documentación oficial de la biblioteca regex en Rust](https://docs.rs/regex/1.4.3/regex/)
-- [Expresiones regulares con nombres en Rust](https://doc.rust-lang.org/stable/regex/regex/index.html#group-names)
-- [Tutorial de expresiones regulares en Rust](https://www.shortn0tes.com/2020/05/rust-regular-expressions.html)
+- [Documentación de la biblioteca `regex` en Rust](https://doc.rust-lang.org/regex/regex/index.html)
+- [Tutorial de Rust: Expresiones regulares](https://www.rust-lang.org/learn/regular-expressions)
+- [Librería PCRE](https://www.pcre.org/)

@@ -1,46 +1,65 @@
 ---
 title:    "C: Calculando uma data no futuro ou passado"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
-Calcular a data no futuro ou passado pode ser útil em muitas situações, desde a criação de agendas programadas até a simulação de datas de pagamento ou vencimento de contas.
+## Por que
 
-## Como fazer:
-Para calcular uma data no futuro ou passado em C, podemos utilizar a função `mktime` da biblioteca `<time.h>`. Esta função recebe uma estrutura `tm` com as informações da data desejada e retorna o número de segundos desde 1º de janeiro de 1970 até a data especificada. Com isso, podemos converter o resultado para uma data no formato desejado utilizando a função `localtime` e imprimir o resultado.
+Calcular datas no futuro ou no passado pode ser uma tarefa muito útil e necessária em vários projetos de programação. Seja para realizar agendamentos, criar algoritmos de previsão ou lidar com dados temporais, a capacidade de calcular datas com precisão é essencial para muitas aplicações.
 
-```C
+## Como fazer
+
+Para calcular uma data no futuro ou no passado, podemos usar funções da biblioteca padrão <ctime>. Uma dessas funções é a "mktime", que aceita uma estrutura "tm" preenchida com valores para ano, mês, dia, hora, minuto e segundo e retorna um valor do tipo "time_t" representando a data e hora correspondentes. A partir disso, podemos usar outras funções como "localtime" ou "gmtime" para converter esse valor em uma estrutura "tm" ou "strftime" para formatar a data como quisermos.
+
+```
 #include <stdio.h>
 #include <time.h>
 
-int main(){
-    // Criando uma estrutura tm com a data atual
-    struct tm dataAtual;
-    time_t segundos;
-    time(&segundos);
-    dataAtual = *localtime(&segundos);
+int main()
+{
+  // Criando e preenchendo a estrutura tm
+  struct tm data;
+  data.tm_year = 2020 - 1900; // ano - 1900
+  data.tm_mon = 11; // mês (de 0 a 11)
+  data.tm_mday = 25; // dia
+  data.tm_hour = 10; // hora
+  data.tm_min = 30; // minuto
+  data.tm_sec = 0; // segundo
 
-    // Adicionando 30 dias à data atual
-    dataAtual.tm_mday += 30;
-    segundos = mktime(&dataAtual);
+  // Convertendo em time_t
+  time_t data_em_time_t = mktime(&data);
 
-    // Convertendo de segundos para data e imprimindo o resultado
-    struct tm dataFutura = *localtime(&segundos);
-    printf("A data daqui a 30 dias será: %d/%d/%d", dataFutura.tm_mday, dataFutura.tm_mon + 1, dataFutura.tm_year + 1900);
+  // Convertendo para uma estrutura tm
+  struct tm *data_convertida = localtime(&data_em_time_t);
+  printf("Data convertida: %s", asctime(data_convertida));
 
-    return 0;
+  // Formatando a data com strftime
+  char data_formatada[50];
+  strftime(data_formatada, 50, "%d/%m/%Y - %H:%M", data_convertida);
+  printf("Data formatada: %s", data_formatada);
+
+  return 0;
 }
 ```
 
-A saída deste código será: `A data daqui a 30 dias será: 19/4/2021`.
+O resultado da execução do código será:
 
-## Mergulho Profundo:
-Além da função `mktime`, existem outras funções da biblioteca `<time.h>` que podem ser úteis para efetuar cálculos de datas. Por exemplo, a função `mktime` recebe informações de data e hora em formato UTC, mas podemos utilizar a estrutura `tm` para especificar uma data e hora no fuso horário local. Além disso, existem funções para adicionar ou subtrair dias, meses e anos de uma data, além de diferentes formas de obter informações sobre o dia da semana ou a diferença entre duas datas.
+```
+Data convertida: Thu Dec 25 10:30:00 2020
+Data formatada: 25/12/2020 - 10:30
+```
 
-## Veja também:
-- [Tutorial sobre `<time.h>` em C](https://www.programiz.com/c-programming/library-function/time.h)
-- [Documentação completa da biblioteca `<time.h>`](https://en.cppreference.com/w/c/chrono)
+## Deep Dive
 
-Cálculos envolvendo datas podem ser úteis em diversas aplicações, por isso é importante entender como realizar essas operações em C. Esperamos que este artigo tenha sido útil para você :)
+Para calcular uma data no futuro ou no passado, é importante ter em mente que devemos considerar informações como anos bissextos e fusos horários. Além disso, podemos usar outras funções da biblioteca <ctime> como "difftime" para calcular a diferença entre duas datas e "asctime" para converter uma estrutura "tm" em uma string.
+
+Também é possível utilizar a biblioteca <chrono> do C++ para calcular datas com maior precisão e de forma mais simples, pois ela oferece classes para representar tanto datas quanto durações em um único objeto.
+
+## Veja também
+
+- https://en.cppreference.com/w/cpp/chrono
+- https://www.ime.usp.br/~pf/algoritmos/aulas/refinamentos/refinamento-do-calculo-da-quantidade-de-dias.html
+- https://www.universidadeouexcentrico.com/2016/04/20/8-metodos-para-se-manipular-datas-em-php/

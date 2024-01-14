@@ -1,46 +1,38 @@
 ---
-title:    "PHP: Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:    "PHP: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Monissa tilanteissa on tarpeellista laskea päivä tulevaisuudessa tai menneisyydessä. Esimerkiksi voit tarvita tietoa tulevista tapahtumista tai laskuja, jotka erääntyvät tulevaisuudessa.
+Miksi koodata päättymispäivämääriä tulevaisuuteen tai menneisyyteen? Useimmissa web-sovelluksissa on tarpeen käsitellä päivämääriä ja aikoja, ja joskus näihin liittyy myös päivämäärien muokkausta. PHP:llä on helppo ja tehokas tapa laskea päiviä tulevaisuuteen tai menneisyyteen, ja tässä blogikirjoituksessa jaan ohjeet siitä, miten se tehdään.
 
-## Näin teet sen
+# Miten tehdä
 
-Jos haluat laskea päivämäärän tietyn määrän päiviä tulevaisuudessa tai menneisyydessä, voit käyttää PHP:n *date* -funktiota. Tämä funktio ottaa ensimmäisenä parametrina päivämääränmuodon ja toisena parametrina halutun päivämäärän muutoksen.
+Jotta voit laskea päivämäärän tulevaisuuteen tai menneisyyteen, tarvitset:
+- Tietyn päivämäärän, jonka perusteella lasketaan (esim. tänään)
+- Päivien tai kuukausien määrän, joka lisätään tai vähennetään päivämäärästä 
+- PHP:n `date()` -funktion 
+
+Esimerkiksi, jos haluat laskea päivän huomiseen, voit käyttää seuraavaa koodia:
 
 ```PHP
-<?php
-echo date("d.m.Y", strtotime("+7 days")) . "\n";
-// Tulostaa tulevan päivämäärän seitsemän päivän päästä
+$huomenna = date("d.m.y", strtotime("+1 day"));
+echo $huomenna;
 ```
 
-Tämä esimerkki käyttää yllä mainittua *date* -funktiota ja *strtotime* -funktiota, joka muuttaa päivämäärän halutun muutoksen perusteella. Voit käyttää tätä konseptia myös menneisyyteen laskemiseen, käyttämällä negatiivisia lukuja muutoksena.
+Tämä koodi antaa seuraavan tuloksen: `21.09.21`. Sinun tarvitsee vain muokata `+1 day` sen mukaan, kuinka monella päivällä haluat laskea. Voit myös lisätä ja vähentää kuukausia ja vuosia, käyttämällä esimerkiksi `+2 months` tai `-1 year` sisällä `strtotime()`-funktiota.
 
-```PHP
-<?php
-echo date("d.m.Y", strtotime("-1 week")) . "\n";
-// Tulostaa päivämäärän viikko sitten
-``` 
+# Syväsukellus
 
-## Syvempi sukellus
+PHP:n `date()`-funktio antaa paljon mahdollisuuksia muokata päivämääriä. Voit lisätä tai vähentää päiviä, viikonpäiviä, kuukausia ja vuosia haluamallasi tavalla, tai voit käyttää tarkempia parametreja, kuten esimerkiksi `strtotime("+1 week 2 days 4 hours")`.
 
-Voit myös tarkentaa laskentaa haluamillasi tarkkuuksilla, esimerkiksi muuttamalla päivien sijaan viikkoja, kuukausia tai vuosia. Voit myös käyttää päivämäärän lisäksi myös tarkempaa aikaa, kuten tuntien tai minuuttien muutoksia.
+Voit myös antaa `strtotime()`-funktion toisena parametrina tietyn päivämäärän, jonka suhteen lasketaan. Tämä on hyödyllistä, jos haluat laskea päivämäärän tulevaisuuteen tai menneisyyteen tietyn tapahtuman perusteella.
 
-```PHP
-<?php
-echo date("d.m.Y H:i", strtotime("+2 weeks +3 days +4 hours +5 minutes")) . "\n";
-// Tulostaa päivämäärän kahden viikon, kolmen päivän, neljän tunnin ja viiden minuutin päästä
-```
+# Katso myös
 
-Voit myös käyttää muita päivämäärämuotoja tarpeidesi mukaan, esimerkiksi *dateTime* -muotoa.
-
-## Katso myös
-
-- [PHP:n *date* -funktion dokumentaatio](https://www.php.net/manual/en/function.date.php)
-- [PHP:n *strtotime* -funktion dokumentaatio](https://www.php.net/manual/en/function.strtotime.php)
-- [Tietoa päivämäärämuodoista PHP:ssä](https://www.php.net/manual/en/datetime.formats.php)
+- [PHP:n virallinen dokumentaatio päivämäärän laskemisesta](https://www.php.net/manual/en/function.date.php)
+- [W3Schools-opas päivämäärän laskemiseen PHP:llä](https://www.w3schools.com/php/php_date.asp)

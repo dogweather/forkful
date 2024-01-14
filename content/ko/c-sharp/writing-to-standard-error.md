@@ -1,72 +1,43 @@
 ---
-title:    "C#: 표준 에러에 쓰는 방법"
+title:    "C#: 표준 에러에 작성하기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-C# 프로그래밍에서 에러 메시지를 적절하게 처리하는 것은 중요한 요소입니다. 기본적으로 프로그램은 오류를 출력하고 사용자에게 이를 알려야합니다. 따라서 우리는 오류를 위한 적절한 출력 장치를 사용해야합니다. 이때 "standard error"는 가장 이상적인 선택입니다.
+왜 누군가가 표준 에러에 쓰는 것에 관심을 가질까요? 표준 에러는 프로그래밍에서 중요한 역할을 합니다. 오류 메시지를 캐치하고 디버깅하는 데 도움이 될 뿐만 아니라, 프로그램의 보안과 안정성을 위해서도 중요합니다. 표준 에러를 적재적소에 쓰는 것은 프로그램을 개선하는 데 큰 도움이 될 수 있습니다.
 
-## 방법
+## 하우 투 (How To)
 
-C#에서 표준 출력을 사용하여 에러 메시지를 출력하는 방법을 쉽게 살펴보겠습니다. 먼저 코드 블록을 만들고 "Console.Error.WriteLine"을 사용하여 메시지를 출력하도록 코드를 작성하겠습니다. 
+아래 코드 블록을 통해 간단하게 C# 프로그래밍에서 표준 에러를 어떻게 쓰는지 알아보겠습니다.
 
 ```C#
-static void Main(string[] args)
+using System;
+
+public class Program
 {
-    Console.Error.WriteLine("이것은 오류 메시지입니다.");
+    public static void Main()
+    {
+        Console.Error.WriteLine("This is an example of writing to standard error.");
+    }
 }
 ```
 
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다:
+위 코드를 실행하면 "This is an example of writing to standard error." 라는 메시지가 표준 에러에 출력됩니다. 이처럼 간단하게 표준 에러를 쓸 수 있습니다.
 
-```
-이것은 오류 메시지입니다.
-```
+## 딥 다이브 (Deep Dive)
 
-이렇게 간단히 표준 에러로 오류를 보낼 수 있습니다. 그러나 실제로 프로그래밍에서는 더 복잡한 오류 처리가 필요할 수 있습니다.
+표준 에러를 쓰는 데에는 여러 가지 방법이 있으며, 프로그램의 목적과 환경에 따라 적절한 방식을 선택할 수 있습니다. 일반적으로 디버깅을 위해서는 표준 에러를 콘솔에 출력하는 것이 좋지만, 프로그램에서 오류 메시지를 사용자에게 보여줘야 할 때는 사용자가 읽을 수 있는 형태로 표준 에러를 출력하는 것이 좋습니다. 또는 오류 메시지를 로그 파일에 저장하거나, 간단한 메시지 대신 상세한 오류 정보를 출력하는 등 다양한 방법이 있습니다. 이에 대한 더 깊은 정보는 해당 프로그램의 문서나 인터넷 검색을 통해 찾아볼 수 있습니다.
 
-## 깊이 들어가기
+## 더 많은 정보
 
-코드에서 메시지를 출력하는 것 뿐만 아니라, 표준 오류를 사용하면 특정한 종류의 메시지를 출력할 수도 있습니다. 예를 들어, "Console.Error.WriteLine" 대신 "Console.Error.Write"를 사용하면 같은 줄에 오류 메시지를 출력할 수 있습니다. 
+## 더 많은 정보
 
-```C#
-static void Main(string[] args)
-{
-    Console.Error.Write("이것은 ");
-    Console.Error.Write("오류 ");
-    Console.Error.WriteLine("메시지입니다.");
-}
-```
+- [Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=netcore-3.1)
+- [C# Exception Handling](https://www.w3schools.com/cs/cs_exceptions.asp)
+- [The Power of Standard Error](https://blog.logrocket.com/the-power-of-standard-error/)
 
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다:
-
-```
-이것은 오류 메시지입니다.
-```
-
-또 다른 예로는 표준 에러의 색을 변경하는 것입니다. 이를 위해서는 "Console.ForegroundColor" 메서드를 사용하여 메시지의 색을 변경하면 됩니다. 
-
-```C#
-static void Main(string[] args)
-{
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.Error.WriteLine("이것은 빨간색으로 출력되는 에러 메시지입니다.");
-}
-```
-
-위의 코드를 실행하면 다음과 같은 출력이 나옵니다:
-
-```
-이것은 빨간색으로 출력되는 에러 메시지입니다.
-```
-
-이처럼 표준 에러를 유용하게 사용할 수 있습니다. 그러나 프로그래밍에서는 여러 가지 다른 방식으로 표준 에러를 다룰 수도 있습니다. 디버깅에 더 많은 정보를 포함하거나, 다른 로그 파일에 저장하는 것도 가능합니다. 따라서 프로그래머는 자신에게 가장 적합한 방식을 선택할 수 있습니다.
-
-## 참고하기
-
-- [C# 표준 출력으로 에러 메시지 출력하기](https://zetawiki.com/wiki/C%23_%ED%91%9C%EC%A4%80_%EC%B6%9C%EB%A0%A5%EC%9C%BC%EB%A1%9C_%EC%97%90%EB%9F%AC_%EB%A9%94%EC%8B%9C%EC%A7%80_%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0)
-- [C# 디버깅을 위한 표준 에러 출력](https://docs.microsoft.com/ko-kr/dotnet/standard/io/how-to-write-to-and-read-from-the-console)
-- [C# Console 클래스의 Error 속성](https://docs.microsoft.com/ko-kr/dotnet/api/system.console.error)
+정보 및 예제를 참고하여 프로그래밍에서 표준 에러를 적재적소에 활용해보세요!

@@ -1,67 +1,33 @@
 ---
-title:    "Go: Affichage de la sortie de débogage"
+title:    "Go: Imprimer la sortie de débogage"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Il est inévitable que tout programmeur fasse face à des bugs et des erreurs lors du développement de logiciels. Dans ces moments-là, il peut être très utile d'utiliser des techniques de débogage pour trouver et résoudre le problème. L'impression de sortie de débogage est une méthode couramment utilisée pour afficher les informations nécessaires au bon fonctionnement du code. Dans cet article, nous allons expliquer pourquoi et comment utiliser l'impression de sortie de débogage en Go.
+Le débogage est un élément essentiel du processus de développement en programmation. Que vous soyez un débutant ou un programmeur expérimenté, la capacité d'imprimer des informations de débogage peut vous faire gagner beaucoup de temps et faciliter le processus de recherche et de résolution des bugs dans votre code.
 
 ## Comment faire
+En utilisant le langage de programmation Go, il est facile d'imprimer des informations de débogage dans votre code. Voici un exemple simple:
 
-Pour utiliser l'impression de sortie de débogage en Go, vous pouvez utiliser la fonction `fmt.Printf()` qui permet d'afficher du texte formaté en utilisant des chaînes de format. Voici un exemple de code de base :
-
-```
+```Go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Printf("Bonjour, %s\n", "mon ami")
+    fmt.Println("Voici un exemple de message de débogage!")
 }
 ```
 
-Lorsqu'il est exécuté, ce code affichera "Bonjour, mon ami" dans la console. Mais l'utilisation la plus commune de `fmt.Printf()` est pour afficher des valeurs de variables. Regardons un exemple plus pratique :
+Lorsque vous exécutez ce code, le message de débogage sera affiché dans la console de votre programme: "Voici un exemple de message de débogage!". Vous pouvez également utiliser la fonction fmt.Printf () pour formater et imprimer des données spécifiques telles que des variables et des valeurs booléennes.
 
-```
-package main
-
-import "fmt"
-
-func main() {
-    prenom := "Marie"
-    nom := "Dubois"
-    age := 30
-    fmt.Printf("%s %s a %d ans\n", prenom, nom, age)
-}
-```
-
-Dans cet exemple, nous utilisons des chaînes de format (%) pour spécifier où afficher les valeurs des variables `prenom`, `nom` et `age`. Lorsque le code est exécuté, la sortie sera "Marie Dubois a 30 ans". Vous pouvez également utiliser plusieurs chaînes de format pour afficher différentes valeurs :
-
-```
-fmt.Printf("Le nombre est %d et la chaîne est %s\n", 123, "salut")
-// La sortie sera "Le nombre est 123 et la chaîne est salut"
-```
-
-L'impression de sortie de débogage est également très utile pour afficher des valeurs à l'intérieur d'une boucle ou d'une fonction. Cela peut aider à suivre l'exécution du code et à trouver où se situe le problème en cas d'erreur.
-
-## Plongée profonde
-
-Maintenant que vous savez comment utiliser l'impression de sortie de débogage en Go, il est important de noter qu'il existe d'autres fonctions similaires qui peuvent vous être utiles pour le débogage. La fonction `fmt.Println()` est similaire à `fmt.Printf()` mais n'utilise pas de chaînes de format. Cela signifie que vous pouvez simplement lui passer les valeurs à afficher et elles seront affichées dans l'ordre où elles ont été passées. Par exemple :
-
-```
-prenom := "Jean"
-fmt.Println("Bonjour,", prenom)
-// La sortie sera "Bonjour, Jean"
-```
-
-De plus, la fonction `fmt.Sprintf()` est similaire à `fmt.Printf()` mais elle retourne une chaîne de caractères formatée plutôt que de l'afficher à la console. Cela peut être utile si vous voulez enregistrer la sortie de débogage dans une variable pour une utilisation ultérieure.
+## Plongée en profondeur
+Il existe plusieurs techniques pour améliorer l'impression des informations de débogage. Par exemple, vous pouvez utiliser le package "log" qui vous permet de spécifier différents niveaux de messages de débogage tels que "info", "warning" et "error". Vous pouvez également utiliser la fonctionnalité de débogage intégrée de Go en ajoutant l'option de drapeau "-debug" lors de l'exécution de votre programme.
 
 ## Voir aussi
-
-Pour en savoir plus sur l'impression de sortie de débogage en Go, voici quelques ressources supplémentaires :
-
-- [La documentation sur les fonctions d'impression de la bibliothèque standard de Go](https://golang.org/pkg/fmt/)
-- [Un tutoriel détaillé sur l'utilisation de l'impression de sortie de débogage en Go](https://www.digitalocean.com/community/tutorials/how-to-debug-go-programs)
+- [Guide de débogage officiel Go](https://golang.org/doc/gdb)
+- [Article sur le débogage en Go](https://medium.com/swlh/debugging-in-go-mimsy-8e2144f8aef7)
+- [Utiliser le package log en Go](https://golang.org/pkg/log/)

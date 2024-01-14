@@ -1,41 +1,71 @@
 ---
-title:    "Rust: 字符串连结"
+title:    "Rust: 连接字符串"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要使用Rust来连接字符串
 
-字符串拼接是编程中常见的操作，它的主要作用是将多个字符串连接在一起，形成一个新的字符串。在Rust语言中，使用`+`运算符可以实现字符串的拼接。有时候我们需要将多个变量或者文本内容拼接成一个完整的字符串，这时就需要使用字符串拼接的技巧了。
+如果你是一个Rust编程的新手，你可能会想知道为什么要使用Rust来连接字符串。简而言之，使用Rust来连接字符串可以大大提高代码的效率和可读性。Rust语言本身就是一种高性能和可靠性的语言，它的字符串连接功能也是非常灵活和强大的。
 
-## 如何实现
+## 如何连接字符串
 
-下面是一个简单的Rust代码示例，演示了如何使用`+`运算符进行字符串拼接：
+Rust提供了几种不同的方法来连接字符串，让我们来看几个例子。
+
+首先，我们可以使用`format!`宏来连接字符串，如下所示：
 
 ```Rust
-let hello = "你好";
-let name = "小明";
-let message = hello + name; // 将hello和name拼接成一个新字符串
-println!("{}", message); // 输出：你好小明
+let first_name = "John";
+let last_name = "Smith";
+let full_name = format!("{} {}", first_name, last_name);
+println!("Full name: {}", full_name);
 ```
 
-通过上面的代码，可以发现我们只需要使用`+`运算符就能将字符串进行拼接。需要注意的是，两个字符串的类型必须相同，否则无法进行拼接。
+这将输出："Full name: John Smith"。
 
-## 深入了解
+我们还可以使用`to_string`函数来将其他数据类型转换为字符串，并使用`+`操作符来连接字符串，如下所示：
 
-在Rust中，字符串属于不可变类型，意味着一旦声明就不能修改。因此，在字符串拼接过程中，并不是修改了原有字符串，而是创建了一个全新的字符串。这也是Rust语言的一大特点，它保证了数据的安全性和可变性。
+```Rust
+let age = 30;
+let age_str = age.to_string();
+let message = "I am " + &age_str + " years old.";
+println!("{}", message);
+```
 
-此外，Rust还提供了更多的方法来进行字符串拼接，比如使用`format!`宏，它可以更灵活地插入变量，实现更复杂的字符串拼接需求。
+这将输出："I am 30 years old."。
 
-## 参考链接
+最后，我们还可以使用`String`类型的`push_str`方法来连接字符串，如下所示：
 
-- [Rust官方文档-字符串拼接](https://doc.rust-lang.org/std/string/struct.String.html#impl-Add%3CT%3E)
-- [Rust编程从入门到实践-字符串拼接](https://kaisery.github.io/trpl-zh-cn/ch08-02-strings.html#%E5%88%A9%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84%E9%83%A8%E5%88%86%E5%8F%91%E5%B8%83%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E6%8E%A5%E5%8F%A3)
-- [Visual Rust-深入理解Rust字符串](https://visualrust.net/resource/advanced/string-scoping-internal/)
+```Rust
+let mut greeting = String::from("Hello ");
+let name = "Sara";
+greeting.push_str(name);
+println!("{}", greeting);
+```
 
-## 参见
+这将输出："Hello Sara"。
 
-- [Rust官方文档](https://www.rust-lang.org/)
-- [Rust中文社区](https://rust.cc/)
-- [Rust入门教程](https://learnku.com/docs/rust-lang/2021)
+总的来说，Rust提供了多种灵活的方法来连接字符串，你可以根据自己的需要选择合适的方法来使用。
+
+## 深入了解字符串连接
+
+Rust中的字符串连接涉及到了字符串的所有权和引用的概念。当我们使用`+`操作符来连接字符串时，实际上是将两个字符串的所有权转移到一个新的字符串中，这样就可以避免像其他语言中那样出现内存泄露的问题。另外，使用`format!`宏来连接字符串则不会涉及所有权的问题，因为它会创建一个新的字符串并返回所有权。
+
+另外，使用`String`类型的`push_str`方法来连接字符串也是一种比较高效的方法，因为它可以避免创建新的字符串。
+
+总的来说，Rust的字符串连接功能非常灵活和强大，它可以帮助你在编写高性能和可靠性的代码时更加方便和高效。
+
+## 参考资料
+
+- [Rust官方文档-字符串连接](https://doc.rust-lang.org/std/string/struct.String.html#method.push_str)
+- [Rust编程语言](https://www.rust-lang.org/)
+- [Rust编程视频教程](https://www.youtube.com/playlist?list=PLV1766NHqcrt83Xj7BvGSrrD8eNfqByQo)
+
+# 参考资料
+
+- [Rust语言官网](https://www.rust-lang.org/)
+- [Rust编程视频教程](https://www.youtube.com/c/Rustaceans)
+- [Rust官方文档](https://doc.rust-lang.org/)
+- [Rust中文社区](https://rustlang-cn.org/)

@@ -1,17 +1,18 @@
 ---
 title:    "Javascript: Escrevendo testes"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Javascript é importante?
+## Por que escrever testes é importante?
 
-Escrever testes é uma parte fundamental do processo de programação, especialmente em Javascript. Testes nos ajudam a verificar se nosso código está funcionando corretamente e evitam possíveis erros e bugs. Além disso, eles fornecem documentação e garantem a qualidade do nosso código.
+Escrever testes é uma prática essencial para garantir que o código que você escreve está funcionando corretamente. Além disso, testes automatizados ajudam a evitar erros e problemas no futuro, economizando tempo e recursos.
 
-## Como escrever testes em Javascript?
+## Como escrever testes em Javascript
 
-Para escrever testes em Javascript, primeiro precisamos entender que existem diferentes tipos de testes, como testes unitários, testes de integração e testes de aceitação. Cada tipo de teste tem uma finalidade específica, mas todos são igualmente importantes. O exemplo a seguir irá demonstrar como escrever um teste unitário simples para uma função de soma:
+Para escrever testes em Javascript, é importante utilizar uma ferramenta de teste, como o framework "Jest". Veja abaixo um exemplo de como escrever um teste simples para uma função de soma:
 
 ```Javascript
 // Função de soma
@@ -19,25 +20,30 @@ function soma(a, b) {
   return a + b;
 }
 
-// Teste unitário
-it("Deveria retornar 4 quando soma(2, 2)", function() {
-  expect(soma(2, 2)).toEqual(4);
+// Teste para verificar se a soma de 2 e 3 é igual a 5
+test('soma 2 + 3 é igual a 5', () => {
+  expect(soma(2, 3)).toBe(5);
 });
 ```
 
-Neste exemplo, estamos usando a biblioteca de testes Jasmine para escrever nosso teste. Primeiro, definimos a função de soma e, em seguida, usamos o método "it" para definir nosso teste. Dentro do método "it", usamos o método "expect" para verificar se a função de soma está retornando o resultado esperado.
+Ao executar esse teste, o output deve ser:
 
-## Mergulho profundo: Como escrever testes eficazes em Javascript?
+```
+PASS  test.js
+√ soma 2 + 3 é igual a 5 (xms)`
 
-Além de saber como escrever testes, é importante entender como torná-los eficazes. Aqui estão algumas dicas úteis:
+Test Suites: 1 passed, 1 total
+Tests: 1 passed, 1 total
+```
 
-- Seja específico em seus testes e cubra todos os casos possíveis.
-- Use mock objects para testar código que tenha dependências externas. Isso garantirá que seus testes sejam isolados e independentes.
-- Dê nomes significativos aos seus testes para que seja fácil entender o que está sendo testado.
-- Tente seguir a estratégia de "test-driven development" (TDD), escrevendo os testes antes de escrever o código real.
+Além disso, é possível utilizar diversas funções do jest, como `expect` e `toBe` para testar diferentes cenários e garantir a corretude do código.
+
+## Aprofundamento em escrever testes
+
+Além de testes unitários, existem também testes de integração e end-to-end. Os testes de integração garantem que várias partes do código estão funcionando juntas corretamente, enquanto os testes end-to-end simulam a interação de um usuário com a aplicação. É importante também cobrir o máximo possível de código com testes, e manter esses testes sempre atualizados à medida que o código é modificado.
 
 ## Veja também
 
-- [Testes em Javascript com Jasmine](https://jasmine.github.io/)
-- [Guia de testes em Javascript](https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)
-- [Tutorial de TDD em Javascript](https://www.toptal.com/javascript/test-driven-development-tutorial-javascript)
+- [Documentação oficial do Jest](https://jestjs.io/)
+- [Artigo sobre testes em Javascript](https://tableless.com.br/testes-automaticos-javascript/)
+- [Tutorial em vídeo sobre testes em Javascript](https://www.youtube.com/watch?v=r9HdJ8P6GQI)

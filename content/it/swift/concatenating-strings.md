@@ -1,59 +1,54 @@
 ---
-title:    "Swift: Concatenazione di stringhe"
+title:    "Swift: Unione di stringhe"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Concatenare stringhe è una delle operazioni più comuni nella programmazione Swift. È essenziale per combinare diverse parole o frasi in una singola stringa. Questo può essere utile in molte situazioni, come stampare output personalizzato o costruire URL dinamici.
+La concatenazione di stringhe è un'operazione comune nella programmazione Swift che consente di unire più stringhe in una singola stringa più lunga. Questo può essere utile per la creazione di messaggi dinamici, l'elaborazione di input dell'utente o la formattazione di output.
 
-## Come Fare
+## Come fare
 
-Per concatenare stringhe in Swift, puoi utilizzare l'operatore `+`. Ad esempio, se vogliamo creare una stringa che combina il tuo nome e cognome, puoi scrivere:
-
-```Swift
-let nome = "Maria"
-let cognome = "Rossi"
-let nomeCompleto = nome + " " + cognome
-print(nomeCompleto) // Maria Rossi
-```
-
-È importante notare che, quando si utilizza l'operatore `+` per concatenare stringhe, ogni componente deve essere una stringa. Se hai bisogno di un valore numerico o booleano, devi prima convertirlo in una stringa utilizzando il metodo `String()`.
+Per concatenare due o più stringhe, è possibile utilizzare l'operatore "+" o il metodo `append` sull'oggetto `String`. Ad esempio:
 
 ```Swift
-let punteggio = 95
-let messaggio = "Il tuo punteggio finale è " + String(punteggio) + " su 100"
-print(messaggio) // Il tuo punteggio finale è 95 su 100
+let nome = "Paolo"
+let saluto = "Ciao " + nome + "!"
+print(saluto)
 ```
 
-Puoi anche utilizzare il metodo `append()` per aggiungere una stringa a un'altra. Ad esempio:
+Questo produrrà l'output: `Ciao Paolo!`.
+
+Il metodo `append` permette anche di aggiungere una stringa alla fine di un'altra stringa esistente:
 
 ```Swift
-var indirizzo = "Viale Italia"
-indirizzo.append(", 25")
-print(indirizzo) // Viale Italia, 25
+var frase = "Mi piace il"
+frase.append(" gelato")
+print(frase)
 ```
+
+Questo produrrà l'output: `Mi piace il gelato`.
+
+È anche possibile utilizzare l'operatore di assegnazione `+=` per concatenare una stringa a una variabile già esistente:
+
+```Swift
+var numero = 42
+numero += " è il mio numero preferito"
+print(numero)
+```
+
+Questo produrrà l'output: `42 è il mio numero preferito`.
 
 ## Approfondimento
 
-In Swift, le stringhe sono considerate come collezioni di caratteri, quindi puoi utilizzare anche il metodo `joined()` per concatenare più stringhe in una sola. Ad esempio:
+Nella programmazione Swift, ogni stringa è in realtà un'istanza di una struttura chiamata `String`. Questa struttura implementa il protocollo `Collection` che fornisce il metodo `append` per aggiungere elementi alla fine della stringa.
 
-```Swift
-let words = ["Ciao", "a", "tutti", "!"]
-let phrase = words.joined(separator: " ")
-print(phrase) // Ciao a tutti !
-```
+Inoltre, il metodo `append` è definito come mutating, il che significa che modifica direttamente la stringa originale invece di crearne una nuova ogni volta che viene chiamato. Questo è importante da tenere a mente quando si lavora con stringhe più complesse.
 
-Puoi anche utilizzare gli operatori di assegnazione combinati come `+=` per concatenare stringhe in modo più conciso. Ad esempio:
+## Vedi anche
 
-```Swift
-var messaggio = "Buongiorno"
-messaggio += ", come stai?"
-print(messaggio) // Buongiorno, come stai?
-```
-
-## Vedi Anche
-
-Per ulteriori informazioni sulle stringhe in Swift, puoi consultare la documentazione ufficiale sul [tipo di dato String](https://developer.apple.com/documentation/swift/string) e sull'[opzione di interpolazione delle stringhe](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293).
+- [Documentazione Apple su String](https://developer.apple.com/documentation/swift/string)
+- [Tutorial di concatenazione di stringhe in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-join-strings-to-make-a-single-string)

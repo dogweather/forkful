@@ -1,75 +1,46 @@
 ---
 title:    "Clojure: Verificando se um diretório existe"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que 
+## Por que
 
-Muitas vezes em nossas jornadas de programação, nos deparamos com a tarefa de verificar se um determinado diretório existe em nosso sistema. Isso pode ser útil para garantir que os arquivos armazenados em nosso programa estejam sendo salvos no local correto, ou para realizar outras tarefas específicas.
+Quando se está programando em Clojure, muitas vezes é necessário verificar se um diretório existe antes de executar certas ações. Isso pode ser feito para garantir que o programa não encontre erros ou para realizar operações específicas apenas se o diretório existir.
 
 ## Como Fazer
 
-Para verificar se um diretório existe em Clojure, podemos usar a função `exists?` do namespace `java.io.File`. Primeiro, precisamos importar esse namespace em nosso código:
+Para verificar se um diretório existe em Clojure, podemos usar a função `file-seq` e o operador `exists?`.
 
 ```Clojure
-(ns meu-programa.core
-  (:import [java.io File]))
+(def dir "~\downloads")
+(if (exists? (file-seq dir)))
+  (println "O diretório existe!")
+  (println "O diretório não existe")
 ```
 
-Em seguida, podemos usar a função `exists?` passando o caminho do diretório que queremos verificar como argumento:
+Neste exemplo, usamos a variável `dir` para armazenar o caminho do diretório que queremos verificar. Em seguida, usamos a função `file-seq` para criar uma sequência de arquivos dentro do diretório especificado. Finalmente, usamos o operador `exists?` para verificar se a sequência de arquivos existe ou não.
+
+Se o diretório existir, a primeira mensagem será impressa. Caso contrário, a segunda mensagem será exibida.
+
+## Mais Detalhes
+
+Além do método mencionado acima, também podemos utilizar a biblioteca `clojure.java.io` para verificar a existência de um diretório. Isso pode ser feito usando a função `file` e a função `exists?`.
 
 ```Clojure
-(exists? "caminho/para/diretorio")
+(require '[clojure.java.io :as io])
+
+(def dir "~\downloads")
+(if (exists? (io/file dir)))
+  (println "O diretório existe!")
+  (println "O diretório não existe")
 ```
 
-Esta função retornará um valor booleano, `true` se o diretório existir ou `false` caso contrário. Podemos usar uma condicional para manusear o resultado da função e executar outras tarefas em nosso programa.
-
-Por exemplo, vamos criar um programa que cria um novo diretório, verifica se ele existe e, em seguida, remove o diretório se ele existir:
-
-```Clojure
-(ns meu-programa.core
-  (:import [java.io File]))
-
-(defn criar-diretorio [caminho]
-  (let [dir (File. caminho)]
-    (.mkdir dir)
-    (if (exists? caminho)
-      (println "Diretório criado com sucesso!")
-      (println "Erro ao criar diretório."))))
-
-(defn remover-diretorio [caminho]
-  (let [dir (File. caminho)]
-    (if (exists? caminho)
-      (.delete dir)
-      (println "Diretório não existe."))))
-
-(criar-diretorio "caminho/para/diretorio")
-(remover-diretorio "caminho/para/diretorio")
-```
-
-A saída do programa será:
-
-```
-Diretório criado com sucesso!
-Diretório removido com sucesso!
-```
-
-## Profundidade
-
-Para entender melhor como a função `exists?` funciona, podemos dar uma olhada em sua implementação. Apesar de ser uma função do namespace `java.io.File`, ela não é nativa do Clojure e, na verdade, é uma função em Java.
-
-Dentro do namespace `java.io.File`, a função `exists?` é definida como:
-
-```java
-public boolean exists()
-```
-
-Como podemos ver, ela simplesmente retorna um booleano indicando se o arquivo ou diretório existe ou não. É importante notar que essa função também pode ser usada para verificar a existência de arquivos, não apenas diretórios.
+Neste exemplo, usamos a função `file` para criar um objeto que representa o diretório especificado. Em seguida, usamos a função `exists?` para verificar se o diretório existe ou não.
 
 ## Veja Também
 
-- [Documentação oficial da função `exists?`](https://clojuredocs.org/clojure.java.io/exists_qmark)
-- [Tutorial de Clojure para iniciantes](https://www.clojure.org/guides/getting_started)
-- [Exemplo de uso da função `exists?` em um projeto real](https://github.com/clojure/clojure/blob/master/src/main/clojure/clojure/test_clojure/os.clj)
+- Documentação oficial da função `exists?` em Clojure: https://clojuredocs.org/clojure.core/exists_q
+- Tutorial sobre o uso da biblioteca `clojure.java.io`: https://practicalli.github.io/blog/18-clojure-java-io-library/

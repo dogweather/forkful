@@ -1,40 +1,45 @@
 ---
-title:    "C#: 写入标准错误"
+title:    "C#: 标准错误的编写"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：我们经常需要将程序的错误信息输出到标准错误流中。这样做可以帮助我们更快速地追踪和解决程序中的错误，提高程序的稳定性和可靠性。
+为什么人们会写标准错误日志?
 
-如何：要将错误信息输出到标准错误流中，可以使用C#中的Console类的Error属性。下面是一个简单的示例代码，演示了如何使用该属性将错误信息输出到控制台：
+标准错误日志是一种记录程序运行错误信息的重要方法。它可以帮助开发人员快速定位程序中的bug，并提供更加有效的解决方案。因此，编写标准错误日志可以帮助开发人员提升程序的质量和稳定性，从而为用户提供更好的体验。
+
+如何写标准错误日志：
 
 ```C#
-// 定义一个变量来存储错误信息
-string errorMessage = "发生了一个错误！";
-
-// 将错误信息输出到标准错误流中
-Console.Error.WriteLine(errorMessage);
+try
+{
+    // Code that may potentially throw an error
+    // ...
+}
+catch (Exception ex)
+{
+    // Write error message to standard error
+    Console.Error.WriteLine("Error Message: " + ex.Message);
+}
 ```
 
-运行以上代码，我们可以在控制台看到如下输出：
+上面的代码段演示了在C#中如何使用标准错误流来写入错误信息。首先，我们将需要检查可能会出错的代码放在一个try块中，然后在catch块中使用Console.Error.WriteLine()方法来将错误信息打印到标准错误流中。
 
-```
-发生了一个错误！
-```
+深入了解标准错误日志：
 
-深入了解：在C#中，标准错误流指的是控制台程序的错误输出，与标准输出流分开。标准错误流是一种重要的调试和错误追踪工具，它可以帮助我们快速定位程序中的错误。通常情况下，我们应该将错误信息输出到标准错误流中，而不是直接输出到控制台，以便于在需要时能够方便地查看程序的执行情况和错误信息。
+写入标准错误日志的方法与写入标准输出日志的方法有些类似，但是它们的用途和作用不同。标准错误流主要记录程序运行时的错误信息，而标准输出流则主要用于记录正常的程序输出信息。在一些情况下，我们也可以将标准错误日志重定向到文件中，以便后续分析和处理。
 
-看也行：想要进一步了解如何将错误信息输出到标准错误流中吗？这里有一些与本文相关的资源供你参考：
+另外，一些程序开发框架也提供了更加高级的错误日志工具，可以帮助开发人员更加方便地记录和管理程序中的错误信息。因此，熟悉并理解如何有效地使用标准错误日志将有助于提升程序开发的效率和质量。
 
-- [C#官方文档：Console.Error 属性](https://docs.microsoft.com/zh-cn/dotnet/api/system.console.error?view=netcore-3.1)
-- [C#教程：标准输入、输出和错误](https://www.tutorialspoint.com/csharp/csharp_standard_io.htm)
-- [简书专栏：C#标准输入、输出与错误流](https://www.jianshu.com/p/5b65eae8e6cc)
+## 参考资料
 
-另外，如果你想进一步提高自己的C#编程水平，可以参考以下资源：
+- [C# 中的标准错误流文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/main-and-command-args/standard-error-stream)
+- [C# 异常处理教程](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/exceptions/)
+- [使用 NLog 记录错误日志](https://www.cnblogs.com/utopia/articles/7000970.html)
 
-- [C#基础教程](https://www.w3school.com.cn/cs/index.asp)
-- [GitHub：Awesome C#](https://github.com/quozd/awesome-dotnet)
-- [知乎专栏：C#编程进阶之路](https://zhuanlan.zhihu.com/csharp-advanced)
+## 参见
 
-希望本文能够帮助你更好地了解C#中的标准错误流，并在实际编程中带来一些帮助。谢谢阅读！
+- [标准输出流：如何记录程序输出信息](https://example.com/standard-output-mandarin)
+- [如何使用调试工具定位程序错误](https://example.com/debugging-errors-mandarin)

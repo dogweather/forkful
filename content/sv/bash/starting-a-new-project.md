@@ -1,51 +1,60 @@
 ---
-title:    "Bash: Påbörja ett nytt projekt"
+title:    "Bash: Att påbörja ett nytt projekt"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att starta ett nytt projekt inom Bash programmering kan ha många fördelar. Det kan hjälpa dig att automatisera uppgifter, öka effektiviteten eller bara lära dig ett nytt verktyg. Oavsett vilken anledning du har, är det en spännande utmaning och ett bra sätt att utvecklas inom programmering.
+Att starta ett nytt projekt i Bash-programmering kan vara en spännande och utmanande uppgift. Det är ett kraftfullt språk som används för att automatisera uppgifter, göra systemadministration och skapa verktyg. Genom att lära sig det kan du effektivisera ditt arbete och skapa anpassade lösningar för dina behov.
 
-## Så här gör du
+## Så här
 
-För att starta ett nytt projekt inom Bash programmering, följ dessa enkla steg:
+För att komma igång med Bash-programmering behöver du en grundläggande förståelse för terminalen och dess kommandon. Du kommer också behöva en textredigerare för att skriva dina Bash-skript.
 
-1. Öppna din terminal och skapa en ny mapp för ditt projekt med kommandot `mkdir`.
-2. Navigera till mappen med hjälp av `cd` kommandot.
-3. Skapa en ny Bash fil med filändelsen `.sh` med kommandot `touch`.
-4. Öppna filen i din favorit redigerare och börja skriva din kod.
+Ett enkelt sätt att börja är att skapa en ny fil med .sh förlängningen och använda kommandot "nano" för att öppna den i din textredigerare.
 
 ```Bash
-mkdir nytt_projekt
-cd nytt_projekt
-touch nytt_skript.sh
+nano nytt_projekt.sh
 ```
 
-Nu är det dags att börja koda! Här är ett enkelt exempel på ett Bash skript som frågar användaren efter deras namn och sedan hälsar dem välkomna med det namnet:
+Nu kan du börja skriva ditt Bash-skript. Här är ett exempel på ett enkelt skript som frågar efter användarens namn och hälsar dem välkommen:
 
 ```Bash
 #!/bin/bash
-echo "Vad heter du?"
+echo "Vad är ditt namn?"
 read namn
-echo "Välkommen" $namn "till mitt nya projekt!"
+echo "Välkommen, $namn!"
 ```
 
-Kör skriptet med kommandot `bash nytt_skript.sh` och se den magiska hälsningen!
+När du är klar med ditt skript kan du köra det genom att använda följande kommando:
+
+```Bash
+bash nytt_projekt.sh
+```
+
+Om allt fungerade som det skulle bör du se följande utmatning:
+
+```Bash
+Vad är ditt namn?
+[användarens namn]
+Välkommen, [användarens namn]!
+```
 
 ## Djupdykning
 
-Att starta ett nytt projekt inom Bash innebär att skapa en fil med Bash-kod men det finns mycket mer att lära sig om detta kraftfulla verktyg. Du kan använda villkor, loopar, funktioner och mycket mer för att skapa avancerade skript som hjälper dig att automatisera uppgifter och spara tid.
+Att starta ett nytt projekt i Bash inkluderar inte bara skapandet av själva skriptet, utan också testning och felsökning. En viktig del av detta är att lära sig om villkor, loopar och funktioner. Genom att utnyttja dessa koncept kan du skapa mer avancerade och effektiva skript.
 
-Det är också viktigt att använda kommentarer och strukturera din kod på ett sätt som gör det lätt att förstå och underhålla. Det finns många resurser online som kan hjälpa dig att lära dig mer om Bash-programmering och förbättra dina färdigheter.
+Ett annat viktigt steg är att lära sig om olika verktyg som kan hjälpa dig i ditt projekt. Till exempel kan du använda "grep" för att söka igenom en fil efter specifika uttryck eller "sed" för att ändra innehållet i en fil.
+
+Att lära sig Bash-programmering handlar också om att lära sig att hitta information och lösa problem på egen hand. Det finns många resurser online som kan hjälpa dig att förbättra dina färdigheter, så se till att utforska och lära dig mer.
 
 ## Se även
 
-Här är några användbara länkar för att fortsätta utforska Bash-programmering:
+För att lära dig mer om Bash-programmering, se följande länkar:
 
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Bash scripting cheatsheet](https://devhints.io/bash)
-- [Learn Bash in Y minutes](https://learnxinyminutes.com/docs/bash/)
-- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html)
+- https://www.linuxjournal.com/content/understanding-bash-elements-programming (artikel om Bash-element)
+- https://www.tldp.org/LDP/abs/html/ (Advanced Bash-skriptprogrammering)
+- https://www.shellscript.sh/ (En guide för Bash-skriptprogrammering)

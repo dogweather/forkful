@@ -1,34 +1,46 @@
 ---
 title:    "Elixir: Concatenando strings"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings em Elixir?
+## Por que
 
-Concatenar strings é uma operação fundamental em muitas linguagens de programação, incluindo Elixir. Isso permite unir duas ou mais strings para formar uma nova string, que pode ser usada para criar mensagens, URLs dinâmicas, consultas de banco de dados e muito mais.
+A concatenação de strings é uma técnica importante em Elixir e pode ser utilizada para unir múltiplas strings em uma única, facilitando a manipulação e apresentação de dados. Além disso, é uma habilidade essencial para a construção de aplicações robustas e escaláveis.
 
-## Como fazer a concatenação de strings em Elixir
+## Como Fazer
 
-Em Elixir, podemos usar o operador `<>` para concatenar strings. Vamos ver um exemplo simples de como fazer isso:
+Para realizar a concatenação de strings em Elixir, podemos utilizar o operador `<>` ou a função `String.concat/2`. Vejamos alguns exemplos práticos abaixo:
 
 ```Elixir
-nome = "João"
-saudacao = "Olá, " <> nome
-IO.puts(saudacao)
+"Hello " <> "World"         #=> "Hello World"
+String.concat("I", " love ", "Elixir")     #=> "I love Elixir"
+```
+Os dois métodos produzem o mesmo resultado, mas o operador `<>` é mais utilizado devido à sua simplicidade e facilidade de leitura.
+
+Caso precisemos concatenar um grande número de strings, também podemos utilizar a função `Enum.join/2`, que percorre uma lista de strings e as concatena em uma única string. Veja o exemplo abaixo:
+
+```Elixir
+lista = ["Elixir", "é", "uma", "linguagem", "incível"]
+Enum.join(lista, " ")       #=> "Elixir é uma linguagem incrível"
 ```
 
-Neste exemplo, criamos uma variável `nome` com o valor "João" e criamos outra variável `saudacao` que une a string "Olá, " com a variável `nome` usando o operador `<>`. Em seguida, usamos a função `IO.puts` para imprimir a saudação completa "Olá, João". O `<>` também pode ser usado para concatenar mais de duas strings.
+## Aprofundando-se
 
-## Desvendando a concatenação de strings em Elixir
+É importante lembrar que strings em Elixir são imutáveis, ou seja, uma vez criadas, elas não podem ser modificadas. Portanto, cada vez que utilizamos um método de concatenação, na verdade estamos criando uma nova string. Por esse motivo, devemos evitar concatenações excessivas em operações de alto desempenho.
 
-Ao contrário de algumas linguagens de programação, a concatenação de strings em Elixir é eficiente e não cria novas strings a cada concatenação. Em vez disso, ele usa uma estrutura de dados chamada listas de bytes, que é imutável e permite que as strings sejam compartilhadas sem a necessidade de cópias extras. Isso faz com que a concatenação de strings em Elixir seja muito rápida e eficiente.
+Uma alternativa para a concatenação de strings pode ser o uso de templates, que permitem inserir valores dinâmicos em uma string sem a realocação de memória. Por exemplo:
 
-Outro aspecto importante a ser considerado é que as strings em Elixir são representadas como listas de caracteres, o que significa que podemos usar funções de lista como `List.delete_at` para remover ou substituir caracteres específicos em uma string.
+```Elixir
+nome = "Maria"
+idade = 28
+"Olá, meu nome é #{nome} e tenho #{idade} anos."   #=> "Olá, meu nome é Maria e tenho 28 anos."
+```
 
-## Veja também
+## Veja Também
 
-- [Documentação oficial sobre strings em Elixir](https://hexdocs.pm/elixir/String.html)
-- [Artigo sobre listas de bytes em Elixir](https://www.brianstorti.com/the-erlang-elixir-unicode-guide/)
-- [Tutorial de Elixir para iniciantes](https://elixir-lang.org/getting-started/introduction.html)
+- [Documentação oficial do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
+- [Tutorial sobre concatenação de strings em Elixir](https://www.tutorialspoint.com/elixir/elixir_strings.htm)
+- [Discussão sobre o uso eficiente de string em Elixir](https://elixirforum.com/t/best-practices-for-string-manipulation/493/6)

@@ -1,55 +1,32 @@
 ---
-title:    "Bash: Buscar e substituir texto"
+title:    "Bash: Buscando e substituindo texto"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Bash para busca e substituição de texto?
+## Por que fazer a substituição de texto em Bash?
 
-A busca e substituição de texto é uma tarefa comum na programação, especialmente quando lidando com grandes quantidades de dados. No entanto, fazê-lo manualmente pode ser demorado e propenso a erros. O uso do Bash para realizar essa tarefa pode tornar o processo mais rápido e eficiente, economizando tempo e garantindo maior precisão.
+A substituição de texto em Bash é uma habilidade fundamental que todo programador deve ter. Ela permite que você faça alterações em massa em um arquivo de texto ou em uma série de arquivos, economizando tempo e esforço. É uma técnica muito útil para automatizar tarefas repetitivas, como a correção de erros de digitação em um grande número de arquivos ou a atualização de informações em um documento.
 
-## Como fazer busca e substituição de texto em Bash?
+## Como fazer a substituição de texto em Bash
 
-Para fazer busca e substituição de texto em Bash, você pode usar o comando `sed` (Stream Editor). Este comando permite que você procure por padrões de texto específicos e os substitua por outro texto. Aqui está um exemplo de como usá-lo:
-
-```
-$ cat exemplo.txt
-
-Este é um exemplo de texto para ser modificado.
-
-$ sed 's/exemplo/teste/' exemplo.txt
-
-Este é um teste de texto para ser modificado.
-```
-
-Neste exemplo, usamos o comando `cat` para mostrar o conteúdo do arquivo `exemplo.txt`, que contém a frase "Este é um exemplo de texto para ser modificado.". Em seguida, usamos o `sed` para procurar a palavra "exemplo" e substituí-la por "teste", resultando em "Este é um teste de texto para ser modificado." É importante notar que essa substituição é feita somente no output, não alterando o arquivo original.
-
-Você também pode usar o `sed` para fazer substituições em um arquivo específico, em vez de apenas no output:
+Para fazer a substituição de texto em Bash, você pode usar o comando `sed` (Stream Editor). Ele é um programa de linha de comando que permite realizar edições em um arquivo de texto seguindo um padrão específico. Vamos ver um exemplo:
 
 ```
-$ sed -i 's/exemplo/teste/' exemplo.txt
+# Código Bash para substituir todas as ocorrências de "gato" por "cachorro" em um arquivo de texto chamado "animais.txt"
+sed 's/gato/cachorro/g' animais.txt
 ```
 
-O parâmetro `-i` (ou `--in-place`) indica que a substituição deve ser feita no arquivo original.
+Seu arquivo de texto será alterado e cada instância da palavra "gato" será substituída por "cachorro". Você também pode usar expressões regulares para tornar a substituição mais precisa e abrangente.
 
-## Aprofundando na busca e substituição de texto em Bash
+## Aprofundando na substituição de texto em Bash
 
-Além de substituir diretamente o texto, o `sed` pode ser usado para fazer outras tarefas, como excluir linhas ou adicionar novas linhas de texto. Ele também suporta a utilização de expressões regulares, o que permite maior flexibilidade e precisão nas substituições. É possível também usar variáveis e loops em conjunto com o `sed` para realizar substituições em massa em vários arquivos.
-
-Outra ferramenta útil para busca e substituição de texto em Bash é o comando `grep`, que permite que você procure por padrões de texto e exiba as linhas correspondentes. Por exemplo:
-
-```
-$ grep "exemplo" exemplo.txt
-
-Este é um exemplo de texto para ser modificado.
-```
-
-Este comando exibirá apenas a linha que contém o padrão de texto "exemplo". Você também pode usar o `grep` em conjunto com o `sed` para fazer substituições somente nas linhas em que o padrão de texto for encontrado.
+Há muitas opções e recursos avançados no comando `sed` que permitem personalizar ainda mais a substituição de texto em Bash. Por exemplo, você pode usar as flags `-i` para fazer a edição diretamente no arquivo original ou `-r` para usar expressões regulares estendidas. Além disso, com o uso de pipes (`|`), é possível conectar vários comandos em uma única linha para realizar várias substituições em um único arquivo.
 
 ## Veja também
 
-- [Tutorial de busca e substituição de texto em Bash](https://www.lifewire.com/sed-command-2618008)
-- [Documentação do comando `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Tutorial básico de expressões regulares em Bash](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
-- [Outros comandos úteis para manipulação de texto em Bash](https://www.cyberciti.biz/faq/understanding-bash-shell-config-file/)
+- [Guia de Referência do comando sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Aprendendo expressões regulares em Bash](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-sed)
+- [Introdução ao Bash scripting](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

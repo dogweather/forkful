@@ -1,51 +1,65 @@
 ---
-title:    "Elm: Generowanie losowych liczb."
+title:    "Elm: Generowanie losowych liczb"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Dlaczego chcielibyśmy wygenerować losowe liczby? W programowaniu istnieje wiele zastosowań dla generatorów liczb losowych, takich jak gry, symulacje, testy jednostkowe i wiele innych.
+Generowanie losowych liczb jest niezbędnym elementem wielu aplikacji i programów. W Elm mamy wiele sposobów na wykorzystanie generatorów liczb losowych, co pozwala na stworzenie ciekawych i interaktywnych aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Możemy wykorzystać moduł Matematyka w języku Elm, aby wygenerować losowe liczby. W przykładzie poniżej używamy funkcji `generate` i `uniform` aby wygenerować 5 liczb losowych z zakresu od 0 do 10.
+Pierwszym krokiem jest importowanie pakietu `Random` w naszym kodzie Elm:
 
-```Elm
-import Matematyka exposing (generate, uniform)
-
-losoweLiczby : List Int
-losoweLiczby =
-  generate
-    (uniform 0 10)
-    5
+```elm
+import Random
 ```
 
-Przykładowy wynik: `[5, 2, 9, 1, 7]`
+Następnie, możemy stworzyć generator, który będzie zwracał losową liczbę z zakresu od 0 do 10:
 
-Możemy także użyć funkcji `list` w celu wygenerowania listy o określonej długości:
-
-```Elm
-import Matematyka exposing (list, uniform)
-
-losoweLiczby : List Int
-losoweLiczby =
-  list 10
-    (uniform 0 100)
+```elm
+Random.int 0 10
 ```
 
-Przykładowy wynik: `[99, 23, 45, 81, 12, 35, 67, 3, 55, 98]`
+Aby uzyskać konkretny wynik, musimy przypisać wygenerowany generator do zmiennej i użyć funkcji `generate`:
 
-## Głębsza analiza
+```elm
+randomNumber = Random.generate Random.int 0 10
+```
 
-Generator liczb losowych w Elm jest oparty na generatorze liczb losowych znanym jako Mersenne Twister. Jest to bardzo wydajny i dokładny algorytm, który generuje liczbę o określonej długości seeda. W Elm, seed jest generowany na podstawie aktualnego czasu, co zapewnia różnorodność wygenerowanych liczb przy każdym uruchomieniu programu.
+Kolejnym krokiem jest obsłużenie wyniku w funkcji `Html.program`:
 
-Ważnym aspektem generatora liczb losowych w Elm jest fakt, że jest on całkowicie deterministyczny. Oznacza to, że przy tym samym seedzie i funkcji generującej, zawsze otrzymamy dokładnie takie same wyniki. Jest to bardzo przydatne w testach jednostkowych, kiedy chcemy mieć pełną kontrolę nad wynikami testów.
+```elm
+Html.program {
+    init = init,
+    update = update,
+    view = view,
+    subscriptions = subscriptions,
+    model = 0
+}
+```
+
+W funkcji `view` możemy wyświetlić wygenerowaną liczbę:
+
+```elm
+view : Int -> Html msg
+view number = 
+    Html.text (toString number)
+```
+
+Po uruchomieniu naszej aplikacji, za każdym razem gdy odświeżymy stronę, zostanie wyświetlona losowa liczba z zakresu od 0 do 10.
+
+## Głębsze zagadnienia
+
+Podczas korzystania z generatorów liczb losowych, warto mieć na uwadze kilka ważnych aspektów. Pierwszym z nich jest kontrolowanie ziarna generatora, czyli początkowego stanu. Dzięki temu możemy zapewnić, że za każdym razem otrzymamy inne wyniki. Możemy to zrobić przy użyciu funkcji `initialSeed` lub `initialSeedWith` z modułu `Random.Seed`.
+
+Kolejnym ważnym elementem jest wykorzystanie generatorów w celu generowania losowych elementów albo w sposób ciągły albo w reakcji na interakcje użytkownika. Aby to osiągnąć, możemy użyć funkcji `step` wraz z aktualnym stanem generatora.
 
 ## Zobacz także
 
-- [Dokumentacja Elm Matematyka](https://package.elm-lang.org/packages/elm-explorations/math/1.0.0/)
-- [Przykładowy projekt losujący karty w Elm](https://github.com/elm-lang/random-card-generator)
-- [Wprowadzenie do języka Elm](https://www.freecodecamp.org/news/learning-functional-programming-with-elm/)
+- [Dokumentacja Elm - Random](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Przykładowy projekt w Elm wykorzystujący generatory liczb losowych](https://github.com/ksolitary/elm-random-number-generator)
+- [Przykłady użycia generatorów liczb losowych w aplikacjach Elm](https://medium.com/@ksolitary/using-random-number-generators-in-elm-6775c702e680)

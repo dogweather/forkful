@@ -1,47 +1,39 @@
 ---
-title:    "Javascript: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle."
+title:    "Javascript: Tietokoneohjelmointi: Standardivirheeseen kirjoittaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jos olet ohjelmoija, olet todennäköisesti törmännyt virheisiin koodissa ja olet joutunut hyödyntämään debuggausta. Tämän vuoksi kirjoittaminen standardi virheeseen, eli standard erroriin, on tärkeä taito ohjelmoinnissa. Se auttaa sinua löytämään ja korjaamaan virheitä koodissasi nopeammin ja tarkemmin.
+Javascript-ohjelmoijilla on usein tarve kirjoittaa virheitä (errors) ja varoituksia (warnings) oikeaan paikkaan ohjelman suorituksen aikana. Tämä auttaa havaitsemaan ja korjaamaan mahdollisia ongelmia koodissa.
 
-## Kuinka kirjoittaa standardi virheeseen
+## Miten
 
-Taustatietona, standardi virhe on yksi kolmesta tiedostovirheestä Javascriptissä. Se auttaa ohjelmoijia näkemään virheilmoituksia ja tracebackeja, jotka auttavat heitä ymmärtämään ja korjaamaan koodivirheitä. Alla on esimerkki koodista, jossa käytetään standardi virhettä:
-
-```Javascript
-try {
-  // tähän tulee koodisi
-} catch (err) {
-  console.error(err); //tulostaa virheen konsoliin
-}
-```
-
-Yllä oleva koodi yrittää ensin suorittaa antamasi koodin ja jos se heittää virheen, se tulostaa sen konsoliin. Tämä auttaa sinua näkemään, missä kohtaa koodissasi tapahtui virhe ja pystyt korjaamaan sen helpommin.
-
-## Syvemmällä standardi virheessä
-
-Koodin kirjoittaminen standardi virheeseen voi auttaa tekemään ohjelmoinnista sujuvampaa ja nopeampaa, mutta se vaatii myös jonkin verran syvempää ymmärrystä virheenkäsittelystä ja debuggaamisesta. Esimerkiksi voit myös lisätä omaa logiikkaa virheenkäsittelyyn, kuten alle:
+Tämä tapahtuu käyttämällä standardin virheenkirjoitusta (standard error). Se on erityinen virta, joka välittää virheet ja varoitukset koodin suorituksen aikana. Virheen kirjoittamiseen käytetään console.error() -funktiota ja varoituksen kirjoittamiseen console.warn() -funktiota.
 
 ```Javascript
-try {
-  // tähän tulee koodisi
-} catch (err) {
-  if (err.name === 'ReferenceError') {
-    console.log('Anna koodille vihje, jotta virhe on helpompi korjata'); // voit lisätä oman logiikan virheenkäsittelyyn
-  }
-  console.error(err); // tulostaa virheen konsoliin
-}
+console.error("Tämä on virheviesti");
+console.warn("Tämä on varoitusviesti");
 ```
 
-Voit myös lukea lisää standardi virheestä ja sen käytöstä dokumentaatiosta tai muista oppimateriaaleista.
+Tässä esimerkissä koodi tulostaa seuraavan:
+
+```
+Tämä on virheviesti
+Tämä on varoitusviesti
+```
+
+## Syvemmälle
+
+Standardin virheen kirjoitus on yksi Javascriptin sisäänrakennetuista toiminnoista. Sitä käytetään usein yhdessä try-catch-lauseiden kanssa, jotta ohjelmassa esiintyvät virheet voidaan havaita ja käsitellä.
+
+Virheiden ja varoitusten kirjoittaminen standardiin virhevirtaan auttaa myös debuggaamaan koodia, sillä ne tulostuvat selainkonsoliin tai muuhun kehitysympäristöön ja antavat tarkempaa tietoa mahdollisista ongelmista.
 
 ## Katso myös
 
-- [Virheenkäsittely JavaScriptissä (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Statements/try...catch)
-- [Debuggaus JavaScriptissä (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Statements/debugger)
-- [JavaScript-virheenkorjaus (W3schools)](https://www.w3schools.com/js/js_error.asp)
+- [MDN: console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [MDN: console.warn()](https://developer.mozilla.org/en-US/docs/Web/API/Console/warn)
+- [Nettipestaus: Javascript Debuggaus ja Console-loggaaminen](https://www.nettipestaus.fi/javascript-debuggaus-ja-console-loggaaminen/)

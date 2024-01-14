@@ -1,38 +1,37 @@
 ---
-title:    "Clojure: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:    "Clojure: Merkkijonon muuttaminen isoine kirjaimin"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi capitalizing-merkkijonon kirjoittaminen on hyödyllistä?
 
-Miksi joku haluaisi muuttaa merkkijonon kirjainkoon?
+Capitalizing-merkkijonon kirjoittaminen tarkoittaa, että muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi ja kaikki muut kirjaimet pieniksi kirjaimiksi. Tämä voi olla hyödyllistä esimerkiksi tekstikäsittelyohjelmassa, jossa halutaan korostaa tiettyä sanaa tai lauseketta.
 
-## Miten tehdä
+## Kuinka tehdä se:
 
-Merkkijonon kirjainkoon muuttamiseen on monia tapoja Clojure-ohjelmointikielessä. Yksi yksinkertainen tapa on käyttää "clojure.string/capitalize" -funktiota. Tämä muuttaa alkukirjaimen isoksi ja loput pieniksi kirjaimiksi.
-
-```Clojure
-(clojure.string/capitalize "tämä on esimerkki") ; "Tämä on esimerkki"
-```
-
-Toinen vaihtoehto on käyttää "clojure.string/upper-case" -funktiota, joka muuttaa kaikki kirjaimet isommiksi.
+Capitalizing-merkkijonon voi tehdä helposti Clojurella käyttämällä "upper-case" funktiota ja "join" funktiota. Esimerkiksi:
 
 ```Clojure
-(clojure.string/upper-case "tämä on esimerkki") ; "TÄMÄ ON ESIMERKKI"
+
+(def sana "tämä on capitalizing-merkkijono")
+(-> sana
+   (clojure.string/split #" ")
+   (map (partial apply str))
+   (map #(clojure.string/upper-case (first %) (apply str (rest %))))
+   (join " "))
+
+; => "Tämä On Capitalizing-Merkkijono"
 ```
 
-Nämä kaksi funktiota ovat hyvä vaihtoehto, jos haluat muuttaa merkkijonon kirjainkoon vain yhdestä syystä, kuten tulostuksen yhteydessä.
+## Syvällinen tarkastelu:
 
-## Syvällisempi sukellus
+Capitalizing-merkkijonon kirjoittaminen on yksi monista stringin manipuloimisen tavoista Clojurella. Monet muut funktiot, kuten "lower-case" ja "capitalize", ovat myös hyödyllisiä erilaisissa tilanteissa. Lisäksi, Clojurella on monia muita hyödyllisiä funktioita, kuten "replace" ja "substring", joita voi käyttää eri tavoin muokataksesi merkkijonoja.
 
-Clojuressa merkkijonon kirjainkoon muuttamiselle on monia muitakin vaihtoehtoja, kuten "reduce" -funktio tai "map" -funktio yhdistettynä "char" -funktioon. Näiden vaihtoehtojen hyödyntäminen voi olla hyödyllistä, jos haluat muuttaa merkkijonon kirjainkoon useamman operaation yhteydessä.
+### Katso myös:
 
-Lisäksi Clojuren ydinbiblioteekissa on myös "clojure.string/lower-case" -funktio, joka muuttaa kaikki kirjaimet pieniksi.
-
-## Katso myös
-
-- "Clojure-järjestelmän riippuvuuksien hallinta - Johdanto" https://duunijs.com/clojure-jarjestelman-riippuvuuksien-hallinta/
-- "Kuinka luoda web-sovellus Clojurella ja Liberatorilla" https://www.sitepoint.com/create-web-apps-clojure-liberator/
-- "Clojure-kielen perusteet" http://www.cs.hut.fi/~ctl/Clojure-harjoituksia/Kierros-1/index.html
+- [Clojure string functions](https://clojuredocs.org/clojure.core#string-functions)
+- [Complete guide to strings in Clojure](https://cljdoc.org/d/clojure/clojure/1.10.1-alpha1/doc/guides/strings)
+- [Clojure cheetsheet](https://clojure.org/api/cheatsheet) (haku "strings")

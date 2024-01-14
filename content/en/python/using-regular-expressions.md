@@ -1,49 +1,60 @@
 ---
 title:    "Python recipe: Using regular expressions"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Regular expressions are a powerful tool in the world of programming. They allow you to easily manipulate and search through text using a concise and flexible syntax. Whether you are a beginner or an experienced programmer, regular expressions can greatly improve your efficiency and make your code more robust.
+
+If you're new to programming, you may have heard of regular expressions but might not be sure what they are or why they are useful. Regular expressions, also known as regex, are a tool used to search and manipulate text based on patterns. They allow for more powerful and efficient data processing by enabling you to extract, replace, or modify specific parts of a text string. Regular expressions are commonly used in text-based tasks such as data validation, web scraping, and data cleaning.
 
 ## How To
-Using regular expressions in Python is relatively straightforward. First, you must import the `re` module. Then, you can use the `re.search()` function to search for a particular pattern in a string. Let's walk through an example:
 
-```
-# Import the re module
+To use regular expressions in Python, you'll need to import the `re` module. Let's say we have a string with a phone number in it, and we want to extract just the numbers:
+
+```Python
 import re
 
-# Define a string to search through
-text = "This is a sample sentence that contains the word Hello."
+string = 'My phone number is (123) 456-7890'
+numbers = re.findall(r'\d+', string)
 
-# Use re.search() to find the position of the word "Hello"
-match = re.search("Hello", text)
-
-# Check if the word was found
-if match:
-    print("The word Hello was found at position:", match.start())
-else:
-    print("The word Hello was not found.")
+print(numbers)
+```
+Output: 
+```
+['123', '456', '7890']
 ```
 
-In this example, the `re.search()` function returns an object that contains information about the match, including the starting position of the match. If the word was found, the starting position is printed. If not, a message stating that the word was not found is printed.
+In the above example, we used the `re.findall()` function to search for all occurrences of one or more digits in the string. The `r` before the regex pattern signifies a raw string which ensures that backslashes are not treated as escape sequences. We can also use regular expressions to replace certain parts of a string, like punctuation:
 
-Regular expressions also offer a variety of control characters and metacharacters to further customize your search pattern. For example, the `^` character matches the beginning of a string and the `$` character matches the end. This allows you to search for words only at the beginning or end of a string, rather than anywhere it appears. You can also use quantifiers such as `*` and `+` to specify how many times a certain pattern should appear.
+```Python
+new_string = re.sub(r'[^\w\s]', '', string)
 
-For a more in-depth guide on using regular expressions in Python, check out the [official documentation](https://docs.python.org/3/library/re.html) for the `re` module.
+print(new_string)
+```
+Output:
+```
+My phone number is 123 456789
+```
+
+In this example, we used `re.sub()` to replace all non-alphanumeric characters with an empty string. There are many other useful functions in the `re` module, such as `re.search()`, `re.match()`, and `re.split()`. Experimenting with different regex patterns and functions can help you understand the power and versatility of regular expressions.
 
 ## Deep Dive
-Regular expressions may seem daunting at first, but once you understand the basics, they can greatly enhance your ability to manipulate and analyze text data. One key concept to understand is the concept of "greedy" and "non-greedy" matching.
 
-By default, regular expressions use "greedy" matching, meaning they will try to match the longest possible string that satisfies the search pattern. For example, given the string `Hello World`, the pattern `H.*o` would match the entire string, while the pattern `H.*o?` would only match the letters `Hello`.
+Regular expressions can use special characters and metacharacters to define patterns. Some of the most commonly used ones are:
 
-On the other hand, you can use "non-greedy" matching by adding a `?` after a quantifier. This will make the pattern match the shortest possible string that satisfies the search pattern. Using our previous example, the pattern `H.*?o` would only match the letters `He`.
+- `.` matches any single character except a new line.
+- `*` matches zero or more occurrences of the previous character.
+- `+` matches one or more occurrences of the previous character.
+- `?` matches zero or one occurrence of the previous character.
+- `^` indicates the start of a string.
+- `$` indicates the end of a string.
 
-For more tips and tricks on using regular expressions, check out this [comprehensive tutorial](https://www.regular-expressions.info/tutorial.html).
+You can also use character classes such as `\d` for digits, `\w` for alphanumeric characters, and `\s` for whitespace. These metacharacters can also be used in conjunction with each other to create more complex patterns. Understanding these characters and how they work is essential for mastering regular expressions.
 
 ## See Also
-- [Official Python `re` documentation](https://docs.python.org/3/library/re.html)
-- [Regular expressions tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Online regular expression tester](https://regexr.com/)
+- [Regular Expressions in Python](https://www.tutorialspoint.com/python/python_reg_expressions.htm)
+- [re Module Documentation](https://docs.python.org/3/library/re.html)
+- [Regex cheat sheet](https://www.rexegg.com/regex-quickstart.html)

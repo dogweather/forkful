@@ -1,41 +1,39 @@
 ---
-title:    "Fish Shell: Merkkijonon pituuden löytäminen"
+title:    "Fish Shell: Merkkijonon pituuden etsiminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Kuinka usein olet törmännyt tarpeeseen selvittää jonkin merkkijonon pituus? Onko sinulla ollut vaikeuksia löytää tehokasta tapaa tehdä se? Kuten monissa muissakin ohjelmointikielissä, myös Fish Shell tarjoaa helpon tavan löytää merkkijonon pituus. Miksi sitten vaivautua miettimään vaikeita ratkaisuja, kun voit käyttää keskeistä Fish Shell -toimintoa tähän tarkoitukseen?
 
-## Kuinka tehdä
-Koodiesimerkkien avulla näytämme, kuinka helposti voit käyttää Fish Shellin `string`-toimintoa löytääksesi merkkijonon pituuden.
+Miksi haluaisit selvittää merkkijonon pituuden? Se voi olla hyödyllistä, kun haluat tarkistaa, että syöte vastaa odotettua pituutta tai haluat suorittaa tiettyjä toimintoja merkkijonon tietyn määrän merkkejä sisältä.
 
+## Kuinka
+
+Fish Shell tarjoaa helpon tavan selvittää merkkijonon pituuden käyttämällä **string length** -toimintoa. Tässä on muutama esimerkki ja niiden tuottama tulos:
+
+```Fish Shell
+string length "Hei!" 
+# Output: 4 
 ```
-Fish Shell-pohjainen esimerkki:
-
-# Alustetaan merkkijono muuttujaan
-set my_string "Tämä on esimerkki"
-
-# Käytetään string-toimintoa löytääksemme merkkijonon pituuden
-string length $my_string
-
-# Tulostetaan pituus
-echo $status
-
-# Tulostaa: 17
+```Fish Shell
+set string "Tämä on pitkä merkkijono" 
+string length $string 
+# Output: 24 
 ```
-
-Käyttämällä yksinkertaista komentoa `string length` voit helposti löytää minkä tahansa merkkijonon pituuden. Tämä toiminto palauttaa arvon `status`, joka sisältää merkkijonon pituuden numerona. Voit myös tallentaa tämän arvon muuttujaan ja käyttää sitä myöhemmin tarpeen mukaan.
-
-```
-Esimerkiksi:
-set pituus (string length $my_string)
+```Fish Shell
+set input (read) 
+string length $input 
 ```
 
-## Syvempi sukellus
-`string length` -toiminto toimii myös merkkijonojen lisäksi myös listoilla ja taulukoilla. Se palauttaa näiden tietorakenteiden pituuden lukuna. Lisäksi voit käyttää muita `string`-toiminnon alafunktioita, kuten `string split` ja `string replace`, löytääksesi merkkijonon pituuden haluamallasi tavalla. Lisätietoja näistä löytyy Fish Shellin virallisesta dokumentaatiosta.
+## Syvemmälle
+
+Fish Shellin **string length** -toiminto laskee jokaisen merkin mukaan lukien myös välilyönnit ja erikoismerkit. Lisäksi se osaa huomioida myös Unicode-merkit. Näin ollen se tuottaa tarkan luvun merkkijonon pituudesta.
 
 ## Katso myös
-- [Fish Shell string-toiminnon dokumentaatio](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell koko ohjeistus](https://fishshell.com/docs/current/)
+
+- Fish Shellin virallinen dokumentaatio merkkijonojen käsittelystä: https://fishshell.com/docs/current/cmds/set.html#string-operations
+- Lyhyt opas Fish Shellin käyttöönottoon: https://www.linuxjournal.com/content/we-all-fish-shell-now
+- Fish Shellin kieliohjeet: https://fishshell.com/docs/current/tutorial.html

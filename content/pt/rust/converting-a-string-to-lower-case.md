@@ -1,59 +1,36 @@
 ---
-title:    "Rust: Convertendo uma string para minúsculas"
+title:    "Rust: Convertendo uma string para letra minúscula."
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+## Por que
 
-Ao trabalhar com strings em um programa, pode ser necessário converter todas as letras para minúsculas. Isso pode ser útil para manipulação de dados, comparação de strings ou formatação de saída. Felizmente, Rust torna isso muito simples com sua função integrada `to_lowercase()`. Vamos ver como fazer isso!
+Quando escrevemos programas em Rust, é importante considerar a usabilidade para o usuário final. Uma das tarefas comuns em programação é formatar strings, e em geral, é mais desejável que elas estejam em letras minúsculas para uma melhor visualização e organização. Neste artigo, vamos explorar como converter uma string para minúsculas em Rust.
 
-## Como fazer a conversão em Rust
+## Como Fazer
 
-Para converter uma string para letras minúsculas em Rust, basta chamar a função `to_lowercase()` na string desejada. Aqui está um exemplo:
-
-```Rust
-fn main() {
-    let minha_string = "Olá, Mundo!";
-    println!("{}", minha_string.to_lowercase()); // imprime "olá, mundo!"
-}
-```
-
-É importante notar que a função `to_lowercase()` retorna uma nova string com as letras em minúsculo, a string original permanecerá inalterada. Agora, se quisermos salvar a nova string em uma variável, podemos fazer assim:
+O processo de conversão de uma string para minúsculas em Rust é bastante simples. Primeiro, importamos o módulo "string" e usamos o método "to_lowercase()". Vamos ver um exemplo:
 
 ```Rust
-fn main() {
-    let minha_string = "Olá, Mundo!";
-    let nova_string = minha_string.to_lowercase();
-    println!("{}", nova_string); // imprime "olá, mundo!"
-}
+use std::string;
+
+let frase = String::from("OLá MuNDo!");
+
+let resultado = frase.to_lowercase();
+println!("{}", resultado);
 ```
 
-Podemos até mesmo trabalhar com strings que são passadas como argumentos em funções. Por exemplo:
+Neste exemplo, importamos o módulo "string" e criamos uma string contendo a frase "OLá MuNDo!". Em seguida, usamos o método "to_lowercase()" para converter a string para letras minúsculas e a imprimimos na tela. O resultado será "olá mundo!".
 
-```Rust
-fn imprimir_string_em_minusculas(string: String) {
-    let string_minuscula = string.to_lowercase();
-    println!("{}", string_minuscula); // imprime a string em minúsculo
-}
+## Uma Profundidade Maior
 
-fn main() {
-    let minha_string = "Rust é incrível!".to_string();
-    imprimir_string_em_minusculas(minha_string); // imprime "rust é incrível!"
-}
-```
+Por baixo dos panos, o método "to_lowercase()" usa a função "chars()" para iterar através de cada caractere da string e aplicar a função "to_lowercase()" individualmente para convertê-los. Isso permite que ele lide com caracteres acentuados e símbolos especiais de forma correta e eficiente. No entanto, é importante lembrar que o resultado final será uma nova string e a string original não será modificada.
 
-## Mergulhando mais fundo
-
-Em uma olhada rápida, o método `to_lowercase()` parece ser bastante direto. Mas, por baixo dos panos, há muito mais acontecendo. Por exemplo, ele não apenas substitui as letras maiúsculas por minúsculas, mas também leva em consideração questões de localização, ou seja, dependendo do idioma, algumas letras maiúsculas podem ser convertidas para mais de uma letra minúscula.
-
-Além disso, o método `to_lowercase()` também funciona com símbolos não alfabéticos, como números e pontuação.
-
-É importante notar que a função `to_lowercase()` pode não funcionar como esperado se o local em que o código está sendo executado tiver um conjunto de regras de caixa diferente do inglês. Para evitar problemas, é possível usar a função `to_lowercase()` em conjunção com a função `chars()` para garantir que todas as letras sejam convertidas corretamente.
-
-## Veja também
-
-- [Documentação oficial do Rust sobre a função to_lowercase()](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- [Tutorial sobre strings em Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)
-- [Exemplos práticos de conversão de strings em Rust](https://www.geeksforgeeks.org/working-with-strings-in-rust/)
+## Veja Também
+ 
+ - [Documentação do Módulo "string" em Rust](https://doc.rust-lang.org/std/string/index.html)
+ - [Explicação Detalhada do Método "to_lowercase()" no Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html#convert-a-case-of-a-string)
+ - [Vídeo Tutorial sobre Conversão de Strings no Rust](https://www.youtube.com/watch?v=Qezm_KpOits)

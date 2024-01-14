@@ -1,39 +1,39 @@
 ---
-title:    "Gleam: Imprimiendo salida de depuración"
+title:    "Gleam: Impresión de salida de depuración"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir salida de depuración en Gleam?
+## Por qué imprimir salida de depuración en Gleam
 
-Imprimir la salida de depuración en Gleam puede ser una herramienta útil para detectar y solucionar problemas en tu código. Al imprimir información detallada sobre las variables y resultados de una función, puedes identificar rápidamente dónde se están produciendo errores y cómo solucionarlos.
+La impresión de salida de depuración es una herramienta útil para entender el funcionamiento interno de un programa en Gleam. Al mostrar información adicional durante la ejecución, puede ayudarte a identificar y solucionar problemas en tu código.
 
 ## Cómo hacerlo
 
-Para imprimir salida de depuración en Gleam, puedes utilizar la función `debug()` seguida de la información que deseas imprimir. Por ejemplo:
+Para imprimir salida de depuración en Gleam, puedes utilizar la función `io.format`. Esta función toma dos argumentos: una cadena de formato y una lista de valores. Aquí hay un ejemplo:
 
-```
-Gleam debug("El valor de x es", x)
-```
-
-Este código imprimirá la cadena "El valor de x es" seguida del valor de la variable `x` en la consola de depuración.
-
-También puedes imprimir la salida de depuración en diferentes niveles de detalle utilizando la función `debug!()` y especificando un nivel de depuración como argumento. Por ejemplo:
-
-```
-Gleam debug!(2, "El valor de x es", x)
+```Gleam
+io.format("El resultado de la suma de 1 y 2 es {}", [(1 + 2)])
 ```
 
-Este código imprimirá la cadena "El valor de x es" seguida del valor de la variable `x` solo si se especifica un nivel de depuración de 2 o superior.
+La salida de este código sería:
 
-## Inmersión profunda
+```
+El resultado de la suma de 1 y 2 es 3
+```
 
-Además de imprimir valores de variables, también puedes usar la función `debug()` para imprimir mensajes de error y trazas de ejecución. Esto es especialmente útil cuando se utiliza con la función `try()`, que captura y maneja errores en Gleam.
+Puedes utilizar diferentes tipos de datos en la cadena de formato, como enteros, cadenas de texto, booleanos o incluso estructuras de datos complejas. También puedes utilizar la función `debug.inspect` para imprimir información detallada sobre una variable o valor específico.
 
-Además, puedes utilizar la función `debug!()` para imprimir cadena de caracteres Unicode y crear una salida de depuración más visual y legible.
+## Profundizando
+
+La salida de depuración puede ser especialmente útil al trabajar con funciones o patrones más complejos. Puedes imprimir valores en diferentes puntos de una función para entender mejor cómo se están procesando los datos. También puedes utilizar la salida de depuración en conjunto con pruebas unitarias para encontrar errores en tu código.
+
+Sin embargo, es importante recordar eliminar o comentar cualquier salida de depuración antes de enviar tu código a producción, ya que puede sobrecargar el programa y afectar su rendimiento.
 
 ## Ver también
-- Documentación oficial de Gleam sobre la función `debug()`: [https://gleam.run/documentation/stdlib/debug/](https://gleam.run/documentation/stdlib/debug/)
-- Artículo sobre depuración en Gleam en el blog de Codeship: [https://blog.trysmudford.com/debugging-gleam-code/](https://blog.trysmudford.com/debugging-gleam-code/)
-- Tutorial interactivo sobre la depuración en Gleam en el sitio web de LoshTechies: [https://loshtechies.com/2018/06/07/gleam-tutorial-11-debugging/](https://loshtechies.com/2018/06/07/gleam-tutorial-11-debugging/)
+
+- [Documentación oficial de Gleam sobre salida de depuración](https://gleam.run/core/io.html#format)
+- [Tutorial de Gleam para principiantes](https://gleam.run/tutorials/getting-started.html)
+- [Ejemplos de código en Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)

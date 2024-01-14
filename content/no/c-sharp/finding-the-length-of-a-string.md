@@ -1,57 +1,47 @@
 ---
 title:    "C#: Å finne lengden på en streng"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å finne lengden på en streng kan virke som en enkel oppgave, men det er en viktig ferdighet i enhver programmerers verktøykasse. Å vite lengden på en streng kan være nyttig når du jobber med tekstmanipulasjon eller når du trenger å kontrollere inndata som er begrenset i størrelse. I denne bloggposten vil vi utforske hvordan du kan finne lengden på en streng i C#.
+Visste du at å finne lengden på en streng er en vanlig oppgave i mange programmeringsspråk? Å finne lengden på en streng kan gi nyttig informasjon som kan bidra til å effektivisere koden din. I denne bloggposten vil vi se nærmere på hvorfor det er viktig å kunne finne lengden på en streng, og hvordan du kan gjøre det i C#. 
 
-## Hvordan
+## Hvordan gjøre det 
 
-For å finne lengden på en streng i C#, kan du bruke den innebygde metoden `Length`. La oss se på et eksempel:
-
-```C#
-string navn = "Ola";
-Console.WriteLine(navn.Length);
-```
-
-Dette vil skrive ut `3` siden `navn` er en streng bestående av tre tegn. Hvis strengen derimot er tom, vil `Length` returnere `0`.
-
-Det er også verdt å nevne at `Length` returnerer antall tegn, ikke antall ord, i en streng. Hvis du ønsker å finne antall ord, må du først splitte strengen i et array av ord og deretter finne lengden på arrayet.
+For å finne lengden på en streng i C#, kan vi bruke `Length`-metoden. Her er et enkelt eksempel: 
 
 ```C#
-string tekst = "Dette er en lang setning.";
-string[] ord = tekst.Split(" ");
-Console.WriteLine(ord.Length);
+string navn = "Marie";
+int lengde = navn.Length;
+Console.WriteLine(lengde); // output: 5
 ```
 
-Dette vil skrive ut `5` siden det er 5 ord i setningen.
+I dette tilfellet vil 5 bli skrevet ut, siden lengden på strengen "Marie" er fem tegn. Vi kan også bruke `Length`-metoden på variabler som er av typen `StringBuilder`.
+
+```C#
+StringBuilder tekst = new StringBuilder("Dette er en tekst");
+int lengde = tekst.Length;
+Console.WriteLine(lengde); // output: 18
+```
+
+Som du ser, er det enkelt å finne lengden på en streng i C#. Dette kan være nyttig når du for eksempel skal håndtere brukerinndata eller behandle tekstbaserte datafiler. 
 
 ## Dypdykk
 
-En av de mest brukte metodene for å finne lengden på en streng er å bruke løkken `for`. La oss se på et eksempel:
+Nå som vi har sett på hvordan vi kan finne lengden på en streng i C#, la oss ta et dypere dykk og se på hva som faktisk skjer når vi bruker `Length`-metoden. 
 
-```C#
-string streng = "Hei, dette er en streng.";
-int lengde = 0;
+Denne metoden er en del av standardbiblioteket i C#, og den tilhører typen `String` og `StringBuilder`. Når du bruker `Length`-metoden, returneres antallet tegn i strengen du har gitt den. Dette er nyttig for å finne ut hvor mange tegn som må behandles når du for eksempel arbeider med tekstbaserte datafiler. Husk at mellomrom og spesialtegn også telles med når du finner lengden på en streng. 
 
-for (int i = 0; i < streng.Length; i++)
-{
-    lengde++;
-}
+I tillegg til å bruke `Length`-metoden, kan du også bruke `Count`-egenskapen. Forskjellen mellom disse to er at `Length`-metoden er en metode som returnerer et heltall, mens `Count` er en egenskap som returnerer en long-verdi. Begge gir likevel samme resultat når du bruker dem til å finne lengden på en streng. 
 
-Console.WriteLine(lengde);
-```
+## Se også
 
-Denne løkken vil sammenligne hver bokstav i strengen og øke lengden med 1 for hver bokstav. Til slutt vil lengden bli skrevet ut, som i dette tilfellet vil være `24` siden det er 24 tegn i strengen.
+Her er noen nyttige lenker til ressurser som kan hjelpe deg å lære mer om lengden til en streng i C#:
 
-Husk at dette bare er ett av flere mulige tilnærminger for å finne lengden på en streng. Det finnes også andre metoder og innebygde funksjoner som kan brukes for dette formålet.
-
-## Se Også
-
-- [C# String Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
-- [C# for Beginners: Working with Strings](https://www.educative.io/edpresso/c-for-beginners-working-with-strings)
-- [How to Measure the Length of a String in C#](https://www.c-sharpcorner.com/UploadFile/fd0172/how-to-find-the-length-of-a-string-in-C-Sharp/)
+* [Microsoft Docs om string.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1)
+* [W3Schools C# Strings tutorial](https://www.w3schools.com/cs/cs_strings.asp)
+* [GeeksforGeeks om string.Length Property](https://www.geeksforgeeks.org/c-sharp-string-length-property/)

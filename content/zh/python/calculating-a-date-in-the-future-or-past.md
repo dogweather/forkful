@@ -1,55 +1,95 @@
 ---
 title:    "Python: 计算未来或过去的日期"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-Python编程博客：如何计算日期？
+为什么：为什么要计算未来或过去的日期，仅需1-2句话解释*为什么*。
 
-## 为什么
+计算未来或过去的日期可以帮助我们制定时间表，安排活动或事件，或者计算利息和收益等。它也有助于追踪时间的流逝和了解时间的走向。
 
-计算日期是编程中一个常见的需求，有时候我们需要计算一个未来或过去的日期，以满足特定的业务需求。比如，我们可以使用Python编程来计算未来某一天的生日，或者计算某个项目的截止日期。
+## 如何进行日期计算
 
-## 如何进行计算
-
-要计算日期，我们需要使用Python中的Datetime库。首先，我们需要导入该库，并定义一个date对象，来表示我们要计算的日期。比如，我们可以这样写：
+在Python中，我们可以使用datetime库来进行日期计算。首先，我们需要导入datetime库：
 
 ```Python
 import datetime
-
-date = datetime.date(2020, 6, 25)
 ```
 
-接下来，我们可以使用datetime库中的timedelta函数来计算未来或过去的日期。比如，如果我们想要计算3个月后的日期，我们可以这样写：
+### 计算未来日期
+
+要计算未来的日期，我们可以使用`datetime`模块中的`date`类。下面的示例代码将展示如何计算明天的日期：
 
 ```Python
-date_3_months_later = date + datetime.timedelta(days=90)
+# 导入datetime库
+import datetime
+
+# 使用today()方法获取今天的日期
+today = datetime.date.today()
+
+# 使用timedelta类指定日期间隔为1天
+one_day = datetime.timedelta(days=1)
+
+# 计算明天的日期
+tomorrow = today + one_day
+
+# 打印明天的日期
+print("明天的日期是：" + str(tomorrow))
 ```
 
-最后，我们可以使用strftime函数来将日期转换为特定的格式。比如，我们可以将日期转换为"年-月-日"的格式：
+运行以上代码，我们可以得到明天的日期。类似地，我们也可以计算一周、一个月或一年后的日期。
+
+### 计算过去日期
+
+要计算过去的日期，我们可以使用与计算未来日期相同的方法。下面的示例代码将展示如何计算昨天的日期：
 
 ```Python
-print(date_3_months_later.strftime("%Y-%m-%d"))
+# 导入datetime库
+import datetime
+
+# 使用today()方法获取今天的日期
+today = datetime.date.today()
+
+# 使用timedelta类指定日期间隔为1天
+one_day = datetime.timedelta(days=1)
+
+# 计算昨天的日期
+yesterday = today - one_day
+
+# 打印昨天的日期
+print("昨天的日期是：" + str(yesterday))
 ```
 
-输出的结果将是：2020-09-23。
+运行以上代码，我们可以得到昨天的日期。同样地，我们也可以计算一周、一个月或一年前的日期。
 
 ## 深入了解日期计算
 
-计算日期其实涉及到很多复杂的算法和逻辑，比如考虑每月的天数不同、闰年等因素。在Python中，Datetime库已经帮助我们处理了这些复杂性，让我们可以简单地使用日期对象和timedelta函数来实现日期计算。
+除了使用`timedelta`类来指定日期间隔，我们还可以使用`datetime`模块中的`relativedelta`类来进行日期计算。这个类可以帮助我们计算具有复杂关系的日期，例如下一个星期五或上一个周一。
 
-另外，我们还可以通过更改日期对象中的属性来实现不同精度的日期计算，比如不仅仅是天数，还可以计算小时、分钟、秒等。
+下面的示例代码将展示如何使用`relativedelta`类来计算下一个星期五的日期：
 
-## 参考资料
+```Python
+# 导入datetime库
+import datetime
 
-- [Python Datetime库文档](https://docs.python.org/3/library/datetime.html)
-- [Datetime库示例代码](https://realpython.com/python-datetime/)
-- [Python Timedelta函数文档](https://docs.python.org/3/library/datetime.html#timedelta-objects)
-- [Timedelta函数示例代码](https://www.w3schools.com/python/python_datetime.asp)
+# 使用today()方法获取今天的日期
+today = datetime.date.today()
 
-# 查看更多
+# 使用relativedelta类指定日期间隔为下一个星期五
+next_friday = today + relativedelta(weekday=FR)
 
-- [Understanding and Using Python's DateTime API](https://realpython.com/python-datetime/)
-- [How to Format a Date using Python](https://www.w3schools.com/python/python_datetime.asp)
-- [A Beginner's Guide to Date Manipulation in Python](https://code.tutsplus.com/tutorials/a-beginners-guide-to-date-manipulation-in-python--cms-32427)
+# 打印下一个星期五的日期
+print("下一个星期五的日期是：" + str(next_friday))
+```
+
+运行以上代码，我们可以得到下一个星期五的日期。
+
+## 参考链接
+
+- [Python官方文档](https://docs.python.org/3/library/datetime.html)
+- [Python日期计算详解](https://www.runoob.com/python/python-datetime.html)
+- [Python日期计算实例教程](https://www.jianshu.com/p/1c62bb9529db)
+
+请参考以上链接了解更多关于Python中日期计算的知识。

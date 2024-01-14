@@ -1,54 +1,43 @@
 ---
 title:    "Rust: Comparando duas datas"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar datas em Rust pode ser útil?
+## Por que comparar duas datas em Rust é importante
 
-Ao trabalhar com dados temporais em seus projetos de programação, é comum se deparar com a necessidade de comparar duas datas para determinar qual é a mais recente ou se são iguais. Em Rust, isso pode ser feito de forma simples e eficiente, graças às suas ferramentas de manipulação de datas. Neste post, vamos explorar como comparar datas em Rust pode ser útil em suas aplicações.
+Comparar datas é uma tarefa comum e essencial em muitos programas de computador. Ao comparar duas datas em Rust, podemos verificar se uma data é anterior, posterior ou igual a outra. Isso pode ser útil em uma variedade de cenários, como gerenciamento de eventos, controle de versão de arquivos ou análise de dados temporais. Nesta postagem do blog, exploraremos como comparar duas datas em Rust e exibiremos exemplos práticos.
 
-## Como fazer a comparação de datas em Rust
+## Como comparar duas datas em Rust
 
-Em Rust, existem alguns tipos de dados diferentes para trabalhar com datas: `SystemTime`, `Duration` e `Instant`. O `SystemTime` representa uma data e hora específica em relação ao relógio do sistema, enquanto o `Duration` representa uma duração específica de tempo. O `Instant` é semelhante ao `SystemTime`, mas com precisão de nanossegundos, o que o torna ideal para medir tempos de execução. Vamos ver como comparar duas datas usando esses tipos de dados em um exemplo de código:
+Em Rust, podemos comparar duas datas por meio do operador `==` ou dos métodos `eq()`, `ne()`, `lt()`, `gt()` e `cmp()` da estrutura `DateTime` da biblioteca `chrono`. Vejamos um exemplo de comparação de datas usando o operador `==`:
 
-```Rust
-use std::time::{SystemTime, Duration, Instant};
+```rust
+use chrono::{Date, Datelike, Utc};
 
-fn main() {
-    // Criando duas datas diferentes
-    let date1 = SystemTime::now();
-    let date2 = SystemTime::now() + Duration::from_secs(3600);
+let date1 = Utc::today();
+let date2 = Date::from_ymd(2022, 1, 1);
 
-    // Comparando as datas
-    if date1 < date2 {
-        println!("A data 1 é mais antiga do que a data 2!");
-    } else if date1 > date2 {
-        println!("A data 2 é mais antiga do que a data 1!");
-    } else {
-        println!("As datas são iguais!");
-    }
-
-    // Medindo o tempo de execução usando Instant
-    let start = Instant::now();
-    // Código a ser medido
-    let end = Instant::now();
-    println!("O tempo de execução foi de {} nanossegundos.", end.duration_since(start).as_nanos());
+if date1 == date2 {
+    println!("As duas datas são iguais!");
+} else {
+    println!("As datas são diferentes!");
 }
 ```
 
-Neste exemplo, usamos o operador de comparação `<` para verificar se a `date1` é menor que `date2` e o operador `>` para verificar se `date1` é maior que `date2`. Caso nenhuma das condições seja verdadeira, sabemos que as datas são iguais. Além disso, usamos o `Instant` para medir o tempo de execução do código entre dois pontos.
+Este código criará duas datas, uma referente ao dia atual e outra ao dia 1 de janeiro de 2022. Em seguida, o operador `==` é utilizado para compará-las e, dependendo do resultado, uma mensagem será exibida.
 
-## Mergulho profundo na comparação de datas em Rust
+Outros métodos também podem ser usados, como por exemplo `lt()`, que verifica se a primeira data é menor que a segunda, ou `ne()`, que verifica se elas são diferentes. Além disso, o método `cmp()` retorna um resultado `Ordering` baseado na comparação entre as datas, que pode ser usado em estruturas de controle de fluxo.
 
-É importante notar que, ao comparar datas em Rust, é necessário considerar o fuso horário. O tipo `SystemTime` representa uma data sem fuso horário, portanto, é importante garantir que todas as datas que estão sendo comparadas estejam no mesmo fuso horário. Além disso, o operador de comparação `<` só pode ser usado em valores do tipo `SystemTime`, enquanto o `>` e `=` podem ser usados em valores do tipo `Instant`.
+## Mergulhando mais fundo
 
-Também é possível converter datas para uma representação numérica usando o método `duration_since()`, o que pode ser útil para fazer cálculos ou para armazenar datas em formato mais compacto.
+Ao comparar duas datas em Rust, é importante entender como esses métodos funcionam e como as datas são representadas. Internamente, as datas são armazenadas como a quantidade de segundos a partir de uma data de referência, conhecida como "época". Em Rust, a época é definida como sendo o dia 1º de janeiro de 1970 às 00:00:00 UTC. Isso significa que podemos comparar datas de diferentes fusos horários sem nos preocuparmos com a diferença de horário.
+
+Além disso, é importante notar que, ao criar uma data sem especificar um fuso horário, o padrão é ser utilizada a hora UTC.
 
 ## Veja também
-- Documentação oficial da biblioteca de datas em Rust: https://doc.rust-lang.org/std/time/
-- Tutorial sobre manipulação de datas em Rust: https://www.leepope.net/working-with-dates-and-times-in-rust.html
-- Exemplos de código para manipulação de datas em Rust: https://play.rust-lang.org/?version=stable&mode=release&edition=2018&gist=de9f19c3c09cee7e3be0dcf31b7a42d8
 
-Esperamos que este post tenha sido útil para entender melhor como comparar datas em Rust e como isso pode ser útil em seus projetos. Não hesite em explorar mais a fundo as ferramentas de manipulação de datas disponíveis na linguagem. Boa programação em Rust!
+- [Documentação da biblioteca `chrono`](https://docs.rs/chrono/latest/chrono/)
+- [Tutorial sobre manipulação de datas em Rust](https://dev.to/adam_orlowsky/how-to-manipulate-dates-and-times-in-rust-4g8m)

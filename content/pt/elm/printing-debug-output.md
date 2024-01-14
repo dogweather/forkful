@@ -1,39 +1,49 @@
 ---
 title:    "Elm: Imprimindo saída de depuração"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Você pode se perguntar por que alguém se daria ao trabalho de imprimir mensagens de depuração em um programa Elm. A resposta é simples: imprimir mensagens de depuração é uma técnica útil para entender como seu programa está funcionando e encontrar erros.
+Você já teve problemas para entender por que seu código está funcionando de determinada maneira? Ou talvez você queira ver como seus dados estão sendo manipulados durante a execução do programa? Nesses casos, imprimir saídas de depuração pode ser uma ferramenta útil para ajudá-lo a compreender melhor o fluxo do seu código.
 
 ## Como Fazer
 
-Para imprimir uma mensagem de depuração em Elm, você pode usar a função `Debug.log` seguida pelo valor que deseja imprimir. Por exemplo:
+Para imprimir saídas de depuração em Elm, existem duas opções principais: a função `Debug.log` e a biblioteca [elm-debug](https://package.elm-lang.org/packages/the-sett/elm-debug/latest/). A função `Debug.log` é útil para imprimir valores de variáveis, enquanto a biblioteca elm-debug permite a criação de impressões de depuração mais detalhadas. Veja abaixo exemplos de como implementar essas opções em seu código:
 
 ```Elm
-Debug.log "Meu número favorito" 7
+-- utilizando Debug.log
+import Debug
+
+nome = "Maria"
+Debug.log "Nome:" nome
+
+-- utilizando elm-debug
+-- importe a biblioteca em seu código
+import TheSett.ElmDebug
+
+-- crie uma função para imprimir um valor
+nomeCompleto primeiroNome ultimoNome =
+    TheSett.ElmDebug.print "Nome Completo:" <| primeiroNome ++ " " ++ ultimoNome
 ```
 
-Isto irá imprimir a mensagem "Meu número favorito" seguida do valor 7 no console do seu navegador. Você também pode imprimir valores de variáveis, como em:
+A saída desses exemplos seria:
 
-```Elm
-let
-    meuNome = "Maria"
-in
-    Debug.log "O nome da pessoa é" meuNome
+```
+Nome: "Maria"
+Nome Completo: "Maria Smith"
 ```
 
-Esta função pode ser particularmente útil quando você está trabalhando com funções e quer verificar se a entrada e saída estão indo como o esperado.
+## Mergulho Profundo
 
-## Profundidade
+Uma coisa importante a se notar sobre as impressões de depuração em Elm é que elas não são exibidas no navegador por padrão. Para ver as saídas, é necessário ativar a visualização do console no navegador. Para fazer isso, clique com o botão direito na página do seu programa Elm e selecione "Inspecionar" ou "Inspeção" (dependendo do navegador). Na janela que se abre, procure por uma guia chamada "Console". Selecione esta guia e as saídas de depuração serão exibidas aqui.
 
-Mensagens de depuração também podem ser úteis para entender o fluxo de dados em um programa. Você pode imprimir mensagens em diferentes pontos do seu código para ver como os valores estão sendo transformados e utilizados em diferentes partes do programa. Além disso, você pode adicionar mensagens de depuração em diferentes condições para identificar quais partes do seu código estão sendo executadas ou não.
+Além disso, é importante lembrar de remover todas as impressões de depuração antes de enviar seu programa para produção, pois elas podem afetar o desempenho e a segurança do seu código.
 
 ## Veja Também
 
-- Documentação oficial sobre mensagens de depuração em Elm: https://guide.elm-lang.org/debugging/debugging.html
-- Tutorial sobre uso de `Debug.log`: https://www.elm-tutorial.org/en/04-starting/06-debugging.html
-- Artigo sobre depuração em Elm: https://www.twosixlabs.com/debugging-in-elm/
+- [Documentação da função Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
+- [Elm-debug no Pacote Elm](https://package.elm-lang.org/packages/the-sett/elm-debug/latest/)

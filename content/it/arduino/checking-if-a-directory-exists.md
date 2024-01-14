@@ -1,37 +1,47 @@
 ---
-title:    "Arduino: Verifica se una directory esiste"
+title:    "Arduino: Verifica dell'esistenza di una cartella"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perchè
+Se stai realizzando un progetto con Arduino che richiede di utilizzare una memoria esterna come una scheda SD, potrebbe essere utile sapere se una determinata cartella esiste o meno. In questo modo, puoi evitare errori nel tuo codice e garantire che il programma funzioni correttamente.
 
-Controllare l'esistenza di una directory può essere utile per assicurarsi che il proprio programma sia in grado di gestire correttamente i file su Arduino. Ad esempio, se un programma ha bisogno di accedere a un file in una determinata directory, è importante verificare che tale directory esista prima di provare ad aprirla o leggere il file al suo interno.
-
-## Come Fare
-
-Per controllare l'esistenza di una directory su Arduino, è necessario utilizzare una funzione chiamata `exists()`. Questa funzione accetta come parametro una stringa contenente il percorso della directory che si desidera controllare e restituisce `true` se la directory esiste, altrimenti restituisce `false`.
+## Come fare
+Per verificare se una cartella esiste su una scheda SD collegata ad Arduino, puoi utilizzare la funzione `exists()` della libreria `SD`. Ecco un esempio di codice:
 
 ```Arduino
-if (exists("/my_directory")) {
-  Serial.println("La directory esiste!");
-} else {
-  Serial.println("La directory non esiste.");
+#include <SD.h>
+
+void setup() {
+  // Inizializza la scheda SD
+  SD.begin();
+
+  // Verifica se la cartella "log" esiste
+  if (SD.exists("log")) {
+    // La cartella esiste, stampa un messaggio
+    Serial.println("La cartella log esiste!");
+  } else {
+    // La cartella non esiste, stampa un messaggio
+    Serial.println("La cartella log non esiste!");
+  }
+}
+
+void loop() {
+  // Il programma continua qui
 }
 ```
 
-L'esempio sopra utilizza la funzione `Serial.println()` per stampare un messaggio sul monitor seriale a seconda del risultato dell'operazione di controllo. 
+Se la cartella "log" esiste, il programma stampa "La cartella log esiste!". Altrimenti, verrà stampato "La cartella log non esiste!".
+Puoi anche utilizzare questa funzione all'interno di un loop per aggiungere ulteriori azioni in base alla presenza o assenza della cartella.
 
-## Approfondimento
+## Approfondimenti
+E' importante notare che la funzione `exists()` non verifica se una cartella è vuota o meno, ma solo se la cartella stessa esiste.
+Inoltre, se stai utilizzando una scheda SD con una capacità inferiore a 2GB, potresti riscontrare problemi con la funzione `exists()`. In questo caso, puoi utilizzare la funzione `SD.ls()` per ottenere una lista delle cartelle presenti sulla scheda e verificare la presenza della cartella desiderata all'interno della lista.
 
-La funzione `exists()` in realtà utilizza due diverse funzioni interne per controllare l'esistenza della directory. La prima funzione, `open()`, tenta di aprire la directory specificata e restituisce un puntatore al file se l'operazione ha successo. Altrimenti, restituisce un puntatore nullo. La seconda funzione, `exists()`, confronta il puntatore restituito dalla funzione `open()` con il puntatore nullo per determinare se la directory esiste o meno.
-
-È importante notare che la funzione `exists()` non crea effettivamente una nuova directory in caso di esito negativo. Per questo compito, è necessario utilizzare una funzione apposita come ad esempio `mkdir()`.
-
-## Vedi Anche
-
-- [documentazione ufficiale di Arduino su exists()](https://www.arduino.cc/en/Reference/Exists)
-- [tutorial su come gestire file e directory su Arduino](https://www.tutorialspoint.com/arduino/arduino_file_management.htm)
-- [altre funzioni utili per la gestione dei file su Arduino](https://forum.arduino.cc/index.php?topic=534431.0)
-- [esempio di utilizzo di exists() su GitHub](https://github.com/greiman/SdFat/blob/master/examples/exists/exists.ino)
+## Vedi anche
+- [Documentazione di Arduino sulla libreria SD](https://www.arduino.cc/en/Reference/SD)
+- [Esempi di codice per l'utilizzo di una scheda SD con Arduino](https://www.arduino.cc/en/Tutorial/ReadASCIIString)
+- [Tutorial su come utilizzare una scheda SD con Arduino](https://www.circuitsdiy.com/how-to-use-sd-card-with-arduino/)

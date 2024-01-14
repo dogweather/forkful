@@ -1,50 +1,59 @@
 ---
-title:    "Java: Merkkijonon kirjoittaminen isoilla kirjaimilla"
+title:    "Java: Merkkijonon suurennus"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi kannattaa tehdä merkkijonon kirjoitus isoiksi aakkosiksi
 
-Miksi on tärkeää osata muuttaa merkkijonon kirjaimet isoihin tai pieniin kirjaimiin? Yksi syy voisi olla tiettyjen käyttäjätietojen validointi, esimerkiksi käyttäjänimen tarkistaminen ilman, että isot ja pienet kirjaimet vaikuttavat tulokseen.
+Merkkijonon kirjoittaminen isoiksi aakkosiksi on yleinen ohjelmointitekniikka, jota käytetään useissa Java-sovelluksissa. Se antaa mahdollisuuden muokata tekstin ulkonäköä ja tehdä siitä helpommin luettavaa ja yhtenäisempää. Lisäksi käyttäjät voivat tuntea itsensä mukavammaksi käyttämällä isoja kirjaimia tekstin lukemiseen.
 
-## Miten
+# Miten: Merkkijonon kirjoittaminen isoiksi aakkosiksi Java-ohjelmoinnissa
 
-Java-ohjelmointikielessä on valmiina metodeja merkkijonon muuntamiseen, joten tämä tehtävä ei ole vaikea. Tässä on yksinkertainen esimerkki, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi.
-
-```Java
-String s = "tämä on vain esimerkki";
-String capitalizedString = s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
-
-System.out.println(capitalizedString);
-```
-
-Tuloste: Tämä on vain esimerkki
-
-Suoraviivaisesti tämä koodinpätkä ensin muuttaa merkkijonon ensimmäisen kirjaimen isoksi `toUpperCase()` -methodilla ja sitten muuttaa loput kirjaimet pieniksi `toLowerCase()` -methodilla. Mutta entä jos merkkijonossa on monia sanoja tai merkkijonossa on joitakin erikoismerkkejä? Tässä tapauksessa voisi olla parempi käyttää `split()`- methodia, joka jakaa merkkijonon sanoiksi ja sitten muuntaa ensimmäisen kirjaimen isoksi.
+Java tarjoaa muutaman eri tapaa muuttaa merkkijono isoiksi aakkosiksi. Tässä esimerkissä käytämme String.toUpperCase () -metodia.
 
 ```Java
-String s = "tämä on toinen esimerkki!";
-String[] words = s.split(" ");
-String capitalizedString = "";
+String s = "tämä on esimerkki";
 
-for (String word : words) {
-    String capitalizedWord = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
-    capitalizedString += capitalizedWord + " ";
-}
-
-System.out.println(capitalizedString);
+// muuta merkkijono isot aakkoset
+String capitalized = s.toUpperCase();
+System.out.println(capitalized);
 ```
 
-Tuloste: Tämä On Toinen Esimerkki!
+Tämä koodi antaa seuraavan tulosteen:
 
-## Syvemmälle
+```
+TÄMÄ ON ESIMERKKI
+```
 
-Merkkijonon muuntaminen on tärkeä osa ohjelmoinnin perusteita. Se auttaa meitä varmistamaan, että käyttäjän antamat tiedot ovat oikeassa muodossa ja helpottaa tietojen käsittelyä. Muuntaminen isoihin tai pieniin kirjaimiin voi joskus olla myös osa ohjelman toiminnallisuutta, esimerkiksi jos haluamme vertailla merkkijonoja ilman, että isot ja pienet kirjaimet vaikuttavat tulokseen. On hyvä osata erilaisia tapoja muuttaa merkkijonoa eri tilanteisiin sopivaksi.
+Voit myös käyttää Character.toUpperCase () -metodia, jolla voit muuttaa yksittäinen kirjain isoksi.
 
-## Katso myös
+```Java
+char c = 'a';
 
-- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [TutorialsPoint: Java - Changing the Case of Characters](https://www.tutorialspoint.com/java/string_touppercase.htm)
-- [GeeksforGeeks: String - toUpperCase() and toLowerCase() methods in Java](https://www.geeksforgeeks.org/java-string-touppercase-method-example/)
+// muuta kirjain isot aakkoset
+char capitalized = Character.toUpperCase(c);
+System.out.println(capitalized);
+```
+
+Tämä koodi antaa seuraavan tulosteen:
+
+```
+A
+```
+
+# Syvällinen erittely: Merkkijonon kirjoittaminen isoiksi aakkosiksi
+
+Merkkijonon kirjoittamisen isoksi aakkosiksi Java-ohjelmoinnissa taustalla on Unicode-merkkijonojen standardi. Jokaisella tallennetulla merkillä on oma numeronsa Unicode-taulukossa ja pienet kirjaimet ovat peräkkäin isojen kirjainten kanssa.
+
+Joten, kun käytät toUpperCase () -metodia, se tarkistaa jokaisen merkin Unicode-numeron ja jos se on pieni kirjain, muuttaa sen vastaavaksi isoksi kirjaimeksi.
+
+On myös tärkeää huomata, että merkkijonot ovat muuttumattomia Java-ohjelmoinnissa, mikä tarkoittaa, että kun muutat merkkijonoa isoksi, sinun täytyy tallentaa muutettu merkkijono uuteen muuttujaan.
+
+# Katso myös
+
+- [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java Character-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
+- [Unicode standardi](https://unicode.org/standard/standard.html)

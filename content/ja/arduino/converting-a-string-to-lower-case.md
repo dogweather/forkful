@@ -1,34 +1,34 @@
 ---
 title:    "Arduino: 文字列を小文字に変換する"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を小文字に変換することに関心があるのであれば、これはあなたにとって便利な記事です。Arduinoでは、文字列を小文字に変換することができるため、プロジェクトにより独創性を与えることができます。
+
+文字列を小文字に変換することは、プログラミングにおいて非常に便利な機能です。例えば、入力された文字列をすべて小文字に変換することで、処理をより簡単に行うことができます。
 
 ## 方法
-Arduinoで文字列を小文字に変換するための簡単な方法は、 `toLowerCase()`関数を使用することです。以下に例を示します。
 
 ```Arduino
-String myString = "HELLO WORLD";
-myString.toLowerCase();
+// 入力された文字列を定義
+String input = "Hello, World!";
+// 文字列を小文字に変換する
+String lowerCase = input.toLowerCase();
+// 小文字に変換した文字列を出力
+Serial.println(lowerCase);
 ```
 
-出力：hello world
+上記のコードを実行すると、"hello, world!"という出力が得られます。このように、StringクラスのtoLowerCase()メソッドを使うことで、簡単に文字列を小文字に変換することができます。
 
-`toLowerCase()`関数は、文字列に含まれるすべての大文字を小文字に変換します。
+## 深堀り
 
-## ディープダイブ
-`toLowerCase()`関数は、実際には文字列を変更しません。その代わりに、変更後の文字列を返します。したがって、変換したい文字列を変数に代入してから、`toLowerCase()`関数を使用する必要があります。
-
-また、日本語の文字列を小文字に変換する際には注意が必要です。Arduinoでは、UTF-8エンコーディングを使用するため、カタカナやひらがななどの日本語の文字を小文字に変換することはできません。しかし、外部ライブラリを使用することで、日本語の文字列を正しく小文字に変換することができます。
+文字列を小文字に変換するには、大文字と小文字のアルファベットのasciiコードを利用します。大文字のアルファベットのasciiコードは65から90までの数字に対応しており、小文字のアルファベットのasciiコードは97から122までの数字に対応しています。つまり、大文字のasciiコードに32を足すことで対応する小文字のasciiコードを得ることができます。このような仕組みを利用して、Arduinoで文字列を小文字に変換することができます。
 
 ## 参考リンク
-- [ArduinoのStringオブジェクトリファレンス](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject)
-- [ArduinoのtoLowerCase()関数のドキュメント](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/tolowercase/)
-- [外部ライブラリで日本語の文字列を正しく小文字に変換する方法](https://translate-content.com/articles/tips/arduino-string-case-line/)
 
-## 参考文献
-[外部ライブラリで日本語の文字列を正しく小文字に変換する方法](https://translate-content.com/articles/tips/arduino-string-case-line/)
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [Arduino Stringクラスリファレンス](https://www.arduino.cc/en/Reference/StringObject)
+- [ASCIIコード表](https://www.ascii-code.com/)

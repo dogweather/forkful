@@ -1,56 +1,60 @@
 ---
 title:    "Rust: 检查目录是否存在"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：为什么要学习如何检查目录是否存在？因为在编程中常常需要在程序执行前先检查目录是否存在，以防止出现错误或者程序崩溃。这是一种增加代码健壮性的常用方法。
 
-在编程过程中，我们经常需要检查一个文件夹是否存在。这有助于我们确保我们的代码在访问文件夹的时候不会出现错误，同时也能够让我们更好地处理不同的情况。
-
-## 如何
-
-在Rust中，我们可以使用标准库中的`std::fs`来检查文件夹是否存在。首先，我们需要引入`std::fs`库：
+如何：Rust是一种现代化的编程语言，它提供了许多不同的方法来检查和处理目录。下面是一个简单的示例代码，展示如何使用Rust中的标准库来检查目录是否存在。
 
 ```Rust
 use std::fs;
-```
+use std::io;
 
-然后，我们可以使用`fs::metadata()`函数来获取一个文件或文件夹的元数据。如果文件或文件夹存在，就会返回一个包含其元数据的`fs::Metadata`结构体。在这个结构体中，我们可以使用`is_dir()`方法来判断该元数据是否属于一个文件夹。
+fn main() {
+    let directory = "my_folder";
 
-```Rust
-let metadata = fs::metadata("my_folder").unwrap();
-if metadata.is_dir() {
-    println!("The folder exists.");
-} else {
-    println!("The folder does not exist.");
+    // 使用fs::metadata函数来获取目录的元数据
+    let directory_metadata = fs::metadata(directory);
+
+    // 使用Result类型来处理可能出现的错误
+    match directory_metadata {
+        Ok(metadata) => {
+            // 如果目录存在，则打印出目录的路径和大小
+            if metadata.is_dir() {
+                println!("目录 {} 存在，大小为 {} bytes.", directory, metadata.len());
+            } 
+        }
+        Err(error) => {
+            // 如果出现错误，打印错误信息
+            println!("无法访问目录 {}: {}", directory, error);
+        }
+    }
 }
+
 ```
 
-如果文件夹不存在，`fs::metadata()`函数会返回一个错误。因此，我们使用了`unwrap()`函数来处理可能的错误，并在出现错误时打印出一条错误信息。
+运行上面的代码，如果目录“my_folder”存在，将会输出如下信息：
 
-## 深入了解
-
-如果我们想要检查的文件夹位于某个特定路径下，我们可以使用`std::path::Path`来创建一个路径对象，并传递给`fs::metadata()`函数。
-
-```Rust
-use std::fs;
-use std::path::Path;
-
-let folder_path = Path::new("/home/user/my_folder");
-let metadata = fs::metadata(folder_path).unwrap();
+```
+目录 my_folder 存在，大小为 4096 bytes.
 ```
 
-此外，我们还可以使用`fs::symlink_metadata()`函数来获取链接文件的元数据，该函数会自动解析所有的符号链接。
+深入了解：实际上，fs::metadata函数不仅可以用来检查目录是否存在，还可以用来获取目录的元数据，如目录的权限、所属用户等信息。此外，Rust还提供了其他函数来检查目录的存在性，例如fs::read_dir和fs::create_dir，可以根据自己的需要选择使用。
 
-## 参考
+也值得一提的是，Rust中的标准库还提供了一些宏来简化目录检查和操作的代码，例如`create_dir`宏可以用于创建目录，`canonicalize`宏可以用来将相对路径转换为绝对路径。
 
-- [Rust标准库文档](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Rust文档：检查文件或文件夹是否存在](https://www.rust-lang.org/learn/get-started#check-if-a-file-or-directory-exists)
-- [Rust语言中文社区：文件IO模块介绍](https://rustlang-cn.org/office/rustbook/advanced/file.html)
+参考链接：
 
-## 参见
+- [Rust标准库文档 - fs模块](https://doc.rust-lang.org/std/fs/index.html)
+- [Rust By Example - 文件/目录操作](https://doc.rust-lang.org/rust-by-example/std_misc/fs.html)
 
-- [如何在Rust中创建文件和文件夹](https://linktodomain/how-to-create-files-and-folders-in-rust)
-- [使用Rust进行文件操作的最佳实践](https://linktodomain/best-practices-for-file-handling-in-rust)
+请进一步探索Rust的标准库，了解更多关于目录操作的方法和技巧吧。
+
+## 参考链接
+
+- [Rust标准库文档 - fs模块](https://doc.rust-lang.org/std/fs/index.html)
+- [Rust By Example - 文件/目录操作](https://doc.rust-lang.org/rust-by-example/std_misc/fs.html)

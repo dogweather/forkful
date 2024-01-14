@@ -1,44 +1,35 @@
 ---
 title:    "Gleam: Écrire un fichier texte"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi écrire un fichier texte en Gleam?
 
-Écrire un fichier texte peut sembler une tâche simple, mais en utilisant le langage de programmation fonctionnelle Gleam, vous obtenez une approche élégante pour manipuler les fichiers et les données à l'intérieur. Cela peut être utile lorsque vous travaillez avec de gros volumes de données ou que vous avez besoin d'effectuer des opérations complexes sur votre fichier texte.
+Il y a de nombreuses raisons pour lesquelles vous pourriez vouloir écrire un fichier texte en utilisant le langage de programmation Gleam. Cela peut inclure la manipulation de données, la création de rapports ou la mise en forme de contenu pour une application Web. Quelle que soit la raison, écrire un fichier texte en Gleam peut vous aider à automatiser des tâches et à améliorer votre workflow.
 
 ## Comment faire?
 
-Voici un exemple de code pour créer un fichier texte avec Gleam:
+Pour écrire un fichier texte en Gleam, vous pouvez utiliser la fonction `write_file` de la bibliothèque standard `std/fs`. Cette fonction prend deux arguments: le chemin vers le fichier à écrire et le contenu du fichier sous forme de chaîne de caractères. Voici un exemple de code pour écrire un fichier texte contenant le message "Bonjour, monde!" :
 
-```Gleam
-import gleam/io
-
-// Créer un fichier texte avec une ligne
-let file = io.write_text_file("mon_fichier.txt", "Ceci est un exemple de ligne.")
-
-// Ajouter une nouvelle ligne au fichier
-file = io.write_text_file(file, "Et ceci est une autre ligne.")
-
-// Fermer le fichier
-file = io.close_text_file(file)
+```
+Gleam program
+pub fn main() {
+  let content = "Bonjour, monde!";
+  let _ = std/fs.write_file("hello.txt", content);
+}
 ```
 
-Voici le contenu de "mon_fichier.txt" après l'exécution de ce code:
+Une fois que vous avez exécuté ce code, vous devriez voir le fichier `hello.txt` créé dans le même répertoire que votre programme Gleam.
 
-Ceci est un exemple de ligne.
-Et ceci est une autre ligne.
+## Plongez plus profondément
 
-Comme vous pouvez le voir, chaque fois que vous ajoutez une nouvelle ligne à votre fichier, celle-ci est ajoutée à la fin du fichier existant. Vous pouvez également utiliser les fonctions de lecture de fichier de Gleam pour lire et manipuler le contenu de votre fichier texte.
-
-## Plongée en profondeur
-
-Gleam utilise le concept de gestionnaire de ressources afin de gérer automatiquement l'ouverture et la fermeture des fichiers. Cela vous permet de vous concentrer sur la manipulation des données à l'intérieur de votre fichier plutôt que de vous soucier de la gestion des fichiers. De plus, Gleam offre plusieurs fonctions et options pour personnaliser la façon dont vous créez et manipulez vos fichiers texte.
+Outre l'utilisation de la fonction `write_file`, vous pouvez également utiliser d'autres bibliothèques ou fonctions pour manipuler le contenu de votre fichier texte. Par exemple, vous pouvez utiliser la bibliothèque `std/encoding` pour formater votre texte en utilisant différents encodages tels que UTF-8 ou ASCII. Vous pouvez également utiliser la fonction `append` de la bibliothèque `std/fs` pour ajouter du contenu à un fichier existant plutôt que de l'écraser complètement.
 
 ## Voir aussi
 
-- La documentation officielle de Gleam sur les fichiers: [https://gleam.run/articles/files/](https://gleam.run/articles/files/)
-- Un tutoriel sur la manipulation des fichiers en Gleam: [https://medium.com/koalTea/how-to-manipulate-files-in-gleam-1c01a3caef5e](https://medium.com/koalTea/how-to-manipulate-files-in-gleam-1c01a3caef5e)
-- Un autre article sur l'utilisation de Gleam pour créer des fichiers CSV: [https://thoughtbot.com/blog/using-gleam-to-generate-a-simple-csv-file](https://thoughtbot.com/blog/using-gleam-to-generate-a-simple-csv-file)
+- Documentation officielle de Gleam: https://gleam.run/documentation/
+- Guide de démarrage rapide de Gleam: https://gleam.run/getting-started/
+- Exemples de code Gleam: https://github.com/gleam-lang/gleam/tree/master/examples

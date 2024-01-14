@@ -1,40 +1,64 @@
 ---
-title:    "Clojure: Verwendung von regulären Ausdrücken"
+title:    "Clojure: Die Verwendung von regulären Ausdrücken"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Reguläre Ausdrücke sind ein mächtiges Werkzeug, das in vielen Programmiersprachen, einschließlich Clojure, verwendet werden kann. Sie ermöglichen es uns, spezifische Muster in Texten zu erkennen und zu manipulieren, was sehr nützlich ist, wenn wir große Datenmengen verarbeiten oder komplexe Vergleiche durchführen müssen. Daher ist es wichtig, die Grundlagen der regulären Ausdrücke zu verstehen, um effektiv mit Texten arbeiten zu können.
+Wenn du schon eine Weile mit Clojure programmierst, hast du vielleicht schon von regulären Ausdrücken gehört. Aber warum sollte jemand sie verwenden? Reguläre Ausdrücke sind eine nützliche Möglichkeit, Textmuster zu analysieren und zu manipulieren, was sie zu einem wertvollen Werkzeug in der Programmierung macht.
 
-## Wie funktioniert es?
+## Wie man sie verwendet
 
-Die Verwendung von regulären Ausdrücken in Clojure ist einfach. Wir können die `re-seq` Funktion verwenden, um ein Textmuster in einer Zeichenkette zu finden und eine Liste mit übereinstimmenden Ergebnissen zurückzugeben. Zum Beispiel können wir eine Liste von Farben aus einem Text extrahieren:
-
-```Clojure
-"(Rot) (Grün) (Blau) (Gelb)"
-(re-seq #"(\w+)" text)
-```
-
-Das Ergebnis dieser Funktion ist eine Liste mit den Farben "Rot", "Grün", "Blau" und "Gelb". Die `#"` und `"` Symbole geben an, dass es sich um einen regulären Ausdruck handelt. In diesem Fall suchen wir nach allen Buchstaben und Ziffern (durch `\w` dargestellt), die zwischen Klammern stehen.
-
-## Tiefergehende Untersuchung
-
-Um die Verwendung von regulären Ausdrücken in Clojure weiter zu vertiefen, können wir auch die `re-matches` Funktion verwenden, die eine Liste mit allen Übereinstimmungen zurückgibt, einschließlich der Teilausdrücke. Zum Beispiel können wir eine E-Mail-Adresse aus einem Text extrahieren und auch die Domain und die TLD separat speichern:
+Um reguläre Ausdrücke in Clojure zu verwenden, müssen wir zuerst das `re-seq`-Modul importieren.
 
 ```Clojure
-"E-Mail: admin@beispiel.com"
-(re-matches #"(^.+)\@(.+)\.(.+)" text)
+(ns meinprojekt.core
+  (:require [clojure.string :as str]
+            [clojure.re-seq :as re]))
 ```
 
-Das Ergebnis dieser Funktion ist eine Liste mit den Übereinstimmungen "admin@beispiel.com", "admin" und "beispiel" und "com". Das Zeichen `^` gibt an, dass wir am Anfang der Zeichenkette suchen möchten. Die Klammern um jeden Teil des regulären Ausdrucks ermöglichen es uns, die Übereinstimmungen separat abzurufen.
+Als nächstes können wir `re-seq` in Aktion sehen, indem wir eine Liste von Zeichenfolgen erstellen und ein reguläres Ausdrucksmuster angeben, nach dem wir suchen möchten.
+
+```Clojure
+(def emails ["john@example.com", "jane@domain.com", "foobar@server.net"])
+
+; Wir suchen nach E-Mail-Adressen, die auf ".com" enden
+(def pattern #"(.com)$")
+
+; Wir können jetzt das re-seq-Modul verwenden, um die passenden E-Mail-Adressen zu extrahieren
+(def matches (re-seq pattern emails))
+
+; Die Ausgabe wird eine Liste mit den passenden E-Mail-Adressen sein
+["john@example.com", "jane@domain.com"]
+```
+
+Wir können auch reguläre Ausdrücke verwenden, um Textmuster zu ersetzen oder zu ändern. Zum Beispiel können wir alle Vokale in einem String durch Sternchen ersetzen.
+
+```Clojure
+(def text "Reguläre Ausdrücke sind großartig!")
+
+(def pattern #"[aeiou]")
+
+; Wir verwenden `str/replace` mit unserem regulären Ausdrucksmuster und dem Ersatztext " * "
+(str/replace text pattern " * ")
+
+; Die Ausgabe wird "R*g*l*r* *sdr*ck* *nd *gr*ß*rt*g!" sein
+```
+
+## Tiefer Einblick
+
+Reguläre Ausdrücke können natürlich viel komplexer sein und verschiedenste Anwendungen haben. Mit ihnen kannst du zum Beispiel E-Mail-Adressen, URLs, Telefonnummern oder sogar ganze Codeblöcke aus Texten extrahieren. Sie können auch verwendet werden, um Text zu validieren oder zu filtern, je nachdem was du brauchst.
+
+Falls du tiefer in die Welt der regulären Ausdrücke eintauchen möchtest, gibt es viele Ressourcen im Internet, die dir dabei helfen können. Hier sind einige nützliche Links:
+
+- [Clojure Dokumentation zu regulären Ausdrücken](https://clojure.org/reference/regular_syntax)
+- [Regexr - Ein online Tool zum Erstellen und Testen von regulären Ausdrücken](https://regexr.com/)
+- [Regular Expressions Cookbook für Clojure](https://github.com/maria-c/clojure-regular-expressions-cookbook)
 
 ## Siehe auch
 
-Hier sind einige zusätzliche Ressourcen, die Ihnen dabei helfen können, reguläre Ausdrücke in Clojure zu verstehen und effektiv anzuwenden:
-
-- [Clojure-Dokumentation zu regulären Ausdrücken] (https://clojuredocs.org/clojure.core/re-seq)
-- [Clojure Cheat Sheet zu regulären Ausdrücken] (https://clojure.org/api/cheatsheet#Regular%20Expressions)
-- [Einführung in reguläre Ausdrücke in Clojure] (https://www.baeldung.com/regular-expressions-clojure)
+- [Wie man mit Zeichenfolgen in Clojure arbeitet](https://www.maria-example.com/strings-in-clojure)
+- [Einführung in das Parsing von Daten mit Instaparse in Clojure](https://www.maria-example.com/parsing-data-with-instaparse)

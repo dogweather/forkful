@@ -1,42 +1,54 @@
 ---
-title:    "C++: デバッグの出力を印刷する"
+title:    "C++: デバッグ出力の印刷"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力をプリントするのか
+## Why
 
-プログラミングをする際には、コードを書いた後、実行することで正常に動作するかどうかを判断する必要があります。しかし、すべてのコードが完璧なわけではありません。デバッグ出力をプリントすることで、コードの実行過程を観察し、問題を見つけることができます。
+## なぜ
 
-## やり方
+デバッグ出力をプリントすることにとってと、プログラマーにとって非常に便利なものです。デバッグ出力を利用することで、コードの実行中に起きたエラーやバグの原因を特定し、修正することができます。
+
+## How To
+
+## 方法
+
+プログラミングでデバッグ出力をプリントする方法を説明します。まずは、`#include <iostream>`を使って`iostream`ライブラリを読み込みます。次に、出力したい内容を`cout`を使ってプリントします。例えば、変数の値を確認したい場合は、`cout << "変数名: " << 変数 << endl;`というように書きます。最後に、`return`文を使ってプログラムを正常に終了させます。
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
-int main(){
-    int num1 = 5;
-    int num2 = 10;
-    int sum = num1 + num2;
-
-    // デバッグ出力をプリント
-    cout << "num1の値は" << num1 << "です" << endl;
-    cout << "num2の値は" << num2 << "です" << endl;
-    cout << "sumの値は" << sum << "です" << endl;
+int main() {
+    int number = 10;
+    cout << "変数の値: " << number << endl;
 
     return 0;
 }
 ```
 
-上記のように、デバッグ出力をプリントするには、`cout`を使用して出力したい値を表示するだけです。このようにすることで、コードが正しく実行されているかを確認することができます。
+実行すると、以下のように出力されます。
 
-## もっと深く
+```
+変数の値: 10
+```
 
-デバッグ出力をプリントすることで、コードがどのように実行されているかをより詳しく観察することができます。また、特定の変数の値を監視することもでき、問題を特定するのに役立ちます。さらに、コードを修正する際にもデバッグ出力を利用して、修正が正しく行われているかを確認することができます。
+## Deep Dive
 
-## 参考リンク
+## ディープダイブ
 
-- [C++入門 – デバッグしよう : ニコニコ変態サイト](https://dehossips.wordpress.com/programming/c__/cpp_beginners/3_debug/)
-- [C++プログラミングレッスン(12):デバッグしよう : GEEKLY](https://www.geekly.co.jp/blog/2016/02/24/cpp_debug/)
-- [デバッグとは？C++でデバッグしよう | TechAcademyマガジン](https://techacademy.jp/magazine/19172)
+デバッグ出力を行う際には、プログラムの実行中に細かい情報を出力することで、より詳細なデバッグを行うことが可能です。例えば、ループ処理の中で、各ステップでの変数の値を出力することで、どの部分でバグが発生しているかを特定することができます。
+
+また、出力する情報をカスタマイズすることもできます。例えば、出力する文字列の色を変えることで、見やすくデバッグすることができます。
+
+## See Also
+
+## 関連リンク
+
+- [Visual Studioでデバッグ出力を行う方法](https://docs.microsoft.com/ja-jp/visualstudio/debugger/using-the-output-window?view=vs-2019)
+- [デバッグ出力で活用できるトリック集](https://www.seastea.net/entry/2018/12/01/135759)
+- [printfデバッグを便利にするTips](https://qiita.com/cti/items/cd2d7a815764f2d4e9da)

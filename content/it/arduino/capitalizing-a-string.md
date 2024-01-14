@@ -1,53 +1,32 @@
 ---
-title:    "Arduino: Convertire una stringa in maiuscolo"
+title:    "Arduino: Capitalizzare una stringa"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Quando si lavora con stringhe di testo in Arduino, ci potrebbe essere la necessità di capitalizzare una stringa. Ciò può essere utile per uniformare il testo o per facilitare la ricerca all'interno di una stringa. In questo articolo, vedremo come farlo in modo semplice e veloce.
+In questo articolo parleremo di come implementare la funzione di capitalizzazione di una stringa in Arduino. Questa operazione può essere utile in diversi contesti, ad esempio quando si devono gestire input da parte dell'utente o quando si vuole formattare correttamente un output.
 
 ## Come fare
-
-Per capitalizzare una stringa in Arduino, è possibile utilizzare la funzione `toUpperCase()`. Questa funzione prende come parametro una stringa e la restituisce in maiuscolo. Ecco un esempio di codice:
+Per implementare la funzione di capitalizzazione, utilizzeremo il metodo `toUpperCase()` della classe `String` di Arduino. Questo metodo prende in input una stringa e restituisce una nuova stringa con tutte le lettere maiuscole.
 
 ```Arduino
-// Dichiarazione della stringa
-String str = "ciao mondo";
-
-// Capitalizzazione della stringa
-str = str.toUpperCase();
-
-// Stampa della stringa
-Serial.println(str);  // Output: CIAO MONDO
+// Esempio di utilizzo del metodo toUpperCase()
+String s = "arduino";
+String s_cap = s.toUpperCase();
+Serial.println(s_cap); // stampa "ARDUINO"
 ```
 
-Come si vede dall'esempio, abbiamo dichiarato una stringa di testo, "ciao mondo", e poi abbiamo usato la funzione `toUpperCase()` per capitalizzarla. Infine, attraverso la funzione `Serial.println()`, abbiamo stampato il risultato a schermo.
+In questo modo, possiamo inserire qualsiasi stringa come input e ottenere in output una versione capitalizzata. È importante notare che questo metodo non modifica la stringa originale, ma ne crea una copia modificata.
 
 ## Approfondimento
+Per comprendere meglio come funziona il metodo `toUpperCase()`, dobbiamo conoscere il concetto di array di caratteri (char array) in Arduino. Questo tipo di dato viene utilizzato per rappresentare una stringa di caratteri e ha una lunghezza fissa.
 
-Oltre alla funzione `toUpperCase()`, è possibile capitalizzare una stringa manualmente utilizzando i metodi della classe `String`. Ad esempio, si può utilizzare il metodo `charAt()` per ottenere il carattere in una posizione specifica della stringa e poi utilizzare il metodo `toUpperCase()` della classe `char` per convertire quel carattere in maiuscolo. Questo può essere fatto all'interno di un ciclo `for` per capitalizzare l'intera stringa. Ecco un esempio di codice:
-
-```Arduino
-// Dichiarazione della stringa
-String str = "ciao mondo";
-
-// Ciclo per scorrere ogni carattere della stringa
-for(int i = 0; i < str.length(); i++){
-  char c = str.charAt(i);  // Ottiene il carattere alla posizione i
-  c = toupper(c);  // Converte il carattere in maiuscolo
-  str.setCharAt(i, c);  // Sostituisce il carattere nella stringa
-}
-
-// Stampa della stringa
-Serial.println(str);  // Output: CIAO MONDO
-```
-
-Come si può vedere, con questo metodo si può ottenere lo stesso risultato utilizzando solo metodi della classe `String`.
+Nel nostro esempio, la stringa "arduino" viene rappresentata come un array di 7 caratteri, dove viene allocato un carattere per ogni lettera più un carattere speciale di terminazione (`'\0'`). Quando chiamiamo il metodo `toUpperCase()`, Arduino itera attraverso l'array di caratteri e, per ogni carattere, utilizza la funzione `toUpper()` della libreria standard `ctype.h`, che restituisce la versione maiuscola di quel carattere.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Arduino - Funzioni String](https://www.arduino.cc/en/Reference/StringFunctions)
-- [Tutorial di Arduino - Manipolazione di stringhe](https://create.arduino.cc/projecthub/feilipu/arduino-tutorial-string-manipulation-a1963b)
+- Documentazione ufficiale del metodo `toUpperCase()` di Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
+- Tutorial sulla gestione delle stringhe in Arduino: https://www.tutorialspoint.com/arduino/arduino_strings.htm
+- Libreria `ctype.h` della libreria standard di C: https://www.programiz.com/c-programming/library-function/ctype.h/toupper

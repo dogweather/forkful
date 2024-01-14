@@ -1,40 +1,39 @@
 ---
 title:    "Kotlin: 文字列の長さを見つける"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列の長さを求めるのか
-
-プログラミングをする際には、文字列の長さを知る必要があることがあります。例えば、ユーザーが入力した文字列が一定の長さを超えたら特定の処理を行うようにするなど、プログラムの制御において重要な情報です。
+## なぜ
+文字列の長さを求めることに興味があるのは、プログラムを書く上でとても重要なタスクだからです。文字列の長さを知ることで、文字列内のデータをより効率的に処理することができます。
 
 ## 方法
+文字列の長さを求める方法は非常に簡単です。まず最初に、文字列を変数に格納します。その次に、`length`関数を使って変数の文字列の長さを求めます。以下のKotlinコードを参考にしてみてください。
 
-Kotlinでは、stringの `length` プロパティを用いて文字列の長さを求めることができます。さらに、`length` プロパティは `String` クラスのプロパティなので、他の関数やメソッドと同様に使用することができます。
-
-```
-Kotlin
-val str = "Hello, world!"
-println(str.length) // Output: 13
-```
-
-また、Kotlinの `String` クラスには、文字列の長さ以外にも多くの便利なメソッドが用意されています。例えば、 `substring()` というメソッドを使用すると、特定の範囲の文字列を取得することができます。
-
-```
-Kotlin
-val str = "Hello, world!"
-println(str.substring(0, 5)) // Output: Hello
+```Kotlin
+var myString = "こんにちは！"
+var length = myString.length
+println("文字列の長さは $length です。")
 ```
 
-## ディープダイブ
+出力結果は以下のようになります。
 
-文字列の長さを求めるために、Kotlinではどのようなアルゴリズムが使用されているかを詳しく見てみましょう。
+```
+文字列の長さは 5 です。
+```
 
-実際には、Kotlinの `String` クラスの `length` プロパティは内部的に `String.length()` メソッドを呼び出しています。このメソッドでは、Javaの `String` クラスで使用されている `count()` メソッドと同様に、文字列のUnicodeコードポイント数を返します。つまり、日本語のように1文字あたりに複数のUnicodeコードポイントが必要になる文字列を扱う場合でも、正しい文字列の長さを求めることができます。
+## 深堀り
+文字列の長さを求めるために使用される`length`関数は、内部的には`String`クラスの`length()`メソッドを呼び出します。このメソッドは文字列のUTF-16コード単位の数を返します。つまり、日本語の1文字は2つのUTF-16コード単位で構成されるため、`length`関数は日本語の文字数を正しくカウントすることができます。
+
+また、`length`関数は`CharSequence`インターフェースが実装する拡張メソッドでもあります。そのため、文字列以外のデータ構造でも`length`関数を使用することができます。
+
+## 参考
+- [Kotlin - Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Java - String#length](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--)
+- [Kotlin - CharSequence.length](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/length.html)
 
 ## 関連リンク
-
-- [KotlinのStringクラスドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [JavaのStringクラスドキュメント](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#length())
-- [Unicodeコードポイントとは？](https://ja.wikipedia.org/wiki/Unicode%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%81%A8%E3%83%9E%E3%83%AB%E3%83%81%E3%83%90%E3%82%A4%E3%83%88)
+- [文字列の操作について学ぼう！](https://www.sejuku.net/blog/64500)
+- [Kotlinの基本的な文法を学ぶ](https://qiita.com/yuto_1014/items/ec1ecb2f3c4c8758e73b)

@@ -1,28 +1,44 @@
 ---
-title:    "Clojure: Tiedoston lukeminen"
+title:    "Clojure: Tekstitiedoston lukeminen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
-Tekstitiedostojen lukeminen on oleellinen osa monia ohjelmointiprojekteja. Se mahdollistaa datan käsittelyn ja analysoinnin, mikä on tärkeä osa monia sovelluksia ja työkaluja.
+# Miksi lukea tekstitiedostoja?
 
-## Miten?
-Text-tiedoston lukeminen on yksiä yksinkertaisimmista toiminnoista Clojure-ohjelmoinnissa. Voit käyttää `(slurp "tiedostonimi")`-funktiota, joka palauttaa funktion sisältämän tekstin merkkijonona. Katso alla olevasta esimerkistä:
+Tekstitiedostoja käytetään yleisesti tiedon tallentamiseen ja jakamiseen tietokoneella. Niitä voi olla esimerkiksi tekstitiedostoksi muunnettuja dokumentteja, taulukoita tai kooditiedostoja. Clojure-ohjelmoinnissa voi olla tarpeellista lukea tällaisia tekstitiedostoja, jotta tiedot saadaan käsiteltyä ja hyödynnettyä ohjelmassa. Tässä blogikirjoituksessa opastamme, miten voit lukea tekstitiedostoja Clojurella ja käyttää niiden sisältöä omassa koodissasi.
+
+## Miten lukea tekstitiedosto Clojurella
+
+Clojurella tekstitiedostojen lukeminen onnistuu helposti käyttämällä standardikirjastoon kuuluvaa ```clojure.java.io``` -kirjastoa. Tämän kirjaston avulla voit ladata ja lukea tiedostoja tietokoneen tiedostojärjestelmästä. Alla on esimerkki, miten voit lukea tekstitiedoston ja tulostaa sen sisällön konsoliin:
+
 ```Clojure
-(slurp "tiedosto.txt")
+(require '[clojure.java.io :as io])
+
+;; Määritellään tiedoston nimi ja polku
+(def filename "tiedosto.txt")
+
+;; Luetaan tiedosto ja tallennetaan sen sisältö muuttujaan
+(def file-content (slurp (io/file filename)))
+
+;; Tulostetaan tiedoston sisältö konsoliin
+(println file-content)
 ```
-Tämä koodi lukee "tiedosto.txt"-nimisen tiedoston ja palauttaa sen sisällön tekstimuodossa.
 
-Slurp-funktio toimii myös verkkosivujen ja muiden tiedostojen kanssa. Voit siis käyttää sitä monipuolisesti datan lukemiseen ohjelmassasi.
+Tässä esimerkissä käytetään ```slurp``` -funktiota, joka lukee tiedoston sisällön ja tallentaa sen muuttujaan. Tämän jälkeen tiedoston sisältö voidaan käsitellä halutulla tavalla käyttämällä Clojuren muita toimintoja.
 
-## Syvemmälle
-On tärkeää huomata, että slurp-funktio palauttaa tekstin merkkijonona, joka sisältää kaikki tiedoston rivit sellaisenaan. Tätä tekstiä voi sitten käsitellä ja pilkkoa haluamallasi tavalla.
+## Syvä sukellus: lisätietoa tekstitiedostojen lukemisesta
 
-Voit myös käyttää muita Clojure-kirjastoja, kuten [clojure.data.csv](https://github.com/clojure/data.csv) tai [data.xml](https://github.com/clojure/data.xml), jos haluat lukea ja käsitellä tiedoston sisältöä tiettyjen formaattien mukaan.
+Tekstitiedostojen lukeminen Clojurella käyttämällä ```clojure.java.io``` -kirjastoa tarjoaa myös muita hyödyllisiä toimintoja tiedostojen käsittelyyn. Voit esimerkiksi määrittää tiedoston lukemisen rivit yksitellen käyttämällä ```line-seq``` -funktiota. Tämä on hyödyllistä erityisesti suurten tiedostojen käsittelyssä, jotta ohjelma ei käsittele kaikkea kerralla muistiin.
+
+On myös tärkeää huomioida, että Clojure käsittelee tekstitiedostoja Unicode-formaatissa. Tämä tarkoittaa, että jos tiedostossa on erikoismerkkejä tai ei-länsimaista merkistöä, ne tulisi käsitellä oikein Clojure-koodissa.
 
 ## Katso myös
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
-- [Clojure Made Simple](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [Clojure Bridge - Suomenkielinen aloittelijoiden kurssi](https://www.clojurebridge.org/community/translations/fi)
+
+- [Clojuren Standardikirjasto](https://clojure.org/api/cheatsheet)
+- [Clojure Cookbook: File I/O](https://clojure-cookbook.com/recipes/reading-and-writing-files/)
+- [Tekstitiedoston lukeminen Clojurella](https://www.braveclojure.com/files-io/)
+
+Näissä linkeissä löydät lisätietoa tekstitiedostojen käsittelystä Clojurella ja vinkkejä tiedostojen lukemiseen ja kirjoittamiseen omassa koodissasi. Toivottavasti tämä kirjoitus auttaa sinua pääsemään alkuun tekstitiedostojen käsittelyssä Clojurella. Onnea ohjelmointiin!

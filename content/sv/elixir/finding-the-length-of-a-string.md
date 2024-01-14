@@ -1,70 +1,32 @@
 ---
-title:    "Elixir: Att hitta längden på en sträng."
+title:    "Elixir: Att hitta längden på en sträng"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att hitta längden av en sträng kan verka som en enkel uppgift, men det finns många praktiska tillämpningar för denna funktion. Förutom att räkna antalet tecken i en sträng kan det också hjälpa till med validering av inmatning och manipulering av data i en applikation. I denna artikel kommer vi att utforska hur man enkelt kan hitta längden av en sträng med hjälp av Elixir.
+Det finns många olika användningsområden för att hitta längden på en sträng. Det kan vara för att räkna antalet tecken i en text eller för att kontrollera om en sträng är tillräckligt lång för ett visst syfte. Oavsett vad anledningen är så är det en viktig färdighet för alla som arbetar med Elixir-programmering.
 
 ## Så här gör du
-
-För att hitta längden av en sträng i Elixir, använder vi funktionen `length()`. Detta är en inbyggd funktion som tar in en sträng som argument och returnerar längden på strängen.
-
-```Elixir
-sträng = "Hej världen!"
-
-längd = length(sträng)
-IO.puts "Längden på strängen är #{längd}"
-```
-
-Output:
-
-```
-Längden på strängen är 13
-```
-
-Som du kan se i exemplet ovan använde vi interpolering för att infoga längden i vår `IO.puts` uttryck. Vi kan också använda denna funktion för att hitta längden på en lista eller tupel.
+För att hitta längden på en sträng i Elixir kan du använda funktionen `String.length()` som tar in en sträng som argument. Det här är ett exempel på kod och tillhörande utdata:
 
 ```Elixir
-lista = [1, 2, 3, 4, 5]
+str = "Hej världen"
+length = String.length(str)
 
-längd = length(lista)
-IO.puts "Längden på listan är #{längd}"
+IO.puts "Längden på strängen är #{length}" 
+
+# => Längden på strängen är 11
 ```
 
-Output:
-
-```
-Längden på listan är 5
-```
+Här använder vi variabeln `str` för att lagra vår sträng och sedan använder vi `String.length()`-funktionen för att hitta längden på strängen. Den returnerade längden lagras sedan i variabeln `length` som sedan skrivs ut med hjälp av `IO.puts()`-funktionen.
 
 ## Djupdykning
-
-Det finns några saker som är viktiga att notera när det gäller att hitta längden av en sträng i Elixir. Funktionen `length()` returnerar antalet Unicode-kodpunkter i strängen, inte det faktiska antalet tecken. Detta kan orsaka problem om du arbetar med strängar som innehåller specialtecken eller emoji, eftersom de kan ha flera Unicode-kodpunkter.
-
-För att få det faktiska antalet tecken i en sträng, kan vi använda funktionen `String.length()`. Denna funktion tar hänsyn till specialtecken och returnerar det korrekta antalet tecken i strängen.
-
-```Elixir
-sträng = "Hej 😊"
-
-längd = length(sträng)
-IO.puts "Antalet tecken i strängen är #{längd}"
-
-längd = String.length(sträng)
-IO.puts "Det korrekta antalet tecken i strängen är #{längd}"
-```
-
-Output:
-
-```
-Antalet tecken i strängen är 5
-Det korrekta antalet tecken i strängen är 3
-```
+Det kan vara intressant att veta hur `String.length()`-funktionen fungerar bakom kulisserna. När en sträng skapas lagras den i minnet som en lista av tecken. Dessa tecken har sina egna unika kodpunkter och `String.length()`-funktionen räknar helt enkelt antalet tecken i listan och returnerar det som längden på strängen.
 
 ## Se även
-
-- [Elixir Docs - Lista av inbyggda funktioner](https://hexdocs.pm/elixir/functions.html)
-- [Elixir School - Strängar](https://elixirschool.com/sv/lessons/basics/strings/)
+- [Elixir dokumentation för `String.length/1`](https://hexdocs.pm/elixir/String.html#length/1)
+- [Elixir string primers](https://elixirschool.com/en/lessons/basics/basics/#string-primers)
+- [Elixir förklaring av strängkodning](https://elixirschool.com/en/lessons/specifics/strings/#codepoints-and-graphemes)

@@ -1,72 +1,53 @@
 ---
 title:    "Haskell: テキストの検索と置換"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストの検索と置換を行うことは、プログラミングの基本的なスキルです。テキストエディタやIDE内で文字列を検索して置き換える必要がある場合や、大量のファイルで同じ文字列を一括で置換する必要がある場合には特に重要です。このプログラミング技術を学ぶことで、作業効率を向上させることができます。
+文章の検索と置換に取り組む理由を説明するための1-2文。
 
-## 使い方
+文章の検索と置換は、大量のテキストを簡単に修正することができるため、プログラミング作業の効率性を高めることができます。
 
-テキストの検索と置換を行うためには、Haskellのテキスト処理ライブラリにある`sub`関数を使用します。この関数は、検索したい文字列、置換したい文字列、そして対象となるテキストを引数として受け取ります。
+## 方法
 
-```Haskell
-import Text.Regex
-
-sub :: ByteString -> ByteString -> ByteString -> ByteString
-```
-
-具体的な例を見てみましょう。以下のような文字列があったとします。
+バージョン管理システムやIDEなどの機能を使用せずに、Haskellを使用してテキストの検索と置換を行う方法を示します。
 
 ```Haskell
-sampleText = "今日は暑すぎて色々とミスしちゃった。明日は晴れるといいな。"
+-- テキスト内の特定の単語を置換する関数
+replaceWord :: String -> String -> String -> String
+replaceWord target replacement text = unwords [if word == target then replacement else word | word <- words text]
+
+-- 実行例
+replaceWord "Hello" "Konichiwa" "Hello world!"
+
+-- 出力結果
+"Konichiwa world!"
 ```
 
-まず、`今日`を`明日`に置換してみましょう。
+## ディープダイブ
 
-```Haskell
-sub "今日" "明日" sampleText
-```
+検索と置換は、HaskellのStringライブラリの多くの関数を使用して実装することができます。また、文字列のパターンマッチングや正規表現など、より高度なテキスト処理の手法を学ぶこともできます。
 
-出力結果は以下のようになります。
+## おすすめ
 
-```Haskell
-"明日は暑すぎて色々とミスしちゃった。明日は晴れるといいな。"
-```
+Markdown形式で書かれた文書を検索と置換する方法を学ぶのに役立つリソースを紹介します。
 
-次に、`いいな`を`いいね`に置換してみましょう。
+- [Haskellで文字列を処理する](https://qiita.com/henjiganai/items/f78d21415eb4b00ff61c)
+- [正規表現を使った文字列の検索と置換](https://qiita.com/satosystems/items/ee2015ca5afd4fcd0f0f)
+- [正規表現を使ったパターンマッチング](https://qiita.com/ywkt/items/5f3b9f92d2887f090c29)
+- [HaskellでMarkdownを処理する方法](https://stackoverflow.com/questions/9280426/how-to-work-with-markdown-in-haskell) 
 
-```Haskell
-sub "いいな" "いいね" sampleText
-```
+## おわりに
 
-出力結果は以下のようになります。
+今回は、Haskellを使用して文字列の検索と置換を行う方法を紹介しました。これからも、Haskellの強力な文字列操作機能を活用して、より効率的にプログラミングを行いましょう。
 
-```Haskell
-"今日は暑すぎて色々とミスしちゃった。明日は晴れるといいね。"
-```
+## 関連リンク
 
-さらに、正規表現を使用してパターンマッチングを行うこともできます。例えば、`今日`で始まる文字列を`今日は`に置換する場合、以下のように書くことができます。
-
-```Haskell
-sub "今日(.+)" "今日は\\1" sampleText
-```
-
-出力結果は以下のようになります。
-
-```Haskell
-"今日は暑すぎて色々とミスしちゃった。今日は晴れるといいな。"
-```
-
-## 深堀り
-
-テキストの検索と置換を行う際に、正規表現を使用することでより柔軟な操作が可能になります。正規表現を使用することで、複雑なパターンにマッチする文字列を一括で置換することができます。また、正規表現を学ぶことで、プログラミングの幅がさらに広がります。
-
-## 参考リンク
-
-- [Haskellのテキスト処理ライブラリ](https://hackage.haskell.org/package/regex-base)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-- [正規表現のデモサイト](https://regex101.com/)
+- [Haskellで文字列を処理する](https://qiita.com/henjiganai/items/f78d21415eb4b00ff61c)
+- [正規表現を使った文字列の検索と置換](https://qiita.com/satosystems/items/ee2015ca5afd4fcd0f0f)
+- [正規表現を使ったパターンマッチング](https://qiita.com/ywkt/items/5f3b9f92d2887f090c29)
+- [HaskellでMarkdownを処理する方法](https://stackoverflow.com/questions/9280426/how-to-work-with-markdown-in-haskell)

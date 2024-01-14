@@ -1,32 +1,44 @@
 ---
-title:    "Swift: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Swift: Entfernen von Zeichen, die einem Muster entsprechen."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+##Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine wichtige Fähigkeit, die in der Swift Programmierung benötigt wird. Egal ob man unerwünschte Zeichen aus einem String entfernen möchte oder eine Validierung durchführt, das Löschen von Zeichen macht die Arbeit einfacher und effizienter.
+In diesem Blogpost geht es darum, wie man in Swift Zeichen löschen kann, die einem bestimmten Muster entsprechen. Dies kann besonders nützlich sein, wenn man beispielsweise Benutzereingaben auf bestimmte Formate prüfen möchte.
 
-# Wie
+##Anleitung
 
-Um Zeichen basierend auf einem Muster zu löschen, kann man die Methode `removeAll(where:)` verwenden. Diese Methode nimmt eine Closure als Parameter an, die entscheidet, ob ein Zeichen gelöscht werden soll oder nicht. Innerhalb der Closure kann man eine Bedingung definieren, die überprüft, ob ein Zeichen dem gewünschten Muster entspricht.
+Um in Swift Zeichen zu löschen, die einem bestimmten Muster entsprechen, kann man die Funktion `replacingOccurrences` verwenden. Diese Funktion erwartet zwei Argumente: Das erste ist das Muster, das gelöscht werden soll, und das zweite ist der String, in dem das Muster gefunden werden soll. 
 
 ```Swift
-let text = "This is a boring string 😴"
-// Entfernt alle Vokale aus dem String
-text.removeAll { (char) -> Bool in
-    return "aeiou".contains(char)
-}
-// Output: "Ths s  brng strng "
+let input = "Abc123"
+let output = input.replacingOccurrences(of: "[A-Za-z]", with: "", options: .regularExpression)
+print(output) // 123
 ```
 
-# Deep Dive
+In diesem Beispiel wird der String "Abc123" in "123" umgewandelt, indem alle Buchstaben durch leere Strings ersetzt werden. Das Muster `[A-Za-z]` steht dabei für alle Groß- und Kleinbuchstaben im Alphabet.
 
-Die `removeAll(where:)` ist eine nützliche Methode, die auf der `RangeReplaceableCollection` Protokoll basiert. Sie ermöglicht es, jedes Element einer Kollektion (z.B. String, Array) basierend auf einer bestimmten Bedingung zu löschen. Dank Swift's Closures ist es möglich, maßgeschneiderte Bedingungen zu definieren und so flexibel auf verschiedene Anwendungsfälle zu reagieren.
+##Tiefere Einblicke
 
-See Also
+Für die Funktion `replacingOccurrences` gibt es verschiedene Optionen, die das Löschen von Zeichen noch flexibler machen. Zum Beispiel kann man mit der Option `.caseInsensitive` auch Groß- und Kleinschreibung ignorieren. Oder mit der Option `.anchored` kann man festlegen, dass das Muster nur am Anfang des Strings gelöscht werden soll. 
 
-- https://developer.apple.com/documentation/swift/rangereplaceablecollection/2946552-removeall
-- https://www.swiftbysundell.com/tips/using-closures-as-parameters-in-swift/
+Es ist außerdem möglich, mehrere Muster nacheinander zu löschen, indem man die Funktion mehrmals hintereinander aufruft. 
+
+```Swift
+let input = "abc123def"
+let output = input.replacingOccurrences(of: "[A-Za-z]", with: "", options: .regularExpression)
+                .replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+print(output) // def 
+```
+
+Das erste Aufrufen der Funktion löscht alle Buchstaben, das zweite alle Zahlen. So erhält man am Ende nur noch den String "def". 
+
+##Siehe auch
+
+- [Offizielle Dokumentation zu `replacingOccurrences`](https://developer.apple.com/documentation/foundation/nsstring/1413232-replacingoccurrences)
+- [Beispielprojekt auf GitHub](https://github.com/example/swift-replacing-occurrences)
+- [Diskussion zum Thema auf Stack Overflow](https://stackoverflow.com/questions/43231526/deleting-special-characters-from-string-with-swift)

@@ -1,59 +1,64 @@
 ---
 title:    "C: Konvertere en dato til en streng"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger kan det hende at du trenger å konvertere en dato til en tekststreng i C-programmering. Dette kan være nyttig når du for eksempel ønsker å vise en dato på en nettside eller i et annet brukergrensesnitt. I denne bloggposten vil vi gå gjennom hvordan du kan gjøre dette på en enkel måte.
 
-## Hvordan
-``` C
+I denne bloggen skal vi se på hvordan man kan konvertere en dato til en streng i C-programmering. Dette er en essensiell ferdighet for å kunne behandle og presentere datoer i et leselig format. Enten det er for å vise datoer til brukere eller å lagre datoer i en database, er det ofte nødvendig å konvertere datoer til strenger.
+
+## Slik gjør du det
+
+For å konvertere en dato til en streng i C, må vi først deklarere en dato-variabel ved hjelp av structen `tm`. Deretter kan vi bruke funksjonen `strftime` for å konvertere datoen til en streng. Her er et eksempel på hvordan dette kan gjøres:
+
+```C
 #include <stdio.h>
-#include <string.h>
 #include <time.h>
 
-int main() {
-    // Oppretter en struct for dagens dato
-    struct tm *today;
-    time_t now;
-    time(&now);
-    today = localtime(&now);
-
-    // Konverterer datoen til en tekststreng
-    char date_string[20];
-    strftime(date_string, 20, "%d.%m.%Y", today);
-
-    // Skriver ut datoen
-    printf("Dagens dato er: %s\n", date_string);
-
+int main()
+{
+    // Deklarerer en struct for dato og tid
+    struct tm date;
+    
+    // Setter verdier for dato-variabelen
+    date.tm_mday = 15; // Dagen
+    date.tm_mon = 11; // Måneden (januar = 0, desember = 11)
+    date.tm_year = 2021; // Året
+   
+    // Bruker strftime for å konvertere datoen til en streng
+    char dato[20]; // Lager et array for å lagre strengen
+    strftime(dato, 20, "%d/%m/%Y", &date); // Definerer formatet til strengen
+    
+    printf("Datoen er: %s\n", dato); // Printer ut strengen
+    
     return 0;
 }
 ```
 
-Output:
-```
-Dagens dato er: 03.11.2021
-```
+Output: Datoen er: 15/12/2021
 
-I dette eksemplet bruker vi funksjonen "strftime" fra "time.h"-biblioteket til å konvertere datoen til en tekststreng. Vi spesifiserer også formatet vi ønsker for tekststrengen, i dette tilfellet "%d.%m.%Y" som betyr dag.måned.år.
+Som vi kan se i eksempelet, bruker vi `strftime`-funksjonen til å definere formatet til strengen vi ønsker å konvertere datoen til. Dette gjør det mulig å tilpasse strengen etter vårt behov. Det finnes en rekke forskjellige formateringsalternativer, og man kan også legge til spesielle symboler eller tekst for å gjøre strengen mer leselig. Du kan lære mer om disse alternativene i "Deep Dive"-delen nedenfor.
 
-En annen måte å gjøre dette på er å bruke funksjonen "sprintf" som lar oss skrive tekst direkte til en variabel, for eksempel:
+## Dykk ned i det
 
-```C
-sprintf(date_string, "%d.%d.%d", today->tm_mday, today->tm_mon + 1, today->tm_year + 1900);
-```
+Det er viktig å forstå hvordan datoen er representert i C-programmering. En dato er vanligvis representert ved hjelp av en struct kalt `tm`. Denne structen inneholder medlemmer som representerer elementer som dato, måned, år, time og minutt. Vi kan bruke disse medlemmene til å sette eller få tilbake forskjellige deler av datoen.
 
-Det er viktig å merke seg at måned og år må justeres med henholdsvis +1 og +1900.
+Når det gjelder formatering av datoen til en streng, bruker `strftime`-funksjonen ulike formateringsalternativer som starter med et prosenttegn (%). Her er noen av de vanligste alternativene:
 
-## Dypdykk
-Det finnes også andre måter å konvertere datoer til tekst på, for eksempel ved å bruke "mktime" og "localtime" funksjonene til å lage en tidspunkt-datastruktur og deretter bruke "asctime" for å konvertere den til en tekststreng. Det er også mulig å bruke "snprintf" istedenfor "sprintf" for å unngå potensielle bufferoverløp.
+- `%d`: Dagen (to-sifret)
+- `%m`: Måneden (to-sifret)
+- `%Y`: Året (fire-sifret)
+- `%H`: Timen (24-timers format)
+- `%M`: Minutt (to-sifret)
+- `%S`: Sekund (to-sifret)
 
-En annen viktig ting å huske på når man konverterer datoer til tekst er formatering. Det er viktig å velge et passende format for tekststrengen basert på hvordan datoen vil bli brukt senere.
+Det finnes også mange andre alternativer, som for eksempel `%b` for å få måneden i tekstformat, eller `%a` for å få dagen i tekstformat. Det er også mulig å kombinere disse alternativene for å få et mer spesifikt og leselig format.
 
 ## Se også
-- [https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
-- [https://www.tutorialspoint.com/c_standard_library/c_function_asctime.htm](https://www.tutorialspoint.com/c_standard_library/c_function_asctime.htm)
-- [https://www.tutorialspoint.com/c_standard_library/c_function_time.htm](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+
+- [C strftime() funksjonen](https://www.programiz.com/c-programming/library-function/strftime)
+- [C-dato og tid Tutorial](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Hvordan representere dato og tid i C](https://www.guru99.com/c-date-time.html)

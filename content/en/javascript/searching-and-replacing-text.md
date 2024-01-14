@@ -1,75 +1,50 @@
 ---
 title:    "Javascript recipe: Searching and replacing text"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself manually going through a large chunk of text, searching for a specific word or phrase to replace? Or perhaps you've noticed a spelling error that needs to be corrected throughout an entire document. These tasks are not only time-consuming, but they can also be prone to mistakes. Luckily, there is a more efficient and accurate solution - using Javascript to search and replace text. 
+When working with large amounts of text in a JavaScript program, you may come across the need to replace specific words or phrases. This could be for formatting purposes, data cleaning, or making dynamic changes to your text. By knowing how to effectively search and replace text in JavaScript, you can save time and streamline your workflow.
 
 ## How To
 
-Replacing text can be done in a few simple steps with the help of Javascript. First, we need to define the text that we want to search for and replace. Let's say we want to replace all instances of the word "favorite" with "favourite" in a text.
+In JavaScript, you can use the `.replace()` method to search and replace text in a string. This method takes two parameters: the string or regular expression to search for, and the replacement value. Let's look at an example:
 
-```
-// Define the text to search and replace
-let text = "My favorite color is blue. My favorite food is pizza. My favorite movie is The Shawshank Redemption.";
-
-// Use the replace() method to replace "favorite" with "favourite"
-let newText = text.replace(/favorite/g, "favourite");
-
-// Output the new text
-console.log(newText);
-
-// Output: My favourite color is blue. My favourite food is pizza. My favourite movie is The Shawshank Redemption.
+```javascript
+let message = "Hello, my name is John";
+let newMessage = message.replace("John", "Emily");
+console.log(newMessage);
 ```
 
-In the above code, we use the replace() method and a regular expression to search for all instances of "favorite" and replace it with "favourite". Adding the "g" flag after the regular expression ensures that all occurrences of the word will be replaced, not just the first one.
+This code would output "Hello, my name is Emily" as the newMessage, as "John" is replaced by "Emily". You can also use a regular expression as the first parameter to replace multiple occurrences of a word or phrase.
 
-We can also use the replace() method to replace multiple words at once. Let's say we want to replace "color" with "colour" and "food" with "cuisine". We can do this by passing in an object as the second parameter of the replace() method.
-
+```javascript
+let sentence = "I have a dog and a cat and a fish";
+let newSentence = sentence.replace(/and/g, "&");
+console.log(newSentence);
 ```
-// Define the text to search and replace
-let text = "My favorite color is blue. My favorite food is pizza. My favorite movie is The Shawshank Redemption.";
 
-// Use the replace() method to replace "color" with "colour" and "food" with "cuisine"
-let newText = text.replace(/color|food/g, function(match) {
-  if (match === "color") {
-    return "colour";
-  } else if (match === "food") {
-    return "cuisine";
-  }
-});
-
-// Output the new text
-console.log(newText);
-
-// Output: My favorite colour is blue. My favourite cuisine is pizza. My favourite movie is The Shawshank Redemption.
-```
+In this example, the `g` flag is added to the end of the regular expression so that all instances of "and" are replaced with "&". The output would be "I have a dog & a cat & a fish". 
 
 ## Deep Dive
 
-Regular Expressions (regex) play a crucial role in searching and replacing text in Javascript. They allow us to search for patterns in strings and perform replacements based on those patterns. In the examples above, we used the "g" flag to replace all occurrences of a word. We can also use other flags such as "i" for case-insensitive matching.
+The `.replace()` method also allows for a second parameter to be a function, instead of a string. This function takes in the matched string and can manipulate it before returning it as the replacement value. For example:
 
-Another useful feature of regex is the ability to use metacharacters. These are special characters that represent a group of characters. For example, the "." metacharacter represents any single character. So if we wanted to replace all words that start with the letter "m", we can use the regex "/m./g" where "m" represents the letter "m" and "." represents any single character.
-
-```
-// Define the text to search and replace
-let text = "My favorite color is blue. My favorite food is pizza. My favorite movie is The Shawshank Redemption.";
-
-// Use the replace() method with regex to replace all words that start with "m"
-let newText = text.replace(/m./g, "amazing");
-
-// Output the new text
-console.log(newText);
-
-// Output: My amazing color is blue. My amazing food is pizza. My amazing movie is The Shawshank Redemption.
+```javascript
+let sentence = "I have $5, but I want to buy a $10 book";
+let newSentence = sentence.replace(/\$\d+/g, (matched) => {
+  let num = parseInt(matched[1]);
+  return "$" + num * 2;
+});
+console.log(newSentence);
 ```
 
-See Also
+This code uses a regular expression to find any dollar amounts in the sentence and doubles them in the replacement value. The `\d+` matches any number of digits after the "$" and the `(matched)` parameter captures the matched string, which is then manipulated and returned as the replacement value. The output would be "I have $10, but I want to buy a $20 book".
 
-- [MDN Web Docs - String replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools - JavaScript regular expressions](https://www.w3schools.com/js/js_regexp.asp)
+## See Also
+
+If you want to dive deeper into the `.replace()` method, check out the official [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace). You can also learn more about regular expressions and how to use them in JavaScript from [Regular-Expressions.info](https://www.regular-expressions.info/javascript.html). Happy coding!

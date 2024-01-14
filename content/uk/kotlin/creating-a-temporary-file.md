@@ -1,58 +1,58 @@
 ---
 title:    "Kotlin: Створення тимчасового файлу"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+##Чому 
 
-Створення тимчасового файлу є важливим елементом у багатьох програмах, особливо тих, що працюють з багатоманітними даними. Створення і використання тимчасових файлів може полегшити обробку даних і забезпечити швидкий доступ до необхідних файлів.
+Створення тимчасових файлів - це важлива частина будь-якої програми, особливо коли маємо справу з обробкою великих об'ємів даних. Тимчасові файли дозволяють тимчасово зберігати необхідну інформацію для подальшої обробки та видалення її після виконання необхідних дій.
 
-## Як
+##Як створити тимчасовий файл в Kotlin
 
-Для створення тимчасового файлу у Kotlin, використовується клас `java.io.File` та метод `createTempFile`. Наприклад, для створення тимчасового файлу з префіксом "temp" та розширенням ".txt", потрібно ввести такий код:
-
-```Kotlin
-val tempFile = File.createTempFile("temp", ".txt")
-```
-
-Цей код створить тимчасовий файл з унікальним ім'ям у системній тимчасовій папці. Також, можна вказати каталог, де буде створений файл:
+У Kotlin є вбудована функція для створення тимчасового файла - `createTempFile()`. Ось приклад використання цієї функції:
 
 ```Kotlin
-val tempDir = File("/path/to/directory")
-val tempFile = File.createTempFile("temp", ".txt", tempDir)
+val tempFile = createTempFile()
+
+println(tempFile.absolutePath)
 ```
 
-Після створення тимчасового файлу можна працювати з ним, як і з будь-яким іншим файлом. Наприклад, можна записати у нього дані та отримати доступ до вмісту файлу за допомогою методів `writeText` та `readText`:
+У цьому прикладі ми створюємо тимчасовий файл і виводимо його абсолютний шлях. Зауважте, що за замовчуванням тимчасові файли створюються в системній тимчасовій папці. Якщо вам потрібно створити тимчасовий файл у певному місці, ви можете використати другий параметр функції `createTempFile()` для вказання шляху до папки.
 
 ```Kotlin
-val data = "Hello, world!"
-tempFile.writeText(data)
-val readData = tempFile.readText()
+val tempFile = createTempFile("myTempFile", "C:\\temp")
 
-println(readData) // виведе: Hello, world!
+println(tempFile.absolutePath)
 ```
 
-## Глибші дослідження
-
-Створення тимчасового файлу можна налаштувати за допомогою додаткових параметрів методу `createTempFile`. Наприклад, можна вказати префікс, розширення та каталог, де буде створений файл:
+Також ви можете вказати розширення для тимчасового файлу, передаючи третій параметр функції `createTempFile()`.
 
 ```Kotlin
-val tempDir = File("/path/to/directory")
-val tempFile = File.createTempFile("prefix", ".txt", tempDir)
+val tempFile = createTempFile("myTempFile", "C:\\temp", ".txt")
+
+println(tempFile.absolutePath)
 ```
 
-Також, можна вказати префікс і розширення як `null` та тим самим дозволити системі створити унікальне ім'я для тимчасового файлу:
+У цьому прикладі ми створюємо тимчасовий файл з назвою "myTempFile" та розширенням ".txt" у папці "C:\\temp".
+
+##Детальний аналіз створення тимчасових файлів
+
+Під капотом функції `createTempFile()` використовується стандартний JRE клас `java.io.File`. Це означає, що ви можете використовувати будь-які звичайні методи для роботи з цим тимчасовим файлом, наприклад:
 
 ```Kotlin
-val tempFile = File.createTempFile(null, null)
+val tempFile = createTempFile()
+tempFile.writeText("Hello World!")
+
+println(tempFile.readText())
 ```
 
-Більше інформації про параметри методу `createTempFile` можна знайти у [документації](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String,%20java.io.File)).
+Цей приклад використовує методи `writeText()` та `readText()` для запису та читання тексту з тимчасового файлу. Ви також можете видалити тимчасовий файл за допомогою методу `delete()`.
 
-## Дивись також
+На цьому завершується наш короткий вступ до створення тимчасових файлів у Kotlin. Як бачите, це досить просто та зручно. Не забувайте видаляти тимчасові файли після виконання необхідних дій, щоб уникнути забруднення пам'яті вашого пристрою.
 
-- [Документація по класу File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Стаття про тимчасові файли в Kotlin](https://www.baeldung.com/kotlin-temporary-files) 
-- [Стаття про створення тимчасових файлів у Java](https://www.geeksforgeeks.org/creating-temporary-files-java/)
+##Дивіться також
+
+- [Документація Kotlin про `createTempFile()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io

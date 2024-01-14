@@ -1,34 +1,43 @@
 ---
-title:    "Python: Utskrift av feilsøkingsutdata"
+title:    "Python: Utskrift av feilrettingsutdata"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er mange grunner til å engasjere seg i å skrive ut debug-utdata (debug output) mens man programmerer. Det kan hjelpe til med å finne og løse feil, forstå programmet bedre, og gi en oversikt over hvordan koden utføres.
+# Hvorfor bruke utskrift av feilsøking i Python
+
+Det er viktig å kunne finne og rette feil i koden din når du jobber med Python-programmering. Utskrift av feilsøking er en essensiell teknikk for å identifisere og løse disse feilene. Ved å skrive ut relevant informasjon underveis i koden, kan du få et bedre innblikk i hva som skjer under kjøringen av programmet ditt.
 
 ## Hvordan
-Det er enkelt å skrive ut debug-utdata i Python. Det kan gjøres ved å bruke funksjonen `print()` og skrive ut variabler, verdier, og meldinger. For eksempel:
+
+For å skrive ut feilsøkingsmeldinger i Python, kan du bruke funksjonen `print()`. La oss si at du har skrevet et program som skal regne ut arealet av en sirkel basert på brukerens innputte verdier for radius:
 
 ```Python
-navn = "Per"
-print("Hei " + navn)
+radius = float(input("Skriv inn radiusen til sirkelen: "))
+pi = 3.14159
+areal = pi * radius**2
+
+print("Arealet av sirkelen er:", areal)
 ```
 
-Dette vil skrive ut "Hei Per" i konsollen når programmet kjøres. Det er også mulig å kombinere informasjon fra flere variabler ved å bruke f-strings, som i følgende eksempel:
+Når du kjører programmet, vil du få følgende utskrift:
 
-```Python
-alder = 30
-print(f"{navn} er {alder} år gammel.")
+```
+Skriv inn radiusen til sirkelen: 5
+Arealet av sirkelen er: 78.53975
 ```
 
-Dette vil skrive ut "Per er 30 år gammel." Slik kan man enkelt se hva som er tilfelle med variablene og hvordan de endres underveis i programmet.
+Vi kan enkelt se at det er en feil i kalkuleringen av arealet, siden ettersom radiusen er satt til 5, bør det riktige arealet være 78.53982 (i stedet for 78.53975). Ved å printe ut mellomverdier i koden, kan du finne ut hvor feilen ligger og fikse den.
 
 ## Dypdykk
-Å skrive ut debug-utdata kan bidra til å forstå hvordan koden utføres. Det kan også avdekke feil og logiske fallgruver som man kanskje ikke hadde oppdaget ellers. Man kan også formatere utdataen for å gjøre det mer leselig, for eksempel ved å bruke `sep` og `end` argumenter i `print()`-funksjonen. Det er også mulig å bruke `logger`-modulen i Python for å få mer detaljert informasjon om feil, som kan være nyttig for å finne og løse problemer i større programmer.
 
-## Se Også
-- [Offisiell Python dokumentasjon om `print()`](https://docs.python.org/3/library/functions.html#print)
-- [Tutorial om debugging i Python](https://realpython.com/python-debugging-pdb/)
-- [Informasjon om logger-modulen i Python](https://www.geeksforgeeks.org/logging-in-python/)
+En av fordelene med å bruke utskrift av feilsøking i Python er at du kan skrive ut ulike typer informasjon basert på dine behov. For eksempel kan du printe ut verdien av en variabel, en spesifikk beskjed eller til og med en feilmelding dersom en betingelse ikke blir oppfylt. Dette gjør det enklere å spore og rette eventuelle feil i koden din.
+
+Det er også mulig å kontrollere hvor mye informasjon som skal printes ut ved å bruke betingelser eller ved å sette inn utskriftsmeldinger i enkle eller doble anførselstegn.
+
+## Se også
+
+- [Dokumentasjon for `print()`funksjonen i Python](https://docs.python.org/3/library/functions.html#print)
+- [Artikkel om feilsøking i Python](https://realpython.com/python-debugging-pdb/)

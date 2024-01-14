@@ -1,40 +1,56 @@
 ---
-title:    "C#: Lesing av tekstfil"
+title:    "C#: Lese en tekstfil"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det er mange grunner til å lære å lese tekstfiler i C#. Det kan være nyttig for å behandle store mengder data, som f.eks. loggfiler, CSV-filer eller XML-filer. Det kan også være nyttig for å analysere og manipulere data som skal brukes i et program.
+Å lese en tekstfil kan være en viktig del av å utvikle et program. Det kan gi oss tilgang til et stort antall data som kan hjelpe oss med å analysere og manipulere informasjon. Å kunne lese og behandle tekstfiler effektivt er en essensiell ferdighet for enhver programmerer.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å lese en tekstfil i C#, må du først åpne filen ved hjelp av `File.OpenText()` metoden. Deretter kan du lese linjene i filen ved å bruke `StreamReader`-klassen. Her er et eksempel på hvordan du kan gjøre det:
+For å lese en tekstfil i C#, kan vi bruke klassen `StreamReader` og dens innebygde funksjoner. Først må vi åpne filen ved å gi filbanen som parameter til konstruktøren til `StreamReader`. Deretter kan vi bruke funksjonen `ReadLine()` til å lese en linje av teksten. Vi kan også bruke funksjoner som `Peek()` for å se på neste tegn i filen eller `ReadToEnd()` for å lese hele teksten på en gang. Her er et eksempel på hvordan dette kan se ut i praksis:
 
 ```C#
-var path = @"C:\min-fil.txt";
-using (var reader = File.OpenText(path))
+using System;
+using System.IO;
+
+class TextFileReader
 {
-    string line;
-    while ((line = reader.ReadLine()) != null)
+    static void Main()
     {
-        Console.WriteLine(line);
+        // Åpner filen og oppretter en StreamReader
+        StreamReader reader = new StreamReader(@"C:\eksempeltekstfil.txt");
+
+        // Leser og skriver ut hver linje i tekstfilen
+        while (!reader.EndOfStream)
+        {
+            string line = reader.ReadLine();
+            Console.WriteLine(line);
+        }
+
+        // Lukker StreamReader når vi er ferdige
+        reader.Close();
     }
 }
 ```
 
-Dette vil åpne filen "min-fil.txt" og skrive ut hver linje i konsollen. Du kan også bruke `File.ReadAllText()` metoden for å lese hele filen som en streng.
+### Output:
+
+```
+Dette er en linje med tekst.
+Dette er en annen linje med tekst.
+```
 
 ## Dypdykk
 
-Det er flere ting å være oppmerksom på når du leser tekstfiler i C#. Først og fremst er det viktig å lukke filen når du er ferdig med å lese den, ved å bruke `using`-blokker, som i eksempelet ovenfor. Dette sørger for at filen blir lukket riktig selv om det oppstår en feil under lesingen.
+Mens `StreamReader` er en effektiv måte å lese tekstfiler på, er det også noen problemstillinger å være klar over. For eksempel kan det være lurt å bruke `using`-blokk når du arbeider med `StreamReader` for å sikre at den blir lukket på riktig måte. Det kan også være viktig å være forsiktig med tegnsettet til tekstfilen, da det kan føre til feil når du leser teksten. Derfor kan det være lurt å bruke `Encoding`-klassen for å spesifisere tegnsettet når du åpner filen.
 
-Det er også viktig å vite at tekstfiler kan ha forskjellige tegnsett, og det kan være nødvendig å angi riktig tegnsett når du åpner filen ved hjelp av `File.OpenText()` metoden. Dette gjøres ved å bruke en `Encoding`-parameter.
+## Se Også
 
-## Se også
-
-- [C# Dokumentasjon for File.OpenText() metoden](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.opentext)
-- [C# Dokumentasjon for StreamReader-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
-- [C# Dokumentasjon for File.ReadAllText() metoden](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)
+- [MSDN - StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- [Tutorialspoint - C# Streams](https://www.tutorialspoint.com/csharp/csharp_streams.htm)
+- [C# File Handling](https://www.c-sharpcorner.com/UploadFile/mahesh/file-handling-in-C-Sharp/)

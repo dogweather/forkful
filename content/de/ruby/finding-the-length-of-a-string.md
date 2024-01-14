@@ -1,45 +1,36 @@
 ---
-title:    "Ruby: Die Länge eines Strings finden"
+title:    "Ruby: Die Länge einer Zeichenkette finden"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, um die Länge eines Strings in Ruby zu finden. Zum Beispiel kann es hilfreich sein, um die Eingabe von Benutzern zu überprüfen oder um bestimmte Manipulationen an einem String vorzunehmen. Egal aus welchem Grund, die Länge eines Strings ist ein wichtiges Konzept in der Ruby Programmierung.
+Das Finden der Länge eines Strings ist eine häufige Aufgabe in der Ruby-Programmierung. Es ermöglicht uns, die Anzahl der Zeichen in einem String zu bestimmen und somit verschiedene Manipulationen durchzuführen.
 
-## So geht's
+## Wie
 
-Um die Länge eines Strings in Ruby zu finden, gibt es eine eingebaute Methode namens `length`. Diese Methode gibt einfach die Anzahl der Zeichen in einem String zurück. Schauen wir uns ein Beispiel an:
-
-```Ruby
-string = "Hallo, Welt!"
-puts string.length
-```
-Output: `12`
-
-Wie du sehen kannst, gibt die `length` Methode 12 zurück, da es 12 Zeichen in unserem String gibt. Diese Methode ist sehr einfach und macht das Finden der Länge eines Strings zum Kinderspiel.
-
-## Tiefer tauchen
-
-Es gibt noch einige weitere Dinge, die du über die Länge von Strings in Ruby wissen solltest. Zum Beispiel gibt es auch die `size` Methode, die das gleiche wie `length` tut. Die meisten verwenden jedoch `length`, da es als Standard betrachtet wird.
-
-Außerdem gibt es auch die Möglichkeit, die Anzahl eines bestimmten Zeichens in einem String zu zählen. Dafür gibt es die `count` Methode, die als Argument das zu zählende Zeichen nimmt. Schauen wir uns ein Beispiel an:
+Um die Länge eines Strings in Ruby zu finden, können wir die `.length` oder `.size` Methode verwenden. Diese Methoden geben uns die Anzahl der Zeichen in einem String zurück.
 
 ```Ruby
-string = "Hallo, Welt!"
-puts string.count("l")
+text = "Hallo Welt"
+
+text.length #=> 10
+text.size #=> 10
 ```
-Output: `2`
 
-In diesem Beispiel zählt die `count` Methode die Anzahl der Buchstabe "l" im String.
+In diesem Beispiel haben wir die Länge des Strings "Hallo Welt" mit beiden Methoden ermittelt. Beachte, dass auch Leerzeichen als Zeichen gezählt werden.
 
-Manchmal kann es auch nützlich sein, die Länge eines Strings in Unicode Zeichen zu finden. Dafür gibt es die `codepoints` Methode, die eine Array mit den Codepoints des Strings zurückgibt. Wenn du die Anzahl dieser Elemente zählst, bekommst du die Länge des Strings in Unicode Zeichen.
+## Deep Dive
+
+Die `.length` und `.size` Methoden werden oft synonym verwendet, aber es gibt einen kleinen Unterschied zwischen den beiden. Während `.length` sich auf die Anzahl der Zeichen bezieht, zählt `.size` die Anzahl der Bytes im String. Dies kann einen Unterschied machen, wenn der String spezielle Zeichen enthält, die aus mehreren Bytes bestehen.
+
+Es ist auch wichtig zu beachten, dass sowohl `.length` als auch `.size` nur für Strings funktionieren. Wenn wir versuchen, sie auf einer anderen Datenstruktur anzuwenden, können wir einen Fehler erhalten.
 
 ## Siehe auch
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby String Methods](https://www.rubyguides.com/2018/10/ruby-string-methods/)
-
-Ich hoffe, dieser kurze Einblick in die Länge von Strings in Ruby hat dir geholfen und du kannst dieses Konzept nun besser verstehen und nutzen. Schau dir auf jeden Fall auch die offizielle Dokumentation und andere Ressourcen an, um dein Wissen weiter zu vertiefen. Viel Spaß beim Coden!
+- [Offizielle Ruby-Dokumentation zu den String-Methoden](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ein weiteres Blog-Beitrag zum Thema "Länge eines Strings finden"](https://blog.alexseifert.com/2019/10/19/finding-the-length-of-a-string-in-ruby/)
+- [In deutscher Sprache übersetzte Ruby-Dokumentation](https://ruby-doc.org/de/)

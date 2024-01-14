@@ -1,46 +1,59 @@
 ---
 title:    "Swift: Lendo argumentos da linha de comando"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que ler argumentos da linha de comando em Swift?
 
-Ler argumentos da linha de comando é uma habilidade muito importante para programadores Swift. Com isso, é possível criar programas interativos e dinâmicos, permitindo que o usuário forneça informações para personalizar a execução do programa. Além disso, a leitura de argumentos da linha de comando é extremamente útil em projetos que fazem uso de bibliotecas ou frameworks externos, onde pode ser necessário passar informações específicas durante a execução do programa.
+Ler argumentos da linha de comando é uma habilidade essencial para qualquer programador Swift, especialmente para aqueles que desejam criar aplicativos para linha de comando. Ao entender como ler e processar argumentos da linha de comando, você poderá criar programas mais dinâmicos e interativos.
 
-## Como ler argumentos da linha de comando?
+## Como fazer:
 
-Para ler argumentos da linha de comando em Swift, podemos usar a classe `CommandLine`, que fornece métodos para acessar e manipular os argumentos passados na execução do programa. Primeiro, devemos importar o módulo `Foundation` para ter acesso à classe `CommandLine`:
+Para ler argumentos da linha de comando em Swift, você precisará usar a classe `CommandLine` do framework `Foundation`. Esta classe fornece métodos e propriedades para acessar os argumentos de entrada fornecidos pela linha de comando.
 
-```
+Para começar, importe o framework `Foundation` no início do seu arquivo Swift:
+
+```Swift
 import Foundation
 ```
 
-Em seguida, podemos acessar os argumentos usando a propriedade `arguments` da classe `CommandLine`. Por exemplo, para imprimir todos os argumentos passados ao programa, podemos utilizar o seguinte código:
+Em seguida, você pode acessar os argumentos da linha de comando usando a propriedade `CommandLine.arguments`:
 
-```
-for argument in CommandLine.arguments {
-    print(argument)
-}
+```Swift
+let arguments = CommandLine.arguments
 ```
 
-Ao executar o programa com os argumentos `hello` e `world`, o resultado será:
+Esta propriedade retorna um array de strings, onde cada elemento representa um dos argumentos fornecidos na linha de comando. Você também pode acessar argumentos específicos usando seus índices, começando do primeiro argumento após o nome do programa.
 
+Aqui está um exemplo de código que lê argumentos da linha de comando e imprime-os na tela:
+
+```Swift
+// Input: swift hello.swift John 25
+// Output: Hello John, you are 25 years old!
+
+import Foundation
+
+let arguments = CommandLine.arguments
+
+// Primeiro argumento é o nome do programa, então começamos do segundo argumento
+let name = arguments[1]
+let age = arguments[2]
+
+print("Hello \(name), you are \(age) years old!")
 ```
-hello
-world
-```
 
-## Aprofundando-se na leitura de argumentos da linha de comando
+Execute este código, passando seu nome e idade como argumentos da linha de comando, e veja o resultado!
 
-Além da propriedade `arguments`, a classe `CommandLine` também possui outros métodos úteis para acessar e manipular os argumentos passados ao programa. Alguns exemplos incluem `argumentCount`, que retorna o número total de argumentos, e `firstArgumentIgnoringFlags`, que retorna o primeiro argumento ignorando possíveis opções passadas com o prefixo `-`.
+## Mergulho profundo:
 
-Outra funcionalidade importante é a possibilidade de definir opções e parâmetros esperados pelo programa, bem como suas descrições, através do método `defineOption`. Isso pode ser especialmente útil em programas mais complexos que exigem a leitura de vários argumentos com diferentes formatos e propósitos.
+A classe `CommandLine` também fornece métodos para analisar argumentos da linha de comando de maneira mais avançada. Por exemplo, você pode usar o método `option` para definir opções opcionais e seus respectivos valores.
 
-Para saber mais sobre como usar a classe `CommandLine`, consulte a documentação oficial da Apple [aqui](https://developer.apple.com/documentation/foundation/commandline).
+Além disso, você também pode usar a biblioteca Swift Argument Parser, um pacote de terceiros popular para lidar com argumentos da linha de comando de forma ainda mais eficiente.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial da Apple - CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Swiftpack - Como ler argumentos da linha de comando em Swift](https://swiftpack.co/package/JohnSundell/CommandLine)
+- [Documentação da classe `CommandLine`](https://developer.apple.com/documentation/foundation/commandline)
+- [Swift Argument Parser](https://github.com/apple/swift-argument-parser)

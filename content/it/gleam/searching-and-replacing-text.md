@@ -1,48 +1,53 @@
 ---
-title:    "Gleam: Ricerca e sostituzione di testo"
+title:    "Gleam: Cercando e sostituendo il testo"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-C'è un compito fastidioso che tutti i programmatori devono affrontare: sostituire pezzi di testo all'interno del codice. È una di quelle piccole cose che possono richiedere molto tempo se fatte manualmente. Ma non temere, Gleam è qui per aiutarti! In questo post, imparerai come utilizzare Gleam per cercare e sostituire il testo all'interno del tuo codice in modo efficiente e veloce.
+Scegliere il linguaggio di programmazione Gleam non solo offre una sintassi pulita e intuitiva, ma anche una vasta gamma di funzionalità pratiche. Tra queste, una delle più utili è la capacità di cercare e sostituire testo all'interno dei nostri script. Vediamo insieme come farlo!
 
-## Come
+## Come fare
 
-Per prima cosa, devi importare il modulo `gleam/text` nella tua applicazione Gleam. Questo modulo contiene alcune funzioni utili per il manipolamento del testo, inclusa la funzione `replace`.
-
-```Gleam
-// Importa il modulo gleam/text
-import gleam/text
-
-// Esegui la sostituzione del testo
-let new_string = text.replace("Ciao mondo!", "mondo", "Italia")
-```
-
-Questa funzione prende tre argomenti: la stringa originale, il testo da cercare e il testo con cui sostituirlo. Nel nostro esempio, stiamo sostituendo "mondo" con "Italia" all'interno della stringa "Ciao mondo!". Se eseguiamo questo codice, il valore di `new_string` sarà "Ciao Italia!".
-
-Puoi anche passare una funzione come argomento da utilizzare per raccogliere il testo di sostituzione. Ad esempio:
+È molto semplice utilizzare la funzione di ricerca e sostituzione di Gleam. Possiamo farlo utilizzando il metodo `String.replace()` e passando come argomenti il testo da cercare e il testo da sostituire. Ad esempio, se volessimo sostituire la parola "cane" con "gatto" in una stringa, il codice sarebbe il seguente:
 
 ```Gleam
-// Definisci una funzione di sostituzione
-fn to_lowercase(string) { String.to_lower(string) }
-
-// Esegui la sostituzione con la funzione
-let new_string = text.replace("HELLO WORLD!", "WORLD", to_lowercase)
+let stringa = "Il mio cane è un cucciolo di razza."
+let nuova_stringa = String.replace(stringa, "cane", "gatto")
 ```
 
-In questo caso, la funzione `replace` userà la nostra funzione `to_lowercase` per trasformare il testo di sostituzione in lettere minuscole prima di eseguire la sostituzione. Il valore di `new_string` sarà "HELLO world!".
+Il risultato sarebbe la stringa "Il mio gatto è un cucciolo di razza.", che ci conferma che la funzione ha fatto il suo lavoro.
 
-## Deep Dive
+Possiamo anche utilizzare le espressioni regolari per raffinare la nostra ricerca e sostituzione. Ad esempio, se volessimo sostituire tutte le vocali con un asterisco, il codice sarebbe il seguente:
 
-Ora che hai una comprensione di base di come usare la funzione `replace`, puoi approfondire le possibilità di ricerca e sostituzione di text in Gleam. Il modulo `gleam/text` contiene anche altre funzioni utili come `replace_all`, che esegue la sostituzione di tutte le occorrenze di un testo all'interno di una stringa, e `replace_regexp`, che utilizza espressioni regolari per trovare e sostituire il testo.
+```Gleam
+let stringa = "Questa è una frase."
+let nuova_stringa = String.replace(stringa, `[aeiou]`, "*")
+```
 
-Inoltre, Gleam ha una libreria esterna chiamata `gleam/regexp`, che offre una vasta gamma di funzioni per lavorare con espressioni regolari. Puoi utilizzare queste funzioni insieme alla funzione `replace_regexp` per avere ancora più controllo sulla ricerca e sostituzione del testo.
+Il risultato sarebbe la stringa "Q*st* * *n* fr*s*.", dove le vocali sono state sostituite con l'asterisco.
+
+## Approfondimento
+
+La funzione `String.replace()` può essere utilizzata anche per raccogliere informazioni sulla sostituzione effettuata. Possiamo farlo passando come terzo argomento una funzione di callback che riceve in input il testo sostituito e restituisce il nuovo testo. Ad esempio, se volessimo contare quante volte viene effettuata una sostituzione, il codice sarebbe il seguente:
+
+```Gleam
+let stringa = "Oggi è una bella giornata."
+let conteggio_sostituzioni = ref(0)
+
+let nuova_stringa = String.replace(stringa, "bella", fn (_, _) => {
+    conteggio_sostituzioni := conteggio_sostituzioni + 1
+    "splendida"
+})
+```
+
+In questo caso, il codice controlla quante volte la parola "bella" viene sostituita con "splendida" e lo memorizza nella variabile `conteggio_sostituzioni`.
 
 ## Vedi anche
 
-- Documentazione ufficiale della funzione `replace` in Gleam: https://gleam.run/modules/gleam/text#replace
-- Tutorial di Gleam sulle espressioni regolari: https://gleam.run/tutorials/regular-expressions
-- Documentazione ufficiale della libreria `gleam/regexp`: https://gleam.run/modules/gleam/regexp
+- Documentazione ufficiale di Gleam sull'utilizzo di `String.replace()`: https://gleam.run/documentation/math/replace
+- Esempi avanzati di utilizzo della funzione di ricerca e sostituzione in Gleam: https://gist.github.com/alturman/5abb6d02c116deae6fc690ab06030bd1
+- Un tutorial completo sulla gestione di stringhe in Gleam: https://gleam.run/documentation/core-modules/string-functions

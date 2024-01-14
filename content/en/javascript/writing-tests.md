@@ -1,43 +1,43 @@
 ---
 title:    "Javascript recipe: Writing tests"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests Is Important
+## Why
+As a programmer, testing may seem like a daunting and time-consuming task. However, writing tests for your code is crucial for ensuring its functionality and catching any potential bugs. Testing not only helps you to identify errors early on, but it also improves the overall quality and reliability of your code. 
 
-Writing tests may seem like an extra step in the already hectic process of programming, but it is an essential one. Tests help catch bugs and errors early on in the development process, which can save time and frustration down the line. It also helps ensure that the code is working correctly and as expected.
-
-## How To Write Tests in Javascript
-
-Writing tests in Javascript can be done using a variety of testing frameworks such as Mocha, Jest, or Jasmine. These frameworks provide a structure and set of tools to help write and run tests efficiently.
-
-To write tests, first, you need to identify the functions or pieces of code that need testing. Then, use assertion methods to validate the expected output of the code. For example, using Mocha, the code would look like this:
+## How To
+To get started with writing tests in Javascript, you will need to use a testing framework. Jest is a popular choice for testing in Javascript, as it is easy to set up and has a user-friendly interface. Here's an example of how to write a test using Jest:
 
 ```Javascript
-describe("add function", () => {
-  it("should add two numbers correctly", () => {
-    const result = add(2, 3);
-    expect(result).to.equal(5);
-  });
+// Example function to be tested
+function sum(a, b) {
+   return a + b;
+}
+
+// Test case using Jest
+test('adds 1 + 2 to equal 3', () => {
+   expect(sum(1, 2)).toBe(3);
 });
 ```
 
-In this example, the `describe` function is used to group related tests together, while the `it` function is used to specify individual test cases. The `expect` function is used to make assertions about the output of the `add` function. If the result does not match the expected output, the test will fail.
+In this example, we have created a basic function that adds two numbers together and then written a test case to check if it returns the correct result. The `expect` statement is used to define the expected output, and the `toBe` statement compares it to the actual output of the function. 
 
-It's also important to cover different scenarios and edge cases in your tests to ensure comprehensive code coverage.
+Jest also provides a range of other useful methods for testing, such as `toEqual` for checking the value of objects and arrays, `not` for negating a statement, and `toThrow` for testing if a function throws an error. You can find more information and examples on how to use Jest in their documentation.
 
-## Deep Dive into Writing Tests
+## Deep Dive
+When writing tests, it is important to cover all edge cases and error scenarios, not just the basic functionality. You can do this by writing multiple test cases that cover different input combinations and expected outputs. This ensures that your code is robust and can handle unexpected situations. 
 
-Writing tests in Javascript not only helps catch bugs early on, but it also promotes better code quality and maintainability. It allows for easier code modifications and refactoring without fear of breaking existing functionality. Additionally, tests serve as documentation for the code, making it easier for other developers to understand and work with it.
+Another essential aspect of writing tests is maintaining them as your codebase evolves. As you make changes to your code, you must also update your tests to match these changes. This ensures that your tests continue to reflect the current functionality of your code and catch any new errors that may arise. 
 
-One important aspect of writing tests is to make them independent from each other, meaning that one test should not rely on the result of another test. This ensures that failing tests do not affect the outcome of other tests.
+Lastly, remember that testing is not a one-time task. Continuously testing your code, both manually and automatically, helps to identify and fix bugs early on in the development process, making it smoother and more efficient.
 
-It is also recommended to run tests frequently, especially after making changes to the code. This helps catch bugs early on and saves time in the long run.
+## See Also 
+Here are some additional resources for learning more about writing tests in Javascript:
 
-## See Also
-
-- [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
-- [Jasmine](https://jasmine.github.io/)
+- [Jest Documentation](https://jestjs.io/docs/en/getting-started)
+- [The Importance of Testing in Development](https://medium.com/@cirev85555/the-importance-of-testing-in-development-1386c8b01abd)
+- [Best Practices for Writing Tests in Javascript](https://www.betamonks.com/posts/10-best-practices-for-writing-javascript-unit-tests)

@@ -1,52 +1,40 @@
 ---
 title:    "Fish Shell: Escribiendo en el error estándar"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué escribir en el shell de Fish?
 
-Escribir a la salida de error estándar, o stderr, es una forma de mejorar la eficiencia y la legibilidad de los programas escritos en Fish Shell. Al enviar mensajes de error y excepciones a stderr, permitimos que el programa continúe ejecutándose sin interrupciones innecesarias.
+Escribir en el shell de Fish puede ser una herramienta útil para los programadores que desean tener un mayor control sobre la terminal y los errores que se pueden presentar durante la ejecución de un programa. Al escribir en la salida de error estándar, se pueden detectar y solucionar más rápidamente posibles problemas en el código.
 
-## Cómo hacerlo
-
-Escribir a stderr en Fish Shell es sencillo y puede hacerse de varias maneras.
-
-### Método 1: Usar el comando `echo`
-
-El comando `echo` se utiliza para mostrar texto en la línea de comandos. Puede ser utilizado junto con el operador de redirección `>` para enviar el resultado a un archivo o una tubería. Para escribir a stderr, podemos utilizar el descriptor de archivo `2`, que representa la salida de error estándar.
+## Cómo escribir en la salida de error estándar
 
 ```Fish Shell
-echo "Este es un mensaje de error" >[2=1]
+echo "Hola mundo" >&2
 ```
 
-En este ejemplo, estamos redirigiendo la salida de `echo` al descriptor de archivo `2`, que luego se envía a stderr. También podemos utilizar el atajo `&` para especificar el descriptor de archivo en lugar del nombre completo.
+Este simple comando enviará el mensaje "Hola mundo" a la salida de error estándar en lugar de la salida estándar. Esto garantiza que cualquier mensaje de error será visible para el programador, lo que puede ser especialmente útil en programas más complejos que generan múltiples tipos de salida.
+
+## Profundizando en la escritura a la salida de error estándar
+
+Al utilizar el operador `>&2`, el mensaje se redirige directamente a la salida de error estándar. Esto puede ser útil para controlar y gestionar cómo se manejan los errores en un programa. Además, al escribir en la salida de error estándar, se asegura que el mensaje será visible incluso si la salida estándar está siendo redirigida o silenciada.
+
+Otra técnica útil es utilizar el comando `exit`, que permite salir del programa con un código de error específico. Por ejemplo:
 
 ```Fish Shell
-echo "Este es un mensaje de error" >&2
+if [ ! -f archivo.txt ]; then
+    echo "¡Error: archivo.txt no existe!" >&2
+    exit 1
+fi
 ```
 
-### Método 2: Usar funciones Fish Shell
-
-Fish Shell también proporciona funciones integradas para escribir a stderr, como `echo_err` y `printf_err`. Estas funciones se comportan de manera similar a sus contrapartes `echo` y `printf`, pero envían la salida a stderr en lugar de stdout.
-
-```Fish Shell
-echo_err "Este es un mensaje de error"
-```
-
-```Fish Shell
-printf_err "La respuesta es %d" 42
-```
-
-## Profundizando
-
-Si bien enviar mensajes de error a stderr puede mejorar la eficiencia y la legibilidad de nuestros programas, también es importante tener en cuenta que el uso excesivo de mensajes de error puede obstaculizar la experiencia del usuario. Por lo tanto, es importante encontrar un equilibrio entre la cantidad y la relevancia de los mensajes de error.
-
-También es importante tener en cuenta que stderr es solo uno de los tres canales de salida (los otros son stdout y stdout interno). Al escribir a stderr, es posible que estemos sobrescribiendo mensajes importantes que se envían a stdout o stdout interno. Por lo tanto, es importante comprender cómo funcionan estos canales y utilizarlos adecuadamente en nuestros programas.
+En este ejemplo, el mensaje de error se envía a la salida de error estándar y el programa se detiene con un código de error 1. Esto permite identificar específicamente el tipo de error que ocurrió y tomar las medidas adecuadas para solucionarlo.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell sobre redireccionamientos (en inglés)](https://fishshell.com/docs/current/cmds/redirection.html)
-- [Página de manual de Fish Shell sobre el descriptor de archivo `2` (en inglés)](https://fishshell.com/docs/current/index.html#fd)
-- [Tutorial de Fish Shell en español (en español)](https://github.com/jorgebucaran/fish-shell-cookbook/blob/master/source/es/Introduction.md)
+- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
+- Guía rápida de Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Preguntas frecuentes sobre Fish Shell: https://fishshell.com/docs/current/faq.html

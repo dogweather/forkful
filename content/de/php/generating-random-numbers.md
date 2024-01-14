@@ -1,62 +1,53 @@
 ---
-title:    "PHP: Zufallszahlen generieren"
+title:    "PHP: Erzeugung zufälliger Zahlen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-In der Programmierung gibt es oft die Notwendigkeit, zufällige Zahlen zu generieren. Dies kann zum Beispiel für die Erstellung von Passwörtern, die Durchführung von Simulationen oder die Optimierung von Algorithmen erforderlich sein.
+In der Programmierung ist es oft notwendig, zufällige Zahlen zu generieren. Dies kann beispielsweise für die Verwendung in Spielen, bei der Erstellung von Passwörtern oder für statistische Zwecke erforderlich sein. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie wir mit PHP zufällige Zahlen generieren können.
 
-# Wie man zufällige Zahlen in PHP generiert
+## Wie man es macht
 
-Um zufällige Zahlen in PHP zu generieren, gibt es verschiedene Funktionen, die verwendet werden können. Eine der einfachsten ist die `rand()`-Funktion, die zwei Parameter erwartet: den Start- und den Endwert des gewünschten Zahlenbereichs. Die folgenden Zahlen werden mit `rand(1, 10)` generiert:
-
-```PHP
-echo rand(1, 10); // Output: 3
-echo rand(1, 10); // Output: 7
-echo rand(1, 10); // Output: 10
-```
-
-Eine weitere Möglichkeit ist die `mt_rand()`-Funktion, die als Parameter auch den Start- und Endwert erwartet. Die Funktionsweise ist ähnlich wie bei `rand()`, jedoch wird ein Algorithmus verwendet, der eine höhere Zufälligkeit gewährleistet. Die folgenden Zahlen werden mit `mt_rand(1, 10)` generiert:
+Das Generieren von zufälligen Zahlen in PHP ist relativ einfach. Wir können die Funktion `rand()` verwenden, um eine zufällige Ganzzahl zwischen einem angegebenen Minimum und Maximum zu erzeugen. Schauen wir uns ein Beispiel an:
 
 ```PHP
-echo mt_rand(1, 10); // Output: 4
-echo mt_rand(1, 10); // Output: 9
-echo mt_rand(1, 10); // Output: 2
+$random_number = rand(1, 10);
+echo "Die zufällige Zahl ist: " . $random_number;
 ```
 
-Zudem gibt es noch die Möglichkeit, eine zufällige Zahl aus einem Array von Werten zu wählen, indem man die `array_rand()`-Funktion verwendet. Diese Funktion akzeptiert als Parameter das Array, aus dem eine zufällige Zahl ausgewählt werden soll. Die folgenden Zahlen werden aus dem Array `[1,2,3,4,5,6,7,8,9,10]` ausgewählt:
+Dieser Code wird eine zufällige Zahl zwischen 1 und 10 generieren und sie dann mit der `echo` Anweisung ausgeben.
+
+Wir können auch eine zufällige Gleitkommazahl mithilfe der Funktion `mt_rand()` erzeugen. Diese Funktion verwendet einen stärkeren Zufallszahlengenerator und ist daher für sicherheitsrelevante Anwendungen geeignet. Hier ist ein Beispiel:
 
 ```PHP
-$array = [1,2,3,4,5,6,7,8,9,10];
-echo $array[array_rand($array)]; // Output: 5
-echo $array[array_rand($array)]; // Output: 9
-echo $array[array_rand($array)]; // Output: 2
+$random_float = mt_rand(0, 1);
+echo "Die zufällige Gleitkommazahl ist: " . $random_float;
 ```
 
-Es ist auch möglich, zufällige Zeichenfolgen zu generieren, indem man die `str_shuffle()`-Funktion verwendet. Diese Funktion akzeptiert als Parameter die Zeichenfolge, die gemischt werden soll. Die folgenden Zeichenfolgen werden gemischt:
+Wie Sie sehen, wird die Funktion `mt_rand()` nur zwei Parameter akzeptieren, da der erste Parameter als das tatsächliche Minimum und der zweite Parameter als das tatsächliche Maximum angesehen wird.
+
+## Tiefer eintauchen
+
+Wenn wir uns tiefer mit dem Generieren von zufälligen Zahlen in PHP beschäftigen, werden wir feststellen, dass die `rand()` und `mt_rand()` Funktionen eine allgemeine Schwäche haben. Sie können eine relativ vorhersehbare Folge von Zahlen erzeugen, wenn sie nicht richtig initialisiert werden. Dies kann jedoch gelöst werden, indem man zuerst die `srand()` Funktion verwendet, um den Zufallsgenerator zu initialisieren. Hier ist ein Beispiel, wie wir dies tun können:
 
 ```PHP
-echo str_shuffle("abcdefghijklmnopqrstuvwxyz"); // Output: bmkpqchjfvyxtoqznsdlwaruegi
-echo str_shuffle("1234567890"); // Output: 8457286039
+srand(42);
+$random_number = rand(1, 10);
+echo "Die zufällige Zahl ist: " . $random_number;
 ```
 
-# Tiefere Einblicke in die Generierung von zufälligen Zahlen
+Durch die Verwendung von `srand()` mit einem spezifischen Startwert, in diesem Fall 42, wird sichergestellt, dass wir jedes Mal, wenn das Skript ausgeführt wird, die gleiche zufällige Zahl erhalten.
 
-Die Verwendung von `rand()` oder `mt_rand()` kann zu Ergebnissen führen, die nicht ganz zufällig sind, da sie auf einem Algorithmus basieren. Eine bessere Möglichkeit ist es, die `random_int()`-Funktion zu verwenden, die ab PHP 7 zur Verfügung steht. Diese Funktion verwendet eine kryptografisch sichere Methode, um zufällige Zahlen zu generieren. Sie erwartet ebenfalls zwei Parameter für den Start- und Endwert. Die folgenden Zahlen werden mit `random_int(1, 10)` generiert:
+Es gibt auch zusätzliche Funktionen in PHP, wie `random_int()` und `random_bytes()`, die für die sichere Generierung von Zufallszahlen empfohlen werden. Sie können diese Funktionen verwenden, wenn Sie Sicherheitsbedenken haben oder Zufallszahlen für kryptografische Zwecke benötigen.
 
-```PHP
-echo random_int(1, 10); // Output: 8
-echo random_int(1, 10); // Output: 3
-echo random_int(1, 10); // Output: 6
-```
+## Siehe auch
 
-Zudem ist es wichtig zu beachten, dass die Generierung von Zufallszahlen in PHP auch von der Konfiguration des Servers und der verwendeten Umgebung abhängig sein kann. Es ist daher ratsam, sich mit den Dokumentationen und Empfehlungen von PHP auseinanderzusetzen, um eine sichere und zuverlässige Generierung von Zufallszahlen zu gewährleisten.
+Diese Artikel könnten für Sie nützlich sein, um weiterlesen zu können:
 
-# Siehe auch
-
-- [PHP-Dokumentation zur Generierung von Zufallszahlen](https://www.php.net/manual/en/function.rand.php)
-- [Randomness in PHP by Alex Mills](https://medium.com/@alexmillard/randomness-in-php-66b831ba6b1c)
-- [Generating random numbers in PHP by Petar Nikolow](https://petarnikolo.dev/php-tutorials/generating-random-numbers-in-php)
+- [PHP's offizielle Dokumentation zu Zufallszahlen](https://www.php.net/manual/de/function.rand.php)
+- [Wikipedia Artikel über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahl)
+- [PHP Tutorial: Random Number Generator](https://www.w3schools.com/php/func_math_rand.asp)

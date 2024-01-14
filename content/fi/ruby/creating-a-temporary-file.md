@@ -1,41 +1,58 @@
 ---
-title:    "Ruby: OneMluonu vuodenLuoitaf Tiedostoa"
+title:    "Ruby: Väliaikaistiedoston luominen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikaisia tiedostoja Ruby-ohjelmoinnissa?
+--
 
-Väliaikaisten tiedostojen luominen on olennainen osa Ruby-ohjelmointia monista eri syistä. Yksi syy voi olla tallennuksen tarve, kunnes tieto voidaan pysyvästi tallentaa tietokantaan tai järjestelmään. Toinen syy voi olla väliaikaisen tiedoston tarve väliaikaisen laskennan tai muokkauksen aikana. Jotkut ohjelmat saattavat myös vaatia väliaikaisen tiedoston luomista palvelimilla toimintaa varten. Näistä syistä huolimatta, väliaikaisten tiedostojen luominen on tärkeä osa Ruby-ohjelmointia ja sen oppiminen auttaa sinua kehittämään tehokkaita ja luotettavia ohjelmia.
+## Miksi
 
-## Näin luot väliaikaisen tiedoston Rubyssa
+Monet Ruby-kehittäjät tarvitsevat väliaikaisia tiedostoja ohjelman suorittamisen aikana. Tämä voi johtua tarpeesta tallentaa väliaikaisia tietoja tai työstää suuria määriä tietoa, jotka on helpointa käsitellä yhden tiedoston kautta. Ruby tarjoaa helpon tavan luoda väliaikaisia tiedostoja, jotka voidaan poistaa ohjelman suorituksen päätyttyä.
 
-Väliaikaisten tiedostojen luominen Rubyssa on helppoa `Tempfile`-luokan avulla. Tässä esimerkissä luomme väliaikaisen tiedoston, kirjoitamme siihen tekstin ja tulostamme sen sisällön:
+## Miten
+
+Väliaikaisen tiedoston luominen Rubyssa on yksinkertaista. Käytetään `Tempfile`-luokkaa ja kutsutaan `open`-metodia antaen sille parametriksi tiedoston nimi ja tiedostomuoto.
 
 ```Ruby
-require 'tempfile'
-
-temp_file = Tempfile.new('temp_file') # luodaan väliaikainen tiedosto nimeltä "temp_file"
-temp_file.write('Tervetuloa!') # kirjoitetaan teksti tiedostoon
-temp_file.rewind # palautetaan tiedoston kursori alkuun
-puts temp_file.read # tulostetaan tiedoston sisältö
+file = Tempfile.open(["tempfile", ".txt"])
 ```
 
-Tämän koodin tulostus näyttäisi tältä:
+Tämä luo uuden väliaikaisen tiedoston nimellä "tempfile" ja tiedostopäätteellä ".txt". Tiedosto tallentuu automaattisesti Ruby-ohjelman oletushakemistoon. Voit myös määrittää tietyn hakemiston `dir`-parametrillä.
 
+```Ruby
+file = Tempfile.open(["tempfile", ".txt"], dir: "~/Documents")
 ```
-Tervetuloa!
+
+Väliaikainen tiedosto voidaan nyt käsitellä kuten mitä tahansa muuta tiedostoa Rubyssa. Alla on esimerkki, jossa tiedostoon kirjoitetaan ja siitä luetaan tekstiä.
+
+```Ruby
+file.write("Tämä on väliaikainen tiedosto.")
+file.rewind
+file.read #=> "Tämä on väliaikainen tiedosto."
 ```
 
-## Syvemmälle väliaikaisiin tiedostoihin
+Kun tiedostoa ei enää tarvita, se voidaan poistaa kutsuttaessa `close`-metodia.
 
-`Tempfile`-luokka tarjoaa myös muita hyödyllisiä toimintoja väliaikaisten tiedostojen käsittelyyn. Voit esimerkiksi määrittää tiedoston kansion tai nimen luomisen yhteydessä. Lisäksi voit määrittää, että tiedosto poistetaan automaattisesti, kun se ei enää ole käytössä. Tämä on erityisen hyödyllistä väliaikaisten tiedostojen hallinnassa.
+```Ruby
+file.close
+```
 
-Voit myös lukea ja kirjoittaa tiedoston sisältöä käyttämällä `gets`- ja `puts`-metodeja, kuten tavallisissa tiedostoissa. Väliaikainen tiedosto käyttäytyy siis kuin tavallinen tiedosto, mutta se poistetaan automaattisesti, kun se ei enää ole käytössä.
+## Syvällinen sukellus
+
+`Tempfile`-luokka pohjautuu `File`-luokkaan ja tarjoaa lisäominaisuuksia väliaikaisen tiedoston hallintaan. Voit esimerkiksi määrittää tiedoston käyttöoikeudet `perms`-parametrilla ja määrittää tiedoston avaustilan `mode`-parametrilla.
+
+```Ruby
+file = Tempfile.open(["tempfile", ".txt"], perms: 0644, mode: "w+")
+```
+
+`Tempfile`-luokassa on myös metodi `unlink`, joka poistaa tiedoston automaattisesti, kun tiedosto suljetaan. Tämä on kätevä tapa varmistaa, ettei väliaikaisia tiedostoja jää turhaan levylle.
+
+Lisätietoa `Tempfile`-luokasta ja sen ominaisuuksista löytyy [Ruby-dokumentaatiosta](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html).
 
 ## Katso myös
 
-- [Tempfile - Ruby dokumentaatio](https://ruby-doc.org/stdlib-2.7.0/libdoc/tempfile/rdoc/Tempfile.html)
-- [How to Work With Temporary Files in Ruby](https://www.rubyguides.com/2015/04/working-with-temporary-files-ruby/)
-- [Introduction to File Operations in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Ruby-dokumentaatio `Tempfile`-luokasta](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
+- [Artikkeli: "Temporary files in Ruby: a comprehensive guide"](https://www.honeybadger.io/blog/temporary-files-in-ruby-a-comprehensive-guide/)

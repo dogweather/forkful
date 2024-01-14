@@ -1,13 +1,14 @@
 ---
-title:    "C: एक अस्थायी फ़ाइल बनाना"
+title:    "C: अस्थायी फ़ाइल बनाना"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-एक अस्थायी फाइल बनाने का काम इसलिए किया जाता है क्योंकि यह प्रोग्रामर को उस समय इस्तेमाल होने वाले डेटा को सेव करने और प्रोसेस के बाद उसे हटाने के लिए किया जाता है।
+कभी-कभी हमें प्रोग्रामिंग में अस्थायी फ़ाइलों की जरूरत होती है। ये फ़ाइलें इस्तेमाल केवल एक बार होती हैं और अपने आप ही हटा जाती हैं। इन फ़ाइलों को बनाने से हमारे कंप्यूटर का मेमोरी स्पेस भी कम इस्तेमाल होता है।
 
 ## कैसे करें
 
@@ -15,36 +16,27 @@ keywords: ["C"]
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-  // Creating a temporary file
-  FILE *temp = tmpfile();
-
-  // Writing data to the file
-  fprintf(temp, "This is a temporary file created by C programming.");
-
-  // Reading the data from the file
-  rewind(temp);
-  char data[100];
-  while (fgets(data, 100, temp)){
-    printf("%s", data);
-  }
-
-  // Closing the file
-  fclose(temp);
-  
-  return 0;
+int main() {
+    // ताज़ा फ़ाइल बनाने के लिए फ़ंक्शन
+    FILE *fp = tmpfile();
+    // फ़ाइल पर आपको पढ़ने और लिखने की अनुमति होती है
+    // उदाहरण के लिए हम फ़ाइल में "नमस्ते दुनिया!" लिखेंगे
+    fprintf(fp, "नमस्ते दुनिया!");
+    // फ़ाइल को क्लोज़ करें और हटाएँ
+    fclose(fp);
+    return 0;
 }
-```
 
-आउटपुट: This is a temporary file created by C programming.
+// आउटपुट:
+// टेम्पररी फ़ाइल में दिए गए अनुक्रमणिका के अनुसार:
+// "नमस्ते दुनिया!"
+
+```
 
 ## गहराई में जाएं
 
-अस्थायी फाइल क्रिएशन साधन अन्य फाइल सिस्टम क्रिएशन से थोड़ी अलग है। इसमें एक फाइल डेस्क्रिप्टर तीन अलग होते हैं - STDIN, STDOUT, और STDERR। इसके अलावा, इन अस्थायी फाइल सिस्टम में आप केवल इन प्रोसेस के दौरान उपयोग कर सकते हैं और प्रोसेस को समाप्त होने के बाद हमेशा के लिए हटा दिया जाएगा।
+ताज़ा फ़ाइलें सामान्य रूप से /tmp/ फ़ोल्डर में संचित होती हैं। tmpfile() फ़ंक्शन एक खाली फ़ाइल खोलता है और उसकी फ़ाइल पॉइंटर को वापस देता है। आप इस फ़ाइल पर कोई भी ऑपरेशन कैसे कर सकते हैं, जैसे कि फ़ाइल पर लिखना, पढ़ना या फ़ाइल में से कोई डेटा हटाना। इस तरह की अस्थायी फ़ाइलें बहुत सी अलग-अलग प्रोग्रामिंग सिचुएशंस में उपयोगी हो सकती हैं, जैसे कि डेटा के प्रभावी बचाव, फ़ाइल स्ट्रीमिंग और डेटा के प्रसंस्करण में।
 
 ## देखें भी
 
-- [अस्थायी फाइल बनाने के बारे में और अधिक जानें](https://www.geeksforgeeks.org/tmpfile-fopen-for-temporary-files-in-c-c/)
-- [C programming में फाइल ऑपरेशन की जानकारी प्राप्त करें](https://www.programiz.com/c-programming/c-file-input-output)
-- [C programming का GitHub रिपोजिटरी देखें](https://github.com/search?q=C+programming)
+* [tmpfile() फ़ंक्शन की प

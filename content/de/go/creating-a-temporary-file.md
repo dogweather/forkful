@@ -1,36 +1,59 @@
 ---
-title:    "Go: Erstellen einer temporären Datei"
+title:    "Go: Ein temporäres Datei erstellen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Beim Programmieren mit Go gibt es oft Situationen, in denen temporäre Dateien erstellt werden müssen. Diese Dateien sind in der Regel nur für eine begrenzte Zeit nötig und werden danach gelöscht. Aber wofür braucht man überhaupt temporäre Dateien? In diesem Beitrag werden wir uns genau mit dieser Frage beschäftigen.
+Das Erstellen von temporären Dateien ist ein häufiges Anliegen, wenn es um die Programmierung geht. Diese Dateien sind nützlich, um vorübergehend Daten zu speichern, die für eine bestimmte Aufgabe benötigt werden, aber nicht dauerhaft auf der Festplatte gespeichert werden müssen.
 
-## Wie
+## Wie man es macht
 
-Es gibt verschiedene Möglichkeiten, um in Go temporäre Dateien zu erstellen. Eine einfache Methode ist die Verwendung der built-in Funktion `TempFile()`, die ein os.File Objekt zurückgibt. Hier ein Beispiel:
+In der Programmierung gibt es verschiedene Methoden, um eine temporäre Datei zu erstellen. Im Folgenden zeigen wir dir anhand einiger Beispiele, wie du das in Go umsetzen kannst.
 
 ```Go
-file, err := ioutil.TempFile("", "example") // Leere Zeichenkette als Pfad gibt Standardverzeichnis für temporäre Dateien an
-if err != nil {
-    log.Fatal(err)
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "os"
+)
+
+func main() {
+    // Beispiel 1: Verwenden von ioutil.TempFile()
+    tmpFile, err := ioutil.TempFile("", "temp")
+    if err != nil {
+        panic(err)
+    }
+    defer os.Remove(tmpFile.Name())
+    fmt.Println(tmpFile.Name())
+
+    // Beispiel 2: Verwenden von os.CreateTemp()
+    tmpFile2, err := os.CreateTemp("", "example")
+    if err != nil {
+        panic(err)
+    }
+    defer os.Remove(tmpFile2.Name())
+    fmt.Println(tmpFile2.Name())
 }
-defer os.Remove(file.Name()) // Löscht die temporäre Datei am Ende der Funktion
-fmt.Println("Erstellte temporäre Datei:", file.Name())
+
 ```
-Die `TempFile()` Funktion akzeptiert auch als zweites Argument einen Präfix für den Dateinamen. Dadurch können mehrere temporäre Dateien erstellt werden, ohne dass es zu Konflikten mit bereits existierenden Dateien kommt. Weitere Informationen zu dieser Funktion und anderen Methoden zum Erstellen von temporären Dateien finden Sie in der offiziellen Go-Dokumentation.
 
-## Deep Dive
+Die Ausgabe für beide Beispiele ist ähnlich: `C:\Users\User\AppData\Local\Temp\temp524196252` bzw. `C:\Users\User\AppData\Local\Temp\example961005604`.
 
-Es gibt einige wichtige Dinge, die man beim Erstellen von temporären Dateien beachten sollte. Erstens sollten diese Dateien nicht im selben Verzeichnis gespeichert werden, in dem sich die ausführbare Datei befindet. Andernfalls könnten Schreibrechte und Sicherheitsprobleme entstehen. In der Regel wird ein Unterordner im Temp-Verzeichnis verwendet, um temporäre Dateien abzulegen.
+Genauere Informationen zu den einzelnen Funktionen findest du in der Dokumentation von Go.
 
-Außerdem ist es wichtig, temporäre Dateien am Ende des Programms zu löschen, um Speicherplatz und Sicherheitsrisiken zu vermeiden. Hierfür bieten Go's `os` Paket und die `defer` Anweisung eine einfache Lösung.
+## Tiefer Einblick
+
+Das Erstellen von temporären Dateien kann je nach Anwendung unterschiedliche Anforderungen haben. Glücklicherweise bietet Go auch dafür verschiedene Möglichkeiten. Du hast die Wahl zwischen `ioutil.TempFile()` und `os.CreateTemp()`, je nachdem, was deine Bedürfnisse sind. Beide Funktionen erstellen eine Datei im temporären Verzeichnis des Betriebssystems mit dem angegebenen Präfix und geben ein `*os.File` Objekt zurück, das für den Zugriff auf die Datei verwendet werden kann.
+
+Eine wichtige Sache, die du beachten solltest, ist das Löschen der temporären Datei nach ihrer Verwendung. Dies kann entweder mit der Funktion `os.Remove()` oder `defer` erreicht werden, um sicherzustellen, dass die Datei am Ende des Programms gelöscht wird.
 
 ## Siehe auch
 
-- [Offizielle Go-Dokumentation über das os-Paket](https://golang.org/pkg/os/)
-- [Weiterführender Artikel über die Verwendung von defer in Go](https://yourbasic.org/golang/defer-deferred-function/)
-- [Beispielcode für die Erstellung und Löschung von temporären Dateien in Go](https://www.digitalocean.com/community/tutorials/how-to-create-temporary-files-in-go-de)
+- Die offizielle Go-Dokumentation über `ioutil.TempFile()` und `os.CreateTemp()`: https://pkg.go.dev/io/ioutil#TempFile und https://pkg.go.dev/os#CreateTemp
+- Ein Tutorial zum Erstellen von temporären Dateien in Go: https://golangbot.com/temporary-files/

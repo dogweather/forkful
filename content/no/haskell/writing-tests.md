@@ -1,40 +1,61 @@
 ---
-title:    "Haskell: Skrive tester"
+title:    "Haskell: Skriving av tester"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive tester er en viktig del av å være en god programmerer. Det hjelper deg med å sikre deg at koden din fungerer som den skal, og det gjør det lettere å fange feil hvis noe går galt senere.
+Hvorfor skrive tester?
+
+Å skrive tester er en viktig del av utviklingsprosessen for enhver programvare. Det tillater programmerere å sikre at koden deres fungerer som forventet og reduserer risikoen for feil i produksjon. Ved å skrive tester kan man også enklere finne og fikse eventuelle feil, og det kan bidra til å forbedre kvaliteten på koden.
 
 ## Hvordan
 
-For å skrive tester i Haskell, kan du bruke rammeverket Hspec. Her er et eksempel på hvordan du kan teste en enkel funksjon som adderer to tall:
+Å skrive tester i Haskell er enkelt og effektivt. Det finnes ulike biblioteker og rammeverk tilgjengelig for å skrive tester, men vi skal fokusere på å bruke HUnit, et populært rammeverk for enhetstesting.
+
+Først må du importere HUnit biblioteket øverst i koden din:
 
 ```Haskell
-import Test.Hspec
-
-main :: IO ()
-main = hspec $ do
-  describe "add" $ do
-    it "adds two numbers correctly" $ do
-      add 5 3 `shouldBe` 8
+import Test.HUnit
 ```
 
-I dette eksempelet bruker vi `describe` for å definere en beskrivelse av testene våre, og `it` for å spesifisere hva testen skal gjøre. Vi bruker også `shouldBe` for å sjekke om det forventede resultatet er det samme som det faktiske resultatet.
+Deretter kan du definere enhetstester ved å bruke funksjonen `TestList`. For eksempel, la oss teste en enkel funksjon som legger sammen to tall:
 
-For å kjøre testene, kan du kjøre følgende kommando i terminalen: `stack test`.
+```Haskell
+-- Funksjonen vi skal teste
+sum :: Int -> Int -> Int
+sum x y = x + y
 
-Når testene er kjørt, vil du se en oversikt over hvor mange tester som ble kjørt, og om de bestod eller feilet.
+-- Definisjon av enhetstesten
+testSum :: Test
+testSum = TestLabel "Test sum" (
+    TestCase (assertEqual "1 + 2 skal være 3" 3 (sum 1 2))
+)
+
+-- Kjøre testen
+main :: IO Counts
+main = runTestTT $ TestList [testSum]
+```
+
+Her bruker vi funksjonen `assertEqual` for å sammenlikne den faktiske verdien av funksjonen vår med den forventede verdien, og sjekker om de er like. Dersom de ikke er det, vil testen feile.
+
+For å kjøre testen kan vi bruke kommandoen `runTestTT` og teste alle definerte enhetstester ved å legge dem til i `TestList`.
 
 ## Dypdykk
 
-Når du skriver tester, er det viktig å tenke på hvilke situasjoner koden din kan havne i, og å teste for alle mulige scenarier. Du bør også sørge for å skrive rene og lesbare tester slik at det blir enkelt å forstå hva som testes og hva som eventuelt feiler.
+Å implementere gode tester kan være en kunst i seg selv. Det er viktig å tenke på hva slags scenarier og verdier man vil teste for, og ikke bare fokusere på å dekke så mye kode som mulig. Det er også viktig å skrive tydelige testnavn, slik at man enkelt kan identifisere hva som blir testet.
 
-Det kan også være lurt å ha et godt test-dekningsverktøy som kan hjelpe deg med å identifisere hvilke deler av koden som ikke er dekket av tester. Dette kan hjelpe deg med å identifisere områder som trenger mer testing.
+En god praksis er å bruke et rammeverk som støtter "test-driven development" (TDD), hvor man skriver testene før man implementerer funksjonene. Dette hjelper til med å sikre at koden fungerer som den skal, og at den bare inneholder funksjonalitet som er nødvendig.
+
+Det kan også være nyttig å bruke en form for kontinuerlig integrasjon (CI) for å automatisk kjøre alle tester hver gang kode blir endret. Dette kan gi en rask tilbakemelding om eventuelle feil, og tillater utviklere å identifisere og fikse dem raskt.
 
 ## Se også
-- [Hspec dokumentasjon](https://hspec.github.io/)
-- [HaskellTesting - en samling av ressurser for testing i Haskell](https://wiki.haskell.org/Testing)
+
+Her er noen nyttige ressurser for å lære mer om å skrive tester i Haskell:
+
+- [HUnit dokumentasjon](https://hackage.haskell.org/package/HUnit)
+- [Haskell unit testing tutorial](https://www.tutorialspoint.com/haskell/haskell_testing.htm)
+- [Test-driven development i Haskell](https://donsbot.wordpress.com/2007/10/28/test-driven-haskell/)

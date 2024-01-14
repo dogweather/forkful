@@ -1,47 +1,69 @@
 ---
 title:    "C: השוואת שתי תאריכים"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-#למה
+## למה
 
-בעולם התיכנות, השוואת תאריכים היא משימה נפוצה וחשובה ביותר. במקרים רבים, נדרש להשוות בין שתי תאריכים על מנת לבדוק אם הם מתחילים באותו יום, אם התאריך הראשון עוקב אחר התאריך השני או אם התאריכים נמצאים בטווח זמן מסוים. לכן, יש לנו מגוון דרכים כיצד ניתן לבצע השוואת תאריכים בקלות ובמהירות בשפת C.
+בתכנות בשפת C, קיבלתם לעבוד עם תאריכים יכול להיות קשה. השוואת שני תאריכים היא משימה נפוצה וחשובה, שעשויה להיות מאתגרת למתכנתים במתכנתים החדשים ביותר. הכתבה הזאת תזכיר לכם במה התרגלנו עד כה עם תאריכים בתכנון C, ואיך אנו משווים שני תאריכים בקוד שלנו.
 
-#איך לבצע השוואת תאריכים בשפת C
+## כיצד
 
-מעל לכל, נצטרך לאתר ולהכיר את כלי הפונקציות הבסיסיות כגון struct tm ו- time.h המאפשרים לנו לקבל ולעבד את התאריכים בצורה מקיפה יותר. להלן דוגמא לכיצד ניתן לבצע השוואת תאריכים בשפת C.
+ניתן להשתמש במגוון מתודות כדי לשוות שני תאריכים בתכנות בשפת C. הנה כמה דוגמאות של קוד כדי להדגים איך לעשות זאת:
 
-```C
+```
 #include <stdio.h>
-#include <time.h>
 
 int main()
-
 {
-
-struct tm today = { .tm_mday = 18, .tm_mon = 3, .tm_year = 2020 };
-struct tm date1 = { .tm_mday = 25, .tm_mon = 3, .tm_year = 2020 };
-struct tm date2 = { .tm_mday = 1, .tm_mon = 5, .tm_year = 2020 };
-
-if (mktime(&date1) > mktime(&today))
-printf("Date1 is after today\n");
-else
-printf("date 1 is not after today\n");
-
-if (mktime(&date2) > mktime(&today))
-printf("Date2 is after today\n");
-else
-printf("date2 is not after today\n");
-
-return 0;
-
+    // Define the first date
+    int day1 = 1;
+    int month1 = 1;
+    int year1 = 2021;
+    
+    // Define the second date
+    int day2 = 31;
+    int month2 = 12;
+    int year2 = 2021;
+    
+    // Compare the dates
+    if (year1 == year2 && month1 == month2 && day1 == day2) {
+        printf("The two dates are equal.");
+    }
+    else if (year1 > year2) {
+        printf("The first date is later.");
+    }
+    else if (year2 > year1) {
+        printf("The second date is later.");
+    }
+    else if (month1 > month2) {
+        printf("The first date is later.");
+    }
+    else if (month2 > month1) {
+        printf("The second date is later.");
+    }
+    else if (day1 > day2) {
+        printf("The first date is later.");
+    }
+    else {
+        printf("The second date is later.");
+    }
+    
+    return 0;
 }
 ```
 
-כאמור, אנחנו משתמשים בפונקציית mktime כדי להמיר את התאריך לספרות על מנת לבצע את השוואה שלהם. ניתן גם להשתמש בפונקציית difftime כדי לבדוק את הפרש הזמן בין שני תאריכים כלשהם.
+תוצאה:
 
-#העומק של השוואת תאריכים
+```
+The second date is later.
+```
 
-בנוסף לדוגמא המוצגת, ניתן להשתמש גם בפונקציות נוספות כמו strftime ו- strftime_s לקבלת פורמט תאריך מותאם אישית ולהציג אותו בצורת טקסט או מערך של תווים. יש לציין שהשימוש בפונ
+בקוד זה, אנו משווים את תאריך הראשון עם תאריך השני באמצעות התנאי התואם לכל אחת מהתאריכים. אם נזכור את המחשבה של המחשב דוחף את המערך התאריך כמשתנים, נוכל לראות כי מתכנת C דרוש לנו להשוות את ערכי התאריך העברה המוכנים על התנאי שלכם. השוואת שני תאריכים כלל אינה מאתגרת, אבל ייתכן שיהיו מצבים שבהם תזכורת לתכנית שאתם כנל כמקומות כדי להשוות שני תאריכים בקוד שלכם.
+
+## Deep Dive
+
+ישנם גם דרכים נוספות להשוות שני תא

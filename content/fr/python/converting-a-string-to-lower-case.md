@@ -1,41 +1,50 @@
 ---
-title:    "Python: Convertissement d'une chaîne en minuscules"
+title:    "Python: Convertir une chaîne en minuscules"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est souvent nécessaire de convertir des chaînes de caractères en lettres minuscules lors de la programmation en Python. Cela peut être utile pour des comparaisons de chaînes de caractères sans tenir compte de la casse ou pour améliorer la lisibilité du code.
+La conversion de chaînes de caractères en minuscules (lower case) est un élément essentiel de la programmation en Python. Cela permet de normaliser les données saisies par les utilisateurs, de faciliter la recherche et le tri de données ou encore de garantir un comportement cohérent du code.
 
 ## Comment faire
 
-Pour convertir une chaîne de caractères en lettres minuscules en Python, nous pouvons utiliser la méthode `lower()`. Voici un exemple de code et sa sortie :
+Il existe plusieurs façons de convertir une chaîne de caractères en minuscules en Python, mais voici une méthode simple et efficace :
 
 ```Python
-# Définir une chaîne de caractères
-chaine = "PROGRAMMATION EN PYTHON"
-# Convertir en lettres minuscules
-chaine_min = chaine.lower()
-# Afficher la chaîne convertie
-print(chaine_min)
+# Déclaration de la chaîne de caractères initiale
+str = "BONJOUR TOUT LE MONDE"
+# Conversion en minuscules
+lower_str = str.lower()
+# Affichage de la chaîne en minuscules
+print(lower_str)
 ```
 
-Sortie :
+Résultat :
+
+```
+bonjour tout le monde
+```
+
+Il est également possible d'utiliser la méthode `str.casefold()` pour une conversion en minuscules plus complète et adaptée à différentes langues, notamment pour la gestion des caractères accentués.
+
+## Plongée en profondeur
+
+La méthode `str.lower()` utilise la table de correspondance ASCII pour effectuer la conversion en minuscules des caractères alphabétiques. Ainsi, les lettres accentuées en français seront remplacées par leur équivalent non accentué.
+
+Il est important de noter que la méthode `str.lower()` ne modifie pas la chaîne de caractères initiale, mais en renvoie une nouvelle version en minuscules. Si l'on souhaite modifier directement la chaîne d'origine, il faut utiliser la méthode `str.lower()` combinée à la réaffectation de la variable :
 
 ```Python
-programmation en python
+str = "BONJOUR TOUT LE MONDE"
+str = str.lower()
+print(str) # Bonjour tout le monde
 ```
-
-## Approfondissement
-
-La méthode `lower()` est un exemple de méthode de manipulation de chaînes de caractères en Python. Elle ne modifie pas la chaîne originale, mais renvoie plutôt une nouvelle chaîne avec les caractères en lettres minuscules. Cette méthode peut également être utilisée pour des chaînes de caractères contenant des caractères spéciaux ou des chiffres.
-
-Il est important de noter que la conversion en lettres minuscules dépend de la langue et du jeu de caractères utilisés. Pour les langues avec des caractères accentués, la méthode `lower()` peut ne pas modifier les lettres spéciales. Il est donc recommandé d'utiliser la fonction `unidecode` du module `python-unicodedata2` pour une conversion plus complète.
 
 ## Voir aussi
 
-- Documentation officielle Python : [Manipulation de chaînes de caractères](https://docs.python.org/fr/3/tutorial/introduction.html#strings)
-- Documentation du module `python-unicodedata2` : [unidecode](https://pypi.org/project/python-unicodedata2/)
-- Tutoriel en français sur la manipulation de chaînes de caractères en Python : [Les chaînes de caractères en Python](https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/232916-le-code-des-caracteres)
+- Documentation officielle de Python sur la méthode `str.lower()` : https://docs.python.org/fr/3/library/stdtypes.html#str.lower
+- Article sur la normalisation des données en Python : https://towardsdatascience.com/data-preprocessing-in-python-a-complete-guide-2a574bbfcbfb
+- Tutoriel sur les méthodes de manipulation des chaînes de caractères en Python : https://realpython.com/python-strings/

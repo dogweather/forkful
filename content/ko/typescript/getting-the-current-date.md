@@ -1,59 +1,39 @@
 ---
 title:    "TypeScript: 현재 날짜 가져오기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-현재 날짜를 얻는 일은 프로그래밍에서 자주 발생하는 작업입니다. 이를 위해 개발자들은 다양한 메소드와 라이브러리를 사용합니다. 자주 사용되는 방법 중 하나인 TypeScript를 이용해 현재 날짜를 얻는 법을 살펴보겠습니다.
+모바일 앱이나 웹 사이트를 사용하다보면 현재 날짜가 자주 필요하게 됩니다. 이러한 경우에는 TypeScript를 사용하여 현재 날짜를 가져와야 합니다.
 
-## 어떻게 해야 할까
-
-```TypeScript
-const currentDate = new Date();
-```
-
-위의 코드는 JavaScript에서 사용 가능한 방법 중 하나입니다. 이는 Date 클래스의 인스턴스를 만들어 현재 시간과 날짜를 저장한 변수를 반환합니다. TypeScript의 강력한 타입 시스템을 이용해 currentDate 변수의 타입을 지정하여 더욱 안전하게 코드를 작성할 수 있습니다.
+# 어떻게
 
 ```TypeScript
-const currentDate: Date = new Date();
+const now = new Date();
+const date = now.getDate();
+const month = now.getMonth() + 1;
+const year = now.getFullYear();
+
+console.log(`오늘은 ${year}년 ${month}월 ${date}일입니다.`);
 ```
 
-추가적으로, 날짜의 특정 부분만 얻고 싶을 때는 다음과 같은 메소드들을 사용할 수 있습니다.
+**출력:**
 
-```TypeScript
-const date: number = currentDate.getDate(); // 현재 날짜 반환
-const month: number = currentDate.getMonth(); // 현재 월 반환, 1월은 0부터 시작
-const year: number = currentDate.getFullYear(); // 현재 년도 반환
-const day: number = currentDate.getDay(); // 현재 요일 반환, 일요일은 0부터 시작
-const hours: number = currentDate.getHours(); // 현재 시간 반환
-const minutes: number = currentDate.getMinutes(); // 현재 분 반환
-const seconds: number = currentDate.getSeconds(); // 현재 초 반환
-const milliseconds: number = currentDate.getMilliseconds(); // 현재 밀리초 반환
+```
+오늘은 2021년 8월 29일입니다.
 ```
 
-## 딥 다이브
+위의 코드에서 `new Date()`를 사용하여 현재 날짜를 가져올 수 있습니다. `getDate()`, `getMonth()`, `getFullYear()`를 이용하여 날짜, 월, 년도를 각각 가져올 수 있습니다. 또한, 월은 0부터 시작하기 때문에 실제 월에 1을 더해주어야 합니다.
 
-날짜와 관련된 이슈가 발생하기 쉬운 부분 중 하나는 시간대입니다. 프로그램이 실행되는 서로 다른 지역에서 현재 날짜를 얻기 위해서는 로컬 시간이 아닌 UTC 시간을 사용해야 합니다. 따라서 UTC 현재 날짜를 얻으려면 다음과 같이 코드를 작성할 수 있습니다.
+# 딥 다이브
 
-```TypeScript
-const currentDate = new Date();
-const utcDate = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds(), currentDate.getMilliseconds()));
-```
+`new Date()`는 사용자의 지역 설정에서 가져온 현재 날짜를 반환합니다. 따라서 다른 지역에서 실행할 경우 다른 결과를 얻게 됩니다. 또한, `getTime()`을 이용하면 현재 날짜를 밀리초 단위로 얻을 수 있으며, `getDay()`를 이용하면 요일을 숫자로 얻을 수 있습니다.
 
-이제 `utcDate` 변수에는 UTC 기준의 현재 날짜가 저장되어 있습니다. 
+# 같이 보기
 
-## 더 알아보기
-
-추가적인 정보와 다른 방법으로 현재 날짜를 얻는 방법에 대해 알아보려면 아래의 링크들을 참고해보세요.
-
-- [Date 클래스 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [Luxon](https://moment.github.io/luxon/) 
-
-## 참고
-
-- [TypeScript 공식 사이트](https://www.typescriptlang.org/)
-- [Node.js 공식 사이트](https://nodejs.org/ko/)
+- [Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/)
+- [TypeScript 문서](https://www.typescriptlang.org/docs/)

@@ -1,47 +1,54 @@
 ---
-title:    "Elixir: הדפסת פלט איתור שגיאות"
+title:    "Elixir: הדפסת פלט ניתוח שגיאות"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-**
-# למה
-קוראים ל 1-2 הסיבות על מנת לפרגינג בדוק באליקסר
+## מדוע
 
-## כיצד לעשות 
-אפשר להדפיס תצוגות בדיקה באליקסר באמצעות `IO.inspect / 2` פונקציות. הנה דוגמאות קוד ופלט:
+אחד מהיתרונות הגדולים של Elixir הוא שהוא מאפשר לנו להדפיס פלט דיבאג בקלות ובצורה נוחה. הדיבאגים הם כלי מאוד חשוב בפיתוח תוכניות, שמאפשרים לנו למצוא ולתקן בעיות קוד בצורה מהירה ויעילה.
 
-```elixir
-defmodule Person do
-  defstruct name: "John", age: 30
-end
+## כיצד לעשות זאת
 
-person = %Person{name: "Jane", age: 25}
+אם אתם רוצים להדפיס פלט דיבאג ב-Elixir, כל מה שאתם צריכים לעשות הוא להשתמש בפונקציה `IO.inspect`. דבר נחמד בפונקציה זו הוא שהיא מאפשרת לנו להדפיס משתנים, סטרינגים ואפילו תוצאות של פונקציות בקלות.
 
-# Inspecting a single variable
-IO.inspect(person.age)
+```Elixir
+# דוגמאות להדפסת פלט דיבאג בקוד Elixir
 
-# Output: 25
+# מדפיס משתנה
+IO.inspect(my_variable)
 
-# Inspecting multiple variables
-IO.inspect(person.name, label: "Name")
-IO.inspect(person.age, label: "Age")
+# מדפיס סטרינג
+IO.inspect("Hello World!")
 
-# Output:
-# Name: "Jane"
-# Age: 25
+# מדפיס תוצאה של פונקציה
+IO.inspect(Enum.reverse([1, 2, 3]))
 ```
 
-## חקירה עמוקה 
-הדפסת תצוגות בדיקה יכולה לעזור לנו לבדוק את ערכי המשתנים או התוצאות של פעולות באופן פשוט יותר. ניתן להשתמש בפלט המודפס לנוחיות טיפול בכפלים או בתנאים מורכבים בכתיבות קוד. כמו כן, ניתן לשנות את הפורמט של הפלט כדי להתאים לצורך המסוים שלנו.
+הפלט יראה כך:
 
-### דוגמאות נוספות:
-- ניתן להשתמש בפרמטר `label` כדי לתייג את הפלט בצורה מובנת יותר.
-- ניתן להוסיף נתונים נוספים ל `IO.inspect` כמו `opts` ו `detailed: true` כדי לקבל מידע נוסף על האובייקט.
-- ניתן להשתמש ב `IO.inspect` עם בלוקי קוד במקום עם משתנים בודדים.
+```Elixir
+my_variable: "my value"
+"Hello World!"
+[3, 2, 1]
+```
 
-# ראה גם
-- [קוד אליקסר מדומיין](https://elixir-lang.org/getting-started/debugging.html)
-- [מדריך לבכנות אליקסר של JetBrains](https://www.youtube.com/watch?v=uyi2UYnM_m8)
-- [מדריך הדגמה של IO.inspect באליקסר](https://hexdocs.pm/elixir/IO.html#inspect/2)
+בנוסף, אם אתם רוצים להדפיס את השורה שבה הפונקציה הופעלה, ניתן להשתמש בפונקציה `IO.inspect/2` ולהעביר לה את הפונקציה `__ENV__` כמארגומנט. זה יתרמת להדפסה של שם הקובץ, מספר השורה ושם הפונקציה שנמצאת בתוך החלק שמופעל כאשר הפונקציה מופעלת.
+
+```Elixir
+# מדפיס את השורה שבה הפונקציה הופעלה עם שם הקובץ ומספר השורה
+IO.inspect(__ENV__)
+
+# פלט מאפשר
+%{
+  function: {__ENV__, :function, []},
+  file: "path/to/file.ex",
+  line: 1
+}
+```
+
+## מעמקים נעמים
+
+הוצאת פלט דיבאג פועלת בצורה נהדרת במצבים שבהם אנחנו צריכים למצוא באיזשהו פונקציה את כל המשתנים שנמ

@@ -1,53 +1,52 @@
 ---
-title:    "C++: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:    "C++: Ein Datum in der Zukunft oder Vergangenheit berechnen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann in vielen Situationen nützlich sein. Zum Beispiel könnte es nützlich sein, um Feiertage oder wichtige Ereignisse zu planen, um zu wissen, wann ein bestimmter Tag in der Woche fällt oder um die Dauer einer bestimmten Zeitspanne zu berechnen.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann in vielen Programmierprojekten nützlich sein, zum Beispiel bei Reservierungssystemen oder bei der Berechnung von Ablaufdaten.
 
-## Anleitung
+## Wie geht's
 
-Um eine Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die C++ Standardbibliotheksfunktion `mktime()` verwenden. Diese Funktion berechnet die Anzahl der Sekunden seit dem 1. Januar 1970 und kann dann verwendet werden, um ein `tm` Objekt zu erstellen. Wir können dann dieses `tm` Objekt verwenden, um das Datum in einem bestimmten Format auszugeben.
+Wir können dies mit Hilfe von C++ und der <ctime> Bibliothek erreichen. Zunächst müssen wir das aktuelle Datum und die gewünschte Anzahl an Tagen in einer Variablen speichern. Dann können wir die Funktion ```std::mktime``` verwenden, um das Datum in ein ```std::tm``` Objekt zu konvertieren. Wir können dann die entsprechenden Werte für das Jahr, den Monat und den Tag ändern und schließlich wieder mit der Funktion ```std::strftime``` in ein für Menschen lesbares Format konvertieren. Hier ist ein Beispielcode:
 
 ```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-  // Erstellen eines "tm" Objekts mit dem aktuellen Datum
-  std::tm futureDate = *std::localtime(std::time(nullptr));
+    // aktuelles Datum
+    std::time_t today = std::time(0);
 
-  // Hinzufügen von 30 Tagen zur Berechnung eines Datums in der Zukunft
-  futureDate.tm_mday += 30;
+    // Anzahl der Tage in der Zukunft oder Vergangenheit
+    int num_days = 30;
 
-  // Verwenden von mktime() um die Anzahl der Sekunden seit dem 1. Januar 1970 zu berechnen
-  std::time_t result = std::mktime(&futureDate);
+    // umwandeln in std::tm Objekt
+    std::tm* date = std::localtime(&today);
 
-  // Anzeigen des berechneten Datums in einem bestimmten Format
-  std::cout << "Das Datum in 30 Tagen: " << std::asctime(std::localtime(&result)) << std::endl;
+    // entsprechende Werte ändern
+    date->tm_mday += num_days;
 
-  return 0;
+    // in ein lesbares Format konvertieren
+    char buffer[80];
+    std::strftime(buffer, 80, "%d-%m-%Y", date);
+    std::cout << "Das berechnete Datum ist: " << buffer << std::endl;
+    
+    return 0;
 }
 ```
 
-Output:
+Die Ausgabe dieses Programms wäre: "Das berechnete Datum ist: 30-06-2021".
 
-```
-Das Datum in 30 Tagen: Mon Sep 06 00:00:00 2021
-```
+## Tief tauchen
 
-## Tiefentauchen
-
-Die `tm` Struktur ist in der `ctime` Header-Datei definiert und enthält Informationen über Datum und Zeit in einem bestimmten Format. Wenn Sie mehrere Tage, Monate oder Jahre hinzufügen möchten, können Sie einfach die entsprechenden Werte für `tm_mday`, `tm_mon` oder `tm_year` der `tm` Struktur ändern.
-
-Es ist auch möglich, ein Datum in der Vergangenheit zu berechnen, indem man eine negative Zahl anstatt einer positiven Zahl für den Tag, Monat oder das Jahr verwendet.
+Es gibt auch andere Möglichkeiten, ein Datum in der Zukunft oder Vergangenheit zu berechnen, zum Beispiel mit der Funktion ```std::chrono::system_clock::now()```. Es ist wichtig zu beachten, dass die Ergebnisse je nach verwendeter Methode und Lokalisierung des Systems unterschiedlich sein können. Es ist daher empfehlenswert, die Ergebnisse zu überprüfen und die geeignetste Methode für das eigene Projekt zu wählen.
 
 ## Siehe auch
 
-- [C++ Standardbibliotheksfunktion mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
-- [C++ Standardbibliotheksfunktion asctime()](https://www.cplusplus.com/reference/ctime/asctime/)
-- [C++ Standardbibliotheksfunktion localtime()](https://www.cplusplus.com/reference/ctime/localtime/)
+- [C++ Referenz für <ctime>](https://cplusplus.com/reference/ctime/)
+- [C++ Referenz für <chrono>](https://cplusplus.com/reference/chrono/)

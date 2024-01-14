@@ -1,48 +1,74 @@
 ---
 title:    "Haskell: 编写测试"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要写测试
-测试是软件开发中非常重要的一部分，它可以确保代码的正确性和稳定性。通过编写测试，我们可以尽早发现并解决潜在的bug，从而减少后期修复bug的成本。此外，测试还可以帮助我们更好地理解代码的功能和逻辑。
+## 为什么
 
-# 如何编写测试
-为了演示如何编写测试，我们将以一个简单的数学函数为例：求两个数的和。
+写测试在软件开发中是一个重要的步骤。它可以帮助开发者发现和解决潜在的错误，提高代码质量，以及节省后期调试和维护的时间。因此，采用测试驱动开发的方法可以使代码更加稳定和可靠。
 
-首先，我们需要使用```Haskell
-import Test.HUnit
-```导入HUnit测试框架。HUnit是一个流行的Haskell测试框架，它提供了一组函数来创建和运行测试。
+## 如何
 
-接下来，我们定义一个函数来实现求和功能。```Haskell
-sum :: Int -> Int -> Int
-sum x y = x + y
+测试驱动开发的基本概念是先编写测试，然后编写能够通过这些测试的代码。Haskell提供了一个强大的测试框架HSpec，让我们可以轻松地编写和运行测试。
+
+下面是一个简单的例子，展示如何编写一个测试函数并进行测试：
+
+```Haskell
+-- 导入测试框架
+import Test.Hspec
+
+-- 定义一个函数
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- 定义测试函数
+-- 这里的"shouldBe"是一个断言，声明测试的预期结果
+-- 如果表达式的值与预期结果不相符，测试即会失败
+testAdd :: Spec
+testAdd = it "should add two numbers correctly" $ do
+  add 2 3 `shouldBe` 5
+
+-- 运行测试
+main :: IO ()
+main = hspec $ do
+  describe "add function" $ do
+    testAdd
 ```
 
-现在，我们可以编写测试代码来验证我们的函数是否按预期工作。我们可以使用HUnit的```@?```运算符来编写测试。例如，我们可以编写一个简单的测试来验证sum函数是否正确计算1加1的结果。```Haskell
-testSum1Plus1 = TestCase (assertEqual "1 plus 1 should be 2" 2 (sum 1 1))
+运行以上代码，如果所有测试通过，控制台将会显示以下信息：
+
+```shell
+# 结果
+add function
+- should add two numbers correctly
+
+Finished in 0.0008 seconds
+1 example, 0 failures
 ```
 
-最后，我们需要定义一个测试套件来运行我们的测试。我们可以使用```TestList```函数来定义一个包含所有测试的列表，并使用```runTestTT```函数来运行测试。以下是完整的代码示例：```Haskell
-import Test.HUnit
+如果需要测试多个函数，可以在测试框架中使用`describe`函数来进行分组，并在每个分组中添加相应的测试函数。
 
-sum :: Int -> Int -> Int
-sum x y = x + y
+## 深入
 
-testSum1Plus1 = TestCase (assertEqual "1 plus 1 should be 2" 2 (sum 1 1))
+除了基础的测试概念，还有一些技巧可以帮助你编写更好的测试。
 
-testSuite = TestList [TestLabel "Test 1 + 1" testSum1Plus1]
+首先，确保每个测试都是独立的，即它们不依赖其他测试的运行结果。这样可以避免出现测试之间相互影响的情况。
 
-main = runTestTT testSuite
-```
+其次，为每个函数编写多个测试，覆盖各种输入和边界情况。这样可以确保函数在不同情况下都能正确地执行，并发现潜在的错误。
 
-我们可以使用GHC编译器来编译并运行上面的代码。运行结果应该是一个通过测试的消息。
+最后，使用Haskell强大的类型系统来辅助编写测试。例如，在测试过程中可以利用类型签名来检查函数的输入和输出类型是否符合预期。
 
-# 深入研究
-在实际的软件开发中，编写测试通常比上面的例子复杂得多。我们可能需要编写多个测试来覆盖不同的输入和边界情况。此外，我们可能还需要使用更复杂的测试框架来处理各种情况。在熟悉Haskell和测试框架之后，我们可以通过阅读其他相关的教程和文档来深入了解如何编写有效的测试。
+## 参考链接
 
-# 参考链接
-- [HUnit官方文档](http://hunit.sourceforge.net/)
-- [Haskell教程](https://www.haskell.org/tutorial/)
-- [Haskell编程语言](https://www.haskell.org/downloads/)
+- [HSpec documentation](https://hspec.github.io/)
+- [Haskell programming language](https://www.haskell.org/)
+- [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
+
+## 参考资料
+
+- [HSpec文档](https://hspec.github.io/)
+- [Haskell编程语言](https://www.haskell.org/)
+- [测试驱动开发](https://zh.wikipedia.org/wiki/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91)

@@ -1,73 +1,50 @@
 ---
-title:    "Elixir: Leyendo argumentos de la línea de comandos"
+title:    "Elixir: Leyendo argumentos de línea de comandos"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué leer argumentos de línea de comando en Elixir
 
-A veces, cuando trabajamos en un programa Elixir, es necesario proporcionar ciertos parámetros al momento de ejecutarlo. Esto permite personalizar la ejecución del programa según nuestras necesidades. ¡Es hora de aprender cómo leer argumentos de línea de comandos en Elixir!
+Si estás empezando a aprender Elixir o simplemente quieres mejorar tus habilidades, entender cómo leer argumentos de línea de comando es un paso importante. Esto te permitirá crear aplicaciones más dinámicas e interactivas, además de tener un mejor control sobre tu código.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comandos, utilizamos `System.argv/0`, una función integrada en Elixir. Esta función devuelve una lista con los argumentos pasados al momento de ejecutar el programa en la terminal.
-
-Veamos un ejemplo de código:
+Para leer argumentos de línea de comando en Elixir, utilizamos la función `System.argv/0`. Esta función devuelve una lista de los argumentos pasados por línea de comando, donde el primer elemento es el nombre del script que estás ejecutando.
 
 ```Elixir
-defmodule Args do
-  def leer_args do
-    args = System.argv()
+args = System.argv()
+```
 
-    IO.puts "Se ingresaron #{length(args)} argumentos"
+Puedes acceder a cada uno de los argumentos utilizando el operador de indexación `[ ]` y pasando el índice del argumento que deseas obtener.
 
-    Enum.each(args, fn arg ->
-      IO.puts arg
-    end)
+```Elixir
+first_arg = args[1]
+```
+
+A continuación, puedes utilizar estos argumentos en tu código según sea necesario. Por ejemplo, puedes utilizarlos para tomar decisiones en tu programa o para enviar información a una base de datos.
+
+## Inmersión profunda
+
+Además de la función `System.argv/0`, también podemos utilizar el módulo `OptionParser` para leer y validar argumentos de línea de comando en Elixir. Este módulo nos permite especificar argumentos con diferentes opciones y valores y proporciona funciones para obtenerlos fácilmente en nuestro código.
+
+```Elixir
+defmodule ArgsParser do
+  def print_name(args) do
+    arg_parser = OptionParser.parse(args, switches: [name: :required])
+    case arg_parser do
+      { _, [{:name, name}] } -> IO.puts("Tu nombre es #{name}")
+      _ -> raise "Por favor, ingresa tu nombre con el argumento --name"
+    end
   end
 end
 ```
 
-Si ejecutamos este programa desde la terminal con `elixir args.ex arg1 arg2`, obtendremos la siguiente salida:
+En este ejemplo, especificamos que el argumento `name` es requerido y luego lo obtenemos con la función `IO.puts/1`.
 
-```
-Se ingresaron 3 argumentos
-args.ex
-arg1
-arg2
-```
+## Ver también
 
-## Inmersión Profunda
-
-Además de la función `System.argv/0`, también podemos utilizar la función `OptionParser.parse/2` para parsear argumentos de línea de comandos y asignarlos a variables. Esta función toma dos argumentos: una lista de opciones y una lista de argumentos recibidos.
-
-Veamos un ejemplo:
-
-```Elixir
-defmodule Parser do
-  def parse(args) do
-    options = [
-      define: :metadata,
-      short: "-d",
-      long: "--data",
-      description: "Metadata del archivo",
-      type: :string
-    ]
-
-    OptionParser.parse(args, options)
-  end
-end
-```
-
-Si ejecutamos este programa con `elixir parser.ex -d "info"`, obtendremos el siguiente resultado:
-
-```
-{[metadata: "info"], []}
-```
-
-## Ver También
-
-- [Argumentos de Línea de Comandos en Elixir](https://elixir-lang.org/getting-started/running-tests.html)
-- [Documentación de System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Documentación de OptionParser.parse/2](https://hexdocs.pm/elixir/OptionParser.html#parse/2)
+- Documentación de Elixir sobre la función `System.argv/0`: https://hexdocs.pm/elixir/System.html#argv/0
+- Documentación de Elixir sobre el módulo `OptionParser`: https://hexdocs.pm/elixir/OptionParser.html

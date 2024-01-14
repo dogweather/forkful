@@ -1,46 +1,43 @@
 ---
-title:    "Java: 「テストの書き方」"
+title:    "Java: テストの書き方"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜテストを書くのか？
 
-プログラミングには、エラーを見つけて修正するためのテストという非常に重要なプロセスがあります。テストを書くことで、コードを綺麗に保ち、より効率的な開発を行うことができます。
+ソフトウェア開発では、バグを未然に防止したり、変更したコードが正しく動作することを確認するためにテストが欠かせません。テストを書くことで、開発者は自分のコードに対する自信を持つことができます。
 
 ## テストの書き方
 
-テストを書く方法を理解するために、Javaコードを使用したシンプルな例を見てみましょう。
+以下のコードブロックには、Javaプログラミングでテストを書く方法を示すサンプルコードと出力が含まれています。
 
 ```Java
-import org.junit.Test;
-import static org.junit.Assert.*;
-
+// テストクラスの作成
 public class CalculatorTest {
 
-    @Test
-    public void testAdd() {
-        int result = Calculator.add(2, 3);
-        assertEquals(5, result);
-    }
+    // テストメソッド
+    @Test // テストメソッドであることを示すアノテーション
+    public void testAddition() {
 
-    @Test
-    public void testMultiply() {
-        int result = Calculator.multiply(2, 3);
-        assertEquals(6, result);
+        Calculator calculator = new Calculator();
+
+        // テストしたい結果と比較
+        assertEquals(10, calculator.add(5,5));
     }
 }
 ```
 
-このコードでは、JUnitの`assertEqual()`メソッドを使用して、期待される結果と実際の結果を比較しています。これにより、テストが成功したかどうかを確認することができます。
+上記のように、テストクラスを作成し、`@Test`アノテーションを使用してテストメソッドを作成します。そして、テストしたい結果と比較するアサーションを用いてテストを実行します。
 
-## テストの詳細について
+## テストについて深く掘り下げる
 
-テストを書く際にはいくつかのポイントに気をつける必要があります。最初に、テストが予期しない結果を返すことを確認する必要があります。また、テストを書く際には、各テストが正しいデータを使用して実行されることを確認する必要があります。さらに、テストが最低限のコードで書かれていることを確認し、無駄な重複を避ける必要があります。
+テストでは、プログラムの各部分が意図した通りに機能するかどうかを確認するために、様々な種類のテストを使用します。例えば、ユニットテスト、統合テスト、受け入れテストなどがあります。また、テストカバレッジの概念も重要で、コードのどの部分がテストされているかを測定します。
 
 ## See Also
 
-- [JUnit 公式ドキュメント](https://junit.org/junit5/docs/current/user-guide/)
-- [TDD (Test Driven Development) について](https://www.ibm.com/developerworks/jp/java/library/j-tdd/index.html)
-- [代表的な Java テストフレームワークまとめ](https://qiita.com/tag1216/items/e009e982cef6b9a711ce)
+- [JUnit test framework](https://junit.org/)
+- [Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Code coverage in software testing](https://en.wikipedia.org/wiki/Code_coverage)

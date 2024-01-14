@@ -1,60 +1,71 @@
 ---
 title:    "Elm: Imprimiendo salida de depuración"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Imprimir mensajes de depuración o "debug output" es una herramienta útil para el desarrollo de software. Nos permite ver los valores de las variables y el flujo del programa en tiempo real, lo que nos ayuda a identificar y solucionar errores en nuestro código.
+Imprimir salidas de depuración puede ser una herramienta útil para entender el comportamiento de nuestras aplicaciones Elm. Nos permite ver qué está sucediendo en el código en diferentes puntos y puede ayudarnos a identificar y solucionar problemas.
 
 ## Cómo hacerlo
 
-En Elm, podemos imprimir mensajes de depuración utilizando la función `Debug.log`. Por ejemplo, supongamos que queremos imprimir el resultado de una suma en nuestro programa:
+Para imprimir salidas de depuración en Elm, podemos utilizar la función `Debug.log`. Esta función toma dos argumentos: una cadena de texto que será el mensaje de depuración y un valor que queremos imprimir. Por ejemplo:
 
-```Elm
-import Debug exposing (log)
+```
+Elm
+    import Debug
 
-sumar : Int -> Int -> Int
-sumar x y =
-    x + y
+    userName : String
+    userName = "John"
 
-main =
-    sumar 10 5
-        |> Debug.log "Resultado de la suma"
+    userAge : Int
+    userAge = 25
+
+    main =
+        -- imprimir salidas de depuración de la variable `userName` y la variable `userAge`
+        Debug.log "Nombre de usuario: " userName
+        Debug.log "Edad del usuario: " userAge
+
+```
+La salida de la consola para este código sería:
+
+```
+Nombre de usuario: John
+Edad del usuario: 25
 ```
 
-Al ejecutar este código, veremos en la consola del navegador el siguiente mensaje:
-
-`Resultado de la suma: 15`
-
-Podemos utilizar esta técnica en cualquier lugar de nuestro código, incluso en funciones que toman múltiples argumentos o en llamadas a funciones anidadas.
+Podemos utilizar `Debug.log` en cualquier lugar de nuestro código para imprimir salidas de depuración y entender mejor lo que está sucediendo en cada paso.
 
 ## Profundizando
 
-Además de imprimir valores, también podemos utilizar `Debug.log` para evaluar expresiones en nuestro código. Por ejemplo, si queremos saber el valor de una variable en un determinado punto de nuestro programa, podemos imprimirlo de la siguiente manera:
+Además de `Debug.log`, también podemos utilizar la función `Debug.toString` para imprimir valores en formato de cadena de texto. Esto nos permite imprimir valores más complejos, como listas y registros. Por ejemplo:
 
-```Elm
-nombre : String
-nombre = "Juan"
+```
+Elm
+    import Debug
 
-apellido : String
-apellido = nombre ++ " Pérez"
+    capicua : List Int
+    capicua = [1, 2, 3, 2, 1]
 
-main =
-    apellido
-        |> Debug.log "Apellido"
+    main =
+        -- imprimir salida de depuración de la lista `capicua`
+        Debug.toString capicua
+
 ```
 
-Al ejecutar este código, el mensaje que veremos en la consola será:
+La salida de la consola para este código sería:
 
-`Apellido: "Juan Pérez"`
+```
+"[1,2,3,2,1]"
+```
 
-Esta técnica de imprimir mensajes de depuración es especialmente útil en Elm ya que, al ser un lenguaje funcional puro, no podemos utilizar `console.log` como en otros lenguajes.
+Otra herramienta útil para imprimir salidas de depuración en Elm es `Debug.watch`. Esta función nos permite imprimir salidas de depuración de forma interactiva y en tiempo real mientras nuestra aplicación se está ejecutando. Podemos utilizarla para ver los cambios en los valores de las variables a medida que interactuamos con nuestra aplicación.
 
 ## Ver también
 
-- [Documentación de Elm sobre `Debug.log`](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- [Artículo en español sobre técnicas de depuración en Elm](https://medium.com/@juanomaly/depurando-en-elm-analyzing-debugging-techniques-ff1b920196c2)
-- [Guía de depuración en Elm en inglés](https://elmprogramming.com/debugging-elm-programs.html)
+- [Documentación de Elm Debug Module](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
+- [Video tutorial sobre depuración en Elm](https://www.elm-tutorial.org/en/06-debugging/01-debug-devtools.html)
+- [Ejemplos de código de depuración en Elm](https://gist.github.com/nosajimiki/67557a2795ea1accdb039edca931f839)

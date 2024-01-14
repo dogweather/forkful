@@ -1,46 +1,53 @@
 ---
 title:    "Bash: Extraction de sous-chaînes"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi extraire des sous-chaînes dans Bash?
+## Pourquoi
 
-L'extraction de sous-chaînes est une technique utile en programmation Bash qui permet de récupérer une partie spécifique d'une chaîne de caractères. Cela peut être utile pour manipuler des données, extraire des informations précises ou pour réaliser des tâches automatisées. Dans cet article, nous allons explorer pourquoi et comment extraire des sous-chaînes en utilisant Bash.
+Extrayez des sous-chaînes de caractères est une tâche courante en programmation Bash. Cela peut être utile pour sélectionner une partie spécifique d'une chaîne plus longue pour une utilisation ultérieure ou pour comparer les similitudes entre deux chaînes.
 
 ## Comment faire
 
-L'extraction de sous-chaînes peut être réalisée en utilisant la commande `cut` ou en utilisant des expressions régulières avec la commande `sed`. Voici un exemple de code pour extraire une sous-chaîne avec `cut`:
+Pour extraire une sous-chaîne en Bash, vous pouvez utiliser la commande `cut` en spécifiant la position de début et de fin de la sous-chaîne ainsi que la chaîne d'entrée. Par exemple, si nous voulons extraire les trois premiers caractères d'une chaîne, nous pouvons utiliser la commande suivante :
 
 ```Bash
-# Déclaration de la chaîne de caractères
-str="Bonjour tout le monde!"
-# Extraction de la sous-chaîne à partir de la 8ème position jusqu'à la fin
-echo $str | cut -c8-
-# Sortie: tout le monde!
+cut -c 1-3 << "Ma chaîne de caractères"
 ```
 
-Et voici un exemple utilisant `sed` pour extraire une sous-chaîne en utilisant une expression régulière:
+Cela nous donnera en sortie "Ma ".
+
+Pour extraire une sous-chaîne en utilisant une expression régulière, nous pouvons utiliser la commande `grep` avec l'option `-o` pour ne retourner que la partie de la chaîne qui correspond à l'expression régulière. Par exemple, pour extraire tous les nombres d'une chaîne, nous pouvons utiliser la commande suivante :
 
 ```Bash
-# Déclaration de la chaîne de caractères
-str="abcdefg12345"
-# Extraction de la sous-chaîne contenant uniquement les chiffres
-echo $str | sed -E 's/[a-z]+//g'
-# Sortie: 12345
+grep -o "[0-9]+" << "Ma chaîne de chiffres 12345"
 ```
 
-Ces exemples sont simples, mais en combinant différentes options et en utilisant des variables, il est possible de créer des scripts complexes pour extraire des sous-chaînes à partir de données plus compliquées.
+Cela nous donnera en sortie "12345".
 
 ## Plongée en profondeur
 
-L'extraction de sous-chaînes peut être réalisée en utilisant des indices numériques pour spécifier les positions de début et de fin de la sous-chaîne. Cela peut également être fait en utilisant des expressions régulières pour délimiter la sous-chaîne à extraire. De plus, des options supplémentaires peuvent être spécifiées pour modifier le comportement de la commande, par exemple en spécifiant un séparateur différent que le caractère par défaut pour `cut`.
+Il est également possible d'extraire des sous-chaînes en utilisant des variables. Par exemple, si nous avons une variable nommée `nom` contenant "Jean Dupont", nous pouvons extraire le prénom et le nom en utilisant la commande `cut` et en spécifiant un délimiteur, qui dans ce cas serait un espace :
 
-Il est également important de noter que les chaînes de caractères peuvent être de différentes longueurs, il est donc souvent nécessaire de manipuler les indices ou expressions régulières en conséquence pour obtenir des sous-chaînes précises.
+```Bash
+prenom="$(cut -d " " -f 1 << "$nom")"
+nom_de_famille="$(cut -d " " -f 2 << "$nom")"
+```
 
-# Voir aussi
+Cela assignera "Jean" à la variable `prenom` et "Dupont" à la variable `nom_de_famille`.
 
-- [Documentation officielle de la commande `cut`](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [Documentation officielle de la commande `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Guide débutant sur les expressions régulières en Bash](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
+Vous pouvez également utiliser des opérations de substitution de commandes pour extraire une sous-chaîne spécifique d'une variable. Par exemple, pour extraire les trois derniers caractères d'un mot contenant 6 caractères, nous pouvons utiliser la commande suivante :
+
+```Bash
+variable="abcdef"
+sous_chaine="${variable: -3}"
+echo "$sous_chaine" // Résultat : "def"
+```
+
+## Voir aussi
+
+- Documentation de la commande `cut` : https://www.tutorialspoint.com/unix_commands/cut.htm
+- Documentation de la commande `grep` : https://www.tutorialspoint.com/unix_commands/grep.htm

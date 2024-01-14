@@ -1,50 +1,63 @@
 ---
-title:    "Java: Lecture des arguments de ligne de commande"
+title:    "Java: La lecture des arguments en ligne de commande"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Pourquoi
+## Pourquoi
 
-Pour les programmeurs Java, il est très utile de savoir comment lire les arguments de ligne de commande afin de créer des programmes plus interactifs et flexibles. En utilisant cette fonctionnalité, les utilisateurs peuvent entrer des paramètres lorsqu'ils exécutent le code, ce qui permet de personnaliser l'exécution du programme.
+Les arguments de ligne de commande sont une partie importante de la programmation Java. Ils permettent aux utilisateurs de fournir des informations spécifiques à un programme lors de son exécution. Comprendre comment lire ces arguments est essentiel pour créer des programmes flexibles et dynamiques.
 
-##Comment faire
+## Comment faire
 
-Pour lire les arguments de ligne de commande en Java, il existe deux méthodes principales : en utilisant la classe Scanner ou en utilisant l'argument "args" de la méthode main(). Voici un exemple de code pour chaque méthode :
+Il existe plusieurs façons de lire les arguments de ligne de commande en Java. La méthode la plus courante consiste à utiliser la classe `Scanner` pour lire les entrées de la console. Voici un exemple de code avec une sortie d'échantillon :
 
 ```Java
-// Utilisation de la classe Scanner
 import java.util.Scanner;
-public class ArgumentsScanner {
+
+public class CommandLineArgs {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrez votre nom : ");
+        System.out.println("Veuillez entrer votre nom : ");
         String name = scanner.nextLine();
-        System.out.println("Bonjour " + name + " !");
+        System.out.println("Bonjour " + name + ", bienvenue sur notre programme !");
     }
 }
 ```
+
+Sortie :
+
+```
+Veuillez entrer votre nom : John
+Bonjour John, bienvenue sur notre programme !
+```
+
+Une autre méthode consiste à utiliser l'objet `args` dans la méthode `main` pour récupérer les arguments. Voici un exemple :
 
 ```Java
-// Utilisation de l'argument "args" de la méthode main()
-public class ArgumentsMain {
+public class CommandLineArgs {
     public static void main(String[] args) {
-        System.out.println("Bonjour " + args[0] + " !");
+        System.out.println("Bonjour " + args[0] + ", bienvenue sur notre programme !");
     }
 }
 ```
 
-Pour utiliser la deuxième méthode, vous devez spécifier les arguments après le nom de la classe lors de l'exécution du code. Par exemple, si le code ci-dessus est compilé et exécuté avec l'argument "Alex", la sortie sera "Bonjour Alex !".
+Sortie :
 
-##Plongée en profondeur
+```
+Bonjour John, bienvenue sur notre programme !
+```
 
-Il est également possible de manipuler les arguments de ligne de commande de manière plus approfondie. Par exemple, vous pouvez vérifier le nombre d'arguments entrés en utilisant "args.length", ou encore convertir un argument en un type de données spécifique en utilisant des méthodes telles que "Integer.parseInt()". Les arguments peuvent également être utilisés pour effectuer des tâches spécifiques dans le programme, tels que des opérations mathématiques ou l'accès à des fichiers.
+## Plongée profonde
 
-##Voir aussi
+Maintenant que vous savez comment lire les arguments de ligne de commande en Java, il est important de comprendre quelques points essentiels. Premièrement, les arguments sont stockés sous forme de chaînes de caractères, vous devrez donc les convertir en types appropriés si nécessaire. Deuxièmement, les arguments peuvent être fournis dans n'importe quel ordre, il est donc important de les gérer correctement dans votre code.
 
-Pour plus d'informations sur la manipulation des arguments de ligne de commande en Java, voici quelques liens utiles :
+Il est également important de noter que les arguments peuvent contenir des options, comme dans les commandes de type `git commit -m "message"` où `commit` est l'option et `-m` et `"message"` sont les arguments. Pour lire ces options, vous devrez utiliser une bibliothèque ou écrire votre propre analyseur d'arguments.
 
-- [Documentation officielle Java sur les arguments de ligne de commande](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Tutoriel vidéo sur la lecture des arguments de ligne de commande en Java](https://www.youtube.com/watch?v=WTyQNUuqgmo)
-- [Exemples de codes pratiques pour la manipulation des arguments de ligne de commande](https://www.baeldung.com/java-command-line-arguments)
+## Voir aussi
+
+- [Documentation officielle de Java sur les arguments de ligne de commande](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Article de TutorielsPoint sur les arguments de ligne de commande en Java](https://www.tutorialspoint.com/java_programming/java_command_line_arguments.htm)
+- [Guide de programmation Java - Les arguments de ligne de commande](https://www.java.com/fr/download/help/develop.html#args)

@@ -1,44 +1,32 @@
 ---
-title:    "Java: नए परियोजना शुरू करना"
+title:    "Java: एक नई परियोजना शुरू करना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-नए एक प्रोजेक्ट शुरू करने में आपको क्या लाभ हो सकता है, उसके बारे में बताने के लिए इस ब्लॉग पोस्ट को लिखा गया है।
+एक नए प्रोजेक्ट शुरू करने में क्यों लगे?
 
-## कैसे करें
+# कैसे
 
-Java में नए पॉजेक्ट शुरू करने के लिए निम्नलिखित कार्य किए जा सकते हैं:
-
-```Java
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("नमस्ते दुनिया!");
-    }
-}
-```
-
-आउटपुट:
+अब जब आप अपना प्रोजेक्ट शुरू करने का फैसला किया है, तो आपको कुछ महत्वपूर्ण कदम जानने की जरूरत होगी। यहां हम आपको कुछ उदाहरण और उनके मदद से कैसे अच्छे से कोडिंग करें इसकी जानकारी देंगे।
 
 ```Java
-नमस्ते दुनिया!
+//स्ट्रिंग वैल्यू की घातक मानों का पता लगाएं
+String value = "Java Programming";
+System.out.println("मूल्य की लंबाई: " + value.length()); //प्रिंट करे: मूल्य की लंबाई: 16
+System.out.println("इंडेक्स 5 तक स्लाइस मूल्य: " + value.substring(0,5)); //प्रिंट क्रे: जावा
 ```
 
-यहां `public` क्लास `HelloWorld` है जो `main` फंक्शन को अपना अंतर्निहित करता है। हम यहां `System` फंक्शन को उपयोग करके `println` कार्य को आउटपुट करते हैं।
+# गहराई में
 
-## गहराई में जाएं
+नए प्रोजेक्ट की शुरुआत एक उत्साहजनक और एक सहसाध्य काम है। आप प्रोजेक्ट की नींव से शुरू करना चाहते हैं जो सरल और स्पष्ट हो। अगर आप सही तरीके से प्रोजेक्ट की शुरुआत करते हैं, तो आपके लये बहुत सारे सुविधाओं से लाभ स्थिर हो सकते हैं।
 
-नए प्रोजेक्ट शुरू करने के बारे में और अधिक जानने के लिए, आप हमारे [ट्यूटोरियल्स](https://www.javatpoint.com/java-tutorial) देख सकते हैं जो जावा प्रोग्रामिंग की जानकारी और उपयोगी उदाहरणों को कवर करते हैं। हम सिर्फ शुरुआती स्तर तक नहीं, बल्कि उन्नत स्तर तक भी जाते हैं।
+# और भी देखें
 
-## और भी देखें
-
-[जावा प्रोग्रामिंग के लिए IDE कैसे चुनें?](https://www.geeksforgeeks.org/best-ide-for-java-programming/)
-
-[Java दस्तावेजीकरण](https://docs.oracle.com/javase/8/docs/api/)
-
-[Java स्टैंडर्ड विधि लाइब्रेरी](https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html)
-
-[Java के लिए विकास उपकरण](https://www.codeguru.com/java/java/tutorials/tools/article.php/c19863/What-are-the-Best-Development-Tools-for-Java.htm)
+- [जावा प्रोग्रामिंग: शुरुआत से समाप्ति तक](https://www.geeksforgeeks.org/java-getting-started/)
+- [एक नए प्रोजेक्ट को बनाने के तमाम सवालों के जवाब](https://www.wikihow.com/Start-a-New-Project)
+- [नए प्रोजेक्ट की प्लानिंग में महत्वपूर्ण चीजें](https://www.mindtools.com/pages/article/newPPM_03.htm)

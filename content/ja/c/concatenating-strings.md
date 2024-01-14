@@ -1,46 +1,50 @@
 ---
-title:    "C: 文字列の連結"
+title:    "C: 文字列のつなげ方"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列の結合が必要なのか
+## なぜ
 
-文字列の結合を行うことは、プログラミングにおいて非常に重要な操作です。例えば、ユーザーが入力した情報を受け取り、それをフォーマットしてデータベースに保存する必要がある場合には、文字列の結合が欠かせません。また、複数の文字列を結合することでより複雑な機能を実現することもできます。このように、文字列の結合はプログラミングにおいて必要不可欠な操作なのです。
+文字列を連結することの魅力は、複数の文字列を一つにまとめることでプログラムをより効率的に作成できることです。例えば、ユーザーが入力した名前と姓を組み合わせて、新しい名前を作成する場合には文字列の連結が不可欠です。また、文字列を結合することで、プログラムがより柔軟に動作するようにもなります。
 
-## 方法
+## 作り方
 
-文字列の結合を行うには、C言語における文字列操作の基本的な知識が必要です。まず、結合したい文字列をそれぞれ変数に格納します。次に、```strcat()```関数を使用して文字列を結合します。以下のコードは、"Hello"と"World"という二つの文字列を結合し、出力する例です。
+文字列を連結するには、プログラムに「string.h」というヘッダーファイルを追加する必要があります。C言語では、文字列は文字の配列として扱われるため、文字列を結合するには配列を結合するイメージを持つことが重要です。以下の例を参考にしてください。
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-int main(){
-  char str1[10] = "Hello";
-  char str2[10] = "World";
+int main() {
+    char firstName[10] = "太郎";
+    char lastName[10] = "山田";
+    char fullName[20] = "";
 
-  strcat(str1, str2);
+    strcat(fullName, firstName);
+    strcat(fullName, " ");
+    strcat(fullName, lastName);
 
-  printf("%s", str1);
+    printf("フルネーム: %s", fullName);
 
-  return 0;
+    return 0;
 }
 ```
 
-このプログラムを実行すると、"HelloWorld"という結果が出力されます。
+このコードでは、最初に「string.h」ヘッダーファイルをインクルードし、連結したい3つの文字列を定義します。その後、strcat関数を使用して、文字列を連結し、最終的にフルネームを表示します。
 
 ## 深堀り
 
-さらに、文字列の結合において重要なのは、メモリ管理です。文字列を結合すると、元の文字列が変更されるため、結合先の文字列のサイズが元の文字列より小さくなることがあります。そのため、十分なメモリの確保を行わないと、プログラムがエラーを起こす可能性があります。また、文字列を結合するたびにメモリを再確保すると、プログラムの実行速度が低下してしまうので注意が必要です。
+文字列を結合する方法には様々なアプローチがありますが、一つのポイントは文字列の終端を意識することです。C言語では、文字列の終端を示す「\0」が重要です。そのため、文字列を結合する際には、連結先の文字列の終端に「\0」があることを確認しなければなりません。
 
-# 参考リンク
+また、strcat関数の代わりに、strncat関数を使うことで、一度に結合する文字数を制限することができます。しかし、この場合でも配列の終端に「\0」があるかどうかを注意深く確認する必要があります。
 
-[文字列の結合方法について詳しく知る](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+## 関連リンク
 
-[文字列操作に関するC言語の基本的な知識](https://www.programiz.com/c-programming/c-strings)
+[良いプログラムを作成するためのC言語の基礎](https://qiita.com/hirakawahiroshi/items/7f73563f8bc30522741c)
 
-# 参考文献
+[文字列結合の基礎知識](https://ja.metajack.org/explain/strings/)
 
-[ISO/IEC 9899:1999 (E) - Programming languages - C](https://www.iso.org/standard/29237.html)
+[C言語の文字列](https://www.cc.kyoto-su.ac.jp/~yamada/ap/lecture_cpu_c/cpp06.html#sec6)

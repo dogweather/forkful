@@ -1,48 +1,43 @@
 ---
-title:    "C++: 写入标准错误"
+title:    "C++: 向标准错误输出写入数据"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：
+为什么：为什么要将数据写入标准错误？
 
-在C++编程中，我们经常需要输出程序的一些信息，比如错误提示或者调试信息。使用标准输出函数可以将这些信息打印在终端上，但是如果我们想将这些信息保存到日志文件中，就需要用到标准错误输出函数。
+很多时候在编写C++程序时，我们需要向用户提供一些必要的信息，例如运行错误的详细信息或者简单的状态更新。这些信息不适合被打印到标准输出，因为它们可能会干扰程序的正常输出。所以，我们需要一个方法来打印这些信息，但又不影响程序的运行。这就是写入标准错误的重要性所在。
 
-## 如何使用
-
-使用标准错误输出函数很简单，只需要调用`std::cerr`对象的`<<`运算符，然后将要输出的信息作为参数传入即可。例如：
+如何做到：通过下面这些编程示例，让我们来看看如何将数据写入标准错误。
 
 ```C++
 #include <iostream>
 
+using namespace std;
+
 int main() {
-  std::string error_message = "Something went wrong!";
-  std::cerr << error_message << std::endl;
-  return 0;
+    cerr << "这条信息会被写入标准错误" <<endl;
+    return 0;
 }
 ```
 
-输出结果为：
+输出: 
 
-```
-Something went wrong!
-```
+`这条信息会被写入标准错误`
 
-## 深入探讨
+我们可以看到，使用`cerr`关键字可以将数据直接写入标准错误。同时，`endl`用于换行，可以使得信息更加清晰易读。
 
-标准错误输出实际上是一个流对象，和标准输出`std::cout`类似。它们的区别在于，标准错误输出会将信息直接输出到终端，而标准输出会将信息缓存起来，需要在程序结束时才会输出。
+深入了解：除了`cerr`关键字之外，C++还提供了其他两个用于写入错误信息的关键字，分别是`cerr`和`clog`。它们的主要区别在于缓冲机制。`cout`是立即写入数据，`cerr`是无缓冲的意思，而`clog`则是有缓冲的，即会在一定的条件下才写入数据。这样的设计可以提高程序的效率，并且可以灵活调整数据的输出时间。
 
-另外，标准错误输出也可以结合重定向来将信息保存到日志文件中。比如在终端输入`./my_program 2> error.log`，就会将标准错误输出的信息保存在`error.log`文件中。
+另外，当数据量较大时，我们也可以选择将错误信息写入一个单独的文件中，这样可以更好地调试程序，同时避免混淆标准输出和标准错误的信息。
 
-## 参考资料
+总之，通过将数据写入标准错误，我们可以更加灵活地控制程序的输出，同时避免造成不必要的干扰。
 
-- [C++ 标准错误输出函数cerr的使用](https://www.runoob.com/cplusplus/cpp-output.html)
-- [C++ tutorial: Standard error](https://www.learncpp.com/cpp-tutorial/18-1-c-standard-error/)
-- [c++ - what is the use of cerr in c++?](https://stackoverflow.com/questions/15869092/what-is-the-use-of-cerr-in-c)
+*## 参考链接*
 
-## 另请参阅
-
-- [使用 C++ 异常处理来提高代码的健壮性](https://www.runoob.com/w3cnote/cpp-exception-handling-to-improve-code-robustness.html)
-- [学习 C++ 标准库中的 I/O 类](https://www.runoob.com/w3cnote/cpp-std-io-class.html)
-- [C++ 中的标准输出、输入以及流操作符](https://www.cnblogs.com/blog-Aloha/p/9904725.html)
+1. [C++标准库文档](https://zh.cppreference.com/w/cpp/io/cerr)
+2. [C++参考手册](https://www.cplusplus.com/reference/ios/ios/)
+3. [C++错误输出技巧](https://www.geeksforgeeks.org/error-handling-c-programs/)
+4. [C++标准库入门](http://c.biancheng.net/cpp/20/)

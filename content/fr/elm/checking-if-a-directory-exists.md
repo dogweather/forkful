@@ -1,42 +1,35 @@
 ---
-title:    "Elm: Vérifier si un répertoire existe"
+title:    "Elm: Vérification de l'existence d'un répertoire"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous êtes probablement en train de vous demander pourquoi vous devriez perdre du temps à vérifier si un répertoire existe. Eh bien, c'est une étape importante pour s'assurer que votre code est robuste et peut gérer toutes les situations. Il est également utile de savoir si un répertoire existe avant de tenter d'y accéder ou d'y créer des fichiers.
+Saviez-vous qu'il est possible en Elm de vérifier si un répertoire existe ? Si vous êtes développeur web et que vous travaillez avec des fichiers et des dossiers, cette fonctionnalité peut être très utile. Dans cet article, nous allons explorer pourquoi et comment vous pouvez vérifier l'existence d'un répertoire en Elm.
 
-# Comment faire
+## Comment faire
 
-Heureusement, Elm rend cette tâche assez simple grâce à la fonction `Directory.doesExist`. Voici un exemple de code qui vérifie si un répertoire existe et imprime un message en conséquence :
+Pour vérifier si un répertoire existe en Elm, nous pouvons utiliser la fonction `Directory.exists` qui prend en paramètre le chemin du répertoire que nous voulons vérifier. Le chemin peut être absolu ou relatif. Voici un exemple de code:
 
-```Elm
-import Directory
+```elm
+Directory.exists "mon/dossier/monFichier.txt"
 
-main =
-    Directory.doesExist "/chemin/vers/mon/repertoire"
-        |> Task.map (\exists -> 
-            if exists then 
-                "Le répertoire existe"
-            else
-                "Le répertoire n'existe pas"
-            )
-        |> Task.perform (Debug.log "Etat du répertoire : ") 
+-- output : True ou False
 ```
 
-Dans cet exemple, nous utilisons `Task.map` pour effectuer une action en fonction du résultat de `Directory.doesExist`. Si le répertoire existe, nous imprimons un message, sinon, un autre message est affiché.
+Comme vous pouvez le voir, la fonction renvoie un `True` si le répertoire existe et un `False` s'il n'existe pas. Il est également possible d'utiliser cette fonction avec la commande `Remote.FileSystem` pour vérifier l'existence de répertoires sur un serveur distant.
 
-# Plongeon en profondeur
+## Plongée en profondeur
 
-Maintenant que nous savons comment vérifier si un répertoire existe en Elm, explorons un peu plus en détails cette fonction. Elle prend en paramètre un chemin vers un répertoire sous forme de chaîne de caractères et renvoie une tâche qui se résout avec un booléen indiquant si le répertoire existe ou non.
+Maintenant que nous savons comment utiliser la fonction `Directory.exists`, examinons plus en détail comment elle fonctionne. Cette fonction utilise un système de permissions pour déterminer si un répertoire existe ou non. Si vous n'avez pas la permission d'accéder à un répertoire, alors la fonction renverra `False`, même si le répertoire existe réellement.
 
-Il est important de noter que cette fonction ne vérifie pas si le chemin est valide ou si c'est bien un répertoire. Elle se contente de vérifier si le répertoire existe à l'endroit spécifié. Si vous souhaitez également vérifier si le chemin est valide, vous devrez utiliser la fonction `Directory.isDir`.
+Il est également important de noter que cette fonction ne peut vérifier que l'existence d'un répertoire, pas son type (fichier ou dossier). Si vous avez besoin de vérifier si un élément est un répertoire ou un fichier, vous devrez utiliser la fonction `Directory.isDir` ou `Directory.isFile` respectivement.
 
-# Voir aussi
+## Voir aussi
 
-- La documentation officielle sur `Directory.doesExist` : https://package.elm-lang.org/packages/elm/filesystem/latest/Directory#doesExist
-- Un tutoriel sur la gestion des fichiers en Elm : https://dev.to/simonh1000/elm-guide-to-file-handling-1h63
-- Un article sur les tâches en Elm : https://medium.com/@robinhuy/lindispensable-des-t%C3%A2ches-en-elm-e9e3d40bd54f
+- Le site officiel d'Elm : https://elm-lang.org/
+- La documentation sur la fonction `Directory.exists` : https://package.elm-lang.org/packages/elm/file/latest/Directory#exists
+- Un exemple d'utilisation de la fonction `Directory.exists` : https://gist.github.com/eimarantobe/e6490f5144b7ca6091643c62e4fa5f56

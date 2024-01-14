@@ -1,42 +1,36 @@
 ---
-title:    "Javascript: Läsning av kommandoradsargument"
+title:    "Javascript: Inläsning av kommandoradsargument"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna läsa kommandoradsargument är en viktig del av JS-programmering. Det tillåter dig att interagera med ditt program och göra justeringar på ett snabbt och effektivt sätt.
 
-Programmering kan vara en spännande och utmanande hobby eller karriär. Men ibland kan man stöta på problem som kräver lite extra kunskap. Att läsa in kommandoradsargument är en av de färdigheter som kan vara mycket användbara när man arbetar med Javascript-programmering. Genom att lära sig detta kan man enkelt interagera med användaren och göra sina program mer interaktiva och användarvänliga. Så varför inte fördjupa sig i detta ämne och lära sig hur man gör?
-
-## Hur man gör
-
-Kommandoradsargument, eller command line arguments på engelska, är parametrar som ges till ett program när det körs via kommandoraden. Det kan till exempel vara ett värde som programmeraren vill använda i sin kod eller en flagga som styr programmet. Att läsa in dessa argument i Javascript är enkelt med hjälp av process.argv-objektet.
-
-För att läsa in kommandoradsargument i Javascript skriver man följande kod:
+## Hur man gör det 
+För att läsa kommandoradsargument i JS, bör du först skapa en variabel som lagrar process.argv. Detta är ett inbyggt objekt som innehåller en matris av alla argument som skickats till ditt program vid körning. Du kan sedan använda variabeln i ditt program för att hämta och använda de specifika argumenten som behövs. Till exempel:
 
 ```
-process.argv[2] // detta är indexet för det första argumentet
+// Skapa en variabel för kommandoradsargumentet
+var commandLineArgument = process.argv;
+
+// Hämta det första argumentet efter filnamnet
+var arg1 = commandLineArgument[2];
+
+// Hämta det andra argumentet efter filnamnet
+var arg2 = commandLineArgument[3];
+
+// Skriv ut en kombination av de två argumenten
+console.log("Argumenten tillsammans blir: " + arg1 + arg2);
 ```
 
-Om man till exempel kör programmet med argumentet "node program.js Hej!", så kommer det första argumentet att vara "Hej!" och det kommer att lagras på index 2 i process.argv-objektet. Detta kan man sedan använda i sin kod på olika sätt beroende på vad man behöver. Här är ett exempel på hur man kan skriva ut argumentet som programmet tar emot:
-
-```
-console.log("Hej " + process.argv[2] + "!");
-```
-
-När man kör detta program med argumentet "node program.js Svenska läsare", så kommer outputen att vara "Hej svenska läsare!".
+Om du kör programmet med kommandot `node index.js hello world`, skulle konsolen visa "Argumenten tillsammans blir: hello world".
 
 ## Djupdykning
+När du läser kommandoradsargument i JS är det viktigt att du förstår hur de fungerar. Process.argv-objektet är en matris där det första argumentet är sökvägen till programmet, det andra argumentet är sökvägen till filen som används för att köra programmet, och resten av argumenten är de som skickas till programmet. Om du vill lära dig mer om hur kommandoradsargument fungerar i detalj kan du kolla in [denna guide](https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/) från Node.js dokumentationen.
 
-Det finns många möjligheter och användningsområden för att läsa in kommandoradsargument i Javascript. Ofta används det för att ge programmet olika inställningar eller för att interagera med användaren. Det finns också sätt att hantera flera argument eller att kontrollera om ett argument är en flagga eller ett värde. Ett annat sätt att använda detta är att dynamiskt generera kod baserat på kommandoradsargumenten som programmet tar emot.
-
-Det är också viktigt att ta hänsyn till säkerheten när man läser in kommandoradsargument. Det är viktigt att sanitizera, eller rensa, input från kommandoradsargumenten för att undvika säkerhetsrisker som till exempel SQL-injektioner.
-
-## Se också
-
-- [Node.js Process Dokumentation](https://nodejs.org/api/process.html)
-- [Användning av Kommandoradsargument i Enkla Program](https://code.visualstudio.com/docs NodeJS/nodejs-debugging#_command-line-arguments)
-- [Sanitization av Input i Node.js](https://www.javascripting.com/view/sanitize)
-
-Tack för att du läste! Fortsätt utforska och utveckla dina programmeringsfärdigheter genom att lära dig nya saker som att läsa in kommandoradsargument. Det kan bidra till att göra dina program mer dynamiska och användarvänliga. Lycka till!
+## Se även
+- [Använda kommandoradsargument i Node.js](https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/)
+- [Argv-objektet](https://nodejs.org/api/process.html#process_process_argv) (Node.js dokumentation)

@@ -1,61 +1,47 @@
 ---
 title:    "Gleam recipe: Getting the current date"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-As developers, we often need to track and manipulate dates in our code. Whether it's for creating time-sensitive logic or displaying the current date on a website, being able to access the current date is a useful skill to have. In this blog post, we'll explore how to get the current date using the Gleam programming language.
+## Why Engage in Getting the Current Date? 
 
-## How To
-To get the current date in Gleam, we can use the `Date.now()` function. This function returns a `Date` record, which contains the current date and time. Let's see an example of how to use this function in our code:
+Getting the current date may seem like a trivial task, but it can actually be very useful in many programming scenarios. Whether you want to display the current date on a website, track user activity, or simply keep your code organized, being able to retrieve the current date is an important skill to have in your programming arsenal.
 
-```Gleam
-import time
+## How To: Getting the Current Date in Gleam
 
-fn main() {
-  let current_date = Date.now()
-  time.print(current_date)
-}
-```
-
-This code imports the `time` module, which contains the `print` function for displaying the current date. Then, we call the `Date.now()` function and assign the resulting `Date` record to the `current_date` variable. Finally, we use the `print` function to display the current date in our terminal.
-
-The output of this code will be something like this:
-
-```bash
-2021-11-04T14:25:39.170406+00:00
-```
-
-## Deep Dive
-You may have noticed that the output of the `Date.now()` function includes the time, not just the date. This is because the date and time are always linked in the Gleam `Date` record. However, if you only want to display the current date, you can use the `Date.toString()` function instead. This function allows you to specify a format for the date output.
-
-For example, if we want to display the date in "Day, Month Date, Year" format, we can use the following code:
+To get the current date in Gleam, we can use the `DateTime` module. Before we can use this module, we need to import it in our code by using the `import` statement. Let's take a look at some sample code below to see how it works.
 
 ```Gleam
-import time
+import gleam/datetime
 
-fn main() {
-  let current_date = Date.now()
-  let formatted_date = Date.toString(current_date, "%A, %B %d, %Y")
-  time.print(formatted_date)
-}
+// Get the current date and time
+let current_date_time = DateTime.now()
+
+// Format the date in a specific way
+let formatted_date = DateTime.format("%A, %B %d, %Y", current_date_time)
+
+// Print out the formatted date
+gleam@Blogger: {formatted_date}
 ```
 
-The output of this code will be:
+The output of the above code will look something like this: 
 
-```bash
-Thursday, November 04, 2021
+```Gleam
+Friday, July 30, 2021
 ```
 
-You can explore other date formatting options in the Gleam documentation.
+As you can see, we imported the `DateTime` module, used the `now()` function to get the current date and time, and then used the `format()` function to format the date in the way we wanted. The `format()` function takes two arguments – the first one being the format string, which tells the function how to format the date, and the second one being the actual date and time we want to format.
+
+## Deep Dive: Understanding the Code
+
+Now, let's take a closer look at the code we just wrote. The `%A`, `%B`, and `%d` in the format string are known as placeholders. These placeholders are replaced with the actual values from the date and time passed in the `format()` function. For example, `%A` represents the full name of the day of the week, `%B` represents the full name of the month, and `%d` represents the day of the month.
+
+You can use different combinations of these placeholders to format the date and time in various ways. You can find a full list of all the available placeholders in the `DateTime` module documentation.
 
 ## See Also
-To learn more about working with dates in Gleam, check out these resources:
-
-- Official Gleam documentation for the `Date` module: https://gleam.run/documentation/stdlib/date/
-- Gleam Playground where you can test out code snippets: https://gleam.run/play
-- Example code for manipulating dates in Gleam: https://gist.github.com/kevgo/adeffb9407f896ceaedb3fc03cdd46ad
-
-Now you know how to get the current date in Gleam and even format it to your liking. Happy coding!
+- [Gleam DateTime module documentation](https://gleam.run/documentation/language/datetime/)
+- [Gleam language website](https://gleam.run/) 
+- [Gleam on GitHub](https://github.com/gleam-lang/gleam)

@@ -1,51 +1,48 @@
 ---
-title:    "Kotlin: 부분 문자열 추출하기"
+title:    "Kotlin: 부분 문자열 추출"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-서브스트링을 추출하는 이유는 문자열을 다룰 때 매우 유용한 기능입니다. 때때로 문자열의 특정 부분만 사용해야 할 때가 있으며, 서브스트링을 추출하는 것은 이를 간단하게 만들어줍니다.
+문자열을 추출하는 것은 우리가 코딩을 할 때 자주 사용되는 작업입니다. 이를 통해 우리는 주어진 문자열에서 필요한 정보를 추출하고 실제로 필요한 작업을 수행할 수 있습니다. Kotlin에서는 간단하고 쉽게 문자열을 추출하고 처리할 수 있기 때문에 이 기능을 배우는 것이 매우 중요합니다.
 
 ## 하는 법
 
 ```Kotlin
-val str = "안녕하세요. 코틀린 블로그입니다."
+// 원본 문자열 만들기
+val originalString = "오늘은 Kotlin 프로그래밍을 배우는 날입니다."
 
-// 첫 번째 문자부터 다섯 번째 문자까지 추출
-val substring1 = str.substring(0, 5)
-println(substring1)
+// 첫번째 단어 추출하기
+val firstWord = originalString.substringBefore(" ")
 
-// 빈 칸을 기준으로 문자열 나누기
-val words = str.split(" ")
-println(words)
+// 마지막 단어 추출하기
+val lastWord = originalString.substringAfterLast(" ")
+
+// 두번째 단어 추출하기
+val secondWord = originalString.substringAfter(firstWord).substringBefore(" ")
+
+// 결과 출력하기
+println("첫번째 단어: $firstWord")
+println("두번째 단어: $secondWord")
+println("마지막 단어: $lastWord")
 ```
 
-출력:
-
+출력 결과:
 ```
-안녕하세요.
-[안녕하세요., 코틀린, 블로그입니다.]
+첫번째 단어: 오늘은
+두번째 단어: Kotlin
+마지막 단어: 날입니다.
 ```
+위의 예시에서는 `substringBefore()`, `substringAfter()`, `substringAfterLast()`와 같은 함수를 사용하여 문자열을 추출하고 있습니다. 이 함수들은 인덱스나 길이를 일일이 지정해줄 필요 없이 간단하게 사용할 수 있어 편리합니다.
 
-위의 예제에서는 `substring()` 함수를 사용하여 문자열의 첫 번째부터 다섯 번째까지의 문자를 추출하고, `split()` 함수를 사용하여 문자열을 빈 칸을 기준으로 나눕니다. 이 외에도 `indexOf()` 함수를 사용하여 특정 문자열의 위치를 찾아낼 수 있습니다.
+## 딥 다이브
 
-## 더 들어가기
+Kotlin에서는 `substring()` 함수를 사용하여 문자열의 일부분을 추출할 수 있습니다. 이 함수는 매개변수로 시작 인덱스와 마지막 인덱스를 받을 수 있습니다. 또한 `substringBefore()`와 `substringAfter()` 함수를 사용할 때, 매개변수로 정규식을 전달할 수도 있습니다.
 
-서브스트링을 추출하는 방법에 대해 더 깊이 알아보겠습니다. 서브스트링을 추출할 때 `substring()` 함수 외에도 `slice()` 함수를 사용할 수 있습니다. `slice()` 함수를 사용하면 여러 개의 인덱스를 지정하여 한 번에 여러 개의 서브스트링을 추출할 수 있습니다. 또한, 정규식을 사용하여 추출할 문자열의 패턴을 지정할 수도 있습니다.
+## 더 알아보기
 
-## 더 보기
-
-서브스트링 추출에 대해 더 많은 정보를 알고 싶다면 아래의 링크를 참고해보세요.
-
-- [Kotlin 문자열 관련 함수](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
-- [Kotlin 정규식 사용법](https://junsday.net/21)
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
-
-## 참고자료
-
-- [Kotlin 문자열 다루기](https://codechacha.com/ko/kotlin-string-manipulation/)
-- [Kotlin 정규식 사용법](https://unclosed.org/tips/how-to-use-regular-expression-regex-in-kotlin/)
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
+- [Kotlin 공식 문서 - 문자열 처리](https://kotl

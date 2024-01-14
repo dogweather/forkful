@@ -1,69 +1,46 @@
 ---
-title:    "Fish Shell: Sammenslåing av strenger"
+title:    "Fish Shell: Sammenstilling av strenger"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
-Har du noen gang ønsket å kombinere flere tekststrenger sammen for å lage en lengre setning eller tekst? Det er akkurat det du kan gjøre ved å bruke Fish Shell sin "concat" kommando.
 
-# Hvordan du gjør det
-Her er et enkelt eksempel på hvordan du kan kombinere to strenger i Fish Shell:
+Hvorfor skulle noen bry seg med å kombinere strenger i Fish Shell? Svaret er enkelt – det er en enkel og nyttig måte å manipulere data på. Ved å kombinere strenger kan du lage mer komplekse utdata som gjenspeiler dataene du jobber med.
 
-```Fish Shell
-set navn "Lisa"
-set setning "Hei, mitt navn er "$navn"."
-echo $setning
-```
-Output:
-```Fish Shell
-Hei, mitt navn er Lisa.
-```
+# Hvordan
 
-Som du kan se, bruker vi "set" kommandoen for å definere to variabler, "navn" og "setning". Deretter bruker vi dollartegn ($) for å referere til variablene i setningen vi ønsker å kombinere.
-
-Du kan også kombinere flere strenger på en enkel måte ved å bruke "concat" kommandoen:
+Kombinere strenger i Fish Shell er enkelt. Du trenger bare å bruke operatoren "+" for å kombinere to strenger sammen. For eksempel:
 
 ```Fish Shell
-echo (concat "Jeg liker" "å spise " "sushi.")
-```
-Output:
-```Fish Shell
-Jeg liker å spise sushi.
+set navn "Maria"
+set etternavn "Kvamme"
+echo "Hei " + $navn + " " + $etternavn 
 ```
 
-# En dypere titt
-Fish Shell sin "concat" kommando kan også ta i bruk andre argumenter, som for eksempel tall, med en enkel endring i syntaksen:
+Dette vil gi deg utdataen "Hei Maria Kvamme" i terminalen. Merk at du må bruke "$" foran variabelnavnet for å referere til den.
+
+Du kan også kombinere flere strenger samtidig ved å bruke en liste av variable. For eksempel:
 
 ```Fish Shell
-echo (concat "Jeg har" 30 "penger på konto.")
-```
-Output:
-```Fish Shell
-Jeg har 30 penger på konto.
-```
-
-Du kan også bruke "concat" for å kombinere variabler og tekst, og til og med matematiske uttrykk:
-
-```Fish Shell
-set tall 10
-echo (concat "Du har" $tall "øre på bankkontoen din.")
-echo (concat "Tilsammen har jeg " (math (mul $tall 3)) " kroner.")
-```
-Output:
-```Fish Shell
-Du har 10 øre på bankkontoen din.
-Tilsammen har jeg 30 kroner.
+set tall1 "1"
+set tall2 "2"
+set tall3 "3"
+echo $tall1 $tall2 $tall3 
 ```
 
-Med litt kreativitet kan du bruke "concat" kommandoen til å lage alle slags kombinasjoner av tekst og variabler.
+Dette vil gi deg utdataen "1 2 3". Ved å kombinere flere strenger kan du lage komplekse utdata som fungerer bedre for dine behov.
+
+# Deep Dive
+
+For de som er interesserte i de tekniske detaljene, kan det være nyttig å vite at når du kombinerer strenger i Fish Shell, blir de faktisk ikke kombinert fysisk. I stedet blir det opprettet en referanse til den eksisterende strengen og variabelnavnet blir koblet sammen for å danne den nye utdataen. Dette gjør at det går raskt å manipulere og kombinere strenger uten å måtte lagre kopier av dem.
 
 # Se også
-Her er noen ressurser som kan være nyttige for å lære mer om concatenating strings:
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/concat.html)
-- [Tutorialspoint om string concatenation i Fish Shell](https://www.tutorialspoint.com/fish_shell/fish_shell_string_concatenation.htm)
-- [StackOverflow diskusjon om string concatenation i Fish Shell](https://stackoverflow.com/questions/50560259/fish-shell-concatenate-string-with-a-variable)
+Her er noen nyttige ressurser for å lære mer om å kombinere strenger i Fish Shell:
 
-Takk for at du leste! Lykke til med å bruke "concat" kommandoen i Fish Shell.
+- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Reddit-fellesskap](https://www.reddit.com/r/fishshell/)
+- [Tutorial om å kombinere strenger i Fish Shell](https://www.baeldung.com/fish-shell-concatenate-strings)

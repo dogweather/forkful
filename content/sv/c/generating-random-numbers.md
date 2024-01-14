@@ -1,43 +1,51 @@
 ---
-title:    "C: Skapa slumpmässiga nummer"
+title:    "C: Generering av slumpmässiga tal"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att generera slumpmässiga nummer kan vara mycket användbart inom programmering. Oavsett om du behöver skapa ett spel med en slumpmässig karaktär eller ett verifieringsnummer för dina användare, kan slumpmässiga nummer både göra din kod mer intressant och mer säker.
+Att generera slumpmässiga tal är en viktig del av programmering eftersom det gör det möjligt att skapa mångsidiga och dynamiska program. Det hjälper också till att testa programmen och skapa realistiska simuleringar.
 
-## Hur du gör det
+## Så här gör du
 
-I C-programmering, kan du generera slumpmässiga nummer med hjälp av `rand()` funktionen. Men innan du använder denna funktion, måste du först inkludera `<stdlib.h>` biblioteket och använda funktionen `srand()` för att "så fröet" för slumpmässigheten. Här är ett exempel på hur du kan generera 10 slumpmässiga tal mellan 1 och 10:
+För att generera slumpmässiga tal i C, använder vi funktionen `rand()` som finns i standardbiblioteket `stdlib.h`. Denna funktion returnerar ett slumpmässigt tal mellan 0 och `RAND_MAX` (ofta mellan 0 och 32767). För att generera ett tal inom ett specifikt intervall använder vi enkel aritmetik, som exemplifieras nedan:
 
 ```C
-#include <stdio.h>
+// inkludera standardbiblioteket för att använda rand()
 #include <stdlib.h>
+// inkludera standardbiblioteket för att använda printf()
+#include <stdio.h>
 
 int main()
 {
-  int i;
-  srand(time(0)); // "Så fröet" för slumpmässigheten baserat på aktuell tid
-  for(i = 0; i < 10; i++)
-  {
-    printf("%d\n", rand() % 10 + 1); // Slumpmässigt tal mellan 1 och 10
-  }
+    // generera ett slumpmässigt tal mellan 1 och 10
+    int random = rand() % 10 + 1;
 
-  return 0;
+    // skriv ut det genererade talet
+    printf("Det slumpmässiga talet är: %d\n", random);
+    return 0;
 }
 ```
 
-Det finns många olika sätt att använda `rand()` funktionen för att skapa olika typer av slumpmässiga resultat. Till exempel, om du vill generera decimaltal istället för heltal, kan du använda `double` datatypen tillsammans med `rand()` funktionen. Det är viktigt att komma ihåg att slumpmässiga nummer inte är helt slumpmässiga, utan baserade på ett förprogrammerat "frö". Du kan också använda funktioner som `time()` för att säkerställa att fröet förändras varje gång programmet körs, vilket ger mer slumpmässiga resultat.
+Exempelutgång:
+
+```
+Det slumpmässiga talet är: 4
+```
 
 ## Djupdykning
 
-Slumpmässiga nummer är en viktig del av den moderna programmeringsvärlden. De används inte bara för spel och användarverifiering, utan även inom algoritmer som behöver vara robusta och oförutsägbara. Tekniker som "pseudo-random number generators" (PRNGs) har utvecklats för att förbättra kvaliteten och slumpmässigheten hos genererade nummer. Dessa PRNGs är matematiska formler som räknar ut nästa nummer i en sekvens baserat på det föregående numret. De ger en högre grad av slumpmässighet jämfört med den enklare `rand()` funktionen.
+Det finns flera faktorer som påverkar hur slumpmässiga de genererade talen är. En av dem är startvärdet för `rand()`, som bestäms av `srand()`-funktionen. Om vi inte specificerar ett startvärde kommer `rand()` att använda samma startvärde varje gång programmet körs, vilket betyder att de genererade talen kommer att vara samma varje gång. Det är därför viktigt att använda en variabel som baseras på tiden eller på en annan variabel som kan variera för att få mer slumpmässiga tal.
+
+En annan faktor är att `rand()` inte genererar helt slumpmässiga tal utan är beroende av ett matematiskt samband baserat på startvärdet. Detta kan resultera i att det genererade mönstret kan upprepas efter en viss period. Detta är därför `rand()`-funktionen inte rekommenderas för kryptografiska ändamål.
 
 ## Se även
 
-- [C: Att skapa slumpmässiga tal](https://www.sis.uta.fi/~csjhu/cs4610/notes/Random-Numbers.pdf)
-- [Slumpmässiga nummer på C-programmeringsspråket](https://overiq.com/c-programming-101/the-random-number-functions-in-c/)
-- [Begreppet "så fröet" på C-programspråk](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [rand() dokumentation](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [srand() dokumentation](https://www.cplusplus.com/reference/cstdlib/srand/)
+- [Random number generation in C](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Using rand() to generate random numbers in C](https://www.techiedelight.com/random-number-generator-c/)

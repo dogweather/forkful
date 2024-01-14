@@ -1,65 +1,57 @@
 ---
 title:    "Swift: Porównywanie dwóch dat"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Porównywanie dwóch dat może się wydawać prostym zadaniem, ale w rzeczywistości może stanowić wyzwanie dla wielu programistów Swift. W tym wpisie dowiesz się dlaczego warto nauczyć się porównywać daty w Swift oraz poznasz przykłady kodu, które pomogą Ci to zrobić.
+Często w programowaniu musimy porównywać daty w celu sprawdzenia, która jest wcześniejsza lub późniejsza. Jest to ważna umiejętność w wielu aplikacjach, zwłaszcza w tych, które mają funkcje związane z czasem. W tym artykule dowiesz się, jak porównywać daty w języku Swift.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Porównywanie dwóch dat w Swift jest możliwe dzięki wykorzystaniu kilku dostępnych funkcji i metod. Przyjrzymy się temu na przykładzie dwóch dat typu Date. Przedstawione poniżej przykłady wykorzystują różne metody i zwracają wartość typu Bool, określającą wynik porównania dat.
+Język Swift oferuje nam różne sposoby na porównywanie dat. Możemy porównać daty według ich kolejności, czyli która jest wcześniejsza, a która późniejsza. Możemy również sprawdzić, czy dwie daty są takie same. Oto kilka kodów przykładowych, które pozwolą Ci zrozumieć, jak to działa:
 
-```Swift
-// Porównanie dwóch dat za pomocą funkcji "is after"
-let date1 = Date(timeIntervalSinceReferenceDate: 0)
-let date2 = Date(timeIntervalSinceReferenceDate: 86400) // 1 dzień po dacie1
-
-print(date1.isAfter(date2)) // false
-print(date2.isAfter(date1)) // true
-
-// Porównanie dwóch dat za pomocą operatora "<"
-let date3 = Date(timeIntervalSinceReferenceDate: 1614556800) // 1 marca 2021 r.
-let date4 = Date(timeIntervalSinceReferenceDate: 1614609600) // 2 marca 2021 r.
-
-print(date3 < date4) // true
-print(date4 < date3) // false
-
-// Porównanie dwóch dat za pomocą metody "compare"
-let date5 = Date(timeIntervalSinceReferenceDate: 1614720000) // 3 marca 2021 r.
-let date6 = Date(timeIntervalSinceReferenceDate: 1614643200) // 2 marca 2021 r.
-
-print(date5.compare(date6)) // .orderedDescending
-print(date6.compare(date5)) // .orderedAscending
-```
-
-W powyższych przykładach możemy zobaczyć, że wartością zwracaną jest typ Bool lub enum, który pozwala nam określić relację między porównywanymi datami.
-
-## Głębszy zanurzenie
-
-Porównywanie dat może być trudniejsze, gdy chcemy uwzględnić również czas i strefę czasową. W takich przypadkach warto skorzystać z klasy Calendar i jej metod do porównywania dat. Przykładowy kod poniżej porównuje dwie daty, biorąc pod uwagę również czas i strefę czasową.
+### Porównywanie dat według kolejności
 
 ```Swift
-// Porównanie dat z uwzględnieniem czasu i strefy czasowej
-let calendar = Calendar.current
-let date7 = Date(timeIntervalSinceReferenceDate: 1614720000) // 3 marca 2021 r.
-let date8 = Date(timeIntervalSinceReferenceDate: 1614643200) // 2 marca 2021 r.
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 86400) // 1 dzień po date1
 
-let result = calendar.compare(date7, to: date8, toGranularity: .hour)
-print(result) // .orderedDescending
+if date1 < date2 { // używając < porównujemy, która data jest wcześniejsza
+  print("Date1 jest wcześniejsza od date2.")
+} else {
+  print("Date2 jest wcześniejsza od date1.")
+}
 ```
+Output: Date1 jest wcześniejsza od date2.
 
-Warto również zwrócić uwagę na to, że porównując daty, musimy uwzględnić różnice wynikające z różnych stref czasowych lub zastosować odpowiednie przekształcenia dat przed porównaniem.
+### Sprawdzanie, czy daty są takie same
 
-## Zobacz również
+```Swift
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 86400) // 1 dzień po date1
 
-Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w Swift, polecamy zapoznanie się z dokumentacją języka Swift oraz artykułami na temat tego zagadnienia:
+if date1 == date2 { // używając == sprawdzamy, czy daty są takie same
+  print("Daty są takie same.")
+} else {
+  print("Daty są różne.")
+}
+```
+Output: Daty są różne.
 
-- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/NSDate.html#ID134)
-- [WWDC 2015 Session 24 - Bringing Modern Objective-C to Swift](https://developer.apple.com/videos/play/wwdc2015/402/)
-- [Blog "Swift by Sundell" - Working with dates and time zones in Swift](https://www.swiftbysundell.com/tips/working-with-dates-and-time-zones-in-swift/)
+## Zagłębienie
 
-Mamy nadzieję, że ten wpis okazał się dla Ciebie pomocny i pomoże Ci w lepszym zrozumieniu procesu porównywania dat w Swift.
+Porównywanie dat może być bardziej skomplikowane w zależności od tego, w jakiej formie są przechowywane. W języku Swift mamy do dyspozycji typy Date i Calendar, które mogą pomóc nam w manipulacji i porównywaniu dat. Możemy również używać funkcji, takich jak compare lub isEqual, aby porównać daty w bardziej zaawansowany sposób.
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w języku Swift, możesz przeczytać te artykuły:
+
+- ["Porównywanie dat w języku Swift" od Hacking with Swift](https://www.hackingwithswift.com/example-code/nsdate/how-to-compare-dates)
+- ["Porównywanie dat w Swift" od Ray Wenderlich](https://www.raywenderlich.com/21-how-to-compare-dates-in-swift)
+- ["Porównywanie dat w języku Swift: Co trzeba wiedzieć" od LearnAppMaking](https://learnappmaking.com/compare-dates-swift/)
+
+Teraz powinieneś być w stanie porównywać daty w swoich projektach w języku Swift. Pamiętaj, że odporne na błędy i trwałe aplikacje to te, które poprawnie porównują daty. Dzięki temu informacje dotyczące czasu w Twojej aplikacji będą zawsze dokładne i aktualne. Powodzenia w kodowaniu!

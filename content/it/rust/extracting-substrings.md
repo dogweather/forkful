@@ -1,39 +1,37 @@
 ---
-title:    "Rust: Estrazione di sottostringhe"
+title:    "Rust: ESTRATTI DI SOTTOSTRINGHE"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Se sei un programmatore che usa Rust, probabilmente sei consapevole delle numerose funzionalità e prestazioni di questo linguaggio. Ma forse non sei ancora sicuro se sia il giusto per te. Una delle funzionalità che potresti trovare utile in alcune situazioni è l'estrazione di sottostringhe, che ti consente di selezionare una porzione specifica di una stringa. Ma perché dovresti voler farlo? Continua a leggere per scoprire perché e come farlo.
+Ci sono molte ragioni per cui potresti voler estrarre delle sottostringhe da una stringa più grande. Ad esempio, potresti aver bisogno di manipolare una stringa ottenuta da un input dell'utente, o potresti aver bisogno di dividere una stringa in più parti per elaborarla in modo più efficiente.
 
 ## Come fare
-
-Per estrarre una sottostringa in Rust, puoi utilizzare il metodo `get()` sulla stringa di cui si desidera ottenere una porzione. Ad esempio, se vuoi estrarre una sottostringa di tre caratteri a partire dalla posizione 2 di una stringa, puoi utilizzare il seguente codice:
-
-```Rust
-let stringa = "ciao";
-let sottostringa = stringa.get(2..5);
-```
-
-In questo esempio, la sottostringa sarà "iao". Si noti che il metodo `get()` utilizza un range per selezionare la porzione desiderata della stringa.
-
-Ma cosa succede se vuoi estrarre una sottostringa di una lunghezza specifica a partire da una posizione specifica? In questo caso, puoi utilizzare il metodo `slice()` al posto di `get()`. Ad esempio:
+Per estrarre una sottostringa da una stringa, possiamo utilizzare il metodo `get` o `get_mut` dell'`&str` o utilizzare il metodo `split` per dividere la stringa in più parti.
 
 ```Rust
-let stringa = "ciao";
-let sottostringa = stringa.slice(1, 3);
+let my_string = "Ciao ragazzi!";
+// Estrarre la sottostringa "Ciao"
+let saluto = &my_string[0..4];
+// Dividere la stringa in più parti usando lo spazio come separatore
+for parola in my_string.split(" ") {
+    println!("{}", parola);
+}
 ```
 
-In questo caso, la sottostringa sarà "ia".
+Output:
+```
+Ciao
+ragazzi!
+```
 
 ## Approfondimento
-
-Se desideri un approfondimento sulla logica alla base dell'estrazione di sottostringhe in Rust, puoi consultare la documentazione ufficiale su `str::get()` e `str::slice()`. Inoltre, esplorare l'implementazione di questi metodi nei file di codice sorgente di Rust può darti una maggiore comprensione del funzionamento dei metodi e di come puoi adattarli alle tue esigenze specifiche.
+Quando estraiamo una sottostringa, è importante tenere conto dei byte della stringa originale e della codifica utilizzata. Inoltre, è possibile utilizzare il metodo `chars` per iterare sui caratteri della stringa anziché sui byte. Ricorda anche che le sottostringhe in Rust non vengono allocate di nuovo, ma semplicemente fanno riferimento alla sezione di memoria della stringa originale.
 
 ## Vedi anche
-
-- Documentazione ufficiale su `str::get()`: https://doc.rust-lang.org/std/primitive.str.html#method.get
-- Documentazione ufficiale su `str::slice()`:https://doc.rust-lang.org/std/primitive.str.html#method.slice
+- Documentazione ufficiale di Rust per i metodi di estrazione di sottostringhe ([Doc](https://doc.rust-lang.org/std/primitive.str.html#method.get))
+- Un esempio pratico di utilizzo delle sottostringhe in Rust ([Articolo](https://www.tutorialspoint.com/rust/rust_substrings.htm))
+- Un video tutorial su come estrarre le sottostringhe in Rust ([Video](https://www.youtube.com/watch?v=GYLcRx2cL8M))

@@ -1,60 +1,53 @@
 ---
-title:    "Elixir: ________________________________________Usuwanie znaków pasujących do wzorca"
+title:    "Elixir: Usuwanie znaków pasujących do wzoru"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Napisanie bloga o usuwaniu znaków odpowiadających wzorcom w języku Elixir może wydawać się nieco abstrakcyjne. Jednakże, istnieje wiele sytuacji, w których jest to bardzo przydatne. Na przykład, usuwanie białych znaków lub znaków specjalnych może pomóc uporządkować dane wejściowe lub usunąć zbędne informacje. Poniżej pokażemy jak w prosty sposób usunąć znaki zadanego typu w Elixir.
+Może się zdarzyć, że w trakcie programowania w Elixirze zechcesz usunąć znaki pasujące do określonego wzorca. Może być to konieczne, gdy chcesz przeanalizować lub przekształcić dane w swoim kodzie. W tym artykule dowiesz się, jak to zrobić w prosty sposób.
 
 ## Jak to zrobić
 
-W języku Elixir, istnieje kilka sposobów usuwania znaków odpowiadających określonemu wzorcowi. Pierwszym sposobem jest użycie funkcji `String.replace/4`, która przyjmuje cztery argumenty: string wejściowy, regex, zastępujący string oraz opcje. Na przykład:
+Aby usunąć znaki pasujące do wzorca w Elixirze, możesz skorzystać z metody `String.replace` lub `Regex.replace` w zależności od Twoich potrzeb.
 
-```
-Elixir string = "To jest przykład tekstu 123"
-String.replace(string, ~r/[0-9]/, "") # Wynik: "To jest przykład tekstu "
-String.replace(string, ~r/[a-z]/, "") # Wynik: " 123"
-```
+```Elixir
+String.replace("Hello world!", "l", "")
+# Output: "Heo word!"
 
-Innym sposobem jest użycie funkcji `String.replace/2`, która jest wygodniejsza w użyciu gdy chcemy usunąć tylko jeden typ znaków. Na przykład:
-
-```
-Elixir string = "To jest inny przykład tekstu 123!"
-String.replace(string, "!", "") # Wynik: "To jest inny przykład tekstu 123"
+Regex.replace("Hello world!", ~r/l/, "")
+# Output: "Heo word!"
 ```
 
-Jeśli chcemy usunąć więcej niż jeden typ znaków, warto skorzystać z funkcji `Regex.replace/3`, która pozwala na podanie kilku wzorców do usunięcia. Na przykład:
+Zauważ, że obie metody przyjmują pierwszy argument jako ciąg znaków, a drugi jako wzorzec do usunięcia. W przypadku `String.replace` po prostu podajemy znak, który chcemy usunąć, podczas gdy w `Regex.replace` musimy użyć wyrażenia regularnego z prefixem `~r`. Jeśli potrzebujesz bardziej złożonego wzorca, możesz poszukać przydatnych wyrażeń regularnych lub zapoznać się z dokumentacją Elixira.
 
-```
-Elixir string = "To jest kolejny przykład - 123!"
-Regex.replace(string, ~r/[^a-zA-Z ]/, "") # Wynik: "To jest kolejny przykład "
-```
+## Głębszy przegląd
 
-Wyrażenia regularne mogą być nieco trudne do zrozumienia dla początkujących, ale są bardzo przydatne w usuwaniu znaków odpowiadających określonemu wzorcowi.
+Obie metody `String.replace` i `Regex.replace` mają opcjonalny trzeci argument, który pozwala na dokładniejsze kontrolowanie procesu usuwania. Na przykład, możesz określić maksymalną liczbę znaków do zastąpienia lub określić z jakiej strony w ciągu znaków powinna rozpocząć się operacja usunięcia.
 
-## Deep Dive
+Poniżej przedstawiono kilka przykładowych wywołań funkcji `String.replace`, aby pokazać, jak można dostosować sposób usuwania znaków:
 
-Głębsze zrozumienie działania wyrażeń regularnych może być przydatne w bardziej skomplikowanych przypadkach, na przykład jeśli chcemy usunąć wszystkie znaki oprócz określonych. Wtedy możemy skorzystać ze składni negacji `[^]`, która oznacza, że wyrażenie będzie dopasowane tylko wtedy, gdy zadany wzorzec nie zostanie znaleziony. Na przykład:
+```Elixir
+# Usunięcie tylko pierwszego pasującego znaku:
+String.replace("Hello world!", "l", "", global: false)
+# Output: "Helo world!"
 
-```
-Elixir string = "To jest przykład - 123!"
-Regex.replace(string, ~r/[^a-zA-Z]/, "") # Wynik: "To jest przykład"
-```
+# Usunięcie tylko dwóch pierwszych pasujących znaków:
+String.replace("Hello world!", "l", "", global: false, times: 2)
+# Output: "Heo world!"
 
-Warto również pamiętać, że wyrażenia regularne w języku Elixir są domyślnie nieczułe na wielkość liter. Jeśli chcemy, aby nasze wyszukiwanie było zależne od wielkości liter, możemy użyć opcji `i` przy wyrażeniu regularnym. Na przykład:
-
-```
-Elixir string = "To jest przykład - 123!"
-Regex.replace(string, ~r/[^a-z]/i, "") # Wynik: "To jest przykład"
+# Usunięcie tylko znaków występujących po prawej stronie ciągu:
+String.replace("Hello world!", "o", "", insert_replaced: :after,
+               insert_deleted: :after)
+# Output: "Hell wrld!"
 ```
 
-## Zobacz również
+Spróbuj dostosować powyższe przykłady używając funkcji `Regex.replace` i przetestuj różne kombinacje argumentów, aby lepiej zrozumieć jak one działają.
 
-- [Dokumentacja Elixir - String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Dokumentacja Elixir - String.replace/2](https://hexdocs.pm/elixir/String.html#replace/2)
-- [Dokumentacja Elixir - Regex.replace/3](https://hexdocs.pm/elixir/Regex.html#replace/3)
-- [Elixir School - Regex](https://elixirschool.com/pl/lessons/basics/regex/)
-- [Wikipedia - Wyrażenia regularne](https://pl.wikipedia.org/wiki/Wyra%C5%BCenia_regularne)
+## Zobacz też
+
+- [Dokumentacja Elixira o String.replace](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Dokumentacja Elixira o Regex.replace](https://hexdocs.pm/elixir/Regex.html#replace/4)

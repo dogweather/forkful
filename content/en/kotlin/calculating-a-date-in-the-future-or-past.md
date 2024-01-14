@@ -1,75 +1,61 @@
 ---
 title:    "Kotlin recipe: Calculating a date in the future or past"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Calculating dates in the future or past can be extremely useful in a variety of programming scenarios. For example, in event management systems, it is necessary to calculate the date of upcoming events or schedule reminders for important dates. In this blog post, we will explore how to do this using Kotlin programming language.
+## Why
 
-## How To 
-To calculate a date in the future or past, we can utilize the built-in `Calendar` class in Kotlin. This class provides various methods and properties to manipulate dates and times. Let's take a look at a simple example:
+Calculating dates in the future or past can be a useful tool for various applications, such as event scheduling, payment due dates, or creating reminders. With Kotlin's date and time functionality, this task can be easily accomplished with just a few lines of code.
 
-```Kotlin
-// Get current date
-val currentDate = Calendar.getInstance()
+## How To
 
-// Add 1 month to current date
-currentDate.add(Calendar.MONTH, 1)
-
-// Print future date
-println("Future date: ${currentDate.time}")
-```
-The output of the code above will be the date of 1 month from the current date. Simple, right? We can also subtract time units, such as days, hours, or even milliseconds, by using `add()` method with a negative value.
-
-```Kotlin 
-// Get current date
-val currentDate = Calendar.getInstance()
-
-// Subtract 2 days from current date
-currentDate.add(Calendar.DAY_OF_MONTH, -2)
-
-// Print past date
-println("Past date: ${currentDate.time}")
-```
-
-We can also set specific dates by using the `set()` method. For example, if we want to set a specific date, say, June 30, 2022, we can do it like this:
-
-```Kotlin 
-// Get current date
-val currentDate = Calendar.getInstance()
-
-// Set date to June 30, 2022
-currentDate.set(2022, Calendar.JUNE, 30)
-
-// Print set date
-println("Set date: ${currentDate.time}")
-```
-
-## Deep Dive 
-If we want to get more accurate calculations, we can use the `java.time` API introduced in Java 8, which is fully compatible with Kotlin. This API provides a `LocalDate` class, which represents a date without a specific time or timezone. Let's see how we can use it to calculate exact dates in the future or past:
+To calculate a date in the future or past, we first need to define the current date using the `LocalDate` class. We can do this by calling the `now()` method:
 
 ```Kotlin
-// Get current date
 val currentDate = LocalDate.now()
-
-// Add 3 weeks to current date
-val futureDate = currentDate.plusWeeks(3)
-
-// Subtract 1 year from current date
-val pastDate = currentDate.minusYears(1)
-
-// Print future and past dates
-println("Future date: $futureDate")
-println("Past date: $pastDate")
 ```
 
-The above code will output the date of 3 weeks from the current date and the date of 1 year ago, respectively. The `LocalDate` class also provides methods to calculate dates based on specific timezones and to handle daylight saving time.
+Next, we can use the `plus()` or `minus()` methods to add or subtract a certain number of days, weeks, or months from the current date, respectively. For example, to calculate a date 7 days in the future, we would do:
 
-## See Also 
-- [Kotlin - Date and Time API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/index.html)
-- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Android Developers - Date and Time Basics](https://developer.android.com/guide/topics/icalendar)
+```Kotlin
+val futureDate = currentDate.plusDays(7)
+```
 
-With the help of the examples and tips provided in this blog post, calculating dates in the future or past using Kotlin should now be a breeze. Happy coding!
+Similarly, if we want to calculate a date 2 weeks in the past, we would do:
+
+```Kotlin
+val pastDate = currentDate.minusWeeks(2)
+```
+
+We can also specify a specific date by using the `of()` method and passing in the year, month, and day as arguments. For example, to calculate a date 3 years in the future, we could do:
+
+```Kotlin
+val futureDate = LocalDate.of(currentDate.year + 3, currentDate.month, currentDate.day)
+```
+
+And finally, we can format the date in a specific way using the `format()` method. For example, to print the future date in the format of "MM/dd/yyyy", we could do:
+
+```Kotlin
+println("Future date: ${futureDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))}")
+```
+
+The output would be:
+
+```
+Future date: 05/17/2024
+```
+
+## Deep Dive
+
+Kotlin's date and time functionality is built upon the `java.time` classes, which allow for more precise and accurate calculations compared to the traditional `java.util.Date` class. We can also manipulate the time component of a date by using the `LocalDateTime` class. Additionally, Kotlin provides support for time zone handling through the `java.time.ZonedDateTime` class.
+
+When using the `plus()` or `minus()` methods, it is important to note that these operations do not modify the original date but instead return a new `LocalDate` object. This is due to the immutability of `LocalDate` objects in Kotlin.
+
+## See Also
+
+- Official Kotlin Documentation on Dates and Times: https://kotlinlang.org/docs/dates.html
+- Java 8 Date and Time API: https://www.baeldung.com/java-8-date-time-intro
+- Tutorial: Working with dates and times in Kotlin: https://proandroiddev.com/working-with-date-and-time-in-kotlin-30b8a211c90b

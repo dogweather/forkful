@@ -1,70 +1,51 @@
 ---
 title:    "Rust: Utskrift av feilsøkingsutdata"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å printe ut debug output kan være en nyttig måte å feilsøke programmer på. Ved å få ut data fra programmet mens det kjører, kan man enklere identifisere feil og finne løsninger på dem.
+Å skrive ut debug utdata er en viktig del av programvareutvikling. Det lar deg spore og fikse feil i koden din, og gir deg en bedre forståelse av hva som skjer i programmet mens det kjører. I denne bloggposten vil vi utforske hvordan du kan bruke debug utdata i Rust for å forbedre utviklingsprosessen din.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å printe ut debug output i Rust, kan man bruke makroen ```dbg!()```. Denne makroen tar inn et uttrykk og printer ut både uttrykket og verdien som blir evaluert.
-
-```Rust
-let num = 42;
-let name = "John";
-dbg!(num);
-dbg!(name);
-```
-
-Dette vil gi følgende output:
+For å skrive ut debug utdata i Rust, kan du bruke makroen `println!` eller `eprintln!` avhengig av om du vil skrive ut til standardutdata eller feilutdata. Her er et eksempel på hvordan du kan skrive ut en variabel i Rust:
 
 ```Rust
-[src/main.rs:4] num = 42
-[src/main.rs:5] name = "John"
+let navn = "Per";
+println!("Hei, mitt navn er {}", navn); // output: Hei, mitt navn er Per 
 ```
 
-Man kan også bruke ```dbg!()``` i kombinasjon med en funksjon for å få ut mer kompleks output:
+Du kan også legge til flere variabler i utdataen ved å bruke flere plassholdere og liste opp variablene etter utdatastrengen. Det er også mulig å bruke Rusts Debug trait for å få en mer detaljert utskrift av variabler.
+
+```Rust 
+let alder = 30;
+println!("Jeg er {} år gammel, {:?} måneder", alder, alder); // output: Jeg er 30 år gammel, 30 måneder
+```
+
+## Dypdykk
+
+Mens `println!` og `eprintln!` er gode verktøy for å skrive ut enkle utdata, kan du også bruke makroen `dbg!` for å få mer informasjon om variabler og deres verdier. Denne makroen vil skrive ut variabelnavn, verdi og datatype.
 
 ```Rust
-fn add_two(num: i32) -> i32 {
-    num + 2
-}
-let num = 42;
-dbg!(add_two(num));
+let liste = vec![1, 2, 3];
+println!("{:?}", liste); // output: [1, 2, 3]
+dbg!(liste); // output: [src/main.rs:2] liste = [1, 2, 3]
 ```
 
-Output vil da se slik ut:
+Du kan også bruke `dbg!` til å evaluere uttrykk og skrive ut resultatet.
 
 ```Rust
-[src/main.rs:5] add_two(num) = 44
+let a = 2;
+let b = 3;
+dbg!(a * b); // output: [src/main.rs:5] a * b = 6
 ```
-
-## Deep Dive
-
-Når man bruker ```dbg!()```-makroen, så blir outputen laget som en stukturert tekststreng som inneholder filnavn, linjenummer og verdien til uttrykket. Dette er til stor hjelp når man feilsøker, spesielt hvis man har flere uttrykk som skal printes ut.
-
-Man kan også bruke ```dbg!()```-makroen på flere uttrykk samtidig, ved å separere dem med komma:
-
-```Rust
-let num = 42;
-let name = "John";
-dbg!(num, name);
-```
-
-Output vil da se slik ut:
-
-```Rust
-[src/main.rs:4] num = 42, [src/main.rs:5] name = "John"
-```
-
-Å printe ut debug output kan også være nyttig når man jobber med lånte verdier eller livetidproblemer i Rust. Man kan da få oversikt over verdier og livetider som kan gi nyttig informasjon for å løse problemet.
 
 ## Se også
 
-- [Rust dokumentasjon om ```dbg!()```-makroen](https://doc.rust-lang.org/std/macro.dbg.html)
-- [The Rust Programming Language bok, kapittel 10 om debugging](https://doc.rust-lang.org/book/ch10-04-debugging.html) 
-- [Coding in Rust, video om debugging med ```dbg!()```-makroen](https://www.youtube.com/watch?v=QKYLo8m42oQ)
+- Offisiell Rust dokumentasjon for `println!`: https://doc.rust-lang.org/std/macro.println.html
+- Rust by Example: https://doc.rust-lang.org/rust-by-example/hello/print/print_debug.html
+- YouTube tutorial om debugging i Rust: https://www.youtube.com/watch?v=0zm9TQnf_NA

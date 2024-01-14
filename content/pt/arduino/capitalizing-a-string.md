@@ -1,42 +1,53 @@
 ---
-title:    "Arduino: Capitalizando uma string"
+title:    "Arduino: Maiúsculas em uma string"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que é importante capitalizar uma string em Arduino
+# Por que capitalizar uma string em Arduino?
 
-Ao programar em Arduino, às vezes é necessário capitalizar uma string, ou seja, transformar todas as letras minúsculas em letras maiúsculas. Isso pode ser útil para padronizar a entrada de dados ou para criar mensagens mais legíveis para o usuário. Neste post, vamos explicar como fazer isso em poucos passos.
+Então você está programando em Arduino e se depara com a necessidade de capitalizar uma string. Você pode estar se perguntando: por que eu deveria fazer isso? Bem, existem várias razões pelas quais alguém pode querer capitalizar uma string em Arduino. Por exemplo, pode ser necessário para exibir corretamente um texto em um display LCD, ou para comparar strings em um código de controle de acesso. Independentemente do motivo, capitalizar uma string pode ser uma habilidade útil a se ter ao programar em Arduino.
 
 ## Como capitalizar uma string em Arduino
 
-Existem várias maneiras de capitalizar uma string em Arduino, mas vamos nos concentrar em uma forma simples utilizando a função `toUpperCase()`. Vamos supor que temos uma variável chamada `nome` contendo uma string em letras minúsculas e queremos transformá-la em letras maiúsculas. Podemos fazer isso da seguinte maneira:
+Agora que entendemos por que capitalizar uma string pode ser útil, vamos aprender como fazer isso em Arduino. O processo é bastante simples e pode ser feito em apenas algumas etapas.
+
+Primeiro, declare uma variável com o valor da string que você deseja capitalizar. Por exemplo, ```String minhaString = "ola mundo"```.
+
+Em seguida, use a função ```toUpperCase()``` para converter a string em letras maiúsculas. Por exemplo, ```minhaString.toUpperCase()```.
+
+Por fim, você pode imprimir a string capitalizada usando a função ```Serial.println()```, como por exemplo ```Serial.println(minhaString)```.
+
+Seu código completo deve se parecer com isto:
+
+```Arduino
+String minhaString = "ola mundo";
+minhaString.toUpperCase();
+Serial.println(minhaString);
+```
+
+E o resultado da serial deve ser:
 
 ```
-Arduino nome = "exemplo";
-nome.toUpperCase();
-
+OLA MUNDO
 ```
-A saída deste código seria `EXEMPLO`, pois a função `toUpperCase()` altera a string original para que todas as letras sejam maiúsculas.
 
-Outra opção é utilizar a biblioteca `String`, que possui uma função específica para capitalizar uma string. Veja o código abaixo:
+## Mais informações sobre capitalizar uma string no Arduino
 
-```
-Arduino nome = "exemplo";
-nome = String( nome ).toUpperCase();
+Agora que você sabe como capitalizar uma string em Arduino, vamos mergulhar em alguns detalhes adicionais sobre o assunto.
 
-```
-Agora, além de alterar a string original, a função `toUpperCase()` retorna uma cópia da string em letras maiúsculas.
+Uma coisa importante a ter em mente é que a função ```toUpperCase()``` só funciona com caracteres ASCII, o que significa que ela não irá capitalizar caracteres acentuados, como á, é, í, ó, ú. Se você precisar capitalizar uma string com caracteres acentuados, você pode criar uma função personalizada que substitua esses caracteres por suas versões maiúsculas.
 
-## Aprofundando-se na capitalização de strings em Arduino
-
-A função `toUpperCase()` é a opção mais simples para capitalizar uma string em Arduino, mas é importante entender como ela funciona por trás dos bastidores. Basicamente, essa função itera através de cada caractere da string e verifica se ele é uma letra minúscula. Se for, ele o converte para maiúsculo. Isso acontece até o final da string, e o resultado é a string original com todas as letras maiúsculas.
-
-É importante ressaltar que essa função só funciona com caracteres no formato ASCII. Se a string contiver caracteres especiais ou acentuações, eles não serão convertidos corretamente.
+Além disso, vale mencionar que a função ```toUpperCase()``` é uma função mutadora, o que significa que ela altera diretamente o valor da variável em que é aplicada. Isso pode ser importante se você estiver trabalhando com uma variável de string que precisa ser mantida em seu formato original.
 
 ## Veja também
 
-- [Tutorial sobre String em Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Como converter strings para inteiros em Arduino](https://www.arduino.cc/reference/en/language/functions/conversion/atoi/)
-- [Tudo sobre a biblioteca String em Arduino](https://www.arduinolibraries.info/libraries/string)
+Aqui estão algumas fontes adicionais onde você pode aprender mais sobre capitalizar strings em Arduino:
+
+- [Documentação Oficial do Arduino para a Função toUpperCase()](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/touppercase/)
+- [Tutorial de Capitalização de Strings em Arduino](https://www.youtube.com/watch?v=weEWeMvls2o)
+- [Fórum de Discussão sobre Capitalização de Strings no Arduino](https://forum.arduino.cc/t/capital-string-letter/109030)
+
+Espero que este artigo tenha sido útil para você aprender a capitalizar strings em Arduino. Agora que você tem essa habilidade em seu arsenal de programação, você pode aplicá-la em seus projetos futuros. Divirta-se programando!

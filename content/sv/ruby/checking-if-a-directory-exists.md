@@ -1,80 +1,45 @@
 ---
-title:    "Ruby: Hitta om en mapp finns"
+title:    "Ruby: Kontrollera om en mapp finns"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en mapp existerar är en viktig del av Ruby-programmering. Det kan vara användbart för att se till att nytt innehåll inte skrivs över i befintliga mappar, eller för att se till att nödvändiga mappar finns innan en kod exekveras. Det är också en viktig säkerhetsfunktion för att förhindra oavsiktlig användning av icke-existerande mappar.
+Många gånger när vi programmerar i Ruby, kan vi behöva kontrollera om en viss mapp finns. Det kan vara för att avgöra om en fil kan sparas, hämtas eller för att hantera undantag. Oavsett anledning, är det viktigt att förstå hur man på ett enkelt sätt kan kontrollera om en viss mapp finns. I denna bloggpost kommer vi att utforska detta ämne och lära oss olika sätt att kontrollera mappens existens i Ruby.
 
-## Så här gör du
+## Hur man gör det
 
-För att kontrollera om en mapp existerar, behöver du använda ett inbyggt Ruby-kommando som heter `Dir.exist?()`. Detta kommando tar en sökväg som argument och returnerar antingen sant (true) eller falskt (false) beroende på om mappen finns eller inte.
-
-Exempel:
+För att kontrollera om en mapp finns i Ruby, finns det två huvudsakliga metoder som vi kan använda: `Dir.exist?` och `File.directory?`. Båda dessa metoder returnerar en boolesk true/false beroende på om mappen finns eller inte.
 
 ```Ruby
-if Dir.exist?("Dokument/mapp")
-  puts "Mappen finns!"
-else
-  puts "Mappen finns inte."
-end
+# Kontrollera om mapp finns med hjälp av Dir.exist?
+Dir.exist?('mappens_namn') #=> true/false
+
+# Kontrollera om mapp finns med hjälp av File.directory?
+File.directory?('mappens_namn') #=> true/false
 ```
 
-Output:
-
-```
-Mappen finns!
-```
-
-Om mappen inte finns, kommer output istället att vara:
-
-```
-Mappen finns inte.
-```
+Som ni kan se är syntaxen för båda metoderna ganska enkel. Det enda som behövs är namnet på mappen som vi vill kontrollera. Om mappen existerar kommer output att vara `true` och om den inte existerar kommer output att vara `false`.
 
 ## Djupdykning
 
-När du använder `Dir.exist?()` är det viktigt att notera att det endast kontrollerar om en mapp existerar, inte om den är åtkomlig. Det betyder att det inte garanterar att du kommer att kunna läsa eller skriva i mappen. För att kontrollera både existens och tillgänglighet av en mapp, behöver du använda `test()` metoden på `File`-klassen.
-
-Exempel:
+För att förstå hur `Dir.exist?` och `File.directory?` fungerar, måste vi först förstå hur en mapp struktureras på datorn. En mapp kan innehålla flera olika filer och undermappar. När vi använder de två metoderna ovan, kontrollerar vi bara om själva mappen existerar och inte dess innehåll. Om vi vill kontrollera om en specifik fil eller undermapp finns i en mapp, måste vi använda `Dir.glob` tillsammans med en wildcard som följande:
 
 ```Ruby
-if File.test("/hem/användare/mapp", "w")
-  puts "Du kan skriva till mappen!"
-else
-  puts "Mappen är inte tillgänglig för skrivning."
-end
+# Kontrollera om filen "text.txt" finns i mappen "mappens_namn"
+Dir.glob("mappens_namn/text.txt") #=> ["mappens_namn/text.txt"]
+
+# Kontrollera om undermappen "bilder" finns i mappen "mappens_namn"
+Dir.glob("mappens_namn/bilder") #=> ["mappens_namn/bilder/"]
 ```
 
-Output:
+Detta kan hjälpa oss att kontrollera en specifik fil eller undermapp inuti en mapp. Slutförandet av wildcard, "*" i slutet av sökvägen, ger oss allt innehåll i den specifika mappen.
 
-```
-Du kan skriva till mappen!
-```
+## Se också 
 
-En annan viktig sak att tänka på är att `Dir.exist?()` kommer att returnera `true` även om sökvägen leder till en fil istället för en mapp. För att exakt kontrollera om det är en mapp, kan du använda `File.directory?()`.
-
-Exempel:
-
-```Ruby
-if File.directory?("Dokument/fil.txt")
-  puts "Detta är inte en mapp."
-else
-  puts "Detta är en mapp."
-end
-```
-
-Output:
-
-```
-Detta är en mapp.
-```
-
-## Se också
-
-- [Ruby API-dokumentation om Dir.exist?()](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
-- [Ruby API-dokumentation om File.test()](https://ruby-doc.org/core-2.7.1/File.html#method-c-test)
-- [Ruby API-dokumentation om File.directory?()](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
+-[`Dir.exist?` Dokumentation](https://ruby-doc.org/core-2.7.0/Dir.html#method-c-exists-3F) 
+- [`File.directory?` Dokumentation](https://ruby-doc.org/core-2.7.0/File.html#method-c-directory-3F)
+- [`Dir.glob` Dokumentation](https://ruby-doc.org/core-2.7.0/Dir.html#method-c-glob)

@@ -1,42 +1,44 @@
 ---
-title:    "PHP: Comprobando si existe un directorio"
+title:    "PHP: Comprobación de existencia de un directorio"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Revisar si existe un directorio es una tarea común en la programación PHP. Puede ser necesario para asegurarse de que se está trabajando en el lugar correcto o para crear nuevos directorios si no existen. En este blog post, aprenderás cómo verificar si un directorio existe en PHP y profundizarás en el proceso.
+# Por qué verificar si un directorio existe en PHP
+
+En la programación PHP, puede ser muy útil verificar si un directorio existe antes de realizar operaciones en él. Esto puede ayudar a evitar errores y asegurarse de que su código se esté ejecutando correctamente.
 
 ## Cómo hacerlo
 
-La mejor forma de verificar si un directorio existe en PHP es utilizando la función `is_dir()`, que devuelve un valor booleano `true` si el directorio existe y `false` si no existe. Aquí tienes un ejemplo de cómo se puede usar esta función en un if statement:
+Para verificar si un directorio existe en PHP, puede utilizar la función `is_dir()` seguida del nombre del directorio que desea verificar entre paréntesis.
 
 ```PHP
-if (is_dir("mi_directorio")) {
-  echo "El directorio existe";
+$directorio = "archivos/";
+if (is_dir($directorio)) {
+    echo "El directorio $directorio existe";
 } else {
-  echo "El directorio no existe";
+    echo "El directorio $directorio no existe";
 }
 ```
 
-El código de arriba imprimirá "El directorio existe" si el directorio llamado "mi_directorio" existe en la ruta actual.
+Si el directorio "archivos" existe, el código anterior imprimirá "El directorio archivos existe". De lo contrario, imprimirá "El directorio archivos no existe".
 
-## Deep Dive
+## Profundizando
 
-Además de utilizar la función `is_dir()`, también puedes utilizar la función `file_exists()` para verificar si un directorio existe. La diferencia entre ambas es que `is_dir()` solo se aplica a directorios, mientras que `file_exists()` se puede usar para verificar la existencia de cualquier tipo de archivo, ya sea un directorio, un archivo de texto o una imagen.
+Además de la función `is_dir()`, existen varias formas de verificar si un directorio existe y realizar operaciones en él. Estos incluyen:
 
-En el caso de que necesites manipular el contenido de un directorio, puedes utilizar la función `scandir()` para obtener una lista de todos los archivos y subdirectorios dentro de un directorio específico. Aquí tienes un ejemplo:
+- La función `file_exists()` que puede verificar tanto directorios como archivos.
+- La función `scandir()` que devuelve una lista de archivos y subdirectorios en un directorio especificado.
+- El uso de la clase `Directory` para trabajar con directorios y archivos en un objeto orientado a objetos.
 
-```PHP
-$directorio = scandir("mi_directorio");
-echo "Los archivos en el directorio son: " . implode(", ", $directorio);
-```
-
-Este código imprimirá una lista separada por comas de todos los archivos y subdirectorios dentro de "mi_directorio".
+También es importante tener en cuenta que al trabajar con directorios en PHP, es necesario tener en cuenta la estructura del sistema de archivos en el que se está trabajando y los permisos de acceso necesarios para realizar operaciones en determinados directorios.
 
 ## Ver también
 
-- [Función is_dir() en PHP](https://www.php.net/manual/es/function.is-dir.php)
-- [Función file_exists() en PHP](https://www.php.net/manual/es/function.file-exists)
-- [Función scandir() en PHP](https://www.php.net/manual/es/function.scandir.php)
+- [Documentación oficial de PHP sobre la función is_dir()](https://www.php.net/manual/es/function.is-dir.php)
+- [Tutorial sobre el manejo de archivos y directorios en PHP](https://www.tutorialspoint.com/php/php_file_system.htm)
+- [Otra forma de verificar si un directorio existe en PHP](https://www.geeksforgeeks.org/php-check-whether-a-directory-exists-or-not/)
+
+¡Con esta información, ahora puedes asegurarte de que los directorios en tu código PHP existan antes de realizar operaciones en ellos!

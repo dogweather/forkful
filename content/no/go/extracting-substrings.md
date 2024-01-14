@@ -1,44 +1,82 @@
 ---
-title:    "Go: Utvinne understrenger"
+title:    "Go: Uthenting av substringer"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å utvinne substringer, eller deler av en streng, er en vanlig oppgave i programmering. Dette kan være nyttig for å få tilgang til spesifikke deler av en tekst, eller for å bearbeide data på en mer effektiv måte. I denne artikkelen vil vi utforske hvordan man kan utføre dette i Go-programmeringsspråket.
+Å skrive kode som fungerer som det skal, kan være en kompleks oppgave, spesielt når det kommer til å behandle tekststrenger. Noen ganger ønsker vi kanskje å hente ut et bestemt utvalg av ord eller tegn fra en tekststreng. Dette kalles å ekstrahere substringer, og det kan være nyttig i mange situasjoner.
 
-## Slik gjør du det
+# Slik gjør du det
 
-For å utvinne en substring i Go bruker vi funksjonen `strings` og dens `Substring` metode. Denne metoden tar inn to parametere: startindeksen og slutindeksen for den delen av strengen du vil utvinne. La oss se på et eksempel:
+For å ekstrahere substringer i Go, kan vi bruke funksjonen `Substring()` fra standardbiblioteket `strings`. La oss si at vi har en tekststreng som heter `tekst` og vi ønsker å hente ut de første fem bokstavene. Da kan vi bruke følgende kode:
 
 ```Go
-package main
-
-import "fmt"
-import "strings"
-
-func main() {
-  str := "Dette er en test"
-
-  // utvinne substring fra indeks 5 til 10
-  substr := str[5:10]
-
-  fmt.Println("Substring:", substr)
-}
+tekst := "Dette er en tekststreng"
+substr := tekst[:5]
+fmt.Println(substr)
 ```
 
-I dette eksempelet, vil variabelen `substr` inneholde verdien "er en". Ved å definere start- og sluttpunktet for vårt utdrag, kan vi få tilgang til ønsket del av strengen.
+Dette vil gi følgende output:
 
-## Dypdykk
+```
+Dette
+```
 
-Det er viktig å merke seg at i Go, gir funksjonen `Substring` oss en *referanse* til delen av strengen, ikke en ny kopi. Dette betyr at eventuelle endringer som gjøres i substrings vil reflekteres i den opprinnelige strengen også.
+Her har vi brukt `[:5]` for å hente ut tegnene fra indeks 0 til 5 i tekststrengen. Vi kan også bruke `startIndex:endIndex` for å hente ut et bestemt antall tegn fra en tekststreng. La oss se på et annet eksempel:
 
-Videre kan vi også bruke `Substring` metoden på arrayer og slices i Go. Denne funksjonaliteten gjør det mulig å utvinne deler av en liste basert på indekser, på samme måte som med en streng.
+```Go
+tekst := "Dette er en tekststreng"
+substr := tekst[8:12]
+fmt.Println(substr)
+```
 
-## Se Også
+Dette vil gi følgende output:
 
-- [Golang Documentation - Strings](https://golang.org/pkg/strings/)
-- [Substring i Go - stackoverflow](https://stackoverflow.com/questions/19374219/how-to-get-a-substring-in-golang)
-- [Golang Tutorial - Hente del av streng](https://golangbot.com/substring/)
+```
+en t
+```
+
+Vi kan også bruke `Substring()` funksjonen til å hente ut en del av en tekststreng basert på et søkeord. For eksempel, hvis vi ønsker å hente ut ordet "tekst" fra tekststrengen vår, kan vi bruke følgende kode:
+
+```Go
+tekst := "Dette er en tekststreng"
+searchWord := "tekst"
+startIndex := strings.Index(tekst, searchWord)
+substr := tekst[startIndex:startIndex+len(searchWord)]
+fmt.Println(substr)
+```
+
+Dette vil gi følgende output:
+
+```
+tekst
+```
+
+# Få en dypere forståelse
+
+Når vi bruker `Substring()` funksjonen, kan vi også angi en tredje parameter som representerer antall tegn vi ønsker å hente ut. For eksempel, hvis vi ønsker å hente ut de første tre ordene fra en tekststreng, kan vi bruke følgende kode:
+
+```Go
+tekst := "Dette er en tekststreng"
+words := strings.Fields(tekst)
+substr := strings.Join(words[:3], " ")
+fmt.Println(substr)
+```
+
+Dette vil gi følgende output:
+
+```
+Dette er en
+```
+
+Vi kan også bruke `Substring()` funksjonen til å hente ut en del av en tekststreng basert på et bestemt mønster eller regulært uttrykk. Dette krever litt mer avansert kunnskap om regulære uttrykk, men det er nyttig å ha en forståelse av det når du jobber med tekstbehandling i Go.
+
+# Se også
+
+- [Dokumentasjon om `Substring()` funksjonen](https://golang.org/pkg/strings/#Substring)
+- [Flere eksempler på å ekstrahere substringer i Go](https://gobyexample.com/slicing)
+- [Lær mer om regulære uttrykk i Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)

@@ -1,69 +1,36 @@
 ---
-title:    "C#: 未来や過去の日付を計算する"
+title:    "C#: 未来または過去の日付の計算"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+日付を将来や過去に計算する必要があるのかを説明する1-2文。
 
-日付計算は、特定の日付を指定し、その日付から未来または過去の日付を計算するために使用されます。たとえば、オンライン予約システムでは、ユーザーが将来の日付を指定して予約を確認できるように、日付計算が必要です。
+プログラミングを学ぶ人々や開発者にとって、日付を計算することは重要なスキルです。将来の予定を立てるために、あるいは過去のデータを分析するために、特定の日付を計算する必要があるかもしれません。そのため、日付を正しく計算できるようにすることは、プログラミングの基本的なタスクです。この記事では、C#を使用して日付を計算する方法を紹介します。
 
 ## 方法
-
-日付計算を実施するためには、DateTime構造体とTimeSpanクラスを使用します。まず、DateTimeオブジェクトを作成し、次に必要な日数をTimeSpanオブジェクトとして追加します。最後に、Addメソッドを使用して計算を実行し、結果を出力します。
-
-```C#
-//今日の日付を取得
-DateTime today = DateTime.Today;
-
-//2日後の日付を計算
-TimeSpan addDays = new TimeSpan(2, 0, 0, 0);
-DateTime futureDate = today.AddDays(addDays);
-
-//結果を出力
-Console.WriteLine("今日の日付: {0}", today.ToString("d"));
-Console.WriteLine("2日後の日付: {0}", futureDate.ToString("d"));
-
-/* 出力結果:
-今日の日付: 2021/08/25
-2日後の日付: 2021/08/27
-*/
-```
-
-また、日付の引き算も同じように行うことができます。以下の例では、将来の日付から現在の日付を引いて、残りの日数を計算しています。
+日付を計算する方法は、特定の日付を表すオブジェクトを作成し、そのオブジェクトに対して算術演算を行うことで実現できます。C#のDateTimeクラスを使用すると、日付や時刻を表すオブジェクトを簡単に作成できます。以下の例では、現在の日付から5日後の日付を計算し、その結果を表示する方法を紹介します。
 
 ```C#
-//将来の日付を取得
-DateTime futureDate = new DateTime(2021, 09, 10);
-
-//現在の日付を取得
-DateTime currentDate = DateTime.Today;
-
-//日付の引き算を実行
-TimeSpan remainingDays = futureDate - currentDate; 
-
-//残りの日数を出力
-Console.WriteLine("残りの日数: {0}", remainingDays.Days);
-
-/* 出力結果:
-残りの日数: 16
-*/
+DateTime now = DateTime.Now; //現在の日付を取得
+DateTime futureDate = now.AddDays(5); //現在の日付に5日を足す
+Console.WriteLine(futureDate); //結果を表示
 ```
+
+上記のコードを実行すると、現在の日付から5日後の日付が表示されます。同様に、過去の日付を計算する場合には、DateTimeオブジェクトのAddDaysメソッドの引数にマイナスの値を渡します。
+
+また、DateTimeクラスには他にも多くのメソッドがあり、日付の年や月、曜日などを取得することもできます。詳細な使い方はオンラインドキュメントを参照してください。
 
 ## ディープダイブ
+C#における日付の計算は、実は内部的には数値の計算として行われています。DateTimeオブジェクトは、1月1日を0とした日数として格納されており、その値に対して算術演算を行うことで日付を計算しています。そのため、日付の計算は数学的な知識が必要となる場合もあります。また、DateTimeクラス以外にも、日付の計算を扱うためのライブラリやツールも存在しますので、必要に応じて調べてみてください。
 
-日付計算には様々な方法があります。例えば、指定した日付の一年後や一ヶ月後を計算することもできます。また、DateTime構造体のプロパティやメソッドを使用して、曜日や年齢を計算することもできます。さらに、DateTimeOffsetクラスを使用すれば、タイムゾーンの考慮も行うことができます。
+## はてな
+C#で日付を計算する方法について紹介しましたが、これはプログラミングの基本的なタスクです。日付の計算を行うことで、将来の予定や過去のデータを活用することができます。また、C#だけでなく、他のプログラミング言語でも同様の方法で日付を計算することができますので、ぜひ挑戦してみてください。
 
-日付計算を行う際には、計算方法や扱うオブジェクトによって結果が異なることに注意しましょう。
-
-## 参考リンク
-
-- [Microsoft Docs: DateTime構造体 (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Microsoft Docs: TimeSpanクラス (System)](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-5.0)
-- [日付計算を行うためのC#のTips | TechAcademyマガジン](https://techacademy.jp/magazine/19165)
-- [C#における日付の記述方法についてのtipsまとめ | Qiita](https://qiita.com/rio-operation/items/4d73a5e0506c60751687) 
-
-## もっと詳しく知りたい方へ
-
-日付計算は、開発の様々な場面で必要になる機能です。より詳細な情報を知りたい方は、各リンク先のドキュメントや記事を参考にしてください。また、練習問題を解いて実際にコードを書くことで、より深
+## 関連リンク
+- [C#のオンラインドキュメント](https://docs.microsoft.com/ja-jp/dotnet/csharp/)
+- [C#のDateTimeクラスについて](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=net-5.0)
+- [日付計算に関するライブラリの紹介](https://qiita.com/mazenzj/items/e299fbd9facf982cdb3a)

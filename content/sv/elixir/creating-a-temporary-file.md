@@ -1,37 +1,34 @@
 ---
-title:    "Elixir: Skapa en tillfällig fil"
+title:    "Elixir: Att skapa en tillfällig fil"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför du borde skapa en temporär fil i Elixir
+## Varför
 
-Att skapa temporära filer kan vara en användbar strategi när du bygger applikationer i Elixir. Det kan hjälpa till att hantera dataflöden och temporärt lagra information för att undvika prestandaproblem. I denna blogginlägg kommer vi att gå igenom hur man skapar en temporär fil i Elixir och hur den kan vara till nytta för ditt projekt.
+Att skapa en temporär fil kan vara en användbar funktion när man arbetar med Elixir. Det kan hjälpa till att organisera och hantera viss data eller tillfälliga filer under utförandet av ett program.
 
-## Så här skapar du en temporär fil i Elixir
+## Hur man gör
 
-För att skapa en temporär fil i Elixir, kan du använda funktionen `File.tempfile/1` från `File` modulen. Detta tar emot en filändelse som argument och skapar en unik temporär fil med denna filändelse. Låt oss titta på ett exempel:
-
-```Elixir
-{tempfile, path} = File.tempfile(".txt")
-```
-
-Här kommer `tempfile` att innehålla filnamnet på den skapade filen och `path` kommer att innehålla hela filvägen. Om du vill läsa eller skriva till filen, kan du sedan använda `Path.expand` för att få fullständig sökväg till filen:
+Det finns flera olika sätt att skapa en temporär fil i Elixir. En möjlig metod är att använda funktionen `Tempfile.open()` från biblioteket `:stdlib`. Nedan följer ett exempel på hur man kan använda denna funktion:
 
 ```Elixir
-full_path = Path.expand(path)
-File.write(full_path, "Detta är en temporär fil.")
-File.read(full_path) #=> "Detta är en temporär fil."
+{:ok, file} = Tempfile.open("myfile.txt")
+IO.puts("Skapade en temporär fil vid sökvägen: #{file.path}")
 ```
 
-## Deep Dive: Skapande av en temporär fil i detalj
+Output av detta exempel skulle vara: `Skapade en temporär fil vid sökvägen: /tmp/myfile20190520-12345-18we9lu.txt`
 
-När du använder `File.tempfile/1` funktionen skapas en temporär fil i det angivna temporära sökvägade som anges i dina systeminställningar. Om du inte har en sådan sökväg, kommer funktionen att använda den nuvarande arbetskatalogen. Filändelsen du anger kommer att läggas till i filnamnet, tillsammans med en unik identifieringssträng för att garantera att filen är unik.
+## Djupdykning
 
-Om du behöver kontrollera sökvägen för den temporära filen, kan du använda funktionen `File.temp_dir/0` för att hämta den. Detta kan vara användbart om du behöver skapa flera temporära filer eller behöver återanvända sökvägen.
+När man skapar en temporär fil med `Tempfile.open()` så skapas filen i operativsystemets standardtempmapp, vilket i de flesta fall är `/tmp`. Det finns dock möjlighet att specificera en annan sökväg som argument till funktionen om man önskar det.
+
+Denna metod av att skapa en temporär fil är dock inte garanterad att fungera på alla operativsystem. Om man vill ha en mer pålitlig metod så kan man istället använda biblioteket `elan`.
 
 ## Se även
 
-- [Elixir File modul dokumentation](https://hexdocs.pm/elixir/File.html)
-- [Filhandtering i Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
+- [Elixir Tempfile Documentation](https://hexdocs.pm/elixir/Tempfile.html)
+- [Elixir Stdlib Documentation](https://hexdocs.pm/elixir/stdlib.html)
+- [Elixir Elan Documentation](https://github.com/elpunkt/elan)

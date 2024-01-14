@@ -1,45 +1,73 @@
 ---
 title:    "Clojure: Generowanie losowych liczb"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wielu programistów często potrzebuje generować losowe liczby w swoim kodzie. Może to być potrzebne do testowania, symulacji lub prostych gier. W tym blogu dowiesz się, jak wygenerować losowe liczby w języku Clojure i dlaczego jest to ważna umiejętność dla programisty.
+Generowanie losowych liczb jest jednym z ważniejszych aspektów programowania w wielu językach, w tym również w Clojure. Ta umiejętność jest nie tylko niezbędna do tworzenia gier i symulacji, ale także do pracy z dużymi zestawami danych lub testowaniem algorytmów. W artykule tym dowiesz się, jak w prosty sposób generować losowe liczby w Clojure i wykorzystywać je w swoich projektach.
 
 ## Jak to zrobić
 
-Aby wygenerować losową liczbę w języku Clojure, możemy skorzystać z funkcji ```rand```. Oto przykładowy kod:
+Clojure ma wbudowane funkcje, które pozwalają na generowanie losowych liczb w różnych formatach. Jednym z najprostszych sposobów jest użycie funkcji `rand-int`, która generuje losową liczbę całkowitą z podanego zakresu. Spróbujmy wygenerować 10 liczb od 1 do 100 i wyświetlić je w konsoli:
 
 ```Clojure
-(rand) ; wygeneruje losową liczbę z zakresu od 0 do 1
-(rand 10) ; wygeneruje losową liczbę całkowitą z zakresu od 0 do 9
-(rand-int 100) ; wygeneruje losową liczbę całkowitą z zakresu od 0 do 99
+(dotimes [n 10]
+  (println (rand-int 100)))
 ```
 
-Możemy również użyć funkcji ```rand-nth```, aby wylosować jedną wartość z kolekcji lub funkcji ```shuffle```, aby wylosować wszystkie elementy kolekcji w losowej kolejności. Oto przykładowy kod:
+Output:
+
+```
+22
+76
+51
+96
+3
+89
+40
+15
+60
+83
+```
+
+Możesz również wygenerować losową liczbę zmiennoprzecinkową używając funkcji `rand` w następujący sposób:
 
 ```Clojure
-(rand-nth ["jabłko" "gruszka" "banan"]) ; wylosuje losowo jedną z trzech wartości: jabłko, gruszka lub banan
-(shuffle [1 2 3 4]) ; wylosuje wartości z kolekcji w losowej kolejności, np. (4 1 3 2)
+(rand)
 ```
 
-Możemy również ustawić ziarno losowości za pomocą funkcji ```set!.seed```, aby uzyskać powtarzalne wyniki. Oto przykładowy kod:
+Output:
+
+```
+0.437400299644851
+```
+
+Jeśli chcesz wygenerować liczbę zmiennoprzecinkową w określonym zakresie, możesz użyć funkcji `rand-nth`, która przyjmuje kolekcję liczb jako argument i zwraca losową liczbę z tej kolekcji. Na przykład, jeśli chcemy wygenerować losową liczbę z zakresu od 1 do 10, możemy użyć następującego kodu:
 
 ```Clojure
-(set! seed 42) ; ustawienie ziarna na 42
-(rand) ; wygeneruje zawsze tę samą losową liczbę
+(rand-nth (range 1 11))
 ```
 
-## Deep Dive
+Output:
 
-Za każdym razem, gdy wywołujemy funkcję ```rand```, otrzymujemy różną losową liczbę. Ale czy jest ona naprawdę losowa? Otóż nie do końca. Język Clojure używa generatora liczb pseudolosowych, dzięki czemu wyniki są przewidywalne w pewnym stopniu. Jednak zazwyczaj nie jest to problem, jeśli chodzi o prostsze zastosowania. Jeśli jednak potrzebujesz bardziej precyzyjnych i losowych wyników, istnieją biblioteki do generowania liczb losowych w języku Clojure.
+```
+9
+```
+
+## Pełna analiza
+
+Generowanie losowych liczb w Clojure opiera się na generatorach liczb pseudolosowych, które są funkcjami generującymi losowe liczby na podstawie stałych wartości zwanych ziarnem (ang. seed). Dzięki temu, przy każdym uruchomieniu programu, losowe liczby będą generowane w taki sam sposób, co ułatwia debugowanie i testowanie.
+
+Clojure zapewnia również możliwość ustawienia własnego ziarna za pomocą funkcji `set!` i zwraca obecny stan ziarna za pomocą funkcji `get`. To umożliwia kontrolowanie wygenerowanych liczb i odtwarzanie wyników w przypadku potrzeby.
+
+Możliwe jest również wykorzystanie funkcji `shuffle` do losowego ustawienia elementów w kolekcji lub `repeatedly` do wygenerowania określonej liczby losowych elementów z daną funkcją.
 
 ## Zobacz również
 
-- [Oficjalna dokumentacja Clojure do funkcji rand](https://clojure.org/reference/other_functions#rand)
-- [Funkcje generujące losowe liczby w bibliotece clojure.core](https://clojure.org/reference/other_functions#rand-family)
-- [Klasy odwzorowujące zapotrzebowanie na wybieranie losowości w języku Clojure](https://github.com/dakrone/cheshire-clojure)
-- [Biblioteka do generowania złożonych liczb losowych w języku Clojure](https://github.com/gfredericks/random)
+ - Oficjalna dokumentacja Clojure na temat generowania losowych liczb: https://clojure.org/guides/random_numbers
+ - Przykładowe projekty wykorzystujące generowanie losowych liczb w Clojure: https://github.com/otann/random-source-clj, https://github.com/lorentzkim/clojure-random
+ - Wprowadzenie do języka Clojure: https://scastie.scala-lang.org/3tyAsbNoQkyh1P9yUvRnYQ

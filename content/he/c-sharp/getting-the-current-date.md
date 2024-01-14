@@ -1,39 +1,55 @@
 ---
-title:    "C#: לקבלת התאריך הנוכחי"
+title:    "C#: לקבלת תאריך נוכחי"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-אתנחדד למתקדם נערכתה נדרשת התאריך נוכחי? 
+## למה?
 
-מתקדם, אנחנו לפעמים צריכים להשתמש בתאריך הנוכחי בתכניות המתוכנתות שלנו. הוא יכול לשמש כמוניטור זמן בזמן פעולה, לבדיקת הנתיב האותיות שהוכנסו או להדפסת תאריך לאירוע מסוים.
+קבלת תאריך נוכחי בתכנות נעשה בדרך כלל כדי לצרכי רישום ולבצע פעולות חשובות בתכנית. נצטרך לזוז ממצב רגיל שהנוכחי לא יתקיים או לשלוט על פעולות בתכנית בתאריך ספציפי.
 
- איך לעשות זאת
-
-בדרך כלל, מתוך החלון תוכנה, תנועת העכבה מוחתמת את התירגום הוא מביא לזוטות הזמן והתאריך עדכון נכון. אם אתם משתמשים בשפת C#, ישנם כמה דרכים שונות להשיג את התאריך הנוכחי. אחת הדרכים הפשוטות ביותר היא להשתמש בפעולת "DateTime.Now". הנה מסכת קוד קטנה כדי להדגים איך לעשות את זה:
+## איך לעשות?
 
 ```C#
-using System;
+//שם משתנה לאחסון התאריך הנוכחי
+DateTime currentDateTime = DateTime.Now;
 
-namespace CurrentDate
-{
-  public class Program
-  {
-    public static void Main()
-    {
-      DateTime currentDateTime = DateTime.Now;
-      Console.WriteLine("The current date and time is: {0}", currentDateTime);
-    }
-  }
-}
+//שימוש במתודה ToString על מנת להציג את התאריך בפורמט שלנו (מומלץ ללמוד את כל האפשרויות הקיימות)
+Console.WriteLine(currentDateTime.ToString("dd/MM/yyyy"));
+
+//הצגת התאריך בפורמט שלך עם שעות ודקות
+Console.WriteLine(currentDateTime.ToString("dd/MM/yyyy HH:mm"));
+
+//מנגד, נצטרך לשנות את התאריך לערך מספרי כמו 0.5 של יום
+DateTime newDateTime = currentDateTime.AddDays(0.5);
+Console.WriteLine(newDateTime.ToString("dd/MM/yyyy HH:mm"));
+
+//ניתן גם לגשת לערכי התאריך כחלקים נפרדים לדוגמה שנים, חודשים וימים
+Console.WriteLine(currentDateTime.Year);
+Console.WriteLine(currentDateTime.Month);
+Console.WriteLine(currentDateTime.Day);
+
+//מתודות נוספות: AddHours, AddMinutes, AddSeconds וכו'.
 ```
 
-פלט:
+**פלט:**
 
 ```
-See Also
+17/11/2021
+17/11/2021 14:00
+18/11/2021 02:00
+2021
+11
+17
+```
 
-* https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now
-* https://www.geeksforgeeks.org/datetime-now-property-method-in-c-sharp/
-* https://www.tutorialsteacher.com/csharp/csharp-datetime
+## כולל עומק
+
+הפונקציה `DateTime.Now` מחזירה את התאריך הנוכחי הממוחשב מהמחשב המכליל את הזמן האוניברסלי. אופן נוסף לקבלת התאריך הנוכחי הוא להשתמש בפונקציה `DateTime.UtcNow` אשר מחזירה את התאריך הנוכחי הממוחשב מהמחשב כך שיולד באוניברסלי. יתר על כן, ניתן להשתמש בפונקציות נוספות כמו `IsLeapYear` לבדיקת שנת מעבר, `Now-AddMonths` לצירוף חודשים לתאריך הנוכחי ועוד.
+
+## ראה גם
+
+- [תיעוד רשמי בנוגע לפונקציות DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [ארגומנטים פופולרי

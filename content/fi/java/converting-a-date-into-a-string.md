@@ -1,67 +1,43 @@
 ---
-title:    "Java: Päivämäärän muuntaminen merkkijonoksi."
+title:    "Java: Päivämäärän muuttaminen merkkijonoksi"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Jokaisella Java-ohjelmoijalla on joskus ollut tarve muuttaa päivämäärä merkkijonoksi. Tämä voi olla tarpeen esimerkiksi tulostettaessa päivämäärää käyttäjälle tai tallennettaessa sitä tietokantaan. Tässä blogikirjoituksessa näytän, miten tämä onnistuu helposti Java-kielellä.
+Monissa ohjelmointiprojekteissa on tarpeen muuttaa päivämäärä merkkijonoksi, jotta se voidaan helposti esittää käyttäjälle tai tallentaa tietokantaan. Tämä voi olla hyödyllistä esimerkiksi kalenteri-sovelluksissa tai laskutusjärjestelmissä. Tämä blogiteksti keskittyy siihen, kuinka muutat päivämäärän merkkijonoksi käyttäen Java-kielen ominaisuuksia.
 
-## Miten
+## Kuinka tehdä se?
 
-Muuttaaksesi päivämäärän merkkijonoksi Java-kielellä, tarvitset kaksi asiaa: päivämäärä-objektin ja muotoilun. Voit luoda päivämäärä-objektin esimerkiksi käyttämällä `Date`-luokkaa. Muotoilun voit määrittää haluamallasi tavalla käyttämällä `SimpleDateFormat`-luokkaa. Käyttämällä näitä kahta yhdessä, voit muuttaa päivämäärän helposti merkkijonoksi.
-
-Esimerkiksi, jos haluamme muuttaa nykyisen päivämäärän merkkijonoksi esimerkiksi muodossa "dd/MM/yyyy", voimme käyttää seuraavaa koodia:
+Java tarjoaa useita erilaisia tapoja muuttaa päivämäärä merkkijonoksi, mutta yksi yksinkertaisimmista tavoista on käyttää SimpleDateFormat-luokkaa. Tämä luokka mahdollistaa päivämäärän muuttamisen halutunmuotoiseksi merkkijonoksi. Alla on esimerkki koodista, joka muuttaa tänään olevan päivämäärän merkkijonoksi muodossa "dd/MM/yyyy".
 
 ```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+Date today = new Date();
+String dateStr = formatter.format(today);
+System.out.println(dateStr);
 
-public class DateToStringExample {
-
-  public static void main(String[] args) {
-    Date date = new Date();
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    String dateString = dateFormat.format(date);
-    System.out.println(dateString);
-  }
-}
 ```
+Tulostus: 18/06/2021
 
-Tämän koodin tulostus olisi esimerkiksi "05/05/2021", jos päivämäärä on toukokuun 5. päivä vuonna 2021.
+Tässä esimerkissä käytetään yksinkertaista päivämäärän muotoiluohjetta "dd/MM/yyyy", mutta SimpleDateFormat-luokka tarjoaa myös muita vaihtoehtoja, kuten kirjainten lisäämisen merkiksi kuukauden tai viikonpäivän nimen näyttämistä varten. Voit lukea lisää SimpleDateFormat-luokasta Javan virallisesta dokumentaatiosta.
 
-On tärkeää huomata, että muotoilun merkkijonoa voidaan muokata haluamallasi tavalla. Esimerkiksi "dd/MMM/yyyy" muotoilu tulostaisi kuukauden lyhenteen sijaan numeron.
+## Syvällinen sukellus
 
-Käyttämällä tätä metodia, voit muuttaa päivämäärän haluamaasi muotoon ja tulostaa sen esimerkiksi konsoliin tai tallentaa sen tietokantaan.
+Päivämäärän muuttaminen merkkijonoksi voi olla myös herkkä aihe, sillä päivämäärät ja aikavyöhykkeet voivat aiheuttaa haasteita ohjelmoijille. Java tarjoaa kuitenkin kattavia ja turvallisia tapoja käsitellä päivämääriä. Tässä on joitain tärkeitä asioita, jotka kannattaa muistaa:
 
-## Syvempi sukellus
+- Java 8:ssa esiteltiin uusi LocalDate-luokka, joka tarjoaa helpomman tavan käsitellä päivämääriä ilman aikavyöhykkeiden ongelmia. Tämä on erityisen hyödyllistä, jos työskentelet Java 8:lla ja uudemmilta versioilta. Voit lukea lisää LocalDate-luokasta täältä.
 
-On tärkeää huomata, että `Date`-luokka on vanhentunut ja sitä ei suositella käytettäväksi nykypäivän Java-sovelluksissa. Sen sijaan suositellaan käyttämään uudempia `java.time`-luokkia, kuten `LocalDate` ja `DateTimeFormatter`. Nämä uudemmat luokat tarjoavat paremman tavan hallita päivämääriä ja niiden muotoilua.
+- Jos haluat luoda päivämäärän tietystä aikavyöhykkeestä, voit käyttää Calendar-luokan sijaan ZonedDateTime-luokkaa. Tämä luokka ottaa huomioon aikavyöhykkeet ja tarjoaa tarkemman muunnostavan.
 
-Esimerkiksi, jos haluamme käyttää samoja muotoiluja kuin edellisessä esimerkissä, voimme käyttää seuraavaa koodia:
-
-```Java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-public class DateToStringExample {
-
-  public static void main(String[] args) {
-    LocalDate date = LocalDate.now();
-    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    String dateString = dateFormat.format(date);
-    System.out.println(dateString);
-  }
-}
-```
-
-Tulostus olisi tässäkin tapauksessa "05/05/2021". Kuten näet, uudempi tapa käsitellä päivämääriä on selkeämpi ja helpommin ylläpidettävä.
+- On tärkeää käsitellä päivämääriä turvallisesti, sillä käyttäjät voivat antaa syötteessään erilaisia päivämäärämalleja, jotka voivat aiheuttaa virheitä. Voit käyttää try-catch-lausekkeita tai Java 8:n Optional-luokkaa, joka tarjoaa turvallisemman tavan käsitellä mahdollisesti tyhjiä päivämääräarvoja.
 
 ## Katso myös
 
-- [Java Date Class](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java LocalDate Class](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java DateTimeFormatter Class](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Java SimpleDateFormat -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Java LocalDate -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java ZonedDateTime -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
+- [Java Optional -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html)

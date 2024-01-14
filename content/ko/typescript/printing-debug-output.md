@@ -1,46 +1,52 @@
 ---
-title:    "TypeScript: 디버그 출력 프로그래밍"
+title:    "TypeScript: 디버그 출력 출력"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 디버그 출력문을 사용하는가?
+## 왜
 
-디버그 출력문은 프로그래밍에서 매우 유용합니다. 디버그 출력문을 사용하면 코드의 실행 과정을 추적하고 중간에 발생하는 오류를 파악하는데 도움이 됩니다.
+디버그 출력을 출력하는 것에 대해 고민해본 적이 있나요? 프로그램을 디버그 할 때 디버그 출력은 매우 유용한 도구입니다. 디버그 출력은 애플리케이션의 상태와 변수 값을 확인하는 데 도움이 되며 오류를 찾고 수정하는 데에도 매우 유용합니다.
 
-## 사용 방법
+## 방법
 
-```TypeScript
-console.log("안녕하세요!");
-// 콘솔에 "안녕하세요!" 출력
-```
-
-디버그 출력문은 `console.log()` 함수를 이용하여 사용할 수 있습니다. 원하는 메시지를 인자로 전달하여 콘솔에 출력할 수 있습니다. 이렇게 출력된 메시지를 통해 코드가 어떻게 실행되는지를 파악할 수 있습니다.
+디버그 출력을 사용하는 가장 간단한 방법은 console.log() 함수를 사용하는 것입니다. 이 함수는 임의의 변수나 문자열을 콘솔에 출력합니다.
 
 ```TypeScript
-let num1 = 5;
-let num2 = 3;
-console.log(num1 + num2);
-// 콘솔에 "8" 출력
+let num = 5;
+console.log("The value of num is:", num);
 ```
 
-수학 연산과 같은 복잡한 로직에서 디버그 출력문을 사용하면 각 변수의 값을 쉽게 파악할 수 있습니다. 이를 통해 코드를 보다 효율적으로 디버깅할 수 있습니다.
+이 코드는 다음과 같은 출력을 생성합니다.
 
-## 깊이있게 살펴보기
+```
+The value of num is: 5
+```
 
-디버그 출력문을 사용하면 코드의 실행 과정에 대해 깊이있게 분석할 수 있습니다. 이를 통해 프로그램의 동작을 조금 더 정확하게 이해할 수 있습니다. 또한 디버그 출력문을 적절하게 사용하면 코드의 흐름을 따라가는 것이 더욱 쉬워지며, 이는 디버깅 시간을 단축하는데 도움이 됩니다.
+또 다른 유용한 디버그 출력 방법은 아래와 같이 오브젝트나 배열의 내용을 출력하는 것입니다.
 
-디버그 출력문은 프로그래밍에서 가장 기본적이고 유용한 도구 중 하나입니다. 이를 적절하게 활용하면 코드 작성 및 디버깅 과정에서 많은 도움을 받을 수 있습니다.
+```TypeScript
+let fruits = ["apple", "banana", "orange"];
+console.log("Fruits array:", fruits);
+```
 
-# 더 알아보기
+위 코드는 다음과 같은 출력을 생성합니다.
 
-디버그 출력문을 더욱 자세히 알아보려면 아래 링크를 참고해보세요.
+```
+Fruits array: ["apple", "banana", "orange"]
+```
 
-- [JavaScript console - MDN](https://developer.mozilla.org/ko/docs/Web/API/Console)
-- [Using console.log() - W3Schools](https://www.w3schools.com/js/js_debugging.asp)
-- [Debugging - TypeScriptlang.org](https://www.typescriptlang.org/docs/handbook/debugging.html)
+## 딥 다이브
 
-# 참고하기
+딱히 실습 코드가 없어서 굵직하게 내용을 내로 잡아서 써봤습니다.
 
-소스 코드: [GitHub](https://github.com)
+디버그 출력은 프로그램을 디버그할 때 너무나도 유용한 도구입니다. 하지만 디버그 출력을 과도하게 사용하면 코드를 복잡하고 이해하기 어렵게 만들 수 있습니다. 그래서 적절한 장소와 시점에 디버그 출력을 사용하는 것이 중요합니다.
+
+또한 디버그 출력은 단순히 콘솔에 값을 출력하는 것뿐만 아니라 디버그 로그를 파일로 저장하거나, 에러 발생 시 해당 정보를 기록하는 등 다양한 용도로 활용할 수 있습니다. 디버그 출력을 적절히 활용한다면 프로그램을 디버그하는 데 큰 도움이 될 것입니다.
+
+## See Also
+- [TypeScript Official Documentation](https://www.typescriptlang.org/)
+- [Debugging in TypeScript](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+- [The Power of Console Debugging in TypeScript](https://dzone.com/articles/the-power-of-console-debugging-in-typescript)

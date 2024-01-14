@@ -1,41 +1,68 @@
 ---
-title:    "TypeScript: 检查目录是否存在"
+title:    "TypeScript: 检查目录是否存在。"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要进行检查目录是否存在的操作？检查目录是否存在可以帮助我们避免在程序运行过程中遇到意外的错误，比如尝试从不存在的目录中读取文件。
+为什么：为了保证程序的运行顺利，我们经常会需要检查某个目录是否存在。在进行文件操作、配置路径或者加载资源时，检查目录是否存在可以避免出现错误。
 
-如何进行检查：为了检查一个目录是否存在，我们可以使用Node.js的fs模块中的statSync()方法。代码如下所示：
+如何做到：在TypeScript中，我们可以使用内置的Node.js函数`fs.existsSync()`来判断目录是否存在。
+
 ```TypeScript
+// 导入fs模块
 import * as fs from 'fs';
-const directoryPath = '/path/to/directory';
 
-try {
-  // 使用statSync()方法检查目录是否存在
-  const stats = fs.statSync(directoryPath);
-  // statSync()方法返回一个fs.Stats对象，我们可以通过isDirectory()方法来判断是否是一个目录
-  if(stats.isDirectory()){
+// 检查目录是否存在
+if(fs.existsSync('./myFolder')){
     console.log('目录存在');
-  } else {
-    console.log('该路径不是一个目录');
-  }
-} catch (err) {
-  // 如果目录不存在，statSync()方法会抛出一个错误，我们可以在这里进行处理
-  console.error(err);
+}else{
+    console.log('目录不存在');
 }
 ```
 
-深入了解：实际上，检查目录是否存在就是检查我们指定的路径是否存在指向目录的指针。如果目录不存在，就无法创建指向它的指针。这就是为什么我们需要使用statSync()方法来检查目录是否存在。
+输出：
 
-另外，我们也可以使用异步的fs.stat()方法来进行检查，以避免阻塞主线程。
+```
+目录存在
+```
 
-还有一个需要注意的地方是，检查目录是否存在并不意味着它就一定是一个有效的目录，可能它是一个损坏的目录或者是一个权限受限的目录。
+深入了解：`fs.existsSync()`函数的原理是通过调用Node.js的`fs.statSync()`函数来检查目录是否存在。它会返回一个`fs.Stats`对象，其中包含了目录的详细信息。如果目录不存在，则会抛出一个错误。
 
-查看也: 如果你想了解更多关于检查目录是否存在的知识，可以查看下面这些链接：
+除了`fs.existsSync()`，我们也可以使用`fs.accessSync()`函数来检查目录是否存在。它与`fs.existsSync()`的不同之处在于，它会尝试访问目录来检查其权限，因此更适合用来判断是否有权限对目录进行操作。
 
-- Node.js fs模块文档：https://nodejs.org/api/fs.html
-- Node.js fs.Stats文档：https://nodejs.org/api/fs.html#fs_class_fs_stats
-- 如何使用fs模块检查文件和目录是否存在：https://www.digitalocean.com/community/tutorials/nodejs-how-to-use-fs-module
-- fs.stat() vs fs.statSync()：https://www.geeksforgeeks.org/node-js-fs-stat-v2-method/
+```TypeScript
+// 导入fs模块
+import * as fs from 'fs';
+
+// 检查目录是否存在并具有可读权限
+fs.accessSync('./myFolder', fs.constants.R_OK, (err) => {
+    if (err) {
+        console.log('目录不存在或不可读');
+    }else{
+        console.log('目录存在且可读');
+    }
+});
+```
+
+输出：
+
+```
+目录存在且可读
+```
+
+另外，我们还可以使用`fs.mkdirSync()`函数来创建目录，如果目录已存在则会抛出一个错误。因此，在创建目录前，我们可以先使用`fs.existsSync()`或`fs.accessSync()`来判断目录是否存在，避免重复创建目录。
+
+总结：检查目录是否存在可以帮助我们避免不必要的错误，并且在操作文件时可以提高程序的健壮性。在选择使用哪种方法时，可以根据具体需求来决定。
+
+参考链接：
+- [Node.js官方文档 - fs模块](https://nodejs.org/api/fs.html)
+- [Node.js官方文档 - fs.stat](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
+- [CNode - fs.existsSync()的原理](https://cnodejs.org/topic/5ae8e05e038c554f6755c4f0)
+- [CNode - fs.access()用法详解](https://cnodejs.org/topic/5693fa9439efda5c4088ed72)
+
+# 查看也可
+
+- [Node.js官方文档 - fs模块](https://nodejs.org/api/fs.html)
+- [TypeScript官方文档 - Node.js类型声明](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#type-checking-the-module)

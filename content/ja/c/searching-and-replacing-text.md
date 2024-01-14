@@ -1,41 +1,51 @@
 ---
-title:    "C: テキストの検索と置き換え"
+title:    "C: テキストを検索して置換する"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ確認と置換するのか
+## なぜ？
 
-文字列の確認と置換は、プログラミングにおいて非常に一般的な作業です。テキストを検索して特定の文字列を見つけ、別の文字列に置き換えることで、データの整理や編集を行うことができます。例えば、大規模なデータベースから特定の情報を見つけ出したい場合や、文章中のスペルミスを修正したい場合に役立ちます。
+テキストを検索して置換することのメリットは何でしょうか？例えば、大量のテキストファイルやコードを編集する際に、手作業で1つずつ変更するのはとても大変です。しかし、検索と置換を使えば、簡単に一括で変更できます。これにより、時間を節約し、ミスを防ぐことができるのです。
 
 ## 方法
 
-プログラムでテキストの確認と置換を行うには、標準ライブラリのstring.hを使用します。具体的な処理方法は、以下のようになります。
+C言語でテキストの検索と置換を行うには、正規表現という機能を使います。まず、対象となるテキストを読み込んで、任意の文字列を検索して、別の文字列に置換するプログラムを作成します。以下は簡単な例です。
 
 ```C
-// 文字列の定義
-char sentence[] = "私はりんごが好きです。";
+#include <stdio.h>
+#include <string.h>
 
-// 文字列の検索と置換
-char* result = strstr(sentence, "りんご");
-strcpy(result, "バナナ");
+int main() {
 
-// 結果の出力
-printf("%s\n", sentence);
+    // テキストを読み込む
+    char text[100] = "Hello world!";
+    
+    // "world"を"Japan"に置換する
+    char* result = strstr(text, "world");
+    if (result) {
+        strncpy(result, "Japan", strlen("Japan"));
+    }
+    
+    // 結果を表示する
+    printf("%s", text);
+    
+    return 0;
+}
 ```
 
-この例では、最初の文字列から「りんご」を検索し、「バナナ」に置き換えています。その結果、`私はバナナが好きです。`という新しい文章が表示されます。
+実行すると、"Hello Japan!"という結果が出力されます。
 
-## ディープダイブ
+## 深く掘り下げる
 
-文字列の確認と置換には、その他にも便利な関数があります。例えば、strtok関数は文字列を指定したデリミタで分割することができます。また、strchr関数を使用すると、指定した文字が最初に出現するインデックスを返してくれます。
+C言語では、正規表現を使ってさまざまな検索と置換の方法があります。例えば、ワイルドカードを使って複数の文字列を一度に置換することもできます。また、大文字と小文字を区別しないで検索することもできます。
 
-また、正規表現を使えば、より柔軟な確認と置換が可能になります。しかし、正規表現を扱うためにはパターンマッチングの知識が必要になるため、初心者は難しいかもしれません。
+さらに、検索した文字列を変数に代入して、別の関数に渡すことも可能です。これにより、より柔軟なプログラムを作成することができます。
 
-## 参考リンク
+## See Also
 
-- [C言語のstring.h - プログラミング初心者の人のための解説](https://programming-beginner-zeroichi.jp/blog/149/)
-- [C 言語で文字列を置換する](https://marycore.jp/prog/c-lang/replace-string/)
-- [文字列を切り詰める（抜き取る） / pyopyobit](https://pyopyobit.github.io/article/HPg993)
-- [C 言語で文字列を分割する strsep（strtok の代替）](https://marycore.jp/prog/c-lang/replace-string/)
+- [正規表現の基礎](https://qiita.com/shuntaro_tamura/items/d38d1605dbf4c6153b4c)
+- [C言語の文字列操作](https://www.javadrive.jp/c-language/string/index1.html)
+- [文字列の置換プログラムの作り方](https://qiita.com/kymmt90/items/5ef373010451aba83e2b)

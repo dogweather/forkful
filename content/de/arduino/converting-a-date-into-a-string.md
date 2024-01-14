@@ -1,32 +1,47 @@
 ---
-title:    "Arduino: Eine Datumsangabe in einen String umwandeln."
+title:    "Arduino: Eine Datumsangabe in einen String umwandeln"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Ein ständiger Begleiter bei der Programmierung ist die Umwandlung von Daten in verschiedene Formate. Eine häufige Aufgabe ist zum Beispiel das Konvertieren eines Datums in einen String. In diesem Blogpost erfahren Sie, wie Sie dies mit Arduino bewerkstelligen können.
+# Warum
 
-## Wie geht das?
-Um ein Datum in einen String umzuwandeln, müssen wir zuerst das Datum als Integer-Wert erhalten. Dazu können wir die Funktion `millis()` verwenden, welche die Anzahl an Millisekunden seit dem Start des Arduino-Boards zurückgibt. Anschließend können wir diese Zahl in eine Datumsstruktur umwandeln und diese dann in einen String konvertieren.
+Die Umwandlung eines Datums in einen String ist eine häufige Aufgabe bei der Arduino-Programmierung. Dies ist besonders nützlich, wenn man das Datum auf einem Display oder in einer seriellen Schnittstelle ausgeben möchte. In diesem Blogbeitrag werden wir uns anschauen, wie man diese Konvertierung mit Arduino durchführen kann.
+
+# Wie geht das?
+
+Es gibt verschiedene Möglichkeiten, ein Datum in einen String umzuwandeln, aber eine der einfachsten Methoden ist die Verwendung der Funktion `sprintf()`. Diese Funktion ermöglicht es uns, eine Zeichenfolge formatiert zu erstellen, die das Datum enthält. 
 
 ```Arduino
-unsigned long now = millis(); // Millisekunden seit dem Start
-String dateString = ""; // Leerer String, in den das Datum konvertiert wird
- 
-// Umwandlung in eine Datumsstruktur
-tm *date = localtime(&now); 
- 
-// Konvertieren in einen String
-dateString = String(date->tm_mday) + "." + String(date->tm_mon + 1) + "." + String(date->tm_year + 1900);
-Serial.println(dateString); // Ausgabe: z.B. "15.09.2019"
+#include <TimeLib.h> 
+
+void setup(){
+  Serial.begin(9600);
+  setTime(17,15,00,3,9,2021); //Stellt das Datum auf 17:15, 3. September 2021
+}
+
+void loop(){
+  char dateStr[11];
+  sprintf(dateStr, "%02d.%02d.%04d", day(), month(), year()); //Speichert das Datum im Format TT.MM.JJJJ in dateStr
+  Serial.println(dateStr); //Gibt das Datum im seriellen Monitor aus
+  delay(1000);
+}
 ```
 
-## Tiefer gehend
-Die Funktion `localtime()` wandelt die Anzahl an Sekunden seit dem 1. Januar 1970 in eine Datumsstruktur um. Dabei wird die Zeitzone automatisch berücksichtigt. Die umgewandelte Struktur beinhaltet alle Informationen, die für die Konvertierung in einen String benötigt werden. In unserem Beispiel nehmen wir das aktuelle Datum, aber Sie können auch ein beliebiges Datum in Millisekunden angeben und es in einen String konvertieren.
+Wenn wir den obigen Code ausführen, sollten wir im seriellen Monitor das Datum 03.09.2021 sehen. Hier verwenden wir das Format `" %02d.%02d.%04d"`, um das Datum in der Form TT.MM.JJJJ zu erhalten. Wir könnten auch andere Formate wie "TT-MM-JJJJ" oder "JJJJ/MM/DD" verwenden, je nachdem, welche Art von String wir benötigen.
 
-## Siehe auch
-- [The Open Source Arduino Date Library](https://github.com/timreynolds/DateTime)
-- [Umgang mit Zeit und Datum in der Arduino IDE](https://www.arduino.cc/en/Tutorial/BuiltInExamples/TimedAction)
-- [Millisekunden seit Start des Arduino-Boards mit millis()](https://www.arduino.cc/reference/de/language/functions/time/millis/)
+# Tiefer gehend
+
+Um das Datum in einen String umzuwandeln, muss das `TimeLib`-Bibliothek in unserem Sketch hinzugefügt werden. Diese Bibliothek enthält Funktionen, die es uns ermöglichen, Werte wie Stunden, Minuten, Tage, Monate und Jahre zu speichern.
+
+Die Funktion `sprintf()` wird normalerweise verwendet, um ein oder mehrere Variablen in eine Zeichenfolge zu formatieren, indem sie einen Platzhalter für jede Variable verwendet. In unserem Beispiel haben wir `%02d` verwendet, um eine Ganzzahl mit zwei Ziffern darzustellen. Wenn der Tag z.B. einstellig ist, fügt `sprintf()` eine führende Null hinzu, um immer zwei Ziffern anzuzeigen.
+
+Es gibt auch andere Bibliotheken und Funktionen, die verwendet werden können, um ein Datum in einen String umzuwandeln. Es ist wichtig, sicherzustellen, dass das verwendete Format mit den Anforderungen unserer Anwendung übereinstimmt.
+
+# Siehe auch
+
+- [Tutorial: Set Up and Use sprintf() on Arduino](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
+- [Arduino Date and Time Library](https://github.com/PaulStoffregen/Time)
+- [Forum: Formatting dates](https://forum.arduino.cc/index.php?topic=620505.0)

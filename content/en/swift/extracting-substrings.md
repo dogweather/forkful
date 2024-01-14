@@ -1,72 +1,48 @@
 ---
 title:    "Swift recipe: Extracting substrings"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why Extracting Substrings is Useful
 
-Substring extraction is a useful technique in Swift that allows you to work with parts of a string, rather than the entire thing. This can be especially handy when you need to manipulate or analyze certain portions of a larger string. In this blog post, we'll delve into how to extract substrings in Swift.
+Substring extraction is a commonly used operation in programming, and Swift offers a variety of tools to make this task easier. Whether you need to manipulate strings for data processing or user input validation, extracting substrings can save you time and effort.
 
-# How To
+## How To Extract Substrings in Swift
 
-To extract a substring in Swift, you'll first need a string to work with. Let's create a variable called `sentence` and assign it a string value:
+To extract substrings in Swift, we can use the `substring` method or the `range` property. Let's take a look at some coding examples:
 
-```
-var sentence = "Hello, world!"
-```
-
-Now, let's say we want to extract the word "Hello" from this sentence. We can do so by using the `substring` method and specifying the index range we want to extract:
-
-```
-let helloSubstring = sentence.substring(with: 0..<5)
+```Swift
+let word = "Hello World"
+let startIndex = word.startIndex
+let endIndex = word.index(startIndex, offsetBy: 4)
+let extractedSubstring = word[startIndex...endIndex] // Output: "Hello"
 ```
 
-Here, we're using the `substring` method and passing in the index range of 0 to 5, which corresponds to the characters "Hello" in our sentence. This method returns a new string with our desired substring.
+In this example, we first declare a string variable `word` with the value "Hello World". Then, we use `startIndex` to indicate the beginning of the string and `endIndex` to indicate the end of the substring we want to extract. Finally, we use `substring` with the range `startIndex...endIndex` to extract the substring "Hello".
 
-We can also use the `prefix` and `suffix` methods to extract substrings from the beginning and end of a string, respectively. For example, let's extract the first three characters of our `sentence` variable:
+Another way to extract substrings in Swift is by using the `range` property:
 
-```
-let prefixSubstring = sentence.prefix(3)
-```
-
-This will return a substring containing "Hel".
-
-We can also use the `suffix` method in a similar way to extract a substring from the end of a string. For example, let's extract the last four characters of our `sentence` variable:
-
-```
-let suffixSubstring = sentence.suffix(4)
+```Swift
+let sentence = "I love learning Swift"
+let range = sentence.range(of: "love")!
+let extractedSubstring = sentence[range] // Output: "love"
 ```
 
-This will return a substring containing "rld!".
+This method uses the `range(of: )` function to specify the substring we want to extract, and then we use the `range` property to extract the substring "love".
 
-# Deep Dive
+## Deep Dive into Extracting Substrings
 
-There are a few important things to keep in mind when working with substring extraction in Swift. First, the `substring` method and the `prefix` and `suffix` methods all return `Substring` type objects, not `String` type objects. This is because substrings are temporary views into a larger string, and using `Substring` instead of `String` can help with performance.
+There are a few things to keep in mind when extracting substrings in Swift. The first is that `substring` and `range` both use zero-based indexing. This means that the first character in a string is at index 0, the second character is at index 1, and so on.
 
-However, if you need to use the extracted substring for a longer period of time or pass it into a function that takes a `String` parameter, you can convert it using the `String` initializer:
+Additionally, the `substring` method is inclusive of both the start and end indices, while the `range` property is not. This means that if we use `substring` with the range `startIndex...endIndex`, the resulting substring will include the character at the end index. However, if we use `range` with the same range, the resulting substring will not include the character at the end index.
 
-```
-let helloString = String(helloSubstring)
-```
+Furthermore, Swift also offers the `prefix` and `suffix` methods for extracting substrings from the beginning and end of a string, respectively. These methods take in a parameter indicating the number of characters to extract and return a substring of that length.
 
-Additionally, it's important to be mindful of the index ranges when using these methods. The starting index is inclusive, but the ending index is exclusive. This means that if you want to extract a substring including the first and last characters, you would need to add +1 to the index range:
+## See Also
 
-```
-let helloSubstring = sentence.substring(with: 0..<6) // returns "Hello,"
-```
-
-Lastly, it's worth mentioning that Swift has a convenient way to extract substrings based on a specific character or string instead of using index ranges. This can be achieved using the `components(separatedBy:)` method:
-
-```
-let words = sentence.components(separatedBy: ",") // returns ["Hello", " world!"]
-```
-
-# See Also
-
-To learn more about working with strings in Swift, check out these resources:
-
-- [Apple's official documentation on string manipulation](https://developer.apple.com/documentation/swift/string_manipulation)
-- [String manipulation in Swift - a beginner's guide](https://www.hackingwithswift.com/articles/155/string-manipulation-in-swift-a-beginners-guide)
-- [Substring and subscripting in Swift](https://www.swiftbysundell.com/articles/substring-and-subscripting-in-swift/)
+- [String Manipulation with Swift](https://www.hackingwithswift.com/articles/162/how-to-use-string-interpolation-in-swift)
+- [Working with Substrings in Swift](https://www.appcoda.com/swift-string-substring/)
+- [Swift String Cheat Sheet](https://academy.realm.io/posts/tryswift-mikkoswift-string-cheat-sheet/)

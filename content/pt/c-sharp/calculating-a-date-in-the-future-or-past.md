@@ -1,53 +1,94 @@
 ---
-title:    "C#: Calculando uma data no futuro ou no passado"
+title:    "C#: Calculando uma data no futuro ou no passado."
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que calcular uma data no futuro ou passado?
+## Por que
 
-Calcular uma data no futuro ou passado é uma habilidade útil para qualquer programador. Isso pode ser útil em situações como criar um sistema de reserva de passagens aéreas, agendar eventos ou simplesmente acompanhar datas importantes em um calendário. Em alguns casos, também pode ser necessário determinar se um determinado dia é um feriado ou não.
+Calcular datas no futuro ou no passado pode ser uma tarefa importante em muitos projetos de programação. Por exemplo, em aplicações que envolvem agendamentos, é necessário saber quando uma tarefa será realizada ou quando um evento passou ou acontecerá no calendário. Aprender a calcular datas pode ser útil em diversas situações e é uma habilidade importante para programadores.
 
-## Como fazer isso em C#
+## Como fazer
 
-Aqui estão alguns exemplos simples de como calcular uma data no futuro ou passado usando o C#.
+A linguagem de programação C# possui diversas funções e métodos que facilitam o cálculo de datas no futuro ou no passado. Vamos ver algumas maneiras de como fazer isso utilizando exemplos de código, utilizando o formato "```C# ... ```".
 
-```C#
-// Calcular uma data no futuro
-DateTime dataFutura = DateTime.Today.AddDays(7);
-Console.WriteLine("Daqui a uma semana será: " + dataFutura);
+### Calcular data futura a partir de uma data base
 
-// Calcular uma data no passado
-DateTime dataPassada = DateTime.Today.AddDays(-14);
-Console.WriteLine("Duas semanas atrás foi: " + dataPassada);
-
-// Calcular uma data a partir de um número específico de semanas ou meses
-DateTime dataFutura2 = DateTime.Today.AddMonths(3); // Adiciona 3 meses à data atual
-Console.WriteLine("Daqui a 3 meses será: " + dataFutura2);
-
-DateTime dataPassada2 = DateTime.Today.AddWeeks(-2); // Subtrai 2 semanas da data atual
-Console.WriteLine("Há 2 semanas foi: " + dataPassada2);
-```
-
-A saída do código acima será:
+Método 1: Utilizando o método `AddDays()`.
 
 ```
-Daqui a uma semana será: 6/10/2020 12:00:00 AM
-Duas semanas atrás foi: 4/19/2020 12:00:00 AM
-Daqui a 3 meses será: 8/18/2020 12:00:00 AM
-Há 2 semanas foi: 4/12/2020 12:00:00 AM
+C# DateTime dataBase = new DateTime(2021, 10, 19);
+
+// Adicionando 10 dias à data base
+DateTime dataFutura = dataBase.AddDays(10);
+
+Console.WriteLine($"Data base: {dataBase.ToString("dd/MM/yyyy")}");
+Console.WriteLine($"Data futura: {dataFutura.ToString("dd/MM/yyyy")}");
+
+// Output:
+// Data base: 19/10/2021
+// Data futura: 29/10/2021
 ```
 
-## Mais informações sobre calcular uma data no futuro ou passado
+Método 2: Utilizando o operador `+`.
 
-Calculando datas no futuro ou passado pode ser um pouco mais complexo do que apenas adicionar ou subtrair dias ou meses. Em alguns casos, pode ser necessário levar em consideração informações como anos bissextos ou fusos horários. Para isso, o C# oferece métodos específicos para ajudá-lo a lidar com essas situações.
+```
+C# DateTime dataBase = new DateTime(2021, 10, 19);
 
-Um método útil é o `DateTime.AddDays()`, que permite adicionar um determinado número de dias à data atual. Também existem métodos similares para adicionar semanas, meses e anos. Além disso, o C# também possui uma classe `DateTimeOffset`, que pode ser usada para armazenar informações de data e hora em diferentes fusos horários.
+// Adicionando 10 dias à data base
+DateTime dataFutura = dataBase + TimeSpan.FromDays(10);
+
+Console.WriteLine($"Data base: {dataBase.ToString("dd/MM/yyyy")}");
+Console.WriteLine($"Data futura: {dataFutura.ToString("dd/MM/yyyy")}");
+
+// Output:
+// Data base: 19/10/2021
+// Data futura: 29/10/2021
+```
+
+### Calcular data passada a partir de uma data base
+
+Método 1: Utilizando o método `AddDays()`.
+
+```
+C# DateTime dataBase = new DateTime(2021, 10, 19);
+
+// Subtraindo 10 dias da data base
+DateTime dataPassada = dataBase.AddDays(-10);
+
+Console.WriteLine($"Data base: {dataBase.ToString("dd/MM/yyyy")}");
+Console.WriteLine($"Data passada: {dataPassada.ToString("dd/MM/yyyy")}");
+
+// Output:
+// Data base: 19/10/2021
+// Data passada: 09/10/2021
+```
+
+Método 2: Utilizando o operador `-`.
+
+```
+C# DateTime dataBase = new DateTime(2021, 10, 19);
+
+// Subtraindo 10 dias da data base
+DateTime dataPassada = dataBase - TimeSpan.FromDays(10);
+
+Console.WriteLine($"Data base: {dataBase.ToString("dd/MM/yyyy")}");
+Console.WriteLine($"Data passada: {dataPassada.ToString("dd/MM/yyyy")}");
+
+// Output:
+// Data base: 19/10/2021
+// Data passada: 09/10/2021
+```
+
+## Aprofundando no assunto
+
+Além dos métodos mostrados acima, existem muitas outras maneiras de calcular datas no futuro ou no passado utilizando C#. É importante também ter conhecimento sobre formatos de data, variáveis de data especiais e como lidar com datas em diferentes fusos horários.
+
+Para se aprofundar, recomendamos ler a documentação oficial do C# sobre datas e também explorar os métodos disponíveis na classe `DateTime`.
 
 ## Veja também
 
-Aqui estão alguns links úteis para aprender mais sobre como calcular datas no futuro ou passado usando o C#:
-
-- [Documentação oficial do C# sobre datas e horas](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/numbers-and-dates/dates-and-times)
-- [Tutorial da Microsoft sobre como trabalhar com datas e horas em C#](https://docs.microsoft.com/pt-br/dotnet/standard/datetime/)
+- [Documentação oficial do C# sobre datas](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-5.0)
+- [Lista de métodos disponíveis na classe `DateTime`](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-5.0#methods)

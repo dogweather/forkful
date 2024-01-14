@@ -1,51 +1,59 @@
 ---
-title:    "PHP: Lesing av kommandolinje-argumenter"
+title:    "PHP: Lesing av kommandolinjeargumenter"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor 
+Hvorfor lese kommandolinje-argumenter i PHP? Det er viktig for å kunne interagere med brukere og skape dynamiske programmer.
 
-Mange veteran-programmerere er vant til å bruke grafiske brukergrensesnitt for å samhandle med sine programmer. Mens dette er en praktisk måte å jobbe på, kan det også være nyttig å lære kommando linje-argumenter som et alternativ. Det er mange fordeler ved å kunne lese og bruke kommando linje-argumenter, inkludert bedre kontroll over programmet og mer effektiv testing. I denne bloggposten skal vi gå gjennom hvordan man kan lese kommando linje-argumenter i PHP.
-
-## Hvordan gjøre det
-
-For å lese kommando linje-argumenter i PHP, kan man bruke det innebygde $_SERVER-variabelen og funksjonen getopt(). La oss se på et enkelt eksempel:
+# Hvordan Du Gjør Det
+For å lese kommandolinje-argumenter i PHP, må du bruke `$_SERVER['argv']` funksjonen. Denne funksjonen returnerer en array av alle argumentene gitt ved kjøring av PHP-skriptet. Her er et eksempel på en enkel måte å skrive ut argumentene og deres tilhørende indekser:
 
 ```PHP
 <?php
-
-// Les inn kommando linje-argumenter
-$options = getopt("u:p:");
-
-// Sjekk om argumentene er satt
-if(isset($options['u']) && isset($options['p'])){
-    // Bruk argumentene i koden din
-    $username = $options['u'];
-    $password = $options['p'];
-    echo "Velkommen, $username!";
-}else{
-    echo "Brukernavn og passord må angis";
+// Les argumentene og skriv dem ut
+foreach ($_SERVER['argv'] as $index => $argument) {
+    echo "Argument " . $index . ": " . $argument . "\n";
 }
-
-?>
 ```
 
-I kodeeksempelet ovenfor bruker vi getopt() til å lese de to argumentene "-u" og "-p". Disse representerer brukernavn og passord og kan brukes i koden til å gjøre relevant handling. Hvis argumentene ikke er angitt, vil en melding bli vist for å minne brukeren om å legge dem til.
+Gitt at du kjører PHP-skriptet fra kommandolinjen med følgende argumenter:
 
-## Deep Dive
+```sh
+php minprogram.php arg1 arg2 arg3
+```
 
-For å forstå mer om kommando linje-argumenter, kan det være nyttig å vite om viktige begrep som "flags" og "options". Flags er som brytere som indikerer at en bestemt handling skal utføres, for eksempel "-v" for å vise versjonsnummeret til programmet. Options er verdier som brukes til å angi spesifikke verdier, for eksempel "-u" for å angi brukernavnet. I koden ovenfor brukte vi både en flag og en option.
+Vil outputen være:
 
-I tillegg til denne grunnleggende funksjonaliteten, er det også mulig å bruke flere kommando linje-argumenter og håndtere dem på ulike måter, for eksempel å samle dem inn i en array og bruke en løkke for å behandle dem. Det er også mulig å bruke regulære uttrykk for å validere argumentene som blir angitt.
+```
+Argument 0: minprogram.php
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+```
 
-## Se også
+Dette viser hvordan du kan få tilgang til og bruke argumentene i PHP-skriptet ditt.
 
-Lær mer om å jobbe med kommando linje-argumenter i PHP ved å sjekke ut disse ressursene:
+# Dypdykk
 
-- [Kommando linje-behandling i PHP](https://www.php.net/manual/en/features.commandline.php)
-- [Brukerkommentarer om getopt()](https://www.php.net/manual/en/function.getopt.php#115139)
-- [Arbeide med kommando linje-argumenter i PHP-enhetstester](https://blog.jetbrains.com/phpstorm/2019/06/unit-testing-cli-applications-with-phpstorm-and-phpunit/)
+I tillegg til å kunne få tilgang til argumentene, kan du også bruke `$_SERVER['argc']` funksjonen for å få antall argumenter som ble gitt ved kjøring av skriptet. Dette kan være nyttig hvis du ønsker å kjøre ulik logikk basert på antall argumenter. Her er et eksempel på hvordan du kan gjøre det:
 
-Lykke til med å implementere kommando linje-argumenter i dine PHP-prosjekter!
+```PHP
+<?php
+// Sjekk antall argumenter
+if ($_SERVER['argc'] == 3) {
+    // Hvis det er tre argumenter kjører vi denne logikken
+    echo "Det er 3 argumenter gitt.";
+} else {
+    // Hvis ikke kjører vi denne
+    echo "Det er ikke 3 argumenter gitt.";
+}
+```
+
+# Se Også
+- [PHP.net - $_SERVER['argv']](https://www.php.net/manual/en/reserved.variables.server.php)
+- [PHP.net - $_SERVER['argc']](https://www.php.net/manual/en/reserved.variables.server.php)
+- [PHP: Getopt - Bruke lange argumenter](https://secure.php.net/manual/en/function.getopt.php) (Engelsk)

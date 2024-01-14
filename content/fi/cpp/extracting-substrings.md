@@ -1,33 +1,40 @@
 ---
-title:    "C++: Alirivien erottelu"
+title:    "C++: Alaohjelmien poimiminen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi sinun kannattaisi aloittaa alimerkkijonojen (substring) muodostaminen C++-ohjelmoinnissa? Alimerkkijonojen muodostaminen on tärkeä taito ohjelmoijalle, sillä se auttaa käsittelemään tekstejä ja merkkijonoja tehokkaammin.
+Substringien erottaminen on hyödyllinen taito, jota tarvitaan usein ohjelmoinnissa. Se mahdollistaa merkkijonojen käsittelyn ja manipuloinnin, mikä on tärkeää monissa ohjelmointitehtävissä. Seuraavassa oppaassa opit kuinka on mahdollista erottaa alimerkkijonoja C++:ssa.
 
-## Miten
+## Kuinka tehdä niin
 
-C++:ssa on olemassa useita tapoja muodostaa alimerkkijonoja. Yksi tapa on käyttää `substr()`-funktiota. Se ottaa kaksi parametria: aloituskohdan ja halutun alimerkkijonon pituuden. Seuraavassa esimerkissä luodaan alimerkkijono "uva" merkkijonosta "univaate".
+Substringsin erottaminen C++:ssa on helppoa. Alla on esimerkki, kuinka erotat alimerkkijonon annetusta merkkijonosta käyttäen `substr()` -funktiota:
 
 ```C++
-string s = "univaate";
-string sub = s.substr(2, 3);
-cout << sub << endl;
+#include <iostream>
+using namespace std;
+
+int main() {
+    string s = "Tämä on esimerkkimerkkijono.";
+    string sub = s.substr(0, 4); //erotetaan ensimmäiset 4 merkkiä
+    cout << sub << endl; //tulostaa "Tämä"
+
+    return 0;
+}
 ```
 
-Tässä tapauksessa tulostuu "uva". On myös mahdollista käyttää `getline()`-funktiota, joka ottaa parametrina halutun alimerkkijonon aloituskohdan ja lopetuskohdan.
+Tässä koodissa `substr()`-funktio ottaa kaksi parametria: ensimmäisen ja viimeisen indeksin, joiden väliseen alueeseen alimerkkijono halutaan erottaa. On tärkeää huomata, että `substr()` palauttaa aina uuden merkkijonon ja ei muuta alkuperäistä merkkijonoa.
 
-## Deep Dive
+## Syvemmälle
 
-Substrngien muodostaminen voi vaikuttaa yksinkertaiselta, mutta C++:ssa siihen liittyy muutamia seikkoja, jotka on hyvä pitää mielessä. Ensinnäkin, `substr()`-funktio palauttaa kopion alimerkkijonosta, eikä itse merkkijonoon tehdä muutoksia. Tämä tarkoittaa, että jos haluat muokata alimerkkijonoa, sinun tulee tallentaa palautettu alimerkkijono uuteen muuttujaan.
-
-Toiseksi, `getline()`-funktio poimii halutun alueen merkkijonosta ja tallentaa sen uuteen muuttujaan. Jos haluat muuttaa alkuperäisen merkkijonon sisältöä, sinun tulee käyttää `setline()`-funktiota.
+On hyödyllistä tietää, miten `substr()`-funktio toimii taustalla. Se ottaa parametrit `unsigned int` tai `size_t` muodossa, joten tarkkaavaisuus on tarpeen, koska negatiivisten kelvottomat arvot johtavat epäloogiseen toimintaan. Lisäksi `substr()` käyttää iteraattoreita erottaakseen alimerkkijonon. Esimerkiksi `substr(3, 5)` ottaa muuttujan alkuperäisestä merkkijonosta, joka alkaa 3. indeksistä ja päättyy 7. indeksiin (mutta ei sisällä sitä).
 
 ## Katso myös
 
-- [C++ - Merkkijonot](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)
-- [String-säiliön käyttö C++:ssa](https://www.cplusplus.com/reference/string/string/useful_functions/)
+- [std::string::substr - C++ Reference](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [C++ Strings - GeeksforGeeks](https://www.geeksforgeeks.org/cpp-strings/)
+- [C++ Standard Library - cppreference.com](https://en.cppreference.com/w/)

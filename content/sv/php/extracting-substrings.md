@@ -1,41 +1,44 @@
 ---
-title:    "PHP: Extrahera delsträngar"
+title:    "PHP: Extrahering av delsträngar"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför extrahera substrings?
 
-Att extrahera substrängar är en vanlig uppgift i programmering och kan vara användbart för att dela upp en lång sträng i mindre delar eller för att söka efter ett visst mönster inuti en sträng. Det är också ett bra sätt att lära sig mer om strängmanipulation i allmänhet.
+Att extrahera substrings är en viktig färdighet i PHP-programmering eftersom det låter dig fånga delar av en textsträng utan att behöva använda hela strängen. Detta gör det möjligt att manipulera, jämföra och analysera texter på ett mer effektivt sätt.
 
-## Hur man gör det
+## Så här extraherar du substrings i PHP
 
-Det finns flera olika sätt att extrahera substrängar i PHP, beroende på dina behov. Här är några exempel på hur du kan göra det:
+För att extrahera en substring i PHP behöver du använda en inbyggd funktion, `substr()`. Denna funktion tar in en sträng, en startposition och en valfri längd som parametrar. Här är ett exempel på hur du skulle använda `substr()` för att extrahera en del av en textsträng:
 
 ```PHP
-// Extrahera en del av strängen från en given position till slutet
-$str = "Hej alla vänner!";
-echo substr($str, 5); // Utmatning: "alla vänner!"
-
-// Extrahera en del av strängen från en given position med en given längd
-echo substr($str, 4, 4); // Utmatning: "alla"
-
-// Extrahera en del av strängen baserat på ett mönster
-$email = "john.doe@example.com";
-$user = substr($email, 0, strpos($email, "@")); // Utmatning: "john.doe"
+$text = "Välkommen till min blogg!";
+$substring = substr($text, 10, 5);
+echo $substring;
 ```
 
-Som du kan se i det sista exemplet, kan du också använda en kombination av andra strängfunktioner som `strpos()` för att hitta substrängar baserat på ett visst mönster.
+I detta exempel kommer substringsen som extraheras från `$text` vara "min blogg". Startpositionen 10 indikerar att vi vill börja extrahera efter det tionde tecknet (räknat från noll) och längden 5 berättar för funktionen att vi vill ha fem tecken i vår extraherade del.
 
-## Deep Dive
+Om du istället inte anger en längd, kommer `substr()` att extrahera hela resten av strängen från och med startpositionen. Här är ett exempel på detta:
 
-En av de vanligaste användningarna av substrängar är att söka efter ett visst mönster i en sträng eller att dela upp en lång sträng i mindre delar. PHP erbjuder flera andra funktioner som kan utföra liknande uppgifter, som `explode()`, `preg_match()` och `str_replace()`. Det är viktigt att förstå skillnaderna mellan dessa funktioner och välja rätt en för dina behov.
+```PHP
+$text = "Ta en kopp kaffe och stanna en stund.";
+$substring = substr($text, 11);
+echo $substring;
+```
 
-En annan intressant användning av substrängar är att manipulera sökvägar i filsystemet. PHP erbjuder en mängd olika filsystemrelaterade funktioner som också kan dra nytta av substrängar, som `basename()`, `dirname()` och `realpath()`.
+Funktionen kommer nu att extrahera allt efter det elfte tecknet, vilket ger oss "kopp kaffe och stanna en stund.". Det är viktigt att komma ihåg att substrings alltid räknas från noll, så i detta fall är det tecknet "k" som är det elfte tecknet.
+
+## Djupdykning i substrings
+
+Det finns ytterligare några koncept som är viktiga att notera när det gäller att extrahera substrings i PHP. En av dessa är negativa startpositioner, vilket låter dig extrahera en del av strängen från slutet istället för från början. Till exempel, om vi skulle använda `-7` som startposition i det första exemplet ovan så skulle vi fått samma resultat som att börja från position 10 då PHP kommer att räkna bakifrån om en negativ siffra används.
+
+En annan viktig aspekt är användningen av enskilda tecken jämfört med byte-positioner när det gäller att extrahera substrings från icke-engelska språk. Detta beror på att tecknen i dessa språk kan ha mer än ett byte och därför måste man använda sig av specifika funktioner för att hantera sådana situationer.
 
 ## Se även
 
-- [PHP substring Dokumentation](https://www.php.net/manual/en/function.substr.php)
-- [PHP strängfunktioner Dokumentation](https://www.php.net/manual/en/ref.strings.php)
-- [PHP filsystemfunktioner Dokumentation](https://www.php.net/manual/en/ref.filesystem.php)
+- [PHP's officiella dokumentation för substrings](https://www.php.net/manual/en/function.substr.php)
+- [En bloggpost om substrings på svenska](https://medium.com/@johanessjostrand/php-substring-571d2f9936e0)

@@ -1,50 +1,55 @@
 ---
 title:    "Go: Generowanie losowych liczb"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto generować losowe liczby?
+## Dlaczego
 
-Generowanie losowych liczb jest nieodłączną częścią programowania, niezależnie od wybranej technologii czy języka. W przypadku Go, jest to szczególnie ważne ze względu na jego wszechstronność i wykorzystywanie do różnych celów. W tym artykule dowiecie się, jak generować losowe liczby w Go i dlaczego jest to przydatne.
+Generowanie losowych liczb jest niezwykle ważnym aspektem programowania, który może być wykorzystywany w różnych aplikacjach i scenariuszach. Może to być przydatne do symulacji, generowania unikatowych identyfikatorów, lub sprawdzania algorytmów. Czytaj dalej, aby dowiedzieć się jak w łatwy sposób wygenerować losowe liczby w języku Go!
 
-## Jak to zrobić?
+## Jak
 
-W Go do generowania losowych liczb wykorzystujemy pakiet `math/rand`. Aby uzyskać dostęp do tej funkcjonalności, musimy go zaimportować:
+```Go
+package main
+
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func main() {
+    // Podstawowa funkcja do generowania losowych liczb
+    fmt.Println(rand.Intn(100)) // wygeneruj liczbę od 0 do 99
+    fmt.Println(rand.Float64()) // wygeneruj liczbę zmiennoprzecinkową od 0.0 do 1.0
+
+    // Aby osiągnąć różne liczby za każdym razem, należy ustawić ziarno (seed)
+    // Dzięki temu funkcja rand będzie korzystać z różnych generatorów
+    // Możesz wybrać dowolną liczbę (np. bieżący czas)
+    rand.Seed(time.Now().UnixNano())
+    fmt.Println(rand.Intn(100))
+
+    // Aby otrzymać liczbę z zakresu 10-50, można wykorzystać następującą formułę:
+    fmt.Println(rand.Intn(50-10) + 10) // generuje liczbę od 10 do 49
+
+    // Ponieważ funkcja rand bazuje na ziarnie, wynik będzie zawsze taki sam
+    // aby uzyskać losowe liczby przy każdym uruchomieniu, należy ustawić zmienne ziarna
+    rand.Seed(time.Now().UnixNano())
+}
 
 ```
-import "math/rand"
-```
 
-Następnie możemy wykorzystać funkcję `Intn()` do wygenerowania losowej liczby całkowitej mniejszej od zadanej liczby. Na przykład, aby wygenerować liczbę od 1 do 10, wykonujemy:
+## Deep Dive
 
-```
-rand.Intn(10) + 1
-```
+Aby głębiej zrozumieć jak działa funkcja rand w języku Go, warto wiedzieć, że bazuje ona na generatorze liczb pseudolosowych. Oznacza to, że wyniki nie są całkowicie losowe, a zależą od ustawionego ziarna. Innymi słowy, jeśli ustawisz takie same ziarno, otrzymasz taką same sekwencję liczb.
 
-Możemy również wygenerować losową liczbę zmiennoprzecinkową w zakresie od 0 do 1 za pomocą funkcji `Float64()`:
-
-```
-rand.Float64()
-```
-
-Warto również wspomnieć o funkcji `Seed()`, która inicjuje generator liczb losowych. Jeśli nie podamy wartości do tej funkcji, generator będzie korzystał z wartości domyślnej, przez co wyniki będą takie same przy każdym uruchomieniu programu. Aby uzyskać różne wyniki przy każdym uruchomieniu, możemy wykorzystać na przykład bieżący czas jako wartość seed:
-
-```
-rand.Seed(time.Now().UnixNano())
-```
-
-## Głębsze zagadnienia
-
-Generowanie losowych liczb w Go może wydawać się proste, jednak warto zwrócić uwagę na kilka aspektów. Po pierwsze, korzystając z funkcji `Intn()`, nie uzyskujemy dokładnie równomiernych liczb w zakresie, ponieważ jest to metoda znana jako generacja pseudolosowa. Oznacza to, że liczby są wygenerowane w nieregularny sposób, ale w sposób zaprogramowany, co w niektórych przypadkach może prowadzić do pewnych wzorców i niepełnej losowości.
-
-Kolejnym aspektem wartym uwagi jest wydajność. Generowanie losowych liczb jest operacją dość kosztowną, szczególnie gdy musimy wygenerować dużą ilość liczb. W takim przypadku warto zastanowić się nad wykorzystaniem dodatkowych bibliotek lub algorytmów, które zapewnią lepszą wydajność.
+Generator pseudolosowy używany w języku Go to Xorshift, opracowany przez George Marsagliata (więcej informacji można znaleźć na stronie https://golang.org/pkg/math/rand/). Kontrolowanie ziarna pozwala na wybór określonej sekwencji liczb i daje większą kontrolę nad wynikami. Jednak należy pamiętać, że dla większości zastosowań generator pseudolosowy jest wystarczający.
 
 ## Zobacz również
 
-- Dokumentacja pakietu `math/rand` w oficjalnej dokumentacji Go: https://golang.org/pkg/math/rand/
-- Przykładowe wykorzystanie generowania losowych liczb w grze w konsoli napisanej w Go: https://github.com/rayhannabi/go-guessing-game
-- Wprowadzenie do podstaw programowania w Go, w tym generowania losowych liczb: https://blog.golang.org/golang-nuts-and-bolts
-
-Dziękujemy za lekturę i zachęcamy do dalszego poznawania języka Go!
+- Dokumentacja języka Go dotycząca funkcji rand: https://golang.org/pkg/math/rand/
+- Wideo tutorial na temat generowania liczb losowych w języku Go: https://www.youtube.com/watch?v=2s6WMIn6fjM
+- Przykłady użycia generowania liczb losowych w języku Go: https://gobyexample.com/random-numbers

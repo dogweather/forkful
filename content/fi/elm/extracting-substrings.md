@@ -1,33 +1,53 @@
 ---
-title:    "Elm: Alaryhmien erottaminen"
+title:    "Elm: Alimerkkijonojen hakeminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Substringien erottaminen tuntuu usein tarpeettomalta tai vaikealta tehtävältä, mutta se voi olla hyödyllistä monissa tilanteissa. Se auttaa esimerkiksi käsittelemään ja muokkaamaan merkkijonoja tarkemmin ja tehokkaammin. Elm tarjoaa yksinkertaisen ja selkeän tavan erottaa substringit, mikä tekee siitä erinomaisen vaihtoehdon tähän tehtävään.
+Miksi joku haluaisi käyttää ohjelmoinnissa erottamisen substansseja? Substringien erottaminen on tärkeä työkalu, joka auttaa manipuloimaan ja käsittelyssä tekstiä. Tämä on erityisen hyödyllistä, kun käsitellään suuria määriä tietoa ja halutaan poimia vain tiettyjä osia siitä.
 
-## Näin teet sen
+## Kuinka
+
+Erottaminen substringeja Elm-kielellä on helppoa! Käytä vain funktiota `String.slice` ja anna sille kolme parametria: merkkijono, alkukohta ja lopetuskohta. Tämä palauttaa alkuperäisestä merkkijonosta osan haluttujen aloitus- ja lopetuspisteiden väliltä.
 
 ```Elm
--- Otetaan esimerkiksi merkkijono "Tervetuloa Elm-maailmaan"
-substring 4 10 "Tervetuloa Elm-maailmaan"
+let merkkijono = "Tämä on esimerkki"
+let osa = String.slice merkkijono 4 9
 
--- Output: "etuloa"
+--Tämä palauttaa "on es" 
+
 ```
 
-Yllä olevassa koodiesimerkissä käytämme `substring` -funktiota erottaaksemme merkkijonon "Tervetuloa Elm-maailmaan" neljännestä indeksistä kuudenteen indeksiin, eli kirjaimet "etuloa". `substring` -funktio ottaa kolme parametria: ensimmäisen indeksin, josta alkaen substring otetaan, viimeisen indeksin, johon asti substring otetaan, sekä merkkijonon, josta substring erotetaan.
+Voit myös käyttää `String.substitute` funktiota, joka korvaa halutut merkit tai merkkijonot toisilla.
 
-## Syvään sukellus
+```Elm
+let merkkijono = "Tämä on esimerkki"
+let uusiMerkkijono = String.substitute "-" " " merkkijono
 
-`substring` -funktion lisäksi Elm tarjoaa myös muita hyödyllisiä funktioita substringien hallintaan. Esimerkiksi `slice` -funktio toimii samalla tavalla kuin `substring`, mutta sen avulla voi määrittää indeksit myös negatiivisina lukuina, mikä helpottaa substringien erottamista lopusta alkuun. `indexOf` -funktio puolestaan palauttaa ensimmäisen esiintymän indeksin halutulle merkkijonolle.
+--Tämä palauttaa "Tämä-on-esimerkki"
+``` 
 
-On myös hyvä huomata, että `substring` -funktio ottaa parametrikseen indeksit merkkien sijainnille, ei itse merkkien lukumäärää. Tämä tarkoittaa sitä, että tietyillä merkeillä, kuten ääkkösillä, voi olla useampi kuin yksi indeksi.
+Voit myös käyttää `String.split` funktiota, joka jakaa merkkijonon annetun merkin tai merkkijonon kohdalta ja palauttaa listan osista.
+
+```Elm
+let merkkijono = "Omena, Banaani, Appelsiini"
+let osat = String.split ", " merkkijono
+
+--Tämä palauttaa ["Omena", "Banaani", "Appelsiini"]
+```
+
+## Syvemmälle
+
+Erottaminen substringeja on tärkeä osa merkkijonojen käsittelyssä, mutta se vaatii myös tarkkuutta. Esimerkiksi, jos aloitus- tai loppukohta eivät ole merkkijonon sisällä, tulee viestinä `String.slice` yrittäessä suorittaa operaatiota.
+
+Lisäksi, kannattaa muistaa että merkkijonat ovat muuttumattomia Elm-kielessä, eli `String.slice` palauttaa uuden merkkijonon sen sijaan että muokkaisi alkuperäistä.
 
 ## Katso myös
 
-- [Substring - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/String#substring)
-- [Slice - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-- [IndexOf - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/String#indexOf)
+- [Elm ohjelmointikieleen virallisilla sivuilla](https://elm-lang.org/)
+- [String-moduulin dokumentointi Elmissä](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm-kielen dokumentointi](https://elm-lang.org/docs)

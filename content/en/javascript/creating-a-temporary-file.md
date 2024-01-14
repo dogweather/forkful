@@ -1,44 +1,60 @@
 ---
 title:    "Javascript recipe: Creating a temporary file"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Create a Temporary File in Javascript?
 
-Creating temporary files can be a necessary task when working on larger projects or dealing with sensitive information. Temporary files allow developers to temporarily store data and clear it after use, helping to protect sensitive information and improve memory management.
+As a programmer, you may have encountered situations where you need to store data temporarily in your program. This could be for various reasons such as caching, data processing, or just temporary storage before permanent storage is available. In such cases, creating a temporary file can be a useful solution. In this blog post, we will explore how to create a temporary file in Javascript and why it can be beneficial.
 
-## How To
+## How To Create a Temporary File in Javascript
 
-To create a temporary file in JavaScript, we can use the `fs` module from Node.js. This module allows us to manipulate files on our system. First, we need to require the `fs` module in our code:
+To create a temporary file in Javascript, we can use the built-in `fs` module. First, we need to require the module in our code:
 
-```javascript
+```Javascript
 const fs = require('fs');
 ```
 
-Next, we can use the `fs.mkdtemp()` function to create a temporary directory and the `fs.writeFileSync()` function to write data to a temporary file within that directory. Here is an example of how we can create a temporary file containing the string "Hello, world!":
+Next, we can use the `fs.mkdtemp` method to create a temporary directory with a unique name. This method takes in two parameters, the prefix for the temporary directory name and an optional options object. The prefix can be any string, but it is recommended to use a prefix that is unique to your program. Here is an example of creating a temporary directory named "myTempDir":
 
-```javascript
-// Create a temporary directory with a prefix of "temp"
-fs.mkdtemp('temp', (err, folder) => {
-   if (err) throw err;
-   // Create a temporary file with the prefix "new-file"
-   const tempFile = `${folder}/new-file.txt`;
-   // Write "Hello, world!" to the temporary file
-   fs.writeFileSync(tempFile, 'Hello, world!');
-   console.log('Temporary file created successfully!');
+```Javascript
+fs.mkdtemp('myTempDir', (err, folder) => {
+  if (err) throw err;
+  console.log('Temporary directory created:', folder);
 });
 ```
 
-After running the code, we should see a new file named "new-file.txt" with the content "Hello, world!" in our temporary directory.
+Once we have our temporary directory, we can create a temporary file inside it using the `fs.writeFile` method. This method takes in the file path and the data to be written. Here is an example of creating a temporary file named "temp.txt" with the content "Hello World!" inside the "myTempDir" directory:
 
-## Deep Dive
+```Javascript
+fs.writeFile(folder + '/temp.txt', 'Hello World!', (err) => {
+  if (err) throw err;
+  console.log('Temporary file created!');
+});
+```
 
-The `fs.mkdtemp()` function can take in a prefix and suffix parameter, which allows us to specify a pattern for the name of our temporary directory. This can be useful when creating multiple temporary files and directories. We can also use the `fs.unlinkSync()` function to delete the temporary file after we are done using it. This helps to clean up our system and improve memory management.
+Now, we have successfully created a temporary file in Javascript.
+
+## Deep Dive into Creating a Temporary File
+
+Behind the scenes, the `fs.mkdtemp` method creates a new temporary directory inside the system's temporary directory and returns its path. This ensures that the temporary directory has a unique name and is not affected by other programs. The `fs.writeFile` method then creates a new file inside this temporary directory.
+
+Once we are done using the temporary file, we can use the `fs.unlink` method to delete it. This ensures that our temporary files do not take up unnecessary space on our system. Here is an example of deleting the temporary file we created in the previous section:
+
+```Javascript
+fs.unlink(folder + '/temp.txt', (err) => {
+  if (err) throw err;
+  console.log('Temporary file deleted!');
+});
+```
 
 ## See Also
 
-- Node.js documentation on `fs` module: https://nodejs.org/api/fs.html
-- Tutorial on creating temporary files in JavaScript: https://www.geeksforgeeks.org/javascript-tutorial-how-to-create-temporary-file-using-node-js/
-- Stack Overflow discussion on best practices for creating temporary files: https://stackoverflow.com/questions/64051291/best-practice-for-creating-temporary-files
+- [fs.mkdtemp documentation](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
+- [fs.writeFile documentation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+- [fs.unlink documentation](https://nodejs.org/api/fs.html#fs_fs_unlink_path_callback)
+
+Now that you know how to create temporary files in Javascript, you can use this knowledge to improve your coding solutions. Happy coding!

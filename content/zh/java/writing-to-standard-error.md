@@ -1,29 +1,44 @@
 ---
 title:    "Java: 写入标准错误"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：写入标准错误是很重要的，因为它可以帮助我们更好地调试我们的代码，及时发现错误并进行修复。
+## 为什么
 
-如何：为了将输出写入标准错误，我们可以使用Java的System类中的static void errorln()方法。下面是一个示例代码：
+很多人在编程的时候可能会遇到写到标准错误的问题，那么为什么要这么做呢？其实，写到标准错误是一种错误处理的方式，它可以帮助我们更好地定位和解决程序中出现的问题。
+
+## 如何进行
+
+首先，我们需要使用Java中的System类来进行写到标准错误。我们可以通过调用System.err.println()方法来实现。下面是一个简单的例子：
 
 ```Java
-System.err.println("这是一个错误信息。");
+public class WriteToStandardErrorDemo {
+  public static void main(String[] args) {
+    System.err.println("This message will be printed to the standard error stream.");
+  }
+}
 ```
-输出结果：
-```
-这是一个错误信息。
-```
 
-深入了解：标准错误是Java中一个重要的概念，它代表着程序中的错误信息输出流。与标准输出不同，标准错误的输出通常是以红色字体显示的，以便程序员可以更容易地区分错误信息和正常输出。此外，标准错误的输出可以重定向到日志文件中，以便在程序发生错误时进行查看和排除。
+运行上面的代码，将会在控制台中打印出相应的信息。
 
-此外，值得注意的是，写入标准错误并不会影响程序的正常运行，它只是作为一个辅助手段来帮助程序员调试代码。
+## 深入了解
 
-另外，如果您对Java中的标准错误还想了解更多，可以查阅官方文档或者参考下面的链接。
+标准错误是一个输出流，它用于输出程序中的错误信息。与标准输出类似，它也可以被重定向到其他地方，比如文件中。此外，我们还可以将它与标准输出流结合起来，通过System.setErr()方法来设置。
 
-另请参阅：
+写到标准错误也是很有用的，比如在我们开发网络应用程序时，我们可以将错误信息输出到服务器日志文件中，方便我们及时发现和解决问题。此外，当我们与其他程序共同使用标准错误流时，可以更好地获取程序间的通信信息。
 
-- [Java官方文档：System类](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [深入理解Java中的标准输入输出](https://www.geeksforgeeks.org/redirection-of-stderr-and-stdout-to-a-file-in-java/)
+## 参考资料
+
+如果你想了解更多关于Java中写到标准错误的相关知识，可以参考以下链接：
+
+- [Java System class (English)](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java I/O (中文)](https://www.runoob.com/java/java-files-io.html)
+- [Java标准输出与标准错误解释 (中文)](https://juejin.im/post/5baeef0de51d450e7245e9e0)
+- [Java System类详解 (中文)](https://www.jianshu.com/p/29919c8dfaac)
+
+## 参见
+
+- [关于Java标准输出 (中文)](https://github.com/Kayoxity/Java-System.out-println-Tutorial/blob/master/README.md)

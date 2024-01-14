@@ -1,40 +1,44 @@
 ---
 title:    "Java: Skriva till standardfel"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför skriva till standardfel?
 
-Att skriva till standard error kan vara till stor hjälp när du felsöker din Java-kod. Genom att skicka felmeddelanden till standard error istället för standard output kan du hålla din kodren renare och lättare att läsa.
+I Java-programmering är standardfel ett sätt att kommunicera fel meddelanden till konsolen eller terminalen. Det kan användas för att felsöka ditt program och hitta buggar. Att skicka felmeddelanden till standardfel är också ett sätt att berätta för användarna om eventuella problem som uppstår under körning av programmet.
 
-## Hur man gör det
+## Hur man skriver till standardfel
 
-Att skriva till standard error i Java är enkelt. Använd bara `System.err.println()` istället för `System.out.println()`. Det här kommer att skriva ut ditt meddelande till standard error istället för standard output.
+För att skicka felmeddelanden till standardfel i Java, används metoden "System.err.println()" där "err" står för "error". Till exempel:
 
-```java
-System.err.println("Det här är ett felmeddelande");
+```Java
+System.err.println("Ett fel har uppstått!");
 ```
 
-Medan standard output skrivs ut i konsolen medan du kör din kod, kommer standard error att skrivas ut till konsolen oavsett om det finns eventuella fel eller inte. Detta är särskilt användbart när du kör din kod i ett skript eller i en annan miljö där standard output inte syns.
+Detta kommer att skriva ut meddelandet "Ett fel har uppstått!" till konsolen eller terminalen.
+
+Utöver att skriva ut en enkel textrad, kan du också inkludera värden från variabler eller objekt i ditt felmeddelande. Till exempel:
+
+```Java
+int a = 5;
+System.err.println("Talet är " + a + " och det här är ett felmeddelande");
+```
+
+Detta kommer att skriva ut "Talet är 5 och det här är ett felmeddelande". På detta sätt kan du ge användare mer specifik information om felet som uppstår.
 
 ## Djupdykning
 
-Att skriva till standard error kan även hjälpa dig att identifiera och åtgärda fel i din kod. Istället för att bara skriva ut felmeddelanden, kan du också använda `System.err` för att skriva ut det faktiska felet som har inträffat.
+Att förstå skillnaden mellan att skriva till standardutdata (standard output) och standardfel är viktigt. Standardutdata används för att skriva ut vanliga meddelanden och resultat från programmet, medan standardfel används för att rapportera fel och problem.
 
-```java
-try {
-    int result = 5 / 0; // det här kommer att kasta ett ArithmeticException
-} catch (ArithmeticException e) {
-    System.err.println("Inte möjligt att dela med noll");
-    e.printStackTrace(System.err); // här skriver vi även ut felet till standard error
-}
-```
+Du kan också använda try-catch block för att hantera felmeddelanden och skriva dem till standardfel. Detta ger dig mer kontroll över hur felet hanteras och visas för användarna.
 
-Det finns många andra användbara metoder som `System.err` har att erbjuda för att hantera fel i din kod. Det är värt att kolla in Java-dokumentationen för att lära dig mer om dessa.
+Det är också viktigt att se till att ditt program hanterar alla typer av fel och skriver dem till standardfel på ett tydligt sätt, så att användarna kan förstå vad som har hänt och hur de kan åtgärda problemet.
 
 ## Se även
 
-- [Java-Dokumentation för System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Java Felsökningshandledning](https://www.oracle.com/technetwork/articles/java/fault-exceptions-139353.html)
+- [Java Try Catch Block](https://www.programiz.com/java-programming/exception-handling)
+- [Java System Class](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/System.html)
+- [Java Output to Console](https://www.w3schools.com/java/java_output.asp)

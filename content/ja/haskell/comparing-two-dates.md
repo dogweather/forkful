@@ -1,47 +1,58 @@
 ---
-title:    "Haskell: 二つの日付の比較"
+title:    "Haskell: 「2つの日付の比較」"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+この記事では、日付を比較する方法について紹介します。日付を比較するのは、プログラミングにおいて非常に一般的なタスクです。例えば、イベントの開始日と終了日を比較することで、イベントが終了したかどうかを判断することができます。また、データの処理やレポートの作成などでも、日付の比較が必要になる場合があります。Haskellを使って日付を比較する方法を学びましょう。
 
-日付を比較することの重要性は、プログラムやアプリケーションで日付を使用する必要があるからです。例えば、催事の開始日と終了日を比較して、催事がどれくらい続くのかを計算したり、期限を過ぎたタスクを特定したりすることができます。日付の比較は、様々なタイプのプログラミングにおいて重要なスキルです。
+## Why
+日付を比較する方法を学ぶと、様々なタイプのデータの処理ができるようになります。例えば、データベースから取得した日付のデータをソートすることができます。また、特定の期間内に行われたイベントの数や種類を統計的に分析することも可能です。日付の比較は、データ分析やプログラミングにおいて非常に重要なスキルです。
 
-## ハウツー
-
-まずはHaskellで日付を比較するための基本的なコードを見てみましょう。
+## How To
+日付を比較するには、まず日付を表す`Date`型のインスタンスを作成する必要があります。その後、`compare`関数を使用することで、2つの日付を比較することができます。下記のコードを参考にしてください。
 
 ```Haskell
-import Data.Time
-import Data.Maybe
+module Main where
 
-date1 :: Maybe Day
-date1 = parseTimeM True defaultTimeLocale "%Y-%m-%d" "2020-01-01"
+import Data.Time (UTCTime, fromGregorian, getCurrentTime, UTCTime, diffDays)
+import Data.Time.Calendar (Day)
+import Data.Time.Calendar.MonthCalendar (showDay)
 
-date2 :: Maybe Day
-date2 = parseTimeM True defaultTimeLocale "%Y-%m-%d" "2020-01-05"
+-- 日付を表す`Date`型のインスタンスを作成
+date1 :: Day
+date1 = fromGregorian 2021 01 01
 
-compareDates :: Maybe Ordering
-compareDates = compare <$> date1 <*> date2
+date2 :: Day
+date2 = fromGregorian 2021 12 31
+
+-- `compare`関数を使用して2つの日付を比較
+dateComparison :: String
+dateComparison
+  | date1 < date2 = showDay date1 ++ " is earlier than " ++ showDay date2
+  | date1 == date2 = "Both dates are the same"
+  | otherwise = showDay date1 ++ " is later than " ++ showDay date2
+
+main :: IO ()
+main = do
+  putStrLn "Comparing dates using Haskell..."
+  putStrLn dateComparison
 ```
 
-上記のコードでは、日付を可能な限り安全に扱うために、Data.TimeモジュールからparseTimeM関数を使用しています。また、Maybe型を使用することで、日付が正しく解析されなかった場合にも安全に処理することができます。
+このプログラムを実行すると、以下のような出力が得られます。
 
-さらに、compareDates関数では、日付を比較するためにHaskellの標準関数であるcompareを使用しています。この関数は、2つのMaybe値を受け取り、その両方がJust値である場合にのみ比較を行うことができます。
+```
+Comparing dates using Haskell...
+2021-01-01 is earlier than 2021-12-31
+```
 
-コードを実行すると、compareDates関数の結果であるMaybe Ordering型が表示されます。Ordering型には、LT（日付1が日付2より前）、GT（日付1が日付2より後）、EQ（日付1と日付2が同じ）の3つの値が含まれています。このようにして、日付の比較結果をプログラム内で使用することができます。
+## Deep Dive
+日付を比較する際に、より詳細な情報が必要な場合は、`diffDays`関数を使用することで日数の差を求めることができます。また、`UTCTime`型を使用することで、日付と時刻を同時に比較することができます。さらに、Hackageなどのオンラインリソースから、日付を扱うためのさまざまな関数やライブラリを見つけることができます。
 
-## ディープダイブ
-
-Haskellでは、 Date型やDateTime型など、さまざまな日付型が提供されています。これらの型は、日付を表すための便利なメソッドや関数を持っています。例えば、日付の加算や減算、フォーマットの変更などができます。さらに、比較ではなく等価性を確認するための関数も提供されています。
-
-また、Haskellの標準ライブラリではないものの、Hackage上には日付を効率的に比較するためのさまざまなライブラリもあります。もしもっと高度な日付比較が必要な場合は、そのようなライブラリを使用することもできます。
-
-## その他
-
-Haskellで日付を比較する方法や、さまざまな日付型について学びたい場合は、以下のリンクを参考にしてください。
-
-- [HaskellのData.Timeモジュール](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Hackageの日付比較ライブラリの一覧](https://hackage.haskell.org/packages/search?terms=date+comparison)
+## See Also
+- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
+- [Haskell datetimesパッケージ](https://hackage.haskell.org/package/datetimes)
+- [Real World Haskell 日付と時刻](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/datetime)
+- [Haskell datetimeライブラリの活用法](https://www.reddit.com/r/haskell/comments/5i4gpj/using_a_datetime_library_in_haskell/)

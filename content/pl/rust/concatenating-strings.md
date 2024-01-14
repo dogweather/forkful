@@ -1,51 +1,46 @@
 ---
 title:    "Rust: Łączenie ciągów znaków"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konkatenacja stringów jest nieodłącznym elementem programowania w języku Rust. Dzięki niej możemy łączyć różne ciągi znaków ze sobą, co jest niezbędne w wielu zastosowaniach. W tym artykule dowiesz się, dlaczego warto poznać tę funkcję oraz jak ją wykorzystać w praktyce.
+W programowaniu często musimy łączyć ciągi tekstu w jedną dłuższą jednostkę. Jest to szczególnie przydatne przy tworzeniu wyświetlania na ekranie lub przy tworzeniu plików tekstowych. W tym wpisie dowiesz się, dlaczego łączenie ciągów tekstu jest ważną umiejętnością i jak możesz to zrobić w języku Rust.
 
 ## Jak to zrobić
 
-Aby skorzystać z konkatenacji stringów w języku Rust, wystarczy użyć operatora `+` i połączyć ze sobą dwa lub więcej ciągów znaków.
+Aby połączyć dwa lub więcej ciągów tekstu w języku Rust, możesz użyć metody `concat` lub operatora `+`. Oto przykładowy kod z użyciem obu tych metod:
 
 ```Rust
-let str1 = "Witaj";
-let str2 = "świecie!";
-
-let result = str1 + " " + str2;
-// Wynik: "Witaj świecie!"
+fn main() {
+    let string1 = "Cześć";
+    let string2 = "połączmy";
+    let string3 = "ciągi";
+    let result = string1.concat(string2).concat(string3);
+    let result2 = string1 + string2 + string3;
+    println!("{}", result);
+    println!("{}", result2);
+}
 ```
 
-Możemy także łączyć zmienne typu `String` z zwykłymi ciągami znaków oraz z innymi zmiennymi typu `String`.
+Oczekiwany wynik:
 
-```Rust
-let str = String::from("Rust");
-let msg = "Język " + str + " jest bardzo wydajny.";
-
-// Wynik: "Język Rust jest bardzo wydajny."
+```
+Cześćpołączmyciągi
+Cześćpołączmyciągi
 ```
 
-Konkatenacja może odbywać się także poprzez metodę `format!`, która pozwala na bardziej zaawansowane manipulacje ze zmiennymi i formatowaniem tekstu.
+Możesz również używać operatora `+=` do łączenia ciągów tekstu ze zmienną, a nawet stosować formatowanie do łączenia z innymi typami danych, takimi jak liczby.
 
-```Rust
-let name = "Anna";
-let age = 28;
-let info = format!("Nazywam się {} i mam {} lat.", name, age);
+## Deep Dive
 
-// Wynik: "Nazywam się Anna i mam 28 lat."
-```
+Kiedy używasz operatora `+` do łączenia ciągów tekstu, język Rust automatycznie przekonwertuje je na typ `String` za pomocą metody `to_string()`. Jest to użyteczne, jeśli chcesz łączyć ciągi tekstu z innymi typami danych. Możesz również użyć metody `push_str()` na zmiennej typu `String`, aby dodać ciąg tekstu na samym końcu, zamiast tworzyć nowy obiekt `String`.
 
-## Dogłębne przeglądanie tematu
+## Zobacz też
 
-Funkcja konkatenacji stringów może być wykorzystywana na wiele różnych sposobów. Możemy jej używać do łączenia tekstu z zmiennymi, tworzenia wyrażeń oraz generowania dynamicznych komunikatów. Warto także pamiętać o obsłudze błędów związanych z nieprawidłowym łączeniem danych różnych typów.
-
-## Zobacz także
-
-- [Dokumentacja Rust na temat konkatenacji stringów](https://doc.rust-lang.org/std/string/struct.String.html#method.add)
-- [Artykuł o manipulacji stringami w Rust na blogu Mozilla](https://blog.mozilla.org/lthomson/2015/05/21/string-manipulation-in-rust/)
-- [Poradnik na temat pracy ze zmiennymi typu String w Rust](https://www.tutorialspoint.com/rust/rust_string_manipulation.htm)
+- Dokumentacja języka Rust: https://doc.rust-lang.org/book/
+- Przewodnik dla początkujących w Rust: https://github.com/rust-lang/rustlings
+- Funkcje string w języku Rust: https://doc.rust-lang.org/std/primitive.str.html

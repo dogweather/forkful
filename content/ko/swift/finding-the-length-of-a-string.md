@@ -1,44 +1,29 @@
 ---
-title:    "Swift: 문자열 길이 찾기"
+title:    "Swift: 문자열의 길이를 찾는 방법"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+# 왜: 문자열의 길이를 찾는 데 참여하는 과정의 의미
+문자열의 길이를 찾는 것은 프로그래밍에 있어서 중요한 단계입니다. 예를 들어, 사용자의 입력값을 처리하기 위해 문자열을 사용하는 경우, 문자열의 길이를 확인해야 합니다. 이를 통해 사용자가 올바른 형식의 입력값을 제공했는지 확인할 수 있습니다.
 
-문자열의 길이를 찾는 것에 대해 관심을 가지는 이유는 다양합니다. 첫째, 문자열의 길이는 문자열을 다룰 때 매우 유용한 정보입니다. 둘째, Swift에서 문자열의 길이를 찾는 방법은 매우 쉽고 간단합니다.
+## 어떻게: Swift로 문자열의 길이를 확인하는 방법
+먼저 문자열을 변수에 할당하고, 이를 이용해 `count` 메소드를 호출합니다. 아래는 간단한 코드 예시입니다.
 
-# 어떻게
-
-Swift에서 문자열의 길이를 찾는 방법은 두 가지가 있습니다. 첫 번째 방법은 `count` 메소드를 사용하는 것입니다. 예를 들어, 다음과 같이 문자열의 길이를 찾을 수 있습니다.
-
-```
-Swift let str = "안녕하세요"
-print(str.count)
-// Output: 5
+```Swift
+let str = "Hello, world!"
+print(str.count) // 결과: 13
 ```
 
-또 다른 방법은 `string` 속성을 사용하는 것입니다. 예를 들어,
+## 깊게 들어가기: 문자열의 길이를 찾는 과정에 대한 더 깊은 정보
+Swift에서 문자열을 다루는 데에는 `String`이라는 자료형을 사용합니다. 이 자료형은 여러 문자들로 이루어진 값의 집합이며, 각 문자는 `Character` 자료형으로 이루어져 있습니다. 따라서 `String` 자료형에서 제공하는 `count` 메소드를 사용하면 문자열의 길이를 쉽게 확인할 수 있습니다.
 
-```
-Swift let str = "Hello there!"
-print(str.length)
-// Output: 12
-```
+# 참고 자료
+* [Swift 문서 - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+* [Swift 기본 문법 강좌 - 문자열 다루기](https://medium.com/@kimyoungwon/3-26-swift-%EC%95%88%EC%A0%84-%EA%B8%B0%EB%B3%B8%EC%97%90%EC%84%9C-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0-3e3885294fa1)
+* [Swift 공식 레퍼런스 - String.count](https://developer.apple.com/documentation/swift/string/2427941-count)
 
-# 딥 다이브
-
-문자열의 길이를 찾을 때 알아둘 몇 가지 중요한 점이 있습니다. 첫째, 문자열에는 `count`와 `length` 모두 포함된다는 것입니다. 둘째, 한글이나 다른 언어의 복합 문자들의 경우, `count` 메소드와 `length` 속성이 다를 수 있습니다. 따라서 어떤 문자열을 다룰 때는 사전에 어떤 메소드나 속성을 사용할 지 정하는 것이 중요합니다.
-
-# 참고
-
-- [Swift 문자열의 길이 구하기](https://blog.eunjin.kr/post/swift-string-length)
-- [Swift 문자열 다루기](https://hyerios.tistory.com/entry/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0)
-- [Swift 문자열 다루기 팁](https://www.swiftdevcenter.com/swift-string-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%ED%89%B4%EC%8A%A4%EC%81%98%EB%A9%B4-%EC%BB%AC%EB%A0%89%EC%85%98-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%90%98%EC%97%88%EB%84%A4-%EC%97%AC%EB%A6%84-%EB%82%B4%EA%B0%80-%EC%B0%BE%EC%9C%BC%EB%A9%B4/)
-
-# 참고
-
-- [Swift 문자열의 길이 구하기](https://blog.eunjin.kr/post/swift-string-length)
-- [Swift 문자열 다루기](https://hyerios.tistory.com/entry/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0)
-- [Swift 문자열 다루기 팁](https://www.swiftdevcenter.com/swift-string-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%ED%89%B4%EC%8A%A4%EC%81%98%EB%A9%B4-%EC%BB%AC%EB%A0%89%EC%85%98-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%90%98%EC%97%88%EB%84%A4-%EC%97%AC%EB%A6%84-%EB%82%B4%EA%B0%80-%EC%B0%BE%EC%9C%BC%EB%A9%B4/)
+## 참조
+[Swift 문서 - 정수타입(Integers)](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID335)

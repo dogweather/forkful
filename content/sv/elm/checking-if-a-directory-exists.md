@@ -1,37 +1,53 @@
 ---
 title:    "Elm: Kontrollera om en katalog finns"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kontrollera om en mapp existerar är en viktig del av att skriva robusta program i Elm. Genom att utföra denna kontroll kan du undvika att programmet kraschar om en angiven mapp inte finns, vilket kan spara tid och frustration i längden.
+Att kontrollera om en katalog finns är en viktig uppgift för Elm programmerare. Det tillåter oss att skapa mer robusta program som kan hantera eventuella fel eller oförutsedda situationer.
 
-## Så här gör du
+## Hur man gör det
 
-För att kontrollera om en mapp existerar i Elm, kan du använda den inbyggda funktionen `Directory.exists`. Denna funktion tar in en sträng som representerar sökvägen till mappen och returnerar en `Result` typ. Om mappen finns returneras `Ok`, annars returneras ett felmeddelande.
+För att kontrollera om en katalog finns i Elm, kan vi använda funktionen `Directory.doesExist` från modulen `Elm.System`, som returnerar en `Result` typ som antingen är `Err` eller `Ok`. Om katalogen finns kommer `Result` att vara `Ok`, annars kommer det att vara `Err`.
 
 ```Elm
-import Directory
+import Elm.System
 
-Directory.exists "mapp/mapp2"
---> Ok
+checkDirectory : String -> Cmd msg
+checkDirectory directory =
+    case Elm.System.doesExist directory of
+        Ok ->
+            -- Katalogen finns och vi kan fortsätta med våra åtgärder
+        Err ->
+            -- Katalogen finns inte och vi behöver hantera detta
 
-Directory.exists "fel/mapp"
---> Err "Cannot find directory: fel/mapp"
 ```
 
 ## Djupdykning
 
-I Elm är utforskning av filsystemet begränsat på grund av säkerhetsfunktioner. Detta är för att hålla språket säkert och förhindra att användare oavsiktligt ändrar filer på deras dator. Därför kan bara innehållet i den aktuella mappen och undermappar nås genom `Directory` -modulen.
+Vad händer om vi bara kollar efter en katalognamn som inte finns? Detta kan leda till att vårt program kraschar eller att vi inte kan hantera problemet på ett lämpligt sätt. För att undvika detta, kan vi använda funktionen `Directory.existsWithParents` som även kontrollerar om eventuella överordnade kataloger existerar.
 
-Om du vill ha mer avancerade metoder för att hantera filsystemet i Elm kan du överväga att använda bibliotek som `elm-file` eller `elm-filepicker`. Dessa bibliotek tillåter dig att göra mer komplexa åtgärder med filsystemet, som att skapa och ta bort mappar eller välja filer från användarens dator.
+```Elm
+import Elm.System
+
+checkDirectory : String -> Cmd msg
+checkDirectory directory =
+    case Elm.System.existsWithParents directory of
+        Ok ->
+            -- Katalogen (och eventuella överordnade) finns och vi kan fortsätta med våra åtgärder
+        Err ->
+            -- Katalogen (eller någon överordnad katalog) finns inte och vi behöver hantera detta
+
+```
+
+Det är också viktigt att notera att funktionerna `doesExist` och `existsWithParents` bara kontrollerar om en specifik katalog finns, och inte andra objekt som kan ha samma namn (t.ex. filer).
 
 ## Se även
 
-- [Elm Language Documentation](https://elm-lang.org/docs)
-- [Elm-lang Discuss Forum](https://discourse.elm-lang.org/)
-- [elm-file](https://package.elm-lang.org/packages/Azazdeaz/elm-file/latest/)
-- [elm-filepicker](https://package.elm-lang.org/packages/arowM/elm-filepicker/latest/)
+- [Elm.System modul](https://package.elm-lang.org/packages/elm/core/latest/Elm-System)
+- [Resolving Errors in Elm](https://guide.elm-lang.org/error_handling/)
+- [Elm Community Packages](https://package.elm-lang.org/)

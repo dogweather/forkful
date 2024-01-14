@@ -1,53 +1,57 @@
 ---
-title:    "C#: Utilizzare le espressioni regolari"
+title:    "C#: Utilizzo delle espressioni regolari"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei un programmatore che si occupa spesso di elaborazione di testo o dati, potresti aver sentito parlare delle espressioni regolari o "regular expressions" in inglese. Questo strumento può sembrare un po' intimidatorio all'inizio, ma imparare a utilizzarlo può semplificare notevolmente il tuo lavoro e risparmiare tempo nella ricerca e manipolazione di testi e dati.
+Se sei un programmatore C# e stai cercando un modo per gestire e manipolare stringhe in modo più efficiente, le espressioni regolari sono lo strumento che fa per te. Con l'uso delle espressioni regolari puoi trovare, sostituire e controllare stringhe con una maggiore precisione e flessibilità rispetto ai metodi tradizionali.
 
-## Come usare le espressioni regolari in C#
+## Come Utilizzarle
 
-Per utilizzare le espressioni regolari in C#, è necessario utilizzare il namespace "System.Text.RegularExpressions". All'interno di questo namespace, è disponibile la classe Regex che fornisce diversi metodi per lavorare con le espressioni regolari.
+Le espressioni regolari sono supportate dal linguaggio C# tramite la classe Regex. Per utilizzarle, è necessario prima creare un'istanza di Regex con il pattern desiderato:
 
-Per creare una nuova istanza di Regex, è possibile utilizzare il costruttore che prende come parametro la stringa della regex. Ad esempio:
-
-```C#
-Regex regex = new Regex(@"\d{2}/\d{2}/\d{4}");
+```
+Regex regex = new Regex(@"([A-Za-z]+)\d+");
 ```
 
-In questo esempio, abbiamo creato una regex per cercare corrispondenze di un formato di data, ovvero due numeri per il giorno, due per il mese e quattro per l'anno, separati da slash ("/").
+Nell'esempio sopra, stiamo cercando parole che iniziano con una lettera e sono seguite da uno o più numeri. Una volta creato un'istanza di Regex, possiamo utilizzarla per eseguire operazioni come il match e la sostituzione:
 
-Per testare se una stringa corrisponde alla regex, è possibile utilizzare il metodo Match() della classe Regex, passando come parametro la stringa da controllare. Ad esempio:
+```
+string input = "Abc123 Def456 Ghi789";
+MatchCollection matches = regex.Matches(input);
 
-```C#
-string testo = "La data di oggi è 10/02/2021";
-Match match = regex.Match(testo);
-
-if(match.Success)
+foreach (Match match in matches)
 {
-    Console.WriteLine("La data è valida!");
-    Console.WriteLine("Giorno: " + match.Groups[1].Value);
-    Console.WriteLine("Mese: " + match.Groups[2].Value);
-    Console.WriteLine("Anno: " + match.Groups[3].Value);
+    Console.WriteLine(match.Value);
 }
+
+string output = regex.Replace(input, "[$1-$1-$2]");
+Console.WriteLine(output);
 ```
 
-In questo caso, il metodo Match() restituirà un oggetto Match contenente le informazioni sulle corrispondenze trovate. Nel nostro esempio, il metodo Success restituirà il valore "true" poiché la data fornita è valida, e accederemo ai gruppi di corrispondenza tramite la proprietà Groups, indicizzando in base alla posizione degli espressioni tra parentesi nella regex.
+L'output per il codice sopra sarà:
 
-## Approfondimento sull'utilizzo delle espressioni regolari
+```
+Abc123
+Def456
+[Abc-Abc-123] [Def-Def-456] [Ghi-Ghi-789]
+```
 
-Le espressioni regolari sono molto più di un semplice strumento per trovare corrispondenze in una stringa. Sono un linguaggio a sé stante, con un set di regole e costrutti che consentono di creare pattern molto specifici per trovare e manipolare testi e dati.
+## Approfondimento
 
-Con le espressioni regolari è possibile cercare non solo corrispondenze perfette, ma anche corrispondenze approssimative tramite l'utilizzo di metacaratteri come il punto (".") che indica qualsiasi carattere, o l'asterisco ("*") che indica che quel carattere o gruppo può apparire 0 o più volte. Inoltre, è possibile utilizzare le parentesi per raggruppare porzioni della regex e accedere a esse tramite i gruppi di corrispondenza.
+Le espressioni regolari possono sembrare spaventose e complicate, ma una volta che le si capisce bene, possono essere uno strumento molto potente per la manipolazione delle stringhe. Ci sono molti metodi e costrutti diversi che possono essere utilizzati nelle espressioni regolari, quindi per sfruttarle al massimo è importante familiarizzare con essi.
 
-Il mondo delle espressioni regolari è vasto e può sembrare un po' complesso all'inizio, ma una volta padroneggiato può diventare uno strumento potente ed efficiente per il tuo lavoro di programmazione.
+I link seguenti offrono tutorial e documentazione utili per imparare di più sulle espressioni regolari in C#:
 
-## Vedi anche
+- [Documentazione Microsoft su Regex](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Tutorial su Regex in C#](https://www.dotnetperls.com/regex)
+- [Guida approfondita su Regex in C#](https://www.codeproject.com/articles/9099/the-30-minute-regex-tutorial)
 
-- [Documentazione ufficiale di Microsoft sulle espressioni regolari in C#](https://docs.microsoft.com/it-it/dotnet/standard/base-types/regular-expressions)
-- [Tutorial sulle espressioni regolari in C# su Codecademy](https://www.codecademy.com/learn/learn-c-sharp/modules/learn-csharp-regular-expressions)
-- [10 esempi di espressioni regolari in C#](https://www.c-sharpcorner.com/article/ten-regular-expression-example-in-C-Sharp/)
+## Vedi Anche
+
+- [Guida all'utilizzo di Regex in C#](https://www.silverlight.it/progetti/regexhelper/)
+- [Regex Tester e Cheat Sheet](https://regex101.com/)

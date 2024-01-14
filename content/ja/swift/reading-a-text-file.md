@@ -1,34 +1,37 @@
 ---
-title:    "Swift: 「テキストファイルの読み込み」"
+title:    "Swift: テキストファイルの読み取り"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-あなたがテキストファイルを読むことに興味を持っているかもしれません。それは、データを解析したり、アプリケーションで使用したりするためです。この記事では、Swiftプログラミング言語でテキストファイルを読む方法を紹介します。
+##なぜ
+テキストファイルを読むことが重要なのかを理解するためには、Swiftプログラミング言語でどのようにテキストファイルを読み込むかを知る必要があります。これは、システムでのデータの保存や処理を行うために必要です。
 
-## 方法
-まず、テキストファイルを読み込むためにファイルマネージャーを作成します。次に、ファイルマネージャーの `contentsOfFile` メソッドを使用してファイルを読み込み、ファイルの内容を `NSString` オブジェクトまたは配列に保存します。例えば、以下のようになります。
+##方法
+まず、テキストファイルを読み込むためには、`String(contentsOfFile:)`メソッドを使用します。このメソッドは、ファイルのパスを引数として取り、ファイルの内容を文字列として返します。
 
-```Swift 
-if let textPath = Bundle.main.path(forResource: "sample", ofType: "txt") {
-    if let textContents = try? String(contentsOfFile: textPath) {
-        let stringArray = textContents.components(separatedBy: "\n")
-        print(stringArray)
-    }
+```Swift
+let path = "sample.txt"
+
+if let content = String(contentsOfFile: path, encoding: .utf8) {
+    print(content)
 }
 ```
 
-このコードの最初の行では、ファイルのパスを取得しています。次に、`contentsOfFile` メソッドを使用してファイルの内容を `NSString` オブジェクトに保存し、`components` メソッドを使用して改行文字で文字列を分割し、配列に保存しています。最後に、配列を出力してファイルの内容を確認できます。
+上記のコードは、"sample.txt"という名前のテキストファイルを読み込み、その内容をコンソールに出力します。
 
-## ディープダイブ
-この記事では、基本的なテキストファイルの読み込み方法を紹介しましたが、テキストファイルの種類やデータの形式によっては、さまざまな方法があります。また、ファイルの読み込みだけでなく、書き込みや編集も可能です。これらの方法を詳しく学び、より高度なテキストファイルの処理を行うことができるようになると、より多くの用途に応用できるプログラムを作成できるでしょう。
+##深堀り
+テキストファイルを読む際には、他のエンコーディングやファイルの形式にも対応することができます。`String(contentsOfFile:, encoding:)`メソッドの第二引数でエンコーディングを指定することができます。また、ファイルの絶対パスを指定することもできます。
 
-## 参考 
-- [Apple公式ドキュメント](https://developer.apple.com/documentation/foundation/filemanager)
-- [テキストファイルの読み込みと書き込み](https://www.ralfebert.de/snippets/ios/swift-3-textfile/#reading-and-writing-text-files)
-- [テキストファイルの改行コードの扱い方](https://stackoverflow.com/questions/33327378/read-a-text-file-line-by-line-in-swift-2)
+さらに、テキストファイルを編集したり、新しい行を追加したりすることも可能です。`write(toFile:, atomically:, encoding:)`メソッドを使用することで、ファイルに書き込むことができます。
 
-## 関連記事 
-[テキストファイルを読み込む際の注意点](https://www.techdoze.net/basic-reading-text-files-in-swift/)
+##参考リンク
+
+- [Swift 公式ドキュメント](https://developer.apple.com/documentation/swift)
+- [テキストファイルを読む | Swiftオンライン入門書](https://www.hackingwithswift.com/samples/text-reader.zip)
+- [ファイルを操作する | Swiftプログラミング入門](https://www.codexa.net/file-operation-basic/)
+- [よく使うファイル操作メソッド一覧 | Sakura1 Blog](https://sakura1.blog.fc2.com/blog-entry-8.html)
+
+##参考になるページ

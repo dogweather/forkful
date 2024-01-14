@@ -1,47 +1,48 @@
 ---
-title:    "Bash: Porównywanie dwóch dat"
+title:    "Bash: Porównanie dwóch dat"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego porównywanie dwóch dat jest ważne?
+# Dlaczego porównywanie dat jest ważne w Bashu?
 
-Porównywanie dat może być bardzo przydatne w wielu różnych sytuacjach. Na przykład, jeśli pamiętasz, że dwa wydarzenia miały miejsce w różnych dniach, ale nie jesteś pewien, który nastąpił wcześniej, możesz użyć porównania dat, aby to ustalić. Możesz również wykorzystać porównanie dat do sprawdzenia, czy określona data jest wcześniejsza lub późniejsza niż inna, co może być ważne w przypadku zadawania terminów lub planowania wydarzeń.
+Porównywanie dat jest jedną z podstawowych czynności w programowaniu w Bashu. Jest to bardzo przydatna i niezbędna umiejętność, ponieważ często musimy porównywać daty w naszych skryptach, aby wykonać konkretne operacje lub zapewnić poprawną kolejność działań. Bez tej umiejętności nasze skrypty mogłyby wykonywać nieprawidłowe operacje, co mogłoby prowadzić do błędów lub nieoczekiwanych wyników.
 
-## Jak porównać dwie daty w Bash?
+# Jak porównywać daty w Bashu?
 
-Porównywanie dat w Bash jest całkiem proste dzięki wbudowanym funkcjom systemowym. W poniższym przykładzie pokazane jest, jak użyć porównania dat w Bash:
+Aby porównywać daty w Bashu, musimy wykorzystać wbudowane polecenie `date` oraz warunkową składnię `if`. Przykładowy kod można zapisać w następujący sposób:
 
-```bash
+```Bash
 #!/bin/bash
 
-date1="2020-09-10"
-date2="2021-01-01"
+# Ustawienie wybranej daty i porównanie jej z aktualną datą
+selected_date="2021-01-01"
+current_date=$(date +"%Y-%m-%d")
 
-if [ "$date1" \< "$date2" ]
-then
-  echo "$date1 jest wcześniejsze niż $date2."
-elif [ "$date1" \> "$date2" ]
-then
-  echo "$date1 jest późniejsze niż $date2."
+# Warunek sprawdzający, czy wybrana data jest większa od aktualnej daty
+if [[ "$selected_date" > "$current_date" ]]; then
+  echo "Wybrana data jest większa niż aktualna data."
+elif [[ "$selected_date" == "$current_date" ]]; then
+  echo "Wybrana data jest równa aktualnej dacie."
 else
-  echo "$date1 i $date2 są tym samym dniem."
+  echo "Wybrana data jest mniejsza niż aktualna data."
 fi
 ```
 
-Kod ten wyświetli wiadomość, która porówna datę1 z datą2 i określi, która jest wcześniejsza. Możesz również zmienić symbole porównania (np. \<, \>, <=, >=) w zależności od twoich potrzeb.
+Po uruchomieniu powyższego skryptu, jeśli wybrana data jest większa od aktualnej, zostanie wyświetlony komunikat "Wybrana data jest większa niż aktualna data". Jeśli jest równa, zostanie wyświetlony komunikat "Wybrana data jest równa aktualnej dacie". W przeciwnym razie, jeśli jest mniejsza, zostanie wyświetlony komunikat "Wybrana data jest mniejsza niż aktualna data".
 
-## Głębszy wgląd w porównywanie dwóch dat
+# Deep Dive: Porównywanie dat w Bashu
 
-W Bash, daty są przechowywane w formacie Epoch, czyli liczba sekund od 1 stycznia 1970 roku. Dzięki temu wbudowana funkcja **date** jest w stanie porównywać daty, ponieważ przekształca one datę do formatu Epoch przed wykonaniem porównania.
+W Bashu istnieje wiele różnych sposobów na porównywanie dat, co może być bardzo przydatne w zależności od naszych potrzeb. Na przykład, jeśli chcemy porównywać daty w różnych formatach, możemy wykorzystać polecenie `date` wraz z opcją `+%s`, która zwraca datę w postaci liczby sekund od początku epoki Unix. Dzięki temu możemy porównywać daty w różnych formatach, np. daty zapisane jako `DD/MM/YYYY` z datami zapisanymi jako `YYYY-MM-DD`.
 
-Możesz również użyć innego formatu daty, takiego jak DD/MM/YYYY, ale musisz najpierw przekształcić go do formatu Epoch przy użyciu innego polecenia, takiego jak **date -d**, aby porównanie działało poprawnie.
+Dodatkowo, możemy również wykorzystać warunkową składnię `[[ $date1 > $date2 ]]`, jeśli chcemy sprawdzić, czy jedna data jest większa od drugiej. Jeśli chcemy sprawdzić, czy jedna data jest wcześniejsza niż druga, możemy wykorzystać operator `<`.
 
-Możesz również porównywać daty z wykorzystaniem operatorów logicznych, takich jak AND (**&&**) i OR (**||**), aby bardziej skomplikowane porównania dwóch dat.
+Możemy także wykorzystać polecenie `date` wraz z opcją `-d`, aby ustawić specyficzną datę i porównać ją z inną datą. Możemy również użyć `date` wraz z opcją `-v`, aby dodać lub odjąć określoną ilość czasu (np. dni, miesięcy, lat) do wybranej daty i porównać ją z inną datą.
 
-## Zobacz również
+Ważne jest, aby pamiętać, że porównywanie dat może być skomplikowane, ponieważ różne formaty dat mogą przejść przez warunki jako prawdziwe, ale faktycznie reprezentować inne daty. Dlatego zawsze należy upewnić się, że wybierane formaty dat są zgodne ze sobą.
 
-- [Porównywanie dat w Bash - Dokumentacja Linux](https://www.linux.org/docs/man1/date.html)
-- [Porównywanie dat w Bash - Tutorial na YouTube](https://www.youtube.com/watch?v=3vLaVYc5cpo)
-- [Skrypty Bash dla początkujących - eBook](https://ebooks.worldofbooks.com/beginners-bash-scripts/)
+# Zobacz też:
+
+- [Dokumentacja polecenia `date` w Bashu](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

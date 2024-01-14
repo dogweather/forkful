@@ -1,32 +1,31 @@
 ---
 title:    "Elixir: Lendo um arquivo de texto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+## Por que ler um arquivo de texto em Elixir?
 
-Ler arquivos de texto é uma tarefa comum em muitas aplicações de programação. Ao ler um arquivo, você pode acessar seu conteúdo e usá-lo nos seus códigos. Isso pode ser útil ao lidar com grandes quantidades de dados ou quando você precisa armazenar informações de forma persistente para uso posterior.
+Ler e manipular arquivos de texto é uma tarefa comum em muitas linguagens de programação, incluindo Elixir. Saber como ler um arquivo de texto pode ser útil para acessar informações salvas em arquivos e processá-las em seu código. Neste artigo, vamos explorar os conceitos básicos de leitura de arquivos de texto em Elixir e como você pode incorporar isso em seus projetos.
 
-## Como ler um arquivo com Elixir
+## Como ler um arquivo de texto em Elixir
 
-Para ler um arquivo de texto em Elixir, podemos usar a função `File.read/1`. Esta função recebe como argumento o caminho completo do arquivo que desejamos ler e retorna uma tupla contendo o status da operação e o conteúdo do arquivo.
+Em Elixir, a leitura de um arquivo de texto pode ser feita usando a função `File.read/2`, que aceita dois argumentos: o caminho do arquivo que você deseja ler e o modo de leitura (por exemplo, `:line` para ler o arquivo linha por linha). Veja um exemplo de como ler um arquivo de texto em Elixir:
 
-```Elixir
-# Exemplo de leitura de um arquivo chamado "exemplo.txt"
-{:ok, file_content} = File.read("path/to/file/exemplo.txt")
+```elixir
+content = File.read("arquivo.txt")
+IO.puts(content)
 ```
 
-Podemos então acessar o conteúdo do arquivo utilizando a variável `file_content` e realizar qualquer operação desejada com ele.
+Neste exemplo, a função `IO.puts` é usada para imprimir o conteúdo do arquivo no console. Você também pode usar a função `File.read!/2` para ler o arquivo diretamente como uma string, sem a necessidade de chamar `IO.puts` para imprimi-lo. Confira a documentação oficial do Elixir para aprender mais sobre as diferentes opções de modo de leitura e como manipular o conteúdo do arquivo.
 
-## Mais sobre a leitura de arquivos
+## Mergulho profundo
 
-Ao ler um arquivo de texto, é importante considerar que o conteúdo será retornado como uma string em UTF-8, independentemente da codificação original do arquivo. Isso pode ser uma vantagem em termos de consistência, mas pode ser um problema se o arquivo contiver caracteres de outra codificação.
-
-Para evitar problemas de codificação, é possível usar a função `File.read!/1` que levanta uma exceção caso haja algum erro na leitura do arquivo. Além disso, também é importante fechar o arquivo após ler seu conteúdo. Isso pode ser feito utilizando a função `File.close/1` após o uso da variável `file_content`.
+Além da função `File.read/2`, existem outras opções disponíveis em Elixir para ler arquivos de texto. Por exemplo, a biblioteca `File` possui a função `stream!/2` que retorna um fluxo de dados do arquivo, permitindo o processamento de grandes arquivos de forma eficiente. Além disso, a biblioteca `File` também oferece funções para escrever e manipular arquivos, tornando-a uma ferramenta útil para gerenciar dados em seu código.
 
 ## Veja também
 
-- [Documentação oficial do Elixir sobre File](https://hexdocs.pm/elixir/File.html)
-- [Leitura de arquivos de texto em Elixir
+- Documentação do Elixir sobre leitura de arquivos: https://hexdocs.pm/elixir/File.html
+- Exemplo de leitura de arquivo no site oficial do Elixir: https://elixir-lang.org/getting-started/introduction.html#file-io

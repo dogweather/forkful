@@ -1,48 +1,43 @@
 ---
-title:    "PHP: 未来または過去の日付の計算"
+title:    "PHP: 将来または過去の日付の計算"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を未来や過去に計算するのか
+「なぜ日付の計算をするのか？」
 
-プログラミングをしていると、現在の日付から未来や過去の日付を計算する必要がある場面があります。例えば、ユーザーの誕生日から年齢を計算する際や、ある日付から1週間後の日付を求める時などが挙げられます。このような場合、日付を計算することで必要な情報を得ることができます。
+日付の計算をする理由はさまざまです。例えば、特定のイベントや記念日を予定する場合や、ある日から何日後にある日付を知りたい場合などが挙げられます。PHPを使えば、未来や過去の日付を簡単に計算することができます。
 
-## 計算方法
+「方法」
 
-日付を計算するには、PHPのdate()関数を使用します。この関数は引数として受け取ったフォーマットに基づいて日付をフォーマットして返してくれます。例えば、以下のコードを実行すると、現在の日付から1週間後の日付が表示されます。
+まずは、``date``関数を使って現在の時刻を取得します。次に、``strtotime``関数を使って未来や過去の日付を計算します。``strtotime``関数は、引数として日付のフォーマットや時間の単位を指定することができます。以下は、ある日から5日後の日付を取得する例です。
 
 ```PHP
-<?php
-
-// 現在の日付から1週間後の日付を求める
-$date = date("Y-m-d", strtotime("+1 week"));
-
-echo $date; // 出力結果：2020-08-20
+$date = date("Y-m-d"); // 現在の日付を取得
+$new_date = strtotime("+5 days", strtotime($date)); // 現在の日付に5日を足して新しい日付を取得
+echo date("Y-m-d", $new_date); // 新しい日付をフォーマットして出力
 ```
 
-このように、date()関数に引数を与えることで、未来や過去の日付を簡単に計算することができます。
+もし、ある日から1週間後の日付を取得したい場合は、下のようにコードを変更します。
 
-## 日付を計算する上でのポイント
+```PHP
+$new_date = strtotime("+1 week", strtotime($date));
+```
 
-日付を計算する際に注意しなければいけないポイントとして、閏年や時差などの影響が挙げられます。例えば、2020年2月29日から1年後の日付を求める場合、単純に365日を足してしまうと2021年3月1日になってしまいます。しかし、2021年は閏年ではないため、正しい日付は2021年2月28日になります。
+同様に、過去の日付を計算することもできます。例えば、ある日から1か月前の日付を取得する場合は、以下のようにコードを書きます。
 
-また、時差が影響する場合もあります。例えば、日本とアメリカのサーバーを使用する場合、日付を表示する際にタイムゾーンを意識しなければなりません。このような細かな部分にも注意して日付を計算することが大切です。
+```PHP
+$new_date = strtotime("-1 month", strtotime($date));
+```
 
-## 詳細について
+「深堀り」
 
-日付を計算する際には、PHPのdate()関数の他にもCarbonやDateTimeなどのライブラリを使用することもできます。これらのライブラリを使用することで、より簡単に日付を計算することができるため、開発効率を向上させることができます。
+PHPでは、``strtotime``関数の引数として有効な日付のフォーマットや時間の単位が多数あります。例えば、``next week``や``+3 months``などの指定方法もあります。また、``strtotime``関数は、UNIXタイムスタンプを作成するための方便でもあります。UNIXタイムスタンプとは、1970年1月1日からの経過秒数のことで、主に日付や時間の計算に用いられます。
 
-また、時差やタイムゾーンを意識する際には、PHPのdate_default_timezone_set()関数を使用することで、必要なタイムゾーンを設定することができます。詳細な話題は専門的な内容になるため、詳しく知りたい方はPHPの日付関数についてのドキュメントを参照してください。
+「参考リンク」
 
-## 参考リンク
-
-- [PHPの日付関数についてのドキュメント](https://www.php.net/manual/ja/book.datetime.php)
-- [Carbon公式ドキュメント](https://carbon.nesbot.com/docs/)
-- [DateTime公式ドキュメント](https://www.php.net/manual/ja/datetimeinterface.format.php)
-- [date_default_timezone_set()関数について](https://www.php.net/manual/ja/function.date-default-timezone-set.php)
-
-## 関連リンク
-
-- [PHPで日付を文字列に変換する方法](https://www.code-academy.info/889/)
+- [date関数の使い方 | PHPマニュアル](https://www.php.net/manual/ja/function.date.php)
+- [strtotime関数の使い方 | PHPマニュアル](https://www.php.net/manual/ja/function.strtotime.php)
+- [UNIXタイムスタンプとは | GeeksforGeeks](https://www.geeksforgeeks.org/javascript-date-object/)

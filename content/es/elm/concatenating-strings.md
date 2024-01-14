@@ -1,44 +1,51 @@
 ---
-title:    "Elm: Concatenando cadenas"
+title:    "Elm: Uniendo cadenas de texto"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-La concatenación de cadenas es una técnica útil en programación Elm que te permite combinar varias cadenas de texto en una sola. Esto puede ser útil para crear mensajes dinámicos, etiquetas personalizadas o incluso para formatear datos.
+
+La concatenación de cadenas es una habilidad importante en la programación, ya que permite unir múltiples cadenas de texto en una sola, facilitando así la manipulación y procesamiento de datos en aplicaciones.
 
 ## Cómo hacerlo
 
-La concatenación de cadenas se puede lograr utilizando el operador "+" o la función `String.concat` en Elm. Veamos algunos ejemplos prácticos:
+Para concatenar cadenas en Elm, podemos usar el operador `++`, que une dos cadenas de texto juntas en una sola. Por ejemplo:
 
-```elm
-nombreCompleto = "Juan" ++ " " ++ "Pérez"
-```
-En este caso, el resultado de `nombreCompleto` sería "Juan Pérez".
-
-```elm
-saludo = "¡Hola" ++ " " ++ nombreCompleto ++ "!"
+```Elm
+"hola" ++ "mundo" == "hola mundo"
 ```
 
-Aquí, el resultado de `saludo` sería "¡Hola Juan Pérez!".
+También podemos usar la función `String.concat`, que toma una lista de cadenas y las une en una sola. Por ejemplo:
 
-También es posible concatenar más de dos cadenas utilizando la función `String.concat`, que toma una lista de cadenas como argumento. Veamos un ejemplo:
-
-```elm
-colores = ["rojo", "verde", "azul"]
-coloresFavoritos = String.concat ["Mis colores favoritos son", String.join ", " colores, "."]
+```Elm
+String.concat ["¡", "Hola", "mundo", "!"] == "¡Hola mundo!"
 ```
-En este caso, el resultado de `coloresFavoritos` sería "Mis colores favoritos son rojo, verde, azul."
+
+Otra forma de concatenar cadenas es usando la función `String.join`, que toma una lista de cadenas y las une con un separador especificado. Por ejemplo:
+
+```Elm
+String.join "-" ["mercurio", "venus", "tierra"] == "mercurio-venus-tierra"
+```
 
 ## Profundizando
-La concatenación de cadenas puede parecer una técnica sencilla, pero es importante entender cómo funciona en Elm. Cuando se utiliza el operador "+", se crea una nueva cadena a partir de las cadenas originales. Esto puede ser costoso en términos de rendimiento y uso de memoria cuando se trata de cadenas largas o de muchas concatenaciones.
 
-Por otro lado, la función `String.concat` es más eficiente en cuanto al rendimiento, ya que utiliza una técnica conocida como "construcción incremental" para concatenar las cadenas. Esto significa que la función agrega cada nueva cadena a la existente en lugar de crear una nueva cadena cada vez. Sin embargo, es importante tener en cuenta que esta función sólo funciona con listas de cadenas y no con cadenas individuales.
+Además de la concatenación simple de dos cadenas, también podemos usar la interpolación de cadenas para construir cadenas más complejas. Esto nos permite insertar valores de variables o expresiones en una cadena. Por ejemplo:
 
-En resumen, la concatenación de cadenas es una técnica útil en programación Elm, pero es importante considerar el rendimiento cuando se trabaja con cadenas largas o muchas concatenaciones.
+```Elm
+"¡Hola, " ++ nombre ++ "!" == "¡Hola, Carlos!"
+```
+
+También podemos usar la función `String.fromInt` para convertir números enteros en cadenas y concatenarlos con otras cadenas. Por ejemplo:
+
+```Elm
+"Este es el número " ++ (String.fromInt 42) == "Este es el número 42"
+```
 
 ## Ver también
-- [Documentación oficial de Elm sobre la concatenación de cadenas](https://guide.elm-lang.org/strings/concatenation.html)
-- [Ejemplos prácticos de concatenación de cadenas en Elm](https://elmprogramming.com/concatenate-strings-elm.html)
-- [Otras técnicas de manipulación de cadenas en Elm](https://medium.com/@Dobiasd/string-manipulation-in-elm-532319a0a281)
+
+- Documentación de Elm sobre concatencación de cadenas: https://package.elm-lang.org/packages/elm/core/latest/String#corncat
+- Ejemplos de concatenación de cadenas en Elm: https://guide.elm-lang.org/types/strings.html#concatenation
+- Tutoriales de Elm en español: https://www.elm-tutorial.org/es/

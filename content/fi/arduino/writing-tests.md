@@ -1,70 +1,80 @@
 ---
 title:    "Arduino: Testien kirjoittaminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-On monia syitä, miksi kirjoitat testejä Arduino-ohjelmille. Näihin kuuluvat mm. koodin virheiden löytäminen ja korjaaminen, uusien ominaisuuksien integroiminen ja varmistaminen, että ohjelma toimii tarkoitetussa laitteessa ja ympäristössä.
+## Miksi kirjoittaa testeja Arduino-ohjelmointiin?
 
-## Kuinka
-Testien kirjoittaminen Arduino-ohjelmille on helppoa. Aluksi sinun tulee määrittää testauksen kohteena oleva funktio tai toiminto. Tämän jälkeen sinun tulee luoda testitapauksia, joissa määritellään odotettu tulostus erilaisille syötteille. Lopuksi voit kirjoittaa koodin, joka ajaa testit ja tulostaa tulokset.
+Testien kirjoittaminen Arduino-ohjelmointiin voi vaikuttaa turhalta ja aikaa vievältä askareelta, mutta se voi todella auttaa välttämään monia ongelmia ja virheitä ohjelmoinnissa. Testit voivat myös parantaa koodin luotettavuutta ja helpottaa sen ylläpitämistä.
+
+## Näin kirjoitat testeja - esimerkki
 
 ```Arduino
-// Alkuperäinen funktio
-int summa(int x, int y) {
-  return x + y;
+// Testattavat funktiot
+int summa(int a, int b) {
+  int tulos = a + b;
+  return tulos;
 }
 
-// Testien alustus
-void setup() {
-  // aseta sarjaportti käyttöön tulosten tulostamista varten
-  Serial.begin(9600);
+int vahenna(int a, int b) {
+  int tulos = a - b;
+  return tulos;
 }
 
-// Yksittäinen testitapaus
-void testi1() {
-  int tulos = summa(2, 3); // kutsu alkuperäistä funktiota
-  // tarkista, onko tulos odotettu 5
+// Testit
+void test_summa() {
+  int tulos = summa(2, 3);
   if (tulos == 5) {
-    Serial.println("Testitapaus 1: läpäisty"); // tulosta tulos sarjaportille
+    Serial.println("Summa-testi läpäisi!");
   } else {
-    Serial.println("Testitapaus 1: epäonnistunut");
+    Serial.println("Summa-testi epäonnistui! Odotettiin 5, saatiin " + String(tulos));
   }
 }
 
-// Yksittäinen testitapaus
-void testi2() {
-  int tulos = summa(2, -3); // kutsu alkuperäistä funktiota
-  // tarkista, onko tulos odotettu -1
-  if (tulos == -1) {
-    Serial.println("Testitapaus 2: läpäisty"); // tulosta tulos sarjaportille
+void test_vahenna() {
+  int tulos = vahenna(5, 2);
+  if (tulos == 3) {
+    Serial.println("Vähennä-testi läpäisi!");
   } else {
-    Serial.println("Testitapaus 2: epäonnistunut");
+    Serial.println("Vähennä-testi epäonnistui! Odotettiin 3, saatiin " + String(tulos));
   }
+}
+
+// Aja testit setup-funktion sisällä
+void setup() {
+  Serial.begin(9600);
+  
+  test_summa();
+  test_vahenna();
 }
 
 void loop() {
-  // kutsu testitapaukset loop-funktion sisällä
-  testi1();
-  testi2();
+
 }
-
 ```
 
+Kun koodi ajetaan, tulostuu Sarjaporttiin seuraava:
+
 ```
-Sarjaportilta tulostuu seuraava tulos:
-Testitapaus 1: läpäisty
-Testitapaus 2: läpäisty
+Summa-testi läpäisi!
+Vähennä-testi läpäisi!
 ```
 
-## Syväsukellus
-Testien avulla voit myös tarkastella ja varmistaa ohjelman rakennetta ja toimintaa. Esimerkiksi voit kirjoittaa testejä eri toiminnoille ja luokille, mikä auttaa hahmottamaan kokonaisuutta ja löytämään mahdollisia ongelmia.
+Tämä tarkoittaa, että molemmat testit suoritettiin oikein ja testattavat funktiot toimivat odotetulla tavalla.
 
-Lisäksi testien avulla voit simuloida ja testata erilaisia olosuhteita ja reaktioita, joita ohjelmasi joutuu kohtaamaan käytön aikana. Tämä auttaa löytämään ja korjaamaan bugeja sekä varmistamaan, että ohjelma toimii mahdollisimman virheettömästi ja luotettavasti.
+## Syvällisempi sukellus testien kirjoittamiseen
+
+Testien kirjoittamisen avulla voidaan varmistaa, että koodi toimii oikein eri tilanteissa ja erilaisten syötteiden kanssa. Se auttaa myös tarkistamaan, että koodi toimii myös muutosten jälkeen ja mahdollisesti aiheuttamatta uusia virheitä.
+
+Testien kirjoittamisen yhteydessä kannattaa miettiä, mitä kaikkia tapauksia halutaan testata ja mitä odotetaan jokaiselta testitulokselta. Testikattavuuden avulla voidaan varmistaa, että kaikki mahdolliset tapaukset on testattu ainakin kerran.
+
+Hyvä käytäntö on myös kirjoittaa testejä ennen varsinaisen koodin kirjoittamista. Tämä auttaa suunnittelemaan ja hahmottamaan koodia paremmin ja voi säästää aikaa ja vaivaa myöhemmin.
 
 ## Katso myös
-- [Arduino - Test Driven Development](https://www.arduino.cc/en/pmwiki.php?id=guide/EnvironmentTestDrivenDevelopment)
-- [How Debugging works on Arduino](https://www.arduino.cc/en/Guide/EnvironmentDebugging)
-- [Testing and Debugging Arduino Programs](https://www.arduino.cc/en/Tutorial/BuiltInExamples/TestingAndDebugging)
+
+* [Arduinon testaussivusto](https://www.arduino.cc/en/Guide/Arduinouno)
+* [Johdanto testiautomaatioon Arduino-ohjelmoinnissa](https://learn.sparkfun.com/tutorials/testing-arduino-code-in-the-arduino-ide/all)
+* [Testauskirjastot Arduinolle](https://github.com/Testato/Testing?_pjax=%23js-repo-pjax-container#unit-testing-libraries)

@@ -1,30 +1,36 @@
 ---
-title:    "Rust: नियमित अभिव्यक्तियों का उपयोग"
+title:    "Rust: नियमित अभिव्यक्तियों का उपयोग करना"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों 
 
-रेगुलर एक्सप्रेशन्स का उपयोग करने से आपको एक शक्तिशाली और असाधारण तरीके से पाठ तराशने की क्षमता मिलती है। यह आपको टेक्स्ट स्ट्रिंग में खोज, बदलाव और फ़िल्टर करने में मदद करता है। रेगुलर एक्सप्रेशन्स का उपयोग आपको अपने कोड को निर्देशित करने और इसे अधिक पारदर्शी बनाने में मदद करता है।
+Regular expressions उस सभी के लिए महत्वपूर्ण हैं जो programming में लगे होते हैं। ये उन्हें टेक्स्ट मैनिपुलेशन को आसान और तेज़ बनाते हैं। 
 
-## कैसे करें
+## कैसे
 
-आप रेगुलर एक्सप्रेशन्स को अर्थपूर्ण बनाने के लिए ```Rust``` code blocks के भीतर सीख सकते हैं। यह वस्तुओं की कुंजित क्रियाओं के साथ पसंदीदा टेक्स्ट स्ट्रिंग में मिलाना और पाता खेलने में मदद करता है। नीचे दिए गए उदाहरण आपको रेगुलर एक्सप्रेशन्स का उपयोग करने का तरीका समझाते हैं:
-
-```Rust
-let re = Regex::new(r"rust-lang").unwrap();
-let text = "Welcome to the rust-lang community!";
-let found = re.find(text);
-match found {
-    Some(_) => println!("Found 'rust-lang'"),
-    None => println!("Could not find 'rust-lang'"),
-}
+Regular expressions का syntax ```Rust
+  Regex::new("pattern").unwrap();
+```
+होता है। ```new``` एक ```Regex``` struct बनाता है जो pattern को compile करता है। इसके अन्दर हम इन्हें दो symbols के साथ use करते हैं: ```^``` जो string का starting point दिखाता है और ```$``` जो string का ending point दिखाता है। ये pattern की समाप्ति का संकेत करते हैं। उदाहरण के लिए, अगर हमें किसी string में "rust" की presence check करनी है तो हम लिख सकते हैं: ```Rust
+  Regex::new("^rust$").unwrap();
 ```
 
-इस उदाहरण में, हमने रेगुलर एक्सप्रेशन्स का उपयोग करके ```rust-lang``` शब्द को खोजा है। यदि शब्द मिलता है, तो हम एक संदेश छापते हैं। यदि शब्द नहीं मिलता है, तो हम दूसरा संदेश छापते हैं।
+अगर ये pattern string में मिलता है तो हमें true मिलेगा। 
 
-## डीप डाइव
+## गहराई में जाएं 
 
-रेगुलर एक्सप्रेशन्स को समझने के लिए आपको एडवांस्ड कांसेप्ट्स जैसे क्वांटिफायर्स, कैप्चर ग्रुप्स, और बैकरेफ्रेंसिंग की जानकारी होनी चाहिए। इन कंसेप्ट्स को समझने से आप रेगुलर एक्सप्रेशन्स को ज्यादा प्रभावी
+Regular expressions पर और गहराई से जानने के लिए, आप इन पढ़ सकते हैं: 
+
+- [Rust के लिए Regex सीखे](https://docs.rs/regex/1.4.6/regex/) 
+- [Regex कैसे काम करते हैं](https://docs.rs/regex/1.4.6/regex/#how-regexes-work)
+- [Regex syntax का बदलाव](https://docs.rs/regex/1.4.6/regex/#syntax) 
+
+## और भी पढ़ें 
+
+- [Rust programming के लिए Regex सीखें](https://doc.rust-lang.org/book/ch09-06-tokio.html) 
+- [Regex crate का अन्य use cases](https://crates.io/crates/regex#use-cases) 
+- [Rust और regular expressions को साथ मिलाकर कैसे use किया जा सकता है](https://dev.to/emilstahl/rust-regex-processing-hyperlink-regular-expressions-38nl)

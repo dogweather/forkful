@@ -1,40 +1,54 @@
 ---
 title:    "Kotlin: Estrazione di sottostringhe"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-L'estrazione di sottostringhe è un'operazione comune nella programmazione. Può essere utile per estrarre parti specifiche di una stringa o per manipolare dati in modo più efficiente.
 
-## Come fare
-Per estrarre una sottostringa in Kotlin, puoi utilizzare il metodo `substring()` su una stringa. Ad esempio, per estrarre i primi 5 caratteri da una stringa, puoi scrivere il seguente codice:
+Estrarre delle sottostringhe può essere un'operazione molto utile quando si lavora con i dati in un programma Kotlin. Con questa tecnica, è possibile accedere a parti specifiche di una stringa e manipolarle in diversi modi. In questo articolo, impareremo come sfruttare la funzione `substring()` per estrarre delle sottostringhe in Kotlin.
 
-```Kotlin
-val stringa = "Ciao a tutti"
-val sottostringa = stringa.substring(0, 5)
-println(sottostringa)
+## Come Fare
+
+Per estrarre una sottostringa in Kotlin, è necessario utilizzare il metodo `substring()` su una stringa esistente. Questo metodo accetta due parametri: l'indice di inizio e l'indice di fine della sottostringa desiderata.
+
+```
+Kotlin val str = "Ciao a tutti!" val subs = str.substring(5,9) println(subs)
 ```
 
-In questo esempio, il primo parametro indica l'indice di partenza della sottostringa e il secondo parametro indica l'indice di fine. L'esempio di codice sopra restituirebbe la sottostringa "Ciao".
+Questo codice restituirebbe `a tu`, in quanto partirà dall'indice 5 (incluso) e arriverà fino all'indice 9 (escluso) della stringa originale.
 
-È anche possibile utilizzare l'indice finale come un parametro opzionale. Se viene omesso, verranno estratti tutti i caratteri dall'indice di partenza fino alla fine della stringa. Ad esempio:
+È importante notare che gli indici delle stringhe in Kotlin iniziano da zero. Ciò significa che il primo carattere ha indice 0, il secondo carattere ha indice 1 e così via. Si può ottenere la lunghezza di una stringa utilizzando il metodo `length`.
 
-```Kotlin
-val stringa = "Ciao a tutti"
-val sottostringa = stringa.substring(5)
-println(sottostringa)
+```
+Kotlin val str = "Ciao a tutti!" val subs = str.substring(5, str.length) println(subs)
 ```
 
-Questo codice restituirebbe la sottostringa "a tutti".
+In questo esempio, la sottostringa inizia dall'indice 5 (incluso) fino alla fine della stringa utilizzando come indice finale la lunghezza totale della stringa originale.
 
 ## Approfondimento
-Esistono anche altri metodi per estrarre sottostringhe in Kotlin, come il metodo `subSequence()` e il metodo `take()`. Inoltre, puoi anche utilizzare espressioni regolari per estrarre sottostringhe da una stringa.
 
-Inoltre, è importante tenere presente che le stringhe in Kotlin sono immutabili, il che significa che ogni operazione di estrazione di una sottostringa creerà una nuova stringa. Se hai bisogno di manipolare un grande quantitativo di dati, è consigliabile utilizzare una classe come `StringBuilder` che consente di modificare una stringa senza crearne una nuova ogni volta.
+Oltre ai parametri di inizio e fine, la funzione `substring()` può anche accettare un singolo parametro di inizio. In questo caso, verrà restituita la sottostringa che inizia dall'indice specificato fino alla fine della stringa.
 
-## Vedi anche
-- Documentazione di Kotlin per il metodo `substring()`: <https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html>
-- Tutorial su espressioni regolari in Kotlin: <https://kotlinlang.org/docs/regexp.html>
-- Documentazione di Kotlin per la classe `StringBuilder`: <https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string-builder/index.html>
+```
+Kotlin val str = "Ciao a tutti!" val subs = str.substring(5) println(subs)
+```
+
+In questo esempio, la sottostringa restituita sarebbe `a tutti!`.
+
+Inoltre, il metodo `substring()` può anche essere utilizzato per ottenere una copia della stringa originale. Basta specificare gli stessi indici di inizio e fine o solo l'indice di inizio.
+
+```
+Kotlin val str = "Ciao a tutti!" val subs = str.substring(0,13) println(subs == str) // restituirà true val newStr = str.substring(0) println(newStr == str) // restituirà true
+```
+
+Questo ci permette di utilizzare la funzione `substring()` per effettuare una copia della nostra stringa originale e lavorarci senza cambiare la stringa originale stessa.
+
+## Vedi Anche
+
+- [Documentazione ufficiale Kotlin su `substring()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [Funzioni di Stringa utili in Kotlin](https://cleancodestudio.com/tutorials/kotlin/string-functions-part1/)
+
+Grazie per aver letto questo articolo! Speriamo che ora tu abbia una migliore comprensione di come estrarre delle sottostringhe in Kotlin e come utilizzarle per manipolare i dati nelle tue applicazioni. Continua a seguire il nostro blog per ulteriori tutorial su Kotlin e altre tecnologie di sviluppo. A presto!

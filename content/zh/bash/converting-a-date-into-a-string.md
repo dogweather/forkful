@@ -1,45 +1,32 @@
 ---
 title:    "Bash: 将日期转换为字符串"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+##为什么
+在Bash编程中，日期是一个常见的数据类型，而将日期转换成字符串往往是必须要做的一步。通过转换日期为字符串，我们可以更方便地使用和处理日期数据，从而完成更复杂的任务。
 
-Bash编程是一种流行的脚本语言，广泛应用于Unix和Linux系统中。其中一个常见的任务是将日期转换为字符串形式，例如将“2021-04-15”转换为“15 April 2021”。这种转换对于需要在脚本中处理日期的人来说非常有用。
-
-## 如何做
-
-要将日期转换为字符串，我们可以使用date命令和特定的格式选项。让我们来看看以下示例代码：
-
+##如何
+在Bash中，使用`date`命令可以获取当前日期和时间，但是默认的输出格式并不是字符串。为了将日期转换为字符串，我们可以使用`date`命令的`+%s`选项，它可以将日期转换为秒数，并使用`date`命令的`-d`选项将秒数转换为可读的字符串。
 ```Bash
-# 获取当前日期并将其转换为指定格式
-date_str=$(date +"%d %B %Y")
-echo $date_str
-
-# 输出：15 April 2021
+date +%s
+# output: 1599258452
+date -d @1599258452
+# output: Mon Sep 07 15:47:32 PDT 2020
+```
+我们也可以使用`date`命令的`+%Y-%m-%d`选项来指定日期的输出格式，例如`date +%Y-%m-%d`会输出`2020-09-07`。
+```Bash
+date +%Y-%m-%d
+# output: 2020-09-07
 ```
 
-在这个例子中，我们使用“%d”来获取日期，使用“%B”来获取月份的全名，使用“%Y”来获取四位数的年份。您可以根据自己的需要结合不同的格式选项来创建您想要的日期格式。
+##深入探讨
+在Bash中，日期是以秒数的形式存储的，而秒数是一个从1970年1月1日开始累积的数字。通过使用`date`命令的`+%s`选项，我们可以将日期转换为秒数，并通过`date`命令的`-d`选项将秒数转换为可读的字符串。同时，通过指定不同的格式选项，我们可以自定义日期的输出格式。
 
-## 深入探讨
-
-在Bash中，日期被存储为Unix时间戳，即从1970年1月1日开始计算的秒数。因此，要将日期转换为字符串，我们需要使用date命令来将Unix时间戳转换为指定的格式。在此过程中，Bash会使用本地设置来确定日期和时间的格式，因此如果您想要不同的格式，您可能需要修改本地设置。
-
-另外，您也可以使用date命令来获取特定日期的Unix时间戳，例如：
-
-```Bash
-# 获取特定日期的Unix时间戳
-date -ud "2021-04-15" +%s
-
-# 输出：1618444800
-```
-
-这将很有用，如果您想要在脚本中对日期进行比较或计算。
-
-## 参考链接
-
-* [Bash参考手册](https://devdocs.io/bash/)
-* [date命令文档](https://www.gnu.org/software/coreutils/date/)
-* [Unix时间戳](https://en.wikipedia.org/wiki/Unix_time)
+##参考链接
+- [Bash中的日期处理](https://www.gnu.org/software/bash/manual/bash.html#Date-Manipulation)
+- [date命令文档](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+- [bash教程](https://www.liaoxuefeng.com/wiki/1417827820813862)

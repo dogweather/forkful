@@ -1,40 +1,51 @@
 ---
-title:    "Swift: Extraindo substrings"
+title:    "Swift: Extraindo subcadeias de caracteres"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings?
+# Por que extrair substrings em Swift?
 
-Extrair substrings pode ser útil ao trabalhar com strings em Swift. Isso permite que você obtenha uma parte específica de uma string maior, o que pode facilitar o tratamento de dados e a manipulação de textos.
+Extracting substrings ou, em português, extrair substrings é uma técnica importante no desenvolvimento de aplicativos em Swift. Ela permite que você pegue apenas uma parte específica de uma string ou texto e a utilize em seu código. Isso pode ser útil em muitas situações, como por exemplo formatar um número de telefone ou obter as iniciais de um nome.
 
-## Como fazer
+# Como fazer isso em Swift?
 
-Para extrair uma substring em Swift, você pode usar o método `suffix` ou `prefix` seguido do número de caracteres que deseja extrair. Por exemplo, para extrair os últimos 5 caracteres de uma string, você pode usar o seguinte código:
+Para extrair uma substring em Swift, é necessário utilizar o método .substring (ou .prefix para pegar os primeiros caracteres) e indicar o índice inicial e final desejados, dentro de colchetes [ ].
 
-```Swift
-let myString = "Hello, world!"
-let newString = myString.suffix(5)
-print(newString)
+```
+// exemplo de substring em Swift
+let str = "Olá, meu nome é Maria!"
+let nome = str.substring(with: 15..<20)
+print(nome) // saída: Maria
 ```
 
-A saída deste código seria "rld!", pois foram extraídos os últimos 5 caracteres da string original.
+No exemplo acima, criamos uma string com o nome "Maria" e utilizamos o método .substring para extrair apenas essa parte do texto, indicando os índices 15 e 20 (o primeiro caracter começa com o índice 0). O resultado é impresso no console.
 
-## Aprofundando
+# Mais detalhes sobre extrair substrings em Swift
 
-Além de usar os métodos `prefix` e `suffix`, você também pode usar o método `range` para extrair uma substring específica de uma string. Este método requer o uso de `index` para indicar o início e o fim da substring que você deseja extrair. Por exemplo:
+Além de indicar os índices inicial e final, é possível utilizar outras opções ao extrair substrings em Swift. Por exemplo, é possível obter um determinado número de caracteres a partir de um índice, utilizando o método .prefix.
 
-```Swift
-let myString = "Hello, world!"
-let newString = myString[4...9]
-print(newString)
+```
+// exemplo de substring com .prefix
+let str = "1234567890"
+let numeros = str.prefix(5)
+print(numeros) // saída: 12345
 ```
 
-A saída seria "o, worl", pois foram extraídos os caracteres no índice 4 ("o") até o índice 9 ("l") da string original.
+Outra opção é utilizar o método .suffix para extrair uma determinada quantidade de caracteres contando a partir do final da string.
 
-## Veja também
+```
+// exemplo de substring com .suffix
+let str = "ABCDE"
+let letras = str.suffix(3)
+print(letras) // saída: CDE
+```
 
-- [Documentação oficial da Apple sobre manipulação de strings em Swift](https://developer.apple.com/documentation/swift/strings_and_characters)
-- [Tutorial em português sobre manipulação de strings em Swift](https://medium.com/@johnsundell/manipulac%CC%A7a%CC%83o-de-strings-com-swift-824ceddfba9d)
-- [Outros métodos úteis para manipulação de strings em Swift](https://www.hackingwithswift.com/articles/141/8-useful-swift-extensions)
+# Veja também
+
+- [Documentação oficial do Swift sobre substring](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#)
+- [Tutorial em português sobre extração de substrings em Swift](https://www.betacode.net/blog/extraindo-partes-de-uma-string-no-swift/)
+
+Agora que você aprendeu como extrair substrings em Swift, pode utilizá-las em suas próximas aplicações para deixar o seu código mais eficiente e fácil de usar. Experimente e veja os resultados por si mesmo!

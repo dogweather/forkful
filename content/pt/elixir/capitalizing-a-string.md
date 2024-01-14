@@ -1,57 +1,38 @@
 ---
-title:    "Elixir: Capitalizando uma string"
+title:    "Elixir: Convertendo uma string em maiúsculas"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Capitalizar uma String em Elixir?
+## Por que capitalizar uma string?
 
-Capitalizar uma string é um processo comum em programação que envolve deixar todas as letras iniciais maiúsculas. Isso pode ser útil para estilizar títulos, nomes próprios ou até mesmo para padronizar dados de entrada em um programa. Felizmente, em Elixir, existem algumas maneiras simples de capitalizar uma string.
+Capitalizar uma string pode ser útil em várias situações, como por exemplo, quando estamos trabalhando com nomes de pessoas. Em vez de ter que gerenciar diferentes formas de capitalização, podemos simplesmente utilizar uma função que capitalize a string inteira.
 
-## Como Fazer
+## Como capitalizar uma string?
 
-Para capitalizar uma string em Elixir, podemos usar a função `String.capitalize/1` ou `String.upcase/1`. Vamos dar uma olhada em alguns exemplos abaixo:
+Para capitalizar uma string em Elixir, podemos utilizar a função `String.capitalize/1`. Veja o código de exemplo abaixo:
 
-```
-Elixir> String.capitalize("elixir blog")
-"Elixir blog"
-```
-
-```
-Elixir> String.capitalize("ola Mundo!")
-"Ola mundo!"
+```elixir
+iex> string = "elixir é incrível"
+iex> String.capitalize(string)
+"Elixir é incrível"
 ```
 
-```
-Elixir> String.upcase("letras maiusculas")
-"LETRAS MAIUSCULAS"
-```
+Podemos também utilizar a função `String.capitalize/2` para especificar um idioma diferente para a capitalização. Por exemplo:
 
-```
-Elixir> String.upcase("hello 123")
-"HELLO 123" 
+```elixir
+iex> string = "fast and furious"
+iex> String.capitalize(string, :es)
+"Fast And Furious"
 ```
 
-Podemos ver como a função `String.capitalize/1` deixa apenas a primeira letra da string como maiúscula, enquanto `String.upcase/1` deixa todas as letras maiúsculas. Isso pode ser útil dependendo da situação em que estamos usando essas funções.
+## Mergulho profundo
 
-## Imersão Profunda
+A função `String.capitalize/1` utiliza a biblioteca `Unicode` por trás das cenas para realizar a capitalização. Isso significa que ele irá funcionar corretamente com caracteres UTF-8, incluindo caracteres acentuados e símbolos. Além disso, a função também irá respeitar as regras gramaticais do idioma especificado.
 
-Além das funções mencionadas acima, Elixir também possui a função `String.capitalize/2`, que nos permite especificar um idioma para capitalizar a primeira letra da string. Isso pode ser útil quando estamos trabalhando com idiomas que possuem regras específicas de capitalização, como o alemão.
+## Veja também
 
-Outra coisa interessante é que, em Elixir, strings são representadas como listas de caracteres, então podemos capitalizar a primeira letra de uma lista usando `List.first/1` e a função `String.upcase/1`. Vamos dar uma olhada em um exemplo:
-
-```
-Elixir> char_list = ['p', 'o', 'r', 't', 'u', 'g', 'a', 'l']
-Elixir> [first | rest] = char_list
-Elixir> [String.upcase(first) | rest]
-['P', 'o', 'r', 't', 'u', 'g', 'a', 'l']
-```
-
-Isso pode ser útil se quisermos capitalizar a primeira letra de cada palavra em uma string ou lista.
-
-## Veja Também
-
-- [Função `String.capitalize/1` em Elixir](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Função `String.upcase/1` em Elixir](https://hexdocs.pm/elixir/String.html#upcase/1)
-- [Função `String.capitalize/2` em Elixir](https://hexdocs.pm/elixir/String.html#capitalize/2)
+- [Documentação oficial da função `String.capitalize/1` em Elixir](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Documentação oficial da biblioteca `Unicode` em Elixir](https://hexdocs.pm/elixir/Unicode.html)

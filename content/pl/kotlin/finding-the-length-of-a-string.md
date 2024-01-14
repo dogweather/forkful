@@ -1,39 +1,49 @@
 ---
-title:    "Kotlin: Obliczanie długości ciągu znaków"
+title:    "Kotlin: Pobieranie długości ciągu znaków"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Dlaczego
 
-Często podczas pisania kodu w kotlinie, może pojawić się potrzeba znalezienia długości ciągu znaków. Długość ciągu jest ważną informacją w wielu aplikacjach i może mieć różne zastosowania, dlatego warto poznać sposób na jej znalezienie. W tym artykule dowiesz się jak to zrobić, korzystając z funkcji „length” w języku Kotlin.
+W dzisiejszych czasach często spotykamy się z potrzebą operowania na tekście w naszych programach. Może to być analiza wprowadzonego przez użytkownika hasła, sprawdzenie poprawności adresu email czy też przechowywanie imion i nazwisk w bazie danych. W takich przypadkach niezbędne jest znajomość długości danego tekstu. W tym artykule prześledzimy sposób na obliczenie długości stringa w języku Kotlin.
 
-## Jak to zrobić?
+# Jak to zrobić
 
-Aby znaleźć długość ciągu znaków w języku Kotlin, wystarczy wykorzystać wbudowaną funkcję „length”, która zwraca liczbę znaków w ciągu. Poniżej przedstawione są przykładowe kody wraz z wynikami.
-
-```Kotlin
-val name = "Anna"
-val length = name.length
-println("Długość imienia $name to $length znaki")
-```
-
-W powyższym przykładzie, zmienna "length" przechowuje długość ciągu i wynosi ona 4, ponieważ imię "Anna" składa się z 4 znaków. Możliwe jest także użycie funkcji "length" bezpośrednio na ciągu, jak w poniższym przykładzie.
+Najprostszym sposobem na obliczenie długości tekstu jest użycie wbudowanej funkcji `length()` na obiekcie typu `String`. Przykładowy kod wygląda następująco:
 
 ```Kotlin
-val name = "Tomasz"
-println("Długość imienia $name to ${name.length} znaki")
+val text = "To jest przykładowy tekst"
+println(text.length()) // output: 26
 ```
 
-Wynik powyższego kodu będzie taki sam, jak w poprzednim przykładzie. Funkcja "length" może być użyta na każdym ciągu znaków, niezależnie od jego zawartości.
+Możemy również skorzystać z własnej funkcji, która iteracyjnie będzie przeglądać kolejne znaki tekstu i zliczać ich ilość. Poniżej przykład takiej implementacji:
 
-## Głębsze zagadnienia
+```Kotlin
+fun countLength(text: String): Int {
+    var count = 0
+    for (char in text) {
+        count++
+    }
+    return count
+}
 
-Warto wiedzieć, że funkcja "length" w języku Kotlin jest bardzo wydajna i działa w czasie stałym, niezależnie od długości ciągu. Jest to możliwe dzięki temu, że w Kotlinie ciągi znaków są reprezentowane przez obiekty z własną właściwością "length", która jest aktualizowana przy każdej modyfikacji ciągu.
+val text = "To jest przykładowy tekst"
+println(countLength(text)) // output: 26
+```
 
-Mimo że liczba znaków w ciągu jest prosta do znalezienia, warto pamiętać o możliwości wystąpienia znaków specjalnych, takich jak znak nowej linii, który może wpływać na wynik funkcji "length". Należy także uważać na tzw. puste ciągi, które nie są jednoznaczne i zwracają wartość 0 w funkcji "length".
+W obu przypadkach otrzymamy dokładnie taki sam wynik.
 
-## Zobacz także
+# Głębszy przegląd
 
-Jeśli chcesz dowiedzieć się więcej o funkcji "length" w języku Kotlin, warto zajrzeć na oficjalną dokumentację, która zawiera więcej informacji na ten temat. Możesz także zapoznać się z innymi funkcjami dostępnymi w języku Kotlin, takimi jak "toLowerCase", "toUpperCase" czy "substring".
+Zastanawiasz się, jak działają te funkcje i dlaczego są takie proste w użyciu? W przypadku wbudowanej funkcji `length()` odwołujemy się do obiektu `String`, który przechowuje w sobie wartość tekstową. Następnie jest wywoływana metoda `length()`, która sprawdza długość tego tekstu i zwraca odpowiednią wartość. W przypadku funkcji `countLength()` tworzymy własną funkcję, która korzysta z pętli `for` do zliczania znaków w tekście.
+
+# Zobacz również
+
+Jeśli jesteś zainteresowany zapoznaniem się z innymi możliwościami przetwarzania tekstu w języku Kotlin, polecamy Ci zapoznać się z następującymi artykułami:
+
+- [Przetwarzanie tekstu w języku Kotlin](https://kotlinlang.org/docs/basic-idioms.html#string-templates)
+- [Manipulacja stringami w Kotlin](https://blog.kotlin-academy.com/strings-manipulation-in-kotlin-e6dec57fe26f)
+- [Dlaczego warto wybrać Kotlin do pracy z tekstem](https://try.kotlinlang.org/#/Examples/Digital%20substraction/String%20iterating/String%20iterating.kt)

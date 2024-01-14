@@ -1,39 +1,50 @@
 ---
 title:    "Haskell: 文字列の連結"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-Haskellプログラミングを学ぶ人々は、文字列の連結について学ぶことで、より複雑なプログラムを作成し、より効率的なコードを書くことができるようになります。
+## Why
+あなたはたぶん、プログラミングをするときに、文字列を結合する必要があります。例えば、ユーザーの入力を受け取り、それをメッセージとして表示する場合などです。文字列を結合することで、より柔軟にメッセージを作ることができます。
 
-## 使い方
-文字列の連結をするためには、`++`演算子を使用します。以下のコードは、2つの文字列を連結して出力する例です。
+## How To
+文字列を結合するには、Haskellの```++```演算子を使用します。以下のコードは、```"Hello"```と```"World"```を結合して表示する例です。
 
 ```Haskell
 main = do
-  let str1 = "こんにちは"
-      str2 = "世界"
-      result = str1 ++ str2
-  putStrLn result
+  let greeting = "Hello" ++ "World"
+  putStrLn greeting
 ```
+結果：HelloWorld
 
-出力結果は、`こんにちは世界`となります。
+さらに、複数の文字列を結合することもできます。例えば、```"I am"```と```"21"```という文字列の間に空白を入れて結合する場合は次のようになります。
 
-## 深堀り
-Haskellの`++`演算子は、2つのリストや文字列を連結する際に使用します。`++`演算子は、1つ目のリストを先頭に、2つ目のリストをその後ろに連結します。
+```Haskell
+main = do
+  let age = "21"
+  let sentence = "I am " ++ age ++ " years old"
+  putStrLn sentence
+```
+結果：I am 21 years old
 
-Haskellでは、文字列として扱われるものは全てリストとして認識されます。つまり、`"hello"`は、`['h', 'e', 'l', 'l', 'o']`というリストに変換されます。
+## Deep Dive
+Haskellの```++```演算子は、リストの連結にも使用できます。これは、文字列が順番にリストとして扱われるためです。例えば、```"Hello"```という文字列は```['H', 'e', 'l', 'l', 'o']```というリストとして扱われます。
 
-また、文字列の連結には`++`演算子以外にも`concat`関数を使用することもできます。この関数は、複数の文字列を1つの文字列に連結するために使用します。
+この性質を利用して、```++```演算子を使って複数の文字列を結合することができます。例えば、以下のように複数の文字列をリストとして定義し、それらを結合することができます。
 
-## もっと詳しく
-Haskellには、文字列を扱うためのさまざまな関数や演算子があります。例えば、`take`関数を使用することで、文字列の一部を取得することができます。
+```Haskell
+main = do
+  let name = "John"
+  let middleName = "Doe"
+  let lastName = "Smith"
+  let fullName = name ++ " " ++ middleName ++ " " ++ lastName
+  putStrLn fullName
+```
+結果：John Doe Smith
 
-また、文字列ではなく文字を直接連結する場合には、`:`演算子を使用します。この演算子は、リストの先頭に要素を追加する際にも使用されます。
-
-## 関連リンク
-- [Haskellのリスト操作](https://qiita.com/takenobu-hs/items/d3b2477b8e4e7f8e5222)
-- [Haskellの文字列操作](https://qiita.com/yumura_s/items/fa70f3317c9616e42916)
-- [Haskellのコンパイル方法](https://a-zumi.net/haskell/)
+## See Also
+- Haskellの基本的な演算子の使い方：[https://www.flambda.net/posts/2015-04-01-haskell.html](https://www.flambda.net/posts/2015-04-01-haskell.html)
+- 文字列操作に関するHaskellの詳細な情報：[https://www.haskell.org/tutorial/strings.html](https://www.haskell.org/tutorial/strings.html)
+- 文字列結合以外のHaskellのリスト操作：[https://wiki.haskell.org/Keywords#Lists](https://wiki.haskell.org/Keywords#Lists)

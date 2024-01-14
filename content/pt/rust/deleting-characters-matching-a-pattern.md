@@ -1,51 +1,53 @@
 ---
-title:    "Rust: Eliminando caracteres que correspondem a um padrão"
+title:    "Rust: Excluindo caracteres correspondentes a um padrão"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que excluir caracteres correspondentes a um padrão?
+## Por que?
 
-Muitas vezes, ao trabalhar com strings em um programa de Rust, pode ser necessário excluir certos caracteres que correspondem a um padrão específico. Isso pode ser útil em várias situações, como limpar dados de entrada, realizar operações de busca e substituição, ou apenas para simplificar e manipular strings. Neste post, vamos explorar como podemos fazer isso de forma eficiente em Rust.
+Algumas vezes, ao trabalhar com linguagens de programação, podemos nos deparar com a necessidade de deletar determinados caracteres em um texto ou string. Isso pode ser útil, por exemplo, para remover pontuações desnecessárias ou caracteres inválidos em uma cadeia de caracteres.
 
-## Como fazer
-A primeira coisa que precisamos fazer para excluir caracteres correspondentes a um padrão é importar o pacote `regex`. Isso nos permitirá utilizar expressões regulares para encontrar o padrão desejado em uma string.
+## Como Fazer
 
-```
-use regex::Regex;
-```
+Em Rust, podemos usar o método `replace()` da struct `String` para remover caracteres correspondentes a um padrão específico. Vejamos um exemplo:
 
-Agora, podemos criar nossa string na qual queremos basear nossa busca. Para este exemplo, vamos utilizar a frase "Eu amo programar em Rust!" e excluir todos os caracteres que correspondem ao padrão "a" ou "A".
-
-```
-let frase = "Eu amo programar em Rust!";
+```Rust
+let texto = "Olá, mundo! #Rust";
+let novo_texto = texto.replace("#", "");
+println!("{}", novo_texto); // Saída: Olá, mundo! Rust
 ```
 
-Em seguida, utilizaremos a função `split` da biblioteca `regex` para particionar nossa string em todas as ocorrências do padrão especificado, que neste caso são "a" ou "A". Então, podemos usar o método `filter` para filtrar todos os caracteres correspondentes à nossa string original.
+Neste exemplo, usamos o método `replace()` para substituir o caractere "#" por uma string vazia, removendo-o do texto original. Podemos também usar expressões regulares para fazer a correspondência de padrões mais complexos. Por exemplo:
 
-```
-let re = Regex::new("[aA]").unwrap();
-let resultado = re.split(frase).into_iter().filter(|x| !x.is_empty()).collect::<Vec<_>>();
-```
-
-E para ver o resultado final, usaremos um simples comando `print`, que nos dará uma saída sem os caracteres correspondentes ao padrão.
-
-```
-println!("{:?}", resultado);
+```Rust
+let texto = "1, 2, 3, 4";
+let novo_texto = texto.replace(Regex::new("[0-9]").unwrap(), "");
+println!("{}", novo_texto); // Saída: , , ,
 ```
 
-A saída será o seguinte vetor:
+Neste caso, usamos a biblioteca `Regex` para encontrar todos os dígitos numéricos e substituí-los por uma string vazia. Isso resulta em uma string apenas com as vírgulas.
 
+## Mergulho Profundo
+
+Além de substituir caracteres, também podemos usar o método `replace()` para modificar o texto de outras maneiras, como por exemplo, inserindo novos caracteres. Podemos usar a função `chars()` da struct `String` para iterar sobre cada caractere e fazer as alterações necessárias. Por exemplo:
+
+```Rust
+let texto = "Olá";
+let mut novo_texto = String::new();
+for c in texto.chars() {
+    novo_texto.push(c);
+    novo_texto.push('*');
+}
+println!("{}", novo_texto); // Saída: O*l*á*
 ```
-["Eu ", "mo progrmr em Rust!"];
-```
 
-## Aprofundando 
-Existem algumas coisas importantes a serem lembradas ao excluirmos caracteres correspondentes a um padrão em Rust. Primeiro, devemos considerar as diferenças entre letras maiúsculas e minúsculas ao utilizar um padrão específico. Em nosso exemplo, utilizamos "[aA]", o que significa que todos os caracteres "a" e "A" serão excluídos. No entanto, se quisermos excluir apenas caracteres maiúsculos, teríamos que usar "[A]" em seu lugar.
-
-Além disso, é importante notar que ao utilizar o método `split` da biblioteca `regex`, devemos lembrar de usar o método `filter` para remover quaisquer strings vazias que possam ser geradas pelo padrão especificado. Isso garantirá que nosso resultado final seja uma string limpa e sem caracteres indesejados.
+Neste exemplo, inserimos um caractere "*" entre cada letra do texto original.
 
 ## Veja também
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Regex Crate Documentation](https://docs.rs/regex/1.4.2/regex/)
+
+- [Documentação oficial do método replace() em Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Tutorial de Expressões Regulares em Rust](https://blog.sebastianzimmeck.de/regex-in-rust-a-beginners-tutorial/)
+- [Como iterar sobre caracteres em Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)

@@ -1,47 +1,65 @@
 ---
 title:    "C: Uniendo cadenas de texto"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué: 
 
-La concatenación de cadenas es una habilidad fundamental para los programadores de C. Permite combinar varias cadenas de texto en una sola, lo que puede ser útil en muchas situaciones, como la creación de mensajes personalizados o la generación de reportes de datos.
+Concatenar strings es una técnica fundamental en la programación que permite combinar múltiples cadenas de texto en una sola. Es especialmente útil en aquellos casos en los que se necesite crear mensajes personalizados o manipular datos de manera eficiente.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para concatenar cadenas en C, utilizamos la función `strcat`. Esta función toma dos parámetros: la primera cadena y la segunda cadena que se desea agregar a la primera. Por ejemplo:
-
-```C
-char string1[50] = "Hola ";
-char string2[] = "mundo!";
-strcat(string1, string2);
-printf("%s", string1);
-```
-**Output: Hola mundo!**
-
-También podemos usar la función `sprintf` para concatenar cadenas, que nos permite especificar el formato de salida y agregar múltiples variables en una sola cadena. A continuación, un ejemplo:
+La concatenación de strings en C es posible gracias a la función `strcat()`, que forma parte de la biblioteca estándar `string.h`. Esta función recibe dos parámetros: la cadena de destino y la cadena que se desea añadir a la primera. A continuación, se muestra un ejemplo de cómo usar `strcat()`:
 
 ```C
-char nombre[20] = "Juan";
-int edad = 25;
-char frase[50];
-sprintf(frase, "Mi nombre es %s y tengo %d años.", nombre, edad);
-printf("%s", frase);
+#include <stdio.h>
+#include <string.h> // biblioteca de strings
+
+int main() {
+    char nombre[20] = "Juan"; // cadena de destino
+    char apellido[20] = "Pérez"; // cadena que se desea añadir
+
+    strcat(nombre, " "); // se agrega un espacio en blanco
+    strcat(nombre, apellido); // se añade el apellido a la cadena de destino
+    
+    printf("Mi nombre completo es %s.\n", nombre);
+    
+    return 0;
+}
 ```
-**Output: Mi nombre es Juan y tengo 25 años.**
 
-## Profundizando
+La salida de este código sería: `Mi nombre completo es Juan Pérez.`
 
-Es importante tener en cuenta que la función `strcat` agrega la segunda cadena a la primera y reemplaza el caracter nulo (`\0`) al final de la primera cadena con el segundo caracter nulo de la segunda cadena. Por eso es importante asegurarse de que la primera cadena tenga suficiente espacio para agregar la segunda.
+## Profundizando:
 
-Además, en caso de que las cadenas contengan caracteres especiales como `\n` o `\t`, la función `sprintf` los interpretará y los concatenará correctamente.
+Es importante tener en cuenta que para usar `strcat()`, la cadena de destino debe tener suficiente espacio para almacenar la cadena que se desea añadir. De lo contrario, podría producirse un desbordamiento de memoria y generar errores en el programa. Además, esta función solo puede ser utilizada con datos de tipo `char`, por lo que si se desea concatenar otros tipos de datos, es necesario convertirlos previamente a `char`.
 
-Por último, existen otras funciones útiles para manipular y concatenar cadenas, como `strcpy` para copiar cadenas y `strtok` para dividir una cadena en palabras o tokens.
+Otra función útil para concatenar strings es `sprintf()`, que permite crear una cadena de texto con formato a partir de distintas variables. A continuación, se muestra un ejemplo de su uso:
 
-## Ver también
+```C
+#include <stdio.h>
 
-- [Documentación de la función `strcat` en la biblioteca estándar de C](https://www.codingame.com/playgrounds/14213/how-to-concatenate-strings-in-c/strcat)
-- [Ejemplos adicionales de concatenación de cadenas en C](https://www.codeforwin.org/2015/05/concatenate-two-strings-c-programming.html)
-- [Tutorial en español sobre cadenas en C](https://prognotes.net/2015/05/c-tutorial-cadenas-de-caracteres/)
+int main() {
+    char saludo[50];
+
+    int edad = 25;
+    float altura = 1.80;
+    
+    // se crea la cadena de texto con formato
+    sprintf(saludo, "Hola, tengo %d años y mido %.2f metros.", edad, altura);
+    
+    printf("%s\n", saludo);
+    
+    return 0;
+}
+```
+
+La salida de este código sería: `Hola, tengo 25 años y mido 1.80 metros.`
+
+## Ver también:
+
+- [Tutorial de la función strcat()](https://www.codementor.io/@francleidefonse/study-tutorial-to-concatenate-two-strings-in-c-language-2edz5zm6a)
+- [Referencia de la función sprintf()](https://www.programiz.com/c-programming/library-function/stdio.h/sprintf)

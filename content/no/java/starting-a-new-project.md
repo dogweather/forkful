@@ -1,42 +1,53 @@
 ---
 title:    "Java: Å starte et nytt prosjekt"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Å starte et nytt programmeringsprosjekt kan være en spennende og givende aktivitet. Det kan hjelpe deg med å utvikle dine ferdigheter, løse problemer, og til og med være en kilde til inntekt. Så hvorfor ikke ta en sjanse og prøve å starte et nytt prosjekt?
+# Hvorfor
 
-##Slik gjør du det 
-Først må du bestemme deg for hvilken type prosjekt du ønsker å jobbe med. Er det et webprosjekt, et mobilspill, eller kanskje en desktopapplikasjon? Når du har bestemt deg, kan du begynne å planlegge og designe prosjektet ditt.
+Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg muligheten til å utvikle dine ferdigheter, løse problemer og lage noe som er unikt og personlig. Enten det er for personlig vekst eller for å hjelpe andre, så er det alltid en god grunn til å starte et nytt prosjekt.
 
-Etter det kan du starte kodingen. Her er et eksempel på hvordan du kan skrive ut tekst til konsollen i Java:
+# Hvordan
+
+For å starte et nytt Java-prosjekt, trenger du først og fremst en god idé. Deretter er det viktig å strukturere prosjektet på en fornuftig måte og velge passende verktøy og biblioteker. Her er et eksempel på hvordan du kan opprette et nytt Java-prosjekt i IntelliJ IDEA:
 
 ```Java
-System.out.println("Hei, verden!");
-```
+public class Main {
 
-Dette vil skrive ut teksten "Hei, verden!" til konsollen når programmet kjøres. Det er et enkelt, men viktig eksempel på hvordan du kan bruke Java-kode for å kommunisere med brukeren.
+    public static void main(String[] args) {
+        System.out.println("Velkommen til ditt nye prosjekt!");
+    }
 
-Du kan også bruke kodestatements og løkker for å kontrollere og manipulere data. Her er et eksempel på en for-løkke:
-
-``` Java
-for (int i = 1; i <= 10; i++) {
-    System.out.println(i);
 }
 ```
 
-Dette vil skrive ut tallene fra 1 til 10 til konsollen. Å lære slike kodeteknikker vil hjelpe deg med å lage komplekse og funksjonelle programmer.
+Output:
 
-##Dypdykk 
-Når du starter et nytt programmeringsprosjekt, er det viktig å ha en god plan. Dette inkluderer å identifisere problemet som prosjektet skal løse, definere krav og lage en design for å oppfylle disse kravene.
+```
+Velkommen til ditt nye prosjekt!
+```
 
-I tillegg er det viktig å følge god kodestandard og organisering for å gjøre det enklere å vedlikeholde og utvide prosjektet i fremtiden. Husk også å kommentere koden din godt, slik at andre kan forstå hva den gjør.
+Det neste steget er å sette opp en GitHub-repository for prosjektet ditt, slik at du kan dele koden med andre og beholde en sikkerhetskopi. Eksempel på hvordan du kan gjøre dette:
 
-Det kan også være lurt å benytte seg av versjonskontrollverktøy som Git for å sikre at du alltid har en sikkerhetskopi av prosjektet ditt og kan jobbe effektivt med andre utviklere.
+```Java
+git init
+git add .
+git commit -m "Første commit"
+git remote add origin git@github.com:brukernavn/prosjektnavn.git
+git push -u origin master
+```
 
-##Se også
-* [Java-tutorial fra w3schools](https://www.w3schools.com/java/)
-* [Git-tutorial fra Atlassian](https://www.atlassian.com/git/tutorials)
-* [IDEer for Java-utvikling](https://www.codecademy.com/articles/learning-java-development-environments)
+# Dykk dypere
+
+Når du har startet prosjektet ditt, er det viktig å holde deg organisert og følge beste praksis når det gjelder kodestruktur og dokumentasjon. Du bør også jevnlig teste koden din for å sikre at den fungerer som den skal. Og husk, det er ingenting galt i å søke hjelp fra andre programmerere når du støter på problemer eller trenger inspirasjon.
+
+Det kan også være lurt å følge et metodisk utviklingsmønster, for eksempel Agile, som fremmer effektivitet og samarbeid. Og ikke glem å ha det gøy mens du jobber med prosjektet ditt!
+
+# Se også
+
+- [Offisiell Java-dokumentasjon](https://docs.oracle.com/javase/8/docs/api/index.html)
+- [IntelliJ IDEA dokumentasjon](https://www.jetbrains.com/help/idea/discover-intellij-idea.html)
+- [Agile-metoden](https://en.wikipedia.org/wiki/Agile_software_development)

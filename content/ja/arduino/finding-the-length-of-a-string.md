@@ -1,39 +1,40 @@
 ---
 title:    "Arduino: 文字列の長さを見つける"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ？
 
-プログラミングをしていると、文字列の長さを知ることは非常に重要なことです。文字列の長さを知ることで、文字列の処理や表示に役立つことができます。この記事では、Arduinoで文字列の長さを求める方法をご紹介します。
+文字列の長さを求めることの重要性を知りたいですか？その答えはとてもシンプルです。文字列の長さを知ることで、より正確にデータを処理したり、特定の操作を行ったりすることができます。例えば、入力された文字列が特定の長さを満たしているかどうかを判断する際に、文字列の長さが必要になることがあります。このように、文字列の長さはプログラミングにおいて非常に重要な役割を果たします。
 
-## 使い方
+## 手順
 
-```Arduino
-// 文字列の宣言
-String message = "今日はいい天気ですね。";
+Arduinoを使用して文字列の長さを求める方法を見てみましょう。まずは、入力された文字列を変数に代入します。次に、```strlen()```という関数を使用して、文字列の長さを求めることができます。例えば、以下のようなコードを書くことができます。
 
-// 文字列の長さを求める
-int length = message.length();
+```
+Arduino
 
-// シリアルモニターに長さを表示
-Serial.println(length);
+char str[] = "Hello World";
+int length = strlen(str);
+
 ```
 
-### 出力: 16
+これで、変数```length```には文字列"Hello World"の長さが格納されます。これを使ってさまざまな操作を行うことができます。
 
-Arduinoでは、String型の変数に対してlength()メソッドを使うことで、文字列の長さを求めることができます。上記の例では、変数messageに格納された文字列の長さが「16」であることが分かります。
+## 深堀り
 
-## 詳細を調べる
+文字列の長さを求めるときには、注意すべき点があります。文字列の最後には常に```'\0'```という特殊な文字が自動的に追加されますが、これは文字列の長さには含まれません。つまり、実際に使われる文字数とは異なることになります。そのため、文字列の真の長さを求める場合は注意が必要です。
 
-Arduinoでは、String型の変数に対してlength()メソッドを使うことで、文字列の長さを求めることができますが、実際にはlength()メソッドが使用しているstrlen()関数が重要な役割を果たしています。この関数は、文字列のバイト数を返すため、文字列の全ての文字の長さを正確に求めることができます。
+また、```strlen()```関数は、マルチバイト文字（日本語、中国語、韓国語など）には対応していません。そのため、マルチバイト文字を含む文字列の長さを求める場合は、別の方法を使う必要があります。
 
-また、ArduinoではUTF-8形式の文字列を使うこともできますが、その場合はlength()メソッドではなく、lengthUTF8()メソッドを使う必要があります。
+## 併せて読みたい
 
-## 参考リンク
+- [Arduinoの公式ドキュメント](https://www.arduino.cc/reference/en/language/functions/string/length/)
+- [C言語のstrlen()関数についての詳細](https://www.geeksforgeeks.org/strlen-function-in-c/)
 
-- [ArduinoのStringクラスリファレンス](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/)
-- [strlen()関数の詳細](https://www.cplusplus.com/reference/cstring/strlen/)
-- [UTF-8形式の文字列に関する情報](https://www.utf8-chartable.de/)
+## さらに読み込む
+
+文字列の長さを求める方法について学べましたね！この記事を参考に、さまざまなプログラミングでの文字列操作を試してみてください。より深く理解するためにも、公式ドキュメントや他の記事も参考にしてみてください。楽しんでプログラミングをしましょう！

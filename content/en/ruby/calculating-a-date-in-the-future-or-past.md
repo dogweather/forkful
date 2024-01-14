@@ -1,57 +1,53 @@
 ---
 title:    "Ruby recipe: Calculating a date in the future or past"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Calculating dates in the future or past can be useful for a variety of reasons, such as scheduling events, managing deadlines, or working with time-sensitive data.
+## Why 
+Calculating dates in the future or past may seem like a trivial task, but it has multiple practical applications in programming. From scheduling tasks to managing project timelines, the ability to accurately determine future or past dates can greatly enhance the functionality of a program.
 
 ## How To
+To calculate a date in the future or past, we can use the `Date` class in Ruby. It provides a convenient way to manipulate and perform calculations on dates. Let's take a look at a few examples:
 
-To calculate a date in the future or past, we can use the `Date` class in Ruby. First, we need to require the `date` library:
-
-```Ruby
+```
 require 'date'
+
+# Calculating 30 days from today
+future_date = Date.today + 30
+puts future_date #=> 2021-11-19
+
+# Calculating 3 months from a custom date
+new_year = Date.new(2022, 1, 1)
+future_date = new_year >> 3
+puts future_date #=> 2022-04-01
+
+# Calculating 2 weeks before today
+past_date = Date.today - 14
+puts past_date #=> 2021-10-24
 ```
 
-Next, we can use the `Date.today` method to get the current date and then add or subtract a specific number of days, months, or years to get the desired date. For example, to get the date 1 week from today:
+In the first example, we use the `+` operator to add 30 days to the current date. Similarly, in the second example, we use the `>>` operator to add 3 months to a specified date. Finally, in the third example, we use the `-` operator to subtract 14 days from today's date.
 
-```Ruby
-Date.today + 7
+To make more complicated calculations, we can also use the `advance` method, which takes in a hash of units and amounts. For example:
+
 ```
-
-This will output the new date in the format yyyy-mm-dd. We can also specify the number of days, months, or years in the `Date.new` method:
-
-```Ruby
-Date.new(2020, 12, 25) + 7 # 2021-01-01
-```
-
-We can also use the `Date.parse` method to convert a string into a date object:
-
-```Ruby
-Date.parse("2020-12-25") + 7 # 2021-01-01
-```
-
-We can also calculate the difference between two dates using the `#difference` method:
-
-```Ruby
-(Date.today + 7).difference(Date.today) # 7
+# Calculating 4 years and 6 months from a given date
+custom_date = Date.new(2000, 1, 1)
+future_date = custom_date.advance(years: 4, months: 6)
+puts future_date #=> 2004-07-01
 ```
 
 ## Deep Dive
+Behind the scenes, the `Date` class uses the proleptic Gregorian calendar system to calculate dates. This system considers every year to have 365 days, except for leap years which have 366 days. By default, Ruby considers any year divisible by 4 a leap year, but this can be modified by setting the `italy_uses_julian_calendar` attribute to `true`.
 
-Ruby's `Date` class uses the proleptic Gregorian calendar, which means it can handle dates from 4712 BC to infinity. It also supports internationalization and can format dates in different languages and time zones.
+Additionally, the `Date` class also takes into account different time zones and daylight saving time. It uses the International Atomic Time (TAI) and Coordinated Universal Time (UTC) systems to handle these variations in time.
 
-Additionally, the `Date` class can handle leap years and adjust for daylight saving time. It also provides methods for working with time zones, such as converting a date to a specific time zone or getting the UTC offset for a given date.
-
-In conclusion, the `Date` class in Ruby is a powerful tool for working with dates in the future or past.
+A useful tip when working with dates is to always check for edge cases such as leap years, different time zones, and other potential inconsistencies.
 
 ## See Also
-
-- [Ruby Date class documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby DateTime class documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
-- [Tutorial on working with dates in Ruby](https://www.rubyguides.com/2015/08/ruby-date/)
-- [Additional date and time manipulation methods in Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-and-times-in-ruby)
+- [Ruby Documentation on the Date Class](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
+- [Ruby DateTime vs. Date Class](https://stackoverflow.com/questions/4677416/difference-between-the-date-classes-in-ruby)
+- [Working with Dates in Ruby](https://www.rubyguides.com/2015/03/ruby-date-format/)

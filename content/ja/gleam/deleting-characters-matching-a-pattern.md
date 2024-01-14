@@ -1,39 +1,36 @@
 ---
-title:    "Gleam: パターンにマッチする文字を削除する"
+title:    "Gleam: パターンに一致する文字を削除する"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-この記事では、特定のパターンに一致する文字を削除する際の方法を紹介します。例えば、特定の言語の文書からコードを自動的に削除する場合などに役立ちます。
+この記事では、Gleamプログラミング言語でパターンにマッチする文字を削除する方法について説明します。パターンにマッチする文字を削除することで、プログラムをより効率的に処理し、コードの動作を改善することができます。
 
-## 削除方法
+# 方法
 
-Gleamでは、 `String.replace` 関数を使用して文字を削除することができます。以下のコードを参考にしてください。
-
-```Gleam
-str = "この文章からコードを削除します"
-pattern = "コード"
-replaced = String.replace(pattern, str, "")
-IO.print_line(replaced)
-```
-
-出力結果:
+まず、`String.replace`関数を使用して、パターンにマッチする文字を空文字列に置き換えます。
 
 ```
-この文章からを削除します
+Gleam string.replace("Hello World", "o", "")
 ```
 
-## 深い掘り下げ
+このコードの出力は`Hell Wrld`となります。パターンにマッチする文字がない場合は、元の文字列がそのまま返されます。
 
-文字を削除する際には、正規表現を使用することもできます。正規表現では、特定のパターンに一致する文字列を検索し、置換することができます。 `Regex.replace` 関数を使用することで、より詳細な文字の削除が可能になります。
+# 深堀り
 
-また、Gleamではパターンマッチングを使用して、より柔軟に文字を削除することもできます。詳細については、公式ドキュメントを参照してください。
+この方法でパターンにマッチする文字を削除するには、正規表現を使用します。Gleamでは、`Regex.replace`関数を使用してパターンにマッチする文字を置き換えることができます。
 
-## See Also
+```
+Gleam regex.replace("Hello World!", "[aeiou]", "")
+```
 
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [正規表現の基礎](https://www.w3schools.com/python/python_regex.asp)
-- [パターンマッチングの使用例](https://gleam.run/examples/pattern_matching/)
+このコードの出力は`Hll Wrld!`となり、母音を削除することができます。また、正規表現を使用することで、より複雑なパターンにもマッチすることができます。
+
+# 参考リンク
+
+- [Gleamの公式ドキュメント](https://gleam.run/documentation/?api=string#replace)
+- [正規表現の基礎](https://qiita.com/kewpie134134/private/6a848b7ce60f5c7b2d87)

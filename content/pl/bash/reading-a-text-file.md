@@ -1,60 +1,65 @@
 ---
 title:    "Bash: Odczytywanie pliku tekstowego"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek chciałeś/łaś przeczytać duży plik tekstowy w systemie Linux i mieć dostęp do jego zawartości z poziomu terminala? Może potrzebujesz szybko znaleźć specyficzne informacje, ale masz problem z przeszukiwaniem ogromnych ilości tekstu? W tym tekście przeczytasz o tym, jak w Bashu możesz szybko i łatwo odczytać plik tekstowy i wykorzystać go do swoich potrzeb.
+Jeśli jesteś początkującym programistą lub chcesz po prostu nauczyć się bardziej skomplikowanych zadań w Bash, przeczytanie pliku tekstowego może być bardzo przydatne. W tym krótkim artykule pokażemy Ci, jak czytać pliki tekstowe w Bash i jakie są najczęstsze zastosowania tej umiejętności.
 
 ## Jak to zrobić
 
-Aby odczytać plik tekstowy w Bashu, wykorzystujemy komendę `cat` (od *concatenate*) wraz z odpowiednią ścieżką do pliku. Przykładowo, jeśli chcemy odczytać plik tekstowy o nazwie `tekst.txt`, będący w tym samym folderze co aktualny terminal, wpisujemy `cat tekst.txt`. W ten sposób zostanie wyświetlona cała zawartość pliku w terminalu.
+Czytanie plików tekstowych w Bash jest bardzo proste i wykorzystuje komendę `cat`. Umożliwia ona wyświetlenie zawartości pliku tekstowego w konsoli. W poniższych przykładach użyjemy pliku o nazwie "dane.txt", ale możesz zastąpić ją dowolnym innym plikiem tekstowym.
+
+### Przykład 1: Wyświetlenie całego pliku
+
+Poniższe polecenie wyświetli całą zawartość pliku "dane.txt" w konsoli:
 
 ```Bash
-cat tekst.txt
+cat dane.txt
 ```
 
-Aby wyświetlić jedynie określoną ilość linii z pliku tekstowego, możemy wykorzystać parametr `-n` oraz liczbę określającą ilość linii do wyświetlenia. Na przykład, jeśli chcemy wyświetlić pierwsze 10 linii pliku, wpisujemy `cat -n 10 tekst.txt`. W podobny sposób możemy wyświetlić ostatnie linie pliku, wykorzystując parametr `-n -10`.
+### Przykład 2: Wyświetlenie wybranego wiersza
+
+Możesz również wyświetlić tylko wybrany wiersz z pliku tekstowego, podając jego numer. Na przykład, jeśli chcesz wyświetlić drugi wiersz, użyj poniższego polecenia:
 
 ```Bash
-cat -n 10 tekst.txt
+cat dane.txt | awk 'NR==2'
 ```
 
-Możemy również użyć komendy `head` oraz `tail`, aby wyświetlić odpowiednio pierwsze i ostatnie linie pliku tekstowego. Dzięki temu unikamy konieczności podawania numerów linii.
+### Przykład 3: Wyświetlenie wybranej kolumny
+
+Polecenie `awk` może również pomóc w wyświetleniu wybranej kolumny z pliku tekstowego. W poniższym przykładzie wyświetlimy drugą kolumnę z pliku "dane.txt":
 
 ```Bash
-head tekst.txt
+cat dane.txt | awk '{print $2}'
 ```
 
-```Bash
-tail tekst.txt
-```
+### Przykład 4: Zastosowanie pętli dla każdego wiersza
 
-Jeśli chcemy dokonać bardziej zaawansowanej manipulacji tekstem z pliku, na przykład wyświetlić jedynie linie zawierające określone słowo, możemy skorzystać z potężnej komendy `grep`. Przykładowo, jeśli chcemy wyświetlić jedynie linie zawierające słowo "Bash", wpisujemy `cat tekst.txt | grep Bash`. W ten sposób zostaną wyświetlone tylko linie, które zawierają słowo "Bash".
+Jeśli chcesz wykonać jakieś operacje dla każdego wiersza pliku tekstowego, możesz wykorzystać pętlę `while` w Bash. W poniższym przykładzie wyświetlimy każdy wiersz pliku "dane.txt" w osobnej linii:
 
 ```Bash
-cat tekst.txt | grep Bash
+while read line; do
+    echo $line
+done < dane.txt
 ```
 
 ## Deep Dive
 
-Chociaż wyświetlanie zawartości pliku tekstowego w terminalu jest przydatne, dobrze jest znać kilka przydatnych opcji, aby upewnić się, że odczytujemy tylko potrzebne nam informacje. Przykładowo, jeśli chcemy zignorować dziwne znaki ascii, które czasami mogą znajdować się w tekście, możemy skorzystać z parametru `-v` w komendzie `grep`. W ten sposób zostaną wyświetlone tylko linie, które nie zawierają tych znaków.
+Często będziesz musiał pracować z większą ilością danych w plikach tekstowych i konieczne będzie przetworzenie ich w sposób bardziej złożony. W Bash istnieje wiele narzędzi, które mogą pomóc w takich zadaniach, takich jak `grep` czy `sed`. Niektóre programy wykorzystujące te narzędzia mogą nawet przyjmować plik tekstowy jako argument.
+
+Dla przykładu, poniższe polecenie wyświetli liczbę słów w pliku tekstowym "dane.txt":
 
 ```Bash
-cat tekst.txt | grep -v 'ascii'
+grep -o '\w\+' dane.txt | wc -w
 ```
 
-Inną przydatną opcją jest `grep -i`, która ignoruje wielkość liter w poszukiwanym słowie. W ten sposób możemy łatwiej znaleźć wszystkie linie zawierające słowo, niezależnie od tego, czy jest ono napisane wielkimi czy małymi literami.
+## Zobacz również
 
-```Bash
-cat tekst.txt | grep -i 'BASH'
-```
-
-## Zobacz także
-
-- [Podstawy środowiska bash w Linuxie](https://linux.pl/kurs_bash)
-- [7 przydatnych trików w Bashu](https://www.shellscript.sh/tips/)
-- [Dokumentacja komendy `cat`](https://ss64.com/bash/cat.html)
+- [Podstawowe polecenia Bash](https://linux.die.net/man/1/bash)
+- [Polecenie `cat` w Bash](https://linux.die.net/man/1/cat)
+- [Polecenie `awk` w Bash](https://linux.die.net/man/1/awk)

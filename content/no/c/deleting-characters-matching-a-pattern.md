@@ -1,58 +1,72 @@
 ---
-title:    "C: Sletting av tegn som matcher et mønster"
+title:    "C: Slette tegn som matcher et mønster"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Noen ganger kan det være nødvendig å slette bestemte tegn eller tekstmønstre fra en tekststreng i et program. Dette kan for eksempel være for å fjerne uønsket informasjon eller for å formatere teksten på en spesiell måte. Uansett årsak, er det viktig å vite hvordan man kan utføre denne handlingen i et C-program.
+Noen ganger i programmeringen må man slette karakterer som passer til et bestemt mønster. Dette kan være nyttig når man for eksempel ønsker å filtrere ut uønskede data eller rense en tekststreng. Å vite hvordan man kan utføre denne oppgaven kan være nyttig i en rekke situasjoner.
 
 ## Slik gjør du det
 
-For å slette tegn eller tekstmønstre fra en tekststreng i C, kan man bruke funksjonen "strtok". Denne funksjonen deler opp tekststrengen i mindre biter basert på et gitt tegn eller mønster, og returnerer hvert stykke som en egen streng.
-
-Her er et eksempel på hvordan man kan bruke "strtok" til å slette alle forekomster av et bestemt tegn i en tekststreng:
+Coding eksempel:
 
 ```C
-#include <stdio.h> 
-#include <string.h> 
-  
-int main() 
-{ 
-    char tekst[] = "dette er en tekst med noen a'er"; 
-    char *del = "a"; 
-    char *stykke; 
-  
-    // bruker strtok til å dele opp tekststrengen 
-    stykke = strtok(tekst, del); 
-  
-    while (stykke != NULL) { 
-        printf("%s ", stykke); 
-        stykke = strtok(NULL, del); // går videre til neste stykke 
-    } 
-  
-    return 0; 
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  // Definerer en tekststreng og et mønster
+  char string[] = "Hei! Velkommen til min bloggpost.";
+  char pattern[] = "!";
+  int i, j;
+
+  // Går gjennom hver karakter i tekststrengen
+  for (i = 0; string[i] != '\0';) {
+    int flag = 0;
+
+    // Sjekker om nåværende karakter passer til mønsteret
+    for (j = 0; pattern[j] != '\0'; j++) {
+      if (string[i + j] != pattern[j]) {
+        flag = 1;
+        break;
+      }
+    }
+
+    // Hvis mønsteret matcher, slett karakteren
+    if (flag == 0) {
+      for (j = i; string[j] != '\0'; j++) {
+        string[j] = string[j + 1];
+      }
+    } else {
+      i++;
+    }
+  }
+
+  // Printer ut den endrede tekststrengen
+  printf("%s\n", string);
+
+  return 0;
 }
+
 ```
 
-Dette eksempelet vil gi følgende output:
+Output:
 
-```dette er en tekst med noen 'er```
+```
+Hei Velkommen til min bloggpost
+```
 
-Som du kan se, vil alle "a" i tekststrengen være fjernet.
+## Dypdykk
 
-## Dykk dypere
+Mens koden over viser en enkel løsning for å slette karakterer som matcher et mønster, kan det være verdt å se på mer avanserte metoder for å løse dette problemet. For eksempel kan man bruke innebygde funksjoner som `strchr` eller `strrchr` fra string.h biblioteket for å finne og slette et spesifikt tegn i en tekststreng.
 
-Det finnes flere måter å slette tegn eller tekstmønstre på i C, for eksempel ved bruk av "strchr" eller "strstr" funksjonene. Det kan også være nyttig å ha kunnskap om hvordan man bruker regulære uttrykk når man skal slette flere tegn eller komplekse mønstre.
-
-Husk også at når man sletter tegn eller tekstmønstre, vil lengden på tekststrengen bli endret. Dette kan påvirke andre deler av koden, spesielt dersom du jobber med dynamiske tekststrenger. Derfor er det viktig å være forsiktig og ha god kunnskap om hvordan de forskjellige funksjonene virker.
+En annen ting å vurdere er hvordan man håndterer store tekstfiler. I stedet for å lese og behandle hele filen på en gang, kan man implementere en metode for å lese data bit for bit. På denne måten kan man håndtere store filer mer effektivt og unngå å overskride minnebegrensninger.
 
 ## Se også
 
-- [C-programmering](https://www.w3schools.in/c-tutorial/)
-- [strtok funksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [strchr funksjonen](https://www.geeksforgeeks.org/strchr-c-library-function/)
-- [strstr funksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Regulære uttrykk i C](https://www.copyleft.no/portal/coding/c-programmeringsverktoy-2/regulare-uttrykk-regex-i-c)
+- [strchr og strrchr funksjoner i C](https://www.geeksforgeeks.org/strchr-function-in-c/)
+- [Håndtering av store filer i C](https://www.geeksforgeeks.org/c-programming-for-handling-large-data-sets/)

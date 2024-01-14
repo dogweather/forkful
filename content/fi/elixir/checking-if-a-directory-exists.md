@@ -1,65 +1,33 @@
 ---
-title:    "Elixir: Tarkistetaan löytyykö hakemistoa"
+title:    "Elixir: Tarkistetaan, onko hakemisto olemassa"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Monissa ohjelmointiprojekteissa voi olla tarve tarkistaa, onko tietty hakemisto olemassa. Tämä on erityisen tärkeää, jos haluat varmistaa, että tietyn tiedoston tallentaminen tai lukeminen on mahdollista.
 
-Miksi sinun kannattaa tarkistaa, onko hakemisto olemassa? Hakemistojen tarkistaminen voi olla tärkeää sovelluksille, jotka tarvitsevat pääsyn tiettyihin tiedostoihin tai resursseihin. Tämä varmistaa, että sovelluksesi toimii sujuvasti ja virheettömästi.
-
-## Miten
-
-Tarkastaaksesi, onko hakemisto olemassa Elixirillä, voit käyttää `File.dir?`-funktiota. Tämä funktio ottaa argumenttina hakemiston polun ja palauttaa `true`, jos hakemisto on olemassa, ja `false`, jos sitä ei ole.
+## Kuinka
+Voit tarkistaa hakemiston olemassaolon Elixirin `File`-moduulin avulla. Käytä `File.exists?` -funktiota ja anna funktiolle hakemiston polku parametrina. Tässä on esimerkki koodi, joka tarkistaa, onko `logs`-hakemisto olemassa:
 
 ```Elixir
-File.dir?("polku/hakemistoon")
-# => true
+if File.exists?("logs") do
+  IO.puts "Logs-hakemisto löytyi!"
+else
+  IO.puts "Logs-hakemisto ei ole käytettävissä."
+end
 ```
 
-Voit myös käyttää `File.cwd/0`-funktiota saadaksesi nykyisen työhakemiston polun ja tarkistaa sen avulla, onko hakemisto olemassa.
+Tämän koodin tulostuksena näet joko "Logs-hakemisto löytyi!" tai "Logs-hakemisto ei ole käytettävissä." riippuen siitä, onko `logs`-hakemisto olemassa vai ei.
 
-```Elixir
-työhakemisto = File.cwd()
-# => "käyttäjä/kansio/työhakemisto"
+## Syvällisempi tarkastelu
+Tarkastellessamme `File.exists?` funktiota tarkemmin, huomaamme, että se palauttaa arvon `true` jos hakemisto on olemassa ja `false` jos sitä ei löydy. Tämän avulla voit tehdä lisätoimintoja sen perusteella, onko tietty hakemisto käytettävissä vai ei.
 
-File.dir?(työhakemisto)
-# => true
-```
-
-Usein haluamme myös tarkistaa, onko tiedostopolku olemassa ennen hakemiston tarkistamista. Tällöin voimme käyttää `File.exists?`-funktiota, joka palauttaa `true`, jos tiedostopolku on olemassa, ja `false`, jos se ei ole.
-
-```Elixir
-File.exists?("polku/olemattomaan/hakemistoon")
-# => false
-
-File.exists?(työhakemisto)
-# => true
-```
-
-## Syvemmälle
-
-Elixirissa tapahtumienkäsittelijät tarjoavat myös vaihtoehtoisen tavan tarkistaa hakemistoja. Voit käyttää `Dir`-moduulia ja sen `exists?/1`-funktiota tarkistamaan, onko hakemisto olemassa.
-
-```Elixir
-Dir.exists?("polku/hakemistoon")
-# => true
-```
-
-Tämä toiminto käyttää taustalla `File.dir?`-funktiota ja palauttaa myös `true` tai `false`.
-
-Voit myös käyttää `File.stat/1`-funktiota saadaksesi lisätietoja tiedostosta tai hakemistosta. Tämä palauttaa `Stats`-rakenteen, joka sisältää muun muassa tiedoston tai hakemiston luomisajan ja viimeisen muokkausajan.
-
-```Elixir
-File.stat("polku/hakemistoon")
-# => {:ok, %File.Stat{atime: ..., ctime: ..., birthtime: ..., ... }}
-```
-
-Voit löytää lisätietoja Elixirin tiedostohoitoon liittyvistä toiminnoista [virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/File.html) ja [Dir-moduulin dokumentaatiosta](https://hexdocs.pm/elixir/Dir.html).
+`File`-moduulin lisäksi voit myös käyttää Elixirin `Path`-moduulia tarkistaaksesi hakemiston olemassaolon. `Path.expand/2` -funktio laajentaa polun ja `Path.wildcard?/1`-funktio palauttaa arvon `true` jos polku vastaa hakemiston nimeä.
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/)
-- [Elixirin "Getting Started" -opas](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixirin kansainvälinen yhteisö](https://elixir-lang.org/community.html)
+- [Elixir File-moduulin dokumentaatio](https://hexdocs.pm/elixir/File.html)
+- [Elixir Path-moduulin dokumentaatio](https://hexdocs.pm/elixir/Path.html)
+- [Kuinka luoda hakemistoja Elixirissa](https://blog.appsignal.com/2018/07/03/how-to-create-a-directory-in-elixir.html)

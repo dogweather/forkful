@@ -1,83 +1,103 @@
 ---
 title:    "C++ recipe: Reading a text file"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Reading and manipulating text files is an important aspect of programming in any programming language. In C++, it is especially useful for tasks such as data analysis, parsing raw data, and creating user-friendly interfaces. Learning how to read and write text files in C++ can greatly enhance your programming skills and enable you to tackle a wider range of projects.
+Have you ever been faced with a task of extracting data from a text file? Maybe you needed to analyze information from a log file, process a CSV file, or simply read a user input text file in your program. Whatever your reason may be, learning how to read a text file in C++ can come in handy in various programming scenarios.
 
 ## How To
 
-To read a text file in C++, we need to use the `fstream` header file. This file provides the necessary functions for opening, reading, and closing text files. Let's take a look at a simple example:
+To read a text file in C++, we will be using the standard library's `ifstream` class, which is used for input operations on files. First, we need to include the `fstream` header file in our program.
 
-```C++
+```
+#include <fstream>
+```
+
+Next, we need to create an `ifstream` object and open the text file we want to read. The constructor of `ifstream` takes in the name of the file we want to open as a parameter.
+
+```
+ifstream inputFile("sample.txt");
+```
+
+We can also use the `open()` method to open the file, passing in the file name as a parameter.
+
+```
+inputFile.open("sample.txt");
+```
+
+Once the file is open, we can start reading from it. To read a single line from the file, we can use the `getline()` method, which takes in two parameters – the first being the `ifstream` object and the second being a string variable to store the line.
+
+```
+string line;
+getline(inputFile, line);
+```
+
+To read the entire file, we can use a loop that runs until the end of the file is reached. Inside the loop, we can use `getline()` to read each line and perform any desired operations on it.
+
+```
+while (!inputFile.eof()) {
+    string line;
+    getline(inputFile, line);
+
+    // Perform operations on line
+}
+```
+
+It is important to close the file after we are done reading from it, using the `close()` method.
+
+```
+inputFile.close();
+```
+
+Let's take a look at a complete example of reading a text file and printing each line to the console:
+
+```
 #include <iostream>
 #include <fstream>
-
 using namespace std;
 
 int main()
 {
-    // Create an object of ifstream (input file stream) type
-    ifstream file;
-    // Open the text file
-    file.open("sample.txt");
-
-    // Check if the file is open and readable
-    if(!file)
-    {
-        cout << "Error opening file.";
-        return 0;
+    ifstream inputFile("sample.txt");
+    if (!inputFile) {
+        cout << "Error opening file." << endl;
+        return 1;
     }
 
-    // Read the file line by line
     string line;
-    while(getline(file, line))
-    {
-        // Output each line to the console
+    while (!inputFile.eof()) {
+        getline(inputFile, line);
         cout << line << endl;
     }
 
-    // Close the file
-    file.close();
-    
+    inputFile.close();
     return 0;
 }
 ```
 
-In this example, we first include the necessary header files, `iostream` for input and output, and `fstream` for file operations. Then, we use the `using namespace std;` statement to avoid typing `std::` for every variable and function from the standard library.
-
-Next, we create an `ifstream` object, which is used to open and read text files. Using the `open()` function, we specify the name of the text file we want to read. In this case, we use a sample text file called "sample.txt".
-
-We then check if the file was successfully opened using the `if` statement. If there was an error, we notify the user and exit the program. Otherwise, we continue with reading the file line by line using the `getline()` function. This function takes two parameters, the file object and a string variable where each line of the file will be stored.
-
-Once all the lines have been read, we close the file using the `close()` function.
-
-Running this code will output the contents of the text file to the console.
+### Sample Output:
 
 ```
+Hello
 This is a sample text file.
-It contains multiple lines.
-Each line will be output to the console.
+It contains some lines of text.
+The end.
 ```
 
 ## Deep Dive
 
-In the previous example, we used the `getline()` function to read the text file line by line. However, there are other ways to read a file in C++ using the `fstream` header file.
+There are other ways of reading a text file in C++ using the `ifstream` class, such as reading a specific number of characters using the `read()` method or using the `gcount()` method to get the number of characters read. You can also use the `get()` method to read individual characters from the file.
 
-For example, the `get()` function can be used to read a single character from the file, while the `read()` function can be used to read a specific number of characters.
+When using `ifstream` to open a file, it is important to check if the file was successfully opened before proceeding, using the `is_open()` method. We can also check for any errors while reading from the file using the `good()` method.
 
-Additionally, we can also use the `get()` and `read()` functions to read data from binary files, while the `write()` function can be used to write data to a file.
-
-It is important to note that when opening a file to read, we use the `ifstream` object, while for writing to a file, we use the `ofstream` object. Both of these are derived from the base class `fstream`.
+To format the data from the file, we can use the `precision` and `setfill` manipulators from `<iomanip>` to specify the decimal precision and padding for floating-point values.
 
 ## See Also
 
-- [C++ Input/Output](https://www.programiz.com/cpp-programming/library-function/cstdio/fscanf)
-- [fstream documentation](http://www.cplusplus.com/reference/fstream/)
-- [Learn C++ File Handling](https://www.geeksforgeeks.org/basics-file-handling-c/)
-
-Reading and writing text files in C++ is a fundamental skill that every programmer should possess. With the help of the `fstream` header file, you can easily perform various file operations in your programs. Make sure to practice and experiment with different file handling techniques to become proficient in this essential aspect of C++ programming.
+- [C++ Reference - ifstream](https://www.cplusplus.com/reference/fstream/ifstream/)
+- [C++ Tutorial - Reading and Writing Files](https://www.programiz.com/cpp-programming/files-input-output)

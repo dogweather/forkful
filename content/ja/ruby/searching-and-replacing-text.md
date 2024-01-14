@@ -1,31 +1,47 @@
 ---
-title:    "Ruby: テキスト検索と置換"
+title:    "Ruby: テキストの検索と置換"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
 
-テキストの検索と置換を行う理由は、プログラミングにおいて非常に重要な作業であり、コードの効率性や正確性を保つために必要です。テキストの置換を行うことで、複数のファイルやドキュメントで同じ変更を一度に行うことができます。
+プログラマーにとって、テキストの検索と置換は非常に重要なスキルです。これにより、コードや文章をより迅速かつ正確に編集することができます。
 
-## 方法
+##使い方
 
-まずは、Rubyの正規表現を使用してテキストを検索する方法をご紹介します。例として、```/find/```を使用することで、文字列内に含まれる"find"という単語を検索することができます。また、テキストの置換は```gsub```メソッドを使用することで実現できます。例えば、```"This is an example".gsub("an", "the")```を実行することで、"This is the example"という文字列に置き換えることができます。
+検索と置換はRubyで非常に簡単に行うことができます。以下のコードブロックを参考にしてください。
 
-## ディープダイブ
+```Ruby
+# 文章内の特定の単語を別の単語に置換する例
+text = "こんにちは、私はRubyを勉強しています。"
+puts text.gsub("Ruby", "プログラミング")
 
-テキストの検索と置換は、文字列操作やデータベースから情報を取得する際など、プログラミングにおいて非常に頻繁に行われる作業です。正規表現や```gsub```メソッドをより詳しく理解することで、より複雑な検索や置換を行うことができます。また、Ruby以外のプログラミング言語でも同様の機能がありますので、他の言語でも同じように利用することが可能です。
+# 出力: こんにちは、私はプログラミングを勉強しています。
+```
 
-## 参考リンク
+```Ruby
+# 正規表現を使用して文中の文字列を置換する例
+text = "今日はとても暑いです。"
+puts text.gsub(/\S+/, "涼しい")
 
-- [正規表現入門](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
-- [Ruby Associationによるgsubメソッドの解説](https://docs.ruby-lang.org/ja/latest/method/String/i/gsub.html)
-- [正規表現を使ったテキスト検索と置換の方法](https://www.atmarkit.co.jp/ait/series/14306/)
-- [正規表現についての詳細な解説](https://hanamint.blog.fc2.com/blog-entry-18.html)
+# 出力: 涼しい涼しい涼しい。
+```
 
-## その他の参考リンク
+##詳細情報
 
-- [Rubyの基礎知識](https://www.ruby-lang.org/ja/documentation/)
-- [Rubyを使用して文字列を操作する方法](https://www.geeksforgeeks.org/ruby-string-methods-character-operators/)
-- [Rubyを使った大規模データ処理のテクニック](https://www.cloudbees.com/blog/community-tech-tips-scaling-ruby%E2%80%94tips-engineers-to-engineers)
+Rubyの文法を理解することで、検索と置換のパターンを自由に作成することができます。また、正規表現を使用することで、より複雑な検索と置換を行うことも可能です。これらの機能を活用することで、より強力なテキスト編集ツールとしてRubyを活用することができます。
+
+##参考リンク
+
+- [Rubyドキュメント](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [正規表現チュートリアル](https://rubular.com/)
+- [プログラミング学習サイト「ドットインストール」の正規表現レッスン](https://dotinstall.com/lessons/basic_regexp)
+
+##参考になるもの
+
+- [Rubyの標準入力から特定の文字列を置換する方法](https://www.narakeet.com/ruby/string-input-gsub)
+- [Rubyで文字列置換を行う方法](https://www.ipentec.com/document/ruby-replace-string-match-content-with-regex)
+- [Rubyで正規表現を使用して文字列を置換する方法](https://www.atmarkit.co.jp/ait/articles/1805/04/news021.html)

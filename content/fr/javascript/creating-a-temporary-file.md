@@ -1,73 +1,38 @@
 ---
 title:    "Javascript: Création d'un fichier temporaire"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi créer un fichier temporaire en Javascript?
 
-Lorsqu'on développe un programme en Javascript, il peut être utile de créer un fichier temporaire. Ce type de fichier a une durée de vie limitée et est généralement utilisé pour stocker des données de manière temporaire.
+Créer un fichier temporaire en Javascript peut être utile pour stocker des informations temporaires sans avoir à créer un nouveau fichier permanent sur votre ordinateur. Par exemple, si vous avez besoin de stocker des données utilisateur temporaires dans une application Web, il peut être plus efficace de créer un fichier temporaire plutôt que d'écrire continuellement des informations dans un fichier permanent.
 
-## Comment faire 
+## Comment créer un fichier temporaire en Javascript
 
-Il existe plusieurs façons de créer un fichier temporaire en Javascript. La première consiste à utiliser la méthode `fs.writeFileSync()`, qui permet à la fois de créer et d'écrire dans un fichier. Voici un exemple de code :
-
-```Javascript
-const fs = require('fs'); 
-
-// création du fichier temporaire 
-fs.writeFileSync('monfichier.temp', 'Contenu du fichier temporaire'); 
-
-// lecture du fichier temporaire 
-let data = fs.readFileSync('monfichier.temp', 'utf8'); 
-
-// affichage du contenu 
-console.log(data); 
-
-/* output 
-Contenu du fichier temporaire 
-*/ 
-
-// suppression du fichier 
-fs.unlinkSync('monfichier.temp');
-```
-
-Il est également possible d'utiliser le module `tmp` pour créer un fichier temporaire. Voici un exemple de code :
+Il existe plusieurs façons de créer un fichier temporaire en Javascript, mais l'une des méthodes les plus courantes est d'utiliser la fonction `writeFile` dans le module `fs`. Voici un exemple de code utilisant cette méthode:
 
 ```Javascript
-const tmp = require('tmp'); 
+const fs = require('fs');
 
-// création du fichier temporaire 
-let tempFile = tmp.fileSync(); 
-
-// écriture dans le fichier temporaire 
-fs.writeFileSync(tempFile.name, 'Contenu du fichier temporaire'); 
-
-// lecture du fichier temporaire 
-let data = fs.readFileSync(tempFile.name, 'utf8'); 
-
-// affichage du contenu 
-console.log(data); 
-
-/* output 
-Contenu du fichier temporaire 
-*/ 
-
-// suppression du fichier 
-tempFile.removeCallback();
+fs.writeFile('temp.txt', 'Ceci est un fichier temporaire', (err) => {
+  if (err) throw err;
+  console.log('Le fichier temporaire a été créé!');
+});
 ```
 
-## Plongée en profondeur 
+Ce code crée un fichier appelé "temp.txt" avec le contenu spécifié. Vous pouvez également spécifier un chemin de fichier différent pour créer le fichier temporaire dans un emplacement spécifique.
 
-Créer un fichier temporaire peut être particulièrement utile lorsque l'on travaille avec des fichiers volumineux. En effet, cela permet de libérer de l'espace sur le disque dur en supprimant le fichier temporaire une fois qu'il n'est plus nécessaire.
+## Un aperçu plus approfondi de la création de fichiers temporaires en Javascript
 
-Il est également important de prendre en compte la sécurité lors de la création de fichiers temporaires. Il est recommandé d'utiliser des noms de fichiers aléatoires et de s'assurer que le fichier temporaire est bien supprimé une fois qu'il n'est plus utilisé.
+Lorsque vous créez un fichier temporaire en Javascript, il est important de comprendre que le fichier ne sera pas supprimé automatiquement. Vous devrez utiliser une autre méthode pour supprimer le fichier lorsque vous n'en avez plus besoin.
 
-## Voir aussi
+Une autre chose à considérer est que les fichiers temporaires peuvent également être utilisés pour stocker des informations sensibles telles que des mots de passe. Dans ce cas, il est recommandé de chiffrer le contenu du fichier temporaire pour une sécurité accrue.
 
-Pour en savoir plus sur la création de fichiers en Javascript, vous pouvez consulter les liens suivants :
+# Voir aussi
 
-- [Documentation Node.js sur la méthode `fs.writeFileSync()`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_writefilesync_file_data_options)
-- [Documentation du module `tmp`](https://www.npmjs.com/package/tmp)
-- [Article sur la sécurité lors de la création de fichiers temporaires en Javascript](https://glebbahmutov.com/blog/secure-tmp-in-nodejs/)
+- [Documentation sur la fonction writeFile](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+- [Article sur la sécurité des fichiers temporaires en Javascript](https://snyk.io/blog/10-best-practices-to-guarantee-the-security-of-your-nodejs-server/)
+- [Exemple de suppression d'un fichier temporaire en Javascript](https://stackoverflow.com/questions/19103890/delete-file-after-use-in-node-js)

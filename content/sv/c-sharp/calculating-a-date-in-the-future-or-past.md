@@ -1,53 +1,47 @@
 ---
-title:    "C#: Beräkna ett datum i framtiden eller det förflutna"
+title:    "C#: Beräkning av ett datum i framtiden eller i det förflutna"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna beräkna ett datum i framtiden eller det förflutna är en nyttig färdighet i programmeringsvärlden. Det kan hjälpa dig att planera för framtida händelser eller hantera datum i ditt program. I den här bloggposten kommer vi att utforska hur man kan göra detta i C#.
 
-## Så här gör du
-För att beräkna ett datum i framtiden eller det förflutna i C#, behöver vi använda DateTime-klassen. Låt oss först skapa en ny instans av DateTime som representerar dagens datum:
+Ibland kan vi vilja veta vilket datum det kommer att vara om ett visst antal dagar eller från en viss tidpunkt i det förflutna. Om vi t.ex. vill planera en semester eller födelsedagsfest kan det vara användbart att kunna beräkna datumet i förväg.
 
-```C#
-DateTime today = DateTime.Today;
-```
+## Hur man gör
 
-Nu kan vi använda olika metoder från DateTime-klassen för att beräkna ett datum i framtiden eller det förflutna. Till exempel, om vi vill veta vilket datum det är om en månad från idag, kan vi använda AddMonths-metoden:
+För att beräkna ett datum i framtiden eller i det förflutna, kan vi använda DateTime-objektet i C#. Detta objekt har inbyggda metoder för att manipulera datum och tid.
+
+För att beräkna ett datum i framtiden, använder vi Add-metoden och anger antalet dagar som vi vill lägga till. I följande exempel beräknas datumet 60 dagar framåt från dagens datum:
 
 ```C#
-DateTime futureDate = today.AddMonths(1);
-Console.WriteLine("Om en månad från idag är det: " + futureDate.ToString("d"));
+DateTime datum = DateTime.Now;
+datum = datum.Add(TimeSpan.FromDays(60));
+Console.WriteLine("Datumet 60 dagar framåt är: " + datum.ToString("dd/MM/yyyy"));
 ```
 
-Output:
-```
-Om en månad från idag är det: 08/04/2021
-```
+Output: Datumet 60 dagar framåt är: 14/11/2021
 
-På liknande sätt kan vi använda AddDays, AddYears eller andra metoder för att beräkna datum på olika sätt.
-
-För att beräkna ett datum i det förflutna, använder vi bara negativa värden. Till exempel, om vi vill veta vilket datum det var för en vecka sedan, kan vi använda Substract-metoden:
+För att beräkna ett datum i det förflutna kan vi använda Subtract-metoden och ange antalet dagar som vi vill dra bort. I följande exempel beräknas datumet 200 dagar bakåt från dagens datum:
 
 ```C#
-DateTime pastDate = today.Subtract(new TimeSpan(7,0,0,0));
-Console.WriteLine("För en vecka sedan var det: " + pastDate.ToString("d"));
-
+DateTime datum = DateTime.Now;
+datum = datum.Subtract(TimeSpan.FromDays(200));
+Console.WriteLine("Datumet 200 dagar bakåt är: " + datum.ToString("dd/MM/yyyy"));
 ```
 
-Output:
-```
-För en vecka sedan var det: 07/21/2021
-```
+Output: Datumet 200 dagar bakåt är: 28/03/2021
 
 ## Djupdykning
-Det finns flera andra metoder och egenskaper i DateTime-klassen som kan vara användbara för beräkning av datum. Till exempel, om du behöver lägga till ett specifikt antal månader eller dagar till ett datum, kan du använda DateTime.Add metoden och ange antalet månader eller dagar som en parameter. Dessutom kan du använda DateTime.Compare-metoden för att jämföra två datum och se vilket som kommer före det andra.
 
-Det är också viktigt att notera att DateTime-klassen hanterar datum och tider i ditt lokala tidszon. Om du behöver hantera datum och tider i andra tidszoner, kan du använda DateTimeOffset-klassen istället.
+Det är viktigt att komma ihåg att DateTime-objektet även har möjligheten att beräkna datum med hjälp av veckor, månader och år. Vi kan använda AddWeeks, AddMonths och AddYears-metoderna för att lägga till ett specifikt antal veckor, månader eller år till ett datum.
+
+Det är också möjligt att beräkna skillnaden mellan två datum med hjälp av Subtract-metoden. Detta är användbart om vi till exempel vill veta hur många dagar det är kvar till en viss händelse.
 
 ## Se även
-- [Microsoft Docs: DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Microsoft Docs: DateTimeOffset Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-5.0)
-- [C# DateTime Tutorial](https://www.c-sharpcorner.com/UploadFile/0c1bb2/date-and-time-in-C-Sharp-language/)
+
+* [DateTime-strukturen i C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+* [DateTime-metoder för datumberäkning](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.add?view=net-5.0)
+* [Subtract-metoden för DateTime-objekt](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.subtract?view=net-5.0)

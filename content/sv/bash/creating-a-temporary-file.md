@@ -1,37 +1,53 @@
 ---
 title:    "Bash: Skapa en tillfällig fil"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skapa en temporär fil kan vara användbart i många olika situationer. Till exempel, om du behöver spara data för en kort stund i en fil, men inte behöver behålla filen permanent. Det är också användbart när du behöver skapa en fil för att skicka till någon annan eller använda i ditt program, men du vill inte skriva över en befintlig fil.
 
-## Hur man gör det
-För att skapa en temporär fil i Bash, kan du använda kommandot `mktemp`. Det finns två olika sätt att använda det på:
+Att skriva Bash-skript kan vara till nytta för många olika uppgifter, inklusive att skapa och hantera temporära filer. Detta kan vara användbart för att tillfälligt lagra data, utföra beräkningar eller utföra andra operationer som inte behöver sparas permanent.
 
-1. Om du bara behöver filnamnet, men inte filen ska skapas ännu, kan du använda `mktemp` med argumentet `-p` för att ange en målmapp och eventuella önskade prefix för filnamnet. Till exempel:
+## Så här gör du
 
+Att skapa en temporär fil i Bash är enkelt. Först använder du kommandot `mktemp` som skapar en unik fil med ett slumpmässigt namn. Detta kommando har flera olika flaggor som kan användas för att ange vilken typ av fil du vill skapa och var den ska sparas.
+
+```Bash
+# Skapar en temporär fil i aktuell mapp
+tmpfile=$(mktemp)
+
+# Skapar en temporär katalog
+tmpdir=$(mktemp -d)
+
+# Skapar en temporär fil med önskat prefix
+tmpfile=$(mktemp myprefix.XXXXXX)
 ```
-Bash mktemp -p ~/Documents/ utkastXXXX
-```
 
-Det här kommer att skapa ett filnamn som börjar med "utkast" och slutar med fyra slumpmässiga siffror i mappen "Documents" i din hemkatalog.
-
-2. Om du vill skapa en tom fil direkt, kan du använda flaggan `-t` i kombination med `-p` och prefix. Till exempel:
-
-```
-Bash mktemp -p ~/Documents/ -t utkastXXXX > test.txt
-```
-
-Det här kommer att skapa en fil med namnet "utkastXXXX" i mappen "Documents" och omdirigera innehållet till test.txt. Du kan sedan använda filen "test.txt" som du skulle med vilken annan fil som helst.
+När du har skapat filen kan du använda den som vilken annan fil som helst i ditt skript. När ditt skript avslutas kommer filen eller katalogen att raderas automatiskt.
 
 ## Djupdykning
-När du skapar en temporär fil med `mktemp` skapas en unik fil med ett slumpmässigt genererat namn. Detta förhindrar att filen skrivs över av andra filer som redan finns i mappen. Dessutom tar `mktemp` hand om att ta bort filen när den inte längre används, så du behöver inte oroa dig för att rensa upp efter dig själv.
 
-Du kan också ange andra argument till `mktemp` för att styra hur filen skapas och vad den heter. Till exempel, flaggan `-d` skapar en temporär mapp istället för en fil, `-u` tvingar det genererade namnet att vara unikt och `-q` tystar alla eventuella felmeddelanden.
+För att få ännu mer kontroll över skapandet av din temporära fil kan du använda `mktemp` tillsammans med `trap` kommandot. Genom att använda `trap` kan du definiera en funktion som kommer att köras när ditt skript avslutas, oavsett hur det avslutas. Detta är särskilt användbart om du vill säkerställa att din temporära fil alltid tas bort.
+
+```Bash
+#!/bin/bash
+
+# Skapar en temporär fil och sätter en 'trap'
+# för att ta bort filen när skriptet avslutas
+tmpfile=$(mktemp)
+trap "rm $tmpfile" EXIT
+
+# Använd filen i ditt skript
+echo "Det här är en temporär fil" > $tmpfile
+
+# Avslutar skriptet
+exit
+```
 
 ## Se även
+
 - [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [The Linux Command Line](http://linuxcommand.org/tlcl.php)
+- [Linux Documentation Project](https://tldp.org/)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)

@@ -1,56 +1,62 @@
 ---
 title:    "Clojure: Pisanie pliku tekstowego"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać pliki tekstowe w języku Clojure?
+## Dlaczego
 
-Pisanie plików tekstowych jest bardzo przydatną umiejętnością dla każdego programisty, a język Clojure sprawia, że jest to jeszcze łatwiejsze. Możesz wykorzystać pisanie plików tekstowych do przechowywania wielu informacji i danych, a także do generowania raportów lub dokumentów. Ponadto, korzystanie z języka Clojure sprawia, że pisanie plików tekstowych jest szybkie i wydajne dzięki jego funkcyjnym cechom.
+Pisanie plików tekstowych jest ważnym elementem programowania w języku Clojure. Płynne operowanie na plikach tekstowych pozwala na łatwe przetwarzanie i analizę danych. Dodatkowo, tworzenie plików tekstowych jest często wykorzystywane do komunikacji z innymi programami.
 
-## Jak napisać plik tekstowy w języku Clojure?
+## Jak to zrobić
 
-Aby napisać plik tekstowy w języku Clojure, wystarczy użyć funkcji `spit` lub `spit-lines`. Oba te funkcje pozwalają na zapisanie tekstu do pliku w prosty i wygodny sposób. Poniżej znajdują się przykładowe kody i wynik dla każdej z tych funkcji.
-
-```Clojure
-(spit "tekstowy_plik.txt" "To jest przykładowy tekst, który zostanie zapisany do pliku.")
-```
-
-W wyniku, w naszym pliku "tekstowy_plik.txt" pojawi się następujący tekst:
-
-```
-To jest przykładowy tekst, który zostanie zapisany do pliku.
-```
-
-Możemy również stworzyć plik tekstowy, który będzie zawierał wiele linii tekstu. Służy do tego funkcja `spit-lines`, która jako argument przyjmuje listę tekstu lub sekwencję.
+Aby zapisać treść do pliku tekstowego, możemy skorzystać z funkcji `spit` w następujący sposób:
 
 ```Clojure
-(spit-lines "tekstowy_plik.txt" ["To jest pierwsza linia" "To jest druga linia" "A to jest trzecia linia"])
+(spit "tekst.txt" "To jest przykładowy tekst.")
 ```
 
-Wygenerowany plik będzie zawierał następujący tekst:
+Powyższy kod utworzy plik "tekst.txt" i wypełni go tekstem "To jest przykładowy tekst." W przypadku, gdy chcemy dopisywać tekst do istniejącego już pliku, możemy użyć funkcji `spit` wraz z flagą `:append`:
 
-```
-To jest pierwsza linia
-To jest druga linia
-A to jest trzecia linia
+```Clojure
+(spit "tekst.txt" "To jest kolejny tekst." :append)
 ```
 
-## Zagłębienie się w temat pisania plików tekstowych
+Teraz nasz plik "tekst.txt" zawiera oba teksty.
 
-Dodatkowo, język Clojure oferuje wiele narzędzi pozwalających na pracę z plikami tekstowymi. Możesz użyć funkcji `slurp`, aby wczytać całą zawartość pliku do zmiennej. Możesz także użyć funkcji `clojure.java.io`, aby dokonywać różnych operacji na plikach, takich jak kopiowanie, przenoszenie czy usuwanie.
+Możemy także odczytywać dane z pliku tekstowego przy użyciu funkcji `slurp`:
 
-Ponadto, język Clojure posiada również biblioteki do obsługi formatów plików tekstowych, takich jak CSV czy JSON. Dzięki temu, pisanie aplikacji do przetwarzania danych w tych formatach stanie się jeszcze prostsze i bardziej wydajne.
+```Clojure
+(slurp "tekst.txt")
+```
 
-## Zobacz także
+Powyższa funkcja zwróci nam zawartość pliku jako string.
 
-1. Dokumentacja Clojure do funkcji `spit` i `spit-lines`: https://clojuredocs.org/clojure.core/spit
+## Wnikliwa analiza
 
-2. Poradnik "Pisanie plików tekstowych w języku Clojure": https://www.braveclojure.com/writing-files/
+Clojure oferuje również bardziej zaawansowane możliwości manipulacji plikami. Na przykład, możemy użyć funkcji `file-seq`, aby stworzyć sekwencję plików w danym katalogu:
 
-3. Biblioteka Clojure do obsługi formatu CSV: https://github.com/weavejester/csv
+```Clojure
+(file-seq (io/file "katalog"))
+```
 
-4. Biblioteka Clojure do obsługi formatu JSON: https://github.com/clojure/data.json
+Powyższy przykład zwróci nam sekwencję zawierającą wszystkie pliki w folderze "katalog". Możemy także wykorzystać funkcję `file?`, aby sprawdzić, czy dany plik jest plikiem tekstowym:
 
-Dzięki wykorzystaniu języka Clojure pisanie plików tekstowych staje się prostsze, wydajniejsze i bardziej przyjemne. Odkryj wszystkie możliwości, jakie oferuje ten język i zacznij wykorzystywać je już teraz!
+```Clojure
+(file? (io/file "tekst.txt"))
+```
+
+Ostatnią funkcją, którą warto poznać, jest `file-lines`, która zwraca sekwencję wierszy z pliku tekstowego:
+
+```Clojure
+(file-lines "tekst.txt")
+```
+
+Teraz możemy łatwo przejść przez wszystkie linie z pliku i dokonywać na nich różnych operacji.
+
+## Zobacz też
+
+- Dokumentacja Clojure dotycząca obsługi plików (https://clojuredocs.org/clojure.core/spit)
+- Przykładowe projekty wykorzystujące ładowanie i zapisywanie danych do plików tekstowych (https://github.com/search?q=clojure+file+handling&type=Repositories)

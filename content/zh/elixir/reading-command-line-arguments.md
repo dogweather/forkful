@@ -1,53 +1,62 @@
 ---
 title:    "Elixir: 读取命令行参数"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要阅读命令行参数
-
-阅读命令行参数是编程中一个基础的技能，它能帮助我们从命令行获取输入，并根据不同的参数执行不同的操作。通过阅读命令行参数，我们能够更有效地控制程序的行为，使代码更灵活。
+# 为什么阅读命令行参数
+当我们在编写程序时，有时候我们希望从终端（或命令行）中获得一些输入，而不是把所有的数据都写在代码里。这时候，我们就需要阅读命令行参数来获取输入，让我们的程序变得更加灵活和易于使用。
 
 ## 如何阅读命令行参数
-
-在Elixir中，我们可以使用IO模块的`argv`函数来获取命令行参数。下面是一个例子：
-
-```Elixir
-args = IO.argv
-```
-
-使用`argv`函数会将命令行参数存储在一个列表中，并赋值给变量`args`。我们可以使用`length`函数来获取传递的参数数量：
+阅读命令行参数在Elixir中非常简单。我们可以使用`System.argv`函数来获取命令行参数的列表。下面这个例子展示了如何获取用户在终端输入的两个数字，并计算它们的和。
 
 ```Elixir
-length(args)
+input1 = System.argv |> List.first |> String.to_integer
+input2 = System.argv |> List.last |> String.to_integer
+
+IO.puts "输入的两个数字是 #{input1} 和 #{input2}"
+IO.puts "它们的和是 #{input1 + input2}"
 ```
 
-同样，我们也可以使用`nth`函数来获取特定位置的参数：
+在终端中，我们可以这样调用这个程序：
+
+```
+elixir sum.exs 2 3
+```
+
+这将输出：
+
+```
+输入的两个数字是 2 和 3
+它们的和是 5
+```
+
+## 深入了解命令行参数
+除了获取输入外，我们还可以在命令行中传递一些特殊的参数来控制我们的程序。这些参数通常以`--`为前缀，并可以有多个。下面是一个例子，通过命令行参数来指定要打印的字符串和重复的次数。
 
 ```Elixir
-arg = List.nth(args, 0)
+# 命令行参数的格式为 `--参数名 值`
+input_string = System.argv |> Enum.at(2) |> String.to_integer
+repeat_count = System.argv |> Enum.at(4) |> String.to_integer
+
+IO.puts String.duplicate(input_string, repeat_count)
 ```
 
-当我们运行上面的代码，并在命令行输入`elixir example.exs foo bar`，则变量`arg`的值就会变为`foo`。
+在终端中，我们可以这样调用这个程序：
 
-## 深入了解阅读命令行参数
-
-在Elixir中，我们也可以使用模式匹配来处理命令行参数。例如，我们可以使用下划线来忽略不需要的参数，只关心特定的参数：
-
-```Elixir
-[_, _, first_param, _] = IO.argv
+```
+elixir repeat.exs --str "Hello!" --times 3
 ```
 
-这样，变量`first_param`的值就会是第三个传递的参数。
+这将输出：
 
-在实际的项目中，我们也可以结合使用`OptionParser`模块来更方便地处理命令行参数。该模块可以帮助我们定义不同的参数，并根据用户输入的不同参数执行相应的操作。有关更多信息，请查看Elixir的官方文档。
+```
+Hello!Hello!Hello!
+```
 
-## 参考链接
-
-- [Elixir官方文档](https://elixir-lang.org/getting-started/)
-
-## 查看也可以
-
-- [如何使用Elixir编写命令行工具](https://dev.to/marv1n/how-to-write-command-line-tools-in-elixir-1emi)
-- [深入理解Elixir的模式匹配](https://www.javascriptjanuary.com/blog/gentle-intro-to-pattern-matching-in-elixir)
+# 参考链接
+- [Elixir官方文档 - System.argv](https://hexdocs.pm/elixir/System.argv.html)
+- [命令行参数的使用方法](https://elixirschool.com/lessons/basics/command-line-flags/)
+- [更多Elixir知识，敬请关注Elixir中国社区](https://elixir-cn.com/)

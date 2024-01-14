@@ -1,44 +1,42 @@
 ---
-title:    "Bash: Å skrive tester"
+title:    "Bash: Skriver tester"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester i Bash-programmering kan virke som en ekstra belastning og tidkrevende, men det kan være en verdifull praksis for å sikre god kodekvalitet. Ved å skrive tester kan du oppdage feil og problemer tidlig i utviklingsprosessen, noe som gjør det enklere å fikse dem før de blir et større problem.
+Å skrive tester er en viktig del av å utvikle gode bash programmer. Å teste koden din vil bidra til å identifisere feil tidlig og sikre at programmet fungerer som forventet. Ved å skrive tester kan du også enkelt gjøre endringer i koden din uten å bekymre deg for å ødelegge funksjonaliteten.
 
-## Slik gjør du det
+## Hvordan
 
-For å skrive tester i Bash må du først installere et testbibliotek som f.eks. Bats. Etter installasjonen kan du skrive tester ved å bruke kommandoen "bats" og deretter navnet på testfilen. Du kan også skrive en "shebang" på toppen av testfilen for å kjøre den direkte som et Bash-skript.
+For å skrive tester i Bash, kan du bruke test-kommandoen som lar deg sammenligne verdier og returnere en sann eller usann verdi avhengig av resultatet. La oss se på et eksempel:
 
 ```Bash
-#! /usr/bin/env bats
+# Definerer en variabel
+navn="Maria"
 
-@test "testing addition" {
-  result=$(./add_numbers.sh 5 10)
-  [ ${result} -eq 15 ]
-}
-
-@test "testing subtraction" {
-  result=$(./subtract_numbers.sh 10 5)
-  [ ${result} -eq 5 ]
-}
+# Sjekker om variabelen er lik "Maria"
+if [ $navn == "Maria" ];
+then
+    echo "Hei Maria!"
+else
+    echo "Hvem er du?"
+fi
 ```
 
-I dette eksempelet tester vi to Bash-skript, "add_numbers.sh" og "subtract_numbers.sh", som henholdsvis legger til og trekker fra tall. Vi bruker "test" kommandoen til å definere en ny test og "result" variabelen til å lagre resultatet av Bash-skriptet. Deretter bruker vi Bash-syntax til å sjekke om resultatet er lik forventet verdi.
+I dette eksempelet bruker vi test-kommandoen `[ $navn == "Maria" ]` for å sammenligne verdien av variabelen "navn" med strengen "Maria". Hvis betingelsen er sann, vil programmet skrive ut "Hei Maria!", ellers vil det skrive ut "Hvem er du?". Dette viser hvordan testing kan hjelpe deg med å sikre at koden din fungerer som forventet.
 
-## Dypere dykk
+## Dypdykk
 
-Når du begynner å skrive tester i Bash, er det viktig å huske at det ikke finnes noen universell måte å skrive dem på. Det er mange forskjellige verktøy og metoder du kan bruke, så velg en som fungerer best for deg og dine prosjekter.
+Nå som du har fått en introduksjon til hvordan du kan skrive tester i Bash, kan det være nyttig å vite noen flere tips og triks for å skrive effektive tester. En viktig ting å huske på er å skrive tester for alle mulige utfall, ikke bare det som forventes. Dette vil sikre at programmet ditt håndterer uventede feil eller inndata også.
 
-Det er også viktig å sørge for at testene dine er godt organisert og dekker alle deler av koden din. Det er fristende å bare teste de mest åpenbare delene, men det er viktig å også dekke hjørnetilfeller og uventede situasjoner.
+Du kan også lage tester for funksjonskall ved å lese output fra en funksjon og sammenligne det med det forventede resultatet, eller ved å teste forhåndsdefinerte variabler som skal oppdateres av funksjonen. Det kan også være lurt å bruke beskrivende tester, slik at du enkelt kan forstå hva testen skal gjøre uten å måtte lese selve koden.
 
-Et annet tips er å skrive testene dine før du faktisk begynner å kode. Dette kalles "test-driven development" og kan bidra til bedre og mer gjennomtenkt kode.
+## Se Også
 
-## Se også
-
-- [Bats testbibliotek](https://github.com/sstephenson/bats)
-- [Bash-test eksempler](https://github.com/kward/shunit2)
-- [Test-Driven Development i Bash](https://dev.to/thiagodebastos/test-driven-development-tdd-with-bash-2b4l)
+- [Bash scripting tutorial (en)](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash test-kommando dokumentasjon (en)](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
+- [Eksempler på Bash testing (en)](https://www.lifewire.com/test-for-an-empty-value-2201046)

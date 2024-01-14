@@ -1,45 +1,50 @@
 ---
 title:    "Haskell: Testien kirjoittaminen"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testeja?
+# Miksi kirjoittaa testejä?
 
-Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä monella tapaa. Ensinnäkin se auttaa varmistamaan, että koodi toimii odotetulla tavalla ja korjaa mahdolliset virheet ennen kuin ne pääsevät tuotantoon. Lisäksi testien avulla voi arvioida koodin suorituskykyä ja löytää mahdollisia optimointimahdollisuuksia. Lopuksi testien avulla voidaan varmistaa, että koodi pysyy toimivana myös tulevien muutosten yhteydessä.
+Testien kirjoittaminen voi vaikuttaa aikaa vievältä ja tarpeettomalta, mutta ne ovat todella tärkeitä varmistettaessa koodin laatu ja toiminnallisuus. Testit voivat auttaa havaitsemaan virheitä ja korjaamaan ne ennen kuin ne pääsevät tuotantoon, mikä säästää aikaa ja vaivaa pitkällä aikavälillä.
 
-## Miten kirjoittaa testeja?
+# Kuinka kirjoittaa testejä Haskellilla?
 
-Testien kirjoittaminen Haskellissa on melko helppoa, ja seuraavassa on muutamia esimerkkejä siitä, miten testejä voi kirjoittaa omassa koodissasi.
+Testien kirjoittaminen Haskellilla on helppoa ja intuitiivista käyttäen HSpec-kirjastoa. Seuraavassa on näytekoodi, jossa määritellään yksinkertainen testi ja sen odotettu tulos:
 
 ```Haskell
-import Test.HUnit
+import Test.Hspec
 
--- Yksinkertainen yhteenlaskutesti
-testi1 = TestCase (assertEqual "1 + 2 ei ole 3" 3 (1+2))
-
--- Testitapauksien lista
-testit = TestList [testi1]
-
--- Testaa kaikki testitapaukset
-main = runTestTT testit
+main :: IO ()
+main = hspec $ describe "LaskeSumma" $ do
+    it "Laskee kahden numeron summan oikein" $ do
+        laskeSumma 2 3 `shouldBe` 5
 ```
 
-Output:
+Koodin tulos näyttää seuraavanlaiselta:
 
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
+LaskeSumma
+  Laskee kahden numeron summan oikein
+
+Finished in 0.0006 seconds
+1 example, 0 failures
 ```
 
-Edellä olevassa esimerkissä käytämme Test.HUnit-moduulia, joka tarjoaa meille tarvittavat työkalut testien kirjoittamiseen. `TestCase`-funktio ottaa testin nimen ja testin tuloksen, ja `assertEqual` verraa odotettua tulosta ja todellista tulosta. Voit myös luoda oman `Test`-tyypin ja käyttää sitä `TestList`-funktiolla luomaan testitapauksista listan. Lopuksi `runTestTT` käynnistää kaikki testit ja tulostaa niiden tulokset.
+Tässä koodissa käytetään `describe`- ja `it`-funktioita, jotka auttavat selkeämmän ja helpommin luettavan koodin luomisessa. Koodin `shouldBe`-funktio vertaa lasketun summan odotettuun tulokseen ja ilmoittaa testeistä, jotka eivät ole menneet läpi.
 
-## Syvällinen sukellus
+# Syvempi sukellus
 
-Testien kirjoittamisessa on monia muita hyviä käytäntöjä, kuten testikattavuuden mittaaminen ja nimien antaminen testitapauksille kuvaavasti. Lisäksi kannattaa tutustua myös QuickCheck-kirjastoon, joka tarjoaa keinoja satunnaisesti generoida testitapauksia.
+Testien kirjoittaminen voi olla monimutkaisempaa kuin edellä esitetyssä esimerkissä. Haskellilla on monia erilaisia testauskirjastoja, jotka tarjoavat erilaisia ominaisuuksia, kuten HUnit, QuickCheck ja SmallCheck. Ne kaikki toimivat eri tavoin ja voivat tarjota erilaisia etuja testien kirjoittamisessa.
 
-## Katso myös
+Toinen tärkeä osa testien kirjoittamista on kattavuus. Kattavuustestit auttavat varmistamaan, että kaikki koodin osat on testattu ja kattavat mahdollisimman paljon. Tätä voi tehdä käyttämällä työkaluja, kuten HPC (Haskell Program Coverage) ja HSpecin kattavuusraportteja.
 
-- [HUnit-dokumentaatio](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck-dokumentaatio](https://hackage.haskell.org/package/QuickCheck)
-- [Good Practices for Writing Unit Tests in Haskell](https://medium.com/free-code-camp/effective-unit-testing-in-haskell-with-quickcheck-hunit-and-hspec-6f3a0af5795d) (englanniksi)
+On myös tärkeää huomata, että testien kirjoittaminen voi auttaa kehittämään parempaa ja modulaarisempaa koodia. Kun otetaan huomioon testit jo suunnitteluvaiheessa, se auttaa hahmottamaan paremmin koodin rakennetta ja vähentää virheiden mahdollisuutta.
+
+# Katso myös
+
+- [Haskell Test's homepage](https://www.haskell.org/)
+- [HSpec documentation](https://hspec.github.io/)
+- [HPC documentation](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/using-hpc.html)

@@ -1,38 +1,47 @@
 ---
-title:    "Kotlin: Sökning och ersättning av text"
+title:    "Kotlin: Söka och ersätta text"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Ibland när du arbetar med en kodbas, kan du behöva göra stora förändringar i texten. Istället för att gå igenom varje fil manuellt, kan du använda sök-och-ersätt-funktionen för att göra denna process snabbare och mer effektiv. Detta kan spara dig mycket tid och ansträngning när du arbetar med stora mängder text.
+Att byta ut text i en kod kan vara en tidsbesparande åtgärd som kan hjälpa dig att effektivisera ditt arbete. Det kan vara särskilt användbart om du behöver uppdatera flera delar av din kod, istället för att göra det manuellt en efter en.
 
-## Hur man gör det
+## Så här gör du
 
-För att använda söka-och-ersätta-funktionen i Kotlin, kan du använda följande kod:
-
-```Kotlin
-var text = "Hej världen!"
-println(text.replace("Hej", "Hello"))
-```
-
-Detta kommer att ersätta ordet "Hej" med "Hello" i texten och skriva ut "Hello världen!" i konsolen. Du kan också använda regex för att söka och ersätta specifika mönster i texten. Till exempel:
+För att byta ut text i Kotlin, kan du använda funktionen `replace()` som finns inbyggd i språket. Ta en titt på följande exempel:
 
 ```Kotlin
-var text = "Detta är en text med siffror 123"
-println(text.replace(Regex("\\d+"), "123456"))
+val text = "Det här är en text som behöver bytas ut"
+val nyText = text.replace("behöver bytas ut", "är utbytt")
+
+print(nyText)
 ```
 
-Detta kommer att ersätta alla siffror i texten med "123456" och skriva ut "Detta är en text med siffror 123456" i konsolen.
+Output: Det här är en text som är utbytt
+
+I detta exempel har vi definierat en variabel `text` som innehåller den ursprungliga texten. Sedan använder vi `replace()` funktionen och anger vilken del av texten som behöver bytas ut och vad det ska ersättas med. Slutligen skriver vi ut den nya texten som lagrats i variabeln `nyText`.
 
 ## Djupdykning
 
-Söka-och-ersätta-funktionen i Kotlin har många olika alternativ och möjligheter. Till exempel kan du använda "replaceFirst" för att bara ersätta den första förekomsten av ett ord eller ett mönster. Du kan också använda "replaceAfter" och "replaceBefore" för att bara ersätta text efter eller innan ett visst ord eller mönster. För mer information om de olika syntaxen och alternativen som finns tillgängliga för sökning och ersättning i Kotlin, kan du kolla in dokumentationen på Kotlin hemsida.
+För mer komplexa situationer, kan du använda reguljära uttryck för att söka och ersätta text i Kotlin. Dessa mönster gör det möjligt att söka efter mer specifikt innehåll och göra mer avancerade utbyten. Låt oss ta en titt på följande exempel:
 
-## Se även
+```Kotlin
+val text = "Det här är en text med både sifferkombinationer 123 och bokstäver abc"
 
-- [Kotlin dokumentation om söka och ersätta](https://kotlinlang.org/docs/reference/strings.html#string-representation)
-- [Regular expression tutorial](https://www.regular-expressions.info/)
-- [Kotlin officiella hemsida](https://kotlinlang.org/)
+val nyText = text.replace(Regex("[0-9]"), "x")
+
+print(nyText)
+```
+
+Output: Det här är en text med både sifferkombinationer xxx och bokstäver abc
+
+Här använder vi `Regex()` funktionen för att skapa ett reguljärt uttryck som söker efter alla siffror i texten och byter ut dem med bokstaven "x". Detta är bara ett exempel på vad reguljära uttryck kan göra, men de kan vara mycket kraftfulla verktyg när det gäller att söka och ersätta text i din kod.
+
+## Se också
+
+- [Kotlin-docs: String.replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
+- [Kotlin-docs: Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)

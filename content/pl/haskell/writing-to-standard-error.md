@@ -1,48 +1,34 @@
 ---
-title:    "Haskell: Pisanie do standardowego wyjścia błędu"
+title:    "Haskell: Pisanie do standardowego błędu"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu jest ważną częścią programowania w Haskellu. Pozwala na wyświetlanie błędów lub ostrzeżeń w trakcie działania programu, co ułatwia jego debugowanie. W tym artykule przyjrzymy się temu, dlaczego warto używać tej funkcjonalności i jak to zrobić.
+Cześć! Dziś poznamy się bliżej z jednym z najważniejszych aspektów pisania w Haskellu - pisaniem do standardowego błędu. Niektórzy mówią, że nie ma w życiu nic pewniejszego niż śmierć i podatki, ale ja bym dodał do tego jeszcze jeden pewnik - pisaniu do stderr. Wszak nie jest tajemnicą, że każdy programista jest urodzonym ekspertem w generowaniu błędów!
 
 ## Jak to zrobić
 
-Aby napisać do standardowego błędu w Haskellu, możemy użyć funkcji `hPutStrLn` z modułu `System.IO`. Przykładowy kod wyglądałby następująco:
+Aby pisać do standardowego błędu w Haskellu, musimy skorzystać z funkcji `hPutStrLn` z modułu `System.IO`. Oto przykładowe użycie tej funkcji wraz z oczekiwanym wynikiem:
 
 ```Haskell
 import System.IO
 
-main :: IO ()
 main = do
-    hPutStrLn stderr "To jest przykładowy błąd"
-    putStrLn "Kod zostanie wyświetlony po błędzie"
+    hPutStrLn stderr "To jest przykładowy błąd!"
 ```
 
-Wywołanie `hPutStrLn stderr` pozwala na wyświetlenie wiadomości do standardowego błędu, a następnie kod programu może kontynuować swoje działanie. W ten sposób można wyświetlać błędy, ostrzeżenia lub informacje dla użytkownika w trakcie działania programu.
+Wywołanie tej funkcji spowoduje wyświetlenie napisu "To jest przykładowy błąd!" na standardowym błędzie. Proste, prawda?
 
-## Głębszy wykład
+## Głębsze wytłumaczenie
 
-Dodatkowo, w celu zwiększenia czytelności wiadomości wyświetlanych do standardowego błędu, można użyć modułu `Text.Printf` i funkcji `hPrintf`. Pozwala to na formatowanie wiadomości, np. wstawianie wartości zmiennych, co może być szczególnie przydatne przy wyświetlaniu informacji lub błędów związanych z konkretnymi danymi. Przykładowy kod wyglądałby tak:
+Ważnym aspektem pisania do stderr jest również zachowanie oczekiwanej kolejności wyjścia w naszym programie. W przypadku błędu, który zostanie wyrzucony przez funkcję `hPutStrLn`, program będzie kontynuował działanie i wypisze wyjście na stdout. Dzięki temu nasza aplikacja może kontynuować pracę i nawet w przypadku błędu przekazać użytkownikowi niezbędne informacje.
 
-```Haskell
-import System.IO
-import Text.Printf
+Warto również zaznaczyć, że wyjście do stderr należy wypisywać w synchroniczny sposób, czyli w odpowiedniej kolejności. Niektóre funkcje modułu `System.IO` (np. `hPutStr`) wywołują operacje asynchroniczne, co może spowodować nieprawidłową kolejność wypisywanych komunikatów.
 
-main :: IO ()
-main = do
-    let liczba = 5
-    hPrintf stderr "Liczba %d jest mniejsza niż 10" liczba
-    putStrLn "Kod zostanie wyświetlony po błędzie"
-```
-
-W tym przypadku, w miejsce `%d` zostanie wstawiona wartość zmiennej `liczba`, co da efekt "Liczba 5 jest mniejsza niż 10".
-
-## Zobacz też
-
-- [Dokumentacja modułu System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Dokumentacja modułu Text.Printf](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
-- [Sekcja "I/O and Interacting with the World" w książce "Learn You a Haskell for Great Good!"](http://learnyouahaskell.com/input-and-output)
+## Zobacz także
+- Dokumentacja modułu `System.IO`: https://hackage.haskell.org/package/base/docs/System-IO.html
+- Przykłady użycia `hPutStrLn`: https://www.stackage.org/haddock/lts/system-io-1.0.0.3/System-IO.html#v:hPutStrLn

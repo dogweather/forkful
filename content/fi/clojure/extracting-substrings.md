@@ -1,33 +1,42 @@
 ---
-title:    "Clojure: Allaolevien alimerkkien erottaminen"
+title:    "Clojure: Alimerkkijonojen erottelu"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kannattaa ryhtyä erottamaan alirivejä?
+## Miksi
 
-Erottamalla alirivejä, voimme käsitellä merkkijonoja helposti ja tehokkaasti. Tämä auttaa meitä muokkaamaan tietoja ja suorittamaan monimutkaisempia tehtäviä, kuten tekstianalyysiä tai tekstipohjaista hakua.
+Joissakin tapauksissa ohjelmoijan on tarpeen erottaa merkkijonosta tietyt osat, jotka vastaavat tiettyä kaavaa tai kriteeriä. Tämä voi olla esimerkiksi hakeminen tietokannassa olevista nimistä, joissa on tietyt kirjaimet tietyssä järjestyksessä. Tätä kutsutaan substringien erottamiseksi ja se on erittäin hyödyllinen ja kätevä tapa käsitellä dataa.
 
-## Ohjeet: Näin erottat alirivejä Clojurella
+## Kuinka tehdä
+
+Voit erottaa substringin Clojure-kielessä käyttämällä funktiota "subs". Esimerkiksi, jos haluamme erottaa merkkijonosta "Hello World" vain sanan "World", voimme käyttää seuraavaa koodia:
 
 ```Clojure
-; Määritetään merkkijono
-(def s "Tervetuloa Clojureen")
-
-; Käytetään `subs` -funktiota erottamaan alirivi
-; Arvot 6 ja 12 määrittävät aloitus- ja loppukohteen
-(subs s 6 12)
-
-; Tulostaa "Clojure"
+(subs "Hello World" 6)
 ```
 
-## Syvällinen sukellus: Tietoa alirivien erottamisesta
+Tämä tulostaisi "World", koska annamme sille aloituskohdan 6, joka vastaa "W" -kirjainta. Voimme myös määrittää lopetuskohdan, jos haluamme erottaa useiden merkkien substringin. Katso alla oleva esimerkki:
 
-Alirivien erottaminen on helposti tehtävissä Clojurella käyttämällä `subs` -funktiota. Tämä funktio ottaa kolme parametria: merkkijonon, aloituskohdan ja loppukohdan. Aloitus- ja loppukohdat voivat olla joko numeroita tai merkkijonoja. Huomaa, että aloitusindeksi on mukaanlukien, mutta loppuindeksi ei ole.
+```Clojure
+(subs "Hello World" 0 5)
+```
 
-```subs``` -funktiolla voimme myös erottaa alirivejä loppuun asti, jättämällä loppukohtaan parametriksi "-1". Voimme myös käyttää negatiivisia indeksejä, jotka lasketaan taaksepäin merkkijonon lopusta. Esimerkiksi käyttämällä aloitusindeksiä -6 ja loppuindeksiä -1, erottaisimme "Clojureen" merkkijonon lopusta alkuosan "Clojure".
+Tämä tulostaa "Hello", koska aloituskohdaksi annetaan 0 ja lopetuskohdaksi 5, mikä vastaa merkkien "H", "e", "l", "l" ja "o" välillä olevaa substringia.
+
+## Syvä sukellus
+
+Clojuressa on myös mahdollista erottaa substringin määrätyn kriteerin perusteella. Käyttämällä funktiota "re-find", voimme määrittää säännöllisen lausekkeen, joka vastaa etsittävää tekstiä. Esimerkiksi, jos haluamme erottaa kaikki merkkijonosta "aaabbbccc" vain puhtaat kirjaimet "a", voimme käyttää seuraavaa koodia:
+
+```Clojure
+(re-find #"a*" "aaabbbccc")
+```
+
+Tämä tulostaisi "aaa", koska *-merkki vastaa nollasta äärettömään kappaleeseen edellä olevaa kirjainta. Tämä on vain yksi esimerkki säännöllisen lausekkeen käytöstä, joka voi olla erittäin hyödyllinen monimutkaisempien substringien etsimisessä tietyistä merkkijonoista.
 
 ## Katso myös
-- [Clojure Docs: String Functions](https://clojure.org/guides/learn/compilation#strings)
-- [ClojureDocs: subs](https://clojuredocs.org/clojure.core/subs)
+
+- Clojuren viralliset nettisivut: https://clojure.org/
+- Opas säännöllisten lausekkeiden käyttöön Clojurella: https://clojure.org/guides/learn/regular_regex_tokens

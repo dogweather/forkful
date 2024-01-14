@@ -1,52 +1,45 @@
 ---
-title:    "Javascript: Écrire des tests"
+title:    "Javascript: Écriture de tests"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire des tests en Javascript?
 
-L'écriture de tests est un aspect très important de la programmation en Javascript. Non seulement elle vous permet de vérifier si votre code fonctionne correctement, mais elle vous permet également de détecter et de résoudre rapidement les erreurs. Cela vous fait gagner du temps et vous évite des problèmes à l'avenir.
+Lorsque vous écrivez du code en Javascript, il est important de s'assurer que celui-ci fonctionne correctement et de manière cohérente. Les tests automatisés sont un moyen efficace de garantir la fiabilité de votre code et de détecter d'éventuels bugs.
 
-## Comment faire
+## Comment écrire des tests en Javascript?
 
-Pour écrire des tests en Javascript, vous devez utiliser un framework de test tel que Mocha ou Jest. Vous pouvez également utiliser l'outil de test intégré de votre environnement de développement (IDE). Les tests doivent être écrits dans des fichiers séparés et doivent être organisés en fonction des fonctionnalités qu'ils testent.
-
-Voici un exemple de code pour tester une fonction qui ajoute deux nombres :
+Pour commencer, vous devez choisir un outil de test adapté à votre projet. L'un des plus populaires est Jest, qui offre de nombreuses fonctionnalités pratiques telles que le mocking et l'assertion de valeurs. Voici un exemple de code pour tester une fonction de calcul de moyenne :
 
 ```Javascript
-// Importer le framework de test
-const assert = require('assert');
+// Fonction à tester
+function calculerMoyenne(notes) {
+  let somme = 0;
 
-// Importer la fonction à tester
-const sum = require('./sum');
+  for (let i = 0; i < notes.length; i++) {
+    somme += notes[i];
+  }
 
-// Décrire le test avec un nom et une fonction
-describe('Additionner deux nombres', () => {
+  return somme / notes.length;
+}
 
-  // Écrire des scénarios de test avec des assertions
-  it('devrait retourner 4 si les nombres sont 2 et 2', () => {
-    assert.equal(sum(2, 2), 4);
-  });
-
-  it('devrait retourner 10 si les nombres sont 5 et 5', () => {
-    assert.equal(sum(5, 5), 10);
-  });
+// Tests
+test('calculerMoyenne retourne la moyenne correcte', () => {
+  expect(calculerMoyenne([16, 18, 20])).toBe(18);
+  expect(calculerMoyenne([10, 8, 12, 14])).toBe(11);
 });
 ```
 
-Vous pouvez exécuter ces tests en utilisant la commande ```npm test``` dans votre terminal. Si tous les tests réussissent, vous verrez un message "0 errors, 2 tests passed".
+En utilisant Jest, nous pouvons vérifier que notre fonction `calculerMoyenne` renvoie la moyenne correcte pour différents ensembles de notes. Le code peut sembler un peu intimidant au début, mais une fois que vous avez compris les principes de base, écrire des tests devient beaucoup plus facile.
 
-## Plongée en profondeur
+## Approfondissement sur l'écriture de tests en Javascript
 
-Outre les tests unitaires qui vérifient le bon fonctionnement de fonctions et méthodes individuelles, il est également important d'écrire des tests d'intégration qui vérifient le bon fonctionnement de fonctionnalités plus larges de votre application. Vous pouvez également mettre en place des tests automatisés pour exécuter vos tests à chaque fois que vous effectuez des modifications dans votre code.
-
-De plus, vous pouvez utiliser des outils tels que Istanbul pour mesurer la couverture de code de vos tests, vous permettant ainsi de savoir quelle partie de votre code n'est pas encore testée et pourrait potentiellement causer des problèmes.
+Au delà des exemples simples, il existe une multitude de techniques et de bonnes pratiques pour écrire des tests en Javascript. Par exemple, l'utilisation du TDD (Test-Driven Development) où l'on écrit d'abord les tests avant le code, permet de réfléchir à l'architecture de son programme en amont et de détecter les erreurs plus rapidement. Il est également important de comprendre comment bien structurer ses tests et de savoir lesquels ont le plus de valeur dans la détection d'éventuels bugs.
 
 ## Voir aussi
-
-- [Introduction à l'écriture de tests en Javascript](https://blog.devmountain.com/intro-to-javascript-testing/)
-- [Documentation de Mocha](https://mochajs.org/)
-- [Documentation de Jest](https://jestjs.io/)
-- [Documentation de Istanbul](https://istanbul.js.org/)
+- [Documentation officielle de Jest](https://jestjs.io/)
+- [Guide complet pour écrire des tests en Javascript](https://medium.freecodecamp.org/a-complete-guide-to-writing-tests-for-your-javascript-code-using-jest-dd01495979c6)
+- [TDD pour les débutants](https://www.freecodecamp.org/news/learning-tdd-in-javascript-tutorial-lessons-specifically-for-the-freecodecamp-curriculum-5350ae762e49/)

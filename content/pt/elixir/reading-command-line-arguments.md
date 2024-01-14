@@ -1,86 +1,57 @@
 ---
 title:    "Elixir: Lendo argumentos da linha de comando"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que ler argumentos da linha de comando?
 
-Escrever programas em Elixir é uma ótima maneira de aproveitar a escalabilidade e a resiliência que a linguagem oferece. Mas para tirar o máximo proveito do Elixir, é importante aprender a ler os argumentos da linha de comando. Aqui estão algumas razões pelas quais você deve se engajar na leitura de argumentos da linha de comando.
+Ao escrever um programa Elixir, pode ser útil ler argumentos da linha de comando para personalizar o comportamento do programa ou passar informações adicionais ao mesmo. Aprender a ler argumentos da linha de comando pode ajudar a tornar seus programas mais dinâmicos e flexíveis.
 
-## Como fazer
+## Como fazer isso?
 
-A leitura de argumentos da linha de comando em Elixir é simples e pode ser feita facilmente usando duas funções: `System.argv/0` e `System.argv/1`. A primeira função retorna uma lista de argumentos passados no terminal, enquanto a segunda retorna um único argumento com base em seu índice. A seguir, temos um exemplo de como utilizar essas funções:
+O Elixir possui uma biblioteca conveniente chamada `OptionParser` que nos permite ler e interpretar os argumentos da linha de comando. A seguir, estão alguns exemplos de códigos para ler e processar diferentes tipos de argumentos:
 
-```Elixir
-# Programa Elixir que recebe dois argumentos na linha de comando e os imprime na tela
-defmodule ArgReader do
-  def read_args do
-    args = System.argv()
-    IO.inspect "Primeiro argumento: " <> args[1]
-    IO.inspect "Segundo argumento: " <> args[2]
+```
+Elixir program.ex argumento1 argumento2
+```
+Este código irá passar os argumentos "argumento1" e "argumento2" para o programa e você pode acessá-los usando a função `OptionParser.parse/1`:
+
+```
+options = OptionParser.parse(System.argv)
+```
+Em seguida, você pode usar os argumentos lidos para personalizar o comportamento do programa ou fazer alguma operação específica. Aqui está um exemplo simples de um programa que recebe um argumento e imprime uma mensagem com ele:
+
+```
+defmodule MyProgram do
+  def main do
+    options = OptionParser.parse(System.argv)
+    argument = OptionParser.get_argument(options, 0)
+    IO.puts "Olá #{argument}!"
   end
 end
 
-# Chama a função read_args
-ArgReader.read_args()
+MyProgram.main
 ```
 
-Na linha de comando, podemos executar este programa passando dois argumentos:
-```bash
-elixir arg_reader.ex arg1 arg2
+Se você quiser acessar argumentos de flags, pode usar a opção `flag` no `OptionParser`:
+
+```
+options = OptionParser.parse(System.argv, flags: [:h])
+flag_h = OptionParser.get_flag(options, :h)
 ```
 
-A saída seria:
-```bash
-"Primeiro argumento: arg1"
-"Segundo argumento: arg2"
-```
+Esta opção irá permitir que você execute seu programa com a flag `-h` para obter ajuda ou ver a lista de flags disponíveis.
 
-## Profundidade da mergulho
+## Profundidade
 
-Além de simplesmente ler argumentos diretamente do terminal, você também pode usar a biblioteca `OptionParser` do Elixir para fornecer argumentos com flags e opções. Isso permite uma maneira mais flexível de passar argumentos e pode ajudar a tornar seus programas mais interativos. Aqui está um exemplo:
+A biblioteca `OptionParser` também oferece mais recursos e opções para personalizar a leitura de argumentos da linha de comando. Você pode ler argumentos de diferentes tipos de dados, como strings, inteiros e booleanos, e até mesmo fazer validações para garantir que os argumentos estejam em um formato específico.
 
-```Elixir
-# Programa Elixir que utiliza a biblioteca OptionParser para ler argumentos com flags e opções
-defmodule ArgParser do
-  def read_args do
-    # Definindo opções e parâmetros aceitáveis
-    options = [%{short: "-h", long: "--help", description: "Ajuda"},
-              %{short: "-f", long: "--file", description: "Arquivo para processar"},
-              %{short: "-o", long: "--output", type: :binary, description: "Arquivo de saída"}]
-    # Utilizando a função OptionParser.parse para analisar os argumentos
-    case OptionParser.parse(System.argv(), options) do
-      {:ok, parsed_args, _} ->
-        # Verificando as opções e realizando a lógica apropriada
-        if parsed_args[:help] do
-          IO.puts "Opções disponíveis:"
-          IO.inspect options
-        else
-          IO.puts "Processando arquivo #{parsed_args[:file]} e salvando saída em #{parsed_args[:output]}"
-        end
-      _ ->
-        IO.puts "Argumentos inválidos, use --help ou -h para obter ajuda."
-    end
-  end
-end
-
-# Chama a função read_args
-ArgParser.read_args()
-```
-
-Na linha de comando, podemos executar este programa da seguinte forma:
-```bash
-elixir arg_parser.ex --file myfile.txt --output results.txt
-```
-
-A saída seria:
-```bash
-Processando arquivo myfile.txt e salvando saída em results.txt
-```
+Além disso, a biblioteca também permite que você crie argumentos com valores padrão e argumentos opcionais, tornando sua leitura de argumentos ainda mais flexível e personalizada para suas necessidades.
 
 ## Veja também
-
-- [Documentação oficial do Elixir sobre leitura de argumentos da linha de comando](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Biblioteca OptionParser do Elixir](https://hexdocs.pm/elixir/OptionParser.html)
+- [Documentação oficial sobre a biblioteca OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Exemplo de leitura de argumentos da linha de comando usando OptionParser](https://elixirschool.com/pt/lessons/specifics/command-line-args/#patterns-operator)
+- [Tutorial em vídeo sobre como ler argumentos da linha de comando com Elixir](https://www.youtube.com/watch?v=dKfrB2HbvMc)

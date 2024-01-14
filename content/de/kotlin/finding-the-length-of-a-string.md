@@ -1,61 +1,51 @@
 ---
 title:    "Kotlin: Die Länge eines Strings finden"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Finden der Länge einer Zeichenfolge mag eine einfache Aufgabe sein, aber es ist eine grundlegende Fähigkeit in der Programmierung. Es ist wichtig, die Länge einer Zeichenfolge zu kennen, um die Ausgabe zu formatieren oder Bedingungen in Ihrem Code festzulegen. In diesem Blog-Beitrag zeigen wir Ihnen, wie Sie die Länge einer Zeichenfolge in Kotlin finden können.
 
-Als Entwickler oder Entwicklerin in Kotlin ist es wichtig zu wissen, wie man die Länge von Strings findet. Dies ist eine grundlegende Fähigkeit, die in vielen Programmen und Anwendungen nützlich ist.
-
-## Wie man die Länge eines Strings findet
-
-Um die Länge eines Strings zu finden, gibt es in Kotlin eine einfache Methode. Schauen wir uns ein Beispiel an:
+## Wie man es macht
+Kotlin macht es einfach, die Länge einer Zeichenfolge mit der Methode `length` zu finden. Schauen wir uns ein Beispiel an:
 
 ```Kotlin
 val string = "Hallo Welt!"
-val length = string.length
-println(length)
+println(string.length)
 ```
 
-Dieses kurze Beispiel zeigt, wie die "length" Methode auf einem String angewendet werden kann. Die Ausgabe wird "11" sein, da das Leerzeichen auch als Zeichen zählt.
+Ergebnis:
+```
+11
+```
 
-Eine weitere Möglichkeit, die Länge eines Strings zu finden, wäre die Nutzung von String-Interpolation. Dies bedeutet, dass man den String in eine andere Variable packt und dann die "length" Methode darauf anwendet. Ein Beispiel dafür wäre:
+In diesem Beispiel wurde die `length` Methode auf der Zeichenfolge mit dem Text "Hallo Welt!" aufgerufen und das Ergebnis wurde auf der Konsole ausgegeben. Beachten Sie, dass Leerzeichen und Sonderzeichen auch in die Länge der Zeichenfolge einbezogen werden.
+
+Jetzt fragen Sie sich vielleicht, ob die Länge einer Zeichenfolge immer gleich der Anzahl der darin enthaltenen Zeichen ist. In den meisten Fällen ist das richtig, aber es gibt einige Besonderheiten, auf die Sie achten sollten.
+
+In Kotlin sind verschiedene Codierungen von Zeichenfolgen erlaubt, z.B. UTF-8 oder UTF-16. Dies kann Auswirkungen auf die Anzahl der Bytes haben, die für jedes Zeichen in der Zeichenfolge verwendet werden. Wenn Sie genau wissen möchten, wie die Länge einer Zeichenfolge berechnet wird, sollten Sie einen Blick in die offizielle Dokumentation von Kotlin werfen.
+
+## Tiefer eintauchen
+Wussten Sie, dass es auch eine Methode `count` gibt, um die Anzahl eines bestimmten Zeichens in einer Zeichenfolge zu finden? Diese Methode kann nützlich sein, wenn Sie z.B. die Anzahl der Vokale in einem Wort zählen möchten. Hier ist ein Beispiel:
 
 ```Kotlin
-val string = "Guten Morgen!"
-val length = "${string.length}"
-println("Die Länge des Strings ist $length")
+val word = "Programmierung"
+println(word.count { it == 'a' })
 ```
 
-Hier wird der Wert der "length" Methode direkt in die Ausgabe eingefügt.
-
-## Eintauchen in Strings
-
-Es gibt noch einige weitere interessante Informationen über Strings und ihre Länge. Zum Beispiel gibt es in Kotlin auch die Möglichkeit, mit Multiline-Strings zu arbeiten. Dies sind Strings, die über mehrere Zeilen gehen und oft für längere Textpassagen verwendet werden.
-
-Das Besondere an diesen Multiline-Strings ist, dass sie nicht die "length" Methode verwenden können, um ihre Länge zu finden. Stattdessen muss die "lines" Methode verwendet werden, um die Anzahl der Zeilen zu zählen. Ein Beispiel dazu wäre:
-
-```Kotlin
-val multilineString = """
-    Dies ist ein Multiline-String
-    mit mehreren Zeilen
-    und sogar Leerzeichen am Anfang und Ende.
-""".trimIndent()
-
-val numberOfLines = multilineString.lines().size
-println(numberOfLines)
+Ergebnis:
+```
+2
 ```
 
-Dieses Beispiel zeigt, wie man die Anzahl der Zeilen in einem Multiline-String finden kann, indem man die "lines" Methode verwendet. Die Ausgabe wird "3" sein, da der String aus drei Zeilen besteht.
+Das `count` Argument nimmt eine Funktion entgegen, die entscheidet, ob ein Zeichen in die Zählung einbezogen werden soll oder nicht. In diesem Fall wurde das Zeichen `'a'` übergeben, was bedeutet, dass nur die Vokale im String gezählt werden.
+
+Wenn Sie noch tiefer in die Materie eintauchen möchten, empfehlen wir Ihnen, sich mit den verschiedenen Codierungen von Zeichenfolgen und deren Auswirkungen auf die Länge auseinanderzusetzen.
 
 ## Siehe auch
-
-Für weitere Informationen über die Arbeit mit Strings und deren Länge in Kotlin, schau dir diese nützlichen Ressourcen an:
-
-- [Kotlin Dokumentation: Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Tutorial: Working with Strings in Kotlin](https://www.baeldung.com/kotlin/strings)
-- [String Interpolation in Kotlin](https://www.geeksforgeeks.org/interpolation-string-in-kotlin/)
-
-Wir hoffen, dass dieser Artikel dir geholfen hat, die Länge von Strings in Kotlin besser zu verstehen und dir bei zukünftigen Projekten von Nutzen sein wird. Happy coding!
+- Offizielle Kotlin-Dokumentation über die `length` Methode: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html
+- Weitere Informationen über die `count` Methode: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/count.html
+- Eine praktische Anwendung des Zählens von Vokalen in einer Zeichenfolge: https://www.techiedelight.com/counting-vowels-digits-letters-string-kotlin/

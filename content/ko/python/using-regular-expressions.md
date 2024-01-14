@@ -1,50 +1,45 @@
 ---
 title:    "Python: 정규 표현식 사용하기"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 사용해야 할까요?
 
-정규식을 사용하는 이유는 문자열에서 특정 패턴을 찾아내기 위해서입니다.
+정규 표현식은 문자열에서 특정 패턴을 찾거나 대체하는 등 다양한 용도로 사용할 수 있습니다. 이러한 기능들은 프로그래밍에서 매우 유용하며, 특히 큰 데이터셋을 다룰 때 빠르고 정확한 검색을 할 수 있게 해줍니다.
 
-## 사용법
+## 사용 방법
 
-파이썬에서는 `re` 모듈을 사용하여 정규식을 쉽게 다룰 수 있습니다. 예를 들어, 다음과 같은 텍스트가 있다고 가정해봅시다.
+정규 표현식은 're' 라이브러리를 사용하여 파이썬 코드에서 쉽게 적용할 수 있습니다. 아래의 코드를 따라해 보세요.
 
-```
-text = "제 이메일 주소는 example1234@gmail.com입니다."
-```
-
-우리는 이메일 주소를 찾아내기 위해 다음과 같이 작성할 수 있습니다.
-
-```
+```Python
 import re
 
-pattern = r"[\w.]+@[\w.]+\.\w+"
-# [\w.]+: 알파벳, 숫자, 점을 포함한 모든 문자열을 의미합니다.
-# @: @ 기호를 의미합니다.
-# \w+: 알파벳, 숫자를 포함한 모든 문자열을 의미합니다.
-# \.: . 기호를 의미합니다.
-# \w+: 알파벳, 숫자를 포함한 모든 문자열을 의미합니다.
+# 문자열에서 숫자들만 추출하기
+text = 'Hello 123 World'
+numbers = re.findall('\d+', text)
+print(numbers) # ['123']
 
-result = re.findall(pattern, text)
-print(result)
-# 결과: ['example1234@gmail'']
+# 문자열에서 자음들만 추출하기
+text = 'Hello 123 World'
+consonants = re.findall('[^aeiouAEIOU]+', text)
+print(consonants) # ['Hll', ' ' Wrld']
 ```
 
-위 코드를 보면, `re` 모듈의 `findall()` 함수를 사용해서 정규식을 적용한 것을 볼 수 있습니다. `findall()` 함수는 매칭되는 모든 부분을 리스트로 반환합니다. 이처럼 정규식을 사용하면 원하는 패턴을 손쉽게 찾을 수 있습니다.
+## 깊게 파보기
 
-## 깊이 있는 정보
+정규 표현식을 적용할 때, 특수 문자에 대하여 적절하게 이스케이프해야 할 필요가 있습니다. 예를 들어, '.' 문자는 모든 문자를 나타내는 메타 문자이기 때문에, 실제 '.' 문자를 찾기 위해서는 '\.' 로 이스케이프 해주어야 합니다.
 
-정규식을 사용할 때 주의해야 할 점은 패턴을 정확하게 작성하는 것입니다. 만약 패턴이 완전하지 않다면 원하는 결과를 얻지 못할 수 있습니다. 또한, 정규식을 사용하면 코드의 가독성이 떨어지기 때문에 주석을 적극적으로 사용하는 것이 좋습니다. 더 자세한 정보는 다음 링크를 참고해주세요.
+```Python
+# 웹사이트 주소에서 도메인 이름 추출하기
+url = 'https://github.com'
+domain = re.findall('https:\/\/(.+)\.(.+)', url)
+print(domain) # [('github', 'com')]
+```
 
-- [정규식 입문](https://wikidocs.net/1642)
-- [정규식 튜토리얼](https://regexone.com/lesson/introduction_abcs)
-- [정규식 자습서](https://www.geeksforgeeks.org/regular-expression-python/)
+## 관련 링크들
 
-## 또 다른 것들
-
-- [파이썬 문서](https://docs.python.org/ko/3/howto/regex.html)
-- [정규식 테스트 도구](https://regexr.com/)
+* [정규 표현식 문서 - Python.org](https://docs.python.org/3/library/re.html)
+* [정규 표현식 테스트 사이트 - regex101.com](https://regex101.com/)

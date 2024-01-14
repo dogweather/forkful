@@ -1,46 +1,69 @@
 ---
-title:    "Elm: Suchen und Ersetzen von Text"
+title:    "Elm: Text suchen und ersetzen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-In der Welt des Programmierens ist es oft wichtig, Text zu durchsuchen und zu ersetzen, sei es in Skripten, Konfigurationsdateien oder Quellcode. Dies kann sowohl zeitsparend als auch fehlervermeidend sein und ist daher ein wichtiger Schritt im Entwicklungsprozess.
 
-## Anleitung
-Um Text in Elm zu suchen und zu ersetzen, können wir die Funktion `replace` aus dem Paket `String` verwenden. Hier ist ein Beispiel, wie wir alle Vorkommen von "Hund" in einer Zeichenkette durch "Katze" ersetzen können:
+Textsuche und -ersetzung ist ein wichtiger Teil des Programmierens, insbesondere wenn man mit größeren Mengen an Code arbeitet. Mit der richtigen Technik kann man effizient und schnell Änderungen in verschiedenen Dateien vornehmen und so Zeit und Mühe sparen.
 
-```Elm
-import String exposing (replace)
+## Wie geht es
 
-satz = "Ich habe einen Hund, er ist sehr süß."
-
-newSatz = replace "Hund" "Katze" satz
-
--- newSatz wird zu "Ich habe eine Katze, sie ist sehr süß."
-```
-
-Wir können auch mit regulären Ausdrücken arbeiten, indem wir das `Regex` Paket verwenden. Hier ist ein Beispiel, wie wir alle Vorkommen von Zahlen in einer Zeichenkette entfernen können:
+Die Grundlage für die Textsuche und -ersetzung in Elm ist die Funktion `String.replace` aus dem Modul `String`. Sie nimmt als Argumente das zu ersetzende Muster und den Text, in dem es ersetzt werden soll, und gibt den Text mit dem entsprechenden Ersatz zurück.
 
 ```Elm
-import Regex exposing (replace, regex)
+import String  -- Modul für die Textverarbeitung
 
-satz = "Es gibt 8 Milliarden Menschen auf der Welt."
-
-newSatz = replace (regex "\\d") (\_ -> "") satz
-
--- newSatz wird zu "Es gibt Milliarden Menschen auf der Welt."
+text = "Heute ist ein schöner Tag"
+ersetzt = String.replace "schöner" "hässlicher" text
+-- gibt "Heute ist ein hässlicher Tag" zurück
 ```
 
-Diese Methoden können auf verschiedene Arten kombiniert werden, um komplexe Such- und Ersetzungsvorgänge durchzuführen.
+Zusätzlich können reguläre Ausdrücke verwendet werden, um komplexere Muster zu erkennen und zu ersetzen. Das `Regex`-Modul bietet hierfür die Funktion `replace` an.
 
-## Tiefere Einblicke
-Es ist wichtig zu beachten, dass bei der Verwendung von `replace` oder `Regex.replace` immer eine neue Zeichenkette zurückgegeben wird. Das heißt, wir müssen die neue, veränderte Zeichenkette einer Variablen zuweisen, um sie verwenden zu können.
+```Elm
+import Regex  -- Modul für reguläre Ausdrücke
 
-Außerdem unterstützt `replace` die Option `All` für die Parameter `flag` und `count`, was bedeutet, dass alle Vorkommen des Suchmusters ersetzt werden. Standardmäßig wird nur das erste Vorkommen ersetzt. Diese Option ist besonders nützlich, wenn wir alle Vorkommen eines bestimmten Wortes oder Zeichens in einem Text ersetzen möchten.
+text = "123abc456def"
+pattern =Regex.regex "[a-z]+"
+ersatz = "xyz"
+ersetzt = Regex.replace pattern ersatz text
+-- gibt "123xyz456xyz" zurück
+```
+
+## Tiefer Einblick
+
+Ein interessantes Feature beim Ersetzen von Text in Elm ist die Möglichkeit, eine Funktion als Ersatz zu verwenden. Diese Funktion nimmt das gefundene Muster als Argument und gibt den entsprechenden Ersatz zurück. Dadurch können dynamische Ersetzungen durchgeführt werden.
+
+```Elm
+text = "20$ sind ein fairer Preis"
+pattern = Regex.regex "[0-9]+" -- findet alle Zahlen im Text
+ersatzFunc = (\match -> case match of
+                           "20" -> "10"  -- ersetzt 20 mit 10
+                           "fairer" -> "unfairer"  -- ersetzt fairer mit unfairer
+                           _ -> match)  -- lässt alles andere unverändert
+ersetzt = Regex.replace pattern ersatzFunc text
+-- gibt "10$ sind ein unfairer Preis" zurück
+```
+
+Es ist auch möglich, die `replace`-Funktion auf Teilstrings zu beschränken, indem man ein zusätzliches Argument für die maximale Anzahl an Ersetzungen übergibt.
+
+```Elm
+text = "Wiederholung Wiederholung Wiederholung"
+pattern = Regex.regex "Wiederholung"
+ersatz = "Repetition"
+-- hier wird nur die erste Wiederholung ersetzt
+ersetzt = Regex.replace pattern ersatz text 1
+-- gibt "Repetition Wiederholung Wiederholung" zurück
+```
+
+Damit sind bereits einige Möglichkeiten für die Textsuche und -ersetzung in Elm abgedeckt. Weitere Informationen und Beispiele können in der [offiziellen Dokumentation](https://package.elm-lang.org/packages/elm/regex/latest/) und im [Regex-Beispielprojekt](https://github.com/elm/projects/blob/master/examples/Regex.elm) gefunden werden.
 
 ## Siehe auch
-- [Dokumentation von String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Dokumentation von Regex.replace](https://package.elm-lang.org/packages/elm/regex/latest/Regex#replace)
-- [Beispiele für reguläre Ausdrücke in Elm](https://devhints.io/elm-regex)
+
+- [Elm Text Encoding](https://elm-lang.org/docs/utf8)
+- [Pattern Matching in Elm](https://medium.com/@cscalfani/pattern-matching-in-elm-92adcbbb0ba5)
+- [Elm Packages](https://package.elm-lang.org/)

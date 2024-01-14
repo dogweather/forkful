@@ -1,30 +1,39 @@
 ---
-title:    "Kotlin: एक नयी परियोजना शुरू करना"
+title:    "Kotlin: नई परियोजना शुरू करना।"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+# Kyun
 
-एक नया प्रोजेक्ट शुरू करने में शामिल होने का *क्या* कारण है, यह लेख आपको बताएगा। 
+Kisi bhi naye project ko shuru karne ka karan hai toh uska ek naya challenge lete hue apni coding skills aur knowledge ko improve karna hai.
 
-# कैसे करें
+# Kaise Karein
 
 ```Kotlin
-fun main(){
-    println("नया प्रोजेक्ट शुरू करने की शुरुआत")
+fun main() {
+    System.out.println("Namaste Duniya!")
 }
 ```
 
-उपरोक्त कोड ब्लॉक में हमने `main` फंक्शन बनाया है और `println` का उपयोग करके संदेश प्रिंट किया है। इसके परिणाम के रूप में हमें "नया प्रोजेक्ट शुरू करने की शुरुआत" दिखाई देगा।
+Is code se hum "Namaste Duniya!" ka output receive kar sakte hain, jo ki Hindi mein "Hello World!" ka saman hai. Is prakar ke chote chote code examples se hum apne project ka shuruwat kar sakte hain.
 
-# गहराई में जाएं
+```Kotlin
+fun calculateSum(a: Int, b: Int): Int {
+    return a + b
+}
+```
 
-नया प्रोजेक्ट शुरू करने का काम आसान नहीं है। आपको पहले से तय करना होगा कि आप क्या बनाने जा रहे हैं और उसके लिए आपको कौन से टूल्स और लाइब्रेरियां उपयोग करने होंगे। आपको अपने प्रोजेक्ट के लिए सुनिश्चित करना होगा कि आपके पास सही ज्ञान और साधन हैं।
+Ek aur udahran, jahan humne ek function banaya hai jo ki do integers ka sum calculate karta hai. Is tarah ke functions humare code ko modular aur easily readable banate hain.
 
-# देखें भी
+# Gehri Jhaank
 
-- [कोटलिन ऑफिशियल साइट](https://kotlinlang.org/)
-- [कोटलिन नलेर्निंग सेंटर](https://kotlinlang.org/docs/reference/)
-- [कोटलिन ऑनलाइन कोर्सेस](https://www.udemy.com/topic/kotlin/)
+Kisi bhi naye project ki shuruwat mei ek important step hai uske requirements aur expectations ko clear karna. Iske alawa, humein apne project ki scalability aur maintainability ka bhi dhyan rakhna chahiye. Code mei comments aur proper indentation ko follow karna bhi zaruri hai taaki humare code ko badhawa diya ja sake.
+
+# Dekhiye Bhi
+
+- [Official Kotlin Website](https://kotlinlang.org/)
+- [Kotlin Tutorials YouTube Playlist](https://www.youtube.com/playlist?list=PLBbgqtDgdc_TqzA-qXrjgTFMC_1onHE12)
+- [Kotlin Cheat Sheet](https://blog.kotlin-academy.com/free-kotlin-cheat-sheet-1137584290d?gi=bbe08e857474)

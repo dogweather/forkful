@@ -1,50 +1,49 @@
 ---
-title:    "Ruby: Capitalizzare una stringa"
+title:    "Ruby: Maiuscolo di una stringa"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Perché dovresti mai capitalizzare una stringa? Ci sono molteplici motivi per farlo, come l'esigenza di uniformare il formato di una frase o di rendere più leggibile un testo.
 
-## Come
-Per capitalizzare una stringa in Ruby, puoi utilizzare il metodo `.capitalize`, che trasforma il primo carattere di una parola in maiuscolo e gli altri in minuscolo. Ecco un esempio di codice che mostra come utilizzarlo:
+Capitalizzare una stringa può essere un'operazione utile se si lavora su dati testuali e si vuole uniformare il formato delle parole. Ad esempio, se si hanno nomi di utenti inseriti in modo diverso, capitalizzare la stringa può aiutare a renderli coerenti e più leggibili.
+
+## Come Fare
+
+Per capitalizzare una stringa in Ruby, si può utilizzare il metodo `capitalize`. Questo metodo restituisce una nuova stringa con la prima lettera maiuscola e tutte le altre lettere minuscole.
 
 ```Ruby
-# Definiamo una stringa
-stringa = "ciao mondo"
-
-# Applichiamo il metodo .capitalize ad essa
+stringa = "ciao mondo!"
 puts stringa.capitalize
-
-# Output: Ciao mondo
 ```
 
-Se vuoi capitalizzare l'intera stringa invece che solo la prima parola, puoi utilizzare il metodo `.upcase`:
+Output:
+```
+Ciao mondo!
+```
+
+Si possono anche capitalizzare tutte le parole in una stringa utilizzando il metodo `titleize`.
 
 ```Ruby
-# Applichiamo il metodo .upcase alla stringa
-puts stringa.upcase
+stringa = "questo è un titolo"
+puts stringa.titleize
+```
 
-# Output: CIAO MONDO
+Output:
+```
+Questo È Un Titolo
 ```
 
 ## Approfondimento
-Ci sono anche altri metodi in Ruby che permettono di capitalizzare una stringa, come ad esempio `.capitalize!`, che modifica la stringa originale invece di crearne una nuova, o `.titleize`, che rende maiuscole le iniziali di tutte le parole in una frase.
 
-Inoltre, è possibile specificare delle eccezioni per le parole che si desidera mantenere in minuscolo, utilizzando il metodo `.capitalize` in combinazione con il metodo `.gsub`:
+Il metodo `capitalize` utilizza delle regole specifiche per capitalizzare la stringa. Ad esempio, se una parola inizia con una lettera accentata, verrà considerata come una lettera diversa e non verrà maiuscola. Inoltre, se una parola inizia con un carattere speciale, verrà considerata come parte della parola e verrà capitalizzata.
 
-```Ruby
-# Definiamo una stringa
-stringa = "ho voglia di un caffè"
+Esistono anche altri metodi e gemme disponibili per la capitalizzazione di stringhe in modo più personalizzato, come ad esempio il linguaggio YAML o la gemma "#{ActiveSupport}::Inflector".
 
-# Applichiamo il metodo .capitalize in combinazione con .gsub
-puts stringa.capitalize.gsub("un", "Un")
+## Vedi Anche
 
-# Output: Ho voglia di Un caffè
-```
-
-## Vedi anche
-- [Documentazione ufficiale di Ruby su String#capitalize](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
-- [Tutorial su come capitalizzare una stringa in Ruby](https://www.tutorialspoint.com/how-to-capitalize-a-string-in-ruby)
+- [Documentazione ufficiale sul metodo `capitalize`](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize)
+- [Documentazione ufficiale sul metodo `titleize`](https://apidock.com/rails/String/titleize)
+- [Guida su come utilizzare #{ActiveSupport}::Inflector](https://masayoshi634.hatenablog.com/entry/2019/06/19/213123)

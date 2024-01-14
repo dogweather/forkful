@@ -1,51 +1,42 @@
 ---
 title:    "Javascript recipe: Printing debug output"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
+Debugging is an essential part of programming, and sometimes it can be challenging to identify and fix errors in your code. One useful technique for debugging is to print out debug output, which can help you understand the flow of your code and identify any issues. In this blog post, we will explore how to print debug output in JavaScript and why it is a valuable tool for every programmer.
 
-Printing debug output, also known as console logging, is a useful tool for debugging and troubleshooting in any programming language. It allows developers to see the values of variables and the flow of their code, helping to identify and fix issues in their code.
-
-## How To 
-
-To print debug output in Javascript, we can simply use the `console.log()` function. Here's an example of how we can use it:
+## How To
+To print out debug output in JavaScript, we can use the `console.log()` function. This function takes in a value or expression and prints it to the console. Let's take a look at an example:
 
 ```Javascript
-let x = 5;
-let y = 10;
-
-console.log("The value of x is", x); //Output: The value of x is 5
-console.log("The value of y is", y); //Output: The value of y is 10
+let num1 = 5;
+let num2 = 10;
+console.log(num1 + num2);
 ```
 
-The console log accepts multiple arguments, so we can also print out the result of an expression:
-
-```Javascript
-let z = x + y;
-console.log("The value of z is", z); //Output: The value of z is 15
-```
-
-We can also use string interpolation to print out variables inside a string:
+In the above code, we declare two variables, `num1` and `num2`, and then we use `console.log()` to print out their sum, which is 15. We can also use this function to print out the value of a variable or an expression at a particular point in our code. For example:
 
 ```Javascript
 let name = "John";
-
-console.log(`Hello ${name}, welcome to my blog!`); //Output: Hello John, welcome to my blog!
+console.log(`Hello, my name is ${name}`);
 ```
+The output of the above code will be: `Hello, my name is John`.
 
-## Deep Dive 
+By printing out these debug outputs, we can track the values of our variables and see how they change as our code executes. This can be particularly helpful when dealing with complex functions or loops, as we can see the values of our variables at each iteration.
 
-There are a few other methods available for console logging in Javascript, such as `console.warn()` and `console.error()` which can be used to log warnings and errors respectively. There's also `console.table()` which displays data in a table format.
+## Deep Dive
+While `console.log()` is the most commonly used method for printing debug output, there are a few other useful options available in JavaScript. For example, we can use `console.error()` to print out specific error messages, and `console.warn()` to display warnings.
 
-One very useful feature of console logging is the ability to use different levels of logging, such as `console.debug()` and `console.info()`. This allows us to filter our debug output and only see the relevant information for the task we're working on.
+Another helpful tool is the `debugger` statement, which allows us to pause our code's execution at a particular point and inspect the values of our variables in the debugger console. This can be more useful than continuously printing out values, especially when dealing with large amounts of data.
 
-Another useful tip is to use `console.assert()` to check if a condition is true, and if not, it will display an error message with the location of the error.
+Additionally, we can also use browser developer tools to print out more in-depth debug output, such as network requests, DOM elements, and more. These tools are invaluable for debugging complex web applications and can help us identify and fix issues quickly.
 
-## See Also 
-
-- [MDN Web Docs - Console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
-- [Javascript.info - Debugging in Chrome](https://javascript.info/debugging-chrome)
-- [FreeCodeCamp - How to use console.log() like a pro](https://www.freecodecamp.org/news/how-to-use-console-log-like-a-pro/)
+See Also
+- [console.log() documentation](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
+- [debugger statement documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+- [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)

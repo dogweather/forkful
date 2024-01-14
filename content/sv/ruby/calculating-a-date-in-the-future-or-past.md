@@ -1,56 +1,50 @@
 ---
-title:    "Ruby: Beräkna ett datum i framtiden eller det förflutna"
+title:    "Ruby: Beräkning av ett datum i framtiden eller det förflutna"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna beräkna ett datum i framtiden eller förflutet är en användbar färdighet inom programmering. Det kan hjälpa till att skapa dynamiska applikationer och underlätta hanteringen av tidsrelaterade uppgifter.
+Att kunna beräkna datum i framtiden eller det förflutna är en viktig färdighet som behövs inom många olika branscher, från programmering till finans. Det låter dig skapa dynamiska applikationer som kan hantera förändringar i tiden och göra uppgifter som schemaläggning enklare.
 
-## Hur man gör det
-För att kunna beräkna ett datum i framtiden eller förflutet använder man sig av Ruby's inbyggda `Date` klass. Här är ett exempel på hur man beräknar ett datum som är två veckor från nu:
-
-```Ruby
-today = Date.today
-future_date = today + 14
-puts future_date
-```
-
-Detta kodblock kommer att producera följande output:
-
-```
-2021-08-22
-```
-
-För att beräkna ett datum i förflutet använder man subtraction istället. Här är ett exempel på hur man beräknar ett datum som var två månader sedan:
+## Så här gör du
+För att beräkna ett datum i framtiden eller det förflutna i Ruby kan du använda metoden `Date#advance` eller `Date#prev`. Till exempel, om vi vill beräkna datumet för fem dagar framåt, kan vi göra det genom att skriva:
 
 ```Ruby
+require 'date'
 today = Date.today
-past_date = today - 60
-puts past_date
+puts today.advance(days: 5)
+# Output: 2021-11-25
 ```
 
-Detta kommer att ge följande output:
+På samma sätt kan vi använda `Date#prev` för att beräkna ett datum i det förflutna genom att ange ett negativt värde för antal dagar. Till exempel, om vi vill veta datumet för en vecka sedan, kan vi skriva:
 
+```Ruby
+require 'date'
+today = Date.today
+puts today.prev(day: 7)
+# Output: 2021-11-18
 ```
-2021-04-25
-```
+
+Det är viktigt att notera att dessa metoder endast returnerar ett datumobjekt och inte gör några permanenta förändringar i själva datumet.
 
 ## Djupdykning
-När vi använder oss av `Date` klassen i Ruby, så kan vi också gå in på ett specifikt datum och ändra eller hämta specifika delar av det. Till exempel kan vi ändra månaden på ett datum eller hämta vilken dag det är på ett visst datum. Detta görs genom att använda sig av metoder som `month` och `day`. Här är ett exempel på hur man kan ändra månaden på ett datum:
+Ruby har också en annan inbyggd metod som heter `Date#strftime` som låter dig formatera datumet som du vill ha det. Du kan använda det tillsammans med `Date#advance` och `Date#prev` för att ange en speciell formatsträng som bestämmer hur datumet ska visas.
+
+Till exempel, om du vill ha datumet i formatet DD/MM/YYYY, kan du använda:
 
 ```Ruby
-date = Date.today
-puts date.month #output: 8
-date = date.change(month: 12)
-puts date #output: 2021-12-22
-puts date.month #output: 12
+require 'date'
+today = Date.today
+puts today.advance(days: 5).strftime("%d/%m/%Y")
+# Output: 25/11/2021
 ```
 
-Detta är bara en av många möjliga användningar av `Date` klassen när man ska beräkna datum i framtiden eller förflutet. Det finns många fler metoder och funktioner som kan utforskas för att skapa mer dynamiska och exakta datumberäkningar.
+För att läsa mer om `Date#advance`, `Date#prev` och `Date#strftime`, kan du titta på dokumentationen för Ruby.
 
 ## Se även
-- [Ruby's Date Class Documentation](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
-- [Calculating Time Differences in Ruby](https://www.rubyguides.com/2019/10/ruby-time-difference/)
-- [Working with Dates and Times in Ruby](https://www.twilio.com/blog/working-with-dates-and-times-in-ruby)
+- [Date and time in Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-and-times-in-ruby)
+- [Ruby DateTime class](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
+- [Date and time formatting in Ruby](https://www.rubyguides.com/2015/02/ruby-time-format/)

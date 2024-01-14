@@ -1,62 +1,46 @@
 ---
 title:    "Rust recipe: Capitalizing a string"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Capitalizing a string is a task that is commonly used in programming to make text appear in a certain format. Whether it's for aesthetic purposes or for data processing, it is a useful skill to have in your programming arsenal.
+String manipulation is a common task in programming, and one task that often comes up is capitalizing a string. Whether you're trying to format user input or make your text stand out, capitalizing a string can be a useful tool in your arsenal. In this blog post, we'll explore how to capitalize a string using Rust.
 
 ## How To
 
-To capitalize a string in Rust, we will be using the `to_uppercase()` method for strings. Let's take a look at a simple example:
+Let's start by creating a simple Rust program that takes in a string from the user and capitalizes it. We'll first need to import the `text_io` crate, which allows us to read user input. Then, we'll use the `to_uppercase` method to capitalize the string:
 
 ```Rust
-let my_string = String::from("hello, world!");
+// Import the text_io crate
+use text_io::read;
 
-let capitalized_string = my_string.to_uppercase();
+// Prompt user for input 
+println!("Enter a string: ");
 
-println!("Capitalized string: {}", capitalized_string);
+// Read user input
+let mut input = read!("{}\n");
+
+// Capitalize the string
+let capitalized = input.to_uppercase();
+
+// Print out the capitalized string
+println!("Capitalized string: {}", capitalized);
 ```
 
-The output of this code will be:
-
-```
-Capitalized string: HELLO, WORLD!
-```
-
-As you can see, the `to_uppercase()` method automatically converts each character in the string to its uppercase equivalent. This method can be applied to any String variable, making it a simple and effective way to capitalize a string.
-
-But what if you only want to capitalize the first letter of the string? In that case, we can use a combination of methods `chars()` and `enumerate()` to iterate through the string and capitalize the first character. Here's an example:
-
-```Rust
-let my_string = String::from("hello, world!");
-
-let capitalized_first = my_string
-    .chars()
-    .enumerate()
-    .map(|(i, c)| if i == 0 { c.to_uppercase() } else { c })
-    .collect::<String>();
-
-println!("Capitalized first letter: {}", capitalized_first);
-```
-
-The output of this code will be:
-
-```
-Capitalized first letter: Hello, world!
-```
+Let's run this code and see what happens. If we input "hello world," the program will output "HELLO WORLD." 
 
 ## Deep Dive
 
-Now, let's take a deeper look at the `to_uppercase()` method and its implementation in Rust. The method is part of the `ToString` trait, which is implemented for all types that can be converted into a string. The `to_uppercase()` method uses the current locale to convert the characters, making it language-specific.
+Now, let's dive a little deeper into the `to_uppercase` method. This method uses the current locale to perform the conversion to uppercase. This means that the output may differ depending on the user's operating system or system settings. 
 
-It's also important to note that the `to_uppercase()` method doesn't just work for English characters but can also handle characters from various languages such as Japanese, Arabic, and more.
+Additionally, the `to_uppercase` method is not UTF-8 aware, so it may not properly handle non-ASCII characters. In these cases, it's better to use the `to_uppercase` method from the `unicode_normalization` crate, which supports Unicode characters. 
 
 ## See Also
 
-- [String - Rust Standard Library Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Rust By Example: Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
-- [Official Rust Language Website](https://www.rust-lang.org/)
+- [String manipulation in Rust](https://www.rust-lang.org/learn/strings)
+- [Rust text_io crate](https://crates.io/crates/text_io)
+- [Unicode normalization in Rust](https://rust-cli.github.io/book/tutorial/unicode.html)

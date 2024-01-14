@@ -1,45 +1,37 @@
 ---
-title:    "Elm: Umwandeln eines Strings in Kleinbuchstaben."
+title:    "Elm: String in Kleinschreibung umwandeln"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Es gibt viele Gründe, warum man möglicherweise eine Zeichenkette in Kleinbuchstaben umwandeln möchte: Es kann zum Beispiel sein, dass man sicherstellen möchte, dass die Eingabe des Benutzers immer einheitlich verarbeitet wird, oder dass man Vergleiche zwischen verschiedenen Zeichenketten durchführt, die in verschiedenen Schreibweisen vorliegen können.
+String zu Kleinbuchstaben konvertieren? Das ist eine einfache Aufgabe, aber sie kann nützlich sein, wenn du zum Beispiel Nutzereingaben in einem Formular verarbeiten möchtest oder wenn du Daten aus einer API abrufst und in einem einheitlichen Format darstellen möchtest.
 
-## Wie geht man vor?
-
-Die Umwandlung einer Zeichenkette in Kleinbuchstaben ist in Elm einfach und intuitiv. Dafür gibt es eine Funktion namens `String.toLower`, die genau das erledigt, was der Name sagt. Man ruft diese Funktion einfach auf und übergibt ihr die zu konvertierende Zeichenkette als Argument. Hier ein Beispiel:
+## Wie?
 
 ```Elm
-String.toLower "ELM PROGRAMMIEREN"
+-- Eine Funktion zum Konvertieren von String zu Kleinbuchstaben
+toLowercase : String -> String
+toLowercase str =
+    String.toLower str
+
+-- Beispielausgabe
+toLowercase "ELM PROGRAMMIERUNG"
+-- "elm programmierung"
 ```
 
-Das Ergebnis dieser Funktion ist die ausgegebene Zeichenkette "elm programmieren". Wie man sehen kann, werden alle Großbuchstaben in Kleinbuchstaben umgewandelt. Wenn die Eingabe bereits aus Kleinbuchstaben besteht, bleibt diese unverändert. Hier ein weiteres Beispiel:
+## Tiefer gehende Informationen
 
-```Elm
-String.toLower "EiNfAcH eLm PrOGraMMierEn"
-```
+In Elm gibt es bereits eine eingebaute Funktion `String.toLower`, die einen String in Kleinbuchstaben umwandelt. Sie verwendet den Unicode-Standard, um auch nicht-lateinische Buchstaben richtig zu konvertieren.
 
-Das Ergebnis hier wäre "einfach elm programmieren", da alle Buchstaben in Kleinbuchstaben umgewandelt werden.
+Zusätzlich zu dieser Funktion bietet die Elm-Standardbibliothek auch `String.toLowercase`, die speziell auf die Verarbeitung von deutschen Umlauten und Sonderzeichen optimiert ist.
 
-## Tiefere Einblicke
-
-Um zu verstehen, wie die Funktion `String.toLower` funktioniert, lohnt es sich, einen kurzen Blick auf die zugrundeliegende Implementierung zu werfen. Grundsätzlich wandelt diese Funktion jeden einzelnen Buchstaben in der Zeichenkette in Kleinbuchstaben um. Hierfür verwendet Elm die interne Funktion `String.map` und die `Char.toLower` Funktion. Diese beiden Funktionen sind Teil der Standardbibliothek von Elm.
-
-Eine weitere interessante Tatsache ist, dass es auch eine Funktion `String.toUpper` gibt, die die Zeichenkette in Großbuchstaben umwandelt. Hier ein Beispiel:
-
-```Elm
-String.toUpper "elm programmieren"
-```
-
-Das Ergebnis wäre "ELM PROGRAMMIEREN". Wie man sieht, funktioniert diese Funktion auf die gleiche Weise wie `String.toLower`, nur dass hier natürlich die `Char.toUpper` Funktion verwendet wird.
+Wenn du dich tiefer mit der String-Konvertierung in Elm beschäftigen möchtest, empfehle ich dir die offizielle Dokumentation und die Quellcode-Dateien der Standardbibliothek zu durchsuchen.
 
 ## Siehe auch
-
-- [Offizielle Elm Dokumentation für `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Offizielle Elm Dokumentation für `Char.toLower`](https://package.elm-lang.org/packages/elm/core/latest/Char#toLower)
-- [Offizielle Elm Dokumentation für `String.toUpper`](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
-- [Offizielle Elm Dokumentation für `Char.toUpper`](https://package.elm-lang.org/packages/elm/core/latest/Char#toUpper)
+- [Offizielle Elm-Dokumentation zum Thema "Strings"](https://elm-lang.org/docs/strings)
+- [Quellcode der Elm-Standardbibliothek für Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Weiterführender Blogartikel "Handling Strings in Elm"](https://dennisreimann.de/articles/handling-strings-in-elm.html)

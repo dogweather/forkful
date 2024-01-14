@@ -1,45 +1,34 @@
 ---
-title:    "Bash: Gerando um arquivo temporário"
+title:    "Bash: Criando um arquivo temporário"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em Bash?
+## Por que criar arquivos temporários é importante?
 
-Existem várias razões pelas quais alguém pode criar um arquivo temporário em um programa Bash. Um dos motivos mais comuns é quando precisamos armazenar dados temporários para serem utilizados posteriormente, mas não queremos salvar esses dados permanentemente em um arquivo. Criar um arquivo temporário nos permite armazenar esses dados de forma rápida e prática, sem afetar arquivos existentes ou ocupar espaço desnecessário no sistema.
+Muitas vezes, ao escrever códigos em Bash, é necessário lidar com arquivos temporários. Esses arquivos são criados para armazenar dados temporários que podem ser usados ​​durante a execução de um programa. A criação de arquivos temporários é uma técnica comum e útil que pode ser usada em uma variedade de situações, como manipulação de dados, geração de relatórios e muito mais.
 
 ## Como criar um arquivo temporário em Bash
 
-Para criar um arquivo temporário em Bash, utilizamos o comando `mktemp`. Veja abaixo um exemplo de código:
+Criar um arquivo temporário em Bash pode ser facilmente feito usando o comando "touch" seguido pelo nome do arquivo que você deseja criar. Por exemplo, se você quiser criar um arquivo chamado "temp.txt", basta digitar ```Bash
+touch temp.txt
+```
+Isso criará um arquivo temporário vazio com o nome "temp.txt" em seu diretório atual.
 
-```Bash
-# Criando um arquivo temporário
-temp_file=$(mktemp)
-
-# Escrevendo no arquivo temporário
-echo "Olá! Este é um arquivo temporário." > $temp_file
-
-# Lendo o conteúdo do arquivo temporário
-cat $temp_file
+Outra maneira de criar um arquivo temporário é usando o comando "mktemp". Este comando é mais versátil, pois permite especificar o nome do arquivo e o diretório onde ele será criado. Por exemplo, para criar um arquivo chamado "temp.txt" no diretório atual, você pode usar o seguinte comando: ```Bash
+mktemp temp.txt
 ```
 
-O resultado da execução desse código seria:
+## Aprofundando: Como funcionam os arquivos temporários em Bash?
 
-```Bash
-Olá! Este é um arquivo temporário.
-```
+Os arquivos temporários criados em Bash têm algumas características importantes a serem observadas. Primeiro, eles são criados com permissões restritas, o que significa que apenas o usuário atual tem permissão para ler e escrever neles. Isso é feito para garantir que apenas o programa que criou o arquivo possa acessá-lo, evitando assim a possibilidade de interferência de outros programas.
 
-## Mergulho profundo
-
-O comando `mktemp` é responsável por criar um arquivo temporário de forma segura, ou seja, garantindo que o arquivo tenha um nome único. Isso é importante porque evita conflitos caso dois programas estejam criando arquivos temporários ao mesmo tempo. Além disso, é possível especificar um padrão de nome para o arquivo temporário utilizando a opção `-p` e escolher o diretório onde o arquivo será criado.
-
-Também é importante mencionar que, por padrão, o arquivo temporário criado terá permissões de leitura e escrita para o usuário que executou o comando. No entanto, é possível modificar essas permissões utilizando a opção `-m` seguida pelos dígitos correspondentes às permissões desejadas.
+Além disso, os arquivos temporários são excluídos automaticamente quando o programa é encerrado, a menos que você especifique o contrário. Isso é útil para evitar a poluição do sistema com arquivos desnecessários. No entanto, é importante lembrar que, se o programa falhar antes de excluir o arquivo temporário, ele será mantido no sistema.
 
 ## Veja também
 
-- Documentação oficial do comando `mktemp`: https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html#mktemp-invocation
-- Tutorial sobre como criar arquivos temporários em Bash: https://medium.com/@amirhidar/how-to-create-a-temporary-file-in-bash-6a97f016be44
-- Exemplos de uso do `mktemp`: https://bash.cyberciti.biz/file-management/how-to-create-temporary-file/
-
-Agora que você aprendeu como criar um arquivo temporário em Bash, pode utilizá-lo para armazenar informações temporárias em seus projetos! Lembre-se sempre de utilizar o comando `mktemp` de forma adequada e segura.
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Usando arquivos temporários em Bash](https://tldp.org/LDP/abs/html/tempfiles.html)
+- [Conceitos básicos de Bash para iniciantes](https://linux.die.net/Bash-Beginners-Guide/)

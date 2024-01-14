@@ -1,43 +1,50 @@
 ---
-title:    "Python: Søking og Erstatter Tekst"
+title:    "Python: Søking og erstattelse av tekst"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en vanlig oppgave i programmering, som kan hjelpe deg å raskt og effektivt gjøre endringer i store mengder tekstbaserte filer. Enten du trenger å endre et navn i alle filene dine eller fjerne en feilaktig del av kode, kan søke og erstatte være en nyttig teknikk å ha i verktøykassen din.
+Å søke og erstatte tekst er en viktig del av programmering, spesielt når man jobber med store datasett eller tekstfiler. Det gjør det mulig å automatisere oppgaver og gjøre store mengder tekst endringer på en effektiv måte.
 
-## Slik gjør du det
+## Hvordan
 
-Søking og erstatting av tekst kan gjøres ved hjelp av innebygde funksjoner i Python, og det finnes også en rekke tredjeparts biblioteker som tilbyr avanserte alternativer for søking og erstatting. La oss se på et enkelt eksempel på hvordan du kan bruke `.replace()`-funksjonen for å erstatte alle forekomster av et ord i en tekststreng:
+For å søke og erstatte tekst i Python bruker vi funksjonen `replace()` som tar inn to argumenter, det gamle søkeordet og det nye ordet som skal erstatte det gamle. Vi kan også bruke `find()` funksjonen for å søke etter tekst og deretter bruke `replace()` for å erstatte den funnet teksten. La oss se et eksempel på kode:
 
-```python
-sentence = "Jeg elsker programmering!"
-new_sentence = sentence.replace("elsker", "elsker å lære")
-print(new_sentence)  # Output: Jeg elsker å lære programmering!
+```Python
+tekst = "Dette er en teststring"
+ny_tekst = tekst.replace("teststring", "øvingstekst")
+print(ny_tekst)
 ```
 
-Som du kan se, erstattet `.replace()`-funksjonen alle forekomster av ordet "elsker" med "elsker å lære" og lagret den nye strengen i en variabel. Dette er en enkel, men kraftig måte å endre tekst på.
+Dette vil gi følgende output:
 
-Du kan også bruke `.find()`-funksjonen for å søke etter et bestemt ord eller tegn i en tekststreng:
+`"Dette er en øvingstekst"`
 
-```python
-sentence = "Dette er en tekststreng for å demonstrere søk og erstatting."
-search_term = "er"
-found_at = sentence.find(search_term)
-print(found_at)  # Output: 14
+Vi kan også bruke `format()` funksjonen for å søke etter tekst og erstatte den med en variabel. La oss se på et eksempel:
+
+```Python
+navn = "Lisa"
+tekst = "Hei, mitt navn er {}"
+ny_tekst = tekst.format(navn)
+print(ny_tekst)
 ```
 
-Her vil `.find()` returnere indeksen til det første tegnet i søkeordet. I dette tilfellet er det første tegnet "e" og indeksen er 14. Du kan også bruke `.find()` i kombinasjon med `.replace()` for å erstatte et bestemt ord i en del av en tekststreng.
+Dette vil gi følgende output:
 
-## Dypdykk
+`"Hei, mitt navn er Lisa"`
 
-Det finnes mange forskjellige måter å søke og erstatte tekst på i Python, avhengig av dine spesifikke behov. En viktig ting å huske på er at søking og erstatting av tekst tar hensyn til store og små bokstaver. Hvis du for eksempel prøver å erstatte "programmering" med "koding" i en tekststreng som inneholder både "Programmering" og "programmering", vil begge forekomstene bli erstattet. Dette kan føre til uønskede resultater og bør tas i betraktning når du bruker disse funksjonene.
+## Dykk dypere
+
+I tillegg til `replace()` funksjonen har Python også flere innebygde funksjoner for å søke og erstatte tekst, som for eksempel `re.sub()`. Denne funksjonen gir oss mer avanserte muligheter som å søke med regulære uttrykk.
+
+Det er også verdt å merke seg at når vi jobber med store datasett eller tekstfiler, kan `replace()` funksjonen føre til problemer med minnebruk. For å unngå dette kan vi bruke `fileinput` modulen i Python.
 
 ## Se også
 
-- [Dokumentasjon for `.replace()`-funksjonen](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Eksempler på søk og erstatting med regulære uttrykk i Python](https://www.geeksforgeeks.org/python-regex-replace/)
-- [Andre nyttige tekstbehandlingsfunksjoner i Python](https://www.programiz.com/python-programming/methods/string)
+- [Python string documentation](https://docs.python.org/3/library/string.html)
+- [Python regular expression documentation](https://docs.python.org/3/library/re.html)
+- [Fileinput documentation](https://docs.python.org/3/library/fileinput.html)

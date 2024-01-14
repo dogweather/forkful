@@ -1,52 +1,39 @@
 ---
-title:    "Python: Tulostaminen virheenkorjauslähdöksi"
+title:    "Python: Tulostaminen debug-ulosanto"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi haluaisit tulostaa debug-tulosteita?
+## Miksi
 
-Debug-tulosteiden tulostaminen on erittäin hyödyllistä ohjelmoinnissa, sillä se auttaa sinua selvittämään, mitä tapahtuu koodissasi ja tunnistamaan mahdollisia virheitä. Debug-tulostukset voivat auttaa myös parantamaan koodin suorituskykyä ja kehittämään tehokkaampia ratkaisuja.
+Ihmiset usein ymmärtävät ohjelmoinnin olevan vain koodien kirjoittamista ja virheiden korjaamista. Mutta mitä jos kerran koodi ei toimikaan niin kuin pitäisi? Tämä on kun tulostus virhe viestejä (debug output) tulee pelastajaksi. Tulostus virhe viesti on prosessi, jossa ohjelmaan lisätään lisäkoodia, jotta voidaan saada tietoa mitä ohjelmassa tapahtuu ja missä vaiheessa se menee pieleen.
 
-## Miten: Esimerkkejä koodin kanssa ja tulostus
+## Miten
+
+Tulostus virhe viestejä voidaan lisätä ohjelmaan yksinkertaisilla "print" komennoilla. Esimerkiksi, jos haluat nähdä tietyn muuttujan arvon tiettynä hetkenä, voit lisätä koodiisi seuraavanlaisen rivin:
 
 ```Python
-# Esimerkki debug-tulostuksesta
-def calculate_sum(numbers):
-    # Tulostetaan syötetyt numerot
-    print("Syötit seuraavat numerot:", numbers)
-    
-    # Lasketaan summa
-    sum = 0
-    for num in numbers:
-        sum += num
-    
-    # Tulostetaan summa
-    print("Summa on:", sum)
-    
-# Kutsutaan funktiota
-calculate_sum([1, 2, 3, 4])
+print(muuttuja)
 ```
 
-Tulostus:
+Tämä tulostaa muuttujan arvon konsoliin, jolloin voit tarkistaa sen oikeellisuuden. Voit myös lisätä tekstiä tulosteen sekaan selittämään paremmin mitä tapahtuu:
 
+```Python
+print("Muuttujan arvo on:", muuttuja)
 ```
-Syötit seuraavat numerot: [1, 2, 3, 4]
-Summa on: 10
-```
 
-Kuten näemme, tulostamalla debug-tulosteita voimme seurata, mitä tapahtuu koodissamme ja varmistaa, että se toimii odotetusti. Voimme myös lisätä debug-tulosteita monimutkaisempiin kohtiin koodissamme, kuten silmukoihin ja ehtolauseisiin, auttaaksemme hahmottamaan niiden toimintaa ja löytääksemme mahdollisia ongelmakohtia.
+Tämän avulla voit seurata ohjelman suorittamista ja havaita mikä aiheuttaa ongelman.
 
-## Syvällinen sukellus: Lisätietoa debug-tulosteiden tulostamisesta
+## Syvällinen sukellus
 
-Debug-tulostukset ovat erittäin hyödyllisiä erityisesti silloin, kun koodia on monimutkaistettu useilla toiminnallisuuksilla ja luoduilla luokilla. Ne voivat auttaa sinua seuraamaan, missä kohtaa koodia menee pieleen ja mistä löytyy ongelmien juurisyy.
+Tulostus virhe viestien lisääminen ohjelmaan voi auttaa sinua löytämään ja korjaamaan virheitä nopeammin. Voit valita tarkalleen missä kohdissa tulostus tapahtuu ja mitä tietoja haluat nähdä. Näin voit tutkia ohjelman suoritusta vähän syvemmältä ja ymmärtää paremmin mitä tapahtuu.
 
-Toinen hyödyllinen tapa käyttää debug-tulostuksia on vertailla eri tilanteissa saatuja tulosteita. Näin voit verrata odotettua ja saatuja arvoja ja selvittää, missä kohtaa koodia on ongelmia tai tarvetta tehostaa sitä.
+Tärkeää on myös muistaa poistaa tulostus virhe viestit ohjelmasta, kun olet löytänyt ja korjannut virheet. Muuten koodisi saattaa olla turhan tilava ja hidastaa ohjelman suoritusta.
 
-On myös hyvä muistaa, että debug-tulostukset voivat hidastaa koodin suoritusta. Siksi on tärkeää poistaa ne lopullisesta koodista ja käyttää niitä vain silloin, kun sitä tarvitaan.
+## Katso myös
 
-# Katso myös
-
-- [Pythonin virallinen dokumentaatio debug-tulostuksista](https://docs.python.org/3/library/functions.html#print)
-- [Kuinka tehokkaasti käyttää debug-tulostuksia Pythonissa](https://realpython.com/python-debugging-pdb/)
+- https://www.codecademy.com/articles/how-to-debug-python
+- https://realpython.com/python-print/
+- https://www.python.org/dev/peps/pep-0020/

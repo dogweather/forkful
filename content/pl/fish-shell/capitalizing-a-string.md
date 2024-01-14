@@ -1,45 +1,53 @@
 ---
-title:    "Fish Shell: Zmiana tekstu na duże litery"
+title:    "Fish Shell: Formatowanie tekstu do wielkich liter"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zapewne zdarzyło Ci się kiedyś napisać imię lub tytuł w małych literach i zorientować się, że powinien być napisany z wielkiej litery. Ręczne zmienianie dużych i małych liter może być uciążliwe i czasochłonne, zwłaszcza jeśli masz do czynienia z długim tekstem. W takich sytuacjach, warto poznać prostą funkcję w Fish Shell, która może Ci pomóc w automatycznym kapitalizowaniu tekstu.
+Jedną z najczęściej wykonywanych operacji podczas pisania kodu jest zmiana stylu tekstowego. Jednym z takich przypadków jest zmiana z małych liter na duże. Pisanie tej samej logiki w różnych miejscach w kodzie jest czasochłonne i może przyczynić się do popełnienia błędów. Dlatego warto poznać narzędzia, które ułatwią nam tę czynność, takie jak funkcja capitalize w Fish Shell.
 
 ## Jak to zrobić
 
-Aby kapitalizować string w Fish Shell, wystarczy użyć polecenia `string capitalize`. Możesz podać string, który chcesz zmienić jako argument polecenia:
+Fish Shell oferuje funkcję capitalize, która służy do zmiany pierwszej litery w ciągu znaków na dużą. Aby skorzystać z tej funkcji, należy użyć polecenia:
 
 ```Fish Shell
-string capitalize "witaj świecie"
+string capitalize string
 ```
 
-W wyniku otrzymasz "Witaj Świecie". Możesz również podać więcej niż jeden string jako argument, jeśli chcesz zmienić kilka wyrazów jednocześnie. Ponadto, jeśli chcesz wykorzystać kapitalizowanie do zmiany nazw plików lub folderów, możesz użyć `string capitalize` w połączeniu z pętlą `for`:
+Gdzie "string" to ciąg znaków, którego pierwsza litera ma zostać zamieniona na dużą. Przykładowe użycie można zobaczyć na poniższym przykładzie:
 
 ```Fish Shell
-for file in *.txt
-	string capitalize $file
-end
+echo (capitalize hello world)
 ```
 
-Powoduje to zapisanie każdego pliku z rozszerzeniem txt z dużą literą na początku, na przykład "Raport.txt" zamiast "raport.txt".
+Output: "Hello world"
+
+Funkcja capitalize działa również z bardziej skomplikowanymi ciągami znaków, na przykład:
+
+```Fish Shell
+echo (capitalize "it's a beautiful day")
+```
+
+Output: "It's a beautiful day"
+
+W przypadku, gdy pierwszy znak nie jest literą, funkcja nie zwraca żadnego efektu. Na przykład:
+
+```Fish Shell
+echo (capitalize "123abc")
+```
+
+Output: "123abc"
 
 ## Deep Dive
 
-Ważne jest, aby zauważyć, że funkcja `string capitalize` zachowuje białe znaki w tekście. Dzięki temu, jeśli chcesz zachować oryginalny układ tekstu, możesz po prostu użyć `string capitalize` i zachować pierwotny wygląd. Poniższy przykład pokaże tę zależność:
-
-```Fish Shell
-string capitalize "obliczenia w bazie danych"
-```
-
-W wyniku otrzymamy "Obliczenia W Bazy Danych". Białe znaki pozostają w swoich miejscach, a jedynym zmienionym elementem są wielkie litery.
-
-Jeśli chcesz kapitalizować tylko pierwszą literę tekstu, możesz użyć polecenia `string capitalize -s`. Spowoduje to, że tylko pierwsza litera w całym tekście będzie z dużą literą.
+Funkcja capitalize działa poprzez zamianę pierwszego znaku w ciągu znaków na jego wersję z dużej litery. Jest to bardzo przydatne narzędzie przy weryfikacji i poprawianiu danych wprowadzonych przez użytkownika. Jednak należy pamiętać, że zamiana pierwszej litery na dużą może wpływać na wydajność, zwłaszcza w przypadku długich ciągów znaków.
 
 ## Zobacz też
 
-- Dokumentacja Fish Shell na temat funkcji kapitalizacji tekstu: https://fishshell.com/docs/current/cmds/string.html#capitalize
-- Inne przydatne funkcje w Fish Shell: https://fishshell.com/docs/current/cmds.html
+- Dokumentacja funkcji capitalize w Fish Shell: https://fishshell.com/docs/current/cmds/capitalize.html
+- Poradnik użytkownika Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Inne narzędzia do manipulacji tekstu w Fish Shell: https://fishshell.com/docs/current/tutorial.html#other-commands

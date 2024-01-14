@@ -1,43 +1,63 @@
 ---
-title:    "Bash: Concaténer des chaînes de caractères"
+title:    "Bash: Concaténation de chaînes de caractères"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'une des tâches les plus courantes lors de la programmation est la concaténation de chaînes de caractères. Cela consiste à combiner plusieurs chaînes en une seule et peut sembler simple, mais il peut être utile de savoir comment le faire correctement. Dans cet article, nous allons plonger dans le monde de la concaténation de chaînes en utilisant Bash.
+La concaténation de chaînes est une tâche courante en programmation Bash. Elle consiste à joindre plusieurs chaînes de caractères pour former une seule chaîne. Cette opération peut être utile pour créer des messages personnalisés, générer des noms de fichiers dynamiques, ou pour toute autre situation où vous avez besoin de combiner plusieurs textes.
 
 ## Comment faire
 
-La concaténation de chaînes en Bash peut être réalisée de différentes manières, en fonction de vos besoins spécifiques. Voici quelques exemples de code pour montrer comment cela peut être fait:
+Pour concaténer des chaînes en Bash, vous pouvez utiliser l'opérateur "=". Voici un exemple de code:
 
-```
-# Concaténer deux chaînes simples
-nom='John'
-nom_complet=$nom'Doe'
-echo $nom_complet # Résultat: John Doe
+```Bash
+#!/bin/bash
 
-# Concaténer des chaînes avec une variable
-prenom='Jane'
-nom_complet="$prenom $nom"
-echo $nom_complet # Résultat: Jane Doe
-
-# Concaténer une chaîne avec du texte statique
-echo "Bienvenue $prenom" # Résultat: Bienvenue Jane
+prenom="Jean"
+nom="Dupont"
+echo "Bonjour, "$prenom" "$nom""
 ```
 
-Comme vous pouvez le voir, il est possible de concaténer des chaînes de différentes manières en utilisant des variables et du texte statique. Il est important de noter que lors de l'utilisation de variables, il est nécessaire d'inclure les guillemets doubles pour s'assurer que les espaces sont gérés correctement.
+Dans cet exemple, nous déclarons deux variables, "prenom" et "nom", contenant respectivement les chaînes "Jean" et "Dupont". En utilisant l'opérateur "=", nous joignons ces deux variables avec un espace entre les deux, pour former la chaîne "Jean Dupont". Ensuite, nous utilisons la commande "echo" pour afficher cette chaîne à l'écran.
 
-## Plongée profonde
+La sortie de ce code sera:
 
-Si vous voulez aller plus loin dans la concaténation de chaînes en Bash, il est utile de comprendre comment cela fonctionne en arrière-plan. En réalité, la concaténation en Bash est en fait une forme de substitution de variables, où les variables sont remplies et évaluées pour créer une nouvelle chaîne combinée.
+```Bash
+Bonjour, Jean Dupont
+```
 
-De plus, Bash offre également certaines fonctionnalités avancées pour la concaténation de chaînes, comme l'utilisation de l'opérateur `+=` pour ajouter du texte à une chaîne existante, ou l'utilisation de la commande `printf` pour formater les chaînes de manière plus complexe.
+Vous pouvez également concaténer des chaînes sans utiliser de variables, en utilisant directement la syntaxe suivante:
+
+```Bash
+#!/bin/bash
+
+echo "Bonjour, ""Jean ""Dupont""
+```
+
+Dans cet exemple, nous avons simplement placé les différentes parties de la chaîne entre guillemets, avec un espace entre chaque partie, pour les joindre en une seule chaîne.
+
+La sortie restera la même.
+
+## Plongez plus profondément
+
+En plus de l'opérateur "=", il existe également d'autres moyens de concaténer des chaînes en Bash. Vous pouvez utiliser la commande "printf", qui permet de formater une chaîne à partir de variables et de textes statiques:
+
+```Bash
+#!/bin/bash
+
+prenom="Jean"
+nom="Dupont"
+printf "Bonjour, %s %s" $prenom $nom
+```
+
+La syntaxe "%s" sera remplacée par les valeurs des variables "prenom" et "nom". La sortie sera également la même que les exemples précédents.
 
 ## Voir aussi
 
-- [Guide Bash pour les débutants](https://linuxize.com/post/bash-scripting-beginners-guide/)
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/)
-- [Exemples de code de concaténation de chaînes en Bash](https://www.lifewire.com/concatenate-strings-bash-2202054)
+- [Documentation Bash - Commandes de chaîne](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Formation Bash - Concaténer des chaînes](https://codefather.tech/blog/bash-concatenate-strings/)
+- [Vidéo YouTube - Concaténation de chaînes en Bash](https://www.youtube.com/watch?v=ekQzHtTZCUA)

@@ -1,43 +1,53 @@
 ---
-title:    "Gleam: Konwersja ciągu znaków na małe litery"
+title:    "Gleam: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wielu programistów często spotyka się z koniecznością zmiany tekstu na małe litery w swoim kodzie. Czasami jest to potrzebne do porównania dwóch napisów lub prostego przetwarzania danych. W tym artykule omówimy, jak to zrobić w języku programowania Gleam.
+"Zamiana na małe litery" jest popularną operacją w programowaniu, szczególnie w przypadku pracy z tekstem. Dzięki niej można łatwiej porównywać i sortować słowa, a także ułatwiać użytkownikom korzystanie z naszych aplikacji.
 
 ## Jak to zrobić
 
-Aby zamienić tekst na małe litery w języku Gleam, musimy użyć funkcji ```String.to_lower``` i przekazać jako argument nasz napis. Oto przykładowy kod:
+Aby zamienić łańcuch znaków na małe litery w Gleam, wystarczy użyć wbudowanej funkcji `String.to_lower`. Poniżej przedstawiamy prosty przykład, jak mogłoby to wyglądać w praktyce:
 
 ```Gleam
-let text = "To Jest Przykładowy Tekst"
-let lowercase_text = String.to_lower(text)
+let tekst = "PRZYKŁADOWY TEKST"
+let tekst_mniejszymi_literami = String.to_lower(tekst)
 ```
 
-Wywołanie tej funkcji spowoduje zamianę tekstu na "to jest przykładowy tekst". Jeśli chcemy przekonwertować tekst bez zapisywania go w zmiennej, możemy to zrobić w jednej linii:
+Jeśli nie chcesz nadpisywać wartości wcześniej zdefiniowanej zmiennej, możesz również użyć `String.to_lower_in_place`, aby dokonać zamiany w miejscu.
 
 ```Gleam
-let lowercase_text = String.to_lower("To Jest Przykładowy Tekst")
+let inny_tekst = "INNY TEKST"
+String.to_lower_in_place(inny_tekst)
 ```
 
-## Pogłębiona analiza
+Ten przykład zmieni wartość zmiennej `inny_tekst` na `inny tekst`.
 
-Gleam oferuje również możliwość ustawienia lokalizacji do konwersji tekstu. Możemy to zrobić, przekazując drugi argument do funkcji ```String.to_lower```, który jest typem ```Locale```. Domyślnie jest to ustawione na lokalizację domyślną systemu, ale możemy ją zmienić na dowolną inną, np. dla języka polskiego:
+## Głębszy zanurzenie
+
+Warto zauważyć, że funkcja `String.to_lower` i `String.to_lower_in_place` są jedynie metodami skróconymi dla wywołania funkcji `String.map`, która przyjmuje dwa argumenty: funkcję przekształcającą i łańcuch znaków. Jest to przydatne, gdy chcemy wykonać bardziej złożone operacje zamiany na małe litery, np. zmieniać na małe tylko pierwszą literę w wyrazie.
 
 ```Gleam
-let text = "To Jest Przykładowy Tekst"
-let locale = Locale.Make("pl_PL")
-let lowercase_text = String.to_lower(text, locale)
+let tekst = "PRZYKŁADOWY TEKST"
+String.map(String.to_lower_case_first, tekst)
 ```
 
-Możemy również użyć funkcji ```String.to_lower_case``` jeśli wiemy, że tekst jest już w formacie Unicode i chcemy zachować przełączenia między dużymi i małymi literami, np. "Iść" zamieni się na "iść", a nie na "iśĆ". Szczegółowe informacje na temat funkcji można znaleźć w dokumentacji języka Gleam.
+Możemy również użyć funkcji `String.map_indexed`, aby dokonać zmiany tylko na konkretnym indeksie łańcucha znaków.
 
-## Zobacz również
+```Gleam
+let tekst = "PRZYKŁADOWY TEKST"
+String.map_indexed(\i c -> if i == 0 { String.to_lower(c) } else { c }, tekst)
+```
 
-- Dokumentacja języka Gleam: https://gleam.run/documentation 
-- Przykładowy kod na Githubie: https://github.com/gleam-lang/gleam/blob/main/standard-lib/String.md#to_lower 
-- Inne metody pracy z napisami w języku Gleam: https://gleam.run/documentation/std-lib-string
+Dzięki temu możemy swobodnie dostosować funkcję przekształcającą do naszych indywidualnych potrzeb.
+
+## Zobacz także
+
+- Dokumentacja funkcji `String.to_lower` w języku polskim: [https://gleam.run/docs/stdlib/string#to_lower/1](https://gleam.run/docs/stdlib/string#to_lower/1)
+- Poradnik na temat obsługi łańcuchów znaków w Gleam: [https://gleam.run/docs/guides/strings](https://gleam.run/docs/guides/strings)
+- Przykłady użycia mapowania łańcuchów znaków w Gleam: [https://github.com/gleam-lang/gleam_stdlib/blob/master/string/tests/string_test.gleam#L163-L188](https://github.com/gleam-lang/gleam_stdlib/blob/master/string/tests/string_test.gleam#L163-L188)

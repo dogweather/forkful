@@ -1,31 +1,40 @@
 ---
-title:    "Javascript: स्ट्रिंग को उच्चारित करना"
+title:    "Javascript: स्ट्रिंग को कैपिटलाइज करना"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-कोई भी देखता है कि जब हम एक string को capitalize करते हैं तो हम किस प्रकार से उसमें बदलाव ला सकते हैं। यह उपयोगी होता है क्योंकि कई प्रोग्रामिंग परियोजनाओं में, हमें डेटा को एक सिस्टम से दूसरे सिस्टम में ट्रांसफर करना होता है और इसमें स्ट्रिंग का फॉर्मेटिंग सही होना जरूरी होता है। 
+
+अगर आप JavaScript में कोई स्ट्रिंग कैपिटलाइज करने की जरूरत होती है, तो आप सभी को यह पता होना चाहिए कि आप ऐसा क्यों करना चाहते हैं। इस ब्लॉग पोस्ट में हम आपको बताएंगे कि स्ट्रिंग को कैपिटलाइज कैसे किया जाता है और इसके पीछे की विस्तार से जानकारी देंगे।
 
 ## कैसे करें
-```
-Javascript
-let str = "hello world";
+
+जब हमें किसी स्ट्रिंग को कैपिटलाइज करने की जरूरत होती है, तो हम `toUpperCase()` फ़ंक्शन का इस्तेमाल करते हैं। इसका उपयोग करके हम दिए गए स्ट्रिंग को बड़े अक्षर में ट्रांसफ़र कर सकते हैं। नीचे एक उदाहरण दिया गया है:
+
+```Javascript
+var str = "hello world";
 console.log(str.toUpperCase());
 // Output: HELLO WORLD
 ```
 
-```
-Javascript
-let str = "hello world";
-console.log(str[0].toUpperCase() + str.slice(1));
-// Output: Hello world
+इसी तरह, हम `toLowerCase()` फ़ंक्शन का इस्तेमाल करके स्ट्रिंग को छोटे अक्षर में ट्रांसफ़र कर सकते हैं। नीचे एक और उदाहरण दिया गया है:
+
+```Javascript
+var str = "HELLO WORLD";
+console.log(str.toLowerCase());
+// Output: hello world
 ```
 
-## गहराई खोज करें
-जब हम एक string को capitalize करते हैं तो हमारे पास कई विकल्प होते हैं। उपयुक्त कैसे खोजें और किस तरह से उन्हें समाप्त करें यह गहराई से जानना महत्वपूर्ण है। हम इस ट्यूटोरियल में यह बातें गहराई से समझेंगे ताकि आप अपने प्रोजेक्ट में स्ट्रिंग को ठीक से capitalize कर सकें। 
+## गहराई में जाएं
 
-## देखें भी
-- [Javascript में String interpolation कैसे करें](https://www.w3schools.com/js/js_string_interpolation.asp)
-- [String methods और उनका इस्तेमाल कैसे करें](https://www.javatpoint.com/javascript-string-methods)
+जब हम `toUpperCase()` या `toLowerCase()` फ़ंक्शन का इस्तेमाल करते हैं, तो इस फ़ंक्शन का पूरा स्ट्रिंग पर एक्सेस होता है और इसके बाद उस फ़ंक्शन में दिए गए अक्षरों को बदल देता है। अगर आप चाहें तो आप खुद भी एक `toUpperCase()` या `toLowerCase()` फ़ंक्शन बना सकते हैं। इसके लिए आपको स्ट्रिंग को लूप करना होगा और हर अक्षर को सटीक ढंग से बदलना होगा। हम यहां एक उदाहरण देखेंगे:
+
+```Javascript
+function toUpperCase(str) {
+    var result = "";
+    for (var i = 0; i < str.length; i++) {
+        var char = str[i];
+        if (/[a-z]/

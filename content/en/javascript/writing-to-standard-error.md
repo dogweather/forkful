@@ -1,75 +1,73 @@
 ---
 title:    "Javascript recipe: Writing to standard error"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+#Why Writing to Standard Error is Important in Javascript Programming
 
-When writing code in JavaScript, it's important to have a way to handle errors in case something goes wrong. By writing to standard error, developers can efficiently debug their code and identify any potential issues. It's a crucial part of the programming process and can save a lot of time and frustration in the long run.
+When writing Javascript code, it is important to have a good understanding of how to handle errors. One way to handle errors is by writing them to the standard error output. This ensures that any potential issues are captured and can be addressed appropriately.
 
-## How To
+##How To Write to Standard Error in Javascript
 
-To write to standard error in JavaScript, we can use the `console.error()` function. This function takes in a string or any type of data as its argument and outputs it to the standard error stream. Let's see an example:
-
-```Javascript
-let num = 10;
-console.error("The value of num is: " + num);
-```
-
-Running this code will produce the following output:
+Writing to standard error in Javascript is a simple process. You can use the `console.error()` method to log errors to the standard error output. For example:
 
 ```
-The value of num is: 10
+Javascript
+console.error("There was an error in your code");
 ```
 
-We can also use template literals to format our output in a more dynamic way. Let's take a look at another example:
+This will print the error message to the console, allowing you to quickly identify and fix any issues in your code. The standard error output is typically displayed in red, making it easy to spot among other console logs.
 
-```Javascript
-let name = "John";
-let age = 28;
-
-console.error(`Hello, my name is ${name} and I am ${age} years old.`);
-```
-
-The output will be:
+You can also include variables or other information in your error message, as shown in the example below:
 
 ```
-Hello, my name is John and I am 28 years old.
+Javascript
+let num1 = 10;
+let num2 = "5";
+
+if (typeof num2 !== "number") {
+  console.error(`Error: ${num2} is not a number`);
+}
 ```
 
-Writing to standard error is a simple and effective way to handle errors in JavaScript. It allows developers to quickly identify and fix any issues in their code.
+This will output "Error: 5 is not a number" to the console, helping you to identify which variable caused the error and what type of error it is.
 
-## Deep Dive
+##Deep Dive into Writing to Standard Error in Javascript
 
-Standard error is one of the three standard streams in a computer's input/output system. It is typically used to output error messages and any other diagnostic information. In contrast, standard output (often known as `console.log`) is used for general output, while standard input is used for receiving input from the user.
+When writing to standard error in Javascript, it is important to note that you can also use the `throw` keyword to throw custom errors. This allows you to create your own error messages and handle them in a specific way. For example:
 
-In JavaScript, we can also use `throw` statements to explicitly throw an error to standard error. This is useful when we want to handle specific errors with custom messages. For example:
-
-```Javascript
-function divide(x, y) {
-  if (y === 0) {
-    throw new Error("Cannot divide by zero!");
+```
+Javascript
+function divide(num1, num2) {
+  if (num2 === 0) {
+    throw "Cannot divide by zero";
+  } else {
+    return num1 / num2;
   }
-
-  return x / y;
 }
 
-console.error(divide(10, 0));
+console.log(divide(10, 0));
 ```
 
-The output will be:
+In this code, if the `num2` parameter is equal to 0, a custom error message will be thrown. This allows you to handle specific errors in a more personalized manner.
+
+Additionally, you can use the `try...catch` statement to catch errors and handle them in a specific way. This is useful when you want to continue running your code even if an error occurs. For example:
 
 ```
-Error: Cannot divide by zero!
-    at divide (<anonymous>:3:11)
-    at <anonymous>:7:13
+Javascript
+try {
+  // code that might cause an error
+} catch (error) {
+  // handle the error
+  console.error("Oops, an error occurred");
+}
 ```
 
-Using `console.error` in conjunction with `throw` statements can provide developers with more control and flexibility when handling errors in their code.
+##See Also
 
-## See Also
-
-- [Node.js documentation on console.error()](https://nodejs.org/api/console.html#console_console_error_data_args)
-- [MDN web docs on throw statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+- https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-chrome-developer-tools

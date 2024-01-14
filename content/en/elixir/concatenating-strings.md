@@ -1,60 +1,66 @@
 ---
 title:    "Elixir recipe: Concatenating strings"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Concatenating strings is a fundamental skill in any programming language. It allows you to combine multiple strings into one, giving you the ability to create dynamic and customizable output in your programs.
+When programming in Elixir, you may come across the need to join two or more strings together. This is known as concatenation, and it is a common operation that can come in handy in various scenarios. By learning how to concatenate strings in Elixir, you can enhance your ability to manipulate data and create more complex programs.
 
 ## How To
 
-To concatenate strings in Elixir, you can use the `<>` operator. This operator takes two strings as operands and combines them into one. Let's see an example:
+To join strings together in Elixir, you can use the `<>` operator. This operator takes two strings and returns a new string containing the combined text. Let's look at an example:
 
-```Elixir
-name = "John"
-greeting = "Hello, "
-full_greeting = greeting <> name
 ```
-
-The above code will result in `full_greeting` being `"Hello, John"`. You can also use the `<>` operator to concatenate more than two strings, such as:
-
-```Elixir
+Elixir
 first_name = "John"
-last_name = "Smith"
+last_name = "Doe"
+
 full_name = first_name <> " " <> last_name
+
+IO.puts full_name
 ```
 
-The result of `full_name` will be `"John Smith"`. You can also use variables within the `<>` operator, such as:
+This code will output `John Doe`, combining the first and last names into one string. You can also use the `<>` operator to join more than two strings together. For instance, `first_name <> " " <> middle_name <> " " <> last_name` will return `John Adam Doe` for a person with the middle name "Adam".
 
-```Elixir
-first_name = "John"
-last_name = "Smith"
-address = "123 Main Street"
+Another way to concatenate strings in Elixir is by using the `<>` function. This function takes a list of strings and combines them into one string. Here's an example:
 
-order = first_name <> " " <> last_name <> " ordered from " <> address
+```
+Elixir
+names = ["John", "Adam", "Doe"]
+
+full_name = Enum.join(names, " ")
+
+IO.puts full_name
 ```
 
-The output of `order` will be `"John Smith ordered from 123 Main Street"`.
+This will also output `John Adam Doe`, just like in the previous example.
 
 ## Deep Dive
 
-It's important to note that the `<>` operator converts all operands to strings before concatenating them. This means you can use it to concatenate not just strings, but also integers, floats, booleans, and any other data types that can be converted to strings.
+When concatenating strings, it is important to note that the `<>` operator and `<>` function both create brand new strings instead of modifying the existing ones. This is due to Elixir's immutability, which means that variables cannot be changed after they are assigned a value.
 
-Another approach to concatenating strings is by using the `String.concat/1` function, which takes a list of strings and concatenates them into one. Let's see an example:
+You can also use the `<<>>` binary syntax for string concatenation. This syntax operates similarly to the `<>` operator, but it is more efficient when dealing with larger strings. Here's an example:
 
-```Elixir
-name = "John"
-greeting = "Hello, "
-full_greeting = String.concat([greeting, name])
+```
+Elixir
+greeting = "Hello"
+name = "John Doe"
+
+message = <<greeting::binary-size(5), " ", name::binary>>
+
+IO.puts message
 ```
 
-The result of `full_greeting` will be the same as before: `"Hello, John"`. However, using `String.concat/1` can be more useful when you have a dynamic number of strings to combine.
+This code will output `Hello John Doe` using the `<<>>` binary syntax. The `binary-size(5)` specifies the size of the greeting string, optimizing its memory usage.
 
 ## See Also
 
-- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
-- [Learn You Some Erlang - Strings](https://learnyousomeerlang.com/strings)
-- [Elixir Documentation - String Module](https://elixir-lang.org/docs/stable/elixir/String.html)
+To learn more about strings in Elixir, check out these resources:
+
+- [Elixir Strings Documentation](https://hexdocs.pm/elixir/String.html)
+- [Elixir Enum Module](https://hexdocs.pm/elixir/Enum.html)
+- [Binary Syntax in Elixir](https://hexdocs.pm/elixir/master/binaries.html)

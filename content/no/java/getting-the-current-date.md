@@ -1,62 +1,38 @@
 ---
-title:    "Java: Få dagens dato"
+title:    "Java: Få den nåværende datoen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor:
 
-Å få nåværende dato kan være utrolig nyttig når du programmerer i Java. Datoer brukes i en rekke applikasjoner, fra å vise tidspunktet for en hendelse til å beregne tidsintervaller. Å kunne hente nåværende dato i Java gir deg muligheten til å utvikle mer dynamiske og funksjonelle programmer.
+Det å kunne få tak i og bruke den nåværende datoen i et Java-program kan være viktig for å holde styr på tidsbegrensede oppgaver eller for å generere unike verdier. Det er også en viktig del av å lage dynamiske og interaktive applikasjoner som kan tilpasse seg brukerens tidsone og lokale tid.
 
-## Hvordan
-
-For å få nåværende dato i Java, kan du bruke klassen `java.util.Date`. Denne klassen representerer et datobjekt som inneholder informasjon om nåværende dato og tid. Her er et eksempel på hvordan du kan bruke denne klassen:
-
+# Hvordan:
 ```Java
-import java.util.Date;
+import java.time.LocalDate;
 
-public class CurrentDateExample {
+public class CurrentDate {
     public static void main(String[] args) {
-        Date currentDate = new Date();
-        System.out.println("Nåværende dato er: " + currentDate);
+        // Bruker LocalDate.now() for å hente nåværende dato
+        LocalDate currentDate = LocalDate.now();
+        // Utprinting av formatert dato
+        System.out.println("Dagens dato er: " + currentDate);
     }
 }
 ```
-
-Dette vil gi følgende utskrift:
-
+Eksempel på output:
 ```
-Nåværende dato er: Wed May 12 12:00:00 CEST 2021
+Dagens dato er: 2021-11-08
 ```
 
-## Dypdykk
+# Dypdykk:
+Det er flere måter å få tak i den nåværende datoen i Java, men med introduksjonen av java.time-pakken i Java 8, er det anbefalt å bruke LocalDate-klassen for dato og tid. Denne klassen tilbyr en rekke nyttige metoder for å håndtere datoer, som for eksempel å hente ut spesifikke verdier som dag, måned og år, og å konvertere til forskjellige formater.
 
-I tillegg til å få nåværende dato og tid, kan du også bruke `DateTimeFormatter`-klassen til å formatere datoen på ønsket måte. Dette lar deg tilpasse utseendet til datoen, for eksempel ved å vise den som bare en dato eller bare en tid. Her er et eksempel på hvordan du kan gjøre dette:
+Det er viktig å merke seg at LocalDate-klassen er uendret, som betyr at datoer og tider kan manipuleres uten å endre den opprinnelige verdien. For mer avansert håndtering av datoer og tider, kan også LocalDateTime og ZonedDateTime-klassene brukes.
 
-```Java
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class CurrentDateTimeFormatterExample {
-    public static void main(String[] args) {
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String formattedDateTime = now.format(formatter);
-
-        System.out.println("Nåværende dato og tid er: " + formattedDateTime);
-    }
-}
-```
-
-Dette vil gi følgende utskrift:
-
-```
-Nåværende dato og tid er: 12/05/2021 12:00:00
-```
-
-## Se også
-
-- [Java Date and Time](https://docs.oracle.com/javase/tutorial/datetime/)
-- [Java SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Date and Time API for Java 8](https://www.baeldung.com/java-8-date-time-intro)
+# Se også:
+- [Java 8 LocalDate-dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java 8 Date and Time Tutorial](https://www.baeldung.com/java-8-date-time-intro) (engelsk)

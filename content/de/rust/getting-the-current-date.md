@@ -1,69 +1,36 @@
 ---
 title:    "Rust: Das aktuelle Datum erhalten"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Abrufen des aktuellen Datums kann eine häufige Aufgabe in der Programmierung sein, besonders wenn man Programme schreibt, die abhängig von der aktuellen Zeit oder Datum funktionieren. In diesem Blog-Beitrag werden wir uns ansehen, wie man dies in Rust erreichen kann.
+Das aktuelle Datum ist ein wichtiger Bestandteil vieler Anwendungen, da es häufig verwendet wird, um Zeitstempel zu generieren oder Daten zu organisieren. In diesem Blogbeitrag werden wir uns ansehen, wie man das aktuelle Datum in der Programmiersprache Rust abrufen kann.
 
-# Wie geht man vor
+## How To
 
-Zuerst müssen wir das `chrono`-Paket in unsere Projektabhängigkeiten aufnehmen. Dies können wir tun, indem wir die folgende Zeile in unsere `Cargo.toml`-Datei hinzufügen:
-
-```Rust
-[dependencies]
-chrono = "0.4.19"
-```
-
-Als nächstes importieren wir das `chrono`-Paket in unserem Code mit der folgenden Zeile:
+Um das aktuelle Datum in Rust abzurufen, können wir die Standardbibliotheksfunktion `Local::now()` verwenden. Dies gibt uns ein `LocalDateTime`-Objekt zurück, das wir dann in das gewünschte Format konvertieren können.
 
 ```Rust
-// main.rs
-use chrono::prelude::*;
+use chrono::Local;
+let now = Local::now(); // aktuelles Datum abrufen
+let formatted_date = now.format("%d.%m.%Y").to_string(); // in das Format "Tag.Monat.Jahr" konvertieren
+println!("Das aktuelle Datum ist: {}", formatted_date); // Ausgabe: Das aktuelle Datum ist: 07.10.2021
 ```
 
-Jetzt können wir das aktuelle Datum mit der `Utc::now()`-Funktion abrufen. Diese Funktion gibt ein `DateTime<UTC>`-Objekt zurück, welches das aktuelle Datum und die aktuelle Uhrzeit in der UTC-Zeitzone repräsentiert. Wir können dies in einer Variable speichern und auf verschiedene Arten anzeigen, wie im folgenden Beispiel:
+Wir können diese Methode auch verwenden, um die aktuelle Uhrzeit oder Zeitzone abzurufen, indem wir das entsprechende Format in `format()` angeben.
 
-```Rust
-// main.rs
-let current_datetime = Utc::now();
-println!("Das aktuelle Datum und die aktuelle Uhrzeit in UTC: {}", current_datetime);
-```
+## Deep Dive
 
-Die Ausgabe sieht folgendermaßen aus:
+Das `LocalDateTime`-Objekt, das `Local::now()` zurückgibt, ist Teil der externen Bibliothek `chrono`, die eine Vielzahl von Datums- und Uhrzeitmanipulationen in Rust ermöglicht. Dieses Objekt verwendet auch verschiedene Zeitzonen, um sicherzustellen, dass die erhaltenen Daten lokal korrekt sind.
 
-```
-Das aktuelle Datum und die aktuelle Uhrzeit in UTC: 2021-11-03 12:31:00 UTC
-```
+Es ist auch wichtig zu beachten, dass das aktuelle Datum vom System abhängt, auf dem die Anwendung ausgeführt wird. Das bedeutet, dass das Datum möglicherweise nicht genau ist, wenn die Systemzeit nicht richtig eingestellt ist.
 
-Wir können auch das Datum auf bestimmte Teile konvertieren, z.B. in ein `Date`-Objekt, welches nur das Datum ohne Zeit enthält:
+## Siehe auch
 
-```Rust
-// main.rs
-let current_date = Utc::now().date();
-println!("Das aktuelle Datum: {}", current_date);
-```
-
-Und die Ausgabe:
-
-```
-Das aktuelle Datum: 2021-11-03
-```
-
-Es gibt viele andere nützliche Funktionen und Methoden, die wir auf das `DateTime`-Objekt anwenden können, wie z.B. die Umrechnung in eine andere Zeitzone oder das Hinzufügen und Subtrahieren von Zeiten. Für weitere Details empfehlen wir einen Blick in die offizielle Dokumentation des `chrono`-Pakets.
-
-# Tiefere Einblicke
-
-Das `chrono`-Paket basiert auf dem Konzept der "zeitlichen Kalender" und bietet Unterstützung für verschiedene Kalender, Zeitzonen und Datenformate. Es ist auch sehr performant und bietet eine umfangreiche Auswahl an Datentypen und Funktionen für die Arbeit mit Zeit und Datum.
-
-Eine interessante Funktion, die das Paket bietet, ist die Möglichkeit, die Laufzeit von Aufgaben in Code zu verfolgen. Dies kann besonders nützlich sein, wenn man Code in einem Produktionsumfeld debuggt und herausfinden möchte, welche Teile des Codes am längsten brauchen.
-
-# Siehe auch
-
-- [Offizielle Dokumentation des `chrono`-Pakets](https://docs.rs/chrono/0.4.19/chrono/)
-- [Beispiele für die Verwendung von `chrono`](https://github.com/chronotope/chrono/tree/master/examples)
-- [Einige Tipps und Tricks für die Arbeit mit Zeit und Datum in Rust](https://blog.maximebouges.com/posts/chrono_duration/)
-- [Das `humantime`-Paket, welches eine menschenlesbare Darstellung von Zeit und Datum ermöglicht](https://docs.rs/humantime/2.1.0/humantime/)
+- [Rust Standardbibliothek](https://doc.rust-lang.org/std/)
+- [Chrono Dokumentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust Programmierhandbuch](https://doc.rust-lang.org/book/)

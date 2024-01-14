@@ -1,40 +1,77 @@
 ---
 title:    "Arduino recipe: Deleting characters matching a pattern"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As Arduino enthusiasts, we often encounter situations where we need to manipulate strings and characters in our code. One common task is deleting characters that match a certain pattern. But why would someone want to do this?
 
-Well, here are a few reasons- maybe you want to get rid of unnecessary symbols or punctuation marks from a string, or you want to filter out certain characters before performing a specific action. Whatever the reason may be, knowing how to delete characters matching a pattern can come in handy while programming with Arduino.
+Deleting characters matching a pattern can be a useful tool in Arduino programming. It allows you to remove unwanted characters from input data, making it easier to process and use in your code. This can be particularly helpful when working with data from sensors or serial communication.
 
 ## How To
-To delete characters matching a pattern, we can utilize the `remove()` function in Arduino. This function takes two parameters- the starting index and the number of characters to be removed. Here's an example code block showing how we can use this function to delete all vowels from a string:
 
-```Arduino
-// Initializing the string
-String message = "Hello Arduino!";
-// Deleting characters matching the pattern "aeiou"
-message.remove(1, 5); // The first argument is the starting index and the second is the number of characters to remove
-Serial.println(message); // Output: Hll Ardno!
+To delete characters matching a pattern in Arduino, we will use the `String` library and its `replace()` function. This function takes in two parameters - the character or pattern you want to replace, and the character you want to replace it with. Let's look at an example:
+
+```
+Arduino void setup(){
+  Serial.begin(9600);  // initialize serial communication
+}
+
+void loop(){
+  String data = "Hello, World!"; // create a sample string
+
+  // replace all occurrences of "o" with "e"
+  data.replace("o", "e");
+  Serial.println(data); // output: Helle, Werld!
+}
 ```
 
-In the above example, we used the `remove()` function to delete the characters at index 1 to 5 (which are the vowels in this case). This is just one way to delete characters matching a pattern, and you can tweak the starting index and number of characters accordingly to achieve your desired result.
+In this example, we first initialize serial communication in the setup function. Then in the loop, we create a `String` variable called `data` with the value "Hello, World!". Using the `replace()` function, we replace all occurrences of "o" with "e" in the string, resulting in "Helle, Werld!". Finally, we print the updated string to the serial monitor.
+
+This method can also be used to remove specific characters from a string. For example, if we want to remove all exclamation marks from a string, we can replace them with an empty string, like this:
+
+```
+Arduino void setup(){
+  Serial.begin(9600);  // initialize serial communication
+}
+
+void loop(){
+  String data = "Helle, Werld!"; // our string with an exclamation mark
+
+  // replace all "!" with empty string
+  data.replace("!", "");
+  Serial.println(data); // output: Helle, Werld
+}
+```
 
 ## Deep Dive
-Now, let's dive a bit deeper into the `remove()` function and understand how it actually works. When we call this function, it internally uses another function called `setCharAt()` which updates the value of the character at a specific index with a new character.
 
-For example, in the above code, when we called `remove(1, 5)`, it first called `setCharAt(1, 'l')`, `setCharAt(2, 'l')`, and so on until it reached the end of the string. This effectively replaces the vowels with the value 'l', thus deleting them from the string.
+The `replace()` function in Arduino also allows you to replace multiple characters or patterns at once by using arrays. For example, if we want to replace "o" with "e" and "l" with "z" in our string, we can do it like this:
 
-It's important to note that the `remove()` function modifies the original string itself and doesn't return a new string. So, if you want to keep the original string intact, make a copy of it before performing any modifications.
+```
+Arduino void setup(){
+  Serial.begin(9600);  // initialize serial communication
+}
+
+void loop(){
+  String data = "Helle, Werld!"; // our string with multiple characters to replace
+
+  // create arrays with characters to replace and their replacements
+  char toReplace[] = {'o', 'l'};
+  char replacement[] = {'e', 'z'};
+
+  // replace characters using arrays
+  for(int i=0; i<2; i++){
+    data.replace(toReplace[i], replacement[i]);
+  }
+  Serial.println(data); // output: Heee, Wezrd!
+}
+```
+
+The `replace()` function can also be used to replace words or phrases with another. Just make sure to include the entire word or phrase and its replacement in double quotes.
 
 ## See Also
-To learn more about the `remove()` function and other useful string manipulation functions in Arduino, check out these resources:
-
-- [Arduino Reference - String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino String Manipulation and Formatting](https://www.arduino.cc/en/Tutorial/StringExamples)
-- [Getting Rid of Unwanted Characters - Arduino Forum](https://forum.arduino.cc/index.php?topic=486095.0)
-
-With these resources and the knowledge of how to delete characters matching a pattern, you can now successfully manipulate strings and characters to suit your needs in Arduino. Happy coding!
+- [String library documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [String replace() function reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)

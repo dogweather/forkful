@@ -1,45 +1,42 @@
 ---
 title:    "Fish Shell: Sprawdzanie czy istnieje katalog"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto sprawdzić, czy istnieje katalog?
 
-Sprawdzanie, czy dany katalog istnieje, jest ważną częścią tworzenia skryptów w języku Fish Shell. Pozwala to na sprawdzenie, czy konkretny katalog jest dostępny i przetwarzanie odpowiedniego kodu w zależności od wyniku.
+Sprawdzanie istnienia katalogu jest bardzo przydatną umiejętnością w programowaniu, szczególnie w języku Fish Shell. Pozwala to na sprawadzenie, czy dany katalog istnieje i podejmowanie odpowiednich działań w zależności od wyniku. Jest to szczególnie przydatne w skryptach, które wymagają dostępu do określonego katalogu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Programowanie w języku Fish Shell jest bardzo intuicyjne i prostsze niż w innych powłokach systemowych. Aby sprawdzić istnienie katalogu, wystarczy użyć polecenia `test` wraz z flagą `-d`, a następnie podać ścieżkę do katalogu.
+Aby sprawdzić, czy dany katalog istnieje w Fish Shell, należy użyć polecenia `test -d` w połączeniu z żądanym katalogiem. Na przykład, aby sprawdzić, czy katalog "documents" istnieje w bieżącym katalogu, użyjemy następującego kodu:
 
 ```Fish Shell
-if test -d /sciezka/do/katalogu
-    echo "Katalog istnieje"
+if test -d documents 
+    echo "Katalog documents istnieje"
 end
 ```
 
-Jeśli katalog istnieje, to zostanie wyświetlony komunikat "Katalog istnieje". W przeciwnym razie, nic się nie wyświetli.
+W przypadku, gdy katalog nie istnieje, polecenie `echo` nie będzie wykonane.
 
-## Zagłębienie się w temat
+## Pogłębione zagadnienie
 
-Aby lepiej zrozumieć to, jak działa sprawdzanie istnienia katalogu w języku Fish Shell, należy wiedzieć, że polecenie `test` to w rzeczywistości skrót dla polecenia `[[` (podwójny nawias kwadratowy). Ten ostatni jest bardziej rozbudowanym poleceniem i umożliwia dokładniejsze sprawdzanie warunków, w tym czy dany katalog istnieje.
+Podstawowe sprawdzenie istnienia katalogu jest bardzo przydatne, ale w niektórych przypadkach może być również potrzebna bardziej szczegółowa informacja o katalogu. W takim przypadku, użyjemy polecenia `stat`, które pozwala na wyświetlenie różnych informacji o pliku lub katalogu, w tym również daty modyfikacji czy rozmiaru.
+
+Przykładowo, poniższy kod wykorzystuje polecenie `stat` do wyświetlenia informacji na temat katalogu "documents":
 
 ```Fish Shell
-if [[ -d /sciezka/do/katalogu ]]
-    echo "Katalog istnieje"
+if test -d documents
+    stat documents
 end
 ```
 
-Ponadto, w języku Fish Shell można używać wyrażeń regularnych, aby sprawdzić czy dana ścieżka pasuje do konkretnego wzorca. Przykładowo, aby sprawdzić czy w ścieżce znajduje się słowo "test", można użyć następującego kodu:
+Wyjście zawiera wiele informacji i może być wykorzystane do bardziej precyzyjnej analizy katalogu.
 
-```Fish Shell
-if [[ "/sciezka/do/katalogu/test" =~ "test" ]]
-    echo "Ścieżka zawiera słowo test"
-end
-```
+# Zobacz również
 
-## Zobacz też
-
-- [Podstawy programowania w języku Fish Shell](https://example.com)
-- [Dokumentacja języka Fish Shell](https://example.com)
+- Dokumentacja Fish Shell dla polecenia `test`: https://fishshell.com/docs/current/cmds/test.html
+- Przewodnik po poleceniu `stat` w Fish Shell: https://fishshell.com/docs/current/cmds/stat.html

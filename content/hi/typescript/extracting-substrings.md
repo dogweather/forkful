@@ -1,36 +1,35 @@
 ---
-title:    "TypeScript: उपस्थित उपस्थितियों को निकलना"
+title:    "TypeScript: उपस्थिति से परस्पर समासंहार करना"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyu
+## क्यों
+क्या आपने कभी एक बड़े स्ट्रिंग से कुछ खास अक्षरों को निकालने की कोशिश की है? अगर हां, तो आप अपने कोड में उन कुछ अक्षरों को स्पष्ट से अलग करने के लिए सबसे बढ़िया तकनीक के बारे में अभी पूरी तरह से जानोगे!
 
-Substring extraction kyu karna chahiye? Substring extraction ek bahut hi common programming task hai. Jab hume ek string se specific characters ya words extract karne ki zaroorat hoti hai, tab hum substring extraction ka istemal karte hai. Isse hume zyada lines of code likhne ki zaroorat nahi padti aur hum apni code ko optimized bhi bana sakte hai.
-
-# Kaise Karein
-
-Substring extraction bahut hi saral hai aur TypeScript mein iska istemal bahut hi aasan hai. Hum `substring()` method ka istemal kar sakte hai jo hume ek string mein se specific characters ko extract karne mein madad karta hai. Iske liye hum `substring()` method ko string ke baad dot notation se call kar sakte hai.
+## कैसे करें
+यह काम लगभग हर टाइप के कोड में किया जा सकता है, लेकिन हम यहां TypeScript में उदाहरण देखेंगे। सबसे पहले, हम एक वर्णमाला बनाएंगे और फिर उसमें से कुछ अक्षर निकालेंगे।
 
 ```TypeScript
-let str = "Hindi is a beautiful language!";
-let substr = str.substring(0, 5);
-console.log(substr); // Output: Hindi
+// एक वर्णमाला बनाएं
+let string = "हेलो दोस्तों";
+
+// 2 से 4 तक के अक्षरों को निकालें
+let substr = string.substring(2, 5);
+
+// निकाले गए अक्षरों की उपयोग करें
+console.log(substr); // लो दो
+
+// खाली स्थान के बिना आगे की तरफ से 5 इकाई तक के अक्षर निकालें
+let substr2 = string.substring(5);
+
+// निकाले गए अक्षरों की उपयोग करें
+console.log(substr2); // दोस्तों
 ```
 
-Is code mein humne `str` variable ko `"Hindi is a beautiful language!"` string ke equal kiya hai. Fir humne `substring()` method ka istemal karke `substr` variable mein `str` string ke first 5 characters ko store kiya hai. Aur last mein humne `substr` ko console mein print karwaya.
+साथ ही, आप `slice()` भी उपयोग कर सकते हैं, जो `substring()` के सामान है लेकिन थोड़ा अलग तरीके से काम करता है। आप `split()` भी इस्तेमाल कर सकते हैं, जो आपको अक्षरों को एक एरे में बदलेगा और फिर आप उसे कमांड कर सकते हैं।
 
-# Dhyan Se Dekhein
-
-Substring extraction mein kuch important points hai jo hume dhyan se dekhne ki zaroorat hai. 
-
-- `substring()` method mein hume sirf starting index aur ending index dena hota hai. Yeh method starting index se lekar ending index ke pehle tak ke characters ko extract karta hai.
-- Starting aur ending index dono inclusive hote hai, yaani ki humare jo ending index hai woh bhi extract hoga.
-- Agar hume starting index se lekar end tak ke saare characters extract karne hai, toh hume sirf starting index dena hoga, ending index ki zaroorat nahi hogi.
-- Hum `substring()` method mein negative values bhi de sakte hai. Agar hum negative value dete hai toh yeh method input ke end se lekar back count karta hai.
-
-# Dekhein Bhi
-
-- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Codecademy Tutorial](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-string-functions/cheatsheet)
+## गहराई में जाएं
+जब हम स्ट्रिंगों को हैंडल करते हैं, तो हम ज्यादातर इन सभी अपने ही सोच में अहमियत नहीं देते हैं। लेकिन अक्षरों को खासतौर पर निकालना सबसे अपनी गलतियों को ठीक करता है और आपके कोड को ज्याद

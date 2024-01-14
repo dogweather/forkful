@@ -1,32 +1,45 @@
 ---
-title:    "Arduino: テキストの検索と置き換え"
+title:    "Arduino: テキストの検索と置換"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Arduinoのコーディングにおいて、テキストの検索や置換を行うことについての理由はたくさんあります。例えば、プログラム内の特定のキーワードを変更することや、複数の行に渡って似たようなコードを一括で修正することなどが挙げられます。これにより、コードの維持や修正がより簡単になり、効率的なコーディングが可能になります。
+なぜ私たちはテキストの検索と置換に取り組むのでしょうか？テキストの検索と置換は、Arduinoプログラミングにおいて非常に重要な機能です。テキストを検索して置換することで、データを簡単に変更したり、特定の文字列を見つけて処理したりすることができます。この機能はArduinoプログラムをより柔軟に、そして強力にするのに役立ちます。
 
 ## 方法
 
-テキストの検索や置換を行うには、Arduinoの`String`クラスに用意されている`replace()`メソッドを使用します。このメソッドは、指定した文字列を別の文字列に置換することができます。以下に例を示します。
+ここでは、テキストの検索と置換を行うための基本的なコード例を紹介します。まず、テキストを検索して特定の文字列を置換する例を見てみましょう。
 
 ```Arduino
-String text = "Hello World!";
+String text = "Hello World";
 text.replace("World", "Arduino");
+
 Serial.println(text);
 ```
+上記の例では、変数`text`に保存されている文字列`Hello World`の中の`World`という文字列が`Arduino`に置換されます。コードを実行すると、`Hello Arduino`という文字列がシリアルモニターに表示されます。
 
-このコードを実行すると、`Hello Arduino!`という出力が得られます。文字列の検索や置換は、プログラム内の特定の処理を自動化する上で非常に便利です。
+次に、文字列の中から特定の文字を検索してその文字を置換する例を見てみましょう。
 
-## ディープダイブ
+```Arduino
+String text = "I love Arduino";
+text.replace("love", "use");
 
-さらに深い情報を求める場合は、正規表現を使用することでさまざまなパターンのテキストを一括で置換することができます。また、Arduinoの`String`クラス以外にも、C言語の`str.replace()`関数やPythonの`re.sub()`メソッドを使用することもできます。詳細な使用方法や応用例については、オンライン上で入手可能なドキュメントやチュートリアルを参考にすることができます。
+Serial.println(text);
+```
+上記のコードでは、変数`text`の中から`love`という文字列を検索して、その文字列を`use`に置換します。実行すると、`I use Arduino`という文言が表示されます。
+
+## 詳細を掘り下げる
+
+テキストの検索と置換には様々な方法があります。例えば、正規表現を使うことでより複雑な検索や置換が可能になります。また、マルチバイト文字を扱う場合は、`replace()`ではなく`replaceAll()`を使用する必要があります。さらに、Arduinoの不思議な文字コードの扱いも影響してくることがあります。そのため、テキストの検索と置換を行う際には、十分に文書を読み込み、詳細を理解することが重要です。
 
 ## 参考リンク
 
-- https://www.arduino.cc/reference/en/language/functions/strings/stringobject/replace/
-- https://www.arduino.cc/reference/en/language/functions/strings/stringappend/
-- https://docs.python.org/3/library/re.html
+- [Arduino Reference - replace()](https://www.arduino.cc/reference/en/language/functions/strings/stringfunctions/replace/)
+- [Arduino Reference - replaceAll()](https://www.arduino.cc/reference/en/language/functions/strings/stringfunctions/replaceall/)
+- [正規表現を使ったテキストの検索と置換](https://www.geosite.info/programming/regexp/search-replace.html)
+- [マルチバイト文字を扱う際の注意点](https://stackoverflow.com/questions/5400197/arduino-how-to-replace-multiple-bytes-string-in-a-large-single-bytes-string)
+- [Arduinoでの日本語文字コードの扱いについて](https://futurismo.biz/archives/3044)

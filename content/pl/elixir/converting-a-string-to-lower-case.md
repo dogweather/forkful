@@ -1,40 +1,45 @@
 ---
-title:    "Elixir: Konwersja ciągu znaków na małe litery"
+title:    "Elixir: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
-Konwersja ciągu znaków na małe litery jest ważną częścią programowania w Elixirze. Pozwala na ujednolicenie danych i ułatwienie porównywania tekstu, co jest niezbędne w wielu aplikacjach. W tym artykule dowiesz się, jak wykonać tę operację w Elixirze i jakie są jej zalety.
+## Dlaczego
 
-## Jak to zrobić?
-Poniżej przedstawiamy kilka przykładów kodu, które pokazują, jak wykonać konwersję ciągu znaków na małe litery w Elixirze. Pamiętaj, że funkcja `String.downcase/1` jest wbudowana w język Elixir, więc nie musisz importować żadnych dodatkowych modułów.
+Często zdarza się, że w programowaniu musimy operować na długich ciągach znaków. Aby ułatwić sobie pracę i zapewnić spójność danych, warto umieć konwertować stringi na małe litery.
+
+## Jak to zrobić
+
+W języku Elixir mamy kilka prostych sposobów na konwersję stringów do małych liter. Jedną z nich jest użycie funkcji `String.downcase/1`:
 
 ```Elixir
-# Przykład 1
-iex> String.downcase("HELLO")
-"hello"
-
-# Przykład 2
-iex> String.downcase("tHis Is a sAMple sTRing")
-"tis is a sample string"
-
-# Przykład 3
-iex> String.downcase("ążćęłńóśź")   # łączy polskie znaki
-"ążćęłńóśź"
-
-# Przykład 4
-iex> String.downcase("123ABC")
-"123abc"
+string = "Elixir jest niesamowitym językiem!"
+String.downcase(string)
+```
+```
+"elixir jest niesamowitym językiem!"
 ```
 
-## Głębsza analiza
-Funkcja `String.downcase/1` jest traktowana jako case-preserving, co oznacza, że zachowuje ona oryginalną wielkość liter w ciągu znaków. Dzięki temu możesz bez obaw używać jej w różnego rodzaju wyrażeniach regularnych czy innych operacjach, w których wielkość liter ma znaczenie.
+Możemy również użyć konstrukcji `|>` w celu łańcuchowego wywołania funkcji:
 
-Istnieje również opcjonalny argument `:accent` przyjmujący dwa możliwe wartości `:compatible` i `:normal` (domyślnie). W przypadku ustawienia go na `:compatible`, funkcja `String.downcase/1` przekształci również polskie znaki specjalne na ich "kompatybilne" odpowiedniki, co może być przydatne w niektórych przypadkach.
+```Elixir
+"Elixir jest niesamowitym językiem!" |> String.downcase
+```
+```
+"elixir jest niesamowitym językiem!"
+```
 
-## Zobacz też
-- Dokumentacja funkcji `String.downcase/1`: https://hexdocs.pm/elixir/String.html#downcase/1
-- Wideo tutorial na temat pracy ze Stringami w Elixirze: https://www.youtube.com/watch?v=5VwPKsWDmXo
-- Porównanie funkcji `String.downcase/1` z innymi metodami konwersji ciągu znaków: https://medium.com/@athityakumar/elixir-string-case-conversions-e323c7e7a800
+Warto również zwrócić uwagę na funkcję `String.downcase/2`, która pozwala ustawić język, w którym zostanie wykonana konwersja. Dzięki temu możemy zapewnić poprawną konwersję dla różnych alfabetów.
+
+## Głębszy zanurzenie
+
+Aby lepiej zrozumieć proces konwersji stringów do małych liter w Elixirze, warto poznać kilka szczegółów. Na początek, funkcja `String.downcase/1` wykorzystuje mechanizm "case mapping", który w łatwy sposób pozwala na przekształcenie liter do odpowiednich małych lub wielkich odpowiedników. W przypadku alfabetów spoza standardowych znaków ASCII, kodowanie jest ustalane za pomocą konfiguracji `String.Unicode`.
+
+Ponadto, warto wiedzieć, że funkcja `String.downcase/1` używa funkcji `String.to_charlist/1`, która przekształca ciąg znaków na listę znaków (charlist). Dzięki temu możemy operować na pojedynczych znakach zamiast całego stringa.
+
+## Zobacz również
+
+- Dokumentacja Elixira na temat `String.downcase/1`
+- Przewodnik po konwersji stringów i znaków w Elixirze na blogu Politechniki Warszawskiej

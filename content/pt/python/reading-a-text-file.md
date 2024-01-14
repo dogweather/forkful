@@ -1,66 +1,55 @@
 ---
 title:    "Python: Lendo um arquivo de texto"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em Python?
+## Por que ler um arquivo de texto no Python?
 
-Ler e manipular arquivos de texto é uma habilidade importante para qualquer programador Python. Com essa habilidade, é possível processar e analisar grandes quantidades de dados armazenados em um arquivo de texto. Além disso, a leitura de arquivos de texto pode ser útil para a criação de programas que requerem interação com o usuário através de entradas e saídas de texto.
+Se você é novo na programação em Python, pode estar se perguntando por que alguém iria querer ler um arquivo de texto. A resposta é simples: os arquivos de texto são uma forma comum de armazenar dados, e a leitura deles é essencial para muitas tarefas de programação.
 
-## Como fazer isso?
+## Como fazer isso em Python
 
-Começaremos importando a função `open` do módulo `io`. A função `open` nos permite abrir um arquivo de texto para leitura ou escrita. Ao usar a função `open`, é importante especificar o caminho e o nome do arquivo que deseja abrir. Se o arquivo não estiver no mesmo diretório em que o seu código Python está sendo executado, é necessário especificar o caminho completo para o arquivo.
+Ler um arquivo de texto no Python é bastante simples. Primeiro, precisamos abrir o arquivo usando a função built-in "open()", que recebe dois parâmetros: o nome do arquivo e o "modo de acesso" (leitura, escrita, etc.). Por exemplo, para abrir um arquivo chamado "dados.txt" em modo de leitura, usamos o seguinte código:
 
-```
-import io
-
-arquivo = io.open("arquivo_de_texto.txt", "r")
+```Python
+arquivo = open("dados.txt", "r")
 ```
 
-Neste exemplo, usamos o modo de leitura "r" para abrir o arquivo. Também é possível usar o modo de escrita "w" para criar um novo arquivo de texto ou substituir o conteúdo existente em um arquivo. Agora que o arquivo está aberto, podemos usar o método `read` para armazenar seu conteúdo em uma variável.
+Em seguida, podemos ler o conteúdo do arquivo usando o método "read()". Este método retorna todo o conteúdo do arquivo como uma única string. Por exemplo, para ler o conteúdo do arquivo que acabamos de abrir, usamos o seguinte código:
 
-```
+```Python
 conteudo = arquivo.read()
+print(conteudo) # imprime o conteúdo do arquivo
 ```
 
-Você também pode usar o loop `for` para ler o arquivo linha por linha e imprimir seu conteúdo, como no exemplo abaixo:
+Podemos também ler o arquivo linha por linha usando o método "readline()". Este método retorna uma única linha do arquivo, e cada chamada subsequente irá retornar a próxima linha. Por exemplo, para imprimir cada linha do arquivo em uma nova linha, usamos o seguinte código:
 
-```
-# Loop pelas linhas do arquivo e imprimindo seu conteúdo
-for linha in arquivo:
-    print(linha)
-```
-
-Se você quiser ler uma quantidade limitada de caracteres por linha, pode usar o método `readline` da seguinte forma:
-
-```
-# Lê os primeiros 10 caracteres da primeira linha do arquivo
-linha = arquivo.readline(10)
-print(linha)
+```Python
+linha1 = arquivo.readline()
+linha2 = arquivo.readline()
+print(linha1)
+print(linha2)
 ```
 
-Não se esqueça de fechar o arquivo após terminar de lê-lo, usando o método `close`:
+Finalmente, quando terminarmos de ler o arquivo, devemos fechá-lo usando o método "close()". Isso é importante para liberar os recursos usados pelo arquivo. Por exemplo, para fechar o arquivo que abrimos anteriormente, usamos o seguinte código:
 
-```
+```Python
 arquivo.close()
 ```
 
-## Mergulhando mais fundo
+## Aprofundando no assunto
 
-Além da função `open`, o módulo `io` também oferece outras funções e métodos úteis para trabalhar com arquivos de texto. Por exemplo, o método `write` pode ser usado para escrever conteúdo em um arquivo aberto em modo de escrita.
+Além dos métodos mencionados anteriormente, o Python oferece uma variedade de outras funções e métodos para trabalhar com arquivos de texto. Por exemplo, podemos usar os métodos "write()" e "writelines()" para escrever conteúdo em um arquivo, e a função "input()" para capturar a entrada do usuário e escrevê-la em um arquivo. Além disso, podemos usar a estrutura de controle "for" para percorrer todas as linhas de um arquivo e realizar operações em cada uma delas.
 
-```
-arquivo = io.open("arquivo_de_texto.txt", "w")
-arquivo.write("Olá, mundo!")
-arquivo.close()
-```
-
-Você também pode usar o método `seek` para definir o cursor em uma determinada posição no arquivo, o que pode ser útil para ler ou escrever em uma parte específica do conteúdo do arquivo. Além disso, o módulo `io` oferece suporte para manipulação de encodings e caracteres especiais, o que é importante para garantir a correta leitura e escrita em diferentes sistemas operacionais.
+É importante lembrar que, quando lemos um arquivo de texto, ele é sempre lido como uma string. Isso significa que, se estivermos trabalhando com dados numéricos, precisaremos convertê-los para o tipo de dados apropriado antes de utilizá-los. O Python possui funções úteis, como "int()" e "float()", para realizar essas conversões.
 
 ## Veja também
 
-- [Documentação oficial do Python para a leitura de arquivos de texto](https://docs.python.org/pt-br/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Explicação sobre o módulo io em Python](https://www.geeksforgeeks.org/python-io-module/)
-- [Tutorial em vídeo sobre como trabalhar com arquivos de texto em Python](https://www.youtube.com/watch?v=Uh2ebFW8OYM)
+Aqui estão alguns recursos adicionais para aprender mais sobre como ler arquivos de texto em Python:
+
+- [Python Tutorial: Reading and Writing Files](https://www.programiz.com/python-programming/file-operation)
+- [How to Read and Write Files in Python](https://realpython.com/read-write-files-python/)
+- [Reading and Writing Files in Python](https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python)

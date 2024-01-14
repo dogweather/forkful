@@ -1,43 +1,45 @@
 ---
-title:    "Clojure: מחיקת תווים התואמים תבנית"
+title:    "Clojure: מחיקת תווים התואמים לתבנית."
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למה לעסוק במחיקת תווים התואמים לתבנית?
+מחיקת תווים התואמים לתבנית היא כלי חשוב כאשר אתה מעורב בעיבוד טקסט בקוד Clojure. השימוש בפונקציות כמו `clojure.string/replace` או `clojure.string/replace-first` יכול לסייע לך למחוק תווים שאינם רלוונטיים או ליישר מבנה של טקסט.
 
-מחיקת תווים התואמים לתבנית היא כלי חשוב בתכנות הגמיש והיעיל של Clojure. זה יכול לסייע בפתרון בעיות של מילוט תווים, מיון וסינון נתונים.
-
-## איך לעשות זאת
-
-מחיקת תווים התואמים לתבנית נעשית באמצעות פונקציות מובנות בשפת Clojure. ניתן להשתמש בפונקציות כגון `re-seq`, `re-find`, ו-`re-seq` כדי למצוא ולהסיר תווים התואמים לתבנית מתוך נתונים.
+## כיצד לעשות זאת
 
 ```Clojure
-;; הגדרת מחרוזת ותבנית
-(def str "This is a sample string with numbers 12345")
-(def pattern #"\d+") ; תבנית המתאימה למספרים
+;; מחיקת כל האותיות הגדולות מהטקסט
+(clojure.string/replace "Hello World!" #"[A-Z]" "")
 
-;; מציאת התווים התואמים לתבנית ומחיקתם
-(re-seq pattern str) ; תוצאה: ("12345")
-(re-find pattern str) ; תוצאה: ["12345"]
-(re-seq #"s" str) ; תוצאה: ("s" "s" "s")
-(re-seq #"[a-z]+" str) ; תוצאה: ("his" "is" "a" "sample" "string" "with" "numbers")
-(re-seq #" " str) ; תוצאה: (" " " ")
+;; חילוץ תווים רק מבין המספרים השלמים
+(clojure.string/replace-first "abc123def456" #"[^\d]" "")
 
-;; מחיקת תווים התואמים לתבנית מתוך מחרוזת
-(re.sub pattern "" str) ; תוצאה: "This is a sample string with numbers "
-``` 
+;; החלפת תווים עם רצף מללי
+(clojure.string/replace "I love apples" "apples" "oranges")
 
-## טפל בעומק
+```
 
-הוספת פרמטרים נוספים לתבנית יכולה להיות שימושית למחיקת תווים התואמים לתבנית. לדוגמה, ניתן להוסיף את הפרמטר `g` כדי למחוק את כל התווים התואמים לתבנית במחרוזת, לא רק את המופע הראשון.
+### תוצאות
 
-שיטת התוצאה העצמית (destructive result) של הפונקציות `re-find` ו- `re-seq` מאפשרת לשנות את המקור המקורי ולמחוק את התווים התואמים לתבנית ישירות, במקום ליצור מקום זיכרון חדש.
+```Clojure
+"ello orld!" ;; נמחקו כל האותיות הגדולות
+"123456" ;; ניתן רק את המספרים של טקסט
+"I love oranges" ;; נמצא והוחלף המילה "apples"
+```
+
+## מעמיק לתוך
+
+כאשר משתמשים בפונקציות למחיקת תווים, חשוב להיות ערני לגבי התבנית שאתה משתמש בה. למשל, הביטוי #"[A-Z]" יתאים לכל אותיות גדולות בטקסט, והביטוי #"[^^]" ימחק את כל התווים שאינם מתאימים לטקסט.
+
+בנוסף, כדאי להשתמש בפונקציות נתמכות על-ידי ספריית `clojure.string`, כמו `replace` ו `replace-first`. אל תשכח לבדוק את רשימת הפונקציות הנתמכות כדי למצוא את הכלי המתאים ביותר עבור המשימה שלך.
 
 ## ראה גם
 
-- [מדריך רשמי לשפת Clojure](https://clojure.org/guides)
-- [פונקציות מובנות למת
+- [ספריית Clojure.string במקראט oClojure](https://clojuredocs.org/clojure.string) 
+- [מאמר על סטנטרדיות בספריית Clojure.string](https://purelyfunctional.tv/guide/clojure-string/) 
+- [דוגמאות מתקדמות לשימוש בספריית Clojure.string](https://gist.github.com/borkdude/195fb4ab09fbab5def164ea096417811)

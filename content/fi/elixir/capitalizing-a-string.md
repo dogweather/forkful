@@ -1,44 +1,36 @@
 ---
-title:    "Elixir: Merkkijonon isoittaminen"
+title:    "Elixir: Merkkijonon kirjoittaminen isoilla kirjaimilla"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi Elixirissä? Tämä on yleinen ohjelmointitehtävä, jota tarvitaan esimerkiksi, kun halutaan tulostaa käyttäjän antamia nimiä tai kun muotoillaan otsikoita ohjelmassa.
+Joku saattaa kysyä: miksi ylipäätään täytyy koodata merkkijonon kirjaimien muuttaminen isoksi? Vastaus on yksinkertainen: joskus se on tarpeen tiettyjen ohjelmointitehtävien suorittamiseen. Esimerkiksi kun käsitellään käyttäjän syöttämää dataa, saattaa olla tarpeen muuttaa merkkijonon alku kirjaimella isoksi, jotta se vastaa tietyntyyppistä tietokantaan tallennettua dataa. Tämä yksi yleinen esimerkki siitä, miksi merkkijonon kirjainten muuttaminen isoksi voi olla hyödyllistä.
 
 ## Miten tehdä se
 
-Onneksi Elixirissä on valmiina funktio, joka tekee tämän työn helpoksi. Käytämme funktiota `String.capitalize/1`, joka saa argumenttinaan merkkijonon ja palauttaa saman merkkijonon, mutta ensimmäinen kirjain isona. Katso esimerkki alla:
+Jos käytät Elixiriä, voit helposti kääntyä sisäänrakennettuun `String.capitalize/1` -toimintoon, jolla voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tämän funktion käyttäminen on melko suoraviivaista ja seuraava koodiesimerkki näyttää, miten se tapahtuu Elixirin `iex`-komentotulkin kautta:
 
 ```Elixir
-String.capitalize("kissa")
+iex> String.capitalize("kävin eilen kaupassa")
+"Kävin eilen kaupassa"
 ```
 
-Tulostus:
-```
-"Kissa"
-```
-
-Voimme myös käyttää tätä funktiota muuttamaan isoksi useamman sanan sisältävän merkkijonon ensimmäisen sanan. Esimerkiksi:
+Huomaa, että vain merkkijonon ensimmäinen kirjain muuttuu isoksi. Voit myös käyttää `String.capitalize/2` -funktiota, joka ottaa toisen argumentin sisään, jos haluat muuttaa jonkin muun kirjaimen isoksi. Seuraava esimerkki näyttää, kuinka voit käyttää tätä toista argumenttia muuttaaksesi ensimmäisen tilalle kolmannen kirjaimen isoksi:
 
 ```Elixir
-String.capitalize("Hei, olen Elixir-ohjelmoija")
+iex> String.capitalize("kävin eilen kaupassa", 3)
+"käviN eilen kaupassa"
 ```
 
-Tulostus:
-```
-"Hei, olen Elixir-ohjelmoija"
-```
+## Syvemmän sukelluksen tekeminen
 
-## Syvällisempi sukellus
-
-Haluatko tietää, miten tämä funktio toimii taustalla? Käytännössä `String.capitalize/1` funktio käyttää Unicode-standardia tunnistaakseen kirjaimet ja muuttaa ensimmäisen kirjaimen isoksi. Lisäksi se osaa kohdella erityisiä merkkejä kuten ääkkösiä oikein. Jos haluat lisätietoa Unicode-standardista ja Elixirin käsittelystä, voit lukea [Elixirin dokumentaatiosta](https://hexdocs.pm/elixir/String.html#module-unicode-and-code-points) tai [Unicode-standardista](https://unicode.org/) itsessään.
+Jos haluat syventyä Elixirissä merkkijonon kirjainten muuttamiseen isoksi, voit tutustua tarkemmin `String.capitalize/1` -funktion lähdekoodiin. Voit löytää sen Elixirin dokumentaatiosta tai etsiä GitHubista. Tämä auttaa sinua ymmärtämään, miten toiminto toimii taustalla ja miten voit räätälöidä sitä tarpeidesi mukaan.
 
 ## Katso myös
 
-- [String.capitalize/1 dokumentaatio](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Elixir Unicode ja koodipisteet](https://hexdocs.pm/elixir/String.html#module-unicode-and-code-points)
-- [Unicode-standardi](https://unicode.org/)
+- [Elixirin dokumentaatio merkkijonon käsittelystä](https://hexdocs.pm/elixir/String.html)
+- [Elixirin GitHub-repositorio](https://github.com/elixir-lang/elixir)

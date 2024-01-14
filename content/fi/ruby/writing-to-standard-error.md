@@ -1,42 +1,40 @@
 ---
-title:    "Ruby: Kirjoittaminen standardivirheelle"
+title:    "Ruby: Standard errorin kirjoittaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jokainen ohjelmoija tuntee tarpeen kirjoittaa koodiinsa virheitä varten. Tämä auttaa meitä havaitsemaan ja korjaamaan ongelmia ohjelman suorituksen aikana. Yksi tapa tehdä tämä on kirjoittaa virheet standardi virhepuskuriin, jota kutsutaan myös nimillä "STDERR" tai "standard error". Tässä blogikirjoituksessa opimme, miksi ja miten kirjoittaa standardi virhepuskuriin Ruby-koodissa.
+Monet ohjelmoijat ovat saattaneet törmätä termiin "standard error" Ruby-kielen yhteydessä. Mutta miksi se on tärkeä ja miksi sitä tulisi hyödyntää koodissa? Tässä kirjoituksessa käymme läpi syitä ja hyviä käytäntöjä, miten kirjoittaa standard erroriin Ruby-ohjelmoinnissa.
 
 ## Miten
 
-Kaikki Ruby-skriptit muodostuvat yhdestä tai useammasta koodista, jotka suoritetaan peräkkäin. Tämä koodi löytyy useinkaanut “main” -muuttujasta. Voit käyttää "puts" -metodia tulostamaan mitä tahansa haluat, mutta miten tulostetaan virheitä standardi virhepuskuriin? Tätä varten käytämme "STDERR.puts" -metodia. Katso alla olevaa esimerkkiä:
+Kirjoittaminen standard erroriin on yksinkertaista Rubyssa. Käytä `STDERR.puts` tai `STDERR.print` -funktioita tulostamaan haluamasi viesti. Esimerkiksi:
 
-````Ruby
-# Luo virhe ilmoitus
-virheilmoitus = "Virhe: Tallennettavaa tietoa ei löytynyt"
+```Ruby
+STDERR.puts "Tämä on virheviesti"
+STDERR.print "Tämä on toinen virheviesti"
+```
 
-# Tulosta virhe standardi virhepuskuriin
-STDERR.puts virheilmoitus
-````
+Tämä tulostaa "Tämä on virheviesti" ja "Tämä on toinen virheviesti" terminaaliin. On myös mahdollista ohjata virheviestit suoraan standard erroriin, esimerkiksi:
 
-Tämä koodi tuottaa seuraavan tulosteen:
+```Ruby
+2 / 0 # aiheuttaa jakojäännösvirheen
+```
 
-````bash
-# Virhe: Tallennettavaa tietoa ei löytynyt
-````
+Tämä tulostaisi "ZeroDivisionError: divided by 0" standard erroriin.
 
-Hienoa, olemme nyt onnistuneesti kirjoittaneet virheen standardi virhepuskuriin!
+## Syvemmälle
 
-## Syventävä katsaus
+Nyt kun tiedämme, miten kirjoittaa standard erroriin Rubyssa, on tärkeää ymmärtää, miksi se on hyvä käytäntö. Standard error on erillinen virheviestiloki, joka on erillinen standardilokista. Näin ollen, se erottaa selkeämmin virheviestit normaalista tulostamisesta ja helpottaa ohjelman virheiden löytämistä ja korjaamista.
 
-Virheiden kirjoittaminen standardi virhepuskuriin on hyödyllistä, koska se auttaa meitä erottamaan normaalit tulosteet ja ilmoittamaan virheistä suoraan ohjelman suorituksen aikana. Lisäksi voimme käyttää "STDERR.puts" -metodia myös tarkistaakseen, kuinka pitkälle ohjelma on edennyt, joskus se saattaa lopettaa suorituksen jonkin vaiheen jälkeen. Näin voimme selvittää, mikä vaihe aiheutti ongelman ja korjata sen helpommin.
-
-On myös hyvä huomata, että Ruby-kielellä on muitakin vaihtoehtoja virheiden käsittelyyn, kuten "raise" -lauseke, joka sallii meidän heittää virheen tai poikkeuksen haluamaamme kohtaan ohjelmassa.
+Kun ohjelmointiin sisältyy käyttäjän syötteen käsittely, käytävien virheiden käsittely on myös tärkeää. Kirjoittaminen standard erroriin mahdollistaa käyttäjän virheiden ohjaamisen selkeämmin ja välittämisen ohjelmoijalle selityksellä. Tämä auttaa myös käyttäjää ymmärtämään, miksi ohjelma ei toimi halutulla tavalla.
 
 ## Katso myös
 
-- [Virheiden käsittely Ruby-kielessä](https://rubyonrails.org/core/classes/Exception.html)
-- [Ruby-dokumentaatio: STDERR](https://ruby-doc.org/core-2.6.3/STDERR.html)
-- [Ruby-dokumentaatio: raise-lauseke](https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-raise)
+- [Ruby Standard Library Documentation: StandardError](https://ruby-doc.org/core-2.7.2/StandardError.html)
+- [How to Use Standard Error in Ruby](https://www.geeksforgeeks.org/how-to-use-standard-error-in-ruby/)
+- [Debugging Ruby Programs with Standard Error](https://www.redhat.com/sysadmin/debugging-ruby-standard-error)

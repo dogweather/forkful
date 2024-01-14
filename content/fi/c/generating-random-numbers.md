@@ -1,45 +1,64 @@
 ---
-title:    "C: Satunnaislukujen luominen"
+title:    "C: Sattumanvaraisten numeroiden luominen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
-Monet ohjelman kehittäjät saattavat tarvita tarvetta luoda satunnaisia numeroita ohjelmiaan varten, kuten pelisovelluksia tai erilaisia simulaatioita varten. Tämä artikkeli kertoo, kuinka helposti voit luoda satunnaisgeneraattoreita omassa C-ohjelmassasi.
+## Miksi
 
-# Kuinka
-Käyttämällä C-ohjelmoijien standardikirjastoa <stdlib.h>, voit luoda satunnaislukuja helposti käyttämällä funktion ```rand()```. Ohessa näet yksinkertaisen esimerkin, jossa koodin avulla luodaan 10 satunnaista kokonaislukua väliltä 1-100 ja tulostetaan ne näytölle.
+Monissa ohjelmointitehtävissä saattaa olla tarvetta käyttää satunnaislukuja. Ne voivat olla hyödyllisiä esimerkiksi pelien satunnaisessa generoinnissa tai simulaatioissa. C-kielessä on sisäänrakennettu toiminto, joka mahdollistaa satunnaislukujen generoinnin. Tässä blogikirjoituksessa esittelemme, miten sitä voidaan käyttää.
+
+## Miten
+
+Satunnaislukujen generoimiseen C-kielessä tarvitaan srand- ja rand-funktiot. Ensiksi tulee asettaa srand-funktiolle siemenluku, jota käytetään satunnaisten lukujen generointiin. Tämän jälkeen voidaan kutsua rand-funktiota, joka palauttaa satunnaisen luvun. Esimerkiksi:
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
-{
-    // Luodaan satunnaisgeneraattori
-    srand(time(NULL));
+int main() {
+   int i, random;
 
-    // Luodaan 10 satunnaista kokonaislukua ja tulostetaan ne näytölle
-    for (int i = 0; i < 10; i++)
-    {
-        int random = rand() % 100 + 1;
-        printf("%d ", random);
-    }
+   // Asetetaan siemenluku
+   srand(1234);
 
-    return 0;
+   // Generoidaan 10 satunnaista lukua ja tulostetaan ne
+   for(i = 0; i < 10; i++) {
+      random = rand();
+      printf("%d\n", random);
+   }
+
+   return 0;
 }
-
-// Output:
-// 44 88 21 72 90 55 17 38 75 9
 ```
 
-Tässä esimerkissä käytetään myös ```srand()```-funktiota, joka asettaa satunnaislukugeneraattorin aloitusarvoksi ajanhetken, jolloin ohjelma käynnistyy. Tämä mahdollistaa jokaisen suorituskerran jälkeen uusien erilaisten satunnaislukujen luomisen.
+Ohjelman ulostulo voi olla esimerkiksi seuraava:
 
-# Syvällisemmin
-Satunnaislukujen luominen ohjelmassa perustuu pseudosatunnaislukugeneraattoreihin, jotka ovat matemaattisia algoritmeja, jotka tuottavat suuren joukon numeroita, jotka näyttävät satunnaisilta. On tärkeää huomata, että nämä luvut eivät ole täysin satunnaisia, mutta ne ovat tarpeeksi lähellä sitä, jotta ne ovat hyödyllisiä monissa sovelluksissa. Satunnaislukugeneraattoreiden algoritmit perustuvat yleensä alkuperäiseen siemenlukuun, joka on aina sama, joten ohjelman suoritettaessa sama alkuperäinen siemen tuottaa aina saman satunnaislukujen sarjan. Tämän vuoksi ```srand()```-funktion käyttäminen ajanhetken perusteella on suositeltavaa, jotta satunnaislukujen sarja vaihtelisi suorituksen kullekin kerralle.
+```
+22216
+21414
+884
+17733
+15217
+8397
+1877
+416
+10564
+4046
+```
 
-# Katso myös
-- [stdlib.h dokumentaatio (suomeksi)](https://cplusplus.com/reference/cstdlib/)
-- [Satunnaislukujen pseudosatunnaislukugeneraattorit (suomeksi)](https://fi.wikipedia.org/wiki/Pseudosatunnaislukugeneraattori)
-- [Ajanhetken käyttäminen pseudosatunnaislukujen aloitusarvona (englanniksi)](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+Huomaa, että samalla siemenluvulla asetettaessa rand-funktio palauttaa saman sarjan satunnaisia lukuja.
+
+## Syvempi sukellus
+
+Satunnaislukujen generoiminen perustuu tietokoneen kellosta otettuihin aikamerkintöihin ja siemenlukuun. Siemenluvun muuttaminen vaikuttaa myös generoituihin satunnaisiin lukuihin. Siksi onkin tärkeää asettaa fungtion srand(parametri) parametri satunnaislukuna, esim. srand(time(0)), jolloin satunnaisluku vaihtuu jokaisessa ohjelman suorituksessa.
+
+Toinen hyödyllinen funktio C-kielessä on rand() % n, joka palauttaa satunnaisluvun väliltä 0 ja n-1. Tämä on kätevä keino rajoittaa satunnaislukujen alue haluttuun väliin.
+
+## Katso myös
+
+- [C-kirjasto: stdlib.h](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm)
+- [srand() funktio](https://www.tutorialspoint.com/c_standard_library/c_function_srand.htm)
+- [rand() funktio](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)

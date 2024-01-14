@@ -1,44 +1,47 @@
 ---
 title:    "Ruby: Suchen und Ersetzen von Text"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Warum
+# Warum
 
-Das Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren. Es ermöglicht die schnelle und präzise Änderung von Text in großen Mengen. In diesem Artikel werden wir uns ansehen, wie man diese Aufgabe in Ruby lösen kann.
+Das Suchen und Ersetzen von Text ist eine nützliche Fähigkeit, die jeder Ruby-Programmierer beherrschen sollte. Es ermöglicht das effiziente Bearbeiten von Textdateien und -strings, was besonders bei der Bearbeitung großer Datenmengen hilfreich ist.
 
-## Wie Geht Das?
+# Wie man Text sucht und ersetzt
 
-Das Suchen und Ersetzen von Text in Ruby ist relativ einfach und vielseitig. Um Loszulegen, erstellen wir eine Variable mit unserem Text und setzen die Methode `gsub` ein, die das Ersetzen ermöglicht.
+Zur Durchführung von Such- und Ersetzungsvorgängen in Ruby gibt es verschiedene Methoden, die wir uns genauer anschauen werden.
 
-```Ruby
-text = "Hallo Welt! Willkommen zu meinem Programmierblog!"
-puts text.gsub("Welt", "Programmierwelt")
+## String#sub und String#gsub
+
+Die Methoden `sub` und `gsub` können auf Strings angewendet werden, um bestimmte Teilstrings zu suchen und zu ersetzen. Der Unterschied zwischen den beiden besteht darin, dass `sub` nur die erste Übereinstimmung ersetzt, während `gsub` alle Übereinstimmungen ersetzt.
+
+```ruby 
+# Beispiel mit String#sub
+"My name is John".sub("John", "Jane") # => "My name is Jane"
+
+# Beispiel mit String#gsub
+"Hello Ruby, welcome to Ruby".gsub("Ruby", "World") # =>"Hello World, welcome to World"
 ```
-Output: Hallo Programmierwelt! Willkommen zu meinem Programmierblog!
 
-In diesem Beispiel wird das Wort "Welt" durch "Programmierwelt" ersetzt und der geänderte Text wird ausgegeben. Wir können auch reguläre Ausdrücke nutzen, um noch komplexere Such- und Ersetzungsaufgaben durchzuführen.
+## Regex
 
-```Ruby
-text = "Das Ergebnis von 2+2 ist 4."
-puts text.gsub(/\d+/, "vier")
+Die Verwendung von Regular Expressions ermöglicht es, komplexe Such- und Ersetzungsvorgänge durchzuführen. Um einen Regex in Ruby zu erstellen, verwenden wir den Konstruktor `/.../`. Im folgenden Beispiel wird der Regex `/[aeiou]/` verwendet, um alle Vokale in einem String zu ersetzen.
+
+```ruby
+"Hello World".gsub(/[aeiou]/, "*") # => "H*ll* W*rld"
 ```
-Output: Das Ergebnis von zwei+2 ist vier.
 
-In diesem Beispiel wird jede Zahl im Text durch das Wort "vier" ersetzt, was uns eine sinnvolle Änderung des Satzes ermöglicht.
+# Tiefergehende Informationen
 
-## Tiefer Einblick
+Beim Ersetzen von Text gibt es noch weitere wichtige Aspekte zu beachten, wie z.B. die Verwendung von Modifikatoren oder die Auswirkungen auf die Performance. Für eine ausführliche Erklärung empfehle ich die offizielle Dokumentation oder weitere Tutorials zu diesem Thema.
 
-Die Methode `gsub` steht für "global substitution" und ermöglicht die globale Suche und Ersetzung von Text in einem String. Sie akzeptiert zwei Argumente: das Suchmuster und das Ersetzungsmuster. Das Suchmuster kann ein String oder ein regulärer Ausdruck sein und das Ersetzungsmuster kann ebenfalls ein String oder ein Lambda-Ausdruck sein.
+# Siehe auch
 
-Zusätzlich zur Methode `gsub` gibt es auch `sub`, was für "substitution" steht. Im Gegensatz zu `gsub` wird hier nur die erste Übereinstimmung ersetzt.
+- [Offizielle Dokumentation zu String#sub und String#gsub](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
+- [Regex Tutorial für Ruby](https://rubular.com/)
+- [Praxisbeispiel für die Verwendung von Regex zum Suchen und Ersetzen in Ruby](https://www.rubyguides.com/2019/07/ruby-regex/)
 
-Weitere Optionen zur Suche und Ersetzung von Text in Ruby bieten die Methoden `gsub!` und `sub!`, die den String direkt verändern, anstatt eine neue Version zurückzugeben.
-
-## Siehe Auch
-
-- [Ruby Dokumentation zu `gsub`](https://ruby-doc.org/core-2.6/String.html#method-i-gsub)
-- [Artikel über reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Übersicht über String Manipulationsmethoden in Ruby](https://www.rubyguides.com/2018/10/string-methods/)
+Vielen Dank fürs Lesen! Falls du weitere Fragen hast oder Feedback zu diesem Beitrag hast, zögere nicht, einen Kommentar zu hinterlassen. Happy coding!

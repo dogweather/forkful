@@ -1,35 +1,37 @@
 ---
-title:    "TypeScript: 명령줄 인수 읽기"
+title:    "TypeScript: 컴퓨터 프로그래밍에서 명령줄 인수 읽기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-커맨드 라인 인수를 읽는 것이 중요한 이유는 여러 가지가 있습니다. 첫째로, 커맨드 라인 인수는 프로그램의 실행을 제어하는 데 중요한 역할을 합니다. 또한 사용자가 프로그램을 실행할 때 특정한 옵션을 줄 수 있게 해줍니다. 따라서 이러한 이유로 커맨드 라인 인수를 읽는 것은 매우 유용합니다.
+커맨드 라인 인자를 읽는 것이 왜 중요한지 궁금하신가요? 이 글을 읽으면서 이유를 알아보세요.
 
 ## 어떻게
 
-커맨드 라인 인수를 읽는 방법은 여러 가지가 있지만, TypeScript에서는 process 객체를 사용할 수 있습니다. process 객체는 Node.js에서 제공하는 전역 객체로, 프로그램의 실행 환경과 관련된 정보를 제공해줍니다. 따라서 process.argv 속성을 사용하여 커맨드 라인 인수를 읽을 수 있습니다. 아래는 TypeScript로 커맨드 라인 인수를 읽는 간단한 예제와 그에 대한 결과입니다.
+커맨드 라인 인자를 읽는 방법을 알려드리겠습니다. 먼저, ```process.argv```를 사용하여 인자를 읽을 수 있습니다. 아래의 예시 코드를 참고해보세요.
 
 ```TypeScript
-const argsLength: number = process.argv.length;
-console.log("Number of arguments: " + argsLength);
-
-// 실행 결과
-// Number of arguments: 3
+const args: string[] = process.argv;
+console.log("첫 번째 인자는: " + args[2]);
+console.log("두 번째 인자는: " + args[3]);
 ```
 
-위의 예제에서는 process.argv.length 속성을 사용하여 프로그램이 실행될 때 설정된 커맨드 라인 인수의 개수를 확인하고, 이를 콘솔에 출력하고 있습니다. 이외에도 process.argv 배열의 인덱스를 통해 각각의 커맨드 라인 인수에 접근할 수 있습니다.
+위 코드를 실행하면, 콘솔에 첫 번째 인자와 두 번째 인자의 값을 출력할 수 있습니다.
 
-## 더 깊이 들어가기
+## 심층 분석
 
-커맨드 라인 인수를 읽는 방법에는 더욱 많은 옵션이 있습니다. 예를 들어, minimist라는 라이브러리를 사용하면 커맨드 라인 인수를 더 쉽게 파싱할 수 있습니다. 이 외에도 yargs, commander 등의 라이브러리를 사용하여 커맨드 라인 인수를 처리할 수 있습니다. 하지만 이러한 라이브러리를 사용하지 않고 직접 프로그램을 작성할 때에도 process 객체를 활용하여 커맨드 라인 인수를 읽을 수 있습니다.
+커맨드 라인 인자를 읽는 것은 프로그래밍에서 상당히 중요한 기술입니다. 인자를 읽어서 사용자에게 적절한 응답을 보내는 것이 가능해집니다. 또한, 사용자로부터 입력받은 데이터를 변수에 저장하여 나중에 사용할 수 있습니다.
 
-## 관련 링크
+## 참고 자료
 
-- [Node.js process 객체 문서](https://nodejs.org/api/process.html)
-- [minimist 라이브러리](https://www.npmjs.com/package/minimist)
-- [yargs 라이브러리](https://www.npmjs.com/package/yargs)
-- [commander 라이브러리](https://www.npmjs.com/package/commander)
+- [Node.js 공식 문서 - process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- [TypeScript 핸드북 - 커맨드 라인 인자](https://www.typescriptlang.org/docs/handbook/utility-types.html#type-parameters-and-tuple-types)
+- [Node.js에서 커맨드 라인 인자 읽기](https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program)
+
+## 참고하세요
+
+이 글을 읽고 커맨드 라인 인자를 읽는 방법을 배우셨다면, 이제 커맨드 라인 인자를 활용하여 더 다양한 프로그래밍 문제를 해결해보세요!

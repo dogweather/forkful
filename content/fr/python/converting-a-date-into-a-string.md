@@ -1,74 +1,60 @@
 ---
-title:    "Python: Convertir une date en une chaîne de caractères"
+title:    "Python: Convertir une date en chaîne de caractères"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque vous travaillez avec des dates dans vos programmes Python, il peut être utile de les convertir en chaînes de caractères. Cela peut être pour des raisons d'affichage, pour faciliter la comparaison entre les dates ou pour les stocker dans un fichier texte. Dans cet article, nous allons explorer comment convertir une date en chaîne de caractères en utilisant Python.
+Il est souvent nécessaire dans les projets de programmation de convertir une date en chaîne de caractères, par exemple pour l'afficher dans un format spécifique ou pour l'utiliser comme clé dans une base de données. Dans cet article, nous allons explorer comment le faire en utilisant Python.
 
 ## Comment faire
 
-Tout d'abord, nous avons besoin d'importer le module de date et de temps de Python :
+Pour convertir une date en chaîne de caractères en Python, nous allons utiliser le module `datetime` et la méthode `strftime()`. Tout d'abord, importons le module :
 
-```Python
+```python
 import datetime
 ```
 
-Ensuite, nous pouvons créer un objet de type date en utilisant la fonction "date" de ce module :
+Ensuite, créons un objet `datetime` avec la date que nous voulons convertir :
 
-```Python
-today = datetime.date(2021, 9, 30)
+```python
+my_date = datetime.date(2021, 9, 10)
 ```
 
-Ce code crée un objet "today" avec la date du 30 septembre 2021. Maintenant, pour convertir cette date en chaîne de caractères, nous pouvons utiliser la méthode "strftime" (f pour "format") de cet objet :
+Enfin, utilisons la méthode `strftime()` pour spécifier le format de la chaîne de caractères souhaité et l'appliquer à notre objet `datetime` :
 
-```Python
-s_today = today.strftime('%d/%m/%Y')
+```python
+my_string_date = my_date.strftime("%d/%m/%Y")
+print(my_string_date)
 ```
 
-Ici, nous utilisons le format "JJ/MM/AAAA" pour la chaîne de caractères, mais vous pouvez utiliser n'importe quel format que vous souhaitez. Maintenant, si nous imprimons cette chaîne de caractères, nous aurons :
+La sortie de code sera : `10/09/2021`.
 
-```Python
-print(s_today)
-```
-Output : "30/09/2021"
+## Deep Dive
 
-Pour aller plus loin, nous pouvons également ajouter des informations supplémentaires à notre chaîne de caractères, telles que le jour de la semaine ou le mois en lettres :
+La méthode `strftime()` prend en argument une chaîne de caractères pour définir le format souhaité. Voici quelques spécificateurs de format couramment utilisés :
 
-```Python
-s_today_full = today.strftime('%A, %d %B %Y')
-```
+- `%Y` : année complète (ex. 2021)
+- `%m` : mois en chiffres (ex. 09)
+- `%d` : jour en chiffres (ex. 10)
+- `%B` : mois complet en lettres (ex. Septembre)
+- `%A` : jour complet en lettres (ex. Vendredi)
+- `%H` : heure au format 24 heures (ex. 13)
+- `%I` : heure au format 12 heures (ex. 01)
+- `%M` : minutes en chiffres (ex. 30)
+- `%S` : secondes en chiffres (ex. 45)
 
-Output : "jeudi, 30 septembre 2021"
+Il est également possible d'ajouter des caractères spéciaux entre les spécificateurs de format pour personnaliser la chaîne de caractères de sortie. Par exemple, `%B %d, %Y` donnera `Septembre 10, 2021`.
 
-## Plongée en profondeur
-
-La méthode "strftime" prend différents arguments pour créer une chaîne de caractères avec différents formats. Voici quelques exemples de formats que vous pouvez utiliser :
-
-- %d : le jour du mois (avec zéro devant si besoin)
-- %m : le mois (avec zéro devant si besoin)
-- %Y : l'année sur 4 chiffres
-- %y : l'année sur 2 chiffres
-- %A : le jour de la semaine en lettres
-- %a : le jour de la semaine en abrégé
-- %B : le mois en lettres
-- %b : le mois en abrégé
-
-Vous pouvez également utiliser des caractères spéciaux pour séparer les éléments de la date, tels que "/", "-", "." :
-
-```Python
-s_today_full = today.strftime('%d/%m/%y')
-```
-
-Output : "30/09/21"
-
-N'hésitez pas à explorer différents formats pour trouver celui qui convient le mieux à vos besoins.
+Pour une liste complète des spécificateurs de format et de leurs résultats, consultez la documentation officielle de Python.
 
 ## Voir aussi
 
+Pour plus d'informations sur la manipulation de dates en Python, consultez les liens suivants :
+
 - [Documentation officielle de Python sur le module datetime](https://docs.python.org/fr/3/library/datetime.html)
-- [Tutoriel YouTube sur la conversion de date en chaîne de caractères en Python (en français)](https://www.youtube.com/watch?v=L7LjU9tBjio)
-- [Article sur la manipulation de dates en Python (en français)](https://blog.paumard.org/cours/python3/chapitre07-datetime.html)
+- [Article "Manipulating Dates and Time in Python" de Real Python (en anglais)](https://realpython.com/python-datetime/)
+- [Vidéo "Les Dates en Python" de Codecademy (en français)](https://www.youtube.com/watch?v=RkRTkMkRuM4)

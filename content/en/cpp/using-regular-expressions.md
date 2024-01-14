@@ -1,67 +1,54 @@
 ---
 title:    "C++ recipe: Using regular expressions"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Regular Expressions are Essential in C++ Programming
+## Why
 
-Regular expressions are a powerful tool in C++ programming that allow developers to search and manipulate text in a flexible and efficient manner. They provide a concise and powerful syntax for pattern matching, making it easier to handle complex text processing tasks. Whether you're working with data parsing, input validation, or string manipulation, regular expressions are a must-have in your programming arsenal.
+Regular expressions, also known as regex, are an essential tool for developers when it comes to string manipulation. They provide a concise and powerful way to find, replace, or extract specific patterns from a given string. Using regular expressions can greatly simplify tasks such as data validation, parsing, and text mining.
 
-## How To Use Regular Expressions in C++
+## How To
 
-To use regular expressions in your C++ code, you first need to include the \<regex> header file. This provides the necessary functions and types to work with regular expressions. Let's take a look at an example:
+To use regular expressions in your C++ code, you will first need to include the header file `regex`. This header provides the necessary classes and functions for working with regular expressions.
+
+Next, we will create a regular expression using the `std::regex` class and pass in the pattern that we want to match. For example, let's say we want to find all email addresses in a string, our regular expression pattern could look like this: `[a-zA-Z0-9_.]+@[a-zA-Z0-9]+.[a-z]+`.
+
+Once we have our regular expression, we can use `std::regex_match` to check if a given string matches the pattern. This function returns a boolean value, which we can use to determine if the string is a valid email address or not. Here's an example of how we can do this in code:
 
 ```C++
-// Code block 1
 #include <iostream>
+#include <string>
 #include <regex>
 
-using namespace std;
-
 int main() {
-  // Create a regular expression object that matches a 10-digit phone number
-  regex phone_regex("\\d{3}-\\d{3}-\\d{4}");
-
-  // A sample string to check against
-  string phone_number = "123-456-7890";
-
-  // Use regex_match() to check if the string matches the given pattern
-  if (regex_match(phone_number, phone_regex)) {
-    cout << "Valid phone number" << endl;
-  }
-  else {
-    cout << "Invalid phone number" << endl;
-  }
-  return 0;
+    std::string email = "john@gmail.com";
+    std::regex emailRegex("[a-zA-Z0-9_.]+@[a-zA-Z0-9]+.[a-z]+");
+    if (std::regex_match(email, emailRegex)) {
+        std::cout << "Valid email address" << std::endl;
+    } else {
+        std::cout << "Invalid email address" << std::endl;
+    }
+    return 0;
 }
 ```
-Output:
-```
-Valid phone number
-```
 
-In the code above, we create a regular expression object that matches a phone number of the format "###-###-####". Then, using the regex_match() function, we check if a given string matches the pattern. Regular expressions in C++ support a wide range of syntax, from basic characters and character classes to more advanced features like lookaheads and backreferences.
+The above code will output "Valid email address", as the given email string matches our regular expression pattern. Keep in mind that regular expressions can be much more complex, and there are many different ways to write them, so it may take some practice to get the hang of it.
 
-## Deep Dive into Regular Expressions
+## Deep Dive
 
-To better understand regular expressions, let's look at some essential components and syntax:
+Regular expressions have their own syntax and set of rules that can take some time to learn. But once you understand how they work, they can be a powerful tool in your programming arsenal. Here are a few tips to keep in mind when using regular expressions:
 
-- **Character classes:** These are sets of characters that can match any single character in a string. For example, [abc] will match any character that is either 'a', 'b', or 'c'.
+- Use escape characters when necessary: Some characters have special meanings in regular expressions, such as `.` which matches any single character. If you want to match the actual `.` character, you will need to escape it with a backslash: `\.`.
+- Use character classes: Character classes are a convenient way to specify a group of characters to match. For example, `\d` will match any digit character, and `\w` will match any word character (letters, numbers, and underscore).
+- Use quantifiers: Quantifiers allow you to specify the number of times a character or group of characters can be repeated. For example, `a+` will match one or more `a` characters, `a*` will match zero or more `a` characters, and `a{3}` will match exactly three `a` characters.
 
-- **Quantifiers:** These are used to specify the occurrence of a pattern. For instance, "a{2,4}" will match "aa", "aaa", or "aaaa".
-
-- **Anchors:** These are used to specify the location of a pattern within a string. The ^ and $ symbols represent the start and end of a string, respectively.
-
-- **Capturing groups:** These allow us to extract specific portions of a matched string. Groups are represented by parentheses ( ) and numbered from left to right.
-
-You can find a comprehensive list of regular expression syntax in the [C++ regex reference](https://en.cppreference.com/w/cpp/header/regex).
+These are just a few basic concepts, but there is much more to explore when it comes to regular expressions. With practice and experimentation, you will become more comfortable using them in your code.
 
 ## See Also
 
-Here are some useful links to dive deeper into regular expressions in C++:
-
-- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/)
-- [C++ Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Regular expressions in C++ tutorial by CppCon](https://www.youtube.com/watch?v=7VD51F5pEQU)
+- [C++ regex documentation](https://en.cppreference.com/w/cpp/regex)
+- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Regex101](https://regex101.com/) - An online tool for testing and building regular expressions.

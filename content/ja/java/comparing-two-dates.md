@@ -1,52 +1,61 @@
 ---
-title:    "Java: 日付の比較"
+title:    "Java: 2つの日付を比較する"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を比較することの重要性は、日常生活において日付が重要な意味を持つことが理由です。例えば、誕生日や大切なイベントの日付を忘れることがないためにも日付比較は必要です。また、アプリケーション開発においても、2つの日付を比較することで特定の期間やイベントの間隔を計算する必要があります。そのため、日付を効率的に比較することは非常に重要です。
+あなたが日常のプログラミング作業中に日付を比較したい理由はたくさんあります。例えば、特定の期間内に実行された処理を特定するためや、使用期限が切れたアカウントを自動的に無効にするためなど、様々なケースがあります。そこで、今回はJavaで日付を比較する方法をご紹介します。
 
 ## 方法
 
-Javaでは、日付を表すための様々なクラスが提供されています。その中でも最も一般的なのが「Date」クラスです。しかし、このクラスでは日付を比較することができません。そのため、比較したい日付を「LocalDate」クラスに変換する必要があります。
-
-例えば、今日の日付を取得する際のコードは以下のようになります。
+日付を比較するには、まずは比較する二つの日付をそれぞれJavaのDateクラスのインスタンスとして取得します。例えば、今日の日付を取得するコードは以下のようになります。
 
 ```Java
-LocalDate today = LocalDate.now();
+	Date today = new Date();
 ```
 
-そして、比較したい日付を指定したい場合は、次のように変数を作成して指定します。
+次に、比較したい日付を適切なフォーマットに変換します。例えば、文字列から日付を生成するにはSimpleDateFormatクラスを使用します。
 
 ```Java
-LocalDate birthday = LocalDate.of(1990, 4, 10);
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	
+	Date date = formatter.parse("2021-10-01");
 ```
 
-日付を比較する際は、「isBefore()」や「isAfter()」といったメソッドを使用します。以下は、今日の日付が誕生日より前かどうかを判定するコード例です。
+最後に、compareToメソッドを使用して二つの日付を比較します。このメソッドは、比較したい日付を引数として受け取り、比較結果を整数で返します。返される値によって、比較結果がわかります。
 
 ```Java
-if (today.isBefore(birthday)){
-    System.out.println("Happy Birthday!");
-} else if (today.isAfter(birthday)){
-    System.out.println("Belated Happy Birthday!");
-} else {
-    System.out.println("Today is your birthday!");
-}
+	int result = date.compareTo(today);
+	
+	if(result > 0) {
+		System.out.println("date is after today");
+	} else if(result < 0) {
+		System.out.println("date is before today");
+	} else {
+		System.out.println("date is same as today");
+	}
 ```
 
-この場合、今日の日付が誕生日より前だった場合は「Happy Birthday!」、誕生日より後だった場合は「Belated Happy Birthday!」、同じだった場合は「Today is your birthday!」というメッセージが表示されます。
+このように、SimpleDateFormatやcompareToメソッドを利用することで、日付を比較することができます。
 
 ## 深堀り
 
-日付を比較する際に注意しなければならないのは、日付のフォーマットです。日付のフォーマットは、地域によって異なるため、比較する際には予期せぬ誤差が生じる可能性があります。そのため、両方の日付を同じフォーマットに変換する必要があります。
+比較に使用するDateクラスは、java.utilパッケージに含まれています。しかし、このクラスは古くから使われており、利用できるメソッドが限られていたり、パフォーマンス面での課題があります。そのため、Java 8からは新しい日付APIであるLocalDateクラスが導入されました。
 
-また、時差にも注意しなければなりません。特定のタイムゾーンで日付を比較する際には、TimeZoneクラスを使用するか、日付をUTCに変換することが重要です。
+LocalDateクラスは、ISO-8601の日付形式をサポートしており、特定の期間内の日付のチェックや、特定の曜日の日付を取得するなど、日付操作に便利です。また、内部では不変オブジェクトを使用するため、スレッドセーフです。
 
-## 参考
+比較についても、LocalDateクラスはcompareToメソッドのほかに、isAfterやisBeforeなどのメソッドも提供しています。さらに、TemporalAdjustersクラスを使用して、特定の日付を簡単に取得することもできます。
 
-- Java 8の日付比較方法： https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
-- LocalDateクラスのドキュメント：https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- 日付のフォーマットについて：https://www.baeldung.com/java-date-time-format
+## この記事を参考にする
+
+今回はJavaで日付を比較する方法についてご紹介しました。日付操作はプログラミングに欠かせない部分ですので、ぜひこの記事を参考にしてみてください。
+
+## 関連リンク
+
+- [Java Dateクラスのドキュメンテーション](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Date.html)
+- [Java LocalDateクラスのドキュメンテーション](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDate.html)
+- [Java 8で新しく導入された日付APIの解説記事](https://www.ibm.com/developerworks/jp/java/library/j-javadevapi8-1/)

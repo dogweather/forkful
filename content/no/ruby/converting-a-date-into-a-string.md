@@ -1,47 +1,48 @@
 ---
-title:    "Ruby: Konvertere en dato til en streng"
+title:    "Ruby: Å konvertere en dato til en streng"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
- Å konvertere en dato til en streng er en viktig del av programmering når man jobber med datoer og tid. Dette gjør det enklere å manipulere og vise datoer på en måte som er forståelig for brukeren.
+Når du jobber med å konvertere datoer i Ruby, kan du noen ganger ønske å konvertere en dato til en streng. Dette kan være nyttig for å vise datoer på en bestemt måte, for å lagre dem i en database eller for annen manipulasjon av data.
 
 ## Slik gjør du det
 
-For å konvertere en dato til en streng i Ruby, kan du bruke metoden `strftime`. Denne metoden tar inn en `DateTime`-objekt og et format som argumenter, og returnerer en streng med den konverterte datoen.
+For å konvertere en dato til en streng i Ruby, kan du bruke `.strftime` -metoden. Dette vil ta inn et spesifikt format og returnere en strengreprsentasjon av datoen. For eksempel: 
 
 ```Ruby
-# Oppretter et DateTime-objekt for 25. desember 2020
-dato = DateTime.new(2020, 12, 25)
-
-# Konverterer datoen til en streng i formatet dd/mm/yyyy
-puts dato.strftime("%d/%m/%Y")
-# Output: 25/12/2020
+d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
+d.strftime('%d.%m.%Y') # Konverterer datoen til streng og returnerer "28.05.2020"
 ```
 
-I eksempelet over bruker vi `%d`, `%m` og `%Y` for å representere dag, måned og år i strengen. Det finnes flere formateringsmuligheter, avhengig av hva du ønsker å vise i strengen. Du kan blant annet legge til klokkeslett, tidssone og ukedag.
+Du kan også bruke `.to_s` -metoden, som vil konvertere datoen til standardformatering i henhold til datamaskinens locale. For eksempel:
 
-## Dykk dypere
+```Ruby
+d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
+d.to_s # Konverterer datoen til streng og returnerer "28/05/2020" hvis locale er satt til engelsk
+```
 
-For å få en full forståelse av hvordan `strftime` fungerer, kan det være nyttig å se hvordan det håndterer forskjellige formatstrenger. Hvis du for eksempel ønsker å vise måneden på tre bokstaver i stedet for tall, kan du bruke `%b` i formatstrengen. Her er noen eksempler på ulike formatstrenger og hva de vil vise:
+## Dypdykk
 
-- `%d`: Dag i måned (01-31)
-- `%m`: Måned (01-12)
-- `%b`: Måned som en forkortelse (Jan, Feb, Mar)
-- `%Y`: År (2020)
-- `%H`: Timer i 24-timers format (00-23)
-- `%M`: Minutter (00-59)
-- `%S`: Sekunder (00-59)
-- `%a`: Ukedag som en forkortelse (Mon, Tue, Wed)
-- `%j`: Dag i året (001-366)
+Det er også mulig å bruke `.to_formatted_s` -metoden for å konvertere datoen til streng med et spesifikt format. Denne metoden tar inn et symbol som representerer det ønskede formatet. For eksempel:
 
-Ved å blande og matche disse formateringsmulighetene, kan du lage en streng som viser akkurat den informasjonen du ønsker å vise.
+```Ruby
+d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
+d.to_formatted_s(:long) # Konverterer datoen til streng og returnerer "May 28, 2020"
+```
+
+I tillegg har Ruby en innebygd metode for å konvertere datoer til en lokal formatert streng ved hjelp av `.l` metoden. Dette vil returnere en lokal formatert streng basert på datamaskinens locale. For eksempel:
+
+```Ruby
+d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
+d.l # Hvis locale er satt til engelsk, returnerer det "28 May 2020"
+```
 
 ## Se også
 
-- [DateTime klasse i Ruby dokumentasjonen](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
-- [Ruby DateTime klasse tutorial](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-- [Date and Time metoder i Ruby](https://www.geeksforgeeks.org/date-and-time-methods-in-ruby/)
+- [Ruby Dokumentasjon: Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html) 
+- [Ruby Date Formatter](https://ruby-doc.org/core-2.5.0/Date.html#method-i-to_s)

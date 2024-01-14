@@ -1,58 +1,70 @@
 ---
 title:    "Kotlin: Aloittamassa uutta projektia"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti?
 
-Aloittamalla uuden projektin voi saada uusia haasteita ja päästä oppimaan uusia taitoja.
+On monia syitä, miksi henkilö voisi haluta aloittaa uuden ohjelmointiprojektin. Ehkä he haluavat oppia uutta kieltä tai työskennellä uuden teknologian parissa. Tai ehkä heillä on uusi idea, jota he haluavat toteuttaa. Riippumatta syystä, uuden projektin aloittaminen voi olla jännittävä ja palkitseva kokemus.
 
-## Kuinka aloittaa
+## Miten aloittaa uusi projekti?
 
-Aloitetaan uusi projekti käyttäen Kotlin-ohjelmointikieltä. Ensimmäisenä on tärkeää luoda uusi Kotlin-projekti. Tätä varten avataan ensin suosittu integroitu kehitysympäristö, kuten IntelliJ IDEA tai Android Studio.
-
-Sitten luodaan uusi projektikansio ja lisätään siihen build.gradle-tiedosto. Tämän jälkeen määritellään projektille tarvittavat riippuvuudet. Riippuvuuksia ovat esimerkiksi Kotlin-käännöstyökalut ja tarvittavat kirjastot.
+Yksi vaihtoehto uuden projektin aloittamiseen on käyttää Kotlin-ohjelmointikieltä. Tämä moderni kieli on suosittu monien kehittäjien keskuudessa sen selkeyden ja tuottavuuden vuoksi. Alla on muutamia esimerkkejä siitä, miten voit aloittaa uuden Kotlin-projektin.
 
 ```Kotlin
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    testCompile "junit:junit:4.12"
+fun main() {
+    println("Hei maailma!")
 }
 ```
 
-Seuraavaksi luodaan ensimmäinen Kotlin-tiedosto ja aloitetaan koodaaminen. Esimerkiksi voidaan luoda funktio, joka laskee kahden luvun summan ja tulostaa sen konsoliin.
+Tämä yksinkertainen koodi tulostaa "Hei maailma!" konsolille. Voit myös syöttää muuttujan tulostettavaksi, kuten alla olevassa esimerkissä:
 
 ```Kotlin
-fun sum(a: Int, b: Int): Int {
-    return a + b
-}
-
-fun main(args: Array<String>) {
-    println("Summa: " + sum(5, 3))
+fun main() {
+    val nimi = "Matti"
+    println("Hei, $nimi!")
 }
 ```
 
-Tämän jälkeen suoritetaan koodi ja tulostetaan summa konsoliin.
+Tämä tulostaa "Hei, Matti!" konsolille. Voit myös luoda uusia funktioita ja luokkia käyttämällä Kotlinin syntaksia, kuten alla olevassa esimerkissä:
 
+```Kotlin
+fun toinenFunktio() {
+    println("Tämä on toinen funktio.")
+}
+
+class Luokka(nimi: String) {
+    var nimi = ""
+    
+    init {
+        this.nimi = nimi
+    }
+    
+    fun hei() {
+        println("Hei, $nimi!")
+    }
+}
+
+fun main() {
+    toinenFunktio()
+    val uusiLuokka = Luokka("Veera")
+    uusiLuokka.hei()
+}
 ```
-> Summa: 8
-```
 
-## Syväsukellus
+Tämä koodi tulostaa "Tämä on toinen funktio." sekä "Hei, Veera!" konsolille. Näitä ovat vain muutamia esimerkkejä, kuinka voit käyttää Kotlinia uuden projektin luomiseen. Rohkaisen sinua tutkimaan lisää ja kokeilemaan erilaisia ratkaisuja.
 
-Uuden projektin aloittaminen ei ole koskaan helppoa, mutta Kotlin-ohjelmointikieli tekee siitä hieman helpompaa. Kotlin tarjoaa selkeän ja yksinkertaisen syntaksin, joten sitä on helppo oppia ja käyttää. Lisäksi se on yhteensopiva Java-kielen kanssa, joten se on hyvä valinta esimerkiksi Android-sovelluksien kehittämiseen.
+## Syvällinen tarkastelu aloittamisesta uusi projekti
 
-Projektin aloittamisen yhteydessä on myös tärkeää suunnitella tarkasti, millaisen projektin haluaa luoda. Onko kyseessä esimerkiksi mobiilisovellus, web-sovellus vai jokin muu? Tämän lisäksi on hyvä huomioida myös projektin tavoitteet sekä käytettävät teknologiat ja kirjastot.
+Kotlin on erinomainen valinta aloittaa uusi projekti. Sen selkeä syntaksi ja kätevät ominaisuudet tekevät koodaamisesta nopeaa ja helppoa. Voit myös käyttää Kotlinia monella alustalla, kuten Android-sovelluksissa, backend-palvelimilla ja frontend-kehityksessä. Jos olet aloittelija, Kotlin voi olla hyvä valinta aloittaa oppiminen, koska se muistuttaa monia muita suosittuja ohjelmointikieliä.
 
-Nyt kun uusi projekti on luotu, aloita rohkeasti koodaaminen ja opi uutta matkan varrella!
+On myös tärkeää saada hyvä käsitys projektin tarpeista ja tavoitteista ennen kuin aloitat koodaamisen. Huolellinen suunnittelu auttaa välttämään turhia ongelmia ja virheitä myöhemmin. Voit myös hyödyntää Kotlinin monia kirjastoja ja kehyksiä, jotka tekevät kehityksestä nopeampaa ja helpompaa.
 
----
+Kun aloitat uuden projektin, myös huolellinen dokumentointi on tärkeää. Se auttaa sinua ja muita kehittäjiä ymmärtämään koodin tarkoituksen ja toiminnan. Tämä on erityisen tärkeää, jos päätät myöhemmin avata lähdekoodisi muille tai tarvitset apua ongelmien korjaamisessa.
 
 ## Katso myös
 
-- [Kotlin - viralliset verkkosivut](https://kotlinlang.org/)
-- [Kotlin in Action - ohjelmointikirja](https://www.manning.com/books/kotlin-in-action)
-- [IntelliJ IDEA - integroitu kehitysympäristö Kotlinille](https://www.jetbrains.com/idea/)
-- [Android Studio - integroitu kehitysympäristö Android-sovellusten kehitykseen](https://developer.android.com/studio/)
+* [Kotlinin virallinen verkkos

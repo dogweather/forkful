@@ -1,33 +1,36 @@
 ---
-title:    "Bash: Tiedoston lukeminen"
+title:    "Bash: Tekstitiedoston lukeminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Blogikirjoituksemme aiheena on Bash-ohjelmointi ja kuinka lukea tiedostoa käyttäen Bash-kieltä. On monia syitä, miksi kannattaa tutustua tähän taitoon. Yksinkertaisimmillaan tiedostojen lukeminen Bashilla helpottaa tiedostojen käsittelyä ja muokkaamista, joten se voi olla hyödyllistä monenlaisissa projekteissa.
+On monia syitä, miksi haluat lukea teksti-tiedostoja Bash-ohjelmoinnissa. Ehkä haluat käyttää niitä luomaan dynaamisia skriptejä, joissa vaihtelevaa sisältöä käsitellään eri tavoin. Tai ehkä haluat tarkastella tai muuttaa tiedoston tietoja käytön jälkeen.
 
-## Kuinka
+## Miten
 
-Bash tarjoaa erinomaisen tavan lukea tekstiä tiedostosta ja käsitellä sitä haluamallamme tavalla. Käytämme esimerkkinä yksinkertaista tekstitiedostoa, jossa on rivejä ja jokaisella rivillä on yksi sana.
+Voit lukea teksti-tiedostoja Bash-skripteissäsi käyttämällä `cat`-komennon yhdistelmää `while`-silmukalla. Katso seuraava esimerkki:
 
 ```Bash
-while read word; do
-  echo "Sana: $word"
-done < tiedosto.txt
+#!/bin/bash
+cat tiedosto.txt | while read line
+do
+	echo "Rivi sisältää: $line"
+done
 ```
 
-Yllä oleva koodinpätkä lukee tiedoston "tiedosto.txt" rivejä ja tulostaa jokaisen rivin sisältämän sanan muodossa "Sana: [rivin sana]". Tämä on vain yksi esimerkki, Bashilla on monia muita tapoja käsitellä tekstiä ja tiedostoja. Voit kokeilla erilaisia komentoja ja koodinpätkiä, ja näet miten tiedoston lukeminen toimii eri tavoin.
+Tässä esimerkissä käytämme `cat`-komennon avulla lukeaksemme tiedoston ja sitten `while`-silmukassa luomme toiminnon jokaiselle riville. Voit käyttää `read`-komentoa `while`-silmukassa lukeaksesi yhden rivin kerrallaan. Tämä mahdollistaa rivien käsittelyn haluamallasi tavalla, kuten tulostuksen tai tallennuksen muuttujaan.
 
-## Syventyvä sukellus
+## Syventävä sukellus
 
-Tiedoston lukeminen Bashilla onnistuu myös monimutkaisempien tiedostojen kanssa. Voit esimerkiksi käyttää erilaisia ehtolausekkeita ja silmukoita lukemisen yhteydessä, jolloin voit suodattaa ja muokata tiedostoa entistä tarkemmin. Lisäksi voit lukea ja käsitellä myös muita tiedostomuotoja, kuten CSV-tiedostoja.
+Käytämme `cat`-komentoa lukemaan tiedoston sisällön ja `while`-silmukka `read`-komennolla lukemaan jokaisen rivin. On kuitenkin myös muita vaihtoehtoja. Voit käyttää `grep`-komennon avulla tietyt merkkijonot tai rivit tiedostosta, tai `sed`-komennon avulla muokata tiedoston sisältöä.
+
+Lisäksi voit käyttää muita ohjelmia, kuten `awk` tai `cut`, jotta voit käsitellä tiettyjä sarake- tai kenttäarvoja tiedostosta. Voit myös käyttää `while`-silmukan sijaan `for`-silmukkaa tai `for`-silmukkaa, jos tiedät tarkalleen haluamasi rivien määrän, jota käsittelet tiedostossa.
 
 ## Katso myös
 
-- [Bash manuaali (suomeksi)](https://www.manpagez.com/man/1/bash/)
-- [Bash käyttöopas (englanniksi)](https://www.gnu.org/software/bash/manual/bash.txt)
-- [Bash Scripting Tutorial (englanniksi)](https://linuxconfig.org/bash-scripting-tutorial)
-- [Pätkäpankki - Bash ohjelmoinnin palvelimilla (suomeksi)](https://paxli.fi/archives/2041)
+- [Bash Scripting Basics](https://www.tutorialspoint.com/unix/advanced_bash_scripting.htm)
+- [The Power of Bash's Built-in Commands](https://linuxacademy.com/blog/linux/the-power-of-bashs-built-in-commands/)

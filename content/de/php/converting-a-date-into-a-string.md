@@ -1,59 +1,48 @@
 ---
-title:    "PHP: Umwandlung eines Datums in einen String"
+title:    "PHP: Ein Datum in einen String umwandeln"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Konvertieren von einem Datum in einen String ist eine häufige Aufgabe in der Webentwicklung, insbesondere wenn es um die Anzeige von datumsbasierten Inhalten geht. Indem du ein Datum in einen String umwandelst, kannst du es leichter formatieren und in deinem Code verwenden.
 
-## Wie
-Um ein Datum in einen String umzuwandeln, gibt es in PHP die Funktion `date()`, die es ermöglicht, ein Datum in verschiedenen Formaten darzustellen. Hier ist ein Beispiel, wie man das aktuelle Datum in einem einfachen String ausgeben kann:
+In der Programmierung ist es oft erforderlich, ein Datum in Form eines Strings darzustellen. Dies kann zum Beispiel für eine Benutzeroberfläche oder für das Speichern von Daten in einer Datenbank notwendig sein. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man ein Datum in PHP in einen String konvertieren kann und warum dies nützlich ist.
 
-```PHP
-echo date("d/m/Y");
-```
-Dies würde ein Datum im Format Tag/Monat/Jahr ausgeben, z.B. `24/08/2021`.
+## Wie geht das?
 
-Wenn du das Datum in einem anderen Format ausgeben möchtest, kannst du die Formatierungszeichen in der `date()` Funktion anpassen. Hier sind einige Beispiele:
-
-- `d` - Tag des Monats (zweistellig)
-- `m` - Monat (zweistellig)
-- `Y` - Jahr (vierstellig)
-- `j` - Tag des Monats (einstellig)
-- `n` - Monat (einstellig)
-- `y` - Jahr (zweistellig)
-- `F` - Monatsname (z.B. "August")
-- `M` - Monatsname (z.B. "Aug")
-- `l` - Wochentag (z.B. "Montag")
-- `D` - Wochentag (z.B. "Mon")
-- `h` - Stunden im 12-Stunden-Format (zweistellig)
-- `H` - Stunden im 24-Stunden-Format (zweistellig)
-- `i` - Minuten (zweistellig)
-- `s` - Sekunden (zweistellig)
-- `a` - AM / PM (z.B. "am" oder "pm")
-
-Du kannst diese Formatierungszeichen beliebig kombinieren, um das Datum in dem von dir gewünschten Format darzustellen. Hier sind einige Beispiele:
+Die Konvertierung eines Datums in einen String kann mit der Funktion `date()` in Kombination mit einem Formatierungsstring durchgeführt werden. Hier ist ein Beispiel:
 
 ```PHP
-echo date("F j, Y"); // Ausgabe: August 24, 2021
-echo date("l, F jS, Y"); // Ausgabe: Dienstag, August 24th, 2021
-echo date("h:i a"); // Ausgabe: 09:30 am (für 9:30 Uhr)
+$date = date('d.m.Y', time());
+echo $date;
 ```
 
-## Deep Dive
-Wenn du mehr über die `date()` Funktion erfahren möchtest, kannst du die [offizielle PHP-Dokumentation](https://www.php.net/manual/en/function.date.php) besuchen. Dort findest du eine ausführliche Liste aller verfügbaren Formatierungszeichen sowie Beispiele und Erklärungen.
+In diesem Beispiel wird das aktuelle Datum in das gewünschte Format "Tag.Monat.Jahr" konvertiert und dann ausgegeben. Das Ergebnis würde beispielsweise "13.09.2021" lauten.
 
-Eine weitere nützliche Funktion ist `strtotime()`, mit der du einen String in ein Datum umwandeln kannst. Hier ist ein Beispiel:
+Ein weiteres Beispiel ist die Nutzung des `DateTime`-Objekts, um ein Datum in einen String zu konvertieren:
 
 ```PHP
-echo date("d/m/Y", strtotime("next Friday")); // Ausgabe: 27/08/2021 (für den nächsten Freitag)
+$date = new DateTime();
+echo $date->format('M d, Y');
 ```
 
-Du kannst auch Kombinationen aus `date()` und `strtotime()` verwenden, um komplexere Datumsberechnungen durchzuführen.
+In diesem Fall wird das aktuelle Datum in das Format "Monat Tag, Jahr" konvertiert und ausgegeben. Das Ergebnis wäre zum Beispiel "Sep 13, 2021".
+
+## Tiefergehende Analyse
+
+Die `date()`-Funktion bietet eine Vielzahl von Möglichkeiten, um Datumsangaben in Strings zu formatieren. Es gibt verschiedene Formate für Tage, Monate, Jahre, Wochentage, Uhrzeiten und vieles mehr. Die vollständige Liste der möglichen Formatierungen kann in der offiziellen PHP-Dokumentation gefunden werden.
+
+Darüber hinaus ist es wichtig zu beachten, dass die Konvertierung eines Datums in einen String auch sprachabhängig sein kann. In PHP gibt es die Funktion `setlocale()`, mit der die Datumsformatierung an die Standardsprache des Systems angepasst werden kann.
+
+In einigen Fällen kann es auch erforderlich sein, die Zeitzone des Systems zu berücksichtigen. Dies kann mit der Funktion `date_default_timezone_set()` festgelegt werden.
 
 ## Siehe auch
-- [Offizielle PHP-Dokumentation zu Datei- und Zeitzonenformate](https://www.php.net/manual/en/datetime.format.php)
-- [Tutorial zu Datum und Uhrzeit in PHP von SitePoint (auf Englisch)](https://www.sitepoint.com/quick-guide-to-dates-in-php/)
-- [Online-Datumsformatierer-Tool von FreeFormatter](https://www.freeformatter.com/php-date-time-format.html)
+
+Weitere Informationen zur Konvertierung von Daten in Strings in PHP finden Sie unter den folgenden Links:
+
+- [PHP: Date() Funktion](https://www.php.net/manual/de/function.date.php)
+- [PHP: DateTime Objekt](https://www.php.net/manual/de/class.datetime.php)
+- [PHP: setlocale() Funktion](https://www.php.net/manual/de/function.setlocale.php)
+- [PHP: date_default_timezone_set() Funktion](https://www.php.net/manual/de/function.date-default-timezone-set.php)

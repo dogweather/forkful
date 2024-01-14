@@ -1,40 +1,43 @@
 ---
-title:    "Fish Shell: 字符串大写化"
+title:    "Fish Shell: 将字符串大写"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-有时候，我们的字符串可能会变得很杂乱，字母大小写错乱。通过使用 Fish Shell 的 capitalize 命令，我们可以轻松地将字符串的首字母大写，使其更易读和美观。
+在编程中，有时候我们需要改变一个字符串的格式，比如让所有字母都变成大写。这样做可以让我们的数据更加规范和易于处理。Fish Shell 中有一个快速简单的方法可以做到这一点，接下来让我们来学习一下。
 
-## 如何操作
+## 如何
 
-使用 capitalize 命令很简单。首先，我们需要打开 Fish Shell 终端。然后，我们需要输入以下命令：
-
-```Fish Shell
-capitalize "hello world"
-```
-
-在这个例子中，我们将字符串 "hello world" 转换为 "Hello world"。多么简单！如果我们想要将字符串中的所有单词首字母都大写，我们可以使用 capitalize 命令的 -a 选项：
+让我们以“hello world”字符串为例，分别展示如何使用Fish Shell来将字符串转换为大写。
 
 ```Fish Shell
-capitalize -a "hello world"
+set my_string "hello world"
+echo $my_string | tr a-z A-Z
 ```
 
-这将会输出 "Hello World"，所以记住，使用 -a 选项可以将所有单词的首字母都大写。
+运行以上代码，我们可以得到输出结果为“HELLO WORLD”。首先，我们定义一个变量 `my_string` 并将其赋值为“hello world”。然后，我们使用`echo`命令来输出该变量，并将其通过Pipe传递给`tr`命令来执行大小写转换。在`tr`命令中，`a-z`代表小写字母，`A-Z`代表大写字母，通过这种方式来改变字符串的格式。
 
-## 深入探究
+## 深入探讨
 
-在 Fish Shell 中，capitalize 命令是由内置的 string 命令提供的。它使用了一个名为 "s" 的内部变量，它包含被匹配的字符串。capitalize 命令会将 "s" 变量中的字符串按照指定的规则进行转换，并将结果打印到终端。
+除了上面的简单示例，Fish Shell 还提供了更多选项和功能来转换字符串。例如，我们可以使用`upcase`和`downcase`函数来分别将字符串转换为大写和小写，如下所示：
 
-另外，我们也可以使用 capitalize 命令的 -r 选项来反转字符串的大小写。这将会将字符串中的所有大写字母转换为小写字母，同时将所有小写字母转换为大写字母。
+```
+echo $my_string | upcase
+```
 
-对于更复杂的字符串操作，我们也可以使用类似 PHP 语言中的 ucwords 函数或者 Perl 语言中的 capitalize 函数来实现，但是使用 Fish Shell 的 capitalize 命令可以让我们更加简洁和方便地操作字符串。
+输出结果为“HELLO WORLD”。
+
+这里有一个关于capitalizing字符串的更多信息[官方文档](https://fishshell.com/docs/current/cmds/uppercase.html)。
 
 ## 参考链接
 
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/cmds.html#capitalize)
-- [Fish Shell 101：入门指南](https://blog.fishshell.com/101.html)
-- [学习 Fish Shell: 从入门到精通](https://dev.to/rsutter/learning-fish-shell-from-the-beginning-to-the-tipping-point-4748)
+- [官方文档](https://fishshell.com/docs/current/)
+- [GitHub仓库](https://github.com/fish-shell/fish-shell)
+- [在线教程](https://www.hostinger.com/tutorials/fish-shell-tutorial)
+- [Stack Overflow论坛](https://stackoverflow.com/questions/tagged/fish-shell)
+
+## 参考链接

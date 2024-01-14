@@ -1,59 +1,59 @@
 ---
 title:    "Haskell: Obtenir la date actuelle"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La date courante est une information essentielle pour de nombreuses applications, allant de la gestion des tâches à la création de journaux de bord. En utilisant Haskell, vous pouvez facilement obtenir la date courante et l'utiliser dans vos programmes de manière transparente.
+L'une des tâches les plus courantes dans la programmation est de récupérer la date actuelle. Que ce soit pour afficher la date dans une application ou pour effectuer des opérations sur la date, il est important de savoir comment récupérer la date actuelle dans votre code Haskell.
 
-# Comment faire
+## Comment faire
 
-Pour obtenir la date courante en Haskell, nous pouvons utiliser la fonction ``getCurrentTime`` du module ``Data.Time``. Voici un exemple de code qui affiche la date courante au format ISO-8601 :
-
-```Haskell
-import Data.Time
-
-main = do
-  heureCourante <- getCurrentTime
-  print heureCourante
-```
-
-En exécutant ce code, vous devriez obtenir une sortie similaire à ceci :
-
-```
-2019-09-30 15:25:03.561713 UTC
-```
-
-Nous pouvons également formater la date en utilisant la fonction ``formatTime``. Voici un exemple de code qui formate la date au format "jour/mois/année":
+Heureusement, Haskell dispose d'une fonction intégrée pour récupérer la date actuelle. Il s'agit de la fonction "getCurrentTime" du module "Data.Time". Voici un exemple de code pour obtenir la date actuelle :
 
 ```Haskell
 import Data.Time
-import Data.Time.Format
 
-main = do
-  heureCourante <- getCurrentTime
-  let format = "%d/%m/%Y" -- jour/mois/année
-      heureFormatee = formatTime defaultTimeLocale format heureCourante
-  print heureFormatee
+main = do 
+    dateActuelle <- getCurrentTime
+    print dateActuelle
 ```
 
-La sortie devrait être similaire à ceci :
+Le code ci-dessus importe le module "Data.Time" pour accéder à la fonction "getCurrentTime". Ensuite, dans la fonction principale "main", nous utilisons la notation "do" pour exécuter une séquence d'instructions. Nous utilisons la fonction "getCurrentTime" et stockons le résultat dans la variable "dateActuelle". Enfin, nous utilisons la fonction "print" pour afficher la date actuelle à l'écran.
 
+Lorsque vous exécutez ce code, vous devriez obtenir un résultat similaire à ceci :
+
+```Haskell
+2021-10-05 19:32:47.392445 UTC
 ```
-30/09/2019
+
+La date est au format ISO 8601 et inclut le fuseau horaire UTC. Si vous souhaitez formater la date différemment, vous pouvez utiliser la fonction "formatTime" du même module. Par exemple, si vous souhaitez afficher la date dans le format "DD/MM/YYYY", vous pouvez utiliser le code suivant :
+
+```Haskell
+import Data.Time
+import System.Locale (defaultTimeLocale)
+
+main = do 
+    dateActuelle <- getCurrentTime
+    let dateFormatee = formatTime defaultTimeLocale "%d/%m/%Y" dateActuelle
+    print dateFormatee
 ```
 
-# Plongée en profondeur
+Le résultat sera alors le suivant :
 
-En utilisant la fonction ``getCurrentTime``, nous obtenons la date courante avec une précision d'une picoseconde. Cette précision peut sembler excessive pour certaines applications, c'est pourquoi le module ``Data.Time`` fournit également la fonction ``getCurrentTime``. Cette fonction fournit une date avec une précision d'une seconde. Vous pouvez choisir la fonction qui convient le mieux à vos besoins en fonction de la précision dont vous avez besoin.
+```Haskell
+05/10/2021
+```
 
-De plus, en utilisant les fonctions ``nomJours`` et ``nomMois`` du module ``Data.Time.Calendar``, nous pouvons obtenir les noms des jours et des mois dans différentes langues. Par exemple, en utilisant ``nomMois francais``, nous pouvons obtenir les noms des mois en français.
+## Deep Dive
 
-# Voir aussi
+La fonction "getCurrentTime" utilise le type de données "UTCTime" pour représenter la date et l'heure. Il s'agit d'un type complexe qui se compose de plusieurs composants tels que l'année, le mois, le jour, l'heure, les minutes, etc. Vous pouvez plonger plus profondément dans ce type de données en consultant la documentation officielle de Haskell.
 
-- [Documentation du module Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Date et heure en Haskell](https://wiki.haskell.org/Date_and_time)
-- [Code source des exemples](https://github.com/YourUsername/YourProject)
+## Voir aussi
+
+- [Documentation officielle de Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Haskell Date and Time Tutorial](https://www.tutorialspoint.com/haskell/haskell_date_time.htm)
+- [Type complexe UTCTime](https://hoogle.haskell.org/package/time-1.9/docs/Data-Time-Format.html#t:UTCTime)

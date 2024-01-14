@@ -1,44 +1,52 @@
 ---
-title:    "Swift: Alimerkkien erottelu"
+title:    "Swift: "
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Extracting Substrings on hyödyllistä
 
-Substringien eristäminen on tärkeä taito joka Swift-ohjelmoijan tulisi hallita. Se mahdollistaa merkkijonojen osien hakemisen ja manipuloinnin erityisen kätevästi. Tässä blogipostauksessa opimme kuinka helposti voit käyttää substringien eristämistä ohjelmassasi.
+Substringien erottaminen tai "extracting substrings" on tärkeä osa ohjelmointia, joka mahdollistaa tietyn osan merkkijonosta erottamisen ja käytön. Tämä voi olla hyödyllistä esimerkiksi tietojen käsittelyssä, kuten käyttäjän antaman syötteen tarkistamisessa tai tietokannasta tietojen hakemisessa.
 
-## Kuinka
+## Kuinka Extracting Substrings toimii
 
-Aloitamme yksinkertaisesti: avataan uusi Xcode-projekti ja lisätään seuraava koodi ```Swift
-let lause = "Hei kaikki!"
+Esimerkiksi haluat selvittää käyttäjän antaman nimen ensimmäisen kirjaimen, voit käyttää substring-metodia ja määrittää halutun alueen merkkijonosta:
 
-let alkuosa = lause.prefix(4)
-print(alkuosa) // tulostaa "Hei "
+```Swift
+let nimi = "Matti Meikäläinen"
+let ensimmäinenKirjain = nimi.substring(to: 1)
+
+// Output: "M"
 ```
 
-Yllä olevassa esimerkissä käytämme `prefix`-funktiota joka eristää merkkijonon ensimmäiset neljä merkkiä. Voimme myös käyttää `suffix`-funktiota eristämään merkkijonon viimeiset merkit. Voit mukauttaa näitä funktioita muuttamalla niiden parametreja.
+Tässä tapauksessa käyttämällä substring-metodia, pystymme erottamaan halutun alueen merkkijonosta, joka tässä tapauksessa on nimi. Voit myös määrittää, mistä kohdasta alkaen ja kuinka monta merkkiä haluat erotella, kuten seuraavassa esimerkissä:
 
-Jos haluat eristää tietyn osan merkkijonosta, voit käyttää `range`-toimintoa sekä `substring`-funktiota seuraavalla tavalla: ```Swift
-let numerot = "0123456789"
+```Swift
+let kaupunki = "Helsinki, Suomi"
+let alkukirjaimet = kaupunki.substring(from: 9, length: 2)
 
-let osa = numerot[numerot.index(numerot.startIndex, offsetBy: 3)..<numerot.index(numerot.startIndex, offsetBy: 6)]
-print(osa) // tulostaa "345"
+// Output: "Su"
 ```
 
-Yllä olevassa esimerkissä käytämme `index`-funktiota löytääksemme halutun osan merkkijonosta. Huomaa myös, että merkkijono alkaa indeksistä 0.
+Tässä esimerkissä olemme määrittäneet alkukirjaimet alkaen kohdasta yhdeksän ja jatkanut kahdella merkillä eteenpäin. Tämä mahdollistaa joustavan tavan erottaa halutut osat merkkijonosta.
 
-## Syventävä tarkastelu
+## Syvemmälle Extracting Substringsiin
 
-Nyt kun olet oppinut kuinka helposti voit käyttää substringien eristämistä ohjelmassasi, on hyvä tietää joitain lisätietoja. Substringit ovat viittauksia alkuperäiseen merkkijonoon eivätkä ne vaadi uuden merkkijonon luomista, mikä tekee prosessista tehokkaan. Lisäksi, jos muutat substringiä, se muuttaa myös alkuperäistä merkkijonoa.
+Voit myös käyttää muita metodeja ja ominaisuuksia, kuten components(separatedBy:), joka erottaa merkkijonon annetun merkin tai merkkijonon kohdalta ja palauttaa taulukon erotteluista.
 
-On myös tärkeää muistaa, että substringit ovat aina `[String.SubSequence]`-tyyppejä, joten jos haluat käyttää niitä esimerkiksi `UILabel`-näyttöihin, sinun täytyy ensin muuntaa niitä `String`-muotoon.
+```Swift
+let lause = "Tänään on maanantai"
+let sanat = lause.components(separatedBy: " ")
+
+// Output: ["Tänään", "on", "maanantai"]
+```
+
+Substringien erottaminen on myös hyödyllistä, kun haluat muokata, poistaa tai korvata osia merkkijonosta. Voit käyttää esimerkiksi replaceSubrange-metodia korvaamaan halutun alueen merkkijonosta toisella merkkijonolla.
 
 ## Katso myös
 
-Tässä muutamia hyödyllisiä resursseja joiden avulla voit oppia lisää substringien eristämisestä Swiftissä:
-
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID288)
-- [Hacking with Swift: Merkkijonojen käsittely](https://www.hackingwithswift.com/quick-start/understanding-swift/strings-in-swift)
-- [Swift-merkkijonoviestintä: pienimmät tapaukset](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)
+- [String - Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
+- [Extracting Substrings - Swift by Sundell](https://www.swiftbysundell.com/basics/substring/)
+- [Working with Strings in Swift - Hacking with Swift](https://www.hackingwithswift.com/articles/141/working-with-strings-in-swift)

@@ -1,44 +1,44 @@
 ---
 title:    "Gleam: Encontrando o comprimento de uma string"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Encontrar o comprimento de uma string é uma habilidade importante em programação que pode ser usada para diversas finalidades, como validar entradas de usuário ou manipular dados. Além disso, entender como encontrar o comprimento de uma string pode ajudar a compreender melhor outros conceitos de linguagem de programação, como arrays e loops.
+Então, você decidiu aprender Gleam? Ótimo! Com certeza, você deve estar se perguntando por que alguém se daria ao trabalho de descobrir o comprimento de uma string. Bem, a resposta é simples: saber o comprimento de uma string é um aspecto fundamental de qualquer linguagem de programação. Além disso, esse conhecimento pode ser aplicado em uma variedade de cenários, como validação de entrada de usuário, formatação de texto e muito mais.
 
 ## Como fazer
 
-Para encontrar o comprimento de uma string em Gleam, podemos usar a função `String.length()` que retorna o número de caracteres em uma determinada string. Vamos ver alguns exemplos de código:
+Agora que você sabe por que é importante encontrar o comprimento de uma string, é hora de descobrir como fazer isso em Gleam. Felizmente, a linguagem tem uma função conveniente chamada `gleam_stdlib.String.len` que retorna o comprimento de uma string dada.
+
+Vejamos um exemplo:
 
 ```
-// Declara uma variável string
-let texto = "Olá, mundo!"
+Gleam import avm_stdlib
 
-// Encontra o comprimento da string e armazena em uma variável
-let tamanho = String.length(texto)
+let string = "Olá, Mundo!"
+let length = gleam_stdlib.String.len(string)
 
-// Imprime o resultado
-IO.print("O comprimento da string é " <> String.to_int(tamanho))
+gleam_stdlib.Stdout.print(length)
+
+// Saída: 12
 ```
 
-O código acima vai imprimir "O comprimento da string é 11" no terminal. Podemos também usar a função `IO.inspect()` para imprimir diretamente o resultado sem precisar armazenar em uma variável:
+Como você pode ver, primeiro importamos a biblioteca padrão do Gleam usando a palavra-chave `import`. Em seguida, definimos uma variável `string` contendo a nossa string de exemplo. Em seguida, usamos a função `gleam_stdlib.String.len` para obter seu comprimento e armazená-lo na variável `length`. Finalmente, usamos a função `gleam_stdlib.Stdout.print` para imprimir o resultado.
 
-```
-let texto = "Olá, mundo!"
+## Deep Dive
 
-IO.inspect(String.length(texto))
-```
+Agora, vamos dar uma olhada mais aprofundada nesta função. Para começar, é importante notar que a função `gleam_stdlib.String.len` é pura, o que significa que ela não tem efeitos colaterais. Isso é importante porque ajuda a manter seu código mais previsível e evita problemas comuns, como mutação não intencional de variáveis.
 
-Este código vai imprimir o número 11 no terminal.
+Outra coisa a notar é que a função `len` é extremamente eficiente. Ao contrário de algumas linguagens de programação, como JavaScript, que precisam percorrer uma string inteira para obter seu comprimento, a função `len` no Gleam retorna o valor diretamente, sem precisar iterar pela string.
 
-## Mergulho profundo
-
-Uma coisa importante a se notar é que a função `String.length()` conta o número de caracteres, incluindo espaços em branco e pontuação. Isso significa que o comprimento de uma string pode ser maior do que o número de palavras que ela contém. Além disso, vale ressaltar que o comprimento de uma string é determinado pela sua codificação de caracteres. Por exemplo, em UTF-8 um caractere especial como "ç" é considerado como um único caractere, enquanto em UTF-16 ele pode ser contado como dois caracteres.
+Além disso, a função `len` é autodocumentada, o que significa que você pode obter informações detalhadas sobre ela simplesmente acessando sua documentação embutida usando ferramentas como o `gleam doc` ou IDEs com suporte para Gleam.
 
 ## Veja também
 
-- Documentação oficial do Gleam: [https://gleam.run/documentation/#string-length](https://gleam.run/documentation/#string-length)
-- Tutorial sobre trabalhar com strings em Gleam: [https://learnxinyminutes.com/docs/gleam/](https://learnxinyminutes.com/docs/gleam/)
+- Documentação Gleam para `gleam_stdlib.String`: https://gleam.run/documentation/stdlib/string#len
+- Tutorial de Gleam para iniciantes: https://gleam.run/getting-started/your-first-project
+- Comunidade Gleam no Discord: https://discord.gg/QU7wR9wQZR

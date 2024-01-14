@@ -1,45 +1,60 @@
 ---
-title:    "Javascript: Opprette en midlertidig fil"
+title:    "Javascript: Opprettelse av en midlertidig fil"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Temporære filer kan være nyttige når du jobber med programmering. De tillater deg å midlertidig lagre data eller informasjon som trengs for at programmet ditt skal kunne kjøre. Dette kan være spesielt nyttig når du jobber med større datamengder eller når du ikke ønsker å skrive data permanent til en fil.
+Å lage midlertidige filer er en viktig del av Javascript-programmering, spesielt når man jobber med større og mer komplekse prosjekter. Disse filene er nyttige for å lagre midlertidig data eller informasjon for å utføre forskjellige oppgaver, og kan raskt opprettes og slettes når de ikke lenger er nødvendige.
 
-# Hvordan
+## Hvordan
 
-For å opprette en temporær fil i Javascript kan du bruke følgende kode:
+Det finnes flere måter å lage midlertidige filer i Javascript, men den enkleste og mest effektive metoden er å bruke "fs" (file system) modulen i Node.js. Her er et eksempel på hvordan du kan opprette en midlertidig fil ved hjelp av denne modulen:
 
 ```Javascript
-const fs = require('fs'); // Importerer fs-modulen for å kunne jobbe med filer
-const path = require('path'); // Importerer path-modulen for å kunne håndtere filsti
-const tmpFile = path.join(__dirname, 'tempfile.txt'); // Setter filsti til å være i samme mappe som Javascript-filen
-
-fs.writeFile(tmpFile, 'Dette er en temporær fil', (err) => { // Skriver data til filen
-  if (err) throw err;
-  console.log('Temporær fil opprettet');
+var fs = require('fs');
+// Opprett en midlertidig fil med navnet "temp.txt"
+fs.open('temp.txt', 'w', function(err, file) {
+    if (err) throw err;
+    console.log('Midlertidig fil opprettet');
 });
 ```
 
-Koden over vil opprette en ny fil kalt "tempfile.txt" i samme mappe som Javascript-filen. Den vil deretter skrive teksten "Dette er en temporær fil" til filen. Hvis det ikke oppstår noen feil, vil du se en melding i konsollen som indikerer at filen er opprettet.
+I dette eksempelet bruker vi "fs.open" funksjonen til å opprette en fil med navnet "temp.txt". Vi spesifiserer også at filen skal være åpen for skriving ("w"), og dersom det oppstår en feil, kastes denne med "throw err". Hvis alt går som det skal, vil du se meldingen "Midlertidig fil opprettet" i konsollen.
 
-# Dypdykk
-
-Når du jobber med temporære filer, er det viktig å huske på at de ikke trenger å være permanente. Dette betyr at du bør slette dem når de ikke lenger er nødvendige. I Javascript kan du gjøre dette ved å bruke følgende kode:
+Når filen er opprettet, kan du skrive data til den og lese data fra den på samme måte som du ville gjort med en vanlig fil. Husk bare å slette den når den ikke lenger er nødvendig ved å bruke "fs.unlink" funksjonen.
 
 ```Javascript
-fs.unlink(tmpFile, (err) => { // Sletter filen
-  if (err) throw err;
-  console.log('Temporær fil slettet');
+// Skriv data til den midlertidige filen
+var data = "Dette er data som skal skrives til den midlertidige filen";
+fs.writeFile('temp.txt', data, function(err) {
+    if (err) throw err;
+    console.log('Data skrevet til filen');
+});
+
+// Les data fra den midlertidige filen
+fs.readFile('temp.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+    console.log('Data lese fra filen: ' + data);
+});
+
+// Slett den midlertidige filen
+fs.unlink('temp.txt', function(err) {
+    if (err) throw err;
+    console.log('Midlertidig fil slettet');
 });
 ```
 
-Det er også viktig å merke seg at navnet på den temporære filen ikke trenger å være "tempfile.txt". Du kan gi den et hvilket som helst navn, så lenge det er unikt og du husker navnet når du skal slette den.
+## Dypdykk
 
-# Se også
+Når du lager midlertidige filer i Javascript, er det viktig å være oppmerksom på sikkerhet og ytelse. Det er alltid best å begrense bruken av midlertidige filer, spesielt hvis du jobber med store datamengder, for å unngå eventuelle ytelsesproblemer.
 
-- Documentasjon for fs-modulen i Node.js: https://nodejs.org/api/fs.html
-- Tutorial om å opprette og slette filer i Node.js: https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-node-js
+I tillegg er det viktig å sørge for at midlertidige filer slettes når de ikke lenger er nødvendige. Dette kan gjøres ved hjelp av både "fs.unlink" funksjonen som vist i eksempelet over, og også ved å bruke "temp" funksjonen i Node.js for å opprette midlertidige filer i en midlertidig mappe.
+
+## Se også
+
+- [Node.js Dokumentasjon - File System](https://nodejs.org/dist/latest-v10.x/docs/api/fs.html)
+- [MDN Web Docs - File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_APIs)

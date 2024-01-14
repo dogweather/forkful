@@ -1,50 +1,47 @@
 ---
-title:    "Gleam: Konvertere en dato til en streng."
+title:    "Gleam: Konvertere en dato til en streng"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Når man jobber med programmering, er det ofte nødvendig å konvertere ulike datatyper til hverandre. En vanlig oppgave er å konvertere en dato til en streng, noe som kan være nyttig for å vise datoer i et brukergrensesnitt eller lagre dem i en database. I denne bloggposten skal vi se på hvordan man kan gjøre dette i Gleam-programmeringsspråket.
+Det å konvertere en dato til en streng er en vanlig oppgave som ofte forekommer i programmering. Hvis du for eksempel ønsker å vise datoer i en brukerinterface, lagre dem i en database, eller sende dem over en nettverksforbindelse, er det nødvendig å konvertere dem til en streng. Å vite hvordan man gjør dette kan spare deg for mye tid og frustrasjon i utviklingen av dine programmer.
 
-# Hvordan
+## Hvordan gjøre det
+Her er en enkel måte å konvertere en dato til en string i Gleam:
 
-For å konvertere en dato til en streng i Gleam, kan man bruke funksjonen `DateTime.to_string` og angi datoen man ønsker å konvertere som et argument. Her er et eksempel på hvordan dette kan gjøres:
+```Gleam
+// Oppretter en dato
+let date = Date.now()
 
-```gleam
-let date = DateTime.new(2020, 11, 05)
-let date_string = DateTime.to_string(date)
+// Konverterer datoen til en streng med formatet "YYYY-MM-DD"
+let date_string = date.to_string("%Y-%m-%d")
+
+// Printer ut resultatet
+IO.print(date_string)
+
+// Output: "2020-09-05"
 ```
 
-Når man kjører denne koden, vil `date_string` inneholde følgende verdi:
+For å konvertere en dato til andre formater, kan du bruke forskjellige formateringsstrenger. Her er noen vanlige formateringsstrenger som kan brukes til å konvertere en dato til en streng:
 
-```
-"05.11.2020"
-```
+- `%Y`: årstallet med fire siffer
+- `%y`: årstallet med to siffer
+- `%M`: månedsnummeret med to siffer
+- `%m`: månedsnummeret med et siffer
+- `%D`: dagnummeret med to siffer
+- `%d`: dagnummeret med et siffer
 
-Man kan også formatere strengen på ulike måter ved å bruke flagg i `to_string`-funksjonen. For eksempel kan man få strengen til å vise månedens navn i stedet for et tall, eller vise årstallet i tosifret format. Her er et eksempel på hvordan man kan formatere datoen:
+Det finnes mange flere formateringsstrenger du kan bruke, og du kan også kombinere dem for å få ønsket resultat. Det er viktig å merke seg at formateringsstrengene kan variere avhengig av programmeringsspråket du bruker, så det er viktig å sjekke dokumentasjonen til ditt spesifikke språk.
 
-```gleam
-let date = DateTime.new(2020, 11, 05)
-let date_string = DateTime.to_string(date, "MMMM d, yyyy")
-```
+## Dypdykk
+Å konvertere en dato til en streng kan virke som en enkel oppgave, men det er faktisk en ganske kompleks operasjon. Datoer er representert som tall i de fleste programmeringsspråk, og å konvertere dem til en streng innebærer å tolke disse tallene og formatere dem på en lesbar måte.
 
-Denne koden vil gi følgende resultat:
+I tillegg kan forskjellige land og språk ha ulike måter å representere datoer på, noe som kan gjøre det utfordrende å håndtere internasjonalisering i programmering. Det er viktig å være oppmerksom på disse forskjellene og å bruke riktige formateringsstrenger for å sikre at datoer blir riktig konvertert uansett språk eller land.
 
-```
-"November 5, 2020"
-```
-
-# Dypdykk
-
-Når man jobber med datoer, er det viktig å være klar over ulike typer formater og datoformateringsstandarder som finnes. Gleam bruker standarden ISO 8601 for datoer, som er et vanlig format for å representere datoer og tider.
-
-Man kan også bruke `DateTime.from_string`-funksjonen for å konvertere en streng til en dato. Det er også mulig å arbeide med klokkeslett og tidsforskyvning ved hjelp av `DateTime`-modulen i Gleam.
-
-# Se også
-
-- [Gleam offisiell dokumentasjon om datatyper](https://gleam.run/book/std-lib-dates-and-times.html)
-- [ISO 8601-datoformat](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Mer om datoformat og lokaliseringsstøtte i Gleam](https://gleam.run/book/i18n.html#dates-and-times)
+## Se også
+- [Gleam dokumentasjon om datokonvertering](https://gleam.run/documentation/language/date_formatters)
+- [Eksempler på ulike datoformater](https://www.tutorialspoint.com/strftime-function-in-c-cplusplus#:~:text=The%20strftime()%20function%20is,replaceable%20symbols%20used%20for%20formatting.)

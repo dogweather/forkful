@@ -1,63 +1,57 @@
 ---
 title:    "Elm: Odczytywanie pliku tekstowego"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy wiesz, że odczytywanie plików tekstowych jest jedną z podstawowych czynności w programowaniu? Bez tego umiejętności, trudno byłoby zautomatyzować proces tworzenia raportów, manipulować danymi lub wykonać wiele innych zadań. W tym artykule dowiesz się, jak odczytywać pliki tekstowe w języku Elm i jak może to ułatwić Twoje codzienne wyzwania.
+Jeśli chcesz nauczyć się programowania w języku Elm lub po prostu poszerzyć swoją wiedzę na ten temat, przeczytaj ten wpis! Dowiecie się, jak wczytywać pliki tekstowe i wykorzystać tę umiejętność w swoich programach. To ważna umiejętność dla każdego programisty!
 
 ## Jak to zrobić
 
-Odczytywanie plików tekstowych w języku Elm jest bardzo proste i wymaga używania tylko jednej funkcji - `File.lines`. Aby ją wykorzystać, musisz mieć dostęp do pliku tekstowego, który chcesz odczytać. Zanim przejdziemy do kodu, warto zauważyć, że odczytywanie plików tekstowych odbywa się asynchronicznie, co oznacza, że musisz użyć funkcji `Task` do manipulowania odczytanymi danymi.
+Aby wczytać plik tekstowy w Elm, musisz użyć funkcji `Http.get` i `File.toText`. Pokażę Ci to na przykładzie. Załóżmy, że chcesz wczytać plik `hello.txt` z folderu `pliki_tekstowe`.
 
-Oto przykładowy kod w języku Elm, który odczytuje plik tekstowy `example.txt` i wyświetla zawartość na ekranie:
+```Elm
+import Http
+import File
 
-```
-import File exposing (lines)
-import Task exposing (attempt)
-import String
+type Msg
+    = GotText (Result Http.Error String)
 
-main =
-    do
-        -- użycie funkcji `attempt` do odczytania pliku
-        fileContentsResult = attempt (\_ -> File.lines "example.txt") ()
-
-        -- pobranie wyniku lub błędu odczytywania pliku
-        case fileContentsResult of
-            -- jeśli nie ma błędu, wyświetl zawartość pliku
-            Ok fileContents ->
-                -- `List.map` zostanie użyte do wyświetlenia zawartości
-                -- pliku, która zostanie wypisana w konsoli
-                List.map (String.fromList >> (Task.succeed >> Task.perform identity)) fileContents
-
-            -- jeśli wystąpi błąd, wyświetl komunikat o błędzie
-            Err err ->
-                Task.perform identity (Task.succeed (Debug.crash (Debug.toString err)))
+getFile : Cmd Msg
+getFile =
+    File.toText "pliki_tekstowe/hello.txt"
+        |> Task.perform GotText
 ```
 
-Kod ten wykorzystuje funkcję `File.lines` do odczytania zawartości pliku tekstowego i wyświetla ją na ekranie przy użyciu funkcji `List.map`.
+Następnie, aby wyświetlić zawartość pliku, użyjemy funkcji `case` w funkcji `update`:
 
-Przykładowy plik `example.txt` może wyglądać tak:
+```Elm
+update msg model =
+    case msg of
+        GotText result ->
+            case result of
+                Ok text ->
+                    ( { model | content = Just text }, Cmd.none )
 
+                Err error ->
+                    ( { model | content = Just "Błąd podczas wczytywania pliku" }, Cmd.none )
+
+        _ ->
+            ( model, Cmd.none )
 ```
-Hello
-World
-```
 
-Po wykonaniu powyższego kodu, zostanie wyświetlony tekst: `["Hello", "World"]` oznaczający, że zawartość pliku została poprawnie odczytana i wyświetlona.
+Teraz, gdy uruchomisz ten kod, powinien bez problemu wczytać zawartość pliku tekstowego i wyświetlić ją w modelu Twojej aplikacji.
 
 ## Głębsze zanurzenie
 
-Choć przykładowy kod wydaje się prosty, warto zauważyć kilka ważnych rzeczy. Po pierwsze, funkcja `File.lines` nie zwraca natychmiast wyniku, ale funkcję `Task`, która musi zostać wykonana za pomocą funkcji `Task.perform`. Dodatkowo, jeśli wystąpi błąd podczas odczytywania pliku, będzie on zwrócony przy użyciu `Err`, dlatego ważne jest, aby obsłużyć taką sytuację w kodzie.
+Wczytywanie plików tekstowych może być trochę bardziej skomplikowane, gdy funkcja `Http.get` wysyła żądanie do adresu URL zamiast lokalnego pliku. W takim przypadku musimy zastosować pewne triki i dostosować kod do naszych potrzeb. Więcej o tym znajdziesz w [oficjalnej dokumentacji Elm](https://package.elm-lang.org/packages/elm/file/latest/).
 
-Kolejną ważną rzeczą do zapamiętania jest to, że funkcja `File.lines` nie obsługuje kodowania pliku. Jeśli Twój plik tekstowy jest zakodowany w innym formacie niż UTF-8, musisz użyć funkcji `File.read` i dopasować odpowiedni dekoder do pliku. 
+## Zobacz także
 
-Wreszcie, warto wspomnieć, że funkcja `File.lines` zwraca listę linii w pliku, co oznacza, że jeśli plik zawiera tylko jedną linię, wynik będzie wyglądał tak: `["Hello"]`.
-
-## Zobacz również
-
-- [Dokumentacja języka Elm (pliki tekstowe)](https://elm-lang.org/docs/file)
-- [Kod źródłowy przyk
+- [Oficjalna dokumentacja Elm](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Wczytywanie plików CSV w Elm](https://dev.to/refactorius/wczytywanie-plikow-csv-w-elm-3fe7) (artykuł w języku angielskim)
+- [Projekt Elm File Explorer](https://github.com/FreedomMan/univision-file-explo) (projekt na GitHubie)

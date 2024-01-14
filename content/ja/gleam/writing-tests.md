@@ -1,47 +1,60 @@
 ---
-title:    "Gleam: テストの書き方"
+title:    "Gleam: テストの作成"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-テストを書く理由は何ですか。
-テストを書くことで、コードの品質を向上させ、バグを早期に発見することができます。
+こんにちは、Gleamのプログラミングコミュニティーの皆さん。今日はテストコードの書き方についてお話します。テストコードを書くことには、どのようなメリットがあるのでしょうか？どのように書けば良いのでしょうか？さらに、テストコードを深く掘り下げて説明します。それでは、始めましょう！
 
-## 方法
-テストを書く方法は簡単です。Gleamのテストマクロを使用することで、簡単にテストコードを作成することができます。
+##なぜ？
+
+テストコードを書くことには、いくつかのメリットがあります。まず、バグを発見するのに役立ちます。テストコードを書いておけば、プログラムが想定しない振る舞いをしないかどうかを確認できます。また、コードの変更や追加があった場合に、その変更が他の部分に影響を与えていないかを確認することができます。
+
+##やり方
+
+テストコードを書く方法を見ていきましょう。「```Gleam ... ```」というコードに囲まれた部分は、Gleamのコードだと思ってください。まず、```test```というキーワードを使って、テストケースを定義します。
 
 ```Gleam
-test "Addition test" {
-  expect(add(2, 3))
-  |> to_equal(5)
-}
-
-test "Division test" {
-  expect(divide(10, 2))
-  |> to_equal(5)
-}
-
-test "String concatenation test" {
-  expect(concat("Hello", "world"))
-  |> to_equal("Hello world")
+test "add function should add two numbers" {
+  assert 2 + 2 == 4 //ここで実際の処理を書きます
 }
 ```
 
-`expect`マクロを使用して、テストする関数の出力を定義し、`to_equal`関数を使用して期待する値を指定します。上記の例では、3つの異なるテストケースを示しています。
+上の例では、2+2が4になるかどうかをテストしています。また、```assert```を使って、テストケースの期待する結果を明示します。
 
-## 詳細
-テストを書く際には、以下のことに注意する必要があります。
+```Gleam
+test "add function should return an error when passed a string" {
+  assert wrapper.add("5", "4") == error //errorを返すことが期待されます
+}
+```
 
-- テスト対象の関数が返す値の型を確認すること
-- テストケースのバリエーションを考慮すること
-- テストの可読性を高めるために、適切なテストケース名を使用すること
-- 余分なコードを書かず、効率的なテストを行うこと
+さらに、テストケースをグループ化することもできます。例えば、同じ関数の異なる引数について複数のテストケースを書く場合には、```test group```を使ってグループ化します。
 
-これらのポイントを抑えて、より高い品質のテストコードを作成することができます。
+```Gleam
+test group "add function" {
+  test "should add positive numbers" {
+    assert wrapper.add(5,4) == 9 //正しく計算されることを期待します
+  }
+  test "should return an error when passed a negative number" {
+    assert wrapper.add(-5,4) == error //errorを返すことが期待されます
+  }
+}
+```
 
-## 参考リンク
-- [Gleam 公式ドキュメント](https://gleam.run/documentation)
-- [Gleam テストの書き方](https://gleam-lang.org/news/introducing-tests)
-- [Gleam のテストマクロの紹介](https://gleam-lang.org/news/introducing-tests)
+##ディープダイブ
+
+では、テストコードをより深く掘り下げて見ていきましょう。テストコードを書く上で、いくつかの重要な点があります。
+
+- テストコードは可能な限り自動的に実行可能であることが重要です。
+- テストケースはバグを発見することを目的として書くのではなく、期待する動作を明確にすることを目的として書きます。
+- テストコードもコードと同じくらい重要なので、しっかりと書くようにしましょう。
+
+また、テストコードを書くことによって、安心してコードを変更したり追加したりすることができます。もし何かがうまく動かなかった場合でも、テストコードがあればすぐに原因がわかるため、バグの修正も容易になります。
+
+##See Also
+
+テストコードについて学ぶには、以下のリンクを参考にしてみてください。
+
+- Gleam公式ドキュメント: https

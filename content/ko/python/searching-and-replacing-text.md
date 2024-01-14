@@ -1,34 +1,35 @@
 ---
 title:    "Python: 텍스트 검색 및 교체"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-텍스트를 찾고 바꾸는 작업을 하는 이유는 간단합니다. 우리가 작성한 프로그램에서 특정한 단어나 구를 다른 단어나 구로 바꿔야 할 때가 있기 때문입니다. 예를 들어, 오타를 고치거나, 특정한 단어를 일괄적으로 바꾸어야 할 때 등이 있을 수 있습니다.
+# 왜: 텍스트를 검색하고 바꾸는 것에 참여하는 이유를 설명하는 단락 (1-2 문장)
 
-##하는 법
-```Python
-# 텍스트 찾기와 바꾸기 예제
-text = "오늘은 파이썬 공부를 시작하는 날입니다."
-find = "파이썬"
-replace = "자바스크립트"
+텍스트를 검색하고 바꾸는 작업은 많은 프로그래밍 작업에서 필수적인 과정입니다. 특히, 큰 텍스트 파일이나 다양한 형식의 텍스트 데이터를 처리하는 경우 더욱 중요한 작업입니다. 이 작업은 정확한 데이터 처리를 위해 필요한 필수 도구입니다.
 
-# replace() 함수를 사용하여 찾은 결과를 새로운 문자열로 대체합니다.
-new_text = text.replace(find, replace)
+## 어떻게: " ```Python ... ``` " 코드 블록 내에서 코딩 예제와 샘플 출력을 포함한 코드 예시
 
-print(new_text)
+먼저, 검색하고자 하는 텍스트 파일을 `open()` 함수를 이용하여 열어줍니다. 그리고 `read()` 함수를 이용하여 파일 내용을 읽어옵니다. 이 과정에서 `r` 옵션을 이용하여 파일을 읽기 전용으로 열어줄 수 있습니다. 그리고 `replace()` 함수를 이용하여 대체하고자 하는 문자열을 지정해줍니다. 이후 `write()` 함수를 이용하여 변경된 파일 내용을 저장해줍니다.
 
-# 출력: 오늘은 자바스크립트 공부를 시작하는 날입니다.
+```
+file = open("example.txt", "r")
+contents = file.read()
+replace_str = contents.replace("old", "new")
+file_write = open("new_example.txt", "w")
+file_write.write(replace_str)
 ```
 
-위의 코드는 문자열에서 일부분을 찾아서 특정한 단어로 바꾸는 간단한 예제입니다. replace() 함수를 사용하여 바로 문자열 내부에서 변경이 가능합니다. 
+위 코드를 실행하면 "example.txt" 파일 내용 중 "old"라는 단어가 "new"로 대체된 내용이 새로운 "new_example.txt" 파일로 저장됩니다.
 
-##더 들어가보기
-텍스트를 찾고 바꾸기 위해서는 다양한 함수와 기능들이 있습니다. 예를 들어, 정규 표현식을 사용하면 더욱 간편하게 찾고 바꾸는 작업을 수행할 수 있습니다. 또한, 파일 내부의 모든 텍스트를 한 번에 변경하고 싶을 때는 파일 입출력과 함께 사용할 수 있습니다.
+## 깊이 파고들기: 텍스트를 검색하고 바꾸는 과정에 대한 깊은 정보
 
-## 다른 자료들
-- [파이썬 문자열 관련 함수](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [정규 표현식에 대한 자세한 설명](https://regexone.com/)
-- [파이썬 파일 입출력 관련 자료](https://dojang.io/mod/page/view.php?id=2303)
+위에서 설명한 방법은 가장 기본적이고 간단한 방법이지만, 다양한 옵션과 메소드를 이용하여 더욱 정교한 검색 및 대체 작업을 할 수 있습니다. `re` 모듈을 이용해 정규표현식을 이용하여 검색하는 방법이나 `str.translate()` 메소드를 이용하여 다양한 문자열을 한번에 변경할 수 있는 방법 등 다양하게 활용할 수 있습니다. 또한, 바꾸고자 하는 패턴을 더욱 정교하고 복잡하게 설정하여 작업할 수도 있습니다.
+
+# 또한 볼만한 글: 
+
+- [파이썬 공식 문서 - 문자열 메소드](https://docs.python.org/ko/3/library/stdtypes.html#string-methods)
+- [파이썬 공식 문서 - re 모듈](https://docs.python.org/ko/3/library/re.html)
+- [파이썬 공식 문서 - str 모듈](https://docs.python.org/ko/3/library/stdtypes.html#str)

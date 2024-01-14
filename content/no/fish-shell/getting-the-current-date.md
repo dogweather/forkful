@@ -1,47 +1,43 @@
 ---
-title:    "Fish Shell: Innhenting av nåværende dato"
+title:    "Fish Shell: Å få dagens dato"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I dagens teknologiske verden, er det viktigere enn noensinne å ha orden i filene og å kunne spore endringer. Enten du er en erfaren programmerer eller en nybegynner, er det alltid nyttig å ha datoen for når filene ble opprettet eller endret. Heldigvis kan du enkelt få tilgang til dagens dato ved hjelp av Fish Shell programming.
+Hvorfor skulle noen bry seg om å få den nåværende datoen? Vel, det er faktisk ganske nyttig når du jobber med programmering eller administrasjon av datamaskiner. Å vite den eksakte datoen kan være nyttig for å automatisere oppgaver eller sjekke filegenskaper.
+
 
 ## Hvordan
 
-Kodeeksempler og utgang innenfor "```Fish Shell ... ```" kodeblokker:
+For å få den nåværende datoen i Fish Shell, kan du bruke kommandoen "date". La oss se på et eksempel:
 
 ```
-set dato (date +%d.%m.%Y)
-echo $dato
+Fish Shell:
+
+$ date
+torsdag, 24. juni 2021, 14:00:00 CEST
 ```
-Dette eksemplet vil returnere dagens dato i formatet dd.mm.åååå. Du kan også endre formatet til å inkludere klokkeslett ved å bruke kommandoen 'time' før 'date' kommandoen.
+
+Som du kan se, gir kommandoen oss den nåværende datoen i et leselig format. Men hva om du vil ha datoen i et annet format? Ikke noe problem, du kan enkelt formatere utdataen ved å legge til parameterne "+%format" etter "date" kommandoen. La oss si at du vil ha datoen i formatet MM-DD-ÅÅÅÅ. Her er hvordan du gjør det:
 
 ```
-set dato (time -f "%d.%m.%Y %H:%M" (date))
-echo $dato
+Fish Shell:
+
+$ date +%m-%d-%Y
+06-24-2021
 ```
-Dette vil returnere dagens dato og klokkeslett i formatet dd.mm.åååå tt:mm.
+
+Det er det! Nå har du datoen i ønsket format. Det er også mange andre formateringsalternativer tilgjengelig, som for eksempel å vise bare måneden eller å legge til kommateringer. Du kan lese mer om disse mulighetene i Fish Shell dokumentasjon.
 
 ## Dykk dypere
 
-Det er også mulig å få tak i informasjon om spesifikke datoer ved å bruke kommandoen 'date' med '-d' flagget og angi en dato i yyyy-mm-dd format. Du kan også bruke ulike formater for å få ønsket utgang:
-
-```
-date -d "2022-01-01" +"Året er %Y"
-date -d "2022-01-01" +"På denne datoen vil ingen huske korona: %A, %d/%m/%Y"
-```
-
-I tillegg kan du også bruke kommandoen 'cal' for å få en kalender for en spesifikk måned og år:
-
-```
-cal 12 2021
-```
+Visste du at "date" kommandoen også kan brukes til å sette datoen? Det stemmer, du kan bruke den til å endre den nåværende datoen på datamaskinen din. Du trenger bare å legge til "MMDDhhmmyyyy" etter "date" kommandoen for å sette ønsket dato. Det kan være nyttig for å teste programmer eller for å tilbakestille datoen etter en feil. Men vær forsiktig og bruk dette bare hvis du vet hva du gjør!
 
 ## Se også
 
-- Fish Shell offisiell dokumentasjon: https://fishshell.com/docs/current/index.html
-- Enkle måter å organisere og administrere filer ved hjelp av Fish Shell: https://medium.com/@GodelTech/how-to-manage-your-files-using-fish-shell-98b4cea6a5d6
-- Fordeler ved å bruke Fish Shell for programutvikling: https://towardsdatascience.com/fish-shell-for-application-development-41a7e30e51e8
+- Fish Shell dokumentasjon: https://fishshell.com/docs/current/index.html
+- "Hvordan formatere dato og klokkeslett i Fish Shell": https://blog.virtualbits.io/how-to-format-datetime-in-fish-shell/

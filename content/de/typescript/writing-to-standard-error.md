@@ -1,49 +1,33 @@
 ---
-title:    "TypeScript: Schriftliches Schreiben auf den Standardfehler"
+title:    "TypeScript: Schreiben auf Standardfehler"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Manchmal kann es beim Programmieren passieren, dass ein Fehler auftritt. Oder vielleicht möchtest du einfach nur etwas ausgeben, um zu überprüfen, ob dein Code an der richtigen Stelle ausgeführt wird. In solchen Situationen kann es nützlich sein, die Funktion "writing to standard error" zu verwenden. Diese Funktion gibt eine Ausgabe auf der Standardfehlerschnittstelle, auch bekannt als "stderr", aus.
+Das Schreiben von Nachrichten an den Standardfehler ist eine wichtige Fähigkeit für Programmiererinnen und Programmierer in TypeScript. Es ermöglicht eine effektive Fehlerbehandlung und hilft dabei, die Stabilität und Zuverlässigkeit von Code zu verbessern.
 
-## Wie geht man vor
-
-Um in TypeScript auf standard error zu schreiben, kannst du die Methode `console.error()` verwenden. Hier ist ein Beispielcode:
+## So geht's
 
 ```TypeScript
-const name = "Peter";
-console.error(`Hallo ${name}, dieses Beispiel hat eine Fehlermeldung ausgegeben.`);
+const errMessage: string = "Error: File not found";
+console.error(errMessage);
 ```
 
-Die Ausgabe sieht dann wie folgt aus:
+Der obige Code zeigt, wie man eine Fehlermeldung in TypeScript an den Standardfehler ausgibt. Durch die Verwendung der Funktion `console.error()` wird die Nachricht automatisch an den Standardfehler gesendet, was es ermöglicht, dass sie in der Konsole ausgegeben wird.
 
-```bash
-Hallo Peter, dieses Beispiel hat eine Fehlermeldung ausgegeben.
-```
+Die Fehlermeldung kann auch zusätzliche Informationen wie den Dateipfad oder den Fehlercode enthalten, um die Fehlerbehandlung weiter zu vereinfachen.
 
-Du kannst auch mehrere Werte ausgeben, indem du sie mit Kommas trennst:
+## Tiefere Einblicke
 
-```TypeScript
-console.error("Fehler:", 404, "Seite nicht gefunden!");
-```
+Das Schreiben von Nachrichten an den Standardfehler kann auch dazu beitragen, den Debugging-Prozess zu verbessern. Indem man gezielt Fehlermeldungen an den Standardfehler schreibt, kann man genau bestimmen, wo im Code ein Fehler aufgetreten ist und eventuell weitere Maßnahmen zur Behebung des Fehlers ergreifen.
 
-Die Ausgabe hierfür wäre:
-
-```bash
-Fehler: 404 Seite nicht gefunden!
-``` 
-
-## Deep Dive
-
-Wenn ein Fehler in deinem Code auftritt, wird dieser normalerweise auf der Standardausgabeschnittstelle, oder "stdout", ausgegeben. Dies ist jedoch nicht immer das gewünschte Verhalten. Auch wenn dein Programm nicht abstürzt, kann es hilfreich sein, gewisse Informationen auf stderr auszugeben, um bessere Debugging-Möglichkeiten zu haben. Eine andere Verwendung von stderr ist es, Benutzereingaben in einer Befehlszeileanwendung zu validieren.
-
-Es ist auch wichtig zu beachten, dass stderr und stdout getrennte Ausgabekanäle sind und daher die Ausgaben in der Reihenfolge angezeigt werden, in der sie ausgegeben wurden. Das bedeutet, dass die Ausgabe auf stderr nicht unbedingt direkt unter der Ausgabe auf stdout erscheint, sondern abhängig von der Reihenfolge, in der die jeweilige Ausgabe erfolgt ist.
+Außerdem kann man durch das Schreiben von benutzerdefinierten Fehlermeldungen an den Standardfehler die Lesbarkeit des Codes verbessern und so die Zusammenarbeit im Team erleichtern.
 
 ## Siehe auch
 
-- [Die Konsole in Node.js nutzen](https://www.digitalocean.com/community/tutorials/nodejs-command-line-utility-console)
-- [Die Unterschiede zwischen stderr und stdout](https://www.quora.com/What-is-the-difference-between-standard-error-and-standard-output-in-Linux)
-- [Die console.error() Methode in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#improved-quick-fixes)
+- [Offizielle TypeScript Dokumentation zu console.error()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#consoleerror)
+- [Artikel über Fehlerbehandlung in TypeScript](https://egghead.io/lessons/typescript-error-handling-in-typescript)

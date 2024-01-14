@@ -1,33 +1,49 @@
 ---
-title:    "Arduino: Generering av tilfeldige tall"
+title:    "Arduino: Lage tilfeldige tall"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å generere tilfeldige tall er en viktig del av programmørens verktøykasse, spesielt når man jobber med Arduino. Tilfeldige tall kan brukes til å skape variasjon og realisme i spill, simuleringer, og til å bekrefte kryptografiske systemer. Det er også en nyttig verktøy for å teste programvare og maskinvare på en uforutsigbar måte.
+Å generere tilfeldige tall er en viktig del av koding i Arduino. Dette kan være nyttig for å lage spill, simuleringer og til og med sikkerhetsprotokoller. Å kunne generere tilfeldige tall kan også hjelpe utviklere med å teste kode og finne feil.
 
-## Hvordan
+# Hvordan
 
-Å generere tilfeldige tall på Arduino er enkelt. Først må du sette "randomSeed ( )" funksjonen for å initialisere den tilfeldige tallgenerator. Dette gjør at generatorn bruker en annen startverdi hver gang programmet kjøres, noe som bidrar til å skape en mer tilfeldig sekvens av tall.
-
-Deretter kan du bruke "random ( )" funksjonen til å generere tilfeldige tall mellom to bestemte verdier. For eksempel, hvis du ønsker å generere et tilfeldig tall mellom 0 og 10, kan du bruke koden:
+For å generere tilfeldige tall i Arduino brukes funksjonen "random(min, max)" som returnerer et tilfeldig tall mellom minimum og maksimumsverdiene gitt. For å bruke denne funksjonen, må du inkludere den innebygde random biblioteket ved å legge følgende linje øverst i koden:
 
 ```Arduino
-int tilfeldigTall = random (0,10);
+#include <random>
 ```
 
-Dette vil returnere et tilfeldig tall mellom 0 og 9, siden "random ( )" funksjonen alltid velger et tall som er én mindre enn det øvre nummeret.
+Deretter må du definere minimums- og maksimumsverdiene ved å skrive følgende linjer:
 
-## Dypdykk
+```Arduino
+int min = 0; // minimumsverdi
+int max = 100; // maksimumsverdi
+```
 
-Det er viktig å merke seg at "randomSeed ( )" funksjonen bare trenger å bli kalt én gang i begynnelsen av programmet. Hvis den kalles flere ganger, vil det føre til at generatorn starter fra begynnelsen igjen og skaper en lignende sekvens av tilfeldige tall.
+For å generere og skrive ut et tilfeldig tall, bruker du følgende kode:
 
-Det kan også være nyttig å vite at "random ( )" funksjonen bruker en pseudotilfeldig tallgenerering. Dette betyr at det ikke er helt tilfeldig, men følger et mønster som simulerer tilfeldighet. Hvis du trenger ekte tilfeldige tall, bør du vurdere å bruke en ekstern tilfeldig nummergenerator.
+```Arduino
+int randomNumber = random(min, max); // generer et tilfeldig tall
+Serial.println(randomNumber); // skriver ut det tilfeldige tallet
+```
 
-## Se også
+Dette vil skrive ut et tilfeldig tall mellom 0 og 100 i serieovervåkingsvinduet.
 
-- [randomSeed ( ) reference på Arduino offisiell nettside](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
-- [random ( ) reference på Arduino offisiell nettside](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+# Deep Dive
+
+For å virkelig forstå hvordan tilfeldige tall genereres i Arduino, må vi se på algoritmen som brukes. I utgangspunktet genereres det tilfeldige tallet ved å bruke en matematisk formel som involverer klokkeslettet og en tidligere generert tallverdi. Dette tallet kalles også et "seed" og er det som gjør at tallet blir ekte tilfeldig.
+
+En viktig ting å huske på er at denne metoden for tilfeldig tallgenerering ikke er 100% nøyaktig, og det er mulig å få gjentatte tall i en lengre rekke. Derfor bør man alltid sørge for å endre "seed" hver gang man genererer et nytt tall for å få bedre tilfeldighet.
+
+# Se også
+
+Her er noen nyttige ressurser for å lære mer om tilfeldige tallgenerering i Arduino:
+
+- [Offisiell Arduino dokumentasjon om random funksjonen](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Tutorial om å generere tilfeldige tall i Arduino](https://www.arduino.cc/en/tutorial/random-numbers)
+- [Artikkel om tilfeldighet i koding](https://www.notion.so/Konsepter-i-koding-Episode-2-The-One-with-Randomness-a8d7dadd78da462fb6aea1966c352641) (på engelsk)

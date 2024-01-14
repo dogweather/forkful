@@ -1,53 +1,49 @@
 ---
-title:    "C++: Opprettelse av midlertidig fil"
+title:    "C++: Oppretting av midlertidig fil"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I programmering, er det ofte nødvendig å opprette midlertidige filer for å lagre midlertidige data. Dette kan være nyttig når man jobber med store datamengder eller prosesser som krever midlertidig lagring av informasjon. Midlertidige filer slettes vanligvis automatisk når programmet har fullført sin oppgave, noe som bidrar til å redusere rotet på datamaskinen og beholde god systemytelse.
+Å opprette en midlertidig fil kan være nyttig når du jobber med programmering i C++. Dette tillater deg å lagre midlertidige data som ikke er nødvendige for din endelige kode, men som kan være nyttig for testing eller feilsøking.
 
-## Hvordan
+## Slik gjør du det
 
-For å opprette en midlertidig fil i C++, kan man bruke funksjonen "tmpfile()", som returnerer en peker til den midlertidige filen. Her er et eksempel på hvordan man kan bruke denne funksjonen:
+For å opprette en midlertidig fil i C++, må du først inkludere fstream biblioteket. Deretter kan du bruke ofstream-funksjonen til å opprette en midlertidig filnavn. Et eksempel på kode som oppretter en midlertidig fil og skriver til den kan se slik ut:
 
 ```C++
-#include <cstdio>
 #include <iostream>
+#include <fstream> 
 
-int main() {
-    FILE * file = tmpfile();
-    if (file != NULL) {
-        std::cout << "Midlertidig fil opprettet!\n";
-        fputs("Dette er en midlertidig fil.", file);
-        rewind(file);
-
-        char buffer[20];
-        while (fgets(buffer, sizeof(buffer), file) != NULL) {
-            std::cout << "Innholdet i filen: " << buffer;
-        }
-        fclose(file);
-    }
-}
+int main() { 
+  // Oppretter en midlertidig fil 
+  std::ofstream temp("midlertidigfil.txt"); 
+  
+  // Sjekker om filen er åpen 
+  if(temp.is_open()){ 
+    temp << "Dette er en midlertidig fil.\n"; 
+    temp << "Denne teksten vil bli skrevet til filen."; 
+    temp.close(); // Lukker filen 
+  } else { 
+    std::cout << "Kunne ikke åpne filen."; 
+  } 
+  return 0; 
+} 
 ```
 
-I dette eksempelet opprettes det en midlertidig fil ved hjelp av "tmpfile()" og deretter skrives en tekststreng til filen ved hjelp av "fputs()". Deretter brukes "rewind()" til å tilbakestille posisjonen i filen og "fgets()" til å lese innholdet og skrive det ut på skjermen. Til slutt lukkes filen ved å bruke "fclose()".
+Når koden kjøres, vil den opprette en fil kalt "midlertidigfil.txt" og skrive teksten "Dette er en midlertidig fil. Denne teksten vil bli skrevet til filen." til den.
 
-Output av dette eksempelet vil være:
+## Dykk dypere
 
-```
-Midlertidig fil opprettet!
-Innholdet i filen: Dette er en midlertidig fil.
-```
+Når du oppretter en midlertidig fil i C++, blir den vanligvis lagret i operativsystemets midlertidige filområde. Dette området kan variere avhengig av hvilket operativsystem du bruker. For eksempel på Windows vil filen bli lagret i mappen "C:\Users\brukernavn\AppData\Local\Temp", mens den på Mac kan bli lagret i "/tmp/" mappen.
 
-## Dypdykk
-
-I de fleste tilfeller vil det være nok å bruke "tmpfile()" for å opprette midlertidige filer. Men for mer avanserte behov kan man bruke funksjonen "mkstemp()", som lar brukeren spesifisere et filnavn og returnerer en fil-deskriptor i tillegg til navnet på den opprettede filen. Dette kan være nyttig hvis man for eksempel vil endre rettighetene til den midlertidige filen. Et annet alternativ er å bruke funksjonen "mkdtemp()", som oppretter en midlertidig mappe istedenfor en fil.
+Det kan også være nyttig å vite at C++ ikke vil slette midlertidige filer automatisk når programmet ditt avsluttes. Det er ditt ansvar å slette filen manuelt ved hjelp av remove() -funksjonen etter at du er ferdig med å bruke den.
 
 ## Se også
 
-- [C++ filbehandling](https://www.dinkurs.no/programmering/ta-opp-leksjoner/c-plus-plus/filbehandling)
-- [C++ dokumentasjon for tmpfile()](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Artikkel om bruk av midlertidige filer i programmering](https://www.techwalla.com/articles/the-purpose-of-temporary-files-in-a-computer)
+- [C++ Standard Library - fstream](https://www.cplusplus.com/reference/fstream/)
+- [C++ File Handling](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Creating temporary files in C++](https://www.geeksforgeeks.org/creating-temporary-file-cpp/)

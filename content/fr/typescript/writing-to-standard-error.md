@@ -1,50 +1,33 @@
 ---
-title:    "TypeScript: Écrire sur la sortie d'erreur standard"
+title:    "TypeScript: Ecrire vers l'erreur standard"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers l'erreur standard en TypeScript
+## Pourquoi
 
-L'écriture vers l'erreur standard en TypeScript peut sembler un sujet mineur, mais c'est en fait une pratique très importante dans la programmation. En écrivant vers l'erreur standard, vous pouvez facilement détecter et résoudre les erreurs dans votre code, ce qui permet un débogage plus rapide et plus efficace. Cela peut également vous aider à comprendre le fonctionnement de votre code et à détecter les problèmes potentiels avant qu'ils n'affectent votre application en production.
+Lorsque vous écrivez du code TypeScript, il est souvent nécessaire de faire face à des erreurs et des bogues. Ces erreurs peuvent être difficiles à trouver et à comprendre, mais heureusement, il existe une solution pour les afficher et les suivre plus facilement : écrire vers la sortie standard d'erreur, également appelée "standard error".
 
-## Comment le faire
+## Comment faire 
 
-Pour écrire vers l'erreur standard en TypeScript, vous devez utiliser la méthode `console.error()`. Cette méthode imprime un message d'erreur dans la console du navigateur ou du terminal. Voici un exemple de code :
+Pour écrire vers la sortie standard d'erreur en TypeScript, il suffit d'utiliser la méthode `console.error()` avec le message que vous souhaitez afficher. Par exemple :
 
 ```TypeScript
 console.error("Une erreur s'est produite !");
 ```
 
-Lorsque vous exécutez ce code, le message "Une erreur s'est produite !" sera imprimé dans la console. Vous pouvez également utiliser des variables dans le message d'erreur pour avoir des messages plus précis :
+Cela affichera le message "Une erreur s'est produite !" dans la console du navigateur ou du terminal.
 
-```TypeScript
-let num = 5;
-console.error(`Le nombre ${num} est invalide !`);
-```
+## Plongée en profondeur 
 
-Dans cet exemple, le message d'erreur sera "Le nombre 5 est invalide !". Cela peut être utile lorsque vous devez afficher des informations spécifiques sur une erreur.
-
-## Plongée plus profonde
-
-Il est important de comprendre que la méthode `console.error()` ne stoppe pas l'exécution de votre code, elle n'est donc pas adaptée pour les erreurs critiques qui nécessitent une interruption immédiate. De plus, l'utilisation excessive de cette méthode peut affecter les performances de votre application. Il est donc conseillé de l'utiliser uniquement pour les erreurs que vous souhaitez voir apparaître dans votre console pour les déboguer.
-
-Une autre méthode utile pour gérer les erreurs en TypeScript est `try-catch`, qui vous permet de détecter et de gérer des exceptions dans votre code. Voici un exemple :
-
-```TypeScript
-try {
-  // Code potentiellement erroné
-} catch (e) {
-  // Gestion de l'exception
-  console.error(e);
-}
-```
-
-En entourant votre code avec `try` et `catch`, vous pouvez attraper les erreurs et afficher des messages appropriés. Cela peut être particulièrement utile lors du débogage de code qui interagit avec des APIs ou des bases de données externes.
+Lorsque vous utilisez `console.error()` en TypeScript, il est important de noter que ce n'est pas seulement utile pour afficher des messages d'erreur. Vous pouvez également l'utiliser pour afficher des informations de débogage, telles que des valeurs de variables, pour mieux comprendre le fonctionnement de votre code. En outre, la méthode `console.error()` renvoie également un objet Error, qui peut être utile pour suivre les erreurs et les bogues dans votre code.
 
 ## Voir aussi
 
-- [Documentation officielle de TypeScript](https://www.typescriptlang.org/docs/)
-- [Guide pour les erreurs et débogage en TypeScript](https://code.visualstudio.com/docs/typescript/typescript-debugging)
-- [Utilisation de try-catch en TypeScript](https://www.tutorialspoint.com/typescript/try_catch_statement.htm)
+Pour en savoir plus sur l'écriture vers la sortie standard d'erreur en TypeScript, vous pouvez consulter les ressources suivantes :
+
+- [Documentation officielle de TypeScript sur `console.error()`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#error-log-tracing)
+- [Guide pour le débogage en TypeScript](https://dev.to/klequis/debugging-typescript-an-introduction-and-guide-1n6e)
+- [Vidéo tutoriel sur la sortie standard d'erreur en TypeScript](https://www.youtube.com/watch?v=xUl3HQrWec0)

@@ -1,43 +1,62 @@
 ---
-title:    "Python: Finner lengden av en streng"
+title:    "Python: Finn lengden av en streng"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å finne lengden på en streng i et programmeringsspråk som Python kan virke som en enkel oppgave, men det kan være en svært nyttig ferdighet å ha. Det vil tillate deg å manipulere og håndtere tekstdatatype på en mer effektiv måte, noe som er uunværlig for å lage programmer og løse problemer.
+
+Å finne lengden på en tekststreng er en grunnleggende og nyttig ferdighet for alle som lærer å programmere. Det å være i stand til å finne lengden på en streng kan hjelpe deg med å håndtere og bearbeide data på en mer effektiv måte.
 
 ## Hvordan
-Det finnes flere måter å finne lengden på en streng i Python på, men den enkleste metoden er å bruke den innebygde funksjonen `len()`. La oss se på et eksempel:
+
+For å finne lengden på en streng i Python, bruker vi funksjonen "len()". Denne funksjonen tar en streng som argument og gir tilbake lengden på strengen.
 
 ```Python
-streng = "Dette er en streng"
+streng = 'Hei, dette er en streng!'
 print(len(streng))
 ```
-Output: 18
-
-I dette eksempelet har vi definert en variabel `streng` som inneholder en string-verdi. Deretter bruker vi `len()`-funksjonen til å finne antall tegn i strengen og skriver det ut ved hjelp av `print()`.
-
-En annen måte å finne lengden på en streng på, er å bruke en for-løkke. Her er et eksempel på hvordan det kan gjøres:
+**Output**
+```
+24
+```
+Som du kan se, gir funksjonen "len()" oss lengden på strengen, som er 24 i dette tilfellet. Vi kan også bruke denne funksjonen på variabler som inneholder strenger.
 
 ```Python
-streng = "Dette er en streng"
-counter = 0
-for c in streng:
-    counter += 1
-print(counter)
+navn = 'Johanna'
+print(len(navn))
 ```
-Output: 18
+**Output**
+```
+7
+```
 
-Vi har fortsatt den samme strengen som før, men denne gangen bruker vi en for-løkke for å telle antall tegn i strengen. Variabelen `counter` øker med 1 for hvert tegn i strengen.
+En annen måte å finne lengden på en streng på er ved å bruke en løkke og telle antall tegn i strengen, men dette er ikke like effektivt som å bruke funksjonen "len()".
 
 ## Dypdykk
-Nå som vi har sett på to måter å finne lengden på en streng i Python på, la oss dykke litt dypere inn i hvordan dette egentlig fungerer. Når vi bruker `len()`-funksjonen, blir den egentlig bare oversatt til å kalle `.__len__()`-metoden på objektet, som er implementert av standard databehandlere for ulike datatyper.
 
-Denne metoden returnerer lengden på objektet, og i tilfelle med en streng, vil den returnere antall tegn i strengen. Dette er en rask og effektiv måte å finne lengden på en streng på, og derfor bør det være den foretrukne metoden.
+Det kan være nyttig å vite at funksjonen "len()" ikke bare fungerer på strenger, men også på andre datatyper som lister og tupler. Den gir tilbake antall elementer i en liste eller tuple.
 
-## Se også
-- [Offisiell Python dokumentasjon om len()](https://docs.python.org/3/library/functions.html#len)
-- [En guide til grunnleggende strenger i Python](https://www.datacamp.com/community/tutorials/python-string-tutorial)
-- [10 tips for å lære å kode i Python](https://medium.com/better-programming/10-tips-to-learn-to-code-in-python-bd80ff004eee)
+```Python
+liste = [1, 2, 3, 4, 5]
+print(len(liste))
+
+tuple = (6, 7, 8, 9, 10)
+print(len(tuple))
+```
+**Output**
+```
+5
+5
+```
+
+I tillegg kan "len()" også brukes på mer komplekse objekter som dictionaries, der den gir tilbake antall nøkler i dictionaryet.
+
+Et viktig aspekt ved å finne lengden på en streng er å forstå at det er forskjell på antall tegn og antall bytes i en streng. Dette er spesielt viktig når man jobber med flerspråklige programmer, der forskjellige språk har ulike størrelser på bokstaver og tegn.
+
+## Se Også
+
+- [Python dokumentasjon om `len()` funksjonen](https://docs.python.org/no/3/library/functions.html#len)
+- [En grundig guide om å finne lengden på en streng i Python](https://www.programiz.com/python-programming/methods/built-in/len)

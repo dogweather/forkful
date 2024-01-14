@@ -1,38 +1,58 @@
 ---
-title:    "Java: Großschreibung einer Zeichenfolge"
+title:    "Java: Strings großschreiben"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Verwenden von Großbuchstaben in Strings kann nützlich sein, wenn man möchte, dass bestimmte Wörter oder Sätze hervorgehoben werden. Es kann auch bei der Validierung von Eingaben hilfreich sein, um sicherzustellen, dass sie im richtigen Format sind.
+In der Welt der Programmierung gibt es viele kleine Details, die manchmal übersehen werden können. Eine dieser Kleinigkeiten ist die Großschreibung von Zeichenketten. Warum sollte man sich überhaupt damit beschäftigen, eine Zeichenkette zu groß zu schreiben? Nun, es gibt tatsächlich einige Szenarien, in denen dies notwendig sein könnte. Zum Beispiel, wenn man eine Benutzereingabe erhält und sicherstellen möchte, dass diese immer in Großbuchstaben angezeigt wird. Oder wenn man ein Textverarbeitungsprogramm schreibt und eine Funktion benötigt, um die Überschriften in einem Dokument automatisch groß zu schreiben. Im Folgenden zeigen wir, wie man dies in Java erreichen kann.
 
-# Wie geht man vor
+## Wie man eine Zeichenkette in Java groß schreibt
+
+Um eine Zeichenkette in Java groß zu schreiben, gibt es verschiedene Ansätze. Ein einfacher Weg ist die Verwendung der `toUpperCase()` Methode. Diese Methode wandelt alle Buchstaben in der Zeichenkette in Großbuchstaben um. Hier ist ein Beispiel:
 
 ```Java
-public class Main {
-  public static void main(String[] args) {
-    // Beispiel für die Verwendung von toUpperCase()
-    String name = "Max Mustermann";
-    String capitalizedName = name.toUpperCase();
-    System.out.println(capitalizedName);
-    // Output: MAX MUSTERMANN
-  }
-}
+String text = "hallo welt";
+String capitalizedText = text.toUpperCase();
+System.out.println(capitalizedText);
 ```
 
-In der obigen Code-Schnipsel sehen wir die Verwendung der `toUpperCase()` Methode, die in Java vorhanden ist. Diese Methode konvertiert alle Buchstaben eines Strings in Großbuchstaben. Sie kann auf alle Strings angewendet werden, unabhängig von ihrer Länge.
+Die Ausgabe dieses Codes wird sein:
 
-Es gibt auch die `toLowerCase()` Methode, die das Gegenteil bewirkt und alle Buchstaben in Kleinbuchstaben umwandelt. Diese Methode kann ebenfalls für die Formatierung und Validierung von Eingaben verwendet werden.
+```
+HALLO WELT
+```
 
-# Tiefer tauchen
+Ein weiterer Ansatz ist die Verwendung der `StringBuilder` Klasse. Hier muss man die Zeichenkette in einen `StringBuilder` umwandeln, die einzelnen Zeichen durchgehen und jedes Zeichen auf die entsprechende Großbuchstaben-Variante ändern und anschließend den `StringBuilder` zurück in eine Zeichenkette umwandeln. Das sieht folgendermaßen aus:
 
-Es ist wichtig zu beachten, dass die `toUpperCase()` und `toLowerCase()` Methoden die ursprünglichen Strings nicht ändern, sondern lediglich eine neue, formatierte Version zurückgeben. Daher ist es wichtig, die Rückgabe einer Variablen zuzuweisen, wenn man die formatierten Strings in Zukunft verwenden möchte.
+```Java
+String text = "hallo welt";
+StringBuilder sb = new StringBuilder(text);
+for (int i = 0; i < sb.length(); i++) {
+  char c = sb.charAt(i);
+  if (Character.isLowerCase(c)) {
+    sb.setCharAt(i, Character.toUpperCase(c));
+  }
+}
+String capitalizedText = sb.toString();
+System.out.println(capitalizedText);
+```
 
-Man kann die `toUpperCase()` und `toLowerCase()` Methoden auch mit Bedingungen, Schleifen und anderen Methoden kombinieren, um komplexe Formatierungen und Validierungen von Strings durchzuführen.
+Die Ausgabe dieses Codes wird ebenfalls sein:
 
-# Siehe auch
-- Java String Klasse Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- Java String Methoden: https://www.w3schools.com/java/java_ref_string.asp
+```
+HALLO WELT
+```
+
+## Tiefere Einblicke
+
+Es gibt noch viele andere Möglichkeiten, eine Zeichenkette in Java groß zu schreiben. Man könnte auch eine Regex-Methode verwenden oder eine benutzerdefinierte Implementierung schreiben. Für die meisten Fälle ist jedoch die Verwendung der `toUpperCase()` Methode oder der `StringBuilder` Klasse ausreichend.
+
+## Siehe auch
+
+- [Dokumentation der String-Klasse in Java (auf Deutsch)](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [Tutorial für die Verwendung von Regex in Java (auf Deutsch)](https://openbook.rheinwerk-verlag.de/javainsel9/javainsel_07_007.htm#mjce790f8bbf37c6ae37838a98431f4341)
+- [Einführung in StringBuilder in Java (auf Deutsch)](https://www.java-forum.org/thema/java-tutorial-java-strings-stringbuilder-und-stringbuffer.187391/)

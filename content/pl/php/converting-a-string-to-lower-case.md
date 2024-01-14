@@ -1,37 +1,31 @@
 ---
 title:    "PHP: Konwertowanie ciągu znaków na małe litery"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Istnieje wiele sytuacji, w których konwersja ciągu znaków na małe litery jest niezbędna w programowaniu PHP. Może to być konieczne, aby upewnić się, że dane wejściowe są w odpowiednim formacie, umożliwić porównywanie ciągów bezwzględnych lub po prostu dla celów formatowania tekstu.
+Często zdarza się, że podczas pisania kodu w PHP potrzebujemy zmienić wszystkie litery w tekście na małe. Może to być przydatne przy walidacji danych użytkownika lub w przypadku konieczności porównania tekstu bez uwzględniania wielkości liter. W tym wpisie dowiesz się, jak łatwo dokonać takiej operacji w PHP.
 
 ## Jak to zrobić?
 
-Aby przekonwertować ciąg znaków na małe litery w PHP, można użyć funkcji `strtolower()`. Przyjmuje ona jeden argument - ciąg znaków, który chcemy przekonwertować. Poniżej znajduje się przykładowy kod, który ilustruje to działanie:
-
 ```PHP
-$tekst = "TO JEST PRZYKŁADOWY TEKST";
-echo strtolower($tekst);
+$string = "WIELKIE LITERY";
+echo strtolower($string);
 ```
 
-Po uruchomieniu powyższego kodu otrzymamy następujący wynik:
+Wynik: `wielkie litery`
 
-`to jest przykładowy tekst`
+W powyższym przykładzie wykorzystujemy funkcję `strtolower()` wbudowaną w PHP, która automatycznie konwertuje wszystkie litery w podanym tekście na małe. Dodatkowo, możemy również wykorzystać funkcję `mb_strtolower()`, która pozwala na konwersję znaków w wielu językach.
 
-Jak widać, funkcja `strtolower()` zamieniła wszystkie litery na małe. W przypadku, gdy chcemy przekonwertować ciąg znaków na wielkie litery, możemy użyć funkcji `strtoupper()`.
+## Głębszy zanurzenie
 
-## Dogłębna analiza
+Podczas wykorzystywania funkcji `strtolower()` warto mieć na uwadze różnice między wielkościami liter w różnych językach. Na przykład, w języku angielskim `i` po zamianie na małe litery staje się `I`, jednak w języku polskim `I` po zamianie na małe litery staje się `i`. W przypadku, gdy kodujemy dla wielojęzycznej strony, warto wykorzystywać funkcję `mb_strtolower()` i określać w niej odpowiednie ustawienia dla konkretnych języków.
 
-Warto zauważyć, że konwersja ciągu znaków na małe litery jest zależna od ustawień regionalnych serwera. Oznacza to, że w innych językach niż angielski, wynik konwersji może być inny. Dla przykładu, w języku tureckim litera "I" jest konwertowana na "ı", a nie na "i", jak ma to miejsce w języku angielskim.
+## Zobacz także
 
-Ponadto, istnieje również funkcja `mb_strtolower()`, która jest dostępna w bibliotece `mbstring` i działa poprawnie dla wielu języków. Jest to szczególnie przydatne w przypadku pracy z tekstem zawierającym znaki spoza zakresu ASCII.
-
-## Zobacz też
-
-- Oficjalna dokumentacja PHP w języku polskim: [https://www.php.net/manual/pl/](https://www.php.net/manual/pl/)
-- Porównanie wydajności funkcji `strtolower()` i `mb_strtolower()`: [https://stackoverflow.com/questions/12422467/speed-of-mb-string-vs-non-mb-string-functions-in-php](https://stackoverflow.com/questions/12422467/speed-of-mb-string-vs-non-mb-string-functions-in-php)
-- Metoda manipulacji tekstami w PHP: [https://www.w3schools.com/php/php_string.asp](https://www.w3schools.com/php/php_string.asp)
+- [Oficjalna dokumentacja PHP o funkcji strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [Podstawy kodowania w PHP - wideo tutorial](https://www.youtube.com/watch?v=bUCaVBO-2ms)

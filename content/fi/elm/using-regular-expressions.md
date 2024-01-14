@@ -1,42 +1,49 @@
 ---
 title:    "Elm: Säännöllisten lausekkeiden käyttö"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja ohjelmoinnissa, sillä niiden avulla voidaan tarkistaa ja manipuloida tekstejä. Ne ovat erityisen hyödyllisiä sellaisissa tehtävissä, kuten tietojen validoinnissa ja hakemisessa suurista tekstimassoista.
+Regular expressionit ovat tärkeä osa monen ohjelmointikielen työkalupakkia, myös Elm-kielellä. Niitä käytetään etsimään, korvaamaan ja muokkaamaan tekstiä helposti ja tehokkaasti.
 
-## Näin käytät säännöllisiä lausekkeita Elm-ohjelmoinnissa
+## Kuinka käytät regular expressioneja Elm-ohjelmoinnissa
 
-Säännöllisiä lausekkeita käytetään Elm-kielen Regex-paketin avulla. Ennen kuin voit käyttää Regex-pakettia, sinun tulee asentaa se käyttämällä `elm install elm-community/regex` komentoa.
+Regular expressioneja käytetään erilaisissa ohjelmointitehtävissä, kuten tekstin validoinnissa, hakemisessa ja korvaamisessa. Näitä tehtäviä varten Elm tarjoaa RegularExpressions-moduulin, jonka voit tuoda käyttöösi yläpuolella olevalla import-lauseella.
 
-Seuraavassa esimerkissä käytetään säännöllistä lauseketta tarkistamaan, onko annettu sähköpostiosoite kelvollinen. Säännöllinen lauseke tarkistaa, että osoite sisältää @-merkin ja vähintään yhden pisteen, jotta se olisi kelvollinen.
-
-```elm
-import Regex exposing (find, regex, match)
-
-emailRegex = regex "[A-Za-z0-9._%+-]@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-
-validEmail = match emailRegex "example@email.com"
-
-invalidEmail = match emailRegex "example@"
-
--- validEmail = Just True
--- invalidEmail = Nothing
+```Elm
+import RegularExpressions exposing (..)
 ```
 
-Yllä olevassa koodissa ensin tuodaan Regex-paketin tarvittavat toiminnot. Sitten luodaan säännöllinen lauseke regex-funktiolla ja tarkistetaan sähköpostiosoitteet match-funktiolla. Toisessa tapauksessa tuloksena on `Just True`, mutta kolmannessa tapauksessa `Nothing`, sillä sähköpostiosoite on kelvoton.
+Seuraavaksi voit käyttää moduulin tarjoamia funktioita luodaksesi regular expressionin, etsiäksesi sitä tekstistä ja käsitelläksesi tuloksen. Alla on esimerkki tekstin validoinnista, jossa tarkistetaan, onko syötetty sähköpostiosoite oikeassa muodossa.
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+```Elm
+validoiSähköposti : String -> Bool
+validoiSähköposti sähköposti =
+    let
+        regex = RegExp.fromString "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$"
+    in
+        case regex of
+            Ok r -> 
+                case RegExp.find r sähköposti of
+                    Just _ -> True
+                    Nothing -> False
+            Err _ -> False
+```
 
-Säännölliset lausekkeet koostuvat erilaisista merkeistä ja symboleista, joilla voidaan määrittää tietyt tekstikäytänteet. Esimerkiksi hakasulkeet `[]` voi käyttää määrittämään sallitut merkit, kuten `[a-z]` tarkoittaa mitä tahansa pientä kirjainta aasta z:iin. Asteriski `*` taas tarkoittaa, että edellinen merkki voi esiintyä nolla tai useamman kerran.
+Yllä oleva koodi käyttää RegularExpressions-moduulin `find`-funktiota etsimään sähköpostiosoitetta vastaavan regular expressionin. Jos osoite löytyy, funktio palauttaa `Just`-arvon, muussa tapauksessa `Nothing`-arvon.
 
-On myös hyödyllistä huomata, että Regex-paketin `match`-funktio palauttaa joko `Just` tai `Nothing` arvon. `Just` arvo tarkoittaa, että säännöllinen lauseke vastaa annettua tekstiä ja `Nothing` arvo tarkoittaa, että säännöllinen lauseke ei vastaa tekstiä.
+## Syventävä sukellus
+
+Vaikka regular expressioneja voidaan käyttää moniin eri tehtäviin, niiden käyttö voi olla aluksi haastavaa ja hämmentävää. Onkin tärkeää ymmärtää perusteet, kuten mitä merkityksiä eri erikoismerkit ja metakarakterit kuten `^`, `$` ja `+` tarkoittavat.
+
+On myös hyvä huomata, että regular expressioneilla on erilaisia syntaksimuotoja eri ohjelmointikielissä. Siksi kannattaa tutustua tarkasti Elm-kielellä käytettyyn syntaksiin.
 
 ## Katso myös
 
-- [Regex-paketin dokumentaatio](https://package.elm-lang.org/packages/elm-community/regex/latest/)
-- [Säännölliset lausekkeet Wikipediassa](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke)
+- [Elm RegularExpressions-moduuli](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Regular expressionien opas](https://www.regular-expressions.info/elm.html)
+- [Elm-ohjelmointikielen virallinen sivusto](https://elm-lang.org/)

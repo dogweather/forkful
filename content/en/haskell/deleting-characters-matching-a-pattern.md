@@ -1,75 +1,45 @@
 ---
 title:    "Haskell recipe: Deleting characters matching a pattern"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever found yourself in a situation where you have a string and you want to delete all characters that match a certain pattern? Perhaps you want to filter out all vowels from a word, remove all punctuation from a sentence, or delete certain digits from a number. Whatever your reason may be, learning how to delete characters matching a pattern in Haskell can greatly improve your string manipulation skills.
+As a Haskell programmer, you may come across a situation where you need to delete characters from a string that match a certain pattern. This could be for data cleaning, text processing, or any other task where unwanted characters need to be removed. In this blog post, we will explore how to accomplish this task using Haskell.
 
-## How To 
+## How To
 
-To begin, let's define a simple string that we will use for our examples:
-
-```Haskell
-myString = "Hello, Haskell!"
-```
-
-### Deleting all vowels
-
-To delete all vowels from our string, we can use the `filter` function along with the `notElem` function to check if a character is not in a given list. In this case, our list will contain all vowels. Here's the code:
+To delete characters from a string, we will use the `filter` function in Haskell. This function takes in a predicate and a list and returns a new list with only elements that satisfy the predicate. In our case, the predicate will be a function that checks if a character matches our pattern. Let's see how this works in code:
 
 ```Haskell
-filteredString = filter (`notElem` "aeiouAEIOU") myString 
+inputString :: String
+inputString = "abc123def456"
+
+deleteChar :: Char -> Bool
+deleteChar c = c `elem` "1234567890"
+
+outputString :: String
+outputString = filter (not . deleteChar) inputString
+
+main :: IO ()
+main = putStrLn outputString
+
+-- Output: abcdef
 ```
 
-The backticks around `notElem` indicate that it is an infix function, which allows us to use it in a more readable way. The output will be:
+In the above code, we have a string with some numbers and letters. Our `deleteChar` function checks if the character is a number and returns `True` if it is. We then use the `not` function to invert the result and pass it as the predicate to `filter`. This will remove all the numbers from the input string and give us the desired output.
 
-```Haskell 
-filteredString = "Hll, Hskll!" 
-```
+Note that the `deleteChar` function can be modified to match any pattern that you want to delete from the string. You can use regular expressions or any other method to create the desired predicate.
 
-### Removing all punctuation 
+## Deep Dive
 
-To remove all punctuation from our string, we can use the `filter` function along with the `isPunctuation` function from the `Data.Char` module. This function will check if a character is a punctuation mark. Here's the code:
+The beauty of Haskell is that it provides us with powerful higher-order functions like `filter` to make such tasks easier. In the code example, we used function composition (using the `.` operator) to pass the result of `not` to `filter`. This allows us to write concise and readable code. Additionally, Haskell also has efficient data structures for working with strings, making the deletion of characters, even in large strings, a fast and efficient process.
 
-```Haskell 
-import Data.Char (isPunctuation)
+## See Also
 
-filteredString = filter (not . isPunctuation) myString 
-```
-
-The `not` function is necessary because `filter` expects a predicate that returns a boolean value. The output will be:
-
-```Haskell 
-filteredString = "Hello Haskell" 
-```
-
-### Deleting certain digits 
-
-To delete certain digits from a number, we can convert it to a string and then use the `filter` function along with the `notElem` function to check if a character is not in a given list. Here's the code:
-
-```Haskell 
-myNumber = 123456789
-filteredNumber = filter (`notElem` "1357") (show myNumber) 
-```
-
-The `show` function converts our number to a string, and then we use the same technique as before to filter out certain characters. The output will be:
-
-```Haskell 
-filteredNumber = "2468" 
-```
-
-## Deep Dive 
-
-In Haskell, strings are simply lists of characters, which allows us to use list manipulation functions like `filter` on them. The `filter` function takes two arguments: a predicate function and a list. It then returns a new list containing all the elements of the original list that satisfy the predicate. In our examples, we used `notElem` to check if a character is not in a given list, but we could also use other predicate functions like `isLower`, `isUpper`, or `isDigit` to filter our characters. 
-
-## See Also 
-
-For more information on string manipulation in Haskell, check out the following resources:
-
-- [Haskell Strings Tutorial](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Haskell Standard Library](https://www.haskell.org/onlinereport/standard-prelude.html#g:18)
-- [Hackage documentation on the `Data.Char` module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Haskell documentation for `filter`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:filter)
+- [Tutorial on higher-order functions in Haskell](https://www.haskell.org/tutorial/functions.html)
+- [Article on efficient string manipulation in Haskell](https://jameshfisher.com/2014/11/07/efficient-string-manipulation-in-haskell/)

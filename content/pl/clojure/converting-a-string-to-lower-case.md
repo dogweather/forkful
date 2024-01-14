@@ -1,46 +1,37 @@
 ---
-title:    "Clojure: Konwertowanie ciągu znaków na małe litery"
+title:    "Clojure: Konwersja ciągu znaków na małe litery"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek napisałeś kod, który potrzebuje przekonwertować tekst na małe litery? Może jesteś częścią zespołu, który wprowadza zmiany do już istniejącego kodu i musisz dostosować nazwy zmiennych lub funkcji do ustalonych zasad? W obu przypadkach konwersja stringa na małe litery może okazać się niezbędna. W tym artykule dowiesz się, jak to zrobić w języku Clojure.
+Konwersja tekstu na małe litery może być przydatna w różnych sytuacjach programistycznych, takich jak porównywanie tekstu bez uwzględniania wielkości liter lub sprawdzanie poprawności danych wejściowych.
 
 ## Jak to zrobić
 
-Proces konwertowania stringa na małe litery jest nie tylko prosty, ale również bardzo przydatny. W Clojure możesz wykorzystać funkcję `lower-case` do wykonania tej operacji. Przyjrzyjmy się przykładowemu kodowi:
+Konwersję tekstu na małe litery w języku Clojure można wykonać za pomocą funkcji "lower-case". Przykład użycia wygląda następująco:
 
-```
-Clojure (lower-case "HELLO WORLD")
-```
-
-Powyższy kod zwróci nam wynik: 
-```
-hello world
+```Clojure
+(lower-case "TEKST NA MAŁE LITERY") ; zwróci "tekst na małe litery"
 ```
 
-Możemy również wykorzystać tę funkcję w połączeniu z innymi funkcjami, na przykład `string/split` oraz `string/join`, aby przetworzyć duży tekst i zachować spójność wielkości liter.
+Można również użyć tej funkcji w połączeniu z innymi funkcjami, aby uzyskać bardziej skomplikowany wynik. Na przykład, jeśli chcemy zmienić tylko pierwszą literę tekstu na małą, można wykorzystać funkcję "capitalize" w połączeniu z "lower-case" w ten sposób:
 
-```
-Clojure (-> "JAKIŚ TEKST Z DUŻYCH LITER" (lower-case) (string/split #" ") (string/join "-"))
-```
-
-Output: 
-```
-jakis-tekst-z-duzych-liter
+```Clojure
+(capitalize (lower-case "TEKST NA MAŁE LITERY")) ; zwróci "Tekst na małe litery"
 ```
 
-## Głębszy wgląd
+## Głębsze wyjaśnienie
 
-Konwertowanie stringa na małe litery może wydawać się prostym zadaniem, ale warto zrozumieć, jak dokładnie działa funkcja `lower-case`. W Clojure jest ona implementowana w oparciu o standardową funkcję dostępną w Java, `toLowerCase()`. Funkcja ta zamienia wszystkie znaki alfabetyczne na ich odpowiedniki z małymi literami, a pozostawia pozostałe znaki bez zmian.
+W języku Clojure wszystkie napisy są przechowywane jako ciągi znaków, gdzie każdy znak jest jednym elementem ciągu. W celu konwersji tekstu na małe litery, funkcja "lower-case" iteruje przez wszystkie znaki i zmienia je na ich odpowiedniki w postaci małych liter.
 
-Inną przydatną funkcją jest `string/lower-case`, która pozwala na dokładniejszą kontrolę konwersji. Dostępne są w niej opcje takie jak ignorowanie wielkości liter przy porównywaniu stringów oraz spolszczenie znaków spełniających polski standard tekstu.
+W przypadku polskiej transliteracji, konwersja na małe litery może nie być tak prosta, ponieważ wiele liter ma różne odpowiedniki w wersji małych i dużych liter (np. "ś" i "Ś"). W takim przypadku, może być potrzebna dodatkowa logika do sprawdzenia każdego znaku i dopasowania go do odpowiedniego odpowiednika.
 
-## Zobacz także
+## Zobacz również
 
-- Dla dalszej nauki języka Clojure zapoznaj się z dokumentacją oficjalną: https://clojure.org/documentation
-- Aby dowiedzieć się więcej o funkcjach dostępnych w Clojure, zajrzyj na stronę ClojureDocs: https://clojuredocs.org/
-- Zapoznaj się również z przydatnymi narzędziami do pracy z Clojure, takimi jak Leiningen: https://leiningen.org/
+- Dokumentacja funkcji "lower-case" w języku Clojure: https://clojuredocs.org/clojure.core/lower-case
+- Wprowadzenie do języka Clojure: https://www.clojure.org/guides/learn/syntax
+- Przykładowe zadania związane z konwersją tekstu na małe litery w języku Clojure: https://www.codewars.com/kata/search/clojure?q=string+to+lower+case

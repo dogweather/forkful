@@ -1,73 +1,60 @@
 ---
 title:    "C: Wycinanie podciągów"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Wydobycie podciągów lub ustalenie fragmentów tekstu z danego ciągu znaków może być niezwykle przydatne, zwłaszcza podczas przetwarzania dużej ilości danych. W programowaniu, często potrzebujemy dostępu do konkretnych fragmentów tekstu lub musimy wyodrębnić pewne informacje z dłuższego ciągu znaków. W tym blogowym wpisie dowiesz się, jak wykorzystać funkcje języka C do wydobycia podciągów.
+Dlaczego warto nauczyć się wyciągać podciągi w programowaniu? Przede wszystkim pozwala to na efektywne wykorzystanie danych i znacznie ułatwia operacje na napisach. W tym blogu dowiesz się, jak to zrobić w języku C!
 
-## Jak to zrobić
+# Jak to zrobić
 
-Aby wyodrębnić podciąg z danego ciągu znaków w języku C, musimy użyć funkcji `strncpy()`. Przyjmuje ona trzy parametry - wskaźnik do miejsca, gdzie chcemy zapisać podciąg, wskaźnik do miejsca, z którego chcemy wyodrębnić podciąg oraz liczbę znaków, które chcemy skopiować.
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str1[] = "Blogowy wpis o wydobyciu podciągów";
-    char str2[20];
-
-    // skopiowanie podciągu od 14 znaku do końca
-    strncpy(str2, &str1[14], 20);
-
-    printf("Wyodrębiony podciąg: %s", str2);
-
-    return 0;
-}
-```
-
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
-
-```
-Wyodrębiony podciąg: o wydobyciu podciągów
-```
-
-## Deep Dive
-
-W powyższym przykładzie wykorzystaliśmy funkcję `strncpy()`, jednak istnieje również wiele innych funkcji, które umożliwiają nam wydobycie podciągów lub fragmentów tekstu w języku C. Przykładowo, funkcja `strtok()` pozwala na rozbicie ciągu znaków na mniejsze podciągi na podstawie określonego separatora.
+Pierwszym krokiem jest użycie funkcji `substring()` w celu wydobycia wybranej części napisu. Przykładowo, jeśli chcemy wyodrębnić pierwsze trzy litery z napisu "Hej wszystkim!", używamy kodu:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "24|67|90";
-
-    // podzielenie ciągu na trzy podciągi
-    char *token = strtok(str, "|");
-
-    while (token != NULL) {
-        printf("%s\n", token);
-        token = strtok(NULL, "|");
-    }
-
-    return 0;
-}
+char* str = "Hej wszystkim!";
+char* sub = substring(str, 0, 3);
+printf("%s", sub);
 ```
 
-Powyższy kod wyświetli:
+Wynikiem będzie napis "Hej". Możemy także wyodrębnić podciąg od wybranego indeksu do końca napisu, wystarczy w drugim parametrze `substring()` wpisać wartość `-1`, np:
 
+```C
+char* str = "Hej wszystkim!";
+char* sub = substring(str, 4, -1);
+printf("%s", sub);
 ```
-24
-67
-90
+
+W takim przypadku wynikiem będzie "wszystkim!". Należy jednak pamiętać, że należy wziąć pod uwagę liczbę indeksu oraz znaki nowej linii i zakończenia napisu `\0`.
+
+
+# Głębsze zanurzenie
+
+Mimo że wyciąganie podciągów jest stosunkowo proste, warto poznać kilka istotnych elementów związanych z tą operacją. W przypadku gdy podciąg ma być wydobyty od pierwszego indeksu, nie musimy określać parametru `start` w funkcji `substring()`, możemy po prostu zastosować następujący zapis:
+
+```C
+char* str = "Hej wszystkim!";
+char* sub = substring(str, 0, -1);
+printf("%s", sub);
 ```
 
-## Zobacz także
+Używając funkcji `substring()` możemy także przypisać wydobyty podciąg bezpośrednio do zmiennych typu `char*`, np:
 
-- [Dokumentacja języka C na temat funkcji do manipulacji ciągami znaków](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Przykładowe zadania na wydobycie podciągów w języku C](https://www.codewars.com/kata/55efecb8680f4769e5000029)
+```C
+char* str = "Hej wszystkim!";
+char* sub1, sub2, sub3;
+substring(str, 0, 3, &sub1);
+substring(str, 4, -1, &sub2);
+substring(str, 8, -1, &sub3);
+```
+
+W ten sposób będziemy mieć dostęp do poszczególnych podciągów poprzez zmienne `sub1`, `sub2` i `sub3`.
+
+# Zobacz także
+
+- Dokumentacja języka C: https://en.cppreference.com/w/c
+- Tutoriale związane z programowaniem w C: https://www.tutorialspoint.com/cprogramming/index.htm 
+- Rozwiązania zadań z podciągów w języku C: https://www.geeksforgeeks.org/substring-subset-strings-c/

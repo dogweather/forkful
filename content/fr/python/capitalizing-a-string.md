@@ -1,67 +1,46 @@
 ---
-title:    "Python: Majuscule d'une chaîne de caractères."
+title:    "Python: Capitaliser une chaîne de caractères"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est important de savoir comment capitaliser une chaîne en Python car cela peut être utile dans plusieurs situations, notamment lorsque vous travaillez avec des données textuelles et que vous souhaitez mettre en évidence certaines parties du texte. Cela peut également rendre vos résultats plus lisibles et faciles à comprendre.
+La capitalisation d'une chaîne de caractères est une opération courante en programmation qui consiste à mettre en majuscule la première lettre de chaque mot dans une chaîne. Cette pratique est souvent utilisée pour rendre le texte plus lisible ou pour respecter les conventions de nommage dans un code.
 
 ## Comment faire
 
-Pour capitaliser une chaîne en Python, vous pouvez utiliser la méthode built-in `capitalize()` comme ceci :
+Il existe plusieurs façons de capitaliser une chaîne en Python. Voici quelques exemples en utilisant différentes méthodes :
 
 ```Python
-my_string = "python est un langage très puissant"
-print(my_string.capitalize())
+# Utilisation de la méthode capitalize()
+phrase = "bonjour tout le monde"
+print(phrase.capitalize()) 
+# Output: Bonjour tout le monde
+
+# Utilisation de la méthode title()
+phrase = "bonjour tout le monde"
+print(phrase.title()) 
+# Output: Bonjour Tout Le Monde
+
+# Utilisation de la méthode upper()
+phrase = "bonjour tout le monde"
+print(phrase.upper()) 
+# Output: BONJOUR TOUT LE MONDE
 ```
 
-La sortie de ce code sera :
-
-```
-Python est un langage très puissant
-```
-
-Vous pouvez également utiliser la méthode `title()` pour capitaliser chaque mot dans une chaîne :
-
-```Python
-my_string = "python est un langage très puissant"
-print(my_string.title())
-```
-
-La sortie de ce code sera :
-
-```
-Python Est Un Langage Très Puissant
-```
-
-Si vous voulez capitaliser seulement la première lettre de chaque mot, vous pouvez utiliser la méthode `split()` pour diviser la chaîne en mots individuels, puis capitaliser la première lettre de chaque mot avec `capitalize()`, et ensuite joindre les mots ensemble avec la méthode `join()` :
-
-```Python
-my_string = "python est un langage très puissant"
-my_list = my_string.split()
-my_new_string = " ".join([word.capitalize() for word in my_list])
-print(my_new_string)
-```
-
-La sortie de ce code sera :
-
-```
-Python Est Un Langage Très Puissant
-```
+Il est important de noter que ces méthodes ne modifient pas la chaîne originale mais renvoient une copie de la chaîne capitalisée. Vous pouvez également utiliser une boucle et la méthode de slicing pour capitaliser une chaîne caractère par caractère. 
 
 ## Plongée en profondeur
 
-Bien qu'il soit assez simple de capitaliser une chaîne en utilisant les méthodes `capitalize()` ou `title()`, il est important de noter que ces méthodes ne fonctionnent que pour les chaînes contenant des lettres en minuscules. Si votre chaîne contient des lettres en majuscules, ces méthodes ne modifieront pas ces lettres.
+La méthode capitalize() ne modifie que la première lettre de la chaîne, tandis que la méthode title() met en majuscule la première lettre de chaque mot dans la chaîne. La méthode upper() met quant à elle en majuscule toutes les lettres de la chaîne, ce qui peut être utile si vous souhaitez capitaliser une chaîne entière. 
 
-De plus, si votre chaîne contient des caractères spéciaux ou des chiffres, ces méthodes ne les modifieront pas non plus. Cela peut être un problème si vous voulez ne capitaliser que les lettres dans une chaîne et ignorer tous les autres caractères.
-
-Vous pouvez également utiliser la méthode `swapcase()` pour inverser les lettres majuscules en minuscules et vice versa dans une chaîne. Cela peut être utile si vous souhaitez transformer entièrement une chaîne en majuscules ou en minuscules.
+Il est important de noter que ces méthodes ne fonctionnent que pour les lettres de l'alphabet. Les caractères spéciaux, les chiffres ou les espaces ne seront pas modifiés. De plus, si une lettre est déjà en majuscule, elle ne sera pas modifiée par ces méthodes.
 
 ## Voir aussi
 
 - [Documentation officielle Python pour la méthode capitalize()](https://docs.python.org/fr/3/library/stdtypes.html#str.capitalize)
 - [Documentation officielle Python pour la méthode title()](https://docs.python.org/fr/3/library/stdtypes.html#str.title)
-- [Documentation officielle Python pour la méthode swapcase()](https://docs.python.org/fr/3/library/stdtypes.html#str.swapcase)
+- [Documentation officielle Python pour la méthode upper()](https://docs.python.org/fr/3/library/stdtypes.html#str.upper)

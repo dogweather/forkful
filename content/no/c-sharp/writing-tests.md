@@ -1,40 +1,57 @@
 ---
-title:    "C#: Å skrive tester"
+title:    "C#: Skriver tester"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang følt deg frustrert når du har funnet en bug i koden din? Eller kanskje flere bugs som dukker opp etter en endring? Dette er hvorfor det er så viktig å skrive tester for koden din. Ved å skrive tester kan du effektivt finne og fikse bugs før de når produksjon, noe som sparer deg for både tid og hodebry.
+Å skrive tester er en viktig del av god programmeringspraksis. Det hjelper utviklere med å sikre at koden deres fungerer som den skal og oppdage eventuelle feil før de påvirker produksjonen. Å skrive tester bidrar også til å forbedre kvaliteten på koden og gjøre det lettere å vedlikeholde den i fremtiden.
 
 ## Hvordan
 
-For å skrive tester i C# trenger du en testrammeverk som NUnit eller xUnit. Disse verktøyene gjør det enkelt å kjøre testene dine og rapportere resultater. La oss se på et eksempel på hvordan du kan skrive en enkel test i NUnit:
-
 ```C#
-[Test]
-public void TestAddition()
-{
-    int result = Calculator.Add(2, 3);
+using NUnit.Framework;
 
-    Assert.AreEqual(5, result);
+[TestFixture]
+public class CalculatorTests
+{
+    [Test]
+    public void Add_WhenIntegers_ReturnsSum()
+    {
+        // Arrange
+        int num1 = 5;
+        int num2 = 3;
+        int expected = 8;
+
+        Calculator calculator = new Calculator();
+
+        // Act
+        int result = calculator.Add(num1, num2);
+
+        // Assert
+        Assert.AreEqual(expected, result);
+    }
+}
+
+public class Calculator
+{
+    public int Add(int num1, int num2)
+    {
+        return num1 + num2;
+    }
 }
 ```
 
-Her ser vi på en test som sjekker om funksjonen "Add" i en kalkulator gir riktig resultat når vi legger sammen 2 og 3. Vi bruker Assertions for å sammenligne verdien vi får fra funksjonen med forventet resultat. Hvis testen feiler, vil NUnit rapportere det og du kan da gå tilbake og gjøre nødvendige endringer.
-
-Selv om dette eksempelet er veldig enkelt, kan tester også være mye mer komplekse ved å sjekke forskjellige scenarier og grensetilfeller. Det viktigste er å tenke på hva slags input og output du forventer fra funksjonen din, og skrive tester som sjekker det.
+I dette eksempelet bruker vi NUnit som testrammeverk for å skrive en enkel test som sjekker om summen av to tall blir korrekt beregnet. Vi starter med å opprette en testklasse og dekorere den med [TestFixture] attributtet. Deretter oppretter vi en testmetode som også er dekorert med [Test] attributtet. Inne i testmetoden bruker vi Assert.AreEqual() for å sammenligne den forventede verdien med resultatet fra å kalle metoden vi tester. Til slutt kjører vi testen ved å opprette en instans av Calculator-klassen og kalle Add() metoden.
 
 ## Dypdykk
 
-Det er flere typer tester du kan skrive i C#, for eksempel enhetstester, integrasjonstester og akseptansetester. Enhets- og integrasjonstester er vanligvis skrevet av utviklere, mens akseptansetester er skrevet av for eksempel kvalitetssikringsavdelingen. Noen fordeler med å skrive tester i C# er at de kan kjøres automatisk og fange bugs før de når produksjon, at de kan brukes som dokumentasjon for å forstå en funksjon, og at de er en god måte å sikre kvaliteten på koden din.
+Å skrive gode tester handler om mer enn bare å sjekke om koden fungerer. Det handler også om å designe testene på en måte som gir god dekning av koden og oppdager eventuelle feil og mangler. Det er viktig å tenke på ulike scenarier og kanttilfeller når du skriver tester, og å ha et godt forståelse av koden du tester. Ved å følge beste praksis og kontinuerlig forbedre testene dine, vil du kunne oppnå en mer pålitelig og robust kodebase.
 
-## Se også
-
-- [NUnit](https://nunit.org/)
-- [xUnit](https://xunit.net/)
-- [En guide til å skrive gode tester i C# (engelsk)](https://stackify.com/unit-testing-basics-best-practices/)
-- [En grundig introduksjon til enhetstesting i C# (engelsk)](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [En video om å skrive enhetstester i C# (engelsk)](https://www.youtube.com/watch?v=ub3PcUlz1Cg)
+## Se Også
+- [NUnit Testing Framework](https://nunit.org)
+- [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
+- [Writing Reliable and Readable Tests in C#](https://blog.gurock.com/writing-reliable-readable-tests-csharp/)

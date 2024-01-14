@@ -1,73 +1,63 @@
 ---
-title:    "Gleam: Utskrift av feilsøkingsoutput"
+title:    "Gleam: Utskrift av feilrettingsoutput"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å skrive ut debug-utdata i Gleam kan være veldig nyttig når du prøver å finne feil i koden din. Det lar deg se verdier og ressurser i sanntid, noe som gjør feilsøking enklere og raskere.
+## Hvorfor
 
-# Hvordan 
-For å skrive ut debug-utdata i Gleam, bruker du `gleam.io.debug` funksjonen. Denne funksjonen tar inn en verdi eller ressurs som argument, og skriver ut en forståelig representasjon av den. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Å printe ut debug-utdata er et nyttig verktøy for å identifisere og feilsøke problemer i koden din. Dette kan spare deg for mye tid og frustrasjon i utviklingsprosessen.
 
-```Gleam
-fn main() {
-  let number = 42
-  let name = "Gleam"
+## Hvordan
 
-  // Skriver ut verdien av `number`
-  gleam.io.debug(number)
-
-  // Skriver ut verdien av `name`
-  gleam.io.debug(name)
-}
-
-// Output:
-// 42
-// "Gleam"
-```
-
-Du kan også skrive ut flere verdier ved å separate dem med komma, som vist i eksemplet nedenfor:
+For å printe ut debug-utdata i Gleam, bruker du funksjonen "io:format". Her er et enkelt eksempel:
 
 ```Gleam
-fn main() {
-  let first_name = "John"
-  let last_name = "Doe"
-
-  // Skriver ut både `first_name` og `last_name`
-  gleam.io.debug(first_name, last_name)
-}
-
-// Output:
-// "John", "Doe"
+let min_variabel = "Gleam"
+io:format("Variabelen min er: {}", [min_variabel])
 ```
 
-Dette kan være svært nyttig når du jobber med funksjoner som tar inn flere argumenter, og du vil vite hva som passerer gjennom dem.
+Dette vil gi følgende utdata:
 
-# Deep Dive
-Når du bruker debug-utdata, blir verdien eller ressursen konvertert til en streng som blir skrevet ut. Dette kan føre til at noen komplekse strukturer, som lister og tupler, ikke blir skrevet ut på en forståelig måte. For å løse dette kan du bruke `gleam.io.show` funksjonen. Denne funksjonen tar inn en vilkårlig verdi og returnerer en debug-streng som kan skrives ut med `gleam.io.debug` funksjonen. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+```
+Variabelen min er: Gleam
+```
+
+Du kan også bruke "io:format" for å printe ut flere variabler og tekst ved å sette en kodesekvens for hver variabel i den andre argumentlisten, for eksempel:
 
 ```Gleam
-import gleam.list
-
-fn main() {
-  let names = ["John", "Jane", "Bob"]
-
-  // Skriver ut verdiene i listen
-  gleam.io.debug(names)
-
-  // Skriver ut en forståelig representasjon av listen ved å bruke `gleam.io.show`
-  gleam.io.debug(gleam.io.show(names))
-}
-
-// Output:
-// [ "John", "Jane", "Bob" ]
-// ["John", "Jane", "Bob"]
+let navn = "Maria"
+let alder = 28
+io:format("Hei, mitt navn er {} og jeg er {} år gammel.", [navn, alder])
 ```
 
-Det er også verdt å merke seg at `gleam.io.debug` og `gleam.io.show` bare fungerer under utvikling og vil ikke bli kompilert i produksjonskode. Derfor trenger du ikke bekymre deg for å fjerne disse kallene før du publiserer koden din.
+Dette vil gi følgende utdata:
 
-# Se også
-- [Gleam dokumentasjon: Debug Output](https://gleam.run/book/tutorials/debug-output.html)
-- [Gleam API reference: gleam.io](https://gleam.run/modules/gleam_io.html)
+```
+Hei, mitt navn er Maria og jeg er 28 år gammel.
+```
+
+## Dypdykk
+
+Du kan også formatere utdataen ved å bruke spesifikke argumenter, for eksempel:
+
+```Gleam
+let nummer = 5
+io:format("Tallet mitt er ~b og det dobbelte er ~b.", [nummer, nummer*2])
+```
+
+Dette vil gi følgende utdata:
+
+```
+Tallet mitt er 5 og det dobbelte er 10.
+```
+
+Du kan også bruke "io_lib:format" for å formatere utdata som en streng, og på den måten få mer kontroll over hvordan utdataen vises. Se dokumentasjonen for mer informasjon om hvordan du kan bruke disse funksjonene for å få ønsket utdata.
+
+## Se også
+
+- [Gleam dokumentasjon: Debugging](https://gleam.run/book/tutorials-and-guides/debugging.html)
+- [Gleam dokumentasjon: IO modulen](https://gleam.run/modules/io.html)
+- [Learn Gleam: Printing Debug Output](https://medium.com/learn-gleam/debugging-101-printing-debug-output-ea5c7f3b7cf9) (på engelsk)

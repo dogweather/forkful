@@ -1,49 +1,51 @@
 ---
 title:    "Clojure: Suchen und Ersetzen von Text"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das ersetzen von Text ist eine häufige Aufgabe beim Programmieren, insbesondere wenn es darum geht, Textdateien oder Strings zu manipulieren. In diesem Blog-Beitrag werden wir erkunden, wie man diese Aufgabe effizient in Clojure bewältigen kann.
+Das Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren. Es ermöglicht uns, bestimmte Zeichenfolgen innerhalb von Texten zu finden und durch andere Zeichenfolgen zu ersetzen. Dies kann sowohl manuell als auch automatisiert durchgeführt werden und ist besonders nützlich, wenn wir größere Mengen an Text bearbeiten müssen.
 
-## Wie geht das
+# Wie geht's
 
-Um Text in Clojure zu suchen und ersetzen, können wir die in der Standardbibliothek integrierten Funktionen verwenden. Zunächst müssen wir auch die `clojure.string` Bibliothek importieren, um auf nützliche Funktionen wie `replace` und `replace-first` zugreifen zu können.
+Um Text in Clojure zu suchen und zu ersetzen, verwenden wir die Funktion `clojure.string/replace`. Diese Funktion nimmt drei Argumente an: den Text, in dem wir suchen wollen; eine reguläre Ausdrucksfolge, die spezifiziert, was wir suchen; und einen Ausdruck, durch den wir ersetzen wollen.
 
-```
-(require '[clojure.string :as str]) ; Importieren der clojure.string Bibliothek
+```Clojure
+(clojure.string/replace "Hallo Welt" #"Welt" "Mars")
+;; => "Hallo Mars"
 
-(str/replace "Hallo Welt" #"Welt" "Clojure") ; Suche und ersetze "Welt" mit "Clojure"
-; => "Hallo Clojure"
-
-(str/replace-first "Hello world" #"world" "Clojure") ; Suche und ersetze nur die erste Übereinstimmung
-; => "Hello Clojure"
+(clojure.string/replace "Ich liebe Erdbeeren" #"liebe" "mag")
+;; => "Ich mag Erdbeeren"
 ```
 
-Wir können auch Platzhalter verwenden, um Teile des zu suchenden Textes dynamisch zu gestalten.
+Wenn die zu ersetzende Zeichenfolge nicht im Text gefunden wird, bleibt der Text unverändert. Man kann auch mehrere Such- und Ersetzungsausdrücke angeben, um mehrere Zeichenfolgen gleichzeitig zu ersetzen.
 
-```
-(def name "Alice")
-
-(str/replace "Hallo ${name}" #"${name}" "Bob") ; Verwende den Platzhalter, um "Alice" durch "Bob" zu ersetzen
-; => "Hallo Bob"
+```Clojure
+(clojure.string/replace "Ich mag Comic Bücher" #"(Comic|Bücher)" "Manga")
+;; => "Ich mag Manga Manga"
 ```
 
-## Tiefer eintauchen
+# Tiefer Einblick
 
-Die `replace` Funktion akzeptiert auch eine Funktion als dritten Parameter, die auf jede Übereinstimmung angewendet wird. Zum Beispiel können wir die Funktion `upcase` verwenden, um alle Übereinstimmungen in Großbuchstaben zu konvertieren.
+In Clojure können wir auch benutzerdefinierte Funktionen erstellen, um Text in komplexeren Mustern zu suchen und zu ersetzen. Dafür verwenden wir die Funktion `re-pattern`, um reguläre Ausdrücke zu definieren, und `replace` für die eigentliche Ersetzung. Hier ist ein Beispiel, in dem wir alle Vokale in einem Text durch einen Unterstrich ersetzen.
 
+```Clojure
+(def text "Dies ist ein Text mit vielen Vokalen.")
+
+(def vowel-pattern (re-pattern #"[aeiou]"))
+
+(replace vowel-pattern text "_")
+;; => "D_s _st _n T_xt m_t v_l_n _ndl_n."
 ```
-(str/replace "hello world" #"hello" (fn [match] (str/upper-case match)))
-; => "HELLO world"
-```
 
-Es gibt auch andere nützliche Funktionen in der `clojure.string` Bibliothek wie `replace-first` und `replace-all`, die es uns ermöglichen, bestimmte Teile des Textes zu suchen und ersetzen.
+Außerdem gibt es in Clojure auch die Funktion `replace-first`, die nur die erste Vorkommen einer Zeichenfolge ersetzt.
 
-## Siehe auch
+# Siehe auch
 
-- Die offizielle Clojure-Dokumentation zu `clojure.string`: https://clojuredocs.org/clojure.string
-- Ein Tutorial zum Suchen und Ersetzen mit regulären Ausdrücken in Clojure: https://www.braveclojure.com/string-escaping/
+- [Clojure String Functions](https://clojure.github.io/clojure/clojure.string-api.html)
+- [RegExr](https://regexr.com/) zur Unterstützung bei der Erstellung von regulären Ausdrücken
+- [Clojure cheatsheet](https://clojure.org/api/cheatsheet) für eine Übersicht über weitere nützliche Funktionen

@@ -1,48 +1,43 @@
 ---
-title:    "PHP: Sattumalukujen luominen"
+title:    "PHP: Sattumanvaraisten numeroiden generoiminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monet ohjelmat ja sovellukset käyttävät satunnaisia numeroita eri tarkoituksiin, kuten salaus, arpajaiset tai pelin toiminta. PHP tarjoaa useita tapoja generoida satunnaisia lukuja, joiden avulla voit lisätä ennustettavuutta ja monipuolisuutta ohjelmointisi. Tämä blogikirjoitus antaa sinulle yleiskatsauksen satunnaislukujen generointiin PHP:ssa ja selittää, miksi se voi olla hyödyllistä.
 
-## How To
-PHP:ssa on sisäänrakennettu funktio nimeltä `rand()`, jolla voit generoida satunnaisen kokonaisluvun annetulta väliltä. Esimerkiksi, jos haluat generoida satunnaisen luvun väliltä 1-10, käytä `rand(1,10)`. Voit myös käyttää `mt_rand()`-funktiota, joka käyttää paremmin jakautuvaa satunnaislukugeneraattoria ja voi tuottaa tarkempia tuloksia. Käyttötapauksesi mukaan valitse sopivin vaihtoehto.
+Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä, kuten pelejä, salausmenetelmiä ja data-analyysiä. Satunnaislukujen avulla voidaan luoda ennakoimattomia ja monipuolisia tuloksia, jotka tekevät ohjelmista mielenkiintoisempia ja turvallisempia.
 
-Jos haluat generoida satunnaisen liukuluvun, voit käyttää `mt_rand()`-funktiota yhdessä `$_GET`-muuttujan kanssa, joka tarjoaa satunnaisen numeron väliltä 0-1. Jos haluat generoida satunnaisen liukuluvun tietyltä väliltä, voit käyttää laskutoimituksia tai `rand()`-funktiota muuttamaan lukujen välit.
+## Kuinka
 
 ```PHP
-// Generoi satunnaisen kokonaisluvun väliltä 1-10
-rand(1,10);
+// Satunnaisen kokonaisluvun generointi
+rand();
 
-// Generoi satunnaisen liukuluvun väliltä 0-1
-mt_rand(0,1);
+// Satunnaisen desimaaliluvun generointi annetulta väliltä
+rand(10, 100);
 
-// Generoi satunnaisen liukuluvun väliltä 0-100
-mt_rand(0,1) * 100;
+// Satunnaisen merkkijonon generointi määritellyn pituuden ja merkkejoukon avulla
+$characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$result = substr(str_shuffle($characters), 0, 8);
+
+echo $result; // tulostaa esimerkiksi "oPGeslJd"
+
+// Satunnaisen boolean-arvon generointi
+(bool)rand(0, 1); // palauttaa joko true tai false
 ```
 
-PHP:ssa on myös mahdollista generoida satunnainen merkkijono `uniqid()`-funktion avulla. Voit antaa halutun pituuden ja lisätä haluamiasi merkkejä alkuun tai loppuun.
+Lopputulos voi vaihdella jokaisella kerralla, kun koodia suoritetaan. Näin saadaan luotua arvaamattomia tuloksia, jotka tekevät ohjelmista mielenkiintoisempia.
 
-```PHP
-// Generoi satunnainen merkkijono
-uniqid();
+## Syvällinen sukellus
 
-// Generoi satunnainen merkkijono, jonka pituus on 10 ja joka alkaa 'ID'
-"ID" . uniqid('', true);
-```
+PHP:ssä on käytössä useita suuria satunnaislukugeneraattoreita, kuten `mt_rand()` ja `random_int()`, jotka ovat tehokkaampia kuin yksinkertainen `rand()`. Näiden generoimia lukuja pidetään myös turvallisempina, sillä niiden luonteesta tullee vaikeammin arvattavia.
 
-## Deep Dive
-PHP käyttää pseudosatunnaislukugeneraattoria, joka tuottaa sarjan lukuja peräkkäin perustuen yhteen alkulukuun. Näitä lukuja ei voida kutsua täysin satunnaisiksi, mutta niillä on hyvä taso ennalta-arvaamattomuutta.
-
-Jos haluat lisätä ennustettavuutta satunnaislukujen generointiin, voit käyttää `srand()`-funktiota asettaaksesi siemennumeron. Tämä mahdollistaa tiettyjen satunnaislukujen toistumisen.
-
-Voit myös käyttää `random_int()`-funktiota, joka on PHP 7:ssä ja uudemmissa versioissa. Tämä funktio käyttää kryptografista satunnaislukugeneraattoria, joka on turvallisempi arkaluonteisiin tietoihin.
+On myös tärkeää huomata, että satunnaislukujen generointiin käytettävät algoritmit ovat matemaattisia ja siten eivät voi olla täysin arvaamattomia. Esimerkiksi `rand()` käyttää standardoimatonta Mersenne Twister -generaattoria, mikä tarkoittaa, että suuri määrä generoituja lukuja voisi potentioida koodin ennustettavuutta.
 
 ## Katso myös
-- [PHP-Random-funktio](https://www.php.net/manual/en/function.rand.php)
-- [PHP-Math-funktio](https://www.php.net/manual/en/ref.math.php)
-- [PHP-Sanitization-funktio](https://www.php.net/manual/en/ref.filter.php)
-- [PHP-7 boa-artikkeli "Random Generators"](https://www.php.net/manual/en/..random-generators.php)
+
+- PHP:n virallinen dokumentaatio satunnaislukujen generoinnista: https://www.php.net/manual/en/function.rand.php
+- Artikkeli parhaista tavoista generoida satunnaislukuja PHP:ssä: https://stackoverflow.com/questions/550023/generate-a-random-number-within-range/54695033#54695033

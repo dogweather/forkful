@@ -1,66 +1,57 @@
 ---
-title:    "Fish Shell: 文字列の大文字化"
+title:    "Fish Shell: 文字列をキャピタライズする"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-おはようございます！今日はFish Shellプログラミングについてお話しします。今日のトピックは「文字列を大文字にする方法」です。さあ、始めましょう！
+## なぜ
 
-## Why（なぜ）
+文字列の大文字化に取り組む理由をご存知ですか？それでは、その理由をお伝えします。
 
-文字列を大文字にすることのメリットは何でしょうか？それは、データの整合性やフォーマットの統一に役立ちます。また、プログラム上で文字列を扱う際に、大文字と小文字を区別する必要がある場合があります。そのような場合、文字列を大文字に変換することで誤った処理を防ぐことができます。
+文字列を大文字化することで、テキストのフォーマットを統一したり、データの検索や整理をしやすくしたりすることができます。また、文字列の大文字と小文字を区別する言語では、小文字を大文字に変換することによって意味が変わる場合もあります。そのため、正しい文法を維持するためにも大文字化は重要な作業です。
 
-## How To（やり方）
+## 使い方
 
-Fish Shellで文字列を大文字にする方法をご紹介します。まずは「```string toupper $str```」のように、```toupper```コマンドを使います。これにより、変数```str```に代入された文字列が大文字に変換されます。
+大文字化にはさまざまな方法がありますが、今回はFish Shellを使用した方法をご紹介します。Fish Shellは使いやすいコマンドラインシェルで、初心者にもおすすめのプログラミング言語です。
 
-```
-Fish Shell
-string toupper "hello"
-```
+まず、大文字化したい文字列を選びます。次に、以下のようにコマンドを入力し、文字列を大文字化します。
 
-実行結果は以下のようになります。
-
-```
-HELLO
+```Fish Shell
+set str "hello"
+toupper $str
 ```
 
-また、文字列を大文字に変換するには、「```set -U str (string toupper $str)```」のように、変数に代入することもできます。
+この例では、`hello`という文字列が`toupper`というコマンドによって大文字化され、`HELLO`という出力が得られます。
 
-```
-set -U str (string toupper "world")
-echo $str
-```
+また、複数の文字列を同時に大文字化することもできます。例えば、以下のようにすることで、`hello`と`world`の両方が大文字化されます。
 
-実行結果は以下のようになります。
-
-```
-WORLD
+```Fish Shell
+set strlist "hello" "world"
+toupper $strlist
 ```
 
-## Deep Dive（詳細について）
+## 深堀り
 
-さらに詳しく文字列を大文字にする方法を探求してみると、```toupper```コマンドにはオプションが存在します。例えば、```-s```オプションを使用すると、大文字に変換する際に言語設定に従った特殊文字も変換することができます。また、```-l```オプションを使用すると、大文字に変換した後に小文字に戻すこともできます。
+Fish Shellでは、`toupper`以外にも文字列を大文字化するためのコマンドが用意されています。その中には、アクセント付き文字なども自動的に大文字化してくれる便利なものもあります。また、フォルダやファイル名などの特殊文字も適切に扱われるため、安心して大文字化を行うことができます。
 
-```
-string toupper -s "こんにちは"
-```
+さらに、Fish Shellでは`toupper`をカスタマイズすることも可能です。例えば、特定の文字を大文字化しないようにしたり、特定の場合のみ大文字化したりすることができます。
 
-実行結果は以下のようになります。
+大文字化に関する詳細な情報や、他のコマンドについては、公式ドキュメントを参照するとよいでしょう。
 
-```
-KONNICHIWA
-```
+## 参考リンク
 
-文字列の大文字変換はFish Shellでとても簡単に行うことができますが、オプションを使うことでさらに便利に利用することができます。ぜひ試してみてくださいね。
+- [Fish Shell 公式ドキュメント](https://fishshell.com/docs/current/)
+- [Fish Shell インストール方法](https://fishshell.com/docs/current/#installation)
+- [文字列の大文字化とは？](https://www.wikiwand.com/ja/%E5%A4%A7%E6%96%87%E5%AD%97)
+- [日本語で学ぶFish Shell](https://yutora-no-fuunji.com/history)
+- [Fish Shell の便利なコマンド 10 選](https://qiita.com/b4b4r07/items/09815efb9151a6b3c229)
 
-## See Also（関連情報）
+## 関連リンク
 
-ここまで「文字列を大文字にする方法」についてお話ししてきました。もしもっと深く学びたい方は以下のリンクを参考にしてみてください。
-
-- [Fish Shell公式サイト](https://fishshell.com)
-- [Fish Shellドキュメント](https://fishshell.com/docs/current/index.html)
-- [Fish Shell チートシート](https://github.com/jorgebucaran/fish-cheatsheet)
-
-それでは今日はこれで終わりです。ありがとうございました！
+- [ファイルの扱いに便利なFish Shellのコマンド](https://qiita.com/usagikeri/items/3be2c9c2aebe93eebc43)
+- [Fish Shellを使ってみよう](https://qiita.com/po3rin/items/e00056199aa1b3795040)
+- [コマンドライン入門：Fish Shellの使い方](https://qiita.com/celeron1ghz/items/d9e0ae5f23116c92bc4a)
+- [Fish Shellで遊ぶ](https://qiita.com/toshiwataru/items/5948e406edf7951dacb0)
+- [

@@ -1,51 +1,49 @@
 ---
 title:    "Gleam: Calculer une date dans le futur ou le passé"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Calculer une date dans le futur ou le passé peut être utile pour de nombreux cas d'utilisation, comme planifier des rendez-vous, des événements ou des rappels, ou encore pour suivre l'historique des tâches et des activités.
+Lorsque vous programmez en Gleam, il est parfois nécessaire de calculer une date dans le futur ou dans le passé. Que vous souhaitiez planifier une tâche à une certaine date ou simplement afficher la date d'hier, il est important de savoir comment le faire de manière efficace.
 
 ## Comment faire
 
-Pour calculer une date future ou passée en utilisant Gleam, il existe quelques étapes simples à suivre :
+Voici un exemple de code en Gleam pour calculer une date dans le futur en utilisant la bibliothèque «date_utils» :
 
-1. Importez le module de dates en utilisant `import date`.
-2. Utilisez `date.add()` pour ajouter ou soustraire un nombre donné de jours, semaines, mois ou années à une date donnée.
-3. Utilisez `date.format()` pour afficher la date dans le format souhaité.
+```Gleam
+import date_utils
 
-Voici un exemple de code pour calculer la date dans le futur et afficher le résultat dans le format "jour/mois/année" :
+let today = date_utils.now()
 
-```
-Gleam
-import date
-
-let date = date.Date(year=2020, month=12, day=2)
-let future_date = date.add({ days = 10 })
-
-let formatted_date = date.format(
-  date = future_date,
-  format = { day = "d", month = "m", year = "y" }
-)
-
-debug.formatted("La date dans 10 jours sera {}", [formatted_date])
+let tomorrow = date_utils.add_days(today, 1)
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez une sortie similaire à celle-ci :
+Dans cet exemple, nous importons tout d'abord la bibliothèque «date_utils». Ensuite, nous définissons une variable pour la date actuelle en utilisant la fonction "now()". Enfin, nous utilisons la fonction "add_days()" pour ajouter un jour à la date actuelle et stocker le résultat dans une variable "tomorrow".
 
+Voici un autre exemple pour calculer la date d'hier :
+
+```Gleam
+import date_utils
+
+let today = date_utils.now()
+
+let yesterday = date_utils.add_days(today, -1)
 ```
-La date dans 10 jours sera 12/12/2020
-```
 
-## Plongée en profondeur
+Comme vous pouvez le constater, il suffit de passer un nombre négatif à la fonction "add_days()" pour calculer une date dans le passé.
 
-En utilisant ce même exemple, vous pouvez également spécifier des valeurs négatives pour soustraire des jours, semaines, mois ou années à une date donnée. De plus, vous pouvez également utiliser `date.add_business_days()` pour exclure les weekends lors du calcul d'une date future ou passée. Enfin, en utilisant `date.to_int()` vous pouvez convertir une date en entier afin de la manipuler facilement dans des opérations arithmétiques.
+## Plongeons plus profondément
+
+En utilisant la bibliothèque "date_utils", il est possible de calculer des dates dans n'importe quel intervalle de temps. Par exemple, vous pouvez ajouter ou soustraire des mois, des années, des heures, etc. en utilisant les fonctions appropriées.
+
+Il est également possible de comparer des dates en utilisant les fonctions "is_before()" et "is_after()". Cela peut être utile pour vérifier si une date est avant ou après une autre, par exemple pour planifier des événements futurs.
 
 ## Voir aussi
 
-- [Documentation sur les dates et heures en Gleam](https://gleam.run/documentation/standard_library/date_time/)
-- [Tutoriel sur les dates et heures en Gleam](https://www.codementor.io/@ingwene/today-s-date-and-time-in-gleam-p06rraugz) (en anglais)
-- [Exemples de code pour calculer des dates en Gleam](https://www.programiz.com/gleam-programming/examples/get-date-time) (en anglais)
+- La documentation officielle de la bibliothèque "date_utils" pour plus d'informations sur les fonctions disponibles : [lien vers la documentation](https://gleam.run/docs/libraries/date_utils)
+- Un tutoriel détaillé sur la manipulation de dates en Gleam : [lien vers le tutoriel](https://exemple.com/tutoriel-dates-gleam)
+- Un article sur les bonnes pratiques de gestion des dates en programmation : [lien vers l'article](https://exemple.com/gestion-dates-programmation)

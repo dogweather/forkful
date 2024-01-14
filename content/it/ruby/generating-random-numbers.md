@@ -1,39 +1,51 @@
 ---
 title:    "Ruby: Generazione di numeri casuali"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
-La generazione di numeri casuali è una tecnica fondamentale per diversi aspetti del mondo della programmazione. Questo processo ci permette di creare simulazioni realistiche, testare algoritmi e sviluppare giochi e applicazioni divertenti per gli utenti. In questo articolo, esploreremo come generare numeri casuali utilizzando Ruby.
+# Perché generare numeri casuali in Ruby?
 
-##Come fare
-La prima cosa da fare è comprendere come Ruby gestisce i numeri casuali. La classe `Random` del modulo `Kernel` è utilizzata per generare numeri casuali, con il metodo `rand` che ci permette di specificare un intervallo di numeri da cui scegliere. Vediamo un esempio:
+Generare numeri casuali è una funzione essenziale della programmazione, specialmente in situazioni in cui è necessario simulare eventi casuali o creare dati pseudo-casuali per test. In Ruby, esistono diverse opzioni per generare numeri casuali, ognuna con una sua precisa funzione.
 
-```Ruby
-puts "Ecco un numero casuale tra 1 e 10: #{rand(1..10)}"
+## Come generare numeri casuali in Ruby
+
+Per generare un numero casuale in Ruby, è possibile utilizzare il metodo `rand`, fornendo un range di numeri come parametro. Ad esempio, per generare un numero casuale compreso tra 1 e 10, possiamo scrivere:
+
+```
+ruby
+puts rand(1..10)
 ```
 
-L'output di questo codice potrebbe essere, ad esempio, "Ecco un numero casuale tra 1 e 10: 5".
+Questa istruzione restituirà un numero casuale ogni volta che viene eseguita, come ad esempio `7` o `2`.
 
-Possiamo anche specificare un seed per il nostro generatore di numeri casuali, a cui verrà applicato l'algoritmo di generazione. Questo ci permette di ottenere una sequenza di numeri sempre uguale, utile per scopi di testing o debugging. Utilizzando il metodo `srand`, possiamo impostare il seed desiderato, ad esempio:
+È inoltre possibile impostare un seme con il metodo `srand` per generare una sequenza di numeri casuali riproducibile. Ad esempio:
 
-```Ruby
+```
+ruby
 srand(123)
-puts "Ecco un numero casuale tra 1 e 100: #{rand(1..100)}"
+puts rand(1..10)
+puts rand(1..10)
 ```
 
-In questo caso, l'output sarà sempre "Ecco un numero casuale tra 1 e 100: 99", poiché il seed 123 segue un algoritmo predefinito che produce sempre lo stesso risultato. È importante notare che questa tecnica funziona solo con lo stesso seed e non garantisce la generazione di numeri completamente casuali.
+Questo codice restituirà sempre gli stessi due numeri casuali, che in questo caso saranno `9` e `1`. Cambiando il seme, è possibile ottenere una sequenza diversa di numeri casuali.
 
-##Approfondimento
-Come abbiamo visto, Ruby utilizza un algoritmo per generare numeri casuali, ma questo algoritmo è basato su input esterni. Ciò significa che il generatore di numeri casuali di Ruby è in realtà un generatore di numeri pseudo-casuali. Ciò non è un problema nella maggior parte dei casi, ma è importante tenerlo a mente quando si lavora con applicazioni che richiedono una maggiore randomicità, come ad esempio i giochi d'azzardo.
+## Approfondimento sulla generazione di numeri casuali in Ruby
 
-Un altro aspetto da considerare è che, a meno che non venga impostato un seed, Ruby utilizza il tempo corrente come input per il generatore di numeri casuali. Questo significa che se creiamo istanze della classe `Random` in modo troppo rapido, potremmo ottenere gli stessi numeri casuali, poiché il tempo non ha avuto il tempo di cambiare.
+Internamente, Ruby utilizza un generatore di numeri pseudo-casuali basato sull'algoritmo Mersenne Twister. Questo è un algoritmo molto efficiente e affidabile per generare numeri casuali. Tuttavia, è importante notare che non è completamente casuale, ma piuttosto pseudo-casuale, il che significa che è possibile indovinare il prossimo numero nella sequenza se ne conosciamo abbastanza.
 
-In conclusione, la generazione di numeri casuali è uno strumento importante per ogni programmatore, ma è importante conoscere le limitazioni e le peculiarità degli algoritmi utilizzati da Ruby.
+Inoltre, il metodo `rand` in Ruby restituisce numeri in virgola mobile, quindi se si ha bisogno di un intero, è necessario utilizzare il metodo `rand` con il metodo `to_i`. Ad esempio:
 
-##Vedi anche
-- [Ruby Random Class](https://ruby-doc.org/core-2.7.1/Random.html)
-- [Ruby Kernel Module](https://ruby-doc.org/core-2.7.1/Kernel.html)
-- [Números Aleatórios em Ruby](https://www.filipeapereira.com.br/numeros-aleatorios-em-ruby/)
+```
+ruby
+puts rand(1..10).to_i
+```
+
+Infine, è importante prestare attenzione ai semi quando si utilizza il metodo `srand` per garantire la riproducibilità dei numeri casuali. Se si utilizzano semi diversi, verranno generate sequenze di numeri casuali completamente diverse.
+
+# Vedi anche
+
+- [Documentazione ufficiale di Ruby su Generazione di numeri casuali](https://ruby-doc.org/core-3.0.1/Random.html)
+- [Articolo su Mersenne Twister su Wikipedia (in italiano)](https://it.wikipedia.org/wiki/Mersenne_Twister)

@@ -1,60 +1,54 @@
 ---
 title:    "Fish Shell: 打印调试输出"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-Fish Shell是一种强大的命令行工具，它提供了丰富的功能和灵活的配置选项，能够大大提升工作效率。其中一个特性就是可以轻松打印调试信息，帮助开发者快速定位和解决问题。在这篇博客中，我们将讨论为什么你应该在Fish Shell中使用打印调试输出，并提供一些实用的示例和深入的解释。
+当我们编写程序时，有时候会遇到错误或者出现意外的结果。这时候，打印调试输出就非常有用。它可以帮助我们理解程序的运行过程，找到问题所在并解决它们。
 
-## 如何
+## 如何实现
 
-要在Fish Shell中打印调试输出，需要使用内置的`echo`命令。下面是一个简单的例子，它会打印出"Hello, World!"这个字符串：
+Fish Shell提供了一个方便的功能，允许我们在代码中打印调试输出。我们可以使用内置的`echo`命令来输出内容。下面是一个简单的示例，演示如何打印一个字符串：
 
-```
-Fish Shell>>> echo Hello, World!
-Hello, World!
-```
-
-除了简单的文本，`echo`命令还支持多种参数，如颜色控制、变量替换和格式化输出。下面的例子展示了如何使用参数来打印带有颜色的文本和变量的值：
-
-```
-Fish Shell>>> echo (set_color red)This is an error message(set_color normal)
-This is an error message
-
-Fish Shell>>> set my_var "Fish Shell"
-Fish Shell>>> echo "I love $my_var!"
-I love Fish Shell!
+```Fish Shell
+echo "这是一个调试输出示例"
 ```
 
-另外，我们还可以使用重定向来将调试输出打印到文件中，方便之后的查看。例如，下面的命令会将文本追加到`debug.log`文件中：
+这将会在终端输出`这是一个调试输出示例`。我们也可以在代码中添加变量来输出更有用的信息。例如：
 
-```
-Fish Shell>>> echo "This is a debug message" >> debug.log
-```
-
-以上只是`echo`命令的一小部分功能，更多用法和参数可以通过`echo --help`来查看。此外，Fish Shell还提供了其他打印调试输出的方法，比如`printf`命令和`error`函数，有兴趣的读者可以自行探索。
-
-## 深入
-
-打印调试输出的好处是显而易见的，它可以帮助开发者更快地定位和解决问题。然而，在实际的开发过程中，我们可能会遇到一些复杂的场景，需要更深入的了解打印调试输出的行为和原理。
-
-首先，值得注意的是，如果使用了多个`echo`命令或在循环中打印输出，调试信息可能会打印在一起，导致不易阅读。这时，我们可以使用`set -g fish_echofish_format`命令来将每条调试信息打印在新的一行，更加直观和易读。
-
-另外，如果希望在打印调试输出时能够确保执行到某个代码块，可以使用`if`语句和`exit`命令。例如，下面的例子会在显示调试信息的同时，时刻保证代码正常执行：
-
-``` 
-Fish Shell>>> if [ true ]; echo "Executing code"; end; echo "This is a debug message"
-Executing code
-This is a debug message
+```Fish Shell
+set num 10
+echo "当前数字是$nums"
 ```
 
-最后，建议在使用打印调试输出时，尽量选择简单明了的信息，避免过于冗长的输出。同时，根据实际需求决定打印信息的级别，可以大大提高调试效率。
+这个例子将会输出`当前数字是10`。我们也可以在输出中添加一些文本来更好地组织调试信息。例如：
 
-## 请参阅
+```Fish Shell
+set name "小明"
+echo "欢迎来到我的博客，$name"
+```
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell调试工具](https://fishshell.com/docs/current/index.html#debugging)
-- [如何高效调试Shell脚本](https://jasonlhy.github.io/blog/2018/11/28/shell-scripting-debug.html)
+这将会输出`欢迎来到我的博客，小明`。
+
+## 深入了解
+
+除了简单的字符串，我们也可以打印数组和函数的值来更好地理解程序的运行过程。我们可以使用`string join`命令来将数组转换为字符串，并使用`string escape`命令来处理可能包含特殊字符的字符串。例如：
+
+```Fish Shell
+set colors (red blue green)
+echo "数组的值是：(string join ' ' (string escape $colors))"
+```
+
+这将会输出`数组的值是：red blue green`。同样，我们也可以使用`echo`来输出函数的返回值，从而更好地分析程序的执行流程。
+
+## 参考资料
+
+- [Fish Shell官方文档（中文）](https://fishshell.com/docs/current/index.html)
+- [Fish Shell异步特性介绍（中文）](https://zhuanlan.zhihu.com/p/84252298)
+- [Fish Shell VS Code插件教程（中文）](https://www.cnblogs.com/mebt/p/5062062.html)
+
+## 参见

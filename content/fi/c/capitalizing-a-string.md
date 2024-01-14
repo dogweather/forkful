@@ -1,55 +1,42 @@
 ---
-title:    "C: Merkkijonon alkukirjaimien suurennus"
+title:    "C: Merkkijonon suuruuden muuttaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisimme ylipäätään suorittaa merkkijonon suuraakkosiksi muuttamisen? Onko siitä hyötyä tai onko se vain tarpeetonta koodin lisäystä? Monissa tapauksissa merkkijonon suuraakkosiksi muuttaminen voi helpottaa käyttäjien syöttämien tietojen tarkistamista järjestelmässä, kun ei ole väliä, miten käyttäjä merkitsee kirjaimet. Tässä blogikirjoituksessa näytämme, miten voimme toteuttaa tämän C-ohjelmointikielellä.
+Joskus ohjelmissa tarvitaan muuttaa merkkijonojen kirjainten kokoja, esimerkiksi otsikoita tai tietuetta varten. Tämä on yleistä esimerkiksi käyttäjän syötteen validoinnissa, jossa syötettyä merkkijonoa halutaan verrata johonkin tiettyyn merkkijonoon, mutta kirjainkoolla ei ole merkitystä. Tässä tapauksessa tarvitaan funktion, joka kykenee muuttamaan merkkijonon kirjainten kokoja.
 
-## Kuinka
+## Miten se tehdään
 
-Yksi tapa muuttaa merkkijono suuraakkosiksi on käyttää <string.h> kirjastosta löytyvää funktiota nimeltä "toupper". Tämä funktio muuttaa annetun merkkin kohdalla olevan pienen kirjaimen vastaavaksi suureksi kirjaimeksi. Alla on yksinkertainen esimerkki, kuinka tätä funktiota voi käyttää:
+C-kielen standardikirjastossa on valmiina funktio `toupper()`, joka muuttaa annetun merkkijonon kirjaimet isoiksi kirjaimiksi. Tämä funktio ottaa parametrinaan yhden merkin ja palauttaa sen isoilla kirjaimilla. Käytännössä tämä tarkoittaa sitä, että funktioon tulee antaa jokainen merkki vuorollaan, jotta koko merkkijono muuttuu halutun muotoiseksi.
 
-```C
+```
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
 int main() {
-  char s[] = "Esimerkki teksti";
-  int i;
+    char string[] = "tämä on tekstiä";
+    for (int i = 0; string[i] != '\0'; i++) {
+        string[i] = toupper(string[i]);
+    }
 
-  printf("Ennen muunnosta: %s\n", s);
-
-  for (i = 0; i < strlen(s); i++) {
-    s[i] = toupper(s[i]);
-  }
-
-  printf("Jälkeen muunnoksen: %s\n", s);
-
-  return 0;
+    printf("%s", string); // Tulostaa "TÄMÄ ON TEKSTIÄ"
+    return 0;
 }
 ```
 
-Tämä koodi ensin määrittää merkkijonon "s" arvon, ja käyttää sitten "for" silmukkaa ja "strlen" funktiota käydäkseen läpi jokaisen merkin merkkijonossa. Kutsumme sitten "toupper" funktiota muuttamaan jokaisen merkin suuraakkosiksi. Lopuksi tulostamme niin alkuperäisen kuin muunnetunkin merkkijonon konsoliin.
+Yllä olevassa esimerkissä käytetään `for`-silmukkaa ja `toupper()`-funktiota muuttamaan jokainen merkki isoiksi kirjaimiksi. Samaa voidaan käyttää myös `while`-silmukan kanssa ja käydä läpi merkkijonoa kunnes koko merkkijono on käyty läpi.
 
-Ohjelman tuloste näyttää tältä:
+## Syvällinen tarkastelu
 
-```
-Ennen muunnosta: Esimerkki teksti
-Jälkeen muunnoksen: ESIMERKKI TEKSTI
-```
+C-kielessä merkkijonot ovat taulukoita, eli ne koostuvat merkeistä, joilla jokaisella on oma indeksinsä. Tästä syystä merkkijonon kirjainten muuttaminen on samanlainen prosessi kuin taulukoiden käsittely. `toupper()`-funktio hyödyntää tavallista ASCII-taulukkoa, jossa jokaiselle pienelle kirjaimelle on vastaava iso kirjain.
 
-## Syvempi sukellus
-
-Vaikka <string.h> kirjastosta löytyvä "toupper" funktio on helppo ja tehokas tapa muuttaa merkkijonot suuraakkosiksi, on hyvä huomioida muutamia asioita. Ensinnäkin, tämä funktio ei tue muiden kielten kirjaimia, kuten skandinaavisia merkkejä. Tämä johtuu siitä, että C käsittelee vain ASCII merkkejä ja osa niistä on varattu aakkosille.
-
-Toiseksi, silmukka, jota käytimme edellisessä koodiesimerkissä, käy läpi kaikki merkit jokaisen merkkijonon kohdalla, vaikka kaikkien merkkien ei tarvitse olla pieniä kirjaimia. Tämä voi olla hukkaa, jos merkkijonossa on paljon merkkejä. Tässä tapauksessa voimme käyttää "strlwr" funktiota, joka tekee kaikista merkeistä pieniä kirjaimia, ja sen jälkeen "strupr" funktiota, joka muuttaa kaikki merkit suuraakkosiksi.
+On myös hyvä tiedostaa, että `toupper()`-funktio ei toimi skandinaavisille kirjaimille tai muille erikoismerkeille, sillä ASCII-taulukko ei sisällä näitä merkkejä. Tällöin joudutaan käyttämään muita kirjastofunktioita tai itse kirjoittamaan oma funktio muuttamaan kirjaimia halutulla tavalla.
 
 ## Katso myös
 
-- [toupper funktio (C Reference)](https://www.cplusplus.com/reference/cctype/toupper/)
-- [string.h kirjasto (The GNU C Library)](https://www.gnu.org/software/libc/manual/html_node/String-Library.html)
-- [ASCII Taulukko (ASCII Codes)](https://www.ascii-code.com/)
+- [C-kie

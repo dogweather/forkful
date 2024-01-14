@@ -1,43 +1,46 @@
 ---
 title:    "Haskell: Capitalizando una cadena"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Capitalizar una cadena es importante en la programación para asegurarse de que la presentación de los datos sea coherente y fácil de leer. Ya sea que estés trabajando en un proyecto personal o en un equipo de desarrollo, capitalizar una cadena puede mejorar la legibilidad del código y facilitar su mantenimiento en el futuro.
+En la programación, a menudo nos encontramos con la necesidad de capitalizar una cadena de texto, es decir, hacer que la primera letra de cada palabra sea mayúscula. Esto puede ser útil en varias situaciones, como por ejemplo en la presentación de datos en un texto o en la creación de títulos para una interfaz de usuario.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena en Haskell, se puede usar la función `toUpper` de la librería `Data.Char`. Esta función convierte un carácter en su equivalente en mayúsculas. En combinación con la función `map`, la cual aplica una función a cada elemento de una lista, podemos capitalizar una cadena completa.
+En Haskell, capitalizar una cadena de texto es muy sencillo. Podemos utilizar la función "toUpper" de la librería "Data.Char" y luego aplicarla a cada letra de la cadena a través de la función "map". Veamos un ejemplo de esto:
 
 ```Haskell
 import Data.Char (toUpper)
 
-capitalize :: [Char] -> [Char]
-capitalize str = map toUpper str
-
-main = do
-  putStrLn "Ingresa una cadena:"
-  str <- getLine
-  putStrLn ("La cadena capitalizada es: " ++ capitalize str)
+capitalize :: String -> String
+capitalize = map toUpper
 ```
 
-Ejemplo de entrada: "hola mundo"
-Salida esperada: "HOLA MUNDO"
+La función "capitalize" recibe una cadena de texto y luego aplica la función "toUpper" a cada letra, devolviendo una cadena con todas las letras en mayúscula. Ahora veamos cómo podemos utilizar esta función en una lista de nombres:
+
+```Haskell
+nombres = ["ana", "pepe", "lucía"]
+
+nombresConMayúsculas = map capitalize nombres
+
+-- output: ["Ana", "Pepe", "Lucía"]
+```
+
+Como podemos ver, la función "capitalize" es muy útil y nos permite ahorrar mucho tiempo y esfuerzo en la programación.
 
 ## Profundizando
 
-La función `toUpper` solo funciona con caracteres del alfabeto latino, por lo que si tu cadena contiene caracteres especiales o de otros idiomas, puede ser necesario implementar una función más robusta para capitalizarla correctamente.
+Si bien la función "capitalize" es muy útil en muchas situaciones, es importante tener en cuenta que a veces puede haber excepciones. Por ejemplo, en algunas palabras puede ser necesario mantener las letras en minúscula, como en el caso de los nombres propios o los acrónimos.
 
-También es importante tener en cuenta que la función `map` devuelve una nueva lista con los elementos modificados, en lugar de modificar la lista original. Por lo tanto, si se desea modificar directamente la cadena, se puede usar la función `fmap` junto con `toUpper`.
+Para abordar estas excepciones, podemos definir una lista de palabras que queremos que se mantengan en minúscula y utilizarla en nuestra función "capitalize". También podemos agregar algunas condiciones en la función para que no se aplique la conversión a algunas palabras específicas. De esta forma, podemos personalizar la función para que se adapte mejor a nuestras necesidades.
 
-Por último, cabe mencionar que hay múltiples formas de capitalizar una cadena en Haskell utilizando diferentes combinaciones de funciones y librerías. Explorar y experimentar con distintas opciones puede ser una forma divertida y útil de aprender más sobre el lenguaje.
+## Ver también
 
-## Ver También
-
-- Documentación de `Data.Char` en Hackage: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html
-- Tutorial sobre funciones de orden superior en Haskell: https://www.youtube.com/watch?v=Jg3VgJ-K-i0
-- Artículo sobre capitalizar una cadena en Haskell: https://www.joachim-breitner.de/blog/594-Some_toughts_on_capitalizing_strings_in_Haskell
+- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
+- [Tutorial de Haskell para principiantes](https://wiki.haskell.org/Haskell_tutorials_for_beginners)
+- [Librería Data.Char de Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)

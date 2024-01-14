@@ -1,51 +1,36 @@
 ---
 title:    "Swift: כתיבת קובץ טקסט"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-בתכנות בשפת Swift כמעט תמיד ניצטרך ליצור קבצים המכילים טקסט. זה יכול להיות קבצי קוד, טקסט פלט מהודר או נתונים אחרים. לכן, יש לנו צורך בלימוד כיצד לכתוב קבצים טקסט בשפת Swift כדי לבצע פעולות כאלה בקלות וביעילות.
+רישום קבצי טקסט הוא חלק בסיסי בתכנות Swift. זהו דרך מהירה וקלה ליצור קבצי טקסט עם תוכן מעניין ולהשתמש בהם בתוך אפליקציות.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-בכדי ליצור קובץ טקסט בשפת Swift, ישנם מספר מתודות שניתן להשתמש בהם. הנה כמה דוגמאות לבניית קובץ טקסט המשתמשות במתודה `write(to:atomically:encoding:)`:
+נתחיל על ידי הגדרת משתנה חדש בשם "text" שיכיל את הטקסט שאנחנו רוצים לכתוב לקובץ. לאחר מכן, נשתמש בפונקציה "write" על ידי פתיחת הקובץ והכנסת הטקסט לתוכו. לדוגמה:
 
 ```Swift
-// דוגמה 1: כתיבת קובץ פלט עם טקסט פשוט
-let text = "שלום, עולם!"
-do {
-    try text.write(to: URL(fileURLWithPath: "hello.txt"), atomically: true, encoding: .utf8) // הקובץ ישמר באופן אטומי
-} catch {
-    // הטיפול בשגיאות
-}
-
-// דוגמה 2: כתיבת קובץ פלט עם מעין פלט
-let numbers = [1, 2, 3, 4, 5]
-let output = numbers.map { "מספר: \($0)" }.joined(separator: "\n")
-do {
-    try output.write(to: URL(fileURLWithPath: "numbers.txt"), atomically: true, encoding: .utf8)
-} catch {
-    // הטיפול בשגיאות
-}
-
-// דוגמה 3: כתיבת קובץ פלט עם נתונים חיצוניים כמו תמונה
-let image = UIImage(named: "image")
-if let imageData = image?.pngData() {
-    do {
-        try imageData.write(to: URL(fileURLWithPath: "image.png"), atomically: true)
-    } catch {
-        // הטיפול בשגיאות
-    }
-}
+var text = "שלום לכולם! זוהי דוגמה לטקסט המופיע בקובץ טקסט."
+write(text)
 ```
 
-עבור כל דוגמה יש להשתמש בפקודת `import Foundation` כדי לתמוך במחלקות הנדרשות לכתיבת קבצים טקסט.
+כעת, נכנס לפתיחת הקובץ כך שנוכל לקרוא את הטקסט שהכנסנו. לדוגמה:
 
-## לחקור עוד
+```Swift
+var file = "./myTextFile.txt"
+var text = "שלום לכולם! זוהי דוגמה לטקסט המופיע בקובץ טקסט."
+write(text, toFile: file, atomically: true, encoding: String.Encoding.utf8)
+var readText = try String(contentsOfFile: file, encoding: String.Encoding.utf8)
+print(readText)
+```
 
-כדי להעמיק את התחום של כתיבת קבצים טקסט בשפת Swift, ניתן לבדוק את הקישורים הבאים:
+בתוך תיקייה בשם "myTextFile.txt" תמצאו את הקובץ החדש שנוצר עם הטקסט שכתבנו. לאחר מכן, נשמור את הקובץ ונכנס לתיקייה כדי לבדוק שהוא נכתב ונקרא כראוי.
 
-- [מסמכי ייעוד רשמיים של אפל בנושא כתיבת קבצים](https://developer.apple.com/documentation/foundation/data_writing_and_reading) - מדריך מפ
+## העמקה נוספת
+
+לאחר שהזכרנו איך לכתוב קבצי טקסט ב-Swift, ניתן ללמוד עוד על כתיבת וקריאת קבצים באמצעות ספריות נוספות. יכול להיות שישנן צורות יותר מתקדמות לכתוב ולקרוא קבצים שיכולות להיות שימושיות כאשר מתעסקים עם קבצים גדולים או עובדים עם תוכן סיבוכי. כמו כן, ישנן ספריות שיכולות לעזור בעיצוב ועיבוד נת

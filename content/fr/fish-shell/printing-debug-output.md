@@ -1,35 +1,52 @@
 ---
-title:    "Fish Shell: Affichage de la sortie de débogage"
+title:    "Fish Shell: Affichage des sorties de débogage"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La sortie de débogage est un élément essentiel de la programmation, car elle permet de suivre et de comprendre le comportement de votre code. L'utilisation correcte de la sortie de débogage peut vous faire gagner un temps précieux lors du dépannage de votre code.
+Si vous êtes un programmeur Fish Shell, vous savez l'importance de l'impression de la sortie de débogage. Cela permet de comprendre le fonctionnement interne de votre code et d'identifier les erreurs potentielles. Dans cet article, nous allons vous montrer comment imprimer la sortie de débogage et explorer plus en profondeur ses avantages.
 
-# Comment faire
+## Comment faire
 
-Pour imprimer la sortie de débogage dans Fish Shell, vous pouvez utiliser la commande `echo` suivie du texte ou des variables que vous souhaitez afficher. Par exemple :
+Pour imprimer la sortie de débogage, utilisez la commande `echo`. Vous pouvez utiliser cette commande pour afficher une chaîne de caractères ou la valeur d'une variable.
 
+```Fish Shell
+echo "Bonjour!" 
 ```
-Fish Shell
-echo "La valeur de X est $X"
+
+Cela affichera "Bonjour!" dans la console. Vous pouvez également utiliser la substitution de commandes pour afficher des informations sur les variables.
+
+```Fish Shell
+set ma_variable "valeur_de_test"
+echo "La valeur de la variable est: (echo $ma_variable)"
 ```
 
-Cela affichera la phrase "La valeur de X est {valeur de la variable X}" dans votre terminal. Vous pouvez également utiliser les options `-n` ou `-e` pour personnaliser l'affichage de votre sortie.
+Cela affichera "La valeur de la variable est: valeur_de_test" dans la console.
 
-# Plongée en profondeur
+## Plongée en profondeur
 
-Il existe plusieurs façons d'imprimer la sortie de débogage dans Fish Shell, notamment en utilisant les commandes `printf` et `printfn`. Ces commandes offrent une plus grande flexibilité dans la mise en forme de votre sortie, notamment en utilisant des formats spécifiques tels que `%s` pour les chaînes de caractères et `%d` pour les entiers.
+L'impression de la sortie de débogage peut être utile dans de nombreuses situations, comme lors du développement ou du dépannage de votre code. Elle vous permet de vérifier si vos variables ont les bonnes valeurs, de suivre le déroulement de votre code et de comprendre d'où proviennent les erreurs.
 
-De plus, vous pouvez utiliser la commande `set -g` pour définir des variables globales dans Fish Shell et les utiliser dans votre sortie de débogage. Cela peut être utile lorsque vous souhaitez afficher plusieurs variables à la fois.
+Vous pouvez également personnaliser la façon dont vous affichez la sortie de débogage en utilisant des couleurs pour mieux organiser les informations. Par exemple, vous pouvez utiliser la commande `set_color` pour définir la couleur de l'affichage de vos messages de débogage.
 
-# Voir aussi
+```Fish Shell
+set_color blue
+set ma_variable "valeur_de_test"
+echo "La valeur de la variable est: (echo $ma_variable)"
+```
 
-- [Documentation officielle de Fish Shell pour l'impression de sortie de débogage](https://fishshell.com/docs/current/debugging.html)
-- [Tutoriel sur l'utilisation de la sortie de débogage dans Fish Shell](https://dev.to/iweeky/debugging-in-fish-shell-96g)
-- [Astuces pour la mise en forme de la sortie de débogage dans Fish Shell](https://opensource.com/article/20/3/debug-fish-shell)
+Cela affichera le message "La valeur de la variable est: valeur_de_test" en bleu dans la console.
 
-N'hésitez pas à utiliser ces ressources pour améliorer votre utilisation de la sortie de débogage dans Fish Shell. Avec une bonne compréhension de cette fonctionnalité, vous pourrez déboguer votre code plus efficacement et devenir un meilleur programmeur.
+## Voir aussi
+
+Pour en savoir plus sur l'impression de la sortie de débogage, consultez les liens suivants :
+
+- [Documentation Fish Shell](https://fishshell.com/docs/latest/commands.html#echo)
+- [Guide de débogage pour Fish Shell](https://fishshell.com/docs/current/guide.html#debugging)
+- [Tutoriel vidéo sur l'impression de la sortie de débogage dans Fish Shell (en anglais)](https://www.youtube.com/watch?v=eu6cfpaggIY)
+
+Nous espérons que cet article vous aidera à mieux comprendre l'importance de l'impression de la sortie de débogage dans Fish Shell. Utilisez cette fonctionnalité à bon escient pour améliorer votre expérience de programmation. Happy coding!

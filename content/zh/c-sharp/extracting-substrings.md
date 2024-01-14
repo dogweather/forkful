@@ -1,59 +1,92 @@
 ---
 title:    "C#: 提取子字符串"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在编程中，有时候我们需要从一个字符串中提取出一部分内容，而不是使用整个字符串。这种操作称为“提取子字符串”。它可以帮助我们更有效地处理字符串数据，节省时间和精力。
+在编写C#程序时，经常会遇到需要提取字符串中的一部分字符的情况。例如，从一个长字符串中提取出某个单词或者日期。使用提取子字符串的技巧可以帮助我们更轻松地处理这些需求。
 
 ## 如何做
 
-要提取子字符串，我们可以使用C#语言提供的SubString()方法。这个方法需要两个参数，分别是开始和结束位置的索引。让我们来看一个实际的例子：
+提取子字符串是一个比较常见的操作，C#提供了多种方法来实现这个功能。下面我们将介绍三种常用的方法，通过实例演示具体的代码和输出。
 
-```C#
-string str = "这是一个字符串。";
+### 方法一：Substring()
 
-string subStr = str.Substring(4, 4);
+Substring()方法可以从一个字符串中提取出指定的子字符串。它的语法如下：
 
-Console.WriteLine(subStr);
-
-// Output: 一个字符
+```
+string.Substring(startIndex, length); 
 ```
 
-在这个例子中，我们从索引为4的位置开始提取，一直提取4个字符，得到的结果就是“一个字符”。
+示例代码：
 
-## 深入了解
-
-除了提供起始和结束位置的索引，SubString()方法还有一个重载的版本，它可以只提供起始位置的索引，然后会一直提取到字符串的末尾。另外，这个方法也可以使用负数作为参数，它会从字符串的末尾开始计算索引。例如：
-
-```C#
-string str = "这是一个字符串。";
-
-string subStr = str.Substring(4);
-
+```
+string str = "Hello World";
+string subStr = str.Substring(6, 5);
 Console.WriteLine(subStr);
-
-// Output: 一个字符串。
 ```
 
-在这个例子中，我们只指定了起始位置的索引，因此会一直提取到字符串的末尾。我们还可以使用负数来提取从字符串末尾往前数的位置，例如：
+输出结果为：
 
-```C#
-string str = "这是一个字符串。";
-
-string subStr = str.Substring(-4);
-
-Console.WriteLine(subStr);
-
-// Output: 字符串。
+```
+World
 ```
 
-这个例子中，我们使用负数-4来提取从“字符”开始的部分，得到的结果就是“字符”。
+### 方法二：Split()
+
+Split()方法可以把一个字符串按照指定的分隔符分割成字符串数组，并选择需要的子字符串。它的语法如下：
+
+```
+string[] strArr = string.Split(separators, options); 
+```
+
+示例代码：
+
+```
+string str = "Hello World";
+string[] words = str.Split(' ');
+string subStr = words[1];
+Console.WriteLine(subStr);
+```
+
+输出结果为：
+
+```
+World
+```
+
+### 方法三：Regex.Match()
+
+如果字符串中包含了特定的模式，可以使用正则表达式来提取子字符串。Regex.Match()方法可以根据指定的正则表达式从字符串中提取匹配的子字符串。它的语法如下：
+
+```
+string subStr = Regex.Match(input, pattern).Value; 
+```
+
+示例代码：
+
+```
+string str = "Today is 2020-07-01.";
+string subStr = Regex.Match(str, @"\d{4}-\d{2}-\d{2}").Value;
+Console.WriteLine(subStr);
+```
+
+输出结果为：
+
+```
+2020-07-01
+```
+
+## 深入探讨
+
+除了上述提到的方法之外，C#还提供了很多其他的方式来提取子字符串。例如Substring()方法还可以直接通过指定结束索引来提取子字符串，而不必指定长度。另外，如果需要忽略大小写来匹配子字符串，可以使用字符串的ToLower()方法或者正则表达式的IgnoreCase选项。
 
 ## 参考链接
 
-- [C#字符串提取子串文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.string.substring)
-- [详解SubString()方法](https://www.cnblogs.com/bluexx/archive/2011/10/28/2250621.html)
+- [C#中字符串的常用操作](https://www.runoob.com/csharp/csharp-string.html)
+- [C#字符串的实现、for循环和Substring()的性能比较](https://blog.zhaojie.me/2014/11/csharp-substring-performance.html)
+- [正则表达式匹配](https://www.runoob.com/csharp/csharp-regular-expressions.html)

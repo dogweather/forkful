@@ -1,49 +1,58 @@
 ---
-title:    "C: Cancellazione di caratteri corrispondenti a un modello"
+title:    "C: Eliminazione di caratteri corrispondenti a un modello"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La cancellazione dei caratteri corrispondenti a un modello può essere utile quando si sta cercando di manipolare una stringa o un file di testo. Ad esempio, potresti voler eliminare tutti i caratteri non numerici da una stringa di input per poter eseguire calcoli matematici su di essa.
+Ci sono molte situazioni in cui potresti dover eliminare caratteri che corrispondono a un determinato pattern dal tuo codice C. Potrebbe essere necessario per eseguire una pulizia dei dati, filtrare informazioni non necessarie o semplicemente per eseguire una modifica specifica del tuo testo. In ogni caso, la capacità di eliminare caratteri in modo efficiente è un'abilità importante da avere nella programmazione in linguaggio C.
 
 ## Come fare
 
-Per eliminare i caratteri corrispondenti a un modello utilizzando il linguaggio di programmazione C, è possibile utilizzare la funzione "strpbrk" della libreria standard di C. Questa funzione restituisce un puntatore alla prima occorrenza di una qualsiasi delle lettere specificate all'interno della stringa. Utilizzando questo puntatore, è possibile ciclare attraverso la stringa e rimuovere i caratteri corrispondenti utilizzando la funzione "memmove" per spostare gli altri caratteri nella giusta posizione.
+Per eliminare caratteri che corrispondono a un pattern in C, puoi utilizzare la funzione `strpbrk ()`. Questa funzione cerca una stringa di caratteri specificata in un'altra stringa e restituisce un puntatore al primo carattere corrispondente trovato. Usando questa funzione, puoi scrivere una semplice funzione che elimina tutti i caratteri corrispondenti da una stringa fornita. Ecco un esempio di codice:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void delete_matching_chars(char *str, const char *pattern) {
-    char *match = strpbrk(str, pattern); // Trova la prima occorrenza di una delle lettere specificate nel modello
-    while (match != NULL) { // Continua finché ci sono corrispondenze
-        memmove(match, match+1, strlen(match)); // Rimuove il carattere corrispondente spostando tutti i caratteri successivi a sinistra
-        match = strpbrk(match, pattern); // Trova la successiva occorrenza del modello nella nuova stringa
+// Funzione per eliminare un determinato carattere da una stringa
+void delete_char(char* str, char c) {
+    char* ptr = strpbrk(str, &c); // Trova il primo carattere corrispondente
+    while (ptr != NULL) {
+        memmove(ptr, ptr + 1, strlen(ptr)); // Sposta il resto della stringa di un carattere a sinistra
+        ptr = strpbrk(str, &c); // Trova il prossimo carattere corrispondente
     }
 }
 
 int main() {
-    char input[] = "1a2b3c4d5e";
-    printf("Input: %s\n", input);
-    delete_matching_chars(input, "abcde");
-    printf("Output: %s\n", input);
+    char str[] = "Hello World";
+    printf("Stringa originale: %s \n", str);
+    delete_char(str, 'l'); // Elimina tutti i caratteri "l" dalla stringa
+    printf("Stringa modificata: %s \n", str);
     return 0;
 }
 ```
-- Output:
+
+Esempio di output:
+
 ```
-Input: 1a2b3c4d5e
-Output: 12345
+Stringa originale: Hello World
+Stringa modificata: Heo Word 
 ```
+
+Nell'esempio sopra, la funzione `delete_char` prende come argomenti una stringa e un carattere da eliminare. Viene utilizzata la funzione `strpbrk ()` per trovare il primo carattere corrispondente nella stringa e successivamente vengono eliminati tutti i caratteri corrispondenti spostando il resto della stringa di un carattere a sinistra.
+
+Oltre alla funzione `strpbrk ()`, è anche possibile utilizzare altre funzioni come `strchr ()` e `strstr ()` per eliminare caratteri corrispondenti da una stringa.
 
 ## Approfondimento
 
-Ci sono diverse varianti di questo approccio, come utilizzare la funzione "strcspn" invece di "strpbrk" per trovare la lunghezza del segmento di stringa da copiare o utilizzare la funzione "strcpy" invece di "memmove". Inoltre, è possibile migliorare le prestazioni minimizzando il numero di chiamate alla funzione "memmove" attraverso la creazione di una nuova stringa di output.
+Eliminare caratteri che corrispondono a un pattern può essere un'operazione utile quando si lavora con input utente o con file di dati non strutturati. Tuttavia, è importante prestare attenzione alla gestione della memoria quando si manipolano stringhe in questo modo. Assicurarsi di allocare memoria sufficiente per la stringa modificata e di liberare eventuali spazi di memoria non utilizzati per evitare memory leaks.
 
 ## Vedi anche
 
-- Documentazione della funzione "strpbrk" in C: https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm
-- Tutorial sull'utilizzo di stringhe in C: https://www.programiz.com/c-programming/c-strings
+- [Tutorial: Stringhe in C](https://www.programiz.com/c-programming/c-strings)
+- [Funzione strpbrk() in C](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
+- [Gestione della memoria in C](https://www.tutorialspoint.com/cprogramming/c_memory_management.htm)

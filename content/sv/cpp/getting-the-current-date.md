@@ -1,57 +1,82 @@
 ---
 title:    "C++: Att hämta aktuellt datum"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att få den aktuella datumet är ett viktigt koncept inom programmering. Det finns många situationer då du behöver använda det aktuella datumet i dina program, såsom att skapa en loggrapport eller schemalägga uppgifter. Det är också en viktig del av att skapa användarvänliga program som visar det korrekta datumet för en specifik tidszon.
+Att kunna få den aktuella datumet är viktigt för många olika programmeringsprojekt. Oavsett om du vill ha det för att logga händelser, för att beräkna mellanliggande dagar eller bara för att visa det i ett användargränssnitt, är det en viktig funktion att ha tillgång till. I denna bloggpost kommer vi att titta på hur du enkelt kan få den aktuella datumet i ditt C++-program.
 
-##Så här gör du
+## Hur man gör
 
-Det finns flera sätt att få den aktuella datumet i C++. Det mest grundläggande sättet är att använda `std::chrono` biblioteket, som innehåller ett uppsättning klasser och funktioner som är avsedda för tidsberäkningar. Här är ett exempel på kod som använder `std::chrono` för att få den aktuella datumet:
+För att få den aktuella datumet i C++, behöver vi använda oss av en funktion som heter "localtime". Detta är en standardfunktion i C++ som returnerar en struct som innehåller datumet och tiden för din lokala tidzon. Här är ett exempel på hur du kan använda den:
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
-int main() {
-    // Skapa en variabel av typen "system_clock::time_point", som representerar det aktuella datumet.
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now(); 
+int main()
+{
+    // Skapa en variabel av typen "tm" som kommer att innehålla datumet och tiden
+    struct std::tm *currTime;
 
-    // Använd "std::chrono::time_point_cast" för att konvertera "system_clock::time_point" till "time_point" för dagen.
-    std::chrono::time_point<std::chrono::system_clock::duration> today = std::chrono::time_point_cast<std::chrono::days>(now);
+    // Anropa "localtime" funktionen för att få den aktuella datumet och tiden
+    std::time_t now = std::time(0);
+    currTime = std::localtime(&now);
 
-    // Använd "std::chrono::year_month_day" för att få året, månaden och dagen från det aktuella datumet.
-    auto ymd = std::chrono::year_month_day(today);
+    // Visa den aktuella datumet och tiden i användbar form
+    std::cout << "Aktuell datum och tid: " << currTime->tm_mon + 1 << "/" << currTime->tm_mday << "/" << currTime->tm_year + 1900 << " " << currTime->tm_hour << ":" << currTime->tm_min << ":" << currTime->tm_sec;
 
-    // Skriv ut resultatet.
-    std::cout << "Den aktuella datumet är: " << ymd << std::endl; 
     return 0;
 }
+
 ```
 
-Här är en möjlig utmatning för denna kod:
+I detta exempel använder vi oss av en struct som heter "tm" för att lagra datumet och tiden. Detta är en standard C++ struct som används för att lagra datum och tider. Vi använder också funktionen "localtime" för att få det aktuella datumet och tiden och sedan använder vi oss av variablerna i vår struct för att visa det på ett användbart sätt.
 
-`Den aktuella datumet är: 2021-01-21`
+En annan funktion som kan vara bra att känna till är "asctime". Denna funktion returnerar en sträng som innehåller datum och tid i ett läsbar form. Här är ett exempel på hur du kan använda den:
 
-Det finns också andra sätt att få den aktuella datumet, såsom att använda `localtime` biblioteket eller systemanrop. Det bästa tillvägagångssättet beror på dina specifika behov och preferenser.
+```C++
+#include <iostream>
+#include <ctime>
 
-##Djupdykning
+int main()
+{
+    // Anropa "asctime" funktionen för att få den aktuella datumet och tiden
+    std::time_t now = std::time(0);
+    char* currTime = std::asctime(std::localtime(&now));
 
-När vi använder `std::chrono` för att få den aktuella datumet, använder vi egentligen inte en funktion som heter `now()` utan en klass som kallas `system_clock`. Denna klass är en grundläggande klocka som mäter tiden från en specifik punkt i det förflutna, vanligtvis den 1 januari 1970. Vi använder också `std::chrono::time_point`, som är en tidsfördröjning som består av en tidsstämpel och en "duratation" som anges av klockan.
+    // Visa den aktuella datumet och tiden i strängform
+    std::cout << "Aktuell datum och tid: " << currTime;
 
-`std::chrono::year_month_day` är en annan nyttig klass som används för att representera datum och tidpunkter. Här är några andra användbara klasser från `std::chrono`:
+    return 0;
+}
 
-- `std::chrono::hours`: representerar ett intervall av timmar
-- `std::chrono::minutes`: representerar ett intervall av minuter
-- `std::chrono::seconds`: representerar ett intervall av sekunder
+```
 
-Om du vill fördjupa dig i detaljerna om hur dessa klasser fungerar, rekommenderar jag att du tittar på dokumentationen för `std::chrono` biblioteket.
+## Djupdykning
 
-##Se även
+Som nämnts tidigare, använder vi oss av funktionen "localtime" för att få den aktuella datumet och tiden. Denna funktion returnerar en strukt vars namn är "tm". Denna struct innehåller flera olika variabler som är användbara för att visa datumet och tiden i olika format.
 
-- [C++ Date and Time](https://www.cplusplus.com/reference/ctime/)
-- [C++ Chrono Library](https://www.cplusplus.com/reference/chrono/)
+Några av dessa variabler inkluderar: 
+- tm_sec - Sekunder (0-59)
+- tm_min - Minuter (0-59)
+- tm_hour - Timmar (0-23)
+- tm_mday - Dag i månaden (1-31)
+- tm_mon - Månad (0-11)
+- tm_year - Antal år från 1900
+- tm_wday - Dag i veckan (0-6)
+- tm_yday - Dag i året (1-365)
+- tm_isdst - Sommartid eller ej (0-1)
+
+För att visa datumet i en snyggare form, kan dessa variabler användas tillsammans med andra utskriftsfunktioner i C++.
+
+## Se även
+
+Här är några användbara länkar för att lära dig mer om att få den aktuella datumet i C++: 
+- [En översikt över std::tm struct](http://www.cplusplus.com/reference/ctime/tm/)
+- [Mer information om localtime funktionen](http://www.cplusplus.com/reference/ctime/localtime/)
+- [En djupare förståelse av tidsfunktioner i C++](https

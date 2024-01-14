@@ -1,43 +1,65 @@
 ---
 title:    "Arduino: 使用正则表达式"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式
+談Arduino正則表達式的使用
 
-编程是一门需要精确性和逻辑性的技能。使用正则表达式可以帮助我们在编写代码时更加高效和准确地处理字符串。它是一种强大的工具，能够快速匹配和提取特定模式的文本。
+## 為什麼要使用正則表達式?
 
-## 如何使用正则表达式
+正則表達式是一種強大的工具，可以協助我們在程式中搜尋和處理文字資料。它可以幫助我們更有效率地處理複雜的字串操作，同時也可以讓我們的程式碼更容易閱讀和維護。
 
-在Arduino中，我们可以使用字符串对象的“match”函数来执行正则表达式。首先，我们需要定义一个正则表达式对象，并将它传递给字符串的match函数。例如，我们可以使用正则表达式来匹配一个包含数字的字符串，并将其输出到串行监视器。
+## 如何使用正則表達式?
+
+要在Arduino中使用正則表達式，我們需要使用到一個稱為Regexp的函式庫。讓我們來看一個簡單的範例，假設我們要檢查一個字串是否包含數字：
 
 ```Arduino
-String text = "I have 5 apples and 3 bananas.";
-Regex regex = Regex("[0-9]+");
-if(text.match(regex)){
-  Serial.println(text); // output: 5 and 3
+#include <Regexp.h>
+
+void setup(){
+    Serial.begin(9600);
+    String str = "Hello123World";
+    Regexp re("\\d+"); //建立一個正則表達式物件，可以檢查是否包含一個以上的數字
+    if (re.search(str)) {
+        Serial.println("String contains numbers.");
+    } else {
+        Serial.println("String does not contain numbers.");
+    }
+}
+
+void loop(){
+
 }
 ```
 
-## 深入了解正则表达式
+在這個範例中，我們使用了Regexp函式庫中的search()函式來檢查字串中是否包含數字。如果字串中有數字，就會輸出 "String contains numbers."，否則就會顯示 "String does not contain numbers."。
 
-正则表达式是由特殊字符和规则组成的文本模式。它有助于我们在较大的字符串中快速找到并匹配特定的模式。例如，如果我们想要匹配一个特定的邮箱地址，我们可以使用如下的正则表达式：
+除此之外，在使用正則表達式時還可以使用不同的符號來表示不同的匹配規則，例如：
 
-```Arduino
-Regex regex = Regex("[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+");
-```
+- "." 代表任意一個字元
+- "*" 代表零個或多個前一個符號
+- "+" 代表一個或多個前一個符號
+- "^" 代表行首
+- "$" 代表行尾
 
-这个正则表达式将匹配任何形式的电子邮箱地址，并将其提取出来。通过深入了解正则表达式的特殊字符和规则，我们可以更加灵活和准确地处理字符串。
+你可以透過[Regexp函式庫的文件](https://www.arduino.cc/en/Reference/Regexp)來學習更多關於正則表達式的使用方法。
 
-## 参考链接
+## 深入了解正則表達式
 
-- [正则表达式基础知识](https://www.runoob.com/regexp/regexp-tutorial.html)
-- [如何在Arduino中使用正则表达式](https://maker.pro/arduino/tutorial/using-regular-expressions-in-arduino)
-- [正则表达式语法参考手册](https://www.regular-expressions.info/quickstart.html)
+正則表達式的語法和符號並不是那麼容易理解，因此建議在開始使用之前先閱讀一些相關的教學文章和練習。另外，你也可以透過一些線上的正則表達式測試工具來測試你的表達式是否符合預期的規則。
 
-## 参见
+另外，除了Regexp函式庫之外，還有其他一些可以在Arduino中使用的正則表達式函式庫，例如[Regexp](https://github.com/nickgammon/Regexp)或[SimpleRegexp](https://github.com/msaunby/SimpleRegexp)，你可以依據自己的需要和程式的複雜度來選擇適合的函式庫。
 
-- [Arduino官方网站](https://www.arduino.cc/)
-- [Arduino编程指南](https://www.arduino.cc/en/Guide/HomePage)
+## 參考資料
+
+- [正則表達式維基百科](https://zh.wikipedia.org/wiki/正則表達式)
+- [Arduino官方正則表達式函式庫文件](https://www.arduino.cc/en/Reference/Regexp)
+- [正則表達式測試工具](https://regex101.com/)
+
+## 參見
+
+- [Arduino官方文件](https://www.arduino.cc/en)
+- [Arduino套件管理器](https://github.com/arduino/Arduino/wiki/Installing-third-party-boards-package)

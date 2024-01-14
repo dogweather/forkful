@@ -1,55 +1,42 @@
 ---
-title:    "C++: 开始一个新项目"
+title:    "C++: 开始新项目"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
+## 为什么要开始一个新的项目
 
-当我们开始一个新的项目时，我们有机会学习新的编程技能、挑战自己的思维方式，以及实现自己的想法和创意。这种学习和挑战的过程是一个程序员最值得体验的事情之一。
+编程是一门充满乐趣，能够创造出令人惊叹的事物的艺术。通过开始一个新的项目，你有机会挑战自己的技能，学习新的知识，并最终创造出令人满意的成果。
 
-##如何做
+## 如何开始一个新的项目
 
-首先，我们需要确定项目的目的和需求。然后，我们可以使用C++编程语言来实现这些需求。在下面的示例中，我们将展示如何用C++创建一个简单的计算器，它可以计算两个数字的加法。
+首先，你需要选择一个编程语言来开始你的项目。在这里，我们将使用C++作为例子。下面是一个简单的C++代码示例，它打印出"Hello World!"：
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    // 获取用户输入的两个数字
-    int num1, num2;
-    cout << "请输入两个数字：" << endl;
-    cin >> num1 >> num2;
-
-    // 计算两个数字的和
-    int sum = num1 + num2;
-
-    // 显示计算结果
-    cout << "两个数字的和为：" << sum << endl;
+    std::cout << "Hello World!";
 
     return 0;
 }
 ```
 
-运行以上代码，输入任意两个数字，即可得到它们的和作为输出。这只是一个简单的例子，你可以尝试修改代码来实现其他有趣的计算功能。
+运行这段代码，你将在屏幕上看到输出结果"Hello World!"。现在你就可以开始修改这段代码，添加更多的功能来实现你想要的效果了。
 
-##深入了解
+## 深入挖掘如何开始一个新的项目
 
-当我们开始一个新的项目时，还需要考虑一些重要的因素，例如项目的复杂性、所需的技术和资源、项目的时间和成本预算等。我们必须明确地规划整个项目的构思和实现步骤，并注意解决潜在的问题和挑战。
+在开始一个新的项目时，有一些重要的事情需要考虑。首先，确定你的项目的目标和需求。这将帮助你正确地选择使用的工具和技术。其次，你需要计划好你的项目的结构和架构，这将有助于你更有效地编写代码并避免未来的问题。最后，对于一个成功的项目，你应该拥有良好的团队合作和沟通能力，这将确保项目的顺利进行。
 
-此外，也要注意良好的编程习惯和规范，例如命名变量和函数、注释代码、处理错误等。这些习惯和规范可以使我们的代码更易于理解、修改和维护。
+## 参考资料
 
-##参考链接
+- [C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
+- [如何开始一个新的项目？](https://medium.com/zerotomastery/how-to-start-a-new-programming-project-956141c681b9)
+- [项目管理的基本原则](https://www.simplilearn.com/project-management-principles-and-practices-article)
+- [GitHub教程](https://www.runoob.com/github/github-tutorial.html)
 
-- [C++入门教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
-- [C++编程基础](https://www.w3schools.com/cpp/)
-- [如何开始一个新的编程项目](https://medium.com/@Riverside/how-to-start-a-new-programming-project-1a8420d61c22)
+## 参见
 
-##参考链接
-
-- [C++入门教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
-- [C++编程基础](https://www.w3schools.com/cpp/)
-- [如何开始一个新的编程项目](https://medium.com/@Riverside/how-to-start-a-new-programming-project-1a8420d61c22)
+*新的编程项目可以是一项令人兴奋的挑战。通过合理的计划和团队合作，你将能够创造出令人满意的结果。希望这篇文章对你开始一个新的C++项目有所帮助。如果你想要了解更多有关C++编程的信息，可以参考下面的链接。祝你的项目顺利！*

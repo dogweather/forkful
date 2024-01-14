@@ -1,52 +1,54 @@
 ---
-title:    "Python: Utilisation des expressions régulières"
+title:    "Python: Utiliser les expressions régulières"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les expressions régulières sont des outils très utiles en programmation pour manipuler et rechercher des motifs spécifiques dans une chaîne de caractères. Elles permettent de simplifier et d'accélérer le traitement des données en automatisant des tâches complexes. Utiliser des expressions régulières peut également améliorer la qualité et la fiabilité de votre code.
+Les expressions régulières sont un outil puissant et essentiel pour tout développeur Python. Elles permettent de rechercher et de manipuler rapidement et efficacement du texte en utilisant des modèles de caractères spécifiques. Les développeurs utilisent souvent les expressions régulières pour traiter des données, valider des entrées utilisateur ou filtrer des chaînes de caractères. Cet article expliquera comment utiliser les expressions régulières en Python et pourquoi elles sont si utiles.
 
-## Comment Faire
+## Comment faire
 
-Pour utiliser des expressions régulières en Python, vous devez importer le module "re". Voici un exemple de code qui utilise une expression régulière pour trouver tous les nombres contenus dans une chaîne de caractères :
+Tout d'abord, il est nécessaire d'importer le module ```re``` en utilisant la commande suivante :
 
-```Python
+```
 import re
-
-chaine = "Il y a 12 chiens dans le parc."
-
-resultats = re.findall(r'\d+', chaine) # recherche tous les nombres dans la chaîne
-
-print(resultats)
 ```
 
-Résultat :
+Ensuite, vous pouvez utiliser la fonction ```re.search()``` pour rechercher un modèle spécifique dans une chaîne de caractères. Par exemple, si vous voulez trouver une adresse e-mail dans une chaîne de caractères, vous pouvez utiliser le code suivant :
 
-```Python
-['12']
+```
+email = "contact@exemple.com"
+pattern = r"[a-z0-9]+@[a-z]+\.[a-z]+"
+match = re.search(pattern, email)
+if match:
+    print("Adresse e-mail trouvée !")
+else:
+    print("Aucune adresse e-mail trouvée.")
 ```
 
-La fonction "findall" recherche tous les motifs correspondants dans la chaîne et les renvoie sous forme d'une liste. Le "r" en début d'expression régulière indique que la chaîne est une chaîne brute, ce qui vous permet d'écrire des expressions sans avoir à échapper les caractères spéciaux.
+Ce code recherchera une adresse e-mail valide dans la variable ```email``` en utilisant un modèle d'expression régulière. Le résultat sera affiché en fonction de la présence ou l'absence d'une correspondance.
 
-## Plongée en Profondeur
+Vous pouvez également utiliser la fonction ```re.sub()``` pour remplacer une partie d'une chaîne de caractères en utilisant un modèle d'expression régulière. Par exemple, si vous voulez remplacer toutes les occurrences de lettres majuscules dans une chaîne de caractères par des lettres minuscules, vous pouvez utiliser le code suivant :
 
-Les expressions régulières peuvent être utilisées pour des tâches plus avancées telles que valider des adresses e-mail, extraire des informations spécifiques d'un texte ou même vérifier la syntaxe d'un code source. Elles sont également très utiles pour nettoyer les données avant de les utiliser dans des analyses ou des modèles de machine learning.
-
-Un autre élément important à savoir est le concept de groupes et de correspondances dans les expressions régulières. Les parenthèses dans une expression régulière définissent un groupe, qui peut être utilisé pour extraire des parties spécifiques du texte. Par exemple, si votre chaîne contient des numéros de téléphone français au format "XX-XX-XX-XX-XX", vous pouvez utiliser l'expression régulière suivante pour extraire ces numéros :
-
-```Python
-resultats = re.findall(r'(\d{2}-){4}(\d{2})', chaine)
+```
+string = "Bonjour LES AMIS !"
+pattern = r"[A-Z]"
+new_string = re.sub(pattern, "a-z", string)
+print(new_string) # Affichera "Bonjour les amis !"
 ```
 
-Ici, les groupes définis par les parenthèses sont utilisés pour correspondre au format spécifique des numéros de téléphone français et renvoyer uniquement les chiffres dans ces groupes.
+## Plongée en profondeur
 
-## Voir Aussi
+Les expressions régulières offrent une grande flexibilité et de nombreuses options pour rechercher et manipuler du texte en Python. Vous pouvez utiliser des caractères spéciaux tels que ```*``` pour représenter zéro ou plusieurs occurrences d'un caractère, ```+``` pour représenter une ou plusieurs occurrences et ```?``` pour représenter zéro ou une occurrence. Vous pouvez également utiliser des groupes de caractères tels que ```[a-z]``` pour représenter n'importe quelle lettre minuscule.
 
-Pour plus d'informations sur l'utilisation des expressions régulières en Python, consultez les ressources suivantes :
+De plus, les expressions régulières en Python prennent en charge les expressions conditionnelles, les opérateurs de mise en correspondance et les modifieurs. Il y a beaucoup plus à apprendre sur les expressions régulières en Python, et il est fortement recommandé de se plonger dans leur documentation officielle pour en savoir plus.
 
-- [Documentation officielle de Python sur les expressions régulières](https://docs.python.org/fr/3/library/re.html)
-- [Tutoriel sur les expressions régulières en Python](https://openclassrooms.com/fr/courses/4425111-perfectionnez-vous-en-python/4934976-utilisez-des-expressions-regulieres)
-- [Outil de test en ligne pour les expressions régulières en Python](https://regex101.com/)
+## Voir aussi
+
+- Documentation officielle des expressions régulières en Python : https://docs.python.org/fr/3/library/re.html
+- Tutoriel sur les expressions régulières en Python : https://realpython.com/regex-python/
+- Testeur d'expressions régulières en ligne : https://regex101.com/

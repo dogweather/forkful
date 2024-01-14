@@ -1,62 +1,47 @@
 ---
-title:    "C: Verifica dell'esistenza di una directory"
+title:    "C: Verifica se una directory esiste."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché controllare se una directory esiste?
 
-Se stai lavorando su un programma in linguaggio C che richiede di accedere a una directory, potresti dover verificare prima se questa esiste o meno. Questo passaggio è importante perché può evitare errori nel tuo codice e garantire che il tuo programma funzioni correttamente.
+Spesso, durante la scrittura di un programma in C, è necessario accedere a file situati in una determinata directory. Prima di provare ad aprire un file, può essere utile verificare se la directory in cui è contenuto esiste effettivamente per evitare errori durante l'esecuzione del programma.
 
-## Come Fare
+## Come controllare se una directory esiste
 
-Per verificare se una directory esiste, è possibile utilizzare la funzione `opendir()` che restituisce un puntatore a una struttura DIR se la directory esiste e `NULL` se non esiste. Di seguito è riportato un esempio di codice che verifica se una directory chiamata "docs" esiste nella directory corrente:
+Per controllare se una directory esiste in C, possiamo utilizzare la funzione `opendir()` della libreria `<dirent.h>`. Questa funzione prende come parametro il percorso della directory che vogliamo verificare e restituisce un puntatore al suo descrittore, se la directory esiste, o `NULL` se non esiste.
 
 ```C
 #include <stdio.h>
 #include <dirent.h>
 
 int main() {
-    // Verifica se la directory "docs" esiste
-    if (opendir("docs") != NULL) {
-        printf("La directory esiste!\n");
-    } else {
-        printf("La directory non esiste :(\n");
-    }
-    return 0;
+  DIR *dir = opendir("./my_directory"); // Sostituire con il percorso desiderato
+  if (dir) {
+    printf("La directory esiste!\n");
+    closedir(dir);
+  } else {
+    printf("La directory non esiste\n");
+  }
+  return 0;
 }
 ```
 
-L'output di questo programma dipenderà dalla presenza o meno della directory "docs" nella directory corrente:
+Esempio di output:
 
 ```
-La directory non esiste :(
+La directory non esiste
 ```
 
-L'uso di `opendir()` potrebbe non essere sufficiente in tutte le situazioni poiché potrebbe essere necessario verificare se la directory è leggibile o scrivibile. In questi casi, è possibile utilizzare la funzione `access()` che consente di verificare un determinato permesso su un file o una directory. Ad esempio, il seguente codice verifica se la directory "docs" esiste e se è leggibile:
+## Approfondimento sul controllo delle directory
 
-```C
-#include <stdio.h>
-#include <unistd.h>
+È importante notare che la funzione `opendir()` verifica solo l'esistenza della directory, ma non garantisce che la directory sia effettivamente accessibile. Inoltre, è possibile utilizzare la funzione `mkdir()` per creare una nuova directory, se non esiste, in modo da evitare eventuali errori durante l'esecuzione del programma.
 
-int main() {
-    // Verifica se la directory "docs" esiste e può essere letta
-    if (access("docs", R_OK) == 0) {
-        printf("La directory esiste ed è leggibile!\n");
-    } else {
-        printf("La directory non esiste o non è leggibile :(\n");
-    }
-    return 0;
-}
-```
+## Vedi anche
 
-## Approfondimento
-
-Per una maggiore precisione nella verifica delle directory, esiste la funzione `stat()` che restituisce una struttura `stat` contenente informazioni dettagliate sul file o sulla directory specificata. Può essere utile quando si deve verificare anche l'esistenza di file all'interno di una determinata directory. Inoltre, è possibile utilizzare le funzioni `mkdir()` e `mkdirp()` per creare una nuova directory nel caso in cui non esista.
-
-## Vedi Anche
-
-- Guida dettagliata alle funzioni di gestione delle directory: [https://www.computerhope.com/unix/uumask.htm](https://www.computerhope.com/unix/uumask.htm)
-- Ulteriori esempi di codice per gestire le directory in C: [https://www.tutorialspoint.com/cprogramming/c\_programming\_file\_io.htm](https://www.tutorialspoint.com/cprogramming/c_programming_file_io.htm)
-- Documentazione ufficiale sulle funzioni per la gestione delle directory in C: [https://www.gnu.org/software/libc/manual/html\_node/Opening-and-Closing-Directories.html](https://www.gnu.org/software/libc/manual/html_node/Opening-and-Closing-Directories.html)
+- Guida completa alla libreria <dirent.h>: https://www.tutorialspoint.com/c_standard_library/dirent_h.htm
+- Esempi di utilizzo della funzione `opendir()`: https://www.codingame.com/playgrounds/14213/system-calls-in-unix/directory-operations
+- Documentazione ufficiale della funzione `opendir()`: https://www.gnu.org/software/libc/manual/html_node/Opening-a-Directory.html

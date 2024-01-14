@@ -1,62 +1,44 @@
 ---
-title:    "TypeScript: Att påbörja ett nytt projekt"
+title:    "TypeScript: Att börja ett nytt projekt"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att starta ett nytt programmeringsprojekt är en spännande utmaning som ger möjligheten att skapa något unikt och användbart. Det är också ett bra sätt att träna och utveckla dina programmeringsfärdigheter.
 
-Att starta ett nytt programmeringsprojekt är alltid spännande och kan leda till många positiva resultat, oavsett om du gör det som hobby eller som en del av ditt jobb. Det ger dig möjlighet att utvecklas som programmerare och skapa något nytt och unikt. Det kan också vara ett sätt att bidra till open source-samhället och hjälpa till att förbättra programvara för andra användare.
+## Hur man gör
+För att starta ett nytt TypeScript-projekt behöver du först installera TypeScript via npm-kommandot `npm install -g typescript`. När det väl är installerat kan du skapa en ny mapp för ditt projekt och navigera till den i din terminal.
 
-## Hur man gör det
+För att skapa en `package.json`-fil för projektet, använd kommandot `npm init`. Detta kommer att guida dig genom att skapa en `package.json`-fil som innehåller viktig information om ditt projekt.
 
-Att starta ett nytt projekt i TypeScript är enkelt och kan göras på några få steg:
-
-1. Installera TypeScript genom att köra kommandot `npm install -g typescript` i terminalen. Det här kommer att installera TypeScript globalt på din dator.
-2. Skapa en ny mapp för ditt projekt och navigera till den i terminalen.
-3. Skapa en *tsconfig.json* fil genom att köra kommandot `tsc --init`. Denna fil kommer att innehålla konfiguration för ditt projekt.
-4. Öppna *tsconfig.json* filen i en texteditor och konfigurera den enligt dina preferenser. Här kan du bland annat ange filvägar för din TypeScript-kod och kompilera den till JavaScript.
-5. Skapa en *index.ts* fil där du kan skriva din TypeScript-kod.
-6. Kör kommandot `tsc` i terminalen för att kompilera din TypeScript-kod till JavaScript. Resultatet kommer att hamna i en ny *dist* mapp.
-
-Här är ett exempel på en enkel *index.ts* fil:
+Nu kan du använda TypeScript-kommandot `tsc` för att kompilera din kod. Till exempel, om du har en fil som heter `main.ts` som innehåller en enkel funktion som adderar två tal, kan du skriva följande kodblock i din `main.ts`-fil:
 
 ```TypeScript
-// En enkel TypeScript funktion för att hälsa på en användare
-function sayHello(name: string) {
-  console.log("Hej " + name + ", välkommen till mitt projekt!");
+function add(num1: number, num2: number): number {
+  return num1 + num2;
 }
 
-// Anropa funktionen med ett namn
-sayHello("Lisa");
+console.log(add(2, 3));
 ```
+Kör sedan kommandot `tsc main.ts` för att kompilera din kod. Detta kommer att generera en JavaScript-fil med samma namn som din TypeScript-fil.
 
-Och här är den kompilerade JavaScript-koden:
+När din kod är kompilerad, kan du köra den genom att skriva `node main.js` i terminalen. Detta kommer att ge dig följande utmatning:
 
-```JavaScript
-// En enkel JavaScript funktion för att hälsa på en användare
-function sayHello(name) {
-  console.log("Hej " + name + ", välkommen till mitt projekt!");
-}
-
-// Anropa funktionen med ett namn
-sayHello("Lisa");
 ```
-
-Som du kan se, har TypeScript-koden kompilerats till JavaScript-kod som kan köras i webbläsaren eller på en Node.js server.
+5
+```
 
 ## Djupdykning
+När du börjar ditt TypeScript-projekt, är det viktigt att känna till de grundläggande koncepten i språket. TypeScript är ett objektorienterat språk som bygger på JavaScript, men med viktiga tillägg som typtolkning och klasser.
 
-När du startar ett nytt projekt i TypeScript är det viktigt att planera och strukturera det på ett bra sätt för att undvika problem och behålla en lättläst kodbas. Här är några tips som kan hjälpa dig att få en god start på ditt projekt:
+Du kommer också att behöva välja en lämplig textredigerare eller utvecklingsmiljö (IDE) för ditt projekt. Det finns många olika alternativ som VS Code, WebStorm och Atom som alla stöder TypeScript.
 
-- Börja med att skapa en tydlig projektstruktur. Separera koden i moduler och se till att varje modul har ett tydligt syfte.
-- Använd TypeScript:s typsystem för att säkerställa att din kod är korrekt och undvika vanliga fel som stavfel eller typkonflikter.
-- Implementera strikta kodgranskningsprocesser för att upprätthålla en hög kvalitet på koden och undvika onödiga buggar och fel.
-- Använd en bra kodhanteringsmetod för att enkelt kunna spåra och återställa ändringar i koden.
+För att få en djupare förståelse för språket och dess funktioner kan du också kolla in dokumentationen och olika tutorials som finns tillgängliga online.
 
 ## Se även
-
-- [Typescript](https://www.typescriptlang.org/docs/)
-- [Getting started with TypeScript](https://blog.bitsrc.io/getting-started-with-typescript-ecfcf78f7af4?gi=7b2cfb243966)
-- [10 TypeScript tips och tricks](https://medium.com/@samueljaval/top-10-typescript-tips-and-tricks-6ccfde534953)
+- [Officiell TypeScript-dokumentation](https://www.typescriptlang.org/docs/)
+- [TypeScript-tutorial för nybörjare](https://www.tutorialspoint.com/typescript/)
+- [Skillshare-kurs: Getting Started with TypeScript](https://www.skillshare.com/classes/Getting-Started-with-TypeScript/1764476165)

@@ -1,44 +1,51 @@
 ---
-title:    "Go: Korzystanie z wyrażeń regularnych"
+title:    "Go: Używanie wyrażeń regularnych"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Dlaczego
 
-Wykorzystywanie wyrażeń regularnych w programowaniu jest niezwykle przydatne i pozwala na szybkie i precyzyjne przetwarzanie tekstu. Jest to szczególnie ważne w przypadku analizy danych czy weryfikacji danych wejściowych. Dzięki wyrażeniom regularnym można wykrywać wzorce w tekście, co znacznie ułatwia proces programowania.
+Regularne wyrażenia to ważne narzędzie w programowaniu, które pomaga w wyszukiwaniu i znajdowaniu tekstów zgodnie z określonymi wzorcami. Jego używanie może znacznie ułatwić pracę i przyspieszyć proces tworzenia aplikacji.
 
-## Jak
+##Jak To Zrobić
 
-Aby skorzystać z wyrażeń regularnych w języku Go, należy zastosować pakiet "regexp". Najpierw tworzymy wyrażenie regularne przy użyciu funkcji "Compile", a następnie wykorzystujemy go w celu przetworzenia tekstu za pomocą funkcji "FindString" lub "FindAllString". Poniżej znajdują się przykładowe kody oraz odpowiadające im wyjścia.
+Aby używać regularnych wyrażeń w języku Go, musimy najpierw zaimportować pakiet "regexp". Następnie definiujemy nasze wyrażenie wzorca, wykorzystując funkcję "Compile" wraz z naszym wzorcem w formacie "regexp.MustCompile(pattern)".
+
+Przykładowy kod wykorzystujący regularne wyrażenia w celu znalezienia wszystkich wystąpień słowa "Go" w tekście i ich zastąpienia przez słowo "Golang" wyglądałby następująco:
 
 ```Go
-// Przykład 1: Znajdowanie wszystkich cyfr w tekście
-re := regexp.Compile("[0-9]+")
-text := "Mały piesek ma 2 lata."
-result := re.FindAllString(text, -1)
-fmt.Println(result)
-// Wynik: [2]
+package main
 
-// Przykład 2: Weryfikacja adresu e-mail
-re := regexp.Compile("[a-z0-9]+@[a-z]+\\.[a-z]+")
-email := "janek123@poczta.com"
-isValid := re.MatchString(email)
-if isValid {
-  fmt.Println("Adres e-mail jest poprawny")
-} else {
-  fmt.Println("Niepoprawny adres e-mail")
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    text := "Cześć, dzisiaj pokazywaliśmy nam jak używać wyrażeń w języku Go."
+    pattern := regexp.MustCompile("Go")
+    newText := pattern.ReplaceAllString(text, "Golang")
+    fmt.Println(newText)
 }
-// Wynik: Adres e-mail jest poprawny
 ```
 
-## Głębokie zanurzenie
+Output: Cześć, dzisiaj pokazywaliśmy nam jak używać wyrażeń w języku Golang.
 
-Wyrażenia regularne w języku Go mają wiele zaawansowanych funkcji, takich jak grupy, alternatywy czy kwantyfikatory, które pozwalają na jeszcze precyzyjniejsze przetwarzanie tekstu. Warto zapoznać się z dokumentacją języka Go, aby poznać wszystkie możliwości wyrażeń regularnych oraz dowiedzieć się, jak wykorzystać je w różnych sytuacjach.
+##Deep Dive
 
-## Zobacz też
+W języku Go, wyrażenia regularne są wykorzystywane w wielu różnych sposobach. Można je używać do weryfikacji poprawności wprowadzanych danych, filtrowania i przetwarzania tekstu oraz do wykonywania różnych operacji na stringach.
 
-- [Dokumentacja języka Go w zakresie wyrażeń regularnych](https://golang.org/pkg/regexp/)
-- [Wzorce i wyrażenia regularne w języku Go](https://blog.golang.org/regular-expressions)
-- [Poradnik dla początkujących w zakresie wyrażeń regularnych w języku Go](https://www.calhoun.io/regular-expressions-in-go/)
+Jednym z najważniejszych elementów wyrażeń regularnych są tzw. "meta-znaki", które reprezentują różne zestawy znaków, takie jak cyfry, litery lub interpunkcja. Można je łączyć w wyrażenia lub używać pojedynczo do określenia konkretnego wzorca.
+
+Kolejną przydatną funkcją jest możliwość wykorzystania wyrażeń regularnych do grupowania danych. Na przykład, jeśli nasze wyrażenie jest ujęte w nawiasy (np. "(Go)lang"), to tylko tekstu dopasowany do tego wzorca zostanie zwrócony jako wynik.
+
+W języku Go, wyrażenia regularne są również nieodłączną częścią biblioteki "strings", która pozwala na wykonanie bardziej zaawansowanych operacji na łańcuchach znaków.
+
+##Zobacz Również
+
+- Oficjalna Dokumentacja języka Go: https://golang.org/doc/
+- Przewodnik po wyrażeniach regularnych w języku Go: https://golang.org/pkg/regexp/
+- Przykładowe wyrażenia regularne w języku Go: https://regex-golang.appspot.com/assets/html/index.html

@@ -1,44 +1,51 @@
 ---
-title:    "Bash: Recherche et remplacement de texte"
+title:    "Bash: Rechercher et remplacer du texte"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur Bash, vous savez probablement que la recherche et le remplacement de texte sont des tâches courantes dans le processus de développement. Que vous souhaitiez remplacer une chaîne de caractères spécifique dans un fichier ou dans tout un répertoire, la recherche et le remplacement sont des outils précieux pour gagner du temps et augmenter l'efficacité de votre code. Dans cet article, nous allons expliquer comment effectuer efficacement des recherches et des remplacements en utilisant Bash.
+La recherche et le remplacement de texte sont deux opérations courantes lors de la programmation en Bash. Ces fonctionnalités vous permettent de modifier facilement du texte dans un fichier, un répertoire ou encore une variable. Que vous soyez un développeur débutant ou expérimenté, apprendre à utiliser la recherche et le remplacement de texte en Bash peut grandement améliorer votre efficacité lors de la programmation.
 
 ## Comment Faire
 
-### Utiliser sed
-
-Sed (Stream Editor) est un outil Bash très pratique pour effectuer des remplacements de texte sur des fichiers. Voici un exemple de code qui remplace toutes les occurrences de "Bonjour" par "Salut" dans le fichier "salutations.txt".
+La syntaxe de base pour la recherche et le remplacement de texte en Bash est la suivante :
 
 ```Bash
-sed 's/Bonjour/Salut/g' salutations.txt > salutations_modifiees.txt
+sed 's/pattern/replacement/g' input_file > output_file
 ```
 
-Ce code utilise l'option 's' pour remplacer la première chaîne par la deuxième dans le fichier spécifié. L'option 'g' est utilisée pour indiquer que toutes les occurrences doivent être remplacées, pas seulement la première.
+Cette commande utilise l'outil de ligne de commande "sed" pour rechercher le motif spécifié dans le fichier d'entrée (input_file) et le remplacer par le texte spécifié (replacement) dans le fichier de sortie (output_file). L'option "g" à la fin de la commande indique à Bash de remplacer toutes les occurrences du motif, et non seulement la première.
 
-### Utiliser awk
-
-Awk est un autre outil Bash utile pour les recherches et les remplacements. Dans cet exemple, nous allons remplacer toutes les occurrences de "Bonjour" par "Salut" dans le contenu du fichier "salutations.txt".
+Par exemple, si nous voulons remplacer toutes les occurrences de "chat" par "chien" dans un fichier texte appelé "animaux.txt", nous pouvons utiliser la commande suivante :
 
 ```Bash
-awk '{sub("Bonjour", "Salut");print}' salutations.txt > salutations_modifiees.txt
+sed 's/chat/chien/g' animaux.txt > nouveaux_animaux.txt
 ```
 
-Le code utilise la fonction awk 'sub' pour remplacer la première chaîne par la deuxième dans chaque ligne du fichier. La fonction 'print' est utilisée pour afficher le contenu modifié.
+Le fichier de sortie, "nouveaux_animaux.txt", contiendra toutes les mêmes lignes que "animaux.txt", mais avec le mot "chien" à la place de "chat" chaque fois qu'il apparaît.
 
-## Plongée Profonde
+## Plongée en Profondeur
 
-Il existe de nombreuses autres options et fonctions que vous pouvez utiliser pour effectuer des recherches et des remplacements de texte en Bash. Par exemple, vous pouvez utiliser les expressions régulières pour rechercher et remplacer des motifs spécifiques dans un fichier. Vous pouvez également utiliser des boucles pour parcourir et modifier plusieurs fichiers à la fois.
+Bash offre de nombreuses fonctions utiles pour la recherche et le remplacement de texte, telles que l'utilisation de variables pour spécifier les motifs ou les remplacements, ou encore l'utilisation d'expressions régulières pour des recherches plus spécifiques. Vous pouvez également combiner différentes commandes Bash pour créer des scripts complexes pour automatiser la recherche et le remplacement de texte dans plusieurs fichiers ou répertoires à la fois.
 
-Il est important de noter que la plupart des outils Bash pour les recherches et les remplacements fonctionnent sur des fichiers texte, donc ils peuvent ne pas fonctionner sur des fichiers binaires.
+Il est important de comprendre que la commande "sed" modifie uniquement le texte dans le fichier de sortie, et non le fichier d'entrée d'origine. Si vous voulez que les modifications soient apportées directement dans le fichier d'entrée, vous pouvez utiliser l'option "-i" comme ceci :
+
+```
+sed -i 's/pattern/replacement/g' input_file
+```
+
+Enfin, si vous voulez simplement visualiser les modifications sans les enregistrer dans un nouveau fichier, vous pouvez utiliser l'option "-n" pour désactiver l'affichage automatique des lignes, et utiliser l'option "p" pour spécifier quelles lignes vous voulez visualiser. Par exemple, pour voir les lignes où le mot "pomme" a été remplacé par "banane" dans le fichier "fruit.txt", vous pouvez utiliser la commande suivante :
+
+```
+sed -n 's/pomme/banane/p' fruit.txt
+```
 
 ## Voir Aussi
 
-- [Documentation officielle de sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Documentation officielle d'awk](https://www.gnu.org/software/gawk/manual/gawk.html)
-- [Site Web utile pour les expressions régulières en Bash](https://www.regular-expressions.info/posix.html)
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutoriel pour lire et écrire dans des fichiers en Bash](https://www.hostinger.fr/tutoriels/fichiers-bash-lecture-ecriture/)
+- [Guide complet pour les expressions régulières en Bash](https://www.cyberciti.biz/faq/guide-to-bash-regular-expressions-regex/)

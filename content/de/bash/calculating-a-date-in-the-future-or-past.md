@@ -1,51 +1,53 @@
 ---
-title:    "Bash: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:    "Bash: Eine Datum in der Zukunft oder Vergangenheit berechnen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann eine sehr hilfreiche Aufgabe in der Bash-Programmierung sein. Es ermöglicht es uns, automatisierte Aufgaben zu erstellen, die auf bestimmte zeitliche Ereignisse reagieren oder uns einfach dabei helfen, wichtige Termine im Voraus zu planen.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann nützlich sein, um Termine oder Fristen im Voraus zu planen oder die Vergangenheit zu überprüfen.
 
-## Wie geht das?
+##Wie geht's?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es in Bash verschiedene Möglichkeiten. Eine häufig genutzte Methode ist die Verwendung des Befehls "date". Dieser Befehl kann verwendet werden, um verschiedene Zeiteinheiten wie Tage, Monate oder Jahre zu einer bestimmten Datumsstempel hinzuzufügen oder davon abzuziehen.
-
-Hier ist ein Beispiel, wie wir den Befehl "date" verwenden können, um das Datum von heute um 7 Tagen in der Zukunft zu berechnen:
+Um ein Datum in der Zukunft zu berechnen, können wir den Befehl `date` in Bash verwenden und das gewünschte Datum mithilfe des Parameters `-d` angeben. Zum Beispiel:
 
 ```Bash
-future_date=$(date +'%d-%m-%Y' -d "+7 days")
-echo "Das Datum in 7 Tagen wird sein: $future_date"
+date -d "1 week"
 ```
 
-Die Ausgabe dieses Codes wird das Datum in der Zukunft angeben: "03-12-2019".
+Dies gibt das Datum von heute in einer Woche aus. Wir können auch Ausdrücke wie "next Friday" oder "tomorrow" verwenden, um ein spezifisches Datum zu erhalten.
 
-Um ein Datum in der Vergangenheit zu berechnen, können wir den Befehl "date" ebenfalls verwenden, jedoch mit einem negativen Wert für die Zeiteinheit. Zum Beispiel, um das Datum von heute vor 7 Tagen zu erhalten, können wir folgenden Code verwenden:
+Um ein Datum in der Vergangenheit zu berechnen, verwenden wir den gleichen Befehl, aber mit dem Parameter `-d` gefolgt von "ago". Zum Beispiel:
 
 ```Bash
-past_date=$(date +'%d-%m-%Y' -d "-7 days")
-echo "Das Datum vor 7 Tagen war: $past_date"
+date -d "1 month ago"
 ```
 
-Die Ausgabe wird in diesem Fall das Datum in der Vergangenheit angeben: "19-11-2019".
+Dies gibt das Datum von vor einem Monat aus. Wir können auch verschiedene Einheiten wie Jahre, Monate oder Tage verwenden, um ein spezifisches Datum in der Vergangenheit zu erhalten.
 
-## Tiefer Einblick
+##Tief eintauchen
 
-Die Verwendung des Befehls "date" ist nur eine Möglichkeit, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Wir können auch die "dateutils" nutzen, eine Sammlung von Tools speziell für die Arbeit mit Datumsangaben in Bash.
-
-Ein weiteres hilfreiches Tool ist der Befehl "cal", der einen Kalender für einen bestimmten Monat oder ein ganzes Jahr anzeigen kann. Wir können auch den Befehl "date" mit "cal" kombinieren, um bestimmte Tage in einem bestimmten Monat oder Jahr zu erhalten. Zum Beispiel, um den Dienstag in der letzten Woche des nächsten Monats zu erhalten, können wir folgenden Code verwenden:
+Der `date` Befehl bietet viele verschiedene Möglichkeiten, um ein spezifisches Datum in der Zukunft oder Vergangenheit zu berechnen. Zum Beispiel können wir eine bestimmte Uhrzeit angeben, indem wir `HH:MM:SS` an das Datum anhängen:
 
 ```Bash
-tuesday=$(date +'%d' -d "next month" -d "Sunday-1 Week")
-cal -m $(date +'%m %Y' -d "next month") | grep "$tuesday"
+date -d "next Friday 13:00:00"
 ```
 
-Die Ausgabe wird das Datum des Dienstags in der letzten Woche des nächsten Monats anzeigen, z.B. "31".
+Wir können auch das Datum anhand der aktuellen Zeit berechnen, indem wir das heutige Datum verwenden und eine gewisse Anzahl von Stunden, Minuten oder Sekunden hinzufügen oder subtrahieren.
 
-## Siehe auch
+Es ist auch möglich, die Sprache für die Ausgabe des Datums anzugeben, indem wir den Parameter `-l` gefolgt von der entsprechenden Sprachabkürzung angeben. Zum Beispiel:
 
-- Dokumentation des Befehls "date": https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Dateutils Dokumentation: https://www.fresse.org/dateutils/
-- Weitere nützliche Bash Befehle: https://www.linuxnix.com/most-useful-linux-commands/
+```Bash
+date -d "next month" -l de_DE
+```
+
+Dies gibt das Datum in deutscher Sprache aus.
+
+##Siehe auch
+
+- [Linuxize - How to Use the `date` Command in Linux](https://linuxize.com/post/how-to-use-date-command-in-linux/)
+- [Computer Hope - Linux `date` command](https://www.computerhope.com/unix/udate.htm)
+- [IBM - Using the `date` command](https://www.ibm.com/docs/en/aix/6.1?topic-s=date-command)

@@ -1,51 +1,42 @@
 ---
-title:    "TypeScript: Afficher les sorties de débogage"
+title:    "TypeScript: Imprimer la sortie de débogage"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Le débogage est crucial lorsqu'il s'agit de résoudre les problèmes dans nos programmes. L'impression de messages de débogage est une excellente façon de suivre l'exécution de notre code et de localiser les erreurs plus rapidement.
+L'utilisation de la sortie de débogage dans la programmation est essentielle pour comprendre le fonctionnement de votre code. Cela permet de repérer les erreurs et de comprendre comment votre programme s'exécute. Sans la sortie de débogage, il peut être difficile de résoudre les problèmes et d'améliorer votre code.
 
 ## Comment faire
 
-Pour imprimer du contenu de débogage en TypeScript, nous pouvons utiliser la méthode `console.log()`. Il s'agit d'une fonction intégrée qui prend en paramètre les données que nous voulons afficher. Voici un exemple de code:
+Pour imprimer une sortie de débogage en TypeScript, vous pouvez utiliser la fonction console.log(). Cette fonction prend un ou plusieurs paramètres à imprimer dans la console. Voici un exemple:
 
 ```TypeScript
-const nombre: number = 5;
-const message: string = "Le nombre est de " + nombre;
-console.log(message);
+console.log("Bonjour!");
 ```
 
-Lorsque nous exécutons ce code, nous obtenons le message suivant dans notre console:
+Ce code imprime simplement "Bonjour!" dans la console lors de l'exécution du programme.
 
-```
-Le nombre est de 5
-```
-
-Nous pouvons également utiliser cette méthode pour afficher des objets ou des tableaux en utilisant la syntaxe suivante :
+Vous pouvez également utiliser la fonction console.debug() pour afficher des informations de débogage supplémentaires. Ces messages seront utiles pour comprendre le flux d'exécution de votre programme et repérer les éventuelles erreurs.
 
 ```TypeScript
-console.log("Voici un objet", { nom: "John", age: 25 });
-console.log("Voici un tableau", [1, 2, 3]);
+let num = 10;
+console.debug("La valeur de num est", num);
 ```
+
+Lors de l'exécution, ce code affichera "La valeur de num est 10" dans la console.
 
 ## Plongée en profondeur
 
-Dans TypeScript, nous pouvons également utiliser la méthode `console.debug()` pour imprimer des informations de débogage. La différence avec `console.log()` est que les messages de débogage ne seront pas affichés par défaut dans la console, à moins que nous ne spécifions l'option de lancement `--inspect` lors de l'exécution de notre code.
+Il y a plusieurs façons d'améliorer l'utilisation de la sortie de débogage dans votre code TypeScript. Vous pouvez, par exemple, utiliser des niveaux de débogage pour filtrer les messages que vous souhaitez afficher dans la console. Cela peut être utile lorsque votre code devient plus complexe et que vous avez besoin de cibler des parties spécifiques de votre programme pour le débogage.
 
-Nous pouvons également améliorer la lisibilité de nos messages de débogage en utilisant des balises de couleur dans notre code. Par exemple :
-
-```TypeScript
-console.log("%c Voici un message important", "color: red");
-```
-
-Cela appliquera une couleur rouge au message "Voici un message important", ce qui peut être utile pour attirer l'attention sur certaines informations importantes.
+De plus, vous pouvez utiliser des bibliothèques tierces telles que "debug" pour plus de fonctionnalités de débogage avancées. De telles bibliothèques peuvent vous aider à organiser vos messages de débogage de manière plus structurée et à les désactiver facilement en cas de besoin.
 
 ## Voir aussi
 
-- [Documentation officielle de TypeScript sur la méthode console.log()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#improved-logging)
-- [Article sur l'utilisation de console.debug() en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-use-console-debug-in-node-js)
-- [Liste complète des balises de couleur pour le débogage en JavaScript](https://bgrins.github.io/devtools-snippets/#console-save)
+- [Documentation officielle de TypeScript sur la fonction console](https://www.typescriptlang.org/docs/handbook/console.html)
+- [Utilisation du débogage en TypeScript](https://khalilstemmler.com/articles/typescript-tutorial/debugging-typescript-in-vscode/)
+- [Utilisation de la bibliothèque de débogage "debug"](https://www.npmjs.com/package/debug)

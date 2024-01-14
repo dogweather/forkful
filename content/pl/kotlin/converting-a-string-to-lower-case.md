@@ -1,45 +1,39 @@
 ---
-title:    "Kotlin: Konwersja ciągu znaków na małe litery"
+title:    "Kotlin: Konwertowanie ciągu znaków na małe litery"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto przekonwertować string na małe litery?
 
-W programowaniu często musimy pracować z tekstem, a właśnie ta umiejętność jest jedną z kluczowych w pracy z tekstami. W tym przewodniku dowiemy się jak w języku Kotlin przekonwertować tekst na małe litery.
+Czasami w pracy z programowaniem musimy mieć kontrolę nad wyglądem naszego tekstu. Przekonwertowanie stringa na małe litery może nam ułatwić porównywanie i sprawdzanie równości ciągów znaków, a także ułatwić wyświetlanie tekstu w czytelny sposób.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby przekonwertować tekst na małe litery w języku Kotlin, musimy użyć metody `toLowerCase()`.
+Miła wiadomość – w języku Kotlin konwersja stringa na małe litery jest bardzo prosta. Wystarczy użyć metody `toLowerCase()` na naszym stringu. Przykładowy kod:
 
-Przykład:
-```kotlin
-val tekst = "KOTLIN TO NAPRAWDĘ FANTASTYCZNY JĘZYK!"
-val nowyTekst = tekst.toLowerCase()
-println(nowyTekst)
+```Kotlin
+val name = "JAN KOWALSKI"
+println(name.toLowerCase())
 ```
+Wynik: `jan kowalski`
 
-**Output:** `kotlin to naprawdę fantastyczny język!`
+Ale co, jeśli w naszym stringu są polskie znaki? W tym przypadku warto użyć metody `toLowerCase(Locale.forLanguageTag("PL"))` z odpowiednim regionem językowym. Przykładowy kod:
 
-Możemy również wykorzystać metodę `toLowerCase()` w celu ignorowania polskich znaków diakrytycznych:
-
-```kotlin
-val tekst = "Północna Europa to ŁADNY, ale TEŻ TROCHĘ ZIMNY region."
-val nowyTekst = tekst.toLowerCase(Locale("pl"))
-println(nowyTekst)
+```Kotlin
+val name = "ŁUKASZ NOWAK"
+println(name.toLowerCase(Locale.forLanguageTag("PL")))
 ```
+Wynik: `łukasz nowak`
 
-**Output:** `północna europa to ładny, ale też trochę zimny region.`
+## Głębszy wgląd
 
-## Głębsza analiza
-
-Wiemy już jak prosto przekonwertować tekst na małe litery, ale warto odkryć jak dokładnie działa ta metoda. W języku Kotlin, ciąg znaków jest reprezentowany przez klasę `String`, która dostarcza nam również metody do manipulacji tekstem.
-
-Metoda `toLowerCase()` wywołuje wewnętrznie metodę `toLowerCase()` klasy `String`, która z kolei wywołuje metodę `toLowerCase(Locale.getDefault())`. Wykorzystując metodę `toLowerCase(Locale)` możemy wybrać wymagany język do konwersji tekstów.
+Metoda `toLowerCase()` działa na podstawie domyślnej lokalizacji urządzenia, co może prowadzić do nieoczekiwanych wyników dla różnych języków. Dlatego warto użyć metody `toLowerCase(Locale)` lub `toLowerCase(Locale.forLanguageTag("PL"))`, gdzie możemy jawnie określić język, na który chcemy przekonwertować nasz string. 
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Przetwarzanie tekstów w języku Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
-- [Kotlin for Android - przewodnik dla początkujących](https://developer.android.com/kotlin)
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/basic-syntax.html#strings
+- Rozmowy o Koltin: https://www.getfretboard.com/topic/kotlin-language/
+- Curso de Kotlin: https://www.youtube.com/playlist?list=PLwyncZJOqB2iSQfxuNtTI9Qtq3ixvlHfZ (w języku hiszpańskim)

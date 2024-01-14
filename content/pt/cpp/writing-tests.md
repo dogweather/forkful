@@ -1,68 +1,51 @@
 ---
 title:    "C++: Escrevendo testes"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porque escrever testes é importante
+## Por que escrever testes em C++?
 
-Escrever testes é uma parte crucial do processo de desenvolvimento de software. Testes ajudam a garantir que o código escrito funcione corretamente e previnem erros e bugs. Além disso, eles também podem ser úteis para fazer a manutenção do código mais fácil e eficiente. 
+Ao trabalhar com linguagens de programação, é importante garantir que seu código esteja funcionando corretamente e livre de erros. Escrever testes em C++ é uma forma valiosa de garantir a qualidade do seu código e identificar possíveis problemas antes deles chegarem aos usuários finais. Além disso, testes bem escritos podem ajudar na detecção de bugs em atualizações futuras e economizar tempo e esforço no processo de depuração.
 
-# Como escrever testes em C++
+## Como escrever testes em C++?
 
-Escrever testes em C++ é bastante simples. Você pode começar criando uma função que contém os testes e, em seguida, chamá-la no seu programa principal. Aqui está um exemplo de como fazer isso:
+Existem algumas bibliotecas populares disponíveis para escrever testes em C++, como o Google Test e o Catch2. Essas bibliotecas fornecem ferramentas e funções para criar e executar testes de forma fácil e eficiente. Vamos dar uma olhada em um exemplo de teste usando o Google Test:
 
 ```C++
-#include <iostream>
+#include <gtest/gtest.h>
 
-using namespace std;
-
-// Função que contém os testes
-void fazerTestes() {
+TEST(MathTest, Addition) {
+    // inputs
     int x = 5;
-    int y = 10;
+    int y = 8;
 
-    // Teste para verificar se x e y são iguais
-    if (x == y) {
-        cout << "O teste falhou!" << endl;
-    } else {
-        cout << "O teste passou!" << endl;
-    }
+    // expected result
+    int expected = 13;
 
-    // Teste para verificar se a soma de x e y é 15
-    int soma = x + y;
-    if (soma == 15) {
-        cout << "O teste passou!" << endl;
-    } else {
-        cout << "O teste falhou!" << endl;
-    }
+    // execute function
+    int actual = x + y;
+
+    // assert result
+    ASSERT_EQ(expected, actual);
 }
 
-int main() {
-    // Chama a função de testes
-    fazerTestes();
-
-    return 0;
-}
+// Output: [ RUN ] MathTest.Addition
+// Output: [       OK ] MathTest.Addition (0 ms total)
 ```
 
-Saída:
-```
-O teste falhou!
-O teste passou!
-```
+Neste exemplo, estamos testando se a soma de dois números resulta no valor esperado. Podemos adicionar mais testes no mesmo arquivo ou em arquivos separados para diferentes funcionalidades.
 
-Neste exemplo, criamos uma função chamada "fazerTestes" que contém dois testes simples para ilustrar como escrever e executar testes em C++. Note que os testes estão dentro de blocos "if", e o código dentro deles só será executado se a condição for verdadeira.
+## Mergulho profundo
 
-# Aprofundando nos testes em C++
+Para escrever testes eficazes, é importante considerar diferentes cenários e testar todas as possibilidades do seu código. É também uma boa prática manter os testes atualizados com o código, para garantir que eles sejam executados corretamente em atualizações futuras.
 
-Existem diversas ferramentas e frameworks disponíveis para escrever testes em C++. Um dos mais populares é o Google Test, que fornece uma estrutura para escrever e executar testes automatizados. Ele também oferece recursos como testes parametrizados, mock objects e relatórios de cobertura de código.
+Outro aspecto importante é usar nomes descritivos para seus testes, para facilitar a identificação de possíveis problemas. Além disso, é recomendado testar funções ou métodos individuais em vez de testar a funcionalidade completa, pois isso torna mais fácil identificar a localização do erro.
 
-Além disso, é importante entender e praticar boas práticas de escrita de testes, como testar cada função separadamente e fornecer cenários de teste abrangentes.
-
-# Veja também
+## Veja também
 
 - [Documentação do Google Test](https://github.com/google/googletest)
-- [Tutorial de testes em C++ do CppCon](https://youtu.be/iwJpxWHuZQY)
-- [Artigo sobre boas práticas de escrever testes em C++](https://www.codeproject.com/Articles/1051389/Best-practices-in-unit-test-of-Cplusplus-files-wit)
+- [Tutorial do Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
+- [Por que escrever testes: benefícios e melhores práticas](https://www.tricentis.com/blog/why-write-unit-tests-benefits-best-practices/)

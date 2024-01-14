@@ -1,35 +1,54 @@
 ---
 title:    "TypeScript: Konvertere en streng til små bokstaver"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hva er hensikten med å konvertere en streng til små bokstaver?
+## Hvorfor
 
-Konvertering av en streng til små bokstaver er en viktig del av tekstbehandling og kan være nyttig for å behandle data og gjøre det enklere å søke og sammenligne tekst. Det kan også være nyttig i situasjoner der vi ønsker at all tekst skal være i samme format, for eksempel ved å formatere for bruk i en database eller ved å sammenligne brukerinntasting med forventet tekst.
+Det kan være mange grunner til å konvertere en streng til små bokstaver når man programmerer. Dette kan være nyttig når man for eksempel skal sammenligne to strenger uten å ta hensyn til store og små bokstaver, eller når man vil formatere en tekst på en bestemt måte.
 
-## Slik gjør du det i TypeScript:
+## Slik gjør du det
 
-```TypeScript
-let streng = "Dette er EN tekst"; //definerer en streng
-streng = streng.toLocaleLowerCase(); //konverterer til små bokstaver
-console.log(streng); //utskrift: dette er en tekst
-```
+For å konvertere en streng til små bokstaver i TypeScript, kan man bruke funksjonen `toLowerCase()`. Denne funksjonen konverterer alle bokstavene i en streng til små bokstaver. La oss se på et eksempel:
 
 ```TypeScript
-let navn = "Jørgen"; //definerer en streng
-navn = navn.replace("ø", "o"); //erstatter én karakter med en annen
-console.log(navn); //utskrift: Jorgen
+let navn = "Jørgen";
+console.log(navn.toLowerCase());
 ```
 
-## Gå i dybden
+Dette vil gi følgende utskrift:
 
-Når vi bruker metoden `toLocaleLowerCase()` på en streng i TypeScript, vil alle bokstavene bli konvertert til små bokstaver, i henhold til språkinnstillingene på enheten som kjører koden. Dette betyr at for noen språk, som norsk og tysk, vil noen bokstaver bli konvertert til en annen bokstav enn den tilsvarende engelske bokstaven. For eksempel vil "Å" bli konvertert til "å" i norsk, og "ß" til "ss" i tysk.
+```TypeScript
+jørgen
+```
 
-Det er viktig å merke seg at `toLocaleLowerCase()` ikke endrer strengen permanent, det vil si at den originale strengen forblir uendret. Hvis vi ønsker å lagre den konverterte strengen, må vi tilordne den til en ny variabel eller tilbake til den opprinnelige variabelen.
+Vi kan også bruke `toLowerCase()` til å sammenligne to strenger uten å ta hensyn til store og små bokstaver:
+
+```TypeScript
+let passord = "Hemmelig123";
+let brukerInput = "HEmMelig123";
+
+if(passord.toLowerCase() === brukerInput.toLowerCase()) {
+  console.log("Passordet er riktig!");
+} else {
+  console.log("Feil passord!");
+}
+```
+
+Dette vil gi følgende utskrift:
+
+```TypeScript
+Passordet er riktig!
+```
+
+## Dypdykk
+
+Når man bruker `toLowerCase()` funksjonen, konverteres kun bokstavene til små bokstaver. Eventuelle tall, symboler eller mellomrom i strengen forblir uendret. Det er også viktig å merke seg at `toLowerCase()` funksjonen ikke endrer selve variabelen, men heller returnerer en ny streng med de konverterte bokstavene.
 
 ## Se også
 
-- [MDN Web Docs: String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-- [Blogginnlegg: Slik bruker du strenger i TypeScript](https://www.bayviewcoder.com/nb/slik-bruker-du-strenger-i-typescript/)
+- [MDN web docs - toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [TypeScript dokumentasjon - String Operations](https://www.typescriptlang.org/docs/handbook/strings.html)

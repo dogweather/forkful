@@ -1,55 +1,44 @@
 ---
 title:    "Javascript: Väliaikaisen tiedoston luominen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi luoda tilapäinen tiedosto?
+## Miksi luoda väliaikainen tiedosto?
 
-Tilapäisten tiedostojen luominen on tärkeä osa monia ohjelmointiprojekteja, sillä ne tarjoavat väliaikaisen tallennustilan, jota voidaan käyttää datan väliaikaiseen tallentamiseen ja käsittelyyn. Tämä voi olla erityisen hyödyllistä, kun työskentelet isojen tiedostojen tai monimutkaisten tietorakenteiden kanssa.
+Väliaikaiset tiedostot ovat erittäin hyödyllisiä JavaScript-ohjelmoijille monissa eri tilanteissa. Ne voivat auttaa ratkaisemaan ongelmia, kuten tietojen tallentamista tilapäisesti tai ohjelman suorituksen aikana luotujen tiedostojen hallintaa. Väliaikaiset tiedostot myös parantavat koodisi suorituskykyä ja vähentävät turhien tiedostojen määrää laitteellasi.
 
-## Näin luodaan tilapäinen tiedosto
+## Miten luoda väliaikainen tiedosto?
 
-Käyttämällä JavaScriptiä on mahdollista luoda tilapäisiä tiedostoja helposti ja vaivattomasti. Seuraavassa esimerkissä luomme tilapäisen tiedoston, joka sisältää joitain tekstejä ja tallennamme sen koneelle.
+Helpoin tapa luoda väliaikainen tiedosto JavaScript-ohjelmassa on käyttää `tmp` -moduulia. Voit asentaa tämän moduulin NPM:n avulla ja käyttää sitä koodissasi seuraavasti:
 
-```Javascript
-var tmp = require('tmp');
-var fs = require('fs');
+```javascript
+const tmp = require('tmp');
 
-// Luodaan tilapäinen tiedosto
-tmp.file(function(err, path, fd, cleanupCallback) {
-    if (err) throw err;
+tmp.file((err, path, fd, cleanupCallback) => {
+  if (err) throw err;
 
-    // Kirjoitetaan teksti tiedostoon
-    fs.write(fd, 'Tämä on tilapäinen tiedosto', function(err) {
-        if (err) throw err;
+  console.log('Temporary file:', path);
+  
+  // Use the temporary file here
+  // ...
 
-        // Konsoliin tulostetaan tiedoston luetut tiedot
-        fs.readFile(path, 'utf8', function(err, data) {
-            if (err) throw err;
-            console.log(data);
-        });
-
-        // Poistetaan tiedosto
-        cleanupCallback();
-    });
+  // Delete the temporary file after using it
+  cleanupCallback();
 });
 ```
 
-Tässä esimerkissä käytämme Node-palvelinta luomaan tilapäisen tiedoston käyttämällä `tmp` -paketin `file` -metodia. Tämä metodi ottaa vastaan callback-funktion, joka suoritetaan kun tiedosto on luotu. Luodessamme tiedoston, annamme myös osoittimen tiedostoon (`fd`), jotta voimme kirjoittaa siihen.
+Tämä koodi luo automaattisesti väliaikaisen tiedoston, jonka polku tallennetaan `path`-muuttujaan. Voit käyttää tätä tiedostoa haluamallasi tavalla ja se poistetaan automaattisesti sen käytön jälkeen. Voit myös määrittää erilaisia vaihtoehtoja, kuten tiedoston nimen ja sijainnin, `tmp.file` -metodin parametreina.
 
-Käyttämällä `fs` -pakettia, voimme kirjoittaa tiedostoon haluamamme tekstin käyttämällä `write` -metodia. Tämän jälkeen voimme lukea tiedoston sisällön käyttämällä `readFile` -metodia ja tulostaa sen konsoliin.
+## Syvempi sukellus
 
-Lopuksi, käytämme `cleanupCallback` -funktiota poistaaksemme luodun tilapäisen tiedoston.
+Väliaikaisen tiedoston luominen käyttäen `tmp` -moduulia käyttää oikeastaan vain Node.js:n `os` -moduulissa olevaa `tmpdir` -toimintoa. Tämä funktio palauttaa polun, jossa väliaikaiset tiedostot tallennetaan. Moduuli `tmp` vain abstraktoi tämän toiminnallisuuden ja tarjoaa kätevämmän API:n.
 
-## Syvällinen sukellus
-
-Tilapäisten tiedostojen luominen voidaan toteuttaa monilla eri tavoilla, mutta käyttämällä `tmp` -pakettia se on helppoa ja turvallista. Tämä paketti tarjoaa myös muita hyödyllisiä toimintoja, kuten tilapäisten hakemistojen luominen ja niiden poistaminen.
-
-Kannattaa myös huomata, että tilapäisillä tiedostoilla on yleensä oletusarvoisesti "uniq" -nimi, mikä tarkoittaa sitä, että ne eivät korvaa olemassa olevia tiedostoja, vaan luovat aina uuden nimen.
+On myös tärkeää huomata, että väliaikaiset tiedostot ovat usein välttämättömiä, mutta ne eivät ole pitkäaikainen ratkaisu tietojen tallentamiseen. Jos tarvitset pysyvää tallennuspaikkaa, kannattaa harkita esimerkiksi tietokannan käyttöä.
 
 ## Katso myös
 
-- [Tmp-paketin dokumentaatio](https://www.npmjs.com/package/tmp)
-- [Node-palvelimen opetusohjelmat](https://nodejs.org/en/docs/guides/)
+- [Tmp-moduulin dokumentaatio](https://www.npmjs.com/package/tmp)
+- [Node.js:n os-moduulin dokumentaatio](https://nodejs.org/api/os.html#os_os_tmpdir)

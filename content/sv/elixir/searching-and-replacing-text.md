@@ -1,59 +1,43 @@
 ---
 title:    "Elixir: Söka och ersätta text"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en vanlig uppgift som många programmerare stöter på i sitt dagliga arbete. Det kan finnas flera anledningar till att man behöver göra detta, såsom att fixa buggar, uppdatera gammal kod eller ändra namn på variabler. Oavsett anledning är det viktigt att kunna söka och ersätta text effektivt för att spara tid och minimera fel.
+När du arbetar med Elixir-programmering, kan det ibland vara nödvändigt att söka och ersätta text i din kod. Detta kan vara till nytta om du vill snabba upp processen att uppdatera flera filer eller för att göra en snabb ändring i koden.
 
-## Hur man gör
+## Så här gör du
 
-I Elixir finns det flera sätt att söka och ersätta text. Ett vanligt sätt är att använda funktionen `String.replace/3`. Den tar tre argument: den ursprungliga strängen, det som ska ersättas och vad det ska ersättas med. Här är ett exempel:
+För att söka och ersätta text i Elixir, kan du använda funktionen "String.replace". Här är ett exempel på hur du kan söka och ersätta en sträng i en lista:
 
-```elixir
-iex> String.replace("Hej världen!", "världen", "Elixir")
-"Hej Elixir!"
+```Elixir
+
+lista = ["Hej", "världen", "hej"]
+
+lista
+|> Enum.map(fn(x) -> String.replace(x, "hej", "Hej då") end)
+
+# Output: ["Hej", "världen", "Hej då"]
+
 ```
 
-Om man vill göra en sökning som är case-insensitive, det vill säga inte skiljer på stora och små bokstäver, kan man använda funktionen `String.replace/4` istället. Den tar en extra parameter som anger om sökningen ska vara case-insensitive. Här är ett exempel:
-
-```elixir
-iex> String.replace("Hello World", "world", "Elixir", case: :insensitive)
-"Hello Elixir"
-```
-
-Det finns även möjlighet att använda regex, eller reguljära uttryck, för att söka och ersätta text. Då kan man använda funktionen `Regex.replace/4` som tar fyra argument: den ursprungliga strängen, regex-uttrycket, vad det ska ersättas med och en optionsparameter. Här är ett exempel:
-
-```elixir
-iex> Regex.replace("Hej123världen!", ~r/\d+/, "Elixir", global: true)
-"HejElixirvärlden!"
-```
+Som du kan se i exemplet ovan, använde vi funktionen "String.replace" för att söka efter "hej" och ersätta det med "Hej då". Denna funktion tar tre argument: den ursprungliga strängen, den sökta texten och den ersättningssträngen.
 
 ## Djupdykning
 
-Sökning och ersättning av text kan också vara användbart när man arbetar med listor och tupler i Elixir. För att söka igenom en lista kan man använda funktionen `Enum.map/2` tillsammans med funktionen `String.replace/3`. Här är ett exempel där vi ersätter alla förekomster av ordet "världen" i en lista med strängar:
+Förutom funktionen "String.replace" finns det också andra hjälpsamma funktioner för sökning och ersättning i Elixir. Till exempel kan du använda "String.replace_leading" respektive "String.replace_trailing" om du bara vill ersätta text i början eller slutet av en sträng.
 
-```elixir
-iex> lista = ["Hej världen!", "Hello world!", "Bonjour le monde!"]
-
-iex> Enum.map(lista, fn str -> String.replace(str, "världen", "Elixir") end)
-["Hej Elixir!", "Hello world!", "Bonjour le monde!"]
-```
-
-Man kan också använda funktionen `Enum.map/2` för att söka igenom tupler och ersätta text där. Här är ett exempel där vi ersätter ett värde i en tuple med hjälp av regex:
-
-```elixir
-iex> tuple = {:namn, "Bruce Wayne"}
-
-iex> Enum.map(tuple, fn {key, value} -> {key, Regex.replace(value, ~r/ /, "_")} end)
-{n, "Bruce_Wayne"}
-```
+Det finns också möjlighet att använda reguljära uttryck (regex) för att söka efter och ersätta text. Du kan göra detta genom att använda "Regex.replace". Det är bra att lära sig använda regex i Elixir, eftersom det är en kraftfull funktion för sökning och ersättning.
 
 ## Se även
 
-- [Elixir Dokumentation för String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Elixir Dokumentation för Regex.replace/4](https://hexdocs.pm/elixir/Regex.html#replace/4)
-- [Elixir Dokumentation för Enum.map/2](https://hexdocs.pm/elixir/Enum.html#map/2)
+Om du vill ha mer information om sökning och ersättning i Elixir, kan du kolla in dessa länkar:
+
+- Officiell Elixir dokumentation för String-modulet: https://hexdocs.pm/elixir/String.html
+- Bra tutorial om användning av reguljära uttryck (regex) i Elixir: https://adoptingerlang.org/docs/elixir-guide/understanding-regular-expressions/
+
+Förhoppningsvis har denna guide gett dig en grundläggande förståelse för hur du kan söka och ersätta text i Elixir. Lycka till med din kodning!

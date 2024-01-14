@@ -1,66 +1,98 @@
 ---
 title:    "Java recipe: Reading a text file"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Reading a text file may seem like a basic task in Java programming, but it is a crucial skill to have. Most programs require some form of user input, and reading files is a common way to obtain that input. It is also useful for data analysis and manipulation, making it an essential skill for any aspiring Java programmer.
+# Why
+Have you ever wanted to read and extract data from a text file in your Java program? In today's digital world, text files are still widely used for storing data and information. Being able to read them using Java can greatly enhance the functionality of your programs. In this blog post, we will delve into the topic of reading text files in Java and provide you with the necessary tools to do so.
 
-## How To
-Reading a text file in Java involves several steps:
+# How To
+To read a text file in Java, we will use the `FileReader` and `BufferedReader` classes from the `java.io` package. Let's first create a `File` object that represents the text file we want to read, using its absolute or relative path.
 
-1. Declare a `File` object and provide the path to the file as a parameter.
-2. Create a `Scanner` object and pass the `File` object as a parameter.
-3. Use a `while` loop to iterate through the file until the end is reached.
-4. Inside the loop, use the `nextLine()` method to read each line of the file.
-5. You can then store the data in a variable, print it to the console, or perform any desired operations on it.
+```java
+File file = new File("path/to/your/file.txt");
+```
 
-Let's take a look at a simple example:
+Next, we will create a `FileReader` object and pass in the `File` object as a parameter.
 
-```Java
-import java.io.File;
-import java.util.Scanner;
+```java
+FileReader fr = new FileReader(file);
+```
 
-public class ReadFile {
-    public static void main(String[] args) {
-        try {
-            File file = new File("example.txt"); //replace with your file path
-            Scanner input = new Scanner(file);
+We will also create a `BufferedReader` object to wrap around our `FileReader` object.
 
-            while (input.hasNextLine()) {
-                String data = input.nextLine();
-                System.out.println(data);
-            }
+```java
+BufferedReader br = new BufferedReader(fr);
+```
 
-            input.close();
-        } catch (Exception e) {
-            System.out.println("File not found");
-        }
-    }
+Now, we can use the `readLine()` method from the `BufferedReader` class to read each line of the text file and store it in a `String` variable.
+
+```java
+String line = br.readLine();
+```
+
+We can continue to use the `readLine()` method until it returns `null`, indicating that we have reached the end of the text file.
+
+```java
+while(line != null){
+  // do something with the line of text
+  line = br.readLine();
 }
 ```
 
-**Output:**
+Let's put all of this together in a simple example. Suppose we have a text file named "cities.txt" that contains a list of cities, each on a separate line. Our goal is to print out each city in the file on a separate line.
+
+```java
+import java.io.*;
+
+public class ReadTextFileExample {
+  public static void main(String[] args) {
+    try {
+      File file = new File("cities.txt");
+      FileReader fr = new FileReader(file);
+      BufferedReader br = new BufferedReader(fr);
+      String line = br.readLine();
+      while (line != null) {
+        System.out.println(line);
+        line = br.readLine();
+      }
+      br.close();
+    } catch(Exception e) {
+      System.out.println("Could not read file: " + e.getMessage());
+    }
+  }
+}
 ```
-This is the first line of the file.
-This is the second line of the file.
-This is the third line of the file.
+
+If our "cities.txt" file contains the following lines:
+
+```
+London
+Paris
+New York
+Tokyo
 ```
 
-In this example, we are using the `File` and `Scanner` classes to read and display the contents of a text file. By using a `while` loop, we are able to print each line of the file until the end is reached. It is important to note that we are using a `try...catch` block to handle any potential errors, such as a file not being found.
+The program will output:
 
-## Deep Dive
-Reading a text file in Java can also involve manipulating the data in some way, such as searching for specific keywords, counting the number of lines, or parsing the data into different variables. This can be achieved by using methods such as `contains()`, `length()`, and `split()`. It is also possible to read different types of files, such as CSV or JSON, by using specialized libraries or classes.
+```
+London
+Paris
+New York
+Tokyo
+```
 
-It is important to properly handle and close the file in order to prevent any data loss or corruption. In the example above, we are using the `close()` method to close the `Scanner` object once we are done using it. If the file is not closed, it can lead to memory leaks and cause the program to crash.
+# Deep Dive
+Behind the scenes, the `FileReader` and `BufferedReader` classes use an input stream to read the data from the text file. The input stream is then converted into characters using the default character encoding of your system.
 
-## See Also
-If you want to learn more about reading text files in Java, here are some helpful resources:
+It is important to note that when using `FileReader`, the entire file is read at once and stored in the computer's memory. This can be problematic for larger files as it can consume a lot of memory. In these cases, it is recommended to use the `BufferedReader` class to read the file line by line.
 
-- [Oracle's Java Tutorials on Reading and Writing Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Java Documentation for the File Class](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/io/File.html)
-- [Java Documentation for the Scanner Class](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Scanner.html)
+Additionally, the `FileReader` and `BufferedReader` classes are not the only ways to read text files in Java. There are other classes and libraries, such as `Scanner` and `Apache Commons IO`, that offer different methods and functionalities for reading text files. It is important to explore and choose the most suitable approach for your specific needs.
 
-Happy coding!
+# See Also
+- [Official Java Documentation on Reading from Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+- [Tutorial on Java File Input and Output](https://www.baeldung.com/java-io-file)
+- [Overview of Common Java Libraries for File I/O](https://www.geeksforgeeks.org/different-ways-reading-text-files-java/)

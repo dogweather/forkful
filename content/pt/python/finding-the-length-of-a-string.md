@@ -1,44 +1,41 @@
 ---
 title:    "Python: Encontrando o comprimento de uma string"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que encontrar o tamanho de uma string é importante?
 
-Em programação, é muito comum termos que lidar com cadeias de caracteres ou strings. E uma tarefa bastante comum é a de encontrar o comprimento de uma string, ou seja, quantos caracteres ela possui. Saber como fazer isso é fundamental para diversas aplicações, desde a validação de senha até a manipulação de dados em bancos de dados.
+Encontrar o tamanho de uma string é uma habilidade fundamental em programação em Python. Isso pode ser útil ao criar um programa que precise manipular texto, como um verificador de ortografia ou um programa de processamento de linguagem natural. Além disso, saber como encontrar o tamanho de uma string pode ajudá-lo a criar programas mais eficientes e elegantes.
 
-## Como Fazer
-
-Para encontrar o comprimento de uma string em Python, utilizamos a função nativa `len()`. Essa função recebe como parâmetro a string desejada e retorna o seu comprimento como um número inteiro. Veja um exemplo:
-
-```Python
-nome = "João"
-comprimento = len(nome)
-
-print(comprimento)
-```
-**Saída: 4**
-
-Também é possível utilizar a função `len()` em conjunto com a função `input()`, permitindo que o usuário insira a string desejada. Veja como ficaria o código:
+## Como fazer isso em Python
+Encontrar o tamanho de uma string em Python é bastante simples. Você pode usar a função interna `len()` e passar a string como argumento. Por exemplo:
 
 ```Python
-nome = input("Digite o seu nome: ")
-comprimento = len(nome)
+sentence = "Olá, Mundo!"
+tamanho = len(sentença)
+print(tamanho)
 
-print("O seu nome possui", comprimento, "caracteres.")
+# Saída: 12
 ```
-**Saída: O seu nome possui (número de caracteres) caracteres.**
 
-## Mergulho Profundo
+Você pode até mesmo usar esta função em strings vazias:
+```Python
+vazia = ""
+tamanho = len(vazia)
+print(tamanho)
 
-É importante destacar que, em Python, a função `len()` também pode ser utilizada em outros tipos de dados, além de strings. Ela pode ser utilizada, por exemplo, em listas, dicionários e tuplas.
+# Saída: 0
+```
 
-Outro ponto importante é que a função `len()` conta todos os caracteres dentro da string, incluindo espaços em branco e caracteres especiais. Além disso, ela também conta os caracteres de escape, como `\n` e `\t`.
+## Mais detalhes sobre a função `len()`
+A função `len()` retorna o número de caracteres em uma string, incluindo espaços em branco e caracteres especiais. Isso é importante lembrar ao usar esta função em programas que precisam contar letras ou palavras específicas em uma string.
 
-## Veja Também
+Também é possível usar a função `len()` em outros tipos de dados, como listas e dicionários. Isso pode ser muito útil ao trabalhar com estruturas de dados mais complexas em Python.
 
-- [Documentação oficial da função `len()`](https://docs.python.org/3/library/functions.html#len)
-- [Como manipular strings em Python](https://www.python.org/dev/peps/pep-0257/#manipulating-docstrings)
-- [Validação de senha em Python](https://pynative.com/python-generate-random-string/)
+## Veja também
+- [Documentação oficial do Python sobre a função `len()`](https://docs.python.org/3/library/functions.html#len)
+- [Tutorial sobre strings em Python](https://realpython.com/python-strings/)
+- [Exemplos de uso da função `len()` em diferentes situações](https://www.programiz.com/python-programming/methods/built-in/len)

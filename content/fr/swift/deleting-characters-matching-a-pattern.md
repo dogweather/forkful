@@ -1,52 +1,36 @@
 ---
-title:    "Swift: Supprimer les caractères correspondant à un motif"
+title:    "Swift: Suppression des caractères correspondant à un motif"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Supprimer des caractères correspondants à un motif peut être utile lors de la manipulation de chaînes de caractères complexes. Cela peut aider à filtrer ou reformater des données selon un modèle spécifique.
+Souvent, lors de la programmation en Swift, vous pouvez rencontrer une situation où vous devez supprimer certains caractères d'une chaîne de caractères en fonction d'un modèle spécifique. Cela peut sembler fastidieux à première vue, mais il existe en fait une méthode simple pour le faire.
 
-## Comment faire
+## Comment Faire
 
-Voici un exemple simple de code qui montre comment supprimer tous les caractères numériques d'une chaîne de caractères :
-
-```Swift
-let string = "Cet été, j'ai voyagé en France. J'ai visité le Louvre et grimpé la Tour Eiffel."
-let pattern = "[0-9]"
-
-let output = string.replacingOccurrences(of: pattern, with: "", options: .regularExpression, range: nil)
-
-print(output) // Output: Cet été, j'ai voyagé en France. J'ai visité le Louvre et grimpé la Tour Eiffel.
-```
-
-Ici, nous avons utilisé la méthode `replacingOccurrences` avec l'option `regularExpression` pour supprimer tous les caractères compris entre 0 et 9 (le motif `[0-9]`) de la chaîne de caractères.
-
-Un autre exemple pourrait être de supprimer tous les caractères spéciaux d'une URL :
+Pour supprimer des caractères correspondant à un modèle en Swift, vous devez utiliser la méthode `replacingOccurrences()` de la classe `NSString`. Cette méthode prend en paramètre le modèle que vous souhaitez supprimer et le caractère par lequel vous souhaitez le remplacer. Voici un exemple de code:
 
 ```Swift
-let url = "https://www.mon-site-web.com/page?p=1&lang=fr#section1"
-let pattern = "[^a-zA-Z0-9._-]"
-
-let output = url.replacingOccurrences(of: pattern, with: "", options: .regularExpression, range: nil)
-
-print(output) // Output: httpswwwmonsitewebcompagep1langfrsection1
+let myString = "Bonjour tout le monde"
+let newString = myString.replacingOccurrences(of: "o", with: "")
+print(newString)
 ```
 
-Dans cet exemple, nous utilisons le motif `[^a-zA-Z0-9._-]` pour supprimer tous les caractères spéciaux de l'URL, ce qui peut être utile pour des opérations de comparaison ou de validation.
+Cet exemple va imprimer "Bnjur tut le mnde", car tous les "o" ont été supprimés de la chaîne originale.
 
-## Deep Dive
+## Plongée Profonde
 
-La méthode `replacingOccurrences` est une méthode utile pour supprimer des caractères correspondants à un motif, mais il existe d'autres options à découvrir. Par exemple, la méthode `replacingCharacters(in:with:)` peut être utilisée pour remplacer des caractères spécifiques à des positions précises dans une chaîne de caractères. De plus, la manipulation de chaînes avec des expressions régulières peut être très puissante pour le filtrage et le formatage de données selon des motifs complexes.
+Il est important de noter que la méthode `replacingOccurrences()` est sensible à la casse, ce qui signifie qu'elle ne remplacera que les caractères correspondant exactement au modèle spécifié. De plus, elle ne supprimera pas les caractères spéciaux ou les espaces.
 
-En fin de compte, les possibilités sont nombreuses et dépendent de l'utilisation que vous souhaitez faire de la suppression de caractères correspondants à un motif.
+Si vous souhaitez supprimer les caractères correspondant à un modèle indépendamment de la casse, vous pouvez utiliser la méthode `replacingOccurrencesWithCaseInsensitive()` à la place.
 
-## Voir aussi
+Vous pouvez également utiliser des expressions régulières dans la méthode `replacingOccurrences()` pour des modifications plus complexes. Cependant, cela nécessite une compréhension plus approfondie des expressions régulières et peut s'avérer plus complexe.
 
-Pour en savoir plus sur la manipulation de chaînes de caractères en Swift, voici quelques ressources utiles :
+## Voir Aussi
 
-- [Documentation officielle de Swift sur les chaînes de caractères](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutoriel sur les expressions régulières en Swift](https://www.raywenderlich.com/5762633-regular-expressions-tutorial-for-swift-part-1-regexes-and-nsregularexpressions)
-- [Vidéo sur les bonnes pratiques de manipulation de chaînes de caractères en Swift](https://www.youtube.com/watch?v=sGBpIEmVKz8&t=1s)
+- [Documentation Apple sur la méthode `replacingOccurrences()`](https://developer.apple.com/documentation/foundation/nsstring/1408728-replacingoccurrences)
+- [Guide complet sur les expressions régulières en Swift](https://www.swift-studies.com/blog/2018/8/7/regular-expressions)

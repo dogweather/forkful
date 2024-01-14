@@ -1,57 +1,49 @@
 ---
-title:    "Javascript: Tworzenie testów"
+title:    "Javascript: Pisanie testów"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w JavaScripcie?
+## Dlaczego pisanie testów jest ważne w programowaniu?
 
-Pisanie testów jest ważnym aspektem programowania w JavaScript. Testy pozwalają nam zweryfikować poprawność oraz funkcjonalność naszego kodu. Jest to szczególnie przydatne w dużych projektach, gdzie zmiany w jednym fragmencie kodu mogą spowodować problemy w innych częściach aplikacji. Dzięki testom możemy szybko wykryć błędy i uniknąć niepotrzebnych bugów w przyszłości.
+Pisanie kodu to nie tylko tworzenie nowych funkcjonalności, ale również dbanie o jego jakość i niezawodność. Testowanie jest nieodłączną częścią tego procesu, ponieważ pozwala nam zweryfikować poprawność działania naszego kodu i upewnić się, że wszelkie zmiany nie wpłynęły negatywnie na już istniejący kod. W artykule tym przedstawimy, dlaczego pisanie testów jest ważne oraz jak możemy to zrobić w języku Javascript.
 
-# Jak pisać testy w JavaScripcie?
+## Jak pisać testy w języku Javascript?
 
-Pisząc testy w JavaScript, warto korzystać z biblioteki do testowania, takiej jak np. Jest czy Mocha. Poniżej przedstawimy przykładowy kod testowy w bibliotece Jest:
+Pisanie testów w języku Javascript jest bardzo proste i możliwe dzięki wykorzystaniu narzędzia o nazwie Jest. Jest to popularna biblioteka do testowania kodu, która umożliwia łatwe i efektywne pisanie testów.
 
-```JavaScript
-// Zadeklarowanie dwóch funkcji, które będą testowane
-function sum(a, b) {
-  return a + b;
+Przed przystąpieniem do pisania testów, należy zainstalować bibliotekę Jest poprzez użycie polecenia `npm install --save-dev jest`. Następnie, aby uruchomić testy, wystarczy użyć komendy `jest` w terminalu.
+
+Poniżej znajduje się przykładowy kod funkcji obliczającej kwadrat danej liczby wraz z testami dla niej:
+
+```
+// Funkcja obliczająca kwadrat liczby
+function square(number) {
+  return number * number;
 }
 
-function subtract(a, b) {
-  return a - b;
-}
-
-// Testy w bibliotece Jest
-describe("Testowanie funkcji sum", () => {
-  test("Powinna zwracać dodawanie dwóch liczb całkowitych", () => {
-    expect(sum(4, 5)).toBe(9);
-  });
-
-  test("Powinna zwracać poprawny wynik dla ujemnych liczb", () => {
-    expect(sum(-2, 5)).toBe(3);
-  });
+// Testy funkcji
+test("Kwadrat liczby 2 powinien wynosić 4", () => {
+  expect(square(2)).toBe(4);
 });
 
-describe("Testowanie funkcji subtract", () => {
-  test("Powinna zwracać odejmowanie dwóch liczb całkowitych", () => {
-    expect(subtract(10, 5)).toBe(5);
-  });
-
-  test("Powinna zwracać poprawny wynik dla ujemnych liczb", () => {
-    expect(subtract(-6, 5)).toBe(-11);
-  });
+test("Kwadrat liczby 5 powinien wynosić 25", () => {
+  expect(square(5)).toBe(25);
 });
 ```
 
-# Głębsza analiza pisania testów
+W powyższym przykładzie użyto metody `expect` i metody `toBe`, która porównuje wyniki obliczeń. Dzięki temu możemy upewnić się, że nasza funkcja zwraca oczekiwane wartości.
 
-Pamiętajmy, że napisane testy powinny być nie tylko dokładne, ale również czytelne dla innych programistów. Dzięki temu, nawet jeśli wprowadzimy zmiany w kodzie, łatwo będzie nam zauważyć, czy nowy kod nie spowodował błędów w testach. Dobrą praktyką jest również pisanie testów przed napisaniem właściwego kodu, co pozwala nam na wyobrażenie sobie sposobu wykorzystania danej funkcji oraz przetestowanie jej działania.
+## Wnikliwa analiza pisania testów
 
-# Zobacz również
-- [Dokumentacja biblioteki Jest](https://jestjs.io/docs/en/getting-started)
-- [Przykłady testów w JavaScripcie](https://blog.logrocket.com/a-quick-guide-to-testing-javascript-in-2018-512abd772b5a/)
-- [Zasady pisania dobrych testów](https://www.sitepoint.com/unit-and-integration-tests-for-javascript-applications/)
+Pisanie testów to nie tylko sprawdzanie poprawności funkcjonalności. Warto także pamiętać o testowaniu wyjątkowych przypadków i błędów, aby zapewnić niezawodność naszego kodu. Jest pozwala na tworzenie testów jednostkowych, integracyjnych oraz funkcjonalnych, co pozwala nam na kompleksowe sprawdzenie naszej aplikacji.
 
-*Dziękujemy za przeczytanie naszego artykułu o pisaniu testów w JavaScripcie. Mamy nadzieję, że pomoże Ci to w tworzeniu stabilnych i niezawodnych aplikacji!*
+Warto również pamiętać o pisaniu testów zanim zaczniemy pisać sam kod. Dzięki temu możemy przetestować projekt w sposób iteracyjny i szybciej znajdować ewentualne błędy. Dodatkowo, testy pozwalają nam na łatwiejsze refaktoryzowanie kodu bez obawy o wprowadzenie błędów.
+
+## Zobacz także
+
+- [Dokumentacja Jest](https://jestjs.io/docs/en/getting-started)
+- [Tutorial: Pisząc testy z użyciem Jest](https://www.youtube.com/watch?v=7r4xVDI2vho)
+- [Blog JednakProgramista.pl: Pisząc testy jednostkowe w JavaScript](https://www.jednakprogramista.pl/piszac-testy-jednostkowe-w-javascript/)

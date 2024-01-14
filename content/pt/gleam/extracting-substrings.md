@@ -1,48 +1,38 @@
 ---
-title:    "Gleam: Extraindo subcadeias"
+title:    "Gleam: Extraindo subcadeias de caracteres"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que extrair substrings em Gleam
+## Por que
 
-Extrair substrings é uma tarefa útil e comum que pode ser realizada na linguagem de programação Gleam. Ao extrair substrings, você pode manipular e obter partes específicas de uma string de texto. Isso pode ser útil em várias situações, como manipular dados de entrada ou formatar textos para exibição.
+Extrair substrings é uma habilidade importante para ter em sua caixa de ferramentas de programação. Ela permite que você manipule e trabalhe com partes específicas de uma string, o que pode ser útil em várias situações, como formatação de dados ou filtragem de informações.
 
-# Como extrair substrings em Gleam
+## Como fazer
 
-Para extrair substrings em Gleam, você pode usar a função `slice()` e especificar o índice inicial e o índice final da substring que deseja obter. Por exemplo, se você tiver a string "Gleam programming" e quiser obter apenas "programming", pode usar o seguinte código:
-
-```Gleam
-let string = "Gleam programming"
-let substring = string.slice(6, string.len())
-```
-
-Ao executar esse código, a saída será a seguinte:
-
-```
-programming
-```
-
-Você também pode especificar um terceiro argumento opcional na função `slice()`, que corresponde ao passo de iteração. Por exemplo, se você quiser obter apenas as letras pares da mesma string, pode usar o seguinte código:
+Para extrair substrings em Gleam, você pode usar o módulo `String` e sua função `slice`. Essa função aceita três argumentos: a string original, o índice inicial e o índice final da substring desejada. Aqui está um exemplo de como usar essa função:
 
 ```Gleam
-let string = "Gleam programming"
-let substring = string.slice(1, string.len(), 2)
+import String
+
+fn main() {
+  let my_string = "Olá, mundo!"
+  let substring = String.slice(my_string, 5, 10)
+  // o valor de substring será "mundo"
+}
 ```
 
-A saída será a seguinte:
+Você também pode usar índices negativos para extrair substrings a partir do final da string. Por exemplo, `String.slice(my_string, -6, -1)` resultaria em "mundo". Além disso, a função `len` do módulo `String` pode ser usada para obter o tamanho de uma string, o que pode ser útil para determinar os índices corretos para a sua substring.
 
-```
-eamprogrmig
-```
+## Profundidade
 
-# Detalhes sobre extrair substrings
+Extrair substrings em Gleam é relativamente simples, mas há algumas coisas a se ter em mente. Primeiro, os índices são baseados em zero, o que significa que o primeiro caractere de uma string tem o índice 0. Além disso, o índice final não é incluído na substring, ou seja, `String.slice(my_string, 0, 2)` resultaria em apenas o primeiro e o segundo caractere da string original.
 
-Além da função `slice()`, Gleam também oferece outras opções para extrair substrings. A função `slice_before()` permite extrair uma substring até um determinado caractere, enquanto a função `slice_after()` permite extrair uma substring após um determinado caractere. Além disso, a função `split()` permite obter substrings separando uma string em partes, com base em um determinado caractere ou padrão.
+Também é importante mencionar que, embora possa parecer mais eficiente usar índices negativos para extrair substrings a partir do final da string, isso pode resultar em resultados inesperados se a string contiver caracteres Unicode complexos.
 
-# Veja também
+## Veja também
 
-- Documentação oficial para a função `slice()`: https://gleam.run/modules/gleam_lang/strings.html#slice
-- Outras funções de manipulação de strings em Gleam: https://gleam.run/modules/gleam_lang/strings.html
-- Exemplos práticos de uso de substrings em Gleam: https://github.com/gleam-lang/stdlib/blob/master/strings/src/String.gleam
+- Documentação oficial de `String.slice` em Gleam: https://gleam.run/core/string.html#slicestring-int-int
+- Exemplos de uso de `String.slice` em Gleam: https://github.com/gleam-lang/gleam/blob/main/stdlib/core/tests/string.gleam#L37

@@ -1,70 +1,63 @@
 ---
 title:    "Ruby: 테스트 작성"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-코드를 작성하고 테스트를 작성하는 이유는 소프트웨어의 더 나은 품질과 안정성을 보장하기 위함입니다.
+루비 프로그래밍에서는 테스트를 작성할 이유가 많이 있습니다. 예를 들어, 애플리케이션을 변경하거나 새로운 기능을 추가할 때 이전 코드에 이상이 없는지 확인하거나 버그를 발견하는 데 도움이 됩니다. 또한 테스트를 작성함으로써 코드의 가독성이 개선되고 유지 보수가 쉬워집니다.
 
 ## 어떻게
 
-이제 우리는 어떻게 Ruby에서 첫 번째 테스트를 작성하는지 배워볼 것입니다. 아래 예제를 따라해 보세요.
+루비에서는 테스트를 작성하고 실행하는 데 쉬운 방법이 있습니다. 다음 예제를 참고하여 실제로 테스트를 작성하는 방법을 배워보세요.
 
 ```Ruby
-# 새로운 테스트 파일 생성
-test.rb
+# 테스트를 위해 관례적으로 spec/ 폴더를 사용합니다.
+# spec/calculator_spec.rb 파일을 생성하고 테스트 코드를 작성합니다.
 
-# 테스트 파일에 MyCalculator 클래스 추가
-class MyCalculator
-  # 두 수를 더하는 메소드 추가
-  def add(x, y)
-    x + y
+require 'calculator' # 테스트할 코드 파일을 require 합니다.
+
+describe Calculator do # Calculator 클래스를 describe 블록으로 감싸서 테스트를 정의합니다.
+
+# #add 메소드를 테스트합니다.
+  describe '#add' do
+    it 'adds two numbers' do
+      result = Calculator.add(2, 3) # Calculator의 클래스 메소드인 add를 호출하여 결과값을 변수에 저장합니다.
+      expect(result).to eq(5) # 결과값이 5가 나오는지 검증합니다.
+    end
+  end
+
+# #subtract 메소드를 테스트합니다.
+  describe '#subtract' do
+    it 'subtracts one number from another' do
+      result = Calculator.subtract(5, 3)
+      expect(result).to eq(2)
+    end
   end
 end
-
-# 테스트 파일에서 MiniTest 사용
-require 'minitest/autorun'
-
-# 테스트 시작
-class MyCalculatorTest < MiniTest::Test
-  # 더하기 테스트
-  def test_add
-    # MyCalculator 클래스의 add 메소드를 테스트
-    assert_equal(4, MyCalculator.new.add(2, 2))
-  end
-end
-
 ```
 
-위 예제를 실행하면 아래와 같은 결과가 출력될 것입니다.
-
-```Ruby
-Run options: --seed 11813
-
-# Running:
-
-.
-
-Finished in 0.001470s, 680.2722 runs/s, 680.2722 assertions/s.
-
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+위 예제처럼 describe, it, expect 등의 키워드를 사용하여 테스트를 작성할 수 있습니다. 다음과 같이 콘솔에서 코드를 실행하면 테스트 결과를 확인할 수 있습니다.
 
 ```
+$ rspec spec/calculator_spec.rb
+```
 
-위에서 볼 수 있듯이, 우리의 더하기 메소드가 올바르게 작동하는 것을 확인할 수 있습니다.
+테스트가 실패한 경우 적절한 오류 메시지와 함께 어떤 부분이 잘못되었는지 알려줍니다. 테스트가 모두 성공하면 코드를 안심하고 변경할 수 있습니다.
 
-## 딥 다이브
+## 자세히 알아보기
 
-테스트 작성에 대한 더 깊은 정보를 얻고 싶다면 아래 링크를 참고해 보세요.
+테스트를 작성하는 방법은 다양하지만 일반적으로는 프로젝트의 각 부분을 테스트하는 여러 개의 파일을 작성합니다. 이렇게 하면 각각의 파일이 별도의 역할을 수행하며 코드를 이해하고 디버깅하기가 더 쉬워집니다.
 
-- [Ruby 공식 문서](https://ruby-doc.org/stdlib-2.6.3/libdoc/minitest/rdoc/MiniTest/Test.html)
-- [Ruby Kwalify 테스트 작성 방법](https://www.rubydoc.info/github/jystewart/kwalify/Test)
-- [RSpec를 이용한 테스트 작성 방법](https://rspec.info/documentation/)
+또한 테스트를 작성할 때는 테스트 가능한 코드를 작성해야 합니다. 예를 들어, 전역 변수나 랜덤 값에 의존하는 코드는 테스트하기가 어렵습니다. 따라서 테스트 가능한 코드를 작성하면 유지 보수가 더 쉬워집니다.
 
-## 이 외에도
+마지막으로, 테스트하기 전에 코드를 작성하는 것과는 다른 마음가짐이 필요합니다. 코드를 작성할 때는 원하는 기능을 만들어내는 데 초점을 맞추지만, 테스트를 작성할 때는 코드가 제대로 작동하는지를 확인하는 데 초점을 맞추어야 합니다. 적절한 테스트를 작성하는 것이 코드의 신뢰성을 높이는 데 중요한 역할을 합니다.
 
-- [MiniTest RubyGems 페이지](https://rubygems.org/gems/minitest)
-- [MiniTest 튜토리얼](https://minitest.rubystyle.guide/)
+## 관련 링크
+
+- [RSpec 공식 홈페이지](https://rspec.info/)
+- [Ruby 테스팅 가이드](https://rubypapa.com/2020/09/12/ruby-testing-overview/)
+- [Ruby Step by Step: 테스

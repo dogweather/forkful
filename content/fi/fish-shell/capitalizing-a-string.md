@@ -1,48 +1,36 @@
 ---
-title:    "Fish Shell: Merkkijonon kirjoittaminen isoilla kirjaimilla"
+title:    "Fish Shell: Merkkijonon suurennus"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi ohjelmoijien tulisi käyttää Fish Shellia pystyakseen muuttamaan merkkijonon ensimmäisen kirjaimen isoksi?
+Tervehdys kaikille Fish Shellin käyttäjille! Oletko koskaan halunnut muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi Fish Shellillä? Tässä blogikirjoituksessa opit miksi ja kuinka tehdä se helposti.
 
-## Miten
+## Kuinka tehdä se
 
-Fish Shell tarjoaa helpon tavan muuttaa merkkijonon ensimmäinen kirjain isoksi. Voit käyttää `capitalize` komentoa ja antaa sille haluamasi merkkijonon. Alla on muutama esimerkki koodinpätkistä ja niiden tulosteet.
-
-```Fish Shell
-capitalize "helsinki"
-=> Helsinki
-
-capitalize "espanja"
-=> Espanja
-
-capitalize "koodari"
-=> Koodari
-```
-
-## Syventävä tieto
-
-Kun käytät `capitalize` komentoa Fish Shellissä, se muuttaa vain ensimmäisen kirjaimen isoksi. Jos haluat muuttaa koko merkkijonon isoksi, voit käyttää `string toupper` komentoa.
+Fish Shellillä merkkijonon ensimmäisen kirjaimen muuttaminen isoksi kirjaimeksi on yksinkertaista. Voit käyttää sisäänrakennettua `string` -komentoa, joka hyödyntää `capitalize` -funktiota. Tässä on koodiesimerkki ja siihen liittyvä tuloste:
 
 ```Fish Shell
-string toupper "suomi"
-=> SUOMI
-
-string toupper "kaupunki"
-=> KAUPUNKI
-
-string toupper "ohjelmointi"
-=> OHJELMOINTI
+set merkkijono "tervetuloa Fish Shellin maailmaan!"
+echo $merkkijono | string capitalize
 ```
+
+Tuloste:
+
+```
+Tervetuloa Fish Shellin maailmaan!
+```
+
+## Syvempi sukellus
+
+`string` -komento pohjautuu Fish Shellin sisäänrakennettuun [pysäkki](https://fishshell.com/docs/current/cmds/eval.html) -komentoon ja `capitalize` -funktio hyödyntää Fish Shellin [kirjastoja](https://fishshell.com/docs/current/lib/index.html). Pysäkit ovat Fish Shellin tapa yhdistää useita komentoja monimutkaisten komentotulkkauksien luomiseen ja kirjastot ovat kokoelma toimintoja ja muuttujia, joita voi käyttää Fish Shellissä.
 
 ## Katso myös
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Fish Shell opetusohjelma (englanniksi)](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
-
-Kiitos lukemisesta ja muista nyt iskeä ensimmäinen kirjain isoksi Fish Shellilläsi!
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin Github-sivut](https://github.com/fish-shell/fish-shell)
+- [Tietoa merkkijonoista ja niiden käsittelystä Fish Shellissä](https://fishshell.com/docs/current/index.html#string-manipulation)

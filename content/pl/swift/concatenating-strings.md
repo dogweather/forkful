@@ -1,43 +1,47 @@
 ---
 title:    "Swift: Łączenie ciągów znaków"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego String Concatenation jest ważna dla nauki Swift?
+## Dlaczego
 
-String concatenation, czyli łączenie ciągów znaków, jest ważną i podstawową umiejętnością dla każdego programisty Swift. Pozwala na tworzenie dynamicznych i interaktywnych wiadomości lub wyświetlanie różnych wariantów tekstu w zależności od zmiennej lub warunków. Jest to również kluczowy element w budowaniu interfejsów użytkownika i obsłudze danych w wielu aplikacjach. Dlatego warto poznać dobrze tę funkcję i nauczyć się jej wykorzystywać.
+W dzisiejszych czasach programowanie stanowi nieodłączną część naszego życia. Dzięki niemu tworzymy aplikacje mobilne, strony internetowe, gry i wiele innych. W tym artykule skupimy się na jednym z podstawowych elementów języka Swift - łączeniu ciągów tekstowych (concatenating strings). Będziemy dokładniej przyglądać się dlaczego jest to ważne oraz jak to zrobić.
 
-## Jak wykonać string concatenation w Swift
+## Jak to zrobić
 
-Aby połączyć dwa lub więcej ciągów znaków w Swift, możemy użyć operatora plus (+) lub metody append(). Przykładowo:
+W Swift łączenie ciągów tekstowych jest bardzo proste i wykorzystuje operator "+" oraz metody "append()". Przede wszystkim musimy zdefiniować dwa ciągi tekstu, które chcemy połączyć. Następnie, używając operatora "+" możemy je połączyć w jeden ciąg, np:
 
 ```Swift
-let str1 = "Cześć"
-let str2 = "Polacy"
+let imie = "Kasia"
+let nazwisko = "Kowalska"
+let pelneImie = imie + " " + nazwisko
+```
+W wyniku otrzymamy ciąg tekstu "Kasia Kowalska". Możemy również wykorzystać metodę "append()", która pozwala na dodawanie kolejnych fragmentów tekstu do już istniejącego ciągu. Przykład:
 
-// użycie operatora plus
-let greeting = str1 + " " + str2
-
-// użycie metody append()
-var message = "Lubię "
-message.append(str2)
-
-print(greeting) // wyświetli "Cześć Polacy"
-print(message) // wyświetli "Lubię Polacy"
+```Swift
+var zwierzeta = "Koty"
+zwierzeta.append(", psy, chomiki")
 ```
 
-Operator plus pozwala nam łączyć dowolną ilość ciągów znaków, podczas gdy metoda append() działa tylko dla zmiennych. Aby uniknąć błędów, ważne jest również pamiętanie o dodawaniu odpowiednich spacji między słowami, jak w przykładzie powyżej.
+W rezultacie, zmienna "zwierzeta" będzie zawierać ciąg "Koty, psy, chomiki". Warto również wspomnieć o funkcji "join()", która pozwala na łączenie ciągów tekstowych z tablic lub kolekcji. Przykład:
 
-## Deep Dive: Wszystko o string concatenation w Swift
+```Swift
+let lista = ["jabłka", "banany", "truskawki"]
+let rozdzielacz = ", "
+let listaOwocow = lista.joined(separator: rozdzielacz)
+```
 
-W Swift, string concatenation może być wykonana za pomocą operatora plus (+), operatora += oraz metody append(). Operatory te działają inaczej dla różnych typów zmiennych. Dla typu Int lub Double, operator plus pozwala na dodawanie liczb, a operator += dokonuje natomiast prostego dodawania i przypisania. Dla typu Bool, operator plus po prostu łączy ciągi znaków "true" i "false". Dlatego też, jeśli chcemy wykonać concatenation dla zmiennych różnych typów, powinniśmy użyć metody append().
+Wynikiem będzie ciąg "jabłka, banany, truskawki".
 
-Dodatkowo, w Swift istnieje również wiele metod, takich jak uppercased(), lowercased(), czy count, które pozwalają na modyfikację lub manipulację ciągami znaków. Dzięki nim możemy np. zmienić wielkość liter, zamienić poszczególne znaki, lub poznać liczbę znaków w ciągu.
+## Głębszy wgląd
 
-# Zobacz też
+Warto wiedzieć, że proces łączenia ciągów tekstowych może być kosztowny dla naszej aplikacji, szczególnie jeśli wykorzystujemy go w pętlach lub w skomplikowanych operacjach. W takich przypadkach zamiast łączyć ciągi z użyciem operatora "+", lepiej skorzystać z metody "append()". Co więcej, istnieje również inny operator - "&", który jest bardziej wydajny w łączeniu większej ilości ciągów.
 
-- Dokumentacja Swift - [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- Wideo tutorial - [https://www.youtube.com/watch?v=6A9i7LObJOg](https://www.youtube.com/watch?v=6A9i7LObJOg)
-- Przewodnik po String Concatenation w Swift - [https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-concatenate-strings](https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-concatenate-strings)
+## Zobacz również
+
+- [Oficjalna dokumentacja Swift dotycząca łączenia ciągów tekstowych](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
+- [Codility: Concatenating Strings](https://codility.com/media/train/ConcatenatingStrings.pdf)
+- [Ray Wenderlich: Swift Strings and Characters](https://www.raywenderlich.com/731-swift-strings-and-characters-cheat-sheet)

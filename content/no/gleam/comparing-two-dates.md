@@ -1,45 +1,36 @@
 ---
 title:    "Gleam: Sammenligning av to datoer"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Sammenligning av to datoer er en vanlig oppgave i mange programmeringsprosjekter. Det kan være nyttig for å filtrere data, beregne forskjeller i tid, eller for å organisere informasjon etter dato. I Gleam programmeringsspråket, kan du enkelt sammenligne to datoer ved å følge noen enkle trinn.
+Hvis du jobber med datoer og tider i din Gleam-kode, vil du på et tidspunkt trenge å sammenligne to forskjellige datoer. Dette kan være for å sjekke om en hendelse fant sted før eller etter en annen, eller bare for å sammenligne to datoer for å se hvilken som kommer først. Uansett hva grunnen måtte være, er det viktig å vite hvordan man sammenligner to datoer i Gleam for å sikre nøyaktighet og effektivitet i koden din.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å sammenligne to datoer i Gleam, må du først importere standardbiblioteket `gleam/datetime` og modulen `Datetime.Comparisons`. Deretter må du lage to `Datetime`-verdier med ønskede datoer. Du kan gjøre dette på flere måter, for eksempel ved å bruke funksjonene `Datetime.from_erlang` eller `Datetime.from_iso8601`.
-
-```
-import gleam/datetime
-import gleam/datetime/comparisons as datetime
-
-let date1 = Datetime.from_erlang({{2021, 6, 15}})
-let date2 = Datetime.from_iso8601("2021-06-20")
-```
-
-Nå kan du bruke forskjellige funksjoner fra `Datetime.Comparisons`-modulen for å sammenligne de to datoene. For eksempel kan du bruke `Datetime.Comparisons.lt` for å sjekke om `date1` er før `date2`.
+For å sammenligne to datoer i Gleam må vi først opprette to `DateTime`-objekter som representerer de to datoene vi vil sammenligne. Dette kan gjøres ved å bruke `DateTime.from_timestamp`-funksjonen og gi den et Unix-tidspunkt for den spesifikke datoen. Deretter kan vi bruke `DateTime.compare`-funksjonen til å sammenligne de to datoene. Her er et eksempel:
 
 ```
-let is_before = datetime.lt(date1, date2)
+Gleam
+let date1 = DateTime.from_timestamp(1589904000) // 20. mai 2020
+let date2 = DateTime.from_timestamp(1590950400) // 1. juni 2020
+let comparison = DateTime.compare(date1, date2)
 ```
 
-Du kan også bruke `Datetime.Comparisons.compare` for å få en sammenligning mellom de to datoene i form av en `Ordering`-verdi.
+I dette eksempelet har vi opprettet to datoer som representerer 20. mai 2020 og 1. juni 2020. Deretter har vi brukt `DateTime.compare`-funksjonen til å sammenligne de to datoene. Denne funksjonen returnerer en `Comparison`-type som kan være `Equal`, `Less` eller `Greater`, avhengig av hvilken dato som kommer først. I skriptkoden vil `comparison`-variabelen være `Greater` fordi 1. juni kommer etter 20. mai.
 
-```
-let ordering = datetime.compare(date1, date2)
-```
+## Dypere dykking
 
-Output av disse funksjonene vil være en `Bool`-verdi og en `Ordering`-verdi, henholdsvis. Disse delene av koden kan også settes inn i en `match`-blokk for å håndtere forskjellige tilfeller av sammenligningen.
+Når du sammenligner to datoer i Gleam, er det viktig å vite om tidssoner spiller en rolle. Dette er spesielt viktig hvis du jobber med datoer fra forskjellige tidssoner. I så fall kan det hende at du må konvertere datoene til en felles tidssone før du sammenligner dem. Du bør også være oppmerksom på eventuelle problemer med skuddårsdager eller ulike format på datoene, som kan påvirke resultatet av sammenligningen.
 
-## Dykk dypere
-
-For mer detaljert informasjon om sammenligning av datoer i Gleam, anbefales det å se nærmere på standardbibliotekets dokumentasjon. Der kan du finne en liste over alle tilgjengelige funksjoner for å sammenligne og manipulere datoer, samt eksempler og forklaringer på hvordan de brukes.
+Det er også verdt å merke seg at Gleam ikke har en innebygd funksjon for å sammenligne tider. Hvis du også trenger å sammenligne klokkeslett, kan du konvertere hver dato til et `Time`-objekt og bruke `Time.compare`-funksjonen på samme måte som vi gjorde for datoene.
 
 ## Se også
 
-- [Gleam standardbibliotek dokumentasjon](https://gleam.run/documentation/stdlib/#datetime)
-- [Gleam Språk Referanse](https://gleam.run/documentation/language_reference/#comparisons)
+- [DateTime-modulen i Gleam](https://gleam.run/modules/datetime.html)
+- [Gleam-dokumentasjonen for DateTime-funksjoner](https://gleam.run/modules/datetime.html#functions)
+- [Eksempelkode for å sammenligne to datoer i Gleam](https://github.com/pblatteier/gleam-date-compare-example)

@@ -1,44 +1,88 @@
 ---
-title:    "PHP: 检查目录是否存在"
+title:    "PHP: 检查目录是否存在。"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么要检查目录是否存在？
+# 为什么要检查目录是否存在
 
-在PHP编程过程中，经常会遇到需要检查某个目录是否存在的情况。这样做可以确保代码顺利运行，避免因为缺少必要的文件而出现错误。下面将介绍如何通过简单的代码来检查目录是否存在。
+当我们在进行编程时，有时候需要操作文件或者目录，但是在对文件或者目录进行操作之前，我们需要先确保它们存在。如果我们不先检查，可能会导致程序出错或者产生意想不到的结果。因此，检查目录是否存在是一种很重要的编程习惯。
 
-##如何检查目录是否存在？
+# 如何检查目录是否存在
 
-要检查一个目录是否存在，我们可以使用PHP中的`file_exists()`函数来实现。这个函数接受一个参数，即要检查的目录路径。如果这个目录存在，则返回`true`，否则返回`false`。下面是一个例子：
+我们可以使用PHP中的`is_dir()`函数来检查目录是否存在。下面是一个简单的代码示例：
 
 ```PHP
-$directory = "/home/blog/images"; //要检查的目录路径
-
-if(file_exists($directory)){
-    echo "目录存在"; //目录存在时输出
-}else{
-    echo "目录不存在"; //目录不存在时输出
+<?php
+// 检查当前目录是否存在
+if (is_dir('.')) {
+    echo "当前目录存在！";
+} else {
+    echo "当前目录不存在！";
 }
 ```
 
-如果要检查的目录不存在，也可以通过添加一行代码来创建这个目录：
+运行结果：
 
-```PHP
-mkdir($directory); //创建目录
+```
+当前目录存在！
 ```
 
-这样就能够确保目录存在并继续执行后续的代码。
+除了使用`is_dir()`函数，我们也可以使用`file_exists()`函数来检查文件是否存在，或者使用`mkdir()`函数来创建目录。这些函数都需要了解一下，因为在日常编程中可能会经常用到。
 
-##深入了解检查目录是否存在
+# 深入了解检查目录是否存在
 
-其实，`file_exists()`函数也可以用于检查文件是否存在。只需要将文件路径作为参数传入即可。此外，还有一个更加专业的函数`is_dir()`，可以用来判断一个路径是否为目录。
+在PHP中，我们可以使用`stat()`函数来获取目录的一些详细信息。这个函数会返回一个数组，包含了目录的权限、所有者信息、最后修改时间等等。
 
-除了以上两种方法，我们还可以使用PHP中的`glob()`函数来列出目录中的文件和子目录。
+```PHP
+<?php
+// 获取当前目录的详细信息
+$info = stat('.');
+// 打印数组
+print_r($info);
+```
 
-#参考链接
+运行结果：
 
-- [PHP中的file_exists()函数](https://www.php.net/manual/en/function.file-exists.php)
-- [准确判断文件或目录是否存在的好方法](https://www.jb51.net/article/32757.htm)
-- [PHP中的glob()函数](https://www.php.net/manual/en/function.glob.php)
+```
+Array
+(
+    [0] => 106
+    [1] => 0
+    [2] => 16877
+    [3] => 1
+    [4] => root
+    [5] => root
+    [6] => 0
+    [7] => 0
+    [8] => 1618255648
+    [9] => 1618255648
+    [10] => 1618255648
+    [11] => 4096
+    [12] => 8
+    [dev] => 106
+    [ino] => 0
+    [mode] => 16877
+    [nlink] => 1
+    [uid] => 0
+    [gid] => 0
+    [rdev] => 0
+    [size] => 4096
+    [atime] => 1618255648
+    [mtime] => 1618255648
+    [ctime] => 1618255648
+    [blksize] => 4096
+    [blocks] => 8
+)
+```
+
+通过深入了解目录的详细信息，我们可以更好地掌握和管理目录。
+
+# 参考链接
+
+- [PHP文档：`is_dir()`函数](https://www.php.net/manual/zh/function.is-dir.php)
+- [PHP文档：`file_exists()`函数](https://www.php.net/manual/zh/function.file-exists.php)
+- [PHP文档：`mkdir()`函数](https://www.php.net/manual/zh/function.mkdir.php)
+- [PHP文档：`stat()`函数](https://www.php.net/manual/zh/function.stat.php)

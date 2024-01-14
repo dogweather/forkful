@@ -1,55 +1,45 @@
 ---
-title:    "Haskell: Eine Datum in einen String umwandeln"
+title:    "Haskell: Umwandeln eines Datums in eine Zeichenkette"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Als Programmierer kann es oft nützlich sein, ein Datum in einen String umzuwandeln. Möglicherweise müssen Sie es in einem bestimmten Format anzeigen oder an eine externe API senden, die nur Strings akzeptiert. In diesem Blog-Artikel werden wir uns ansehen, wie man ein Datum in Haskell in eine Zeichenfolge konvertieren kann.
+Das Konvertieren eines Datums in einen String kann sehr nützlich sein, wenn man zum Beispiel eine Benutzeroberfläche hat, die das Datum in einer Textform anzeigen muss. Auch für die Arbeit mit Datenbanken oder dem Schreiben von Dateien kann es hilfreich sein, das Datum in einem lesbaren Format zu haben.
 
-## Wie geht das?
+## Wie
 
-Um ein Datum in Haskell in einen String umzuwandeln, können wir die Funktion `show` verwenden. Diese Funktion akzeptiert ein Datum als Eingabe und gibt einen String zurück, der das Datum repräsentiert. Schauen wir uns ein Beispiel an:
+Um ein Datum in einen String umzuwandeln, können wir die `formatTime` Funktion aus dem `Data.Time` Modul verwenden. Diese Funktion hat zwei Parameter: ein Datum und ein Formatierungstext, der angibt, wie das Datum ausgegeben werden soll.
 
-```Haskell
-import Data.Time.Calendar
-
-myDate :: Day
-myDate = fromGregorian 2021 10 10
-
-main :: IO ()
-main = do
-    let dateString = show myDate
-    putStrLn dateString
-```
-
-Das obige Beispiel importiert das `Data.Time.Calendar` Modul, um den Datentyp `Day` zu verwenden. Dann erstellen wir ein Datum mit dem Jahr 2021, dem Monat 10 und dem Tag 10. Anschließend verwenden wir `show` und geben unserem Datum als Argument, um den String mit dem Datum zu erhalten. Die Ausgabe wird `2021-10-10` sein.
-
-Es ist auch möglich, das Datum in einem bestimmten Format anzuzeigen, indem wir `formatTime` verwenden. Diese Funktion erfordert die Angabe eines Formats sowie des Datums. Schauen wir uns ein weiteres Beispiel an:
+Hier ist ein Beispiel-Code, der ein Datum in einen String mit dem Format "Tag-Monat-Jahr" konvertiert:
 
 ```Haskell
-import Data.Time.Format
+import Data.Time
 
-myDate :: Day
-myDate = fromGregorian 2021 10 10
+-- Datum erstellen
+let date = fromGregorian 2021 4 15
 
-main :: IO ()
-main = do
-    let dateString = formatTime defaultTimeLocale "%d.%m.%Y" myDate
-    putStrLn dateString
+-- Datum in String umwandeln
+let dateString = formatTime defaultTimeLocale "%d-%m-%Y" date
+
+-- Ausgabe
+print dateString
+-- Ergebnis: "15-04-2021"
 ```
 
-In diesem Beispiel verwenden wir `formatTime` und geben als erstes Argument `defaultTimeLocale` an, um das Standardformat zu verwenden. Das zweite Argument ist das gewünschte Format, in diesem Fall den Tag, den Monat und das Jahr getrennt durch Punkte. Die Ausgabe wird `10.10.2021` sein.
+In diesem Beispiel verwenden wir die Standardzeitzone und das englische Datumsformat. Der Formatierungstext kann jedoch an persönliche Vorlieben und Anforderungen angepasst werden. Eine vollständige Liste der verfügbaren Formatierungsoptionen finden Sie in der offiziellen [Haskell-Dokumentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html).
 
-## Tiefergehende Informationen
+## Deep Dive
 
-Haskell hat verschiedene Datentypen, die verwendet werden können, um ein Datum zu repräsentieren. Neben dem oben verwendeten `Day` gibt es auch `LocalTime`, `ZonedDateTime` und mehr. Jeder dieser Datentypen hat seine eigenen Funktionen, um ein Datum in eine Zeichenfolge umzuwandeln. Daher ist es wichtig, die Dokumentation des jeweiligen Datentyps zu überprüfen, um die beste Option für Ihre Bedürfnisse zu finden.
+Die `formatTime` Funktion verwendet das `FormatTime` Typklasse, um ein Datum in einen String umzuwandeln. Diese Typklasse definiert die `formatTime` Methode, die dann von konkreten Datentypen wie `UTCTime`, `ZonedTime` oder `LocalTime` implementiert wird.
 
-Es gibt auch verschiedene Möglichkeiten, ein Datum mit `formatTime` zu formatieren, wie zum Beispiel die Verwendung von Wochentagen oder Uhrzeiten. Weitere Informationen zu den unterstützten Formaten finden Sie in der offiziellen Dokumentation von Haskell.
+Wenn Sie mehr über Typklassen und ihre Verwendung erfahren möchten, empfehlen wir die Lektüre des Artikels [Haskell Typklassen erklärt](https://coderscat.com/haskell-typ-klasse/). Dort erfahren Sie, wie Typklassen in Haskell funktionieren und wie Sie sie in Ihrer eigenen Codebasis verwenden können.
 
 ## Siehe auch
 
-- Die offizielle [Haskell-Dokumentation zu Datum und Zeit](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
-- Ein Tutorial für Daten und Zeit in Haskell von Learn You a Haskell for Great Good [auf Deutsch](https://learnyouahaskell.wordpress.com/2010/09/09/datentypen/)
+- [Data.Time Dokumentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [FormatTime Typklasse Dokumentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [Haskell Typklassen erklärt](https://coderscat.com/haskell-typ-klasse/)

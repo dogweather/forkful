@@ -1,51 +1,47 @@
 ---
-title:    "Swift: Generieren von Zufallszahlen"
+title:    "Swift: Zufallszahlen generieren"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Generieren von Zufallszahlen ist ein nützliches Werkzeug, um zufällige Entscheidungen oder Variationen in Programmen einzufügen. Es kann auch verwendet werden, um Spiele oder Simulationen zu erstellen.
+Die Generierung von Zufallszahlen ist ein wichtiges Konzept in der Programmierung, da sie es uns ermöglicht, verschiedene Arten von Daten oder Aktionen zufällig auszuwählen. Dies kann beispielsweise für die Erstellung von Spielen, Simulationen oder zur Verbesserung von Sicherheitsmaßnahmen verwendet werden.
 
-## Wie man Zufallszahlen generiert
+## So geht's
 
-Das Generieren von Zufallszahlen in Swift ist einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir die `arc4random_uniform` -Funktion importieren, die uns eine zufällige Zahl innerhalb eines bestimmten Bereichs zurückgibt. Zum Beispiel, um eine zufällige Zahl zwischen 1 und 10 zu generieren, können wir dies tun:
-
-```Swift
-let randomNum = Int(arc4random_uniform(10)) + 1
-print(randomNum) // prints a random number between 1 and 10
-```
-
-Wir können auch eine Funktion erstellen, um eine bestimmte Anzahl von Zufallszahlen zu generieren und sie in einem Array zu speichern. Zum Beispiel, um ein Array mit 10 Zufallszahlen zwischen 1 und 100 zu erstellen, können wir dies tun:
+Um in Swift zufällige Zahlen zu generieren, können wir die `arc4random_uniform()` Funktion verwenden. Diese Funktion gibt eine zufällige Ganzzahl zurück, die zwischen 0 und dem als Parameter übergebenen Maximum liegt. Hier ist ein Beispielcode, der zufällig eine Zahl zwischen 1 und 10 auswählt und sie ausgibt:
 
 ```Swift
-func generateRandomNumbers(quantity: Int, range: Int) -> [Int] {
-    var randomNumbers = [Int]()
-    for _ in 0..<quantity {
-        let randomNum = Int(arc4random_uniform(UInt32(range))) + 1
-        randomNumbers.append(randomNum)
-    }
-    return randomNumbers
-}
-
-let randomNums = generateRandomNumbers(quantity: 10, range: 100) // generates an array with 10 random numbers between 1 and 100
-print(randomNums)
+let randomNumber = Int(arc4random_uniform(10)) + 1
+print(randomNumber)
 ```
-Die Ausgabe könnte zum Beispiel sein:
+
+Die Verwendung von `arc4random_uniform()` ist nicht auf Ganzzahlen beschränkt. Wir können auch zufällige Gleitkommazahlen mit der `drand48()` Funktion generieren. Diese Funktion gibt eine Zahl zwischen 0 und 1 zurück. Um eine zufällige Gleitkommazahl zwischen zwei festgelegten Werten zu generieren, müssen wir einfach die Rückgabewert der Funktion mit dem gewünschten Bereich multiplizieren. Hier ist ein Beispiel:
 
 ```Swift
-[74, 2, 56, 33, 9, 45, 82, 66, 32, 13]
+let randomDecimalNumber = drand48() * 10.0 //generates a random number between 0 and 10
+print(randomDecimalNumber)
 ```
 
-## Vertiefung
+Wir können auch ein Array mit zufälligen Elementen erstellen, indem wir die `shuffle()` Methode verwenden. Diese Methode mischt die Elemente des Arrays in zufälliger Reihenfolge. Hier ist ein Beispielcode:
 
-Um das Verständnis der Funktionsweise von Zufallszahlen in Swift zu vertiefen, ist es wichtig zu wissen, dass die `arc4random_uniform` -Funktion eine pseudozufällige Zahl generiert. Dies bedeutet, dass es zwar zufällig erscheinen mag, aber tatsächlich auf einem Algorithmus basiert. Die Generierung von echten Zufallszahlen in der Programmierung ist ein komplexes Thema und geht über den Rahmen dieses Artikels hinaus.
+```Swift
+var array = [1, 2, 3, 4, 5]
+array.shuffle() //shuffles the elements randomly
+print(array)
+```
 
-Es ist auch wichtig zu beachten, dass die in dieser Funktion verwendete Maximalzahl, in diesem Fall 10, UInt32 nicht überschreiten kann. Wenn eine größere Zahl benötigt wird, kann sie in die `Int` -Datentypkonvertiert werden.
+## Tiefer Einblick
+
+Bei der Generierung von Zufallszahlen ist es wichtig zu verstehen, dass diese Zahlen nicht wirklich "zufällig" sind, sondern auf einem deterministischen Algorithmus basieren. Daher sind sie nicht für Sicherheitszwecke geeignet. Um jedoch sicherzustellen, dass die generierten Zahlen so zufällig wie möglich sind, sollte die Funktion, die wir verwenden, eine gleichmäßige Verteilung aufweisen. Dies bedeutet, dass jede mögliche Zahl mit der gleichen Wahrscheinlichkeit vorkommen sollte.
+
+Wenn wir in bestimmten Fällen eine andere Verteilung wünschen, können wir auch benutzerdefinierte Funktionen erstellen, die eine bestimmte Verteilung von Zufallszahlen generieren. Dies ist jedoch ein fortgeschrittenes Thema und geht über den Rahmen dieses Blog-Beitrags hinaus.
 
 ## Siehe auch
 
-- Dokumentation zu `arc4random_uniform` (https://developer.apple.com/documentation/swift/int/2911334-arc4random_uniform)
-- Artikel zum Thema Zufallszahlen in Swift (https://learnappmaking.com/random-numbers-swift/)
+- [Apple Swift Dokumentation über Zufallszahlen](https://developer.apple.com/documentation/swift/swift_standard_library/classes/arc4random_uniform)
+- [Beispiele für die Verwendung von Zufallszahlen in Spielen mit Swift](https://medium.com/@infiniteooo/zufallszahlen-in-swift-mit-arc4random-f9cf826a7f47)
+- [Fortgeschrittenere Konzepte zur Generierung von Zufallszahlen in Swift](https://medium.com/swift-programming/swift-playground-tutorial-random-numbers-in-swift-2-6f10433a6eac)

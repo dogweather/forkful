@@ -1,40 +1,60 @@
 ---
-title:    "C#: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: टेम्पररी फ़ाइल बनाना"
+title:    "C#: तात्कालिक फाइल बनाना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##क्यों
+## क्यों
 
-टेम्पररी फ़ाइल बनाने में लोग क्यों दिलचस्पी रखते हैं, इसके पीछे का कारण है इसे काम करने के बाद इसे डिलीट करने के लिए हो जाता है और कंप्यूटर की मेमोरी में स्थान बचाने में मदद मिलती है।
+टेम्पररी फाइल बनाने का प्रयास क्यों किया जाता है, इसके पीछे का कारण है कि कई बार हमारे प्रोग्राम्स को किसी अलग तरीके से डेटा को स्टोर करने की जरूरत होती है। इस समस्या को हल करने के लिए हम अस्थायी फ़ाइलें बनाते हैं।
 
 ## कैसे करें
 
-एक टेम्पररी फ़ाइल बनाने के लिए, हम सबसे पहले सिस्टम की टेम्प फ़ाइल पथ प्राप्त करते हैं। यह पथ हमें "GetTempPath()" फ़ंक्शन से प्राप्त होता है। फिर हम "GetRandomFileName()" फ़ंक्शन का उपयोग करके एक रैन्डम नाम का फ़ाइल बना लेते हैं। अंत में, हम इस फ़ाइल को डायरेक्टरी में बनाते हैं जो कि हमारे सिस्टम के लिए निश्चित है। नीचे दिए गए कोड स्निपेट में आप इस प्रक्रिया को देख सकते हैं।
-
 ```C#
-// टेम्प फ़ाइल पथ को प्राप्त करें
-string tempPath = Path.GetTempPath();
+using System;
+using System.IO;
 
-// रैन्डम फ़ाइल नाम बनाएं
-string tempFileName = Path.GetRandomFileName();
+namespace TemporaryFile
+{
+    class Program
+    {
+        static void Main()
+        {
+            // Create a temporary file with .tmp extension
+            string path = Path.GetTempFileName();
 
-// फ़ाइल का पूरा पथ प्राप्त करें
-string tempFilePath = Path.Combine(tempPath, tempFileName);
+            Console.WriteLine("Temporary file created at:");
+            Console.WriteLine(path);
 
-// टेम्पररी फ़ाइल बनाएं
-File.Create(tempFilePath);
+            // Write data to the temporary file
+            File.WriteAllText(path, "This is a temporary file.");
 
-// सफलता का संकेत दें
-Console.WriteLine("टेम्पररी फ़ाइल सफलतापूर्वक बनाई गई है!");
+            // Read data from the temporary file
+            string data = File.ReadAllText(path);
+            Console.WriteLine("Data written to the file:");
+            Console.WriteLine(data);
 
-// फ़ाइल को हटाएं
-File.Delete(tempFilePath);
+            // Delete the temporary file
+            File.Delete(path);
+        }
+    }
+}
 ```
 
-आप अपने कंप्यूटर पर यह कोड चलाकर भी देख सकते हैं। सफलता के साथ, आपको संदेह होना नहीं चाहिए कि आपकी टेम्पररी फ़ाइल सही ढंग से बन गई है।
+### Output:
+Temporary file created at:
+C:\Users\<username>\AppData\Local\Temp\tmpE33F.tmp
+Data written to the file:
+This is a temporary file.
 
-## गहराई में जाएं
+## गहरायाई खुराक
 
-टेम्पररी फ़ाइल बनाने की प्रक्रिया थोड़ी से गहराई से संबंधित होती है।
+टेम्पररी फाइल बनाने के लिए `GetTempFileName` और `GetTempPath` मेथड का उपयोग किया जाता है। इन मेथड्स की मदद से हम सिस्टम की temporary फ़ाइल डायरेक्टरी को प्राप्त करते हैं और उस फ़ाइल डायरेक्टरी में एक unique नाम के साथ एक अस्थायी फ़ाइल बनती है। इससे हमारे प्रोग्राम को अस्थायी डेटा को स्टोर करने और उसे पढ़ने की अनुमति मिलती है।
+
+## देखें भी
+
+- [Microsoft Docs: Creating a Temporary File in C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-a-temporary-file)
+- [C# Corner: Creating Temporary Files in C#](https://www.c-sharpcorner.com/UploadFile/mahesh/temporary-file-in-C-Sharp/)
+- [C# Tutorials: Temporary Files in C#](https://csharp.net-tutorials.com/advanced/temporary-files/)

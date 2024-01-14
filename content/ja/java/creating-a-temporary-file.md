@@ -1,58 +1,57 @@
 ---
 title:    "Java: 一時ファイルの作成"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-一時ファイルを作成するのは、実行中のプログラムが一時的に必要なファイルを作成するためです。これは、プログラム実行中にデータを保存したり、一時的な処理をする際に便利です。
+一時ファイルを作成する理由は、一時的にデータを保存するためです。例えば、一時ファイルを作成することで、プログラム実行中にデータを保存し、後で再利用することができます。
 
 ## 作り方
 
-Javaを使用して一時ファイルを作成する方法はとても簡単です。まずは、インポート文でFileクラスとTemporaryFileクラスを読み込みます。それから、作成したい一時ファイルのパスを指定し、TemporaryFileクラスのcreateTempFile()メソッドを呼び出します。以下の例をご覧ください。
+一時ファイルを作成するには、`File`クラスと`FileWriter`クラスを使用します。以下のコードブロックに、作成と書き込みの例を示します。
 
 ```Java
-import java.io.File;
-import java.io.IOException;
+// 一時ファイルを作成
+File tempFile = File.createTempFile("temp", ".txt");
 
-public class CreateTempFileExample {
-    public static void main(String[] args) {
-        try {
-            // 作成したい一時ファイルのパスを指定
-            String tempFilePath = "C:\\Users\\User\\Desktop\\tempfile.txt";
-            // TemporaryFileクラスのcreateTempFile()メソッドを呼び出し、一時ファイルを作成
-            File tempFile = TemporaryFile.createTempFile(tempFilePath);
-            // ファイル名を取得
-            String tempFileName = tempFile.getName();
-            System.out.println("作成された一時ファイルの名前は: " + tempFileName);
-        } catch (IOException e) {
-            System.out.println("エラーが発生しました: " + e.getMessage());
-        }
-    }
-}
+// テキストを書き込むためのFileWriterを作成
+FileWriter writer = new FileWriter(tempFile);
+
+// テキストを書き込む
+writer.write("一時ファイルに保存するデータ");
+
+// ファイルを閉じる
+writer.close();
 ```
 
-実行結果は以下のようになります。
+一時ファイルは、デフォルトではシステムの一時フォルダに作られます。ファイル名は、接頭語「temp」とランダムに生成される数字の組み合わせ、および拡張子「.txt」で構成されます。また、一時ファイルはプログラム終了時に自動的に削除されます。
 
+作成した一時ファイルは、通常のファイルと同じように扱うことができます。例えば、ファイルを読み込んだり、別のファイルにコピーしたりできます。
+
+## ディープダイブ
+
+一時ファイルを作成する際には、いくつかのオプションがあります。例えば、一時フォルダの場所を指定することもできます。以下のコードブロックに、一時ファイルを作成する際にオプションを指定する例を示します。
+
+```Java
+// 一時フォルダを指定
+File tempDir = new File("C:\\temp");
+
+// tempDir内に一時ファイルを作成
+File tempFile = File.createTempFile("temp", ".txt", tempDir);
 ```
-作成された一時ファイルの名前は: tempfile3112803655500591989.txt
-```
 
-## 深堀り
+また、一時ファイルを空のファイルとして作成することもできます。その場合は、`createNewFile()`メソッドを使用します。
 
-一時ファイルを作成する方法は、上記の例でご紹介したようにとても簡単です。しかし、TemporaryFileクラスにはさらにオプションの引数を渡すことができます。具体的には、第二引数に接頭辞を、第三引数に接尾辞を指定することができます。これらを指定することで、作成される一時ファイルの名前に接頭辞や接尾辞を付けることができます。また、TemporaryFileクラスのdeleteOnExit()メソッドを使用することで、プログラム終了時に一時ファイルが自動的に削除されるようにすることもできます。
+そして、一時ファイルを削除するには、`delete()`メソッドを使用します。ただし、プログラム終了時に自動的に削除されるため、明示的に削除する必要はありません。
 
-## 見つける
+## 参考リンク
 
-Javaでの一時ファイル作成については、公式ドキュメントやオンラインのチュートリアルなど、さまざまな情報源があります。以下のリンクを参考にしてみてください。
-
-- [Official Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/TemporaryFile.html)
-- [Java Code Examples for java.io.TemporaryFile](https://www.programcreek.com/java-api-examples/?class=java.io.TemporaryFile&method=createTempFile)
-- [Tutorialspoint - TemporaryFile Class in Java](https://www.tutorialspoint.com/java/lang/java_lang_temporaryfile.htm)
-
-## 参考
-
-- [Fileクラスの使い方【Java入門】](https://www.javadrive.jp/start/relative/index3.html)
-- [Fileクラスを使ってファイル入出力](https://qiita.com/mpyw/items/b00b72c5c95aac573b71#temporaryfile%E3%81%AF%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E9%96%A2%E9%80%A3%E3%81%AE%E6%9B%B8%E3%81%8D%E3%81%8B%E3%82%89%E9%80%9A%E7%9F%A5%E3%81%97%E3
+- [Java Fileクラスドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/io/File.html)
+- [Java FileWriterクラスドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/io/FileWriter.html)
+- [Java TempFileクラスドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [Java Fileクラスの使い方 〜ファイルやディレクトリの操作まとめ〜](https://tech.pjin.jp/blog/2017/03/24/file-class/)
+- [Javaの一時ファイル操作について理解する](https://qiita.com/Ryoma0411/items/affa95b11eb1e1854f5b)

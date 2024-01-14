@@ -1,56 +1,61 @@
 ---
-title:    "Swift: Obtenir la date actuelle"
+title:    "Swift: Obtenir la date actuelle."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Aujourd'hui, nous allons parler de la façon d'obtenir la date actuelle en utilisant Swift. La gestion de la date est une partie importante de la programmation, car elle nous permet de suivre le temps et de prendre des décisions basées sur les dates. Que vous ayez besoin de suivre les délais, de calculer des durées ou simplement d'afficher la date à l'utilisateur, il est essentiel de savoir comment obtenir la date actuelle dans votre code.
+Êtes-vous intéressés à apprendre à obtenir la date actuelle en programmation Swift? Que vous soyez un développeur débutant ou expérimenté, connaître les différentes méthodes pour obtenir la date actuelle peut être très utile dans vos projets. Cela peut vous aider à afficher l'heure exacte de vos messages, enregistrer des horodatages dans vos bases de données et bien plus encore.
 
-# Comment Faire
-
-Il existe plusieurs façons d'obtenir la date actuelle en Swift, en fonction de vos besoins. Nous allons en examiner trois ici : en utilisant ```Date()```, en utilisant ```DateFormatter``` et en utilisant ```Calendar```.
-
-## Utilisation de Date()
-
-La façon la plus simple d'obtenir la date actuelle en Swift est d'utiliser la classe intégrée ```Date()```. Il suffit d'appeler cette classe et elle renverra automatiquement la date et l'heure actuelles.
+## Comment faire
 
 ```Swift
+// L'utilisation de la classe Date pour obtenir la date actuelle.
+let date = Date()
+
+// Utiliser un DateFormatter pour formater la date selon vos préférences.
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+let dateString = dateFormatter.string(from: date)
+
+// Afficher le résultat.
+print(dateString) // output: 07.08.2021 18:30:15
+```
+
+Vous pouvez également utiliser des fonctions intégrées pour obtenir la date actuelle. Par exemple, la fonction `Date()`, qui renvoie la date et l'heure actuelles, ou la fonction `timeIntervalSince1970`, qui renvoie le nombre de secondes écoulées depuis le 1er janvier 1970.
+
+```Swift
+// Utiliser la fonction Date().
 let now = Date()
-print(now) // Output: 2021-07-25 13:22:47 +0000
+
+// Récupérer le nombre de secondes écoulées depuis 1970.
+let timeInterval = now.timeIntervalSince1970
+
+// Afficher le résultat.
+print("Il s'est écoulé \(timeInterval) secondes depuis le 1er janvier 1970.")
+// output: Il s'est écoulé 1628397119.0 secondes depuis le 1er janvier 1970.
 ```
 
-## Utilisation de DateFormatter
+## Plongée en profondeur
 
-Si vous souhaitez personnaliser le format de la date, vous pouvez utiliser la classe ```DateFormatter```. Vous pouvez spécifier le format souhaité en utilisant des symboles de date prédéfinis ou en créant votre propre format personnalisé.
+Maintenant que vous savez comment obtenir la date actuelle en Swift, jetons un œil à certaines des options de formatage possibles avec `DateFormatter`.
 
-```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy" // Format de date personnalisé
-let today = Date()
-print(formatter.string(from: today)) // Output: 25/07/2021
-```
+| Symbole | Signification |
+|-----|----|
+| `dd` | Jour du mois (01-31) |
+| `MM` | Mois (01-12) |
+| `yyyy` | Année (4 chiffres) |
+| `HH` | Heure au format 24 heures (00-23) |
+| `mm` | Minute (00-59) |
+| `ss` | Seconde (00-59) |
 
-## Utilisation de Calendar
+Il existe de nombreux autres symboles de formatage disponibles, en fonction de vos besoins. Vous pouvez également utiliser des options de localisation pour afficher la date dans un format spécifique à un pays ou à une langue.
 
-La dernière méthode que nous allons aborder est l'utilisation de ```Calendar```. Cette classe nous permet de récupérer des informations sur la date actuelle, telles que le jour de la semaine, le mois ou l'année.
+## Voir aussi
 
-```Swift
-let calendar = Calendar.current
-let dateComponents = calendar.dateComponents([.day, .month, .year], from: Date())
-print(dateComponents) // Output: year: 2021 month: 7 day: 25 isLeapMonth: false
-```
-
-# Plongée Profonde
-
-Maintenant que nous avons vu les différentes façons d'obtenir la date actuelle en Swift, il est important de comprendre comment cela fonctionne réellement sous le capot. En utilisant la classe ```Date```, Swift utilise en fait une échelle de temps appelée *temps réel*, qui commence le 1er janvier 2001 et s'incrémente en millisecondes. Cependant, pour les calculs basés sur le calendrier, Swift utilise la classe ```Calendar``` et les composants de date tels que l'année, le mois et le jour.
-
-# Voir Aussi
-
-Maintenant que vous savez comment obtenir la date actuelle en Swift, vous pouvez aller plus loin et apprendre comment travailler avec des dates dans votre code. Voici quelques liens utiles :
-
-- [Documentation officielle de Swift sur la gestion du temps](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Didacticiel vidéo sur la gestion de la date en Swift](https://www.youtube.com/watch?v=V6GlC4F4UoI)
-- [Article sur les bonnes pratiques de gestion du temps en Swift](https://www.hackingwithswift.com/articles/142/the-ultimate-guide-to-date-formatting-in-swift)
+- [Documentation officielle de la classe Date](https://developer.apple.com/documentation/foundation/date)
+- [Documentation officielle de DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Guide de localisation de la date et de l'heure en Swift](https://nshipster.com/dateformatter/)

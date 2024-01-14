@@ -1,44 +1,47 @@
 ---
-title:    "Haskell: Utvinning av delstrenger"
+title:    "Haskell: Uttrekk av understrenger"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
 
-Hvis du har programmert i Haskell en stund, har du sannsynligvis støtt på behovet for å hente ut deler av en tekststreng. Dette kan være nyttig for å manipulere og analysere data, eller for å lage mer dynamiske utskrifter. Uansett hva årsaken er, vil vi i denne bloggposten utforske hvordan man kan ekstrahere substrings i Haskell.
+Har du noen gang funnet deg selv jobbe med en lang tekststreng og ønsket å bare få ut en del av den? Det er her substrings kommer til unnsetning! Ved å utvinne deler av en tekststreng, kan du få tilgang til spesifikke deler av teksten og utføre forskjellige operasjoner på dem.
 
 ## Hvordan
 
-Ekstrahering av substrings i Haskell er enkelt og en god måte å lære mer om mønstergjenkjenning og manipulering av tekststrenger. La oss se på et eksempel på hvordan vi kan hente ut en del av en streng:
+La oss si at du har en tekststreng som inneholder navnet ditt, og du vil få ut bare etternavnet. Det er her funksjonen `substring` i Haskell kommer til nytte. Ved å bruke denne funksjonen, kan du angi start- og sluttposisjonen til substringen du vil hente ut.
 
 ```Haskell
-str <- "Dette er en tekststreng"
-substring <- take 7 drop 9 str
+substring 7 12 "Ola Nordmann" -- output: "Nordmann"
 ```
 
-I dette eksempelet oppretter vi en variabel `str` som inneholder teksten "Dette er en tekststreng". Deretter bruker vi funksjonene `take` og `drop` for å ekstrahere en del av denne strengen. `take` tar et gitt antall tegn fra starten av en streng, mens `drop` fjerner et gitt antall tegn fra starten av en streng. Ved å kombinere disse to funksjonene, kan vi enkelt ekstrahere deler av en streng.
-
-La oss for eksempel si at vi vil hente ut ordet "tekst" fra vår tidligere streng. Vi kan gjøre dette ved å bruke følgende kode:
+Du kan også bruke en variabel for å styre start- og sluttposisjonen i stedet for å bruke tallverdier.
 
 ```Haskell
-str <- "Dette er en tekststreng"
-substring <- take 5 drop 12 str
+let start = 7
+let end = 12
+substring start end "Ola Nordmann" -- output: "Nordmann"
 ```
 
-Her bruker vi `take` for å ta de første 5 tegnene fra strengen, og `drop` for å fjerne de første 12 tegnene. Dette resulterer i substrings "tekst". Du kan også eksperimentere med ulike kombinasjoner av `take` og `drop`, og se hva slags resultater du får.
+Det er også mulig å få ut alle tegn etter en bestemt posisjon ved å bare angi startposisjonen og la sluttposisjonen være `length`, som vil hente ut alt fra startposisjonen til slutten av teksten.
 
-## Dypdykk
+```Haskell
+substring 5 length "Ola Nordmann" -- output: "Nordmann"
+```
 
-Haskell har mange nyttige funksjoner for å håndtere tekststrenger, inkludert funksjonene vi nevnte i eksemplene ovenfor. I tillegg finnes det også andre funksjoner som kan hjelpe deg med å ekstrahere substrings, som for eksempel `substring`, `splitOn` og `words`. Disse funksjonene kan hjelpe deg med å håndtere mer komplekse tekststrenger og mønstre.
+## Dykk ned
 
-Det er også verdt å nevne at Haskell har støtte for regulære uttrykk, som kan være nyttige for å finne og ekstrahere spesifikke mønstre i en tekststreng. Regulære uttrykk er en kraftig verktøy for å håndtere tekststrenger, og det finnes mange ressurser og tutorials på nettet som kan hjelpe deg med å lære mer om dette.
+Det er viktig å merke seg at i Haskell, som i de fleste funksjonelle programmeringsspråk, er indekseringen basert på 0, så den første posisjonen i en tekststreng er faktisk 0, ikke 1. Dette kan føre til forvirring hvis du er vant til å jobbe med språk der indekseringen starter fra 1.
 
-I tillegg, hvis du er interessert i å lære mer om mønstergjenkjenning og manipulering av tekststrenger i Haskell, anbefaler vi å utforske modulene `Data.Text` og `Data.ByteString`. Disse modulene har mange nyttige funksjoner og metoder for å arbeide med tekststrenger.
+En annen ting å merke seg er at den siste posisjonen i substring må være mindre enn lengden på teksten. Ellers vil du få en feilmelding.
+
+For å unngå feil, er det en god praksis å bruke funksjonen `length` for å få lengden på teksten og bruke det til å kontrollere start- og sluttposisjonen din før du henter ut en substring.
 
 ## Se også
 
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell for nybegynnere](https://wiki.haskell.org/Introduction)
-- [En grundig introduksjon til regulære uttrykk i Haskell](https://www.stavros.io/tutorials/haskell-regular-expressions/)
+[Offisiell Haskell-dokumentasjon for substring-funksjonen](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:substring)
+
+[Haskell for Dummies: Substring Tutorial](https://www.dummies.com/programming/haskell/how-to-work-with-substrings-in-haskell/)

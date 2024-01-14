@@ -1,53 +1,44 @@
 ---
-title:    "C#: Wyszukiwanie i zamienianie tekstu"
+title:    "C#: Wyszukiwanie i zamiana tekstu"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek musiałeś zmienić wiele fragmentów tekstu w swoim kodzie programu? Zamiast ręcznie edytować każde wystąpienie, czy nie byłoby łatwiej użyć jednej funkcji, która automatycznie wykonuje to za Ciebie? W tym wpisie dowiesz się, jak wykorzystać funkcję "search and replace" w języku C# do szybkiego i efektywnego zmieniania tekstu w swoim kodzie.
+Każdy programista wie, że przeszukiwanie i zamienianie tekstu to częsta i nieodzowna czynność w procesie tworzenia oprogramowania. Czasami należy zmienić tylko jeden mały fragment tekstu, a czasami konieczne jest dokonanie wielu zmian na raz. W takich sytuacjach używanie funkcji wyszukiwania i zamieniania może zaoszczędzić dużo czasu i wysiłku.
 
 ## Jak to zrobić
 
-Aby wykorzystać funkcję "search and replace" w C#, potrzebujemy dwóch parametrów: wyrażenia regularnego i nowego tekstu. Oto przykładowy kod, który zamienia wszystkie wystąpienia słowa "kot" na "pies" w zmiennej "text":
+Python oferuje prosty i wydajny sposób na wyszukiwanie i zamienianie tekstu w kodzie. Możesz użyć wbudowanej funkcji `Replace()`, która pozwala na szybką i precyzyjną zmianę tekstu w wybranym obszarze. Przeczytaj poniższy przykład, aby zobaczyć, jak to działa w praktyce:
 
 ```C#
-string text = "Uwielbiam mojego kota, ale nie lubię jego łap w domu.";
-string newText = Regex.Replace(text, "kot", "pies", RegexOptions.IgnoreCase);
-
+string text = "Witaj, świecie!";
+string newText = text.Replace("Witaj", "Cześć");
 Console.WriteLine(newText);
 ```
 
-Ten kod używa funkcji `Regex.Replace`, która przyjmuje cztery parametry: tekst, wyrażenie regularne, nowy tekst i opcje. W powyższym przykładzie użyliśmy opcji `IgnoreCase`, aby funkcja ignorowała wielkość liter. Wynik działania tego kodu będzie brzmiał:
+**Output:** Cześć, świecie!
 
-```
-Uwielbiam mojego psa, ale nie lubię jego łap w domu.
-```
-
-Możemy również wykorzystać funkcję `Regex.Matches`, aby znaleźć wszystkie wystąpienia wybranego tekstu w zmiennej i zastosować na nich pętlę `foreach` w celu dokonania zmiany. Na przykład, poniższy kod znajdzie wszystkie cyfry w tekście i zamieni je na gwiazdki:
+W tym przykładzie zastępujemy wyraz "Witaj" wyrażeniem "Cześć". Funkcja `Replace()` znajduje wszystkie wystąpienia danego tekstu i zamienia je na nowy. To proste rozwiązanie działa także w przypadku, gdy chcemy zmienić wiele fragmentów tekstu. Wystarczy po prostu wywołać funkcję `Replace()` z różnymi parametrami dla każdej potrzebnej zmiany.
 
 ```C#
-string text = "moje hasło to 12345";
-string pattern = @"\d";
-
-foreach (Match match in Regex.Matches(text, pattern))
-{
-    text = text.Replace(match.Value, "*");
-}
-
-Console.WriteLine(text);
+string text = "To jest przykładowy tekst do zamiany";
+string newText = text.Replace("jest", "był")
+                      .Replace("przykładowy", "inny")
+                      .Replace("do", "dla");
+Console.WriteLine(newText);
 ```
 
-Efektem tego kodu będzie "moje hasło to *****".
+**Output:** To aktualnie inny tekst dla zamiany.
 
-## Deep Dive
+## Dogłębne zagłębianie się
 
-Funkcje "search and replace" są niezwykle przydatne w programowaniu, ponieważ pozwalają nam szybko i łatwo dokonać zmian w dużych ilościach tekstu. Wyrażenia regularne (regular expressions) są bardzo potężnym narzędziem, które pozwala nam precyzyjnie wybrać fragmenty tekstu do zmiany. Istnieje wiele opcji, które można wykorzystać wraz z funkcjami `Regex.Replace` i `Regex.Matches`, a najlepszym sposobem na nauczenie się ich działania jest przez eksperymentowanie i praktykę.
+Ważne jest, aby zwrócić uwagę na kilka ważnych szczegółów, gdy korzystasz z funkcji wyszukiwania i zamieniania tekstu. Po pierwsze, funkcja ta jest wrażliwa na wielkość liter. To znaczy, że przy zamianie tekstu nie będzie uwzględniana wielkość liter, a więc słowo "Kot" nie zostanie zamienione na "pies". Po drugie, funkcja ta zwróci tylko pierwsze wystąpienie danego tekstu. Jeśli chcesz zamienić wszystkie wystąpienia, musisz użyć funkcji `Replace()` kilka razy lub skorzystać z innej metody.
 
 ## Zobacz również
 
-* [Dokumentacja C# - RegEx.Replace](https://docs.microsoft.com/pl-pl/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-* [Dokumentacja C# - RegEx.Matches](https://docs.microsoft.com/pl-pl/dotnet/api/system.text.regularexpressions.regex.matches?view=net-5.0)
-* [Kurs online o wyrażeniach regularnych w C#](https://www.udemy.com/course/csharp-regular-expressions/)
+- Dokumentacja Microsoft o funkcji Replace(): https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace
+- Inne sposoby na wyszukiwanie i zamienianie tekstu w C#: https://www.tutorialsteacher.com/csharp/csharp-string-replace

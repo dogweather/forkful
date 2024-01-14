@@ -1,35 +1,35 @@
 ---
-title:    "Gleam: Päivämäärän hankkiminen"
+title:    "Gleam: Nykyisen päivämäärän saaminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi hankkia nykyinen päivämäärä?
+## Miksi: 
+Joku voisi haluta saada nykyisen päivämäärän esimerkiksi sovelluksessa tapahtuvien aikaleimojen tallentamiseen tai tarvittavien päivämäärien laskemiseen. 
 
-Hankkia nykyinen päivämäärä voi olla tärkeää monista syistä, kuten laskutusta tai aikaleimojen luomista varten. Gleam-ohjelmointikielen avulla voit helposti hankkia tämän tiedon käyttämällä sisäänrakennettua `Date.now()` -funktiota ja tarvittavia kirjastoja.
-
-## Miten tehdä se?
-
-Gleamissa nykyinen päivämäärä voidaan hankkia helposti `Date.now()` -funktion avulla. Tämä palauttaa päivämäärän Unix-aikaleiman muodossa, joka edustaa päivämäärää sekunteina vuoden 1970 1. tammikuuta jälkeen. Voit sitten käyttää Gleamin `Calendar` -kirjastoa muuntaaksesi tämän aikaleiman haluamaasi muotoon, kuten päivänä, kuukautena ja vuotena.
+## Miten: 
+Koodiesimerkki, jossa näytetään kuinka saat nykyisen päivämäärän Gleamissa ja miten se tulostetaan komentokehotteelle: 
 
 ```Gleam
-import gleam/calendar
-
-let now = Date.now()
-
-let date = now |> Calendar.from_unix_sec
-
-IO.info(date.day) // 14
-IO.info(date.month) // 5
-IO.info(date.year) // 2021
+let tanaan = \Gleam.Date.today()
 ```
 
-## Syvempää tarkastelua
+```Gleam
+\IO.print("Tänään on ", Gleam.Date.to_string(tanaan), "!")
+```
 
-`Date.now()` -funktion lisäksi Gleamissa on myös muita tapoja hankkia nykyinen päivämäärä, kuten `Date.utc_now()` ja `Date.local_now()`, jotka palauttavat UTC- ja paikallisen aikavyöhykkeen aikaleimat. Voit myös antaa `Calendar.from_unix_sec` -funktiolle halutun aikavyöhykkeen, jos haluat muuntaa aikaleiman toiseen aikavyöhykkeeseen.
+Tämä koodi tuottaa seuraavan tulosteen komentokehotteelle: 
 
-# Katso myös
+> Tänään on 2020-04-30!
 
-- [Gleamin dokumentaatio: Date](https://gleam.run/documentation/std-lib-date)
-- [Gleamin dokumentaatio: Calendar](https://gleam.run/documentation/std-lib-calendar)
+## Syvällinen tutkimus: 
+Nykyisen päivämäärän saaminen Gleamissa perustuu "Date" -moduuliin, joka sisältää toimintoja päivämäärän laskemiseen ja muotoiluun. Gleam käyttää ISO 8601 -standardia päivämäärien esittämiseen muodossa "YYYY-MM-DD". Voit tutustua moduulin API-dokumentointiin lisätietojen saamiseksi siitä, kuinka käyttää päivämäärien laskemisessa ja muotoilussa: [Gleam Date - Dokumentointi](https://gleam.run/modules/gleam_date/latest/)
+
+## Katso myös: 
+- [Gleam - Verkkosivusto](https://gleam.run/)
+- [Gleam - Github](https://github.com/gleam-lang/gleam)
+- [Gleam - Opas aloittelijoille](https://gleam.run/book/tour/)
+
+*Kiitos lukemisesta!*

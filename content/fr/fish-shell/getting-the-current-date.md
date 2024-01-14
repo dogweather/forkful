@@ -1,34 +1,61 @@
 ---
 title:    "Fish Shell: Obtenir la date actuelle"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La programmation peut sembler intimidante pour certains, mais en utilisant un langage de script convivial tel que Fish Shell, vous pouvez accomplir des tâches intéressantes sans trop de difficulté. Aujourd'hui, nous allons parler d'une tâche simple mais très utile pour tout utilisateur de Fish Shell : obtenir la date actuelle.
+Qu'il s'agisse de mettre à jour des fichiers ou de planifier des tâches, connaître la date actuelle est une base essentielle pour tout programmeur. Dans cet article, nous allons vous expliquer comment utiliser Fish Shell pour obtenir la date actuelle dans tous vos scripts.
 
-## Comment Faire
-
-La bonne nouvelle est que Fish Shell a une fonction intégrée pour obtenir la date actuelle. Tout ce que vous avez à faire est de taper la commande suivante dans votre terminal :
+## Comment faire
 
 ```Fish Shell
-date +%d/%m/%Y
+set current_date (date +%d/%m/%Y)
+echo $current_date
 ```
 
-Cela vous donnera en sortie la date actuelle au format JJ/MM/AAAA. Bien sûr, vous pouvez modifier le format selon vos préférences en utilisant les symboles spéciaux disponibles pour la commande `date`. Par exemple, si vous voulez la date au format AAAA-MM-JJ, vous pouvez utiliser `date +%Y-%m-%d`.
+Voici un exemple simple de code Fish Shell pour obtenir la date actuelle dans le format jour/mois/année. Le résultat sera affiché dans la console lorsque vous exécutez le script. Mais il existe de nombreuses façons d'obtenir la date dans différents formats en utilisant des commandes différentes.
 
-Vous pouvez également utiliser la commande `man date` pour obtenir plus d'informations sur les options disponibles pour cette commande et ainsi personnaliser votre sortie selon vos besoins.
+```Fish Shell
+set current_time (date +%H:%M:%S)
+echo $current_time
+```
 
-## Plongée en Profondeur
+Vous pouvez également utiliser la commande `date +%H:%M:%S` pour obtenir l'heure actuelle au format heure:minute:seconde. Vous pouvez combiner différentes commandes pour obtenir des formats de date et d'heure personnalisés selon vos besoins.
 
-Maintenant, vous vous demandez peut-être comment cela fonctionne en coulisses. Eh bien, Fish Shell utilise en fait une version améliorée de la commande `date` disponible dans la plupart des systèmes Unix. En utilisant le `%` suivi de lettres spéciales, la commande `date` sera en mesure de formater la date selon vos spécifications. Vous pouvez trouver la liste complète des symboles disponibles dans la [documentation officielle de Fish Shell](https://fishshell.com/docs/current/commands.html#date).
+```Fish Shell
+set full_date (date +%A,%d %B %Y)
+echo $full_date
+```
 
-De plus, sachez que la fonction `date` utilise la variable système `$LANG` pour déterminer le format de la date. Si vous voulez utiliser un format différent, vous pouvez simplement définir cette variable à votre format désiré avant d'exécuter la commande.
+Si vous avez besoin d'afficher la date complète avec le jour de la semaine, le jour du mois et le mois, utilisez la commande `date +%A,%d %B %Y`. Vous pouvez modifier l'ordre ou le format en fonction de vos préférences.
 
-## Voir Aussi
+Vous pouvez également utiliser la commande `man date` pour obtenir la liste complète des options et des formats de date disponibles dans Fish Shell.
 
-- [La documentation officielle de Fish Shell sur la commande `date`](https://fishshell.com/docs/current/commands.html#date)
-- [La documentation officielle de la commande `date` dans les systèmes Unix](https://www.unix.com/man-page/linux/1/date/)
-- [Un guide détaillé sur la commande `date` de Linuxize](https://linuxize.com/post/linux-date-command/)
+## Plongée profonde
+
+Il est important de noter que la commande `date` dépend du fuseau horaire de votre système. Si vous souhaitez obtenir la date actuelle dans un fuseau horaire spécifique, vous pouvez utiliser la commande `TZ` suivie du fuseau horaire souhaité, puis la commande `date`, comme ceci :
+
+```Fish Shell
+set timezone (TZ=Europe/Paris date +%d/%m/%Y)
+echo $timezone
+```
+
+Vous pouvez également utiliser des variables pour stocker différentes dates et les utiliser ultérieurement dans votre script :
+
+```Fish Shell
+set tomorrow (date --date="1 day" +%d/%m/%Y)
+set yesterday (date --date="-1 day" +%d/%m/%Y)
+```
+
+Enfin, n'oubliez pas de mettre à jour votre date et heure système si vous rencontrez des problèmes en utilisant la commande `set` car cela peut interférer avec les valeurs stockées de manière temporaire.
+
+## Voir aussi
+
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/date.html)
+- [Guide de référence rapide pour les commandes du Shell Fish](https://fishshell.com/docs/current/cmds.html)
+- [Comment afficher l'heure et la date actuelles dans Fish Shell](https://www.linuxsecrets.com/fish-shell/afficher-lheure-date-actuelles-shell-fish/)
+- [Maîtrisez les commandes de date et d'heure dans Fish Shell](https://www.ostechnix.com/master-date-time-commands-fish-shell/)

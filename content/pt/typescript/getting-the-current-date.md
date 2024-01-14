@@ -1,47 +1,44 @@
 ---
-title:    "TypeScript: Desobtenção da data atual"
+title:    "TypeScript: Obtendo a data atual"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+# Por que utilizar TypeScript para obter a data atual?
 
-Atualmente, a obtenção da data atual é uma tarefa comum em muitos projetos de programação. A data atual pode ser usada para diversas finalidades, como registrar a data de criação de um documento, verificar o tempo de vida de uma transação ou simplesmente exibir a data atual para o usuário. Independentemente do motivo, é importante saber como obter a data atual em um programa TypeScript.
+Ter a capacidade de obter a data atual é uma tarefa muito importante na programação. Isso pode ser útil para exibir informações em tempo real, registrar quando uma ação foi realizada ou até mesmo para fins de organização.
 
 ## Como fazer
 
-Para obter a data atual em TypeScript, podemos usar o objeto "Date". Ele possui um método chamado "getDate()" que retorna o dia atual do mês e outro método chamado "getMonth()" que retorna o mês atual. Em seguida, podemos combinar esses valores para obter a data completa. Veja o código abaixo:
+Para obter a data atual em TypeScript, primeiro precisamos importar a biblioteca nativa do JavaScript para lidar com datas, chamada `Date`. Em seguida, vamos criar uma variável que vai guardar a data atual, utilizando o construtor `new` da classe Date.
 
-```TypeScript
-let data = new Date();
-let dia = data.getDate();
-let mes = data.getMonth() + 1; // os meses são indexados a partir do 0, por isso somamos 1
-console.log(`A data atual é ${dia}/${mes}`);
+```
+TypeScript
+importa a classe Date de 'javascript-native'
+
+//Cria uma variável para guardar a data atual
+let dataAtual = new Date();
 ```
 
-O código acima irá imprimir no console a data atual no formato "dia/mês". Por exemplo, se hoje fosse o dia 25 de agosto, a saída seria "A data atual é 25/08".
+Agora que temos a variável `dataAtual` criada, podemos acessar seus métodos para obter informações mais específicas. Por exemplo, se quisermos obter apenas o ano, podemos utilizar o método `.getFullYear()` da seguinte forma:
 
-Você também pode querer incluir o ano na data atual. Para isso, basta usar o método "getFullYear()" do objeto Date. Veja o exemplo abaixo:
-
-```TypeScript
-let data = new Date();
-let dia = data.getDate();
-let mes = data.getMonth() + 1; // os meses são indexados a partir do 0, por isso somamos 1
-let ano = data.getFullYear();
-console.log(`A data atual é ${dia}/${mes}/${ano}`);
+```
+TypeScript
+DataAtual.getFullYear(); // Retorna o ano atual
 ```
 
-Agora, a saída seria "A data atual é 25/08/2021".
+Outros métodos que podemos utilizar são `.getMonth()` para o mês atual, `.getDate()` para o dia atual e assim por diante. Também é possível formatar a data utilizando métodos como `.toLocaleDateString()`, que retorna a data no formato local do dispositivo.
 
 ## Profundidade
 
-Além dos métodos mencionados acima, o objeto Date possui muitos outros para manipular e obter informações sobre datas. Alguns exemplos são "getDay()" para obter o dia da semana, "getHours()" para obter a hora atual e "toDateString()" para obter uma representação em formato de string da data atual.
+Existem alguns detalhes importantes a serem considerados ao obter a data atual utilizando TypeScript. Primeiramente, o objeto Date aceita um parâmetro opcional para especificar uma data específica, caso necessário. Além disso, é possível realizar operações matemáticas com datas, como adicionar ou subtrair dias, meses e anos utilizando os métodos `.setDate()`, `.setMonth()` e `.setFullYear()`.
 
-Também é importante notar que o objeto Date é baseado no fuso horário do sistema onde o código está sendo executado. Se for necessário, é possível definir um fuso horário específico usando o método "setTimezoneOffset()". Além disso, é possível manipular datas e horas em diferentes formatos com bibliotecas externas, como a Moment.js.
+Outra dica importante é que o objeto Date trabalha com o fuso horário do navegador, o que pode levar a resultados diferentes em diferentes partes do mundo.
 
-## Veja também
+# Veja também
 
-- [Documentação oficial do objeto Date em TypeScript](https://www.typescriptlang.org/docs/handbook/datetime.html)
-- [Guia de uso do Moment.js](https://momentjs.com/docs/)
-- [Exemplo de manipulação de datas em TypeScript](https://dev.to/dkoshop/type-safe-javascript-date-manipulation-with-typescript-1kmd)
+- [Documentação da classe Date em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Mais informações sobre formatação de datas em TypeScript](https://www.typescriptlang.org/docs/handbook/internationalization.html#formatting-dates)
+- [Tutoriais sobre TypeScript no Youtube](https://www.youtube.com/results?search_query=typescript+pt)

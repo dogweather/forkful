@@ -1,56 +1,97 @@
 ---
 title:    "Clojure: Imprimindo saída de depuração"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que imprimir saída de depuração em Clojure?
+## Por que imprimir saída de depuração em Clojure?
 
-Depurar código é uma parte essencial do processo de programação, e imprimir saída de depuração pode ser uma ferramenta valiosa nesse processo. Ao imprimir informações relevantes durante a execução do código, é possível entender melhor o fluxo e o estado do programa, o que pode ajudar a identificar e corrigir possíveis erros.
+ A impressão de saída de depuração é uma ferramenta essencial para a resolução de problemas e a compreensão do fluxo de dados em um programa Clojure. Ao imprimir informações específicas durante a execução de um código, podemos detectar erros, entender a lógica do programa e melhorar a eficiência do código.
 
-# Como fazer?
+## Como fazer
 
-A impressão de saída de depuração em Clojure é bastante simples e pode ser feita usando a função `prn`. Vamos dar uma olhada em alguns exemplos de como usar essa função:
+Aqui estão alguns exemplos de como podemos imprimir saída de depuração em nossos programas Clojure:
 
-```
-;; Imprimir uma string
-(prn "Olá, mundo!")
-
-;; Imprimir uma variável
-(def numero 7)
-(prn "O número é" numero)
-
-;; Imprimir o resultado de uma operação matemática
-(prn (+ 3 4))
-
-;; Imprimir o conteúdo de uma coleção
-(def nomes ["Maria" "João" "Ana"])
-(prn "A segunda pessoa é" (nth nomes 1))
-
-;; Imprimir o estado de uma estrutura de dados
-(def meu-mapa {:nome "Carla" :idade 26})
-(prn "O nome é" (:nome meu-mapa) "e a idade é" (:idade meu-mapa))
+```Clojure
+(let [x 10
+      y 20]
+  (println "O valor de x é:" x)
+  (println "O valor de y é:" y))
 ```
 
-A saída da execução desses exemplos será:
+**Saída:**
 
 ```
-"Olá, mundo!"
-"O número é" 7
-7
-"A segunda pessoa é" "João"
-"O nome é" "Carla" "e a idade é" 26
+O valor de x é: 10
+O valor de y é: 20
 ```
 
-# Mergulho profundo
+Podemos também usar a função `prn` para imprimir a representação em texto de uma expressão:
 
-Além da função `prn`, também é comum utilizar a função `println` para imprimir saída de depuração em Clojure. A diferença entre elas é que `println` adiciona uma quebra de linha ao final da impressão, enquanto `prn` não o faz. Além disso, ambas podem receber múltiplos parâmetros e imprimir todos eles separados por espaço.
+```Clojure
+(prn (+ 2 3))
+```
 
-Também é possível usar o `println` e o `prn` dentro de uma expressão `when` para imprimir apenas quando uma determinada condição é atendida. Isso pode ser útil para evitar que a saída de depuração polua o resultado final do programa.
+**Saída:**
 
-# Veja também
+```
+5
+```
 
-- [Documentação oficial do Clojure](https://clojure.org/)
-- [Tutorial de Clojure para iniciantes do DevMedia](https://www.devmedia.com.br/introducao-ao-clojure/26152)
-- [Tutorial de Clojure para programadores Java do Caelum](https://www.caelum.com.br/apostila-java-orientacao-objetos/programando-em-clojure/#12-10-exercicios)
+E para imprimir informações de uma estrutura de dados, como uma lista ou mapa, podemos usar a função `pprint`:
+
+```Clojure
+(pprint [1 2 3 4 5])
+```
+
+**Saída:**
+
+```
+[1 2 3 4 5]
+```
+
+## Aprofundando-se
+
+Além das funções mencionadas acima, também podemos usar a macro `doseq` para imprimir informações de cada item de uma coleção:
+
+```Clojure
+(doseq [x (range 10)]
+  (println "O valor de x é:" x))
+```
+
+**Saída:**
+
+```
+O valor de x é: 0
+O valor de x é: 1
+O valor de x é: 2
+O valor de x é: 3
+O valor de x é: 4
+O valor de x é: 5
+O valor de x é: 6
+O valor de x é: 7
+O valor de x é: 8
+O valor de x é: 9
+```
+
+Uma dica útil para imprimir informações de depuração é usar a função `bindings` para ver os valores atuais das variáveis durante a execução do código. Por exemplo:
+
+```Clojure
+(let [x 10
+      y (+ x 5)]
+  (pprint (bindings)))
+```
+
+**Saída:**
+
+```
+{x 10, y 15}
+```
+
+## Veja também
+
+- [Documentação oficial do Clojure sobre impressão de saída de depuração](https://clojuredocs.org/clojure.core/prn)
+- [Tutorial de impressão de saída de depuração em Clojure](https://www.brainjar.com/clojure/introduction/logging)
+- [Artigo sobre estratégias efetivas de depuração em Clojure](https://purelyfunctional.tv/guide/clojure-debugging/)

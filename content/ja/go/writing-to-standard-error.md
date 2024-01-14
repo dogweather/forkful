@@ -1,26 +1,37 @@
 ---
 title:    "Go: 「標準エラーへの書き込み」"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-標準エラー出力に書き込むことに興味を持った理由を説明します。この記事では、Go言語での標準エラー出力の書き方について学びます。
+## なぜ？
+標準エラーに書き込む理由は、エラーメッセージやデバッグ情報を迅速に表示するためです。プログラムが実行されている際に発生したエラーをすばやく把握し、修正できるようにするためには、標準エラーへの書き込みは重要です。
 
-## 使い方
-標準エラー出力に書き込むには、以下のように「```fmt.Fprintf```」関数を使用します。
+## 方法
+Go言語で標準エラーに書き込むには、"fmt"パッケージの"Println"関数を使用します。"\'os.Stderr\'"を渡すことで、標準エラーに書き込むことができます。以下の例を参考にしてください。
 
+```Go
+package main 
+
+import "fmt"
+import "os"
+
+func main() {
+    fmt.Fprintln(os.Stderr, "エラーメッセージ")
+}
 ```
-fmt.Fprintf(os.Stderr, "エラーメッセージ")
-```
 
-上記のコードは、標準エラー出力に「エラーメッセージ」を書き込む例です。このようにすることで、プログラム実行時にエラーメッセージを表示することができます。
+上記のコードを実行すると、標準エラーに「エラーメッセージ」が表示されます。
 
 ## ディープダイブ
-標準エラー出力に書き込むことで、デバッグやプログラムの品質向上が可能になります。また、標準エラー出力を利用することで、エラーメッセージを別のファイルに出力することもできます。詳細は「```os.Stderr```」を参照してください。
+標準エラーに書き込むことは、非常に重要ですが、使用する前に注意することもあります。標準エラーに書き込むことで、プログラムのパフォーマンスが低下する可能性があるため、頻繁な書き込みは避けるべきです。また、標準エラーに書き込む際は、必ずエラー処理を行い、エラーが発生した場合は適切にハンドリングするようにしましょう。
 
-# 参考
-- [The Go Programming Language Specification - Output](https://golang.org/ref/spec#Output)
-- [fmt - Fprintf](https://golang.org/pkg/fmt/#Fprintf)
-- [os - Stderr](https://golang.org/pkg/os/#Stderr)
+## 参考サイト
+- [Go言語のfmtパッケージドキュメンテーション](https://golang.org/pkg/fmt/)
+- [エラーハンドリングについてのベストプラクティス](https://blog.golang.org/error-handling-and-go)
+- [標準エラーに書き込む方法についての詳細情報](https://www.geeksforgeeks.org/how-to-write-data-to-standard-error-in-golang/)
+
+## 参考になるサイト
+- [Go言語のエラーハンドリングについてのチュートリアル](https://tutorialedge.net/golang/go-error-handling-tutorial/)

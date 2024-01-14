@@ -1,50 +1,41 @@
 ---
-title:    "Ruby: Utilizzare le espressioni regolari"
+title:    "Ruby: Utilizzando le espressioni regolari"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché utilizzare le espressioni regolari in Ruby?
+## Perché
 
-Le espressioni regolari sono uno strumento potente per manipolare i dati all'interno dei programmi Ruby. Sono uno dei modi più efficienti per cercare e sostituire testo all'interno di una stringa, e possono essere utilizzate in diversi contesti, come la validazione dei dati di input o l'elaborazione di file di grandi dimensioni.
+Se hai mai programmato in Ruby, probabilmente ti sei imbattuto in termini come "espressioni regolari" o "regex". Ma cosa sono esattamente le espressioni regolari e perché dovresti imparare ad usarle? Le espressioni regolari sono un potente strumento per la manipolazione di stringhe di testo, aiutandoti a trovare e sostituire pattern di caratteri. Se stai cercando di fare operazioni su testo in modo efficiente, le espressioni regolari sono un must nella tua cassetta degli attrezzi da sviluppatore Ruby.
 
-## Come utilizzare le espressioni regolari in Ruby
-Per utilizzare le espressioni regolari in Ruby, è necessario utilizzare la classe `Regexp`. Un'espressione regolare inizia e termina con uno slash (`/`) e il testo che si desidera cercare o sostituire viene inserito al suo interno.
+## Come Utilizzarle
 
-Ecco un esempio di ricerca di una parola all'interno di una stringa utilizzando espressioni regolari:
-
-```ruby
-str = "Benvenuto in Ruby!"
-pattern = /Ruby/
-
-if str.match?(pattern)
-  puts "Trovato!"
-else
-  puts "Non trovato!"
-end
-```
-
-Output: `Trovato!`
-
-Si possono anche utilizzare i caratteri speciali per effettuare ricerche più avanzate. Ad esempio, il punto (`.`) corrisponde a qualsiasi carattere, mentre l'asterisco (`*`) corrisponde a 0 o più occorrenze del carattere precedente.
+Per utilizzare le espressioni regolari in Ruby, devi prima creare un oggetto Regex attraverso il metodo `Regexp.new()` o utilizzando la sintassi abbreviata `/pattern/`. Ad esempio, per trovare tutte le vocali in una stringa, puoi utilizzare il seguente codice:
 
 ```ruby
-str = "ciao123"
-pattern = /ciao.*/
-puts str.match?(pattern) # Output: true
+str = "Ciao amici!"
+vowels = /[aeiou]/
+puts str.scan(vowels)
 ```
 
-## Approfondimento sulle espressioni regolari in Ruby
-Le espressioni regolari in Ruby sono estremamente flessibili e potenti. Possono essere utilizzate per effettuare ricerche case-insensitive, per trovare corrispondenze solo all'inizio o alla fine di una stringa e molto altro ancora.
+Questo produrrà l'output `[i, i, o, a, i]`, poiché queste sono le vocali presenti nella stringa. Puoi anche utilizzare le espressioni regolari per sostituire parte di una stringa con un'altra. Ad esempio, se vuoi sostituire tutte le vocali in una stringa con l'asterisco "*", puoi utilizzare il seguente codice:
 
-Inoltre, le espressioni regolari in Ruby sono supportate da alcune funzioni utili come `match?`, `scan` e `gsub`, che semplificano notevolmente la loro utilizzo.
+```ruby
+str = "Ciao amici!"
+vowels = /[aeiou]/
+puts str.gsub(vowels, "*")
+```
 
-Se vuoi approfondire le tue conoscenze sulle espressioni regolari in Ruby, consiglio di consultare la [documentazione ufficiale](https://ruby-doc.org/core-2.7.0/Regexp.html) o di fare pratica con [esercizi](https://www.codewars.com/kata/search/ruby?q=regexp) su platform di coding come Codewars.
+Questo produrrà l'output `"Ca** *m*c*!"`.
 
-## Vedi anche
-- [Guida alle espressioni regolari in Ruby](https://guides.rubyonrails.org/v5.2.3/active_support_core_extensions.html#regexp)
-- [Esercizi sulle espressioni regolari in Ruby su Codewars](https://www.codewars.com/kata/search/ruby?q=regexp)
-- [Video tutorial sulle espressioni regolari in Ruby](https://www.youtube.com/watch?v=DRR9fOXkfRE)
+## Approfondimento
 
-Grazie per aver letto questo articolo e spero ti sia stato utile per comprendere l'utilità e il funzionamento delle espressioni regolari in Ruby!
+Oltre alle operazioni di base come trovare e sostituire pattern, le espressioni regolari in Ruby offrono una varietà di opzioni e metodi avanzati. Ad esempio, puoi utilizzare il modificatore `/i` per effettuare una ricerca senza distinzione tra maiuscole e minuscole. Inoltre, puoi utilizzare il metodo `.match()` per trovare la prima corrispondenza di una regex all'interno di una stringa. Esplora le diverse opzioni e metodi disponibili nelle espressioni regolari in Ruby per migliorare le tue abilità di programmazione.
+
+## Vedi Anche
+
+- [Documentazione Ruby sulle espressioni regolari](https://ruby-doc.org/core-2.7.2/RegExp.html)
+- [Tutorial sulle espressioni regolari in Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
+- [Esercizi pratici per imparare le espressioni regolari in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

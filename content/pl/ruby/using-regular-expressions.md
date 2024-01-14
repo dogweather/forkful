@@ -1,68 +1,39 @@
 ---
-title:    "Ruby: Używanie wyrażeń regularnych"
+title:    "Ruby: Używając wyrażeń regularnych"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego korzystać z wyrażeń regularnych?
 
-Wyrażenia regularne są niezwykle przydatne w programowaniu w języku Ruby. Pozwalają one na wyrażenie i wyszukiwanie wzorców w tekście, co jest niezbędne w wielu zastosowaniach, takich jak przetwarzanie danych i walidacja formularzy. Korzystanie z wyrażeń regularnych może znacznie ułatwić pracę i przyspieszyć proces tworzenia oprogramowania.
+Wyrażenia regularne są narzędziem, które ułatwiają odnajdywanie i manipulowanie tekstem w sposób precyzyjny. Dzięki nim programiści mogą znacznie szybciej i dokładniej przetwarzać dane, co przekłada się na wydajniejsze programy. Pozwalają one na wyszukiwanie wzorców w tekście, a także na podmianę lub wycinanie wybranych części. Dzięki temu są niezwykle przydatnym narzędziem dla każdego programisty.
 
-## Jak używać wyrażeń regularnych w Ruby?
+## Jak używać wyrażeń regularnych?
 
-Aby używać wyrażeń regularnych w Ruby, należy wykorzystać metodę `match`. Można ją wywołać na dowolnym ciągu znaków i przekazać jako argument wyrażenie regularne w postaci obiektu `Regexp`. Poniżej przedstawiamy przykładowe wyrażenie regularne, które znajduje wszystkie liczby w tekście:
+Aby rozpocząć pracę z wyrażeniami regularnymi, należy w pierwszej kolejności zaimportować bibliotekę do obsługi wyrażeń regularnych w języku Ruby. W przykładach poniżej użyto skrótu "re" dla nazwy biblioteki. Następnie, przy użyciu metod zawartych w bibliotece, można wyszukiwać, wycinać lub zamieniać tekst według określonych wzorców.
 
-```ruby
-text = "Lorem ipsum dolor sit 123 amet, consectetur adipiscing elit."
-matches = text.match(/(\d+)/)
-puts matches[1]
+```Ruby
+# Szukanie słowa "Ruby" w tekście
+re = /Ruby/
+text = "Jestem wielkim fanem języka Ruby!"
+result = re.match(text)
+puts result # wyświetli: "Ruby"
+
+# Zamiana liczby zapisanej cyframi arabskimi na słowną
+re = /(\d+)/
+text = "Mam 25 lat."
+result = text.gsub(re, "dwadzieścia pięć")
+puts result # wyświetli: "Mam dwadzieścia pięć lat."
 ```
 
-Output: `123`
+## Głębsze spojrzenie na wyrażenia regularne
 
-Możemy również użyć wyrażenia regularnego w warunku `if` lub `unless`, aby sprawdzić, czy dany tekst pasuje do wzorca. Na przykład:
+Wyrażenia regularne w języku Ruby są bardzo zaawansowane i oferują wiele opcji, które mogą ułatwić pracę z tekstem. Przykładowo, można używać tzw. metaznaków, czyli specjalnych symboli, które określają różne znaki lub grupy znaków. Istnieje także możliwość ustawiania flag, które modyfikują sposób działania wyrażenia regularnego. Warto także zwrócić uwagę na operacje wyrażeń regularnych, takie jak alternacja czy kwantyfikatory, które pozwalają na jeszcze dokładniejsze dopasowanie wzorców.
 
-```ruby
-text = "Lorem ipsum dolor sit 123 amet, consectetur adipiscing elit."
-if text.match?(/(\d+)/)
-  puts "Tekst zawiera liczbę."
-end
-```
+## Zobacz także
 
-Output: `Tekst zawiera liczbę.`
-
-## Głębsza analiza wyrażeń regularnych
-
-Wyrażenia regularne w Ruby posiadają wiele opcji i metod, co czyni je bardzo potężnym narzędziem. Poniżej przedstawiamy kilka przydatnych informacji o wyrażeniach regularnych.
-
-### Opcje wyrażeń regularnych
-
-Wyrażenia regularne mogą mieć opcje, które zmieniają zachowanie dopasowywania. Opcje te są przekazywane jako drugi argument do metody `match`. Na przykład, jeśli chcemy dopasować tekst bez uwzględniania wielkości liter, możemy użyć opcji `i`:
-
-```ruby
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-matches = text.match(/(lorem)/i)
-puts matches[1]
-```
-
-Output: `Lorem`
-
-Innym przykładem jest opcja `m`, która powoduje, że poszczególne linie tekstu są traktowane oddzielnie, a nie cały tekst jako jeden ciąg znaków.
-
-### Metody dla wyrażeń regularnych
-
-Obiekty `Regexp` posiadają wiele przydatnych metod, które ułatwiają pracę z wyrażeniami regularnymi. Poniżej przedstawiamy kilka z nich:
-
-- `source` – zwraca wyrażenie regularne w postaci ciągu znaków
-- `scan` – zwraca wszystkie dopasowania do danego wyrażenia regularnego jako tablicę
-- `sub` – zamienia pierwsze dopasowanie wyrażenia regularnego z podanym ciągiem znaków
-- `gsub` – zamienia wszystkie dopasowania wyrażenia regularnego z podanym ciągiem znaków
-
-Istnieje wiele innych metod, które można wykorzystać w zależności od potrzeb.
-
-## Zobacz również
-
-- [Ruby: Regular Expressions](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
-- [Ruby Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Dokumentacja biblioteki wyrażeń regularnych w Ruby](https://ruby-doc.org/core-3.0.0/Regexp.html)
+- [Kurs wyrażeń regularnych w Ruby na platformie Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
+- [Narzędzie do testowania wyrażeń regularnych online - Rubular](https://rubular.com)

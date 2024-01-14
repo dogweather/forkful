@@ -1,52 +1,40 @@
 ---
 title:    "Haskell: 开始一个新项目"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要开始一个新的项目
-开始一个新的项目可以给你带来很多好处。它可以让你学习新的编程语言，锻炼解决问题的能力，还可以毫无压力地尝试新的创意和想法。
+# 为什么要开始一个新项目
 
-# 如何开始
-如果你想开始一个新的Haskell项目，这里有一些简单的指导步骤。
-1. 首先，安装Haskell编译器GHC。
-2. 然后，创建一个新的文件夹作为你的项目目录。
-3. 在文件夹中创建一个Haskell源文件，命名为`Main.hs`。
-4. 在文件中编写你的代码，并在末尾添加`main`函数作为程序入口点。
-5. 在命令行中，进入到你的项目目录，使用`ghc -o output Main.hs`命令来编译你的程序。
-6. 最后，运行`./output`来执行你的程序。
+开始一个新的编程项目是一件充满创造力和乐趣的事情。它可以带来新的挑战、刺激和成就感。无论你是新手还是资深程序员，开始一个新项目都是一个学习和提升自己技能的好机会。
 
-下面是一个简单的Haskell程序示例，它可以计算斐波那契数列的前10个数字。
-```Haskell
--- 这是一个注释，用双减号开头
+## 如何开始一个新项目
 
--- 斐波那契数列函数
-fibonacci :: Int -> Int
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n = fibonacci (n-1) + fibonacci (n-2)
+在Haskell中开始一个新项目非常简单。首先，我们需要安装GHC编译器和Haskell平台。然后，我们可以使用Stack来创建一个新的haskell项目。
 
--- 主函数
-main :: IO()
-main = do
-   putStrLn "斐波那契数列的前10个数字："
-   print (map fibonacci [0..9])
-```
+````haskell
+$ stack new myproject
+````
 
-上面的代码输出结果为：`[0,1,1,2,3,5,8,13,21,34]`。
+这将创建一个包含有默认项目结构的文件夹，并生成一个简单的Haskell程序。我们可以在该文件夹中打开命令行终端，使用以下命令编译和运行程序。
 
-# 深入探讨
-在开始一个新的Haskell项目之前，你可能需要从以下几个方面考虑：
-- 目标：你的项目的主要目标是什么？这有助于你确定需要实现哪些功能和模块。
-- 工具：了解Haskell的常用工具和框架，以便在项目中使用。
-- 设计：良好的设计可以帮助你更好地组织和管理代码，从而提高代码质量和可维护性。
-- 测试：编写合适的测试可以帮助你及时发现和修复错误。
+````haskell
+$ stack build
+$ stack exec myproject
+````
 
-# 查看相关资源
-如果你想了解更多关于Haskell项目的信息，可以参考以下资源：
+现在我们已经有了一个新的Haskell项目，可以开始编写代码了。
+
+## 深入了解开始一个新项目
+
+除了使用Stack创建项目，我们还可以手动创建一个项目文件夹，并使用Cabal来管理依赖和构建。此外，我们可以学习如何使用不同的包管理工具，如Hackage和Stackage，来扩展项目的功能。
+
+另外，我们也可以探索使用不同的编译器、编辑器和IDE来编写Haskell代码的不同方式。无论是命令行编译还是图形化IDE，Haskell都拥有广泛的工具生态系统，让我们可以选择最适合自己的工具来开发项目。
+
+# 参考链接
+
 - [Haskell官方网站](https://www.haskell.org/)
-- [Haskell编程语言介绍](https://zh.wikipedia.org/wiki/%E5%93%88%E8%90%A8%E5%B0%94%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
-- [Haskell编程指南](http://learnyouahaskell.com/)
-- [Haskell教程和技巧](https://www.haskell.org/haskellwiki/Tutorials)
-- [Haskell编程社区](https://www.reddit.com/r/haskell)
+- [Haskell学习资源列表](https://github.com/bitemyapp/learnhaskell)
+- [Stack官方文档](https://docs.haskellstack.org/en/stable/GUIDE/)

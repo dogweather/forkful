@@ -1,35 +1,35 @@
 ---
 title:    "Elixir: 文字列の長さを見つける"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列の長さを求めることに関わる理由を1-2文で説明します。
 
-文字列の長さを求めることは、プログラミングでよく行われるタスクの1つです。文字列の長さを知ることで、文字列の処理や検証を行うことができます。また、データの整理や統計処理にも役立ちます。
+スピーディーかつ効率的に文字列の長さを知る必要がある場合があります。Elixirのプログラミングを学ぶことで、これを簡単に実現することができます。
 
 ## 方法
-文字列の長さを求める方法は簡単です。ElixirのStringモジュールの一つである`length()`関数を使用します。以下のコードで、文字列の長さを求めることができます。
+
+文字列の長さを知るには、Elixirの組み込み関数である`String.length()`を使います。以下の例を参考にしてください。
 
 ```Elixir
-"Hello, world!" |> String.length()
-#=> 13
+string = "こんにちは、世界！"
+String.length(string)
 ```
 
-また、Unicode文字を含む文字列の場合、`length()`関数では正確な文字数を返すことができません。その場合は、`String.codepoints()`関数を使用して、文字列をUnicodeのコードポイントのリストに変換し、その長さを求めることができます。
+上記のコードを実行すると、文字列の長さである`9`が出力されます。
 
-```Elixir
-"こんにちは、世界！" |> String.codepoints() |> length()
-#=> 9
-```
+## ディープダイブ
 
-## 深堀り
-文字列の長さを求める際に気をつけるべきことがあります。それは、文字列のエンコーディングです。Elixirでは、文字列はバイナリとして扱われますが、エンコーディングによって文字列のバイト数が異なります。そのため、`String.length()`関数では正確な文字数を返すことができない場合があります。詳細な情報は、Elixirの公式ドキュメントを参照してください。
+Elixirでは、文字列は単なるバイナリではなく、バイナリデータとして扱われます。そのため、文字列の長さを知る際には、バイナリデータとしてどのように処理されるかも重要です。また、文字列の長さを知る際にはUnicodeの扱いにも注意が必要です。
 
-また、文字列の長さを求めるための別の方法として、正規表現を使用する方法もあります。しかし、正規表現はパフォーマンスに影響するため、大きな文字列の場合は注意が必要です。
+## 参考リンク
 
-## あわせて読みたい
-- [ElixirのStringモジュールのドキュメント](https://hexdocs.pm/elixir/String.html)
-- [ElixirのUnicodeサポートについての記事](http://yajamon.hatenablog.com/entry/2016/02/27/204350)
+- [Elixir公式ドキュメント: String](https://hexdocs.pm/elixir/String.html)
+- [Elixir String Module: length/1](https://hexdocs.pm/elixir/String.html#length/1)
+- [Understanding Binary Data in Elixir](https://www.poeticoding.com/understanding-binary-data-in-elixir/)
+- [Unicode and UTF-8 in Elixir](https://www.poeticoding.com/unicode-and-utf-8-in-elixir/)
+
+## 関連情報を見る

@@ -1,44 +1,47 @@
 ---
-title:    "Fish Shell: Jämföring av två datum"
+title:    "Fish Shell: Jämföra två datum"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När vi arbetar med datum i programmering kan det ibland vara nödvändigt att jämföra två datum för att avgöra exempelvis vilket datum som är tidigare eller senare. Fish Shell erbjuder en enkel och effektiv metod för att göra detta, vilket kan vara användbart i många olika programmeringsprojekt.
+Att jämföra två datum är en viktig del av programmering, speciellt när man arbetar med datumbaserade data. Det kan hjälpa till att hitta skillnader i datum och utföra olika åtgärder baserat på resultaten.
 
-## Så här gör du
+## Hur man gör
 
-För att jämföra två datum i Fish Shell, används kommandot ```date -d <datum 1> -ge <datum 2>```, där <datum 1> och <datum 2> ersätts med de två datum som önskas jämföras.
+För att jämföra två datum i Fish Shell, kan du använda funktionen `date` tillsammans med operatorn `-s` som står för "subtraktion". Till exempel, om vi vill jämföra dagens datum med datumet för två veckor sedan, skulle koden se ut så här:
 
-Exempel:
-
-```
-date -d '2020-01-01' -le '2021-01-01'
+```Fish Shell
+date -s "-2 weeks"
 ```
 
-Första datumet (2020-01-01) är äldre än det andra datumet (2021-01-01), så resultatet kommer att bli "False". Om vi byter plats på datumen får vi istället ett resultat av "True", eftersom det första datumet då är senare än det andra.
+Detta kommer att ta dagens datum och dra bort två veckor från det. Om du vill jämföra två specifika datum, måste du först konvertera dem till Unix-tidsstämplar och sedan subtrahera dem med `-s` operatorn. Använd sedan `echo` för att se resultatet. Till exempel:
 
-Det finns även möjlighet att jämföra tidpunkter inom samma datum genom att lägga till tiden efter datumet inom citattecknen.
-
-Exempel:
-
-```
-date -d '2021-05-01 12:00:00' -gt '2021-05-01 10:00:00'
+```Fish Shell
+echo (date -f '%s' '2021-01-01') - (date -f '%s' '2020-12-01')
 ```
 
-I detta exempel är tidpunkten 12:00:00 senare än 10:00:00, så resultatet kommer att bli "True".
+Detta kommer att ge dig differensen i sekunder mellan de två datumen.
 
 ## Djupdykning
 
-Vid jämförelse av datum i Fish Shell används datuminformationen som visas när man skriver kommandot ```date```, vilket kan skilja sig åt beroende på vilket system man kör på. Om man vill vara säker på att få önskade resultat rekommenderas att man formaterar datumen enligt ISO 8601-standard, det vill säga yyyy-mm-dd.
+Det finns flera sätt att jämföra två datum i Fish Shell:
 
-Ytterligare användbara flaggor för kommandot ```date``` är "-s" för att sätta datum och tid (om man till exempel vill jämföra med det nuvarande datumet), och "-r" för att läsa in datum från en fil.
+- Du kan använda `-lt`, `-le`, `-eq`, `-ge`, `gt` operatorerna tillsammans med `date` för att utföra mindre än, mindre än eller lika med, större än, mer än eller lika med jämförelser.
 
-## Se också
+- Du kan använda `strftime` för att konvertera datum till andra format för enkel jämförelse.
 
-- [Datumspecifikation i Fish Shell dokumentation](https://fishshell.com/docs/current/commands.html#command-substitution)
-- [ISO 8601-standard för datumformatering](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Mer information om "date" kommandot i Fish Shell](https://fishshell.com/docs/current/commands.html#date)
+- Du kan också använda en sekundär variabel för att hålla datumet som ska jämföras, istället för att använda `date` varje gång.
+
+Var noga med att kontrollera dokumentationen för mer information och andra användbara funktioner för att jämföra datum i Fish Shell.
+
+## Se även
+
+- [Fish Shell dokumentation] (https://fishshell.com/docs/current/index.html)
+
+- [Unix-tidsstämpel] (https://en.wikipedia.org/wiki/Unix_time)
+
+- [Jämföra datum i Bash Shell] (https://www.howtogeek.com/662683/how-to-compare-dates-in-bash/)

@@ -1,51 +1,38 @@
 ---
 title:    "Elixir: Leyendo un archivo de texto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer un archivo de texto en Elixir?
+## Por qué leer un archivo de texto en Elixir
 
-Los archivos de texto son una forma común de almacenar y compartir información en una variedad de aplicaciones. Al aprender a leer archivos de texto en Elixir, tendrás una herramienta poderosa para manipular y procesar grandes cantidades de datos en tus proyectos. En este artículo, te enseñaremos cómo abrir y leer un archivo de texto usando Elixir.
+Leer un archivo de texto es una tarea común en la programación y puede ser especialmente útil en Elixir para procesar grandes cantidades de datos. Además, esta habilidad es esencial para manipular archivos de configuración o archivos de registro en una aplicación.
 
 ## Cómo leer un archivo de texto en Elixir
 
-Para abrir un archivo de texto en Elixir, primero necesitamos crear un archivo llamado "text.txt" que contenga algunas líneas de texto. Luego, en nuestro código de Elixir, usaremos la función `File.open/2` para abrir el archivo y especificar el modo de lectura:
+La forma más sencilla de leer un archivo de texto en Elixir es utilizando la función `File.read!/1` que devuelve el contenido del archivo en una cadena de caracteres. Por ejemplo, si queremos leer un archivo llamado `datos.txt` y guardar su contenido en una variable, el código sería:
 
 ```elixir
-File.open("text.txt", [:read]) 
+contenido = File.read!("datos.txt")
 ```
 
-Esto nos devolverá un proceso de Elixir que contiene el contenido del archivo. Ahora, podemos usar la función `IO.read/1` para leer y mostrar el contenido del archivo en la consola:
+También podemos utilizar la función `File.stream!/1` para leer un archivo línea por línea. Esto puede ser útil si el archivo es muy grande y no queremos cargar todo su contenido en memoria. El código sería similar al siguiente:
 
 ```elixir
-content = IO.read(file)
-IO.puts content
+File.stream!("datos.txt")
+|> Enum.each(fn linea -> IO.puts(linea) end)
 ```
 
-Si queremos leer el archivo línea por línea, podemos usar la función `IO.gets/1`, que nos devolverá cada línea del archivo como una cadena:
+## Profundizando en la lectura de archivos de texto en Elixir
 
-```elixir
-IO.gets(file) # primera línea
-IO.gets(file) # segunda línea
-```
+Existen otras funciones y opciones para leer archivos de texto en Elixir, como la función `File.read_line/1` que permite leer una sola línea del archivo, o la opción `:encoding` que nos permite especificar la codificación del archivo.
 
-## Profundizando en la lectura de archivos de texto
-
-Al abrir un archivo de texto en Elixir, debemos tener en cuenta que el contenido se devolverá como una cadena de caracteres. Si queremos trabajar con el contenido como una lista de líneas, podemos usar la función `String.split/2` para dividir la cadena en una lista de cadenas:
-
-```elixir
-file_content = IO.read(file)
-lines = String.split(file_content, "\n")
-```
-
-También podemos especificar un separador diferente si nuestro archivo no usa saltos de línea como separadores. Además, al leer un archivo grande, es importante utilizar funciones de Elixir como `File.stream!/3` y `Enum.each/2` en lugar de cargar todo el contenido en memoria de una vez.
-
-¡Ahora estás listo para leer y manipular archivos de texto en tus proyectos de Elixir con confianza!
+También podemos utilizar los módulos `File` y `IO` para manipular y procesar el contenido del archivo. Por ejemplo, podemos utilizar `File.write!/2` para escribir el contenido de un archivo en otro, o `File.stat!/1` para obtener información sobre el archivo, como su tamaño o fecha de creación.
 
 ## Ver también
 
-- [Documentación de Elixir sobre lectura de archivos](https://elixir-lang.org/getting-started/typespecs-and-behaviours.html#types-aspec)
-- [Guía de Elixir para trabajar con archivos](https://elixir-lang.org/getting-started/io-and-the-file-system.html#interacting-with-the-file-system)
-- [Ejemplos de código de Elixir para leer archivos](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/guards.ex)
+- Documentación oficial de Elixir sobre la lectura y escritura de archivos: https://elixir-lang.org/getting-started/io-and-the-file-system.html
+- Ejemplos de uso de la función `File` en la documentación de Elixir: https://hexdocs.pm/elixir/File.html
+- Tutorial sobre lectura de archivos de texto en Elixir: https://thinkingelixir.com/read-files-with-elixir/

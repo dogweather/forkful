@@ -1,54 +1,45 @@
 ---
-title:    "Elixir: 디버그 출력 인쇄"
+title:    "Elixir: 디버그 출력 프린팅"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-Elixir 프로그래밍 블로그: 디버그 출력하는 방법
+# 왜 디버그 출력을 사용해야 할까요?
 
-## 왜 디버그 출력을 하는가?
+디버그 출력은 디버깅 프로세스에서 매우 유용합니다. 코드의 한 부분만 실행하여 해당 부분이 어떻게 동작하는지 살펴볼 수 있습니다. 또한 출력을 통해 코드에서 발생하는 오류를 식별하고 수정할 수 있습니다.
 
-디버그 출력은 코드를 실행하고 디버깅하는 과정에서 매우 유용합니다. 코드가 실행되는 동안 변수의 값과 함수의 반환값을 확인할 수 있어 문제를 빠르게 발견하고 수정할 수 있습니다. 또한 코드의 흐름을 이해하는 데에도 도움이 됩니다.
+## 어떻게 디버그 출력을 사용할까요?
 
-## 디버그 출력하는 방법
-
-디버그 출력은 Elixir에서 `IO.inspect/1` 함수를 사용하는 것으로 간단하게 할 수 있습니다. 이 함수는 입력값을 출력하고 그 값을 다시 반환합니다. 아래는 `IO.inspect/1` 함수를 사용한 예제 코드와 출력 내용입니다.
+다음은 Elixir에서 디버그 출력을 사용하는 간단한 예시입니다. 
 
 ```Elixir
-numbers = [1, 2, 3, 4, 5]
-IO.inspect(numbers)
-# 출력: [1, 2, 3, 4, 5]
+IO.puts("Hello, world!")
 ```
 
-함수나 모듈을 디버그할 때에는 함수 또는 모듈 이름을 `IO.inspect/2` 함수의 두 번째 인자로 넘겨줄 수도 있습니다. 이렇게 하면 해당 함수나 모듈의 코드 또는 출력 내용이 출력되어 디버깅을 보다 쉽게 할 수 있습니다. 아래는 `Enum.filter/2` 함수를 디버그할 때 사용하는 예제 코드와 출력 내용입니다.
+위의 코드를 실행하면 "Hello, world!"라는 메시지가 터미널에 출력됩니다. 이를 통해 해당 코드가 제대로 동작하는지 확인할 수 있습니다.
+
+또한 Elixir는 `IO.inspect/2` 함수를 제공하여 디버그 출력을 더욱 쉽게 사용할 수 있도록 합니다.
 
 ```Elixir
-defmodule MyModule do
-  def double(numbers) do
-    Enum.filter(numbers, & &1 * 2 =:= 6)
-  end
-end
-
-IO.inspect(MyModule, :double)
-# 출력:
-# MyModule
-#   double/1
-#     [1, 2, 3, 4, 5]
+IO.inspect([1, 2, 3], label: "my list")
 ```
 
-## 디버그 출력에 대해 깊게 알아보기
+위의 코드를 실행하면 `[1, 2, 3]`이라는 리스트와 함께 "my list: "라는 라벨이 출력됩니다. 이를 통해 우리는 해당 리스트가 정확히 어떤 값으로 이루어져 있는지 알 수 있습니다.
 
-디버그 출력을 하면서 유의해야 할 점은 너무 많은 값이나 정보를 출력하지 않도록 하는 것입니다. 너무 많은 값이나 정보를 출력하면 오히려 코드를 파악하기 어려워질 수 있습니다. 디버그 출력을 할 때에는 필요한 정보만 충분히 출력하고 출력을 위한 코드는 최대한 간단하게 유지하는 것이 좋습니다.
+## 깊게 파헤쳐보기
 
-## 더 알아보기
+디버그 출력은 코드에서 발생하는 문제점을 식별하고 해결하는 데 매우 중요합니다. 하지만 항상 잘못된 부분을 찾기만 하는 것이 아니라, 코드의 흐름을 이해하고, 변수의 상태를 추적하는 데에도 도움을 줄 수 있습니다.
 
-- [IO.inspect/1](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir Debugging](https://medium.com/nothingmorethannothing/elixir-debugging-fa545951d4ef)
-- [Elixir Cookbook - Debugging](https://elixirschool.com/en/lessons/advanced/debugging/)
+또한 `Logger` 모듈을 사용하여 디버그 출력을 더욱 구조적으로 관리할 수 있습니다. 이 모듈을 사용하면 로그 레벨을 설정하여 원하는 수준만 출력하도록 할 수 있으며, 로그 파일에 저장하는 등 추가적인 기능도 제공합니다.
 
-## 관련 링크
+## 관련 자료
 
-- [Elixir 공식 홈페이지](https://elixir-lang.org/)
-- [Elixir 한국 커뮤니티](https://elixir-korea.org/)
-- [Elixir 슬랙 채널](https://elixir-slackin.herokuapp.com/)
+- [Elixir 공식 문서 (한국어 번역)](https://elixir-lang.org/ko/docs.html)
+- [Elixir 디버깅 팁 (번역된 위키 문서)](https://www.costela.net/archives/609)
+- [Elixir 디버깅: IO.inspect와 Logger 모듈 (번역된 블로그 포스트)](https://calcpark.com/debugging-in-elixir/)
+
+# 더 알아보기
+
+여러분이 작성한 코드에서 디버그 출력을 제대로 활용할 수 있도록 더 많은 자료를 찾아보세요. 이를 통해 코드의 문제를 더욱 쉽게 식별하고, 효율적으로 해결할 수 있을 것입니다.

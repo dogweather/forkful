@@ -1,72 +1,51 @@
 ---
 title:    "Bash: Generazione di numeri casuali"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Generare numeri casuali è un utile strumento per diversi scopi in programmazione. Ad esempio, potresti voler creare giochi casuali o generare password complesse e sicure per i tuoi account online.
+In un mondo sempre più digitale, la generazione di numeri casuali è diventata un concetto fondamentale per la sicurezza delle nostre informazioni. Ad esempio, nell'informatica, i numeri casuali vengono utilizzati per crittografare i dati e proteggerli da eventuali attacchi.
 
 ## Come fare
 
-Per generare numeri casuali in Bash, è possibile utilizzare il comando `shuf`. Vediamo un esempio pratico di come utilizzarlo per ottenere un numero casuale compreso tra 1 e 10:
+Per generare numeri casuali in Bash, è possibile utilizzare il comando ```$RANDOM```. Questo comando restituisce un numero intero casuale compreso tra 0 e 32767. Possiamo anche specificare il range all'interno del quale vogliamo ottenere un numero casuale utilizzando il comando ```$RANDOM%max```, dove ```max``` è il numero massimo desiderato.
 
-```Bash
-echo $(shuf -i 1-10 -n 1)
+Ecco un esempio di codice Bash per generare 5 numeri casuali compresi tra 1 e 10:
+
+```
+#!/bin/bash
+
+for (( i=0; i<5; i++ ))
+do
+    random=$(( $RANDOM%10 + 1 ))
+    echo "Numero casuale: $random"
+done
 ```
 
-In questo comando, stiamo utilizzando l'opzione `-i` per specificare l'intervallo di numeri e l'opzione `-n` per specificare il numero di numeri da generare. 
+Ecco la possibile output:
 
-Ecco un esempio di output:
-
-```Bash
-6
 ```
-
-Possiamo anche utilizzare la variabile `$RANDOM` per generare numeri casuali. Questa variabile restituisce un numero compreso tra 0 e 32767. Ecco un esempio:
-
-```Bash
-echo $RANDOM
-```
-
-Output:
-
-```Bash
-12973
+Numero casuale: 7
+Numero casuale: 3
+Numero casuale: 9
+Numero casuale: 5
+Numero casuale: 10
 ```
 
 ## Approfondimento
 
-Se vuoi generare numeri casuali con un'alta precisione, puoi utilizzare il comando `od`. Questo comando permette di generare numeri casuali a partire da una fonte di entropia, come ad esempio il movimento del mouse o la lettura di file di sistema. Ecco un esempio:
+Nella programmazione, la generazione di numeri casuali è spesso utilizzata per generare dati di test o per implementare algoritmi di machine learning. È importante notare che i numeri generati dal comando ```$RANDOM``` non sono veramente casuali, ma sono basati su un algoritmo predefinito. Pertanto, non è consigliabile utilizzare questi numeri per scopi critici di sicurezza.
 
-```Bash
-echo $(od -An -N2 -i /dev/random)
-```
-
-In questo caso, stiamo utilizzando l'opzione `-N` per specificare il numero di byte da leggere, l'opzione `-i` per impostare il formato di output su intero e l'opzione `-An` per rimuovere gli spazi e i caratteri di nuova riga dall'output.
-
-Output:
-
-```Bash
-29378
-```
-
-Inoltre, è possibile utilizzare la funzione `RANDOM` per generare numeri casuali in una determinata intervallo. Ad esempio, se vogliamo generare un numero casuale tra 1 e 100, possiamo utilizzare il seguente codice:
-
-```Bash
-echo $((RANDOM%100+1))
-```
-
-Output:
-
-```Bash
-54
-```
+Esistono anche altri modi per generare numeri casuali in Bash, come utilizzare il comando ```/dev/urandom```, ma questo va oltre lo scopo di questa guida e richiede una conoscenza più approfondita del sistema operativo.
 
 ## Vedi anche
 
-- [Shuf manuale] (https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [OD manuale] (https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html)
-- [Guida all'uso di RANDOM] (https://tldp.org/LDP/abs/html/randomvar.html)
+- [Tutorial Bash su scripting](https://www.internalfault.com/bash-scripting-tutorial/)
+- [Guida Bash ufficiale](https://www.gnu.org/software/bash/manual/bash.html)
+- [Guida alla crittografia in Bash](https://bioinformatics.cvr.ac.uk/blog/using-bash-to-encrypt-and-decrypt-files/)
+
+Grazie per aver letto questo articolo e speriamo che ti sia stato utile per comprendere meglio il concetto di generazione di numeri casuali in Bash. Ricorda sempre di utilizzare questo strumento con cautela e di approfondire ulteriormente la tua conoscenza su sicurezza informatica e programmazione Bash.

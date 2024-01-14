@@ -1,45 +1,70 @@
 ---
 title:    "PHP: Calculando una fecha en el futuro o pasado"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular fechas en el futuro o pasado en PHP?
+## ¿Por qué?
 
-Calcular fechas en el futuro o pasado es una habilidad crucial para cualquier programador de PHP, ya que a menudo necesitamos manejar datos temporales en nuestras aplicaciones. Esto puede incluir funciones como mostrar la fecha actual, programar eventos en el futuro o registrar entradas en un diario en una fecha específica.
+¿Alguna vez te has preguntado cómo calcular una fecha en el futuro o en el pasado? Quizás necesitas programar una tarea o evento que suceda en una fecha específica, o simplemente estás interesado en aprender nuevas habilidades de programación. Sea cual sea la razón, calcular fechas en PHP puede ser una herramienta útil para tener en tu arsenal de programación.
 
-## Cómo hacerlo: Ejemplos de código en PHP
+## Cómo hacerlo
 
-Para calcular fechas en el futuro o pasado en PHP, podemos utilizar la función `date()` junto con la función `strtotime()`. Veamos algunos ejemplos:
+Para calcular una fecha en el futuro o en el pasado en PHP, podemos utilizar la función `strtotime()`. Esta función toma dos argumentos: una cadena de texto con la fecha deseada y un segundo argumento opcional que establece una fecha de referencia.
+
+Por ejemplo, si queremos calcular la fecha de mañana, podemos utilizar el siguiente código:
+
+````PHP
+<?php
+$manana = strtotime("tomorrow");
+echo "Mañana es " . date("d/m/Y", $manana);
+````
+
+La salida de este código sería:
 
 ```
-// Calcular la fecha de mañana
-$mañana = date('d/m/Y', strtotime('+1 days'));
-echo "Mañana será: $mañana";
-// Output: Mañana será: 05/08/2021
-
-// Calcular la fecha de hace una semana
-$semana_pasada = date('d/m/Y', strtotime('-1 week'));
-echo "Hace una semana fue: $semana_pasada";
-// Output: Hace una semana fue: 27/07/2021
-
-// Calcular la fecha en 2 meses y 10 días
-$fecha = date('d/m/Y', strtotime('+2 months +10 days'));
-echo "Dentro de 2 meses y 10 días será: $fecha";
-// Output: Dentro de 2 meses y 10 días será: 15/10/2021
+Mañana es 10/04/2020
 ```
 
-Podemos ver que la función `strtotime()` nos permite modificar la fecha actual y calcular una fecha en el futuro o pasado de acuerdo a nuestras necesidades. Podemos utilizar diferentes parámetros como `days`, `months` o `years`, y también podemos combinarlos para obtener una fecha más específica.
+También podemos establecer una fecha de referencia para calcular una fecha en el futuro o en el pasado en relación a esa fecha. Por ejemplo, si queremos calcular la fecha dentro de una semana, podemos utilizar el siguiente código:
 
-## Profundizando en el cálculo de fechas en PHP
+````PHP
+<?php
+$proximaSemana = strtotime("+1 week");
+echo "La fecha dentro de una semana es " . date("d/m/Y", $proximaSemana);
+````
 
-La función `date()` acepta dos parámetros: el formato que queremos mostrar y una marca de tiempo opcional. Por defecto, si no se proporciona una marca de tiempo, se utiliza la fecha y hora actual. Sin embargo, la función `strtotime()` nos permite utilizar una marca de tiempo en formato de cadena para calcular una fecha en el pasado o futuro.
+La salida de este código sería:
 
-También es importante tener en cuenta que la función `strtotime()` solo puede manejar fechas entre 1970 y 2038 debido a limitaciones del sistema operativo. Si necesitamos calcular fechas fuera de este rango, podemos utilizar la clase `DateTime` de PHP.
+```
+La fecha dentro de una semana es 17/04/2020
+```
+
+También podemos especificar una fecha de referencia utilizando la función `strtotime()` como segundo argumento. Por ejemplo, si queremos calcular la fecha dentro de dos semanas a partir de una fecha específica, podemos utilizar el siguiente código:
+
+````PHP
+<?php
+$fecha = strtotime("07-04-2020");
+$proximasDosSemanas = strtotime("+2 weeks", $fecha);
+echo "La fecha dentro de dos semanas es " . date("d/m/Y", $proximasDosSemanas);
+````
+
+La salida de este código sería:
+
+```
+La fecha dentro de dos semanas es 21/04/2020
+```
+
+## Profundizando
+
+La función `strtotime()` también nos permite calcular fechas utilizando formatos de tiempo más complejos, como por ejemplo "1st Thursday next month" (el primer jueves del mes próximo) o "first day of last month" (primer día del mes pasado). Puedes encontrar una lista completa de formatos válidos en la [documentación oficial de PHP](https://www.php.net/manual/es/datetime.formats.php).
+
+Es importante tener en cuenta que la función `strtotime()` utiliza la zona horaria del servidor para calcular las fechas, por lo que es posible que debas especificar la zona horaria deseada utilizando la función `date_default_timezone_set()`. También es posible realizar cálculos entre diferentes zonas horarias utilizando la clase `DateTime` de PHP.
 
 ## Ver también
 
-- [Función `date()` en la documentación de PHP](https://www.php.net/manual/es/function.date.php)
-- [Función `strtotime()` en la documentación de PHP](https://www.php.net/manual/es/function.strtotime.php)
-- [Clase `DateTime` en la documentación de PHP](https://www.php.net/manual/es/class.datetime.php)
+- [Documentación de PHP sobre la función strtotime()](https://www.php.net/manual/es/function.strtotime.php)
+- [Documentación de PHP sobre la clase DateTime](https://www.php.net/manual/es/class.datetime.php)
+- [Lista de formatos válidos para strtotime()](https://www.php.net/manual/es/datetime.formats.php)

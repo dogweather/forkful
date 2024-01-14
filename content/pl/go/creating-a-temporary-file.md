@@ -1,37 +1,48 @@
 ---
-title:    "Go: Tworzenie tymczasowego pliku"
+title:    "Go: Tworzenie pliku tymczasowego"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Tworzenie tymczasowego pliku jest ważną częścią procesu programowania w Go. Umożliwia ono tworzenie i zapisywanie danych tymczasowych, które są potrzebne w trakcie wykonywania programu. Mogą to być na przykład dane tymczasowe, które są potrzebne do przechowywania wyników pośrednich lub do tymczasowego przechowywania danych pobranych ze zdalnego serwera. Tworzenie tymczasowego pliku jest również przydatne w celu zabezpieczenia danych przed przypadkowym nadpisaniem.
+Tworzenie tymczasowych plików jest nieodłączną częścią programowania w języku Go. Często potrzebujemy przechowywać pewne dane tymczasowo, ale nie chcemy pozostawiać ich po zakończeniu działania programu. W takim przypadku tworzenie i korzystanie z tymczasowych plików jest bardzo przydatne.
 
 ## Jak to zrobić
 
-Tworzenie tymczasowego pliku w Go jest bardzo proste, wystarczy użyć funkcji `ioutil.TempFile ()`. Przyjmuje ona dwa argumenty, pierwszy to ścieżka, w której chcemy utworzyć plik tymczasowy, a drugi to nazwa pliku. Jeśli ścieżka jest pusta, plik zostanie utworzony w systemowym katalogu tymczasowym. Poniżej znajduje się przykładowy kod, który tworzy tymczasowy plik i wypisuje jego nazwę:
+Aby utworzyć tymczasowy plik w Go, możemy skorzystać z funkcji `ioutil.TempFile`, która przyjmuje dwa argumenty: katalog, w którym ma zostać utworzony plik tymczasowy, oraz prefiks, który będzie dodany do nazwy pliku tymczasowego. Poniższy przykład kodu tworzy tymczasowy plik w katalogu /tmp o nazwie "temp_", a następnie zapisuje w nim tekst "To jest tymczasowy plik".
 
 ```Go
-plik, err := ioutil.TempFile ("", "plik tymczasowy")
-if err != nil {
-    fmt.Println ("Błąd podczas tworzenia pliku:", err)
-    return
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+func main() {
+	// Tworzenie tymczasowego pliku
+	file, err := ioutil.TempFile("/tmp", "temp_")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// Zapisanie tekstu w tymczasowym pliku
+	fmt.Fprintln(file, "To jest tymczasowy plik")
 }
-defer plik.Close ()
-fmt.Println ("Tymczasowy plik został utworzony:", plik.Name ())
 ```
 
-Przykładowy output: `Tymczasowy plik został utworzony: C:\Users\Użytkownik\AppData\Local\Temp\plik tymczasowy123456`
+W wyniku wykonania powyższego kodu w katalogu /tmp zostanie utworzony tymczasowy plik o nazwie "temp_891118176", a jego zawartością będzie "To jest tymczasowy plik".
 
-## Zagłębienie w temat
+## Wnikliwa analiza
 
-Podczas tworzenia tymczasowego pliku, Go automatycznie generuje unikalną nazwę dla pliku, aby uniknąć konfliktów z istniejącymi plikami o tej samej nazwie. Ponadto, funkcja `ioutil.TempFile ()` zwraca obiekt typu `*os.File` i automatycznie go otwiera. Dzięki temu nie musimy martwić się o ręczne otwieranie pliku.
-
-Możemy także określić własną, unikalną nazwę dla pliku, jeśli chcemy zachować kontrolę nad jego nazwą. W tym celu możemy wykorzystać funkcję `ioutil.TempDir ()` do utworzenia folderu tymczasowego, a następnie użyć tej samej funkcji `ioutil.TempFile ()`, ale podając nazwę folderu jako pierwszy argument. W ten sposób możemy mieć pełną kontrolę nad nazwą pliku.
+Jeśli chcemy bardziej szczegółowo poznać proces tworzenia tymczasowego pliku w Go, warto wiedzieć, że funkcja `ioutil.TempFile` korzysta z funkcji `os.Create` oraz `os.Mkdir`. Dodatkowo, aby upewnić się, że nazwa pliku tymczasowego jest unikalna, funkcja `ioutil.TempFile` dodaje do prefiksu również losowo wygenerowany ciąg znaków.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji ioutil.TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
-- [Tutorial dotyczący tworzenia tymczasowych plików w Go](https://www.calhoun.io/creating-random-temp-files-in-go/)
+- Dokumentacja funkcji `ioutil.TempFile`: https://golang.org/pkg/io/ioutil/#TempFile
+- Omówienie tworzenia tymczasowych plików w języku Go na stronie bloga "The Go Blog": https://blog.golang.org/defer-panic-and-recover
+- Przykład wykorzystania tymczasowych plików w projekcie: https://github.com/golang/go/wiki/Lesson-1.5#temporary-files

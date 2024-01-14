@@ -1,45 +1,41 @@
 ---
-title:    "Ruby: Konvertera en sträng till gemener"
+title:    "Ruby: Omvandla en sträng till gemener"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att konvertera en sträng till gemener (lower case) är en viktig del av Ruby-programmering då det gör det lättare att hantera och manipulera textsträngar. Detta är speciellt användbart vid hantering av användarinput eller sökningar i en databas då den sökta strängen ofta måste matcha den lagrade strängen i gemener.
+Konvertering av en sträng till gemener (lower case) är ett vanligt förekommande problem i programmering. Ofta behöver vi hantera data som innehåller både stora och små bokstäver, men ibland vill vi enkelt göra om allt till gemener för att underlätta sökning, filtrering eller jämförelse. I detta blogginlägg kommer vi att gå igenom hur du kan göra detta i Ruby.
 
-## Hur man gör det
+## Hur man gör
 
-För att konvertera en sträng till gemener i Ruby, använd metoden `downcase`. Exempelvis, om vi vill konvertera strängen "HEJ" till gemener:
+För att konvertera en sträng till gemener i Ruby kan du använda metoden `downcase`. Här är ett exempel på hur en sträng kan se ut före och efter konvertering:
 
-```
-HEJ.downcase
-```
+```ruby
+sträng = "HeLLo wOrLD"
+puts sträng.downcase
 
-Detta kommer returnera strängen "hej". Om vi applicerar metoden på en befintlig variabel:
-
-```
-text = "HELLO"
-text.downcase
+# Output:
+hello world
 ```
 
-Vilket kommer att resultera i att variabeln "text" blir tilldelad värdet "hello".
+Som du kan se har alla bokstäver i strängen blivit omvandlade till gemener. Det är så enkelt det är att konvertera en sträng till gemener i Ruby!
 
 ## Djupdykning
 
-När vi använde `downcase` metoden förväntade vi oss att strängen endast skulle innehålla gemener efter konverteringen. Men vad händer om vår ursprungliga sträng redan innehöll gemener? Låt oss ta en titt på följande exempel:
+Att konvertera en sträng till gemener är vanligtvis inte något som kräver en djupdykning i programmering, men det finns ändå några intressanta detaljer kring detta ämne. Till exempel kan du använda `downcase` på alla slags strängar, oavsett om de är i Unicode-form eller inte. Detta innebär att du kan hantera olika typer av tecken utan problem.
 
-```
-"Hello".downcase
-```
+Ytterligare en detalj att tänka på är att `downcase` endast påverkar bokstäver, och inte andra tecken som kan förekomma i en sträng. Så om du har annan data i din sträng, som siffror eller specialtecken, kommer de inte att påverkas av metoden.
 
-Output kommer fortfarande att vara "hello". Detta beror på att `downcase` endast konverterar stora bokstäver till små, utan att ändra eventuella redan befintliga gemener.
-
-Det är även viktigt att notera att `downcase` inte bara fungerar för engelska bokstäver, utan även för alla andra bokstavstecken i det Unicode-teckenuppsättning som Ruby stödjer.
+Det är också värt att notera att det finns en motsvarande metod, `upcase`, som omvandlar en sträng till versaler istället för gemener.
 
 ## Se även
 
-* [Ruby Dokumentation - downcase](https://ruby-doc.org/core-2.5.1/String.html#method-i-downcase)
-* [Ruby Tutorial - Strings](https://www.rubyguides.com/2015/06/ruby-strings/)
-* [Ruby Cookbook - Manipulating Strings](https://www.oreilly.com/library/view/ruby-cookbook/0596523696/ch04s08.html)
+Om du vill lära dig mer om strängar och textmanipulation i Ruby, kan följande resurser vara till hjälp:
+
+- [Ruby Strings documentation](https://www.ruby-lang.org/en/documentation/stdlib/string/)
+- [Ruby String manipulation tutorial](https://www.rubyguides.com/2019/02/ruby-string-methods/)
+- [Ruby Guides: Working with Unicode strings](https://www.rubyguides.com/2015/05/ruby-strings/)

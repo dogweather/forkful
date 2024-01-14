@@ -1,53 +1,48 @@
 ---
-title:    "C#: Sjekker om en mappe eksisterer"
+title:    "C#: Sjekke om en mappe eksisterer"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor:
 
-Hvis du er en programmerer som jobber med å håndtere filer og mapper, er det viktig å vite hvordan du kan sjekke om en mappe eksisterer. Dette kan være nyttig når du for eksempel ønsker å utføre en handling bare hvis mappen allerede finnes.
+Hver gang vi utvikler software kommer vi over situasjoner der koden vår må håndtere forskjellige typer data. En vanlig operasjon er å sjekke om en katalog eksisterer. Dette kan være nyttig i tilfeller der vi må laste opp eller hente filer, eller når vi må sjekke om en bestemt katalog er tilgjengelig før vi fortsetter med prosessen vår.
 
-## Hvordan
+## Hvordan:
 
-Sjekke om en mappe eksisterer i C# er enkelt med hjelp av metoden `Directory.Exists()` fra `System.IO` biblioteket.
+Sjekking av eksistensen av en katalog er en enkel prosess i C#. Vi kan bruke klassen `Directory` for å utføre denne operasjonen.
 
 ```C#
-if (Directory.Exists(@"C:\Users\Bruker\Documents"))
+if(Directory.Exists("min_katalog"))
 {
-    Console.WriteLine("Mappen finnes!");
+    Console.WriteLine("Katalogen eksisterer");
 }
 else
 {
-    Console.WriteLine("Mappen finnes ikke :(");
+    Console.WriteLine("Katalogen eksisterer ikke");
 }
 ```
 
-Dette kodesnippet sjekker om mappen "Documents" under "Bruker" mappen eksisterer på stien `C:\Users\`. Hvis mappen finnes, vil programmet skrive ut "Mappen finnes!", ellers vil det skrive ut "Mappen finnes ikke :(".
+Koden over vil sjekke om katalogen "min_katalog" eksisterer. Hvis den gjør det vil den skrive ut en melding om at katalogen eksisterer, ellers vil den skrive ut en melding om at den ikke eksisterer.
 
-## Dypdykk
+## Deep Dive:
 
-For å forstå hvordan `Directory.Exists()` fungerer, er det nyttig å vite at den returnerer `true` hvis den gitte banen er en eksisterende mappe, og `false` hvis den ikke eksisterer eller det er en fil. Metoden tar også hensyn til unntak og tilgangstillatelser, slik at den vil returnere `false` hvis du ikke har tilgang til å sjekke om mappen eksisterer.
-
-Man kan også bruke `DirectoryInfo` klassen for å sjekke om en mappe eksisterer. Denne klassen gir mer detaljert informasjon om en mappe og dens egenskaper.
+Hvis du trenger å utføre mer komplekse operasjoner i tillegg til å bare sjekke eksistensen av en katalog, kan du bruke metoden `GetDirectories()` fra `Directory` klassen. Denne metoden returnerer en array med navnene på alle kataloger som finnes innenfor en gitt sti. Vi kan bruke dette til å utforske flere stier og kataloger i systemet vårt.
 
 ```C#
-DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\Bruker\Desktop");
+string[] kataloger = Directory.GetDirectories("start_katalog");
 
-if (dirInfo.Exists)
+foreach(string katalog in kataloger)
 {
-    Console.WriteLine($"Mappen {dirInfo.Name} inneholder {dirInfo.GetFiles().Length} filer.");
-}
-else
-{
-    Console.WriteLine("Mappen eksisterer ikke :(");
+    Console.WriteLine("Katalog: " + katalog);
 }
 ```
 
-Dette kodesnippet bruker `DirectoryInfo` klassen til å først opprette en instans av "Desktop" mappen under "Bruker" mappen og deretter sjekke om den eksisterer. Hvis mappen eksisterer, vil programmet skrive ut navnet på mappen og antall filer som den inneholder, ellers vil det skrive ut "Mappen eksisterer ikke :(".
+Koden over vil skrive ut navnene på alle kataloger som finnes i "start_katalog".
 
-## Se også
+## Se også:
 
-- [Microsoft dokumentasjon om Directory.Exists()](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [Microsoft dokumentasjon om DirectoryInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netcore-3.1)
+- [Microsoft Docs - Directory Class](https://docs.microsoft.com/nb-no/dotnet/api/system.io.directory?view=netframework-4.8)
+- [C# Directory and File Exists Usage Examples](https://www.tutorialsteacher.com/csharp/csharp-check-if-file-folder-exists)

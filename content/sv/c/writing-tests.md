@@ -1,64 +1,55 @@
 ---
-title:    "C: Skrivande av tester"
+title:    "C: Att skriva tester"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skriva tester är en viktig del av att utveckla pålitliga, robusta och hållbara C-program. Genom att skriva tester kan du upptäcka och åtgärda buggar innan de når produktionen och säkerställa att koden fungerar som den ska. Det sparar inte bara tid och resurser i det långa loppet, utan det ger också en säkerhetsnivå som ger dig förtroende för ditt eget arbete.
+Att skriva test i sin C-kod kan verka som en tidskrävande uppgift, men det kan faktiskt spara tid och frustration i det långa loppet. Genom att skriva tester kan du verifiera att din kod fungerar som den ska och minska risken för buggar och felaktigheter.
 
 ## Hur man gör
+Ett enkelt sätt att komma igång med att skriva tester är att använda sig av C-enhetstester. Dessa enhetstester är små och isolerade tester som fokuserar på en specifik del av din kod. Genom att skriva dessa tester kan du säkerställa att varje liten del av din kod fungerar som den ska.
 
-Att skriva tester kan verka lite skrämmande först, men det är faktiskt ganska enkelt att komma igång. Här är ett exempel på hur du kan skriva ett enkelt testfall för en grundläggande funktion:
+Låt oss titta på ett exempel. Vi vill skriva en funktion som beräknar medelvärdet av två tal.
+
+```C
+float average(float a, float b) {
+    return (a + b) / 2;
+}
+```
+
+Vi kan nu skriva ett enhetstest för denna funktion:
 
 ```C
 #include <stdio.h>
+#include <assert.h>
 
-int add(int a, int b) {
-    return a + b;
-}
+float average(float a, float b);
 
 int main() {
-    // Skapa två variabler och lagrar det förväntade resultatet
-    int num1 = 10;
-    int num2 = 5;
-    int expected_result = 15;
+    float num1 = 5.5;
+    float num2 = 7.3;
+    float result = average(num1, num2);
 
-    // Anropa add funktionen med våra två variabler
-    int result = add(num1, num2);
+    // Jämför resultatet med det förväntade värdet 6.4
+    assert(result == 6.4);
 
-    // Jämför det faktiska resultatet med det förväntade
-    if (result == expected_result) {
-        printf("Add funktionen fungerar korrekt!\n");
-    } else {
-        printf("Bugg hittades i add funktionen!\n");
-    }
+    printf("Test passed!");
 
     return 0;
 }
 ```
 
-När du kör detta program bör du få utskriften "Add funktionen fungerar korrekt!". Om du ändrar värdet på num1, num2 eller expected_result till felaktiga värden, kommer programmet att upptäcka det och meddela dig att det finns en bugg i din kod. Detta är en enkel och användbar metod för att verifiera att dina funktioner fungerar som de ska.
-
-Ett annat sätt att testa din kod är att använda enhetstester. Dessa är isolerade tester som fokuserar på en specifik del av din kod och dess output. Genom att skapa flera enhetstester för varje funktion i ditt program kan du få en bättre täckning av din kod och upptäcka eventuella buggar tidigt.
+Om testet går igenom kommer du att se "Test passed!" skrivas ut i terminalen. Om det inte går igenom, kan du enkelt identifiera och åtgärda felet i din kod.
 
 ## Djupdykning
+Skrivande av enhetstester är bara en del av testningsprocessen. Du kan också skriva integrationstester för att testa hur olika delar av din kod samarbetar, samt systemtester för att verifiera att hela systemet fungerar korrekt.
 
-När du skriver tester är det viktigt att du faktiskt testar de möjliga scenarierna som din kod kan ställas inför. Du bör också vara medveten om eventuella gränsvärden eller hörnfall som kan orsaka problem. Ofta är det de mindre och förbisedda delarna av koden som leder till de största problemen.
+Det är också viktigt att tänka på vilka scenarier och värden din kod behöver hantera och se till att dessa testas ordentligt. Att skriva testbar kod kan också underlätta processen, så tänk på att implementera designmönster som gör det enkelt att testa din kod.
 
-Det är också viktigt att testa både positiva och negativa scenarier. Positiva tester utför koden som det är tänkt att göras och förväntar sig det förväntade resultatet. Negativa tester testar hur koden hanterar felaktiga eller ogiltiga input och ser till att den inte kraschar eller ger oväntade resultat.
-
-En annan viktig aspekt av att skriva tester är att göra dem skalbara och underhållbara. Om du gör förändringar i din kod, måste du se till att dina tester också uppdateras för att återspegla dessa ändringar. Detta säkerställer att om dina tester en gång har godkänts, kommer de fortsätta att fungera korrekt även efter eventuella ändringar.
-
-## Se också
-
-Här är några länkar för mer information om testning i C-programmering:
-
-- [En introduktion till enhetstestning i C](https://medium.com/dev-genius/an-introduction-to-unit-testing-in-c-503d899d81c9)
-- [Test-Driven Development med C körs på Nginx](https://www.nginx.com/blog/test-driven-development-nginx-unit-piotr-sharov/)
-- [CUnit - Ett enhetstestramverk för C](http://cunit.sourceforge.net/)
-- [Unity - Ett annat populärt enhetstestramkurk för C](http://www.throwtheswitch.org/unity)
-
-Lycka till med testningen av d
+## Se även
+- [En översikt av enhetstester i C](https://www.geeksforgeeks.org/c-unit-testing/)
+- [En översikt av integrationstester i C](https://www.softwaretestinghelp.com/c-programming-unit-integration-and-system-testing/)
+- [En lista över designmönster för testbar kod i C](https://en.wikipedia.org/wiki/Category:Software_design_patterns_for_testing)

@@ -1,55 +1,51 @@
 ---
 title:    "Go: Escribiendo en el error estándar"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Escribir en la salida de error estándar (standard error) es una herramienta importante para cualquier programador de Go. Esto te permite imprimir mensajes de error y depurar tu código de manera efectiva. En esta publicación, exploraremos cómo escribir en la salida de error estándar en Go y por qué es una práctica valiosa.
+Escribir a la salida de error (stderr) puede ser útil cuando se están realizando pruebas o depurando un programa en Go. Al imprimir los mensajes de error en lugar de simplemente mostrarlos en la consola, se puede tener un mejor control y registro de los errores que surjan.
 
-## Cómo
+## Cómo hacerlo
 
-Para escribir en la salida de error estándar en Go, simplemente necesitas importar el paquete "fmt" y usar la función "Fprintf" con "os.Stderr" como primer argumento. Aquí hay un ejemplo:
+Para escribir a la salida de error en Go, se puede utilizar la función `fmt.Fprintln` junto con `os.Stderr`. En el siguiente ejemplo, se muestra cómo imprimir un mensaje de error en stderr y cómo obtener la ruta del directorio actual:
 
 ```Go
-import "fmt"
-import "os"
+package main
+
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-    fmt.Fprintf(os.Stderr, "Este es un mensaje de error")
+	// Imprimir mensaje de error en stderr
+	fmt.Fprintln(os.Stderr, "Ocurrió un error")
+
+	// Obtener ruta del directorio actual
+	fmt.Fprintln(os.Stderr, "Directorio actual:", os.Getwd())
 }
 ```
 
-La salida de este código sería:
+El output de este programa sería:
 
 ```
-Este es un mensaje de error
+Ocurrió un error
+Directorio actual: /home/usuario/go
 ```
 
-Puedes usar el formato de "Printf" para personalizar tu mensaje de error aún más. Por ejemplo:
+## Profundizando
 
-```Go
-func main() {
-    fmt.Fprintf(os.Stderr, "Ha ocurrido un %s en la línea %d", "error", 10)
-}
-```
+Si se está trabajando con un programa en Go que necesite escribir a la salida de error de forma regular, es importante tener en cuenta que esto puede afectar el rendimiento del programa. Por lo tanto, es importante utilizar esta técnica solo cuando sea necesario y asegurarse de gestionar correctamente los errores.
 
-La salida de este código sería:
+Además, es posible utilizar paquetes como `log` para imprimir mensajes de error en stderr con más facilidad y proporcionar opciones adicionales, como imprimir la fecha y hora del error.
 
-```
-Ha ocurrido un error en la línea 10
-```
+## Ver también
 
-## Deep Dive
-
-Mientras que la salida de error estándar es una herramienta útil para imprimir mensajes de error, también es importante tener en cuenta su función en la depuración de código. Al escribir mensajes de error en la salida estándar, puedes identificar fácilmente dónde en tu código se ha producido un error y tomar medidas para solucionarlo.
-
-Además, la salida de error estándar se imprime en la consola en tiempo real, a diferencia de la salida estándar que se almacena en búfer y se imprime al final de la ejecución del programa. Esto significa que si tu programa se está ejecutando durante un período de tiempo largo, puedes ver los mensajes de error en tiempo real y solucionarlos mientras el programa aún está en funcionamiento.
-
-## Ver También
-
-- [Documentación de Fprintf en Go](https://golang.org/pkg/fmt/#Fprintf)
-- [Escribiendo a la salida de error estándar en Go](https://golangbyexample.com/write-to-standard-error-go/)
-- [Cómo depurar en Go](https://blog.golang.org/debugging-with-gdb)
+- [Documentación de fmt](https://golang.org/pkg/fmt/)
+- [Documentación de os](https://golang.org/pkg/os/)
+- [Documentación de log](https://golang.org/pkg/log/)

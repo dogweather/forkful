@@ -1,54 +1,54 @@
 ---
 title:    "Kotlin: Porównywanie dwóch dat"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dwóch dat w programowaniu jest niezwykle ważnym krokiem w wielu aplikacjach. Często musimy ustalić, która data jest wcześniejsza lub późniejsza, aby podjąć odpowiednie działania. W tym wpisie dowiesz się, jak porównywać daty w języku Kotlin.
+Czasami w programowaniu musimy porównać dwa różne daty. Może to być potrzebne do sprawdzenia ważności ważnych dokumentów, ustalenia różnicy czasu między dwoma wydarzeniami lub po prostu do celów statystycznych. W tym blogu omówimy jak w prosty sposób porównać dwie daty w języku Kotlin.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby porównać dwie daty w Kotlinie, musimy najpierw utworzyć obiekty typu `LocalDate` reprezentujące te daty. Następnie możemy użyć metody `isAfter()` lub `isBefore()` w celu porównania dat. Poniżej znajduje się przykładowy kod, który pokazuje, jak to zrobić:
-
-```Kotlin
-val date1 = LocalDate.of(2021, 2, 15)
-val date2 = LocalDate.of(2021, 2, 28)
-
-println(date1.isBefore(date2)) // Output: true
-```
-
-W powyższym przykładzie utworzyliśmy dwa obiekty typu `LocalDate` - `date1` reprezentujący datę 15 lutego 2021 roku i `date2` reprezentujący datę 28 lutego 2021 roku. Następnie wywołaliśmy metodę `isBefore()` na `date1` i przekazaliśmy `date2` jako argument. Metoda ta zwraca wartość logiczną `true`, ponieważ data 15 lutego jest wcześniejsza niż data 28 lutego.
-
-Możemy również porównywać daty na podstawie precyzji, np. tylko roku lub tylko miesiąca. W tym celu możemy użyć metod `isAfterYear()` lub `isBeforeMonth()`. Poniżej przedstawiamy przykład kodu:
+Porównywanie dwóch dat w języku Kotlin jest prostsze niż myślisz. Możemy wykorzystać metodę .compareTo(), która jest dostępna dla obiektów klasy Date. Sprawia to, że nasze porównanie jest nie tylko łatwe, ale także dokładne. Poniżej przedstawiamy kod, który można użyć do porównania dwóch dat:
 
 ```Kotlin
-val date1 = LocalDate.of(2021, 2, 15)
-val date2 = LocalDate.of(2021, 5, 1)
+val date1 = Date(2020, 11, 1)
+val date2 = Date(2021, 5, 10)
 
-println(date1.isAfterYear(date2)) // Output: false
-println(date2.isBeforeMonth(date1)) // Output: false
+if (date1.compareTo(date2) < 0) {
+    println("Date1 jest wcześniejsza niż date2.")
+} else if (date1.compareTo(date2) > 0) {
+    println("Date2 jest wcześniejsza niż date1.")
+} else {
+    println("Obie daty są takie same.")
+}
 ```
 
-## Głębsze zagadnienia
+Ten kod najpierw tworzy dwa obiekty daty, a następnie używa metody .compareTo(), aby porównać je ze sobą. Metoda ta zwraca wartość, która jest mniejsza niż 0, jeśli pierwsza data jest wcześniejsza od drugiej, większa niż 0, jeśli druga data jest wcześniejsza, i równa 0, jeśli obie są takie same. W naszym przykładzie jeśli date1 jest wcześniejsza niż date2, to zostanie wyświetlony odpowiedni komunikat.
 
-Aby lepiej zrozumieć, jak porównywać daty w Kotlinie, warto zapoznać się z koncepcją ``ChronoLocalDate``, która jest interfejsem, który implementują m.in. `LocalDate`. Ten interfejs zawiera wiele przydatnych metod, które możemy wykorzystać do porównywania dat.
+## Wnikliwe Spostrzeżenia
 
-W powyższym przykładzie używaliśmy metod `isBefore()` i `isAfter()`, ale istnieje także metoda `compareTo()`, która zwraca liczbę całkowitą reprezentującą wynik porównania. Jeśli pierwsza data jest wcześniejsza niż druga, wynik będzie ujemny, jeśli są równe - wynik będzie równy 0, a jeśli pierwsza data jest późniejsza niż druga - wynik będzie dodatni.
+Co jednak zrobić, jeśli chcemy porównać nie tylko daty, ale także czasy? W takim przypadku możemy stworzyć obiekty klasy LocalDateTime, które zawierają informacje o dacie i czasie, a następnie użyć metod .isBefore() lub .isAfter(), aby porównać je ze sobą. Poniżej przedstawiamy przykład:
 
+```Kotlin
+val dateTime1 = LocalDateTime.of(2020, 11, 1, 12, 0)
+val dateTime2 = LocalDateTime.of(2020, 10, 31, 18, 30)
+
+if (dateTime1.isBefore(dateTime2)) {
+    println("DateTime1 jest wcześniejsza niż dateTime2.")
+} else if (dateTime1.isAfter(dateTime2)) {
+    println("DateTime2 jest wcześniejsza niż dateTime1.")
+} else {
+    println("Obie daty są takie same.")
+}
 ```
-val date1 = LocalDate.of(2021, 2, 15)
-val date2 = LocalDate.of(2021, 2, 28)
-val date3 = LocalDate.of(2021, 2, 15)
 
-println(date1.compareTo(date2)) // Output: -1 (jest wcześniejsza)
-println(date1.compareTo(date3)) // Output: 0 (są równe)
-println(date2.compareTo(date1)) // Output: 1 (jest późniejsza)
-```
+Metody .isBefore() i .isAfter() zwracają wartość logiczną, więc można je wykorzystać bezpośrednio w instrukcji warunkowej.
 
-## Zobacz też
+## Zobacz także
 
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/home.html
-- Porównywanie dat w języku Java: https://www.baeldung.com/java-compare-dates
+- Dokumentacja języka Kotlin o klasie Date: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/
+- Dokumentacja języka Kotlin o klasie LocalDateTime: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date-time/

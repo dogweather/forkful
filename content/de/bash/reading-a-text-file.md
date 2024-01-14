@@ -1,40 +1,41 @@
 ---
-title:    "Bash: Einen Textdatei lesen"
+title:    "Bash: Das Lesen einer Textdatei"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Lesen von Textdateien ist eine grundlegende Fähigkeit, die jeder Bash-Programmierer beherrschen sollte. Sie ermöglicht es, Daten aus externen Dateien zu lesen und in Skripten zu verwenden, was die Programmierung einfacher und effizienter macht.
+Das Lesen von Textdateien ist ein grundlegender Bestandteil der Bash-Programmierung und kann Ihnen helfen, wertvolle Informationen aus Ihren Dateien zu extrahieren. Wenn Sie lernen, wie Sie Textdateien in Bash lesen, können Sie Ihre Skripte noch leistungsstärker gestalten und eine Vielzahl von Aufgaben automatisieren.
 
 ## Wie man Textdateien in Bash liest
 
-Das Lesen von Textdateien in Bash ist sehr einfach und erfordert nur wenige Zeilen Code. Zuerst müssen wir die Datei öffnen, die wir lesen möchten, und dann Schritt für Schritt durch die Zeilen gehen, um die Daten zu extrahieren. Der folgende Code illustriert diese Vorgehensweise:
+Das Lesen von Textdateien in Bash ist recht einfach und erfordert nur wenige Zeilen Code. Zunächst müssen Sie die Datei öffnen und dann mithilfe einer Schleife durch jede Zeile in der Datei iterieren. Innerhalb dieser Schleife können Sie dann die gewünschten Aktionen ausführen. Hier ist ein Beispielcode:
 
 ```Bash
-# Öffnen der Datei mit dem Befehl "cat"
-cat datei.txt
+#!/bin/bash
 
-# Schleife durch jede Zeile der Datei mit "while read"
-while read zeile
+# Datei öffnen
+file="beispiel.txt"
+
+# Schleife durch jede Zeile iterieren
+while read line
 do
-    # Extrahieren der Daten aus der aktuellen Zeile
-    echo "Aktuelle Zeile ist: $zeile"
-done < datei.txt
+# Hier können Sie Aktionen mit jeder Zeile ausführen, z.B. Ausgabe auf der Konsole
+echo $line
+done < $file
 ```
 
-Als Ergebnis wird jede Zeile der Datei nacheinander ausgegeben, wobei die Daten in der Variable "zeile" gespeichert werden.
+Das obige Beispiel liest die Datei "beispiel.txt" Zeile für Zeile und gibt jede Zeile auf der Konsole aus. Sie können diesen Code anpassen, je nachdem, welche Art von Aktionen Sie mit den Zeilen ausführen möchten.
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Beim Lesen von Textdateien gibt es einige wichtige Dinge zu beachten. Zum Beispiel muss man sich bewusst sein, dass die Schleife nach jeder Zeile der Datei auf die nächste Zeile "sprungt". Dies kann zu unerwartetem Verhalten führen, wenn man nicht darauf vorbereitet ist. Auch ist es wichtig, die Datei korrekt zu schließen, um Ressourcen zu sparen.
-
-In Bash gibt es auch andere Befehle und Optionen, die beim Lesen von Textdateien nützlich sein können, wie z.B. "grep" zum Durchsuchen von bestimmten Zeilen oder "cut" zum Extrahieren bestimmter Teile der Zeilen. Es lohnt sich, diese Möglichkeiten zu erkunden und zu verstehen, wie sie in verschiedenen Szenarien eingesetzt werden können.
+Es gibt auch Möglichkeiten, die Standardtrennzeichen oder das Trennzeichen zwischen den einzelnen Spalten in einer Textdatei zu ändern. Dies kann hilfreich sein, wenn Sie mit komplexeren Dateien arbeiten. Sie können auch spezifische Zeilen basierend auf bestimmten Kriterien aus der Datei auswählen. All diese tiefergehenden Informationen helfen Ihnen dabei, Ihre Bash-Programmierung noch effektiver zu gestalten.
 
 ## Siehe auch
 
-- [Bash-Referenzhandbuch zu Dateienänderungen](https://www.gnu.org/software/bash/manual/html_node/File-Access-Modes.html)
-- [Umfassende Einführung in die Bash-Programmierung](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- [Linux-Befehlszeilenskripte für Anfänger](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash-Programmierung für Anfänger](https://www.linux.com/training-tutorials/learn-bash-scripting-basics-beginners/)
+- [Offizielle Dokumentation für die Bash-Skriptsprache](https://www.gnu.org/software/bash/)
+- [10 praktische Beispiele für die Bash-Programmierung](https://www.tecmint.com/10-practical-examples-of-linux-bash-scripting/)

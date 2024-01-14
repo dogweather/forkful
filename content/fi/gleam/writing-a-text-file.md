@@ -1,34 +1,44 @@
 ---
 title:    "Gleam: Tekstitiedoston kirjoittaminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluat kirjoittaa tekstitiedoston Gleam-ohjelmointikielellä? Yksi syy voi olla tarve tallentaa tietoa tai lukea tietoja tiedostosta, jolloin tekstitiedosto on kätevä tapa hallita tietoa.
+Miksi kukaan haluaisi kirjoittaa tekstitiedostoa Gleam-ohjelmointikielellä? Yksinkertaisesti sanottuna, tekstitiedostot ovat olennainen osa lähes jokaista ohjelmointiprojektia. Ne voivat sisältää kaikenlaisia tietoja, kuten käyttäjätietoja, konfiguraatiotietoja ja loki-tietoja. Kirjoittamalla tekstitiedoston Gleamilla voit tehokkaasti hallita ja muokata näitä tietoja koodissa.
 
 ## Miten
 
-Gleam tarjoaa kätevän tavan luoda ja kirjoittaa tekstitiedostoja. Se voidaan tehdä käyttämällä `Text.open`-funktiota, joka avaa tiedoston annetusta polusta. Tämän jälkeen voidaan käyttää `Text.write`-funktiota kirjoittamaan haluttu sisältö tiedostoon. Alla on esimerkki koodista ja sen tuottamasta tulosteesta.
-
 ```Gleam
-let tiedosto = Text.open("tiedosto.txt")
-Text.write(tiedosto, "Tämä on tekstisisältö, joka kirjoitetaan tiedostoon.")
-```
-
-Tulosteen pitäisi näyttää tältä:
+tiedostonimi = "tiedosto.txt"
+teksti = "Tervetuloa lukemaan Gleam-ohjelmointiblogia!"
+Gleam.File.write(tiedostonimi, teksti)
 
 ```
-Tämä on tekstisisältö, joka kirjoitetaan tiedostoon.
+
+Tämä yksinkertainen koodiesimerkki osoittaa, kuinka voit käyttää Gleamia kirjoittamaan tekstitiedoston. Ensimmäisessä rivissä määritämme muuttujan "tiedostonimi", johon tallennamme tekstitiedoston nimen. Seuraavassa rivissä määritämme muuttujan "teksti", johon tallennamme itse tekstin, jonka haluamme kirjoittaa tiedostoon. Lopuksi käytämme Gleam.File.write-funktiota, jotta tekstitiedosto kirjoitetaan ja tallennetaan käyttämällä aiempia määriteltyjä muuttujia. Tämän jälkeen voit avata luomasi tiedoston ja näet tulosteen:
+
+```
+Tervetuloa lukemaan Gleam-ohjelmointiblogia!
 ```
 
-## Syväsukellus
+## Syvällinen sukellus
 
-Tiedostojen kirjoittaminen Gleamilla tarjoaa monia mahdollisuuksia. `Text.write`-funktion lisäksi Gleam tarjoaa myös muita hyödyllisiä toimintoja, kuten `Text.write_line`, joka kirjoittaa rivin kerrallaan, ja `Text.format`, joka mahdollistaa muuttujan arvojen lisäämisen tekstisisältöön. Näiden toimintojen lisäksi Gleamilla on myös mahdollista käyttää `File`-moduulia, joka tarjoaa laajemman valikoiman mahdollisuuksia tiedostojen käsittelyyn.
+Tiedostojen kirjoittaminen voi olla hyödyllistä monissa erilaisissa ohjelmointitilanteissa. Voit esimerkiksi tallentaa käyttäjien syöttämiä tietoja ja käyttää niitä myöhemmin, kirjoittaa lokitiedostoja, jotka auttavat sinua seuraamaan ohjelmistosi suoritusta tai tallentaa muutoksia konfiguraatiotietoihin helpottaaksesi mahdollisten muutosten tekemistä myöhemmin.
+
+Kun kirjoitat tekstitiedostoa, sinun on myös tärkeää ottaa huomioon, että tekstiä voidaan lisätä ja poistaa. Tämä tarkoittaa, että tekstiä ei välttämättä lisätä aivan tiedoston alkuun, vaan se voidaan lisätä myös johonkin muuhun kohtaan tiedostossa. Gleamilla tämä voidaan tehdä käyttämällä Gleam.File.append-funktiota.
+
+```
+teksti = " Tämä teksti lisätään tiedoston loppuun."
+Gleam.File.append(tiedostonimi, teksti)
+```
+
+Tällä tavoin voit lisätä uuden tekstin alkuperäisen tekstin loppuun sen sijaan, että kirjoitat sen kokonaan uudelleen.
 
 ## Katso myös
 
-- Gleam-ohjelmointikielen virallinen dokumentaatio (englanniksi): https://gleam.run/documentation/
-- Gleam-ohjelmointikielen kotisivu (englanniksi): https://gleam.run/
+- [Gleam käyttäjädokumentaatio](https://gleam.run/documentation/)
+- [Gleamin virallinen GitHub-sivu](https://github.com/gleam-lang/gleam)

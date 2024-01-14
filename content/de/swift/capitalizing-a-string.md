@@ -1,44 +1,58 @@
 ---
-title:    "Swift: Eine Zeichenkette großschreiben"
+title:    "Swift: Ein String großschreiben"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#Warum
+## Warum
 
-Das Kapitalisieren einer Zeichenfolge ist ein grundlegender Ansatz in der Programmierung, der in vielen Situationen nützlich sein kann. Zum Beispiel könnte es verwendet werden, um Eingaben von Benutzern unabhängig von der Groß- und Kleinschreibung zu lesen oder um Text für die Benutzeroberfläche zu formatieren.
+Das Kapitalisieren von Strings kann in Swift sehr nützlich sein, um die Darstellung von Text in einer App zu verbessern oder um spezifische Anforderungen in einer Anwendung zu erfüllen.
 
-#Wie
+## Wie
 
-Die Swift Standardbibliothek hat eine funktionale Technik, um eine Zeichenfolge zu kapitalisieren, indem Sie die `capitalized` Eigenschaft auf eine Zeichenfolge anwenden:
-
-```Swift
-let meinText = "hallo welt!"
-print(meinText.capitalized)
-// Ausgabe: Hallo Welt!
-```
-
-Wenn Sie jedoch den Fall jeder einzelnen Zeichenfolge in einer Zeichenfolgenreihe kontrollieren möchten, können Sie die `map` Funktion verwenden, um jede Zeichenfolge in klein- oder großbuchstaben umzuwandeln:
+Das Kapitalisieren von Strings ist in Swift sehr einfach. Man kann einfach die `capitalized` Methode auf einen String anwenden, um den ersten Buchstaben jedes Worts im String zu groß zu schreiben.
 
 ```Swift
-let meinText = "Hallo Welt"
-let groBeBuchstaben = meinText.map{$0.uppercased()}
-let kleineBuchstaben = meinText.map{$0.lowercased()}
-
-print(groBeBuchstaben)
-// Ausgabe: HALLO WELT
-print(kleineBuchstaben)
-// Ausgabe: hallo welt
+let string = "hello world"
+print(string.capitalized)
 ```
 
-#Tiefer Einblick
+Die Ausgabe wäre dann `Hello World`.
 
-Eine Zeichenfolge in Swift wird als Datentyp im `String` struct dargestellt. Rufen Sie die `capitalized` Eigenschaft auf dieser Zeichenfolge ab, gibt sie eine neue Zeichenfolge zurück, die den ersten Buchstaben jedes Wortes in der Zeichenfolge groß schreibt. Dies geschieht mithilfe der Unicode-Kategorie "Letter, Titlecase".
+Man kann auch die `uppercased` Methode nutzen, um den gesamten String in Großbuchstaben zu schreiben.
 
-Es gibt auch andere Kapitalisierungsmethoden wie `uppercased`, `lowercased` und `capitalized(with:)`, die eine Zeichenfolge entsprechend der angegebenen Formatierung umwandeln.
+```Swift
+let string = "hello world"
+print(string.uppercased)
+```
 
-#Siehe auch
+Die Ausgabe wäre dann `HELLO WORLD`.
 
-- [Die Swift Standardbibliothek](https://developer.apple.com/documentation/swift)
-- [Apple's Swift Blog](https://developer.apple.com/swift/blog/)
+Um nur den ersten Buchstaben des Strings zu groß zu schreiben, kann die `prefix` Methode verwendet werden.
+
+```Swift
+let string = "hello world"
+print(string.prefix(1).uppercased() + string.dropFirst())
+```
+
+Die Ausgabe wäre ebenfalls `Hello world`.
+
+## Deep Dive
+
+Bei der Verwendung von `capitalized` muss beachtet werden, dass nur der erste Buchstabe jedes Worts im String groß geschrieben wird. Das bedeutet, dass Namen oder Abkürzungen, die bereits Großbuchstaben enthalten, nicht verändert werden.
+
+Um dies zu vermeiden, kann die `localizedCapitalized` Methode verwendet werden, die berücksichtigt, ob das erste Zeichen möglicherweise bereits ein Großbuchstabe ist.
+
+```Swift
+let string = "STring with ABBREVIATION"
+print(string.localizedCapitalized)
+```
+
+Die Ausgabe wäre dann `String with Abbreviation`.
+
+## Siehe auch
+- [Apple Dokumentation zur capitalizing Methode](https://developer.apple.com/documentation/foundation/nsstring/1411949-capitalized)
+- [ZipperLogic: Capitalize First Letter of a String in Swift](https://zipperlogic.com/swift-capitalize-first-letter-of-a-string/)
+- [Hacking with Swift: How to capitalize the first letter of a string](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)

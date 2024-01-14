@@ -1,66 +1,52 @@
 ---
 title:    "Elm recipe: Printing debug output"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is an essential part of any programming language, and Elm is no exception. Often, we might find ourselves facing unexpected results or errors in our code, and this is where printing debug output comes in handy. It allows us to gain insights into what our code is doing and helps us identify any issues or bugs that may be causing problems.
+Debugging is a crucial part of any programming task, and Elm is no exception. Printing debug output is an essential tool that can help you understand the inner workings of your program and identify any logical errors or bugs that may be causing unexpected behavior. In this blog post, we will dive into the world of printing debug output in Elm and learn how it can improve your development process.
 
 ## How To
 
-To print debug output in Elm, we can make use of the `Debug.log` function. It takes in two arguments: a string label and a value to be printed. Let's look at an example of how we can use `Debug.log` in our code:
+To print debug output in Elm, we can use the `Debug.log` function. This function takes in two arguments: a label and any value we want to print. The label is simply a string that helps us identify the specific output we are printing. Let's take a look at an example:
 
-```
-Elm.Code
-Debug.log "Number" 5
-```
+```Elm
+import Debug
 
-In the code block above, we are passing in the label "Number" and the value 5 to be printed. If we run this code, we will see the following output in our console:
+x = 5
+Debug.log "x value" x
 
-```
-Number: 5
-```
-
-This allows us to see the value of our variable at a specific point in our code and track its changes as our code executes.
-
-We can also use `Debug.log` within functions to print the values of different variables or inputs. Let's take a look at an example of this:
-
-```
-Elm.Code
-tupleSum x y =
-  let
-    sum = x + y
-  in
-    Debug.log "Sum" sum
-
-tupleSum 2 3
+-- output:
+-- x value: 5
 ```
 
-In this code, we have defined a function called `tupleSum` that takes in two numbers and returns their sum. We are using `Debug.log` within the function to print the value of the sum variable. When we call the function with the inputs 2 and 3, we will see the following output:
+In this example, we use the label "x value" and the `x` variable as the value we want to print. As you can see, the output will display the label and the value separated by a colon. This can be useful when trying to track the value of a variable or a particular function's result.
 
-```
-Sum: 5
+We can also use `Debug.log` in more complex scenarios, such as printing the values of multiple variables or combining strings and values. Let's see an example:
+
+```Elm
+import Debug
+
+firstName = "John"
+lastName = "Smith"
+Debug.log "Full name" (firstName ++ " " ++ lastName)
+
+-- output:
+-- Full name: John Smith
 ```
 
-This shows us that our function is working correctly and that the value of the sum variable is 5.
+In this example, we are combining the first and last name variables and printing them with a label. This can be helpful when trying to keep track of different variables' values and their relationships within the program.
 
 ## Deep Dive
 
-Apart from using `Debug.log` for basic debugging purposes, we can also use it to gain a deeper understanding of our code. For example, we can print out the values of different variables within a loop to see how they are changing with each iteration. This can be particularly helpful when dealing with complex algorithms that involve a lot of calculations.
+Now that we have seen how to use `Debug.log`, let's take a deeper look at its inner workings. Whenever we use `Debug.log`, we are essentially creating a `Task` that logs the given value and then continues with the given task. This means that these log tasks will not affect the program's execution or perform any side effects.
 
-We can also use `Debug.log` to print out the values of nested data structures, such as lists and dictionaries, to see their structure and contents. This can be useful when troubleshooting issues with data manipulation.
-
-Another way to utilize `Debug.log` is by printing out values from different parts of our code to see how they relate to each other. This can help us identify any potential logic errors and fix them before they cause problems in our application.
+However, it is essential to keep in mind that `Debug.log` should only be used for logging purposes during development. It is not recommended to have any `Debug.log` statements in your production code as it can significantly impact performance.
 
 ## See Also
 
-Here are some useful resources for further reading on printing debug output in Elm:
-
-- [Elm Debugging Basics](https://guide.elm-lang.org/debugging/)
-
-- [Debug Module Documentation](https://package.elm-lang.org/packages/elm/debug/latest/Debug)
-
-- [Debugging In Elm: Tools And Techniques](https://dennisreimann.de/articles/debugging-in-elm.html)
+To learn more about debugging in Elm, check out the official Elm documentation and the `Debug` library documentation. You can also find helpful tips and techniques in various Elm programming blogs and forums. Happy debugging!

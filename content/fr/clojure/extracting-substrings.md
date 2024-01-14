@@ -1,55 +1,40 @@
 ---
 title:    "Clojure: Extraction de sous-chaînes"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi extraire des sous-chaînes en Clojure
+## Pourquoi
 
-Il existe plusieurs raisons pour lesquelles un programmeur en Clojure pourrait vouloir extraire des sous-chaînes d'une chaîne de caractères. Cela peut être utile pour effectuer des recherches, manipuler et traiter des données, ou encore pour créer des fonctions réutilisables.
+Extraire des sous-chaînes (aussi appelées sous-chaînes) peut être utile lors de la manipulation de grandes chaînes de caractères dans vos programmes Clojure. Cela peut vous permettre de cibler et de manipuler des parties spécifiques d'une chaîne de caractères, ce qui peut simplifier le processus de traitement des données et rendre votre code plus efficace.
 
 ## Comment faire
 
-Voici quelques exemples de code en Clojure qui montrent comment extraire des sous-chaînes.
+Pour extraire des sous-chaînes en Clojure, nous pouvons utiliser la fonction `subs`. Cette fonction prend deux arguments : la chaîne de caractères à extraire des sous-chaînes et les indices de début et de fin des sous-chaînes souhaitées. Voici un exemple de code :
 
 ```Clojure
-(def my-string "Je suis un programmeur en Clojure")
+(def mon-chaine "Lorem ipsum dolor sit amet")
 
-;; Extraire une sous-chaîne à partir de l'index 7
-(subs my-string 7)
-;; Output: "un programmeur en Clojure"
-
-;; Extraire une sous-chaîne de 8 caractères à partir de l'index 7
-(subs my-string 7 15)
-;; Output: "un progr"
-
-;; Extraire une sous-chaîne à partir de la fin de la chaîne
-(subs my-string -8)
-;; Output: "Clojure"
-
-;; Extraire une sous-chaîne à partir d'une condition
-(subs my-string (.indexOf my-string "programmeur") (.indexOf my-string "en"))
-;; Output: "programmeur"
+(subs mon-chaine 6 11)
 
 ```
 
-## Profondeur de plongée
+La sortie de ce code sera `"ipsum"`, qui est la sous-chaîne située entre les caractères aux indices 6 et 11 (non inclus) de la chaîne originale.
 
-Lors de l'extraction de sous-chaînes en Clojure, il est important de comprendre que les indices commencent à partir de 0, contrairement aux indices de chaînes de caractères en français qui commencent à partir de 1. De plus, il est possible d'utiliser des expressions régulières pour extraire des sous-chaînes à partir de motifs spécifiques.
+Nous pouvons également utiliser des indices négatifs pour compter à partir de la fin de la chaîne. Par exemple, `subs mon-chaine -4` renverra `"amet"`, les 4 derniers caractères de la chaîne.
 
-Voici un exemple d'utilisation d'une expression régulière pour extraire des mots à partir d'une chaîne de caractères:
+Il est également possible d'utiliser des caractères spéciaux pour extraire des sous-chaînes, tels que `:first` et `:last`. Par exemple, `subs mon-chaine :first 5` renverra les 5 premiers caractères de la chaîne, tandis que `subs mon-chaine :last 5` renverra les 5 derniers caractères.
 
-```Clojure
-(def my-string "Bonjour tout le monde")
+## Plongée en profondeur
 
-(re-find #"Bonjour (.*)" my-string)
-;; Output: ["Bonjour tout le monde" "tout le monde"]
-```
+En plus de la fonction `subs`, Clojure dispose également d'autres fonctions utiles pour la manipulation de chaînes de caractères, telles que `replace` et `split`. Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes en utilisant la fonction `re-find`.
 
-En comprenant ces concepts, il est possible d'extraire des sous-chaînes de manière plus précise et efficace en utilisant les bonnes méthodes et les bonnes expressions régulières.
+Il est important de noter que l'extraction de sous-chaînes peut avoir un impact sur les performances de votre code, en particulier lors du traitement de grandes chaînes de caractères. Il est donc important de trouver le bon équilibre entre l'utilisation de fonctions de manipulation de chaînes et la performance globale de votre programme.
 
 ## Voir aussi
 
-- [Documentation officielle de Clojure pour les fonctions de manipulation de chaînes](https://clojure.org/reference/strings)
-- [Site officiel de Clojure](https://clojure.org/)
+- [Documentation Clojure sur la fonction `subs`](https://clojuredocs.org/clojure.core/subs)
+- [Exemples de manipulation de chaînes en Clojure](https://clojuredocs.org/quickref#string-functions)
+- [Tutoriel sur les expressions régulières en Clojure](https://www.baeldung.com/clojure-regular-expressions)

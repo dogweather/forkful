@@ -1,49 +1,58 @@
 ---
 title:    "Arduino: 打印调试输出"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么要使用Arduino调试输出？
+# 为什么要打印调试输出
 
-Arduino调试输出是一种获取代码运行状态和执行信息的重要方式。它可以帮助程序员快速发现和解决代码中的错误，提高代码的可靠性和稳定性。此外，它也可以用来显示程序运行过程中的变量值，方便程序员调试和优化代码。
+在Arduino编程中，打印调试输出是一种用于调试程序的常用方法。通过在代码中插入打印语句，程序员可以在运行时观察变量的值和程序的执行流程，从而更容易发现问题所在。
 
-如何使用Arduino调试输出？
+# 如何打印调试输出
 
-要在Arduino代码中使用调试输出，首先需要在代码头部包含"Serial.h"文件，这样就可以使用串行监视器来查看调试信息。然后，使用"Serial.begin()"函数将串行监视器的波特率设置为9600。接下来，可以使用"Serial.println()"函数将想要打印的信息输出到串行监视器中。
+要打印调试输出，首先需要使用Serial库。在代码开头，插入以下代码：
 
 ```Arduino
-#include <Serial.h>
-
-void setup() {
-    // 设置串行监视器的波特率
-    Serial.begin(9600);
-}
-
-void loop() {
-    // 打印调试信息
-    Serial.println("调试信息：代码正在运行中...");
-    delay(1000);
-}
+#include <Serial.h> 
 ```
 
-深入了解Arduino调试输出
+然后，在setup()函数中，初始化串口： 
 
-除了简单打印文本信息外，Arduino调试输出还可以输出变量的值。这可以通过使用"Serial.print()"函数和"Serial.println()"函数结合输出变量的值和文本信息来实现。例如：Serial.print("变量a的值：")后再加上Serial.println(a)就可以将变量a的值输出到串行监视器中。
+```Arduino 
+void setup() { 
+    Serial.begin(9600); 
+} 
+```
 
-此外，通过使用不同的Serial函数，还可以设置不同的输出格式，如十六进制输出和ASCII码输出。这些函数包括"Serial.print(number, format)"和"Serial.write(value)"。
+最后，在需要打印的地方，使用Serial.print()或Serial.println()函数来输出变量的值或文本信息。例如，如果需要打印一个变量的值，可以使用以下代码：
 
-此外，Arduino还有一些调试库可以帮助开发者更方便地使用调试输出功能，如"SerialDebug"和"SimpleDebug"等。
+```Arduino
+int num = 10; 
+Serial.print("The value of num is: "); 
+Serial.println(num);
+```
 
-总的来说，Arduino调试输出是一种极其有用的工具，它可以帮助开发者快速发现问题并优化代码，提高代码的可靠性和稳定性。
+输出结果将会是：The value of num is: 10 
 
-参考链接：
+# 深入了解打印调试输出
 
-- [Arduino官方文档-调试输出功能](https://www.arduino.cc/reference/zh/language/functions/communication/serial/)
-- [使用Arduino调试库进行高级调试](https://randomnerdtutorials.com/advanced-arduino-debugging-with-a-seria-debug-library/)
-- [Arduino Printer类参考](https://www.arduino.cc/en/Reference/Printer) 
+除了Serial.print()和Serial.println()函数外，还有一些其他的打印调试输出函数可以使用。比如，Serial.write()函数可以打印一个单独的字符，Serial.print()函数还可以指定输出的进制方式，例如：
 
-## 参见
+```Arduino
+Serial.print(100, HEX); // 输出100的十六进制表示：64
+```
 
-- [Arduino编程入门指南](https://github.com/roshanlam/arduino-programming-intro)
+此外，还可以通过设置串口的波特率来调整打印输出的速度。通常，默认的波特率为9600，但是也可以根据需要调整为更高或更低的值。
+
+# 参考资料
+
+- [Arduino官方文档-Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [How to Use Serial Print in Arduino](https://www.arduino.cc/en/Tutorial/SerialPrint)
+- [Debugging in Arduino](https://www.electronicshub.org/debugging-in-arduino/)
+
+# 另请参阅
+
+- [Arduino编程基础教程](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
+- [Arduino中文社区](https://www.arduino.cn/)

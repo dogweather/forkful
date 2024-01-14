@@ -1,36 +1,42 @@
 ---
 title:    "Javascript: Lesen von Befehlszeilenargumenten"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein grundlegendes Konzept für alle, die in der Javascript-Programmierung tätig sind. Es ermöglicht es einem Benutzer, Eingaben direkt über die Befehlszeile an das Programm zu übergeben und somit die Flexibilität und Effizienz des Programms zu steigern.
+In der Welt der Javascript-Programmierung gibt es viel zu lernen. Eine wichtige Fähigkeit ist das Lesen von Befehlszeilenargumenten, da diese es ermöglichen, Eingaben von Benutzern in eine Anwendung zu integrieren und sie in den Code zu implementieren.
 
-## Wie es geht
+##Wie man Befehlszeilenargumente liest
 
-Der erste Schritt zum Lesen von Befehlszeilenargumenten in Javascript ist das Importieren von "process.argv". Dies ist ein vordefinierter Array, der alle übergebenen Argumente enthält. Im Folgenden ist ein Beispielcode zum Lesen von zwei übergebenen Argumenten:
+Das Lesen von Befehlszeilenargumenten ist in Javascript relativ einfach, erfordert jedoch ein gewisses Verständnis von Funktionen und Variablen. Zuerst müssen wir eine Variante anlegen, die die Befehlszeilenargumente abruft. Dann können wir diese Argumente in eine Funktion einsetzen, die sie analysiert.
 
 ```Javascript
-const args = process.argv.slice(2); // Die ersten beiden Elemente in "process.argv" sind Standardargumente
-console.log("Erstes Argument:", args[0]); // Ausgabe des ersten Arguments
-console.log("Zweites Argument:", args[1]); // Ausgabe des zweiten Arguments
+let args = process.argv.slice(2);
+args.forEach(function (arg) {
+  console.log(arg);
+});
 ```
 
-Angenommen, das obige Skript wird mit dem Befehl "node readArguments.js David 27" ausgeführt, wäre die Ausgabe wie folgt:
+In diesem Beispiel erstellen wir eine Variable namens "args" und rufen die Befehlszeilenargumente über das "process.argv"-Modul ab. Diese Befehlszeilenargumente werden dann in eine Funktion eingesetzt und können durch Laufen der Funktion einzeln ausgegeben werden. Wenn wir zum Beispiel den Befehl "node index.js 1 2 3" verwenden, würde die Ausgabe folgendermaßen aussehen:
 
 ```
-Erstes Argument: David
-Zweites Argument: 27
+1
+2
+3
 ```
 
-## Tiefer Einblick
+##Tieferer Einblick
 
-Beim Lesen von Befehlszeilenargumenten gibt es noch einige wichtige Punkte zu beachten. Zunächst werden alle übergebenen Werte als Strings interpretiert. Wenn also ein numerisches Argument benötigt wird, muss es explizit in das gewünschte Datentyp konvertiert werden. Auch ist zu beachten, dass das Lesen von Argumenten zu Beginn des Programms erfolgt, daher müssen Änderungen an "process.argv" direkt am Anfang vorgenommen werden.
+Es ist wichtig zu wissen, dass der Befehl "node" selbst auch ein Befehlszeilenargument ist und somit als erstes Element in der "args"-Variable gespeichert wird. Die restlichen Argumente werden dann als einzelne Elemente gespeichert und können durch Verwendung von "slice(2)" erreicht werden.
 
-## Siehe auch
+Eine weitere Sache, die zu beachten ist, ist die Möglichkeit, optionale Argumente zu implementieren. Dies kann durch das Überprüfen der Länge der "args"-Variable und das Setzen von Standardwerten für fehlende Argumente erreicht werden.
 
-- [Offizielle Dokumentation zu Process-Objekten](https://nodejs.org/api/process.html)
-- [Tutorial zum Lesen von Befehlszeilenargumenten in Javascript](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js)
+##Siehe auch
+
+- https://www.digitalocean.com/community/tutorials/node-js-interactive-command-line-prompts
+- https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
+- https://www.tutorialspoint.com/nodejs/nodejs_command_line_arguments.htm

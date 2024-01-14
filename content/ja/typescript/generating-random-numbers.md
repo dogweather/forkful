@@ -1,40 +1,46 @@
 ---
-title:    "TypeScript: ランダム数字の生成"
+title:    "TypeScript: ランダム数字を生成する"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## 説明
+乱数生成は、プログラミングにとって重要な機能の一つです。乱数生成により、ランダムなデータを生成することができ、プログラムの予測可能性を下げることができます。乱数生成を使うことで、さまざまなシミュレーションやゲーム、暗号化など、さまざまな用途に利用することができます。
 
-ランダムな数字を生成することの魅力について考えてみましょう。私たちは、簡単なスクリプトやゲームを作成する際に、ランダムな要素を追加する必要があります。また、乱数は暗号学においても重要な役割を果たします。その他、データの偏りを防ぐためにもランダムな数字は必要不可欠です。
-
-## 手順
-
-TypeScriptで乱数を生成する方法を学ぶための手順を見ていきましょう。下のコードブロックを参考にしてください。
+## 使い方
+TypeScriptでは、Mathオブジェクトのrandomメソッドを使うことで、簡単に乱数を生成することができます。以下のコードを参考にしてください。
 
 ```TypeScript
-// 0から9までのランダムな整数を生成する
-let randomNumber = Math.floor(Math.random() * 10);
+// 0から10までの範囲の整数を生成する例
+let randomNum = Math.floor(Math.random() * 11);
+console.log(randomNum); // 0から10までのランダムな整数が出力される
 
-// 更新されたランダムな数値をコンソールに出力する
-console.log("ランダムな数字: " + randomNumber);
 
-// 0から100までのランダムな少数を生成する
-let randomDecimal = Math.random() * 100;
+// 1から100までの範囲の整数を生成する例
+let randomInt = Math.floor(Math.random() * 100) + 1;
+console.log(randomInt); // 1から100までのランダムな整数が出力される
 
-// 更新されたランダムな少数値をコンソールに出力する
-console.log("ランダムな少数: " + randomDecimal);
+
+// 0から1までの範囲の小数を生成する例
+let randomDec = Math.random();
+console.log(randomDec); // 0から1までのランダムな小数が出力される
 ```
 
-上のコードでは、`Math.random()`メソッドを使用してランダムな数値を生成しています。また、`Math.floor()`メソッドを使うことで整数の範囲を指定することができます。
+乱数を生成する際には、Math.random()メソッドの値を適切に加工することで、必要な範囲や型の乱数を生成することができます。
 
 ## 深堀り
+乱数生成には様々なアルゴリズムがあり、それぞれに特徴があります。しかし、重要なのはランダム性を保証することです。プログラムで使われる乱数は、本当にランダムな値かどうかを検証することが重要です。そのためには、擬似乱数生成器として知られるアルゴリズムが使われています。これは、ランダムな値のように見せかける計算式ですが、実際には事前に設定されたシード値をもとに計算を行い、乱数のように見える値を返します。
 
-乱数を生成する方法の背景についてもう少し詳しく見ていきましょう。乱数とは、完全なランダムではなく、予測を一部排除する方法で生成される数値です。そのため、ランダム性が必要な場合は擬似乱数を使用します。乱数生成を行うアルゴリズムは様々あり、その中でもメルセンヌ・ツイスター法や線形合同法などがよく使われています。
+しかし、擬似乱数生成器で生成した値は、特定の条件下では予測可能な値になってしまう可能性があります。そのため、セキュリティや暗号処理など、ランダム性が重要な場面では、より高度なアルゴリズムを使用する必要があります。
 
-## それを見る
+## 参考情報
+- [MDN - Math.random()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [乱数を扱う方法 - TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/main-1/type-checking/random-how-to)
+- [JavaScript中の乱数生成器の消耗品性と定型 - こだわりの技術ブログ](https://micro-tech.tokyo/2018/10/16/72/)
+- [乱数生成について - Think IT](https://thinkit.co.jp/article/18904)
 
-- [TypeScriptでのMathオブジェクトの使い方](https://mae.chab.in/archives/63922)
-- [メルセンヌ・ツイスター法と擬似乱数生成](https://qiita.com/ikatake/items/542f1a70c3096ca10a20)
-- [乱数の生成法についての比較](http://gihyo.jp/dev/serial/01/rand/0002)
+## 関連リンク
+- [Blogに説明を加えたリポジトリ - GitHub](https://github.com/username/blog)
+- [JavaScript Mathオブジェクトの参考ドキュメント - Mozilla Developer Network](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math)

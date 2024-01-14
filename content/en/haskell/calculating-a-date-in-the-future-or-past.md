@@ -1,57 +1,59 @@
 ---
 title:    "Haskell recipe: Calculating a date in the future or past"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Calculating dates in the future or past can be a useful skill in many programming applications. For example, it can be used to create reminders, schedule tasks, or calculate deadlines.
+Calculating dates in the future or past can be a useful tool for a variety of applications, such as scheduling events, managing deadlines, or creating reminders. It allows for efficient and precise planning, making it a valuable skill for any programmer to have in their toolbelt.
 
 ## How To
-
-To calculate a date in the future or past, we first need to import the `Data.Time` module in Haskell.
+Using Haskell, we can easily calculate dates in the future or past by using the `addDays` function from the `Data.Time` module. The `addDays` function takes in an `Int` value representing the number of days to add or subtract from the current date.
 
 ```
 import Data.Time
+
+--Calculating 5 days in the future
+futureDate :: Day
+futureDate = addDays 5 today
+--Where `today` is the current date
+
+--Calculating 3 days in the past
+pastDate :: Day
+pastDate = addDays (-3) today
 ```
 
-Next, we can use the `addDays` function to add or subtract a specific number of days to a given date.
+Running the `futureDate` and `pastDate` functions in GHCi will output the corresponding dates in a `Day` data type, which can be easily formatted using the `show` function.
 
 ```
-addDays :: Day -> Int -> Day
-```
+> futureDate
+2020-11-15
 
-For example, to calculate the date 5 days from now, we can use the following code:
-
+> pastDate
+2020-10-18
 ```
-let currentDate = fromGregorian 2021 3 15 -- March 15th, 2021
-let futureDate = addDays currentDate 5 -- March 20th, 2021
-```
-
-We can also use the `addGregorianMonthsClip` function to add or subtract a specific number of months to a given date.
-
-```
-addGregorianMonthsClip :: Day -> Integer -> Day
-```
-
-For example, to calculate the date 6 months from now, we can use the following code:
-
-```
-let currentDate = fromGregorian 2021 3 15 -- March 15th, 2021
-let futureDate = addGregorianMonthsClip currentDate 6 -- September 15th, 2021
-```
-
-To calculate a date in the past, we can simply use a negative number as the second argument in these functions.
 
 ## Deep Dive
+In addition to adding or subtracting days, the `Data.Time` module also allows for calculations with other units of time such as weeks, months, and years. This is achieved by using the `addGigaseconds`, `addGregorianMonths`, and `addGregorianYears` functions respectively.
 
-Under the hood, Haskell uses a type called `Day` to represent dates. This type is defined as the number of days since the Modified Julian Day (MJD), which is the number of days since November 17th, 1858. This allows for easy conversion between different calendar systems and accounts for leap years.
+```
+--Calculating 2 weeks in the future
+futureWeek :: Day
+futureWeek = addDays 14 today
 
-Additionally, the `Data.Time` module includes functions for working with different time zones and accounting for daylight saving time, making it a reliable tool for date calculations.
+--Calculating 6 months in the past
+pastMonth :: Day
+pastMonth = addGregorianMonths (-6) today
+
+--Calculating 3 years in the future
+futureYear :: Day
+futureYear = addGregorianYears 3 today
+```
+
+Additionally, the `Data.Time.Calendar.OrdinalDate` module allows for calculations based on ordinal dates, which refers to the day of the year instead of the month.
 
 ## See Also
-
-- [Haskell Documentation for Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Stack Overflow: How to calculate difference of days between two dates?](https://stackoverflow.com/questions/29176076/how-to-calculate-difference-of-days-between-two-dates)
+- [Official Haskell Documentation for `Data.Time` module](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Haskell Wiki page on working with dates and times](https://wiki.haskell.org/Working_with_time_and_dates)

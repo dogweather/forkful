@@ -1,69 +1,68 @@
 ---
 title:    "Python: Imprimindo saída de depuração"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que imprimir saída de depuração é importante para programação Python?
+##Por que
 
-Muitas vezes, ao escrever código em Python, nos deparamos com erros ou resultados inesperados. É nesse momento que a impressão de saída de depuração (debug output) pode ser uma ferramenta muito útil para nos ajudar a entender o que está acontecendo dentro do nosso código. Com a impressão de saída de depuração, podemos visualizar valores de variáveis, mensagens de erro e outras informações relevantes, facilitando a identificação e correção de possíveis problemas.
+Quando estamos escrevendo código em Python, às vezes podemos nos deparar com erros difíceis de solucionar. Nesses casos, pode ser útil usar a técnica de imprimir saídas de debug para entender melhor o que está acontecendo no nosso programa e encontrar a fonte do problema.
 
-## Como fazer a impressão de saída de depuração em Python
+##Como fazer
 
-Para imprimir saída de depuração em um código Python, utilizamos a função `print()`. Essa função aceita um ou mais argumentos e imprime o valor de cada um na tela. Vamos ver um exemplo simples:
+Existem várias maneiras de imprimir saídas de debug em Python, mas a mais comum é usando a função `print()`. Vamos ver um exemplo simples:
 
-```Python
-numero = 10
-print("O valor da variável numero é:", numero)
+```Python 
+x = 10 
+y = 5 
+soma = x + y 
+print("A soma de", x, "e", y, "é:", soma) 
 ```
 
-O resultado da execução deste código será:
+Ao executar esse código, a saída será:
 
 ```
-O valor da variável numero é: 10
+A soma de 10 e 5 é: 15
 ```
 
-Podemos também imprimir o valor de uma variável ou expressão em uma mesma linha que outro texto, utilizando a formatação de string com f-strings, disponível a partir do Python 3.6. Veja o exemplo abaixo:
+Podemos também usar a formatação de string para deixar nosso código mais organizado e legível:
 
-```Python
-nome = "Maria"
-sobrenome = "Souza"
-print(f"Olá, meu nome é {nome} {sobrenome}.")
-```
+``` Python 
+x = 10 
+y = 5 
+soma = x + y 
+print(f"A soma de {x} e {y} é: {soma}.") 
+``` 
 
-A saída será:
+A saída continuará sendo a mesma, mas dessa forma temos um código mais enxuto e fácil de entender.
 
-```
-Olá, meu nome é Maria Souza.
-```
+##Aprofundando no assunto 
 
-## Aprofundando na impressão de saída de depuração
+Ao usar a função `print()` para debugar nosso código, é importante lembrar que podemos imprimir qualquer tipo de dado, desde variáveis e números até listas e dicionários. Além disso, podemos combinar múltiplos elementos em uma única linha de saída, usando a vírgula para separá-los.
 
-A impressão de saída de depuração é particularmente útil quando enfrentamos problemas relacionados a laços de repetição e condições, pois nos permite visualizar o valor de variáveis a cada passo do código. Além disso, é possível adicionar informações adicionais na mensagem de depuração, como mensagens explicativas e até mesmo marcar pontos específicos no nosso código:
+Outra dica importante é utilizar a opção `end` para especificar o caractere final de cada linha de saída. Por padrão, o `end` é igual a `\n`, que gera uma quebra de linha, mas podemos alterá-lo para, por exemplo, um espaço em branco:
 
-```Python
-for i in range(5):
-    print(f"Valor atual de i: {i}") # mensagens com informações adicionais
-    if i == 2:
-        print("Cheguei a metade do laço!") # mensagem explicativa 
-```
+```Python 
+print("Olá", end=" ") 
+print("mundo!") 
+``` 
 
-Saída:
+A saída será `Olá mundo!`, sem a quebra de linha entre as duas palavras.
 
-```
-Valor atual de i: 0
-Valor atual de i: 1
-Cheguei a metade do laço!
-Valor atual de i: 2
-Valor atual de i: 3
-Valor atual de i: 4
-```
+E se quisermos imprimir valores numéricos com uma quantidade específica de casas decimais? Podemos fazer isso usando a função `round()` dentro do `print()`, por exemplo:
 
-Agora que você já sabe como imprimir saída de depuração em Python, aproveite essa ferramenta para facilitar a identificação e correção de problemas em seus códigos!
+```Python 
+a = 1.23456 
+b = 2.5 
+print(f"Resultado: {round(a/b, 2)}") 
+``` 
 
-## Veja também
+A saída será `Resultado: 0.49`.
 
-- [Documentação oficial do Python sobre a função `print()`](https://docs.python.org/pt-br/3/library/functions.html#print)
-- [Artigo sobre formatação de strings com f-strings](https://realpython.com/python-f-strings/)
-- [Tutorial sobre depuração de código em Python](https://realpython.com/python-debugging-pdb/)
+##Veja também 
+
+- [Documentação oficial do Python sobre a função `print()`](https://docs.python.org/3/library/functions.html#print) 
+- [Artigo sobre como usar a função `print()` para debugar seu código em Python](https://medium.com/@permutans/debbuging-in-python-print-with-style-4e33101f2bed) 
+- [Vídeo tutorial sobre como imprimir saídas de debug no Python](https://www.youtube.com/watch?v=YDlY8VaLQyM)

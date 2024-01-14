@@ -1,37 +1,43 @@
 ---
 title:    "Java: כתיבת קובץ טקסט"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע:
-אנשים יכולים לכתוב קובץ טקסט מסקרן ביותר. ייתכן שתרצו לשמור תוכן טקסטואלי כמו דוחות או גיבויי נתונים בצורה נוחה ונגישה. בנוסף, קידוד ותחזוקת קבצי טקסט הם נהדרים בשביל שתהיה בטוח שאת הנתונים שלך ייהיה קשה לבזבז או להחליף בטעות.
-סיכום: במאמר זה נלמד לכתוב ולנהל קבצי טקסט בשפת ג'אווה.
+## Why (למה): 
 
-# איך לעשות:
+במאמר זה נלמד כיצד לכתוב קובץ טקסט בשפת ג'אווה. הכיתוב הנתון יכול לשמש למטרות שונות, כגון יצירת קובץ הגדרות או שמירת נתונים בקובץ מרחק.
+
+## How To (כיצד לכתוב קובץ טקסט בשפת ג'אווה): 
+
+כדי לכתוב קובץ טקסט בשפת ג'אווה, ניתן להשתמש בפקודת "BufferedWrite" ובקלט הנכון. הנה כמה דוגמאות קוד יחד עם הפלט המצורף:
+
 ```Java
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException; 
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        // כתיבת מחרוזת לקובץ טקסט חדש
-        String text = "מה קורה, עולם?";
-        // יצירת אובייקט של FileWriter וקובץ חדש
-        FileWriter fileWriter = new FileWriter("newFile.txt");
-        // יצירת אובייקט של BufferedWriter שיגדיר לכתוב לקובץ שנצר
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        // כתיבת המחרוזת לקובץ וסגירת הקובץ
-        bufferedWriter.write(text);
-        bufferedWriter.close();
-        // הדפסת הפלט "קובץ נוסף בהצלחה!"
-        System.out.println("קובץ נוסף בהצלחה!");
-    }
+try {
+  BufferedWriter writer = new BufferedWriter(new FileWriter("example.txt"));
+  writer.write("כתיבת נתונים לקובץ טקסט");
+  writer.newLine(); // הוספת שורה חדשה
+  writer.write("המשך כתיבת נתונים");
+  writer.close(); // סגירת הקובץ
+} catch (IOException e) {
+  System.out.println("אירעה שגיאה בכתיבת הקובץ");
 }
 ```
-השורות הראשונות בקוד מייבאות מספר חבילות של ג'אווה השמות של סופר-חבילות שמייצגות את הפונקציונאליות הנחוצה. קובצי טקסט נוצרים עם שימוש באובייקט FileWriter ו-BufferedWriter מאפשר לך לכתוב קובץ טקסט בצורה יציבה ומהירה.
 
-הפתרון המוצע מכיל שני אובייקטים חדשים: FileWriter ו-BufferedWriter. בשורה השנייה יוצרים אובייקט של FileWriter לכתיבת קובץ חדש. בשורה השלישית, יוצרים אובייקט של BufferedWriter אשר מוׅן לכתוב לקובץ שנוצר על ידי fileWriter. מתבצע כתיבת המחר
+פלט הקוד המצורף ייראה כך:
+
+כתיבת נתונים לקובץ טקסט
+המשך כתיבת נתונים
+
+## Deep Dive (עומק נוסף על כתיבת קובץ טקסט): 
+
+על מנת שהקובץ יוצר את הנתונים בצורה תקינה ומנומסת, ניתן להשתמש בפקודה "writer.newLine()" כדי להוסיף שורה חדשה בכתיבת הנתונים. כמו כן, חשוב לזכור לסגור את הקובץ באמצעות "writer.close()" כדי לוודא שכל המידע נשמר ולא ימחק על ידי שגיאות אפשריות.
+
+כתיבת קובץ טקסט בשפת ג'אווה היא כלי חשוב ומאפשר מנגנון מסודר ובטוח לשמירת נתונים בקובץ נפרד.
+
+## ראה גם (See Also):
+
+- פקודת "BufferedWrite" במדריך הרשמי של ג'אווה 
+- דוגמאות נוספות לכתיבת קובץ טקסט בשפת ג'אווה במאמרים נ

@@ -1,49 +1,62 @@
 ---
-title:    "Gleam: Skriver tester"
+title:    "Gleam: Skriving av tester"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive tester i programmering kan virke som en kjedelig og unødvendig oppgave, men det kan faktisk være veldig nyttig. Tester hjelper deg med å sikre at koden din fungerer som det skal, og det kan også spare deg for mye frustrasjon og tid på lang sikt.
+Skal vi teste koden vår? Det er et spørsmål som ofte dukker opp når vi jobber med programmering. Noen ganger kan det virke som en unødvendig prosess, men i virkeligheten spiller testing en viktig rolle i å sikre at koden vår fungerer som den skal. Ved å skrive tester, kan vi oppdage og fikse feil tidligere, noe som sparer oss for tid og frustrasjon senere i utviklingsprosessen.
 
-## Hvordan
+# Hvordan
 
-Å skrive tester i Gleam er enkelt og kan gjøres ved hjelp av Gleam's integrerte test bibliotek. Først må du importere test biblioteket ved hjelp av `import gleam/test` og definere en test suite ved hjelp av `test.suite`.
+Så hvordan skriver vi tester i Gleam? Det er faktisk ganske enkelt! La oss si at vi har en funksjon som legger sammen to tall:
 
-Deretter kan du definere en test ved hjelp av `test.run` funksjonen, som tar inn en beskrivelse og en funksjon for testen. Innenfor funksjonen kan du bruke Gleam's `assert` funksjon for å teste om et utsagn er sant eller ikke. Her er et eksempel på en test som sjekker om 2+2 er lik 4:
-
-```
-Gleam run
-import gleam/test
-import assert
-
-test.suite("Matematiske tester", [
-  test.run("2+2 er lik 4", fn() {
-    assert.equal(2 + 2, 4)
-  })
-])
+```Gleam
+fn add(x, y) {
+  x + y
+}
 ```
 
-Når du kjører denne testen, vil outputen være som følger:
+For å teste denne funksjonen, trenger vi en måte å kalle den og sjekke om returverdien er den vi forventer. Det er her `test`-funksjonen kommer inn i bildet. Vi kan bruke den til å definere en test og gi den en beskrivelse og forventet resultat:
 
+```Gleam
+test "add function adds two numbers" {
+  expect(add(2, 3)).toBe(5)
+}
 ```
-Test suite: Matematiske tester
-  ✔ 2+2 er lik 4
+
+Vi kan også gjøre flere forventede resultater ved å bruke `expect.add`-funksjonen:
+
+```Gleam
+test "add function calculates sum correctly" {
+  expect.add([
+    (add(2, 3), 5),
+    (add(10, 5), 15)
+  ])
+}
 ```
 
-Du kan også bruke `assert` funksjonen til å teste for andre ting, som for eksempel å sjekke om en liste er tom eller ikke.
+Vi kan også teste for feil ved å bruke `expect.error`-funksjonen:
 
-## Deep Dive
+```Gleam
+test "add function handles unexpected input" {
+  expect.error(add("hello", 5))
+}
+```
 
-Det er mange andre måter å skrive tester på i Gleam, som for eksempel å bruke `test.Group` for å organisere testene dine i ulike grupper. Du kan også bruke Gleam's `lazy` funksjon for å kun kjøre en test hvis en annen test har feilet.
+Ved å kjøre disse testene, vil vi få en oversikt over hvorvidt funksjonen vår oppfører seg som den skal. Dette gjør det enklere å finne og fikse eventuelle feil.
 
-Det er også viktig å huske på at å skrive riktig og grundige tester vil hjelpe deg med å identifisere eventuelle feil i koden din, og gjøre det lettere å fikse dem før de blir et større problem.
+# Dykk dypere
 
-## Se også
+Å skrive tester er ikke bare nyttig for å kontrollere at koden vår fungerer, det er også en viktig del av å skrive ren og lesbar kode. Ved å skrive tester, tvinger vi oss til å tenke gjennom koden vår og sørge for at den er organisert og fungerer som den skal.
 
-- [Gleam test dokumentasjon](https://gleam.run/book/tour/testing.html)
-- [Hvorfor testing er viktig i programmering](https://medium.com/better-programming/why-testing-matters-aa0a29790c07)
-- [Eksempler på gode tester i Gleam](https://github.com/gleam-lang/gleam/tree/master/core/test)
+I tillegg er det mulig å skrive mer komplekse tester i Gleam, for eksempel ved å samarbeide med moduler og mocke funksjoner. Ved å utforske disse mulighetene, kan vi styrke vår forståelse av Gleam og hvordan vi kan skrive mer pålitelig kode.
+
+# Se også
+
+- [Offisiell Gleam dokumentasjon for testing](https://gleam.run/book/testing.html)
+- [En guide til testdrevet utvikling i Gleam (på engelsk)](https://serokell.io/blog/introduction-to-tdd-in-gleam)
+- [Eksempler på hvordan man kan teste Gleam-kode (på engelsk)](https://gist.github.com/davidpelaez/45a254bc0471321d6a6c9ed1faa3d390)

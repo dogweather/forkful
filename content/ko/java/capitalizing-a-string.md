@@ -1,54 +1,43 @@
 ---
 title:    "Java: 문자열 대문자로 변환하기"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-자바 프로그래밍에서 문자열의 첫 글자를 대문자로 바꾸는 것이 필요한 경우가 있습니다. 예를 들어, 사용자의 이름을 나타내는 문자열이 주어졌을 때, 그 이름을 대문자로 시작해야 할 수도 있습니다.
+자바 프로그래밍을 할 때, 문자열을 대문자로 변환하는 것이 왜 필요한지 궁금해하시나요? 이 글에서는 문자열을 대문자로 변환하는 이유에 대해 알아보겠습니다.
 
-# 어떻게
+## 방법
 
-문자열의 첫 글자를 대문자로 바꾸는 방법은 간단합니다. 우선, String 클래스의 `substring()` 메서드를 사용해 첫 글자를 추출하고, `toUpperCase()` 메서드를 사용해 대문자로 바꿔줍니다. 마지막으로, 나머지 문자열을 `substring()` 메서드를 이용해 추출한 첫 글자를 제외한 나머지 문자열과 합쳐주면 됩니다. 아래는 이 과정을 보여주는 예시 코드입니다.
+문자열을 대문자로 변환하는 것은 매우 간단합니다. 이 작업을 수행하기 위해서는 ```toUpperCase()``` 메소드를 사용하면 됩니다. 아래의 예시 코드를 살펴보세요.
 
 ```Java
-public class StringCapitalization {
-
-    public static void main(String[] args) {
-        // 입력받은 이름 문자열
-        String name = "john smith";
-
-        // 첫 글자 추출
-        String firstLetter = name.substring(0, 1);
-
-        // 대문자로 변환
-        String capitalLetter = firstLetter.toUpperCase();
-
-        // 나머지 문자열 추출
-        String remainingLetters = name.substring(1);
-
-        // 첫 글자를 대문자로 변환한 나머지 문자열과 합침
-        String capitalizedName = capitalLetter + remainingLetters;
-
-        System.out.println(capitalizedName); // John smith 출력
-    }
-
-}
+String str = "hello world";
+str.toUpperCase();
 ```
 
-# 딥 다이브
+위의 코드를 실행하면 "HELLO WORLD"라는 결과가 출력됩니다. 즉, ```toUpperCase()``` 메소드는 문자열을 전부 대문자로 변환합니다.
 
-위의 예시 코드에서 사용된 `substring()`과 `toUpperCase()` 메서드는 String 클래스에 정의된 메서드입니다. `substring()` 메서드는 첫 번째 매개변수로 시작 인덱스, 두 번째 매개변수로 끝 인덱스를 받아 해당 범위의 문자열을 추출해 반환해줍니다. `toUpperCase()` 메서드는 단순히 문자열을 대문자로 변환시켜줍니다. 더 많은 정보는 Java API 문서를 참고하시기 바랍니다.
+## 깊게 파헤치기
 
-# 참고
+문자열을 대문자로 변환하는 방법은 ```toUpperCase()``` 메소드를 사용하는 것만으로 충분합니다. 하지만 이 메소드는 문자열에서 모든 문자를 대문자로 변환하므로, 어떤 문자열에서는 원하는 결과를 얻지 못할 수도 있습니다.
 
-- [Java API 문서](https://docs.oracle.com/javase/8/docs/api/)
+예를 들어, 영어에서는 "I"라는 단어를 "i"와 "I"로 구분하지 않지만, 다른 언어에서는 "i"와 "I"를 따로 구분합니다. 따라서 ```toUpperCase()``` 메소드를 사용하면 모든 "i"가 대문자로 변환되어 원하지 않는 결과를 가져올 수 있습니다.
 
---- 
+이럴 때는 ```toUpperCase()``` 메소드를 사용하는 대신, ```replace()``` 메소드를 사용하여 해당 문자만 대문자로 변환하는 것이 좋습니다. 아래의 예시 코드를 살펴보세요.
 
-# 관련 링크
+```Java
+String str = "내 이름은 Java입니다.";
+str.replace("v", "V");
+```
 
-- [자바 문자열 관련 메서드](https://www.geeksforgeeks.org/java-string-class/)
-- [자바 API 사용법](https://arahansa.github.io/docs_korean/java/basics/api.html)
+위의 코드를 실행하면 "내 이름은 JaVa입니다."라는 결과가 출력됩니다. 즉, ```replace()``` 메소드를 사용하여 문자열 중 특정 문자만 대문자로 변환할 수 있습니다.
+
+## 관련 링크
+
+- [Java String 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [replace() 메소드 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
+- [toUpperCase() 메소드 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)

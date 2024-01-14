@@ -1,51 +1,28 @@
 ---
 title:    "Kotlin: 패턴과 일치하는 문자 삭제하기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+"## 왜"
+"특정 패턴과 일치하는 문자를 삭제하는 것"의 이유에 대해 1-2 문장으로 설명합니다.
 
-특정 패턴과 일치하는 문자를 삭제하는 것이 왜 유용한지 궁금하지 않으신가요? 이 포스트에서는 왜 이 작업이 필요한지 알아보고, 어떻게 쉽게 수행할 수 있는지 알아보겠습니다.
-
-## 어떻게
-
-패턴 매칭에 대한 한가지 예로, 문자열에서 모음을 모두 삭제해야 하는 상황을 생각해보겠습니다.
-
-```
-Kotlin fun main() {
-    val str = "Hello world"
-    val pattern = "[aeiou]".toRegex()
-    var result = str.replace(pattern, "")
-    println(result) // Hll wrld
+"## 어떻게"
+"```Kotlin
+fun main() {
+    val str = "Kotlin is fun!"
+    val newStr = str.replace(Regex("[a-zA-Z]+"), "") // 패턴에 해당하는 문자를 빈 문자열로 대체합니다.
+    println(newStr) // 출력 결과: "!"
 }
-```
+```"
+위와 같은 코틀린 코드 블록을 사용하여 예시와 출력 결과를 보여줍니다.
 
-위의 코드에서 패턴 변수에는 `aeiou`라는 정규 표현식이 할당되어 있습니다. 이 표현식은 문자열에서 a, e, i, o, u 중 하나에 해당하는 모든 문자를 찾아내는 역할을 합니다. `replace()` 함수를 이용해 문자열에서 해당하는 문자를 모두 빈 문자열로 대체하면, 모음이 삭제된 결과를 얻을 수 있습니다.
+"## 딥 다이브"
+여러분이 사용하는 텍스트 에디터, 웹 애플리케이션 등에서 문자열을 처리할 때, 패턴 일치 검색을 통해 문자를 삭제할 수 있는 다양한 방법이 있습니다. 정규식을 사용하는 방법 외에도, 문자열을 띄어쓰기 단위로 나누어 배열로 변환한 뒤 필요한 문자열을 제거하는 방법 등도 있습니다. 이러한 방법들을 자세히 알아보고, 어떤 상황에서 어떤 방법이 더 적합한지 알아봅니다.
 
-또 다른 예로, 숫자와 문자가 혼합된 문자열에서 숫자만 남기고 싶을 수 있습니다.
-
-```
-Kotlin fun main() {
-    val str = "a1b2c3d4e5"
-    val pattern = "[a-z]+".toRegex()
-    var result = str.replace(pattern, "")
-    println(result) // 12345
-}
-```
-
-여기서는 정규 표현식 `"[a-z]+"`를 사용해 문자열에서 소문자가 아닌 모든 문자를 찾아내고, `replace()` 함수를 이용해 빈 문자열로 대체합니다. 이렇게 하면 숫자만 남게됩니다.
-
-## 딥 다이브
-
-위의 예시에서는 간단하게 문자열에서 패턴에 맞는 문자를 삭제하는 방법을 보여줬지만, 실제로는 더 복잡한 패턴 매칭이 필요할 수도 있습니다. 이를 위해 정규 표현식에 대해 더 자세히 알아보겠습니다.
-
-정규 표현식은 패턴 매칭에 사용되는 문자열 패턴입니다. 대괄호 `[]`를 이용해 해당 범위에 속하는 문자를 찾을 수 있고, `+` 기호를 이용해 해당 문자열이 반복되는 경우를 나타낼 수 있습니다. 또한 `[]` 안에서 `^` 기호를 사용하면 해당 범위에 속하지 않는 문자들을 찾을 수 있습니다.
-
-위의 예시에서는 문자열에서 모음이나 소문자가 아닌 모든 문자를 찾아내기 위해 대괄호를 이용했습니다. 하지만 더 복잡한 패턴을 찾아내고 싶은 경우에는 다른 기호들도 적절히 활용할 수 있습니다.
-
-## 참고자료
-
-- [Kotlin 정규 표현식 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [정규 표현식 기본 문법](https://www.rexegg.com/regex-quickstart.html)
+"## 또 다른 방법들"
+- [Kotlin 공식 문서 - 문자열 다루기](https://kotlinlang.org/docs/reference/strings.html)
+- [Kotlin vs Java 문자열 관련 기능 비교](https://medium.com/circleci/supporting-string-manipulation-using-kotlin-8c55da20b272)
+- [정규식 테스트 및 예제](https://regex101.com/)

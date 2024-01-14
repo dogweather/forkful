@@ -1,52 +1,52 @@
 ---
 title:    "C: Testien kirjoittaminen"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Testausten kirjoittamisen tärkeys
+## Miksi
 
-Testausten kirjoittaminen on olennainen osa C-ohjelmoinnin prosessia. Se auttaa varmistamaan, että koodi toimii odotetusti ja vähentää virheiden määrää. Testit myös helpottavat koodin ylläpitämistä ja mahdollistavat uusien ominaisuuksien lisäämisen helpommin.
+Testien kirjoittaminen on tärkeä osa hyvän ja toimivan C-ohjelman kehittämistä. Ne auttavat tunnistamaan ja korjaamaan mahdollisia virheitä ennen kuin ohjelma julkaistaan, mikä parantaa sen luotettavuutta ja vähentää käyttäjien kohtaamien ongelmien määrää.
 
-## Miten: Esimerkkejä ja koodin tulosteita
+## Miten
 
-Testien kirjoittaminen C-ohjelmiin on helppoa, ja se voidaan tehdä käyttämällä tekniikkaa, jota kutsutaan yksikkötestaukseksi. Tämä tarkoittaa yksittäisten koodin osien, kuten funktioiden, testaamista erillisinä yksikköinä. Alla on esimerkki yksikkötestin kirjoittamisesta C-kielellä:
+Ohjelmistotestauksen tärkein periaate on, että jokaisen funktion, luokan tai moduulin tulee olla itsenäisesti testattavissa. Tämä tarkoittaa, että koodin on oltava kirjoitettu siten, että sen toimivuutta voidaan testata erillisellä testikoodilla ilman muiden osien riippuvuutta. Seuraavassa esimerkissä näytetään yksinkertainen testi funktiolle, joka palauttaa kahden luvun keskiarvon:
 
 ```C
 #include <stdio.h>
-#include <assert.h>
 
-int sum(int a, int b) {
-    return a + b;
+double keskiarvo(int a, int b) {
+  return (a + b) / 2.0;
 }
 
 int main() {
-    // Testataan, että sum-funktio palauttaa oikean tuloksen
-    assert(sum(2, 3) == 5);
-    printf("Test passed successfully.");
-    return 0;
+  double tulos = keskiarvo(5, 10);
+  printf("Keskiarvo on: %.2f", tulos);
+
+  return 0;
 }
 ```
 
-Tulostus tämän ohjelman suorittamisen jälkeen olisi:
+Tämän testin tulisi palauttaa seuraava tulos:
 
 ```
-Test passed successfully.
+Keskiarvo on: 7.50
 ```
 
-Tämä tarkoittaa, että testi on läpäissyt ja funktio toimii odotetusti.
+Tämän testin avulla voidaan varmistua siitä, että keskiarvon laskeminen toimii oikein ja että se palauttaa halutun tuloksen.
 
-## Syvemmälle: Tietoa testien kirjoittamisesta
+## Syväsyventyminen
 
-Testien kirjoittamisessa on tärkeää huolehtia siitä, että testit ovat kattavat ja testaavat kaikki mahdolliset syötteet. Tämä vähentää virheiden mahdollisuutta ja varmistaa, että koodi toimii oikein erilaisissa tilanteissa.
+Testien kirjoittamisen tarkoituksena on tarkastella ohjelman eri osia ja varmistaa niiden toimivuus. Tämä tarkoittaa, että sinun tulisi testata kaikki funktiot, luokat ja moduulit erikseen sekä myös niiden yhteistoimivuus. Lisäksi ohjelman eri toiminnallisuuksien on oltava testattuja ja toimintavarmoja kaikissa tilanteissa.
 
-Lisäksi testejä tulisi ajaa säännöllisesti, esimerkiksi jokaisen koodinmuutoksen jälkeen. Tällä varmistetaan, että uudet muutokset eivät ole rikkoneet olemassa olevaa toiminnallisuutta.
+Testikoodin kirjoittaminen voi myös auttaa sinua paremmin ymmärtämään ohjelmasi toimintaa ja tunnistamaan mahdollisia ongelmallisia alueita. Lisäksi testien avulla voit varmistaa, että muutokset ohjelmassa eivät aiheuta uusia ongelmia ja että ohjelma toimii edelleen odotetusti.
 
-Yksikkötestaus on vain yksi tapa testata C-ohjelmia. On myös muita tekniikoita, kuten integraatiotestaus ja hyväksymistestaus, jotka auttavat varmistamaan ohjelman toimivuuden laajemmassa mittakaavassa.
+Nykypäivänä on olemassa useita testikehyksiä, kuten esimerkiksi CUnit, joiden avulla voit helposti kirjoittaa ja suorittaa testejä ohjelmassasi. Suosittelemme tutustumaan näihin ja hyödyntämään niitä testikoodin kirjoittamisessa.
 
 ## Katso myös
 
-- [Unit Testing in C - opas yksikkötestaukseen C-kielellä] (https://www.tutorialspoint.com/unit_testing/index.htm)
-- [A Quick Guide to Writing C Unit Tests] (https://medium.com/@lakshyabatman/a-quick-guide-to-writing-c-unit-tests-306022ec3878)
-- [Getting Started with C Unit Testing] (https://www.guru99.com/c-unit-testing.html)
+- [CUnit-testikehys](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
+- [Hyödyllisiä vinkkejä C-ohjelmointiin](https://www.macs.hw.ac.uk/~hwloidl/Courses/F21SC/LEC01/LECTURE1.pdf)
+- [Miten kirjoittaa tehokasta testikoodia](https://www.guru99.com/unit-testing-guide.html)

@@ -1,43 +1,32 @@
 ---
 title:    "Kotlin: 標準エラーへの書き込み"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+プログラミングをする上で、標準エラー出力への書き込みが重要な役割を果たします。そのため、Kotlinでの標準エラー出力の書き込み方法について学ぶことは、プログラミングの基礎を固める上で必要不可欠です。
 
-プログラマーとして、私たちは常にコードを改善し、バグを修正することに注力しています。しかし、時には私たちのコードが予期しないエラーを発生させてしまいます。このような場合、私たちはデバッグ中に値を監視するために、スタンダードエラーへの書き込みを行うことができます。
+## 書き方
+標準エラー出力への書き込みには、以下のようなコードを使用します。
 
-## し方
-
-スタンダードエラーに書き込むには、Kotlinの ```System.err.println()``` メソッドを使用します。以下はそのコーディング例です。
-
-```
-Kotlin fun main() {
-    val number = 10
-    if (number > 5) {
-        System.err.println("数値は5より大きいです。")
-    }
+```Kotlin
+fun main() {
+    val error = System.err
+    error.println("このメッセージは標準エラー出力に表示されます。")
 }
 ```
 
-出力結果は以下のようになります。
+上記の例では、`System.err`を使用して標準エラー出力にアクセスし、`println()`メソッドを使ってメッセージを出力しています。また、`error`という変数を使用しているのは、プログラムの他の部分からも標準エラー出力を使用できるようにするためです。
 
-```
-数値は5より大きいです。
-```
+## 深堀り
+標準エラー出力には、プログラムの実行中に発生したエラーや警告メッセージを表示する場合に使用されます。通常は、発生したエラーが何故起きたのかを明確にするために、それに対応するプログラムコードを記述することで実現されます。
 
-## 深層に潜る
-
-スタンダードエラーに対する書き込みは、主にデバッグの目的で使用されます。しかし、実際には様々なシナリオで役立つことがあります。例えば、ログの出力先として使用することで、コード内の特定の箇所で何が起こっているかを把握することができます。また、異なるコマンドラインツールやシステム間でのコミュニケーションにも使用できます。
+標準エラー出力への書き込みを使用すると、コンソールやログファイルなど、プログラムの実行環境に応じて異なる場所にメッセージを出力することができます。そして、これによりプログラムのデバッグや問題の特定を行うことが可能になります。
 
 ## 参考リンク
-
-[Official Kotlin Documentation](https://kotlinlang.org/docs/reference) <br>
-[Kotlin for Java Developers](https://www.udemy.com/course/kotlin-for-java-developers/) <br>
-[Debugging with System.err in Kotlin](https://medium.com/@khandedeshmukh1994/debugging-with-system-err-in-kotlin-d1c8d1b11f6e)
-
-## また見る
-
-[JavaのSystem.outとSystem.errの違い](https://techplay.jp/column/591)
+- [JavaCodeGeeks: Writing to stderr in Java](https://www.javacodegeeks.com/2015/09/writing-to-standard-error-in-java.html)
+- [Kotlin Docs: System Streams](https://kotlinlang.org/docs/tutorials/command-line.html#system-streams)
+- [freeCodeCamp: What's the Difference Between System.out and System.err](https://www.freecodecamp.org/news/whats-the-difference-between-system-out-println-and-system-err-println/)

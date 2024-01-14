@@ -1,54 +1,43 @@
 ---
-title:    "Elixir: パターンに一致する文字を削除する"
+title:    "Elixir: パターンに合致する文字を削除する"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-あなたがコーディングをするときに、文字のパターンをマッチさせて削除することがどのように役に立つか疑問に思ったことがありますか？Elixirの中で文字をマッチさせて削除することは、データの整理や不要なデータの除去に非常に便利です。この記事では、そんな役に立つ機能をご紹介します。
+ある特定のパターンにマッチする文字を削除することのイディオムを理解することは、Elixirプログラミングにおける重要なスキルです。これを行うことで、より簡潔なコードを書くことができ、パフォーマンスを最適化することができます。
 
 ## 方法
 
-まずは、文字のパターンをマッチさせて削除する方法を見ていきましょう。Elixirの `String.replace` 関数を使います。これは、与えられた文字列の中で指定したパターンに一致する文字を指定した文字列で置き換えることができます。例えば、以下のようなコードを書くことで指定した文字を削除することができます。
+文字列やリストから特定のパターンにマッチする文字を削除するには、Elixirの標準モジュールであるRegexを使用します。下記のコード例を参考にしてください。
 
 ```Elixir
-String.replace("Hello World", "l", "")
+str = "Hello, world!"
+regex = ~r/[aeiou]/ # 母音を表す正規表現パターン
+result = str |> Regex.replace(regex, "") # 結果は"Hll, wrld!"になります
 ```
 
-このコードを実行すると、`Hello World`という文字列の中の `l` が削除されて、`Heo Word` という文字列が返されます。
-
-さらに、パターンを使って削除することもできます。例えば、`:`のあとに数字が続くパターンを指定して、それらの文字を削除することができます。
+または、リストの場合は下記のように書くことができます。
 
 ```Elixir
-String.replace("Item: 123, Item: 456", ~r/: \d+/, "")
+list = [1, 2, 3, 4, 5]
+regex = ~r/[24680]/ # 偶数を表す正規表現パターン
+result = list |> Enum.filter(fn x -> not Regex.match?(regex, to_string(x)) end) # 結果は[1, 3, 5]になります
 ```
-
-このコードを実行すると、`Item: 123, Item: 456`という文字列の中の数字が削除されて、`Item, Item`という文字列が返されます。
 
 ## 深堀り
 
-もちろん、 `String.replace` 関数は他の多くのElixirの関数と同様にパターンマッチングを使用します。このため、より高度な文字の削除や置き換えが可能です。例えば、以下のようなコードを書くことで、アルファベットで始まり、数字で終わる単語を全て削除することができます。
-
-```Elixir
-String.replace("Hello, 123 world", ~r/\p{Letter}+\p{Number}/, "")
-```
-
-このコードを実行すると、`Hello, world`という文字列が返されます。`Hello` という単語が、アルファベットで始まり、数字で終わるため、削除されました。
-
-このように、Elixirのパターンマッチングの強力な機能を使うことで、さまざまな文字を削除することができます。
+Regexモジュールを使用することで、一度に複数の文字を置換することもできます。また、正規表現のメタキャラクタやオプションを使うことで、より複雑なパターンにもマッチさせることができます。詳細についてはElixirの公式ドキュメントを参照してください。
 
 ## 参考リンク
 
-- Elixirの公式ドキュメント：https://elixir-lang.org/getting-started/string-pattern-matching.html
-- 正規表現入門：https://wa3.i-3-i.info/word12177.html
-- 文字列の置換：https://ja.wikipedia.org/wiki/文字列置換
+- [ElixirのRegexモジュール](https://hexdocs.pm/elixir/Regex.html)
+- [正規表現の基礎](https://qiita.com/jnchito/items/893c887fbf19e17ee464)
+- [Elixirで正規表現を使う方法](https://qiita.com/hmuronaka/items/708f4f4d9b7157c76521) 
 
----
+## 参考
 
-## 参考文献
-
-[日本語記事タイトル](記事URL)
-[日本語記事タイトル](記事URL)
-[日本語記事タイトル](記事URL)
+[正規表現のパターンにマッチする文字を削除する方法](https://exampleblog.com/)

@@ -1,44 +1,70 @@
 ---
 title:    "Arduino: Comparando dos fechas"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué comparar dos fechas en programas Arduino
+## ¿Por qué comparar dos fechas en Arduino?
 
-Comparar dos fechas es una práctica común en la programación de Arduino, ya que permite realizar diversas tareas relacionadas con el tiempo y la planificación. Por ejemplo, puede ser útil para activar un sensor en una fecha determinada, crear un temporizador o incluso para llevar un registro de eventos en un calendario.
+Comparar dos fechas puede ser útil en muchas aplicaciones de Arduino. Por ejemplo, puede que necesites verificar si la fecha actual es anterior o posterior a una fecha específica, o tal vez quieras crear una alarma basada en la hora y fecha. Sea cual sea tu razón, aprender a comparar fechas en Arduino es un conocimiento útil que te permitirá crear proyectos más avanzados.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para comparar dos fechas en Arduino, primero debes asegurarte de que tus fechas estén en un formato legible para el programa. Puedes usar la clase ```DateTime``` del reloj en tiempo real (RTC) para definir fechas con variables.
+Para comparar fechas en Arduino, necesitas utilizar el objeto `DateTime` de la librería `DS3231`. Primero, debes crear una instancia de este objeto y asignarle la hora y fecha actual. Luego, puedes utilizar la función `isAfter()` o `isBefore()` para comparar las fechas según tus necesidades.
 
+Aquí tienes un ejemplo de cómo comparar la fecha actual con una fecha específica y mostrar un mensaje en el monitor serial:
+
+```Arduino
+#include <DS3231.h>
+
+DS3231 rtc;
+
+void setup() {
+  // Iniciar comunicación con RTC
+  rtc.begin();
+  // Asignar la hora y fecha actual
+  rtc.setHour(12);
+  rtc.setMinute(0);
+  rtc.setSecond(0);
+  rtc.setDoW(THURSDAY);
+  rtc.setDate(15);
+  rtc.setMonth(7);
+  rtc.setYear(2021);
+}
+
+void loop() {
+  // Obtener la fecha actual del RTC
+  DateTime now = rtc.now();
+  // Comparar con la fecha específica y mostrar mensaje en el monitor serial
+  if (now.isAfter(DateTime(2021, 6, 1, 0, 0, 0))) {
+    Serial.println("La fecha actual es posterior al 1 de junio de 2021.");
+  } else {
+    Serial.println("La fecha actual es anterior al 1 de junio de 2021.");
+  }
+  // Esperar un segundo
+  delay(1000);
+}
 ```
-#include <RTClib.h>
-RTC_DS3231 rtc;
 
-DateTime fecha1;
-DateTime fecha2;
+El monitor serial mostrará el mensaje "La fecha actual es posterior al 1 de junio de 2021." ya que la fecha actual es posterior a la fecha especificada en el código.
+
+## Profundizando en la comparación de fechas
+
+La librería `DS3231` también incluye funciones para comparar no solo fechas sino también horas, minutos y segundos. Puedes utilizar las funciones `hourIsAfter()`, `minuteIsAfter()` y `secondIsAfter()` para comparar la hora actual con una hora específica.
+
+Además, si estás utilizando una pantalla LCD, puedes mostrar la fecha actual en formato legible utilizando la función `String()`:
+
+```Arduino
+// Mostrar fecha actual en pantalla LCD
+lcd.print(String(now.day()) + "/" + String(now.month()) + "/" + String(now.year()));
 ```
 
-Una vez que tienes tus fechas definidas, puedes usar la función ```difDays()``` de la biblioteca ```RTClib``` para obtener la diferencia, en días, entre dos fechas.
+Con esta información, puedes crear todo tipo de proyectos que utilicen comparación de fechas en Arduino.
 
-```
-int diferencia = fecha1.difDays(fecha2);
-```
+## Ver también
 
-Luego puedes utilizar la variable ```diferencia``` en condiciones, como un ```if```, para realizar acciones basadas en la comparación entre las dos fechas.
-
-## Profundizando
-
-Si quieres profundizar en la comparación de fechas en Arduino, es importante tener en cuenta que las fechas deben ser definidas en el formato adecuado. Además, ten en cuenta que la biblioteca ```RTClib``` utilizada en este ejemplo solo es válida para fechas entre el año 2000 y el 2099.
-
-Existen otras bibliotecas y métodos para comparar fechas en Arduino, como utilizar la función ```time.h``` y el tiempo en milisegundos, o la biblioteca ```Time``` y la función ```elapsedDays()```. Investigar y experimentar con diferentes métodos puede ser beneficioso para encontrar el que mejor se adapte a tus necesidades.
-
-# Ver también
-
-- [Biblioteca RTClib para Arduino](https://github.com/adafruit/RTClib)
-- [Documentación de la función difDays()](https://learn.adafruit.com/arduino-lesson-12-lcd-displays-part-2?view=all#difdays)
-- [Guía de referencia para la biblioteca Time](https://www.arduino.cc/en/Reference/Time)
-- [Tutorial de Time.h en Arduino](https://www.antriendep.com/2018/03/20/arduino-tutoiral-usar-timer-y-diferentes-funciones-de-la-libreria-time-h/)
-- [Tutorial de la biblioteca Time en Arduino](https://randomnerdtutorials.com/arduino-basics-set-time-date-arduino/)
+- [Documentación de la librería DS3231 (en inglés)](https://github.com/NorthernWidget/DS3231)
+- [Tutorial: Crear una alarma en Arduino utilizando fecha y hora](https://www.prometec.net/ds3231-electronica-proyecto-arduino-alarma/)
+- [Proyecto: Reloj despertador con Arduino y pantalla LCD](https://programarfacil.com/blog/arduino-blog/reloj-despertador-arduino/)

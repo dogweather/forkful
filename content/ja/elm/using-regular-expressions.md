@@ -1,44 +1,40 @@
 ---
-title:    "Elm: 正規表現の使用方法"
+title:    "Elm: 正規表現の使用"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-正規表現を使用することに参加する理由を説明するためのの1〜2文。
+## なぜ？
 
-正規表現は、文字列操作やパターンマッチングに非常に便利なツールです。特定のパターンを見つけたり、抽出したりするのに役立ちます。また、データの検証やバリデーションにも使用することができます。
+回答:
+正規表現を使用する利点は多岐にわたります。例えば、文字列のパターンを簡単に検索、置換、抽出することができます。また、入力されたデータの妥当性をチェックすることもできます。それでは、Elmで正規表現をどのように使うか見ていきましょう。
 
 ## 使い方
-正規表現を使用するための具体的なコーディング例と、それに対する出力結果を含めた```Elm...```コードブロックを使用して説明します。
-
-例えば、以下のコードを使用すると、文字列内の```'elm'```と一致する箇所を見つけることができます。
 
 ```Elm
-import Regex exposing (find)
+import Regex exposing (..)
 
-find (Regex.regex "elm") "I love Elm programming!"
+-- 文字列のパターンに一致するかどうかを確認する例
+Regex.contains (regex "elm") "Elm is a functional programming language" -- 結果: True
+
+-- 文字列を一致するパターンで分割する例
+Regex.split (regex ":") "A:1:2:3" -- 結果: ["A", "1", "2", "3"]
+
+-- 文字列内のパターンを置換する例
+Regex.replace (regex "[^a-zA-Z0-9]+") (always "-") "Hello, World!" -- 結果: "Hello-World"
+
+-- 入力されたデータの妥当性をチェックする例 (電話番号のフォーマットをチェック)
+Regex.contains (regex "^\\d{3}-\\d{4}-\\d{4}$") "090-1234-5678" -- 結果: True
 ```
 
-このコードの出力結果は、```Just (Match 14 3)```という形になります。
-
 ## 深堀り
-正規表現を使用する際に注意すべきポイントや、より高度な機能についても紹介しましょう。
 
-正規表現を使用する際には、正確なパターンを指定することが非常に重要です。また、文字列に含まれる特殊な文字やメタ文字についても確認しておく必要があります。正規表現ツールによっては、文字列中の特殊文字を自動的にエスケープする機能があるので、これを活用することでより正確な結果を得ることができます。
+正規表現を使用する際には、パターンを理解し、適切に表現することが重要です。例えば、"^\\d{3}[- ]\\d{4}[- ]\\d{4}$"というパターンは、電話番号のフォーマットを検証することができます。このパターンは、3桁の数字の後に「-」または「 」（スペース）が続き、その後4桁の数字の後に再び「-」または「 」（スペース）が続き、最後にもう一度4桁の数字が続くという意味です。正規表現のパターンはさまざまな方法で検索、置換、抽出することができるので、より複雑なパターンを学ぶことも可能です。
 
-また、正規表現をより柔軟に扱えるようにするために、グループ化やネガティブマッチングなどの機能を活用することもできます。これにより、より複雑なパターンのマッチングを行うことができます。
+## 参考リンク
 
-## さらに参考になるサイト
-
-- [Elm公式ドキュメント](https://guide.elm-lang.org/strings.html#regular-expressions)
-- [正規表現チュートリアル](https://www.tutorialspoint.com/execute_regular_expression_online.php)
-- [正規表現テストツール](https://regex101.com/)
-
----
-
-## 関連リンク
-- https://guide.elm-lang.org/
-- https://tutorialspoint.com/
-- https://regex101.com/
+- [正規表現についてのElmドキュメンテーション](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [正規表現チュートリアル](https://regexone.com/)
+- [正規表現を使用した文字列操作のヒント](https://medium.com/free-code-camp/effective-string-manipulation-with-elm-3bf3b2ec56b6)

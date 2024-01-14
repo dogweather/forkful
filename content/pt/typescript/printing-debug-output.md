@@ -1,41 +1,47 @@
 ---
-title:    "TypeScript: Imprimir saída de depuração"
+title:    "TypeScript: Imprimindo saída de depuração"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração é importante
+## Por Que
 
-Imprimir saída de depuração é uma prática importante na programação porque permite que os desenvolvedores visualizem informações fundamentais durante o processo de desenvolvimento. Isso pode ser especialmente útil para encontrar e corrigir erros em um código.
+Há momentos em que escrever e imprimir declarações de depuração (debug) pode ser uma ferramenta útil para entender melhor o que está acontecendo em seu código. Essas declarações podem fornecer informações valiosas sobre variáveis, valores e fluxo de execução do seu programa. Portanto, é importante saber como utilizar esse recurso ao programar em TypeScript.
 
-## Como imprimir saída de depuração em TypeScript
+## Como Fazer
 
-Para imprimir saída de depuração em TypeScript, podemos usar a função `console.log()`. Essa função aceita qualquer tipo de variável como argumento e imprime seu conteúdo no console do navegador ou do ambiente de execução. Aqui está um exemplo:
-
-```TypeScript
-let nome: string = "Maria";
-let idade: number = 25;
-
-console.log(nome); // Output: Maria
-console.log("A idade de " + nome + " é " + idade + " anos."); // Output: A idade de Maria é 25 anos.
-```
-
-## Aprofundando na saída de depuração
-
-Existem outras formas de imprimir saída de depuração em TypeScript, como `console.debug()`, `console.info()`, `console.warn()` e `console.error()`. Cada uma delas tem um uso específico e pode ser útil em diferentes situações. É importante lembrar de remover essas linhas de código antes de implantar o projeto, pois elas podem afetar o desempenho da aplicação.
-
-Além disso, é possível formatar a saída de depuração usando as `string templates` do TypeScript. Por exemplo:
+Para imprimir uma declaração de depuração em TypeScript, podemos utilizar a função `console.log()`, que é uma funcionalidade do JavaScript e também suportada pelo TypeScript. Por exemplo:
 
 ```TypeScript
-let a: number = 5;
-let b: number = 3;
-
-console.log(`A soma de ${a} + ${b} é igual a ${a+b}.`); // Output: A soma de 5 + 3 é igual a 8.
+let num1: number = 5;
+console.log(num1); // saída: 5
 ```
 
-## Veja também
+Também é possível imprimir várias variáveis ou valores em uma única declaração, separando-os por vírgula:
 
-- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/)
-- [Desenvolvimento web com TypeScript](https://www.devmedia.com.br/desenvolvimento-web-com-typescript/36644)
-- [Tutorial do TypeScript para iniciantes](https://www.tuneup.tech/blog/typescript--o-que-e-e-como-usar)
+```TypeScript
+let name: string = "João";
+let age: number = 25;
+console.log(name, age); // saída: João 25
+```
+
+Além disso, podemos formatar a saída utilizando as expressões `string` e `number` dentro da função `console.log()`, dessa forma:
+
+```TypeScript
+let num1: number = 5;
+console.log(`O número é ${num1}.`); // saída: O número é 5.
+```
+
+## Mergulho Profundo
+
+A função `console.log()` é apenas uma maneira básica de imprimir declarações de depuração. Existem outras formas mais específicas de fazer isso, como utilizar a interface `console` do TypeScript, que oferece mais opções e recursos, como `console.error()` para imprimir mensagens de erro e `console.table()` para imprimir dados em formato de tabela.
+
+Outra opção interessante é utilizar o depurador (debugger) do TypeScript, presente em algumas IDEs como o Visual Studio Code, que permite pausar a execução do seu código em pontos específicos e analisar variáveis, valores e o fluxo de execução em tempo real.
+
+## Veja Também
+
+- [Documentação oficial do TypeScript sobre declarações de depuração](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-literal-types)
+- [Artigo sobre como usar o depurador do TypeScript no Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
+- [Guia completo de como usar a interface `console` do TypeScript](https://developer.mozilla.org/pt-BR/docs/Web/API/console)

@@ -1,55 +1,50 @@
 ---
 title:    "C++: Lesen von Befehlszeilenargumenten"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Gründe, warum man sich mit dem Lesen von Befehlszeilenargumenten in C++ beschäftigen möchte. Möglicherweise möchten Sie ein Programm schreiben, das verschiedenen Eingaben basierend auf verschiedenen Ausgangsparametern ausführen kann. Oder vielleicht möchten Sie ein interaktives Tool erstellen, das bestimmte Aktionen basierend auf vom Benutzer eingegebenen Befehlen ausführt. Egal aus welchem Grund, das Lesen von Befehlszeilenargumenten kann Ihnen dabei helfen, flexiblere, interaktive und benutzerfreundlichere Programme zu erstellen.
 
-## Wie geht das?
-Das Lesen von Befehlszeilenargumenten in C++ ist relativ einfach. Zunächst müssen Sie die Headerdatei "iostream" und die Headerdatei "string" einbinden, um die Funktionen "cout" und "cin" zu verwenden. Dann können Sie die Funktion "main" wie folgt deklarieren:
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der C++ Programmierung. Es ermöglicht die Interaktion mit dem Programm durch die Eingabe von Daten während der Laufzeit. Dies ist besonders nützlich, wenn das Programm für verschiedene Zwecke verwendet werden kann und die Verwendung von festen Werten im Code vermieden werden soll. In diesem Blogpost erfahren Sie, wie Sie auf einfache Weise Befehlszeilenargumente in Ihrem C++ Programm lesen können.
 
-```
-#include <iostream>
-#include <string>
+## Wie man Befehlszeilenargumente liest
 
-int main(int argc, char *argv[]){
-    // Code, um Befehlszeilenargumente zu lesen
-}
-```
+Das Lesen von Befehlszeilenargumenten in C++ ist relativ einfach und erfordert nur wenige Schritte. Zunächst müssen Sie die Hauptfunktion Ihres Programms deklarieren. In der Regel hat diese Funktion zwei Parameter: argc (argument count) und argv (argument vector). Diese Parameter werden vom Betriebssystem bereitgestellt und enthalten Informationen über die Eingabeaufforderung und die eingegebenen Argumente.
 
-Die Funktion "main" hat zwei Parameter: "argc" und "argv". "argc" gibt die Anzahl der Befehlszeilenargumente an und "argv" ist ein Array, das die Befehlszeilenargumente enthält. Zum Beispiel, wenn Sie Ihr Programm mit dem Befehl "meinProgramm.exe 123 test" ausführen, wäre "argc" 3 und "argv" ein Array mit den Werten "123" und "test". Sie können dann auf diese Werte zugreifen, indem Sie auf die entsprechenden Array-Indizes zugreifen (z.B. argv[0] für "123" und argv[1] für "test").
+Als nächstes müssen Sie eine for-Schleife verwenden, um durch alle Argumente zu iterieren. Beginnen Sie bei Index 1, da der erste Wert in argv immer der Name des Programms ist. Innerhalb dieser Schleife können Sie dann auf die einzelnen Argumente zugreifen und sie entsprechend verarbeiten.
 
-Im Folgenden finden Sie ein Beispiel, das alle Befehlszeilenargumente ausgibt:
+```C++
+int main(int argc, char** argv) {
 
-```
-#include <iostream>
-#include <string>
-
-int main(int argc, char *argv[]){
-    for(int i = 0; i < argc; i++){
-        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+    // Iteriere durch alle Argumente
+    for (int i = 1; i < argc; i++) {
+        // Verarbeite das Argument an Index i
     }
+
     return 0;
 }
 ```
 
-Die Ausgabe für den Befehl "meinProgramm.exe Hallo Welt" wäre:
+Um ein Argument zu lesen, können Sie einfach auf den entsprechenden Index in argv zugreifen, z.B ```argv[i]```. Dieser Wert ist vom Typ ```char*``` und muss möglicherweise noch in den gewünschten Datentyp konvertiert werden.
+
+Um die Argumente aus der Eingabeaufforderung zu überprüfen, können Sie Ihr Programm in der Kommandozeile ausführen und dabei verschiedene Argumente eingeben, z.B ```./meinprogramm argument1 argument2```. Die Ausgabe könnte dann wie folgt aussehen:
 
 ```
-Argument 0: meinProgramm.exe
-Argument 1: Hallo
-Argument 2: Welt
+Das erste Argument ist: argument1
+Das zweite Argument ist: argument2
 ```
 
-## Tiefer in die Materie eintauchen
-Das Lesen von Befehlszeilenargumenten kann auch komplexer werden, wenn Sie verschiedene Datentypen umwandeln müssen oder wenn Sie argumentbezogene Optionen hinzufügen möchten. In diesem Fall empfehlen wir Ihnen, sich mit der Bibliothek "getopt" auseinanderzusetzen, die speziell für das Parsen von Befehlszeilenargumenten entwickelt wurde.
+## Tiefere Einblicke
 
-Sie können auch mehrere Befehlszeilenargumente in einem einzigen Argument zusammenfassen, indem Sie zum Beispiel das "+"-Zeichen als Trennzeichen verwenden: "meinProgramm.exe -u+john+doe". In diesem Fall wäre "argv[1]" "-u+john+doe", und Sie müssten dann die Zeichenkette in ihre einzelnen Teile zerlegen.
+Es gibt verschiedene Möglichkeiten, das Lesen von Befehlszeilenargumenten in C++ zu erweitern. Zum Beispiel können Sie die Bibliothek ```sstream``` verwenden, um verschiedene Datentypen aus den Argumenten zu lesen. Sie können auch benutzerdefinierte Fehlermeldungen erstellen, wenn bestimmte Argumente fehlen oder falsch formatiert sind.
+
+Es ist auch wichtig zu beachten, dass Befehlszeilenargumente nicht nur für Eingabeelemente verwendet werden können, sondern auch für die Konfiguration von Programmen, z.B indem Sie Optionen oder Flags übergeben.
 
 ## Siehe auch
-- [C++-Befehlszeilenargumente im Detail](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Befehlszeilenargumente mit getopt in C++](https://www.gnu.org/software/libc/manual/html_node/getopt.html)
-- [C++ String-Stream](https://www.cplusplus.com/reference/sstream/istringstream/)
+
+- [C++ Dokumentation: Kommandozeilenargumente](https://de.cppreference.com/w/cpp/language/main_function)
+- [Tutorial: Befehlszeilenargumente in C++ lesen](https://www.learncpp.com/cpp-tutorial/reading-arguments-from-the-command-line/)
+- [Erweiterte Möglichkeiten beim Lesen von Befehlszeilenargumenten in C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

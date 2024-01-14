@@ -1,48 +1,61 @@
 ---
-title:    "C#: Erzeugung zufälliger Zahlen"
+title:    "C#: : Generierung von Zufallszahlen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Generierung von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung und kann in verschiedenen Anwendungsfällen nützlich sein. Zum Beispiel können Zufallszahlen verwendet werden, um ein Spiel zu erstellen, kryptografische Schlüssel zu generieren oder auch für statistische Simulationen in der Forschung.
+Generieren von Zufallszahlen ist eine häufige Aufgabe in der Programmierung. Mit Hilfe von Zufallszahlen können wir Spiele entwerfen, Verschlüsselungsalgorithmen testen und vieles mehr. In dieser Blog-Post werden wir uns damit beschäftigen, wie man in C# Zufallszahlen generieren kann.
 
-## Wie
+## Wie geht das?
 
-Um in C# eine Zufallszahl zu generieren, gibt es mehrere Möglichkeiten. Zunächst müssen Sie die `Random`-Klasse importieren. Dann können Sie entweder die `Next()`-Methode verwenden, um eine ganze Zahl zurückzugeben, oder die `NextDouble()`-Methode, um eine Fließkommazahl zwischen 0 und 1 zurückzugeben.
+Um Zufallszahlen in C# zu generieren, verwenden wir die Klasse `Random`. In unserem Beispiel generieren wir eine Zufallszahl zwischen 1 und 10 und geben sie auf der Konsole aus.
 
 ```C#
-using System;
-
 Random rand = new Random();
-
-// Ganze Zahl zwischen 0 und 10 generieren
-int randomNumber = rand.Next(0, 11);
-
-// Fließkommazahl zwischen 0 und 1 generieren
-double randomDouble = rand.NextDouble();
+int number = rand.Next(1, 11);
+Console.WriteLine("Die Zufallszahl ist: " + number);
 ```
 
-Sie können auch eine Zufallszahl mit bestimmten Parametern generieren, zum Beispiel eine ganze Zahl zwischen 1 und 100 oder eine Fließkommazahl zwischen 5 und 10.
+Die Ausgabe sieht dann zum Beispiel so aus: `Die Zufallszahl ist: 5`. Jetzt können wir diese Zufallszahl für verschiedene Anwendungen nutzen.
+
+Um eine Liste von Zufallszahlen zu generieren, können wir eine Schleife verwenden. In diesem Beispiel erstellen wir eine Liste mit 10 Zufallszahlen zwischen 1 und 100 und geben sie auf der Konsole aus.
 
 ```C#
-// Ganze Zahl zwischen 1 und 100 generieren
-int randomNumber = rand.Next(1, 101);
+List<int> randomNumberList = new List<int>();
 
-// Fließkommazahl zwischen 5 und 10 generieren
-double randomDouble = rand.NextDouble() * (10 - 5) + 5;
+for (int i = 0; i < 10; i++)
+{
+    int number = rand.Next(1, 101);
+    randomNumberList.Add(number);
+}
+
+Console.WriteLine("Die Liste der Zufallszahlen:");
+
+foreach (int number in randomNumberList)
+{
+    Console.Write(number + " ");
+}
+
 ```
 
-## Deep Dive
+Die Ausgabe sieht dann zum Beispiel so aus: `Die Liste der Zufallszahlen: 25 62 7 41 95 12 87 3 52 17` 
 
-Die `Random`-Klasse verwendet einen sogenannten "Pseudozufallsgenerator", der eine vorhersehbare Sequenz von Zufallszahlen basierend auf einem "Seed" (Startwert) generiert. Dieser Seed kann entweder automatisch mit Hilfe der Systemzeit oder manuell durch den Entwickler festgelegt werden.
+## Tiefergehende Informationen
 
-Es ist jedoch wichtig zu beachten, dass diese Zufallszahlen nicht wirklich zufällig sind, sondern auf einer mathematischen Berechnung basieren. Daher sollte dieser Generator nicht für sicherheitsrelevante Anwendungen wie Verschlüsselung verwendet werden.
+Die Klasse `Random` verwendet einen Pseudorandom-Algorithmus, um Zufallszahlen zu generieren. Das bedeutet, dass die Zahlen nicht wirklich zufällig sind, sondern auf einem vorhersehbaren Muster basieren. Wenn Sie eine Liste von Zufallszahlen benötigen, die wirklich zufällig sind, können Sie den Seed-Wert für die Klasse `Random` angeben. Ein Seed-Wert ist eine Startzahl für den Algorithmus und sorgt dafür, dass er für jede Anwendung verschiedene Zahlen generiert.
+
+```C#
+Random rand = new Random(123); // Seed-Wert von 123
+```
+
+Sie sollten auch daran denken, dass die generierten Zufallszahlen nicht wirklich zufällig sind und deshalb keine sensiblen Informationen, wie beispielsweise Passwörter oder Kreditkartennummern, darin ablegen sollten.
 
 ## Siehe auch
 
-- [Microsoft Dokumentation über die Random-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.random)
-- [Artikel über die Unterschiede zwischen echten und Pseudozufallszahlen](https://www.statsoft.de/support/base/echte-und-pseudozufallszahlen/)
-- [Beispielprojekt, das die Verwendung von Zufallszahlen in einem Spiel zeigt](https://github.com/udacity/2D-UFO)
+- [MSDN-Dokumentation über die Klasse `Random`](https://docs.microsoft.com/de-de/dotnet/api/system.random?view=netframework-4.8)
+- [C# Zufallszahlen Tutorial von TutsPlus](https://code.tutsplus.com/tutorials/generating-random-numbers-in-net-a-practical-guide--cms-21387)
+- [Wikipedia-Artikel über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahlen)

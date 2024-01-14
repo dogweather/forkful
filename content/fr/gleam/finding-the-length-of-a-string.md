@@ -1,49 +1,41 @@
 ---
-title:    "Gleam: Trouver la longueur d'une chaîne."
+title:    "Gleam: Trouver la taille d'une chaîne"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La programmation peut sembler compliquée et intimidante pour beaucoup, mais la réalité est que c'est en fait assez amusant et gratifiant une fois que vous commencez à en comprendre les concepts de base. L'une des choses les plus simples mais les plus utiles que vous pouvez apprendre est de trouver la longueur d'une chaîne de caractères en utilisant le langage de programmation Gleam.
+La recherche de la longueur d'une chaîne de caractères est une tâche courante dans de nombreux projets de programmation. Cela peut être utile pour de nombreuses raisons, comme la vérification de la validité des données saisies par l'utilisateur, le traitement de fichiers de texte ou la manipulation de données brutes.
 
 ## Comment faire
 
-Voici un exemple de code Gleam montrant comment trouver la longueur d'une chaîne de caractères :
+Voici un exemple de code en Gleam pour trouver la longueur d'une chaîne de caractères et afficher le résultat :
 
-```Gleam
-let string = "Bonjour le monde"
-let length = String.length(string)
+``` gleam
+let nom = "Gleam"
+let longueur = nom |> string.length
+io.format("La longueur de la chaîne {} est {}", [nom, longueur])
 ```
 
-Dans cet exemple, nous avons une chaîne de caractères "Bonjour le monde" et nous utilisons la fonction interne `String.length()` pour trouver sa longueur. Lorsque nous imprimons la valeur de `length`, nous obtenons une sortie de 17 car il y a 17 caractères dans la chaîne y compris les espaces.
+Résultat :
 
-Vous pouvez également utiliser la boucle `for` pour imprimer les caractères individuels de la chaîne :
-
-```Gleam
-for char in string {
-  IO.print(char)
-}
+```
+La longueur de la chaîne Gleam est 5
 ```
 
-Cela imprimera chaque caractère de la chaîne sur une ligne séparée. Vous pouvez également utiliser la fonction `String.slice()` pour extraire une sous-chaîne de la chaîne en utilisant des indices :
-
-```Gleam
-let sub_string = String.slice(string, 0, 7)
-```
-
-Cela extraira les 7 premiers caractères de la chaîne et les stockera dans la variable `sub_string`.
+Nous utilisons la fonction `string.length` pour obtenir la longueur de la chaîne `nom`. Nous pouvons ensuite utiliser la fonction `io.format` pour afficher le résultat avec le texte souhaité.
 
 ## Plongée en profondeur
 
-Comprendre comment trouver la longueur d'une chaîne de caractères est important car cela vous permet de traiter efficacement et d'analyser des données sous forme de chaînes. Cela peut être utile dans le traitement de texte, la manipulation de données et de nombreux autres cas d'utilisation.
+Il est important de garder à l'esprit que la longueur d'une chaîne de caractères peut varier en fonction de l'encodage utilisé. Par exemple, une chaîne de caractères en UTF-8 peut avoir une longueur différente qu'une chaîne en UTF-16. Il est donc essentiel de comprendre le type d'encodage utilisé dans le contexte de votre projet.
 
-En Gleam, les chaînes de caractères sont des valeurs immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois qu'elles ont été créées. Cela garantit que les manipulations sur les chaînes de caractères ne modifient pas les valeurs d'origine, mais renvoient plutôt de nouvelles valeurs. Cela évite les erreurs et les confusions potentielles lors de la manipulation de données.
+De plus, il peut être utile de savoir comment fonctionne réellement la fonction `string.length`. En Gleam, les chaînes de caractères sont en réalité des listes de caractères, ce qui signifie que la fonction `string.length` compte simplement le nombre d'éléments dans la liste.
 
 ## Voir aussi
 
-- [Documentation officielle de Gleam](https://gleam.run/)
-- [Tutoriels de programmation en français](https://openclassrooms.com/fr/courses/2984401-apprenez-a-programmer-en-python)
-- [Communauté Gleam sur Discord](https://discord.gg/QsfECDu)
+- [Documentation officielle - Typage de chaînes de caractères](https://gleam.run/book/tour/string-types.html)
+- [Exemples d'utilisation de la fonction string.length](https://gleam.run/examples/string-length.html)
+- [Article de blog - Manipulation de données en Gleam](https://blog.gleam.run/manipulating-data-in-gleam/)

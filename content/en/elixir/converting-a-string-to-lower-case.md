@@ -1,42 +1,39 @@
 ---
 title:    "Elixir recipe: Converting a string to lower case"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Converting strings to lower case may seem like a small and unimportant task in programming, but it can actually have a big impact on the readability and organization of your code. By converting strings to lower case, you ensure consistency in your code and make it easier for other developers to understand and work with your code. 
+Converting strings to lowercase is a common task in programming, especially when working with user input or manipulating text data. In Elixir, there are a few different ways to accomplish this, each with its own strengths and drawbacks. So let's dive into how to convert strings to lowercase in Elixir.
 
 ## How To
-Converting a string to lower case in Elixir is a simple and straightforward process. Here's an example of how to do it using the `String.downcase/1` function:
+There are two main ways to convert a string to lowercase in Elixir: using the `String.downcase/1` function or accessing the `String.downcase/2` macro directly.
 
+### Using String.downcase/1
+The `String.downcase/1` function takes in a string as an argument and returns a new string with all characters converted to lowercase. For example:
 ```Elixir
-string = "Hello, World!"
-lowercase_string = String.downcase(string)
-IO.puts lowercase_string
+String.downcase("HELLO THERE")
+# => "hello there"
 ```
-Output: hello, world!
 
-In the above code, we use the `String.downcase/1` function to convert the `string` variable to lower case and assign it to a new variable, `lowercase_string`. We then use `IO.puts` to print out the lower case string to the console.
-
-Another way to convert a string to lower case is by using the `String.downcase/2` function, which allows us to specify a locale for the conversion. Here's an example:
-
+### Using String.downcase/2
+The `String.downcase/2` macro works similarly to `String.downcase/1`, but also includes an extra argument for specifying a locale. This can be useful when dealing with non-English characters. Here's an example:
 ```Elixir
-string = "HELLO, WORLD!"
-locale = "en-US"
-lowercase_string = String.downcase(string, locale)
-IO.puts lowercase_string
+String.downcase("HÉLLO THERE", "en-US")
+# => "héllo there"
 ```
-Output: hello, world!
 
-In this code, we pass in the `locale` variable as the second argument to the `String.downcase/2` function to ensure that the string is converted to lower case based on the English language rules.
+### Converting a string in place
+If you need to convert a string to lowercase in place, without creating a new string, you can use the `String.downcase!/1` function. This function modifies the original string and returns `:ok` if successful. Otherwise, it raises an error.
 
 ## Deep Dive
-When converting a string to lower case, one important thing to keep in mind is that the converted string may not always match the original string exactly. This is because certain characters may be encoded differently in upper and lower case. For example, the German character "ß" is converted to "SS" when using the `String.downcase/1` function, and may be converted to "ss" when using the `String.downcase/2` function with the "de-DE" locale.
+Internally, `String.downcase/1` and `String.downcase/2` both use the `String.Unicode.downcase/1` function to perform the actual conversion. This function uses the Unicode standard to make sure all characters are correctly converted to lowercase, including those with accents or diacritics.
 
-Another thing to note is that the `String.downcase/1` function only works with ASCII characters. If you need to convert strings with non-ASCII characters to lower case, you can use the `String.downcase/2` function with the "C" locale, which allows for full UTF-8 support.
+It's worth noting that `String.downcase/1` and `String.downcase/2` both return new string objects, rather than modifying the original string in place. This means that if you need to convert multiple strings to lowercase, using these functions can potentially create a large number of new string objects and impact performance.
 
 ## See Also
-- [String.downcase/1 function](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [String.downcase/2 function](https://hexdocs.pm/elixir/String.html#downcase/2)
+- [Elixir String documentation](https://hexdocs.pm/elixir/String.html)
+- [Unicode case mapping in Elixir](https://hexdocs.pm/elixir/String.Unicode.html)

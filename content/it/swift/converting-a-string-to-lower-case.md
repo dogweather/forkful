@@ -1,40 +1,33 @@
 ---
-title:    "Swift: Convertire una stringa in minuscolo"
+title:    "Swift: Trasformare una stringa in minuscolo"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Perché convertire una stringa in minuscolo? Ci possono essere molte ragioni, ad esempio per rendere uniforme il testo, confrontare due stringhe o per eseguire operazioni di ricerca più precise.
 
-## Come fare
-Per convertire una stringa in minuscolo in Swift, puoi utilizzare il metodo `lowercased()` come mostrato nell'esempio seguente:
+Ci sono molte ragioni per cui un programmatore potrebbe voler convertire una stringa in minuscolo. Ad esempio, potrebbe essere necessario confrontare due stringhe senza considerare le differenze tra maiuscole e minuscole oppure si potrebbe voler ottenere una stringa in un formato uniforme per utilizzi futuri. In generale, la conversione di una stringa in minuscolo può semplificare molti processi di elaborazione dei dati.
 
-```Swift
-let stringaIniziale = "BENVENUTI IN ITALIA"
-let stringaMinuscola = stringaIniziale.lowercased()
+## Come Fare
 
-print(stringaMinuscola) // output: benvenuti in italia
-```
-
-Puoi anche specificare la lingua di riferimento per la conversione, il che risulta utile per alcune lingue che hanno caratteri di codifica diversi. Ad esempio, per la lingua italiana, puoi utilizzare il seguente codice:
+Per convertire una stringa in minuscolo in Swift, possiamo utilizzare il metodo `lowercased()` sul valore della stringa. Vediamo un esempio pratico:
 
 ```Swift
-let stringaIniziale = "BENVENUTI IN ITALIA"
-let stringaMinuscola = stringaIniziale.lowercased(with: Locale(identifier: "it_IT"))
-
-print(stringaMinuscola) // output: benvenuti in italia
+let stringa = "Hello World"
+let stringaInMinuscolo = stringa.lowercased()
+print(stringaInMinuscolo) //stamperà: hello world
 ```
 
-Se necessario, puoi anche convertire una stringa in minuscolo senza utilizzare un metodo specifico, semplicemente utilizzando il metodo `capitalized` e poi rendendo la prima lettera minuscola.
+Come possiamo vedere, il metodo `lowercased()` ci restituisce una nuova stringa con tutti i caratteri in minuscolo. Questo metodo è disponibile per tutti i tipi di stringhe e può essere facilmente utilizzato nei nostri progetti Swift.
 
 ## Approfondimento
-La conversione di una stringa in minuscolo può sembrare un'operazione banale, ma in realtà coinvolge molte operazioni dietro le quinte. Per esempio, le lettere accentate possono essere trasformate in caratteri diversi o addirittura in combinazioni di più caratteri, a seconda della lingua o delle impostazioni di codifica utilizzate.
 
-Inoltre, alcune lingue hanno regole specifiche per il caso, come l'inglese dove i nomi propri sono scritti con la prima lettera maiuscola. Perciò, è importante conoscere bene la lingua con cui si sta lavorando per evitare errori o risultati inaspettati.
+In Swift, la conversione di una stringa in minuscolo si basa sulle specifiche Unicode e tiene conto delle possibili varianti di maiuscole e minuscole di ogni singolo carattere. Inoltre, possiamo specificare esplicitamente la localizzazione in cui vogliamo effettuare la conversione, garantendo così una maggiore precisione nel nostro codice.
 
-## Vedi anche
-- La documentazione ufficiale di Swift per il metodo `lowercased()`: [https://developer.apple.com/documentation/foundation/nsstring/1390491-lowercased](https://developer.apple.com/documentation/foundation/nsstring/1390491-lowercased)
-- Un tutorial su come lavorare con le stringhe in Swift: [https://learnappmaking.com/working-with-strings-swift-how-to/](https://learnappmaking.com/working-with-strings-swift-how-to/)
-- Un esempio di utilizzo del metodo `lowercased()` in una app Swift: [https://theswiftdev.com/how-to-add-a-search-bar-to-filter-results-in-swift/](https://theswiftdev.com/how-to-add-a-search-bar-to-filter-results-in-swift/)
+## Vedi Anche
+
+- [Documentazione ufficiale di Apple su lowercased()](https://developer.apple.com/documentation/swift/string/2427836-lowercased)
+- [Tutorial su come manipolare le stringhe in Swift](https://www.ralfebert.de/ios-examples/string/basics/)
+- [Ulteriori informazioni sull'Unicode nelle stringhe di Swift](https://www.hackingwithswift.com/example-code/strings/swifts-strings-and-unicode)

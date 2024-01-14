@@ -1,61 +1,46 @@
 ---
 title:    "Arduino: Transformer une date en chaîne de caractères"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous aimez travailler avec le langage de programmation Arduino, vous aurez probablement besoin de convertir des données en une forme qui soit plus facile à utiliser. Par exemple, si vous avez besoin d'afficher une date dans un format spécifique, comme "jj/mm/aaaa", vous devrez convertir la date en une chaîne de caractères. Dans ce blog, nous allons vous montrer comment faire cela en utilisant les fonctions de conversion de date de l'Arduino.
+Vous êtes peut-être en train de programmer votre propre horloge ou calendrier sur votre Arduino, ou vous avez simplement besoin de présenter la date sous forme de texte. Dans les deux cas, vous aurez besoin de convertir la date en une chaîne de caractères (string). Heureusement, c'est un processus simple et nous allons vous montrer comment le faire dans cet article.
 
 ## Comment faire
 
-Pour convertir une date en une chaîne de caractères en utilisant Arduino, vous aurez besoin de la bibliothèque RTClib. Si vous n'avez pas encore cette bibliothèque installée, vous pouvez le faire en suivant ces étapes :
-
-1. Ouvrez l'IDE Arduino.
-
-2. Cliquez sur Sketch dans la barre de menu, puis sur Include Library, et enfin sur Manage Libraries.
-
-3. Dans la barre de recherche, tapez "RTCLib" et appuyez sur Entrée.
-
-4. Cliquez sur la bibliothèque RTClib et sur Install.
-
-Maintenant que vous avez la bibliothèque installée, vous pouvez procéder à la conversion de la date en utilisant le code suivant :
+Pour convertir une date en une chaîne de caractères, nous allons utiliser la fonction `sprintf()` de la bibliothèque `Time.h`. Voici un exemple de code :
 
 ```Arduino
-#include <RTClib.h> // Importe la bibliothèque
-
-RTC_DS1307 rtc; // Crée une instance de l'objet RTC
+#include <Time.h>
 
 void setup() {
-  Serial.begin(9600); // Initialise la communication série à une vitesse de 9600 bauds
-  rtc.begin(); // Initialise la bibliothèque RTClib
+  Serial.begin(9600); // initialiser la communication série
+  setTime(12, 34, 56, 1, 4, 2021); // définir la date et l'heure actuelles
 }
 
 void loop() {
-  DateTime now = rtc.now(); // Enregistre la date et l'heure actuelles dans l'objet "now"
-  String date = String(now.day()) + "/" + String(now.month()) + "/" + String(now.year()); // Convertit la date en une chaîne de caractères avec le format souhaité
-  Serial.println(date); // Affiche la date dans la fenêtre du moniteur série
+  char dateStr[11]; // déclarer un tableau pour stocker la date
+  sprintf(dateStr, "%02d/%02d/%04d", day(), month(), year()); // utiliser sprintf pour convertir la date en une chaîne
+  Serial.println(dateStr); // afficher la date sur le moniteur série
+  delay(1000);
 }
 ```
 
-Exemple de sortie :
+Dans cet exemple, nous utilisons la fonction `setTime()` pour définir une date spécifique. Ensuite, nous déclarons un tableau de char (`char`) pour stocker la date sous forme de chaîne avec une taille de 11 caractères (ce qui est suffisant pour une date au format JJ/MM/AAAA). Enfin, nous utilisons `sprintf()` pour remplir ce tableau avec la date formatée en utilisant les fonctions `day()`, `month()` et `year()` fournies par la bibliothèque `Time.h`.
 
-```
-9/11/2021
-```
+Lorsque le code est exécuté, vous devriez obtenir une sortie telle que `04/01/2021` sur le moniteur série de votre Arduino.
 
-## Plongée approfondie
+## Plongez plus profondément
 
-Maintenant, voyons un peu plus en détail comment fonctionne la conversion de la date en une chaîne de caractères. Dans le code ci-dessus, nous utilisons la fonction `now()` de la bibliothèque RTClib pour obtenir la date et l'heure actuelles sous forme d'objet `DateTime`. Cet objet contient différentes fonctions pour accéder aux différentes parties de la date et de l'heure, telles que `day()`, `month()` et `year()`.
+La fonction `sprintf()` est un moyen pratique de convertir des nombres en chaînes de caractères en utilisant un format spécifique, comme nous l'avons fait avec la date dans l'exemple précédent. Cependant, il existe d'autres moyens de convertir des nombres en chaînes, comme la fonction `itoa()` qui convertit un entier en chaîne ou la fonction `String()` qui crée un objet String à partir d'un entier ou d'un nombre à virgule flottante.
 
-Nous utilisons ensuite ces fonctions dans la ligne suivante pour créer une chaîne de caractères avec le format souhaité en utilisant la fonction `String()` pour convertir les valeurs en chaînes de caractères. Enfin, nous imprimons cette chaîne de caractères dans la fenêtre du moniteur série à l'aide de la fonction `println()`.
-
-De cette façon, vous pouvez facilement obtenir la date dans le format de votre choix et l'utiliser dans votre projet Arduino.
+Il est également intéressant de noter que la bibliothèque `Time.h` fournit d'autres fonctions pratiques pour obtenir la date et l'heure actuelles, ainsi que pour effectuer des opérations sur celles-ci.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque RTClib](https://github.com/adafruit/RTClib/blob/master/README.md)
-- [Tutoriel vidéo sur la conversion de date en chaîne de caractères en utilisant Arduino](https://www.youtube.com/watch?v=Jvx-dxJ5h3Q)
-- [Exemples de projets Arduino utilisant la bibliothèque RTClib](https://create.arduino.cc/projecthub/search?q=RTCLib&type=tutorial)
+- La documentation officielle de la bibliothèque `Time.h` : https://www.arduino.cc/en/Reference/Time
+- Un tutoriel sur l'utilisation des fonctions `sprintf()` et `itoa()` : https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm

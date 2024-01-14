@@ -1,58 +1,73 @@
 ---
 title:    "Go: 检查目录是否存在"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在？
+# 为什么要检查目录是否存在
 
-在编程过程中，有时候我们需要检查某个目录是否存在，以便在后续的代码中做出相应的处理。这可以帮助我们避免出现出错的情况，并且可以保证程序的正常运行。
+检查一个目录是否存在，是一个常见的编程需求。在编程中，我们经常需要创建、修改或删除文件，而这些操作都需要先确定目录是否存在。
 
-## 如何进行检查？
+# 如何检查目录是否存在
 
-在Go语言中，我们可以使用os包中的`Stat()`函数来检查目录的存在性。下面是一个示例代码：
+在Go语言中，我们可以使用`os.Stat()`函数来检查目录是否存在。这个函数的返回值是一个`os.FileInfo`类型的对象，我们可以通过它的`IsDir()`方法来判断是否为目录。
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
 func main() {
-    // 定义要检查的目录
-    dir := "/Users/username/go/src"
+    // 定义一个目录路径
+    dir := "my_directory"
 
-    // 使用Stat()函数检查目录是否存在
+    // 调用os.Stat()函数检查目录是否存在
     _, err := os.Stat(dir)
-    if err == nil {
-        // 目录存在
-        fmt.Println("目录存在！")
-    } else if os.IsNotExist(err) {
-        // 目录不存在
-        fmt.Println("目录不存在！")
-    } else {
-        // 其他错误
-        fmt.Println(err)
+
+    // 判断错误类型，如果是目录不存在的错误，则输出"目录不存在"
+    if os.IsNotExist(err) {
+        fmt.Println("目录不存在")
     }
 }
 ```
 
-上面的代码首先定义了要检查的目录，然后使用`Stat()`函数来检查目录的存在性。如果目录存在，则输出"目录存在！"，如果不存在，则输出"目录不存在！"。注意，在检查目录不存在的情况下，我们使用了`os.IsNotExist()`函数来判断具体的错误类型。
+输出结果：
 
-## 深入了解
+```
+目录不存在
+```
 
-在进行目录存在性检查时，我们还可以使用`os.IsExist()`函数来判断目录是否存在，它的返回值为布尔类型。另外，我们也可以使用`os.Getwd()`函数来获取当前工作目录，然后再判断是否为目标目录。
+# 深入了解
 
-# 参考资料
+除了使用`os.Stat()`函数外，我们还可以使用`os.IsDir()`函数来判断一个路径是否为目录。这个函数的返回值是一个布尔值，如果路径是目录，则返回`true`，否则返回`false`。
 
-- [Go语言官方文档 - os包](https://golang.org/pkg/os/)
-- [Go语言中文网 - Os包文档](https://studygolang.com/pkgdoc)
-- [Go语言中文网 - os包介绍及使用示例](https://studygolang.com/articles/3928)
+```Go
+func main() {
+    // 定义一个目录路径
+    dir := "my_directory"
+
+    // 调用os.IsDir()函数判断路径是否为目录
+    isDir := os.IsDir(dir)
+
+    // 如果是目录，则输出"这是一个目录"
+    if isDir {
+        fmt.Println("这是一个目录")
+    }
+}
+```
+
+输出结果：
+
+```
+这是一个目录
+```
+
+# 参考链接
+
+- [Go语言标准库官方文档 - os包](https://golang.org/pkg/os/)
+- [Go语言标准库官方文档 - filepath包](https://golang.org/pkg/filepath/)
+- [Go语言标准库官方文档 - io/fs包](https://golang.org/pkg/io/fs/)
+- [Go语言实战 - 检查文件或目录是否存在](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/02.2.md)
 
 # 参见
 
-- [Go语言中文网 - 文件操作](https://studygolang.com/subject/22)
-- [GopherCon 2018 - Validating Files And Directories In Go](https://www.youtube.com/watch?v=gcI-oK-iifg) (英文)
+- [GitHub - Go语言中文网](https://github.com/golang-china/golangdoc)
+- [Go语言中文网](https://golang-china.org/)

@@ -1,50 +1,37 @@
 ---
 title:    "Bash: Escrevendo um arquivo de texto"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que escrever um arquivo de texto?
 
-Escrever um arquivo de texto é uma tarefa comum para muitos programadores, especialmente aqueles que trabalham com a linguagem de programação Bash. Text files, ou arquivos de texto, são uma forma simples e fácil de armazenar informações em um formato legível por humanos. Isso os torna muito úteis para tarefas como armazenar configurações, scripts e outros dados importantes. Escrever um arquivo de texto usando Bash é uma habilidade valiosa que pode ser aplicada em uma variedade de situações.
+Escrever um arquivo de texto é uma tarefa comum para muitos programadores Bash. Ele permite armazenar informações importantes de forma organizada e acessível. Além disso, um arquivo de texto é uma forma simples de compartilhar informações com outros usuários.
 
-## Como escrever um arquivo de texto em Bash
+## Como fazer:
 
-Para escrever um arquivo de texto em Bash, existem alguns passos simples a serem seguidos:
+Para começar a escrever um arquivo de texto, abra seu terminal e digite o comando "touch" seguido pelo nome desejado para o arquivo. Por exemplo, se você deseja criar um arquivo chamado "meuarquivo.txt", digite "touch meuarquivo.txt". Isso criará um arquivo vazio com o nome escolhido na pasta atual.
 
-1. Abra o terminal e navegue até o diretório onde deseja criar o arquivo de texto.
-2. Use o comando `touch` seguido do nome do arquivo que você deseja criar, com a extensão `.txt`. Por exemplo: `touch meu_arquivo.txt`.
-3. Use o comando `echo` seguido do conteúdo que deseja adicionar ao arquivo, dentro de aspas. Por exemplo: `echo "Este é um exemplo de texto dentro do meu arquivo" > meu_arquivo.txt`.
-4. Para adicionar mais conteúdo ao arquivo, use o comando `echo` seguindo do sinal `>>` e o nome do arquivo. Por exemplo: `echo "Este é outro exemplo de texto" >> meu_arquivo.txt`.
+Agora, você pode usar um editor de texto simples como o Nano ou o Vim para escrever o conteúdo do seu arquivo. Basta digitar "nano meuarquivo.txt" ou "vim meuarquivo.txt" no terminal e pressionar Enter. Isso abrirá o editor de texto e você poderá escrever suas informações.
 
-Aqui está um exemplo completo de como criar um arquivo de texto com duas linhas de texto usando Bash:
+Quando terminar de escrever, pressione "Ctrl + X" para sair do editor e será perguntado se deseja salvar as alterações. Digite "Y" para confirmar e o seu arquivo de texto será salvo.
 
-```Bash
-# Cria um novo arquivo de texto chamado "meu_arquivo.txt"
-touch meu_arquivo.txt
-# Adiciona o primeiro conteúdo ao arquivo
-echo "Este é um exemplo de texto dentro do meu arquivo" > meu_arquivo.txt
-# Adiciona o segundo conteúdo ao arquivo
-echo "Este é outro exemplo de texto" >> meu_arquivo.txt
-```
+Para visualizar o conteúdo do arquivo, use o comando "cat", seguido pelo nome do arquivo. Por exemplo, "cat meuarquivo.txt". Isso mostrará o conteúdo do arquivo no terminal.
 
-## Mergulhando mais fundo
+## Mergulho profundo:
 
-Além dos passos básicos para escrever um arquivo de texto em Bash, existem algumas dicas e truques que podem ser úteis ao trabalhar com este tipo de tarefa.
+Além dos comandos básicos mencionados acima, existem várias opções e recursos disponíveis para escrever e manipular arquivos de texto no Bash. Por exemplo, você pode redirecionar a saída de um comando diretamente para um arquivo de texto usando o operador ">", como em "ls > lista_arquivos.txt", que criará um arquivo com o nome "lista_arquivos.txt" contendo a lista de arquivos do diretório atual.
 
-- Você também pode usar o comando `cat` para ler o conteúdo de um arquivo de texto diretamente no terminal. Por exemplo: `cat meu_arquivo.txt`.
-- Para editar um arquivo de texto já existente, você pode usar o comando `nano` ou `vim` para abrir um editor de texto no terminal.
-- Se for necessário adicionar uma linha em branco entre as linhas de texto no arquivo, você pode usar `echo` com aspas vazias. Por exemplo: `echo "" >> meu_arquivo.txt`.
+Você também pode usar o comando "echo" para escrever diretamente no arquivo, como em "echo "Olá, mundo!" > meuarquivo.txt". Isso adicionará a frase "Olá, mundo!" ao conteúdo do arquivo.
 
-Agora que você sabe como escrever um arquivo de texto em Bash, pode usá-lo em seus projetos para armazenar informações importantes de uma maneira conveniente e fácil de acessar.
+Além disso, você pode concatenar dois ou mais arquivos de texto usando o operador ">>", como em "cat arquivo1.txt >> arquivo2.txt", que adicionará o conteúdo do "arquivo1.txt" ao final do "arquivo2.txt".
 
-## Veja também
+Existem também comandos específicos para manipular e editar arquivos de texto, como "sed" e "awk", que permitem fazer alterações específicas em um arquivo com base em um padrão definido.
 
-Para saber mais sobre como escrever um arquivo de texto em Bash, confira os seguintes recursos:
+## Veja também:
 
-- [Guia de sintaxe do Bash](https://www.gnu.org/software/bash/manual/html_node/Syntax.html)
-- [Tutorial de linha de comando para iniciantes](https://www.digitalocean.com/community/tutorials/como-utilizar-a-linha-de-comando-do-linux-por-meio-de-tutoriais-basicos)
-- [Documentação do comando `echo`](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-
-Agora é só colocar esses conhecimentos em prática e começar a escrever seus próprios arquivos de texto em Bash!
+- [Guia de referência do Bash](https://www.gnu.org/software/bash/manual/)
+- [Comandos úteis do Bash para iniciantes](https://www.hostinger.com.br/tutoriais/comandos-basicos-do-bash)
+- [Tutorial de redirecionamento de saída](https://linuxize.com/post/bash-redirect-stderr-stdout/)

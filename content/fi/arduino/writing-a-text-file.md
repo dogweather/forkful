@@ -1,38 +1,48 @@
 ---
-title:    "Arduino: Tiedoston kirjoittaminen"
+title:    "Arduino: Tekstitiedoston kirjoittaminen"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen on tärkeä osa kehittyvän teknologian oppimiskokemusta, ja Arduino-koodin kirjoittaminen on yksi tapa harjoittaa taitoa. Tekstin kirjoittaminen Arduino-projekteissa voi auttaa sinua dokumentoimaan koodiasi, vianetsintää ja jopa tallentaa tietoja projektesi edistymisestä tulevaisuudessa.
+Kirjoittaminen voi olla hyödyllistä, kun haluat tallentaa tietoa tai viestejä ohjelman suorittamisen aikana. Tekstitiedosto on yksi tapa tallentaa tätä tietoa ja palauttaa se myöhemmin tarvittaessa.
 
-## Miten tehdä sitä
+## Miten
 
-Kirjoittamisen aloittaminen Arduino:ssa on helppoa! Käytä vain ```Arduino Serial.print(); ``` -funktiota haluamasi tiedon tulostamiseen sarjaporttiin. Esimerkiksi, jos haluat tulostaa tekstin "Tämä on tekstiä" sarjaporttiin, kirjoita ```Arduino Serial.print("Tämä on tekstiä"); ```
+Kirjoittaminen teksti-tiedostoon Arduino-ohjelmassa on helppoa. Ensimmäinen vaihe on avata tiedosto, jonka avulla voit kirjoittaa tietoa. Voit tehdä tämän käyttämällä `SD.open()`-funktiota. Seuraavaksi voit käyttää `println()`-funktiota kirjoittaaksesi haluamasi tiedot.
 
-Tämän jälkeen suorita seuraavat vaiheet:
+```Arduino
+#include <SD.h>
 
-1. Avaa Arduino IDE.
-2. Klikkaa "File" ja sitten "New".
-3. Kirjoita haluamasi tiedot ```Arduino Serial.print(); ``` -funktioon.
-4. Yhdistä Arduino Unoon tai muuhun yhteensopivaan laitteeseen.
-5. Klikkaa "Tools" ja sitten "Serial Monitor" avataksesi sarjaportin.
-6. Voit nyt nähdä tulostuksen Arduino Serial Monitorissa.
+File tiedosto;
 
-Toivottavasti tämä auttaa sinua aloittamaan tiedostojen kirjoittamisen Arduino-projektiisi!
+void setup() {
+  tiedosto = SD.open("data.txt", FILE_WRITE);
+  if (tiedosto) {
+    tiedosto.println("Tämä on esimerkki tekstiä.");
+    tiedosto.println("Tässä on toinen esimerkki.");
+    tiedosto.close();
+  }
+}
 
-## Syvempi sukellus
+void loop() {
 
-Halutessasi voit tallentaa tulostamasi tiedot tekstitiedostoon sarjaportin sijaan. Tämä voidaan tehdä käyttämällä SD-kortteja tai EEPROM-muistia. Näiden avulla voit tallentaa ja lukea minkä tahansa tyyppisiä tietoja, kuten numeerisia arvoja ja merkkijonoja.
+}
+```
 
-Voit myös tutustua muihin tapoihin tallentaa tietoja, kuten käyttämällä TFT-näyttöä tai WiFi-yhteyttä.
+Yllä olevassa esimerkissä avataan tiedosto nimeltä "data.txt" ja kirjoitetaan siihen kaksi riviä tekstiä. Muista myös sulkea tiedosto `close()`-funktiolla.
+
+## Syvemmälle
+
+Voit myös käyttää `print()`-funktiota kirjoittaaksesi merkkijonoja tai muuttujia ilman rivinvaihtoa. Voit sitten käyttää `println()`-funktiota lopuksi kirjoittaaksesi uuden rivin.
+
+Voit myös lukea tietoa teksti-tiedostosta käyttämällä `read()`-funktiota. Voit antaa sille parametrin, joka määrittelee kuinka monta merkkiä haluat lukea. Esimerkiksi `read(5)` lukee viisi ensimmäistä merkkiä tiedostosta.
 
 ## Katso myös
 
-- https://www.arduino.cc/en/Reference/SerialPrint
-- https://www.arduino.cc/en/Tutorial/Series
-- https://www.arduino.cc/en/Reference/FileWrite
-- https://www.arduino.cc/en/Reference/EEPROM
+Tässä muutamia hyödyllisiä linkkejä lisätietoa varten:
+
+- Arduino SD-kirjaston dokumentaatio: https://www.arduino.cc/en/Reference/SD

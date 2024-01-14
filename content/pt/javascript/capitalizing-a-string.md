@@ -1,46 +1,49 @@
 ---
 title:    "Javascript: Capitalizando uma string"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que capitalizar uma string?
 
-Capitalizar uma string é uma tarefa comum em programação e pode ser útil em várias situações, como por exemplo, formatar dados de entrada para que fiquem legíveis ou para melhorar a estética de um texto em uma página da web.
+Capitalizar uma string é um processo importante na programação, especialmente quando se trabalha com dados do usuário. Ele permite que o texto seja padronizado e mais legível, tornando-o útil para diversas aplicações, como validação de formulários ou exibição de informações. Neste artigo, vamos explorar como capitalizar uma string em Javascript.
 
-## Como fazer?
+## Como fazer:
 
-Existem várias maneiras de capitalizar uma string em Javascript, mas a mais simples é utilizando o método `toUpperCase()`. Veja um exemplo abaixo:
-
-```Javascript
-let string = "exemplo de texto";
-let stringCapitalizada = string.toUpperCase();
-
-console.log(stringCapitalizada); // saída: EXEMPLO DE TEXTO
-```
-
-Além disso, é possível utilizar regex para capitalizar a primeira letra de cada palavra em uma string, como no exemplo abaixo:
+Para capitalizar uma string em Javascript, podemos utilizar funções nativas e métodos de arrays, como o `charAt` e `toUpperCase`. Veja um exemplo abaixo:
 
 ```Javascript
-let string = "exemplo de texto";
-let stringCapitalizada = string.replace(/\w\S*/g, function(texto) {
-    return texto.charAt(0).toUpperCase() + texto.substr(1).toLowerCase();
-});
+// Definindo a string de entrada
+let string = "chocolate";
 
-console.log(stringCapitalizada); // saída: Exemplo De Texto
+// Criando uma função para capitalizar a primeira letra
+function capitalize(str) {
+    // Separando a primeira letra e o restante da string
+    let firstLetter = str.charAt(0);
+    let restOfStr = str.slice(1);
+
+    // Transformando a primeira letra em maiúscula 
+    let capitalizedStr = firstLetter.toUpperCase() + restOfStr;
+
+    return capitalizedStr;
+}
+
+// Imprime o resultado: "Chocolate"
+console.log(capitalize(string));
 ```
 
-## Aprofundando-se
+Neste exemplo, a função `capitalize` recebe uma string como argumento e retorna a string com a primeira letra em maiúscula. É importante notar que a função `toUpperCase` não altera a string original, mas retorna uma nova string com a letra maiúscula.
 
-Além dos métodos mencionados acima, existem várias outras formas de capitalizar uma string em Javascript. Uma delas é utilizando a biblioteca lodash que oferece a função `capitalize()` que permite capitalizar uma string de forma mais flexível, podendo especificar qual caractere deve ser utilizado como delimitador de palavras.
+## Mais detalhes sobre capitalização de strings:
 
-Outra opção é utilizar o método `replace()` em conjunto com uma expressão regular para substituir a primeira letra de cada palavra pela sua versão capitalizada.
+Existem outras maneiras de capitalizar uma string em Javascript, como utilizar expressões regulares ou bibliotecas externas. Também é possível capitalizar apenas a primeira letra de cada palavra em uma frase, ou até mesmo criar funções personalizadas que atendam às necessidades específicas do seu projeto.
 
-Independentemente do método escolhido, é importante lembrar que strings em Javascript são imutáveis, ou seja, não podem ser alteradas diretamente. Portanto, todas as funções de capitalização irão retornar uma nova string, sem modificar a original.
+Outro aspecto importante ao capitalizar strings é a questão da localização. Dependendo do idioma e alfabeto utilizado, as regras para capitalização podem variar. É sempre bom estar ciente dessas diferenças ao lidar com dados do usuário.
 
-## Veja também
+## Veja também:
 
-- [MDN Web Docs: toUpperCase()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Web Docs: replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Lodash Docs: capitalize()](https://lodash.com/docs/4.17.15#capitalize)
+- [Documentação oficial do método `toUpperCase()` em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Guia de expressões regulares em Javascript](https://braziljs.org/blog/guia-de-expressoes-regulares/)
+- [Biblioteca Lodash para manipulação de strings](https://lodash.com/docs/4.17.15#capitalize)

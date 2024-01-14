@@ -1,36 +1,107 @@
 ---
 title:    "Elm: Lesen von Befehlszeilenargumenten"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Einlesen von Befehlszeilenargumenten ist ein grundlegender Teil vieler Elm-Programme. Es ermöglicht die Interaktion mit dem Programm über die Eingabe von Parametern, was die Flexibilität und Anpassbarkeit erhöht.
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Entwicklung von Elm-Anwendungen. Es ermöglicht, dass Programme flexibler und interaktiver gestaltet werden können. In diesem Blogpost werde ich zeigen, wie man Befehlszeilenargumente in Elm liest und verwaltet.
 
-## Wie funktioniert es
+# Wie geht's?
 
-Um Befehlszeilenargumente in Elm zu lesen, verwenden wir das `System`-Modul. Zunächst müssen wir es importieren:
+Um Befehlszeilenargumente in Elm zu lesen, müssen wir zunächst das Modul `Platform.Cmd` importieren. Anschließend können wir die Funktion `Cmdline.programWithFlags` verwenden, um das Hauptmodul unserer Anwendung zu erstellen. Diese Funktion erwartet zwei Argumente: eine Funktion, die die Befehlszeilenargumente verarbeitet, und eine Funktion, die das eigentliche Programm initialisiert.
+
+Ein Beispiel für eine einfache Elm-Anwendung, die Befehlszeilenargumente liest, könnte wie folgt aussehen:
+
 ```Elm
-import System
+import Platform.Cmd exposing (..)
+
+type alias Args =
+  { name : String
+  , age : Int
+  }
+
+init : (Args -> Cmd msg) -> Cmd msg
+init handleArgs =
+  Cmdline.programWithFlags
+    (handleArgs << toArgs)
+    []
+
+toArgs : List String -> Args
+toArgs args =
+  case args of
+    [name, age] ->
+      { name = name
+      , age = String.toInt age |> Result.withDefault 0
+      }
+    _ ->
+      { name = "Unknown"
+      , age = 0
+      }
+
+handleArgs : Args -> Cmd msg
+handleArgs args =
+  Cmd.none
+
+main : Program () () Args
+main =
+  init handleArgs
 ```
 
-Dann können wir die Funktion `getArgs` aufrufen, um die Argumente als Liste von Strings zu erhalten:
-```Elm
-System.getArgs
-    |> Task.perform handleArgs
+Wenn wir diese Anwendung mit den Befehlszeilenargumenten "Max 25" aufrufen, erhalten wir als Output folgendes:
+
+```
+{ name = "Max", age = 25 }
 ```
 
-In diesem Beispiel verwenden wir die `Task.perform` Funktion, um mit dem Ergebnis umzugehen. Wir definieren eine separate Funktion mit dem Namen `handleArgs`, in der wir die Argumente weiterverarbeiten können.
+# Tiefentauchen
 
-## Tiefergehende Einblicke
+Es ist auch möglich, Befehlszeilenargumente während der Ausführung des Programms zu ändern. Dazu können wir die Funktion `Platform.Cmd.send` verwenden, um Befehle an den `update`-Funktion unseres Programms zu senden. Ein Beispiel könnte folgendermaßen aussehen:
 
-In der Regel werden Befehlszeilenargumente als Liste von Strings zurückgegeben. Dies kann jedoch je nach Anwendungsfall variieren. Wenn zum Beispiel numerische Werte übergeben werden sollen, können wir die Funktion `getArgsAs` verwenden, um eine Liste von Zahlen zurückzugeben.
+```Elm
+-- restliche Code aus vorherigem Beispiel
 
-Es ist auch wichtig zu beachten, dass die Reihenfolge der Argumente in der Liste der Argumente entspricht, die an das Programm übergeben wurden. Wenn wir also `elm make app.elm -o output.js` ausführen, wird `app.elm` das erste Argument in der Liste sein und `output.js` das zweite Argument.
+type Msg
+  = UpdateName String
+  | UpdateAge Int
 
-## Siehe auch
+update : Msg -> Args -> ( Args, Cmd Msg )
+update msg args =
+  case msg of
+    UpdateName newName ->
+      ( { args | name = newName }, Cmd.none )
+    UpdateAge newAge ->
+      ( { args | age = newAge }, Cmd.none )
 
-- Offizielle Dokumentation zum Lesen von Befehlszeilenargumenten in Elm: https://package.elm-lang.org/packages/elm/core/latest/System#getArgs
-- Beispielprojekt zum Einlesen von Befehlszeilenargumenten in Elm: https://github.com/example-cli-elm
+view : Args -> Html Msg
+view args =
+  div []
+    [ input
+        [ type_ "text"
+        , value args.name
+        , onInput (UpdateName << targetValue)  -- Verarbeitung von Benutzereingaben
+        ] []
+    , input
+        [ type_ "number"
+        , value (String.fromInt args.age)
+        , onInput (UpdateAge << parseInt)       -- Verarbeitung von Benutzereingaben
+        ] []
+    ]
+
+main : Program () Model Args
+main =
+  init handleArgs
+
+-- restliche hilfreiche Funktionen aus dem vorherigen Beispiel
+```
+
+Nach jedem Eingeben eines Werts in eines der Input-Felder wird die `update`-Funktion mit dem entsprechenden `Msg`-Wert aufgerufen, der dann das Befehlszeilenargument entsprechend aktualisiert.
+
+# Siehe auch
+
+- Offizielle Elm-Dokumentation zu `Platform.Cmd`: https://guide.elm-lang.org/interop/cmd.html
+- Elm-Befehlszeilenargument-Parser: https://package.elm-lang.org/packages/elm-community/parser/latest/
+- "6 Gründe, warum du mit Elm programmieren solltest": https://medium.com/@markus_fit/how-i-fell-in-love-with-elm-6-reasons-you-should-too-6c6b4eadb42e

@@ -1,42 +1,36 @@
 ---
-title:    "Kotlin: כתיבה אל תוך השגיאה התקנית"
+title:    "Kotlin: כתיבה לתקליטן התקנה"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבה לפלט השגיאה התקני היא פעולה חשובה בתכנות ב-Kotlin. היא מאפשרת למתכנת לראות את הודעות השגיאה של התוכנית שלו ולאפס אותם. כלומר, זה נחישות וזה עוזר לפתור בעיות בקוד.
+לכתוב לתקליט השגיאות (standard error) הוא כלי חשוב בתוכנות בKotlin. התקליט השגיאות הוא מקום שבו תוכניות מדווחות על שגיאות שקרו בזמן הריצה, וכן ניתן להשתמש בו לכתוב הודעות למשתמש כאשר מחזירים תוצאות לא צפויות.
 
 ## איך לעשות זאת
 
-לכתוב לפלט השגיאה התקני ב-Kotlin, ניתן להשתמש בפונקציית "System.err.println()" ולמסור לה את התוכן של הודעת השגיאה כפרמטר. ניתן גם להשתמש בפונקציות נוספות כמו "System.err.print()" ו-"System.err.write()" לכתוב לפלט השגיאה בצורה שונה.
+כתיבת הודעות לתקליט השגיאות בKotlin נעשה באמצעות הפונקציה "println()". ניתן להשתמש בהפונקציה על מנת להדפיס תוצאות או הודעות לתקליט השגיאות כדלקמן:
 
 ```Kotlin
-fun main(args: Array<String>) {
-  val num1 = 10
-  val num2 = 0
-  try {
-    val result = num1 / num2
-    System.err.println("התוצאה היא $result")
-  } catch (e: Exception) {
-    System.err.println("אירעה שגיאה: ${e.message}")
-  }
+fun main() {
+  println("הודעת שגיאה לתקליט השגיאות")
 }
 ```
 
 פלט:
 
-```
-אירעה שגיאה: / by zero
-```
+"הודעת שגיאה לתקליט השגיאות"
 
-## מעמק
+בנוסף, ניתן להשתמש בפונקציה "System.err.println()" כדי להדפיס הודעות מדווחות על שגיאות שקרו בתוכנית.
 
-בנוסף לכתיבה לפלט השגיאה התקני, ניתן גם למצוא את תמתינת השגיאה באמצעות המחלקה "System.err". המחלקה מכילה פונקציות נוספות כמו "System.err.flush()" שמנקה את הפלט, "System.err.checkError()" שבודקת אם יש שגיאה ו-"System.err.close()" שסוגרת את הפלט.
+## צלילה עמוקה
 
-## ראו גם
+העברת הודעות לתקליט השגיאות הוא תהליך חיוני בכתיבת תוכניות בKotlin. ניתן להשתמש בזה באופן יעיל כדי לזהות ולנתח שגיאות כאשר התוכנית מורצת. כמו כן, ניתן להשתמש בתקליט השגיאות להדפיס הודעות מתאימות למשתמש כאשר מחזירים תוצאות לא צפויות.
 
-- [כתיבה לפלט השגיאה התקני ב-Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [משנתו של System.err](https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#err)
+## ראה גם
+
+- פונקציית "println" בדוקומנטציית Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html
+- פונקציית "System.err.println" בדוקומנטציית Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io/-print-writer/println.html

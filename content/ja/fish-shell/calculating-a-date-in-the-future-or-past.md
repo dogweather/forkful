@@ -1,42 +1,45 @@
 ---
-title:    "Fish Shell: 未来や過去の日付を計算する。"
+title:    "Fish Shell: 未来または過去の日付の計算"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-#なぜ
+## なぜ
 
-前後の日付を計算することに興味がある人は多いかもしれません。例えば、予定を立てたり、期限を設定したりするために、未来の日付を知りたい場合があります。または、過去の日付を調べる必要があるかもしれません。Fish Shellを使用してこの計算を行うことは非常に便利です。
+日付を計算する必要性は、未来の予定を把握したり、過去の出来事を確認するために重要です。
 
-#やり方
+## 方法
 
-Fish Shellのインストールがまだの場合は、まずそれを行ってください。次に、組み込みの`date`コマンドを使用して、指定された日付やタイムスタンプから日付を計算することができます。例えば、`date +%Y年%m月%d日 -d "5 days ago"`と入力すると、5日前の日付が表示されます。また、任意の日付やタイムスタンプを指定することもできます。
+```Fish Shell```を使用して、未来または過去の日付を計算する簡単な方法があります。まず、```fish```コマンドでシェルを起動します。次に、```date```コマンドを使用して、今日の日付を取得します。
 
-```Fish Shell
-# 5日後の日付を計算する
-echo (date +%Y年%m月%d日 -d "5 days from now")
-
-# 任意の日付を計算する
-echo (date +%Y年%m月%d日 -d "2021/12/25")
+```
+$ fish
+$ date
+Tue Dec 15 14:37:46 JST 2020
 ```
 
-上記のコマンドを実行すると、次のような出力が得られます。
+次に、```-d```オプションを使用して、未来または過去の日付を計算します。例えば、10日間後の日付を計算するには、以下のように入力します。
 
-> 5 days ago: 2021年06月06日
->
- > 5 days from now: 2021年06月16日
-> 
-> 2021/12/25: 2021年12月25日
+```
+$ date -d "10 days"
+Fri Dec 25 14:37:46 JST 2020
+```
 
-# 詳細を掘り下げる
+同様に、10日前の日付を計算するには、```ago```を追加します。
 
-`date`コマンドにはさまざまなオプションがあり、これを使用することでさらに多くの計算が可能です。例えば、特定の曜日の日付や、指定した日付よりも前または後の最も近い特定の曜日の日付を計算することもできます。また、タイムスタンプの場合は秒単位まで計算することもできます。
+```
+$ date -d "10 days ago"
+Sat Dec 05 14:37:46 JST 2020
+```
 
-詳細なオプションについては、[公式ドキュメント](https://fishshell.com/docs/current/cmds/date.html)を参照してください。
+## ディープダイブ
 
-# 参考
+日付を計算する際に、```date```コマンドに使用できる複数のオプションがあります。これらのオプションを使用することで、さまざまな形式の日付を計算することができます。また、```今日```や```昨日```といった相対的な表現を使用することもできます。詳細な情報については、オフィシャルドキュメントを参照してください。
 
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [日付の計算方法を学ぼう！](https://qiita.com/morizotter/items/195a14d669c50dcb000c#mac%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%A7%E6%97%A5%E4%BB%98%E3%82%92%E8%A8%88%E7%AE%97%E3%81%97%E3%81%9F%E3%81%84)
-- [Fish Shellを使ってコマンドラインで日付を計算する方法](https://www.esri.com/arcgis-blog/products/product/operations/data-management/how-to-calculate-numeric-dates-in-fish-shell/)
+## 参考リンク
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils: Date input formats](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats)
+- [How to calculate dates using the command line on Linux](https://opensource.com/article/20/4/calculating-dates-linux)

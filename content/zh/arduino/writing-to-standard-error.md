@@ -1,43 +1,52 @@
 ---
-title:    "Arduino: 编写标准错误"
+title:    "Arduino: 写入标准错误"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-在编写Arduino程序时，有时候会遇到一些错误。如果我们不知道如何调试和解决这些错误，我们的程序可能无法正常运行。因此，学习如何写入标准错误是非常重要的，它可以帮助我们更有效地调试和解决程序中的问题。
+# 为什么会想要写错误标准输出？
 
-## 如何
-在Arduino编程中，我们可以使用 ```ArduinoprintError()``` 函数来将错误信息写入标准错误。下面是一个示例代码和输出：
+当我们在进行Arduino编程时，我们可能会遇到一些错误。这些错误可能是因为语法错误、逻辑错误或其他错误。如果我们没有正确处理这些错误，我们的程序可能会崩溃或出现不可预知的结果。在这种情况下，写入标准错误输出可以帮助我们定位并解决这些错误，从而提高我们的程序的稳定性和可靠性。
 
-```
-Arduino.printError("无效的变量操作");
-```
-输出：
-```
-Error: 无效的变量操作
-```
+## 如何实现
 
-我们也可以使用 ```ArduinoprintlnError()```函数来分行打印错误信息，如下所示：
+在Arduino中，我们可以使用Serial.print()函数来向串行监视器输出信息。但是，有时我们可能需要将信息输出到标准错误输出。为此，我们可以使用Serial.println(F("error message")); 语句来输出错误消息。F()函数可以将字符串存储到程序存储器中，而不是RAM中，从而节省内存。我们还可以使用Serial.write()函数来向标准错误输出写入单独的字符。
+
+下面是一个简单的示例代码，展示了如何使用标准错误输出来处理错误：
 
 ```
-Arduino.printlnError("无法连接到服务器");
-```
-输出：
-```
-Error: 
-无法连接到服务器
+#include <Arduino.h>
+
+void setup() {
+  Serial.begin(9600); // 初始化串口通信
+}
+
+void loop() {
+  int sensorValue = analogRead(A0); // 读取来自传感器的数据
+  if (sensorValue < 50) { // 如果传感器值小于50
+    Serial.println(F("ERROR: Sensor value too low")); // 输出错误消息
+  }
+  delay(1000); // 延迟1秒钟
+}
 ```
 
-## 深入探讨
-当我们调用 ```ArduinoprintError()``` 或 ```ArduinoprintlnError()``` 函数时，会打印出 "Error:" 开头的错误信息。这些信息会被写入标准错误，默认情况下会将其显示在串行监视器中。要在特定的板子上显示错误信息，可以在 ```Arduino.h``` 头文件中修改输出流的定义。
+在这个例子中，如果传感器的值低于50，程序会输出“ERROR: Sensor value too low”消息到标准错误输出。
 
-## 参考链接
-- [Arduino官方网站](https://www.arduino.cc/)
-- [如何处理Arduino错误](https://shumeipai.nxez.com/2016/07/12/arduino-error-dealing.html)
-- [Arduino错误处理：打印错误信息](https://www.kanhaoyi.com/arduino-shuoming-arduino_error_absolute_error_arduino_error_relative_error.html)
+## 深入了解
 
-## 参见
-- [Arduino编程指南](https://www.arduino.cc/reference/en/)
-- [Arduino标准库参考](https://www.arduino.cc/reference/zh/)
+写入标准错误输出还有其他一些用处。例如，在调试过程中，我们可以在关键的代码部分添加一些输出语句，从而能够查看程序在运行时的状态。这有助于我们更快地定位并解决错误。
+
+此外，我们还可以通过添加条件来控制标准错误输出。例如，我们可以使用if语句来检查程序的状态并根据需要输出相应的错误消息。
+
+# 参考链接
+
+- [Arduino官方文档：Serial.print()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino官方文档：Serial.println()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Arduino官方文档：Serial.write()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/write/)
+
+# 参见
+
+- [Markdown语法指南](https://www.markdownguide.org/)
+- [Arduino示例代码](https://www.arduino.cc/en/Tutorial/HomePage)

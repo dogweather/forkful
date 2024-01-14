@@ -1,17 +1,24 @@
 ---
-title:    "C++: Calcolare una data nel futuro o nel passato"
+title:    "C++: Calcolo di una data nel futuro o nel passato"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile in varie situazioni, come nel campo della programmazione per gestire lo scorrere del tempo o per pianificare eventi futuri.
+Calcolare la data nel futuro o nel passato può risultare utile in varie situazioni, come ad esempio la pianificazione di viaggi o eventi. Inoltre, comprendere il modo in cui il calcolo viene effettuato può aiutare a sviluppare abilità di programmazione più avanzate.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato, è necessario utilizzare una combinazione di funzioni e operatori disponibili in C++. Ad esempio, possiamo utilizzare la funzione `time()` per ottenere l'ora corrente in secondi dal 1 gennaio 1970 e la struttura `tm` per rappresentare una data. Ecco un esempio di codice che calcola la data tra 14 giorni a partire da oggi:
+Per calcolare una data nel futuro o nel passato, è importante conoscere i seguenti elementi:
+
+- Il giorno, il mese e l'anno della data di partenza
+- La quantità di giorni che si desidera aggiungere o sottrarre
+- La logica di calcolo per tener conto dei mesi con un numero diverso di giorni e degli anni bisestili
+
+Per semplificare il processo, possiamo utilizzare il linguaggio di programmazione C++ e la libreria "ctime". Ecco un esempio di codice per calcolare una data nel futuro:
 
 ```C++
 #include <iostream>
@@ -20,39 +27,47 @@ Per calcolare una data nel futuro o nel passato, è necessario utilizzare una co
 using namespace std;
 
 int main() {
-    time_t rawtime;
-    struct tm * timeinfo;
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-
-    // aggiungo 14 giorni alla data corrente
-    timeinfo->tm_mday += 14;
+    // definiamo la data di partenza
+    struct tm data_partenza = {0};
+    data_partenza.tm_year = 2020 - 1900; //anno
+    data_partenza.tm_mon = 9 - 1; //mese (da 0 a 11)
+    data_partenza.tm_mday = 20; //giorno
     
-    // converto in secondi
-    rawtime = mktime(timeinfo);
-
-    // stampo la nuova data
-    cout << "La data tra 14 giorni sarà: " << ctime(&rawtime) << endl;
-
+    // definiamo i giorni da aggiungere
+    int giorni_da_aggiungere = 14;
+    
+    // convertiamo la data di partenza in un formato utilizzabile
+    time_t data_partenza_in_secondi = mktime(&data_partenza);
+    
+    // calcoliamo la data nel futuro
+    time_t data_nel_futuro_in_secondi = data_partenza_in_secondi + (giorni_da_aggiungere * 24 * 60 * 60);
+    
+    // convertiamo la data nel futuro in un formato leggibile
+    struct tm *data_nel_futuro = localtime(&data_nel_futuro_in_secondi);
+    
+    // stampiamo la data nel futuro
+    cout << "La data nel futuro è: " << data_nel_futuro->tm_mday << "/" << data_nel_futuro->tm_mon + 1 << "/" << data_nel_futuro->tm_year + 1900 << endl;
+    
     return 0;
 }
 ```
 
-Output:
+Ecco l'output del codice:
 
 ```
-La data tra 14 giorni sarà: Thu Nov 4 04:20:12 2021
+La data nel futuro è: 3/10/2020
 ```
 
 ## Approfondimento
 
-Per calcolare una data nel futuro o nel passato, è importante comprendere il funzionamento della funzione `time()` e della struttura `tm`. Inoltre, è possibile utilizzare anche altre funzioni come `strftime()` per formattare la data in modo personalizzato o `difftime()` per calcolare la differenza in secondi tra due date.
+L'esempio di codice fornito utilizza la logica di calcolo della libreria "ctime" per tenere conto dei mesi e degli anni. Tuttavia, è possibile scrivere una funzione personalizzata per effettuare un calcolo più preciso, ad esempio considerando anche le ore, i minuti e i secondi.
 
-Un altro aspetto da tenere in considerazione è la gestione dei fusi orari, che può influire sui calcoli delle date. È importante utilizzare le funzioni disponibili per la gestione dei fusi orari, come `gmtime()` o `localtime()`, in base alle esigenze del progetto.
+Inoltre, ci sono molti altri modi per calcolare una data nel futuro o nel passato. Ad esempio, si potrebbe utilizzare una libreria di terze parti specifica per la manipolazione delle date, oppure si potrebbe implementare un algoritmo più complesso che tenga conto di fattori come i fusi orari o le festività.
+
+In ogni caso, la conoscenza dei concetti di base spiegati in questo articolo fornisce una buona base per comprendere e utilizzare strategie più avanzate di calcolo delle date.
 
 ## Vedi anche
-- [Funzione `time()` su cplusplus.com](http://www.cplusplus.com/reference/ctime/time/)
-- [Struttura `tm` su cplusplus.com](http://www.cplusplus.com/reference/ctime/tm/)
-- [Funzione `strftime()` su cplusplus.com](http://www.cplusplus.com/reference/ctime/strftime/)
-- [Funzione `difftime()` su cplusplus.com](http://www.cplusplus.com/reference/ctime/difftime/)
-- [Gestione dei fusi orari su cplusplus.com](http://www.cplusplus.com/reference/ctime/timezone/)
+
+- [Utilizzo della libreria "ctime" in C++](https://www.geeksforgeeks.org/ctime-library-in-c/)
+- [Esempi di codice per calcolare una data nel futuro in C++](https://www.programiz.com/cpp-programming/library-function/ctime/mktime)
+- [Esempi di codice per calcolare una data nel futuro in altre lingue di programmazione](https://en.wikipedia.org/wiki/Addition_of_time_and_date)

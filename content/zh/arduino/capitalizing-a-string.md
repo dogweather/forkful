@@ -1,51 +1,42 @@
 ---
-title:    "Arduino: 将字符串转换为大写字母"
+title:    "Arduino: 编程中的大写字符串"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：首先，让我们来看看为什么我们需要学习如何使用Arduino编程去大写字符串。大写字符串是一种非常有用的技能，它可以帮助我们在代码中处理字符串，使它们更加容易识别和处理。
+#为什么：为什么要学习如何在Arduino中将字符串大写？
+在编程中，有时候我们需要将字符串转换为大写，例如当我们需要比较字符串时。学习如何在Arduino中将字符串大写可以帮助我们更轻松地处理字符串数据。
 
-## 如何操作
-
-要开始大写字符串，我们需要首先引入Arduino的字符串库。这可以通过在sketch中添加以下代码来实现： 
-
+##如何进行：
+首先，我们需要使用Arduino的`String`类来声明一个字符串变量，例如`String text = "hello world";`。然后，我们可以使用`toUpperCase()`函数来将该字符串转换为大写，代码如下：
 ```Arduino
-#include <String.h>
+String text = "hello world";
+text.toUpperCase(); //此时text的值为"HELLO WORLD"
+```
+我们也可以使用`+`运算符来将两个字符串合并，并将其转换为大写：
+```Arduino
+String text1 = "hello";
+String text2 = "world";
+String text3 = text1 + text2;
+text3.toUpperCase(); //此时text3的值为"HELLO WORLD"
+```
+在Arduino中，我们还可以使用自定义函数来将某个字符串中的字母逐个转换为大写。代码示例如下：
+```Arduino
+void toUpperCase(String& str) {
+  for (int i = 0; i < str.length(); i++) {
+    str.setCharAt(i, toupper(str.charAt(i))); 
+  }
+}
+
+String text = "hello world";
+toUpperCase(text); //此时text的值为"HELLO WORLD"
 ```
 
-接下来，我们需要创建一个字符串变量，并给它赋予我们想要大写的字符串。假设我们想要大写"hello"，那么我们可以这样写： 
+##深入了解：
+在C++中，字符串被存储在字符数组中，每个字符对应一个ASCII码。ASCII码中，小写字母从97（a）开始，大写字母从65（A）开始，它们的差值为32。因此，将小写字母转换为大写字母，只需要将其ASCII码减去32即可。在前面的例子中，`toUpperCase()`函数和自定义函数的作用原理实际上就是这样。
 
-```Arduino
-String myString = "hello";
-```
-
-接下来，我们需要使用`toUpperCase()`函数来大写我们的字符串。我们可以这样写： 
-
-```Arduino
-myString.toUpperCase();
-```
-
-最后，我们可以使用`println()`函数来输出大写的字符串并验证结果。整个代码如下所示： 
-
-```Arduino
-#include <String.h>
-
-String myString = "hello";
-myString.toUpperCase();
-println(myString);
-```
-
-运行代码后，我们可以在串口监视器中看到输出结果为"HELLO"，这就是我们所期待的结果！
-
-## 深入探讨
-
-现在，让我们来更深入地了解一下如何大写字符串。`toUpperCase()`函数实际上是使用ASCII码来改变字符串中的每个字符的值。ASCII码是一种常用的字符编码系统，它为每个字符分配一个唯一的数字值。大写字母比小写字母的ASCII码值小32。因此，通过加上32，我们可以将小写字母转换为大写字母。
-
-除了使用`toUpperCase()`函数，我们还可以通过循环遍历每个字符，并使用`toUpper()`函数来逐个改变字符的值。这可以帮助我们更深入地理解字符串的处理过程。
-
-## 参考链接
-
-- [Arduino官方文档-字符串库](https://www.arduino.cc/reference/zh/libraries/string/)
-- [ASCII码表](http://www.asciitable.com/)
+##参考资料：
+- [Arduino官方文档 - String类](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [ASCII码表](https://www.asciitable.com/)

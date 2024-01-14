@@ -1,42 +1,52 @@
 ---
 title:    "Elixir: Tekstitiedoston kirjoittaminen"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
+Elixir: Miksi ja miten kirjoittaa tekstitiedosto
+
 ## Miksi
 
-Kirjoittaminen on olennainen osa ohjelmointia. Tekstimuotoisen tiedoston kirjoittaminen Elixirillä mahdollistaa ohjelman suorittamisen ja toiminnan tallentamisen pysyvästi. Tämä voi olla hyödyllistä esimerkiksi tietokannan ylläpitämisessä tai konfiguraatiotiedostojen luomisessa.
+Tekstitiedostojen kirjoittaminen on tärkeä osa Elixir-ohjelmoinnin oppimista. Se antaa meille mahdollisuuden tallentaa ja käsitellä tietoja pysyvästi ilman, että ne häviävät, kun ohjelman suoritus päättyy.
 
-## Näin teet sen
+## Miten
 
-Tallentaaksesi tekstiä tiedostoon käytä `File.write` funktiota antaen sille tiedoston nimen ja tekstisisällön parametreina.
+Tekstitiedoston kirjoittaminen Elixirissä on helppoa ja vaivatonta. Käytämme siihen `File.write` funktiota ja annamme sille tiedoston nimen ja halutun sisällön. Alla on esimerkki:
 
-```Elixir
-File.write("tekstitiedosto.txt", "Tämä on kirjoitettu Elixirillä")
+```elixir
+File.write("tiedosto.txt", "Tämä on tekstiä tiedostoon!")
 ```
 
-```Elixir
-IO.puts File.read("tekstitiedosto.txt")
-=> "Tämä on kirjoitettu Elixirillä"
+Kun suoritamme tämän koodinpätkän, se luo uuden tiedoston nimeltä "tiedosto.txt" ja tallentaa siihen annetun tekstin. Voimme myös käyttää `File.write!` funktiota, joka heittää virheen, jos tiedoston kirjoittaminen ei onnistu.
+
+Voimme myös helposti lisätä tekstiä jo olemassa olevaan tiedostoon käyttämällä `File.write` funktiota sekä `:append`-optiota. Esimerkiksi:
+
+```elixir
+File.write("tiedosto.txt", "Lisättyä tekstiä", [:append])
 ```
 
-## Syvällisempää tietoa
+Tämä koodipätkä lisää "Lisättyä tekstiä" tiedoston loppuun sen sijaan, että korvaisi koko sisällön.
 
-Tekstimuotoisen tiedoston kirjoittamisessa voi myös käyttää `IO.write` funktiota, joka antaa mahdollisuuden toimia binäärimuotoisen datan kanssa.
+## Deep Dive
 
-```Elixir
-#luo uusi tiedosto ja kirjoittaa siihen binääridataa
-IO.binwrite("binääritiedosto.txt", <<1, 2, 3, 4>>)
+Tekstitiedoston kirjoittaminen Elixirissä perustuu `IO` moduulin `write` funktioon, jota `File` moduuli käyttää sisäisesti. Tämä funktio kirjoittaa merkkijonon annettuun tietovirtaan ja palauttaa `:ok` atomimme, jos kirjoitus onnistuu.
 
-#lue tiedostosta binääridataa ja tulosta se
-IO.binread("binääritiedosto.txt") |> IO.inspect
+Lisäksi voimme jälleen käyttää `IO.write` funktiota yhdessä `File.open` funktion kanssa saadaksemme täyden kontrollin tiedoston kirjoittamiseen. Esimerkiksi:
 
-=> <<1, 2, 3, 4>>
+```elixir
+File.open("tiedosto.txt", [:write], fn file ->
+  IO.write(file, "Ensimmäinen rivi")
+  IO.write(file, "Toinen rivi")
+  IO.write(file, "Kolmas rivi")
+end)
 ```
+
+Tämä koodinpätkä avaa tiedoston, kirjoittaa siihen kolme riviä käyttäen `IO.write` funktiota ja sulkee tiedoston, kun `fn` lohko suoritetaan loppuun.
 
 ## Katso myös
-
-- [Elixirin dokumentaatio tiedostojen kirjoittamisesta](https://hexdocs.pm/elixir/File.html#write/3)
-- [Markdown syntaksi](https://www.markdownguide.org/basic-syntax/)
+- [Elixirin virallinen dokumentaatio tiedostojen kirjoittamisesta](https://hexdocs.pm/elixir/File.html#write/3)
+- [IO moduulin dokumentaatio](https://hexdocs.pm/elixir/IO.html)
+- [Elixirin virallinen dokumentaatio tiedoston avaamisesta](https://hexdocs.pm/elixir/File.html#open/2)

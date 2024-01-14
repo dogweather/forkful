@@ -1,32 +1,51 @@
 ---
-title:    "Elixir: Convertir une date en chaîne de caractères"
+title:    "Elixir: Conversion d'une date en chaîne de caractères"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Il existe de nombreuses raisons pour lesquelles vous pourriez vouloir convertir une date en chaîne de caractères dans le langage Elixir. Cela peut faciliter la manipulation de dates pour les afficher dans un format spécifique, les enregistrer dans une base de données ou les utiliser dans des contextes de comparaison.
+Il est souvent nécessaire de convertir une date en chaîne de caractères dans nos programmes Elixir. Cela peut être utile pour afficher la date dans un format spécifique ou pour l'utiliser dans une requête HTTP. Heureusement, Elixir rend cette tâche assez simple et nous allons découvrir comment le faire dans cet article.
 
-# Comment faire
+## Comment faire
 
-Pour convertir une date en string en utilisant Elixir, vous pouvez utiliser la fonction `Calendar.format`. Voici un exemple de code pour convertir une date en chaîne de caractères dans le format "jour-mois-année" :
+La conversion d'une date en chaîne de caractères en Elixir se fait grâce à la fonction `DateTime.to_iso8601/1`. Celle-ci prend en paramètre une date au format Elixir et retourne une chaîne de caractères représentant cette date au format ISO8601.
+
+Voici un exemple de code utilisant cette fonction:
 
 ```Elixir
-date = ~D[2021-03-22]
-formatted_date = Calendar.format(date, "~d-~m-~Y")
-IO.puts formatted_date
+date = ~D[2021-05-15]
+DateTime.to_iso8601(date)
+
+# Résultat: "2021-05-15T00:00:00Z"
 ```
 
-La sortie de ce code serait "22-03-2021". Vous pouvez également utiliser d'autres formats de date en utilisant les tokens spécifiques de `Calendar.format`.
+Comme vous pouvez le voir, la date a été convertie en une chaîne de caractères avec le format "AAAA-MM-JJTHH:MM:SSZ". Ceci est le format standard pour les dates en Elixir.
 
-# Plongée en profondeur
+Mais que faire si vous souhaitez un format différent? Pas de soucis, Elixir offre également la fonction `DateTime.to_string/3` qui permet de spécifier un format personnalisé pour la date.
 
-En Elixir, les dates sont représentées par des structures de données appelées `Date` et `DateTime`. La fonction `Calendar.format` utilise ces structures pour convertir une date en chaîne de caractères. Il est également possible de personnaliser les formats en utilisant des tokens plus spécifiques et en utilisant des options de localisation pour les langues et les calendriers différents.
+```Elixir
+date = ~D[2021-05-15]
+DateTime.to_string(date, "{0}-{1}-{2}")
 
-# Voir aussi
+# Résultat: "2021-05-15"
+```
 
-- Documentation des dates en Elixir : https://hexdocs.pm/elixir/Calendar.html
-- Guide des tokens de formatage des dates : https://hexdocs.pm/elixir/Calendar.html#module-tokens-for-formatting-dates
-- Tutoriel sur la manipulation des dates avec Elixir : https://dev.to/duffryn/how-to-use-dates-in-elixir-37jp
+Dans cet exemple, nous avons spécifié un format avec trois paramètres représentant l'année, le mois et le jour. La fonction `DateTime.to_string/3` utilise ces paramètres pour construire la chaîne de caractères finale.
+
+## Plongée en profondeur
+
+Pour mieux comprendre comment Elixir convertit une date en chaîne de caractères, il est important de savoir comment les dates sont représentées en Elixir.
+
+Une date en Elixir est en fait un module `DateTime` qui contient plusieurs fonctions pour manipuler et afficher des dates. Parmi celles-ci, nous avons `DateTime.to_iso8601/1` et `DateTime.to_string/3` que nous avons vues précédemment.
+
+Il est également important de noter que par défaut, Elixir utilise le fuseau horaire UTC pour toutes les dates. Cependant, vous pouvez spécifier un fuseau horaire différent en utilisant la fonction `DateTime.shift_zone/2`.
+
+## Voir aussi
+
+- La documentation officielle sur les dates en Elixir: <https://hexdocs.pm/elixir/DateTime.html>
+- Un article sur la manipulation de dates en Elixir: <https://medium.com/@bogdanvlviv/handling-dates-and-times-in-elixir-9e77a51b6397>
+- Une liste de bibliothèques pour travailler avec les dates en Elixir: <https://github.com/avelino/awesome-go#datetime>

@@ -1,32 +1,41 @@
 ---
 title:    "Fish Shell: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Liczenie daty w przyszłości lub przeszłości może być niezbędne w wielu sytuacjach, na przykład przy planowaniu zadań lub wydarzeń lub przy obliczaniu wieku w przeszłości. W tym artykule pokażemy, jak można to zrobić za pomocą języka Fish Shell.
 
-## Jak to zrobić
-Liczenie daty w przyszłości lub przeszłości w Fish Shell jest bardzo proste. Wystarczy użyć wbudowanej funkcji `date`.
+Będąc programistą, często musimy pracować z datami w przyszłości lub przeszłości. Odliczanie dni, tygodni lub miesięcy może być czasochłonne i trudne. Jednak dzięki kodowaniu w Fish Shell, możemy szybko i łatwo obliczyć datę w przyszłości lub przeszłości.
 
-Najpierw należy ustawić aktualną datę przy użyciu `set` i `date`, a następnie dodać lub odjąć odpowiednią liczbę dni, tygodni, miesięcy lub lat. Na przykład, aby obliczyć datę za pół roku od dzisiaj, można użyć poniższego kodu:
+## Jak to zrobić?
 
-```Fish Shell
-set current_date (date)
-set future_date (date -u +6mo)
-echo $future_date
+Aby obliczyć datę w przyszłości lub przeszłości w Fish Shell, musimy użyć wbudowanej komendy "date" z flagą "-d". Przykładowa składnia kodu wygląda następująco:
+
+```
+Fish Shell> date -d "1 day"
+```
+To spowoduje wyświetlenie daty za 1 dzień w przyszłości. Innym przydatnym poleceniem jest "date -d", aby obliczyć datę w przeszłości. Na przykład:
+
+```
+Fish Shell> date -d "1 week ago"
 ```
 
-W tym przypadku użyłem flagi `-u`, która oznacza, że ​​wynikowa data będzie w formacie UTC. Można również użyć innych flag, aby dostosować format wyniku. Pełna lista dostępnych flag jest dostępna w dokumentacji Fish Shell.
+Powyższy kod wyświetli datę z tygodniem wstecz w przeszłości. Możemy również używać różnych jednostek czasu, takich jak miesiące i lata. Na przykład:
 
-## Deep Dive
-Jeśli chcesz dowiedzieć się więcej o liczeniu daty w przyszłości lub przeszłości, warto skorzystać z funkcji `man` w Fish Shell. Wpisz po prostu `man date` w terminalu, aby przeczytać szczegółową dokumentację dotyczącą tej funkcji.
+```
+Fish Shell> date -d "2 months"
+```
 
-Mamy także dostęp do kilku innych funkcji, które mogą być przydatne przy pracy z datami w Fish Shell, takich jak `time`, `strftime` czy `strptime`. Można je również znaleźć w dokumentacji Fish Shell.
+Spowoduje wyświetlenie daty za 2 miesiące w przyszłości. Aby zobaczyć pełną listę dostępnych opcji dla komendy "date -d", możemy użyć polecenia "man date" w Fish Shell.
+
+## Dogłębnie
+
+Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki wbudowanej komendzie "date" w Fish Shell, która używa biblioteki GNU Date. Ta biblioteka oferuje wiele opcji, które pozwalają nam na obliczanie dat w różnych jednostkach czasu i wyświetlanie wyniku w różnych formatach. W Fish Shell możemy również używać zmiennych, aby przechowywać obliczone daty i wykorzystać je w naszym kodzie.
 
 ## Zobacz również
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Funkcja date w Fish Shell](https://fishshell.com/docs/current/cmds/date.html)
-- [Poradnik Fish Shell na GitHub](https://github.com/fish-shell/fish-shell)
+
+- [Dokumentacja Fish Shell dotycząca obliczania daty](https://fishshell.com/docs/current/commands.html#date)
+- [Dokumentacja GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

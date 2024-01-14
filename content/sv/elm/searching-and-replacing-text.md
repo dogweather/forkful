@@ -1,36 +1,38 @@
 ---
-title:    "Elm: Sökning och ersättning av text"
+title:    "Elm: Söka och ersätta text"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att söka och ersätta text kan verka som en småsak, men det är faktiskt en viktig del av programmering. Genom att lära sig hur man gör detta i Elm kommer du kunna effektivisera ditt arbete och undvika onödiga fel.
+Det kan ibland vara frustrerande och tidskrävande att manuellt söka och ersätta text i sin kod. Med hjälp av Elm och dess inbyggda funktioner kan denna process göras enklare och snabbare. 
 
-## Så här gör man
+# Hur man gör det
 
-För att söka och ersätta text i Elm, använd funktionen `String.replace` som tar tre argument: den sträng du vill söka igenom, det du vill ersätta och det nya ordet eller frasen du vill ersätta med. Här är ett exempel:
+För att söka och ersätta text i Elm, använd funktionen `replace` som tar emot tre argument: den ursprungliga strängen, den sökta strängen och den ersättningssträngen. Nedan ser du en kodexempel som ersätter alla förekomster av "hej" med "hello" i en sträng:
 
-````Elm
-myString = "Hej världen!"
-result = String.replace "världen" "Elm!" myString
-````
+```Elm
+replace "hej everyone" "hej" "hello" == "hello everyone"
+```
 
-Det resulterande värdet av `result` kommer att vara "Hej Elm!".
+Obs: den här funktionen returnerar en ny sträng, den ändrar inte den ursprungliga strängen.
 
-En annan användbar funktion är `String.replaceOne`, som endast ersätter den första förekomsten av det du vill byta ut. Om du vill söka och ersätta i en lista av strängar, kan du använda `List.map` och `String.replace` tillsammans för att effektivt iterera över listan och göra de nödvändiga ändringarna.
+# Dyk ner i detaljer
 
-## Djupdykning
+För att göra sök- och ersättningsprocessen mer robust kan man använda sig av Elm-paketet `elm-string-extra` som erbjuder flera användbara funktioner, såsom att ignorera eller matcha stora och små bokstäver och använda reguljära uttryck. Se nedan för exempel av dessa funktioner:
 
-Det finns flera andra funktioner inom Elm som kan hjälpa dig att söka och ersätta text, inklusive `String.replaceRegex` som använder reguljära uttryck för mer avancerade sök- och ersättningsmönster. Det finns också möjligheter att använda piper för att göra dessa operationer mer läsbara och mer kompakta.
+```Elm
+import String.Extra exposing (replaceCaseInsensitive, replaceAllRegex)
 
-## Se även
+replaceCaseInsensitive "This is a TeSt" "test" "example" == "This is a example"
+replaceAllRegex "[0-9]+" "There are 10 apples and 15 oranges." "X" == "There are X apples and X oranges."
+```
 
-Här är några länkar till mer information om sök- och ersättningsfunktioner i Elm:
+# Se även
 
-- [Officiell dokumentation för String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Artikel om String-modulen på Elm Discovery](https://elm-discovery.org/docs/string)
-
-Lycka till med att söka och ersätta text i dina Elm-projekt!
+- [Elm dokumentation för strängar](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm-paketet elm-string-extra på Elm Packages](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
+- [RegExr - en användbar plattform för att testa reguljära uttryck](https://regexr.com/)

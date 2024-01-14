@@ -1,54 +1,43 @@
 ---
-title:    "Elixir: Tulevan tai menneen päivämäärän laskeminen"
+title:    "Elixir: Laskenta tulevaisuuden tai menneen päivämäärän arvioimiseksi"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Moni saattaa ihmetellä, miksi haluaisimme laskea päivämäärän tulevaisuudessa tai menneisyydessä. Yksi syy tähän voi olla esimerkiksi sovelluksessa tarvittavat aikarajat tai laskut, jotka perustuvat tiettyyn päivämäärään.
+Elixir on dynaaminen ja joustava ohjelmointikieli, jonka avulla voit luoda tehokkaita ja luotettavia sovelluksia. Yksi käytännöllinen toiminto, jonka Elixir tarjoaa, on päivämäärän laskeminen tulevaisuudesta tai menneisyydestä. Tässä blogikirjoituksessa kerromme, miksi tämä toiminto on hyödyllinen ja miten sitä voidaan käyttää.
 
 ## Miten
 
-Laskeminen tiettyä päivämäärää tulevaisuudessa tai menneisyydessä on helppoa Elixir-ohjelmointikielellä. Voimme käyttää siihen `DateTime`-moduulia, jonka sisältämät funktiot helpottavat ajankäytön käsittelyä.
+Voit laskea tulevaisuuden tai menneisyyden päivämääriä käyttämällä Elixirin `Calendar` moduulia. Tämä moduuli tarjoaa kattavan valikoiman toimintoja päivämäärien käsittelyyn.
+
+Katsotaanpa ensin, miten voimme laskea päivämäärän tietyn määrän päiviä tulevaisuuteen. Käytämme `Date.add/2` -funktiota, joka ottaa ensimmäisenä parametrina päivämäärän ja toisena parametrina päivien määrän, jonka haluamme lisätä siihen. Esimerkiksi, jos meillä on päivämäärä "1.1.2021" ja haluamme lisätä siihen 5 päivää, käytämme seuraavaa koodia:
 
 ```elixir
-iex> DateTime.add(DateTime.utc_now, weeks: 2)
-#=> ~U[2021-05-17 14:58:30.265057Z]
-
-iex> DateTime.add(DateTime.utc_now, years: -5)
-#=> ~U[2016-05-03 14:58:30.265057Z]
+iex> Date.add(~D[2021-01-01], 5)
+~D[2021-01-06]
 ```
 
-Näissä esimerkeissä käytimme `DateTime.add`-funktiota lisäämään tai vähentämään aikaa annetuilla parametreilla. Voit myös tarkistaa halutun päivämäärän eroa nykyhetkestä käyttämällä `DateTime.diff`-funktiota.
+Saman tuloksen saamme myös käyttämällä `Date.add/3` -funktiota, joka ottaa ensimmäisenä parametrina päivämäärän, toisena parametrina päivien määrän ja kolmantena parametrina yksikön, johon haluamme lisätä päivät. Esimerkiksi, jos haluamme lisätä kuukauden päivämäärään "1.1.2021", käytämme seuraavaa koodia:
 
 ```elixir
-iex> DateTime.diff(~U[2022-12-25], DateTime.utc_now, :days)
-#=> 596
+iex> Date.add(~D[2021-01-01], 1, :month)
+~D[2021-02-01]
 ```
 
-Tämä palauttaa päivien määrän nykyhetkestä tulevaan joulupaivaan.
+Voimme myös laskea menneisyyden päivämääriä käyttämällä `Date.subtract/2` tai `Date.subtract/3` -funktioita. Nämä toimivat samalla tavalla kuin vastaavat lisäysfunktiot, mutta vähentävät päiviä tai yksiköitä päivämäärästä.
 
-## Syvempi sukellus
+## Syvällinen sukellus
 
-Elixirin `DateTime`-moduuli sisältää monia hyödyllisiä funktioita, kuten `DateTime.truncate`, joka leikkaa aikaleimasta pois halutun ajan yksiköt. Tämä voi olla hyödyllistä esimerkiksi vertaillessa kahta päivämäärää.
+On myös mahdollista laskea päivämääriä tarkemmin käyttämällä `Date.add/3` ja `Date.subtract/3` -funktioita. Näiden funktioiden kolmas parametri määrittää, millä tarkkuudella päivämäärään lisätään tai vähennetään. Oletusarvoisesti käytetään päiviä (`:day`), mutta voimme myös käyttää muita yksiköitä, kuten viikkoja (`:week`), kuukausia (`:month`) tai vuosia (`:year`). Voimme myös käyttää useampia parametreja samaan aikaan, jolloin päivämäärään lisätään tai vähennetään monia yksikköjä.
 
-```elixir
-iex> DateTime.truncate(DateTime.utc_now, :hour)
-#=> ~U[2021-04-28 14:00:00.000Z]
-```
-
-Voit myös muuttaa aikavyöhykettä `DateTime.change_timezone`-funktiolla.
-
-```elixir
-iex> DateTime.change_timezone(DateTime.utc_now, "Europe/Helsinki")
-#=> ~U[2021-04-28 17:58:30.265057+03:00]
-```
-
-Voit tutustua kaikkiin `DateTime`-moduulin tarjoamiin toimintoihin Elixirin virallisesta dokumentaatiosta.
+Lisäksi Elixirin `Calendar` moduuli tarjoaa myös muita hyödyllisiä toimintoja päivämäärien tarkasteluun ja muokkaamiseen. Tutustu rohkeasti moduulin dokumentaatioon ja löydät lisää käyttökelpoisia toimintoja.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio DateTime-moduulista](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixirin Github-repositorio](https://github.com/elixir-lang/elixir)
+- [Elixirin `Calendar` moduulin dokumentaatio](https://hexdocs.pm/elixir/master/Calendar.html)
+- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/)
+- [Elixirin yhteisöfoorumi](https://

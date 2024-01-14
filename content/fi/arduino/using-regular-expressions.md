@@ -1,58 +1,43 @@
 ---
-title:    "Arduino: Säännöllisten ilmaisujen käyttö"
+title:    "Arduino: Säännöllisten lausekkeiden käyttö"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-#
-## Miksi
+## Miksi käyttää säännöllisiä lausekkeita Arduino-ohjelmoinnissa?
 
-Arduino on yksi suosituimmista avoimen lähdekoodin elektroniikkaprotokollista ja kehitysalustoista. Sen avulla voit helposti ja edullisesti luoda monenlaisia elektronisia projekteja. Yksi Arduino-kehitysalustan hienouksista on sen kyky käyttää säännöllisiä lausekkeita, joiden avulla voit tunnistaa ja käsitellä erilaisia merkkijonoja. Tässä blogikirjoituksessa opit kuinka hyödyntää näitä säännöllisiä lausekkeita Arduino-projekteissasi!
+Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja Arduino-ohjelmoijille. Ne mahdollistavat merkkijonojen tarkastelun ja käsittelyn monimutkaisilla tavoilla, mikä on erityisen hyödyllistä, kun halutaan etsiä tiettyä merkkijonoa vaikkapa sensorilta saadusta datasta.
 
-## Kuinka tehdä se
+## Miten käyttää säännöllisiä lausekkeita Arduinolla?
 
-Käyttäessäsi säännöllisiä lausekkeita Arduino-koodissasi, sinun täytyy ensin sisällyttää "regex" kirjasto koodiisi:
-
-```Arduino
-#include <regex.h>
-```
-
-Sen jälkeen voit käyttää säännöllisiä lausekkeita esimerkiksi "match" ja "replace" funktioiden avulla. Tässä on yksinkertainen esimerkki, jossa muutetaan "Hello World" merkkijonoksi "Hi World":
+Arduino-ohjelmoinnissa säännöllisiä lausekkeita käytetään `regex`-kirjaston avulla. Kirjasto tarjoaa funktioita, joilla voidaan määrittää haluttu säännöllinen lauseke ja etsiä se merkkijonosta. Alla on esimerkki koodista, jolla etsitään säännöllisellä lausekkeella `"lämpötila:"` alkavaa merkkijonoa:
 
 ```Arduino
-String myString = "Hello World";
-regexReplace(myString, "Hello", "Hi");
+#include <Regex.h>
 
-Serial.println(myString); // Tulostaa "Hi World"
-```
+String data = "lämpötila: 25°C";
+Regex regex("lämpötila: \[0-9]+°C");
 
-Voit myös käyttää säännöllisiä lausekkeita tarkistamaan, onko annettu merkkijono oikeassa muodossa:
-
-```Arduino
-String myString = "123456";
-
-if(regexMatch(myString, "[0-9]+")){
-  // Tee jotain jos merkkijono koostuu vain numeroista
+if (regex.match(data)) {
+  // Säännöllinen lauseke löytyi, tulostetaan tulos
+  Serial.println(regex.matched());
+} else {
+  // Säännöllistä lauseketta ei löytynyt
+  Serial.println("Ei löytynyt.");
 }
 ```
 
-Huomaa, että säännöllisiä lausekkeita käytettäessä, merkkijonojen täytyy olla String-tyyppisiä. Sinun täytyy myös käyttää "regexMatch" tai "regexReplace" funktioiden sijaan "match" tai "replace" funktioita.
+Koodin tuloste on `"lämpötila: 25°C"`.
 
-## Syvällinen sukellus
+## Syvällisempi sukellus säännöllisiin lausekkeisiin
 
-Säännölliset lausekkeet ovat erittäin kätevä työkalu tekstin käsittelyssä ja pääset vielä syvemmälle, kun opit käyttämään lausekkeita eri tavoin. Tässä muutamia esimerkkejä:
-
-- Voit käyttää säännöllisiä lausekkeita tunnistamaan ja korvaamaan tiettyjä merkkejä tai sanoja merkkijonossa.
-- Voit käyttää erilaisia säännöllisiä lausekkeita tarkistamaan, onko merkkijono oikeassa muodossa, esimerkiksi tarkistamaan, onko sähköpostiosoite oikeassa muodossa.
-- Voit käyttää säännöllisiä lausekkeita luomaan monimutkaisempia ehtolausekkeita, jotka perustuvat merkkijonon sisältöön.
-
-Kannattaa tutustua tarkemmin säännöllisiin lausekkeisiin ja niiden eri käyttötapoihin, jos haluat hyödyntää niitä entistä enemmän Arduino-projekteissasi.
+Mikäli haluat käyttää säännöllisiä lausekkeita Arduino-ohjelmoimissa vielä monimutkaisemmin, voit tutustua `regex`-kirjaston [dokumentaatioon](https://github.com/nickgammon/Regex). Sieltä löytyy lisätietoa mm. funktioista ja säännöllisten lausekkeiden merkinnöistä.
 
 ## Katso myös
 
-- [Säännöllisten lausekkeiden opas (englanniksi)](https://www.regular-expressions.info/)
-- [Arduino - String-tyypin ohjedokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino - "regex" kirjaston ohjedokumentaatio](https://www.arduino.cc/reference/en/libraries/regex/)
+- [regex-kirjasto Arduinolle](https://github.com/nickgammon/Regex)
+- [Säännölliset lausekkeet käyttöoppaan alkuunpano](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/regex/)
 
-Kiitos, että luit tämän blogikirjoituksen ja toivottavasti se auttaa sinua hyödyntämään säännöllisiä lausekkeita Arduino-projekteissasi!
+Kiitos, että luit tämän artikkelin säännöllisistä lausekkeista Arduino-ohjelmoimisessa. Toivottavasti tämä auttaa sinua hyödyntämään tätä voimakasta työkalua omassa koodissasi!

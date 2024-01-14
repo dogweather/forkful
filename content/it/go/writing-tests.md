@@ -1,52 +1,50 @@
 ---
 title:    "Go: Scrivere test"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in Go
+## Perché scrivere test in Go?
 
-Scrivere test può sembrare una perdita di tempo, ma in realtà aiuta a garantire che il codice sia corretto e funzioni correttamente. Inoltre, aiuta a identificare gli errori in modo tempestivo, consentendo agli sviluppatori di risolverli prima che diventino problemi costosi.
+Scrivere test è un'attività essenziale per garantire che il tuo codice funzioni correttamente e rimanga stabile nel tempo. In particolare, nei progetti di sviluppo in Go, i test sono estremamente importanti poiché il linguaggio stesso incoraggia una programmazione modulare e test-driven.
 
 ## Come scrivere test in Go
 
-Scrivere test in Go è semplice e questo linguaggio offre numerose funzionalità che facilitano la scrittura dei test. Di seguito è riportato un esempio di codice che mostra come scrivere un test di unità per una semplice funzione che calcola la somma di due numeri.
+Per scrivere test in Go, è necessario utilizzare il pacchetto di testing integrato nel linguaggio. Ecco un esempio di test di una semplice funzione che calcola l'area di un quadrato:
 
-```
-Go func Sum(a, b int) int {
-	return a + b
+```Go
+func calcolaArea(lato float64) float64 {
+   return lato * lato
 }
 
-func TestSum(t *testing.T) {
-	result := Sum(2, 3)
-	if result != 5 {
-		t.Errorf("Expected result to be 5, got %d instead", result)
-	}
+func TestCalcolaArea(t *testing.T) {
+   risultato := calcolaArea(5)
+
+   if risultato != 25 {
+      t.Error("Il risultato dovrebbe essere 25, ma è", risultato)
+   }
 }
 ```
 
-L'output di questo test sarà il seguente:
+Eseguendo questo test con il comando `go test`, otterrai un output come questo:
 
 ```
---- FAIL: TestSum (0.00s)
-    main_test.go:8: Expected result to be 5, got 6 instead
+--- FAIL: TestCalcolaArea (0.00s)
+   main_test.go:14: Il risultato dovrebbe essere 25, ma è 20
+FAIL
+exit status 1
 ```
 
-In questo esempio è stato utilizzato il pacchetto `testing` di Go per creare il test e il suo output è stato controllato utilizzando la funzione `t.Errorf` che stampa un messaggio di errore se il test fallisce. Questo è solo un esempio di come scrivere un test in Go, ma ci sono molte altre funzionalità che rendono la scrittura dei test più efficiente e completa.
+## Approfondimenti sui test in Go
 
-## Approfondimenti sulla scrittura dei test
+Quando si scrivono test in Go, è importante tenere a mente alcuni concetti fondamentali. Prima di tutto, è consigliabile scrivere test per ogni funzione e metodo del tuo codice. Inoltre, è importante verificare che i tuoi test siano il più indipendenti possibile per evitare risultati errati a causa di dipendenze esterne.
 
-Scrivere test efficaci richiede un'adeguata comprensione di come il codice funziona e delle possibili situazioni di errore che possono verificarsi. Inoltre, è importante utilizzare strumenti come il codice di copertura dei test per misurare l'efficacia dei test. Alcune linee guida generali per scrivere buoni test includono:
-
-- Scrivere test per ogni funzionalità del codice
-- Testare anche le situazioni di errore e i percorsi alternativi
-- Utilizzare le asserzioni per controllare i risultati dei test
-
-Scrivere test può richiedere tempo e sforzi aggiuntivi, ma a lungo termine risulta essere un processo fondamentale per il successo del progetto.
+Per ulteriori informazioni, puoi consultare la documentazione ufficiale di Go sulla scrittura di test.
 
 ## Vedi anche
 
-- [Documentazione ufficiale dei test in Go](https://golang.org/pkg/testing/)
-- [Tutorial di Test-Driven Development in Go](https://www.digitalocean.com/community/tutorials/how-to-use-go-with-test-driven-development) (in inglese)
-- [Articolo sul codice di copertura dei test in Go](https://blog.alexellis.io/golang-writing-unit-tests/) (in inglese)
+- [Documentazione ufficiale di Go sulla scrittura di test](https://golang.org/pkg/testing/)
+- [Cosa è il test-driven development e perché dovresti utilizzarlo](https://blog.golang.org/cover)
+- [Tutorial su Go Testing di Tutorialspoint](https://www.tutorialspoint.com/go/go_testing.htm)

@@ -1,69 +1,48 @@
 ---
 title:    "Haskell: Escrevendo um arquivo de texto"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Escrever um Arquivo de Texto?
+## Por que escrever um arquivo de texto em Haskell?
 
-Escrever um arquivo de texto é uma habilidade essencial para qualquer programador Haskell, pois permite armazenar e manipular dados de forma organizada e eficiente. Além disso, arquivos de texto são uma forma comum de comunicação entre diferentes programas e sistemas.
+Escrever um arquivo de texto em Haskell pode ser útil para armazenar dados ou resultados de um programa de forma permanente. Além disso, é uma habilidade essencial para programas que lidam com I/O (entrada e saída), pois permite que o usuário interaja com o programa através de um arquivo de texto.
 
-## Como Fazer
+## Como fazer:
 
-Para escrever um arquivo de texto em Haskell, primeiro precisamos abrir o arquivo usando a função `openFile`. Esta função recebe três parâmetros: o nome do arquivo, o modo de abertura (leitura, escrita, etc) e uma ação a ser executada caso o arquivo não exista. Por exemplo:
-
-```Haskell
-f <- openFile "meuarquivo.txt" WriteMode
-```
-
-Agora, podemos utilizar a função `hPutStrLn` para escrever uma linha de texto no arquivo:
-
-```Haskell
-hPutStrLn f "Olá, este é um arquivo de texto!"
-```
-
-Lembre-se de fechar o arquivo usando a função `hClose` após terminar de escrever. Aqui está um exemplo completo de como escrever um arquivo de texto em Haskell:
+Para escrever um arquivo de texto em Haskell, é necessário importar o módulo "System.IO". Em seguida, utilizamos a função "writeFile" para escrever o conteúdo desejado no arquivo, passando como argumento o nome do arquivo e o conteúdo. Por exemplo:
 
 ```Haskell
 import System.IO
 
 main = do
-    f <- openFile "meuarquivo.txt" WriteMode
-    hPutStrLn f "Olá, este é um arquivo de texto!"
-    hClose f
+    writeFile "meuarquivo.txt" "Olá, mundo!"
 ```
 
-O resultado será um arquivo chamado "meuarquivo.txt" contendo a linha de texto "Olá, este é um arquivo de texto!".
+**Saída:** Um arquivo chamado "meuarquivo.txt" será criado com o conteúdo "Olá, mundo!". É importante lembrar que a função "writeFile" sobrescreve o conteúdo de um arquivo existente, portanto é importante tomar cuidado caso não queira perder informações.
 
-## Aprofundando-se
+Outra forma de escrever em um arquivo é utilizar a função "appendFile", que acrescenta conteúdo no final do arquivo em vez de sobrescrevê-lo.
 
-Além da função `hPutStrLn`, existem outras funções úteis para escrever em arquivos de texto, como `hPutStr` e `hPutChar`. Você também pode escrever listas de strings no arquivo usando a função `hPutStr`, como neste exemplo:
-
-```Haskell
-nomes <- ["João", "Maria", "Pedro"]
-hPutStr f (unlines nomes) -- escreve cada nome em uma linha no arquivo
-```
-
-Outro aspecto importante ao escrever arquivos de texto é lidar com possíveis erros durante o processo. Para isso, podemos usar o bloco `try/catch` do módulo `Control.Exception`:
+Para ler o conteúdo de um arquivo de texto, podemos utilizar a função "readFile", que retorna uma string com o conteúdo do arquivo. Exemplo:
 
 ```Haskell
-import System.IO
-import Control.Exception
-
 main = do
-    result <- try (hPutStrLn f "Texto de exemplo") :: IO (Either IOException ())
-    case result of
-        Left ex  -> print $ "Erro ao escrever no arquivo: " ++ show ex
-        Right () -> print "Arquivo escrito com sucesso"
+    conteudo <- readFile "meuarquivo.txt"
+    putStrLn conteudo
 ```
 
-Dessa forma, podemos tratar possíveis erros e garantir que nosso programa não quebre caso ocorra algum problema ao escrever no arquivo.
+**Saída:** O conteúdo do arquivo "meuarquivo.txt" será exibido no terminal.
 
-## Veja Também
+## Mergulho profundo:
 
-Aqui estão alguns links úteis para continuar aprendendo sobre como manipular arquivos de texto em Haskell:
+Além das funções "writeFile", "appendFile" e "readFile", o módulo "System.IO" possui diversas outras funções para lidar com arquivos de texto em Haskell. É possível abrir, fechar, renomear e mover arquivos, além de realizar operações de I/O com arquivos binários.
 
-- [Documentação oficial do Haskell sobre manipulação de arquivos](https://www.haskell.org/onlinereport/io.html)
-- [Tutorial em vídeo sobre como ler e escrever arquivos em Haskell](https://www.youtube.com/watch?v=SrYwW_3Z-XY)
-- [Exemplos práticos de como trabalhar com arquivos em Haskell](https://tryhaskell.org/)
+Lembrando que em Haskell, a manipulação de arquivos é feita de forma pura, ou seja, não há efeitos colaterais e a função sempre retornará o mesmo resultado para os mesmos argumentos. Isso torna o código mais seguro e fácil de testar.
+
+## Veja também:
+
+- [Documentação do módulo System.IO](https://www.haskell.org/onlinereport/haskell2010/haskellch9.html)
+- [Tutorial de Haskell na Wikibooks](https://pt.wikibooks.org/wiki/Haskell/Exemplo_de_programação_com_IO_avançado)
+- [Guia de Haskell no Wikiversity](https://pt.wikiversity.org/wiki/Guia_de_Haskell,_Parte_6:_Entrada_e_saída)

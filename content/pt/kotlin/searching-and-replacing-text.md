@@ -1,46 +1,52 @@
 ---
 title:    "Kotlin: Buscando e substituindo texto"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-A substituição de texto é uma tarefa comum em programação, especialmente quando se trata de manipulação de strings. Ao aprender como fazer isso em Kotlin, você poderá economizar tempo e esforço em suas tarefas de codificação.
+# Por que procurar e substituir texto é importante para programadores
 
-## Como fazer
-Para substituir texto em uma string em Kotlin, você pode usar o método `.replace()` em uma instância da classe `String`. Este método aceita dois parâmetros: a string que você deseja substituir e a string que será usada como substituta. Por exemplo:
+Procurar e substituir texto é uma tarefa comum em programação que pode economizar muito tempo e esforço. É útil para fazer alterações em blocos de código grandes e repetitivos, bem como para corrigir erros ortográficos ou atualizar dados em massa. Neste artigo, vamos explorar como realizar essas tarefas em Kotlin.
 
-```Kotlin
-val string = "Hello World!"
-val novaString = string.replace("Hello", "Olá")
-println(novaString)
-```
-O output será: "Olá World!".
+## Como fazer em Kotlin
 
-Se você precisar substituir mais de uma ocorrência da string, pode adicionar um terceiro parâmetro opcional para especificar o número máximo de substituições a serem feitas:
+A primeira etapa para procurar e substituir texto em Kotlin é importar a classe `Regex` no seu projeto. Em seguida, você pode usar o método `replace` para substituir uma expressão regular por uma nova cadeia de caracteres. Por exemplo:
 
 ```Kotlin
-val string = "Hello World, Hello Universe!"
-val novaString = string.replace("Hello", "Olá", 1)
-println(novaString)
+val texto = "Este é um exemplo de substituição de texto em Kotlin."
+val novoTexto = texto.replace(Regex("Kotlin"), "Java")
+println(novoTexto) // saída: Este é um exemplo de substituição de texto em Java.
 ```
-O output será: "Olá World, Hello Universe!".
 
-Você também pode usar expressões regulares para substituir texto em uma string. Por exemplo, se você quiser substituir todas as letras maiúsculas por minúsculas em uma string, pode usar o método `.replace()` com uma expressão regular e a função `.toLowerCase()`:
+Você também pode usar o método `replaceFirst` para substituir apenas a primeira ocorrência da string. E se você quiser salvar a nova string em uma variável, basta usar o operador de atribuição `=`.
 
 ```Kotlin
-val string = "Olá Mundo!"
-val novaString = string.replace(Regex("[A-Z]"), { it.value.toLowerCase() })
-println(novaString)
+val texto = "Este é um exemplo de substituição de texto em Kotlin."
+val novaString = texto.replaceFirst(Regex("em Kotlin"), "com Java")
+println(novaString) // saída: Este é um exemplo de substituição de texto com Java.
 ```
 
-O output será: "olá mundo!".
+Você pode usar expressões regulares mais complexas para procurar e substituir padrões específicos em uma string. Por exemplo, se você quiser substituir todos os números por asteriscos, você pode fazer o seguinte:
 
-## Deep Dive
-O método `.replace()` aceita uma expressão regular ou uma sequência literal como o primeiro parâmetro. Se for uma expressão regular, ele substituirá todas as ocorrências correspondentes na string. No entanto, se for uma sequência literal, ele substituirá apenas a primeira ocorrência. Você também pode usar uma expressão regular para fazer substituições com base em padrões mais complexos, como combinações de caracteres, espaços em branco ou símbolos específicos.
+```Kotlin
+val texto = "12345 abcdef"
+val novoTexto = texto.replace(Regex("\\d"), "*")
+println(novoTexto) // saída: ***** abcdef
+```
 
-## Veja também
-- [Documentação oficial do Kotlin sobre o método `.replace()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Tutorial do Kotlin sobre expressões regulares](https://kotlinlang.org/docs/regex.html)
-- [Artigo sobre manipulação de strings em Kotlin](https://www.raywenderlich.com/7073363-kotlin-strings-tutorial-for-android-getting-started)
+Note que precisamos adicionar uma barra invertida antes do dígito para indicar que é um caractere especial na expressão regular. Esta é apenas uma das muitas maneiras de usar expressões regulares para procurar e substituir texto em Kotlin.
+
+## Aprofundando-se em busca e substituição de texto
+
+Embora as expressões regulares sejam uma maneira poderosa e flexível de procurar e substituir texto, elas também podem ser difíceis de entender no começo. Felizmente, existem muitos recursos on-line úteis para aprender mais sobre expressões regulares em Kotlin. Aqui estão alguns links para você explorar:
+
+- [Documentação oficial do Kotlin sobre expressões regulares](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [Tutorial do Vogella sobre expressões regulares em Kotlin](https://www.vogella.com/tutorials/KotlinRegularExpressions/article.html)
+- [Exemplos interativos de expressões regulares em Kotlin](https://regex101.com/library/am7s8V)
+
+# Ver também
+
+- [Tutorial do Kotlin: Como fazer string interpolation](https://kotlinlang.org/docs/strings.html#string-interpolation)
+- [Site oficial do Kotlin](https://kotlinlang.org/)

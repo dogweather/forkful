@@ -1,45 +1,51 @@
 ---
 title:    "Elixir recipe: Printing debug output"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an essential part of programming, allowing developers to identify and fix issues in their code. One useful tool in the debugging process is printing debug output. By printing specific values or messages during runtime, developers can gain insight into the behavior of their code and pinpoint any errors or unexpected results.
+### Why
 
-## How To
-Printing debug output in Elixir is a straightforward process. In this section, we will go through some coding examples to demonstrate how to print debug output in different scenarios.
+Debugging is an essential part of any programming language, and Elixir is no exception. In order to effectively debug our code, printing debug output can be an incredibly valuable tool. It allows us to see the values of variables at different points in our code and gives us a better understanding of how our program is functioning.
+
+### How To
+
+Printing debug output in Elixir is quite simple. We can use the `IO.inspect` function to print out the values of variables at any point in our code. Let's take a look at an example:
 
 ```Elixir
-# Printing a single value
-IO.inspect("Hello World")
-# Output: "Hello World"
-
-# Printing multiple values
-IO.inspect({2 + 3, "Elixir"})
-# Output: {5, "Elixir"}
-
-# Printing inside a function
-def add(x, y) do
-  result = x + y
-  IO.inspect("The result is: #{result}")
-  result
+defmodule Math do
+  def add(x, y) do
+    IO.inspect x
+    IO.inspect y
+    x + y
+  end
 end
-add(5, 2)
-# Output: "The result is: 7"
+
+Math.add(5, 10)
 ```
 
-As you can see, the `IO.inspect` function allows us to print any value or expression to the terminal. It also returns the value, making it useful when used inside other functions.
+In this example, we have a simple `add` function that takes in two parameters and adds them together. Before the addition, we use `IO.inspect` to print out the values of `x` and `y`. Running this code will produce the following output:
 
-## Deep Dive
-While `IO.inspect` is a handy tool, there are a few things to keep in mind when using it for debugging. First, it is essential to note that printing debug output can affect the performance of your code. If you have a large amount of output, it can slow down your application.
+```Elixir
+5
+10
+15
+```
 
-Another thing to consider is the use of `IO.puts` vs. `IO.inspect`. While both functions print to the terminal, `IO.puts` only accepts strings and will not return the value. On the other hand, `IO.inspect` can print any value or expression and return the value.
+We can see that the values of `x` and `y` were printed out before being added together. This can be incredibly useful in identifying any unexpected values or errors in our code.
 
-Finally, you can also pass a second argument to `IO.inspect` to specify the level of depth to print for nested data structures. By default, it has a depth of 5, but you can increase or decrease this according to your needs.
+### Deep Dive
 
-## See Also
-- [Elixir Debugging Techniques](https://elixir-lang.org/getting-started/debugging.html)
-- [Inspect module documentation](https://hexdocs.pm/elixir/Inspect.html)
-- [Debugging in Elixir with Pry](https://medium.com/@mobileoverlord/debugging-your-elixir-code-with-pry-a1ba13ff59e5)
+While `IO.inspect` is the most commonly used method for printing debug output, there are a few other options available in Elixir. These include `IO.puts` and `IO.warn` which can be useful in different scenarios. 
+
+Additionally, Elixir provides us with the `Logger` module, which allows us to print out more detailed information about our code, such as the current process and line number. Using `Logger` can be especially helpful when working with concurrent processes in Elixir.
+
+There are also various options for formatting the output, such as using `inspect` which displays the data in a more user-friendly format, or `IO.inspect` with the `pretty: true` option, which helps with readability of nested data structures.
+
+### See Also
+
+- [Elixir official documentation on debugging](https://elixir-lang.org/getting-started/debugging.html)
+- [ElixirSchool article on IO module](https://elixirschool.com/en/lessons/basics/io/)
+- [ElixirForum discussion on printing debug output](https://elixirforum.com/t/print-function-for-debugging/5487)

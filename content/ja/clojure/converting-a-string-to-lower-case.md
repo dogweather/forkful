@@ -1,39 +1,33 @@
 ---
-title:    "Clojure: 「文字列を小文字に変換する」"
+title:    "Clojure: 小文字に文字列を変換する"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-文字列を小文字に変換することのメリットは何ですか？Clojureプログラミングをする上で、なぜ文字列を小文字に変換する必要があるのでしょうか？
+文字列を小文字に変換することのメリットは、同じ文字列が異なる大文字と小文字の組み合わせで表されることがあるため、一貫性のないデータを整理するのに役立ちます。
 
 ## 方法
-
-Clojureでは、文字列を小文字に変換するための便利な関数があります。下記のコード例を参考にしてください。
-
 ```Clojure
-; 文字列を小文字に変換
-(.toLowerCase "HELLO WORLD") ; 出力結果：hello world
+; 文字列を格納する変数を定義する
+(def my-string "Hello World")
 
-; 変数に代入して使うこともできます
-(def greeting "こんにちは")
-(.toLowerCase greeting) ; 出力結果：こんにちは
+; 文字列を小文字に変換する
+(.toLowerCase my-string)
+
+; 変換後の結果を確認する
+(print "小文字に変換後の文字列: " (.toLowerCase my-string))
 ```
 
-このように、`.toLowerCase`関数を使うことで、簡単に文字列を小文字に変換することができます。
+上記のコードを実行すると、`小文字に変換後の文字列: hello world`という結果が得られます。変換前の文字列に大文字が含まれていた場合でも、すべて小文字に変換されます。
 
-## 深堀り
+## ディープダイブ
+Clojureでは、文字列を小文字に変換するには`(.toLowerCase string)`メソッドを使います。このメソッドはJavaの`toLowerCase()`と同様の機能を持っており、文字列を小文字に変換します。ただし、Clojureでは文字列を操作するための独自の関数やマクロを提供しているため、これらを使っても同じ結果を得ることができます。
 
-Clojureでは、`.toLowerCase`関数を使用する際に、文字の大きさを無視することができます。これは、文字の大小を区別する必要がない場合や、データの整形をする際にとても便利です。また、`.toUpperCase`関数を使うことで、文字列を大文字に変換することもできます。
+また、Clojureでは文字列の大文字と小文字を無視するための比較関数も提供されています。例えば、`(= "hello" "Hello")`という式は`true`を返します。
 
-さらに、`clojure.string`ライブラリを使用することで、より多くの文字列操作ができるようになります。例えば、`.replace`関数を使うことで、指定した文字列を別の文字列に置き換えることができます。
-
-## 関連リンク
-
- [簡単に始めるClojure](https://clojure.org/guides/getting_started)
-
- [Clojureドキュメント](https://clojuredocs.org/)
-
- [clojure.stringライブラリのドキュメント](https://clojuredocs.org/clojure.string)
+## See Also
+- [Clojure 文字列操作関数](https://clojure.org/api/cheatsheet#String Functions)
+- [文字列の大文字と小文字を無視する](https://clojure.org/guides/weird_characters#_ignoring_case)

@@ -1,55 +1,55 @@
 ---
-title:    "Haskell: Ekstrakcja podciągów"
+title:    "Haskell: Wyodrębnianie podłańcuchów"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu musimy operować na tekstach, wycinając z nich odpowiednie fragmenty. W języku Haskell istnieje wiele sposobów na wydobycie podciągów ze stringów. W tym artykule przekażę Wam kilka przydatnych trików, które pomogą Wam w tym zadaniu.
+W dziennym programowaniu często musimy pracować z tekstowymi danymi i czasami potrzebujemy wyodrębnić pewne części tych danych. W tym wpisie na blogu dowiesz się, jak w języku Haskell wyodrębniać podłańcuchy, aby ułatwić sobie pracę z tekstami.
 
 ## Jak to zrobić
 
+Wyodrębnienie podłańcucha w Haskellu jest bardzo proste i wygodne dzięki wbudowanej funkcji "take" oraz "drop". Oto kilka przykładów kodu z użyciem tych funkcji:
+
 ```Haskell
--- Użyj funkcji `take` do wydobycia pierwszych n znaków ze stringa
-take :: Int -> [a] -> [a]
+-- Utworzenie przykładowego tekstu
+tekst = "To jest przykładowy tekst"
 
--- Przykład użycia:
-take 4 "Haskell" -- Zwróci "Hask"
+-- Pobranie pierwszych 10 znaków
+take 10 tekst
+-- Wynik: "To jest pr"
 
--- Użyj funkcji `drop` do pominięcia pierwszych n znaków ze stringa
-drop :: Int -> [a] -> [a]
+-- Pominięcie pierwszych 5 znaków
+drop 5 tekst
+-- Wynik: " jest przykładowy tekst"
+```
 
--- Przykład użycia:
-drop 3 "Haskell" -- Zwróci "kell"
+Możemy także wykorzystać funkcję "takeWhile" i "dropWhile" do wyodrębnienia podłańcucha spełniającego określone warunki. Przykłady użycia tych funkcji:
 
--- Użyj funkcji `splitAt` do podzielenia stringa na dwa podciągi na podstawie indeksu
-splitAt :: Int -> [a] -> ([a], [a])
+```Haskell
+-- Utworzenie przykładowej listy liczb
+liczby = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
--- Przykład użycia:
-splitAt 4 "Haskell" -- Zwróci ("Hask", "ell")
+-- Pobranie liczb mniejszych niż 5
+takeWhile (<5) liczby
+-- Wynik: [1, 2, 3, 4]
 
--- Możesz również użyć list comprehension do wydobycia podciągów
--- na podstawie warunków
-[ x | x <- "Haskell", x `elem` "aieou" ] -- Zwróci "ae"
-
--- Funkcja `subsequences` zwraca wszystkie możliwe podciągi danego stringa
-subsequences "abc" -- Zwróci ["","a","b","ab","c","ac","bc","abc"]
+-- Pominięcie liczb większych niż 7
+dropWhile (>7) liczby
+-- Wynik: [1, 2, 3, 4, 5, 6, 7]
 ```
 
 ## Głębszy zanurzenie
 
-Zanim zaczniemy używać funkcji do wyciągania podciągów, warto przyjrzeć się jej implementacji. W języku Haskell, stringi są reprezentowane jako listy znaków, więc wykorzystując funkcje związane z listami, możemy łatwo operować na stringach.
+Istnieją również inne sposoby na wyodrębnienie podłańcucha w Haskellu, takie jak korzystanie z funkcji "substring" z modułu Data.Text lub wykorzystanie wyrażeń regularnych z pomocą modułu Text.Regex. Dokładniejsze informacje na ten temat można znaleźć w dokumentacji języka Haskell.
 
-Funkcja `take` jest dosyć prosta - pobiera od nas liczbę znaków, które chcemy wydobyć oraz listę znaków, ze której chcemy je pobrać. Następnie zwraca nową listę zawierającą tylko pierwsze n znaków z oryginalnej listy.
+## Zobacz także
 
-Funkcje `drop` i `splitAt` działają podobnie, przyjmując odpowiednio liczbę znaków do pominięcia lub punkt podziału stringa.
+Jeśli jesteś zainteresowany/a nauką języka Haskell i programowaniem funkcyjnym, polecam zapoznać się z następującymi linkami:
 
-Funkcja `subsequences` jest trochę bardziej skomplikowana, ponieważ musi zwrócić wszystkie możliwe kombinacje podciągów. Wykorzystuje do tego rekurencję i kształtuje listy zawierające wszystkie możliwe kombinacje.
-
-## Zobacz również
-
-- [Oficjalna dokumentacja Haskell](https://www.haskell.org/documentation/)
-- [Tutorial dla początkujących w języku Haskell](https://learnxinyminutes.com/docs/pl-pl/haskell-pl/)
-- [10 przykładów użycia list comprehension w języku Haskell](https://wiki.haskell.org/List_comprehension_examples)
+- [Oficjalna dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Kurs programowania funkcyjnego w Haskellu](https://www.seas.upenn.edu/~cis194/spring13/)
+- [Nauka programowania funkcyjnego w języku Haskell z projektami](https://www.codewars.com/collections/fun-with-func-templates-courses-middle-level)

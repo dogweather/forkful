@@ -1,44 +1,63 @@
 ---
 title:    "C: 开始一个新项目"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要开始一个新的项目？
+## 为什么要开始一个新项目
 
-开始一个新的项目可以带来很多好处，比如拓展技能、解决实际问题、创造新的东西等等。不管是从个人发展的角度还是从使用者的角度，参与一个新的项目都是很有益的。
+每个程序员都经历过开始一个新项目的挑战，有时候我们会被杂乱的代码和缺乏方向感所困扰。但是，开发新项目也有许多好处。它可以帮助我们学习新的编程技巧，提升我们的技能，并且让我们有机会创造出新的有用的程序。
 
-## 如何开始
+## 如何开始一个新项目
+
+首先，确定你的目标是什么。你想要开发一个什么样的程序？它的功能是什么？一旦你确定了目标，就可以开始编写代码了。
+
+下面是一个简单的C语言示例，用来计算两个数的和并输出结果：
+
 ```C
 #include <stdio.h>
 
 int main() {
-    printf("欢迎来到C语言世界！\n");
-    
-    return 0;
+  int num1, num2, sum;
+
+  printf("请输入两个整数: ");
+  scanf("%d %d", &num1, &num2);
+
+  sum = num1 + num2;
+
+  printf("%d + %d = %d", num1, num2, sum);
+
+  return 0;
 }
 ```
-在开始一个新的C语言项目之前，首先要确保你已经安装了C编译器和一个能够编辑代码的文本编辑器。接下来，可以通过创建一个简单的“Hello World”程序来测试编译器是否正常工作。使用上面的代码，编译并运行程序，如果成功的话，你应该能够在控制台上看到输出的“欢迎来到C语言世界！”。
 
-## 深入探讨
-开始一个新的C语言项目，通常需要以下步骤：
+输出结果：
 
-- 确定项目的目标和需求
-- 设计程序的结构和功能
-- 编写代码和调试
-- 测试和优化程序
-- 发布和维护程序
+```
+请输入两个整数: 10 20
+10 + 20 = 30
+```
 
-同时，要记住一些重要的编程原则，比如模块化、可读性、健壮性等等，这些都将有助于你更好地开始和完成一个新的项目。
+如你所见，我们使用`scanf()`函数来接收用户的输入，并且使用`printf()`函数来输出结果。如果你还不熟悉这些函数，建议先学习基本的C语法知识。
 
-# 参考链接
+## 深入了解开始一个新项目
 
-- [C编程入门](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [如何在Windows上编译和运行C程序](https://www.w3schools.in/c-tutorial/windows/)
-- [C语言教程](https://www.tutorialspoint.com/cprogramming/index.htm)
+在开始一个新项目之前，最好先做好一些准备工作。首先，需要确定你选择的编程语言是否适合你的项目。例如，如果你想要开发一个图像处理程序，那么选择C语言可能就不是最佳选择，因为它并不擅长处理图像。
 
-# 参见
-- [C语言概述](https://www.runoob.com/cprogramming/c-language-intro.html)
-- [如何学习C语言](https://www.wikihow.com/Learn-Programming-in-C)
-- [编写高质量的C代码](https://www.vskills.in/certification/C-Programming-Self-Assessment-Review/Write-High-quality-program-in-C.pdf)
+其次，要写出高质量的代码，必须遵守编程规范。这样可以确保代码的可读性和可维护性。另外，使用版本控制工具（如Git）也可以帮助你管理代码的版本和变更。
+
+最后，不要害怕遇到困难和挑战。开发新项目并不容易，但是通过解决问题和克服挑战，你将获得更多的经验和成就感。
+
+## 参考链接
+
+- [C入门教程 (菜鸟教程)](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [Git教程 (廖雪峰)](https://www.liaoxuefeng.com/wiki/896043488029600)
+- [代码规范 (Google 开发者)](https://google.github.io/styleguide/cppguide.html)
+
+## 参见
+
+- [Markdown教程 (知乎)](https://zhuanlan.zhihu.com/p/58471411)
+- [为什么使用版本控制 (知乎)](https://zhuanlan.zhihu.com/p/25778990)
+- [5个步骤教你如何开始一个新项目 (Medium)](https://medium.com/swlh/5-steps-to-start-a-new-programming-project-4277d2ed5a39)

@@ -1,39 +1,43 @@
 ---
-title:    "Javascript: Konvertere dato til streng"
+title:    "Javascript: Konvertering av dato til en streng"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å konvertere en dato til en streng er en vanlig oppgave i Javascript programmering. Dette kan være nyttig for å presentere datoer til brukere på en mer forståelig måte, eller for å sammenligne datoer i en logikk som bruker strenger i stedet for dataobjekter.
 
-## Hvordan
-Det er flere måter å konvertere en dato til en streng i Javascript. Her er noen eksempler på hvordan du kan gjøre det:
+Det å konvertere en dato til en streng er en vanlig oppgave innen JavaScript-programmering. Datoer er en viktig del av mange applikasjoner, og det er viktig å kunne presentere dem på en lesbar måte for brukere. I denne bloggposten vil vi gå gjennom hvorfor og hvordan man konverterer en dato til en streng i JavaScript.
+
+## Slik gjør du det
+
+Det finnes flere måter å konvertere en dato til en streng på i JavaScript. En enkel måte å gjøre det på er å bruke to innebygde metoder: `toLocaleDateString()` og `toLocaleTimeString()`. Disse metodene tar inn et dato-objekt og returnerer en lokal tid/dato på formatet som er satt i operativsystemets språkinnstillinger. La oss se på et eksempel:
 
 ```Javascript
-// Konverterer en dato til en kort streng med bare dag og måned
-var dato = new Date();
-var streng = dato.toDateString(); // "Sun Oct 31 2021"
-
-// Konverterer en dato til en lang streng med fullt år, måned og dag
-var dato = new Date();
-var streng = dato.toUTCString(); // "Sun, 31 Oct 2021 00:00:00 GMT"
-
-// Konverterer en dato til en tilpasset streng med ønsket datoformat
-var dato = new Date();
-var datoformat = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
-var streng = dato.toLocaleDateString('nb-NO', datoformat); // "søndag 31. oktober 2021"
+let dato = new Date(); // Oppretter et nytt dato-objekt med dagens dato
+let datoTekst = dato.toLocaleDateString() + " " + dato.toLocaleTimeString(); // Konverterer til dato og tid på formatet "dd.mm.åååå tt:nn:ss"
+console.log(datoTekst); // Output: 22.04.2021 12:30:00
 ```
 
-Det finnes også andre metoder for å konvertere en dato til en streng i Javascript. Det viktigste å huske på er å velge riktig metode basert på hva slags format og informasjon du ønsker å få ut av datoen.
+Dette er en enkel metode som fungerer i de fleste tilfeller. Om du derimot ønsker å ha full kontroll over hvordan datoen blir formatert, kan du bruke `getDate()`, `getMonth()` og `getFullYear()`-metodene for å hente ut dag, måned og år fra et dato-objekt. Deretter kan du sette sammen disse verdiene på ønsket format ved hjelp av for eksempel `String.padStart()`-metoden for å legge til nuller foran tall som er mindre enn 10. La oss se på et eksempel:
 
-## Deep Dive
-Når du konverterer en dato til en streng, vil datoobjektet automatisk bruke tidssoneinnstillingene til enheten din. Dette kan være viktig å huske på hvis du ønsker å presentere datoer i et bestemt tidssoneformat. Du kan endre tidssonen ved å bruke metoden `toLocaleDateString()` og angi ønsket tidssone som en parameter.
+```Javascript
+let dato = new Date(); // Oppretter et nytt dato-objekt med dagens dato
+let datoTekst = dato.getDate().padStart(2, '0') + "." + (dato.getMonth()+1).padStart(2, '0') + "." + dato.getFullYear(); // Konverterer til dato på formatet "dd.mm.åååå"
+console.log(datoTekst); // Output: 22.04.2021
+```
 
-Det kan være lurt å teste koden din på forskjellige enheter og nettlesere for å sikre at datoene blir presentert på samme måte uavhengig av enheten som blir brukt.
+Som du kan se, bruker vi `padStart()`-metoden for å legge til en null foran tall mindre enn 10, sånn at måneder og dager er på to-sifret format.
+
+## Dypdykk
+
+Når du konverterer en dato til en streng i JavaScript, kan det være viktig å tenke på hvilke formater som er akseptable for ulike brukere. I Norge bruker vi for eksempel ofte dmy-formatet (dag.måned.år), mens i andre land brukes mdy-formatet (måned/dag/år). Derfor er det viktig å være bevisst på hvilken metode man bruker for å konvertere datoer, og eventuelt tilpasse seg til ulike formater basert på brukerens lokasjon.
+
+Det er også viktig å være oppmerksom på at når man konverterer en dato til en streng, mister man informasjon om tidssone. Dette kan være problematisk i noen tilfeller, og derfor må man være forsiktig med hvordan man bruker datoen videre i applikasjonen.
 
 ## Se også
-- [Date Object in JavaScript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [toLocaleDateString() Method in JavaScript](https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp)
-- [String Conversion in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart

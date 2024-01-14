@@ -1,51 +1,42 @@
 ---
 title:    "Ruby: Convertire una data in una stringa"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molti programmatori devono gestire le date all'interno dei loro progetti e a volte è necessario convertire una data in una stringa. In questo articolo, esploreremo il processo di conversione delle date in stringhe utilizzando il linguaggio di programmazione Ruby.
+Convertire una data in una stringa è un'attività comune nella programmazione Ruby. Questo può essere fatto per facilitare la visualizzazione della data in un formato più leggibile o per eseguire operazioni su di essa, come la ricerca o l'ordinamento. In questo articolo vedremo come convertire una data in una stringa utilizzando il linguaggio Ruby.
 
 ## Come fare
 
-Per convertire una data in una stringa, dobbiamo utilizzare il metodo `strftime` che significa "formattare data e ora" in inglese. Questo metodo accetta un argomento che definisce la formattazione della data e restituisce la data in formato di stringa. Ecco un esempio di codice:
+Per convertire una data in una stringa in Ruby, possiamo utilizzare il metodo `strftime` della classe `Time` o `Date`. Questi metodi permettono di formattare la data in base a un determinato formato fornito come argomento. Ad esempio:
 
 ```Ruby
-# Dichiarare una variabile contenente una data
-date = Time.new(2021, 7, 23)
-
-# Utilizzare il metodo `strftime` per convertire la data in una stringa
-format = date.strftime("%d/%m/%Y")
-
-# Stampare il risultato
-puts format
-
-# Output: 23/07/2021
+time = Time.now
+puts time.strftime("%d/%m/%Y") #=> 12/03/2021
 ```
 
-Come si può vedere nell'esempio, il metodo `strftime` prende come argomento una stringa che contiene dei segnaposto speciali per definire la formattazione della data:
-
-- `%d` rappresenta il giorno del mese con due cifre
-- `%m` rappresenta il mese con due cifre
-- `%Y` rappresenta l'anno con quattro cifre
-
-Possiamo utilizzare questi segnaposto in qualsiasi ordine e aggiungere ulteriori separatori, come `/`, per formattare la data come desideriamo. Inoltre, possiamo anche aggiungere segnaposto per rappresentare l'ora e i minuti.
-
-```Ruby
-format = date.strftime("%m-%d-%Y %H:%M")
-# Output: 07-23-2021 00:00
-```
+In questo esempio, abbiamo utilizzato il formato `%d/%m/%Y` che rappresenta rispettivamente il giorno, il mese e l'anno nella forma numerica. Possiamo utilizzare anche altri formati come `%b %d, %Y` per ottenere una stringa come "Mar 12, 2021". Possiamo anche utilizzare `Date.today` al posto di `Time.now` per ottenere una data senza il componente dell'ora.
 
 ## Approfondimento
 
-Oltre ai segnaposto forniti dal metodo `strftime`, Ruby offre una vasta gamma di opzioni per formattare le date in stringhe. Puoi utilizzare questi segnaposto per rappresentare il giorno della settimana, il nome del mese, le 12 ore o le 24 ore, e molto altro ancora.
+Il metodo `strftime` accetta una serie di caratteri speciali per formattare la data. Alcuni dei più comuni sono:
 
-Inoltre, se desideri conoscere tutte le opzioni di formattazione disponibili, puoi consultare la documentazione di Ruby sul metodo `strftime` o cercare online un elenco dettagliato dei segnaposto.
+- `%Y` per l'anno completo
+- `%m` per il mese (01-12)
+- `%d` per il giorno del mese (01-31)
+- `%b` per il mese abbreviato (Jan-Dec)
+- `%B` per il mese completo (January-December)
+- `%H` per l'ora (00-23)
+- `%M` per i minuti (00-59)
+- `%S` per i secondi (00-59)
+
+Ci sono altri caratteri speciali disponibili e un approfondimento sulla loro utilizzo può essere trovato nella documentazione ufficiale di Ruby.
 
 ## Vedi anche
 
-- [Documentazione Ruby sul metodo `strftime`](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
-- [Elenco completo di segnaposto per il metodo `strftime`](https://strftime.org/)
+- [Documentazione ufficiale di Ruby](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime)
+- [Tutorial su come formattare una data in Ruby](https://code-maven.com/formatting-a-date-in-ruby)

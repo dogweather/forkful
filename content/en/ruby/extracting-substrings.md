@@ -1,53 +1,54 @@
 ---
 title:    "Ruby recipe: Extracting substrings"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As a Ruby programmer, understanding how to manipulate strings is an essential skill. One common task is extracting substrings, or a portion of a larger string. Whether you need to extract a specific word, character, or set of characters, knowing how to do so will save you time and make your code more efficient.
+Have you ever needed to extract a specific part of a string in your Ruby program? Maybe you wanted to get just the name from a full name email address. Or perhaps you needed to extract the digits from a phone number. Whatever the case may be, being able to extract substrings is a useful skill in Ruby programming. In this blog post, we'll take a look at why it's important to know how to extract substrings and how you can do it using Ruby.
 
 ## How To
 
-To extract substrings in Ruby, we can use the `slice` or `[]` methods. These methods function similarly and allow us to specify the starting and ending index of the substring we want to extract. Let's take a look at an example:
+The `String` class in Ruby comes with a handy method, `slice`, that allows us to extract a substring from a string based on specific starting and ending positions. Let's look at an example:
 
 ```ruby
-sentence = "I love programming"
-puts sentence.slice(2, 4) # Output: love
-puts sentence[6..12] # Output: programming
+name = "John Doe"
+puts name.slice(0, 4)
 ```
 
-In the first line, we use the `slice` method to extract the word "love" starting at index 2 and including the next 4 characters. Similarly, the second line uses the `[]` method with a range to extract the word "programming" starting at index 6 and including the next 7 characters.
+This code will output "John", as it starts at index 0 and extracts 4 characters. We can also use negative indexes to start from the end of the string. For instance, `name.slice(-3, 3)` would output "Doe" since it starts 3 characters from the end and extracts 3 characters.
 
-We can also use negative numbers to specify the starting index from the end of the string. For example, `sentence[-3..-1]` will extract the last 3 characters of the string, "ing".
-
-Another useful method for substring extraction is the `split` method. This method splits a string into an array based on a delimiter. We can then access specific elements of the array, which would be substrings of the original string.
+But what if we wanted to extract a substring based on a certain pattern? That's where regular expressions come in. We can use the `match` method to search for a specific pattern in a string and extract the matching substring. Take a look at this example:
 
 ```ruby
-sentence = "Programming is fun"
-words = sentence.split(" ") # Output: ["Programming", "is", "fun"]
-puts words[1] # Output: is
+phone_number = "555-123-4567"
+puts phone_number.match(/\d{3}-\d{3}-\d{4}/)
 ```
+
+This code will output "555-123-4567" since it matches the pattern of three digits, a hyphen, three digits, a hyphen, and four digits.
+
+Lastly, we can also use `split` to extract substrings from a string based on a delimiter. For example:
+
+```ruby
+address = "123 Main St, New York, NY"
+puts address.split(",")[0]
+```
+
+This code will output "123 Main St" by splitting the string at each comma and returning the first element.
 
 ## Deep Dive
 
-Behind the scenes, all strings in Ruby are objects of the `String` class, which has many built-in methods for manipulating strings. The `slice` and `[]` methods are just two examples of how we can extract substrings. We can also use the `scan` method to extract multiple occurrences of a substring in a string.
+Aside from the methods mentioned above, there are other ways to extract substrings in Ruby such as using the `[]` operator or the `scan` method for multiple matches. Additionally, there are also several string manipulation libraries available that offer more advanced substring extraction options.
 
-```ruby
-sentence = "Ruby is the best language for writing web applications"
-matches = sentence.scan("b") # Output: ["b", "b"]
-```
-
-In this example, `scan` looks for any occurrence of the letter "b" in the sentence and returns them as an array. This method is useful when we need to extract multiple substrings and store them in a data structure.
-
-It's also important to note that substrings in Ruby are immutable, meaning we cannot modify them directly. If we want to change a substring, we would need to first extract it, modify it, and then reassign it to the original string.
+It's important to keep in mind that different methods will be more suitable for different scenarios. For example, using regular expressions may be more efficient for extracting substrings based on specific patterns, while using `slice` would be better for extracting a substring at a specific position.
 
 ## See Also
 
-For more information on working with strings in Ruby, check out the following resources:
+To learn more about extracting substrings in Ruby, check out these helpful resources:
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby String Methods](https://www.rubyguides.com/ruby-string-methods/)
-- [Ruby String Cheat Sheet](https://www.shortcutfoo.com/app/dojos/ruby-strings/cheatsheet)
+- [Ruby String Documentation](https://ruby-doc.org/core-2.6/String.html)
+- [Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regexp/)
+- [String Manipulation Libraries in Ruby](https://www.ruby-toolbox.com/categories/string_manipulation_libraries)

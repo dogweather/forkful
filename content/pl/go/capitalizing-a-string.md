@@ -1,79 +1,44 @@
 ---
-title:    "Go: Zmiana wielkości ciągu znaków"
+title:    "Go: Zmiana liter w ciągu znaków"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami w programowaniu musimy zmieniać format tekstu, na przykład zamieniając pierwszą literę każdego wyrazu na wielką. W tym artykule dowiesz się, jak w języku Go można skutecznie zmieniać wielkość liter w łańcuchach znaków.
+Dlaczego ktoś chciałby zmienić wielkość liter w ciągu znaków? Czasami może być to konieczne, np. w celu stworzenia spójnego formatowania tekstu lub w przypadku sprawdzania danych wprowadzonych przez użytkownika.
 
 ## Jak to zrobić
 
-Możemy użyć funkcji `strings.Title()` do zmiany pierwszej litery każdego wyrazu na wielką. Należy pamiętać, że ta funkcja nie zmienia pozostałych liter na małe. Przejdźmy przez przykład, aby to zobaczyć:
-
+Istnieje prosty sposób na zmianę wielkości liter w ciągu znaków przy użyciu języka Go. Możemy to zrobić za pomocą funkcji `strings.ToUpper()` lub `strings.ToLower()`, w zależności od tego, czy chcemy zmienić wszystkie litery na duże czy małe. Przykładowy kod wyglądałby następująco:
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	s := "programowanie w go jest świetne"
-	fmt.Println(strings.Title(s))
+    fmt.Println(strings.ToUpper("Cześć Świecie!"))
+    fmt.Println(strings.ToLower("Cześć Świecie!"))
 }
 ```
-**Output:** Programowanie W Go Jest Świetne
-
-Jeśli chcemy zmienić wszystkie litery na duże, możemy skorzystać z funkcji `strings.ToUpper()`:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	s := "programowanie w go jest świetne"
-	fmt.Println(strings.ToUpper(s))
-}
+Oto jak wyglądałby wynik tego kodu:
 ```
-**Output:** PROGRAMOWANIE W GO JEST ŚWIETNE
+CZEŚĆ ŚWIECIE!
+cześć świecie!
+``` 
+W ten sposób możemy szybko i łatwo zmienić wielkość liter w ciągu znaków w naszych programach.
 
-Kolejną opcją jest używanie pętli `for` i funkcji `strings.ToUpper()` do zmiany wielkości każdej litery:
+## Głębszy zanurzenie
 
-```Go
-package main
+Aby lepiej zrozumieć, jak funkcje `ToUpper()` i `ToLower()` działają w języku Go, warto przyjrzeć się szczegółom. Funkcja `ToUpper()` wykorzystuje standardową bibliotekę `strings`, która zawiera wiele przydatnych metod do manipulacji tekstem. W przypadku zmiany wielkości liter, funkcja ta przeszukuje cały ciąg znaków i zamienia każdą małą literę na wielką. Funkcja `ToLower()` działa w podobny sposób, ale zamienia wszystkie litery na małe.
 
-import (
-	"fmt"
-	"strings"
-)
+## Zobacz też
 
-func main() {
-	s := "programowanie w go jest świetne"
-	result := ""
+Biblioteka `strings` w języku Go oferuje wiele innych przydatnych funkcji do pracy z tekstem. Możesz przeczytać więcej o niej na stronie dokumentacji: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
 
-	for _, letter := range s {
-		result += strings.ToUpper(string(letter))
-	}
-
-	fmt.Println(result)
-}
-```
-**Output:** PROGRAMOWANIE W GO JEST ŚWIETNE
-
-## Głębsza analiza
-
-W języku Go funkcje z pakietu `strings` są oparte na standardzie Unicode. Dzięki temu pisanie kodu do manipulacji łańcuchami jest prostsze i bardziej efektywne. Warto również pamiętać, że funkcje te są niezmiennikowe, co oznacza, że zawsze zwracają nowe łańcuchy, a nie zmieniają istniejących. Dzięki temu unikamy niepożądanych efektów ubocznych.
-
-## Zobacz również
-
-- Dokumentacja funkcji `strings.Title()`: https://golang.org/pkg/strings/#Title
-- Dokumentacja funkcji `strings.ToUpper()`: https://golang.org/pkg/strings/#ToUpper
-- Dokumentacja pętli `for` w języku Go: https://golang.org/ref/spec#For_statements
+Jeśli interesują Cię inne sposoby manipulacji tekstem w języku Go, możesz również zapoznać się z tym artykułem: [https://golangnews.com/stories/2019-go-how-to-pad-print-strings](https://golangnews.com/stories/2019-go-how-to-pad-print-strings)

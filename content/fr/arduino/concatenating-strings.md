@@ -1,51 +1,59 @@
 ---
-title:    "Arduino: Chaînage de chaînes de caractères"
+title:    "Arduino: “Concaténation de chaînes de caractères”"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Pourquoi quelqu'un s'engagerait à concaténer des chaînes de caractères en programmation Arduino ? La réponse est simple : c'est une méthode essentielle pour manipuler et afficher du texte. Que vous souhaitiez afficher des messages sur un écran LCD, réaliser un projet de communication série ou simplement stocker des données dans une variable, la concaténation de chaînes de caractères sera un outil utile à connaître.
+Concaténer des chaînes de caractères est une compétence importante lorsque vous programmez en Arduino. Cela vous permet de combiner des données de différentes variables pour créer une nouvelle chaîne de caractères. Cela peut être utile pour afficher du texte sur un écran LCD ou pour envoyer des informations via une communication série. Apprendre à concaténer des chaînes de caractères vous permettra de rendre votre code plus efficace et plus propre.
 
 ## Comment faire
 
-La concaténation de chaînes de caractères consiste à combiner plusieurs chaînes de caractères en une seule. Pour cela, il vous suffit d'utiliser l'opérateur "+" entre les différentes chaînes que vous souhaitez concaténer.
-
-Voici un exemple de code en Arduino :
+Voici un exemple simple pour concaténer des chaînes de caractères en utilisant Arduino :
 
 ```Arduino
-// Exemple de concaténation de chaînes de caractères
-void setup() {
-  // Déclaration des chaînes de caractères
-  String message1 = "Bonjour";
-  String message2 = "à tous !";
+String nom = "Jean";
+String introduction = "Bonjour, je m'appelle ";
+String phrase = introduction + nom;
 
-  // Concaténation
-  String messageFinal = message1 + " " + message2;
-
-  // Affichage du message final
-  Serial.println(messageFinal);
-}
-
-void loop() {
-  // La boucle loop() est vide car nous n'avons besoin que du setup()
-}
+Serial.println(phrase);
 ```
 
-Lorsque vous allez exécuter ce code, vous verrez s'afficher sur le moniteur série le message "Bonjour à tous !". En concaténant les deux chaînes de caractères "Bonjour" et "à tous !", nous avons créé une variable contenant le message final que nous avons ensuite affiché en utilisant la fonction `println()`.
+Dans cet exemple, nous utilisons la fonction ```String()``` d'Arduino pour définir trois variables : ```nom```, ```introduction``` et ```phrase```. Nous combinons ensuite les deux premières variables pour créer la variable ```phrase```. En utilisant l'opérateur de concaténation ```+```, nous ajoutons la valeur de ```nom``` à la fin de la valeur de ```introduction```. Enfin, nous imprimons la variable ```phrase``` sur le moniteur série à l'aide de la fonction ```println()```.
+
+Lorsque vous téléversez ce code sur votre Arduino et ouvrez le moniteur série, vous devriez voir le message suivant :
+
+```
+Bonjour, je m'appelle Jean
+```
+
+Vous pouvez également concaténer des chaînes de caractères avec des valeurs numériques, comme dans cet exemple :
+
+```Arduino
+String ville = "Paris";
+int population = 2;
+String message = "La population de " + ville + " est de " + String(population) + " millions.";
+
+Serial.println(message);
+```
+
+Cette fois, nous combinons une chaîne de caractères avec une variable numérique ```population```. Nous utilisons la fonction ```String()``` à nouveau pour convertir la valeur de ```population``` en une chaîne de caractères afin de pouvoir l'ajouter à notre phrase. Le moniteur série affichera alors :
+
+```
+La population de Paris est de 2 millions.
+```
 
 ## Plongée en profondeur
 
-En réalité, la concaténation de chaînes de caractères en Arduino est légèrement différente de celle dans d'autres langages de programmation. En effet, en raison des limitations de mémoire de la carte Arduino, la concaténation est gérée par une bibliothèque spécifique appelée "String". Cette bibliothèque alloue dynamiquement de la mémoire à la variable contenant le message final, ce qui peut entraîner des problèmes de performances si elle est utilisée de manière répétée.
+Il existe également d'autres façons de concaténer des chaînes de caractères dans Arduino, comme l'utilisation de la fonction ```concat()``` ou l'utilisation de la bibliothèque ```String.h```. Cependant, il est important de noter que l'utilisation excessive de variables de type chaîne de caractères peut entraîner des problèmes de mémoire dans votre code.
 
-Il est également important de noter que la bibliothèque "String" n'est pas compatible avec certains types de données, tels que les nombres entiers ou les tableaux. Dans ces cas-là, il est préférable d'utiliser d'autres méthodes de concaténation disponibles, telles que `strcpy()` ou `snprintf()`.
-
-Il est donc recommandé de bien comprendre le fonctionnement de la concaténation de chaînes de caractères en Arduino et de l'utiliser avec précaution pour éviter tout problème de mémoire.
+Il est recommandé d'utiliser des chaînes de caractères avec parcimonie et de préférer d'autres types de données lorsque cela est possible.
 
 ## Voir aussi
 
-- [Documentation officielle d'Arduino sur la concaténation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-- [Tutoriel vidéo sur la concaténation de chaînes de caractères en Arduino](https://www.youtube.com/watch?v=905VK4gxcdw)
-- [Guide de référence du langage Processing (utilisé dans Arduino) sur la gestion des chaînes de caractères](https://processing.org/reference/String.html)
+- [Documentation officielle Arduino sur les chaînes de caractères](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Tutoriel sur le concaténation de chaînes de caractères avec Arduino](https://circuitdigest.com/microcontroller-projects/concatenate-string-by-using-string-and-string-h-arduino-tutorial)
+- [Utilisation avancée de la bibliothèque ```String.h```](https://playground.arduino.cc/Main/PrintingNumbers/)

@@ -1,55 +1,37 @@
 ---
-title:    "C#: Merkkijonon pituuden etsiminen"
+title:    "C#: Merkkijonon pituuden löytäminen"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi löytäisit merkkijonon pituuden?
+## Miksi
 
-Olipa sitten koodaaja aloittelija tai kokenut ohjelmistosuunnittelija, merkkijonon pituuden löytäminen on yksi perustaidoista, jotka jokaisen tulisi hallita. Merkkijonot ovat luultavasti yksi yleisimmistä tietotyypeistä, joita käsittelemme ohjelmointikielessä, joten tietääksesi niiden pituuden voi auttaa sinua helpottamaan ja nopeuttamaan koodaamista.
+Miksi haluaisit löytää merkkijonon pituuden? Lyhyesti sanottuna, merkkijonojen pituuden löytäminen on tärkeää, kun haluat käsitellä ja manipuloida tekstejä ohjelmoinnissa. Se on erityisen hyödyllistä esimerkiksi silloin, kun haluat tarkistaa, että käyttäjän syöttämä merkkijono on oikean pituinen ennen sen tallentamista tietokantaan.
 
-## Kuinka tehdä: Esimerkkiä koodauksella ja tulosteella
+## Kuinka
 
-Merkkijonojen pituuden löytäminen C#-ohjelmointikielellä on hyvin helppoa. Käytännössä merkkijonon pituus on vain sen merkkien lukumäärä. Voit käyttää "Length" -ominaisuutta selventämään tätä.
-
-```C#
-string merkkijono = "Tämä on vain esimerkki";
-Console.WriteLine(merkkijono.Length);
-```
-
-Tämä palauttaa seuraavan tulosteen:
-
-```
-24
-```
-
-Huomaa, että välilyönnitkin lasketaan merkkijonon pituuteen, joten pelkkä sanan "vain" pituus onkin 5, sen lisäksi että siinä on välilyöntiä.
-
-Voit myös yhdistellä merkkijonoja ja laskutoimituksia löytämään esimerkiksi kahden merkkijonon pituuden summan. Seuraavassa esimerkissä yhdistetään kaksi merkkijonoa ja lasketaan sitten niiden yhteispituus:
+Löytääksesi merkkijonon pituuden C# -kielellä, sinun täytyy käyttää "Length" metodia, joka on perinteisesti käytössä kaikissa tiettyihin tietorakenteisiin liittyvissä toiminnoissa. Alla olevassa esimerkissä näytämme, kuinka voit käyttää "Length" -metodia ja tulostaa merkkijonon pituuden konsoliin:
 
 ```C#
-string ensimmainen = "Tämä on ";
-string toinen = "toinen esimerkki";
-Console.WriteLine(ensimmainen.Length + toinen.Length);
+// Luodaan merkkijono
+string teksti = "Tämä on esimerkki";
+// Käytetään "Length" metodia ja tulostetaan pituus konsoliin
+Console.WriteLine("Merkkijonon pituus on: " + teksti.Length);
+// Tulos: Merkkijonon pituus on: 18
 ```
 
-Tulosteen pitäisi olla:
+Huomaa, että "Length" metodi palauttaa kokonaislukuna merkkijonon pituuden, joten voit käyttää tätä tietoa myös muihin toimintoihin koodissasi.
 
-```
-21
-```
+## Syväsukellus
 
-Tässä tapauksessa tuloksena on 21, koska molemmissa merkkijonoissa on myös välilyöntejä.
+Mikä tekee "Length" metodista niin kätevän merkkijonojen pituuden löytämisessä? "Length" -metodi laskee merkkien määrän merkkijonossa ja palauttaa sen kokonaislukuna, jonka avulla voit käsitellä merkkijonoa haluamallasi tavalla. Lisäksi "Length" metodi toimii myös muissa tietorakenteissa, kuten listoissa ja taulukoissa, joten voit käyttää sitä moniin eri tarkoituksiin.
 
-## Syvällisempi tarkastelu: Merkkijonojen pituuden löytäminen
-
-Merkkijonot ovat C#-ohjelmointikielessä taulukoita, joten voidaan ajatella, että niiden pituus kertoo taulukon solujen lukumäärän. Jokainen merkki tässä taulukossa on indeksoitu, joten voit päästä käsiksi mihin tahansa yksittäiseen merkkiin merkkijonossa käyttämällä sen indeksiä. Esimerkiksi merkkijonon "Moi" indeksit olisivat 0, 1 ja 2.
-
-Merkkijonon pituuden löytäminen on myös tärkeää tietojen käsittelyssä, sillä voimme esimerkiksi tarkistaa, onko merkkijono tarpeeksi pitkä ennen sen käyttämistä. Tämä auttaa meitä löytämään mahdolliset virheet tai bugit koodistamme.
+Toinen tärkeä huomio on, että "Length" metodi laskee myös välilyönnit ja muut erikoismerkit merkkijonossa, joten voit olla varma, että saat oikean pituisen tuloksen.
 
 ## Katso myös
 
-- [Microsoftin virallinen dokumentaatio merkkijonon pituuden löytämisestä C#-ohjelmointikielessä](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#getting-string-properties)
-- [The C# Players Guide](http://www.csharpprogrammingguide.com/ch6-strings.php)
-- [C#-ohjelmointi mielenkiintoisen esimerkin avulla: Merkkijonojen pituus ja yhdistäminen](https://www.geeksforgeeks.org/c-sharp-programming-excercises-string-length-concat-function/)
+- C# merkkijonojen käsittely: https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0
+- Merkkijonon pituuden selvittäminen C#: https://www.codegrepper.com/code-examples/delphi/c%23+string+length
+- "Length" metodin käyttö taulukoissa ja listoissa: https://www.tutorialspoint.com/csharp/csharp_string_length.htm

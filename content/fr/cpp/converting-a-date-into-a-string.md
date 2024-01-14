@@ -1,59 +1,77 @@
 ---
-title:    "C++: Transformer une date en chaîne de caractères"
+title:    "C++: Conversion d'une date en chaîne de caractères"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La conversion d'une date en chaîne de caractères peut sembler être une tâche simple, mais elle est en fait utile pour afficher des données dans un format facilement compréhensible par les utilisateurs. Que vous souhaitiez afficher une date dans un journal, un rapport ou une interface utilisateur, la conversion en chaîne de caractères vous permettra de le faire de manière précise et efficace.
+La conversion d'une date en chaîne de caractères est une tâche courante en programmation. Elle permet de présenter des dates de manière plus lisible pour les utilisateurs et facilite le stockage et la manipulation des données temporelles dans un programme. Dans cet article, nous allons voir comment effectuer cette conversion en utilisant le langage de programmation C++.
 
 ## Comment faire
 
-Voici un exemple de code en C++ pour convertir une date en chaîne de caractères :
+Pour convertir une date en chaîne de caractères en C++, nous allons utiliser la classe `stringstream` de la bibliothèque standard. Cette classe permet de créer des objets de type `string` à partir de valeurs de différents types de données. Voici un exemple de code qui convertit la date actuelle en une chaîne de caractères au format "jour/mois/année" :
 
 ```C++
-#include <iostream> 
-#include <ctime> 
+#include <iostream>
+#include <sstream>
+#include <ctime>
 
-int main() 
-{
-    // Obtenir l'heure et la stocker dans une structure tm
+int main() {
+    // Obtenir la date actuelle
     time_t now = time(0);
-    tm *ltm = localtime(&now);
-
-    // Utiliser la fonction strftime pour formater la date en chaîne de caractères
-    char buffer[80];
-    strftime(buffer, 80, "%d/%m/%Y", ltm);
-
-    // Afficher la chaîne de caractères résultante
-    std::cout << "La date est : " << buffer << std::endl;
-
+    tm *date = localtime(&now);
+    
+    // Convertir la date en chaîne de caractères
+    std::stringstream ss;
+    ss << date->tm_mday << "/" << date->tm_mon + 1 << "/" << date->tm_year + 1900;
+    std::string date_string = ss.str();
+    
+    // Afficher la date convertie
+    std::cout << date_string << std::endl;
+    
     return 0;
 }
 ```
 
-La sortie de ce programme sera la date actuelle au format "jour/mois/année", par exemple "17/06/2021".
+La sortie de ce programme sera quelque chose comme : `4/3/2021`, selon la date actuelle.
+
+Il est également possible d'utiliser la fonction `strftime()` de la bibliothèque `ctime` pour formater directement la date en utilisant un modèle de chaîne de caractères. Voici un exemple qui affiche la date actuelle au format "jour de la semaine, jour mois année" :
+
+```C++
+#include <iostream>
+#include <ctime>
+
+int main() {
+    // Obtenir la date actuelle
+    time_t now = time(0);
+    tm *date = localtime(&now);
+    
+    // Définir le modèle de chaîne de caractères
+    char format[] = "%A, %d %B %Y";
+    
+    // Stocker la date formatée dans une chaîne de caractères
+    char date_string[50];
+    strftime(date_string, sizeof(date_string), format, date);
+    
+    // Afficher la date formatée
+    std::cout << date_string << std::endl;
+    
+    return 0;
+}
+```
+
+La sortie sera par exemple : `jeudi, 4 mars 2021`.
 
 ## Plongée en profondeur
 
-Pour comprendre le processus de conversion d'une date en chaîne de caractères, il est important de connaître les différents composants d'une date. En C++, la structure tm contient neuf membres qui représentent la date et l'heure :
+En convertissant une date en chaîne de caractères, il est important de prendre en compte le format que vous souhaitez utiliser. La bibliothèque `ctime` offre plusieurs modèles de chaîne de caractères pour formater la date selon vos besoins. Vous pouvez également créer votre propre modèle en utilisant les balises de formatage spécifiques disponibles dans la documentation de la bibliothèque.
 
-- tm_sec : le nombre de secondes écoulées depuis la minute précédente (entre 0 et 59)
-- tm_min : le nombre de minutes écoulées depuis l'heure précédente (entre 0 et 59)
-- tm_hour : le nombre d'heures écoulées depuis minuit (entre 0 et 23)
-- tm_mday : le jour du mois (entre 1 et 31)
-- tm_mon : le mois de l'année (entre 0 et 11)
-- tm_year : le nombre d'années depuis 1900
-- tm_wday : le jour de la semaine (dimanche = 0, samedi = 6)
-- tm_yday : le jour de l'année (entre 0 et 365)
-- tm_isdst : un indicateur pour savoir si l'heure d'été est en vigueur (0 si elle n'est pas en vigueur, une valeur positive si elle l'est)
-
-En utilisant ces composants, la fonction strftime (qui se trouve dans la bibliothèque "ctime") formate ces éléments en une chaîne de caractères selon un modèle spécifié. Le modèle utilisé dans l'exemple "%d/%m/%Y" signifie "jour/mois/année", mais vous pouvez également utiliser d'autres modèles tels que "%H:%M:%S" pour afficher l'heure en format "heures:minutes:secondes". Pour plus d'informations sur les modèles disponibles, vous pouvez consulter la documentation de la fonction strftime.
+De plus, il est important de noter que la conversion d'une date en chaîne de caractères peut varier en fonction du système d'exploitation et de la localisation. Il est donc important de tester votre code sur différentes plateformes pour vous assurer que votre programme fonctionne correctement.
 
 ## Voir aussi
 
-- Documentation sur la fonction strftime de la bibliothèque ctime : https://www.cplusplus.com/reference/ctime/strftime/
-- Tutoriel sur le formatage des dates en C++ : https://www.tutorialspoint.com/how-to-convert-date-to-string-in-cplusplus
-- Vidéo expliquant la conversion d'une date en chaîne de caractères en C++ : https://www.youtube.com/watch?v=W5RuYU7WV7E
+- [Documentation de `stringstream` en C++ (en anglais)](https://www.cplusplus.com/reference/sstream/stringstream/)
+- [Documentation de `strftime()` en C (en anglais)](https://www.cplusplus.com/reference/ctime/strftime/)

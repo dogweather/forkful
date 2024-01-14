@@ -1,35 +1,26 @@
 ---
-title:    "PHP: स्ट्रिंग की लंबाई खोजना"
+title:    "PHP: शब्द लंबाई का पता लगाना"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-"Kyu: String ki lambai dhundhna karne ka maksad"
+## क्यों
 
-Hamare aaj ke samay mein, programming ek bahut hi important skill ban gayi hai. PHP programming language har roop mein aaj ke samay ke sabse jyada use kiya jaane wala language hai. String ki lambai dhundhna, ek aise kaam hai jo ki har programmer ko aana chahiye. Is article mein hum aapko batayenge ki kyu aur kis tarah se aap PHP mein string ki lambai ko dhundh sakte hai.
+एक स्ट्रिंग की लंबाई को खोजने में लोग क्यों रुचि लेंगे, इसके बारे में जानने के लिए इस ब्लॉग पोस्ट को पढ़ना अच्छा होगा। स्ट्रिंग लंबाई को खोजना एक उपयोगी कौशल है जो कोडिंग में आपको आराम और समय दोनों को बचाने में मदद कर सकता है। इस समस्या को सुलझाने के लिए, हमें एक स्ट्रिंग के लंबाई को पता करने की आवश्यकता हो सकती है।
 
-"Kaise: String ki lambai dhundhne ka tarika"
+## कैसे
 
-PHP mein string ki lambai dhundhne ke liye hum "strlen()" function ka use karte hai. Is function mein hum ek string ka naam dete hai aur ye function hume us string ki lambai return karta hai. Neeche diye gaye code block mein humne ek example diya hai jisme humne "Welcome" string ki lambai dhundhi hai.
-
-```PHP 
-$string = "Welcome";
-echo strlen($string); // Output: 7
+```PHP
+<?php
+$str = "यहाँ हिंदी में स्ट्रिंग है।";
+echo strlen($str);
+?>
 ```
 
-Is code block mein "strlen()" function ka use kiya gaya hai jis se hume "Welcome" string ki lambai "7" return hui hai. Is tarah se hum koi bhi string ki lambai dhundh sakte hai.
+आपको इस "```PHP ... ```" कोड ब्लॉक के माध्यम से आपको पता चलेगा कि अपने द्वारा दिए गए स्ट्रिंग में कितने अक्षर हैं। प्रॉग्राम का आउटपुट `24` होगा, जो हमारे स्ट्रिंग की लंबाई है। इससे आपको लगभग स्पष्ट होना चाहिए कि यदि आपको एक स्ट्रिंग की लंबाई की आवश्यकता हो तो आप कैसे इसे खोज सकते हैं।
 
-"Deep Dive: String ki lambai ko samajhne ka gehra adhyayan"
+## गहराई में खोजना
 
-Jab hum "strlen()" function ka use karte hai, toh hume kuch baato ka dhyan rakhna chahiye. Jaise ki is function mein bina string ka naam diye hum lambai nahi dhundh sakte hai. Is function mein kuch special characters ko count nahi kiya jata hai, jaise ki spaces, commas, etc. Isliye agar hum "Welcome!" ki lambai dhundhege toh output hume "11" return karega, kyuki isme 6 alphabets hai aur 5 special characters.
-
-Isliye hume apne code mein string ke saare special characters ko count karne ke liye aur proper output lene ke liye code ko customize karna zaroori hai.
-
-"Dekhiye Bhi:"
-
-1. PHP String Functions List (https://www.w3schools.com/php/php_ref_string.asp)
-2. Understanding strlen() function in PHP (https://www.php.net/manual/en/function.strlen.php)
-3. String Functions in Hindi (https://www.geeksforgeeks.org/hindi/string-functions-in-php/)
-
-**Dekhe Bhi**
+स्ट्रिंग की लंबाई को खोजने के बहुत से तरीके हैं। पहले तो आप `strlen()` फ़ंक्शन का उपयोग कर सकते हैं जो उपरोक्त कोड ब्लॉक में दिखाया गया है। इसके अलावा आप `mb_strlen()` फंक्शन का भी उपयोग कर सकते हैं जो मल्टी-बाइट वेरिएंट है और अपने प्रोजेक्टस के लिए अधिक उपयोगी हो सकता है। आप अपने प्रोजेक्ट में अन्य यूनीकोड संकेतकों के साथ भी लंबाई को खोजने के लिए `mb_strlen()` फ

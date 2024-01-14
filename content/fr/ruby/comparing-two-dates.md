@@ -1,51 +1,73 @@
 ---
-title:    "Ruby: Comparer deux dates"
+title:    "Ruby: Comparaison de deux dates"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Les dates sont un élément essentiel dans la programmation. Il est courant de devoir comparer deux dates pour déterminer la chronologie ou la durée entre deux événements. Heureusement, Ruby offre des méthodes utiles pour effectuer cette tâche rapidement et efficacement.
+La comparaison de deux dates peut sembler être une tâche simple en apparence, mais elle peut être très utile dans de nombreux scénarios de programmation en Ruby. Par exemple, vous pourriez avoir besoin de vérifier si une date est avant ou après une autre, ou encore comparer des dates pour trier une liste d'objets. Dans cet article, nous allons explorer différentes façons de comparer des dates en utilisant Ruby.
 
-# Comment Faire
+## Comment faire
 
-Pour comparer deux dates en Ruby, nous pouvons utiliser la méthode `compare` de la classe `Date`. Cette méthode prend deux arguments et renvoie un entier qui indique la relation entre les deux dates. Voici un exemple de code :
+Pour comparer deux dates en Ruby, nous pouvons utiliser la méthode `difference` de la classe `Date`. Cette méthode renvoie un objet `Date`, représentant la différence entre deux dates. Voyons un exemple concret :
 
-```ruby
-date1 = Date.parse("1 jan 2020")
-date2 = Date.parse("15 jan 2020")
+```
+Ruby
+require 'date'
 
-puts date1.compare(date2)
+date1 = Date.new(2020, 5, 20)
+date2 = Date.new(2020, 5, 10)
+
+difference = date1.difference(date2)
+puts difference #=> 10
 ```
 
-Cela renverra `0` si les deux dates sont égales, `-1` si la première date est antérieure à la deuxième et `1` si la première date est postérieure à la deuxième.
+Dans cet exemple, nous créons deux objets `Date` et utilisons la méthode `difference` pour calculer le nombre de jours entre les deux dates. La sortie sera `10`, car il y a dix jours d'écart entre le 10 et le 20 mai.
 
-Nous pouvons également utiliser la méthode `between?` pour vérifier si une date est comprise entre deux autres dates. Voici un exemple :
+Nous pouvons également utiliser la méthode `<=` pour vérifier si une date est avant ou après une autre. Par exemple :
 
-```ruby
-date1 = Date.parse("1 jan 2020")
-date2 = Date.parse("15 jan 2020")
-date3 = Date.parse("10 jan 2020")
+```
+Ruby
+require 'date'
 
-puts date3.between?(date1, date2)
+date1 = Date.new(2020, 5, 10)
+date2 = Date.new(2020, 5, 20)
+
+if date1 <= date2
+  puts "La date 1 est avant la date 2"
+else
+  puts "La date 2 est avant la date 1"
+end
+
+#=> La date 1 est avant la date 2
 ```
 
-Cela renverra `true` car la date `date3` est comprise entre `date1` et `date2`.
+Dans cet exemple, nous utilisons l'opérateur de comparaison `<=` pour vérifier si la date 1 est avant la date 2. Comme c'est le cas, la condition est vraie et le message "La date 1 est avant la date 2" sera affiché.
 
-# Plongée Profonde
+## Deep Dive
 
-En plongeant plus profondément dans la comparaison des dates en Ruby, nous pouvons également utiliser les méthodes `eql?` et `==` pour comparer deux dates. La méthode `eql?` compare non seulement les dates elles-mêmes, mais aussi leurs composants de temps. La méthode `==` ne compare que les dates et ignore les composants de temps.
+En utilisant la méthode `difference` pour calculer la différence entre deux dates, il est important de noter que le résultat sera en jours, et non en mois ou en années. Pour obtenir une différence en mois ou en années, nous pouvons utiliser la méthode `month` et `year`, respectivement.
 
-Une autre astuce utile est d'utiliser les méthodes `strftime` et `strptime` pour formater et convertir les dates selon nos besoins. Par exemple, `date.strftime("%d/%m/%Y")` renverra une chaîne de caractères dans le format jour/mois/année pour la date donnée.
+```
+Ruby
+require 'date'
 
-# Voir Aussi
+date1 = Date.new(2020, 5, 10)
+date2 = Date.new(2021, 5, 10)
 
-Pour en savoir plus sur la manipulation des dates en Ruby, vous pouvez consulter les ressources suivantes :
+years_diff = date2.year - date1.year
+puts "Années de différence : #{years_diff}" #=> Années de différence : 1
 
-- [Documentation officielle de Ruby sur les dates](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [Tutoriel en ligne sur les dates en Ruby](https://www.rubyguides.com/2015/05/ruby-time/)
-- [Exemples de code pour comparer les dates en Ruby](https://www.ruby-forum.com/t/comparing-dates/61878)
+months_diff = date2.month - date1.month
+puts "Mois de différence : #{months_diff}" #=> Mois de différence : 0
+```
 
-Maintenant, vous avez les outils nécessaires pour comparer facilement deux dates en Ruby. Bonne programmation ! # Bonne programmation !
+En utilisant ces méthodes, nous pouvons calculer la différence en années ou en mois entre deux dates. Gardez à l'esprit que la méthode `month` renvoie le numéro du mois, donc si vous voulez obtenir un résultat lisible comme "2 mois de différence", vous devrez peut-être effectuer un peu plus de calcul.
+
+## Voir aussi
+
+- [Documentation Ruby sur les dates](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
+- [Tutoriel sur les dates en Ruby](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)

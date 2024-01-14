@@ -1,39 +1,49 @@
 ---
-title:    "Swift: Kapitalisering av en streng"
+title:    "Swift: Store bokstaver i en streng"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kunne kapitalisere en streng er en viktig ferdighet for programvareutviklere, da det ofte er nødvendig å formatere tekst i forskjellige applikasjoner. Enten det er å lage en tittel, en undertekst eller en meny, er det viktig å kunne style tekst for å gjøre den mer lesbar og presentabel.
+Å kapitalisere en streng, eller å gjøre den Første bokstaven stor, kan være nyttig når du ønsker å forbedre utseendet på teksten din. Dette kan være spesielt viktig når du lager titler eller overskrifter, eller når du vil fremheve et visst ord eller begrep.
 
-## Slik gjør du det
+## Hvordan
 
-For å kapitalisere en streng i Swift, kan du bruke funksjonen `capitalized` på en `String`-variabel eller innebygd streng. Her er et eksempel på hvordan dette kan gjøres:
-
-```Swift
-let navn = "ole"
-print(navn.capitalized)
-// Output: Ole
-```
-
-Det er også mulig å kapitalisere bare den første bokstaven i en streng, ved hjelp av funksjonen `prefix` og `suffix` i kombinasjon med `capitalized`:
+Det finnes flere måter å kapitalisere en streng på i Swift, avhengig av dine preferanser og behov. En måte er å bruke den innebygde funksjonen `capitalizedString()`, som tar en streng som parameter og returnerer den samme strengen med den første bokstaven stor.
 
 ```Swift
-var beskrivelse = "en enkel setning"
-beskrivelse.prefix(1).capitalized + beskrivelse.suffix(beskrivelse.count-1)
-// Output: En enkel setning
+let string = "dette er en test"
+
+let capitalizedString = string.capitalizedString()
+
+print(capitalizedString) 
+// Dette er en test
 ```
 
-## Dypdykk
+En annen måte er å bruke metoden `prefix(1)` for å få tak i den første bokstaven i strengen og deretter konvertere den til en stor bokstav ved hjelp av `uppercased()`, og deretter kombinere den med resten av strengen ved hjelp av `+`-operatøren.
 
-Under overflaten bruker `capitalized` funksjonen `localizedCapitalized` for å ta hensyn til språkkontekst og ulike former for å kapitalisere teksten, avhengig av språkinnstillingene på enheten.
+```Swift
+let string = "dette er en test"
+
+let firstCharacter = string.prefix(1).uppercased()
+let restOfString = string.dropFirst()
+
+let capitalizedString = firstCharacter + restOfString
+
+print(capitalizedString) 
+// Dette er en test
+```
+
+## Deep Dive
+
+Det er verdt å merke seg at metoden `capitalizedString()` tar hensyn til lokaliseringsinnstillingene på enheten, noe som kan føre til at bokstavene i enkelte språk blir kapitalisert annerledes enn man ville forventet.
+
+Det finnes også flere andre metoder i Swift som kan hjelpe deg med å håndtere store og små bokstaver i en streng. For eksempel, hvis du ønsker å konvertere alle bokstavene i en streng til store bokstaver, kan du bruke metoden `uppercased()`, mens `lowercased()` vil konvertere bokstavene til små.
 
 ## Se også
 
-For mer informasjon om å arbeide med strenger i Swift, kan du sjekke ut følgende ressurser:
-
-- [Swift Strings officielt dokument](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Hvordan bruke Strings i Swift](https://www.hackingwithswift.com/sixty/1/1/how-to-use-strings-in-swift)
+- [Swift String API Reference](https://developer.apple.com/documentation/swift/string)
+- [Capitalizing First Letter Of String In Swift](https://stackoverflow.com/questions/26306326/capitalizing-the-first-letter-of-a-string-in-swift)

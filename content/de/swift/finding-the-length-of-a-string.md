@@ -1,47 +1,44 @@
 ---
 title:    "Swift: Die Länge eines Strings finden."
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Das Finden der Länge eines Strings mag auf den ersten Blick nicht besonders wichtig erscheinen, aber es ist ein grundlegender Teil der Programmierung. Es kann Ihnen dabei helfen, Informationen zu analysieren und zu verarbeiten, um bessere Ergebnisse zu erzielen.
+Die Länge eines Strings zu finden, ist eine grundlegende Aufgabe beim Programmieren mit Swift. Es ist wichtig, diese Funktionalität zu verstehen, da sie in vielen Anwendungen verwendet wird, um Text zu analysieren und zu manipulieren.
 
-# Wie geht das?
+# Wie man es macht
 
-Um die Länge eines Strings in Swift zu finden, gibt es verschiedene Möglichkeiten. Eine Option ist die Verwendung der `count`-Methode, die die Anzahl der Zeichen in einem String zurückgibt. Zum Beispiel:
-
-```Swift
-let string = "Hallo Welt"
-let length = string.count
-print(length)
-```
-
-Die Ausgabe dieses Codes lautet 10, da es 10 Zeichen im String gibt, einschließlich Leerzeichen.
-
-Eine andere Möglichkeit ist die Verwendung der `characters`-Eigenschaft, die eine Sammlung von Zeichen im String zurückgibt. Sie können dann die `count`-Methode auf dieser Sammlung verwenden, um die Anzahl der tatsächlichen Zeichen im String zu erhalten. Zum Beispiel:
+Es gibt verschiedene Möglichkeiten, die Länge eines Strings in Swift zu finden. Hier ist ein Beispiel, wie es mit der `count` Methode geht:
 
 ```Swift
-let string = "Hallo Welt"
-let characters = string.characters
-let length = characters.count
-print(length)
+let text = "Hallo Welt!"
+
+print(text.count)
+
+// Ausgabe: 11
 ```
 
-Die Ausgabe ist auch hier 10, da es wiederum 10 Zeichen im String gibt.
+Hier wird die `count` Methode auf den String `text` angewendet, um die Anzahl der Zeichen in dem String zu erhalten. Diese Methode gibt eine ganze Zahl zurück, die die Länge des Strings repräsentiert.
 
-# Tiefergehende Analyse
+# Tieferer Einblick
 
-Es gibt noch andere Methoden zur Berechnung der Länge eines Strings, wie z.B. die Verwendung von `NSString`-Methoden oder sogar die manuelle Zählung von Zeichen. Es ist wichtig, die beste Methode für Ihren spezifischen Fall zu wählen, je nachdem, welche Art von Informationen Sie aus dem String extrahieren möchten.
+Eine andere Methode, um die Länge eines Strings zu finden, ist die Verwendung der `characters` Eigenschaft. Diese gibt eine Sammlung von Zeichen im String zurück, die dann gezählt werden können.
 
-Eine interessante Tatsache ist, dass Emojis auch als einzelne Zeichen gezählt werden, daher kann die Länge eines Strings mit Emojis unterschiedlich sein als die eines Strings ohne Emojis. Eine weitere wichtige Überlegung ist, dass die Länge eines Strings auch von der verwendeten Sprache abhängt, da manche Sprachen komplexere Zeichen haben als andere.
+```Swift
+let text = "Apple"
+
+print(text.characters.count)
+
+// Ausgabe: 5
+```
+
+Es ist auch wichtig zu beachten, dass die Länge eines Strings nicht unbedingt der Anzahl der sichtbaren Zeichen entspricht. In Swift können Unicode-Zeichen mit mehreren Codepoints repräsentiert werden, was bedeutet, dass die Länge eines Strings von der Anzahl der Zeichenpunkte abhängen kann, die zur Darstellung der Zeichen verwendet werden.
 
 # Siehe auch
 
-- [Swift Dokumentation zu Strings](https://developer.apple.com/documentation/swift/string)
-- [Artikel: "Verständnis von Strings in Swift"](https://www.swiftbysundell.com/basics/strings/) (auf Deutsch)
-- [Stack Overflow: Warum ist das Zählen von Zeichen in Swift unterschiedlich bei verschiedenen String-Längen?](https://stackoverflow.com/questions/41572631/why-does-count-differ-for-unicode-and-letters-in-swift-strings)
-
-Vielen Dank fürs Lesen und viel Spaß beim Programmieren in Swift!
+- Swift Dokumentation zu Strings: https://developer.apple.com/documentation/swift/string
+- SWIFT-Programmierhandbuch: https://swift.org/documentation/#the-swift-programming-language

@@ -1,74 +1,78 @@
 ---
 title:    "Go: Gerando números aleatórios"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante em Go
+## Por que gerar números aleatórios em Go?
 
-Gerar números aleatórios é uma tarefa essencial em muitos programas e projetos de programação. Em Go, essa função pode ser especialmente útil para aprimorar a segurança de um sistema, criar jogos interativos ou simulações realistas. Além disso, trabalhar com números aleatórios pode ser uma maneira divertida de aprender novos conceitos de programação e explorar a criatividade.
+Gerar números aleatórios é uma tarefa comum em programação e pode ser útil em diversas aplicações, como jogos, sorteios, criptografia e testes de software. Em Go, existem várias maneiras de gerar números aleatórios, permitindo que os desenvolvedores escolham a abordagem mais adequada para suas necessidades.
 
-## Como gerar números aleatórios em Go
+## Como gerar números aleatórios em Go?
 
-Para gerar números aleatórios em Go, primeiro é necessário importar o pacote "math/rand". Em seguida, podemos utilizar o método "Intn()" que gera um número inteiro aleatório no intervalo especificado. Por exemplo:
+Existem duas principais formas de gerar números aleatórios em Go: usando a função `rand.Intn()` e implementando um gerador de números pseudoaleatórios personalizado.
 
-```Go
-package main
-
-import (
-	"fmt"
-	"math/rand"
-)
-
-func main() {
-	numero := rand.Intn(100) // Gera um número aleatório entre 0 e 100
-	fmt.Println(numero)
-}
-```
-
-A saída deste código pode variar a cada vez que é executado, pois cada vez é gerado um novo número aleatório. Além disso, é possível utilizar o método "Float64()" para gerar um número decimal aleatório. Por exemplo:
+Para usar a função `rand.Intn()`, primeiro importamos o pacote `rand` e definimos o limite máximo do intervalo de números para gerar. Em seguida, usamos a função `Intn()` para gerar um número aleatório entre 0 e o limite definido.
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"math/rand"
+    "fmt"
+    "math/rand"
 )
 
 func main() {
-	numero := rand.Float64() // Gera um número decimal aleatório entre 0 e 1
-	fmt.Println(numero)
+    // Definindo o limite máximo como 10
+    limite := 10
+    // Gerando um número aleatório entre 0 e 10
+    numero := rand.Intn(limite)
+    // Imprimindo o número gerado
+    fmt.Println(numero)
 }
 ```
 
-## Mergulho Profundo: Mais sobre geração de números aleatórios em Go
+O código acima irá gerar um número aleatório diferente a cada vez que for executado. Para um valor mais imprevisível, podemos definir a semente do gerador de números aleatórios usando a função `rand.Seed()`.
 
-Em Go, a geração de números aleatórios é baseada no uso de um gerador de números pseudoaleatórios (PRNG). Isso significa que os números gerados não são tecnicamente "aleatórios", mas seguem um padrão matemático que, para a maioria das aplicações, é suficientemente aleatório. No entanto, é importante ressaltar que, dependendo do uso, pode ser mais apropriado utilizar um gerador de verdadeiros números aleatórios, como o "crypto/rand", que é mais seguro.
-
-Além disso, em Go, é possível definir uma semente para o gerador de números aleatórios, o que pode ser útil para gerar a mesma sequência de números aleatórios em diferentes execuções do programa. Para fazer isso, podemos utilizar o método "Seed()" do pacote "rand", passando um número inteiro como argumento. Por exemplo:
+Para implementar um gerador de números pseudoaleatórios personalizado, podemos usar a biblioteca `crypto/rand` e a função `Reader()` para criar uma fonte de números aleatórios criptograficamente segura. Em seguida, usamos a função `Read()` para gerar um slice de bytes aleatórios e convertemos para o tipo de dado desejado.
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"math/rand"
+    "fmt"
+    "crypto/rand"
+    "math/big"
 )
 
 func main() {
-	rand.Seed(42) // Define a semente para 42
-	fmt.Println(rand.Intn(100)) // Gera um número aleatório entre 0 e 100
-	fmt.Println(rand.Intn(100))
-	fmt.Println(rand.Intn(100))
+    // Criando uma fonte de números aleatórios
+    fonte := rand.Reader
+    // Gerando um slice de bytes aleatórios
+    bytes := make([]byte, 8)
+    _, err := fonte.Read(bytes)
+    if err != nil {
+        // Tratando possíveis erros
+        fmt.Println("Erro ao gerar número aleatório:", err)
+    } else {
+        // Convertendo para o tipo de dado "big.Int"
+        numero := big.Int(bytes)
+        // Imprimindo o número gerado
+        fmt.Println(numero)
+    }
 }
 ```
 
-A saída deste código será sempre a mesma, gerando a sequência de números 74, 78 e 4.
+## Deep Dive: Entendendo a geração de números aleatórios em Go
+
+A função `rand.Intn()` utiliza um gerador de números pseudoaleatórios baseado em um algoritmo linear congruencial. Isso significa que cada número gerado é determinado por um cálculo matemático a partir do número anterior, o que pode resultar em uma sequência de números previsível. Para evitar isso, a função `rand.Seed()` é utilizada para definir uma semente aleatória inicial para o gerador.
+
+Já a implementação customizada utilizando a biblioteca `crypto/rand` é mais segura e imprevisível, pois utiliza fontes criptográficas de aleatoriedade para gerar os números. No entanto, é um processo mais complexo e pode ser desnecessário em muitos casos de uso.
 
 ## Veja também
 
-- [Documentação oficial do pacote math/rand](https://golang.org/pkg/math/rand/)
-- [Tutorial "Generating Random Numbers in Go" do Golangbot](https://golangbot.com/random-numbers/)
-- [Artigo "Pseudo-Random Number Generation in Go" da DigitalOcean](https://www.digitalocean.com/community/tutorials/pseudo-random-number-generation-in-go)
+- Documentação oficial sobre a função `rand.Intn()`: https://golang.org/pkg/math/rand/#Intn
+- Artigo sobre geradores de números pseudoaleatórios: https://blog.golang.org/realistic-random-numbers
+- Perguntas frequentes sobre a biblioteca `crypto/rand`: https://golang.org/pkg/crypto/rand/#FAQ

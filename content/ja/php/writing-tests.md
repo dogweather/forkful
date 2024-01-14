@@ -1,49 +1,57 @@
 ---
-title:    "PHP: テストの作成"
+title:    "PHP: テストを書く"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ
+プログラムを書くことにおいて、テストを書くことは非常に重要です。テストは、プログラムが期待どおりに動作することを確認し、将来の変更やバグ修正にも役立ちます。テストを書くことで、安心してプログラムを開発することができます。
 
-あなたはプログラミングをしているとき、何度も同じコードを書きたくありません。そのためには、バグを見つけて修正する必要があります。しかし、大規模なプロジェクトでは、バグの修正が非常に困難になる場合があります。こうした問題を回避するために、テストを書くことが重要です。
+## 方法
+テストを書くための基本的なステップを紹介します。
 
-## 書き方
+1. テストケースを作成する。これは、テスト対象のコードのあらゆる場合において、期待される結果を定義するものです。
+2. テスト用のコードを書く。PHPの場合は、```assert```や```assertTrue```などの関数を使用して、テストケースを記述します。
+3. テストを実行する。PHPの場合は、```phpunit```を使用することでテストケースを実行し、結果を確認することができます。
 
-テストを書くには、PHPユニットテストフレームワークを使用します。これは、コードが期待どおりに動作するかどうかを確認するためのツールです。以下の例を参考にして、テストコードを書いてみましょう。
+以下は、簡単な加算をするプログラムのテストコードの例です。
 
 ```PHP
-class CalculatorTest extends PHPUnit_Framework_TestCase
-{
-    public function testAdd()
-    {
-        $calculator = new Calculator();
-        $result = $calculator->add(2, 3);
-        $this->assertEquals(5, $result);
-    }
+<?php
+function add($x, $y){
+    return $x + $y;
+}
 
-    public function testSubtract()
-    {
-        $calculator = new Calculator();
-        $result = $calculator->subtract(5, 2);
-        $this->assertEquals(3, $result);
-    }
+// テストケースを定義する
+$test_cases = array(
+    array(1, 2, 3),
+    array(5, 10, 15),
+    array(-2, 6, 4),
+);
+
+// テストを実行する
+foreach ($test_cases as $case) {
+    $result = add($case[0], $case[1]);
+    // 期待する結果と実際の結果が一致するかをテストする
+    assert($result == $case[2]);
 }
 ```
 
-上記の例では、Calculatorクラスのaddメソッドとsubtractメソッドをテストしています。テストコードでは、2つの数字を引数として渡し、期待する結果が得られるかどうかを確認しています。もしコードにバグがある場合は、エラーが発生します。
+実行結果は以下のようになります。
 
-## ディープダイブ
+```
+$ phpunit test.php
 
-テストを書く際には、様々な種類のテストがあります。ユニットテストの他にも、結合テストや受け入れテストなどがあります。それぞれのテストの目的や書き方を深く理解することで、より強固なコードを書くことができます。
+OK (3 tests)
+```
 
-## おわりに
-
-テストを書くことはプログラミングにおいて非常に重要です。コードをテストすることで、バグを見つけて修正する手間を省くことができます。是非、今日からテストを書く習慣を身につけてみてください。
+## 発展的内容
+テストを書く際には、テスト駆動開発やモックを使用するなど、さまざまな方法があります。また、PHPの場合は、フレームワークやライブラリに組み込まれているテスト機能を使用することもできます。より詳細な情報や実践的なテクニックについては、以下のリンクを参考にしてください。
 
 ## 関連リンク
-
-- [PHPユニットテストフレームワーク公式サイト](https://phpunit.de/)
-- [ユニットテストとは？](https://qiita.com/tokikaze0604/items/f7a271d0a8c33f0fef97)
-- [テスト駆動開発の基本](https://qiita.com/takafumi_nakahara/items/caf652b232de58a7e2ab)
+- [PHPUnit公式ドキュメント](https://phpunit.de/documentation.html)
+- [PHPUnitでテストを書く方法](https://qiita.com/naga3/items/8ce7b05582a51419208b)
+- [テスト駆動開発とは](https://qiita.com/NagaokaKenichi/items/bd2a590c60abb23c7842)
+- [モックとは](https://qiita.com/uryyyyyyy/items/f4dbda338a1238409e01)

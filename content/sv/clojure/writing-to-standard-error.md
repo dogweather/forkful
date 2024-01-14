@@ -1,40 +1,38 @@
 ---
-title:    "Clojure: Skriva till standardfel"
+title:    "Clojure: Att skriva till standardfel"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva till standard error är ett användbart verktyg för att på ett enkelt och tydligt sätt visa felmeddelanden och andra viktiga utskrifter till användaren.
+Att skriva till standardfel är ett användbart verktyg för felsökning och debugging när man programmerar i Clojure. Genom att skriva meddelanden till standardfelkanalen kan man få mer detaljerad information om eventuella fel i sin kod.
 
-## Hur du gör det
+## Så här gör du
 
-Det första steget för att kunna skriva till standard error är att importera funktionen `clojure.core/print-err`. Sedan kan du enkelt skriva till standard error genom att lägga in en variabel eller ett uttryck inom parenteser.
-
-```Clojure
-(ns example.core
-  (:require [clojure.core :refer [print-err]]))
-
-(print-err "Detta är ett felmeddelande.")
-;; => Detta är ett felmeddelande.
-```
-
-Du kan även kombinera flera variabler eller uttryck genom att använda funktionen `clojure.string/join`.
+För att skriva ett meddelande till standardfel i Clojure, används funktionaliteten "println" tillsammans med "System/err". Här är ett exempel på hur man skulle skriva ett felmeddelande till standardfel:
 
 ```Clojure
-(print-err (str "Detta" "är" "ett" "felmeddelande."))
-;; => Detta är ett felmeddelande.
+(println "Det här är ett felmeddelande till standardfel" (System/err))
 ```
+
+När man kör koden ovan kommer följande utskrift att visas:
+
+```
+Det här är ett felmeddelande till standardfel java.io.PrintStream@12345678
+```
+
+Det är viktigt att notera att det andra argumentet till "println" är "(System/err)". Detta instruerar Clojure att skriva meddelandet till standardfelkanalen istället för standardutskriften.
 
 ## Djupdykning
 
-Att skriva till standard error är användbart i olika situationer där du vill kommunicera viktiga meddelanden till användaren. Det kan vara felmeddelanden, debug-utskrifter eller bara viktig information som användaren behöver veta. Det är också ett bra sätt att skilja felmeddelanden från vanliga utskrifter, eftersom det skrivs ut i en annan färg i konsolen.
+Standardfelkanalen i Clojure är en av de tre standardkanalerna som finns tillgängliga för utskrift. De andra två är standardutskriften och standardinmatningen. En intressant egenskap hos standardfelkanalen är att den kan omdirigeras till en annan kanal, till exempel en loggfil. Genom att omdirigera standardfelkanalen kan man få en bättre struktur för felhantering och loggning i sin kod.
 
-Det är också viktigt att notera att när du skriver till standard error så blockeras inte programmet, vilket betyder att programmet fortsätter att köra som vanligt. Det är en fördel i situationer där du vill fortsätta köra programmet även när ett fel uppstår.
+Det är också värt att notera att "System/err" är en statisk referens som är tillgänglig för alla Clojure program. Detta gör det möjligt att använda standardfelkanalen i flera olika delar av koden utan att behöva definiera den varje gång.
 
 ## Se även
 
-- [Officiell Clojure-dokumentation om standard error](https://clojure.org/reference/java_interop#_standard_error)
-- [En bloggpost om användningen av standard error i Clojure](https://purelyfunctional.tv/article/how-to-handle-errors-in-clojure/)
+- [Clojure Dokumentation om Standard Error](https://clojure.org/reference/standard_error)
+- [Tutorial: Felsökning i Clojure](https://www.braveclojure.com/debugging/)

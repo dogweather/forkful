@@ -1,46 +1,58 @@
 ---
 title:    "C++: Überprüfen, ob ein Verzeichnis existiert"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt in der Programmierung von C++. Es ermöglicht dem Programm, die Existenz von bestimmten Dateien oder Ordnern zu überprüfen, bevor es versucht, darauf zuzugreifen. Auf diese Weise kann man Fehler vermeiden und das Programm robuster machen.
+In der Welt des Programmierens gibt es viele Aufgaben, die uns dazu zwingen, bestimmte Bedingungen zu überprüfen, um sicherzustellen, dass unser Code reibungslos funktioniert. Eine dieser Aufgaben ist das Überprüfen, ob ein Verzeichnis existiert. Obwohl es auf den ersten Blick wie eine einfache Aufgabe erscheint, ist es wichtig, sie richtig zu verstehen und zu implementieren, um zukünftige Fehler zu vermeiden.
 
-## Wie man Überprüft, ob ein Verzeichnis existiert
+## Wie
 
-Die einfachste Möglichkeit, die Existenz eines Verzeichnisses zu überprüfen, ist die Verwendung der `std::filesystem`-Bibliothek. Diese Bibliothek ist Teil der C++17-Standardbibliothek und bietet Funktionen zum Arbeiten mit Dateisystemen.
+Um zu überprüfen, ob ein Verzeichnis existiert, müssen wir zuerst die Header-Datei `fstream` inkludieren. Diese Header-Datei enthält die Funktion `opendir()`, die uns dabei helfen wird, das Verzeichnis zu öffnen. Wir müssen auch die Funktion `closedir()` verwenden, um das Verzeichnis nach der Überprüfung wieder zu schließen.
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können wir die `std::filesystem::exists()`-Funktion verwenden und als Argument den Pfad zum Verzeichnis angeben. Zum Beispiel:
+```
+#include <fstream>
 
-```C++
-#include <iostream>
-#include <filesystem>
-
-int main(){
-  std::string dir_path = "pfad/zum/verzeichnis";
-  if (std::filesystem::exists(dir_path)){
-    std::cout << "Das Verzeichnis existiert." << std::endl;
-  } else{
-    std::cout << "Das Verzeichnis existiert nicht." << std::endl;
-  }
-
-  return 0;
+bool checkDirectory(std::string path){
+    DIR *dir = opendir(path.c_str());
+    if (dir){
+        closedir(dir);
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 ```
 
-Die Ausgabe wird je nach Existenz des Verzeichnisses entweder "Das Verzeichnis existiert." oder "Das Verzeichnis existiert nicht." sein.
+In diesem Beispiel verwenden wir die Funktion `opendir()` und übergeben ihr den Pfad des Verzeichnisses als Argument. Wenn das Verzeichnis erfolgreich geöffnet werden kann, wird die Funktion `opendir()` eine gültige Zeiger-Adresse für das Verzeichnis zurückgeben. Andernfalls wird sie `NULL` zurückgeben. Wir überprüfen diese Rückgabe und schließen das Verzeichnis entsprechend.
 
-## Tiefergehende Informationen
+Um die Funktion verwenden zu können, müssen wir den Pfad des Verzeichnisses als Argument übergeben. Hier sind zwei Beispiele:
 
-Um genauer zu verstehen, wie die `std::filesystem::exists()`-Funktion funktioniert, sollten wir uns auch mit der Konzeption des Dateisystems in C++ befassen. Das Dateisystem wird als ein hierarchischer Baum betrachtet, wobei die Wurzel das Stammverzeichnis eines Laufwerks ist. Jedes Verzeichnis oder jede Datei wird als Knoten im Baum betrachtet und kann Kindknoten haben. In C++ haben Verzeichnisse und Dateien jeweils unterschiedliche Datentypen, daher wird `std::filesystem::exists()` für jedes dieser Datentypen anders implementiert.
+```
+std::string path = "/usr/bin";
+bool result = checkDirectory(path);
+// Ergebnis: result = true
 
-Außerdem kann es in manchen Fällen notwendig sein, die Berechtigungen für den Zugriff auf ein Verzeichnis zu überprüfen, bevor man seine Existenz überprüft. Hierfür bietet die `std::filesystem::permissions()`-Funktion Möglichkeiten, die Berechtigungen für ein Verzeichnis zu überprüfen und zu ändern.
+std::string path2 = "/usr/fake";
+bool result = checkDirectory(path2);
+// Ergebnis: result = false
+```
+
+In diesem Beispiel übergeben wir verschiedene Pfade an unsere Funktion `checkDirectory()` und erhalten entsprechende Ergebnisse zurück. Wir können diese Funktion auch innerhalb unserer Programme verwenden, um bestimmte Bedingungen abzufangen und unseren Code daran anzupassen.
+
+## Deep Dive
+
+Während die Funktion `opendir()` eine wirklich hilfreiche Funktion ist, gibt es noch einige Dinge, die wir beachten müssen. Zum Beispiel müssen wir sicherstellen, dass der übergebene Pfad gültig ist und dass wir die Funktion `closedir()` nach der Verwendung von `opendir()` aufrufen.
+
+Außerdem gibt es noch eine andere Funktion namens `access()`, die uns dabei helfen kann, zu überprüfen, ob ein Verzeichnis existiert. Diese Funktion ist jedoch ein bisschen anders als `opendir()` und benötigt verschiedene Berechtigungen, wie z.B. Lese- und Schreibrechte, um erfolgreich zu sein.
 
 ## Siehe auch
 
-- [C++ Referenz für std::filesystem::exists()](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [C++ Referenz für std::filesystem::permissions()](https://en.cppreference.com/w/cpp/filesystem/permissions)
-- [Tutorial: Einführung in std::filesystem (Englisch)](https://www.modernescpp.com/index.php/c-17-filesystem-library-introduction)
+- [Verzeichnis erstellen in C++](https://www.geeksforgeeks.org/create-directoryfolder-cc-program/)
+- [Prüfen, ob Datei existiert in C++](https://www.geeksforgeeks.org/check-if-a-file-exists-in-c-cpp/)
+- [FSM-Programmierer-Handbuch](https://www.fsm.com/programmiererhandbuch/verzeichnisprogrammierung)

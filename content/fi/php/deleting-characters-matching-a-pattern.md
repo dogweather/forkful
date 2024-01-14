@@ -1,47 +1,52 @@
 ---
-title:    "PHP: Mallin mukaisten merkkien poistaminen"
+title:    "PHP: Kuviota vastaavien merkkien poistaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-PHP-ohjelmoijat voivat haluta poistaa merkkejä, jotka vastaavat tiettyä kaavaa esimerkiksi tietojen käsittelyssä tai käyttäjän syötteen validoinnissa.
+Usein ohjelmointitehtävissä on tarve poistaa tiettyä kuvioita vastaavia merkkejä tekstistä, esimerkiksi poistaa kaikki välilyönnit tai poistaa merkkejä, jotka eivät ole numeroita. Tässä blogikirjoituksessa opimme kuinka voi poistaa merkkejä jokaisen ohjelmoijan työkalupakista löytyvällä PHP-kielellä.
 
-## Kuinka
+## Kuinka tehdä
 
-PHP: ssä on käytettävissä useita tapoja deletoimaan merkkejä vastaavat kaavat. Yksi tapa on käyttää `preg_replace()` -funktiota, joka korvaa kaavaa vastaavat merkit tyhjällä merkkijonolla. Alla on esimerkki, jossa poistetaan kaikki numerot merkkijonosta.
-
-```PHP
-$text = "Tervetuloa123";
-$clean_text = preg_replace('/[0-9]/', '', $text);
-echo $clean_text; // tulostaa "Tervetuloa"
-```
-Toinen tapa on käyttää `str_replace()` -funktiota. Tämä korvaa kaikki kaavan osat halutulla merkkijonolla. Esimerkiksi, jos haluat poistaa kaikki välilyönnit merkkijonosta, voit käyttää seuraavaa koodia:
+Yksinkertaisin tapa poistaa merkit tietystä kuvioista on käyttää PHP:n sisäänrakennettuja funktioita. Esimerkiksi, jos haluamme poistaa kaikki välilyönnit yhdestä merkkijonosta, voimme käyttää `str_replace()` -funktiota seuraavasti:
 
 ```PHP
-$text = "Tämä on esimerkkilause";
-$clean_text = str_replace(' ', '', $text);
-echo $clean_text; // tulostaa "Tämäonesimerkkilause"
+$teksti = "Tämä on esimerkki tekstillä, jossa on välilyöntejä.";
+$puhdas_teksti = str_replace(' ', '', $teksti);
+
+echo $puhdas_teksti; // tulostaa: Tämäonesimerkkitekstillä,jossaonvälilyöntejä.
 ```
 
-Erittäin tehokas tapa poistaa merkkejä on käyttää `substr()` -funktiota. Tämä leikkaa merkkijonosta halutun määrän merkkejä aloittaen annetusta indeksistä.
+Jos taas haluamme poistaa kaikki merkit, jotka eivät ole numeroita, voimme käyttää `preg_replace()` -funktiota säännöllisten lausekkeiden avulla:
 
 ```PHP
-$text = "Tämä on toinen esimerkkilause";
-$clean_text = substr($text, 8);
-echo $clean_text; // tulostaa "toinen esimerkkilause", eli leikkaa merkkijonosta ensimmäiset 8 merkkiä pois
+$teksti = "12345#6a7b8c9d";
+$puhdas_teksti = preg_replace('/[^0-9]/', '', $teksti);
+
+echo $puhdas_teksti; // tulostaa: 123456789
 ```
 
-## Syvällisemmin
+Voit myös sisällyttää säännöllisen lausekkeen suoraan käyttäen `preg_match()` -funktiota. Tämä esimerkki näyttää kuinka tulostetaan vain numeromerkit merkkijonosta:
 
-Merkkien poistaminen kaavan avulla on hyödyllistä silloin, kun haluat puhdistaa käyttäjän syötettä tai purkaa tietoja. Kaavan avulla voit tarkasti määrittää, mitkä merkit tulee poistaa, ja saat tuloksena puhtaan merkkijonon.
+```PHP
+$teksti = "12345#6a7b8c9d";
 
-On myös hyödyllistä tietää, että kaavoihin voidaan käyttää erilaisia sääntöjä ja lippuja, jotka helpottavat tiettyjen merkkijonojen poistamista. Esimerkiksi, voit käyttää `i`-lippua, jotta poistetaan kaikki merkit riippumatta siitä, ovatko ne isoja vai pieniä kirjaimia. Lisäksi voit käyttää `g`-lippua, jotta poistetaan kaikki kaavaa vastaavat merkit, ei vain ensimmäistä esiintymää.
+preg_match_all('/[0-9]/', $teksti, $tulokset);
+
+echo implode($tulokset[0]); // tulostaa: 123456789
+```
+
+## Syvällinen sukellus
+
+PHP:ssa on muitakin hyödyllisiä funktioita, kuten `trim()` joka poistaa merkit merkkijonon alusta ja lopusta tai `mb_ereg_replace()` joka käsittelee monikielisiä merkkijonoja.
+
+Lisäksi voit käyttää säännöllisiä lausekkeita monipuolisemmin, kuten erilaisia metakaraktereja ja määrittelyjä. Hyödyllisiä säännöllisen lausekkeen esimerkkejä löytyy esimerkiksi [PHP:n viralliselta sivustolta](https://www.php.net/manual/en/regexp.reference.escape.php).
 
 ## Katso myös
 
-- [PHP: preg_replace() -funktio](https://www.php.net/manual/en/function.preg-replace.php)
-- [PHP: str_replace() -funktio](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP: substr() -funktio](https://www.php.net/manual/en/function.substr.php)
+- [PHP:n string-funktiot](https://www.php.net/manual/en/ref.strings.php)
+- [Säännölliset lausekkeet PHP:ssa](https://www.php.net/manual/en/book.pcre.php)

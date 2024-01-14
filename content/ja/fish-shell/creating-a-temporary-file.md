@@ -1,40 +1,42 @@
 ---
-title:    "Fish Shell: 一時的なファイルの作成"
+title:    "Fish Shell: 一時ファイルの作成"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ
 
-プログラムを作成する際に、一時的なファイルを作成する理由は様々あります。例えば、一時的にデータを保存するためや、特定の処理を行うためにファイルを作成することが必要な場合があります。
+一時ファイルを作成することの利点は、一時的にデータを保存することができるため、処理の途中でデータを保持したり、データを一時的に変更したりすることができます。また、プログラムの実行中にエラーが発生した場合にも、作成した一時ファイルを確認することでエラーの原因を特定することができます。
 
-##作り方
+## 作り方
 
-一時的なファイルを作成する方法はさまざまありますが、ここではFish Shellを使用した方法を紹介します。```Fish Shell```コードブロック内にコーディング例とサンプルの出力を記載します。
+```Fish Shell
+# 一時ファイルを作成する
+set tmp_file (mktemp)
+
+# 作成した一時ファイルにデータを書き込む
+printf "Hello, world!" > $tmp_file
+
+# データを読み込んで出力する
+cat $tmp_file 
+```
+
+出力結果:
 
 ```
-# 一時的なファイルの作成方法（例）
-echo "一時的なファイルを作成しています..."
-set temp_file (mktemp)  # ファイル名は自動で生成されます
-echo "これは一時的なファイルです" > $temp_file # ファイルにデータを書き込みます
-ls $temp_file  # ファイルをリスト表示します
+Hello, world!
 ```
 
-上記のコードを実行すると、一時的なファイルが生成され、そのファイル名が表示されます。また、ファイルには指定したデータが書き込まれていることも確認できます。
+## 深堀り
 
-##ディープダイブ
+一時ファイルを作成する際、Fish Shellでは`mktemp`コマンドを使用します。このコマンドは一時ファイルを作成し、そのファイル名を出力します。一時ファイルは`/tmp`ディレクトリに作成されますが、オプションを使用することで作成するディレクトリを指定することもできます。
 
-一時的なファイルを作成する際に使用される```mktemp```コマンドは、実際にはUnixコマンド「```tempfile```」に基づいています。このコマンドはランダムなファイル名を生成し、そのファイルを作成するための一時的な場所を指定します。ただし、このファイルは一時的なものであり、プログラムが終了すると自動的に削除されます。
+また、作成した一時ファイルは必要な際に手動で削除する必要があります。Fish Shellでは、`rm`コマンドで一時ファイルを削除することができます。
 
-##関連リンク
+## 関連リンク
 
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [Fish Shell勉強会イベント情報](https://fishshell.connpass.com/)
-- [Unixコマンド「tempfile」についての詳細情報](https://www.mkssoftware.com/docs/man3/tempfile.3.asp)
-
-##参考文献
-
-- [Temporary File in Shell Scripting](https://www.linuxjournal.com/content/temporary-files-shell-scripting) by Mitch Frazier, Linux Journal
-- [Fish Shell Cookbook](https://github.com/jorgebucaran/fish-shell-cookbook) by Jorge Bucaran
-- [Unixの基礎知識](http://www.nsl.tuis.ac.jp/xoops/modules/pico21/index.php?content_id=54) 著者：森田裕樹
+- [Fish Shell公式ウェブサイト](https://fishshell.com/)
+- [Fish Shellドキュメンテーション](https://fishshell.com/docs/current/index.html)
+- [一時ファイルの作成方法について](https://qiita.com/onokatio/items/90a4526f84509ee5f105)

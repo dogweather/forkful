@@ -1,58 +1,37 @@
 ---
 title:    "Java: 产生随机数"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要生成随机数？
+# 为什么要生成随机数
 
-在编程中，有时候需要随机生成一些数字，比如抽奖程序或者游戏中的随机事件。生成随机数可以增加程序的趣味性和变数，让用户或者玩家感到惊喜。因此，学习如何生成随机数字是很有必要的。
+随机数在编程中是一个非常有用的工具，它可以帮助我们在处理数据或进行决策时增加随机性和多样性。通过生成随机数，我们可以模拟真实世界中的不确定性，并创建更加灵活和复杂的程序。
 
-## 如何生成随机数
+# 如何生成随机数
 
-在Java中，我们可以使用`java.util.Random`类来生成随机数。该类有两种常用的方法，分别是`nextInt()`和`nextDouble()`。`nextInt()`可以生成一个随机的整数，而`nextDouble()`则可以生成一个随机的小数。
+要在Java中生成随机数，我们可以使用Math类中的随机数方法。例如，通过调用Math.random()方法，我们可以生成0到1之间的随机小数。如果我们想要生成一定范围内的整数，我们可以使用Math.random()方法结合强制类型转换来实现。让我们来看一个例子：
 
-```java
-// 导入java.util.Random类
-import java.util.Random;
-
-// 创建Random对象
-Random random = new Random();
-
-// 使用nextInt()方法生成随机整数
-int randomNumber = random.nextInt(100); // 生成0到99的随机整数
-
-// 使用nextDouble()方法生成随机小数
-double randomDecimal = random.nextDouble(); // 生成大于等于0小于1的随机小数
+```Java
+double randomNumber = Math.random(); // generates random decimal between 0 and 1
+int randomInteger = (int) (Math.random() * 10); // generates random integer between 0 and 9
 ```
 
-除了这两种方法，我们也可以使用`Math.random()`来生成随机小数。该方法在0到1之间生成一个随机小数。
+我们还可以使用Random类来生成更复杂的随机数，比如生成布尔值、生成不同数据类型的随机数等等。让我们来看一个使用Random类生成随机整数的例子：
 
-```java
-// 使用Math.random()生成随机小数
-double randomDecimal = Math.random(); // 生成大于等于0小于1的随机小数
+```Java
+Random rand = new Random();
+int randomNum = rand.nextInt(101); // generates random integer between 0 and 100
 ```
 
-## 深入了解随机数生成
+# 深入了解随机数
 
-随机数的生成其实是建立在伪随机数的概念上的。伪随机数是一系列看似随机的数字，但实际上是通过一个确定的算法生成的。而生成随机数的种子（seed）则是决定随机数序列的起始点，同样的种子将会产生同样的随机数序列。
+在编程中，随机数生成算法的实现原理是一个非常有趣和复杂的话题。不同的编程语言和库可能使用不同的算法来生成随机数，这些算法也会随着时间的推移而发展和改进。如果您对这方面的知识感兴趣，可以通过阅读相关的资源来进一步了解。
 
-因此，在使用随机数时，我们可以指定一个种子，以确保每次运行程序都能生成同样的随机数序列，从而方便调试代码。
+# 参考资料
 
-```java
-// 设置种子为123，确保每次运行程序生成的随机数相同
-random.setSeed(123);
-```
-
-另外，生成随机数的方法也是可以进行自定义的。我们可以根据自己的需求写一个随机数生成函数来实现特定的随机数规则。
-
-## 参考资料
-
-- [Java文档：java.util.Random类](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java文档：Math类](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
-- [Java教程：随机数](https://www.runoob.com/java/java-random.html)
-
-# 参考链接
-
-- [Java中的伪随机数生成方法(DZone)](https://dzone.com/articles/pseudo-random-number-generator-methods-in-java)
+- [Java Math类文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html)
+- [Java Random类文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
+- [随机数生成算法的演变](https://en.wikipedia.org/wiki/Random_number_generation#History)

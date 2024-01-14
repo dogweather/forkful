@@ -1,33 +1,44 @@
 ---
 title:    "C++: Imprimindo saída de depuração"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porque
-Alguma vez você já se deparou com um erro em seu código e não conseguiu identificar onde estava o problema? Ou talvez você queira entender melhor o fluxo de execução do seu programa? Para isso existe a impressão de saída de depuração (debug output). É uma ferramenta essencial no desenvolvimento de software e pode ajudá-lo a solucionar problemas mais rapidamente.
+## Por que imprimir saída de depuração é importante?
 
-# Como fazer
-Para imprimir saída de depuração em C++, você pode usar a função `std::cout` do namespace `std`. Por exemplo:
+Quando estamos programando em C++, é inevitável que em algum momento nosso código apresente erros ou comportamentos inesperados. Nesses casos, a impressão de saída de depuração pode ser uma ferramenta extremamente útil para identificar e corrigir esses problemas. Ao imprimir informações relevantes durante a execução do programa, podemos analisar e entender melhor o que está acontecendo e, consequentemente, encontrar soluções mais eficientes.
+
+## Como imprimir saída de depuração em C++
+
+Para imprimir saída de depuração em C++, utilizamos a função ```std::cout```, que é parte da biblioteca padrão de input/output da linguagem. Esta função permite imprimir qualquer tipo de dado na saída padrão, como strings, números e até mesmo variáveis de objetos. Veja abaixo um exemplo simples de como utilizar a função ```std::cout```:
 
 ```C++
 #include <iostream>
 
+// Declaração da função main
 int main() {
-    int numero = 5;
-    std::cout << "O valor do número é: " << numero << std::endl;
-    return 0;
+  // Declaração de uma variável inteira
+  int numero = 5;
+
+  // Imprime o valor da variável na saída padrão
+  std::cout << "O número é: " << numero << std::endl;
+
+  return 0;
 }
 ```
-Isso irá imprimir a mensagem "O valor do número é: 5" no console. Você também pode usar a função `std::cerr` para imprimir saída de erro.
 
-# Mergulho Profundo
-A impressão de saída de depuração pode ser muito útil ao desenvolver e testar seu código. Você pode usá-la para verificar o valor de variáveis em pontos específicos do seu programa, ou até mesmo para confirmar se uma determinada condição é verdadeira ou falsa.
+Este código irá imprimir a mensagem "O número é: 5" na saída padrão. Note que utilizamos o operador ```<<``` para concatenar os valores que serão impressos e, ao final, adicionamos ```std::endl```, que é responsável por adicionar uma quebra de linha. Além disso, é possível utilizar diversos modificadores para formatar a saída de acordo com as nossas necessidades.
 
-Além disso, se você estiver usando um IDE (ambiente integrado de desenvolvimento), geralmente há uma opção de "depuração" que permite que você avance passo a passo pelo seu código e visualize o valor das variáveis em tempo real.
+## Aprofundando-se na impressão de saída de depuração em C++
 
-# Veja também
-- [Documentação sobre a função std::cout](https://en.cppreference.com/w/cpp/io/cout)
-- [Tutorial de depuração em C++](https://www.youtube.com/watch?v=sSd9XFYGnYQ)
-- [Perguntas frequentes sobre depuração em C++](https://www.geeksforgeeks.org/faqs-for-debugging-in-c/)
+Além da simples impressão de valores, a função ```std::cout``` também pode ser utilizada para exibir valores de variáveis durante a execução do programa. O uso do operador ```<<``` nos permite imprimir diversas informações sobre as variáveis, como o endereço de memória, o tipo de dado ou até mesmo seu conteúdo.
+
+Outra dica importante na impressão de saída de depuração é utilizar o comando ```assert()```. Esta função, que também é parte da biblioteca padrão de C++, permite adicionar verificações em determinados pontos do código e, caso a condição não seja cumprida, imprime uma mensagem de erro na saída padrão, facilitando a identificação de problemas durante a execução do programa.
+
+## Veja Também
+
+- [Tutorial de C++ do W3Schools](https://www.w3schools.com/cpp/)
+- [Documentação oficial da função std::cout](https://en.cppreference.com/w/cpp/io/cout)
+- [Guia de Depuração em C++](https://docs.microsoft.com/pt-br/cpp/cpp/debugging-cpp-in-visual-studio?view=vs-2019)

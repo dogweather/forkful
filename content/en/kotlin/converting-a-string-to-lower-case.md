@@ -1,44 +1,42 @@
 ---
 title:    "Kotlin recipe: Converting a string to lower case"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever come across a situation where you needed to compare strings in a case-insensitive manner? Converting a string to lower case can help make the comparison process simpler and more accurate.
+Converting a string to lower case is a common task in many programming projects. It allows for easier comparison of strings and can improve the performance of some algorithms that are case sensitive.
 
 ## How To
+To convert a string to lower case in Kotlin, there are two main ways to accomplish this. The first method involves using the `toLowerCase()` function, which is a member function of the `String` class. Let's take a look at an example:
 
-To convert a string to lower case in Kotlin, we can use the `toLowerCase()` function. Here's an example:
-
-```Kotlin
-val name = "John Doe"
-val lowerCaseName = name.toLowerCase()
-println(lowerCaseName)
+```
+Kotlin val str = "HELLO" 
+val lowerCaseStr = str.toLowerCase()
+println(lowerCaseStr)
 ```
 
-The output of this code would be: `john doe`
+The output of this code would be "hello". As you can see, the `toLowerCase()` function converts all of the characters in the string to lowercase.
 
-We can also use the `toLowerCase()` function on a specific range of characters in a string. Here's an example:
+The second method involves using the `toLowerCase()` function from the `java.lang.String` class. This method works the same way as the previous one, but it can also be used on null strings without throwing an exception. Here's an example:
 
-```Kotlin
-val message = "Hello World"
-val lowerCaseMessage = message.substring(0, 5).toLowerCase() + message.substring(5)
-println(lowerCaseMessage)
+```
+Kotlin val str: String? = null 
+val lowerCaseStr = str?.toLowerCase()
+println(lowerCaseStr) 
 ```
 
-The output of this code would be: `hello World`
+In this case, the output would be null. This can be useful when dealing with data that may have missing or null values.
 
 ## Deep Dive
+When converting a string to lower case, it's important to understand how this function works behind the scenes. In Kotlin, strings are immutable, meaning they cannot be changed once created. So when we use the `toLowerCase()` function, a new string object is created with the converted characters.
 
-The `toLowerCase()` function in Kotlin uses the default locale to convert the string to lower case. This means that it will take into consideration the rules of the language in which the code is running. For example, in the English language, the letter "I" should always be capitalized, even when used in the middle of a word. With the default locale, the `toLowerCase()` function will still preserve this rule.
+It's also worth noting that this function uses the default locale for conversion. If you want to convert to a specific locale, you can use the `toLowerCase(Locale)` function and specify the locale you want to use.
 
-It's important to note that the `toLowerCase()` function does not modify the original string. Instead, it returns a new string with the converted characters. This is important in situations where you need to preserve the original string while also having a lower case version for comparison purposes.
+Lastly, it's important to remember that the `toLowerCase()` function only converts alphabetic characters. Any non-alphabetic characters, such as numbers or symbols, will remain unchanged.
 
 ## See Also
-
-- [Kotlin String API documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Java String toLowerCase() method documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
-- [Kotlin String operations guide](https://kotlinlang.org/docs/reference/basic-types.html#string-raw-strings-and-escaping)
+- [Kotlin String class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Java String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)

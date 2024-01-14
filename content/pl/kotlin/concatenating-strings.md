@@ -1,47 +1,57 @@
 ---
 title:    "Kotlin: Łączenie ciągów znaków"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Stringi są jednym z podstawowych typów danych w języku Kotlin. Często zdarza się, że musimy łączyć ze sobą dwa lub więcej stringów w celu utworzenia jednego większego. W tym artykule dowiesz się, dlaczego konkatynacja stringów jest ważna i jak możesz to zrobić w języku Kotlin.
+W dzisiejszych czasach nieodłączną częścią programowania jest manipulowanie ze stringami – czyli ciągami znaków. Często zdarza się, że chcemy połączyć dwa lub więcej stringów w celu utworzenia jednego, kompletnego wyrażenia. W tym przypadku bardzo przydatne jest stosowanie tzw. "konkatenacji" stringów.
 
 ## Jak to zrobić
 
-W języku Kotlin istnieją różne metody łączenia stringów. Jedną z najprostszych jest użycie operatora "+" lub funkcji "plus()". Przykładowo:
+Język Kotlin oferuje nam kilka sposobów na konkatenację stringów. Pierwszym i najbardziej popularnym jest użycie operatora plus (`+`). Dzięki niemu możemy połączyć dwa stringi w jeden, jak pokazano poniżej:
 
 ```Kotlin
-val imie = "Anna"
-val nazwisko = "Nowak"
-val pelneImie = imie + " " + nazwisko // używając operatora "+"
-val inneImie = imie.plus(" ").plus(nazwisko) // używając funkcji "plus()"
+val firstString = "Hello "
+val secondString = "world!"
+val result = firstString + secondString
+println(result) // wyświetli "Hello world!"
 ```
 
-W obu przypadkach wynikiem jest string "Anna Nowak". Możemy również wykorzystać metody formatowania stringów, takie jak "format()" lub "replace()". Przykładowo:
+Innym sposobem jest wykorzystanie funkcji `plus()` zadeklarowanej na klasie `String`. Działanie jest podobne, ale w tym przypadku operator `+` jest zamieniany na wywołanie metody `plus()`.
 
 ```Kotlin
-val rok = 2021
-val miesiac = "listopad"
-val data = "Dzisiaj jest %s roku, a mamy już %s." // %s służy do zastępowania wartości
-val sformatowanaData = data.format(miesiac, rok) // używając metody "format()"
-val nowaData = data.replace("%s", miesiac).replace("%s", rok.toString()) // używając metody "replace()"
+val firstString = "Hello "
+val secondString = "world!"
+val result = firstString.plus(secondString)
+println(result) // wyświetli "Hello world!"
 ```
 
-W obu przypadkach wynikiem jest string "Dzisiaj jest listopad roku, a mamy już 2021." Warto również pamiętać o użyciu funkcji "toString()" w przypadku łączenia stringów z innymi typami danych, takimi jak liczby czy znaki.
+Możemy również użyć funkcji `stringOf()` lub `concat()` – jednak w praktyce rzadko się to zdarza, ponieważ są one mniej czytelne.
 
-## Vertkanda szczegóły
+## Wnikliwa analiza
 
-Gdy połączysz stringi za pomocą operatora "+" lub metody "plus()", tworzony jest zupełnie nowy obiekt String. W przypadku formatowania stringów za pomocą funkcji "format()" lub "replace()", używany jest obiekt typu "StringBuilder", który jest bardziej wydajny, ponieważ nie tworzy nowych obiektów przy każdej konkatenacji.
+W języku Kotlin zmienne typu `String` są niemodyfikowalne (ang. immutable), co oznacza, że nie możemy zmienić ich zawartości. Dlatego też przy konkatenacji nie jest tworzony nowy obiekt typu `String`, a jedynie utworzone jest nowe wyrażenie zawierające oba stringi.
 
-Dodatkowo, w języku Kotlin istnieją również złożone metody łączenia stringów, takie jak "joinToString()", która pozwala na łączenie elementów z listy z użyciem wybranego separatora, lub "buildString()", która pozwala na tworzenie stringów bez konieczności używania metody "append()".
+Jednak należy uważać przy konkatenacji dużej ilości stringów, ponieważ może to negatywnie wpłynąć na wydajność naszej aplikacji. W takiej sytuacji lepiej wykorzystać klasę `StringBuilder`, która została stworzona specjalnie do operacji na ciągach znaków. Przykład wykorzystania `StringBuilder` jest pokazany poniżej:
 
-## Zobacz także
+```Kotlin
+val firstString = "Hello "
+val secondString = "world!"
+val builder = StringBuilder()
+builder.append(firstString)
+builder.append(secondString)
+val result = builder.toString()
+println(result) // wyświetli "Hello world!"
+```
 
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
-- [Oficjalny poradnik języka Kotlin](https://kotlinlang.org/docs/kotlin-docs.pdf)
-- [Kotlin w akcji](https://www.manning.com/books/kotlin-in-action)
+## Zobacz też
 
-Dziękujemy za przeczytanie tego artykułu! Mam nadzieję, że dowiedziałeś/aś się czegoś nowego o łączeniu stringów w języku Kotlin. Jesteśmy również ciekawi, jak ty wykorzystujesz tę funkcjonalność w swoich projektach. Daj nam znać w komentarzu poniżej!
+[Dokumentacja poprawności konkatenacji stringów w języku Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/str-templates.html)
+
+[Różnice między konkatenacją, interpolacją i wykorzystywaniem funkcji `format()`](https://proandroiddev.com/string-interpolation-vs-format-string-vs-concatenation-in-kotlin-c26aa1c01476)
+
+[Trywialne funkcje stringowe w języku Kotlin](https://blog.kotlin-academy.com/trivial-string-functions-strings-in-kotlin-e44ab9ee2ef8?gi=7de6764c2227)

@@ -1,44 +1,33 @@
 ---
 title:    "Javascript: Iniciando um novo projeto"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Javascript?
+# Porque começar um novo projeto de programação
 
-Começar um novo projeto em Javascript pode ser uma ótima maneira de aprender e aprimorar suas habilidades de programação. Além disso, criar um projeto novo pode lhe dar a oportunidade de explorar novas ideias e desafios em seu campo de interesse.
+Nos últimos anos, a programação se tornou uma das habilidades mais valorizadas no mercado de trabalho. Com o aumento da digitalização e do uso de tecnologia em diversas áreas, a demanda por programadores também tem crescido exponencialmente. Além disso, a habilidade de programar permite criar soluções inovadoras e impactar positivamente a sociedade. Começar um novo projeto de programação pode ser uma oportunidade de aprender e evoluir como profissional, além de contribuir para o desenvolvimento de novas tecnologias e ideias.
 
-## Como começar um novo projeto em Javascript?
+## Como começar um novo projeto em Javascript
 
-Para começar um novo projeto em Javascript, você precisará de um editor de texto como o Visual Studio Code ou Atom, bem como do Node.js instalado em seu sistema. Você também pode utilizar o framework React ou o Angular, dependendo da sua preferência.
-
-Para criar um projeto simples em Javascript, você pode seguir os passos abaixo:
+Para começar um novo projeto em Javascript, é necessário seguir alguns passos básicos. Primeiramente, é importante ter um editor de código, como o Visual Studio Code ou o Sublime Text, instalado no seu computador. Em seguida, crie um novo arquivo e salve-o com a extensão ".js". Dentro do seu arquivo, comece com o seguinte código:
 
 ```Javascript
-// Crie um arquivo index.js em seu editor de texto
-
-// Declare uma variável para armazenar uma string
-let message = "Bem-vindo ao novo projeto em Javascript!" 
-
-// Imprima a variável na tela utilizando o console.log()
-console.log(message) 
+console.log("Olá mundo!");
 ```
 
-## Mergulho Profundo: Como iniciar um novo projeto em Javascript
+Esse código irá imprimir a mensagem "Olá mundo!" no console do seu navegador ou no terminal de comando, caso esteja usando o Node.js. A partir daí, você pode começar a escrever o seu projeto, importando bibliotecas, criando funções e construindo a lógica do seu programa.
 
-Ao começar um novo projeto em Javascript, é importante ter em mente os seguintes pontos:
+## Aprofundando-se no processo de começar um novo projeto
 
-1. Defina seu objetivo: é importante ter uma ideia clara do que você quer alcançar com o seu projeto. Isso ajudará a orientar suas decisões de design e a manter um foco claro durante o processo de desenvolvimento.
+Além dos passos básicos mencionados anteriormente, é importante pensar em alguns pontos-chave para garantir o sucesso do seu novo projeto de programação. Primeiramente, é fundamental definir muito bem o objetivo do seu projeto e quais problemas ele irá resolver. Em seguida, é importante planejar e definir uma estrutura clara para o projeto, com suas funcionalidades principais e possíveis desafios a serem enfrentados.
 
-2. Escolha as ferramentas certas: escolher as ferramentas certas pode fazer uma grande diferença no sucesso do seu projeto. Certifique-se de pesquisar e entender as diferentes opções disponíveis antes de decidir qual framework, biblioteca ou linguagem usar.
-
-3. Comece com um plano: antes de começar a escrever qualquer código, é útil criar um plano ou esboço do seu projeto. Isso o ajudará a visualizar a estrutura do seu projeto e a identificar possíveis problemas antes de começar a codificação.
-
-4. Esteja disposto a aprender: a programação é um campo em constante evolução e é normal encontrar desafios e obstáculos ao longo do caminho. Esteja aberto a aprender e a pesquisar novas soluções para problemas que possam surgir durante o seu projeto.
+Além disso, ao começar um novo projeto, é importante manter-se atualizado e buscar aprender novas habilidades e técnicas. A programação é uma área que está em constante evolução, e é essencial estar por dentro das tendências e novidades do mercado. Por fim, não tenha medo de errar e sempre busque por feedbacks e sugestões de melhorias, seja de colegas de trabalho ou da comunidade de programação em geral.
 
 ## Veja também
 
-- [Como aprender Javascript: Um guia para iniciantes](https://www.leme.digital/aprenda-como-programar-em-javascript/)
-- [Melhores frameworks de Javascript para desenvolver aplicações web](https://www.devmedia.com.br/principais-frameworks-javascript-para-desenvolvimento-web/40243)
-- [Node.js: Guia definitivo para iniciantes](https://www.treinaweb.com.br/blog/um-guia-definitivo-sobre-node-js-para-iniciantes/)
+- [Guia para iniciantes em Javascript](https://www.hostinger.com.br/tutoriais/tutoriais-de-javascript/)
+- [10 projetos para começar a praticar Javascript](https://www.alura.com.br/artigos/10-projetos-praticar-javascript)
+- [Como se tornar um programador de sucesso](https://www.devmasterclass.com.br/como-se-tornar-um-programador-de-sucesso/)

@@ -1,56 +1,42 @@
 ---
 title:    "Clojure recipe: Starting a new project"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Programming in Clojure is an exciting and rewarding experience for developers looking to create powerful and efficient applications. With its functional programming approach, robust standard library, and powerful concurrency features, using Clojure can give your project a cutting-edge advantage. In this blog post, we will explore the process of starting a new project in Clojure, so you can jump right into creating amazing software.
+
+Starting a new programming project can be an intimidating task, especially if you are new to the language. However, when it comes to Clojure, the benefits far outweigh any initial hesitation. Clojure is a functional, dynamic, and powerful language that allows for rapid development and easy scalability. Whether you are an experienced developer or just starting out, learning Clojure can greatly enhance your skills and contribute to your personal and professional growth.
 
 ## How To
-To start a new project in Clojure, you will need to have the Clojure command-line tools installed on your machine. Once you have that set up, you can use the ```clj``` command to create a new project directory, with the following command:
 
-```Clojure
-clj -X:new :template app :name my-project
+To start a new project in Clojure, you first need to have it installed on your system. You can do this by following the installation instructions on the official Clojure website. Once installed, you can use either an IDE or a text editor with a Clojure plugin to write your code.
+
+Let's dive into a simple example of a "Hello World" program in Clojure:
+
+```
+Clojure (println "Hello World")
 ```
 
-This will create a new project called "my-project" with all the necessary files and folders. Next, navigate into the project directory and open the ```deps.edn``` file. This is where you can specify any dependencies or plugins you want to use in your project. For example, if you want to use the popular library "Ring" for web development, you can add it to your dependencies like this:
+This code uses the "println" function to output the text "Hello World" to the console. You can run this code by saving it as a ".clj" file and executing it using the Clojure runtime. This will print out the desired output to your console.
 
-```Clojure
-:deps [[ring/ring "1.9.0"]]
-```
+Now, let's take a deeper look into starting a new project in Clojure. The first thing you need to do is set up a project structure. This can be done using the "lein new" command, which will create a new folder with all the necessary files and directories for your project. You can then use "lein run" to execute your project.
 
-Save the file, and now your project is ready to be built and run. To do so, use the following command:
+Clojure also has a package manager called "Clojars", which allows you to easily manage and share your projects with others. You can publish your project to Clojars by creating a "project.clj" file and including the necessary information, such as project name, description, and dependencies.
 
-```Clojure
-clj -M -m projectName.core
-```
-
-This will run your project's core namespace, which is the starting point of your application. Now you can start coding your project using the powerful features of Clojure.
+Additionally, Clojure has a rich library called "Clojure Contrib" that provides useful tools and functions for developers. You can include these libraries in your project by adding them as dependencies in your "project.clj" file.
 
 ## Deep Dive
-When starting a new project in Clojure, it's essential to understand the structure of the project directory. Inside the project, you will see a folder called ```src```. This is where all your application code will reside. You will also see a file named ```core.clj```, which is the starting point of your project. This file contains a namespace declaration that looks like this:
 
-```Clojure
-(ns projectName.core)
-```
+Starting a new project in Clojure not only allows you to write code efficiently, but also promotes good coding practices. Clojure's emphasis on functional programming and immutability encourages developers to write clean and concise code, making it easier to maintain and debug in the long run.
 
-This indicates that this file belongs to the "projectName" project and is named "core." You can create as many namespaces as you need to organize your code. For example, if you want to create a "util" namespace to hold all your utility functions, you can add it to your project like this:
+Moreover, Clojure's REPL (Read-Eval-Print Loop) allows developers to interact with their code in real-time, making it easy to test and debug. This can greatly improve the development process and reduce the time spent on fixing errors.
 
-```Clojure
-(ns projectName.util)
-```
+See Also
 
-You can then require this namespace in your ```core.clj``` file like this:
-
-```Clojure
-(require '[projectName.util :refer [my-util-fn]])
-```
-
-This will allow you to use the functions from the "util" namespace in your project's core namespace.
-
-## See Also
-- [Official Clojure website](https://clojure.org/) 
-- [Clojure docs](https://clojure.org/documentation) 
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
+- Official Clojure website: https://clojure.org
+- Installation guide: https://clojure.org/guides/getting_started
+- Clojure Contrib library: https://clojure.org/community/contributing_libs
+- Clojars package manager: https://clojars.org/

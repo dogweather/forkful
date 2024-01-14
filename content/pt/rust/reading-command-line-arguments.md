@@ -1,56 +1,60 @@
 ---
 title:    "Rust: Lendo argumentos da linha de comando"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que ler argumentos da linha de comando em Rust?
 
-Se você é um programador iniciante ou até mesmo experiente em Rust, provavelmente já encontrou muitas situações em que precisou ler argumentos da linha de comando. Esses argumentos servem como entradas para o seu programa, permitindo que os usuários forneçam informações específicas ao executá-lo. Neste artigo, vamos explorar como ler argumentos da linha de comando em Rust e como isso pode ser útil no seu dia a dia de programação.
+A leitura de argumentos da linha de comando é uma habilidade essencial para qualquer programador Rust. Com essa técnica, é possível que nossos programas recebam informações do usuário no momento em que são executados, tornando-os mais dinâmicos e interativos. Se você está aprendendo Rust ou já programa nesta linguagem, é importante entender como ler argumentos da linha de comando para aprimorar suas habilidades.
 
-## Como fazer:
+## Como ler argumentos da linha de comando em Rust
 
-A leitura de argumentos da linha de comando em Rust é muito simples e pode ser feita utilizando a biblioteca padrão `std::env`. Para isso, é necessário importar essa biblioteca no início do seu código utilizando o comando `use std::env;`.
-
-Agora, vamos ver como podemos ler os argumentos utilizando o método `args()`, que retorna um iterador contendo todos os argumentos passados na linha de comando. Veja o código abaixo:
+Ler argumentos da linha de comando em Rust é bastante simples. Primeiramente, precisamos importar a biblioteca `std::env`, que nos fornece funções para acessar os argumentos passados para o programa. Em seguida, utilizamos a função `args()` para obter um iterador contendo os argumentos.
 
 ```Rust
 use std::env;
 
 fn main() {
-    // Criando um vetor com os argumentos
     let args: Vec<String> = env::args().collect();
 
-    // Imprimindo o primeiro argumento (o nome do programa)
-    println!("Nome do programa: {}", args[0]);
-
-    // Imprimindo os argumentos fornecidos pelos usuários
-    println!("Argumentos fornecidos:");
-    for arg in args.iter().skip(1) {
-        println!("{}", arg);
-    }
+    // restante do código para processar os argumentos
 }
 ```
 
-A saída do código acima, caso seja executado com os argumentos `hello world`, será a seguinte:
+Com esse iterador, podemos acessar cada argumento individualmente utilizando métodos como `next()` e `unwrap()`. Por exemplo, se quisermos imprimir o primeiro argumento passado pelo usuário, podemos utilizar o seguinte código:
 
-```
-Nome do programa: cli_arguments
-Argumentos fornecidos:
-hello
-world
+```Rust
+println!("Primeiro argumento: {}", args[1]);
 ```
 
-Percebemos que os argumentos fornecidos foram armazenados no vetor `args` e podemos acessá-los utilizando índices. Além disso, utilizamos o método `collect()` para converter o iterador em um vetor.
+Além disso, também podemos utilizar a função `len()` para verificar se foram fornecidos argumentos suficientes e garantir que não ocorram erros.
 
-## Mergulho profundo:
+## Aprofundando no assunto
 
-Além do método `args()`, a biblioteca `std::env` também possui outras funções úteis para trabalhar com argumentos da linha de comando. Por exemplo, o método `args_os()` retorna um iterador contendo os argumentos como `OsString`, que é uma representação do sistema operacional. Isso pode ser particularmente útil em cenários onde as entradas do usuário contêm caracteres especiais.
+Além de ler argumentos passados pelo usuário, também podemos fornecê-los manualmente através do arquivo `Cargo.toml`. Por exemplo, no arquivo de configuração do seu projeto, você pode adicionar a seguinte linha:
 
-Outra funcionalidade interessante é o método `current_dir()`, que retorna o diretório atual do programa. Isso pode ser útil se você precisar manipular arquivos dentro do diretório em que seu programa está sendo executado.
+```
+[package]
+name = "meu_projeto"
+version = "0.1.0"
+authors = ["Seu Nome <seu@email>"]
+description = "Meu novo projeto"
+edition = "2018"
 
-## Veja também:
+[dependencies]
+rand = "0.6.0"
 
-- [Documentação oficial do Rust sobre a biblioteca `std::env`](https://doc.rust-lang.org/std/env/index.html)
-- [Tutorial de Rust: Trabalhando com argumentos da linha de comando](https://www.elianiva.com.br/2019/11/08/rust-tutorial-trabalhando-com-argumentos-da-linha-de-comando/)
+[package.metadata.rustlearners.arguments]
+nome = "Rust Learners"
+```
+
+Assim, ao executar o comando `cargo run -- nome`, o valor fornecido para `nome` será passado como argumento para o programa e pode ser acessado da mesma forma que os argumentos da linha de comando.
+
+## Veja também
+
+- [Documentação oficial do Rust sobre a biblioteca std::env](https://doc.rust-lang.org/std/env/index.html)
+- [Tutorial sobre leitura de argumentos da linha de comando em Rust](https://www.youtube.com/watch?v=x5ovZkvCO-0)
+- [Exemplo prático de leitura de argumentos da linha de comando em Rust](https://gist.github.com/seppo0010/ab10c41634bdfbeeeba4)

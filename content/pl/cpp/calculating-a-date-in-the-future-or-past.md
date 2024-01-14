@@ -1,51 +1,74 @@
 ---
 title:    "C++: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Obliczenie daty w przyszłości lub przeszłości jest częstym problemem w programowaniu. Jest to szczególnie przydatne przy tworzeniu aplikacji, które wymagają wyświetlania dat lub podawania przyszłych terminów. W tym artykule dowiesz się, jak w prosty sposób obliczyć datę w przyszłości lub przeszłości za pomocą języka C++.
+Obliczanie daty w przyszłości lub przeszłości może być niezbędne w wielu sytuacjach programistycznych. Na przykład, może być użyteczne podczas tworzenia aplikacji związanych z czasem, takich jak kalendarze lub systemy rezerwacji. W tym artykule dowiecie się, jak napisać prosty program w języku C++, który będzie w stanie wyliczyć datę w przyszłości lub przeszłości.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości, musimy wykorzystać kilka funkcji w języku C++. W pierwszej kolejności musimy uwzględnić datę bazową, czyli dzisiejszą datę, od której będziemy obliczać przyszłą lub przeszłą datę. Następnie musimy dodać lub odjąć odpowiednią liczbę dni, miesięcy lub lat w zależności od tego, jak daleko w przyszłość lub przeszłość chcemy się przenieść.
+Aby wyliczyć datę w przyszłości lub przeszłości, będziemy potrzebować kilku podstawowych informacji: aktualnej daty, liczby dni do przeliczenia oraz kierunku (przyszłość lub przeszłość). Wykorzystamy bibliotekę <ctime>, która udostępnia użyteczne funkcje związane z czasem.
 
-Przykładowy kod C++ do obliczenia przyszłej daty za pomocą funkcji "tm":
+Najpierw zadeklarujemy potrzebne zmienne, czyli aktualną datę, liczbę dni oraz kierunek:
 
-```C++
-#include <iostream>
+```
 #include <ctime>
+using namespace std;
 
 int main()
 {
-    // dzisiejsza data
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-
-    // dodanie 10 dni do dzisiejszej daty
-    ltm->tm_mday += 10;
-    mktime(ltm);
-
-    // wyświetlenie daty po dodaniu 10 dni
-    std::cout << "Przyszła data: " << ltm->tm_mday << "." << ltm->tm_mon + 1 << "." << ltm->tm_year + 1900 << std::endl;
-
-    return 0;
+    time_t currentTime;
+    struct tm *localTime;
+    int numberOfDays;
+    char direction;
 }
 ```
 
-W tym przykładzie najpierw używamy funkcji "time" do pobrania dzisiejszej daty, a następnie przypisujemy ją do obiektu "tm", który jest używany do przechowywania dat w języku C++. Następnie dodajemy 10 dni do daty i ponownie używamy funkcji "mktime" do przeliczenia daty. Wreszcie, wyświetlamy przyszłą datę na ekranie.
+Następnie pobierzemy aktualną datę i przypiszemy ją do zmiennej `currentTime` oraz przeliczymy ją na lokalny czas, który przypiszemy do zmiennej `localTime`:
+
+```
+currentTime = time(NULL);
+localTime = localtime(&currentTime);
+```
+
+Teraz poprosimy użytkownika o podanie liczby dni oraz kierunku (przyszłość lub przeszłość) i przypiszemy je do odpowiednich zmiennych.
+
+Następnie użyjemy funkcji `mktime()` do przeliczenia daty na liczbę sekund oraz funkcji `difftime()` do wyliczenia różnicy w sekundach między aktualną datą a przeliczoną datą:
+
+```
+time_t newTime;
+if (direction == 'F') {
+    newTime = mktime(localTime) + numberOfDays * 24 * 60 * 60;
+} else if (direction == 'P') {
+    newTime = mktime(localTime) - numberOfDays * 24 * 60 * 60;
+}
+    
+double difference = difftime(newTime, currentTime);
+```
+
+Na koniec użyjemy funkcji `ctime()` do zamiany daty z powrotem na czytelną dla człowieka formę oraz wypiszemy ją na ekran:
+
+```
+cout << "Nowa data: " << ctime(&newTime);
+```
+
+Po uruchomieniu programu i podaniu odpowiednich danych, powinniśmy otrzymać wynik wyliczonej daty w przyszłości lub przeszłości.
 
 ## Deep Dive
 
-Poza funkcją "tm", język C++ oferuje również wiele innych funkcji, które mogą pomóc w obliczeniu przyszłych lub przeszłych dat. Na przykład, funkcja "localtime" pozwala przekonwertować czas na lokalną strefę czasową, a funkcja "mktime" dokonuje odwrotnej konwersji. Istnieją też gotowe biblioteki, takie jak "boost::date_time", które oferują zaawansowane funkcje do manipulowania datami.
+W powyższym przykładzie wykorzystaliśmy funkcje `mktime()` i `difftime()`, które są bardzo przydatne podczas obliczania dnia w przyszłości lub przeszłości. Jednak istnieje wiele innych metod, które mogą zostać wykorzystane do tego celu, takich jak biblioteka <chrono> albo funkcje systemowe dostarczane przez konkretny system operacyjny.
 
-Więcej informacji na temat obliczania dat w przyszłości lub przeszłości można znaleźć w dokumentacji języka C++ oraz różnych podręcznikach programistycznych.
+Ważne jest także prawidłowe wykorzystanie i przetwarzanie dat w różnych strefach czasowych oraz uwzględnienie zmiany czasu letniego i zwykłego.
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o obliczaniu daty w przyszłości lub przeszłości, polecamy zapoznać się z dokumentacją biblioteki <ctime> oraz poszukać innych przydatnych funkcji i metod związanych z czasem.
 
-* [Dokumentacja języka C++](https://en.cppreference.com/w/cpp/chrono)
-* [Przykładowy kod do obliczania daty w przyszłości](https://www.geeksforgeeks.org/calculating-date-time-in-c/)
-* [Biblioteka boost::date_time](https://www.boost.org/doc/libs/1_70_0/doc/html/date_time.html)
+## Zobacz też
+
+- https://www.cplusplus.com/reference/ctime/
+- https://www.cplusplus.com/reference/chrono/
+- https://www.geeksforgeeks.org/working-with-date-and-time-in-c-chrono-library/

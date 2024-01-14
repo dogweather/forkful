@@ -1,40 +1,39 @@
 ---
 title:    "Elixir: Wyszukiwanie i zastępowanie tekstu"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Szukanie i zamiana tekstu jest jednym z podstawowych zadań w programowaniu. Jest to niezbędne, aby uaktualnić lub poprawić błędy w plikach i zawsze będzie przydatne podczas pracy z tekstem.
+W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego życia. Wymaga nie tylko umiejętności logicznego myślenia, ale również skrupulatności i precyzji. Jednym z podstawowych zadań programisty jest manipulacja tekstem, a jednym z najważniejszych narzędzi w tym procesie jest wyszukiwanie i zamiana tekstu. Dlatego też w tym artykule opowiemy o tym, dlaczego warto się nauczyć wyszukiwania i zamiany tekstu oraz jak to zrobić w języku Elixir.
 
 ## Jak to zrobić
 
-W Elixirze istnieje wiele sposobów na szukanie i zamianę tekstu, ale najbardziej wydajną opcją jest użycie funkcji `String.replace/4`. Przyjmie ona cztery argumenty: oryginalny napis, poszukiwany wyrażenie, wyrażenie zamienne i opcje. Na przykład:
+Wyszukiwanie i zamiana tekstu w języku Elixir może być łatwe i przyjemne, dzięki wbudowanym funkcjom biblioteki standardowej. Jedną z najczęściej używanych funkcji jest ```String.replace/4```, która pozwala na szybką i skuteczną zmianę tekstu w zadanym napisie.
 
-```elixir
-original_string = "Witaj, świecie!"
-result = String.replace(original_string, "świecie", "Polsko")
-IO.puts(result)
+Przykład użycia:
+```Elixir
+iex> String.replace("Witaj, świecie!", "świecie", "Polish readers")
+"Witaj, Polish readers!"
 ```
 
-Wyjściem z tego kodu będzie `"Witaj, Polsko!"`
+Funkcja ```String.replace/4``` przyjmuje jako argumenty: napis, wyrażenie do znalezienia, zastępujące wyrażenie oraz opcje. Opcje te mogą być wykorzystane do zmiany sposobu wyszukiwania, na przykład przez ustawienie flagi ```global: true``` można dokonać zmiany wszystkich wystąpień danego wyrażenia.
 
-## Głębszy zanurzenie
+## Głębsza analiza
 
-Funkcja `String.replace/4` jest wysoce konfigurowalna i może być używana w różnych przypadkach. Na przykład, można zastosować opcję `count`, aby określić, ile wystąpień wyrażenia zamienić. Można również przekazać funkcję jako argument, aby przeprowadzić bardziej zaawansowane operacje na dopasowanym tekście.
+Wysyzywanie i zamiana tekstu w języku Elixir nie jest ograniczone jedynie do prostej funkcji ```String.replace/4```. Istnieje wiele innych funkcji i możliwości, które warto poznać aby móc skutecznie manipulować tekstem.
 
-```elixir
-original_string = "Elixir jest niesamowitym językiem programowania!"
-result = String.replace(original_string, ~r/[a-z]+/, fn match -> String.upcase(match) end)
-IO.puts(result)
-```
+Jedną z takich funkcji jest ```Regex.replace/3```, która pozwala na wykorzystanie wyrażeń regularnych do wyszukania i zamiany tekstu. Ta funkcja może być bardzo przydatna w bardziej złożonych przypadkach, gdzie potrzebujemy dokładnie określić wzorzec do zastąpienia.
 
-Wyjściem z tego kodu będzie `"ELIXIR JEST NIESAMOWITYM JĘZYKIEM PROGRAMOWANIA!"`
+Dzięki możliwościom języka Elixir, możemy także zastosować funkcję ```Enum.map/2```, która pozwala na zmapowanie funkcji na każdy element w danym zbiorze. W ten sposób możemy odnaleźć wyrażenia spełniające określone kryteria i dokonać na nich zmiany.
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja funkcji `String.replace/4`](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Elixir School - Praca z tekstem](https://elixirschool.com/pl/lessons/basics/text/)
-- [Elixir Cookbook - Szukanie i zamiana tekstu](https://elixircookbook.medium.com/search-and-replace-in-elixir-c8342004a9c4)
+Jeśli jesteś zainteresowany/zainteresowana zagłębieniem się w zagadnienia wyszukiwania i zamiany tekstu w języku Elixir, polecamy zapoznać się z poniższymi źródłami:
+
+- [Dokumentacja Elixir](https://elixir-lang.org/docs.html)
+- [Oficjalny kurs Elixir na Udemy](https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/)
+- [Poradniki i artykuły na temat Elixir na Medium](https://medium.com/search?q=Elixir)

@@ -1,51 +1,56 @@
 ---
-title:    "Javascript: Sammanslående strängar"
+title:    "Javascript: Sammanslagning av strängar"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att använda sig av strängkonkatinering är ett viktigt koncept inom Javascript-programmering eftersom det möjliggör att kombinera flera strängar till en enda och på så sätt skapa dynamiska och anpassningsbara texter som kan användas för olika ändamål.
+## Varför:
+Det finns många användbara metoder inom programmering, men att kunna sammanfoga strängar är en av de mest grundläggande och viktiga. Genom att kunna kombinera flera strängar till en enda kan du skapa dynamiska och anpassningsbara texter som bidrar till en bättre användarupplevelse i dina program och applikationer.
 
-## Hur man gör
-För att konkatenera strängar i Javascript behöver du använda dig av operatorn "+" som fungerar som en slags sammanfogare. Nedan finns ett enkelt exempel på hur man kan använda sig av denna operator för att kombinera två strängar till en enda:
-
-```Javascript
-var fornamn = "Anna";
-var efternamn = "Larsson";
-
-var namn = fornamn + " " + efternamn;
-console.log(namn);
-
-// Output: "Anna Larsson"
-```
-
-I exemplet ovan används "+"-operatorn för att skapa en ny variabel som innehåller både förnamnet och efternamnet, separerade med ett mellanslag. Genom att sedan logga ut den nya variabeln får vi som resultat den konkatenerade strängen "Anna Larsson".
-
-## Fördjupning
-Det finns flera sätt att konkatenera strängar på, beroende på vilka behov och preferenser man har. En vanlig metod är användningen av metoden "concat()", som är speciellt utformad för strängkonkatinering och som kan användas för att konkatenera flera strängar samtidigt.
+## Hur du gör:
+Det finns flera sätt att sammanfoga strängar i Javascript, men den enklaste metoden är att använda operatorn "+" för att lägga ihop dem. Se nedan för kodexempel och resultat:
 
 ```Javascript
-var text1 = "Hej ";
-var text2 = "där!";
+let förnamn = "Johan";
+let efternamn = "Svensson";
+let helsnamn = förnamn + " " + efternamn;
 
-var text3 = text1.concat(text2);
-console.log(text3);
+console.log(helsnamn); 
 
-// Output: "Hej där!"
+//Output: Johan Svensson
 ```
 
-Det är även möjligt att konkatenera strängar med hjälp av template literals, vilket gör det enklare att integrera variabler i de strängar man vill konkatenera.
+Som du kan se ovan använde vi "+" för att lägga till en mellanslag mellan förnamn och efternamn. Du kan också använda denna metod för att sammanfoga flera strängar på en gång:
 
 ```Javascript
-var stad = "Stockholm";
-var text4 = `Jag bor i ${stad}.`;
-console.log(text4);
+let citat = "Programmering är " + "som att lösa ett pussel " + "med kod.";
 
-// Output: "Jag bor i Stockholm."
+console.log(citat); 
+
+//Output: Programmering är som att lösa ett pussel med kod.
 ```
 
-## Se även
-- [MDN Web Docs - Strängkonkatinering](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
-- [W3Schools - Javascript Strängar](https://www.w3schools.com/js/js_strings.asp)
+En annan metod för att sammanfoga strängar är genom att använda "Template Literals" som är en modernare och mer läsbar metod. Se exempel nedan:
+
+```Javascript
+let favoritMat = "pasta";
+let beskrivning = `Min favoritmat är ${favoritMat}.`;
+
+console.log(beskrivning); 
+
+//Output: Min favoritmat är pasta.
+```
+
+Som du kan se använde vi "Template Literals" för att lägga till en variabel i en sträng utan att behöva använda "+"-operatorn.
+
+## Djupdykning:
+När man sammanfogar strängar i Javascript är det viktigt att komma ihåg att det resulterande värdet alltid blir en ny sträng, oavsett vilken metod du använder. Detta eftersom strängar är ett oföränderligt dataobjekt i Javascript. Det betyder att du inte kan ändra en del av en sträng, utan istället måste du skapa en ny sträng med det önskade innehållet.
+
+Du kan också använda olika metoder för att manipulera och formatera strängar innan du sammanfogar dem. Till exempel kan du använda "toLowerCase()" för att göra alla bokstäver i en sträng små, eller "toUpperCase()" för att göra dem stora.
+
+## Se även:
+- [MDN webbdokumentation: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [W3Schools: JavaScript String concatenation](https://www.w3schools.com/js/js_string_concat.asp)
+- [Stack Overflow: How to concat strings in JavaScript](https://stackoverflow.com/questions/18049715/javascript-how-to-concatenate-string-random-string-random-string)

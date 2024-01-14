@@ -1,68 +1,64 @@
 ---
-title:    "C#: קריאת ארגומנטים בשורת פקודה"
+title:    "C#: קריאת ארגומנטים משורת הפקודה"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-בפיתוח תוכניות, עליך לדעת איך לטפל בקלטים מהשורת פקודה. זהו כלי חיוני כאשר אתה רוצה לתת למשתמשים את האפשרות להעריך ולשנות את התוכנית שלך. במאמר הזה, נלמד כיצד לקרוא ולהתמודד עם קלט מהשורת פקודה בשפת סי שארפ.
 
-## איך לעשות זאת
-נתחיל עם קוד פשוט של שורת פקודה להדגמה:
+מה המניע שמעורבו יש לקרוא ארגומנטים של שורת פקודה?
+
+קריאת ארגומנטים של שורת פקודה נחשבת לכלי חשוב ביותר בתוך עולם התכנות ומאפשרת יצירת מכשירים על מנת לרוץ באמצעות פרמטרים מקבילים. כאשר הערכים היו שמונים יחד עם קוד המכשיר עצמו, כאשר אין להם חשיבה על הקוד עצמו.
+
+## שיטות
+
+### ישנם שלושה דרכים אנחנו נוכל לקרוא שורת פקודה, הנה דוגמא:
 
 ```C#
+// דוגמא 1: משתמשים ב-main כדי לקבל את כל הארגומנטים המועברים
 static void Main(string[] args)
 {
-    string[] arguments = Environment.GetCommandLineArgs();
-
-    for (int i = 0; i < arguments.Length; i++)
+    for(int i=0; i<args.Length;i++)
     {
-        Console.WriteLine("Argument {0}: {1}", i + 1, arguments[i]);
+        Console.WriteLine(args[i]);
+    }
+}
+
+// דוגמא 2: משתמשים ב-'Execute' כדי להריץ את הקוד שלכם באמצעות הארגומנטים המתאימים
+static void Main()
+{
+    string[] args = Environment.GetCommandLineArgs();
+    
+    // גרסה זו כרוכב שיעיד לעשות כל טיפולים על ארגומנטים שחבילת 
+    // העומס של אלמונים הנשאיים נבחר לך
+    foreach (string s in args)
+    {
+        Console.WriteLine(s);
     }
 }
 ```
 
-בקוד זה, אנחנו משתמשים בפונקציה `Environment.GetCommandLineArgs()` כדי לקבל את כל הקלטים מהשורת פקודה כמערך של מחרוזות. אחר כך, באמצעות לולאת `for` אנחנו מדפיסים את כל הקלטים בכתב גותי לצורך הדגמה.
-
-הנה כמה דוגמאות לקלטים ולפלט של הקוד הנ"ל:
-
-קלט: `myProgram.exe`  
-פלט:
-
-```
-Argument 1: myProgram.exe
-```
-
-קלט: `myProgram.exe 1 2 3`  
-פלט:
-
-```
-Argument 1: myProgram.exe
-Argument 2: 1
-Argument 3: 2
-Argument 4: 3
-```
-
-## חקירה מעמיקה
-בנוסף לכתיבת הקלטים למסך, ניתן גם לעבוד עם הקלטים כקלט לתכנית. זה יכול להיות שימושי כאשר אתה רוצה לשנות את הפעולה של התוכנית לפי הקלט שהתקבל.
-
-לדוגמה, אנחנו נבנה תוכנית פשוטה שמחשבת את מכפלת שני מספרים שנתונים כקלט מהשורת פקודה:
+### דוגמא 3: העבור ל-m כדי לקבל גישה מיידית לטיפולים קוד־הארד לטיפול בשמות אחרים, כמו גישהיוך
 
 ```C#
-static void Main(string[] args)
+// קבל את הארגומנטים המתאימים ומאחסן את הארגומנטים שאתם צריך על מנת לטפל בהם
+static int Main(string[] args)
 {
-    if (args.Length == 3)
+    // טיפול בפרמטרים שמקורים במקרה של העורך
+    string s = Array.Find(args, each => each.StartsWith("--ip"));
+    string[] hosts = s.Split(' ');
+    
+    // אם הם צריכים להתאים ל־סרט לוחמות הניקטנחאל תפוק NULL וכאשר
+    if (hosts == null || hosts.Length!=2)
     {
-        int num1 = Convert.ToInt32(args[1]);
-        int num2 = Convert.ToInt32(args[2]);
-        Console.WriteLine("The product is: {0}", num1 * num2);
+        Console.WriteLine("Please specify two hosts.");
     }
-    else
-    {
-        Console.WriteLine("Please input two numbers as command line arguments.");
-    }
+    return 0;
 }
 ```
 
-בתוכנית זו, אנו בודקים את אורך המערך שמכיל את הקלטים מ
+## חקירה עמוקה
+
+יותר על קריאת ארגומנטים של שורת פק

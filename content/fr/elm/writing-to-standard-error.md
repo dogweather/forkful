@@ -1,43 +1,41 @@
 ---
-title:    "Elm: Écrire sur la sortie standard"
+title:    "Elm: Écrire sur l'erreur standard"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire vers l'erreur standard en Elm ?
+## Pourquoi
 
-Ecrire vers l'erreur standard est une technique essentielle pour les développeurs Elm. Cela permet d'afficher des messages d'erreur détaillés lorsqu'une erreur se produit dans le code. Cela peut vous aider à comprendre rapidement où se situe le problème et à le résoudre plus rapidement.
+Écrire sur la sortie standard d'erreur est une pratique utile pour les développeurs qui veulent surveiller et déboguer leur code. En affichant des erreurs ou des messages de débogage précis, cela peut aider à identifier et résoudre rapidement les problèmes dans le code.
 
-## Comment faire ?
+## Comment faire
 
-Pour écrire vers l'erreur standard en Elm, vous pouvez utiliser la fonction `Debug.log`. Il suffit de fournir un message d'erreur et la valeur que vous souhaitez afficher dans la console. Voici un exemple :
+Il existe plusieurs façons d'écrire sur la sortie standard d'erreur en Elm. La méthode la plus simple consiste à utiliser la fonction `Debug.log` qui prend en paramètre une chaîne de caractères et une valeur à afficher. Par exemple :
 
-```Elm
-import Debug exposing (log)
-
-userAge : Int
-userAge = 26
-
-log "L'âge de l'utilisateur est :" userAge
+```elm
+Debug.log "Mon message de débogage" variable
 ```
 
-Lorsque vous exécutez ce code, vous verrez le message suivant dans la console :
+Cela affichera "Mon message de débogage: variable" sur la sortie standard d'erreur.
 
-```
-L'âge de l'utilisateur est : 26
+Pour afficher des messages d'erreur, vous pouvez utiliser la fonction `Debug.crash` qui prend en paramètre une chaîne de caractères représentant l'erreur. Par exemple :
+
+```elm
+Debug.crash "Le code a rencontré une erreur."
 ```
 
-Cela peut sembler simple, mais cela peut être très utile lors du débogage de votre code.
+Cela affichera "Le code a rencontré une erreur." sur la sortie standard d'erreur et interrompra l'exécution du programme.
 
 ## Plongée en profondeur
 
-Pour écrire vers l'erreur standard en Elm, il est important de comprendre que cela ne fonctionne que dans les environnements de développement. Les messages d'erreur ne seront pas affichés dans un environnement de production.
+L'utilisation de la fonction `Debug.log` peut également être utile pour vérifier l'état interne de votre programme. Vous pouvez y passer n'importe quelle variable pour voir sa valeur à un moment précis de l'exécution. Cela peut être particulièrement utile pour trouver des erreurs difficiles à détecter. Cependant, n'oubliez pas de retirer toutes les fonctions `Debug.log` avant de mettre votre code en production car elles peuvent ralentir considérablement les performances.
 
-De plus, il est recommandé d'utiliser la fonction `Debug.log` uniquement pour le débogage et de la supprimer une fois que vous avez résolu le problème. Cela peut vous aider à maintenir un code propre et à éviter d'afficher des informations sensibles dans la console.
+De plus, l'utilisation de la fonction `Debug.crash` est réservée aux messages d'erreur graves. Évitez son utilisation pour le débogage car cela peut interrompre le bon fonctionnement du programme.
 
-# Voir aussi
+## Voir aussi
 
-- [Documentation officielle Elm sur l'écriture vers l'erreur standard](https://guide.elm-lang.org/debugging/debugging.html#the-debug-library)
-- [Article sur comment déboguer en utilisant la fonction Debug.log en Elm](https://www.freecodecamp.org/news/sharpen-your-elm-debugging-skills-with-debug-log-afc3d274b46d/)
-- [Exemple pratique de l'utilisation de Debug.log en Elm](https://blog.infiniteloop.io/intro-elm/)
+- [Documentation officielle d'Elm sur le débogage](https://guide.elm-lang.org/debugging/)
+- [Article de blog sur l'utilisation de `Debug.log` en Elm](https://thoughtbot.com/blog/using-debug-log-in-elm)
+- [Tutoriel vidéo sur la gestion des erreurs en Elm](https://www.youtube.com/watch?v=zH9ZdUko6wI)

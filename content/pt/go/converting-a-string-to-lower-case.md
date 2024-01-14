@@ -1,45 +1,61 @@
 ---
-title:    "Go: Convertendo uma string para minúsculas."
+title:    "Go: Convertendo uma string para minúsculas"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Você já se deparou com uma situação em que precisava comparar duas strings, mas uma delas estava em caixa alta e a outra em caixa baixa? Ou talvez você precisasse formatar corretamente a entrada de texto de um usuário antes de utilizá-la em seu programa? Nestes casos, é necessário converter uma string para caixa baixa. Aprender a fazer isso em Go pode facilitar muito a sua vida!
+## Por Que
 
-## Como fazer
-Para converter uma string para caixa baixa em Go, podemos utilizar a função integrada `strings.ToLower()`. Veja um exemplo de código abaixo:
+Convertendo uma string para letras minúsculas no Go pode ser muito útil em diversas situações, desde validação de formulários até a manipulação de dados em um banco de dados. Saber como realizar essa conversão pode facilitar e acelerar o desenvolvimento de aplicações em Go.
 
-```Go
-texto := "Exemplo de TEXTO em CAIXA ALTA"
-textoMinusculo := strings.ToLower(texto)
-fmt.Println(textoMinusculo)
-```
-O resultado deste código será:
-```
-exemplo de texto em caixa alta
-```
-Como você pode ver, a função `strings.ToLower()` transforma todas as letras maiúsculas em minúsculas.
+## Como Fazer
 
-Além disso, também é possível converter strings para caixa baixa utilizando a função `strings.ToLowerSpecial()` que permite definir um critério específico para a conversão, como por exemplo, transformar letras com acentos em letras minúsculas sem acento. Veja um exemplo do uso desta função:
+Usando a função `ToLower()` da biblioteca `strings`, podemos facilmente converter uma string para letras minúsculas. Veja um exemplo abaixo:
 
 ```Go
-texto := "Ótimo Exemplo DE tExTo"
-textoMinusculo := strings.ToLowerSpecial(unicode.TurkishCase, texto)
-fmt.Println(textoMinusculo)
-```
-O resultado será:
-```
-ótimo exemplo de texto
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Olá, Mundo!"
+	fmt.Println(strings.ToLower(str))
+}
 ```
 
-## Mergulho Profundo
-Caso você queira entender melhor como a função `strings.ToLower()` funciona, é possível dar uma olhada no código fonte da biblioteca padrão do Go. Lá você encontrará a implementação da função, que basicamente itera sobre cada caractere da string e utiliza a função `unicode.ToLower()` para transformá-lo em caixa baixa.
+O código acima irá imprimir `olá, mundo!`, com todas as letras em minúsculo. É importante lembrar que essa função não altera a string original, mas retorna uma cópia convertida.
 
-É importante lembrar que a função `strings.ToLower()` retorna uma nova string com a conversão realizada, mas não altera a string original. Portanto, é necessário atribuir o valor retornado para uma nova variável ou sobrescrever a variável original. Algo importante a se notar é que esta função pode não funcionar da maneira esperada para caracteres de outros alfabetos que não o latino.
+Outra opção é utilizar o pacote `unicode` e sua função `ToLower()`, que lida com caracteres Unicode corretamente:
 
-## Veja também
-- Documentação oficial do pacote `strings` em Go: https://golang.org/pkg/strings/
-- Artigo sobre manipulação de strings em Go: https://github.com/golang/go/wiki/SliceTricks#strings
-- Guia rápido sobre Unicode em Go: https://blog.golang.org/strings
+```Go
+package main
+
+import (
+	"fmt"
+	"unicode"
+)
+
+func main() {
+	str := "Ça Va?"
+	fmt.Println(unicode.ToLower(str))
+}
+```
+
+Este código irá imprimir `ça va?` corretamente, com o caractere 'Ç' convertido para 'ç'. É importante notar que o uso da função `ToLower()` sem o pacote `unicode` pode não ser suficiente para converter caracteres de outros idiomas corretamente.
+
+## Deep Dive
+
+Ao converter uma string para letras minúsculas, é importante considerar a diferença entre minúsculas e maiúsculas pode variar de acordo com o idioma. Por exemplo, em alguns idiomas, como o turco, os caracteres com acentos podem ter versões maiúsculas e minúsculas diferentes.
+
+O pacote `unicode` do Go lida com essa variação de caracteres ao fornecer funções específicas para converter letras para um caso determinado. Além disso, também é possível converter apenas a primeira letra de uma string para minúscula, usando a função `ToLowerSpecial()` do pacote `unicode`, que permite especificar o idioma desejado.
+
+## Veja Também
+
+- [Documentação oficial do pacote strings](https://golang.org/pkg/strings/)
+- [Documentação oficial do pacote unicode](https://golang.org/pkg/unicode/)
+- [Artigo sobre internacionalização de aplicações em Go](https://blog.golang.org/micro-i18n)

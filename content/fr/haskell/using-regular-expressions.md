@@ -1,39 +1,29 @@
 ---
 title:    "Haskell: Utiliser les expressions régulières"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Si vous êtes nouveau dans le monde de la programmation Haskell, vous pourriez vous demander pourquoi utiliser des expressions régulières dans votre code. En tant que programmeur, vous serez souvent confronté à la nécessité de traiter des données sous forme de chaînes de caractères. Les expressions régulières vous permettent de définir des modèles de texte à rechercher et à manipuler, ce qui en fait un outil puissant pour la manipulation de données.
+##Pourquoi
 
-# Comment Faire
-Pour utiliser des expressions régulières dans Haskell, vous devez d'abord importer le module `Text.Regex.Posix`. Ensuite, vous pouvez utiliser la fonction `=~` pour vérifier si une chaîne de caractères correspond à un modèle donné, ou `=~?` pour rechercher toutes les occurrences du modèle. Voici un exemple simple de recherche d'une adresse e-mail dans une chaîne de caractères :
+Les expressions régulières sont un outil puissant pour traiter et manipuler du texte dans vos programmes Haskell. Elles permettent de trouver et de remplacer des motifs spécifiques dans une chaîne de caractères en utilisant des règles précises. Les expressions régulières sont particulièrement utiles pour valider et filtrer les données d'entrée utilisateur, ainsi que pour extraire des informations spécifiques à partir de grandes quantités de texte.
 
-```Haskell
-import Text.Regex.Posix
+##Comment faire
 
-myString = "Mon adresse e-mail est example@email.com"
+Pour utiliser les expressions régulières en Haskell, nous devons d'abord importer le module `Text.Regex.Posix` dans notre fichier. Ensuite, nous pouvons utiliser la fonction `makeRegex` pour créer une expression régulière à partir d'un motif spécifique. Par exemple, si nous voulons trouver toutes les adresses e-mail dans une chaîne de caractères, nous pouvons utiliser l'expression régulière suivante: `makeRegex "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$"`.
 
--- Vérifie si la chaîne contient une adresse e-mail
-myString =~ "[A-Za-z0-9]+@[A-Za-z0-9]+\\.[A-Za-z]+"
--- Renvoie True
+Ensuite, nous pouvons utiliser la fonction `match` pour rechercher des correspondances spécifiques dans une chaîne de caractères en utilisant notre expression régulière. Par exemple, si nous avons une chaîne de caractères contenant plusieurs adresses e-mail, nous pouvons utiliser `match (makeRegex "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$") "Mon adresse email est john@doe.com, vous pouvez me contacter à jane@doe.com"` pour trouver et renvoyer une liste contenant les deux adresses e-mail.
 
--- Recherche toutes les adresses e-mail dans la chaîne
-myString =~? "[A-Za-z0-9]+@[A-Za-z0-9]+\\.[A-Za-z]+"
--- Renvoie ["example@email.com"]
-```
+Dans le cas où il n'y a pas de correspondance pour l'expression régulière donnée dans une chaîne de caractères, la fonction `match` renverra `Nothing`.
 
-En plus des opérations de base telles que la vérification et la recherche, les expressions régulières en Haskell offrent également des fonctionnalités avancées telles que le remplacement de texte et la capture de sous-chaînes. Pour en savoir plus sur ces fonctionnalités, consultez la documentation du module `Text.Regex.Posix`.
+##Deep Dive
 
-# Plongée Profonde
-Haskell offre également des bibliothèques de expressions régulières plus avancées, telles que `regex-posix` et `pcre-heavy`, qui offrent plus de fonctionnalités et de meilleures performances. De plus, vous pouvez également utiliser des packages externes tels que `regex-applicative` pour créer des expressions régulières plus lisibles en utilisant une approche fonctionnelle.
+Les expressions régulières en Haskell suivent la même syntaxe que celles utilisées dans d'autres langages, comme Perl ou Python. Il y a cependant quelques différences à noter. Par exemple, l'utilisation de l'opérateur `~` n'est pas nécessaire avant une expression régulière en Haskell, car elle est déjà implicite. De plus, la plupart des fonctions de manipulation de texte en Haskell, telles que `lines` ou `words`, ignorent automatiquement les caractères invisibles lorsqu'elles sont utilisées avec des expressions régulières.
 
-Il est également important de noter que les expressions régulières en Haskell sont basées sur la syntaxe POSIX, mais vous pouvez également utiliser la syntaxe PCRE en important le module `Text.Regex.PCRE`.
+##Voir aussi
 
-# Voir Aussi
-- Module `Text.Regex.Posix` de la bibliothèque standard de Haskell : https://hackage.haskell.org/package/base/docs/Text-Regex-Posix.html
-- Package `regex-posix` : https://hackage.haskell.org/package/regex-posix
-- Package `pcre-heavy` : https://hackage.haskell.org/package/pcre-heavy
-- Package `regex-applicative` : https://hackage.haskell.org/package/regex-applicative
+- [Documentation officielle de `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix)
+- [Un tutoriel complet sur la manipulation de texte en Haskell](https://www.fpcomplete.com/blog/2017/11/string-manipulation-in-haskell/)
+- [Guide pratique pour les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions)

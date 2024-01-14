@@ -1,42 +1,59 @@
 ---
-title:    "Java: Calculando uma data no futuro ou passado"
+title:    "Java: Calculando uma data no futuro ou no passado"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Calcular datas no futuro ou no passado pode ser útil em diversas situações. Por exemplo, em um sistema de reservas, pode ser necessário calcular a data de check-out com base na data de check-in e na duração da reserva. Ou, em um aplicativo de calendário, é importante poder exibir datas de eventos futuros ou passados.
+Calcular uma data futura ou passada pode ser útil em diversas situações, desde agendamento de eventos até cálculos de prazos e validade de documentos. Saber como fazer essa operação em Java pode facilitar o desenvolvimento de programas que necessitem dessa funcionalidade.
 
-## Como fazer
+## Como Fazer
 
-Para calcular datas no futuro ou no passado em Java, podemos utilizar a classe `Calendar` e seus métodos `add` e `getTime`. Veja um exemplo abaixo:
+Para calcular uma data futura ou passada em Java, utilizamos a classe `Calendar`. Primeiro, criamos uma instância dessa classe e definimos a data inicial:
 
 ```Java
-// Criando uma instância da classe Calendar e definindo a data atual
-Calendar calendar = Calendar.getInstance();
-calendar.set(2021, Calendar.JULY, 27);
-
-// Adicionando 10 dias à data atual
-calendar.add(Calendar.DAY_OF_MONTH, 10);
-
-// Obtendo a data resultante
-Date futureDate = calendar.getTime();
-System.out.println(futureDate);
+Calendar calendario = Calendar.getInstance();
+calendario.set(2021, Calendar.JANUARY, 1); // 1 de janeiro de 2021
 ```
 
-O código acima irá resultar em `2021-08-06`, já que 10 dias foram adicionados à data inicial. Para calcular uma data no passado, basta utilizar um valor negativo no método `add`.
+Em seguida, podemos adicionar ou subtrair dias, meses ou anos utilizando os métodos `add()` ou `roll()`, respectivamente:
 
-## Mergulho profundo
+```Java
+calendario.add(Calendar.DATE, 10); // adiciona 10 dias à data inicial
+calendario.roll(Calendar.MONTH, -2); // subtrai 2 meses da data inicial, mantendo o ano
+```
 
-O método `add` da classe `Calendar` nos permite adicionar ou subtrair um determinado valor de um campo de data específico, como dias, meses ou anos. Além disso, também podemos utilizar o método `set` para definir uma data inicial e, posteriormente, usar o método `get` para obter valores específicos, como o dia, mês ou ano.
+Por fim, para obter a nova data calculada, basta utilizar o método `getTime()` que retorna um objeto `Date`:
 
-Também é importante mencionar que, a partir do Java 8, temos a classe `LocalDate` do pacote `java.time` que torna a manipulação de datas ainda mais fácil e intuitiva. Ao invés de utilizar o método `add` da classe `Calendar`, podemos simplesmente utilizar o método `plus` da classe `LocalDate` para adicionar ou subtrair valores de datas.
+```Java
+Date novaData = calendario.getTime();
+```
 
-## Veja também
+Veja o exemplo completo:
 
-- [Documentação oficial da classe Calendar](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Documentação oficial da classe LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial de manipulação de datas em Java](https://www.baeldung.com/java-date-time)
-- [Vídeo explicativo sobre a classe LocalDate](https://www.youtube.com/watch?v=RjJYcW547bY)
+```Java
+// calcula uma data 1 mês e 10 dias após a data atual
+Calendar calendario = Calendar.getInstance();
+calendario.add(Calendar.MONTH, 1);
+calendario.add(Calendar.DATE, 10);
+Date novaData = calendario.getTime();
+
+// imprime a data formatada
+SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
+System.out.println("Nova data: " + formatoData.format(novaData)); // 10/09/2021
+```
+
+## Deep Dive
+
+A classe `Calendar` possui diversas opções de campos e unidades de tempo que podem ser utilizados para cálculos de datas. É importante ficar atento ao utilizar o método `roll()`, pois ele pode afetar campos que não estão sendo explicitamente alterados.
+
+Outra opção para calcular datas em Java é utilizando a classe `LocalDate` do pacote `java.time`. Ela possui métodos mais intuitivos e simples de usar, além de permitir criar códigos mais legíveis.
+
+## Veja Também
+
+- [Documentação da classe Calendar](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Documentação da classe LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial sobre cálculo de datas em Java](https://www.devmedia.com.br/como-trabalhar-com-datas-em-java/27493)

@@ -1,102 +1,52 @@
 ---
-title:    "C++: Leyendo un archivo de texto."
+title:    "C++: Leyendo un archivo de texto"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué leer un archivo de texto?
 
-Si estás interesado en convertirte en un programador de C++, entonces necesitas aprender a trabajar con archivos de texto. Leer un archivo de texto es una habilidad básica y esencial en la programación, ya que te permitirá acceder y manipular información almacenada en un archivo de texto.
+Hay muchas razones por las que podrías querer leer un archivo de texto en tu programa de C++. Quizás estás buscando datos específicos para analizar, o tal vez necesitas utilizar los datos para realizar alguna operación matemática. Sea cual sea la razón, saber cómo leer un archivo de texto es una habilidad útil para cualquier programador de C++.
 
 ## Cómo hacerlo
 
-Para leer un archivo de texto en C++, debes seguir los siguientes pasos:
+Para leer un archivo de texto en C++, necesitarás utilizar la biblioteca estándar "fstream". Esta biblioteca contiene las clases ifstream (input file stream) y ofstream (output file stream) que te permitirán abrir y leer un archivo de texto.
+
+Primero, deberás incluir la biblioteca en tu programa utilizando la línea de código `#include <fstream>`.
+
+Luego, puedes utilizar la clase ifstream para abrir el archivo de texto que desees leer. Por ejemplo, si tienes un archivo llamado "datos.txt" en la misma carpeta que tu programa, puedes abrirlo con el siguiente código:
 
 ```C++
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
-int main() {
-    
-    // Se define una variable de tipo ifstream 
-    // para abrir un archivo de texto
-    ifstream archivo("miarchivo.txt");
-    
-    // Se comprueba si el archivo se abrió correctamente
-    if (archivo.is_open())
-    {
-        // Se declara una variable para almacenar
-        // cada línea del archivo
-        string linea;
-        
-        // Se usa un bucle while para leer el archivo
-        while (getline(archivo, linea))
-        {
-            // Se imprime la línea en la consola
-            cout << linea << endl;
-        }
-        
-        // Se cierra el archivo
-        archivo.close();
-    }
-    else
-    {
-        // En caso de que el archivo no se pueda abrir,
-        // se imprime un mensaje de error
-        cout << "No se pudo abrir el archivo" << endl;
-    }
-    
-    return 0;
-}
+ifstream archivo("datos.txt");
 ```
 
-### Ejemplo de output
+Una vez que hayas abierto el archivo, puedes utilizar la función `getline()` para leer una línea completa del archivo en una variable string. Puedes repetir esta función hasta que hayas leído todo el contenido del archivo.
 
-Supongamos que tenemos un archivo de texto llamado "miarchivo.txt" con el siguiente contenido:
-
-```
-Hola, este es un archivo de texto.
-Esto es una línea.
-Y esta es otra línea.
-```
-
-Al ejecutar el código anterior, el output sería:
-
-```
-Hola, este es un archivo de texto.
-Esto es una línea.
-Y esta es otra línea.
-```
+Finalmente, no olvides cerrar el archivo utilizando `archivo.close()` cuando hayas terminado de leerlo.
 
 ## Profundizando
 
-En el ejemplo anterior, utilizamos la función `getline()` para leer cada línea del archivo. Esta función lee una línea completa del archivo y la almacena en una variable de tipo `string`. También es posible leer un archivo caracter por caracter utilizando la función `get()`.
+Leer un archivo de texto puede volverse un poco más complicado si el archivo contiene diferentes tipos de datos (como enteros y strings). En este caso, es importante que sepas cómo separarlos y almacenarlos correctamente.
 
-Otra cosa importante a tener en cuenta es que, al utilizar la función `getline()`, se lee una línea completa del archivo, incluyendo el carácter de nueva línea (`\n`). Si no se desea incluir este carácter en la variable, se puede utilizar la función `ignore()` para ignorarlo.
-
-### Ejemplo de uso de la función `ignore()`
+Una forma de hacerlo es utilizando la función `>>` de la clase ifstream. Por ejemplo, si tienes un archivo con una lista de nombres y edades separados por un espacio en cada línea, puedes almacenarlos en variables usando el siguiente código:
 
 ```C++
-// Se declara una variable para almacenar cada línea del archivo
-string linea;
+string nombre;
+int edad;
 
-// Se usa un bucle while para leer el archivo
-while (getline(archivo, linea))
-{
-    // Se imprime la línea en la consola
-    cout << linea << endl;
-    
-    // Se ignora el carácter de nueva línea
-    archivo.ignore();
-}
+archivo >> nombre >> edad;
 ```
 
-Además, C++ también proporciona la clase `stringstream` que permite leer diferentes tipos de datos de una línea de texto. Esto resulta muy útil si el archivo contiene datos de diferentes tipos.
+Esto asignará la primera palabra de cada línea a la variable "nombre" y la segunda palabra a la variable "edad".
+
+Además, es importante manejar los errores que puedan surgir al leer un archivo de texto, como por ejemplo si el archivo no existe o si hay un error al abrirlo. Puedes hacer esto utilizando las funciones `good()` y `bad()` de la clase ifstream para verificar si la lectura del archivo fue exitosa o no.
+
+En resumen, leer un archivo de texto puede implicar algunas consideraciones adicionales, pero es una habilidad útil que te permitirá trabajar con una gran cantidad de datos en tus programas de C++.
 
 ## Ver también
 
-- [Documentación oficial de C++ sobre archivos de entrada y salida](https://en.cppreference.com/w/cpp/io)
-- [Tutorial de lectura y escritura de archivos en C++](http://www.cplusplus.com/doc/tutorial/files/)
+- [Tutorial de C++ para principiantes](https://www.programiz.com/cpp-programming)
+- [Documentación de la clase ifstream](https://www.cplusplus.com/reference/fstream/ifstream/)
+- [Ejemplos de lectura y escritura de archivos en C++](https://www.geeksforgeeks.org/reading-writing-text-files-c/)

@@ -1,43 +1,48 @@
 ---
 title:    "Python: 一時ファイルの作成"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Pythonプログラマーは一時ファイルを作成するのか？一時ファイルはプログラムの実行中に一時的なデータを作成するために使用されます。例えば、大きなデータを処理するプログラムでは、一時ファイルを作成してそのデータを処理することができます。また、一時ファイルの使用はパフォーマンスを向上させることができるため、プログラムの実行をスムーズにすることができます。
+一時的なファイルを作成する理由はさまざまです。たとえば、長期間保存する必要のないデータを一時的に保存したり、プログラムが終了すると自動的に削除されるようにしたい場合に使用することができます。
 
 ## 作り方
 
-Pythonでは、標準ライブラリの```tempfile```モジュールを使用して一時ファイルを作成することができます。以下のコードは、一時フォルダ内に新しい一時ファイルを作成し、そのファイルにデータを書き込んで読み取る方法を示しています。
+Pythonでは、一時的なファイルを作成するために、`tempfile`モジュールを使用します。以下の例では、ファイルパス、内容、エンコーディングを指定して一時的なテキストファイルを作成し、書き込みを行い、最後にファイルを閉じます。
 
 ```Python
 import tempfile
-# 一時フォルダを作成
-temp_folder = tempfile.TemporaryDirectory()
-# 一時ファイルを作成
-temp_file = tempfile.NamedTemporaryFile(dir=temp_folder.name, delete=False)
-# ファイルにデータを書き込む
-temp_file.write(b"Hello World!")
-# ファイルを閉じる
-temp_file.close()
-# データの読み取り
-with open(temp_file.name, 'r') as f:
-    data = f.read()
-print(data) # 出力: Hello World!
-# 一時フォルダを閉じる
-temp_folder.cleanup()
+
+# 一時的なテキストファイルを作成
+with tempfile.TemporaryFile(mode='w+t', encoding='utf-8') as f:
+    # ファイルに書き込み
+    f.write('この文章は一時的なファイルに書き込まれます。')
+
+    # ファイルの先頭に戻る
+    f.seek(0)
+
+    # ファイルの内容を読み取り
+    print(f.read())
 ```
 
-このコードでは、```tempfile```モジュールから```TemporaryDirectory()```と```NamedTemporaryFile()```を使用していることに注意してください。また、一時ファイルを作成する際に、```delete=False```を指定することで、一時ファイルが使用後に自動的に削除されないようにすることができます。
+上記のコードを実行すると、以下のようにファイルの内容が出力されます。
+
+```
+この文章は一時的なファイルに書き込まれます。
+```
 
 ## 深堀り
 
-一時ファイルを作成する際には、注意することがいくつかあります。まず、一時ファイルはプログラムの実行中に一時的に使用するためのものであり、データを永続的に保存する際には使用しないようにしましょう。また、一時ファイルはプライバシーやセキュリティに関する問題を引き起こす可能性があるため、注意深く扱う必要があります。最後に、一時ファイルの作成にはディスクアクセスが必要となるため、プログラムの実行速度を考慮して適切なタイミングで作成するようにしましょう。
+一時的なファイルを作成する際には、ファイルの作成場所や名前の衝突を避けることが重要です。そのために、`tempfile`モジュールは一時的なファイルを保存するディレクトリを自動的に選択します。また、`NamedTemporaryFile`を使用するとファイル名を指定することもできます。
 
-## 関連情報を見る
+一時的なファイルを作成する際には、ファイルの自動削除についても注意が必要です。一時的なファイルは、プログラムが終了すると自動的に削除されるようになっていますが、途中でプログラムが終了してしまった場合や、ファイルを閉じ忘れた場合は手動で削除する必要があります。
 
-* [Python公式ドキュメント - tempfileモジュール](https://docs.python.org/ja/3/library/tempfile.html)
-* [Python Tips - 一時ファイルの作成方法と使い方](https://note.nkmk.me/python-tempfile/)
+## さらに参考になる情報
+
+- Python公式ドキュメント: [tempfile — 一時ファイルやディレクトリのユーティリティ](https://docs.python.org/ja/3/library/tempfile.html)
+- Qiita: [Pythonのtempfileモジュールを使って一時的なファイルを作成する方法](https://qiita.com/jetbead/items/890cd6f1a832206d37c6)
+- Pythonプログラミング入門: [一時ファイルの使用](https://python.programming-guide.jp/part11/temporary-file/)

@@ -1,44 +1,39 @@
 ---
-title:    "Bash: 打印调试输出"
+title:    "Bash: “打印调试输出”"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-有哪些原因会让程序员想要在Bash中打印出debug输出呢？ “## Why”（为什么）短短一到两句话就可以解决这个疑惑。
+## 为什么
 
-有时候我们的程序出现了一些奇怪的bug，我们就需要打印出中间的变量来观察程序的执行过程，从而找出错误所在。这时候就可以使用print debug输出来帮助我们排错。而且，在问题解决后，这些debug输出也可以作为记录，方便日后的调试。
+当我们编写脚本或程序时，经常会遇到一些错误和bug。在解决这些问题的过程中，打印调试输出（debug output）是一个非常有用的工具。通过打印输出，我们可以了解程序的执行情况，找出问题所在并进行调试。因此，打印调试输出是提高脚本和程序可靠性的重要步骤。
 
-“## How To”（如何）: 使用Bash中的“```Bash … ```”代码块，我们可以很简单地打印出debug输出。例如，我们可以使用“echo”命令来打印出变量的值。下面是一个示例代码及其输出：
+## 如何打印调试输出
 
-```Bash
-# 打印出变量"num"的值
-echo $num
-
-# 输出：
-5
-```
-
-除了使用“echo”命令，我们也可以使用“printf”命令来打印出格式化的debug输出。例如，我们可以使用以下代码来打印出当前时间：
+在Bash编程中，我们可以使用`echo`命令来打印调试输出。下面是一个简单的例子：
 
 ```Bash
-# 使用printf命令打印出当前时间，格式为小时:分钟:秒
-printf "%(%H:%M:%S)T\n"
-
-# 输出：
-14:20:45
+#!/bin/bash
+# 定义一个变量
+my_var="Hello World"
+# 打印调试输出
+echo "My variable is: $my_var"
 ```
 
-希望通过这些简单的示例，你可以轻松地在Bash中打印出debug输出来帮助你解决程序中的问题。
+这段代码会打印出`My variable is: Hello World`，这样我们就能够确认变量的值是否正确。除了使用变量，我们也可以打印其他信息，比如当前的目录路径、命令执行结果等等。
 
-“## Deep Dive”（深入探讨）: 打印debug输出不仅仅是简单地在代码中加入“echo”或“printf”命令。我们也可以使用Bash中的调试器来更加有效地进行调试。调试器可以让我们逐行执行代码，并观察每个步骤中变量的值，从而更容易地找出问题所在。要使用调试器，我们可以在命令行中使用“bash -x”命令来运行我们的脚本，或者在脚本中加入“set -x”命令来打开调试器。
+## 深入了解打印调试输出
 
-此外，我们也可以使用“trap”命令来捕捉代码中发生的错误，并打印出debug输出来帮助我们定位问题。
+除了使用`echo`命令，我们也可以使用`printf`命令来打印调试输出。`printf`命令有更多的格式控制选项，可以使调试输出更加具有可读性。另外，我们还可以通过使用`set -x`命令来启用Bash的追踪模式。在追踪模式下，Bash会将每条命令和其参数都打印出来，方便我们进行调试。
 
-“See Also”（相关链接）:
+## 参考资料
 
-- [Linux下最常用的Bash命令](https://www.runoob.com/linux/linux-shell.html)
-- [Bash调试技巧和调试器](https://blog.csdn.net/senlin1202/article/details/80530067)
-- [Linux命令行调试工具trap用法详解](https://blog.csdn.net/qq_40993800/article/details/82874961)
+- [Bash脚本编程入门教程](https://linux.cn/article-5648-1.html)
+- [Bash调试技术详解](http://www.yunweipai.com/archives/20421.html)
 
-希望本文能帮助你理解为什么打印debug输出在Bash中如此重要，以及如何使用它来帮助解决程序中的错误。记得使用调试器和trap命令来更加高效地进行调试。谢谢阅读！
+## 参考链接
+
+- [Echo Command](https://www.geeksforgeeks.org/echo-command-in-linux-with-examples/)
+- [Debugging Bash Scripts](https://linuxize.com/post/debugging-bash-scripts/)

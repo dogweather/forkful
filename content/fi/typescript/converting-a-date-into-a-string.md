@@ -1,36 +1,62 @@
 ---
-title:    "TypeScript: Päivämäärän muuttaminen merkkijonoksi"
+title:    "TypeScript: Muunna päiväys merkkijonoksi."
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi muuntaa päivämäärä merkkijonoksi?
+## Miksi muuttaa päivämäärä merkkijonoksi?
 
-Päivämäärän muuntaminen merkkijonoksi on tärkeä mahdollisuus ohjelmoinnissa, sillä se antaa mahdollisuuden esittää päivämäärää halutussa muodossa. Tämä voi olla erityisen tärkeää sovellusten käyttäjille, jotka voivat olla tottuneita tiettyyn päivämäärämuotoon. Päivämäärän muuttaminen merkkijonoksi voi myös helpottaa päivämääräarvojen käsittelyä, esimerkiksi jos halutaan verrata kahta päivämäärää.
+Monissa ohjelmointiprojekteissa saattaa olla tarve muuttaa päivämäärä erilaisiin muotoihin, kuten merkkijonoksi. Esimerkiksi käyttäjän syöttämä päivämäärä voi olla JavaScript Date -objektina ja sen käsitteleminen voi olla helpompaa, kun se on muutettu merkkijonoksi. TypeScriptin avulla tämä tehtävä on helppo ratkaista.
 
-## Miten: Esimerkkikoodia TypeScriptilla
+## Miten tehdä se?
 
-Seuraavassa esimerkissä käytetään Date-oliota ja sen sisäänrakennettua toLocaleString()-metodia päivämäärän muuntamiseen merkkijonoksi. Tämä metodi palauttaa päivämäärän halutussa muodossa, joka on määritelty parametreina. Esimerkissä halutaan esittää päivämäärä muodossa "päivä-kuukausi-vuosi".
+Muuttaaksesi päivämäärän merkkijonoksi, voit käyttää Date -objektin `toString()` -metodia. Se palauttaa päivämäärän merkkijonona halutussa muodossa. Alla on esimerkki TypeScript-koodista ja sen tuloksesta:
 
 ```TypeScript
-let date = new Date(); // Luodaan uusi Date-olio
-let dateString = date.toLocaleString("fi", { day: "numeric", month: "numeric", year: "numeric" }); // Muutetaan päivämäärä merkkijonoksi
-console.log(dateString); // Tulostaa esimerkiksi "26.4.2021"
+// Alustetaan Date -objekti tällä hetkellä
+const date = new Date();
+
+// Muutetaan päivämäärä merkkijonoksi
+const dateString = date.toString();
+
+// Tulostetaan merkkijonopäivämäärä
+console.log(dateString);
 ```
 
-Kuten näemme, päivämäärä on nyt muutettu halutussa muodossa merkkijonoksi ja voimme käyttää sitä esimerkiksi tulostamalla sen konsoliin. Voit muokata parametreja haluamallasi tavalla saadaksesi päivämäärän esimerkiksi englanniksi tai haluamassasi muodossa.
+Tuloste: Wed Aug 18 2021 15:20:00 GMT+0300 (Eastern European Summer Time)
 
-## Syväsukellus: Tarkempaa tietoa päivämäärän muuntamisesta merkkijonoksi
+Voit myös määrittää tarkemman muotoilun `toLocaleString()` -metodin avulla. Tämä metodi hyväksyy kaksi valinnainen parametria: käyttäjän kielivalinnan ja halutun muodon. Alla on esimerkki, jossa päivämäärä muutetaan suomalaiseen muotoon ja palautetaan kortti muodossa:
 
-Päivämäärän muuntaminen merkkijonoksi voi näyttää helpolta tehtävältä, mutta taustalla on useita tekijöitä, joita kannattaa ottaa huomioon. Ensinnäkin, eri kielissä käytetään eri päivämäärämuotoja ja siksi on tärkeää määrittää oikea kieli ja muoto, jotta muunnos tapahtuu halutulla tavalla.
+```TypeScript
+// Alustetaan Date -objekti tällä hetkellä
+const date = new Date();
 
-Toiseksi, Date-olion toLocaleString()-metodi hyödyntää käyttäjän selaimessa olevaa asetusta päivämäärämuodosta ja siksi tulos voi vaihdella eri käyttäjillä. Tämä tulee ottaa huomioon, jos halutaan, että päivämäärät näytetään aina samassa muodossa riippumatta käyttäjän asetuksista.
+// Määritetään suomalainen kieli
+const language = 'fi-fi';
 
-Lisäksi, päivämäärän muuntaminen merkkijonoksi antaa mahdollisuuden käyttää erilaisia parametreja ja luoda halutunlaisia päivämäärämuotoja. Tästä syystä on tärkeää ymmärtää eri parametrien vaikutus ja kokeilla erilaisia vaihtoehtoja saadaksesi haluamasi lopputuloksen.
+// Määritetään lyhyt päivämäärän muoto
+const options = {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+};
+
+// Muutetaan päivämäärä merkkijonoksi
+const dateString = date.toLocaleString(language, options);
+
+// Tulostetaan merkkijonopäivämäärä
+console.log(dateString);
+```
+
+Tuloste: 18. Elokuuta 2021
+
+## Syvempi sukellus
+
+Puhtaassa JavaScriptissä `toString()` -metodi palauttaa päivämäärän merkkijonona täydessä ISO 8601 -muodossa. Kuitenkin TypeScriptin `toString()` -metodilla on erilainen käyttäytyminen, koska se perii sen Vertible -rajapinnasta. Tästä syystä se voi palauttaa myös muunlaisia merkkijonopäivämääriä. On tärkeää huomata, että `toLocaleString()` -metodi on useimmissa tapauksissa tarkempi vaihtoehto, kun haluat määrittää päivämäärän muodon.
 
 ## Katso myös
 
-- [Date-olion dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [toLocaleString()-metodin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-- [Käyttäjän päivämääräasetusten hallinta](https://support.google.com/chrome/answer/95290?hl=en)
+- [MDN dokumentaatio Date -objektista](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TS-DOCS dokumentaatio Date -objektista](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)

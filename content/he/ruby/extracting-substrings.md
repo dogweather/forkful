@@ -1,51 +1,43 @@
 ---
-title:    "Ruby: חילוץ תת מחרוזות"
+title:    "Ruby: ניצול תת־מחרוזות"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-היכן תמצאו זיכרונות שלכם מלאים במחרוזות ארוכות וטקסט עצום? בגלל שמחרוזות הן נתונים מרכזיים בתכנות ולעיתים קרובות אנו צריכים לעשות עבודה עם חלק מסוים בלבד של המחרוזת. בעזרת הפונקציה `[]`, ניתן לחלץ פרטים מסוימים מתוך מחרוזת ולהשתמש בהם בצורה מפורשת יותר.
+למה ייתכן שתרצו למצוא חתיכת מחרוזת בתוך חריגה? אחת הסיבות העיקריות היא כדי לעבור על המחרוזת הראשית ולהחזיר מידע מדויק מתחתיה. כך ניתן לבנות קוד מדויק ויעיל יותר.
 
 ## איך לעשות זאת
 
-ראשית כדאי לראות מהו התנאי שאליו אנו יוצאים כדי לחלץ מידע. לדוגמה, אם אני רוצה לחלץ את השם הראשון מכתובת דוא"ל שלי (`example@gmail.com`), אני יכול להשתמש בפונקציה `split` כדי לחלק את המחרוזת למערך של חלקי המסר (`[example, gmail.com]`) ולאחר מכן להשתמש באינדקס הראשון כדי לקבל את השם הראשון. הנה דוגמא נוספת שבה אנחנו יוצרים מחרוזת חדשה משני חלקי המסר:
-
 ```Ruby
-name = "John Smith"
-first_name = name.split(" ")[0]
-last_name = name.split(" ")[1]
+# ניתן להשתמש בפונקצייה square brackets כדי למצוא תת-מחרוזת:
+"I love Ruby programming.".index("Ruby") # => 7
 
-puts "First name: #{first_name}"
-puts "Last name: #{last_name}"
+# אם נרצה למצוא את המילה שלפני "programming":
+"I love Ruby programming.".index(" programming.") # => 12
+
+# אם נרצה לבדוק אם חתיכת המחרוזת קיימת בחריגה:
+"I love Ruby programming.".include?("programming") # => true
+
+# למצוא מילנים מתחילת החריגה:
+"I love Ruby programming.".scan(/[A-Z][a-z]*/)[2] # => "Ruby"
 ```
 
-פלט:
+## טיפים מעמיקים
 
-```
-First name: John
-Last name: Smith
-```
+- אם אתם מחפשים לחתוך חריגה לפי אורך מסוים, ניתן להשתמש בפונקציית `slice` או `slice!`.
 
-אם אנחנו רוצים לחלץ מחרוזת נתונים נוספים, אפשר להשתמש בפונקציה `[]` יחד עם האינדקס בכדי לקבל ערך מסוים. לדוגמה:
+- ניתן להשתמש בפונקציות נוספות כגון `start_with?` ו- `end_with?` כדי לבדוק את תחילת וסיום החריגה באופן מדויק.
 
-```Ruby
-text = "Hello world"
-puts text[0] # "H"
-puts text[1,3] # "ell"
-puts text[6..-1] # "world"
-```
+- כדי לבדוק את מיקום החריגה בתוך מחרוזת אחרת, ניתן להשתמש בפונקציית `match` ולהכניס את החריגה כברירת המחדל.
 
-פלט:
+## ראו גם
 
-```
-H
-ell
-world
-```
-
-## להתחקות לעומק
-
-חשוב להבין שהאינדקסים ב-Ruby מתחילים ב-0, כך שאם אנחנו רוצים לחלץ את האות הראשונה ממחרוזות באמצעות פונקציית `[]`, עלינו להשתמש במספר 0 כאינדקס. כמו כן, חשוב לזכור שהאינדקסים יכולים לה
+- [תיעוד על פונקציית `index` ו-`include?`](https://ruby-doc.org/core-2.6.6/String.html#method-i-index)
+- [ויקיפדיה על חריגה](https://he.wikipedia.org/wiki/%D7%97%D7%A8%D7%99%D7%92%D7%94)
+- [תיעוד על פונקציות `slice` ו-`slice!`](https://ruby-doc.org/core-2.6.6/String.html#method-i-slice)
+- [תיעוד על פונקציות `start_with?` ו-`end_with?`](https://ruby-doc.org/core-2.6.6/String.html#method-i-start_with-3F)
+- [תיעוד על פונקציית `match`](https://ruby-doc.org/core-2.6.6/String.html#method-i-match)

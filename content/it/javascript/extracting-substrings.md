@@ -1,49 +1,46 @@
 ---
-title:    "Javascript: Estrazione di sottostringhe"
+title:    "Javascript: Estrarre sottostringhe"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Estrazione di sottoristringhe è un'operazione comune nel mondo della programmazione, specialmente in Javascript. Questo è utile per ottenere solo una parte di una stringa più lunga, che può essere poi utilizzata per vari scopi come la validazione dei dati o la manipolazione delle stringhe stesse.
 
-Estrarre sottostringhe da una stringa è una delle funzioni fondamentali della programmazione in Javascript. Se stai lavorando con grandi quantità di dati o necessiti di manipolare una stringa per ottenere solo una parte di essa, la capacità di estrarre una sottostringa può semplificare notevolmente il tuo codice. In breve, estrarre sottostringhe è essenziale per la gestione efficiente delle stringhe in Javascript.
-
-## Come fare
-
-Estrarre una sottostringa da una stringa in Javascript è semplice e può essere fatto in pochi passi. Innanzitutto, hai bisogno di una stringa in cui estrarre la sottostringa. Ad esempio, vogliamo estrarre la parola "casual" dalla seguente stringa:
+## Come
+Per estrarre una sottoristringa in Javascript, puoi utilizzare il metodo `substring()`. Questo metodo richiede due parametri: l'indice di partenza e l'indice finale della sottoristringa che si desidera ottenere. Vediamo un esempio pratico:
 
 ```Javascript
-var stringa = "Questo è un blog post casuale sulle sottolineature in Javascript.";
+let parola = "Ciao, mondo!";
+let sottostringa = parola.substring(0, 4);
+console.log(sottostringa);
+
+// Output: Ciao
 ```
 
-Ora che abbiamo la nostra stringa di riferimento, possiamo utilizzare il metodo `substring()` per estrarre la sottostringa desiderata. Il metodo `substring()` accetta due parametri: l'indice iniziale e l'indice finale della stringa da estrarre. Ad esempio, per estrarre la parola "casuale" possiamo utilizzare i seguenti parametri:
+In questo caso, abbiamo assegnato la stringa "Ciao, mondo!" alla variabile `parola`. Poi, abbiamo utilizzato il metodo `substring()` per estrarre i primi 4 caratteri, partendo dall'indice 0 della stringa. Il risultato è stato assegnato alla variabile `sottostringa` e visualizzato tramite `console.log()`.
+
+Puoi anche utilizzare indici negativi con il metodo `substring()`, che significa che contano all'indietro dalla fine della stringa. Vediamo un esempio:
 
 ```Javascript
-stringa.substring(26, 33);
+let parola = "Ciao, mondo!";
+let sottostringa = parola.substring(-4, 6);
+console.log(sottostringa);
+
+// Output: mondo
 ```
 
-Il primo parametro, 26, indica l'indice iniziale della parola "casuale" nella nostra stringa. Il secondo parametro, 33, indica l'indice finale, considerando che omessi omette tutte le lettere dalla posizione indicata fino alla fine della stringa. Quindi, il metodo `substring()` restituirà la sottostringa "casuale".
-
-Un altro modo per estrarre sottostringhe in Javascript è utilizzare il metodo `slice()`. Questo metodo funziona in modo simile a `substring()`, ma accetta solo un parametro di indice iniziale. Di seguito è riportato un esempio di come utilizzare il metodo `slice()` per estrarre la stessa sottostringa "casuale":
-
-```Javascript
-stringa.slice(26);
-```
-
-Questo restituisce la stessa sottostringa, in quanto omessi omette tutte le lettere dalla posizione indicata fino alla fine della stringa. Ecco perché il parametro finale non è necessario per estrarre la sottostringa desiderata.
+In questo caso, abbiamo assegnato la stringa "Ciao, mondo!" alla variabile `parola` e utilizzato l'indice -4 come punto di partenza e 6 come punto finale. Ciò significa che iniziamo a contare dalla fine della stringa e andiamo indietro di 4 caratteri per ottenere "mondo".
 
 ## Approfondimento
+Oltre al metodo `substring()`, esistono anche altri modi per estrarre sottoristringhe in Javascript. Ad esempio, è possibile utilizzare il metodo `slice()`, che funziona in modo simile a `substring()` ma può gestire anche indici negativi. Altri metodi utili sono `substr()`, che richiede come parametri l'indice di partenza e la lunghezza della sottoristringa, e `split()`, che suddivide la stringa in un array utilizzando un delimitatore specificato.
 
-Oltre al metodo `substring()` e `slice()`, esistono anche altri metodi che possono essere utilizzati per estrarre sottostringhe da una stringa in Javascript. Ad esempio, il metodo `substr()` accetta due parametri come `substring()`, ma il secondo parametro rappresenta la lunghezza della sottostringa da estrarre anziché l'indice finale. Inoltre, è possibile utilizzare le proprieta `length` di una stringa per ottenere la lunghezza della stringa e utilizzarla come parametro.
+Inoltre, è importante tenere a mente che gli indici delle stringhe in Javascript iniziano sempre da 0 e l'ultimo carattere ha indice n-1, dove n è la lunghezza della stringa. Inoltre, è possibile utilizzare il metodo `length` per ottenere la lunghezza di una stringa.
 
-Inoltre, è importante notare che il conteggio degli indici nelle stringhe inizia da 0. Ciò significa che la prima lettera di una stringa ha indice 0, la seconda lettera ha indice 1 e così via. Questo è un concetto importante da tenere a mente quando si lavora con l'estrazione delle sottostringhe in Javascript.
+## Vedi Anche
+- [Documentazione di MDN su il metodo `substring()`](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Estrazione di sottoristringhe in Javascript: tutto quello che devi sapere](https://www.html.it/articoli/estrazione-sottoristringhe-javascript/)
 
-Inoltre, i metodi per estrarre sottostringhe possono essere combinati con altri metodi di manipolazione delle stringhe in Javascript, come `toUpperCase()` e `toLowerCase()`, per ottenere il risultato desiderato.
-
-## Vedi anche
-
-- [Documentazione MDN su substring()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Documentazione MDN su slice()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Documentazione MDN su substr()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [Documentazione MDN sulle stringhe in Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String)
+Grazie per aver letto questo articolo su come estrarre sottoristringhe in Javascript. Speriamo che sia stato utile per comprendere meglio questa operazione comune nella programmazione. Ricorda di consultare questi link per ulteriori risorse e approfondimenti. Buona codifica!

@@ -1,32 +1,43 @@
 ---
-title:    "Rust: कंप्यूटर प्रोग्रामिंग पर रैन्डम नंबर उत्पन्न करना"
+title:    "Rust: संयोजित प्राकृतिक संख्याएं"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-**Why - क्यों:**
+# Kyun
 
-रैंडम नंबर जनरेशन एक बहुत ही महत्वपूर्ण दस्तावेजीकरण में से एक है। यह प्रोग्रामिंग में बहुत सारे क्षेत्रों में उपयोगी है जैसे खेल, सिमुलेशन, सुरक्षा, डाटा के शोध आदि। रैंडम नंबर जनरेशन एक भाग्य का खेल है और यह अनुकूलित डेटा से तत्काल और आसानी से छुटकारा प्रदान करता है।
+Random numbers ka vyavhar karne ke liye kyun kisi ko uttejit karna chahiye, iske pichhe kya hai? Random numbers jode hue data ki vyakulta aur avyakta ko represent karte hain. Is liye, inse chunke data ko apne hisab se organize kar sakte hain, isse hamare code kaafi versatile ho jaate hain. Aur agar hamari software ke liye secure passwords banane ki zaroorat hai, toh random numbers bahut zaroori hote hain.
 
-**How To - कैसे करें:**
+# Kaise Karein
+
+Kam karein, sunheri aankhein karein - yeh hona chahiye apke dimag mein agar apne shuruat mein naam nahin paaya Rust ke sath. Ho na sake, langauge ke saathe thoda der lag sakta hai, par is language ke madhyam mein, 	random numbers kaise ban sakta hai yeh seekhna zaroori hai. 
 
 ```Rust
+// Random numbers ka example
 use rand::Rng;
- 
+// Use karne wala path
 fn main() {
-    // 1 से 100 के बीच एक अनुकूलित संख्या बनाएं। 
-    let random_number = rand::thread_rng().gen_range(1, 101);
-    println!("रैंडम नंबर: {}", random_number);
+    // Output mein 5 random numbers print karaye
+    println!("Random Numbers: ");
+    for _ in 0..5 {
+        println!("{}", rand::thread_rng().gen_range(0, 10));
+        // 0 se lekar 10 ke beech mein random numbers generate karein 
+    }
 }
-
 ```
 
-इस कोड में, हम रैंडम नंबर जनरेशन के लिए `rand` क्रेट का उपयोग करते हैं। हम `1` और `100` के बीच से एक अनुकूलित संख्या बनाते हैं और उसे प्रिंट करते हैं। आप चाहे तो इस रैंडम नंबर को आपके आवश्यकतानुसार संशोधित कर सकते हैं। अधिक जानकारी के लिए [यहां](https://docs.rs/rand/0.8.3/rand/) `rand` क्रेट की डॉक्यूमेंटेशन देखें।
+Is code snippet mein, `rand` crate ka istemaal kiya gaya hai random numbers banane ke liye. Pehle `use` line mein, `rand::Rng` ko use kar ke, crate ko import kiya gaya hai. Fir, `main` function mein, `println` function ka istemaal kiya gaya hai random numbers print karne ke liye. Is mein `for` loop ka upayog kiya gaya hai, jisme har baar `rand::thread_rng().gen_range(0, 10)` call kiya jata hai, jisse humare program ko random numbers generate karne ke liye kaha jata hai.
 
-**Deep Dive - गहराई में:**
+# Gahra Sukhchaar
 
-रैंडम नंबर जनरेशन अलग-अलग तरीकों से किया जा सकता है। इस आर्टिकल में हमने सिर्फ एक तरीका देखा है, लेकिन आप `rand` क्रेट के अन्य फंक्शन भी इस्तेमाल कर सकते हैं। यहां कुछ और उदाहरण हैं:
+Random numbers generate karne ki peechhe, Rust ke `rand` crate ke alawa bahut se techniques dheere dheere develop huye gaye hain. Chuki random numbers ko secure banana bahut zaroori hai, is liye kai techniques hain jaise PRNGs (Pseudorandom number generators), CSPRNGs (Cryptographically secure pseudorandom number generators) aur entropy based random number generators. In sabhi techniques mein, randomness aur unpredictability ka balance dhyaan mein rakhna zaroori hai taki koi bhi hacker is randomness ko predict na kar sake.
 
-- `rand::thread_rng().gen()` - एक अनुकूलित संख्या बनाता है जो आपके सिस्टम का समय अनुकूलित करता है।
-- `rand::rngs::OsRng` - आपके सिस्टम का एक सुरक्षित रैंडम
+# Dekho Bhi
+
+Random numbers generate karne ke alawa, Rust mein aur bhi bahut se interesting features hain. Agar aapko is language ke bare mein aur jaankari chaiye, toh neeche diye gaye links check karein:
+
+- [Rust Official Website](https://www.rust-lang.org/)
+- [Rust Tutorial in Hindi](https://github.com/w3hexschool/rust-tutorials-in-hindi)
+- [Rust Programming - Full Course](https://www.youtube.com/watch?v=zF34dRivLOw)

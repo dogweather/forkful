@@ -1,36 +1,40 @@
 ---
 title:    "C#: Å starte et nytt prosjekt"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man starter et nytt prosjekt, kan det virke skummelt og overveldende. Men det å starte et nytt prosjekt kan også være veldig givende og spennende. Det gir deg muligheten til å utforske nye konsepter, utvide dine ferdigheter og kanskje til og med lage noe som kan hjelpe andre. Uansett hva grunnen er, starter vi alle et nytt prosjekt fordi vi har en lidenskap for programmering og ønsker å utvide våre kreative horisonter.
+Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg mulighet til å utvikle nye ferdigheter, utforske nye teknologier og kanskje til og med løse et problem du har stått overfor. Det kan også være en flott måte å utvide CVen din og vise frem dine ferdigheter til potensielle arbeidsgivere. Uansett hva grunnen din måtte være, er det alltid en god idé å ha et nytt prosjekt på gang.
 
-## Hvordan
+## Slik gjør du det
 
-Å starte et nytt prosjekt i C# er ikke så vanskelig som det kan virke. Først må du ha en god tekstredigerer, som Visual Studio, på datamaskinen din. Deretter kan du følge disse enkle trinnene for å komme i gang:
+Hvis du er nybegynner eller ikke har mye erfaring med å starte et programmeringsprosjekt, følger her noen enkle trinn for å komme i gang:
 
-1. Opprett et nytt prosjekt ved å velge "File" og deretter "New Project" i Visual Studio.
-2. Velg "Console App" under "Visual C#" og gi prosjektet et navn.
-3. Klikk på "Create" og en ny fil vil åpne seg. Dette er hovedfilen i prosjektet ditt, kalt *Program.cs*.
-4. Skriv din første linje med kode: `Console.WriteLine("Hei, verden!");`
-5. Kjør programmet ved å trykke på den grønne "Run" knappen øverst i Visual Studio.
-6. Se på resultatet i konsollen nederst i Visual Studio. Du skal nå se "Hei, verden!" utskrevet.
+```C#
+// Opprett en ny klasse
+public class Prosjekt
+{
+    // Opprett en metode for hovedinngangen
+    public static void Main()
+    {
+        // Skriv ut en velkomstmelding
+        Console.WriteLine("Velkommen til ditt nye C# prosjekt!");
+    }
+}
+```
 
-Det er det! Du har nå satt opp et enkelt C# prosjekt og fått det til å kjøre. Fra her kan du eksperimentere og legge til mer kode for å gjøre det enda mer interessant.
+Nå som du har en grunnleggende struktur på plass, kan du begynne å legge til mer funksjonalitet og bygge opp prosjektet ditt. Husk å bruke kommentarer for å forklare hva koden din gjør og følge beste praksis for lesbarhet og vedlikehold. Du kan også dra nytte av ressurser som tutorials, dokumentasjon og fellesskap for å få hjelp og inspirasjon underveis.
 
-## Dypdykk
+## Dykk dypere
 
-Når man starter et nytt prosjekt, er det viktig å først definere hva målet med prosjektet er. Dette vil hjelpe deg å planlegge og organisere koden din bedre. Deretter kan du begynne å lage en enkel design og struktur for prosjektet ditt. Tenk på de ulike funksjonene og klassene som trengs for å oppnå målet ditt, og lag en liste over dem.
-
-Det er også viktig å følge god programmeringspraksis og skrive ren og lesbar kode. Dette vil gjøre det lettere å vedlikeholde prosjektet ditt i fremtiden og vil være en god vane å ta med deg til fremtidige prosjekter.
+Når du har fått litt erfaring med å starte og fullføre et prosjekt, kan du begynne å utforske mer avanserte konsepter og teknologier. Du kan for eksempel lære deg hvordan du bruker tredjeparts biblioteker, implementere designmønstre eller utvikle løsninger for spesifikke problemer. Det er også viktig å huske på at å lære noe nytt og utfordrende kan være en del av moroa med å starte et nytt prosjekt.
 
 ## Se også
 
-- [Offisiell C# dokumentasjon](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [C# tutorial for beginners](https://www.tutorialspoint.com/csharp/index.htm)
-- [C# 101: A Beginner's Guide to C#](https://medium.freecodecamp.org/c-101-a-beginners-guide-to-c-cbf9b5812781)
-- [Norske programmeringsforum](https://www.diskusjon.no/forum/38-programmering/)
+- [Microsoft Docs: Generere nye C# prosjekter](https://docs.microsoft.com/nb-no/visualstudio/ide/quickstart-projects-sln)
+- [Tutoriale på C# Programmering](https://www.tutorialspoint.com/csharp/index.htm)
+- [GitHub: Awesome .NET](https://github.com/quozd/awesome-dotnet)

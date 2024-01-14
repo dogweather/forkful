@@ -1,39 +1,43 @@
 ---
-title:    "PHP: 정규식을 사용하는 방법"
+title:    "PHP: 정규 표현식 사용하기"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 정규 표현식을 사용해야 할까요?
+# 왜 정규식을 사용하는가?
 
-정규 표현식은 PHP 프로그래밍에서 매우 유용한 도구입니다. 이를 사용하면 텍스트에서 원하는 부분을 정확하게 추출하거나 패턴을 대체할 수 있습니다. 또한 정규 표현식을 이용하면 더 간결하고 효율적인 코드를 작성할 수 있습니다. 
+정규식은 PHP 프로그래밍에서 매우 강력한 도구입니다. 정규식을 사용하면 문자열의 유무나 패턴 등을 검사하고 원하는 작업을 수행할 수 있습니다. 또한 정규식은 코드를 더욱 간결하고 효율적으로 작성할 수 있게 도와줍니다.
 
-# 어떻게 사용할까요?
+# 정규식 사용 방법
+
+PHP에서 정규식을 사용하려면 `preg_match()` 함수를 사용해야 합니다. 예를 들어, 문자열이 이메일 주소 형식인지를 확인하고 싶다면 다음과 같은 코드를 작성할 수 있습니다.
 
 ```PHP
-// 텍스트에서 이메일 주소 추출하기
-$text = "안녕하세요, 제 이메일 주소는 example@gmail.com입니다.";
-preg_match("/[\w]+@[\w]+\.[\w]+/", $text, $matches);
-echo $matches[0];
+$email = "example@gmail.com";
+if (preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/', $email)) {
+    echo "유효한 이메일 주소입니다.";
+} else {
+    echo "유효하지 않은 이메일 주소입니다.";
+}
 ```
 
-위 예제 코드를 실행하면 "example@gmail.com"이라는 이메일 주소가 출력될 것입니다. 이렇게 정규 표현식을 사용하면 쉽게 원하는 패턴의 텍스트를 추출할 수 있습니다.
+이 코드를 실행하면 다음과 같은 결과가 출력됩니다.
 
-# 깊이 파헤쳐보기
+```
+유효한 이메일 주소입니다.
+```
 
-정규 표현식은 기본적으로 패턴을 나타내는 문자열이고, 이를 이용해 텍스트를 검색하고 추출하는 작업을 할 수 있습니다. 예를 들어 "/"로 시작하고 끝나는 문자열은 정규 표현식의 시작과 끝을 나타내며, 그 사이에 원하는 패턴을 작성할 수 있습니다. 그리고 패턴의 일부분을 `[]`로 감싸면 해당 부분의 문자들 중 하나와 매치됨을 의미합니다. `+`는 앞의 패턴이 하나 이상 있을 수 있음을 나타내고, `\w`는 문자나 숫자를 의미합니다.
+위의 예제에서는 정규식 표현을 사용하여 이메일 주소의 유효성을 검사했습니다. 이 외에도 정규식을 사용하면 정수, 전화번호 등 각종 데이터의 유효성을 검사할 수 있습니다.
 
-정규 표현식을 더 학습하고 싶다면 [PHP 공식 문서](https://www.php.net/manual/en/book.pcre.php)를 참고해보세요.
+# 정규식 깊게 들어가기
 
-# 더 알아보기
+정규식을 사용할 때 가장 중요한 것은 정규식 표현에 대한 이해입니다. 정규식은 특정 패턴을 검사할 때 사용하는데, 이때 사용되는 메타문자(특수 기호)들이 있습니다. 이 메타문자를 이해하고 적절하게 사용할 수 있다면 정규식을 더욱 유용하게 사용할 수 있을 것입니다.
 
-##- [Regular Expression Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-##- [Regex101 프로페셔널 가이드](https://www.regex101.com/guide/introduction)
-##- [정규 표현식 연습 사이트 (exercism.io)](https://exercism.io/tracks/php/exercises/regex)
+또한 정규식에서는 캡처(그룹) 기능을 사용할 수 있습니다. 이를 통해 특정 부분을 추출하거나 매칭된 부분을 다른 문자열로 치환할 수 있습니다.
 
-# 관련 링크
+# 관련 자료
 
-##- [PHP와 함께 정규 표현식 사용하기](https://www.php.net/manual/en/book.pcre.php)
-##- [정규 표현식을 사용한 문자열 검색 및 대체](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-##- [더 많은 예제와 설명이 있는 Regular Expressions Cookbook 책](http://shop.oreilly.com/product/0636920012337.do)
+- [PHP 공식 메뉴얼 - 정규식](https://www.php.net/manual/kr/book.pcre.php)
+- [정규식 교재](http://www.regexr.com)

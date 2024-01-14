@@ -1,45 +1,57 @@
 ---
-title:    "C: Komentoriviparametrien lukeminen"
+title:    "C: Lukeminen komentoriviparametreja"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluat lukea komentoriviargumentteja C-ohjelmoinnissa? Komentoriviargumentteja käytetään ohjelman parametrien antamiseen ennen sen suorittamista, mikä tekee ohjelman käytöstä monipuolisempaa ja joustavampaa. Tämä artikkeli auttaa sinua ymmärtämään miten komentoriviargumentteja käytetään C-ohjelmoinnissa.
+Tervetuloa lukemaan blogipostausta komentorivin argumenttien lukemisesta. Tässä artikkelissa käsittelemme, miksi on tärkeää osata lukea komentorivin argumentteja ja miten se voidaan tehdä C-ohjelmoinnissa. Jos olet kiinnostunut oppimaan lisää tästä tärkeästä aiheesta, jatka lukemista!
 
 ## Miten
+
+Komentorivin argumentit ovat käyttäjän antamia tietoja ohjelmalle sen ajamisen yhteydessä. Ne ovat tärkeitä, koska ne antavat ohjelmalle tietoa siitä, miten sitä tulee käyttää ja mitä toimintoja suorittaa. Tässä on yksinkertainen esimerkki, miten voidaan lukea komentorivin argumentteja C-kielellä:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]){
-    // Printtaa kaikki komentoriviargumentit
-    for(int i = 0; i < argc; i++){
-        printf("Argumentti %d: %s\n", i, argv[i]);
-    }
-    return 0;
+int main(int argc, char *argv[]) {
+  printf("Sinulla on %d argumenttia.\n", argc);
+  for (int i = 0; i < argc; i++) {
+    printf("Argumentti %d: %s\n", i, argv[i]);
+  }
+
+  return 0;
 }
 ```
 
-**Esimerkki tulostus:**
+Esimerkki koodi luo yksinkertaisen ohjelman, joka tulostaa kaikki komentoriviltä saadut argumentit. Jos suoritat ohjelman seuraavasti: ```./ohjelma hello world```, saat seuraavan tulosteen:
 
 ```
-$ ./argumentit koirat linnut
-Argumentti 0: ./argumentit
-Argumentti 1: koirat
-Argumentti 2: linnut
+Sinulla on 3 argumenttia.
+Argumentti 0: ./ohjelma
+Argumentti 1: hello
+Argumentti 2: world
 ```
 
-Kuten esimerkistä näemme, komentoriviargumentit tallennetaan `argv` taulukkoon, ja ohjelman suorittamisen yhteydessä voimme käsitellä niitä haluamallamme tavalla.
+Nyt voit nähdä, miten koodi käsittelee argumentteja ja tulostaa ne käyttäjälle. Tämä on vain yksinkertainen esimerkki, mutta voit alkaa kehittämään sitä ja lisätä siihen toiminnallisuuksia ohjelmointitaitosi mukaan.
 
-## Syvällistä tietoa
+## Syvempää tietoa
 
-Komentoriviargumentteja voidaan käyttää myös komentoriviltä syötettävien tietojen lukemiseen, esimerkiksi tiedoston nimen tai parametrien arvojen välittämiseen ohjelmalle. `argc` muuttuja kertoo kuinka monta argumenttia on annettu, ja `argv` taulukossa olevat argumentit voidaan muuttaa halutuiksi tietotyypeiksi, kuten kokonaisluvuiksi tai merkkijonoiksi.
+Kun suoritat ohjelmia komentoriviltä, saatat huomata, että jotkin argumentit ovat valinnaisia ja jotkin ovat pakollisia. Tämä tarkoittaa, että ohjelma ei välttämättä toimi oikein, jos et anna sille tiettyjä argumentteja. Tämä on tärkeää muistaa, kun suunnittelet ja kehität ohjelmia.
+
+On myös tärkeää, että osaat käsitellä komentorivin argumentteja oikein. Tässä on joitakin hyödyllisiä resursseja, jotka auttavat sinua syventymään aiheeseen:
+
+- [Argumenttien lukeminen C-ohjelmassa](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [Ohjelmointitermit: Komentorivin argumentit](https://www.summarecon.com/en/glossary/command-line-arguments/)
+- [C: Komentorivin argumentit](https://www.codingunit.com/c-program-to-accept-command-line-arguments)
 
 ## Katso myös
 
-- [C-ohjelmointi - Wikikirjasto](https://fi.wikibooks.org/wiki/C-ohjelmointi)
-- [Komentoriviparametrit C-kielessä - GeeksforGeeks](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [C-kielen komentoriviargumenttien perusteet - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+Jos haluat oppia lisää C-ohjelmoinnista ja muista aiheista, tarkista seuraavat resurssit:
+
+- [C-ohjelmoinnin perusteet](https://www.sololearn.com/Course/C/)
+- [Parhaat käytännöt C-ohjelmoinnissa](https://www.thegeekstuff.com/2011/12/c-programming-language-tutorial/)
+- [Ohjelmointitermit: C-ohjelmointi](https://www.summarecon.com/en/glossary/c-programming/)

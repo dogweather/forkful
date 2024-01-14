@@ -1,43 +1,53 @@
 ---
-title:    "Go: 文字列の結合"
+title:    "Go: 文字列の連結"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why (なぜ)
-文字列を連結することに関わる魅力的な理由はたくさんあります。一つには、複数の文字列を一つの大きな文字列にまとめることで、データを簡潔かつ効率的に処理できるからです。
+## なぜ
 
-## How To (方法)
-まず、Go言語の `+` オペレーターを使用して、文字列を連結することができます。以下の例をご覧ください。
+文字列の連結に取り組むのかという理由を簡単に説明します。
 
-```Go
-// 文字列の連結
-str1 := "Hello"
-str2 := "World"
-result := str1 + str2
-println(result)
-```
+Go言語では、文字列を1つの変数にまとめることができない場合があります。そのような場合、複数の変数を連結して1つの文字列として扱うことで、より柔軟なコードを書くことができます。
 
-このコードを実行すると、`HelloWorld` という出力結果が得られます。
+## 方法
 
-さらに、`fmt.Sprintf` 関数を使用することで、変数や定数を含む複雑な式を作成することもできます。例えば、次のようなコードで `Hello, Robert!` という出力を得ることができます。
+以下に、Go言語で文字列を連結する方法をコーディング例とともに紹介します。
 
 ```Go
-// フォーマット文字列を使用した文字列の連結
-name := "Robert"
-result := fmt.Sprintf("Hello, %s!", name)
-println(result)
+package main
+
+import "fmt"
+
+func main() {
+  // 文字列を連結する方法
+  str1 := "Hello "
+  str2 := "World!"
+  result := str1 + str2
+  fmt.Println(result) // 出力: Hello World!
+}
 ```
 
-## Deep Dive (詳細)
-Go言語では、文字列を連結する際にはバイトのスライスを作成し、そこに文字列をコピーするという方法を採用しています。これにより、文字列の変更が容易になり、処理速度も向上します。
+上記のコードでは、`+`演算子を使用して2つの文字列を連結しています。最終的な結果は `"Hello World!"` となります。
 
-しかし、この方法ではメモリの使用量が多くなってしまうため、大量の文字列を連結する際には `strings.Builder` や `bytes.Buffer` パッケージを使用することをお勧めします。
+## ディープダイブ
 
-また、Go言語の `strings.Join` 関数を使用することで、連結する文字列の数が増えてもパフォーマンスを維持することができます。
+初心者の方にとっては、文字列の連結は非常に基本的な操作かもしれません。しかし、実はGo言語にはより高度な連結方法が存在します。
 
-## See Also (関連リンク)
-- [Go言語チュートリアル](https://tour.golang.org/welcome/1)
-- [stringsパッケージドキュメント](https://golang.org/pkg/strings/)
-- [Go言語における文字列操作のチューニング](https://eltonminetto.dev/en/post/2020-10-24-string-tuning-go/)
+例えば、`fmt.Sprintf()`関数を使用して任意のフォーマットに基づいて文字列を連結することができます。また、`bytes.Buffer`パッケージを使用することで、より高速な連結処理を実現することもできます。
+
+詳細な情報を知りたい方は、[公式ドキュメント](https://golang.org/pkg/strings/#Concat)を参照してください。
+
+## 参考リンク
+
+- [Go公式ドキュメント - strings#Concat](https://golang.org/pkg/strings/#Concat)
+- [組み込み関数 - string concatenation](https://golang.org/ref/spec#String_concatenation)
+- [Go Lang Cheat Sheet - String operations](https://github.com/a8m/go-lang-cheat-sheet#string-operations)
+
+## 関連リンク
+
+- [Go言語チュートリアル - 文字列の操作](https://www.tohoho-web.com/ex/golang.html#link15)
+- [はじめてのGo言語 - 文字列の操作](https://qiita.com/tenntenn/items/0e33a495925f63c2d45b)
+- [Go言語で文字列を連結する方法](https://qiita.com/ogady/items/e776ce1c924909cea5af)

@@ -1,60 +1,86 @@
 ---
 title:    "Java: Odczytywanie pliku tekstowego"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zastanawiałeś się kiedyś, jak w prosty i skuteczny sposób odczytać plik tekstowy w języku Java? W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak możesz ją wykorzystać w swoich programach.
+Czy kiedykolwiek zastanawiałeś się, jak programy czytają pliki tekstowe? Niezależnie od tego, czy jesteś początkującym programistą, czy doświadczonym weteranem, umiejętność czytania plików tekstowych jest niezbędna w wielu projektach programistycznych. W tym artykule dowiesz się, dlaczego warto poznać tę umiejętność.
 
-## Jak odczytać plik tekstowy w języku Java
+## Jak to zrobić
 
-Aby odczytać plik tekstowy w języku Java, musimy wykonać kilka prostych kroków:
+Jeśli chcesz nauczyć się czytać pliki tekstowe w języku Java, nie martw się! Jest to proste i szybkie, a tu pokażę Ci przykłady kodów, które wykonują te działania. Spróbuj uruchomić je w swoim własnym środowisku programistycznym i zaobserwuj wyniki.
 
-1. Utworzyć obiekt typu `File` i przekazać do niego ścieżkę do pliku, który chcemy odczytać.
-2. Stworzyć obiekt typu `Scanner` i przekazać do niego stworzony wcześniej obiekt `File`.
-3. Wykorzystać metodę `nextLine()` obiektu `Scanner`, aby odczytać kolejne linie tekstu z pliku.
+```Java
+import java.io.*;
 
-Poniżej znajduje się przykładowy kod w języku Java:
+public class ReadFile {
+    public static void main(String[] args) {
+        // Utwórz obiekt File i podaj ścieżkę do pliku tekstowego
+        File file = new File("moj_plik.txt");
 
-```java
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+        try {
+            // Utwórz obiekt FileReader do czytania pliku
+            FileReader reader = new FileReader(file);
 
-public class Main {
-  public static void main(String[] args) {
-    try {
-      File file = new File("tekst.txt");
-      Scanner scanner = new Scanner(file);
+            // Utwórz obiekt BufferedReader do optymalizacji czytania pliku
+            BufferedReader breader = new BufferedReader(reader);
 
-      // odczytanie i wyświetlenie kolejnych linii z pliku
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        System.out.println(line);
-      }
+            // Użyj pętli do zapisania każdej linii tekstu jako stringa i wyświetlenia go na konsoli
+            String line = breader.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = breader.readLine();
+            }
 
-      scanner.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("Nie znaleziono pliku.");
+            // Zamknij obiekty reader i breader
+            breader.close();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
-Powyższy kod odczytuje i wyświetla zawartość pliku tekstowego "tekst.txt". Możemy również przetwarzać odczytane linie tekstu w inny sposób, na przykład dodając je do listy lub wykorzystując do operacji matematycznych.
+Przykładowy plik tekstowy `moj_plik.txt` zawiera:
 
-## Głębszy wgląd
+```
+Witaj,
 
-Podczas odczytywania plików tekstowych w języku Java istnieje kilka ważnych kwestii, które warto znać:
+Nie ma co czytać słów,
+lepiej przeczytaj kod!
 
-- Możemy wykorzystać różne znaki jako separator przy odczytywaniu danych z pliku tekstowego. Domyślnym separatorem jest znak nowej linii, ale możemy również użyć np. przecinka lub tabulatora.
-- Jeśli chcemy odczytywać dane z pliku w formacie innym niż tekst, np. dane liczbowe, musimy odpowiednio przetwarzać odczytane linie za pomocą metod takich jak `parseInt()` lub `parseDouble()`.
-- Pamiętajmy, aby zamknąć obiekt typu `Scanner` po zakończeniu jego wykorzystania, aby uniknąć wycieku pamięci.
+Pozdrowienia,
+Programista
+```
 
-## Zobacz też
+Wyjście na konsoli po uruchomieniu przykładowego kodu będzie wyglądać następująco:
 
-- Dokumentacja języka Java: https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html
-- Przykładowe pliki tekstowe do odczytania: https://github.com/aslamanver/Java-File-Reader/tree/master/example_files
+```
+Witaj,
+Nie ma co czytać słów,
+lepiej przeczytaj kod!
+Pozdrowienia,
+Programista
+```
+
+## Głębszy zanurzenie
+
+Teraz, gdy wiesz, jak czytać pliki tekstowe, zastanówmy się na chwilę, jak dokładnie działa ten kod. W naszym przykładzie użyliśmy klasy `FileReader` do czytania pliku i klasy `BufferedReader` do optymalizacji tego procesu. Klasa `BufferedReader` czyta dane w paczkach, co jest szybsze niż czytanie znaku po znaku przez klasę `FileReader`.
+
+W pętli wykorzystujemy metodę `readLine()`, która czyta kolejne linie pliku i zapisuje je jako stringi. Każda linia jest wyświetlana na konsoli, a następnie pętla kontynuuje działanie, dopóki nie dojdzie do końca pliku.
+
+Pamiętaj również o zamknięciu obiektów `reader` i `breader`, aby zwolnić zasoby systemowe.
+
+## Zobacz także
+
+Jeśli chcesz pogłębić swoją wiedzę na temat czytania plików tekstowych w języku Java, polecam przejrzeć poniższe linki:
+
+- [Dokumentacja Java - klasa FileReader](https://docs.oracle.com/javase/7/docs/api/java/io/FileReader.html)
+- [Dokumentacja Java - klasa BufferedReader](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html)
+- [Tutorial: czytanie pliku tekstowego w Java](https://www.baeldung.com/java-file-reader)
+- [Czytanie i zapisywanie plików w Java](https://www.tutorialspoint.com/java/io/java_io_file.htm)

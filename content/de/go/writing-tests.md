@@ -1,51 +1,65 @@
 ---
-title:    "Go: Tests schreiben"
+title:    "Go: Test schreiben"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Unit-Tests sind ein wichtiger Bestandteil der Softwareentwicklung, da sie helfen, Bugs frühzeitig zu erkennen, die Codequalität zu verbessern und das Refactoring zu erleichtern. Durch das Schreiben von Tests können Entwickler und Entwicklerinnen sicherstellen, dass ihr Code richtig funktioniert und Vertrauen in ihre Anwendungen aufbauen.
+Die Verwendung von Tests ist ein wichtiger Bestandteil des Go-Programmierens. Sie helfen dabei, mögliche Fehler frühzeitig zu erkennen und die Qualität des Codes zu verbessern. Außerdem ermöglichen sie eine leichtere Wartung und Weiterentwicklung des Programms.
 
-## Wie man Tests schreibt
+## Wie
 
-Das Schreiben von Tests in Go ist relativ einfach und erfordert nur grundlegende Kenntnisse der Programmiersprache. Zunächst müssen wir das Paket "testing" importieren, um die notwendigen Funktionen und Methoden zum Schreiben von Tests zur Verfügung zu stellen.
+Um Tests in Go zu schreiben, können Sie die integrierte "testing" Bibliothek verwenden. Diese bietet Funktionen zum Ausführen von Tests und zum Vergleichen von erwarteten und tatsächlichen Ergebnissen. Hier ist ein Beispiel für einen einfachen Test:
 
-```
-package main
-
-import (
-    "testing"
-)
-```
-
-Als nächstes erstellen wir eine Testfunktion mit dem Namen "TestAddition", die in der Regel mit dem Präfix "Test" beginnt, gefolgt von einer aussagekräftigen Beschreibung dessen, was getestet wird. Innerhalb dieser Funktion können wir Assertions verwenden, um sicherzustellen, dass der erwartete Wert zurückgegeben wird.
-
-```
+```Go
 func TestAddition(t *testing.T) {
-    result := add(2, 3)
-    expected := 5
-
+    result := 5 + 3
+    expected := 8
     if result != expected {
-        t.Errorf("Berechnung war falsch, erwartetes Ergebnis: %d, erhaltenes Ergebnis: %d", expected, result)
+        t.Errorf("Ergebnis war %v, erwartet wurde %v", result, expected)
     }
 }
 ```
+Der Codeblock "test" verwendet die Funktion "testing.T" und vergleicht das erwartete Ergebnis (8) mit dem tatsächlichen (5+3). Wenn die Bedingung nicht erfüllt ist, wird ein Fehler ausgegeben.
 
-In diesem Beispiel verwenden wir die "add" Funktion, um die Addition von zwei Zahlen zu testen. Wir erwarten, dass die Funktion 5 zurückgibt, daher vergleichen wir den Rückgabewert mit der erwarteten Zahl. Wenn der Test fehlschlägt, gibt die Funktion "t.Errorf" eine Fehlermeldung aus, die uns hilft, den Fehler zu identifizieren.
+Sie können auch "Tabelle-Getriebene Tests" verwenden, um verschiedene Eingaben und erwartete Ausgaben zu testen. Hier ist ein Beispiel:
 
-Die "testify" Bibliothek bietet zusätzliche Funktionen für die Assertions, wie zum Beispiel "assert.Equal" oder "assert.NotEqual", die das Schreiben von Tests noch einfacher machen.
+```Go
+func TestMultiplikation(t *testing.T) {
+    tests := []struct {
+        a        int
+        b        int
+        expected int
+    }{
+        {2, 3, 6},
+        {0, 5, 0},
+        {-4, 8, -32},
+    }
+    for _, test := range tests {
+        result := test.a * test.b
+        if result != test.expected {
+            t.Errorf("Falsches Ergebnis, erwartet wurde %v aber erhalten %v", test.expected, result)
+        }
+    }
+}
+```
+In diesem Beispiel werden verschiedene Eingaben und erwartete Ausgaben in einer Tabelle definiert und dann in einer Schleife getestet.
 
-## Tiefere Einblicke
+## Deep Dive
 
-Das Schreiben von Tests ermöglicht es uns, verschiedene Testfälle abzudecken und sicherzustellen, dass unser Code in allen Szenarien richtig funktioniert. Wir können auch Benchmarks schreiben, um die Leistung unserer Funktionen zu messen.
+Es gibt verschiedene Arten von Tests, die in Go verwendet werden können, wie zum Beispiel Unit-Tests, Integrationstests und End-to-End-Tests. Es ist wichtig, die richtige Art von Test für jedes Szenario auszuwählen. Außerdem ist es ratsam, kleinere Funktionen isoliert zu testen, um sicherzustellen, dass sie unabhängig voneinander funktionieren.
 
-Es ist auch wichtig zu beachten, dass Tests kein Ersatz für eine gründliche Codeüberprüfung und Fehlerbehebung sind. Sie sollten als Ergänzung zum Debugging-Prozess betrachtet werden und sollten regelmäßig ausgeführt werden, um sicherzustellen, dass der Code stabil bleibt.
+Ein weiterer wichtiger Aspekt beim Schreiben von Tests ist die Überprüfung der Fehlerbehandlung. Es ist wichtig, sicherzustellen, dass das Programm auf unerwartete Eingaben oder Ereignisse korrekt reagiert.
 
 ## Siehe auch
 
-- [Go Testing Paket Dokumentation](https://golang.org/pkg/testing/)
-- [Testify Bibliothek](https://github.com/stretchr/testify)
-- [Einführung in das Testen mit Go](https://medium.com/iron-io-blog/a-simple-introduction-to-testify-a526016b82d3)
+Hier sind einige hilfreiche Ressourcen, um mehr über das Schreiben von Tests in Go zu erfahren:
+
+- [Offizielle Go-Dokumentation zu Tests](https://golang.org/pkg/testing/)
+- [Tutorial: Testing in Go](https://blog.alexellis.io/golang-writing-unit-tests/)
+- [Best Practices für das Schreiben von Tests in Go](https://medium.com/@sebdah/things-to-keep-in-mind-when-writing-go-unit-tests-7aceb59bbed8)
+
+Vielen Dank fürs Lesen und happy coding!

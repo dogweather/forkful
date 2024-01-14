@@ -1,43 +1,45 @@
 ---
-title:    "TypeScript: Konwersja ciągu znaków na małe litery"
+title:    "TypeScript: Konwertowanie ciągu znaków na małe litery."
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Kazdy programista czasem natyka się na problemy związane z przetwarzaniem tekstu. Jednym z częstych zadań jest konwertowanie tekstu na małe litery. W tym artykule opowiemy Wam, dlaczego warto stosować tę operację i jak można to zrobić w języku TypeScript.
+Często podczas programowania, musimy zmienić wszystkie litery w stringu na małe. Jest to przydatne w wielu sytuacjach, np. porównując dwa stringi czy w trakcie filtrowania listy słów. W tym artykule dowiesz się, jak w prosty sposób wykonać konwersję stringu na małe litery w języku TypeScript.
 
-## Jak To Zrobić
-Konwertowanie tekstu na małe litery jest bardzo proste w języku TypeScript. Wystarczy użyć metody `toLowerCase()` na obiekcie typu `string` i przypisać go do zmiennej. Poniżej przedstawiamy przykład kodu wraz z oczekiwanym wyjściem:
-
-```TypeScript
-let text: string = "HELLO WORLD";
-console.log(text.toLowerCase()); // wyjście: hello world
-```
-
-Można również zastosować tę metodę do stałych tekstowych, jak również do wyników innych funkcji. Przykład:
+## Jak to zrobić
+Zanim przejdziemy do przykładowego kodu, ważne jest, aby wprowadzić do zmiennej nasz string, którego chcemy dokonać konwersji.
 
 ```TypeScript
-console.log("Bye".toLowerCase()); // wyjście: bye
-console.log((3 * 4).toString().toLowerCase()); // wyjście: 12
+let str: string = "PROGRAMOWANIE";
 ```
+
+Aby dokonać konwersji, wykorzystujemy wbudowaną metodę `toLowerCase()` na zmiennej `str`. Następnie przypisujemy zwracaną wartość do nowej zmiennej.
+
+```TypeScript
+let strLower: string = str.toLowerCase();
+
+console.log(strLower); // output: programowanie
+```
+
+Po wywołaniu metody `toLowerCase()`, wszystkie litery w naszym stringu zostały zmienione na małe. Dodatkowo, warto zauważyć, że zmienna `str` nie została zmieniona, a jedynie zwrócona została wartość zmienionej wersji stringu.
 
 ## Deep Dive
-Jak działa konwertowanie na małe litery w języku TypeScript? W rzeczywistości metoda `toLowerCase()` jest metodą obiektu `String`, a nie samego typu `string`. Oznacza to, że każda zmienna typu `string` jest automatycznie zamieniana na wartość typu `String`, która posiada wbudowaną metodę `toLowerCase()`.
+W języku TypeScript istnieje również możliwość wykorzystania operatora `|` do określenia rodzajów danych, jakie mogą wystąpić w naszej zmiennej. Dzięki temu, możemy dopasować metodę `toLowerCase()` do konkretnego typu. Na przykład, jeśli nasza zmienna może przyjąć wartość typu `string` lub `null`, możemy napisać:
 
-Co ciekawe, ta metoda jest zdefiniowana w standardzie ECMAScript, więc działa także w innych językach programowania opartych na ECMAScript, takich jak JavaScript czy Java. Metoda `toLowerCase()` jest również często używana wraz z innymi operacjami na tekście, takimi jak `split()` czy `join()`, co czyni ją bardzo przydatną w programowaniu.
+```TypeScript
+let str: string | null = "JĘZYK PROGRAMOWANIA";
 
-## Zobacz Również
-Poniżej przedstawiamy dodatkowe artykuły i przykładowe kody, które mogą być pomocne w przetwarzaniu tekstu w języku TypeScript:
+let strLower: string = str!.toLowerCase();
 
-- [Metody obiektu `String` w języku TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [Przetwarzanie tekstu w języku JavaScript](https://www.w3schools.com/js/js_string_methods.asp)
-- [Metody ECMAScript w języku Java](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+console.log(strLower); // output: język programowania
+```
 
-Dziękujemy za lekturę naszego artykułu i do zobaczenia następnym razem!
+W przypadku tutaj występującego operatora `!`, który informuje TypeScript, że nie będzie żadnego błędu w użyciu metody `toLowerCase()`, ponieważ wartość zmiennej `str` jest zawsze typu `string` lub `null`.
 
-## Zobacz Również
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Kurs programowania w języku TypeScript](https://www.edx.org/course/programming-typescript)
+## Zobacz również
+- [Dokumentacja języka TypeScript - metoda toLowerCase()](https://www.typescriptlang.org/docs/handbook/strings.html#method-tolowercase)
+- [Tutorial: Wprowadzenie do języka TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+- [15 przydatnych metod string w TypeSript](https://www.javatpoint.com/typescript-string-methods)

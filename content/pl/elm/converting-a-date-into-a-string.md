@@ -1,45 +1,41 @@
 ---
-title:    "Elm: Konwersja daty na ciąg znaków"
+title:    "Elm: Konwertowanie daty na ciąg znaków"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
-W dzisiejszych czasach programowanie jest niezbędnym składnikiem wielu dziedzin, w tym także aplikacji internetowych. Jedną z kluczowych czynności w aplikacjach jest konwersja daty na tekst. W tym artykule dowiesz się, dlaczego jest to ważne oraz jak to zrobić w języku Elm.
+## Dlaczego
+
+Konwersja daty na ciąg znaków jest niezbędnym procesem w wielu aplikacjach internetowych. Oznacza to przekształcenie niezrozumiałego dla człowieka formatu daty (np. 2020-05-15) na czytelną formę (np. 15 maja 2020). Jest to szczególnie przydatne, jeśli potrzebujemy wyświetlić datę dla użytkownika w prosty sposób.
 
 ## Jak to zrobić
-Konwersja daty na tekst może wydawać się trudna, ale w rzeczywistości w języku Elm jest to bardzo proste. Oto przykładowy kod, który pokaże Ci, jak to zrobić:
 
-```
-Elm
-import Time
+Aby przekonwertować datę na ciąg znaków w Elm, należy skorzystać z funkcji `Date.toString`. Przyjmujemy jako argument datę, którą chcemy przekonwertować oraz format, w jakim chcemy ją wyświetlić. Ważne jest, aby pamiętać, że Elm ma bardzo surowe zasady formatowania dat i godzin. Na przykład, aby wyświetlić datę w formacie DD/MM/YYYY, musimy określić to jako "yyyy/MM/dd".
 
-dateToString : Time.Posix -> String
-dateToString date =
-    let
-        millis = date * 1000
-    in
-    case Time.fromMillis millis of
-        Err _ ->
-            ""
-
-        Ok time ->
-            Time.format "%d/%m/%Y" time
+```Elm
+Date.toString date "yyyy/MM/dd"
 ```
 
-W powyższym przykładzie wykorzystujemy moduł Time, aby przekonwertować polecsaną datę na milisekundy. Następnie wykorzystujemy funkcję `format` do przekonwertowania milisekund na format daty określony przez nas. W przypadku błędu, zwracamy pusty napis. Poniżej znajduje się przykładowe wyjście dla daty 20 marca 2021 roku:
+Przykładowy wynik dla daty 15 maja 2020 będzie wyglądał tak: "2020/05/15".
 
-```
-20/03/2021
-```
+## Dogłębna analiza
 
-## Głębsze zagadnienia
-Konwersja daty na tekst może być trochę bardziej złożona w przypadku, gdy chcemy wykorzystać różne formaty daty w zależności od języka lub preferencji użytkownika. W takim przypadku musimy wykorzystać biblioteki zewnętrzne, takie jak `elm-community/intl-extra`. Istnieje również możliwość wykorzystania niestandardowych formatów daty bez konieczności dodatkowych bibliotek.
+Istnieje wiele różnych formatów, w jakich możemy wyświetlać datę z pomocą funkcji `Date.toString`. W tym celu możemy skorzystać z różnych kombinacji literek, które odpowiadają za konkretne elementy daty i czasu. Oto kilka przykładowych kombinacji i ich odpowiednie znaczenie:
+
+- `yyyy` - rok w formacie czterocyfrowym
+- `MM` - miesiąc (z wiodącym zerem)
+- `dd` - dzień (z wiodącym zerem)
+- `EEEE` - dzień tygodnia w formacie pełnej nazwy (np. "piątek")
+- `hh` - godziny (w formacie 12-godzinnym)
+- `HH` - godziny (w formacie 24-godzinnym)
+- `mm` - minuty
+- `ss` - sekundy
+
+Możemy również dodawać inne znaki, takie jak kropki czy myślniki, aby uatrakcyjnić wyświetlaną datę. Ważne jest jednak, aby pamiętać o wymogu używania konkretnych liter i symboli, ponieważ w przeciwnym razie funkcja `Date.toString` może zwrócić błąd.
 
 ## Zobacz także
-Jeśli chcesz dowiedzieć się więcej o konwersji daty w języku Elm, polecamy zapoznać się z następującymi materiałami:
 
-- Oficjalna dokumentacja języka Elm, zawierająca przykłady i wyjaśnienia na temat konwersji daty: https://elm-lang.org/docs/format
-- Artykuł na stronie małego startupu, w którym omawiane są niestandardowe formaty daty: https://www.oplop.net/date-formatting-in-elm.html
-- Repozytorium biblioteki `elm-community/intl-extra` na GitHubie: https://github.com/elm-community/intl-extra.
+- [Dokumentacja Elm dla funkcji `Date.toString`](https://package.elm-lang.org/packages/elm-lang/core/1.0.3/Date#toString)
+- [Przekształcanie daty na tekst w JavaScript (w języku angielskim)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)

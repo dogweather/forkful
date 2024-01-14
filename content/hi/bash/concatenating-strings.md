@@ -1,43 +1,42 @@
 ---
-title:    "Bash: स्ट्रिंग्स के सम्मिलित करना"
+title:    "Bash: स्ट्रिंग्स का सम्मिलन"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun
+Bahut se log shabdon ko ek saath jodne ke liye string concatenation ka upyog karte hain. Yeh ek aasaan aur prabhavshali tareeka hai shabdon ko ek saath jodne ka jo prushtham aur kathin kaam ko bhi aasaan bana deta hai.
 
-क्या आप कभी सोचते हैं कि प्रोग्रामिंग लैंग्वेज में बिना वर्गीकरण के स्ट्रिंग संयुक्त करना क्यों जरूरी होता है? इस आर्टिकल में हम इस विषय पर विस्तार से चर्चा करेंगे और स्ट्रिंग संयुक्त करने के महत्व को समझेंगे।
-
-# कैसे करें
-
-शुरू करने से पहले, हम इस आर्टिकल के माध्यम से Bash प्रोग्रामिंग में स्ट्रिंग संयुक्त करने के कुछ उदाहरण देखेंगे। साथ ही प्रोग्राम के आउटपुट को भी देखेंगे। चलिए शुरू करते हैं।
+## Kaise Karein
+Bash mein shabdon ko concatenation karne ke liye `+` operator ka upyog kiya jaata hai. Example ke liye, humne ek variable `name` mein apne naam ko store kiya hai aur ek variable `greeting` mein ek shubhakaamna ka shabd. Phir hum `+` operator ka upyog karke dono strings ko ek saath jod sakte hain aur output ko `echo` command se print kar sakte hain.
 
 ```Bash
-# दो स्ट्रिंग्स को संयुक्त करें
-string1="नमस्ते"
-string2="दोस्तों"
-echo $string1$string2
+name="John"
+greeting="Namaste"
+echo $greeting", "$name" Ji! Aap kaise ho?"
 ```
 
-आउटपुट:
-नमस्ते दोस्तों
-
+Output:
 ```Bash
-# कानेक्टेड स्ट्रिंग से नया स्ट्रिंग बनाएं
-string1="आपका "
-string2="स्वागत है"
-new_string=$string1$string2
-echo $new_string
+Namaste, John Ji! Aap kaise ho?
 ```
 
-आउटपुट:
-आपका स्वागत है
+Agar hum apne naam mein kuch aur changes karna chahte hain, jaise ki `name= "Smith"`, toh bhi output automatically update ho jaayega. Isse hume ek aasaan tareeka milta hai variables ke saath kaam karne ka.
 
-# गहराई में
+## Gaharaai Mein Jaana
+Bash mein string concatenation bahut hi powerful tool hai. Isse hum apne strings ko manipulate kar sakte hain aur unmein alag-alag variables ka upyog kar sakte hain. Isse programming mein flexibility aur efficiency badhti hai. Hum apne codes ko aur bhi dynamic aur scalable bana sakte hain.
 
-स्ट्रिंग संयुक्त करना एक अहम डेटा मैनिपुलेशन टेक्निक है जो अधिकतर भाषाओं में होता है। यह प्रोग्रामों में विभिन्न स्ट्रिंग्स को आपस में जोड़कर एक नया स्ट्रिंग बनाता है। इससे हमारे प्रोग्राम को और भी दक्ष बनाने में मदद मिलती है क्योंकि हम एक ही स्ट्रिंग को कई जगह बिना कॉपी पेस्ट किए उपयोग कर सकते हैं। इसे अन्य बड़ी भाषाओं में भी "concatenation" कहा जाता है।
+Ek aur important point hai ki Bash mein hum shabdon ke alawa numbers ko bhi concatenate kar sakte hain. Yeh variable type dependent hota hai. Agar hum decimal numbers ko concatenate karenge, toh unka output string format mein hi aayega. Lekin agar hum integers ko concatenate karenge toh hume ek sum ka output milega.
 
-# देखें भी
+## Dekhiye Bhi
+Is article mein humne Bash mein string concatenate karna sikh liya hai. Ab aap is technique ka upyog karke apne codes ko aur bhi efficient aur dynamic bana sakte hain. Aap mein se kuch aur log bhi is technique ka upyog karke apne projects ko aur bhi behtar bana sakte hain.
 
-- [Bash स्ट्रिंग्स का आधिकारिक डॉक्यूमेंटेशन] (https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Index
+Agar aapko Bash aur programming ke baare mein aur bhi jaankari chahiye, toh aap inn links ko check kar sakte hain:
+
+- [Bash Documentation](https://www.gnu.org/software/bash/manual/) 
+- [FreeCodeCamp Bash Tutorial](https://www.freecodecamp.org/news/the-linux-commands-handbook/#bash-concatel)
+- [Bash Tutorials on Youtube](https://www.youtube.com/results?search_query=bash+tutorial)
+
+Keep coding and keep learning!

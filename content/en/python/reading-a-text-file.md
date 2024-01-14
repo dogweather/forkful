@@ -1,100 +1,74 @@
 ---
 title:    "Python recipe: Reading a text file"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Python is a popular programming language used for a variety of applications, from web development to data analysis. One of its key features is its ability to easily manipulate text files, making it a useful tool for data processing tasks. In this blog post, we will explore the basics of reading a text file in Python, as well as some more advanced techniques.
+Have you ever wondered how to read and process a text file using Python? Reading text files is a common task in many programming projects, and mastering this skill can make you a more efficient developer. In this blog post, we will explore the basics of reading a text file in Python and provide some useful tips to get you started.
 
 ## How To
-
-Reading a text file in Python is a simple and straightforward process. Let's take a look at the basic code structure:
-
-```Python
-# Open the file
-file = open("example.txt", "r")
-
-# Read the file contents using the read() method
-file_contents = file.read()
-
-# Close the file
-file.close()
-
-# Print the contents of the file
-print(file_contents)
-```
-
-In the above code, we first use the `open()` function to open the file in "read" mode. This tells Python that we want to read the contents of the file. Next, we use the `read()` method to read the file contents and store them in a variable called `file_contents`. Finally, we close the file using the `close()` method and print out the contents of the file using the `print()` function.
-
-Now, let's take a look at a more advanced example where we read the file line by line and do some basic data processing:
+To read a text file in Python, we can use the `open()` function and specify the name and path of the file we want to read. We also need to specify the mode in which we want to open the file, which in this case is "r" for read mode. Here's an example:
 
 ```Python
-# Open the file
-file = open("example.txt", "r")
-
-# Read the file line by line
-for line in file:
-    # Remove any trailing whitespace using the strip() method
-    line = line.strip()
-
-    # Split the line into a list using the split() method
-    line_list = line.split()
-
-    # Loop through the list and print out each word
-    for word in line_list:
-        print(word)
-
-# Close the file
-file.close()
+f = open("text_file.txt", "r")
 ```
+Once the file is open, we can use various methods to read the contents of the file. The most common method is `read()`, which reads the entire file and returns its contents as a string. Here's an example:
 
-In the above code, we use a `for` loop to iterate through each line of the file. Then, we use the `strip()` method to remove any trailing whitespace from each line, and the `split()` method to split the line into a list of words. Finally, we loop through the list and print out each word. This is just one example of how you can manipulate text files in Python - the possibilities are endless!
+```Python
+f = open("text_file.txt", "r")
+contents = f.read()
+print(contents)
+```
+Output:
+```text
+This is a text file.
+It contains some random text for our example.
+We can read it using Python.
+```
+Another useful method is `readline()`, which reads one line at a time. Here's an example:
+
+```Python
+f = open("text_file.txt", "r")
+line = f.readline()
+print(line)
+```
+Output:
+```text
+This is a text file.
+```
+To read the entire file one line at a time, we can use a `for` loop and the `readlines()` method. Here's an example:
+
+```Python
+f = open("text_file.txt", "r")
+for line in f.readlines():
+    print(line)
+```
+Output:
+```text
+This is a text file.
+It contains some random text for our example.
+We can read it using Python.
+```
 
 ## Deep Dive
+When reading a text file, it's important to remember that the file pointer (i.e. the current position in the file) moves as we read it. This means that if we try to read the same file again, we won't get any output because the pointer is already at the end of the file. To reset the pointer, we can use the `seek()` method and specify the position where we want it to be. For example, to reset the pointer to the beginning of the file, we can use `f.seek(0)`.
 
-Now that we have covered the basics of reading a text file in Python, let's take a deeper dive into some additional concepts that may be useful.
+Another important consideration when reading a text file is how to handle different encoding types. By default, the `open()` function uses the system's default encoding, which may not be suitable for all files. To specify a specific encoding type, we can use the `encoding` argument. For example, if our file is encoded in UTF-8, we can use `f = open("text_file.txt", encoding="utf-8")`.
 
-### With Statement
-
-In the previous examples, we used the `close()` method to close the file after we were done using it. However, this can be cumbersome and prone to errors. A better approach is to use the `with` statement, which automatically closes the file for us after we are done with it. Here's an example:
-
-```Python
-# Open the file using the with statement
-with open("example.txt", "r") as file:
-    # Read the file contents using the read() method
-    file_contents = file.read()
-
-# The file is automatically closed after this block of code
-```
-
-### Error Handling
-
-When working with files, it is important to be prepared for errors that may occur. For example, if the file we are trying to open does not exist, our code will throw an error. To handle these situations, we can use try-except blocks. Here's an example:
+Lastly, after we finish reading a file, it's important to close it using the `close()` method. This ensures that all resources used by the file are freed. Alternatively, we can use the `with` statement, which automatically closes the file after the indented code is executed. Here's an example:
 
 ```Python
-try:
-    # Open the file
-    file = open("example.txt", "r")
+with open("text_file.txt", "r") as f:
+    contents = f.read()
+    # do something with the contents
 
-    # Read the file contents using the read() method
-    file_contents = file.read()
-
-    # Print the contents of the file
-    print(file_contents)
-
-# Handle the FileNotFound error
-except FileNotFoundError:
-    print("File not found!")
-
-# Finally, close the file
-finally:
-    file.close()
+# file is automatically closed outside of the "with" statement
 ```
 
 ## See Also
-
-- Official Python documentation on reading and writing files: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-- RealPython tutorial on working with files in Python: https://realpython.com/read-write-files-python/#reading-and-writing-files-in-python
+- [Python documentation on file input/output](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Real Python article on working with files](https://realpython.com/read-write-files-python/)
+- [Tutorial on reading and writing CSV files in Python](https://www.geeksforgeeks.org/python-read-write-csv-files/)

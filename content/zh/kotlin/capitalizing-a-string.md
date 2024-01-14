@@ -1,73 +1,41 @@
 ---
-title:    "Kotlin: 将字符串首字母大写"
+title:    "Kotlin: 将字符串转换为大写"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：字符串大写化的意义只需要 1-2 句话就可以解释清楚。
+## 为什么使用Kotlin编写博客
 
-字符串大写化的作用是通过将字符串中每个字符的小写字母转换为大写字母，使得该字符串的所有字符都是大写。在某些情况下，我们可能需要将字符串转换为大写形式，例如在比较字符串时，不区分大小写可能会导致错误的结果。通过对字符串进行大写化，我们可以确保字符串的大小写统一，从而避免错误的发生。
+Kotlin是一种现代化的编程语言，它可以帮助您更轻松地编写代码并提高生产力。在本文中，我们将探讨如何使用Kotlin来将字符串转换为大写，并深入了解这项功能的原理。
 
-## 如何实现
-
-要实现字符串的大写化，我们可以使用 Kotlin 中的内置函数 `toUpperCase()`。这个函数接受一个字符串作为参数，并返回一个新的大写化后的字符串。下面是一个简单的示例代码，在 `main()` 函数中我们创建一个包含小写字母的字符串 `str`，然后使用 `toUpperCase()` 函数将其转换为大写形式，并将结果打印出来。
+## 如何使用Kotlin将字符串转换为大写
 
 ```Kotlin
-fun main() {
-    val str = "hello world"
-    val strUpper = str.toUpperCase()
-    println(strUpper)
-}
+fun capitalize(string: String): String { 
+  return string.toUpperCase()
+} 
+
+println(capitalize("hello, world")) 
 ```
-输出结果为：
-```
-HELLO WORLD
-```
-除了使用 `toUpperCase()` 函数，我们也可以使用 Kotlin 的扩展函数 `capitalize()`。这个函数同样也接受一个字符串作为参数，并返回一个新的大写化后的字符串。不过与 `toUpperCase()` 不同的是，`capitalize()` 函数只会将字符串的第一个字符转换为大写，而不会改变其他字符的大小写。下面是一个示例代码，在 `main()` 函数中我们创建一个包含小写字母的字符串 `str`，然后使用 `capitalize()` 函数将其转换为大写形式，并将结果打印出来。
+输出: "HELLO, WORLD"
 
-```Kotlin
-fun main() {
-    val str = "hello world"
-    val strCapitalized = str.capitalize()
-    println(strCapitalized)
-}
-```
+Kotlin提供了一个内置函数toUpperCase()，它可以将字符串转换为大写形式。我们只需要在函数中传入要转换的字符串，然后将结果打印出来即可。
 
-输出结果为：
-```
-Hello world
-```
+## 深入了解字符串大写转换
 
-## 深入了解
+在实际的编程中，我们经常遇到需要将字符串进行格式化的情况。而转换为大写则是其中一种常用的方式。Kotlin的toUpperCase()函数基于Unicode规则进行转换，因此即使是特殊字符也可以被正确转换为大写形式。
 
-除了内置函数和扩展函数之外，我们也可以通过自己编写函数来实现字符串的大写化。通常，我们会使用循环来遍历字符串中的每个字符，并将其转换为大写形式。下面是一个示例代码，我们使用 `for` 循环遍历字符串中的每个字符，并使用 `toUpperCase()` 函数将其转换为大写形式。
+此外，Kotlin还提供了其他一些与字符串大小写相关的函数，例如toLowerCase()函数可以将字符串转换为小写形式，而capitalize()函数可以将字符串的首字母转换为大写形式。
 
-```Kotlin
-fun toUpperCase(str: String): String {
-    var result = ""
-    for (char in str) {
-        result += char.toUpperCase()
-    }
-    return result
-}
+## 参考链接
 
-fun main() {
-    val str = "hello world"
-    val strUpper = toUpperCase(str)
-    println(strUpper)
-}
-```
+- [Kotlin官方网站](https://kotlinlang.org/)
+- [Kotlin String文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin字符串处理函数](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html)
 
-输出结果为：
-```
-HELLO WORLD
-```
+## 参见
 
-以上就是关于在 Kotlin 中实现字符串大写化的几种方法。通过选择不同的方法，我们可以根据自己的需求来实现字符串的大写化。
-
-## 参考资料
-
-- [Kotlin String.capitalize() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Kotlin String.toUpperCase() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-- [How to convert a string to uppercase in Kotlin](https://www.techiedelight.com/convert-string-uppercase-kotlin/)
+- [Kotlin中的字符串操作](https://blog.csdn.net/qq_27940385/article/details/79461249)
+- [如何进行Kotlin字符串转换](https://blog.jetbrains.com/blog/2017/07/26/did-you-know-kotlin-1-1-create-javaclass-by-string-jstring-format-javakotlin-difference/)

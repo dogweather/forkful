@@ -1,57 +1,51 @@
 ---
-title:    "Arduino: Escribiendo pruebas"
+title:    "Arduino: Escribir pruebas"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué es importante escribir pruebas en Arduino
+# Por qué escribir pruebas en Arduino
 
-Escribir pruebas es una parte esencial en la programación de Arduino. Esto permite asegurarse de que el código que se está escribiendo funciona correctamente y es libre de errores. Al escribir pruebas, se pueden identificar y solucionar problemas antes de implementar el código en un prototipo o proyecto final.
+Escribir pruebas al programar en Arduino es una práctica esencial para garantizar la funcionalidad y fiabilidad de nuestros proyectos. Además, nos permite identificar y corregir errores de manera eficiente, ahorrando tiempo y evitando problemas en el futuro.
 
 ## Cómo escribir pruebas en Arduino
 
-Para escribir pruebas en Arduino, se debe seguir una estructura específica. Se pueden utilizar las funciones `setup()` y `loop()` para establecer el entorno de prueba y ejecutar las pruebas respectivamente. Dentro de la función `loop()`, se deben escribir las diferentes pruebas utilizando la función `assert()` para verificar que los resultados obtenidos sean los esperados.
+Para escribir pruebas en Arduino, podemos seguir los siguientes pasos:
 
-A continuación, se presenta un ejemplo de cómo escribir pruebas para una función que calcula el promedio de una lista de números:
+1. Identificar las funciones o partes del código que queremos probar.
+2. Crear un sketch de prueba separado del código principal.
+3. Agregar una función de prueba que llame a la función o parte del código que queremos probar.
+4. Utilizar la función `assert()` para verificar si la salida de la función de prueba es la esperada.
+5. Ejecutar el sketch de prueba y verificar los resultados.
+
+Un ejemplo de cómo escribir y ejecutar una prueba en Arduino sería el siguiente:
 
 ```Arduino
-// Función que calcula el promedio de una lista de números
-float promedio(int lista[], int n) {
-  float suma = 0;
-  for (int i = 0; i < n; i++) {
-    suma += lista[i];
-  }
-  return suma / n;
+void setup() {
+
 }
 
-// Función de prueba
-void test_promedio() {
-  int lista1[5] = {10, 20, 30, 40, 50};
-  assert(promedio(lista1, 5) == 30); // Prueba 1
-  int lista2[3] = {25, 50, 75};
-  assert(promedio(lista2, 3) == 50); // Prueba 2
-}
-
-// Función principal
 void loop() {
-  test_promedio(); // Ejecutar la función de prueba
+  assert(square(5) == 25);
+}
+
+int square(int num) {
+  return num * num;
 }
 ```
 
-En este ejemplo, se crean dos listas con números y se utilizan en las pruebas. La función `assert()` comprueba si el resultado obtenido en la función `promedio()` es igual al valor esperado y si no es así, mostrará un mensaje de error en la consola de Arduino.
-
-Se pueden escribir tantas pruebas como se deseen, asegurándose de cubrir todos los casos posibles para garantizar la eficiencia y fiabilidad del código.
+En este caso, estamos probando la función `square()` para asegurarnos de que el resultado sea el esperado. Si ejecutamos el sketch de prueba y no obtenemos errores, significa que la función está funcionando correctamente.
 
 ## Profundizando en la escritura de pruebas
 
-Para escribir pruebas más avanzadas, se pueden utilizar diferentes herramientas y técnicas como las librerías `ArduinoUnit` y `AUnit` que proporcionan una estructura más completa para escribir y ejecutar pruebas.
+Escribir pruebas en Arduino no solo nos ayuda a identificar y corregir errores, sino que también nos ayuda a mantener un código más limpio y organizado. Al crear pruebas para cada función o parte del código, podemos comprobar fácilmente si algún cambio que hacemos afecta el funcionamiento de otras partes.
 
-También es importante tener en cuenta la separación de responsabilidades al escribir pruebas, es decir, probar cada función o módulo por separado para facilitar la identificación y solución de problemas.
+Además, existen herramientas y bibliotecas disponibles que facilitan la escritura y ejecución de pruebas en Arduino, como la biblioteca "Arduino Unit" o el framework de pruebas "Unity for Arduino". Estas herramientas ofrecen una amplia gama de funciones y asistentes que facilitan la creación y ejecución de pruebas.
 
-Además, es recomendable escribir pruebas desde el inicio del desarrollo y no dejarlas para el final, ya que esto permite detectar problemas de manera temprana y ahorrar tiempo en la depuración del código.
+# Ver también
 
-## Ver también
-
-- [Librería ArduinoUnit](https://github.com/mmurdoch/arduinounit)
-- [AUnit: Arduino Unit Testing Framework](https://github.com/bxparks/AUnit)
+- Blog de Arduino: https://blog.arduino.cc/
+- Documentación de Arduino Unit: http://arduinounit.github.io/
+- Tutorial de Unity for Arduino: https://www.instructables.com/id/Unit-Testing-for-Arduino/

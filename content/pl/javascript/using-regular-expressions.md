@@ -1,36 +1,63 @@
 ---
 title:    "Javascript: Używanie wyrażeń regularnych"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
- Programowanie może wydawać się trudne i skomplikowane dla wielu ludzi, jednak znajomość regularnych wyrażeń może znacznie ułatwić pracę z kodem. Regularne wyrażenia to zestaw reguł, które pozwalają na wyrażenie i przetwarzanie danych w sposób bardziej precyzyjny. Dzięki nim możemy szybko i skutecznie przeszukiwać tekst, wybierać konkretne fragmenty lub dokonywać zmian w naszym kodzie.
+Regular expressions są narzędziem, które bardzo ułatwia pracę z tekstem w Javascript. Pozwalają na wyszukiwanie i manipulowanie danymi w szybki i precyzyjny sposób. Dla programistów jest to niezwykle przydatne narzędzie, ponieważ umożliwia wykonywanie złożonych operacji tekstowych w prosty sposób.
 
 ## Jak to zrobić?
 
-Aby zacząć korzystać z regularnych wyrażeń w Javascript, wystarczy wykorzystać wbudowany obiekt `RegExp`. Na początku definiujemy wzór, który chcemy przetestować lub wykorzystać do przetwarzania danych. Następnie używamy odpowiedniej funkcji dla naszych potrzeb, np. `test()` do sprawdzania czy dany łańcuch znaków pasuje do wzoru, lub `exec()` do pobrania informacji o dopasowaniu. Zobaczmy przykładowy kod:
+### Wyszukiwanie i zastępowanie
 
-```Javascript
-// Definiujemy wzór do sprawdzenia
-let wzorzec = /jestem/i;
+Aby wykorzystać regular expressions w swoim kodzie JavaScript, musisz najpierw użyć obiektu `RegExp`. Następnie możesz użyć metody `test()` lub `match()` w celu wyszukania lub dopasowania określonego tekstu.
 
-// Przetestujemy czy dany łańcuch pasuje
-console.log(wzorzec.test("Jestem programistą")); // Output: true
-console.log(wzorzec.test("Cześć, jestem uczniem")); // Output: false
-
-// Użyjemy exec() do pobrania informacji
-console.log(wzorzec.exec("Jestem studentem").input); // Output: jestem studentem
-console.log(wzorzec.exec("Hej, jestem studentką").input); // Output: null
+```javascript
+let text = "To jest przykładowy tekst do wyszukania.";
+let regex = new RegExp("przykładowy");
+console.log(regex.test(text)); // zwróci true
+console.log(text.match(regex)); // zwróci tablicę z dopasowanym tekstem
 ```
 
-## Dogłębny wgląd
+### Znak specjalny "."
 
-Regularne wyrażenia mogą być używane w wielu różnych sytuacjach, na przykład do walidacji danych wejściowych, filtrowania danych lub wykonania pętli na wielu elementach. W Javascript możemy wykorzystywać różne flagi, aby uzyskać jeszcze bardziej precyzyjne dopasowanie lub wykonać działania np. bez uwzględniania wielkości liter. Ważne jest również zwrócenie uwagi na wyrażenia regularne globalne i nieglobalne, które mogą mieć różne zachowania przy wykonywaniu funkcji `test()` lub `exec()`.
+W regular expressions, znak `.` oznacza dowolny pojedynczy znak. Możesz również użyć go w połączeniu z kwantyfikatorem `*`, aby dopasować dowolną liczbę znaków.
+
+```javascript
+let text = "123abc456";
+let regex = /.../g;
+console.log(text.match(regex)); // zwróci ["123", "abc", "456"]
+```
+
+### Kwantyfikatory
+
+Kwantyfikatory pozwalają na dopasowanie określonej liczby znaków. Na przykład, jeśli chcesz dopasować trzy cyfry, możesz użyć kwantyfikatora `{3}` po znaku `\d`, który oznacza cyfrę.
+
+```javascript
+let text = "123abc456";
+let regex = /\d{3}/g;
+console.log(text.match(regex)); // zwróci ["123", "456"]
+```
+
+### Grupy i wyrażenia alternatywne
+
+Możesz również używać nawiasów, aby utworzyć grupy w regular expressions. Na przykład, jeśli chcesz dopasować słowo "hello" lub "hi", możesz użyć nawiasów i wyrażenia alternatywnego `|`.
+
+```javascript
+let text = "Hello world, hi everyone";
+let regex = /(hello|hi)/g;
+console.log(text.match(regex)); // zwróci ["Hello", "hi"]
+```
+
+## W głębi
+
+Regular expressions to narzędzie, które warto poznać, ponieważ może znacznie ułatwić prace z tekstem w JavaScript. Istnieje wiele sposobów, w jaki można wykorzystać regular expressions, na przykład do walidacji formularzy, filtrowania danych czy manipulacji zapytaniami API.
 
 ## Zobacz również
-- [Dokumentacja Javascript na temat regularnych wyrażeń](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Przewodnik po wyrażeniach regularnych w Javascript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Podstawy wyrażeń regularnych - kurs na platformie Codecademy](https://www.codecademy.com/learn/introduction-to-regular-expressions)
+
+- [Dokumentacja Mozilla o RegExp](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp)
+- [Wprowadzenie do Regular expressions w JavaScript](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-in-javascript)

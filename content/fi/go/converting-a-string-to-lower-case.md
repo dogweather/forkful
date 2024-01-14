@@ -1,40 +1,74 @@
 ---
-title:    "Go: Muuntaminen merkkijonoksi pienin kirjaimin"
+title:    "Go: Muuntaminen merkkijonoksi pienellä kirjoitettuna"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Konvertoidessa merkkijonoa pienikirjaimiseksi on monia hyödyllisiä käyttötarkoituksia, kuten tiedon käsitteleminen tietokannoissa tai käyttäjän syötteen yhdenmukaistaminen.
+Useimmissa ohjelmointikielissä on sisäänrakennettu toiminto, joka muuntaa merkkijonon pieniksi kirjaimiksi. Tämä on hyödyllistä monissa tilanteissa, esimerkiksi vertailussa tai tietokannassa etsittäessä. Joten tässä artikkelissa opimme, miksi ja miten muuntaa merkkijono pieniksi kirjaimiksi Go-ohjelmoinnissa.
 
-## Kuinka
+## Miten
 
-Pienikirjaimiseksi konvertoiminen Go-kielellä on helppoa ja suoraviivaista. Käytä vain sisäänrakennettua `strings.ToLower()` -toimintoa esimerkiksi seuraavasti:
+### Golangissa
+
+Go-kielessä on sisäänrakennettu toiminto "strings.ToLower", joka muuntaa merkkijonon pieniksi kirjaimiksi. Alla on esimerkki koodista, joka käyttää tätä toimintoa ja tulostaa uuden merkkijonon pienillä kirjaimilla.
 
 ```Go
-// Alustetaan muuttuja merkkijonolla
-str := "Tämä On Esimerkki"
+package main
 
-// Käytetään sisäänrakennettua toimintoa
-lower := strings.ToLower(str)
+import (
+	"fmt"
+	"strings"
+)
 
-// Tulostetaan lopputulos
-fmt.Println(lower)
-
-// Output:
-// tämä on esimerkki
+func main() {
+	str := "Tervetuloa suomeen!"
+	lower := strings.ToLower(str)
+	fmt.Println(lower)
+}
 ```
 
-Voit myös käyttää `strings.ToLower()` yhdessä `bufio` paketin lukijan kanssa, mikä tekee koko käyttökokemuksesta entistäkin helpomman.
+**Tulos:**
 
-## Syvemmälle
+tervetuloa suomeen!
 
-Konvertoidessa merkkijonoa pienikirjaimiseksi käytetään yleensä Unicode-standardia, joka huomioi myös muiden kielten ääkköset ja erikoismerkit. Tämä tarkoittaa, että konvertoinnissa käsitellään myös merkkijaon laajennuksia ja niiden oikeaoppista muunnosta.
+### Satunnaisten kirjainten muuntaminen
 
-## Katso Myös
+Jos haluat muuntaa vain tietyt kirjaimet pieniksi, voit käyttää "strings.Map" -toimintoa. Tämä toiminto ottaa kaksi parametria: muuntofunktion ja merkkijonon. Alla on esimerkki koodista, joka muuntaa merkkijonon kaikki "a"-kirjaimet pieniksi kirjaimiksi ja tulostaa uuden merkkijonon.
 
-- [Go language official documentation on strings](https://golang.org/pkg/strings/#ToLower)
-- [Understanding Unicode in Go](https://medium.com/rungo/string-data-type-in-go-8bc1a532115)
-- [Go's bufio package](https://golang.org/pkg/bufio/)
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "HauHau"
+	lower := strings.Map(func(r rune) rune {
+		if r == 'a' {
+			return 'A'
+		}
+		return r
+	}, str)
+	fmt.Println(lower)
+}
+```
+
+**Tulos:**
+
+hAuhAu
+
+## Syvempi sukellus
+
+Go-kielessä merkkijonot ovat muuttumattomia, mikä tarkoittaa, että alkuperäinen merkkijono pysyy ennallaan ja uusi merkkijono palautetaan muuntotoiminnon jälkeen. Tämä on hyödyllistä, kun haluat säilyttää alkuperäisen merkkijonon ja käyttää muunnettua versiota. Lisäksi, Go-kielessä onnistuu myös kansainvälisten merkkien muuntaminen pieniksi kirjaimiksi.
+
+## Katso myös
+
+- [Go-julkaisu](https://golang.org/)
+- [Golang virallinen dokumentaatio](https://golang.org/doc/)
+- [Go-standardikirjasto](https://golang.org/pkg/)

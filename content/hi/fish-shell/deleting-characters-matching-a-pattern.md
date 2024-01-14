@@ -1,32 +1,30 @@
 ---
-title:    "Fish Shell: पैटर्न से मेल खाते हुए अक्षरों को हटाना"
+title:    "Fish Shell: पैटर्न से मेल खाते अक्षरों को हटाना"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kya aap kabhi sochte hain ki aapka Fish Shell command prompt cluttered ho gaya hai aur aapko unwanted characters ka saamna karna pad raha hai? Kya aap apne command prompt ko saaf aur organised rakhna chahte hain? Iss situation mein, aap delete characters matching a pattern ka istemaal kar sakte hain. Isse aapko apne command prompt mein keval zaroori aur desired characters hi dikhai denge, jisse aapko kaam karne mein aasani hogi.
 
-अगर आप किसी जादूसी स्ट्रिंग वाले फ़ाइल से कई गलत चरित्र हटाना चाहते हैं तो आप इस पोस्ट को जारी रखें।
+## Kaise Karein
+```Fish Shell mein characters matching a pattern delete karne ke liye, aapko yeh steps follow karne honge:
+1. Pehle, aapko command prompt mein yeh command likhni hogi: `set -U fish_key_bindings fish_delete_char
+2. Ab aapko woh pattern ya characters batana hoga jo aap delete karna chahte hain. Iske liye, aap yeh command type kar sakte hain: `bind \cD delete-or-exit-visual-mode`.
+3. Iske baad, aapka cursor pattern ya character ke paas jaega aur use highlight karega.
+4. Jab aap `\cD` dabayenge, woh character ya pattern delete ho jaega.
 
-## कैसे करें
+Iss tarah se, aap asaani se characters matching a pattern delete kar sakte hain Fish Shell mein.
 
-```Fish Shell
-set mystring "hello123bye456"
-echo $mystring
-hello123bye456
+## Deep Dive
+Delete characters matching a pattern ka istemaal karte waqt, aap kisi bhi specific character ya pattern ko delete kar sakte hain. Isse aap apne command prompt ko saaf aur organised rakh sakte hain. Iske alawa, aap `\cD` ki jagah `\cW` bhi use kar sakte hain jisse cursor sirf ek word forward jaega. Isse aapko kaafi time aur energy bachega.
 
-string delete --regex [0-9]+ $mystring
-echo $mystring
-hellobye
-```
+## Dekhein Bhi
+**See Also:**
 
-## गहराई तक जाने
-
-इस कोमांड में हम एक जादूसी स्ट्रिंग का उपयोग करते हैं जो काम को आसान बनाती है। हम किसी भी पैटर्न को डिलीट कर सकते हैं जैसे की नंबर्स, ध्वनि, या कोई भी अन्य रूप है। यह कमांड केवल दो चीजों की आवश्यकता है, पैटर्न और उस फ़ाइल या स्ट्रिंग पर जिसे आप यह काम करना चाहते हैं।
-
-## देखें भी
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/cmds/string.html#string-delete)
-- [Understanding Regular Expressions in Hindi](https://www.javascripture.com/Regular%20Expressions)
-- [Learn the Basics of Fish Shell in Hindi](https://www.guru99.com/fish-shell-tutorial.html)
+1. [Fish Shell Command Line Editing](https://fishshell.com/docs/current/cmdline.html)
+2. [Deleting Characters in Emacs Mode](https://fishshell.com/docs/current/cmdline.html#emacs-deleting-characters)
+3. [Deleting in Vi Mode](https://fishshell.com/docs/current/cmdline.html#vi-ins-mode-deleting)
+4. [Fish Shell User Guide](https://fishshell.com/docs/current/index.html)

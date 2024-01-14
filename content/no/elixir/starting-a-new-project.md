@@ -1,55 +1,43 @@
 ---
 title:    "Elixir: Å starte et nytt prosjekt"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor starte et nytt prosjekt med Elixir?
 
-Å starte et nytt prosjekt kan være en spennende og utfordrende opplevelse. Det kan være mange grunner til å ønske å engasjere seg i et nytt prosjekt, kanskje ønsker du å lære en ny programmeringsspråk, utforske nye ideer eller bare ha det gøy med å kode. Uansett hva grunnen din er, kan Elixir være et flott valg for ditt neste prosjekt. 
+Elixir er et voksende og populært programmeringsspråk som tilbyr en rekke fordeler for utviklere. Det er skalerbart, robust og basert på funksjonell programmering, noe som gjør det ideelt for å håndtere komplekse og høytrafikerte applikasjoner. Å starte et nytt prosjekt med Elixir kan også hjelpe deg med å utvide dine programmeringsferdigheter og bygge innovative løsninger.
 
-# Hvordan
+## Hvordan starte et nytt prosjekt med Elixir
 
-Først og fremst må du sørge for at du har Elixir installert på datamaskinen din. Deretter kan du følge disse enkle trinnene for å starte et nytt prosjekt:
+For å starte et nytt prosjekt med Elixir, må du først installere Elixir og Erlang på datamaskinen din. På Mac eller Linux, kan du bruke Homebrew for å installere disse avhengighetene. På Windows, kan du laste ned og installere de nødvendige pakkene fra deres respektive nettsider.
 
-```Elixir
-# Først må vi opprette en ny mappe for prosjektet
-$ mkdir mitt-prosjekt
+Når Elixir og Erlang er installert, kan du begynne å skrive kode ved hjelp av en hvilken som helst tekstredigerer eller IDE som støtter Elixir. En enkel måte å starte et nytt prosjekt på er ved å bruke Elixir sin innebygde pakkebehandling, Mix.
 
-# Deretter navigerer vi inn i mappen
-$ cd mitt-prosjekt
+For å opprette et nytt prosjekt, kan du kjøre følgende kommando i terminalen:
 
-# Nå bruker vi mix for å opprette et nytt Elixir-prosjekt
-$ mix new mitt-prosjekt
+```
+mix new project_navn
 ```
 
-Etter at prosjektet er opprettet, kan du åpne det i ditt favorittkode-redigeringsprogram og begynne å eksperimentere.
+Dette vil generere et grunnleggende prosjektskjelett med alt du trenger for å begynne å skrive din første Elixir-applikasjon.
 
-```Elixir
-# La oss starte med å definere en funksjon
-def hallo do
-    IO.puts "Hei fra Elixir!"
-end
+## Deep Dive: Dypere informasjon om å starte et nytt prosjekt med Elixir
 
-# Så kaller vi funksjonen og ser på output i terminalen
-hallo()
+Ved å bruke Mix, kan du også opprette en applikasjon for å kjøre webserveren Phoenix. Dette gjøres ved å kjøre følgende kommando i din prosjektmappe:
 
-# Output:
-# Hei fra Elixir!
+```
+mix phx.new navn_på_applikasjonen
 ```
 
-Du kan også legge til nye moduler og funksjoner ved å endre filene `lib/mitt_prosjekt.ex` og `test/mitt_prosjekt_test.exs`.
+Dette vil generere et komplett prosjektskjelett for en Phoenix-applikasjon, inkludert nødvendig oppsett og filstruktur for å bygge en moderne webapplikasjon.
 
-# Dypdykk
+I tillegg til Mix, kan du også bruke Hex - Elixir sin pakkebehandler for å legge til funksjonalitet til din applikasjon. For å legge til en pakke, må du først søke etter den på Hex-nettstedet, og deretter oppgi navnet på pakken som en avhengighet i ditt `mix.exs`-fil. Installering av pakker gjøres deretter ved å kjøre `mix deps.get`.
 
-Å starte et nytt Elixir-prosjekt kan virke litt overveldende i begynnelsen, men det er mange ressurser tilgjengelig for å hjelpe deg på vei. Det offisielle Elixir-nettstedet har en kurstutorial som går gjennom grunnleggende konsepter og teknikker for å utvikle i Elixir. Du kan også finne mange gode bøker, videoer og blogginnlegg om emnet.
+## Se også
 
-Det er også verdt å nevne at Elixir har et veldig aktivt og støttende samfunn. Det er mange forum og chatterom hvor du kan få hjelp, stille spørsmål og diskutere med andre Elixir-entusiaster. Å være en del av et samfunn kan være en flott måte å lære og vokse som programmerer.
-
-# Se også
-
-- Elixir-dokumentasjon: https://elixir-lang.org/docs.html
-- Elixir-kurset: https://elixir-lang.org/getting-started/introduction.html
-- Elixir-forumet: https://elixirforum.com/
-- Elixir-chatten på Slack: https://elixir-slackin.herokuapp.com/
+* [Elixir Homebrew-installasjonsguide](https://elixir-lang.org/install.html#mac-os-x)
+* [Elixir for Windows](https://elixir-lang.org/install.html#windows)
+* [Hex-nettstedet](https://hex.pm/)

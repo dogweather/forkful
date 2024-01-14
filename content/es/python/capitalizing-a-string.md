@@ -1,54 +1,47 @@
 ---
 title:    "Python: Capitalizando una cadena"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberíamos utilizar mayúsculas en una cadena en Python?
+## ¡Por qué!
 
-A menudo, cuando trabajamos con cadenas de texto en Python, necesitamos cambiar las letras a mayúsculas o minúsculas. Esto puede ser útil para normalizar los datos o para formatear correctamente los resultados de un programa. En este post, discutiremos por qué es importante saber cómo capitalizar una cadena en Python y cómo hacerlo de manera eficiente.
+Capitalizar una cadena de texto puede ser útil en diversas situaciones, como por ejemplo al manipular nombres de usuarios o nombres propios en un programa. También puede ser útil para mejorar la legibilidad de un texto en mayúsculas y minúsculas.
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-Para capitalizar una cadena en Python, podemos utilizar el método `.capitalize ()` en una cadena de texto. Esto convertirá el primer carácter de la cadena en mayúscula y el resto en minúsculas. Por ejemplo:
+Para capitalizar una cadena de texto, podemos utilizar el método `capitalize()` en Python. Este método convertirá la primera letra de la cadena a mayúscula, dejando el resto de la cadena en minúsculas. Veamos un ejemplo en código:
 
-````python
-original = "hola, ¿cómo estás?"
-capitalized = original.capitalize()
-print(capitalized)
-````
+```Python
+cadena = "hola, soy python"
+cadena = cadena.capitalize()
+print(cadena)
 
-El resultado será: "Hola, ¿cómo estás?"
+# Output:
+# Hola, soy python
+```
 
-Es importante tener en cuenta que el método `.capitalize()` solo capitalizará el primer carácter de la cadena. Si queremos convertir todas las letras en mayúsculas, podemos usar el método `.upper()`, y si queremos convertirlas en minúsculas, podemos usar el método `.lower()`.
+También podemos utilizar el método `title()` para capitalizar cada palabra en una cadena de texto. Esto es útil cuando tenemos nombres compuestos o frases. Veamos un ejemplo:
 
-## Profundizando
+```Python
+cadena = "juan carlos"
+cadena = cadena.title()
+print(cadena)
 
-Pero, ¿qué sucede si queremos capitalizar cada palabra en una cadena? Para hacer esto, podemos utilizar el método `.title()`. Este método capitalizará cada palabra en la cadena, dejando el resto de las letras en minúsculas. Por ejemplo:
+# Output:
+# Juan Carlos
+```
 
-````python
-original = "hola, ¿cómo estás?"
-capitalized = original.title()
-print(capitalized)
-````
+## ¡Profundizando!
 
-El resultado será: "Hola, ¿Cómo Estás?"
+Además de los métodos mencionados anteriormente, Python también cuenta con el método `upper()` para convertir toda la cadena a mayúsculas y el método `lower()` para convertirla a minúsculas. Es importante tener en cuenta que estos métodos no solo afectan a las letras del alfabeto, sino que también convierten los caracteres como acentos y diéresis.
 
-Además, si queremos capitalizar solo la primera letra de cada palabra, podemos usar el método `.istitle()`. Este método devuelve una cadena con la primera letra de cada palabra en mayúscula y el resto en minúscula. Por ejemplo:
+Otra cosa a tener en cuenta es que estos métodos no cambian la cadena original, sino que devuelven una nueva cadena con la modificación realizada. Por lo tanto, siempre debemos asignar el resultado a una variable o imprimirlo directamente.
 
-````python
-original = "hola, ¿cómo estás?"
-capitalized = original.istitle()
-print(capitalized)
-````
+## ¡Vea También!
 
-El resultado será: " Hola, ¿Cómo Estás?"
-
-## Ver también
-
-- [Documentación oficial de Python sobre cadenas](https://docs.python.org/es/3/library/stdtypes.html#string-methods)
-- [Tutorial de Programiz sobre cambios de mayúsculas y minúsculas en cadenas en Python](https://www.programiz.com/python-programming/methods/string/capitalize)
-- [Guía de referencia de W3Schools sobre métodos de cadenas en Python](https://www.w3schools.com/python/python_ref_string.asp)
-
-Esperamos que este post te ayude a comprender la importancia de saber cómo capitalizar una cadena en Python y cómo hacerlo de manera eficiente y efectiva. ¡Sigue aprendiendo y mejorando tus habilidades de programación!
+- [Documentación oficial de Python sobre métodos de cadena](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Ejemplos de capitalización de cadenas en Python](https://www.w3schools.com/python/ref_string_capitalize.asp)
+- [Tutorial de Python en español](https://www.programiz.com/python-programming)

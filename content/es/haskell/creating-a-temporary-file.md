@@ -1,39 +1,48 @@
 ---
 title:    "Haskell: Creando un archivo temporal"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué crear un archivo temporal en Haskell?
 
-Si eres un programador de Haskell, es muy probable que en algún momento necesites crear un archivo temporal durante la ejecución de tu programa. Esto puede ser útil para tareas como almacenar datos temporales, generar informes o realizar pruebas. En esta entrada de blog, te mostraré cómo crear un archivo temporal en Haskell de manera sencilla y eficiente.
+La creación de archivos temporales es una práctica común en la programación para almacenar datos de manera temporal. En Haskell, los archivos temporales pueden ser útiles para guardar información durante la ejecución del programa y luego ser eliminados.
 
-## Cómo hacerlo
+## Cómo crear un archivo temporal en Haskell
 
-Para crear un archivo temporal en Haskell, necesitarás importar el módulo `System.IO.Temp`. Dentro de este módulo, encontrarás la función `withSystemTempFile`, la cual se encarga de crear un archivo temporal y manipularlo dentro de un bloque de acción.
-
-Veamos un ejemplo práctico:
+Crear un archivo temporal en Haskell es bastante sencillo usando la función `openTempFile`. Esta función toma dos parámetros: un directorio de trabajo y una cadena de texto que servirá como prefijo para el nombre del archivo temporal.
 
 ```Haskell
-import System.IO.Temp
+import System.IO
 
-main = withSystemTempFile "example.txt" $ \tempFilePath tempHandle -> do
-    -- Realiza operaciones con el archivo temporal
-    hPutStrLn tempHandle "¡Hola mundo!"
-    hPutStrLn tempHandle "Este es un archivo temporal creado en Haskell."
+main = do
+  (tempFile, tempHandle) <- openTempFile "." "temp"
+
+  hPutStrLn tempHandle "¡Hola, mundo!"
+  hClose tempHandle
+
+  putStr "Se ha creado el archivo temporal en: "
+  putStrLn tempFile
 ```
 
-En este ejemplo, creamos un archivo temporal con el nombre "example.txt" y lo abrimos a través de la variable `tempHandle`. Dentro del bloque de acción, podemos realizar cualquier operación con el archivo, como escribir datos en él. Al finalizar el bloque, el archivo será eliminado automáticamente.
+El código anterior primero importa el módulo `System.IO` que contiene funciones para manejar archivos. Luego, en la función `main`, utilizamos `openTempFile` para crear un archivo temporal en el directorio actual con el prefijo "temp". Luego escribimos una cadena en el archivo temporal utilizando la función `hPutStrLn` y finalmente cerramos el archivo con `hClose`. Por último, mostramos la ubicación del archivo temporal en la consola.
 
-## Profundizando
+La salida del programa sería:
 
-Si quieres tener un mayor control sobre la creación y eliminación de archivos temporales, puedes utilizar las funciones `openTempFile` y `openBinaryTempFile`. Estas funciones te permiten especificar una ruta de acceso para el archivo temporal y también te dan la opción de no eliminarlo automáticamente.
+```
+Se ha creado el archivo temporal en: ./temp8792.tmp
+```
 
-También es importante mencionar que, si necesitas crear varios archivos temporales para tu programa, puedes utilizar la función `withSystemTempDirectory` o `withTempDirectory`.
+## Profundizando en la creación de archivos temporales
+
+En Haskell, la función `openTempFile` realmente genera un archivo con un nombre único y devuelve su ubicación y un manejador de archivo. Los archivos temporales generados de esta manera se eliminan automáticamente una vez que se cierra el manejador de archivo. Esto significa que no tenemos que preocuparnos por eliminar explícitamente los archivos temporales después de su uso.
+
+También podemos usar la función `openBinaryTempFile` para crear archivos temporales con datos binarios en lugar de texto.
 
 ## Ver también
 
-- Documentación oficial del módulo `System.IO.Temp` en Haskell
-- Ejemplos prácticos de uso de archivos temporales en Haskell
-- Explicación detallada sobre cómo funciona la creación de archivos temporales en Haskell.
+- [Documentación de `System.IO`](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Tutorial de Haskell en español](https://www.haskell.org/learn/)
+- [Haskell en 5 minutos](https://www.youtube.com/watch?v=6MXu2Y_r4mE)

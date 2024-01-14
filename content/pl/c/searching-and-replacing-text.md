@@ -1,65 +1,90 @@
 ---
-title:    "C: Wyszukiwanie i zamiana tekstu"
+title:    "C: Wyszukiwanie i podmiana tekstu"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Wielu programistów może zastanawiać się, dlaczego powinni poświęcić czas na naukę wyszukiwania i zamiany tekstu w kodzie C. Jednak pisanie czystego i przejrzystego kodu jest niezwykle ważne w programowaniu, a umiejętność wyszukiwania i zamiany tekstu może być bardzo przydatna w celu ułatwienia edycji i utrzymania kodu.
+Wiele razy w codziennej pracy napotykamy tekst, który wymaga pewnych zmian. Problem z początku wydaje się prosty - zwykłe podmienienie określonych znaków lub słów. Jednak jeśli mamy do czynienia z długimi fragmentami tekstu lub wieloma plikami, ręczne dokonywanie zmian staje się bardzo czasochłonne i podatne na błędy. Dlatego warto poznać możliwości i metody automatycznego wyszukiwania i zamiany tekstu przy użyciu języka programowania C.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby wyszukać i zamienić tekst w kodzie C, możemy skorzystać z funkcji "str_replace" z biblioteki string.h. Przykładowy kod może wyglądać następująco:
+Przedstawimy teraz kilka przykładów kodu w języku C, które pozwolą na zrozumienie procesu wyszukiwania i zamiany tekstu. Wszystkie przykłady będą znajdować się w blokach kodu "```C ... ```", aby ułatwić czytelnikom zrozumienie i samodzielne wykorzystanie prezentowanych rozwiązań.
+
+### Przykład 1: Proste zamienianie tekstu
+
+Załóżmy, że mamy tekst zawierający zdanie "Dzień dobry", a naszym celem jest zamiana go na "Miłego dnia". W tym celu potrzebujemy wykorzystać funkcję `str_replace` z biblioteki <string.h>. Przykładowy kod będzie wyglądał następująco:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main (){
-   char text[100];
-   char old_word[20];
-   char new_word[20];
+int str_replace(char *str, char *from, char *to) {
+  char *found = strstr(str, from);
+  
+  if (!found) 
+      return 0; // gdy nie znaleziono żądanego fragmentu
 
-   printf("Wpisz tekst: ");
-   gets(text);
+  int len_from = strlen(from);
+  int len_to = strlen(to);
+  int len_diff = len_to - len_from;
+  int len_new = strlen(str) + len_diff + 1;
 
-   printf("Wpisz słowo, które chcesz zamienić: ");
-   gets(old_word);
+  char *tmp = malloc(len_new * sizeof(char));
+  bzero(tmp, len_new);
+  
+  memcpy(tmp, str, found - str);
+  memcpy(tmp + (found - str), to, len_to); // wstawienie nowego tekstu
+  strcpy(tmp + (found - str) + len_to, found + len_from); // skopiowanie reszty tekstu
 
-   printf("Wpisz nowe słowo: ");
-   gets(new_word);
+  strcpy(str, tmp);
+  free(tmp);
 
-   //wyszukaj i zamień słowa w tekście
-   str_replace(text, old_word, new_word);
+  return 1; // sukces!
+}
 
-   //wypisz zmieniony tekst
-   printf("Zmieniony tekst: %s", text);
-
-   return 0;
+int main() {
+  char str[] = "Dzień dobry";
+  int result = str_replace(str, "Dzień", "Miłego dnia");
+  
+  if (result) 
+      printf("%s\n", str);
+  else 
+      printf("Nie udało się zamienić tekstu\n");
+  
+  return 0;
 }
 ```
 
-Przykładowe wyjście programu po wykonaniu powyższego kodu może wyglądać następująco:
+Po wykonaniu tego kodu w konsoli pojawi się napis "Miłego dnia", zgodnie z naszym zamiarem.
 
-```
-Wpisz tekst: Zrobiłem coś
-Wpisz słowo, które chcesz zamienić: coś
-Wpisz nowe słowo: ciekawego
-Zmieniony tekst: Zrobiłem ciekawe
-```
+### Przykład 2: Wyszukiwanie i zamiana w pliku tekstowym
 
-## Deep Dive
+Czasem może być wygodniej dokonać wyszukiwania i zamiany tekstu bezpośrednio w pliku tekstowym. Przykład ten wymaga użycia funkcji `fgetpos` i `fsetpos` z biblioteki <stdio.h>. W tym przypadku, dla celów demonstracyjnych, przykładowy plik tekstowy będzie nazywał się "input.txt" i miał już z góry wpisaną linię tekstu.
 
-Funkcja "str_replace" działa na podstawie biblioteki string.h, która zawiera wiele przydatnych funkcji do manipulacji i operacji na tekście. Funkcja ta pozwala na zamianę jednego słowa na inne w danym tekście, ale nie wpływa na oryginalny tekst, tylko tworzy nową wersję z zamienionymi słowami.
+```C
+#include <stdio.h>
 
-Funkcja ta również umożliwia użycie wyrażeń regularnych jako wzorca do wyszukania tekstu. Używanie wyrażeń regularnych może znacznie rozszerzyć możliwości funkcji i ułatwić dokładniejsze i skomplikowane wyszukiwanie i zamianę tekstów w kodzie.
+int main() {
+  FILE *fp = fopen("input.txt", "r+");
+  char from[] = "Dzień dobry";
+  char to[] = "Miłego dnia";
+  
+  char str[100];
+  while (fgets(str, 100, fp) != NULL) {
+    fpos_t pos;
+    fgetpos(fp, &pos);
 
-## Zobacz także
+    char *found = strstr(str, from);
+    if (found) {
+      int len_from = strlen(from);
+      int len_to = strlen(to);
+      int len_diff = len_to - len_from;
+      int len_new = strlen(str) + len_diff + 1;
 
-- Dokumentacja funkcji "str_replace" w języku C: https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm
-
-- Przykładowe wyrażenia regularne do wyszukiwania w kodzie C: https://regexr.com/3rdbd
-
-- Poradnik na temat pracy z tekstami w języku C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
+      char *tmp = malloc(len_new * sizeof(char));
+      bzero(tmp, len_new);
+      memcpy(tmp, str, found -

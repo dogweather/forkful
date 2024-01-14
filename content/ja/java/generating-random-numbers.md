@@ -1,90 +1,50 @@
 ---
-title:    "Java: 「ランダムな数値を生成する」"
+title:    "Java: ランダムな数字の生成"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-乱数を生成することの魅力を少し話してみましょう。乱数は、ゲームやシミュレーション、セキュリティなどの様々な分野で非常に重要です。プログラマーとして、乱数を生成する能力は必要不可欠です。
+ランダムな数値を生成することの意義は何でしょうか？プログラミングでは、さまざまな場面でランダムな数値を必要とすることがあります。例えば、ゲーム開発ではダイスやカードのようなランダムな要素を含むゲームプレイを実現するために、またシミュレーションやテストなどでランダムなデータを使用することがあります。そこでJavaでは、簡単にランダムな数値を生成する方法が提供されています。次のセクションでは、その方法を詳しく見ていきましょう。
 
-## 方法
+## ランダムな数値の生成方法
 
-まずは、Javaの`Random`クラスを使用して、乱数を生成する方法を見ていきましょう。
+Javaでランダムな数値を生成するには、Randomクラスを使用します。以下の例では、nextInt()メソッドを使って0から10の間のランダムな整数を生成し、それをコンソールに出力しています。
 
-```java
-import java.util.Random;
-
-public class RandomGenerator {
-    public static void main(String[] args) {
-        // 1から10の範囲の乱数を生成する
-        Random random = new Random();
-        int randomNumber = random.nextInt(10) + 1;
-        System.out.println("乱数: " + randomNumber);
-    }
-}
-```
-
-`Random`クラスの`nextInt()`メソッドは、指定した範囲内でランダムな整数を生成します。この例では、10を指定しているので、1から10までの乱数が出力されます。
-
-出力例:
-
-```
-乱数: 7
-```
-
-また、`Random`クラスの`nextDouble()`メソッドを使用すると、小数点以下の乱数を生成することもできます。
-
-```java
-// 0から1までの範囲の乱数を生成する
+```Java
 Random random = new Random();
-double randomNumber = random.nextDouble();
-System.out.println("乱数: " + randomNumber);
+int randomNumber = random.nextInt(11);
+System.out.println("ランダムな数値: " + randomNumber);
 ```
 
-出力例:
+また、nextDouble()メソッドを使うことで、0から1の間のランダムな小数を生成することもできます。
 
-```
-乱数: 0.736712
-```
-
-## 深堀り
-
-乱数を生成する方法として、`Random`クラス以外にも`Math.random()`メソッドを使用する方法があります。このメソッドは、0から1未満の範囲の乱数を生成します。
-
-```java
-// 0から1未満の範囲の乱数を生成する
-double randomNumber = Math.random();
-System.out.println("乱数: " + randomNumber);
+```Java
+double randomDouble = random.nextDouble();
+System.out.println("ランダムな小数: " + randomDouble);
 ```
 
-出力例:
+さらに、Randomクラスのコンストラクタにシード値を渡すことで、同じランダムな数値のシーケンスを生成することもできます。
 
-```
-乱数: 0.5432909306414467
-```
-
-さらに、シード値を指定して乱数を生成することもできます。シード値を指定することで、同じランダムな数列を繰り返し生成することができます。
-
-```java
-// シード値を指定して乱数を生成する
-Random random = new Random(123);
-System.out.println("乱数: " + random.nextInt(10));
-System.out.println("乱数: " + random.nextInt(10));
-System.out.println("乱数: " + random.nextInt(10));
+```Java
+long seed = 12345; // シード値
+Random random = new Random(seed);
+// 同じシード値を使っているので、同じシーケンスの数値が生成される
+int randomNumber1 = random.nextInt(100);
+int randomNumber2 = random.nextInt(100);
+System.out.println("ランダムな数値1: " + randomNumber1);
+System.out.println("ランダムな数値2: " + randomNumber2);
 ```
 
-出力例:
+## ランダムな数値の深堀り
 
-```
-乱数: 5
-乱数: 4
-乱数: 9
-```
+Randomクラスで提供されているメソッドは、線形合同法というアルゴリズムを使用してランダムな数値を生成しています。このアルゴリズムでは、現在の時刻などの外部要因をシード値として使用し、そのシード値を基にして数値を生成します。そのため、特定のシード値を使うことで同じ数値の系列が生成されることがあります。また、ランダムな数値の生成には現在の操作システムのリソースも利用されるため、パフォーマンスに影響を与える可能性があります。そのため、繰り返し実行される処理であれば、同じRandomインスタンスを使い回すことでパフォーマンスを向上させることができます。
 
-## 関連リンク
+## さらに見る
 
-- [Javaの乱数生成方法のまとめ](https://qiita.com/turmericN/items/70b8c9bfd3a3a3ec5bf9)
-- [JavaのRandomクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [JavaのMathクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
+* [Randomクラスドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+* [ランダムな数値の生成方法 | Java入門](https://java-beginner.com/java-random-numbers/)
+* [ランダムな数値の生成について知ろう | Qiita](https://qiita.com/youwht/items/a7941b4473e6a66b6d2c)

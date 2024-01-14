@@ -1,41 +1,45 @@
 ---
-title:    "Gleam: Muuntaa merkkijono pieniksi kirjaimiksi"
+title:    "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi: Miksi voidaan muuntaa merkkijono pieniksi kirjaimiksi?
 
-Miksi haluaisit muuntaa merkkijonon pieniksi kirjaimiksi? On monia syitä, miksi tämä voi olla hyödyllistä ohjelmoinnissa, kuten helpottaa tietojen vertailua tai varmistaa yhdenmukaisuus tietokantahakuissa.
+Merkkijonon muuntaminen pieniksi kirjaimiksi voi olla tarpeellista, kun halutaan vertailla tai käsitellä merkkijonoja yhtenäisellä tavalla. Pienet ja isojen kirjainten ero voi aiheuttaa ongelmia esimerkiksi hakumetodeissa tai tietokantarajoitteissa. Muuntamalla merkkijonot pieniksi kirjaimiksi, ne ovat helpommin vertailtavissa ja käsiteltävissä.
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi voi myös olla hyödyllistä luoda käyttäjäystävällisiä ohjelmia, sillä käyttäjät eivät välttämättä aina kirjoita merkkijonoja oikeassa muodossa.
-
-# Kuinka
+## Näin tehdään: Koodiesimerkkejä ja tulosteita
 
 ```Gleam
-String.to_lower("HELLO") #=> "hello"
-String.to_lower("I LoVe Gleam") #=> "i love gleam"
+let string = "Hello World"
+
+let lower_case_string = String.to_lower_case(string)
+
+IO.print(lower_case_string) // tulostaa "hello world"
 ```
 
-Voit käyttää String.to_lower-funktiota muuntaaksesi merkkijonon pieniksi kirjaimiksi. Tässä funktiossa käytetään Unicode-normalisointia varmistaakseen, että merkkijonon erikoismerkit käsitellään oikein.
+Yllä olevassa koodiesimerkissä nähdään, kuinka merkkijono muunnetaan pieniksi kirjaimiksi käyttämällä Gleamin to_lower_case-funktiota. Korvattu merkkijono tallennetaan uuteen muuttujaan, jotta alkuperäistä muuttujaa ei muuteta.
 
 ```Gleam
-String.to_lower("Käyttäjänimi") #=> "käyttäjänimi"
+let string = "HeLlO WoRlD"
+
+let lower_case_string = String.to_lower_case(string)
+
+IO.print(lower_case_string) // tulostaa "hello world"
 ```
 
-Gleamin mukaan tämä funktio palauttaa aina uuden merkkijonon, joten alkuperäinen merkkijono säilyy muuttumattomana.
+Jos koodissa on jo olemassa merkkijono, jossa on erikokoisia kirjaimia, sevoidaan silti muuntaa pieniksi kirjaimiksi toistamalla sama prosessi.
 
-# Syvällinen sukellus
+## Syvemmälle: Lisätietoa merkkijonon muuntamisesta pieniksi kirjaimiksi
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi voi olla tärkeää myös ohjelmistojen yhteensopivuuden ja tietoturvan kannalta.
+Merkkijonon muuntaminen pieniksi kirjaimiksi on tärkeä osa tekstimuokkauspipeliä. Usein kun käsitellään merkkijonoja, halutaan varmistaa, että ne ovat yhtenäisessä muodossa. Gleamin to_lower_case-funktio huolehtii tästä yhtenäisyydestä, ja se on myös erittäin nopea suorittamaan.
 
-Unicode-standardi määrittelee, että jokainen merkki voi esiintyä useissa eri muodoissa, esimerkiksi pienaakkosena tai isoakkosena. Tämä voi aiheuttaa ongelmia vertaillessa merkkijonoja, mikäli ne eivät ole samassa muodossa. Siksi on tärkeää käyttää Unicode-normalisointia merkkijonojen muuntamiseksi yhtenäiseen muotoon.
+On hyvä huomata, että to_lower_case-funktio ei tue kaikkia erikoismerkkejä oikein. Jos mahdollista, kannattaa käyttää Unicode-yhteensopivaa kirjasinta.
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi voi myös auttaa torjumaan tietoturvariskejä, kuten SQL-injektioita. Pienille ja isoille kirjaimille herkkien tietokantojen kanssa työskennellessä tietokantahaut voidaan muuntaa samassa muodossa oleviin merkkijonoihin, mikä voi estää haitallisten kyselyjen lähettämisen.
+## Katso myös
 
-# Katso myös
-
-- Gleamin dokumentaatio: https://gleam.run/documentation/std-lib/String.html#to_lower/1
-- Unicode-standardi: https://unicode.org/
-- SQL-injektiot: https://owasp.org/www-community/attacks/SQL_Injection
+- [Gleamin viralliset dokumentaatiot](https://gleam.run/)
+- [Lisätietoa merkkijonojen käsittelystä Gleamissa](https://gleam.run/book/tour/string-handling.html)
+- [String-to_lower_case-funktion lähdekoodi](https://github.com/gleam-lang/gleam_stdlib/blob/master/src/String.gleam#L102)

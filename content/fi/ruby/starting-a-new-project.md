@@ -1,45 +1,47 @@
 ---
 title:    "Ruby: Uuden projektin aloittaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+# Miksi
 
-Aloittaa uusi projekti Ruby-ohjelmoinnin kanssa voi olla erittäin jännittävä ja tuottava kokemus. Se tarjoaa mahdollisuuden oppia uutta, harjoitella taitoja ja luoda jotain uutta ja innovatiivista. Ja mikä parasta, mikään ei ole parempaa kuin saavuttaa tavoitteesi ja nähdä luomasi ohjelma toiminnassa.
+Oletko joskus halunnut aloittaa uuden ohjelmointiprojektin, mutta et ole ollut varma mistä aloittaa? Ruby on erinomainen ohjelmointikieli monipuoliseen käyttöön ja sen avulla on helppo luoda erilaisia projekteja. Tässä kirjoituksessa käymme läpi, miksi sinun kannattaa harkita uuden projektin aloittamista Rubylla.
 
-## Kuinka aloittaa uusi projekti?
+# Kuinka aloittaa
 
-Aloittaminen uuden projektin kanssa Ruby-ohjelmoinnissa on helppoa. Tarvitset vain tietokoneen, jossa on asennettuna Ruby-ohjelmointikielen versio, joka sopii käyttöjärjestelmääsi, sekä tekstieditorin, kuten Atom, Sublime tai VS Code.
+Ensimmäiseksi tarvitset tietenkin Rubyn ohjelmointikielen asennettuna tietokoneellesi. Tämän jälkeen voit aloittaa uuden projektisi luomisen.
 
-Seuraa sitten näitä askelia aloittaaksesi uuden projektin:
+Vaihtoehto 1: Voit käyttää Ruby'ssa sisäänrakennettua `new`-komentoa uuden projektin luomiseen:
 
-```Ruby
-mkdir uusi_projekti  # Luo uusi kansio projektillesi
-cd uusi_projekti     # Siirry uuteen kansioon
-touch app.rb         # Luo Ruby-tiedosto projektillesi
-```
-
-Avaa sitten uusi Ruby-tiedosto ja aloita koodaaminen.
 
 ```Ruby
-puts "Tervetuloa uuteen projektiisi!"  # Tulostaa tekstiä
+$ new project_name
 ```
 
-Voit suorittaa koodin komennolla ```ruby <tiedostonimi>```. Sinun tulisi nähdä outputissa tulostamasi teksti.
+Tämä luo uuden projektikansion nimeltä `project_name` nykyiseen hakemistoosi. Voit sitten siirtyä tähän kansioon ja aloittaa koodaamisen!
 
-## Syväsukellus aloittamisessa uuden projektin kanssa
+Vaihtoehto 2: Voit myös alustaa uuden Git-repositorion ja luoda uuden Ruby-projektin samalla kertaa:
 
-Aloittaminen uuden projektin kanssa Ruby-ohjelmoinnissa voi olla pelottavaa, mutta muista, että kaikki aloittelivat joskus ja sinun ei tarvitse olla huippuosaaja aloittaaksesi. Tärkeintä on vain aloittaa ja työskennellä kovasti, jotta voit kehittyä ja saavuttaa tavoitteesi.
+```Ruby
+$ git init project_name
+$ cd project_name
+$ touch app.rb
+```
+`touch`-komento luo uuden tiedoston `app.rb` projektikansioosi. Tämän jälkeen voit aloittaa koodaamisen.
 
-Kun aloitat uuden projektin, voit myös hankkia apua ja tukea Ruby-ohjelmoinnin yhteisöltä. Siellä on paljon resursseja, kuten oppaita, foorumeita ja kursseja, jotka voivat auttaa sinua oppimaan ja kehittymään.
+# Syventyminen
 
-Lopuksi, muista pitää hauskaa ja olla luova uuden projektisi kanssa. Ruby-ohjelmoinnissa vain mielikuvituksesi on rajana, joten rohkeasti ajattele ja toteuta uusia ideoita.
+Uuden projektin aloittaminen Rubylla ei kuitenkaan rajoitu vain uuden projektikansion luomiseen. Voit myös käyttää jo olemassa olevia Ruby-työkaluja ja kirjastoja helpottamaan koodaamista ja lisäämään toiminnallisuutta projektiisi.
 
-## Katso myös
+Jos tarvitset graafista käyttöliittymää, voit esimerkiksi kokeilla Ruby GUI -kirjastoa, joka tarjoaa valmiita työkaluja käyttöliittymän luomiseen Rubylla.
 
-- [Ruby-ohjelmoinnin opas (suomeksi)](https://www.ruby-lang.org/fi/documentation/)
-- [Ruby-ohjelmoinnin aloittamisopas](https://www.ruby-lang.org/en/documentation/quickstart/)
-- [Ruby-ohjelmoinnin yhteisö (suomeksi)](https://fi.wikibooks.org/wiki/Ruby-ohjelmointi)
-- [Ruby-ohjelmoinnin kurssit ja oppaat](https://www.codecademy.com/learn/learn-ruby)
+Jos haluat luoda web-sovelluksen, voit käyttää Ruby on Rails -kehyksen tarjoamia työkaluja nopeuttamaan projektisi kehitystä.
+
+# Katso myös
+
+- [Ruby:n virallinen verkkosivusto](https://www.ruby-lang.org/fi/)
+- [Ruby GUI -kirjasto](https://www.ruby-toolbox.com/categories/GUI_Frameworks)
+- [Ruby on Rails -kehys](https://rubyonrails.org/)

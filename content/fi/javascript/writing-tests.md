@@ -1,41 +1,34 @@
 ---
 title:    "Javascript: Testien kirjoittaminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testejä?
+## Miksi
 
-Testaaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan, että koodi toimii odotetulla tavalla. Kirjoittamalla testejä voit helposti havaita ja korjata mahdolliset virheet tai ongelmat koodissasi. Tämä säästää aikaa ja vaivaa pitkällä tähtäimellä, sillä korjatut virheet eivät aiheuta ongelmia myöhemmin ja testien avulla voit myös helposti tarkistaa, toimiiko koodi edelleen odotetusti muutosten jälkeen.
+Miksi testin kirjoittaminen on tärkeää ohjelmointiprosessissa? Vaikka se voi tuntua ylimääräiseltä työltä, testien kirjoittaminen auttaa varmistamaan koodisi toimivuuden ja vähentää virheiden määrää. Testit myös auttavat havaitsemaan mahdollisia ongelmia jo ennen kuin koodi julkaistaan.
 
-## Miten kirjoittaa testejä?
+## Miten
 
-Testauksen aloittaminen voi aluksi tuntua hankalalta, mutta se on oikeasti melko yksinkertaista. Ensimmäinen asia, joka sinun tulee tehdä, on ottaa käyttöön testaustyökalu, kuten Jest. Jest on suosittu ja helppokäyttöinen testaustyökalu JavaScript-ohjelmistojen kehittämiseen. Voit asentaa Jestin käyttämällä NPM-pakettienhallintatyökalua.
+Testien kirjoittaminen on helppoa JavaScriptillä käyttäen kirjastoa kuten Jest. Aloita määrittelemällä testifunktio ja antamalla sille kuvaava nimi. Kirjoita sitten testejä sisältävät koodirivit ja odotettu tulos, käyttäen Jestin funktioita kuten `expect()` ja `toBe()`. Lopuksi lisää testitiedosto projektiisi ja aja testit komentoriviltä. Voit myös asettaa testien ajamisen automaattisesti jokaisen koodimuutoksen yhteydessä, mikä auttaa varmistamaan, että aina uuden koodin lisäämisen jälkeen kaikki edelliset testit läpäisevät.
 
-```javascript
-npm install --save-dev jest
-```
-
-Kun Jest on asennettu, voit aloittaa testien kirjoittamisen. Alla on esimerkki yksinkertaisesta testistä.
-
-```javascript
-const add = require('./add');
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(add(1, 2)).toBe(3);
+```Javascript
+test("Testifunktio", () => {
+  expect(funktio(1)).toBe("tulos");
 });
 ```
 
-Tässä testissä luodaan funktio "add" ja testataan sen palauttama arvo kun annetaan sille parametrina luvut 1 ja 2. Jestin "expect" ja "toBe" funktioiden avulla voidaan verrata testin tulosta odotettuun arvoon. Jos testiä ajetaan "npm test" komennolla, se antaa onnistuneen tuloksen.
-
 ## Syvempi sukellus
 
-Testien kirjoittaminen ei rajoitu vain yksinkertaisiin esimerkkeihin, vaan niitä voi kirjoittaa myös monimutkaisemmille funktioille ja luokille. Jest tarjoaa erilaisia tapoja testata esimerkiksi asynkronisia funktioita tai objekteja. Jestin sivuilta löytyy kattava dokumentaatio ja esimerkkejä erilaisista testausmenetelmistä.
+Testien kirjoittamisen lisäksi on tärkeää miettiä, mitä testejä kannattaa kirjoittaa ja mihin kohdistaa testaus. Kirjoita testejä koodin olennaisiin osiin ja keskity perustoimintojen testaamiseen. Vältä kirjoittamasta liian monimutkaisia testejä, sillä silloin niiden ylläpito voi olla hankalaa.
 
-On myös hyvä käytäntö kirjoittaa testejä jo koodia kirjoittaessa, jolloin vältytään suurilta virhesaumoilta koodin valmistuttua. Testien ajamista voidaan myös automatisoida, jolloin ne suoritetaan jokaisen koodimuutoksen yhteydessä. Tämä auttaa varmistamaan, että koodi pysyy toimivana ja vähentää manuaalista testaustyötä.
+#### Tekninen velka
+Tekninen velka tarkoittaa lyhyen tähtäimen ongelmien välttämistä pidemmän tähtäimen kustannuksella. Testien kirjoittamatta jättäminen voi johtaa teknisen velan kertymiseen, joka voi aiheuttaa suuria vaikeuksia myöhemmin. Pidä siis huolta, että pysyt teknisesti velkavapaana kirjoittamalla testit heti alusta lähtien.
 
 ## Katso myös
-- [Jestin kotisivut](https://jestjs.io/)
-- [Jestin dokumentaatio](https://jestjs.io/docs/en/getting-started)
-- [Jestin esimerkkejä](https://github.com/facebook/jest/tree/master/examples)
+
+- [Jest-dokumentaatio](https://jestjs.io/)
+- [JavaScript-testauksen perusteet](https://www.pluralsight.com/courses/javascript-testing-collections)
+- [Testauksen tärkeys ohjelmistokehityksessä](https://blog.testlodge.com/why-test-software/)

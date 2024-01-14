@@ -1,45 +1,41 @@
 ---
 title:    "Kotlin: Obteniendo la fecha actual"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-La obtención de la fecha actual es una tarea común en la programación. Puede ser necesaria para registrar la hora de una acción, mostrar la fecha en una interfaz de usuario o para realizar cálculos basados en el tiempo. Afortunadamente, con Kotlin es muy sencillo obtener la fecha actual.
+## Por qué obtener la fecha actual es importante
 
-## Cómo hacerlo
-Para obtener la fecha actual en Kotlin, podemos utilizar la clase `java.util.Date` junto con la función `Date()` que nos devuelve un objeto `Date` con la fecha y hora actuales. Luego, podemos imprimir la fecha utilizando el método `toString()`.
+Obtener la fecha actual es una tarea común en la programación. Puede ser útil en muchas situaciones, como registrar la fecha en que se realizó una acción o mostrar la fecha de hoy en un calendario. También puede ser necesario para realizar cálculos basados en la fecha actual, como hacer una reserva para una fecha específica.
 
-```Kotlin
-val currentDateTime = Date()
-println(currentDateTime.toString())
-```
+## Cómo obtener la fecha actual en Kotlin
 
-La salida de este código sería algo como: `Tue Jun 22 17:59:05 UTC 2021`.
-
-Si deseamos personalizar el formato de la fecha, podemos utilizar la clase `java.text.SimpleDateFormat`. Por ejemplo, si queremos imprimir la fecha en formato "día/mes/año", podemos hacer lo siguiente:
+En Kotlin, obtener la fecha actual se puede hacer utilizando la clase `Date` y el método `now()`. Aquí hay un ejemplo de cómo se vería esto en código:
 
 ```Kotlin
-val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-val currentDateTime = Date()
-println(dateFormat.format(currentDateTime))
+val fechaActual = Date().now()
+println("La fecha de hoy es: $fechaActual")
 ```
+El resultado sería algo como: `La fecha de hoy es: Wed Jul 21 20:43:21 GMT 2021`.
 
-La salida sería: `22/06/2021`.
-
-## Profundizando
-Si bien la clase `Date` es una forma sencilla de obtener la fecha actual, también podemos utilizar la clase `Calendar` para realizar operaciones más avanzadas con fechas y horas. Por ejemplo, podemos obtener el día de la semana actual en formato numérico utilizando el método `get()` y la constante `Calendar.DAY_OF_WEEK`.
+También puedes especificar el formato de fecha que deseas utilizando la clase `SimpleDateFormat`. Aquí hay un ejemplo de cómo se vería esto en código:
 
 ```Kotlin
-val calendar = Calendar.getInstance()
-val currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
-println(currentDayOfWeek)
+val fechaActual = SimpleDateFormat("dd-MM-yyyy").format(Date().now())
+println("La fecha de hoy es: $fechaActual")
 ```
+El resultado sería algo como: `La fecha de hoy es: 21-07-2021`.
 
-La salida sería un número del 1 al 7, donde 1 representa el domingo y 7 el sábado.
+## Análisis detallado sobre cómo obtener la fecha actual
 
-## Véase también
-- [Documentación de la clase Date](https://developer.android.com/reference/java/util/Date)
-- [Documentación de la clase SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [Documentación de la clase Calendar](https://developer.android.com/reference/java/util/Calendar)
+Ahora, profundicemos un poco más en cómo funciona el código para obtener la fecha actual en Kotlin. La clase `Date` representa una instantánea de tiempo específica, y el método `now()` devuelve una instancia de `Date` basada en la hora actual del sistema. Luego, al especificar un formato de fecha con la clase `SimpleDateFormat`, podemos formatear la fecha a nuestra conveniencia.
+
+Es importante tener en cuenta que la clase `Date` está en desuso y se recomienda utilizar la clase `LocalDate` de la nueva API de fechas en Kotlin. También hay otras opciones para obtener la fecha actual, como utilizando la función `now()` de la clase `Clock` o el método `getCurrentDateTime()` de la biblioteca `java.time`.
+
+## Ver También
+
+- [Cómo utilizar la nueva API de fechas en Kotlin](https://www.baeldung.com/kotlin/java-time-api)
+- [Documentación oficial de la clase `Date` en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
+- [Tutorial sobre manipulación de fechas en Kotlin](https://www.programmerall.com/article/1616638619/)

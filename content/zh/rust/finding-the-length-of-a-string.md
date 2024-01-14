@@ -1,52 +1,69 @@
 ---
-title:    "Rust: 查找字符串的长度"
+title:    "Rust: 计算字符串的长度"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在日常的编程中，我们经常会遇到需要知道字符串长度的情况。无论是验证用户输入的合法性，还是进行字符串的截取和处理，都需要我们知道字符串的长度。而Rust语言提供了简单而高效的方法来获取字符串的长度，让我们一起来看看吧！
+Rust是一种快速，可靠且安全的系统编程语言，它支持高性能和并发编程。字符串是编程中常用的数据类型，因此学习如何在Rust中计算字符串的长度是非常有用的技能。通过这篇博文，你将学习如何用Rust编写一个简单的程序来计算字符串的长度。
 
-## 如何实现
+## 如何做
 
-要获取字符串的长度，我们可以使用标准库提供的String类型的len()方法。只需要将字符串变量名后面加上.len()即可。下面是一个简单的示例代码：
-
-```Rust
-let str = String::from("Rust编程是一门非常有趣的语言");
-let len = str.len();
-println!("字符串的长度为：{}", len);
-```
-
-输出结果为：字符串的长度为：16
-
-从输出结果可以看出，通过len()方法我们得到了字符串的长度，简洁高效。不仅如此，我们还可以通过bytes()方法获取字符串的字节长度，这在处理unicode字符时非常有用。
+要计算一个字符串的长度，在Rust中我们可以使用`len()`函数。下面是一个简单的例子，演示了如何使用`len()`函数计算字符串的长度并打印出来：
 
 ```Rust
-let str = String::from("Rust编程是一门非常有趣的语言");
-let byte_len = str.bytes().len();
-println!("字符串的字节长度为：{}", byte_len);
+fn main() {
+    let my_string = "Hello Rust!";
+    let length = my_string.len();
+    println!("The length of the string is {}", length);
+}
 ```
 
-输出结果为：字符串的字节长度为：28
+这段代码创建了一个字符串变量`my_string`，然后使用`len()`函数计算这个字符串的长度并赋值给变量`length`。最后，使用`println!`宏来打印出字符串的长度。你可以在终端运行这段代码，你会看到输出结果为：
 
-## 深入探究
+```
+The length of the string is 11
+```
 
-在Rust中，字符串实际上是一个动态分配的字节数组。而len()方法返回的就是这个字节数组的长度，因此它既可以用于获取字符串的长度，也可以用于获取字节长度。另外，Rust还提供了capacity()方法来获取字符串的容量，即分配给字符串的字节数组的总长度。这在使用字符串做字符串拼接等操作时，能够帮助我们提前分配足够的空间，从而避免不必要的内存分配和拷贝，提高性能。
+这是因为上面的字符串有11个字符，包括空格和标点符号。
+
+## 深入探讨
+
+在Rust中，`len()`函数计算的是字符串的字节长度，而不是字符数。这是因为Rust使用UTF-8编码来表示字符串，这种编码方式会给每个字符分配不同数量的字节。因此，一个字符串的字节长度并不总是等于它的字符数。例如，一个包含汉字的字符串，在Rust中的字节长度可能会比它的字符数多。
+
+还有一个需要注意的地方是，`len()`函数返回的是一个`usize`类型的值，它表示一个指针在当前系统中所占据的字节数。这意味着，如果你的系统是64位的，那么`usize`类型的大小就是8个字节，所以它可以存储的最大字符串长度也只能是`usize`的最大值。
+
+如果你想要以字符数的形式获取字符串的长度，可以使用`chars()`方法来计算。这个方法会返回一个迭代器，你可以使用`.count()`来计算迭代器的长度，也就是字符数。下面是一个例子：
+
+```Rust
+fn main() {
+    let my_string = "Hello 你好";
+    let length = my_string.chars().count();
+    println!("The length of the string is {}", length);
+}
+```
+
+这段代码输出的结果是：
+
+```
+The length of the string is 7
+```
+
+这是因为这个字符串包含了7个字符，包括空格和汉字。
 
 ## 参考资料
 
-[The Rust Standard Library Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
-
-[Rust By Example: Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- [The Rust Programming Language](https://www.rust-lang.org/zh-CN/)
+- [Rust官方文档](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Rust String类型](https://doc.rust-lang.org/std/string/struct.String.html)
+- [UTF-8编码](https://zh.wikipedia.org/wiki/UTF-8)
+- [Rust字符串的字节长度与字符数](https://www.tutorialspoint.com/rust/rust_string_length.htm)
 
 ## 参见
 
-见其他文章了解更多有关Rust的知识：
-
-[Rust学习路线：从入门到精通](https://www.jianshu.com/p/efea00381632)
-
-[使用Rust开发Web应用：实现一个简单的TodoList](https://www.jianshu.com/p/0bbaa1b20657)
-
-[Rust和Python比较：两种不同的编程风格](https://www.jianshu.com/p/fdfc9cb70ac2)
+- [Rust中的字符串处理](https://rustlang-cn.org/office/rust/advanced/strings-processing.html)
+- [Rust字符串方法](https://doc.rust-lang.org/std/string/struct.String.html#methods)
+- [Rust字符串切割](https://rustbyexample.com/std/str/split.html)

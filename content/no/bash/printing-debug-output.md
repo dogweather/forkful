@@ -1,60 +1,54 @@
 ---
 title:    "Bash: Utskrift av feilsøkingsutdata"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Debugging er en viktig del av enhver programmeringsoppgave. Å kunne forstå koden din og feilsøke effektivt er avgjørende for å skrive gode og fungerende programmer. En nyttig teknikk i denne prosessen er å skrive ut feilmeldinger og variabler til terminalen, også kjent som "debug output". Dette kan hjelpe deg med å identifisere problemområder i koden din og finne feil raskere. I denne bloggposten vil jeg vise deg hvordan du enkelt kan legge til debug output i Bash-skriptene dine.
+## Hvorfor
 
-##Slik gjør du det
-For å legge til debug output i Bash-skriptene dine, kan du bruke kommandoen "echo". Dette vil skrive ut en melding eller en variabel til terminalen når skriptet ditt kjører.
+Utskrift av feilsøkingsmeldinger er en viktig del av Bash programmering. Det lar deg se hva som skjer under kjøring av koden din og finne feil eller ineffektiviteter som kan forbedres. Det er også en nyttig måte å forstå nøyaktig hva som skjer i koden din og hvordan den reagerer på forskjellige inputs.
 
-```Bash
-#!/bin/bash
-# Definer en variabel
-navn="Petra"
+## Hvordan
 
-# Skriv ut variabelen ved hjelp av echo
-echo "Hei, mitt navn er $navn"
-```
-
-Kjører du dette skriptet vil du få følgende utskrift:
-
-```
-Hei, mitt navn er Petra
-```
-
-Som du kan se, kan du enkelt skrive ut variabler ved å bruke "echo" -kommandoen og inkludere variabelen ved hjelp av "$"-tegnet. Dette kan være nyttig når du ønsker å sjekke verdien av variabler i løpet av skriptet ditt.
-
-Du kan også bruke "echo" til å skrive ut feilmeldinger når noe går galt i koden din. Dette kan hjelpe deg med å identifisere hvor og hvorfor feilen skjedde.
+For å skrive ut en feilsøkingsmelding i Bash, kan du bruke kommandoen "echo". En enkel måte å gjøre dette på er å inkludere variabelen "$PS4" før du kjører kommandoen "set -x" for å aktivere sporing av kommandoene. Dette vil skrive ut en linje med koden som kjøres før hver kommando som gir deg mer kontroll over utskriftsprosessen.
 
 ```Bash
-#!/bin/bash
-# Lager en variabel med feil verdi
-alder=-5
-
-# Sjekk om alderen er et positivt tall
-if [ $alder -lt 0 ]; then
-  echo "Feil: Alderen kan ikke være et negativt tall."
-fi
+$ set -x
+$ PS4='$LINENO: '
+$ echo "Dette er en feilsøkingsmelding"
 ```
 
-Når du kjører dette skriptet, vil du få følgende feilmelding:
+Dette vil gi følgende output:
 
+```Bash
+1: echo "Dette er en feilsøkingsmelding"
+Dette er en feilsøkingsmelding
 ```
-Feil: Alderen kan ikke være et negativt tall.
+
+Et annet nyttig verktøy for å skrive ut feilsøkingsmeldinger er "printf" kommandoen. Dette lar deg formatere utskriften slik du vil og inkludere variabler og andre data i meldingen. For eksempel:
+
+```Bash
+printf "Variabelen heter %s og verdien er %d" $variabel $verdi
 ```
 
-Dette vil hjelpe deg med å identifisere problemet og dermed feilsøke mer effektivt.
+Dette vil skrive ut følgende:
 
-##Dypdykk
-I tillegg til å bruke "echo" som en enkel måte å legge til debug output i Bash-skriptene dine, kan du også eksperimentere med å bruke andre kommandoer som "printf" og "cat". Disse kan gi mer formatert og spesifikk utskrift av variabler og feilmeldinger.
+```Bash
+Variabelen heter variabel og verdien er 10
+```
 
-Det kan også være nyttig å lese dokumentasjonen på kommandoene du bruker for å lære mer om deres muligheter og funksjonalitet.
+## Dypdykk
 
-##Se også
-- [Bash Guide for nybegynnere](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [10 Tips for feilsøking i Bash](https://www.tecmint.com/debugging-bash-scripts/)
-- [Grundig Bash-skriving](https://www.highwaydata.com/tutorials/Tutorial_bash.txt)
+For å få enda mer kontroll over utskriftsprosessen kan du bruke "enable -x" kommandoen som lar deg angi en funksjon som skal kjøres før hver kommando. Dette kan være nyttig hvis du vil ha en mer tilpasset feilsøkingsmelding eller må ta hensyn til forskjellige inputs.
+
+En annen nyttig teknikk er å bruke ">&2" for å skrive til standard error i stedet for standard output. Dette kan være nyttig hvis du vil skille utskrifter for feilsøking fra f.eks. vanlige feilmeldinger som skrives ut til standard error.
+
+Disse teknikkene kan være nyttige for å finne problematiske områder i koden din og forbedre effektivitet og feilhåndtering.
+
+## Se også
+
+- [Echo Command in Linux with Examples](https://www.tecmint.com/echo-command-in-linux/)
+- [The printf Command in Linux](https://www.linux.com/news/printf-command-linux/) 
+- [Debugging Bash Scripts – Part 1: Commands & Functions](https://www.linuxjournal.com/content/debugging-bash-scripts-part-1-commands-functions)

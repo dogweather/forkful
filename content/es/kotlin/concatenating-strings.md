@@ -1,67 +1,66 @@
 ---
-title:    "Kotlin: Concatenando cadenas"
+title:    "Kotlin: Uniendo cadenas de texto"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Concatenar strings es una habilidad fundamental en la programación Kotlin. Esto permite combinar diferentes cadenas de texto para formar una sola, lo que puede ser útil en situaciones como imprimir mensajes personalizados o crear URLs dinámicas. En este artículo, te mostraremos cómo concatenar strings en Kotlin de manera sencilla y eficiente.
+La concatenación de cadenas es una tarea común en la programación, especialmente cuando se trabaja con datos de texto. Es una forma rápida y sencilla de combinar múltiples cadenas en una sola.
 
 ## Cómo hacerlo
 
-La concatenación de strings en Kotlin se puede lograr de varias maneras. Una de ellas es utilizando el operador "+" para unir dos o más strings.
+La concatenación de cadenas en Kotlin se puede lograr de varias maneras, dependiendo del uso y la preferencia del programador. A continuación se presentan algunas formas comunes de hacerlo:
 
 ```Kotlin
 val nombre = "Juan"
-val saludo = "¡Hola, "
-val mensaje = saludo + nombre + "!" // mensaje = "¡Hola, Juan!"
+val apellido = "Pérez"
+val nombreCompleto = nombre + " " + apellido
+println(nombreCompleto)
 ```
 
-También se puede utilizar la función `plus()` para lograr el mismo resultado.
+Este ejemplo crea dos variables, "nombre" y "apellido", y luego las concatena para formar una tercera variable, "nombreCompleto", que se imprime en la consola como "Juan Pérez".
 
-```Kotlin
-val apellido = "González"
-val nombreCompleto = saludo.plus(nombre).plus(" ").plus(apellido) // nombreCompleto = "¡Hola, Juan González!"
-
-```
-
-Otra opción es utilizar la función `format()` que permite insertar valores en una String utilizando placeholders (%s para strings, %d para enteros, %f para decimales, etc.).
+Se pueden utilizar también plantillas de cadenas para concatenar variables dentro de una cadena.
 
 ```Kotlin
 val edad = 25
-val mensajePersonalizado = "Tengo %d años".format(edad) // mensajePersonalizado = "Tengo 25 años"
+println("¡Hola, mi edad es $edad años!")
 ```
 
-También es posible utilizar la interpolación de strings, que permite insertar valores directamente en una string mediante el uso de `$`.
+En este caso, la variable "edad" se inserta dentro de la cadena entre los símbolos "$" y es impresa en la consola como "¡Hola, mi edad es 25 años!".
+
+Otra forma de concatenar cadenas es mediante el método "plus()".
 
 ```Kotlin
-val lugar = "el parque"
-val actividad = "correr"
-val frase = "Me encanta $actividad en $lugar" // frase = "Me encanta correr en el parque"
+val frase1 = "Hola"
+val frase2 = "mundo"
+val frase3 = frase1.plus(" ").plus(frase2)
+println(frase3)
 ```
+
+En este ejemplo, los dos métodos "plus()" se utilizan para unir dos cadenas y se imprime en la consola como "Hola mundo".
 
 ## Profundizando
 
-En Kotlin, cada vez que concatenamos strings, se crea un nuevo string en memoria. Esto puede ser ineficiente si se concatenan strings en un loop o en situaciones similares. Por eso, es recomendable utilizar la clase `StringBuilder` cuando se necesite concatenar varias veces una string.
+Es importante tener en cuenta que la concatenación de cadenas puede ser ineficiente si se realiza con una gran cantidad de cadenas o en un bucle. En esos casos, es mejor utilizar la clase "StringBuilder", que permite crear y modificar cadenas de forma más eficiente.
 
 ```Kotlin
-val opciones = listOf("verde", "rojo", "azul")
-val sb = StringBuilder()
-
-for (opcion in opciones) {
-    sb.append(opcion).append(" ") // sb = "verde rojo azul "
+val lista = listOf("Juan", "María", "Pedro")
+val builder = StringBuilder()
+for (nombre in lista) {
+    builder.append(nombre).append(" ")
 }
-
-val mensajeFinal = sb.toString() // mensajeFinal = "verde rojo azul "
-
+val nombres = builder.toString()
+println(nombres)
 ```
+
+En este ejemplo, se utiliza la clase "StringBuilder" para crear una cadena que contenga una lista de nombres, separados por un espacio.
 
 ## Ver también
 
-Para más información sobre strings y funciones útiles en Kotlin, puedes consultar los siguientes enlaces:
-
-- [Documentación oficial de Kotlin sobre Strings] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string-builder/)
-- [Cómo concatenar strings en Java] (https://www.baeldung.com/java-string-concatenation)
-- [Otros operadores útiles en Kotlin] (https://kotlinlang.org/docs/reference/basic-types.html#operations)
+- [Documentación de concatenación de cadenas en Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Ejemplos de cadenas en Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
+- [Utilizar StringBuilder en Kotlin](https://www.geeksforgeeks.org/using-stringbuilder-class-kotlin/)

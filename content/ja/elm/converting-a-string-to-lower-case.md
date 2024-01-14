@@ -1,63 +1,58 @@
 ---
-title:    "Elm: 「stringを小文字に変換する」"
+title:    "Elm: 文字列を小文字に変換する"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を小文字に変換することに関わる理由は、多岐に渡りますが、例えばフォームの入力を正規化したり、文字列の比較を行う際に一貫性を持たせるためなどが挙げられます。
+変数の値を小文字に変換する必要性について、1-2文で説明します。
 
-## 方法
+コード内で扱う文字列を整理するときに、大文字と小文字の区別があると混乱を招くことがあります。そのため、文や単語をすべて小文字に変換することで、コードをより一貫性のあるものにすることができます。
 
-まず、Elmコードを書く前に、文字列を小文字に変換する必要性があるかを考える必要があります。入力フォームにおいて、ユーザーが大文字と小文字を区別しないで入力した場合、文字列を小文字化することで、一貫性のあるデータを保持することができます。
+## やり方
 
-```elm
+Elmプログラミング言語で文字列を小文字に変換する方法は簡単です。下記のコードブロックを参考にしてください。
+
+```Elm
 import String
 
-text = "Elm Programming"
-
-lowercasedText = String.toLower text
+String.toLower "HELLO" -- Output: "hello"
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+ここでは、StringモジュールのtoLower関数を使用して、"HELLO"という文字列を小文字に変換しています。この関数は他のモジュールに比べると特に簡単なため、初心者でも簡単に使いこなすことができるでしょう。
 
-```elm
-"elm programming"
-```
+次に、変数として定義した文字列を小文字に変換する場合はどうなるでしょうか。
 
-また、もし文字列内にエスケープシーケンスが含まれている場合は、`Grapheme.toLower`を使用することで、エスケープシーケンスを無視して小文字化することができます。
-
-```elm
+```Elm
 import String
-import Grapheme
 
-text = "Élm Programming"
+myString = "WORLD"
 
-lowercasedText = Grapheme.toLower text
+String.toLower myString -- Output: "world"
 ```
 
-実行結果は以下のようになります。
+上記のコードでは、変数myStringに代入された"WORLD"をtoLower関数に渡して、文字列を小文字に変換しています。これでコード内での大文字・小文字の区別をなくすことができます。
 
-```elm
-"élm programming"
-```
+## 深堀り
 
-## 深堀
+文字列を小文字に変換する方法は単純に見えますが、内部的にはどのように処理されているのでしょうか。実際には、以下のようなアルゴリズムが使われています。
 
-Elmで文字列を小文字に変換する方法は、2つの主な方法があります。1つ目は、`String.toLower`を使用する方法で、2つ目は、`Grapheme.toLower`を使用する方法です。
+1. 最初に変換する文字列をUTF-16に変換する。
+2. 変換後のUTF-16をUnicodeに変換する。
+3. 最後に、Unicodeを小文字に変換する。
 
-`String.toLower`は、文字列を単純に小文字に変換することができますが、エスケープシーケンスを無視するため、意図しない結果を得ることがあります。一方、`Grapheme.toLower`はエスケープシーケンスを無視せず、より正確に小文字化することができます。
+これにより、様々な言語や文字に対応した文字列の変換が可能になります。
 
-文字列操作を行う際には、入力データに対して慎重に考え、適切なメソッドを選択することが重要です。
+## 参考リンク
 
-## 関連情報
+ - [Elm Official Documentation on Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
+ - [String.toLower source code on GitHub](https://github.com/elm/core/blob/1.0.5/src/String.elm#L149-L155)
+ - [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](http://www.joelonsoftware.com/articles/Unicode.html)
 
-- [Elm公式ドキュメント - 文字列操作](https://guide.elm-lang.jp/appendix/string.html)
-- [Elm Japan User Group](https://elmjapan.org/)
-- [HackSmiths](https://www.hacksmiths.io/elm/convert-string-to-lowercase)
+## 参考になる記事
 
-## 参考文献
-
-- "A straightforward Elm package to transform our string into lowercase" by Eugene Obrezkov, Medium, 23 April, 2020, https://medium.com/@ghaiklor/elm-how-to-string-to-lowercase-f45ec5a39f7f
+ - [文字列操作について学ぼう！ - Qiita](https://qiita.com/nariaki3551/items/8f0d807d6d907b5f28f5) 
+ - [Elmで文字列操作をマスターする！ - Qiita](https://qiita.com/corona/items/33c41a6552b249554171)

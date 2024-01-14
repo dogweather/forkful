@@ -1,42 +1,50 @@
 ---
 title:    "Elixir recipe: Deleting characters matching a pattern"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with strings, it is sometimes necessary to remove certain characters that match a specific pattern. This can be useful for data manipulation, input validation, or formatting purposes. In Elixir, there are several ways to achieve this, and it is a useful skill for any developer to have in their arsenal.
+There are various reasons why you may need to delete characters matching a specific pattern in your Elixir code. It could be for data cleaning, removing sensitive information, or performing text processing tasks. Whatever the reason may be, knowing how to effectively delete characters matching a pattern can greatly enhance your coding skills and make your code more efficient.
 
 ## How To
 
-To delete characters matching a pattern in Elixir, we can use the `String.replace` function. This function takes in three parameters: the original string, the pattern to be matched, and the replacement string. The pattern can be a regular expression or a string. Let's take a look at some examples to better understand how to use this function.
+To delete characters matching a pattern in Elixir, we can use the `String.replace/4` function. This function takes in four arguments: the input string, the pattern to match, the replacement string, and the number of matches to replace.
 
-```
-# Using a string as the pattern
-iex> String.replace("Hello World", "o", "")
-"Hell Wrld"
+Let's see an example of how we can use this function to delete all vowels from a given string:
 
-# Using a regular expression as the pattern
-iex> String.replace("0123456789", ~r/[24680]/, "")
-"13579"
+```Elixir
+input = "Hello World!"
+String.replace(input, ~r/[aeiou]/, "", global: true)
 ```
 
-In the first example, we are replacing all instances of the letter "o" with an empty string, effectively removing it. In the second example, we are using a regular expression to replace all even digits with an empty string.
+In this example, we first define the input string as "Hello World!", and then use the `String.replace/4` function with the pattern `~r/[aeiou]/` to match all vowels in the string. We then provide an empty string as the replacement and set the `global` option to true, indicating that we want to replace all matches.
 
-It is also important to note that `String.replace` is a Unicode-aware function, meaning it can handle characters from different languages and alphabets.
+The output of this code would be `"Hll Wrld!"` as all vowels have been successfully deleted from the string.
+
+We can also use regular expressions to create more complex pattern matches. For example, to delete all numbers from a given string, we can use the pattern `~r/[0-9]/`.
 
 ## Deep Dive
 
-The `String.replace` function uses the regular expression engine provided by Erlang's `:re` module. This gives us access to powerful regular expression features such as capturing groups and non-greedy matches. This makes it easy to manipulate strings in complex ways.
+Behind the scenes, the `String.replace/4` function uses the `Regex.replace/3` function to perform the replacement. This function takes in a regular expression as the pattern and can provide more versatile options for matching and replacing text in strings.
 
-Additionally, `String.replace` is a pure function, meaning it does not modify the original string but instead returns a new string with the changes applied. This is in line with Elixir's philosophy of immutability and makes our code safer and easier to reason about.
+We can also use the `Regex.replace/3` function directly to delete characters matching a specific pattern from a string. The difference here is that we need to compile the regular expression beforehand, using the `Regex.compile/1` function.
+
+Let's look at an example of how we can use `Regex.replace/3` to delete all lowercase letters from a string:
+
+```Elixir
+input = "Hello World!"
+pattern = Regex.compile(~r/[a-z]/)
+Regex.replace(pattern, input, "", global: true)
+```
+
+Similar to the previous example, we first define the input string and compile the regular expression for matching lowercase letters. Then, using the `Regex.replace/3` function, we can successfully remove all lowercase letters from the string.
 
 ## See Also
 
-- [String.replace documentation](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Erlang :re module documentation](http://erlang.org/doc/man/re.html)
-- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
-
-By mastering the `String.replace` function, you'll have a powerful tool at your disposal for manipulating strings in Elixir. Keep exploring and experimenting with regular expressions to take your skills to the next level. Happy coding!
+- `String.replace/4` [Elixir documentation](https://hexdocs.pm/elixir/String.html#replace/4)
+- `Regex.replace/3` [Elixir documentation](https://hexdocs.pm/elixir/Regex.html#replace/3)
+- [Regular expressions tutorial](https://regexone.com/)

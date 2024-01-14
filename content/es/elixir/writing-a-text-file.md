@@ -1,46 +1,43 @@
 ---
-title:    "Elixir: Escribiendo un archivo de texto"
+title:    "Elixir: Escribir un archivo de texto"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto en Elixir
+## Por qué
 
-Escribir un archivo de texto puede ser útil en muchas situaciones. Puede servir para guardar información importante, compartir datos con otros usuarios o simplemente para tener una copia de seguridad. En Elixir, escribir un archivo de texto es una tarea sencilla y en este artículo te mostraré cómo hacerlo.
+Hay muchas razones por las que alguien puede querer escribir un archivo de texto en Elixir. Tal vez estás creando un programa que necesita almacenar datos en un formato legible para humanos. O tal vez estás creando una aplicación web y necesitas generar un archivo HTML para mostrar en el navegador. Independientemente de la razón, saber cómo escribir un archivo de texto en Elixir puede ser una habilidad útil y práctica.
 
-## Cómo hacerlo en Elixir
+## Cómo hacerlo
 
-Para escribir un archivo de texto en Elixir, primero debemos abrirlo en modo de escritura utilizando la función `File.open/2`. También debemos especificar la ruta y el nombre del archivo que deseamos crear. Por ejemplo:
+En Elixir, puedes escribir un archivo de texto utilizando la función `File.write`. Esta función toma dos argumentos: el nombre del archivo que quieres crear y el contenido que deseas escribir en él. Aquí hay un ejemplo de cómo crear un archivo `ejemplo.txt` y escribir la cadena "¡Hola mundo!" en él:
 
-```Elixir
-File.open("archivo.txt", [:write])
+```elixir
+File.write("ejemplo.txt", "¡Hola mundo!")
 ```
 
-Una vez abierto el archivo, podemos utilizar la función `IO.write/2` para escribir nuestro contenido en él. Por ejemplo, si queremos escribir la frase "¡Hola mundo!" en nuestro archivo, podemos hacerlo de la siguiente manera:
+Esta función escribirá el archivo en el directorio actual. Si quieres especificar un directorio diferente, puedes pasar la ruta completa del archivo como primer argumento. Por ejemplo: `File.write("../carpeta/ejemplo.txt", "¡Hola mundo!")`.
 
-```Elixir
-IO.write(file, "¡Hola mundo!")
+Si quieres agregar contenido a un archivo existente en lugar de sobrescribirlo, puedes utilizar la función `File.write!` en su lugar. Ten en cuenta que esto sobrescribirá el contenido existente en el archivo.
+
+Para leer el contenido de un archivo de texto en Elixir, puedes utilizar la función `File.read`. Esta función tomará el nombre del archivo como argumento y devolverá el contenido del archivo como una cadena. Aquí hay un ejemplo:
+
+```elixir
+File.read("ejemplo.txt")
 ```
 
-Finalmente, debemos cerrar el archivo utilizando la función `File.close/1` para asegurarnos de que todos los cambios se hayan guardado correctamente. Nuestro código completo se vería así:
+Esto devolverá la cadena "¡Hola mundo!".
 
-```Elixir
-file = File.open("archivo.txt", [:write])
-IO.write(file, "¡Hola mundo!")
-File.close(file)
-```
+## Inmersión profunda
 
-## Profundizando en la escritura de archivos de texto en Elixir
+Cuando estás escribiendo archivos de texto en Elixir, es importante recordar que estás interactuando con un sistema de archivos subyacente. Por lo tanto, es importante tener en cuenta las consideraciones de seguridad al escribir y leer archivos. Por ejemplo, asegúrate de validar y limpiar cualquier entrada del usuario antes de escribirla en un archivo, ya que podrían insertar código malicioso.
 
-Escribir un archivo de texto en Elixir puede parecer una tarea sencilla, pero hay algunas cosas que debemos tener en cuenta para asegurarnos de que todo funcione correctamente. Por ejemplo, si intentamos escribir en un archivo que no hemos abierto previamente, recibiremos un error. Además, también es importante tener en cuenta que si el archivo que estamos intentando crear ya existe, se sobrescribirá con el nuevo contenido.
-
-Otra cosa a tener en cuenta es que podemos utilizar diferentes opciones al abrir un archivo en modo de escritura. Por ejemplo, además de `:write`, también podemos utilizar `:append` para agregar contenido al final del archivo en lugar de sobrescribirlo.
+También es importante tener en cuenta que la función `File.write` crea un archivo nuevo si el archivo especificado no existe. Si el archivo ya existe, se sobrescribirá sin previo aviso. Para evitar esto, puedes utilizar la función `File.open` en combinación con `IO.write` para escribir en un archivo existente sin sobrescribirlo.
 
 ## Ver también
 
-Si estás interesado en aprender más sobre la escritura de archivos de texto en Elixir, aquí tienes algunos enlaces útiles:
-
-- La documentación oficial de Elixir sobre la función `File.open/2`: https://hexdocs.pm/elixir/File.html#open/2
-- Un tutorial paso a paso sobre cómo escribir archivos de texto en Elixir: https://elixircasts.io/writing-files-in-elixir
-- La documentación oficial de Elixir sobre la función `IO.write/2`: https://hexdocs.pm/elixir/IO.html#write/2
+- La documentación oficial de Elixir sobre [File](https://hexdocs.pm/elixir/File.html)
+- El blog post de José Valim sobre [Elixir y el sistema de archivos](https://elixir-lang.org/blog/2013/06/23/how-to-work-with-your-file-system-in-elixir/).
+- El libro "Programming Elixir" de Dave Thomas, que tiene un capítulo dedicado a trabajar con archivos.

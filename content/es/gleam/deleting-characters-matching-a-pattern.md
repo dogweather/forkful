@@ -1,58 +1,54 @@
 ---
-title:    "Gleam: Eliminando caracteres que coincidan con un patrón"
+title:    "Gleam: Borrando caracteres que coinciden con un patrón"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Eliminar caracteres que coinciden con un patrón puede ser útil en diferentes situaciones, como por ejemplo, limpiar datos o filtrar información específica. En este artículo, aprenderás cómo realizar esta tarea utilizando el lenguaje de programación Gleam.
+A veces, cuando trabajamos con texto en programación, necesitamos eliminar ciertos caracteres que coinciden con ciertos patrones. Esto puede ser útil cuando se trabaja con inputs de usuarios, limpiando datos o formateando texto.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Gleam, podemos utilizar la función built-in `String.replace` y especificar el patrón a eliminar. Por ejemplo, si queremos eliminar todos los caracteres "a" de una cadena, podemos utilizar el siguiente código:
+En Gleam, podemos utilizar la función `String.replace` para eliminar un patrón específico de caracteres de una cadena de texto. Veamos un ejemplo:
 
 ```Gleam
-let cadena = "Hola amigo"
-let nueva_cadena = String.replace(cadena, "a", "")
+let cadena = "Hola, ¡bienvenidos a mi blog!";
+let nueva_cadena = String.replace(cadena, "!", "");
+io.format("La nueva cadena es {}", [nueva_cadena]);
 ```
 
-La nueva cadena resultante será "Hol migo", ya que se han eliminado todas las apariciones de "a". Además de especificar un carácter, también podemos utilizar expresiones regulares para eliminar patrones más complejos. Por ejemplo, para eliminar todos los números de una cadena podemos utilizar el siguiente código:
+En este código, estamos usando la función `String.replace` para eliminar el símbolo de exclamación de la cadena original. La salida en la consola sería "La nueva cadena es Hola, ¡bienvenidos a mi blog".
+
+Podemos ser más específicos y eliminar todos los caracteres que coinciden con un cierto patrón utilizando expresiones regulares. Por ejemplo, si queremos eliminar todos los caracteres numéricos de una cadena:
 
 ```Gleam
-let cadena = "Hoy es 12 de julio"
-let nueva_cadena = String.replace(cadena, "\\d+", "")
+let cadena = "Hoy es 12 de octubre de 2021";
+let nueva_cadena = String.replace(cadena, "[0-9]", "");
+io.format("La nueva cadena es {}", [nueva_cadena]);
 ```
 
-En este caso, la nueva cadena resultante será "Hoy es de julio", ya que se han eliminado todos los números del patrón especificado en la expresión regular.
+La salida sería "La nueva cadena es Hoy es de octubre de".
 
 ## Deep Dive
 
-Si queremos un mayor control sobre cómo se eliminan los caracteres que coinciden con un patrón, podemos utilizar la función `String.replacer` en lugar de `String.replace`. Esta función nos permite especificar una función de reemplazo personalizada que determina qué caracteres serán reemplazados y por qué.
+La función `String.replace` en Gleam también nos permite utilizar flags para realizar coincidencias globales o no sensibles a mayúsculas y minúsculas. Esto nos da un mayor control sobre cómo deseamos eliminar los caracteres que coinciden con el patrón.
 
-Por ejemplo, si queremos eliminar todos los espacios en blanco de una cadena pero dejar un espacio entre cada palabra, podemos utilizar la siguiente función de reemplazo personalizada:
-
-```Gleam
-fn(replacement) {
-  match replacement {
-    " " => " ",
-    _ => ""
-  }
-}
-```
-
-Al utilizar esta función con la función `String.replacer`, podemos eliminar todos los espacios en blanco excepto el primero entre palabras:
+Por ejemplo, si solo queremos eliminar el primer carácter que coincida con el patrón:
 
 ```Gleam
-let cadena = "Hola      amigo"
-let nueva_cadena = String.replacer(cadena, fn)
+let cadena = "abcdefg";
+let nueva_cadena = String.replace(cadena, "a", "", true);
 ```
 
-La nueva cadena resultante será "Hola amigo", con un solo espacio entre las palabras.
+Aquí, al utilizar el flag `true`, sólo se eliminará la primera letra "a" de la cadena original.
+
+Para obtener una lista completa de los flags disponibles y su comportamiento, puedes consultar la documentación oficial de Gleam.
 
 ## Ver también
 
-- Documentación de Gleam sobre `String.replace`: https://gleam.run/modules/string#replace
-- Tutorial de expresiones regulares en Gleam: https://davembush.github.io/regular-expressions-in-gleam/
-- Ejemplos de uso de `String.replace` en Gleam: https://gleam-examples.github.io/string/#replace
+- [Documentación oficial de Gleam](https://gleam.run/documentation/)
+- [Tutorial de expresiones regulares en Gleam](https://gleam.run/book/tutorials/regular-expressions.html)
+- [Ejemplos de uso de `String.replace`](https://troutsblog.com/blog/deleting-patterns-string-replace-gleam)

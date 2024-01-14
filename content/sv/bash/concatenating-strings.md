@@ -1,46 +1,69 @@
 ---
-title:    "Bash: Sammanfogning av strängar"
+title:    "Bash: Sammanslagning av strängar"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konkatenera strängar är ett viktigt verktyg inom Bash-programmering eftersom det låter dig kombinera flera strängar till en enda, vilket kan vara användbart i många olika scenarion.
 
-## Så här gör du
-För att konkatenera strängar kan du använda dig av operatorn `+` eller genom att helt enkelt skriva ihop strängarna med en mellanslag mellan. Här är ett enkelt exempel:
+Att sammanfoga strängar är en vanlig uppgift inom Bash-programmering. Genom att kombinera flera strängar kan vi skapa mer dynamiska och anpassade meddelanden och utdata i våra skript. Det är också ett sätt att hålla koden renare och mer lättläslig.
 
-```Bash
-string1="Hej"
-string2="världen!"
-echo $string1$string2
-```
+## Hur man gör
 
-Detta kommer att ge följande utmatning:
-
-```
-Hej världen!
-```
-
-Det går även bra att konkatenera variabler, som i följande exempel:
+För att sammanfoga strängar i Bash använder vi oss av operatorn "+", vilket indikerar att två strängar ska kombineras. Vi kan också använda oss av metoden "printf" för att formatera och sammanfoga flera strängar.
 
 ```Bash
-name="Emma"
-language="Bash"
-echo "Hej $name, välkommen till $language-gemenskapen!"
+strang1="Hej"
+strang2="världen!"
+echo $strang1$strang2
+
+# Resultat: Hej världen!
 ```
 
-Vilket kommer att ge utmatningen:
+Vi kan också använda oss av variabler för att sammanfoga flera strängar på ett mer dynamiskt sätt.
 
+```Bash
+namn="Johan"
+halsning="Hej"
+echo $halsning $namn", välkommen till min blogg!"
+
+# Resultat: Hej Johan, välkommen till min blogg!
 ```
-Hej Emma, välkommen till Bash-gemenskapen!
+
+En annan metod är att använda sig av "printf" för att ange specifika format för våra strängar.
+
+```Bash
+namn="Maria"
+echo "Välkommen %s, till vår hemsida!" | printf $namn
+
+# Resultat: Välkommen Maria, till vår hemsida!
 ```
 
 ## Djupdykning
-Det finns några viktiga saker att tänka på när du konkatenerar strängar i Bash. En är att du behöver vara noga med mellanslag och andra specialtecken, annars kan det leda till oönskade effekter. Du kan också använda dig av en `+=` operator om du vill konkatenera flera strängar till en variabel. Det finns även andra och mer avancerade tekniker för att konkatenera strängar i Bash, som du kan läsa mer om i Bash-dokumentationen.
 
-## Se även
-- [Bash dokumentation](https://www.gnu.org/software/bash/) 
-- [Bash-konkatenering för nybörjare](https://medium.com/@codingnikola/bash-concatenation-for-beginners-137b0bd1bc61) 
-- [Bash strängmanipulering](https://ryanstutorials.net/bash-scripting-tutorial/bash-strings.php)
+När vi sammanfogar strängar i Bash är det viktigt att vara medveten om korrekt formatering. Till exempel, om vi vill ange citattecken i en sträng så måste vi använda en escape-sekvens för att Bash inte ska tolka dem som en del av strängen.
+
+```Bash
+citat="\"En vän är en som vet allt om dig och ändå tycker om dig.\""
+echo $citat
+
+# Resultat: "En vän är en som vet allt om dig och ändå tycker om dig."
+```
+
+Vi kan också använda oss av funktionen "bc" för att sammanfoga strängar med matematiska operationer.
+
+```Bash
+tal1=5
+tal2=8
+echo "Resultatet är: "$tal1"+"$tal2"="$(($tal1 + $tal2))| bc
+
+# Resultat: Resultatet är: 5+8=13
+```
+
+## Se också
+
+- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash scripting tutorial for beginners](https://www.shellscript.sh/tutorial.html)
+- [The Linux Documentation Project](https://tldp.org/)

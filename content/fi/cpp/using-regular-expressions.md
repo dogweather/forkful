@@ -1,34 +1,52 @@
 ---
 title:    "C++: Säännöllisten lausekkeiden käyttö"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännönmukaisia lausekkeita?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännönmukaiset lausekkeet ovat hyödyllinen työkalu C++-ohjelmoijille, jotka haluavat tarkkaan etsiä tai muokata tekstidataa. Niitä voidaan käyttää esimerkiksi tekstin käsittelyssä, tiedostojen parsimisessa ja syötevalidoinnissa. Säännönmukaiset lausekkeet säästävät aikaa ja vaivaa manuaalisilta etsinnöiltä ja korvaamisilta, ja ne ovat myös erittäin tarkkoja.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä C++ ohjelmoinnissa, ja ne tarjoavat tehokkaan tavan tarkistaa ja käsitellä merkkijonoja. Niitä voidaan käyttää esimerkiksi merkkijonon muotoilussa, hakemisessa ja korvaamisessa.
 
-## Kuinka käyttää säännönmukaisia lausekkeita?
+## Miten käyttää säännöllisiä lausekkeita
 
-C++:ssa säännönmukaiset lausekkeet ovat osa standardin kirjastoa. Niiden käyttämiseksi tarvitaan säännönmukaiset lausekkeet käsittelevä kirjasto `regex`, joka tarjoaa tarvittavat luokat ja funktiot. Esimerkiksi, jos haluat etsiä tiettyä merkkijonoa tekstistä, voit käyttää `std::regex_search` -funktiota ja antaa sille säännönmukaisen lausekkeen ja etsittävän merkkijonon parametreina. Alla on yksinkertainen esimerkki:
+Säännöllisiä lausekkeita käytetään C++:ssa "regex" kirjastolla. Ensiksi, se täytyy sisällyttää ohjelmaan ```#include <regex>```. Sitten voimme käyttää säännöllisiä lausekkeita etsintään ja käsittelyyn.
 
+Esimerkiksi voimme tarkistaa, onko merkkijono kokonaisluku regex-kirjasto avulla: 
 ```C++
-std::regex pattern("hello");
-std::string text = "Hello World!";
-if (std::regex_search(text, pattern)) {
-    std::cout << "Merkkijono löytyi!" << std::endl;
+#include <iostream>
+#include <regex>
+
+int main() {
+  std::string s = "12345";
+  
+  // Luodaan regex objekti
+  std::regex integer("^[0-9]+$");
+  
+  // Tarkistetaan, onko merkkijono kokonaisluku
+  if (std::regex_match(s, integer)) {
+    std::cout << "Merkkijono on kokonaisluku." << std::endl;
+  } else {
+    std::cout << "Merkkijono ei ole kokonaisluku." << std::endl;
+  }
+  return 0;
 }
 ```
+**Tuloste:**
+```
+Merkkijono on kokonaisluku.
+```
 
-Tämä esimerkki etsii tekstistä "Hello World!" säännönmukaisella lausekkeella "hello" ja tulostaa viestin, jos merkkijono löytyy. Säännönmukainen lauseke voi myös sisältää metakaraktereita, kuten `.` tai `*`, joiden avulla voidaan löytää monenlaisia merkkijonoja.
+## Syvällisempiä tietoja säännöllisten lausekkeiden käytöstä
 
-## Syväsukellus säännönmukaisiin lausekkeisiin
+Säännöllisissä lausekkeissa on laaja valikoima erilaisia toimintoja ja käyttötarkoituksia. Ne voivat sisältää sääntöjä, jotka määrittelevät merkkien ja merkkijonojen rakenteen ja muodon.
 
-Säännönmukaiset lausekkeet ovat erittäin tehokkaita ja monipuolisia, mutta niiden käyttö voi olla haastavaa aloittelijoille. Hyvä tapa tutustua säännönmukaisiin lausekkeisiin on käyttää erilaisia online-työkaluja, jotka auttavat luomaan ja testaamaan lausekkeita. Lisäksi on tärkeää ymmärtää, että säännönmukaiset lausekkeet ovat hyvin suorituskykyisiä, joten niiden käyttöä tulee harkita, jos ohjelma käsittelee suuria määriä dataa.
+Säännöllinen lauseke `"^[0-9]+$"` käytettynä edellisessä esimerkissä tarkoittaa, että merkkijonossa voi olla vain numeromerkkejä ja sen pituus voi olla mikä tahansa. Voimme myös käyttää säännöllisiä lausekkeita tarkastelemaan esimerkiksi sähköpostiosoitteita, puhelinnumeroita tai jopa monimutkaisempia merkkijonoja.
 
 ## Katso myös
 
-- [Säännönmukaiset lausekkeet C++:ssa](https://www.cplusplus.com/reference/regex/)
-- [Regex101](https://regex101.com/) - sivusto, joka auttaa testaamaan säännönmukaisia lausekkeita
-- [Säännönmukaiset lausekkeet -opas](https://www.regular-expressions.info/) - kattava opas säännönmukaisten lausekkeiden käyttöön eri ohjelmointikielillä
+- [cppreference: regex](https://en.cppreference.com/w/cpp/regex) (englanniksi)
+- [Tutoriaali säännöllisistä lausekkeista](https://www.tutorialspoint.com/cpp_standard_library/cpp_regular_expressions.htm) (englanniksi)
+- [Säännölliset lausekkeet ja niiden sovellukset](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke) (suomeksi)

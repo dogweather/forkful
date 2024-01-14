@@ -1,50 +1,49 @@
 ---
 title:    "C#: Ricerca e sostituzione di testo"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+In programmazione, il sostituire testo è un'operazione comune che può aiutare a risparmiare tempo e rendere il codice più efficiente. Imparare come farlo correttamente può semplificare le modifiche di un grande volume di testo e migliorare la qualità del codice.
 
-La ricerca e la sostituzione del testo sono azioni comuni che ogni programmatore deve affrontare nel suo lavoro quotidiano. Questo semplice processo può risparmiare tempo ed evitare errori di battitura, rendendo il codice più efficace e leggibile.
+## Come fare
+In C#, esistono diverse opzioni per cercare e sostituire del testo all'interno di una stringa. Una delle opzioni più semplici è utilizzare il metodo `Replace` della classe `String`. Ad esempio:
 
-## Come Fare
-
-Per eseguire correttamente la ricerca e la sostituzione del testo in un programma C#, è possibile utilizzare la funzione Replace() della classe String. Di seguito è riportato un esempio di codice che mostra come utilizzare questa funzione:
-
+```C#
+string frase = "Ciao a tutti!";
+string nuovaFrase = frase.Replace("tutti", "amici");
+Console.WriteLine(nuovaFrase);
 ```
-string myString = "Questo è un esempio di testo da modificare.";
-string nuovoTesto = myString.Replace("esempio", "esempio modificato");
+
+Output: `Ciao a amici!`
+
+È anche possibile utilizzare l'espressione regolare `Regex` per un modo più avanzato per cercare e sostituire del testo. Ad esempio:
+
+```C#
+string testo = "Questo è un testo di esempio.";
+string nuovoTesto = Regex.Replace(testo, @"[aeiou]", "-");
 Console.WriteLine(nuovoTesto);
 ```
 
-L'output di questo codice sarà:
-
-```
-Questo è un esempio modificato di testo da modificare.
-```
-
-Si noti che la funzione Replace() sostituirà solo la prima occorrenza di una stringa specificata. Se si desidera sostituire tutte le occorrenze, è necessario utilizzare la funzione ReplaceAll(), come mostrato nell'esempio seguente:
-
-```
-string myString = "Questo è un esempio di testo che contiene più di una occorrenza.";
-string nuovoTesto = myString.ReplaceAll("occorrenza", "sostituzione");
-Console.WriteLine(nuovoTesto);
-```
-
-L'output di questo codice sarà:
-
-```
-Questo è un esempio di testo che contiene più di una sostituzione.
-```
+Output: `Q--st- - un t-st- d- -mp--.`
 
 ## Approfondimento
+Nel metodo `Replace` della classe `String`, è possibile specificare una terza opzione che indica quante sostituzioni devono essere effettuate. Questo è utile se si desidera sostituire solo alcune occorrenze di un determinato testo all'interno di una stringa.
 
-Il metodo Replace() può essere utilizzato anche per sostituire più di una stringa alla volta. Questa funzionalità è particolarmente utile quando si lavora con testi più lunghi e complessi. Inoltre, esistono anche altre funzioni avanzate per gestire la ricerca e la sostituzione del testo, come ad esempio l'utilizzo delle espressioni regolari.
+```C#
+string testo = "Questo è un testo di esempio.";
+string nuovoTesto = testo.Replace("o", "-");
+Console.WriteLine(nuovoTesto);
+```
 
-## Vedi Anche
+Output: `Quest- è un test- di emprpi-.`
 
-- [Documentazione di Microsoft su Replace()](https://docs.microsoft.com/it-it/dotnet/api/system.string.replace)
-- [Esempi di espressioni regolari in C#](https://www.c-sharpcorner.com/UploadFile/9582c9/expression-regualr-expression-in-C-Sharp/)
-- [Tutorial su come utilizzare Replace() in C#](https://www.geeksforgeeks.org/replace-method-in-c-sharp/)
+Esistono anche altre opzioni avanzate quando si utilizza l'espressione regolare `Regex`, come la possibilità di specificare un limite di tempo per la ricerca e una combinazione di opzioni per una maggiore precisione nella sostituzione del testo.
+
+## Vedi anche
+- Documentazione Microsoft su come sostituire testo in una stringa in C#: https://docs.microsoft.com/it-it/dotnet/api/system.string.replace
+- Tutorial su come utilizzare le espressioni regolari in C#: https://www.c-sharpcorner.com/article/c-sharp-regular-expressions-tutorial-with-examples/
+- Domande frequenti su come effettuare ricerche e sostituzioni in C#: https://stackoverflow.com/questions/15534375/search-and-replace-in-c-sharp

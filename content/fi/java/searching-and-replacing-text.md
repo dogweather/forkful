@@ -1,68 +1,45 @@
 ---
 title:    "Java: Tekstin etsiminen ja korvaaminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
+Tekstin etsiminen ja korvaaminen ovat olennainen osa Java-ohjelmointia. Ne mahdollistavat tietyn merkkijonon tai sanan korvaamisen toisella halutulla merkkijonolla, mikä auttaa esimerkiksi korjaamaan oikeinkirjoitusvirheitä tai muuttamaan vanhoja tekstejä uudempaan muotoon. Tämä blogipostaus opastaa, miten voit tehdä tämän kätevästi Java-koodillasi.
 
-Miksi etsitään ja vaihdetaan tekstiä? Joskus meillä on tarve muokata suuria tekstimassoja nopeasti ja tehokkaasti. Tällöin tekstien etsiminen ja korvaaminen on erittäin kätevä tapa saada halutut muutokset tehtyä nopeasti.
+## Näin
+Java-ohjelmoijalla on käytössään muutamia eri metodeja tekstin etsimiseen ja korvaamiseen. Yksi näistä metodeista on `replaceAll()`-metodi, jonka avulla voit korvata kaikki halutut merkkijonot toisilla merkkijonoilla haluamallasi tavalla.
 
-# Miten
+Esimerkiksi, jos haluat korvata kaikki "kissa"-sanan esiintymät tekstin sisällä "koira"-sanalla, voit käyttää seuraavaa koodia:
 
-Tässä osiossa käydään läpi konkreettisia esimerkkejä siitä, miten etsiä ja vaihtaa tekstiä Javalla. Käytämme esimerkimme `replace()`-metodia, joka on osa `String`-luokan toiminnallisuutta.
-
-````Java
-public static void main (String[] args) { 
-  // Luodaan esimerkkiteksti
-  String teksti = "Hei kaikille Java-faneille! Tervetuloa oppimaan uutta!";
-  
-  // Etsitään ja vaihdetaan teksti
-  String uusiTeksti = teksti.replace("Java", "Python");
-  
-  // Tulostetaan uusi teksti
-  System.out.println(uusiTeksti);
-}
-````
-
-Tämä koodipätkä tulostaisi seuraavan tekstin:
-
-```
-Hei kaikille Python-faneille! Tervetuloa oppimaan uutta!
+```Java
+String teksti = "Tänään näin pienen kissan puistossa.";
+String uusiTeksti = teksti.replaceAll("kissa", "koira");
+System.out.println(uusiTeksti);
 ```
 
-Näin yksinkertaisesti tekstien etsiminen ja korvaaminen onnistuu Javalla.
+Tämä koodi tulostaa "Tänään näin pienen koiran puistossa."
 
-# Syvällinen sukellus
+Toinen tapa etsiä ja korvata tekstejä on käyttää `replace()`-metodia, joka ottaa vastaan kaksi parametria: vanhan tekstin ja uuden tekstin. Tämän metodin avulla voit korvata vain yhden tietyn merkkijonon kerrallaan.
 
-Ehkä haluat tehdä enemmän kuin vain yksinkertaisen korvaamisen. Javalla on mahdollista käyttää regular expressioneita (säännöllisiä lausekkeita) tekstien etsimiseen ja korvaamiseen. Tämä antaa sinulle paljon laajemman ja tarkemman hallinnan siitä, mitä etsit ja mitä korvaat.
-
-Regular expressionit ovat sääntöjä, jotka määrittelevät, millaisia merkkijonoja haluat löytää. Tässä esimerkissä etsimme kaikki sanat, jotka alkavat isolla kirjaimella ja loppuvat huutomerkkiin.
-
-````Java
-public static void main (String[] args) {
-  // Luodaan esimerkkiteksti
-  String teksti = "Hei kaikille Java-faneille! Tervetuloa oppimaan uutta!";
-  
-  // Etsitään ja vaihdetaan teksti regular expressionin avulla
-  String uusiTeksti = teksti.replaceAll("\\b[A-Z][a-z]*[!]\\b", "Python");
-  
-  // Tulostetaan uusi teksti
-  System.out.println(uusiTeksti);
-}
-````
-
-Tämä koodipätkä tulostaisi seuraavan tekstin:
-
-```
-Hei kaikille Python-faneille! Tervetuloa oppimaan uutta!
+```Java
+String teksti = "Minulla on musta koira.";
+String uusiTeksti = teksti.replace("musta", "valkoinen");
+System.out.println(uusiTeksti);
 ```
 
-Syvällisessä sukelluksessa on mahdollista käyttää monimutkaisempia regular expressioneita ja luoda monipuolisia tekstien etsimisen ja korvaamisen toimintoja.
+Tämä koodi tulostaa "Minulla on valkoinen koira."
 
-# Katso myös
+Voit myös käyttää `startsWith()`- ja `endsWith()`-metodeja tarkistaaksesi, alkaako tai päättyykö tekstisi tietyllä merkkijonolla. Nämä metodit voivat olla hyödyllisiä esimerkiksi silloin, kun haluat korvata tietyn sanan vain tietyssä kohdassa tekstiä.
 
-- [Oracle Java - String luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Regular Expressions](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-- [Regular-Expressions.info](https://www.regular-expressions.info)
+## Syvällinen sukellus
+Java tarjoaa monia vaihtoehtoja tekstin etsimiseen ja korvaamiseen, ja erilaiset metodit sopivat erilaisiin tilanteisiin. On tärkeää pohtia, mikä metodi sopii parhaiten juuri omaan tarkoitukseesi. Lisäksi voit käyttää myös säännöllisiä lausekkeita tarkemman tekstin etsimisen ja korvaamisen kanssa.
+
+Muistathan myös aina testata koodisi erilaisilla syötteillä ja tarkistaa, että haluttu tulos saavutetaan.
+
+## Katso myös
+- [Oracle Java-tietojenkäsittelyopas](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
+- [Java String-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Säännölliset lausekkeet Java:ssa](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

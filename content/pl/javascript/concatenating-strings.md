@@ -1,61 +1,66 @@
 ---
-title:    "Javascript: Łączenie ciągów tekstowych"
+title:    "Javascript: Łączenie ciągów znaków"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Witajcie Javascriptowcy! Jeśli jesteście nowicjuszami w programowaniu, pewnie zastanawiacie się, po co nam w ogóle łączyć ciągi tekstu? Aby odpowiedzieć na to pytanie, musimy najpierw zrozumieć, czym są ciągi tekstowe i dlaczego są one ważne w naszych programach.
-
-Ciągi tekstowe są po prostu sekwencjami znaków, które składają się na nasze słowa, zdania i teksty. W programowaniu często musimy manipulować tymi ciągami tekstu, czy to dla celów prezentacyjnych, czy dla przetwarzania danych. Jednym z najważniejszych sposobów manipulowania ciągami tekstu jest po prostu łączenie ich razem - czyli tzw. konkatenacja. 
-
-Teraz możemy rozpocząć naszą przygodę z łączeniem ciągów tekstowych w Javascript! 
+Concatenacja jest jedną z podstawowych operacji w programowaniu, w której łączymy ze sobą dwa lub więcej ciągów znaków. Jest to bardzo przydatne, ponieważ pozwala nam na tworzenie bardziej złożonych i dynamicznych ciągów znaków, co jest niezbędne w wielu aplikacjach internetowych i mobilnych.
 
 ## Jak to zrobić
 
-Przede wszystkim musimy zdefiniować zmienne, które będą przechowywać nasze ciągi tekstowe. Możemy to zrobić przy użyciu słowa kluczowego `var` lub `let`, a następnie przypisać do nich nasze ciągi tekstowe, używając cudzysłowów. Na przykład:
+Istnieje wiele sposobów na konkatenację ciągów znaków w języku Javascript. Jedną z najpopularniejszych metod jest użycie operatora "+" lub metody ```concat()```. Przykładowy kod wyglądałby następująco:
 
 ```Javascript
-var imie = "Kasia";
-var nazwisko = "Kowalska";
+// Użycie operatora "+"
+var imie = "Jan";
+var nazwisko = "Kowalski";
+var pelneNazwisko = imie + " " + nazwisko;
+console.log(pelneNazwisko); // Wynik: Jan Kowalski
+
+// Użycie metody concat()
+var imie = "Anna";
+var nazwisko = "Nowak";
+var pelneNazwisko = imie.concat(" ", nazwisko);
+console.log(pelneNazwisko); // Wynik: Anna Nowak
 ```
 
-Teraz możemy połączyć te zmienne za pomocą operatora `+`, tak jakbyśmy chcieli dodać dwie liczby. Pamiętajmy tylko, aby dodać również spacje, jeśli chcemy zachować odpowiedni format naszego tekstu. Oto przykładowy kod:
+Możemy również użyć tych samych metod do konkatenacji liczb, ale pamiętajmy, że wtedy zostaną one automatycznie przekonwertowane na ciągi znaków.
+
+Inną ciekawą funkcjonalnością jest wykorzystanie operatora "+=" lub metody ```concat()``` do dodawania kolejnych elementów do istniejącego ciągu znaków. Przykładowy kod wyglądałby tak:
 
 ```Javascript
-var pelneImie = imie + " " + nazwisko;
-console.log(pelneImie);
+var zdanie = "Programowanie w ";
+var jezyk = "Javascript";
+zdanie += jezyk;
+console.log(zdanie); // Wynik: Programowanie w Javascript
+
+var zdanie = "Liczby: ";
+var liczby = "123";
+zdanie = zdanie.concat(liczby);
+console.log(zdanie); // Wynik: Liczby: 123
 ```
 
-Powyższy kod wyświetli w konsoli: `Kasia Kowalska`. 
-
-Ale co jeśli chcemy połączyć więcej niż dwa ciągi tekstowe? W takim przypadku możemy użyć metody `.concat()`, która pozwala nałączać więcej niż dwie zmienne. Przykładowo:
-
-```Javascript 
-var zawolanie = "Witaj, ";
-var komunikat = zawolanie.concat(imie, "! Miło cię widzieć!");
-console.log(komunikat);
-```
-
-Wyjściem tego kodu będzie: `Witaj, Kasia! Miło cię widzieć!`.
-
-Możemy również wykorzystać konkatenację w celu łączenia liter i ciągów znaków w jedno wyrażenie. Na przykład:
+Warto również wspomnieć o tzw. template strings, które pozwalają na łatwiejsze i czytelniejsze tworzenie ciągów znaków z użyciem zmiennych. Przykładowy kod wyglądałby tak:
 
 ```Javascript
-var inicjaly = imie[0] + "." + nazwisko[0] + ".";
-console.log(inicjaly);
+var imie = "Maria";
+var nazwisko = "Nowacka";
+var pelneNazwisko = `${imie} ${nazwisko}`;
+console.log(pelneNazwisko); // Wynik: Maria Nowacka
 ```
 
-Ten kod wyświetli na ekranie: `K.K.`
+## Głębsze zagadnienia
 
-## Wnikliwy przegląd
+Podczas konkatenacji ważne jest, aby pamiętać o odpowiedniej kolejności operacji. Na przykład, jeśli chcemy dodać cyfrę do ciągu znaków, to musimy uważać, aby najpierw przekonwertować liczbę na ciąg znaków. Inaczej, wynik będzie nieprawidłowy.
 
-W przypadku tego prostego przykładu może wydawać się, że konkatenacja nie jest zbyt skomplikowana. Ale im bardziej zaawansowane aplikacje tworzymy, tym bardziej złożone operacje możemy wykonać na naszych ciągach tekstowych. 
+Warto również zwrócić uwagę na wydajność naszego kodu. W przypadku, gdy często dokonujemy konkatenacji większej liczby ciągów znaków, lepszym wyborem może być użycie metody ```join()```, która jest bardziej wydajna niż połączenie wielu zmiennych przy użyciu operatora "+". 
 
-Na przykład możemy użyć metody `.slice()` do wycinania fragmentów ciągów tekstowych i łączenia ich w nowe wyrażenia. Możemy również użyć operatora `+=` aby w prosty sposób dodać nowe ciągi tekstowe do naszych istniejących zmiennych. Możliwości jest wiele, a tylko dzięki łączeniu ciągów tekstowych jesteśmy w stanie tworzyć coraz to ciekawsze funkcjonalności w naszych programach.
+## Zobacz również
 
-## Zobacz też
-
-Teraz, gdy znasz podstawy konkatenacji ciągów tekstowych w Javascript, możesz spróbować swoich sił w tworzeniu własnych przykładowych kodów i eksperymentować z różnymi metodami i operatorami. Poniżej znajdziesz
+1. [Podstawy języka Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide)
+2. [Dokumentacja metody concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+3. [Dokumentacja metody join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

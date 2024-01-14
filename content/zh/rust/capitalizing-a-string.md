@@ -1,50 +1,33 @@
 ---
-title:    "Rust: 使用计算机编程的标题：字符串大写化。"
+title:    "Rust: 字符串大写化"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么要学习Rust编程？
+## 为什么
+Rust是一种现代的，强大的编程语言，被越来越多的开发者所青睐。它的最大优点之一就是其丰富的标准库，提供了许多方便的函数和方法来处理数据。其中之一就是 `to_uppercase()`函数，它可以将一个字符串中的所有小写字母转换为大写字母。那么为什么我们需要这个函数呢？有时候，我们需要在我们的程序中对用户的输入做一些处理，比如用户输入的用户名可能包含大小写混合的情况，但是在后续处理中，我们需要保证所有的用户名都是大写的。这时候， `to_uppercase()`函数就能派上用场了。
 
-Rust是一种快速、安全的编程语言，它具有出色的并发性能和内存安全保证。它可以用于开发各种类型的应用程序，从嵌入式系统到网络服务器都可以。学习Rust可以帮助你成为一名优秀的程序员，并为你的职业生涯打下坚实的基础。
-
-如何进行字符串大写转换？
-
-首先，我们需要导入Rust的标准库。然后，我们可以使用to_ascii_uppercase()函数来将字符串转换为大写。让我们来看一个简单的例子：
+## 如何操作
+要使用 `to_uppercase()`函数，首先需要在 `std`标准库中引入 `String`类型。然后，使用点操作符来调用该函数，如下所示：
 
 ```Rust
-use std::ascii::AsciiExt;
+use std::string::Stirng;
 
-let my_string = "hello world";
-let capital_string = my_string.to_ascii_uppercase();
+let username = String::from("rustfan");
 
-println!("{}", capital_string);
+let uppercase_username = username.to_uppercase();
+
+println!("Uppercase username: {}", uppercase_username);
 ```
 
-这将打印出 "HELLO WORLD"。
+这里我们使用 `String`类型的 `to_uppercase()`函数将 `username`转换为大写并将其保存到一个新的变量中。最后，使用 `println!`宏来打印转换后的结果。
 
-深入了解字符串大写转换
+## 深入探讨
+实际上，由于Rust的所有权系统，我们不能直接对字符串进行修改而是需要创建一个新的字符串。这也就意味着，每次调用 `to_uppercase()`函数时都会进行一次内存分配，这在性能上可能会有一些影响。因此，在处理大量字符串时，我们可以考虑使用 `to_ascii_uppercase()`函数，它将字符串中的所有字符转换为大写字符，但不会进行内存分配。
 
-在Rust中，字符串是不可变的，这意味着我们无法直接修改它们。所以，to_ascii_uppercase()函数实际上会返回一个新的大写字符串，而不是修改原始字符串。
-
-另外，有时我们可能需要考虑字符串的编码。to_ascii_uppercase()函数默认使用ASCII编码，但如果我们的字符串是用其他编码方式表示的，它就无法正常工作。此时，我们可以使用unicode_chars()函数来获取字符串的字符迭代器，并使用to_uppercase()方法来转换每个字符的大小写。让我们来看一个例子：
-
-```Rust
-let my_string = "你好";
-let uppercase_string = my_string.chars().map(|c| c.to_uppercase()).collect::<String>();
-
-println!("{}", uppercase_string);
-```
-
-这将打印出 "你好"。
-
-另外，Rust还提供了一个名为String::make_ascii_uppercase()的方法，它可以直接修改原始字符串为大写。但是要注意，这个方法只适用于ASCII编码的字符串。
-
-See Also（请参阅）：
-
-- [Rust官方文档](https://www.rust-lang.org/zh-CN/documentation.html)
-- [Rust编程语言入门教程](https://rustcc.gitbooks.io/rustprimer/content/)
-- [Rust语言中文社区](https://rust-china.org/)
-
-继续学习并掌握好Rust编程语言，你将成为一名优秀的程序员，并创造出令人惊叹的应用程序！加油！
+## 看看这些
+- [Rust文档：标准库](https://doc.rust-lang.org/std/)
+- [Rust文档：String类型](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust By Example：Strings](https://doc.rust-lang.org/stable/rust-by-example/std/strings.html)

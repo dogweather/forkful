@@ -1,67 +1,38 @@
 ---
-title:    "Haskell: 计算字符串的长度"
+title:    "Haskell: 找到字符串的长度"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Mandarin translation:
+## 为什么
+在编程中，有时候需要计算字符串的长度。通过学习如何找到字符串的长度，您可以更有效地处理文本数据，使得编程变得更容易。
 
-# 为什么
-
-字符串的长度是编程中经常要处理的一个问题。无论是统计文字数量，还是验证输入的合法性，获取字符串的长度都是必要的。在Haskell编程中，我们可以利用一个内置的函数来轻松地获取字符串的长度。在本文中，我将向大家介绍如何使用Haskell来获取字符串的长度，以及一些深入的讨论。
-
-## 怎么做
-
-在Haskell中，我们可以使用`length`函数来获取字符串的长度。下面是一个示例代码：
+## 如何
+首先，导入`Data.List`库，它提供了许多有用的函数来处理列表和字符串。
 
 ```Haskell
--- 定义一个字符串
-str = "Hello World"
-
--- 使用length函数来获取字符串的长度
-len = length str
-
--- 输出结果
-print(len) -- 输出：11
+import Data.List
 ```
 
-我们也可以将`length`函数直接应用到字符串上，而不需要额外定义一个变量：
+接下来，我们可以使用`length`函数来计算字符串的长度。这个函数接受一个字符串作为输入，并返回一个整数，代表字符串的长度。
 
 ```Haskell
--- 直接获取字符串的长度
-len = length "Welcome to Haskell"
-
--- 输出结果
-print(len) -- 输出：20
+length "Hello World!" -- Output: 12
 ```
 
-虽然`length`函数可以直接返回字符串的长度，但是我们也可以使用模式匹配来获取。下面是一个示例代码：
+如果我们想要计算一个列表中每个元素的字符串长度，可以使用`map`函数和`length`函数的组合。
 
 ```Haskell
--- 使用模式匹配来获取字符串的长度
-strLength :: [a] -> Int
-strLength [] = 0
-strLength (x:xs) = 1 + strLength(xs)
-
--- 输出结果
-print(strLength "This is a string") -- 输出：16
+map length ["Apple", "Banana", "Orange"] -- Output: [5,6,6]
 ```
 
-## 深入讨论
+## 深入探讨
+在Haskell中，字符串实际上是一个字符的列表。每个字符都有一个对应的ASCII值，因此计算字符串的长度就是计算列表中的元素数，即字符的数量。这也是为什么我们可以使用`length`函数来计算字符串的长度。
 
-在Haskell中，字符串被看作是一个字符列表。因此，我们可以像处理列表一样来处理字符串。`length`函数也是基于此原理来计算字符串长度的。它会遍历每个字符，并计算字符的数量来获取字符串的长度。值得注意的是，`length`函数的时间复杂度为O(n)，其中n为字符串中的字符数量。
+除了`length`函数，还有其他一些有用的函数来处理字符串。例如，`head`函数用于获取字符串的第一个字符，`tail`函数用于获取字符串除去第一个字符后的剩余部分。
 
-除了`length`函数外，Haskell还提供了其他一些方便的函数来处理字符串，例如`take`、`drop`、`reverse`等。通过深入研究这些函数，我们可以更加灵活和高效地处理字符串，使编程变得更加简单。
-
-# 参考链接
-
-- [Haskell Documentation: Strings](https://www.haskell.org/tutorial/strings.html)
-- [Learn You a Haskell: Types and Typeclasses](http://learnyouahaskell.com/types-and-typeclasses)
-- [Real World Haskell: Strings](http://book.realworldhaskell.org/read/strings.html)
-
-# 参见
-
-- [Haskell入门教程](https://zhuanlan.zhihu.com/p/37973060)
-- [Haskell String Tutorial](https://www.tutorialspoint.com/haskell/haskell_string.htm)
-- [Haskell Cheatsheet](https://cheatsheet.codeslower.com/CheatSheet.pdf)
+## 参考资料
+- [Haskell Wiki: Strings](https://wiki.haskell.org/String)
+- [Learn You a Haskell: Lists](http://learnyouahaskell.com/starting-out#ready-set-go)

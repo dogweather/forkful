@@ -1,42 +1,43 @@
 ---
-title:    "C#: 作成する一時ファイル"
+title:    "C#: 一時的なファイルの作成"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ一時ファイルを作成するのか
 
-プログラミングで一時ファイルを作成するメリットは何でしょうか？一時ファイルを作成することで、一時的なデータや処理結果を保持し、プログラムのパフォーマンスを向上させることができます。
+一時ファイルを作成するときは、プログラムの実行中に短期間使用されるファイルが必要になった場合に役立ちます。例えば、一時的なデータを保存したり、テスト用のファイルを作成する際に使用できます。
 
 ## 作り方
 
-一時ファイルを作成するには、.NET Frameworkのクラスライブラリである `System.IO` 名前空間の `Path.GetTempFileName()` メソッドを使用します。
-
-以下は、C#で一時ファイルを作成し、ファイルパスを出力するコード例です。
+一時ファイルを作成するには、`Path.GetTempFileName()`メソッドを使用します。このメソッドは、一時ファイルのパスを文字列で返します。次に、そのパスを使用してファイルを作成し、書き込みや読み取りが行えます。
 
 ```C#
-string tempFile = Path.GetTempFileName();
-Console.WriteLine("一時ファイルが作成されました：" + tempFile);
+var tempFilePath = Path.GetTempFileName();
+// 一時ファイルの作成
+
+using (FileStream fs = File.Create(tempFilePath))
+{
+    //ファイルに書き込みができるようにする
+}
+
+using (StreamReader sr = File.OpenText(tempFilePath))
+{
+    //ファイルからデータを読み取る
+}
 ```
 
-実行結果:
+作成した一時ファイルは、プログラムの実行が終了すると自動的に削除されます。
 
-```
-一時ファイルが作成されました：C:\Users\username\AppData\Local\Temp\tmp1234.tmp
-```
+## 深堀り
 
-## 詳細を深堀り
+一時ファイルは、プログラムの一時的なデータの保存やテスト用のファイルの作成以外にも様々な用途に使用できます。例えば、ダウンロード中の一時ファイルを作成して、ダウンロードが完了したら削除することができます。
 
-`Path.GetTempFileName()` メソッドを呼び出すと、一時ファイルが作成され、ファイルパスが返されます。このファイルパスは、一時的なファイル名を持つ空のファイルとなります。
+また、一時ファイルを使用することで、プログラムのパフォーマンスを向上させることができます。プログラムが頻繁にファイルを読み書きする場合、一時ファイルを使用することでハードディスクのアクセス回数を減らすことができます。
 
-`Path.GetTempFileName()` メソッドは、ユニークなファイル名を生成するために、一時ディレクトリにランダムな数字を付け加えます。この方法により、複数のアプリケーションで同じファイル名を使うことを防ぎます。
+# 参考リンク
 
-一時ファイルは、プログラムが終了すると削除されます。また、`Path.GetTempFileName()` メソッドは、既に存在するファイルは置き換えないことを保証しています。
-
-## この記事を読んだら次は
-
-一時ファイルを作成する他の方法や、一時ファイルを活用する方法については以下のリンクを参考にしてください。
-
-- [Microsoft Docs - `Path.GetTempFileName()` メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.path.gettempfilename?view=netframework-4.8)
-- [C# Corner - "Working with Temporary Files in C#"](https://www.c-sharpcorner.com/article/working-with-temporary-files-in-c-sharp/)
+- [C#でファイル操作をする方法](https://qiita.com/moriyaman/items/bd3b1e282e53566e5cd1)
+- [一時ファイルの作成と使用方法](https://docs.microsoft.com/ja-jp/dotnet/standard/io/how-to-create-temporary-files)

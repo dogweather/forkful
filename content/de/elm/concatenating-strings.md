@@ -1,51 +1,78 @@
 ---
-title:    "Elm: Verkettung von Zeichenfolgen"
+title:    "Elm: Verketten von Zeichenfolgen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Warum sollte man sich mit der Verkettung von Zeichenfolgen beschäftigen?
+## Warum
 
-Die Verkettung von Zeichenfolgen ist eine grundlegende Fähigkeit in der Programmierung, die es ermöglicht, mehrere Zeichenfolgen zu einem String zusammenzufügen. Dies ist besonders hilfreich, wenn man dynamische Inhalte auf einer Webseite erzeugen möchte oder komplexe Textformulare benötigt.
+Das Zusammenfügen oder Verketten von Strings ist eine wichtige Fähigkeit in vielen Programmiersprachen, einschließlich Elm. Es ermöglicht es Programmierern, dynamische Texte zu erstellen, die auf Variablen oder Benutzereingaben basieren. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man Strings in Elm konkateniert.
 
-## Wie man Zeichenfolgen verkettet
+## Anleitung
 
-Die Verkettung von Zeichenfolgen in Elm ist einfach und intuitiv. Hier ist ein einfaches Beispiel, das zwei Zeichenfolgen miteinander verbindet:
-
-```Elm
-string1 = "Hallo "
-string2 = "Welt"
-concatenated = string1 ++ string2
-```
-
-Das Ergebnis der Verkettung ist der String "Hallo Welt". Man kann auch mehrere Zeichenfolgen auf einmal verketten, indem man mehrere `++` Operatoren verwendet.
+Die Verkettung von Strings in Elm ist einfach und unkompliziert. Im Folgenden sind einige Beispiele aufgeführt, die die verschiedenen Möglichkeiten der String-Konkatenation zeigen.
 
 ```Elm
-string1 = "Hallo "
-string2 = "an alle "
-string3 = "Leser"
-concatenated = string1 ++ string2 ++ string3
+fullName : String
+fullName = "Max" ++ " Mustermann"
+
+-- Output: Max Mustermann
 ```
-
-Das Ergebnis dieser Verkettung ist "Hallo an alle Leser".
-
-## Tiefer Einblick in die Verkettung von Zeichenfolgen
-
-In Elm gibt es neben dem `++` Operator noch weitere Möglichkeiten, Zeichenfolgen zu verkettet. Eine weitere nützliche Funktion ist `String.join`, die es ermöglicht, eine Liste von Zeichenfolgen mit einem Trennzeichen zu verbinden. Zum Beispiel:
 
 ```Elm
-list = ["Elm", "ist", "super"]
-concatenated = String.join " " list
+message : String
+message = "Hallo " ++ "Welt"
+
+-- Output: Hallo Welt
 ```
 
-Das Ergebnis davon ist der String "Elm ist super".
+```Elm
+greeting : String -> String
+greeting name =
+    "Hello " ++ name ++ "!"
 
-Eine weitere wichtige Sache, die es bei der Verkettung von Zeichenfolgen zu beachten gilt, ist die Performance. In Elm sind Strings unveränderlich, was bedeutet, dass sie jedes Mal, wenn eine Verkettung durchgeführt wird, einen neuen String erstellen. Bei größeren Anwendungen kann dies zu einer schlechten Performance führen, daher ist es wichtig, die Verkettungen sinnvoll zu gestalten und nicht unnötig viele davon zu verwenden.
+-- Output: Hello Max!
+```
+
+Wie Sie sehen können, können wir mit dem Operator "++" Strings einfach aneinanderreihen, um dynamische Nachrichten zu erstellen. Wir können auch Variablen oder Funktionen verwenden, um die Konkatenation noch flexibler zu gestalten.
+
+## Tiefergehende Einblicke
+
+In Elm gibt es auch die Funktion "String.concat", die es uns ermöglicht, Listen von Strings zu verkettet. Dies kann nützlich sein, wenn wir mehrere Strings in einem Stück zusammenführen möchten.
+
+```Elm
+names : List String
+names = ["Max", "Sarah", "Tim"]
+
+fullName : String
+fullName = String.concat names
+
+-- Output: MaxSarahTim
+```
+
+Es ist auch möglich, Strings in mehreren Schritten zu verkettet und dabei die Lesbarkeit zu verbessern. Zum Beispiel:
+
+```Elm
+firstName : String
+firstName = "Max"
+
+lastName : String
+lastName = "Mustermann"
+
+message : String
+message =
+    "Hello, my name is "
+        ++ firstName
+        ++ " "
+        ++ lastName
+        ++ "."
+
+-- Output: Hello, my name is Max Mustermann.
+```
 
 ## Siehe auch
 
-- [Die Elm Dokumentation](https://guide.elm-lang.org/strings/concatenation.html)
-- [Ein Artikel über die Performance in Elm](https://medium.com/@krisajenkins/the-problem-with-elm-strings-b13f80167060)
-- [Ein Tutorial zur Verkettung von Zeichenfolgen in Elm](https://medium.com/@bijaydas/elm-strings-in-string-expressions-c522bd83bb20)
+- [Offizielle Elm-Dokumentation zu Strings](https://guide.elm-lang.org/strings/)
+- [Einführung in Elm – eine funktionale Programmiersprache für das Frontend](https://www.codementor.io/@sarahlieder/intro-to-elm-a-functional-programming-language-for-the-frontend-q517gakn0)

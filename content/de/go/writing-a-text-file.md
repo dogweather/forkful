@@ -1,66 +1,51 @@
 ---
-title:    "Go: Textdatei schreiben"
+title:    "Go: Eine Textdatei schreiben"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben von Textdateien ist eine grundlegende Fähigkeit in der Programmierung, die es ermöglicht, Informationen auf einer promptgebundenen Oberfläche oder in einer Datei zu speichern. Dies kann nützlich sein, um beispielsweise ein Protokoll oder Konfigurationsdateien zu erstellen.
+Es gibt viele Gründe, warum man einen Textdatei in Go schreiben möchte. Es kann sein, dass du Textdaten sammeln oder analysieren möchtest, oder vielleicht musst du einfach ein Protokoll für deine Anwendung führen. Egal was der Grund ist, das Schreiben einer Textdatei ist eine nützliche Fähigkeit für jeden Go-Entwickler.
 
-## Wie geht das?
+## Wie schreibe ich eine Textdatei in Go
 
-Das folgende Beispiel zeigt, wie man in Go eine Textdatei erstellt und schreibt:
+Um eine Textdatei in Go zu schreiben, musst du zunächst eine File-Struktur erstellen. Dies kannst du mit der `Create()`-Methode von `os` tun:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    // Öffne eine neue Textdatei mit dem Namen "neue_datei.txt"
-    file, err := os.Create("neue_datei.txt")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer file.Close()
-
-    // Schreibe den Inhalt in die Datei
-    _, err = file.WriteString("Hallo, Welt!")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-
-    // Überprüfe, ob der Schreibvorgang erfolgreich war
-    fileInfo, err := file.Stat()
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    fmt.Printf("Die Datei wurde erfolgreich erstellt und ist %d Bytes groß.", fileInfo.Size())
+file, err := os.Create("datei.txt")
+if err != nil {
+  // Behandlung des Fehlers
 }
 ```
 
-Das obige Beispiel erstellt eine neue Textdatei mit dem Namen "neue_datei.txt" und schreibt den Inhalt "Hallo, Welt!" hinein. Dann wird die Dateigröße abgerufen und ausgegeben. Durch die Verwendung von `defer` wird sichergestellt, dass die Datei nach Abschluss der Funktion sorgfältig geschlossen wird, um Fehler zu vermeiden.
+Dann musst du die Datei zum Schreiben öffnen und die Daten schreiben. Dies kann mit der `WriteString()`-Methode von `file` gemacht werden:
 
-## Tiefergehende Information
+```Go
+file, err := os.OpenFile("datei.txt", os.O_WRONLY, 0644)
+if err != nil {
+  // Behandlung des Fehlers
+}
+defer file.Close()
 
-Beim Schreiben einer Textdatei in Go gibt es einige wichtige Punkte zu beachten:
+_, err = file.WriteString("Hallo Welt!")
+if err != nil {
+  // Behandlung des Fehlers
+}
+```
 
-- Stelle immer sicher, dass die Datei nach dem Schreiben mit `defer` sorgfältig geschlossen wird, um mögliche Fehler zu vermeiden.
-- Verwende `WriteString()` oder `Write()` zum Schreiben von Text in eine Datei. `Write()` akzeptiert nur `[]byte` als Eingabe, während `WriteString()` auch `string` akzeptiert.
-- Überprüfe nach dem Schreiben die Größe der Datei mit `file.Stat()`, um sicherzustellen, dass der Vorgang erfolgreich war.
+Diese Beispiele schreiben die Zeichenkette "Hallo Welt!" in eine neue Textdatei mit dem Namen "datei.txt". Natürlich kannst du auch jede andere Zeichenkette oder sogar andere Daten schreiben, solange du sie in ein Byte-Array umwandelt.
 
-Mit diesen Informationen ausgestattet, kannst du nun problemlos Textdateien in Go erstellen und schreiben.
+## Tiefergehende Informationen
+
+Beim Schreiben einer Textdatei gibt es einige Dinge zu beachten. Zum Beispiel musst du die Datei immer am Ende schließen, um Ressourcen zu sparen und sicherzustellen, dass alle Daten geschrieben werden. Auch ist es eine gute Idee, Fehler zu behandeln und überprüfen, ob die Datei erfolgreich geschrieben wurde.
+
+Darüber hinaus gibt es auch andere Methoden, um eine Textdatei in Go zu schreiben, wie zum Beispiel mit `ioutil.WriteFile()` oder dem `bufio`-Paket. Es lohnt sich, sich mit diesen Methoden vertraut zu machen, um die bestmögliche Lösung für dein Projekt zu finden.
 
 ## Siehe auch
 
-- [Go's os-Paket Dokumentation (in Deutsch)](https://golang.org/pkg/os/)
-- [Tutorial: Arbeiten mit Dateien in Go](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-in-go-de)
-- [Golang Tutorium: Das Schreiben von Dateien](https://golangtutorials.blogspot.com/2011/06/writing-files-in-go.html)
+- [Go Dokumentation für den os-Modul](https://golang.org/pkg/os/)
+- [Schreiben von Dateien in Go](https://www.golangprograms.com/write-data-to-file-formatted-using-fprintf.html)
+- [Tutorial: Datei in Go schreiben](https://tutorialedge.net/Golang/reading-and-writing-files-in-go/)

@@ -1,49 +1,61 @@
 ---
-title:    "Fish Shell: Päivämäärän muuntaminen merkkijonoksi"
+title:    "Fish Shell: Muunna päivämäärä merkkijonoksi"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monissa Fish Shell -sovelluksissa saatetaan joutua muokkaamaan päivämääriä tekstimuotoon. Tämä voi olla tarpeellista esimerkiksi tietojen tallentamiseksi tiedostoon tai niiden näyttämiseksi ruudulla tekstipohjaisessa käyttöliittymässä. Tässä blogikirjoituksessa opimme, miten päivämäärät voidaan muuntaa merkkijonoksi Fish Shellillä.
+Monet Fish Shell käyttäjät haluavat muuntaa päivämäärän merkkijonoksi erilaisissa ohjelmointi- tai skriptausprojekteissaan. Tämä voi olla tarpeen esimerkiksi tiedoston nimen luomisessa tai tiedoston muokkaamisen yhteydessä.
 
-## Miten näin tehdään
+## Miten
 
-Fish Shellillä päivämäärän muuttaminen merkkijonoksi on helppoa ja nopeaa. Tämä tapahtuu `string` -komennon avulla, joka toimii parametrien avulla annetun päivämäärän kanssa.
+Fish Shellilla on helppo muuntaa päivämäärä merkkijonoksi käyttämällä `date` -komennon `+%Y-%m-%d` -muotoilulippua. Tämä tuottaa päivämäärästä muodossa `vuosi-kuukausi-päivä`, esimerkiksi `2020-10-15`.
 
-```
-Fish Shell # String -d "2021-02-15" --date "%x"      
-15/02/2021
-```
-
-Tässä esimerkissä muutimme päivämäärän merkkijonoksi `"%x"` -parametrin avulla, joka vastaa suomalaisessa päiväyksessä käytettyä muotoa. Voit muuttaa merkkijonon muotoa halutessasi käyttämällä muita parametreja.
-
-```
-Fish Shell # String -d "2021-02-15" --date "%B %e, %Y"     
-February 15, 2021
+```Fish Shell
+set today (date +%Y-%m-%d)
+echo $today
 ```
 
-## Syväsukellusta
+Tulostus: `2020-10-15`
 
-Fish Shellin `string` -komennossa on monia muitakin hyödyllisiä parametreja päivämäärän muokkaamiseen. Voit esimerkiksi lisätä päivämäärään aikamääreen käyttämällä `--date` -parametria ja antamalla aikamääreelle `%T` -muodon.
+Voit myös halutessasi lisätä tarkemman ajanhetken `+%H%M%S` -muotoilulipulla. Tämä tuottaa päivämäärästä muodossa `vuosi-kuukausi-päivä-tunti-minuutti-sekunti`, esimerkiksi `2020-10-15-153047`.
 
-```
-Fish Shell # String -d "2021-02-15" --date "%x@%T"     
-15/02/2021@00:00:00
+```Fish Shell
+set timestamp (date +%Y-%m-%d-%H%M%S)
+echo $timestamp
 ```
 
-Lisäksi voit käyttää `--local-time` -parametria, joka palauttaa päivämäärän nimen ja ajanformaatin mukaisen ajan.
+Tulostus: `2020-10-15-153047`
 
+## Syvempään sukellus
+
+Fish Shellin `date` -komennossa on muitakin hyödyllisiä muotoilulippuja päivämäärän muuntamiseen merkkijonoksi. Esimerkiksi `%a` palauttaa päivän nimen lyhenteenä englanniksi, kuten `Thu` torstaille ja `%B` palauttaa kuukauden nimen englanniksi, kuten `October` lokakuulle.
+
+```Fish Shell
+set day (date +%a)
+set month (date +%B)
+set customDate ($day-$month-%Y)
+echo $customDate
 ```
-Fish Shell # String -d "2021-02-15" --date "%x@%T" --local-time     
-15/02/2021@14:00:00
+
+Tulostus: `Thu-October-2020`
+
+Voit myös määrittää tarkemman aikavyöhykkeen käyttämällä `TZ`-ympäristömuuttujaa. Tämä on hyödyllistä esimerkiksi kansainvälisissä projekteissa, joissa on eri aikavyöhykkeillä työskenteleviä henkilöitä.
+
+```Fish Shell
+setenv TZ "Europe/Helsinki"
+set timestamp (date +%Y-%m-%d-%H%M%S)
+echo $timestamp
 ```
+
+Tulostus: `2020-10-15-200013` (Olettaen, että aikavyöhyke on asetettu Euroopan aikavyöhykkeelle)
+
+Syvempään tietämystä päivämäärän muuntamisesta merkkijonoksi löytyy Fish Shellin dokumentaatiosta.
 
 ## Katso myös
 
-- [Fish Shell kotisivu] (https://fishshell.com/)
-- [Fish Shell dokumentaatio] (https://fishshell.com/docs/current/)
-
-Tässä blogikirjoituksessa opimme, miten päivämäärät voidaan muuntaa merkkijonoksi Fish Shellillä ja millaisia parametreja tähän tarkoitukseen voidaan käyttää. Fish Shellin yksinkertainen ja selkeä `string` -komento tekee päivämäärän muokkaamisesta helppoa ja nopeaa. Toivottavasti tämä kirjoitus auttoi sinua ymmärtämään tätä toimintoa paremmin!
+- Fish Shellin dokumentaatio päivämäärän muuntamisesta: https://fishshell.com/docs/current/cmds/date.html
+- Aikavyöhykkeiden lista: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones

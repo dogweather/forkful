@@ -1,69 +1,71 @@
 ---
-title:    "C: Umwandeln eines Strings in Kleinbuchstaben"
+title:    "C: Umwandlung eines Strings in Kleinbuchstaben"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben ist eine häufige Aufgabe bei der Verarbeitung von Benutzereingaben in Programmen. Es kann helfen, die Eingabe einheitlicher und besser lesbar zu machen.
+Viele Programmierer stehen oft vor der Aufgabe, einen String in Kleinbuchstaben umzuwandeln. Dies kann aus verschiedenen Gründen notwendig sein, beispielsweise um Benutzereingaben zu vereinheitlichen oder bei der Verarbeitung von Texten. In diesem Blog-Beitrag werden wir uns anschauen, wie man einen String in C Programmierung in Kleinbuchstaben umwandeln kann.
 
-##Wie geht man vor?
+## Wie geht man vor?
 
-Um einen String in Kleinbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten in der Programmiersprache C. Eine beliebte Methode ist die Verwendung der Standardbibliotheksfunktion `tolower()`, die jeden Buchstaben in einem String in Kleinbuchstaben umwandelt. Hier ist ein einfaches Beispiel:
+Um einen String in C in Kleinbuchstaben umzuwandeln, gibt es verschiedene Herangehensweisen. Eine mögliche Lösung wäre, den ASCII-Wert jedes einzelnen Buchstabens im String zu überprüfen und gegebenenfalls um 32 zu reduzieren, um den Großbuchstaben in einen Kleinbuchstaben umzuwandeln. Hier ist ein Beispielcode mit der Verwendung von `tolower()` Funktion:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main(){
-    
-    char string[] = "Hallo WELT!";
-    
-    for(int i = 0; string[i]; i++){
-        string[i] = tolower(string[i]);
-    }
-
-    printf("Der umgewandelte String lautet: %s\n", string);
-
-    return 0;
+int main() {
+  char str[] = "Hallo Welt!";
+ 
+  for (int i = 0; str[i] != '\0'; i++) {
+    str[i] = tolower(str[i]);
+  }
+ 
+  printf("Kleinbuchstaben: %s", str);
+  return 0;
 }
-```
-Output: `Der umgewandelte String lautet: hallo welt!`
 
-Ein weiterer Ansatz ist die Verwendung der ASCII-Werte der Buchstaben. Da Großbuchstaben und Kleinbuchstaben im ASCII-Code aufeinanderfolgende Werte haben, können wir einfach die Differenz von 32 zu dem ASCII-Wert eines Großbuchstaben addieren, um ihn in den entsprechenden Kleinbuchstaben umzuwandeln. Dieser Ansatz kann effizienter sein als die Verwendung von `tolower()`. Hier ist ein Beispiel:
+// Ausgabe: kleinbuchstaben: hallo welt!
+```
+
+In diesem Beispiel nutzen wir eine `for`-Schleife, um jeden Buchstaben im String zu durchlaufen. Mit `tolower()` wird dann jeder Buchstabe in einen Kleinbuchstaben umgewandelt. Am Ende wird der neue String mit der Funktion `printf()` ausgegeben.
+
+Eine andere Möglichkeit ist die Verwendung der `strcpy()` Funktion, um den ursprünglichen String zu kopieren und dann mit `strlwr()` Funktion alle Buchstaben in Kleinbuchstaben umzuwandeln.
 
 ```C
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-int main(){
-    
-    char string[] = "Hallo WELT!";
-    
-    for(int i = 0; string[i]; i++){
-        if(string[i] >= 'A' && string[i] <= 'Z') { //überprüft, ob das Zeichen ein Großbuchstabe ist
-            string[i] += 32; //fügt 32 zu dem ASCII-Wert hinzu, um ihn in den entsprechenden Kleinbuchstaben umzuwandeln
-        }
-    }
-
-    printf("Der umgewandelte String lautet: %s\n", string);
-
-    return 0;
+int main() {
+  char str1[] = "Hallo Welt!";
+  char str2[100];
+  
+  strcpy(str2, str1); // kopiert den Inhalt von str1 in str2
+  
+  strlwr(str2); // wandelt alle Buchstaben in Kleinbuchstaben um
+  
+  printf("Kleinbuchstaben: %s", str2);
+  return 0;
 }
+
+// Ausgabe: kleinbuchstaben: hallo welt!
 ```
-Output: `Der umgewandelte String lautet: hallo welt!`
 
-Es gibt noch weitere Möglichkeiten, einen String in Kleinbuchstaben umzuwandeln, aber diese beiden sind die am häufigsten verwendeten Methoden.
+Beide Methoden liefern das gleiche Ergebnis, die Wahl hängt also davon ab, welche mehr Lesbarkeit und Effizienz für den spezifischen Fall bietet.
 
-##Tiefer Einblick
+## Tiefere Insights
 
-Bei der Verwendung von `tolower()` ist es wichtig zu beachten, dass die Funktion nur für Buchstaben im ASCII-Bereich funktioniert. Für andere Zeichen, wie zum Beispiel Umlaute in der deutschen Sprache, muss man alternative Ansätze finden.
+Bei der ersten Methode wird direkt auf den ASCII-Wert des Buchstabens zugegriffen, was insgesamt effizienter ist. Bei der zweiten Methode wird jedoch erst eine Kopie des Strings erstellt, was zusätzliche Ressourcen benötigt. Es ist daher wichtig, die Vor- und Nachteile beider Methoden abzuwägen und diejenige zu wählen, die für Ihre spezifische Aufgabe am besten geeignet ist.
 
-Außerdem gibt es in der Programmierung oft die Notwendigkeit, Strings zu vergleichen. Wenn man jedoch einen String in Kleinbuchstaben umwandelt, kann dies die Ergebnisse von Vergleichen beeinflussen. Wenn es wichtig ist, die Groß- und Kleinbuchstaben zu berücksichtigen, muss man sich möglicherweise alternative Lösungen überlegen. 
+Zusätzlich kann es bei der Verwendung von `tolower()` zu Problemen mit Sonderzeichen und nicht-englischen Buchstaben kommen, da diese nicht immer die entsprechenden ASCII-Werte haben. In solchen Fällen sollten alternative Lösungen in Betracht gezogen werden.
 
-##Siehe auch
+## Siehe auch
 
-- [ASCII-Tabelle](https://www.asciitable.com/)
-- [ASCII und Zeichensätze](https://www.theasciicode.com.ar/)
-- [Strings in C](https://www.programiz.com/c-programming/c-strings)
+- [C String-Bibliothek](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [ASCII-Code Tabelle](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)
+- [ASCII vs. Unicode](https://www.computerhope.com/jargon/a/ascii.html)

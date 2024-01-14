@@ -1,48 +1,35 @@
 ---
-title:    "C#: Börja ett nytt projekt"
+title:    "C#: Att starta ett nytt projekt"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att skapa ett nytt projekt kan kännas som en skrämmande uppgift för många. Men genom att tillämpa rätt metoder och verktyg kan det vara en spännande och givande upplevelse. Att utveckla färdigheter, lösa problem och skapa något från grunden är bara några av anledningarna till att man bör utforska nya projekt.
+Att starta ett nytt projekt kan vara en spännande och utvecklande utmaning för programmerare. Det ger möjligheten att lära sig nya tekniker och utveckla innovativa lösningar på problem. Dessutom kan det leda till nya karriärmöjligheter och förbättra din portfölj.
 
-##Hur man gör
+## Så här gör du
 
-Att starta ett nytt projekt i C# kan kännas överväldigande, men det är faktiskt ganska enkelt. Först måste du installera en utvecklingsmiljö som Visual Studio eller Visual Studio Code. Sedan kan du följa dessa steg för att skapa ditt första C#-projekt:
+För att starta ett nytt projekt i C#, behöver du först och främst välja en utvecklingsmiljö. Det finns flera olika alternativ, men Visual Studio är en populär och kraftfull plattform som erbjuder många funktioner och verktyg för att underlätta utvecklingsprocessen.
+
+När du har valt din utvecklingsmiljö, kan du börja skriva din kod. Ett bra sätt att lära sig C# är att använda kodexempel och testa dem själv. Här är ett exempel på en enkel kod för att skriva ut en text på skärmen:
 
 ```C#
-using System;
-
-namespace MyProject
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hej världen!");
-        }
-    }
-}
+Console.WriteLine("Hej världen!");
 ```
 
-Kodexemplet ovan visar hur man skapar en ny C#-klass och skriver ut en enkel text. Genom att köra programmet kommer output att vara "Hej världen!" på skärmen.
+När du kör denna kod så kommer den att skriva ut "Hej världen!" på skärmen. Du kan sedan experimentera med olika delar av koden för att se hur det påverkar resultatet.
 
-##Fördjupning
+## Djupdykning
 
-Att starta ett nytt projekt är inte bara att skriva lite kod och köra den. Det finns flera saker som du bör tänka på för att ditt projekt ska vara framgångsrikt. Här är några tips:
+För att verkligen förstå C# och utveckla avancerade projekt, är det viktigt att förstå grundläggande programmeringskoncept som variabler, loopar, villkor och funktioner. Dessutom finns det många olika språkfunktioner och bibliotek som kan hjälpa dig att skriva kod mer effektivt och hantera olika typer av data.
 
-- Planera och strukturera ditt projekt genom att identifiera dess syfte och mål.
-- Använd kommentarer i koden för att göra den lättare att förstå och underhålla.
-- Använd versionshantering för att spåra förändringar och samarbeta med andra utvecklare.
-- Följ bästa praxis och skriv ren och läsbar kod för att undvika problem och buggar.
+En annan viktig del av att starta ett nytt projekt är att planera och organisera det på rätt sätt. Det är viktigt att ha en tydlig målbild och bryta ner projektet i mindre delar för att undvika överbelastning och möjliga fel. Dessutom bör du lägga till kommentarer i din kod för att hjälpa till att förklara vad den gör och underlätta för andra utvecklare att förstå den.
 
-Genom att följa dessa riktlinjer kan du skapa ett välorganiserat och effektivt projekt som du kan vara stolt över.
+## Se även
 
-##Se även
-
-- [Fortsätt lära dig C#](https://docs.microsoft.com/sv-se/dotnet/csharp/)
-- [Visual Studio](https://visualstudio.microsoft.com/sv/)
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/sv/)
+- [Officiell C# dokumentation](https://docs.microsoft.com/sv-se/dotnet/csharp/)
+- [C# tutorial på W3Schools](https://www.w3schools.com/cs/default.asp)

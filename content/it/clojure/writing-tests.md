@@ -1,38 +1,48 @@
 ---
-title:    "Clojure: Scrittura dei test"
+title:    "Clojure: Scrivere test"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test?
-Scrivere test è un'abitudine importante per migliorare la qualità e l'affidabilità del tuo codice. I test permettono di individuare eventuali errori e bug durante lo sviluppo, garantendo che il codice funzioni correttamente prima che venga messo in produzione.
+## Perché
+Scrivere test è un passo importante nel processo di sviluppo di un progetto in Clojure. I test ci permettono di verificare che il nostro codice funzioni correttamente, evitando bug e facilitando il processo di debugging.
 
-## Come fare
-Per scrivere test in Clojure, dovrai utilizzare il framework di test integrato chiamato "clojure.test". Inizia importando il pacchetto nel tuo file di codice:
+## Come Fare
+Per scrivere test in Clojure, utilizzeremo una libreria chiamata "clojure.test". Iniziamo importandola nel nostro file:
 
 ```Clojure
-(ns my-namespace
+(ns my-project.test
   (:require [clojure.test :refer :all]))
 ```
 
-Successivamente, puoi definire una serie di test utilizzando la funzione `deftest`. Ad esempio, se volessi testare una semplice funzione di somma, potresti scrivere qualcosa del genere:
+Ora possiamo definire una funzione di test utilizzando la macro "deftest". Darle un nome che descriva il comportamento che vogliamo testare:
 
 ```Clojure
-(deftest test-sum
-  (is (= (+ 2 3) 5))
-  (is (= (+ 10 5) 15))
-  (is (= (+ -2 -5) -7)))
+(deftest test-addition
+  (is (= (+ 1 2) 3))) ;; Il test deve fallire perché 1+2=3
 ```
 
-Nella funzione `deftest` puoi specificare un nome per il test e successivamente utilizzare la funzione `is`, specificando l'espressione che vuoi testare e il risultato che ti aspetti. Se tutti i test passano, otterrai un output verde nella tua console.
+Infine, possiamo eseguire il nostro test utilizzando la funzione "run-tests":
+
+```Clojure
+(run-tests)
+```
+
+Se il test fallisce, verrà mostrato un messaggio di errore con una descrizione del problema. Altrimenti, verrà mostrato un messaggio di successo.
 
 ## Approfondimento
-Quando si scrivono test, è importante essere il più esaustivi possibile per garantire che il codice funzioni correttamente in qualsiasi situazione. Inoltre, è consigliabile testare anche gli eventuali casi limite o di errore, in modo da prevenire bug inaspettati.
+Scrivere test efficaci richiede un po' di pratica e conoscenza delle diverse funzioni e macro disponibili in "clojure.test". Alcune delle più utilizzate sono:
 
-Inoltre, ricordati di mantenere i tuoi test aggiornati ogni volta che apporti modifiche al tuo codice, in modo da essere sempre sicuro che tutto funzioni come previsto.
+- "is": utilizzata per confrontare valori e determinare se il test è passato o fallito
+- "testing": permette di organizzare i test in gruppi e specificare le condizioni di esecuzione
+- "testing-throw": utile per testare se una specifica funzione solleva un'eccezione
+- "are": permette di testare più di una condizione nello stesso test
 
-## Vedi anche
+È importante anche comprendere il concetto di "mocking" nel testing, che ci permette di simulare determinati comportamenti e testare casi più complessi.
+
+## Vedi Anche
 - [Documentazione di clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Articolo su come scrivere test in Clojure](https://medium.com/@jcraane/how-to-write-tests-in-clojure-997bdf079e42)
-- [Esempio di progetto con test in Clojure](https://github.com/wangsai/learning-clojure/tree/master/test-driven-development)
+- [Clojure Cookbook: Writing Tests](https://clojure-cookbook.timothypratley.com/pages/testing.html)
+- [The Art of Prograniming in Clojure: Chapter 24 - Testing](https://www.amazon.com/Art-Programming-Clojure-Edition/ebook/dp/B01LWCDUGU/ref=sr_1_1?keywords=the+art+of+programming+in+clojure&qid=1560053044&s=gateway&sr=8-1)

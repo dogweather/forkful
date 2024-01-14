@@ -1,41 +1,44 @@
 ---
 title:    "C#: Calculando una fecha en el futuro o pasado"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has preguntado cómo calcular la fecha en el futuro o en el pasado en tu programa de C#? Puede que necesites hacer cálculos de tiempo para determinar fechas de vencimiento, citas o eventos importantes. Afortunadamente, con algunas líneas de código en C#, puedes calcular fácilmente fechas futuras o pasadas según tus necesidades.
+## ¿Por qué calcular fechas en el pasado o futuro?
 
-## Cómo
-Para calcular una fecha en el futuro o en el pasado en C#, primero necesitas crear un objeto de tipo `DateTime` con la fecha actual como punto de partida. Luego, puedes utilizar el método `AddDays`, `AddMonths` o `AddYears` para sumar o restar la cantidad de días, meses o años deseados a la fecha actual. Por ejemplo:
+La programación en C# puede parecer un poco intimidante al principio, pero una vez que entiendes los conceptos básicos, hay una gran cantidad de aplicaciones útiles que puedes crear. Una de estas aplicaciones es la capacidad de calcular fechas en el pasado o en el futuro. Esto puede ser útil en una variedad de situaciones, como planificar eventos, gestionar plazos o simplemente jugar con diferentes escenarios temporales.
 
-```C#
-DateTime fechaActual = DateTime.Now; // Obtiene la fecha actual
-DateTime fechaFutura = fechaActual.AddDays(30); // Añade 30 días a la fecha actual
-DateTime fechaPasada = fechaActual.AddMonths(-6); // Resta 6 meses a la fecha actual
-```
+## Cómo hacerlo
 
-Si necesitas calcular una fecha en específico, puedes crear un objeto de tipo `DateTime` con esa fecha en particular y luego utilizar los métodos mencionados anteriormente para realizar los cálculos necesarios. Además, puedes utilizar el método `ToString` para formatear la fecha resultante según tus preferencias. Por ejemplo:
+Para calcular una fecha en el pasado o futuro, necesitarás dos cosas: una fecha base y un número de días para agregar o restar. Por ejemplo, si queremos calcular la fecha que será dentro de 7 días a partir de hoy, tendríamos que definir la fecha base como la fecha actual y el número de días en 7. Podemos representar esto en código de la siguiente manera:
 
 ```C#
-DateTime fechaEspecifica = new DateTime(2021, 12, 25); // Crea una nueva fecha con el 25 de diciembre de 2021
-Console.WriteLine(fechaEspecifica.AddYears(-1).ToString("MM/dd/yyyy")); // Resta un año y muestra la fecha en formato mes/día/año
+DateTime fechaBase = DateTime.Today;
+int dias = 7;
+
+DateTime fechaCalculada = fechaBase.AddDays(dias);
 ```
 
-### Resultado del código
+Esto devolverá una nueva fecha que será exactamente 7 días después de la fecha base. También podemos hacer cálculos en el pasado simplemente cambiando el signo del número de días, como en el siguiente ejemplo para obtener la fecha que fue 5 días antes de hoy:
 
-La salida del código anterior sería:
+```C#
+DateTime fechaBase = DateTime.Today;
+int dias = -5;
 
+DateTime fechaCalculada = fechaBase.AddDays(dias);
 ```
-11/25/2020
-```
 
-## Profundizando
-En algunas situaciones, puede que necesites calcular fechas teniendo en cuenta días laborables o feriados. Para esto, puedes utilizar la clase `DateTime` y sus propiedades `DayOfWeek` y `DayOfYear` para determinar en qué día de la semana o del año cae la fecha en particular y ajustar el cálculo según sea necesario. También puedes utilizar la clase `CultureInfo` para considerar diferentes formatos de calendario en caso de que tu programa deba ser compatible con diferentes culturas.
+## Profundizando en los detalles
+
+Sin embargo, si estás buscando un poco más de flexibilidad en tus cálculos de fechas, hay otras propiedades y métodos que puedes utilizar para obtener resultados más precisos. Por ejemplo, en lugar de sumar o restar días, también puedes hacerlo con semanas, meses o incluso años. O si necesitas tener en cuenta los días festivos o fines de semana, puedes utilizar el método `AddBusinessDays()` en lugar de `AddDays()`. También puedes utilizar el método `AddHours(), AddMinutes(), AddSeconds()` para hacer cálculos con horas, minutos o segundos.
+
+Otro detalle a tener en cuenta es que el objeto `DateTime` también tiene propiedades como `DayOfWeek` para obtener el día de la semana, `DayOfYear` para obtener el día del año y `IsLeapYear` para verificar si el año es bisiesto.
+
+Usar estos métodos y propiedades puede ser útil si necesitas hacer cálculos más complejos con fechas, así que no tengas miedo de experimentar y probar diferentes combinaciones para lograr el resultado deseado.
 
 ## Ver también
-- [Cómo trabajar con fechas y horas en C#](https://docs.microsoft.com/es-es/dotnet/standard/datetime/)
-- [Cómo utilizar la clase DateTime en C#](https://www.c-sharpcorner.com/article/working-with-datetime-in-C-Sharp/)
-- [Un vistazo a la clase CultureInfo en C#](https://www.c-sharpcorner.com/article/working-with-the-cultureinfo-class-in-C-Sharp/)
+
+- Documentación de Microsoft sobre `DateTime`: https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0
+- Tutorial en español sobre el manejo de fechas en C#: https://www.tutorialsteacher.com/csharp/csharp-datetime

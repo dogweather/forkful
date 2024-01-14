@@ -1,48 +1,37 @@
 ---
-title:    "Javascript: Omvandla en sträng till små bokstäver"
+title:    "Javascript: Omvandla en sträng till gemener"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att konvertera en sträng till små bokstäver är en vanlig uppgift inom Javascript-programmering. Det gör det lättare att jämföra strängar och söka igenom dem utan att behöva oroa sig för skillnaden mellan stora och små bokstäver. Genom att lära dig hur man konverterar en sträng till små bokstäver kan du effektivisera ditt arbete och göra din kod mer lättläst och robust.
+Är du nybörjare inom programmering och undrar varför det är viktigt att kunna konvertera en sträng till gemena bokstäver? Eller är du en erfaren programmerare som behöver repetera? Oavsett din nivå, så är det viktigt att förstå varför detta är en viktig funktion inom Javascript.
 
 ## Hur man gör
-
-För att konvertera en sträng till små bokstäver i Javascript kan du använda funktionen `toLowerCase()`. Här är ett enkelt exempel:
-
-```Javascript
-let str = "Hej! Detta Är En Sträng";
-let lowerCaseStr = str.toLowerCase();
-
-console.log(lowerCaseStr); // outputs "hej! detta är en sträng"
-```
-
-Som du kan se används `toLowerCase()` för att ändra alla bokstäver i en sträng till små bokstäver. Detta fungerar även för speciella tecken och bokstäver med accent.
-
-En annan metod för att konvertera en sträng till små bokstäver är att använda metoden `replace()` i kombination med en regular expression. Här är ett exempel på hur det kan se ut:
+Konvertering av en sträng till gemena bokstäver är enkelt med hjälp av Javascripts inbyggda funktion "toLowerCase()". Se kodexemplen nedan för att se hur det fungerar och vilken output som förväntas.
 
 ```Javascript
-let str = "Du borde läRA dig hur man KONVERterar En strÄNG TILL Små Bokstäver!";
-let lowerCaseStr = str.replace(/[A-ZÄ-Ö]/g, function(match) {
-  return match.toLowerCase();
-});
+// 1. Gör strängen "Hej!" till gemena bokstäver
+let sträng = "Hej!";
+let gemenaBokstäver = sträng.toLowerCase();
 
-console.log(lowerCaseStr); // outputs "du borde lära dig hur man konverterar en sträng till små bokstäver!"
+console.log(gemenaBokstäver); // output: "hej!"
+
+// 2. Konvertera en användares input till gemena bokstäver
+let användarInput = prompt("Skriv en text:");
+let gemenaBokstäver = användarInput.toLowerCase();
+
+console.log(gemenaBokstäver); // input: "JavaScript", output: "javascript"
 ```
 
-I detta exempel används en regular expression för att matcha alla stora bokstäver och bokstäver med accent. Därefter används funktionen `toLowerCase()` för att ändra matchningen till små bokstäver.
+Som du kan se i exemplen ovan så är det mycket enkelt att konvertera en sträng till gemena bokstäver. Genom att använda "toLowerCase()" funktionen så kommer du alltid att få en sträng med alla gemena bokstäver.
 
 ## Djupdykning
-
-Det finns flera olika anledningar till varför man skulle vilja konvertera en sträng till små bokstäver i en Javascript-applikation. En av de vanligaste är för jämförelseändamål. Om du t.ex. har ett formulär där användaren ska fylla i en e-postadress så kan du konvertera deras inmatning till små bokstäver för att undvika problem med skillnaden mellan stora och små bokstäver. Detta är särskilt viktigt när man ska göra jämförelser i databasfrågor eller när man utför en sökning i en lista eller array.
-
-Ett annat tillfälle där man ofta använder sig av konvertering till små bokstäver är vid hantering av inloggning och lösenord. Genom att konvertera både användarnamn och lösenord till små bokstäver kan man säkerställa att inloggningen fungerar oavsett vilka bokstäver som användaren väljer att använda.
+Förutom att konvertera en sträng till gemena bokstäver så finns det andra användbara metoder för strängmanipulering i Javascript. Till exempel "toUpperCase()" som gör om alla bokstäver till versala bokstäver och "replace()" som byter ut en viss del av en sträng med en annan del. Det är viktigt att ha koll på olika metoder för strängmanipulering för att kunna skapa funktionella och effektiva program.
 
 ## Se även
-
-- [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-- [How to convert a string to lowercase in JavaScript](https://www.tutorialrepublic.com/faq/how-to-convert-a-string-to-lowercase-in-javascript.php)
-- [Using JavaScript replace() method with a regular expression](https://www.freeformatter.com/javascript-regex-tester.html#ad-output-example)
+- [W3Schools - Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) 
+- [MDN Web Docs - String Manipulation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings)

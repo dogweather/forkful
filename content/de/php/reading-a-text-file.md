@@ -1,54 +1,49 @@
 ---
-title:    "PHP: Lesen einer Textdatei"
+title:    "PHP: Einen Textdatei lesen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt viele Gründe, warum es wichtig sein kann, eine Textdatei in PHP zu lesen. Zum Beispiel könnte man eine Liste von Benutzernamen oder E-Mail-Adressen in einer Textdatei haben, die man in eine Datenbank importieren möchte. Oder man möchte den Inhalt einer Textdatei manipulieren und dann wieder in eine neue Textdatei schreiben. Auf jeden Fall ist es ein grundlegendes Konzept in der Programmierung mit PHP und kann vielseitig eingesetzt werden.
+## Warum 
 
-## Wie geht's
-Das Lesen einer Textdatei in PHP kann mit der eingebauten Funktion `file()` ganz einfach sein. Diese Funktion liest den gesamten Inhalt einer Datei in ein Array, wobei jede Zeile der Datei zu einem Element im Array wird. Ein Beispielcode hierfür wäre:
+Textdateien sind ein grundlegender Bestandteil der Programmierung. Sie werden verwendet, um Daten zu speichern, zu organisieren und auszutauschen. Das Lesen von Textdateien kann Ihnen dabei helfen, wichtige Informationen zu extrahieren und auf sie zuzugreifen. In diesem Artikel werden wir uns genauer ansehen, wie man eine Textdatei in PHP lesen kann.
 
-```PHP
-$file = file("beispiel.txt");
+## Wie es geht
 
-foreach($file as $line){
-    echo $line . "\n";
-}
-```
-
-Der obere Code liest den Inhalt der Datei "beispiel.txt" ein und gibt jede Zeile in einer neuen Zeile aus. Die Ausgabe könnte so aussehen:
-
-```
-Hallo,
-ich bin ein Beispieltext.
-```
-
-Man kann auch die Funktion `fopen()` verwenden, um eine Datei zu öffnen und dann Zeile für Zeile zu lesen. Dies gibt einem mehr Kontrolle über den Leseprozess. Ein Beispielcode für diesen Ansatz wäre:
+Der erste Schritt bei der Lektüre einer Textdatei ist das Öffnen der Datei mit der Funktion `fopen()`. Später wird die Datei geschlossen, nachdem wir sie gelesen haben. Dies ist wichtig, um Ressourcen zu schonen und Speicherlecks zu vermeiden. Ein häufiges Muster beim Lesen einer Textdatei ist das Lesen einer Zeile und dann die Speicherung der Daten in einer Variablen.
 
 ```PHP
-$handle = fopen("beispiel.txt", "r");
-
-while(!feof($handle)){
-    $line = fgets($handle);
-    echo $line;
-}
-
-fclose($handle);
+$myfile = fopen("datei.txt", "r") or die("Datei kann nicht geöffnet werden!");
+$zeile = fgets($myfile);
+fclose($myfile);
+echo $zeile;
 ```
 
-Dieser Code öffnet die Datei "beispiel.txt" im Lesemodus und liest dann Zeile für Zeile bis das Ende der Datei erreicht ist (`feof()` ist eine Funktion, die prüft, ob das Ende der Datei erreicht wurde). Die Ausgabe wäre die gleiche wie im vorherigen Beispiel.
+Der obige Code öffnet eine Datei namens "datei.txt" im Lese-Modus und liest dann die erste Zeile mit der Funktion `fgets()`. Danach wird die Datei mit der Funktion `fclose()` geschlossen und die gelesene Zeile wird auf dem Bildschirm ausgegeben.
 
-## Tiefer in die Materie eintauchen
-Es gibt viele Optionen und Funktionen, die beim Lesen einer Textdatei in PHP verwendet werden können. Zum Beispiel kann man auch die Funktion `file_get_contents()` verwenden, um den Inhalt einer Datei in eine Variable zu lesen, anstatt ein Array zu erstellen. Oder man kann mit regulären Ausdrücken bestimmte Muster in der Textdatei suchen und manipulieren.
+Um alle Zeilen einer Datei zu lesen, verwenden wir eine Schleife, die so lange läuft, bis das Ende der Datei erreicht ist.
 
-Außerdem gibt es auch verschiedene Methoden, um mit der Codierung einer Textdatei umzugehen, wie z.B. `mb_detect_encoding()` oder `mb_convert_encoding()`. Es kann auch wichtig sein, beim Lesen einer Datei Sicherheitsvorkehrungen zu treffen, um potenziell schädlichen Code zu verhindern.
+```PHP
+$myfile = fopen("datei.txt", "r") or die("Datei kann nicht geöffnet werden!");
+while(!feof($myfile)) {
+  $zeile = fgets($myfile);
+  echo $zeile . "<br>";
+}
+fclose($myfile);
+```
 
-Insgesamt gibt es also viele Aspekte zu beachten, wenn man tiefer in die Materie des Lesens von Textdateien in PHP eintaucht. Es ist wichtig, sich gut mit den verschiedenen Funktionen und Optionen vertraut zu machen und diese je nach Bedarf einzusetzen.
+Dieser Code liest jede Zeile der Datei und gibt sie auf dem Bildschirm aus, bis das Ende der Datei erreicht ist. Mit der `feof()`-Funktion können wir überprüfen, ob das Ende der Datei erreicht wurde.
+
+## Tiefe Eintauchen
+
+Um tief in die Textdatei-Verarbeitung einzutauchen, müssen wir verschiedene Funktionen wie `fread()`, `file()` und viele andere entdecken. Die Verwendung von regulären Ausdrücken kann auch beim Lesen von Textdateien hilfreich sein. Es gibt auch viele erweiterte Funktionen, mit denen Sie Textdateien effizienter bearbeiten können. Es ist wichtig, die Dokumentation zu lesen und zu experimentieren, um ein besseres Verständnis davon zu bekommen, wie Sie Textdateien in Ihren Projekten am besten nutzen können.
+
+---
 
 ## Siehe auch
-- [Offizielle PHP Dokumentation zu file()](https://www.php.net/manual/de/function.file.php)
-- [Tutorials zum Lesen von Dateien in PHP](https://www.tutorialspoint.com/php/php_file_reading.htm)
-- [Tipps für den Umgang mit Dateien](https://www.geeksforgeeks.org/php-tips-to-handle-real-life-situations-like-a-pro/)
+
+- [PHP-Datei-Handling-Dokumentation](https://www.php.net/manual/de/book.filesystem.php)
+- [Reguläre Ausdrücke in PHP](https://www.php.net/manual/de/book.pcre.php)
+- [Erweiterte Textdatei-Funktionen](https://www.php.net/manual/de/ref.filesystem.php)

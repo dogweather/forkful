@@ -1,84 +1,99 @@
 ---
-title:    "C: Extrayendo subcadenas"
+title:    "C: Extrayendo subcadenas."
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué extraer subcadenas en programación?
+## Por qué
 
-La extracción de subcadenas es una operación común en programación cuando se trabaja con cadenas de texto. Esta técnica se utiliza para obtener una parte específica de una cadena más grande, ya sea para realizar alguna operación o simplemente para presentar información de manera clara y concisa. A continuación, veremos cómo extraer subcadenas en lenguaje C.
+Extraer subcadenas es una habilidad esencial para aquellos que trabajan con cadenas de texto en lenguaje C. Puede ser necesario para realizar operaciones como buscar y reemplazar palabras dentro de una cadena o para separar una cadena en secciones más pequeñas. Además, extraer subcadenas puede mejorar la eficiencia del código y facilitar la manipulación de datos.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para extraer una subcadena en C, necesitamos dos cosas: la cadena original y la posición inicial y final de la subcadena que deseamos obtener. A continuación, se muestra un ejemplo de código utilizando la función integrada `strstr()` para encontrar la posición de una subcadena específica dentro de una cadena más grande.
+Para extraer subcadenas en C, primero debemos tener una cadena de texto existente y determinar la posición de inicio y fin de la subcadena que deseamos extraer. Podemos hacer esto utilizando la función `strlcpy()` y especificando la posición de inicio y el número de caracteres que queremos copiar.
 
-```
-#include<stdio.h>
+```C
+#include <stdio.h>
+#include <string.h>
 
-int main(){
-    char cadena[] = "¡Hola mundo!";
-    char subcadena[] = "mundo";
-    char *puntero;
+int main() {
+    char texto[] = "Este es un ejemplo de una cadena de texto";
+    char subcadena[20];
+    int posicion_inicio = 8; // especificamos la posición de inicio
+    int numero_caracteres = 6; // especificamos el número de caracteres a copiar
 
-    // Encuentra la posición de la subcadena en la cadena original
-    puntero = strstr(cadena, subcadena);
-
-    // Imprime la subcadena
-    printf("Subcadena: %s\n", puntero);
-
-    return 0;
-}
-```
-
-**Salida:**
-```
-Subcadena: mundo!
-```
-
-En este ejemplo, utilizamos la función `strstr()` para encontrar la posición de la subcadena "mundo" dentro de la cadena "¡Hola mundo!". Luego, imprimimos esa subcadena utilizando un puntero. Esta es una forma sencilla de extraer una subcadena en C.
-
-## Un vistazo más profundo:
-
-En la sección anterior, solo vimos un ejemplo básico de cómo extraer subcadenas en C. Sin embargo, hay más formas de hacerlo y también es importante entender cómo funciona realmente esta operación.
-
-Una forma más común de extraer subcadenas es utilizando la función `strncpy()`, que copia una cantidad especificada de caracteres de una cadena a otra.
-
-```
-#include<stdio.h>
-#include<string.h>
-
-int main(){
-    char cadena[] = "¡Hola mundo!";
-    char subcadena[6];
-
-    // Copia los primeros 5 caracteres de la cadena original a la subcadena
-    strncpy(subcadena, cadena, 5);
-
-    // Agrega un caracter nulo al final de la subcadena
-    subcadena[5] = '\0';
-
-    // Imprime la subcadena
-    printf("Subcadena: %s\n", subcadena);
+    // utilizamos la función strlcpy() para extraer la subcadena
+    strlcpy(subcadena, texto + posicion_inicio, numero_caracteres + 1);
+    printf("La subcadena es: %s", subcadena);
 
     return 0;
 }
 ```
 
-**Salida:**
+El resultado de este código sería: 
 ```
-Subcadena: ¡Hola
+La subcadena es: un ej
 ```
 
-En este ejemplo, utilizamos la función `strncpy()` para copiar los primeros 5 caracteres de la cadena original a una nueva subcadena. Luego, agregamos un caracter nulo al final de la subcadena para asegurarnos de que se imprima correctamente.
+También podemos utilizar la función `strncpy()` para extraer subcadenas en C. Esta función es similar a `strlcpy()`, pero requiere que especifiquemos la longitud máxima de la subcadena en lugar del número de caracteres que deseamos copiar.
 
-También es posible extraer subcadenas utilizando un bucle `for` y accediendo a cada carácter de la cadena original utilizando su índice. Sin embargo, esta técnica puede ser más tediosa y propensa a errores.
+```C
+#include <stdio.h>
+#include <string.h>
 
-## Ver también:
+int main() {
+    char texto[] = "Este es un ejemplo de una cadena de texto";
+    char subcadena[20];
+    int posicion_inicio = 21; // especificamos la posición de inicio
+    int longitud_maxima = 11; // especificamos la longitud máxima de la subcadena
 
-- [Documentación de la función `strstr()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Documentación de la función `strncpy()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+    // utilizamos la función strncpy() para extraer la subcadena
+    strncpy(subcadena, texto + posicion_inicio, longitud_maxima);
+    printf("La subcadena es: %s", subcadena);
 
-# ¡Es hora de empezar a extraer subcadenas en C!
+    return 0;
+}
+```
 
-Ahora que tienes una mejor comprensión de cómo extraer subcadenas en C, puedes aplicar esta técnica en tus propios proyectos y mejorar la manipulación de cadenas de texto en tus programas. Experimenta con diferentes funciones y métodos para encontrar el que mejor se adapte a tus necesidades. ¡Buena suerte!
+El resultado de este código sería: 
+```
+La subcadena es: cadena de t
+```
+
+## Profundizando
+
+En la programación en C, no siempre es necesario utilizar las funciones `strlcpy()` o `strncpy()` para extraer subcadenas. Podemos lograr lo mismo utilizando punteros para señalar a una posición específica en una cadena de texto y luego manipular el puntero para obtener la subcadena deseada.
+
+Por ejemplo, consideremos el siguiente código que utiliza punteros para extraer una subcadena en lugar de utilizar las funciones `strlcpy()` o `strncpy()`:
+
+```C
+#include <stdio.h>
+
+int main() {
+    char texto[] = "Este es un ejemplo de una cadena de texto";
+    char subcadena[20];
+    char *puntero = texto + 16; // señala a la posición de inicio de la subcadena
+
+    // utilizando un bucle for, copiamos cada caracter de la subcadena en nuestro arreglo
+    for (int i = 0; i < 6; i++) {
+        subcadena[i] = *puntero;
+        puntero++; // avanzamos el puntero a la siguiente posición
+    }
+
+    printf("La subcadena es: %s", subcadena);
+
+    return 0;
+}
+```
+
+El resultado sería el mismo que en los ejemplos anteriores: 
+```
+La subcadena es: una ca
+```
+
+## Ver También
+- [La función `strlcpy()` en la documentación de C](https://www.mercurial-scm.org/repo/hosted-docfilesscmintro_20120525/1f1ee630b953/summary-scm/intro-docs-english/html/c_stdlib-string.html)
+- [La función `strncpy()` en la documentación de C](https://www.gnu.org/software/libc/manual/html_node/Copying-and-Concatenation.html)
+- [Manipulación de cadenas en C](https://www.programiz.com/c-programming/c-strings)

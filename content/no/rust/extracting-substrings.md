@@ -1,48 +1,51 @@
 ---
-title:    "Rust: Utvinning av delstrenger"
+title:    "Rust: Uttrekking av delstrenger"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Når du programmerer i Rust, er det ofte nyttig å kunne trekke ut deler av en streng som du arbeider med. Dette kan være for å manipulere data eller for å få tilgang til spesifikke deler av informasjonen. I denne bloggposten skal vi se nærmere på hvordan du kan gjøre dette i Rust, og hvorfor det er en verdifull ferdighet å ha.
+Har du noen gang ønsket å separere en del av en tekststreng i Rust? Kanskje du trenger å hente ut et bestemt ord eller en frase fra en større tekst, eller kanskje du vil gjøre noen manipulasjoner på en del av en URL. Uansett hva grunnen er, er det enkelt å gjøre med Rusts innebygde funksjoner for å utvinne substrings.
 
-## Hvordan
+# Slik gjør du det
 
-For å trekke ut substrings i Rust, bruker vi funksjonen `substring` sammen med indekser. La oss si at vi har en streng som inneholder en setning, og vi bare ønsker å få tak i den første halvdelen av denne setningen. Her er en enkel kodeblokk som demonstrerer hvordan du kan gjøre dette:
-
-```Rust
-let sentence = "Dette er en setning.";
-let first_half = string[0..10];
-println!("{}", first_half);
-```
-
-Outputen av dette vil være "Dette er en", som er den første halvdelen av setningen. La oss nå si at vi bare vil ha de tre første ordene. Da kan vi bruke en annen funksjon, `split_whitespace`, til å splitte strengen ved hvert mellomrom. Her er en kodeblokk som viser hvordan dette kan gjøres:
+Det finnes flere måter å få tilgang til substrings i Rust, avhengig av hva du trenger å gjøre med dem. Her er noen eksempler for å vise deg hvordan du kan utvinne substrings på forskjellige måter.
 
 ```Rust
-let sentence = "Dette er en setning.";
-let words: Vec<&str> = sentence.split_whitespace().collect();
-let first_three = words[0..3].join(" ");
-println!("{}", first_three);
+// Opprett en tekststreng
+let teksten = "Dette er en tekststreng å øve seg på";
+
+// Hent ut et ord fra teksten
+let ord = &teksten[13..15];
+println!("{}", ord);
+
+// Output: en
+
+// Hent ut en frase fra teksten
+let frase = &teksten[17..30];
+println!("{}", frase);
+
+// Output: tekststreng å
+
+// Hent ut en del av en URL
+let url = "https://www.example.com/blog/rust";
+let del = &url[27..];
+println!("{}", del);
+
+// Output: rust
 ```
 
-Outputen av dette vil være "Dette er en", som er de tre første ordene i setningen. Som du kan se, kan vi kombinere forskjellige funksjoner for å hente ut ulike deler av en streng.
+Som du kan se, bruker vi firkantede parenteser og et område av tall for å angi hvor i tekststrengen vi ønsker å få tilgang til. Det første tallet angir startpunktet, mens det andre tallet angir sluttpunktet (ikke inkludert).
 
-## Deep Dive
+# Dype dykk
 
-En viktig ting å være oppmerksom på når du jobber med substrings i Rust, er at de har en referanse til den opprinnelige strengen. Dette betyr at hvis du gjør endringer på substringen, vil det påvirke den opprinnelige strengen også. Dette kan være nyttig i visse tilfeller, men det kan også føre til uventet oppførsel hvis du ikke er klar over det.
+Det er verdt å nevne at når du utvinner substrings, vil den faktiske datastrukturen være det samme as originalteksten. Dette betyr at substrings er "lånt" fra originalteksten og at endringer i substringsen vil reflekteres tilbake til originalteksten. Det er derfor viktig å være forsiktig når du endrer substrings, og eventuelt heller opprette en ny tekststreng basert på substringen.
 
-En annen ting å merke seg er at indekser i Rust starter på 0, slik at den første bokstaven i en streng vil ha indeks 0, den andre bokstaven 1, og så videre. Når du bruker en range for å trekke ut substrings, må du huske på at den siste indeksen ikke er inkludert. Dette betyr at hvis du bruker `[0..3]`, vil det være fra indeks 0 til 2, og ikke 3.
+Det er også viktig å merke seg at substrings i Rust er en del av Unicode-støtten, noe som betyr at de kan håndtere ikke-ASCII-tegn som f.eks. æ, ø, å og andre tegn fra ulike språk. Dette gjør at Rust er et flott språk for å håndtere tekstmanipulasjon på et internasjonalt nivå.
 
-## Se også
-
-Her er noen nyttige ressurser for å lære mer om å trekke ut substrings i Rust:
-
-- [Offisiell Rust dokumentasjon](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
-- [Rust Programming Language Book](https://doc.rust-lang.org/book/ch04-03-slices.html#working-with-slices-asdfasdf)
-- [Rust by Example - Slices](https://doc.rust-lang.org/stable/rust-by-example/slice.html)
-- [Forskjellen mellom &str og String i Rust](https://stackoverflow.com/questions/24158114/differences-between-str-and-string/24158297)
-
-Takk for at du leste denne bloggposten om å trekke ut substrings i Rust. Vi håper det har vært nyttig for deg!
+# Se også
+- [Rust dokumentasjon om tekstmanipulasjon](https://doc.rust-lang.org/std/primitive.str.html#methods)
+- [Tutorial om hvordan å arbeide med tekst i Rust](https://dev.to/damcosset/working-with-text-in-rust-1l4g)

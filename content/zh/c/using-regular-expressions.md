@@ -1,69 +1,59 @@
 ---
 title:    "C: 使用正则表达式"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式？
+### 为何使用正则表达式？
 
-在编程中，经常需要对文本进行搜索、替换和分析。而正则表达式就是一个强大的工具，可以帮助我们更高效地完成这些任务。它使用特定的语法规则来匹配和定位文本中的模式，可以帮助我们节省大量的时间和精力。
+正则表达式是一种在数据处理和文本搜索中广泛使用的工具。它可以帮助程序员快速有效地匹配和处理大量字符。通过学习如何使用正则表达式，您可以大幅提高程序的效率和可读性。
 
-## 如何使用正则表达式？
+## 如何操作正则表达式？
 
-在C语言中，我们可以使用POSIX标准库中的<regex.h>头文件来使用正则表达式。让我们来看一个简单的例子，我们想要匹配所有以"a"结尾的单词：
+正则表达式是通过一系列字符构建的模式，用来匹配文本中的内容。下面是一个简单的例子，匹配一个邮箱地址：
 
-```C
+```
 #include <stdio.h>
 #include <regex.h>
 
-int main()
-{
-    regex_t reg;
-    int result = regcomp(&reg, "a\\b", REG_EXTENDED);
-    if (result != 0) {
-        printf("正则表达式编译失败！");
-        return -1;
-    }
+int main() {
+    char str[50] = "example@gmail.com";
+    char pattern[50] = "[A-Za-z0-9]+@[A-Za-z]+\\.[A-Za-z]{2,3}";
 
-    char *str = "Hello there, this is a test string.";
-    regmatch_t matches[1];
-    result = regexec(&reg, str, 1, matches, 0);
-    if (result == 0) {
-        printf("匹配的单词是：%.*s\n", (int)(matches[0].rm_eo - matches[0].rm_so), &str[matches[0].rm_so]);
-    } else {
-        printf("匹配失败！");
+    // 编译正则表达式
+    regex_t regex;
+    int ret = regcomp(&regex, pattern, REG_EXTENDED);
+
+    // 匹配字符串
+    if (ret == 0) {
+        int status = regexec(&regex, str, 0, NULL, 0);
+
+        // 输出匹配结果
+        if (status == 0) {
+            printf("匹配成功！");
+        } else if (status == REG_NOMATCH) {
+            printf("未找到匹配结果！");
+        }
     }
-    regfree(&reg);
 
     return 0;
 }
 ```
 
-输出结果为：
+上面的代码中，我们使用了 `<regex.h>` 中的 `regex_t` 和 `regcomp` 函数来编译正则表达式，并通过 `regexec` 函数来匹配字符串。在这个例子中，我们使用的正则表达式是 `[A-Za-z0-9]+@[A-Za-z]+\\.[A-Za-z]{2,3}`，它表示匹配以字母或数字开头，紧接着是 `@` 符号，然后是一段字母，再接着是一个 `.`，最后是 2-3 个字母的邮箱地址。
 
-```
-匹配的单词是：a
-```
+## 深入理解正则表达式
 
-在这个例子中，我们使用`regcomp`函数编译正则表达式，然后使用`regexec`函数执行匹配操作。`regmatch_t`结构体用于存储匹配结果，并且通过`matches[0].rm_so`和`matches[0].rm_eo`来获取匹配的起始和结束位置。
+正则表达式是一门强大的工具，可以帮助您在文本中快速定位和处理想要的内容。除了上面的例子中提到的字符匹配之外，它还可以通过使用*元字符*来进行更复杂的模式匹配。例如，可以使用 `+` 来表示匹配前面字符的一个或多个实例，使用 `*` 来表示匹配零个或多个实例，使用 `{x,y}` 来表示匹配 x 到 y 个实例。
 
-除了匹配，正则表达式还可以用于替换操作。我们可以使用`regsub`函数来进行替换，具体的用法可以参考相关的文档。
+除此之外，正则表达式还可以使用 *字符类* 和 *分组* 来提高匹配的准确性和灵活性。通过学习这些技巧，您可以更有效地使用正则表达式来处理各种文本数据。
 
-## 正则表达式的深入探讨
+### 看看这些链接
 
-正则表达式在C语言中使用相对较为复杂，需要熟悉一些特定的语法规则。比如，`^`表示匹配文本的开头，`$`则表示匹配结尾，`?`代表匹配零次或一次，`+`代表匹配一次或多次，`*`则代表匹配零次或多次。
+想要深入学习关于正则表达式的更多知识吗？不妨看看这些有用的链接：
 
-另外，正则表达式还支持使用括号来分组匹配，通过`()`来表示，这可以帮助我们更精确地定位到想要的数据。比如，`([A-Z]+)-([0-9]+)`可以匹配一个由大写字母和数字组成的字符串，并将大写字母和数字分别作为第一组和第二组数据进行捕获。
-
-正则表达式虽然强大，但在使用过程中也需要注意一些细节。比如，在特定的平台上，可能会存在不同的正则表达式语法，所以在编写代码时需要注意兼容性。
-
-## 参考链接
-
-- [C语言正则表达式教程](https://www.zhihu.com/question/273652704)
-- [POSIX标准库中的<regex.h>头文件文档](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/regex.h.html)
-
-## 参见
-
-- [C语言的字符串处理技巧](https://www.jianshu.com/p/15cfeb7f8f7f)
-- [C语言中使用正则表达式实现高级字符串匹配](https://www.zhihu.com/question/26134595)
+- [正则表达式小抄](https://www.rexegg.com/regex-quickstart.html)
+- [正则表达式语法](https://www.grymoire.com/Unix/Regular.html)
+- [在线正则表达式测试器](https://regex101.com/)

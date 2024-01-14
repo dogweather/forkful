@@ -1,49 +1,56 @@
 ---
-title:    "Clojure: Écrire des tests"
+title:    "Clojure: Ecrire des tests"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'écriture de tests est une pratique essentielle pour tout programmeur. Elle permet de vérifier si le code fonctionne correctement, de détecter les erreurs potentielles et de faciliter les modifications ultérieures. En d'autres termes, les tests garantissent la qualité du code et peuvent vous faire gagner un temps précieux lors du développement.
+L'écriture de tests est une étape importante dans le développement de logiciels. Elle permet de s'assurer que le code fonctionne correctement et de détecter d'éventuelles erreurs plus rapidement. En outre, elle facilite la maintenance du code à long terme.
 
-## Comment faire
+# Comment faire
 
-Pour écrire des tests en Clojure, vous pouvez utiliser l'outil intégré appelé clojure.test. Il vous permet de créer des cas de test avec la fonction `deftest` et d'effectuer des assertions avec `is`. Voyons un exemple simple où nous testons une fonction qui renvoie la somme de deux nombres :
+Pour écrire des tests en Clojure, il existe plusieurs outils disponibles tels que le framework de test intégré clojure.test ou encore le plugin CIDER pour l'IDE Emacs. Suivez ces étapes pour écrire des tests efficaces :
 
-```Clojure
-(deftest somme-test
-  (is (= 4 (somme 2 2)))
-  (is (= 10 (somme 5 5)))
-)
-```
+1. Développez le code que vous souhaitez tester.
+2. Importez le framework de test ou le plugin CIDER.
+3. Ecrivez les tests en utilisant des assertions pour vérifier les résultats attendus.
+4. Exécutez les tests et vérifiez les résultats.
 
-Ici, nous avons créé un cas de test appelé "somme-test" avec deux assertions `is`. La première vérifie si la somme de 2 et 2 est égale à 4, et la seconde vérifie si la somme de 5 et 5 est égale à 10. Pour exécuter ces tests, nous utilisons la fonction `run-tests`.
+Voici un exemple de code en Clojure avec un test utilisant clojure.test :
 
 ```Clojure
-(run-tests)
+(ns mon-projet.tests
+  (:require [clojure.test :refer :all]
+            [mon-projet.code :refer :all]))
+
+(deftest test-addition
+  (testing "Vérifier que l'addition fonctionne correctement"
+    (is (= (addition 2 3) 5))
+    (is (= (addition 0 0) 0))
+    (is (= (addition -1 1) 0))))
 ```
 
-Et voici le résultat :
+La sortie attendue serait la suivante :
 
 ```
-Testing user
-Ran 1 tests containing 2 assertions.
+Testing mon-projet.tests
+Ran 1 tests containing 3 assertions.
 0 failures, 0 errors.
 ```
 
-Nous pouvons voir que nos tests ont été réussis. Cependant, si nous avions fait une erreur dans notre fonction `somme`, par exemple en utilisant le mauvais opérateur, les tests auraient échoué et nous aurions pu corriger notre erreur immédiatement.
+# Approfondissement
 
-## Plongée en profondeur
+Il est important de noter que les tests doivent être écrits de manière à être automatisés, c'est-à-dire qu'ils doivent pouvoir être exécutés de manière répétée sans nécessiter d'intervention manuelle. Cela permet de gagner du temps et de garantir la fiabilité des tests.
 
-Il existe d'autres outils et bibliothèques en Clojure pour écrire des tests tels que midje, which, et cucumber. Chacun a ses avantages et ses inconvénients, il est donc important d'explorer et de trouver celui qui convient le mieux à votre style de développement.
+De plus, les tests doivent être spécifiques et couvrir tous les cas possibles. Par exemple, pour l'addition, il serait judicieux de tester également la division par zéro pour s'assurer qu'elle renvoie bien une erreur.
 
-N'oubliez pas que les tests doivent être écrits pour chaque nouvelle fonctionnalité ou modification de code. De plus, les tests devraient être automatisés et exécutés fréquemment pour garantir une qualité de code constante.
+Enfin, il est conseillé de suivre les principes du TDD (Test Driven Development) en écrivant les tests en premier, avant même le code. Cela permet de mieux cerner les fonctionnalités attendues et de s'assurer que le code répond bien à ces attentes.
 
-## Voir aussi
+# Voir aussi
 
-- [Documentation officielle de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Un guide complet sur l'écriture de tests en Clojure](https://www.braveclojure.com/testing/)
-- [Comparaison des différents outils de test en Clojure](https://medium.com/@randycoulman/choosing-a-clojure-testing-tool-85d16753a227)
+- [Documentation officielle sur clojure.test] (https://clojure.org/guides/testing)
+- [Guide sur le TDD en Clojure] (https://blog.cleancoder.com/uncle-bob/2017/10/03/Testability.html)
+- [Tutoriel sur l'utilisation du plugin CIDER pour écrire des tests] (https://pedestal.io/guides/testing-with-emacs/)

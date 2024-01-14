@@ -1,47 +1,50 @@
 ---
-title:    "Gleam: Konkatenacja ciągów znaków"
+title:    "Gleam: Łączenie ciągów znaków"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam: Jak łączyć ciągi znaków
-
 ## Dlaczego
 
-Konkatenacja (łączenie) ciągów znaków to powszechnie stosowana technika w programowaniu, szczególnie w przypadku języków takich jak JavaScript czy Python. Pozwala ona na łączenie kilku fragmentów tekstu w jeden dłuższy ciąg, co jest niezbędne w wielu aplikacjach. W języku Gleam możemy również skorzystać z tej funkcjonalności, co ułatwia nam pracę i tworzenie bardziej rozbudowanych programów.
+Konkatenacja (łączenie) ciągów znaków jest jednym z podstawowych zadań w programowaniu. Jest to proces łączenia wielu ciągów znaków w jeden, co pozwala na tworzenie bardziej złożonych wyrażeń i przetwarzanie danych w bardziej czytelny sposób.
 
 ## Jak to zrobić
 
-Aby skorzystać z funkcji łączenia ciągów znaków w Gleam, musimy użyć operatora `++`. Poniżej znajdują się przykładowe kody oraz wyniki dla dwóch ciągów znaków: "Hello" i "world".
+W języku Gleam, konkatenacja ciągów znaków odbywa się przy użyciu operatora `++`, który umożliwia dodawanie ciągów znaków do siebie. Przykładowo, jeśli mamy dwa ciągi znaków `Hello` i `world`, to po wykonaniu operacji `Hello ++ " " ++ world` otrzymamy wynik `Hello world`.
 
 ```Gleam
-let string1 = "Hello"
-let string2 = "world"
-let result = string1 ++ " " ++ string2
+let text = "Witaj " ++ "świecie"
 ```
-Wynik: "Hello world"
 
-Możemy również łączyć więcej niż dwa ciągi znaków:
+W powyższym przykładzie zmienna `text` będzie przechowywać ciąg znaków "Witaj świecie". W przypadku gdy chcemy dodać do siebie więcej niż dwa ciągi znaków, możemy po prostu kontynuować korzystając z operatora `++`.
 
 ```Gleam
-let string1 = "I love"
-let string2 = "programming"
-let string3 = "in Gleam!"
-let result = string1 ++ " " ++ string2 ++ " " ++ string3
+let hello = "Cześć "
+let name = "Jan"
+let sentence = hello ++ name ++ ". Jak się masz?"
 ```
-Wynik: "I love programming in Gleam!"
+
+W powyższym przykładzie zmienna `sentence` będzie przechowywać ciąg znaków "Cześć Jan. Jak się masz?"
 
 ## Głębsza analiza
 
-W języku Gleam, konkatenacja ciągów znaków jest realizowana przez funkcję `String.concat`, która jako argument przyjmuje listę ciągów znaków i zwraca jeden łączony ciąg. Inną przydatną funkcją jest `String.join`, która pozwala na połączenie listy ciągów znaków, oddzielając je podanym separatorem.
+Podczas konkatenacji ciągów znaków, język Gleam automatycznie wykrywa typ zmiennej, na podstawie której dokonywana jest operacja. Jeśli jedna ze zmiennych jest typu `String`, to cały wynik będzie również typu `String`.
 
-Warto także wspomnieć, że w Gleamie ciągi znaków są stałe, więc nie można zmieniać już utworzonego ciągu. Jeśli chcemy dokonać zmiany w ciągu znaków, musimy utworzyć nowy ciąg.
+Ponadto, język Gleam oferuje również funkcję `String.concat`, która pozwala na konkatenację dowolnej liczby ciągów znaków podanych w liście.
 
-## Zobacz także
+```Gleam
+let greetings = ["Cześć", " ", "Jak", " ", "się", " ", "masz?"]
+let sentence = String.concat(greetings)
+```
 
-Jeśli chcesz dowiedzieć się więcej o manipulowaniu ciągami znaków w języku Gleam, możesz zapoznać się z oficjalną dokumentacją:
-- [String](https://gleam.run/core/string/)
-- [List](https://gleam.run/core/list/)
-- [Join](https://gleam.run/core/string/#join)
-- [Concat](https://gleam.run/core/string/#concat)
+W powyższym przykładzie, zmienna `sentence` również będzie przechowywać ciąg znaków "Cześć Jak się masz?".
+
+## Zobacz też
+
+- Dokumentacja języka Gleam: https://gleam.run/documentation/
+- Wprowadzenie do konkatenacji w języku Gleam: https://gleam.run/documentation/guides/strings/
+- Przykładowe programy w języku Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
+
+*Tekst napisany dla Polaków, ale bez problemu będzie zrozumiały dla każdego, kto zna język polski.*

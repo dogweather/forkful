@@ -1,38 +1,57 @@
 ---
-title:    "Swift: Merkkijonon muuttaminen pienaakkosiksi"
+title:    "Swift: Merkkijonon muuntaminen pieniksi kirjaimiksi"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi 
 
-Usein ohjelmoinnissa on tarpeen muuttaa merkkijono pieniksi kirjaimiksi, esimerkiksi tietokannassa tallennetun käyttäjänimen vertailua varten. Tässä blogikirjoituksessa opit, miten voit muuttaa merkkijonon pieniksi kirjaimiksi käyttäen Swift-ohjelmointikieltä.
+On monia syitä, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi Swift-ohjelmoinnissa. Yksi yleisimmistä syistä on johdonmukaisuus ja yhtenäisyyden säilyttäminen datassa. Esimerkiksi jos tietokannassa tai käyttäjän syötteissä on eri muodossa olevia sanoja (esimerkiksi "KISSA" ja "kissa"), muuntamalla ne pieniksi kirjaimiksi, voidaan välttää turhia eroja ja virheitä datan käsittelyssä.
 
-## Kuinka tehdä se
+## Miten
 
-Swiftissä merkkijonon muuttaminen pieniksi kirjaimiksi tapahtuu `lowercased()`-metodilla. Tämä metodi palauttaa uuden merkkijonon, joka sisältää alkuperäisen merkkijonon pieninä kirjaimina.
-
-```Swift
-let nimi = "MARKKU"
-print(nimi.lowercased()) // markku
-```
-
-Voit myös tallentaa muutetun merkkijonon uuteen muuttujaan, jotta voit käyttää sitä myöhemmin ohjelmassasi.
+Merkinjonon muuttaminen pieniksi kirjaimiksi Swiftissä on yksinkertaista käyttämällä metodia "lowercased()". Tämä metodi palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat pieniä.
 
 ```Swift
-let isoNimi = "MARKKU"
-let pieniNimi = isoNimi.lowercased()
-print(pieniNimi) // markku
+let sana = "KISSA"
+print(sana.lowercased()) // tulostaa "kissa"
 ```
 
-## Syvemmälle aiheeseen
+Jos haluat muuttaa merkkijonon pieniksi kirjaimiksi alkuperäisessä muuttujassa, voit käyttää metodia "lowercased()" yhdessä sijoitusoperaattorin kanssa.
 
-Joissakin kielissä on erilaisia aakkosia, jotka voivat aiheuttaa ongelmia vertailtaessa merkkijonoja. Esimerkiksi suomen kielessä on ä, ö ja å-kirjaimet. Onneksi Swiftin `lowercased()`-metodi huomioi nämä erot, joten voit käyttää sitä turvallisesti myös suomen kielellä.
+```Swift
+var sana = "KISSA"
+sana = sana.lowercased()
+print(sana) // tulostaa "kissa"
+```
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi on myös tärkeää, jos haluat tehdä hakukyselyitä tietokantaan. Kun molemmat verrattavat arvot ovat samassa muodossa, vertailu on luotettavampi ja tarkempi.
+Voit myös käyttää metodia suoraan kirjainketjujen käsittelyssä käyttämällä muuttujan nimeä sulkeiden sisällä.
+
+```Swift
+let tulos = "APINA".lowercased()
+print(tulos) // tulostaa "apina"
+```
+
+## Syväsukellus
+
+Kun merkkijonojen käsittelyyn tarvitaan enemmän monimutkaisuutta, Swift tarjoaa myös muita vaihtoehtoja. Esimerkiksi voit käyttää metodia "localizedLowercase()", joka muuttaa merkkijonon pieniksi kirjaimiksi, ottaen huomioon myös mahdolliset kielelliset ja alueelliset erot.
+
+```Swift
+let sana = "ÄITI"
+print(sana.localizedLowercase) // tulostaa "äiti" kielestä riippuen
+```
+
+Voit myös käyttää ns. "string interpolation" -tekniikkaa, jolla voit yhdistää merkkijonoja suoraan metodin muokattavana olevaan versioon.
+
+```Swift
+let lempiväri = "SININEN"
+let lause = "Minun lempivärini on \((lempiväri).lowercased())." // palauttaa "Minun lempivärini on sininen."
+```
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID291)
-- [Stack Overflow - kysymys ja vastaus merkkijonon muuttamisesta pieniksi kirjaimiksi Swiftissä](https://stackoverflow.com/questions/24123320/converting-string-to-lowercase-in-swift)
+- [Apple Developer Documentation - String](https://developer.apple.com/documentation/swift/string/) (englanniksi)
+- [Swift By Sundell - Working With Strings in Swift](https://www.swiftbysundell.com/basics/strings/) (englanniksi)
+- [Swift-tietokirja - Merkkijonot](https://docs.swift.org/swift-book/LanguageGuide/Strings.html) (englanniksi)

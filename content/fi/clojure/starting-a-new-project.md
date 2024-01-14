@@ -1,34 +1,37 @@
 ---
 title:    "Clojure: Uuden projektin aloittaminen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä, miksi aloittaa uusi projekti Clojure-kielen parissa. Clojure on moderni, dynaaminen ohjelmointikieli, joka yhdistää funktionaalisen ja imperatiivisen ohjelmoinnin parhaat puolet. Sen lisäksi Clojurella on laaja kirjastoja ja yhteisö, joten sen käyttöönotto ja oppiminen on helpompaa kuin monilla muilla kielillä.
+On monia syitä, miksi aloittaa uusi ohjelmointiprojekti Clojure-kielillä. Clojure on dynaaminen ohjelmointikieli, joka yhdistää funktionaalisen ohjelmoinnin ja vahvan Java-yhteensopivuuden.
 
-## Miten aloittaa
+## Kuinka aloittaa
 
-Clojure-projektin aloittaminen on helppoa. Sinun tarvitsee vain asentaa Java-ympäristö ja Clojure-tulkki. Voit tehdä tämän esimerkiksi käyttämällä asennusohjelmaa Leiningenia. Sen jälkeen voit luoda uuden Clojure-projektin seuraavalla komennolla:
-
-```Clojure
-lein new app minun-projekti
-```
-
-Tämä luo uuden Clojure-projektin, johon voit alkaa lisäämään koodia ja suorittaa sen seuraavasti:
+Clojuren asentaminen ja aloittaminen on helppoa. Tarvitset vain Clojuren asennetun JDK:n (Java Development Kitin) ja tekstieditorin. Seuraavassa esimerkissä näytämme, miten tulostaa "Hei maailma!" käyttäen Clojurea.
 
 ```Clojure
-lein run
+(ns project.core
+  (:gen-class))
+
+(defn -main []
+  (println "Hei maailma!"))
 ```
 
-## Syvä sukellus
+Tallenna tämä tiedosto nimellä `core.clj` ja suorita se terminaalissa komennolla `clojure core.clj`. Näet tulosteen "Hei maailma!" terminaalissa.
 
-Clojure-projektin aloittaminen kannattaa tehdä huolellisesti valitsemalla oikeat työkalut ja sovellusrakenteet. On myös hyvä miettiä millaista ohjelmistoa haluat luoda ja millaisia laajennettavuus- ja testausmahdollisuuksia siihen tarvitset. Hyvä tapa aloittaa uusi projekti on myös tutkia muiden valmiita Clojure-projekteja ja ottaa mallia niiden rakenteista ja toteutuksista.
+## Syvällinen sukellus
+
+Ennen kuin aloitat uuden Clojure-projektin, on hyvä tutustua kielen syntaksiin ja perusominaisuuksiin. Clojuren virallinen sivusto tarjoaa kattavia oppaita ja dokumentaatiota, jotka auttavat sinua pääsemään alkuun. Voit myös etsiä verkosta aiheisiin liittyviä blogiartikkeleita ja ilmaisia ​​verkkokursseja.
 
 ## Katso myös
 
-- [Clojure-kielen virallinen sivusto](https://clojure.org/)
-- [Leiningen-asennusohjeet](https://leiningen.org/)
-- [Clojure-yhteisön sivusto](https://clojureverse.org/)
+- [Clojuren virallinen sivusto](https://clojure.org)
+- [Clojuren opiskelu -ohjelma](https://www.clojure.org/learn)
+- [Clojuren dokumentaatio](https://clojure.org/api/api)
+- [Clojuren oppimateriaalit ja kurssit](https://www.clojure.org/learn/resources)
+- [Clojure-yhteisö Suomessa](http://www.clojure.fi/)

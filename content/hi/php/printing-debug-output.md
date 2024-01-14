@@ -1,37 +1,30 @@
 ---
 title:    "PHP: डिबग आउटपुट प्रिंट करना"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# वजह
+## Kyon
+Debug output print karne ka karan hai ki yeh aapko code mein kisi bhi tarah ke error ya bug ko dhoondhne aur use fix karne mein madad karta hai.
 
-डीबग आउटपुट प्रिंट करने के पीछे की  क्या वजह हो सकती है? कुछ लोग डीबग आउटपुट को लिखने से बचना चाहते हैं। उन्हें डीबगींग की प्रैक्टिस को समझने होगी, ताकि प्रोग्राम को सुधारा जा सके।
-
-# कैसे करें
-
-कुछ उदाहरणों के साथ कोडिंग उदाहरण ```PHP...``` कोड ब्लॉक्स के भीतर जो। ये आपको बताएंगे कि आप अपनी प्रोग्राम में कैसे डीबग आउटपुट प्रिंट कर सकते हैं। ये सुनिश्चित करने के लिए कि आपका कोड सही से काम कर रहा है या नहीं और आपको डॉक्यूमेंटेशन के लिए भी उपयोगी हो सकता है।
+## Kaise Kare
+Agar aapko apne code mein kisi bug ko dhoondhna hai, toh aapko debug output print karna hai. Iske liye aapko `print_r()` ya `var_dump()` jaise functions ka upyog karna hoga. Iske baad aapko apne code mein un variables ko include karna hai jinhe aap debug output mein dekhna chahte hain.
 
 ```PHP
-// सामान्य डीबगिंग स्टेटमेंट
-echo "यह मैसेज प्रिंट होगा।";
-
-// वेरिएबल या अन्य कोड के साथ एकसाथ प्रिंट करें
-$variable = "यह भी मिला है।";
-echo "कुछ वर्बोस डीबगिंग के साथ " . $variable . ".";
-
-// एरर डीबगिंग का उपयोग करें
-$error = "यह गलती है।";
-trigger_error($error, E_USER_WARNING); 
+<?php
+   $name = "Rohit";
+   $age = 27;
+   print_r($name);
+   print_r($age);
+?>
 ```
+Output: Rohit27
 
-आप समझ गए होंगे कि कैसे प्रिंट करना है, लेकिन अब इसके पीछे का गहरा जाने योग्य है।
+## Gehra Jaanch
+Debug output ko print karna kaafi faydemand hai kyunki isse aapko woh line of code pata chalti hai jahan par error ho raha hai. Aur yeh aapko code ki gehrai mein jaane aur errors ko find karne mein madad karta hai. Iske alawa, agar aapki website ya application slow chal rahi hai, toh aap debug output ke through performance issues ko bhi dhoondh sakte hain.
 
-# गहराई में जाएं
-
-## प्रिंट फ़ंक्शन के प्रकार
-
-आपको कई प्रकार की डीबगिंग स्टेटमेंट्स के साथ खासकर ```echo``` का उपयोग करने की जरूरत हो सकती है। यहां आपको कुछ अन्य विकल्प दिखाए गए हैं।
-
-- ```print_r()```: यह साइट के संग्रहम में बेहतर परिणामों के लिए बनाया गया है और सुहावन
+## Dekhein Bhi
+[PHP documentation on var_dump()](https://www.php.net/manual/en/function.var-dump.php),
+[PHP documentation on print_r()](https://www.php.net/manual/en/function.print-r.php)

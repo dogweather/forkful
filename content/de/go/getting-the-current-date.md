@@ -1,50 +1,58 @@
 ---
-title:    "Go: Das aktuelle Datum bekommen"
+title:    "Go: Das aktuelle Datum erhalten"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das aktuelle Datum und die Uhrzeit sind eine wichtige Information, die in vielen Anwendungen verwendet wird. Zum Beispiel können Benutzer sehen, wann ein Blog-Beitrag veröffentlicht wurde oder wann ein Chat-Nachricht gesendet wurde. Es kann auch hilfreich sein, das Datum und die Uhrzeit zu protokollieren, um Aktionen und Ereignisse zu verfolgen. In diesem Beitrag zeigen wir Ihnen, wie Sie das aktuelle Datum in Go programmieren können.
+Das aktuelle Datum und die aktuelle Zeit sind wichtige Informationen, die in vielen Programmen benötigt werden. In diesem Blogbeitrag werden wir uns mit der Frage beschäftigen, wie man in Go das aktuelle Datum und die aktuelle Uhrzeit abrufen kann.
 
-## Wie man vorgeht
+## Wie geht das?
 
-Um das aktuelle Datum in Go zu erhalten, können wir die built-in Funktion `time.Now()` verwenden. Diese Funktion gibt ein `time.Time` Objekt zurück, das Datum, Uhrzeit und Zeitzone enthält. Wir können dann Methoden anwenden, um das Datum und die Uhrzeit in verschiedenen Formaten auszugeben.
+Um das aktuelle Datum zu erhalten, können wir in Go die Funktion `time.Now()` verwenden. In unserem Beispiel möchten wir das Datum anzeigen, also müssen wir die `Date()` Methode aufrufen.
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    // das aktuelle Datum und Uhrzeit erhalten
-    now := time.Now()
-
-    // das Datum formatieren (Tag.Monat.Jahr)
-    date := now.Format("02.01.2006")
-
-    // die Uhrzeit formatieren (Stunden:Minuten:Sekunden)
-    time := now.Format("15:04:05")
-
-    // das Datum und die Uhrzeit ausgeben
-    fmt.Printf("Heute ist der %s um %s Uhr", date, time)
-}
+currentDate := time.Now().Date()
 ```
 
-Die Ausgabe würde folgendermaßen aussehen: `Heute ist der 05.01.2020 um 16:32:10 Uhr`. Wir können auch andere Formatierungsoptionen verwenden, um das Datum und die Uhrzeit auf unsere Bedürfnisse anzupassen.
+Jetzt haben wir das aktuelle Datum in einer Variablen `currentDate` gespeichert. Um es anzuzeigen, können wir entweder die `fmt.Println()` Funktion verwenden oder wir können das Datum direkt in einem String formatieren.
 
-## Tiefer gehende Informationen
+```Go
+// Ausgabe über fmt.Println()
+fmt.Println(currentDate)
 
-Die `time.Time` Struktur enthält viele Methoden, die uns dabei helfen können, das Datum und die Uhrzeit in verschiedenen Zeitzonen, Formaten und Sprachen darzustellen. Wir können auch Berechnungen mit Datum und Uhrzeit durchführen, wie zum Beispiel die Dauer zwischen zwei Zeitpunkten oder das Hinzufügen von Stunden zu einem Datum.
+// Ausgabe über einen formatierten String
+fmt.Printf("%d.%02d.%02d", currentDate.Day(), currentDate.Month(), currentDate.Year())
+```
 
-Für eine detailliertere Erklärung der `time` Package in Go, empfehlen wir die offizielle Dokumentation: [https://golang.org/pkg/time/](https://golang.org/pkg/time/).
+Die Ausgabe wird je nach aktuellem Datum unterschiedlich sein, z.B.`2021-08-25` oder `25.08.2021`. Wenn wir auch die Uhrzeit anzeigen möchten, können wir die `Time()` Methode anstatt der `Date()` Methode aufrufen.
+
+```Go
+currentDateTime := time.Now()
+
+// Ausgabe über fmt.Println()
+fmt.Println(currentDateTime)
+
+// Ausgabe über einen formatierten String
+fmt.Printf("%02d:%02d:%02d", currentDateTime.Hour(), currentDateTime.Minute(), currentDateTime.Second())
+```
+
+Die Ausgabe wird ähnlich aussehen wie `2021-08-25 13:45:30` oder `13:45:30`.
+
+## Tiefergehende Infos
+
+Die Funktion `time.Now()` gibt uns einen `time.Time` Datentyp zurück, der nicht nur das Datum und die Uhrzeit, sondern auch Informationen über Zeitzonen und unterstützte Operationen beinhaltet. Wir können auf diese Informationen zugreifen, indem wir Methoden wie `Location()` oder `Add()` auf den `time.Time` Datentyp anwenden. Beispielsweise können wir die aktuelle Zeit um eine Stunde erhöhen, indem wir `time.Now().Add(time.Hour)` verwenden.
+
+Es ist auch möglich, das aktuelle Datum und die aktuelle Zeit in einer bestimmten Zone abzurufen, indem wir die `time.LoadLocation()` Funktion verwenden. Diese Funktion erwartet eine Zeitzonenabkürzung oder einen Ortsnamen und gibt uns ein `*time.Location` Objekt zurück. Dieses Objekt können wir dann beim Aufruf von `time.Date()` oder `time.Time()` nutzen, um das Datum und die Uhrzeit in der gewünschten Zone abzurufen.
 
 ## Siehe auch
-- [Einführung in die Programmierung mit Go](https://golang.org/doc/tutorial/)
-- [Wie man Benutzereingaben in Go verarbeitet](https://www.programming-books.io/essential/go/4zuk-wie-liest-man-benutzereingaben-in-go-2a3f3c3af25a43d585a01c6a8e08c5cc)
-- [Go: Die Grundlagen der Sprache](https://www.golang-book.com/books/intro)
+
+Wir haben uns nun angesehen, wie man in Go das aktuelle Datum und die aktuelle Zeit abrufen kann. Für weitere Informationen über die `time` Paket in Go, schauen Sie sich bitte die offizielle Dokumentation an: 
+
+- [Go Zeitformatierung](https://golang.org/pkg/time/#Time.Format)
+- [Godoc Zeitpaket](https://godoc.org/time)
+
+Happy coding!

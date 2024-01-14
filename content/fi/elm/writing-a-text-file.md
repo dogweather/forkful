@@ -1,50 +1,37 @@
 ---
-title:    "Elm: Tekstitiedoston kirjoittaminen"
+title:    "Elm: Tiedoston kirjoittaminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaisit tekstitiedostoa?
+## Miksi
 
-Tekstitiedoston kirjoittaminen on tärkeä osa ohjelmoinnin oppimista, sillä se auttaa kehittämään taitoja käsitellä ja tallentaa tietoa. Se myös antaa sinulle mahdollisuuden tallentaa ja jakaa tietoa erilaisten ohjelmistojen ja käyttäjien välillä.
+Käytännöllisesti katsoen jokaisessa ohjelmointiprojektissa tarvitaan tarvitaan jonkinlaisen tekstitiedoston kirjoittamista. Se voi olla esimerkiksi konfiguraatiotiedostoa, lokitiedostoa tai käyttäjän syöttämää tietoa tallentavaa tiedostoa. Tekstitiedostot ovat olennainen osa ohjelmointia, joten on tärkeää tietää kuinka niitä kirjoitetaan.
 
-## Kuinka kirjoittaa tekstitiedosto Elm-kielellä?
+## Miten
 
-```Elm
-module Main exposing (..)
+Tekstitiedoston kirjoittaminen on helppoa Elm-ohjelmointikielessä. Se voidaan tehdä käyttämällä `text`-moduulia ja sen `writeFile`-funktiota. Katso esimerkki alla:
 
-import File
-import String
+```elm
+import Text exposing (writeFile)
 
-main : Cmd msg
-main =
+kirjoitaTiedosto : String -> Cmd msg
+kirjoitaTiedosto sisältö =
     let
-        filePath =
-            "tekstitiedosto.txt"
-            
-        fileContent =
-            "Tämä on tekstitiedoston sisältö."
+        polku = "tiedosto.txt"
     in
-        File.writeFile filePath fileContent
+    writeFile polku sisältö
 ```
 
-Tässä esimerkissä käytetään Elm-kirjastoa nimeltä `File`, joka mahdollistaa tiedostojen tallentamisen ja muokkaamisen. `main`-funktiossa määritellään tiedoston polku (`filePath`) ja sen sisältö (`fileContent`). Funktio `File.writeFile` tallentaa tiedoston ja palauttaa `Cmd`-tyypin. Tämä tarkoittaa, että kirjoittaminen suoritetaan asynkronisesti, jolloin ohjelma voi jatkaa toimintaansa kirjoittamisen aikana.
+Funktion `kirjoitaTiedosto` parametri on tiedoston sisältö merkkijonona ja funktion tulosteena saadaan komento `Cmd msg`, joka suorittaa tiedoston kirjoittamisen. Huomaa myös, että meidän täytyy antaa tiedostolle polku, jossa se tallennetaan. Tässä tapauksessa tiedosto tallennetaan tiedostonimeen "tiedosto.txt".
 
-Tämän jälkeen voidaan ajaa ohjelma komentoriviltä ja tarkastaa, että tekstitiedosto on luotu annetulla polulla. Tiedoston sisältö tulisi näyttää seuraavalta:
+## Syvemmälle
 
-```
-Tämä on tekstitiedoston sisältö.
-```
-
-## Syvempi sukellus tekstitiedoston kirjoittamiseen
-
-Tekstitiedoston kirjoittaminen Elm-kielellä vaatii ymmärrystä siitä, miten tiedostoja käsitellään tietokoneella. Tiedostot tallennetaan binäärimuodossa, mutta ohjelmointikieliä käytetään tyypillisesti käsittämään ja muokkaamaan tiedostojen sisältöä tekstinä. Tämän vuoksi Elm-kirjastoissa on usein funktioita, jotka muuttavat tiedoston sisällön binäärimuodosta tekstimuotoon. Näitä funktioita ovat esimerkiksi `File.readAsString` ja `File.writeString`.
-
-On myös tärkeää huomata, että tiedostojen käsittelyyn tarvitaan usein käyttöoikeuksia ja polkuja. Elm-kielellä ei ole valmiiksi sisäänrakennettua tapaa saada käyttöoikeuksia tai polkuja. Tämä tarkoittaa, että tiedostojen käsittely vaatii käyttöliittymän, jossa käyttäjä voi antaa näitä tietoja.
+Elm tarjoaa myös muita vaihtoehtoja tekstitiedoston kirjoittamiseen, kuten `Text.Write`-moduulin, joka mahdollistaa tiedoston kirjoittamisen ilman erillisiä polkuja ja komentoja. Voit myös käyttää `Text.toFile`-funktiota, joka vastaanottaa tiedostonimen ja tiedoston muodostavan funktion parametreina.
 
 ## Katso myös
 
-- [Elm-kirjaston dokumentaatio tiedostojen käsittelystä] (https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm-opas tiedostojen käsittelystä] (https://www.elm-tutorial.org/en/09-elm-io/04-files.html)
-- [Mistä aloittaa Elm-kielellä] (https://elmprogramming.com/getting-started-with-elm-language.html)
+- [Elm Text -dokumentaatio](https://package.elm-lang.org/packages/elm-lang/core/1.0.5/Text)
+- [Ohjeet tekstitiedostojen kirjoittamiseen Elmissä](https://elmprogramming.com/writing-text-files-in-elm.html)

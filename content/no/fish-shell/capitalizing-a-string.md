@@ -1,51 +1,36 @@
 ---
-title:    "Fish Shell: Stor bokstaving av en streng"
+title:    "Fish Shell: Stort bokstaver en streng"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å programmere kan virke skremmende for noen, men det trenger ikke å være det. Ta for eksempel det å kapitalisere en streng, altså å gjøre den første bokstaven stor. Dette kan virke som en liten og ubetydelig operasjon, men det er faktisk en viktig del av mange programmer. La oss se nærmere på hvorfor.
+Har du noen gang ønsket å endre en tekststreng slik at den begynner med stor bokstav? Dette kan være nyttig for å gjøre tekst mer lesbar, spesielt når den vises til brukere eller på skjermen. I denne bloggposten vil vi lære hvordan du kan gjøre dette ved hjelp av Fish Shell.
 
 ## Hvordan
 
-Coding er ikke bare for eksperter og nerder, det kan være en måte å løse hverdagslige problemer på. For å kapitalisere en streng i Fish Shell, kan du bruke en kommando som heter "capitalize". Her er et eksempel på hvordan du kan bruke den:
-
-```
-Fish Shell (commandline):
-$ capitalize "heisann"
-Heisann
+```Fish Shell
+set tekst "dette er en tekststreng"
+echo $tekst | tr '[:lower:]' '[:upper:]'
 ```
 
-Som du kan se, blir den første bokstaven i strengen "heisann" automatisk gjort stor. Dette kan være nyttig for å få en mer ryddig og konsistent tekst i programmene dine. Men hva om du vil kapitalisere alle ord i en setning? Da kan du bruke kommandoen "capitalize --all".
-
-```
-Fish Shell (commandline):
-$ capitalize --all "hei, jeg heter maria"
-Hei, Jeg Heter Maria
-```
-
-Som du ser, blir nå alle ordene i setningen med stor forbokstav. Dette kan være nyttig for å gjøre tekst mer leselig og presentabel i brukergrensesnitt.
+Dette kodeeksempelet viser hvordan du kan bruke kommandoen "tr" til å konvertere alle små bokstaver i en tekststreng til store bokstaver. Ved å pipe resultatet til "echo" kommandoen, vil vi kunne se den endrede tekststrengen: "DETTE ER EN TEKSTSTRENG".
 
 ## Dypdykk
 
-Å kapitalisere en streng kan virke som en enkel operasjon, men det finnes faktisk mange forskjellige måter å gjøre det på i Fish Shell. En annen måte er å bruke en tilpasset funksjon med "string" kommandoen. Her er et eksempel på hvordan det kan gjøres:
+I Fish Shell finnes det også en innebygd funksjon for å endre en tekststreng til å begynne med stor bokstav. Denne funksjonen heter "string capitalize" og kan brukes på følgende måte:
 
-```
-Fish Shell (commandline):
-$ string upper -r "tekst som skal kapitaliseres"
-Tekst Som Skal Kapitaliseres
+```Fish Shell
+set tekst "dette er en tekststreng"
+echo (string capitalize $tekst)
 ```
 
-Dette betyr at du kan lage dine egne funksjoner for å kapitalisere strenger, og tilpasse dem etter dine behov. Dette kan være nyttig hvis du vil lage en spesiell formatering for en bestemt del av teksten din.
+I dette eksempelet bruker vi funksjonen for å først endre tekststrengen til å begynne med liten bokstav, og deretter tilbake til stor bokstav. Begge kodeeksemplene gir samme resultat: "Dette er en tekststreng".
 
 ## Se også
 
-Her er noen relevante linker for å lære mer om programmering i Fish Shell:
-
-- [Official Fish Shell documentation] (https://fishshell.com/docs/current/index.html)
-- [Fish Shell tutorial] (https://fishshell.com/docs/current/tutorial.html)
-- [10 Essential Fish Shell Commands] (https://www.hostinger.com/tutorials/fish-shell-commands)
-- [How to Write a Fish Shell Script] (https://dev.to/turtle1985/how-to-write-a-fish-shell-script-4j1)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Forkapitalisering av tekststrenger i Bash](https://www.baeldung.com/linux/forkapitalisering-av-tekststrenger-bash)

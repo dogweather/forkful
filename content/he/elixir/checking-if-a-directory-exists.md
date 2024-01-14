@@ -1,48 +1,35 @@
 ---
-title:    "Elixir: לבדיקת קיום תיקייה בתכנות מחשבים"
+title:    "Elixir: בדיקת קיום תיקייה"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-### למה
+"## למה"
 
-במאמר זה נלמד איך לבדוק אם תיקייה קיימת ב-Elixir. הידע הנלמד ישמש את הקוראים לאפשר להם ליישם את הטכניקה הזאת בפרויקטיים שלהם ותורם לכך שהם ירגישו בנוח יותר בעבודה עם Elixir.
+בכתיבת קוד בלשון אליקסיר, חשוב לבדוק אם תיקייה קיימת לפני התחלת פעולות עליה. זה יכול למנוע בעיות מיותרות ולהבטיח שהתוכנית תרוץ בצורה אמינה ומדויקת.
 
-### כיצד
+"## איך לבדוק אם תיקייה קיימת"
 
-בשפת Elixir ניתן לבדוק אם תיקייה קיימת על ידי קריאה ל־ `File.ls` ובמקרה שהיא תיקייה קיימת, הפונקציה תחזיר רשימה של כל הקבצים והתיקיות שבתוך התיקייה הזו. לדוגמה:
+```elixir
+def check_directory(directory) do
+  if File.exists?(directory) do
+    IO.puts "#{directory} קיימת."
+  else
+    IO.puts "#{directory} לא קיימת."
+  end
+end
 
-```Elixir
-File.ls("my_directory")
-# Output: ["file1.txt", "file2.txt", "subdirectory"]
+check_directory("documents") 
+# documents קיימת.
 ```
 
-אם התיקייה לא קיימת, הפונקציה תחזיר שגיאה. לדוגמה:
+"## חקר מעמיק יותר"
 
-```Elixir
-File.ls("non_existent_directory")
-# Output: ** (File.Error) could not read directory "non_existent_directory": no such file or directory
-```
+ביצוע בדיקה על קיומה של תיקייה מבוצע באמצעות הפונקציה `File.exists?` שמחזירה ערך בוליאני של `true` אם התיקייה קיימת ו-`false` אם היא לא קיימת. בדיקה זו נעשית באמצעות השתמשות בפונקציה הכיבושית `if`, כך שניתן לתת תנאי לבדיקה האם תיקייה מסוימת קיימת.
 
-בנוסף, ניתן להשתמש בפונקציה `File.dir?` כדי לבדוק אם הנתיב המתקבל הוא באמת תיקייה. למשל:
+"## ראה גם"
 
-```Elixir
-File.dir?("my_directory/subdirectory")
-# Output: true
-```
-
-```Elixir
-File.dir?("my_directory/file1.txt")
-# Output: false
-```
-
-### העומק
-
-כדי להבין טוב יותר את המנגנון של `File.ls`, נוכל לעקוב אחריו בקוד הפונקציה. הפונקציה מקבלת את הנתיב של התיקייה כפרמטר ומחפשת את ה־inode המתאים. אם ה־inode קיים, הפונקציה תעביר את הנתיב לפונקציה `:file_lib.read_dir` שתבצע את העבודה הטכנית כדי להחזיר רשימה של הקבצים והתיקיות שבתוך הנתיב ההוא. אם ה־inode אינו קיים או אינו מצביע לתיקייה, הפונקציה תחזיר שגיאה.
-
-אולם, חשוב לזכור שמונפקציות אלו הינן חלק ממודול הסטנדארטי `File` וזה נע הישג המידע ולמידתו שם.
-
-### ראו גם
-
-- [חוברת הת
+- [הגדרת הפונקציה File.exists? באתר הרשמי של אליקסיר](https://hexdocs.pm/elixir/File.html#exists%3F/1)
+- [אילן ל מדמה, "כניסה לקובץ ומילוי תיקיות באמצעות אליקסיר"](https://medium.com/@ilanlm/how-to-open-files-and-create-directories-using-elixir-d72e32f1dfea)

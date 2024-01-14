@@ -1,61 +1,59 @@
 ---
 title:    "Rust: Buscando e substituindo texto"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Escrever código é uma arte, e assim como qualquer outra forma de arte, é importante manter nosso trabalho organizado e legível. Um dos problemas mais comuns que os programadores enfrentam é a necessidade de fazer alterações em um determinado trecho de código repetidas vezes. Felizmente, a linguagem de programação Rust possui recursos que facilitam a busca e substituição de texto, tornando esse processo muito mais eficiente e menos suscetível a erros.
+Alguma vez você já precisou fazer alterações em um grande arquivo de texto e ficou exausto de procurar e substituir manualmente? Bem, a linguagem de programação Rust tem uma solução para isso! Através do seu sistema de gerenciamento de memória e poderosas ferramentas de manipulação de texto, Rust torna a busca e substituição de texto rápida e eficiente.
 
-## Como fazer
+## Como Fazer
 
-Para começar, vamos supor que temos um arquivo de texto chamado "texto.txt" que contém a seguinte frase: "Eu amo programar com Rust". Queremos substituir a palavra "amo" por "adoro". Em Rust, podemos fazer isso usando o método "replace" da biblioteca "string". Aqui está um exemplo de como ficaria o código:
+Para realizar busca e substituição de texto em Rust, podemos usar a função "replace" da biblioteca padrão. Primeiro, vamos definir uma string para realizar a busca:
 
-`` `Rust
-use std::fs::File;
-use std::io::prelude::*;
-
-fn main () {
-    let mut file = File::open ("texto.txt")?
-    let mut conteúdo = String :: new ();
-    arquivo .ler_para_string (& mut conteúdo)?;
-
-    conteúdo = conteúdo.replace ("amo", "adoro");
-
-    arquivo = File::create ("texto.txt")?;
-    arquivo .escrever (conteúdo. como_bytes ())?;
-}
-`` `
-
-Se executarmos esse código, o conteúdo do nosso arquivo "texto.txt" será alterado para: "Eu adoro programar com Rust".
-
-Outra opção é usar o método "replace_all", que substitui todas as ocorrências de uma palavra por outra. Vamos supor que também queremos substituir a palavra "Rust" por "Rustacean". O código ficaria assim:
-
-`` `Rust
-conteúdo = conteúdo.replace_all ("Rust", "Rustacean");
+```Rust
+let texto = "Olá, mundo! Meu nome é Rust.";
 ```
 
-E o resultado final seria: "Eu adoro programar com Rustacean".
+Agora, vamos usar o método "replace" para substituir a palavra "Rust" por "Programação":
 
-## Mergulho profundo
+```Rust
+let novo_texto = texto.replace("Rust", "Programação");
 
-Além dos métodos "replace" e "replace_all", Rust também possui o método "replace_range", que permite substituir um trecho específico de uma string por outra. Também podemos usar expressões regulares para tornar nosso processo de busca e substituição mais flexível e preciso.
-
-Por exemplo, vamos supor que queremos substituir todas as palavras que começam com a letra "h" por "hello". Poderíamos fazer isso usando uma expressão regular e o método "replace_regex" da biblioteca "regex". O código ficaria assim:
-
-`` `Rust
-use regex :: Regex;
-
-conteúdo = Regex :: new (r "h \ w +"). Substituir (conteúdo, "hello");
+println!("{}", novo_texto);
 ```
 
-Assim, a palavra "hacker" seria substituída por "helloer", a palavra "hello" seria substituída por "hellohello" e assim por diante.
+A saída será: "Olá, mundo! Meu nome é Programação." Como podemos ver, a função "replace" substituiu todas as ocorrências da palavra "Rust" pela nova palavra.
 
-## Veja também
+Também podemos utilizar expressões regulares para realizar buscas e substituições mais complexas. Por exemplo, podemos usar a biblioteca "regex" para substituir todas as vogais em uma string por asteriscos:
 
-- [Documentação da biblioteca "string" do Rust] (https://doc.rust-lang.org/std/string/index.html)
-- [Documentação da biblioteca "regex" do Rust] (https://docs.rs/regex/1.4.2/regex/)
+```Rust
+extern crate regex;
 
-Espero que este artigo tenha sido útil para ajudar você a entender como fazer buscas e substituições de texto em Rust. Experimente esses métodos e veja como eles podem facilitar sua vida como programador. Até a próxima!
+use regex::Regex;
+
+let padrao = Regex::new("[aeiou]").unwrap();
+let novo_texto = padrao.replace_all("This is a text", "*");
+
+println!("{}", novo_texto);
+```
+
+A saída será: "Th*s *s * t*xt".
+
+## Deep Dive
+
+As funções de busca e substituição em Rust também são altamente eficientes e otimizadas, graças ao seu sistema de gerenciamento de memória. Essas funções também permitem especificar opções como "case sensitive" ou "global match", tornando a manipulação de texto ainda mais versátil.
+
+Rust também fornece outras bibliotecas de manipulação de texto, como "Textwrap" para formatar parágrafos e "Unicode Normalization" para trabalhar com caracteres Unicode.
+
+Além disso, é possível criar expressões regulares com Rust através da biblioteca "Regex", que oferece uma ampla gama de funções para manipulação de texto usando padrão regex.
+
+## Veja Também
+
+- [Documentação oficial da função "replace"](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Tutorial sobre expressões regulares em Rust](https://docs.rs/regex/1.3.7/regex/#using-regular-expressions)
+- [Biblioteca "Textwrap" para formatar texto em Rust](https://docs.rs/textwrap/0.11.0/textwrap/)
+- [Biblioteca "Unicode Normalization" para trabalhar com caracteres Unicode em Rust](https://docs.rs/unicode-normalization/0.1.11/unicode_normalization/)

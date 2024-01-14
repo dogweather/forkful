@@ -1,90 +1,31 @@
 ---
 title:    "Elm: יצירת קובץ זמני"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-למה: רק עם 1-2 משפטים מסבירים *למה* מישהו יעסוק ביצירת קובץ זמני.
+## למה
 
-יצירת קבץ זמני נחשבת לטכניקה נפוצה בייצוג מידע זמני בסביבת תכנות. ניתן להשתמש בקבצים זמניים כדי לאחסן מידע שאינו קבוע או שנדרש לשנות באופן עקבי. לדוגמה, בבניית אפליקציית משחקים כתב לנו ניתן להשתמש בקובץ זמני כדי לשמור את הניקוד הזמני של כל משתתף.
+ליצור קובץ זמני בתכנות Elm יכול להיות חיוני במגוון מצבים, כגון בתהליך עיבוד נתונים, תיעוד או תמיכה בפורמטים שונים. יצירת קובץ זמני יכולה לסייע באחסון וניתוח נתונים מזמן לזמן, על מנת לשמור על הקוד מסודר ויעיל.
 
-## How To
+## איך לעשות
 
-כיצד ליצור קובץ זמני בכמה שורות קוד באלם:
+תחילה, ניצור קובץ פשוט באמצעות הפונקציה `File.write` ונציג את שמו, התוכן והתבנית שלו. לדוגמה:
 
 ```Elm
-import File exposing (write)
-import Http as Http
-import Time
-import Json.Decode exposing (decodeValue, int, list)
-import Json.Encode
-
-main =
-    Http.get "http://example.com/scores" (Http.expectJson GotScores scoresDecoder)
-
-type Msg
-    = GotScores (Result Http.Error (List Score))
-
-type alias Score =
-    { name : String
-    , score : Int
-    , timestamp : Time.Posix
-    }
-
-scoresDecoder : Decoder (List Score)
-scoresDecoder =
-    list
-        (decodeValue
-            { name = int
-            , score = int
-            , timestamp =
-                map Time.millisToPosix int
-                -- ממיר את המנויות לזמן POSIX
-            }
-        )
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        GotScores (Ok scores) ->
-            ( { model | scores = scores }, Cmd.none )
-
-        GotScores (Err _) -> ( model, Cmd.none )
-
-
--- כדי ליצור קובץ זמני הנתונים הנלוים מתוך רישומי הסקורים היופס כותבת לנו
-main =
-    case Http.sendHttp 0.5 "http://example.com/scores?a=1&b=2"
-        (Json.Encode.object
-            [ ("msg", "some message")
-            , ("data", Json.Encode.string data)
-            ]
-        ) of
-        Http.Error statusCode responseHeaders proxy err ->
-            fail
-                { statusCode = if statusCode == 0 then Nothing else Just statusCode
-                , responseHeaders = responseHeaders
-                , proxy = proxy
-                , error = err
-                }
-
-        Http.Ok response ->
-            let
-                tempPath =
-                    "results.json"
-
-                body =
-                    Http.responseToBody response
-            in
-                write tempPath body
-                    |> execute
-                    |> map (map (const "קובץ זמני נוצר בהצלחה"))
+File.write "temp.txt" "זהו תוכן של קובץ זמני נפלא" |> Task.perform (always ()) (always ())
 ```
 
- השימוש בקוד זה מדמה איך ליצור קובץ זמני באלם באמצעות כתיבת נתונים לקובץ זמני והצגת הודעה כאשר הקובץ נוצר בהצלחה.
+בצעו את הפקודה בטוחים שתוכן הקובץ `temp.txt` נכתב במיקום הנכון. אם נרצה להשתמש בתבנית קבועה עבור קבצי זמני, נוכל להשתמש בפונקציות נוספות כגון `String.join` ו- `Debug.log`. לדוגמה, אם נרצה ליצור קובץ זמני בשם הודעת שגיאה יחידה, נוכל להשתמש בקוד הבא:
 
-## Deep Dive
+```Elm
+File.write "error.txt" (String.join "" [ "מספר שגיאה: ", Debug.toString 404, " - החיבור נכשל" ]) |> Task.perform (always ()) (always ())
+```
 
-יצירת קובץ זמני באפליקציית אלם אינה משימה מסובכת. כ
+כעת, נוכל לקרוא ולהשתמש בקובץ בקוד ה- Elm שלנו.
+
+## חקירה מעמיקה
+
+יצירת קובץ זמני באמצעות פונקציה `File.write` עשויה להתבצע כרגע מחוץ למידע הטכני שלכם. למעשה, הפונקציה מתחילה על ידי לקבל את התוכן של הקוד ולבצע אותו על ידי איחסון הנתונים בקובץ זמני. לאחר מכן, נמשיך לכתוב את הנתונים בקובץ באמצעות פונקציות `String.join` ו- `Debug.log`. את הפונקציה `String.join` אנו משתמשים בה כדי להפריד בין הנתונים ב

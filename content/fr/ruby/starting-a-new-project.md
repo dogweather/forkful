@@ -1,61 +1,31 @@
 ---
-title:    "Ruby: Démarrer un nouveau projet"
+title:    "Ruby: Commencer un nouveau projet"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Pourquoi
+## Pourquoi
+Quand on apprend à programmer, il est important de se lancer dans de nouveaux projets pour mettre en pratique ses connaissances et les appliquer dans des projets concrets. Cela permet également de développer ses compétences et de découvrir de nouvelles techniques et technologies. 
 
-Si vous êtes intéressé par le développement de logiciels, vous vous demandez peut-être pourquoi vous devriez vous lancer dans un nouveau projet en Ruby. Eh bien, la réponse est simple : Ruby est un langage de programmation puissant, élégant et facile à apprendre, ce qui en fait un choix idéal pour créer des applications robustes et dynamiques.
+## Comment faire
+Avant de commencer un nouveau projet en Ruby, il est important de bien comprendre les bases du langage et de se familiariser avec la syntaxe. Pour cela, on peut commencer par suivre des tutoriels ou des cours en ligne, et pratiquer en écrivant du code. Voici un exemple de code Ruby pour afficher "Bonjour le monde !" à l'écran :
 
-##Comment faire
-
-Maintenant que vous êtes convaincu de créer un nouveau projet en Ruby, voici quelques exemples de code pour vous aider à démarrer :
-
-```Ruby
-# Définition d'un simple tableau contenant des prénoms
-prenoms = ["Emma", "Lucas", "Louise", "Adam"]
-
-# Afficher les prénoms un par un
-prenoms.each do |prenom|
-  puts prenom
-end
-
-# Définition d'une classe "Compte" avec une méthode "solde" et deux attributs : "nom" et "solde_initial"
-class Compte
-  attr_accessor :nom, :solde
-  def initialize(nom, solde_initial)
-    @nom = nom
-    @solde = solde_initial
-  end
-end
-
-# Création d'un compte et affichage de son solde
-compte_1 = Compte.new("John", 1000)
-puts "Le solde du compte de #{compte_1.nom} est de #{compte_1.solde} euros."
+```ruby
+puts "Bonjour le monde !"
 ```
 
-Résultat :
+Ensuite, il est important de bien définir le but de votre projet et de planifier les différentes étapes à suivre. Cela peut inclure la création d'un cahier des charges, la mise en place d'une architecture de projet, et la rédaction de user stories. Il est également important de choisir les outils et les technologies les plus adaptés pour votre projet, comme des frameworks ou des librairies.
 
-```
-Emma
-Lucas
-Louise
-Adam
-Le solde du compte de John est de 1000 euros.
-```
+Une fois que vous avez une idée claire de votre projet, vous pouvez commencer à coder. N'hésitez pas à utiliser des outils de débogage pour corriger rapidement les erreurs et à consulter la documentation officielle de Ruby pour trouver des solutions à vos problèmes.
 
-##Plongée en profondeur
+## Plongée en profondeur
+Plusieurs éléments sont à prendre en compte pour réussir à créer un nouveau projet en Ruby, comme la gestion du versionnement avec Git, l'optimisation des performances, et la mise en place de tests automatisés. Il est recommandé de suivre les bonnes pratiques de développement pour garantir un code propre et maintenable.
 
-Maintenant que vous avez une idée de la syntaxe de base de Ruby, vous pouvez approfondir vos connaissances en explorant des concepts tels que les classes, les méthodes, les boucles et les conditions. Vous pouvez également utiliser des bibliothèques populaires telles que Rails pour développer des applications web ou RSpec pour écrire des tests automatisés.
+Il est également important de comprendre les différences entre les différents types de projets en Ruby, tels que les applications web avec Ruby on Rails, les scripts en ligne de commande, ou les applications desktop avec Shoes. En explorant ces différents types de projets, vous pourrez découvrir de nouvelles façons d'utiliser Ruby et développer davantage vos compétences.
 
-N'oubliez pas d'expérimenter et de consulter la documentation officielle de Ruby pour découvrir toutes les fonctionnalités intéressantes que ce langage a à offrir.
-
-##Voir aussi
-
-- [La documentation officielle de Ruby](https://www.ruby-lang.org/fr/documentation/)
-- [Le site officiel de Ruby on Rails](https://rubyonrails.org/)
-- [La documentation officielle de RSpec](http://rspec.info/)
-
-Maintenant que vous avez les bases pour commencer un nouveau projet en Ruby, il est temps de plonger et de créer quelque chose d'incroyable ! Bonne chance !
+## Voir aussi
+- [Documentation officielle de Ruby](https://www.ruby-lang.org/fr/documentation/)
+- [Ruby on Rails Tutorial](https://www.railstutorial.org/fr/)
+- [10 bonnes pratiques pour écrire du bon code Ruby](https://blog.simplon.co/10-bonnes-pratiques-pour-ecrire-du-bon-code-ruby/)

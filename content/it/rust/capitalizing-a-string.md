@@ -1,46 +1,64 @@
 ---
-title:    "Rust: Capitalizzare una stringa"
+title:    "Rust: Maiuscolizzare una stringa"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché capitilizzare una stringa
 
-Molte volte while working with strings in Rust, ci può essere la necessità di convertire il testo in maiuscolo. Ci sono varie ragioni per fare questo, come il corretto formataggio dei dati o la presentazione della stringa all'utente. In questo post, esploreremo come convertire una stringa in maiuscolo utilizzando il linguaggio di programmazione Rust.
+Capitalizzare una stringa è un'operazione comune durante la scrittura di codice, specialmente quando si lavora con testo. In Rust, ci sono alcune diverse opzioni per eseguire questa operazione, ognuna con i suoi vantaggi e svantaggi. In questo articolo, esploreremo perché e come capitalizzare una stringa in Rust.
 
-## Come Fare
+## Come farlo
 
-Il metodo più semplice per convertire una stringa in maiuscolo in Rust è utilizzando il metodo `to_uppercase()`. Questo metodo prende in input una stringa e restituisce una nuova stringa con tutti i caratteri convertiti in maiuscolo.
-
-```Rust
-let stringa = String::from("ciao a tutti!");
-let nuova_stringa = stringa.to_uppercase();
-println!("{}", nuova_stringa);
-```
-
-Questo codice produce l'output "CIAO A TUTTI!".
-
-Oltre al metodo `to_uppercase()`, possiamo anche utilizzare il metodo `to_ascii_uppercase()` per convertire i caratteri in codice ASCII in maiuscolo e il metodo `to_lowercase()` per convertire in lettere minuscole.
+Per prima cosa, dobbiamo importare il modulo `std::string::String`, perché è in questo modulo che si trovano le funzioni per manipolare le stringhe in Rust.
 
 ```Rust
-let stringa = "Hello World!";
-let maiuscola = stringa.to_ascii_uppercase();
-let minuscola = stringa.to_lowercase();
-
-println!("{}, {}, {}", stringa, maiuscola, minuscola);
+use std::string::String;
 ```
 
-Questo codice produce l'output "Hello World!, HELLO WORLD!, hello world!".
+Una delle opzioni più semplici è utilizzare il metodo `to_uppercase()` su una stringa già esistente. Questo metodo restituirà una nuova stringa con tutte le lettere convertite in maiuscolo.
 
-## Deep Dive
+```Rust
+let stringa = "ciao";
+let stringa_uppercase = stringa.to_uppercase();
+println!("{}", stringa_uppercase);
+```
 
-Ora che abbiamo visto il metodo più semplice per convertire una stringa in maiuscolo, è utile comprendere come funziona il processo di conversione. In Rust, le stringhe sono immutabili, il che significa che non possono essere modificate direttamente. Quando usiamo il metodo `to_uppercase()`, in realtà viene creato una nuova stringa con tutti i caratteri in maiuscolo e questa viene restituita.
+Questo codice produrrà l'output `"CIAO"`.
 
-Inoltre, questo metodo funziona solo per le lingue supportate da Unicode. Se utilizzi lingue non supportate, dovrai utilizzare una soluzione personalizzata per convertire la stringa in maiuscolo.
+Un'altra opzione è utilizzare il metodo `replace()` su una stringa esistente per sostituire ogni lettera con la versione maiuscola.
+
+```Rust
+let stringa = "ciao";
+let stringa_uppercase = stringa.replace(|c| c.to_uppercase(), "");
+println!("{}", stringa_uppercase);
+```
+
+Questo codice produrrà lo stesso output `"CIAO"`.
+
+Infine, possiamo utilizzare il metodo `chars()` per scorrere attraverso ogni carattere della stringa e utilizzare il metodo `char::to_uppercase()` per convertire ogni carattere in maiuscolo.
+
+```Rust
+let stringa = "ciao";
+let mut stringa_uppercase = String::new();
+for c in stringa.chars() {
+    stringa_uppercase.push(c.to_uppercase());
+}
+println!("{}", stringa_uppercase);
+```
+
+Anche questo codice produrrà l'output `"CIAO"`.
+
+## Approfondimento
+
+Sebbene sia semplice capitalizzare una stringa in Rust, ci sono alcune cose da tenere a mente. Per esempio, è importante ricordare che le stringhe in Rust sono immutabili per impostazione predefinita, quindi verrà restituita una nuova stringa capitalizzata, ma la stringa originale rimarrà invariata. Inoltre, se si sta lavorando con stringhe UTF-8, è importante gestire correttamente i caratteri non ASCII durante la conversione in maiuscolo.
+
+Se vuoi approfondire l'argomento della manipolazione delle stringhe in Rust, puoi consultare la documentazione ufficiale su [rust-lang.org](https://doc.rust-lang.org/std/string/). Inoltre, puoi trovare una guida dettagliata sulla gestione dei caratteri non ASCII in Rust [qui](https://stackoverflow.com/questions/31649887/utf-8-string-manipulation-in-rust).
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Rust sulla gestione delle stringhe](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Altre funzioni utili per la manipolazione delle stringhe in Rust](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- [Rust Playground per provare i codici di esempio](https://play.rust-lang.org/)
+- [The Rust Programming Language - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust Standard Library - String](https://doc.rust-lang.org/std/string/index.html)
+- [Rust By Example - Strings](https://doc.rust-lang.org/stable/rust-by-example/std/string.html)

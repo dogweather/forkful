@@ -1,61 +1,64 @@
 ---
-title:    "C: Überprüfen, ob ein Ordner vorhanden ist"
+title:    "C: Überprüfen, ob ein Verzeichnis vorhanden ist"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum?
+## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist wichtig, um sicherzustellen, dass unsere Programme effizient und zuverlässig funktionieren. Es hilft uns, unerwartete Fehler zu vermeiden und unsere Code-Basis zu schützen.
+Das Überprüfen, ob ein Verzeichnis existiert, kann für Programmierer in vielen Situationen nützlich sein. Zum Beispiel, um sicherzustellen, dass ein bestimmtes Verzeichnis vorhanden ist, bevor eine Datei erstellt oder gelöscht wird. Es kann auch dazu dienen, präzisere Fehlermeldungen in einem Programm zu erstellen, wenn ein erwartetes Verzeichnis fehlt.
 
-# Wie geht man vor?
+## Wie geht es
 
-Um zu überprüfen, ob ein Verzeichnis in C existiert, müssen wir die "dirent.h" Header-Datei einbinden und die Funktion "opendir()" verwenden. Diese Funktion öffnet das Verzeichnis und gibt einen Zeiger darauf zurück, falls es existiert. Falls nicht, wird ein NULL-Zeiger zurückgegeben.
+Um zu überprüfen, ob ein Verzeichnis existiert, können wir die Funktion `opendir` in Kombination mit dem `struct stat` verwenden. Hier ist ein Beispielcode in C:
 
 ```C
-#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    // Verzeichnis öffnen
-    DIR *dir = opendir("beispielverzeichnis");
-    // Überprüfen, ob NULL-Zeiger zurückgegeben wurde (Verzeichnis existiert nicht)
-    if(dir == NULL) {
-        printf("Das Verzeichnis existiert nicht \n");
-    }
-    else {
-        printf("Das Verzeichnis existiert \n");
-    }
-    return 0;
+  // Das Verzeichnis, das wir überprüfen möchten
+  char* verzeichnis = "/home/benutzer/meinVerzeichnis/";
+
+  // Überprüfung, ob Verzeichnis existiert
+  struct stat stats;
+  if (stat(verzeichnis, &stats) == 0) {
+    printf("Das Verzeichnis existiert!\n");
+  } else {
+    printf("Das Verzeichnis existiert nicht!\n");
+  }
+
+  // Überprüfung mit opendir
+  DIR* dir = opendir(verzeichnis);
+  if (dir) {
+    printf("Das Verzeichnis existiert!\n");
+    closedir(dir);
+  } else {
+    printf("Das Verzeichnis existiert nicht!\n");
+  }
+
+  return 0;
 }
 ```
 
-Wenn das Verzeichnis existiert, wird "Das Verzeichnis existiert" ausgegeben, ansonsten "Das Verzeichnis existiert nicht".
+Beispiel Ausgabe:
 
-# Tiefere Einblicke
-
-Die Funktion "opendir()" kann auch verwendet werden, um die Dateien und Verzeichnisse innerhalb des angegebenen Verzeichnisses zu durchlaufen. Dazu kann die Funktion "readdir()" verwendet werden, die einen Zeiger auf die nächste Datei im Verzeichnis zurückgibt.
-
-```C
-#include <stdio.h>
-#include <dirent.h>
-
-int main() {
-    // Verzeichnis öffnen
-    DIR *dir = opendir("beispielverzeichnis");
-    // Solange es eine nächste Datei gibt
-    while ((dirent = readdir(dir)) != NULL) {
-        // Dateinamen ausgeben
-        printf("%s\n", dirent->d_name);
-    }
-    return 0;
-}
+```
+Das Verzeichnis existiert!
+Das Verzeichnis existiert!
 ```
 
-Mit dieser Methode können wir alle Dateien und Verzeichnisse in einem bestimmten Verzeichnis durchlaufen und damit weitere Aktionen wie das Löschen oder Verschieben von Dateien durchführen.
+## Deep Dive
 
-# Siehe auch
+Die Funktion `opendir` versucht, ein Verzeichnis mit dem angegebenen Pfad zu öffnen, falls es existiert. Wenn nicht, gibt sie `NULL` zurück. `stat` andererseits gibt uns die Möglichkeit, zusätzliche Informationen zu dem bestimmten Dateiobjekt, in diesem Fall dem Verzeichnis, zu erhalten. Wir können dann die `st_mode` Eigenschaft des `struct stat` verwenden, um sicherzustellen, dass es sich tatsächlich um ein Verzeichnis handelt und nicht um eine andere Art von Datei.
 
-- [Direktiven und Makros für Verzeichnis-Operationen](https://www.gnu.org/software/libc/manual/html_node/Directory-Operatives.html)
-- [Verzeichnisfunktionen in C](https://www.tutorialspoint.com/c_standard_library/directory_h.htm)
+## Siehe auch
+
+- [opendir Funktion in der C-Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Opening-a-Directory.html)
+- [stat Funktion in der C-Dokumentation](https://www.gnu.org/software/libc/manual/html_node/File-Status-Function-Example.html)
+- [Struct-Stat Referenz in der C-Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Stat-Functions.html)

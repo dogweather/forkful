@@ -1,48 +1,37 @@
 ---
-title:    "Fish Shell: Søking og erstattning av tekst"
+title:    "Fish Shell: Søking og erstatning av tekst"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en viktig del av programmering, spesielt når man jobber med store tekstfiler eller ønsker å gjøre flere endringer på en gang. Ved å bruke Fish Shell sine innebygde verktøy, kan du enkelt gjøre disse endringene uten å måtte åpne filen i et tekstredigeringsprogram.
+Hvorfor skulle du bruke tid og energi på å søke og erstatte tekst? Vel, det er flere grunner til dette. Kanskje du ønsker å endre en bestemt tekst i en rekke filer, eller kanskje du ønsker å endre en del av en tekst i en fil. Uansett hva grunnen er, kan tekst-søk og erstatning være en nyttig og effektiv måte å gjøre endringer i store mengder med tekst.
 
-## Slik gjør du det
+## Hvordan
 
-For å søke og erstatte tekst i Fish Shell, kan du bruke kommandoen `sed` (stream editor). Dette er et kraftig verktøy som lar deg søke etter et mønster i en fil og erstatte med ønsket tekst.
-
-La oss si at du ønsker å endre alle forekomster av ordet "katt" til "hund" i en fil. Her er et eksempel på hvordan du kan bruke `sed` i Fish Shell:
+Fish Shell tilbyr en effektiv måte å søke og erstatte tekst i filer ved hjelp av kommandoen `sed`. La oss si at du ønsker å endre alle forekomster av ordet "farge" i en fil til "fargevalg". Du kan enkelt gjøre dette ved å følge dette mønsteret: 
 
 ```Fish Shell
-sed -i "s/katt/hund/g" fil.txt
+sed -i 's/farge/fargevalg/g' filnavn
 ```
 
-I dette eksempelet erstatter `sed` alle forekomster av "katt" med "hund" i filen "fil.txt". Den `-i` flagget sørger for at endringene blir gjort direkte i filen, i stedet for å bare bli skrevet ut til terminalen.
-
-For å gjøre søk og erstatting mer spesifikk, kan du også bruke regulære uttrykk. Dette lar deg finne mønstre i teksten i stedet for bare enkelte ord. Her er et eksempel på hvordan du kan bruke regulære uttrykk i `sed`:
+La oss si at du ønsker å gjøre dette i flere filer i en mappe. Her er en annen enkel måte å gjøre det på: 
 
 ```Fish Shell
-sed -i "s/[0-9]+/X/g" tall.txt
+sed -i 's/farge/fargevalg/g' *.txt
 ```
 
-I dette eksempelet erstatter `sed` alle tall i filen "tall.txt" med bokstaven "X". `[0-9]+` er et regulært uttrykk som betyr at `sed` skal lete etter en eller flere tall.
+Dette vil søke etter alle filer med `.txt`-utvidelsen i mappen og endre forekomster av "farge" til "fargevalg" i hver enkelt fil.
 
-## Dypdykk
+## Dykk dypere
 
-Når du bruker `sed` til å søke og erstatte tekst, er det viktig å forstå noen viktige konsepter. Først og fremst er `sed` ikke bare begrenset til å erstatte tekst, det kan også legge til eller slette tekst, samt formatere teksten på ulike måter.
-
-En annen viktig ting å huske på er at `sed` bruker en "regexp" (regulær uttrykk) motor til å finne og erstatte tekst. Dette betyr at du kan lage veldig kraftige og presise mønstre for å finne tekst, men det kan også være litt vanskelig å lære.
-
-For å lære mer om `sed` og bruk av regulære uttrykk, kan du se på disse ressursene:
-
-- [Fish Shell sin offisielle dokumentasjon om `sed`](https://fishshell.com/docs/current/cmds/sed.html)
-- [En guide til regulære uttrykk i `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Et interaktivt verktøy for å lære regulære uttrykk](https://regexr.com/)
+Det er også flere måter å tilpasse dette kommandoen på, avhengig av dine spesifikke behov. Du kan for eksempel begrense søket til en bestemt posisjon i teksten ved hjelp av tallrepresentasjon. Du kan også bruke regulære uttrykk for å gjøre søket enda mer presist og fleksibelt. Utforsk gjerne de forskjellige mulighetene ved å lese mer om `sed`-kommandoen i Fish Shell dokumentasjonen.
 
 ## Se også
 
-- [En innføring i Fish Shell for nybegynnere](https://www.example.com)
-- [Hvordan lage egne funksjoner i Fish Shell](https://www.example.com)
-- [Brukbarheten til Fish Shell sammenlignet med andre shell-programmer](https://www.example.com)
+* [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+* [Tutorial: Fish Shell for beginners (Norwegian)](https://www.ealdwulf.com/fish-shell-for-beginners/)
+* [Introduction to sed command in Linux/Unix](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)

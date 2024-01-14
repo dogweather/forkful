@@ -1,40 +1,39 @@
 ---
 title:    "TypeScript: Usuwanie znaków pasujących do wzorca"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego usuwamy znaki pasujące do wzorca?
 
-Wykasowywanie znaków pasujących do wzoru jest jedną z przydatnych funkcji w TypeScript, która może pomóc w pracy z tekstem. Pozwala ona na usunięcie niepożądanych znaków lub ciągów znaków z tekstu, co może być szczególnie przydatne w przypadku przetwarzania danych lub walidacji użytkowników.
+Usunięcie znaków pasujących do wzorca jest powszechnym zadaniem w programowaniu. Czasami musimy przetworzyć duży tekst, a część znaków jest zbędna lub powtarza się. Usuwanie tych znaków jest ważne z punktu widzenia optymalizacji i precyzji kodu.
 
-## Jak To Zrobić
+# Jak to zrobić?
 
-Wykasowywanie znaków pasujących do wzoru w TypeScript jest bardzo proste i można to zrobić w sposób następujący:
+ Istnieje wiele metod na usuwanie znaków pasujących do wzorca w TypeScript. Jedną z najprostszych i najpopularniejszych jest użycie metody `replace()` na łańcuchu tekstowym. Przykładowy kod wykorzystujący tę metodę może wyglądać następująco:
 
 ```TypeScript
-let tekst = "To jest przykładowy tekst!";
-let wzorzec = /[a-z]/g; // znaki małych liter  
-let wynik = tekst.replace(wzorzec, ''); // usunięcie znaków pasujących do wzoru 
-console.log(wynik); // wynik: T        
+let inputText = "Jestem zainteresowany usunięciem znaków #pasujących# do tego wzorca.";
+let outputText = inputText.replace(/[#]/g, "");
+console.log(outputText);
 ```
 
-Kod ten używa funkcji `replace()` do usunięcia wszystkich małych liter ze zmiennej `tekst`. Wcześniej jednak zdefiniowany został wzorzec z użyciem wyrażenia regularnego `[a-z]`, które oznacza każdy znak z zakresu `a-z`. Dzięki temu, funkcja `replace()` wie, jakie znaki należy usunąć z podanego tekstu.
+W tym przykładzie, używamy metody `replace()` na zmiennej `inputText`, która zawiera tekst, który chcemy przetworzyć. W nawiasie metody podajemy wzorzec (w tym przypadku `#`), który chcemy usunąć ze stringa, a następnie podwójny ukośnik `g`, który oznacza, że chcemy zastosować zmiany globalnie (czyli na całym tekście). W wyniku otrzymujemy przetworzony tekst, który następnie możemy wyświetlić w konsoli za pomocą `console.log()`.
 
-Można również wykorzystać to narzędzie do usuwania innych znaków, na przykład cyfr czy nawet całych wyrazów. Przykładowo, wyrażenie regularne `/[0-9]/g` będzie usuwać wszystkie cyfry z tekstu, a wyrażenie regularne `/\bprzykładowy\b/g` będzie usuwać wszystkie wystąpienia wyrazu "przykładowy" z tekstu.
+Istnieją również inne metody i funkcje, takie jak `split()`, `substring()` czy `splice()`, które mogą posłużyć do usuwania znaków pasujących do wzorca.
 
-Wynikiem działania funkcji `replace()` jest nowa zmienna, zawierająca tekst po usunięciu odpowiednich znaków. Jest to bardzo przydatne przy przetwarzaniu danych lub tworzeniu funkcji walidacyjnych, które wymagają określonych danych, wolnych od niepożądanych znaków.
+# Deep Dive
 
-## Głębszy Wgląd
+Aby dokładniej zrozumieć mechanizm usuwania znaków pasujących do wzorca, warto prześledzić krok po kroku, jak działają poszczególne metody. Na przykład, metoda `replace()` nie tylko usuwa znaki pasujące do wzorca, ale również zwraca nowy ciąg znaków. Podobnie, metoda `split()` dzieli string na tablicę, używając wzorca jako separatora, a `substring()` zwraca fragment tekstu od wybranego indeksu do innego.
 
-Wykasowywanie znaków pasujących do wzoru może odbywać się na kilka różnych sposobów, w zależności od potrzeb danego projektu. Oprócz wykorzystania wyrażeń regularnych, można również użyć funkcji `split()` w połączeniu z `join()`, aby usunąć znaki pasujące do wzoru i złączyć tekst ponownie.
+Dokładne przeanalizowanie różnych metod i funkcji może pomóc nam wybrać najlepszą metodę dostosowaną do naszych potrzeb i specyfikacji naszego projektu.
 
-Warto również zauważyć, że funkcja `replace()` przyjmuje dwa parametry - pierwszy to wzorzec, a drugi to zmienna, którą chcemy wstawić zamiast znaków pasujących do wzoru. Możemy więc użyć tej funkcji nie tylko do usuwania znaków, ale także do ich zamiany na inne, dowolne wartości.
+# Zobacz także
 
-## Zobacz też
+Jeśli interesuje Cię więcej na temat usuwania znaków pasujących do wzorca w TypeScript, polecamy zapoznać się z poniższymi artykułami i dokumentacją:
 
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych i ich zastosowaniach w TypeScript, polecamy zapoznać się z poniższymi źródłami:
-
-- [Pisanie i testowanie wyrażeń regularnych w TypeScript](https://blog.bitsrc.io/writing-and-testing-regular-expressions-in-typescript-132a7f6dd51a)
-- [Dokumentacja wyrażeń regularnych w TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
+- [Inne sposoby usuwania znaków pasujących do wzorca w JavaScript](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [Dokumentacja metody replace() w TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)

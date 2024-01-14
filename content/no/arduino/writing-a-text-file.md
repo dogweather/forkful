@@ -1,52 +1,48 @@
 ---
 title:    "Arduino: Å skrive en tekstfil"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive en tekstfil kan være en nyttig ferdighet for Arduino-programmering, spesielt når det gjelder å lagre data og persistens. Det kan også være nyttig for debugging formål.
+Å skrive en tekstfil er en vanlig programvarefunksjon som kan være nyttig i mange ulike situasjoner. Det kan være nyttig for å lagre data, lage logger eller til og med lese og analysere større mengder med informasjon.
 
 ## Hvordan
 
-For å skrive en tekstfil, må du følge disse trinnene:
+For å skrive en tekstfil i Arduino, kan man bruke funksjonen "write()", som lar deg skrive en karakter eller en streng til filen. La oss se på et eksempel der vi skriver "Hei, verden!" til en tekstfil kalt "tekstfil.txt".
 
 ```Arduino
-File file = SD.open("tekstfil.txt", FILE_WRITE); // Åpne filen for skriving
-if (file) {
-  file.println("Dette er en tekst som vil bli skrevet til tekstfilen."); // Skriv tekst til filen
-  file.close(); // Lukk filen
-}
+
+File myFile = SD.open("tekstfil.txt", FILE_WRITE); // Åpner eller oppretter filen
+
+myFile.write("Hei, verden!"); // Skriver teksten til filen
+
+myFile.close(); // Lukker filen
+
 ```
 
-For å lese innholdet i filen, kan du bruke følgende kode:
+Når programmet kjøres, vil en tekstfil med navnet "tekstfil.txt" bli opprettet på SD-kortet og teksten "Hei, verden!" vil bli skrevet til filen. 
+
+## Dypdykk
+
+For å kunne skrive en tekstfil, må man først ha et SD-kort tilkoblet Arduino. Deretter må man åpne en fil ved å bruke funksjonen "open()" og angi at man ønsker å skrive til filen ved å inkludere "FILE_WRITE" som et argument. Det er også viktig å huske på å lukke filen ved å bruke "close()" når man er ferdig med å skrive til den.
+
+Man kan også bruke en variabel i stedet for en fast tekst når man skriver til filen. For eksempel:
 
 ```Arduino
-File file = SD.open("tekstfil.txt"); // Åpne filen for lesing
-if (file) {
-  while (file.available()) { // Så lenge det er tilgjengelige tegn i filen
-    Serial.println(file.readStringUntil('\n')); // Les en linje og skriv ut den til seriell monitor
-  }
-  file.close(); // Lukk filen
-}
-```
 
-Output vil være:
+String navn = "Maria";
+
+myFile.write(navn); // Skriver variabelen "navn" til filen
 
 ```
-Dette er en tekst som vil bli skrevet til tekstfilen.
-```
 
-## Deep Dive
-
-Når du skriver en tekstfil, kan du også spesifisere hvilken modus du vil åpne filen i. I eksemplet ovenfor brukte vi `FILE_WRITE`, men du kan også bruke `FILE_READ` for å lese filen eller `FILE_APPEND` for å legge til nytt innhold uten å overskrive det som allerede finnes i filen.
-
-Det er også viktig å lukke filen når du er ferdig med å lese eller skrive for å sikre at alle data blir lagret. Hvis du ikke gjør dette, kan filen bli korrupt.
+Dette gjør det mulig å legge inn variabler eller data som endres over tid i teksten som skrives til filen.
 
 ## Se også
 
-- [Arduino SD Library](https://www.arduino.cc/en/Reference/SD)
-- [How to Read and Write Files on an SD Card with an Arduino](https://www.circuitspecialists.com/blog/how-to-read-and-write-files-on-an-sd-card-with-an-arduino/)
-- [File Handling with Arduino](https://www.arduino.cc/en/Tutorial/FileWrite)
+- [Arduino-dokumentasjon om write() funksjonen](https://www.arduino.cc/reference/en/libraries/sd/write/)
+- [Eksempelkode for å skrive en tekstfil på SD-kortet](https://www.arduino.cc/en/Tutorial/LibraryExamples/Write)

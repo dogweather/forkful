@@ -1,34 +1,35 @@
 ---
 title:    "Swift: Borrando caracteres que coinciden con un patrón"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberías eliminar caracteres que coincidan con un patrón en Swift?
-
-Eliminar caracteres que coincidan con un patrón puede ser una tarea útil en la programación, especialmente si estás trabajando con cadenas de texto y necesitas extraer cierta información específica. Por ejemplo, si tienes un conjunto de datos y solo quieres obtener los números, puedes utilizar esta técnica para eliminar todos los caracteres que no sean números.
+## Por qué
+En programación Swift, a veces es necesario eliminar ciertos caracteres que coinciden con un patrón específico en una cadena de texto. Esto puede ser útil en situaciones como eliminar espacios en blanco alrededor de una palabra o eliminar símbolos no deseados de una entrada de usuario.
 
 ## Cómo hacerlo
-
-Para eliminar caracteres que coincidan con un patrón en Swift, puedes utilizar la función `replacingOccurrences` de la clase `String`.
+Para eliminar caracteres que coinciden con un patrón en Swift, podemos utilizar el método `replacingOccurrences(of:with)` en la cadena de texto que queremos modificar. En este método, especificamos el patrón que queremos buscar y el carácter con el que queremos reemplazarlo. Aquí hay un ejemplo de cómo eliminar los espacios en blanco alrededor de una palabra en una cadena:
 
 ```Swift
-let texto = "¡Sólo quiero los números 123!"
-let numeros = texto.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-print(numeros)
+let texto = " Hola, ¿cómo estás? "
+let nuevoTexto = texto.replacingOccurrences(of: " ", with: "")
+print(nuevoTexto) // Salida: "Hola,¿cómoestás?"
 ```
-La salida de este código sería "123", ya que hemos eliminado todos los caracteres que no sean números utilizando una expresión regular.
 
-## Profundizando
+También podemos usar expresiones regulares en lugar de un patrón específico para buscar y eliminar ciertos caracteres. Por ejemplo, si queremos eliminar todos los números de una cadena de texto, podemos usar una expresión regular para buscar cualquier dígito y reemplazarlo con una cadena vacía:
 
-Para comprender mejor cómo funciona esta técnica, es importante entender qué es una expresión regular. Una expresión regular es una secuencia de caracteres que define un patrón de búsqueda. En el ejemplo anterior, `[0-9]` es una expresión regular que indica cualquier carácter numérico y `^` es un operador de negación que indica que queremos eliminar todos los caracteres que no sean números.
+```Swift
+let texto = "¡Tengo 3 manzanas y 5 naranjas!"
+let nuevoTexto = texto.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+print(nuevoTexto) // Salida: "¡Tengo manzanas y naranjas!"
+```
 
-También puedes utilizar otras opciones con la función `replacingOccurrences`, como `caseInsensitive` para ignorar las mayúsculas y minúsculas y `anchored` para asegurarte de que solo se eliminan los caracteres al comienzo de la cadena.
+## Profundizando más
+Existen diversas formas de utilizar el método `replacingOccurrences(of:with)` para eliminar caracteres que coinciden con un patrón en Swift. Se pueden agregar diversas opciones, como realizar la búsqueda y el reemplazo de forma insensible a mayúsculas y minúsculas o limitar el número de reemplazos a realizar. Se pueden consultar más detalles en la documentación oficial de Apple sobre este método.
 
-# Ver también
-
-Aquí hay algunos recursos adicionales que pueden ser útiles para aprender más sobre cómo eliminar caracteres que coincidan con un patrón en Swift:
-
-- [Documentación oficial de Apple sobre la función replacingOccurrences](https://developer.apple.com/documentation/foundation/string/1789849-replacingoccurrences)
-- [Tutorial sobre expresiones regulares en Swift](https://www.raywenderlich.com/167729/swift-regular-expressions-tutorial)
+## Ver también
+- Documentación de Apple sobre el método `replacingOccurrences(of:with:)`: https://developer.apple.com/documentation/foundation/nsstring/1416926-replacingoccurrences
+- Información sobre el uso de expresiones regulares en Swift: https://www.hackingwithswift.com/example-code/strings/how-to-use-regular-expressions-in-swift
+- Un tutorial para aprender más sobre las expresiones regulares: https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial

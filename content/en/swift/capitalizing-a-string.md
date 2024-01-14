@@ -1,55 +1,52 @@
 ---
 title:    "Swift recipe: Capitalizing a string"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to capitalize a string in your Swift code? Maybe you're creating an app that requires proper capitalization for user inputs, or you just want to format some text in a specific way. Whatever the reason may be, capitalizing a string is a simple and useful technique to have in your programming toolkit.
+
+Capitalizing strings may seem like a simple task, but in Swift, there are multiple ways to do it. Whether you're trying to make your text more visually appealing or following specific formatting guidelines, knowing how to capitalize strings can come in handy.
 
 ## How To
-To capitalize a string in Swift, we can use the built-in `uppercased()` method. Let's see an example:
+
+To capitalize a string in Swift, we can use the built-in `capitalized` property. It takes into account sentence and word boundaries, so your text will be correctly capitalized regardless of its original case. Let's take a look at an example:
 
 ```Swift
-let stringToCapitalize = "hello world"
-let capitalizedString = stringToCapitalize.uppercased()
+let message = "hello, world!"
+print(message.capitalized)
 
-print(capitalizedString)
+// Output: Hello, World!
 ```
 
-This will print out `HELLO WORLD`, showing that the `uppercased()` method has successfully capitalized the string and returned a new string with the desired format.
+As you can see, the string "hello, world!" has been correctly capitalized using this property.
 
-We can also use `capitalize()` to only capitalize the first letter of the string, while leaving the rest of the letters in their original lowercase form. For example:
+Another way to capitalize strings is by using the `uppercased` method. This method transforms all characters in a string to uppercase, regardless of their original case. Here's an example:
 
 ```Swift
-let stringToCapitalize = "hello world"
-let capitalizedString = stringToCapitalize.capitalize()
+let message = "welcome to my blog"
+print(message.uppercased())
 
-print(capitalizedString)
+// Output: WELCOME TO MY BLOG
 ```
 
-This will print out `Hello world`, with only the "H" in "Hello" being capitalized.
-
-One thing to note is that both `uppercased()` and `capitalize()` return a string, so if the desired result is to directly change the original string to be capitalized, we can use the `mutating` keyword before the method. For example:
+On the other hand, if you only want to capitalize the first letter of a string, you can use the `prefix(1)` and `lowercased()` methods together. The `prefix(1)` method selects the first letter of the string, and the `lowercased()` method converts it to lowercase. Here's an example:
 
 ```Swift
-var stringToCapitalize = "hello world"
-stringToCapitalize.uppercased()
-print(stringToCapitalize) // Output: hello world
+let message = "programming is fun"
+print(message.prefix(1).lowercased() + message.dropFirst())
 
-stringToCapitalize.uppercased()
-print(stringToCapitalize) // Output: HELLO WORLD
+// Output: Programming is fun
 ```
-
-Using the `mutating` keyword changes the original string, instead of just returning a new one.
 
 ## Deep Dive
-Although it may seem like a simple task, capitalizing a string involves more than just changing the letters to uppercase. In Swift, strings are represented by the `String` type, which is actually a collection of `Character` values. This means that when we use the `uppercased()` method, we are actually iterating through each character in the string and changing it to uppercase. This is important to keep in mind, as it can impact the efficiency and performance of our code.
 
-Another thing to consider is how the method handles special characters and non-English letters. For example, the German letter "ß" cannot be properly capitalized, and will be changed to "SS" instead. This is because uppercase letters in German are represented as "A, B, C, ..." while lowercase letters are "a, b, c, ..." and "ß" does not have an uppercase counterpart. Therefore, it is important to be aware of these nuances when using the `uppercased()` method.
+Behind the scenes, the `capitalized` property uses the `capitalizedString(with:)` method, which takes in a `Locale` parameter. This allows the method to take into account different languages and their specific capitalization rules. For example, in German, the `ß` character is usually capitalized to `SS`. The `capitalized` property also handles this rule, so it's a convenient way to capitalize strings for different languages in your app.
 
 ## See Also
-- Official Swift documentation for `uppercased()`: https://developer.apple.com/documentation/swift/string/2995497-uppercased
-- Official Swift documentation for `capitalize()`: https://developer.apple.com/documentation/swift/string/2995495-capitalize
-- Ray Wenderlich tutorial on string manipulation in Swift: https://www.raywenderlich.com/1260-swift-string-cheat-sheet-and-reference
+
+- [Apple documentation on `capitalized` property](https://developer.apple.com/documentation/foundation/NSString/1418215-capitalized)
+- [Apple documentation on `uppercased` method](https://developer.apple.com/documentation/swift/string/2995073-uppercased)
+- [Apple documentation on `prefix(_:)` method](https://developer.apple.com/documentation/swift/string/2995048-prefix)

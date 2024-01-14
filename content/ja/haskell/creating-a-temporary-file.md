@@ -1,36 +1,60 @@
 ---
 title:    "Haskell: 一時ファイルの作成"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ作るのか
+## なぜ
 
-一時的なファイルを作成する理由は何でしょうか？これはプログラマーにとって非常に重要な質問です。一時的なファイルを作成すると、一時的なデータを保存することができ、プログラムのメモリ使用量を減らすことができます。また、一時的なファイルを作成することで、プログラムをより効率的に実行することができます。
+一時ファイルを作成することに参加する理由は、一時的なデータの保管や処理のためです。
 
 ## 作り方
 
-Haskellを使用して一時的なファイルを作成する方法はいくつかあります。最も一般的な方法は、`createOrOpenTempFile`関数を使用する方法です。
+Haskellで一時ファイルを作成する最も簡単な方法は、`System.IO.tempFile`関数を使用することです。
 
-```Haskell
+```
 import System.IO
 
 main = do
-  (tempName, tempHandle) <- createOrOpenTempFile "." "temp.txt"
-  putStrLn $ "一時的なファイルを作成しました。ファイル名は " ++ tempName ++ " です。"
-  hPutStrLn tempHandle "これは一時的なファイルです。"
-  hClose tempHandle
+  temp <- tempFile "tmp_files\\" "hello.txt"
+  hPutStrLn temp "Hello world"
+  hClose temp
 ```
 
-上記のコードを実行すると、カレントディレクトリに`temp.txt`という名前の一時的なファイルが作成されます。また、ファイルには`These are temporary files.`というテキストが書き込まれます。`createOrOpenTempFile`関数以外にも、`withSystemTempFile`や`withTempFile`などの関数を使用する方法もあります。
+このコードは、`tmp_files`ディレクトリ内に`hello.txt`という名前の一時ファイルを作成し、その中に「Hello world」というテキストを書き込みます。最後に、ファイルを閉じてリソースを解放します。
+
+また、一時ファイルを扱うときには、`withTempFile`関数を使用することもできます。
+
+```
+import System.IO
+
+main = withTempFile "tmp_files\\" "hello.txt" $ \temp -> do
+  hPutStrLn temp "Hello world"
+```
+
+この方法では、`temp`変数が一時ファイルを指すようになります。今度は、`hClose`を呼ぶ必要はありません。`withTempFile`は、ファイルを自動的に閉じてくれます。
 
 ## 深堀り
 
-一時的なファイルを作成する際には、ファイルパスを生成するために、システムの一時ディレクトリやカレントディレクトリを使用します。また、作成された一時的なファイルはプログラムが終了すると自動的に削除されます。これにより、プログラムが使用したリソースをクリーンアップすることができます。
+一時ファイルを作成するときは、ファイルへのパスやハンドルを指定する必要があります。しかし、パスやハンドルを指定することができない場合はどうすればよいでしょうか？そのような場合には、`withSystemTempFile`関数を使用することができます。
 
-## 他にも参考になる記事
+```
+import System.IO
 
-- [Haskell ドキュメント - createOrOpenTempFile関数](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html#g:3)
-- [Real World Haskell - 学習リソース](http://book.realworldhaskell.org/read/resources.html)
-- [AtCoder - Haskell 導入編](https://qiita.com/sylph_scene/items/bb89a4decb623fa42c32)
+main = withSystemTempFile "hello.txt" $ \temp -> do
+  hPutStrLn temp "Hello world"
+```
+
+このコードでは、一時ファイルを作成するためのディレクトリや接頭辞を指定する必要がありません。Haskellが自動的に適切な場所を選んでくれます。
+
+一時ファイルを作成した後は、必ずファイルを閉じてリソースを解放するようにしましょう。それには、`hClose`関数を使用します。
+
+## 参考リンク
+
+- [Hackage: System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [TempFile Library for Haskell](https://github.com/ryantrinkle/tempfile)
+- [Creating Temporary Files in Haskell](https://riptutorial.com/haskell/example/2497/creating-temporary-files-in-haskell)
+
+## 参照先

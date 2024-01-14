@@ -1,43 +1,51 @@
 ---
-title:    "Clojure: Beregning av en dato i fremtiden eller fortiden"
+title:    "Clojure: Å beregne en dato i fremtiden eller fortiden"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det å kunne beregne en dato i fremtiden eller fortiden kan være svært nyttig for en utvikler, enten det er for å lage en kalenderfunksjon eller for å arbeide med tidsavhengige data. Clojure gir oss verktøyene vi trenger for å enkelt beregne slike datoer.
 
-Beregning av datoer i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller spore viktige datoer. Det kan også være nyttig når du jobber med tidsfølsomme data i programmering.
-
-## Hvordan
-
-For å beregne en dato i fremtiden eller fortiden i Clojure, kan du bruke funksjonen `clj-time.core/pplus` og `clj-time.core/pminus` som tar inn en dato og et antall enheter som skal legges til eller trekkes fra. Eksempelvis, hvis du ønsker å få 2 uker frem i tid fra i dag, kan du skrive:
+## Hvordan gjøre det
+Vi kan bruke funksjonen `clj-time.core/plus` til å legge til en viss tidsmengde til en eksisterende dato. La oss si at vi vil beregne en dato som er 30 dager frem i tid. I Clojure ville vi gjøre følgende:
 
 ```Clojure
-(require '[clj-time.core :as time])
+(require '[clj-time.core :as t])
 
-(def today (time/today))
-(def two-weeks-from-now (time/pplus today (time/weeks 2)))
-
-(println two-weeks-from-now) ; Output: #inst "2021-09-29T00:00:00.000-00:00"
+(def nåtid (t/today))  ;Dette gir oss dagens dato
+(def fremtidig-dato (t/plus nåtid (t/days 30)))
+(println fremtidig-dato)
 ```
+Dette vil gi følgende utskrift:
 
-I dette tilfellet brukte vi `time/weeks` for å indikere at vi ønsket å legge til 2 uker. Du kan også bruke andre tidsenheter som `days`, `hours` eller `minutes` avhengig av dine behov.
+`#inst "2022-01-14T00:00:00.000000000-00:00"`
 
-For å beregne en dato i fortiden, kan du bruke `pminus`-funksjonen og gi et negativt antall enheter som argument.
+Vi kan også bruke funksjonen `clj-time.core/minus` for å beregne en dato i fortiden. La oss si at vi vil finne datoen for en uke siden:
 
 ```Clojure
-(def two-weeks-ago (time/pminus today (time/weeks 2)))
+(require '[clj-time.core :as t])
 
-(println two-weeks-ago) ; Output: #inst "2021-09-15T00:00:00.000-00:00"
+(def nåtid (t/today))
+(def forrige-dato (t/minus nåtid (t/weeks 1)))
+(println forrige-dato)
 ```
+Dette vil gi følgende utskrift:
 
-## Dykk dypere
+`#inst "2022-01-07T00:00:00.000000000-00:00"`
 
-For å få mer nøyaktige beregninger, kan du også bruke `pplus` og `pminus` med mindre enheter som `seconds` eller `milliseconds` for å få mer presise resultater. Clojure har også funksjoner som `time/in-minutes` eller `time/in-seconds` som kan hjelpe deg med å konvertere en dato og tiden til ønsket enhet.
+Vi kan også endre på hvor mye tidsenheten skal være, for eksempel dager, uker, år eller til og med måneder. For å lære mer om de ulike funksjonene i Clojure for å beregne datoer, kan du utforske dokumentasjonen til `clj-time` biblioteket.
+
+## Dypdykk
+Nå som vi har en grunnleggende forståelse av hvordan vi kan beregne datoer i fremtiden og fortiden i Clojure, la oss dykke litt dypere inn i hvordan dette faktisk fungerer. Clojure bruker en datatype kalt `java.time.Instant` for å representere en dato og tidspunkt. Dette gjør det enkelt å manipulere og beregne datoer ved hjelp av Clojure sine funksjoner.
+
+Når vi bruker `t/today` funksjonen, får vi en instans av denne datatype. Og når vi bruker `t/plus` eller `t/minus` funksjonene, legger vi til eller trekker fra en viss tidsmengde til denne instanten, og returnerer en ny instant med den ønskede datoen.
+
+Dette gjør det enkelt å arbeide med datoer i Clojure, da vi kan bruke de samme verktøyene og funksjonene for å beregne datoer i forskjellige tidsenheter.
 
 ## Se også
-
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
-- [Clojuredocs.org](https://clojuredocs.org/)
-- [clj-time biblioteket](https://github.com/clj-time/clj-time)
+- [Offisiell dokumentasjon for "clj-time" biblioteket](https://github.com/clj-time/clj-time)
+- [Clojure programmeringsguide](https://clojure.org/guides/getting_started) (på engelsk)
+- [Hvordan bruke datoer og tider i Clojure](https://www.braveclojure.com/dates-and-times-in-clojure/) (på engelsk)

@@ -1,41 +1,43 @@
 ---
-title:    "Rust: दो तारीखों की तुलना करना"
+title:    "Rust: दो तारीखों की तुलना"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyun
+## Kyu: दो तारीखों की तुलना क्यों करनी चाहिए?
 
- Kabhi kabhi hamare paas do dates hote hain aur hamein unhe compare karna hai, jaise ki ek event ki date aur current date. Is samasya ka samadhan karne ke liye hamko do dates ko compare karne ki jarurat hoti hai.
+कई बार हमें दो अलग-अलग तारीखों के बीच तुलना करने की आवश्यकता होती है, जैसे कि किसी कार्यक्रम की तारीख को फॉर्मेट करने या दो इवेंट के बीच कितना अंतर है. रस्ट भाषा में इसके लिए अनेक समाधान होते हैं, जो हम इस पोस्ट में देखेंगे.
 
-# Kaise Karein
+## कैसे: दो तारीखों को तुलना करना
 
-```Rust
+मान लें कि हमें 2019 के 11 जनवरी और 2020 के 11 जनवरी के बीच कितने दिन का अंतर है. इसके लिए हम ```DateTime``` पैकेज का उपयोग कर सकते हैं, जो स्टैन्डर्ड लाइब्रेरी में उपलब्ध है. कोड को देखें:
+
+```
+use chrono::{Duration, Utc};
+
 fn main() {
-    use chrono::{DateTime, Utc};
-
-    let event_date = "2021-10-10".parse::<DateTime<Utc>>().unwrap();
-    let current_date = Utc::now();
-
-    if event_date > current_date {
-        println!("Event is yet to happen");
-    } else if event_date == current_date {
-        println!("Event is happening right now");
-    } else {
-        println!("Event has already happened");
-    }
+    let start_date = Utc.ymd(2019, 1, 11);
+    let end_date = Utc.ymd(2020, 1, 11);
+    
+    let days = end_date.signed_duration_since(start_date).num_days();
+    println!("The difference is {} days.", days);
 }
 ```
 
-Is code block mein, humne rust programming language ka use karke do dates ko compare kiya hai. Humne `chrono` aur `Utc` library ka use kiya hain jo dates ko handle karne ke liye commonly use hota hai. Hamne do dates ko `event_date` aur `current_date` variable mein store kiya hai. Fir humne `if statement` ka use karke unhe compare kiya hai aur uske hisaab se kuch output print kiya hai. Is tarah se hum dates ko compare kar sakte hain.
+आउटपुट:
 
-# Gehri Jankari
+```
+The difference is 365 days.
+```
 
-Dates ko compare karne ke liye, hamein unhe ek common format mein convert karna hota hai. Isliye humne `parse()` method ka use kiya hai jisse hum dates ko string se `DateTime` object mein convert kar sakte hain. Fir hum `>`, `==` aur `<` operators ka use karke unhe compare karte hain.
+इस प्रकार हम दो तारीखों के बीच कितने दिन का अंतर है आसानी से पता कर सकते हैं.
 
-# Dekhiye Bhi
+## गहराई में जाएं: दो तारीखों की तुलना
 
-- Rust programming language ka official documentation: https://www.rust-lang.org/learn
-- Chrono library ka documentation: https://docs.rs/chrono/0.4.19/chrono/
-- Utc library ka documentation: https://docs.rs/chrono-tz/0.5.2/chrono_tz/
+दो तारीखों की तुलना अधिक सामान्य तरीके से दिनों या महीनों के अंतर के साथ रिक्ति को जांचने के लिए की जाती है. लेकिन आप अधिक गहराई से तुलना कर सकते हैं, जैसे कि दो तारीखों के बीच कितने मिनट, सेकेंड या हफ्ते का भी अंतर है. इसके लिए आप अन्य थोड़ा कोड देख सकते हैं और प्रैक्टिस कर सकते हैं.
+
+## देखें भी:
+
+- रस्ट [DateTime](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html) पैकेज की डॉक्य

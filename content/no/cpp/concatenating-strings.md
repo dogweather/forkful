@@ -1,96 +1,76 @@
 ---
-title:    "C++: Lagring av strenger"
+title:    "C++: Sammenføyning av strenger"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å sette sammen strenger (concatenation) er en viktig og nyttig del av programmering. Det lar deg kombinere flere strenger til en lengre streng, noe som er spesielt nyttig i tekstbehandling og utskrift av data.
+Å koble sammen strenger er en nyttig funksjon når du ønsker å kombinere eller bygge en lengre streng fra mindre deler. Dette kan være nyttig for å lage meldinger eller utskrifter som krever både variabler og tekst.
 
-## Hvordan Gjøre Det
+## Hvordan
 
-For å sette sammen strenger i C++, kan du bruke operatoren "+" eller funksjonen "concat" fra string biblioteket. Her er et eksempel:
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-  string navn = "John";
-  string etternavn = "Doe";
-  string fulltNavn = navn + " " + etternavn;
-  cout << "Hei, mitt navn er " << fulltNavn << endl;
-  return 0;
-}
-```
-
-I dette eksempelet, bruker vi operatoren "+" til å sette sammen strengene "navn" og "etternavn" til variabelen "fulltNavn." Merk at vi også inkluderer et mellomrom mellom navnene ved å legge til en tom streng (" ") mellom dem. Output av dette programmet vil være:
-
-```
-Hei, mitt navn er John Doe
-```
-
-I tillegg til å bruke operatoren "+", kan du også bruke funksjonen "concat" fra string biblioteket til å sette sammen strenger. Her er et eksempel:
+For å koble sammen strenger i C++, bruker vi operatoren "+" eller "append()" funksjonen. La oss se på noen eksempler:
 
 ```C++
-#include <iostream>
-#include <string>
+string navn = "Hans";
 
-using namespace std;
+//Koble sammen to strenger ved hjelp av operatoren "+"
+string velkomst = "Hei " + navn;
 
-int main() {
-  string land = "Norge";
-  string hilsen = "Halla";
-  string melding = concat(hilsen, " fra ", land);
-  cout << melding << endl;
-  return 0;
-}
+//Bruk "append()" funksjonen for å legge til tekst til en eksisterende streng
+velkomst.append(", velkommen!");
+
+//Utskrift: Hei Hans, velkommen!
+cout << velkomst << endl;
 ```
 
-I dette eksempelet, bruker vi funksjonen "concat" til å sette sammen strengene "hilsen", "fra" og "land" til variabelen "melding." Output av dette programmet vil være:
+I dette eksemplet kombinerer vi strenger for å lage en velkomstmelding til personen med navnet "Hans". Vi bruker "+ "operatoren for å koble sammen navnet med "velkommen!" strengen, og deretter bruker "append()" funksjonen for å legge til "velkommen!" på slutten av vår velkomstmelding.
 
-```
-Halla fra Norge
-```
-
-## Dypdykk
-
-I C++, kan du også bruke en annen metode for å sette sammen strenger kalt stringstream. Dette er spesielt nyttig hvis du må sette sammen en stor mengde strenger eller dynamisk sette sammen variabler og strenger.
-
-For å bruke stringstream, må du inkludere header-filen "sstream" og opprette en stringstream-variabel. Deretter kan du bruke funksjonen "str" til å konvertere andre data typer til strenger og sette dem sammen med operatoren "+."
-
-Her er et eksempel:
+Vi kan også kombinere flere strenger på en gang ved å bruke operatoren "+". La oss se på et annet eksempel:
 
 ```C++
-#include <iostream>
+string navn = "Marie";
+string yrke = "lærer";
+
+//Koble sammen tre strenger
+string presentasjon = navn + " er en " + yrke;
+
+//Utskrift: Marie er en lærer
+cout << presentasjon << endl;
+```
+
+## Dykk dypere
+
+I disse eksemplene bruker vi kun operatoren "+", men i virkeligheten bruker C++ en mer effektiv metode for å koble sammen strenger. Når vi bruker "+" operatoren, oppretter vi faktisk en ny streng hver gang vi kobler sammen to strenger, noe som kan føre til unødvendig bruk av minne.
+
+For å forbedre ytelsen, bruker C++ en klasse kalt "stringstream" som lar deg bygge en streng uten å opprette flere kopier. Her er et eksempel på hvordan vi kan bruke "stringstream" for å koble sammen strenger:
+
+```C++
 #include <sstream>
-#include <string>
 
-using namespace std;
+string navn = "Carl";
+string yrke = "ingeniør";
 
-int main() {
-  int alder = 25;
-  stringstream ss;
-  ss << "Jeg er " << alder << " år gammel.";
-  string utskrift = ss.str();
-  cout << utskrift << endl;
-  return 0;
-}
+//Opprett et stringstream objekt
+stringstream ss;
+
+//Bygg en streng ved hjelp av stringstream
+ss << navn << " er en " << yrke;
+
+//Hent verdien fra stringstream og lagre den i en strengvariabel
+string presentasjon = ss.str();
+
+//Utskrift: Carl er en ingeniør
+cout << presentasjon << endl;
 ```
 
-I dette eksempelet, bruker vi stringstream til å sette sammen strengen "Jeg er" med variabelen "alder" og strengen "år gammel." Output av dette programmet vil være:
+Dette kan være nyttig når du må koble sammen en stor mengde strenger, da dette vil redusere antall kopieringsoperasjoner og forbedre programmet ditt sin ytelse.
 
-```
-Jeg er 25 år gammel.
-```
+## Se også
 
-## Se Også
-
-For mer informasjon om å sette sammen strenger i C++, sjekk ut disse ressursene:
-
-- [Offisiell C++ Dokumentasjon - Strenger](https://en.cppreference.com/w/cpp/string)
-- [Tutorialspoint - C++ Strenger](https://www.tutorialspoint.com/cplusplu
+- [String concatenation in C++](https://www.geeksforgeeks.org/string-concatenation-in-c/)
+- [String streams in C++](https://www.geeksforgeeks.org/string-stream-strings-streams/)
+- [C++ Reference - String](https://www.cplusplus.com/reference/string/string/)

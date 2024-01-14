@@ -1,54 +1,36 @@
 ---
-title:    "TypeScript: 文字列を大文字に変換する"
+title:    "TypeScript: 文字列の大文字化"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-「文字列の先頭を大文字にする」というプログラミングの方法は、たくさんの人々が日常的に使用することがあります。例えば、表題を正式なものに変更したい場合や、データを整形する際にも使われます。この記事では、TypeScriptを使用して文字列を大文字にする方法を紹介します。
+なぜstringの最初の文字を大文字にするのか？それは、視覚効果を向上させるためです。大文字は重要な単語やタイトルを示すのに適しており、文字列が大きな見出しやエントリポイントを表す場合、よりはっきりと目立つようになります。
 
-## 方法
-
-文字列を大文字にするには、まず`toUpperCase()`メソッドを使用します。以下のように、`toUpperCase()`メソッドを文字列に直接適用することができます。
+## 使い方
 
 ```TypeScript
-let str = "hello world";
-console.log(str.toUpperCase()); // "HELLO WORLD"
-```
-
-また、`charAt()`メソッドや`split()`メソッドを使用して、文字列を分割し、それぞれの単語の先頭文字を大文字に変換する方法もあります。具体的なコード例は以下のようになります。
-
-```TypeScript
-let str = "hello world";
-let arr = str.split(" ");
-for (let i = 0; i < arr.length; i++) {
-  arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+function capitalize(str: string): string {
+    // 文字列を小文字に変換
+    let lowerCaseStr = str.toLowerCase();
+    // 最初の文字を大文字に変換
+    let capitalizedStr = lowerCaseStr.charAt(0).toUpperCase() + lowerCaseStr.slice(1);
+    return capitalizedStr;
 }
-str = arr.join(" ");
-console.log(str); // "Hello World"
+
+console.log(capitalize("typescript")); // TypeScript
+console.log(capitalize("今日はいい天気です")); // 今日はいい天気です
 ```
 
-## ディープダイブ
+## 詳細について
 
-文字列を大文字にするメソッドには、`toLocaleUpperCase()`や`toUpperCase()`の他に`intl-standard`パッケージを使う方法もあります。これを使用することで、環境によって適切な文字列の大文字形式を生成することができます。
+文字列を大文字に変換する方法はさまざまありますが、今回はTypeScriptを使用しています。まず、文字列自体を小文字に変換し、その後最初の文字だけを大文字に変換しています。こうすることで、文字列の長さにかかわらず、最初の文字が大文字になります。また、この方法では日本語を含む文字列でも正しく変換することができます。
 
-また、TypeScriptでは、ジェネリクスを使用して任意の型の文字列を大文字にすることもできます。コード例は以下のようになります。
+## See Also
 
-```TypeScript
-function capitalize<T>(str: T): T {
-  // Converting str to stringを行う
-  let s = "" + str;
-  return s.charAt(0).toUpperCase() + s.substring(1);
-}
-console.log(capitalize("hello")); // "Hello"
-console.log(capitalize(123)); //TypeError: s.charAt is not a function
-```
-
-## 参考リンク
-
-- [String.prototype.toUpperCase() | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.charAt() | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.split() | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [intl-standard | npm](https://www.npmjs.com/package/intl-standard)
+- [String.prototype.charAt() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.toLowerCase() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [String.prototype.toUpperCase() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

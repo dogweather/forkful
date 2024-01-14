@@ -1,44 +1,56 @@
 ---
 title:    "Gleam: 检查目录是否存在"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么？
 
-## 您为什么要检查文件夹是否存在？
+在编程中，有时候我们需要检查某个目录是否存在。这可以帮助我们避免出现错误，并且确保程序按照我们的预期工作。在Gleam中，有一个方便的方法可以实现这一点。下面我们来学习如何做到这一点。
 
-在编程过程中，经常会遇到需要检查特定文件夹是否存在的情况。例如，您可能需要在程序运行时动态创建文件夹，然后再向其中写入内容。如果文件夹已存在，则不需要创建，否则会导致程序出错。因此，检查文件夹是否存在是程序中必不可少的一步。
+## 如何实现？
 
-# 如何
-
-## 使用Gleam检查文件夹是否存在的方法
-
-要使用Gleam语言来检查文件夹是否存在，您可以使用标准库中的Dir模块。首先，您需要导入该模块：
+首先，让我们来创建一个目录并检查它是否存在。我们将使用Gleam的`Dir.exists`函数，它接受一个路径作为参数并返回一个布尔值来表示目录是否存在。
 
 ```Gleam
-import gleam/dir {Dir}
+dir_path = "example"
+
+if Dir.exists(dir_path) {
+  println("Direcotry exists!")
+} else {
+  println("Directory does not exist!")
+}
 ```
 
-然后，您可以使用Dir.exists函数来检查特定文件夹是否存在，如下所示：
+输出：
+```
+Directory exists!
+```
+
+现在，让我们来尝试检查一个不存在的目录。
 
 ```Gleam
-let result = Dir.exists("path/to/folder")
+dir_path = "non-existent-directory"
+
+if Dir.exists(dir_path) {
+  println("Direcotry exists!")
+} else {
+  println("Directory does not exist!")
+}
 ```
 
-如果文件夹存在，则该函数会返回true，否则返回false。您可以根据此结果来执行不同的逻辑。
+输出：
+```
+Directory does not exist!
+```
 
-# 深入探究
+## 深入探讨
 
-## 关于检查文件夹是否存在的更多信息
+在Gleam中，`Dir.exists`函数本质上是通过调用`IO.File.open_exists`函数来实现的。它会尝试打开给定的路径，如果打开成功，则表明该路径是一个已存在的目录。因此，除了检查目录是否存在外，还可以使用`Dir.exists`函数来检查文件是否存在。但是需要注意的是，如果目录或文件没有相应的权限，则会导致打开失败。
 
-通常，检查文件夹是否存在的逻辑与检查文件是否存在的逻辑类似。Gleam中的Dir模块也提供了相应的函数来检查文件是否存在，例如Dir.file_exists函数。此外，您还可以使用Dir.list函数来列出指定文件夹下的所有文件和子文件夹。
+## 另请参阅
 
-当然，如果您需要更复杂的逻辑来操作文件夹，您也可以使用Gleam的FileSystem模块。该模块提供了更多的函数来管理和操作文件和文件夹。
-
-# 参考链接
-
-[Dir模块文档](https://gleam.run/std/dir.html)
-
-[FileSystem模块文档](https://gleam.run/std/filesystem.html)
+- [Gleam文档：Dir模块](https://gleam.run/zh/docs/stdlib/dir.html)
+- [Gleam文档：IO模块](https://gleam.run/zh/docs/stdlib/io.html)

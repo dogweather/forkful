@@ -1,57 +1,53 @@
 ---
-title:    "Java: Sletting av tegn som samsvarer med et mønster"
+title:    "Java: Slette tegn som matcher et mønster."
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I denne bloggposten skal vi gå gjennom hvordan man kan slette tegn som matcher et bestemt mønster i en Java-kode. Dette kan være nyttig når man jobber med tekstbehandling og ønsker å fjerne uønskede tegn eller upassende språk.
+Det er ofte nødvendig å slette bestemte tegn som matcher et mønster når man jobber med tekstbehandling eller dataanalyse. Dette kan være for å rydde opp eller få ønsket format på teksten. I denne bloggposten vil vi se på hvordan vi kan gjøre dette ved hjelp av Java-programmering.
 
-## Hvordan å gjøre det
+## Hvordan
 
-Det er flere måter å slette karakterer som matcher et mønster i en Java-kode. Her skal vi se på to forskjellige metoder: Bruke regex (regular expressions) og bruke String-klassen. 
-
-### Regex
-
-For å slette tegn basert på et mønster, må vi bruke klassen Pattern og Matcher fra pakken java.util.regex. Her er et eksempel på hvordan dette kan gjøres:
+For å slette tegn som matcher et bestemt mønster i en tekststreng, kan vi bruke metoden `replaceAll()` i Java. Denne metoden tar to parametere - det første er mønsteret som skal matches og det andre er teksten som skal endres. La oss se på et eksempel:
 
 ```Java
-import java.util.regex.*;
-
-String tekst = "Dette er en tekst med uønskede !# tegn !#";
-String mønster = "[!#]"; // Dette er mønsteret vi ønsker å matche
-
-Pattern p = Pattern.compile(mønster);
-Matcher m = p.matcher(tekst);
-String nyTekst = m.replaceAll("");
-
-System.out.println(nyTekst); // Vil printe ut "Dette er en tekst med uønskede tegn"
+String tekst = "Jeg spiser epler hver dag.";
+String endretTekst = tekst.replaceAll("epler", "bananer");
+System.out.println(endretTekst);
 ```
 
-Her bruker vi metoden `replaceAll()` for å erstatte alle tegn som matcher mønsteret med et tomt streng. Dette vil fjerne alle forekomster av de uønskede tegnene i teksten.
+Dette vil gi oss følgende utskrift:
 
-### String-klassen
+```
+Jeg spiser bananer hver dag.
+```
 
-En annen måte å fjerne tegn som matcher et mønster er å bruke `replace()`-metoden fra String-klassen. Denne metoden tar inn to strenger og erstatter alle forekomster av den første strengen med den andre strengen. Her er et eksempel:
+Som du kan se, har metoden `replaceAll()` erstattet alle forekomster av "epler" med "bananer" i teksten vår. Hvis du ønsker å slette et bestemt tegn, for eksempel alle tall i teksten, kan du også bruke et regulært uttrykk som matcher tall. La oss se på et annet eksempel:
 
 ```Java
-String tekst = "Dette er en tekst med uønskede !# tegn !#";
-String mønster = "!#";
-
-String nyTekst = tekst.replace(mønster, "");
-
-System.out.println(nyTekst); // Vil printe ut "Dette er en tekst med uønskede tegn"
+String tallTekst = "Jeg er 25 år gammel.";
+String endretTekst = tallTekst.replaceAll("\\d", "");
+System.out.println(endretTekst);
 ```
 
-Her erstatter vi alle forekomster av mønsteret `!#` med en tom streng, noe som vil fjerne alle tegnene som matcher dette mønsteret.
+Dette vil gi oss følgende utskrift:
 
-## Deep Dive
+```
+Jeg er år gammel.
+```
 
-Regex gir oss mer fleksibilitet når det kommer til å definere mønster for å matche tegn, mens `replace()`-metoden fra String-klassen er enklere å bruke for enklere mønstre. Det er også verdt å merke seg at disse metodene ikke endrer på den originale teksten, men returnerer en ny streng med de ønskede endringene.
+Her har vi brukt metakarakteren `\d` som betyr "alle tall", og ved å erstatte den med et tomt tegn "", har vi slettet alle tall fra teksten.
 
-## Se Også
+## Dypdykk
 
-- [Oracle's Regex-tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Java String-klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-java.lang.CharSequence-java.lang.CharSequence-)
+Det finnes mange forskjellige metakarakterer som kan brukes når vi matcher tegn i en tekststreng. Noen eksempler er `\d` for tall, `\w` for bokstaver og `\s` for mellomrom. Disse kan også kombineres, for eksempel `\w\d` som vil matche et tall etterfulgt av en bokstav. Det er også mulig å bruke negasjon, for eksempel `[^0-9]` vil matche alt som ikke er tall. Ved å utforske og leke med disse metakarakterene, kan du gjøre avansert og presis tekstbehandling i Java.
+
+## Se også
+
+- [Oracle Java documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+- [Regular-Expressions.info](https://www.regular-expressions.info/) - en omfattende ressurs for å lære mer om regulære uttrykk.
+- [Regex101](https://regex101.com/) - en praktisk online verktøy for å teste og forstå regex-uttrykk.

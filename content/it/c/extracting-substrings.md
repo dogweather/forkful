@@ -1,48 +1,49 @@
 ---
 title:    "C: Estrazione di sottostringhe"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Quando si lavora con stringhe in linguaggio C, una delle operazioni comuni è l'estrazione di sottostringhe. Questo può essere utile nel caso in cui si voglia manipolare parti specifiche di una stringa o confrontare stringhe tra loro. In questo articolo vedremo come effettuare l'estrazione di sottostringhe in C.
 
-Estrazione di sottostringhe può sembrare un compito insignificante, ma è un concetto fondamentale nella programmazione in C. Spesso ci troviamo a dover manipolare stringhe di dati, estraendo solo alcune parti di esse per ottenere il risultato desiderato. Conoscere come estrarre sottostringhe può semplificare notevolmente il nostro codice e renderlo più efficiente.
+## Come Fare
+L'estrazione di sottostringhe in C è semplice e diretta. Basta seguire questi passaggi:
+1. Definire una stringa da cui estrarre la sottostringa.
+2. Definire gli indici di inizio e fine della sottostringa.
+3. Utilizzare la funzione `strncpy()` per copiare la sottostringa nella variabile desiderata.
 
-## Come fare
-
-Per estrarre una sottostringa in C, dobbiamo utilizzare la funzione `strncpy()`, che ci consente di copiare solo un certo numero di caratteri da una stringa di origine in una destinazione. Ecco un esempio di come possiamo utilizzare questa funzione per estrarre una sottostringa di 3 caratteri:
-
+Vediamo un esempio di codice che estrae una sottostringa dalla stringa `"Hello, World!"`:
 ```C
-char source[] = "Pasta è deliziosa!";
-char destination[4]; // la sottostringa è di 3 caratteri, ma abbiamo bisogno di 4 per il terminatore null
+#include <stdio.h>
+#include <string.h>
 
-strncpy(destination, source + 6, 3); // copia 3 caratteri della stringa di origine a partire dal 6° carattere
-destination[3] = '\0'; // aggiunge il terminatore null alla fine della sottostringa
-printf("%s", destination); // output: è d
+int main()
+{
+    char string[20] = "Hello, World!";
+    char sub_string[10];
+    
+    // Estraiamo la sottostringa "World" dalla stringa
+    strncpy(sub_string, string + 7, 5);
+    
+    // Stampiamo la sottostringa
+    printf("La sottostringa è: %s\n", sub_string);
+    
+    return 0;
+}
 ```
-
-In questo esempio, abbiamo utilizzato una combinazione di `strncpy()` e l'operatore di scorrimento `+` per selezionare solo i caratteri che ci interessano dalla stringa di origine. Dopo aver copiato i caratteri nella destinazione, dobbiamo sempre ricordare di aggiungere il terminatore null alla fine della sottostringa per assicurarci che sia correttamente terminata.
+L'output di questo codice sarà:
+```
+La sottostringa è: World
+```
+Come si può vedere, la funzione `strncpy()` copia esattamente la lunghezza della sottostringa specificata, quindi è importante specificare uno spazio sufficiente nella variabile di destinazione.
 
 ## Approfondimento
+Nel linguaggio C, una stringa è semplicemente un array di caratteri terminato da `\0`, quindi per estrarre una sottostringa basta manipolare gli indici dell'array di caratteri. Inoltre, è possibile utilizzare la funzione `strstr()` per trovare una sottostringa specifica all'interno di una stringa.
 
-Ma cosa succede effettivamente quando estraete una sottostringa? In realtà, quello che sta succedendo è che stiamo creando una nuova stringa, che ha le sue aree di memoria separate dalla stringa di origine. Questo significa che non stiamo modificando la stringa di origine, ma solo copiando alcune parti di essa in una nuova variabile. È importante tenere presente che le due stringhe sono completamente separate e una variazione nella sottostringa non influirà sulla stringa di origine.
-
-Inoltre, è possibile utilizzare l'operazione di slicing utilizzata anche in altri linguaggi di programmazione, ad esempio `[inizio:fine:passo]`, per specificare ancora meglio quali caratteri estrarre dalla nostra stringa. Per esempio, se volessimo estrarre le ultime 4 lettere della stessa frase di prima:
-
-```C
-char source[] = "Pasta è deliziosa!";
-char destination[5];
-
-strncpy(destination, source + 13, 4);
-destination[4] = '\0';
-printf("%s", destination); // output: osa!
-```
-
-Come si può notare, questo ci ha permesso di selezionare solo gli ultimi caratteri della stringa di origine senza dover contare manualmente il numero di caratteri da copiare.
-
-## Vedi anche
-
-- `strncpy()` su [cplusplus.com](https://www.cplusplus.com/reference/cstring/strncpy/)
-- Esempi di slicing in C su [GeeksforGeeks.org](https://www.geeksforgeeks.org/replace-part-string-another-given-string-c/)
-- [Documentazione ufficiale di C](https://devdocs.io/c/) per approfondire ulteriormente l'argomento
+## Vedi Anche
+- [Funzione strncpy()](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [Funzione strstr()](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [Tutorial su stringhe in C](https://www.learn-c.org/en/Strings)

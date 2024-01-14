@@ -1,35 +1,38 @@
 ---
-title:    "PHP: 文字列を小文字に変換する"
+title:    "PHP: 「文字列を小文字に変換する」"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+文字列を小文字に変換するのに関わる理由について、わずか1〜2文で説明します。
 
-あなたは、プログラミングの世界ではよく使われるテクニックの1つである文字列を小文字に変換することに魅了されるかもしれません。小文字化は、文字列の整形や比較などの処理に必要不可欠です。
+## 変換の方法
+「```PHP ...```」のコードブロック内でコーディング例やサンプルの出力を示します。
 
-## 方法
-
-文字列を小文字に変換する方法はいくつかありますが、今回はPHPの組み込み関数である`strtolower()`を使ってみましょう。
-
+例：
 ```
-<?php
-$input = "HELLO WORLD";
-$output = strtolower($input);
-echo $output;
+$name = "JOHN SMITH";
+echo strtolower($name);
+//出力： john smith
 ```
 
-このコードを実行すると、`hello world`という出力が得られます。入力された文字列が全て小文字に変換されていることが確認できますね。
+## 深く掘り下げる
+文字列を小文字に変換する際に注意すべきことや便利な関数など、より詳しい情報を提供します。
 
-## 詳細を掘り下げる
+例：
+- 文字列の特定の文字を大文字から小文字に変換するには、`lcfirst()`関数を使用します。
+- 日本語や多言語の文字列を小文字に変換する際には、`mb_strtolower()`関数を使うと正しい結果が得られます。
 
-`strtolower()`は、引数として与えられた文字列を全て小文字に変換して返す関数です。これは、単純な一文字ごとの変換を行うのではなく、文字列全体を一気に変換するため効率的です。また、英語のアルファベット以外の文字についても、ロケールに応じた変換が行われます。
+## 参考
+[PHPのstrtolower()関数ドキュメント](https://www.php.net/manual/ja/function.strtolower.php)
 
-さらに詳しく知りたい方は、PHP公式ドキュメントの`strtolower()`のページを参照してみてください。
+[PHPのmb_strtolower()関数ドキュメント](https://www.php.net/manual/ja/function.mb-strtolower.php)
 
-## 参考リンク
-
-- [PHPマニュアル: strtolower()関数](https://www.php.net/manual/ja/function.strtolower.php)
-- [PHP Manual: strtolower() function](https://www.php.net/manual/en/function.strtolower.php)
-- [How to Use the strtolower() Function in PHP](https://www.w3schools.com/php/func_string_strtolower.asp)
+## 参照
+- [PHPで文字列を小文字に変換する方法](https://www.sejuku.net/blog/74002)
+- [文字列から軽い前処理をして判定する方法](https://qiita.com/NAVER_corporation/items/9472a1cfffcf279d3e01)
+- [Rubyで文字列を小文字に変換する方法](https://www.rubyguides.com/2015/05/ruby-string-methods/)
+- [Pythonで文字列を小文字に変換する方法](https://docs.python.org/ja/3/library/stdtypes.html#string-methods)

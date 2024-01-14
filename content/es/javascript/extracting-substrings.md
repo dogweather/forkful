@@ -1,50 +1,53 @@
 ---
 title:    "Javascript: Extrayendo subcadenas"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Extraer subcadenas es una habilidad importante en la programación, ya que nos permite obtener una parte específica de una cadena de texto. Esto es especialmente útil cuando se trabaja con grandes cantidades de datos y se necesita acceder a cierta información específica dentro de una cadena.
+Extraer subcadenas es una habilidad fundamental en la programación que nos permite manipular y trabajar con cadenas de texto de manera eficiente. Ser capaz de extraer una parte específica de una cadena nos permite realizar operaciones más complejas y realizar tareas específicas con mayor precisión.
 
 ## Cómo hacerlo
+Para extraer subcadenas en Javascript, podemos utilizar el método `substring()` que nos permite especificar la posición inicial y final de la subcadena que deseamos extraer. Por ejemplo:
 
-La extracción de subcadenas se logra mediante el uso de la función `substring()` en Javascript. Esta función toma dos parámetros: el índice en el que se inicia la extracción y el índice en el que se termina.
-
-Por ejemplo, si tenemos una cadena de texto "Hola Mundo" y queremos extraer la palabra "Mundo", podemos hacerlo de la siguiente manera:
-
-```javascript
-let cadena = "Hola Mundo";
-let subcadena = cadena.substring(5,10); // Esto nos dará "Mundo"
-console.log(subcadena);
+```Javascript
+let cadena = "Hola mundo";
+let subcadena = cadena.substring(0,4);
+console.log(subcadena); // "Hola"
 ```
 
-El primer parámetro indica el índice en el que comienza la extracción, en este caso, la letra "M" está en el índice 5. El segundo parámetro indica el índice en el que termina la extracción, en este caso, la letra "o" está en el índice 10.
+En este ejemplo, estamos extrayendo la subcadena que va desde el primer carácter hasta el cuarto de la variable `cadena` y luego imprimiéndola en la consola.
 
-Otra forma de extraer subcadenas es utilizando la función `slice()`. Esta función también toma dos parámetros, pero en este caso, el segundo parámetro indica la longitud de la subcadena en lugar del índice en el que termina.
+También podemos utilizar el método `slice()` que funciona de manera similar a `substring()` pero nos permite especificar la posición inicial y también la posición final de la subcadena. Por ejemplo:
 
-Por ejemplo, si queremos extraer la palabra "Hola":
-
-```javascript
-let cadena = "Hola Mundo";
-let subcadena = cadena.slice(0,4); // Esto nos dará "Hola"
-console.log(subcadena);
+```Javascript
+let cadena = "¡Hola a todos!";
+let subcadena = cadena.slice(0,4);
+console.log(subcadena); // "¡Hola"
 ```
 
-El primer parámetro indica el índice en el que comienza la extracción, en este caso, la letra "H" está en el índice 0. El segundo parámetro indica la longitud de la subcadena, en este caso, 4 letras.
+Además, podemos utilizar el método `substr()` que nos permite especificar la posición inicial y la longitud de la subcadena que deseamos extraer. Por ejemplo:
+
+```Javascript
+let cadena = "¡Hola a todos!";
+let subcadena = cadena.substr(0,4);
+console.log(subcadena); // "¡Hol"
+```
 
 ## Profundizando
+Existen numerosas razones por las que podríamos necesitar extraer subcadenas en Javascript. Por ejemplo, podemos utilizar esta habilidad para formatear y manipular nombres y apellidos, extraer información específica de una dirección o correo electrónico, entre otras cosas.
 
-Además de la función `substring()` y `slice()`, existen otras formas de extraer subcadenas en Javascript. Podemos utilizar la función `substr()` que toma dos parámetros: el índice en el que comienza la extracción y la longitud de la subcadena.
+Además, también podemos utilizar expresiones regulares para extraer subcadenas que coincidan con un patrón determinado. Por ejemplo, si quisieramos extraer todos los dígitos de una cadena, podríamos usar la expresión regular `/[0-9]/g` en combinación con el método `match()` de Javascript. Ejemplo:
 
-También podemos combinar estas funciones con métodos como `indexOf()` o `lastIndexOf()` para encontrar el índice en el que comienza o termina la subcadena que queremos extraer.
-
-La extracción de subcadenas es una habilidad importante en la programación y conocer las diferentes formas de hacerlo nos ayudará a mejorar nuestras habilidades de manipulación de cadenas.
+```Javascript
+let cadena = "Hoy es 15 de julio";
+let digitos = cadena.match(/[0-9]/g);
+console.log(digitos); // ["1", "5"]
+```
 
 ## Ver también
-
-- [Documentación de MDN sobre la función `substring()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Documentación de MDN sobre la función `slice()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Documentación de MDN sobre la función `substr()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [Método substring() en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substring)
+- [Método slice() en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice)
+- [Método substr() en Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)

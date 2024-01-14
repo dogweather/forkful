@@ -1,62 +1,52 @@
 ---
-title:    "Rust: Vergleichen von zwei Datumsangaben"
+title:    "Rust: Vergleich von zwei Daten"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+In dieser Blog-Post geht es um die vergleichende Datumsfunktion in der Programmiersprache Rust. Warum sollte man das überhaupt tun? Vergleichen von Daten kann sehr hilfreich sein, um zum Beispiel zu überprüfen, ob ein Datum in der Zukunft oder Vergangenheit liegt oder um komplexe Zeitberechnungen durchzuführen.
 
-Das Vergleichen von zwei Datumswerten ist eine häufige Aufgabe in der Programmierung. Es ermöglicht uns, zu überprüfen, ob ein Datum vor oder nach einem bestimmten Datum liegt oder ob zwei Termine gleich sind. Dies kann nützlich sein, um beispielsweise Fälligkeitsdaten zu überprüfen oder um Zeitintervalle zu berechnen.
-
-## Wie man zwei Daten in Rust vergleicht
-
-Die Vergleichsoperationen in Rust sind mithilfe von Operatoren wie `<`, `>`, `<=` und `>=` möglich. Hier ist ein Beispiel, wie man zwei Datumswerte mit dem `==` Operator vergleichen könnte, um zu überprüfen, ob sie identisch sind:
+## Anleitung
+Um zwei Daten in Rust zu vergleichen, gibt es verschiedene Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung des `date`-Pakets, das nützliche Funktionen für die Arbeit mit Datumswerten bietet.
 
 ```Rust
-use chrono::{NaiveDate};
+use date::{Date, Locale};
 
-let date1 = NaiveDate::from_ymd(2021, 6, 1); // 1. Juni 2021
-let date2 = NaiveDate::from_ymd(2021, 6, 1); // 1. Juni 2021
-
-if date1 == date2 {
-    println!("Die beiden Termine sind identisch.");
+fn main() {
+    let date1 = Date::parse("2021-01-01", "y-M-d", Locale::en_US).unwrap();
+    let date2 = Date::parse("2020-12-31", "y-M-d", Locale::en_US).unwrap();
+    // Vergleich der Daten mit der Funktion `cmp`
+    let comparison = date1.cmp(&date2);
+    println!("{}", comparison); // Output: Greater
 }
 ```
 
-Wenn wir jedoch prüfen wollen, ob ein Datum vor oder nach einem anderen Datum liegt, können wir die anderen Operatoren verwenden. Hier ist ein Beispiel, um zu überprüfen, ob `date1` vor `date2` liegt:
+In diesem Beispiel werden zwei Datumswerte aus Strings erzeugt und dann miteinander verglichen. Die Funktion `cmp` gibt ein Enum zurück, das angibt, ob das erste Datum größer, kleiner oder gleich dem zweiten Datum ist.
+
+Eine weitere Möglichkeit ist die Verwendung des `time`-Pakets, das es ermöglicht, komplexe Zeitberechnungen durchzuführen und Daten mit unterschiedlichen Zeitzonen zu vergleichen.
 
 ```Rust
-if date1 < date2 {
-    println!("Das erste Datum liegt vor dem zweiten.");
+use time::OffsetDateTime;
+
+fn main() {
+    // Datum mit Zeitzone erzeugen
+    let date1 = OffsetDateTime::parse("2020-01-01T00:00:00+00:00", "%Y-%m-%dT%H:%M:%S%:z");
+    let date2 = OffsetDateTime::parse("2020-01-01T00:00:00+01:00", "%Y-%m-%dT%H:%M:%S%:z");
+    // Vergleich der Daten mit der Funktion `partial_cmp`
+    let comparison = date1.partial_cmp(&date2);
+    println!("{:?}", comparison); // Output: Some(Greater)
 }
 ```
 
-Und wenn wir wissen wollen, ob `date1` nach `date2` liegt, können wir den `>` Operator verwenden.
+Hier wird zunächst ein Datum mit einer Zeitzone erzeugt und dann mit einem anderen Datum verglichen. Die Funktion `partial_cmp` gibt ein `Option<Ordering>` zurück, das angibt, ob das erste Datum größer, kleiner oder gleich dem zweiten Datum ist. Ein `Some` wird zurückgegeben, wenn der Vergleich erfolgreich war, ansonsten `None`.
 
-Diese Operatoren können auch mit Uhrzeiten verwendet werden, um genauere Vergleiche durchzuführen. Weitere Informationen zur Arbeit mit Datum und Uhrzeit in Rust finden Sie in der Dokumentation von [chrono](https://docs.rs/chrono/0.4.19/chrono/).
-
-## Deep Dive
-
-Beim Vergleichen von Datumswerten müssen wir uns bewusst sein, dass es in Rust zwei verschiedene Arten gibt, um Datumswerte zu repräsentieren: `NaiveDate` und `DateTime<Utc>`. `NaiveDate` wird verwendet, wenn keine Zeitzone oder Uhrzeit angegeben ist, während `DateTime<Utc>` verwendet wird, wenn wir eine spezifische Zeitzone verwenden möchten.
-
-Beide Typen implementieren die `PartialOrd` und `Ord` Traits, was bedeutet, dass wir die oben genannten Vergleichsoperatoren verwenden können. Wenn wir jedoch mit `DateTime<Utc>` arbeiten, müssen wir die `naive` Methode verwenden, um zuerst die Zeitzone zu entfernen und dann die Vergleichsoperation auszuführen. Ein Beispiel:
-
-```Rust
-use chrono::{DateTime, Utc, TimeZone};
-
-let date = Utc::now();
-let newer_date = Utc.ymd(2021, 6, 2).and_hms(10, 0, 0);
-
-if date < newer_date.naive_utc() {
-    println!("Das Datum ist älter als das neueste Datum.");
-}
-```
-
-Indem wir die Zeitzone entfernen, können wir genauere Vergleiche durchführen, da wir sicherstellen, dass beide Werte denselben Typ haben.
+## Tiefergehendes
+Beim Vergleich von Daten gibt es einige wichtige Dinge zu beachten, wie zum Beispiel die Berücksichtigung von Zeitzone oder die Umwandlung von Daten in einen anderen Datentyp. Eine detaillierte Erklärung dazu würde den Rahmen dieses Blog-Posts sprengen, aber es ist wichtig zu wissen, dass es je nach Anwendungsfall verschiedene Ansätze gibt und es wichtig ist, die richtige Methode für den Vergleich zu wählen.
 
 ## Siehe auch
-
-- [Chrono Dokumentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Date and Time Guide](https://doc.rust-lang.org/std/time/)
-- [Rust Cookbook: Working with Date and Time](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
+- [Offizielle Dokumentation des `date`-Pakets](https://crates.io/crates/date)
+- [Offizielle Dokumentation des `time`-Pakets](https://crates.io/crates/time)
+- [Beispielcode für die Arbeit mit Datumswerten in Rust](https://github.com/rust-lang/chrono/tree/master/examples)

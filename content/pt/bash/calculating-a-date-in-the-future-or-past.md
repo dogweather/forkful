@@ -1,40 +1,52 @@
 ---
-title:    "Bash: Calculando uma data no futuro ou no passado"
+title:    "Bash: Calculando uma data no futuro ou passado"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-O cálculo de datas no futuro ou passado pode ser necessário em certos projetos de programação. Essa habilidade permite que o programador forneça informações precisas sobre eventos futuros ou passados.
+O cálculo de datas no Bash pode ser útil para tarefas como agendar tarefas futuras ou lidar com arquivos que foram modificados em uma data específica no passado. Ao entender como isso funciona, você pode tornar seus scripts ainda mais robustos e automatizados.
 
-## Como Fazer
+## Como fazer
 
-Para calcular datas no futuro ou passado, podemos usar o comando `date` no Bash. O formato básico é o seguinte: `date -d 'quantity time-unit'.`
+Para calcular uma data no futuro ou no passado no Bash, você precisa entender os formatos de data e hora utilizados pelo sistema operacional. Geralmente, o Bash usa a variável $EPOCHSECONDS, que representa o número total de segundos desde 1º de janeiro de 1970. A partir disso, podemos adicionar ou subtrair a quantidade de segundos necessária para chegar à data desejada.
 
-Onde `quantity` é um número e `time-unit` pode ser qualquer unidade de tempo, como anos, meses, dias, horas, minutos, segundos, entre outros. Por exemplo, para calcular a data daqui a 2 semanas, podemos usar o seguinte comando: 
+Por exemplo, para calcular uma data daqui a 5 dias:
+
 ```Bash
-date -d '2 weeks'
+date -d "$(date -d "+5 days")" +%m/%d/%Y
 ```
-Isso nos dará a data exata de dois semanas a partir do dia atual.
+Isso retornará a data exata de 5 dias a partir da data atual, em um formato de mês/dia/ano.
 
-Também podemos especificar uma data específica como ponto de partida. Por exemplo, se quisermos saber qual será a data daqui a 3 meses e 2 dias a partir de 1º de janeiro de 2022, podemos usar o seguinte comando:
+Para calcular uma data no passado, basta substituir o "+5 days" por "-5 days". Você também pode especificar um horário específico usando o formato de 24 horas:
+
 ```Bash
-date -d '2022-01-01 + 3 months + 2 days'
+date -d "$(date -d "10:00 yesterday")" +%m/%d/%Y
 ```
-Isso nos dará a data exata de 3 meses e 2 dias após 1º de janeiro de 2022.
+Isso retornará a data de ontem às 10h da manhã, no mesmo formato.
 
-## Deep Dive
+## Investigação mais profunda
 
-Além dos exemplos acima, existem várias opções e parâmetros adicionais que podem ser usados no comando `date` para calcular datas no futuro ou passado. Por exemplo, podemos usar a opção `-r` para especificar um arquivo como ponto de partida. O comando `date` então usará a data de modificação desse arquivo como referência para o cálculo do tempo desejado.
+Além dos formatos de data e hora, também é possível utilizar a ferramenta "cal" do Bash para calcular datas. Esta ferramenta mostra o calendário em um determinado mês e ano e também pode ser usada para encontrar datas específicas:
 
-Também podemos usar a opção `-v` para adicionar ou subtrair um valor de tempo de uma data existente. Isso pode ser útil quando quisermos calcular uma data com base em uma data anterior, como "3 meses após o meu aniversário" ou "2 semanas antes da data de entrega do projeto".
+```Bash
+cal 10 2021
+cal 3 2023
+```
 
-Para ver todas as opções e detalhes de formatação disponíveis, podemos usar o comando `man date` no terminal para acessar o manual do comando `date`.
+Esses comandos retornarão o calendário para outubro de 2021 e março de 2023, respectivamente. Além disso, você pode especificar um dia específico para ver se ele cai em um determinado dia da semana:
+
+```Bash
+cal 10 2021 | grep "Fri"
+```
+
+Isso mostrará todas as sextas-feiras do mês de outubro de 2021.
 
 ## Veja também
 
-- [Documentação oficial do comando `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Tutorial de cálculo de datas no Bash](https://www.baeldung.com/linux/add-days-date-command)
-- [Artigo sobre formatação de datas no Bash](https://www.howtogeek.com/531949/how-to-format-date-and-time-in-the-linux-shell-part-1/)
+- [Documentação Bash sobre a variável $EPOCHSECONDS](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#Bash-Variables)
+- [Mais sobre o comando "date"](https://www.cyberciti.biz/tips/linux-unix-get-yesterdays-tomorrows-date.html)
+- [Explicação detalhada sobre a ferramenta "cal"](https://www.linux.com/training-tutorials/accessing-calendars-bash/)

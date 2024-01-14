@@ -1,43 +1,44 @@
 ---
-title:    "Gleam: Att starta ett nytt projekt"
+title:    "Gleam: Att påbörja ett nytt projekt"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Om du är en programmerare som vill utveckla en snabb, funktionell och tillförlitlig webbapplikation, då är Gleam det perfekta språket för dig. Med sin moderna syntax och starka statiska typsystem, är Gleam idealiskt för att bygga skalbara system som kan hantera komplexa problem. Så om du letar efter ett kraftfullt och effektivt programmeringsspråk, då är det dags att börja utforska Gleam för dina projekt.
+## Varför
 
-##Hur man gör
-För att komma igång med Gleam, behöver du först installera Elixir, som är en förutsättning för att köra Gleam. Sedan kan du installera Gleam genom att köra kommandot ``gem install gleam`` i din terminal. Efter installationen kan du skapa ett nytt projekt genom att köra kommandot ``gleam new project_name``. Detta kommer att skapa en grundläggande struktur för ditt projekt och en fil med namnet ``main.gleam``, som är platsen där du kan börja koda.
+Att starta ett nytt projekt är alltid spännande och kan vara en rolig utmaning. Det ger dig möjlighet att utforska nya språk och koncept, och skapa något unikt som du kan vara stolt över.
 
-När du öppnar ``main.gleam``-filen kommer du att se något som detta:
+## Så här gör du
 
-```gleam
-//// main.gleam ////
-// Detta är en kommentar
-pub fn main() {
-  let name = "Världen"
-  let message = greeter(name)
-  debug_log(message)
-}
+För att komma igång med Gleam behöver du först installera det på din dator. Sedan kan du börja skriva din kod i en textredigerare som stödjer Språket. När du har skrivit och sparat din kod, kan du kompilera den med hjälp av kommandot "gleam build". Detta kommer att skapa en excutable fil som du sedan kan köra och se resultatet av din kod.
 
-fn greeter(name) {
-  "Hej" ++ name ++ "!"
+```Gleam
+fn main() {
+  let namn = "Välkommen till Gleam bloggen!"
+  let språk = "Det här är ett exempel på hur du använder code blocks i Gleam"
+  io.print(namn)
+  io.print(språk)
 }
 ```
-Du kan se att det finns en ``main``-funktion som kör en ``greeter``-funktion som hälsar på en person. Du kan ändra värdet på ``name``-variabeln för att prova olika hälsningar. Efter att ha ändrat koden, kan du köra den genom att använda kommandot ``gleam run main.gleam`` i din terminal. Då kommer du att se utmatningen från din ändrade kod.
 
-##Fördjupning
-Nu när du har bekantat dig med Gleam och dess grundläggande syntax, kan du utforska mer av vad språket har att erbjuda. Gleam erbjuder stöd för funktionell programmering genom mönstermatchning, immutabla värden och högre ordningens funktioner. Det är också möjligt att integrera Gleam med andra språk som till exempel Elixir eller Erlang, som ger dig tillgång till deras kraftfulla bibliotek och verktyg.
+Output:
 
-För att lära dig mer om Gleam och dess möjligheter, kan du besöka deras officiella hemsida och dokumentation:
+Välkommen till Gleam bloggen!
+Det här är ett exempel på hur du använder code blocks i Gleam
 
-- https://gleam.run/
-- https://gleam.run/getting-started/
-- https://gleam.run/learn/
+## Djupdykning
 
-##Se även
-- [Elixir](https://elixir-lang.org/)
-- [Erlang](https://www.erlang.org/)
-- [Funktionell programmering](https://www.ibm.com/cloud/learn/functional-programming)
+När du börjar ett nytt projekt i Gleam, är det viktigt att du förstår grundläggande koncept som funktioner, variabler och datastrukturer. Dessutom måste du vara bekant med syntaxen i Språket och hur du bygger upp ditt program genom att använda moduler och filstrukturer.
+
+För att bli ännu mer framgångsrik i Gleam, rekommenderar vi att du också läser dokumentationen och engagerar dig i communityt. Där kan du få hjälp, ställa frågor och lära dig av andra Gleam-utvecklare.
+
+## Se även
+
+- Gleam språk: https://gleam.run/
+- Gleam dokumentation: https://gleam.run/documentation/
+- Gleam community: https://gleam.run/community/
+- VS Code utökning för Gleam: https://marketplace.visualstudio.com/items?itemName=gleam-vm.vscode-gleam
+
+Tveka inte att utforska Gleam och skapa något fantastiskt med det! Lycka till med ditt nya projekt!

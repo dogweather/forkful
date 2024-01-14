@@ -1,49 +1,37 @@
 ---
 title:    "Swift: Convirtiendo una fecha en una cadena"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has preguntado cómo mostrar una fecha en tu aplicación de Swift? Convertir una fecha en una cadena de texto puede ser una tarea útil en muchas situaciones, como mostrar la fecha actual en pantalla o guardarla en una base de datos. En esta publicación del blog, te mostraremos cómo hacerlo de manera sencilla en Swift.
+## ¿Por qué convertir una fecha en una cadena?
+
+Al trabajar con fechas en Swift, a menudo surge la necesidad de convertir una fecha en una cadena legible para los usuarios. Esto puede ser necesario para mostrar la fecha en un formato específico, almacenarla en una base de datos o para otros fines. Afortunadamente, convertir una fecha en una cadena es un proceso sencillo y este artículo te mostrará cómo hacerlo.
 
 ## Cómo hacerlo
-¡Es muy fácil convertir una fecha en una cadena de texto en Swift! Solo necesitas seguir estos sencillos pasos:
 
-1. Primero, crea una variable de tipo Date con la fecha que deseas convertir.
-2. Luego, declara un formato de fecha usando DateFormatter. Puedes elegir entre diferentes formatos predefinidos o crear uno personalizado.
-3. Después, usa el método `string(from:)` de DateFormatter para convertir la fecha en una cadena de texto.
-4. Finalmente, asigna la cadena resultante a una variable o imprímela en la consola.
-
-Aquí te dejamos un ejemplo de código y el resultado en la consola:
+Para convertir una fecha en una cadena, utilizaremos el tipo de dato `DateFormatter` de Swift. Este tipo nos permite dar formato a una fecha según nuestras necesidades. Veamos un ejemplo:
 
 ```Swift
-// Crear una fecha
-let fecha = Date()
-
-// Declarar el formato de fecha
-let formato = DateFormatter()
-formato.dateFormat = "dd/MM/yyyy"
-
-// Convertir la fecha en una cadena de texto
-let fechaConvertida = formato.string(from: fecha)
-
-// Imprimir la cadena resultante
-print(fechaConvertida)
-
-// Resultado: "26/05/2021"
+let fecha = Date() // obtenemos la fecha actual
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/MM/yyyy" // formato que queremos
+let dateString = formatter.string(from: fecha) // convertimos la fecha en una cadena
+print(dateString) // salida: 24/10/2021
 ```
 
-¡Y eso es todo! Ahora ya puedes convertir cualquier fecha en una cadena de texto en Swift. ¡Pruébalo por ti mismo!
+En este ejemplo, creamos un objeto `DateFormatter` y le asignamos un formato específico utilizando la propiedad `dateFormat`. Luego, usamos el método `string(from: fecha)` para convertir la fecha en una cadena según el formato que especificamos. Por último, imprimimos la cadena resultante en la consola.
 
 ## Profundizando
-Si quieres aprender más sobre cómo convertir fechas en cadenas de texto, aquí te dejamos algunos detalles adicionales a tener en cuenta:
 
-- Puedes cambiar el idioma de la fecha mediante el uso del método `setLocalizedDateFormatFromTemplate()`.
-- La clase `DateFormatter` también permite formatear fechas en diferentes zonas horarias usando `setTimeZone()`.
-- Si deseas guardar la fecha en una base de datos, asegúrate de usar el mismo formato de fecha para evitar confusiones al convertirla nuevamente en una fecha en Swift.
+El tipo de dato `DateFormatter` ofrece muchas opciones para formatear una fecha. Además del formato utilizado en el ejemplo anterior, también puedes usar otros formatos como "MMM d, yyyy" para obtener una cadena como "Oct 24, 2021". También puedes personalizar el formato a tu gusto utilizando patrones especiales de formato. Puedes encontrar una lista completa de estos patrones [aquí](https://nsdateformatter.com).
+
+Además, el tipo `DateFormatter` también permite especificar la zona horaria, el idioma y otras opciones avanzadas para dar formato a la fecha.
 
 ## Ver también
-- [Documentación de DateFormatter en la página de Apple](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Tutoriales de Swift en español](https://www.aprenderdev.com/tutoriales/swift/)
+
+- [Cómo trabajar con fechas en Swift](https://www.example.com/fechas-en-swift)
+- [Cómo convertir una cadena en una fecha en Swift](https://www.example.com/conversion-cadena-fecha-swift)
+- [Documentación oficial de DateFormatter en Swift](https://developer.apple.com/documentation/foundation/dateformatter)

@@ -1,49 +1,52 @@
 ---
-title:    "Python: Gerando números aleatórios"
+title:    "Python: Geração de números aleatórios"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante na programação Python?
+# Por que gerar números aleatórios em programação?
 
-Gerar números aleatórios é uma habilidade essencial para qualquer programador de Python. Isso permite que você crie programas mais dinâmicos e interativos, tornando o processo de programação mais interessante e divertido.
+Gerar números aleatórios é uma funcionalidade muito útil em programação, pois permite que o programa faça escolhas aleatórias e tenha um comportamento mais dinâmico e imprevisível. Além disso, é uma habilidade essencial para simulações e jogos.
 
-## Como gerar números aleatórios em Python
+## Como Gerar Números Aleatórios em Python
 
-Gerar números aleatórios em Python é surpreendentemente simples. Tudo que você precisa é da biblioteca "random".
+Existem várias maneiras de gerar números aleatórios em Python, mas a mais comum é usando a biblioteca `random`. Para começar, importe a biblioteca no início do código:
 
 ```Python
 import random
-
-# Gerando um número aleatório entre 1 e 10
-numero_aleatorio = random.randint(1, 10)
-print(numero_aleatorio)
-
-# Gerando um número flutuante aleatório entre 0 e 1
-numero_flutuante = random.random()
-print(numero_flutuante)
-
-# Gerando uma lista aleatória de números entre 1 e 100
-lista_aleatoria = random.sample(range(1, 100), 10)
-print(lista_aleatoria)
 ```
 
-Saída:
+Agora você pode utilizar as funções da biblioteca para gerar números aleatórios. Por exemplo, para gerar um número inteiro entre 1 e 10, você pode usar a função `randint()`:
 
+```Python
+aleatorio = random.randint(1,10)
+print(aleatorio)
 ```
-7
-0.65236578925
-[45, 12, 61, 78, 90, 2, 34, 86, 10, 47]
+
+Este código irá imprimir um número aleatório entre 1 e 10 toda vez que for executado. Você também pode gerar números decimais usando a função `uniform()`:
+
+```Python
+aleatorio = random.uniform(1,10)
+print(aleatorio)
 ```
 
-## Mergulho profundo na geração de números aleatórios em Python
+Esta função irá gerar um número decimal aleatório entre 1 e 10. Você pode adaptar esses códigos de acordo com a sua necessidade, utilizando outras funções da biblioteca `random` como `choice()` e `randrange()`.
 
-Além dos métodos mais básicos de geração de números aleatórios vistos acima, a biblioteca "random" também oferece uma variedade de outras funções, como o "randrange" (gera um número aleatório dentro de um intervalo específico) e o "uniform" (gera um número flutuante aleatório entre dois limites). Também é possível manipular a semente do gerador de números aleatórios usando a função "seed", o que permite replicar sequências aleatórias em diferentes execuções do mesmo código.
+## Mergulho Profundo: Detalhes sobre Geração de Números Aleatórios
 
-Outra maneira de gerar números aleatórios é usando a biblioteca "numpy", que oferece recursos mais avançados de geração de números aleatórios, como distribuições específicas (normal, binomial, Poisson, entre outras) e arrays multidimensionais aleatórios.
+A biblioteca `random` utiliza um algoritmo chamado "Mersenne Twister" para gerar números aleatórios. Esse algoritmo é capaz de produzir uma sequência de números que parece ser completamente aleatória, mas na verdade é determinística. Isso significa que a sequência pode ser reproduzida se o mesmo ponto de partida for utilizado.
 
-## Veja também
+Se você quiser que a sequência seja diferente a cada vez que o programa for executado, é possível definir um ponto de partida diferente com a função `seed()`:
 
-- [Documentação da biblioteca "random" em Python](https://docs.python.org/3/library/random.html)
-- [Documentação da biblioteca "numpy" em Python](https://numpy.org/doc/stable/reference/random/index.html)
+```Python
+random.seed(1)
+```
+
+Isso irá definir o ponto de partida como 1, mas você pode utilizar qualquer outro número dessa forma.
+
+# Veja Também
+
+- [Documentação da biblioteca `random`](https://docs.python.org/3/library/random.html)
+- [Tutorial sobre geração de números aleatórios em Python](https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/)

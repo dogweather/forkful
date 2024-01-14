@@ -1,53 +1,34 @@
 ---
-title:    "Kotlin: 랜덤 숫자 생성하기"
+title:    "Kotlin: 랜덤 숫자 생성하기."
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 우리는 난수를 생성하는 일을 해야 할까요?
-난수는 컴퓨터 프로그래밍에서 매우 중요한 개념입니다. 난수를 생성함으로써 우리는 충분한 랜덤성을 가진 프로그램을 만들 수 있으며 예측할 수 없는 결과를 얻을 수 있습니다. 또한 많은 게임이나 통계 분석 등에서도 난수 생성이 필수적입니다.
+## 왜
+랜덤한 숫자를 생성하는 것이 유용한 이유는 다양합니다. 예를 들어, 게임이나 암호화와 같은 분야에서는 랜덤한 숫자를 사용하여 재미있는 경험이나 보안성을 향상시킬 수 있습니다.
 
-## 방법
-### 1. Random 클래스 이용하기
+## 어떻게
+Kotlin에서는 `Random` 클래스를 사용하여 랜덤한 숫자를 생성할 수 있습니다. 아래는 `nextInt()` 메서드를 사용하여 1부터 10까지의 랜덤한 숫자를 생성하는 예제입니다.
+
 ```Kotlin
-// 0부터 10 사이의 난수 생성
-val random = Random()
-val randomNumber = random.nextInt(11)
-println(randomNumber) // 출력 결과: 4
-
-// 범위를 지정하여 난수 생성
-val random = Random()
-val randomNumber = random.nextInt(5, 10)
-println(randomNumber) // 출력 결과: 7
+val random = Random() // Random 클래스의 인스턴스 생성
+val randomNumber = random.nextInt(10) + 1 // 1부터 10까지의 랜덤한 숫자 생성
+println(randomNumber) // 예시 출력: 8
 ```
 
-### 2. Kotlin Random API 이용하기
-```Kotlin
-// 0부터 10 사이의 난수 생성
-val randomNumber = Random.nextInt(11)
-println(randomNumber) // 출력 결과: 8
+`nextInt()` 메서드는 매개변수로 전달된 숫자 미만의 범위 내에서 랜덤한 숫자를 생성합니다. 따라서 위 예제에서는 9까지의 숫자가 생성될 수 있고, +1을 함으로써 10까지의 숫자가 생성되도록 조정합니다.
 
-// 범위를 지정하여 난수 생성
-val randomNumber = Random.nextInt(5, 10)
-println(randomNumber) // 출력 결과: 9
-```
+## 깊이 파헤치기
+랜덤한 숫자를 생성하는 알고리즘은 매우 복잡합니다. 일반적으로 컴퓨터는 사람과 달리 완전히 무작위한 숫자를 생성하지 않고, 사람이 눈으로는 볼 수 없는 시드(seed)라는 값에 기반하여 숫자를 생성합니다. 시드는 사용된 알고리즘에 따라 다르며 랜덤한 숫자의 시퀀스를 결정합니다.
 
-### 3. Math.random() 메소드 이용하기
-```Kotlin
-// 0부터 1 사이의 난수 생성
-val randomNumber = Math.random()
-println(randomNumber) // 출력 결과: 0.7030286739391777
+Kotlin에서 사용되는 `Random` 클래스는 Mersenne Twister 알고리즘을 사용합니다. 이 알고리즘은 시드의 주기가 적어서 오랜 시간 동안 랜덤한 숫자를 생성할 수 있습니다. 또한, 이 알고리즘은 많은 수학적 계산을 필요로 하기 때문에 현실적으로는 완전히 랜덤한 숫자를 생성하지는 않습니다.
 
-// 범위를 지정하여 난수 생성
-val randomBetweenTenAndTwenty = (10..20).random()
-println(randomBetweenTenAndTwenty) // 출력 결과: 17
-```
+## 참고자료
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/basic-types.html#floating-point-types)
+- [Java에서 난수 생성하기](https://www.geeksforgeeks.org/generate-random-numbers-in-java/)
 
-## 더 깊게 살펴보기
-난수 생성은 주로 컴퓨터에서 무작위성을 만들기 위해 사용됩니다. 그러나 컴퓨터는 사실 무작위한 값을 생성하기 어렵기 때문에 이러한 난수 생성 방법은 공식적으로는 유사 난수라고 부릅니다. 또한 난수를 생성하는 알고리즘에 따라서 결과 값이 달라질 수 있기 때문에 조금씩 다른 방법들을 적절하게 조합하여 사용하는 것이 좋습니다.
-
-## 연관된 링크들
-- [Kotlin Random API 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
-- [Java 버전의 Random 클래스 설명](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java 버전의 Math.random() 메소드 설명](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html#random())
+# 참고 자료
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/basic-types.html#floating-point-types)
+- [Java에서 난수 생성하기](https://www.geeksforgeeks.org/generate-random-numbers-in-java/)

@@ -1,41 +1,59 @@
 ---
 title:    "Python: Sammenligner to datoer"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Å sammenligne to datoer kan være en nyttig måte å analysere og håndtere tid på i programmering. Dette kan være nyttig for å sjekke om en hendelse har skjedd før eller etter en annen, eller for å filtrere data basert på datoer.
+En av de vanligste oppgavene i programmering er å sammenligne to datoer. Dette er nyttig for å utføre ulike funksjoner som å sortere, filtrere eller lage rapporter basert på datoer. Det kan også hjelpe deg med å forstå forskjellen mellom to datoer og beregne tidsintervaller. Uansett hva grunnen er, er det viktig å kunne sammenligne to datoer effektivt i Python.
 
 ## Hvordan
 
-For å sammenligne to datoer i Python kan du bruke "datetime" modulen. Først må du importere modulen ved å skrive ```Python
-import datetime
-``` 
-Deretter kan du definere to forskjellige datoer ved hjelp av "datetime" objekter, for eksempel:
+Det er flere måter å sammenligne to datoer på i Python, avhengig av hvilket format du jobber med. Her er noen eksempler som viser hvordan du kan gjøre dette for forskjellige datotyper:
+
+### Datoobjekter
+
 ```Python
-date1 = datetime.datetime(2021, 5, 15)
-date2 = datetime.datetime(2021, 6, 1)
-```
-For å sammenligne disse to datoene kan du bruke operatorer som ">", "<", ">=", "<=", "==" eller "!=", avhengig av hva du ønsker å sjekke. For eksempel:
-```Python
-print(date1 < date2)  # Vil returnere True siden date1 kommer før date2 i tid
+#from datetime import er allerede inkludert i Python for å jobbe med datoer
+
+first_date = datetime.date(2021, 3, 12)
+second_date = datetime.date(2021, 3, 15)
+
+#Sammenligner to datoobjekter ved å bruke "==" operatøren
+if first_date == second_date:
+    print("Datoene er like.")
+else:
+    print("Datoene er ikke like.")
+
+#Output: Datoene er ikke like.
 ```
 
-Det er også mulig å sammenligne datoer med forskjellige format ved først å konvertere dem til "datetime" objekter ved hjelp av "strptime" funksjonen. For eksempel:
+### Strenger
+
+Datoer kan også representeres som strenger, i forskjellige formater som "dag/måned/år" eller "måned/dag/år". Her er et eksempel på hvordan du kan sammenligne to datoer som strenger:
+
 ```Python
-date3 = datetime.datetime.strptime("15/06/2021", "%d/%m/%Y")  # Datoen er skrevet i dd/mm/yyyy format
-print(date1 < date3)  # Vil returnere False siden date1 kommer etter date3 i tid
+first_date = "3/12/2021"
+second_date = "03/15/2021"
+
+#Sammenligner to strenger ved å bruke "==" operatøren
+if first_date == second_date:
+    print("Datoene er like.")
+else:
+    print("Datoene er ikke like.")
+
+#Output: Datoene er ikke like.
 ```
 
-## Dypdykk
+## Deep Dive
 
-For å utforske mer avanserte operasjoner med datoer, kan du sjekke ut "timedelta" objekter som gjør det mulig å legge til eller trekke fra en viss mengde tid fra en dato. Du kan også bruke "toordinal" funksjonen for å konvertere en dato til et heltall eller "strftime" funksjonen for å formatere datoer på forskjellige måter.
+Når du sammenligner datoer i Python, er det viktig å huske på at mindre detaljer som klokkeslett ikke blir tatt med i sammenligningen, kun datoene. Dette betyr at når du sammenligner datoer, vil Python bare se på datoen og ikke klokkeslettet. Det kan også være utfordrende å sammenligne datoer på forskjellige formater, spesielt hvis de er i strengformat. Det er derfor anbefalt å konvertere datoene til datoobjekter før du sammenligner dem for å unngå feil.
 
 ## Se også
 
-- [Dato- og tidshåndtering i Python (på norsk)](https://www.learnpython.org/no/Dato_-_og_tidsh%C3%A5ndtering)
-- [Python datetime dokumentasjon (på engelsk)](https://docs.python.org/3/library/datetime.html)
-- [10 nyttige Python-funksjoner for å jobbe med datoer (på engelsk)](https://towardsdatascience.com/10-python-functions-to-work-with-datetime-f13b5d1971f2)
+- [The datetime module in Python documentation](https://docs.python.org/3/library/datetime.html)
+- [How to compare two dates in Python on Stack Overflow](https://stackoverflow.com/questions/3277380/how-to-compare-two-dates-in-python)
+- [Python Dates and Time on w3schools](https://www.w3schools.com/python/python_datetime.asp)

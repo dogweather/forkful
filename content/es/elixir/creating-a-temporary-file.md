@@ -1,48 +1,57 @@
 ---
 title:    "Elixir: Creando un archivo temporal"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-La creación de archivos temporales es una tarea común en la programación, especialmente cuando se trabaja con aplicaciones distribuidas o con múltiples procesos corriendo simultáneamente. Los archivos temporales pueden ser utilizados para almacenar datos temporales o para compartir información entre diferentes procesos.
+
+Crear un archivo temporal puede ser una herramienta muy útil en la programación en Elixir. Puede ser usado para almacenar datos temporales, como un cache, o para ejecutar código que no necesite ser guardado permanentemente. Además, es una práctica común al trabajar con aplicaciones web, especialmente cuando se necesita manipular archivos en el sistema.
 
 ## Cómo
-Para crear un archivo temporal en Elixir, podemos utilizar la función `temp_file/1` del módulo `File`:
+
+Para crear un archivo temporal en Elixir, primero debemos importar el módulo `File` y utilizar la función `tempfile/1`. Por ejemplo:
 
 ```Elixir
-{path, file} = File.temp_file("my_prefix")
+import File
+
+{:ok, file} = tempfile("mi_archivo")
 ```
 
-Esta función devuelve una tupla con dos valores: la ruta al archivo temporal y su nombre. El parámetro opcional "my_prefix" se utiliza para crear un prefijo en el nombre del archivo.
+Aquí, estamos utilizando la función `tempfile/1` para crear un archivo temporal con el nombre "mi_archivo" y asignándolo a la variable `file`. La función devuelve una tupla con el átomo `:ok` y la ruta al archivo creado. También podemos especificar una ruta o prefijo específico utilizando la opción `:dir` o `:prefix` respectivamente.
 
-También podemos especificar la extensión del archivo temporal utilizando el parámetro `suffix`:
+Una vez que tenemos nuestro archivo temporal, podemos escribir en él utilizando las funciones `write/2` o `write!/2` y leer su contenido utilizando `read/1` o `read!/1`. También podemos usar la opción `:encoding` para especificar la codificación del archivo.
 
 ```Elixir
-{path, file} = File.temp_file("my_prefix", ".txt")
+{:ok,file} = tempfile("mi_archivo.txt", prefix: "temp_", dir: "/tmp")
+
+# escribiendo en el archivo
+write(file, "Este es un texto de prueba")
+# leyendo el contenido del archivo
+{:ok, contenido} = read(file)
+
+contenido # "Este es un texto de prueba"
+
+# cerrando el archivo
+{:ok,_} = File.close(file)
 ```
 
-Una vez que hemos creado nuestro archivo temporal, podemos escribir datos en él utilizando la función `write/2` y leer los datos con `read/1`:
+También podemos borrar el archivo temporal con `delete/1`, lo que nos puede ahorrar espacio en el sistema después de usarlo.
 
 ```Elixir
-File.write(file, "¡Hola Mundo!")
-content = File.read(file)
-IO.puts(content) # output: ¡Hola Mundo!
+{:ok, file} = tempfile("mi_archivo.txt")
+
+delete(file) # el archivo se borra automáticamente
 ```
 
-Finalmente, cuando hayamos terminado de utilizar el archivo temporal, podemos borrarlo con la función `delete/1`:
+## Profundizando
 
-```Elixir
-File.delete(file)
-```
+Además de las opciones mencionadas anteriormente, la función `tempfile/1` también permite algunas opciones más avanzadas como `:permissions` para especificar permisos del archivo, `:binary` para indicar si el archivo debe ser tratado como binario o `:name` para especificar el nombre completo del archivo temporal. Para más información, se puede consultar la documentación oficial de Elixir.
 
-## Deep Dive
-Detrás de escena, la función `temp_file` utiliza la librería `:os` de Erlang para crear el archivo temporal. También podemos utilizar la función `:os.tmpname/1` directamente desde Elixir para crear un archivo temporal. Sin embargo, es importante tener en cuenta que esta función devuelve solo el nombre del archivo, no la ruta completa.
+## Veamos También
 
-En algunos casos, puede ser necesario controlar la ubicación donde se crea el archivo temporal. Para ello, podemos utilizar la función `:os.mkstemp/2` de Erlang, que nos permite especificar la ruta y el prefijo del archivo.
-
-## Ver también
-- [Documentación de Elixir sobre la función `temp_file`](https://hexdocs.pm/elixir/File.html#temp_file/1)
-- [Documentación de Erlang sobre la función `:os.tmpname/1`](http://erlang.org/doc/man/os.html#tmpname-1)
-- [Documentación de Erlang sobre la función `:os.mkstemp/2`](http://erlang.org/doc/man/os.html#mkstemp-2)
+- [Documentación oficial de Elixir sobre creación de archivos temporales](https://hexdocs.pm/elixir/File.html#tempfile/1)
+- [Artículo sobre manejo de archivos en Elixir](https://www.what-could-possibly-go-wrong.com/everything-you-need-to-know-about-file-io-in-elixir/) (en inglés)
+- [Guía práctica de Elixir sobre interacción con el sistema de archivos](https://elixir-lang.org/getting-started/file-system.html) (en inglés)

@@ -1,42 +1,31 @@
 ---
-title:    "Fish Shell: Kirjoittaminen käsittelyvirheelle"
+title:    "Fish Shell: Kirjoittaminen standardivirheelle"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Jos olet ohjelmoija Fish Shellin käyttäjä, saatat huomata, että olet aika ajoin kirjoittanut ">>" ennen komentojasi. Tässä blogikirjoituksessa tarkastelemme tarkemmin, miksi kirjoittaminen standardivirheeseen voi olla hyödyllistä ja miten se tehdään.
+## Miksi Kirjoittaa Standard Erroriin?
 
-## Miten
-Fish Shellin avulla voit helposti kirjoittaa komentoja standardivirheeseen käyttämällä "echo" -komennon "e" -vaihtoehtoa. Esimerkiksi:
+Kirjoittaminen standard erroriin on tärkeä taito Fish Shell -ohjelmointikielessä, jota jokaisen ohjelmoijan tulisi hallita. Se mahdollistaa virheiden käsittelyn ja viestien näyttämisen käyttäjälle. Se on myös hyödyllinen ohjelman debuggaamisessa ja suorituksen seuraamisessa.
 
-```Fish Shell
-echo -e "Tervetuloa Fish Shellin maailmaan!" 2>&1
+## Kuinka Teet Sen?
+
+Fish Shellissa voit kirjoittaa standard erroriin käyttämällä "echo" komentoa ja uudelleenohjaamalla sen symbolilla ">&2". Tämä näyttää viestin käyttäjälle standard error kanavan kautta.
+
+```
+Fish Shell koodin esimerkki
+
+echo "Tämä on viesti virheelliseen tulosteeseen" >&2
 ```
 
-Tämä lauseke antaa sinulle saman tulosteen kuin tavallinen "echo" -komennon käyttö, mutta se kirjoitetaan nyt myös standardivirheeseen. Tulosteen pitäisi näyttää suunnilleen tältä:
+Tämä komento tulostaa viestin "Tämä on viesti virheelliseen tulosteeseen" käyttäjän näytölle.
 
-```Fish Shell
-Tervetuloa Fish Shellin maailmaan!
-```
+## Syvempi Sukellus
 
-## Syvemmälle
-Kirjoittaminen standardivirheeseen voi olla hyödyllistä silloin, kun haluat tulostaa virheilmoituksia tai muita tärkeitä viestejä, jotka on tarkoitus huomata. Standardivirheeseen kirjoittaminen erottuu standarditulosteesta, joten se voi auttaa tunnistamaan ongelmakohtia ja virheitä nopeasti.
-
-Jos haluat kirjoittaa vain standardivirheeseen ilman tavallista tulostetta, voit käyttää ">>&" -merkintää. Esimerkiksi:
-
-```Fish Shell
-echo "Tämä ei näy tavallisessa tulosteessa" >>&2
-```
-
-Tämä antaa sinulle seuraavan tulosteen:
-
-```Fish Shell
-Tämä ei näy tavallisessa tulosteessa
-```
+On tärkeää huomata, että standard error on erillinen kanava standard outputista (käyttäjän näyttö). Tämä tarkoittaa sitä, että voit ohjata virheviestit eri sijaintiin kuin normaali tuloste. Voit myös ohjata molemmat tulosteet samaan sijaintiin käyttämällä symbolia "2>&1". On myös muita hyödyllisiä Fish Shellin komentoja, kuten "set -e", joka lopettaa ohjelman suorituksen välittömästi, jos se kohtaa virheen.
 
 ## Katso myös
-- [Fish Shell Documentaatio - echo](https://fishshell.com/docs/current/cmds/echo.html)
-- [Fish Shell Ohjeet - Redirection](https://fishshell.com/docs/current/tutorial.html#redirection)
-- [Linux Journey - Standard Streams](https://linuxjourney.com/lesson/standard-streams)
+- [Fish Shellin dokumentaatio standard errorista](https://fishshell.com/docs/current/index.html#output-redirection)
+- [Hyödyllisiä komentoja Fish Shellissa](https://fishshell.com/docs/current/commands.html)

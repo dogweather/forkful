@@ -1,32 +1,75 @@
 ---
-title:    "C#: Imprimiendo resultados de depuración"
+title:    "C#: Imprimiendo salida de depuración"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##¡Por qué imprimir la salida de depuración es importante!
+## Por qué
 
-¿Alguna vez te has encontrado con un error en tu código y no sabes por dónde empezar a buscar? A veces, la mejor manera de encontrar y solucionar un problema es mediante la impresión de la salida de depuración. Esta es una herramienta muy útil en el proceso de desarrollo de software, ya que nos permite ver qué está sucediendo en nuestro código en tiempo de ejecución.
+Si eres un desarrollador de software, probablemente te hayas encontrado con la necesidad de imprimir información de depuración en tu código. Esto puede ser útil para rastrear errores, verificar el estado de variables o simplemente comprender mejor cómo se está ejecutando tu programa. Aunque puede parecer una técnica simple, imprimir la salida de depuración puede ahorrar mucho tiempo y esfuerzo en el proceso de desarrollo.
 
-## Cómo hacerlo en C #
+## Cómo hacerlo
 
-La impresión de la salida de depuración es muy sencilla en C#, simplemente se usa la función "Debug.WriteLine()" seguida de la información que deseamos imprimir. Por ejemplo:
+Para imprimir la salida de depuración en C#, puedes utilizar el método `Console.WriteLine()`. Este método toma una cadena como argumento y la imprime en la consola. Por ejemplo:
 
 ```C#
-Debug.WriteLine("El valor de x es: " + x);
+int numero = 10;
+string palabra = "hola";
+Console.WriteLine("El número es: " + numero);
+Console.WriteLine("La palabra es: " + palabra);
 ```
 
-Esto imprimirá en la consola la información que hayamos especificado, en este caso, el valor de la variable x. Además, podemos incluir información adicional, como mensajes de error o valores de otras variables, para obtener una mejor comprensión del comportamiento de nuestro código.
+Este código imprimirá lo siguiente en la consola:
 
-## Inmersión profunda
+```
+El número es: 10
+La palabra es: hola
+```
 
-La impresión de salida de depuración no solo se limita a imprimir información en la consola, también podemos utilizarla para registrar información en un archivo de registro o enviarla a una herramienta de depuración externa. Además, podemos utilizar la función "Debug.Assert()" para verificar que se cumpla una determinada condición en nuestro código, lo que puede ayudarnos a encontrar errores y problemas en una etapa temprana del desarrollo.
+También puedes imprimir el valor de una variable utilizando la notación de cadena de formato. Esto es especialmente útil si quieres imprimir varios valores en una sola línea. Por ejemplo:
 
-En resumen, la impresión de salida de depuración es una técnica poderosa que nos permite analizar y comprender mejor nuestro código en tiempo de ejecución. Usarla de manera efectiva puede ahorrar tiempo y esfuerzo en la solución de problemas en el proceso de desarrollo.
+```C#
+int numero1 = 5;
+int numero2 = 10;
+Console.WriteLine("Los números son: {0} y {1}", numero1, numero2);
+```
+
+La salida en la consola sería:
+
+```
+Los números son: 5 y 10
+```
+
+## Profundizando
+
+Además de imprimir valores básicos como números y cadenas, también puedes imprimir otros tipos de datos más complejos. Por ejemplo, puedes imprimir el contenido de un arreglo utilizando el método `Console.WriteLine()` en conjunto con `string.Join()`. También puedes imprimir el contenido de una lista utilizando un `foreach` loop. Aquí hay un ejemplo de cómo imprimir cada elemento de un arreglo y una lista:
+
+```C#
+int[] numeros = {1, 2, 3, 4, 5};
+Console.WriteLine("Los números son: " + string.Join(", ", numeros));
+
+List<string> palabras = new List<string>{"hola", "amigo", "adiós"};
+foreach(string palabra in palabras)
+{
+    Console.WriteLine(palabra);
+}
+```
+
+La salida en la consola sería:
+
+```
+Los números son: 1, 2, 3, 4, 5
+hola
+amigo
+adiós
+```
+
+Recuerda que puedes utilizar la salida de depuración en cualquier lugar de tu código, incluso dentro de ciclos o condicionales. Esto te permitirá imprimir información en puntos específicos de tu programa y así analizar su funcionamiento.
 
 ## Ver también
 
-- [Documentación de Microsoft sobre impresión de salida de depuración en C#](https://docs.microsoft.com/es-es/dotnet/api/system.diagnostics.debug?view=netframework-4.8)
-- [Tutorial de impresión de salida de depuración en C#](https://www.c-sharpcorner.com/article/printing-debug-output-in-c-sharp/)
-- [Artículo sobre la importancia de la impresión de salida de depuración en el desarrollo de software](https://stackify.com/why-debugging-is-important/)
+- [Documentación de Microsoft sobre `Console.WriteLine()`](https://docs.microsoft.com/es-es/dotnet/api/system.console.writeline)
+- [Tutorial de C# para principiantes](https://www.freecodecamp.org/news/aprende-c-sharp-todo-lo-que-necesitas-saber-como-principiante/) (en español)
+- [Guía de Depuración en C#](https://docs.microsoft.com/es-es/visualstudio/debugger/getting-started-with-the-debugger?view=vs-2019)

@@ -1,49 +1,53 @@
 ---
-title:    "Ruby: Zmiana wielkości litery w ciągu znaków"
+title:    "Ruby: Zamiana napisu na duże litery"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zdarzyło Ci się kiedykolwiek chcieć zmienić wygląd wyrazu lub zdania na wielkie litery? Może dla estetyki lub do zastosowań praktycznych? W tym artykule dowiesz się, dlaczego i jakie narzędzia Ruby dostarcza do zmiany wielkości liter w napisach.
+W dzisiejszym wpisie na blogu omówimy temat kapitalizacji ciągów tekstu w języku Ruby. Dowiesz się, dlaczego jest to ważne, jak to zrobić oraz jak działa ta funkcja w głębszym ujęciu.
 
 ## Jak to zrobić
 
-Istnieje kilka sposobów, aby zmienić wielkość liter w napisach w Ruby. Jedną z najprostszych metod jest użycie metody `upcase`, która zamienia wszystkie litery w ciągu na duże litery. Przykład kodu:
+Oto prosty przykład, jak użyć metody `capitalize` w Ruby, aby przekształcić pierwszą literę ciągu tekstu na wielką:
 
 ```Ruby
-napis = "witaj świecie!"
-puts napis.upcase
+name = "kasia"
+puts name.capitalize
 ```
 
-Output: WITAJ ŚWIECIE!
+Output:
 
-Inną metodą jest używanie metody `capitalize`, która zmienia pierwszą literę wyrazu na dużą, a pozostałe na małe. Przykład kodu:
+```
+Kasia
+```
+
+Proste, prawda? Metoda `capitalize` zmienia tylko pierwszą literę ciągu, pozostałe pozostają bez zmian.
+
+A co jeśli chcemy, aby każde słowo w ciągu zaczynało się wielką literą? W takim przypadku możemy użyć metody `split` i `map`:
 
 ```Ruby
-napis = "hello world"
-puts napis.capitalize
+sentence = "lubie jesc pizze"
+puts sentence.split.map(&:capitalize).join(" ")
 ```
 
-Output: Hello world
+Output:
 
-Aby zmienić tylko pierwszą literę całego zdania, można użyć metody `capitalize`, a następnie dodać pozostałe litery wyrazów za pomocą metody `downcase`. Przykład kodu:
-
-```Ruby
-napis = "witaj świecie!"
-puts napis.capitalize + napis.downcase[1..-1]
+```
+Lubie Jesc Pizze
 ```
 
-Output: Witaj świecie!
+W tym przykładzie, najpierw dzielimy ciąg na pojedyncze słowa, następnie mapujemy każde słowo i stosujemy do nich metodę `capitalize`, a na końcu łączymy słowa z powrotem w całość.
 
-## Głębsze zanurzenie
+## Deep Dive
 
-Metody `upcase` i `capitalize` są tylko kilkoma z wielu dostępnych metod do zmiany wielkości liter w Ruby. Istnieją również metody `swapcase`, która zamienia duże litery na małe i odwrotnie, oraz `titleize`, która zamienia pierwszą literę każdego wyrazu na dużą. Polecam przetestować wszystkie metody i wybrać najodpowiedniejszą w danym przypadku.
+W rzeczywistości, metoda `capitalize` jest tylko jedną z wielu metod, które pozwalają na manipulację ciągami tekstu w języku Ruby. Podczas gdy metoda ta jest przydatna do prostych zastosowań, warto również zapoznać się z innymi metodami, takimi jak: `upcase`, `downcase`, `swapcase` i `capitalize!`. Opcja z wykrzyknikiem (`!`) oznacza, że zmiana zostanie dokonana w miejscu, bez tworzenia nowego obiektu.
+
+Możliwości manipulacji ciągami tekstu w języku Ruby są naprawdę szerokie i warto poświęcić trochę czasu na zgłębienie ich poznania, aby móc wykorzystać je w swoich projektach.
 
 ## Zobacz również
-
-- [Dokumentacja Ruby o zmianie wielkości liter](https://ruby-doc.org/core-2.7.2/String.html#method-i-upcase)
-- [Tutorial na stronie Medium o zmianie wielkości liter w Ruby](https://medium.com/@jazimecki/change-case-in-ruby-string-helpers-badc9c0a1d3a)
-- [Wideo ze szkolenia Ruby dla początkujących, które również omawia zmianę wielkości liter](https://www.youtube.com/watch?v=n_Ofc5sbmCg)
+- Ruby documentation: https://ruby-doc.org/core-3.0.0/String.html
+- RubyGuides: https://www.rubyguides.com/2019/05/ruby-string-methods/

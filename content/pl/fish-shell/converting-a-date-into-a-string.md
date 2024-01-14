@@ -1,51 +1,39 @@
 ---
-title:    "Fish Shell: Konwersja daty na łańcuch znaków"
+title:    "Fish Shell: Konwersja daty na ciąg znaków"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest ważnym aspektem programowania w środowisku Fish Shell. Jest to niezbędne przy tworzeniu skryptów i automatyzacji zadań, które wymagają obsługi dat.
+Jeśli jesteś programistą pracującym z językiem Fish Shell, prawdopodobnie musiałeś już zmienić format daty w postaci łańcucha znaków. Konwersja daty jest częstą czynnością w programowaniu i może być wyzwaniem dla początkujących lub nawet doświadczonych programistów. W tym wpisie przeczytasz jak w prosty sposób można wykonać konwersję daty na łańcuch znaków w języku Fish Shell.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na ciąg znaków w Fish Shell, należy wykorzystać funkcję `date`. Poniżej przedstawione są różne sposoby użycia tej funkcji:
+Aby przekonwertować datę na łańcuch znaków w języku Fish Shell, możesz użyć funkcji `date` wraz z flagą `+%Y-%m-%d` aby określić format łańcucha wyjściowego. Spójrzmy na przykładowy kod:
 
-```Fish Shell
-date +%Y-%m-%d                   # 2021-10-28
-date +%d.%m.%Y                   # 28.10.2021
-date +"Jest %A, %d %B %Y roku"   # Jest czwartek, 28 października 2021 roku
+```
+Fish Shell - Konwersja daty na łańcuch znaków
+
+#!/usr/bin/fish
+set currentDate (date +%Y-%m-%d)
+echo "Dzisiejsza data to: $currentDate"
 ```
 
-Możliwości formatowania są nieograniczone, dlatego warto zapoznać się z dokumentacją Fish Shell, aby poznać wszystkie dostępne opcje.
+W powyższym przykładzie, używamy funkcji `date` wraz z flagą `+%Y-%m-%d`, co oznacza, że chcemy uzyskać datę w formacie roku-miesiąc-dzień. Następnie używamy funkcji `echo`, aby wydrukować naszą datę wraz z tekstem "Dzisiejsza data to: ". Gdy uruchomimy ten skrypt, zobaczymy na ekranie naszą datę w formacie łańcucha znaków.
 
-## Dogłębne zagłębienie
+## Deep Dive
 
-Konwersja daty na ciąg znaków może być również połączona z innymi funkcjami Fish Shell, takimi jak `for` lub `while`, aby przetwarzać wiele dat jednocześnie. Przykładowo, można utworzyć skrypt, który wyświetli daty z ostatnich 7 dni i przekonwertuje je na format DD.MM.RRRR:
+Istnieje wiele różnych opcji i flag, które możesz użyć w funkcji `date` w celu dostosowania formatu łańcucha wyjściowego do swoich potrzeb. Na przykład, flaga `+%A` zwróci nazwę dnia tygodnia, a flaga `+%H:%M:%S` zwróci godzinę, minutę i sekundę. Możesz także użyć znaków specjalnych, takich jak `\n` aby wstawiać nowe linie lub `\t` aby wstawić tabulację. Przykład ten pokazuje tylko podstawy konwersji daty na łańcuch znaków w języku Fish Shell, ale możliwości są znacznie większe.
 
-```Fish Shell
-for x in (seq 1 7)
-    set day (date -v-$x'd' +%d.%m.%Y)
-    echo $day
-end
-```
+## Zobacz także
 
-Powyższy kod utworzy następujący output:
+Jeśli chcesz dowiedzieć się więcej o konwersji daty w języku Fish Shell, polecam przeczytać następujące artykuły:
 
-```Fish Shell
-21.10.2021
-22.10.2021
-23.10.2021
-24.10.2021
-25.10.2021
-26.10.2021
-27.10.2021
-```
+- [Fish Shell - dokumentacja](https://fishshell.com/docs/current/index.html)
+- [Jak konwertować daty w bashu](https://www.baeldung.com/linux/convert-date-to-string-bash)
+- [Konwersja daty w języku Python](https://www.w3schools.com/python/python_datetime.asp)
 
-## Zobacz również
-
-- Oficjalna dokumentacja Fish Shell: [https://fishshell.com/docs/current/cmds/date.html](https://fishshell.com/docs/current/cmds/date.html)
-- Przewodnik po Fish Shell: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-- Źródło: [https://www.linuxjournal.com/content/format-date-shell-script](https://www.linuxjournal.com/content/format-date-shell-script)
+Dziękujemy za przeczytanie naszego wpisu, mam nadzieję, że to pomoże wam w waszych przyszłych projektach!

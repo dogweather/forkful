@@ -1,27 +1,48 @@
 ---
 title:    "Java: भविष्य या अतीत में एक तारीख की गणना"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-"क्यों:
- इस आर्टिकल में हम आपको बताने जा रहे हैं कि किस तरह आप Java में भविष्य या भूत की तारीख की गणना कर सकते हैं और इसका उपयोग क्यों कार्य such?
+## क्यों
 
-कैसे:
-```Java 
-// भविष्य तारीख की गणना
-LocalDate today = LocalDate.now(); // वर्तमान तारीख लेना
-LocalDate futureDate = today.plusDays(7); // 7 दिनों को भविष्य में जोड़ना
-System.out.println("तारीख की गणना के लिए प्रयास करें: " + futureDate);
+दिनांक को भविष्य या भूत का गणना क्यों किया जाता है, इसका पता मतलब होगा।
+
+## कैसे करें
+
+यदि आप जावा में दिनांक को भविष्य या भूत के रूप में गणना करना चाहते हैं, तो आपको ```Java ... ``` कोड ब्लॉक में कोडिंग उदाहरण और नमूना आउटपुट के साथ आगे बढ़ना होगा।
+
+```java
+// वर्तमान दिनांक प्राप्त करें
+LocalDate today = LocalDate.now();
+
+// भविष्य की तारीख का गणना करें, यहां हम 30 दिन बाद की तारीख प्राप्त कर रहे हैं
+LocalDate after30Days = today.plusDays(30);
+
+// नमूना आउटपुट प्रिंट करें
+System.out.println("आज की तारीख: " + today);
+System.out.println("30 दिनों के बाद की तारीख: " + after30Days);
 ```
 
-आप ऊपर दिए गए कोड उदाहरण के साथ आसानी से भविष्य में किसी भी तारीख की गणना कर सकते हैं। आप दिनों, महीनों और सालों को भी जोड़ सकते हैं।
+आउटपुट:
 
-डीप डाइव:
-तारीख की गणना काफी उपयोगी है जब आप स्टॉक सूची, अपूर्ण आदेशों या इंगितों को प्रबंधित करना चाहते हैं। साथ ही, यह किसी भी मानदेय या आयोगी निर्णय के बारे में जानने ज़रूरी हो सकता है। आप Java में भविष्य की तारीख की गणना करने के लिए अनेक सरल तरीकों का इस्तेमाल कर सकते हैं। इसमें कैलेंडर, Date व् SimpleDateFormat के माध्यम से भी आसान तरीके हो सकते हैं।
+```java
+आज की तारीख: 2021-05-17
+30 दिनों के बाद की तारीख: 2021-06-16
+```
 
-देखें भी:
-- https://www.baeldung.com/java-dates
-- https://www.callicoder.com/java-date-time-api-how-to-get-current-date-time-in-java/
-- https://www.javatpoint.com/java-get-current-date
+## गहराई में जाएं
+
+दिनांक को भविष्य या भूत का गणना करने के बारे में और गहराई से जानने के लिए, आपको यह जानना होगा कि जावा में दिनांक को कैसे जोड़ा जाता है और कैसे काम करता है। इसके अलावा, यह कैसे मानया जाता है कि खुले रेंज और बंद रेंज में फर्क क्या होता है और यह दिनांक को बदल सकता है। आगे बढ़ने से पहले हमें दिनांक के स्त्रोत को समझना भी जरूरी है।
+
+## नज़र्मंदित देखें
+
+[JavaDocs: LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+
+[Java Tutorials: Date Time API](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
+
+[Java8 के नवीनतम अद्यतन से जुड़े ट्यूटोरियल](https://www.javatpoint.com/java8)
+
+## देखा ज

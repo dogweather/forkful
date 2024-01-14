@@ -1,39 +1,44 @@
 ---
-title:    "TypeScript: Hitta längden på en sträng"
+title:    "TypeScript: Att hitta längden på en sträng"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-### Varför
+## Varför
 
-Att hitta längden på en sträng är en grundläggande uppgift inom programmering och är användbart för många olika applikationer. Det kan hjälpa till att förstå och manipulera textdata, vilket är en viktig del av många program och webbapplikationer.
+Att hitta längden på en sträng är en vanlig uppgift inom programmering, oavsett om du jobbar med JavaScript, TypeScript eller något annat språk. Att förstå hur man går tillväga för att göra det kan hjälpa dig att skriva bättre och effektivare kod.
 
-### Så här gör du
+## Hur man gör det
 
-För att hitta längden på en sträng i TypeScript, kan du använda den inbyggda metoden `length`. Detta gör det enkelt att få fram antalet tecken i en sträng.
-
-```TypeScript
-let sträng = "Hej, jag heter Anna!";
-console.log(sträng.length);
-```
-
-Detta kommer att ge utskrift av `19` eftersom det är det totala antalet tecken i strängen, inklusive mellanslag. Om vi ​​vill exkludera mellanslag, kan vi använda `trim` metoden för att ta bort dem innan vi använder `length` metoden.
+För att hitta längden på en sträng i TypeScript kan du använda den inbyggda metoden "length". Detta fungerar på samma sätt som i JavaScript, och du kan använda det på vilken variabel eller sträng som helst. Här är ett exempel:
 
 ```TypeScript
-let sträng = "   Hej, jag heter Anna!   ";
-console.log(sträng.trim().length);
+let myString: string = "Hej, världen!";
+console.log(myString.length);
 ```
 
-Detta kommer att ge utskrift av `19` eftersom mellanslag har tagits bort och endast tecken kvarstår. Det är viktigt att komma ihåg att indexeringen av strängar i TypeScript börjar från 0, så den faktiska längden på en sträng är alltid indexet på sista tecknet plus 1.
+Output: 13
 
-### Djupdykning
+Detta exempel visar hur man kan använda metoden "length" på en variabel som innehåller en sträng. Det är viktigt att komma ihåg att längden på en sträng inkluderar alla tecken, inklusive mellanslag.
 
-En viktig skillnad mellan TypeScript och andra programmeringsspråk är att strängar inte kan ändras en gång de har skapats. Det beror på att strängar i TypeScript är immutabla, vilket innebär att de inte kan ändras. Om vi ​​försöker ändra en sträng kommer vi att få en felmeddelande. Detta är ett viktigt koncept att förstå vid hantering av strängar i TypeScript.
+Du kan också använda metoden "length" på en sträng direkt, utan att det finns någon variabel inblandad:
 
-Det finns också andra metoder som kan användas för att manipulera strängar, som `slice` för att ta ut delar av en sträng och `concat` för att slå ihop flera strängar.
+```TypeScript
+console.log("Hej, världen!".length);
+```
 
-### Se även
+Output: 13
 
-* [TypeScript dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-* [W3Schools artikel om strängmetoder i TypeScript](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+## Djupdykning
+
+Det finns några viktiga saker att komma ihåg när man använder metoden "length" för att hitta längden på en sträng. För det första fungerar den endast på strängar, inte på andra datatyper som t.ex. nummer eller boolean-värden. Om du försöker använda metoden på en annan typ av variabel kommer du att få ett felmeddelande.
+
+För det andra räknas alla tecken, inklusive mellanslag och specialtecken, som en del av längden. Detta innebär att om du har en sträng som innehåller ett mellanslag, t.ex. "Hej, världen!", kommer längden att vara 13, även om det bara finns 12 bokstäver.
+
+## Se även
+
+* [Officiell TypeScript dokumentation - Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+* [W3Schools - TypeScript String length](https://www.w3schools.com/jsref/jsref_length_string.asp)
+* [MDN - String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)

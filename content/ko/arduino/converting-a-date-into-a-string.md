@@ -1,52 +1,66 @@
 ---
 title:    "Arduino: 날짜를 문자열로 변환하기"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 날짜를 문자열로 변환해야 하는가?
+### 왜 이것을 진행하나요?
 
-날짜를 문자열로 변환하는 과정은 프로그래밍에서 자주 사용되는 작업 중 하나입니다. 특히, 센서 데이터를 수집하고 저장하거나 날짜와 시간을 로깅하는 등의 작업에서 필수적입니다. 이러한 과정을 굉장히 효율적으로 처리하기 위해서는 날짜를 문자열로 변환하는 방법을 배우는 것이 중요합니다.
+Arduino 프로그래밍을 하는 동안 날짜를 문자열로 변환해야 할 때가 있습니다. 예를 들어, 센서 데이터의 타임스탬프를 저장하거나 사용자에게 날짜 정보를 보여줄 때 등등 다양한 경우가 있을 수 있습니다.
 
-## 어떻게 날짜를 문자열로 변환할 수 있을까?
+### 어떻게 이루어지나요?
 
-Arduino에서는 기본적으로 `String` 타입을 제공하며, 이를 활용하여 날짜를 문자열로 변환할 수 있습니다. 우선, `String` 타입의 변수를 선언하고 `print()` 함수를 사용하여 날짜(년, 월, 일)와 시간(시, 분, 초) 값을 출력합니다. 다음은 현재 날짜와 시간을 문자열로 변환하는 예시 코드입니다.
+아두이노에서 날짜를 문자열로 변환하는 방법은 아주 간단합니다. 우선, `Day`, `Month`, `Year` 변수를 각각 해당 날짜의 일, 월, 년으로 설정합니다. 그리고 `Serial.print()` 함수를 사용하여 원하는 형식의 문자열로 날짜를 출력하면 됩니다. 아래 예시 코드를 참고해주세요.
 
 ```Arduino
-String date = "";
+int day = 10; // 날짜 설정 
+int month = 5; // 월 설정
+int year = 2021; // 년 설정
 
-int year = 2021;
-int month = 9;
-int day = 1;
-
-int hour = 13;
-int minute = 30;
-int second = 0;
-
-// 날짜를 문자열로 변환
-date += String(year) + "/" + String(month) + "/" + String(day);
-date += " " + String(hour) + ":" + String(minute) + ":" + String(second);
-// 출력
-Serial.println(date);
+// 날짜를 원하는 형식으로 출력하기 
+Serial.print(day); // "10" 출력 
+Serial.print("/"); // "/" 출력 
+Serial.print(month); // "5" 출력 
+Serial.print("/"); // "/" 출력 
+Serial.print(year); // "2021" 출력
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+위 예제 코드를 실행하면, 시리얼 모니터에 "10/5/2021"이라는 문자열이 출력될 것입니다.
 
+### 깊이 파고들어보기
+
+날짜를 문자열로 변환하는 방법은 매우 간단하지만, 조금 더 알아볼 만한 내용이 있습니다. 첫 번째로, `Serial.print()` 함수는 여러 가지 변수를 함께 출력할 수 있습니다. 예를 들어, 아래 예제 코드를 실행하면 날짜, 시간, 온도 등 다양한 정보를 한 줄에 출력할 수 있습니다.
+
+```Arduino
+int day = 10; // 날짜 설정 
+int month = 5; // 월 설정
+int year = 2021; // 년 설정
+int hour = 12; // 시간 설정
+int minute = 30; // 분 설정
+int second = 45; // 초 설정
+int temperature = 25; // 온도 설정 
+
+// 날짜, 시간, 온도 한 줄에 출력하기 
+Serial.print(day); // "10" 출력 
+Serial.print("/"); // "/" 출력 
+Serial.print(month); // "5" 출력 
+Serial.print("/"); // "/" 출력 
+Serial.print(year); // "2021" 출력
+Serial.print(" - "); // " - " 출력 
+Serial.print(hour); // "12" 출력 
+Serial.print(":"); // ":" 출력 
+Serial.print(minute); // "30" 출력 
+Serial.print(":"); // ":" 출력 
+Serial.print(second); // "45" 출력
+Serial.print(" - Temperature: "); // " - Temperature: " 출력 
+Serial.print(temperature); // "25" 출력 
+Serial.print("°C"); // "°C" 출력
 ```
-2021/9/1 13:30:00
-```
 
-## 깊게 들어가보기
+출력 결과는 "10/5/2021 - 12:30:45 - Temperature: 25°C"가 될 것입니다. 이처럼 여러 가지 변수를 출력할 때 `Serial.print()` 함수와 문자열을 결합하여 사용할 수 있습니다.
 
-날짜를 문자열로 변환할 때 주의해야 할 점은 `String` 타입의 변수가 메모리를 많이 차지한다는 것입니다. 그렇기 때문에 날짜를 매번 문자열로 변환하는 것은 메모리 낭비를 초래할 수 있습니다. 따라서, 여러 가지 날짜 형식을 만들고자 할 때는 메모리를 효율적으로 활용할 수 있는 방법을 고려해야 합니다.
+또 다른 팁은 `Serial.println()` 함수를 사용하는 것입니다. `println()` 함수는 `print()` 함수와 같지만, 출력 내용의 끝에 자동으로 개행 문자(\n)를 붙여 줍니다. 위 예제 코드를 `println()` 함수로 바꿔서 실행하면 시리얼 모니터에 한 줄에 출력되던 내용이 각각의 줄로 나누어져 출력됩니다.
 
-또한, 날짜를 문자열로 변환할 때에는 각각의 자리수에 맞게 `String`을 조합해야 합니다. 예를 들어, 한 자리수의 경우 앞에 0을 채워주어야 하므로 `String(month)`를 사용하는 것이 아니라 `String("0" + String(month))`과 같이 사용해야 합니다.
-
-이와 같은 세부적인 사항들을 고려하면 날짜를 문자열로 변환하는 과정을 더욱 능률적으로 처리할 수 있습니다.
-
-## 관련 자료
-
-- [Arduino Reference - String](https://www.arduino.cc/reference/ko/language/variables/data-types/string/)
-- [날짜와 시간을 문자열로 변환하는 방법](https://cactusphere.co.kr/archives/6777)
-- [시간과 날짜 관련 함수](https://www.arduino.cc/reference/ko/language/functions/time/)
+이처럼 아두이노에서 날짜를 문자열로 변환하는 방법은 매우 쉽고 다양하게 응용할 수 있습니다. 참고로 아두이노에는 시간과 날짜를 다루는 라이브

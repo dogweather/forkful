@@ -1,48 +1,37 @@
 ---
-title:    "Clojure: Concatenação de strings"
+title:    "Clojure: Concatenando strings"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-A concatenação de strings é uma técnica útil em programação para combinar várias strings em uma única string. Isso pode ser útil para a formação de mensagens, criação de URLs, entre outras tarefas.
+Há muitos cenários onde pode ser necessário unir duas ou mais strings em um texto único. Por exemplo, ao criar um programa que exibe mensagens personalizadas, ou ao manipular dados em um banco de dados, a concatenação de strings é uma habilidade essencial para os programadores em Clojure.
 
-## Como fazer
+## Como Fazer
 
-A linguagem de programação Clojure possui uma função simples para concatenar strings, chamada `str`. Por exemplo, para concatenar as strings "olá" e "mundo", podemos usar o código a seguir:
-
-```Clojure
-(str "olá" "mundo")
-```
-
-Isso resultará na seguinte saída:
+Para concatenar strings em Clojure, use a função ```str```. Esta função pode receber qualquer número de argumentos de tipo string e irá uni-los em uma única string. Veja um exemplo abaixo:
 
 ```
-"olámundo"
+(str "Olá" ", " "mundo!")
 ```
 
-Podemos até mesmo usar a função `str` para combinar vários tipos de dados, como inteiros e caracteres. Por exemplo, podemos concatenar a string "Meu número favorito é " com o número 6, usando o código a seguir:
+Este código resultará em ```"Olá, mundo!"``` como saída. Note que nós separamos cada string individual com vírgulas dentro da função ```str```.
 
-```Clojure
-(str "Meu número favorito é " 6)
-```
+## Mergulho Profundo
 
-E a saída será:
+Além da função ```str```, você também pode utilizar a função ```format``` para concatenar strings. Esta função é útil quando você precisa inserir valores específicos em uma string. Veja o exemplo abaixo:
 
 ```
-"Meu número favorito é 6"
+(format "Eu tenho %d anos de idade!" 25)
 ```
 
-## Mergulho profundo
+Este código resultará em ```"Eu tenho 25 anos de idade!"``` como saída. O valor ```%d``` dentro da string é substituído pelo número 25 que foi fornecido como argumento após a string.
 
-Apesar de ser uma técnica simples, é importante ter cuidado ao concatenar strings em Clojure. Isso porque a linguagem utiliza uma estrutura de dados chamada "immutable persistent data structures", o que significa que as strings não são modificadas diretamente, mas sim criadas como novas strings a partir de partes das originais.
+## Veja Também
 
-Isso pode causar um impacto na performance do código, especialmente se houver muitas concatenações de strings dentro de um loop, por exemplo. Nesse caso, é recomendado o uso da função `str/join`, que é otimizada para concatenar strings mais eficientemente.
-
-## Veja também
-
-- [A documentação oficial da função `str` em Clojure](https://clojuredocs.org/clojure.core/str)
-- [Uma discussão sobre as estruturas de dados imutáveis em Clojure](https://clojure.org/reference/data_structures)
-- [Um tutorial detalhado sobre a função `str/join` em Clojure](https://www.baeldung.com/clojure-string-concatenation)
+- [Documentação oficial do Clojure sobre strings](https://clojure.org/guides/strings)
+- [Tutorial de Clojure para iniciantes](https://clojure.org/guides/getting_started)
+- [Guia de sintaxe de Clojure](https://clojure.org/guides/learn/syntax)

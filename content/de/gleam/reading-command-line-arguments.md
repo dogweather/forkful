@@ -1,40 +1,69 @@
 ---
 title:    "Gleam: Lesen von Befehlszeilenargumenten"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Bevor wir uns mit dem Lesen von Befehlszeilenargumenten in Gleam beschäftigen, stellt sich vielleicht die Frage, warum man das überhaupt tun sollte. Die Antwort ist einfach: Das Lesen von Befehlszeilenargumenten ermöglicht es uns, unsere Programme flexibler zu gestalten. Anstatt jedes Mal den Code ändern zu müssen, können wir verschiedene Einstellungen und Optionen über die Befehlszeile an unser Programm übergeben.
+Das Einlesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der Programmierung in Gleam. Es erlaubt dir, deine Programme auf dynamische Weise zu steuern und zu konfigurieren und somit die Flexibilität und Anpassungsfähigkeit deiner Anwendungen zu erhöhen. In diesem Blogbeitrag werden wir uns genauer anschauen, wie du auf einfache Weise Befehlszeilenargumente in deine Gleam-Programme einbindest.
 
-# Wie geht man vor
+## Wie geht man vor
 
-Um Befehlszeilenargumente in Gleam zu lesen, können wir die `gleam/io` Bibliothek verwenden. Dort gibt es eine Funktion namens `Arg.parse`, die alle übergebenen Argumente in eine Liste umwandelt. Schauen wir uns das mal an:
+Um Befehlszeilenargumente in deinen Gleam-Code einzulesen, kannst du die Standardbibliotheksfunktion `gleam/os` verwenden. Hier ist ein Beispielcode, der die Argumente ausgibt:
 
 ```Gleam
-import gleam/io as io
+import gleam/os
+import gleam/string.{concat, to_int}
 
-fn main() {
-  let args = io.Arg.parse()
-  io.print(args)
+pub fn main() {
+  let arguments = os.args()
+  let name = arguments[0]
+  let age = arguments[1] |> to_int()
+ 
+  let message = concat(["Hello ", name, ", you are ", toString(age), " years old!"])
+  
+  os.stdout.write_line(message)
 }
 ```
 
-Wenn wir dieses Programm nun mit dem Befehl `gleam run file.gleam arg1 arg2` ausführen, wird in der Konsole `["arg1", "arg2"]` ausgegeben. Wie du siehst, werden alle Argumente in einer Liste gespeichert, die wir dann beliebig verwenden können. Zum Beispiel könnten wir ein Programm schreiben, das abhängig von den übergebenen Argumenten unterschiedliche Aktionen ausführt.
+Wenn wir dieses Programm mit den Argumenten "Max 26" ausführen, wird die Ausgabe "Hello Max, you are 26 years old!" sein.
 
-Um die Argumente genauer zu untersuchen, können wir auch die `Arg.parse_with` Funktion verwenden, die es uns erlaubt, bestimmten Argumenten spezifische Typen zuzuweisen. Mehr darüber erfährst du in unserem nächsten Teil: Deep Dive.
+Die `os.args()`-Funktion gibt eine Liste von Strings zurück, wobei der erste String immer der Name des ausgeführten Programms ist. Die restlichen Strings enthalten die eingegebenen Argumente. In unserem Beispiel haben wir zuerst den Namen in einer Variable gespeichert und mit dem `to_int()` Helper-Modul den zweiten String, das Alter, in eine Zahl umgewandelt.
 
-# Tiefer in die Materie eintauchen
+Du kannst die `os.args()`-Funktion auch mit Pattern Matching verwenden, um gezielt auf bestimmte Argumente zuzugreifen. Hier ist ein Beispielcode, der die Ausgabe je nach gegebenem Argument anpasst:
 
-Das Lesen von Befehlszeilenargumenten kann sehr nützlich sein, besonders wenn wir unsere Programme anpassungsfähiger machen wollen. Aber es gibt auch einige Dinge, auf die wir achten müssen. Zum Beispiel müssen wir sicherstellen, dass die übergebenen Argumente in der richtigen Reihenfolge stehen und dass wir die richtigen Typen zugewiesen haben.
+```Gleam
+import gleam/os
+import gleam/string.{concat, to_int}
 
-In Gleam können wir auch Optionen mit Befehlszeilenargumenten verwenden. Dabei müssen wir jedoch darauf achten, dass bestimmte Argumente nur einmal vorkommen dürfen und andere mehrmals. Zum Beispiel könnte eine Option `-f` nur einmal verwendet werden, um eine Datei zu öffnen, während `-v` mehrmals verwendet werden könnte, um die Ausgabe zu erweitern.
+pub fn main() {
+  let arguments = os.args()
+  
+  let message =
+    case arguments {
+      [_, "male"] -> "Hello sir!"
+      [_, "female"] -> "Hello madam!"
+      [name, age] -> {
+        let parsed_age = to_int(age)
+        concat(["Hello ", name, "! You are ", toString(parsed_age), " years old."])
+      }
+      _ -> "Hello there stranger!"
+    }
+    
+  os.stdout.write_line(message)
+}
+```
 
-Weitere Informationen und Beispiele findest du in der offiziellen Dokumentation zu Befehlszeilenargumenten in Gleam.
+## Tiefergehende Informationen
 
-# Siehe auch
+Bei der Verwendung von Befehlszeilenargumenten gibt es einige Dinge zu beachten. Zum Beispiel können Argumente mit Leerzeichen in doppelten Anführungszeichen eingeschlossen werden, damit sie als ein einzelnes Argument interpretiert werden. Du kannst auch Flags verwenden, indem du ein einzelnes oder doppeltes Minuszeichen vor dem Argument setzt (z.B. `-v` oder `--verbose`). Diese Art von Argumenten können mit Pattern Matching erfasst werden, indem du sie als Strings miteinander vergleichst.
 
-- [Offizielle Dokumentation zur `gleam/io` Bibliothek](https://gleam.run/articles/io)
-- [Beispielprogramm für die Verwendung von Befehlszeilenargumenten in Gleam](https://github.com/user/example)
+Es ist auch wichtig zu beachten, dass die eingelesenen Argumente immer als Strings zurückgegeben werden. Wenn du sie als Zahlen oder andere Datentypen verwenden möchtest, musst du sie entsprechend konvertieren, wie wir es im obigen Beispiel mit dem `to_int()`-Modul gemacht haben.
+
+## Siehe auch
+
+- Die offizielle Dokumentation zu `gleam/os`: https://gleam.run/modules/gleam_os.html
+- Ein Tutorials zur Verwendung von Befehlszeilenargumenten in Gleam: https://gist.github.com/mhogar/bc112912362886d547f955756897e608

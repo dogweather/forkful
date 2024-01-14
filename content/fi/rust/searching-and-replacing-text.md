@@ -1,56 +1,46 @@
 ---
-title:    "Rust: Tekstin etsiminen ja korvaaminen"
+title:    "Rust: Tekstin hakeminen ja korvaaminen"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi hakea ja korvata tekstiä?
+## Miksi käyttää tekstinhakua ja korvausta
 
-Hakea ja korvata tekstiä on olennainen osa koodauksen ja ohjelmoinnin maailmaa. Se voi auttaa säästämään aikaa ja vaivaa manuaalisesti muokkaamalla tekstejä ja koodinpätkiä.
+Tekstinhaku ja korvaus ovat tärkeitä työkaluja, jotka auttavat helpottamaan ohjelmointikokemusta. Ne voivat auttaa nopeuttamaan koodin kehitystä ja vähentämään inhimillisiä virheitä.
 
-## Miten se tehdään?
+## Miten tehdä tekstinhakua ja korvausta Rustilla
 
-Hakeminen ja korvaaminen tekstissä on melko yksinkertaista Rust-ohjelmointikielen avulla. Seuraa alla olevia esimerkkejä ja tulostetta käyttäen ```Rust ... ``` koodilohkoja.
-
-```
-fn main() {
-    let teksti = "Hei kaikille!";
-    let uusi_teksti = teksti.replace("Hei", "Moikka");
-    println!("{}", uusi_teksti);
-}
-```
-Tuloste:
-```
-Moikka kaikille!
-```
-Tässä esimerkissä olemme luoneet muuttujan nimeltä "teksti" ja antaneet sille arvon "Hei kaikille!". Sitten olemme käyttäneet ```replace()``` -funktiota korvataksemme "Hei" sanan "Moikka" sanaan ja tallentaneet sen uuteen muuttujaan nimeltä "uusi_teksti". Lopuksi tulostamme uuden tekstin ```println!``` -funktiolla.
-
-Voit myös käyttää regex -regexpressejä hakemaan ja korvaamaan tekstiä. Esimerkiksi:
+Rustin sisäänrakennettu `replace`-metodi on yksi tapa suorittaa tekstinhakua ja korvausta. Sen avulla voit vaihtaa haluamasi näytön kaikki esiintymät toiseen merkkijonoon.
 
 ```
-use regex::Regex;
+let teksti = "Tervetuloa Rust-ohjelmointiin!";
+let uusi_teksti = tekstin.replace("Rust", "ohjelmointi");
 
-fn main() {
-    let teksti = "Tämä on tekstiä.";
-    let korvaus = Regex::new("text").unwrap();
-    let uusi_teksti = korvaus.replace_all(teksti, "suurempi teksti");
-    println!("{}", uusi_teksti);
-}
-```
-Tuloste:
-```
-Tämä on suurempi tekstiä.
+println!("{}", uusi_teksti);
+// Tulostaa: Tervetuloa ohjelmointi-ohjelmointiin!
 ```
 
-## Syvemmälle tekstien haun ja korvauksen pariin
+Voit myös käyttää `find`- ja `replace_range`-metodeja, jos haluat tarkemman kontrollin tulokseen.
 
-Rust tarjoaa monia vaihtoehtoja tekstien hakemiseen ja korvaamiseen, kuten erilaisia ```replace()``` -funktioita ja regex -regexpressejä. Voit myös yhdistellä näitä vaihtoehtoja luodaksesi tehokkaampia ja monimutkaisempia koodinpätkiä.
+```
+let teksti = "Tässä on teksti, jossa haetaan ja korvataan merkkijonoja.";
+let indeksi = teksti.find("ja").unwrap(); // Etsitään indeksi, jossa "ja" esiintyy
 
-Yksi tärkeä asia huomata on, että tekstien hakeminen ja korvaaminen on yleensä case-sensitive eli se huomioi tekstissä käytetyt isot ja pienet kirjaimet. Voit kuitenkin käyttää ```replace_ignore_case()``` -funktiota, jotta haku ja korvaus toimisi zakena.
+let (ensimmäinen_osuus, toinen_osuus) = teksti.split_at(indeksi); // Jaetaan teksti kahteen osuuteen indeksin kohdalta
+let uusi_teksti = ensimmäinen_osuus.to_string() + "tai" + &toinen_osuus[2..]; // Vaihdetaan "ja" sanaksi "tai"
+
+println!("{}", uusi_teksti);
+// Tulostaa: Tässä on teksti, jossa haetaan tai korvataan merkkijonoja.
+```
+
+## Syvä sukellus tekstinhakuun ja korvaukseen
+
+Tekstinhaku ja korvaus voivat olla hyödyllisiä esimerkiksi tekstipohjaisissa peleissä, joissa pelaajan antama teksti tulee tarkistaa ja korvata esimerkiksi tenämerkeillä tai piiloreiteillä. Ne voivat myös auttaa ohjelmoijaa muokkaamaan tekstitiedostoja, jotta ne vastaavat paremmin tietyille kriteereille.
 
 ## Katso myös
 
-- [Rustin dokumentaatio tekstien hakemiseen ja korvaamiseen](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Regex - regexpresseihin tutustuminen](https://doc.rust-lang.org/regex/regex/index.html)
-- [Lisää Rustin perusteita](https://www.rust-lang.org/learn)
+- [Rustin virallinen opas tekstinhakuun ja korvaukseen](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Rustin String-tyyppi](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rustin Vec-tyyppi](https://doc.rust-lang.org/std/vec/struct.Vec.html)

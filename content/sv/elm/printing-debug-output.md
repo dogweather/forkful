@@ -1,42 +1,51 @@
 ---
 title:    "Elm: Utskrift av felsökningsutdata"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva ut felsökningsutdata är en viktig del av programmering, oavsett vilket språk du använder. Det kan hjälpa dig att hitta och fixa fel i din kod snabbare och mer effektivt. I detta inlägg ska vi titta närmare på hur man skriver ut debug-utdata i Elm program.
+Att skriva kod är ofta en ganska ensam uppgift, och det kan vara svårt att förstå varför något inte fungerar som det ska. Ibland kan det vara till hjälp att ha lite extra information om vad som händer i koden för att felsöka och hitta fel snabbare. Det är här utskrift av debug-utdata kan vara till stor hjälp.
 
-## Hur man gör
+## Hur man gör det
 
-För att skriva ut debug-utdata i ditt Elm program behöver du använda funktionen `Debug.log`. För att använda den kan du följa dessa steg:
+För att skriva ut debug-utdata i Elm, kan du använda funktionen `Debug.log`. Det tar två argument - ett strängvärde som förklarar vad du vill skriva ut och ett värde som är det du faktiskt vill skriva ut. Här är ett exempel:
 
-1. Importera Debug modulen `import Debug`
+```Elm
+import Debug exposing (log)
 
-2. Lägg till `Debug.log` funktionen i din kod och tilldela den till en variabel:
+x = 5
+y = 10
 
-   ```elm
-   log : String -> a -> a 
-   ```
+z = x + y
 
-3. Använd funktionen `log` för att skriva ut din önskade utdata till konsolen:
+log "Värdet på z är:" z -- skriver ut "Värdet på z är: 15" i konsolen
+```
 
-   ```elm
-   log "Min debug-utdata" "Viktig information"
-   --Output: Min debug-utdata: "Viktig information"
-   ```
-
-4. För att använda funktionen behöver du också aktivera debug-utdata i din Elm-sidans utvecklingsläge. Detta kan du enkelt göra genom att lägga till `--debug` flaggan när du köra `elm reactor` eller `elm make` kommandon.
+I exemplet ovan förklarar strängen `"Värdet på z är:"` vad som kommer att skrivas ut och värdet `z` är det som faktiskt skrivs ut. Genom att använda `Debug.log` på viktiga punkter i koden kan du enkelt spåra vad som händer och hitta eventuella fel.
 
 ## Djupdykning
 
-I Elm är debug-utdata en viktig del av felsökningen eftersom språket inte tillåter typfel och har strikt typning. Detta kan göra det svårt att hitta fel när de uppstår. Genom att använda debug-utdata kan du inspektera variabler och värden för att förstå vad som händer i din kod.
+I Elm finns det också möjlighet att skriva ut mer avancerad utdata med hjälp av den inbyggda funktionen `Debug.toString`. Den konverterar ett värde till en strängrepresentation, vilket kan vara särskilt användbart för att skriva ut komplexa datastrukturer som listor eller tupler. Här är ett exempel:
 
-Det finns också flera olika sätt att formatera din debug-utdata i Elm, som att använda `Debug.toString` funktionen för att konvertera värden till strängar eller `Debug.todo` för att markera en viss del av din kod som ofullständig. Genom att experimentera med dessa olika alternativ kan du hitta det som passar bäst för dina felsökningsbehov.
+```Elm
+import Debug exposing (log)
+import List exposing (map)
 
-## Se också
+lista = [1, 2, 3]
 
-- Elm guide för felsökning: https://guide.elm-lang.org/debugging/
-- Officiell Elm dokumentation för Debug modulen: https://package.elm-lang.org/packages/elm/core/latest/Debug
+kvadrater = map (\x -> x * x) lista
+
+log "Lista med kvadrater:" (Debug.toString kvadrater) -- skriver ut "Lista med kvadrater: [1, 4, 9]" i konsolen
+```
+
+Som du kan se i exemplet ovan använder vi här `Debug.toString` för att konvertera värdet `kvadrater` till en strängrepresenation som vi sedan skriver ut med hjälp av `Debug.log`. Detta gör det enklare att se vad som händer med våra data när vi använder funktionen `map`.
+
+## Se även
+
+- [Elm guide om felsökning](https://guide.elm-lang.org/debugging/)
+- [Officiell Elm-sida om Debug-modulen](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Artikel om felsökning med Elm](https://medium.com/@dannyfritz/a-comprehensive-guide-to-debugging-elm-a8a522efd6a4)

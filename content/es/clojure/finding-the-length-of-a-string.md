@@ -1,48 +1,50 @@
 ---
 title:    "Clojure: Encontrando la longitud de una cadena"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En programación, es común necesitar saber el tamaño o longitud de una cadena de texto. Esto puede ser útil para validar entradas de usuarios, contar caracteres o realizar operaciones de manipulación de cadenas. En este artículo explicaremos cómo encontrar la longitud de una cadena en Clojure.
+La programación en Clojure puede ser una actividad emocionante y enriquecedora, y una de las tareas básicas que todo programador debe saber es cómo encontrar la longitud de una cadena de texto. Descubre cómo con esta guía paso a paso.
 
-## Cómo hacerlo
+## Cómo Hacerlo
 
-Para encontrar la longitud de una cadena en Clojure, podemos utilizar la función `count`. Esta función devuelve el número de elementos de una secuencia, y en el caso de una cadena, cuenta el número de caracteres.
+Para encontrar la longitud de una cadena en Clojure, utilizaremos la función `count()`. Esta función toma cualquier colección - incluyendo una cadena - y devuelve el número de elementos en ella.
 
-```Clojure
-(count "Hola Mundo") ; Devuelve 10
-(count "") ; Devuelve 0
-```
-
-También podemos usar `str` para convertir una cadena en una secuencia explícita y luego contarla.
+Veamos un ejemplo práctico:
 
 ```Clojure
-(count (str "¡Hola!" " " "¿Cómo estás?")) ; Devuelve 15
+(def str "¡Hola, mundo!")
+(count str)
 ```
 
-## Profundizando
+La salida de este código será `13`, que es la longitud de la cadena "¡Hola, mundo!". Como se puede ver, la función `count()` es muy fácil de usar y nos permite encontrar rápidamente la longitud de cualquier cadena.
 
-Hay algo importante que tener en cuenta cuando se trabaja con cadenas en Clojure. En realidad, las cadenas están representadas como secuencias de caracteres Unicode, por lo que cuando usamos `count` estamos contando el número de elementos en esa secuencia, no el número de caracteres visibles.
-
-Por ejemplo, si tenemos una cadena que contiene un emoji, `count` contará el emoji como un solo elemento en lugar de dos caracteres.
+También podemos utilizar esta función con listas, vectores, mapas y otros tipos de colecciones. Por ejemplo:
 
 ```Clojure
-(count "¡Hola! 😊") ; Devuelve 8
+(def lista [1 2 3 4 5])
+(count lista) ; Output: 5
+
+(def mapa {"edad" 30, "género" "masculino"})
+(count mapa) ; Output: 2
 ```
 
-Si queremos contar el número de caracteres visibles, podemos utilizar `clojure.string/length`, que tiene en cuenta los caracteres Unicode para obtener un recuento más preciso.
+¡Incluso podemos usar `count()` en una cadena de texto vacía! En ese caso, su resultado será `0`.
 
-```Clojure
-(require '[clojure.string :as str])
-(str/length "¡Hola! 😊") ; Devuelve 6
-```
+Una cosa importante a tener en cuenta es que `count()` es una función de orden constante, lo que significa que su tiempo de ejecución no depende del tamaño de la colección. Esto lo hace muy eficiente y recomendado para su uso en proyectos de gran escala.
 
-## Ver también
+## Deep Dive
+
+Ahora que sabemos cómo encontrar la longitud de una cadena en Clojure, puede que nos preguntemos cómo funciona en realidad esta función. En realidad, `count()` no cuenta los caracteres en la cadena, sino que utiliza la función `.count()` del propio objeto para obtener su longitud. Esta función es implementada por todas las colecciones en Clojure, lo que explica por qué podemos usarla en diferentes tipos de datos.
+
+Otro aspecto interesante es que `count()` es una función polimórfica, lo que significa que puede tomar diferentes tipos de colecciones como argumentos. En resumen, `count()` es una herramienta poderosa y versátil que nos permite encontrar la longitud de cualquier colección en Clojure de manera rápida y eficiente.
+
+## Ver También
 
 - [Documentación oficial de count en Clojure](https://clojuredocs.org/clojure.core/count)
-- [Documentación oficial de clojure.string/length](https://clojuredocs.org/clojure.string/length)
-- [Artículo de tutorial de Clojure de FreeCodeCamp](https://www.freecodecamp.org/news/writing-clojure-scripts-to-auto-prefix-commit-messages-3e82731f7c18/)
+- [Clojure for the Brave and True - Contando colecciones](http://www.braveclojure.com/core-functions-in-depth/#Counting_Collections)
+- [Learn Clojure.org - Funciones de colección en Clojure](https://www.learn-clojure.org/basics/collection-functions/)

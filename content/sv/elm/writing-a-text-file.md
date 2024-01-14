@@ -1,49 +1,43 @@
 ---
-title:    "Elm: Att skriva en textfil"
+title:    "Elm: Skriva en textfil"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva en textfil kan vara en användbar och lärorik aktivitet för alla som är intresserade av dataprogrammering och utveckling. Det kan hjälpa till att förbättra ens förståelse för språket Elm och dess olika funktioner, samt ge en möjlighet att öva och utveckla sina programmeringsfärdigheter.
+Att skriva en textfil är ett viktigt verktyg för att organisera och lagra information. Det kan vara till nytta både för personligt bruk och för professionell användning.
 
-## Hur man gör det
+## Så här gör man
 
-För att skriva en textfil i Elm, följ dessa enkla steg:
-
-1. Skapa en Elm-fil med suffixet ".elm".
-2. Importera modulen Text.
-3. Använd funktionen "writeFile" för att skriva önskad text i filen.
-4. Kompilera filen till JavaScript.
-5. Öppna den genererade JS-filen och sök efter din skrivna text.
-
-Här är ett exempel på hur koden kan se ut:
+För att skriva en textfil i Elm behöver du först importera "Text"-modulen. Sedan kan du använda funktionen "writeFile" och ange både filnamn och innehållet som en sträng. Här är ett enkelt exempel:
 
 ```Elm
-module Main exposing (main)
+import Text exposing (writeFile)
 
-import Text
-
-main =
-    writeFile "textfil.txt" "Det här är en textfil som skrivs med Elm."
+main = 
+  writeFile "hello.txt" "Hej världen!"
 ```
 
-När du har kompilerat filen och öppnat JS-filen, bör du se följande text:
-
-`Det här är en textfil som skrivs med Elm.`
-
-Det är viktigt att notera att filen måste kompileras till JavaScript för att innehållet ska kunna skrivas till en fil. Om du kör koden i en interaktiv Elm-miljö, kommer den endast att skriva texten till konsolen.
+Output: En fil med namnet "hello.txt" kommer att skapas och innehålla texten "Hej världen!".
 
 ## Djupdykning
 
-Att skriva en textfil är en viktig del av att lära sig Elm. Det ger en möjlighet att lära sig om moduler och funktioner som är specifika för textbehandling i Elm, såsom att läsa och manipulera filinnehåll. Dessutom kan det hjälpa till att utveckla problemlösningsfärdigheter och logiskt tänkande.
+För att skriva en textfil med mer komplex innehåll kan man använda sig av funktionen "writeFileWith" som tar en modifieringsfunktion som argument. Detta gör det möjligt att använda sig av loops, if-satser och andra funktioner för att skapa en dynamisk fil. Här är ett exempel som skapar en fil med talen 1 till 10:
 
-En annan viktig aspekt av att skriva en textfil är att förstå hur filer och data hanteras inom programmering. Det kan vara till nytta när man arbetar med mer komplexa projekt och behöver lagra och hämta data från filer.
+```Elm
+import Text exposing (writeFileWith)
+import List exposing (range)
+
+main = 
+  writeFileWith (\num -> String.fromInt num) "numbers.txt" (range 1 10)
+```
+
+Output: En fil med namnet "numbers.txt" kommer att skapas och innehålla siffrorna 1 till 10, varje tal på en ny rad.
 
 ## Se även
 
-- [Elm documentation on writing files](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm tutorial for beginners](https://guide.elm-lang.org/)
-- [Elm language website](https://elm-lang.org/)
+- Elm dokumentation för Text-modulen: https://package.elm-lang.org/packages/elm/core/latest/Text
+- En guide för att lära sig att skriva textfiler i Elm: https://medium.com/@ajung14/writing-files-in-elm-8133b49a41d3

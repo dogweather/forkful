@@ -1,42 +1,53 @@
 ---
-title:    "PHP: Estrazione di sottostringhe"
+title:    "PHP: Estrapolazione di sottostringhe"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Se stai cercando un modo efficiente per manipolare le stringhe in PHP, allora l'estrazione di sottostringhe potrebbe essere una tecnica utile da imparare. Questo ti permetterà di estrarre solo le parti delle stringhe che ti sono utili, risparmiando tempo e risorse nella codifica.
+Spesso durante la programmazione, è necessario lavorare con una stringa di testo più lunga estrarre solo una parte specifica. Questo è ciò che viene definito come estrazione di sottotringoli e può essere molto utile in diversi scenari di programmazione.
 
 ## Come fare
+Per estrarre una sottostringa da una stringa più lunga, possiamo utilizzare la funzione `substr()` in PHP. Prendiamo ad esempio la seguente stringa:
 
-L'estrazione delle sottostringhe in PHP è molto semplice grazie alla funzione `substr()`. Ecco un esempio di come usarla per estrarre una sottostringa di 5 caratteri a partire dal quindicesimo carattere da una stringa:
-
+```PHP
+$stringa = "Questo è un esempio di una stringa.";
 ```
-PHP $stringa = "Benvenuti a PHP!";
-$sottostringa = substr($stringa, 15, 5);
-echo $sottostringa;
+
+Se vogliamo estrarre solo la parola "esempio" da questa stringa, possiamo utilizzare la seguente istruzione:
+
+```PHP
+$sottostringa = substr($stringa, 11, 7);
 ```
-**Output:** `PHP!`
 
-Puoi anche usare l'operatore di slicing `substr()` per estrarre una parte di una stringa basandoti su un determinato carattere. Ad esempio, puoi estrarre la parte della stringa che si trova prima dell'operatore '@' in un indirizzo email:
+Qui, stiamo specificando che vogliamo estrarre una sottostringa di 7 caratteri a partire dall'indice 11 della stringa originale. Ovviamente, questi valori possono essere variati in base alle nostre esigenze.
 
+L'output di questo codice sarà:
+
+```PHP
+esempio
 ```
-PHP $email = "esempio@email.com";
-$username = substr($email, 0, strpos($email, "@"));
-echo $username;
+
+Possiamo anche specificare un solo parametro nella funzione `substr()` se vogliamo estrarre tutti i caratteri fino alla fine della stringa. Ad esempio:
+
+```PHP
+$altrosottostringa = substr($stringa, 27);
 ```
-**Output:** `esempio`
 
-## Approfondimento
+In questo caso, l'output sarà:
 
-Oltre alla funzione `substr()`, PHP offre anche altre funzioni utili per manipolare le stringhe. Ad esempio, `str_replace()` ti permette di sostituire parti di una stringa con un'altra. Puoi anche avvalerti di `explode()` per suddividere una stringa in un array basandoti su un carattere delimitatore.
+```PHP
+una stringa.
+```
 
-Ricorda che quando si lavora con le stringhe in PHP, è importante gestire correttamente gli spazi vuoti e le lettere maiuscole/minuscole. Inoltre, puoi combinare diverse funzioni per ottenere risultati più complessi. Non avere paura di fare esperimenti per trovare il metodo migliore per le tue esigenze.
+Ci sono anche altre funzioni utili che possiamo utilizzare per estrarre sottotringoli, come ad esempio `strpos()`, `strrpos()`, `strstr()`, `strchr()`, etc. Consiglio di esplorare queste funzioni per avere una comprensione più approfondita.
+
+## Approfondimenti
+Oltre alla semplice estrazione di sottotringoli, ci sono alcune considerazioni importanti da tenere a mente. Ad esempio, dobbiamo fare attenzione agli indici quando utilizziamo le funzioni `substr()` e `strlen()` insieme. Inoltre, dobbiamo essere consapevoli di come le diverse funzioni gestiscono i caratteri speciali all'interno delle stringhe. Con una buona comprensione di questi aspetti, saremo in grado di utilizzare efficacemente le funzioni di estrazione di sottotringoli nella nostra programmazione.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di PHP per la funzione substr()](https://www.php.net/manual/en/function.substr.php)
-- [Tutorial su come manipolare le stringhe in PHP](https://www.tutorialspoint.com/php/php_string_functions.htm)
-- [Esempi pratici di uso delle funzioni per stringhe in PHP](https://www.javatpoint.com/php-string-functions)
+- [Documentazione ufficiale di PHP su substr()](https://www.php.net/manual/en/function.substr.php)
+- [Come estrarre una sottostringa in PHP](https://www.geeksforgeeks.org/how-to-extract-a-substring-from-a-string-in-php/)
+- [Tutorial su stringhe in PHP](https://www.w3schools.com/php/php_strings_substrings.asp)

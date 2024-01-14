@@ -1,48 +1,47 @@
 ---
-title:    "Elm: Escribiendo a la salida de error estándar"
+title:    "Elm: Escribir en el error estándar"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-**¿Por qué escribir a standard error en Elm?**
+## Por qué
 
-Si estás familiarizado con programación en Elm, sabrás que una de sus principales características es la seguridad en el tipo de datos. Esto significa que el compilador de Elm te ayudará a evitar errores de tipo en tu código. Sin embargo, hay ocasiones en las que puede ser útil escribir a standard error para obtener una salida de errores más detallada y comprensible.
+En programación, a menudo nos encontramos con errores y problemas que deben ser resueltos. La escritura en la salida de errores estándar, o "standard error", es una herramienta útil para identificar y solucionar estos errores. Continúa leyendo para aprender cómo escribir a la salida de errores estándar en Elm.
 
-**¿Cómo hacerlo?**
+## Cómo hacerlo
 
-En Elm, podemos escribir a standard error utilizando la función `Debug.log`. Esta función toma dos argumentos: un string que describe el mensaje a imprimir y el valor que queremos imprimir. Veamos un ejemplo:
+Para escribir a la salida de errores estándar en Elm, primero debemos importar el módulo "Platform". Luego, usamos la función "log" en la que pasamos un mensaje de error como argumento. Aquí hay un ejemplo de código:
 
 ```Elm
-import Debug exposing (log)
+import Platform
 
-sumar : Int -> Int -> Int
-sumar x y =
-  x + y
-
-main =
-  let
-    resultado = sumar 5 10
-  in
-    log "El resultado de la suma es:" resultado
+Platform.log "¡Este es un mensaje de error!"
 ```
 
-En este código, estamos utilizando la función `sumar` para sumar dos números y luego utilizando `Debug.log` para imprimir el resultado de la suma a standard error. Cuando ejecutemos este código en la consola, veremos lo siguiente:
+Si ejecutamos este código en un programa de Elm, veremos que el mensaje de error se imprime en la consola.
 
+La función "log" también acepta cualquier tipo de dato como argumento, por lo que podemos escribir variables o incluso estructuras de datos a la salida de errores estándar. Aquí hay otro ejemplo:
+
+```Elm
+import Platform
+
+miVariable = 42
+
+Platform.log ("El valor de miVariable es: " ++ (toString miVariable))
 ```
-El resultado de la suma es: 15
-```
 
-Como puedes ver, hemos impreso la cadena de texto que especificamos en el primer argumento y el resultado de la suma en el segundo.
+Este código imprimirá "El valor de miVariable es: 42" en la salida de errores estándar.
 
-**Profundizando en la escritura a standard error**
+## Profundizando
 
-Ahora, es importante tener en cuenta que la función `Debug.log` solo se ejecuta durante el proceso de compilación. Esto significa que cualquier llamada a esta función en tu código será eliminada una vez que se compile tu aplicación. Por lo tanto, no debes preocuparte por el rendimiento o impacto en tu aplicación.
+Además de la función "log", el módulo "Platform" también ofrece otras funciones para escribir a la salida de errores estándar, como "error" y "warn". Cada una de estas funciones tiene un nivel de gravedad asociado, lo que puede ser útil para identificar la severidad de los errores en nuestro código.
 
-Además, es importante tener en cuenta que solo debe utilizarse `Debug.log` para fines de depuración. Una vez que hayas encontrado y solucionado el error, es importante eliminar o comentar cualquier llamada a esta función en tu código final.
+También es importante tener en cuenta que al escribir a la salida de errores estándar, los mensajes se imprimirán en la consola del navegador si estamos ejecutando nuestro programa en un navegador web. Sin embargo, si estamos ejecutando nuestro programa en un servidor, los mensajes se imprimirán en el archivo de registro del servidor.
 
-**Ver también**
+## Ver también
 
-- [Information about Debug.log from the Elm Guide](https://guide.elm-lang.org/debugging/debugging.html#writing-to-standard-error)
-- [Elm language documentation for Debug](https://elm-lang.org/docs/debug)
-- [Elm in Action book by Richard Feldman](https://www.manning.com/books/elm-in-action)
+- [Documentación oficial de Elm sobre el módulo Platform](https://package.elm-lang.org/packages/elm/core/latest/Platform)
+- [Artículo sobre cómo depurar en Elm utilizando la salida de errores estándar](https://medium.com/@isnardo/debugging-elm-code-with-standard-error-c0dfb9d4752d)
+- [Foro de Elm donde se discute sobre las mejores prácticas para escribir a la salida de errores estándar](https://discourse.elm-lang.org/t/logging-best-practices/4281)

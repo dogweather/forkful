@@ -1,33 +1,47 @@
 ---
-title:    "Swift: Generering av tilfeldige tall"
+title:    "Swift: Generere tilfeldige tall"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor vi trenger å generere tilfeldige tall
+## Hvorfor
+Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Enten det er for å lage spill, tilfeldige passord eller tester, er det å kunne generere tilfeldige tall et nyttig verktøy i en utviklers verktøykasse. I denne bloggposten vil vi gå gjennom hvordan man kan generere tilfeldige tall i Swift.
 
-Generering av tilfeldige tall er en viktig del av programmering, spesielt når man utvikler spill eller applikasjoner som krever en element av tilfeldighet. Det kan også være nyttig i testing og simuleringer. I denne bloggposten vil vi utforske hvordan man kan generere tilfeldige tall i Swift.
+## Hvordan
+For å generere tilfeldige tall i Swift, kan vi bruke funksjonen `random(in:)` fra Swifts `Random` bibliotek. Denne funksjonen tar inn et område av tall som parameter, og vil returnere et tilfeldig tall innenfor dette området.
 
-## Slik genererer du tilfeldige tall i Swift
-
-For å generere tilfeldige tall i Swift, kan vi bruke funksjonen `arc4random()`. Denne funksjonen returnerer et tilfeldig tall av typen `UInt32` som kan konverteres til andre typer tall. For eksempel, hvis vi ønsker et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
+Her er et eksempel på hvordan vi kan bruke `random(in:)` for å generere et tilfeldig tall mellom 1 og 10:
 
 ```Swift
-let randomNum = arc4random_uniform(10) + 1
-print(randomNum) // output: 5
+let randomIndex = Int.random(in: 1...10) 
+print(randomIndex) // Output: 7
 ```
 
-Vi bruker `arc4random_uniform()` for å begrense det genererte tallet til å være mellom 1 og 10. Vi legger også til 1 for å unngå at tallet blir 0.
+Vi kan også bruke denne funksjonen til å generere tilfeldige desimaltall. For å generere et tilfeldig desimaltall mellom 0 og 1, kan vi bruke følgende kode:
 
-## Dypdykk i generering av tilfeldige tall
+```Swift
+let randomDecimal = Double.random(in: 0..<1)
+print(randomDecimal) // Output: 0.345
+```
 
-Det finnes flere måter å generere tilfeldige tall på i Swift. I tillegg til `arc4random()`, kan man også bruke `arc4random_uniform()` med større tall for å få et bredere utvalg av tilfeldige tall. Det finnes også andre funksjoner som `random()` og `random(in:)` som kan brukes til å generere tilfeldige tall innenfor et spesifikt område.
+Vi kan også generere tilfeldige elementer fra en liste ved hjelp av `randomElement()` funksjonen. Denne funksjonen tar inn en liste og returnerer et tilfeldig element fra listen.
 
-Det er også viktig å huske at tilfeldige tall faktisk ikke er helt tilfeldige, men genereres ved hjelp av en algoritme. Derfor er det viktig å bruke en god kilde til "entropi" (tilfeldighet) for å få så tilfeldige tall som mulig.
+```Swift
+let fruits = ["apple", "orange", "banana", "strawberry"]
+let randomFruit = fruits.randomElement()
+print(randomFruit) // Output: apple (or any other fruit in the list)
+```
+
+Det finnes også andre metoder for å generere tilfeldige tall i Swift, som for eksempel `arc4random_uniform()`, men disse er ikke like sikre og anbefales derfor ikke.
+
+## Deep Dive
+Når vi genererer tilfeldige tall i Swift, bruker vi egentlig en pseudorandom nummergenerator. Dette betyr at tallene som genereres ikke er helt tilfeldige, men følger et bestemt mønster. Grunnen til dette er at datamaskiner ikke kan produsere helt tilfeldige tall, men de kan simulere det gjennom komplekse matematiske formler og algoritmer.
+
+For å sikre at tallene som genereres er så tilfeldige som mulig, kan vi bruke en såkalt "seed" som en parameter i funksjonene `random(in:)` og `randomElement()`. Seeden er et tall som brukes for å initialisere nummergeneratoren og derfor påvirker resultatet av de tilfeldige tallene. Ved å endre seed tallet, vil vi få en annen sekvens av tilfeldige tall. Dette kan være nyttig i enkelte programmeringsscenarier.
 
 ## Se også
-
-- [Random Numbers in Swift](https://www.swiftbysundell.com/posts/random-numbers-in-swift) by Swift by Sundell
-- [Swift - How to generate random number within a given range](https://stackoverflow.com/questions/24007129/swift-random-number-generator-between-two-numbers) on Stack Overflow
-- [arc4random() documentation](https://developer.apple.com/documentation/swift/1574064-arc4random) on Apple Developer website
+- [Swifts offisielle dokumentasjon om tilfeldige tall](https://developer.apple.com/documentation/swift/random)
+- [En guide til tilfeldige tall i Python](https://realpython.com/python-random/)
+- [En forklaring på pseudorandom nummergeneratorer](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/random-vs-pseudorandom-number-generators)

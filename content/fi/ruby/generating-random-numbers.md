@@ -1,65 +1,39 @@
 ---
-title:    "Ruby: Satunnaislukujen generointi"
+title:    "Ruby: Satunnaislukujen luominen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Miksi kukaan haluaisi generoida satunnaisia numeroita Ruby-ohjelmalla? Hyvänä esimerkkinä voisi olla tarve testata jotain ohjelmaa tai algoritmia, joka vaatii satunnaisten numeroiden tuottamista.
+Miksi haluaisit käyttää satunnaisnumeroiden generointia ohjelmoinnissa? Satunnaiset numerot ovat hyödyllisiä monissa sovelluksissa, kuten pelien luonnissa, testauksessa ja salausavainten luomisessa.
 
 ## Miten
-
-Ruby-ohjelmointikielessä on useita tapoja generoida satunnaisia numeroita. Yksi helpoimmista tavoista on käyttää `rand`-funktiota. Se palauttaa desimaaliluvun väliltä 0-1 ja tätä lukua voidaan muunnella halutulle alueelle. Esimerkiksi seuraavassa koodiesimerkissä generoidaan satunnaisia kokonaislukuja väliltä 1-10 ja tulostetaan ne näytölle:
+Satunnaisnumeroiden generointi Rubyssa on helppoa! Käytä vain `rand` metodia ja anna sille haluamasi numeroiden määrä. Esimerkiksi, jos haluat generoida 5 satunnaista kokonaislukua välillä 1-10, kirjoita seuraava koodi:
 
 ```Ruby
-10.times do
+5.times do
   puts rand(1..10)
 end
 ```
-Output:
+
+Tämä tulostaa jotakin seuraavista:
+
 ```
-5
-3
-9
-2
-6
-1
-7
-10
-4
 8
+4
+2
+9
+1
 ```
 
-## Syvempää tietoa
+Voit myös käyttää `rand` metodia generoimaan satunnaisia desimaalilukuja. Voit tehdä tämän antamalla parametreiksi halutun minimi- ja maksimiarvon, esimerkiksi `puts rand(5.0..10.0)` tulostaa satunnaisen desimaaliluvun väliltä 5.0 - 10.0.
 
-Satunnaisia numeroita voidaan myös generoida antamalla `rand`-funktiolle siemenluvun. Tämä tarkoittaa sitä, että sama siemenluku tuottaa aina saman sarjan satunnaisia numeroita. Tämä voi olla hyödyllistä esimerkiksi testauksessa, jos halutaan varmistaa, että ohjelma toimii samalla tavalla joka kerta.
-
-```Ruby
-srand 1234
-puts rand
-puts rand
-puts rand
-```
-Output:
-```
-0.1915194503788923
-0.6221087710398319
-0.4377277390076237
-```
+## Syväsukellus
+Ruby käyttää Mersenne Twister algoritmia satunnaisien numeroiden generoimiseen. Tämän algoritmin avulla satunnaiset numerot ovat riippumatonta ajasta, joten jokainen generointi antaa täysin satunnaisen numeron. Voit lukea lisää tästä algoritmista ja sen taustoista [täältä] (https://ruby-doc.org/core-2.6.3/Random.html).
 
 ## Katso myös
-
-- [Ruby Core -rand documentation](https://ruby-doc.org/core/File.html#method-i-rand)
-- [RubyGuides - Generating Random Numbers in Ruby](https://www.rubyguides.com/2019/07/generating-random-numbers/)
-
-[vai näin voisi myös päättää artikkelin]
-
-
-## Katso myös
-
-Jos haluat oppia lisää satunnaisia numeroita generoimisesta Rubylla, suosittelemme tutustumaan seuraaviin resursseihin:
-
-- [Ruby Core -rand dokumentaatio (englanniksi)](https://ruby-doc.org/core/File.html#method-i-rand)
-- [RubyGuides - Satunnaislukujen generointi Rubylla (englanniksi)](https://www.rubyguides.com/2019/07/generating-random-numbers/)
+- [Ruby:n satunnaiset numerot dokumentaatiossa] (https://ruby-doc.org/core-2.6.3/Random.html)
+- [Mersenne Twister algoritmin selitys] (https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html)
+- [Satunnaisnumeroiden generointi käytännössä Rubylla] (https://www.rubyguides.com/2018/10/random-numbers-ruby/)

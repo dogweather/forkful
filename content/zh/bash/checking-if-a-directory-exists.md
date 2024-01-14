@@ -1,39 +1,39 @@
 ---
 title:    "Bash: 检查目录是否存在"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么会使用Bash编程:
 
-对于那些想要在Bash编程中了解如何检查目录是否存在的读者来说，这是一个非常有用的技巧。通过检查目录是否存在，程序可以避免出现无法找到所需文件或目录的错误，并在必要时采取适当的措施。
+Bash编程是一种强大的工具，可以帮助你自动化许多重复的任务。通过编写Bash脚本，你可以检查文件和文件夹的存在性，以确保你的程序能够顺利运行。这样可以节省大量的时间和精力，并且有效地确保程序的可靠性和稳定性。
 
-## 如何操作
+如何进行检查文件夹是否存在：
 
-要检查一个目录是否存在，可以使用`[ -d ]`命令。以下是一个简单的例子：
+首先，你需要使用`if`语句来判断文件夹是否存在。在Bash中，可以使用`-d`选项来检查一个路径是否为文件夹。以下是一个示例代码：
 
-```Bash
-if [ -d "/home/user/my_directory" ]; then
-  echo "my_directory存在"
+```
+if [ -d "example_folder" ]; then
+  echo "文件夹存在"
 else
-  echo "my_directory不存在"
+  echo "文件夹不存在"
 fi
 ```
 
-输出将取决于`/home/user/my_directory`是否存在。如果目录存在，输出将是“my_directory存在”，否则将是“my_directory不存在”。
+在上面的代码中，我们使用了`if`语句和条件表达式`-d`来判断`example_folder`是否为文件夹。如果检测到文件夹存在，就会打印出"文件夹存在"，否则打印出"文件夹不存在"。
 
-## 深入探讨
+深入了解检查文件夹是否存在：
 
-除了使用`[ -d ]`命令，还可以使用`test -d`命令来检查目录是否存在。这两个命令的作用是相同的，它们都将在目录存在时返回true(0)，在目录不存在时返回false(1)。如果读者想要了解更多关于这两个命令的区别，请查看[这篇文章](https://www.shell-tips.com/bash/test-vs/)。
+除了使用`-d`选项来检查文件夹是否存在，Bash还提供了其他几种选项来检测文件和文件夹的存在性。这些选项包括`-e`用于检查文件或文件夹是否存在，`-f`用于检查文件是否存在，`-s`用于检查文件是否为空，以及`-x`用于检查文件是否可执行。你可以根据自己的需求来选择合适的选项进行判断。
 
-## 参考链接
+另外，如果你想要在程序中创建文件夹，你可以使用`mkdir`命令，如果需要同时创建多个文件夹，可以使用`mkdir -p`命令。
 
-- [Bash教程(中文)](https://wangdoc.com/bash/)
-- [Linux Shell脚本教程(中文)](https://www.runoob.com/linux/linux-shell.html)
-- [Bash常用命令大全(中文)](https://www.cnblogs.com/sysu-blackbear/p/4532044.html)
+同样重要的是，如果你需要删除文件夹，可以使用`rmdir`命令，但是请注意，`rmdir`只能删除空文件夹，如果想要删除非空文件夹，可以使用`rm -r`命令。
 
-## 参见
+请参阅:
 
-- [如何在Bash中创建目录的指南(中文)](https://www.dataguru.cn/article-16340-1.html)
-- [如何在Bash中检测文件是否存在的方法(中文)](https://www.shiyanlou.com/courses/1/labs/1009/document)
+- [Bash教程](https://www.runoob.com/linux/linux-shell.html)
+- [Bash文档](https://www.gnu.org/software/bash/manual/bash.html)
+- [Linux命令大全](https://man.linuxde.net/)

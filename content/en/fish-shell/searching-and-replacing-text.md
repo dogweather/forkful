@@ -1,52 +1,50 @@
 ---
 title:    "Fish Shell recipe: Searching and replacing text"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Text editing can be a tedious task, especially when you have a large amount of text to deal with. But fear not, with the power of Fish Shell, you can make this process much more efficient by using the search and replace function.
+
+Search and replace is a common task in programming, especially when working with large amounts of text. By using the Fish Shell, you can easily perform these actions with just a few simple commands. This will save you time and effort, allowing you to focus on other aspects of your work.
 
 ## How To
-To search and replace text using Fish Shell, follow these simple steps:
 
-1. Open your terminal and navigate to the directory where the text file is located.
-2. Use the `sed` command along with the search and replace function syntax. For example, if you want to replace all instances of "hello" with "hi" in a text file called "greetings.txt", you would use the following code:
+Coding examples and sample output within "```Fish Shell ...```" code blocks.
 
-   ```Fish Shell
-   sed -i 's/hello/hi/g' greetings.txt
-   ```
-
-   Let's break down this command:
-
-   - `sed`: This is the command used for stream editing and can be used to perform various operations on text files.
-   - `-i`: This flag is used to edit the file in-place, meaning the changes will be made directly to the original file.
-   - `s/`: This is the substitute command, which is used to search and replace text.
-   - `/hello/`: This is the pattern we want to search for. You can replace it with any text or regular expression.
-   - `/hi/`: This is the replacement text. You can replace it with any text of your choice.
-   - `/g`: This is the global flag, which ensures that all instances of the search pattern are replaced.
-
-3. Press enter and your text will be automatically updated with the changes.
-
-## Deep Dive
-The search and replace function in Fish Shell is not limited to simple text replacements. It also supports regular expressions, which allows for more advanced and complex search patterns.
-
-For example, if you want to replace all numbers in a text file with the word "number", you can use the following code:
+#### Search for a specific word and replace it with another
 
 ```Fish Shell
-sed -i 's/[0-9]+/number/g' numbers.txt
+# The 'sed' command is used for search and replace
+sed 's/old_word/new_word/g' file_name.txt
+```
+*file_name.txt* is the name of the file you want to perform the search and replace on. Replace *old_word* with the word you want to replace and *new_word* with the word you want to use in its place. The `g` at the end means it will perform the replacement for every instance of the word in the file. 
+
+#### Search and replace with regular expressions
+
+```Fish Shell
+# Replace all numbers with 'X'
+sed 's/[0-9]/X/g' file_name.txt
 ```
 
-Let's break down this regular expression:
+In this example, we use regular expressions to replace all numbers in the file with the letter 'X'. The bracket notation `[0-9]` signifies any number from 0-9 and the `g` at the end performs the replacement for every instance.
 
-- `[0-9]+`: This is the pattern we want to search for, which represents one or more digits.
-- `/number/`: This is the replacement text, which will replace all numbers with the word "number".
-- `/g`: This global flag ensures that all instances of the search pattern are replaced, not just the first one.
+## Deep Dive
 
-You can also use the search and replace function in conjunction with other Fish Shell commands, such as `grep` and `cat`, to further manipulate and edit your text files.
+When using the `sed` command for search and replace, it is important to understand the different flags that can be used to modify the behavior.
+
+- `s`: This flag indicates that we are searching and replacing.
+- `g`: This flag means that the replacement will be performed for every instance of the search word or pattern.
+- `i`: This flag makes the search case insensitive.
+- `p`: This flag prints out the lines where the search and replace was successful.
+- `w`: This flag only performs the replacement on lines that match the exact search word.
+
+You can also use combinations of these flags to achieve more specific search and replace results.
 
 ## See Also
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Sed documentation](https://www.gnu.org/software/sed/manual/sed.html)
-- [Regular Expressions tutorial](https://www.regular-expressions.info/tutorial.html)
+
+- [Fish Shell: The friendly interactive shell](https://fishshell.com/)
+- [Sed: Stream editor for filtering and transforming text](https://www.gnu.org/software/sed/)
+- [Regular Expressions in Fish Shell](http://fishshell.com/docs/current/index.html#regex)

@@ -1,38 +1,44 @@
 ---
-title:    "Elm: Tiivistelmä: Päivän laskeminen tulevaisuudessa tai menneisyydessä tietokoneohjelmoinnissa"
+title:    "Elm: Tulevaisuuden tai menneen päivämäärän laskeminen"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lasken tulevia ja menneitä päivämääriä Elmilla?
+## Miksi
 
-Elm on funktionaalinen ohjelmointikieli, joka on suunniteltu helppokäyttöisyyden ja luotettavuuden periaatteilla. Laskeminen tulevia ja menneitä päivämääriä voi olla hyödyllistä esimerkiksi tapahtumien aikatauluttamisessa tai tietyn ajanjakson laskemisessa.
+Miksi kukaan haluaisi laskea tulevaisuuden tai menneen päivän? Elm-kielinen päivämäärälaskenta voi auttaa sinua muotoilemaan ja näyttämään päivämääriä eri tavoin. Esimerkiksi voit lisätä sivustollesi ominaisuuden, joka näyttää käyttäjän syntymäpäivän viikonpäivän tai lasketun viimeisen maksupäivän.
 
-# Näin lasket päivämäärän tulevaisuudessa tai menneisyydessä
-
-Laskeminen päivämääriä Elmilla on yksinkertaista käyttäen Date-pakettia. Alla on esimerkki koodista, jossa lasketaan päivä tulevaisuudessa ja tulostetaan se konsoliin:
+## Miten
 
 ```Elm
-import Date exposing (..)
+import Date
 
-tulevaPaiva = add Days 10 (fromTime 1544191200000)
-
-main = 
-  2|
-    Debug.log "Tuleva päivä" tulevaPaiva
+Date.fromIsoString "2021-04-20" -- saa takaisin 20. huhtikuuta 2021
+Date.fromParts 2021 April 20 -- saa takaisin 20. huhtikuuta 2021
 ```
 
-Tämä koodi lisää 10 päivää nykyiseen päivään ja tulostaa tulevan päivän konsoliin. Voit muuttaa lisättävien päivien määrää ja saada eri päivämääriä tulevaisuudessa.
+Voit myös lisätä päiviä, kuukausia tai vuosia olemassa olevaan päivämäärään:
 
-# Syväsukellus päivämäärän laskemiseen Elmilla
+```Elm
+Date.add Days 5 (Date.fromIsoString "2021-04-20") -- saa takaisin 25. huhtikuuta 2021
+Date.add Months 2 (Date.fromIsoString "2021-04-20") -- saa takaisin 20. kesäkuuta 2021
+Date.add Years (-3) (Date.fromIsoString "2021-04-20") -- saa takaisin 20. huhtikuuta 2018
+```
 
-Date-paketti tarjoaa monia erilaisia funktioita päivämäärien laskemiseen, kuten vähentämisen, kuukausien tai vuosien lisäämisen ja muuntamisen Unix-aikaleimoiksi. Voit myös käyttää Date.Extra-moduulia, joka tarjoaa lisäominaisuuksia kuten päivämäärän muotoilun ja viikonpäivän laskemisen.
+Voit myös tarkistaa, onko päivämäärä ennen vai jälkeen toisen päivämäärän:
 
-Voit myös käyttää tiettyjä päivämääriä vertaillessa funktiota Date.compare, joka palauttaa arvon `LT` (pienempi kuin), `GT` (suurempi kuin) tai `EQ` (yhtäsuuri). Tämä voi olla hyödyllistä esimerkiksi tapahtumien järjestämisessä päivämäärän mukaan.
+```Elm
+Date.isBefore (Date.fromIsoString "2021-04-20") (Date.fromIsoString "2021-04-21") -- saa takaisin True
+Date.isAfter (Date.fromIsoString "2021-04-25") (Date.fromIsoString "2021-04-20") -- saa takaisin True
+```
 
-# Katso myös
+## Syventävä sukellus
 
-- [Date-paketin dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Date.Extra-moduulin dokumentaatio](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/)
-- [Elm-kurssi - Ajastimen käyttö Elmilla](https://elmprogramming.com/elm-timer.html)
+Elm-kielinen päivämäärälaskenta käyttää sisäisesti JavaScriptin `Date`-objektia, joten se tukee samoja toimintoja kuin JavaScriptissa. Voit tutkia tarkemmin `Date`-objektin dokumentaatiota löytääksesi muita käyttökelpoisia toimintoja päivämäärälaskentaan.
+
+## Katso myös
+
+- [Elm-kielen virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [JavaScriptin `Date`-objektin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

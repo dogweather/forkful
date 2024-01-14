@@ -1,36 +1,35 @@
 ---
-title:    "Clojure: La concaténation de chaînes de caractères"
+title:    "Clojure: Concaténation de chaînes"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La concaténation de chaînes est une pratique courante en programmation qui consiste à fusionner plusieurs chaînes de caractères en une seule. Cela peut être utile dans de nombreuses situations, comme l'affichage de données à l'utilisateur ou la création de noms de fichiers dynamiques.
+La concaténation des chaînes de caractères est une opération fréquemment utilisée en programmation pour combiner plusieurs chaînes en une seule. Cela peut être utile pour créer des messages personnalisés, des chaînes de requêtes ou tout simplement pour afficher des informations à l'utilisateur.
 
 ## Comment faire
 
-La concaténation de chaînes en Clojure est très simple grâce à la fonction `str`. Il suffit de mettre toutes les chaînes que vous souhaitez fusionner en arguments de cette fonction et de la placer dans une des expressions `println` ou `format` pour l'afficher à l'écran. Par exemple :
-
 ```Clojure
-(println (str "Bonjour" ", " "monde!"))
+(def s1 "Bonjour")
+(def s2 "mon") 
+(def s3 "ami")
+(defn concat [s1 s2 s3] 
+       (str s1 " " s2 " " s3 "!")) 
 ```
 
-Donne en sortie :
+L'exemple ci-dessus déclare trois chaînes de caractères en utilisant `def`. Ensuite, la fonction `concat` prend ces chaînes et les combine en une seule en utilisant la fonction `str`. La chaîne finale sera "Bonjour mon ami!".
 
-```
-Bonjour, monde!
-```
+## Approfondissement
 
+La concaténation des chaînes de caractères peut être effectuée de plusieurs façons en Clojure. Vous pouvez utiliser l'opérateur `+` pour concaténer deux chaînes ou utiliser la fonction `clojure.string/join` pour concaténer plusieurs chaînes avec un séparateur.
 
-## Plongée en profondeur
-
-En plus de la fonction `str`, Clojure offre également la fonction `join` pour concaténer des chaînes avec un délimiteur spécifique. De plus, la concaténation de chaînes peut également être réalisée avec l'opérateur `+`. Cependant, il est déconseillé de l'utiliser avec un grand nombre de chaînes, car cela peut entraîner des performances médiocres.
-
-Il est également important de noter que les chaînes en Clojure sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois qu'elles ont été créées. Cela peut être surprenant pour les programmeurs habitués à des langages où les chaînes sont mutables, comme Java.
+Il est également important de noter que Clojure utilise l'interface `java.lang.String` pour les chaînes de caractères. Cela signifie que vous pouvez utiliser toutes les méthodes de cette interface pour manipuler les chaînes, telles que `toLowerCase`, `toUpperCase` ou `substring`.
 
 ## Voir aussi
 
-- [Documentation officielle pour la fonction `str`](https://clojuredocs.org/clojure.core/str)
-- [Documentation officielle pour la fonction `join`](https://clojuredocs.org/clojure.core/join)
+- [Documentation sur la concaténation de chaînes en Clojure](https://clojure.org/reference/strings)
+- [Exemples pratiques de concaténation de chaînes en Clojure](https://www.baeldung.com/clojure-string-concatenation)
+- [Autres opérations sur les chaînes en Clojure](https://www.sitepoint.com/clojure-strings-operations)

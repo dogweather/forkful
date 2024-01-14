@@ -1,126 +1,95 @@
 ---
-title:    "C++: Löschen von Zeichen mit übereinstimmendem Muster"
+title:    "C++: Musterübereinstimmende Zeichen löschen"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann hilfreich sein, um Daten effizient zu filtern oder an bestimmte Anforderungen anzupassen. Außerdem kann es nützlich sein, um unerwünschte Zeichen aus einer Datei oder einem Text zu entfernen.
+Es gibt verschiedene Gründe, warum man in der Programmierung möglicherweise Zeichen löschen möchte, die einem bestimmten Muster entsprechen. Zum Beispiel kann es sein, dass man ungewollte Leerzeichen aus einem Text entfernen oder bestimmte Zeichen im String durch andere ersetzen möchte.
 
-## Wie
+## Wie man Zeichen löscht, die einem Muster entsprechen
 
-Es gibt mehrere Möglichkeiten, um in C++ Zeichen basierend auf einem Muster zu löschen. Eine Möglichkeit ist die Verwendung von Schleifen, um jeden einzelnen Buchstaben zu überprüfen und ihn zu entfernen, falls er dem Muster entspricht. Eine andere Möglichkeit ist die Verwendung von String-Funktionen wie `find()` und `erase()`, um das Löschen in einem Schritt durchzuführen.
-
-### Beispiel 1
-
-Das folgende Beispiel zeigt die Verwendung von Schleifen, um ein Zeichenarray mit einem gegebenen Muster auf unerwünschte Zeichen zu überprüfen und sie zu entfernen:
+In C++ gibt es verschiedene Möglichkeiten, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. Eine Möglichkeit ist die Verwendung der `erase()`-Funktion, die in der Standardbibliothek `string` definiert ist. Diese Funktion nimmt zwei Parameter an: den Index des zu löschenden Zeichens und die Anzahl der zu löschenden Zeichen. 
 
 ```C++
+// Beispielcode zum Löschen aller Vokale aus einem String
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-// Funktion zum Löschen von Zeichen basierend auf einem Muster
-string deleteCharacters(string str, string pattern) {
-    // Länge des Musters
-    int patLen = pattern.length();
-
-    // Schleife durch die Zeichen im String
-    for (int i = 0; i < str.length(); i++) {
-        // Sucht das Muster im String
-        if (pattern.find(str[i]) != string::npos) {
-            // Entfernt den Buchstaben aus dem String
-            str.erase(i, 1);
-            // Verringert den Zählwert um die Länge des Musters
-            i -= patLen;
+int main() {
+    std::string text = "Dies ist ein Beispieltext.";
+    
+    // Iteration über den String
+    for (int i = 0; i < text.length(); i++) {
+        // Prüfung, ob das aktuelle Zeichen ein Vokal ist
+        if (text[i] == 'a' || text[i] == 'e' || text[i] == 'i' ||
+            text[i] == 'o' || text[i] == 'u') {
+            // Lösche das aktuelle Zeichen
+            text.erase(i, 1);
         }
     }
-    // Gibt den bearbeiteten String zurück
-    return str;
-}
-
-int main() {
-    // Beispiel String und Muster
-    string str = "Hello, World!";
-    string pattern = "ol";
-
-    // Ausgabe vor der Bearbeitung
-    cout << "String vor dem Löschen: " << str << endl;
     
-    // Löscht Zeichen aus dem String, die dem Muster entsprechen
-    str = deleteCharacters(str, pattern);
-
-    // Ausgabe nach der Bearbeitung
-    cout << "String nach dem Löschen: " << str << endl;
-
+    // Ausgabe des bearbeiteten Strings
+    std::cout << text << std::endl;
+    
     return 0;
 }
 ```
 
-#### Ergebnis
+**Output:**
 
 ```
-String vor dem Löschen: Hello, World!
-String nach dem Löschen: He, Wrd!
+D s s t s B s p l t x t.
 ```
 
-### Beispiel 2
-
-Das folgende Beispiel zeigt die Verwendung von String-Funktionen, um das Löschen in einem Schritt durchzuführen:
+Man kann auch die `remove_if()`-Funktion aus der Algorithmus-Bibliothek verwenden, um Zeichen zu löschen, die einem bestimmten Kriterium entsprechen. Diese Funktion nimmt als Parameter eine Funktion oder einen Funktionsobjekt an, die das zu testende Kriterium definiert. Hier ist ein Beispielcode, der alle Zahlen aus einem String löscht:
 
 ```C++
+// Beispielcode zum Löschen aller Zahlen aus einem String
 #include <iostream>
 #include <string>
+#include <algorithm>
 
-using namespace std;
-
-// Funktion zum Löschen von Zeichen basierend auf einem Muster
-string deleteCharacters(string str, string pattern) {
-    // Durchsucht den String nach dem Muster und entfernt es
-    size_t pos = str.find(pattern);
-    while (pos != string::npos) {
-        str.erase(pos, pattern.length());
-        pos = str.find(pattern);
+// Funktionsobjekt zum Prüfen, ob ein Zeichen eine Zahl ist
+struct IsDigit {
+    bool operator()(char c) {
+        return std::isdigit(c);
     }
-    // Gibt den bearbeiteten String zurück
-    return str;
-}
+};
 
 int main() {
-    // Beispiel String und Muster
-    string str = "Hello, World!";
-    string pattern = "ol";
-
-    // Ausgabe vor der Bearbeitung
-    cout << "String vor dem Löschen: " << str << endl;
+    std::string text = "Dies ist Beispiel123 Text456.";
     
-    // Löscht Zeichen aus dem String, die dem Muster entsprechen
-    str = deleteCharacters(str, pattern);
-
-    // Ausgabe nach der Bearbeitung
-    cout << "String nach dem Löschen: " << str << endl;
-
+    // Entferne alle Zahlen aus dem String
+    text.erase(std::remove_if(text.begin(), text.end(), IsDigit()), text.end());
+    
+    // Ausgabe des bearbeiteten Strings
+    std::cout << text << std::endl;
+    
     return 0;
 }
 ```
 
-#### Ergebnis
+**Output:**
 
 ```
-String vor dem Löschen: Hello, World!
-String nach dem Löschen: He, Wrd!
+Dies ist Beispiel Text.
 ```
 
-## Deep Dive
+## Tiefergehende Informationen über das Löschen von Zeichen
 
-Das Löschen von Zeichen basierend auf einem Muster erfordert eine gründliche Untersuchung des Strings und des Musters, um sicherzustellen, dass die gewünschten Zeichen entfernt werden. Eine sorgfältige Strategie ist wichtig, um unerwünschte Änderungen im String zu vermeiden.
+Es ist wichtig zu beachten, dass die `erase()`-Funktion tatsächlich die Zeichen in dem String löscht und die Größe des Strings entsprechend verkleinert. Außerdem bewegen sich alle Zeichen, die sich nach dem zu löschenden Zeichen befinden, einen Index nach oben. 
 
-Es gibt auch Bibliotheken in C++ wie z.B. die *Regular Expression Library*, die speziell für die Verarbeitung von Musterabgleichen entwickelt wurden. Diese können bei komplexeren Anforderungen an das Löschen von Zeichen hilfreich sein.
+Beim Einsatz der `remove_if()`-Funktion wird der zu löschende Bereich im String nicht tatsächlich entfernt, sondern nur an das Ende des Strings verschoben. Der Rückgabewert dieser Funktion ist ein Iterator auf den Anfang der nach dem Verschieben nicht mehr benötigten Zeichen. Um diese Zeichen endgültig aus dem String zu löschen, verwendet man die `erase()`-Funktion in Kombination mit dem zurückgegebenen Iterator.
+
+Es gibt auch alternative Methoden, um Zeichen zu löschen, z.B. mit der `replace()`-Funktion oder mit regulären Ausdrücken. Es ist wichtig, die Dokumentation zu diesen Funktionen sorgfältig zu lesen und die richtige Methode für den spezifischen Anwendungszweck auszuwählen.
 
 ## Siehe auch
 
-- [C++ Strings](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [String-Funk
+- [C++ string::erase() reference](http://www.cplusplus.com/reference/string/string/erase/)
+- [C++ remove_if() reference](http://www.cplusplus.com/reference/algorithm/remove/)
+- [C++ string::replace() reference](http://www.cplusplus.com/reference/string/string/replace/)
+- [C++ reguläre Ausdrücke tutorial](https://www.regular-expressions.info/tutorial.html)

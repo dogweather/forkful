@@ -1,91 +1,42 @@
 ---
 title:    "C++: Concatenando cadenas"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Concatenar cadenas de texto es una técnica esencial en la programación de C++. Permite combinar varias cadenas para formar una sola, lo que resulta muy útil en la creación de mensajes personalizados, generación de nombres y mucho más.
+Una de las tareas más comunes en la programación es la concatenación de cadenas de texto. Esta técnica nos permite combinar varias cadenas en una sola, lo que es especialmente útil en la creación de mensajes personalizados o en la obtención de información de diferentes fuentes.
 
 ## Cómo hacerlo
-
-La concatenación de cadenas de texto se puede realizar de diferentes maneras en C++. Una forma común es utilizando el operador de suma (+), que nos permite unir dos cadenas tal como lo haríamos con números. Veamos un ejemplo:
-
-```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-
-    string nombre = "Juan";
-    string apellido = "Pérez";
-
-    string nombre_completo = nombre + " " + apellido;
-
-    cout << nombre_completo << endl;
-
-    return 0;
-}
-```
-
-**Salida:** Juan Pérez
-
-En el ejemplo, declaramos dos variables de tipo string y luego las concatenamos utilizando el operador de suma (+). También podemos utilizar la función `append()` para agregar una cadena al final de otra. Veamos otro ejemplo:
+La concatenación de cadenas en C++ es bastante sencilla. Utilizamos el operador "+" para unir dos o más cadenas y el resultado se guarda en una nueva variable. Por ejemplo:
 
 ```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-
-    string pais = "España";
-    string mensaje = "¡Hola! ";
-
-    mensaje.append(pais);
-
-    cout << mensaje << endl;
-
-    return 0;
-}
+string nombre = "Juan";
+string apellido = "Pérez";
+string nombre_completo = nombre + " " + apellido;
 ```
 
-**Salida:** ¡Hola! España
+En este ejemplo, hemos creado tres variables: "nombre", "apellido" y "nombre_completo". La tercera variable contiene la concatenación de las dos primeras, junto con un espacio en blanco para separarlas.
 
-También es posible concatenar cadenas utilizando la función `concat()` de la librería `string`, que nos permite unir varias cadenas en una sola llamada. Veamos un ejemplo más:
+También podemos usar la función "append" para agregar una cadena al final de otra. Por ejemplo:
 
 ```C++
-#include <iostream>
-#include <string> // Requerido para la función concat()
-
-using namespace std;
-
-int main() {
-
-    string dia = "lunes";
-    string fecha = "25 de enero de 2021";
-    string mensaje = "Hoy es ";
-
-    mensaje = mensaje.concat(dia, " ", fecha);
-
-    cout << mensaje << endl;
-
-    return 0;
-}
+string saludo = "¡Hola ";
+string nombre = "Juan!";
+saludo.append(nombre);
 ```
 
-**Salida:** Hoy es lunes 25 de enero de 2021
+En este caso, la variable "saludo" se actualizará a "¡Hola Juan!".
+
+En cuanto a la salida, podemos imprimir la cadena resultante en la consola utilizando la función "cout" de la biblioteca estándar de C++, o también podemos almacenarla en un archivo de texto para su posterior uso.
 
 ## Profundizando
+La concatenación de cadenas puede volverse más complicada cuando se trabaja con diferentes tipos de variables, como números y caracteres especiales. En esos casos, es importante asegurarse de convertir las variables a tipo de datos de cadena antes de realizar la concatenación, para evitar errores en la salida.
 
-La concatenación de cadenas de texto es una técnica fundamental en la programación de C++, pero es importante tener en cuenta algunos aspectos para evitar errores y obtener un código más eficiente.
-
-Es importante recordar que las cadenas de texto en C++ se almacenan como arrays de caracteres, por lo que al concatenar, se deben tener en cuenta los límites del array para evitar desbordamientos de búfer. Además, si se están concatenando grandes cantidades de cadenas, es aconsejable utilizar la clase `stringstream` que ofrece un mejor rendimiento.
+Además, hay que tener en cuenta que la concatenación de cadenas puede tener un gran impacto en la eficiencia y el rendimiento del código. Cuando se realizan múltiples concatenaciones en bucles o procesos, puede ser más eficiente utilizar un enfoque diferente, como el uso de un constructor de flujo de cadenas.
 
 ## Ver también
-
-- [Documentación de concatenación de cadenas en C++](https://www.cplusplus.com/reference/string/string/append/)
-- [Tutorial de C++: Aprende a concatenar cadenas de texto](https://www.programiz.com/cpp-programming/string-concatenation)
+- [Documentación oficial de C++ sobre la concatenación de cadenas] (https://es.cppreference.com/w/cpp/string/basic_string/operator%2B)
+- [Ejemplos de concatenación de cadenas en C++] (https://www.delftstack.com/es/howto/cpp/concatenate-strings-in-cpp/)

@@ -1,38 +1,40 @@
 ---
-title:    "PHP: Convertendo uma string para minúsculas"
+title:    "PHP: Convertendo uma string para letras minúsculas"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string em letras minúsculas?
+## Por que converter uma string para letras minúsculas?
 
-A conversão de uma string para letras minúsculas pode ser útil em várias situações, por exemplo, na validação de dados de entrada ou na padronização de informações em um banco de dados. Além disso, a maioria das funções de busca e comparação de strings no PHP consideram a diferença entre letras minúsculas e maiúsculas, então converter tudo para minúsculas pode facilitar essa tarefa.
+Existem diversas razões pelas quais um desenvolvedor PHP pode precisar converter uma string para letras minúsculas. Algumas delas incluem melhorar a legibilidade do código, garantir que o programa funcione corretamente ao lidar com diferentes entradas do usuário e facilitar a comparação de strings.
 
-## Como converter uma string em letras minúsculas
+## Como realizar a conversão em PHP
 
-Podemos usar a função `strtolower()` para converter uma string em letras minúsculas no PHP. Ela recebe como argumento a string a ser convertida e retorna uma nova string com todas as letras em minúsculo. Veja um exemplo abaixo:
-
-```PHP
-$texto = "Olá, Mundo!";
-echo strtolower($texto); // saída: "olá, mundo!"
-```
-
-Outra forma de realizar essa conversão é utilizando o operador de atribuição composto `.=` em conjunto com a função `strtolower()`. Dessa forma, podemos manter a mesma variável com o valor já convertido para minúsculas. Veja:
+Para converter uma string para letras minúsculas em PHP, podemos usar a função embutida `strtolower()`. Veja o exemplo abaixo:
 
 ```PHP
-$texto = "Olá, Mundo!";
-$texto .= strtolower($texto); // agora $texto tem o valor "olá, mundo!"
+<?php
+$string = "Olá MUNDO";
+echo strtolower($string);
 ```
 
-## Aprofundando na conversão de strings para minúsculas
+**Saída:** olá mundo
 
-É importante ter em mente que a função `strtolower()` no PHP considera as regras de conversão de caracteres da localidade do servidor em que o código está sendo executado. Por exemplo, ao executar esse código em um servidor com localidade em pt_BR, a string "Olá, Mundo!" será convertida para "olá, mundo!", já em um servidor com localidade em en_US, ela se tornará "olá, mundo!".
+É importante notar que essa função não altera a string original, mas retorna uma nova string em letras minúsculas.
 
-Além disso, essa função se aplica apenas à conversão de letras latinas, ou seja, caracteres como acentos e letras de outros alfabetos não serão convertidos para suas versões em minúsculas. Para isso, é necessário utilizar funções de conversão específicas para cada tipo de caractere.
+## Aprofundando na conversão de strings para letras minúsculas
+
+Quando se trata de converter strings para letras minúsculas em PHP, é importante ter em mente a codificação dos caracteres. Em algumas codificações, como UTF-8, existem caracteres que têm letras maiúsculas e minúsculas diferentes, e a conversão pode não funcionar corretamente.
+
+Para lidar com essa situação, é recomendável utilizar a função `mb_strtolower()` em vez da `strtolower()`, pois ela lida melhor com diferentes codificações.
+
+Outro fator importante é o idioma utilizado. Alguns idiomas têm regras específicas de conversão de letras maiúsculas para minúsculas, portanto, é sempre bom verificar a documentação do PHP para garantir que a função utilizada seja adequada para o idioma em questão.
 
 ## Veja também
 
-- [Documentação oficial do PHP sobre a função strtolower()](https://www.php.net/manual/pt_BR/function.strtolower.php)
-- [Exemplo prático de conversão de strings em minúsculas](https://www.php.net/manual/pt_BR/function.strtolower.php#exemplo-3883)
-- [Outras funções de conversão de strings no PHP](https://www.php.net/manual/pt_BR/ref.strings.php)
+- [Documentação oficial do PHP para a função strtolower()](https://www.php.net/manual/pt_BR/function.strtolower.php)
+- [Exemplos de uso da função strtolower()](https://www.php.net/manual/pt_BR/function.strtolower.php#example-5015)
+- [Documentação oficial do PHP para a função mb_strtolower()](https://www.php.net/manual/pt_BR/function.mb-strtolower.php)
+- [Exemplo de uso da função mb_strtolower() com codificação UTF-8](https://www.php.net/manual/pt_BR/function.mb-strtolower.php#example-5304)

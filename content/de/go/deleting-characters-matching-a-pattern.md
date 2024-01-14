@@ -1,17 +1,18 @@
 ---
-title:    "Go: Löschen von Zeichen, die einem Muster entsprechen"
+title:    "Go: Musterübereinstimmenden Zeichen löschen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann sinnvoll sein, um ungewollte Daten zu entfernen oder um eine bestimmte Formatierung zu erzielen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann eine einfache und effektive Möglichkeit sein, Daten zu bereinigen oder bestimmte Informationen aus einer Datei zu entfernen.
 
-## Wie?
+## Wie geht das?
 
-Um Zeichen in Go anhand eines Musters zu löschen, können wir die `strings` Bibliothek verwenden. Dazu müssen wir zunächst den String in ein Array von Runen konvertieren und dann durch das Array iterieren, um die Zeichen zu überprüfen. Wenn ein Zeichen dem Muster entspricht, können wir es aus dem Array löschen und den übrigen Teil wieder in einen String zurückkonvertieren.
+Um Zeichen gemäß einem Muster zu löschen, können wir die `strings.ReplaceAll()` Funktion in Go verwenden. Zum Beispiel können wir mit dem folgenden Code alle Vokale aus einem String entfernen:
 
 ```Go
 package main
@@ -22,36 +23,46 @@ import (
 )
 
 func main() {
-	s := "Hallo, Gophers!"
-	pattern := "o"
+	text := "Hallo, wie geht es dir?"
+	modifiedText := strings.ReplaceAll(text, "a", "")
+	modifiedText = strings.ReplaceAll(modifiedText, "e", "")
+	modifiedText = strings.ReplaceAll(modifiedText, "i", "")
+	modifiedText = strings.ReplaceAll(modifiedText, "o", "")
+	modifiedText = strings.ReplaceAll(modifiedText, "u", "")
 
-	// String in Array von Runen konvertieren
-	runes := []rune(s)
-	// Neue leere Variable für das neue Array erstellen
-	var newRunes []rune
-	
-	for _, r := range runes {
-		// Überprüfen, ob das Zeichen dem Muster entspricht
-		if string(r) == pattern {
-			// Überspringen, wenn das Zeichen dem Muster entspricht
-			continue
-		}
-		// Dem neuen Array das aktuelle Zeichen hinzufügen
-		newRunes = append(newRunes, r)
-	}
-	// Runen-Array wieder in einen String konvertieren
-	newString := string(newRunes)
-	
-	fmt.Println(newString) // Halle, Gphers!
+	fmt.Println(modifiedText)
 }
+
+// Output: Hll, wh gt s dr?
 ```
 
-## Deep Dive
+Wir können auch reguläre Ausdrücke verwenden, um ein bestimmtes Muster zu definieren. Im folgenden Beispiel entfernen wir alle Zahlen aus einem String:
 
-Dieser Ansatz funktioniert für einfache Muster, es kann jedoch komplexer werden, wenn das Muster mehrere Zeichen enthält oder auch Regex verwendet werden soll. In solchen Fällen ist es möglicherweise sinnvoll, die `regexp` Bibliothek zu verwenden. Diese bietet vielfältige Funktionen zum Finden und Ersetzen von Mustern in Strings.
+```Go
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	text := "Dies ist ein Text mit 123 Zahlen."
+	regex := regexp.MustCompile("[0-9]+")
+	modifiedText := regex.ReplaceAllString(text, "")
+
+	fmt.Println(modifiedText)
+}
+
+// Output: Dies ist ein Text mit Zahlen.
+```
+
+## Tiefer Einblick
+
+Das Löschen von Zeichen gemäß einem Muster kann sehr nützlich sein, wenn es darum geht, Daten zu bereinigen oder zu formatieren. Mit regulären Ausdrücken können wir sehr spezifische Muster definieren, um nur bestimmte Zeichen zu entfernen. Man könnte auch verschiedene Funktionen und Methoden von Go nutzen, um die Funktionalität noch weiter anzupassen. Das Löschen von Zeichen gemäß einem Muster ist eine effektive Methode, um Daten schnell und einfach zu manipulieren.
 
 ## Siehe auch
 
-- [Offizielle Go Dokumentation](https://golang.org/doc/)
-- [Gönn dir Go: Einfache Reguläre Ausdrücke in Go](https://medium.com/@deepakneo1122/g%C3%B6nn-dir-go-einfache-regul%C3%A4re-ausdr%C3%BCcke-in-go-f83f56d332f3)
-- [Eine Einführung in die Go regexp Bibliothek](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-de#comparing-text)
+- [Official Go documentation on strings.ReplaceAll()](https://golang.org/pkg/strings/#ReplaceAll)
+- [Regular expressions in Go](https://golang.org/pkg/regexp/)
+- [String manipulation in Go](https://go.dev/blog/strings)

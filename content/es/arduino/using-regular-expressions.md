@@ -1,71 +1,42 @@
 ---
 title:    "Arduino: Utilizando expresiones regulares"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué usar expresiones regulares en Arduino
-
-Si eres un programador de Arduino, es posible que hayas escuchado hablar sobre expresiones regulares. Pero, ¿qué son y por qué deberías usarlas en tus proyectos de Arduino? Las expresiones regulares son patrones de caracteres que se utilizan para buscar y manipular texto. Pueden ser muy útiles en muchos aspectos de la programación, y en Arduino, pueden ser especialmente útiles para validar entradas de usuario y manejar datos de sensores.
+## Por qué utilizar expresiones regulares en Arduino
+Las expresiones regulares son una herramienta muy útil para el manejo de texto en el lenguaje de programación de Arduino. Con ellas, puedes buscar y manipular patrones específicos de texto en tu código, ahorrando tiempo y simplificando la programación.
 
 ## Cómo utilizar expresiones regulares en Arduino
-
-Para utilizar expresiones regulares en tus proyectos de Arduino, primero debes incluir la librería "Regex", que se encuentra en la biblioteca estándar de Arduino. Luego, puedes utilizar la función regex() para crear un objeto regex y especificar el patrón que deseas buscar. Por ejemplo, si deseas validar una dirección de correo electrónico, podrías hacerlo de la siguiente manera:
-
-```Arduino
-#include <Regex.h>
-
-void setup() {
-    // Crear un objeto regex y especificar el patrón
-    Regex correo("\\w+@[a-zA-Z]+\\.[a-zA-Z]{2,3}");
-
-    // Validar una dirección de correo electrónico
-    if (correo.match("ejemplo@dominio.com")) {
-        Serial.println("Dirección de correo electrónico válida");
-    } else {
-        Serial.println("Dirección de correo electrónico inválida");
-    }
-}
-
-void loop() {
-
-}
-```
-
-En este ejemplo, utilizamos el patrón "\w+@[a-zA-Z]+\.[a-zA-Z]{2,3}" que coincide con una dirección de correo electrónico válida. Puedes cambiar este patrón para adaptarlo a tus necesidades. La función match() devuelve un valor booleano que indica si el patrón coincide con la cadena de entrada o no.
-
-También puedes utilizar expresiones regulares para manipular datos, por ejemplo, si deseas extraer solo los números de una cadena de entrada. En este caso, puedes utilizar la función extract() en lugar de match(). Por ejemplo:
+Para utilizar expresiones regulares en Arduino, primero debes importar la librería "Regex". Luego, puedes utilizar la función `match()` para buscar un patrón específico en una cadena de texto. Por ejemplo:
 
 ```Arduino
 #include <Regex.h>
 
-void setup() {
-    // Crear un objeto regex y especificar el patrón
-    Regex numeros("\\d+");
+String texto = "Hola, mi nombre es Juan y tengo 25 años";
+String patron = "([A-Z][a-z]+), tengo ([0-9]+) años";
+MatchState ms;
+ms.Target(texto);
 
-    // Extraer los números de la cadena
-    int num = numeros.extract("Hoy es 20 de enero y son las 9 de la mañana");
-
-    // Imprimir resultado
-    Serial.println(num);
-}
-
-void loop() {
-
+if(ms.Match(patron))
+{
+  for(int i = 0; i < ms.Groups; i++)
+  {
+    Serial.println(ms.GetCapture(texto, i));
+  }
 }
 ```
 
-En este caso, la función extract() devuelve el primer número que encuentra en la cadena de entrada. Puedes utilizar esta técnica para manipular y procesar datos de sensores en tus proyectos de Arduino.
+Este código buscará en la cadena de texto la palabra "Juan" seguida por un número, y si lo encuentra, imprimirá "Juan" y "25" en el monitor serial.
 
-## Más información sobre el uso de expresiones regulares
+## Profundizando en el uso de expresiones regulares
+Las expresiones regulares utilizan una sintaxis particular para definir patrones de texto. Por ejemplo, los corchetes `[ ]` se utilizan para definir un conjunto de caracteres posibles, mientras que el punto `.` representa cualquier carácter. Además, existen operadores como el asterisco `*` y el signo de más `+` que te permiten buscar más de un carácter en un patrón.
 
-Si quieres profundizar en el uso de expresiones regulares en Arduino, puedes consultar la documentación oficial de la librería y buscar tutoriales en línea. También puedes experimentar y practicar con diferentes patrones para ver cómo afectan los resultados.
+Puedes encontrar una lista completa de los operadores y la sintaxis utilizada en expresiones regulares en [este enlace](https://regexr.com/).
 
-¡Ahora que ya sabes cómo utilizar expresiones regulares en Arduino, es hora de aplicar esta técnica en tus proyectos y aprovechar al máximo sus ventajas!
-
-# Ver También
-
-- [Documentación oficial de la librería Regex de Arduino](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Tutorial de Regex en Arduino](https://howtomechatronics.com/tutorials/arduino/regular-expression-library-regex-usage-tutorial/)
-- [Ejemplos de expresiones regulares en Arduino](https://forum.arduino.cc/index.php?topic=328085.0)
+## Ver también
+- [Documentación oficial de la librería "Regex" en Arduino](https://arduino-regex.readthedocs.io/en/latest/index.html)
+- [Tutorial de introducción a expresiones regulares en Arduino](https://www.arduino.cc/reference/en/language/functions/regular-expressions/)
+- [Listado de operadores y sintaxis en expresiones regulares](https://regexr.com/)

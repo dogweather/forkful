@@ -1,41 +1,61 @@
 ---
 title:    "PHP: Scrivere su standard error"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Scrivere su Standard Error?
+## Perché
 
-Spesso, quando si programma in PHP, ci troviamo nella situazione in cui dobbiamo gestire eventuali errori o avvisi che possono verificarsi durante l'esecuzione del codice. In questi casi, scrivere su standard error può essere un'opzione utile per gestire tali situazioni in modo efficace.
+Scrivere sulla standard error è una tecnica vitale per il debugging e la gestione degli errori in PHP. Quando un errore si verifica, invece di interrompere completamente l'esecuzione dello script, scrivere sulla standard error consente di visualizzare l'errore senza interrompere il flusso.
 
-## Come Fare
+## Come fare
 
-Per scrivere su standard error in PHP, possiamo utilizzare la funzione nativa "fwrite", che ci permette di inviare un messaggio di testo al file di output di errore del server. Vediamo un esempio di codice:
+Per scrivere sulla standard error in PHP, basta utilizzare la funzione *error_log()*, specificando il messaggio di errore come primo argomento e il tipo di output come secondo argomento. Ad esempio:
 
 ```PHP
-<?php
-
-// Apre il file di output di errore in modalità "append", per aggiungere nuovi messaggi senza sovrascrivere quelli precedenti
-$fp = fopen('php://stderr', 'a');
-
-// Scrive il messaggio sulla console degli errori
-fwrite($fp, "Attenzione! Questo è un messaggio di errore.");
-
-// Chiude il file
-fclose($fp);
+$error_message = "Errore: file non trovato";
+error_log($error_message, 3);
 ```
 
-Il codice sopra ci permette di scrivere un messaggio di errore personalizzato sulla console degli errori, invece di visualizzarlo sulla pagina web. Questo è particolarmente utile quando vogliamo mantenere i nostri errori privati e non farli vedere agli utenti del sito.
+Il secondo argomento in questo esempio, *3*, indica che il messaggio di errore verrà scritto sulla standard error.
 
-## Deep Dive
+## Approfondimento
 
-La funzione "fwrite" accetta due parametri: il primo è il file di output su cui scrivere, mentre il secondo è il messaggio che vogliamo inviare. Per scrivere su standard error, utilizziamo "php://stderr" come file di output. 
+Se si desidera gestire gli errori in modo più avanzato, si può utilizzare la funzione *set_error_handler()* per definire una funzione personalizzata che gestirà tutti gli errori. In questo modo, è possibile specificare il tipo di output per ogni tipo di errore e scrivere messaggi personalizzati. Ad esempio:
 
-Inoltre, possiamo anche utilizzare questa tecnica per scrivere informazioni di debug o avvisi sul file di output di errori. Ciò ci permette di tenere traccia dei vari passaggi eseguiti dal codice durante l'esecuzione e di risolvere eventuali errori in modo più rapido e preciso.
+```PHP
+function custom_error_handler($errno, $errstr, $errfile, $errline, $errcontext) { 
+    switch ($errno) { 
+        case E_USER_ERROR: 
+            error_log("Errore critico: $errstr", 3); 
+            break; 
+        case E_USER_WARNING: 
+            error_log("Avviso: $errstr", 3); 
+            break; 
+        case E_USER_NOTICE: 
+            error_log("Notifica: $errstr", 3); 
+            break; 
+        default: 
+            error_log("Errore sconosciuto: $errstr", 3); 
+            break; 
+    } 
+} 
 
-## Vedi Anche
+set_error_handler("custom_error_handler");
 
-- [Documentazione ufficiale PHP su fwrite](https://www.php.net/manual/en/function.fwrite.php)
-- [Guida su come gestire gli errori in PHP](https://www.php.net/manual/en/book.errorfunc.php)
-- [Esempio di utilizzo di fwrite per scrivere su standard error](https://stackoverflow.com/questions/893011/how-to-write-to-standard-error-in-php)
+// Esempio di utilizzo 
+$file = "missing_file.php"; 
+if (!file_exists($file)) { 
+    trigger_error("File non trovato", E_USER_ERROR); 
+} 
+```
+
+In questo esempio, la funzione *custom_error_handler()* gestisce diversi tipi di errori e li scrive sulla standard error utilizzando la funzione *error_log()*.
+
+## Vedi anche
+
+- [PHP error_log function](https://www.php.net/manual/en/function.error-log.php)
+- [PHP set_error_handler function](https://www.php.net/manual/en/function.set-error-handler.php)
+- [PHP error types](https://www.php.net/manual/en/errorfunc.constants.php) (tipi di errore PHP)

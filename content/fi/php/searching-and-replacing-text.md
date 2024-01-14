@@ -1,38 +1,35 @@
 ---
-title:    "PHP: Etsiminen ja tekstin korvaaminen"
+title:    "PHP: Tekstin etsiminen ja korvaaminen"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi etsiminen ja korvaaminen on tärkeää PHP-ohjelmoinnissa?
 
-On monia syitä, miksi ohjelmoijat joutuvat tekemään laajoja tekstikorvauksia. Ehkä koodisi sisältää vanhentuneita funktioita tai haluat muuttaa nimiä johdonmukaisuuden vuoksi. Olipa syysi mikä tahansa, PHP tarjoaa tehokkaan työkalun tekstikorvausten tekemiseen.
+Tekstin etsiminen ja korvaaminen on tärkeä osa PHP-ohjelmointia, koska se säästää aikaa ja vaivaa käsiteltäessä suuria määriä tekstiä. Tämä toiminto auttaa myös varmistamaan, että tiettyä tekstiä esiintyy halutuissa kohdissa koodissa.
 
-## Miten
+## Kuinka etsiä ja korvata tekstiä PHP:ssa?
 
-Yksi tapa tehdä tekstikorvauksia PHP:ssa on käyttää str_replace-funktiota. Se ottaa kolme parametria: korvattava teksti, uusi teksti ja lähdeteksti. Alla on esimerkki, jossa korvaamme kaikki "hello"-sanat "hei"-sanalla:
+PHP:ssa on useita toimintoja, jotka mahdollistavat tekstin etsimisen ja korvaamisen. Yksi niistä on `str_replace()` -funktio, joka etsii ja korvaa tietyn merkkijonon toisella merkkijonolla. Esimerkiksi:
 
-```PHP
-$input = "Hello, world!";
-$output = str_replace("hello", "hei", $input);
-echo $output; // Tulostaa "Hei, world!"
+```php
+$text = "Tervetuloa maailmaan, PHP!";
+$new_text = str_replace("maailmaan", "koodaukseen", $text);
+echo $new_text;
 ```
 
-Voit myös käyttää regex-säännöllisiä lausekkeita tekstikorvauksissa. Alla oleva esimerkki korvaa kaikki numerot tekstistä tyhjällä merkillä:
+Tämä tulostaa "Tervetuloa koodaukseen, PHP!". Jos haluat korvata vain ensimmäisen esiintymän, voit käyttää `str_replace_first()` -funktiota. Voit myös käyttää `str_ireplace()` -funktiota, joka etsii ja korvaa tekstiä välittämättä kirjainkoosta.
 
-```PHP
-$input = "Hello 123!";
-$output = preg_replace("/[0-9]/", "", $input);
-echo $output; // Tulostaa "Hello !"
-```
+## Syvemmälle tekstin etsimiseen ja korvaamiseen PHP:ssa
 
-## Syvemmälle
+PHP:ssa on myös muita toimintoja, jotka mahdollistavat tekstin etsimisen ja korvaamisen, kuten `preg_replace()` -funktio, joka käyttää säännöllisiä lausekkeita löytääkseen ja korvatakseen tekstin. Tämä toiminto on erittäin hyödyllinen monimutkaisempien tekstipalasten etsimiseen ja korvaamiseen.
 
-Jos työskentelet paljon tekstin kanssa, saatat joutua vaihtamaan kaikki esiintymät tietyllä rivillä tai tietyn päivämäärän välillä. Tämä voidaan helposti tehdä foreach-silmukan avulla yhdistettynä edellä mainittuihin tekstikorvausmenetelmiin. On myös muita PHP:n sisäisiä funktioita, kuten preg_match, jotka voivat auttaa sinua löytämään ja korvaamaan tiettyjä tekstejä.
+Voit myös käyttää `str_replace()` -funktiota yhdessä `foreach` -silmukan kanssa käsitelläksesi useita tekstin paloja kerralla. Tämä on hyödyllistä esimerkiksi käyttäjän syötteiden validoinnissa tai tietokannasta haetun datan käsittelyssä.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio tekstikorvauksista](https://www.php.net/manual/en/function.str-replace.php)
-- [Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Codecademy:n interaktiiviset ohjelmointikurssit](https://www.codecademy.com/learn/learn-php)
+- [PHP:n virallinen manuaali tekstien etsimisestä ja korvaamisesta](https://www.php.net/manual/en/function.str-replace.php)
+- [Aloittelijaystävällinen opas PHP:seen](https://dev.to/koderockinen/the-beginners-guide-to-php-3eoi)
+- [Yleisimmät PHP:n säännölliset lausekkeet](https://www.php.net/manual/en/function.preg-replace.php) (englanniksi)

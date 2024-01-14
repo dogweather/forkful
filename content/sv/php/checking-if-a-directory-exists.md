@@ -1,33 +1,37 @@
 ---
 title:    "PHP: Kontrollera om en mapp finns"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kontrollera om en mapp existerar är en vanlig uppgift i PHP-programmering. Det är viktigt att kunna verifiera att en mapp finns innan man försöker arbeta med dess innehåll, t.ex. för att undvika felmeddelanden eller felaktiga operationer.
 
-## Hur man gör det
-För att kontrollera om en mapp existerar i PHP använder man sig av `is_dir()` funktionen. Nedan finns ett exempel på hur man kan använda den:
+Att kontrollera om en mapp existerar är en vanlig uppgift för många PHP-utvecklare. Det kan vara till nytta när man till exempel behöver lägga till filer i en specifik mapp eller för att se om ett installationssteg har implementerats korrekt. Oavsett anledning är det viktigt att veta hur man enkelt kan utföra denna uppgift i PHP.
+
+## Hur man
+
+För att kontrollera om en mapp existerar i PHP används funktionen `file_exists()`. Den här funktionen tar en sökväg som argument och returnerar `true` om sökvägen existerar och `false` om den inte gör det.
 
 ```PHP
-$path = "/path/to/directory";
-
-if (is_dir($path)) {
-    echo "$path existerar!";
+if (file_exists("/mapp/exempel")) {
+    echo "Mappen existerar";
 } else {
-    echo "$path existerar inte!";
+    echo "Mappen existerar inte";
 }
 ```
 
-Om mappen existerar så kommer "existerar!" att skrivas ut, annars kommer "existerar inte!" att skrivas ut.
+Om mappen existerar kommer "Mappen existerar" att skrivas ut i konsolen, annars kommer "Mappen existerar inte" att skrivas ut.
 
-## Djupdykning
-För att förstå hur `is_dir()` funktionen fungerar, är det viktigt att veta att den jämför angiven sökväg med det aktuella filsystemet. Om sökvägen inte börjar med ett `/` kommer funktionen att använda sig av det aktuella arbetsmappet för att bygga den fullständiga sökvägen.
+## Deep Dive
 
-En annan viktig punkt är att `is_dir()` returnerar True även om sökvägen pekar på en symbolisk länk till en mapp. För att kontrollera om sökvägen pekar på en faktisk mapp, kan man använda sig av `is_link()` funktionen först och därefter kontrollera om sökvägen pekar på en mapp.
+För att förstå hur `file_exists()`-funktionen fungerar djupare kan vi titta på dess returvärde. Om det returnerade värdet är `true` betyder det att sökvägen finns och PHP-programmet kan fortsätta att exekvera. Om det returnerade värdet är `false` innebär det att sökvägen inte finns och att speciella åtgärder kan behövas för att hantera detta.
 
-## Se även
-- [PHP manual för is_dir()](https://www.php.net/manual/en/function.is-dir.php)
-- [PHP manual för is_link()](https://www.php.net/manual/en/function.is-link.php)
+Det är också viktigt att notera att `file_exists()`-funktionen inte bara fungerar för mappar, utan kan även användas för att kontrollera om en fil existerar.
+
+## Se också
+
+- [PHP filsystemfunktioner](https://www.php.net/manual/en/ref.filesystem.php)
+- [Kontrollera om en fil existerar i PHP](https://www.domainit.com/help/topic/052/how-to-check-if-a-file-exists-in-php/)
+- [Hitta mappens sökväg i PHP](https://stackoverflow.com/questions/45792601/how-can-i-get-path-of-my-directory-in-php)

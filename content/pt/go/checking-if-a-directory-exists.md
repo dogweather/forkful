@@ -1,17 +1,18 @@
 ---
 title:    "Go: Verificando se um diretório existe"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que verificar se um diretório existe: 
 
-Verificar se um diretório existe é uma tarefa comum na programação Go e pode ser útil para garantir que seu código funcione corretamente. Isso também pode facilitar o gerenciamento de arquivos e diretórios no seu sistema.
+Uma parte importante da programação é garantir que seu código seja eficiente e capaz de lidar com diferentes situações. Uma dessas situações é verificar se um diretório existe antes de executar uma operação em cima dele. Isso pode ser especialmente útil em casos onde um programa precisa acessar um arquivo ou diretório específico no sistema do usuário.
 
-## Como fazer isso:
+## Como fazer:
 
-Verificar se um diretório existe em Go é bastante simples. Você pode usar a função `os.Stat()`, que retorna um `os.FileInfo` com informações sobre o arquivo ou diretório, incluindo se ele existe ou não. Veja um exemplo de código abaixo:
+Para verificar se um diretório existe em Go, podemos usar a função `Exists()` da biblioteca padrão `os`. Essa função verifica se um caminho (path) existe e retorna um valor booleano, indicando se é um diretório válido ou não.
 
 ```Go
 package main
@@ -22,29 +23,56 @@ import (
 )
 
 func main() {
-    dir := "/Users/joao/diretorio"
-    _, err := os.Stat(dir)
-    // Se o diretório existe, err será nulo
-    if err == nil {
-        fmt.Println("O diretório existe!")
+    dir := "/home/usuario/arquivos"
+    
+    exists := Exists(dir)
+    
+    if exists {
+        fmt.Println("O diretório", dir, "existe!")
     } else {
-        fmt.Println("O diretório não existe!")
+        fmt.Println("O diretório", dir, "não existe.")
+    }
+}
+
+func Exists(path string) bool {
+    _, err := os.Stat(path)
+    return !os.IsNotExist(err)
+}
+```
+
+O código acima mostra um exemplo simples de como utilizar a função `Exists()` para verificar se um diretório existe em um determinado caminho. O resultado do programa será impresso na tela, informando se o diretório existe ou não.
+
+## Aprofundando-se no assunto:
+
+Para um entendimento mais profundo sobre a função `Exists()` e o processo de verificar se um diretório existe em Go, é importante entender como essa função funciona. A primeira linha dentro da função `Exists()` usa a função `Stat()` da biblioteca `os` para obter informações sobre o caminho especificado. Se o caminho não existir, a função `Stat()` retornará um erro, que pode ser checado pela função `IsNotExist()` da biblioteca `os`, que retorna um valor booleano indicando se o caminho não existe.
+
+Caso queira verificar se um diretório existe sem precisar criar uma função separada, também é possível usar a função `os.Stat()` diretamente no código, como mostrado abaixo:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    dir := "/home/usuario/arquivos"
+    
+    _, err := os.Stat(dir)
+    
+    if err == nil {
+        fmt.Println("O diretório", dir, "existe!")
+    } else {
+        fmt.Println("O diretório", dir, "não existe.")
     }
 }
 ```
 
-Se o diretório existir, a saída do programa será "O diretório existe!". Caso contrário, será "O diretório não existe!".
-
-## Profundidade na verificação de diretórios
-
-Existem outras funções em Go que você pode usar para verificar se um diretório existe, como `os.IsNotExist()`, `os.IsExist()` e `os.MkdirAll()`. Além disso, você também pode usar essas funções para criar um diretório se ele não existir.
-
-Além disso, você pode usar a função `filepath` para lidar com caminhos de diretório e arquivo de forma mais eficiente.
-
-Com as funções e métodos certos, verificar se um diretório existe pode facilitar o seu trabalho com arquivos e diretórios no Go.
+Essa é uma forma mais simplificada de utilizar a função `os.Stat()` para verificar a existência de um diretório.
 
 ## Veja também:
 
-- [Tutorial: Trabalhando com arquivos e diretórios em Go](https://golang.org/pkg/os/)
-- [Documentação oficial do pacote "os" em Go](https://golang.org/pkg/os/)
-- [Guia de referência para manipulação de arquivo no Go](https://www.calhoun.io/working-with-files-in-go/)
+- [Documentação oficial do pacote `os` em Go](https://golang.org/pkg/os/)
+- [Tutorial: Como criar e verificar diretórios com Go](https://dev.to/dephraiim/how-to-create-and-check-if-directory-exists-on-local-system-with-packageos-golang-1a0g)
+- [Exemplos de uso da função `Exists()`](https://golangcode.com/check-if-a-file-exists/)

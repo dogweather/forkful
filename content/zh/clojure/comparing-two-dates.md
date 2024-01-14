@@ -1,64 +1,59 @@
 ---
 title:    "Clojure: 比较两个日期"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：比较两个日期在编程中是一个很常见的需求，它可以帮助我们处理时间和日期相关的问题，例如计算年龄，计算两个事件之间的时间间隔等等。
+# 为什么要比较两个日期
 
-## 怎么做
+比较两个日期是编程中经常会遇到的问题，它可以帮助我们判断时间先后顺序，做出相应的逻辑处理。比如在开发一个日程管理应用时，我们就需要比较日期来确定某个事件是在今天、明天还是过去的日期。在Clojure中有很多方法可以比较日期，接下来我们就来看一下如何实现。
 
-比较两个日期可以通过使用Clojure标准库中的`clj-time`库来实现。首先，我们需要在项目中导入这个库，可以通过在项目的`project.clj`文件中添加以下依赖来引入它：
+## 如何比较日期
 
-```Clojure
-[clj-time "0.14.3"]
-```
-
-接下来，我们可以使用`clj-time.core`命名空间中的`between`函数来比较两个日期。这个函数需要两个参数，分别是待比较的两个日期对象，它会返回一个`clj-time.interval`对象，表示这两个日期之间的时间间隔。例如，我们想要比较今天和昨天的日期差，可以使用以下代码：
+我们可以使用Clojure的`<`, `<=`, `>`, `>=`等比较运算符来比较两个日期。
 
 ```Clojure
-(require '[clj-time.core :as time])
+(def today (java.util.Date.)) ;; 获取当前日期
+(def tomorrow (java.util.Date. (DateTime/plusDays 1))) ;; 获取明天的日期
 
-(def today (time/today))
-(def yesterday (time/minus today (time/days 1)))
+;; 判断日期是否相等
+(= today tomorrow) ;; false
 
-(time/between today yesterday)
+;; 判断日期是否小于
+(< today tomorrow) ;; true
+
+;; 判断日期是否大于等于
+(>= tomorrow today) ;; true
 ```
 
-以上代码会输出一个`clj-time.interval`对象，其中包含有关这两个日期之间的时间间隔的信息。比如，在我的电脑上，执行以上代码的输出为：
-
-```
-#<Interval [2019-11-30T16:00:00.000Z, 2019-12-01T16:00:00.000Z]>
-```
-
-我们还可以通过调用`in-units`函数来指定所需的时间单位，并以数字的形式获取时间间隔的值。例如，我们想要获得上面例子中今天和昨天的日期差的小时数，可以使用以下代码：
+我们也可以使用Clojure提供的`clj-time`库来更方便地比较日期。该库已经被Clojure社区广泛使用，并且提供了许多实用的日期操作函数。
 
 ```Clojure
-(time/in-units (time/between today yesterday) :hours)
+(require '[clj-time.core :as t])
+
+(def today (t/today)) ;; 获取当前日期
+(def tomorrow (t/tomorrow)) ;; 获取明天的日期
+
+;; 判断日期是否相等
+(t/equal? today tomorrow) ;; false
+
+;; 判断日期是否小于
+(t/before? today tomorrow) ;; true
+
+;; 判断日期是否大于等于
+(t/after? tomorrow today) ;; true
 ```
 
-以上代码会输出`24`，表示今天和昨天的日期差为24小时。
+## 深入了解比较两个日期
 
-## 深入讨论
+在Clojure中，日期被表示为`java.util.Date`类型的对象。这些对象是可变的，因此我们在比较日期时需要注意，避免修改原始日期对象。另外，Clojure并不直接支持日期的加减运算，我们需要通过`clj-time`库中的函数来实现。
 
-在Clojure中比较两个日期的另一种常用方法是使用`clj-time.core`命名空间中的`after?`或`before?`函数。这两个函数都接受两个日期对象作为参数，并返回一个布尔值，表示第一个日期是否在第二个日期之后或之前。比如，我们想要判断某个日期是否在当前日期之后，可以使用以下代码：
+此外，Clojure还提供了另一个日期处理库`java-time`，它被认为是`java.util.Date`的替代品，提供了更多功能和更符合现代标准的API。因此，在进行日期比较时，我们也可以考虑使用`java-time`库来替代`java.util.Date`。
 
-```Clojure
-(require '[clj-time.core :as time])
+## 参考链接
 
-(def today (time/today))
-(def target-date (time/date-time 2020 1 1))
-
-(time/after? target-date today)
-```
-
-以上代码会输出`true`，因为`target-date`是今天之后的日期。
-
-除了`clj-time`库外，Clojure中还有其他一些处理日期和时间的有用工具，例如`java.time`库和`chrono`库。如果你对这些工具感兴趣，可以通过以下链接了解更多信息。
-
-# 查看更多
-
+- [Clojure官方文档](https://clojure.org/)
 - [clj-time库文档](https://github.com/clj-time/clj-time)
-- [java.time库文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [chrono库文档](https://github.com/dakrone/chrono)
+- [java-time库文档](https://github.com/jsa-aerial/java-time)

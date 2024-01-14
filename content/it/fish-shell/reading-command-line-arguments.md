@@ -1,65 +1,38 @@
 ---
 title:    "Fish Shell: Lettura degli argomenti della riga di comando"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molti programmatori potrebbero chiedersi perché dovrebbero imparare a leggere gli argomenti della riga di comando. La verità è che utilizzare la riga di comando è fondamentale per l'efficienza dei processi di programmazione e può aiutare a creare script e programmi più potenti e flessibili.
+Se sei nuovo alla programmazione di Fish Shell o sei semplicemente interessato a imparare di più su come funzionano gli argomenti della riga di comando, questo post è perfetto per te. Scoprirai quanto sia utile e conveniente leggere gli argomenti della riga di comando nei tuoi script.
 
-## Come fare
+## Come Fare
 
-Ci sono diverse opzioni per leggere gli argomenti della riga di comando utilizzando il Fish Shell. Vediamo alcuni esempi di codice e le relative output utilizzando i blocchi di codice "```Fish Shell ... ```".
+Per leggere gli argomenti della riga di comando in Fish Shell, è sufficiente utilizzare il comando "set" e la variabile speciale "$argv", che contiene una lista di tutte le stringhe passate come argomenti. Ecco un esempio di codice:
 
-```Fish Shell
-set options (getopt -l --long somma,"S=some-option"
-)
-for i in $options
-    switch $i
-    case '--somma' switch $next
-        case "1" echo "E' stato inserito il numero 1"
-        case "2" echo "E' stato inserito il numero 2"
-        case "*"
-            echo "Errore: L'opzione somma richiede uno dei seguenti argomenti: 1, 2"
-            exit 1
-        end
-end
+```
+Fish Shell
+
+set arg_1 $argv[1]
+echo "Il primo argomento è $arg_1"
 ```
 
-Output:
-```
-E' stato inserito il numero 1
-```
+Se ad esempio eseguiamo lo script con il comando "fish script.sh ciao", l'output sarà "Il primo argomento è ciao". Come puoi vedere, il comando "set" è stato utilizzato per assegnare la prima stringa dell'array "$argv" alla variabile "arg_1" e poi è stata stampata la stringa con l'uso di una variabile.
 
-Questo esempio utilizza la funzione `getopt` per leggere gli argomenti della riga di comando e la condizione `switch` per gestire le diverse possibili opzioni.
+## Approfondimento
 
-```Fish Shell
-set option (argparse --description "Questo è un esempio di lettura di argomenti" -r somma:"Inserisci un numero:"  sum)
-switch $option
-    case "sum" echo "La somma è $sum"
-    case "*" echo "Errore: Non è stato inserito il valore della somma"
-end
-```
+Esistono molti altri modi per leggere e utilizzare gli argomenti della riga di comando in Fish Shell. Ad esempio, è possibile utilizzare il comando "count" per contare il numero di argomenti passati o il comando "string" per formattare e manipolare le stringhe degli argomenti.
 
-Output:
-```
-La somma è 10
-```
+Inoltre, è importante notare che gli argomenti della riga di comando possono essere utilizzati non solo per eseguire operazioni all'interno del tuo script, ma anche per passare informazioni dinamiche all'utente o per creare uno script più flessibile e adattabile.
 
-In questo secondo esempio, viene utilizzata la funzione `argparse` per definire l'opzione `somma` e il valore che deve essere inserito dall'utente. Il valore viene poi ottenuto utilizzando la variabile `$sum` all'interno della condizione `switch`.
+## Vedi Anche
 
-## Approfondimenti
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sull'utilizzo degli argomenti della riga di comando in Fish Shell](https://medium.com/@danilova2105/command-line-arguments-in-fish-shell-18758c07cae4)
+- [Altro esempio di lettura degli argomenti della riga di comando in Fish Shell](https://www.linode.com/docs/guides/command-line-arguments-in-fish-shell/)
 
-Oltre agli esempi forniti, ci sono altri metodi e funzioni che possono essere utilizzati per leggere gli argomenti della riga di comando utilizzando il Fish Shell. Alcune di queste sono:
-
-- `contains`: funzione che permette di verificare se una variabile contiene un valore specifico
-- `$*`: variabile che contiene tutti gli argomenti passati dalla riga di comando
-- `status`: variabile che contiene lo status code ritornato dal comando precedente
-
-Per ulteriori informazioni e dettagli su come utilizzare queste e altre funzioni per leggere gli argomenti della riga di comando, consiglio di consultare la documentazione ufficiale del Fish Shell.
-
-## Vedi anche
-
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/
+Grazie per aver letto questo post. Speriamo che ti sia stato utile e che tu possa utilizzare questa conoscenza per aumentare la tua produttività e migliorare i tuoi script con Fish Shell. Continua a esplorare e a divertirti con questo potente strumento!

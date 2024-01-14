@@ -1,41 +1,40 @@
 ---
 title:    "Elm recipe: Deleting characters matching a pattern"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-When working with strings in programming, it is often necessary to manipulate them to fit a certain format or pattern. This could involve removing certain characters, such as numbers or symbols, from a string. In the case of Elm programming, knowing how to delete characters matching a pattern can come in handy when dealing with user input or formatting data before sending it to an API.
+Deleting characters from a string may seem like a simple task, but what if you only want to delete characters that match a specific pattern? Whether you're trying to clean up user input or parse through a large dataset, being able to delete characters matching a pattern can be a useful skill to have in your Elm programming arsenal.
 
 ## How To
+To delete characters matching a pattern in Elm, we can use the `String.replace` function. This function takes in two arguments: the pattern to be replaced and the replacement string. Take a look at the following example:
 
-To delete characters matching a pattern in Elm, we can use the `replace` function from the `String` library. This function takes in the pattern we want to match and replace, as well as the new replacement string. Let's take a look at an example below:
+```elm
+import String exposing (replace)
 
-```Elm
-import String
-
-originalString = "Hey $John! You have $100 in your account."
-
-formattedString = String.replace "$" "" originalString 
-
+replace "a" "" "apple" -- result: "pple"
 ```
 
-In this example, we are removing the dollar sign from the original string and saving the formatted string in a new variable. The output of `formattedString` would be:
+In this example, we are replacing all occurrences of the letter "a" with an empty string, effectively deleting it from the original string.
 
-```
-Hey John! You have 100 in your account.
+We can also use regular expressions as our pattern, giving us even more control over which characters we want to delete. For example, if we want to delete all non-numerical characters from a phone number, we could use the following code:
+
+```elm
+import Regex exposing (replace)
+
+replace (Regex.regex "[^0-9]") "" "(123) 456-7890" -- result: "1234567890"
 ```
 
-Note that the `replace` function also supports using regular expressions as the pattern to match.
+The above code uses a regular expression to match all non-numerical characters (denoted by `[^0-9]`) and replaces them with an empty string, leaving us with a clean phone number.
 
 ## Deep Dive
+Behind the scenes, the `String.replace` function uses the `replace` function from the `Regex` module. Regular expressions are powerful tools for matching and manipulating patterns in strings, and Elm's `Regex` module provides a variety of functions for working with them.
 
-Behind the scenes, the `replace` function uses a powerful concept called functional programming. This means that rather than modifying the original string, a new string is created with the desired replacements. This helps with keeping the program code clean and reduces the chances of unexpected bugs.
-
-Moreover, the `replace` function is a part of the `String` library, which provides many other useful functions for string manipulation in Elm. Taking the time to explore and familiarize yourself with this library can greatly improve your ability to handle strings in your Elm programs.
+Some other useful functions from the `Regex` module for deleting characters matching a pattern include `replaceAll` which replaces all occurrences of a pattern with a replacement string, and `replaceFirst` which only replaces the first occurrence of the pattern.
 
 ## See Also
-
-- Elm String Library: https://package.elm-lang.org/packages/elm/core/latest/String
+- `String` module documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- `Regex` module documentation: https://package.elm-lang.org/packages/elm/regex/latest/Regex

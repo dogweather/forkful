@@ -1,51 +1,54 @@
 ---
-title:    "Ruby: Generando números aleatorios"
+title:    "Ruby: Generación de números aleatorios"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué: Generar números aleatorios en Ruby
+## Por qué
 
-La generación de números aleatorios es una técnica importante en la programación de Ruby y se utiliza para simular resultados aleatorios en juegos, sorteos, entre otros. También es útil para crear datos de prueba y mejorar la seguridad en la generación de contraseñas y tokens de autenticación. En este artículo, exploraremos cómo generar números aleatorios en Ruby y por qué es importante para los programadores.
+Generar números aleatorios es una técnica esencial para cualquier programador de Ruby. Puede ser utilizado en una variedad de aplicaciones, como juegos, pruebas de software y algoritmos de aprendizaje automático.
 
-## Cómo hacerlo: Ejemplos de código y resultados
+## Cómo hacerlo
 
-Generar números aleatorios en Ruby es muy sencillo gracias a la clase `Random` incorporada en el lenguaje. Veamos algunos ejemplos de cómo podemos utilizarla:
+La forma más sencilla de generar números aleatorios en Ruby es utilizando el método `rand`. Este método puede tomar una número opcional como límite superior, y devolverá un número aleatorio entre 0 y ese límite. Por ejemplo:
 
-```
-# Generar un número aleatorio entre 1 y 10
-Random.rand(1..10)
-# => 7
-
-# Generar un número aleatorio entre 100 y 200
-Random.rand(100..200)
-# => 193
-
-# Generar un número aleatorio entre 0 y 1
-Random.rand()
-# => 0.8146721521668552
+```Ruby
+rand(10)
+# output: 5
 ```
 
-Podemos también utilizar el método `seed` para establecer una semilla para generar los números aleatorios. De esta manera, si utilizamos la misma semilla, obtendremos los mismos números aleatorios cada vez que ejecutemos el programa. Esto puede ser útil para fines de prueba o para reproducir resultados en ciertas situaciones.
+También se pueden utilizar rangos para especificar un límite inferior y superior para generar un número aleatorio. Por ejemplo:
 
-```
-# Establecer una semilla para generar el mismo número aleatorio
-srand(1234)
-Random.rand()
-# => 0.19151945037978274
+```Ruby
+rand(1..100)
+# output: 67
 ```
 
-## Profundizando: Más información sobre la generación de números aleatorios
+Otra forma de generar números aleatorios es utilizando el método `randf`, que devuelve un número decimal entre 0 y 1. Este método puede ser útil para ciertas aplicaciones que requieren precisión decimal. Por ejemplo:
 
-Aunque Ruby hace que la generación de números aleatorios sea muy sencilla, es importante tener en cuenta que estos números no son completamente aleatorios. En realidad, se generan a partir de una fórmula matemática conocida como generador de números pseudoaleatorios. Esto significa que los números no son verdaderamente aleatorios y pueden ser reproducidos con la misma semilla.
+```Ruby
+randf
+# output: 0.754309815596807
+```
 
-Además, si no se establece una semilla, Ruby utilizará una semilla predeterminada basada en el tiempo actual del sistema. Esto puede ser un problema de seguridad, ya que un atacante puede potencialmente predecir los números aleatorios en ciertas situaciones.
+## Profundizando
 
-Para mejorar la seguridad en la generación de números aleatorios, se recomienda utilizar la gema `SecureRandom` en lugar de la clase `Random`. Esta gema utiliza un generador de números aleatorios criptográficamente seguro y asegura que los números sean más impredecibles y adecuados para su uso en situaciones sensibles.
+La generación de números aleatorios en Ruby se basa en un algoritmo de generación de números pseudoaleatorios. Esto significa que los números no son realmente aleatorios, sino que se generan a través de una fórmula matemática que utiliza un número inicial llamado "semilla". Si se utiliza la misma semilla, se obtendrá el mismo conjunto de números "aleatorios" cada vez.
+
+Es importante tener en cuenta que el método `rand` utiliza como semilla el reloj del sistema, por lo que aunque se ejecuten dos llamadas al método en un corto periodo de tiempo, se obtendrán diferentes resultados. Sin embargo, si se quiere obtener números verdaderamente aleatorios, se puede establecer una semilla manualmente utilizando el método `srand` antes de llamar a `rand`. Por ejemplo:
+
+```Ruby
+srand 12345
+rand(10)
+# output: 7
+rand(10)
+# output: 4
+```
 
 ## Ver también
 
-- [Documentación de la clase `Random`](http://ruby-doc.org/core-2.6/Random.html)
-- [Documentación de la gema `SecureRandom`](https://ruby-doc.org/stdlib-2.6/libdoc/securerandom/rdoc/SecureRandom.html)
-- [Artículo sobre generación de números aleatorios en Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/securerandom/rdoc/SecureRandom.html)
+- [RubyDoc: rand](https://ruby-doc.org/core-2.7.2/Random.html#method-i-rand)
+- [RubyDoc: srand](https://ruby-doc.org/core-2.7.2/Random.html#method-i-srand)
+- [RubyMonk: Random Numbers](https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-arrays/lessons/49-random-numbers)

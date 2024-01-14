@@ -1,52 +1,47 @@
 ---
 title:    "Bash: 创建临时文件"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要用Bash编程？
+为什么：为什么要创建临时文件？创建临时文件可以在程序运行过程中存储临时数据，以避免数据混乱或重复使用之前的数据。
 
-Bash是一种流行的编程语言，特别适合于系统管理和自动化任务。使用Bash编程可以帮助我们更有效地管理和处理文件，其中包括创建临时文件。临时文件可以帮助我们临时存储数据或执行一些中间操作，最终让我们的代码更加高效。
-
-## 如何创建临时文件
-
-在Bash中，我们可以使用`mktemp`命令来创建临时文件。下面是一个简单的例子：
+怎么做：创建临时文件的最基本方法是使用`mktemp`命令。例如，在终端输入以下命令：
 
 ```Bash
-#!/bin/bash
-
-# 创建名为tmpfile的临时文件
-tmpfile=$(mktemp)
-
-# 向临时文件中写入一些内容
-echo "这是一个临时文件" > $tmpfile
-
-# 打印临时文件的内容
-cat $tmpfile
-
-# 删除临时文件
-rm $tmpfile
+mktemp -d
 ```
 
-运行上面的代码，你会看到输出为“这是一个临时文件”。需要注意的是，临时文件将会在脚本执行完毕后自动被删除。
+这将在当前目录中创建一个临时目录，并返回临时目录的路径。您也可以指定文件名或后缀来自定义临时文件名，如下所示：
 
-## 深入了解临时文件的创建
+```Bash
+mktemp my_temp_file.XXX
+```
 
-当我们使用`mktemp`命令创建临时文件时，它会在临时目录中生成一个唯一的文件名，并将此文件名作为输出。这样做的好处是，即使在多个进程同时创建临时文件时，也不会出现命名冲突的情况。
+这将创建一个名为`my_temp_file.XXX`的文件。 可以使用`-p`参数来指定临时文件的目录，如下所示：
 
-我们也可以通过`-d`选项来创建临时目录，例如`tmpdir=$(mktemp -d)`。同样地，临时目录也会在脚本执行完毕后自动删除。
+```Bash
+mktemp -p /home/user/my_temp_dir my_temp_file.XXX
+```
 
-## 参考链接
+深入探讨：在Linux系统中，临时文件通常存储在`/tmp`或`/var/tmp`目录中。这些文件夹通常在系统启动时自动清理，但也可以手动清理以释放磁盘空间。创建临时文件时，可以使用`TMPDIR`环境变量来指定存储临时文件的目录。临时文件默认权限为`0600`，这意味着只有创建临时文件的用户可以访问它们。如果想让其他用户也能够访问临时文件，可以使用`umask`命令来更改文件的默认权限。
 
-* [Bash官方文档](https://www.gnu.org/software/bash/)
-* [Linux命令教程 - mktemp](https://www.runoob.com/linux/linux-comm-mktemp.html)
-* [Bash脚本教程](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+此外，可以使用`trap`命令来捕获程序退出时的错误，以防止临时文件污染系统。在创建临时文件后，使用`trap`命令来删除该临时文件，如下所示：
 
-## 参见
+```Bash
+trap "rm -f $TMPFILE" EXIT
+```
 
-[创建临时文件 - 维基百科](https://zh.wikipedia.org/wiki/%E7%9B%AE%E5%BD%95)
+这样，在程序退出之后，临时文件将自动被删除。
 
-[临时文件 - 百度百科](https://baike.baidu.com/item/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/2555177?fr=aladdin)
+另外，尽量避免在临时文件命名中使用随机数生成器，以防止被恶意创建大量临时文件，从而导致系统崩溃。
 
-[如何使用Bash编写脚本 - 极客学院](https://www.jikexueyuan.com/course/874.html)
+相关阅读：如果想要深入了解Bash编程，可以参考以下链接：
+
+- Bash文档：https://www.gnu.org/software/bash/manual/
+- BashGuide：https://mywiki.wooledge.org/BashGuide/
+- Bash中文站：https://andyhky.github.io/bashTutorial/
+- Shell脚本教程（含Bash）：https://wangdoc.com/bash/
+- Shell菜鸟教程：https://www.runoob.com/linux/linux-shell.html

@@ -1,35 +1,49 @@
 ---
-title:    "Kotlin: 文字列の大文字化"
+title:    "Kotlin: 文字列の先頭を大文字にする"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列の大文字化を行う理由は、飽くまでプログラミングのスキルを向上させるためです。正確には、文字列の処理や操作をより効率的に行うためには、文字列の大文字化という基本的な機能を理解する必要があります。
+
+文字列を大文字化する理由は、よく見るテキストフォーマットの一つです。例えば、タイトルや見出しのスタイルを整えるために使用されます。Kotlinで文字列を大文字化する方法を学ぶことで、より効率的にコーディングできるようになります。
 
 ## 方法
-次のように `toUpperCase()` メソッドを使用することで、文字列を簡単に大文字化することができます。
+
+文字列を大文字化するには、KotlinのStringクラスの「uppercase」メソッドを使用します。以下のコードを参考にしてください。
 
 ```Kotlin
-val str = "Hello, World!"
-val strNew = str.toUpperCase()
-println(strNew)
+// 文字列を定義
+var str = "hello world"
+
+// 大文字化する
+str = str.uppercase()
+
+// 出力結果
+println(str) // "HELLO WORLD"
 ```
 
-出力：
-`HELLO, WORLD!`
+このように、変数に格納された文字列を大文字化するには、文字列に対して「uppercase」メソッドを呼び出して、その結果を再度変数に格納します。その後、出力することで大文字化された文字列を確認することができます。
 
-`toUpperCase()` メソッドは、元の文字列を変更せずに新しい大文字化された文字列を返すことに注意してください。
+## ディープダイブ
 
-## 深堀り
-文字列の大文字化には、さまざまな方法があります。例えば、ASCII文字列の場合、文字の値を変更して大文字化を行う方法があります。また、正規表現を使用して特定の文字列パターンを検索し、それを大文字化することもできます。さらに、Kotlinの `toUpperCase()` メソッドは、標準のUnicode変換を使用するため、多言語対応が可能です。
+実際のKotlinソースコードを見ると、「uppercase」メソッドはStringクラス内で次のように定義されています。
 
-## 関連記事
-- [Kotlinドキュメンテーション](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-- [ASCIIコードを使用した文字列の大文字化方法](https://www.geeksforgeeks.org/convert-string-uppercase/)
-- [正規表現を使用した文字列パターンの検索と大文字化](https://www.guru99.com/string-regex.html)
+```Kotlin
+fun String.uppercase(): String {
+    val locale = Locale.getDefault()
+    return this.toUpperCase(locale)
+}
+```
 
-## 他に見る
-- [Kotlinの文字列操作方法](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
-- [標準のUnicode変換について](https://en.wikipedia.org/wiki/Unicode_equivalence)
+ここで使用されている「Locale.getDefault()」は、端末の設定に基づいてデフォルトの言語および国を取得するメソッドです。これにより、文字列を言語に応じて大文字化することが可能になります。
+
+また、Kotlinでは「uppercase」メソッドの他にも、文字列を大文字化するための別の方法が用意されています。例えば、「toUpperCase(Locale.ENGLISH)」を使用することで英語の文字列を大文字化することができます。
+
+## See Also
+
+- [Kotlin String Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin Locale Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-locale/index.html)
+- [Java Doc for toUpperCase() Method](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())

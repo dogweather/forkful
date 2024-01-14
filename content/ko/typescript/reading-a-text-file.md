@@ -1,39 +1,59 @@
 ---
 title:    "TypeScript: 텍스트 파일 읽기"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-텍스트 파일을 읽는 방법은 많지만, 타입스크립트로 이를 처리하는 것은 다른 언어들보다 매우 손쉽고 효율적입니다.
 
-## 방법
-먼저, 타입스크립트로 파일을 읽기 위해서는 `fs` 모듈을 `import` 해와야 합니다.
+텍스트 파일을 읽는 데 참여하는 이유를 몇 가지 살펴보겠습니다. TypeScript를 사용하여 이 기술을 습득하면 텍스트 파일을 쉽게 읽고 처리할 수 있습니다.
 
-```typescript 
-import * as fs from 'fs';
+## 해야 할 일
+
+이 섹션에서는 TypeScript를 사용하여 텍스트 파일을 읽는 방법에 대해 알아보겠습니다. 우선, fs 모듈을 사용하여 텍스트 파일을 읽어오는 법을 살펴보겠습니다.
+
+```
+TypeScript
+import { readFileSync } from 'fs';
+
+// 파일을 읽어서 버퍼로 저장
+const buffer = readFileSync('파일명.txt');
+
+// 버퍼를 문자열로 변환
+const data = buffer.toString();
+
+console.log(data); // 파일의 내용이 출력됨
 ```
 
-다음으로, `readFile()` 메소드를 이용하여 읽을 파일의 경로와 인코딩 타입을 전달합니다.
+위의 코드를 실행하면 파일의 내용이 출력됩니다. 이제 이를 배열로 변환하여 한 줄씩 읽어올 수 있습니다.
 
-```typescript
-fs.readFile('/path/to/file.txt', 'utf8', (err, data) => {
-    if (err) {
-        console.log(err); // 에러 메시지 출력
-    }
-    console.log(data); // 파일 내용 출력
+```
+TypeScript
+const lines = data.split('\n'); // 각 줄을 배열로 나눔
+lines.forEach((line) => console.log(line)); // 각 줄을 출력
+```
+
+또 다른 방법으로는 readline 모듈을 사용하여 한 줄씩 읽어오는 방법이 있습니다.
+
+```
+TypeScript
+import { createInterface } from 'readline';
+
+const readLine = createInterface({
+  input: createReadStream('파일명.txt'),
 });
+
+readLine.on('line', (line) => console.log(line)); // 각 줄을 출력
 ```
 
-위의 예제 코드에서 `data`는 읽어들인 파일의 내용을 담고 있습니다. 이를 원하는 대로 가공하고 활용할 수 있습니다.
+## 깊이 들어가기
 
-## 깊게 들어가보기
-`readFile()` 이외에도 `readFileSync()`와 같은 동기적인 메소드도 있지만, 일반적으로 비동기적인 방식을 더 자주 사용합니다. 또한 `fs` 모듈 이외에도 `stream` 모듈을 이용하여 더 큰 파일도 효율적으로 처리할 수 있습니다.
-
-## 더 알아보기
-[ko.javascript.info/textfiles](https://ko.javascript.info/textfiles)  
-[developer.mozilla.org/ko/docs/Web/API/File/Using_files_from_web_applications](https://developer.mozilla.org/ko/docs/Web/API/File/Using_files_from_web_applications)
+텍스트 파일을 읽는 것은 단순해 보일 수 있지만, 실제로는 매우 중요한 작업입니다. 텍스트 파일을 읽어와서 데이터를 분석하고 가공하여 유용한 정보를 추출할 수 있습니다. 텍스트 파일을 읽는 것은 많은 언어에서 공통적인 작업이지만, TypeScript의 경우에는 타입 지정을 통해 더 안정적이고 안전하게 데이터를 처리할 수 있습니다.
 
 ## 참고
-[타입스크립트 핸드북 - fs 모듈](https://typescript-kr.github.io/pages/Node.js%20Project.html#typescript-fs-%EB%AA%A8%EB%93%88)
+
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs)
+- [fs 모듈 레퍼런스](https://nodejs.org/docs/latest-v12.x/api/fs.html)
+- [readline 모듈 레퍼런스](https://nodejs.org/api/readline.html)

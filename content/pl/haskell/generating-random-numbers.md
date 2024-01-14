@@ -1,50 +1,39 @@
 ---
-title:    "Haskell: Generowanie liczb losowych"
+title:    "Haskell: Generowanie losowych liczb"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Generowanie losowych liczb jest nieodłączną częścią wielu programów w języku Haskell. To ważne narzędzie, które pozwala na tworzenie różnorodnych i złożonych aplikacji, takich jak gry, symulacje czy algorytmy optymalizacyjne.
+Generowanie losowych liczb jest powszechnym zadaniem w wielu programach i systemach komputerowych. Jest to przydatne w zadaniach takich jak symulacje, testowanie i tworzenie gier. W Haskellu istnieje wiele sposobów na generowanie losowych liczb, co czyni go idealnym językiem do tego celu.
 
 ## Jak to zrobić
-
-Aby wygenerować losową liczbę w Haskellu, używamy funkcji `random` z modułu `System.Random`. Przykładowy kod wygląda następująco:
-
+Generowanie losowych liczb w Haskellu jest możliwe dzięki wbudowanej bibliotece `Random`. W celu użycia tej biblioteki, musimy ją zaimportować:
 ```Haskell
 import System.Random
-
-main = do
-  x <- randomRIO (1, 10)   -- wygeneruje liczbę całkowitą w przedziale od 1 do 10
-  print x                   -- wyświetli wylosowaną liczbę
 ```
-
-Wywołanie funkcji `randomRIO` zwraca wartość typu `IO a`, dlatego musimy skorzystać z komendy `do` oraz operatora `<-`, aby odzyskać wylosowaną liczbę. Następnie możemy wyświetlić ją na ekranie przy użyciu funkcji `print`.
-
-Innym sposobem na wygenerowanie losowej liczby jest użycie funkcji `random`, która zwraca wartość typu `StdGen -> (a, StdGen)`. Przykładowy kod wykorzystujący tę funkcję wygląda tak:
-
+Następnie możemy użyć funkcji `randomR` do wygenerowania jednej losowej liczby z podanego zakresu, na przykład od 1 do 10:
 ```Haskell
-import System.Random
-
-main = do
-  gen <- newStdGen            -- tworzy nowy generator liczb losowych
-  let (x, newGen) = random gen :: (Int, StdGen)  -- wygeneruje losową liczbę typu Int
-  print x                     -- wyświetli wylosowaną liczbę
+randomR (1,10) :: IO Int
 ```
+Możemy również wygenerować listę losowych liczb za pomocą funkcji `randomRs`. Na przykład, jeśli chcemy wygenerować listę pięciu losowych liczb z przedziału od 1 do 100, możemy to zrobić w ten sposób:
+```Haskell
+randomRs (1,100) 5 :: IO [Int]
+```
+Warto również wspomnieć, że funkcje z biblioteki `Random` korzystają z generatora pseudolosowego typu `StdGen`, dlatego musimy go najpierw zainicjalizować za pomocą funkcji `mkStdGen`. Na przykład:
+```Haskell
+let gen = mkStdGen 42
+```
+To pozwoli nam na generowanie tych samych losowych liczb za każdym razem, gdy użyjemy funkcji z biblioteki `Random` z tym samym generatorem.
 
-W obydwu przypadkach wartością możemy zwrócić inne typy danych, zmieniając je odpowiednio w definicjach funkcji. Więcej informacji na ten temat znajdziesz w sekcji "Głębsze zanurzenie".
+## Głębszy zanurzenie
+Podczas generowania losowych liczb w Haskellu należy pamiętać, że wyniki zawsze są deterministyczne, co oznacza, że przy użyciu tych samych parametrów i generatora, otrzymamy zawsze takie same wyniki. Co więcej, niektóre funkcje generujące losowe liczby w Haskellu mogą działać nieco inaczej, na przykład funkcja `random` generuje liczby za pomocą rozkładu normalnego, podczas gdy `randomR` używa równomiernego rozkładu.
 
-## Głębsze zanurzenie
+Istnieją również inne sposoby generowania losowych liczb w Haskellu, takie jak użycie biblioteki `MonadRandom` lub wykorzystanie funkcji `randomIO` z modułu `System.Random`. Możesz eksperymentować z różnymi sposobami i znaleźć ten, który najlepiej pasuje do Twojego projektu.
 
-Generowanie losowych liczb w Haskellu odbywa się za pomocą generatora liczb losowych, który jest przechowywany w pamięci programu. Stan tego generatora jest modyfikowany przy użyciu funkcji `random`.
-
-Jeśli chcemy kontrolować stan generatora, możemy użyć funkcji `newStdGen`, która tworzy nowy generator i zwraca go wraz z nowym stanem. Ponadto, możemy wykorzystać funkcję `mkStdGen`, aby utworzyć generator o określonym stanie.
-
-W języku Haskell istnieje cały zbiór funkcji do generowania różnego rodzaju wartości losowych, takich jak liczby całkowite, liczby zmiennoprzecinkowe, wartości logiczne czy listy. Pełną listę funkcji znajdziesz w dokumentacji modułu `System.Random` oraz w linkach poniżej.
-
-## Zobacz także
-
-- Dokumentacja modułu `System.Random`: https://hackage.haskell.org/package/random/docs/System-Random.html
-- Przykładowe zadania z użyciem generatorów liczb losowych w Haskellu: https://wiki.haskell.org/Random,_State_and_Continuations
+## Zobacz również
+- [Dokumentacja biblioteki Random w Haskellu](https://hackage.haskell.org/package/random)
+- [Blog Haskell School of Music - Losowość](https://haskellformusicians.com/2013/08/randomness/) 
+- [Oficjalna strona języka Haskell](https://www.haskell.org/)

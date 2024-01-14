@@ -1,43 +1,60 @@
 ---
-title:    "Arduino: Konwertowanie daty na łańcuch znaków"
+title:    "Arduino: Konwersja daty na ciąg znaków"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto konwertować datę na łańcuch znaków?
 
-Konwersja daty na ciąg znaków jest niezbędna w wielu projektach Arduino, które wymagają wyświetlania aktualnej daty lub zapisywania jej do pliku. Jest to także przydatne w przypadku tworzenia dzienników lub rejestrów zdarzeń, gdzie dokładna data jest istotnym elementem.
+Konwersja daty na łańcuch znaków jest ważna dla wielu projektów Arduino, gdzie potrzebujemy wyświetlić aktualną datę lub czas. Dzięki temu można stworzyć bardziej interaktywne i przydatne urządzenia IoT.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Konwersja daty na ciąg znaków w Arduino jest dość prostym procesem. Wystarczy zastosować kilka funkcji dostępnych w bibliotece "Time", która jest zwykle używana do zarządzania czasem w Arduino.
+Konwersja daty na łańcuch znaków w Arduino może być łatwo wykonana przy użyciu funkcji `sprintf()`. Najpierw musimy zdefiniować zmienną typu `struct tm` przechowującą aktualną datę i czas, a następnie użyć funkcji `sprintf()` do przekonwertowania jej na łańcuch znaków.
 
 ```Arduino
-#include <Time.h>
+#include <TimeLib.h> //biblioteka Time
+#include <stdio.h> //na potrzeby funkcji sprintf()
 
-// Pobierz aktualny czas
-time_t currentTime = now();
+void setup() {
+  //ustawiamy połączenie z monitorem szeregowym
+  Serial.begin(9600);
+  
+  //definiujemy strukturę przechowującą datę i czas
+  struct tm currentTime;
+  
+  //ustawiamy aktualną datę
+  currentTime.tm_year = 2019;
+  currentTime.tm_mon = 7;
+  currentTime.tm_mday = 19;
+  
+  //ustawiamy aktualny czas
+  currentTime.tm_hour = 12;
+  currentTime.tm_min = 30;
+  currentTime.tm_sec = 0;
+  
+  //przekonwertowanie daty i czasu na łańcuch znaków
+  char dateString[30];
+  sprintf(dateString, "%d/%d/%d %d:%d:%d", currentTime.tm_year,currentTime.tm_mon, currentTime.tm_mday, currentTime.tm_hour, currentTime.tm_min, currentTime.tm_sec);
+  
+  //wyświetlamy łańcuch znaków w monitorze szeregowym
+  Serial.print(dateString);
+}
 
-// Konwertuj czas na ciąg znaków w formacie "DD/MM/YYYY"
-String dateString = day(currentTime) + "/" + month(currentTime) + "/" + year(currentTime);
-
-// Wyświetl skonwertowaną datę
-Serial.println(dateString);
+void loop() {
+  //puste pętle
+}
 ```
 
-Przykładowy output:
-```
-21/09/2021
-```
+Po wgraniu powyższego kodu na płytkę Arduino, w monitorze szeregowym powinna pojawić się skonwertowana data w formacie `YYYY/MM/DD HH:MM:SS`.
 
-## Głębszy zanurzenie się w temat
+# Głębszy zanurzenie
 
-Zanim rozpoczniesz konwertowanie daty na ciąg znaków w Arduino, musisz upewnić się, że masz ustawiony poprawny czas w module RTC lub wewnętrznych zegarach mikrokontrolera. Jeśli sposób pobierania czasu jest konfigurowalny, będziesz musiał dostosować odpowiednio funkcje konwertujące datę, aby wyświetlały poprawne wartości.
+Podstawową strukturą do przechowywania daty i czasu w Arduino jest `struct tm`, która posiada wiele innych użytecznych pól, takich jak dzień tygodnia czy numer dnia w roku. Warto zapoznać się z dokumentacją biblioteki Time w celu wykorzystania wszystkich możliwości konwersji daty i czasu.
 
-Kolejnym ważnym sposobem konwersji daty jest wykorzystanie funkcji "sprintf", która pozwala zapisywać sformatowane dane do ciągu znaków. Może to znacznie ułatwić manipulację danymi i dostosowywanie wyświetlanego formatu daty.
+# Zobacz także
 
-## Zobacz także
-
-- Dokumentacja biblioteki Time: https://github.com/PaulStoffregen/Time
-- Przewodnik po konwersji typów zmiennych w Arduino: https://www.arduino.cc/reference/pl/language/variables/conversion/
+- [Dokumentacja biblioteki Time](https://www.arduino.cc/en/Tutorial/time)
+- [Przykładowy projekt wykorzystujący konwersję daty i czasu](https://create.arduino.cc/projecthub/elektropepper/display-the-date-and-time-with-arduino-c99617)

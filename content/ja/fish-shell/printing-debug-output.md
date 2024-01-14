@@ -1,51 +1,38 @@
 ---
-title:    "Fish Shell: デバッグ出力を印刷する"
+title:    "Fish Shell: デバッグ出力の印刷"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-デバッグ出力を表示することの利点は、コードの実行中に何が起こっているかを視覚的に理解できることです。
+デバッグを行うためには、コードの実行中に発生する問題を特定する必要があります。デバッグ出力を印刷することは、そのプロセスを容易にするために不可欠です。
 
-## 方法
-
-デバッグ出力を表示するには、以下のように `echo` コマンドを使用します：
+## デバッグ出力の印刷方法
 
 ```Fish Shell
-echo メッセージ
-```
-
-または、変数を使用することもできます：
-
-```Fish Shell
-set message "エラーが発生しました"
-echo $message
-```
-
-## 深堀り
-
-デバッグ出力を使用することで、特定のコードブロックや条件分岐が実行されるかどうかを確認できます。また、出力の内容を変更することで、変数の値やデバッグメッセージを表示することもできます。
-
-例えば、以下のように `if` 文を使用して、特定の変数の値が条件に合致する場合にのみデバッグメッセージを表示することができます：
-
-```Fish Shell
-set count 5
-if test $count -eq 5
-    set message "countの値は5です"
-    echo $message
+function debug_output
+    echo "デバッグ出力" #デバッグ出力を印刷
 end
 ```
 
-このように、デバッグ出力を使用することで、コードの実行中に起こっていることを確認し、問題を特定することができます。
+デバッグ出力を印刷するには、"echo"コマンドを使用します。上記の例では、"デバッグ出力"というメッセージが印刷されます。また、任意の変数をデバッグ出力に含めることもできます。
 
-## おわりに
+```Fish Shell
+function debug_output
+    set message "これはデバッグ出力です" #デバッグメッセージを変数に設定
+    echo $message #変数を使用してデバッグ出力を印刷
+end
+```
 
-デバッグ出力は、コードの実行中に何が起こっているかを視覚的に理解するために役立つツールです。コードのデバッグや問題の特定に役立つので、ぜひ活用してみてください。
+## デバッグ出力の深い調査
 
-## 関連リンク
+デバッグ出力を印刷することは、単純なエラーの特定だけでなく、コードの複雑な部分を理解するのにも役立ちます。デバッグ出力を使用することで、コード内の変数の値や特定の関数の実行の仕方を確認することができます。さらに、デバッグ出力を使用することで、コードの動作を視覚的に確認することもできます。
 
-- [Fish Shell 公式サイト](https://fishshell.com/)
-- [Fish Shell ドキュメンテーション](https://fishshell.com/docs/current/)
-- [Fish Shell チュートリアル](https://fishshell.com/docs/current/tutorial.html)
+## 参考
+
+[Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+[Debugging with Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_debugging)
+[Debugging Your Code in Fish Shell](https://fishshell.com/docs/current/commands.html#print)

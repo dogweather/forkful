@@ -1,60 +1,58 @@
 ---
-title:    "Swift: Zapisywanie ciągu znaków"
+title:    "Swift: Zapisywanie ciągu wielkimi literami"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Cześć programistów! Dzisiaj przyjrzymy się funkcji, która może wydawać się jedną z tych prostych i niepozornych, a jednak jest niezwykle przydatna w naszych projektach - chodzi o funkcję pochodzącą z biblioteki Foundation, która umożliwia nam kapitalizowanie stringów. Ale czemu w ogóle chcielibyśmy capitalizować stringi i jak to zrobić?
+Kapitalizacja tekstu jest powszechnie stosowaną funkcją w programowaniu, szczególnie podczas pracy z tekstem użytkownika. Jest to sposób na upewnienie się, że tekst będzie wyglądał estetycznie i czytelnie. Może również być wymagane w niektórych przypadkach, np. podczas generowania raportów lub wyświetlania danych w tabeli. W tym artykule dowiecie się, jak prosto zastosować kapitalizację tekstu w języku Swift.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Kapitalizacja stringa odnosi się do zmiany pierwszej litery w danym stringu na wielką literę. Jest to przydatne w wielu sytuacjach, na przykład gdy chcemy poprawić estetykę wyświetlanych danych lub gdy musimy dopasować stringi do określonych wymagań. Aby tego dokonać, wystarczy wywołać metodę "capitalized" na danym stringu. Spróbujmy:
-
-```Swift
-let greeting = "cześć"
-print(greeting.capitalized)
-```
-
-To wydrukuje "Cześć" na konsoli. Proste, prawda? Ale co jeśli chcemy kapitalizować więcej niż jedno słowo?
+Jednym z najprostszych sposobów na kapitalizację tekstu jest użycie wbudowanej metody `capitalized` dla typu `String`. Spójrzmy na przykład poniżej:
 
 ```Swift
-let phrase = "witaj w Swiftcie"
-print(phrase.capitalized)
+let word = "programowanie"
+print(word.capitalized)
 ```
+Output: "Programowanie"
 
-W tym przypadku metoda "capitalized" kapitalizuje każde słowo w stringu, więc wynik będzie wyglądał tak: "Witaj W Swiftcie". Ale co w przypadku stringów, które zawierają już wyrazy z dużymi literami - czy nie będzie problemu z kapitalizacją? Nie martw się, funkcja "capitalized" jest inteligentna i nie zmieni wyrazów, które są zapisane z dużymi literami. Sprawdź:
+Jak widać, metoda ta prostym sposobem zmienia pierwszą literę w słowie na wielką, a pozostałe litery na małe.
+
+Możliwe jest również wykorzystanie metody `capitalized` w połączeniu z pętlą for, aby dokonać kapitalizacji dla każdego wyrazu w zdaniu. Przykład poniżej:
 
 ```Swift
-let sentence = "lUBIĘ pOGRAMOWAĆ w sWIftcie"
-print(sentence.capitalized)
+let sentence = "w tym zdaniu każde słowo będzie zaczynać się wielką literą"
+var capitalizedSentence = ""
+for word in sentence.components(separatedBy: " ") {
+    if !capitalizedSentence.isEmpty {
+        capitalizedSentence += " "
+    }
+    capitalizedSentence += word.capitalized
+}
+print(capitalizedSentence)
 ```
+Output: "W Tym Zdaniu Każde Słowo Będzie Zaczynać Się Wielką Literą"
 
-Wynik? "Lubię Programować W Swiftcie". I znów, proste i szybkie!
+## Deep Dive
 
-## Sekretne mechanizmy
-
-Warto pamiętać, że funkcja "capitalized" nie tylko zmienia pierwszą literę na dużą, ale także zamienia resztę stringa na małe litery. Ale co jeśli chcemy zachować pierwotny stan litery w innych miejscach w stringu? Wtedy możemy użyć metody "capitalizingFirstLetter" lub "capitalizingWords". Pierwsza z nich zachowa wielką literę na początku stringa, a druga będzie zachowywać wielką literę na początku każdego słowa, nawet jeśli już była zapisana małą literą. Przetestujmy to w praktyce:
+W języku Swift istnieje również możliwość bardziej zaawansowanej kapitalizacji tekstu, np. z użyciem innych języków lub reguł interpunkcyjnych. Do tego celu możemy wykorzystać metodę `capitalized(with:)`, która przyjmuje jako argument obiekt klasy `Locale`. Przykład użycia:
 
 ```Swift
-let example = "swIft jeST Fajny!"
-print(example.capitalizingFirstLetter)
-print(example.capitalizingWords)
+let word = "majątek"
+print(word.capitalized(with: Locale(identifier: "pl_PL")))
 ```
+Output: "Majątek"
 
-Output: "SwIft jest fajny!" i "Swift Jest Fajny!".
+W tym przypadku, metoda `capitalized` nie wystarczyłaby do prawidłowego wyświetlenia polskiego słowa z dużej litery. Dzięki wykorzystaniu klasy `Locale` i przekazaniu jej identyfikatora języka, możemy zapewnić poprawne kapitalizowanie dla danego języka.
 
-I jeszcze jedna ważna uwaga - wszystkie te metody zwracają nowy string, więc musimy przypisać ich wynik do nowej stałej lub zmiennej. Jeśli chcielibyśmy zmienić oryginalny string, musimy użyć metody "capitalize" z dużej litery.
+## Zobacz Również
 
-## Zobacz również
+- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial: Manipulowanie tekstem w języku Swift](https://www.raywenderlich.com/166113/manipulating-text-swift-3)
+- [Różne metody kapitalizacji tekstu w języku Swift](https://geekytheory.com/como-pasando-texto-a-mayusculas-o-minusculas-en-swift)
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak manipulować stringami w języku Swift, polecamy następujące źródła: 
-
-1. [Oficjalna dokumentacja biblioteki Foundation](https://developer.apple.com/documentation/foundation/nsstring/1414087-capitalized)
-2. [Artykuł na temat String Operations w Swift](https://www.hackingwithswift.com/articles/181/how-to-capitalize-the-first-letter-of-a-string)
-3. [Podstawowe operacje na stringach](https://medium.com/ios-os-x-development/basic-string-operations-in-swift-string-regular-expression-3a5fd262ee27)
-4. [Krótki film z tutorialami na temat stringów w Swift](https://learnappmaking.com/using-swifts-strings-how-to/)
-
-Dziękujemy za przeczytanie nas
+Dzięki tym prostym metodom, kapitalizacja tekstu w języku Swift staje się łatwym i przydatnym narzędziem w pracy z tekstem. Mam nadzieję, że ten artykuł pomógł Wam w zrozumieniu tej funkcji. Do zobaczenia w kolejnym wpisie!

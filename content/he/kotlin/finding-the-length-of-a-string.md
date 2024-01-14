@@ -1,40 +1,55 @@
 ---
-title:    "Kotlin: מציאת אורך של מחרוזת"
+title:    "Kotlin: חיפוש אורך של מחרוזת"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה:
 
-למה לחפש את אורך המחרוזת? בשפת קוד החדשה והמתקדמת של Kotlin, מחרוזות הן אחת המתאפיינות הנפוצות והחשובות ביותר. בדרך כלל נבצע עליהם פעולות רבות, לכן חשוב לדעת את אורךן על מנת להתאים את הקוד לצרכים המדוייקים שלנו.
+למה לשחק בחיפוש אורך של מחרוזת?
 
-# כיצד לעשות זאת
+מחרוזות הן חלק בלתי נפרד מהתכנות בכל שפת תכנות. במקרה שלנו, אנו רוצים לדעת את אורך המחרוזת כדי לבצע פעולות אחרות עליה, לדוגמה לחתוך חתיכת מחרוזת מסוימת או לבדוק אם המחרוזת מכילה מילה ספציפית. לכן, היכולת למצוא את אורך המחרוזת היא יכולת חשובה לתכנן ולהתפתח כמתכנת.
 
-בשפת Kotlin ישנן מספר דרכים שונות למציאת אורך המחרוזת. הנה כמה דוגמאות נפוצות:
+## איך לעשות זאת:
 
-```kotlin
-// מחרוזת רגילה
-val str= "שלום"
-println(str.length) // תוצאה יהיה 4
+הנה דוגמא פשוטה בשפת קוטלין למציאת אורך מחרוזת:
 
-// מחרוזת מכילה רווחים ותווים מיוחדים
-val str2= "Hello, world!"
-println(str2.length) // תוצאה תהיה 13 כולל גם את הרווחים והסימנים המיוחדים
+```Kotlin
+// מחרוזת לדוגמה
+val string = "שלום עולם!" 
 
-// מחרוזת מורכבת
-val str3= "😊 💻 📚"
-println(str3.length) // תוצאה תהיה 3, גם כאן נכללים את כל התווים המיוחדים
+// מציאת אורך המחרוזת והדפסתו
+println("אורך המחרוזת הוא ${string.length}") 
+
+// פלט:
+// אורך המחרוזת הוא 9
 ```
 
-לכולם תהיה תוצאה שונה בהתאם למרכיבי המחרוזת שונים שלהם.
+בקוד הזה, אנו משתמשים בפונקציה `length` המובנית במחלקת מחרוזות של קוטלין כדי למצוא את אורך המחרוזת. אנו גם משתמשים בתווים רב שמשמשים כדי לייצג את המחרוזת בשפה העברית.
 
-# חקירה עמוקה
+כאן עוד דוגמא בשילוב עם לולאת `for` לחישוב אורך של מילים במשפט:
 
-איך הקוד עובד בדיוק כדי למצוא את אורך המחרוזת? בפנים, הפונקציה length מחזירה את המספר הכללי של התווים במחרוזת, כולל תווים מיוחדים ורווחים. מהווה היתרון של השימוש בפונקציה זו שהיא עובדת עבור כל סוגי המחרוזות ולא רק נקודתיים או גדולים.
+```Kotlin
+// משפט לדוגמה
+val sentence = "אני אוהב לתכנת בקוטלין"
 
-# ראה גם
+// מפרקים את המשפט למערך של מילים
+val words = sentence.split(" ") 
 
-- [מדריכי Kotlin בעברית](https://kotlin-il.com/)
-- [ספריית הלימוד הרשמית של Kotlin] (https://kotlinlang.org/docs/home.html)
-- [פורום הדיון הרשמי של Kotlin] (https://discuss.kotlinlang.org/)
+var count = 0
+
+// עבור כל מילה במערך, מוסיפים אחת למונה
+for (word in words){
+    count++
+}
+
+// מציאת כמות המילים במשפט והדפסת התוצאה
+println("כמות המילים במשפט הוא $count מילים.") 
+
+// פלט:
+// כמות המילים במשפט הוא 5 מילים.
+```
+
+בדוגמא זו, אנו משתמשים בפונקציה `split` כדי לפרק את המשפט למערך של מילים, ואז בעזרת הל

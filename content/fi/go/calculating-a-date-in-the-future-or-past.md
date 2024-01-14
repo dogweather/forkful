@@ -1,44 +1,72 @@
 ---
-title:    "Go: Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:    "Go: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Usein ohjelmoinnissa joudutaan laskemaan tulevaisuuden tai menneisyyden päivämääriä. Tähän voi olla monia syitä, kuten esimerkiksi laskut ja aikataulutukset.
+Usein ohjelmoinnissa on tarpeen laskea päiviä tulevaan tai menneeseen ajankohtaan. Tämä voi olla hyödyllistä esimerkiksi tapahtumien tai projektien suunnittelussa.
 
-# Miten
+## Kuinka laskea päivämäärä tulevaisuudessa tai menneisyydessä?
 
-Go-ohjelmointikielessä tämä on suhteellisen helppoa ja kätevää. Alla näet yksinkertaisen esimerkin siitä, kuinka voit laskea päivämäärän tietyn määrän päiviä tulevaisuuteen tai menneisyyteen.
+Tässä blogipostauksessa opit kuinka käyttää Go-ohjelmointikieltä päivämäärien laskemiseen tulevaisuuteen tai menneisyyteen.
 
-```
-func calculateDate(days int) time.Time {
-    return time.Now().AddDate(0, 0, days)
-}
+#### Laske päivä tulevaisuudessa
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-    futureDate := calculateDate(30)
-    pastDate := calculateDate(-14)
-
-    fmt.Println(futureDate)
-    fmt.Println(pastDate)
+	var lisays int = 45 //lisättävä määrä päiviä
+	n := time.Now()
+	tulevaPaiva := n.AddDate(0, 0, lisays) //lasketaan tuleva päivä
+	fmt.Println(tulevaPaiva.Format("02-01-2006")) //tulostetaan päivämäärä halutussa formaatissa
 }
 ```
 
-Tämä koodi laskee tulevaisuuden päivämäärän, joka on 30 päivää nykyhetkestä, sekä menneisyyden päivämäärän, joka on 14 päivää nykyhetkestä taaksepäin. Alla näet tämän koodin tulosteen.
-
+Tulostus:
 ```
-2021-08-04 17:27:52.332369 +0300 EEST m=+0.000103719
-2021-07-17 17:27:52.332369 +0300 EEST m=+0.000103719
+13-12-2021
 ```
 
-# Syvällisempi sukellus
+#### Laske päivä menneisyydessä
 
-Tässä esimerkissä käytetty `AddDate` -metodi laskee päivämäärän tietyn määrän vuosia, kuukausia ja päiviä nykyhetkestä eteen- tai taaksepäin. Voit myös käyttää muita aikavälin laskentaan tarkoitettuja metodeja, kuten `Add`, `Sub` ja `Round`, joiden avulla voit tehdä monimutkaisempia laskelmia päivämäärien kanssa.
+```Go
+package main
 
-# Katso myös
+import (
+	"fmt"
+	"time"
+)
 
-- [Go:n aika- ja päivämäärälaskenta](https://golang.org/pkg/time/)
-- [Online-kurssi: "Understanding time in Go"](https://www.pluralsight.com/courses/go-understanding-time)
+func main() {
+	var vahennys int = 30 //vähennettävä määrä päiviä
+	n := time.Now()
+	menneisyys := n.AddDate(0, 0, -vahennys) //lasketaan menneinen päivä
+	fmt.Println(menneisyys.Format("2006-01-02")) //tulostetaan päivämäärä halutussa formaatissa
+}
+```
+
+Tulostus:
+```
+2021-10-17
+```
+
+## Syvemmälle aiheeseen
+
+Tässä esimerkeissä käytimme Go:n aikafunktioita. `Now()`-funktio palauttaa nykyhetken ajan, ja `AddDate()`-funktio mahdollistaa päivien lisäämisen tai vähentämisen.
+
+Huomioi myös, että esimerkeissä päivämäärien tulostusformaattina käytettiin `Format()`-funktiota, jolla voit määrittää päivämäärän tulostusmuodon haluamallasi tavalla.
+
+## Katso myös
+
+- https://golang.org/pkg/time/#Time.AddDate
+- https://golang.org/pkg/time/#Time.Format

@@ -1,43 +1,65 @@
 ---
 title:    "Kotlin: Skrive tester"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av å skrive god og pålitelig kode. Tester hjelper til med å oppdage eventuelle feil eller bugs i koden tidligere, noe som gjør det enklere og raskere å fikse dem. Testdrevet utvikling (TDD) er også en populær og anbefalt tilnærming til å skrive kode, og det krever at man skriver tester før man skriver selve koden.
+Å skrive tester er en viktig del av programmering i Kotlin. Tester hjelper deg med å sikre at koden din fungerer som den skal, og reduserer risikoen for feil i produksjon. Det kan også hjelpe deg med å finne og løse problemer raskere, noe som gjør utviklingsprosessen mer effektiv.
 
 ## Hvordan
 
-For å skrive tester i Kotlin kan man bruke et test-rammeverk som for eksempel JUnit eller Mockito. Et eksempel på en enkel test i Kotlin med JUnit ser slik ut:
+For å skrive tester i Kotlin, kan du bruke rammeverket JUnit. Dette rammeverket gjør det enkelt å lage tester ved å gi deg tilgang til en rekke funksjoner som hjelper deg med å sjekke data og forventet oppførsel.
+
+For å skrive en enkel test, starter du med å importere JUnit rammeverket ved å legge til denne linjen øverst i filen:
 
 ```Kotlin
 import org.junit.Test
-import org.junit.Assert.*
+```
 
-class StringManipulationTest {
+Deretter kan du skrive en testfunksjon ved å bruke ```@Test```-anmerkningen og navngi den etterfulgt av parenteser:
 
-    @Test
-    fun reverseString_returnsReversedString() {
-        val originalString = "Hello"
-        val reversedString = originalString.reverse()
-        assertEquals("olleH", reversedString)
-    }
+```Kotlin
+@Test
+fun minTest() {
+    // Testkode her
 }
 ```
 
-Her blir det laget en testklasse for en funksjon som skal reversere en streng. I testen blir det laget en original streng og en forventet reversert streng. Deretter blir funksjonen kalt og resultatet blir sammenlignet med den forventede verdien ved hjelp av `assertEquals` metoden fra JUnit. Om testen feiler vil man få en feilmelding som vil hjelpe en med å finne og fikse feilen.
+Inne i testfunksjonen kan du kjøre koden din og sjekke resultatene mot det du forventer ved hjelp av JUnit's assert-funksjoner. For eksempel:
 
-## Dypdykk
+```Kotlin
+@Test
+fun minTest() {
+    // Initialiser data
+    val a = 5
+    val b = 10
 
-Når man skriver tester er det viktig å ha et godt og representativt utvalg av tester. Dette betyr at man bør teste både positive og negative scenarier, samt ulike inndata for å sikre at funksjonen oppfører seg som forventet. I tillegg kan man også bruke mock-objekter for å teste funksjoner som er avhengige av eksterne komponenter eller tjenester.
+    // Kjør koden din og få resultatet
+    val resultat = a + b
 
-Man bør også prøve å holde testene så uavhengige som mulig. Dette betyr at testene ikke bør være avhengige av hverandre og de bør kunne kjøres i hvilken som helst rekkefølge. Dette gjør det enklere å identifisere og fikse eventuelle feil.
+    // Sjekk om resultatet er som forventet
+    assertEquals(15, resultat)
+}
+```
 
-## Se også
+Her bruker vi ```assertEquals()``` funksjonen for å sjekke om verdien av ```resultat``` er lik 15.
 
-- [Kotlin test-rammeverk](https://kotlinlang.org/docs/tutorials/jvm-get-started.html#setting-up )
-- [Testdrevet utvikling med Kotlin](https://vividcode.io/kotlin-test-driven-development/)
-- [JUnit dokumentasjon](https://junit.org/junit5/docs/current/user-guide/)
+Det er også mulig å sette opp flere tester i samme fil, som hver har sine egne testfunksjoner og kan kjøres individuelt.
+
+## Deep Dive
+
+For å skrive mer komplekse tester, kan det være nyttig å benytte seg av JUnit's annotations. Disse kan hjelpe deg med å sette opp testmiljøer og kjøre spesifikke tester før og etter andre tester kjøres.
+
+En annen viktig del av å skrive tester er å sørge for god dekning av koden din. Dette betyr at alle deler av koden din bør testes for å sikre at det ikke er noen skjulte feil. Du kan bruke dekningstester, som for eksempel jacoco, for å sjekke hvor mye av koden din som blir dekket av testene.
+
+Å skrive effektive tester er en viktig ferdighet for å bli en bedre Kotlin-programmerer. Det kan også hjelpe deg med å forbedre kvaliteten og robustheten til koden din.
+
+## Se Også
+
+- [Offisiell JUnit dokumentasjon](https://junit.org/junit5/docs/current/user-guide/)
+- [Dekningstesting med jacoco i Kotlin](https://www.baeldung.com/jacoco)
+- [Eksempler på testing i Kotlin](https://www.baeldung.com/kotlin/testing)

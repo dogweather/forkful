@@ -1,52 +1,57 @@
 ---
-title:    "Ruby: Vergleich von zwei Daten"
+title:    "Ruby: Vergleich von zwei Datum"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Vergleichen von zwei Daten kann eine nützliche Fähigkeit in der Ruby Programmierung sein. Es kann dabei helfen, zu bestimmen, ob ein Datensatz in einer Datenbank älter oder neuer als ein anderer ist. In diesem Blog-Beitrag werden wir lernen, wie man diese Fähigkeit in Ruby ausführt und einige interessante Fakten über die Arbeit mit Daten herausfinden.
 
-Wenn du ein(e) Ruby Programmierer(in) bist, hast du vielleicht schon einmal gemerkt, dass es manchmal nötig ist, zwei Daten zu vergleichen. Dies kann hilfreich sein, um zum Beispiel zu überprüfen, ob ein bestimmtes Datum in der Vergangenheit oder Zukunft liegt. In diesem Blog-Beitrag werde ich dir zeigen, wie du in Ruby ganz einfach zwei Daten vergleichen kannst.
+## Wie geht das
+Es gibt mehrere Methoden, um zwei Daten in Ruby zu vergleichen. Wir werden uns hier auf die gängigsten Methoden konzentrieren.
 
-## Wie geht es?
-
-Um zwei Daten in Ruby zu vergleichen, können wir die `Date` Klasse verwenden. Diese bietet verschiedene Methoden an, die uns bei der Vergleichung helfen. Schauen wir uns an, wie das genau funktioniert:
+### Verwenden von Vergleichsoperatoren
+Eine Möglichkeit, zwei Daten in Ruby zu vergleichen, ist die Verwendung von Vergleichsoperatoren wie `<` (kleiner als), `>` (größer als) und `==` (gleich). Schauen wir uns ein Beispiel an:
 
 ```Ruby
-require 'date'
+date_1 = Date.new(2020, 2, 5)
+date_2 = Date.new(2020, 3, 15)
 
-date1 = Date.new(2020, 5, 10)
-date2 = Date.new(2021, 5, 10)
-
-puts "Ist #{date1} vor #{date2}? #{date1 < date2}"
-puts "Ist #{date1} nach #{date2}? #{date1 > date2}"
-puts "Sind #{date1} und #{date2} gleich? #{date1 == date2}"
+if date_1 < date_2
+  puts "Date 1 ist vor Date 2."
+elsif date_1 > date_2
+  puts "Date 1 ist nach Date 2."
+else
+  puts "Date 1 und Date 2 sind gleich."
+end
 ```
 
-Das obige Beispiel zeigt, wie wir die `Date` Klasse importieren und dann zwei verschiedene Daten erstellen können. Anschließend verwenden wir die Vergleichsoperatoren `<`, `>` und `==` um die Daten miteinander zu vergleichen. In diesem Fall geben wir ein Boolean zurück, je nachdem ob die Bedingung wahr oder falsch ist.
+Die Ausgabe dieses Codes wäre "Date 1 ist vor Date 2." Dies liegt daran, dass `date_1` ein früheres Datum ist als `date_2`. Durch die Verwendung von Vergleichsoperatoren können wir also bestimmen, welche der beiden Daten früher oder später ist.
 
-Die Ausgabe für dieses Beispiel wäre:
+### Verwenden von Methode #compare
+Eine weitere Möglichkeit, zwei Daten in Ruby zu vergleichen, ist die Verwendung der Methode `#compare`. Diese Methode gibt entweder `0`, `1` oder `-1` zurück, abhängig davon, ob die Daten gleich, größer oder kleiner sind. Sehen wir uns dazu ein Beispiel an:
 
+```Ruby
+date_1 = Date.new(2020, 4, 20)
+date_2 = Date.new(2020, 4, 15)
+
+if date_1.compare(date_2) == 1
+  puts "Date 1 ist nach Date 2."
+elsif date_1.compare(date_2) == -1
+  puts "Date 1 ist vor Date 2."
+else
+  puts "Date 1 und Date 2 sind gleich."
+end
 ```
-Ist 2020-05-10 vor 2021-05-10? true
-Ist 2020-05-10 nach 2021-05-10? false
-Sind 2020-05-10 und 2021-05-10 gleich? false
-```
 
-## Tiefer Einblick
+In diesem Fall wäre die Ausgabe "Date 1 ist nach Date 2." Da `date_1` ein späteres Datum ist als `date_2`, gibt die Methode `#compare` eine `1` zurück.
 
-Nun, da wir wissen, wie wir zwei Daten vergleichen können, lassen uns noch einen Schritt weitergehen und uns einige weitere Methoden der `Date` Klasse ansehen.
-
-- `include?`: Überprüft, ob ein bestimmtes Datum in einem bestimmten Bereich liegt. Zum Beispiel: `Date.new(2020, 5, 10).include?(Date.new(2020, 5, 1)) #=> true`
-- `between?`: Überprüft, ob ein bestimmtes Datum zwischen zwei anderen Daten liegt. Zum Beispiel: `Date.new(2020, 5, 19).between?(Date.new(2020, 5, 1), Date.new(2020, 5, 31)) #=> true`
-- `leap?`: Überprüft, ob ein bestimmtes Jahr ein Schaltjahr ist. Zum Beispiel: `Date.new(2020, 5, 1).leap? #=> true`
-
-Diese und weitere Methoden können dir beim Vergleichen von Daten in Ruby helfen. Es ist zunächst vielleicht etwas verwirrend, aber mit etwas Übung wirst du schnell verstehen, welches die beste Methode für deine Anwendung ist.
+## Tiefer gehend
+In diesen Code-Beispielen haben wir nur das Vergleichen von einfachen Datumswerten betrachtet. Es ist jedoch auch möglich, zwei Daten zu vergleichen, die Zeit- und Zeitzone-Informationen enthalten. Dazu ist es wichtig, die entsprechenden Methoden und Konverter zu kennen, um die Daten in ein vergleichbares Format zu bringen.
 
 ## Siehe auch
-
-- [Ruby Datumsklasse](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Vergleichsoperatoren in Ruby](https://www.rubyguides.com/2015/03/ruby-comparison-operators/)
-
-Vielen Dank fürs Lesen und viel Spaß beim Vergleichen von Daten in Ruby!
+- [Ruby Date Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Date-Klasse in Ruby](https://www.rubyguides.com/2015/02/ruby-date-time-tutorial/) 
+- [Vergleichsoperatoren in Ruby](https://www.rubyguides.com/2018/12/ruby-comparison-operators/)

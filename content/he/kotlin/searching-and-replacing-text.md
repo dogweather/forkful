@@ -1,33 +1,47 @@
 ---
 title:    "Kotlin: חיפוש והחלפת טקסט"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה:
 
-בעולם התכנות, אחת המשימות הנפוצות היא לחיפוש והחלפת טקסט בקוד. זה יכול להיות מתחילת הפתרון של באגים ועד לשינויים של תוכנית. למעשה, מוצאים ומחליפים טקסט הוא חלק חיוני מתהליך הפיתוח של תוכניות קוד. לכן, עלינו לדעת כיצד לבצע פעולת חיפוש והחלפה בקוד שלנו.
+מצוין יחתוב קוד בקובץ גדול שלא ברור לב. קריאה כבדה פרושה של רק עו"ה ובאופן כללי נכון העברה השפות עשו
 
-# איך לבצע חיפוש והחלפה ב-Kotlin
+## איך לעשות:
 
-ניתן למצוא ולהחליף טקסט בקוד תוך שימוש בפקודת `replace()` ובתוספת פרמטרים נוספים כדי לציין איזה טקסט יש להחליף ואיזה טקסט להחליף אותו בו.
+כדי לחלוף טקסט בסמן הקווים המכפול "==" על המילה `replace` הוא יחתובית הטקסט "ו" כך:
 
-```
-val str = "Hello World"
-val newStr = str.replace("Hello", "Bonjour")
-println(newStr) // Output: Bonjour World
-```
-ניתן גם להשתמש בפקודת `replace()` כדי להחליף טקסט במקום מסוים בתוך מחרוזת מסוימת, על ידי הוספת פרמטר `startIndex` ו-`endIndex` המציינים את המקום שבו נרצה להחליף את הטקסט.
-
-```
-val str = "Lorem ipsum dolor sit amet"
-val newStr = str.replace("ipsum", "lizard", 6, 11)
-println(newStr) // Output: Lorem lizard dolor sit amet
+```Kotlin
+val originalText = "זהו רקפידה"
+val modifiedText = originalText.replace("רק", "שליטה")
+println(modifiedText)
 ```
 
-למידע נוסף על פקודת `replace()` ועל פרמטרים נוספים שניתן להשתמש בהם, ניתן לקרוא על כך בתיעוד הרשמי של Kotlin.
+פלט:
 
-# צולב רחב
+שליטהפאנס זהו רקפידה
 
-היכן הפקודה `replace()` נמצאת בתוך הקוד שלנו, היא משתמשת בפניה וליצור אותה. כאשר רצינו להחליף טקסט בקוד שלנו, אנחנו משתמשים במנגנון חלופין של ערכים בצורת פקודות. כלומר, אנחנו מגדירים מילון שבו הצארות הן מחרוזות שנרצה להחליף והערכים הם המחרוזות החדשות שאנחנו רוצים לה
+עוד אפשרות לחלוף טקסט היא להשתמש בפעולת `replaceAll()` ולציין את המילה החדשה כדי לחלוף את כל המופעים של המילה המצוייה:
+
+```Kotlin
+val originalText = "זהו רקפידה רקפידה רקפידה"
+val modifiedText = originalText.replaceAll("רק", "שליטה")
+println(modifiedText)
+```
+
+פלט:
+
+שליטהפאנס זהו שליטהפאנס שליטהפאנס שליטהפאנס
+
+## חפירה עמוקה:
+
+לחילוף טקסט ישנם מתודות נוספות כמו `replaceFirst()` שמאפשרת רק להחליף את המופע הראשון של המילה המצוייה בטקסט. ניתן גם להשתמש בפטרנים כדי לחפש את המילה המצוייה בטקסט. למדריך מפורט יותר על כיצד לחלוף טקסט עבור פטרנים, ראו [מדריך קודלבוג](https://www.codeleoblog.com/kotlin-string-methods-text-replacement-patterns).
+
+## ראו גם:
+
+- [המדריך המלא של קודלבוג לחילוף טקסט בקוד Kotlin](https://www.codeleoblog.com/kotlin-string-methods-text-replacement-patterns)
+- [היכן ניתן להשתמש בחליפת טקסט בפרויקטי Kotlin שלכם](https://kotlinlang.org/docs/string.html#string-replacement)
+- [הצגת מתודות מובנות לשינוי טקסט ולחילוף בקוד Kotlin](https://www.tutorialkart.com/kotlin-strings/kotlin-string-replace-method-functions/)

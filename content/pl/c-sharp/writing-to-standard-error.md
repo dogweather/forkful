@@ -1,39 +1,41 @@
 ---
-title:    "C#: Pisanie do standardowego błędu"
+title:    "C#: Pisanie do standardowego błędu."
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego pisać do standardowego wyjścia błędów
 
-Czasami, kiedy piszesz programy w języku C#, możliwe jest, że będziesz chciał pisać do standardowego błędu zamiast do standardowego wyjścia. Jest to przydatne, gdy chcesz przekazać informacje o błędach lub ostrzeżenia użytkownikom twojego programu.
+Pisanie do standardowego wyjścia błędów może być bardzo przydatne podczas pisania programów w języku C#. Często występują różne problemy podczas wykonywania kodu i konieczne jest szybkie znalezienie źródła błędu. Właśnie w takich sytuacjach pisanie do standardowego wyjścia błędów może ułatwić nam zlokalizowanie problemu i szybkie jego naprawienie.
 
 ## Jak to zrobić?
 
-Aby wypisać coś do standardowego błędu, musisz skorzystać z konstrukcji ```Console.Error.WriteLine("Tekst do wypisania");```. Na przykład, jeśli chcesz wypisać błąd, możesz użyć kodu:
+Aby napisać do standardowego wyjścia błędów w języku C#, użyjemy prostego wywołania funkcji `Console.Error.WriteLine()`. Jako argument podajemy wiadomość, którą chcemy wyświetlić. Spróbujmy tego przykładu:
 
 ```C#
-try
-{
-    // kod, który może wywołać błąd
-}
-catch (Exception ex)
-{
-    Console.Error.WriteLine("Wystąpił błąd: " + ex.Message);
-}
+Console.Error.WriteLine("To jest informacja o błędzie!");
 ```
 
-Ten kod wypisze komunikat o błędzie wraz z informacją o samym błędzie.
+Wykonanie tego kodu spowoduje wyświetlenie tekstu "To jest informacja o błędzie!" w standardowym wyjściu błędów.
 
-## Głębszy zanurzenie
+Oto przykładowe wyjście:
 
-Wypisywanie do standardowego błędu może być szczególnie przydatne w przypadku obsługi wyjątków. Możesz wtedy wypisać informacje o błędzie, które mogą pomóc w jego zrozumieniu i naprawieniu. Możesz również użyć tej konstrukcji w celu wypisania ostrzeżeń lub innych komunikatów dla użytkownika.
+```
+To jest informacja o błędzie!
+```
 
-Należy pamiętać, że jeśli nie zostanie przechwycony żaden wyjątek, to wypisywanie do standardowego błędu nie będzie miało żadnego efektu.
+## Głębsze omówienie
 
-## Zobacz również
+Pisanie do standardowego wyjścia błędów jest szczególnie przydatne w przypadku aplikacji, które działają w trybie konsolowym. Dzięki temu możemy łatwo monitorować wykonywanie kodu i szybko reagować na ewentualne błędy.
 
-- [Dokumentacja Microsoft o klasie Console](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
-- [Dlaczego warto używać standardowego błędu w swoim kodzie? (wideo)](https://www.youtube.com/watch?v=9zF5QkZKIjg)
-- [Przykładowy kod z użyciem wypisywania do standardowego błędu](https://www.tutorialspoint.com/csharp/csharp_exceptions.htm)
+Warto też pamiętać, że możemy przekierować standardowe wyjście błędów do pliku lub innego urządzenia, co może być wygodne w niektórych sytuacjach. Aby to zrobić, możemy użyć strumienia `System.Console.Error` i przypisać go do innej zmiennej, takiej jak `System.IO.FileStream`.
+
+## Zobacz także
+
+Poniżej znajduje się lista przydatnych linków dotyczących pisania w języku C#:
+
+- [Dokumentacja języka C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
+- [Kurs języka C# na platformie Codecademy](https://www.codecademy.com/learn/learn-c-sharp)
+- [Forum dla programistów w języku C#](https://forum.pasja-informatyki.pl/Forum-C-sharp)

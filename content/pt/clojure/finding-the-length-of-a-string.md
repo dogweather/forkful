@@ -1,40 +1,38 @@
 ---
 title:    "Clojure: Encontrando o comprimento de uma string"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que encontrar o comprimento de uma string?
+## Por que?
 
-Às vezes, quando estamos lidando com dados ou textos em nossos programas, precisamos saber quantos caracteres estão presentes em uma determinada string. Isso pode ser útil em várias situações, como verificar se uma senha atende aos requisitos mínimos de comprimento ou fazer manipulações específicas em uma string com base em seu tamanho.
+Encontrar o comprimento de uma string é uma tarefa muito comum em programação, pois permite que os desenvolvedores obtenham informações importantes sobre os dados que estão manipulando. É uma habilidade básica que pode ser aplicada em vários contextos, tornando-se uma ferramenta essencial para qualquer programador.
 
-## Como fazer?
+## Como Fazer
 
-Para encontrar o comprimento de uma string em Clojure, podemos usar a função "count" que retorna o número de itens em uma coleção. Como uma string é uma coleção de caracteres, podemos usar essa função para encontrar seu comprimento.
+Para encontrar o comprimento de uma string em Clojure, podemos usar a função `count`, que retorna o número de caracteres em uma string. Por exemplo:
 
-Vamos dar uma olhada em alguns exemplos:
-
-```
-(count "Olá") 
-; Output: 4
-
-(count "Eu sou uma string muito longa")
-; Output: 29
+```Clojure
+(count "Olá, mundo!")
+;; Output: 12
 ```
 
-Como você pode ver, a função "count" retorna um número inteiro que representa o comprimento da string.
+Outra opção é usar o operador `count` diretamente na string. Por exemplo:
 
-## Aprofundando
+```Clojure
+(.length "Olá, mundo!")
+;; Output: 12
+```
 
-Agora que já vimos como encontrar o comprimento de uma string, é importante destacar algumas coisas a serem consideradas. Primeiro, a função "count" também pode ser usada para contar o número de itens em outras coleções, como listas e vetores.
+## Profundidade
 
-Além disso, é importante notar que a função "count" não se limita apenas a strings. Podemos usá-la para contar o comprimento de qualquer coisa que seja uma coleção, incluindo mapas e conjuntos.
+Ao encontrar o comprimento de uma string, é importante levar em conta alguns detalhes. Em Clojure, strings são sequências de caracteres Unicode, o que significa que nem sempre o número de caracteres corresponderá ao número de bytes. Algumas letras e símbolos do Unicode ocupam mais de um byte, portanto, a função `count` retornará o número total de caracteres, independentemente do número de bytes.
 
-## Veja também
+Outra coisa importante a lembrar é que a função `count` funciona em qualquer tipo de sequência, não apenas strings. Portanto, se você passar uma lista ou um vetor como argumento, ele retornará o número de elementos.
 
-- [Documentação oficial da função "count"](https://clojuredocs.org/clojure.core/count)
-- [Tutorial de Clojure para iniciantes](https://clojure.org/guides/getting_started)
-- [Exemplos práticos de Clojure](https://github.com/practicalli/clojure-examples)
+## Veja Também
 
-Espero que este artigo tenha sido útil para entender como encontrar o comprimento de uma string em Clojure. Continue explorando a linguagem e descobrindo novas e poderosas funções. Até a próxima!
+- [Documentação do Clojure sobre função `count`](https://clojuredocs.org/clojure.core/count)
+- [Guia de Strings em Clojure](https://clojure.org/guides/strings)

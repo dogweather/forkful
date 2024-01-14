@@ -1,54 +1,54 @@
 ---
 title:    "Javascript recipe: Capitalizing a string"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Capitalize a String in Javascript?
+## Why
 
-Capitalizing a string may seem like a simple task, but it is a fundamental operation in everyday programming. Whether you are creating a web application or writing a script, chances are, you will need to capitalize a string at some point. In this blog post, we will explore the reasons why capitalizing a string is necessary and how to do it in the most efficient way possible with Javascript.
+Have you ever wanted to capitalize a string in your Javascript code? Maybe you want to display a name with proper capitalization, or format a title in a specific way. Whatever the reason, knowing how to capitalize a string can be a useful skill for any Javascript developer.
 
-## How To Capitalize a String in Javascript
+## How To
 
-To capitalize a string in Javascript, there are a few methods we can use. Let's take a look at some coding examples using the ```toUpperCase()``` method and the ```charAt()``` method.
-
-```Javascript 
-// Using the toUpperCase() method
-let str = "hello world";
-let capitalizedStr = str.toUpperCase();
-console.log(capitalizedStr);
-
-// Output: HELLO WORLD
-```
+To capitalize a string in Javascript, you will need to use a combination of string methods. Let's take a look at some code examples to see how this can be done.
 
 ```Javascript
-// Using the charAt() method
-let str = "hello world";
-let firstLetter = str.charAt(0).toUpperCase();
-let newStr = firstLetter + str.slice(1);
-console.log(newStr);
+// First, we need to declare a string variable
+let myString = "hello world";
 
+// Using the .toUpperCase() method, we can convert the entire string to uppercase
+let capitalizedString = myString.toUpperCase();
+// Output: HELLO WORLD
+
+// But what if we only want the first letter of the string to be capitalized?
+// We can use the .charAt() method to select the first character and then the .toUpperCase() method to capitalize it
+let firstLetter = myString.charAt(0).toUpperCase();
+// Now we can use the .slice() method to select the rest of the string and concatenate it with the capitalized first letter
+let capitalizedString = firstLetter + myString.slice(1);
 // Output: Hello world
 ```
 
-As you can see, both methods result in a capitalized string, but using ```toUpperCase()``` is more straightforward and requires fewer lines of code. However, the ```charAt()``` method allows us to capitalize only the first letter and leave the rest of the string unchanged.
+It's also important to note that the .toUpperCase() and .charAt() methods are case-sensitive, so be sure to double check your letters!
 
-## Deep Dive into Capitalizing a String
+## Deep Dive
 
-Now that we know how to capitalize a string in Javascript, let's dive into why we use these methods. In programming, it is essential to follow specific guidelines and conventions when writing code. One commonly used convention is the use of proper casing in strings, where the first letter of each word is in uppercase.
+There are a few other methods that can be used to capitalize a string in Javascript. The .replace() method, for example, can be used to find a specific word or letter in a string and replace it with another. We can use this to capitalize the first letter of each word in a string.
 
-Having properly capitalized strings can make our code more readable and organized, especially when dealing with large amounts of text. It also helps to distinguish between variables and functions, which are typically written in camel case (where the first word is in lowercase and subsequent words start with a capital letter).
+```Javascript
+let sentence = "this is a sentence";
 
-Furthermore, capitalizing a string can also be necessary when performing string comparison operations. If the letter casing is not consistent, it can lead to incorrect results.
+let capitalizedSentence = sentence.replace(/\b\w/g, function(l){ return l.toUpperCase() });
+// Output: This Is A Sentence
+```
+
+The regex expression `\b\w` means to target the beginning of each word, and the function within the replace method returns the letter with an uppercase version.
 
 ## See Also
 
-Now that we have explored the importance of capitalizing a string in Javascript, here are some additional resources for further reading:
+Here are some additional resources to learn more about string manipulation in Javascript:
 
-- [MDN Documentation on toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Documentation on charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [Style Guide for Writing Clean and Consistent Code](https://www.freecodecamp.org/news/javascript-naming-conventions-dos-and-don-ts-99c0e2fdd78a/)
-- [Tutorial on String Methods in Javascript](https://www.javascripttutorial.net/javascript-string-methods/)
-
-Happy coding!
+- [MDN web docs - String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods)
+- [W3Schools - Javascript Strings](https://www.w3schools.com/js/js_strings.asp)
+- [FreeCodeCamp - Intro to Basic Javascript: Manipulate Arrays with .pop()](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-pop)

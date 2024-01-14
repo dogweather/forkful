@@ -1,45 +1,45 @@
 ---
-title:    "PHP: 字符串首字母大写"
+title:    "PHP: 字符串大写化"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么使用PHP中的大写字符串(capitalize)
+## 为什么要在PHP中对字符串进行大写化？
 
-在PHP编程中，格式化字符串是一项常见的任务。当我们需要显示用户输入，或者从数据库中检索数据时，掌握字符串的格式化方法是非常重要的。一种常见的格式化方法就是将字符串中的首字母大写，这在多种情况下都会用到。在这篇博客文章中，我们将详细介绍如何在PHP中实现字符串大写的功能，并阐述它的重要性。
+在编写PHP程序时，有时候我们需要对字符串进行处理，比如将首字母大写，以便于在输出或者比较时更加规范和统一。通过大写化字符串，我们可以实现这一目的。
 
-## 为什么
-
-字符串大写的功能有很多不同的应用场景。一种常见的情况是，当我们从数据库中检索用户的姓名或者电话号码时，通常需要将它们首字母大写。这样做可以让数据更易于阅读，也更符合传统的书写规范。
-
-另一种情况是，在网页表单中要求用户输入信息时，我们通常会对用户输入的姓名、地址等信息进行格式检查、校正和标准化。在这种情况下，如果用户输入的是全大写或全小写的姓名，我们可能需要将它们统一为首字母大写的格式。
-
-总的来说，大写字符串功能可以让我们更方便地处理和展示字符串数据，提高程序的可读性和用户体验。
-
-## 如何实现
-
-要在PHP中实现字符串大写的功能，可以使用内置的函数`ucwords()`。这个函数接受一个字符串作为参数，并返回将其每个单词首字母都转换为大写的新字符串。
-
-下面是一个简单的例子：
+## 如何在PHP中对字符串进行大写化？
 
 ```PHP
-$name = "john doe";
-echo ucwords($name); // 输出: John Doe
+<?php
+// 定义一个需要大写化的字符串变量
+$string = "hello world";
+
+// 使用PHP内置函数ucfirst()实现首字母大写化
+echo ucfirst($string);
+
+// 输出结果为"Hello world"
+?>
 ```
 
-除了`ucwords()`函数，还可以使用`strtoupper()`将整个字符串都转换为大写，或者使用`ucfirst()`将第一个单词的首字母转换为大写。
+## 深入了解字符串大写化
 
-## 深入了解
+在PHP中，除了使用内置函数ucfirst()来实现首字母大写外，还有其他几种方法可以实现字符串大写化。比如可以使用正则表达式或者自己定义一个函数。另外，需要注意的是，如果字符串中包含汉字等多字节字符，可能会出现编码问题，需要格外注意。
 
-实现字符串大写功能的背后涉及到不同的编程概念，比如字符串处理、正则表达式等。如果想要更深入地了解这些知识，可以查阅相关的文档和教程。此外，也可以尝试使用不同的方法来实现字符串大写功能，比如自定义函数、循环等。
+## 参考资料
 
-## 参考链接
+[PHP官方文档](http://php.net/manual/en/function.ucfirst.php)
 
-- [PHP官方文档：ucwords()函数](https://www.php.net/manual/zh/function.ucwords.php)
-- [菜鸟教程：PHP字符串函数](https://www.runoob.com/php/php-string-functions.html)
-- [TutorialsPoint：PHP字符串处理](https://www.tutorialspoint.com/php/php_string_functions.htm)
+[PHP中文手册](http://php.net/manual/zh/function.ucfirst.php)
 
-## 查看更多
+[PHP字符串大写化方法](http://www.phpio.net/article/php/20140816-1.html)
 
-如果对字符串处理感兴趣，可以探索更多相关的知识，比如如何去除字符串中的空格、截取字符串等。有了这些知识，就能更加灵活地处理字符串数据，使程序变得更加强大和高效。
+[PHP正则表达式指南](http://www.phpernote.com/article/201311/814.html)
+
+## 参见
+
+* [PHP字符串小写化方法](http://www.example.com/article01)
+* [PHP字符串反转方法](http://www.example.com/article02)
+* [PHP字符串长度计算方法](http://www.example.com/article03)

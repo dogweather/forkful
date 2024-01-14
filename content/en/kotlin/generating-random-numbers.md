@@ -1,61 +1,62 @@
 ---
 title:    "Kotlin recipe: Generating random numbers"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Random numbers are an important aspect of many programs, from simple games to complex simulations. They add an element of unpredictability and can be used in a variety of ways. In this post, we will explore how to generate random numbers in Kotlin and why it is useful.
+Have you ever needed to generate random numbers in your programming projects? Whether it's for a game, data simulation, or testing purposes, generating random numbers is a common task in many programming languages. In Kotlin, there are multiple ways to generate random numbers, each with its own advantages and use cases. In this blog post, we'll explore the different methods of generating random numbers in Kotlin and when to use them.
 
 ## How To
 
-Generating a random number in Kotlin is easy with the `Random` class. First, we need to import the class:
+Kotlin provides a few different ways to generate random numbers. Here are three of the most commonly used methods:
 
-```Kotlin
-import kotlin.random.Random
+#### 1. Using the `random` method
+
+The simplest way to generate random numbers in Kotlin is by using the `random` method from the `kotlin.random` package. This method returns a random `Int` value between 0 and the provided argument.
+
+```
+val randomNumber = random.nextInt(10)
+println(randomNumber)
 ```
 
-Next, we can use the `nextInt()` function to generate a random integer within a specific range. For example, if we want a random number between 1 and 10, we can use the following code:
+Output: `8`
 
-```Kotlin
-val randomNumber = Random.nextInt(1, 11)
+#### 2. Using `Random` class
+
+Another way to generate random numbers is by using the `Random` class from the `java.util` package. This class provides various methods to generate random numbers of different types, such as `nextInt()`, `nextFloat()`, `nextBoolean()`, etc.
+
+```
+val random = Random()
+val randomNumber = random.nextInt(100)
+println(randomNumber)
 ```
 
-The `nextInt()` function takes in two arguments - the lower bound (inclusive) and the upper bound (exclusive). So in this case, we are generating a random number between 1 and 10.
+Output: `35`
 
-We can also use the `nextDouble()` function to generate a random double between 0.0 (inclusive) and 1.0 (exclusive).
+#### 3. Using `ThreadLocalRandom` class
 
-```Kotlin
-val randomDouble = Random.nextDouble()
+If you're working with multi-threaded applications, it's recommended to use the `ThreadLocalRandom` class from the `java.util.concurrent` package. This class provides thread-local random number generators that generate random numbers more efficiently in a multi-threaded environment.
+
+```
+val random = ThreadLocalRandom.current()
+val randomNumber = random.nextInt(1000)
+println(randomNumber)
 ```
 
-If we want a random boolean value, we can use the `nextBoolean()` function.
-
-```Kotlin
-val randomBoolean = Random.nextBoolean()
-```
-
-We can also generate a random number within a specific range but with a specific step using the `nextInt(range, step)` function. For example, if we want a random number between 0 and 100 but with a step of 5, we can use the following code:
-
-```Kotlin
-val randomNumber = Random.nextInt(0, 101, 5)
-```
+Output: `789`
 
 ## Deep Dive
 
-Behind the scenes, the `Random` class uses a mathematical algorithm known as a pseudorandom number generator (PRNG) to generate the random numbers. This means that the numbers are not truly random, but they have a good enough randomness for most use cases.
+The choice between the different ways of generating random numbers in Kotlin depends on the specific use case. The `random` method is easy to use and sufficient for most cases. However, it has the disadvantage of generating numbers that are not truly random as it uses a pseudo-random algorithm. If true randomness is crucial, it's recommended to use the `Random` or `ThreadLocalRandom` class, which both use a cryptographically secure pseudo-random number generator.
 
-It is important to note that Kotlin's `Random` class is not thread-safe, meaning that it should not be used for generating random numbers in multi-threaded environments.
-
-Additionally, if you need a more secure and truly random number generator, Kotlin also has the `SecureRandom` class which uses a cryptographic PRNG.
+Additionally, the `Random` class allows you to specify a seed value, making it possible to generate the same series of random numbers each time. This can be useful for testing purposes.
 
 ## See Also
 
-For more information on generating random numbers in Kotlin, check out these resources:
-
-- [Kotlin documentation on Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/random/-random/)
-- [Kotlin documentation on SecureRandom](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/random/-secure-random/)
-- [Java documentation on Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java documentation on SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+- [KotlinDocs on Generating Random Numbers](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
+- [JavaDocs on Random Class](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [JavaDocs on ThreadLocalRandom Class](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)

@@ -1,49 +1,46 @@
 ---
 title:    "Haskell: Uniendo cadenas de texto"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué concatenar cadenas en Haskell?
-La concatenación de cadenas es una operación básica en cualquier lenguaje de programación que permite unir dos o más cadenas de texto en una sola. En Haskell, esta operación se realiza con la función `++` y es útil en muchas situaciones, como la creación de una salida de texto personalizada o la manipulación de datos.
+## Por qué
+
+La concatenación de cadenas es una técnica común en la programación que permite unir dos o más cadenas de texto en una sola. Esto puede ser útil en diversas situaciones, como cuando se desea mostrar una oración completa en lugar de varias partes separadas. También puede ser útil para crear nombres de archivos dinámicamente o generar mensajes personalizados para los usuarios.
 
 ## Cómo hacerlo
-Para concatenar cadenas en Haskell, simplemente debes utilizar la función `++` entre las cadenas que desees unir. Por ejemplo:
+
+La concatenación de cadenas en Haskell es sencilla y se puede lograr utilizando el operador `++` o la función `concat`. A continuación se muestra un ejemplo de ambas formas:
 
 ```Haskell
-nombre = "Juan"
-apellido = "Pérez"
+-- usando el operador ++
+"¡Hola " ++ "mundo!" -- resulta en "¡Hola mundo!"
 
-nombreCompleto = nombre ++ " " ++ apellido
+-- usando la función concat con una lista de cadenas
+concat ["¡Hola", "mundo", "!"] -- resulta en "¡Hola mundo!"
 ```
-La variable `nombreCompleto` ahora contendrá "Juan Pérez", ya que hemos concatenado la cadena `apellido` a la cadena `nombre` separadas por un espacio.
 
-Otra forma de concatenar cadenas es utilizando la función `concat`, que toma una lista de cadenas y las concatena en una sola. Por ejemplo:
-
-```Haskell
-nombres = ["Juan", "Pablo", "José"]
-
-listaNombres = concat nombres
-```
-La variable `listaNombres` ahora contendrá "JuanPabloJosé".
+Tenga en cuenta que el operador `++` solo puede usarse para concatenar dos cadenas a la vez, mientras que la función `concat` puede unir una lista de cadenas.
 
 ## Profundizando
-En Haskell, las cadenas son simplemente listas de caracteres, por lo que la concatenación de cadenas es equivalente a la concatenación de listas. Esto significa que se pueden utilizar todas las funciones y operaciones de listas en cadenas, como `map`, `filter`, `foldr`, entre otras.
 
-Además, al ser Haskell un lenguaje funcional, la concatenación de cadenas es una operación inmutable, lo que significa que no se modifican las cadenas originales al realizar la concatenación. En cambio, se crea una nueva cadena que contiene los caracteres de ambas.
-
-En algunas situaciones, también puede ser útil utilizar la función `intercalate` que toma una cadena y una lista de cadenas y agrega la cadena entre cada elemento de la lista. Por ejemplo:
+En Haskell, las cadenas son en realidad listas de caracteres, lo que significa que se pueden utilizar las mismas funciones que se usan para trabajar con listas en general. Por ejemplo, se puede usar la función `map` para modificar cada carácter de una cadena antes de concatenarla con otra. Aquí hay un ejemplo:
 
 ```Haskell
-nombres = ["Juan", "Pablo", "José"]
-saludo = "Hola"
+-- función que convierte una letra mayúscula en minúscula
+toLower :: Char -> Char
+toLower c = toEnum( fromEnum c + 32)
 
-saludoCompleto = intercalate saludo nombres
+-- concatenación de cadenas con función map
+map toLower ("HOLA " ++ "AMIGOS!") -- resulta en "hola amigos!"
 ```
-La variable `saludoCompleto` ahora contendrá "Juan Hola Pablo Hola José".
+
+También es importante tener en cuenta que la concatenación de cadenas en Haskell es una operación costosa en términos de tiempo de ejecución. Esto se debe a que una nueva cadena se crea cada vez que se realiza la concatenación. Por lo tanto, si se necesitan realizar múltiples concatenaciones, puede ser más eficiente usar la función `concat` con una lista de cadenas.
 
 ## Ver también
-- [Documentación oficial de Haskell](https://www.haskell.org)
-- [Tutorial de concatenación de cadenas en Haskell](https://www.tutorialspoint.com/haskell/haskell_string_concatenation.htm)
-- [Ejemplos de concatenación de cadenas en Haskell](https://www.geeksforgeeks.org/concatenation-of-two-strings-in-haskell/)
+
+- [Documentación oficial de Haskell sobre concatenación de cadenas](https://www.haskell.org/documentation/#strings)
+- [Tutorial sobre concatenación de cadenas en Haskell](https://wiki.haskell.org/Strings)
+- [Ejemplos de concatenación de cadenas en Haskell](https://www.programminghaskell.com/concatenating-strings-with-haskell/)

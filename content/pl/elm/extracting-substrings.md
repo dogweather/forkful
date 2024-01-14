@@ -1,36 +1,41 @@
 ---
 title:    "Elm: Wycinanie podciągów"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Po co?
 
-Ekstrahowanie podciągów jest przydatnym narzędziem podczas programowania w Elm. Pozwala na wyodrębnienie konkretnych fragmentów tekstu, co może być przydatne w wielu różnych zastosowaniach. Dzięki temu narzędziu można być bardziej precyzyjnym i elastycznym w manipulowaniu tekstem.
+Czy kiedykolwiek zdarzyło ci się potrzebować tylko części ciągu znaków z tekstu? Może musisz wyodrębnić imię i nazwisko z pełnego adresu email, a może potrzebujesz tylko fragmentu adresu URL. W takich przypadkach bardzo przydatne jest umiejętne wyodrębnianie podciągów, czyli części ciągów znaków.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Poniżej przedstawiam przykładowy kod w Elm, który demonstruje wykorzystanie funkcji `String.slice` do ekstrahowania podciągów.
+W języku Elm do wyodrębniania podciągów służy funkcja `String.slice start end text`, gdzie `start` i `end` to numery indeksów, które definiują zakres podciągu do wyodrębnienia, a `text` to ciąg znaków, z którego chcemy wyodrębnić podciąg.
 
-```Elm
-tekst = "Witaj w świecie Elm!"
+Przykładowo, jeśli chcemy wyodrębnić tylko pierwsze trzy litery z tekstu "Elm", możemy użyć kodu:
 
-pierwszaLitera = String.slice 0 1 tekst -- zwraca "W"
-drugiKluczowyWyraz = String.slice 6 10 tekst -- zwraca "świe"
-ostatnieCzteryLitery = String.slice -4 0 tekst -- zwraca "Elm!"
+```
+Elm ... "Elm" |> String.slice 0 3
 ```
 
-Wyżej przedstawiony kod używa funkcji `String.slice`, która przyjmuje trzy argumenty - indeks początkowy, indeks końcowy i tekst, z którego ma zostać wyodrębniony podciąg. Funkcja ta zwraca nowy tekst zawierający wybrany podciąg. Pierwszy argument może przyjmować wartość ujemną, co oznacza liczenie od końca tekstu.
+Co zwróci nam podciąg "Elm".
 
-## Głębsze Wprowadzenie
+## Głębszy zanurkowanie
 
-Funkcja `String.slice` jest jedną z wielu przydatnych funkcji do manipulacji tekstami w Elm. Innymi funkcjami są na przykład `String.left` i `String.right`, które wybierają odpowiednio liczbę znaków z lewej i prawej strony tekstu. Możliwe jest również zastosowanie funkcji `String.split` do dzielenia tekstu na podciągi na podstawie określonego separatora.
+Funkcja `String.slice` może nie tylko wyodrębniać fragmenty tekstu, ale również zwracać pozycję podciągu w tekście przy pomocy funkcji `String.indexes subStr text`. Możemy także wykorzystać funkcję `String.contains subStr text` do sprawdzenia, czy ciąg znaków zawiera dany podciąg.
 
-Istnieje również możliwość wykorzystania ekstrahowania podciągów w celu filtracji tekstu. Na przykład, można użyć funkcji `List.filter` aby wybrać wszystkie wyrazy, które zaczynają się od określonej litery.
+Na przykład, chcąc wyodrębnić imię i nazwisko z adresu email "jan.kowalski@example.com", możemy użyć kodu:
 
-## Zobacz Również
+```
+"jan.kowalski@example.com" |> String.slice <| (String.indexes "@" <| String.toLower <| "jan.kowalski") + 1
+```
 
-- [Dokumentacja Elm o ekstrahowaniu podciągów](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-- [Przydatne funkcje do manipulacji tekstami w Elm](https://medium.com/@jose_gil/elm-text-manipulation-functions-26519451210e)
-- [Przewodnik po Elm](https://guide.elm-lang.org/)
+Co zwróci nam podciąg "jan.kowalski".
+
+# Zobacz również
+
+- Dokumentacja Elm dla funkcji String: https://package.elm-lang.org/packages/elm/core/latest/String#slice
+- Przykładowy kod dla wyodrębniania podciągów w języku Elm: https://elm-lang.org/examples/substring
+- Praktyczne zastosowanie funkcji `String.slice` na przykładzie analizy tekstu: https://ertuzio.com/extracting-text-from-a-string-in-elm/

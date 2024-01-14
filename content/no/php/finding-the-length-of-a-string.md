@@ -1,41 +1,46 @@
 ---
-title:    "PHP: Å finne lengden av en streng"
+title:    "PHP: Å finne lengden til en streng"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det finnes et populært utsagn blant utviklere som sier "Ifølge Internett, så er det alltid noen som prøver å finne lengden på en streng". Men hvorfor er det egentlig viktig å kunne finne lengden på en streng? Det kan virke som en enkel oppgave, men det finnes faktisk flere gode grunner til å mestre denne ferdigheten som en PHP-programmerer.
+Å finne lengden av en streng er en viktig ferdighet for enhver PHP-programmerer. Dette gjør det mulig å håndtere og manipulere tekst på en effektiv måte. Det er også nyttig for å validere brukerinput og behandle data fra ulike databaser. Uansett hva slags prosjekt du jobber med, er det sannsynligvis at du vil støte på en situasjon hvor du må finne lengden til en streng.
 
-Å kunne finne lengden på en streng er en essensiell ferdighet når man jobber med manipulering av tekst og data. Dette kan være nyttig når man skal validere brukerinput, formatere tekst og utføre andre operasjoner på strenger. Det er også en grunnleggende ferdighet som er nødvendig for å kunne utvikle mer komplekse programmeringsløsninger.
+## Slik gjør du det
 
-## Hvordan
+Det finnes flere måter å finne lengden av en streng på i PHP, men den enkleste og mest effektive metoden er å bruke funksjonen `strlen()`. Denne funksjonen tar en streng som argument og returnerer antall tegn i strengen.
 
-For å finne lengden på en streng i PHP, kan vi bruke funksjonen `strlen()`. Denne funksjonen tar inn en streng som parameter og returnerer lengden på strengen i antall tegn. La oss ta en titt på et eksempel:
+````PHP
+<?php
+$string = "Hei alle sammen!";
+echo strlen($string); // Output: 15
+?>
+````
 
-```PHP
-$string = "Hei, verden!";
-echo strlen($string);
-```
+Som du kan se, er det veldig enkelt å bruke `strlen()`-funksjonen. Det er viktig å merke seg at denne funksjonen teller antall tegn, ikke antall ord. Hvis du vil telle antall ord i en streng, kan du bruke funksjonen `str_word_count()`, som også tar en streng som argument.
 
-Output:
-```
-13
-```
+````PHP
+<?php
+$string = "Hei alle sammen!";
+echo str_word_count($string); // Output: 3
+?>
+````
 
-Som du kan se i eksempelet over, returnerer `strlen()` funksjonen lengden på strengen "Hei, verden!" som er 13 tegn.
+Dette er spesielt nyttig hvis du trenger å begrense antall ord som en bruker kan skrive inn i et skjema eller visningsfelt.
 
-Det er også verdt å nevne at denne funksjonen tar med alle tegn i strengen, inkludert mellomrom og spesialtegn. Dette kan være viktig å huske på når man jobber med sensitiv data eller når man ønsker å ha en nøyaktig telling av tegn.
+## Dykk ned i detaljene
 
-## Dypdykk
+Det er viktig å merke seg at `strlen()`-funksjonen teller antall tegn, ikke antall bytes. Dette kan være et problem hvis du jobber med flerspråklige tekststrenger som inneholder tegn fra andre språk. I slike tilfeller kan det være nødvendig å bruke en annen metode for å finne lengden på strengen. En av disse metodene er `mb_strlen()`, som tar hensyn til multibyte-tegn i strengen.
 
-For å kunne få en dypere forståelse av hvordan `strlen()` fungerer, må vi ta en titt på hvordan PHP håndterer strenger og håndterer plasseringen av tegn. I PHP blir hver enkelt tegn lagret som en numerisk verdi i ASCII-tabellen. Når `strlen()` funksjonen blir kalt, går den gjennom strengen og teller antall tegn basert på disse numeriske verdiene.
-
-Det betyr også at om du jobber med flerspråklige strenger som inneholder tegn fra andre språk, så vil `strlen()` fungere på samme måte og gi korrekt antall tegn.
+Et annet aspekt å merke seg er at når du jobber med strenger som inneholder HTML-tags, kan det hende du ønsker å utelate disse taggene fra lengden som blir returnert. For å gjøre dette kan du bruke `strip_tags()`-funksjonen før du teller antall tegn i strengen.
 
 ## Se også
 
-- [PHP strlen() funksjonsdokumentasjon](https://www.php.net/manual/en/function.strlen.php)
-- [ASCII-tabellen](https://www.asciitable.com/)
+- [PHP.net - strlen()](https://www.php.net/manual/en/function.strlen.php)
+- [PHP.net - str_word_count()](https://www.php.net/manual/en/function.str-word-count.php)
+- [PHP.net - mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
+- [PHP.net - strip_tags()](https://www.php.net/manual/en/function.strip-tags.php)

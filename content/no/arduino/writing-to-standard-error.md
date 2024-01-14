@@ -1,33 +1,35 @@
 ---
 title:    "Arduino: Skriving til standardfeil"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive til standard error (stderr) kan være en nyttig måte å feilsøke og finne feil i din Arduino-kode. Ved å skrive til stderr kan du få mer detaljert informasjon om hva som skjer i programmet ditt og identifisere potensielle problemområder.
+Et av de mest vanlige spørsmålene som nybegynnere har når de begynner å lære å programmere Arduino er - hvorfor skal jeg skrive til standard error? Det er en god praksis å følge når du skriver kode, og i denne artikkelen vil vi forklare hvorfor det er viktig og hvordan du kan gjøre det.
 
-## Slik gjør du det
+## Hvordan man gjør det
 
-For å skrive til stderr i Arduino, kan du bruke funksjonen "Serial.print()". Denne funksjonen sender data til Arduinos serielle monitor, men du kan også sende data til stderr ved å bruke kommandoen "Serial.print()".
+For å skrive til standard error i Arduino, kan du bruke funksjonen ```Serial.print()```. Denne funksjonen tar en tekststreng eller tall som parameter og sender det til seriellporten. For eksempel, hvis du vil skrive ut teksten "Hei, verden!" til standard error, kan du bruke følgende kode:
 
 ```Arduino
-// Eksempel på bruk av Serial.print til stderr
-Serial.print("Feil oppstod: ");
-Serial.println(error_code, HEX); // Skriv ut feilkoden i heksadesimalt format
+Serial.print("Hei, verden!");
 ```
 
-Når du kjører dette programmet, vil du kunne se feilkoden som er generert i serial monitor, slik at du kan identifisere årsaken til feilen.
+Når du kjører denne koden, vil teksten "Hei, verden!" bli sendt til seriellporten og vises i seriellmonitorvinduet. 
 
-## Dypdykk
+## Dykk dypere
 
-Det er viktig å merke seg at writing to stderr ikke vil stoppe programmet ditt, det vil bare gi deg informasjon om potensielle feil. I tillegg, hvis stderr-utgangen ikke blir lest i et annet program eller terminal, vil den bli lagret i en buffer og kan føre til forsinkelser i utførelsen av programmet ditt. Derfor er det viktig å ikke bruke stderr i kritiske deler av koden din.
+Så hvorfor er det viktig å skrive til standard error? Det er fordi når du skriver til standard error, skiller du ut feilmeldinger fra standard utskrift. Dette gjør det lettere å finne og feilsøke problemer i koden din. Ved å få feilmeldingene separert, kan du fokusere mer på å forbedre koden din enn å lete etter feil.
 
-En annen ting å huske på er at stderr har begrenset plass. Hvis du skriver for mye informasjon til stderr, kan det føre til at bufferen oversvømmes og programmet krasjer. Det er derfor viktig å være forsiktig med hvor mye informasjon du sender til stderr.
+En annen fordel med å skrive til standard error er at du kan sende variabler og annen informasjon som er nyttig for feilsøking til seriellmonitorvinduet. Dette kan hjelpe deg med å forstå hva som skjer med koden din og hvor problemet ligger.
 
-## Se også
+## Se Også
 
-- [Arduino Serial library](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [C++ documentation on stderr](https://www.cplusplus.com/reference/cstdio/stderr/)
+Du kan lese mer om Serial.print() funksjonen og hvordan du kan bruke den på Arduino sin offisielle nettside: https://www.arduino.cc/reference/en/language/functions/communication/serial/print/ 
+
+For mer informasjon om feilsøking i Arduino, kan du sjekke ut denne guiden fra Arduino-prosjektet: https://www.arduino.cc/en/Guide/Troubleshooting 
+
+Og hvis du vil lære mer om Arduino-programmering generelt, kan du ta en titt på våre andre artikler på [Nettsiden] (https://www.nettsted.no/arduino-programmering). Lykke til med å skrive til standard error i dine fremtidige prosjekter!

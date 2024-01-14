@@ -1,46 +1,48 @@
 ---
 title:    "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit beim Programmieren. Sie ermöglicht es, gezielt auf bestimmte Zeitpunkte zuzugreifen und so die Funktionalität eines Programms zu verbessern.
+In der Welt der Programmierung gibt es immer wieder die Herausforderung, ein Datum in der Vergangenheit oder Zukunft zu berechnen. Egal ob es sich um Geburtstage, Fristen oder Feiertage handelt, es ist wichtig, dass wir als Entwickler*innen die korrekten Daten berechnen können. In diesem Blogbeitrag werden wir uns anschauen, wie man dies in der Programmiersprache Rust lösen kann.
 
-## Wie man es macht
+## How To
 
-Das Berechnen von Datumsangaben in Rust ist relativ einfach. Zunächst müssen wir das `chrono`-Paket importieren, um auf die entsprechenden Funktionen zugreifen zu können:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst das aktuelle Datum als Basis nehmen. In Rust können wir dies mit der Standardbibliothek "chrono" erreichen. Hier ist ein Beispielcode, in dem wir das aktuelle Datum berechnen und danach das Datum des nächsten Tages ausgeben:
 
-```Rust
-use chrono::{Duration, NaiveDate}; 
+```rust
+use chrono::{Utc, Datelike};
+
+fn main() {
+    let current_date = Utc::today();
+    let next_day = current_date + chrono::Duration::days(1);
+    println!("Das aktuelle Datum ist {}. Der nächste Tag ist {}.", current_date, next_day);
+}
 ```
 
-Dann können wir das gewünschte Datum definieren und eine Dauer (in Tagen) angeben, um die gewünschte Datumsangabe zu erhalten. Zum Beispiel, um das Datum des Tages nach morgen zu berechnen:
+Die Ausgabe dieses Codes wird folgendermaßen aussehen:
 
-```Rust
-let morgen = NaiveDate::from_ymd(2021, 10, 1); // Definiert das Datum von morgen
-let zukunft = morgen + Duration::days(1); // Berechnet das Datum des Tages nach morgen
-println!("Das Datum des Tages nach morgen ist: {}", zukunft); // Gibt das Ergebnis aus
-```
+`Das aktuelle Datum ist 2021-11-10. Der nächste Tag ist 2021-11-11.`
 
-Die Ausgabe sollte wie folgt aussehen:
+In diesem Beispiel haben wir die `today()` Methode verwendet, um das aktuelle Datum zu erhalten. Danach haben wir die `Duration::days()` Methode verwendet, um eine Dauer von einem Tag zu erstellen und diese zur aktuellen Datum hinzuzufügen. Natürlich können wir diese Dauer auch anpassen, um ein Datum in der Zukunft oder Vergangenheit zu berechnen.
 
-```
-Das Datum des Tages nach morgen ist: 2021-10-02
-```
+## Deep Dive
 
-## Tiefer Einblick
+Die "chrono" Bibliothek bietet uns viele weitere Funktionen und Möglichkeiten, um mit Datum und Uhrzeit in Rust umzugehen. Hier sind einige interessante Funktionen, die uns bei der Berechnung von Datums- und Zeiten helfen könnten:
 
-Bei der Berechnung eines Datums müssen wir die verschiedenen Datumsformate und Zeitzonen beachten. Auf diese Weise können wir sicherstellen, dass die berechneten Datumsangaben korrekt sind.
+- Die `Date` Struktur ermöglicht es uns, individuelle Komponenten eines Datums (Tag, Monat, Jahr) auszulesen und zu bearbeiten.
+- Die `DateTime` Struktur bietet ähnliche Funktionen wie die `Date` Struktur, aber auch die Möglichkeit, die Uhrzeit einzuschließen.
+- Die `Offset` Struktur ermöglicht es uns, einen Zeitversatz hinzuzufügen oder zu subtrahieren, um verschiedene Zeitzonen zu berücksichtigen.
+- Die `weekday()` Methode gibt uns den Wochentag des Datums zurück.
+- Die `format()` Methode ermöglicht es uns, ein Datum in verschiedenen Formaten auszugeben.
 
-Es ist auch wichtig zu verstehen, dass das `Duration`-Objekt nicht nur für Tage verwendet werden kann. Es gibt auch andere Einheiten wie Stunden, Minuten, Sekunden, etc., die für spezifischere Berechnungen nützlich sein können.
-
-In komplexeren Anwendungen können wir auch das `TimeZone`-Objekt nutzen, um datumsbezogene Aufgaben wie Sommer- und Winterzeit-Anpassungen zu berücksichtigen.
+Es lohnt sich auf jeden Fall, sich mit der "chrono" Bibliothek auseinanderzusetzen und ihre vielfältigen Funktionen zu erkunden, um vollständigere und genaue Datumsberechnungen durchzuführen.
 
 ## Siehe auch
 
-- [Dokumentation des `chrono`-Paketes](https://docs.rs/chrono/0.4.19/chrono/)
-- [Weitere Beispiele für die Berechnung von Datumsangaben in Rust](https://gist.github.com/jaysonvirissimo/2cd6c4984f69bcb942eec2f4e93cd182)
-- [Einführung in die Datums- und Uhrzeit-Programmierung in Rust](https://learning-rust.github.io/docs/a0.index/c.time.html)
+- [Offizielle "chrono" Dokumentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Weitere Beispiele und Tutorials zu "chrono"](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)

@@ -1,39 +1,63 @@
 ---
 title:    "Bash: Extrayendo subcadenas"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola lectores de Bash!
 
-Extraer subcadenas es una habilidad importante en la programación Bash que puede ayudar a simplificar y automatizar tareas. Al extraer una parte específica de una cadena de texto, podemos realizar operaciones en ella más fácilmente y ahorrar tiempo y esfuerzo.
+En esta entrada del blog, abordaremos un tema importante en la programación de Bash: cómo extraer subcadenas de una cadena más grande. Si estás familiarizado con el lenguaje de programación, sabrás lo útil que puede ser esta habilidad para manipular y trabajar con datos. ¡Así que sigue leyendo para aprender más!
+
+## ¿Por qué?
+
+Entonces, ¿por qué alguien querría extraer subcadenas en primer lugar? Bueno, la respuesta es simple: facilita la manipulación y el trabajo con cadenas de texto. En lugar de tener que tratar con una cadena larga y compleja, puedes dividirla en partes más pequeñas y realizar acciones específicas en cada uno. Esto hace que la programación sea mucho más eficiente y sencilla.
 
 ## Cómo hacerlo
 
-Para extraer subcadenas en Bash, podemos usar el operador de shell "substr", que toma tres argumentos: la cadena original, la posición inicial y la longitud de la subcadena que queremos extraer.
+Ahora veamos cómo puedes extraer subcadenas en Bash. A continuación, hay un ejemplo de código que muestra cómo extraer una subcadena a partir de una cadena específica y luego imprimir el resultado en la terminal:
 
-Por ejemplo, si queremos extraer la palabra "programación" de la cadena "Aprender programación es divertido", podemos usar el siguiente comando:
+```Bash
+texto="Hola mundo"
+echo ${texto:0:4}
 
+# Salida: Hola
 ```
-texto="Aprender programación es divertido"
-echo ${texto:9:12}
+
+Explicación del código: Se define la variable "texto" con la cadena "Hola mundo". Luego, utilizando la sintaxis de la expansión de parámetros de Bash, usamos "texto:0:4" para indicar que queremos extraer los primeros 4 caracteres de la cadena. Esto se imprimirá en la pantalla como "Hola". Vale la pena mencionar que la numeración en Bash comienza en cero, por lo que el primer carácter se llama 0, el segundo como 1, y así sucesivamente.
+
+Pero, ¿qué sucede si quieres extraer una subcadena a partir de una posición específica hasta el final de la cadena? Puedes hacerlo de la siguiente manera:
+
+```Bash
+texto="Hola mundo"
+echo ${texto:5}
+
+# Salida: mundo
 ```
 
-La posición inicial siempre comienza en 0, por lo que especificamos la posición 9 para comenzar en la letra "p" y la longitud de la subcadena es 12, ya que "programación" tiene 12 caracteres.
+## Un vistazo más profundo
 
-La salida de este comando sería "programación", ya que hemos extraído la subcadena desde la posición 9 hasta la posición 20.
+Ahora que ya sabes cómo extraer subcadenas en Bash, profundicemos un poco más en cómo funciona. La sintaxis básica para extraer una subcadena es la siguiente:
 
-## Inmersión profunda
+```Bash
+${nombre_variable:índice_empezar:longitud}
+```
 
-Además del operador "substr", Bash también ofrece otras opciones para extraer subcadenas, como usar el comando "awk" o usar expresiones regulares con el comando "grep".
+- "nombre_variable" es el nombre de la variable que contiene la cadena de la cual quieres extraer una subcadena.
+- "índice_empezar" indica a partir de qué posición de la cadena quieres extraer.
+- "longitud" es el número de caracteres que quieres incluir en la subcadena.
 
-También podemos usar variables y loops para extraer subcadenas de manera dinámica y realizar operaciones en ellas. Esto es especialmente útil cuando tenemos una gran cantidad de datos y queremos extraer información específica de forma eficiente.
+También puedes omitir el "longitud" y simplemente usar "índice_empezar" si quieres extraer una subcadena hasta el final de la cadena.
 
-En general, es importante entender el funcionamiento de cada método de extracción de subcadenas y elegir el que mejor se adapte a nuestras necesidades.
+¡Ahora que tienes una comprensión más profunda de cómo funciona la extracción de subcadenas en Bash, pon tus habilidades en práctica y experimenta con diferentes cadenas y variables!
 
 ## Ver también
 
-- [Tutorial de Bash en español](https://www.linuxtotal.com.mx/index.php?cont=info_admon_003)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
-- [Ejemplos de extracción de subcadenas en Bash](https://www.baeldung.com/linux/bash-script-extract-string) (en inglés)
+Ahora que hemos cubierto los conceptos básicos de la extracción de subcadenas en Bash, aquí hay algunos enlaces útiles para seguir aprendiendo sobre este tema:
+
+- [Ejemplos de expansión de parámetros de Bash](https://www.tldp.org/LDP/abs/html/parameter-substitution.html)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutorial de programación de Bash en español](https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_BASH)
+
+¡Gracias por leer y espero que hayas encontrado esta entrada del blog útil! ¡Hasta la próxima!

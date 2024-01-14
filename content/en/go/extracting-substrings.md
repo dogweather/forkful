@@ -1,55 +1,69 @@
 ---
 title:    "Go recipe: Extracting substrings"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Substring extraction is a common task in many programming languages, including Go. It involves retrieving a specific portion of a string, rather than the entire string itself. This can be useful for tasks such as parsing data or manipulating text.
+When programming in Go, there may be times when you need to extract a substring from a larger string. This could be useful for a variety of reasons, such as parsing user input or formatting data into a specific format. In this blog post, we will explore how to extract substrings in Go and the benefits it can bring to your code.
 
 ## How To
 
-To extract substrings in Go, we can use the built-in `substring` function. This function takes in two parameters: the string we want to extract from, and the starting and ending index of the substring. Let's see an example of how this works:
+To extract a substring in Go, we will use the built-in `substring` function from the `strings` package. This function takes in two parameters - the string you want to extract from and the indices representing the start and end of the substring.
 
-```Go
-myString := "Hello, world!"
-substring := myString[0:5]
-fmt.Println(substring)
+Here is an example of using the `substring` function to extract a substring from a string variable:
+
+```go
+package main
+
+import "fmt"
+import "strings"
+
+func main() {
+  str := "Hello, world!"
+  sub := strings.Substring(str, 7, 12)
+  fmt.Println(sub)
+}
 ```
 
-The above code will output `Hello`, since we are extracting the first 5 characters of the string.
+The output of this code will be `world!`, as the indices 7 and 12 indicate the substring starting at index 7 and ending at index 12. Keep in mind that the indices in Go start at 0, so the first character of the string would be at index 0.
 
-We can also use negative indices to extract substrings from the end of the string. For example:
+You can also use variables instead of hard-coded indices in the `substring` function. For example:
 
-```Go
-myString := "Hello, world!"
-substring := myString[7:]
-fmt.Println(substring)
+```go
+package main
+
+import "fmt"
+import "strings"
+
+func main() {
+  str := "Banana"
+  start := 1
+  end := 4
+  sub := strings.Substring(str, start, end)
+  fmt.Println(sub)
+}
 ```
 
-This code will output `world!`, since we are extracting everything after the 7th character (including the 7th character).
-
-We can also use the `len` function to determine the length of the string and use it as the ending index. For example:
-
-```Go
-myString := "Hello, world!"
-length := len(myString)
-substring := myString[length-1:]
-fmt.Println(substring)
-```
-
-This code will output `!`, since we are extracting the last character of the string.
+The output of this code will be `ana`, as the values of the `start` and `end` variables will be used as the indices for the substring.
 
 ## Deep Dive
 
-The `substring` function in Go is an efficient and flexible way to extract substrings. It is important to note that the ending index in the function is exclusive, meaning it will not include the character at that index in the substring. 
+Behind the scenes, the `substring` function in Go utilizes a technique called "slicing" to extract the substring from the original string. Slicing is a way to create a new string from a portion of an existing string, without modifying the original string.
 
-Additionally, we can also use the `strings` package in Go to perform more complex substring operations, such as searching for a specific substring or replacing substrings. This can come in handy for tasks such as data cleaning and manipulation.
+In the `substring` function, the slicing is done using the `[:]` notation, which specifies a range of characters to be included in the substring. For example, `str[1:4]` would extract a substring from index 1 to index 3 (remember, the end index is not included in the slice).
+
+It's important to note that using slicing rather than creating a new string manually is more efficient, as it does not require unnecessary memory allocation and copying of data.
 
 ## See Also
 
-- [Official Go documentation for the `substring` function](https://golang.org/pkg/strings/#example_Substring)
-- [Tutorial on extracting substrings in Go](https://www.callicoder.com/golang-strings-cheat-sheet/#substring)
-- [String manipulation in Go](https://www.golangprograms.com/go-language/strings.html)
+If you're interested in learning more about string manipulation in Go, check out these resources:
+
+- [A Tour of Go: Strings](https://tour.golang.org/moretypes/4)
+- [The Go Programming Language Specification: Strings](https://golang.org/ref/spec#String_types)
+- [String Functions in the Go Standard Library](https://golang.org/pkg/strings/)
+
+Happy coding!

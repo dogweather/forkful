@@ -1,31 +1,40 @@
 ---
-title:    "Elm: כתיבה לתקליטור אנציקלופדי (Ktiva Letiklitur Anzichlopedia)"
+title:    "Elm: כתיבה לשגיאת הסטנדרט"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבה לפלט התקפי בגירסת Elm היא דרך נהדרת למקרי טיפול בשגיאות או לעקוב אחרי תהליכים בדיקה. 
+למה לכתוב לתקליטור שגיאות מתקנים יותר עדיף מלהדפיס שגיאות ישירות לטרמינל? כתיבה לתקליטור שגיאות עוזרת לבדוק ולמצוא בעיות בקוד יותר בקלות כיוון שהקלט הינו פתוח וברור.
 
-## איך לעשות זאת
+## איך לעשות זאת:
 
-```Elm
+```elm
 import Debug
 
-main =
-  Debug.log "Error: Something went wrong." "This is the value to be printed to standard error."
+itemCount : Int
+itemCount = 5
+
+totalPrice : Int
+totalPrice = 10
+
+Debug.log "Something went wrong!" (totalPrice / itemCount)
 ```
 
-הפונקציה Debug.log מאפשרת לנו להדפיס מחרוזות כותרת וערך לפלט התקפי בגירסת Elm.
+פלט:
+```
+Something went wrong!: 2
+```
 
-## נחתום עמוק יותר
+## חפירה עמוקה
 
-לכתוב לפלט התקפי בגירסת Elm יכול להיות כלי עזר חשוב לכתיבת בעיות בתוכנת Elm. בנוסף, זה יכול לתת לנו מידע נוסף ומומחיות לתהליכי פיתוח. כדי לקבל יותר מידע על הפונקציה Debug.log, ניתן לבדוק את התיעוד של Elm ולבדוק כיצד לבצע כתיבה לפלט התקפי בגירסת Elm עבור כל מטרה רלוונטית.
+לכותבי קוד מקצועיים ייתכן שימשיכו לשכפל את הפלט והקלט, לעתים קרובות לקרוא קוד אחר שמתבטא בפלט כפול. למרבה המזל, כתיבה לטרימנל יעזור לך לזהות את השגיאות השונות ולעקוב אחרי התקליטור בקלות יותר. זה משמעותי יותר במיוחד כאשר מדובר בקוד עמוק יותר ומורכב, כאשר קשה יותר להבין את השגיאות השונות שמתנגשות.
 
 ## ראה גם
 
-- [תיעוד Elm Debug module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [סרטון הדרכה על כתיבה לפלט התקפי בגירסת Elm מ-Learn Elm in 5 Minutes](https://www.youtube.com/watch?v=oYk8CKH7eRE)
-- [כתבה על כתיבה לפלט התקפי בגירסת Elm מאת דייויד צ'ייזר](https://dev.to/davidchase/error-reporting-in-elm-440j)
+- [Debug documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Using console.log in Elm](https://noredinktech.wordpress.com/2016/08/08/elm-console-log/)
+- [Learning to debug Elm](https://blog.janestreet.com/learning-to-debug-elm/)

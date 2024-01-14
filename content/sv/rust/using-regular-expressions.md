@@ -1,33 +1,58 @@
 ---
 title:    "Rust: Användning av reguljära uttryck"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att använda reguljära uttryck (regular expressions) är ett kraftfullt sätt att söka och manipulera textsträngar i din kod. Det kan hjälpa dig att effektivt hitta och bearbeta specifika mönster i en text. Om du vill lära dig mer om reguljära uttryck i samband med programmering i Rust, fortsätt läsa!
 
-## Hur man gör
-För att använda reguljära uttryck i Rust, måste du först importera biblioteket `regex`. Detta kan göras genom att lägga till `extern crate regex;` i din `main.rs` fil. Sedan kan du använda `Regex` structen för att skapa ett nytt reguljärt uttryckt med önskat mönster.
+Reguljära uttryck (regular expressions) är en kraftfull funktion inom programmering som tillåter programmerare att enkelt söka och matcha mönster i textsträngar. Genom att använda reguljära uttryck, kan du hitta och extrahera specifika delar av texten du arbetar med, vilket kan spara tid och göra din kod mer effektiv.
+
+## Hur man gör det
+
+För att använda reguljära uttryck i Rust, måste du först importera biblioteket "Regex". Du kan göra detta genom att lägga till `use regex::Regex;` i din kodbas. Sedan kan du skapa ett nytt Regex-objekt genom att använda `Regex::new(pattern)`, där mönstret är det reguljära uttrycket som du vill matcha.
 
 ```Rust
 use regex::Regex;
 
-let text = "Hello, my name is Rust!";
-let re = Regex::new(r"rust").unwrap();
-let result = re.find(text);
-
-println!("{:?}", result); // Output: Some(Match { start: 18, end: 22 })
+let pattern = Regex::new(r"hello");
 ```
 
-I detta exempel skapar vi ett nytt reguljärt uttryck som söker efter ordet "rust" i en sträng. Vi använder sedan `find` funktionen för att hitta det första matchande mönstret. Om det finns en matchning, kommer `result` att returnera `Some(Match)` med start- och slutposition för matchningen. Om inte, returneras `None`.
+För att söka efter en matchning i en textsträng, använder du `is_match`-metoden.
 
-## Djupdykning
-När du arbetar med reguljära uttryck i Rust, kan det vara användbart att känna till några av de vanligaste metaskaraktärerna och regex funktionerna. Till exempel kan du använda `+` för att matcha ett eller flera förekomster av den tidigare uttryckta gruppen, eller `*` för noll eller flera förekomster. Andra metaskaraktärer som kan vara användbara inkluderar `^` för att matcha början av en sträng och `$` för att matcha slutet av en sträng.
+```Rust
+let text = "Hello World!";
+if pattern.is_match(text) {
+    println!("Match found!");
+} else {
+    println!("No match found.");
+}
+```
 
-Det finns också några användbara funktioner som `captures`, som returnerar en `Captures` struct för att arbeta med matchningar som innehåller fångade uttryck, och `replace`, som låter dig byta ut delar av en sträng med ett annat uttryck.
+För att extrahera en del av texten baserat på en matchning, kan du använda `captures`-metoden.
+
+```Rust
+let text = "Hello World!";
+match pattern.captures(text) {
+    Some(captures) => {
+        println!("Match found: {}", captures.get(0).unwrap().as_str());
+    },
+    None => println!("No match found.");
+}
+```
+
+## Mer detaljerad information
+
+Det reguljära uttrycket `r"hello"` som används i vårt exempel är enkelt och söker bara efter en exakt matchning av strängen "hello". Men reguljära uttryck kan vara mycket mer kraftfulla än så. De kan innehålla specialtecken och -teckenklasser som hjälper dig att hitta mönster relaterade till stora delar av texten, såsom siffror, bokstäver och skiljetecken.
+
+Du kan också använda så kallade fångstgrupper (capture groups) för att extrahera specifika delar av texten och använda dessa i din kod. Till exempel kan du använda `r"(\d{2})/(\d{2})/(\d{4})"` för att hitta och extrahera datum i formatet "DD/MM/YYYY".
+
+Reguljära uttryck är också användbara för validering av inmatade data. Genom att matcha inmatad text mot ett specifikt reguljärt uttryck kan du enkelt kontrollera att det har rätt format eller struktur.
 
 ## Se även
-* [Officiella Rust dokumentationen om reguljära uttryck](https://doc.rust-lang.org/1.30.0/std/regex/index.html)
-* [En interaktiv reglujära uttryck lektion med Rust](https://rust-regex.github.io/regex-rust/book/)
+
+- [Rust Regex biblioteket](https://docs.rs/regex/1.5.4/regex/)
+- [Reguljära uttryck tutorial på svenska](https://www.geeksforgeeks.org/regex-progaramming/)
+- [Reguljära uttryck guide för nybörjare](https://www.freecodecamp.org/news/a-beginners-guide-to-regular-expressions-regex-in-javascript/)

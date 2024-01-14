@@ -1,42 +1,40 @@
 ---
-title:    "Elixir: Slette tegn som matcher et mønster"
+title:    "Elixir: Sletting av tegn som matcher et mønster"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Noen ganger når vi jobber med tekst, ønsker vi å fjerne visse tegn som matcher et spesifikt mønster. Dette kan være for å rense data eller for å gjøre tekstbehandlingen mer effektiv. I Elixir kan vi bruke en praktisk funksjon for å hjelpe oss med å gjøre dette.
+Har du noen gang ønsket å fjerne visse tegn fra en streng eller et dokument i Elixir? Vel, det er en funksjon som lar deg gjøre nettopp det! Det kan være nyttig i situasjoner der du må foreta en omfattende redigering av en tekst eller når du ønsker å filtrere ut uønskede tegn. I denne artikkelen vil vi utforske hvordan du kan slette tegn som passer til et gitt mønster i Elixir.
 
 ## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster i Elixir, kan vi bruke funksjonen `String.replace/3`. Denne funksjonen tar tre argumenter: inputstrengen, mønsteret som skal matches og den nye teksten som skal erstatte det matchende mønsteret. La oss se på et eksempel:
+For å slette tegn som matcher et mønster, kan du bruke `String.replace` funksjonen. Her er et eksempel som viser hvordan du kan bruke den:
 
-```
-Elixir
-string = "Hei, jeg er en tekst"
-String.replace(string, " ", "") # output kommer til å være "Heijegerentekst"
-```
+```elixir
+str = "Hei, dette er et eksempel 123"
+nytt_str = String.replace(str, ~r/\d+/, "")
+IO.puts nytt_str
 
-I dette eksempelet erstatter vi mellomromstegnene med en tom streng. Vi kan også bruke regex for å matche mer komplekse mønstre. For eksempel:
-
-```
-Elixir
-string = "Jeg har en elixir-blogg"
-String.replace(string, ~r/[a-z]{6,}/, "Elixir") # output kommer til å være "Elixir Elixir Elixir"
+# Output: Hei, dette er et eksempel 
 ```
 
-Her erstatter vi alle ord med seks eller flere bokstaver med "Elixir".
+I dette eksempelet bruker vi `~r/\d+/` som mønsteret vi vil matche, som betyr at vi fjerner alle numeriske tegn fra strengen. Du kan endre mønsteret etter dine behov for å slette forskjellige typer tegn.
+
+Du kan også bruke regulære uttrykk direkte i mønsteret for å slette mer komplekse mønstre. For eksempel, hvis du vil slette alle tall som kommer etter en punktum i en streng, kan du bruke følgende mønster: `~r/\.\d+/`. Dette vil fjerne alle tall som er etterfulgt av et punktum.
 
 ## Dypdykk
 
-For å forstå hvordan `String.replace/3` fungerer, kan vi ta en nærmere titt på dens implementering. Den bruker en funksjon kalt `:re.replace/4` fra det underliggende biblioteket *re*. Den tar inn inputstrengen, regex-mønsteret og en funksjon som brukes til å erstatte matchende mønstre. Den bruker også en funksjon kalt `:unicode.replace/3` for å sikre at den støtter Unicode-tegn.
+Nå som vi har sett på hvordan du kan slette tegn som matcher et gitt mønster, la oss dykke litt dypere inn i funksjonene `String.replace` og regulære uttrykk.
 
-Vi kan også bruke `String.replace/3` for å behandle data før vi bruker den til å bygge en liste eller annen datastruktur. Dette kan hjelpe oss med å rengjøre og validere data før vi bruker den videre i applikasjonen vår.
+For det første er `String.replace` en del av Elixir `String` modulen, som gir oss mange nyttige funksjoner for å arbeide med strenger. I tillegg til å fjerne tegn som matcher et mønster, kan du også bruke den til å erstatte de matchende tegnene med en annen streng.
+
+Når det gjelder regulære uttrykk, er de et kraftig verktøy for å finne og manipulere tekst basert på et bestemt mønster. Det er verdt å bruke litt tid på å lære grunnleggende om regulære uttrykk for å få mest mulig ut av dem i Elixir.
 
 ## Se også
 
-- Dokumentasjon for String.replace: https://hexdocs.pm/elixir/String.html#replace/3
-- Dokumentasjon for re biblioteket: https://hexdocs.pm/elixir/Regex.html
-- Dokumentasjon for unicode biblioteket: https://hexdocs.pm/elixir/Unicode.html
+- [Elixir String modulen dokumentasjon](https://hexdocs.pm/elixir/String.html)
+- [Regulære uttrykk i Elixir tutorial](https://medium.com/elixir-mix/elixir-tutorial-regular-expressions-88aa9ac503ba)

@@ -1,42 +1,46 @@
 ---
 title:    "Arduino: 编写测试"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：写测试的原因很简单，它可以帮助你验证你的代码是否按照预期工作，并且可以帮助你捕捉潜在的错误。
+## 为什么
+测试是Arduino编程中至关重要的一部分。它可以帮助我们发现潜在的错误，并确保我们的代码在各种情况下都能正常工作。通过编写测试，我们可以更有效地调试和修改我们的代码，从而节省时间和精力。
 
-如何进行：编写测试很简单，只需要学习一些基本的语法和概念即可。首先，你需要在setup()函数中声明所需的引脚和变量。然后，在loop()函数中编写测试代码，并使用Serial.print()来输出结果。最后，在结束函数中使用Serial.println()来打印测试的总体结果。
+## 如何做
+编写测试的一种常见方法是使用Arduino Unit Testing库。以下是一个简单的示例，展示如何将测试用例与Arduino代码结合使用：
 
-## 深入探讨
+```Arduino
+#include <ArduinoUnit.h>
 
-编写测试可以帮助你更有效地调试你的代码。通过编写多个测试，你可以更容易地找出哪些部分出了问题，并且可以避免在长时间的调试过程中浪费时间。此外，编写测试还可以让你在做出更改之前，先验证你的代码是否仍然按照预期工作，从而避免意外的错误。
+// 定义一个测试用例
+test(squareTest) {
+  assertEqual(square(2), 4);
+}
 
+// 定义一个将被测试的函数
+int square(int number) {
+  return number * number;
+}
+
+void setup() {
+  // 运行测试
+  Test::run();
+}
+
+void loop() {
+  // 不做任何事情，测试只在setup函数中运行
+}
 ```
-Arduino.setup(){
-  pinMode(13, OUTPUT); //声明引脚为输出模式
-  int var = 5; //声明变量并赋值为5
-}
 
-Arduino.loop(){
-  digitalWrite(13, HIGH); //控制引脚输出高电平
-  Serial.print(var); //输出变量的值
-  delay(1000); //延迟1秒
-  digitalWrite(13, LOW); //控制引脚输出低电平
-  Serial.println("Test completed."); //打印测试完成的提示语
-}
+运行此代码后，将会输出 `OK (1 tests, 1 assertions)`，表示测试成功通过。
 
-Arduino.End(){
-  Serial.println("All tests passed."); //打印所有测试都通过的提示语
-}
-```
+## 深入了解
+使用Arduino Unit Testing库，我们可以编写更复杂的测试用例，并进行更多的断言。此外，我们还可以使用断言来测试特定的输出，以确保我们的代码产生了预期的结果。对于大型项目，编写测试可以帮助我们更好地组织和管理代码，从而提高可维护性。
 
-## 深入探讨
-
-除了验证代码是否按照预期工作之外，编写测试还可以帮助你更好地理解你的代码。通过编写各种不同类型的测试，你可以更深入地了解你的代码的不同方面，并且更容易发现潜在的问题。此外，编写测试还可以让你更自信地修改和重构你的代码，因为你知道通过测试可以验证你的代码是否仍然按照预期工作。
-
-## See Also
-- [Arduino官方文档](https://www.arduino.cc/reference/en/)
-- [Arduino编程教程](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduino测试实例](https://www.arduino.cc/en/Tutorial/HomePage)
+## 参考链接
+- [Arduino Unit Testing库文档](https://github.com/mmurdoch/arduinounit)
+- [详细介绍Arduino Unit Testing的博客文章](https://www.sparkfun.com/news/1322)
+- [如何写单元测试的指南](https://www.arduino.cc/en/Guide/UnitTesting)

@@ -1,52 +1,58 @@
 ---
-title:    "Gleam: ランダムな数字を生成する"
+title:    "Gleam: ランダムな数字の生成"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ__乱数の生成に取り組むのか？
+#なぜ乱数を生成するのか？
 
-乱数は、ゲームやシミュレーション、そしてセキュリティー分野で重要な役割を果たします。Gleamプログラミング言語で乱数を生成する方法を学ぶことで、これらの分野でより高度なプログラムを作成することができます。
+乱数は、プログラミングの世界ではとても便利なツールです。特に、ゲームやシミュレーションなど、ランダム性が必要な場面で活用されます。また、ランダム性を持たせることで、プログラムの予測可能性を下げることができ、セキュリティ上の利点もあります。
 
-## 方法
+## 生成方法
+
+乱数を生成するには、 `random` モジュールを使用します。まずはこのモジュールをインポートしましょう。
 
 ```Gleam
-import gleam/random
-
-fn main() {
-  // 0以上10未満の整数を生成する例
-  let random_number = random.int(0, 10)
-  
-  // 0以上1未満の浮動小数点数を生成する例
-  let random_float = random.float(0.0, 1.0)
-  
-  // リストからランダムな要素を選択する例
-  let list = [1, 2, 3, 4, 5]
-  let random_choice = random.choice(list)
-  
-  // 乱数生成を初期化する例
-  let random_generator = random.init(123456789)
-  
-  // 乱数生成器を使用して0以上100未満の整数を生成する例
-  let random_number = random_generator.int(0, 100)
-}
+import random
 ```
 
+次に、`random`モジュールの `generate_int`関数を使用して、指定した範囲内の整数を生成することができます。
+
 ```Gleam
-// 出力例
-random_number = 7
-random_float = 0.527
-random_choice = 3
-random_number = 42
+let random_number = random.generate_int(1, 10) // 1から10までの整数を生成
+```
+
+また、浮動小数点数を生成する場合には、`generate_float`関数を使用します。
+
+```Gleam
+let random_float = random.generate_float(0.0, 1.0) // 0から1までの浮動小数点数を生成
+```
+
+乱数を生成するたびに、同じ結果が返ってくるのも問題です。それを避けるためには、毎回異なるシード値を生成する必要があります。
+
+```Gleam
+let seed = random.generate_seed()
+random.seed(seed) // シード値をセット
 ```
 
 ## 深堀り
 
-乱数の生成は、擬似乱数と真の乱数の2種類に分類されます。Gleamでは、擬似乱数を生成するためにメルセンヌ・ツイスター(Mersenne Twister)アルゴリズムが使用されています。ただし、このアルゴリズムは事前に設定したシード値に基づいて乱数を生成するため、実行ごとに同じシード値を使用すると同じ乱数が生成されてしまいます。そのため、乱数生成時にseedを変えることで、よりランダムな値を生成することができます。
+乱数は実際には、疑似乱数と呼ばれるものであり、完全にランダムな値ではありません。乱数生成アルゴリズムには、繰り返し周期があり、同じ数値の列が現れることもあり得ます。
 
-## 併せて読みたい
+一方、真にランダムな乱数を生成するハードウェアデバイスも存在しますが、プログラミングでは主に疑似乱数が使用されます。
 
-- [Gleamの公式ドキュメント：乱数](https://gleam.run/reference/stdlib.html#random)
-- [ブログ記事：Gleamで乱数を生成する方法](https://blog.example.com/gleam-random)
-- [GleamのGitHubリポジトリ](https://github.com/your_username/gleam)
+より安全で高品質な、疑似乱数を生成するアルゴリズムを実装することも可能ですが、その分処理負荷が高くなることに注意が必要です。
+
+## さらに詳しく知るには
+
+- [Gleam公式ドキュメント: ランダムモジュール](https://gleam.run/documentation/stdlib/random.html)
+- [乱数 - 维基百科](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0)
+- [疑似乱数 - 维基百科](https://ja.wikipedia.org/wiki/%E7%96%91%E4%BC%BC%E4%B9%B1%E6%95%B0)
+
+#関連リンク
+
+- [Gleam公式サイト](https://gleam.run/)
+- [Gleam日本公式サイト](https://gleam-lang.org/ja/)
+- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)

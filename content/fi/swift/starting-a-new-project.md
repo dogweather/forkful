@@ -1,40 +1,56 @@
 ---
 title:    "Swift: Uuden projektin aloittaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+# Miksi aloittaa uusi projekti
 
-On monia syitä aloittaa uusi ohjelmointiprojekti. Ehkä sinulla on uusi idea, jota haluat kokeilla tai haluat oppia uuden ohjelmointikielen. Tai ehkä haluat laajentaa taitojasi ja haastaa itsesi. Mikä tahansa syy onkin, aloittaminen on aina jännittävää ja palkitsevaa!
+Aloittaa uusi ohjelmointiprojekti voi vaikuttaa pelottavalta ja ylivoimaiselta tehtävältä, mutta todellisuudessa se voi tuoda paljon hyötyä ja oppimiskokemuksia. Uuden projektin aloittamalla voit harjoitella uusia taitoja ja luoda jotain uniikkia ja omaa, jolla voi olla suuri vaikutus muille.
 
-## Kuinka aloittaa
+# Miten aloittaa uusi projekti
 
-Ensimmäinen askel uuden Swift-projektin aloittamisessa on asentaa Xcode ja Swiftin ohjelmointikirjasto. Kun olet asentanut ne, voit luoda uuden projektin valitsemalla File > New > Project.
+Ensimmäinen askel uuden Swift-projektin aloittamisessa on avata Xcode ja valita "Create a new Xcode project" -vaihtoehto. Valitse sitten "Single View App" -pohja ja anna projektillesi nimi.
 
-```Swift
-let hello = "Hei!"
-print(hello)
-```
+Seuraavaksi voit luoda uuden Swift-tiedoston projektillesi painamalla "Command + N". Tämä luo tyhjän Swift-tiedoston, johon voit alkaa kirjoittaa koodia. Voit myös käyttää valmiita mallipohjia ja kirjastoja helpottaaksesi projektisi aloittamista.
 
-Tämä koodinpätkä luo uuden tekstimuuttujan nimeltä "hello" ja tulostaa sen konsoliin käyttäen print-komentoa.
+Tässä esimerkissä luomme yksinkertaisen laskimen, joka ottaa käyttäjän syöttämän ensimmäisen numeron ja toisen numeron ja laskee niiden summan. Ensimmäiseksi lisäämme alussa tarvittavat muuttujat ja pyydämme käyttäjältä syötteen:
 
 ```Swift
-let age = 28
-print("Olen \(age) vuotta vanha.")
+var firstNumber: Int
+var secondNumber: Int
+
+print("Anna ensimmäinen numero:")
+firstNumber = Int(readLine() ?? "") ?? 0
+print("Anna toinen numero:")
+secondNumber = Int(readLine() ?? "") ?? 0
 ```
 
-Tässä esimerkissä käytämme string interpolationia eli sijoitamme muuttujan "age" merkkijonon sisälle lasketun arvon tulostamisen helpottamiseksi.
+Seuraavaksi laskemme numeroiden summan ja tulostamme sen konsoliin:
 
-## Syventyvä sukellus
+```Swift
+let sum = firstNumber + secondNumber
+print("Summa on \(sum)")
+```
 
-Uuden projektin aloittaminen vaatii myös suunnittelua ja harkintaa. Pohdi ensin tarkasti, mitä haluat saavuttaa projektillasi ja mieti, mitkä ovat tavoitteesi. Ota myös huomioon projektisi aikataulu ja aseta realistiset tavoitteet.
+Lopuksi voit testata koodin toimivuuden ajamalla projektia ja antamalla sille erilaisia syötteitä.
 
-Muista myös käyttää dokumentointia ja kommentteja koodissasi. Tämä auttaa sinua ymmärtämään projektiasi myöhemminkin ja helpottaa mahdollista yhteistyötä muiden kanssa.
+# Syvällinen sukellus
 
-## Katso myös
+Aloittaminen uuden Swift-projektin kanssa ei ole vain pelkkää koodien kirjoittamista, vaan se vaatii myös suunnittelua ja mietiskelyä. Ennen projektin aloittamista on hyvä pohtia, mitä haluat saavuttaa ja mikä on projektillesi tarkoitus. Tämä auttaa sinua luomaan selkeän suunnitelman ja välttämään mahdollisia ongelmia projektin edetessä.
 
-- [Swiftin aloittaminen Apple Developer -sivustolla](https://developer.apple.com/swift/)
-- [Swift-tutoriaalit Beginning Swift -sivustolla](https://beginningswift.com/)
-- [Swiftin perusteet Codecademy-sivustolla](https://www.codecademy.com/learn/learn-swift)
+On myös hyvä idea tutustua hyviin ohjelmointikäytäntöihin ja seurata ohjeita, jotta voit luoda laadukkaan ja helposti ylläpidettävän koodin. Kannattaa myös pitää projektisi dokumentointi ajan tasalla ja käyttää versionhallintaa, jotta voit seurata ja palata vanhoihin versioihin tarvittaessa.
+
+# Keksiä myös
+
+[Vinkkejä Swift-projektin aloittamiseen](https://www.raywenderlich.com/5991-swift-tutorial-part-0-expressions-variables-and-constants)
+
+[Swift-oppaat ja tutoriaalit](https://developer.apple.com/documentation/swift)
+
+# Katso myös
+
+[Kuinka oppia Swiftiä nopeasti](https://fi.education.pabili.com/swift)
+
+[Parhaat ohjelmointikäytännöt Swiftillä](https://developer.apple.com/swift/)

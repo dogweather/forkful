@@ -1,43 +1,43 @@
 ---
 title:    "Clojure: Stampa dell'output di debug"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Scrivere output di debug può essere utile quando si cerca di individuare e risolvere errori nel proprio codice. Può fornire informazioni utili sulla logica del programma e aiutare a identificare eventuali problemi.
 
-## Come fare
-Per stampare l'output di debug in Clojure, è possibile utilizzare la funzione `println` seguita da ciò che si desidera visualizzare. Ad esempio:
+Stampare l'output di debug è un'attività importante per i programmatori che vogliono monitorare il comportamento del loro codice e individuare eventuali errori. Grazie alla stampa di output di debugging, è possibile osservare il flusso del programma e verificare che i dati siano corretti.
 
-```Clojure
-(println "Il mio messaggio di debug")
-```
+## Come farlo
 
-Questo stamperà "Il mio messaggio di debug" nella console. Inoltre, è possibile utilizzare la funzione `prn` per stampare in modo più formattato e la funzione `str` per convertire variabili di diversi tipi in stringhe. Ad esempio:
+Per stampare l'output di debugging in Clojure, è possibile utilizzare la funzione `println` seguita dalle variabili o espressioni che si vuole visualizzare. Ad esempio:
 
 ```Clojure
-(def nome "Laura")
-(def età 30)
-(prn "Ciao, mi chiamo" nome "e ho" età "anni")
+(def x 5)
+(def y 10)
+(println "Il valore di x è " x)
+(println "Il valore di y è " y)
 ```
 
-Questo stamperà "Ciao, mi chiamo Laura e ho 30 anni" nella console.
+L'esempio sopra stamperebbe l'output seguente:
+
+```
+Il valore di x è 5 
+Il valore di y è 10
+```
+
+Una volta che l'output di debugging è stato stampato, è necessario analizzarlo attentamente per identificare eventuali errori o anomalie che potrebbero causare problemi nel programma.
 
 ## Approfondimento
-Una delle funzionalità più utili per il debug in Clojure è l'utilizzo della macro `dbg` del pacchetto `clojure.tools.logging`. Questa macro permette di stampare non solo il messaggio di debug, ma anche la funzione e il numero di riga da cui è stata chiamata. Ad esempio:
 
-```Clojure
-(require '[clojure.tools.logging :as log])
-(def nome "Anna")
-(def età 25)
-(log/dbg "Ciao, mi chiamo" nome "e ho" età "anni")
-```
+Per una maggiore flessibilità e controllo sull'output di debugging, è possibile utilizzare la macro `prn`, che stampa i dati con un formato più leggibile per il programmatore. Inoltre, è possibile utilizzare la funzione `str` per concatenare le stringhe e visualizzare più dati in un unico output.
 
-Questo stamperà "Il mio messaggio di debug" seguito da "Nome della funzione: numero riga", ad esempio "Ciao, mi chiamo Anna e ho 25 anni - user:27" nella console. Questo può essere molto utile per individuare errori e comprendere meglio il flusso del programma.
+Oltre alla stampa di output di debugging, è anche possibile utilizzare un debugger visuale come CIDER o nREPL per esaminare il codice e i dati in tempo reale durante l'esecuzione.
 
 ## Vedi anche
-- [Documentazione ufficiale di Clojure](https://clojure.org/)
-- [Guida al debug in Clojure](http://www.braveclojure.com/debugging/)
-- [Clojure Debug Repl](https://github.com/Day8/re-frame/blob/master/docs/DEBUGGING.md)
+
+- [Clojure Debugging Tips](http://blog.cognitect.com/blog/2016/12/5/clojure-debugging-tips)
+- [CIDER debugging guide](https://cider.readthedocs.io/en/latest/debugging/)
+- [nREPL debugging guide](https://nrepl.org/nrepl/usage/debug-integration.html)

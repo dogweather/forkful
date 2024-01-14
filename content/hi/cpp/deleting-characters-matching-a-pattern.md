@@ -1,55 +1,47 @@
 ---
-title:    "C++: पैटर्न के मिलते हुए चरित्रों को हटाना"
+title:    "C++: पैटर्न से मेल खाते वर्णों को हटाना"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun:
-Kisi bhi programmer ke liye, samay ke saath saath unke codebase mein kayi saare changes aur updates hote rehte hain. Inme se ek common issue hota hai ki, kuch characters ka pattern match hona aur unhe delete karna. Lekin ye kaam baar baar manually karna kafi tedious aur time consuming ho sakta hai. Isi liye, hum C++ mein ek program likhenge jo kisi bhi pattern match karne aur use delete karne ko automated aur efficient banayega.
+आज कल, कंप्यूटर विज्ञान में कोई नया कमाल कर रहा है। प्रोग्रामिंग का ही वह एक हिस्सा है, इसलिए इस प्रकार के कई समस्याओं का आनंद लें। एक ऐसी समस्या है कि यदि आपके पास एक स्ट्रिंग है और आपको उसमें एक कार्यक्रम से मेल खाने वाले चर को हटाना है, तो आपको इससे पूरा पालन कर सकते है। यह आसान है, किन्तु तरीका वास्तव में मिथ्या हो सकता है ही इसलिए इसके बारे में खुद को प्रदर्शित करते हैं। आओ हम इस बात का निष्कर्ष लेते हैं कि कार्यक्रम के साथ एक चर को हटाना है, तो कैसे उसे आसानी से करें।
 
-## Kaise Karein:
-Sabse pehle, hum C++ ka ek basic program likhenge jo input lenge aur usme se user dwara diye gaye pattern ko dhundhkar use delete kar dega. Iske liye, hum `find()` aur `erase()` functions ka istemal karenge. Neeche diye gaye code block mein, humne ek string liya aur usme se sabse pehle "a" character ko delete kar diya.
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main(){
-    string str = "Programming";
-    str.erase(str.find("a"), 1);
-    cout << str;
-    return 0;
-}
-
-// Output: Progmming
-```
-
-Agar hume isi tarah se dusre characters bhi delete karne hote hain, toh hum `replace()` function ka bhi istemal kar sakte hain. Ye function string mein se ek character ko dusre ke saath replace karta hai. Neeche diye gaye code block mein, humne string se pehle "a" character ko "o" character ke saath replace kiya.
+## क्यों
+एक चर को हटाने के पाठ का हंगामा होता है सिद्धांत में आया है। यह कुछ उदासी भरे भण्डार जेब्टबद्ध और शुभारंभ कैसे करें। आइये आपको बॉलीवुड को आज एक एन्टरटेनर दें।
 
 ```C++
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-int main(){
-    string str = "Programming";
-    str.replace(str.find("a"), 1, "o");
-    cout << str;
-    return 0;
+// फंक्शन जो स्ट्रिंग और उस चर को हटाता है
+string removeChar(string str, char ch){
+    string result = "";
+    // स्ट्रिंग के हर एक चर को चेक करता है
+    for(int i=0;i<str.length();i++){
+        // यदि चर मेल खट्टा है, तो उसे अंतर रखें
+        if(str[i] != ch){
+            result += str[i];
+        }
+    }
+    // औपुट स्ट्रिंग प्रत्यारोपित वापस दिता है
+    return result;
 }
 
-// Output: Proogromming
+int main(){
+    // स्ट्रिंग डेमो
+    string str = "हैलो वर्ल्ड!";
+    // फंक्शन यूसेज कॉलिंग
+    cout << "आदिकारी " << str << endl;
+    str = removeChar(str, '!');
+    cout << "स्ट्रिंग बाद ";
+    cout << str << endl;
+    return 0;
+}
 ```
 
-## Gahrai Mein Jaayein:
-Iss tarah, humne C++ mein koi bhi character pattern ko delete karna sikh liya. Lekin, agar hum kisi specific character se zyada characters ko delete karna chahte hain, ya phir kuch complex patterns ko handle karna chahte hain, toh hum Regular Expressions ka istemal kar sakte hain. Ye hume pattern matching aur manipulations mein zyada flexibility dete hain. Ye C++ ke `regex` library mein available hote hain.
-
-## Dekhein Bhi:
-- [`find()` function in C++](https://www.geeksforgeeks.org/c-string-find-function/)
-- [`erase()` function in C++](https://www.geeksforgeeks.org/c-string-erase-function/)
-- [`replace()` function in C++](https://www.geeksforgeeks.org/c-string-replace-function/)
-- [Regular Expressions in C++](https://www.geeksforgeeks.org/the-c-standard-library-regex/)
+```
+आदिकारी हैलो वर्ल्ड!
+स्ट्रिं

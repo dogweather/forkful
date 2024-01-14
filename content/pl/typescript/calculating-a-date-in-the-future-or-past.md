@@ -1,61 +1,40 @@
 ---
 title:    "TypeScript: Obliczanie daty w przyszłości lub przeszłości"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami w programowaniu potrzebujemy obliczyć datę w przyszłości lub przeszłości, na przykład do wyświetlenia harmonogramu lub do obliczenia daty ważności. W tym artykule dowiesz się, jak możesz łatwo to zrobić w języku TypeScript.
+Obliczanie daty w przyszłości lub przeszłości jest bardzo przydatne w programowaniu. Może pomóc w wyświetlaniu terminów lub dat wydarzeń, tworzeniu harmonogramów lub wyznaczaniu czasowych ograniczeń dla aplikacji. Jest to również ważne, ponieważ dostarcza informacji o datach, które mogą być trudne lub nieintuicyjne do obliczenia ręcznie.
 
 ## Jak to zrobić
 
-Poniżej znajdują się dwa przykładowe kody, które pokażą Ci, jak obliczyć datę w przyszłości i przeszłości w TypeScript:
+Aby obliczyć datę w przyszłości lub przeszłości w TypeScript, musisz użyć wbudowanej klasy `Date`. Możesz użyć różnych metod tej klasy, aby dodawać lub odejmować dni, miesiące, lata lub inne jednostki czasu od bieżącej daty. Następnie możesz użyć metody `toLocaleDateString()` lub `toLocaleString()` w celu sformatowania wyjścia według preferencji językowych użytkownika. Przykładowy kod wyglądałby następująco:
 
-### Obliczanie daty w przyszłości
-
-```TypeScript
-const dzisiaj = new Date();
-const dniDoDodania = 14;
-const dataPrzyszla = new Date(dzisiaj.getTime() + dniDoDodania * 24 * 60 * 60 * 1000);
-
-console.log(`Data za dwa tygodnie: ${dataPrzyszla.toDateString()}`);
+```
+TypeScript
+let currentDate = new Date();
+let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14);
+console.log(futureDate.toLocaleDateString()); // wyświetli datę dwa tygodnie od bieżącej daty, sformatowaną według preferencji językowych użytkownika
 ```
 
-W tym przykładzie tworzymy obiekt daty dla dzisiejszego dnia, a następnie dodajemy do niego liczbę dni, jaką chcemy przesunąć datę w przyszłość. Przy użyciu metody `getTime()` uzyskujemy liczbę milisekund reprezentujących datę dzisiejszą, a następnie mnożymy przez 24, 60, 60, 1000, aby przekonwertować dzień na milisekundy. Następnie tworzymy nowy obiekt daty na podstawie tej liczby i wyświetlamy go w konsoli.
+Output:
 
-### Obliczanie daty w przeszłości
-
-```TypeScript
-const dzisiaj = new Date();
-const dniDoOdejmowania = 7;
-const dataPrzeszla = new Date(dzisiaj.getTime() - dniDoOdejmowania * 24 * 60 * 60 * 1000);
-
-console.log(`Data sprzed tygodnia: ${dataPrzeszla.toDateString()}`);
 ```
-
-Podobnie jak w poprzednim przykładzie, tworzymy obiekt daty dla dzisiejszego dnia. Tym razem jednak odejmujemy od niego liczbę dni, aby przesunąć datę w przeszłość. Następnie tworzymy nowy obiekt daty i wyświetlamy go w konsoli.
+"21.06.2021"
+```
 
 ## Deep Dive
 
-Obliczanie daty w przyszłości lub przeszłości może wymagać nieco większej uwagi, ponieważ należy uwzględnić różnice w długościach miesięcy i lat. W przypadku prostych przykładów, jakie przedstawiliśmy powyżej, nie jest to problemem. Jednak w bardziej skomplikowanych przypadkach, na przykład gdy chcemy dodać/odjąć lata lub miesiące, powinniśmy użyć metody `setFullYear()` lub `setMonth()`.
+W tym przykładzie użyliśmy metody `getDate()` klasy `Date`, aby dodać 14 dni do bieżącej daty. Jednak istnieje wiele innych metod, które mogą być wykorzystane do obliczania dat w przyszłości lub przeszłości. Na przykład, można użyć metody `setFullYear()`, aby ustawiać rok, `setMonth()` dla miesięcy lub `setDate()` dla dni. Możliwości są praktycznie nieograniczone, a w zależności od potrzeb programisty, różne kombinacje metod mogą być wykorzystane do osiągnięcia pożądanego wyniku.
 
-Na przykład, jeśli chcemy dodać 6 miesięcy do bieżącej daty, zamiast mnożyć przez liczbę milisekund w roku, możemy po prostu użyć metody `setMonth()`:
+## Zobacz również
 
-```TypeScript
-const dzisiaj = new Date();
-const miesiaceDoDodania = 6;
+Jeśli jesteś zainteresowany/a dalszym zgłębianiem tematu obliczania dat w przyszłości lub przeszłości w TypeScript, polecamy Ci zapoznać się z następującymi linkami:
 
-dzisiaj.setMonth(dzisiaj.getMonth() + miesiaceDoDodania);
-
-console.log(`Data za 6 miesięcy: ${dzisiaj.toDateString()}`);
-```
-
-Używając tej metody musimy jednak pamiętać o tym, że numery miesięcy są indeksowane od 0, więc styczeń to 0, luty to 1, itd. Dlatego też, aby dodać 6 miesięcy, używamy metody `getMonth()` do pobrania aktualnego miesiąca i dodajemy do niego 6.
-
-## Zobacz także
-
-Jeśli jesteś zainteresowany bardziej zaawansowanym obliczaniem dat w TypeScript, polecamy zapoznanie się z dokumentacją, która może być dla Ciebie pomocna:
-
-- [Dokumentacja Date w TypeScript](https://www.typescriptlang.org
+- [Dokumentacja TypeScript dla klasy Date](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
+- [Artykuł na temat obliczania dat w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-code-a-date-picker)
+- [Tutorial na temat manipulacji datami w TypeScript](https://www.digitalocean.com/community/tutorials/manipulating-dates-and-times-in-javascript-with-moment-js)

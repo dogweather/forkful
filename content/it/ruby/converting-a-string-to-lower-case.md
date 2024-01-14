@@ -1,27 +1,59 @@
 ---
-title:    "Ruby: Conversione di una stringa in minuscolo"
+title:    "Ruby: Converione di una stringa in minuscolo"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Molti sviluppatori si trovano spesso a dover gestire dati che includono stringhe di testo in maiuscolo o inizialmente capitalizzate. Per garantire una maggiore uniformità e facilità di manipolazione dei dati, è spesso necessario convertire queste stringhe in minuscolo. In questo articolo vedremo come farlo utilizzando il linguaggio di programmazione Ruby.
 
-## Come Fare
-Per convertire una stringa in minuscolo in Ruby, possiamo utilizzare il metodo `downcase`. Di seguito è riportato un esempio del codice da utilizzare:
+Molte volte durante la scrittura di codice, potresti avere la necessità di convertire una stringa in lower case. Questo è utile nei casi in cui devi effettuare una comparazione tra due stringhe senza considerare la differenza tra maiuscole e minuscole.
+
+## Come fare
+
+Per convertire una stringa in lower case in Ruby, puoi utilizzare il metodo `downcase`.
 
 ```
-Ruby
-stringa = "QUESTA STRINGA SARÀ CONVERTITA IN MINUSCOLO"
+Ruby stringa = "Ciao a tutti!"
 puts stringa.downcase
 ```
 
-L'output di questo codice sarà "questa stringa sarà convertita in minuscolo".
+Output: `ciao a tutti!`
+
+Puoi anche assegnare il risultato alla stessa variabile se vuoi modificare permanentemente la stringa.
+
+```
+stringa = stringa.downcase
+puts stringa
+```
+
+Output: `ciao a tutti!`
+
+Se invece vuoi solo fare una comparazione tra due stringhe senza alterare la stringa originale, puoi utilizzare il metodo `casecmp`.
+
+```
+stringa1 = "Ciao a tutti!"
+stringa2 = "ciao a tutti!"
+puts stringa1.casecmp(stringa2) == 0
+```
+
+Output: `true`
 
 ## Approfondimento
-Il metodo `downcase` è una funzione di Ruby che consente di convertire una stringa in minuscolo, mantenendo inalterate le lettere accentate o di altri sistemi di scrittura diversi da quello latino. Tuttavia, è importante tenere presente che questo metodo non modifica direttamente la stringa originale, ma restituisce una nuova stringa in minuscolo. Se si desidera modificare la stringa originale, è possibile utilizzare il metodo `downcase!`, che aggiorna direttamente il valore della stringa.
 
-## Vedi Anche
-- [Documentazione del metodo `downcase` di Ruby](https://ruby-doc.org/core-2.7.3/String.html#method-i-downcase)
-- [Articolo su Techopedia sui metodi di manipolazione delle stringhe in Ruby](https://www.techopedia.com/how-do-i-use-string-manipulation-in-ruby/2/33347)
+Il metodo `downcase` utilizza le regole di conversione specifiche di ogni lingua per convertire le lettere maiuscole in lettere minuscole. Ad esempio, il carattere "I" in una stringa in lingua inglese verrà convertito in "i", mentre in una stringa in lingua tedesca verrà convertito in "ı".
+
+Puoi anche utilizzare il metodo `downcase!` per modificare la stringa originale senza dover assegnare nuovamente il risultato alla stessa variabile.
+
+```
+stringa = "Buongiorno a tutti!"
+stringa.downcase!
+puts stringa
+```
+
+Output: `buongiorno a tutti!`
+
+## Vedi anche
+- [Ruby string class documentation](https://ruby-doc.org/core-3.0.1/String.html)
+- [Ruby string methods](https://www.rubyguides.com/ruby-string-methods/)

@@ -1,72 +1,46 @@
 ---
 title:    "Javascript: 比较两个日期"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要比较两个日期
+# 为什么比较两个日期
+比较两个日期是在编程过程中很常见的需求，它可以用来判断一个日期是在另一个日期之前、之后还是相等。这在处理时间相关的数据时非常有用，比如订单的创建时间和交付时间。
 
-日期在程序设计中经常被用到，尤其是在涉及到时间的计算和数据处理时。比较两个日期可以帮助我们判断某一事件发生的先后顺序，或者计算两个日期之间的时间差。在这篇博文中，我们将会学习如何使用JavaScript来比较两个日期。
-
-## 如何比较两个日期
-
-为了比较两个日期，我们首先需要创建两个Date对象。我们可以使用 `new Date()` 方法来创建一个当前日期的Date对象，或者使用 `new Date(year, month, date)` 方法来创建指定日期的Date对象。例如：
-
+# 如何比较两个日期
 ```Javascript
-var date1 = new Date(); // 创建一个当前日期的Date对象
-var date2 = new Date(2021, 5, 31); // 创建指定日期的Date对象（年份、月份、日期分别为2021、6、31）
-```
+// 创建两个日期对象
+const date1 = new Date('2021-01-01');
+const date2 = new Date();
 
-接下来，我们可以使用 `getTime()` 方法来获取日期对象的时间戳，然后通过比较时间戳的大小来判断日期的先后顺序。如果第一个日期的时间戳大于第二个日期的时间戳，则第一个日期较晚，反之则第一个日期较早。例如：
-
-```Javascript
-var time1 = date1.getTime(); // 获取第一个日期对象的时间戳
-var time2 = date2.getTime(); // 获取第二个日期对象的时间戳
-if (time1 > time2) {
-	// 第一个日期较晚
-	console.log(date1 + " is later than " + date2);
-} else if (time1 < time2) {
-	// 第一个日期较早
-	console.log(date1 + " is earlier than " + date2);
+// 比较两个日期是否相等
+if(date1.getTime() === date2.getTime()) {
+  console.log('两个日期相等');
 } else {
-	// 两个日期相同
-	console.log(date1 + " is the same as " + date2);
+  console.log('两个日期不相等');
+}
+
+// 判断一个日期是否在另一个日期之前
+if(date1 < date2) {
+  console.log('date1在date2之前');
+}
+
+// 判断一个日期是否在另一个日期之后
+if(date1 > date2) {
+  console.log('date1在date2之后');
 }
 ```
 
-输出结果为：
+以上示例代码使用Date对象的 `getTime()` 方法来比较日期，返回的是日期的毫秒数，可以直接进行比较。如果需要比较更精确的时间，可以使用 `getMilliseconds()`、`getSeconds()` 等方法。
 
-```
-Tue Jun 29 2021 10:00:00 GMT+0800 (中国标准时间) is later than Mon May 31 2021 10:00:00 GMT+0800 (中国标准时间)
-```
+# 深入了解比较两个日期
+在比较两个日期时，应该注意使用恰当的条件语句，避免因为时区、夏令时等因素导致的错误。另外，还可以使用 `Date.parse()` 方法来将日期字符串转换为毫秒数，方便比较。
 
-## 深入了解比较两个日期
+# 参考资料
+[MDN JavaScript文档：Date对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+[JavaScript中的日期比较](https://www.cnblogs.com/uovovo/p/11290033.html)
 
-在实际开发中，我们可能会遇到一些复杂的日期比较情况。例如，我们可能需要比较两个日期的年份、月份或者日期是否相同。为了实现这样的比较，我们可以使用 `getFullYear()`、`getMonth()` 和 `getDate()` 方法来分别获取日期对象的年份、月份和日期。例如：
-
-```Javascript
-var year1 = date1.getFullYear(); // 获取第一个日期对象的年份
-var month1 = date1.getMonth(); // 获取第一个日期对象的月份
-var date1 = date1.getDate(); // 获取第一个日期对象的日期
-```
-
-然后，我们可以通过比较这些值来判断日期的先后顺序。例如，如果第一个日期的年份大于第二个日期的年份，则第一个日期较晚；如果两个日期的年份相同，但第一个日期的月份大于第二个日期的月份，则第一个日期较晚；如果两个日期的年份和月份都相同，但第一个日期的日期大于第二个日期的日期，则第一个日期较晚。例如：
-
-```Javascript
-if (year1 > year2) {
-	// 第一个日期较晚
-	console.log(date1 + " is later than " + date2);
-} else if (year1 < year2) {
-	// 第一个日期较早
-	console.log(date1 + " is earlier than " + date2);
-} else {
-	// 年份相同，比较月份
-	if (month1 > month2) {
-		console.log(date1 + " is later than " + date2);
-	} else if (month1 < month2) {
-		console.log(date1 + " is earlier than " + date2);
-	} else {
-		// 月份相同，比较日期
-		if (date1 > date2) {
-			console.log(date1 + " is later than " + date2
+# 参考链接
+[如何使用JavaScript比较日期](https://www.w3schools.com/js/js_dates.asp)

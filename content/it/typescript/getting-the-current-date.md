@@ -1,52 +1,53 @@
 ---
-title:    "TypeScript: Ottenera la data corrente"
+title:    "TypeScript: Ottenere la data corrente"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Quando si programma in TypeScript, è importante essere in grado di gestire la data corrente. Questo può essere utile per la gestione delle date di scadenza delle attività, per il tracciamento delle modifiche o per mostrare la data di creazione di un determinato elemento. In questa guida, impareremo come ottenere la data corrente utilizzando TypeScript.
+
+La data corrente è un elemento fondamentale in molti aspetti della programmazione. Può essere utilizzata per tenere traccia del tempo, per mostrare informazioni aggiornate agli utenti o per programmare attività future. Inoltre, ottenere la data corrente può aiutare a risolvere problemi che richiedono un'accurata sequenza temporale.
 
 ## Come fare
-Per ottenere la data corrente in TypeScript, dobbiamo utilizzare la classe Date. Vediamo un esempio di codice che ci mostra come ottenere la data corrente e visualizzarla in console:
 
-```TypeScript
-const today = new Date();
-console.log(today);
-```
+Per ottenere la data corrente in TypeScript, possiamo utilizzare il metodo `new Date()` seguito dal metodo `.toLocaleDateString()` per ottenere una stringa con il formato della data locale. Vediamo un esempio:
 
-Questo codice creerà un nuovo oggetto di tipo Date, che rappresenta la data e l'ora correnti. Quindi, verrà visualizzata la data e l'ora attuali nella console.
+\`\`\`TypeScript
+const oggi: Date = new Date();
+console.log(oggi.toLocaleDateString());
+\`\`\`
 
-Ma cosa succede se vogliamo visualizzare la data in un formato diverso? Possiamo utilizzare i metodi disponibili nella classe Date per ottenere le informazioni desiderate. Ad esempio, possiamo usare il metodo `getDate()` per ottenere il giorno del mese:
+L'output sarà una stringa contenente la data corrente nel formato locale.
 
-```TypeScript
-const today = new Date();
-const day = today.getDate();
-console.log(day);
-```
+\`\`\`
+1/5/2021
+\`\`\`
 
-Questo codice ci restituirà il giorno del mese corrente, ad esempio se oggi è il 12, il nostro output sarà 12.
+In alternativa, possiamo specificare un formato personalizzato utilizzando il metodo `.toLocaleDateString()` passando come parametro una stringa contenente i simboli per il formato desiderato. Ad esempio:
 
-Ci sono molti altri metodi utili per ottenere informazioni specifiche sulla data come `getMonth()`, `getHours()`, `getMinutes()` e così via.
+\`\`\`TypeScript
+const oggi: Date = new Date();
+const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-## Deep Dive
-Se vogliamo ottenere informazioni precise sulla data, possiamo specificarle come argomenti nella creazione dell'oggetto Date. Ad esempio, se vogliamo ottenere la data del 25 dicembre 2021, possiamo fare così:
+console.log(oggi.toLocaleDateString('it-IT', opzioni));
+\`\`\`
 
-```TypeScript
-const christmasDay = new Date(2021, 11, 25); // Mese è indicizzato da 0 a 11, quindi 11 rappresenta il mese di dicembre.
-console.log(christmasDay);
-```
+L'output sarà una stringa contenente la data corrente nel formato specificato.
 
-Questo ci mostrerà la data del 25 dicembre 2021. Inoltre, possiamo specificare anche l'ora e il minuto desiderati nel seguente modo:
+\`\`\`
+martedì 5 gennaio 2021
+\`\`\`
 
-```TypeScript
-const countdown = new Date(2021, 11, 25, 12, 0); // 12:00
-console.log(countdown);
-```
+## Approfondimento
 
-Possiamo anche utilizzare il metodo `getTime()` per ottenere il timestamp della data specificata. Il timestamp è il numero di millisecondi trascorsi dal 1° gennaio 1970 a mezzanotte, ora UTC. Possiamo utilizzare questo timestamp per eseguire operazioni matematiche sulla data o per confrontare date diverse.
+Ottenere la data corrente non è sempre un'operazione semplice. Ci sono molti aspetti da considerare come il fuso orario, la precisione dei millisecondi e i formati specifici per le diverse lingue. Per esempio, il metodo `.toLocaleDateString()` è influenzato dalle impostazioni di localizzazione del browser, quindi può variare da un dispositivo all'altro. Inoltre, è importante essere consapevoli dei possibili bug e difficoltà legate alla gestione delle date e dei tempi in generale.
 
-## Vedi anche
-- [Documentazione TypeScript su Date](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#dates)
-- [Altri metodi della classe Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#methods_2)
+## Guarda anche
+
+- [Documentazione di TypeScript su Date](https://www.typescriptlang.org/docs/handbook/javascript-library-integration.html#date)
+
+- [Libreria Moment.js per la gestione delle date in TypeScript](https://momentjs.com/docs/#/displaying/)
+
+- [Articolo della community su Medium "Working with Dates in TypeScript"](https://medium.com/@madasamy/date-in-typescript-8e88a7a2f4b9)

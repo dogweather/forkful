@@ -1,54 +1,68 @@
 ---
 title:    "Javascript: Erstellen einer temporären Datei"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Welt der Programmierung gibt es unzählige Anwendungen und Aufgaben, die wir erledigen müssen. Eine davon könnte das Erstellen temporärer Dateien sein. Doch warum sollte man überhaupt eine temporäre Datei erstellen wollen?
+Das Erstellen von temporären Dateien ist eine häufige Aufgabe in der Javascript-Programmierung. Es bietet eine einfache Möglichkeit, Daten temporär zu speichern, ohne eine permanente Datei zu erstellen. Dies kann besonders nützlich sein, wenn Daten nur vorübergehend benötigt werden und danach nicht mehr gebraucht werden.
 
-Eine mögliche Anwendung ist das Zwischenspeichern von Daten, die später weiterverarbeitet werden müssen. Auch bei der Ausführung von bestimmten Prozessen kann es notwendig sein, eine Zwischendatei zu erstellen, um das Ergebnis später verwenden zu können. Temporäre Dateien können auch dabei helfen, den Übersichtlichkeit und Ordnung auf dem Computer zu bewahren, da sie nach dem Gebrauch automatisch gelöscht werden.
+## Wie es geht
 
-Im Folgenden zeige ich euch, wie ihr mit Javascript eine temporäre Datei erstellen könnt und gebe Einblicke in die Funktionsweise.
-
-## Wie geht das?
-
-Die Erstellung von temporären Dateien kann in Javascript mit Hilfe von Node.js und dem "fs" Modul durchgeführt werden. Zuerst müssen wir das Modul in unserem Code einbinden, indem wir folgenden Code am Anfang unseres Skripts platzieren:
+Die Erstellung einer temporären Datei in Javascript ist ein einfacher Vorgang. Zunächst müssen wir das `fs`-Modul von Node.js importieren und den Pfad der temporären Datei angeben:
 
 ```javascript
 const fs = require('fs');
+const tempFilePath = './temp/tempFile.txt';
 ```
 
-Als nächstes müssen wir einen Dateinamen und den gewünschten Speicherort angeben, an dem die temporäre Datei erstellt werden soll. Dazu verwenden wir die Methode "fs.mkdtempSync()", die uns eine zufällig generierte eindeutige Zeichenkette als Dateiname zurückgibt. Beispiel:
+Als nächstes können wir die Datei mit dem `createWriteStream()`-Befehl erstellen und mit Inhalten füllen:
 
 ```javascript
-const tempFile = fs.mkdtempSync('myTempFile-', 'utf-8');
+const writeStream = fs.createWriteStream(tempFilePath);
+writeStream.write('Dies ist ein Beispieltext.');
 ```
 
-Die Datei wird nun mit dem angegebenen Namen und dem Suffix ".tmp" erstellt und kann wie jede andere Datei behandelt werden. Zum Beispiel können wir Daten in die Datei schreiben:
+Schließlich schließen wir den Stream und löschen die temporäre Datei mit dem `unlink()`-Befehl:
 
 ```javascript
-fs.writeFileSync(tempFile, 'Hallo Welt!');
+writeStream.end();
+fs.unlink(tempFilePath, (err) => {
+  if (err) throw err;
+  console.log('Temporäre Datei wurde erfolgreich gelöscht.');
+});
 ```
 
-Um den Inhalt der Datei zu überprüfen, können wir diesen auslesen und in der Konsole ausgeben:
+Die Ausgabe des obigen Codes wäre:
+
+```
+Temporäre Datei wurde erfolgreich gelöscht.
+```
+
+## Tiefer Eintauchen
+
+Beim Erstellen einer temporären Datei gibt es einige wichtige Dinge zu beachten. Erstens müssen wir sicherstellen, dass die temporäre Datei nicht bereits existiert, bevor wir sie erstellen. Darüber hinaus können wir auch angeben, welche Art von Operationen auf der Datei ausgeführt werden können, z. B. nur Schreibvorgänge oder sowohl Lese- als auch Schreibvorgänge.
+
+Um dies zu tun, können wir den `fs.constants` verwenden und die gewünschten Operationen angeben:
 
 ```javascript
-const fileContent = fs.readFileSync(tempFile, 'utf-8');
-console.log(fileContent); // Ausgabe: Hallo Welt!
+const tempFilePath = './temp/tempFile.txt';
+const flags = fs.constants.O_CREAT | fs.constants.O_WRONLY;
+
+const writeStream = fs.createWriteStream(tempFilePath, { flags });
 ```
 
-Sobald das Programm beendet wird, wird die temporäre Datei automatisch gelöscht.
-
-## Tiefere Einblicke
-
-Beim Erstellen einer temporären Datei können verschiedene Parameter angegeben werden, um die Ausführungsweise anzupassen. Zum Beispiel kann die gewünschte Länge des generierten Dateinamens angegeben werden oder es können eigene Präfixe und Suffixe definiert werden. Dadurch wird die Datei noch eindeutiger und kann besser identifiziert werden.
-
-Es gibt auch die Möglichkeit, die erstellten Dateien in einem spezifischen Ordner abzulegen, anstatt im standardmäßigen "tmp" Ordner. Dadurch kann eine bessere Kontrolle über die erstellten Dateien ausgeübt werden.
+Weitere Informationen zum Regelwerk der `fs.constants` können in der [Node.js Dokumentation](https://nodejs.org/api/fs.html#fs_file_system_flags) gefunden werden.
 
 ## Siehe auch
 
-- [Node.js Dokumentation zu fs.mkdtempSync()](https://nodejs.org/api/fs.html#fs_fs_mkdtempsync_prefix_options)
-- [Online File Converter für die Umwandlung von Dateien](https://www.online-convert.com/de)
+Für weitere Informationen zum Erstellen temporärer Dateien in Javascript empfehlen wir die folgenden Ressourcen:
+
+- [Creating Temporary Files in Node.js - geeksforgeeks.org](https://www.geeksforgeeks.org/creating-temporary-files-node-js/)
+- [The tmp Package - npmjs.com](https://www.npmjs.com/package/tmp)
+- [Node.js FileSystem Module Documentation - nodejs.org](https://nodejs.org/api/fs.html)
+
+Wir hoffen, dass dieser Beitrag Ihnen geholfen hat, das Konzept des Erstellens temporärer Dateien in der Javascript-Programmierung besser zu verstehen. Viel Spaß beim Coden!

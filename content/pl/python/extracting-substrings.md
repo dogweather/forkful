@@ -1,54 +1,59 @@
 ---
-title:    "Python: Wycinanie podciągów"
+title:    "Python: Ekstrakcja podciągów"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego:
+## Dlaczego
 
-Wyodrębnianie podłańcuchów jest przydatną umiejętnością w Pythonie, ponieważ umożliwia nam pobieranie części tekstu z dużych ciągów znaków. Może to być pomocne w wielu przypadkach, na przykład w analizie tekstu czy w pracy z danymi.
+Jeśli pracujesz z tekstem w języku Python, to na pewno spotkałeś się z sytuacją, w której potrzebowałeś wyciągnąć określone części tekstu. Może chciałeś uzyskać tylko nazwisko z pełnego imienia i nazwiska, lub wyodrębnić numer telefonu z dłuższego ciągu znaków. W takich przypadkach korzystanie z funkcji do wycinania podsekwencji - nazywanych też substrings - jest niezbędne.
 
-## Jak to zrobić:
+## Jak to zrobić
 
-W Pythonie możemy wyodrębniać podłańcuchy za pomocą ukośników. Wyobraźmy sobie ciąg znaków "Python jest fajny" i chcemy wyodrębnić słowo "fajny". Możemy to zrobić w ten sposób:
+Wyciąganie substrings w języku Python jest proste dzięki wbudowanej funkcji *slice()* i metodzie *replace()* dla stringów. W poniższych przykładach wyjaśnimy jak użyć tych funkcji w różnych sytuacjach.
 
-```Python
-string = "Python jest fajny"
-print(string[12:])
-```
-
-Output:
-```
-fajny
-```
-
-Jak widać, wykorzystujemy ukośnik, aby określić indeks początkowy i końcowy wyodrębnianego podłańcucha. W tym przypadku dany podłańcuch zaczyna się od indeksu 12 i kończy na końcu ciągu.
-
-Możemy również wyodrębniać podłańcuchy w oparciu o indeksy od końca ciągu. Na przykład, jeśli chcemy wyodrębnić słowo "Python", możemy to zrobić w ten sposób:
+### Przykład 1: Wyciąganie nazwiska
 
 ```Python
-string = "Python jest fajny"
-print(string[:-10])
+imie_i_nazwisko = "Jan Kowalski"
+nazwisko = imie_i_nazwisko[-8:]
+print(nazwisko)
 ```
 
-Output:
+Output: Kowalski
+
+### Przykład 2: Wyciąganie numeru telefonu
+
+```Python
+numer_telefonu = "(+48) 123-456-789"
+czysty_numer = numer_telefonu.replace("(", "").replace(")", "").replace("-", "")
+print(czysty_numer)
 ```
-Python
+
+Output: +48123456789
+
+## Pełne zanurzenie
+
+Funkcja *slice()* wyprowadza podciag znaków ze stringa na podstawie podanego indeksu początkowego i końcowego. Istnieją również opcjonalne argumenty dla kroku oraz indeksu początkowego i końcowego dla kroku. Jeśli nie poda się indeksu początkowego, domyślnie jest nim 0, a jeśli nie poda się końcowego, domyślnie jest nim długość stringa.
+
+Metoda *replace()* zastępuje wszystkie wystąpienia podanego tekstu w stringu innym podanym tekstem. Jeśli nie chcemy wprowadzać dodatkowych znaków, możemy podać pusty string jako drugi argument. Poniższy przykład ilustruje jak użyć obu tych funkcji do wycięcia określonego fragmentu z tekstu.
+
+```Python
+tekst = "Dzisiaj jest piękny dzień"
+wyciety_tekst = tekst[9:22].replace("i", "y")
+print(wyciety_tekst)
 ```
 
-W tym przypadku wykorzystujemy ukośnik z ujemną wartością, co oznacza, że liczymy indeksy od końca ciągu. Dzięki temu możemy wyodrębniać podłańcuchy niezależnie od ich położenia w ciągu znaków.
+Output: piękne dzień
 
-## Deep Dive:
+## Zobacz też
 
-Wykorzystanie ukośników do wyodrębniania podłańcuchów jest tylko jedną z wielu możliwości w Pythonie. Możemy również wykorzystać metody takie jak `find()` czy `split()`, aby dokładniej określić początek i koniec wyodrębnianego podłańcucha.
+Jeśli chcesz dowiedzieć się więcej na temat wycinania podsekwencji w języku Python, warto zapoznać się z oficjalną dokumentacją oraz innymi przydatnymi artykułami na ten temat:
 
-Ponadto, Python oferuje także możliwość wykorzystania wyrażeń regularnych do wyodrębniania podłańcuchów. Jest to szczególnie przydatne w przypadku bardziej skomplikowanych wzorców, których nie można określić za pomocą ukośników.
+- [Oficjalna dokumentacja Pythona o wycinaniu podsekwencji](https://docs.python.org/3/library/functions.html#slice)
+- [Przewodnik po funkcji slice w języku Python](https://realpython.com/python-slices/)
+- [Poradnik na temat pracy ze stringami w języku Python](https://www.programiz.com/python-programming/string)
 
-Ważne jest również, aby zawsze sprawdzać poprawność indeksów, aby uniknąć błędów i wyjątków. Dzięki temu będziemy mogli bezproblemowo wyodrębniać podłańcuchy z dowolnych ciągów znaków.
-
-## Zobacz także:
-
-- [Dokumentacja Pythona do wyodrębniania podłańcuchów](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Tutorial Python do ukośników](https://www.w3schools.com/python/gloss_python_string_slice.asp)
-- [Dokumentacja Pythona do wyrażeń regularnych](https://docs.python.org/3/library/re.html)
+Dzięki umiejętności wycinania substrings, będziesz mógł sprawnie manipulować tekstem w swoim kodzie. Zapraszamy do eksperymentowania i stosowania tych technik w swoich projektach.

@@ -1,43 +1,47 @@
 ---
 title:    "Arduino: Imprimindo saída de depuração"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração em Arduino é importante?
+## Por que
 
-Ao criar projetos e programar em Arduino, é comum que nos deparemos com erros e bugs que podem dificultar o funcionamento do nosso código. A saída de depuração é uma ferramenta importante que nos permite visualizar informações úteis durante a execução do programa, facilitando a identificação desses problemas e ajudando na resolução deles.
+Printar saídas de debug é uma ferramenta essencial para o desenvolvimento e depuração de programas no seu Arduino. Com essas saídas, é possível ver passo a passo o comportamento do código e identificar possíveis erros ou bugs.
 
-## Como fazer a impressão de saída de depuração em Arduino
+## Como Fazer
 
-Para imprimir saída de depuração em Arduino, utilizamos a função `Serial.println()`. Essa função envia texto, números ou outros dados para o monitor serial, que pode ser acessado no IDE do Arduino.
+Para imprimir saídas de debug no seu Arduino, primeiro devemos identificar qual o método de comunicação usado entre o Arduino e o dispositivo que exibe as saídas (como um computador ou monitor). Existem duas formas principais de comunicação: Serial e LCD. 
 
-Veja um exemplo de como utilizar essa função em uma situação de depuração:
+### Serial
 
-```
-Arduino void setup() {
-  // Inicialização do monitor serial com a taxa de comunicação de 9600 bps
-  Serial.begin(9600);
-}
-void loop() {
-  // Exemplo de impressão de saída de depuração
-  int variavel = 10;
-  Serial.println("O valor da variável é: " + variavel);
-}
+Para imprimir saídas de debug através da porta serial, você pode usar a função `Serial.print()` seguida da informação que deseja exibir como parâmetro. Por exemplo:
+
+```Arduino
+int temperature = 25;
+Serial.print("A temperatura atual é: ");
+Serial.print(temperature);
 ```
 
-Ao executar esse código, a mensagem "O valor da variável é: 10" será exibida no monitor serial.
+Neste caso, a saída seria "A temperatura atual é: 25" na porta serial. Você também pode usar a função `Serial.println()` para adicionar uma quebra de linha depois da informação impressa.
 
-## Mais detalhes sobre a impressão de saída de depuração em Arduino
+### LCD
 
-Além da função `Serial.println()`, existem outras variações como `Serial.print()` e `Serial.write()`, que possuem funcionalidades semelhantes, mas diferem na forma como os dados são enviados para o monitor serial.
+Se você estiver usando um display LCD para imprimir saídas de debug, a função `lcd.print()` deve ser usada da mesma forma que a função `Serial.print()`. Por exemplo:
 
-Também é possível utilizar caracteres especiais, como o caractere de nova linha `\n`, para formatar a saída impressa no monitor serial.
+```Arduino
+int counter = 0;
+lcd.print("Contagem: ");
+lcd.print(counter);
+```
 
-É importante lembrar de utilizar a função `Serial.begin()` no `void setup()` antes de tentar imprimir saída de depuração, caso contrário, os dados não serão enviados corretamente.
+## Deep Dive
 
-## Veja também
+Além dos métodos de comunicação, é importante lembrar que também é necessário inicializar a comunicação serial ou ativar o display LCD no início do código. Outro ponto importante é que você pode imprimir não apenas variáveis, mas também mensagens de depuração como avisos ou erros para ajudar no processo de depuração.
 
-- [Referência da função Serial.println() em Arduino](https://www.arduino.cc/reference/pt/language/functions/communication/serial/println/)
-- [Tutorial completo sobre impressão de saída de depuração em Arduino](https://blog.arduino.cc/2016/06/08/troubleshooting-serial-print-debugging-arduino-code/)
+## Veja Também
+
+- [Documentação Oficial do Arduino para Serial](https://www.arduino.cc/reference/pt/language/functions/communication/serial/)
+- [Tutorial para imprimir saídas de debug com display LCD](https://www.arduino.cc/en/Tutorial/HelloWorld)
+- [Vídeo tutorial sobre como usar saídas de debug no seu projeto Arduino](https://www.youtube.com/watch?v=5C7JjIpXEfo)

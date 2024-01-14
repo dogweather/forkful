@@ -1,37 +1,42 @@
 ---
-title:    "C: Ein neues Projekt beginnen"
+title:    "C: Ein neues Projekt starten"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Starten eines neuen Projekts in der Programmiersprache C kann eine aufregende und lohnende Erfahrung sein. Es kann Ihnen die Möglichkeit geben, Ihre Fähigkeiten zu verbessern, neue Konzepte zu lernen und sogar etwas Nützliches zu schaffen. Egal, ob Sie ein erfahrener Programmierer oder ein Neuling in der Welt der Programmierung sind, das Starten eines neuen C-Projekts kann eine lohnende Herausforderung sein.
+Wenn Sie neu im Bereich der Programmierung sind oder einfach nur ein neues Projekt starten möchten, fragen Sie sich vielleicht, warum Sie überhaupt anfangen sollten. Die Antwort ist einfach: Durch die Erstellung eigener Projekte können Sie Ihre Fähigkeiten verbessern, neue Konzepte und Techniken erlernen und stolz auf Ihre eigenen Kreationen sein.
 
-# Wie man startet
+## Wie geht es
 
-Das Starten eines neuen C-Projekts kann auf den ersten Blick entmutigend erscheinen. Aber mit ein paar grundlegenden Schritten können Sie auf dem richtigen Weg sein. Zunächst müssen Sie sicherstellen, dass Sie eine gute Programmierumgebung haben, indem Sie einen Texteditor oder eine integrierte Entwicklungsumgebung (IDE) verwenden. Dann sollten Sie ein grundlegendes Verständnis von C haben, einschließlich der Syntax und Standardbibliotheken. Schließlich können Sie mit der Erstellung von Code beginnen! Hier ist ein einfaches Beispiel, um eine Zeichenkette in C zu drucken:
+Um ein neues C-Programmprojekt zu starten, müssen Sie zunächst sicherstellen, dass Sie einen Compiler und eine integrierte Entwicklungsumgebung (IDE) für C haben. Dann können Sie ein leeres Projekt erstellen und mit dem Codieren beginnen. Hier ist ein kleines Beispiel, das eine einfache Berechnung durchführt und das Ergebnis ausgibt:
 
 ```C
-#include <stdio.h> 
+#include <stdio.h>
 
-int main(){
-    printf("Hallo Welt!");
-    return 0;
-} 
+int main()
+{
+  int a = 10;
+  int b = 5;
+  int sum = a + b;
 
+  printf("Das Ergebnis von %d + %d ist %d", a, b, sum);
+
+  return 0;
+}
 ```
-Die oben genannten Anweisungen werden die Zeichenfolge "Hallo Welt!" auf dem Bildschirm ausgeben. Es mag simpel erscheinen, aber es ist ein wichtiger erster Schritt beim Erstellen eines neuen C-Projekts.
 
-# Tiefentauchen
+Die Ausgabe dieses Programms wird sein: "Das Ergebnis von 10 + 5 ist 15". Natürlich gibt es noch viel mehr, was Sie mit C tun können, aber dies ist ein guter Ausgangspunkt für Anfänger.
 
-Der Schlüssel zum erfolgreichen Start eines neuen C-Projekts ist es, die Grundlagen zu beherrschen und das Vertrauen zu haben, Code zu schreiben. Experimentieren Sie mit verschiedenen Konzepten und entwickeln Sie Ihr Verständnis weiter. Suchen Sie auch immer nach neuen Lernmöglichkeiten, ob es sich um Online-Ressourcen, Bücher oder die Zusammenarbeit mit anderen Programmierern handelt.
+## Tief eintauchen
 
-Außerdem ist es wichtig, gut organisiert zu bleiben. Halten Sie Ihren Code sauber und strukturiert, verwenden Sie sinnvolle Variablennamen und kommentieren Sie Ihren Code, um anderen, aber auch sich selbst, zu helfen, ihn zu verstehen.
+Wenn Sie tiefer in die Welt der C-Programmierung eintauchen möchten, sollten Sie sich mit einigen grundlegenden Konzepten wie Variablen, Datentypen und Kontrollstrukturen vertraut machen. Darüber hinaus gibt es auch fortgeschrittene Themen wie Pointers, Funktionen und Datenstrukturen, die es zu entdecken und zu verstehen gilt. Eine gute Strategie ist es, Tutorials, Bücher oder Online-Kurse zu nutzen, um Ihre Kenntnisse zu erweitern und praktische Übungen zu absolvieren.
 
-# Siehe auch
+Siehe auch
 
-- [Einführung in die Programmierung mit C](https://www.codingunit.com/tag/c-programming)
-- [Die offizielle C-Programmiersprache](https://devdocs.io/c/)
-- [C-Programmierutensilien auf GitHub](https://github.com/uhub/awesome-c)
+- [C Tutorial für Anfänger](https://www.learn-c.org/)
+- [Bücher über C-Programmierung](https://www.amazon.de/s?k=c+programming+buch&ref=nb_sb_noss_2)
+- [Online-Kurs über C bei Udacity](https://www.udacity.com/course/c-for-programmers--ud283)

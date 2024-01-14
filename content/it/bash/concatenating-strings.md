@@ -1,52 +1,86 @@
 ---
-title:    "Bash: Concatenazione di stringhe"
+title:    "Bash: Unione di stringhe."
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La concatenazione di stringhe è un'operazione fondamentale nella programmazione Bash che consente di unire più stringhe in una sola. Questo è utile quando si vogliono creare messaggi o output dinamici che includono variabili o testo predefinito.
+La concatenazione di stringhe è un'operazione comune quando si lavora con la programmazione Bash. Ci permette di unire due o più stringhe creando una nuova stringa. Ciò può essere utile per creare percorsi di file dinamici, costruire messaggi di output personalizzati e molto altro ancora.
 
 ## Come fare
 
-Per concatenare due o più stringhe in Bash, è necessario utilizzare il simbolo di "arco" (`$`) seguito dal nome della prima stringa, seguito dalla seconda stringa tra doppi apici (`" "`) e stringhe aggiuntive separate da spazi. Ad esempio:
+Per concatenare le stringhe in Bash, è necessario utilizzare l'operatore `+` o un trattino `-` tra le stringhe che vogliamo unire. Vediamo un esempio pratico:
 
-```Bash
-s1="Ciao"
-s2="mondo"
-echo "$s1 $s2!"  # Output: Ciao mondo!
+```
+Bash
+# Dichiarazione delle stringhe
+stringa1="Ciao"
+stringa2="Mondo"
+
+# Concatenazione delle due stringhe
+risultato=$stringa1$stringa2
+
+# Stampa del risultato
+echo $risultato
 ```
 
-Se si desidera aggiungere una stringa alla fine di una variabile esistente, è possibile utilizzare l'operatore di assegnamento `+=`. Ad esempio:
+Nell'esempio sopra, abbiamo dichiarato due stringhe, "Ciao" e "Mondo". Poi, utilizziamo l'operatore di concatenazione `+` per unire le due stringhe e assegnare il risultato alla variabile "risultato". Infine, stampiamo il risultato con l'uso del comando `echo`. 
 
-```Bash
-var="Ciao"
-var+=" mondo!"
-echo "$var"  # Output: Ciao mondo!
+L'output dovrebbe essere:
+
+```
+CiaoMondo
 ```
 
-È anche possibile concatenare stringhe all'interno di una variabile utilizzando le parentesi graffe `${}` e il simbolo di "arco". Ad esempio:
+Possiamo anche utilizzare il trattino `-` per ottenere lo stesso risultato:
 
-```Bash
-var="Hello "
-var2="World"
-var3="${var} ${var2}!"  # Utilizzo delle parentesi graffe
-echo "${var3}"  # Output: Hello World!
+```
+risultato=$stringa1-$stringa2
 ```
 
-## Approfondimenti
+Un altro modo per concatenare le stringhe è utilizzando il comando `printf`:
 
-La concatenazione di stringhe è una tecnica fondamentale nella programmazione Bash, ma è importante tenere presente alcuni punti:
+```
+risultato=$(printf "%s%s" $stringa1 $stringa2)
+```
 
-- Quando si concatena una stringa a una variabile, è necessario utilizzare il simbolo di "arco" (`$`) per inserire il contenuto della variabile all'interno della nuova stringa.
-- Se si sta utilizzando un comando all'interno di una concatenazione di stringhe, è necessario utilizzare gli apici "inversi" (``` `` ```) per eseguire il comando e inserirne il risultato nella stringa.
+Questo comando è particolarmente utile quando si vogliono formattare le stringhe prima di concatenarle.
+
+## Approfondimento
+
+Una delle caratteristiche interessanti della concatenazione di stringhe in Bash è che possiamo unire anche numeri interi e float alle stringhe, senza doverli convertire in stringhe prima.
+
+```
+Bash
+# Dichiarazione di una stringa e un numero
+stringa="Il numero è "
+numero=10
+
+# Concatenazione
+risultato=$stringa$numero
+
+# Stampa del risultato
+echo $risultato
+```
+
+L'output sarà:
+
+```
+Il numero è 10
+```
+
+Un'altra cosa da notare è che, quando concateniamo una variabile ad una stringa, non dobbiamo utilizzare spazi tra di loro. Se abbiamo bisogno di uno spazio tra la stringa e la variabile, possiamo utilizzare il carattere di spazio all'interno della stringa stessa.
+
+```
+risultato="La variabile è "$variabile # Non sarà inserito uno spazio
+risultato="La variabile è "$variabile # Uno spazio verrà inserito
+```
 
 ## Vedi anche
 
-Per ulteriori informazioni sulla concatenazione di stringhe in Bash, consultare i seguenti link:
-
-- [Concatenazione di stringhe in Bash su BashTutorial](https://www.baeldung.com/linux/concatenate-strings-bash)
-- [Concatenazione di stringhe in Bash su GeeksforGeeks](https://www.geeksforgeeks.org/concatenate-strings-together-in-bash/)
-- [Riferimento alla sintassi di Bash su GNU](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
+* [Bash: Concatenare stringhe](https://tecnonucleous.com/2014/07/17/1566/bash-concatenare-stringhe)
+* [Guida pratica alla programmazione Bash](https://bit.ly/2pM65HN)
+* [Introduzione alla programmazione Bash](https://technedigitale.com/2017/05/25/la-programmazione-bash-unintroduzione)

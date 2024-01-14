@@ -1,51 +1,50 @@
 ---
 title:    "Arduino: Lendo um arquivo de texto"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em Arduino?
+## Por que ler um arquivo de texto com Arduino?
 
-Ler um arquivo de texto pode ser extremamente útil em projetos de Arduino. Isso permite que você armazene e acesse informações importantes, como configurações, mensagens ou dados do usuário. Além disso, é possível até mesmo criar um menu para o seu projeto usando um arquivo de texto.
+Ler um arquivo de texto com Arduino pode ser útil em diversas situações, como por exemplo, quando você precisa armazenar dados específicos para serem utilizados em seu projeto. Com a leitura de um arquivo de texto, você pode obter informações importantes sem precisar armazená-las diretamente no código, tornando-o mais dinâmico e fácil de modificar.
 
-## Como ler um arquivo de texto em Arduino
+## Como ler um arquivo de texto com Arduino
 
-Ler um arquivo de texto em Arduino pode ser feito de forma simples e eficiente. Primeiro, vamos criar um arquivo de texto no computador e salvá-lo com a extensão .txt. Em seguida, precisamos armazenar esse arquivo em um cartão SD ou em uma memória EEPROM. Aqui está um exemplo de código para ler um arquivo de texto em um cartão SD:
+Para ler um arquivo de texto com Arduino, primeiro é necessário definir o nome do arquivo e a sua localização no dispositivo de armazenamento, seja ele uma memória SD ou a própria memória interna do Arduino. Em seguida, é preciso abrir o arquivo utilizando a função `open()` e informar o modo de leitura. Por exemplo, se quisermos ler o arquivo em modo de leitura, utilizamos o parâmetro `READ`.
 
 ```Arduino
 #include <SPI.h>
-#include <SD.h>
+#include <SD.h> // caso seja necessário utilizar a memória SD
 
-File file; // criando uma variável para armazenar o arquivo
+File file; // declaração da variável do tipo File
 
 void setup() {
-  SD.begin(10); // iniciando a comunicação com o cartão SD
+  // código de inicialização do SD, caso esteja sendo utilizado
+  Serial.begin(9600); // inicia conexão serial para imprimir resultados na porta serial
+
+  // abre o arquivo no modo de leitura
+  file = open("arquivo.txt", FILE_READ);
 }
 
 void loop() {
-  file = SD.open("arquivo.txt"); // abrindo o arquivo de texto
-  while (file.available()) { // percorrendo o arquivo
-    Serial.println(file.readStringUntil('\n')); // imprimir cada linha do arquivo
+  // lê cada linha do arquivo e imprime na porta serial
+  while (file.available()) {
+    Serial.println(file.readStringUntil('\n'));
   }
-  file.close(); // fechando o arquivo
-  delay(10000); // adicionar um atraso para evitar a leitura repetida do arquivo
 }
 ```
 
-Ao usar o comando `readStringUntil()`, podemos especificar o caractere que é usado para separar as linhas no arquivo, neste caso, o caractere ‘\n’ que representa a quebra de linha.
+O exemplo acima lê um arquivo chamado "arquivo.txt" que está localizado na mesma pasta do código do Arduino. Ele lê cada linha do arquivo e imprime o seu conteúdo na porta serial.
 
-## Aprofundando no assunto
+## Detalhando a leitura de um arquivo de texto
 
-Ler um arquivo de texto é uma forma bastante útil e eficaz de armazenar e acessar informações em projetos de Arduino. Além disso, é possível também escrever em um arquivo de texto. Para isso, basta usar o comando `File.write()` e especificar o que deseja escrever no arquivo.
+Além do modo de leitura, existem outras opções que podem ser utilizadas ao ler um arquivo de texto. Por exemplo, o parâmetro `FILE_WRITE`, que permite a escrita no arquivo, e o parâmetro `FILE_APPEND`, que adiciona conteúdo ao final do arquivo.
 
-É importante lembrar que, ao usar um cartão SD, é necessário formatá-lo em FAT16 ou FAT32 para que o Arduino possa lê-lo corretamente. E ao usar uma memória EEPROM, é preciso primeiro configurá-la com um gravador de EEPROM.
+Outra função útil é a `readStringUntil()`, que lê o arquivo até encontrar o caractere especificado, neste caso, o `\n` que representa uma quebra de linha. Com ela, é possível definir um separador para o conteúdo do arquivo, o que facilita a leitura e organização dos dados.
 
 ## Veja também
 
-- Como criar e escrever em um arquivo de texto em Arduino: https://www.arduino.cc/en/Tutorial/FilesWrite
-- Mais dicas sobre como ler e escrever em um arquivo de texto: https://www.arduino.cc/en/Tutorial/Files
-- Introdução à leitura de arquivos em SD com Arduino: https://www.arduino.cc/en/Reference/SD
-- Como formatar um cartão SD para ser usado com Arduino: https://www.arduino.cc/en/Reference/SDCardNotes
-
-Com essas informações, você poderá facilmente ler e escrever em arquivos de texto em seus projetos de Arduino. Experimente e divirta-se!
+- [Guia de referência oficial do Arduino sobre a leitura de arquivos](https://www.arduino.cc/reference/en/language/functions/filesystem/fopen/)
+- [Exemplo completo de leitura de arquivo com Arduino](https://create.arduino.cc/projecthub/mustafa-hani/simple-sd-card-reader-example-1fc2c5)

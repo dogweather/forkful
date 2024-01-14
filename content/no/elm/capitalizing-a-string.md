@@ -1,41 +1,49 @@
 ---
-title:    "Elm: Stor bokstavering av en streng"
+title:    "Elm: Store bokstaver i en streng"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang hatt en tekststreng som du ønsker å gjøre om til store bokstaver? Kanskje du ønsker å formate en tittel eller en overskrift på en mer stilig måte. Uansett årsak, er det en enkel prosedyre i Elm for å få dette til. Les videre for å lære hvordan.
+Å kunne kapitalisere en streng er en grunnleggende ferdighet som er viktig for programmerere å lære. Det vil tillate deg å formatere tekst på en mer lesbar og profesjonell måte.
 
 ## Slik gjør du det
 
-For å kapitalisere en tekststreng i Elm, kan du bruke funksjonen `String.toUpper`. Denne funksjonen tar en tekststreng som argument og returnerer den samme teksten, men med store bokstaver i stedet for små. La oss se på et eksempel:
+For å kapitalisere en streng i Elm, kan du bruke funksjonen `String.toUpper`. Denne funksjonen tar en streng som argument og returnerer en ny streng med alle bokstavene i store bokstaver.
 
-```Elm
-String.toUpper "dette er en tekst" --> "DETTE ER EN TEKST"
+```elm
+import String
+
+capitalizedString = "hei på deg"
+
+capitalizedString = String.toUpper "hei på deg"
+
+--output: "HEI PÅ DEG"
 ```
 
-Som du kan se, er det en enkel og direkte måte å kapitalisere en tekststreng på i Elm.
+En annen måte å kapitalisere en streng på er å bruke funksjonen `String.words` og deretter sette den første bokstaven i hvert ord til store bokstaver ved hjelp av `String.map` og `Char.toUpper`. Dette vil gi samme resultat som `toUpper` funksjonen, men kan være nyttig hvis du bare vil kapitalisere første bokstav i hvert ord.
 
-## En dypdykk i kapitalisering av strenger
+```elm
+import String
+import Char
 
-Det er verdt å merke seg at når man kapitaliserer en tekststreng i Elm, vil bare de små bokstavene i alfabetet bli endret til store bokstaver. Spesialtegn og tall vil forbli uendret. For eksempel:
+capitalizedString = "hei på deg"
 
-```Elm
-String.toUpper "høst 2021!" --> "HØST 2021!"
+capitalizedString = String.join " " (String.map (\word -> (String.fromChar (Char.toUpper <| String.head word)) ++ String.tail word) (String.words capitalizedString))
+
+--output: "Hei På Deg"
 ```
 
-En annen ting å merke seg er at hvis du prøver å kapitalisere en tekststreng som allerede inneholder store bokstaver, vil disse forbli uendret. For eksempel:
+## Dykk ned
 
-```Elm
-String.toUpper "Tekst MED Både Store og Små bokstaver" --> "TEKST MED BÅDE STORE OG SMÅ bokstaver"
-```
+Det er viktig å merke seg at `toUpper` funksjonen bare kapitaliserer engelske bokstaver. For å håndtere alle typer språk og tegnsett, kan du bruke funksjonen `String.toTitle` som tar hensyn til spesifikke regler for språket du arbeider med.
 
-Dette er viktig å huske på når du jobber med tekststrenger i Elm.
+Det er også verdt å nevne at både `toUpper` og `toTitle` funksjonene er immutabel, noe som betyr at de ikke endrer den opprinnelige strengen, men i stedet returnerer en ny streng med den ønskede endringen. Dette er viktig å huske når du arbeider med strenger i Elm.
 
 ## Se også
 
-- Dokumentasjon for funksjonen `String.toUpper` i Elm: https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
-- En guide til tekstbehandling i Elm: https://guide.elm-lang.org/effects/text.html
+- [Elm dokumentasjon om strenger](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Tutorial om grunnleggende tekstformattering i Elm](https://dev.to/lfdebrux/formatting-text-in-elm-57h3)

@@ -1,59 +1,45 @@
 ---
 title:    "Javascript: Das aktuelle Datum erhalten"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Vielleicht hast du dich schon einmal gefragt, warum Programmiererinnen und Programmierer sich überhaupt mit dem aktuellen Datum befassen. Die Antwort ist einfach: Das Datum ist eine häufig verwendete Angabe in vielen Anwendungen und spielt daher eine wichtige Rolle in der Programmierung.
+
+In der heutigen Zeit ist die Verwendung von Datumsangaben in der Programmierung unerlässlich. Ob es darum geht, ein Datum für einen Kalender oder eine Uhr anzuzeigen, oder um zu überprüfen, ob ein bestimmtes Ereignis bereits stattgefunden hat - das aktuelle Datum ist ein wichtiges Element bei der Arbeit mit Javascript. In diesem Beitrag zeigen wir Ihnen, wie Sie das aktuelle Datum in Ihrem Javascript-Code abrufen können.
 
 ## Wie geht das?
-Um das aktuelle Datum in deinem JavaScript Code zu bekommen, kannst du die integrierte `Date()` Funktion verwenden. Diese gibt ein Objekt mit dem aktuellen Datum zurück, welches du dann weiter verarbeiten kannst.
+
+Die Verwendung des aktuellen Datums in Javascript ist eigentlich ziemlich einfach. Alles, was Sie tun müssen, ist die integrierte `Date()` Funktion aufzurufen, ohne ihr Parameter zu übergeben. Hier ist ein Beispiel:
 
 ```Javascript
-var datum = new Date();
-console.log(datum);
+var currentDate = new Date();
 
-// Output: Tue Apr 20 2021 13:35:26 GMT+0200 (Central European Summer Time)
+console.log(currentDate);
 ```
 
-Du kannst nun verschiedene Methoden anwenden, um bestimmte Teile des Datums auszulesen. Zum Beispiel könntest du nur den aktuellen Tag oder Monat ausgeben lassen.
+Dieses kurze Stück Code wird das aktuelle Datum und die aktuelle Uhrzeit in der Konsole ausgeben, wie zum Beispiel `Wed Aug 04 2021 09:49:34 GMT+0200 (Mitteleuropäische Sommerzeit)`.
+
+Sie können auch bestimmte Informationen aus dem `Date`-Objekt extrahieren, wie zum Beispiel den Tag, den Monat oder das Jahr. Hier ist ein Beispiel, das das aktuelle Jahr ausgibt:
 
 ```Javascript
-var monat = datum.getMonth();
-console.log("Aktueller Monat: " + monat);
+var currentYear = new Date().getFullYear();
 
-// Output: Aktueller Monat: 3 (da die Monate bei Date() mit 0 beginnen)
+console.log(currentYear);
 ```
 
-## Tiefere Informationen
-Die `Date()` Funktion hat viele nützliche Methoden, um mit dem Datum zu arbeiten. Einige davon sind:
+Dieser Code wird einfach die aktuelle Jahreszahl ausgeben, ohne den Rest der Datumswerte.
 
-- `getDate()` gibt den aktuellen Tag im Monat zurück.
-- `getFullYear()` gibt das aktuelle Jahr zurück.
-- `getHours()` gibt die aktuelle Stunde zurück.
+## Tiefentauchen
 
-Du kannst auch das Datum in verschiedenen Formaten ausgeben lassen, zum Beispiel als String oder mit bestimmten Trennzeichen.
+Hinter den Kulissen führt die `Date()`-Funktion eine ganze Reihe von Operationen aus, um das aktuelle Datum und die aktuelle Uhrzeit abzurufen. Sie nutzt den internen Zeitgeber des Computers, um die aktuelle Uhrzeit in Millisekunden seit dem 1. Januar 1970 zu ermitteln, einem wichtigen Datum in der Programmierung, das als der Nullpunkt der Zeitmessung gilt. Dann werden diese Millisekunden in ein menschenlesbares Datum und eine Uhrzeit umgewandelt, indem sie in Tage, Monate, Jahre usw. aufgeteilt werden.
 
-```Javascript
-console.log(datum.toDateString());
-// Output: Tue Apr 20 2021
-
-console.log(datum.toLocaleDateString('de-DE'));
-// Output: 20.04.2021
-```
-
-Es gibt auch die Möglichkeit, das Datum zu manipulieren, zum Beispiel um einen Tag hinzuzufügen oder zu subtrahieren.
-
-```Javascript
-var zukunftsDatum = datum.setDate(datum.getDate() + 5);
-console.log(zukunftsDatum);
-
-// Output: 1619013326821 (das Datum in Millisekunden seit dem 1. Januar 1970)
-```
+Es ist wichtig zu beachten, dass die Zeitzone des Computers das Ergebnis beeinflussen kann. Um sicherzustellen, dass Sie das korrekte Datum und die korrekte Uhrzeit abrufen, sollten Sie die Zeitzone in Ihrem Code angeben.
 
 ## Siehe auch
-- [Date() Dokumentation von MDN](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Video Tutorial auf YouTube (auf Deutsch)](https://www.youtube.com/watch?v=3PtWNzSak5c)
-- [Moment.js - eine JavaScript Bibliothek für das Arbeiten mit Datum und Zeit](https://momentjs.com/)
+
+* [MDN Web Docs - Datum und Uhrzeit in Javascript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date) 
+* [W3Schools - Das Javascript-`Date`-Objekt](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+* [StackOverflow - Javascript-Datum in bestimmter Zeitzone erhalten](https://stackoverflow.com/questions/1091372/how-do-i-get-the-time-of-day-in-javascript)

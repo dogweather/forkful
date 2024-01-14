@@ -1,57 +1,45 @@
 ---
 title:    "Kotlin: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Päivämäärien laskeminen tulevaisuudessa tai menneisyydessä voi olla hyödyllistä monessa eri tilanteessa, kuten esimerkiksi varauksia tehdessä tai tapahtumien suunnittelussa.
+Monet ohjelman rakentajat ja kehittäjät saattavat törmätä tarpeeseen laskea tietty päivämäärä etukäteen tai taaksepäin. Tämä voi johtua esimerkiksi tiettyjen toimintojen ajanrajoituksista tai tarpeesta tietää tulevien tapahtumien ajankohta. Onneksi tämä ongelma voidaan ratkaista helposti käyttämällä Kotlin-ohjelmointikielen valmiita ominaisuuksia.
 
-## Miten
+## Kuinka
 
-Päivämäärien laskeminen Kotlin-ohjelmointikielellä on helppoa ja nopeaa. Alla on esimerkki koodista ja sen tulosteesta:
-
-```Kotlin
-val tanaan = Calendar.getInstance()
-val huomenna = Calendar.getInstance()
-huomenna.add(Calendar.DAY_OF_YEAR, 1)
-
-println("Tänään on ${tanaan.get(Calendar.DAY_OF_MONTH)}.${tanaan.get(Calendar.MONTH) + 1}.${tanaan.get(Calendar.YEAR)}")
-println("Huomenna on ${huomenna.get(Calendar.DAY_OF_MONTH)}.${huomenna.get(Calendar.MONTH) + 1}.${huomenna.get(Calendar.YEAR)}")
-```
-
-Tuloste:
-
-> Tänään on 7.4.2021
->
-> Huomenna on 8.4.2021
-
-Käytämme tässä esimerkissä Calendar-luokkaa, joka tarjoaa mahdollisuuden muokata ja hakea tietoja ajasta ja päivämääristä. Huomenna-päivämäärä lasketaan lisäämällä yksi päivä tänään-päivämäärään.
-
-## Syvällinen syventyminen
-
-Jos haluat tarkempaa ohjausta päivämäärien laskemisessa, voit käyttää DateUtils-luokkaa, joka sisältää käteviä työkaluja päivämäärien muokkaamiseen. Esimerkiksi jos haluat laskea tietyn päivämäärän tietyn määrän päiviä eteenpäin, voit käyttää seuraavaa koodia:
+Kotlin tarjoaa Date-luokan, jota voidaan käyttää päivämäärän ja ajan käsittelyyn. Se tarjoaa myös kätevän toiminnon, jolla voidaan helposti lisätä tai vähentää päiviä, kuukausia tai vuosia nykyisestä päivämäärästä. Katso seuraavassa koodiesimerkissä, kuinka tämä toimii:
 
 ```Kotlin
-val alkuPäivä = Date()
-val loppuPäivä = DateUtils.addDays(alkuPäivä, 5)
+import java.time.LocalDate
 
-println("Alku päivä: $alkuPäivä")
-println("Loppu päivä: $loppuPäivä")
+fun main(args: Array<String>) {
+
+  val tanaan = LocalDate.now() // nykyinen päivämäärä
+  val huomenna = tanaan.plusDays(1) // lisätään yksi päivä
+  val ensiViikolla = tanaan.plusWeeks(1) // lisätään yksi viikko
+  val ensiVuonna = tanaan.plusYears(1) // lisätään yksi vuosi
+
+  println("Tänään on $tanaan") // tulostaa "Tänään on 2021-07-27"
+  println("Huomenna on $huomenna") // tulostaa "Huomenna on 2021-07-28"
+  println("Ensi viikolla on $ensiViikolla") // tulostaa "Ensi viikolla on 2021-08-03"
+  println("Ensi vuonna on $ensiVuonna") // tulostaa "Ensi vuonna on 2022-07-27"
+}
 ```
 
-Tuloste:
+Huomaa, että voit myös vähentää päiviä, viikkoja tai vuosia käyttämällä funktiota "minusDays", "minusWeeks" tai "minusYears".
 
-> Alku päivä: Wed Apr 07 09:33:28 UTC 2021
->
-> Loppu päivä: Mon Apr 12 09:33:28 UTC 2021
+## Syventävä tarkastelu
 
-Voit myös muokata päivämääriä muilla tavoilla, kuten lisäämällä tai vähentämällä tunteja tai minuutteja. Lisätietoja DateUtils-luokan käytöstä löydät Kotlinin virallisilta verkkosivuilta.
+Kotlinin Date-luokan lisäksi voit myös käyttää Java API:n Date- ja Calendar-luokkia päivämäärän käsittelyyn. Näillä luokilla on laajempi valikoima toimintoja ja ne voivat olla hyödyllisiä monimutkaisempien aikaluokkien hallitsemiseksi, kuten aikavyöhykkeiden tai ajanjaksojen käsittelyyn.
+
+Kannattaa myös tutustua Java 8:n LocalDate-luokkaan, joka tarjoaa samankaltaisia toimintoja kuin Kotlinin Date-luokka. Se on uudempi ja parantaa Javan vanhempia date- ja time-luokkia.
 
 ## Katso myös
 
-- [Kotlin viralliset verkkosivut](https://kotlinlang.org/)
-- [Kotlin DateUtils-dokumentaatio](https://developer.android.com/reference/android/text/format/DateUtils)
-- [Kotlin dokumentaatio Calendar-luokasta](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Kotlindocs - Java API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.util.-date/)
+- [Oracle Docs - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

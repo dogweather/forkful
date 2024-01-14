@@ -1,37 +1,47 @@
 ---
-title:    "Kotlin: Gerando números aleatórios."
+title:    "Kotlin: Gerando números aleatórios"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante para a programação?
+## Por que gerar números aleatórios é importante na programação?
 
-Muitas vezes, em programação, precisamos de criar números aleatórios para simular situações ou para tornar nosso programa mais dinâmico. Esses números podem ser usados para gerar valores em jogos, selecionar itens de uma lista ou até mesmo para testes de software. A geração de números aleatórios pode ser uma habilidade útil para ter em seu arsenal de programação.
+Gerar números aleatórios é uma habilidade fundamental para qualquer programador, independentemente da linguagem de programação que esteja utilizando. Ele permite que você crie um elemento de aleatoriedade em seus programas, tornando-os mais dinâmicos e imprevisíveis. Essa imprevisibilidade é útil em jogos, sorteios, algoritmos de inteligência artificial e muitos outros casos de uso.
 
-## Como gerar números aleatórios em Kotlin?
+## Como gerar números aleatórios em Kotlin
+
+Para gerar números aleatórios em Kotlin, podemos usar a classe `Random` da biblioteca padrão da linguagem. Esta classe possui vários métodos úteis para gerar números inteiros e decimais aleatórios. Veja abaixo alguns exemplos de como usar esta classe:
 
 ```Kotlin
-// Gerando um número aleatório entre 1 e 100
-val randomNumber = (1..100).random()
-println(randomNumber)
-// Output: 62
+// Importando a classe Random
+import kotlin.random.Random
 
-// Gerando um número aleatório em uma lista
-val options = listOf("maçã", "banana", "laranja", "morango")
-val randomOption = options.random()
-println(randomOption)
-// Output: banana
+// Gerando um número inteiro aleatório entre 0 e 10
+val randomNumber = Random.nextInt(11)
+
+// Gerando um número decimal aleatório entre 0.0 e 1.0
+val randomDecimal = Random.nextDouble()
+
+// Gerando um número inteiro aleatório entre 20 e 30
+val randomRange = Random.nextInt(20, 31)
+
+// Gerando um número booleano aleatório
+val randomBoolean = Random.nextBoolean()
 ```
 
-## Mergulho profundo na geração de números aleatórios
+Aqui vemos que podemos especificar o intervalo de números nos métodos `nextInt()` e `nextDouble()`, e também podemos gerar um número booleano aleatório com o método `nextBoolean()`.
 
-A geração de números aleatórios não é realmente aleatória - é um processo chamado de pseudoaleatório. Isso significa que, usando um algoritmo matemático, podemos criar uma sequência de números que parecem aleatórios, mas são realmente determinísticos. O valor inicial usado para esse algoritmo é chamado de "semente" e é isso que garante que a mesma sequência de "números aleatórios" será gerada com a mesma semente.
+## Aprofundando no assunto
 
-Kotlin fornece diferentes maneiras de gerar números aleatórios, incluindo as funções `random()` e `nextInt()`. Você também pode especificar uma semente para controlar a sequência de números gerados.
+A criação de números aleatórios pode ser algo complexo e desafiador, especialmente quando se trata de simular situações reais em que a aleatoriedade é uma parte importante. Existem várias técnicas e algoritmos avançados para gerar números verdadeiramente aleatórios, mas na maioria dos casos, o uso da classe `Random` da biblioteca padrão é suficiente.
+
+É importante lembrar que os números gerados pela classe `Random` são pseudoaleatórios, ou seja, eles são gerados por um algoritmo e, portanto, podem ser reproduzidos se o mesmo algoritmo for usado. Se você precisa de maior aleatoriedade em seus programas, é recomendado usar uma biblioteca externa que implemente técnicas mais avançadas de geração de números aleatórios.
 
 ## Veja também
 
-- [Documentação oficial do Kotlin sobre geração de números aleatórios](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
-- [Tutorial do MindOrks sobre geração de números aleatórios em Kotlin](https://blog.mindorks.com/generating-random-numbers-in-kotlin)
-- [Vídeo do canal Code With Aarnav sobre geração de números aleatórios em Kotlin](https://www.youtube.com/watch?v=Rx3P6vT6ZCc)
+- [Documentação oficial da classe Random em Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [Artigo sobre números aleatórios em programação](https://medium.com/@JorgeCastilloPr/tips-to-build-a-rock-solid-game-intuition-around-randomness-2227d9b7461)
+- [Biblioteca externa de geração de números aleatórios em Kotlin](https://github.com/dslomov/kotlin-random)
+- [Vídeo sobre números aleatórios em Kotlin](https://www.youtube.com/watch?v=DrQWVwB5wgI)

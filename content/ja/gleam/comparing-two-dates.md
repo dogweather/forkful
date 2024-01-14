@@ -1,42 +1,72 @@
 ---
-title:    "Gleam: 2つの日付を比較する"
+title:    "Gleam: 日付の比較"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam言語の日本の読者のためのカジュアルなブログ投稿
+# なぜ日付の比較をするのか？
 
-## Why
+日付の比較をすることについて、なぜ重要なのでしょうか？日付は、私たちが日々の生活で欠かせない存在です。私たちは、誕生日や記念日を祝ったり、予定を立てる際に日付を確認したりします。しかし、時には日付を比較する必要がある場合があります。例えば、ある日付が別の日付よりも前か後ろかを確認したり、2つの日付が同じかどうかを確認したりする必要があるかもしれません。そこで、Gleam言語で日付を比較する方法をご紹介します。
 
-日付を比較することに興味がある方のために、Gleam言語で日付を比較する際の利点を紹介します。日付の比較は、日付の時間的関係を把握するために非常に便利です。例えば、イベントの予定を立てる際に、過去の日付と現在の日付を比較することで、どの日付がより近いかを判断することができます。
+# やり方
 
-## How To
-
-日付を比較するには、```Gleam.Date```モジュールを使用します。まず、比較したい二つの日付をそれぞれ```Gleam.Date.from_gregorian```関数で変換し、```Gleam.Date.compare```関数で比較します。次に、返された整数値を使用して、どちらの日付がより前か後かを判断できます。
-
-以下は、このプロセスの例です。
+まずは、2つの日付を比較する方法を見てみましょう。以下のコードを参考にしてください。
 
 ```Gleam
-import Gleam.Date
+import gleam/time
 
-let today = Gleam.Date.from_gregorian(2021, 12, 15)
-let yesterday = Gleam.Date.from_gregorian(2021, 12, 14)
+let date1 = Time.to_utc(2021, April, 25)
+let date2 = Time.to_utc(2021, April, 26)
 
-let result = Gleam.Date.compare(today, yesterday)
-
-// resultには1が格納されるので、今日の日付の方が後であることがわかります。
+if date1 > date2 {
+  println("Date1はDate2よりも後の日付です。")
+} else if date1 < date2 {
+  println("Date1はDate2よりも前の日付です。")
+} else {
+  println("Date1とDate2は同じ日付です。")
+}
 ```
 
-## Deep Dive
+上記のコードを実行すると、出力結果は以下のようになります。
 
-日付の比較は、単純に日付の前後関係を判断するだけでなく、より複雑な比較も可能です。例えば、月や年の違いを考慮できるように、```Gleam.Date.compare_with```関数を使用することもできます。
+```
+Date1はDate2よりも前の日付です。
+```
 
-また、日付の比較には、異なるカレンダーを使用する場合も考慮する必要があります。Gleam言語では、グレゴリオ暦以外にもユリウス暦やイスラム暦などをサポートしているため、日付の比較を行う際には適切なカレンダーを指定することが重要です。
+次に、2つの日付が同じかどうかを確認する方法を見てみましょう。以下のコードを参考にしてください。
 
-## See Also
+```Gleam
+import gleam/time
 
-Gleam言語に関する他の便利なモジュールは以下を参考にしてください。
-- [Gleam.Date モジュールドキュメント](https://gleam.run/modules/gleam_stdlib/gleam_date)
-- [Gleam 公式ドキュメント](https://gleam.run/)
-- [Gleam 公式リポジトリ](https://github.com/gleam-lang/gleam)
+let date1 = Time.to_utc(2021, April, 25)
+let date2 = Time.to_utc(2021, April, 25)
+
+if date1 == date2 {
+  println("Date1とDate2は同じ日付です。")
+} else {
+  println("Date1とDate2は同じ日付ではありません。")
+}
+```
+
+上記のコードを実行すると、出力結果は以下のようになります。
+
+```
+Date1とDate2は同じ日付です。
+```
+
+# 詳細を掘り下げる
+
+Gleam言語では、日付を比較するために`Time`モジュールを使用することができます。`>`や`<`といった比較演算子を使用して、日付が前後関係にあるかどうかを比較することができます。また、`==`や`!=`などを使用して、2つの日付が同じかどうかを確認することもできます。
+
+# 参考リンク
+
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [日付/時刻の操作](https://gleam.run/documentation/built-in-modules/time/)
+- [Gleamを使用して日付を扱う方法](https://dev.to/elviejokike/working-with-dates-using-gleam-3fdl) 
+
+# 関連リンク
+
+- [Gleamで文字列を比較する方法](https://example.com/gleam-strings-comparison)
+- [Gleamで数値を比較する方法](https://example.com/gleam-numbers-comparison)

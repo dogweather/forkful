@@ -1,41 +1,38 @@
 ---
-title:    "Clojure: 표준 에러로 작성하기"
+title:    "Clojure: 표준 오류 쓰기"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 기록을 하나요?
 
-표준 에러에 쓰는 것의 장점을 간략하게 설명합니다.
+이 자료는 Clojure를 사용하고 있는 개발자들에게 표준 에러를 기록하는 이유를 설명합니다. 표준 에러를 기록하는 것은 디버깅과 로깅에 매우 유용하며, 프로그램을 개발하거나 디버깅할 때 오류 메시지를 보다 쉽게 이해할 수 있도록 도와줍니다.
 
-## 어떻게
+## 방법
 
-"```Clojure
-;; 예제 코드 블록 1
-(println (str "더 많은 로그 정보를 얻고자 할 때 표준 에러에 쓰는 것이 유용합니다."))
-;; 예제 코드 블록 2
-(println (str "에러가 발생한 부분을 식별하고 디버깅에 도움이 됩니다."))
-```"
+표준 에러는 `(System/err)`를 사용하여 접근할 수 있습니다. 에러를 기록하기 위해서는 `print`나 `println`과 함께 사용할 수 있습니다.
 
-## 심층 연구
+```Clojure
+(System/setErr (java.io.PrintStream. (java.io.FileOutputStream. "error.log")))
+```
 
-표준 에러에 대해 더 깊이 있는 정보를 제공합니다.
+위의 코드는 단순히 에러 메시지를 출력하는 대신, 표준 에러를 `error.log` 파일에 기록하게 됩니다. 마찬가지로, `with-out-str`을 사용하여 표준 출력 대신 표준 에러를 기록할 수 있습니다.
 
-### 표준 출력과 표준 에러의 차이
+```Clojure
+(with-out-str
+  (println "이것은 표준 출력입니다.")
+  (System/err (println "이것은 표준 에러입니다.")))
+```
 
-표준 출력은 프로그램에서 정상적으로 발생한 메시지를 출력할 때 사용됩니다. 하지만 표준 에러는 예외나 에러 메시지를 출력할 때 사용됩니다. 따라서 표준 에러는 프로그램에서 중요한 정보를 출력할 때 사용되며, 프로그램의 동작을 분석하고 디버깅하는 데 매우 유용합니다.
+위의 예시 코드에서는 표준 출력으로 `이것은 표준 출력입니다.`가 나오지만, 표준 에러로 `이것은 표준 에러입니다.`가 나오게 됩니다. 
 
-### 표준 에러의 캡처
+## 더 깊이 들어가기
 
-Clojure에서는 *System/err* 함수를 사용하여 표준 에러를 캡처할 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
+보통 `print`나 `println`을 사용하여 표준 에러를 기록할 때, 에러 메시지가 보기 좋지 않을 수 있습니다. 따라서 [Java의 `System.err`](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err--)를 참고하여 사용자 정의 메시지를 출력하거나, [Clojure의 `stack-trace-str`](https://clojuredocs.org/clojure.core/stack-trace-str)를 통해 자세한 스택 추적 정보를 출력할 수 있습니다.
 
-(println "예제" (System/err "표준 에러에 쓰는 예제 코드"))
+## 참고 자료
 
-표준 에러는 표준 출력처럼 단순히 터미널에 출력되는 것이 아니라, 파일 등 다른 매체로 리디렉션하여 저장할 수도 있습니다.
-
-## 더 알아보기
-
-- [Clojure 공식 문서](https://clojure.org/reference/reading_errors)
-- [표준 에러와 표준 출력의 차이](https://www.unixtutorial.org/understanding-stderr-in-unix)
-- [Clojure에서 표준 에러를 캡처하는 방법](https://stackoverflow.com/questions/27319466/how-to-redirect-output-to-standard-error-in-clojure)
+- [Java `System.err` 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err--)
+- [Clojure `stack-trace-str` 문서](https://clojuredocs.org/clojure.core/stack-trace-str)

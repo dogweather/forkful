@@ -1,37 +1,47 @@
 ---
-title:    "TypeScript: Pobieranie bieżącej daty"
+title:    "TypeScript: Uzyskiwanie bieżącej daty"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Od aplikacji mobilnych po strony internetowe, jesteśmy otoczeni kodem. Jednym z popularnych języków programowania jest TypeScript, który pozwala nam pisać wydajny i skalowalny kod. Ale czy wiesz, że możesz również użyć TypeScript do pobierania bieżącej daty? W tym artykule dowiesz się, w jaki sposób możesz wykorzystać TypeScript do pobrania aktualnej daty i czasu.
+## Dlaczego warto pobrać aktualną datę?
 
-## Jak to zrobić
-Aby uzyskać aktualną datę w TypeScript, musimy użyć funkcji wbudowanej o nazwie `Date()`. Ta funkcja zwraca obiekt daty, który może być przetworzony w różne sposoby. Na przykład, aby wyświetlić aktualną datę, możemy użyć metody `toDateString()` w następujący sposób:
+Pobieranie aktualnej daty jest niezwykle prostym zadaniem, które może być bardzo przydatne podczas pisania programów w języku TypeScript. Wiele aplikacji wymaga, aby wyświetlały aktualną datę lub czas, na przykład w celu informowania użytkowników o ostatnim zalogowaniu lub daty ostatniej modyfikacji danych. W tym artykule dowiesz się, jak łatwo pobrać aktualną datę w języku TypeScript.
+
+## Jak to zrobić?
+
+Aby pobrać aktualną datę w języku TypeScript, wykorzystaj metodę `Date.now()` lub konstruktor `Date()`. Oba te podejścia zwracają datę w postaci liczby, która reprezentuje liczbę milisekund, które upłynęły od 1 stycznia 1970 roku. Wybór odpowiedniej metody zależy od Twojej potrzeby.
+
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toDateString());
+// Przykład użycia metody Date.now()
+const now = Date.now();
+console.log(now); // wyświetli liczbę milisekund
+
+// Przykład użycia konstruktora Date()
+const date = new Date();
+console.log(date); // wyświetli datę i czas aktualnego dnia
 ```
-Wyjście tego kodu będzie wyglądać mniej więcej tak:
-```
-Sat Aug 28 2021
-```
-Możemy również wyświetlić godzinę i minutę, używając metody `toLocaleTimeString()`:
+
+Możesz również sformatować wyjście w bardziej czytelny sposób za pomocą metod z klasy `Date`, takich jak `getDate()`, `getMonth()` czy `getFullYear()`. Przykład zastosowania w kodzie:
+
 ```TypeScript
-let currentTime = new Date();
-console.log(currentTime.toLocaleTimeString());
-```
-To spowoduje wyświetlenie aktualnego czasu w formacie 24-godzinnym:
-```
-16:20:50
-```
-Istnieje wiele innych metod i opcji, które możemy wykorzystać do przetwarzania i wyświetlania aktualnej daty w TypeScript. Zachęcam do eksperymentowania z nimi i do szukania informacji w dokumentacji języka.
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth();
+const year = date.getFullYear();
 
-## Głębsze zagęszczenie
-Teraz, gdy wiesz, jak pobierać aktualną datę w TypeScript, możesz się zastanawiać, jak dokładnie działa ta funkcja `Date()`. Otóż, jest ona oparta na czasie uniwersalnym (UTC) i zwraca obiekt daty, który jest ustawiony na bieżącą datę i czas według strefy czasowej twojego komputera. Możesz także wykorzystać inne metody, takie jak `getMonth()` czy `getFullYear()` do uzyskania szczegółowych informacji o dacie. Warto również pamiętać, że istnieją biblioteki takie jak Moment.js, które ułatwiają pracę z datami i czasem w TypeScript.
+console.log(`${day}.${month + 1}.${year}`); // wyświetli datę w formacie DD.MM.YYYY
+```
 
-## Zobacz również
-- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
-- [Moment.js](https://momentjs.com/)
+## Dogłębne zagłębienie się w temat
+
+Pobieranie aktualnej daty może wydawać się banalnym zadaniem, ale istnieje kilka aspektów, które warto zrozumieć dokładniej. Po pierwsze, warto wiedzieć, że `Date.now()` zwraca liczbę milisekund w standardzie czasu uniwersalnego (UTC), a konstruktor `Date()` zwraca datę i czas w lokalnym czasie używanym przez Twój system. Istnieje również możliwość ustawiania lub zmiany daty i czasu za pomocą metod takich jak `setDate()` czy `setHours()`.
+
+Kolejną ważną rzeczą jest fakt, że aktualna data i czas nie są stałe. Na przykład, jeśli zapisałbyś potrzebną datę i czas w kodzie, w kolejnym uruchomieniu aplikacji mogłaby być już nieaktualna. Dlatego ważne jest, aby pobierać aktualną datę w momencie jej wykorzystania.
+
+## Zobacz także
+
+- [Dokumentacja: klasa Date w języku TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Stackoverflow - Pobieranie aktualnej daty za pomocą JavaScript](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript)

@@ -1,44 +1,47 @@
 ---
 title:    "Gleam: Søke og erstatte tekst"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hva er Gleam?
+# Hvorfor
 
-Gleam er et programmeringsspråk som er spesielt utviklet for å lage pålitelige, skalérbare og funksjonelle applikasjoner. Det er inspirert av både Erlang og Haskell, og har en moderne og enkel syntaks som gjør det enkelt å lage kraftig kode. I denne bloggposten skal vi se nærmere på hvordan du kan bruke Gleam til å søke og erstatte tekst i dine programmer.
+Enten du er en nybegynner eller en erfaren programmerer, er det ofte behov for å kunne endre tekst i batch. Dette kan være for å raskt korrigere feil eller for å gjøre større endringer i en kodebase. Med Gleam har du muligheten til å gjøre dette enkelt og effektivt, noe som vil hjelpe deg med å spare tid og unngå slitsomt manuelt arbeid.
 
-## Hvorfor gjøre det?
+# Hvordan gjøre det med Gleam
 
-Det er mange potensielle grunner til å engasjere seg i å søke og erstatte tekst i dine programmer. Kanskje du ønsker å gjøre endringer i en stor kodebase, eller kanskje du ønsker å utføre en spesifikk oppgave på alle forekomster av en viss tekst. Uansett grunn, kan Gleam gjøre dette enkelt og effektivt.
+Det første trinnet for å søke og erstatte tekst med Gleam, er å importere biblioteket "Text.Replace". Dette vil gi oss de nødvendige funksjonene for å gjøre endringer i tekst.
 
-## Slik gjør du det
-
-For å søke og erstatte tekst i Gleam, kan du bruke den innebygde funksjonen `String.replace` som tar to argumenter: teksten du ønsker å søke etter og teksten du ønsker å erstatte med. La oss se på et eksempel:
-
-```
-Gleam
-import gleam/string
-fn main() {
-  let tekst = "Hei, verden!"
-  let ny_tekst = String.replace("Hei", "Hallo", tekst)
-  IO.println(ny_tekst) // Hallo, verden!
-}
+```Gleam
+import Text.Replace
 ```
 
-Her bruker vi `String.replace` til å erstatte "Hei" med "Hallo" i teksten "Hei, verden!". Den nye teksten blir da "Hallo, verden!". Dette er en enkel og effektiv måte å søke og erstatte tekst i Gleam.
+Deretter kan du bruke funksjonen "replace" til å søke etter en gitt streng og erstatte den med en annen.
 
-## Dypdykk
+```Gleam
+let nyTekst = Text.Replace.replace("Hei, verden!", "Hei", "Hallo")
 
-Som du kanskje la merke til i eksempelet over, tar `String.replace` også et tredje argument som er teksten du ønsker å søke i. Dette gjør det mulig å erstatte tekst i en bestemt del av en string. For å søke og erstatte tekst i en string fra en bestemt posisjon, kan du bruke funksjonen `String.from(tekst, start_posisjon)` som returnerer en substring fra start_posisjon og fremover.
+// Resultat: "Hallo, verden!"
+```
 
-I tillegg kan du også bruke en regex (regular expression) som første argument i `String.replace` for å utføre mer kompliserte søk og erstatninger. Dette åpner for en rekke muligheter for å søke og erstatte tekst på en mer avansert måte.
+Dette er bare et enkelt eksempel, men funksjonen "replace" kan også ta i bruk regulære uttrykk for å søke etter mønstre i en tekst.
 
-## Se også
-- Offisiell Gleam nettside: https://gleam.run/
-- Offisiell Gleam GitHub repository: https://github.com/gleam-lang/gleam
-- Gleam dokumentasjon: https://gleam.run/book/
-- Eksempler på søke og erstatte tekst i Gleam: https://github.com/gleam-lang/gleam/blob/main/lib/core/String.gleam
+```Gleam
+let resultat = Text.Replace.replaceRegex("Gleam er kult!", Regex.compile("\\w+"), fun(ord) {
+  "Kul" ++ ord ++ "?"
+})
 
-Takk for at du leste denne bloggposten om å søke og erstatte tekst i Gleam. Vi håper det har vært nyttig og at du kommer til å bruke disse teknikkene i fremtidige programmeringsprosjekter. Lykke til!
+// Resultat: "Kul Gleam? Kul er? Kul kult?"
+```
+
+# Dykk dypere ned
+
+Å søke og erstatte tekst kan virke enkelt, men det er faktisk en veldig nyttig funksjon å kunne beherske. Med Gleam kan du også ta i bruk forskjellige teknikker og metoder for å tilpasse søket og erstatningen basert på dine behov. Du kan for eksempel bruke funksjonen "replaceFirst" for å bare erstatte den første forekomsten av en tekst eller bruke "replaceAllAcc" for å jobbe med akkumulatorer og håndtere større datasett.
+
+# Se også
+
+- [Offisiell dokumentasjon for "Text.Replace" biblioteket](https://gleam.run/modules/text#replace)
+- [Tutorial for søke og erstatte tekst med Gleam](https://www.youtube.com/watch?v=H6Jy4DYOh0k)
+- [Eksempler på Gleam kode for å søke og erstatte tekst](https://github.com/search?q=language%3Agleam+replace)

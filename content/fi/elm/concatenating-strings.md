@@ -1,39 +1,46 @@
 ---
-title:    "Elm: Merkkijonojen yhdistäminen"
+title:    "Elm: Merkkijonojen konkatenointi"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Elm-ohjelmointikielessä merkkijonojen yhdistäminen eli konkatenointi on erittäin kätevä toiminto, joka mahdollistaa tekstien ja muuttujien yhdistämisen yhdeksi merkkijonoksi. Sillä voidaan esimerkiksi helposti luoda dynaamisia otsikkoja tai viestejä, jotka sisältävät muuttuvia arvoja.
+Miksi käyttäisit Elm-ohjelmointikieltä tietojen rinnakkain sijoittamiseen? Samoin kuin jokainen ohjelmointikieli, Elm tarjoaa tehokkaita työkaluja erilaisten tehtävien suorittamiseen. Yksi näistä tehtävistä on merkkijonojen yhdistäminen.
 
-## Miten
+## Kuinka tehdä
 
-```Elm
-concatenate : String -> String -> String
-concatenate a b =
-    a ++ b
-```
+Merkkijonojen yhdistäminen Elm-ohjelmointikielessä on hyvin yksinkertaista. Voit tehdä sen yksinkertaisesti käyttämällä sisäänrakennettua `++` operaattoria. Tarkastellaanpa esimerkkiä, jossa yhdistämme kaksi merkkijonoa:
 
 ```Elm
-name = "Ella"
-greeting = "Hei " ++ name ++ ", tervetuloa Elm-ohjelmointimaailmaan!"
+result: String
+result =
+    "Hei" ++ "maailma"
 ```
 
-**Output:**
+Tämä tuottaa tuloksen `"Heimaailma"`. Huomaa, että `++` operaattori yhdistää merkkijonot kirjaimellisesti ilman välilyöntejä. Jos haluat välilyönnin merkkijonojen välille, voit lisätä sen toisen merkkijonon loppuun ennen yhdistämistä.
 
+## Syvemmällä
+
+Merkkijonojen yhdistäminen ei ole vain yksinkertainen tapa luoda uusia merkkijonoja, se voi myös olla hyödyllinen työkalu muodostettaessa dynaamisia lausekkeita. Esimerkiksi, jos haluat luoda ilmoituksen käyttäjälle, voit käyttää `++` operaattoria lisäämällä dynaamisen muuttujan yhteen merkkijonon kanssa:
+
+```Elm
+user: String
+user = "John"
+
+message: String
+message =
+    "Tervetuloa " ++ user ++ "!"
+
+-- Tulos: "Tervetuloa John!"
 ```
-Hei Ella, tervetuloa Elm-ohjelmointimaailmaan!
-```
 
-## Syvempi sukellus
+Tämä voi olla erityisen hyödyllinen, kun luodaan käyttöliittymää, joka näyttää muuttuvia tietoja. Merkkijonojen yhdistäminen mahdollistaa myös monimutkaisempien lausekkeiden muodostamisen muuttujien kanssa, kuten matemaattisten toimintojen ja ehtolauseiden yhdistämisen.
 
-Elm:ssä merkkijonojen konkatenointi tapahtuu `++`-operaattorin avulla, joka yhdistää kaksi merkkijonoa yhdeksi. Itse asiassa `++` ei toimi pelkästään merkkijonoilla, vaan se pystyy yhdistämään myös listoja, joten sitä voidaan käyttää myös monipuolisemmin. On myös hyvä huomioida, että merkkijonojen yhdistäminen ei ole tehokkain tapa käsitellä suuria määriä dataa, sillä jokainen konkatenointi luo uuden merkkijonon, joka vie muistia.
+# Katso myös
 
-## Katso myös
-
-- [Elm-ohjelmointikielen virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Elm-ohjelmointikielen opiskeluresurssit](https://elm-lang.org/resources)
-- [Elm-ohjelmointikielen virallinen Slack-kanava](https://elmlang.slack.com/)
+- [Elm - Offical Website](https://elm-lang.org/)
+- [Elm Introduction Documentation (in Finnish)](https://guide.elm-lang.org/architecture/)
+- [Elm Slack Community (in Finnish)](https://elmlang.slack.com/archives/C0DEGJ2LP/)

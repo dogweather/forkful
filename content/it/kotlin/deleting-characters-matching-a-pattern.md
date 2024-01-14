@@ -1,50 +1,38 @@
 ---
-title:    "Kotlin: Eliminare caratteri corrispondenti a un pattern."
+title:    "Kotlin: Cancellare i caratteri corrispondenti a un modello"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Se sei uno sviluppatore Kotlin alla ricerca di modi per gestire stringhe e caratteri, potresti aver incrociato il problema di dover eliminare caratteri che corrispondono a uno specifico pattern. In questo articolo, esploreremo come farlo in modo efficiente utilizzando il linguaggio di programmazione Kotlin.
+Molti programmatori si trovano a dover manipolare stringhe di testo che contengono caratteri indesiderati o non necessari. Uno scenario comune potrebbe essere la pulizia dei dati di un file di testo importato in un'applicazione. In questi casi, è utile sapere come eliminare i caratteri che corrispondono a un certo pattern.
 
-## Come fare
-
-Per eliminare i caratteri che corrispondono a un determinato pattern in una stringa, possiamo utilizzare la funzione `replace()` fornita dalla classe `String` di Kotlin. Prendiamo ad esempio il seguente codice:
+## Come Fare
 
 ```Kotlin
-val text = "Questo è uno #esempio di #stringa con #hashtag"
-val newText = text.replace("#", "")
-println(newText)
+// Creiamo una stringa con un esempio di caratteri indesiderati
+val testString = "Ciao! ##Come stai?## Vuoi imparare a programmare in Kotlin?"
+
+// Usiamo la funzione replace() per sostituire i caratteri specificati con una stringa vuota
+val cleanString = testString.replace(Regex("[#?]"), "")
+
+// Stampa il risultato
+println(cleanString)
+
+// Output: Ciao! Come stai? Vuoi imparare a programmare in Kotlin?
 ```
 
-In questo codice, stiamo sostituendo ogni occorrenza del carattere "#" nella stringa con una stringa vuota, quindi eliminando i caratteri corrispondenti al pattern "#". L'output sarà il seguente:
-
-```
-Questo è uno esempio di stringa con hashtag
-```
-
-Inoltre, possiamo anche utilizzare espressioni regolari per identificare il pattern da eliminare. Ad esempio, se vogliamo eliminare solo i caratteri che corrispondono a un hashtag seguito da una parola, possiamo utilizzare la seguente espressione regolare e il codice corrispondente:
-
-```Kotlin
-val text = "Questo è uno #esempio di #stringa con #hashtag"
-val newText = text.replace(Regex("#\\w+"), "")
-println(newText)
-```
-
-L'output sarà ancora una volta:
-
-```
-Questo è uno di stringa con
-```
+Nell'esempio sopra, abbiamo utilizzato la funzione `replace()` di Kotlin per sostituire i caratteri "#" e "?" con una stringa vuota, eliminandoli dalla stringa originale. La funzione accetta un oggetto Regex (espressione regolare) come primo parametro, che ci permette di specificare in modo più preciso quali caratteri vogliamo eliminare. 
 
 ## Approfondimento
 
-Ora che abbiamo visto come eliminare i caratteri corrispondenti a un pattern, possiamo anche considerare alcune considerazioni più avanzate. Ad esempio, dobbiamo prestare attenzione alla gestione dei caratteri speciali in una stringa, in quanto possono influire sulla corretta applicazione delle espressioni regolari. Inoltre, è importante considerare la corretta gestione delle eccezioni nell'elaborazione di stringhe contenenti caratteri imprevisti.
+L'uso della funzione `replace()` è solo una delle tante possibilità per eliminare caratteri che corrispondono a un pattern. Alcune altre opzioni potrebbero essere l'utilizzo della funzione `filter()` o il parsing della stringa in un array e l'eliminazione dei singoli caratteri indesiderati prima di ricostruire la stringa. Inoltre, l'uso delle espressioni regolari ci permette di avere una maggiore flessibilità nel definire il pattern dei caratteri da eliminare. 
 
-## Vedi anche
+## Vedi Anche
 
-- Documentazione ufficiale Kotlin su `String`
-- Tutorial su espressioni regolari in Kotlin
-- Funzioni utili per manipolare stringhe in Kotlin
+- [Documentazione ufficiale di Kotlin](https://kotlinlang.org/docs/reference/strings.html#string-templates-and-regular-expressions)
+- [Tutorial su espressioni regolari in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
+- [Utilizzo delle funzioni `replace()` e `filter()` in Kotlin](https://medium.com/@agrawalsuneeti/character-patterns-in-kotlin-e978f3a66f1b)

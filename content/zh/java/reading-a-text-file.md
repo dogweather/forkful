@@ -1,65 +1,42 @@
 ---
 title:    "Java: 读取文本文件"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么读取文本文件
+在Java编程中，读取文本文件是一项非常常见的任务。通过读取文本文件，我们可以获取其中的信息并进行相应的处理。例如，我们可以读取包含学生信息的文本文件，并将其存储在对象中，以便在程序中使用。因此，学习如何读取文本文件是非常有用的。
 
-阅读文本文件是编程中常见的操作之一。它可以帮助我们读取并处理大量的数据，节省时间和精力。在这篇博客文章中，我们将学习如何使用Java编程语言来读取文本文件，并深入探讨这个过程背后的原理。
-
-## 如何
-
-在Java中，读取文本文件的最简单方式是使用`FileReader`和`BufferedReader`类。首先，我们需要创建一个指向要读取的文本文件的`File`对象，然后将其传递给`FileReader`构造函数。接下来，我们可以使用`BufferedReader`来读取文件的内容，并将其存储在一个字符串变量中。以下是一个示例代码：
-
-```Java
+## 如何读取文本文件
+为了读取文本文件，我们需要使用Java中的FileReader和BufferedReader类。首先，我们需要在代码中导入这两个类：
+```
 import java.io.*;
 
-public class ReadTextFile {
-    public static void main(String[] args) {
-        try {
-            // 创建File对象
-            File file = new File("myFile.txt");
-            
-            // 创建FileReader对象
-            FileReader fileReader = new FileReader(file);
-            
-            // 创建BufferedReader对象
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            
-            // 读取文件中的内容
-            String line = bufferedReader.readLine();
-            
-            // 打印内容
-            System.out.println(line);
-            
-            // 关闭资源
-            bufferedReader.close();
-            fileReader.close();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
 ```
+然后，我们可以使用FileReader来打开文本文件，并使用BufferedReader来读取文件中的内容。以下是一个示例代码：
+```
+FileReader fileReader = new FileReader("students.txt");
+BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-假设`myFile.txt`文件中的内容为`Hello, world!`，运行上述代码后，控制台将输出`Hello, world!`。
+String line = bufferedReader.readLine();
 
-## 深入探讨
+while(line != null) {
+    // 在此处进行处理，例如将学生信息存储在对象中
+    System.out.println(line); // 打印每一行的内容
+    line = bufferedReader.readLine(); // 继续读取下一行
+}
 
-在Java中，文本文件是以字符的形式存储的。因此，我们使用`FileReader`和`BufferedReader`来读取文件时，实际上是按照字符来读取的。`FileReader`读取一个字符的时间比较慢，因此我们使用`BufferedReader`来缓冲读取的字符，从而提高读取效率。
+bufferedReader.close(); // 关闭BufferedReader
+```
+上述代码首先打开名为“students.txt”的文本文件，并使用BufferedReader来读取文件中的内容。然后，它使用while循环来逐行读取文件，直到读取到文件末尾。在循环中，我们可以对每一行的内容进行相应的处理，例如存储到对象中或打印出来。最后，我们需要关闭BufferedReader来释放资源。
 
-除了使用`FileReader`和`BufferedReader`，我们还可以使用`Scanner`类来读取文本文件。不过，相比之下，`Scanner`类的使用更为复杂，因此在处理大量数据时可能不如`FileReader`和`BufferedReader`效率高。
+## 深入了解读取文本文件
+在Java中，文本文件是通过字节流来读取的。FileReader类是Reader类的子类，用于将字节流转换为字符流，以便我们可以按字符的方式读取文本文件。而BufferedReader类则用来缓存字符，从而提高读取效率。因此，通过组合使用这两个类，我们可以很方便地读取文本文件中的内容。
 
-## 参考资料
-
-- [Java文档 - FileReader](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
-- [Java文档 - BufferedReader](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Java文档 - Scanner](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-
-## 参考链接
-
-- [Java文本文件的读取 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/01/java-io.html)
-- [Java文本文件的读取 - 菜鸟教程](https://www.runoob.com/java/java-files-io.html)
+# 参考链接
+- [Java中的FileReader文档](https://docs.oracle.com/javase/7/docs/api/java/io/FileReader.html)
+- [Java中的BufferedReader文档](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html)
+- [Java文件读取指南](https://www.tutorialspoint.com/java/java_files_io.htm)
+- [开始学习Java编程](https://www.codecademy.com/learn/learn-java)

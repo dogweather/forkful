@@ -1,49 +1,47 @@
 ---
 title:    "Rust: השוואת שתי תאריכים"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה: רק 1-2 משפטים המסבירים *למה* מישהו יתעסק להשוות שתי תאריכים.
 
-כתבה זו תסביר לך למה חשוב לשווא את שתי תאריכים בתוכנות ראסט.
+שלום לכולם! בפוסט הזה אנחנו נדבר על השוואת שתי תאריכים בשפת Rust. כדי להבין טוב יותר את הנושא, נתחיל עם השאלה - למה מישהו בכלל צריך להשוות שתי תאריכים? התשובה פשוטה - כדי לבדוק אם שני אירועים קרו באותו יום, חודש וכו'. למשל, אם אתה רוצה לבדוק אם משהו התרחש לפני או אחרי מועד מסוים, או אם שתי אירועים קרו באותו יום.
 
-## איך לעשות זאת
+## איך לעשות זאת: דוגמאות קוד ופלט דוגמה בתוך בלוקי קוד "```Rust...```"
 
-באמצעות דוגמאות קוד ופלט דוגמא בתוך בלוקי קוד ```Rust...```, תוכלו ללמוד כיצד לשווא שני תאריכים באמצעות שפת התכנות ראסט.
+בשפת Rust ישנם כמה דרכים שונות להשוות שתי תאריכים. לדוגמה, אפשר להשתמש בפונקציות המובנות "eq" (שוויון), "lt" (קטן מ) ו- "gt" (גדול מ) כדי לבדוק אם תאריך אחד שווה לתאריך אחר, קטן מתאריך אחר או גדול מתאריך אחר בהתאמה.
+
+#### דוגמה 1:
 
 ```Rust
-use chrono::{NaiveDate, Duration}; // import packages
+use chrono::{DateTime, Duration, Utc};
 
-// create two sample dates
-let date1 = NaiveDate::from_ymd(2021, 10, 1);
-let date2 = NaiveDate::from_ymd(2020, 9, 15);
+fn main() {
+  let date1: DateTime<Utc> = Utc::now(); // יוצר תאריך נוכחי
+  let date2: DateTime<Utc> = date1.checked_add_signed(Duration::days(7)).unwrap(); // מוריד שבוע מהתאריך הנוכחי
+  let date3: DateTime<Utc> = date1.checked_sub_signed(Duration::days(7)).unwrap(); // מוסיף שבוע לתאריך הנוכחי
 
-// compare using the PartialOrd trait
-if date1 < date2 {
-    println!("{} is before {}", date1, date2)
-} else if date1 > date2 {
-    println!("{} is after {}", date1, date2)
-} else {
-    println!("{} is equal to {}", date1, date2)
+  println!("{}", date1.eq(&date2)); // הדפס שיאמר "לא לפני ולא אחרי"
+  println!("{}", date1.lt(&date2)); // הדפס שיאמר "קטן"
+  println!("{}", date2.gt(&date3)); // הדפס שיאמר "גדול"
 }
 ```
 
-הפלט שיוצא הוא:
-
-```bash
-2021-10-01 is after 2020-09-15
+פלט:
+```
+false
+false
+true
 ```
 
-## חפירה עמוקה
+#### דוגמה 2:
 
-לפני שכותבים קוד לשווא שני תאריכים, חשוב להבין מה מטרת השווא וכיצד זה ישפיע על עבודת התוכנה שלכם. ניתן לשווא שני תאריכים למטרות שונות, כגון יצירת תאריך חדש, בדיקת תקינות תאריך, או ניהול תאריכים באופן כללי.
+```Rust
+use chrono::{DateTime, Datelike, Utc};
 
-לכל מטרה ישנם פתרונות שונים והשווא שני תאריכים בעזרת ראסט הוא רק אחד מהם. כדי להיות מקצועיים יותר בשימוש בשפת תכנות זו, עלינו ללמוד כיצד להשתמש בכלים נוספים לניהול ושינוי תאריכים באופן יעיל ויעיל.
-
-## ראה גם
-
-- [מדריך עבודה עם תאריכים בראסט](https://dev.to/mschwarzmueller/the-complete-rust-lang-guide-for-newcomers-and-enthusiasts-part-5-dates-datetime-rustb50)
-- [מדריך בסיסי לטיפול בתאריכים בראסט](https://blog.logrocket.com/dates-and-time-in-rust/)
-- [תיעוד רשמי על פעולות תאריכים בראסט](https://doc.rust-lang.org/std/time/index.html)
+fn main() {
+  let date1: DateTime<Utc> = Utc::today(); // מחזיר את התאריך הידוע כיום
+  let date2: DateTime<Utc> = Utc.ymd(2020, 1, 1).and_hms(0, 0, 0); // יוצר תאריך מסוים

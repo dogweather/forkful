@@ -1,74 +1,42 @@
 ---
 title:    "C: Lecture d'un fichier texte"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles quelqu'un pourrait vouloir lire un fichier texte en langage C. Peut-être que vous devez extraire des données spécifiques à partir du fichier ou peut-être que vous voulez simplement vérifier son contenu. Quelle que soit la raison, la lecture de fichiers texte est une compétence utile pour tout programmeur C.
+La lecture de fichiers texte est une opération courante en programmation C. En apprenant comment lire un fichier, vous pourrez développer des programmes plus robustes et polyvalents. De plus, cela vous permettra également de manipuler des données externes sans les avoir à entrer manuellement dans votre code.
 
-## Comment faire
+# Comment faire
 
-Voici un exemple de code C pour lire un fichier texte :
+La première étape pour lire un fichier texte en C consiste à ouvrir le fichier à l'aide de la fonction `fopen()`. Cette fonction prend deux arguments : le nom du fichier et le mode de lecture. Voici un exemple de code :
 
 ```C
-#include <stdio.h>
+FILE* fichier = fopen("mon_fichier.txt", "r");
+```
 
-int main()
-{
-  // Ouvrir le fichier
-  FILE *fichier = fopen("nom_du_fichier.txt", "r");
-  
-  // Vérifier si le fichier est ouvert correctement
-  if (fichier == NULL)
-  {
-    printf("Erreur lors de l'ouverture du fichier.");
-    return 1;
-  }
-  
-  // Lire le fichier ligne par ligne
-  char ligne[100];
-  while (fgets(ligne, 100, fichier) != NULL)
-  {
-    printf("%s", ligne); // Afficher la ligne sur la console
-  }
-  
-  // Fermer le fichier
-  fclose(fichier);
-  return 0;
+Une fois que le fichier est ouvert, vous pouvez lire son contenu en utilisant la fonction `fscanf()`. Cette fonction prend également deux arguments : le pointeur de fichier et le format de lecture. Voici un exemple de code pour lire le contenu du fichier ligne par ligne :
+
+```C
+char ligne[100];
+while (fscanf(fichier, "%s", ligne) != EOF) {
+    printf("%s", ligne);
 }
 ```
 
-Voici un exemple de contenu du fichier texte "nom_du_fichier.txt" :
+Ensuite, vous pouvez manipuler et traiter les données lues selon vos besoins.
 
-```
-Bonjour à tous !
-Je suis un fichier texte.
-J'ai plusieurs lignes de texte.
-Amusez-vous à me lire !
-```
+# Plongée en profondeur
 
-Voici la sortie du programme :
+Il est important de noter que lors de l'ouverture d'un fichier, il est important de vérifier si le fichier a bien été ouvert en vérifiant la valeur de retour de la fonction `fopen()`. Si la valeur de retour est un pointeur NULL, cela signifie que l'ouverture du fichier a échoué.
 
-```
-Bonjour à tous !
-Je suis un fichier texte.
-J'ai plusieurs lignes de texte.
-Amusez-vous à me lire !
-```
+De plus, il est également important de fermer le fichier une fois que vous avez terminé de le lire en utilisant la fonction `fclose()`. Ceci garantit que toutes les modifications apportées au fichier sont enregistrées et que toutes les ressources utilisées par le fichier sont libérées.
 
-Dans cet exemple, nous avons ouvert le fichier en mode "r" pour "lecture". Ensuite, nous avons utilisé la fonction "fgets" pour lire chaque ligne du fichier. Enfin, nous avons affiché chaque ligne sur la console. Il est important de noter que le tableau "ligne" doit être assez grand pour contenir la ligne la plus longue du fichier.
+# Voir aussi
 
-## Plongée Profonde
-
-Il existe de nombreuses autres fonctions en langage C pour lire des fichiers texte. Par exemple, vous pouvez utiliser la fonction "fgetc" pour lire un caractère à la fois, ou la fonction "fscanf" pour lire des données formatées. Vous pouvez également utiliser des fonctions de positionnement de fichier pour naviguer à travers le fichier et lire uniquement les parties dont vous avez besoin.
-
-Il est également important de mentionner que la lecture de fichiers texte peut être sujette à des erreurs si le fichier contient des caractères spéciaux ou si le format du fichier n'est pas correct. Il est donc important de traiter ces cas d'erreur pour garantir que votre programme fonctionne correctement.
-
-## Voir aussi
-
-- [Documentation sur la lecture et l'écriture de fichiers en C](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Autres exemples de code pour la lecture de fichiers texte en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Article sur les fichiers texte en C](https://www.geeksforgeeks.org/basics-file-handling-c/)
+- Tutoriel complet sur la lecture de fichiers en C : https://www.programiz.com/c-programming/c-file-input-output
+- Documentation officielle de la fonction `fopen()` : http://www.cplusplus.com/reference/cstdio/fopen
+- Vidéo explicative sur la lecture de fichiers en C : https://www.youtube.com/watch?v=FH2Wi3Z0-PI

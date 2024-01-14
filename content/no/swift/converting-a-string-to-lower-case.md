@@ -1,32 +1,33 @@
 ---
-title:    "Swift: Konvertering av en streng til små bokstaver."
+title:    "Swift: Konvertere en streng til små bokstaver"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger i programmering er det nødvendig å konvertere en streng til små bokstaver for å kunne behandle data på en mer effektiv måte. Dette kan for eksempel være når man arbeider med brukerinput, eller når man skal sammenligne to strenger for å se om de er like uavhengig av store eller små bokstaver.
+Det kan være nødvendig å konvertere en streng til små bokstaver når du jobber med tekstbehandling og ønsker å behandle alle bokstavene på samme måte uten å ta hensyn til store og små bokstaver.
 
-## Slik gjør du det
-For å konvertere en streng til små bokstaver i Swift, kan du bruke funksjonen ```lowercased()```. Denne funksjonen tar inn en streng og returnerer en ny streng med kun små bokstaver. Se eksempelet under:
+## Hvordan
+Konvertering av en streng til små bokstaver er en enkel og nyttig funksjon som kan gjøres ved å bruke `.lowercased()` metoden. Se et eksempel i kodesnutten nedenfor:
 
 ```Swift
-let navn = "Maria"
-let navnLiten = navn.lowercased()
-print(navnLiten)
+let navn = "Marie"
+print(navn.lowercased())
 ```
-Output:
-```
-maria
+
+Dette vil gi følgende utdata:
+
+```Swift
+marie
 ```
 
 ## Dypdykk
-Det kan være lurt å tenke på hvilket språk og alfabet du arbeider med når du jobber med å konvertere strenger til små bokstaver. For eksempel vil en kinesisk tekst se annerledes ut enn en norsk tekst når den er konvertert til små bokstaver, fordi kinesisk ikke har store og små bokstaver slik vi kjenner det.
+Når en streng blir konvertert til små bokstaver, utføres denne prosessen bruk av Unicode standarden. Dette betyr at det også vil konvertere eventuelle spesielle tegn til den tilsvarende små bokstaven. For eksempel vil "Å" bli konvertert til "å" og "Ø" til "ø".
 
-Hvis du ønsker å behandle kun én bokstav om gangen, kan du bruke funksjonen ```unicodeScalars```. Da kan du gå gjennom hver bokstav i strengen og konvertere den til små bokstaver ved hjelp av funksjonen ```uppercased()```.
+Det er også verdt å merke seg at `.lowercased()` metoden vil ignorere eventuelle tall eller symboler, og bare konvertere alfabetiske bokstaver til små bokstaver. Dette gjør at denne metoden kan brukes på en rekke ulike typer strenger.
 
 ## Se også
-- [Apple Swift Docs: Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/BuildingCocoaApps/index.html)
-- [Swift Programming Tutorials: Strings and Characters](https://www.tutorialspoint.com/swift/swift_strings.htm)
-- [Ray Wenderlich: Swift String Cheat Sheet](https://www.raywenderlich.com/965-swift-string-cheat-sheet-and-quick-reference/attachments/104142)
+- [Offisiell Swift dokumentasjon for `.lowercased()` metode](https://developer.apple.com/documentation/swift/string/2995525-lowercased)
+- [Konvertering av en Streng til Store Bokstaver i Swift] (https://www.blogty.com/swift-articles/convert-to-uppercase-in-swift/)

@@ -1,66 +1,60 @@
 ---
-title:    "PHP: Imprimir salida de depuración"
+title:    "PHP: Imprimiendo salida de depuración"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué imprimir la salida de depuración en PHP
+## Por qué
 
-A todos nos ha pasado. Estamos codificando en PHP y nos encontramos con un error extraño que no podemos entender. ¿Qué hacemos entonces? Una solución común es imprimir la salida de depuración para obtener una mejor comprensión de lo que está sucediendo en nuestro código.
+¿Alguna vez te has encontrado con un error en tu código y no sabes por dónde empezar a solucionarlo? La impresión de la salida de depuración en PHP puede ser una herramienta útil para ayudarte a entender lo que está sucediendo en tu código y encontrar rápidamente el problema.
 
-Pero, ¿por qué deberíamos hacer esto? ¿Por qué es importante imprimir la salida de depuración en PHP?
+## Cómo hacerlo
 
-Imprimir la salida de depuración en PHP puede ser de gran ayuda para entender mejor nuestro código y encontrar errores que de otra manera podrían pasar desapercibidos. Además, puede ahorrarnos mucho tiempo al depurar problemas en nuestro código.
-
-## Cómo imprimir la salida de depuración en PHP
-
-Imprimir la salida de depuración en PHP es muy sencillo. Simplemente tenemos que usar la función `print` o `echo` para mostrar los valores de las variables que queremos analizar.
-
-Por ejemplo:
+Hay varias formas de imprimir la salida de depuración en PHP, pero la más común es utilizando la función `print_r()`. Veamos un ejemplo:
 
 ```PHP
-$nombre = "Juan";
-$edad = 25;
-
-echo $nombre;
-echo $edad;
+$mi_array = array('manzana', 'naranja', 'plátano');
+print_r($mi_array);
 ```
 
-La salida de este código sería:
+La salida de este código será la siguiente:
 
 ```
-Juan
-25
+Array
+(
+    [0] => manzana
+    [1] => naranja
+    [2] => plátano
+)
 ```
 
-De esta manera, podemos ver los valores de nuestras variables y asegurarnos de que sean los correctos en cada paso de nuestro código.
+Este ejemplo nos muestra el contenido y estructura de nuestro array de manera clara y legible, lo que puede ser de gran ayuda para encontrar errores o entender cómo está funcionando nuestro código.
 
-## Inmersión profunda en la impresión de salida de depuración en PHP
-
-Además de imprimir los valores de las variables, también podemos utilizar la función `var_dump` para obtener una salida más detallada. Esta función nos mostrará no solo el valor de la variable, sino también su tipo de datos y longitud.
-
-Por ejemplo:
+Otra función útil es `var_dump()`, que nos muestra no solo el contenido de una variable, sino también su tipo de dato y longitud. Por ejemplo:
 
 ```PHP
-$nombre = "Juan";
-$edad = 25;
+$nombre = 'Juan';
 var_dump($nombre);
-var_dump($edad);
 ```
 
-La salida de este código sería:
+La salida de este código será la siguiente:
 
 ```
 string(4) "Juan"
-int(25)
 ```
 
-Además, podemos imprimir mensajes personalizados junto con la salida de depuración, lo que nos ayudará a tener una mejor comprensión de lo que está sucediendo en nuestro código en ese momento.
+Esto nos indica que la variable `$nombre` es una cadena de texto con una longitud de 4 caracteres.
 
-Otra opción es utilizar la función `error_log` para imprimir la salida de depuración en un archivo de registro en lugar de en la pantalla, lo que puede ser útil para situaciones en las que no queremos que nuestro código se vea afectado por la impresión de salida.
+## Profundizando
+
+Además de `print_r()` y `var_dump()`, PHP también ofrece otras funciones de salida de depuración como `debug_backtrace()` y `error_log()`. Estas funciones pueden ser de gran utilidad en situaciones más complejas, como cuando necesitamos rastrear un error específico o guardar los mensajes de error en un archivo.
+
+También es importante mencionar que la impresión de la salida de depuración debe usarse con precaución. No es una buena práctica dejar estas funciones en tu código en producción, ya que pueden revelar información sensible sobre tu aplicación a posibles atacantes. Es mejor utilizarlas solo durante los procesos de desarrollo y pruebas.
 
 ## Ver también
 
-- [Documentación de PHP sobre impresión de salida de depuración] (https://www.php.net/manual/es/function.var-dump.php)
-- [Artículo sobre cómo depurar en PHP utilizando la impresión de salida] (https://www.startutorial.com/articles/view/debugging-php-using-output-printing)
+- [Funciones de salida de depuración en PHP](https://www.php.net/manual/es/function.debug-backtrace.php)
+- [Documentación oficial de PHP sobre depuración](https://www.php.net/manual/es/debugger.php)
+- [Artículo sobre depuración de código PHP en producción](https://blog.maestrano.com/debugging-php-apps-in-production/)

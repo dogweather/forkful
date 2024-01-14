@@ -1,44 +1,51 @@
 ---
-title:    "Elixir: 计算未来或过去的日期"
+title:    "Elixir: 计算将来或过去的日期"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么要计算未来或过去的日期？
 
-在编程世界中，有时候我们需要计算日期的变化，比如计算将来的某个日期或者过去的某个日期。这可能是为了计算过去的某个事件发生多久了，或者未来某个项目的截止日期是什么时候。在Elixir编程语言中，我们可以轻松地实现这样的日期计算功能，让我们来看看如何做到这一点吧！
+计算未来或过去的日期在编程中是很常见的需求，比如说我们需要根据用户的生日来计算他的年龄，或者根据某个事件的发生日期来计算距离今天已经过了多少天。这样的计算可以帮助我们更好地处理和理解时间的概念。
 
-# 怎么做
+## 如何进行日期计算
 
-在Elixir中，我们可以使用`Calendar`模块来处理日期。首先，让我们导入`Calendar`模块，然后使用`to_gregorian_days`函数将日期转换为格里高利历的天数，从而方便我们进行日期的计算。例如，我们可以计算未来30天后的日期，代码如下所示：
+在Elixir中，我们可以使用`DateTime`模块来进行日期的计算。首先，我们需要导入这个模块，然后使用`DateTime.from_naive`函数来将我们提供的日期转换为Elixir的日期类型。
 
-```Elixir
-iex> require Calendar
-Calendar
-iex> date = {2021, 7, 1}
-{2021, 7, 1}
-iex> future_date = Calendar.to_gregorian_days(date) + 30
-2459446
-iex> Calendar.from_gregorian_days(future_date)
-{2021, 7, 31}
+```elixir
+import DateTime
+
+DateTime.from_naive({2000, 12, 31}, "Etc/UTC")
+#=> {:ok, ~U[2000-12-31 00:00:00Z]}
 ```
 
-这里，我们首先定义了一个日期变量`date`，然后使用`to_gregorian_days`函数将其转换为格里高利历的天数。接着，我们将这个天数加上30，得到未来的天数`future_date`。最后，我们再次使用`Calendar`模块的函数`from_gregorian_days`来将未来的天数转换为日期格式。如此简单，我们就可以计算未来的日期了！
+接下来，我们可以使用`DateTime.add`函数来对日期进行加减操作，第一个参数为原始日期，第二个参数为我们要加减的时间量。例如，我们可以在当前日期加上3天：
 
-# 深入探讨
+```elixir
+DateTime.add(~U[2022-01-01 00:00:00Z], {3, :days})
+#=> ~U[2022-01-04 00:00:00Z]
+```
 
-除了简单的日期计算，Elixir中的`Calendar`模块还提供了其他功能，比如计算两个日期之间的差值。我们可以使用`date.diff(future_date)`来计算两个日期之间相差的天数。另外，我们也可以使用`date.add(days)`和`date.sub(days)`来在指定的日期上增加或减少一定的天数。这些功能可以为我们处理复杂的日期计算提供便利。
+我们也可以对不同的时间单位进行加减操作，比如说：
 
-除了`Calendar`模块，Elixir的第三方库`Timex`也提供了更多的日期处理功能，如计算工作日、节假日和时区转换等。如果你需要更多高级的日期功能，可以尝试使用`Timex`库。
+```elixir
+DateTime.add(~U[2022-01-01 00:00:00Z], {1, :weeks})
+#=> ~U[2022-01-08 00:00:00Z]
 
-# 参考链接
+DateTime.add(~U[2022-01-01 00:00:00Z], {2, :months})
+#=> ~U[2022-03-01 00:00:00Z]
+```
 
-- Elixir官方文档：https://elixir-lang.org/getting-started/calendar-and-timestamps.html
-- Timex库文档：https://hexdocs.pm/timex/readme.html
+## 深入了解日期计算
 
-## 参见
+Elixir的`DateTime`模块还提供了很多其他有用的函数，比如说`DateTime.diff`用于计算两个日期之间的时间差，`DateTime.compare`用于比较两个日期的大小，`DateTime.truncate`用于去除日期或时间中的某些部分，等等。
 
-- [Elixir和Erlang的关系（中文）](https://github.com/sunyshhh/articles/blob/master/Elixir%E5%92%8CErlang%E7%9A%84%E5%85%B3%E7%B3%BB.md)
-- [如何学习Elixir（中文）](https://github.com/sunyshhh/articles/blob/master/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0Elixir.md)
-- [Elixir的常见面试题（中文）](https://github.com/sunyshhh/articles/blob/master/Elixir%E7%9A%84%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.md)
+如果我们需要在代码中频繁使用日期计算，我们也可以考虑使用`Timex`这个第三方库。它提供了更多的日期计算函数和格式化选项，可以帮助我们更方便地处理日期数据。
+
+## 查看更多
+
+- [Elixir官方文档 - DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir官方文档 - Timex](https://hexdocs.pm/timex/readme.html)
+- [Elixir时间和日期处理的最佳实践](https://medium.com/@eigenjoy/elixir-time-and-date-handling-best-practices-e7192479956b)

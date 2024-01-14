@@ -1,48 +1,38 @@
 ---
-title:    "Haskell: Encontrando o tamanho de uma string"
+title:    "Haskell: Encontrando o comprimento de uma string"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que encontrar o comprimento de uma string é importante?
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, e entender como fazer isso pode ajudá-lo a escrever códigos mais eficientes e elegantes em Haskell.
+Encontrar o comprimento de uma string é uma habilidade fundamental na programação. Saber quantos caracteres uma string contém pode ser útil em diversas situações, como validar entradas de usuário, manipulação de dados e formatação de saída.
 
-## Como fazer
-
-Para encontrar o comprimento de uma string em Haskell, podemos usar a função `length`. Vamos dar uma olhada em um exemplo:
+## Como fazer:
 
 ```Haskell
-nome = "João"
-comprimento = length nome
+-- Definindo uma função para encontrar o comprimento de uma string
+findLength :: String -> Int 
+findLength str = length str
+
+-- Exemplos de entrada e saída da função
+findLength "Olá" -- output: 3
+findLength "123456789" -- output: 9
 ```
 
-Neste exemplo, definimos a variável `nome` como uma string e, em seguida, usamos a função `length` para encontrar seu comprimento. O resultado será 4, pois a string "João" contém 4 caracteres.
+A função `length` é pré-definida na linguagem Haskell e retorna o comprimento de qualquer estrutura que possa ser percorrida, como strings, listas e arrays. Entretanto, é importante ressaltar que o comprimento de uma string pode ser diferente do número de caracteres visíveis, já que caracteres unicode possuem diferentes tamanhos.
 
-Outra maneira de encontrar o comprimento de uma string é usando a função `foldr`. Esta função recebe uma função e uma lista como argumentos e aplica a função a cada elemento da lista, retornando um único valor. Podemos usar `foldr` para criar nossa própria função `length`:
+## Profundidade:
 
-```Haskell
-meuLength xs = foldr (\_ acc -> acc + 1) 0 xs
-```
+Ao encontrarmos o comprimento de uma string, estamos na verdade contando quantos elementos ela possui. Em Haskell, o tipo `String` é equivalente a uma lista de caracteres `Char`, então podemos utilizar a função `length` para encontrar tanto o comprimento de uma string quanto de uma lista. É importante salientar que o tipo `String` é uma lista com elementos do tipo `Char`, então manipulações e operações que funcionam com listas podem ser aplicadas em strings também.
 
-Neste exemplo, usamos uma função anônima `\_ acc -> acc + 1` que recebe um elemento da lista (representado por `_`) e um acumulador (representado por `acc`) e retorna o valor do acumulador mais um. Ao aplicar essa função a cada elemento da lista, obtemos o número total de elementos, que é o comprimento da string. Aqui está um exemplo de como usar essa função:
+Outro detalhe importante é que a função `length` é uma função pura, ou seja, ela não possui efeitos colaterais e sempre retorna o mesmo resultado para uma mesma entrada. Isso significa que seu código será mais previsível e menos propenso a erros.
 
-```Haskell
-nome = "Maria"
-comprimento = meuLength nome
-```
+## Veja também:
 
-O resultado será novamente 4, pois a string "Maria" também contém 4 caracteres.
-
-## Mergulho Profundo
-
-A função `length` é uma função polimórfica, o que significa que ela pode ser aplicada a diferentes tipos de dados, não apenas strings. Isso é possível porque a função não depende do tipo específico de dado, mas sim da quantidade de elementos em uma estrutura de dados. Isso também é evidente em nossa função `meuLength`, onde usamos `foldr` em vez de apenas somar 1 a um contador, tornando-o mais flexível.
-
-Além disso, é importante notar que a função `length` não é a única maneira de encontrar o comprimento de uma string em Haskell. Por exemplo, também podemos usar a função `Data.List.genericLength` do módulo `Data.List` para encontrar o comprimento de uma string, mas ela deve ser usada com cuidado, pois pode introduzir imprecisões devido ao uso de números racionais em vez de inteiros.
-
-## Veja também
-
-- [Documentação da função `length`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:length)
-- [Documentação da função `foldr`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:foldr)
-- [Documentação da função `Data.List.genericLength`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:genericLength)
+- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+- [Funções pré-definidas no Haskell](https://wiki.haskell.org/Standard_functions)
+- [Tutorial interativo de Haskell](https://learnyouahaskell.com/chapters)
+- [Documentação da linguagem Markdown](https://www.markdownguide.org/)

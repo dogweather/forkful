@@ -1,32 +1,33 @@
 ---
-title:    "Bash: Pohjakuvion mukaisten merkkien poistaminen"
+title:    "Bash: Kuviota vastaavien merkkien poistaminen"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Bash-ohjelmoinnissa on monia tilanteita, joissa haluat poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi olla hyödyllistä, jos haluat suodattaa tiettyjä merkkejä tiedostoista tai muuttaa tekstiä haluamallasi tavalla. Tässä blogikirjoituksessa opit miten voit toteuttaa tämän Bashissa käyttäen yksinkertaista komentoa.
 
-## Kuinka tehdä
-Voit poistaa merkkejä vastaavan kaavan käyttämällä `tr` komentoa Bashissa. Tehdään käytännön esimerkki, jossa poistamme kaikki numerot tekstistä.
+Usein Bash-ohjelmoijat joutuvat tekemään erilaisia muutoksia merkkijonoihin. Toisinaan näihin muutoksiin kuuluu myös tietynlaisten merkkien poistaminen. Tämä voi olla tarpeellista esimerkiksi tietokantaan tallennetuissa tiedoissa tai lokaalissa tiedostossa. Seuraavassa osiossa kerromme miten tätä voi tehdä Bashin avulla.
+
+## Miten
+
+Merkkien poistaminen halutunmallisen patternin mukaisesti onnistuu Bashilla yksinkertaisesti käyttämällä komentoa "tr". Komento "tr" vaihtaa, poistaa tai lisää merkkejä merkkijonosta määritetyn patternin mukaan. Seuraava esimerkki osoittaa miten voit poistaa kaikki numerot merkkijonosta:
 
 ```Bash
-# Luo muuttuja, joka sisältää tekstiä, josta haluat poistaa numerot
-teksti="Tässä on 123 merkkejä 456 numeroina."
-
-# Käytä tr komentoa poistamaan numerot ja tulosta muutettu teksti
-echo $teksti | tr -d '0-9'
+sana="Tämä on 123 testi"
+uusi_sana=$(echo $sana | tr -d '[0-9]')
+echo $uusi_sana # Tulostaa: Tämä on testi
 ```
 
-Tämä tulostaa: `Tässä on merkkejä numeroina.` Käytämme `tr` komentoa parametrilla `-d`, joka määrittelee kaavan, jonka haluamme poistaa. Tässä tapauksessa käytämme `0-9`, joka vastaa kaikkia numeroita 0-9.
+Kuten huomaat, käytämme ensin "echo" komentoa tulostaaksemme merkkijonon ja sitten "tr" komentoa poistaaksemme kaikki numerot merkkijonosta. Voit myös lisätä muita merkkejä patterniin, jos haluat poistaa tai korvata niitä.
 
-Voit myös käyttää `tr` komentoa poistamaan muita merkkejä vastaavan kaavan perusteella. Esimerkiksi, jos haluat poistaa kaikki välimerkit ja erikoismerkit, voit käyttää `-d` parametrilla `[:punct:]`.
+## Syvempi sukellus
 
-## Syvällisempi sukellus
-`tr` komento on hyödyllinen monissa Bash-ohjelmoinnin tilanteissa, ei pelkästään merkkien poistamisessa. Voit myös käyttää sitä vaihtamaan merkkejä tai luomaan uusia kaavoja. Voit kokeilla erilaisia kaavoja ja tutkia tarkemmin `tr` komennon toimintaa.
+Komennon "tr" määritelty pattern on käytännössä sallitut merkit, jotka korvataan niin haluttaessa. Voit myös määritellä useampia patternia ja näin korvata useampia merkkejä tai merkkijonoja. Voit myös käyttää "tr" komentoa skripteissäsi, jolloin voit automatisoida merkkien poistamisen tai korvaamisen.
 
-Katso myös
-- [tr komentoen opas by Linuxize](https://linuxize.com/post/tr-command-in-linux/)
-- [Tr komentoen dokumentaatio by GNU](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Komentoriviopas - Bash by ohjelmointi.net](https://ohjelmointi.net/opas/komentorivi/bash/)
+## Katso myös
+
+- [Bashin "tr" komento dokumentaatio](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Merkkijonojen muokkaaminen Bashilla](https://bash.cyberciti.biz/guide/Perform_an_action_on_all_files_in_a_directory)
+- [Muita Bashin hyödyllisiä komentoja](https://devhints.io/bash)

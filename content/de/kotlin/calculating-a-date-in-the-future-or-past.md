@@ -1,56 +1,45 @@
 ---
-title:    "Kotlin: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:    "Kotlin: Eine Datumskalkulation in der Zukunft oder Vergangenheit"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann für verschiedene Anwendungen nützlich sein, wie z.B. die Erstellung von Kalendern oder die Planung von bestimmten Ereignissen. Mit Kotlin ist dies eine einfache Möglichkeit, die in diesem Artikel erläutert wird.
 
-Das Berechnen von Datum in der Vergangenheit oder Zukunft kann hilfreich sein, um Datumsangaben in Programmen zu manipulieren oder um zukünftige Ereignisse vorherzusagen.
-
-# Wie
-
-Die Bibliothek `java.time` bietet in Kotlin eine einfache Möglichkeit, um Datum und Zeit zu manipulieren. Im folgenden Beispiel wird gezeigt, wie man Datumsangaben in der Vergangenheit oder Zukunft berechnen kann:
+## Wie geht's?
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst das aktuelle Datum erhalten. Dies kann mit der `LocalDate.now()` Methode erreicht werden. Hier ist ein Beispiel:
 
 ```Kotlin
-import java.time.LocalDate
-import java.time.Month
-
-fun main() {
-    // aktuelles Datum
-    val today = LocalDate.now()
-    println("Heute: $today")
-
-    // Datum in der Zukunft
-    val futureDate = today.plusDays(7)
-    println("In 7 Tagen: $futureDate")
-
-    // Datum in der Vergangenheit
-    val pastDate = today.minusMonths(3)
-    println("Vor 3 Monaten: $pastDate")
-
-    // ein bestimmtes Datum setzen
-    val specificDate = LocalDate.of(2020, Month.DECEMBER, 25)
-    println("Weihnachten 2020: $specificDate")
-}
+val currentDate = LocalDate.now()
 ```
 
-Das obige Beispiel würde diese Ausgabe erzeugen:
+Als nächstes müssen wir die gewünschte Anzahl an Tagen zur aktuellen Datum hinzufügen oder subtrahieren. Dies kann mit der `plusDays()` oder `minusDays()` Methode erfolgen. Hier ist ein Beispiel, um 7 Tage zur aktuellen Datum hinzuzufügen:
 
-```
-Heute: 2020-10-22
-In 7 Tagen: 2020-10-29
-Vor 3 Monaten: 2020-07-22
-Weihnachten 2020: 2020-12-25
+```Kotlin
+val futureDate = currentDate.plusDays(7)
 ```
 
-# Deep Dive
+Die `futureDate` Variable enthält jetzt das Datum, das 7 Tage in der Zukunft liegt. Um ein Datum in der Vergangenheit zu berechnen, können wir dieselbe Methode verwenden, aber anstelle von `plusDays()` verwenden wir `minusDays()`. Hier ist ein Beispiel, um 3 Tage von der aktuellen Datum abzuziehen:
 
-Bei der Berechnung von Datum in der Vergangenheit oder Zukunft gibt es einige wichtige Dinge zu beachten. Zum Beispiel können einige Monate unterschiedliche Anzahl von Tagen haben, wodurch die Berechnung von Datum etwas komplizierter werden kann. Außerdem kann es aufgrund von Schaltjahren Unterschiede in der Anzahl der Tage geben. Es ist daher wichtig, die Funktionen der `java.time` Bibliothek genau zu verstehen, um genaue Berechnungen durchzuführen.
+```Kotlin
+val pastDate = currentDate.minusDays(3)
+```
 
-# Siehe auch
+Das war's! Sie haben jetzt erfolgreich ein Datum in der Zukunft oder Vergangenheit berechnet.
 
-- [Offizielle Dokumentation zu java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin Programmierleitfaden](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Einführung in die Zeitrechnung mit java.time](https://www.baeldung.com/java-8-date-time-intro)
+## Tiefer eintauchen
+Es gibt noch viele weitere Methoden, die wir in Kotlin verwenden können, um Datumsberechnungen durchzuführen. Zum Beispiel können wir mit `plusWeeks()` oder `plusMonths()` auch Wochen oder Monate zu einem Datum hinzufügen. Mit `format()` können wir auch das berechnete Datum in einem bestimmten Format anzeigen lassen. Hier ist ein Beispiel, um das Datum im Format "dd.MM.yyyy" auszugeben:
+
+```Kotlin
+val formattedDate = futureDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+```
+
+Es gibt auch viele andere Möglichkeiten, um Datumsberechnungen in Kotlin durchzuführen. Durchstöbern Sie die Kotlin-Dokumentation, um mehr darüber zu erfahren. 
+
+## Siehe auch
+- [Kotlin Dokumentation](https://kotlinlang.org/docs/datetime.html)
+- [Java 8 Datums- und Uhrzeit-API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Parsing von Datum in Kotlin](https://www.baeldung.com/kotlin-datetime-parsing)

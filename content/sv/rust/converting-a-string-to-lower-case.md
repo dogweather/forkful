@@ -1,39 +1,38 @@
 ---
-title:    "Rust: Omvandla en sträng till små bokstäver"
+title:    "Rust: Konvertera en sträng till små bokstäver"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-Rust: Konvertera en sträng till gemener
-
 ## Varför
 
-Att kunna konvertera en sträng till gemener är en viktig färdighet för en programmerare, särskilt inom textbearbetning och användarinteraktion. Det kan användas för att jämföra strängar utan att behöva oroa sig för skillnader i stor eller liten bokstav, eller för att anpassa input från användaren till ett visst format.
+Att konvertera en sträng till gemener (lower case) kan vara en vanlig uppgift när man arbetar med textbaserade applikationer eller webbutveckling. Genom att använda Rusts inbyggda funktioner för stränghantering kan man enkelt omvandla en sträng till gemener. Nedan kan du lära dig hur du gör det.
 
 ## Så här gör du
 
-För att konvertera en sträng till gemener i Rust, använd funktionen `to_lowercase()` från standardbiblioteket `std::string::String`. Här är ett enkelt exempel:
+För att konvertera en sträng till gemener i Rust, behöver du först importera standardbiblioteket "str". Därefter kan du använda funktionen "to_lowercase()", som tillämpas på en variabel som innehåller en sträng. Exempelvis:
 
 ```Rust
-fn main() {
-    let input = String::from("Rust Programmering");
-    let output = input.to_lowercase();
+use std::str;
 
-    println!("{}", output); // utmatning: rust programmering
-}
+let text = "HEJ HEJ";
+
+let gemener = str::to_lowercase(&text);
+
+println!("{}", gemener);
 ```
 
-I det här exemplet skapas en ny sträng `output` som är en kopia av `input`, fast med alla bokstäver omvandlade till gemener.
+Output: hej hej
+
+Som du kan se, använder vi funktionen "to_lowercase()" för att omvandla vår variabel "text" till gemener och sedan skriver ut resultatet. Det är så enkelt det är att konvertera en sträng till gemener i Rust!
 
 ## Djupdykning
 
-En djupare titt på `to_lowercase()` visar att den faktiskt använder en metod som kallas `make_ascii_lowercase()`, som är den som utför den faktiska konverteringen. Denna metod är en del av standardbiblioteket `std::ascii` och är beroende av koderna i ASCII-tabellen för att bestämma om en bokstav ska konverteras eller inte.
-
-Detta innebär att konverteringen endast fungerar korrekt för ASCII-karaktärer, vilket kan leda till oönskade resultat om man försöker konvertera en sträng med specialtecken eller bokstäver utanför ASCII-tabellen. I sådana fall kan det vara mer lämpligt att istället använda `UnicodeNFD::to_lowercase()` från standardbiblioteket `std::unicode`, vilket gör en mer utförlig konvertering baserad på Unicode-standarder.
+Vad händer egentligen när vi använder funktionen "to_lowercase()"? Först och främst utför den en iteration genom varje tecken i strängen och kontrollerar om det är ett stort bokstav genom att använda "is_uppercase()" funktionen. Om tecknet i fråga är en stor bokstav så konverteras det till gemener genom att subtrahera 32 från dess ASCII-värde. Därefter lagras den omvandlade strängen i en ny variabel och returneras till användaren.
 
 ## Se även
 
-- [Rust standardbiblioteket](https://doc.rust-lang.org/std/index.html)
-- [ASCII-tabellen](https://www.ascii-code.com/)
-- [Unicode standardbiblioteket](https://doc.rust-lang.org/std/unicode/)
+- [Rust String Library](https://doc.rust-lang.org/std/string/)
+- [ASCII Table](https://www.rapidtables.com/code/text/ascii-table.html)

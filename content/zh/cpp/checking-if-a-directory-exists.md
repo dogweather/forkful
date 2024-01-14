@@ -1,57 +1,42 @@
 ---
-title:    "C++: 检查目录是否存在"
+title:    "C++: 目录是否存在的检查"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么 ## 
 
-在进行文件和文件夹操作时，检查文件夹是否存在是一个非常重要的步骤。这可以帮助我们避免错误，比如创建重复的文件夹，或者在一个不存在的文件夹中尝试创建文件。通过编写一个简单的程序来检查文件夹是否存在，我们可以更高效地管理我们的文件系统。
+在开发C++程序时，经常需要检查某个特定的目录是否存在。这可以避免在代码中使用不存在的目录，从而有效地提高程序的稳定性和可靠性。
 
-# 如何操作
+## 如何做 ## 
 
 ```C++
 #include <iostream>
-#include <filesystem> //包含文件和文件夹操作函数的标准库
-
-using namespace std;
-namespace fs = std::filesystem;
+#include <filesystem> //包含检查目录存在性的标准库
 
 int main() {
-  // 定义文件夹路径
-  std::string folderPath = "/Users/username/Documents";
+    std::string path = "C:\\Users\\Mandarin\\Documents";
 
-  // 使用exists函数检查文件夹是否存在
-  if (fs::exists(folderPath)) {
-    std::cout << "文件夹已存在" << std::endl;
-  } else {
-    std::cout << "文件夹不存在" << std::endl;
-  }
-
-  return 0;
+    if (std::filesytem::exists(path)) { //检查目录是否存在
+        std::cout << "Directory exists!" << std::endl;
+    }
+    
+    return 0;
 }
 ```
 
-**输出：**
+运行以上代码，如果目录"C:\Users\Mandarin\Documents"存在，则会输出"Directory exists!"。这是因为我们使用了标准库中的"exists"函数来检查目录的存在性。
 
-文件夹已存在
+## 深入了解 ## 
 
-在上面的代码中，我们使用了C++标准库中的`<filesystem>`头文件来调用`exists`函数来检查指定的文件夹路径是否存在。如果文件夹存在，`exists`函数将返回`true`，否则将返回`false`。
+为了更深入地了解如何检查目录的存在性，我们可以看一下"filesytem"头文件中"exists"函数的实现。这个函数首先会创建一个"directory_entry"对象，然后通过调用该对象的"is_directory"函数来检查目录的存在性。如果目录存在，则返回true；反之则返回false。
 
-如果我们要创建一个新的文件夹，我们可以使用`create_directory`函数来实现，但是在创建之前，我们仍然需要通过`exists`函数来检查文件夹是否已存在。
+另外，我们还可以使用"C++17"版本中引入的"experimental/filesystem"头文件来实现相同的功能。
 
-# 深入探索
+## 参考链接 ## 
 
-当我们调用`exists`函数时，它会返回一个布尔值。但是，如果我们想要更多的信息，比如文件夹的更多属性，我们可以使用`status`函数来代替`exits`函数。这样我们将得到一个`std::file_status`对象，它包含了有关文件夹的更多信息，比如文件夹的大小和最后修改时间等。
-
-另外，如果我们只需要检查文件夹是否存在，我们可以使用`is_directory`函数来代替`exists`函数。这样我们可以更加精确地判断给定路径是否是一个文件夹。
-
-# 见其他
-
-- [`<filesystem>`标准库文档](https://en.cppreference.com/w/cpp/filesystem)
-- [C++中检查文件夹是否存在的其他方法](https://stackoverflow.com/questions/5923330/how-to-check-if-a-directory-exists-in-a-c-program)
-
-# 参考链接
--  [C++ reference](https://zh.cppreference.com/) (中文)
-- [C++标准库（英文）](https://en.cppreference.com/w/)
+- [C++标准库filesystem库用法详解](https://www.cnblogs.com/ixenos/p/10795788.html)
+- [新C++标准中的文件系统操作](https://zhuanlan.zhihu.com/p/28896647)
+- [C++ 17：filesystem](https://www.modernescpp.com/index.php/c-17-filesystem)

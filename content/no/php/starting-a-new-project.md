@@ -1,40 +1,45 @@
 ---
 title:    "PHP: Å starte et nytt prosjekt"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+**Hvorfor**
 
-Å starte et nytt programmeringsprosjekt kan virke overveldende for noen, men det er en utrolig givende og lærerik opplevelse. Det kan hjelpe deg med å forbedre dine programmeringsferdigheter, utvide din kunnskap og til og med føre til nye og spennende karrieremuligheter.
+Å starte et nytt programmeringsprosjekt kan være en spennende og utfordrende opplevelse. Det kan gi muligheten til å lære nye ferdigheter, skape noe unikt og kanskje til og med tjene penger på prosjektet. Uansett motivasjon, er å starte et nytt prosjekt alltid en mulighet til å utvikle dine programmeringsferdigheter og skape noe du kan være stolt av.
 
-## Hvordan
+**Hvordan**
 
-For å starte et nytt programmeringsprosjekt, må du først bestemme hvilket språk du vil bruke. PHP er et populært valg blant utviklere på grunn av dets fleksibilitet og fordeler som dynamisk typet språk. For å komme i gang, må du først installere en PHP-plattform på datamaskinen din. Deretter kan du følge dette eksempelet for å skrive en enkel "Hello World" -program i PHP:
+For å komme i gang med et nytt prosjekt, trenger du først en god idé. Deretter er det viktig å velge riktig programmeringsspråk og verktøy for å implementere idéen din. I dette eksempelet vil jeg vise deg hvordan du kan lage en enkel bloggside ved hjelp av PHP og Markdown.
 
-```PHP
-<?php
-echo "Hello World!";
+```
+<?php 
+// Opprett en variabel for bloggtittelen
+$bloggtittel = "Min fantastiske blogg";
+
+// Opprett en variabel for blogginnlegg 
+$blogginnlegg = "Dette er mitt første innlegg på bloggen! Her vil jeg dele mine tanker og ideer om programmering.";
+
+// Skriv ut bloggtittelen og innlegget ved hjelp av Markdown-format 
+echo "# $bloggtittel \n";
+echo $blogginnlegg;
 ?>
 ```
+**Resultat:**
 
-Når du har skrevet inn koden, kan du kjøre den og se følgende utskrift:
+# Min fantastiske blogg
+Dette er mitt første innlegg på bloggen! Her vil jeg dele mine tanker og ideer om programmering.
 
-```
-Hello World!
-```
+**Dypdykk**
 
-Å jobbe med PHP innebærer å lære mange forskjellige konsepter og funksjoner, og det er viktig å ta seg tid til å praktisere og bli kjent med dem.
+Når du starter et nytt prosjekt, er det viktig å ha en god struktur og organisering av kode. Det kan være lurt å opprette forskjellige mapper for ulike deler av prosjektet, som for eksempel en mappe for bilder, en for stilark og en for PHP-filer. Dette gjør det enklere å finne frem til riktig fil når man skal gjøre endringer eller utvikle videre.
 
-## Dypdykk
+I tillegg er det viktig å sikre prosjektet ditt ved å bruke sikkerhetsprinsipper som f.eks. validere input og bruke forberedte uttrykk for å unngå SQL-injeksjon.
 
-Når du begynner å jobbe med et nytt PHP-prosjekt, er det viktig å ha en god struktur og planlegge koden din før du begynner å skrive. Dette kan hjelpe deg med å unngå rotete og vanskelig å lese kode senere. Finn en god IDE (Integrated Development Environment) som passer dine behov, og ta deg tid til å sette opp prosjektet ditt på en organisert måte.
+**Se også**
 
-I tillegg til å ha en god struktur, er det viktig å være konsekvent med din kode stil. Dette gjør det enklere for andre å forstå og samarbeide med koden din. Det er også viktig å huske på beste praksis og sikkerhetsforanstaltninger når du utvikler et PHP-prosjekt.
-
-## Se også
-
-- [En introduksjon til PHP](https://www.w3schools.com/php/)
-- [Grundig PHP-tutorial](https://www.php.net/manual/en/tutorial.php)
-- [Lær deg PHP fra grunnen av](https://www.phptherightway.com/)
+- [PHP dokumentasjon](https://www.php.net/)
+- [Markdown guide](https://www.markdownguide.org/)
+- [PHP sikkerhetsprinsipper](https://www.w3schools.com/php/php_security.asp)

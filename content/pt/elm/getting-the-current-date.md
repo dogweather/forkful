@@ -1,38 +1,50 @@
 ---
-title:    "Elm: Obtendo a data atual"
+title:    "Elm: Obtendo a data atual."
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar Elm para obter a data atual?
+## Por que
 
-Se você é um programador em busca de uma linguagem de programação funcional e fácil de aprender, a resposta é simples: Elm. Com Elm, você pode facilmente obter a data atual em seu código, sem a necessidade de bibliotecas ou pacotes adicionais. Além disso, Elm é conhecida por sua sintaxe concisa e robusta, tornando a tarefa ainda mais fácil.
+Neste post, vamos falar sobre como obter a data atual em um programa escrito em Elm. Isso pode ser útil para vários fins, como exibir a data em um aplicativo ou fazer cálculos baseados na data atual.
 
-## Como fazer isso em Elm?
+## Como fazer
 
-Para obter a data atual em Elm, basta usar a função `Time.now` e em seguida, converter para o formato que desejar. Por exemplo, para obter a data atual no formato ano-mês-dia, você poderia fazer o seguinte:
+Para obter a data atual em Elm, podemos usar a função `Date.now`, que retorna o número de milissegundos desde 1º de janeiro de 1970. Podemos então usar essa informação para criar uma `Date` da Elm. Aqui está um exemplo de código:
 
 ```Elm
-import Time exposing (..)
+import Date exposing (Date)
 
-getDate : String
-getDate =
-    Time.now |> Time.toYearMonthDay |> toString
+date : Date
+date = Date.now |> Date.fromMilliseconds
 ```
 
-E ao chamar a função `getDate`, o resultado será algo como `2021-09-20`. Simples, não é?
+Neste exemplo, estamos importando o módulo `Date` e usando a função `fromMilliseconds` para criar um valor `Date` a partir do número de milissegundos obtido com `Date.now`. Podemos então usar essa variável para exibir a data em nosso aplicativo.
 
-## Profundidade na obtenção da data atual em Elm
+```Elm
+view : Date -> Html msg
+view date =
+    div [] [ text <| Date.toString Date.full date ]
 
-Para aqueles que gostam de mergulhar um pouco mais fundo, é possível entender como exatamente a função `Time.now` funciona em Elm. Na verdade, por trás dos panos, essa função utiliza o objeto `Date` do JavaScript para obter a data atual e, em seguida, o converte para um formato Elm amigável.
+main =
+    Html.program
+        { init = date
+        , view = view
+        , update = always date
+        }
+```
 
-Então, por que não simplesmente manipular o objeto `Date` diretamente? A resposta é que, ao usar a função `Time.now`, você garante que seu código seja mais seguro e livre de erros, já que o objeto `Date` possui alguns comportamentos peculiares e propenso a bugs.
+O resultado deste código será a data atual formatada em sua localização. Por exemplo, se estivermos em Portugal, a data será exibida no formato "Dia da semana, dia de mês de ano". Você pode experimentar este código e ver a data sendo exibida atualizada a cada segundo.
 
-Além disso, Elm possui uma documentação extremamente detalhada e acessível para aqueles que desejam explorar mais a fundo o funcionamento das funções de data e tempo.
+## Profundidade
 
-# Veja também
+Além de `Date.now` e `Date.fromMilliseconds`, o módulo `Date` possui muitas outras funções úteis para trabalhar com datas, como `Date.fromString` para converter uma string em uma data e `Date.compare` para comparar duas datas. Recomendamos que você dê uma olhada na documentação do módulo `Date` para descobrir todas as opções disponíveis.
 
-- [Documentação oficial do Elm sobre tempo e data](https://guide.elm-lang.org/architecture/effects/time.html)
-- [Guia de sintaxe concisa do Elm](https://elm-lang.org/docs/syntax)
-- [Curso de Elm para iniciantes](https://www.youtube.com/watch?v=ddUfxR5sGFo&t=1624s)
+## Veja também
+
+- [Documentação do módulo Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Exemplos de código Elm](https://elm-lang.org/examples)
+
+Aqui terminamos nosso post sobre como obter a data atual em Elm. Esperamos que tenha sido útil e que você possa aplicar esse conhecimento em seus próprios projetos. Não se esqueça de dar uma olhada nos links fornecidos para mais recursos sobre programação em Elm. Até a próxima!

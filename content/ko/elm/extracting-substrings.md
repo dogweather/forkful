@@ -1,36 +1,42 @@
 ---
-title:    "Elm: 문자열 추출하기"
+title:    "Elm: 서브스트링 추출"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-우리는 프로그래밍을 할 때 종종 문자열에서 일부분을 추출해야 할 때가 있습니다. 예를 들면, 사용자의 이름을 입력 받고 그 중에서 성만 따로 따로 사용하고 싶을 수 있습니다. 이를 해결하기 위해 우리는 Elm에서 substring을 추출하는 방법을 배울 것입니다.
 
-## 어떻게 
+우리는 프로그래밍을 할 때 자주 문자열에서 일부를 추출하는 경우가 있습니다. 이는 특정 데이터를 찾거나 특정 형식의 문자열을 만들기 위해서일 수 있습니다. Elm에서는 `String` 모듈을 사용하여 손쉽게 문자열에서 원하는 부분을 추출할 수 있습니다.
+
+## 추출하는 방법
+
+Elm에서는 `String` 모듈의 `slice` 함수를 사용하여 문자열에서 일부를 추출할 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다:
+
 ```Elm
--- 문자열에서 특정 길이 만큼의 substring 추출하기
-substring : Int -> Int -> String -> String
-
--- 예시: "켄트법 (Kent Beck)"에서 "켄트"만 추출하기
-substring 0 4 "켄트법 (Kent Beck)"
-
--- 결과: "켄트"
-
--- 문자열에서 특정 문자열 이후의 모든 문자 추출하기
-dropLeft : Int -> String -> String
-
--- 예시: " Elm은 멋진 프로그래밍 언어입니다."에서 " Elm은" 제거하기
-dropLeft 17 " Elm은 멋진 프로그래밍 언어입니다."
-
--- 결과: " 멋진 프로그래밍 언어입니다."
+name = "John Smith"
+firstName = String.slice 0 4 name
 ```
 
-## 깊이 파헤치기
-substring과 dropLeft는 우리가 흔히 쓰는 기능이지만 실제로는 인덱스를 계산하고 그에 맞게 문자열을 추출하는 일련의 과정을 거칩니다. 이러한 과정 덕분에 우리는 문자열에서 자유롭게 원하는 부분만 추출해 낼 수 있습니다. 하지만, 인덱스를 계산하는 것은 종종 복잡한 작업일 수 있기 때문에 substring과 dropLeft를 사용하기 전에 해당 문자열을 잘 확인하고 어디서부터 어디까지의 인덱스가 필요한지 파악하는 것이 중요합니다.
+위의 예시에서 `String.slice 0 4 name`는 `"John"`이라는 결과를 반환합니다. 첫 번째 매개변수는 추출하고 싶은 부분의 첫 번째 인덱스를 나타내고, 두 번째 매개변수는 추출하고 싶은 부분의 마지막 인덱스를 나타냅니다. 그리고 세 번째 매개변수는 추출하고 싶은 문자열입니다.
 
-## 참고 자료
-- Elm 문자열 라이브러리 공식 문서: https://package.elm-lang.org/packages/elm/core/latest/String
-- Elm 코딩 도구 및 커뮤니티: https://elm-lang.org/
-- Elm을 사용한 개발 블로그: https://thoughtbot.com/blog/using-elm-is-happy-fun
+또 다른 예시를 살펴보겠습니다:
+
+```Elm
+phoneNumber = "123-456-7890"
+lastFourDigits = String.slice 8 11 phoneNumber
+```
+
+위의 예시에서 `String.slice 8 11 phoneNumber`는 `"7890"`이라는 결과를 반환합니다. 이와 같은 방식으로 원하는 부분을 추출할 수 있습니다.
+
+## 깊게 파보기
+
+`String` 모듈에는 `slice` 함수외에도 다양한 함수가 있습니다. 예를 들어 `substring` 함수는 `slice`와 비슷하지만 첫 번째 매개변수와 두 번째 매개변수의 순서가 반대입니다. 그리고 `left`와 `right` 함수는 주어진 문자열에서 왼쪽이나 오른쪽 일부를 추출하는 함수입니다. 이 외에도 `filter` 함수를 사용하여 말 그대로 문자열에서 특정 문자를 필터링할 수 있습니다.
+
+이러한 함수들은 우리의 작업을 더욱 쉽게 만들어주는 유용한 기능들입니다. 자세한 내용은 [Elm 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String)를 참고해주세요.
+
+## 더보기
+
+- [Elm 문자열 함수들에 대한 자세한 설명 (번역)](https://elmbyexample.github.io/translation/string-operations/)
+- [Elm 문자열 관련 실제 사용 사례 예제](https://thoughtbot.com/blog/elm-strings)

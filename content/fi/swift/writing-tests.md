@@ -1,49 +1,63 @@
 ---
-title:    "Swift: Testausten kirjoittaminen"
+title:    "Swift: Testien kirjoittaminen"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Ohjelmistokehittäjät usein jättävät testien kirjoittamisen vähemmälle huomiolle, mutta se on yksi tärkeimmistä osa-alueista ohjelmiston laadun varmistamisessa. Testauksen avulla voit havaita mahdollisia virheitä ja bugeja koodissasi ennen niiden saamista käyttäjien käsiin. 
+Testien kirjoittaminen voi vaikuttaa ylimääräiseltä työltä, mutta se on erittäin tärkeää ohjelmointiprosessin kannalta. Se auttaa varmistamaan koodin toimivuuden ja vähentää mahdollisia virheitä ja bugeja myöhemmässä vaiheessa. Lisäksi se helpottaa myös koodin ymmärtämistä ja kehittämistä.
 
-## Miten
+## Kuinka
 
-Testien kirjoittaminen Swift-ohjelmassa on helppoa ja vaivatonta. Voit aloittaa lisäämällä `XCTest` -kirjaston projektiisi. Kirjoita sitten testifunktio, joka tarkistaa haluamasi ominaisuuden toimivuuden. Alla on esimerkki testifunktiosta, joka tarkistaa, onko annettu luku parillinen vai ei.
+Testien kirjoittaminen Swiftillä on yksinkertaista ja seuraavassa on muutamia esimerkkejä siitä, miten voit tehdä sen:
 
 ```Swift
-func testEvenNumber() {
-    let number = 4
-    XCTAssertTrue(number % 2 == 0, "The number is not even")
+func sumNumbers(num1: Int, num2: Int) -> Int {
+  return num1 + num2
 }
+
+// Testataan funktiota sumNumbers
+assert(sumNumbers(num1: 2, num2: 3) == 5)
+assert(sumNumbers(num1: 6, num2: -3) == 3)
 ```
 
-Kun suoritat nämä testit, saat joko virheen, jos testi ei onnistu, tai tiedon siitä, että testi suoritettiin onnistuneesti.
+Nämä testit varmistavat, että funktio sumNumbers toimii oikein antamillamme parametreilla. Voit myös käyttää XCTestin testiluokkia ja -metodeja testien kirjoittamiseen.
 
+```Swift
+// Luodaan testiluokka
+class MathTests: XCTestCase {
+  var math: Math!
+  
+  // Alustetaan math-instanssi ennen jokaista testiä
+  override func setUp() {
+    super.setUp()
+    math = Math()
+  }
+  
+  // Testataan sumNumbers-metodia
+  func testSumNumbers() {
+    XCTAssertEqual(math.sumNumbers(num1: 2, num2: 3), 5)
+    XCTAssertEqual(math.sumNumbers(num1: 6, num2: -3), 3)
+  }
+}
+
+// Ajetaan testit
+XCTMain([testCase(MathTests.allTests)])
 ```
-Test Suite 'All tests' started at 2021-04-05 14:30:25.043
-Test Suite 'TestExampleTests.xctest' started at 2021-04-05 14:30:25.043
-Test Suite 'TestExampleTests' started at 2021-04-05 14:30:25.043
-Test Case '-[TestExampleTests.TestExampleTests testEvenNumber]' started.
-Test Case '-[TestExampleTests.TestExampleTests testEvenNumber]' passed (0.001 seconds).
-Test Suite 'TestExampleTests' passed at 2021-04-05 14:30:25.044.
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
-Test Suite 'TestExampleTests.xctest' passed at 2021-04-05 14:30:25.045.
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
-Test Suite 'All tests' passed at 2021-04-05 14:30:25.045.
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.004) seconds
-```
 
-## Syventävä sukellus
+Nämä ovat vain muutamia esimerkkejä testien kirjoittamisesta Swiftillä. Voit löytää lisätietoja ja -ohjeita Apple Developer Documentationista.
 
-Testien kirjoittaminen voi tuntua aikaa vievältä, mutta se auttaa sinua pitkällä aikavälillä. Kun uutta koodia lisätään tai vanhaa muokataan, voit nopeasti suorittaa testit ja varmistua siitä, että koodisi edelleen toimii halutulla tavalla. Voit myös helposti löytää virheitä ja bugeja, jos testit epäonnistuvat.
+## Syventyvä kurkistus
 
-On myös tärkeää muistaa, että testien tulee olla riippumattomia ja erillisiä toisistaan. Yhden testin epäonnistuminen ei saisi vaikuttaa muihin testeihin, jotta varmistetaan luotettavat tulokset.
+Testien kirjoittaminen voi vaikuttaa tylsältä ja aikaa vievältä prosessilta, mutta se säästää aikaa ja vaivaa myöhemmin. Kun testit on kirjoitettu kattavasti, koodia on helpompi ylläpitää ja kehittää. Lisäksi se auttaa myös uusien kehittäjien pääsemistä nopeasti sisään projektiin ja ymmärtämään koodin toimintaa.
+
+Yksi tärkeä huomio on myös testien ajankohtaisuus. On tärkeää varmistaa, että testit ovat ajan tasalla ja toimivat koodin muutosten jälkeen. Muuten ne menettävät merkityksensä ja voivat johtaa virheisiin.
 
 ## Katso myös
 
-- [Swift Test Driven Development Tutorial](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
-- [Basics of Test Driven Development in Swift 5](https://medium.com/sis-software-engineering/basics-of-test-driven-development-in-swift-5-d8d876b19db6)
-- [Getting Started with XCTest Framework in Swift](https://learnappmaking.com/xctest-testing-swift-how-to/)
+- Apple Developer Documentation: https://developer.apple.com/documentation/xctest
+- Swift Test-Driven Development by Jon Reid: https://github.com/jonreid/SwiftTDDWorkshop
+- Kaleidosoft Blog: https://kaleidosoftlabs.com/blog/tdd-swift/

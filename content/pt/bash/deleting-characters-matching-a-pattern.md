@@ -1,46 +1,41 @@
 ---
-title:    "Bash: Excluir caracteres que correspondam a um padrão"
+title:    "Bash: Excluindo caracteres que correspondem a um padrão"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Às vezes, ao escrever um script em Bash, você pode precisar remover caracteres que correspondam a um determinado padrão. Isso pode ser útil para limpar entradas de texto ou para manipular strings em um formato específico. Neste artigo, vamos explorar como utilizar essa funcionalidade em seus scripts Bash.
+Existem algumas razões pelas quais alguém pode querer excluir caracteres que correspondem a um padrão em um código Bash. Por exemplo, pode ser necessário remover informações sensíveis, como senhas ou chaves de acesso, de um arquivo ou script.
 
-## Como Fazer
+## Como fazer
 
-Para excluir caracteres que correspondam a um padrão em um script Bash, podemos usar o comando `tr` (translate). Por exemplo, se quisermos remover todas as vogais de uma string, podemos usar o seguinte comando:
-
-```Bash
-tr -d 'aeiou' <<< "Hello World"
-```
-
-Isso produzirá a saída "Hll Wrld", pois ele removeu todas as vogais do texto fornecido. Podemos usar o comando `tr` para substituir os caracteres que desejamos excluir, ou até mesmo pular linhas que correspondam ao padrão. Por exemplo, se quisermos substituir todas as letras maiúsculas por asteriscos, podemos fazer o seguinte:
+Para excluir caracteres de um arquivo que correspondem a um padrão, podemos usar a ferramenta de linha de comando `sed` em conjunto com expressões regulares. Por exemplo, se quisermos excluir todas as ocorrências de "senha" em um arquivo chamado "config.txt", podemos usar o seguinte comando:
 
 ```Bash
-tr 'A-Z' '*' <<< "Bash Programming"
+sed -i 's/senha//g' config.txt
 ```
 
-Isso produzirá a saída "**** ***********", pois substituiu todas as letras maiúsculas por asteriscos. Para pular linhas que correspondam a um padrão, podemos usar o sinal de "circunflexo" (^). Por exemplo, se quisermos manter apenas os números de uma string, podemos fazer o seguinte:
+Isso substituirá todas as ocorrências da palavra "senha" por uma string vazia, resultando na exclusão desses caracteres. O `-i` no comando garante que as alterações sejam feitas diretamente no arquivo, em vez de apenas imprimi-las no terminal.
+
+Podemos usar expressões regulares mais complexas para corresponder a caracteres específicos ou padrões de palavras. Por exemplo, para excluir todas as senhas que começam com "senha" e terminam com um número, podemos usar o seguinte comando:
 
 ```Bash
-tr -cd '0-9\n' <<< "I have 123 apples"
+sed -i 's/senha[0-9]//g' config.txt
 ```
 
-Isso produzirá a saída "123\n", pois manteve apenas os números e pulou as letras e espaços em branco.
+## Mergulho profundo
 
-## Mergulho Profundo
+A ferramenta `sed` é uma poderosa ferramenta de edição de texto que aceita expressões regulares para realizar tarefas como a exclusão de caracteres que correspondem a um padrão. As expressões regulares são uma forma de representar padrões de texto em uma sequência de caracteres. Elas são usadas em muitas linguagens de programação e ferramentas de linha de comando para realizar operações de busca e substituição.
 
-O comando `tr` é usado para traduzir ou excluir caracteres em uma string. Ele funciona substituindo cada caractere no primeiro conjunto pelo caractere correspondente no segundo conjunto, ou excluindo-os se nenhum caractere correspondente for fornecido. O comando `tr` é sensível a maiúsculas e minúsculas, portanto, certifique-se de usar os conjuntos de caracteres corretos.
+No exemplo acima, usamos a expressão regular `[0-9]` para representar qualquer número de 0 a 9. Isso nos permitiu excluir todas as senhas que terminam com um número, independentemente de qual seja esse número.
 
-Além disso, é importante notar que o comando `tr` só pode manipular caracteres em uma única linha. Isso significa que ele não pode ser usado para manipular strings com várias linhas. Se você precisar trabalhar com várias linhas, pode considerar o uso de outras ferramentas, como o comando `sed`.
+Existem muitas outras expressões regulares que podem ser usadas com a ferramenta `sed` para excluir caracteres ou padrões específicos de um arquivo. É importante entender bem as expressões regulares para aproveitar ao máximo essa ferramenta de edição de texto.
 
-## Veja Também
+## Veja também
 
-Para mais informações sobre o uso do comando `tr` em scripts Bash, você pode consultar a documentação oficial do GNU `tr` em: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html.
-
-Você também pode explorar outros comandos úteis do Bash em nosso blog, como o `grep` (localizar e imprimir) ou `sort` (classificar) para manipulação de texto. Além disso, recomendamos a leitura da documentação oficial do Bash em: https://www.gnu.org/software/bash/manual/bash.html.
-
-Esperamos que este artigo tenha sido útil em mostrar como excluir caracteres que correspondam a um padrão em scripts Bash. Combinar comandos como o `tr` pode ser muito útil para criar scripts poderosos e eficientes. Até a próxima!
+- [Documentação do `sed`](https://www.gnu.org/software/sed/manual/sed.html)
+- [Tutorial de expressões regulares para Bash](https://www.regular-expressions.info/posixbrackets.html)
+- [Outras ferramentas de linha de comando úteis para edição de texto](https://www.cyberciti.biz/howto/question/linux/find-replace-string-sed-awk-perl.php)

@@ -1,54 +1,42 @@
 ---
 title:    "Swift: Calculer une date dans le futur ou le passé"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Si vous êtes un programmeur Swift, vous savez peut-être déjà que la manipulation de dates est un élément essentiel de la programmation dans n'importe quel langage. Que vous ayez besoin de calculer une date dans le futur pour une tâche planifiée ou une date dans le passé pour un historique, savoir comment manipuler les dates est une compétence précieuse. Dans cet article, nous allons vous montrer comment calculer une date dans le futur ou dans le passé en utilisant Swift.
+Calculer une date dans le futur ou le passé peut être utile pour de nombreuses raisons, telles que la planification d'événements, la gestion de projets ou même simplement par curiosité.
 
 ## Comment faire
-
-Tout d'abord, vous devez importer le framework Foundation car c'est là que se trouvent les classes de gestion de dates en Swift. Ensuite, vous pouvez créer une instance de la classe NSDate représentant la date actuelle.
-
-```Swift
-import Foundation
-
-let now = NSDate()
-```
-
-Pour calculer une date dans le futur, nous allons utiliser la méthode `dateByAddingTimeInterval` de l'objet `now`. Cette méthode prend un intervalle de temps en secondes et renvoie une nouvelle date en ajoutant cet intervalle à la date d'origine.
+Pour calculer une date dans le futur ou le passé en utilisant Swift, nous pouvons utiliser la classe `Date` et les méthodes `Calendar` pour effectuer des calculs. Voici un exemple de code qui calcule la date dans 1 mois à partir de la date actuelle :
 
 ```Swift
-let futureDate = now.dateByAddingTimeInterval(3600) // 3600 secondes = 1 heure
+let currentDate = Date()
+let calendar = Calendar.current
+let futureDate = calendar.date(byAdding: .month, value: 1, to: currentDate)
+print(futureDate)
 ```
 
-De même, pour calculer une date dans le passé, nous pouvons utiliser la méthode `dateByAddingTimeInterval` en utilisant un intervalle de temps négatif.
+Cela affichera la date dans un format standard, tel que `2021-04-20 13:00:00 +0000`. Nous pouvons également spécifier un format personnalisé en utilisant `DateFormatter`.
+
+Pour calculer une date dans le passé, nous pouvons utiliser la méthode `date(byAdding:to:wrappingComponents:)` et spécifier un nombre négatif pour la valeur, comme ceci :
 
 ```Swift
-let pastDate = now.dateByAddingTimeInterval(-86400) // -86400 secondes = 1 jour
+let pastDate = calendar.date(byAdding: .year, value: -2, to: currentDate)
+print(pastDate)
 ```
 
-Pour formater la date de manière lisible pour l'utilisateur, nous pouvons utiliser un objet `NSDateFormatter`.
+Cela nous donnera la date d'il y a 2 ans à partir de la date actuelle.
 
-```Swift
-let dateFormatter = NSDateFormatter()
-dateFormatter.dateStyle = .mediumStyle
-dateFormatter.timeStyle = .shortStyle
+## Plongée en profondeur
+En plus des méthodes `Calendar`, Swift offre également des options pour spécifier plus précisément une date dans le futur ou le passé en utilisant la classe `DateComponents`. Par exemple, nous pouvons spécifier une date en utilisant les composants suivants : année, mois, jour, heure, minute, seconde, nanoseconde et fuseau horaire.
 
-print(dateFormatter.stringFromDate(futureDate)) //affiche une date au format moyen et l'heure au format court
-```
-
-## Une plongée en profondeur
-
-Maintenant que nous savons comment calculer une date dans le futur ou dans le passé, il est important de comprendre comment les dates sont représentées en Swift. Les dates sont mesurées en secondes depuis une date de référence, le 1er janvier 2001 à minuit UTC. Cela signifie que si vous ajoutez ou soustrayez un intervalle de temps à une date, l'heure peut changer en fonction du fuseau horaire de l'utilisateur.
-
-De plus, la classe NSDate n'est pas mutable, ce qui signifie que vous ne pouvez pas changer la valeur d'un objet NSDate. Si vous avez besoin de modifier une date, vous devez créer une nouvelle instance de date avec la valeur modifiée.
+De plus, nous pouvons également utiliser la méthode `date(from:)` pour convertir une chaîne de caractères en une date. Cela peut être utile si nous recevons une date sous forme de texte et que nous voulons effectuer des calculs avec.
 
 ## Voir aussi
-
-- [Documentation Apple sur la classe NSDate](https://developer.apple.com/documentation/foundation/nsdate)
-- [Guide de programmation Swift pour les dates et les heures](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
-- [Article sur la manipulation des dates en Swift](https://medium.com/@shubham4rql/swift-tutorial-adding-dates-and-constants-1074c0a6c89b)
+- [Documentation Apple sur la classe `Date`](https://developer.apple.com/documentation/foundation/date)
+- [Documentation Apple sur la classe `Calendar`](https://developer.apple.com/documentation/foundation/calendar)
+- [Documentation Apple sur la classe `DateComponents`](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Article sur le calcul de dates dans Swift](https://www.hackingwithswift.com/articles/141/how-to-work-with-dates-and-times-in-swift)

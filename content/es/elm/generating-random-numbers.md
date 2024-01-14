@@ -1,49 +1,39 @@
 ---
 title:    "Elm: Generando números aleatorios"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué generar números aleatorios en Elm?
 
-Generar números aleatorios es una habilidad importante para cualquier programador, ya que permite agregar un elemento de aleatoriedad a nuestras aplicaciones, lo que las hace más interesantes y atractivas para los usuarios. Además, puede ser útil en diferentes casos, como en juegos o simulaciones.
+Generar números aleatorios es una práctica común en la programación que puede ser útil en una variedad de situaciones. Con la ayuda de la función `Random.elm`, puedes generar números aleatorios en Elm de manera simple y efectiva para usarlos en tus aplicaciones.
 
 ## Cómo hacerlo
 
-Para generar números aleatorios en Elm, podemos utilizar la función `Random.generate` junto con la función `Random.int`, que nos permite generar un número entero aleatorio dentro de un rango dado. Por ejemplo:
+Para generar números aleatorios en Elm, primero necesitas importar el módulo `Random` en tu archivo. Luego, puedes usar la función `Random.generate` y pasarle una semilla y una función que detalla cómo quieres que se genere el número aleatorio. Por ejemplo:
 
 ```Elm
-Random.generate Random.int (1, 10)
+import Random
 
--- Output: 7 (puede variar en cada ejecución)
+-- Genera un número aleatorio entre 1 y 10
+Random.generate (Random.int 1 10) Random.initialSeed
+--> 7 : Random.Seed -> Int
+
+-- Genera una lista de 5 números aleatorios entre 1 y 100
+Random.generate (Random.list 5 (Random.int 1 100)) Random.initialSeed
+--> [55, 27, 69, 48, 11] : Random.Seed -> List Int
 ```
 
-También podemos obtener una lista de números aleatorios utilizando la función `Random.list` y especificando el número de elementos deseado, así como el generador de números aleatorios que queremos utilizar. Por ejemplo:
+## Profundizando en la generación de números aleatorios
 
-```Elm
-Random.generate (Random.list 5 Random.float)  -- Genera una lista de 5 números aleatorios tipo float
--- Output: [0.562, 0.320, -0.820, 0.124, -1.055] (puede variar en cada ejecución)
-```
+En Elm, la generación de números aleatorios se basa en el concepto de semilla (seed). Una semilla es un valor que se usa para inicializar el generador de números aleatorios. Al utilizar `Random.initialSeed`, obtienes una semilla determinada por el reloj del sistema. Sin embargo, también puedes definir tu propia semilla para obtener una secuencia específica de números aleatorios.
 
-Otra opción es utilizar la función `Random.generateSeed` para generar una semilla aleatoria que luego podemos usar para producir una secuencia de números aleatorios. Esto puede ser útil en aplicaciones que requieren la misma secuencia de números aleatorios cada vez que se ejecutan. Por ejemplo:
+Además, la función `Random.int` toma dos parámetros que indican el rango dentro del cual quieres generar el número aleatorio. También puedes usar otras funciones del módulo `Random`, como `float`, `bool` o `pair`, para generar diferentes tipos de valores aleatorios.
 
-```Elm
-seedGenerator = Random.generateSeed
--- Esta función no tiene ningún efecto sobre nuestra aplicación, solo devuelve una semilla aleatoria
+## Ver también
 
-Random.generate (Random.initialSeed 5) (Random.float)  -- Genera un número tipo float utilizando la semilla generada anteriormente
--- Output: (0.514, 5) (puede variar en cada ejecución, pero siempre será el mismo con la semilla 5)
-```
-
-## Profundizando
-
-Los generadores de números aleatorios en Elm tienen algunas características interesantes, como la función `Random.pair`, que nos permite generar una tupla de dos valores aleatorios, o la función `Random.map` que nos permite aplicar una función a los resultados generados.
-
-También es importante tener en cuenta que los números aleatorios generados en Elm son pseudoaleatorios, lo que significa que están determinados por la semilla inicial que les proporcionamos. Esto puede ser útil para poder reproducir una secuencia de números aleatorios, pero también lo hace menos seguro para usos criptográficos.
-
-## Vea también
-
-- Documentación de Elm: https://guide.elm-lang.org/
-- Ejemplos de generación de números aleatorios en Elm: https://elmprogramming.com/random-numbers.html
-- Tutorial interactivo sobre generación de números aleatorios en Elm: https://elmprogramming.com/interactive-tutorial-introducing-random-in-elm.html
+- Documentación de Elm sobre `Random`: https://package.elm-lang.org/packages/elm/random/latest/
+- Ejemplo de generación de números aleatorios en una aplicación de juegos en Elm: https://steveperry-53.github.io/elm-game/
+- Preguntas frecuentes sobre generación de números aleatorios en Elm: https://discourse.elm-lang.org/t/random-state-and-code-origination/2961

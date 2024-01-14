@@ -1,54 +1,75 @@
 ---
-title:    "Python: Att hämta den aktuella datumet"
+title:    "Python: Att hämta aktuellt datum"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att hämta och använda den aktuella datumen kan vara en användbar funktion inom programmering. Det kan hjälpa till att spåra när en viss kod utfördes, inkludera tidsstämplar i filnamn och mycket mer.
+Att få dagens datum är en nödvändig del av många Python-program. Det kan användas för att spåra tidsstämplar, schemalägga uppgifter eller helt enkelt visa dagens datum på en sida. Genom att lära sig hur man hämtar dagens datum i Python kan du förbättra dina programmeringsfärdigheter och öka funktionaliteten i dina projekt.
 
 ## Hur man gör det
+Att få dagens datum i Python är enkelt och kräver bara några få rader kod. Det finns många inbyggda moduler i Python som gör det möjligt att hämta datum, men vi kommer att fokusera på användningen av datetime-modulen.
 
-För att hämta den aktuella datumet i Python, används en modul som heter `datetime`. Först måste du importera modulen i ditt program med hjälp av `import datetime`.
+Först måste vi importera datetime-modulen till vårt program. Detta gör vi genom att skriva följande kod:
 
-För att få den aktuella datumen, kan du använda följande kod:
-
-```Python
+``` Python
 import datetime
-
-nuvarande_datum = datetime.date.today()
-print(nuvarande_datum)
 ```
 
-Det här kommer att ge dig en output som liknar `2021-05-10`. Om du också vill inkludera tiden, kan du använda `datetime.datetime.now()` istället för `datetime.date.today()`, vilket ger dig en output som ser ut som `2021-05-10 11:30:00.000000`.
+Efter att vi har importerat modulen kan vi använda datetime.date.today () -funktionen för att hämta dagens datum. Detta ger oss ett datetime-objekt som representerar dagens datum. För att få ut datumet i ett läsbart format kan vi använda strftime () -funktionen och ange det format vi vill ha. Här är en exempelkod som hämtar dagens datum och skriver ut det i ISO-format:
 
-Du kan också formatera outputen för att visas på ett specifikt sätt. Till exempel, om du vill ha datumet i formatet "DD/MM/YYYY", kan du använda följande kod:
-
-```Python
+``` Python
 import datetime
 
-nuvarande_datum = datetime.date.today()
-formaterat_datum = nuvarande_datum.strftime("%d/%m/%Y")
-print(formaterat_datum)
+idag = datetime.date.today()
+print(today.strftime("%Y-%m-%d"))
 ```
 
-Detta kommer att ge dig en output som ser ut som `10/05/2021`.
+Detta kommer att producera en output som följande:
 
-## Grundlig genomgång
+``` 
+2021-06-25
+```
 
-Modulen `datetime` har flera funktioner för att hämta och manipulera datum och tid i Python. Här är några av de vanligaste funktionerna som används för att hämta den aktuella datumet:
+Om du vill ha en annan format på datumet, kan du ändra strängen i strftime-funktionen. Här är några andra format som du kanske vill använda:
 
-- `datetime.date.today()` - Returnerar den aktuella datumen som ett `date` objekt.
-- `datetime.datetime.now()` - Returnerar den aktuella datumen och tiden som ett `datetime` objekt.
-- `datetime.datetime.strptime()` - Omvandlar en sträng till ett `datetime` objekt med en specifik formatering.
-- `datetime.strftime()` - Formaterar ett `datetime` objekt till en sträng med en specifik formatering.
+- %d - dag i månaden (1-31)
+- %m - månad (01-12)
+- %b - månadsnamn (jan-dec)
+- %Y - år (2021)
+- %A - dag i veckan (måndag-söndag)
 
-Du kan också använda `datetime` modulen för att manipulera datumen och tiden, till exempel genom att lägga till eller ta bort dagar, månader eller år. För mer detaljerad information kan du läsa dokumentationen för `datetime` modulen.
+Det finns också möjlighet att få ut tiden tillsammans med datumet. Detta kan göras genom att använda datetime.now () istället för datetime.date.today (). Här är en kod som hämtar både datum och tid och skriver ut det i ett specifikt format:
+
+``` Python
+import datetime
+
+idag = datetime.now()
+print(idag.strftime("Det är %H:%M på %d %B %Y."))
+```
+
+Detta ger oss en output som följande:
+
+``` 
+Det är 21:54 på 25 juni 2021.
+```
+
+## Djupdykning
+Nu när vi har lärt oss hur man får dagens datum i Python, låt oss ta en djupare titt på datetime-modulen och dess funktioner. En annan användbar funktion är datetime.now (). Detta ger oss en datetime-objekt som innehåller både datum och tid just nu. Om vi vill skapa ett datetime-objekt för ett specifikt datum och tid kan vi använda datetime.datetime () -funktionen. Här är ett exempel på hur man skapar ett datetime-objekt för den 1 juni 2021 klockan 12:00:
+
+``` Python
+examendag = datetime.datetime(2021, 6, 1, 12, 00)
+```
+
+Vi kan sedan använda strftime () -funktionen för att ändra formatet på datumet och tiden enligt våra behov.
+
+Den datetime-modulen innehåller också funktioner för att utföra beräkningar med datum och tid, till exempel att lägga till eller subtrahera dagar eller timmar från ett datetime-objekt.
 
 ## Se även
+- [Python datetime-modulens dokumentation](https://docs.python.org/3/library/datetime.html)
+- [W3Schools Python-datatyper](https://www.w3schools.com/python/python_datatypes.asp)
+- [Real Python: Dates and Times in Python](https://realpython.com/python-datetime/)
 
-- [Python:s officiella dokumentation för datetime](https://docs.python.org/3/library/datetime.html)
-- [Enkel Python: Hämta den aktuella datumen och tiden](https://www.pythonforbeginners.com/basics/python-datetime-timedelta)
-- [W3Schools: Python datetime modulen](https://www.w3schools.com/python/python_datetime.asp)
+Tack för att du läser! Hoppas du har lärt dig något nytt om hur man får dagens datum i Python. Lycka till med dina programmeringsprojekt!

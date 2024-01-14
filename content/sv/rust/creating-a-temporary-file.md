@@ -1,80 +1,65 @@
 ---
 title:    "Rust: Skapa en tillfällig fil"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skapa en tillfällig fil kan vara mycket användbart när man programmerar i Rust. Det kan till exempel vara användbart när man arbetar med temporära data eller behöver spara information som inte behövs permanent.
+Att skapa en temporär fil är ett vanligt sätt att hantera data och resurser inom programmering. Det kan vara användbart när du behöver tillfälligt lagra data eller skapa en plats för tillfällig kommunikation mellan program eller applikationer.
 
 ## Hur man gör det
 
-För att skapa en tillfällig fil i Rust, kan du använda standardbiblioteket `std::fs::File` tillsammans med `std::fs::tempfile()`-funktionen. Detta kommer att skapa en temporär fil i ditt operativsystems standard temporära katalog. Här är ett exempel på hur du kan göra det:
+Det finns många olika sätt att skapa en temporär fil i Rust. Ett av de vanligaste sätten är att använda sig av biblioteket `std::fs::File` för att skapa en fil och sedan använda funktionen `file::create()` för att skapa en temporär fil. Exempelvis:
 
-```Rust
-use std::error::Error;
+```rust
 use std::fs::File;
 use std::io::prelude::*;
 
-fn main() -> Result<(), Box<dyn Error>> {
-    // Skapa en ny tempfil
-    let mut tmp_file = File::tempfile()?;
+let temp_file = File::create("temp.txt")?; // Skapar en temporär fil med namnet "temp.txt"
+```
 
-    // Skriv lite data till filen
-    tmp_file.write(b"Hej, det här är en temporär fil!")?;
+Du kan sedan skriva till filen och läsa från den precis som med en vanlig fil. När du är klar med filen kan du enkelt ta bort den genom att använda funktionen `std::fs::remove_file()`.
 
-    // Hämta sökvägen till filen
-    let path = tmp_file.path();
+```rust
+use std::fs::{self, File};
+use std::io::prelude::*;
 
-    println!("Tillfällig fil skapad på: {}", path.display());
+let mut temp_file = File::create("temp.txt")?;
+write!(temp_file, "Detta är en temporär fil som skapats av Rust.")?; // Skriver till filen
+let mut contents = String::new();
+File::open("temp.txt")?.read_to_string(&mut contents)?; // Läser från filen
 
-    Ok(())
+// Tar bort den temporära filen
+fs::remove_file("temp.txt").expect("Kunde inte ta bort filen.");
+
+// Kolla om filen verkligen är borttagen
+match fs::metadata("temp.txt") {
+    Ok(_) => println!("Fil hittad."), // Om filen fortfarande finns kommer detta att skrivas ut
+    Err(_) => println!("Filen är borttagen."), // Om filen är borttagen kommer detta att skrivas ut
 }
 ```
 
-För att öka flexibiliteten kan du också ange ett annat namn eller en annan sökväg när du skapar den temporära filen. Detta görs genom att lägga till en sträng som argument i `tempfile()`-funktionen. Om du till exempel vill skapa en tempfil med namnet "temp.txt" i ditt aktuella projekt, kan du göra så här:
+## En djupdykning
 
-```Rust
-let mut tmp_file = File::tempfile("temp.txt")?;
+När du skapar en temporär fil i Rust, används en process som kallas för "shadowing". Det betyder att en filsystemslänk skapas mellan den temporära filen och en fil som redan existerar. När du tar bort den temporära filen tas bara länken bort, vilket inte påverkar den ursprungliga filen. Detta gör att arbetet med temporära filer effektivt och säkert.
+
+En annan intressant aspekt av att skapa temporära filer i Rust är att det finns en inbyggd funktion som låter dig ange en hint om var filen bör lagras på systemet. Du kan göra detta genom att använda funktionen `std::env::temp_dir()`. Exempelvis:
+
+```rust
+use std::fs::File;
+use std::io::prelude::*;
+use std::env::temp_dir;
+
+let temp_file = File::create(temp_dir().join("temp.txt"))?; // Skapar en temporär fil i den förvalda temporära katalogen
 ```
 
-Hur som helst kommer filen att raderas automatiskt när `tmp_file`-variabeln går ut ur din scop.
-
-## Djupdykning
-
-Att skapa en tillfällig fil med `File::tempfile()` är enkelt, men vad händer egentligen bakom kulisserna? När du anropar funktionen, använder den det operativsystemsspecifika API:et för att skapa en temporär fil och returnerar en `File`-instans som pekar på den. Här är ett enkelt exempel på hur det kan se ut på Windows:
-
-```Rust
-use std::path::PathBuf;
-use std::ffi::OsString;
-
-#[cfg(windows)]
-fn tempfile() -> Result<PathBuf, OsString> {
-    let mut path = PathBuf::new();
-
-    // Hämtar sökvägen till den temporära katalogen
-    let result = ::std::env::temp_dir();
-
-    if let Ok(path_dir) = result {
-        // Skapar ett unikt filnamn
-        let filename = ::uuid::Uuid::new_v4().hyphenated().to_string();
-        
-        // Sammanfogar parsing av sökvägen och filtiteln
-        path.push(path_dir);
-        path.push(filename);
-        path.set_extension("tmp");
-    }
-
-    Ok(path)
-}
-```
-
-Som du kan se här använder `tempfile()`-funktionen det inbyggda biblioteket `uuid` för att skapa ett unikt filnamn varje gång funktionen anropas. Det är den här typen av detaljer som vi kan ta för givet när vi använder standardbiblioteket i Rust.
+Detta kan vara användbart om du har specifika krav på var den temporära filen ska lagras, till exempel för säkerhetsändamål.
 
 ## Se även
 
-- [Rust standardbibliotek referens](https://doc.rust-lang.org/std/index.html)
-- [File standardbibliotek](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [File::tempfile() funktion](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
+- [The Rust Programming Language](https://www.rust-lang.org/) - Officiell webbplats för Rust-programmeringsspråket.
+- [Rust Standard Library](https://doc.rust-lang.org/std/) - Officiell dokumentation för Rusts standardbibliotek.
+- [Create a Temporary File in Rust](https://dev.to/deciduously/safely-creating-temporary-files-in-rust-fd6) - En guide till att skapa temporära filer i Rust.

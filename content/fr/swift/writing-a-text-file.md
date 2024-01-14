@@ -1,47 +1,64 @@
 ---
-title:    "Swift: Écrire un fichier texte"
+title:    "Swift: Ecrire un fichier texte"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire un fichier texte en Swift ?
 
-Si vous êtes intéressé par la programmation en Swift, vous vous demandez sûrement pourquoi écrire un fichier texte peut être utile. Eh bien, écrire un fichier texte peut être une façon pratique de stocker des données structurées dans un format simple et facilement lisible. Cela peut être particulièrement utile si vous travaillez avec de grandes quantités de données ou si vous souhaitez simplement partager vos données avec d'autres personnes.
+L'écriture de fichiers texte est une compétence essentielle pour tout programmeur Swift. Cela permet de stocker des données importantes dans un format lisible et facile à manipuler. Que vous souhaitiez enregistrer des paramètres, des résultats ou des entrées d'utilisateur, écrire un fichier texte peut être la solution parfaite pour garder vos données organisées. Dans cet article, nous allons vous montrer comment écrire un fichier texte en utilisant Swift.
 
-## Comment faire
+## Comment faire ?
 
-Pour écrire un fichier texte en Swift, vous pouvez utiliser la classe `String` et ses méthodes associées. Voici un exemple de code pour écrire une chaîne de caractères dans un fichier texte :
+Pour écrire un fichier texte en Swift, nous devons utiliser la classe `FileHandle`. Voici un exemple de code qui écrit une chaîne de caractères dans un fichier texte :
 
-```Swift
-let textToWrite = "Bonjour à tous !"
-let fileURL = URL(fileURLWithPath: "mon_fichier.txt")
+```
+let fileManager = FileManager.default
+let path = fileManager.currentDirectoryPath // obtient le chemin du dossier courant
+let myText = "Bonjour, le monde !" // le texte que nous voulons écrire dans le fichier
+let fileName = "monfichier.txt" // nom du fichier texte que nous allons créer
 
-do {
-    try textToWrite.write(to: fileURL, atomically: true, encoding: .utf8)
-    print("Fichier écrit avec succès !")
-} catch {
-    print("Erreur lors de l'écriture du fichier : \(error)")
+// Création du fichier et écriture de la chaîne de caractères
+if let file = FileHandle(forWritingAtPath: path + "/" + fileName) {
+  file.write(myText.data(using: .utf8)) // convertit la chaîne de caractères en données avant de l'écrire dans le fichier
 }
+
+print("Le fichier texte a été créé et le texte a été écrit avec succès.")
 ```
 
-Ce code crée une chaîne de caractères, définit l'emplacement de notre fichier texte, puis utilise la méthode `write` pour écrire la chaîne dans le fichier. Notez que nous utilisons l'encodage `.utf8` pour nous assurer que nos caractères spéciaux sont correctement pris en compte.
-
-Lorsque vous exécutez ce code, vous devriez voir un fichier texte nommé "mon_fichier.txt" apparaître à l'emplacement spécifié avec le contenu "Bonjour à tous !". Bien sûr, vous pouvez personnaliser ce code en utilisant des variables et des boucles pour écrire des données plus complexes dans votre fichier texte.
+Avec ce code, nous pouvons créer un fichier texte appelé "monfichier.txt" dans le dossier courant et y écrire la chaîne de caractères "Bonjour, le monde !". En utilisant la classe `FileHandle`, nous pouvons facilement écrire des données dans un fichier texte en utilisant le codage de caractères UTF-8.
 
 ## Plongée en profondeur
 
-Si vous souhaitez en savoir plus sur l'écriture de fichiers texte en Swift, il est utile de comprendre comment fonctionnent les URL et les encodages. Les URL nous permettent de spécifier l'emplacement de notre fichier, tandis que les encodages déterminent comment nos données sont écrites dans le fichier en termes de types de caractères.
+Il est également possible de créer un fichier texte en utilisant la classe `OutputStream`. Cette méthode offre plus de flexibilité en termes de manipulation et de formatage des données avant de les écrire dans le fichier. Voici un exemple de code pour créer un fichier texte en utilisant `OutputStream` :
 
-De plus, il est important de noter que la méthode `write` peut également être utilisée pour écrire des données autres que des chaînes de caractères, comme des tableaux ou des dictionnaires. Vous pouvez également utiliser la méthode `append` pour ajouter du contenu à un fichier qui existe déjà.
+```
+let fileManager = FileManager.default
+let path = fileManager.currentDirectoryPath
+let fileName = "monfichier.txt"
 
-Au-delà de l'écriture de fichiers texte, il est également possible de lire et de manipuler des fichiers texte dans Swift. En explorant ces concepts plus en profondeur, vous pourrez développer des compétences plus avancées en programmation et être en mesure de travailler avec des fichiers texte de manière plus efficace.
+// Création et ouverture du flux de sortie
+if let outputStream = OutputStream(toFileAtPath: path + "/" + fileName, append: false) {
+  outputStream.open()
+  let line = "Bonjour, le monde !"
+  let data = line.data(using: .utf8) // convertit la chaîne de caractères en données
+  let bytes = data!.withUnsafeBytes {
+      [UInt8](UnsafeBufferPointer(start: $0, count: data!.count))
+  }
+  outputStream.write(bytes, maxLength: bytes.count) // écrit les données dans le fichier en utilisant le flux de sortie
+}
+```
+
+En utilisant `OutputStream`, nous pouvons écrire des données dans le fichier en utilisant différentes méthodes telles que `write()` et `write(_:maxLength:)`. Cela nous donne un contrôle plus précis sur la façon dont les données sont écrites dans le fichier texte.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'écriture de fichiers texte en Swift, voici quelques ressources que vous pourriez trouver utiles :
+Pour en savoir plus sur l'écriture de fichiers texte en Swift, consultez les ressources suivantes :
 
-- [Documentation officielle de Swift sur les chaînes de caractères](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Documentation officielle de Swift sur les URL](https://developer.apple.com/documentation/foundation/url)
-- [Article sur le traitement des fichiers texte en Swift](https://www.hackingwithswift.com/articles/175/whats-the-difference-between-a-string-and-a-string)
-- [Video tutorial sur l'écriture et la lecture de fichiers texte en Swift](https://www.youtube.com/watch?v=qJZpFShHmqo)
+- [Documentation officielle sur FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [Documentation officielle sur OutputStream](https://developer.apple.com/documentation/foundation/outputstream)
+- [Tutoriel vidéo sur l'écriture de fichiers texte en Swift](https://www.youtube.com/watch?v=wA3pw-2hyGw)
+
+Avec ces ressources, vous devriez être en mesure d'écrire des fichiers texte en utilisant Swift et de les manipuler selon vos besoins. Merci d'avoir lu cet article !

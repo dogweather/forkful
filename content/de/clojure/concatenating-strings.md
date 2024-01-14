@@ -1,40 +1,85 @@
 ---
-title:    "Clojure: Verknüpfung von Zeichenfolgen"
+title:    "Clojure: Verkettung von Zeichenfolgen"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Zusammenführen von Strings ist eine häufig verwendete Aufgabe in der Programmierung. Es ermöglicht uns, verschiedene Textabschnitte zu einer zusammenhängenden Zeichenkette zu verbinden. In diesem Artikel werden wir uns ansehen, wie man dies in Clojure erreichen kann.
+In diesem Beitrag werden wir uns mit einem grundlegenden Konzept der Clojure-Programmierung beschäftigen: der Verkettung von Zeichenketten. Eine grundlegende, aber äußerst nützliche Technik, die Ihnen helfen wird, effizienter und eleganteren Code zu schreiben.
 
-## Wie geht das
+## Wie geht das?
 
-Das Zusammenführen von Strings in Clojure ist sehr einfach und intuitiv. Wir können die Funktion `str` verwenden, um zwei oder mehr Strings aneinander zu hängen. Schauen wir uns ein einfaches Beispiel an:
-
-```Clojure
-(str "Hallo" "Welt") ; gibt "HalloWelt" aus
-```
-
-Beachten Sie, dass die einzelnen Strings durch Leerzeichen getrennt werden müssen, wenn Sie einen Lesbarkeitstreuer erstellen möchten. Aber was ist, wenn wir eine ganze Liste von Wörtern haben, die wir zusammenführen möchten? Dafür haben wir die Funktion `clojure.string/join`, die eine Liste von Strings mit einem Trennzeichen als Argument akzeptiert. Schauen wir uns ein Beispiel an:
+Das Verkettung von Zeichenketten in Clojure ist sehr einfach und intuitiv. Hier ist ein Beispiel, wie Sie zwei Zeichenketten miteinander verketten können:
 
 ```Clojure
-(clojure.string/join ", " ["Dies" "ist" "ein" "Beispiel"]) ;gibt "Dies, ist, ein, Beispiel" aus
+(str "Hallo, " "Welt!")
 ```
 
-## Tiefer Einblick
+Die Ausgabe davon wäre:
 
-Wir können auch die Funktion `format` verwenden, um Strings zusammenzuführen und dabei gleichzeitig bestimmte Platzhalter innerhalb der Zeichenkette zu ersetzen. Diese Platzhalter werden dann durch die angegebenen Werte ersetzt. Schauen wir uns ein Beispiel an:
+```
+"Hallo, Welt!"
+```
+
+Sie können auch Variablen in die Verkettung einbeziehen, indem Sie sie in die Klammern einschließen. Hier ein Beispiel:
 
 ```Clojure
-(format "Mein Lieblingsgewürz ist %s" "Paprika") ; gibt "Mein Lieblingsgewürz ist Paprika" aus
+(def name "Max")
+(str "Hallo, " name "!")
 ```
 
-Es ist auch wichtig zu beachten, dass das Zusammenführen von Strings in Clojure nicht die gleiche Performance hat wie in anderen Sprachen wie Java oder C++. Clojure verwendet Immutable Datentypen, was bedeutet, dass bei jedem Hinzufügen eines neuen Strings ein neuer String erstellt werden muss, was zu einer höheren Speicherauslastung führen kann. Falls Sie mit größeren Datenmengen arbeiten, empfiehlt es sich, die `StringBuilder` Klasse zu verwenden.
+Die Ausgabe wäre:
+
+```
+"Hallo, Max!"
+```
+
+Sie können auch mehrere Funktionen miteinander verketten, um komplexere Zeichenketten zu erstellen. Hier ein etwas komplizierteres Beispiel:
+
+```Clojure
+(def first-name "Max")
+(def last-name "Mustermann")
+(str "Mein vollständiger Name ist " (.toUpperCase first-name) " " (.toUpperCase last-name))
+```
+
+Die Ausgabe wäre:
+
+```
+"Mein vollständiger Name ist MAX MUSTERMANN"
+```
+
+## Tiefergehende Informationen
+
+In Clojure werden Zeichenketten als Sequenzen von Zeichen dargestellt. Dies erlaubt es uns, Funktionen wie `map` oder `filter` auf Zeichenketten anzuwenden. Hier ein Beispiel mit `map`:
+
+```Clojure
+(def city "Berlin")
+(map char city)
+```
+
+Die Ausgabe wäre:
+
+```
+(\B \e \r \l \i \n)
+```
+
+Sie können auch mehrere Zeichenketten miteinander verketten, indem Sie die Funktion `clojure.string/join` verwenden. Hier ein Beispiel:
+
+```Clojure
+(def fruits ["Apfel" "Banane" "Orange"])
+(clojure.string/join ", " fruits)
+```
+
+Die Ausgabe wäre:
+
+```
+"Apfel, Banane, Orange"
+```
 
 ## Siehe auch
 
-https://clojure.org/reference/strings
-https://www.braveclojure.com/basic-data-structures/
-https://clojuredocs.org/clojure.core/item
+- Tutorial zur Verwendung der `clojure.string` Bibliothek: https://clojuredocs.org/clojure.string
+- Offizielle Clojure Dokumentation zu Zeichenkettenfunktionen: https://clojure.org/reference/strings

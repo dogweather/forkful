@@ -1,49 +1,71 @@
 ---
 title:    "Java recipe: Using regular expressions"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Regular Expressions Are a Useful Tool for Java Programmers
+## Why 
 
-Regular expressions are a powerful tool that allows programmers to search and manipulate text in an efficient way. With the use of regular expressions, developers can easily perform complex string operations without writing lengthy and complicated code. In this blog post, we will explore how regular expressions work and how they can improve your Java programming skills.
+Regular expressions, also known as regex, are a powerful tool for pattern matching in programming. They can be used in a variety of tasks such as searching, replacing, and validating text. Regular expressions allow for efficient and precise manipulation of strings, making them an essential skill for any programmer.
 
-## How To Use Regular Expressions in Java
+## How To
 
-To use regular expressions in Java, you need to import the `java.util.regex` package. This package provides classes and interfaces to support regular expressions. The most important class is `Pattern`, which represents a compiled regular expression. Let's take a look at a simple example:
+To use regular expressions in Java, we first need to import the `Pattern` and `Matcher` classes from the `java.util.regex` package. Let's say we have a string containing a phone number and we want to validate it to make sure it follows the correct format. We can do this using regular expressions as shown below:
 
 ```java
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-String text = "Hello world!";
-Pattern pattern = Pattern.compile("world");
-boolean found = pattern.matcher(text).find();
-System.out.println(found); // prints true
+String phoneNumber = "(123)456-7890";
+String regex = "\\(\\d{3}\\)\\d{3}-\\d{4}";
+
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(phoneNumber);
+
+if(matcher.matches()){
+    System.out.println("Valid phone number!");
+} else {
+    System.out.println("Invalid phone number.");
+}
 ```
 
-In the above code, we first import the `Pattern` class and then create a new `Pattern` object with the regular expression "world". Next, we use the `matcher` method to create a `Matcher` object, which we use to match the pattern against our `text` string. Finally, we use the `find` method to see if the pattern is found in the string and print the result.
+In this example, we first create a `Pattern` object with our regular expression as an argument. The `Matcher` object is then used to match our input string against the pattern. The `matches()` method returns a boolean value indicating whether the input string matches the pattern or not.
 
-Regular expressions also support the use of metacharacters such as `.` (any single character), `*` (zero or more occurrences), and `|` (or operator). For example, if we wanted to match any word that starts with "h" and ends with "o", we could use the following regular expression:
+Another common use for regular expressions is extracting specific information from a string. Let's say we have a string containing a list of email addresses and we want to extract all the email domains from it. We can achieve this using the `find()` and `group()` methods as shown below:
 
 ```java
-Pattern pattern = Pattern.compile("h.*o");
+String emails = "john@gmail.com, jane@yahoo.com, bob@outlook.com";
+String regex = "\\w+@(\\w+\\.\\w+)";
+
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(emails);
+
+while(matcher.find()){
+    String domain = matcher.group(1);
+    System.out.println(domain);
+}
+// Output:
+// gmail.com
+// yahoo.com
+// outlook.com
 ```
 
-By using regular expressions, developers can perform advanced text operations with ease. It also allows for more flexible and dynamic search logic, as regular expressions can be customized to fit specific needs.
+In this example, we use a capturing group `(\w+\.\w+)` to extract only the domain part of the email. The `find()` method is used to find the next match in the string, while the `group()` method returns the matched group.
 
-## Deep Dive into Regular Expressions
+Regular expressions also support a variety of metacharacters and quantifiers to make pattern matching more flexible. For a comprehensive reference on all the available metacharacters and their meanings, check out the [Java Regular Expressions Tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/).
 
-Regular expressions may seem daunting at first, but with practice and understanding of the syntax, they can become a powerful tool in your Java programming arsenal. Here are some tips to help you along the way:
+## Deep Dive 
 
-- Use online resources or tools to test your regular expressions before implementing them in your code. This will help you catch any errors or unexpected behavior.
-- Take advantage of capturing groups in your regular expressions. This allows you to extract specific parts of a matched string, instead of just returning a boolean value.
-- Keep in mind that regular expressions can be resource-intensive, so use them sparingly when dealing with large amounts of data.
+When using regular expressions, it's important to be mindful of their performance. While they are a powerful tool, they can also be expensive to execute, especially on larger strings. This is because regular expressions involve backtracking, which means the engine may have to try different combinations of the pattern to find a match. To avoid this, it's recommended to use specific patterns that can be matched in a linear fashion without backtracking.
 
-With regular expressions, the possibilities are endless. Whether you need to validate user input, extract data from a string, or perform complex string manipulations, regular expressions are a valuable tool for any Java programmer.
+Another thing to keep in mind is the use of escape characters in regular expressions. In Java, backslashes are used to escape special characters in strings. However, backslashes are also used as metacharacters in regular expressions, so we need to escape them twice. For example, to match a literal backslash, we need to use `\\\\` in the regular expression.
 
 ## See Also
 
-- [Java Regular Expressions](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Regex101](https://regex101.com/) - A free online tool for testing regular expressions.
-- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) - A comprehensive guide to regular expressions by Jeffrey E.F. Friedl.
+For more resources on regular expressions in Java, check out the following links:
+
+- [Oracle Java Regular Expressions Tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Regular Expressions Cheat Sheet for Java](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/pdf/)
+- [RegexPlanet](https://www.regexplanet.com/) - a handy tool for testing and visualizing regular expressions

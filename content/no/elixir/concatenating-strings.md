@@ -1,104 +1,52 @@
 ---
-title:    "Elixir: Sammenstilling av strenger."
+title:    "Elixir: Sammenføyning av strenger"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Å slå sammen strenger er en viktig del av å jobbe med data i Elixir. Det lar deg kombinere tekst og variabler for å lage mer dynamisk og spesifikk informasjon som kan brukes i apper, nettsider og mer.
 
-Hvorfor skulle noen ville slå sammen strenger? Vel, det er et nyttig verktøy når du ønsker å kombinere ulike tekster eller variabler til en enkelt streng. Dette kan være nyttig når du skal generere dynamiske tekster for brukere eller sette sammen deler av en URL for å kommunisere med en API.
+# Hvordan du gjør det
+For å slå sammen strenger i Elixir, bruker du operatøren `<>` mellom to verdier. Den første verdien er alltid en streng, og den andre kan være en annen streng, et tall eller en variabel.
 
-## Hvordan
-
-I Elixir bruker vi "+" operatøren for å slå sammen strenger. La oss se på et eksempel:
-
-```Elixir
+```elixir
 string1 = "Hei"
 string2 = "verden!"
-
-resultat = string1 + " " + string2
-
-IO.puts(resultat)
+output = string1 <> string2
+IO.puts(output)
 ```
 
-Dette vil gi følgende output:
+Dette vil produsere følgende resultat:
 
 ```
 Hei verden!
 ```
 
-Vi kan også bruke `<>` operatøren for å få samme resultat:
+Du kan også bruke funksjonen `to_string()` for å konvertere tall eller variabler til strenger og deretter slå dem sammen. For eksempel:
 
-```Elixir
-string1 = "Hei"
-string2 = "verden!"
-
-resultat = string1 <> " " <> string2
-
-IO.puts(resultat)
+```elixir
+number = 42
+output = "Svaret på alt er " <> to_string(number)
+IO.puts(output)
 ```
 
-Ved å bruke variabler sammen med tekst, kan vi dynamisk generere tekster som passer med ulike verdier. La oss bruke `String.length` for å telle antall tegn i en variabel og inkludere det i vår streng:
-
-```Elixir
-string = "Hei verden!"
-
-antall_tegn = String.length(string)
-
-resultat = "Teksten inneholder " <> antall_tegn <> " tegn."
-
-IO.puts(resultat)
-```
-
-Dette vil gi oss følgende output:
+Dette vil gi følgende resultat:
 
 ```
-Teksten inneholder 11 tegn.
+Svaret på alt er 42
 ```
 
-## Dypdykk
+Vær oppmerksom på at rekkefølgen på verdiene kan påvirke resultatet av sammenføyningen. Forsøk å bytte plass på verdiene i eksemplene ovenfor for å se hva som skjer!
 
-Når vi slår sammen strenger i Elixir, skjer det faktisk en konvertering til en ny datastruktur kalt `Binary`. Dette er for å gjøre slå sammen av strenger raskere og mer effektivt. Det betyr også at vi kan slå sammen andre datastrukturer som lister eller tuples til en streng ved hjelp av `to_string()` funksjonen.
+# Dypdykk
+Når du slår sammen strenger i Elixir, opprettes det faktisk en ny streng i minnet. Derfor er det viktig å ikke slå sammen en stor mengde strenger i en løkke eller rekursiv funksjon, da dette kan føre til problemer med minneutnyttelse.
 
-La oss se hvordan vi kan slå sammen en liste av tall til en enkelt streng:
+Du kan også bruke funksjonen `++` for å legge til en verdi til slutten av en streng, og `--` for å fjerne en verdi fra en streng. Dette kan være nyttig når du jobber med lister av verdier som du ønsker å konvertere til en streng.
 
-```Elixir
-liste = [1, 2, 3]
-
-resultat = "Tallene er: " <> to_string(liste)
-
-IO.puts(resultat)
-```
-
-Dette vil gi følgende output:
-
-```
-Tallene er: [1, 2, 3]
-```
-
-Vi kan også bruke `Enum.join()` funksjonen for å kombinere elementene i en liste og separere dem med et spesifisert tegn. La oss bruke komma som seperator:
-
-```Elixir
-liste = [1, 2, 3]
-
-resultat = "Tallene er: " <> Enum.join(liste, ",")
-
-IO.puts(resultat)
-```
-
-Dette vil gi følgende output:
-
-```
-Tallene er: 1,2,3
-```
-
-## Se også
-
-Nå når vi har lært å slå sammen strenger i Elixir, kan det være nyttig å utforske andre funksjoner og konsepter i språket. Her er noen ressurser som kan være nyttige:
-
-- [Elixir Official Documentation](https://hexdocs.pm/elixir/)
-- [Learn Elixir in Y minutes](https://learnxinyminutes.com/docs/elixir/)
-- [Elixir School](https://elixirschool.com/)
-
-Takk for at du leste! Lykke til med å bruke strenger i din Elixir-kode.
+# Se også
+- [Elixir dokumentasjon om strenger](https://elixir-lang.org/getting-started/types.html#strings)
+- [Elixir string-håndteringsfunksjoner](https://hexdocs.pm/elixir/String.html)
+- [En guide til Elixir-programmering for nybegynnere](https://www.freecodecamp.org/news/elixir-tutorial-a-scalable-backend-programming-language-ef4c8a79c1b3/)

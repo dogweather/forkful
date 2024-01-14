@@ -1,44 +1,50 @@
 ---
-title:    "C#: Teilstrings extrahieren"
+title:    "C#: Unterstrings extrahieren"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum substrings extrahieren?
+# Warum
 
-Beim Programmieren in C# läuft man oft in Situationen, in denen man bestimmte Teile eines Strings extrahieren muss, zum Beispiel um einen Nutzernamen aus einer E-Mail Adresse zu isolieren oder um einen Datensatz aus einer großen Textdatei zu finden. In solchen Fällen ist es unerlässlich, substrings zu extrahieren.
+ Das Extrahieren von Teilzeichenfolgen oder Substrings aus einem größeren String ist eine häufige Aufgabe bei der Programmierung. Zum Beispiel kann es notwendig sein, bestimmte Informationen aus einer längeren Textnachricht oder E-Mail zu isolieren. Die Verwendung von Substrings kann auch bei der Validierung von Benutzereingaben nützlich sein, um sicherzustellen, dass die erforderlichen Informationen in einer bestimmten Reihenfolge vorliegen.
 
-## Wie man substrings extrahiert
+# Wie
 
-Substring-Extraktion in C# erfolgt mithilfe der `Substring()` Methode. Hier ist ein Beispiel, wie man den Benutzernamen aus einer E-Mail Adresse extrahiert:
+Das Extrahieren von Substrings ist in C# einfach und erfordert nur wenige Codezeilen. Zunächst muss der String, aus dem der Substring extrahiert werden soll, in einer Variablen gespeichert werden. Dann können wir die Methode "Substring" auf diese Variable anwenden, um den gewünschten Teil des Strings zu extrahieren.
 
-```C#
-string email = "example123@email.com";
-string username = email.Substring(0, email.IndexOf("@"));
-Console.WriteLine(username);
+```
+// Beispielcode zur Extrahierung eines Substrings
+
+string text = "Hallo, mein Name ist Max Mustermann.";
+string substring = text.Substring(15, 11); // Das erste Argument ist der Startindex, das zweite Argument die Länge des Substrings.
+Console.WriteLine(substring);
 ```
 
-Die Ausgabe würde "example123" sein, da der Substring von Index 0 bis zum ersten Vorkommen des "@"-Zeichens extrahiert wird.
+**Ausgabe:** Max Mustermann.
 
-Ein weiteres Beispiel, wie man einen Teil eines Strings aus einer längeren Textdatei extrahiert:
+In diesem Beispiel haben wir einen Substring mit dem Namen "substring" erstellt, der aus dem ursprünglichen String "text" extrahiert wurde. Der Startindex "15" gibt an, an welcher Stelle der Extraction beginnen soll, und die Länge des Substrings "11" gibt an, wie viele Zeichen extrahiert werden sollen.
 
-``` C#
-string input = "Welcome to this tutorial! I hope it helps you in your coding journey.";
-string extracted = input.Substring(11, 21);
-Console.WriteLine(extracted);
+Um es noch etwas komplexer zu gestalten, können wir auch die Indexof-Methode verwenden, um den Startindex des zu extrahierenden Substrings zu finden.
+
+```
+// Beispielcode zur Verwendung der Indexof-Methode für die Extraktion eines Substrings
+
+string text = "Ich lebe in Deutschland.";
+int firstIndex = text.Indexof("Deutschland"); // Indexof gibt den Startindex des ersten Vorkommens des gesuchten Substrings zurück.
+Console.WriteLine(text.Substring(firstIndex));
 ```
 
-Die Ausgabe würde "tutorial! I hope" sein, da der Substring ab dem 11. Zeichen bis zum 21. Zeichen extrahiert wird.
+**Ausgabe:** Deutschland.
 
-## Tiefergehende Informationen über Substring-Extraktion
+# Deep Dive
 
-Die `Substring()` Methode nimmt zwei Argumente: den Startindex und die Anzahl der zu extrahierenden Zeichen. Es ist auch möglich, nur den Startindex anzugeben und die restlichen Zeichen bis zum Ende des Strings automatisch zu extrahieren.
+Bei der Verwendung von Substrings ist es wichtig zu beachten, dass in C# die Indizierung bei "0" beginnt. Das bedeutet, dass der erste Buchstabe eines Strings den Index "0" hat. Wenn wir also einen Substring aus dem Wort "Computer" extrahieren möchten, wäre der Index für den Buchstaben "C" "0" und nicht "1".
 
-Es ist wichtig zu beachten, dass der Index in C# bei 0 beginnt, daher ist das erste Zeichen des Strings mit Index 0 gekennzeichnet. Wenn man nur einen Startindex angibt, wird der String ab diesem Index bis zum Ende extrahiert.
+Eine weitere Sache, die man beachten sollte, ist, dass die Länge des extrahierten Substrings nicht größer sein darf als die Länge des ursprünglichen Strings, da sonst ein Fehler auftritt. Wenn also versucht wird, einen Substring mit einer Länge von 10 aus einem String mit einer Länge von 8 zu extrahieren, wird ein Fehler gemeldet.
 
-## Siehe auch
+# Siehe auch
 
-- [MSDN Dokumentation zur `Substring()` Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.substring)
-- [Tutorial zur String Manipulation in C#](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
-- [Video-Tutorial zur Substring-Extraktion in C#](https://www.youtube.com/watch?v=QBDT7an789o)
+- [Microsoft-Dokumentation zur String.Substring-Methode auf Deutsch](https://docs.microsoft.com/de-de/dotnet/api/system.string.substring)
+- [Tutorial zur Verwendung von Substrings in C# (Englisch)](https://www.c-sharpcorner.com/article/using-substring-method-in-c-sharp-language/)

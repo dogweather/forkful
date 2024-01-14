@@ -1,51 +1,41 @@
 ---
-title:    "Kotlin: Lese en tekstfil"
+title:    "Kotlin: Lesing av en tekstfil"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å lese en tekstfil er en vanlig oppgave i mange programmeringsspråk, inkludert Kotlin. Dette er nyttig når du trenger å behandle informasjon lagret i en fil, som for eksempel brukerdata eller tekstinnhold. Å kunne lese en tekstfil åpner opp for mange muligheter for utviklere, og derfor er det viktig å forstå hvordan man gjør det i Kotlin.
+Å lese en tekstfil er en vanlig oppgave for utviklere, spesielt i Kotlin. Det kan være nyttig å lære hvordan man gjør dette for å kunne håndtere større datamengder eller håndtere filer til og fra et nettverk.
 
-## Hvordan gjøre det
+# Hvordan
 
-For å lese en tekstfil i Kotlin, kan man bruke funksjonen `readLines()` som tar inn en filbane som parameter. Her er et eksempel på hvordan dette kan gjøres:
+Det første vi må gjøre er å opprette en `File`-instans som representerer den tekstfilen vi ønsker å lese. Deretter må vi bruke en `BufferedReader` for å lese filen linje for linje. Dette gjøres ved å bruke `readLine()`-metoden til `BufferedReader`, som returnerer en `String`. Vi kan for eksempel printe ut hver linje til konsollen ved å bruke følgende kode:
 
 ```Kotlin
-val fil = File("brukerdata.txt")
-val linjer = fil.readLines()
-for(linje in linjer) {
-    println(linje)
+val fil = File("tekstfil.txt")
+BufferedReader(FileReader(fil)).use { reader ->
+    var linje = reader.readLine()
+    while (linje != null) {
+        println(linje)
+        linje = reader.readLine()
+    }
 }
 ```
 
-Koden ovenfor vil først opprette en `File`-objekt med navnet på tekstfilen du ønsker å lese. Deretter brukes `readLines()`-funksjonen for å lese innholdet av filen og lagre det i en liste av strenger. Til slutt brukes en `for`-løkke for å skrive ut hver linje i filen.
+Dette vil printe hver linje i tekstfilen til konsollen. Det er også mulig å lese hele filen som en `String` ved å bruke `readText()`-metoden til `File`-instansen.
 
-Kjørt med følgende innhold i tekstfilen:
+Det er viktig å merke seg at vi må bruke `try-catch` for å håndtere potensielle unntak som kan oppstå under lesingen av filen. For eksempel kan filen være utilgjengelig eller så kan det oppstå problemer med nettverket.
 
-```
-Navn: Alex
-Alder: 30
-Bosted: Oslo
-```
+# Dykk dypere
 
-Vil følgende output vises i konsollen:
+Det finnes flere måter å lese tekstfiler på i Kotlin, som for eksempel å bruke `Scanner` eller `BufferedInputStream`. Det er også viktig å være klar over forskjellen mellom å lese filen som en sekvens av `Byte`-er eller som en `Char`-sekvens.
 
-```
-Navn: Alex
-Alder: 30
-Bosted: Oslo
-```
+Det kan også være nyttig å se på hvordan man kan utføre forskjellige operasjoner på filen mens man leser den, som for eksempel å søke etter bestemte ord eller linjer.
 
-## Dypdykk
+# Se også
 
-For å forstå hvordan funksjonen `readLines()` fungerer, kan vi ta en titt på dokumentasjonen til Kotlin. Deretter kan vi se at denne funksjonen er en del av `File`-klassen, og at den bruker en metode som heter `readLines()` fra Java-biblioteket. Dette betyr at Kotlin bruker et eksisterende Java-basert kodebibliotek for å lese tekstfiler.
-
-Det kan også være lurt å være oppmerksom på at ved å bruke `readLines()` vil hele innholdet av tekstfilen lastes inn i minnet før det blir behandlet. Dette kan være problematisk dersom filen er veldig stor, da det kan føre til at programmet går tom for minne. I så fall kan det være bedre å bruke en annen metode for å lese filen line for line istedenfor å laste alt inn på en gang.
-
-## Se også
-
-- [Kotlin Docs: File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Java Docs: BufferedReader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
+- [Standard bibliotek for File i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Lesing og skriving av filer i Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-write-files.html)

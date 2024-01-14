@@ -1,32 +1,43 @@
 ---
-title:    "Bash: Skrive en tekstfil"
+title:    "Bash: Skriver en tekstfil"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive en tekstfil ved hjelp av Bash-programmering er en nyttig ferdighet som kan hjelpe deg med å automatisere oppgaver på datamaskinen din. Det kan også være en effektiv måte å organisere og behandle data på.
+Å skrive en tekstfil kan være en viktig del av Bash programmering. Det lar deg lagre og organisere informasjon på en strukturert måte og kan være nyttig for å lage skript og automatisere oppgaver.
 
 ## Hvordan
 
-Å skrive en tekstfil ved hjelp av Bash er enkelt og krever bare noen få kommandoer. Først må du åpne et Bash-terminalvindu. Deretter kan du bruke kommandoen "touch" etterfulgt av filnavnet du ønsker å bruke for tekstfilen din, for eksempel "touch navneliste.txt".
+For å skrive en tekstfil i Bash, må du først åpne en terminal og navigere til mappen der du ønsker å lagre filen. Deretter kan du bruke kommandoen "touch" for å opprette en tom fil. For eksempel:
 
-Deretter kan du bruke kommandoen "echo" etterfulgt av teksten du vil legge til i filen din. For eksempel, "echo "John" >> navneliste.txt" vil legge til navnet John i tekstfilen. Du kan gjenta dette for å legge til flere navn.
+```Bash
+touch min_fil.txt
+```
 
-For å lese innholdet i filen, kan du bruke kommandoen "cat" etterfulgt av filnavnet. Dette vil skrive ut innholdet i filen i terminalvinduet.
+Dette vil opprette en tekstfil med navnet "min_fil.txt" i den valgte mappen.
 
-## Dykk dypere
+Du kan deretter åpne filen i et tekstredigeringsprogram, for eksempel Nano eller Vim, og skrive inn ønsket informasjon. Når du er ferdig, må du huske å lagre filen før du lukker den.
 
-Det er flere kommandoer og teknikker som kan brukes for å skrive og manipulere tekstfiler i Bash. En vanlig teknikk er å bruke "if" og "else" uttrykk for å filtrere og organisere data som skal legges til i en tekstfil.
+For å lese innholdet i filen i terminalen, kan du bruke kommandoen "cat" etterfulgt av filnavnet. For eksempel:
 
-En annen nyttig kommando er "grep" som lar deg søke etter bestemte strenger eller ord i en tekstfil. Dette kan være nyttig for å finne spesifikke data eller informasjon i store tekstfiler.
+```Bash
+cat min_fil.txt
+```
 
-Det er også mulig å bruke variabler i Bash-programmering for å lagre og behandle data fra en tekstfil. Dette kan være nyttig for å automatisere og effektivisere prosesser.
+Dette vil vise innholdet i den valgte tekstfilen direkte i terminalvinduet.
+
+## Dypdykk
+
+Når du skriver en tekstfil i Bash, er det viktig å huske på at filene er lagret i ren tekstformat. Dette betyr at det ikke er noen formatering eller styling, bare ren tekst. Det er også viktig å bruke riktig filtype for den informasjonen du ønsker å lagre. For eksempel kan du bruke ".txt" for rene tekstfiler, ".csv" for komma-separerte verdier og ".sh" for Bash-skript.
+
+Det er også mulig å legge til kommentarer i en tekstfil ved å bruke "#" tegnet. Disse kommentarene blir ignorert av Bash når du kjører en fil, men kan være nyttige for å forklare hva koden gjør.
 
 ## Se også
 
-- [En enkel guide til Bash-programmering](https://www.skolelinux.no/software/bash.html)
-- [Offisiell Bash-dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash FAQ](https://mywiki.wooledge.org/BashFAQ)
+- [Bash Guide for nybegynnere](https://www.gnu.org/software/bash/manual/bash.html)
+- [Utdypende artikkel om tekstfiler](https://www.howtogeek.com/657228/what-is-a-text-file/)
+- [Mer informasjon om filformater](https://www.lifewire.com/what-is-the-file-extension-2622157)

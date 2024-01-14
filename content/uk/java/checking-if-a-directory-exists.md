@@ -1,74 +1,52 @@
 ---
 title:    "Java: Перевірка наявності каталогу"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
+# Для чого
 
-Перевірка існування директорії є важливою складовою будь-якої програми, особливо в тому випадку, коли ми працюємо з файлами та даними на комп'ютері. Знання, як перевірити, чи існує певна директорія, допоможе нам побудувати більш робочі та ефективні програми.
+Перевірка існування директорії є важливим кроком у роботі з файлами і структурами каталогів у Java. Вона дозволяє перевірити, чи наявна потрібна нам директорія перед намаганням працювати з ними. Це уникне помилок та допоможе поліпшити продуктивність роботи з файловою системою.
 
-##Як це зробити
+# Як це зробити
 
-```Java
-import java.io.File;
-
-public class DirectoryChecker {
-    public static void main(String[] args) {
-        //вказуємо шлях до директорії, яку хочемо перевірити
-        File dir = new File("C:/Users/user/Desktop");
-        
-        //використовуємо метод exists(), щоб перевірити, чи існує директорія
-        if (dir.exists()) { 
-            System.out.println("Директорія існує!");
-        } else {
-            System.out.println("Директорія не існує!");
-        }
-    }
-}
-```
-
-Вихідний результат програми:
-
-```
-Директорія існує!
-```
-
-Для більш специфічної перевірки, також можна використовувати методи isDirectory() та isFile(). Перший метод перевіряє, чи є даний об'єкт директорією, а другий - чи є файлом. Давайте подивимося на приклад:
+Для того, щоб перевірити існування директорії в Java, ми можемо скористатися методом `exists()` класу `File`. Для цього необхідно створити об’єкт типу `File` з шляхом до директорії, яку ми хочемо перевірити. Приклад коду можна побачити нижче.
 
 ```Java
 import java.io.File;
 
-public class DirectoryChecker {
+public class DirectoryExistence {
+
     public static void main(String[] args) {
-        File file = new File("C:/Users/user/Desktop/file.txt");
+
+        // шлях до директорії, яку ми хочемо перевірити
+        String directoryPath = "C:\\Users\\User\\Documents\\MyDirectory";
         
-        if (file.isDirectory()) {
-            System.out.println("Це директорія.");
-        } else if (file.isFile()) {
-            System.out.println("Це файл.");
+        // створення об’єкту типу File
+        File directory = new File(directoryPath);
+
+        // перевірка існування директорії
+        if (directory.exists()) {
+            System.out.println("Директорія існує.");
         } else {
-            System.out.println("Данний об'єкт не є ні файлом, ні директорією.");
+            System.out.println("Директорія не існує.");
         }
     }
+
 }
 ```
 
-Вихідний результат програми:
+Після запуску цього коду, якщо директорія `MyDirectory` існує, ми побачимо повідомлення "Директорія існує." у консолі. Якщо директорія не існує - "Директорія не існує.".
 
-```
-Це файл.
-```
+# Поглиблене дослідження
 
-##Детальний розбір
+Існує кілька інших способів перевірки існування директорії в Java. Для прикладу, ми можемо використовувати метод `isDirectory()` для перевірки, чи переданий об'єкт є директорією. Також, можна використовувати метод `listFiles()`, який повертає масив файлів у директорії, або метод `list()`, який повертає масив імен файлів у директорії. Крім того, бібліотека Apache Commons IO містить метод `DirectoryUtils.exists()` для перевірки існування директорії, який є зручнішим для використання.
 
-Існує декілька методів, які можна використовувати для перевірки існування директорії. Один з них - exists(), використаний в наших прикладах. Цей метод повертає значення true, якщо директорія існує, або false, якщо її не існує. Також, для проведення операцій над вмістом директорії, можна використовувати методи list() або listFiles().
+# Дивіться також
 
-Будьте пильні при використанні методу exists(). Він також поверне значення true, якщо переданий шлях не є директорією, але може бути файлом з таким ім'ям.
-
-##Дивіться також
-
-- [Java File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Java File Handling](https://www.geeksforgeeks.org/file-handling-java/)
-- [Java IO Tutorial](https://www.tutorialspoint.com/java/io/index.htm)
+- [Офіційна документація Java: `File.exists()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#exists())
+- [Офіційна документація Java: `File.isDirectory()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#isDirectory())
+- [Офіційна документація Java: `File.listFiles()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#listFiles())
+- [Офіційна документація Java: `File.list()`](https://docs.oracle.com/en/java

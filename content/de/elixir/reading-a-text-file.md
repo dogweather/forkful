@@ -1,51 +1,66 @@
 ---
-title:    "Elixir: Das Lesen einer Textdatei"
+title:    "Elixir: Lesen einer Textdatei"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Das Lesen von Textdateien gehört zu den grundlegendsten Funktionen der Programmierung. Es ist wichtig, um Daten zu verarbeiten, zu analysieren und zu manipulieren. Elixir bietet dabei eine einfache und effektive Methode, um Textdateien zu lesen und zu nutzen.
+Das Lesen von Textdateien ist ein grundlegender Bestandteil der Programmierung und kann in vielen Situationen nützlich sein. Zum Beispiel könnte man eine Textdatei als Teil eines Datenbankimports verwenden oder eine Benutzereingabe aus einer Datei lesen.
 
-## Wie geht man vor?
+## Wie man es macht
 
-Um eine Textdatei in Elixir zu lesen, können die Funktionen `File.open` und `IO.read` verwendet werden. Wir können zunächst eine Datei mit `File.open/2` öffnen und dann den Inhalt mit `IO.read/2` auslesen. Die folgenden Code-Beispiele zeigen, wie man eine Textdatei mit Elixir liest:
+Zum Lesen einer Textdatei in Elixir verwenden wir die `File.stream!` Funktion und eine Schleife, um jede Zeile zu verarbeiten. Zunächst müssen wir die Datei mit dem gewünschten Dateipfad öffnen, indem wir `:file.open` verwenden. Dann verwenden wir `File.stream!`, um einen Datenstrom von der Datei zu erstellen und `Enum.each` um jede Zeile zu durchlaufen. Schließlich schließen wir die Datei mit `:file.close`.
 
-```
-Elixir Datei öffnen und Inhalt lesen:
-
-File.open("beispiel.txt") |>
-IO.read() |>
-IO.puts()
-```
-
-#### Beispieldatei "beispiel.txt":
-
-```
-Dies ist ein Beispieltext. 
-In dieser Datei befinden sich einige Zeilen mit Daten.
+```Elixir
+{:ok, file} = :file.open("dateiname.txt")
+stream = IO.stream(file)
+Enum.each(stream, fn line ->
+  # Hier kommen Code-Aktionen für jede Zeile hin
+end)
+:file.close(file)
 ```
 
-#### Ausgabe:
+## Tieferer Einblick
 
+Wenn wir eine sehr große Textdatei haben, kann es effizienter sein, `File.stream!` durch `Stream.resource` zu ersetzen. Dies gibt uns die Möglichkeit, Ressourcen manuell zu verwalten und die Performance zu optimieren.
+
+```Elixir
+def file_stream(path) do
+  {:ok, file} = :file.open(path)
+  stream = IO.stream(file)
+  Stream.resource(
+    fn ->
+      stream # Der Datenstrom wird als Ressource zurückgegeben
+    end,
+    fn _ ->
+      :file.close(file) # Die Datei wird automatisch geschlossen, wenn der Datenstrom beendet wird
+    end,
+    fn stream ->
+      case IO.binread(stream, 1024) do # Wir lesen die Datei blockweise
+        <<line::binary-size(1024), rest::binary>> ->
+          {line, rest}
+        <<line::binary>> ->
+          {line, ""}
+      end
+    end
+  )
+end
 ```
-Dies ist ein Beispieltext.
-In dieser Datei befinden sich einige Zeilen mit Daten.
+
+Jetzt können wir `file_stream` in unserem Code verwenden:
+
+```Elixir
+file_stream("dateiname.txt")
+|> Enum.each(fn line ->
+  # Hier kommen Code-Aktionen für jede Zeile hin
+end)
 ```
-
-Hier sehen wir, dass der Inhalt der Datei erfolgreich gelesen und ausgegeben wurde.
-
-## Tiefergehende Informationen
-
-Beim Lesen von Textdateien in Elixir gibt es einige Dinge zu beachten. Die Funktion `IO.read/2` kann verschiedene Optionen enthalten, wie z.B. die Anzahl der Zeichen, die gelesen werden sollen, oder das Encoding der Datei. Ebenfalls wichtig ist, dass die Datei wieder geschlossen wird, um eventuelle Ressourcen freizugeben. Daher sollte man immer die Funktion `File.stream/1` oder `File.stream!/1` verwenden, um eine Datei zu öffnen. Diese Funktionen geben einen Stream zurück, der automatisch geschlossen wird, wenn er die Dateiende erreicht.
-
-Ein weiterer wichtiger Punkt ist, dass Elixir standardmäßig UTF-8 als Encoding verwendet. Wenn die Textdatei in einem anderen Encoding vorliegt, muss dies beim Öffnen der Datei angegeben werden, z.B.: `File.stream!("beispiel.txt", [:encoding, :latin1])`.
 
 ## Siehe auch
 
-1) [Elixir Dokumentation: File.open/2](https://hexdocs.pm/elixir/File.html#open/2)
-2) [Elixir Dokumentation: IO.read/2](https://hexdocs.pm/elixir/IO.html#read/2)
-3) [Elixir Dokumentation: File.stream/1](https://hexdocs.pm/elixir/File.html#stream/1)
-4) [Elixir Dokumentation: File.stream!/1](https://hexdocs.pm/elixir/File.html#stream!/1)
+- [Elixir Dokumentation zu Textdateien lesen/schreiben](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#stream!/2)
+- [Elixir Dokumentation zu Dateien](https://hexdocs.pm/elixir/Kernel.File.html)
+- [Elixir Code-Beispiele auf GitHub](https://github.com/elixir-lang/elixir/search?utf8=%E2%9C%93&q=file&type=Code)

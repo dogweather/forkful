@@ -1,34 +1,39 @@
 ---
-title:    "C#: डायरेक्टरी मौजूद है या नहीं जांचें"
+title:    "C#: डायरेक्टरी मौजूद है या नहीं की जाँच करना"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-डाइरेक्ट्री की जांच करने का उद्देश्य जानना है कि क्या एक पथ में इस डाइरेक्ट्री का होना हमारे काम के लिए आवश्यक है। इससे हम उपयोगकर्ता को दो समान प्रकार से मौजूदा फ़ाइलों में से एक को चुनने का विकल्प दे सकते हैं और एप्लिकेशन में कुछ सुरक्षा प्रश्नों को हल कर सकते हैं। ऐसी स्थिति में, डाइरेक्ट्री की जांच अनिवार्य हो जाती है।
+यदि आप अपने प्रोग्राम में फ़ाइल या फ़ोल्डर को खोजना चाहते हैं, तो आपको पहले से ही जाँचना चाहिए कि क्या यह फ़ाइल या फ़ोल्डर मौजूद है। यह सुनिश्चित करना आपको समय और उपयोगकर्ता को परेशानी से बचाने में मदद कर सकता है।
 
 ## कैसे करें
 
+आपको `Directory.Exists()` मेथड का उपयोग करके फ़ाइल या फ़ोल्डर की मौजूदगी को जाँच सकते हैं। नीचे दिए गए कोड ब्लॉक में एक उदाहरण है। 
+
 ```C#
-if(Directory.Exists("C:\\Sample"))
+string path = @"C:\Users\Username\Desktop\NewFolder";
+
+if (Directory.Exists(path))
 {
-    Console.WriteLine("Directory exists!");
+    Console.WriteLine("Directory already exists.");
 }
 else
 {
-    Console.WriteLine("Directory does not exist!");
+    Console.WriteLine("Directory does not exist.");
 }
-
-// Output: Directory exists!
 ```
+
+यहाँ, हमने `Directory.Exists()` मेथड की मदद से `path` में दिए गए फ़ोल्डर की मौजूदगी को जाँचा है। अगर फ़ोल्डर मौजूद होता है तो `Directory.Exists()` मेथड `true` लौटा देता है और हम इसे `if` शर्त में उपयोग करके संदेश दिखा सकते हैं। अगर फ़ोल्डर मौजूद नहीं होता है तो `Directory.Exists()` मेथड `false` लौटा देता है और हम इसे `else` शर्त में उपयोग करके दूसरा संदेश दिखा सकते हैं। 
 
 ## गहराई में जाएं
 
-डाइरेक्ट्री की जांच के पीछे आधुनिक कार्यप्रणाली का मूल सिद्धांत है। इससे आप न केवल एक साधारण सवाल का समाधान कर सकते हैं, बल्कि किसी बड़े साइज की डाइरेक्ट्री का मौजूदा अवस्था का भी पता लगा सकते हैं। आप अन्य सुरक्षा प्रश्नों को हल करने के लिए इसका उपयोग कर सकते हैं और समान नाम के कई फोल्डरों में भी अपना दिशा-निर्देश रख सकते हैं।
+अब आप जानते हैं कि कैसे फ़ाइल या फ़ोल्डर की मौजूदगी को जाँचना है, लेकिन `Directory.Exists()` मेथड कुछ अन्य मेथड्स और प्रॉपर्टीज के साथ मिलकर काम करता है। अधिक जानकारी के लिए, आप माइक्रोसॉफ्ट दस्तावेज़ देख सकते हैं।
 
 ## देखें भी
 
-- [Directory.Exists Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [How to check if a directory exists in C#](https://www.c-sharpcorner.com/article/how-to-check-if-a-directory-exists-in-c-sharp/)
+- [Directory Class (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.7.2)
+- [Exists(String)](https

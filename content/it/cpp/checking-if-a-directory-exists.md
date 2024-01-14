@@ -1,50 +1,42 @@
 ---
-title:    "C++: Verifica dell'esistenza di una directory"
+title:    "C++: Verifica se una directory esiste"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché Controllare se una Directory Esiste?
 
-Una delle attività comuni nel processo di sviluppo di un programma è quella di dover verificare l'esistenza di una directory. Questo può essere necessario per molteplici motivi, come ad esempio accedere a file o cartelle specifici o per garantire l'integrità e la sicurezza del programma stesso. In questo post, vedremo come verificare la presenza di una directory utilizzando il linguaggio di programmazione C++.
+Controllare se una directory esiste è un'operazione comune nella programmazione di C++. Ciò può essere necessario per garantire che un programma funzioni correttamente o per effettuare operazioni specifiche su una directory esistente. In questa guida, impareremo come controllare se una directory esiste utilizzando il linguaggio C++.
 
-## Come fare
+## Come Fare
 
-Per verificare se una directory esiste, possiamo utilizzare la funzione `opendir()` che fa parte della libreria standard di C++. Questa funzione prende in input il percorso della directory che vogliamo verificare e restituisce un puntatore a un oggetto di tipo `DIR`. Se la directory non esiste, la funzione restituirà un valore nullo.
+Iniziamo con l'include delle librerie necessarie per il nostro programma:
 
-Di seguito mostriamo un esempio di come utilizzare la funzione `opendir()` per verificare l'esistenza di una directory chiamata "nuovaCartella":
-
-```C++
+``` C++
 #include <iostream>
-#include <dirent.h>
-
-int main() {
-    DIR *dir = opendir("nuovaCartella"); // apriamo la directory
-   
-    if (dir == NULL) { // se la directory non esiste
-        std::cout << "La directory non esiste." << std::endl;
-    } else { // se la directory esiste
-        std::cout << "La directory esiste." << std::endl;
-        closedir(dir); // chiudiamo la directory
-    }
-    
-    return 0;
-}
+#include <filesystem>
 ```
 
-Ecco un possibile output del programma:
+Successivamente, utilizzeremo la funzione "exists" della libreria "filesystem" per controllare se una determinata directory esiste e stampare un messaggio di output di conseguenza:
 
+``` C++
+if (std::filesystem::exists("directory"))
+    std::cout << "La directory esiste!" << std::endl;
+else
+    std::cout << "La directory non esiste!" << std::endl;
 ```
-La directory esiste.
-```
+
+In questo esempio, stiamo controllando se la directory chiamata "directory" esiste. Nel caso in cui non esista, verrà stampato il messaggio "La directory non esiste!".
 
 ## Approfondimento
 
-Esistono anche altre funzioni che possono essere utilizzate per verificare l'esistenza di una directory, come ad esempio `stat()` e `access()`. Inoltre, è importante tenere presente che anche se una directory esiste, potrebbe non essere possibile accedervi a causa dei permessi di accesso impostati. È quindi necessario gestire questo tipo di situazioni per garantire il corretto funzionamento del programma.
+Oltre alla funzione "exists", la libreria "filesystem" offre anche altre opzioni per lavorare con directory. Ad esempio, la funzione "create_directory" permette di creare una nuova directory e la funzione "remove" permette di eliminare una directory esistente. Inoltre, con la funzione "current_path" è possibile ottenere il percorso della directory corrente.
 
-## Vedi anche
+Per ulteriori informazioni su come lavorare con le directory utilizzando la libreria "filesystem", si consiglia di consultare la documentazione ufficiale di C++.
 
-- [Funzione opendir()](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Funzione stat()](https://www.cplusplus.com/reference/cstdio/stat/)
-- [Funzione access()](https://www.cplusplus.com/reference/cunistd/access/)
+## Vedi Anche
+
+- Documentazione ufficiale di C++ sulla libreria "filesystem": https://en.cppreference.com/w/cpp/filesystem
+- Tutorial su come lavorare con file e directory in C++: https://www.learncpp.com/cpp-tutorial/introduction-to-the-file-system/

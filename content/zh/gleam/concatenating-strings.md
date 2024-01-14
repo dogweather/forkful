@@ -1,38 +1,49 @@
 ---
 title:    "Gleam: 连接字符串"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么嵌入变量？
+为什么：连接字符串可以帮助我们在编程中更容易地构建和处理文本数据。例如，我们可以使用连接字符串来构建包含用户输入的句子，或者构建包含特定信息的数据格式。
 
-当你需要在程序中动态地构建字符串时，嵌入变量就非常有用。它可以帮助你简化代码，节省时间，并提高代码的可读性。
+如何操作：首先，我们需要使用```Gleam string concatenation```函数来连接字符串。以下是一个简单的例子：
 
-## 如何使用？
-
-在Gleam中，字符串拼接使用`<>`操作符来实现。让我们以一个简单的例子来说明它的用法：
-
-```gleam
-let name = "小明"
-let greeting = "你好，" <> name <> "！"
-io.println(greeting)
+```Gleam
+let string1 = "Hello"
+let string2 = "world"
+let message = string1 ++ " " ++ string2
 ```
 
-以上代码将输出：“你好，小明！”。你可以在任何地方使用`<>`来连接字符串和变量。记住，两边都需要有空格。
+```Gleam
+IO.println(message)
+```
 
-## 深入了解
+输出：
 
-在Gleam中，字符串是不可变的，这意味着每次拼接字符串时都会创建一个新的字符串。如果你需要频繁地修改字符串，则建议使用列表来处理字符串，然后再通过`String.join`函数来拼接它们。
+```
+Hello world
+```
 
-此外，如果你需要拼接大量的字符串，最好使用`String.Builder`来构建字符串。它的效率更高，可以减少内存占用。
+深入了解：连接字符串实际上是将两个或多个字符串合并为一个字符串的过程。在Gleam中，我们可以使用++运算符来连接字符串，这个运算符可以用来连接任意数量的字符串。我们还可以使用字符串插值来将其他数据类型转换为字符串，并与其他字符串连接。
 
-# 参考链接
-- Gleam官方文档：https://gleam.run/book/
-- 字符串操作：https://gleam.run/books/stdlib/strings.html
-- String模块：https://gleam.run/books/stdlib/String.html
-- String.Builder模块：https://gleam.run/books/stdlib/String.Builder.html
+另外，我们还可以使用```Gleam string.split```函数来将字符串分割为多个部分，并使用连接字符串来重新构建不同的字符串组合。
 
-# 参见
-- "为什么使用字符串插值？"
-- "Gleam中的其它字符串操作技巧"
+参考链接：
+
+[链接1：Gleam文档](https://gleam.run/standard-library-string.html#concatenation)
+
+[链接2：Gleam string模块API文档](https://gleam.run/api-docs/#string)
+
+[链接3：Gleam教程-字符串处理](https://gleam.run/tutorials/strings.html)
+
+[链接4：Gleam官方博客-使用字符串插值](https://blog.gleam.run/posts/2020/06/30/gleam-tip-strings/)
+
+查看也可见：
+
+[进一步了解Gleam标准库中的字符串处理](https://gleam.run/standard-library-string.html)
+
+[Gleam代码示例集锦-字符串处理](https://github.com/gleam-lang/gleam-by-example/blob/main/src/strings.gleam)
+
+[Gleam社区讨论-字符串处理问题](https://github.com/gleam-lang/gleam/discussions/1755)

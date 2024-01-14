@@ -1,35 +1,51 @@
 ---
 title:    "Elixir: Erstellen einer temporären Datei"
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Das Erstellen von temporären Dateien ist eine häufige Aufgabe in der Welt der Informatik. Ob Sie schnell eine Datei erstellen und löschen müssen, um Platz auf Ihrer Festplatte freizugeben, oder ob Sie temporäre Daten für eine bestimmte Funktion benötigen, das Erstellen von temporären Dateien kann sehr nützlich sein.
+# Warum
 
-Wie geht man vor:
-Um eine temporäre Datei in Elixir zu erstellen, müssen Sie zunächst das Modul `File` importieren. Anschließend können Sie die Funktion `temp_file/1` oder `temp_file/2` verwenden, um eine temporäre Datei an einem bestimmten Speicherort zu erstellen. Dieser Speicherort kann ein absolutes oder relatives Verzeichnis sein. Hier ist ein Beispiel:
+In der Welt der Softwareentwicklung kann es verschiedene Gründe geben, warum wir temporäre Dateien erstellen müssen. Möglicherweise müssen wir Daten zwischenspeichern oder generierte Dateien für bestimmte Prozesse erstellen. Elixir bietet eine einfache Möglichkeit, temporäre Dateien zu erstellen und zu verwalten. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie wir dies tun können.
+
+# Wie geht das?
+
+Um in Elixir eine temporäre Datei zu erstellen, müssen wir die Funktion `Tempfile.create` aus dem Modul `Tempfile` aufrufen. Dies erfordert die Elixir-Standardbibliothek.
 
 ```Elixir
-import File
-
-{:ok, filepath} = temp_file("temp_dir/", "temp")
+iex> Tempfile.create
+{:ok, #PID<0.160.0>, %Tempfile{path: "...", fd: 5}}
 ```
 
-In diesem Beispiel erstellen wir eine temporäre Datei mit dem Namen "temp" im Verzeichnis "temp_dir". Die Funktion `temp_file/1` gibt einen `{:ok, filepath}` Tupel zurück, wobei `filepath` der Pfad zur erstellten Datei ist. Alternativ können Sie auch die Funktion `temp_file/2` verwenden, um einen anderen Namen für die temporäre Datei anzugeben.
+Die Ausgabe dieser Funktion ist ein Tupel mit der atomaren Erfolgskennung `:ok`, der PID des Prozesses, der die temporäre Datei erstellt hat, und einer Map mit Informationen über die erstellte Datei.
 
-Tiefergehende Analyse:
+Um die Datei zu verwenden, können wir einfach auf `path` in der Map zugreifen und die Datei wie gewohnt behandeln. Wir können auch die Funktion `Tempfile.close` verwenden, um die Datei zu schließen und zu löschen.
 
-Das Erstellen von temporären Dateien ist nicht nur hilfreich, sondern auch relativ einfach in Elixir. Wenn Sie jedoch tiefer in das Thema eintauchen möchten, gibt es einige Punkte, die Sie beachten sollten. Zum Beispiel wird beim Erstellen einer temporären Datei standardmäßig ein zufälliger Name generiert, um die Datei eindeutig zu identifizieren. Sie können jedoch auch einen anderen Namen angeben, indem Sie den `prefix`-Parameter in der Funktion `temp_file/2` verwenden.
+```Elixir
+iex> {_, _, tempfile} = Tempfile.create
+{:ok, #PID<0.162.0>, %Tempfile{path: "/tmp/tempfile20210203-2180-37uhm4.json", fd: 5}}
+iex> file = File.open(tempfile.path, [:w])
+#File<"/tmp/tempfile20210203-2180-37uhm4.json">
+iex> IO.write(file, "Hello World!")
+:ok
+iex> file |> Tempfile.close()
+:ok
+```
 
-Darüber hinaus gibt es auch die Möglichkeit, eine temporäre Datei mit einer bestimmten Dateierweiterung zu erstellen, indem Sie den `suffix`-Parameter in der Funktion `temp_file/2` verwenden. Dies ist besonders nützlich, wenn Sie beispielsweise eine temporäre CSV-Datei erstellen möchten, um Daten zu exportieren.
+# Tiefentauchen
 
-Sie können auch die erstellte temporäre Datei löschen, indem Sie die `delete!/1` Funktion aus dem `File` Modul verwenden. Wir empfehlen jedoch, die Datei automatisch beim Beenden des Elixir-Prozesses zu löschen, um sicherzustellen, dass keine unnötigen Dateien übrig bleiben.
+Die Funktion `Tempfile.create` gibt uns die Möglichkeit, anpassbare Optionen zu übergeben. Eine dieser Optionen ist `prefix`, mit der wir den Dateinamen nach unseren Wünschen benennen können. Wir können auch die Option `dir` verwenden, um den Speicherort der Datei anzupassen.
 
-Siehe auch:
+```Elixir
+iex> Tempfile.create(prefix: "test", dir: "/home/username")
+{:ok, #PID<0.162.0>, %Tempfile{path: "/home/username/test20210203-21754-19tsd0u.json", fd: 5}}
+```
 
-- Elixir `File` Modul Dokumentation: https://hexdocs.pm/elixir/File.html
-- Elixir `Path` Modul Dokumentation: https://hexdocs.pm/elixir/Path.html
-- Elixir `System` Modul Dokumentation: https://hexdocs.pm/elixir/System.html
+Diese Funktion erstellt automatisch eine eindeutige Datei basierend auf der angegebenen Präfix und dem aktuellen Timestamp. Wir können auch die Option `suffix` verwenden, um eine bestimmte Dateiendung hinzuzufügen.
 
-Weiterführende Links zu Elixir-Modulen, die beim Erstellen von temporären Dateien hilfreich sein können.
+# Siehe auch
+
+- Offizielle Dokumentation zur Tempfile-Modul: https://hexdocs.pm/elixir/Tempfile.html
+- Weitere Informationen zum Thema Elixir: https://elixir-lang.org/

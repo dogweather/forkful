@@ -1,41 +1,33 @@
 ---
-title:    "Ruby: Nykyisen päivämäärän saaminen"
+title:    "Ruby: Päivämäärän haku"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein tarvitsemme nykyisen päivämäärän tietoa ohjelmointiprojekteissamme. Tämä voi olla tarpeen esimerkiksi päiväyksen lisäämiseksi tiedostojen nimiin tai tapahtumien ajoittamiseksi sovelluksissamme.
+Monilla ohjelmointikielillä on sisäänrakennettu toiminto, jolla voi hakea nykyisen päivämäärän ja ajan. Tällainen toiminto on erityisen hyödyllinen esimerkiksi sovelluksissa, jotka vaativat päivämäärän tai ajan tietojen tallentamiseen tai näyttämiseen.
 
 ## Kuinka
 
-Ruby-kielen `Date`-kirjasto tarjoaa meille helpon tavan saada nykyinen päivämäärä. Käytämme `::today`-metodia, joka palauttaa meille objektin, jossa on nykyinen päivämäärä.
+Tässä esimerkissä käytetään Ruby-kieltä nykyisen päivämäärän ja ajan hakemiseen. Käytämme `Time`-luokan `now`-metodia, joka palauttaa nykyisen ajan. Käytämme myös `strftime`-metodia muotoilemaan haluamamme muodon mukaan.
 
 ```Ruby
-# Otetaan käyttöön "Date" kirjasto
-require 'date'
+time = Time.now
+puts time #tulostaa nykyisen ajan ja päivämäärän
 
-# Haetaan nykyinen päivämäärä
-today = Date.today
-
-# Tulostetaan päivämäärä muodossa "päivä-kuukausi-vuosi"
-puts today.strftime("%d-%m-%Y")
-
-# Tulostaa vaikka: 05-10-2020
+formatted_time = time.strftime("%d/%m/%Y %H:%M") #muotoilee päivämäärän ja ajan haluamamme muodon mukaan
+puts formatted_time #tulostaa esimerkiksi "25/02/2021 14:35"
 ```
 
-Voimme myös muuttaa `strftime`-metodin avulla päivämäärän tiedoista näytettävän muodon. Esimerkiksi `"%A"` tulostaa viikonpäivän täydessä muodossa, kun taas `"%d-%m-%y"` näyttää päivän, kuukauden ja vuoden numeroina. Voit tutustua tarkemmin `strftime`-metodin tarjoamiin vaihtoehtoihin [täältä](https://www.rubydoc.info/stdlib/date/Date#strftime-instance_method).
+## Syvemmälle
 
-## Syvällisempi sukellus
-
-Päivämäärän saaminen ei olekaan niin yksinkertaista kuin voisi kuvitella. Useiden tekijöiden, kuten aikavyöhykkeiden ja päivämäärämuotoilujen, vuoksi päivämäärän hankkiminen voi aiheuttaa haasteita.
-
-Ruby tarjoaa onneksi monipuolisia työkaluja päivämäärän hallintaan. `Date`-kirjaston lisäksi meillä on myös `Time`-kirjasto sekä lukuisia apumetodeja, kuten `parse`, joilla voimme helposti käsitellä päivämäärätietoja.
+`Time`-luokka sisältää monia erilaisia metodeja ja vaihtoehtoja ajan muotoiluun. `strftime`-metodilla voit muotoilla päivämäärän ja ajan haluamallasi tavalla, esimerkiksi `%d` voi olla päivämäärä numerona ja `%b` kuukauden lyhenteenä. Voit käyttää myös muita luokkia, kuten `Date` ja `DateTime`, saadaksesi lisää vaihtoehtoja ja tarkemman tiedon nykyisestä päivämäärästä ja ajasta.
 
 ## Katso myös
 
-- [Ruby Date-kirjaston virallinen dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Ruby Time-kirjaston virallinen dokumentaatio](https://ruby-doc.org/core-2.7.1/Time.html)
-- [strftime-metodin vaihtoehdot](https://www.rubydoc.info/stdlib/date/Date#strftime-instance_method)
+- [Ruby Time-luokka](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Ruby Date-luokka](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Ruby DateTime-luokka](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)

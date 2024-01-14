@@ -1,41 +1,36 @@
 ---
 title:    "PHP: Schreiben auf Standardfehler"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum Programmierer standard error verwenden sollten
+## Warum
 
-Das Schreiben in die standard error Ausgabe ist ein wichtiger Bestandteil bei der Entwicklung von PHP-Programmen. Durch das Ausgeben von Fehlern und Warnungen in die standard error Ausgabe können Programmierer Fehler schneller erkennen und Probleme effizienter lösen. Es ist eine Möglichkeit, den Entwicklungsprozess zu optimieren und die Qualität des Codes zu verbessern.
+Das Schreiben in die Standardfehlerausgabe kann für PHP Programmierer aus verschiedenen Gründen nützlich sein. Zum Beispiel hilft es bei der Fehlerbehandlung, bei der Ausgabe von Informationsmeldungen oder beim Debugging von Code.
 
-## Wie man in die standard error Ausgabe schreibt
+## Wie geht man vor
 
-Um in die standard error Ausgabe zu schreiben, kann die Funktion `fwrite()` verwendet werden. Sie erwartet zwei Parameter: eine Dateihandle für die standard error Ausgabe und eine Zeichenkette, die ausgegeben werden soll. Hier ist ein Beispielcode:
+Um in die Standardfehlerausgabe zu schreiben, verwendet man die Funktion `error_log()`. Hier ist ein Beispiel, wie man eine Fehlermeldung mit dieser Funktion ausgeben kann:
 
 ```PHP
 <?php
-$stderr = fopen('php://stderr', 'w');
-fwrite($stderr, 'Dies ist eine Fehlermeldung.');
-fclose($stderr);
+// Fehlermeldung ausgeben
+$errorMsg = "Es ist ein Problem aufgetreten!";
+error_log($errorMsg);
 ```
 
-Die obige Code wird eine Fehlermeldung in der standard error Ausgabe ausgeben, was in etwa so aussehen sollte:
+Dieser Codeblock generiert eine Fehlermeldung, die in der Standardfehlerausgabe angezeigt wird. Man kann auch andere Parameter angeben, wie z.B. einen Pfad zu einer Log-Datei, in die die Fehlermeldung geschrieben werden soll.
 
-```
-Dies ist eine Fehlermeldung.
-```
+## Tiefere Einblicke
 
-Es ist wichtig zu beachten, dass die standard error Ausgabe in PHP automatisch gepuffert wird, was bei der Fehlersuche hilfreich sein kann.
+Es gibt verschiedene Gründe, warum das Schreiben in die Standardfehlerausgabe nützlich ist. Zum Beispiel können Entwickler damit leichter Fehler in ihrem Code finden, da alle Fehlermeldungen an einem Ort gesammelt werden. Außerdem können Entwickler Spezifikationen oder Informationen über den Code oder die Anwendung ausgeben, die für die Fehlerbehandlung oder das Debugging hilfreich sein können.
 
-## Tiefere Einblicke in das Schreiben in die standard error Ausgabe
-
-Es gibt einige wichtige Dinge, die man beachten sollte, wenn man in die standard error Ausgabe schreibt. Zum Beispiel sollten Programmierer sicherstellen, dass die standard error Ausgabe in ein Log-System geschrieben wird, um Fehler und Warnungen zu dokumentieren. Außerdem sollte man vermeiden, unnötige Daten in die standard error Ausgabe zu schreiben, um die Performance nicht zu beeinträchtigen.
-
-Eine weitere Möglichkeit, die standard error Ausgabe zu nutzen, ist das Umleiten dieser Ausgabe in eine Datei oder einen anderen Stream. Dadurch können Fehler und Warnungen auch in einem späteren Schritt ausgewertet werden.
+Ein weiterer Grund ist, dass man das Schreiben in die Standardfehlerausgabe auch in Kombination mit anderen Funktionen nutzen kann. Zum Beispiel kann man beim Schreiben in die Standardfehlerausgabe auch die `die()` Funktion verwenden, um den Code anzuhalten und eine spezifische Fehlermeldung auszugeben.
 
 ## Siehe auch
 
-- [PHP fwrite() function](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP stderr output](https://www.php.net/manual/en/features.commandline.io-streams.php)
-- [PHP error handling](https://www.php.net/manual/en/function.error-reporting.php)
+- [PHP Dokumentation über error_log()](https://www.php.net/manual/de/function.error-log.php)
+- [Beispiel für die Verwendung von error_log()](https://www.geeksforgeeks.org/php-error_log-function/)
+- [Ausführliche Erklärung von error_log() mit Beispielen](https://www.w3schools.com/php/func_error_log.asp)

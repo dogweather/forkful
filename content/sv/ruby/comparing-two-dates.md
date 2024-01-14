@@ -1,51 +1,64 @@
 ---
 title:    "Ruby: Jämföra två datum"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att jämföra två datum är en vanlig uppgift inom programmering, speciellt inom Ruby. Genom att jämföra datum kan vi avgöra om ett visst datum kommer före eller efter ett annat, vilket kan vara användbart i olika applikationer. I denna bloggpost kommer vi att undersöka hur man jämför datum i Ruby och vad som händer när man gör det.
 
-Att jämföra två datum är en viktig del av Ruby-programmering eftersom det kan hjälpa oss att hantera tid och datum effektivt. Det är också en viktig grundläggande färdighet som behövs för att bygga mer komplexa program.
-
-## Så gör du
-
-För att jämföra två datum i Ruby, används operatorerna `<`, `>`, `==` och `===` beroende på vad du vill jämföra. Om du vill se om ett datum är före eller efter ett annat använder du `<` och `>`. Om du vill se om de är exakt samma datum använder du `==` eller `===`.
+## Hur
+För att jämföra två datum i Ruby, kan vi använda metoden `Date#<=>` som står för "less than, equal, greater than". Den här metoden returnerar -1, 0 eller 1 beroende på om det första datumet är mindre än, lika med eller större än det andra datumet. 
 
 ```Ruby
-date1 = Date.new(2021, 9, 1)
-date2 = Date.new(2021, 10, 1)
+require 'date'
 
-puts date1 < date2 #Output: true
-puts date1 > date2 #Output: false
-puts date1 == date2 #Output: false
-puts date1 === date2 #Output: false
+date1 = Date.parse('2021-01-01')
+date2 = Date.parse('2020-12-31')
+
+puts date1 <=> date2
+
+# Output: 1 (eftersom date1 kommer efter date2)
 ```
 
-Det finns också en speciell metod som heter `between?` som kan användas för att kontrollera om ett datum ligger mellan två andra datum.
+Om de två jämförda datumen är exakt samma, returnerar metoden 0.
 
 ```Ruby
-date3 = Date.new(2021, 9, 15)
+require 'date'
 
-puts date3.between?(date1, date2) #Output: true
+date1 = Date.parse('2021-01-01')
+date2 = Date.parse('2021-01-01')
+
+puts date1 <=> date2
+
+# Output: 0
 ```
 
-## Djupdykning
+Om vi istället vill kontrollera om ett datum är tidigare eller senare än ett annat kan vi använda metoden `Date#<` för mindre än och `Date#>` för större än.
 
-När det gäller att jämföra datum i Ruby finns det några saker att tänka på. För det första är det viktigt att veta vilka typer av objekt som faktiskt kan jämföras. Dessa inkluderar `Date`, `Time`, `DateTime` och `Numeric` objekt.
+```Ruby
+require 'date'
 
-För det andra är det viktigt att hålla koll på vilken tidszon du arbetar med. Om du har datum och tider i olika tidszoner kan det påverka resultaten av dina jämförelser.
+date1 = Date.parse('2021-01-01')
+date2 = Date.parse('2020-12-31')
 
-Det är också värt att notera att jämförelser av datum och tider i Ruby inte är exakta på nanosekundnivå. Om du behöver jämföra väldigt exakta datum och tider kan det vara bättre att använda `DateTime` objekt som kan hantera mer exakta tidsintervall.
+puts date1 < date2
+# Output: false
+
+puts date1 > date2
+# Output: true
+```
+
+## Deep Dive
+När vi jämför datum i Ruby, jämförs de baserat på en standard som kallas "Julian day". Det är en numreringssystem som börjar den 24 november år 4714 f.Kr. Detta är det datum då den första julianska kalendern började räkna dagar. Varje dag har ett unikt nummer och det är detta nummer som används för att jämföra datumen.
+
+Det finns också några saker som är viktiga att tänka på när vi jämför datum i Ruby. För det första, måste de vara av samma typ, antingen `Date`, `DateTime` eller `Time`. Om vi försöker jämföra datumen i olika format (t.ex. `Date` och `DateTime`) kan vi få ett felmeddelande.
+
+För det andra, när vi jämför datumen så ingår även tid i jämförelsen. Detta betyder att ett datum med tiden 00:00 kommer att anses vara mindre än ett datum med tiden 12:00, även om de är på samma dag.
 
 ## Se även
-
-Här är några användbara länkar för att lära dig mer om jämförelse av datum i Ruby:
-
-- [Ruby Date klass dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-- [Ruby Time klass dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/time/rdoc/Time.html)
-- [Ruby DateTime klass dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/datetime/rdoc/DateTime.html)
-- [Artikel om jämförelser i Ruby](https://www.rubyguides.com/2016/08/ruby-comparable-module/)
-
-Tack för att du läste! Kom ihåg att jämförelse av datum är en viktig färdighet att behärska när du arbetar med tid och datum i dina Ruby-program. Lycka till!
+* [Ruby DateTime documentation](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/DateTime.html)
+* [How to compare two dates in Ruby](https://www.rubyguides.com/2019/03/date-comparison/)
+* [Ruby Date and Time class](https://www.techotopia.com/index.php/Ruby_Date_and_Time_Class_Members)

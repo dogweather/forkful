@@ -1,40 +1,35 @@
 ---
 title:    "Gleam: Escrevendo um arquivo de texto"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que escrever um arquivo de texto?
 
-Escrever um arquivo de texto é uma tarefa essencial na programação, especialmente em linguagens como o Gleam. Ele permite que você armazene dados e informações de forma organizada e acessível, além de ser uma maneira de preservar seu trabalho e compartilhá-lo com outros programadores.
+Escrever um arquivo de texto pode ser uma tarefa simples, mas é uma parte importante do desenvolvimento de software. Com o Gleam, é possível criar facilmente arquivos de texto e utilizá-los em seus projetos.
 
-## Como escrever um arquivo de texto em Gleam
+## Como fazer
 
-Para escrever um arquivo de texto em Gleam, você precisa seguir alguns passos simples. Primeiro, abra seu editor de código preferido e crie um novo arquivo com a extensão .gleam. Em seguida, use a sintaxe ```write_file()``` para especificar o nome do arquivo que você deseja criar e o conteúdo que deseja escrever. Por exemplo:
+Para escrever um arquivo de texto em Gleam, primeiro importe o módulo "File" e, em seguida, utilize a função "write_file" para escrever o conteúdo desejado no arquivo. Por exemplo:
 
-```
-Gleam
-import gleam/io
-import gleam/string
+```Gleam
+import File
 
-message = "Oi, leitores!"
-
-write_file("mensagem.txt", message)
+File.write_file("meu_arquivo.txt", "Olá, mundo!")
 ```
 
-Para executar esse código, basta salvá-lo e executá-lo no terminal com o comando ```gleam run seu_arquivo.gleam```. Isso criará um arquivo chamado "mensagem.txt" com o conteúdo "Oi, leitores!" dentro dele.
+Isso criará um arquivo chamado "meu_arquivo.txt" no diretório atual e escreverá a mensagem "Olá, mundo!" dentro dele. Você também pode utilizar variáveis e concatenar strings dentro da função "write_file" para criar arquivos mais dinâmicos.
 
-## Mais detalhes sobre escrever arquivos de texto em Gleam
+## Mergulho Profundo
 
-Há muitas outras coisas que você pode fazer ao escrever um arquivo de texto em Gleam, como adicionar variáveis ​​e caracteres especiais, ou até mesmo ler e modificar arquivos já existentes. Você também pode criar diretórios de arquivos usando a função ```create_directory()``` e especificar o local onde deseja salvar o arquivo usando a função ```file_path()```.
+Além da função "write_file", o módulo "File" também possui outras funções úteis para gerenciamento de arquivos de texto, como "append_file" para adicionar conteúdo a um arquivo existente e "read_file" para ler o conteúdo de arquivos. É importante lembrar de sempre fechar o arquivo utilizando a função "close" após utilizá-lo.
 
-Lembre-se de que, ao escrever arquivos de texto em Gleam, é importante lidar adequadamente com erros e exceções. Use a função ```try_file()``` para capturar e lidar com quaisquer problemas que possam surgir ao escrever ou ler o arquivo.
+Outra funcionalidade interessante do Gleam é a capacidade de lidar com caminhos de arquivos de forma segura e portátil, usando o módulo "Path" e suas funções, como "join" e "split". Isso garante que seus arquivos funcionarão corretamente em diferentes sistemas operacionais.
 
 ## Veja também
 
-- Documentação oficial do Gleam sobre escrever arquivos: [https://gleam.run/documentation/std.fs.html#write_file][1]
-- Tutorial em vídeo sobre como escrever arquivos em Gleam: [https://www.youtube.com/watch?v=5gqKcQc1Y1w][2]
-
-[1]: https://gleam.run/documentation/std.fs.html#write_file
-[2]: https://www.youtube.com/watch?v=5gqKcQc1Y1w
+- Documentação oficial sobre arquivos e módulos de texto em Gleam: https://gleam.run/documentation/reference/03-modules.html#file
+- Tutorial sobre escrita de arquivos em Gleam: https://101questions.net/guides/writing-files-in-gleam/
+- Exemplos de código para manipulação de arquivos em Gleam: https://gist.github.com/topics/gleam-files

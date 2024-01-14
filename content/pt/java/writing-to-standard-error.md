@@ -1,45 +1,41 @@
 ---
-title:    "Java: Escrevendo no erro padrão"
+title:    "Java: Escrevendo para o erro padrão"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que escrever para o fluxo de erro padrão é importante?
+## Por que escrever para o erro padrão em Java
 
-Escrever para o fluxo de erro padrão é importante porque é uma forma de lidar com erros e exceções em seu código. Quando um programa é executado, ele pode encontrar erros e falhas que precisam ser tratados para que o programa possa continuar sua execução corretamente. O fluxo de erro padrão permite que você identifique e lide com esses problemas de forma adequada.
+Escrever para o erro padrão (stderr) em Java é uma prática muito comum para os programadores. Isso acontece porque a saída do stderr é geralmente utilizada para exibir mensagens de erro ou de informação ao usuário sobre o funcionamento do programa. Além disso, escrever para o stderr é útil para identificar e solucionar problemas durante o processo de desenvolvimento de um código.
 
-## Como fazer isso em Java
+## Como fazer em Java
 
-Em Java, podemos usar o método `System.err.println()` para escrever mensagens de erro no fluxo de erro padrão. Vamos dar uma olhada em um exemplo simples:
+Para escrever para o stderr em Java, podemos utilizar a classe `System.err` e seu método `println()`. Veja um exemplo abaixo:
 
 ```Java
-public class ErroPadrao {
-  public static void main(String[] args) {
-    int a = 10;
-    int b = 0;
-
-    try {
-        int resultado = a/b;
-        System.out.println("O resultado é: " + resultado);
-    } catch(ArithmeticException e) {
-        System.err.println("Erro: Divisão por zero!");
-    }
-  }
-}
+System.err.println("Esta é uma mensagem de erro!");
 ```
 
-Nesse código, estamos tentando dividir o número `10` por `0`, o que resultará em uma exceção `ArithmeticException`. Dentro do bloco `catch`, usamos o método `System.err.println()` para imprimir uma mensagem de erro no fluxo de erro padrão. Isso nos permite saber o que causou o erro e lidar com ele.
+Ao executar esse código, a mensagem "Esta é uma mensagem de erro!" será exibida no console como a saída do stderr. É importante lembrar que essa mensagem será exibida em vermelho para facilitar a identificação de erros.
 
-## Explorando mais sobre o fluxo de erro padrão
+Mas e se quisermos exibir uma mensagem de erro de forma mais específica, como incluir informações adicionais? Podemos utilizar o método `printf()` da classe `System.err`, que permite utilizar formatação de strings. Veja o exemplo abaixo:
 
-Escrever para o fluxo de erro padrão também é útil para depuração de código. Em vez de interromper a execução do programa, você pode escrever mensagens de erro no fluxo de erro padrão para entender o que está acontecendo em diferentes partes do seu código.
+```Java
+int idade = 25;
+String nome = "Maria";
+System.err.printf("A %s tem %d anos.", nome, idade);
+```
 
-Além disso, é possível redirecionar o fluxo de erro padrão para um arquivo, permitindo que você salve essas mensagens de erro para referência futura. Isso é especialmente útil em aplicativos onde é importante registrar e analisar erros.
+A saída desse código será "A Maria tem 25 anos." no console.
 
-# Veja também
-- Documentação oficial do Java para System.err: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
-- Tutorial do W3Schools sobre exceções em Java: https://www.w3schools.com/java/java_try_catch.asp
-- Artigo sobre como redirecionar o fluxo de erro padrão em Java: https://www.baeldung.com/java-write-to-system-error
+## Mergulho aprofundado
 
-*Este artigo foi escrito para leitores que falam português brasileiro. Se você fala outro idioma, por favor, consulte seus recursos de aprendizagem em sua língua nativa para obter informações sobre escrever para o fluxo de erro padrão em Java.*
+Além do método `println()` e `printf()`, a classe `System.err` possui outros métodos, como `write()` e `print()`, que também podem ser utilizados para escrever para o stderr em Java. Além disso, podemos também utilizar o objeto `System` para acessar o erro padrão através do seu atributo `err`. Vale lembrar que é importante utilizar o stderr para exibir mensagens de erro, enquanto o stdout (saída padrão) é mais adequado para mensagens de informação.
+
+## Veja também
+
+- Documentação oficial do Java sobre a classe `System.err`: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
+- Tutorial em vídeo sobre como imprimir mensagens de erro em Java: https://www.youtube.com/watch?v=98zD1YsDkJg
+- Perguntas frequentes sobre a escrita no stderr em Java: https://stackoverflow.com/questions/18729632/how-to-write-to-standard-error-in-java

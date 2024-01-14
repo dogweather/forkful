@@ -1,62 +1,50 @@
 ---
-title:    "C: Lesen von Befehlszeilenargumenten"
+title:    "C: Lesen von Befehlszeilen-Argumenten"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Lesen von Befehlszeilenargumenten ist eine grundlegende Fähigkeit in der Programmierung. Es ermöglicht dem Benutzer, Eingaben direkt an das Programm zu übergeben, was es flexibler und benutzerfreundlicher macht.
 
-## Wie man Befehlszeilenargumente liest
-Befehlszeilenargumente werden verwendet, um Eingaben an ein Programm zu übergeben, die es dann verarbeiten kann. In der Sprache C können Befehlszeilenargumente leicht mit der ```main()``` Funktion gelesen werden.
+Das Lesen von Befehlszeilenargumenten ist eine grundlegende Fähigkeit in der Programmierung, die es ermöglicht, die Ausführung von Programmen anzupassen und zu steuern. Wenn Sie lernen möchten, wie man Befehlszeilenargumente in C liest, sind Sie hier genau richtig.
 
-Hier ist ein Beispielcode, der alle Befehlszeilenargumente auf dem Bildschirm ausgibt:
+## Wie geht man vor?
+
+Zunächst müssen wir das Argumentvektor-Array `argc` und das Argumentliste-Array `argv` aus der `main`-Funktion nutzen, um auf die übergebenen Argumente zuzugreifen. Hier ist ein Beispielcode:
 
 ```C
-#include <stdio.h>
-
-int main(int argc, char *argv[])
-{
-    // Schleife, um alle Argumente auszugeben
-    for(int i = 0; i < argc; i++)
-    {
-        printf("Argument %d: %s\n", i, argv[i]);
+int main(int argc, char *argv[]) {
+    // Überprüfe, ob Argumente übergeben wurden
+    if (argc > 1) {
+        // Drucke die Anzahl der Argumente
+        printf("Anzahl der Argumente: %d\n", argc - 1);
+        
+        // Drucke jedes Argument
+        for (int i = 1; i < argc; i++) {
+            printf("Argument %d: %s\n", i, argv[i]);
+        }
     }
     
     return 0;
 }
 ```
 
-Wenn wir diesen Code mit folgenden Befehlszeilenargumenten kompilieren und ausführen:
+Die `main`-Funktion wird mit zwei Argumenten aufgerufen - die Anzahl der Argumente (`argc`) und die Argumentliste (`argv`). Wir überprüfen zuerst, ob mehr als ein Argument übergeben wurde, da das erste Argument immer der Name des Programms selbst ist. Dann können wir auf die Argumente mit Hilfe von `argv` zugreifen.
 
-```
-./programm arg1 arg2 arg3
-```
+Wenn Sie beispielsweise dieses Programm mit dem Befehl `./program argument1 argument2 argument3` aufrufen würden, würde es `Anzahl der Argumente: 3` und `Argument 1: argument1`, `Argument 2: argument2` und `Argument 3: argument3` ausgeben.
 
-würde die Ausgabe wie folgt aussehen:
+## Tiefer tauchen
 
-```
-Argument 0: ./programm
-Argument 1: arg1
-Argument 2: arg2
-Argument 3: arg3
-```
+Es ist wichtig zu beachten, dass `argv` ein Array von Zeigern auf Zeichenketten ist. Das bedeutet, dass jedes Argument eine Zeichenkette ist und `argv` ein Array von Zeigern auf diese Zeichenketten ist. Sie können auf die einzelnen Zeichenketten wie folgt zugreifen: `argv[0]` ist der Name des Programms, `argv[1]` ist das erste Argument, `argv[2]` ist das zweite Argument und so weiter.
 
-Wir können auch auf spezifische Argumente zugreifen, indem wir ihre Indexposition im ```argv``` Array verwenden. Zum Beispiel könnte man einen Integer-Wert als Argument übergeben und ihn in eine Variable konvertieren:
+Sie können auch verschiedene Funktionen wie `strcmp` verwenden, um Argumente zu vergleichen, oder `atoi` für die Konvertierung von Zeichenketten in Zahlen.
 
-```C
-int num = atoi(argv[1]); // Argument 1 in Variable num speichern
-```
-
-## Tiefere Einblicke
-In der Regel sind Befehlszeilenargumente optional und müssen nicht vom Benutzer eingegeben werden. Wenn jedoch erwartet wird, dass bestimmte Argumente übergeben werden, können entsprechende Überprüfungen in der Code-Logik eingebaut werden.
-
-In komplexeren Programmen können auch Optionen und Flags als Befehlszeilenargumente verwendet werden, um das Verhalten des Programms anzupassen. Dazu müssen die Argumente analysiert und entsprechend verarbeitet werden.
-
-Zusätzlich zur Verarbeitung von Eingaben von Benutzern können Befehlszeilenargumente auch beim Debuggen von Programmen hilfreich sein, indem sie direkt an das Programm übergeben werden, anstatt sie jedes Mal manuell einzugeben.
+Um mehr darüber zu erfahren, wie Befehlszeilenargumente in C funktionieren, können Sie die Dokumentation oder andere Quellen im Internet konsultieren.
 
 ## Siehe auch
-- [Befehlszeilenargumente in C - Tutorialspoint auf Deutsch](https://www.tutorialspoint.com/de/cprogramming/c_command_line_arguments.htm)
-- [Das allgemeine Format von Befehlszeilenargumenten - cppreference auf Deutsch](https://de.cppreference.com/w/cpp/language/main_function)
-- [Befehlszeilenargumente in C - GeeksforGeeks auf Deutsch](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+
+- [Dokumentation über Command-Line-Argumente in C](https://en.cppreference.com/w/c/language/main_function)
+- [Tutorial über Command-Line-Argumente in C](https://www.programiz.com/c-programming/c-command-line-arguments)
+- [Stack Overflow - Command-Line-Argumente in C lesen](https://stackoverflow.com/questions/3024197/reading-command-line-arguments-in-c)

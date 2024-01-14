@@ -1,43 +1,57 @@
 ---
 title:    "Arduino: 提取子串"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：当您需要从一个文本字符串中提取特定部分时，提取子字符串是非常实用的技术。这可以帮助您更有效地操作和处理大量文本数据，并且可以节省您的时间和精力。
+# 为什么：从字符串中提取子字符串的重要性
 
-## 为什么要提取子字符串？
+如果你正在使用Arduino进行编程，你可能会遇到需要从一个字符串中提取特定的一部分来使用的情况。这种操作被称为提取子字符串，它可以帮助你更有效地使用字符串数据。下面我们就来学习如何在Arduino中提取子字符串。
 
-当你需要从一个大型的文本字符串中获取特定的信息时，提取子字符串就变得非常有用。它可以让你更加灵活地处理文本数据，并且可以帮助你节省时间和精力。比如，如果你需要从一个包含许多不同信息的字符串中提取特定的姓名和地址，那么提取子字符串就可以让这个过程变得更加高效。
+## 如何做到
 
-## 如何使用Arduino提取子字符串？
-
-首先，您需要了解如何使用字符串库中的`substring()`函数。这个函数可以接受两个参数：起始索引和结束索引。起始索引表示您希望从哪个位置开始提取子字符串，而结束索引则表示您希望提取到哪个位置结束。
-
-一个简单的示例代码如下所示：
+通过使用substring函数，我们可以轻松地从一个字符串中提取出我们需要的部分。请看以下示例代码：
 
 ```Arduino
-String text = "Hello World!";
-String substring = text.substring(0, 5);
-Serial.println(substring); // output: Hello
+// 声明一个字符串变量
+String sentence = “Hello World”;
+
+// 使用substring函数提取子字符串
+String hello = sentence.substring(0, 5); // 从索引0开始，提取5个字符
+String world = sentence.substring(6, sentence.length()); // 从索引6开始，提取到最后一个字符
+
+// 打印结果
+Serial.println(hello); // 输出：Hello
+Serial.println(world); // 输出：World
 ```
 
-在这个示例中，我们从`text`字符串中提取从索引0到4的字符，即"Hello"。
+在上面的例子中，我们首先声明了一个名为sentence的字符串变量，它包含了“Hello World”的值。然后，我们使用substring函数来提取子字符串，第一个参数指定了开始提取的索引，第二个参数指定了提取的字符数量。最后，我们使用串口监视器（Serial Monitor）来打印结果，可以看到我们成功地从sentence中提取出了想要的子字符串。
 
-你也可以使用变量来表示索引，实现更加灵活的提取。比如，如果你需要从用户输入的字符串中提取不同的信息，可以根据字符串中的特定字符来确定起始索引和结束索引，从而提取出不同的子字符串。
+## 深入学习
 
-提取子字符串还可以结合使用其它函数来实现更加复杂的操作。比如，你可以使用`find()`函数来寻找某个特定字符的索引，然后再根据这个索引来提取子字符串。
+除了指定开始索引和提取的字符数量，substring函数还有一个可选的第三个参数，它可以用来指定你想要提取的字符类型。默认情况下，它提取的是字符串型。但是如果你在第三个参数中填入int类型的值，它会将提取的子字符串转换为整型。这个功能非常有用，特别是当你需要从字符串中提取数值类型的数据时。
 
-## 深入了解提取子字符串
+另外，如果你需要提取的字符数量已知，你也可以使用charAt函数来提取单个字符，如下所示：
 
-除了`substring()`函数外，还有一些其它的函数也可以帮助你提取子字符串。比如，`indexOf()`函数可以用来寻找某个字符串在另一个字符串中第一次出现的位置的索引，从而帮助你确定起始索引和结束索引。而 `toInt()`函数可以将字符串转换为整型变量，帮助你更方便地操作提取出的子字符串。
+```Arduino
+// 使用charAt函数提取单个字符
+char firstChar = sentence.charAt(0); // 提取第一个字符
+char lastChar = sentence.charAt(sentence.length() - 1); // 提取最后一个字符
 
-你也可以使用循环结构来循环提取多个子字符串，从而实现批量处理数据的功能。另外，了解正则表达式也可以帮助你更高效地提取复杂格式的子字符串。
+// 打印结果
+Serial.println(firstChar); // 输出：H
+Serial.println(lastChar); // 输出：d
+```
 
-## 参考链接
+通过以上的例子，我们可以看到charAt函数提取的是char类型的值，它可以帮助我们更方便地处理单个字符。
 
-- [Arduino String 文档](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino substring()函数文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Arduino String library教程](https://www.tutorialspoint.com/arduino/arduino_string_library.htm)
-- [字符串处理技巧参考](https://blog.csdn.net/youngupstarts/article/details/93815733)
+# 请使用
+
+现在你已经学会了如何在Arduino中提取子字符串，你可以将它应用到你的项目中。这项技能对于处理字符串数据非常有用，它可以帮助你更有效地操作和管理字符串。如果你想要进一步了解substring函数和charAt函数的更多用法，可以参考下面的链接。
+
+# 查看也有用
+
+- [Arduino substring函数文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Arduino charAt函数文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charAt/)

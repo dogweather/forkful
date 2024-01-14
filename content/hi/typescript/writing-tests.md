@@ -1,50 +1,38 @@
 ---
-title:    "TypeScript: टेस्ट लिखना"
+title:    "TypeScript: परीक्षाएं लिखना"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyu (Why)
-Unit tests likhne ke shamil hone ka karan kya hai? Unit tests likhna zaroori kyu hai? Ye sawal shayad aapke dimaag me uthta hoga jab aap coding karte hai. Unit tests likhna ek bahut hi ahem topic hai jo developers ke liye bahut mahatvapurna hai. Is blog post me hum dekhenge ki unit tests likhne ke kya fayde hai aur kaise hum inhe likh sakte hai.
+## क्यों
+एक JavaScript डेवलपर की बात करें, जो कि हम अधिकांश लोगों द्वारा पसंद किए जाने वाले प्रोग्रामिंग भाषा है। हालांकि, जैसे-जैसे आप नए कोड या डेवलपर्स को लाते हैं, बड़े प्रोजेक्ट्स बनाते हैं और अपने कोड में बहुत सारे बदलाव करते हैं, आपको आपकी बातों को शुरू से ही ठीक से रखने के लिए उत्तरदायी बनने के लिए बेहद आवश्यक होता है। इसलिए, अगर आप अपने कोड को क्लीन, सुरक्षित और दोषमुक्त रखना चाहते हैं, तो परिक्षण कोड लिखना आपके लिए एक गुणवत्ता नियंत्रण के रूप में महत्वपूर्ण है।
 
-# Kaise Kare (How To)
-### TypeScript me Test Case Kaise Banye?
-Unit tests likhne ke dauran hume TypeScript ka istemal karna chaiye kyu ki vo bahut hi saral aur asaan hai. Chaliye shuru karte hai:
+## कैसे करें
+आप अपने कोड को क्लीन रखना चाहते हैं, लेकिन आपको परिक्षण लिखने का प्रक्रिया अनुरोधवान है? इससे परेशान न हों! परिक्षण कोड लिखना बहुत आसान है और आपको केवल इन सरल चरणों का पालन करना होगा:
 
-Sabse pehle, hum ek class banyege jiska naam "Math" hoga. Ye class simple mathematical operations jaise addition, subtraction, multiplication aur division ko handle karega. Is class me ek default constructor hona chaiye jo teen variables accept karta hai - num1, num2 aur operator. Humara code niche diya gaya hai:
+चरण 1: अपने कोड में बग्स देखें। आप कोई दो कलम जोड़ सकते हैं:
 
 ```TypeScript
-class Math {
-  constructor(num1: number, num2: number, operator: string) {
-    this.num1 = num1;
-    this.num2 = num2;
-    this.operator = operator;
-  }
 
-  num1: number;
-  num2: number;
-  operator: string;
-
-  add(): number {
-    return this.num1 + this.num2;
-  }
-
-  subtract(): number {
-    return this.num1 - this.num2;
-  }
-
-  multiply(): number {
-    return this.num1 * this.num2;
-  }
-
-  divide(): number {
-    return this.num1 / this.num2;
-  }
-}
+// एक बग त्रुटि है जो स्पष्ट रूप से उजागर हो रही है
+console.log('यह एक बग है!');
 
 ```
-Ab hume apne class ko test karna hai. Iske liye hum chaiye chaiye chaiye ye kuch steps follow kare:
 
-1. Pehle chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye ki hum ek "math.test.ts" file banye.
-2. Is file ke andar chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye kuch chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye ```TypeScript chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye [[ chaiye chaiye chaiye chaiye ]] chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye new Math(5, 2, '+');``` chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chaiye chai
+चरण 2: किसी फंक्शन को टेस्ट करें।
+
+```TypeScript
+
+// एक फंक्शन जो दो नंबरों को जोड़ता है
+function add(x: number, y: number) {
+  return x + y;
+}
+
+// इसका उपयोग करके यह दो संख्याओं को जोड़ता है और उत्पादन को लॉग करता है
+console.log(add(2, 4));
+
+```
+
+चरण 3: अपने मानदंड को वृ

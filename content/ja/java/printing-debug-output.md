@@ -1,30 +1,45 @@
 ---
-title:    "Java: デバッグ出力の印刷"
+title:    "Java: デバッグ出力の出力"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-#なぜ
+## なぜデバッグ出力を表示するのか
 
-Javaプログラミングを行う際、デバッグ出力をプリントすることが重要な理由は、コードの実行過程を把握し、バグを特定するためです。
+デバッグ出力を表示することには、多くの利点があります。例えば、プログラムがどのように実行されているかを確認したり、エラーを特定したりするのに役立ちます。また、特定の変数の値を確認することで、プログラムの動作を理解することができます。
 
-##やり方
+## 方法
 
-デバッグ出力をプリントする方法は、以下のように「System.out.println()」メソッドを使用して行います。
+プログラム内でデバッグ出力を表示するには、```System.out.println()```メソッドを使用します。これは文字列や変数の値をコンソールに表示させることができます。例えば、以下のコードを実行すると、```Hello World```という文字列がコンソールに表示されます。
 
 ```Java
-System.out.println("このコードを実行しました！");
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
 ```
 
-上記のコードを実行すると、コンソールに「このコードを実行しました！」というテキストが表示されます。
+変数の値を表示する場合は、```System.out.println()```メソッドの中に変数名を記述します。例えば、以下のコードでは```num```という変数の値がコンソールに表示されます。
 
-##深堀り
+```Java
+public class Example {
+    public static void main(String[] args) {
+        int num = 10;
+        System.out.println(num);
+    }
+}
+```
 
-デバッグ出力をプリントすることは、エラーが発生した際に特定の箇所でプログラムが停止するようにするためにも重要です。こうすることで、バグを特定しやすくなり、修正も早く行うことができます。
+## ディープダイブ
 
-#関連リンク
+デバッグ出力を使うと、プログラムの実行経路や変数の値を詳しく確認することができます。さらに、```System.out.println()```メソッドを使わずに、```System.out.print()```メソッドを使用することで、表示される出力が改行されないため、大量のデータを正確に確認することができます。
 
-- [Javaデバッグガイド] (https://www.oracle.com/java/technologies/javase/debugging.html)
-- [デバッグ出力の重要性について] (https://www.ibm.com/developerworks/jp/library/it-tipdebug.html)
-- [Javaデバッグ：エラーを特定する方法] (https://www.infoworld.com/article/2073327/how-to-find-out-why-a-java-method-failed-in-production.html)
+## 参考リンク
+
+- [Java 公式ドキュメント](https://docs.oracle.com/en/java/)
+- [Java デバッグ入門 - TechAcademyマガジン](https://techacademy.jp/magazine/8661)
+- [Java でコーディングする際に Debug 出力/StackTrace を print する方法のまとめ - Qiita](https://qiita.com/nagase/items/6cbe95e667a3b98f2968)
+- [Java でデバッグを行う方法 概要 - programmer-office.com](https://www.programmer-office.com/coding-javadebug/)

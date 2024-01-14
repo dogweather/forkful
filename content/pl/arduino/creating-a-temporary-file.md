@@ -1,55 +1,41 @@
 ---
-title:    "Arduino: Tworzenie tymczasowego pliku"
+title:    "Arduino: Tworzenie tymczasowego pliku."
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto tworzyć pliki tymczasowe w programowaniu Arduino?
+# Dlaczego Tworzyć Tymczasowe Pliki w Programowaniu Arduino
 
-Tworzenie plików tymczasowych może być bardzo przydatne w przypadku programowania w Arduino. Pliki te mogą służyć do przechowywania danych, które są potrzebne tylko tymczasowo lub do robienia kopii zapasowych ważnych danych. Mogą też ułatwić przeprowadzenie eksperymentów i testów bez ryzyka utraty danych.
+Tworzenie tymczasowych plików jest ważnym aspektem programowania Arduino. Pozwala ono na łatwe i wygodne manipulowanie danymi, a także optymalizację kodu.
 
-## Jak to zrobić?
+# Jak to Zrobić
 
-Aby utworzyć plik tymczasowy w programowaniu Arduino, możemy skorzystać z gotowej biblioteki o nazwie "SD". Najpierw musimy jednak podłączyć moduł pamięci SD do naszego mikrokontrolera. Następnie, w kodzie programu, musimy zainicjować bibliotekę oraz utworzyć obiekt reprezentujący nasz plik tymczasowy.
-
-```Arduino
-#include <SD.h> // import biblioteki do obsługi pamięci SD
-
-File tempFile; // utworzenie obiektu reprezentującego plik tymczasowy
-```
-
-Teraz, gdy mamy już odpowiednie przygotowanie, możemy przejść do tworzenia i zapisywania danych w pliku. W tym celu możemy użyć funkcji `begin()` do rozpoczęcia działania pamięci SD oraz funkcji `open()` do utworzenia pliku i otwarcia go w trybie zapisu. Po zapisaniu danych, należy pamiętać o zamknięciu pliku za pomocą funkcji `close()`.
+Tworzenie tymczasowych plików w Arduino jest prostym procesem. Wymaga jedynie kilku linii kodu, a efekt może znacznie uprościć i usprawnić pracę z danymi. Oto przykładowy kod:
 
 ```Arduino
-void setup() {
-  // inicjalizacja pamięci SD
-  if (!SD.begin()) {
-    Serial.println("Błąd inicjalizacji pamięci SD");
-    return;
-  }
+#include <SD.h> // zaimportowanie biblioteki do obsługi karty SD
 
-  // utworzenie i otworzenie pliku
-  tempFile = SD.open("dane.txt", FILE_WRITE);
-  if (tempFile) {
-    // zapisanie danych
-    tempFile.println("To jest przykładowy tekst w pliku tymczasowym.");
-    // zamknięcie pliku
-    tempFile.close();
-  } else {
-    Serial.println("Błąd otwarcia pliku.");
-  }
-}
+File temporaryFile; // utworzenie zmiennej reprezentującej tymczasowy plik
+temporaryFile = SD.open("dane.txt", FILE_WRITE); // otwarcie pliku w trybie zapisu
+
+// tutaj możemy wykonać różne operacje na pliku, na przykład zapisywać lub odczytywać dane
+
+temporaryFile.close(); // zamknięcie pliku po zakończeniu pracy z danymi
 ```
 
-W ten sposób mamy już gotowy plik tymczasowy z zapisanymi danymi. Możemy oczywiście go również odczytać i wykorzystać, gdy będzie to potrzebne.
+To tyle! Możesz teraz z powodzeniem tworzyć, zapisywać i odczytywać dane w plikach tymczasowych.
 
-## Deep Dive
+# Głębsza Analiza
 
-Tworzenie plików tymczasowych może być przydatne także w celu zachowania bezpieczeństwa danych. Przed przeprowadzeniem jakichkolwiek eksperymentów lub testów, warto stworzyć kopię zapasową ważnych danych i operować na plikach tymczasowych, aby uniknąć ryzyka utraty informacji.
+Tworzenie tymczasowych plików jest szczególnie użyteczne w przypadku, gdy program musi wykonywać bardzo złożone operacje z danymi, które nie mieszczą się w pamięci mikrokontrolera. Dzięki plikom tymczasowym możemy zapisywać dane na karcie SD, co znacznie rozszerza możliwości programowania Arduino.
 
-Pamiętajmy również o tym, że po zakończeniu pracy z plikami tymczasowymi, powinniśmy je usunąć, aby nie zajmowały niepotrzebnego miejsca w pamięci.
+Ponadto, tworzenie tymczasowych plików może przyspieszyć działanie programu, ponieważ nie musimy za każdym razem przetwarzać wszystkich danych od nowa. Wystarczy zapisać je w pliku tymczasowym i korzystać z nich później, za każdym razem gdy są nam potrzebne.
 
-## Zobacz także
+# Zobacz też
 
-- Biblioteka SD do obsługi pamięci SD w Arduino: https://www.arduino.cc/en/reference/SD
+- [Tworzenie i zapisywanie plików na karcie SD w Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
+- [Biblioteka do obsługi karty SD w Arduino](https://www.arduino.cc/en/Reference/SD)
+
+Dzięki tym prostym wskazówkom, tworzenie tymczasowych plików w programowaniu Arduino będzie łatwe jak nigdy dotąd. Wykorzystaj tę wiedzę w swoich projektach i ciesz się wydajniejszym kodem! 🚀

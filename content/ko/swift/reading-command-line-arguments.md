@@ -1,38 +1,48 @@
 ---
 title:    "Swift: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-일반적으로, 명령 줄 인수는 프로그래밍에서 매우 유용하게 사용됩니다. 예를 들어, 사용자가 프로그램 실행 시 입력한 추가 정보를 읽을 수 있고, 다양한 매개변수를 설정할 수 있습니다. 따라서 명령 줄 인수를 읽는 방법은 프로그래밍 기본 기술 중 하나로 간주됩니다. 이 블로그 포스트는 명령 줄 인수를 읽는 방법에 대해 간단한 예제와 함께 소개할 것입니다.
+## 왜
 
-## 어떻게
-우선, ```CommandLine``` 클래스를 import 해야 합니다. 그리고 ```arguments``` 프로퍼티를 사용해서 인수를 읽을 수 있습니다. 예를 들어, ```swift CommandLine.arguments``` 식으로 사용하면 입력한 인수들의 배열을 리턴합니다. 아래는 명령 줄에서 숫자를 받아서 출력하는 예제 코드입니다.
+커맨드 라인 매개변수를 읽는 것에 참여하는 이유는 커맨드 라인에서 입력된 정보를 활용하여 프로그램의 동작을 조정할 수 있기 때문입니다.
 
-```swift
+## 방법
+
+커맨드 라인 매개변수를 읽는 방법은 간단합니다. 먼저 `CommandLine.arguments` 속성을 사용하여 매개변수들을 배열로 가져올 수 있습니다. 그리고 각 매개변수는 문자열로 표현되기 때문에 원하는 형식으로 변환할 수 있습니다. 예를 들어, 매개변수로 전달된 숫자를 정수형으로 변환하려면 `Int()` 로 감싸주면 됩니다.
+
+```Swift
+// 커맨드 라인 매개변수를 배열로 가져오기
 let arguments = CommandLine.arguments
+
+// 첫 번째 매개변수 출력
+print("첫 번째 매개변수: \(arguments[0])")
+
+// 두 번째 매개변수를 정수형으로 변환하여 출력
 if arguments.count > 1 {
-    let inputNumber = arguments[1]
-    print("입력한 숫자는 \(inputNumber)입니다!")
-} else {
-    print("숫자를 입력해 주세요.")
+    print("두 번째 매개변수: \(Int(arguments[1]) ?? 0)")
 }
+```
+
+커맨드 라인에서 `swift run` 명령어로 위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
 
 ```
-위 코드를 실행하고 ```swift test.swift 5```와 같이 인수를 전달하면, 출력은 ```입력한 숫자는 5입니다!```가 됩니다.
+$ swift run ArgumentsDemoHello
+첫 번째 매개변수: ArgumentsDemoHello
+두 번째 매개변수: 0
+```
 
-## 깊게 파고들기
-더 많은 깊은 내용을 알고 싶다면, 명령줄을 읽는 데 사용되는 C 언어의 ```argc```와 ```argv```의 개념을 알아볼 필요가 있습니다. ```CommandLine``` 클래스는 내부적으로 C 명령줄 인수를 다루기 때문입니다. 또한, 명령줄 인수를 입력할 때의 유의점들에 대해서도 공부할 수 있습니다. 예를 들어, 인수로 문자열보다는 정수를 입력하는 게 더 효율적일 수 있습니다.
+## 깊이 파고들기
 
-## 자세히 보기
+커맨드 라인 매개변수를 읽는 작업은 프로그램을 만들 때 매우 유용합니다. 예를 들어, 프로그램의 특정 옵션을 설정하거나 특정 동작을 수행할 때 커맨드 라인 매개변수를 사용하여 사용자가 직접 프로그램을 제어할 수 있게 할 수 있습니다. 또한, 커맨드 라인 매개변수를 통해 사용자 입력을 받는 대화형 프로그램을 만들 수도 있습니다.
 
-- [Swift 문서: Command-Line 인수 읽기](https://docs.swift.org/swift-book/LanguageGuide/ControlFlow.html#ID525)
-- [XCode Playground에서 명령줄 인수 읽기](https://www.hackingwithswift.com/example-code/system/how-to-read-command-line-arguments-using-commandline)  
-- [C 언어에서 명령줄 인수 다루기](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+## 더 찾아보기
 
-# 더 알아보기
+이번 포스트에서는 기본적인 커맨드 라인 매개변수 읽는 방법에 대해 알아보았습니다. 더 자세한 정보를 원한다면 아래의 링크를 참고해보세요.
 
-- [Swift 프로그래밍 코너 블로그](https://swiftcafe.io/tags/CommandLineArgument)에서 다양한 명령줄 인수 읽기 예제를 살펴보세요. 
-- [Apple Developer Forum](https://developer.apple.com/forums/tags/command%20line)에서 명령줄 인수와 관련된 질문과 답변을 읽어보세요.
+- [Swift Command Line Tutorial](https://www.raywenderlich.com/163857/command-line-programs-macos-tutorial)
+- [Parsing Command-Line Arguments in Swift](https://www.swiftbysundell.com/articles/parsing-command-line-arguments-in-swift/)
+- [Command-Line Arguments](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID333)

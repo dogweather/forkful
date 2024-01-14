@@ -1,44 +1,59 @@
 ---
 title:    "Kotlin: Testien kirjoittaminen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testeja?
+## Miksi
 
-Testaaminen on tärkeä osa ohjelmointia, joka varmistaa koodin toimivuuden ja luotettavuuden. Kirjoittamalla testeja voit varmistaa, että koodisi toimii halutulla tavalla ja havaita mahdolliset virheet ja bugit ennen kuin ne pääsevät tuotantoon.
+Testit ovat tärkeä osa ohjelmoinnin prosessia, ja ne auttavat varmistamaan, että koodi toimii ja toimii oikein. Ne myös auttavat havaitsemaan virheitä ja puutteita koodissa ennen kuin se päätyy tuotantoon. Kirjoittamalla testejä voit parantaa koodisi laatua ja vähentää virheiden määrää.
 
-## Miten kirjoittaa testeja?
+## Miten
 
-Testien kirjoittaminen Kotlinilla on helppoa ja tehokasta. Käytämme erityisesti kirjastoa nimeltä JUnit, joka tarjoaa valmiit työkalut testien kirjoittamiseen. Seuraavaksi esittelemme, miten voit luoda yksikkötestit yksinkertaiselle funktiolle, joka palauttaa kahden numeron summan.
+Testien kirjoittaminen Kotlinissa on helppoa ja intuitiivista. Tässä esimerkissä luomme yksinkertaisen funktion, joka tarkistaa, onko annettu luku parillinen vai ei:
 
 ```Kotlin
-fun summa(numero1: Int, numero2: Int): Int {
-    return numero1 + numero2
+fun tarkistaParillinen(numero: Int): Boolean {
+    return numero % 2 == 0
 }
 ```
 
-Nyt voimme luoda testin tälle funktiolle koodista, joka tarkistaa, että summa toimii oikein. Tässä testissä testaamme tapauksia, joissa funktiolle annetaan erilaisia numeroita ja tarkistamme, että palauttaa oikean summan.
+Voit sitten lisätä tämän funktion yksikkötestiin käyttämällä JUnit-kirjastoa:
 
 ```Kotlin
 @Test
-fun testiSumma() {
-    assertEquals(8, summa(5, 3))
-    assertEquals(0, summa(-5, 5))
-    assertEquals(10, summa(10, 0))
+fun testiTarkistaParillinen() {
+    assertEquals(tarkistaParillinen(2), true)
 }
 ```
 
-JUnit tarjoaa `assertEquals`-funktion, joka vertaa odotettua tulosta annettuun tulokseen. Jos odotettu ja saatu tulos eivät täsmää, testi epäonnistuu ja näet virheilmoituksen.
+Voit myös luoda testiluokan ja ajaa kaikki testit yhdellä kertaa:
 
-## Syväsukellus testeihin
+```Kotlin
+class Testiluokka {
 
-Testien kirjoittamisessa on tärkeää huolehtia siitä, että testit ovat riittävän kattavia ja testaavat kaikkia mahdollisia skenaarioita. Tällöin voit olla varma, että koodisi toimii halutulla tavalla kaikissa tilanteissa.
+    @Test
+    fun testiTarkistaParillinen() {
+        assertEquals(tarkistaParillinen(2), true)
+    }
 
-Lisäksi testien avulla voit tehdä muutoksia koodiisi turvallisesti. Jos esimerkiksi muutat funktiota, voit ajaa testit uudelleen ja varmistaa, että kaikki toimii edelleen kuten pitääkin. Tämä auttaa estämään mahdollisten uusien virheiden syntymisen.
+    @Test
+    fun testiTarkistaParittomia() {
+        assertEquals(tarkistaParillinen(3), false)
+    }
+}
+```
+
+Tämä on vain yksinkertainen esimerkki testien kirjoittamisesta, mutta voit luoda monimutkaisempia testejä riippuen koodisi tarpeista. Muista myös dokumentoida testit kattavasti, jotta ne olisivat ymmärrettäviä ja helppoja ylläpitää.
+
+## Syväsukellus
+
+Kotlinissa voit myös käyttää muita testikirjastoja, kuten Spek ja TestNG, riippuen mieltymyksistäsi ja projektisi vaatimuksista. Voit myös ottaa käyttöön Mockito-kirjaston, joka auttaa luomaan yksikkötesteja komponenteille, jotka ovat riippuvaisia muista luokista.
+
+On myös tärkeää muistaa, että testien kirjoittaminen ei korvaa laadukasta koodausta, vaan se on tärkeä lisä siihen. Testien kirjoittaminen auttaa sinua varmistamaan, että koodisi on toimivaa ja vähentää odottamattomien virheiden riskiä.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio testaamisesta](https://kotlinlang.org/docs/testing.html)
-- [JUnitin dokumentaatio](https://junit.org/junit5/docs/current/user-guide/)
+- [JUn

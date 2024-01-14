@@ -1,36 +1,35 @@
 ---
 title:    "Javascript: Afficher la sortie de débogage"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi Imprimer des Sorties de Débogage ?
+## Pourquoi 
 
-Il est important de comprendre l'importance de l'impression des sorties de débogage lors de la programmation en Javascript. Cela permet de trouver et de corriger rapidement les erreurs dans votre code, ce qui vous fait gagner du temps et vous aide à développer un code plus efficace et fiable.
+Il peut être tentant de simplement supprimer les lignes de code qui déclenchent des erreurs ou des bugs dans votre programme, mais l'ajout d'instructions de débogage peut en fait être une étape très utile lors de la programmation en Javascript. En imprimant des informations sur l'exécution de votre code, vous pouvez comprendre ce qui se passe réellement et identifier plus facilement la source du problème. Cela peut vous faire gagner du temps et éliminer les frustrations liées à la recherche de bugs.
 
-# Comment Faire
+## Comment faire 
 
-Pour imprimer des sorties de débogage en Javascript, vous aurez besoin d'utiliser la fonction `console.log()`. Cette fonction permet d'afficher des messages dans la console du navigateur, ce qui peut être utile pour comprendre ce qui se passe dans votre code.
-
-Voici un exemple de code avec un `console.log()` pour afficher le message "Bonjour !" dans la console du navigateur :
+Pour ajouter des instructions de débogage à votre code Javascript, vous pouvez utiliser la méthode ``console.log()``. Cela imprimera tout ce que vous spécifiez entre les parenthèses dans la console de votre navigateur. Par exemple :
 
 ```Javascript
-console.log("Bonjour !");
+let num1 = 5;
+let num2 = 10;
+console.log("La somme est : " + (num1 + num2));
 ```
 
-Lorsque vous exécutez ce code, vous verrez le message "Bonjour !" s'afficher dans la console. Vous pouvez également utiliser des variables ou des expressions à la place d'une chaîne de caractères, ce qui vous permet de voir la valeur ou le résultat à un moment précis dans votre programme.
+Cela imprimera dans la console : ``La somme est : 15``. Vous pouvez également utiliser ``console.error()`` pour afficher des messages d'erreur spécifiques en cas de besoin.
 
-# Plongée Profonde
+## Plongée en profondeur 
 
-Il existe plusieurs façons d'utiliser la fonction `console.log()` pour déboguer votre code. Par exemple, vous pouvez utiliser `console.log()` pour afficher la valeur d'une variable à différents points de votre programme, ce qui peut vous aider à suivre le déroulement de votre code.
+L'utilisation de méthodes de débogage comme ``console.log()`` peut également être utile lors de l'identification et de la correction de problèmes de performance. En imprimant des informations sur le temps d'exécution des différentes parties de votre code, vous pouvez identifier les parties qui prennent le plus de temps et les optimiser.
 
-Il est également possible de spécifier différents types de messages à afficher, tels que des erreurs ou des avertissements, en utilisant `console.error()` et `console.warn()`. Cela peut être particulièrement utile pour repérer rapidement les problèmes dans votre code.
+Il est également possible de formater les messages de débogage en utilisant des expressions régulières et des variables. Cela peut vous permettre de créer des messages plus clairs et utiles pour comprendre l'exécution de votre code.
 
-# Voir Aussi
+## Voir aussi 
 
-Pour en savoir plus sur l'utilisation de `console.log()` en Javascript, vous pouvez consulter les ressources suivantes :
-
-- [Guide complet sur le débogage en Javascript](https://blog.teamtreehouse.com/how-to-debug-javascript-definitive-guide)
-- [Documentation officielle de la console en Javascript](https://developer.mozilla.org/fr/docs/Web/API/Console)
-- [Tutoriel sur les bases du débogage en Javascript](https://www.youtube.com/watch?v=_HZ50G6cQPg)
+- [Guide sur l'utilisation des instructions de débogage en Javascript](https://developer.mozilla.org/fr/docs/Web/API/Console)
+- [Tutoriel sur l'utilisation du débogueur Javascript intégré](https://www.digitalocean.com/community/tutorials/how-to-debug-javascript-introduction-with-example-code)
+- [Article sur les meilleures pratiques pour le débogage en Javascript](https://blog.sessionstack.com/how-to-debug-javascript-like-a-pro-a2a27a5e04cc)

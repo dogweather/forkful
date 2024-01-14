@@ -1,50 +1,48 @@
 ---
 title:    "Elm: 현재 날짜 가져오기"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-현재 날짜를 얻는 일은 우리의 일상에서 매우 중요합니다. 예를 들어, 우리는 만료 날짜를 확인하는 온라인 쇼핑을 할 때 우리가 사는 지역의 미국 시간대를 알아야합니다. 따라서 다음 섹션에서는 Elm을 사용하여 현재 날짜를 가져오는 방법에 대해 알아보겠습니다.
+현재 날짜를 알아내는 것은 Elm 프로그래밍에서 매우 일반적입니다. 이로 인해 사용자 인터페이스에서 현재 날짜를 표시하거나 날짜와 관련된 기능을 구현하는 데 유용합니다.
 
-## 어떻게
-
-가장 간단한 방법은 `Date.now`를 사용하는 것입니다. 우선, 모듈을 가져오기 위해 `Date`를 선언하고, `now` 함수를 사용하여 현재 날짜를 얻을 수 있습니다.
+## 사용 방법
 
 ```Elm
-import Date exposing (Date)
+import Time
 
-date : Date
-date = Date.now
+-- 현재 날짜를 가져오는 함수
+getTime : Task x Time.Posix 
+getTime =
+  Time.now
+
+-- 현재 날짜를 표시하는 예제
+main =
+  Html.text "오늘의 날짜는 " ++ (Time.millisToUtc 0 |> Time.toYearMonthDay)
 ```
 
-위의 예제에서 `date` 변수는 현재 날짜를 나타냅니다. 또한 `Date.now` 함수는 현재 날짜를 밀리초로 반환합니다. 따라서 다음과 같이 계산하여 우리가 원하는 형식으로 날짜를 얻을 수 있습니다.
+위의 코드를 실행하면 현재 시간을 밀리 초로 반환하는 `getTime` 함수와 `main` 함수를 볼 수 있습니다. `main` 함수에서는 현재 날짜를 표시하기 위해 `Time.millisToUtc` 함수와 `Time.toYearMonthDay` 함수를 사용합니다.
+
+실행하면 다음과 같은 결과가 나옵니다.
 
 ```Elm
-date : Date
-date =
-    Date.fromTime (Date.now / 1000 / 1000 / 60 / 60 / 24)
+"오늘의 날짜는 (2021, 9, 20)"
 ```
 
-위의 예제에서 `Date.fromTime` 함수는 날짜를 나타내는 `Date` 유형을 반환합니다. 이제 `date` 변수에는 현재 날짜를 나타내는 `Date` 유형이 할당됩니다.
+위의 코드를 변경하여 현재 시간을 더 다양한 방법으로 표현할 수도 있습니다. 예를 들어 `Time.toHourMinuteSecond` 함수를 사용하여 시, 분, 초를 포함한 시간을 알 수 있습니다.
 
-## 딥 다이브
+## 깊이있는 알아보기
 
-Elm에서 날짜를 다루는 깊은 내용을 알고 싶다면, `Time` 모듈을 살펴보는 것이 좋습니다. 이 모듈에는 날짜와 관련된 다양한 기능들이 포함되어 있습니다. 예를 들어, `Time.month` 함수를 사용하면 현재 날짜의 월을 가져올 수 있습니다.
+현재 날짜를 알아내는 방법은 Elm에서 매우 쉽습니다. 이유는 바로 `Time` 모듈을 통해 제공되기 때문입니다. `Time` 모듈은 시간과 날짜를 표현하기 위한 다양한 함수들을 제공합니다. 이를 사용하여 현재 날짜를 표현하는 것 외에도, 지난 날짜 또는 미래 날짜를 계산하는 것도 가능합니다.
 
-```Elm
-import Time exposing (month)
+더 깊이있는 내용을 알고 싶다면 [Elm 공식 문서](https://package.elm-lang.org/packages/elm/time/latest/Time)를 참조하십시오.
 
-currentMonth : Int
-currentMonth =
-    Time.month (Time.millisToPosix (Date.now / 1000 / 1000))
-```
+## 또 다른 참고자료
 
-위의 예제에서 `Time.millisToPosix` 함수를 사용하여 밀리초를 POSIX 시간으로 변환하고, `Time.month` 함수를 사용하여 현재 월을 얻습니다. 또한 `Time` 모듈에는 날짜를 포맷하는 유용한 기능들이 있으므로, 꼭 살펴보시기 바랍니다.
-
-## 또한 보기
-
-- [Elm 공식 문서 - Date 모듈](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Date 모듈 예제 코드](https://gist.github.com/ninjaPixel/da08cca95ff7c9440d50)
+- [Elm 입문서](https://elm-programming.netlify.app/chapter03/03_01.html)
+- [Elm 공식 문서](https://guide.elm-lang.org/)
+- [Elm 한국어 커뮤니티](https://www.facebook.com/groups/ElmKR)

@@ -1,45 +1,53 @@
 ---
 title:    "TypeScript: Komentoriviparametrien lukeminen"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Komentoriviparametrien lukeminen on olennainen osa minkä tahansa TypeScript-sovelluksen kirjoittamista. Se mahdollistaa ohjelman käytön muokkaamisen ilman koodin uudelleenkäännöstä.
+Komentorivin argumenttien lukeminen on tärkeä taito TypeScript-ohjelmoijille. Tämä mahdollistaa käyttäjän antamien parametrien hyödyntämisen ohjelmassa ja tekee siitä interaktiivisemman ja joustavamman.
 
-## Miten
+## Miten tehdä se
 
-Komentoriviparametrien lukeminen voidaan toteuttaa yksinkertaisesti käyttämällä TypeScript-komentoriviparametriä sisäänrakennetulla "process" -moduulilla. Alla on esimerkki koodista ja tulosteesta, jossa luetellaan kaikki annetut komentoriviparametrit.
+Komentorivin argumenttien lukeminen TypeScriptilla on helppoa! Sinun tarvitsee vain seurata näitä yksinkertaisia vaiheita:
+
+1. Luo uusi TypeScript-tiedosto
+2. Lisää komentorivin argumenttien lukemisesta vastaava kirjasto npm:n kautta `import * as arg from 'arg';`
+3. Luodaan argumenttiluettelo määrittelemällä objekti, jonka avaimet ovat argumentit ja arvot ovat kuvaus niistä. Esimerkiksi: `const args = arg({ '--nimi': String, '--ika': Number });`
+4. Voit sitten käyttää argumenttien arvoja ohjelmassa esimerkiksi `args.nimi` ja `args.ika`
+
+Alla on esimerkki TypeScript-koodista, jossa luetaan komentorivin argumentteja ja tulostetaan ne konsoliin:
 
 ```TypeScript
-import process from 'process';
+import * as arg from 'arg'; 
 
-// Tämä funktio ottaa vastaan ​​kaksi komentoriviparametria ja palauttaa niiden summan
-function sum(parameter1: number, parameter2: number) {
-    return parameter1 + parameter2;
-}
+const args = arg({ '--nimi': String, '--ika': Number });
 
-// Tallennetaan komentoriviparametrit muuttujiin
-const num1 = Number(process.argv[2]);
-const num2 = Number(process.argv[3]);
-
-// Tulostetaan summa
-console.log(sum(num1, num2));
-
-// Komentorivi: node index.ts 5 7
-// Tuloste: 12
+console.log(args.nimi); // tulostaa käyttäjän antaman nimen
+console.log(args.ika); // tulostaa käyttäjän antaman iän
 ```
 
-## Syvemmälle
+Ja tässä on mitä tapahtuu, kun suoritat ohjelmaa komentorivillä:
 
-Komentoriviparametrien lukeminen ei rajoitu vain numeroiden lukemiseen, vaan se voi myös olla joustava työkalu käyttäjille antaa muuttujien arvoja ja asetuksia ohjelman suorittamisen yhteydessä. Komentoriviparametreja voidaan käyttää esimerkiksi määrittämään tietokantayhteys, asettamaan kieliasetukset tai antamaan tulostiedoston nimi.
+`$ node tiedoston_nimi.js --nimi Johanna --ika 27`
 
-Olemme jo käyttäneet "process" -moduulia tässä esimerkissä, mutta sen lisäksi TypeScript tarjoaa myös muita vaihtoehtoja komentoriviparametrien käsittelyyn, kuten "yargs" ja "commander" -kirjastot.
+Tulostus:
+
+`Johanna 27`
+
+Ja siinä se on! Komentorivin argumenttien lukeminen TypeScriptilla on nyt helppoa kuin mikä!
+
+## Syvempi sukellus
+
+Kun olet oppinut lukemaan komentorivin argumentteja TypeScriptilla, voit alkaa tehdä monimutkaisempia ohjelmia, joissa otetaan huomioon erilaiset käyttäjän antamat parametrit. Voit myös kokeilla erilaisia argumenttien lukemisen kirjastoja ja löytää ne, jotka sopivat parhaiten tarpeisiisi.
+
+Kokeile myös käyttää argumenttiluettelon määrittelyssä erilaisia arvotyyppejä, kuten Boolean, Array tai Object, riippuen siitä, millaisia tietoja haluat käyttäjän antavan.
 
 ## Katso myös
 
-- [Node.js process.argv dokumentaatio](https://nodejs.org/api/process.html#process_process_argv)
-- [yargs kirjaston dokumentaatio](https://www.npmjs.com/package/yargs)
-- [commander kirjaston dokumentaatio](https://www.npmjs.com/package/commander)
+- [arg-kirjaston dokumentaatio](https://www.npmjs.com/package/arg)
+- [TypeScriptin perusteet](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Komentorivin argumenttien lukeminen muiltakin ohjelmointikieliltä](https://www.digitalocean.com/community/tutorials/about-command-line-arguments-and-flags#other-languages)

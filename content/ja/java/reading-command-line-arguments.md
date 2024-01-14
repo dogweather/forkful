@@ -1,55 +1,49 @@
 ---
-title:    "Java: コンピュータープログラミングの記事のタイトルです：コマンドライン引数の読み取り"
+title:    "Java: 「コマンドライン引数の読み取り」"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜコマンドライン引数を読むのか
+# なぜ
 
-コマンドライン引数は、プログラムに静的な入力を与える方法の一つです。例えば、ファイルパスや設定値をプログラムの実行時に指定することができます。コマンドライン引数を読むことで、プログラムの動作をカスタマイズすることができます。
+コマンドライン引数の読み込みについて学ぶことは、Javaプログラミングで重要なスキルです。それを理解することは、より効率的なコードを書くためや、プログラムの柔軟性を高めるために必要です。
 
-## コマンドライン引数の読み方
+# 使い方
 
-コマンドライン引数を読むには、`main()`メソッドの引数として`String[] args`を宣言します。この `args`配列には、プログラムの実行時に与えられた引数が文字列として格納されます。以下のように、`for`ループを使って引数を一つずつ取得し、処理することができます。
+コマンドライン引数を読み込むには、```args```配列を使用します。最初の要素は、プログラム名を示し、2番目以降の要素はコマンドライン引数が格納されます。例えば、```java ProgramName arg1 arg2```の場合、```args[0]```は"ProgramName"、```args[1]```は"arg1"、```args[2]```は"arg2"となります。以下のコードブロックは、```PrintArgs```というクラスの例です。
 
-```java
-public static void main(String[] args) {
-    for (String arg : args) {
-        System.out.println("引数は「" + arg + "」です。");
+```Java
+public class PrintArgs {
+  public static void main(String[] args) {
+    // 最初の要素（プログラム名）を表示
+    System.out.println("プログラム名: " + args[0]);
+    
+    // コマンドライン引数を全て表示
+    for (int i = 1; i < args.length; i++) {
+      System.out.println("引数" + i + ": " + args[i]);
     }
+  }
 }
 ```
 
-もし引数が指定されなかった場合、`args`配列の長さは0になります。このように、コマンドライン引数の有無をチェックすることもできます。
-
-```java
-if (args.length == 0) {
-    System.out.println("コマンドライン引数がありません。");
-} else {
-    System.out.println("引数の数は" + args.length + "個です。");
-}
-```
-
-実行結果は以下のようになります。
+以下は、上記のコードを実行した際の出力例です。
 
 ```
-> java SampleProgram 引数1 引数2 引数3
-引数の数は3個です。
+プログラム名: java
+引数1: arg1
+引数2: arg2
 ```
 
-## コマンドライン引数についての深堀り
+# 詳細を掘り下げる
 
-コマンドライン引数には、複数のオプションや値を渡すことができます。例えば、`-f`オプションでファイルを指定し、`-v`オプションで詳細なログを出力するようにすることができます。また、引数の順番を変えることでプログラムの挙動を変えることもできます。
+コマンドライン引数は、プログラムの実行時に動的に与えられる値です。これにより、同じプログラムでも異なる引数を与えることで、異なる結果を得ることができます。また、コマンドラインから入力を受け付けることで、ユーザーとの対話的なプログラムを作ることができます。
 
-ただし、コマンドライン引数は静的なものであり、実行時に変更することはできません。動的な入力が必要な場合は、別の方法を検討する必要があります。
+さらに、```args```配列以外にも、```System.getProperty()```メソッドを使用することで、システムプロパティや環境変数を取得することもできます。
 
-## 参考リンク
+# 参考リンク
 
-- [Javaコマンドライン引数の読み方](https://www.javadrive.jp/start/call/index3.html)
-- [コマンドライン引数の利点と欠点](https://eng-entrance.com/command-line-arguments)
-- [Javaのコマンドライン引数を活用する](https://www.sophia-it.com/content/java-console-arguments) 
-
-## みんなでコマンドライン引数を駆使しよう！
-
-コマンドライン引数は、静的なプログラムに動的な要素を加える方法として重要な役割を果たします。ぜひこの機能を活用して、よりカスタマイズ性の高いプログラムを作ってみてください。"See Also"のリンク先も参考にして、コマンドライン引数の応用方法を学んでみてくださいね。
+- [Javaコマンドライン引数 (JavaBeat)](https://www.javabeat.net/java-command-line-args/)
+- [Java I/O - コマンドラインからの入出力 (TutorialsTeacher)](https://www.tutorialsteacher.com/java/cmd-command-prompt-in-java)
+- [Java SystemクラスのgetProperty()メソッドの使い方 (JavaCodeExamples)](https://www.javacodeexamples.com/java-system-getproperty-method-example/1223)

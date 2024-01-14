@@ -1,67 +1,49 @@
 ---
-title:    "Rust: Utilizando expressões regulares"
+title:    "Rust: Usando expressões regulares"
 keywords: ["Rust"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que usar expressões regulares em Rust?
 
-Expressões regulares são uma ferramenta poderosa para manipulação de texto e padrões em programação, e o Rust oferece suporte nativo para elas. Ao usá-las, você pode economizar tempo e esforço na busca e substituição de padrões em strings.
+Se você é programador ou está aprendendo a linguagem Rust, provavelmente já ouviu falar sobre expressões regulares. Mas por que elas são úteis? Bem, as expressões regulares são uma maneira eficiente de procurar e manipular padrões de texto em uma string. Elas são muito poderosas e permitem que você faça buscas complexas em texto de forma rápida e precisa.
 
 ## Como usar expressões regulares em Rust
 
-Para usar expressões regulares em Rust, primeiro importe o módulo `regex`:
+Para usar expressões regulares em seu código Rust, você precisará importar a biblioteca padrão `regex`. Em seguida, é preciso compilar a expressão regular que você deseja utilizar e usá-la em conjunto com o método `is_match` para verificar se ela corresponde ao texto desejado. Aqui está um exemplo:
 
-```
-use regex::Regex;
-```
-
-Em seguida, você pode criar um objeto `Regex` com o padrão que deseja buscar em uma string:
-
-```
-let re = Regex::new(r"Olá ..sto").unwrap();
-```
-
-Você pode então usar métodos como `is_match()` ou `find()` para verificar se a string contém o padrão especificado e obter a posição da primeira correspondência, respectivamente:
-
-```
-let text = "Olá mundo!";
-let is_match = re.is_match(text);
-let first_match = re.find(text);
-```
-
-Aqui está um exemplo mais completo que usa expressões regulares para substituir um padrão em uma string e imprimir o resultado:
-
-```
+```rust
 use regex::Regex;
 
 fn main() {
-    let text = "Meu email é usuário@dominio.com";
-    
-    let re = Regex::new(r"(\w+)@(\w+)\.com").unwrap();
-    
-    let result = re.replace_all(text, r"Email: $1 at $2 dot com");
-    
-    println!("{}", result);
+    let re = Regex::new(r"([a-z]+) ([0-9]+)").unwrap();
+    let text = "Hello 123";
+    if re.is_match(text) {
+        println!("Correspondência encontrada!");
+    } else {
+        println!("Nenhuma correspondência encontrada.");
+    }
 }
 ```
 
-Saída:
-```
-Meu email é Email: usuário at dominio dot com
-```
+Neste exemplo, a expressão regular `([a-z]+) ([0-9]+)` procura por qualquer sequência de letras seguida por um espaço e um número. O método `is_match` retorna `true` se houver uma correspondência e `false` se não houver.
 
-## Profundando nas expressões regulares
+Você também pode usar grupos de captura em expressões regulares em Rust. Eles permitem que você extraia partes específicas do texto correspondente. Por exemplo, no código acima, podemos acessar as partes `Hello` e `123` do texto correspondente e usá-las em nosso código.
 
-As expressões regulares em Rust seguem a sintaxe PCRE (Perl Compatible Regular Expressions), suportando metacaracteres como `.` para representar qualquer caractere, `*` para indicar zero ou mais repetições e `+` para indicar uma ou mais repetições. Você também pode usar grupos de captura e referências a grupos em substituições.
+## Mergulho mais profundo em expressões regulares
 
-Além disso, o Rust oferece suporte a alguns recursos adicionais, como suporte a UTF-8 e a possibilidade de especificar o tamanho máximo do texto que será pesquisado.
+Rust possui uma ótima documentação sobre como usar expressões regulares em seu site oficial. Você pode encontrar mais informações sobre os diferentes padrões e métodos que podem ser usados na biblioteca `regex` em https://docs.rs/regex/1.4.6/regex/.
 
-Para mais informações e exemplos, consulte a documentação oficial de expressões regulares em Rust: https://doc.rust-lang.org/std/regex/
+Além disso, se você deseja se aprofundar ainda mais no assunto, existem muitos recursos online que podem ajudá-lo a entender melhor como utilizar as expressões regulares em seu código Rust. Aqui estão alguns links úteis:
+
+- Tutorial sobre expressões regulares em Rust: https://www.tutorialspoint.com/regex/regex_quick_guide.htm
+- Documentação detalhada sobre a biblioteca `regex`: https://docs.rs/regex/1.4.6/regex/
+- Canal da comunidade Rust no Discord: https://discord.gg/aVES76j
 
 ## Veja também
 
-- [Documentação oficial sobre expressões regulares em Rust](https://doc.rust-lang.org/std/regex/)
-- [Tutorial de expressões regulares em Rust](https://medium.com/@mattiaerre/regular-expressions-in-rust-9b013f0b0668)
-- [Vídeo explicando o uso de expressões regulares em Rust](https://www.youtube.com/watch?v=4tP3UCaJ_fc)
+- [Documentação oficial sobre expressões regulares em Rust](https://www.rust-lang.org/pt-BR/documentation.html#regular-expressions)
+- [Tutorial sobre expressões regulares em Rust](https://www.tutorialspoint.com/regex/regex_quick_guide.htm)
+- [Comunidade Rust no Discord](https://discord.gg/aVES76j)

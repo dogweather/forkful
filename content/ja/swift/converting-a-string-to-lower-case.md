@@ -1,52 +1,32 @@
 ---
-title:    "Swift: 文字列を小文字に変換する"
+title:    "Swift: 小文字への文字列の変換"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-### シーク一覧
-
-こんにちは、Swiftプログラマーの皆さん！今日は、文字列を小文字に変換する方法についてお話ししたいと思います。文字列を変換することは、プログラムの中で非常によく使用されるので、ぜひ覚えておいてください。
-
-## なぜ？
-
-文字列を小文字に変換する理由は、プログラムの中で大文字や小文字を区別せず扱うためです。例えば、ユーザーが大文字で入力した場合でも、プログラムが文字列を小文字に変換することで、正しい処理が行われるようになります。
+# なぜ？
+文字列を小文字に変換する理由を1-2文で説明します。
 
 ## 方法
-
-文字列を小文字に変換するには、`lowercased()`メソッドを使用します。以下のコードでは、"Hello, World!"という文字列を小文字に変換して出力しています。
+「```Swift ...```」コードブロック内にコーディングの例とサンプル出力を示します。
 
 ```Swift
-let myString = "Hello, World!"
-let lowercaseString = myString.lowercased()
-print(lowercaseString)
-
+// 文字列を小文字に変換する方法
+let str = "Hello, World!"
+let lowerStr = str.lowercased()
+print(lowerStr)
 // Output: hello, world!
 ```
 
-また、日本語の文字列でも同様に小文字に変換することができます。
+## 詳細を深く掘り下げる
+文字列を小文字に変換する方法は、単純な操作に思えるかもしれませんが、Swiftではいくつかの方法があります。例えば、```lowercased()```メソッドを使用する方法の他に、```String```クラスの```lowercased(with: NSLocale?)```メソッドを使用する方法もあります。これにより、ロケールに応じた小文字への変換が可能になります。
 
-```Swift
-let myString = "こんにちは、世界！"
-let lowercaseString = myString.lowercased()
-print(lowercaseString)
+## それでは
+「See Also」の見出しで、文字列操作に関するさらに深い理解を得るためのリンクをいくつか共有します。
 
-// Output: こんにちは、世界！
-```
-
-## ディープダイブ
-
-`lowercased()`メソッドは、文字列をすべて小文字に変換するだけでなく、アクセント付き文字を正しく処理したり、日本語の「平仮名」と「片仮名」を正しく変換することができます。
-
-しかし、注意点としては、このメソッドは文字列を変更せず、新しい文字列を返すため、変換後の文字列を変数に代入する必要があります。
-
-## 今後もっと詳しく学びたい方へ
-
-[Swift ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)を参考に、文字列の操作についてもっと詳しく学ぶことができます。また、`lowercased()`メソッド以外にも、文字列を操作するためのさまざまなメソッドが用意されているため、ぜひ調べてみてください。さまざまなメソッドを使いこなすことで、より効率的なプログラムを作ることができるようになるでしょう。
-
-### 関連リンク
-
-- [Swiftドキュメント](https://docs.swift.org/swift-book/)
-- [Swift言語入門 〜基本〜](https://qiita.com/_Daiki_/items/e5a01ab9d20b227f97e2)
-- [【初心者向け】Swiftの基礎まとめ](https://qiita.com/usagiramen/items/f1531fdd4ea42756e597)
+## 他の記事
+- [Swift Programming: Advanced String Manipulation](https://medium.com/@kazuhiro/suift-programming-advanced-string-manipulation-5d6b25a3c618) (英語)
+- [Swiftで文字列の前後の空白を削除する方法](https://www.mitsue.co.jp/knowledge/blog/frontend/201810/02_0000.html) (日本語)
+- [Swiftで文字列の文字数を数える方法](https://dev.classmethod.jp/server-side/swift-string-count/) (日本語)

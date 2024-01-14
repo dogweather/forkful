@@ -1,66 +1,57 @@
 ---
-title:    "Bash: Cambiando a mayúsculas una cadena"
+title:    "Bash: Capitalizar una cadena"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Blogs de programación casual en Bash para lectores españoles
+# ¿Por qué capitalizar una cadena de texto?
 
-## ¿Por qué capitalizar una cadena en Bash?
+Si eres nuevo en la programación con Bash, es posible que te hayas encontrado con la necesidad de capitalizar una cadena de texto en algún momento. Esto puede ser útil para mejorar la legibilidad de tu código o para cumplir con los requisitos de formato de una aplicación. En este artículo, te explicaremos cómo capitalizar una cadena de texto en Bash y te daremos una visión más profunda sobre cómo funciona este proceso.
 
-Capitalizar una cadena de texto es un proceso común en la programación, ya que ayuda a mejorar la legibilidad y organización del código. Al convertir todas las letras de una cadena en mayúsculas, se facilita la identificación de palabras clave y estructuras importantes dentro del código. En Bash, hay varias formas de lograr esto y en este blog, discutiremos cómo hacerlo.
+## Cómo hacerlo
 
-## Cómo capitalizar una cadena en Bash
+En Bash, hay varias formas de capitalizar una cadena de texto. Uno de los métodos más sencillos es utilizar el comando `tr` (traducir), que permite reemplazar un conjunto de caracteres por otro.
 
-Existen diferentes métodos para capitalizar una cadena en Bash, cada uno con sus propias ventajas y desventajas. A continuación se presentan tres ejemplos utilizando distintas técnicas.
+Por ejemplo, para capitalizar la primera letra de una cadena de texto, puedes utilizar el siguiente comando:
 
-### Enfoque utilizando las herramientas internas de Bash
-
-Este enfoque utiliza las herramientas internas de Bash para capitalizar una cadena. Primero, se asigna la cadena a una variable llamada "cadena". Luego, se utiliza el comando "echo" para imprimir la variable y se redirige la salida a un archivo temporal. A continuación, se utiliza el comando "tr" para convertir todas las letras en minúscula y el comando "sed" para convertir la primera letra en mayúscula. Finalmente, se lee el contenido del archivo temporal y se asigna a una nueva variable llamada "cadenaCapitalizada". El resultado final es una cadena en mayúsculas.
-
-```Bash
-cadena="ejemplo de cadena"
-echo "$cadena" > temp.txt
-cadenaCapitalizada=$(cat temp.txt | tr '[:lower:]' '[:upper:]' | sed 's/.*/\u&/')
+```bash
+echo "hola, ¿cómo estás?" | tr '[:lower:]' '[:upper:]'
 ```
 
-El resultado de "echo $cadenaCapitalizada" será "Ejemplo de cadena".
+Este comando tomará la cadena de texto "hola, ¿cómo estás?" y la convierte en "Hola, ¿cómo estás?".
 
-### Enfoque utilizando el comando "tr"
+Otra opción es utilizar el comando `sed` (editor de secuencias) para capitalizar cada palabra en una cadena de texto. Aquí hay un ejemplo:
 
-Este enfoque utiliza solo el comando "tr" para capitalizar la cadena. Se asigna la cadena a una variable y se utiliza el comando "tr" para convertir las letras en minúscula. Luego, se utiliza un patrón de expresión regular para convertir la primera letra en mayúscula. El resultado final se asigna a una nueva variable llamada "cadenaCapitalizada".
-
-```Bash
-cadena="ejemplo de cadena"
-cadenaCapitalizada=$(echo "$cadena" | tr '[:lower:]' '[:upper:]'| sed 's/\b./\u&/g')
+```bash
+echo "hola, ¿cómo estás?" | sed 's/\b\(.\)/\u\1/g'
 ```
 
-El resultado de "echo $cadenaCapitalizada" será "Ejemplo de cadena".
+Este comando tomará la cadena de texto y la convierte en "Hola, ¿Cómo Estás?".
 
-### Enfoque utilizando la función "capitalize" de Bash
+## Profundizando en el tema
 
-Este enfoque utiliza una función llamada "capitalize" que capitaliza cada palabra en una cadena. Primero, se declara la función y se asigna la cadena a una variable. Luego, se llama a la función con la variable como argumento y se asigna el resultado a una nueva variable llamada "cadenaCapitalizada". El resultado final es una cadena con cada palabra en mayúscula.
+Ahora que ya sabes cómo capitalizar una cadena de texto en Bash, puede que te preguntes ¿qué pasa si quisieras capitalizar solo una parte específica de la cadena? Por ejemplo, es posible que solo quieras capitalizar la primera letra de una palabra o solo algunas palabras en particular.
 
-```Bash
-capitalize() {
-    local string=${1,,}
-    echo ${string^}
-}
-cadena="ejemplo de cadena"
-cadenaCapitalizada=$(capitalize "$cadena")
+En esos casos, lo más recomendable es utilizar un bucle `for` dentro de un bucle `while` para iterar sobre cada palabra en la cadena y capitalizar solo las palabras deseadas. Aquí hay un ejemplo de esto:
+
+```bash
+cadena="hola, ¿cómo estás? Bienvenido a Bash"
+
+for palabra in $cadena; do
+    primeraletra=$(echo "${palabra:0:1}" | tr '[:lower:]' '[:upper:]')
+    restopalabra=$(echo "${palabra:1}" | tr '[:upper:]''[:lower:]')
+    nuevapalabra=$primeraletra$restopalabra
+    nueva_cadena+="$nuevapalabra "
+done
+
+echo $nueva_cadena
 ```
 
-El resultado de "echo $cadenaCapitalizada" será "Ejemplo De Cadena".
-
-## Profundizando en la capitalización de cadenas en Bash
-
-Como se puede ver, hay varias formas de capitalizar una cadena en Bash. Además de los ejemplos mencionados anteriormente, existen otras herramientas y técnicas que se pueden utilizar para lograr el mismo resultado. También es importante tener en cuenta que estos métodos pueden variar dependiendo de la versión de Bash que se esté utilizando.
-
-Para profundizar en este tema, te recomendamos revisar la documentación oficial de Bash y experimentar con diferentes enfoques para capitalizar cadenas en tus propios proyectos.
+Este comando tomará la cadena de texto y solo capitalizará la primera letra de cada palabra, dejando el resto de las letras en minúsculas. El resultado sería: "Hola, ¿Cómo Estás? Bienvenido A Bash".
 
 ## Ver también
-
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de Bash para principiantes](https://linuxize.com/post/bash-for-loop/)
-- [Ejemplos de Bash en Codecademy](https://www.codecademy.com/courses/learn-bash/lessons/commands/exercises/echo-i?action=lesson_resume)
+- [Comandos de Bash](https://www.gnu.org/software/bash/)
+- [Guía de Bash para principiantes](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Documentación de Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/)

@@ -1,50 +1,46 @@
 ---
 title:    "Elm: Användning av reguljära uttryck"
 keywords: ["Elm"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Reguljära uttryck är ett kraftfullt verktyg inom programmering, som låter dig söka och manipulera text på ett flexibelt sätt. Genom att använda reguljära uttryck kan du effektivt söka igenom texter, ersätta specifika ord eller utföra andra komplicerade uppgifter. Det är ett viktigt verktyg som alla Elm-programmerare bör känna till.
+Om du programmerar i Elm, är chansen stor att du har stött på strängmanipulering. En vanlig metod för att hantera detta är att använda reguljära uttryck, eller "regular expressions" på engelska. Här ska vi titta på anledningarna till varför det kan vara användbart att ha kunskap om reguljära uttryck och hur du kan använda dem i dina Elm-program.
 
-## Hur man använder reguljära uttryck i Elm
+## Så här gör du
 
-För att använda reguljära uttryck i Elm behöver du importera modulen `Regex` och därefter skapa ett uttryck med hjälp av funktionen `Regex.fromString` som tar in en sträng som beskriver det mönster du vill matcha. Sedan kan du använda ditt skapade uttryck med hjälp av funktioner som `Regex.find` och `Regex.replace`, och utföra olika operationer på texten baserat på det angivna mönstret.
-
-Här är ett exempel på hur du kan använda reguljära uttryck för att hitta alla förekomster av siffror i en sträng:
+Först och främst är det viktigt att veta vad reguljära uttryck är. De är en syntax för att söka och matcha mönster i strängar. I Elm kan du använda funktionen `Regex.find` för att söka igenom en sträng med hjälp av ett reguljärt uttryck. Här är ett exempel där vi söker efter ett exakt matchat ord:
 
 ```Elm
 import Regex exposing (..)
 
-text = "Jag är 25 år gammal"
+find "elit" "Hej, detta är en text om Elite Hotel."
+--> Just {match = "elit", index = 27, number = 0}
 
-uttryck = Regex.fromString "\\d+"
-
-Regex.find uttryck text
---> Just [ { match = "25", index = 8, number = 0 } ]
 ```
 
-Som du kan se kommer funktionen `Regex.find` att returnera en lista med alla matchningar som följer det angivna mönstret, och var i strängen dessa matchningar förekommer. Du kan sedan använda dessa matchningar för att ersätta eller manipulera texten på olika sätt.
+Om du vill ha mer flexibilitet kan du använda teckenklasser i ditt reguljära uttryck. De används för att matcha flera möjligheter, till exempel alla bokstäver eller siffror. Här är ett exempel där vi söker efter både stora och små bokstäver:
 
-## Djupdykning i reguljära uttryck
+```Elm
+import Regex exposing (..)
 
-Reguljära uttryck kan vara komplicerade och ta lite tid att lära sig, men de kan vara väldigt användbara när du väl behärskar dem. Det finns många olika uttryck du kan använda för att matcha specifika mönster, till exempel:
+find "[A-Za-z]" "Hello, World!"
+--> Just {match = "H", index = 0, number = 0}
+```
 
-- `.*` för att matcha alla tecken
-- `\\d` för att matcha siffror
-- `\\w` för att matcha bokstäver, siffror och understreck
-- `\\s` för att matcha blanksteg
-- `[]` för att matcha en grupp av tecken
-- `+` för att matcha en eller flera förekomster av det angivna mönstret
+## Djupdykning
 
-Det finns också möjlighet att använda uttryck för att fånga vissa delar av texten som matchas, vilket kan vara användbart om du vill använda denna information för att utföra en viss operation på texten.
+Reguljära uttryck kan verka förvirrande och överväldigande till en början, men när du blir bekväm med dem kommer du upptäcka hur kraftfulla de är för att manipulera strängar. Här är några tips för att hjälpa dig på vägen:
 
-För att lära dig mer om reguljära uttryck kan du kolla på Elm:s dokumentation för modulen `Regex` eller söka efter tutorials och exempel online.
+- `Regex.attempt` kan användas för att hantera felaktiga reguljära uttryck. Det returnerar `Result` vilket är användbart för felhantering.
+- `Regex.replace` kan användas för att ersätta delar av en sträng som matchar ett reguljärt uttryck. Detta är särskilt användbart när du vill filtrera eller formatera en sträng.
+- Se till att lära dig vanliga teckenklasser, specialtecken och kvantifierare för att kunna bygga mer avancerade reguljära uttryck.
 
-## Se också
+## Se även
 
-- [Elm:s officiella dokumentation för modulen Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Reguljära uttryck för nybörjare](https://en.wikipedia.org/wiki/Regular_expression#Basic_concepts)
-- [Reguljära uttryck i praktiken](https://www.regular-expressions.info/)
+- [Elm Regex Package](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Learn Regex The Hard Way (Engelska)](https://regex.learncodethehardway.org/)

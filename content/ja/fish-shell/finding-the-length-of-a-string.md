@@ -1,41 +1,62 @@
 ---
-title:    "Fish Shell: 「文字列の長さを求める」"
+title:    "Fish Shell: 文字列の長さを見つける"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-あなたが何らかのプログラミング言語を学ぶとき、一般的には変数やリストなど、基本的な構文とデータ型について学ぶことが必要です。しかし、コードを書く上で文字列を扱うこともとても重要です。文字列には特定の操作を行う際に長さを知る必要があるため、文字列の長さを取得する方法を学ぶことはとても役に立ちます。
+文字列の長さを調べる理由は、プログラミングにおいて非常に重要なスキルであるためです。文字列の長さを正確に知ることで、コードを効率的かつ正確に書くことができます。
 
-## 使い方
+## 方法
 
-まずは、実際にFish Shellで文字列の長さを取得する方法を見ていきましょう。以下のコード例を参考にしてください。
+文字列の長さを調べるには、Fish Shellの組み込みの `string length` コマンドを使用します。以下のコマンドを実行すると、指定した文字列の長さが表示されます。
 
-```Fish Shell
-set string 'こんにちは'
-echo (string-length $string)
+```fish shell
+string length "Hello, world!"
 ```
 
-このコードを実行すると、コマンドラインに"5"と表示されます。つまり、文字列"こんにちは"の長さは5文字であることが分かります。
+出力：
 
-文字列の長さを取得するために使用しているのは、Fish Shellの組み込み関数の一つである"string-length"です。引数には取得したい文字列を指定します。上記の例では、変数"$string"に文字列"こんにちは"を代入していますが、直接文字列を指定しても問題ありません。また、スペースや特殊文字も文字としてカウントされます。
+```fish shell
+13
+```
 
-このように、Fish Shellでは簡単に文字列の長さを取得することができます。
+もちろん、変数に代入して使用することもできます。
+
+```fish shell
+set text "This is a sample text."
+string length $text
+```
+
+出力：
+
+```fish shell
+23
+```
+
+また、`string length` コマンドのオプションを使用することで、指定した文字列の長さをバイト単位ではなく文字単位でカウントすることもできます。詳細については、`man string` コマンドを参照してください。
 
 ## ディープダイブ
 
-文字列の長さを取得する方法をさらに詳しく知りたい方に向けて、以下では"string-length"関数のより深い情報をお伝えします。
+`string length` コマンドは、文字列の長さを調べるだけでなく、その他の文字列操作にも使用することができます。例えば、 `string length` コマンドを Pipelinesと組み合わせることで、特定の文字数を超える文字列をフィルタリングすることができます。
 
-まず、"string-length"関数はバイト数で長さを取得します。そのため、英数字だけで構成される文字列の場合は文字数とバイト数が一致しますが、日本語や中国語などマルチバイト文字を含む場合は異なる結果が返される場合があります。その際は、"string-bytes"関数を使用することでバイト数を取得することができます。
+```fish shell
+ls -1 | grep txt | string length | grep -v 10 # 「txt」が含まれるファイル名を除外
+```
 
-また、"string-length"関数は文字列の長さを取得するだけで、文字列を変更することはありません。そのため、文字列を別の変数に代入したり、文字列を操作する際には新しい変数を作成する必要があります。
+このように、`string length` コマンドは文字列の長さを調べるだけでなく、より複雑なタスクにも活用することができます。
 
-最後に、Fish Shellでは文字列の長さだけでなく、文字列内の特定の文字の個数を取得する関数も用意されています。その中でも、"string-count"関数は指定した文字の個数を返すため、文字列内の特定の文字の出現頻度を知るのに便利です。
+## もっと詳しく知りたい方へ
 
-## その他のリンク
+- [Fish Shellのガイド](https://fishshell.com/docs/current/index.html)
+- [Fish Shellの組み込みコマンド](https://fishshell.com/docs/current/cmds.html)
+- [Manコマンドの使い方](https://qiita.com/masaru/items/3ae1f9335bf2203b5953)
 
-- [Fish Shellの組み込み関数 - 公式ドキュメント (英語)](https://fishshell.com/docs/3.0/cmds.html#string-length)
-- [Fish Shellのチートシート - ASCII.jp (日本語)](https://ascii.jp/elem/000/000/365/365034/)
-- [String Length Counter - Online Tool (英語)](https://www.lettercount.com/)
+## 関連リンク
+
+- [Fish Shell公式サイト](https://fishshell.com/)
+- [Fish ShellのGitHubリポジトリ](https://github.com/fish-shell/fish-shell)
+- [Fish Shellコミュニティ](https://gitter.im/fish-shell/fish-shell)

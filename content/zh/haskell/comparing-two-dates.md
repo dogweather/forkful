@@ -1,74 +1,45 @@
 ---
 title:    "Haskell: 比较两个日期"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Markdown: 
+# 为什么要比较日期？
+日期是计算机程序中经常用到的数据类型。比较两个日期可以帮助我们在编程时更轻松地处理时间和日期相关的任务，例如计算两个日期之间的时间差或者检查一个日期是否在另一个日期的范围内。
 
-# 为什么比较两个日期
+## 如何比较日期
+在Haskell中，我们可以使用标准库中的 `Data.Time` 模块来处理日期。首先，我们需要导入这个模块：
+```Haskell
+import Data.Time
+```
+比较日期的核心函数是 `diffDays`，它可以计算两个日期之间相差的天数。例如，我们想要比较今天和明天的日期：
+```Haskell
+let today = utctDay $ getCurrentTime
+let tomorrow = UTCTime (addDays 1 $ utctDay today) (secondsToDiffTime 0)
+let diff = diffDays tomorrow today
+```
+`utctDay` 函数可以从 `getCurrentTime` 函数的返回值中提取出日期部分。然后，我们使用 `addDays` 函数和 `secondsToDiffTime` 函数来创建明天的日期。最后，我们将两个日期传递给 `diffDays` 函数，得到它们之间相差的天数。
 
-比较两个日期是在编程中常见的任务，它可以帮助我们确定哪个日期更早或更晚。通过比较，我们可以对日期进行排序、过滤或计算时间间隔。如果你正在学习 Haskell 编程，掌握比较两个日期的方法将是非常有用的。
-
-## 如何
-
-比较两个日期在 Haskell 中有几种不同的方法，我们将在本节中介绍其中的两种：使用 Data.Time 和使用 Data.Dates。
-
-首先，我们需要导入相应的模块：
+想要判断一个日期是否在另一个日期的范围内，我们可以使用 `withinDays` 函数。它接受三个参数：待检查的日期、起始日期和结束日期。如果待检查的日期在起始日期和结束日期之间，则返回 `True`，否则返回 `False`。
 
 ```Haskell
-import Data.Time -- 使用 Data.Time 模块
-import Data.Dates -- 使用 Data.Dates 模块
+withinDays :: Day -> Day -> Day -> Bool
+withinDays = isBetweenInclusive
+
+today `withinDays` (addDays 3 today) (addDays 7 today) -- 返回 True
 ```
+在这个例子中，我们将 `withinDays` 函数和 `addDays` 函数一起使用来检查今天是否在未来一周内。
 
-### 使用 Data.Time
+## 深入了解比较日期
+Haskell中的日期类型是 `Day`，它实际上是一个整数，用于表示自公元0年1月1日以来经过的天数。这种表示方法的好处是它是唯一的、不可变的和便于比较的。因此，我们可以使用普通的数学运算符来处理日期。
 
-Data.Time 模块提供了一些用于处理日期和时间的函数，包括比较两个日期的函数。我们可以使用 `compare` 函数将两个日期进行比较，它返回一个 `Ordering` 类型的值，表示第一个日期在第二个日期之前、之后还是相同。
+一个常见的挑战是如何比较带有时区信息的日期。例如，我们想比较两个不同时区的时间戳。在这种情况下，我们可以使用 `UTCTime` 数据类型，它是由日期加上一个时间差构成的。使用 `utctDayTime` 函数，我们可以从 `UTCTime` 类型获取日期和时间。比较 `UTCTime` 类型的值可以使用 `compare` 函数。
 
-让我们来看一个例子，比较两个日期的年份：
+另一个挑战是如何比较日期和时间。在这种情况下，我们可以使用 `diffUTCTime` 函数来计算两个时间戳之间相差的秒数，然后使用 `diffTimeOfDay` 函数来获取时间部分。
 
-```Haskell
-let date1 = fromGregorian 2020 10 10
-let date2 = fromGregorian 2019 11 11
-compare date1 date2
-```
-
-输出将是 `GT`，表示 `date1` 在 `date2` 之后。
-
-### 使用 Data.Dates
-
-Data.Dates 模块也提供了一些用于日期和时间处理的函数，其中包括 `compareDates` 函数。这个函数将两个日期作为参数，并返回一个 `Maybe Ordering` 类型的值。
-
-让我们来看一个例子，比较两个日期的月份：
-
-```Haskell
-let date1 = Date 2020 Oct 10
-let date2 = Date 2020 Nov 11
-compareDates date1 date2
-```
-
-输出将是 `Just LT`，表示 `date1` 在 `date2` 之前。
-
-## 深度挖掘
-
-比较两个日期涉及到对两个日期进行一系列的判断，如年份、月份、日期、小时、分钟和秒钟。在 Haskell 中，我们可以使用 `diffDays` 和 `diffTimeOfDay` 函数来计算两个日期之间的天数和时间差。
-
-让我们来看一个例子，计算两个日期之间的天数差：
-
-```Haskell
-let date1 = fromGregorian 2020 10 10
-let date2 = fromGregorian 2019 11 11
-diffDays date1 date2
-```
-
-输出将是 `-334`，表示 `date1` 比 `date2` 慢了 334 天。
-
-## 参考资料
-
-- [Haskell Data.Time 模块文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskell Data.Dates 模块文档](https://hackage.haskell.org/package/dates/docs/Data-Dates.html)
-
-# 参见
-
-- [Haskell 官方文档](https://www.haskell.org/documentation/)
+## 查看也可
+- [Haskell日期文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [带时区信息的日期比较](https://stackoverflow.com/questions/3836743/comparing-utc-times-with-different-time-zones-in-haskell)
+- [日期和时间的比较](https://stackoverflow.com/questions/18335137/compare-date-and-time-in-haskell)

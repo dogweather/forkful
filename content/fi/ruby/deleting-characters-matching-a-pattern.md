@@ -1,45 +1,33 @@
 ---
-title:    "Ruby: Kaavion mukaisen merkkijoukon poistaminen"
+title:    "Ruby: Palamisen vastaisten merkkien poistaminen"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Se voi olla hyödyllistä, kun käsitellään suuria määriä dataa, johon halutaan tehdä muutoksia tietyllä tavalla.
+Miksi haluaisit poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä, jos esimerkiksi haluat puhdistaa käyttäjän syöttämissä tiedoissa olevat turhat merkinnät tai haluat suodattaa haluttuja merkkejä pois tekstiriviltä.
 
-## Kuinka tehdä
+## Miten
 
-```Ruby
-# Esimerkki koodinpätkä
-
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-numbers.each do |number|
-  puts number if number.odd? # Tulostaa vain parittomat numerot
-end
-```
-
-Esimerkkikoodinpätkässä luomme taulukon numeroista yhdestä kymmeneen ja suoritamme sen läpi käyttäen `each` metodia. Tämän jälkeen tulostamme vain ne numerot, jotka ovat parittomia. Tätä samaa konseptia voi soveltaa myös poistamiseen, kun halutaan poistaa tiettyjä merkkejä, jotka vastaavat haluttua kaavaa.
+Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa Rubyssa käyttämällä `gsub`-metodia, joka korvaa liittymäkohtaisesti kaikki halutut merkit halutuilla merkeillä. Tämän voi tehdä seuraavalla tavalla:
 
 ```Ruby
-# Merkkijonon merkkien poisto
-string = "Hei, tässä on 123 tekstiä 456!"
-
-clean_string = string.gsub(/[0-9]/, '') # Poistaa kaikki numerot merkkijonosta
-
-puts clean_string # Tulostaa "Hei, tässä on tekstiä !"
+string = "Tervetuloa Rubyyn!"
+new_string = string.gsub(/[aeiou]/, "")
+puts new_string # Trvl Rbyyn!
 ```
 
-Tässä esimerkissä käytämme `gsub` metodia poistaaksemme kaikki merkit, jotka vastaavat numerokaavaa (`[0-9]`) annetusta merkkijonosta. Lopputuloksena saamme puhtaamman merkkijonon ilman numeroita.
+Tässä esimerkissä kaikki vokaalit korvataan tyhjällä merkkijonolla, jolloin tuloksena olevassa uudessa merkkijonossa ei ole enää vokaaleita.
 
-## Syvempi sukellus
+## Syvällisempi sukellus
 
-Tämäntyyppinen toiminto on hyödyllinen esimerkiksi kun käsitellään tekstitiedostoja, joissa halutaan poistaa tietyt merkit ennen muiden toimintojen suorittamista. Samalla tavalla voi myös käsitellä tietokannan tietojen muokkaamista, jos halutaan tehdä muutoksia tiettyihin merkkeihin ennen niiden tallentamista.
+`gsub`-metodin ensimmäinen argumentti on regex-kuvio, joka määrittää, mitkä merkit haluat poistaa. Voit käyttää tätä hyväksesi tekemällä monimutkaisempia kaavoja, kuten poistamalla vain tietyn pituiset merkkijonot tai tiettyjen merkkien yhdistelmät. Voit myös käyttää `gsub!`-metodia, joka muuttaa alkuperäistä merkkijonoa sen sijaan, että palauttaisi uuden merkkijonon.
 
 ## Katso myös
 
-- [String#gsub - Ruby Dokumentaatio](https://ruby-doc.org/core-2.6.5/String.html#method-i-gsub)
-- [String#delete - Ruby Dokumentaatio](https://ruby-doc.org/core-2.6.5/String.html#method-i-delete)
-- [Ruby Regular Expressions - Beyond the Basics](https://code.tutsplus.com/tutorials/ruby-regular-expressions-beyond-the-basics--cms-21933)
+- [RegExr](https://regexr.com/) - Verkkosivusto, joka auttaa sinua luomaan ja testaamaan regex-kaavoja.
+- [Ruby Regex -opas](https://www.rubyguides.com/2015/06/ruby-regex/?fbclid=IwAR2_ylrq76ACyDwIVsMwL3y-Dg6E-V6_Fa85w8umzOPV0Q6uoh7sql5UcGs) - Kattava opas regexien käyttämiseen Rubyn kanssa.
+- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub) - Lisätietoa `gsub`-metodista ja sen eri vaihtoehdoista.

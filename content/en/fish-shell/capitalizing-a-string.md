@@ -1,49 +1,56 @@
 ---
 title:    "Fish Shell recipe: Capitalizing a string"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Capitalizing a string may seem like a simple task, but it can be important for data consistency and presentation purposes. In Fish Shell programming, it is a commonly used operation to ensure that string data is formatted correctly.
+Have you ever needed to capitalize a string in your Fish Shell programming? Perhaps you want to make the first letter of a name or sentence uppercase, or maybe you need to follow strict capitalization rules for a project. Whatever the reason, using Fish Shell's built-in function can quickly and easily transform your text.
 
-## How To
-
-To capitalize a string in Fish Shell, we will be using the `sed` command and regular expressions. `sed` stands for "stream editor" and is a powerful tool for manipulating text. With the use of regular expressions, we can specify patterns to search for and replace in a given string.
-
-Let's take a look at a basic example of capitalizing a string. In this case, we will capitalize the first letter of each word in the string "hello world".
+## How To 
+We'll start by creating a simple string variable with the text we want to capitalize:
 
 ```
-Fish Shell:
-echo "hello world" | sed -e "s/\b\(.\)/\u\1/g"
+fish
+set my_string "hello world"
 ```
+Next, we'll use the `string capitalize` function to make the first letter of our string uppercase:
 
-The output of this code would be "Hello World". Let's break down the code to understand what is happening.
+```
+fish
+set my_string (string capitalize $my_string)
+```
+Let's see the result by printing our variable to the terminal:
 
-- `echo "hello world"` prints the string "hello world" to the terminal.
-- `|` is referred to as a pipe and involves sending the output of the previous command as the input to the next command.
-- `sed` is the command we are using for finding and replacing text.
-- `-e` specifies the command that we want to execute.
-- `"s/\b\(.\)/\u\1/g"` is the regular expression that we will use for capitalization.
-    - `s` stands for "substitute" and indicates that we want to replace something.
-    - `\b` matches the beginning of a word.
-    - `\(.\)` captures the first letter of each word.
-    - `\u` specifies that we want to capitalize the first letter.
-    - `\1` refers to the first captured group.
-    - `g` stands for "global" and ensures that all instances of the pattern are replaced.
+```
+fish
+echo $my_string
+Hello world
+```
+As you can see, our string now starts with a capital "H" instead of a lowercase "h". But what if we want to capitalize every word in our string? We can use a combination of the `string capitalize` and `string join` functions:
 
-This example only covers capitalizing the first letter of each word, but you can adjust the regular expression to suit your needs. For example, if you want to capitalize the entire string, you can use `sed -e "s/\(.*\)/\u\1/g"`.
+```
+fish
+set my_string "this is a sentence"
+set words (string split " " $my_string)
+set capitalized_words (string capitalize $words)
+set capitalized_string (string join " " $capitalized_words)
+echo $capitalized_string
+This Is A Sentence
+```
+In this example, we split our string into individual words, capitalized each word, and then joined them back together to create a new string with all words capitalized.
 
-## Deep Dive
+## Deep Dive 
+The `string capitalize` function uses the `strtoupper()` C function to capitalize the first character of a string. However, this function only works for ASCII characters, so it may not work as expected for non-English strings. In these cases, it's best to use a third-party library like `capitalize` or `string.macro` to handle Unicode characters.
 
-For a deeper understanding of the `sed` command and regular expressions, check out the official documentation. Additionally, there are plenty of online resources and tutorials available for mastering regular expressions.
+It's also worth noting that the `string capitalize` function will not change any characters other than the first one to uppercase. So if your string includes numbers, symbols, or already capitalized words, they will remain unchanged.
 
-Using the `sed` command for capitalizing strings is just one application of regular expressions in Fish Shell programming. Practicing and experimenting with different patterns and commands can help you become more proficient in manipulating text and data in your code.
+## See Also 
+- [Fish Shell documentation on string manipulation](https://fishshell.com/docs/current/commands.html#string-manipulation)
+- [Fish Shell tutorial on strings and variables](https://fishshell.com/docs/current/tutorial.html#tutorial-string-variables)
+- [GNU Fish reference manual for more advanced string techniques](https://fishshell.com/docs/current/index.html#Reference-manual)
 
-## See Also
-
-- [Official `sed` documentation](https://www.gnu.org/savannah-checkouts/gnu/sed/manual/sed.html)
-- [Regular Expression tutorial](https://regexone.com/)
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
+Thank you for reading! Happy coding with Fish Shell!

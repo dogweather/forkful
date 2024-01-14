@@ -1,57 +1,42 @@
 ---
-title:    "TypeScript: Att läsa en textfil"
+title:    "TypeScript: Läsning av en textfil"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Innan vi går in på hur man läser en textfil med TypeScript, är det viktigt att förstå varför det kan vara en användbar kunskap att ha. Att kunna läsa och bearbeta textfiler är en grundläggande förmåga inom programmering, och det kan vara till nytta i många olika situationer. Till exempel kan det vara användbart när man behöver hantera stora mängder data eller vill skapa en visualisering baserad på en textfil.
+Att läsa en textfil är en grundläggande funktion inom programmering som är användbar i många olika sammanhang. Det kan vara till hjälp när man vill läsa data från en extern källa, bearbeta information eller helt enkelt för att läsa innehållet i en textfil. I denna bloggpost kommer vi att gå igenom hur man läser en textfil med hjälp av TypeScript.
 
-##Så här gör du
+## Så här gör du
 
-För att läsa en textfil med TypeScript behöver du först och främst skapa en instans av en File Reader. Detta görs genom att definiera en variabel av typen FileReader och sedan kalla på konstruktorn för att skapa en ny instans av klassen.
-
-```TypeScript
-let reader: FileReader = new FileReader();
-```
-
-Sedan behöver du ange vilken textfil du vill läsa genom att använda metoden `readAsText()`. Denna metod tar emot två parametrar - filen som ska läsas och encoding-typen som används. I detta exempel använder vi encoding-typen "UTF-8".
+För att läsa in en textfil med TypeScript behöver vi använda oss av "fs" modulen som tillhandahåller funktioner för att arbeta med filsystemet. Vi börjar genom att importera "fs" modulen och öppna upp vår textfil för läsning med hjälp av "fs.readFileSync()" funktionen. Därefter behöver vi konvertera den binära datan till en sträng och spara den i en variabel. Här är ett exempel på hur koden kan se ut:
 
 ```TypeScript
-reader.readAsText(file, "UTF-8");
+import * as fs from 'fs';
+
+let data = fs.readFileSync('test.txt');
+let text = data.toString();
+
+console.log(text);
 ```
 
-Nästa steg är att definiera en callback-funktion som kommer att anropas när textfilen har lästs in helt. Detta gör vi genom att använda eventet `onload`, och sedan använda `reader.result` för att få tillgång till den inlästa texten. I exemplet nedan visar vi hur man skriver ut den inlästa texten i konsolen.
+I detta exempel öppnar vi filen "test.txt" och läser in dess innehåll, konverterar det till en sträng och sparar det i variabeln "text". Vi använder sedan "console.log()" för att skriva ut innehållet i konsolen.
 
-```TypeScript
-reader.onload = (event) => {
-  console.log(reader.result);
-}
-```
+För att köra koden ovan behöver vi först installera TypeScript och fs modulen. Sedan kan vi kompilera vår TypeScript fil till en JavaScript fil med hjälp av "tsc" kommandot och sedan köra den med hjälp av "node" kommandot. 
 
-Slutligen behöver vi lägga till en try/catch-block för att hantera eventuella fel som kan uppstå under läsningen av textfilen. Om läsningen är framgångsrik kommer `reader.result` att innehålla hela textfilens innehåll.
+## Djupdykning
 
-```TypeScript
-try {
-  let file: File = // Hämta textfilen från en input-element eller server
-  reader.readAsText(file, "UTF-8");
-} catch(e) {
-  console.log("Det gick inte att läsa textfilen: " + e.message);
-}
-```
+När vi läser in en textfil med TypeScript, är det viktigt att förstå att vi inte bara läser in texten utan också alla specialtecken såsom radbrytningar och blanksteg. Detta är viktigt att ha i åtanke när vi bearbetar datan eller utför några operationer på den.
 
-##Djupdykning
+En annan viktig aspekt är att välja rätt filkodning när man läser in en textfil. Om man vet vilken filkodning filen har, bör man specificera det i läsningen av filen med hjälp av "fs.readFileSync()" funktionen. Annars kommer standardkodningen att användas som kan orsaka problem om filen har en annan kodning.
 
-Att läsa en textfil med TypeScript kan verka enkelt, men det finns faktiskt ett antal saker som är viktiga att hålla koll på. En av de vanligaste hindren är att textfiler kan ha olika encoding-typer, och det är därför viktigt att välja rätt encoding-typ när man läser en fil. Annars riskerar man att få felaktig eller korrupt data.
+## Se även
 
-Det finns också flera olika sätt att läsa en textfil på, beroende på vilken typ av innehåll som ska behandlas. Man kan till exempel använda metoden `readAsBinaryString()` om man läser en binär fil, eller `readAsDataURL()` om man vill läsa en fil som ska användas för att skapa en data-URL.
+Här är några användbara resurser för att lära sig mer om hur man läser en textfil med TypeScript:
 
-En annan viktig aspekt är att hantera stora textfiler. Om filen du försöker läsa är mycket stor kan det leda till minnesproblem och programmet kan krascha. I dessa fall kan det vara användbart att använda sig av FileReaderSync-objektet, vilket möjliggör synkron läsning istället för asynkron läsning.
-
-##Se också
-
-- [FileReader API reference](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) (engelska)
-- [Textfilens encoding-specifikationer](https://en.wikipedia.org/wiki/Character_encoding) (engelska)
-- [En fullständig guide för att läsa stora textfiler i JavaScript](https://stackabuse.com/reading-a-file-line-by-line-in-node-js/) (engelska)
+- [Official TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Node.js fs Module](https://nodejs.org/api/fs.html)
+- [Reading Files using TypeScript](https://dev.to/edemagbenyo/reading-files-using-typescript-2ohc)

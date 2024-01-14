@@ -1,48 +1,40 @@
 ---
 title:    "PHP: Imprimindo saída de depuração"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-### Por Que
+# Por que imprimir saída de debug?
 
-Você pode se perguntar, por que é importante imprimir a saída de depuração em seu código PHP? Bem, a resposta é simples: a saída de depuração vai lhe ajudar a entender como seu código está funcionando e a corrigir quaisquer erros ou problemas que possam surgir durante o processo de desenvolvimento.
+Imprimir saída de debug é uma prática comum em programação PHP. Isso permite que os desenvolvedores examinem o funcionamento interno de seu código, encontrando e corrigindo possíveis erros e problemas. Além disso, ao imprimir informações de depuração, os desenvolvedores podem entender melhor como seu código está funcionando e tomar decisões mais informadas sobre possíveis melhorias.
 
-### Como Fazer
+## Como fazer
 
-Para imprimir a saída de depuração em seu código PHP, basta utilizar a função `var_dump()` seguida da variável que você deseja imprimir. Por exemplo:
+Para imprimir saída de debug em PHP, você pode usar a função `print_r()` ou `var_dump()`. Ambas as funções exibirão informações sobre uma ou mais variáveis ​​na tela. Veja um exemplo abaixo:
 
-```
-PHP // Exemplo de código
-
-$nome = "Maria";
+```PHP
+<?php
+$nome = "João";
+print_r($nome);
+// Saída: João
 var_dump($nome);
+// Saída: string(4) "João"
+?>
 ```
 
-A saída dessa função será `string(5) "Maria"`, o que significa que a variável `$nome` é uma string com 5 caracteres de comprimento.
+Além disso, também é possível usar a função `echo` para imprimir informações de debug. No entanto, é importante ter em mente que a função `echo` só pode imprimir uma string simples, enquanto `print_r()` e `var_dump()` podem imprimir qualquer tipo de dados, incluindo arrays e objetos.
 
-Outra maneira de imprimir a saída de depuração é utilizando a função `print_r()`, que exibe informações sobre a estrutura da variável. Por exemplo:
+## Mergulho profundo
 
-```
-PHP // Exemplo de código
+Existem várias opções e parâmetros que podem ser usados ​​para personalizar a saída de debug em PHP. Por exemplo, você pode usar o parâmetro `die` com `print_r()` ou `var_dump()` para interromper a execução do código e ver a saída em um ponto específico do seu código. Além disso, você também pode formatar a saída de acordo com suas necessidades, definindo parâmetros adicionais nas funções.
 
-$idades = array(22, 30, 18);
-print_r($idades);
-```
+Outra ferramenta útil para imprimir saída de debug é o Xdebug, um depurador para PHP que permite inspecionar valores de variáveis, rastrear a execução do código e encontrar problemas de desempenho. Para usá-lo, você precisará instalá-lo e configurá-lo corretamente em seu ambiente de desenvolvimento.
 
-A saída dessa função será `Array ( [0] => 22 [1] => 30 [2] => 18 )`, mostrando que a variável `$idades` é um array com 3 elementos.
+# Veja também
 
-### Mergulho Profundo
-
-Além das funções `var_dump()` e `print_r()`, existem outras maneiras de imprimir a saída de depuração em PHP, como os comandos `debug_zval_dump()` e `debug_print_backtrace()`, que podem ser úteis em situações específicas de depuração. Também é possível personalizar o formato e a exibição da saída de depuração através do uso de argumentos nessas funções.
-
-É importante lembrar que a saída de depuração é uma ferramenta valiosa para identificar e corrigir erros em seu código, mas deve ser usada com moderação, pois pode comprometer a segurança e o desempenho de sua aplicação se utilizada em produção.
-
-### Veja Também
-
-Aqui estão alguns recursos úteis para aprender mais sobre a impressão de saída de depuração em PHP:
-
-- [Documentação oficial do PHP sobre a função var_dump()](https://www.php.net/manual/pt_BR/function.var-dump.php)
-- [Tutorial sobre como usar a saída de depuração em PHP](https://www.tutorialspoint.com/debugging-in-php)
-- [Vídeo explicativo sobre as funções de depuração em PHP](https://www.youtube.com/watch?v=M2fLHbWxnHE)
+- [Documentação do PHP sobre print_r()](https://www.php.net/manual/pt_BR/function.print-r.php)
+- [Documentação do PHP sobre var_dump()](https://www.php.net/manual/pt_BR/function.var-dump.php)
+- [Documentação do PHP sobre echo](https://www.php.net/manual/pt_BR/function.echo.php)
+- [Site oficial do Xdebug](https://xdebug.org/)

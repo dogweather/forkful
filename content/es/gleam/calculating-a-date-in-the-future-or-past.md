@@ -1,41 +1,44 @@
 ---
 title:    "Gleam: Calculando una fecha en el futuro o pasado"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Calcular fechas en el futuro o en el pasado puede ser útil para planificar tareas, hacer seguimiento de eventos o simplemente para tener una idea de cuándo ocurrirá algo importante.
+Calcular una fecha en el futuro o pasado puede ser una tarea útil en muchas aplicaciones. Puede ayudar a planificar eventos, recordar fechas importantes o incluso automatizar tareas.
 
 ## Cómo hacerlo
-
-Para calcular una fecha en el futuro o en el pasado en Gleam, debes utilizar la función `Date.add()`. Esta función acepta dos argumentos: una fecha y un número entero que representa la cantidad de días a añadir o restar. A continuación, se muestra un ejemplo de cómo usar esta función para calcular una fecha en el futuro:
-
-```Gleam
-let fecha_origen = Date.from_gregorian(2021, 10, 15)
-let fecha_calculada = Date.add(fecha_origen, 7)
-// fecha_calculada = 2021-10-22
-```
-
-En este ejemplo, se creó una variable `fecha_origen` con la fecha del 15 de octubre de 2021. Luego, utilizando la función `Date.from_gregorian()`, se convierte esta fecha al formato que utiliza Gleam. Finalmente, se llama a la función `Date.add()` para añadir 7 días a la fecha original, lo que resulta en la fecha del 22 de octubre de 2021.
-
-Para calcular una fecha en el pasado, simplemente debes restar la cantidad de días que desees en lugar de sumarlos. En el siguiente ejemplo, se calcula una fecha 2 meses en el pasado:
+Para calcular una fecha en el futuro o pasado en Gleam, utilizamos la función `DateTime.add`. Esta función acepta un valor numérico, que representa la cantidad de días a añadir o restar, y una fecha base. Veamos un ejemplo:
 
 ```Gleam
-let fecha_origen = Date.from_gregorian(2021, 10, 15)
-let fecha_calculada = Date.add(fecha_origen, -60)
-// fecha_calculada = 2021-08-15
+import gleam/datetime
+
+let fecha = datetime.new(2021, 9, 12) //12 de Septiembre de 2021
+let fecha_futura = datetime.add(fecha, 7) //7 días en el futuro
+let fecha_pasada = datetime.add(fecha, -14) //14 días en el pasado
 ```
 
-Como puedes ver, la fecha resultante es el 15 de agosto de 2021.
+El resultado de `fecha_futura` será el 19 de Septiembre de 2021, y el resultado de `fecha_pasada` será el 29 de Agosto de 2021. Para obtener más precisión y calcular también horas y minutos, podemos usar la función `DateTime.add_duration`:
+
+```Gleam
+let fecha = datetime.new(2021, 9, 12, 12, 30) //12 de Septiembre de 2021, 12:30 pm
+let fecha_futura = datetime.add_duration(fecha, 2, 30, 0) //2 horas y 30 minutos en el futuro
+let fecha_pasada = datetime.add_duration(fecha, -1, 15, 0) //1 hora y 15 minutos en el pasado
+```
+
+El resultado de `fecha_futura` será el 12 de Septiembre de 2021, 3:00 pm, y el resultado de `fecha_pasada` será el 12 de Septiembre de 2021, 11:15 am.
 
 ## Profundizando
+Además de la función `DateTime.add`, Gleam también ofrece otras funciones útiles para trabajar con fechas:
+- `DateTime.subtract`: Resta un período de tiempo a una fecha base.
+- `DateTime.compare`: Compara dos fechas y devuelve un número positivo si la primera es más reciente que la segunda, o un número negativo si es más antigua. También devuelve 0 si ambas fechas son iguales.
+- `DateTime.to_string`: Convierte una fecha en una cadena de texto, con formato personalizable.
 
-Si deseas profundizar en el cálculo de fechas en Gleam, es importante tener en cuenta que la función `Date.add()` también puede aceptar otros tipos de unidades de tiempo, como semanas, horas o minutos. Además, también se pueden realizar cálculos con fechas en otros formatos, como el calendario islámico o el juliano. Si necesitas más información sobre estos temas, puedes revisar la documentación oficial de Gleam o explorar los ejemplos en su repositorio de GitHub.
+Con estas funciones, podemos crear lógica adicional e implementar cálculos más complejos basados en fechas.
 
 ## Ver también
-
-- [Documentación oficial de Gleam](https://gleam.run/documentation)
-- [Repositorio de ejemplos de Gleam en GitHub](https://github.com/gleam-lang/gleam_examples)
+- [Documentación oficial de DateTime en Gleam](https://gleam.run/documentation/stdlib/datetime)
+- [Guía de inicio rápido de Gleam](https://gleam.run/getting-started)
+- [Ejemplos de proyectos en Gleam](https://gleam.run/examples)

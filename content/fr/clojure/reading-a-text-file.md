@@ -1,67 +1,59 @@
 ---
 title:    "Clojure: Lecture d'un fichier texte"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Lire des fichiers texte est une activité courante en programmation, que ce soit pour lire des données à traiter ou pour afficher du contenu dans une application. Dans cet article, nous allons explorer comment lire des fichiers texte en utilisant Clojure, un langage de programmation dynamique et fonctionnel basé sur Java.
+La lecture de fichiers texte est une tâche courante dans la programmation Clojure. Il est important de savoir comment le faire efficacement et facilement. Dans cet article, nous allons apprendre comment lire un fichier texte en utilisant Clojure.
 
-## Comment faire
+# Comment faire
 
-Pour lire un fichier texte avec Clojure, nous allons utiliser la fonction `slurp`. Cette fonction prend en paramètre le chemin vers le fichier à lire et renvoie une chaîne de caractères contenant tout son contenu. Voyons un exemple :
+Nous allons d'abord créer un fichier texte avec du contenu à lire. Nous pouvons le faire en utilisant la commande ```touch``` dans notre terminal (si nous utilisons un système d'exploitation Unix), ou en utilisant un éditeur de texte tel que Notepad++ ou Sublime Text (pour les systèmes d'exploitation Windows).
 
-```Clojure
-(def chemin "chemin/vers/mon/fichier/texte.txt")
-(slurp chemin)
+Dans notre fichier texte, nous allons simplement ajouter quelques lignes de texte pour que nous puissions les lire plus tard. Par exemple :
+
+```
+Bonjour à tous !
+Je suis un fichier texte en Clojure.
+J'adore être lu par des programmes passionnants.
+Au revoir !
 ```
 
-Cela va retourner le contenu du fichier texte sous forme de chaîne de caractères. Si nous voulons traiter chaque ligne du fichier, nous pouvons utiliser la fonction `line-seq` qui va diviser le contenu en lignes. Voici un exemple complet :
+Maintenant que nous avons notre fichier texte, nous pouvons passer à la partie Clojure. Nous allons utiliser la fonction ```slurp``` pour lire le contenu du fichier texte et le stocker dans une variable. Voici le code que nous utiliserons :
 
-```Clojure
-(def chemin "chemin/vers/mon/fichier/texte.txt")
-(def lignes (line-seq (slurp chemin)))
-
-;; afficher chaque ligne du fichier
-(doseq [ligne lignes]
-  (println ligne))
+```
+(def contenu (slurp "chemin/vers/mon/fichier/texte.txt"))
 ```
 
-La fonction `doseq` va parcourir chaque ligne du fichier et utiliser la fonction `println` pour afficher son contenu dans la console. Nous pouvons également utiliser `clojure.string/split` pour diviser chaque ligne en différents éléments en fonction d'un séparateur. Voici un exemple :
+Nous avons maintenant stocké le contenu de notre fichier texte dans la variable ```contenu```. Nous pouvons vérifier en imprimant le contenu avec la fonction ```println``` :
 
-```Clojure
-(def chemin "chemin/vers/mon/fichier/texte.txt")
-(def lignes (line-seq (slurp chemin)))
-
-;; séparer chaque ligne par le caractère "|"
-(doseq [ligne lignes]
-  (println (clojure.string/split ligne #"\|")))
+```
+(println contenu)
 ```
 
-Nous pouvons ainsi traiter chaque ligne selon nos besoins en utilisant des fonctions de manipulation de chaînes de caractères comme `indexOf` ou `replace`. Une fois que nous avons fini de lire le fichier, il est important de fermer le flux en appelant la fonction `close` sur le fichier. Cela garantit que toutes les ressources sont correctement libérées.
+Cela devrait donner la sortie suivante :
 
-## Plongée en profondeur
-
-Maintenant que nous savons comment lire des fichiers texte en utilisant Clojure, voyons quelques autres astuces pour faciliter cette tâche. Tout d'abord, nous pouvons spécifier le charset (jeu de caractères) du fichier que nous lisons pour nous assurer que l'encodage est correct. Cela peut être fait en utilisant la fonction `with-open` :
-
-```Clojure
-(def chemin "chemin/vers/mon/fichier/texte.txt")
-
-(with-open [flux (reader chemin :charset "UTF-8")]
-  (doseq [ligne (line-seq flux)]
-    (println ligne)))
+```
+Bonjour à tous !
+Je suis un fichier texte en Clojure.
+J'adore être lu par des programmes passionnants.
+Au revoir !
 ```
 
-De plus, pour les fichiers volumineux, il peut être plus efficace d'utiliser la fonction `with-open` avec la fonction `reader` plutôt que d'utiliser `slurp`, car cela permet de lire le fichier en utilisant un flux plutôt que de charger tout le contenu en mémoire.
+Et voilà, nous avons réussi à lire notre fichier texte avec succès !
 
-Il est également important de gérer les erreurs lors de la lecture d'un fichier. Par exemple, si le chemin spécifié ne correspond à aucun fichier, une erreur sera renvoyée. Nous pouvons utiliser la fonction `try/catch` pour gérer ces erreurs et les afficher de manière plus appropriée à l'utilisateur.
+# Plongée en profondeur
 
-## Voir aussi
+Il est important de noter que la fonction ```slurp``` lit tout le contenu du fichier en une seule fois et le stocke en mémoire. Cela peut poser un problème si notre fichier texte est très volumineux et pourrait entraîner des problèmes de performances. Dans ce cas, il serait préférable d'utiliser la fonction ```line-seq``` qui lit le fichier ligne par ligne au lieu de tout en une fois.
 
-- Documentation officielle de `slurp` : https://clojuredocs.org/clojure.core/slurp
-- Tutoriel sur la lecture des fichiers en Clojure : https://www.baeldung.com/clojure-read-file
-- Conseils pour gérer les erreurs lors de la lecture de fichiers : https://purelyfunctional.tv/article/handle-errors-in-files/
+De plus, si le fichier texte contient des caractères spéciaux ou des caractères non ASCII, il est recommandé d'utiliser la fonction ```with-open``` pour s'assurer que le fichier est fermé correctement après la lecture.
 
-Merci d'avoir lu cet article sur la lecture des fichiers texte en Clojure. Nous espérons que cela vous a été utile et que vous vous sentez à l'aise pour utiliser ces fonctions dans vos propres projets. N'hésitez pas à explorer davantage et à expérimenter avec ces fonctionnalités pour mieux les comprendre. Bonne programmation !
+# Voir aussi
+
+- Documentation officielle de Clojure sur la fonction ```slurp``` : https://clojuredocs.org/clojure.core/slurp
+- Documentation officielle de Clojure sur la fonction ```line-seq``` : https://clojuredocs.org/clojure.core/line-seq
+- Documentation officielle de Clojure sur la fonction ```with-open``` : https://clojuredocs.org/clojure.core/with-open

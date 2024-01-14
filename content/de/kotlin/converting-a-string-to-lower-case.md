@@ -1,59 +1,49 @@
 ---
-title:    "Kotlin: Umwandlung eines Strings in Kleinbuchstaben"
+title:    "Kotlin: String in Kleinbuchstaben umwandeln"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben kann in der Programmierung hilfreich sein, um die Konsistenz in der Verarbeitung von Benutzereingaben sicherzustellen oder bei der Vergleichung von Strings.
+Sie fragen sich vielleicht, warum es wichtig ist, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Es ist wichtig, da dies häufig ein Schritt ist, der bei der Verarbeitung von Benutzereingaben oder beim Vergleichen von Zeichenfolgen verwendet wird.
 
-## Wie man es macht
+## Wie geht das?
 
-Eine Möglichkeit, einen String in Kleinbuchstaben zu konvertieren, ist die Verwendung der `lowercase()` Funktion in Kotlin. Hier ist ein Beispielcode:
-
-```Kotlin
-val eingabe = "HALLO WELT"
-val konvertiert = eingabe.lowercase()
-
-println(konvertiert)
-// Output: hallo welt
-```
-
-Wie man sieht, wird der String "HALLO WELT" in der Variable `konvertiert` in Kleinbuchstaben umgewandelt. Dies kann auch direkt beim Aufrufen der `lowercase()` Funktion gemacht werden:
+Die Sprache Kotlin bietet eine einfache und effiziente Möglichkeit, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Hier sind zwei Beispiele, die Ihnen zeigen, wie es geht:
 
 ```Kotlin
-val eingabe = "HALLO WELT"
-
-println(eingabe.lowercase())
-// Output: hallo welt
+val text = "Hallo Welt"
+println(text.toLowerCase())
 ```
-
-Es ist auch möglich, nur einen Teil eines Strings in Kleinbuchstaben zu konvertieren, indem man einen Bereich der `lowercase()` Funktion übergibt. Hier ist ein Beispiel:
+Output: hallo welt
 
 ```Kotlin
-val eingabe = "Hallo Welt"
-
-println(eingabe.lowercase(range = 6..8))
-// Output: halLO Welt
+val text = "Life is Amazing"
+println(text.toLowerCase())
 ```
+Output: life is amazing
 
-In diesem Beispiel wird der Buchstabenbereich von Position 6 bis 8 (inklusive) in Kleinbuchstaben konvertiert.
+Eine andere Möglichkeit, eine Zeichenfolge in Kleinbuchstaben umzuwandeln, ist die Verwendung der `toLowerCase()` Funktion. Diese Funktion kann auf jede Zeichenfolge angewendet werden und gibt eine neue Zeichenfolge zurück, die in Kleinbuchstaben konvertiert wurde. Zum Beispiel:
 
-## Tiefergehende Informationen
+```Kotlin
+val text = "KOTLIN IST TOLL"
+println(text.toLowerCase())
+```
+Output: kotlin ist toll
 
-Bei der Umwandlung von Strings in Kotlin wird standardmäßig der Unicode-Buchstabensatz verwendet. Dies bedeutet, dass auch Buchstaben mit Akzenten oder Sonderzeichen in das entsprechende Äquivalent in Kleinbuchstaben umgewandelt werden.
+## Tiefer in die Materie eintauchen
 
-Es ist auch wichtig zu beachten, dass durch die Konvertierung eines Strings in Kleinbuchstaben das ursprüngliche Objekt nicht verändert wird. Stattdessen wird eine neue String-Instanz mit dem konvertierten Text erstellt.
+Wenn Sie sich fragen, wie genau diese Konvertierung von Zeichenfolgen in Kleinbuchstaben funktioniert, gibt es einige wichtige Details zu beachten. Die `toLowerCase()` Funktion verwendet das Standard-Unicode-Zeichensatzformat, um die Zeichen in Kleinbuchstaben zu konvertieren. Dies bedeutet, dass Zeichen mit Akzenten oder anderen diakritischen Zeichen ebenfalls in Kleinbuchstaben umgewandelt werden. Dies kann bei der Verarbeitung von Benutzereingaben oder beim Vergleichen von Zeichenfolgen hilfreich sein, da es die Genauigkeit verbessert.
 
-Hier sind einige weitere Funktionen in Kotlin, die beim Konvertieren von Strings hilfreich sein können:
-
-- `uppercase()` - konvertiert einen String in Großbuchstaben
-- `capitalize()` - konvertiert den ersten Buchstaben eines Strings in einen Großbuchstaben
-- `reversed()` - dreht die Reihenfolge der Zeichen in einem String um
+Eine weitere wichtige Sache zu beachten ist, dass die `toLowerCase()` Funktion die ursprüngliche Zeichenfolge nicht verändert, sondern eine neue Zeichenfolge zurückgibt. Dies ist wichtig, da in Kotlin Strings als unveränderliche Objekte behandelt werden. Daher müssen Sie die Ergebnisse der Funktion einer Variablen zuweisen, wenn Sie das Ergebnis beibehalten möchten.
 
 ## Siehe auch
 
-- Kotlin String-Dokumentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
-- Guide zur Verwendung von Strings in Kotlin: https://www.baeldung.com/kotlin/strings
+Hier sind einige nützliche Links, um mehr über die Konvertierung von Zeichenfolgen in Kotlin zu erfahren:
+
+- [Offizielle Dokumentation von Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [GeeksforGeeks Tutorial](https://www.geeksforgeeks.org/kotlin-string-tolowercase/)
+- [Kotlin Tutorial auf YouTube](https://www.youtube.com/watch?v=IC41pWjU5Lg)

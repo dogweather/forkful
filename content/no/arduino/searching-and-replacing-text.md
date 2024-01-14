@@ -1,48 +1,44 @@
 ---
-title:    "Arduino: Søk og erstatt tekst"
+title:    "Arduino: Søking og bytting av tekst"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-### Hvorfor
+## Hvorfor
 
-Å søke og erstatte tekst er en viktig del av programmering. Det gjør at du kan endre store deler av teksten i programmet ditt på en enkel og effektiv måte. Dette er spesielt nyttig når man jobber med store kodebaserte prosjekter.
+Hvis du noen gang har programmert med Arduino, så har du sannsynligvis kommet over en uforutsett feil eller et problem som må løses. Kanskje du har skrevet den samme koden flere ganger, men med små endringer? Dette er hvor "søk og erstatt" funksjonen kommer inn i bildet - den kan hjelpe deg med å effektivt finne og bytte ut tekst i koden din.
 
-### Hvordan
+## Hvordan
 
-For å søke og erstatte tekst i Arduino, kan du bruke funksjonen "replace()" og "replaceIf()" fra "String" biblioteket. La oss se på et eksempel:
+La oss si at du vil endre alle forekomster av "LED" til "LYSDIODER" i koden din. Dette kan gjøres enkelt ved å bruke "Søk og erstatt" funksjonen i Arduino IDE. Følg disse trinnene:
 
-```Arduino
-#include <String.h>
+1. Åpne Arduino IDE og åpne koden du ønsker å søke og erstatte tekst i.
+2. Trykk på "Ctrl + F" eller gå til "Edit" menyen og velg "Søk og erstatt".
+3. Skriv inn "LED" i "Søk:" feltet og "LYSDIODER" i "Erstatt med:" feltet.
+4. Klikk på "Erstatt" eller "Erstatt alle" for å bytte ut alle forekomster av "LED" med "LYSDIODER".
 
-String tekst = "Hei, Arduino";
-tekst.replace("Hei", "Hallo");
-
-Serial.println(tekst);
 ```
-Outputen vil være "Hallo, Arduino", der "Hei" er blitt byttet ut med "Hallo".
-
-En annen måte å søke og erstatte tekst er ved hjelp av regular expressions. Dette er spesielle mønstre som gjør det mulig å søke etter bestemte ord eller uttrykk og erstatte med ønsket tekst. La oss se på et eksempel:
-
-```Arduino
-#include <regex>
-
-String tekst = "Dette er en tekst som inneholder tall: 123456";
-
-// Bytt ut alle tall med "X"
-tekst = regex_replace(tekst, regex("[0-9]+"), "X");
-
-Serial.println(tekst);
+Arduino kode:
+int ledPin = 13;
+digitalWrite(ledPin, HIGH);
 ```
-Outputen vil være "Dette er en tekst som inneholder tall: XXXXXX", der tallene er erstattet med "X".
+```
+Arduino kode etter "Søk og erstatt":
+int lysdiodePin = 13;
+digitalWrite(lysdiodePin, HIGH);
+```
 
-### Dykk dypere
+Dette er en enkel måte å effektivt endre tekst i koden din uten å måtte gå gjennom hver linje manuelt.
 
-For å bli mer avansert med søk og erstatning av tekst, kan du også bruke funksjoner som "replaceAll()", "replaceFirst()" og "replaceLast()". I tillegg kan du kombinere disse funksjonene med "if()"-setninger for å søke etter spesifikke vilkår.
+## Dykk dypere
 
-### Se også
+"Søk og erstatt" funksjonen i Arduino IDE gir også flere muligheter for mer avansert tekstbehandling. Du kan for eksempel bruke regulære uttrykk for å finne og endre tekst basert på bestemte mønstre, eller du kan raskt bytte ut tekst i flere filer samtidig.
 
-- Dokumentasjon for String biblioteket: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Eksempler på regular expressions: https://www.regular-expressions.info/examples.html
-- Tutorial om å søke og erstatte tekst i Arduino: https://www.arduino.cc/en/Tutorial/StringReplace?action=pages&view=old
+En annen måte å finne og erstatte tekst på er å bruke biblioteker, som "String.replace()" funksjonen i String biblioteket. Dette kan være nyttig hvis du jobber med tekst lagret som en variabel i koden din.
+
+## Se også
+
+- [ Arduino IDE brukerdokumentasjon ](https://www.arduino.cc/en/Guide/Environment)
+- [ Arduino "Søk og erstatt" dokumentasjon ](https://www.arduino.cc/en/Reference/EditReplace)

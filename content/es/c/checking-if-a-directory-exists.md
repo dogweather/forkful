@@ -1,52 +1,88 @@
 ---
 title:    "C: Comprobando si existe un directorio"
 keywords: ["C"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+Revisar si un directorio existe es una de las tareas básicas de programación que puede ayudar a los desarrolladores a verificar la estructura de un sistema de archivos y garantizar que sus programas funcionen correctamente.
 
-Uno de los problemas más comunes que pueden surgir al trabajar con archivos en un programa de C es verificar si un directorio existe o no. Es una pregunta sencilla, pero la respuesta puede ser un poco más complicada de lo que parece, especialmente para aquellos que están aprendiendo a programar en C. Afortunadamente, existen algunas soluciones sencillas para este problema, que nos permiten verificar si un directorio existe o no sin mucho esfuerzo.
+## Cómo
+Las siguientes son dos formas de verificar si un directorio existe en C:
 
-## Cómo hacerlo
+```C
+// Ejemplo 1: Utilizando la función opendir()
+#include <stdio.h>
+#include <dirent.h>
 
-En primer lugar, necesitamos incluir la librería `sys/types.h` en nuestro programa para poder utilizar la función `opendir()`. Esta función se utiliza para abrir un directorio y darle un descriptor de archivo.
+int main()
+{
+    // Definir la ruta del directorio a verificar
+    char *path = "/home/usuario/carpeta";
 
-Una vez que tengamos el descriptor de archivo, podemos utilizar la función `readdir()` para leer los contenidos del directorio. Si la función devuelve `NULL`, significa que ya hemos llegado al final del directorio y que no existe otro archivo que leer. Si la función `readdir()` no devuelve `NULL`, significa que todavía hay archivos en el directorio y, por lo tanto, el directorio existe.
+    // Abrir el directorio y almacenar un puntero al mismo en la variable dir
+    DIR *dir = opendir(path);
 
-A continuación, se muestra un ejemplo de código que implementa esta lógica:
+    // Verificar si la variable dir es igual a NULL, lo que indica que el directorio no existe
+    if (dir == NULL)
+    {
+        // Imprimir mensaje en caso de que el directorio no exista
+        printf("El directorio %s no existe.", path);
+    }
+    else
+    {
+        // Imprimir mensaje en caso de que el directorio exista
+        printf("El directorio %s existe.", path);
+    }
 
+    // Cerrar el directorio
+    closedir(dir);
+
+    return 0;
+}
 ```
+
+```C
+// Ejemplo 2: Utilizando la función stat()
 #include <stdio.h>
 #include <sys/types.h>
-#include <dirent.h> 
+#include <sys/stat.h>
 
-int main() 
-{ 
-    char *path = "/path/to/directory/"; // Cambiar por la ruta del directorio que se quiere verificar
-    DIR *dir = opendir(path); // Abrir el directorio
-    if(dir) // Verificar si el directorio se abrió correctamente
+int main()
+{
+    // Definir la ruta del directorio a verificar
+    char *path = "/home/usuario/carpeta";
+
+    // Crear una estructura stat donde se almacenará la información del directorio
+    struct stat st;
+
+    // Verificar si la función stat devuelve un valor diferente de 0, lo que indica que el directorio no existe
+    if (stat(path, &st) != 0)
     {
-        printf("El directorio existe"); 
-        closedir(dir); // Cerrar el directorio
+        // Imprimir mensaje en caso de que el directorio no exista
+        printf("El directorio %s no existe.", path);
     }
-    else // Si el directorio no existe, dir será NULL
+    else
     {
-        printf("El directorio no existe");
+        // Imprimir mensaje en caso de que el directorio exista
+        printf("El directorio %s existe.", path);
     }
-    return 0; 
-} 
+
+    return 0;
+}
 ```
 
-## Profundizando un poco más
+Los ejemplos anteriores utilizan dos funciones diferentes para comprobar la existencia de un directorio. La función opendir() abre el directorio y devuelve un puntero a él, mientras que la función stat() devuelve información sobre el archivo o directorio especificado. Ambos tienen en cuenta que si el directorio no existe, se devolverá un valor nulo o un valor diferente de 0.
 
-Como se mencionó anteriormente, la función `opendir()` devuelve un descriptor de archivo, que es un número entero que representa el directorio abierto. En caso de no poder abrir el directorio, devuelve un apuntador a `NULL`. Es importante cerrar el directorio después de haberlo utilizado, utilizando la función `closedir()`, para liberar los recursos del sistema y evitar posibles errores en nuestro programa.
+## Profundizando
+Hay diferentes razones por las que un directorio puede no existir. Puede ser que el directorio haya sido eliminado o que la ruta especificada esté incorrecta. En el caso de la función opendir(), también hay que tener en cuenta que el directorio puede no existir debido a permisos insuficientes o a un problema en el sistema de archivos.
 
-También hay una función alternativa para verificar la existencia de un directorio en C, llamada `stat()`, que se utiliza para obtener información sobre un archivo o directorio en específico. Sin embargo, trabajar con esta función es un poco más complejo y requiere de un poco más de conocimiento sobre el sistema y cómo funciona el manejo de archivos en C.
+Por otro lado, también se pueden utilizar otras funciones como access() o opendirat() para verificar la existencia de un directorio en C. Cada función tiene sus propias ventajas y limitaciones, por lo que es importante elegir la más adecuada según el contexto de cada proyecto.
 
 ## Ver también
-
-- [Documentación oficial de la función opendir()](https://www.gnu.org/software/libc/manual/html_node/Open-a-Directory.html)
-- [Ejemplos de código de opendir()](https://www.geeksforgeeks.org/c-program-list-files-sub-directories-directory/)
-- [Documentación oficial de la función stat()](https://linux.die.net/man/2/stat)
+- [Función opendir() en C](https://www.man7.org/linux/man-pages/man3/opendir.3.html)
+- [Función stat() en C](https://www.man7.org/linux/man-pages/man3/stat.3.html)
+- [Función access() en C](https://www.man7.org/linux/man-pages/man2/access.2.html)
+- [Función opendirat() en C](http://man7.org/linux/man-pages/man3/opendirat.3.html)

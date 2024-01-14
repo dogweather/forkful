@@ -1,37 +1,47 @@
 ---
-title:    "Javascript: Komentoriviparametrien lukeminen"
+title:    "Javascript: Puominlukulauseiden lukeminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein ohjelmoidessa meidän täytyy antaa ohjelmalle tietoa ennen sen suorittamista. Tämä tieto voi vaihdella sen mukaan, miten ohjelmaa käytetään tai mitä sen halutaan tekevän. Tässä tapauksessa käytämme komentoriviparametreja. Komentoriviparametrit ovat tietoa, jota syötämme ohjelmalle sen suorittamisen yhteydessä. Tästä syystä on tärkeää tietää, miten lukea komentoriviparametreja, jotta ohjelmamme voi toimia halutulla tavalla.
+Jos olet kehittäjä ja haluat syventyä Javascript-ohjelmointiin, on tärkeää osata lukea komentorivin argumentteja. Tämä taito auttaa sinua luomaan monipuolisia ja joustavia ohjelmia.
 
 ## Kuinka
 
-Jos haluat lukea komentoriviparametreja Javascript-koodissasi, voit käyttää ```process.argv``` -muuttujaa. Tämä muuttuja sisältää taulukon kaikista komentoriviparametreista, jotka on annettu ohjelman suorittamisen yhteydessä. Voit käyttää ```slice()``` -funktiota, jotta saat taulukosta haluamasi komentoriviparametrit. Tässä esimerkissä näytämme, miten voit lukea komentoriviparametreja ja tulostaa ne konsoliin:
+Jotta voit lukea komentorivin argumentteja Javascript-ohjelmassa, käytä process.argv-muuttujaa. Tämä muuttuja sisältää taulukon kaikista komentorivillä annetuista argumenteista.
 
 ```Javascript
-const parametrit = process.argv.slice(2); // Ensimmäinen parametri on aina 'node', toinen on tiedoston nimi, joten leikkaamme ne pois ja otamme halutut parametrit alkaen indeksistä 2
-console.log(parametrit);
+// Esimerkki komentorivin argumenttien lukemisesta
+const args = process.argv;
+
+// Tulostetaan kaikki argumentit
+console.log(args);
+
+// Tulostetaan ensimmäinen argumentti
+console.log(args[0]);
+
+// Tulostetaan toinen argumentti
+console.log(args[1]);
 ```
 
-Jos haluat suorittaa ohjelman ja antaa sille samalla komentoriviparametreja, voit tehdä sen kirjoittamalla parametrit komennon perään erottaen ne välilyönnillä:
+Komennolla "node tiedosto.js argumentti1 argumentti2" tulostuu seuraava taulukko:
 
 ```
-node index.js hello world
+[node, tiedosto.js, argumentti1, argumentti2]
 ```
 
-Tämä tulostaisi konsoliin taulukon ```["hello", "world"]```.
+## Syvällinen sukellus
 
-## Syvempi sukellus
+Komentorivin argumenttien lukeminen voi olla hyödyllistä esimerkiksi silloin, kun ohjelman parametreja halutaan muuttaa käyttäjän tekemillä valinnoilla. Tämä voi olla hyödyllistä esimerkiksi käyttöliittymättömissä sovelluksissa tai komentoriviltä ajettavissa skripteissä.
 
-On tärkeää huomata, että komentoriviparametrit ovat aina merkkijonoja, joten sinun täytyy muuntaa ne tarvittaessa muiksi datatyypeiksi käyttämällä esimerkiksi ```parseInt()``` tai ```parseFloat()``` -funktioita. Lisäksi voit myös tarkistaa, onko käyttäjä antanut tarvittavan määrän parametreja ohjelman suorittamisen yhteydessä käyttämällä ```process.argv.length``` -ominaisuutta. Näin voit varmistaa, että ohjelmasi ei kaadu, vaikka käyttäjä unohtaisi antaa kaikki tarvittavat parametrit.
+On myös tärkeää huomata, että process.argv-muuttuja sisältää myös tiedoston sijainnin ensimmäisessä indeksissään, joten ensimmäinen argumentti sijaitsee indeksissä 2.
 
 ## Katso myös
 
-- [Node.js process.argv documentation](https://nodejs.org/dist/latest-v14.x/docs/api/process.html#process_process_argv)
-- [MDN Web Docs - Command-line arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
-- [YouTube video: How to read command line arguments in Node.js](https://www.youtube.com/watch?v=nQicN01kH7I)
+- [Komentorivin argumenttien lukeminen Node.js-sovelluksessa (englanniksi)](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Node.js-dokumentaatio (englanniksi)](https://nodejs.org/docs/latest/api/)
+- [Javascript-oppaat ja dokumentaatiot (suomeksi)](https://developer.mozilla.org/fi/docs/Web/JavaScript)

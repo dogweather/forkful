@@ -1,52 +1,78 @@
 ---
 title:    "Gleam: Testien kirjoittaminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa testejä?
+## Miksi
 
-Testaaminen on tärkeä osa ohjelmointia ja auttaa varmistamaan, että koodi toimii odotetulla tavalla. Kirjoittamalla testejä voit vähentää virheiden määrää ja parantaa ohjelman luotettavuutta. 
+Yksi tärkeimmistä osa-alueista ohjelmistokehityksessä on testaaminen. Testien kirjoittaminen auttaa varmistamaan, että koodi toimii oikein ja vähentää mahdollisten virheiden riskiä tuotantokäytössä.
 
-# Kuinka kirjoittaa testeja Gleamilla?
+## Kuinka
 
-Käyttämällä Gleamin testausmoduulia voit helposti kirjoittaa yksikkötestejä ja integraatiotestejä. Alla on esimerkkejä koodista ja niiden odotetusta tulosteesta. 
-
-```Gleam
-// yksinkertainen funktio kertomaan kahdesta luvusta
-pub fn kerro(a: Int, b: Int) -> Int {
-    a * b
-}
-
-// testi, joka tarkistaa, että funktio toimii oikein
-test "kerro-palauttaa oikean tuloksen" {
-    expect(kerro(2, 3)).to_equal(6)
-}
-
-// odotettu tulos: Test passed!
-```
+Testien kirjoittaminen Gleam-kielellä on helppoa ja intuitiivista. Alla on esimerkkejä koodista ja sen tulosteista, jotta voit aloittaa oman testikoodisi kirjoittamisen.
 
 ```Gleam
-// funktio tarkistamaan, onko luku parillinen
-pub fn onko_parillinen(x: Int) -> Bool {
-    x % 2 == 0
+test "summaa kaksi numeroa" {
+  expect 5 |> equal(summaa(2, 3))
 }
-
-// testi, joka tarkistaa, että funktio toimii oikein
-test "onko_parillinen-palauttaa_oikean_tuloksen" {
-    expect(onko_parillinen(4)).to_equal(true)
-}
-
-// odotettu tulos: Test passed!
 ```
 
-# Syvemmälle testien kirjoittamiseen
+Tässä testissä määrittelemme funktion `summaa`, joka laskee kahden numeron summan ja varmistamme, että sen tuloksena on odotettu arvo. Voit määritellä useita testejä samassa tiedostossa ja ajaa ne kaikki yhdellä komennolla.
 
-Testien kirjoittaminen ei rajoitu vain yksinkertaisiin esimerkkeihin, vaan voit myös testata monimutkaisempia funktioita ja luokkia. Gleamin Testing -moduulin dokumentaatio tarjoaa lisää tietoa eri testausfunktioista ja -ominaisuuksista. 
+```
+$ gleam test
+```
 
-# Katso myös
+### Tulostus
 
-- Gleamin Testing -moduulin dokumentaatio: [https://gleam.run/documentation/docs/tests](https://gleam.run/documentation/docs/tests)
-- Gleamin virallinen verkkosivusto: [https://gleam.run/](https://gleam.run/)
-- Gleamin GitHub-arkisto: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+```
+Running 1 test module
+
+summaa kaksi numeroa
+✓ Pass
+
+1/1 tests passed.
+
+🎉 All tests passed! 🎉
+```
+
+Voit myös halutessasi ajaa testit automaattisesti jokaisen uuden koodimuutoksen jälkeen. Tässä esimerkissä käytämme `fswatch`-työkalua automaattisen testauksen mahdollistamiseksi.
+
+```
+$ fswatch -o . | xargs -n1 -I{} gleam test
+```
+
+## Syvemmälle
+
+Voit joustavasti määritellä testauksessa käytettäviä fakseja, odotuksia ja muita ominaisuuksia. Gleam tarjoaa myös `skip`-funktion, joka mahdollistaa testien ohittamisen tarpeen mukaan.
+
+```Gleam
+test "skippaa tämä testi" {
+  skip
+  expect 2 |> equal(summaa(1, 2))
+}
+```
+
+Voit myös käyttää `group`-funktiota ryhmittelyn avulla, mikä helpottaa useiden testien hallintaa ja ajamista yhtenä kokonaisuutena.
+
+```Gleam
+group "summaFunktion testit" {
+  test "palauttaa oikean tuloksen" {
+    expect 10 |> equal(summaa(3, 7))
+  }
+
+  test "ei aiheuta virhettä, vaikka tulosten määrä on suuri" {
+    let tulos = summaa(999, 999)
+    nil |> equal(tulos)
+  }
+}
+```
+
+## Katso myös
+
+- [Gleam-dokumentaatio](https://gleam.run/book/)
+- [Gleam-yhteisön maksuton Slack-kanava](https://gleam-lang.slack.com/)
+- [Gleam-testikirjasto](https://github.com/gleam-lang/gleam_testing)

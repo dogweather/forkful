@@ -1,43 +1,43 @@
 ---
 title:    "Java: Testien kirjoittaminen"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Miksi testeillä kirjoittaminen on tärkeää Java-ohjelmoinnissa? Testauksen avulla voidaan varmistaa koodin toimivuus ja ehkäistä mahdollisten virheiden ilmeneminen tuotantoympäristössä. Lisäksi testeillä kirjoittaminen voi auttaa ohjelmoijaa ymmärtämään paremmin koodin toimintaa ja parantaa koodin laatua.
+Testien kirjoittaminen voi vaikuttaa ylimääräiseltä vaivalta, mutta se on tärkeä osa hyvää ohjelmointikäytäntöä. Testit varmistavat, että koodi toimii oikein ja auttavat havaitsemaan mahdolliset virheet ennen kuin ohjelma siirtyy tuotantoon.
 
 ## Miten
+Testien kirjoittamisen aloittaminen voi vaikuttaa haastavalta, mutta se on todellisuudessa melko yksinkertaista. Alla on kaksi esimerkkiä testien kirjoittamisesta Javalla.
 
-Jotta voimme kirjoittaa testejä Java-ohjelmissa, meidän täytyy käyttää JUnit-kirjastoa. Alla on esimerkki siitä, miten voimme kirjoittaa yksikkötestin Java-ohjelmaan käyttämällä JUnitia.
+````Java
+// Esimerkki testin kirjoittamisesta luokalle, joka laskee kaksi lukua yhteen
+public class Laskin {
 
-```Java 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
-public class CalculatorTest {
-
-    @Test
-    public void testSum() {
-        Calculator calculator = new Calculator();
-        assertEquals(5, calculator.sum(2, 3));
+    public int summaa(int luku1, int luku2) {
+        return luku1 + luku2;
     }
-    
 }
-```
+````
 
-Testausfunktiossa käytämme `@Test`-annotaatiota, jotta voimme merkitä testin metodiksi. Tämän jälkeen luomme esimerkiksi laskimen instanssia ja vertaamme sen summa-funktion paluuarvoa haluttuun arvoon käyttämällä `assertEquals`-metodia.
+````Java
+// Esimerkki testin kirjoittamisesta metodille, joka tarkistaa onko luku parillinen
+public class ParillisuusTarkistin {
 
-## Syvällinen sukellus
+    public boolean onkoParillinen(int luku) {
+        return luku % 2 == 0;
+    }
+}
+````
 
-Testauksen avulla voimme myös varmistaa, että koodi toimii oikein mahdollisimman monella eri syötteellä. Esimerkiksi voimme kirjoittaa useita testejä, jotka tarkistavat laskimen summa-funktion toiminnan eri syötteillä. Tämä auttaa meitä havaitsemaan mahdollisia bugitilanteita ja korjaamaan ne ennen kuin ne aiheuttavat ongelmia tuotantoympäristössä.
+Testien kirjoittamisessa on tärkeää ottaa huomioon kaikki mahdolliset skenaariot ja varmistaa, että testit kattavat kaikki osat koodista.
 
-Lisäksi testeillä kirjoittaminen voi auttaa meitä tunnistamaan koodin suorituskykyongelmia ja mahdollisia optimointimahdollisuuksia. Voimme käyttää testeissä aikamittauksia ja vertailla eri algoritmien suorituskykyä eri tilanteissa.
+## Syvemmälle
+Testien kirjoittamalla pystytään takaamaan, että koodi toimii oikein ja vähentämään mahdollisuuksia virheisiin tuotannossa. Lisäksi testien avulla on helpompi löytää ja korjata mahdolliset virheet jo kehitysvaiheessa. On myös tärkeää muistaa, että testien kirjoittaminen auttaa ymmärtämään koodin toimintaa paremmin ja parantaa siten koodin laatua.
 
 ## Katso myös
-
-- [JUnit käyttöohjeet](https://junit.org/junit5/docs/current/user-guide/)
-- [Testaus strategiat Java-ohjelmoinnissa](https://www.baeldung.com/java-testing-strategies)
-- [Test Driven Development (TDD) opas](https://dzone.com/articles/test-driven-development-tdd-for-dummies)
+- [JUnit - The Java Unit Testing Framework](https://junit.org/)
+- [Test-Driven Development with Java: JUnit Basics](https://www.baeldung.com/junit-basics)
+- [How to Write Good Unit Tests: A Beginner's Guide](https://www.freecodecamp.org/news/writing-good-unit-tests-csharpspecflow-basics-best-practices-tips-02287fffaf9/)

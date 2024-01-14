@@ -1,67 +1,61 @@
 ---
-title:    "Go: Leser kommandolinjeargumenter"
+title:    "Go: Lesing av kommandolinje-argumenter"
 keywords: ["Go"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-I mange programmeringsprosjekter er det viktig å kunne kommunisere med programmet gjennom kommandolinjen. Dette kan være nyttig for å gi programmet input, kjøre spesifikke funksjoner eller få tilbakemeldinger om hva programmet gjør. I denne bloggposten skal vi se på hvordan man kan lese og håndtere kommandolinjeargumenter i Go-programmeringsspråket. 
+Lesing av kommandolinje argumenter er en viktig og grunnleggende del av å skrive effektiv Go-kode. Uten å kunne lese argumentene som brukes til å kjøre et program, kan programmet vårt ikke tilpasses eller håndtere ulike situasjoner. Derfor er det viktig å forstå hvordan man leser disse argumentene for å skrive robuste programmer.
 
-# Hvordan gjøre det
+## Slik gjør du det
 
-For å lese kommandolinjeargumenter i Go, bruker vi **os** pakken og dens **Args** funksjon. Denne funksjonen returnerer en liste over alle argumentene som ble gitt til programmet gjennom kommandolinjen. La oss se på et enkelt eksempel:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"os"
-)
-
-func main() {
-	args := os.Args
-	fmt.Println("Argumenter:", args)
-}
-```
-
-I dette eksempelet bruker vi **os.Args** og skriver ut alle argumentene til terminalen. La oss si at vi kjører programmet med kommandolinjeargumentene *heisann* og *verden*, da vil output være:
-
-```
-Argumenter: [programnavn heisann verden]
-```
-
-Vi ser at programnavnet er det første elementet i listen, etterfulgt av alle våre argumenter. Dette er viktig å huske, spesielt hvis vi ønsker å hente ut spesifikke argumenter. For eksempel, hvis vi vil ha tak i kun det første argumentet, kan vi bruke **args[1]**. La oss se på et annet eksempel:
+Vi kan lese kommandolinje argumenter ved å bruke "os" pakken i Go. Først må vi importere denne pakken øverst i vårt Go-program:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"os"
-)
-
-func main() {
-	args := os.Args
-	fmt.Println("Første argument:", args[1])
-}
+import "os"
 ```
 
-Hvis vi kjører programmet med kommandolinjeargumentet *hei*, vil output være:
+Deretter kan vi bruke funksjonen "os.Args" for å få en liste over alle argumentene som ble brukt til å kjøre programmet vårt:
 
+```Go 
+args := os.Args
 ```
-Første argument: hei
+
+Vi kan også få tilgang til hvert enkelt argument basert på indeksen den ble brukt på kommandolinjen. For eksempel, hvis vi har et program som heter "program.go" og kjører det med argumentet "hello", kan vi aksessere dette argumentet på følgende måte:
+
+```Go 
+arg := os.Args[1] // Vil returnere "hello"
 ```
 
-Det er også mulig å bruke **Flag** pakken for å merke spesifikke argumenter. Dette lar oss også spesifisere default verdier og gi et hjelpemelding. For mer informasjon om dette, se gjerne på dokumentasjonen til **Flag** pakken.
+## Dykk dypere
 
-# Dypdykk
+Det er også mulig å lese og håndtere kommandolinje flagg, som er spesielle argumenter som starter med en "-". Dette gjøres ved å bruke "flag" pakken i Go. For å lese et flagg, må vi først definere det ved hjelp av "flag" pakken og deretter bruke funksjonen "flag.Parse()" for å kunne lese det fra kommandolinjen.
 
-I tillegg til å lese argumenter fra kommandolinjen, er det også viktig å håndtere dem på en sikker og effektiv måte. Ved å bruke **os.Args** funksjonen, må vi være forsiktige med å håndtere ugyldige argumenter eller argumenter som ikke er spesifisert. Dette kan føre til at programmet vårt krasjer eller fungerer feil. Derfor er det lurt å bruke **if-statements** eller **switches** for å sjekke argumentene på forhånd, og gi riktig tilbakemelding eller prosessere argumentene deretter.
+For eksempel, hvis vi vil ha et flagg kalt "output" som lar brukeren spesifisere navnet på en fil som programmet skal skrive ut til, kan vi definere det på følgende måte:
 
-# Se også
+```Go 
+output := flag.String("output", "", "Navnet på utskriftsfilen")
+```
 
-- [Dokumentasjon for os.Args pakken](https://golang.org/pkg/os/#Args)
-- [Dokumentasjon for Flag pakken](https://golang.org/pkg/flag/)
+Vi kan da lese verdien av dette flagget i programmet vårt ved å bruke variabelen som ble definert:
+
+```Go 
+outputFile := *output
+```
+
+For å kjøre programmet vårt med dette flagget, ville vi bruke følgende kommando:
+
+```bash
+go run program.go -output=output.txt
+```
+
+## Se også
+
+For mer informasjon og eksempler på hvordan man leser kommandolinje argumenter i Go, kan du ta en titt på følgende ressurser:
+
+- [Offisiell dokumentasjon for "os" pakken](https://golang.org/pkg/os/#pkg-examples)
+- [Offisiell dokumentasjon for "flag" pakken](https://golang.org/pkg/flag/)
+- [Artikkel om å lese kommandolinje argumenter i Go av Todd McLeod](https://medium.com/@toddmcLeod/reading-command-line-arguments-in-go-7d7ef7925ba1)

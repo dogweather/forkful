@@ -1,44 +1,69 @@
 ---
 title:    "PHP recipe: Checking if a directory exists"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In the world of programming, it’s crucial to ensure the stability and functionality of your code. This includes checking if a directory exists before attempting to create or manipulate files within it. By doing so, you can avoid any potential errors and ensure that your code runs smoothly.
+As a programmer, it's important to have robust code that can handle unexpected scenarios. Checking if a directory exists before performing any file operations helps to prevent errors and ensure the smooth functioning of your program.
 
 ## How To
 
-Checking if a directory exists in PHP is a simple process that can be done using the `is_dir()` function. This function takes in the path of the directory as a parameter and returns a boolean value of `true` if the directory exists or `false` if it doesn’t.
+To check if a directory exists in PHP, we can use the `is_dir()` function. This function takes in a string parameter of the directory path and returns a boolean value - `true` if the directory exists and `false` if it doesn't.
 
-Let’s take a look at an example to understand this better:
+Let's see an example of this in action:
 
 ```PHP
-$path = "uploads/documents";
+// We want to check if the "images" directory exists
+$directory = "images";
 
-if (is_dir($path)) {
-  echo "The directory $path exists!";
+// Using the "is_dir()" function to check if the directory exists
+if (is_dir($directory)) {
+    echo "The directory " . $directory . " exists!";
 } else {
-  echo "The directory $path doesn't exist!";
+    echo "Sorry, the directory " . $directory . " does not exist.";
 }
 ```
 
-In this example, we are checking if the `uploads/documents` directory exists. If it does, the output will be `The directory uploads/documents exists!`. If it doesn’t, the output will be `The directory uploads/documents doesn't exist!`.
+The code above will output `The directory images exists!` if the directory exists, or `Sorry, the directory images does not exist.` if it doesn't.
 
-You can also use the `chmod()` function to set the permissions of the directory before creating or manipulating files within it.
+We can also perform different actions depending on the result of the `is_dir()` function. For example, if the directory already exists, we can simply continue with our code. But if it doesn't exist, we can create it using the `mkdir()` function.
+
+```PHP
+if (is_dir($directory)) {
+    // Code to be executed if directory exists
+    echo "The directory " . $directory . " already exists.";
+} else {
+    // Code to be executed if directory does not exist
+    mkdir($directory);
+    echo "The directory " . $directory . " has been created!";
+}
+```
 
 ## Deep Dive
 
-Behind the scenes, the `is_dir()` function uses a system call to check if the directory exists. This makes it more efficient compared to manually checking for the directory’s existence using file functions. Additionally, the function also checks if the directory is readable, ensuring that you have the necessary permissions to access it.
+Aside from using the `is_dir()` function, we can also use the `file_exists()` function to check if a directory exists. However, this function can also be used to check for the existence of files, so we need to specify that we are checking for a directory by using the `is_dir()` function as well.
 
-If you want to check for the existence of a directory relative to the current directory, you can use the `getcwd()` function, which returns the current working directory. It can be used in combination with the `is_dir()` function to check for directories in specific paths.
+```PHP
+// Using "file_exists()" to check if directory exists
+if (file_exists($directory)) {
+    // Code to be executed if directory exists
+    if (is_dir($directory)) {
+        echo "The directory " . $directory . " exists!";
+    } else {
+        echo "Sorry, " . $directory . " is a file, not a directory.";
+    }
+} else {
+    echo "Sorry, the directory " . $directory . " does not exist.";
+}
+```
+
+It's important to note that both the `is_dir()` and `file_exists()` functions return a boolean value, even if the path provided does not exist at all. This means that if the directory does not exist, these functions will still return `false`.
 
 ## See Also
 
-If you want to learn more about checking for directory existence in PHP, check out the following resources:
-
-- [PHP Documentation on `is_dir()` function](https://www.php.net/manual/en/function.is-dir.php)
-- [Code Snippets for `is_dir()` function](https://www.php.net/manual/en/function.is-dir.example.php)
-- [PHPTheRightWay: File System Functions](https://phptherightway.com/pages/PHP-FileSystem-Summary.html)
+- [PHP Documentation on `is_dir()`](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP Documentation on `file_exists()`](https://www.php.net/manual/en/function.file-exists.php)

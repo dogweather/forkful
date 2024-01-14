@@ -1,50 +1,36 @@
 ---
-title:    "C#: 문자열 대문자로 변환하기"
+title:    "C#: 문자열 대문자로 바꾸기"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-텍스트를 대문자로 변환하는 것은 프로그래밍에서 자주 사용되는 기능 중 하나입니다. 이 기능을 통해 문자열을 일관성 있게 표현할 수 있으며, 데이터 처리와 문자열 조작에 유용합니다.
+본문에 대한 확인을 위해 단어나 문장의 첫글자만 대문자로 바꾸는 것은 필요한 경우가 있습니다. 예를 들어, 사용자의 이름을 첫글자만 대문자로 표시하거나, 제목을 보기 좋게 만들기 위해 첫글자를 대문자로 바꾸는 경우 등이 있습니다.
 
-## 어떻게
+## 하는 법
 
-```C#
-string text = "hello world!";
+C#에서 단어나 문장의 첫글자를 대문자로 바꾸는 방법은 간단합니다. 아래의 코드를 사용하면 됩니다.
 
-Console.WriteLine(text.ToUpper());
-// Output: HELLO WORLD!
+```
+string word = "hello";
+string capitalizedWord = char.ToUpper(word[0]) + word.Substring(1);
+Console.WriteLine(capitalizedWord);
 ```
 
-```C#
-string text = "hello world!";
+위의 코드에서 우리는 우선 입력된 단어의 첫글자를 대문자로 바꾸고, 나머지 부분을 그대로 유지하는 방식을 사용하였습니다. 그리고 `String.Substring` 함수를 사용하여 첫글자를 제외한 나머지 부분을 병합하여 출력하였습니다.
 
-Console.WriteLine(text.ToLower());
-// Output: hello world!
-```
+위의 코드를 실행하면 `Hello`라는 결과값이 출력됩니다.
 
-위의 예제는 C#에서 문자열을 대문자 또는 소문자로 변환하는 방법을 보여줍니다. 첫 번째 예제에서는 `ToUpper()` 메소드를 사용하여 문자열을 모두 대문자로 변환하고, 두 번째 예제에서는 `ToLower()` 메소드를 사용하여 문자열을 모두 소문자로 변환합니다.
+## 심층 분석
 
-또한 `CultureInfo` 클래스를 사용하여 언어 및 지역 설정에 따라 문자열을 변환할 수도 있습니다. 예를 들어, 다양한 언어에서 "i"를 대문자로 변환할 때 "İ"를 대문자로 변환시키는 기능을 사용할 수 있습니다.
+위의 예제 코드는 우리가 비교적 쉽게 이해할 수 있도록 간단하게 작성되었습니다. 하지만 실제로는 `String.ToUpper` 함수를 사용해도 같은 결과를 얻을 수 있습니다. 우선 `String.ToUpper` 함수는 모든 문자를 대문자로 변환하는 것이 아니라, 소문자를 대문자로 변환하는 역할을 합니다. 그래서 위의 예제에서는 문자 하나만 변환하기 위해 `char.ToUpper` 함수를 사용하였습니다.
 
-```C#
-string text = "i love programming";
-
-var cultureInfo = new CultureInfo("tr-TR");
-Console.WriteLine(cultureInfo.TextInfo.ToUpper(text));
-// Output: İ LOVE PROGRAMMING
-```
-
-이렇게 하면 "i"대신 "İ"가 대문자로 변환됩니다.
-
-## 심층 고찰
-
-문자열 변환은 간단한 작업처럼 보일 수 있지만, 내부적으로는 많은 로직이 들어가 있습니다. 예를 들어, 영문 소문자를 대문자로 변환할 때는 단순히 ASCII 코드만 변환하면 되지만, 다른 언어에서는 문자 간 관계 및 언어 규칙을 고려해야 합니다. 이러한 사항을 고려하여 개발자는 문자열 변환 기능을 어떻게 구현할지 결정할 수 있습니다.
+또한 위의 코드에서는 단어의 첫글자만 대문자로 변환하였지만, 만약 모든 단어의 첫글자를 대문자로 바꾸고 싶다면 `String.ToTitleCase` 함수를 사용할 수 있습니다.
 
 ## 관련 자료
 
-- [The Power of String.ConvertToCulture(string) Method in C#](https://www.oreilly.com/library/view/c-cookbook-4th/9781492071695/ch04s05.html)
-- [CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
-- [String Operations in C#](https://www.educative.io/edpresso/string-operations-in-c-sharp)
+- [C# Tutorial - Strings](https://www.c-sharpcorner.com/article/c-sharp-corner/)
+- [C# String Methods](https://www.tutorialsteacher.com/csharp/csharp-string-methods)

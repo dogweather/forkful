@@ -1,46 +1,61 @@
 ---
 title:    "Arduino recipe: Extracting substrings"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever encountered a situation where you only needed a part of a string of characters? For example, you have a long serial number but only need the last four digits. In Arduino programming, this process is called extracting substrings. It allows you to easily manage and use specific parts of a string without having to manipulate the entire string. In this blog post, we will explore why and how to extract substrings using Arduino.
+# Why
 
-## How To
-To extract substrings in Arduino, we will be using the `substring()` function. This function takes in two parameters: the starting index and the ending index of the substring. The syntax for using this function is as follows:
+Have you ever found yourself needing to extract specific parts of a string of text in your Arduino coding projects? Maybe you want to extract a name from an email address, or retrieve a date from a longer string of data. Whatever the reason may be, learning how to extract substrings in Arduino can be a useful skill to have in your coding toolkit.
 
-```Arduino
-myString.substring(startIndex, endIndex);
+# How To
+
+First, let's take a look at an example of a string that we want to extract a substring from:
+
+```
+Arduino Programming is Fun!
 ```
 
-To better understand this, let's take a look at a coding example. Suppose we have a string called `serialNumber` that contains a serial number. We only need the last four digits of this number. We can use the `substring()` function to extract these digits as shown below:
+Let's say we want to retrieve the word "Programming" from this string. We can do this by using the `substring()` function in Arduino. This function takes two parameters - the starting index of the substring and the length of the substring.
 
-```Arduino
-String serialNumber = "123456789";
-String lastDigits = serialNumber.substring(6, 9);
+```
+Arduino Programming is Fun!
+0123456789
 ```
 
-The code above will extract the last three digits of the `serialNumber` string starting from index 6 (the seventh character) and ending at index 9 (the tenth character). The resulting `lastDigits` string will contain the value "789". 
+In this case, the index of the first letter in "Programming" is 8 and the length of the word is 11. So, our code would look like this:
 
-## Deep Dive
-There are a few important things to note when using the `substring()` function. Firstly, the starting index is inclusive, meaning that the character at that index will also be included in the substring. However, the ending index is exclusive, meaning that the character at that index will not be included in the substring. This is why in the example above, we used `9` as the ending index instead of `10`.
-
-Another important thing to consider is the index numbering in strings. In Arduino, strings are zero-indexed, meaning the first character of the string is at index 0, the second character at index 1, and so on. This means that to extract the last four digits of a string, the starting index would be the length of the string minus 4, and the ending index would be the length of the string. This can be seen in the following code:
-
-```Arduino
-String serialNumber = "123456789";
-String lastDigits = serialNumber.substring(serialNumber.length() - 4, serialNumber.length());
+```arduino
+String text = "Arduino Programming is Fun!";
+String extracted = text.substring(8, 11);
+Serial.println(extracted); // prints "Programming"
 ```
 
-Using the `serialNumber.length()` function, we can get the length of the string and use it to calculate the correct indexes for our substring.
+We can also use variables to make our code more dynamic. For example, let's say we want to extract a substring from a user inputted email address:
 
-Finally, it is important to note that the `substring()` function returns a new string and does not modify the original string. This means that if you want to use the extracted substring, you will need to assign it to a new string variable like we did in the examples above.
+```arduino
+String email = Serial.readString();
+String username = email.substring(0, email.indexOf("@"));
+Serial.println(username); // prints the username before the "@" symbol
+``` 
 
-## See Also
-For more information on the `substring()` function and string manipulation in general, check out the following links:
+# Deep Dive
 
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino String length() function](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/length/)
-- [W3Schools String Substring() Function](https://www.w3schools.com/cpp/cpp_strings_substrings.asp)
+The `substring()` function in Arduino can also take negative numbers as parameters. This can be useful if you want to extract a string from the end of a larger string.
+
+For example, let's say we want to extract the last 4 digits of a phone number:
+
+```arduino
+String phone = "123-456-7890";
+String extracted = phone.substring(-4);
+Serial.println(extracted); // prints "7890"
+```
+
+It's important to note that if you use a negative number as the starting index, the substring will begin from the end of the string. So, using `-4` as the starting index will start the substring from the 4th character from the end.
+
+# See Also
+
+For more information on the `substring()` function in Arduino, check out the official Arduino documentation:
+- https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/

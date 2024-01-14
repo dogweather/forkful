@@ -1,57 +1,88 @@
 ---
 title:    "C++ recipe: Printing debug output"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When developing a program, it is crucial to have a way to identify and fix any errors or bugs that may arise. This is where printing debug output becomes essential. By displaying specific information during the execution of a program, developers can effectively track down and fix issues.
+Debugging is an essential part of the coding process. It allows developers to identify and fix errors in their code, ensuring that the final product runs smoothly. One way to assist in the debugging process is by printing out debug output. This involves displaying specific values or messages in the terminal or console while the program is running. But why exactly would someone want to engage in printing debug output?
+
+The answer is simple: it helps with troubleshooting. By printing out relevant information, developers can track the flow of their program and identify any potential bugs or issues. It also allows for easier monitoring of variables and their values, providing more insight into the inner workings of the code.
 
 ## How To
 
-To print debug output in a C++ program, we can make use of the `cout` function from the `iostream` library. This function allows us to print text or variables to the console.
-
-Let's look at an example:
+To print debug output in C++, you can use the `cout` function from the `iostream` library. This allows you to output data to the terminal. Let's take a look at an example of printing out a simple message:
 
 ```C++
-#include <iostream>
+cout << "Debug output: Program is running..." << endl;
+```
 
-using namespace std;
+The `cout` keyword is followed by the message we want to print within quotation marks. The `endl` statement adds a line break for better readability.
 
-int main() {
-    int num1 = 10;
-    int num2 = 5;
-    cout << "The value of num1 is: " << num1 << endl;
-    cout << "The value of num2 is: " << num2 << endl;
-    return 0;
+We can also print out the value of a variable. Consider the following code:
+
+```C++
+int num = 5;
+cout << "The value of num: " << num << endl;
+```
+
+This will print: "The value of num: 5" in the terminal.
+
+But what if we want to display the value of a variable at different points in the program? We can use an `if` statement with `cout` inside, like so:
+
+```C++
+if(num == 5){
+    cout << "The value of num is 5" << endl;
+}else{
+    cout << "The value of num is not 5" << endl;
 }
 ```
 
-In this example, we have two variables, `num1` and `num2`, and we use the `cout` function to print their values to the console. The `<<` operator is used to concatenate the text and variables, and `endl` is used to insert a line break.
-
-The output of this program will be:
-
-```
-The value of num1 is: 10
-The value of num2 is: 5
-```
-
-By printing relevant information, such as variable values or the current state of a loop, we can track the flow of our program and identify any errors or unexpected behavior.
+This will print out one of the two messages depending on the value of `num`.
 
 ## Deep Dive
 
-When using the `cout` function, we can also format the output by using flags such as `setw` and `setprecision`. This allows us to control the spacing and precision of floating-point numbers, making our debug output more organized and informative.
+Now that we know the basics of printing debug output, let's delve into some other techniques that can come in handy.
 
-We can also use the `cerr` function for error output instead of `cout`. Unlike `cout`, `cerr` does not buffer its output, which means we can receive error messages in real-time, even in the case of a program crash.
+One useful method is to create a custom debug output function. This will allow us to easily toggle debug output on and off, instead of having to comment out `cout` statements every time we want to remove them. Here's an example:
 
-Lastly, we can use conditional statements such as `#ifdef` to print debug output only during development and not in the final production version of our program. This saves us from the overhead of printing unnecessary information and makes our code more efficient.
+```C++
+#include <iostream>
+using namespace std;
+
+//This is our custom debug output function
+void debugPrint(string message){
+    #ifdef DEBUG //only execute this code if DEBUG is defined
+        cout << message << endl;
+    #endif
+}
+
+int main(){
+    int num = 5;
+
+    //Some code here
+    debugPrint("The value of num is: " + to_string(num)); //to_string converts int to string
+
+    //More code here
+    num++;
+    debugPrint("Now the value of num is: " + to_string(num));
+
+    return 0;
+}
+
+```
+
+If we define the `DEBUG` constant at the top of our code, the debug output will be printed. Otherwise, it will be ignored.
+
+Another helpful technique is using `cerr` instead of `cout`. `cerr` is similar to `cout` but is specifically designed for error messages and is usually displayed in a different color in the terminal. This can be useful when trying to differentiate between normal output and error messages.
 
 ## See Also
 
-- [C++ Debugging Techniques](https://www.pluralsight.com/blog/software-development/c-plus-plus-debugging-techniques)
-- [Debugging with Visual Studio Code](https://code.visualstudio.com/docs/cpp/debugging)
-- [Debugging C++ Programs using GDB](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb)
+For more information on C++ output and debugging, check out these sources:
 
-With the use of printing debug output, we can effectively debug our C++ programs and improve their functionality. Make sure to give it a try in your next project and see its benefits for yourself! Happy coding!
+- [C++ Output using cout](https://www.geeksforgeeks.org/basic-input-output-c/)
+- [Debugging Techniques in C++](https://www.programiz.com/cpp-programming/debugging)
+- [Custom Debug Output Function](https://embeddedartistry.com/blog/2017/1/24/demystifying-c-cout-debugging-tricks)

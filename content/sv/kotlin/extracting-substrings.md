@@ -1,50 +1,43 @@
 ---
-title:    "Kotlin: Extrahera substrängar"
+title:    "Kotlin: Extrahering av delsträngar"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att extrahera substrängar är en viktig färdighet inom programmering som kan hjälpa till att göra koden mer effektiv och lättare att förstå. Genom att lära sig denna teknik kan du enkelt utvinna specifika delar av en sträng som du behöver för ditt program. Detta kan vara till nytta för att göra diversa operationer inom en textbaserad applikation, som att hitta och ersätta ord eller extrahera information från en textfil.
+I den här bloggposten kommer vi att utforska hur man kan extrahera substrängar i Kotlin. Detta kan vara användbart när du arbetar med strängar och behöver en del av en sträng istället för hela. Låt oss ta en titt på hur man kan göra detta och varför det kan vara användbart.
 
-## Så här gör du
+## Hur man gör
 
-För att extrahera en substräng från en befintlig sträng, använd `substring()`-funktionen i Kotlin. Denna funktion kräver två parametrar - startindex och slutindex - som anger vilka tecken från den ursprungliga strängen som ska extraheras.
+För att extrahera en substräng i Kotlin, används funktionen `substring` på en sträng. Denna funktion tar två parametrar - startindex och slutindex för den del av strängen som ska extraheras. Båda indexen är nollbaserade, vilket betyder att det första tecknet i strängen har indexet 0.
 
-```
-Kotlin val originalStrang = "Det här är en teststräng"
-val nyStrang = originalStrang.substring(4,8)
-```
+För att visa hur detta fungerar, låt oss ta en sträng och extrahera en substräng från den:
 
-I detta exempel kommer `nyStrang` att innehålla ordet "är" från den ursprungliga strängen. Detta är eftersom vi har använt startindex 4 (starta efter "här") och slutindex 8 (sluta innan "teststräng").
-
-Du kan också använda `substring()`-funktionen för att extrahera en substräng från ett specifikt index till slutet av en sträng.
-
-```
-Kotlin val originalStrang = "Det här är en teststräng"
-val nyStrang = originalStrang.substring(8)
+```Kotlin
+val sträng = "Hej från Sverige!"
+val substräng = sträng.substring(4,8)
+println(substräng)
 ```
 
-I detta fall kommer `nyStrang` att innehålla "teststräng", eftersom vi bara anger startindex och inte slutindex.
-
-Du kan också använda `substring()`-funktionen för att få en del av en sträng baserat på ett visst antal tecken. I detta fall behöver du bara ange startindex och längden på den önskade substrängen.
-
-```
-Kotlin val originalStrang = "Det här är en teststräng"
-val nyStrang = originalStrang.substring(12,3)
-```
-
-Detta kommer att returnera en substräng på 3 tecken, vilket i detta fall blir "ett".
+Resultatet av detta kommer att vara "från".
 
 ## Djupdykning
 
-Det finns flera saker att tänka på när du arbetar med substrängar i Kotlin. En viktig aspekt är att komma ihåg att index i en sträng börjar på 0, vilket betyder att den första bokstaven har index 0, den andra bokstaven har index 1, och så vidare. Detta är viktigt att tänka på när du bestämmer vilka start- och slutindex du behöver för att extrahera önskad substräng.
+Det finns några olika sätt att använda `substring`-funktionen på. Här är några exempel:
 
-En annan viktig faktor är att varje gång du använder `substring()`-funktionen, skapar du en helt ny sträng istället för att modifiera den befintliga strängen. Detta kan påverka prestandan om du arbetar med stora textbaserade filer eller programmässigt behöver extrahera många substrängar.
+- Om endast startindexet anges kommer substrängen att extraheras från det angivna indexet till slutet av strängen.
+- Om inget slutindex anges, kommer substrängen att extraheras från det angivna startindexet till slutet av strängen.
+- Om slutindexet är större än längden på strängen, kommer substrängen att vara allt från det angivna startindexet till slutet av strängen.
 
-## Se även
+Funktionen `substring` returnerar en ny sträng. Det är viktigt att notera att den ursprungliga strängen fortfarande finns kvar och inte ändras av funktionen.
 
-- [Kotlin dokumentation för substring-funktionen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
-- [Guide för textbaserade filhanteringsoperationer i Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/operating-files.html#operating-with-files-and-directories)
+För att läsa mer om olika sätt att använda `substring`-funktionen, ta en titt på Kotlin dokumentationen.
+
+## Se också
+
+- [Kotlin dokumentationen för substring-funktionen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
+- [En tutorial om strängmanipulering i Kotlin](https://www.raywenderlich.com/4665422-kotlin-strings-and-string-templates-tutorial)
+- [En video om strängmanipulering i Kotlin](https://www.youtube.com/watch?v=ZZDOCR1oGVg)

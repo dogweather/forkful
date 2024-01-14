@@ -1,52 +1,59 @@
 ---
-title:    "Haskell: Calculando una fecha en el futuro o pasado"
+title:    "Haskell: Calculando una fecha en el futuro o pasado."
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-Calcular una fecha en el futuro o en el pasado puede ser una tarea útil en la programación, ya sea para hacer un seguimiento de eventos o para realizar cálculos relacionados con el tiempo. En este post, aprenderemos cómo realizar este tipo de cálculos usando el lenguaje de programación Haskell.
+Calcular fechas en el futuro o en el pasado es una tarea muy común en la programación. Puede ser útil para planificar eventos o realizar tareas de manera automática. En este artículo hablaremos sobre cómo calcular fechas en Haskell y cómo podemos hacerlo de manera eficiente.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado, primero necesitamos definir una función que tome como entrada una fecha y una cantidad de días, y nos devuelva la fecha resultante. En Haskell, podemos definir esta función de la siguiente manera:
+Para calcular una fecha en el futuro o pasado, primero necesitamos definir una función que tome como argumentos una fecha inicial y una cantidad de días a sumar o restar. Podemos utilizar la biblioteca `Data.Time` para manejar fechas en Haskell.
+
+Primero, importemos la biblioteca en nuestro código:
 
 ```Haskell
-calculateDate :: (Int, Int, Int) -> Int -> (Int, Int, Int)
-calculateDate (day, month, year) days =
-    let date = addDays days (fromGregorian year month day)
-        (year', month', day') = toGregorian date
-    in (month', day', year')
+import Data.Time
 ```
 
-En la función anterior, utilizamos las funciones `addDays` y `fromGregorian` para agregar una cantidad específica de días a una fecha dada. Luego, utilizamos la función `toGregorian` para convertir la fecha resultante en una tupla de tres elementos: mes, día y año.
-
-Ahora, podemos llamar a nuestra función `calculateDate` pasándole una fecha y la cantidad de días que queremos agregar o restar, como en el siguiente ejemplo:
+Luego, definamos nuestra función de cálculo de fechas:
 
 ```Haskell
--- Calcular una fecha 10 días después del 15 de mayo de 2021
-calculateDate (15, 5, 2021) 10
-
--- Resultado: (5, 25, 2021)
+calculateDate :: Day -> Integer -> Day
+calculateDate initialDate days = addDays days initialDate
 ```
 
-También podemos utilizar números negativos para restar días, por ejemplo:
+En esta función, utilizamos la función `addDays` de la biblioteca `Data.Time` para sumar o restar la cantidad de días indicada a la fecha inicial.
+
+Veamos un ejemplo de cómo utilizar esta función:
 
 ```Haskell
--- Calcular una fecha 7 días antes del 1 de enero de 2021
-calculateDate (1, 1, 2021) (-7)
-
--- Resultado: (12, 25, 2020)
+calculateDate (fromGregorian 2020 5 1) 30
 ```
 
-## Profundizando
+En este caso, estamos calculando la fecha 30 días después del 1 de mayo de 2020. El resultado será `2020-05-31`, ya que el año y mes se mantienen iguales y solo se agregan 30 días a la fecha.
 
-Esta técnica de cálculo de fechas se basa en los tipos de datos `Day`, `MonthOfYear` y `Year`, que son parte del módulo `Data.Time.Calendar` de Haskell. También se utilizan funciones como `addDays` y `toGregorian` para realizar las operaciones necesarias. Puedes explorar más en profundidad estas funciones y datos en la documentación oficial de Haskell.
+También podemos realizar cálculos con fechas anteriores o fechas futuras lejanas, ya que la función `addDays` maneja fechas en el formato `Day` de la biblioteca `Data.Time`.
 
-## Ver también
+## En profundidad
 
-- [Documentación de `Data.Time.Calendar`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
-- [Tutorial de Haskell](https://www.haskell.org/tutorial/)
-- [Ejemplos de fechas en Haskell](https://www.stackbuilders.com/news/a-comparison-of-datetime-libraries-in-haskell)
+Si queremos obtener el día de la semana de una fecha determinada, podemos utilizar la función `toWeekDay` de la biblioteca `Data.Time`.
+
+Por ejemplo, si queremos calcular la fecha 21 días antes del 15 de julio de 2020 y obtener el día de la semana, podemos hacerlo de la siguiente manera:
+
+```Haskell
+toWeekDay $ calculateDate (fromGregorian 2020 7 15) (-21)
+```
+
+El resultado será `Tuesday`, ya que el 24 de junio de 2020 fue un martes.
+
+También es importante tener en cuenta que las funciones de la biblioteca `Data.Time` trabajan con fechas según el calendario gregoriano, por lo que al utilizar fechas de otros calendarios puede haber discrepancias en los resultados.
+
+# Ver también
+
+- [Funciones de fecha en Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Documentación de la biblioteca Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)

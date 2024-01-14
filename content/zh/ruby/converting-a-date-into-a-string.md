@@ -1,55 +1,50 @@
 ---
 title:    "Ruby: 将日期转换为字符串"
 keywords: ["Ruby"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么会有人想要把日期转换成字符串。
+## 为什么
 
-很多时候，在程序设计中，我们需要将日期以可读性强的形式展示出来。将日期转换成字符串就是一个常见的需求，通过这样做，我们可以在界面上直接显示日期，而不是让用户去计算数字代表的日期是哪一天。因此，有时候我们会想要将日期转换成字符串。
+为什么有时候我们需要将日期转换成字符串？事实上，这是一种很常见的需求，因为我们通常会在我们的程序中显示日期，但是日期对象本身是无法直接显示在屏幕上的。因此，我们需要将它们转换成字符串，以方便我们在程序中使用。
 
-怎么做：以下是几个示例，展示了如何使用Ruby代码将日期转换成字符串。
+## 如何做
 
-```Ruby
-# 引入日期模块
-require 'date'
+下面将介绍如何使用Ruby将日期转换成字符串。首先，我们需要使用```.to_s```方法将日期对象转换成字符串。让我们看一个例子：
 
-# 定义一个日期变量
+```Ruby 
 date = Date.today
-
-# 使用strftime方法将日期转换成字符串
-puts date.strftime("%Y-%m-%d")
+puts date.to_s
 ```
 
-上面的代码中，我们先引入了Ruby的日期模块，然后定义了一个日期变量，在这个例子中，我们使用的是今天的日期。接着，我们使用`strftime`方法将日期转换成字符串。`strftime`是Ruby中专门用来格式化日期和时间的方法，它接收一个格式字符串作为参数，并将日期按照这个格式输出。
+输出应该为：```2021-08-24```
 
-下面是一些常用的日期格式化选项：
+我们也可以指定日期的格式，例如使用```("%m/%d/%Y")```将日期转换成美国的日期格式：
 
-- `%Y`：四位数的年份，如2021
-- `%m`：两位数的月份，如01表示一月
-- `%d`：两位数的日期，如01表示一号
+```Ruby
+date = Date.today
+puts date.strftime("%m/%d/%Y")
+```
 
-如果我们想要得到像“2021年1月1日”这样的格式，可以这样写`"%Y年%m月%d日"`。
+输出应该为：```08/24/2021```
 
-更多关于`strftime`方法的用法和格式化选项，请参考Ruby官方文档。
+要了解更多关于可用的日期格式，请查阅Ruby文档。
 
-深入了解：除了`strftime`方法，Ruby还提供了其他一些方法来处理日期和时间，比如`to_s`和`to_str`等。它们的作用也是将日期转换成字符串，但是有着不同的实现方式。在实际的开发中，你可以选择最适合你需求的方法来转换日期。
+## 深入探讨
 
-另外，要注意的是，Ruby中有一个特殊的类`DateTime`，用来表示带有时区信息的日期和时间。因此，如果你需要处理带有时区信息的日期，建议使用`DateTime`类。
+日期对象和字符串之间的转换实际上是通过使用日期类的实例方法来实现的。这些方法包括```.to_s```和```.strftime```。使用这些方法，我们可以在我们的程序中轻松地操作日期对象，使它们适合我们的需求。
 
-还有一点需要注意的是，当使用不同的编程语言时，日期格式化的方式可能会有所不同。因此，在学习日期转换的过程中，你可能需要根据不同的语言做一些调整。
+另外，我们也可以使用```Date.strptime```方法将字符串转换成日期对象。这样可以方便我们从用户输入的字符串中提取出日期信息。
 
-参考链接：
-- http://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime
-- https://www.rubyguides.com/2015/05/formatting-date-and-time/
-- https://www.runoob.com/ruby/ruby-date-time.html
+## 参考链接
 
-也可以参考Ruby官方文档中关于日期和时间的部分：
-- https://ruby-doc.org/core-3.0.1/Date.html
-- https://ruby-doc.org/core-3.0.1/DateTime.html
+- [Ruby Date类文档](http://ruby-doc.org/stdlib-2.1.1/libdoc/date/rdoc/Date.html)
+- [Ruby strftime方法文档](http://ruby-doc.org/core-2.0.0/Time.html#method-i-strftime)
+- [Ruby日期对象教程](https://www.geeksforgeeks.org/date-and-time-in-ruby/)
 
-参见：
-- 相关文章一
-- 相关文章二
-- 相关文章三
+## 参见
+
+- [如何使用Ruby获取当前日期和时间](https://example.com)
+- [Ruby字符串基础知识介绍](https://example.com)

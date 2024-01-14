@@ -1,45 +1,45 @@
 ---
 title:    "Haskell: Utilizando expresiones regulares"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué utilizar expresiones regulares en Haskell?
 
-Las expresiones regulares son una herramienta poderosa en la programación funcional que permiten buscar y manipular patrones de texto con una sola línea de código. Son especialmente útiles para tareas como validación de entradas de usuario, búsqueda de datos en grandes conjuntos de texto y transformación de cadenas de caracteres. Si eres un desarrollador Haskell y quieres mejorar tu eficiencia en la manipulación de texto, ¡las expresiones regulares son una habilidad que definitivamente deberías tener!
+Las expresiones regulares son una herramienta poderosa para manipular y buscar texto en cualquier lenguaje de programación, incluyendo Haskell. Son especialmente útiles para aquellos que trabajan con grandes cantidades de datos de texto, como en el análisis de datos o la creación de herramientas para procesar texto. El uso de expresiones regulares en Haskell puede ahorrar tiempo y esfuerzo al automatizar tareas repetitivas y complejas.
 
-## Cómo
+## Cómo utilizar expresiones regulares en Haskell
 
-La sintaxis básica para construir una expresión regular en Haskell es: `let expresion = ~/patron~`. Aquí, "patrón" es el patrón de texto que estás buscando. Por ejemplo, si quieres buscar todas las palabras que comiencen con la letra "a", tu patrón sería `"a\\w+"` (las barras invertidas son necesarias para escapar de la barra "w").
-
-Ahora, veamos algunos ejemplos de código utilizando expresiones regulares:
+Primero, necesitamos importar el módulo `Text.Regex.Posix` para utilizar expresiones regulares en Haskell. Luego, podemos utilizar la función `matchRegex` para buscar patrones en una cadena de texto. Por ejemplo:
 
 ```Haskell
-let texto = "¡Hola mundo, soy un texto!"
-let patron = /\\w+/   -- Este es el patrón para encontrar palabras
-let resultado = busca patron texto     -- resultado será una lista de palabras ["Hola", "mundo", "soy", "un", "texto"]
+import Text.Regex.Posix
+let texto = "Hola mundo"
+let patron = "mundo"
+let resultado = matchRegex texto patron :: Maybe (String, String, String)
 ```
 
-También puedes utilizar expresiones regulares para hacer reemplazos en una cadena de texto. Por ejemplo, si quisieras reemplazar todas las letras "a" en una palabra con la letra "e", podrías usar el siguiente código:
+El resultado será `Just ("Hola ", "m", "undo")`, ya que el patrón "mundo" se encuentra en la cadena "Hola mundo". También podemos utilizar la función `subRegex` para reemplazar un patrón en una cadena de texto con otra cadena. Por ejemplo:
 
 ```Haskell
-let palabra = "hola"
-let resultado = sustituir /a/ "e" palabra     -- resultado será "hole"
+let texto = "Hola amigo"
+let patron = "amigo"
+let reemplazo = "amiga"
+let resultado = subRegex texto patron reemplazo :: String
 ```
 
-Puedes utilizar cualquier letra, número o caracter especial en tus patrones de expresión regular, y también puedes combinarlos con operadores como `+` (para uno o más resultados), `*` (para cero o más resultados) y `?` (para cero o un resultado).
+El resultado será "Hola amiga", ya que el patrón "amigo" ha sido reemplazado por "amiga". Los patrones en las expresiones regulares pueden incluir caracteres comodín, clases de caracteres y operadores de repetición, lo que permite una gran flexibilidad en la búsqueda y manipulación de texto.
 
-## Inmersión Profunda
+## Profundizando en el uso de expresiones regulares en Haskell
 
-Las expresiones regulares en Haskell se basan en la biblioteca de expresiones regulares de la librería estándar del lenguaje, `Text.Regex.Posix`. Esta biblioteca es bastante extensa y también ofrece funciones para validación de patrones, búsqueda de subcadenas y reemplazos avanzados.
+Además de las funciones `matchRegex` y `subRegex`, el módulo `Text.Regex.Posix` también ofrece otras funciones útiles, como `getAllTextMatches` para obtener todas las coincidencias en una lista, `matchRegexAll` para realizar una búsqueda global en una cadena de texto y `splitRegex` para dividir una cadena en una lista utilizando un patrón. También hay módulos adicionales disponibles para trabajar con expresiones regulares, como `Text.Regex.TDFA` y `Text.Regex.PCRE`.
 
-Una cosa importante a tener en cuenta al utilizar expresiones regulares en Haskell es que todas las cadenas de texto deben estar en formato `ASCII` para que funcionen correctamente. Puedes utilizar la función `utf8ToAscii` para convertir cualquier cadena en este formato.
+Es importante tener en cuenta que el uso de expresiones regulares puede tener un impacto en el rendimiento de nuestro código, especialmente si se utilizan patrones complejos en cadenas de texto más largas. Por lo tanto, es importante considerar alternativas más eficientes en situaciones en las que la velocidad de procesamiento es crucial.
 
-Es importante también recordar que las expresiones regulares no son la mejor opción para todas las tareas de manipulación de texto. Si estás buscando patrones más complejos o necesitas realizar transformaciones más avanzadas, es posible que sea más eficiente utilizar otras técnicas de programación funcional.
+## Ver también
 
-## Véase También
-
-- Tutorial básico sobre expresiones regulares en Haskell: https://wiki.haskell.org/Regular_expressions
-- Documentación de la biblioteca de expresiones regulares en la librería estándar: https://hackage.haskell.org/package/regex-posix-1.0.3.2/docs/Text-Regex-Posix.html
-- Más ejemplos y aplicaciones de expresiones regulares en Haskell: https://www.codewars.com/collections/haskell/regex.
+- [Documentación oficial de Haskell sobre expresiones regulares](https://www.haskell.org/onlinereport/haskell2010/haskellch9.html)
+- [Tutorial de expresiones regulares en Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Expresiones regulares en Haskell: técnicas y trucos](https://www.rosettacode.org/wiki/Regular_expressions#Haskell)

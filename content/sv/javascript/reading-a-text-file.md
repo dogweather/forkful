@@ -1,42 +1,68 @@
 ---
-title:    "Javascript: Att läsa en textfil"
+title:    "Javascript: Läsa en textfil"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna läsa en textfil är en viktig färdighet för programmörer. Det gör det möjligt för oss att hantera och visualisera stora mängder data på ett snabbt och effektivt sätt. Det är en grundläggande del av många programmeringsprojekt och ett värdefullt verktyg att ha i sin verktygslåda.
+Att läsa en textfil är en mycket användbar färdighet för alla som programmerar i Javascript. Det gör det möjligt att lagra och läsa in data på ett strukturerat sätt och kan hjälpa till med att lösa många programmeringsproblem.
 
 ## Hur man gör
 
-Att läsa en textfil i Javascript är ganska enkelt. Vi börjar med att skapa en variabel som lagrar sökvägen till vår textfil. Sedan använder vi 'fs' modulen för att läsa filen och skriva ut den till konsolen.
+För att läsa en textfil i Javascript behöver du först skapa en instans av ett filsystem-objekt genom att använda `require('fs')` metoden. Därefter kan du använda `readFile()` metoden för att läsa in filen och lagra den i en variabel.
 
 ```Javascript
-let filePath = 'textfil.txt';
 let fs = require('fs');
+let data = fs.readFileSync('textfil.txt', 'utf8'); 
+```
 
-fs.readFile(filePath, 'utf8', (err, data) => {
+Den första parametern i `readFile()` är namnet på den fil som ska läsas in och den andra parameter är teckenkodningen för filen (i detta fall är det "utf8"). Den lästa filen sparas i variabeln `data`.
+
+För att konvertera den lästa filen till en array, kan du använda `.split()` metoden:
+
+```Javascript
+let dataArr = data.split('\n');
+```
+
+Detta kommer att dela upp filen vid varje radbrytning och lagra den som en array. Om du istället vill läsa in en CSV-fil och konvertera den till en array av objekt, kan du använda en loop tillsammans med `.split()` metoden för att dela upp datan och skapa objekt med de olika värdena:
+
+```Javascript
+let dataObj = [];
+for (let i = 0; i < dataArr.length; i++) {
+    let row = dataArr[i].split(',');
+    let obj = {
+        name: row[0],
+        age: row[1],
+        city: row[2]
+    };
+    dataObj.push(obj);
+}
+```
+
+Detta kommer att läsa in en CSV-fil där varje rad innehåller ett namn, en ålder och en stad och konvertera den till en array av objekt.
+
+Slutligen kan du använda `.writeFile()` metoden för att skriva ut data till en textfil:
+
+```Javascript
+let newData = "Hello world!";
+fs.writeFile('nyfil.txt', newData, (err) => {
     if (err) throw err;
-    console.log(data);
+    console.log('Filen har skapats!');
 });
 ```
 
-Vi använder 'fs.readFile' funktionen och anger sökvägen till filen, teckenkodningen och en callback-funktion som utför vår utskrift.
+## Deep Dive (Djupdykning)
 
-I detta exempel har vi antagit att vår textfil är i samma mapp som vårt Javascript-fil. Men om filen finns någon annanstans behöver vi ange hela sökvägen.
+När du läser in en textfil i Javascript, är det viktigt att vara medveten om teckenkodningen på filen. Om filen har en annan teckenkodning än "utf8", måste du ange den korrekta teckenkodningen i `readFile()` metoden för att få korrekta resultat.
 
-## Djupdykning
-
-När vi använder funktionen 'fs.readFile' är det viktigt att förstå att det är en asynkron funktion. Det betyder att den inte blockera andra operationer medan filen läses. Istället körs det parallellt med resten av vår kod, vilket är en fördel i många situationer.
-
-En annan viktig sak att notera är att vår callback-funktion tar emot två parametrar, 'error' och 'data'. Om det finns ett fel kommer detta att vara den första parametern och om det inte finns något fel så kommer vår fildata att vara den andra parametern.
-
-Vi kan också använda funktionen 'fs.readFileSync' som är en synkron funktion. Det betyder att den kommer att blockera resten av vår kod tills filen läses helt. Detta kan vara användbart i vissa situationer, men i allmänhet är det bättre att använda den asynkrona funktionen för att undvika att vår kod blockeras.
+Det kan också vara viktigt att hantera eventuella fel som kan uppstå vid inläsning och skrivning av filer. Det är därför som i exempelkoden ovan använder vi `try-catch` block för att fånga eventuella fel som kan uppkomma.
 
 ## Se även
 
-- [Node.js filsystemsdokumentation](https://nodejs.org/api/fs.html)
-- [W3Schools guide om att läsa filer i Node.js](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Tutorialspoint artikel om att läsa och skriva textfiler i Node.js](https://www.tutorialspoint.com/nodejs/nodejs_filesystem.htm)
+- [Node.js file system](https://nodejs.org/api/fs.html)
+- [Dokumentation för fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
+- [Dokumentation för fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+- [Dokumentation för fs.Split()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)

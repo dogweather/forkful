@@ -1,52 +1,32 @@
 ---
-title:    "C++: Att göra en sträng stor"
+title:    "C++: Att stor-bokstavera en sträng"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att använda en huvudbokstav i en sträng kan vara användbart för att ge strukturen åt en text som visas för användaren. Det gör det också enklare att urskilja namn och titlar.
+# Varför
 
-## Hur man gör
-För att göra en huvudbokstav i en sträng i C++ kan du använda funktionen "toupper()" tillsammans med en for-loop som itererar över varje tecken i strängen. Här är ett exempel på hur det kan se ut:
+Att använda sig av en funktion för att göra en sträng (string) stor och bokstavlig är ett vanligt förekommande problem inom programmering. Det kan vara bra att känna till och använda sig av denna funktion för att öka läsbarheten och stilriktigheten i koden.
+
+## Hur man gör det
+
+För att använda sig av funktionen för att göra en sträng stor och bokstavlig behöver man först skapa en variabel som håller strängen. Sedan kan man använda sig av "std::toupper" funktionen som är standard inom C++. 
 
 ```C++
-#include <iostream>
-#include <string>
-
-int main() {
-
-  // Skapa en ny sträng som ska kapitaliseras
-  std::string str = "hej alla vänner";
-
-  // Loopa igenom varje tecken i strängen
-  for (int i = 0; i < str.length(); i++) {
-
-    // Om tecknet är en bokstav, gör om den till en stor bokstav
-    if (isalpha(str[i])) {
-      str[i] = toupper(str[i]);
-    }
-  }
-
-  // Skriv ut den kapitaliserade strängen
-  std::cout << str << std::endl;
-
-  return 0;
-}
+std::string str = "hej, jag är en sträng!";
+std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::toupper(c); });
+std::cout << str; // Output: HEJ, JAG ÄR EN STRÄNG!
 ```
 
-### Resultat:
-```
-HEJ ALLA VÄNNER
-```
+## Fördjupning
 
-## Djupdykning
-Förutom att bara konvertera en sträng till stora bokstäver, kan man även använda denna teknik för att göra första bokstaven i varje ord stor. Detta kan åstadkommas genom att kontrollera varje teckes position i förhållande till mellanslag. Man kan också ha koll på specialtecken som punkt och frågetecken för att se till att varje mening börjar med en stor bokstav.
+Funktionen "std::transform" tar in tre parametrar, där den första är startpunkten för strängen, andra är slutpunkten för strängen och den tredje är en funktion som tar in en variabel av typen "unsigned char" (vilket är varje enskild bokstav i strängen) och returnerar den stora och bokstavliga motsvarigheten till "c". I exemplet använder vi en lambda-funktion för att enklare returnera rätt värde.
 
-Det finns även inbyggda funktioner i C++ som kan göra detta enklare, såsom "capitalize()", "toupper()" och "tolower()". Genom att utforska dessa funktioner kan man hitta en lämplig metod för sitt specifika användningsområde.
+En annan viktig sak att notera är att "std::transform" inte ändrar på originalsträngen, utan istället skapar en kopia av den med de önskade ändringarna. Detta gör det lättare att återanvända den ursprungliga strängen i programmet.
 
-## Se även
-- [C++ string functions](https://www.geeksforgeeks.org/c-string-functions/)
-- [C++ Character Handling](https://www.tutorialspoint.com/cplusplus/cpp_character_handling.htm)
-- [capitalize function reference](http://www.cplusplus.com/reference/cctype/capitalize/)
+# Se även
+
+- [C++ toupper() function](https://www.geeksforgeeks.org/toupper-function-in-cpp/)
+- [std::transform documentation](https://en.cppreference.com/w/cpp/algorithm/transform)

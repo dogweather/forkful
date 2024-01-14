@@ -1,48 +1,40 @@
 ---
-title:    "C#: パターンにマッチする文字を削除する"
+title:    "C#: パターンにマッチする文字の削除"
 keywords: ["C#"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-なぜ誰かがパターンにマッチする文字を削除することに取り組むのか、その理由について説明します。
+あなたはプログラミングにおいて、特定のパターンに一致する文字を削除する必要が生じることがあります。その理由は多岐にわたります。例えばエラーメッセージから不要な文字を削除するため、またはデータベースから特定のフィールドを除外するためなどです。
 
 ## 方法
 
-以下の「```C# ... ```」コードブロック内のコーディング例とサンプル出力を参考に、文字を削除する方法を紹介します。
+文字列を処理する際に、特定のパターンに一致する文字を削除する方法を学ぶことで、より効率的にコードを書くことができます。下記のコード例を参考にしてください。
 
 ```C#
-using System;
-
-public class Program
+// 文字列から特定の文字を削除するメソッド
+public string RemoveCharacters(string input, string pattern)
 {
-    public static void Main()
-    {
-        // 文字列を定義
-        string str = "aabbccdd1234567890";
-
-        // パターンにマッチする文字を削除
-        string newStr = System.Text.RegularExpressions.Regex.Replace(str, @"[a-z]", "");
-
-        // 結果を出力
-        Console.WriteLine("元の文字列: " + str);
-        Console.WriteLine("パターンにマッチする文字を削除した後: " + newStr);
-    }
+    string output = Regex.Replace(input, pattern, "");
+    return output;
 }
 
-// 出力結果
-// 元の文字列: aabbccdd1234567890
-// パターンにマッチする文字を削除した後: 1234567890
+// 使用例：エラーメッセージからカッコと中身を削除する
+string errorMessage = "Invalid input (12345). Please try again.";
+string pattern = @"\s\(.*?\)";
+
+string result = RemoveCharacters(errorMessage, pattern);
+Console.WriteLine(result); // 出力結果：Invalid input. Please try again.
 ```
 
-## ディープダイブ
+## 深堀り
 
-パターンにマッチする文字を削除する方法について、詳しく説明します。削除する際に使用される `System.Text.RegularExpressions` ライブラリや、正規表現を使用してパターンを指定する方法など、より詳細な情報を紹介します。
+文字を削除する際にパターンに注目することで、より複雑な処理を行うことができます。例えば、文字列内の特定のパターンに一致する文字を取得したり、削除したりすることができます。また、正規表現を使用することでより柔軟なパターンマッチングが可能になります。
 
-## この記事を読んだ人にお勧めの記事
+## 参考資料
 
-- [C#で正規表現を使用して文字を置換する方法](https://lang-ship.com/blog/work/csharp/regex-replace)
-- [正規表現を使った文字列のパターンマッチング入門](https://knowledge.sakura.ad.jp/20443/)
-- [正規表現の書き方とパターン一覧](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
+- Microsoft: [正規表現を使用して文字列内の特定のパターンを検索する](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/finding-patterns-in-strings-using-regular-expressions)
+- C# グローバルリファレンス: [Regex.Replace メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex.replace)

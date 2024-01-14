@@ -1,71 +1,38 @@
 ---
-title:    "Elixir: Encontrar la longitud de una cadena"
+title:    "Elixir: Encontrando la longitud de una cadena."
 keywords: ["Elixir"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
- En la programación, es común tener la necesidad de encontrar la longitud de una cadena de caracteres. Ya sea para validar la entrada de usuario o para manipular datos, saber cuántos caracteres contiene una cadena es una habilidad importante para todo programador.
+Si eres un programador de Elixir, probablemente estés familiarizado con la necesidad de manipular cadenas de texto en tu código. Una de las tareas más comunes es encontrar la longitud o número de caracteres en una cadena. Aunque esto puede parecer una tarea sencilla, conocer la forma correcta de hacerlo puede ahorrarte tiempo y esfuerzo en el futuro.
 
 ## Cómo hacerlo
-
-En Elixir, podemos utilizar la función `String.length/1` para encontrar la longitud de una cadena. Esta función toma como argumento la cadena a la que se le quiere encontrar su longitud y devuelve un número entero.
-
-```Elixir
-iex> String.length("Hola mundo")
-10
-```
-
-En este ejemplo, estamos utilizando la función `String.length/1` para encontrar la longitud de la cadena "Hola mundo" y el resultado es 10, ya que esa cadena contiene 10 caracteres.
-
-También podemos utilizar la función `length/1` en lugar de `String.length/1`. Ambas funciones hacen lo mismo, pero la primera es una función genérica y puede ser utilizada para encontrar la longitud de cualquier tipo de dato, no solo cadenas.
+La forma más sencilla de encontrar la longitud de una cadena en Elixir es utilizando la función `length()` junto con el nombre de la cadena como argumento. Por ejemplo:
 
 ```Elixir
-iex> length("Elixir")
-6
+cadena = "Hola mundo"
+length(cadena)
 ```
 
-También podemos utilizar la función `byte_size/1` para encontrar la longitud de una cadena en bytes. Esta función cuenta el número de bytes necesarios para almacenar la cadena.
+El resultado de este código sería `10` ya que la cadena tiene 10 caracteres incluyendo espacios. También puedes utilizar la función `String.length()` para obtener el mismo resultado.
 
-```Elixir
-iex> byte_size("¡Hola mundo!")
-13
-```
+## Paso a paso
+Comencemos desglosando los pasos necesarios para encontrar la longitud de una cadena en Elixir:
 
-Es importante tener en cuenta que en Elixir, las cadenas son listas de caracteres, por lo que también podemos utilizar la función `Enum.count/1` para encontrar la longitud de una cadena.
+1. Define una variable con el nombre de la cadena a la que quieres encontrar la longitud.
+2. Utiliza la función `length()` o `String.length()` junto con el nombre de la cadena como argumento.
+3. El resultado será el número de caracteres en la cadena.
 
-```Elixir
-iex> Enum.count("¡Hola mundo!")
-11
-```
+Recuerda que en Elixir, las cadenas son codificadas en UTF-8, lo que significa que cada carácter no siempre ocupa un solo byte. Esto puede afectar la longitud de la cadena y debes tenerlo en cuenta al manipular cadenas en tu código.
 
 ## Profundizando
+Si quieres profundizar en el tema y conocer más funciones relacionadas con la manipulación de cadenas en Elixir, puedes utilizar la función `String.graphemes()` para obtener una lista de todos los caracteres individuales en una cadena, incluyendo caracteres combinados como acentos y diéresis.
 
-Ahora que sabemos cómo encontrar la longitud de una cadena en Elixir, es importante mencionar que esta función también puede ser utilizada en múltiples cadenas o listas de caracteres. Si pasamos una lista de cadenas como argumento, la función `String.length/1` devolverá una lista con la longitud de cada cadena.
-
-```Elixir
-iex> String.length(["¡Hola", "mundo!"])
-[5, 6]
-```
-
-También podemos utilizar la macro `__ENV__.file` para obtener el nombre y la ubicación del archivo en el que estamos trabajando en Elixir.
-
-```Elixir
-iex> String.length(__ENV__.file)
-24
-```
-
-Otra forma interesante de utilizar la función `String.length/1` es pasarle una expresión regular como argumento y devolverá la longitud de la cadena que coincide con la expresión regular.
-
-```Elixir
-iex> String.length(~r/Hello World/)
-11
-```
+También puedes utilizar la función `String.slice()` para obtener una subcadena a partir de una cadena existente. Esta función toma dos parámetros, el primero es la cadena y el segundo es un rango específico de caracteres que deseas obtener.
 
 ## Ver también
-
-- Documentación oficial de Elixir sobre `String.length/1`: https://hexdocs.pm/elixir/String.html#length/1
-- Documentación oficial de Elixir sobre `Enum.count/1`: https://hexdocs.pm/elixir/Enum.html#count/1
-- Documentación oficial de Elixir sobre `byte_size/1`: https://hexdocs.pm/elixir/String.html#byte_size/1
+- [Documentación oficial de Elixir para funciones de cadena](https://hexdocs.pm/elixir/String.html)
+- [Ejemplos de codificación de cadenas en Elixir](https://gist.github.com/acontreras84/7c17d8d00535f5f03a71d3aa1c668a03)

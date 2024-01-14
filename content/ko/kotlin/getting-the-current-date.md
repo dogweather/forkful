@@ -1,49 +1,42 @@
 ---
 title:    "Kotlin: 현재 날짜 가져오기"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-*왜 누군가가 현재 날짜를 받아야 하는지에 대한 이해*
+# 왜: 현재 날짜를 가져오는 것에 참여하는 이유
 
-현재 날짜를 받는 것은 프로그램에서 매우 중요한 기능입니다. 프로그램이 실행될 때마다 항상 다른 날짜를 사용해야할 때가 있고, 사용자의 시스템 시간에 따라 다른 결과를 출력해야할 때가 있습니다. 또한 프로그램에서 날짜를 사용하여 다양한 통계 또는 서비스를 제공하는데에도 매우 유용합니다. 고정된 날짜를 사용하는 대신에 항상 최신의 날짜를 받는다면, 더 정확하고 신뢰도 높은 프로그램을 만들 수 있습니다.
+현재 날짜를 가져오는 것은 많은 프로그래밍 작업에서 중요한 부분입니다. 예를 들어, 많은 앱에서는 현재 날짜를 화면에 표시하거나 알림을 설정하는 데 사용합니다. 또한 블로그 게시물에서 게시된 날짜를 자동으로 생성하는 데도 사용될 수 있습니다. 이 기능을 구현하기 위해서는 프로그래머가 현재 날짜를 가져오는 방법을 알아야 합니다.
 
-## 방법
-*```Kotlin ``` 코드 블록과 함께 코딩 예제와 출력 결과*
-
-먼저, `java.time.LocalDate` 클래스를 사용하여 현재 날짜를 받아올 수 있습니다. 예를 들어, 다음과 같은 코드를 사용할 수 있습니다:
+## 해결하는 방법: 코딩 예제와 코드 블록
 
 ```Kotlin
-val today = LocalDate.now()
-println(today)
+fun getCurrentDate(): String {
+    val date = Calendar.getInstance().time
+    val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.KOREA)
+    return formatter.format(date)
+}
 ```
 
-위 코드의 출력 결과는 `2021-09-10`와 같이 오늘 날짜가 출력될 것입니다.
-
-또 다른 방법으로는 `java.time.format.DateTimeFormatter` 클래스를 사용하여 날짜를 원하는 형식으로 포맷팅할 수 있습니다. 예를 들어, 다음과 같은 코드를 사용하여 현재 날짜를 "YYYY-MM-dd" 형식으로 출력할 수 있습니다.
+위의 코드 예제는 `getCurrentDate()` 함수를 사용하여 현재 날짜를 가져오는 방법을 보여줍니다. 이 함수는 Kotlin의 `Calendar` 클래스를 사용하여 현재 시스템의 날짜와 시간을 가져옵니다. 그리고 `SimpleDateFormat`을 사용하여 원하는 날짜 형식을 지정하고, 포맷터를 통해 해당 형식의 날짜를 반환합니다. 이제 이 함수를 호출하면 현재 날짜를 다음과 같은 형식으로 가져올 수 있습니다.
 
 ```Kotlin
-val today = LocalDate.now()
-val formatter = DateTimeFormatter.ofPattern("YYYY-MM-dd")
-val formattedDate = today.format(formatter)
-println(formattedDate)
+val currentDate = getCurrentDate()
+println(currentDate) // 2021-09-13
 ```
 
-위 코드의 출력 결과는 `2021-09-10`가 될 것입니다.
+## 깊이 파고들기: 현재 날짜를 가져오는 더 깊은 정보
 
-## 심층 탐구
-*현재 날짜를 받아오는 더 깊은 정보*
+현재 날짜를 가져오기 위해서는 `Calendar` 클래스를 사용할 수 있지만, 이 클래스는 원하는 시간대를 지정하는 방법이 없기 때문에 로케일에 따라 시스템 설정을 따르게 됩니다. 따라서 다른 시간대의 날짜를 가져오려면 외부 라이브러리를 사용하여 현재 시스템의 설정을 사용자가 지정할 수 있습니다.
 
-날짜를 받아오는 방법은 다양하게 존재하며, 각각의 방법마다 장단점이 존재합니다. `LocalDate.now()`를 사용하는 경우, 현재 시스템의 시간대에 따라 날짜가 달라질 수 있습니다. 또한, 시간대가 변경되면 결과가 변경될 수 있습니다. 따라서, 애플리케이션이 여러 지역에서 사용되는 경우 정확한 결과를 얻기 위해서는 추가적인 설정이 필요할 수 있습니다.
+또한 `SimpleDateFormat` 클래스를 사용하여 날짜 형식을 지정할 때, `Locale`를 함께 지정하여 다른 언어나 국가의 형식을 적용할 수 있습니다. 예를 들어, `Locale.US`로 설정하면 미국의 날짜 형식이 적용되고, `Locale.FRENCH`로 설정하면 프랑스의 날짜 형식이 적용됩니다.
 
-또한, 날짜를 포맷팅하는 방법에도 여러가지가 있습니다. `DateTimeFormatter` 클래스 외에도 `SimpleDateFormat` 클래스를 사용할 수도 있습니다. 각각의 방식은 다양한 포맷 옵션을 제공하지만, `DateTimeFormatter`가 더욱 객체 지향적인 설계를 제공하며 더욱 유연한 사용이 가능합니다.
+# 관련 정보
 
-## 관련 자료
-*Kotlin에서 현재 날짜를 받는 방법에 대한 관련 자료들*
+* [Kotlin 공식 문서: Date & Time](https://kotlinlang.org/docs/datetime.html)
+* [프로그래머스: Kotlin Calendar 클래스](https://programmers.co.kr/learn/courses/2717/lessons/12084)
+* [Java의 Calendar 클래스와 비교한 Kotlin의 Time API](https://woowabros.github.io/experience/2020/07/16/kotlin-datetime-api.html)
 
-- [Kotlin Docs - LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
-- [Kotlin Docs - DateTimeFormatter](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time-formatter/)
-- [Java Docs - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java Docs - SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+# 같이 보기

@@ -1,55 +1,53 @@
 ---
 title:    "Haskell recipe: Extracting substrings"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to extract a specific part of a string in your Haskell code? Maybe you wanted to manipulate it separately or use it in a different function. This is where extracting substrings comes in handy! It allows you to isolate a specific portion of a string and use it however you need.
+Substring extraction is a useful technique in programming, especially when working with text. It allows us to extract a specific portion of a string, which can be useful in a variety of applications. Whether you're manipulating user input or parsing through large text files, understanding how to extract substrings can greatly enhance your coding skills.
 
 ## How To
 
-To extract a substring in Haskell, we can use the `take` and `drop` functions. `take` takes a specific number of characters from the beginning of a string, while `drop` removes a specified number of characters from the beginning of a string. Let's see an example:
+Extracting substrings in Haskell is done using the `take` and `drop` functions. These functions take in a string and a number representing the desired length of the substring. The `take` function returns the specified number of characters from the beginning of the string, while the `drop` function returns the remaining characters after the specified number. Let's see an example below:
 
 ```Haskell
-name = "John Doe"
-first_name = take 4 name -- returns "John"
-last_name = drop 5 name -- returns "Doe"
+-- Extract the first 5 characters from the string "Hello World"
+take 5 "Hello World" 
+-- Output: "Hello"
+
+-- Return the remaining characters after the first 5 from the string "Hello World"
+drop 5 "Hello World"
+-- Output: " World"
 ```
 
-We can also use these functions with variables instead of explicitly giving the number of characters:
+We can also use the `splitAt` function to split a string at a specific index, returning a tuple of the substrings before and after the split point.
 
 ```Haskell
-length_of_name = length name
-initials = take 1 name ++ "." ++ take 1 (drop (length_of_name - 1) name) -- returns "J.D."
+-- Split the string "Hello World" at index 5
+splitAt 5 "Hello World"
+-- Output: ("Hello", " World")
 ```
 
-In the first line, we use the `length` function to get the length of `name`. Then, in the second line, we use the `take` and `drop` functions to extract the first and last initials and concatenate them with a period in between.
+These functions can also be used in conjunction with other functions, such as `length` and `words`, to create more dynamic substring extraction. For example, if we wanted to extract the first word of a sentence, we could use the `length` and `take` functions to do so.
+
+```Haskell
+-- Extract the first word from the sentence "This is a test"
+take (length (words "This is a test") !! 0) "This is a test"
+-- Output: "This"
+```
 
 ## Deep Dive
 
-It's important to note that while `take` and `drop` are very useful for extracting substrings, they only work with positive indices. This means if we try to use a negative index, we will get an error. To account for this, we can use the `takeEnd` and `dropEnd` functions from the `Data.List` module. These work in the same way as `take` and `drop`, but with negative indices. Let's see an example:
+Behind the scenes, these functions are using the `substring` function from the standard library. This function takes in a string, a starting index, and a length, and returns the specified substring. Understanding this can be helpful in troubleshooting any issues with your substring extraction code.
 
-```Haskell
-name = "Jane Doe"
-middle_name = takeEnd 3 (drop 5 name) -- returns "n"
-```
-
-We can also use the `takeWhile` and `dropWhile` functions to extract a substring based on a specific condition. These functions take a predicate function as an argument and return the portion of the string that satisfies the condition. Let's look at an example:
-
-```Haskell
-numbers = "123456789"
-even_nums = takeWhile even numbers -- returns "2"
-odd_nums = dropWhile even numbers -- returns "1"
-```
-
-In this example, we used the `even` predicate function from the `Data.Char` module to extract the even or odd numbers from the string.
+It's also worth noting that these functions operate on the entire string, including any white space. If you want to extract a substring without any leading or trailing white space, you can use the `trim` function from the `Data.Text` library before using the `take` and `drop` functions.
 
 ## See Also
 
-- [Haskell documentation for `take`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:take)
-- [Haskell documentation for `drop`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:drop)
-- [Haskell documentation for `takeEnd` and `dropEnd`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:dropEnd)
-- [Haskell documentation for `takeWhile` and `dropWhile`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:takeWhile)
+- [Haskell String Functions](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
+- [Haskell Text Functions](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)
+- [Haskell List Functions](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)

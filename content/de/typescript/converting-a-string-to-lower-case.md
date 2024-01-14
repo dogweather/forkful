@@ -1,38 +1,33 @@
 ---
-title:    "TypeScript: Umwandeln einer Zeichenkette in Kleinbuchstaben"
+title:    "TypeScript: Umwandeln eines Strings in Kleinbuchstaben"
 keywords: ["TypeScript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Das Konvertieren eines Strings in Kleinbuchstaben kann in vielen unterschiedlichen Programmierszenarien nützlich sein. Oftmals ist es notwendig, Eingaben des Benutzers oder Daten aus einer Datenbank zu normalisieren, um eine einheitliche Verarbeitung zu gewährleisten. Die Verwendung von Kleinbuchstaben kann auch bei Vergleichen und Sortierungen von Strings hilfreich sein.
+Die Umwandlung von Zeichenketten in Kleinbuchstaben ist eine gängige Aufgabe in der Programmierung, insbesondere wenn es um die Verarbeitung von Benutzereingaben oder Daten aus externen Quellen geht. Indem man Zeichenketten in Kleinbuchstaben umwandelt, wird die Vergleichbarkeit und Verarbeitung von Daten erleichtert.
 
-## Wie man es macht
-
-Um einen String in TypeScript in Kleinbuchstaben zu konvertieren, kann die integrierte Methode `toLowerCase()` verwendet werden. Diese Methode gibt eine neue Zeichenkette zurück und ändert nicht den ursprünglichen String.
+##Wie man Zeichenketten in Kleinbuchstaben umwandelt
 
 ```TypeScript
-let string = "Guten Tag!";
-console.log(string.toLowerCase()); // Output: guten tag!
+let string = "Hallo, WORLD!";
+console.log(string.toLowerCase());
 ```
+Output: "hallo, world!"
 
-Falls der ursprüngliche String verändert werden soll, kann stattdessen die Methode `toLocaleLowerCase()` verwendet werden. Diese ändert den String selbst.
+Die Methode "toLowerCase()" wird auf einer Zeichenkette angewendet und gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Kleinbuchstaben umgewandelt wurden. Dies funktioniert für alle Sprachen, nicht nur für Englisch.
 
-```TypeScript
-let string = "Guten Tag!";
-string = string.toLocaleLowerCase();
-console.log(string); // Output: guten tag! 
-```
+##Tiefergehende Informationen über die Umwandlung von Zeichenketten in Kleinbuchstaben
 
-## Tiefgehende Einblicke
+Bei der Umwandlung von Zeichenketten in Kleinbuchstaben muss beachtet werden, dass nicht alle Schriftzeichen und Sonderzeichen in allen Sprachen automatisch korrekt umgewandelt werden. Manche Sprachen haben Buchstaben, die aus mehreren Zeichen bestehen oder spezielle Akzente und Symbole, die in der Umwandlung möglicherweise verloren gehen.
 
-Bei der Konvertierung in Kleinbuchstaben werden die Zeichen basierend auf der aktuellen Sprache des Systems in den entsprechenden Kleinbuchstaben umgewandelt. Dies kann in manchen Fällen zu unerwarteten Ergebnissen führen, insbesondere bei Zeichen, die in verschiedenen Sprachen unterschiedlich sind, wie zum Beispiel 'I' und 'i'. Es ist daher wichtig, immer die Verwendung von `toLocaleLowerCase()` zu überprüfen und gegebenenfalls die Sprache zu definieren.
+Es ist auch wichtig zu wissen, dass die Umwandlung in Kleinbuchstaben keine Änderungen an der ursprünglichen Zeichenkette vornimmt, sondern eine neue Zeichenkette zurückgibt. Deshalb ist es wichtig, die Ergebnisse der Umwandlung in einer neuen Variablen zu speichern.
 
-Wichtig ist auch zu beachten, dass bei Unicode-Zeichen, die aus mehr als einem Zeichen bestehen, nur das erste Zeichen in Kleinbuchstaben umgewandelt wird. Um alle Zeichen in Kleinbuchstaben zu konvertieren, kann die Normungsfunktion `NFC` verwendet werden.
+##Siehe auch
 
-## Siehe auch
-
-- [Microsoft TypeScript Dokumentation zu toLowerCase()](https://www.typescriptlang.org/docs/handbook/utility-types.html#lowercasestring) 
-- [Stapelüberlauf: Unterschied zwischen toLocaleLowerCase und toLowerCase](https://stackoverflow.com/questions/33078853/difference-between-tolocalelowercase-and-tolowercase-in-javascript)
+- [MDN Web Docs - String.toLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [W3Schools - TypeScript Strings](https://www.w3schools.com/js/js_string_methods.asp)
+- [Codecademy - Intro to TypeScript](https://www.codecademy.com/learn/introduction-to-typescript)

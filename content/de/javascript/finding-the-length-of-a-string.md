@@ -1,35 +1,55 @@
 ---
-title:    "Javascript: Die Länge eines Strings finden."
+title:    "Javascript: Die Länge eines Strings ermitteln"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Es gibt viele Gründe, warum Programmierer die Länge eines Strings in JavaScript ermitteln möchten. Zum Beispiel kann das Verstehen der Länge eines Strings bei der Validierung von Benutzereingaben oder bei der Manipulation von Text hilfreich sein. Egal aus welchem Grund, das Wissen darüber, wie man die Länge eines Strings in JavaScript findet, ist ein wichtiger Teil jeder Entwickler-Toolbox.
+Länge einer Zeichenkette in Javascript zu finden, mag auf den ersten Blick wie eine einfache Aufgabe erscheinen. Doch es ist eine grundlegende Funktion, die in vielen Programmiersprachen verwendet wird und auch für Javascript-Entwickler von großer Bedeutung ist. Die Länge einer Zeichenkette zu kennen, kann dabei helfen, bestimmte Operationen auszuführen oder Bedingungen zu überprüfen. In diesem Artikel werde ich dir zeigen, wie du mithilfe von Javascript die Länge einer Zeichenkette finden kannst und warum dies hilfreich sein kann.
 
-## Wie man die Länge eines Strings in JavaScript findet
+# Wie
 
-Um die Länge eines Strings in JavaScript zu ermitteln, gibt es eine eingebaute Methode namens `.length`, die auf jedem String-Objekt aufgerufen werden kann. Hier ist ein Beispiel, wie man diese Methode benutzt:
+Um die Länge einer Zeichenkette in Javascript zu finden, gibt es mehrere Methoden. Eine der einfachsten Möglichkeiten ist die Verwendung der `length`-Eigenschaft. Diese Eigenschaft gibt die Anzahl der Zeichen in einer Zeichenkette zurück.
 
-```Javascript
-var meinString = "Hallo, Welt!";
-console.log(meinString.length);
+```
+// Beispiel 1
+const zeichenkette = "Hallo Welt";
+console.log(zeichenkette.length); // Ausgabe: 11
 
-// Output: 12
+// Beispiel 2
+const leereZeichenkette = "";
+console.log(leereZeichenkette.length); // Ausgabe: 0
 ```
 
-Wie Sie sehen können, gibt uns die `.length` Methode die Anzahl der Zeichen im String zurück, einschließlich Leerzeichen und Sonderzeichen. Es ist wichtig zu beachten, dass diese Methode nicht auf numerischen oder booleschen Werten funktioniert, sondern nur auf Strings.
+Eine andere Methode ist die Verwendung der `substring`-Methode. Diese Methode gibt einen Teil der Zeichenkette zurück, abhängig von den angegebenen Start- und Endpositionen. Wenn du jedoch nur die Länge der Zeichenkette benötigst, kannst du die Startposition auf 0 setzen und die Länge der Zeichenkette als Endposition verwenden.
 
-## Tiefere Analyse
+```
+// Beispiel
+const zeichenkette = "Hello World";
+const laenge = zeichenkette.substring(0, zeichenkette.length);
+console.log(laenge); // Ausgabe: 11
+```
 
-Die `.length` Methode ist eine der vielen eingebauten Funktionen, die im JavaScript String-Objekt enthalten sind. Es gibt jedoch auch andere Möglichkeiten, um die Länge eines Strings zu ermitteln, wie zum Beispiel die Verwendung der `.split()` Methode in Kombination mit der Länge des resultierenden Arrays.
+Eine weitere Option ist die Verwendung der `split`-Methode, die die Zeichenkette in ein Array umwandelt und dann die Länge des Arrays zurückgibt.
 
-Es ist auch wichtig zu beachten, dass die Länge eines Strings in JavaScript nicht auf bestimmte Zeichensätze beschränkt ist. Im Gegensatz zu anderen Programmiersprachen, die eine bestimmte Anzahl von Bytes pro Zeichen festlegen, ist die Länge eines Strings in JavaScript abhängig von der Anzahl der Unicode-Zeichen darin.
+```
+// Beispiel
+const zeichenkette = "JavaScript ist toll!";
+const laenge = zeichenkette.split("").length;
+console.log(laenge); // Ausgabe: 20
+```
 
-## Siehe auch
+# Deep Dive
 
-- [MDN Web Docs - String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools - JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)
-- [StackOverflow - How do I get the string length in JavaScript?](https://stackoverflow.com/questions/2443177/how-do-i-get-the-string-length-in-javascript)
+Bei der Suche nach der Länge einer Zeichenkette gibt es einige wichtige Dinge zu beachten. Eine Zeichenkette kann nicht nur aus Buchstaben bestehen, sondern auch aus anderen Zeichen wie Leerzeichen, Zahlen oder Sonderzeichen. Diese werden alle bei der Ermittlung der Länge berücksichtigt. Auch Umlaute oder nicht lateinische Zeichen können die Länge einer Zeichenkette beeinflussen, da sie aus mehreren Bytes bestehen können.
+
+Es ist auch wichtig zu beachten, dass die `length`-Eigenschaft die Anzahl der Zeichen in der Zeichenkette und nicht die Anzahl der Wörter zurückgibt. Dies bedeutet, dass Leerzeichen und Satzzeichen ebenfalls in die Länge einbezogen werden.
+
+# Siehe auch
+
+- [MDN web docs: String length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [W3Schools: Javascript string length](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [Javascript.info: Unterstriche, um Zahlen lesbar zu machen](https://javascript.info/advanced-operators#ufeff-to-make-numbers-readable)

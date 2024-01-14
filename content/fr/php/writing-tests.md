@@ -1,41 +1,49 @@
 ---
-title:    "PHP: Écrire des tests"
+title:    "PHP: Écriture de tests"
 keywords: ["PHP"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire des tests est une pratique très importante dans la programmation PHP. Non seulement cela peut vous aider à détecter et corriger les bugs plus rapidement, mais cela peut également vous aider à mieux comprendre votre code et à l'organiser de manière plus efficace.
+Écrire des tests est une pratique essentielle pour tout programmeur PHP. Les tests permettent de s'assurer que notre code fonctionne correctement, et de détecter et corriger les bugs avant qu'ils ne deviennent un problème pour les utilisateurs finaux.
 
-## Comment Faire
+## Comment faire
 
-Il existe plusieurs façons d'écrire des tests en PHP, mais nous allons nous concentrer sur une méthode simple et efficace utilisant le framework PHPUnit. Tout d'abord, vous devrez installer PHPUnit en utilisant Composer. Ensuite, vous pouvez créer un fichier de test en utilisant la commande suivante dans votre terminal :
+Pour écrire des tests en PHP, il existe plusieurs frameworks populaires tels que PHPUnit ou Codeception. Voici un exemple de code utilisant PHPUnit pour tester une fonction qui vérifie si un nombre est pair :
 
 ```PHP
-vendor/bin/phpunit --generate-test <votre_fichier_php>
+public function testIsEvenNumber(){
+    $number = 4;
+    $result = isEven($number);
+    
+    $this->assertTrue($result);
+}
 ```
 
-Cela créera un nouveau fichier de test avec l'extension ```.php``` contenant une classe de test avec des méthodes pré-écrites pour chaque fonction que vous souhaitez tester. Vous pouvez ensuite écrire votre code de test dans ces méthodes et exécuter le test en utilisant la commande ```vendor/bin/phpunit <votre_fichier_test>```. Le résultat affichera si vos tests ont réussi ou échoué, ainsi que des informations sur les erreurs éventuelles.
+Dans cet exemple, nous définissons une fonction de test nommée "testIsEvenNumber" qui utilise la méthode "assertTrue" de PHPUnit pour vérifier si la variable $result est égale à true.
 
-## Plongée Profonde
+Voici le résultat de l'exécution de ce test :
 
-Alors, comment écrire un bon test en utilisant PHPUnit ? Voici quelques astuces :
+```
+Time: 16 ms, Memory: 6.00 MB
 
-- Utilisez des assertions pour vérifier que les résultats attendus sont corrects. Par exemple, vous pouvez utiliser ```assertEquals``` pour comparer deux valeurs ou ```assertTrue``` pour vérifier si une condition est vraie.
-- Créez différents cas de test pour couvrir toutes les possibilités de votre code. Cela vous aidera à identifier les erreurs dans toutes les situations.
-- Utilisez des tests unitaires pour tester des fonctions et des tests fonctionnels pour tester des parties plus larges de votre code.
-- N'oubliez pas de nettoyer votre environnement de test après chaque exécution pour éviter toute confusion dans les futurs tests.
+OK (1 test, 1 assertion)
+```
 
-En suivant ces conseils, vous serez en mesure d'écrire des tests solides et fiables pour votre code PHP.
+Nous pouvons également utiliser des assertions telles que "assertFalse" pour vérifier si un résultat est faux, ou encore "assertEquals" pour tester si deux variables sont égales.
 
-## Voir Aussi
+## Plongée en profondeur
 
-Pour en savoir plus sur les tests en PHP, vous pouvez consulter les ressources suivantes :
+Écrire des tests n'est pas seulement utile pour s'assurer du bon fonctionnement de notre code, c'est aussi un moyen efficace d'améliorer sa qualité. En écrivant des tests, nous sommes obligés de réfléchir à différentes possibilités et cas d'utilisation, ce qui peut mener à une meilleure architecture de notre code.
 
-- [Documentation PHPUnit] (https://phpunit.readthedocs.io/fr/latest/)
-- [Tutoriel sur les tests en PHP] (https://www.tutorialspoint.com/php/php_unit_testing.htm)
-- [Vidéo d'introduction aux tests en PHP] (https://www.youtube.com/watch?v=TocU8l1uxFg)
+De plus, les tests automatisés nous font gagner du temps à long terme. Une fois que nos tests sont en place, nous pouvons les exécuter à tout moment pour vérifier que notre code n'a pas été cassé par une nouvelle modification.
 
-N'oubliez pas que prendre le temps d'écrire des tests peut vous faire gagner du temps et de l'argent à long terme en réduisant les bugs et en améliorant la qualité de votre code. Alors n'hésitez pas à commencer à ajouter des tests à votre projet dès maintenant !
+## Voir aussi
+
+- [PHPUnit](https://phpunit.de/)
+- [Codeception](https://codeception.com/)
+- [Why We Write Tests](https://www.thoughtworks.com/insights/blog/why-we-write-tests)
+- [Les bonnes pratiques pour écrire des tests unitaires en PHP](https://blog.engineering.publicissapient.fr/2019/03/15/les-bonnes-pratiques-pour-ecrire-des-tests-unitaires-en-php/)

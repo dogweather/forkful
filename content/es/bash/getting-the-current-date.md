@@ -1,69 +1,43 @@
 ---
-title:    "Bash: Obteniendo la fecha actual."
+title:    "Bash: Obteniendo la fecha actual"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías aprender a obtener la fecha actual?
+## Por qué obtener la fecha actual en programación Bash
 
-No importa si eres un principiante o un programador experimentado, siempre es importante saber cómo obtener la fecha actual en tus scripts de Bash. Esto puede ser útil para generar nombres de archivos únicos, imprimir la fecha en un archivo de registro o simplemente para obtener información sobre cuándo se ejecutó un comando.
+Si estás aprendiendo a programar en Bash, es importante que sepas cómo obtener la fecha actual en tus scripts. Esta información puede ser útil para varias tareas, como la organización de archivos por fecha, la creación de logs o simplemente para fines de registro en tus programas.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en Bash, puedes utilizar el comando `date`. Este comando acepta diferentes opciones para personalizar el formato de salida de la fecha. Veamos un ejemplo sencillo de cómo obtener la fecha actual en formato ISO 8601:
+Para obtener la fecha actual en Bash, puedes usar el comando `date` seguido de una formato específico para la fecha que desees. Por ejemplo, si quieres obtener una salida con el formato "día-mes-año", puedes escribir lo siguiente en tu script:
 
 ```Bash
-date +%F
+fecha_actual=$(date +"%d-%m-%Y")
+echo "La fecha de hoy es $fecha_actual"
 ```
 
-Este comando imprimirá la fecha en el formato "AAAA-MM-DD", por ejemplo:
+La variable `fecha_actual` almacenará el resultado del comando `date` y luego se mostrará en la consola el mensaje "La fecha de hoy es XX-XX-XXXX", donde XX son los números correspondientes al día, mes y año actual.
+
+Otra opción es utilizar el comando `date` sin ningún formato específico, lo cual mostrará la fecha en un formato predeterminado, generalmente mes-día-año, pero esto puede variar dependiendo de la configuración de tu sistema.
 
 ```Bash
-2022-01-23
+fecha_actual=$(date)
+echo "La fecha de hoy es $fecha_actual"
 ```
-
-Pero ¿qué sucede si queremos obtener la fecha y la hora? Podemos utilizar la opción `-u` para obtener la hora en tiempo universal coordinado (UTC) y la opción `%T` para especificar el formato de hora de 24 horas. El comando se vería así:
-
-```Bash
-date -u +%FT%T
-```
-
-Y la salida sería:
-
-```Bash
-2022-01-23T13:26:45
-```
-
-Estos son solo algunos ejemplos de cómo puedes personalizar la salida de fecha y hora en Bash. Puedes experimentar con diferentes opciones y encontrar la que mejor se adapte a tus necesidades.
 
 ## Profundizando
 
-Ahora que ya sabes cómo obtener la fecha actual en Bash, vamos a profundizar un poco más en el comando `date`. Una cosa importante a tener en cuenta es que el resultado del comando `date` puede variar dependiendo de la configuración regional del sistema. Por ejemplo, si tu sistema está en español, la salida será en español también.
+Si quieres aprender más sobre cómo obtener la fecha actual en Bash, puedes explorar las opciones disponibles en el comando `date`. Por ejemplo, puedes incluir la hora o la zona horaria en la salida, así como especificar un formato personalizado utilizando caracteres especiales.
 
-Puedes cambiar el idioma de salida utilizando la variable `LANG`. Por ejemplo, si quieres obtener la fecha en inglés, puedes ejecutar el comando así:
+Además, también puedes utilizar el comando `cal` para mostrar un calendario en la consola, lo cual puede ser útil si necesitas trabajar con fechas específicas.
 
-```Bash
-LANG=en_US.utf8 date
-```
-
-La salida será en inglés, como por ejemplo:
-
-```Bash
-Sun Jan 23 13:28:57 UTC 2022
-```
-
-Además, si estás utilizando `date` en un script de Bash y necesitas almacenar la fecha actual en una variable, puedes hacerlo de la siguiente manera:
-
-```Bash
-fecha_actual=$(date +%F)
-```
-
-Esto almacenará la fecha actual en la variable `fecha_actual`, que luego puedes utilizar en tu script.
+En resumen, obtener la fecha actual en Bash es una tarea sencilla pero útil en tus scripts. Continúa explorando las opciones disponibles para personalizar la salida y aprovecha esta herramienta en tus proyectos.
 
 ## Ver también
 
-- [Documentación de `date` en GNU.org](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Ejemplos de `date` en la línea de comandos en TecMint](https://www.tecmint.com/linux-date-command-examples/)
-
-¡Felicidades! Ahora sabes cómo obtener la fecha actual en Bash y has aprendido algunos trucos para personalizar la salida según tus necesidades. No dudes en seguir aprendiendo y experimentando con diferentes opciones de `date` para hacer tus scripts más eficientes. ¡Hasta la próxima!
+- Tutorial sobre los comandos `date` y `cal` en Bash: [https://likegeeks.com/es/tipos-de-formato-de-fecha-en-bash/](https://likegeeks.com/es/tipos-de-formato-de-fecha-en-bash/)
+- Documentación oficial de Bash sobre el comando `date`: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Artículo sobre cómo utilizar el comando `cal` en Linux: [https://www.muylinux.com/2019/10/05/el-comando-cal-de-linux-y-sus-opciones/](https://www.muylinux.com/2019/10/05/el-comando-cal-de-linux-y-sus-opciones/)

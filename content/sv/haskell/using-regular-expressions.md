@@ -1,40 +1,57 @@
 ---
-title:    "Haskell: Användning av regelbundna uttryck"
+title:    "Haskell: Användning av reguljära uttryck"
 keywords: ["Haskell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför?
+## Varför
 
-Det finns många anledningar till varför programmerare kan använda sig av reguljära uttryck i Haskell. Det kan vara ett kraftfullt sätt att söka och manipulera text, och det kan också bidra till mer läsbar och effektiv kod.
+Regular expressions, även kallade regex, är ett mycket effektivt verktyg för att söka, matcha och manipulera textsträngar. Med hjälp av regex kan du snabbt och enkelt utföra komplexa sökningar och ersättningar i dina program. Detta gör det till ett ovärderligt verktyg för alla som arbetar med textbehandling, webbutveckling eller annan typ av datamanipulering.
 
-# Hur man använder reguljära uttryck i Haskell
+## Så här gör du
 
-För att använda reguljära uttryck i Haskell behöver du importera modulen `Text.Regex`, som innehåller olika funktioner för att hantera uttryck. Sedan kan du skriva dina uttryck inuti en `Regex`-typ, och använda funktioner som `matchRegex` och `subRegex` för att matcha och modifiera texten.
+För att använda regular expressions i Haskell behöver du först importera modulen `Text.Regex.Posix`. Sedan kan du använda funktionerna `=~` och `=~~` för att söka, matcha och ersätta text baserat på ett regex-uttryck.
 
 ```Haskell
-import Text.Regex
+-- Söka efter ett ord i en textsträng
+"Detta är en textsträng" =~ "text" :: Bool -- True
 
--- Skapa en Regex-variabel med hjälp av "mkRegex" funktionen
-myRegex :: Regex
-myRegex = mkRegex "haskell"
+-- Söka efter ett ord som matchar oavsett storlek på bokstäver
+"Detta är en textsträng" =~ "TEXT" :: Bool -- True
 
--- Använd "matchRegex" för att hitta matchningar i en sträng
-matchRegex myRegex "Jag älskar att programmera i Haskell"
--- "Just found a match for: "haskell" in text"
-
--- Använd "subRegex" för att ersätta matchningar med annan text
-subRegex myRegex "Haskell är det bästa programsspråket" "Go är det bästa programmsspråket"
--- "Go är det bästa programmsspråket är det bästa programsspråket"
+-- Ersätta ett ord i en textsträng
+subRegex (mkRegex "text") "Detta är en textsträng" "ord" -- "Detta är en ordsträng"
 ```
 
-# Utforska mer
+Du kan också använda speciella symboler och uttryck för att göra mer avancerade sökningar. Till exempel:
 
-Det finns många olika funktioner och mönster som kan användas för att skapa kraftfulla reguljära uttryck i Haskell. Det är också viktigt att förstå hur man använder metatecken och grupperingar för att få ut det mesta av dessa uttryck. Det finns också andra användbara moduler som `Text.Regex.Posix` och `Text.Regex.PCRE` för mer avancerad användning.
+```Haskell
+-- Söka efter ett eller flera tecken
+"Detta är en textsträng" =~ "[a-z]+" :: Bool -- True
 
-# Se också
+-- Söka efter en sifferkombination på fyra tecken
+"123 Main Street" =~ "^[0-9]{4}$" :: Bool -- True
 
-- [Haskell.org - Regulära uttryck](https://www.haskell.org/haskellwiki/Regular_expressions)
-- [Haskell Language Report - Text.Regex](https://www.haskell.org/onlinereport/haskell2010/haskellch10.html#x17-17300010.2.1)
-- [Haskell Cookbook - Reguljära uttryck](https://haskellcookbook.com/chapters/strings.html#regexpr)
+-- Matcha en e-postadress
+"example@test.com" =~ "[a-zA-Z0-9_.]+@[a-zA-Z0-9_.]+" :: Bool -- True
+```
+
+Det finns många fler funktioner och möjligheter med regex i Haskell, men detta är bara ett smakprov för att komma igång.
+
+## Djupdykning
+
+Reguljära uttryck är ett kraftfullt verktyg, men samtidigt kan de vara komplicerade och svåra att läsa och förstå. Det är viktigt att du förstår grundläggande koncept som metakaraktärer, kvantifierare och gruppindelning om du vill utnyttja regex fullt ut.
+
+En annan viktig del i att använda regex är att välja rätt verktyg för jobbet. I Haskell kan du välja mellan två moduler `Text.Regex.Posix` och `Text.Regex.PCRE`. De båda stödjer liknande funktioner, men PCAE-modulen är mer avancerad och har bättre stöd för Unicode.
+
+Slutligen är det viktigt att känna till att använda regex inte är lösningen på alla problem. Ibland finns det bättre och enklare sätt att manipulera textsträngar, så se alltid till att överväga andra alternativ innan du börjar använda regex.
+
+## Se även
+
+Här är några resurser som kan vara till hjälp när du vill lära dig mer om regular expressions:
+
+- [Haskell.org - Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
+- [Haskell.org - Text.Regex.PCRE](https://hackage.haskell.org/package/regex-pcre)
+- [Regular-Expressions.info - Tutorial om reguljära uttryck](https://www.regular-expressions.info/tutorial.html)

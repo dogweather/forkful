@@ -1,65 +1,64 @@
 ---
-title:    "Python: Odczytywanie argumentów linii poleceń"
+title:    "Python: Odczytywanie argumentów wiersza poleceń"
 keywords: ["Python"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często zdarza się, że w trakcie programowania musimy dostarczyć dodatkowe informacje do naszego skryptu. Może to być na przykład ścieżka do pliku czy opcje konfiguracyjne. W takich przypadkach bardzo przydatne jest czytanie argumentów z linii poleceń. W tym artykule dowiesz się jak to zrobić w języku Python.
+Czy kiedykolwiek zastanawiałeś się, dlaczego programy Python mogą przyjąć argumenty z wiersza poleceń? Może wydaje ci się to mało pomocne lub bezużyteczne. Jednak jest to jeden z najbardziej przydatnych i wszechstronnych sposobów na wchodzenie w interakcję ze swoim programem. Dzięki argumentom wiersza poleceń możesz zmienić zachowanie programu bez konieczności zmiany kodu. W tym artykule dowiesz się, dlaczego warto poznać jak czytać argumenty z wiersza poleceń w Pythonie.
 
 ## Jak to zrobić
 
-```Python
-import sys
-
-#Pobieramy argumenty linii poleceń
-argumenty = sys.argv
-
-#Iterujemy przez argumenty i wyświetlamy je
-for arg in argumenty:
-  print(arg)
-```
-
-Przykładowe wywołanie naszego skryptu z linii poleceń: ```python skrypt.py argument1 argument2```
-
-W takim przypadku otrzymamy na wyjściu:
-
-```
-skrypt.py
-argument1
-argument2
-```
-
-Możemy także określić, które argumenty chcemy pominąć i zacząć iterację od konkretnego elementu:
+Jest kilka sposobów na czytanie argumentów z wiersza poleceń w Pythonie. Najprostszym z nich jest użycie modułu `sys`. Poniższy kod pokazuje, jak można wyświetlić wszystkie argumenty przekazane do programu:
 
 ```Python
 import sys
 
-#Pobieramy argumenty, zaczynamy od drugiego elementu (pierwszym jest nazwa skryptu)
-argumenty = sys.argv[1:]
-
-#Iterujemy przez argumenty i wyświetlamy je
-for arg in argumenty:
-  print(arg)
+print(sys.argv)
 ```
-
-W takim przypadku, jeśli wywołamy nasz skrypt tak: ```python skrypt.py argument1 argument2 argument3```
-
-Otrzymamy na wyjściu:
+Wywołanie powyższego kodu z argumentami `python program.py argument1 argument2` da nam następujący wynik:
 
 ```
-argument1
-argument2
-argument3
+['program.py', 'argument1', 'argument2']
 ```
 
-## Pogłębiona analiza
+Widać tutaj, że pierwszym elementem listy jest nazwa programu. Następnie mamy wszystkie przekazane argumenty.
 
-Czy już wiesz, że możemy także przekazywać argumenty do naszego skryptu w postaci flag i wartości? Może to być o wiele wygodniejsze niż wpisywanie ich po prostu po kolei. Używając modułu ```argparse``` w naszym skrypcie możemy zdefiniować wszystkie dostępne opcje oraz opisy dla nich. Następnie, uruchamiając nasz skrypt z odpowiednim zestawem flag, automatycznie przypisane zostaną im odpowiednie wartości. To może usprawnić i uporządkować nasze skrypty.
+Możesz również przekazać argumenty jako opcje z użyciem modułu `argparse`. Poniżej znajduje się przykładowy kod, który wyświetli przesłane argumenty oraz wartość opcji `--type`:
 
-## Zobacz także
-- [Dokumentacja Pythona o przetwarzaniu argumentów z linii poleceń](https://docs.python.org/3/library/argparse.html)
-- [Tutorial na temat modułu argparse](https://realpython.com/command-line-interfaces-python-argparse/)
-- [Przykładowe użycie argparse w projekcie Django](https://docs.djangoproject.com/en/3.0/howto/custom-management-commands/#accepting-arguments-through-the-command-line)
+```Python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('arguments', nargs='*')
+parser.add_argument('--type')
+
+args = parser.parse_args()
+
+print(args.arguments)
+print(args.type)
+```
+
+Wywołanie powyższego kodu z argumentami `python program.py argument1 argument2 --type string` da nam następujący wynik:
+```
+['argument1', 'argument2']
+string
+```
+
+Jak widać, możemy wygodnie dostosować kod przy użyciu opcji i opcjonalnych argumentów.
+
+## Deep Dive
+
+Warto dokładniej zapoznać się z modułem `argparse` i wszystkimi możliwymi opcjami. Pozwala on na obsługę wielu różnych rodzajów argumentów i umożliwia dokładniejsze kontrolowanie programu.
+
+Ponadto, w razie potrzeby możesz użyć również innych modułów, takich jak `click` czy `docopt`, aby czytać argumenty z wiersza poleceń. Ważne jest, aby dobrać najlepsze rozwiązanie do konkretnego programu i jego potrzeb.
+
+## Zobacz też
+
+- [Dokumentacja modułu `sys`](https://docs.python.org/3/library/sys.html)
+- [Dokumentacja modułu `argparse`](https://docs.python.org/3/library/argparse.html)
+- [Dokumentacja modułu `click`](https://click.palletsprojects.com/en/7.x/)
+- [Dokumentacja modułu `docopt`](https://github.com/docopt/docopt)

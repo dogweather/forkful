@@ -1,60 +1,86 @@
 ---
 title:    "Bash recipe: Comparing two dates"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to compare two dates in your Bash script? Whether it's for scheduling tasks or validating user input, comparing dates is a common task in programming. In this blog post, we will explore how to compare two dates in Bash and discuss some important considerations.
+If you're a programmer, you know that dealing with dates can be a tricky task. Often times, we need to compare two dates in our code, such as checking if a certain date is before or after another date. This may seem simple, but it can get complicated quickly depending on different formats and time zones. That's why it's important to have a solid understanding of how to compare dates in Bash.
 
 ## How To
 
-To compare dates in Bash, we will use the `date` command along with the `-d` option to convert dates into seconds since epoch (January 1, 1970). This allows us to easily compare dates using simple arithmetic operations.
-
-Let's take a look at a simple example. Say we have two variables, `date1` and `date2`, each containing a date in the format of `YYYYMMDD`.
+To start off, let's take a look at how we can compare two dates in Bash using the `date` command. Here's an example:
 
 ```
-#! /bin/bash
+#!/bin/bash
 
-# Assign dates to variables
-date1="20210625"
-date2="20210703"
+date1="2020-01-01"
+date2="2020-01-02"
 
-# Convert dates to seconds since epoch
-date1_sec=$(date -d "$date1" +%s)
-date2_sec=$(date -d "$date2" +%s)
-
-# Compare dates using arithmetic operations
-if (($date1_sec < $date2_sec));
-then
-   echo "$date1 is earlier than $date2."
-elif (($date1_sec > $date2_sec));
-then
-   echo "$date1 is later than $date2."
+if [[ "$date1" < "$date2" ]]; then
+  echo "$date1 is before $date2"
+elif [[ "$date1" > "$date2" ]]; then
+  echo "$date2 is before $date1"
 else
-   echo "Both dates are equal."
+  echo "The dates are the same"
 fi
 ```
 
-Running this script will give us the output:
+In this example, we have two dates assigned to variables `date1` and `date2`. We then use the `if` statement to compare the two dates. The `[[ $date1 < $date2 ]]` syntax checks if `date1` is before `date2`. Similarly, `[[ $date1 > $date2 ]]` checks if `date1` is after `date2`. The `else` statement will be executed if the dates are the same.
+
+We can also use the `-lt` and `-gt` operators to compare dates. Here's an example:
 
 ```
-20210625 is earlier than 20210703.
+if [[ "$date1" -lt "$date2" ]]; then
+  echo "$date1 is before $date2"
+elif [[ "$date1" -gt "$date2" ]]; then
+  echo "$date2 is before $date1"
+else
+  echo "The dates are the same"
+fi
 ```
 
-In this example, we first use the `date` command with the `-d` option to convert our dates into seconds since epoch. Then, we use an `if` statement with arithmetic operations to compare the dates and print the appropriate message. We can easily change the dates in the variables and re-run the script to compare different dates.
+Another useful tool for comparing dates is the `date -d` command. This allows us to specify a date using a different format and compare it to another date. Here's an example:
+
+```
+date1="2020-01-01"
+date2=$(date -d "1 day" +"%Y-%m-%d")
+
+if [[ "$date1" == "$date2" ]]; then
+  echo "The dates are the same"
+else
+  echo "$date1 is not the same as $date2"
+fi
+```
+
+In this example, we use `date -d` to add 1 day to our `date1` variable and format it to match `date2`. Then, we simply check if the two dates are the same.
 
 ## Deep Dive
 
-When comparing dates in Bash, there are a few important things to keep in mind. Firstly, the format of the dates must be consistent. In our example, we used the format `YYYYMMDD`, but you can use any format as long as it is the same for both dates. Secondly, the `-d` option in the `date` command is very flexible, allowing you to use various date and time formats. Be sure to check the `man` page for more information.
+As we mentioned earlier, comparing dates becomes more complex when considering different time zones and date formats. Thankfully, Bash provides us with some tools to handle these situations.
 
-Another important consideration is the use of leap years. Since our example converts dates to seconds since epoch, leap years will affect the comparison. For more accurate comparisons, you can also use the `+%j` option in the `date` command, which converts dates to day of year instead of seconds since epoch.
+One of these tools is the `TZ` variable, which allows us to specify a different time zone when comparing dates. Here's an example:
+
+```
+TZ='America/New_York' date1=$(date +"%Y-%m-%d")
+TZ='Europe/London' date2=$(date +"%Y-%m-%d")
+
+if [[ "$date1" < "$date2" ]]; then
+  echo "$date1 is before $date2"
+elif [[ "$date1" > "$date2" ]]; then
+  echo "$date2 is before $date1"
+else
+  echo "The dates are the same"
+fi
+```
+
+In this example, we use the `TZ` variable to set `date1` in New York and `date2` in London. We then use our previous methods to compare the two dates.
 
 ## See Also
 
-For more information on the `date` command and its various options, check out the following links:
-- `man` page for `date`: https://man7.org/linux/man-pages/man1/date.1.html
-- Bash documentation on date formatting: https://www.gnu.org/software/bash/manual/html_node/Date-Manipulation.html
-- Bash arithmetic expressions: https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html
+- Bash scripting basics: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+- Date comparison in Python blog post: https://realpython.com/python-datetime/
+- Bash 'date' command documentation: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

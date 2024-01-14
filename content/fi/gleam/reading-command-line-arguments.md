@@ -1,54 +1,35 @@
 ---
 title:    "Gleam: Komentoriviparametrien lukeminen"
 keywords: ["Gleam"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi tulisi lukea komentoriviparametreja? Koska komentoriviparametrit voivat olla hyödyllisiä ohjelman suorittamisen aikana ja tarjoavat enemmän joustavuutta käyttäjille.
+Käyttöliittymätehosteet ovat erittäin tärkeitä kaikenlaisessa ohjelmoinnissa, ja konsoli on yksi yleisimmistä tapoista käyttää niitä. Gleam-ohjelmointikielessä on helppo lukea komentorivin argumentteja. Tässä blogikirjoituksessa jaamme yksinkertaisia ​​tapoja toteuttaa tämä ominaisuus Gleamissa ja miten se voi helpottaa kehitystyötäsi.
 
 ## Miten
 
-Gleam tarjoaa helpon ja tehokkaan tavan lukea komentoriviparametreja ohjelmaan. Tässä on muutama esimerkki siitä, miten voit lukea ja käyttää komentoriviparametreja Gleamissa:
+Komentorivin argumenttien lukemiseksi Gleamissa voit käyttää vakiofunktiota `os.args()`, joka palauttaa sanakirjan argumenteista. Voit käyttää tätä funktiota helposti koodissa "```Gleam
+args = os.args()
+"```". Voit sitten käydä läpi jokaisen argumentin `List.map()`-funktion avulla ja suorittaa haluamasi toiminnot.
 
 ```Gleam
-import gleam/command_line
-
-// Luetaan yksittäinen parametri ja tallennetaan se muuttujaan "nimi"
-nimi = command_line.arguments()[1]
-
-// Tulostetaan viesti käyttäen luettua parametria
-io.format("Hei, ~s!", [nimi])
-
-// Luetaan lista parametreja ja tulostetaan ne käyttäen for-loopia
-lista = command_line.arguments()
-for arg in lista {
-    io.format("Komentoriviparametri: ~s", [arg])
-}
+List.map(args, \arg -> IO.println(arg))
 ```
 
-Esimerkkituloste:
+Yllä olevassa koodissa jokainen argumentti tulostetaan konsoliin omalle rivilleen. Voit myös käyttää `List.filter()`-funktiota etsiäksesi tiettyä argumenttia ja tehdä sille tiettyjä toimenpiteitä.
 
-```
-$ gleam hello_gleam Gleam
-Hei, Gleam!
-Komentoriviparametri: hello_gleam
-Komentoriviparametri: Gleam
-```
+## Syvempi sukellus
 
-## Syventyminen
+Funktio `os.args()` palauttaa sanakirjan, joka sisältää argumenttien lisäksi myös muita tietoja, kuten ympäristömuuttujat ja nykyisen työskentelykansion. Voit käyttää tätä tietoa hyödyksesi, kun kehität monimutkaisempia ohjelmia.
 
-Lisätietoja komentoriviparametrien lukemisesta Gleamissa:
-
-- `command_line.arguments()` palauttaa listan komentoriviparametreista, joista ensimmäinen elementti on itse ohjelman nimi ja loput ovat käyttäjän antamia parametreja.
-- `command_line.flag(name)` funktioa voi käyttää tarkistamaan, onko tiettyä parametria annettu komentorivillä vai ei. Se palauttaa boolean-arvon `true` jos parametri on annettu ja `false` jos ei.
-- `command_line.arg(name)` funktioa voi käyttää lukemaan tietyn parametrin arvon. Se palauttaa `Option` -tyypin, joka voi olla joko `Some` jos parametri on annettu ja `None` jos ei.
-- Voit myös antaa oletusarvoja parametreille käyttäen `command_line.arg_default(name, default_value)` ja voit antaa käyttäjän lisätä parametreja käyttämällä `command_line.more_args()`.
+Lisäksi voit käyttää `os.args()`-funktiota myös Gleam-projektisi testaamiseen. Voit lähettää erilaisia argumentteja suorittaaksesi erilaisia koodipolkuja ja varmistaa, että ohjelmasi toimii oikein.
 
 ## Katso myös
 
-- [Gleamin komentoriviparametrit -dokumentaatio](https://gleam.run/documentation/gleam_cli_arguments)
-- [Gleamin pääsivusto](https://gleam.run/)
-- [Gleamin dokumentaatio](https://gleam.run/documentation/)
+- [Gleam-kielen viralliset verkkosivut](https://gleam.run/)
+- [Gleam-kielen dokumentaatio](https://gleam.run/book/)
+- [Gleam-kielen GitHub-sivu](https://github.com/gleam-lang/gleam)

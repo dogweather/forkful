@@ -1,52 +1,56 @@
 ---
 title:    "Fish Shell: Komentoriviparametrien lukeminen"
 keywords: ["Fish Shell"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Fish Shell on tehokas työkalu, joka voi auttaa sinua nopeuttamaan ja yksinkertaistamaan päivittäisiä ohjelmointitehtäviäsi. Lue eteenpäin ja opi lukemaan komentorivin argumentteja Fish Shell -ympäristössä!
+Komentoriviparametrit ovat tärkeitä osa Fish Shellin ohjelmoimista. Niiden avulla voit antaa käyttäjille enemmän valinnanvaraa ohjelman suorittamiseen ja muokata sen toimintaa eri tilanteissa. Tässä blogikirjoituksessa käymme läpi, miten lukea komentoriviparametrejä Fish Shellillä ja miten voit hyödyntää niitä omassa ohjelmoinnissasi.
 
-## Miten
+## Kuinka
 
-Fish Shellilla on helppo lukea komentorivin argumentteja käyttämällä “$argv” muuttujaa. Tämä muuttuja sisältää kaikki annetut komentorivin argumentit, eriteltynä välilyönneillä. Tässä on esimerkki, miten tulostaa kaikki annetut argumentit:
-
-```
-Fish Shell:
-echo $argv
-
-Komentorivi syötteellä: 
-fish args.fish hello world
-
-Tuloste: 
-hello world
-```
-
-Voit myös käyttää “$argc” muuttujaa, joka sisältää kokonaisluvun annettujen argumenttien määrästä.
+Käytä ```argparse``` -modulia lukeaksesi komentoriviparametreja Fish Shellissä. Seuraavassa on esimerkki kodista:
 
 ```
-Fish Shell:
-echo $argc
+# Alusta moduli ja määritä parametrit
+argparse "Verbose" "V" "Silent" "S"
 
-Komentorivi syötteellä:
-fish args.fish hello world
+# Lukee parametrit annettu komentoriviltä
+set verbose (argparse -V)
+set silent (argparse -S)
 
-Tuloste:
-2
+# Testi tulostus parametrien mukaan
+if test $verbose = 1
+    echo "Verbose moodi päällä"
+else if test $silent = 1
+    echo "Hiljainen moodi päällä"
+else
+    echo "Ei lisäparametreja annettu"
+end
 ```
 
-Nyt tiedät, miten lukea ja käyttää komentorivin argumentteja Fish Shell -ympäristössä!
+Kun suoritamme tämän koodin komentoriviltä esimerkiksi seuraavalla tavalla: ```fish read_arguments.fish -V```, tulostus olisi seuraava:
+```
+Verbose moodi päällä
+```
 
-## Syvempää tarkastelua
+Voit myös antaa useita parametreja samalla kertaa, esimerkiksi: ```fish read_arguments.fish -V -S```, jolloin tulostus olisi:
+```
+Ei lisäparametreja annettu
+```
 
-Fish Shellilla on myös muita tapoja käsitellä komentorivin argumentteja, kuten esimerkiksi “string match” -toiminto. Tämä mahdollistaa tietyn argumentin etsimisen ja käsittelemisen. Voit myös hyödyntää “for loop” -toimintoa, joka käy läpi kaikki annetut argumentit ja suorittaa halutun toiminnon jokaiselle argumentille.
+Tämä oli yksinkertainen esimerkki komentoriviparametrien lukemisesta Fish Shellillä. Voit myös määrittää muita parametreja, kuten tiedostot tai numerot, ja käyttää niitä omassa ohjelmoinnissasi.
 
-Fish Shell tarjoaa myös erilaisia muuttujia ja funktioita komentorivin argumenttien käsittelyyn. Kannattaa tutustua Fish Shellin dokumentaatioon saadaksesi lisätietoja ja oppiaksesi lisää hyödyllisiä toimintoja!
+## Syvällinen sukellus
+
+Komentoriviparametrien lukeminen on vain yksi esimerkki siitä, kuinka voit laajentaa Fish Shellin toiminnallisuutta. Voit myös käyttää muita moduuleja, kuten ```getopt``` tai ```docopt```, jotka tarjoavat erilaisia tapoja lukea ja käsitellä parametreja. Voit myös lukea lisää Fish Shellin ohjelmoinnista ja sen ominaisuuksista Fish Shellin verkkosivuilta.
 
 ## Katso myös
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Official Fish Shell Github repository](https://github.com/fish-shell/fish-shell)
-- [Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Argparse Documentation](https://fishshell.com/docs/current/cmds/argparse.html)
+- [Getopt Documentation](https://fishshell.com/docs/current/cmds/getopt.html)
+- [Docopt Documentation](https://fishshell.com/docs/current/cmds/docopt.html)

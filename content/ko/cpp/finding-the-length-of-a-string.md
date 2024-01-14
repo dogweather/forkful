@@ -1,48 +1,58 @@
 ---
 title:    "C++: 문자열의 길이 찾기"
 keywords: ["C++"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열의 길이를 찾는 것에 참여하는 이유는 다양합니다. 예를 들어, 프로그래밍에서 문자열을 다루는 많은 작업에는 해당 문자열의 길이를 알아야 할 때가 있습니다. 또한 애플리케이션의 사용자 입력을 검증하거나 적합한 형식으로 변환하기 위해 문자열 길이를 확인하는 데도 사용될 수 있습니다.
+문자열의 길이를 알아내는 일에 참여하는 이유는 매우 간단합니다. 우리는 프로그래밍을 할 때 여러 가지 작업을 해야하며, 이 중에 문자열의 길이를 알아내야 하는 경우가 많기 때문입니다. 따라서 이 기능은 매우 유용하고 중요합니다.
 
 ## 어떻게
 
+우리는 C++에서 문자열의 길이를 알아내는 데 사용할 수 있는 여러 가지 메소드를 가지고 있습니다. 여기서는 가장 기본적인 방법인 `length()` 메소드를 사용하여 문자열의 길이를 알아보겠습니다.
+
 ```C++
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-  // 문자열 입력 받기
-  string str;
-  cout << "문자열을 입력하세요: ";
-  getline(cin, str);
+    // 문자열 변수를 선언합니다.
+    string str = "안녕하세요!";
 
-  // 문자열의 길이 출력하기
-  cout << "입력한 문자열의 길이는 " << str.length() << "입니다." << endl;
+    // `length()` 메소드를 사용하여 문자열의 길이를 알아냅니다.
+    int length = str.length();
 
-  return 0;
+    // 결과를 출력합니다.
+    cout << "문자열의 길이는 " << length << "입니다." << endl;
+
+    return 0;
 }
+
+// 출력 결과:
+// 문자열의 길이는 6입니다.
 ```
 
-**출력:**
+위의 예제에서는 `string` 라이브러리에서 제공하는 `length()` 메소드를 사용하여 문자열의 길이를 구했습니다. 하지만 다른 방법으로는 `size()` 메소드를 사용하는 것도 가능합니다.
 
+```C++
+int length = str.size();
 ```
-문자열을 입력하세요: 안녕하세요!
-입력한 문자열의 길이는 6입니다.
-```
 
-## 깊이 살펴보기
+두 가지 메소드 모두 동일한 결과를 반환하며, 어떤 것을 사용하더라도 상관없습니다.
 
-문자열의 길이를 찾는 방법은 문자열의 끝을 나타내는 널 문자(null character)가 나올 때까지 각 문자를 하나씩 세는 것입니다. 따라서 문자열의 길이는 널 문자를 제외한 문자의 개수와 동일합니다.
+## 딥 다이브
 
-문자열의 길이를 찾는 함수는 여러 분야에서 많이 사용되기 때문에, C++의 string 라이브러리에 내장되어 있습니다. 이 함수는 문자열의 길이를 반환하며, 매우 효율적으로 작동합니다.
+`length()` 메소드의 내부 동작을 조금 더 살펴보면, 문자열의 길이를 반환할 때 문자열의 마지막에 종료 문자인 `'\0'`을 포함하지 않는다는 것을 알 수 있습니다. 이는 C++에서 문자열을 처리하는 NULL 문자 때문입니다. 따라서 `length()` 메소드는 실제로 문자열 내의 문자 수를 반환하는 것이 아니라, 종료 문자 이전의 문자 수를 반환하는 것입니다.
 
-## 더 알아보기
+많은 프로그래밍 언어에서는 이러한 종료 문자를 사용하여 문자열의 끝을 나타내지만, C++에서는 이를 명시적으로 포함해 주어야 합니다.
 
-* [How to find the length of a string in C++](https://www.geeksforgeeks.org/how-to-find-the-length-of-a-string-in-c/)
-* [C++ String Length](https://www.programiz.com/cpp-programming/string-length)
-* [C++ Standard Library - String](https://en.cppreference.com/w/cpp/string/basic_string)
+## 참고
+
+- [C++ Tutorial: 문자열 (strings)](https://www.cplusplus.com/doc/tutorial/ntcs/)
+- [C++ Reference: string::length](https://en.cppreference.com/w/cpp/string/basic_string/length)
+- [C++ Reference: string::size](https://en.cppreference.com/w/cpp/string/basic_string/size)

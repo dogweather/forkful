@@ -1,50 +1,39 @@
 ---
-title:    "Bash: 텍스트 검색 및 대체하기"
+title:    "Bash: 텍스트 검색 및 교체"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+텍스트를 검색하고 대체하는 것에 참여하는 이유는 프로그래밍 언어에서 가장 기본적인 작업 중 하나이기 때문입니다.
 
-텍스트를 찾고 바꾸는 것에 대해 관심을 가지고 있는 이유는 우리 일상에서 많은 텍스트를 다루기 때문입니다. 이 작업을 자동화하면 시간과 노력을 절약할 수 있기 때문에 프로그래밍을 통해 텍스트를 찾고 바꾸는 것은 매우 유용합니다.
-
-## 이렇게 하세요
-
-우선, 우리는 Bash 프로그래밍 언어를 사용하여 텍스트를 찾고 바꾸는 방법에 대해 알아보겠습니다. 아래에 간단한 예제 코드를 제시하고 해당 코드를 실행했을 때의 출력 결과도 함께 보여드리겠습니다.
+## 어떻게
+검색 및 대체 작업을 수행하는 Bash 예제와 해당 예제의 샘플 출력을 "```Bash ... ```" 코드 블록 내에서 제공합니다.
 
 ```Bash
-# 텍스트 파일에서 특정 단어를 찾고 다른 단어로 바꾸기
-sed 's/예전/지금/g' example.txt
+# 파일 내의 특정 문자열 모두 찾아 대체하기
+sed -i 's/원래문자열/새로운문자열/g' 파일명
 
-# 출력 결과
-지금은 나의 가장 좋아하는 계절입니다.
+# 사용자 입력을 받아 대소문자를 모두 대체하기
+read -p "대체할 문자열을 입력하세요: " 대체문자열
+read -p "대체될 문자열을 입력하세요: " 새문자열
+sed -i 's/$대체문자열/$새문자열/gI' 파일명 
 ```
-
-우리는 sed (Stream Editor) 명령어를 사용하여 텍스트 파일에서 '예전'이라는 단어를 '지금'으로 바꾸는 방법을 살펴보았습니다. 이처럼, sed 명령어를 사용하면 간단하게 텍스트를 찾고 바꿀 수 있습니다.
 
 ## 딥 다이브
+텍스트 검색 및 대체 작업은 RegEx (정규 표현식)을 사용하여 더욱 유연하고 정교하게 수행할 수 있습니다. 이를 통해 더 복잡한 패턴을 찾아 대처할 수 있습니다. 또한, 검색 및 대체 작업을 자동화하는 방법에 대해 배울 수도 있습니다.
 
-텍스트를 찾고 바꾸는 과정에서 우리는 정규 표현식을 사용할 수 있습니다. 정규 표현식은 특정한 패턴을 가진 문자열을 찾고, 그 문자열을 바꾸기 위해 사용될 수 있습니다. 예를 들어, 아래의 코드는 숫자로 시작하는 한글 단어를 찾고 해당 단어를 '숫자로 시작하는 단어'로 바꿉니다.
+## 참고
+"대체"와 "검색" 기능에 대해 자세히 알아보려면 다음 링크를 방문해보세요.
 
-```Bash
-sed 's/[0-9][가-힣]+/숫자로 시작하는 단어/g' example.txt
-```
+- [Bash에서 sed 사용하기](https://www.lesstif.com/pages/viewpage.action?pageId=20776485)
+- [Regexr: RegEx 표현식 테스트하기](https://regexr.com/)
+- [생활코딩: 정규표현식 in Bash](https://opentutorials.org/module/430/3581)
 
-출력 결과는 다음과 같습니다.
+## 참고자료
+- [Bash script를 이용하여 일괄변경 file 변경하기](https://thrillfighter.tistory.com/107)
+- [bash script - 문자열 치환](https://github.com/minsoo9506/TIL/blob/master/%EB%B0%B1%EB%82%AD%EC%9D%B4%EC%A7%80%ED%91%9C%ED%98%84.md)
 
-```
-숫자로 시작하는 단어는 제가 좋아하는 단어입니다.
-```
-
-이처럼 정규 표현식을 사용하면 좀 더 정확하고 다양한 텍스트를 찾고 바꿀 수 있습니다.
-
-## 더 보기
-
-이 글에서는 Bash를 사용하여 텍스트를 찾고 바꾸는 방법에 대해 간단하게 알아보았습니다. 하지만 Bash 외에도 다양한 프로그래밍 언어를 사용하여 이 작업을 할 수 있습니다. 아래는 이와 관련된 추가 정보를 제공하는 링크들입니다.
-
-- [Sed 명령어에 대한 더 자세한 내용](https://www.gnu.org/software/sed/manual/sed.html)
-- [정규 표현식에 대한 더 자세한 내용](https://www.regular-expressions.info/)
-- [Python을 사용한 텍스트 찾기와 바꾸기](https://www.geeksforgeeks.org/replace-string-python-using-regular-expression/)
-
-## 더 알아보기
+- [bash에서 문자열 검색 및 대체하기](https://goddaehee.tistory.com/157)

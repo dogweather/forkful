@@ -1,38 +1,39 @@
 ---
-title:    "Kotlin: Satunnaislukujen luominen."
+title:    "Kotlin: Sattumanvaraisten lukujen luominen"
 keywords: ["Kotlin"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää satunnaislukugenerointia?
+# Miksi: Miksi satunnaislukujen generoiminen on tärkeää?
 
-Satunnaislukugenerointi on hyödyllinen ohjelmoinnin tekniikka, joka mahdollistaa satunnaisen tiedon luomisen tietyn alueen sisällä. Tämä on erityisen hyödyllistä esimerkiksi pelien kehittämisessä, tietoturvan testaamisessa ja simulointiohjelmien luomisessa.
+Satunnaislukujen generoiminen on tärkeä osa monia ohjelmointitehtäviä, kuten pelien luomista, tietokoneiden simuloimista ja salausavainten luomista. Satunnaiset luvut ovat tarpeen myös testauksessa ja data-analyysissä. Joten olipa sitten ammattilainen tai harrastelija, satunnaislukujen generoiminen on välttämätöntä monissa ohjelmoinnin alan tehtävissä.
 
-## Miten käyttää satunnaislukugenerointia Kotlinissa?
+# Miten: Satunnaislukujen generoiminen Kotlinilla
+
+## Perussatunnaislukujen generointi
+Kotlin tarjoaa valmiin random-luokan, jolla voi generoida satunnaisia lukuja. Se käyttää sisäistä satunnaislukugeneraattoria, joka perustuu [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)-algoritmiin. Voit luoda uuden random-olion viittaamalla luokkaan "Random()" ja käyttää sen "nextInt()" tai "nextDouble()" metodia halutun satunnaisen numeron saamiseksi. Esimerkiksi:
 
 ```Kotlin
-fun main() {
-    // Satunnaisen kokonaisluvun generointi väliltä 1-10
-    val randomInt = (1..10).random()
-    println(randomInt)
-
-    // Satunnaisen liukuluvun generointi väliltä 0.0-1.0
-    val randomDouble = Math.random()
-    println(randomDouble)
-}
+val random = Random()
+val randomNumber = random.nextInt(10) //generoi satunnaisen kokonaisluvun väliltä 0-9
 ```
 
-Tässä esimerkissä käytämme Kotlinin sisäistä "random()" funktiota generoimaan satunnaisen luvun. Ensimmäisessä esimerkissä käytämme välin operaattoria "..", joka luo kokonaislukuvälin annettujen lukujen välillä. Toisessa esimerkissä käytämme Java -kirjaston "Math.random()" funktiota, joka generoi satunnaisen liukuluvun väliltä 0.0-1.0.
+## Satunnaisen merkkijonon generointi
+Satunnaisen merkkijonon generoiminen voi olla hyödyllistä esimerkiksi testauksessa tai tunnisteiden luomisessa. Tähän voit käyttää Kotlinin "randomUUID()" metodia, joka generoi satunnaisen universaalisti uniikin tunnisteen. Esimerkiksi:
 
-## Syvempää tietoa satunnaislukugeneroinnista
+```Kotlin
+val randomUUID = UUID.randomUUID().toString() //generoi satunnaisen UUID-merkkijonon
+```
 
-Satunnaislukugeneroinnissa käytetään usein pseudorandom -algoritmeja, jotka perustuvat matemaattisiin kaavoihin. Tämä tarkoittaa sitä, että vaikka luvut vaikuttavat satunnaisilta, ne voidaan itse asiassa ennustaa. Täydellisen satunnaisuuden saavuttaminen onkin matemaattisesti mahdotonta.
+# Syvempi sukellus: Satunnaislukujen generoinnin taustalla
 
-Kotlinin standardikirjasto tarjoaa monia tapoja satunnaislukujen generointiin, kuten "random()" ja "nextInt()". Näiden lisäksi voidaan myös käyttää muita algoritmeja, kuten "SHA1PRNG" algoritmi, joka perustuu satunnaisuuden huonouden estämiseen.
+Kuten mainittu, Kotlinin random-luokka käyttää Mersenne Twister -algoritmia satunnaislukujen generoimiseen. Tämä on yksi suosituimmista satunnaislukugeneraattoreista, ja se on suunniteltu tuottamaan laadukkaita satunnaislukuja, joissa on pitkä jakso toistamattomia lukuja. Satunnaislukugeneraattorin tehokkuuden ja laadun ylläpitämiseksi se ottaa sisäisesti käyttöön siemenluvun, jota se muuttaa jokaisen satunnaisen luvun generoinnin jälkeen.
 
-## Katso myös
+On myös hyvä huomata, että satunnaislukujen generoiminen on pseudosatunnaisen prosessi, mikä tarkoittaa, että siemenluvun mukaisella algoritmilla generoidut luvut eivät ole täysin satunnaisia. Siitä huolimatta Mersenne Twister -algoritmi tuottaa erittäin laadukkaita lukuja, joita voidaan pitää riittävänä monissa ohjelmointitehtävissä.
 
-- [Kotlinin random() dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/) 
-- [Java Math -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
-- [Suosittuja satunnaislukugeneraattoreita](https://en.wikipedia.org/wiki/List_of_random_number_generators)
+# Katso myös:
+
+- [Kotlinin virallinen dokumentaatio satunnaisluvuista](https://kotlinlang.org/docs/reference/basic-types.html#random-numbers)
+- [Mersenne Twister -algortimin perusteet](https://en.wikipedia.org/wiki/Mersenne_Twister)

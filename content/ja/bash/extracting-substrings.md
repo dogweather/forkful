@@ -1,32 +1,56 @@
 ---
-title:    "Bash: 文字列の抽出"
+title:    "Bash: 部分文字列の抽出"
 keywords: ["Bash"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-サブ文字列を抽出するのに何のためにエンゲージするのか、その理由を1-2文で説明します。
 
-サブ文字列抽出は、特定の文字列から必要な情報を抽出するために使用されます。例えば、電話番号やメールアドレスなどの特定の形式のデータを抽出する際に便利です。
+文字列を抽出することをどうしてあなたはやるか、それがどのようにあなたに役立うかについて書かれたBashプログラミングのブログ投稿です。この記事では、文字列を抽出する方法、そしてそれについてさらに深く掘り下げる方法を紹介します。
 
-## 方法
-ここでは、Bashスクリプトを使用してサブ文字列を抽出する方法を説明します。以下の例は、ドメイン名を抽出するためのコードです。
+## 抽出する方法
+
+文字列を抽出するには、Bashの組み込みコマンドである`substr`を使用します。使用例を見てみましょう。
 
 ```Bash
-str="www.example.com"
-domain=${str:4:-4}
-echo $domain
+# 文字列の最初から3文字を抽出する
+string="こんにちは"
+echo ${string:0:3}
+
+# 出力: こん
+
+# 文字列の3文字目から最後までを抽出する
+string="こんにちは"
+echo ${string:2}
+
+# 出力: にちは
 ```
 
-上記のコードの出力は、`example`となります。
+`substr`コマンドを使用することで、変数の値から一部の文字を抽出することができます。
 
-## ディープダイブ
-サブ文字列を抽出する方法について詳しく知りたい方のために、より深く掘り下げた情報を紹介します。Bashスクリプトでは、`${string:start:offset}`の形式を使用して、文字列の一部を抽出することができます。また、`-`を使用することで、文字列の末尾からのオフセットを指定することも可能です。
+## 深く掘り下げる
 
-## See Also
-もっとBashプログラミングの知識を深めたい方は、以下のリンクを参考にしてください。
+文字列を抽出する方法は簡単ですが、いくつかのトリックを覚えることでより柔軟に操作することができます。
 
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [ Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Substring Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+- `:`の後の数字を省略すると、指定した位置から最後までの文字を抽出することができます。
+- `:`の前の数字を負の値にすると、文字を後ろから数えることができます。
+- `:`の後の数字を`-`にすると、指定した位置から最後までの文字を逆順に抽出することができます。
+
+詳しい使い方は、Bashの公式ドキュメントを参照してください。
+
+## さらに参考に
+
+他にも有用なBashの文字列操作については、こちらの記事をチェックしてください。
+
+- [Bash Hackers Wiki - 文字列操作](https://wiki.bash-hackers.org/syntax/pe)
+- [Bashドリル - 文字列操作のテクニック](http://bash.drill.so/?chapter=string_manipulation)
+
+---
+参考リンク:
+
+## 関連記事
+
+- [文字列操作の基本 - substrコマンドの使用方法](https://www.example.com/substr-basics)
+- [Bashプログラミングの基礎学習ガイド](https://www.example.com/bash-tutorial)

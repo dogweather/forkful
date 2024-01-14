@@ -1,33 +1,35 @@
 ---
 title:    "Javascript: Merkkijonon pituuden löytäminen"
 keywords: ["Javascript"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi 
 
-Miksi haluaisimme selvittää merkkijonon pituuden? No, siinä on monia syitä! Saatat haluta varmistaa, että merkkijono sopii tiettyyn kenttään tai tarvitset tietoa sen pituudesta käsitelläksesi sitä eri tavalla. 
+Usein käytetyssä ohjelmointikielessä, kuten Javascript, on tärkeää tietää, kuinka monta merkkiä tai kirjainta on tietyssä merkkijonossa. Tämä tieto voi olla hyödyllinen monissa eri tilanteissa, kuten tietojen validoinnissa tai tekstin muotoilussa. Siksi on tärkeää tietää, kuinka löytää merkkijonon pituus käyttäen Javascriptiä.
 
-## Miten
+## Kuinka tehdä se 
 
-JavaScriptissä merkkijonon pituus voidaan selvittää käyttämällä `.length`-ominaisuutta. Tämä ominaisuus antaa meille merkkijonon merkkien määrän. Otetaan esimerkiksi seuraava koodinpätkä:
+Merkkijonon pituuden löytäminen Javascriptissä on yksinkertaista. Voit käyttää `.length` -metodia merkkijonoon, joka palauttaa merkkijonon pituuden numerona. Katso esimerkki alla olevasta koodista:
 
 ```Javascript
-let string = "Hei, maailma!";
-console.log(string.length); // Output: 12
+let merkkijono = "Tervetuloa lukemaan ohjelmointiblogia!";
+console.log(merkkijono.length);
 ```
 
-Kuten näet, `.length`-ominaisuuden avulla voimme helposti selvittää merkkijonon pituuden ja käyttää sitä tarvittaessa koodissamme. 
+Tuloste: `35`
 
-## Syvällisempi sukellus
+Lisäksi voit käyttää `length` -metodia myös muihin tietotyyppeihin, kuten taulukoihin, objekteihin ja jopa numeromuuttujiin. Tämä metodi on siis erittäin hyödyllinen ja monipuolinen työkalu.
 
-On tärkeää huomata, että JavaScriptissä merkkijonon pituus lasketaan mukaan myös välilyönnit ja välimerkit. Tämä tarkoittaa sitä, että jos haluat selvittää pelkästään kirjainten määrän merkkijonossa, sinun tulee tehdä lisäkäsittelymerkintä. 
+## Syvällisempi sukellus 
 
-Voit myös käyttää merkkijonon `.slice()`-metodia saadaksesi tietyt merkkijonon osat ja sitten käyttää `.length`-ominaisuutta laskemaan haluamasi osan pituus. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat tarkistaa onko merkkijonon alku- tai loppuosa tietty pituus.
+Merkkijonon pituuden löytäminen `.length` -metodilla perustuu Unicode-koodipisteiden lukumäärään. Unicode-koodipisteet ovat numerokoodeja, jotka liitetään jokaiseen kirjaimen tai merkin esitystapaan tietokoneella. Koska jotkut merkit vaativat useampia kuin yhden koodipisteen, merkkijonon pituus voi vaihdella merkistöstä riippuen. Esimerkiksi "ä" -merkki voi vaatia kaksi koodipistettä, kun taas "a" -merkki vaatii vain yhden.
 
-## Katso myös
+Lisäksi, `.length` -metodi ei pysty laskemaan virtuaalisia merkkejä, joita käytetään esimerkiksi joidenkin aasialaisten kielten kirjoittamisessa. Tässä tapauksessa voit käyttää `.padEnd()` ja `.padStart()` -metodeja laskemaan todellinen merkkijonon pituus.
 
-- [JavaScript String References](https://www.w3schools.com/jsref/jsref_obj_string.asp)
-- [MDN Web Docs: String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Ecmascript.org: Strings](https://262.ecma-international.org/6.0/#sec-strings)
+## Katso myös 
+
+- [Javascriptin virallinen dokumentaatio] (https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Koodin esimerkki] (https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Global_Objects/String/length_examples)

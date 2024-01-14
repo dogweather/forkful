@@ -1,57 +1,47 @@
 ---
 title:    "Clojure recipe: Extracting substrings"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Substrings, or smaller strings extracted from a larger string, can be useful in many programming scenarios. For example, you might need to extract a certain part of a URL or a specific section of a file name. Being able to extract substrings can help simplify and streamline your code.
+Have you ever found yourself needing to extract certain parts of a string in your Clojure program? Maybe you want to manipulate a specific word or set of characters within a larger string. If so, then this blog post is for you! In this article, we will explore how to extract substrings in Clojure and why it can be a useful tool in your programming toolkit.
 
 ## How To
 
-Extracting substrings in Clojure is a fairly straightforward process. First, you will need to use the built-in `subs` function, which takes in a string and a starting and ending index. For example:
+First, let's start by defining a string that we want to extract a substring from:
 
 ```Clojure
-(def str "Hello World")
-(subs str 0 5) ; Output: Hello
-(subs str 6 11) ; Output: World
+(def my-string "Hello, Clojure!")
 ```
 
-In the above code, we used the `subs` function to extract the substring "Hello" by providing the starting index as 0 and the ending index as 5. Similarly, we extracted "World" by providing the starting index as 6 and the ending index as 11.
-
-You can also use negative numbers as indices to count backwards from the end of the string. For example:
+To get a specific substring from this string, we can use the `subs` function and specify the starting and ending indexes of the substring we want:
 
 ```Clojure
-(def str "Hello World")
-(subs str -5 -1) ; Output: Worl
+(subs my-string 7 14)
 ```
 
-In this case, we extracted the substring "Worl" by starting at the fifth character from the end of the string and ending at the first character from the end.
+This will return the substring "Clojure" from our original string. 
 
-Additionally, you can use the `take` and `drop` functions to extract a specific number of characters from the beginning or end of a string, respectively. For example:
+Another way to extract substrings is by using regular expressions. We can use the `re-find` function to search for a specific pattern within a string and extract the substrings that match that pattern. For example, if we want to extract all the vowels from our original string, we can do the following:
 
 ```Clojure
-(def str "Hello World")
-(take 5 str) ; Output: Hello
-(drop 6 str) ; Output: World
+(re-find #"[aeiou]" my-string)
 ```
 
-Both `take` and `drop` also work with negative numbers as indices.
+This will return a list of all the vowels in our string.
 
 ## Deep Dive
 
-Under the hood, the `subs` function in Clojure uses the Java `String.substring` method. This means that it supports all of the same functionalities, including providing a single index to extract from that point to the end of the string. For example:
+Under the hood, the `subs` function uses the `subvec` function to extract the substring. The `subvec` function is similar to the `subarray` function in other programming languages, where it takes a vector as input and returns a portion of that vector based on the specified indexes. This explains why we can also use `subs` on vectors and get the same results.
 
-```Clojure
-(def str "Hello World")
-(subs str 6) ; Output: World
-```
-
-It is worth noting that unlike `take` and `drop`, `subs` does not include the character at the specified index in the extracted substring.
+It is also worth noting that the `subs` function is inclusive of the starting index but exclusive of the ending index. This means that the character at the ending index will not be included in the returned substring.
 
 ## See Also
 
-- Official Clojure Documentation on `subs`: https://clojuredocs.org/clojure.core/subs
-- Java `String.substring` Documentation: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-
+For more information on substrings and other string manipulation functions in Clojure, check out the official documentation here: https://clojuredocs.org/clojure.core/subs
+
+You can also explore regular expressions in more detail and see how they can be used for extracting substrings in Clojure here: https://clojuredocs.org/clojure.core/re-find

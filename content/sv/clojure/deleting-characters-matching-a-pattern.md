@@ -1,33 +1,36 @@
 ---
-title:    "Clojure: Radera tecken som matchar ett mönster"
+title:    "Clojure: Ta bort tecken som matchar ett mönster"
 keywords: ["Clojure"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara en användbar färdighet för programmerare som behöver manipulera strängar eller andra datastrukturer. Genom att lära sig hur man gör det kan du förenkla och effektivisera din kod.
+Du kanske undrar varför du skulle vilja engagera dig i att ta bort tecken som matchar ett mönster i Clojure. Det kan finnas flera anledningar till varför detta kan vara en användbar funktion i ditt program.
 
-## Så här gör du
+## Hur man gör det
+
+För att ta bort tecken som matchar ett visst mönster i Clojure, kan du använda funktionen "remove" tillsammans med regexp-funktionen "re-matches". Se nedan för ett kodexempel:
 
 ```Clojure
-;; För att ta bort tecken som matchar ett specifikt mönster, kan du använda funktionen "remove". Till exempel, om du vill ta bort alla siffror från en sträng kan du använda följande kod:
-(remove #(Character/isDigit %) "hej123värld")
-;; Output: "hejvärld"
-
-;; För att ta bort tecken från en datastruktur, t.ex. en vektor, kan du använda "filter" funktionen tillsammans med "remove". Till exempel:
-(remove #(Character/isLetter %) (filter #(Integer/isInteger %) [1 2 "a" 3 "b"]))
-;; Output: [1 2 3]
+(remove #(re-matches #"abc" %) ["a" "b" "abc" "def"])
 ```
 
-## Djupdykning
+Detta kodexempel tar bort alla tecken som matchar mönstret "abc" från en vektor som innehåller "a", "b", "abc" och "def". Det kommer att producera följande utmatning:
 
-Funktionen "remove" returnerar en ny datastruktur utan de matchande tecknen. Det är också möjligt att använda den på en sekvens, som en sträng, för att ta bort en del av den. Detta kan vara användbart för att till exempel filtrera ut ogiltig input eller städa upp formatering i en sträng.
+```Clojure
+("a" "b" "def")
+```
 
-Det finns också andra funktioner som kan användas för att ta bort tecken som matchar ett mönster, som "re-seq" eller "re-find". Dessa kan vara användbara beroende på ditt specifika projekt eller behov.
+Här kan vi se att tecknet "abc" har tagits bort från vektorn.
+
+## Fördjupning
+
+Funktionen "re-matches" är en del av Clojure's regexp-bibliotek och används för att söka efter mönster i strängar. Det tar två argument: ett mönster och en sträng. Om en matchning hittas, returnerar funktionen en matchdatastruktur som sedan kan användas för att utföra olika åtgärder, till exempel att ta bort matchande tecken. Mer information om regexp-biblioteket och dess funktioner finns tillgängligt i Clojure's dokumentation.
 
 ## Se även
 
-- [Clojure Dokumentation för funktionen remove](https://clojuredocs.org/clojure.core/remove)
-- [Clojure Cookbook för att ta bort tecken från strängar](https://clojure-cookbook.com/strings/parsing_strings.html#parsing-strings-_removing_characters_from_strings)
+- [Clojure regexp-dokumentation](https://clojure.org/guides/learn/regular_functions)
+- [Dokumentation för Clojure's "remove" -funktion](https://clojuredocs.org/clojure.core/remove)

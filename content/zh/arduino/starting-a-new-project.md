@@ -1,68 +1,55 @@
 ---
 title:    "Arduino: 开始一个新项目"
 keywords: ["Arduino"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么开始一个新的项目
+## 为什么
 
-当你开始一个新的项目时，你将有机会学习新的技能，解决新的问题，以及创造有趣和实用的设备。Arduino编程是一种非常有趣的方式来探索电子设备，并将你的想法变为现实。
+开始一个新项目的原因有很多，可能是想要挑战自己的技能，也可能是想要实现自己的创意想法。不管是什么原因，Arduino是一个非常适合初学者的平台，让我们一起来看看如何使用它开始一个新的项目吧！
 
-# 如何开始Arduino编程
+## 如何做
 
-要开始Arduino编程，你需要准备以下的材料：
-
-- Arduino板
-- USB线
-- 电路板
-- LED灯
-- 面包板
-- 杜邦线
-- 电阻和电容器（可选）
-
-接下来，你可以按照下面的步骤开始Arduino编程：
-
-1. 将Arduino板通过USB线连接到电脑上。
-2. 在电脑上下载Arduino IDE软件。
-3. 打开Arduino IDE软件，选择正确的Arduino板和串口。
-4. 在代码编辑区域，输入你想要的代码，比如让LED灯闪烁。
-5. 点击“上传”按钮，将代码上传到Arduino板中。
-6. 你将看到LED灯开始闪烁，这意味着代码成功上传并运行了。
-
-下面是一个简单的让LED灯闪烁的代码例子：
+首先，你需要准备一些硬件。通过在电路板上连接传感器、电动机等，可以实现各种各样的功能。接下来，在Arduino集成开发环境（IDE）中编写代码来控制这些硬件。下面是一个示例代码，它可以让LED灯闪烁：
 
 ```Arduino
-//初始化LED灯的引脚
-int ledPin = 13;
+//定义LED的引脚
+int ledPin = 13; 
 
-void setup() {
-  //将LED灯的引脚设为输出模式
-  pinMode(ledPin, OUTPUT);
-}
+//设置引脚为输出模式
+pinMode(ledPin, OUTPUT); 
 
-void loop() {
-  //让LED灯亮2秒，然后关2秒
-  digitalWrite(ledPin, HIGH);
-  delay(2000);
-  digitalWrite(ledPin, LOW);
-  delay(2000);
+//无限循环
+while(true){ 
+  //点亮LED
+  digitalWrite(ledPin, HIGH); 
+  delay(1000); //等待1秒
+  //关闭LED
+  digitalWrite(ledPin, LOW); 
+  delay(1000); //等待1秒  
 }
 ```
 
-# 深入了解开始一个新的项目
+嘿，看到了吗？通过简单的几行代码，我们就可以控制LED灯的亮灭。当然，这只是一个小小的示例，你还可以通过编写更加复杂的代码来实现更多功能。
 
-Arduino编程不仅仅是让LED灯闪烁这么简单，你可以通过连接不同的传感器和执行器来创造更复杂的项目。你也可以学习如何使用不同的编程语言，如C++和Python来控制Arduino板。
+## 深入了解
 
-除此之外，你还可以参考Arduino官方网站和各种线上教程来学习更多关于Arduino编程的知识。不要害怕尝试新的想法，通过不断地练习和学习，你可以创作出令人惊叹的作品！
+如果你想要深入了解如何开始一个新的Arduino项目，可以参考以下链接：
 
-# 参考资料
+- [Arduino官方网站](https://www.arduino.cc/)
+- [Arduino教程](https://www.arduino.cc/reference/zh/)
+- [Arduino论坛](https://forum.arduino.cc/)
 
-- Arduino官方网站：https://www.arduino.cc/
-- Arduino中文网站：https://www.arduino.cn/
-- Arduino编程教程：https://www.coursera.org/courses?query=arduino
-- 《Arduino编程基础》（图书）：https://item.jd.com/21560194136.html
+在这些资源中，你可以找到更多关于Arduino的信息，包括如何选择硬件、如何安装IDE、如何编写代码等等。此外，你还可以在论坛中与其他Arduino爱好者交流，学习他们的经验和知识。
 
-# 参见
+## 参考链接
 
-- [Markdown基础教程](https://www.markdownguide.org/basic-syntax/)
+如果你想要在开始一个新的Arduino项目之前先学习一些基础知识，可以参考以下链接：
+
+- [Arduino概述](https://baike.baidu.com/item/arduino/1939985?fr=aladdin)
+- [Arduino语言基础](https://www.jianshu.com/p/eb8590472c5f)
+- [Arduino常用模块介绍](https://www.jianshu.com/p/02c801e5454d)
+
+希望这些链接可以帮助你更快地上手Arduino，开始你的项目之旅！不管你的项目最终变成什么样子，都祝你好运！

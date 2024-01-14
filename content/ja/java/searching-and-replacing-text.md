@@ -1,54 +1,42 @@
 ---
 title:    "Java: テキストの検索と置換"
 keywords: ["Java"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストを検索して置換することの重要性は、コーディングプロセスを迅速化し、効率的に行うことができるからです。また、大量のコードを修正したい場合や、特定のキーワードを一括で変更したい場合にも役立ちます。
+テキストの検索と置換を行う理由について説明します。多くのプログラマーはデータやテキストを処理しなければならない時、検索と置換は非常に便利なツールです。例えば、大量のテキストデータを処理する必要がある場合や、特定の文字列を一括で変更する必要がある場合などに使われます。
 
-## 使い方
+## 方法
 
-検索と置換を行う際には、JavaのStringクラスに用意されている`replaceAll()`メソッドを使用します。以下は、文字列の中で特定のキーワードを置換するためのコード例です。
+検索と置換は、Javaで簡単に実装することができます。まずは検索文字列を指定し、それに対して置換する文字列を指定します。そして、処理するテキストデータを指定して処理を実行します。以下に、コード例と実行結果を示します。
 
 ```Java
-String myString = "Javaはとても面白いです！";
-String newString = myString.replaceAll("面白い", "楽しい");
-System.out.println(newString);
+// 検索文字列と置換文字列を指定
+String searchStr = "Hello";
+String replaceStr = "こんにちは";
+
+// 処理するテキストデータを指定
+String text = "Hello World!";
+
+// 文字列の置換を実行
+String newText = text.replace(searchStr, replaceStr);
+
+// 結果を表示
+System.out.println(newText);
 ```
 
-出力結果は以下のとおりになります。
-
-```
-Javaはとても楽しいです！
-```
-
-上記の例では、`replaceAll()`メソッドを使用して`myString`の中から「面白い」を「楽しい」に置換し、新しい文字列を`newString`に代入しています。このように、置換するキーワードを事前に指定することで、コード内の特定の文字列を一括で置換することができます。
+上記のコードの実行結果は、「こんにちはWorld!」となります。
 
 ## 深堀り
 
-文字列の検索と置換は、正規表現を使用することもできます。正規表現を使用することで、より柔軟な検索と置換が可能になります。また、正規表現を使用することで検索モードを「大文字小文字区別しない」や「繰り返し検索」に設定することもできます。
+検索と置換は、多くの場面で使われるだけでなく、JavaのStringクラスにも多くの便利なメソッドが用意されています。例えば、大文字と小文字を区別せずに検索する「replaceAll()」メソッドや、正規表現を使ってパターンにマッチする部分を一括で置換する「replaceFirst()」メソッドなどがあります。これらのメソッドを利用することで、より複雑な処理も簡単に実装することができます。
 
-例えば、以下のコードでは、全ての数字を「#」に置換する正規表現を使用しています。
+## 参考文献
 
-```Java
-String myString = "Java 1.8 Tutorial";
-String newString = myString.replaceAll("\\d", "#");
-System.out.println(newString);
-```
-
-出力結果は以下のようになります。
-
-```
-Java #.# Tutorial
-```
-
-上記の例では、`replaceAll()`メソッドの第一引数には `\d` を使用して、数字を表す正規表現を指定し、第二引数には置換する文字を指定しています。このように、正規表現を使用することでより複雑な検索と置換が可能になります。
-
-## さらに参考になる記事
-
-- [正規表現の基本](https://www.javadrive.jp/start/regex/index1.html)
-- [JavaのStringクラスのreplaceAll()メソッドの使い方](https://www.javadrive.jp/start/string/index14.html)
-- [Javaで文字列の検索と置換をする方法](https://www.sejuku.net/blog/25352)
+- [Oracle Java Stringクラスドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java 入門 - 検索と置換](https://java.keicode.com/lang/string-search-replace.php)
+- [Javaで文字列を置換する方法](https://weblabo.oscasierra.net/java-string-replace/)

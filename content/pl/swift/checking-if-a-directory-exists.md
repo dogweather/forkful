@@ -1,58 +1,48 @@
 ---
-title:    "Swift: Sprawdzenie, czy istnieje katalog"
+title:    "Swift: Sprawdzanie istnienia katalogu"
 keywords: ["Swift"]
+editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Jeśli jesteś programistą Swift i pracujesz z plikami i folderami, możesz chcieć sprawdzić, czy dany folder istnieje, zanim zaczniesz przetwarzać lub przechowywać w nim pliki. W tym artykule dowiesz się, jak to zrobić w prosty sposób.
+Sprawdzanie istnienia katalogu jest kluczowym elementem programowania w języku Swift. Dzięki temu narzędziu można sprawdzić, czy dany katalog istnieje na naszym urządzeniu i podjąć odpowiednie działania w zależności od wyniku. Jest to szczególnie ważne w przypadku programów, które operują na dużej ilości plików i katalogów.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Sprawdzenie, czy dany folder istnieje, wymaga użycia klasy `FileManager`. Możemy użyć metody `fileExists(atPath:)`, która zwraca wartość logiczną, czy dany plik lub folder istnieje w podanej ścieżce. Przykładowy kod może wyglądać następująco:
+Sprawdzenie istnienia katalogu w języku Swift jest bardzo proste. Wystarczy użyć metody `FileManager.default.fileExists(atPath:)`, podając jako argument ścieżkę do katalogu, który chcemy sprawdzić.
 
 ```Swift
-let fileManager = FileManager.default
-let documentsFolder = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-
-let folderPath = documentsFolder.appendingPathComponent("Moje pliki")
-
-if fileManager.fileExists(atPath: folderPath.path) {
-    print("Dany folder istnieje!")
+if FileManager.default.fileExists(atPath: "/Users/UserName/Documents") {
+    print("Katalog istnieje!")
 } else {
-    print("Dany folder nie istnieje.")
+    print("Katalog nie istnieje.")
 }
+
+// Output: Katalog istnieje!
 ```
 
-Jeśli folder `Moje pliki` istnieje w folderze dokumentów, w konsoli zostanie wyświetlony komunikat "Dany folder istnieje!". W przeciwnym razie zostanie wyświetlona informacja, że folder nie istnieje.
+Możemy także użyć metody `fileExists(atPath:)` na instancji obiektu `FileManager`, jeśli chcemy sprawdzić istnienie katalogu w konkretnym miejscu.
+
+```Swift
+let fileManager = FileManager()
+if fileManager.fileExists(atPath: "/Users/UserName/Desktop") {
+    print("Katalog istnieje!")
+} else {
+    print("Katalog nie istnieje.")
+}
+
+// Output: Katalog istnieje!
+```
 
 ## Deep Dive
 
-Metoda `fileExists(atPath:)` jest bardzo przydatna, ale nie należy jej używać, gdy chcemy dokładnie sprawdzić, czy dany folder istnieje. Może się zdarzyć, że folder zostanie usunięty lub zmieniona będzie jego ścieżka, a ta metoda nadal zwróci wartość `true`, ponieważ znajdzie dany folder w pamięci podręcznej.
+Ta metoda zwraca wartość logiczną (true lub false) w zależności od istnienia katalogu. Możemy także użyć metody `fileExists(at:)` na instancji obiektu `FileManager`, podając jako argument obiekt typu `URL` reprezentujący ścieżkę do katalogu. `FileManager` obsługuje także różne metody sprawdzania istnienia plików i katalogów w zależności od naszych potrzeb, na przykład `fileExists(atPath:)` tylko dla określonych atrybutów, jak rozmiar czy datę modyfikacji.
 
-Aby dokładnie sprawdzić, czy dany folder istnieje, możemy użyć metody `contentsOfDirectory(atPath:)`, która zwraca listę plików i folderów w podanej ścieżce. Jeśli poziom zagnieżdżenia będzie równy 1 (czyli nie ma podfolderów), a lista będzie pusta, to oznacza, że dany folder istnieje i jest pusty. Przykładowy kod może wyglądać tak:
+## Zobacz też
 
-```Swift
-let fileManager = FileManager.default
-let documentsFolder = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-
-let folderPath = documentsFolder.appendingPathComponent("Moje pliki")
-
-do {
-    let contents = try fileManager.contentsOfDirectory(atPath: folderPath.path)
-    if contents.count == 0 {
-        print("Dany folder istnieje i jest pusty.")
-    } else {
-        print("Dany folder istnieje i zawiera \(contents.count) elementów.")
-    }
-} catch {
-    print("Wystąpił błąd podczas pobierania zawartości folderu.")
-}
-```
-
-## Zobacz także
-
-- Dokumentacja klasy `FileManager`: https://developer.apple.com/documentation/foundation/filemanager
-- Praca z plikami i folderami w Swift: https://www.hackingwithswift.com/read/0/overview
+- [Dokumentacja Apple na temat FMKManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Tutorial na temat pracy z plikami i katalogami w języku Swift](https://www.raywenderlich.com/6015-working-with-files-in-swift)
+- [Przydatny artykuł o wykorzystywaniu FileManager w Swift](https://www.hackingwithswift.com/read/10/2/reading-and-writing-basics-nsfilemanager)
